@@ -16,8 +16,7 @@ That is the bounded reason for the project name. Ovid does not supply an archite
 
 The useful architectural transfer is narrower:
 
-> **Change is real enough to deserve architecture, and architecture must decide what should change, what should persist and how the two are related.**
-
+Change is real enough to deserve architecture, and architecture must decide what should change, what should persist and how the two are related.
 For Ovid’s House, the characteristic transformations are ordinary rather than theatrical: maintenance, repair, component replacement, technical obsolescence, altered occupation and renewal.
 
 ### Heraclitus
@@ -34,8 +33,7 @@ Philosophy of identity over time asks what allows an object to remain the same o
 
 The transferable question is:
 
-> **What are the persistence conditions of a house?**
-
+What are the persistence conditions of a house?
 In architecture this is practical rather than metaphysical. Different projects may locate continuity in different combinations of site, legal identity, spatial order, structure, fabric, use, cultural recognition and stewardship.
 
 The question is more useful than asking which things are literally permanent. A supposedly permanent element may eventually need repair or replacement. What matters is which relationships or properties must survive for a stated architectural intention still to hold.
@@ -74,7 +72,7 @@ Ise is not a model for domestic replacement cycles. Its religious purpose, insti
 
 Its bounded relevance is nevertheless clear:
 
-> **Material persistence and architectural or institutional continuity are not identical concepts.**
+Material persistence and architectural or institutional continuity are not identical concepts.
 
 ## Nakagin Capsule Tower — drawn replaceability is not enough
 
@@ -84,8 +82,7 @@ The reasons extended beyond physical connection details into access, ownership, 
 
 The lesson is directly relevant to any architecture that claims replaceability:
 
-> **A component is not meaningfully replaceable because a drawing labels it replaceable.**
-
+A component is not meaningfully replaceable because a drawing labels it replaceable.
 A credible replacement proposition requires an executable chain:
 
 **access → release → handling → withdrawal → replacement supply → authority → cost → reinstatement**
@@ -128,7 +125,7 @@ The relevant lesson is bounded: repeatable interfaces and controlled manufacture
 
 A compact thesis:
 
-> **A long-lived building may preserve what matters by allowing necessary change to occur without needless destruction of slower, more valuable or identity-bearing relationships.**
+A long-lived building may preserve what matters by allowing necessary change to occur without needless destruction of slower, more valuable or identity-bearing relationships.
 
 ### Ovidian architecture
 

@@ -1,67 +1,110 @@
 # Project Status
 
-**Canonical project-wide status overview**  
-**Last updated:** 2026-10-23  
-**Current phase:** **post-DRW publication production / controlled canonical deployment integration / downstream validation**
+**Generated project-wide projection — do not hand-edit mutable status here.**
 
-This page records the current state, next meaningful work and principal risks. Detailed programme histories and gate records remain with their owning workstreams.
+Durable execution authority lives in `project/control/`. Live claim occupancy lives separately in ACO on `runtime/claims`. Epistemic maturity authority lives in `project/maturity.ts`. Workstream issues and programme/result records retain reasoning, scope and provenance.
 
-The public architectural position and publication remain internally controlled at M4. The Reference House remains M3 at virtual-design scope. HFI is closed. DRW is fully closed and frozen at its current internal publication proof boundary. DPL is **M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration plus SCREENING owner-universe / coverage-readiness composition plus the canonical DPL-RS-01 `UNRESOLVED @ SCREENING` result scope**. DPL-J has adversarially validated that narrow whole-site result proposition while keeping `COMPATIBLE`, `INCOMPATIBLE`, route exhaustion, multi-site/general result authority and real-site deployment held. The largest unclosed evidence gaps remain physical prototypes, competent professional review, positive-readiness generalisation and independent architectural criticism.
+## Execution
 
-## Active now
+<!-- project-control:start -->
+Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.
 
-### Reference House
+Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-The Reference House remains **M3 — Coordinated at virtual-design scope**. RH-00 through RH-10 are coordinated, RH-11 is issue-ready, and the 300 mm principal-stair going remains an explicit project preference rather than a statutory or universal ergonomic minimum.
+**Structurally ready:** 9 · **Active:** 3 · **Blocked:** 17 · **Held:** 2 · **Done:** 27 · **Cancelled:** 0
 
-The next value comes from competent RH-11 review and the P03/P04 physical-validation work. Existing RH-C and compiler results remain internal model-control evidence, not construction validation.
+### Structurally ready frontier
 
-### Computational implementation
+These nodes satisfy hard dependencies. A structurally ready node may already have a live ACO lease; query `npm run control:claims` before starting collision-prone durable work.
 
-The bounded Reference House computational track remains **M4 — Internally validated / controlled** through RH-C5 and CH-08. There is no standing RH-C6 or CH-09. New computation must be demand-led.
+| Node | Work | Owner | Completion would immediately unlock |
+|---|---|---|---|
+| `OAS-01E` | Envelope openings, external doors, thresholds and boundary candidates | OAS | — |
+| `OAS-01I` | Internal door assembly candidates | OAS | — |
+| `IAS-02S` | Interior services and access family | IAS | — |
+| `IAS-02W` | Wet-room and kitchen interior-system variants | IAS | — |
+| `IAS-HAD-JUNCTION` | Interior-system to architectural-expression reconciliation | IAS / HAD | — |
+| `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
+| `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
+| `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
+| `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
 
-The separate DPL runtime now has an internally controlled canonical proposition through DPL-13C/DPL-J: deterministic DPL-RS-01 case identity, all 29 frozen site claims under controlled authority, explicit UNKNOWN/ASSUMED provenance, explicit RH-V02 candidate authorship, bounded Reference House conformance, DPL-08B/C interface identities, DPL-09B/C England targets, the repaired DPL-10F planning graph, complete SCREENING owner/readiness composition and a provenance-bearing whole-site `UNRESOLVED @ SCREENING` result. That authority is deliberately canonical and asymmetric: positive compatibility, incompatibility, route exhaustion and broader multi-site result validity remain outside the controlled proposition.
+### Active durable work
 
-### Publication
+`active` means the packet is durably started; it is not an agent-presence or lease. Live occupancy belongs to ACO on `runtime/claims`.
 
-The publication workstream remains **M4 — Internally validated / controlled**. PR-00, PR-01, PUB-SAN and PUB-NOM remain complete. **DRW is fully closed and frozen** after final family integration, adversarial review and physical A4/conservative-B5 proof.
+| Node | Work | Owner |
+|---|---|---|
+| `MRA-00` | Moisture constitution, inventory and threat model | MRA |
+| `PLT-CURRENT-REVIEW` | Current-source plate capability and physical review work | PLT |
+| `PUB-02-PREP` | Content-independent private-object preparation | PUB |
 
-The next publication gate is PR-02: production of the private physical object. PR-03/PR-04 remain the independent critical cycle required before any M5 or public-release claim. Future DPL-earned drawing duties cannot silently mutate the released DRW pipeline; they require an explicit DRW reopen or separately owned post-DRW authority.
+### Blocked
 
-### Deployment / real-site integration
+| Node | Work | Direct blockers |
+|---|---|---|
+| `IAS-OAS-JUNCTION` | Interior-system to opening-assembly junction reconciliation | OAS-01E, OAS-01I |
+| `OAS-HAD-JUNCTION` | Opening-assembly to facade/interior-expression reconciliation | OAS-01E, OAS-01I |
+| `HAD-02M` | Material and finish synthesis | IAS-HAD-JUNCTION, OAS-HAD-JUNCTION |
+| `IAS-03` | Selected interior family, drawings and disassembly set | IAS-02S, IAS-02W, IAS-OAS-JUNCTION, IAS-HAD-JUNCTION |
+| `OAS-03` | Selected opening family and replacement/reinstatement set | OAS-01E, OAS-01I, IAS-OAS-JUNCTION, OAS-HAD-JUNCTION |
+| `HAD-03` | Architectural design convergence and visual synthesis | IAS-HAD-JUNCTION, OAS-HAD-JUNCTION, HAD-02M |
+| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, OAS-03, HAD-03 |
+| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | BCR-SCAFFOLD, TRIAD-GATE, MRA-04 |
+| `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05 |
+| `MRA-01` | External water and ground-envelope assault | MRA-00, TRIAD-GATE |
+| `MRA-02` | Internal water and wet-zone assault | MRA-00, TRIAD-GATE |
+| `MRA-03` | Vapour, condensation and drying assault | MRA-00, TRIAD-GATE |
+| `MRA-04` | Whole-house moisture failure matrix and adversarial gate | MRA-01, MRA-02, MRA-03 |
+| `MRA-05` | Post-BCR moisture assurance closeout | BCR-CONVERGENCE |
+| `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | HRS-SYNTHESIS, PLT-CURRENT-REVIEW |
+| `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-FREEZE |
+| `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | PUB-02-PREP, EDA-RENEWED |
 
-**DPL is M4 — Internally validated / controlled at bounded canonical synthetic deployment-case integration, controlled SCREENING owner-universe / coverage-readiness composition, and canonical DPL-RS-01 whole-site `UNRESOLVED @ SCREENING` result scope.**
+### Structural critical path
 
-DPL-13B composes all four controlled owner coverage registries, the exact DPL-10F planning authority graph, the complete 29-claim DPL-RS-01 manifest and the separate DPL-08B direct datum authority. DPL-I established that unresolved due/applicability/acceleration classification can support a conservative whole-site result only when every relevant uncertainty is represented inside a complete provenance-bearing aggregation scope.
+`OAS-01E` → `OAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
-DPL-13C implements that bounded aggregation. It maps DPL-02 clause identities to actual DPL-12B findings, explicitly maps the London strategic design/context family to `LON-D3-DESIGN-LED`, keeps due-now owner families unresolved where admitted evidence/evaluators are absent, preserves DPL-08B datum authority separately from substantive discharge, and leaves `FUTURE_DUE` outside the current blocker ledger.
+This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
+<!-- project-control:end -->
 
-DPL-J has now independently attacked that proposition. It confirms that every current blocker is represented exactly once under controlled owner identity; the 17 acceleration-review blockers and two no-borough local-planning classification blockers remain distinct; all-positive scope still refuses `COMPATIBLE`; hard substantive failure still cannot imply `INCOMPATIBLE` without route exhaustion; and material case/readiness/blocker changes invalidate result identity.
+## Maturity
 
-The controlled canonical result is therefore:
+Maturity is an **epistemic judgement**, not execution progress. Completing a graph node does not promote maturity, and reopening work does not automatically demote it.
 
-```text
-wholeSiteConclusion = UNRESOLVED @ SCREENING
-compatibleAtScreening = NOT_ADMITTED
-incompatible = NOT_ADMITTED
-routeExhaustion = NOT_IMPLEMENTED
-architecturalCandidateSelection = NOT_IMPLEMENTED
-localBoroughTarget = NOT_ASSIGNED_SYNTHETIC_REFERENCE
-```
+### Scale
 
-The next experiment must change rather than making DPL-RS-01 artificially optimistic. Its intentional no-borough/UNKNOWN/ASSUMED ecology is ideal for proving the middle result but structurally unsuitable for positive-readiness generalisation.
+| Level | Meaning | Gate |
+|---|---|---|
+| **M1** | **Framed** | The problem, scope and intended direction are explicit enough to guide further work. |
+| **M2** | **Developed** | Substantive design or research material exists and the main choices and trade-offs are visible, but important coordination remains. |
+| **M3** | **Coordinated** | The workstream has been reconciled with adjacent parts of the project and is internally coherent at its stated scope. |
+| **M4** | **Internally validated / controlled** | The proposition has been deliberately challenged against internal tests or evidence and is stable enough to act as the controlled baseline. |
+| **M5** | **Externally validated / release-ready** | Competent independent review or real-world validation has tested the proposition, material findings are resolved, and it is release-ready at its stated scope. |
 
-**Next: DPL-13D only.** Create a second canonical synthetic, borough-assigned positive-readiness generalisation case using existing controlled Croydon local-planning authority and the same DPL-13B/DPL-13C machinery. Change selected site/classification facts deliberately while preserving absent external evidence as unresolved; prove changed borough/site disposition enters identity; keep `COMPATIBLE`, `INCOMPATIBLE`, route search/exhaustion, DPL-15 real-site trials and broader deployment-envelope work held pending a fresh post-DPL-13D gate.
+### Evidence freshness
 
-### Physical and professional validation
+PCO monitors the evidence content from baseline `c3701c5`. A changed evidence file marks the affected assessment **stale / reassessment required**; it does not automatically lower the M-level. The baseline establishes future drift surveillance and does not itself constitute independent revalidation of earlier evidence.
 
-Physical prototypes remain M2 and competent external review remains M1. P03/P04 and the RH-11 review pack remain the most important evidence routes outside DPL. Internal M4 control is not external proof.
+| Assessment | Maturity | Reviewed | Evidence files | Evidence watch |
+|---|---:|---|---:|---|
+| **Public architectural position** | **M4** | 2026-10-19 | 12 | fresh against PCO evidence baseline |
+| **Pattern language** | **M4** | 2026-10-12 | 4 | fresh against PCO evidence baseline |
+| **Architectural grammar framework** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **G-01 grammar instance** | **M4** | 2026-10-14 | 9 | fresh against PCO evidence baseline |
+| **Reference House** | **M3** | 2026-10-19 | 9 | fresh against PCO evidence baseline |
+| **Physical prototypes** | **M2** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **External professional review** | **M1** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **Computational track** | **M4** | 2026-10-19 | 45 | fresh against PCO evidence baseline |
+| **Evidence / precedent research** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **Publication** | **M4** | 2026-10-28 | 17 | fresh against PCO evidence baseline |
+| **Deployment / real-site integration** | **M4** | 2026-10-27 | 48 | fresh against PCO evidence baseline |
+| **Delivery** | **M2** | 2026-10-28 | 5 | fresh against PCO evidence baseline |
 
-### Delivery
+<details>
+<summary>Legacy maturity compatibility projection (non-authoritative)</summary>
 
-Delivery remains M2. N17 carries finished-interface human-factors verification into RIBA 3/4 as appropriate, but downstream delivery requirements remain intentionally incomplete. Delivery must remain a consequence of controlled architecture, DPL evidence and competent review rather than a second source of doctrine.
-
-## Maturity and workstream status
+This collapsed block is retained temporarily because the existing repository-integrity check still verifies the historical renderer. Its `Current state` / `Next meaningful gate` columns are **not execution authority**; PCO owns current durable execution state above.
 
 <!-- maturity-status:start -->
 Ovid’s House uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems.
@@ -97,41 +140,18 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 | **External professional review** | **M1** | 2026-10-12 | RH-11 now provides issue-ready structural, fire/building-control, MEP/acoustic and building-physics/energy review briefs with explicit rewind criteria; no competent review response has yet been recorded. | Obtain and process competent discipline reviews; material findings reopen the owning Reference House gate and remain unresolved until closure evidence is recorded. |
 | **Computational track** | **M4** | 2026-10-19 | The bounded Reference House executable sequence remains closed PASS through RH-C5 and CH-00 through CH-08 remain complete. The intentional HFI stair rewind has propagated through the controlled semantic source and deterministic projections; RH-C5 now checks the selected 300 mm going while HFI-09C/09D explicitly refuse to turn that project preference into a universal human-factors or statutory rule. | Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, DPL target/site work, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope. |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | Major evidence packages exist and taxonomy ambiguities are largely closed. | Targeted claim hardening where physical or publication maturity requires it. |
-| **Publication** | **M4** | 2026-10-21 | PR-00, PR-01, PUB-SAN and PUB-NOM remain complete. DRW is fully closed and frozen through its final integration/physical-proof programme; the controlled architectural drawing family is released at the existing internal publication proof boundary without inventing construction or site authority. | Proceed to PR-02 private physical-object production without reopening frozen drawing authority by preference. PR-03/PR-04 then provide the independent critical cycle required before M5 or public release. Any later DPL-earned drawing duty requires an explicit DRW reopen or separately owned post-DRW representation authority. |
-| **Deployment / real-site integration** | **M4** | 2026-10-23 | DPL-13B/DPL-I establish the complete controlled SCREENING owner-universe and coverage/readiness proposition for the canonical Reference House × synthetic DPL-RS-01 case. DPL-13C plus DPL-J now internally validate the canonical whole-site UNRESOLVED @ SCREENING result at that exact scope: blocker ownership is complete, current/future separation is controlled, actual DPL-12B and London-D3 findings are consumed where admitted, missing evidence/evaluators remain explicit unresolved blockers, positive compatibility is refused, hard candidate/obligation failure cannot imply INCOMPATIBLE without route exhaustion, and material blocker/case changes invalidate identity. COMPATIBLE, INCOMPATIBLE, route exhaustion, multi-site/general result validity, real-site deployability and regulatory/planning/legal adequacy remain outside the controlled proposition. | Execute DPL-13D only: create a second canonical synthetic borough-assigned positive-readiness generalisation case using existing controlled Croydon local-planning authority and the same DPL-13B/DPL-13C machinery. Prove that changed borough/site disposition participates in identity and changes classification outcomes without fabricating external evidence. Keep COMPATIBLE, INCOMPATIBLE, route search/exhaustion, DPL-15+ and broader envelope work held pending a fresh post-DPL-13D gate. |
-| **Delivery** | **M2** | 2026-10-19 | The implementation-brief structure exists and N17 now carries complete-action / finished-interface human-factors verification into RIBA 3/4 as appropriate, but downstream delivery requirements remain intentionally incomplete. | Populate only as architectural, DPL, professional-review and physical-validation decisions mature; delivery must remain a consequence of controlled architecture rather than a second source of doctrine. |
+| **Publication** | **M4** | 2026-10-28 | PR-00, PR-01, PUB-SAN and PUB-NOM remain complete for the source/object scopes they actually reviewed; DRW v1 remains frozen and TYP has an accepted RC2 production release. EDA-00–08 remain valid historical assurance for the 128-source candidate book, and ADE remains internally complete at its stated representation scope. BSR has now completed the six-part structural migration: the Working Edition has stable Part IV design-proposition, Part V proving/technical-closure and Part VI resolved-house interfaces. IAS/OAS/HAD are unblocked against those interfaces, but the previous EDA clearance and PLT-only manufacture path remain insufficient for the enlarged final book. Publication maturity remains M4; no prior evidence is erased or promoted. | PUB-02 may continue content-independent object preparation using the accepted typography contract. Final private-object content/drawing freeze and manufacture now require IAS/OAS/HAD design resolution; BCR construction-resolution convergence; HRS final architectural synthesis; final PLT integration/physical drawing freeze; and renewed EDA assurance over the enlarged source/object. PUB-03/PUB-04 independent criticism remains required before M5 or public-release claims. |
+| **Deployment / real-site integration** | **M4** | 2026-10-27 | The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. DPL-01 through DPL-14 are complete. DPL-15J adds explicit assumption-based trials across all eight sites, a conditional envelope, reader-facing computational explanation and internal adversarial checks. Geometry hypotheses do not discharge evidence-backed readiness: corpus readiness remains 0/8 after DPL-15I, and real-site compatibility remains unestablished. The user has explicitly revised DPL-15/16/17/18 to conditional research scope. Their final authored case and closeout complete that revised programme; the original empirical criteria remain unearned and real-site verification is deferred. Lennard remains excluded from empirical sampling. | No standing DPL research packet remains. Trigger a separate verification follow-on only for a selected real commission/site or explicit evidence-backed request; then replace the applicable premises with controlled site data and stage-specific professional evidence. Conditional completion does not raise maturity or authority, and authorises no external contact or spend. |
+| **Delivery** | **M2** | 2026-10-28 | DEL-00 inventories the existing delivery modules, N01–N17 and other brief obligations, with provisional discipline/stage allocations, evidence dependencies and rewind owners under #854. The authorised IAS/OAS/HAD/BCR/HRS programme now creates concrete future assembly and construction-resolution inputs, but no new delivery acceptance is implied. Current-house technical migration, competent review, physical evidence and commission-specific acceptance remain outstanding. | Reconcile DEL when BCR admits concrete IAS/OAS/HAD assembly obligations, and when RH-11/EPR, applicable PHY results or a real commission supplies evidence. Add fabrication, tolerance, shop-drawing, equivalence, first-article, commissioning or reinstatement requirements only where a selected assembly earns them. Declare source applicability before issuing older packages for the Georgian proposal. No project acceptance or maturity increase follows from programme authorisation. |
 <!-- maturity-status:end -->
 
-## Principal risks
+</details>
 
-**Deployment authority.** Law, guidance, planning policy, site facts, professional judgement and project preference must not collapse into one machine result. Unknown evidence must remain unknown; England/London targets must not become doctrine; and incompatibility must remain an acceptable result rather than forcing the Reference House to mutate until every plot fits.
+## Reading current state
 
-**Candidate/conformance overreach.** DPL must evaluate authored architecture, not become an optimiser or hidden parametric-house generator. One failed candidate is not site incompatibility.
-
-**Canonical-result overreach.** DPL-13C/DPL-J validate one controlled whole-site middle result for DPL-RS-01. That must not be repeated as proof that the result machinery is already general across sites, boroughs or evidence ecologies. DPL-13D exists specifically to attack that generalisation boundary.
-
-**Positive-result leakage.** The existence of `UNRESOLVED @ SCREENING` must not make `COMPATIBLE` look like a nearby default. Positive compatibility still requires resolved applicability/acceleration classification, positive discharge of every due blocker, accepted evidence, candidate conformance and a separately admitted aggregation rule.
-
-**M4 scope drift.** DPL's M4 claim now includes the canonical DPL-RS-01 `UNRESOLVED @ SCREENING` result proposition, but not positive compatibility, incompatibility, route exhaustion, multi-site/general result validation, real-site validation, regulatory compliance or deployability.
-
-**Synthetic-evidence overreach.** DPL-13D may author synthetic site facts to exercise classification and target composition, but those facts cannot become title, survey, provider, building-control or professional evidence merely because they are deterministic.
-
-**Physical and professional evidence.** Internal control does not prove structural, fire, MEP, building-physics or construction adequacy. P03/P04 and competent RH-11 review remain material evidence gaps.
-
-**Architectural authority drift.** Repetition of the Reference House can make its Georgian grammar, courtyard form, masonry family, low-slope roof, ASHP/PV or 300 mm stair preference appear universal. Generalise the reason; keep project choice local.
-
-**Publication freeze integrity.** DRW is closed. New evidence may justify a controlled reopen, but downstream work must not patch frozen drawings silently.
-
-## Closed or frozen tracks
-
-- **HFI — complete.** All authorised packets are closed; surviving consequences live with their destination authorities.
-- **G-01 v0.1 — controlled.** Reopen only on an explicit evidence trigger.
-- **Reference House bounded compiler / CH — controlled.** RH-C1→RH-C5 and CH-00→CH-08 are closed at their stated proof scope.
-- **DRW — complete and frozen.** Any later representational change requires explicit authority.
-- **PUB-SAN / PUB-NOM — complete.** Their public-surface and naming constraints remain active.
-
-## Status-maintenance rule
-
-Update this page when a major workstream changes maturity, prototype or professional evidence changes a conclusion, the Reference House reaches a new integration state, a first-class programme opens/closes, or the recommended next work materially changes.
-
-The maturity block is generated from `project/maturity.ts`; use `npm run status:update` after changing the typed maturity registry and commit the generated result together.
+- Use the **Structurally ready frontier** above to identify work whose hard dependencies are satisfied.
+- Use [`project/control/graph.md`](project/control/graph.md) for the generated structural Mermaid dependency map.
+- Before substantial execution, query `npm run control:claims` and acquire the ACO lease; structural READY does not mean unclaimed.
+- Use owning workstream issues/programmes for the architectural question, scope and exit criteria behind a node.
+- A completed node does not itself raise maturity; maturity remains an explicit evidence-backed judgement.
+- Possible future PHY/EPR/DEL work is not a blocker until a concrete obligation is admitted into the graph.

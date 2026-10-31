@@ -1,0 +1,149 @@
+import assert from 'node:assert/strict'
+import test from 'node:test'
+
+import { createPlanPaperProjection } from '../publication-drawing/projection.js'
+import { mm } from '../units.js'
+import type { AdeArchitecturalPlan, AdeOpening, AdeProvenance, AdeWallAssembly } from './model.js'
+import {
+  compileOpeningUncertaintyInstruction,
+  openingUncertaintyToDrawingPrimitives
+} from './opening-uncertainty.js'
+
+const exact: AdeProvenance = { sourceIds: ['ADE-04B'], authority: 'controlled', precision: 'exact' }
+const provisional: AdeProvenance = { sourceIds: ['ADE-04B-PROVISIONAL'], authority: 'provisional', precision: 'range' }
+const assembly: AdeWallAssembly = {
+  kind: 'wall-assembly', id: 'WA-400', thickness: { kind: 'exact', value: mm(400) }, provenance: exact
+}
+
+const opening = (id: string, centreOffset: AdeOpening['centreOffset'], width: AdeOpening['width'], provenance = exact): AdeOpening => ({
+  kind: 'opening', id, hostWallId: 'W1', role: 'window', centreOffset, width, provenance
+})
+
+const planWith = (candidate: AdeOpening): AdeArchitecturalPlan => ({
+  id: `ADE04B-${candidate.id}`,
+  sourceId: 'ADE-04B-TEST',
+  nodes: [
+    { kind: 'node', id: 'A', point: { x: mm(0), y: mm(0) }, provenance: exact },
+    { kind: 'node', id: 'B', point: { x: mm(6000), y: mm(0) }, provenance: exact }
+  ],
+  wallAssemblies: [assembly],
+  walls: [{
+    kind: 'wall', id: 'W1', fromNodeId: 'A', toNodeId: 'B', reference: 'right-face', assemblyId: 'WA-400', provenance: exact
+  }],
+  openings: [candidate],
+  partitionDatums: [], spaces: [], adjacencies: [], dimensions: [], labels: []
+})
+
+const projectionFor = (scaleDenominator: 100 | 50) => createPlanPaperProjection({
+  scaleDenominator,
+  modelBounds: { x: 0, y: -1000, width: 6000, height: 2000 },
+  paperOrigin: { x: 20, y: 20 }
+})
+const projection = projectionFor(100)
+const drawOptions = {
+  annotationSide: 'left' as const,
+  resolveAssemblyThicknessMm: () => mm(400),
+  showLabels: false
+}
+
+test('ADE-04B exact opening emits no uncertainty notation', () => {
+  const plan = planWith(opening('EXACT', { kind: 'exact', value: mm(3000) }, { kind: 'exact', value: mm(1200) }))
+  const instruction = compileOpeningUncertaintyInstruction(plan, 'EXACT')
+  assert.equal(instruction.kind, 'exact')
+  assert.deepEqual(openingUncertaintyToDrawingPrimitives(plan, instruction, projection, drawOptions), [])
+})
+
+test('ADE-04B approximate aperture uses an external paper-space span', () => {
+  const plan = planWith(opening('APPROX', { kind: 'exact', value: mm(3000) }, { kind: 'approximate', value: mm(1200) }, {
+    sourceIds: ['ADE-04B-APPROX'], authority: 'provisional', precision: 'approximate'
+  }))
+  const instruction = compileOpeningUncertaintyInstruction(plan, 'APPROX')
+  assert.equal(instruction.kind, 'approximate-aperture')
+  const primitives = openingUncertaintyToDrawingPrimitives(plan, instruction, projection, drawOptions)
+  assert.equal(primitives.filter((primitive) => primitive.kind === 'line').length, 3)
+  assert.ok(primitives.every((primitive) => primitive.metadata?.epistemic === 'opening-uncertainty'))
+  assert.ok(primitives.filter((primitive) => primitive.kind === 'line').every((primitive) => primitive.kind !== 'line' || primitive.dash === undefined))
+})
+
+test('ADE-04B ranged width preserves min/max authority without pseudo-jambs', () => {
+  const plan = planWith(opening('RANGE', { kind: 'exact', value: mm(3000) }, { kind: 'range', min: mm(900), max: mm(1200) }, provisional))
+  const instruction = compileOpeningUncertaintyInstruction(plan, 'RANGE')
+  assert.equal(instruction.kind, 'range-width')
+  if (instruction.kind !== 'range-width') return
+  assert.equal(instruction.minimumWidth, 900)
+  assert.equal(instruction.maximumWidth, 1200)
+  const primitives = openingUncertaintyToDrawingPrimitives(plan, instruction, projection, drawOptions)
+  assert.equal(primitives.filter((primitive) => primitive.kind === 'line').length, 5)
+  assert.ok(primitives.every((primitive) => primitive.metadata?.state === 'range-width'))
+})
+
+test('ADE-04B known centre / unknown width becomes a point marker, not a plausible aperture', () => {
+  const plan = planWith(opening('CENTRE', { kind: 'exact', value: mm(3000) }, { kind: 'unknown' }, {
+    sourceIds: ['ADE-04B-UNKNOWN-WIDTH'], authority: 'provisional', precision: 'unknown'
+  }))
+  const instruction = compileOpeningUncertaintyInstruction(plan, 'CENTRE')
+  assert.equal(instruction.kind, 'centre-only')
+  const primitives = openingUncertaintyToDrawingPrimitives(plan, instruction, projection, drawOptions)
+  assert.equal(primitives.filter((primitive) => primitive.kind === 'line').length, 5)
+  const leader = primitives.find((primitive) => primitive.id === 'CENTRE-pin-leader')
+  assert.ok(leader && leader.kind === 'line')
+  if (!leader || leader.kind !== 'line') return
+
+  // W1 is west→east and references its right physical face. Material extends
+  // 400 mm to the wall's left side, so the marker leader must stop at the far
+  // physical face rather than tunnelling through the wall to the reference line.
+  const referenceY = projection.point(3000, 0).y
+  const selectedPhysicalFaceY = referenceY - projection.length(400)
+  assert.ok(leader.a.y < selectedPhysicalFaceY && Math.abs(leader.b.y - selectedPhysicalFaceY) < 1e-6)
+})
+
+test('ADE-04B unknown position becomes a quiet host possibility band with no invented centre', () => {
+  const plan = planWith(opening('HOST', { kind: 'unknown' }, { kind: 'unknown' }, {
+    sourceIds: ['ADE-04B-HOST'], authority: 'provisional', precision: 'unknown'
+  }))
+  const instruction = compileOpeningUncertaintyInstruction(plan, 'HOST')
+  assert.equal(instruction.kind, 'host-obligation')
+  const primitives = openingUncertaintyToDrawingPrimitives(plan, instruction, projection, drawOptions)
+  assert.equal(primitives.length, 1)
+  const band = primitives[0]
+  assert.equal(band.kind, 'rect')
+  if (band.kind !== 'rect') return
+  assert.equal(band.fill, 'faint')
+  assert.equal(band.metadata?.state, 'host-obligation')
+  assert.equal(band.metadata?.notation, 'possibility-band')
+  assert.equal(band.height, 0.9)
+  assert.equal(primitives.filter((primitive) => primitive.kind === 'line').length, 0)
+})
+
+test('ADE-04B host possibility band keeps physical thickness while host span scales', () => {
+  const plan = planWith(opening('HOST-SCALE', { kind: 'unknown' }, { kind: 'unknown' }, {
+    sourceIds: ['ADE-04B-HOST-SCALE'], authority: 'provisional', precision: 'unknown'
+  }))
+  const instruction = compileOpeningUncertaintyInstruction(plan, 'HOST-SCALE')
+  const at100 = openingUncertaintyToDrawingPrimitives(plan, instruction, projectionFor(100), drawOptions)[0]
+  const at50 = openingUncertaintyToDrawingPrimitives(plan, instruction, projectionFor(50), drawOptions)[0]
+  assert.ok(at100.kind === 'rect' && at50.kind === 'rect')
+  if (at100.kind !== 'rect' || at50.kind !== 'rect') return
+  assert.equal(at100.height, at50.height)
+  assert.ok(Math.abs(at50.width / at100.width - 2) < 0.12, 'host span should approximately double after fixed-paper endpoint trim')
+})
+
+test('ADE-04B refuses ranged position until a dedicated notation is earned', () => {
+  const plan = planWith(opening('POS-RANGE', { kind: 'range', min: mm(2500), max: mm(3500) }, { kind: 'exact', value: mm(1200) }, provisional))
+  assert.throws(() => compileOpeningUncertaintyInstruction(plan, 'POS-RANGE'), /ranged-position notation is not yet an earned capability/)
+})
+
+test('plan reflection keeps uncertainty leaders on the selected physical face in all four wall directions', () => {
+  for (const [x, y, faceX, faceY] of [[6000, 0, 3000, 400], [0, 6000, -400, 3000], [-6000, 0, -3000, -400], [0, -6000, 400, -3000]]) {
+    const plan = planWith(opening('REFLECTION', { kind: 'exact', value: mm(3000) }, { kind: 'unknown' }))
+    plan.nodes = [plan.nodes[0], { ...plan.nodes[1], point: { x: mm(x), y: mm(y) } }]
+    for (const scale of [100, 50] as const) {
+      const projection = projectionFor(scale)
+      const leader = openingUncertaintyToDrawingPrimitives(plan, compileOpeningUncertaintyInstruction(plan, 'REFLECTION'), projection, drawOptions).find((p) => p.id === 'REFLECTION-pin-leader')!
+      assert.equal(leader.kind, 'line')
+      if (leader.kind !== 'line') continue
+      const expected = projection.point(faceX, faceY)
+      assert.ok(Math.hypot(leader.b.x - expected.x, leader.b.y - expected.y) < 1e-8)
+    }
+  }
+})

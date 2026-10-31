@@ -1,0 +1,57 @@
+{
+  "schema": "dpl.controlTitleBoundaryPreflight.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "site": "41 Lennard Road, Bromley, BR2 8LN",
+  "planningRef": "26/02618/FPA",
+  "retrievedAt": "2026-10-25",
+  "addressBinding": {
+    "planningStatementCoordinateBng": [542903, 166217],
+    "uprn": "100020404537",
+    "uprnPointWgs84": [0.051871, 51.377028],
+    "uprnPointBngApprox": [542903.0123, 166217.0333],
+    "planningToUprnPointDistanceMetres": 0.0356,
+    "state": "EXACT_COORDINATE_CONVERGENCE",
+    "note": "The planning statement names 41 Lennard Road and gives BNG 542903/166217. The public Open UPRN point for UPRN 100020404537 transforms to within about 4 cm of that coordinate."
+  },
+  "source": {
+    "dataset": "title-boundary",
+    "provider": "HM Land Registry via Planning Data",
+    "uprnQuery": "https://www.planning.data.gov.uk/entity.json?q=100020404537&dataset=title-boundary&limit=20",
+    "entity": 12057071807,
+    "reference": "57071807",
+    "quality": "authoritative",
+    "sourceJsonSha256": "faa4f7bf323166e92345db7e57208b70c197379388e3c9b3e6f1f457d6985450"
+  },
+  "geometry": {
+    "sourceCrs": "EPSG:4326",
+    "analysisCrs": "EPSG:27700",
+    "wkt": "MULTIPOLYGON (((0.052538 51.377265, 0.052473 51.377319, 0.052342 51.377267, 0.052269 51.377235, 0.051941 51.377083, 0.051889 51.377056, 0.051696 51.376963, 0.051797 51.376897, 0.052125 51.377017, 0.052236 51.377069, 0.052376 51.377151, 0.052375 51.377151, 0.052402 51.377169, 0.052444 51.37719, 0.052538 51.377265)))",
+    "areaSquareMetres": 783.6969066670147,
+    "minimumRotatedEnvelopeWidthMetres": 13.523492443872046,
+    "minimumRotatedEnvelopeLengthMetres": 67.10176553055364
+  },
+  "referenceHousePreflight": {
+    "referenceHouseDimensionsMetres": [12.0, 10.8],
+    "minimumProjectionWidthMetres": 10.8,
+    "containingWidthMarginMetres": 2.723492443872045,
+    "constructivePlacement": {
+      "method": "Rigid 12.0 m x 10.8 m rectangle aligned to the parcel long-axis frame; deterministic grid search used only to produce a witness, not to optimise architecture.",
+      "orientationDegreesFromBngEasting": 38.1225066,
+      "rectangleBng": [
+        [542928.1367560227, 166223.902472961],
+        [542921.4694305968, 166232.39875283313],
+        [542912.0291196278, 166224.99061347108],
+        [542918.6964450537, 166216.49433359894],
+        [542928.1367560227, 166223.902472961]
+      ],
+      "minimumBoundaryClearanceMetres": 1.2320137983986683,
+      "containedByScreeningPolygon": true
+    },
+    "result": "CONTROLLED_SCREENING_GEOMETRY_DOES_NOT_DISPROVE_PLACEMENT"
+  },
+  "authorityLimitations": [
+    "The HM Land Registry INSPIRE/title-boundary polygon is authoritative index geometry showing indicative position and extent, not a determined legal boundary.",
+    "A positive screening preflight does not establish legal title, planning acceptability, access rights, levels, or full DPL R1-R6 readiness.",
+    "The constructive rectangle is a geometry witness only; it is not yet the authored DPL deployment candidate."
+  ]
+}

@@ -7,17 +7,13 @@
 
 Architecture often ends its story at handover. Drawings describe the building to be made; photographs catch the brief period when it is complete, clean and apparently still. Technical information gathers around the same event. Practical completion becomes the end point.
 
-For a long-lived house, it is the beginning.
-
-From then on the building moves, weathers and wears. Components fail or become obsolete. Bathrooms and kitchens are renewed. New cables and equipment are added. Windows fail while the masonry around them remains sound. Pipes leak, drains block and rooms acquire uses absent from the original brief. This is the ordinary life of a building.
+For a long-lived house, it is the beginning. From then on the building moves, weathers and wears. Components fail or become obsolete. Bathrooms and kitchens are renewed. New cables and equipment are added. Windows fail while the masonry around them remains sound. Pipes leak, drains block and rooms acquire uses absent from the original brief. This is the ordinary life of a building.
 
 Durable materials do not necessarily produce a building that is durable in use. A masonry wall may remain sound for generations while being repeatedly chased for electrical work. A bathroom may be demolished to reach a failed valve. A window may last decades yet be so absorbed into plaster and surrounding finishes that replacing it destroys work that was otherwise sound.
 
 The useful measure is not only how long a component lasts, but how much longer-lived building must be consumed when it moves, fails or is renewed.
 
-This book starts from a simple proposition:
-
-> **The permanent architecture should remain stable because change has been given deliberate places to occur.**
+The permanent architecture should remain stable because change has been given deliberate places to occur.
 
 That shifts the design problem. Maintenance, replacement, access and movement are not matters to resolve after the architecture is finished. They are part of it from the beginning.
 
@@ -47,15 +43,13 @@ The intended result should be quieter than the reasoning that produces it. Rooms
 
 # 2. Buildings change at different speeds
 
-A building does not possess one useful life.
+A building does not possess one useful life. Structure, envelope, windows, services, controls, finishes and appliances exist on different timescales. The precise number of years matters less here than the ordering. A pump and a masonry wall should not be treated as though they belong to the same temporal layer.
 
-Structure, envelope, windows, services, controls, finishes and appliances exist on different timescales. The precise number of years matters less here than the ordering. A pump and a masonry wall should not be treated as though they belong to the same temporal layer.
-
-This observation has a substantial architectural lineage. N. John Habraken's distinction between long-lived **support** and changeable **infill** helped establish Open Building. Frank Duffy described buildings as assemblies of elements changing at different rates; Stewart Brand popularised a related set of “shearing layers”. Alex Gordon's “long life, loose fit, low energy” likewise joined durability to accommodation of change. Contemporary adaptable-building work often describes **layer independence** or **lifetime compatibility**: shorter-cycle components should be capable of change without forcing unnecessary change in slower ones.[5][6][7]
+This observation has a substantial architectural lineage. N. John Habraken's distinction between long-lived **support** and changeable **infill** helped establish Open Building; it is a related lineage of control and physical separation rather than the source of the later rate-of-change model. Frank Duffy described buildings as assemblies of elements changing at different rates. Stewart Brand developed Duffy's schema into six “shearing layers” and, drawing also on slow/fast systems thinking, made the interaction problem explicit: differently paced layers need **slippage**, because embedding faster systems in slower ones can make later change destructive. Alex Gordon's “long life, loose fit, low energy” likewise joined durability to accommodation of change. Contemporary adaptable-building work often describes **layer independence** or **lifetime compatibility**: shorter-cycle components should be capable of change without forcing unnecessary change in slower ones.[5][6][7]
 
 ISO 20887 now provides guidance for design for disassembly and adaptability. Circular-design guidance derived from it similarly emphasises accessible and reversible connections, independence of layers, simplicity and standardisation. These ideas belong to an established body of whole-life design knowledge.[8]
 
-But a diagram of layers does not by itself produce an architecture. The important condition is **coupling**.
+Coupling is therefore not a conceptual step beyond Brand. The move made here is narrower: turn that inherited warning into a domestic intervention test—what sound, slower-lived construction must actually be crossed, damaged or reinstated when the faster thing changes?
 
 Systems theory offers a useful parallel. Herbert Simon described **nearly decomposable** systems whose parts remain connected while most short-run interactions stay within subsystems rather than propagating through the whole.[27] A house does not need every layer to be independent. It benefits when ordinary change can remain local.
 
@@ -63,9 +57,7 @@ If two components have very different expected lives but the shorter-lived one c
 
 A cable chased into masonry makes the mechanism obvious. The wall may remain sound for generations, yet changing the route means cutting, filling and refinishing it. The same relationship appears when a concealed cistern sits behind bonded stone or a pump can be serviced in place but cannot be withdrawn without dismantling unrelated construction.
 
-This gives a useful design test:
-
-> **A component's lifespan matters less than the lifespan of the things that must be destroyed to replace it.**
+A component's lifespan matters less than the lifespan of the things that must be destroyed to replace it.
 
 The principle does not require everything to be exposed or individually demountable. A component expected to last as long as the assembly around it may reasonably be enclosed. Structural crossings may be unavoidable. Bonded finishes may sometimes be the best technical answer. The dependency should be deliberate rather than accidental.
 
@@ -95,9 +87,7 @@ A detail may perform well at one and poorly at another. Design-for-disassembly l
 
 # 3. Selective permanence
 
-The existence of change does not imply infinite flexibility.
-
-Ecology offers a useful distinction. C. S. Holling separated resilience—the capacity to persist through disturbance—from stability understood as remaining near one equilibrium.[28] The architectural analogy is limited but useful: a house can preserve its identity without requiring every technical arrangement to remain fixed.
+The existence of change does not imply infinite flexibility. Ecology offers a useful distinction. C. S. Holling separated resilience—the capacity to persist through disturbance—from stability understood as remaining near one equilibrium.[28] The architectural analogy is limited but useful: a house can preserve its identity without requiring every technical arrangement to remain fixed.
 
 An uncertain future can make an open neutral shell, lightweight partitions and maximum reconfigurability look like the obvious answer. In some building types it is. A house can also achieve functional longevity through durable architectural commitments combined with capacity for change where change is useful.
 
@@ -108,6 +98,8 @@ The useful distinction is **where permanence is valuable and where change is pro
 Permanence is a design commitment, not an automatic virtue. Making something permanent makes it harder to alter and more likely to force future work around it. The question is not only whether an element can be made durable, but whether it benefits from permanence and whether the coupling it creates is justified.
 
 The principal spatial order may deliberately endure: structure, stairs, major rooms, important openings, axes and facade composition. Faster-changing layers—services, controls, fit-out, appliances, selected secondary partitions and interfaces—can have more freedom within that order. The result need not be a neutral container. It can remain recognisably itself while its technical life changes around it.
+
+That middle position has earlier architectural antecedents. Aldo van Eyck warned against false neutrality in the name of flexibility; Herman Hertzberger's account of **polyvalence** argued for forms definite enough to retain identity while accommodating different uses. They are treated here as related precedents, not as a proved line of derivation. Selective permanence applies the same refusal of universal neutrality to the long-lived house.
 
 Open Building provides useful precedent. Molenvliet separated a durable support from resident-specific infill while retaining coherent architectural and urban character. NEXT21 later demonstrated more extensive residential reconfiguration through separated structural, service and infill systems.[9][10] A detached house need not imitate either project; the relevant lesson is that adaptability does not require architectural order to disappear.
 
@@ -133,11 +125,11 @@ Longevity is inadequate if the resulting house is exhausting to inhabit.
 
 A house is occupied while people are sleeping, ill, tired, working or seeking privacy. Its ordinary spaces should not depend on continuous novelty, exposure, perceptual tension or understanding a technical performance.
 
-This book uses **repose** for a simple architectural objective:
-
-> **A good home should minimise unnecessary vigilance.**
+This book uses **repose** for the architectural objective that a good home should minimise unnecessary vigilance.
 
 Repose is a doctrine term, not a clinical construct or a single experimentally measured state.
+
+The word also has architectural ancestry. In 1902 A. S. Wainwright, reporting W. H. Bidlake's teaching on domestic architecture, called the first reported principle the **Lamp of Repose**: a house should provide relief from the day's business rather than generate needless visual restlessness. That is an architectural antecedent, not a scientific foundation for the doctrine used here.
 
 It does not imply sensory poverty. Research on architectural interiors distinguishes **coherence**—the ease with which a scene can be organised and understood—from **fascination**, its informational richness and capacity to hold interest. A room can therefore be ornamented and visually rich while remaining comprehensible.[21]
 
@@ -152,8 +144,6 @@ Repose also limits the technical agenda. If every floor is removable, every wall
 Selective permanence therefore asks which changes are sufficiently probable, consequential and difficult to retrofit that they deserve to shape the original architecture. A spare conduit may be cheap and prudent; designing an entire structure for an unknown extra storey may not be. Working clearance around a pump is easy to justify; a walk-in undercroft beneath the whole house needs a stronger case.
 
 The doctrine rejects both a finished object that resists all change and a universal kit of parts in which nothing is allowed to become architecture.
-
-> **Change should be given deliberate places to occur so that architecture can afford to remain permanent elsewhere.**
 
 ---
 
@@ -219,21 +209,15 @@ It does not require four physical layers everywhere. It asks where replacement s
 
 The objective is not universal modularity. It is a deliberate boundary between what should endure and what should change.
 
-A useful shorthand is:
-
-> **Build the permanent house. Assemble the changeable house inside it.**
-
 ## Maintenance geography
 
 Accessible components do not necessarily make a maintainable building.
 
 Plant, risers, wet rooms, service voids, external utilities and replacement routes form a spatial system. Individually accessible components can still produce disruptive maintenance if technical work is scattered through principal rooms or large equipment has no credible route out.
 
-This book uses **maintenance geography** to mean:
+This book uses **maintenance geography** to mean the deliberate spatial organisation of maintenance-intensive systems, working spaces, access routes and replacement paths into a coherent topology established during design.
 
-> **the deliberate spatial organisation of maintenance-intensive systems, working spaces, access routes and replacement paths into a coherent topology established during design.**
-
-The professional concern is established. CIBSE treats maintainability as a design responsibility; CDM requires designers to consider people who will maintain, repair and clean buildings; access and maintenance strategies and plant-replacement routes already appear in sophisticated briefs. Kahn's Salk Institute provides a particularly architectural precedent, separating laboratory floors from utility floors so services can change without continually invading working space.[12][13]
+The professional concern is established. CIBSE treats maintainability as a design responsibility; CDM requires designers to consider people who will maintain, repair and clean buildings; access and maintenance strategies and plant-replacement routes already appear in sophisticated briefs. Louis Kahn had already made technical services an architectural ordering problem; at the Salk Institute, utility floors separate laboratory occupation from service distribution so systems can change without continually invading working space.[12][13]
 
 The phrase also has adjacent academic precedent. Ignaz Strebel's 2011 paper *The living building: towards a geography of maintenance work* examined the spatial practice of maintenance workers. The present use is prospective: maintenance geography is something the architect composes before the work exists.
 
@@ -281,14 +265,14 @@ This hierarchy makes disagreement useful. An architect can reject a pattern with
 [3] CIBSE, *Guide M1: Guidance for designers* (2023). https://cibse.org/knowledge-research/knowledge-portal/guide-m1-guidance-for-designers-2023/  
 [4] RIBA, *Plan of Work 2020*. https://www.architecture.com/knowledge-and-resources/resources-landing-page/riba-plan-of-work  
 [5] N. John Habraken / contemporary Open Building literature; Stephen Kendall & N. John Habraken, *Open Building for Architects* (2024).  
-[6] Frank Duffy / Stewart Brand, building-layer models.  
+[6] Frank Duffy, Colin Cave & John Worthington, *Planning Office Space* (Architectural Press, 1976); Stewart Brand, *How Buildings Learn: What Happens After They’re Built* (Viking, 1994).  
 [7] Alex Gordon, “long life, loose fit, low energy”; see RIBA Journal discussion of the formulation.  
 [8] ISO 20887:2020, *Design for disassembly and adaptability*. https://www.iso.org/standard/69370.html  
 [9] Council on Open Building, Molenvliet. https://www.councilonopenbuilding.org/projects/molenvliet  
 [10] Council on Open Building, NEXT21. https://www.councilonopenbuilding.org/projects/next21  
 [11] Historic England, *Installing New Services*. https://historicengland.org.uk/advice/technical-advice/building-services-engineering/installing-new-services/  
 [12] HSE, CDM 2015 designer guidance. https://www.hse.gov.uk/construction/cdm/2015/designers.htm  
-[13] Salk Institute, architecture and interstitial service-space material. https://www.salk.edu/about/about-salk-architecture/  
+[13] Louis I. Kahn, “Architecture Is the Thoughtful Making of Spaces”, *Perspecta* 4 (1957), 2–3, https://www.jstor.org/stable/1566850; Salk Institute, architecture and interstitial service-space material, https://www.salk.edu/about/about-salk-architecture/  
 [14] Norwegian Directorate for Building Quality, TEK17 §15-5 and guidance on internal water installations. https://www.dibk.no/regelverk/byggteknisk-forskrift-tek17/15/ii/15-5  
 [15] CIBSE TM59, *Overheating risk in dwellings — a design stage methodology* (2026). https://cibse.org/knowledge-research/knowledge-portal/tm59-overheating-risk-in-dwellings-a-design-stage-methodology-2026/  
 [16] Building Safety Regulator, *Keeping information about a higher-risk building: the golden thread*. https://www.gov.uk/guidance/keeping-information-about-a-higher-risk-building-the-golden-thread  

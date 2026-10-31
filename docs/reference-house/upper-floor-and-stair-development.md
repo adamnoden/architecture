@@ -1,5 +1,12 @@
 # Reference House — RH-03 Stair, Upper Floor and Courtyard Circulation
 
+**Later coordination revision:** the ordinary three-sided stair does not fit
+the square reservation claimed in this earlier record. The [current provisional
+coordination proposal](ground-plan-resolution.md) uses a two-flight return
+stair across a widened front hall, with its room-area and circulation costs
+stated explicitly. This page retains the earlier three-flight design history;
+it must not be used as current evidence for the square fit claim.
+
 **Status:** RH-03 design gate record — stair going corrected by HFI-08B  
 **Date:** 2026-10-12; HFI-08B correction 2026-10-19  
 **Question:** can the stair, upper-floor rooms, bathrooms and courtyard circulation form one coherent domestic composition without damaging the controlled ground floor?  

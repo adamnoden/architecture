@@ -1,14 +1,12 @@
 # Executable Architecture
 
-> **The program should compile a habitat.**
+The long-term ambition is to compile a habitat.
 
 The computational proposition within Ovid’s House is not that architecture should become software. It is that some building relationships are formal enough that they can be represented, propagated and checked before they become expensive mistakes.
 
 A conventional digital workflow often begins with geometry and analyses it downstream. House Kernel starts from a stronger semantic source: meaningful architectural entities, relationships, constraints, obligations and evidence boundaries. Metamorph Compiler derives consequences from that source and fails closed where it lacks authority.
 
-The ambition is therefore not “draw a house, then run checks”. It is:
-
-> **Author a building inside a bounded semantic system in which important consequences are part of the act of authoring.**
+The authoring ambition is a bounded semantic system in which important consequences are part of the act of authoring, rather than checks applied only after a house has been drawn.
 
 The current executable scope is deliberately much narrower than the complete concept described here. [Computational Track](README.md) records what is actually implemented and demonstrated.
 
@@ -363,7 +361,7 @@ Outside that domain, legitimate outcomes include:
 - extend the supported domain through controlled work;
 - leave the computational system.
 
-> **Unsupported is not invalid. Unsupported is also not proven.**
+Unsupported is not invalid. It is also not proven.
 
 See [Supported Domain](supported-domain.md).
 

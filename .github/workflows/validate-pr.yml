@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -27,8 +29,22 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
+      - name: Probe live self-service dispatcher
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run control:next -- --format json --limit 20
+
+      - name: Render project-control projections for validation
+        run: npm run status:update
+
       - name: Check repository health
         run: npm run check
+
+      - name: Validate project control
+        run: npx tsx scripts/validate-project-control.ts
+
+      - name: Prove project-control invariants
+        run: node --import tsx --test project/control/control.test.ts
 
       - name: Validate public nomenclature source
         run: npx tsx scripts/validate-public-nomenclature.ts --source

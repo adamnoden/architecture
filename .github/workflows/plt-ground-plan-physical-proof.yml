@@ -1,0 +1,71 @@
+name: Prove PLT ground-plan physical profiles
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/reference-house/plt03-ground-plan.ts'
+      - 'publication/specimens/plt03/**'
+      - 'publication/specimens/plt03b/**'
+      - '.github/workflows/plt-ground-plan-physical-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: plt-ground-plan-physical-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Install finished-PDF font inspector
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends poppler-utils
+
+      - name: Prepare controlled PLT-03 candidates
+        run: npx tsx publication/specimens/plt03/prepare.ts
+
+      - name: Prepare PLT-03B proof sources
+        run: npx tsx publication/specimens/plt03b/prepare.ts
+
+      - name: Build exact B5 proof
+        run: PLT03B_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt03b/vivliostyle.config.js
+
+      - name: Build exact A4 regression proof
+        run: PLT03B_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt03b/vivliostyle.config.js
+
+      - name: Build exact A2 WALL proof
+        run: PLT03B_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt03b/vivliostyle.config.js
+
+      - name: Validate scale geometry semantics and finished-PDF fonts
+        run: npx tsx publication/specimens/plt03b/validate.ts
+
+      - name: Upload PLT-03B proof packet
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: plt-03b-ground-plan-physical-proof
+          path: |
+            publication/specimens/plt03b/dist/plt03b-b5.pdf
+            publication/specimens/plt03b/dist/plt03b-a4.pdf
+            publication/specimens/plt03b/dist/plt03b-a2.pdf
+            publication/specimens/plt03b/.work/manifest.json
+            publication/specimens/plt03b/.work/validation-evidence.json
+          if-no-files-found: error
+          retention-days: 30

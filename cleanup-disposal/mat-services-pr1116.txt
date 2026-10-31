@@ -1,0 +1,4 @@
+Superseded MAT-SERVICES PR1116.
+Original head 924371be5e29c3e94dae34e50deb69ea8adcd222 preserved as ancestry.
+Reviewed content integrated unchanged by PR1125, main aa22421b5cf86b0bf893218191f82b22c36d9786.
+Disposal only; no main or architectural authority change.

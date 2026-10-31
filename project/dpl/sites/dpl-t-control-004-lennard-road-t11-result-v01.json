@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "dpl.lennardT11Result.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "candidateId": "DPL-T-CANDIDATE-004-01",
+  "assuranceProfile": "SCREENING",
+  "parentT10ResultFingerprint": "7a429b81016943fb12ba84b08df5ee18f618f85fc896253f983dd0b95bdfdaca",
+  "result": "NO_SPEND_EVIDENCE_EXHAUSTED_THREE_DEPENDENCIES_REMAIN_TWO_ACQUISITION_READY",
+  "resultFingerprint": "b24a1ee582f701c0414dbb396aeffc2320afa7e73a0c4e0535813a624b66e92b",
+  "evidenceFingerprint": "c3a40ba5e2e957b1985832058519d0b3480f9b72ed2bb06a156454f3bda2b902",
+  "activeDependencyClasses": [
+    "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+    "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY",
+    "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY"
+  ],
+  "externalAcquisitionReady": [
+    "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+    "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY"
+  ],
+  "noCostPublicRecoveryPending": [
+    "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY"
+  ],
+  "dependenciesClosedAtT11": [],
+  "publicGeometryDisposition": "SUPPLEMENTAL_CONTEXT_ONLY_FIELD_RETURN_STILL_REQUIRED",
+  "recordFingerprints": [
+    {
+      "dependencyClass": "COMPETENT_STRUCTURAL_CONCEPT_REVIEW",
+      "fingerprint": "4a86da078e2641065422f2f790c983c53a5b852b6f763e563107f504d6b317c3"
+    },
+    {
+      "dependencyClass": "EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY",
+      "fingerprint": "faaa090b4b2bb2dbc7472d73d27c158e4d5a0b10df3063be30e854a8bd6d67f5"
+    },
+    {
+      "dependencyClass": "MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY",
+      "fingerprint": "d1d4ee642f19e34b14274cd1249fc02caf3d52024ca145c3e6d16c578a0434e4"
+    }
+  ],
+  "commissioning": {
+    "acquisitionReadyEvidenceClasses": 2,
+    "commissionedEvidenceClasses": 0,
+    "externalContactMade": false,
+    "spendAuthorised": false
+  },
+  "proofBoundary": {
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "referenceHouseMutation": "NO",
+    "structuralAdequacy": "NOT_CLAIMED",
+    "statutoryPlanningDetermination": "NO",
+    "legalBoundaryDetermined": "NO",
+    "floodConclusion": "NOT_RESOLVED",
+    "dpl16": "HELD"
+  }
+}

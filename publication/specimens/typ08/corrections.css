@@ -1,0 +1,169 @@
+/* TYP-08C bounded corrections only. Do not use this sheet for general retuning. */
+
+.typ08-context-marker {
+  box-sizing: border-box;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+
+.typ08-division-string {
+  string-set: typ08-division content(text);
+}
+
+.typ08-entry-string {
+  string-set: typ08-entry content(text);
+}
+
+/* D02: generated VFM puts this class on the actual Part document body. Give
+   each Part its own page name so page-group boundaries do not depend on a root
+   break being honoured across Vivliostyle ArticleEntry boundaries. :has() is
+   already part of the publication selector grammar used by the contents rules. */
+body.typ08-part-document:has(h1[id="part-i"], h1[id^="part-i-"]) { page: typ08-part-i; }
+body.typ08-part-document:has(h1[id="part-ii"], h1[id^="part-ii-"]) { page: typ08-part-ii; }
+body.typ08-part-document:has(h1[id="part-iii"], h1[id^="part-iii-"]) { page: typ08-part-iii; }
+body.typ08-part-document:has(h1[id="part-iv"], h1[id^="part-iv-"]) { page: typ08-part-iv; }
+body.typ08-part-document:has(h1[id="part-v"], h1[id^="part-v-"]) { page: typ08-part-v; }
+
+/* The semantic marker is deliberately inert in pass one. Pass two gives only
+   planner-selected Part entries an entry-local override to break-before:right. */
+.typ08-division-context {
+  break-before: auto;
+}
+
+/* Frozen TYP-04 division typography. */
+h1[id^="part-"] {
+  break-before: auto;
+  string-set: typ08-division content(text), typ08-entry content(text);
+  box-sizing: border-box;
+  margin-top: 0;
+  padding-top: 31mm;
+  max-width: 115mm;
+  font-family: var(--typ08-serif);
+  font-size: 24pt;
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+}
+
+/* Frozen TYP-04 entry threshold. Internal entries need an explicit page break.
+   A first H1 at a Vivliostyle document boundary already starts a new publication
+   page; do not add a second break merely because the same semantic entry marker
+   supplies running context. */
+.typ08-entry-context {
+  break-before: page;
+}
+
+body > .typ08-entry-context:first-child {
+  break-before: auto;
+}
+
+.typ08-entry-context + h1 {
+  box-sizing: border-box;
+  margin-top: 0;
+  padding-top: 13mm;
+  margin-bottom: 8mm;
+  font-family: var(--typ08-serif);
+  font-size: 18pt;
+  line-height: 1.12;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+}
+
+/* D01: semantic running context. first-except suppresses the top furniture on
+   the page where a new division/entry string is established. */
+@page :left {
+  @top-left {
+    content: string(typ08-division, first-except);
+  }
+}
+
+@page :right {
+  @top-right {
+    content: string(typ08-entry, first-except);
+  }
+}
+
+/* The first composed page of each unique Part page group is the division
+   opening. Genuine parity blanks are separately covered by common.css :blank. */
+@page :nth(1 of typ08-part-i) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
+@page :nth(1 of typ08-part-ii) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
+@page :nth(1 of typ08-part-iii) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
+@page :nth(1 of typ08-part-iv) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
+@page :nth(1 of typ08-part-v) {
+  @top-left { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-right { content: none !important; }
+}
+
+/* D04: frozen TYP-04 imprint/provenance page. */
+body.publication-imprint-page {
+  page: typ08-imprint;
+  max-width: none;
+  margin: 0;
+}
+
+.publication-imprint {
+  box-sizing: border-box;
+  max-width: var(--typ08-measure);
+  margin: 0 auto;
+  padding-top: 30mm;
+}
+
+.publication-imprint h1 {
+  margin: 0 0 6mm;
+  padding: 0;
+  font-family: var(--typ08-serif);
+  font-size: 18pt;
+  line-height: 1.12;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+}
+
+.publication-imprint__meta {
+  font-family: var(--typ08-sans);
+  font-size: 8.5pt;
+  line-height: 1.45;
+}
+
+.publication-imprint__meta p {
+  margin: 0.15em 0;
+}
+
+.publication-imprint__meta code {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+@page typ08-imprint {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}

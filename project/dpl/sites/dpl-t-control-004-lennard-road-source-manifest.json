@@ -1,0 +1,229 @@
+{
+  "schema": "dpl.instrumentedRealControlSourceManifest.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "controlSiteKind": "INSTRUMENTED_REAL_CONTROL",
+  "sampleMembership": "EXCLUDED_FROM_DEPLOYMENT_ENVELOPE_SAMPLE",
+  "researchDate": "2026-10-26",
+  "site": {
+    "address": "41 Lennard Road, Bromley, BR2 8LN",
+    "planningAuthority": "London Borough of Bromley",
+    "applicationRef": "26/02618/FPA",
+    "proposal": "Demolition of existing bungalow and construction of detached two storey 4 bedroom dwellinghouse with habitable rooms in loftspace, cycle parking in rear garden, front driveway alterations and side boundary fence/gate",
+    "siteTypology": "CONVENTIONAL_STREET_FRONT_REPLACEMENT_DWELLING",
+    "currentPublicRegisterState": "VALID_AWAITING_DECISION_AS_INDEXED_2026_10_26"
+  },
+  "addressIdentity": {
+    "uprn": "100020404537",
+    "planningCoordinateBng": [542903, 166217],
+    "uprnPointBng": [542903.0123, 166217.0333],
+    "coordinateDifferenceMetres": 0.0356,
+    "state": "RESOLVED_BY_EXACT_COORDINATE_CONVERGENCE"
+  },
+  "titleBoundary": {
+    "provider": "HM Land Registry via Planning Data",
+    "entity": 12057071807,
+    "reference": "57071807",
+    "quality": "authoritative",
+    "sourceCrs": "EPSG:4326",
+    "analysisCrs": "EPSG:27700",
+    "sourceJsonSha256": "faa4f7bf323166e92345db7e57208b70c197379388e3c9b3e6f1f457d6985450",
+    "geometryRecord": "dpl-t-control-004-lennard-road-title-boundary.json",
+    "analysisGeometryRecord": "dpl-t-control-004-lennard-road-analysis-bng-v01.json",
+    "analysisSourceWktSha256": "316c7f30cc418d1dcbd1a3900b98d2aeda4c3982821df023e2a45bacc6c7b676",
+    "authorityLimitation": "Indicative registered-property index extent; not a determined legal boundary."
+  },
+  "geometryPreflight": {
+    "areaSquareMetres": 783.6969066670147,
+    "minimumRotatedEnvelopeWidthMetres": 13.523492443872046,
+    "minimumRotatedEnvelopeLengthMetres": 67.10176553055364,
+    "referenceHouseFootprintMetres": [12.0, 10.8],
+    "constructiveWitnessContained": true,
+    "constructiveWitnessMinimumBoundaryClearanceMetres": 1.2320137983986683,
+    "result": "CONTROLLED_SCREENING_GEOMETRY_DOES_NOT_DISPROVE_PLACEMENT"
+  },
+  "elevation": {
+    "provider": "Environment Agency",
+    "dataset": "LiDAR Composite Digital Terrain Model DTM 1m",
+    "coverageId": "13787b9a-26a4-4775-8523-806d13af58fc__Lidar_Composite_Elevation_DTM_1m",
+    "crs": "EPSG:27700",
+    "verticalDatum": "ODN",
+    "rasterSha256": "ee7e04c7eee8f4391bc64cd57485439722e15687ffaad49b4a02804957fd1db9",
+    "parcelMinMetresODN": 70.19999694824219,
+    "parcelMaxMetresODN": 71.0999984741211,
+    "parcelMeanMetresODN": 70.5288314819336,
+    "parcelTerrainRangeMetres": 0.9000015258789062,
+    "record": "dpl-t-control-004-lennard-road-elevation.json",
+    "authorityLimitation": "SCREENING DTM; not a measured private topographic survey."
+  },
+  "streetAccess": {
+    "streetSide": "SOUTH_WEST_FRONT",
+    "planningEvidence": [
+      "Exact-site submitted planning statement identifies front/south-west adjacency to Lennard Road and records dropped-kerb/front-garden access.",
+      "Current 26/02618/FPA proposal includes front driveway alterations."
+    ],
+    "frontageScreeningSegmentBng": {
+      "start": [542891.0360423778, 166209.4646066198],
+      "end": [542898.2701962102, 166202.3222028868],
+      "lengthMetres": 10.165968362933082
+    },
+    "record": "dpl-t-control-004-lennard-road-street-access.json",
+    "authorityLimitation": "Physical SCREENING relationship only; legal highway extent/adoption and private access rights remain unresolved."
+  },
+  "readiness": {
+    "R1_CONTROLLED_SPATIAL_IDENTITY": "SATISFIED_FOR_SCREENING_TITLE_EXTENT",
+    "R2_FOOTPRINT_TEST_GEOMETRY": "SATISFIED_POSITIVE_CONSTRUCTIVE_PREFLIGHT",
+    "R3_REAL_ORIENTATION_FRAME": "SATISFIED_EPSG4326_SOURCE_WITH_BNG_ANALYSIS",
+    "R4_DATUM_LEVEL_EVIDENCE": "SATISFIED_SCREENING_DATUM_TOPOGRAPHY_EA_DTM",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "SATISFIED_SCREENING_PHYSICAL_STREET_ACCESS_RELATIONSHIP",
+    "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_AT_PARCEL_ADDRESS_PLANNING_IDENTITY_LEVEL"
+  },
+  "packetResult": "REAL_CONTROL_ACCELERATION_FRONTIER_DISPOSED",
+  "candidateAuthoringState": "AUTHORED_DPL_T3_VERIFIED_DPL_T4",
+  "candidate": {
+    "id": "DPL-T-CANDIDATE-004-01",
+    "revision": "0.1",
+    "record": "dpl-t-control-004-lennard-road-candidate-v01.json",
+    "decisionRecord": "../dpl-t3-lennard-authored-candidate.md",
+    "result": "VERIFIED_BOUNDED_CANDIDATE_READY_FOR_NEXT_DPL_GATE"
+  },
+  "verification": {
+    "packet": "DPL-T4",
+    "decisionRecord": "../dpl-t4-lennard-candidate-verification.md",
+    "resultRecord": "dpl-t-control-004-lennard-road-verification-v01.json",
+    "resultFingerprint": "0fafa462472370e54d5e1e3aba40e88cb594e8aafb877e0c687af0e5c5fc96dc",
+    "screeningContainment": true,
+    "minimumBoundaryClearanceMetres": 0.640023844673485,
+    "boundedConformance": {
+      "RH-I02": "CONFORMS",
+      "RH-PROT-01": "CONFORMS",
+      "RH-PROT-04": "CONFORMS",
+      "RH-PROT-06": "CONFORMS",
+      "RH-V02": "CONFORMS",
+      "RH-SI02": "OPEN",
+      "RH-SI05": "OPEN"
+    }
+  },
+  "runtime": {
+    "packet": "DPL-T5",
+    "manifestRecord": "dpl-t-control-004-lennard-road-runtime-manifest-v01.json",
+    "decisionRecord": "../dpl-t5-lennard-real-control-runtime.md",
+    "manifestFingerprint": "d45dda4d1c7faa46aaf08e773671590cf78a2bc7335079dfebec81091a56145b",
+    "sourceSetFingerprint": "a6af74fed8e78faa84bdcb3dcc28d2f245b74585f2a2024a3cec5ff729ce76d0",
+    "deploymentCaseFingerprint": "791cb427364d32208a00d02d7b42f2b472a64023e0e1b2eed58215e37fee52f3",
+    "deploymentResultFingerprint": "3f2fdfb9573a31bfdf33fc418169f49d83cad303830e4e9a56370c65e22608f9",
+    "resultFingerprint": "c858fcac7b7481f43c33e49cf7e092ca749467370d75e7903973c1887401ecdf",
+    "result": "REAL_CONTROL_RUNTIME_COMPOSED_GAPS_EXPOSED",
+    "obligations": {
+      "total": 29,
+      "unresolved": 27,
+      "unsupported": 2,
+      "fail": 0,
+      "pass": 0,
+      "externallyDischarged": 0
+    },
+    "candidateConformance": {
+      "conforms": 5,
+      "open": 20,
+      "nonConforming": 0,
+      "requiresReferenceHouseRevision": 0
+    },
+    "realClaimCoverage": {
+      "claims": 17,
+      "mappedClaims": 17,
+      "coverageFamilies": 18,
+      "rawUnresolvedInputs": 45
+    }
+  },
+  "runtimeReplay": {
+    "packet": "DPL-T6_PARENT_RECONCILIATION",
+    "decisionRecord": "../dpl-t5-merge-state-replay.md",
+    "manifestFingerprint": "7541bf23840f81af9089e7ce5fadbe62456ed9b51f0c9e2d1e601db9ee25bced",
+    "sourceSetFingerprint": "d3e08dfc8d411ff54dbd4d462878540a70c3b24bdd2729fcd35210df3d8242c9",
+    "deploymentCaseFingerprint": "e10a8fe8cc458a39254e3c8b82b0d64216b13fd74b69a87b9a945b06ae6aa475",
+    "deploymentResultFingerprint": "2557f147639ae1eebd34fd4ca8d01893996b634047c98be4ca206798bf971984",
+    "resultFingerprint": "bf04feb48795c0f5fddda5d9ddbe944428f06a52fd2afebc857a3b1bde1cf009",
+    "evidenceChanged": false,
+    "candidateChanged": false,
+    "referenceHouseMutation": false
+  },
+  "screeningAggregation": {
+    "packet": "DPL-T6",
+    "decisionRecord": "../dpl-t6-lennard-screening-aggregation.md",
+    "result": "UNRESOLVED_AT_SCREENING_GENUINE_FRONTIER_CLASSIFIED",
+    "resultFingerprint": "c59073cc2c6b073c2905a92b42b36b27f287e32e84d86d51f92cdd4d52ba3b45",
+    "readinessIdentityFingerprint": "8329522c604de85912b35aab4a3958f270bd7b246395ed0a534494f3b6d33853",
+    "architecturalReviewLedgerFingerprint": "d320507d8bf7d6a6606e502a49515bb1a071c36ed8ed248f0d4fb022d4e1365c",
+    "rawUnresolvedInputs": 45,
+    "postReviewBlockers": 25,
+    "blockerCountsByOwner": {
+      "REFERENCE_HOUSE": 2,
+      "ENGLAND": 1,
+      "PLANNING": 12,
+      "NON_PLANNING": 10
+    },
+    "blockerCountsByState": {
+      "SUBSTANTIVE_UNRESOLVED": 10,
+      "DUE_CLASSIFICATION_UNRESOLVED": 15
+    },
+    "architecturalReview": {
+      "reviewed": 16,
+      "passed": 16,
+      "pending": 0
+    },
+    "referenceHouseDueNow": ["RH-PROT-08", "RH-PROT-14"],
+    "referenceHouseFutureDueIncludes": ["RH-SI02", "RH-SI05"],
+    "siteEvidenceCommissioned": false,
+    "compatibilityConclusion": "NOT_ADMITTED",
+    "incompatibilityConclusion": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED"
+  },
+  "accelerationDisposition": {
+    "packet": "DPL-T7",
+    "decisionRecord": "../dpl-t7-lennard-acceleration-disposition.md",
+    "publicEvidenceRecord": "dpl-t-control-004-lennard-road-t7-public-screening-v01.json",
+    "result": "ACCELERATION_FRONTIER_DISPOSED_NO_NEW_DUE_NOW_EVIDENCE",
+    "resultFingerprint": "f326bf64e599b08099edd21160e8e6a7af79477fd76a1f72b3b445e587f3c88c",
+    "publicEvidenceFingerprint": "091dccbc6b5da1e4a7888a96aa605c1b91c28d27dbd64d26506094282166163e",
+    "planningCoverageFingerprint": "d740bc9ddde53055e68d9cae407b306c92d4ed8c5004a2a5e525a6f1b87b90fc",
+    "nonPlanningCoverageFingerprint": "0d855806e818b4ddfe35e9a38b44278f6d041a7feeee795998b9dc5d0df8c615",
+    "accelerationInputCount": 15,
+    "noPositiveTriggerFactAdmitted": 15,
+    "futureDueOrDownstream": 12,
+    "triggerNotActivatedAtScreening": 3,
+    "activatedDueNowExternalEvidenceSurvives": 0,
+    "unresolvedTriggerAuthority": 0,
+    "survivingAccelerationDueNowIds": [],
+    "remainingSubstantiveBlockers": 10,
+    "remainingBlockerIds": [
+      "REFERENCE_HOUSE:RH-PROT-08",
+      "REFERENCE_HOUSE:RH-PROT-14",
+      "ENGLAND:ENG-COV-SOURCE-APPLICABILITY",
+      "PLANNING:DPL10-COV-EMERGING-POLICY-MATERIAL-WEIGHT",
+      "PLANNING:DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY",
+      "PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY",
+      "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY",
+      "NON_PLANNING:DPL11-COV-ACCESS-STATUS",
+      "NON_PLANNING:DPL11-COV-PHYSICAL-FLOOD-WATER",
+      "NON_PLANNING:DPL11-COV-SITE-CONTROL"
+    ],
+    "siteEvidenceCommissioned": false,
+    "applicantProposalFactsTransferred": false,
+    "unknownTreatedAsTrigger": false,
+    "compatibilityConclusion": "NOT_ADMITTED",
+    "incompatibilityConclusion": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED"
+  },
+  "nextPacket": "DPL-T8 Lennard substantive SCREENING blocker disposition and minimum evidence packet",
+  "restraints": {
+    "referenceHouseMutation": "PROHIBITED",
+    "compatibilityConclusion": "NOT_ADMITTED",
+    "incompatibilityConclusion": "NOT_ADMITTED",
+    "routeSearch": "NOT_IMPLEMENTED",
+    "legalTitleBoundary": "UNRESOLVED",
+    "privateAccessRights": "UNRESOLVED",
+    "highwayAdoptionExtent": "UNRESOLVED",
+    "measuredTopographicSurvey": "NOT_ACQUIRED",
+    "siteEvidenceCommissionedByT7": "NO",
+    "dpl16": "HELD"
+  }
+}

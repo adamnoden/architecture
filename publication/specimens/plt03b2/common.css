@@ -1,0 +1,9 @@
+html, body { margin: 0; padding: 0; background: white; color: black; }
+* { box-sizing: border-box; }
+section { position: relative; break-after: page; }
+section:last-child { break-after: auto; }
+svg { display: block; max-width: none; max-height: none; transform: none; }
+@page {
+  @top-left { content: none; } @top-right { content: none; }
+  @bottom-left { content: none; } @bottom-right { content: none; }
+}

@@ -19,13 +19,24 @@ When working here:
 
 **Find the owning error, not the nearest editable symptom.**
 
+### Standing delegation and end-to-end agency
+
+The owner delegates the controls for authorised project work. Interpret requests by the intended outcome and carry the work through the routine steps needed to achieve it. Make reasonable implementation decisions, record material assumptions, and continue until the outcome is verified or a genuine blocker prevents further progress.
+
+Within that scope, this includes implementation, appropriate validation, PR creation, safe merge after the applicable checks, issue/status reconciliation and verified cleanup. Do not turn those ordinary steps into separate permission requests. When a PR is a cleanup mechanism, opening it is an intermediate step: merge it into the intended disposal branch and verify automatic head deletion. Do not hand the final routine step back to the owner merely because the request named the mechanism rather than spelling out every action.
+
+If one tool lacks a capability, pursue an available safe workaround before declaring the owner must do it. Preserve the repository's authority, merge-safety and provenance rules throughout. Delegated execution never permits invented evidence, unearned architectural claims, destruction of active work or a new external commitment outside the authorised goal.
+
+Ask only when a material ambiguity cannot reasonably be resolved from project context, an action exceeds the delegated scope, or a real blocker remains after available alternatives. Complete independent authorised work first and state the exact blocker rather than stopping at a proposal or partial handoff.
+
 ## 2. Canonical anchors
 
 Follow changing facts at their source:
 
 - `README.md` — project proposition and conceptual structure;
 - `docs/README.md` — documentation ownership and information architecture;
-- `STATUS.md` — present project-wide state and maturity judgements;
+- `STATUS.md` — generated durable structural execution state and maturity projection;
+- `project/control/README.md` — PCO/ACO execution, dispatcher and live-claim mechanics;
 - `project/authority.ts` — machine-readable claim ceiling;
 - `docs/editorial/editorial-doctrine.md` — public-facing editorial standard;
 - `docs/computational/README.md` and `compiler/README.md` — computational role and proof boundaries;
@@ -33,7 +44,7 @@ Follow changing facts at their source:
 
 For a particular workstream, also read its latest applicable gate/result and its owning README or programme control.
 
-An older plan saying “next: X” is historical evidence unless current authority confirms it. `STATUS.md` and later explicit results control present-state questions.
+An older plan saying “next: X” is historical evidence unless current authority confirms it. `STATUS.md` and later explicit results control durable present-state questions; live agent occupancy is queried through ACO rather than inferred from `STATUS.md`.
 
 This constitution governs behaviour, not facts. If it ever appears to conflict with an owning source about an architectural, technical or status fact, the owning source controls that fact.
 
@@ -151,6 +162,14 @@ For bounded work:
 - preserve meaningful provenance when controlled baselines move;
 - avoid force updates unless intentional, necessary and lease-protected.
 
+For substantial execution against a PCO node, structural `READY` is necessary but not sufficient. Before beginning work that could collide with another agent's durable output, query ACO and acquire the canonical node lease. Renew it when necessary, verify ownership before final merge/handoff, and release it after completion, handoff or abandonment. Read-only investigation that cannot collide with durable output does not require a lease.
+
+When an agent is idle and has **not** been explicitly assigned a packet, it must use the PCO dispatcher (`npm run control:next` / `npm run control:claim-next`) rather than choosing an arbitrary READY node. The dispatcher may auto-claim only nodes whose durable `agentDispatch` policy is `self-service`; `manual` nodes require explicit direction even when structurally READY. A direct owner assignment overrides dispatcher ranking but never bypasses the ACO lease protocol.
+
+ACO occupancy is volatile and deliberately separate from PCO lifecycle. Do not infer ownership from branch names or `STATUS.md`. If the live lease store cannot be read safely, fail closed for new collision-prone work rather than assuming the node is free. Normal agents must not force-take an active lease; exceptional takeover requires explicit owner/admin intent and a recorded reason.
+
+`runtime/claims` is retained coordination infrastructure, not a feature branch. Never merge it into `main`, and do not delete it during ordinary branch cleanup. Its per-node records are runtime state and must not be copied into source branches.
+
 Before merge, verify that the validated head is still the head being merged and that the intended base relationship still holds. If `main` has moved materially, reconcile and revalidate rather than assuming the earlier green result proves the resulting merge.
 
 Do not delete or rewrite branches, history or retained evidence merely because they look stale. Destructive cleanup requires positive evidence that no active or provenance dependency is being erased.
@@ -163,7 +182,7 @@ Substantial work must leave enough repository evidence for another competent age
 
 Transient hashes, PR numbers, active packet names and temporary blockers belong in execution/gate records or the PR, not here.
 
-Update `STATUS.md` only when project-wide present state genuinely changes. Do not use it as a running diary.
+Update `STATUS.md` only when project-wide durable state genuinely changes. Do not use it as a running diary or a volatile lease table.
 
 ## 11. Restraint and proportionality
 
@@ -181,7 +200,35 @@ Add a nested `AGENTS.md` only when a subtree has persistent local operating rule
 
 Before adding any instruction here, ask whether it belongs instead in an owning architectural, editorial, computational, status or programme document. If so, put it there.
 
-## 13. Completion test
+## 13. Workstream closeout and repository hygiene
+
+Substantive completion is not the same thing as operational closure. Before calling a substantial workstream or programme **finished, closed, clean, fully complete or equivalent**, run a dedicated cleanup pass after its final substantive merge or release step.
+
+The cleanup pass must inspect workstream-owned residue, including:
+
+- open or obsolete parent/child issues and pull requests — close, supersede or explicitly retain only what is genuinely still active;
+- branches created during the work — identify all of them and delete merged or superseded refs when positive evidence shows no active or provenance dependency requires them;
+- scratch files, marker files, temporary manifests, local/probe outputs and other execution debris;
+- calibration, diagnostic or exploratory scripts and fixtures that have no durable regression or inspection role;
+- one-shot workflows, temporary write permissions, release/tag helpers and other execution machinery whose job has ended;
+- stale operational language such as `ACTIVE`, `NEXT`, `PENDING` or `BLOCKED` in owning durable records when the present state has changed;
+- promised tags, releases, refs and handoff identities — verify that they actually exist and resolve to the recorded authority;
+- generated artefacts and evidence — distinguish disposable residue from provenance that must be retained; do not delete accepted evidence merely to make the tree look tidy;
+- repository health after cleanup — re-run the appropriate validation so cleanup does not become an unproved final mutation.
+
+Cleanup should normally make the repository **simpler**. Do not create permanent machinery whose only purpose is to clean up temporary machinery.
+
+If tooling or permissions prevent a cleanup action:
+
+- complete every cleanup action that is available first;
+- reduce the residue to the smallest exact user/admin action possible;
+- surface that residue proactively in the closeout, with the exact ref/file/action and why it is safe;
+- do not wait for the user to ask whether anything remains;
+- do not report `cleanup: clean`, `nothing left` or an equivalent claim while that residue still exists.
+
+A workstream may be substantively complete while a permission-limited hygiene action remains, but that distinction must be explicit. The final closeout report should state either **`cleanup: clean`** or **`cleanup residue:`** followed by the exact remaining items and action owner.
+
+## 14. Completion test
 
 Before calling substantial work complete, ask:
 
@@ -193,6 +240,7 @@ Before calling substantial work complete, ask:
 - Did I validate the actual representation boundary affected?
 - Did I reconcile dependent outputs and leave durable reasoning?
 - Could another agent reconstruct this decision from the repository alone?
+- Did I run the workstream closeout/hygiene pass and proactively report any residue?
 - Is the project now simpler, truer or better evidenced rather than merely more elaborate?
 
 If not, reconsider the change.

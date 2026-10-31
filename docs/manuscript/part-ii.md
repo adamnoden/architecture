@@ -96,9 +96,7 @@ The drawn junction is idealised geometry. The built junction brings together mat
 
 British tolerance guidance treats this as a design-management problem. The important question is not simply whether each component lies within its own permitted deviation, but whether the **assembly still works when credible deviations meet**. Construction-tolerance research reaches the same conclusion: variation is best identified, allocated, communicated and measured before assembly rather than corrected ad hoc at the end.
 
-The project calls this wider property **workmanship robustness**.
-
-> **A robust detail should survive ordinary competent workmanship without requiring improvised correction, while still making poor or out-of-range work visible.**
+The project calls this wider property **workmanship robustness**. A robust detail should survive ordinary competent workmanship without requiring improvised correction, while still making poor or out-of-range work visible.
 
 This is an allocation of precision, not a call for loose construction.
 
@@ -135,8 +133,6 @@ Human-factors practice makes a related point: reliability improves when tasks an
 This avoids prototype theatre: a detail that works only because its inventor already knows its intended sequence.
 
 Workmanship robustness does not eliminate craft. David Pye's distinction between *workmanship of risk* and *workmanship of certainty* is useful because the project needs both. Hand-scribed timber or fine masonry may gain value from skilled judgement. Scarce craft should not be spent merely compensating for an unresolved interface that could have located and verified itself.
-
-> **Demand precision where precision creates value. Spend workmanship where workmanship creates value.**
 
 ## The window as a model interface
 
@@ -182,9 +178,7 @@ Design drawings normally describe intended operation: water remains in pipes, ra
 
 A detail that requires every seal, joint and human action to remain perfect for decades is not robust merely because it works at completion.
 
-The useful question is:
-
-> **If the first defence fails, what happens next?**
+For each system, consider what happens if its first defence fails.
 
 ## A hierarchy of failure control
 
@@ -473,9 +467,7 @@ A permanent masonry wall and the room surface need not be the same physical laye
 
 A durable wall may carry a dry, mechanically mounted lining whose panels form the interior surface while leaving permanent structure substantially untouched. Depending on the room, the panel might use timber, gypsum-fibre, mineral board, stone-faced construction or another system compatible with fire, acoustics, moisture and impact requirements.
 
-> **Panelisation does not require a panelised appearance.**
-
-Panel boundaries can coincide with real architectural composition—skirting, dado, picture rail, panel mouldings, architraves and cornices—or use fine controlled joints. A joint between removable panels is not automatically a defect because plaster would have erased it. If it expresses the assembly cleanly, it may be more truthful than filler pretending the components are one object.
+Panelisation does not require a panelised appearance. Panel boundaries can coincide with real architectural composition—skirting, dado, picture rail, panel mouldings, architraves and cornices—or use fine controlled joints. A joint between removable panels is not automatically a defect because plaster would have erased it. If it expresses the assembly cleanly, it may be more truthful than filler pretending the components are one object.
 
 The system must still feel like a house: solid under touch, impact-resistant, acoustically credible, fire-safe, stable and capable of supporting ordinary occupation.
 
@@ -489,11 +481,7 @@ The problem arises when an irreversible wet process casually fuses layers with d
 
 This is not a plaster ban. Durable plaster associated with long-lived masonry may be rational; a repairable lime finish may outperform a complicated panel; wet-room waterproofing may need bonded continuity. Skim, filler or adhesive should simply not end the design discussion by erasing a joint.
 
-A useful directional rule is:
-
-> **Wet trades belong naturally to layers intended to become one; dry assembly belongs naturally to layers expected to separate again.**
-
-It is not absolute.
+Wet trades belong naturally to layers intended to become one; dry assembly belongs naturally to layers expected to separate again. This is not an absolute rule.
 
 ## Floor as platform
 
@@ -562,8 +550,6 @@ Wall panels, floor platforms, joinery and technical enclosures can be fabricated
 A future fabricator can reproduce a documented component—its dimensions, fixing geometry, finish and replacement sequence—without reconstructing the original wet-trade process.
 
 This remains a presumption, not a rule. Site craft is legitimate where it gives the better architectural or whole-life result.
-
-> **Build the permanent house. Assemble the changeable house inside it.**
 
 ## Adaptability without placelessness
 

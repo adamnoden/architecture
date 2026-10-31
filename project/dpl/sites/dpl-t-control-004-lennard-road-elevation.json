@@ -1,0 +1,48 @@
+{
+  "schema": "dpl.controlElevationEvidence.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "site": "41 Lennard Road, Bromley, BR2 8LN",
+  "retrievedAt": "2026-10-25",
+  "source": {
+    "provider": "Environment Agency",
+    "dataset": "LiDAR Composite Digital Terrain Model DTM 1m",
+    "wcs": "https://environment.data.gov.uk/spatialdata/lidar-composite-digital-terrain-model-dtm-1m/wcs",
+    "coverageId": "13787b9a-26a4-4775-8523-806d13af58fc__Lidar_Composite_Elevation_DTM_1m",
+    "crs": "EPSG:27700",
+    "horizontalUnits": "metres",
+    "verticalDatum": "Ordnance Datum Newlyn",
+    "resolutionMetres": 1.0,
+    "authorityClass": "FIRST_PARTY_GOVERNMENT_ELEVATION_DATA",
+    "limitations": [
+      "Composite DTM is authoritative SCREENING terrain evidence, not a measured private topographic survey.",
+      "Contributing LiDAR surveys are temporally heterogeneous within the published composite.",
+      "EA states +/-15 cm RMSE vertical accuracy for contributing individual LiDAR surveys; this is not promoted to a parcel-specific survey certificate."
+    ]
+  },
+  "extraction": {
+    "bboxBng": [542840, 166140, 542980, 166300],
+    "wcsRequest": "https://environment.data.gov.uk/spatialdata/lidar-composite-digital-terrain-model-dtm-1m/wcs?service=WCS&version=2.0.1&request=GetCoverage&coverageId=13787b9a-26a4-4775-8523-806d13af58fc__Lidar_Composite_Elevation_DTM_1m&subset=E(542840,542980)&subset=N(166140,166300)&format=image/tiff",
+    "rasterWidthCells": 140,
+    "rasterHeightCells": 160,
+    "rasterSha256": "ee7e04c7eee8f4391bc64cd57485439722e15687ffaad49b4a02804957fd1db9",
+    "fullExtractionMinMetresODN": 69.04999542236328,
+    "fullExtractionMaxMetresODN": 72.66999816894531,
+    "fullExtractionMeanMetresODN": 70.62590026855469
+  },
+  "parcelMask": {
+    "titleBoundaryReference": "57071807",
+    "parcelBoundsBng": [542891.0360423778, 166202.3222028868, 542948.6920937089, 166250.56477966328],
+    "maskMethod": "Cell-centre inclusion against exact HMLR/Planning Data title polygon transformed to EPSG:27700; all_touched=false.",
+    "includedCells": 786,
+    "minMetresODN": 70.19999694824219,
+    "maxMetresODN": 71.0999984741211,
+    "meanMetresODN": 70.5288314819336,
+    "terrainRangeMetres": 0.9000015258789062,
+    "parcelCentroidBng": [542920.6050359857, 166225.57538616494],
+    "centroidSampleMetresODN": 70.4000015258789,
+    "planningIdentityPointBng": [542903, 166217],
+    "planningIdentityPointSampleMetresODN": 70.54999542236328
+  },
+  "r4Disposition": "SATISFIED_SCREENING_DATUM_TOPOGRAPHY_EA_DTM",
+  "candidateDatumAuthority": "SUFFICIENT_TO_AUTHOR_SCREENING_DATUM_LATER_NOT_A_PRIVATE_SURVEY"
+}

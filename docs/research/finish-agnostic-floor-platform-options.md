@@ -183,7 +183,7 @@ Possible strategies include:
 - room-specific visible finish fields using a common hidden interface;
 - deliberately visible modules only where the room can carry them architecturally.
 
-> **Standardise the interface where useful; do not let the manufacturer’s grid become the architecture by accident.**
+Standardise the interface where useful; do not let the manufacturer’s grid become the architecture by accident.
 
 ## Access can be graduated
 
@@ -214,8 +214,7 @@ A removable floor can introduce:
 
 Commercial systems show that system floors can be acoustically engineered. Domestic expectations are different: a floor in a principal room should not announce itself as an access system under ordinary walking.
 
-> **A person should not infer removability from walking across the floor.**
-
+A person should not infer removability from walking across the floor.
 A credible comparison therefore needs footfall, heel impact, low-frequency response, rattle, edge noise and transmission to rooms below, alongside visual and tactile judgement.
 
 ## Heating

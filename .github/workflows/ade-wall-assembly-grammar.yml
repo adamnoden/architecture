@@ -1,0 +1,58 @@
+name: Prove ADE wall assembly grammar
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/architectural-drawing/**'
+      - 'compiler/publication-drawing-v2/**'
+      - 'publication/specimens/ade03b/**'
+      - '.github/workflows/ade-wall-assembly-grammar.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ade-wall-assembly-grammar-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Prove frozen v1 and v2 terminal drawing contracts
+        run: npm run test:publication-drawing && npm run test:drw-freeze && node --import tsx --test compiler/publication-drawing-v2/*.test.ts
+
+      - name: Prove architectural drawing semantics and layered topology
+        run: npm run test:architectural-drawing
+
+      - name: Generate exact-size cavity-wall grammar comparison
+        run: npx tsx publication/specimens/ade03b/generate.ts
+
+      - name: Validate exact scale and grammar isolation
+        run: npx tsx publication/specimens/ade03b/validate.ts
+
+      - name: Upload cavity-wall grammar specimens
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: ade-03b-cavity-wall-grammar
+          path: |
+            publication/specimens/ade03b/.work/ade03b-cavity-grammar-1-100.svg
+            publication/specimens/ade03b/.work/ade03b-cavity-grammar-1-50.svg
+            publication/specimens/ade03b/.work/manifest.json
+          if-no-files-found: error
+          retention-days: 30

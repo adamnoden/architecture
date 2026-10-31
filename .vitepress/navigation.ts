@@ -34,9 +34,10 @@ const manuscriptSidebar: DefaultTheme.SidebarItem[] = [
     section('Part II — Architecture of the Platform', '/docs/manuscript/part-ii', [
       page('Maintenance Geography — The Exterior', '/docs/manuscript/maintenance-geography-external')
     ]),
-    page('Part III — Pattern Language', '/docs/patterns/'),
-    page('Part IV — Reference House', '/docs/manuscript/part-iv'),
-    page('Part V — Making and Testing the Platform', '/docs/manuscript/part-v'),
+    page('Part III — Patterns and Generative Sequences', '/docs/patterns/'),
+    page('Part IV — The Reference House: Design Proposition', '/docs/manuscript/part-iv'),
+    page('Part V — Making and Proving the Platform', '/docs/manuscript/part-v'),
+    page('Part VI — The House', '/docs/manuscript/part-vi'),
     group('Back matter', [
       page('Evidence and precedent notes', '/docs/manuscript/evidence-and-precedent-notes'),
       page('Legacy doctrine register crosswalk', '/docs/manuscript/doctrine-register-crosswalk'),
@@ -197,6 +198,9 @@ const referenceHouseSidebar: DefaultTheme.SidebarItem[] = [
     page('Morphology options', '/docs/reference-house/morphology-options'),
     page('Ground-floor development', '/docs/reference-house/ground-floor-development'),
     page('Upper floor & stair development', '/docs/reference-house/upper-floor-and-stair-development'),
+    page('Ground-plan coordination revision', '/docs/reference-house/ground-plan-resolution'),
+    page('First-floor plan resolution', '/docs/reference-house/first-floor-plan-resolution'),
+    page('Georgian house re-plan', '/docs/reference-house/georgian-replan'),
     page('Service topology RH-06', '/docs/reference-house/service-topology-rh06'),
     page('Service crossing register RH-06', '/docs/reference-house/service-crossing-register-rh06'),
     page('Service topology RH-07 MVHR addendum', '/docs/reference-house/service-topology-rh07-mvhr-addendum'),
@@ -298,6 +302,7 @@ const computationalSidebar: DefaultTheme.SidebarItem[] = [
   ], false),
   group('Core model', [
     page('Executable architecture', '/docs/computational/executable-architecture'),
+    page('Deployment under assumptions', '/docs/computational/deployment-exploration'),
     page('Formal architectural model', '/docs/computational/formal-architectural-model'),
     page('Validity & obligations', '/docs/computational/validity-and-obligations'),
     page('Evidence & provenance', '/docs/computational/evidence-and-provenance'),
@@ -446,6 +451,9 @@ const editorialSidebar: DefaultTheme.SidebarItem[] = [
   group('Editorial', [
     page('Editorial overview', '/docs/editorial/'),
     page('Editorial doctrine', '/docs/editorial/editorial-doctrine'),
+    page('EDA programme', '/docs/editorial/eda-programme'),
+    page('EDA-00 doctrine audit', '/docs/editorial/eda-00-doctrine-audit'),
+    page('EDA-01 corpus register', '/docs/editorial/eda-01-corpus-register'),
     page('Editorial overhaul plan — completed provenance', '/docs/editorial/editorial-overhaul-plan')
   ], false)
 ]

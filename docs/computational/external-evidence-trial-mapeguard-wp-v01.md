@@ -84,10 +84,6 @@ The same package does **not** establish:
 
 Those remain separate obligations and evidence questions.
 
-The central rule is:
-
-> **External evidence becomes more trustworthy when its authority is narrowed to what it actually supports.**
-
 ## Evidence object
 
 A machine-independent representation might record:
@@ -163,8 +159,6 @@ A legitimate conclusion is:
 **manufacturer system evidence is potentially applicable subject to the exact cited technical documents, detail geometry and installation conditions.**
 
 Still unresolved are floor falls, structural openings, the exact drain, physical installation and any project-specific access or compliance obligations.
-
-That separation is the useful result.
 
 ## Selective invalidation examples
 
@@ -278,11 +272,7 @@ The Mapeguard case shows that a practical evidence architecture can:
 - preserve historical evidence revisions;
 - refuse to inflate a manufacturer system specification into whole-building proof.
 
-It also reinforces one important modelling principle:
-
-> **Evidence dependencies are relationships, not merely document attachments on objects.**
-
-A PDF stored against “Bathroom 01” is not enough.
+Evidence dependencies are relationships, not merely document attachments on objects. A PDF stored against “Bathroom 01” is not enough.
 
 ## Source anchors
 

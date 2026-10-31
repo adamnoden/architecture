@@ -466,7 +466,7 @@ Danson is already strong enough to support:
 - plan/elevation coupling semantics;
 - structural observations.
 
-measurement/coupling analysis still require direct drawing IDs and systematic measurements before any grammar rule is promoted.
+Measurement and coupling analysis still require direct drawing IDs and systematic measurements before any grammar rule is promoted.
 
 ## Source anchors
 

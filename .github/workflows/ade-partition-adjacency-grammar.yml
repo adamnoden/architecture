@@ -1,0 +1,48 @@
+name: Prove ADE partition datum and adjacency grammar
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/architectural-drawing/**'
+      - 'publication/specimens/ade05b/**'
+      - '.github/workflows/ade-partition-adjacency-grammar.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ade-partition-adjacency-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Prove ADE semantic contracts
+        run: npm run test:architectural-drawing
+      - name: Generate exact-size candidate atlas
+        run: npx tsx publication/specimens/ade05b/generate.ts
+      - name: Validate candidate semantics and scale
+        run: npx tsx publication/specimens/ade05b/validate.ts
+      - name: Upload candidate atlas
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: ade-05b-partition-adjacency-candidates
+          path: |
+            publication/specimens/ade05b/.work/ade05b-partition-adjacency-candidates-1-100.svg
+            publication/specimens/ade05b/.work/ade05b-partition-adjacency-candidates-1-50.svg
+            publication/specimens/ade05b/.work/manifest.json
+          if-no-files-found: error
+          retention-days: 30

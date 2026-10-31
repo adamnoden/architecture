@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "dpl.lennardT10NoCostEvidence.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "candidateId": "DPL-T-CANDIDATE-004-01",
+  "researchDate": "2026-10-26",
+  "assuranceProfile": "SCREENING",
+  "parentT9ResultFingerprint": "55c7020d704b1285527c7249c961783185f56d467e0cdd7f5c93fcdc80393e6a",
+  "authorityBoundary": "No-cost public-authority recovery and bounded project planning-context evidence only. This record is not a statutory determination, flood-risk assessment, measured survey, structural opinion or legal-boundary opinion.",
+  "floodRecovery": {
+    "datasetTitle": "Flood risk: Postcode search tool data",
+    "publisher": "Environment Agency",
+    "datasetPage": "https://www.data.gov.uk/dataset/87b9fa90-86c8-45f1-9211-9496d66b7168/flood-risk-postcode-search-tool-data",
+    "directCsvResource": "https://environment.data.gov.uk/api/file/download?fileDataSetId=fb921496-1788-4fc2-b469-7b51e2a45553&fileName=Postcodes_Risk_Assessment_All.csv",
+    "targetPostcode": "BR2 8LN",
+    "attemptState": "COMPETENT_RESOURCE_IDENTIFIED_BYTES_NOT_ACQUIRED_BY_EXECUTION_ENVIRONMENT",
+    "observed": [
+      "The current Environment Agency dataset page exposes Postcodes_Risk_Assessment_All.csv as the official postcode-screening resource.",
+      "The direct EA CSV resource URL was resolved from the official data.gov.uk record.",
+      "The browsing execution path rejected the octet-stream download and the container execution path could not resolve the external host, so the exact BR2 8LN row was not acquired.",
+      "No secondary postcode result is promoted in place of the competent Environment Agency row."
+    ],
+    "result": "PUBLIC_AUTHORITY_RECOVERY_TECHNICALLY_BLOCKED_NOT_SUBSTANTIVELY_RESOLVED"
+  },
+  "planningContext": {
+    "historicalContextSource": "https://docs.planning.org.uk/20240909/108/SJCF0KBTMXE00/nync6wgbf4wjnom3.pdf",
+    "historicalApplication": "23/00297/FULL6",
+    "historicalDecisionDate": "2024-03-21",
+    "candidateFacts": [
+      "The T3/T4 Reference House is a detached two-storey unchanged RH-V02 candidate, not the refused first-floor extension.",
+      "Its canonical front centre is authored approximately 26 m inward from the admitted Lennard Road frontage midpoint, plus the declared 4.5 m along-frontage offset.",
+      "The admitted HMLR title-index polygon gives indicative east/west side clearances below the explicit Bromley Policy 8 one-metre floor, but the polygon is not measured or legal boundary evidence."
+    ],
+    "siteContextFacts": [
+      "The 2024 planning statement describes Lennard Road as residential, with most properties two-storey houses and six bungalows overall including 41 Lennard Road.",
+      "It records 39 Lennard Road on the north-west side and an access road toward Scrubs Farm on the south-east side before 43 Lennard Road.",
+      "The exact-site 2024 refusal identified inadequate side space, disproportion/dominance relative to the row, visual amenity and street-scene harm under Bromley Policies 6, 8 and 37 and London Plan D3."
+    ],
+    "authorityRules": [
+      "The 2024 refusal is positive exact-site context but applies to a different proposal and is not transferred into a refusal of the Reference House.",
+      "The materially inland Reference House placement means the design/context question is different from simply repeating the refused upward extension.",
+      "The current indicative side-space result prevents a positive quantitative side-space conclusion until measured geometry returns.",
+      "No additional planning-consultant procurement is earned merely to state the bounded SCREENING concern."
+    ]
+  }
+}

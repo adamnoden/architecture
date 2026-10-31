@@ -2,8 +2,6 @@
 
 G-01 treats proportion as architectural evidence, not as a master generator. Raw dimensions, room role, geometry, hierarchy and section remain visible before any named proportional family is inferred.
 
-> **Measure first. Name the family second. Decide whether it matters last.**
-
 The present evidence already supports one strong conclusion: a coherent Georgian-derived grammar needs plural, scoped dimensional relationships rather than one universal room ratio.
 
 ## Measurement discipline

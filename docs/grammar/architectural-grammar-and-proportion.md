@@ -315,8 +315,6 @@ Before adding a rule, ask:
 
 Only the first belongs in the framework.
 
-> **Generalise the reason; localise the taste.**
-
 The current separation is carried by the framework, [G-01 charter](g01-grammar-charter.md), technical supported-domain documents and Reference House authority stack rather than by a hidden project-development taxonomy.
 
 ## 24. Current boundary

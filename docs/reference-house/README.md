@@ -22,6 +22,21 @@ The Reference House should be read as a coordinated architectural proposition wi
 
 For the current maturity assessment and active work, use `STATUS.md`. Structural capacity, detailed building physics, regulatory acceptance, plant sizing, product selection, physical interface performance and real-site compatibility remain external or later-stage questions unless an owning evidence record explicitly resolves them.
 
+## Authorised resolution programme
+
+The next major Reference House development is coordinated internally by `project/book-resolution-programme.md`. It does not invalidate the present coordinated virtual-design house or silently replace its controlled geometry. It adds first-class downstream design/resolution work that the current virtual-design scope deliberately does not complete:
+
+- `BSR` refactors the book structure and ownership boundaries;
+- `IAS` develops the selected interior architecture system;
+- `OAS` develops the selected opening/door/window/threshold assembly family;
+- `HAD` resolves the exterior and interior architectural design;
+- `BCR` coordinates construction-resolution obligations and routes evidence to the correct existing owners;
+- `HRS` absorbs those findings into one final resolved-house architectural configuration.
+
+After BSR, IAS/OAS/HAD are intentionally parallel and must work against the controlled current Reference House/PLT source. They may raise explicit rewind requests; they may not silently fork the plan, section, opening geometry or architectural authority.
+
+Existing owners remain intact: PLT owns publication drawings, PHY owns physical validation, EPR owns competent external/professional review, DEL owns delivery requirements, and a real site/commission remains outside Reference House authority unless separately established.
+
 ## What this area owns
 
 `docs/reference-house/` owns the authored architectural record of this worked instance: its constraints, coordination decisions, unresolved obligations, review handoffs, controlled drawings and the provenance needed to understand why the house is the way it is.
@@ -97,6 +112,6 @@ Those checks establish only their encoded invariants. Structural capacity, fire 
 
 ## Deployment boundary
 
-The Reference House remains a controlled architectural proposition independently of any one real site. The internal DPL programme at `project/dpl/` is establishing how target, jurisdiction, site evidence, scenarios and compatibility should relate to it.
+The Reference House remains a controlled architectural proposition independently of any one real site. The conditional DPL design-study programme is complete at its recorded bounded scope, and RSI is closed by owner scope decision; neither establishes real-site compatibility.
 
-That programme may later determine whether a real site is compatible, incompatible or requires bounded adaptation. This README does not pre-empt that model or imply that a site-deployment compiler already exists.
+A selected real plot, commission or explicit evidence-backed request would trigger a separate site-specific verification/deployment exercise using the recorded DPL evidence requirements. Until then, the theoretical plot remains sufficient for the current Reference House and book-resolution programme. No current record implies planning approval, utility/ground adequacy, whole-site suitability or a generally deployable site compiler.

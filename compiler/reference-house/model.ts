@@ -105,7 +105,7 @@ export interface OpeningSource {
   disposition: FreezeDisposition
 }
 
-export interface ReferenceHouseSource {
+export interface ReferenceHouseSource<CourtPlacement extends 'centred-in-shell' | 'offset-from-shell-centre' = 'centred-in-shell'> {
   fixtureId: 'RH-C1-REFERENCE-HOUSE'
   coordinateConvention: SourceFact<{
     origin: 'south-west-outer-corner'
@@ -122,9 +122,16 @@ export interface ReferenceHouseSource {
     id: string
     width: Millimetres
     depth: Millimetres
-    placement: 'centred-in-shell'
+    placement: CourtPlacement
+    /** Positive northward offset; required only for the explicit offset placement. */
+    offsetY?: Millimetres
   }>
   partitions: {
+    serviceSouthY?: SourceFact<Millimetres>
+    serviceNorthY?: SourceFact<Millimetres>
+    pantrySouthY?: SourceFact<Millimetres>
+    groundStudyNorthY?: SourceFact<Millimetres>
+    groundGuestSplitY?: SourceFact<Millimetres>
     westRoomSplitY: SourceFact<Millimetres>
     frontHallWestX: SourceFact<Millimetres>
     galleryServiceX: SourceFact<Millimetres>
@@ -175,6 +182,9 @@ export interface ReferenceHouseSource {
     disposition: FreezeDisposition
   }>
 }
+
+/** Explicit successor input; the historical factory retains its centred court contract. */
+export type ReferenceHouseCoordinationSource = ReferenceHouseSource<'centred-in-shell' | 'offset-from-shell-centre'>
 
 export interface DerivedPlanLine {
   id: PlanLineId

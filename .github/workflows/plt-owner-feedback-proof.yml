@@ -1,0 +1,269 @@
+name: Prove PLT owner feedback revision
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/architectural-drawing/**'
+      - 'compiler/reference-house/**'
+      - 'compiler/publication-drawing-v2/**'
+      - 'publication/specimens/ade07/**'
+      - 'publication/specimens/ade03b/tokens.ts'
+      - 'publication/specimens/plt03b3/**'
+      - 'publication/specimens/plt03b4/**'
+      - 'publication/specimens/plt03b5/**'
+      - 'publication/specimens/plt03b6/**'
+      - 'publication/specimens/plt04/**'
+      - 'publication/specimens/plt05/**'
+      - 'publication/specimens/plt06/**'
+      - 'publication/specimens/plt07/**'
+      - 'publication/specimens/plt08/**'
+      - 'publication/specimens/plt09/**'
+      - 'publication/specimens/plt10/**'
+      - 'publication/specimens/plt11/**'
+      - 'publication/specimens/plt12/**'
+      - 'publication/specimens/plt13/**'
+      - 'publication/specimens/plt14/**'
+      - 'publication/specimens/plt15/**'
+      - 'publication/specimens/plt16/**'
+      - 'publication/specimens/plt17/**'
+      - 'publication/specimens/plt18/**'
+      - '.github/workflows/plt-owner-feedback-proof.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: plt-owner-feedback-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends poppler-utils
+      - name: Regenerate historical control and revised architectural source
+        run: node --import tsx publication/specimens/plt03b6/prepare.ts
+      - name: Build exact B5 comparison
+        run: PLT03B6_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt03b6/vivliostyle.config.js
+      - name: Build A4 regression at same drawing scale
+        run: PLT03B6_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt03b6/vivliostyle.config.js
+      - name: Build A2 WALL 1 to 50
+        run: PLT03B6_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt03b6/vivliostyle.config.js
+      - name: Validate finished PDF scale and fonts
+        run: node --import tsx publication/specimens/plt03b6/validate.ts
+      - name: Prepare paired plans and prove unchanged B6 ground
+        run: node --import tsx publication/specimens/plt04/prepare.ts
+      - name: Build paired BOOK B5
+        run: PLT04_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt04/vivliostyle.config.js
+      - name: Build paired BOOK A4
+        run: PLT04_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt04/vivliostyle.config.js
+      - name: Build paired WALL A2
+        run: PLT04_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt04/vivliostyle.config.js
+      - name: Validate both levels in finished PDFs
+        run: node --import tsx publication/specimens/plt04/validate.ts
+      - name: Prepare coordinated Georgian re-plan
+        run: node --import tsx publication/specimens/plt05/prepare.ts
+      - name: Build Georgian BOOK B5
+        run: PLT05_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt05/vivliostyle.config.js
+      - name: Build Georgian BOOK A4
+        run: PLT05_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt05/vivliostyle.config.js
+      - name: Build Georgian WALL A2
+        run: PLT05_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt05/vivliostyle.config.js
+      - name: Validate coordinated re-plan PDF pages
+        run: node --import tsx publication/specimens/plt05/validate.ts
+      - name: Prepare settled-source elevation family
+        run: node --import tsx publication/specimens/plt06/prepare.ts
+      - name: Build elevation BOOK B5
+        run: PLT06_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt06/vivliostyle.config.js
+      - name: Build elevation BOOK A4
+        run: PLT06_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt06/vivliostyle.config.js
+      - name: Build elevation WALL A2
+        run: PLT06_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt06/vivliostyle.config.js
+      - name: Validate all elevation PDF pages
+        run: node --import tsx publication/specimens/plt06/validate.ts
+      - name: Prepare simplified-roof elevation family
+        run: node --import tsx publication/specimens/plt07/prepare.ts
+      - name: Build elevation BOOK B5
+        run: PLT07_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt07/vivliostyle.config.js
+      - name: Build elevation BOOK A4
+        run: PLT07_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt07/vivliostyle.config.js
+      - name: Build elevation WALL A2
+        run: PLT07_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt07/vivliostyle.config.js
+      - name: Validate all elevation PDF pages
+        run: node --import tsx publication/specimens/plt07/validate.ts
+      - name: Prepare section-and-roof elevation family
+        run: node --import tsx publication/specimens/plt08/prepare.ts
+      - name: Build elevation BOOK B5
+        run: PLT08_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt08/vivliostyle.config.js
+      - name: Build elevation BOOK A4
+        run: PLT08_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt08/vivliostyle.config.js
+      - name: Build elevation WALL A2
+        run: PLT08_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt08/vivliostyle.config.js
+      - name: Validate all elevation PDF pages
+        run: node --import tsx publication/specimens/plt08/validate.ts
+      - name: Prepare joined-section-exemplar elevation family
+        run: node --import tsx publication/specimens/plt09/prepare.ts
+      - name: Build elevation BOOK B5
+        run: PLT09_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt09/vivliostyle.config.js
+      - name: Build elevation BOOK A4
+        run: PLT09_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt09/vivliostyle.config.js
+      - name: Build elevation WALL A2
+        run: PLT09_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt09/vivliostyle.config.js
+      - name: Validate all elevation PDF pages
+        run: node --import tsx publication/specimens/plt09/validate.ts
+      - name: Prepare timber-interface-exemplar elevation family
+        run: node --import tsx publication/specimens/plt10/prepare.ts
+      - name: Build elevation BOOK B5
+        run: PLT10_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt10/vivliostyle.config.js
+      - name: Build elevation BOOK A4
+        run: PLT10_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt10/vivliostyle.config.js
+      - name: Build elevation WALL A2
+        run: PLT10_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt10/vivliostyle.config.js
+      - name: Validate all elevation PDF pages
+        run: node --import tsx publication/specimens/plt10/validate.ts
+      - name: Prepare coherent-section-exemplar elevation family
+        run: node --import tsx publication/specimens/plt11/prepare.ts
+      - name: Build elevation BOOK B5
+        run: PLT11_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt11/vivliostyle.config.js
+      - name: Build elevation BOOK A4
+        run: PLT11_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt11/vivliostyle.config.js
+      - name: Build elevation WALL A2
+        run: PLT11_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt11/vivliostyle.config.js
+      - name: Validate all elevation PDF pages
+        run: node --import tsx publication/specimens/plt11/validate.ts
+      - name: Prepare shared section assemblies and independent contrast
+        run: node --import tsx publication/specimens/plt12/prepare.ts
+      - name: Build section assemblies BOOK B5
+        run: PLT12_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt12/vivliostyle.config.js
+      - name: Build section assemblies BOOK A4
+        run: PLT12_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt12/vivliostyle.config.js
+      - name: Build section assemblies WALL A2
+        run: PLT12_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt12/vivliostyle.config.js
+      - name: Validate all section assembly PDF pages
+        run: node --import tsx publication/specimens/plt12/validate.ts
+      - name: Prepare coordinated orthographic family
+        run: node --import tsx publication/specimens/plt13/prepare.ts
+      - name: Build orthographic BOOK B5
+        run: PLT13_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt13/vivliostyle.config.js
+      - name: Build orthographic BOOK A4
+        run: PLT13_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt13/vivliostyle.config.js
+      - name: Build orthographic WALL A2
+        run: PLT13_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt13/vivliostyle.config.js
+      - name: Validate orthographic family PDF pages
+        run: node --import tsx publication/specimens/plt13/validate.ts
+      - name: Prepare current analytical and synthesis family
+        run: node --import tsx publication/specimens/plt14/prepare.ts
+      - name: Build analysis BOOK B5
+        run: PLT14_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt14/vivliostyle.config.js
+      - name: Build analysis BOOK A4
+        run: PLT14_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt14/vivliostyle.config.js
+      - name: Build analysis WALL A2
+        run: PLT14_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt14/vivliostyle.config.js
+      - name: Validate analysis and NTS synthesis PDF pages
+        run: node --import tsx publication/specimens/plt14/validate.ts
+      - name: Prepare revised layout pair and clear-route evidence
+        run: node --import tsx publication/specimens/plt15/prepare.ts
+      - name: Build revised plans BOOK B5
+        run: PLT15_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt15/vivliostyle.config.js
+      - name: Build revised plans BOOK A4
+        run: PLT15_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt15/vivliostyle.config.js
+      - name: Build revised plans WALL A2
+        run: PLT15_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt15/vivliostyle.config.js
+      - name: Validate revised plan pair PDFs
+        run: node --import tsx publication/specimens/plt15/validate.ts
+      - name: Prepare coordinated revised house
+        run: node --import tsx publication/specimens/plt16/prepare.ts
+      - name: Build coordinated revision BOOK B5
+        run: PLT16_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt16/vivliostyle.config.js
+      - name: Build coordinated revision BOOK A4
+        run: PLT16_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt16/vivliostyle.config.js
+      - name: Build coordinated revision WALL A2
+        run: PLT16_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt16/vivliostyle.config.js
+      - name: Validate coordinated revision PDFs
+        run: node --import tsx publication/specimens/plt16/validate.ts
+      - name: Prepare book composition and subtraction proof
+        run: node --import tsx publication/specimens/plt17/prepare.ts
+      - name: Build composed BOOK B5
+        run: PLT17_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt17/vivliostyle.config.js
+      - name: Build composed BOOK A4
+        run: PLT17_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt17/vivliostyle.config.js
+      - name: Build B5 facing review
+        run: PLT17_FORMAT=spreads npx vivliostyle build -c publication/specimens/plt17/vivliostyle.config.js
+      - name: Validate book scales, fonts and fold exclusions
+        run: node --import tsx publication/specimens/plt17/validate.ts
+      - name: Prepare current theoretical setting
+        run: node --import tsx publication/specimens/plt18/prepare.ts
+      - name: Build current setting BOOK B5
+        run: PLT18_FORMAT=b5 npx vivliostyle build -c publication/specimens/plt18/vivliostyle.config.js
+      - name: Build current setting BOOK A4
+        run: PLT18_FORMAT=a4 npx vivliostyle build -c publication/specimens/plt18/vivliostyle.config.js
+      - name: Build current setting WALL A2
+        run: PLT18_FORMAT=a2 npx vivliostyle build -c publication/specimens/plt18/vivliostyle.config.js
+      - name: Validate current setting source and finished PDFs
+        run: node --import tsx publication/specimens/plt18/validate.ts
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: plt-owner-feedback-proof
+          path: |
+            publication/specimens/plt18/dist/*.pdf
+            publication/specimens/plt18/.work/*.json
+            publication/specimens/plt18/.work/*.svg
+            publication/specimens/plt17/dist/*.pdf
+            publication/specimens/plt17/.work/*.json
+            publication/specimens/plt17/.work/*.svg
+            publication/specimens/plt16/dist/*.pdf
+            publication/specimens/plt16/.work/*.json
+            publication/specimens/plt16/.work/*.svg
+            publication/specimens/plt15/dist/*.pdf
+            publication/specimens/plt15/.work/*.json
+            publication/specimens/plt15/.work/*.svg
+            publication/specimens/plt14/dist/*.pdf
+            publication/specimens/plt14/.work/*.json
+            publication/specimens/plt14/.work/*.svg
+            publication/specimens/plt13/dist/*.pdf
+            publication/specimens/plt13/.work/*.json
+            publication/specimens/plt13/.work/*.svg
+            publication/specimens/plt12/dist/*.pdf
+            publication/specimens/plt12/.work/*.json
+            publication/specimens/plt12/.work/*.svg
+            publication/specimens/plt11/dist/*.pdf
+            publication/specimens/plt11/.work/*.json
+            publication/specimens/plt11/.work/*.svg
+            publication/specimens/plt10/dist/*.pdf
+            publication/specimens/plt10/.work/*.json
+            publication/specimens/plt10/.work/*.svg
+            publication/specimens/plt09/dist/*.pdf
+            publication/specimens/plt09/.work/*.json
+            publication/specimens/plt09/.work/*.svg
+            publication/specimens/plt08/dist/*.pdf
+            publication/specimens/plt08/.work/*.json
+            publication/specimens/plt08/.work/*.svg
+            publication/specimens/plt07/dist/*.pdf
+            publication/specimens/plt07/.work/*.json
+            publication/specimens/plt07/.work/*.svg
+            publication/specimens/plt06/dist/*.pdf
+            publication/specimens/plt06/.work/*.json
+            publication/specimens/plt06/.work/*.svg
+            publication/specimens/plt05/dist/*.pdf
+            publication/specimens/plt05/.work/*.json
+            publication/specimens/plt05/.work/*.svg
+            publication/specimens/plt04/dist/*.pdf
+            publication/specimens/plt04/.work/*.json
+            publication/specimens/plt04/.work/*.svg
+            publication/specimens/plt03b6/dist/*.pdf
+            publication/specimens/plt03b6/.work/*.json
+            publication/specimens/plt03b5/.work/*.json
+            publication/specimens/plt03b4/.work/*.json
+            publication/specimens/plt03b3/.work/*.json
+            publication/specimens/plt03b6/.work/*.svg
+            publication/specimens/plt03b5/.work/*.svg
+            publication/specimens/plt03b4/.work/*.svg
+            publication/specimens/plt03b3/.work/*.svg
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 90

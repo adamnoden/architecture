@@ -1,0 +1,216 @@
+{
+  "schema": "dpl.instrumentedRealControlCandidate.v1",
+  "candidateId": "DPL-T-CANDIDATE-004-01",
+  "revision": "0.1",
+  "assuranceProfile": "SCREENING",
+  "controlId": "DPL-T-CONTROL-004",
+  "site": {
+    "address": "41 Lennard Road, Bromley, BR2 8LN",
+    "planningAuthority": "London Borough of Bromley",
+    "applicationRef": "26/02618/FPA",
+    "uprn": "100020404537",
+    "sampleMembership": "EXCLUDED_FROM_DEPLOYMENT_ENVELOPE_SAMPLE"
+  },
+  "authorship": {
+    "authoredBy": "architecture-design-authority",
+    "authoredScope": "One rigid unchanged Reference House placement on the admitted conventional-control parcel.",
+    "compilerRole": "DETERMINISTIC_VERIFICATION_ONLY",
+    "routeSearch": "PROHIBITED",
+    "optimisation": "PROHIBITED",
+    "referenceHouseMutation": "PROHIBITED"
+  },
+  "admission": {
+    "packet": "DPL-T2",
+    "result": "CONTROL_SITE_CANDIDATE_AUTHORING_READY",
+    "sourceManifestPath": "project/dpl/sites/dpl-t-control-004-lennard-road-source-manifest.json",
+    "admissionSourceManifestGitBlobSha": "82738a0459e8ec590ced84c71c86799ea6cb2344"
+  },
+  "referenceHouse": {
+    "fixtureId": "RH-C1-REFERENCE-HOUSE",
+    "sourcePath": "compiler/reference-house/fixture.ts",
+    "sourceGitBlobSha": "68162a4b6336fac48fd18ecb96eaf915b38ac633",
+    "sourceCompile": {
+      "schemaVersion": "HK-RH-COMPILE-1",
+      "fingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c",
+      "manifestPath": "docs/reference-house/generated/output-manifest.json"
+    },
+    "handedness": "UNMIRRORED",
+    "variantSelections": [
+      "RH-V02"
+    ],
+    "boundedConformanceFacts": {
+      "courtyardOpenToSky": true,
+      "shellWidthMm": 12000,
+      "shellDepthMm": 10800,
+      "courtyardWidthMm": 3600,
+      "courtyardDepthMm": 4000,
+      "courtyardPlacement": "centred-in-shell",
+      "storeys": 2,
+      "stairRiserCount": 18,
+      "stairFlightRiseGroups": [
+        6,
+        6,
+        6
+      ],
+      "stairGoingMm": 300,
+      "frontBayCount": 4,
+      "frontBaySpacingMm": 2700,
+      "entranceBayIndex": 3
+    }
+  },
+  "placement": {
+    "horizontalCrs": "EPSG:27700",
+    "modelCoordinateConvention": {
+      "origin": "south-west-outer-corner",
+      "xPositive": "along canonical 12 m front from model west to east",
+      "yPositive": "from canonical front toward garden/rear",
+      "front": "model south edge"
+    },
+    "streetRelationship": {
+      "screeningFrontageSegmentBearingDegFromBngEasting": -44.63434764710605,
+      "authoredFrontSkewDegFromScreeningFrontage": -7.0,
+      "authoredFrontBearingDegFromBngEasting": -51.63434764710605,
+      "frontCentreConstruction": {
+        "screeningFrontageMidpointBngM": [
+          542894.6531192875,
+          166205.8934047534
+        ],
+        "alongFrontageOffsetM": 4.5,
+        "inwardNormalSetbackM": 26.0,
+        "frontCentreBngM": [
+          542916.1224158244,
+          166221.2335255643
+        ]
+      },
+      "reason": "The 12 m canonical front remains street-facing, while a small authored skew avoids forcing false parallelism to the approximately 10.166 m indicative title-front segment."
+    },
+    "rigidTransform": {
+      "rotationDegFromBngEasting": -51.63434764710605,
+      "modelOriginBngM": [
+        542912.3983486614,
+        166225.93791965515
+      ],
+      "modelXUnitBng": [
+        0.6206778603923096,
+        -0.7840656833476109
+      ],
+      "modelYUnitBng": [
+        0.7840656833476109,
+        0.6206778603923096
+      ],
+      "equation": {
+        "eastingM": "542912.3983486614 + modelXm*0.6206778603923096 + modelYm*0.7840656833476109",
+        "northingM": "166225.93791965515 - modelXm*0.7840656833476109 + modelYm*0.6206778603923096"
+      }
+    },
+    "footprintBngM": [
+      [
+        542912.3983486614,
+        166225.93791965515
+      ],
+      [
+        542919.8464829875,
+        166216.52913147278
+      ],
+      [
+        542928.3143923517,
+        166223.23245236624
+      ],
+      [
+        542920.8662580255,
+        166232.6412405486
+      ],
+      [
+        542912.3983486614,
+        166225.93791965515
+      ]
+    ],
+    "screeningFitEvidence": {
+      "containedByAdmittedTitleIndexPolygon": true,
+      "minimumBoundaryClearanceM": 0.640023844673485,
+      "interpretation": "Deterministic screening geometry only. This is not a legal boundary clearance, planning setback, fire separation, maintenance-access proof or construction tolerance."
+    }
+  },
+  "verticalDatum": {
+    "datum": "ODN",
+    "groundFflM": 70.7,
+    "authoredBasis": {
+      "eaDtmParcelCentroidSampleM": 70.4000015258789,
+      "authoredScreeningRaiseM": 0.3,
+      "sourcePath": "project/dpl/sites/dpl-t-control-004-lennard-road-elevation.json",
+      "sourceRasterSha256": "ee7e04c7eee8f4391bc64cd57485439722e15687ffaad49b4a02804957fd1db9"
+    },
+    "knownTerrainEnvelopeM": {
+      "parcelMin": 70.19999694824219,
+      "parcelMax": 71.0999984741211,
+      "parcelMean": 70.5288314819336
+    },
+    "boundary": "Authored SCREENING datum only. No final cut/fill, threshold, retaining, drainage, accessible-gradient or foundation decision is claimed without measured topography and downstream technical design."
+  },
+  "evidencePins": {
+    "titleBoundary": {
+      "path": "project/dpl/sites/dpl-t-control-004-lennard-road-title-boundary.json",
+      "gitBlobSha": "2e73185ae1bd0cb8b9b10130abde31d14745f5b3",
+      "hmlrReference": "57071807",
+      "planningDataEntity": 12057071807,
+      "sourceJsonSha256": "faa4f7bf323166e92345db7e57208b70c197379388e3c9b3e6f1f457d6985450"
+    },
+    "elevation": {
+      "path": "project/dpl/sites/dpl-t-control-004-lennard-road-elevation.json",
+      "gitBlobSha": "6665b293048b40015e08883f14548be40adb3b70",
+      "rasterSha256": "ee7e04c7eee8f4391bc64cd57485439722e15687ffaad49b4a02804957fd1db9"
+    },
+    "streetAccess": {
+      "path": "project/dpl/sites/dpl-t-control-004-lennard-road-street-access.json",
+      "gitBlobSha": "789b2591d113ea691bb9dc369685c03cc55917b3",
+      "sourceIds": [
+        "T2-R5-01",
+        "T2-R5-02"
+      ],
+      "screeningFrontageSegmentBngM": {
+        "start": [
+          542891.0360423778,
+          166209.4646066198
+        ],
+        "end": [
+          542898.2701962102,
+          166202.3222028868
+        ],
+        "lengthM": 10.165968362933082
+      }
+    }
+  },
+  "siteInterfaceResponses": {
+    "refs": [
+      "RH-SI02",
+      "RH-SI05"
+    ],
+    "frontTransition": "Treat the land between Lennard Road and the canonical front as a site-owned approach/landscape/access field. Preserve entrance legibility and existing physical front-access relationship without turning the street edge into Reference House identity.",
+    "levelTransition": "Resolve the absolute FFL to measured external levels through the RH-SI02 plinth/threshold/grading interface; do not introduce split levels or deform the protected internal section.",
+    "sideAndRearEdges": "The title-index clearance is only a screening fit fact. Maintenance positions, façade access, privacy, drainage and any legal boundary response remain explicit downstream questions rather than assumed detached-house margins."
+  },
+  "expectedBoundedConformanceAtPostT3Gate": {
+    "RH-I02": "CONFORMS",
+    "RH-PROT-01": "CONFORMS",
+    "RH-PROT-04": "CONFORMS",
+    "RH-PROT-06": "CONFORMS",
+    "RH-V02": "CONFORMS",
+    "RH-SI02": "OPEN_EXTERNAL_OR_UNMODELLED",
+    "RH-SI05": "OPEN_EXTERNAL_OR_UNMODELLED",
+    "status": "AUTHORED_EXPECTATION_REQUIRES_POST_T3_RUNTIME_REPROOF"
+  },
+  "proofBoundary": {
+    "referenceHouseCandidate": "AUTHORED",
+    "candidateSelection": "HUMAN_AUTHORED_SINGLE_ROUTE",
+    "wholeSiteCompatible": "NOT_ADMITTED",
+    "wholeSiteIncompatible": "NOT_ADMITTED",
+    "planningAcceptability": "NOT_PROVED",
+    "legalTitleBoundary": "UNRESOLVED",
+    "privateAccessRights": "UNRESOLVED",
+    "highwayAdoptionExtent": "UNRESOLVED",
+    "measuredTopographicSurvey": "NOT_ACQUIRED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "dpl16": "HELD"
+  },
+  "nextGate": "Fresh post-T3 deterministic candidate verification and conformance replay"
+}

@@ -1,0 +1,3339 @@
+{
+  "schema": "dpl.explorationResult.v1",
+  "authority": "ASSUMPTION_BASED_EXPLORATION_ONLY",
+  "inputFingerprint": "5f08d3a27d9a6cf2d20fb4d4d399e17f648a393c6d63b3997de1fd0f18ef9bc2",
+  "referenceHouseFingerprint": "fb8da67e82ccab6b531eee934d789bfca7a324c0d5368b25c0e8a298b4838dea",
+  "houseFootprintM": [
+    12,
+    10.8
+  ],
+  "trials": [
+    {
+      "siteId": "DPL-RP-001",
+      "context": "Footpath arrival; approximate marketed area is 491.7 m².",
+      "authority": "ASSUMPTION_BASED_EXPLORATION_ONLY",
+      "sourceRecordFingerprint": "89d93c5038736ed931af372274eed39a562348f826a86dfcddc8d722680da0ac",
+      "assumptionFingerprint": "44b3852d90305fb53a40477a05cd5035e98d7b1f4a0fe38c217619e5847b8844",
+      "areaAnchorM2": 491.7,
+      "assumedNominalAreaM2": 491.7,
+      "geometry": {
+        "result": "HOLDS_AT_ALL_TESTED_SAMPLES",
+        "workingSpaceResult": "SENSITIVE_TO_ASSUMPTIONS",
+        "samples": [
+          {
+            "widthM": 12,
+            "depthM": 22.349999999999998,
+            "clearancesM": {
+              "left": 0,
+              "right": 0,
+              "front": 5.2,
+              "rear": 6.349999999999998
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 12,
+            "depthM": 28.258620689655174,
+            "clearancesM": {
+              "left": 0,
+              "right": 0,
+              "front": 5.2,
+              "rear": 12.258620689655174
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 12,
+            "depthM": 40.975,
+            "clearancesM": {
+              "left": 0,
+              "right": 0,
+              "front": 5.2,
+              "rear": 24.975
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 17.4,
+            "depthM": 22.349999999999998,
+            "clearancesM": {
+              "left": 2.6999999999999993,
+              "right": 2.6999999999999993,
+              "front": 5.2,
+              "rear": 6.349999999999998
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 17.4,
+            "depthM": 28.258620689655174,
+            "clearancesM": {
+              "left": 2.6999999999999993,
+              "right": 2.6999999999999993,
+              "front": 5.2,
+              "rear": 12.258620689655174
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 17.4,
+            "depthM": 40.975,
+            "clearancesM": {
+              "left": 2.6999999999999993,
+              "right": 2.6999999999999993,
+              "front": 5.2,
+              "rear": 24.975
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 22.349999999999998,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 6.349999999999998
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 28.258620689655174,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 12.258620689655174
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 40.975,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 24.975
+            },
+            "contained": true,
+            "workingSpace": true
+          }
+        ]
+      },
+      "datumSamples": [
+        {
+          "slopeDeg": 0,
+          "groundChangeAcrossHouseM": 0,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": 0.3,
+          "downhillRearFflAboveGroundM": 0.3,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 3,
+          "groundChangeAcrossHouseM": 0.566004016256845,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.26600401625684506,
+          "downhillRearFflAboveGroundM": 0.866004016256845,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 6,
+          "groundChangeAcrossHouseM": 1.1351257408693058,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.8351257408693058,
+          "downhillRearFflAboveGroundM": 1.4351257408693059,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        }
+      ],
+      "approachSamples": [
+        {
+          "frontGroundErrorM": -0.3,
+          "heightM": 0.6,
+          "directApproachGradient": 0.11538461538461538,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0,
+          "heightM": 0.3,
+          "directApproachGradient": 0.05769230769230769,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0.3,
+          "heightM": 0,
+          "directApproachGradient": 0,
+          "meetsIllustrativeProjectGradient": true
+        }
+      ],
+      "accessSamples": [
+        {
+          "widthM": 0.9,
+          "meetsIllustrativeLogisticsWidth": false
+        },
+        {
+          "widthM": 1.2,
+          "meetsIllustrativeLogisticsWidth": false
+        },
+        {
+          "widthM": 1.8,
+          "meetsIllustrativeLogisticsWidth": false
+        }
+      ],
+      "conditionalResponses": {
+        "widthRequiredForFixedPlacementM": 12,
+        "widthRequiredWithChosenSideWorkingSpaceM": 14,
+        "depthRequiredWithChosenRearWorkingSpaceM": 19,
+        "approachLengthAtNominalRiseM": 5.999999999999999,
+        "approachLengthForTestedFrontLevelErrorsM": 11.999999999999998,
+        "minimumFootprintAreaM2": 129.60000000000002,
+        "areaAnchorWouldNeedIncreasePercentForBareFootprint": 0,
+        "boundary": "REQUIREMENTS_FOR_THE_STATED_HYPOTHESIS_NOT_PROOF_THAT_A_ROUTE_OR_INTERFACE_CAN_BE_BUILT"
+      },
+      "jointProjectChecks": {
+        "result": "FAILS_AT_ALL_TESTED_SAMPLES",
+        "sampleCount": 81,
+        "satisfyingWitness": null,
+        "counterexample": {
+          "widthM": 12,
+          "depthM": 22.349999999999998,
+          "frontGroundErrorM": -0.3,
+          "accessWidthM": 0.9,
+          "meetsSelectedProjectChecks": false
+        },
+        "scope": "GEOMETRY_WORKING_SPACE_DIRECT_APPROACH_AND_WIDTH_ONLY_NOT_DEPLOYMENT"
+      },
+      "evidenceBackedRuntime": {
+        "fingerprint": "9e8c8047ac06f1bd1513fd4e2e0d86e956e42fc62b6104d4b42904b2eb05941c",
+        "localBoroughTarget": "UNSUPPORTED_LOCAL_TARGET",
+        "conformanceFingerprint": "4e4e2e565e755e21ad66089dc4e08cbbb093b41bd04362380c89f5384a6a24b6",
+        "openConformanceClauses": [
+          "RH-I01",
+          "RH-I03",
+          "RH-I04",
+          "RH-I05",
+          "RH-I06",
+          "RH-I07",
+          "RH-PROT-02",
+          "RH-PROT-03",
+          "RH-PROT-05",
+          "RH-PROT-07",
+          "RH-PROT-08",
+          "RH-PROT-09",
+          "RH-PROT-10",
+          "RH-PROT-11",
+          "RH-PROT-12",
+          "RH-PROT-13",
+          "RH-PROT-14",
+          "RH-PROT-15",
+          "RH-SI02",
+          "RH-SI05"
+        ],
+        "unresolvedInputs": [
+          "candidateConformance.RH-I01",
+          "candidateConformance.RH-I03",
+          "candidateConformance.RH-I04",
+          "candidateConformance.RH-I05",
+          "candidateConformance.RH-I06",
+          "candidateConformance.RH-I07",
+          "candidateConformance.RH-PROT-02",
+          "candidateConformance.RH-PROT-03",
+          "candidateConformance.RH-PROT-05",
+          "candidateConformance.RH-PROT-07",
+          "candidateConformance.RH-PROT-08",
+          "candidateConformance.RH-PROT-09",
+          "candidateConformance.RH-PROT-10",
+          "candidateConformance.RH-PROT-11",
+          "candidateConformance.RH-PROT-12",
+          "candidateConformance.RH-PROT-13",
+          "candidateConformance.RH-PROT-14",
+          "candidateConformance.RH-PROT-15",
+          "candidateConformance.RH-SI02",
+          "candidateConformance.RH-SI05",
+          "proposal.PartMVolume1Applicability",
+          "proposal.areaWithFinishedFloorToCeilingHeightAtLeast2_5m",
+          "proposal.bedroomCount",
+          "proposal.bedspaceCount",
+          "proposal.bedspaceOrOccupantCount",
+          "proposal.builtInStorageArea",
+          "proposal.cavityInsulationInserted",
+          "proposal.developmentDwellingCountAndTypologies",
+          "proposal.localHigherStandardStatus",
+          "proposal.minimumQualifyingDepth",
+          "proposal.minimumQualifyingWidth",
+          "proposal.planningConditionOrDeterminationWhenAvailable",
+          "proposal.planningProposalCategorySchedule",
+          "proposal.policyDefinedGIA",
+          "proposal.qualifyingPrivateOutdoorArea"
+        ],
+        "obligations": [
+          {
+            "id": "ENG-BR-H1-FOUL-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H2-NON-MAINS-TREATMENT",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-1-ROOF-RAINWATER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-2-PAVED-AREA-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-3-RAINWATER-DISCHARGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H4-MAPPED-SEWER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-H5-SEPARATE-SYSTEMS",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-A1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-D1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-REG7-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "LON-D3-DESIGN-LED",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "LON-D5-INCLUSIVE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_INCLUSIVE_DESIGN_JUDGEMENT"
+          },
+          {
+            "id": "LON-D6-CEILING-HEIGHT",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-GIA-STORAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-PRIVATE-OUTSIDE-SPACE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D7-ACCESSIBLE-HOUSING-MIX",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_DETERMINATION"
+          }
+        ]
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ],
+      "verifiedCandidateReadiness": "UNCHANGED_NOT_READY",
+      "wholeSiteConclusion": "NOT_ESTABLISHED"
+    },
+    {
+      "siteId": "DPL-RP-002",
+      "context": "Backland garage parcel; historic access-lane context 3.2–3.8 m; tree constraint retained.",
+      "authority": "ASSUMPTION_BASED_EXPLORATION_ONLY",
+      "sourceRecordFingerprint": "5453cf772eecb93a6be9cf88c934a7989190d1a3fa2c9cf43e1713fd8ee23e58",
+      "assumptionFingerprint": "126dbe0ed2f65a4bb46d85c1e4c87f804c50b492aa8339b66e000dd85ace1275",
+      "areaAnchorM2": null,
+      "assumedNominalAreaM2": 400,
+      "geometry": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "workingSpaceResult": "SENSITIVE_TO_ASSUMPTIONS",
+        "samples": [
+          {
+            "widthM": 10,
+            "depthM": 16,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 0
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 10,
+            "depthM": 25,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 9
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 10,
+            "depthM": 35,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 19
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 16,
+            "depthM": 16,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 0
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 16,
+            "depthM": 25,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 9
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 16,
+            "depthM": 35,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 19
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 16,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 0
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 22,
+            "depthM": 25,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 9
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 35,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 19
+            },
+            "contained": true,
+            "workingSpace": true
+          }
+        ]
+      },
+      "datumSamples": [
+        {
+          "slopeDeg": 0,
+          "groundChangeAcrossHouseM": 0,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": 0.3,
+          "downhillRearFflAboveGroundM": 0.3,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 3,
+          "groundChangeAcrossHouseM": 0.566004016256845,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.26600401625684506,
+          "downhillRearFflAboveGroundM": 0.866004016256845,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 6,
+          "groundChangeAcrossHouseM": 1.1351257408693058,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.8351257408693058,
+          "downhillRearFflAboveGroundM": 1.4351257408693059,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        }
+      ],
+      "approachSamples": [
+        {
+          "frontGroundErrorM": -0.3,
+          "heightM": 0.6,
+          "directApproachGradient": 0.11538461538461538,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0,
+          "heightM": 0.3,
+          "directApproachGradient": 0.05769230769230769,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0.3,
+          "heightM": 0,
+          "directApproachGradient": 0,
+          "meetsIllustrativeProjectGradient": true
+        }
+      ],
+      "accessSamples": [
+        {
+          "widthM": 3.2,
+          "meetsIllustrativeLogisticsWidth": true
+        },
+        {
+          "widthM": 3.5,
+          "meetsIllustrativeLogisticsWidth": true
+        },
+        {
+          "widthM": 3.8,
+          "meetsIllustrativeLogisticsWidth": true
+        }
+      ],
+      "conditionalResponses": {
+        "widthRequiredForFixedPlacementM": 12,
+        "widthRequiredWithChosenSideWorkingSpaceM": 14,
+        "depthRequiredWithChosenRearWorkingSpaceM": 19,
+        "approachLengthAtNominalRiseM": 5.999999999999999,
+        "approachLengthForTestedFrontLevelErrorsM": 11.999999999999998,
+        "minimumFootprintAreaM2": 129.60000000000002,
+        "areaAnchorWouldNeedIncreasePercentForBareFootprint": null,
+        "boundary": "REQUIREMENTS_FOR_THE_STATED_HYPOTHESIS_NOT_PROOF_THAT_A_ROUTE_OR_INTERFACE_CAN_BE_BUILT"
+      },
+      "jointProjectChecks": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "sampleCount": 81,
+        "satisfyingWitness": {
+          "widthM": 16,
+          "depthM": 25,
+          "frontGroundErrorM": 0.3,
+          "accessWidthM": 3.2,
+          "meetsSelectedProjectChecks": true
+        },
+        "counterexample": {
+          "widthM": 10,
+          "depthM": 16,
+          "frontGroundErrorM": -0.3,
+          "accessWidthM": 3.2,
+          "meetsSelectedProjectChecks": false
+        },
+        "scope": "GEOMETRY_WORKING_SPACE_DIRECT_APPROACH_AND_WIDTH_ONLY_NOT_DEPLOYMENT"
+      },
+      "evidenceBackedRuntime": {
+        "fingerprint": "01616842d2ff5151bd70e01c22f81e8497148eef228494556ac46c2cd86bf92e",
+        "localBoroughTarget": "BOUNDED_EXISTING_PLUGIN",
+        "conformanceFingerprint": "dd41da98fe87947a81d3ab0c3cfb606066d3be7fa8d062ff1b7692dd9f72c620",
+        "openConformanceClauses": [
+          "RH-I01",
+          "RH-I03",
+          "RH-I04",
+          "RH-I05",
+          "RH-I06",
+          "RH-I07",
+          "RH-PROT-02",
+          "RH-PROT-03",
+          "RH-PROT-05",
+          "RH-PROT-07",
+          "RH-PROT-08",
+          "RH-PROT-09",
+          "RH-PROT-10",
+          "RH-PROT-11",
+          "RH-PROT-12",
+          "RH-PROT-13",
+          "RH-PROT-14",
+          "RH-PROT-15",
+          "RH-SI02",
+          "RH-SI05"
+        ],
+        "unresolvedInputs": [
+          "candidateConformance.RH-I01",
+          "candidateConformance.RH-I03",
+          "candidateConformance.RH-I04",
+          "candidateConformance.RH-I05",
+          "candidateConformance.RH-I06",
+          "candidateConformance.RH-I07",
+          "candidateConformance.RH-PROT-02",
+          "candidateConformance.RH-PROT-03",
+          "candidateConformance.RH-PROT-05",
+          "candidateConformance.RH-PROT-07",
+          "candidateConformance.RH-PROT-08",
+          "candidateConformance.RH-PROT-09",
+          "candidateConformance.RH-PROT-10",
+          "candidateConformance.RH-PROT-11",
+          "candidateConformance.RH-PROT-12",
+          "candidateConformance.RH-PROT-13",
+          "candidateConformance.RH-PROT-14",
+          "candidateConformance.RH-PROT-15",
+          "candidateConformance.RH-SI02",
+          "candidateConformance.RH-SI05",
+          "proposal.PartMVolume1Applicability",
+          "proposal.areaWithFinishedFloorToCeilingHeightAtLeast2_5m",
+          "proposal.bedroomCount",
+          "proposal.bedspaceCount",
+          "proposal.bedspaceOrOccupantCount",
+          "proposal.builtInStorageArea",
+          "proposal.cavityInsulationInserted",
+          "proposal.developmentDwellingCountAndTypologies",
+          "proposal.localHigherStandardStatus",
+          "proposal.minimumQualifyingDepth",
+          "proposal.minimumQualifyingWidth",
+          "proposal.planningConditionOrDeterminationWhenAvailable",
+          "proposal.planningProposalCategorySchedule",
+          "proposal.policyDefinedGIA",
+          "proposal.qualifyingPrivateOutdoorArea"
+        ],
+        "obligations": [
+          {
+            "id": "BROM-P115-P116-FLOOD-SUDS",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "BROM-P3-BACKLAND-GARDEN",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "BROM-P30-PARKING",
+            "result": "UNSUPPORTED",
+            "methodKind": "UNSUPPORTED"
+          },
+          {
+            "id": "BROM-P32-ROAD-SAFETY",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "BROM-P37-GENERAL-DESIGN",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "BROM-P73-TREES",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "BROM-P8-SIDE-SPACE",
+            "result": "UNSUPPORTED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "ENG-BR-H1-FOUL-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H2-NON-MAINS-TREATMENT",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-1-ROOF-RAINWATER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-2-PAVED-AREA-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-3-RAINWATER-DISCHARGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H4-MAPPED-SEWER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-H5-SEPARATE-SYSTEMS",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-A1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-D1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-REG7-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "LON-D3-DESIGN-LED",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "LON-D5-INCLUSIVE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_INCLUSIVE_DESIGN_JUDGEMENT"
+          },
+          {
+            "id": "LON-D6-CEILING-HEIGHT",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-GIA-STORAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-PRIVATE-OUTSIDE-SPACE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D7-ACCESSIBLE-HOUSING-MIX",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_DETERMINATION"
+          }
+        ]
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ],
+      "verifiedCandidateReadiness": "UNCHANGED_NOT_READY",
+      "wholeSiteConclusion": "NOT_ESTABLISHED"
+    },
+    {
+      "siteId": "DPL-RP-003",
+      "context": "Garage infill with demonstrated proposal-specific context and amenity sensitivity.",
+      "authority": "ASSUMPTION_BASED_EXPLORATION_ONLY",
+      "sourceRecordFingerprint": "33177b89cbc18f40e3188dd0585247369e9f7f830778444301032242608df395",
+      "assumptionFingerprint": "ac490cba3511d37d9cd1772c580387f2d7f4fe9bcf675db9eba79101259aae3b",
+      "areaAnchorM2": null,
+      "assumedNominalAreaM2": 400,
+      "geometry": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "workingSpaceResult": "SENSITIVE_TO_ASSUMPTIONS",
+        "samples": [
+          {
+            "widthM": 10,
+            "depthM": 16,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 0
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 10,
+            "depthM": 25,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 9
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 10,
+            "depthM": 35,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 19
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 16,
+            "depthM": 16,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 0
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 16,
+            "depthM": 25,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 9
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 16,
+            "depthM": 35,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 19
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 16,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 0
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 22,
+            "depthM": 25,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 9
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 35,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 19
+            },
+            "contained": true,
+            "workingSpace": true
+          }
+        ]
+      },
+      "datumSamples": [
+        {
+          "slopeDeg": 0,
+          "groundChangeAcrossHouseM": 0,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": 0.3,
+          "downhillRearFflAboveGroundM": 0.3,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 3,
+          "groundChangeAcrossHouseM": 0.566004016256845,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.26600401625684506,
+          "downhillRearFflAboveGroundM": 0.866004016256845,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 6,
+          "groundChangeAcrossHouseM": 1.1351257408693058,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.8351257408693058,
+          "downhillRearFflAboveGroundM": 1.4351257408693059,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        }
+      ],
+      "approachSamples": [
+        {
+          "frontGroundErrorM": -0.3,
+          "heightM": 0.6,
+          "directApproachGradient": 0.11538461538461538,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0,
+          "heightM": 0.3,
+          "directApproachGradient": 0.05769230769230769,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0.3,
+          "heightM": 0,
+          "directApproachGradient": 0,
+          "meetsIllustrativeProjectGradient": true
+        }
+      ],
+      "accessSamples": [
+        {
+          "widthM": 1.2,
+          "meetsIllustrativeLogisticsWidth": false
+        },
+        {
+          "widthM": 2.5,
+          "meetsIllustrativeLogisticsWidth": true
+        },
+        {
+          "widthM": 3.5,
+          "meetsIllustrativeLogisticsWidth": true
+        }
+      ],
+      "conditionalResponses": {
+        "widthRequiredForFixedPlacementM": 12,
+        "widthRequiredWithChosenSideWorkingSpaceM": 14,
+        "depthRequiredWithChosenRearWorkingSpaceM": 19,
+        "approachLengthAtNominalRiseM": 5.999999999999999,
+        "approachLengthForTestedFrontLevelErrorsM": 11.999999999999998,
+        "minimumFootprintAreaM2": 129.60000000000002,
+        "areaAnchorWouldNeedIncreasePercentForBareFootprint": null,
+        "boundary": "REQUIREMENTS_FOR_THE_STATED_HYPOTHESIS_NOT_PROOF_THAT_A_ROUTE_OR_INTERFACE_CAN_BE_BUILT"
+      },
+      "jointProjectChecks": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "sampleCount": 81,
+        "satisfyingWitness": {
+          "widthM": 16,
+          "depthM": 25,
+          "frontGroundErrorM": 0.3,
+          "accessWidthM": 2.5,
+          "meetsSelectedProjectChecks": true
+        },
+        "counterexample": {
+          "widthM": 10,
+          "depthM": 16,
+          "frontGroundErrorM": -0.3,
+          "accessWidthM": 1.2,
+          "meetsSelectedProjectChecks": false
+        },
+        "scope": "GEOMETRY_WORKING_SPACE_DIRECT_APPROACH_AND_WIDTH_ONLY_NOT_DEPLOYMENT"
+      },
+      "evidenceBackedRuntime": {
+        "fingerprint": "ea2ac0593951a57ba17c8f8893a1d2a1c64fc5c36c82ea50ead7a0bfa6a9da48",
+        "localBoroughTarget": "BOUNDED_EXISTING_PLUGIN",
+        "conformanceFingerprint": "0fb73ab4763135e4a46917ab1d5da5c1c29beefb3055e2c9cdf4ee1abde91056",
+        "openConformanceClauses": [
+          "RH-I01",
+          "RH-I03",
+          "RH-I04",
+          "RH-I05",
+          "RH-I06",
+          "RH-I07",
+          "RH-PROT-02",
+          "RH-PROT-03",
+          "RH-PROT-05",
+          "RH-PROT-07",
+          "RH-PROT-08",
+          "RH-PROT-09",
+          "RH-PROT-10",
+          "RH-PROT-11",
+          "RH-PROT-12",
+          "RH-PROT-13",
+          "RH-PROT-14",
+          "RH-PROT-15",
+          "RH-SI02",
+          "RH-SI05"
+        ],
+        "unresolvedInputs": [
+          "candidateConformance.RH-I01",
+          "candidateConformance.RH-I03",
+          "candidateConformance.RH-I04",
+          "candidateConformance.RH-I05",
+          "candidateConformance.RH-I06",
+          "candidateConformance.RH-I07",
+          "candidateConformance.RH-PROT-02",
+          "candidateConformance.RH-PROT-03",
+          "candidateConformance.RH-PROT-05",
+          "candidateConformance.RH-PROT-07",
+          "candidateConformance.RH-PROT-08",
+          "candidateConformance.RH-PROT-09",
+          "candidateConformance.RH-PROT-10",
+          "candidateConformance.RH-PROT-11",
+          "candidateConformance.RH-PROT-12",
+          "candidateConformance.RH-PROT-13",
+          "candidateConformance.RH-PROT-14",
+          "candidateConformance.RH-PROT-15",
+          "candidateConformance.RH-SI02",
+          "candidateConformance.RH-SI05",
+          "proposal.PartMVolume1Applicability",
+          "proposal.areaWithFinishedFloorToCeilingHeightAtLeast2_5m",
+          "proposal.bedroomCount",
+          "proposal.bedspaceCount",
+          "proposal.bedspaceOrOccupantCount",
+          "proposal.builtInStorageArea",
+          "proposal.cavityInsulationInserted",
+          "proposal.developmentDwellingCountAndTypologies",
+          "proposal.localHigherStandardStatus",
+          "proposal.minimumQualifyingDepth",
+          "proposal.minimumQualifyingWidth",
+          "proposal.planningConditionOrDeterminationWhenAvailable",
+          "proposal.planningProposalCategorySchedule",
+          "proposal.policyDefinedGIA",
+          "proposal.qualifyingPrivateOutdoorArea"
+        ],
+        "obligations": [
+          {
+            "id": "CROY-DM10-1-DESIGN-CHARACTER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "CROY-DM10-4-HOST-GARDEN-RETENTION",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "CROY-DM10-4-PRIVATE-AMENITY-AREA",
+            "result": "UNSUPPORTED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "CROY-DM10-6-NEIGHBOUR-AMENITY",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "CROY-DM25-SUDS-FLOOD",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "CROY-DM29-SUSTAINABLE-TRAVEL-HIGHWAY",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "CROY-DM30-CAR-CYCLE-PARKING",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-H1-FOUL-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H2-NON-MAINS-TREATMENT",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-1-ROOF-RAINWATER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-2-PAVED-AREA-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-3-RAINWATER-DISCHARGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H4-MAPPED-SEWER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-H5-SEPARATE-SYSTEMS",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-A1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-D1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-REG7-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "LON-D3-DESIGN-LED",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "LON-D5-INCLUSIVE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_INCLUSIVE_DESIGN_JUDGEMENT"
+          },
+          {
+            "id": "LON-D6-CEILING-HEIGHT",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-GIA-STORAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-PRIVATE-OUTSIDE-SPACE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D7-ACCESSIBLE-HOUSING-MIX",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_DETERMINATION"
+          }
+        ]
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ],
+      "verifiedCandidateReadiness": "UNCHANGED_NOT_READY",
+      "wholeSiteConclusion": "NOT_ESTABLISHED"
+    },
+    {
+      "siteId": "DPL-RP-004",
+      "context": "Ordinary street-front replacement dwelling; the primary provisional design study.",
+      "authority": "ASSUMPTION_BASED_EXPLORATION_ONLY",
+      "sourceRecordFingerprint": "5a431b58742b68046235fa4227138e020cf3eb8657520bac7159377e740ccee8",
+      "assumptionFingerprint": "08322f5d8adaa9d590025127f4af7b0ac193b8b0ac55c439c608f077a406c4d6",
+      "areaAnchorM2": null,
+      "assumedNominalAreaM2": 522,
+      "geometry": {
+        "result": "HOLDS_AT_ALL_TESTED_SAMPLES",
+        "workingSpaceResult": "SENSITIVE_TO_ASSUMPTIONS",
+        "samples": [
+          {
+            "widthM": 12,
+            "depthM": 18,
+            "clearancesM": {
+              "left": 0,
+              "right": 0,
+              "front": 5.2,
+              "rear": 2
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 12,
+            "depthM": 30,
+            "clearancesM": {
+              "left": 0,
+              "right": 0,
+              "front": 5.2,
+              "rear": 14
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 12,
+            "depthM": 40,
+            "clearancesM": {
+              "left": 0,
+              "right": 0,
+              "front": 5.2,
+              "rear": 24
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 17.4,
+            "depthM": 18,
+            "clearancesM": {
+              "left": 2.6999999999999993,
+              "right": 2.6999999999999993,
+              "front": 5.2,
+              "rear": 2
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 17.4,
+            "depthM": 30,
+            "clearancesM": {
+              "left": 2.6999999999999993,
+              "right": 2.6999999999999993,
+              "front": 5.2,
+              "rear": 14
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 17.4,
+            "depthM": 40,
+            "clearancesM": {
+              "left": 2.6999999999999993,
+              "right": 2.6999999999999993,
+              "front": 5.2,
+              "rear": 24
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 18,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 2
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 22,
+            "depthM": 30,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 14
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 40,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 24
+            },
+            "contained": true,
+            "workingSpace": true
+          }
+        ]
+      },
+      "datumSamples": [
+        {
+          "slopeDeg": 0,
+          "groundChangeAcrossHouseM": 0,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": 0.3,
+          "downhillRearFflAboveGroundM": 0.3,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 3,
+          "groundChangeAcrossHouseM": 0.566004016256845,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.26600401625684506,
+          "downhillRearFflAboveGroundM": 0.866004016256845,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 6,
+          "groundChangeAcrossHouseM": 1.1351257408693058,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.8351257408693058,
+          "downhillRearFflAboveGroundM": 1.4351257408693059,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        }
+      ],
+      "approachSamples": [
+        {
+          "frontGroundErrorM": -0.3,
+          "heightM": 0.6,
+          "directApproachGradient": 0.11538461538461538,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0,
+          "heightM": 0.3,
+          "directApproachGradient": 0.05769230769230769,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0.3,
+          "heightM": 0,
+          "directApproachGradient": 0,
+          "meetsIllustrativeProjectGradient": true
+        }
+      ],
+      "accessSamples": [
+        {
+          "widthM": 2.5,
+          "meetsIllustrativeLogisticsWidth": true
+        },
+        {
+          "widthM": 3.5,
+          "meetsIllustrativeLogisticsWidth": true
+        },
+        {
+          "widthM": 4.5,
+          "meetsIllustrativeLogisticsWidth": true
+        }
+      ],
+      "conditionalResponses": {
+        "widthRequiredForFixedPlacementM": 12,
+        "widthRequiredWithChosenSideWorkingSpaceM": 14,
+        "depthRequiredWithChosenRearWorkingSpaceM": 19,
+        "approachLengthAtNominalRiseM": 5.999999999999999,
+        "approachLengthForTestedFrontLevelErrorsM": 11.999999999999998,
+        "minimumFootprintAreaM2": 129.60000000000002,
+        "areaAnchorWouldNeedIncreasePercentForBareFootprint": null,
+        "boundary": "REQUIREMENTS_FOR_THE_STATED_HYPOTHESIS_NOT_PROOF_THAT_A_ROUTE_OR_INTERFACE_CAN_BE_BUILT"
+      },
+      "jointProjectChecks": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "sampleCount": 81,
+        "satisfyingWitness": {
+          "widthM": 17.4,
+          "depthM": 30,
+          "frontGroundErrorM": 0.3,
+          "accessWidthM": 2.5,
+          "meetsSelectedProjectChecks": true
+        },
+        "counterexample": {
+          "widthM": 12,
+          "depthM": 18,
+          "frontGroundErrorM": -0.3,
+          "accessWidthM": 2.5,
+          "meetsSelectedProjectChecks": false
+        },
+        "scope": "GEOMETRY_WORKING_SPACE_DIRECT_APPROACH_AND_WIDTH_ONLY_NOT_DEPLOYMENT"
+      },
+      "evidenceBackedRuntime": {
+        "fingerprint": "dcb06e2d142a086ef8f861a1d0851f0ec0c675b3fe35ecc93cbcd1c77a62e70c",
+        "localBoroughTarget": "UNSUPPORTED_LOCAL_TARGET",
+        "conformanceFingerprint": "06289a43502317f455416c69e8bbe412de22f8b830dffcf613823df75081d5fb",
+        "openConformanceClauses": [
+          "RH-I01",
+          "RH-I03",
+          "RH-I04",
+          "RH-I05",
+          "RH-I06",
+          "RH-I07",
+          "RH-PROT-02",
+          "RH-PROT-03",
+          "RH-PROT-05",
+          "RH-PROT-07",
+          "RH-PROT-08",
+          "RH-PROT-09",
+          "RH-PROT-10",
+          "RH-PROT-11",
+          "RH-PROT-12",
+          "RH-PROT-13",
+          "RH-PROT-14",
+          "RH-PROT-15",
+          "RH-SI02",
+          "RH-SI05"
+        ],
+        "unresolvedInputs": [
+          "candidateConformance.RH-I01",
+          "candidateConformance.RH-I03",
+          "candidateConformance.RH-I04",
+          "candidateConformance.RH-I05",
+          "candidateConformance.RH-I06",
+          "candidateConformance.RH-I07",
+          "candidateConformance.RH-PROT-02",
+          "candidateConformance.RH-PROT-03",
+          "candidateConformance.RH-PROT-05",
+          "candidateConformance.RH-PROT-07",
+          "candidateConformance.RH-PROT-08",
+          "candidateConformance.RH-PROT-09",
+          "candidateConformance.RH-PROT-10",
+          "candidateConformance.RH-PROT-11",
+          "candidateConformance.RH-PROT-12",
+          "candidateConformance.RH-PROT-13",
+          "candidateConformance.RH-PROT-14",
+          "candidateConformance.RH-PROT-15",
+          "candidateConformance.RH-SI02",
+          "candidateConformance.RH-SI05",
+          "proposal.PartMVolume1Applicability",
+          "proposal.areaWithFinishedFloorToCeilingHeightAtLeast2_5m",
+          "proposal.bedroomCount",
+          "proposal.bedspaceCount",
+          "proposal.bedspaceOrOccupantCount",
+          "proposal.builtInStorageArea",
+          "proposal.cavityInsulationInserted",
+          "proposal.developmentDwellingCountAndTypologies",
+          "proposal.localHigherStandardStatus",
+          "proposal.minimumQualifyingDepth",
+          "proposal.minimumQualifyingWidth",
+          "proposal.planningConditionOrDeterminationWhenAvailable",
+          "proposal.planningProposalCategorySchedule",
+          "proposal.policyDefinedGIA",
+          "proposal.qualifyingPrivateOutdoorArea"
+        ],
+        "obligations": [
+          {
+            "id": "ENG-BR-H1-FOUL-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H2-NON-MAINS-TREATMENT",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-1-ROOF-RAINWATER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-2-PAVED-AREA-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-3-RAINWATER-DISCHARGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H4-MAPPED-SEWER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-H5-SEPARATE-SYSTEMS",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-A1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-D1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-REG7-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "LON-D3-DESIGN-LED",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "LON-D5-INCLUSIVE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_INCLUSIVE_DESIGN_JUDGEMENT"
+          },
+          {
+            "id": "LON-D6-CEILING-HEIGHT",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-GIA-STORAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-PRIVATE-OUTSIDE-SPACE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D7-ACCESSIBLE-HOUSING-MIX",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_DETERMINATION"
+          }
+        ]
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ],
+      "verifiedCandidateReadiness": "UNCHANGED_NOT_READY",
+      "wholeSiteConclusion": "NOT_ESTABLISHED"
+    },
+    {
+      "siteId": "DPL-RP-005",
+      "context": "Corner / side-road relationship; exact host/subparcel identity remains unresolved.",
+      "authority": "ASSUMPTION_BASED_EXPLORATION_ONLY",
+      "sourceRecordFingerprint": "4708e6009bef9b2f11583749d35b8f49ce724515b6c5ba201d473e5bf8349c0c",
+      "assumptionFingerprint": "be72cd44610f986488cf22a43919b4182101b134bd0a30440b1d67d6177a78ef",
+      "areaAnchorM2": null,
+      "assumedNominalAreaM2": 400,
+      "geometry": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "workingSpaceResult": "SENSITIVE_TO_ASSUMPTIONS",
+        "samples": [
+          {
+            "widthM": 10,
+            "depthM": 16,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 0
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 10,
+            "depthM": 25,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 9
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 10,
+            "depthM": 35,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 19
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 16,
+            "depthM": 16,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 0
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 16,
+            "depthM": 25,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 9
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 16,
+            "depthM": 35,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 19
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 16,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 0
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 22,
+            "depthM": 25,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 9
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 35,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 19
+            },
+            "contained": true,
+            "workingSpace": true
+          }
+        ]
+      },
+      "datumSamples": [
+        {
+          "slopeDeg": 0,
+          "groundChangeAcrossHouseM": 0,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": 0.3,
+          "downhillRearFflAboveGroundM": 0.3,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 3,
+          "groundChangeAcrossHouseM": 0.566004016256845,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.26600401625684506,
+          "downhillRearFflAboveGroundM": 0.866004016256845,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 6,
+          "groundChangeAcrossHouseM": 1.1351257408693058,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.8351257408693058,
+          "downhillRearFflAboveGroundM": 1.4351257408693059,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        }
+      ],
+      "approachSamples": [
+        {
+          "frontGroundErrorM": -0.3,
+          "heightM": 0.6,
+          "directApproachGradient": 0.11538461538461538,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0,
+          "heightM": 0.3,
+          "directApproachGradient": 0.05769230769230769,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0.3,
+          "heightM": 0,
+          "directApproachGradient": 0,
+          "meetsIllustrativeProjectGradient": true
+        }
+      ],
+      "accessSamples": [
+        {
+          "widthM": 1.2,
+          "meetsIllustrativeLogisticsWidth": false
+        },
+        {
+          "widthM": 2.5,
+          "meetsIllustrativeLogisticsWidth": true
+        },
+        {
+          "widthM": 3.5,
+          "meetsIllustrativeLogisticsWidth": true
+        }
+      ],
+      "conditionalResponses": {
+        "widthRequiredForFixedPlacementM": 12,
+        "widthRequiredWithChosenSideWorkingSpaceM": 14,
+        "depthRequiredWithChosenRearWorkingSpaceM": 19,
+        "approachLengthAtNominalRiseM": 5.999999999999999,
+        "approachLengthForTestedFrontLevelErrorsM": 11.999999999999998,
+        "minimumFootprintAreaM2": 129.60000000000002,
+        "areaAnchorWouldNeedIncreasePercentForBareFootprint": null,
+        "boundary": "REQUIREMENTS_FOR_THE_STATED_HYPOTHESIS_NOT_PROOF_THAT_A_ROUTE_OR_INTERFACE_CAN_BE_BUILT"
+      },
+      "jointProjectChecks": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "sampleCount": 81,
+        "satisfyingWitness": {
+          "widthM": 16,
+          "depthM": 25,
+          "frontGroundErrorM": 0.3,
+          "accessWidthM": 2.5,
+          "meetsSelectedProjectChecks": true
+        },
+        "counterexample": {
+          "widthM": 10,
+          "depthM": 16,
+          "frontGroundErrorM": -0.3,
+          "accessWidthM": 1.2,
+          "meetsSelectedProjectChecks": false
+        },
+        "scope": "GEOMETRY_WORKING_SPACE_DIRECT_APPROACH_AND_WIDTH_ONLY_NOT_DEPLOYMENT"
+      },
+      "evidenceBackedRuntime": {
+        "fingerprint": "0024961adfd526ee5790988ce3a87d18b7671cfa5e286b14021033c8f53dd24b",
+        "localBoroughTarget": "UNSUPPORTED_LOCAL_TARGET",
+        "conformanceFingerprint": "54d7a9d57c590c1dec9e087d7e17225802bf271794fb4286b4163c03486379dd",
+        "openConformanceClauses": [
+          "RH-I01",
+          "RH-I03",
+          "RH-I04",
+          "RH-I05",
+          "RH-I06",
+          "RH-I07",
+          "RH-PROT-02",
+          "RH-PROT-03",
+          "RH-PROT-05",
+          "RH-PROT-07",
+          "RH-PROT-08",
+          "RH-PROT-09",
+          "RH-PROT-10",
+          "RH-PROT-11",
+          "RH-PROT-12",
+          "RH-PROT-13",
+          "RH-PROT-14",
+          "RH-PROT-15",
+          "RH-SI02",
+          "RH-SI05"
+        ],
+        "unresolvedInputs": [
+          "candidateConformance.RH-I01",
+          "candidateConformance.RH-I03",
+          "candidateConformance.RH-I04",
+          "candidateConformance.RH-I05",
+          "candidateConformance.RH-I06",
+          "candidateConformance.RH-I07",
+          "candidateConformance.RH-PROT-02",
+          "candidateConformance.RH-PROT-03",
+          "candidateConformance.RH-PROT-05",
+          "candidateConformance.RH-PROT-07",
+          "candidateConformance.RH-PROT-08",
+          "candidateConformance.RH-PROT-09",
+          "candidateConformance.RH-PROT-10",
+          "candidateConformance.RH-PROT-11",
+          "candidateConformance.RH-PROT-12",
+          "candidateConformance.RH-PROT-13",
+          "candidateConformance.RH-PROT-14",
+          "candidateConformance.RH-PROT-15",
+          "candidateConformance.RH-SI02",
+          "candidateConformance.RH-SI05",
+          "proposal.PartMVolume1Applicability",
+          "proposal.areaWithFinishedFloorToCeilingHeightAtLeast2_5m",
+          "proposal.bedroomCount",
+          "proposal.bedspaceCount",
+          "proposal.bedspaceOrOccupantCount",
+          "proposal.builtInStorageArea",
+          "proposal.cavityInsulationInserted",
+          "proposal.developmentDwellingCountAndTypologies",
+          "proposal.localHigherStandardStatus",
+          "proposal.minimumQualifyingDepth",
+          "proposal.minimumQualifyingWidth",
+          "proposal.planningConditionOrDeterminationWhenAvailable",
+          "proposal.planningProposalCategorySchedule",
+          "proposal.policyDefinedGIA",
+          "proposal.qualifyingPrivateOutdoorArea"
+        ],
+        "obligations": [
+          {
+            "id": "ENG-BR-H1-FOUL-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H2-NON-MAINS-TREATMENT",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-1-ROOF-RAINWATER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-2-PAVED-AREA-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-3-RAINWATER-DISCHARGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H4-MAPPED-SEWER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-H5-SEPARATE-SYSTEMS",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-A1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-D1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-REG7-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "LON-D3-DESIGN-LED",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "LON-D5-INCLUSIVE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_INCLUSIVE_DESIGN_JUDGEMENT"
+          },
+          {
+            "id": "LON-D6-CEILING-HEIGHT",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-GIA-STORAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-PRIVATE-OUTSIDE-SPACE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D7-ACCESSIBLE-HOUSING-MIX",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_DETERMINATION"
+          }
+        ]
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state",
+        "Host/subparcel identity must be resolved before a real-site deployment case"
+      ],
+      "verifiedCandidateReadiness": "UNCHANGED_NOT_READY",
+      "wholeSiteConclusion": "NOT_ESTABLISHED"
+    },
+    {
+      "siteId": "DPL-RP-006",
+      "context": "Approximate marketed 217 m² parcel; flood/water/highway overlap triggers retained.",
+      "authority": "ASSUMPTION_BASED_EXPLORATION_ONLY",
+      "sourceRecordFingerprint": "0053221013f19dcf0e0304de1cec7d2b1732d29fc6f32aa193f01c04e79cbe4c",
+      "assumptionFingerprint": "42e355a04adc327c41e9fe5236614732810d9f2ae0924fcf99edf3d7b13250ff",
+      "areaAnchorM2": 217,
+      "assumedNominalAreaM2": 217,
+      "geometry": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "workingSpaceResult": "SENSITIVE_TO_ASSUMPTIONS",
+        "samples": [
+          {
+            "widthM": 10.85,
+            "depthM": 12.4,
+            "clearancesM": {
+              "left": -0.5750000000000002,
+              "right": -0.5750000000000002,
+              "front": 5.2,
+              "rear": -3.5999999999999996
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 10.85,
+            "depthM": 15.5,
+            "clearancesM": {
+              "left": -0.5750000000000002,
+              "right": -0.5750000000000002,
+              "front": 5.2,
+              "rear": -0.5
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 10.85,
+            "depthM": 20,
+            "clearancesM": {
+              "left": -0.5750000000000002,
+              "right": -0.5750000000000002,
+              "front": 5.2,
+              "rear": 4
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 14,
+            "depthM": 12.4,
+            "clearancesM": {
+              "left": 1,
+              "right": 1,
+              "front": 5.2,
+              "rear": -3.5999999999999996
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 14,
+            "depthM": 15.5,
+            "clearancesM": {
+              "left": 1,
+              "right": 1,
+              "front": 5.2,
+              "rear": -0.5
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 14,
+            "depthM": 20,
+            "clearancesM": {
+              "left": 1,
+              "right": 1,
+              "front": 5.2,
+              "rear": 4
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 17.5,
+            "depthM": 12.4,
+            "clearancesM": {
+              "left": 2.75,
+              "right": 2.75,
+              "front": 5.2,
+              "rear": -3.5999999999999996
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 17.5,
+            "depthM": 15.5,
+            "clearancesM": {
+              "left": 2.75,
+              "right": 2.75,
+              "front": 5.2,
+              "rear": -0.5
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 17.5,
+            "depthM": 20,
+            "clearancesM": {
+              "left": 2.75,
+              "right": 2.75,
+              "front": 5.2,
+              "rear": 4
+            },
+            "contained": true,
+            "workingSpace": true
+          }
+        ]
+      },
+      "datumSamples": [
+        {
+          "slopeDeg": 0,
+          "groundChangeAcrossHouseM": 0,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": 0.3,
+          "downhillRearFflAboveGroundM": 0.3,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 3,
+          "groundChangeAcrossHouseM": 0.566004016256845,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.26600401625684506,
+          "downhillRearFflAboveGroundM": 0.866004016256845,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 6,
+          "groundChangeAcrossHouseM": 1.1351257408693058,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.8351257408693058,
+          "downhillRearFflAboveGroundM": 1.4351257408693059,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        }
+      ],
+      "approachSamples": [
+        {
+          "frontGroundErrorM": -0.3,
+          "heightM": 0.6,
+          "directApproachGradient": 0.11538461538461538,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0,
+          "heightM": 0.3,
+          "directApproachGradient": 0.05769230769230769,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0.3,
+          "heightM": 0,
+          "directApproachGradient": 0,
+          "meetsIllustrativeProjectGradient": true
+        }
+      ],
+      "accessSamples": [
+        {
+          "widthM": 1.2,
+          "meetsIllustrativeLogisticsWidth": false
+        },
+        {
+          "widthM": 2.5,
+          "meetsIllustrativeLogisticsWidth": true
+        },
+        {
+          "widthM": 3.5,
+          "meetsIllustrativeLogisticsWidth": true
+        }
+      ],
+      "conditionalResponses": {
+        "widthRequiredForFixedPlacementM": 12,
+        "widthRequiredWithChosenSideWorkingSpaceM": 14,
+        "depthRequiredWithChosenRearWorkingSpaceM": 19,
+        "approachLengthAtNominalRiseM": 5.999999999999999,
+        "approachLengthForTestedFrontLevelErrorsM": 11.999999999999998,
+        "minimumFootprintAreaM2": 129.60000000000002,
+        "areaAnchorWouldNeedIncreasePercentForBareFootprint": 0,
+        "boundary": "REQUIREMENTS_FOR_THE_STATED_HYPOTHESIS_NOT_PROOF_THAT_A_ROUTE_OR_INTERFACE_CAN_BE_BUILT"
+      },
+      "jointProjectChecks": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "sampleCount": 81,
+        "satisfyingWitness": {
+          "widthM": 14,
+          "depthM": 20,
+          "frontGroundErrorM": 0.3,
+          "accessWidthM": 2.5,
+          "meetsSelectedProjectChecks": true
+        },
+        "counterexample": {
+          "widthM": 10.85,
+          "depthM": 12.4,
+          "frontGroundErrorM": -0.3,
+          "accessWidthM": 1.2,
+          "meetsSelectedProjectChecks": false
+        },
+        "scope": "GEOMETRY_WORKING_SPACE_DIRECT_APPROACH_AND_WIDTH_ONLY_NOT_DEPLOYMENT"
+      },
+      "evidenceBackedRuntime": {
+        "fingerprint": "85f5e4638fce4e6c187dad15314750e2d615cac7cb33477a4e7d9400db4f8f20",
+        "localBoroughTarget": "UNSUPPORTED_LOCAL_TARGET",
+        "conformanceFingerprint": "063a370b16d478521a0d3d407f0698f8a0a15ebf830c483b45192b16b756d87c",
+        "openConformanceClauses": [
+          "RH-I01",
+          "RH-I03",
+          "RH-I04",
+          "RH-I05",
+          "RH-I06",
+          "RH-I07",
+          "RH-PROT-02",
+          "RH-PROT-03",
+          "RH-PROT-05",
+          "RH-PROT-07",
+          "RH-PROT-08",
+          "RH-PROT-09",
+          "RH-PROT-10",
+          "RH-PROT-11",
+          "RH-PROT-12",
+          "RH-PROT-13",
+          "RH-PROT-14",
+          "RH-PROT-15",
+          "RH-SI02",
+          "RH-SI05"
+        ],
+        "unresolvedInputs": [
+          "candidateConformance.RH-I01",
+          "candidateConformance.RH-I03",
+          "candidateConformance.RH-I04",
+          "candidateConformance.RH-I05",
+          "candidateConformance.RH-I06",
+          "candidateConformance.RH-I07",
+          "candidateConformance.RH-PROT-02",
+          "candidateConformance.RH-PROT-03",
+          "candidateConformance.RH-PROT-05",
+          "candidateConformance.RH-PROT-07",
+          "candidateConformance.RH-PROT-08",
+          "candidateConformance.RH-PROT-09",
+          "candidateConformance.RH-PROT-10",
+          "candidateConformance.RH-PROT-11",
+          "candidateConformance.RH-PROT-12",
+          "candidateConformance.RH-PROT-13",
+          "candidateConformance.RH-PROT-14",
+          "candidateConformance.RH-PROT-15",
+          "candidateConformance.RH-SI02",
+          "candidateConformance.RH-SI05",
+          "proposal.PartMVolume1Applicability",
+          "proposal.areaWithFinishedFloorToCeilingHeightAtLeast2_5m",
+          "proposal.bedroomCount",
+          "proposal.bedspaceCount",
+          "proposal.bedspaceOrOccupantCount",
+          "proposal.builtInStorageArea",
+          "proposal.cavityInsulationInserted",
+          "proposal.developmentDwellingCountAndTypologies",
+          "proposal.localHigherStandardStatus",
+          "proposal.minimumQualifyingDepth",
+          "proposal.minimumQualifyingWidth",
+          "proposal.planningConditionOrDeterminationWhenAvailable",
+          "proposal.planningProposalCategorySchedule",
+          "proposal.policyDefinedGIA",
+          "proposal.qualifyingPrivateOutdoorArea"
+        ],
+        "obligations": [
+          {
+            "id": "ENG-BR-H1-FOUL-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H2-NON-MAINS-TREATMENT",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-1-ROOF-RAINWATER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-2-PAVED-AREA-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-3-RAINWATER-DISCHARGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H4-MAPPED-SEWER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-H5-SEPARATE-SYSTEMS",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-A1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-D1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-REG7-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "LON-D3-DESIGN-LED",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "LON-D5-INCLUSIVE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_INCLUSIVE_DESIGN_JUDGEMENT"
+          },
+          {
+            "id": "LON-D6-CEILING-HEIGHT",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-GIA-STORAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-PRIVATE-OUTSIDE-SPACE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D7-ACCESSIBLE-HOUSING-MIX",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_DETERMINATION"
+          }
+        ]
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ],
+      "verifiedCandidateReadiness": "UNCHANGED_NOT_READY",
+      "wholeSiteConclusion": "NOT_ESTABLISHED"
+    },
+    {
+      "siteId": "DPL-RP-007",
+      "context": "Steep strip between roads; slope magnitude and exact geometry unmeasured.",
+      "authority": "ASSUMPTION_BASED_EXPLORATION_ONLY",
+      "sourceRecordFingerprint": "3c9f66a3c44f9546fac43290969f7c2356589313672809e6db7375ad968fb84e",
+      "assumptionFingerprint": "ee861edd1a4423e416bc8f7d851983fefcde876b23aaa8b71cfbb6cecdd214be",
+      "areaAnchorM2": null,
+      "assumedNominalAreaM2": 480,
+      "geometry": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "workingSpaceResult": "SENSITIVE_TO_ASSUMPTIONS",
+        "samples": [
+          {
+            "widthM": 10,
+            "depthM": 18,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 2
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 10,
+            "depthM": 30,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 14
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 10,
+            "depthM": 40,
+            "clearancesM": {
+              "left": -1,
+              "right": -1,
+              "front": 5.2,
+              "rear": 24
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 16,
+            "depthM": 18,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 2
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 16,
+            "depthM": 30,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 14
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 16,
+            "depthM": 40,
+            "clearancesM": {
+              "left": 2,
+              "right": 2,
+              "front": 5.2,
+              "rear": 24
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 18,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 2
+            },
+            "contained": true,
+            "workingSpace": false
+          },
+          {
+            "widthM": 22,
+            "depthM": 30,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 14
+            },
+            "contained": true,
+            "workingSpace": true
+          },
+          {
+            "widthM": 22,
+            "depthM": 40,
+            "clearancesM": {
+              "left": 5,
+              "right": 5,
+              "front": 5.2,
+              "rear": 24
+            },
+            "contained": true,
+            "workingSpace": true
+          }
+        ]
+      },
+      "datumSamples": [
+        {
+          "slopeDeg": 5,
+          "groundChangeAcrossHouseM": 0.9448775660799793,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.6448775660799793,
+          "downhillRearFflAboveGroundM": 1.2448775660799793,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 10,
+          "groundChangeAcrossHouseM": 1.904331391651422,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -1.604331391651422,
+          "downhillRearFflAboveGroundM": 2.204331391651422,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 15,
+          "groundChangeAcrossHouseM": 2.8938512782561254,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -2.5938512782561256,
+          "downhillRearFflAboveGroundM": 3.1938512782561252,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        }
+      ],
+      "approachSamples": [
+        {
+          "frontGroundErrorM": -0.3,
+          "heightM": 0.6,
+          "directApproachGradient": 0.11538461538461538,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0,
+          "heightM": 0.3,
+          "directApproachGradient": 0.05769230769230769,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0.3,
+          "heightM": 0,
+          "directApproachGradient": 0,
+          "meetsIllustrativeProjectGradient": true
+        }
+      ],
+      "accessSamples": [
+        {
+          "widthM": 1.2,
+          "meetsIllustrativeLogisticsWidth": false
+        },
+        {
+          "widthM": 2.5,
+          "meetsIllustrativeLogisticsWidth": true
+        },
+        {
+          "widthM": 3.5,
+          "meetsIllustrativeLogisticsWidth": true
+        }
+      ],
+      "conditionalResponses": {
+        "widthRequiredForFixedPlacementM": 12,
+        "widthRequiredWithChosenSideWorkingSpaceM": 14,
+        "depthRequiredWithChosenRearWorkingSpaceM": 19,
+        "approachLengthAtNominalRiseM": 5.999999999999999,
+        "approachLengthForTestedFrontLevelErrorsM": 11.999999999999998,
+        "minimumFootprintAreaM2": 129.60000000000002,
+        "areaAnchorWouldNeedIncreasePercentForBareFootprint": null,
+        "boundary": "REQUIREMENTS_FOR_THE_STATED_HYPOTHESIS_NOT_PROOF_THAT_A_ROUTE_OR_INTERFACE_CAN_BE_BUILT"
+      },
+      "jointProjectChecks": {
+        "result": "SENSITIVE_TO_ASSUMPTIONS",
+        "sampleCount": 81,
+        "satisfyingWitness": {
+          "widthM": 16,
+          "depthM": 30,
+          "frontGroundErrorM": 0.3,
+          "accessWidthM": 2.5,
+          "meetsSelectedProjectChecks": true
+        },
+        "counterexample": {
+          "widthM": 10,
+          "depthM": 18,
+          "frontGroundErrorM": -0.3,
+          "accessWidthM": 1.2,
+          "meetsSelectedProjectChecks": false
+        },
+        "scope": "GEOMETRY_WORKING_SPACE_DIRECT_APPROACH_AND_WIDTH_ONLY_NOT_DEPLOYMENT"
+      },
+      "evidenceBackedRuntime": {
+        "fingerprint": "7541c5cc8f2b7a6ac07f0ed624fb8b97e8feb2bafe6ae2b05217d11055e5fa72",
+        "localBoroughTarget": "BOUNDED_EXISTING_PLUGIN",
+        "conformanceFingerprint": "bcd560195fa324687af7796d598e52ca6bac9086ef6914e0a00c29eca56ed064",
+        "openConformanceClauses": [
+          "RH-I01",
+          "RH-I03",
+          "RH-I04",
+          "RH-I05",
+          "RH-I06",
+          "RH-I07",
+          "RH-PROT-02",
+          "RH-PROT-03",
+          "RH-PROT-05",
+          "RH-PROT-07",
+          "RH-PROT-08",
+          "RH-PROT-09",
+          "RH-PROT-10",
+          "RH-PROT-11",
+          "RH-PROT-12",
+          "RH-PROT-13",
+          "RH-PROT-14",
+          "RH-PROT-15",
+          "RH-SI02",
+          "RH-SI05"
+        ],
+        "unresolvedInputs": [
+          "candidateConformance.RH-I01",
+          "candidateConformance.RH-I03",
+          "candidateConformance.RH-I04",
+          "candidateConformance.RH-I05",
+          "candidateConformance.RH-I06",
+          "candidateConformance.RH-I07",
+          "candidateConformance.RH-PROT-02",
+          "candidateConformance.RH-PROT-03",
+          "candidateConformance.RH-PROT-05",
+          "candidateConformance.RH-PROT-07",
+          "candidateConformance.RH-PROT-08",
+          "candidateConformance.RH-PROT-09",
+          "candidateConformance.RH-PROT-10",
+          "candidateConformance.RH-PROT-11",
+          "candidateConformance.RH-PROT-12",
+          "candidateConformance.RH-PROT-13",
+          "candidateConformance.RH-PROT-14",
+          "candidateConformance.RH-PROT-15",
+          "candidateConformance.RH-SI02",
+          "candidateConformance.RH-SI05",
+          "proposal.PartMVolume1Applicability",
+          "proposal.areaWithFinishedFloorToCeilingHeightAtLeast2_5m",
+          "proposal.bedroomCount",
+          "proposal.bedspaceCount",
+          "proposal.bedspaceOrOccupantCount",
+          "proposal.builtInStorageArea",
+          "proposal.cavityInsulationInserted",
+          "proposal.developmentDwellingCountAndTypologies",
+          "proposal.localHigherStandardStatus",
+          "proposal.minimumQualifyingDepth",
+          "proposal.minimumQualifyingWidth",
+          "proposal.planningConditionOrDeterminationWhenAvailable",
+          "proposal.planningProposalCategorySchedule",
+          "proposal.policyDefinedGIA",
+          "proposal.qualifyingPrivateOutdoorArea"
+        ],
+        "obligations": [
+          {
+            "id": "CROY-DM10-1-DESIGN-CHARACTER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "CROY-DM10-4-HOST-GARDEN-RETENTION",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "CROY-DM10-4-PRIVATE-AMENITY-AREA",
+            "result": "UNSUPPORTED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "CROY-DM10-6-NEIGHBOUR-AMENITY",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "CROY-DM25-SUDS-FLOOD",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "CROY-DM29-SUSTAINABLE-TRAVEL-HIGHWAY",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "CROY-DM30-CAR-CYCLE-PARKING",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-H1-FOUL-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H2-NON-MAINS-TREATMENT",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-1-ROOF-RAINWATER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-2-PAVED-AREA-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-3-RAINWATER-DISCHARGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H4-MAPPED-SEWER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-H5-SEPARATE-SYSTEMS",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-A1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-D1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-REG7-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "LON-D3-DESIGN-LED",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "LON-D5-INCLUSIVE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_INCLUSIVE_DESIGN_JUDGEMENT"
+          },
+          {
+            "id": "LON-D6-CEILING-HEIGHT",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-GIA-STORAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-PRIVATE-OUTSIDE-SPACE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D7-ACCESSIBLE-HOUSING-MIX",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_DETERMINATION"
+          }
+        ]
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ],
+      "verifiedCandidateReadiness": "UNCHANGED_NOT_READY",
+      "wholeSiteConclusion": "NOT_ESTABLISHED"
+    },
+    {
+      "siteId": "DPL-RP-008",
+      "context": "Small garage redevelopment; approximate marketed area 97 m².",
+      "authority": "ASSUMPTION_BASED_EXPLORATION_ONLY",
+      "sourceRecordFingerprint": "99def4109c942defaf097491896db10a433f97a78d55a7b23b09bc54d8048480",
+      "assumptionFingerprint": "ea98198d795092c38b4842beeb182a5b6a0f5c84e302ea26973445c6052662c8",
+      "areaAnchorM2": 97,
+      "assumedNominalAreaM2": 97,
+      "geometry": {
+        "result": "FAILS_AT_ALL_TESTED_SAMPLES",
+        "workingSpaceResult": "FAILS_AT_ALL_TESTED_SAMPLES",
+        "samples": [
+          {
+            "widthM": 8,
+            "depthM": 8.083333333333334,
+            "clearancesM": {
+              "left": -2,
+              "right": -2,
+              "front": 5.2,
+              "rear": -7.916666666666666
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 8,
+            "depthM": 10,
+            "clearancesM": {
+              "left": -2,
+              "right": -2,
+              "front": 5.2,
+              "rear": -6
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 8,
+            "depthM": 12.125,
+            "clearancesM": {
+              "left": -2,
+              "right": -2,
+              "front": 5.2,
+              "rear": -3.875
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 9.7,
+            "depthM": 8.083333333333334,
+            "clearancesM": {
+              "left": -1.1500000000000004,
+              "right": -1.1500000000000004,
+              "front": 5.2,
+              "rear": -7.916666666666666
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 9.7,
+            "depthM": 10,
+            "clearancesM": {
+              "left": -1.1500000000000004,
+              "right": -1.1500000000000004,
+              "front": 5.2,
+              "rear": -6
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 9.7,
+            "depthM": 12.125,
+            "clearancesM": {
+              "left": -1.1500000000000004,
+              "right": -1.1500000000000004,
+              "front": 5.2,
+              "rear": -3.875
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 12,
+            "depthM": 8.083333333333334,
+            "clearancesM": {
+              "left": 0,
+              "right": 0,
+              "front": 5.2,
+              "rear": -7.916666666666666
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 12,
+            "depthM": 10,
+            "clearancesM": {
+              "left": 0,
+              "right": 0,
+              "front": 5.2,
+              "rear": -6
+            },
+            "contained": false,
+            "workingSpace": false
+          },
+          {
+            "widthM": 12,
+            "depthM": 12.125,
+            "clearancesM": {
+              "left": 0,
+              "right": 0,
+              "front": 5.2,
+              "rear": -3.875
+            },
+            "contained": false,
+            "workingSpace": false
+          }
+        ]
+      },
+      "datumSamples": [
+        {
+          "slopeDeg": 0,
+          "groundChangeAcrossHouseM": 0,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": 0.3,
+          "downhillRearFflAboveGroundM": 0.3,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 3,
+          "groundChangeAcrossHouseM": 0.566004016256845,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.26600401625684506,
+          "downhillRearFflAboveGroundM": 0.866004016256845,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        },
+        {
+          "slopeDeg": 6,
+          "groundChangeAcrossHouseM": 1.1351257408693058,
+          "frontFflAboveGroundM": 0.3,
+          "uphillRearFflAboveGroundM": -0.8351257408693058,
+          "downhillRearFflAboveGroundM": 1.4351257408693059,
+          "implication": "GRADING_SUPPORT_WATER_RESPONSE_REQUIRES_DESIGN"
+        }
+      ],
+      "approachSamples": [
+        {
+          "frontGroundErrorM": -0.3,
+          "heightM": 0.6,
+          "directApproachGradient": 0.11538461538461538,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0,
+          "heightM": 0.3,
+          "directApproachGradient": 0.05769230769230769,
+          "meetsIllustrativeProjectGradient": false
+        },
+        {
+          "frontGroundErrorM": 0.3,
+          "heightM": 0,
+          "directApproachGradient": 0,
+          "meetsIllustrativeProjectGradient": true
+        }
+      ],
+      "accessSamples": [
+        {
+          "widthM": 1.2,
+          "meetsIllustrativeLogisticsWidth": false
+        },
+        {
+          "widthM": 2.5,
+          "meetsIllustrativeLogisticsWidth": true
+        },
+        {
+          "widthM": 3.5,
+          "meetsIllustrativeLogisticsWidth": true
+        }
+      ],
+      "conditionalResponses": {
+        "widthRequiredForFixedPlacementM": 12,
+        "widthRequiredWithChosenSideWorkingSpaceM": 14,
+        "depthRequiredWithChosenRearWorkingSpaceM": 19,
+        "approachLengthAtNominalRiseM": 5.999999999999999,
+        "approachLengthForTestedFrontLevelErrorsM": 11.999999999999998,
+        "minimumFootprintAreaM2": 129.60000000000002,
+        "areaAnchorWouldNeedIncreasePercentForBareFootprint": 33.60824742268043,
+        "boundary": "REQUIREMENTS_FOR_THE_STATED_HYPOTHESIS_NOT_PROOF_THAT_A_ROUTE_OR_INTERFACE_CAN_BE_BUILT"
+      },
+      "jointProjectChecks": {
+        "result": "FAILS_AT_ALL_TESTED_SAMPLES",
+        "sampleCount": 81,
+        "satisfyingWitness": null,
+        "counterexample": {
+          "widthM": 8,
+          "depthM": 8.083333333333334,
+          "frontGroundErrorM": -0.3,
+          "accessWidthM": 1.2,
+          "meetsSelectedProjectChecks": false
+        },
+        "scope": "GEOMETRY_WORKING_SPACE_DIRECT_APPROACH_AND_WIDTH_ONLY_NOT_DEPLOYMENT"
+      },
+      "evidenceBackedRuntime": {
+        "fingerprint": "e2507b6f2e360dbe509cff50670edb1b22e44be0afc3a6533f3bd92a81d27082",
+        "localBoroughTarget": "UNSUPPORTED_LOCAL_TARGET",
+        "conformanceFingerprint": "ec2fa1357af0660d4dc0d99f2b5b00988ea2d50325ca111c08739ac2e8e0e2ba",
+        "openConformanceClauses": [
+          "RH-I01",
+          "RH-I03",
+          "RH-I04",
+          "RH-I05",
+          "RH-I06",
+          "RH-I07",
+          "RH-PROT-02",
+          "RH-PROT-03",
+          "RH-PROT-05",
+          "RH-PROT-07",
+          "RH-PROT-08",
+          "RH-PROT-09",
+          "RH-PROT-10",
+          "RH-PROT-11",
+          "RH-PROT-12",
+          "RH-PROT-13",
+          "RH-PROT-14",
+          "RH-PROT-15",
+          "RH-SI02",
+          "RH-SI05"
+        ],
+        "unresolvedInputs": [
+          "candidateConformance.RH-I01",
+          "candidateConformance.RH-I03",
+          "candidateConformance.RH-I04",
+          "candidateConformance.RH-I05",
+          "candidateConformance.RH-I06",
+          "candidateConformance.RH-I07",
+          "candidateConformance.RH-PROT-02",
+          "candidateConformance.RH-PROT-03",
+          "candidateConformance.RH-PROT-05",
+          "candidateConformance.RH-PROT-07",
+          "candidateConformance.RH-PROT-08",
+          "candidateConformance.RH-PROT-09",
+          "candidateConformance.RH-PROT-10",
+          "candidateConformance.RH-PROT-11",
+          "candidateConformance.RH-PROT-12",
+          "candidateConformance.RH-PROT-13",
+          "candidateConformance.RH-PROT-14",
+          "candidateConformance.RH-PROT-15",
+          "candidateConformance.RH-SI02",
+          "candidateConformance.RH-SI05",
+          "proposal.PartMVolume1Applicability",
+          "proposal.areaWithFinishedFloorToCeilingHeightAtLeast2_5m",
+          "proposal.bedroomCount",
+          "proposal.bedspaceCount",
+          "proposal.bedspaceOrOccupantCount",
+          "proposal.builtInStorageArea",
+          "proposal.cavityInsulationInserted",
+          "proposal.developmentDwellingCountAndTypologies",
+          "proposal.localHigherStandardStatus",
+          "proposal.minimumQualifyingDepth",
+          "proposal.minimumQualifyingWidth",
+          "proposal.planningConditionOrDeterminationWhenAvailable",
+          "proposal.planningProposalCategorySchedule",
+          "proposal.policyDefinedGIA",
+          "proposal.qualifyingPrivateOutdoorArea"
+        ],
+        "obligations": [
+          {
+            "id": "ENG-BR-H1-FOUL-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H2-NON-MAINS-TREATMENT",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-1-ROOF-RAINWATER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-2-PAVED-AREA-DRAINAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H3-3-RAINWATER-DISCHARGE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-H4-MAPPED-SEWER",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-H5-SEPARATE-SYSTEMS",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-A1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-A3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C1-3",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-C2",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PROFESSIONAL_EVIDENCE"
+          },
+          {
+            "id": "ENG-BR-D1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "ENG-BR-REG7-1",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_EVIDENCE_AND_INSPECTION"
+          },
+          {
+            "id": "LON-D3-DESIGN-LED",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT"
+          },
+          {
+            "id": "LON-D5-INCLUSIVE",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_OR_INCLUSIVE_DESIGN_JUDGEMENT"
+          },
+          {
+            "id": "LON-D6-CEILING-HEIGHT",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-GIA-STORAGE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D6-PRIVATE-OUTSIDE-SPACE",
+            "result": "UNRESOLVED",
+            "methodKind": "NATIVE_DETERMINISTIC"
+          },
+          {
+            "id": "LON-D7-ACCESSIBLE-HOUSING-MIX",
+            "result": "UNRESOLVED",
+            "methodKind": "EXTERNAL_PLANNING_DETERMINATION"
+          }
+        ]
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ],
+      "verifiedCandidateReadiness": "UNCHANGED_NOT_READY",
+      "wholeSiteConclusion": "NOT_ESTABLISHED"
+    }
+  ],
+  "lennardFixedPlacementSensitivity": {
+    "source": "project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json",
+    "sourceFingerprint": "c732f708c6a4a048b2edb67564a50c9fc27a3873be77664a7f655d40a5f7a3a7",
+    "baseIndexGeometryClearanceM": 0.640023844673485,
+    "inwardBoundaryOffsetsM": [
+      {
+        "offsetM": 0,
+        "residualClearanceM": 0.640023844673485,
+        "containedUnderUniformInwardOffset": true
+      },
+      {
+        "offsetM": 0.25,
+        "residualClearanceM": 0.39002384467348505,
+        "containedUnderUniformInwardOffset": true
+      },
+      {
+        "offsetM": 0.5,
+        "residualClearanceM": 0.14002384467348505,
+        "containedUnderUniformInwardOffset": true
+      },
+      {
+        "offsetM": 0.75,
+        "residualClearanceM": -0.10997615532651495,
+        "containedUnderUniformInwardOffset": false
+      }
+    ],
+    "boundary": "HYPOTHETICAL_UNIFORM_INWARD_OFFSET_NOT_A_STATEMENT_OF_INDEX_ACCURACY_OR_LEGAL_BOUNDARY"
+  },
+  "proofBoundary": {
+    "verifiedReadyCorpusSites": 0,
+    "corpusSites": 8,
+    "geometryHypothesesNotMeasuredParcels": true,
+    "sampleResultsAreNotProbabilities": true,
+    "untestedIntermediateValuesNotCertified": true,
+    "wholeSiteCompatibility": "NOT_ESTABLISHED",
+    "regulatoryCompliance": "NOT_ESTABLISHED",
+    "referenceHouseMutation": false,
+    "candidateSearch": false,
+    "externalEvidenceRequirementsRetained": true
+  },
+  "resultFingerprint": "850981a5afb9143aaa8bc3db78b2cd0c96ad7feb3a63e6792aef35d57be134bf"
+}

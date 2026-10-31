@@ -4,7 +4,7 @@ A house should seek **permanence without stasis**. It is completed once and then
 
 Ovid’s House starts from that later life rather than stopping at practical completion.
 
-> **The permanent architecture should remain stable because change has been given deliberate places to occur.**
+The permanent architecture should remain stable because change has been given deliberate places to occur.
 
 This is **permanence through transformation**. It is not an argument for making the whole house demountable. It is an argument for deciding, deliberately, what should endure; what should be expected to change; and how the two should meet.
 
@@ -14,7 +14,7 @@ Buildings change at different speeds. Structure, masonry, windows, services, con
 
 A cable chased into sound masonry is a simple example. So is a valve hidden behind bonded finish, a window whose removal destroys otherwise serviceable internal work, or plant that can be reached for inspection but cannot be withdrawn for replacement.
 
-> **A component's lifespan matters less than the lifespan of the things that must be destroyed to replace it.**
+A component's lifespan matters less than the lifespan of the things that must be destroyed to replace it.
 
 The aim is therefore not maximum durability of every component. It is **independence between unlike lifespans where that independence is worth providing**.
 

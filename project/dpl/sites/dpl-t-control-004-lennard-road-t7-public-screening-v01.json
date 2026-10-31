@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "dpl.lennardT7PublicScreeningEvidence.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "researchDate": "2026-10-26",
+  "assuranceProfile": "SCREENING",
+  "authorityBoundary": "This record captures bounded public/context evidence used only to evaluate whether an acceleration trigger is positively activated. It is not a measured survey, legal/title opinion, highway determination, arboricultural/ecological assessment, flood-risk assessment, drainage design, utility search, planning judgement or proof that an unreported constraint is absent.",
+  "sources": [
+    {
+      "id": "T7-PUB-01",
+      "sourceClass": "PUBLIC_PLANNING_REGISTER_MIRROR",
+      "url": "https://planindex.co.uk/planning-applications/bromley/26-02618-fpa",
+      "retrievedAt": "2026-10-26",
+      "subject": "Public mirror of Bromley application 26/02618/FPA",
+      "observed": [
+        "41 Lennard Road, Bromley, BR2 8LN is indexed as a valid full planning application for a detached replacement dwelling.",
+        "The public file is indexed as containing 24 documents."
+      ],
+      "authorityBoundary": "Mirror/index evidence only. Official Bromley records remain authoritative and the applicant proposal is not the Reference House candidate."
+    },
+    {
+      "id": "T7-PUB-02",
+      "sourceClass": "PUBLIC_PLANNING_AND_CONSTRAINT_MIRROR",
+      "url": "https://plota.co.uk/application/zskczvxb",
+      "retrievedAt": "2026-10-26",
+      "subject": "Public mirror/index of Bromley application documents and open-data site context",
+      "observed": [
+        "The indexed document set includes a BRE 25 Degree Test, Biodiversity Net Gain Exemption Statement, Part M4(2) Compliance Statement, Proposed Landscaping Strategy and SuDS Note for the applicant proposal.",
+        "The mirror reports the postcode-centred application pin outside Flood Zones 2 and 3 and not at a scheduled monument.",
+        "The mirror reports Habitat Network Enhancement Zone 2, Crofton Woods SSSI at approximately 349 m, Green Belt at approximately 46 m and PTAL 1b as contextual open-data indicators."
+      ],
+      "authorityBoundary": "The mirror warns that its application pin is the centre of the postcode rather than the building, so designation distances can be wrong by the width of the postcode area. These observations cannot prove site-specific absence, policy acceptability or transfer applicant-scheme assessments to the Reference House candidate."
+    }
+  ],
+  "controlledEvidenceRefs": [
+    "project/dpl/sites/dpl-t-control-004-lennard-road-runtime-manifest-v01.json",
+    "project/dpl/sites/dpl-t-control-004-lennard-road-street-access.json",
+    "project/dpl/sites/dpl-t-control-004-lennard-road-title-boundary.json",
+    "project/dpl/sites/dpl-t-control-004-lennard-road-elevation.json",
+    "project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json",
+    "project/dpl/sites/dpl-t-control-004-lennard-road-verification-v01.json",
+    "project/dpl/dpl-t4-lennard-candidate-verification.md",
+    "project/dpl/dpl-t5-lennard-real-control-runtime.md",
+    "project/dpl/dpl-t6-lennard-screening-aggregation.md"
+  ],
+  "interpretiveRules": [
+    "UNKNOWN is not a positive acceleration fact.",
+    "PARTIAL evidence is tested against the literal registered trigger; it does not self-activate acceleration.",
+    "A public applicant-proposal document inventory is contextual evidence only unless a site fact is independently transferable to the Reference House candidate.",
+    "No-match or no-report in a bounded public source is not proof that a constraint is absent.",
+    "Future-due evidence remains future-due unless an actual registered acceleration condition is positively established."
+  ]
+}

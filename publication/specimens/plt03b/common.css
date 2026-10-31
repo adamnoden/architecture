@@ -1,0 +1,91 @@
+html, body { margin: 0; padding: 0; color: #000; background: #fff; font-family: "PLT03 Source Sans"; }
+* { box-sizing: border-box; }
+
+.proof-page,
+.wall-page {
+  break-after: page;
+  page-break-after: always;
+  position: relative;
+}
+
+.proof-page {
+  page: proof;
+  height: 100%;
+}
+
+.proof-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 140mm;
+  height: 8mm;
+  display: grid;
+  grid-template-columns: 12mm 1fr auto;
+  align-items: start;
+  font-size: 7pt;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+.proof-index { font-variant-numeric: tabular-nums; }
+.proof-name { font-weight: 700; }
+.proof-scale { font-weight: 400; }
+
+.drawing-frame {
+  position: absolute;
+  left: 2mm;
+  top: 14mm;
+  width: 136mm;
+  height: 145mm;
+  overflow: visible;
+}
+.drawing-frame > svg,
+.wall-drawing > svg {
+  display: block;
+  width: 136mm;
+  height: 145mm;
+  max-width: none;
+  max-height: none;
+  transform: none;
+}
+
+.proof-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 140mm;
+  font-size: 6.5pt;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.wall-page { page: wall; height: 100%; }
+.wall-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8pt;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+.wall-drawing {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 136mm;
+  height: 145mm;
+  margin-left: -68mm;
+  margin-top: -72.5mm;
+}
+.wall-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 7pt;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}

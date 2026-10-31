@@ -1,0 +1,23 @@
+{
+  "authority": "B6_SCREEN_APPROVED_NOT_PHYSICAL_ACCEPTANCE",
+  "validatedHead": "d4f4546384bd717f08879f2e0585a4326754bb48",
+  "files": {
+    "ground-100.svg": {
+      "sha256": "5dd9c94506ae680e23b435485524ab0963bd07de3fc8cb2326d6cf3df08a2e3e",
+      "sceneSha256": "eb0a604466c5181c032161c0535925595e728694568db1a62dc5cb042d011d61"
+    },
+    "ground-50.svg": {
+      "sha256": "555928cebb1b9f2d08720370e32b1ff8f1655c48e7b6268fdaa6d272439e1a47",
+      "sceneSha256": "731ddde48884aa255d9a60c4aa8db9edf803e2b9b7abdf377b2afb65d8603ed8"
+    },
+    "first-100.svg": {
+      "sha256": "1fef2dcb9aa993d10b2be1080ac8be2a01d0414df79467b0c3bbfb7736fedaae",
+      "sceneSha256": "a04abea56705d2d36dde9319f5e4e0668f6ac1c3d65c9d23bd5ece349cb1b88e"
+    },
+    "first-50.svg": {
+      "sha256": "072f5946ce443a8c44a1a889f3a06301d87a303668570b7020b3692808d1a1c0",
+      "sceneSha256": "bf65a9d3120ee72a0718e515cffd7586c899b31cc95f885b4eca5258520da48e"
+    }
+  },
+  "sourceSha256": "2220e5aa7801f298d7e9ba7be04c0f7d3d08dea25e478cc12463474071f39fca"
+}
