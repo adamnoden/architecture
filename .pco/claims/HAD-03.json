@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 11,
-  "state": "released",
-  "leaseId": "3c0342c6-a6c9-4683-b892-2f238354cfb3",
+  "generation": 12,
+  "state": "claimed",
+  "leaseId": "a4306499-2ae9-43d1-b3df-4e343c541df6",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-2900-authorised-resume"
+    "label": "swarm-782cae-root-rwt"
   },
-  "claimedAt": "2026-10-31T16:54:40.699Z",
-  "heartbeatAt": "2026-10-31T17:01:46.745Z",
-  "expiresAt": "2026-10-31T17:01:46.745Z",
-  "branch": "work/swarm-2900-had-20261031",
+  "claimedAt": "2026-10-31T17:16:15.611Z",
+  "heartbeatAt": "2026-10-31T17:16:15.611Z",
+  "expiresAt": "2026-10-31T18:01:15.611Z",
+  "branch": "work/swarm-782cae-rwt-access",
   "predecessor": {
-    "leaseId": "01578a4c-862a-45a3-aa70-d52bf32157e7",
-    "generation": 10,
-    "branch": "work/mvb-chat-6541677482",
-    "pr": 1143,
+    "leaseId": "3c0342c6-a6c9-4683-b892-2f238354cfb3",
+    "generation": 11,
+    "branch": "work/swarm-2900-had-20261031",
+    "pr": 1151,
     "checkpoint": {
-      "evidence": "PR #1143 merged at b6d3ed65de889d364e49d2da5e5ee45a59f6e70c. Final head dfdf2ef27431af7d6df897eb2a473e0d77618414 passed full CI 41190186050 and canonical preflight at 09:52:12.921 UTC.",
-      "next": "Obtain applicable table/chair sections and intended occupied arrangement; validate the 100 mm insertion and required regular/guest seating without inheriting the earlier envelope assumptions.",
-      "blocker": "HAD-03 remains planned. Product scalars and conditional arithmetic do not establish occupied comfort, seating capacity, full insertion, material admission or an adopted kitchen."
+      "evidence": "PR #1151 merged at 20ca2ad086984af13b1054baac8bb2e5b15dc244. Head fadfa3964aa68fd4ec0c991e6b316826ca226ef0 passed full CI 41222154331 and canonical preflight 17:00:47.912 UTC.",
+      "next": "Confirm required regular and guest seating and obtain actual paired sections and occupied-use evidence; preserve both unadopted comparisons and opening/conversion limits.",
+      "blocker": "HAD-03 remains planned. Six-side envelope study does not select furniture, establish occupied comfort, material admission or actual conversion."
     }
   },
   "recoverySource": {
-    "leaseId": "01578a4c-862a-45a3-aa70-d52bf32157e7",
-    "generation": 10,
-    "branch": "work/mvb-chat-6541677482",
-    "pr": 1143,
+    "leaseId": "3c0342c6-a6c9-4683-b892-2f238354cfb3",
+    "generation": 11,
+    "branch": "work/swarm-2900-had-20261031",
+    "pr": 1151,
     "checkpoint": {
-      "evidence": "PR #1143 merged at b6d3ed65de889d364e49d2da5e5ee45a59f6e70c. Final head dfdf2ef27431af7d6df897eb2a473e0d77618414 passed full CI 41190186050 and canonical preflight at 09:52:12.921 UTC.",
-      "next": "Obtain applicable table/chair sections and intended occupied arrangement; validate the 100 mm insertion and required regular/guest seating without inheriting the earlier envelope assumptions.",
-      "blocker": "HAD-03 remains planned. Product scalars and conditional arithmetic do not establish occupied comfort, seating capacity, full insertion, material admission or an adopted kitchen."
+      "evidence": "PR #1151 merged at 20ca2ad086984af13b1054baac8bb2e5b15dc244. Head fadfa3964aa68fd4ec0c991e6b316826ca226ef0 passed full CI 41222154331 and canonical preflight 17:00:47.912 UTC.",
+      "next": "Confirm required regular and guest seating and obtain actual paired sections and occupied-use evidence; preserve both unadopted comparisons and opening/conversion limits.",
+      "blocker": "HAD-03 remains planned. Six-side envelope study does not select furniture, establish occupied comfort, material admission or actual conversion."
     }
-  },
-  "pr": 1151,
-  "checkpoint": {
-    "evidence": "PR #1151 merged at 20ca2ad086984af13b1054baac8bb2e5b15dc244. Head fadfa3964aa68fd4ec0c991e6b316826ca226ef0 passed full CI 41222154331 and canonical preflight 17:00:47.912 UTC.",
-    "next": "Confirm required regular and guest seating and obtain actual paired sections and occupied-use evidence; preserve both unadopted comparisons and opening/conversion limits.",
-    "blocker": "HAD-03 remains planned. Six-side envelope study does not select furniture, establish occupied comfort, material admission or actual conversion."
-  },
-  "releasedAt": "2026-10-31T17:01:46.745Z",
-  "releaseReason": "handoff"
+  }
 }
