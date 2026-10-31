@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
-  "generation": 6,
-  "state": "released",
-  "leaseId": "8f8a053b-9104-42c3-a1a5-02b4b34db3ca",
+  "generation": 7,
+  "state": "claimed",
+  "leaseId": "7da738bf-93a5-473d-8385-4aa7b97264bf",
   "holder": {
     "kind": "chatgpt",
-    "label": "mat-tray-integration-20261031-1706"
+    "label": "swarm-2900-worker-two-duct"
   },
-  "claimedAt": "2026-10-31T17:06:33.742Z",
-  "heartbeatAt": "2026-10-31T17:20:12.003Z",
-  "expiresAt": "2026-10-31T17:20:12.003Z",
-  "branch": "work/mat-tray-integration-20261031-1706",
+  "claimedAt": "2026-10-31T17:22:25.363Z",
+  "heartbeatAt": "2026-10-31T17:22:25.363Z",
+  "expiresAt": "2026-10-31T18:07:25.363Z",
+  "branch": "work/swarm-2900-mat-duct-20261031",
   "predecessor": {
-    "leaseId": "a65098e6-f17f-45df-a781-c83ba02da995",
-    "generation": 5,
-    "branch": "work/swarm-access-recovery-20261031",
-    "pr": 1150,
+    "leaseId": "8f8a053b-9104-42c3-a1a5-02b4b34db3ca",
+    "generation": 6,
+    "branch": "work/mat-tray-integration-20261031-1706",
+    "pr": 1156,
     "checkpoint": {
-      "evidence": "PR 1150 merged as 03bba64db58024cf8bfdd7c1f7afa865e9b072c8. Fresh native main verification confirms accepted tree e235ccc6c960795483ba906f10dae0a2ff01ec07 equals full-CI head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 and all three reviewed remote source parents are ancestors. Full CI 41221814322 succeeded; all three canonical preflights passed at 16:56:05/11/16 UTC. Common feature and all intended individual source refs are absent; no source branch was published this round. Bounded results only, no lifecycle completion.",
-      "next": "MAT-INTERIORS remains planned. Resolve the exact tray/Upstand/frame/waste package, all contact/additional-support constituents, independent west service opening and complete tray/frame release and carrying route. No complete permitted waste was established."
+      "evidence": "PR 1156 merged as 25c1f610fe3b6b28fe410d5936a7009972a39890. Accepted tree f34033123918b2a8da38df4acedfee022c120ea6 equals exact validated head 7073cb4853b07741b62d414d45bbd39de9fa4d1f; full CI 41223632606 succeeded and canonical preflight passed at 17:19:10Z. PR 1149 is merged by preserved ancestry; both remote feature refs are absent.",
+      "next": "Bind the configured tray/Upstand/frame/waste package and all support/contact constituents, then draw north/east wall and independent west service sections with full waste withdrawal and the tray/frame carrying route.",
+      "blocker": "Complete non-synthetic installation, applicable support details, physical fit and renewal remain unresolved. MAT-INTERIORS stays planned; this is bounded partial progress."
     }
   },
   "recoverySource": {
-    "leaseId": "a65098e6-f17f-45df-a781-c83ba02da995",
-    "generation": 5,
-    "branch": "work/swarm-access-recovery-20261031",
-    "pr": 1150,
+    "leaseId": "8f8a053b-9104-42c3-a1a5-02b4b34db3ca",
+    "generation": 6,
+    "branch": "work/mat-tray-integration-20261031-1706",
+    "pr": 1156,
     "checkpoint": {
-      "evidence": "PR 1150 merged as 03bba64db58024cf8bfdd7c1f7afa865e9b072c8. Fresh native main verification confirms accepted tree e235ccc6c960795483ba906f10dae0a2ff01ec07 equals full-CI head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 and all three reviewed remote source parents are ancestors. Full CI 41221814322 succeeded; all three canonical preflights passed at 16:56:05/11/16 UTC. Common feature and all intended individual source refs are absent; no source branch was published this round. Bounded results only, no lifecycle completion.",
-      "next": "MAT-INTERIORS remains planned. Resolve the exact tray/Upstand/frame/waste package, all contact/additional-support constituents, independent west service opening and complete tray/frame release and carrying route. No complete permitted waste was established."
+      "evidence": "PR 1156 merged as 25c1f610fe3b6b28fe410d5936a7009972a39890. Accepted tree f34033123918b2a8da38df4acedfee022c120ea6 equals exact validated head 7073cb4853b07741b62d414d45bbd39de9fa4d1f; full CI 41223632606 succeeded and canonical preflight passed at 17:19:10Z. PR 1149 is merged by preserved ancestry; both remote feature refs are absent.",
+      "next": "Bind the configured tray/Upstand/frame/waste package and all support/contact constituents, then draw north/east wall and independent west service sections with full waste withdrawal and the tray/frame carrying route.",
+      "blocker": "Complete non-synthetic installation, applicable support details, physical fit and renewal remain unresolved. MAT-INTERIORS stays planned; this is bounded partial progress."
     }
-  },
-  "pr": 1156,
-  "checkpoint": {
-    "evidence": "PR 1156 merged as 25c1f610fe3b6b28fe410d5936a7009972a39890. Accepted tree f34033123918b2a8da38df4acedfee022c120ea6 equals exact validated head 7073cb4853b07741b62d414d45bbd39de9fa4d1f; full CI 41223632606 succeeded and canonical preflight passed at 17:19:10Z. PR 1149 is merged by preserved ancestry; both remote feature refs are absent.",
-    "next": "Bind the configured tray/Upstand/frame/waste package and all support/contact constituents, then draw north/east wall and independent west service sections with full waste withdrawal and the tray/frame carrying route.",
-    "blocker": "Complete non-synthetic installation, applicable support details, physical fit and renewal remain unresolved. MAT-INTERIORS stays planned; this is bounded partial progress."
-  },
-  "releasedAt": "2026-10-31T17:20:12.003Z",
-  "releaseReason": "handoff"
+  }
 }
