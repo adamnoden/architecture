@@ -47,6 +47,16 @@ Plastic damp-proof courses are rejected as the design direction. Develop suitabl
 
 The [ground-water and rising-damp policy](../docs/reference-house/ground-water-policy.md) owns the exact acceptance boundaries and source evidence. Existing MAT, DPL, RWT, BCR, MRA and delivery work carry the requirement into design and assurance. Policy adoption does not mark those technical questions resolved.
 
+## Development and assurance — 31 October 2026
+
+The owner directs the project to exhaust useful internal research and design work before treating external review as a reason to stop. Agents may complete comparative studies, preliminary calculations, reference designs and technical reviews through primary-source research, explicit assumptions, reproducible methods and adversarial internal challenge. They must reach a reasoned recommendation, including rejection or a conventional alternative where the evidence warrants it. A second brief asking someone else to think is not completion of that work.
+
+External review is not a default prerequisite for **development completion**. Keep it separate from **acceptance for the affected use**. Each retained hold must name the missing evidence, the decision or claim it prevents, its responsible route and the latest point at which it must be resolved. Missing measurements, product evidence, physical tests, justified specialist checks and statutory decisions remain real obligations. A safety-critical uncertainty may prevent fixing a dependent design decision while options and unrelated work continue; do not defer every review indiscriminately until construction.
+
+Bind findings to the actual source revision; distinguish adopted design from trial alternatives and recheck affected findings when inputs change. Internal AI challenge is not independent professional review. Completing an investigation may expose a failed or unresolved design; it does not turn that design into a pass or increase its maturity. Existing BCR, EPR, PHY and DEL records own the residual obligations; do not create a parallel assurance register.
+
+Use this short status note on development packages where needed: **Reference design — not released for construction. Assumptions and outstanding verification accompany the proposal; internal checks do not constitute external assurance or certification.** The note communicates status and does not discharge evidence obligations. Competence and design-risk duties can arise during design, not only on site; this policy creates no exemption from them. See the [England building-regulations duties guidance](https://www.gov.uk/guidance/design-and-building-work-meeting-building-requirements) and [HSE designer duties](https://www.hse.gov.uk/construction/areyou/designer.htm).
+
 ## Working limits
 
 - Establish the brief and cost questions early. No budget, household detail, completion date or procurement decision may be invented from this objective.

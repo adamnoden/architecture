@@ -76,7 +76,7 @@ export const houseDeliveryNodes = defineNodes([
   },
   {
     id: 'DEL-COMMISSION-PLAN', owners: ['DEL'], title: 'Register grounded whole-house design construction and handover packets',
-    dependencies: ['DPL-SITE-ASSESSMENT', 'EPR-BAY-REVIEW'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
+    dependencies: ['DPL-SITE-ASSESSMENT', 'DEL-BAY-PACK'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/del/commission-execution-plan.md']
   }
 ])
