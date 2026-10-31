@@ -8,6 +8,8 @@ The LARGO comparison now has a recoverable chain from the manufacturer to exact 
 
 The newly recovered fixing guidance makes the underside task more specific. A four-clip sales pack cannot stand for a complete fixing layout, and a metal clip alone cannot stand for its complete anchorage. The cabinet must accommodate the actual load path and its release, including the rear and side territories, before the bowl can be lowered. No new cutout, mounting method, worktop, material exception or kitchen arrangement is adopted.
 
+The later [waste-manual review](#recovered-waste-kit-manual--31-october-2026), against main `e89b0253bf1a66c14307196bcd80303b72de5c85`, recovers the manufacturer's illustrated assembly alternatives. It distinguishes access from above to the central fixing from release and support below the bowl. It does not identify a delivered kit or supply the missing installed dimensions.
+
 ## Current model association, with the evidence chain intact
 
 The [Franke UK article 122.0250.208][sink] identifies LAX 110 50-41, includes a manual 3½-inch semi-integrated waste and overflow, excludes the siphon, and links Central Services for spare parts. The partner's [exact model collection][model] associates the following service items. Both pages were read on 31 October 2026. The collection also lists optional accessories; it is not the contents of a newly supplied sink package.
@@ -23,6 +25,32 @@ The [Franke UK article 122.0250.208][sink] identifies LAX 110 50-41, includes a 
 The manufacturer's [Australian record for the same overflow code][overflow-material] calls its material type **various materials**, despite the stainless-steel product name. This corroborates the need for a component declaration; it does not establish Australian/UK kit interchangeability or identify a particular hidden polymer. The UK overflow page also retains the old part number in its displayed image URL. No dimensions or composition have been scaled or inferred from that photograph.
 
 The predecessor's 234 underside-to-waste depth and approximate 636 floor datum remain a **dated illustration**. None of the service listings maps these part codes to that illustrated lower extent. They do not turn 636 into a current thread end, trap-inlet sealing plane or guaranteed clearance. The retained 456 gross interval above the trial base remains unallocated. The source diagram and its machine-readable unknowns therefore stay unchanged.
+
+## Recovered waste-kit manual — 31 October 2026
+
+The [French manufacturer page for 112.0264.985][current-waste] links **“Guide d'installation 112.0264.985 001”**. Its public HTML supplies the [download][waste-manual], which was retrieved and visually inspected, including printed pages 2–3. The document itself is the four-page *Plug Waste Kit* manual, **993.0575.549 / ID 20183883 / V02 / 2023-09-27**; 1,344,192 bytes, SHA-256 `ef3a8f423661c1148f8fc50e210acc300c9329edcfedeaed7fecc4078bf61a1e`. A current product-page association does not change that printed date or make every illustrated alternative the delivered UK assembly.
+
+| Printed location | What the drawing establishes | What must not be inferred |
+|---|---|---|
+| Page 2, sink-seat variants **A / B** | Different interfaces at the bowl outlet; B depicts an additional upper seating piece and ring. Both show a lower waste body and side connection. | These are alternatives, not components to combine. The drawing gives no dimensions, constituent labels or part-code mapping. |
+| Page 3, step 2 | A coin-like tool engages the central threaded fixing from above. | No torque, required tool space or demonstrated removal procedure follows. Access to this fixing does not establish access to the lower body or its connections. |
+| Page 3, downstream variants **A / B** | Two connection arrangements each mark a different intervening ring for disposal. | These labels do not establish correspondence with page 2's A/B pair. No ring material, standard, interchangeability or permission to omit other seals is established. |
+
+The exact downstream arrangement controls which depicted interface piece remains. Do not stack every illustrated ring, delete a sealing function to meet the material policy, or translate an unlabelled outline into a specified gasket. A configured drawing or actual identified kit must settle the combination. The manual contains no dimensioned installed section, trap/appliance branch or complete material declaration; the old 636 datum remains unbound.
+
+### Consequence for the service sequence
+
+The following are **design obligations inferred from the assembly relation**, not Franke's validated reverse-removal instructions:
+
+| Task | Retained assembly and access duty |
+|---|---|
+| Lift out the basket plug for cleaning | Preserve the waste body and its fixed connections. A removable plug demonstrates no whole-body renewal route. |
+| Renew the lower waste body | Retain the independently supported bowl. Expose the actual overflow and downstream connections, support the body and retained pipework, control residual water and determine the required disconnections before releasing its central retention. Above-side tool access and below-side release/support must coexist. |
+| Renew the bowl | Additionally prove complete rim fixing/seal release and supported lowering/front withdrawal under the existing study. Waste-body access does not discharge those separate duties. |
+
+An above-side fastener is useful: a proposed detail need not pretend every first release is behind the bowl. It is insufficient if the body cannot be supported below, a connected overflow prevents its movement, or a downstream joint cannot separate before the body is released. Do not use rotation of a still-connected body to substitute for a demonstrated release sequence. No handling clearance or required stroke is dimensioned here.
+
+The next useful witness is one identified bowl-seat/downstream combination with every retained ring and connection recorded, actual connection faces and release travel, a supported lower-body withdrawal path, and constituent evidence for the complete kit. The cabinet's existing front/rear access territories remain hypotheses until that assembly and its tools are located. This source recovery narrows the question; it leaves all existing fit/material unknowns and IAS-03 lifecycle unchanged.
 
 ## Fixing guidance: two distinct arrangements, neither selected
 
@@ -67,6 +95,8 @@ This continuation adds source identities and an explicit access dependency; it d
 
 Independent source review checked the service associations and fixing-method boundaries. A separate review checked the four gross intervals and the release dependencies. `sink-renewal.ts --check` reproduced the existing output under Node 24, and the Markdown diff passed whitespace checks. The local source subset has no full repository dependencies; exact-head full CI and fresh canonical publication preflight are required and recorded with the PR. These checks establish integration, not component approval, worktop capacity, drainage performance or safe human maintenance.
 
+For the later waste-manual continuation, the source PDF was rendered and pages 2–3 independently reviewed. The two distinct A/B pairs, above-side fixing and unlabelled rings were kept separate. No new geometry or generator is introduced; the retained sink-output check and repository/documentation validation protect integration. Exact validation and merge identities belong in the continuation PR, not in a claim that the connected assembly has passed.
+
 [sink]: https://www.franke.com/gb/en/home-solutions/products/kitchen-sinks/product-detail-page.html/122.0250.208.html
 [model]: https://central-servicesuk.co.uk/franke-sinks/lax-110-50-41-largo
 [waste]: https://central-servicesuk.co.uk/franke-sinks/lax-110-50-41-largo/semi-integrated-strainer-waste
@@ -76,3 +106,5 @@ Independent source review checked the service associations and fixing-method bou
 [clips]: https://central-servicesuk.co.uk/franke-sinks/lax-110-50-41-largo/undermount-sink-clips-pack-of-4
 [overflow-material]: https://www.franke.com/au/en/home-solutions/products/accessories/product-detail-page.html/112.0671.788.html
 [guide]: https://www.central-servicesuk.co.uk/shopimages/FRANKE%20Undermount%20Sink%20Fitting%20Guide.pdf
+[current-waste]: https://www.franke.com/fr/fr/home-solutions/produits/accessoires/product-detail-page.html/112.0264.985.html
+[waste-manual]: https://fcl-p-100-api.prod.apimanagement.eu10.hana.ondemand.com/media/medias/TIM-0050569F0F821EDE97A7E45A2D3C2AB6-V02-MU.pdf?context=bWFzdGVyfHJvb3R8MTM0NDE5MnxhcHBsaWNhdGlvbi9wZGZ8YURkaEwyZzVNeTh4TWpZMk9UazBPRFV5TmpZeU1pOVVTVTFmTURBMU1EVTJPVVl3UmpneU1VVkVSVGszUVRkRk5EVkJNa1F6UXpKQlFqWmZWakF5WDAxVkxuQmtaZ3xhZTEyNmU5NzFlODYzYjViYjdmYTdmMzgyMzcxMWNjYWQ5NmQ5ZmM0YjQ5MWExZGQwMzhmNGUyYmJiMzRmMjMy
