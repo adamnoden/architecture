@@ -133,19 +133,142 @@ export function render() {
   s+=txt(14,288,'Source and limits: ../suspended-mineral-ground-floor.md | No geometry, material exception or packet completion is adopted.',3.1);
   return s+'</g><defs><pattern id="hatch" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0,4L4,0" stroke="#999" stroke-width=".2"/></pattern></defs></svg>\n';
 }
+
+// Supplemental comparison: retain the accepted section outputs above byte-for-byte.
+const ventConnectionBasis = Object.freeze({
+  sourceCommit:'c9e9a2c0087ef4e18b5fa4527826767ba4f0c8bd',
+  sectionOutputBlob:'48289c4ac6c26c0ba81f1c703b617f3b3189739d',
+  sources:{
+    clay:{url:'https://mediahub.wavin.com/m/4aa7792f0c8f0a84/original/Data-Sheet-Airbricks.pdf',
+      edition:'TE115, June 2017, one page; current-hosted historical sheet',
+      sha256:'9793bd248e21d1b562093a2d575e50c3355b2e3ad22ee0b393e8870308b40b4c'},
+    offset:{url:'https://www.vents.co.uk/pdf/a1-dwgs/periscope/rytons-a1pufvrgs-v5i.pdf',
+      edition:'A1PUFVRGS V5i, two pages; no issue date printed',
+      sha256:'6a23814f6825dc688401e9b9472390d1f63864ddc1e4438b93f8057e4c4a196b'},
+    constituents:{url:'https://www.vents.co.uk/pdf/policy-downloads/Rytons-Golden-Thread-of-Information.pdf',
+      edition:'23-page bundle; Materials Statement V2 15 September 2026, letter 17 June 2026, acrylic PDS March 2020 version 02.02',
+      sha256:'e23b439a9fbdaea24447b07b8f8a193f74a25e822c7af58cd500293d4ea86ede'}
+  },
+  // One represented exterior length only. No served floor area or whole-house schedule.
+  wallLengthMm:12000,
+  linealFreeAreaPerMetre:1500,
+  groundAboveSolum:0,
+  clay:[
+    {airbrick:'YA13',liner:'YB11',width:215,height:65,airbrickDepth:50,linerLength:200,freeArea:1300},
+    {airbrick:'YA14',liner:'YB13',width:215,height:140,airbrickDepth:50,linerLength:200,freeArea:2890},
+    {airbrick:'YA15',liner:'YB15',width:215,height:215,airbrickDepth:50,linerLength:200,freeArea:4624}
+  ]
+});
+export function deriveVentConnection() {
+  const section=derive(), t=basis.trial, V=basis.voids.drawnTrial;
+  const area=ventConnectionBasis.wallLengthMm/1000*ventConnectionBasis.linealFreeAreaPerMetre;
+  const soffit=-section.floorStack, solum=soffit-V;
+  const envelopeTop=soffit-t.mineralDpcBand-t.topGap;
+  const ground=solum+ventConnectionBasis.groundAboveSolum;
+  return {
+    authority:'Located continuation of the authored straight-wall trial, not an installed vent, floor, airflow or material pass.',
+    ...ventConnectionBasis,
+    inheritedSourceBlobs:basis.sourceBlobs,
+    levels:{ffl:0,soffit,dpcBandBottom:soffit-t.mineralDpcBand,envelopeTop,solum,outsideGround:ground},
+    gaps:{upper:t.topGap,lower:t.bottomGap},voidDepth:V,dpcBand:t.mineralDpcBand,
+    linealOnlyTargetArea:area,
+    formulae:{minimumVoid:'B + a + nominal component H + b; installed envelope may be larger',
+      envelopeClearance:'V - B - a - H - outside-ground rise above solum'},
+    rows:ventConnectionBasis.clay.map(p=>{
+      const minimumVoid=t.mineralDpcBand+t.topGap+p.height+t.bottomGap;
+      return {...p,linealOnlyCount:Math.ceil(area/p.freeArea),minimumVoid,
+        nominalDepthResidual:V-minimumVoid,envelopeBottom:envelopeTop-p.height,
+        envelopeBottomAboveGround:envelopeTop-p.height-ground,completeFit:'not-established'};
+    }),
+    wallCrossing:{grossAllocation:section.wallTotal,cavityAllocation:basis.wall.cavity,
+      linerLength:200,totalLengthBeyondCavity:200-basis.wall.cavity,
+      selectedEngagement:null,clearLinerPassage:null,completeMasonryThroat:null,
+      scope:'40 mm is a total nominal length budget, not qualified bearing; full outer/inner throats and water protection remain unresolved.'},
+    offsetControl:{id:'A1PUFVRGS',bodyWidth:220,branchOutsideHeight:65,declaredGrilleFreeArea:7200,
+      customerDimensions:['A','B','C'],tolerancePercent:5,telescopicAdjustmentUpTo:30,
+      disposition:'Unmodified supplied comparator excluded: maker-linked acrylic factory sealant. No generic metal-vent rejection.',
+      wholeAssemblyRemoval:'not-established; telescopic adjustment is not a renewal procedure'},
+    unresolved:['Actual served floor area and opposing-wall/compartment airflow',
+      'Clear passage and applicability of the 100 mm pipe guidance to this rectangular route',
+      'Installed envelope, structural opening, beds, engagements and masonry support',
+      'Cavity-water protection: TE115 actually illustrates a D.P.M. over the liner',
+      'Actual external ground, lowest aperture, safe exposure and passive drainage',
+      'Complete retained constituents and accessible clearing/whole-unit replacement']
+  };
+}
+export function renderVentConnection() {
+  const d=deriveVentConnection(), sign=n=>n>0?`+${n}`:String(n);
+  const txt=(x,y,t,size=3.3)=>`<text x="${x}" y="${y}" font-size="${size}">${escape(t)}</text>`;
+  const line=(x1,y1,x2,y2,dash=false)=>`<path d="M${x1},${y1}L${x2},${y2}" fill="none" stroke="#222" stroke-width=".35"${dash?' stroke-dasharray="2 1"':''}/>`;
+  const box=(x,y,w,h,fill='none',dash=false)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}" stroke="#222" stroke-width=".35"${dash?' stroke-dasharray="2 1"':''}/>`;
+  const dim=(x,y1,y2,t)=>line(x,y1,x,y2)+line(x-1.5,y1,x+1.5,y1)+line(x-1.5,y2,x+1.5,y2)+txt(x+2,(y1+y2)/2+1,t,3);
+  let s='<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect width="420" height="297" fill="white"/><g font-family="Arial,sans-serif" fill="#222">';
+  s+=txt(14,17,'A mineral vent needs a complete wall connection',6);
+  s+=txt(14,26,'MAT-ENVELOPE | 31 October 2026 | inherited trial, NOT construction | dimensions mm; areas mm²',3.5)+line(14,32,406,32);
+  s+=txt(14,43,'A   YA13 nominal envelope in the inherited section',4.4);
+  s+=txt(14,51,'65 is outside height; no clear-passage or weather pass.',3.1);
+  const x=60, sc=.2, ffl=78, Y=z=>ffl-z*sc;
+  const ow=basis.wall.outer*sc,cw=basis.wall.cavity*sc,iw=basis.wall.innerIncludingFinish*sc;
+  const ix=x+ow+cw, end=ix+iw;
+  // Gross allocation and floor positions only; no selected liner engagement or load detail.
+  s+=box(x,66,ow,Y(d.levels.solum)-66,'#eee')+box(ix,66,iw,Y(d.levels.solum)-66,'#eee');
+  s+=box(ix,Y(0),202-ix,330*sc,'#e2e7eb')+line(ix,Y(d.levels.soffit),202,Y(d.levels.soffit));
+  s+=box(x,Y(d.levels.soffit),ow,150*sc,'#dac8a5')+box(ix,Y(d.levels.soffit),iw,150*sc,'#dac8a5');
+  s+=box(x,Y(d.levels.envelopeTop),50*sc,65*sc,'#ce916b');
+  s+=box(x+50*sc,Y(d.levels.envelopeTop),end-x-50*sc,65*sc,'white',true);
+  s+=line(x+50*sc+3,Y(d.levels.envelopeTop-32.5),end+12,Y(d.levels.envelopeTop-32.5),true);
+  s+=line(14,Y(d.levels.solum),x,Y(d.levels.solum))+line(end,Y(d.levels.solum),202,Y(d.levels.solum));
+  s+=txt(151,75,'FFL 0',3)+txt(151,107,'330 stack',3)+txt(151,141,'soffit −330',3);
+  s+=txt(151,169,'band bottom −480',3)+txt(151,177,'body top −500',3);
+  s+=txt(151,192,'body base −565',3)+txt(151,209,'solum / ground −630',3);
+  s+=dim(37,Y(d.levels.soffit),Y(d.levels.solum),'300 void');
+  s+=dim(22,Y(d.levels.envelopeTop-65),Y(d.levels.solum),'65');
+  s+=txt(14,218,'Dashed throat = unresolved connection, not an empty cavity air route.',3.1);
+  s+=txt(60,61,'102.5',3)+txt(88,61,'160 cavity',3)+txt(124,61,'155*',3);
+  s+=txt(58,225,'* Inner allocation includes finish; bearing/masonry below floor unknown.',3);
+
+  s+=txt(224,43,'B   Free area versus depth and exposure',4.4);
+  for(const [xx,label] of [[224,'Unit'],[253,'H'],[274,'Free area'],[306,'Count*'],[335,'V min'],[365,'Body base**']])s+=txt(xx,59,label,3.1);
+  s+=line(224,63,406,63);
+  d.rows.forEach((r,i)=>{const y=74+i*12;[r.airbrick,r.height,r.freeArea,r.linealOnlyCount,r.minimumVoid,sign(r.envelopeBottomAboveGround)].forEach((v,j)=>s+=txt([224,253,274,306,335,371][j],y,v,3.5));});
+  s+=txt(224,111,'* 12 m × 1,500 only. Floor-area / all-parts test still required.',3.1);
+  s+=txt(224,119,'** Body base above trial ground. Actual aperture edge unknown.',3.1);
+  s+=txt(224,129,'V min = 150 band + 20 + H + 30; beds/body joints can add depth.',3.1);
+  s+=txt(224,137,'Nominal residuals: +35 / −40 / −115. None is a complete fit.',3.1);
+  s+=txt(224,152,'C   The liner crosses the cavity, not the whole wall',4.1);
+  s+=box(244,168,100,6,'#eee')+box(254,168,80,6,'#b8c4ce');
+  s+=txt(244,164,'200 liner length',3.2)+txt(267,181,'160 cavity',3.2);
+  s+=txt(224,191,'40 total nominal surplus; no end engagement is selected.',3.1);
+  s+=txt(224,199,'Outer / inner masonry throats, joints and support remain open.',3.1);
+  s+=txt(224,209,'TE115 draws D.P.M. over the liner: protect against cavity water.',3.1);
+  s+=txt(224,217,'A mineral substitute for that function is not yet qualified.',3.1);
+  s+=line(14,232,406,232)+txt(14,243,'D   Construction and intervention travel together',4.4);
+  s+=txt(14,253,'Support the actual opening and DPC above it; identify retained beds / treatments. Do not cut a floor member to obtain a vent.',3.35);
+  s+=txt(14,262,'Provide reachable clearing of the full passage. Embedded-unit replacement needs its real masonry / support sequence; no crawlway is implied.',3.35);
+  s+=txt(14,271,'Rytons A1PUFVRGS is a real offset topology, but its supplied acrylic factory sealant excludes the unmodified comparator under policy.',3.35);
+  s+=line(14,278,406,278)+txt(14,288,'Sources, hashes and limits: suspended-ground-vent-connection.json and ../suspended-mineral-ground-floor.md. Original section retained.',3);
+  return s+'</g></svg>\n';
+}
 export function verifySources(root) {
   for (const [path,expected] of Object.entries(basis.sourceBlobs)) {
     const bytes=readFileSync(resolve(root,path));
     const actual=createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex');
     assert.equal(actual,expected,`Reassess changed section source: ${path}`);
   }
+  const section=readFileSync(resolve(root,'project/mat/studies/suspended-ground-section.json'));
+  assert.equal(createHash('sha1').update(`blob ${section.length}\0`).update(section).digest('hex'),
+    ventConnectionBasis.sectionOutputBlob,'Reassess changed inherited suspended-floor comparison');
 }
 if (process.argv[1] && resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const args=process.argv.slice(2);
   if (args.length>1 || args.some(a=>a!=='--check')) throw new Error('Use --check or no argument');
   const dir=dirname(fileURLToPath(import.meta.url));
   verifySources(resolve(dir,'../../..'));
-  for (const [name,content] of Object.entries({'suspended-ground-section.json':JSON.stringify(derive(),null,2)+'\n','suspended-ground-section.svg':render()})) {
+  for (const [name,content] of Object.entries({
+    'suspended-ground-section.json':JSON.stringify(derive(),null,2)+'\n','suspended-ground-section.svg':render(),
+    'suspended-ground-vent-connection.json':JSON.stringify(deriveVentConnection(),null,2)+'\n',
+    'suspended-ground-vent-connection.svg':renderVentConnection()
+  })) {
     const path=resolve(dir,name);
     if (args.includes('--check')) assert.equal(readFileSync(path,'utf8'),content,`Regenerate ${name}`);
     else writeFileSync(path,content);

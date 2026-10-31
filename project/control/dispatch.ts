@@ -10,6 +10,7 @@ import {
   derivedState
 } from './derive.js'
 import {
+  ClaimOccupiedError,
   leaseTemporalState,
   operationalState,
   lastRecoverableEvidence,
@@ -399,7 +400,7 @@ export async function claimNextFromStore(
       const claim = await acquireClaimFromStore(store, selected.node.id, nodes, { ...options, requireRecoveryEvidence: true })
       return { snapshot, selected, claim, selectionRaces }
     } catch (error) {
-      if (!(error instanceof ClaimConflictError)) throw error
+      if (!(error instanceof ClaimConflictError) && !(error instanceof ClaimOccupiedError)) throw error
       if (racesRemaining <= 0) {
         throw new ClaimConflictError(
           `Dispatcher exhausted selection-race retries after ${selectionRaces + 1} conflict(s): ${error.message}`

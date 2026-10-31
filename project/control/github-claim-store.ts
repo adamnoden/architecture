@@ -1,4 +1,5 @@
 import { Buffer } from 'node:buffer'
+import { createHash } from 'node:crypto'
 import { ClaimConflictError, ClaimStoreUnavailableError, storedClaimFromRaw, type ClaimStore, type StoredClaim, type ClaimWriteResult } from './claim-store.js'
 import { claimPath, claimsBranch, claimsDirectory, serializeClaimRecord, type ClaimRecord } from './claims.js'
 
@@ -10,6 +11,10 @@ interface GitHubContentFile {
   encoding?: string
 }
 
+const claimReadConcurrency = 8
+const contentsDirectoryLimit = 1000
+const gitSha = /^[a-f0-9]{40}$/
+
 function observedAt(response: Response): Date {
   const serverDate = response.headers.get('date')
   const parsed = serverDate ? new Date(serverDate) : new Date()
@@ -18,6 +23,14 @@ function observedAt(response: Response): Date {
 
 function encodedPath(path: string): string {
   return path.split('/').map(encodeURIComponent).join('/')
+}
+
+async function readJson(response: Response, subject: string): Promise<unknown> {
+  try {
+    return await response.json()
+  } catch (error) {
+    throw new ClaimStoreUnavailableError(`Malformed GitHub JSON for ${subject}: ${String(error)}`)
+  }
 }
 
 export class GitHubClaimStore implements ClaimStore {
@@ -37,8 +50,7 @@ export class GitHubClaimStore implements ClaimStore {
     }
   }
 
-  private async assertBranch(): Promise<void> {
-    if (this.branchChecked) return
+  private async branchSnapshot(): Promise<{ sha: string; observedAt: Date }> {
     const response = await fetch(
       `https://api.github.com/repos/${this.repo}/branches/${encodeURIComponent(claimsBranch)}`,
       { headers: this.headers(), signal: AbortSignal.timeout(20000) }
@@ -50,7 +62,17 @@ export class GitHubClaimStore implements ClaimStore {
           : `Cannot read ACO runtime branch ${claimsBranch}: GitHub ${response.status}`
       )
     }
+    const value = (await readJson(response, claimsBranch)) as { commit?: { sha?: unknown } } | null
+    const sha = value?.commit?.sha
+    if (typeof sha !== 'string' || !gitSha.test(sha)) {
+      throw new ClaimStoreUnavailableError(`Malformed ACO runtime branch ${claimsBranch} identity`)
+    }
     this.branchChecked = true
+    return { sha, observedAt: observedAt(response) }
+  }
+
+  private async assertBranch(): Promise<void> {
+    if (!this.branchChecked) await this.branchSnapshot()
   }
 
   async read(node: string) {
@@ -115,26 +137,69 @@ export class GitHubClaimStore implements ClaimStore {
   }
 
   async list(): Promise<{ claims: readonly StoredClaim[]; observedAt: Date }> {
-    await this.assertBranch()
+    // Capture the entry set and every blob from one immutable revision. A later
+    // acquisition still re-reads its selected node before exact per-file CAS.
+    const snapshot = await this.branchSnapshot()
     const response = await fetch(
-      `https://api.github.com/repos/${this.repo}/contents/${encodedPath(claimsDirectory)}?ref=${encodeURIComponent(claimsBranch)}`,
+      `https://api.github.com/repos/${this.repo}/contents/${encodedPath(claimsDirectory)}?ref=${snapshot.sha}`,
       { headers: this.headers(), signal: AbortSignal.timeout(20000) }
     )
-    const at = observedAt(response)
-    if (response.status === 404) return { claims: [], observedAt: at }
+    if (response.status === 404) return { claims: [], observedAt: snapshot.observedAt }
     if (!response.ok) throw new ClaimStoreUnavailableError(`Cannot list ${claimsDirectory}: GitHub ${response.status}`)
 
-    const entries = (await response.json()) as GitHubContentFile[]
-    const claims: StoredClaim[] = []
-    for (const entry of entries) {
-      if (entry.type !== 'file' || !entry.path.endsWith('.json')) continue
-      const filename = entry.path.split('/').at(-1)!
-      const node = filename.slice(0, -'.json'.length)
-      const read = await this.read(node)
-      if (!read.stored) throw new ClaimStoreUnavailableError(`Claim disappeared while listing: ${node}`)
-      claims.push(read.stored)
+    const listing = await readJson(response, claimsDirectory)
+    if (!Array.isArray(listing) || listing.length >= contentsDirectoryLimit) {
+      throw new ClaimStoreUnavailableError('Claim directory listing is malformed or may exceed the GitHub 1,000-entry limit')
     }
-    return { claims, observedAt: at }
+    const entries: GitHubContentFile[] = []
+    const seen = new Set<string>()
+    for (const entry of listing) {
+      if (!entry || typeof entry.path !== 'string') throw new ClaimStoreUnavailableError('Malformed claim directory entry')
+      if (!entry.path.endsWith('.json')) continue
+      const node = entry.path.slice(claimsDirectory.length + 1, -'.json'.length)
+      if (entry.type !== 'file' || !/^[A-Z0-9][A-Z0-9-]*$/.test(node) ||
+          entry.path !== claimPath(node) || typeof entry.sha !== 'string' || !gitSha.test(entry.sha) || seen.has(node)) {
+        throw new ClaimStoreUnavailableError(`Malformed or duplicate claim directory entry: ${entry.path}`)
+      }
+      seen.add(node)
+      entries.push(entry)
+    }
+    const claims = new Array<StoredClaim>(entries.length)
+    let next = 0
+    let failed = false
+    await Promise.all(Array.from({ length: Math.min(claimReadConcurrency, entries.length) }, async () => {
+      while (!failed && next < entries.length) {
+        const index = next++
+        try {
+          claims[index] = await this.readBlob(entries[index])
+        } catch (error) {
+          failed = true
+          throw error
+        }
+      }
+    }))
+    return { claims, observedAt: snapshot.observedAt }
+  }
+
+  private async readBlob(entry: GitHubContentFile): Promise<StoredClaim> {
+    const response = await fetch(`https://api.github.com/repos/${this.repo}/git/blobs/${entry.sha}`, {
+      headers: this.headers(), signal: AbortSignal.timeout(20000)
+    })
+    if (!response.ok) throw new ClaimStoreUnavailableError(`Cannot read ${entry.path} at ${entry.sha}: GitHub ${response.status}`)
+    try {
+      const value = (await response.json()) as { sha?: unknown; encoding?: unknown; content?: unknown }
+      if (value.sha !== entry.sha || value.encoding !== 'base64' || typeof value.content !== 'string') {
+        throw new Error('Unexpected GitHub blob response')
+      }
+      const bytes = Buffer.from(value.content.replace(/\n/g, ''), 'base64')
+      const sha = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
+      if (sha !== entry.sha) throw new Error('Claim content does not match its pinned blob SHA')
+      const raw = new TextDecoder('utf-8', { fatal: true }).decode(bytes)
+      const node = entry.path.slice(claimsDirectory.length + 1, -'.json'.length)
+      return storedClaimFromRaw(raw, sha, node)
+    } catch (error) {
+      throw new ClaimStoreUnavailableError(`Malformed lease blob ${entry.path}: ${String(error)}`)
+    }
   }
 }
 

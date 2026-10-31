@@ -22,14 +22,8 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Setup Node
-        uses: actions/setup-node@v7
-        with:
-          node-version-file: .nvmrc
-          cache: npm
-
-      - name: Install locked dependencies
-        run: npm ci --no-audit --no-fund
+      - name: Install trusted control runtime
+        uses: ./.github/actions/control-runtime
 
       - name: Render canonical project-control projections
         run: npm run status:update

@@ -35,3 +35,7 @@ Measured local runtime: Node 24.22.1, ICU 78.3. DPL retains a dependency on Engl
 ## Scope and remaining boundary
 
 The implementation fixes the shared semantic serializer, Reference House semantic ordering and DPL fingerprint-bearing preparation. It does not promise that every human-facing report or drawing has identical presentation ordering for arbitrary Unicode under different locales, and deterministic identity does not establish physical truth or whole-building compliance. No downstream architectural state, external evidence obligation or maturity claim changes.
+
+## Integration
+
+Independent source `b7a903f55eccbc8748b885391f675dc68b91d671` passed [full exact-head CI 41238865876](https://github.com/adamnoden/architecture/actions/runs/41238865876) and [the 48-PDF historical owner proof 41238865901](https://github.com/adamnoden/architecture/actions/runs/41238865901). [PR #1180](https://github.com/adamnoden/architecture/pull/1180) then brings the other three packets into the same independently leased scope, preserving their exact source commits and current main. Its final combined-head checks remain the integration gate. The [integration result](integration-result.md) and parent issue own final operational closeout.

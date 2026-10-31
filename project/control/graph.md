@@ -97,7 +97,6 @@ flowchart LR
   subgraph g_EPR["EPR"]
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
-    n_EPR_DESK_REVIEW["EPR-DESK-REVIEW<br/>Answer current-house technical review questions through internal evidence and challenge<br/><b>READY</b>"]
     n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
   end
   subgraph g_DPL["DPL"]
@@ -111,13 +110,6 @@ flowchart LR
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
     n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Internal floor-edge research, calculations and provisional option reduction<br/><b>READY</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
-  end
-  subgraph g_SWE["SWE"]
-    direction TB
-    n_SWE_CONTROL["SWE-CONTROL<br/>Repair dispatcher selection races and make lease snapshots efficient and coherent<br/><b>READY</b>"]
-    n_SWE_PUBLICATION["SWE-PUBLICATION<br/>Correct PDF routes, persist pinned fonts and preserve Mermaid transformations<br/><b>READY</b>"]
-    n_SWE_AUTOMATION["SWE-AUTOMATION<br/>Make briefings source-coherent and reduce evidenced setup and proof overhead<br/><b>READY</b>"]
-    n_SWE_IDENTITY["SWE-IDENTITY<br/>Make canonical compiler fingerprints independent of execution locale<br/><b>READY</b>"]
   end
   n_IAS_03 --> n_TRIAD_GATE
   n_HAD_03 --> n_TRIAD_GATE
@@ -195,7 +187,6 @@ flowchart LR
   style g_EPR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_DPL fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PHY fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_SWE fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   classDef ready fill:#dce9df,stroke:#376249,color:#20392b,stroke-width:2px;
   classDef blocked fill:#f0eee9,stroke:#a5a197,color:#54534e,stroke-width:1.5px;
   classDef active fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:2px;
@@ -250,13 +241,8 @@ flowchart LR
   class n_PHY_02 held;
   class n_PHY_03_ENGINEERING ready;
   class n_PHY_04 ready;
-  class n_EPR_DESK_REVIEW ready;
   class n_EPR_RH11 ready;
   class n_DEL_CURRENT blocked;
-  class n_SWE_CONTROL ready;
-  class n_SWE_PUBLICATION ready;
-  class n_SWE_AUTOMATION ready;
-  class n_SWE_IDENTITY ready;
 ```
 
 ## Complete graph
@@ -462,7 +448,7 @@ flowchart LR
   subgraph g_EPR["EPR"]
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
-    n_EPR_DESK_REVIEW["EPR-DESK-REVIEW<br/>Answer current-house technical review questions through internal evidence and challenge<br/><b>READY</b>"]
+    n_EPR_DESK_REVIEW["EPR-DESK-REVIEW<br/>Answer current-house technical review questions through internal evidence and challenge<br/><b>DONE</b>"]
     n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
     n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>DONE</b>"]
   end
@@ -483,10 +469,10 @@ flowchart LR
   subgraph g_SWE["SWE"]
     direction TB
     n_SWE_PLAN["SWE-PLAN<br/>Register the owner-directed software audit and bounded implementation packets<br/><b>DONE</b>"]
-    n_SWE_CONTROL["SWE-CONTROL<br/>Repair dispatcher selection races and make lease snapshots efficient and coherent<br/><b>READY</b>"]
-    n_SWE_PUBLICATION["SWE-PUBLICATION<br/>Correct PDF routes, persist pinned fonts and preserve Mermaid transformations<br/><b>READY</b>"]
-    n_SWE_AUTOMATION["SWE-AUTOMATION<br/>Make briefings source-coherent and reduce evidenced setup and proof overhead<br/><b>READY</b>"]
-    n_SWE_IDENTITY["SWE-IDENTITY<br/>Make canonical compiler fingerprints independent of execution locale<br/><b>READY</b>"]
+    n_SWE_CONTROL["SWE-CONTROL<br/>Repair dispatcher selection races and make lease snapshots efficient and coherent<br/><b>DONE</b>"]
+    n_SWE_PUBLICATION["SWE-PUBLICATION<br/>Correct PDF routes, persist pinned fonts and preserve Mermaid transformations<br/><b>DONE</b>"]
+    n_SWE_AUTOMATION["SWE-AUTOMATION<br/>Make briefings source-coherent and reduce evidenced setup and proof overhead<br/><b>DONE</b>"]
+    n_SWE_IDENTITY["SWE-IDENTITY<br/>Make canonical compiler fingerprints independent of execution locale<br/><b>DONE</b>"]
   end
   n_ACO_00 --> n_ACO_01
   n_ACO_01 --> n_ACO_02
@@ -912,17 +898,17 @@ flowchart LR
   class n_PHY_02 held;
   class n_PHY_03_ENGINEERING ready;
   class n_PHY_04 ready;
-  class n_EPR_DESK_REVIEW ready;
+  class n_EPR_DESK_REVIEW done;
   class n_EPR_RH11 ready;
   class n_DEL_00 done;
   class n_EPR_REFRESH done;
   class n_PHY_APPLICABILITY done;
   class n_DEL_CURRENT blocked;
   class n_SWE_PLAN done;
-  class n_SWE_CONTROL ready;
-  class n_SWE_PUBLICATION ready;
-  class n_SWE_AUTOMATION ready;
-  class n_SWE_IDENTITY ready;
+  class n_SWE_CONTROL done;
+  class n_SWE_PUBLICATION done;
+  class n_SWE_AUTOMATION done;
+  class n_SWE_IDENTITY done;
 ```
 
 </details>

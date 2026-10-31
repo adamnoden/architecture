@@ -7,7 +7,6 @@ import {
   lstatSync,
   mkdirSync,
   readFileSync,
-  renameSync,
   rmSync,
   writeFileSync
 } from 'node:fs'
@@ -24,6 +23,7 @@ import {
 } from '../publication.js'
 import { applyProductionTypography } from './typography.js'
 import { fetchPublicationFonts, type PublicationFontSlot } from '../fonts.js'
+import { publicationSourceUrl, renderPublicationMermaid } from '../preparation.js'
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const repoRoot = resolve(scriptDirectory, '../..')
@@ -71,11 +71,8 @@ function resolveCanonicalTarget(source: string, hrefPath: string): string | null
   return target
 }
 function liveUrlFor(target: string, suffix: string): string {
-  if (target === 'README.md') return `${liveBaseUrl}${suffix}`
-  let route = target
-  if (route.endsWith('/README.md')) route = route.slice(0, -'README.md'.length)
-  else if (route.endsWith('.md')) route = route.slice(0, -'.md'.length)
-  return `${liveBaseUrl}${route}${suffix}`
+  if (target.endsWith('.md')) return publicationSourceUrl(target, suffix, repoRoot, liveBaseUrl)
+  return `${liveBaseUrl}${target}${suffix}`
 }
 function internalHtmlHref(source: string, target: string, suffix: string): string {
   const sourceDirectory = posix.dirname(source)
@@ -166,14 +163,11 @@ for (const entry of entries) {
   markdown = stripPreparedFrontmatter(entry.source, markdown)
   if (fullMode) markdown = applyPublicationFigures(entry.id, markdown)
   markdown = normalizePreparedHeading(entry, markdown)
-  if (markdown.includes('```mermaid')) {
-    const renderedPath = `${preparedPath}.mmdc.md`
-    const mermaidArgs = ['-i', preparedPath, '-o', renderedPath, '-t', 'neutral', '-b', 'transparent']
+  markdown = renderPublicationMermaid(markdown, preparedPath, (inputPath, outputPath) => {
+    const mermaidArgs = ['-i', inputPath, '-o', outputPath, '-t', 'neutral', '-b', 'transparent']
     if (process.env.CI) mermaidArgs.unshift('-p', resolve(publicationRoot, 'puppeteer.ci.json'))
     execFileSync('mmdc', mermaidArgs, { stdio: 'inherit' })
-    renameSync(renderedPath, preparedPath)
-    markdown = readFileSync(preparedPath, 'utf8')
-  }
+  })
   markdown = rewritePublicationLinks(entry.source, markdown, included)
   assertNoLocalRepositoryLinks(entry.source, markdown)
   writeFileSync(preparedPath, markdown)

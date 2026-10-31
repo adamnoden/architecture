@@ -38,6 +38,14 @@ Install locked dependencies first:
 npm ci
 ```
 
+Pinned publication fonts and their licences are cached in
+`node_modules/.cache/ovids-house/publication-fonts`, outside disposable preparation
+directories. Every cached file is checked against its existing upstream Git blob
+pin before use; missing or corrupt entries are downloaded and verified before
+replacement. Full, Primer and current specimen preparation can therefore share
+verified bytes and work offline once cached. CI restores this cache after
+`npm ci`; the cache never changes the selected font pins or staged provenance.
+
 ### Browser prerequisites
 
 The figure-bounds validator and Mermaid preparation use Puppeteer and require a compatible Chrome/Chromium browser. If a browser is already installed, select it before running those commands (adjust the path for your machine):

@@ -28,3 +28,7 @@ For each implementation packet, preserve pushed branch/PR evidence and meaningfu
 ## Closeout
 
 The owning result records must distinguish measured results from estimates, identify commands and fixtures used, list material limitations and any changed controlled baselines, and link integrated PRs. Final closeout verifies all nine acceptance conditions, generated projections, repository health, the parent issue, released leases and safely removed feature branches. No new external review requirement is introduced, and this software work grants no additional architectural claim authority.
+
+## Implemented disposition — 31 October 2026
+
+All nine accepted findings are implemented in the four owning results. [Shared integration PR #1180](https://github.com/adamnoden/architecture/pull/1180) retains the exact independently published packet commits and reconciles current main. Its final-head checks, expected-head merge and subsequent operational closeout are the acceptance authority. The [integration result](integration-result.md) records the complete disposition, measured gains, source provenance and validation boundaries. The four canonical implementation nodes are complete in this integrated source; the parent issue records final merge, lease release and cleanup rather than duplicating runtime state here.
