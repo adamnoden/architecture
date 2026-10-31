@@ -160,3 +160,116 @@ for(const [path,contents] of Object.entries(outputs)) {
   else writeFileSync(new URL(path,root),contents);
 }
 console.log('Riser-trim source, finite-envelope, closure and adverse-control checks passed; capacity remains unassessed.');
+
+// Separate, later product comparison. Preserve the original topology outputs above.
+// Published nominal dimensions do not supply a selected hanger or its design resistance.
+const petraHeights = [175, 200, 220, 265, 300, 320, 350, 370, 400, 450, 500];
+const ibstockHeights = [150, 200, 250, 300, 400, 500];
+const commonHeights = petraHeights.filter(h => ibstockHeights.includes(h));
+const ceilingTop = floor.finished_ceiling_underside + floor.basic_layers_top_down.ceiling;
+const depthCase = h => {
+  assert(Number.isFinite(h) && h > 0, 'A finite positive slab depth is required');
+  const soffit = floor.basic_HC_top_at_support - h;
+  return {slabDepth: h, petraStandardDepthListed: petraHeights.includes(h),
+    ibstockDepthListed: ibstockHeights.includes(h), slabTop: floor.basic_HC_top_at_support,
+    slabSoffit: soffit, fixedCeilingTop: ceilingTop,
+    grossSpaceBeforeHangerProtectionAndTolerance: soffit - ceilingTop,
+    ceilingUndersideKeeping55ServicesBeforeHanger: soffit - 55 - floor.basic_layers_top_down.ceiling};
+};
+assert.deepEqual(commonHeights, [200, 300, 400, 500]);
+const depthCases = [150, 175, 200].map(depthCase);
+assert.deepEqual(depthCases.map(c => c.grossSpaceBeforeHangerProtectionAndTolerance), [55, 30, 5]);
+assert.deepEqual(depthCases.map(c => c.ceilingUndersideKeeping55ServicesBeforeHanger), [3100, 3075, 3050]);
+assert(depthCase(300).grossSpaceBeforeHangerProtectionAndTolerance < 0, 'Do not clamp a depth conflict to zero');
+assert.throws(() => depthCase(NaN));
+assert.throws(() => depthCase(0));
+const openingEast = bay[0] + bay[2];
+const conditionalCutFace = openingEast + 51;
+assert.equal(conditionalCutFace, 10121);
+assert.equal(outerFace - conditionalCutFace, 1476.5);
+const product = {
+  status: 'Unadopted B floor-depth comparison; no product pairing, capacity, firestop or material admission.',
+  startingMain: '08c68ef0e3014efb8d6aecbcdb1bb208a57425ae', units: 'mm unless stated otherwise', sourcePins: pins,
+  primarySources: {
+    petra: {page: 'https://www.peikko.co.uk/products/product/petra-slab-hanger/',
+      manual: 'https://media.peikko.com/file/dl/i/TTEgOw/DF_du37YwNLtV2TBUjJW6Q/PETRA_PEIKKO_GROUP_04_Technical_Manual_Web.pdf?fv=72d1',
+      revision: 'PEIKKO GROUP 04/2025', inspectedOn: '2026-10-31', bytes: 2083337,
+      sha256: '73d418fa20f659dbb6ef5586e9c9e765238a42298b596b626e77adfde349a640',
+      relevantPages: [6, 7, 8, 10, 11, 14, 21, 22]},
+    ibstock: {page: 'https://www.ibstock.co.uk/products/flooring-and-lintels/hollowcore/plank-technical-details',
+      inspectedOn: '2026-10-31', nominalDepths: ibstockHeights},
+  },
+  publishedDimensions: {standardSymmetricSlabDepths: petraHeights,
+    rows175And200: {frontPlateWidthB1: 140, sidePlateLengthL2: 150, sidePlateWidthB2: 100, manufacturingTolerancePlusMinus: 2},
+    supportingDepthAtMost200: {lateralJointMin: 50, lateralJointMax: 70},
+    supportedDepthAtMost200: {maximumSupportedSlabBearing: 80, fireRebarOpeningOffsetMinimum: 51},
+    installationPage22IllustratedSoundEdgeOverlap: 55,
+    actualSteelThickness: null, installedDownstand: null,
+    boundary: 'Nominal flange width, illustrated edge contact and original authored tails are different quantities.'},
+  sharedListedDepths: commonHeights, smallestSharedListedDepth: commonHeights[0], depthCases,
+  conditionalPlan: {openingEast, fireRebarSupportedCutFaceAtLeast: conditionalCutFace,
+    distanceFromThatCutFaceToOuterStructuralFace: outerFace - conditionalCutFace,
+    boundary: 'Conditional hf <= 200 arrangement only; not a slab cut length, span, receiving-panel layout or capacity.'},
+  unresolved: {actualHanger: null, actualPanelGrid: null, directCabinetOrClosureLoad: null,
+    actualProtection: null, completeConstituents: null, installationTolerances: null},
+  limits: ['HC150 is absent from the cited current standard table; a special design remains a separate enquiry.',
+    'A shared listed slab depth is not evidence that the two manufacturers approve a paired system.',
+    'Keep receiving-slab checks and direct cabinet/closure load design separate from the standard hanger diagrams.',
+    'Actual service penetrations, floor closure and cabinet support remain separate from the structural opening.'],
+};
+const ps = [];
+const pa = s => ps.push(s);
+const pt = (x,y,t,c='') => pa(`<text x="${x}" y="${y}" class="${c}">${esc(t)}</text>`);
+const pr = (x,y,w,h,c) => pa(`<rect x="${x}" y="${y}" width="${w}" height="${h}" class="${c}"/>`);
+const pl = (x,y,xx,yy,c='line') => pa(`<path d="M${x},${y}L${xx},${yy}" class="${c}"/>`);
+pa('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect width="420" height="297" fill="#fffdf8"/><style>text{font-family:Arial,sans-serif;font-size:3.3px;fill:#243d43}.title{font-size:6px;font-weight:bold}.head{font-size:4.2px;font-weight:bold}.small{font-size:2.9px}.slab{fill:#d9e0e3;stroke:#64787b;stroke-width:.35}.space{fill:#cee6df;stroke:#6f9a8e;stroke-width:.2}.ceiling{fill:#ddcab3;stroke:#9a7443;stroke-width:.25}.line{fill:none;stroke:#526d74;stroke-width:.3}.datum{fill:none;stroke:#9a7443;stroke-width:.35;stroke-dasharray:2,1}.warn{fill:#9d4f32}</style>');
+pt(12,15,'Riser hanger: keep the whole floor depth in the comparison','title');
+pt(12,24,'31 October 2026 / unadopted B plan / mm / manufacturer geometry plus a conditional datum comparison');
+pt(12,38,'A  Hold slab top +3320 and ceiling top +3115','head');
+const sy = .34, topY = 55, cY = topY + (3320 - 3115) * sy;
+depthCases.forEach((c,i) => {
+  const x = 18 + i * 64;
+  pt(x,49,`${c.slabDepth} slab`,'head');
+  pr(x,topY,48,c.slabDepth*sy,'slab');
+  pr(x,topY+c.slabDepth*sy,48,c.grossSpaceBeforeHangerProtectionAndTolerance*sy,'space');
+  pr(x,cY,48,15*sy,'ceiling');
+  pt(x,140,`${c.grossSpaceBeforeHangerProtectionAndTolerance} gross remaining`,i===2?'warn':'');
+  pt(x,149,`soffit +${c.slabSoffit}`,'small');
+});
+pl(12,topY,210,topY,'datum'); pl(12,cY,210,cY,'datum');
+pt(12,163,'Remaining depth precedes actual hanger, protection and tolerances.','small');
+pt(12,172,'No hanger section is drawn: its installed downstand is unbound.','small');
+pt(12,188,'B  Keep the original 55 service reservation instead','head');
+pt(12,200,'150 / 175 / 200 slabs give ceiling undersides +3100 / +3075 / +3050.');
+pt(12,210,'Those are gross datums before further hanger or protection depth.','small');
+pt(12,220,'The 200 case spends 50 mm; it requires an explicit section rewind.','warn');
+pt(235,38,'C  A named product brings real constraints','head');
+pt(12,157,'Grey: slab / green: unallocated depth / ochre: 15 ceiling.','small');
+pt(235,51,'PETRA standard symmetric depths start at 175; HC150 is unbound.');
+pt(235,62,'200 is the first shared listed depth with the cited Ibstock range.');
+pt(235,71,'This is a comparison opportunity, not approved compatibility.','small');
+pt(235,88,'Table 3, 175/200: b1 = 140, L2 = 150, b2 = 100; tolerance ±2.');
+pt(235,99,'Page 22 illustrates 55 overlap on a sound receiving edge.');
+pt(235,110,'Neither figure turns the old 100 tail sensitivity into a bearing.','small');
+pt(235,126,'For depths ≤200: joint 50–70; supported bearing maximum 80.');
+pt(235,137,'Fire-rebar arrangement: slab face at least 51 past opening edge.');
+pt(235,148,'At x = 10070 this gives x = 10121, before further allowance.');
+pt(235,157,'The resulting 1476.5 to the outer structural face is not a cut length.','small');
+pt(235,175,'D  Retain separate load and closure duties','head');
+pt(235,187,'Receiving slabs need their own concentrated-reaction check.');
+pt(235,198,'Direct cabinet or closure point/line loads require individual design.');
+pt(235,209,'The service zone is not a sealed opening or a cabinet support.');
+pt(235,220,'Keep the permanent trim distinct from renewable service faces.');
+pl(12,239,408,239);
+pt(12,251,'Continue the HC150 supplier enquiry or redraw the complete section; retain the independent frame alternative.','head');
+pt(12,262,'Source: PETRA PEIKKO GROUP 04/2025, pp 6–11, 14, 21–22; Ibstock nominal depths, accessed 31 October 2026.','small');
+pt(12,273,'No resistance, chosen hanger, manufacturing approval, firestop, material exception or STR-HOUSE completion is established.','small');
+pt(12,284,'Reproduce with house-riser-trim.mjs; source-bound product/depth record: house-riser-product.json.','small');
+pa('</svg>');
+const productOutputs = {'project/str/studies/house-riser-product.json': JSON.stringify(product,null,2)+'\n',
+  'project/str/studies/house-riser-product.svg': ps.join('\n')+'\n'};
+for(const [path,contents] of Object.entries(productOutputs)) {
+  if(process.argv.includes('--check')) assert.equal(read(path),contents,'Stale output: '+path);
+  else writeFileSync(new URL(path,root),contents);
+}
+console.log('Manufacturer-depth and section-datum comparison checked; actual hanger and assembly remain unselected.');
