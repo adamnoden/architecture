@@ -9,8 +9,8 @@
     "label": "swarm-2900-worker-one-ias"
   },
   "claimedAt": "2026-10-31T17:09:27.406Z",
-  "heartbeatAt": "2026-10-31T17:17:53.631Z",
-  "expiresAt": "2026-10-31T18:02:53.631Z",
+  "heartbeatAt": "2026-10-31T17:38:22.625Z",
+  "expiresAt": "2026-10-31T18:23:22.625Z",
   "branch": "work/swarm-2900-interfaces-20261031",
   "predecessor": {
     "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
@@ -35,7 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published head 9d7189fe54f84645cb6a56fc5a4de490ac8c6992 tree 609c8befafe28c96173c76aac548097aecd13f04; manufacturer source and independent visual reviews passed; sink reproducibility, repository integrity and docs build passed.",
-    "next": "Open combined IAS/MAT PR and require full exact-head CI, reconcile moved main, then canonical publication preflight before expected-head merge."
-  }
+    "evidence": "PR #1157 published head 2c8169e4584c1196e1e0a60dad3cc86226d0e946; reviewed IAS source unchanged; independent manual/source review, repository validation and docs build passed.",
+    "next": "Require full exact-head CI and fresh canonical preflight, then merge and release this partial result; bind an identified supplied waste assembly before further IAS adoption.",
+    "blocker": "CI pending. Exact current bowl-seat/downstream combination, retained ring and connection constituents, sealing faces and release travel remain unbound."
+  },
+  "pr": 1157
 }
