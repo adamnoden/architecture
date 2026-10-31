@@ -1,39 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 10,
-  "state": "released",
-  "leaseId": "01578a4c-862a-45a3-aa70-d52bf32157e7",
+  "generation": 11,
+  "state": "claimed",
+  "leaseId": "3c0342c6-a6c9-4683-b892-2f238354cfb3",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6541677482"
+    "label": "swarm-2900-authorised-resume"
   },
-  "claimedAt": "2026-10-31T09:27:32.000Z",
-  "heartbeatAt": "2026-10-31T09:56:06.000Z",
-  "expiresAt": "2026-10-31T09:56:06.000Z",
-  "branch": "work/mvb-chat-6541677482",
+  "claimedAt": "2026-10-31T16:54:40.699Z",
+  "heartbeatAt": "2026-10-31T16:54:40.699Z",
+  "expiresAt": "2026-10-31T17:39:40.699Z",
+  "branch": "work/swarm-2900-had-20261031",
   "predecessor": {
-    "leaseId": "94253a5c-bac5-44d8-b016-7c1f4b0fc69b",
-    "generation": 9,
-    "branch": "work/swarm-2900-had-20261031"
-  },
-  "recoverySource": {
-    "leaseId": "b64706fe-18d1-4f60-ad03-70c3a471ecd6",
-    "generation": 8,
-    "branch": "work/mvb-chat-6535821509",
-    "pr": 1120,
+    "leaseId": "01578a4c-862a-45a3-aa70-d52bf32157e7",
+    "generation": 10,
+    "branch": "work/mvb-chat-6541677482",
+    "pr": 1143,
     "checkpoint": {
-      "evidence": "PR #1120 merged ceeb3af04520f41f5e2bb15669553f578510d1a0. Head 02dd8096 passed full CI 41147146898 and canonical preflight 124375641292; inspected A3 and independent reviews retained.",
-      "next": "Continue HAD-03 with required regular/guest seating and actual occupied table/chair/door fit; preserve unadopted four-side-place comparison and source-operation distinctions.",
-      "blocker": "No household seating adoption, occupied comfort, actual table/apron fit or installed opening/material admission; HAD-03 remains planned."
+      "evidence": "PR #1143 merged at b6d3ed65de889d364e49d2da5e5ee45a59f6e70c. Final head dfdf2ef27431af7d6df897eb2a473e0d77618414 passed full CI 41190186050 and canonical preflight at 09:52:12.921 UTC.",
+      "next": "Obtain applicable table/chair sections and intended occupied arrangement; validate the 100 mm insertion and required regular/guest seating without inheriting the earlier envelope assumptions.",
+      "blocker": "HAD-03 remains planned. Product scalars and conditional arithmetic do not establish occupied comfort, seating capacity, full insertion, material admission or an adopted kitchen."
     }
   },
-  "checkpoint": {
-    "evidence": "PR #1143 merged at b6d3ed65de889d364e49d2da5e5ee45a59f6e70c. Final head dfdf2ef27431af7d6df897eb2a473e0d77618414 passed full CI 41190186050 and canonical preflight at 09:52:12.921 UTC.",
-    "next": "Obtain applicable table/chair sections and intended occupied arrangement; validate the 100 mm insertion and required regular/guest seating without inheriting the earlier envelope assumptions.",
-    "blocker": "HAD-03 remains planned. Product scalars and conditional arithmetic do not establish occupied comfort, seating capacity, full insertion, material admission or an adopted kitchen."
-  },
-  "pr": 1143,
-  "releasedAt": "2026-10-31T09:56:06.000Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "01578a4c-862a-45a3-aa70-d52bf32157e7",
+    "generation": 10,
+    "branch": "work/mvb-chat-6541677482",
+    "pr": 1143,
+    "checkpoint": {
+      "evidence": "PR #1143 merged at b6d3ed65de889d364e49d2da5e5ee45a59f6e70c. Final head dfdf2ef27431af7d6df897eb2a473e0d77618414 passed full CI 41190186050 and canonical preflight at 09:52:12.921 UTC.",
+      "next": "Obtain applicable table/chair sections and intended occupied arrangement; validate the 100 mm insertion and required regular/guest seating without inheriting the earlier envelope assumptions.",
+      "blocker": "HAD-03 remains planned. Product scalars and conditional arithmetic do not establish occupied comfort, seating capacity, full insertion, material admission or an adopted kitchen."
+    }
+  }
 }
