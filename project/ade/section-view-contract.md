@@ -8,14 +8,14 @@ Use a source-bound **2.5D section context compiler** atop the existing 3D projec
 
 Rejected:
 
-- Add a horizontal roof line and a top-of-courtyard line in \`section-exemplar.ts\`: treats the particular image, leaves unmodelled occlusion and same failure in other views.
+- Add a horizontal roof line and a top-of-courtyard line in `section-exemplar.ts`: treats the particular image, leaves unmodelled occlusion and same failure in other views.
 - Draw the entire section from an imported CAD/BIM kernel: duplicates house ownership, expands the supported domain far past the observed need and risks speculative construction completeness.
 - Promote the plan compiler into a 3D engine: its joined orthogonal planar topology and assembly resolution have a legitimate, narrower model.
-- Add a second vector renderer: current \`DrawingSceneV2\` already owns exact physical strokes, typography, deterministic SVG/PDF and provenance.
+- Add a second vector renderer: current `DrawingSceneV2` already owns exact physical strokes, typography, deterministic SVG/PDF and provenance.
 
 ## One-way information boundary
 
-\`\`\`text
+```text
 current architectural house authority (source IDs, shapes, aperture hosts, roof fields)
                ↓ view-specific 3D geometry adapter
 vertical facade material with real holes + explicit roof planes + authored cut faces
@@ -30,7 +30,7 @@ ADE orthographic section context
 existing model-to-paper transform and DrawingSceneV2
                ↓
 SVG/PDF and physical page proof
-\`\`\`
+```
 
 The house adapter is responsible for deriving facade terminations from the same roof/eaves authority used by elevations and roof plans. A wall may not independently choose a 'pretty' termination for a section. An aperture belongs to one host and cuts absence into its material, so a sash grid cannot exist if its host aperture is invalid or not present in the source. Unknown openings cannot be rendered by this nominal geometry API; they remain separate obligation symbols in the existing representation system.
 
@@ -68,7 +68,7 @@ The generic algorithms contain no Georgian or Reference House measurements. Mode
 
 **ADE-SECTION-PARITY (next packet):**
 
-- Bind the **accepted current** house facade, courtyard, roof and openings to a single projection source, not historic \`sections-roof-01\` dimensions.
+- Bind the **accepted current** house facade, courtyard, roof and openings to a single projection source, not historic `sections-roof-01` dimensions.
 - Migrate principal and service sections without altering historic frozen v1 plates. Prove location and roof termination of the far courtyard facade; determine physically visible rooftop profile by occlusion, not by hardcoded horizontal line.
 - Cross-view mutation tests: alter one roof pitch/eaves datum, or one courtyard opening, and establish consistent changes across roof plan, elevation and section.
 - Re-run retained 1:50 WALL and 1:100 BOOK physical-page/vector proof, inspect representative rendered outputs and disclose unresolved material/ground/foundation geometry. Only then promote the replacements to current publication/gallery outputs.
