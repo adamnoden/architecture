@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-METALS",
   "generation": 14,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "fb8a27f4-48d8-452f-8d08-afd2baae5724",
   "holder": {
     "kind": "chatgpt",
     "label": "services-next-2041-20261031"
   },
   "claimedAt": "2026-10-31T20:45:51.135Z",
-  "heartbeatAt": "2026-10-31T21:11:08.959Z",
-  "expiresAt": "2026-10-31T22:41:08.959Z",
+  "heartbeatAt": "2026-10-31T21:11:47.392Z",
+  "expiresAt": "2026-10-31T21:11:47.392Z",
   "branch": "work/swarm-next-services-2041-20261031",
   "note": "Fresh accepted main d4cad187; predecessor PR1179 merged and exact-head CI verified. Next bounded question, if RWT-METALS is selected: compare supported copper wet-sheet backing, water/debris load path, underside inspection and repair access. No selected receiver dimensions, nonlinear collapse, site levels or STR capacity claim. Root owns all connector mutations.",
   "predecessor": {
@@ -39,5 +39,7 @@
     "evidence": "PR1186 accepted as7223a6b75033186db75070df934bed80de80bc58 after full exact-head CI41242048869 attempt1 success on2c458cd85591b74648cc26c5f8e11150fdd0ca2e and canonical preflight21:09:56.733Z CLI73256 exit0. Independently fetched: accepted tree exactly equals tested d6694191f424d315104c9c856d24a709c3684031; all seven owner blobs exact, reviewed remote source369a and tested head2c458 are accepted ancestors. Source609c/integration899f retained locally; remote feature ref absent. Current main subsequently advanced to11da37a3 ADE registration, contains7223 and retains all seven blobs; this is after acceptance, not a false equal-tree claim for later main. Root and peer source/math/architecture/render review passed, no physical acceptance or node completion inferred.",
     "next": "Normal handoff release next. RWT-METALS remains planned: actual compatible backing/contact and retained constituents, sheet/profile/loads/support capacity, first passive leak observation, terminal and complete liner handling remain to qualify. Retain accepted backed-liner routine-access versus supported hidden-face intervention decision; do not repeat this bounded comparison or attribute unrelated PHY/EPR/ADE changes to it."
   },
-  "pr": 1186
+  "pr": 1186,
+  "releasedAt": "2026-10-31T21:11:47.392Z",
+  "releaseReason": "handoff"
 }
