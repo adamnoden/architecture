@@ -9,8 +9,8 @@
     "label": "issue-comment-6535667492"
   },
   "claimedAt": "2026-10-30T23:28:04.000Z",
-  "heartbeatAt": "2026-10-30T23:53:42.000Z",
-  "expiresAt": "2026-10-31T00:38:42.000Z",
+  "heartbeatAt": "2026-10-30T23:59:59.000Z",
+  "expiresAt": "2026-10-31T00:44:59.000Z",
   "branch": "work/mvb-chat-6535667492",
   "predecessor": {
     "leaseId": "26286684-da96-4e05-ae47-8e2024d5b45c",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Independent source/geometry review complete; no draft yet. Two child connector writes timed out without mutation. Branch created from main 5a28e4d; PR #1119 retained.",
-    "next": "Author bounded segmented north-floor access comparison and exact Endex evidence. Root relays remote writes; worker owns this lease.",
-    "blocker": "No matched terminal face/seal, full removal sweep or dry access proof; RWT-METALS remains planned."
-  }
+    "evidence": "PR #1121 head c636f406631a7baa762054f2215e9383a4aceafc: six-path segmented-access and Endex source result; inspected sheet and independent reviews; main ceeb3af0 retained.",
+    "next": "Inspect exact-head CI, rerun canonical preflight on current branch, merge partial result and release for handoff. Root relays remote writes.",
+    "blocker": "Installed joints/seals, W2 penetration, module handling, dry access, supports and hydraulics remain unproved; RWT-METALS stays planned."
+  },
+  "pr": 1121
 }
