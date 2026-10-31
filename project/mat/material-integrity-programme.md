@@ -8,6 +8,10 @@ How far can the whole installed house avoid synthetic polymers, especially visib
 
 MAT owns the requirement, constituent audit, cross-system comparison and exception record. IAS/OAS/HAD/ROF/RWT/BCR retain their actual assemblies and drawings. There is one materials requirement and one rainwater programme, not a parallel task graph. Canonical scheduling lives in `project/control/nodes/materials.ts` and the existing owning node shards. Issue discussion is not lifecycle authority.
 
+## P0 ground interface and boundary service apparatus — 31 October 2026
+
+Apply material integrity to the new [P0 ground-movement brief](../str/ground-movement-and-substructure-brief.md) and [Boundary Service Lodge / covered raceway brief](../had/boundary-service-lodge-and-raceway-brief.md). MAT-ENVELOPE retains the complete mineral wall-base/DPC, suspended floor, exposed/ground-contact masonry, cavity and structural interfaces; 'two layers of slate' or a stone plinth is not independent moisture redundancy without a demonstrated full path. MAT-SERVICES includes all real duct/pipe/cable, joints, seals, trays, sleeves, supports, insulated water routes, cabinet apparatus and buried or exposed compounds. A cast-iron grate over a concrete channel does **not** make provider-required polymer ducting disappear. Any provider safety/performance exception needs documented whole-assembly evidence and the standing owner disposition; do not quietly omit mandatory constituents.
+
 ## Packets and earned exits
 
 | Packet | Question and required output | Dependencies and exit boundary |

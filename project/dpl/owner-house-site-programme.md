@@ -4,6 +4,12 @@
 
 The [earlier deployment programme](deployment-programme.md) and #299 remain complete at their conditional research scope. Their older geometry, assumptions, test plots and target coverage do not establish actual suitability for the current house. RSI stays closed. No property search, site purchase, external outreach or spend is authorised here.
 
+## Owner site posture — 31 October 2026
+
+The owner prioritises a house resilient to **tree-heavy, seasonally moving ground**, with a carefully engineered house-to-site transition, rather than simply excluding plots with expensive clay/tree foundations. This changes the design investigation emphasis, **not** the obligation to investigate real ground, surviving trees, services, easements, water levels and legal feasibility. Do not promise every possible plot is technically compatible. Preserve the [P0 ground-movement brief](../str/ground-movement-and-substructure-brief.md) as structural scope.
+
+The owner also wants a [Boundary Service Lodge and accessible private service raceway](../had/boundary-service-lodge-and-raceway-brief.md). At commissioning establish actual water, electrical, telecom, optional gas and sewer assets, their geographically distinct connection and metering points, utility ownership/consents, street rights, invert/frost levels, maintenance access and protected tree roots before selecting a route or placing the lodge. A company-owned boundary meter may remain in a conventional highway chamber even if the lodge contains separate **owner-operated** monitoring/valves. DPL owns factual constraints and cannot assume services will arrive together. The old [DPL-08C](dpl-08c-foul-surface-site-water-interface.md) handoff is an existing topology obligation, not the installed design.
+
 ## DPL-SITE-BRIEF — evidence and plot requirements
 
 After DEL-BRIEF and HRS-BASELINE, produce `project/dpl/owner-site-brief.md`. Derive the plot questions from the accepted house and owner priorities: footprint/context, orientation, external working space, access, garden relationships, levels, drainage/utilities, ground and applicable planning/design constraints. Separate chosen preferences, derived geometric needs, assumptions, professionally assessed constraints and unknowns. Do not promote a convenient assumed setback into a legal minimum.

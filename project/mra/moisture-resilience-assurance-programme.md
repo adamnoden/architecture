@@ -14,6 +14,12 @@ ROF and RWT now own constructive roof/rainwater system design. MRA deliberately 
 
 > **ROF/RWT construct the preferred system; MRA tries to break it.**
 
+## P0 ground and boundary-infrastructure failure challenge — 31 October 2026
+
+The owner has added a [ground-movement / tree-heavy foundation brief](../str/ground-movement-and-substructure-brief.md) and [Boundary Service Lodge / accessible raceway proposal](../had/boundary-service-lodge-and-raceway-brief.md). MRA is to attack them **as one house-to-site failure system**, not author a competing construction. In addition to existing MRA categories, test clay shrink/heave + tree loss/drought/wet seasons; differential movement at the pile-supported house versus soil-supported trenches, lodge, paths and street; pipe leakage rehydrating clay; ruptured movement joint; fouled sleeve; frost and gas/vermin entry; open-grate rain/silt; blocked passive outfall; flooded sealed channel; storm/court backwater; loss of electrical power and task lighting; optional gas leakage; inaccessible covers; and compound cases where the first fault is concealed.
+
+No pump-dependent dry trench, hidden groundwater tanking or gravel-only 'drainage proof' earns acceptance. Any required wet-tolerant channel or isolated dry electrical compartment must show where water can go safely and how the damaged service is isolated and replaced. The proposal does not award MRA-00 new assurance authority or imply the selected house has passed this assault.
+
 ## Heightened risk posture
 
 Ovid’s House intentionally carries a stronger moisture-safety burden than ordinary minimum domestic practice where that burden can be met through robust form, geometry, gravity, drainage, access, drying potential and simple passive redundancy.

@@ -23,6 +23,12 @@ The [STR programme](../str/structural-architecture-programme.md) develops solid 
 
 Current HAD studies may continue with named provisional structural assumptions. STR-RECONCILE feeds both ROF-RWT-GATE and TRIAD-GATE, which must verify compatibility with their actual selections. Thicker walls or changed opening heads must earn their place in the rooms, stair, sanitary access and renewal routes; a visually convincing structure cannot conceal a known fit failure.
 
+## Boundary Service Lodge and outward site-service architecture — 31 October 2026
+
+The owner has adopted **Boundary Service Lodge** as the name for an elegant, small, secure brick utility structure near street-side connections, with practical safe access, integral lighting, necessary owner-side isolators, durable system labels and restrained low-maintenance indications. It serves as the **upstream private service interface**, complemented by independent isolation and a service hub inside the house. A removable-cover external service raceway joins them where lawful and physically effective; services may remain below grade without being buried in backfill. Consider a pitched roof and an architecturally quiet, truthful masonry/metal expression.
+
+The [owner-house lodge/raceway brief](boundary-service-lodge-and-raceway-brief.md) defines comparative cabinet/lodge/segregated-compartment options, utility-provider constraints, wet/dry routes, weather, root-sensitive construction and movement interface obligations. HAD owns form, access and architectural site composition; PAT-001, STR, MAT, DPL, MRA and BCR retain their separate technical authorities. This is an **outward site infrastructure candidate**, not an alteration to the accepted house footprint or a pass through HAD-03. Do not treat a pretty image as supplier-approved equipment or construct a duplicate site programme; register any independent execution packet under PCO.
+
 ## Packet topology
 
 The original linear HAD-00…06 outline is superseded by the topology below,
