@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 17,
-  "state": "released",
-  "leaseId": "1e53ffc7-faca-4bfe-ad2e-48876601b545",
+  "generation": 18,
+  "state": "claimed",
+  "leaseId": "328b2897-435b-45d5-8a05-2736278c2f43",
   "holder": {
     "kind": "chatgpt",
-    "label": "services-recovery-983b7ee-20261031"
+    "label": "swarm-court-continuation-983b7ee"
   },
-  "claimedAt": "2026-10-31T17:15:27.079Z",
-  "heartbeatAt": "2026-10-31T17:50:56.367Z",
-  "expiresAt": "2026-10-31T17:50:56.367Z",
-  "branch": "work/swarm-court-access-20261031",
+  "claimedAt": "2026-10-31T17:53:59.254Z",
+  "heartbeatAt": "2026-10-31T17:53:59.254Z",
+  "expiresAt": "2026-10-31T18:38:59.254Z",
+  "branch": "work/swarm-court-continuation-20261031",
   "predecessor": {
-    "leaseId": "72497b0a-9437-4b0f-9488-cf5ce88ff19b",
-    "generation": 16,
-    "branch": "work/swarm-dispatch-recovery-20261031",
+    "leaseId": "1e53ffc7-faca-4bfe-ad2e-48876601b545",
+    "generation": 17,
+    "branch": "work/swarm-court-access-20261031",
+    "pr": 1160,
     "checkpoint": {
-      "evidence": "No source change earned: PR1134 is merged at1af38036c4e67ad73891e9df31dda991e407599f; exact predecessor head8af03a533974b76162e75f6927c1a938e5ec0325 passed CI41189754152. Its four threshold study/generator/output blobs are identical on main20ca2ad0; threshold generator --check passes. Independent source/topology review found no accepted-source defect.",
-      "next": "Before another threshold motion witness, supply the actual fixed W2 and ground-boundary contours, moving coupon, both release planes and any closure touching the coupon; show installed, first-release and fully absent states with leak/open-bore paths. Broader RWT-06 duties remain open.",
-      "blocker": "The next matched-interface trial lacks a qualified penetration/closure/release section. Existing geometry and repeated warnings cannot prove it. This bounded recovery does not complete or hold the whole RWT-06 packet."
+      "evidence": "PR1160 merged at 08c68ef0e3014efb8d6aecbcdb1bb208a57425ae. Premerge CI41225375984 passed head6cf4e839/treea688337692d8f327a416d5ee114c7b71690b978a; concurrent disjoint IAS/MAT main additions produced accepted treef2a2283d17b896df1a0eb2a20e5318fc1a05c43b. Exact accepted-merge push run41225736909 passed canonical repository health, both publication builds and metadata checks. All seven combined owner blobs and both reviewed source parents are retained. RWT-06 delivers the bounded court personnel-platform task comparison and preserves the threshold witness; no complete house access or load pass is inferred.",
+      "next": "Handoff the still-planned RWT-06 packet after verified integration and cleanup. Next actual court access design needs located machine/task geometry, door and threshold transport, independently qualified wheel and outrigger support, lowered entry/control access, and a separate receiver/roof renewal method. Threshold work still requires its actual W2, ground-boundary and release-interface section.",
+      "blocker": "No complete installed access, support-load, eave-work or renewable threshold assembly is qualified; these are remaining design duties, not an unresolved publication failure."
     }
   },
   "recoverySource": {
-    "leaseId": "72497b0a-9437-4b0f-9488-cf5ce88ff19b",
-    "generation": 16,
-    "branch": "work/swarm-dispatch-recovery-20261031",
+    "leaseId": "1e53ffc7-faca-4bfe-ad2e-48876601b545",
+    "generation": 17,
+    "branch": "work/swarm-court-access-20261031",
+    "pr": 1160,
     "checkpoint": {
-      "evidence": "No source change earned: PR1134 is merged at1af38036c4e67ad73891e9df31dda991e407599f; exact predecessor head8af03a533974b76162e75f6927c1a938e5ec0325 passed CI41189754152. Its four threshold study/generator/output blobs are identical on main20ca2ad0; threshold generator --check passes. Independent source/topology review found no accepted-source defect.",
-      "next": "Before another threshold motion witness, supply the actual fixed W2 and ground-boundary contours, moving coupon, both release planes and any closure touching the coupon; show installed, first-release and fully absent states with leak/open-bore paths. Broader RWT-06 duties remain open.",
-      "blocker": "The next matched-interface trial lacks a qualified penetration/closure/release section. Existing geometry and repeated warnings cannot prove it. This bounded recovery does not complete or hold the whole RWT-06 packet."
+      "evidence": "PR1160 merged at 08c68ef0e3014efb8d6aecbcdb1bb208a57425ae. Premerge CI41225375984 passed head6cf4e839/treea688337692d8f327a416d5ee114c7b71690b978a; concurrent disjoint IAS/MAT main additions produced accepted treef2a2283d17b896df1a0eb2a20e5318fc1a05c43b. Exact accepted-merge push run41225736909 passed canonical repository health, both publication builds and metadata checks. All seven combined owner blobs and both reviewed source parents are retained. RWT-06 delivers the bounded court personnel-platform task comparison and preserves the threshold witness; no complete house access or load pass is inferred.",
+      "next": "Handoff the still-planned RWT-06 packet after verified integration and cleanup. Next actual court access design needs located machine/task geometry, door and threshold transport, independently qualified wheel and outrigger support, lowered entry/control access, and a separate receiver/roof renewal method. Threshold work still requires its actual W2, ground-boundary and release-interface section.",
+      "blocker": "No complete installed access, support-load, eave-work or renewable threshold assembly is qualified; these are remaining design duties, not an unresolved publication failure."
     }
-  },
-  "pr": 1160,
-  "checkpoint": {
-    "evidence": "PR1160 merged at 08c68ef0e3014efb8d6aecbcdb1bb208a57425ae. Premerge CI41225375984 passed head6cf4e839/treea688337692d8f327a416d5ee114c7b71690b978a; concurrent disjoint IAS/MAT main additions produced accepted treef2a2283d17b896df1a0eb2a20e5318fc1a05c43b. Exact accepted-merge push run41225736909 passed canonical repository health, both publication builds and metadata checks. All seven combined owner blobs and both reviewed source parents are retained. RWT-06 delivers the bounded court personnel-platform task comparison and preserves the threshold witness; no complete house access or load pass is inferred.",
-    "next": "Handoff the still-planned RWT-06 packet after verified integration and cleanup. Next actual court access design needs located machine/task geometry, door and threshold transport, independently qualified wheel and outrigger support, lowered entry/control access, and a separate receiver/roof renewal method. Threshold work still requires its actual W2, ground-boundary and release-interface section.",
-    "blocker": "No complete installed access, support-load, eave-work or renewable threshold assembly is qualified; these are remaining design duties, not an unresolved publication failure."
-  },
-  "releasedAt": "2026-10-31T17:50:56.367Z",
-  "releaseReason": "handoff"
+  }
 }
