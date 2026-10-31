@@ -90,6 +90,7 @@ selection and shared compatibility checks.
 - [Product-sized small-en-suite fit review](had-03-ensuite-fit-review.md) and [source-bound diagnostic](studies/ensuite-fit-study.svg).
 - [Guest-WC privacy, open-gap sightlines and the shutter-space comparison](had-03-guest-wc-privacy.md) — glazing-first direction with optical, site and actual-operation admission still open.
 - [Dining chairs, withdrawal and garden access](had-03-dining-garden.md) — real chair envelope, explicit adverse six-station trial and a four-side-place comparison; household capacity, occupied use and actual opening operation remain unresolved.
+- [Actual table/chair fit limits](had-03-table-chair-fit.md) — one manufacturer's underside and leg-gap values narrow the insertion question; the three-dimensional opening, occupied use and household seat counts remain unverified.
 
 HAD-03 is planned and incomplete. The worked kitchen uses solid-pier stations
 and a dry prep table because a continuous 900-high worktop would cross 750-sill
