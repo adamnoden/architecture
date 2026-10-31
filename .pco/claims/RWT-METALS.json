@@ -1,45 +1,41 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 14,
-  "state": "released",
-  "leaseId": "fb8a27f4-48d8-452f-8d08-afd2baae5724",
+  "generation": 15,
+  "state": "claimed",
+  "leaseId": "66f58601-32fa-4b7b-8b10-401db5e3471b",
   "holder": {
     "kind": "chatgpt",
-    "label": "services-next-2041-20261031"
+    "label": "rwt-leak-witness-2144-20261031"
   },
-  "claimedAt": "2026-10-31T20:45:51.135Z",
-  "heartbeatAt": "2026-10-31T21:11:47.392Z",
-  "expiresAt": "2026-10-31T21:11:47.392Z",
-  "branch": "work/swarm-next-services-2041-20261031",
-  "note": "Fresh accepted main d4cad187; predecessor PR1179 merged and exact-head CI verified. Next bounded question, if RWT-METALS is selected: compare supported copper wet-sheet backing, water/debris load path, underside inspection and repair access. No selected receiver dimensions, nonlinear collapse, site levels or STR capacity claim. Root owns all connector mutations.",
+  "claimedAt": "2026-10-31T21:44:14.594Z",
+  "heartbeatAt": "2026-10-31T21:44:14.594Z",
+  "expiresAt": "2026-10-31T22:29:14.594Z",
+  "branch": "work/rwt-metal-leak-witness-20261031",
+  "note": "Owner-directed continuation of RWT-METALS: outer-west backed copper receiver first passive leak observation and replacement/repair water consequences. Bounded source-owned study; no hydrostatic or site approval.",
   "predecessor": {
-    "leaseId": "516a1970-2115-4092-bea7-825005c6900a",
-    "generation": 13,
-    "branch": "work/swarm-782cae-rwt-1957",
-    "pr": 1179,
+    "leaseId": "fb8a27f4-48d8-452f-8d08-afd2baae5724",
+    "generation": 14,
+    "branch": "work/swarm-next-services-2041-20261031",
+    "pr": 1186,
     "checkpoint": {
-      "evidence": "PR1179 merged1378e24905ceca1713e217355eacd7fab01e2815, accepted tree9b30f56506cac89a4583e81e03a69714f914d4fe. Submitted head2711eb62 passed full CI41238730075 and fresh generation13 preflight20:27:27.542Z. Concurrent gallery4860d98 landed before merge; exact accepted-main build41239002188 now passes full npm run check, both publication PDFs, metadata and Pages artifact assembly. Five gallery and eight copper controls plus deterministic outputs pass locally; independent gallery adjacency review passes. All seven RWT blobs and source/head ancestry verified. Remote feature ref absent.",
-      "next": "Release handoff after verified integration and complete local cleanup. Next RWT-METALS work needs the actual seam underside/backing and load path, frame-relative movement, terminal profile and complete accessible repair sequence; retain terminal-side restraint development direction and all authored-input limits.",
-      "blocker": "No integration blocker remains. This bounded support/release investigation does not qualify actual bearing, hardware, site levels, complete wet-body extraction or the wider copper/brass/hidden-route candidate; RWT-METALS remains planned."
+      "evidence": "PR1186 accepted as7223a6b75033186db75070df934bed80de80bc58 after full exact-head CI41242048869 attempt1 success on2c458cd85591b74648cc26c5f8e11150fdd0ca2e and canonical preflight21:09:56.733Z CLI73256 exit0. Independently fetched: accepted tree exactly equals tested d6694191f424d315104c9c856d24a709c3684031; all seven owner blobs exact, reviewed remote source369a and tested head2c458 are accepted ancestors. Source609c/integration899f retained locally; remote feature ref absent. Current main subsequently advanced to11da37a3 ADE registration, contains7223 and retains all seven blobs; this is after acceptance, not a false equal-tree claim for later main. Root and peer source/math/architecture/render review passed, no physical acceptance or node completion inferred.",
+      "next": "Normal handoff release next. RWT-METALS remains planned: actual compatible backing/contact and retained constituents, sheet/profile/loads/support capacity, first passive leak observation, terminal and complete liner handling remain to qualify. Retain accepted backed-liner routine-access versus supported hidden-face intervention decision; do not repeat this bounded comparison or attribute unrelated PHY/EPR/ADE changes to it."
     }
   },
   "recoverySource": {
-    "leaseId": "516a1970-2115-4092-bea7-825005c6900a",
-    "generation": 13,
-    "branch": "work/swarm-782cae-rwt-1957",
-    "pr": 1179,
+    "leaseId": "fb8a27f4-48d8-452f-8d08-afd2baae5724",
+    "generation": 14,
+    "branch": "work/swarm-next-services-2041-20261031",
+    "pr": 1186,
     "checkpoint": {
-      "evidence": "PR1179 merged1378e24905ceca1713e217355eacd7fab01e2815, accepted tree9b30f56506cac89a4583e81e03a69714f914d4fe. Submitted head2711eb62 passed full CI41238730075 and fresh generation13 preflight20:27:27.542Z. Concurrent gallery4860d98 landed before merge; exact accepted-main build41239002188 now passes full npm run check, both publication PDFs, metadata and Pages artifact assembly. Five gallery and eight copper controls plus deterministic outputs pass locally; independent gallery adjacency review passes. All seven RWT blobs and source/head ancestry verified. Remote feature ref absent.",
-      "next": "Release handoff after verified integration and complete local cleanup. Next RWT-METALS work needs the actual seam underside/backing and load path, frame-relative movement, terminal profile and complete accessible repair sequence; retain terminal-side restraint development direction and all authored-input limits.",
-      "blocker": "No integration blocker remains. This bounded support/release investigation does not qualify actual bearing, hardware, site levels, complete wet-body extraction or the wider copper/brass/hidden-route candidate; RWT-METALS remains planned."
+      "evidence": "PR1186 accepted as7223a6b75033186db75070df934bed80de80bc58 after full exact-head CI41242048869 attempt1 success on2c458cd85591b74648cc26c5f8e11150fdd0ca2e and canonical preflight21:09:56.733Z CLI73256 exit0. Independently fetched: accepted tree exactly equals tested d6694191f424d315104c9c856d24a709c3684031; all seven owner blobs exact, reviewed remote source369a and tested head2c458 are accepted ancestors. Source609c/integration899f retained locally; remote feature ref absent. Current main subsequently advanced to11da37a3 ADE registration, contains7223 and retains all seven blobs; this is after acceptance, not a false equal-tree claim for later main. Root and peer source/math/architecture/render review passed, no physical acceptance or node completion inferred.",
+      "next": "Normal handoff release next. RWT-METALS remains planned: actual compatible backing/contact and retained constituents, sheet/profile/loads/support capacity, first passive leak observation, terminal and complete liner handling remain to qualify. Retain accepted backed-liner routine-access versus supported hidden-face intervention decision; do not repeat this bounded comparison or attribute unrelated PHY/EPR/ADE changes to it."
     }
   },
   "checkpoint": {
-    "evidence": "PR1186 accepted as7223a6b75033186db75070df934bed80de80bc58 after full exact-head CI41242048869 attempt1 success on2c458cd85591b74648cc26c5f8e11150fdd0ca2e and canonical preflight21:09:56.733Z CLI73256 exit0. Independently fetched: accepted tree exactly equals tested d6694191f424d315104c9c856d24a709c3684031; all seven owner blobs exact, reviewed remote source369a and tested head2c458 are accepted ancestors. Source609c/integration899f retained locally; remote feature ref absent. Current main subsequently advanced to11da37a3 ADE registration, contains7223 and retains all seven blobs; this is after acceptance, not a false equal-tree claim for later main. Root and peer source/math/architecture/render review passed, no physical acceptance or node completion inferred.",
-    "next": "Normal handoff release next. RWT-METALS remains planned: actual compatible backing/contact and retained constituents, sheet/profile/loads/support capacity, first passive leak observation, terminal and complete liner handling remain to qualify. Retain accepted backed-liner routine-access versus supported hidden-face intervention decision; do not repeat this bounded comparison or attribute unrelated PHY/EPR/ADE changes to it."
-  },
-  "pr": 1186,
-  "releasedAt": "2026-10-31T21:11:47.392Z",
-  "releaseReason": "handoff"
+    "evidence": "Started from current main 4e9839d4ba345ce822f9f03366e443b3641f4b33. PR1186 merged; generation 14 released. Main PCO defines RWT-METALS planned/self-service with MAT-00,RWT-04 complete.",
+    "next": "Compare first passive observation after a backed copper-liner puncture or failed seam; preserve independent load path, mineral contact/material policy, terminal and safe escape obligations. Validate exact head and merge only with fresh canonical preflight.",
+    "blocker": "Unselected site levels, mineral support/contact, profile and water duty remain unknown; do not invent a watertight subtray or harmless discharge."
+  }
 }
