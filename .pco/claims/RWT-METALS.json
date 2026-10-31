@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-METALS",
   "generation": 16,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "12e9e5ac-c75f-4035-bac1-7e0dd4252d62",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6550189103"
   },
   "claimedAt": "2026-10-31T22:50:47.000Z",
-  "heartbeatAt": "2026-10-31T22:54:10.000Z",
-  "expiresAt": "2026-10-31T23:39:10.000Z",
+  "heartbeatAt": "2026-10-31T23:00:40.000Z",
+  "expiresAt": "2026-10-31T23:00:40.000Z",
   "branch": "work/mvb-chat-6550189103",
   "predecessor": {
     "leaseId": "66f58601-32fa-4b7b-8b10-401db5e3471b",
@@ -38,5 +38,7 @@
   "checkpoint": {
     "evidence": "Recovered PR1191 RWT sources into PR1195 head a424d1312d9ecb45b941c654af5b56bc048d4fe6 with current main ancestry.",
     "next": "Pass full CI, run canonical merge-check with current lease and head, merge and close source PR1191."
-  }
+  },
+  "releasedAt": "2026-10-31T23:00:40.000Z",
+  "releaseReason": "handoff"
 }
