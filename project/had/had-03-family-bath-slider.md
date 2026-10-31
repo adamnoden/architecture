@@ -32,7 +32,7 @@ The model uses a **600 torso disc**, an **80-diameter capsule around the straigh
 |---|---:|---|
 | Complete hall-to-inside entry | 18 minimum reserve | Includes the reduced lined opening and changed gallery line |
 | Torso against fixed geometry during closing | At least 24.9675 | Continuous lower bound, not just sampled poses |
-| Hand/forearm capsule against fixed geometry | At least 10.1092 | Includes the solid spine and lining; it does not prove a real grasp |
+| Hand/forearm capsule against fixed geometry | At least 10.109 | Includes the solid spine and lining; it does not prove a real grasp |
 | Torso to translating panel | At least 210 | The panel stays on the gallery side |
 | Maximum centre-to-pull distance | 630.079 | Passes the 650 sensitivity; fails 600 for this same prescribed movement |
 | Closed-door WC, bath and cabinet approach paths | 15 minimum reserve | One approach and return at a time; no fixture movement |
