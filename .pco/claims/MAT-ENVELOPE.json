@@ -1,26 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 6,
+  "generation": 7,
   "state": "claimed",
-  "leaseId": "969557ee-4ce8-435f-9ca3-c8899addae15",
+  "leaseId": "456fc77f-d505-42da-8915-c81dbfcb16db",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-mat-round4-983b7ee"
+    "label": "swarm-access-recovery-mat-a-983b7ee"
   },
-  "claimedAt": "2026-10-31T10:54:25.889Z",
-  "heartbeatAt": "2026-10-31T10:54:25.889Z",
-  "expiresAt": "2026-10-31T11:39:25.889Z",
-  "branch": "work/swarm-mat-round4-983b7ee-20261031",
+  "claimedAt": "2026-10-31T16:50:20.509Z",
+  "heartbeatAt": "2026-10-31T16:50:20.509Z",
+  "expiresAt": "2026-10-31T17:35:20.509Z",
+  "branch": "work/swarm-access-recovery-20261031",
   "predecessor": {
-    "leaseId": "6a340394-845c-4377-b276-8cc209132648",
-    "generation": 5,
-    "branch": "work/swarm-maintenance-integration-20261031",
-    "pr": 1148,
-    "checkpoint": {
-      "evidence": "PR #1148 accepted as 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Full CI 41193874119 succeeded on 90de6288688004c8568f0a0665977e1045f953d8; canonical envelope preflight passed 2026-10-31T10:51:27.645Z. Fresh main verification equals the accepted merge and validated tree 8967b8d8feea905ccc5cf7582447deca7af351e0. Validated head and envelope source parent cc4fbd296d9c1eae97c58fa61cb8d4fee2ac9e65 are ancestors. Study blob 40ae213b78fdc5abd0974d8d69cd211248724dc4 and G03 remain exact; all 54 audit row identities/order and other audit bytes are preserved, with combined changes confined to G03/S01. The accepted result rejects routine carrier renewal that consumes the retained ground boundary and separates ground duty from W1 and court W2.",
-      "next": "Release handoff with MAT-ENVELOPE still planned. Carry forward the accepted requirement to keep routine carrier work on the maintainable side of an intact supported ground boundary. Remaining work requires exact retained constituents and a qualified floor-to-wall DPC/upstand/penetration arrangement, actual first-release/tool/heat/handling access, separate leak and open-tail management, and any independently required gas or pressure-water qualification. No complete mineral junction, selected floor geometry, 300 mm fit or installed assembly acceptance has been earned."
-    }
+    "leaseId": "969557ee-4ce8-435f-9ca3-c8899addae15",
+    "generation": 6,
+    "branch": "work/swarm-mat-round4-983b7ee-20261031"
   },
   "recoverySource": {
     "leaseId": "6a340394-845c-4377-b276-8cc209132648",
