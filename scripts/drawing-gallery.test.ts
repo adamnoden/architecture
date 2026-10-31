@@ -3,11 +3,13 @@ import { mkdtempSync, mkdirSync, writeFileSync, rmSync, readFileSync } from 'nod
 import { tmpdir } from 'node:os'
 import { dirname, resolve } from 'node:path'
 import { test } from 'node:test'
-import { buildDrawingGallery } from './drawing-gallery.js'
-import { layoutFamilyViews } from '../compiler/reference-house/georgian/layout-family.js'
-import { layoutAnalysisViews } from '../compiler/reference-house/georgian/layout-analysis.js'
+import { buildDrawingGallery, frameGalleryScene } from './drawing-gallery.js'
+import { layoutFamilyViews, createLayoutFamilyScene } from '../compiler/reference-house/georgian/layout-family.js'
+import { layoutAnalysisViews, createLayoutAnalysisScene } from '../compiler/reference-house/georgian/layout-analysis.js'
 import { exteriorViews } from '../compiler/reference-house/georgian/exterior-isometrics.js'
 import { nomenclatureFamilies, nomenclaturePattern } from '../project/nomenclature.js'
+import { translateDrawingPrimitive } from '../compiler/publication-drawing-v2/composition.js'
+import { PLT_CANDIDATE_TOKENS } from '../compiler/publication-drawing-v2/plt-candidate-tokens.js'
 
 const svg = (title: string, body = '') => `<svg xmlns="http://www.w3.org/2000/svg"><title>${title}</title><desc>A drawing with known limitations.</desc>${body}</svg>`
 
@@ -68,6 +70,31 @@ test('historical geometry and unadopted studies retain their basis, and card lab
   assert.equal(entries.find((entry) => entry.sourcePath.endsWith('future-design.svg'))!.basis, 'study')
   assert.ok(entries.every((entry) => !/RH-C1|HAD/.test(entry.title)))
 }))
+
+test('gallery framing retains complete doors and top dimensions without changing the source architecture or scale', () => {
+  const rounded = (value: unknown) => JSON.parse(JSON.stringify(value, (_key, item) => typeof item === 'number' ? Math.round(item * 1e6) / 1e6 : item))
+  const scenes = [
+    ...(['GROUND', 'FIRST'] as const).map((view) => createLayoutFamilyScene(view, 100)),
+    ...(['GROUND-SERVICES', 'FIRST-SERVICES', 'STRUCTURE', 'ADAPTATION'] as const).map((view) => createLayoutAnalysisScene(view, 100))
+  ]
+  for (const source of scenes) {
+    const before = structuredClone(source)
+    const framed = frameGalleryScene(source)
+    const originalAnchor = source.primitives.find((primitive) => primitive.id === 'width-dimension-line')!
+    const framedAnchor = framed.primitives.find((primitive) => primitive.id === 'width-dimension-line')!
+    assert.ok(originalAnchor.kind === 'line' && framedAnchor.kind === 'line')
+    const dx = framedAnchor.a.x - originalAnchor.a.x
+    const dy = framedAnchor.a.y - originalAnchor.a.y
+    assert.deepEqual(rounded(framed.primitives), rounded(source.primitives.map((primitive) => translateDrawingPrimitive(primitive, dx, dy))))
+    assert.equal(framed.sourceId, source.sourceId)
+    assert.equal(framed.scaleDenominator, source.scaleDenominator)
+    assert.deepEqual(source, before)
+    const label = framed.primitives.find((primitive) => primitive.id === 'width-label')!
+    assert.ok(label.kind === 'text' && label.y > PLT_CANDIDATE_TOKENS.textMm.note, `${source.viewId}: top dimension clipped`)
+    const door = framed.primitives.find((primitive) => primitive.id === 'plant-replacement-leaf-1')
+    if (door) assert.ok(door.kind === 'line' && door.b.x < framed.widthMm - 1, `${source.viewId}: replacement door clipped`)
+  }
+})
 
 test('the real catalogue includes every exported current view, all discoverable sources and valid content-addressed previews', () => {
   const root = resolve(import.meta.dirname, '..')

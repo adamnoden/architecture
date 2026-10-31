@@ -13,6 +13,7 @@ import { synthesisSource, createCurrentSynthesisScene } from '../compiler/refere
 import { exteriorSource, exteriorViews, createExteriorIsometricScene } from '../compiler/reference-house/georgian/exterior-isometrics.js'
 import { REFERENCE_HOUSE_OUTPUTS } from '../compiler/reference-house/output/contract.js'
 import { renderDrawingSceneV2SvgWithTokens } from '../compiler/publication-drawing-v2/svg.js'
+import { translateDrawingPrimitive } from '../compiler/publication-drawing-v2/composition.js'
 import { PLT_CANDIDATE_TOKENS } from '../compiler/publication-drawing-v2/plt-candidate-tokens.js'
 import type { DrawingSceneV2 } from '../compiler/publication-drawing-v2/model.js'
 
@@ -137,6 +138,28 @@ function historicalArtwork(root: string): Set<string> {
   return paths
 }
 
+/** Expand the web canvas around source geometry; physical scale and every primitive survive. */
+export function frameGalleryScene(scene: DrawingSceneV2): DrawingSceneV2 {
+  const points = scene.primitives.flatMap((primitive) => {
+    if (primitive.kind === 'line') return [primitive.a, primitive.b]
+    if (primitive.kind === 'path') return primitive.rings.flat()
+    if (primitive.kind === 'rect') return [primitive, { x: primitive.x + primitive.width, y: primitive.y + primitive.height }]
+    return [primitive]
+  })
+  // Leave breathing room for strokes, label ascenders and rotated dimension labels.
+  const margin = 2 * Math.max(...Object.values(PLT_CANDIDATE_TOKENS.textMm))
+  const left = Math.min(0, ...points.map((point) => point.x - margin))
+  const top = Math.min(0, ...points.map((point) => point.y - margin))
+  const right = Math.max(scene.widthMm, ...points.map((point) => point.x + margin))
+  const bottom = Math.max(scene.heightMm, ...points.map((point) => point.y + margin))
+  return {
+    ...scene,
+    widthMm: right - left,
+    heightMm: bottom - top,
+    primitives: scene.primitives.map((primitive) => translateDrawingPrimitive(primitive, -left, -top))
+  }
+}
+
 /** A build projection: no persisted inventory and no second source of drawing geometry. */
 export function buildDrawingGallery(root = process.cwd(), options: { includeCurrent?: boolean } = {}): DrawingGallery {
   const entries: GalleryEntry[] = []
@@ -185,7 +208,7 @@ export function buildDrawingGallery(root = process.cwd(), options: { includeCurr
       addSvg({
         id: scene.viewId, title, description, category: 'architecture', basis: 'current', collection,
         sourcePath, sourceId: scene.sourceId, context: currentContext
-      }, renderDrawingSceneV2SvgWithTokens(scene, PLT_CANDIDATE_TOKENS) + '\n')
+      }, renderDrawingSceneV2SvgWithTokens(frameGalleryScene(scene), PLT_CANDIDATE_TOKENS) + '\n')
     }
     const viewTitles: Record<string, string> = {
       GROUND: 'Ground-floor plan', FIRST: 'First-floor plan', LOCATOR: 'Section locations', PRINCIPAL: 'Principal section',
