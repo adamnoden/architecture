@@ -9,8 +9,8 @@
     "label": "mat-waste-20261031-1653"
   },
   "claimedAt": "2026-10-31T16:53:20.924Z",
-  "heartbeatAt": "2026-10-31T16:53:20.924Z",
-  "expiresAt": "2026-10-31T17:38:20.924Z",
+  "heartbeatAt": "2026-10-31T17:05:17.871Z",
+  "expiresAt": "2026-10-31T17:50:17.871Z",
   "branch": "work/mat-waste-20261031-1653",
   "predecessor": {
     "leaseId": "d5937b54-a057-41e5-89f0-2fb76d65e801",
@@ -31,5 +31,11 @@
       "evidence": "PR 1148 accepted by merge 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Accepted tree 8967b8d8feea905ccc5cf7582447deca7af351e0 exactly matches full-CI head 90de6288688004c8568f0a0665977e1045f953d8; CI run 41193874119 passed and services canonical preflight passed at 2026-10-31T10:51:33.864Z. Fresh native verification confirms common head and published services source 22890a23e8cd89f5262b58738ac2d1bc8639215a are main ancestors, exact services study and S01 bytes are preserved, and common feature ref is absent.",
       "next": "Release handoff and re-enter fresh canonical dispatch. MAT-SERVICES remains planned: actual union compound, first-release geometry, pipe-end repair and full water system remain unresolved; the next useful services comparison may address soil/waste/vent joints and their accessible support and penetration reinstatement duties rather than repeat exhausted catalogue-only water-joint searches."
     }
+  },
+  "pr": 1153,
+  "checkpoint": {
+    "evidence": "Draft PR #1153 at f000d51b459cc1f14d7204eebdadc9901816638a; primary source review, socket arithmetic and clean current-main integration",
+    "next": "Verify exact-head canonical CI, run fresh merge preflight and close out bounded S02 result",
+    "blocker": "Whole waste assembly and located renewal remain unresolved; CI pending"
   }
 }
