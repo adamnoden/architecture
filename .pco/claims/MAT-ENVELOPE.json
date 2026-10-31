@@ -9,8 +9,8 @@
     "label": "issue-comment-6546969637"
   },
   "claimedAt": "2026-10-31T17:48:34.000Z",
-  "heartbeatAt": "2026-10-31T17:48:34.000Z",
-  "expiresAt": "2026-10-31T18:33:34.000Z",
+  "heartbeatAt": "2026-10-31T18:11:13.000Z",
+  "expiresAt": "2026-10-31T18:56:13.000Z",
   "branch": "work/mvb-chat-6546969637",
   "predecessor": {
     "leaseId": "77833f2c-876c-438a-bdd9-a2e43f2d1353",
@@ -33,5 +33,11 @@
       "next": "Resolve one configured wall-base and floor-to-mineral-DPC junction, preserving the clear-cavity/drained-tray alternatives, all retained constituents, structural fill, passive site-water conditions and maintainable-side service access. Reconcile NCCT outlet instructions and its separate inner-leaf membrane interface before any selection.",
       "blocker": "No exact complete inner-leaf/floor transition, installed membrane/auxiliary disclosure, project outlet setting-out or actual brick/mortar/load qualification; site levels and complete assembly remain unselected."
     }
+  },
+  "pr": 1164,
+  "checkpoint": {
+    "evidence": "PR #1164 head c9f5bf0bdeda35018a8f2788a594df6bad14766c; suspended mineral-floor strategy, connected A3 section and six local Node22 regression tests",
+    "next": "Reconcile current main, reproduce source-pinned outputs on runner, require exact-head CI and canonical merge preflight; integrate and release",
+    "blocker": "No DPM omission, actual site/floor/DPC/vent material qualification or construction selection; MAT-ENVELOPE remains planned"
   }
 }
