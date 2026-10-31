@@ -9,9 +9,9 @@
     "label": "swarm-mat-floor-983b7ee"
   },
   "claimedAt": "2026-10-31T10:25:01.213Z",
-  "heartbeatAt": "2026-10-31T10:25:01.213Z",
-  "expiresAt": "2026-10-31T11:10:01.213Z",
-  "branch": "work/swarm-mat-floor-20261031",
+  "heartbeatAt": "2026-10-31T10:46:16.197Z",
+  "expiresAt": "2026-10-31T11:31:16.197Z",
+  "branch": "work/swarm-maintenance-integration-20261031",
   "predecessor": {
     "leaseId": "af7d4f6b-5ea9-4059-995c-02faf541f7db",
     "generation": 3,
@@ -31,5 +31,10 @@
       "evidence": "PR #1145 accepted as adee2d3197fd7af8af06fd5b0668f7acd6c8debd, tree 03bc2783319a7229e9940615449b9c010d73e177. Full CI 41191566272 passed on 18a8f2bdf39e3fef253e866a148cfdf1cbbc402a; canonical MAT-SERVICES preflight passed 2026-10-31T10:15:05.088Z. Fresh main readback matches accepted merge and exact reviewed S01, SUPPLY-STUDY, programme link and study blob 90e9ed837fa965b0625bdccbbf8c8015788d4713. Validated head and services parent b6b4d21f4a20f2536ef1fde227ba285566cb3e50 are ancestors of accepted main.",
       "next": "Release handoff after this receipt, then use fresh canonical dispatch. MAT-SERVICES remains planned: complete valve/insulation/support/residue admission, actual duty and isolation/drain/first-release geometry remain open. Bounded read-only alternative-valve search found no admitted exact build: Hattersley 33X leaves packing/gasket chemistry undisclosed; Apollo 101T-LF 30LF00401 has a declared epoxy-coated handwheel and unresolved complete-build evidence. Primary leads: https://www.hattersley.com/product/gate/33x-33xls/ and https://aalberts-ips.us/products/detail/30lf00x01/ . This is not a universal no-valve claim and earns no additional catalogue-only document."
     }
+  },
+  "pr": 1148,
+  "checkpoint": {
+    "evidence": "Published common PR 1148 at 90de6288688004c8568f0a0665977e1045f953d8, tree 8967b8d8feea905ccc5cf7582447deca7af351e0. Services parent 22890a23e8cd89f5262b58738ac2d1bc8639215a has exactly the reviewed source tree 1a28f35b6a27220a666a15ca8fb8e0e077335d1e; source ancestry, services-water-joints study and S01 row verified unchanged. Focused source review and local repository, publication integrity/source and docs checks passed; combined guards/checks also passed.",
+    "next": "Await full exact-head CI and all three fresh canonical preflights before expected-head integration. After acceptance verify services source and ancestry, record merge evidence, release handoff; MAT-SERVICES remains planned with compound chemistry, actual first-release geometry, pipe-end repair and wider installed services still unresolved."
   }
 }
