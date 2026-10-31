@@ -9,7 +9,12 @@
     "label": "swe-1174-control"
   },
   "claimedAt": "2026-10-31T20:29:13.618Z",
-  "heartbeatAt": "2026-10-31T20:29:13.618Z",
-  "expiresAt": "2026-10-31T21:14:13.618Z",
-  "branch": "work/swe-control-1174"
+  "heartbeatAt": "2026-10-31T20:36:54.421Z",
+  "expiresAt": "2026-10-31T21:21:54.421Z",
+  "branch": "work/swe-control-1174",
+  "pr": 1182,
+  "checkpoint": {
+    "evidence": "PR #1182 head 79a098a9; project/swe/control-result.md",
+    "next": "Inspect exact-head CI, reconcile current main, run publication preflight and merge"
+  }
 }
