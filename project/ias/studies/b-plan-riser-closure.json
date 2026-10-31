@@ -1,0 +1,1322 @@
+{
+  "status": "Unadopted B-plan enclosure/closure comparison; no installed assembly, human-use, structural or firestop acceptance.",
+  "startingMain": "d81aab99cd8900395deffc16a26f1490fb9658f6",
+  "units": "mm unless stated otherwise",
+  "sourcePins": {
+    "project/str/studies/house-plan.json": "d722ada30df5729852043f0010433a890e399999",
+    "project/str/studies/house-supports.json": "0703a34f0a15b392b5cf534fd39f0d30fc9440e3",
+    "project/str/studies/house-source.json": "47871731baee1a5bed113e1f6839a419620c6351",
+    "project/had/had-03-family-bath-slider.md": "99038c32222fe4805c4de9d0a7220f49162d62d2",
+    "project/had/studies/family-bath-slider.json": "56d77f0d98c0a3648396b682f1e2fd4a415a08f7",
+    "project/had/studies/family-bath-slider.py": "d82eb1eb647fba26757c92f762a463671755dec6"
+  },
+  "bay": [
+    9370,
+    4650,
+    700,
+    800
+  ],
+  "riser": [
+    9410,
+    4700,
+    550,
+    700
+  ],
+  "cabinet": [
+    9385,
+    4675,
+    600,
+    750
+  ],
+  "doorwayY": [
+    5450,
+    6350
+  ],
+  "bodyProxyRadius": 300,
+  "walkingBoundary": {
+    "assumption": "Every positive route/sequence result requires a continuous, supported, flush walking surface wherever the body proxy overlaps the structural opening.",
+    "actualFloorClosureAndCapacityVerified": false,
+    "retainedCabinetApproachProxyOverlapFromBayEastMm": 70,
+    "limit": "Obstacle clearance is conditional on that unresolved prerequisite; it is not safe passage over an open bay."
+  },
+  "inheritedHAD": {
+    "owner": "project/had/had-03-family-bath-slider.md",
+    "geometry": {
+      "raw_aperture": [
+        5450,
+        6350
+      ],
+      "lining_clear": [
+        5482,
+        6318
+      ],
+      "jamb_each": 32,
+      "leaf_open": [
+        9156,
+        4680,
+        44,
+        1000
+      ],
+      "leaf_closed": [
+        9156,
+        5400,
+        44,
+        1000
+      ],
+      "wall_gap": 15,
+      "pull_from_leading_edge": 150,
+      "pull_open": [
+        9200,
+        5530
+      ],
+      "pull_closed": [
+        9200,
+        6250
+      ],
+      "travel": 720,
+      "parked_clear": 638,
+      "body_diameter": 600,
+      "hand_forearm_diameter": 80,
+      "reach_limit": 650,
+      "guide_plan": [
+        9165.5,
+        5517.5,
+        25,
+        45
+      ],
+      "guide_height": 16,
+      "guide_shared_leaf_interval": [
+        5400,
+        5680
+      ],
+      "guide_end_margin": 117.5
+    },
+    "sequence": [
+      "Enter with leaf held at open stop",
+      "Coupled inside closing motion",
+      "One closed-door approach and return at a time",
+      "Reverse the same coupled motion to reopen",
+      "Reverse the complete entry path back to hall"
+    ],
+    "coupled": {
+      "body_fixed_clearance_lower_bound_mm": 24.9675,
+      "arm_fixed_clearance_lower_bound_mm": 10.109163842720633,
+      "body_to_panel_clearance_lower_bound_mm": 210,
+      "maximum_reach_mm": 630.0793600809345,
+      "sample_intervals": 2000,
+      "body_half_step_bound_mm": 0.0325,
+      "arm_half_step_bound_mm": 0.18,
+      "illustrative_states": [
+        {
+          "t": 0,
+          "lead": 5680,
+          "body": [
+            9710,
+            5750
+          ],
+          "grip": [
+            9200,
+            5530
+          ]
+        },
+        {
+          "t": 0.125,
+          "lead": 5770,
+          "body": [
+            9710,
+            5766.25
+          ],
+          "grip": [
+            9200,
+            5620
+          ]
+        },
+        {
+          "t": 0.25,
+          "lead": 5860,
+          "body": [
+            9710,
+            5782.5
+          ],
+          "grip": [
+            9200,
+            5710
+          ]
+        },
+        {
+          "t": 0.375,
+          "lead": 5950,
+          "body": [
+            9710,
+            5798.75
+          ],
+          "grip": [
+            9200,
+            5800
+          ]
+        },
+        {
+          "t": 0.5,
+          "lead": 6040,
+          "body": [
+            9710,
+            5815
+          ],
+          "grip": [
+            9200,
+            5890
+          ]
+        },
+        {
+          "t": 0.625,
+          "lead": 6130,
+          "body": [
+            9710,
+            5831.25
+          ],
+          "grip": [
+            9200,
+            5980
+          ]
+        },
+        {
+          "t": 0.75,
+          "lead": 6220,
+          "body": [
+            9710,
+            5847.5
+          ],
+          "grip": [
+            9200,
+            6070
+          ]
+        },
+        {
+          "t": 0.875,
+          "lead": 6310,
+          "body": [
+            9710,
+            5863.75
+          ],
+          "grip": [
+            9200,
+            6160
+          ]
+        },
+        {
+          "t": 1,
+          "lead": 6400,
+          "body": [
+            9710,
+            5880
+          ],
+          "grip": [
+            9200,
+            6250
+          ]
+        }
+      ]
+    },
+    "adverseControls": {
+      "old_gallery_x8910": {
+        "clear": false,
+        "minimum_mm": -54,
+        "segment_margins_mm": [
+          -54
+        ]
+      },
+      "straight_entry_hits_basin": {
+        "clear": false,
+        "minimum_mm": -105,
+        "segment_margins_mm": [
+          -105
+        ]
+      },
+      "old_parked_pull_y5275_arm_clearance_mm": -40,
+      "same_coupling_reach600_passes": false,
+      "closed_panel_allows_entry": false
+    },
+    "limits": [
+      "650 reach is an authored sensitivity, wider than the STR600 proxy; same prescribed path fails600.",
+      "80 hand/forearm capsule and600 torso disc omit articulated arms, shoulders, clothing, grip, force, balance, latch and real people.",
+      "Guide is located in plan only: rebate, engagement, floor boundary, fixing and actual stand-off need an installed section.",
+      "Leaf height/mass, rail/hanger/stop/support sections, mounting through masonry, exact pull recess and15 wall gap remain unselected.",
+      "Closed approach points do not prove sitting, bathing, tap reach, full cabinet release, accessibility, assisted rescue, privacy/acoustics or fire performance.",
+      "Named track includes polymer components and is not an admitted material assembly. No purchase, source adoption or HAD/STR completion."
+    ],
+    "rule": "Reuse the pinned HAD entry, coupled closing/reopening and closed-task paths; test the cabinet change, not a parallel slider proposal."
+  },
+  "closure": {
+    "grossOpeningM2": 0.56,
+    "grossRiserM2": 0.385,
+    "geometricAreaOutsideGrossRiserM2": 0.175,
+    "geometricAreaInsideCabinetOutsideGrossRiserM2": 0.065,
+    "collarTerritories": [
+      {
+        "side": "west",
+        "rectangle": [
+          9370,
+          4650,
+          40,
+          800
+        ]
+      },
+      {
+        "side": "east",
+        "rectangle": [
+          9960,
+          4650,
+          110,
+          800
+        ]
+      },
+      {
+        "side": "south",
+        "rectangle": [
+          9410,
+          4650,
+          550,
+          50
+        ]
+      },
+      {
+        "side": "north",
+        "rectangle": [
+          9410,
+          5400,
+          550,
+          50
+        ]
+      }
+    ],
+    "actualClosurePanelAreaM2": null,
+    "actualIndividualPenetrations": null,
+    "limit": "Territories are not loose panels, specified bearing widths or a firestop. The gross riser is not sealed."
+  },
+  "fixedSupportAndClosure": {
+    "authoredTerritory": [
+      9370,
+      4575,
+      785,
+      950
+    ],
+    "finishedFloorLevel": 3450,
+    "actualFrameMembers": null,
+    "actualBearingOrAnchors": null,
+    "actualCabinetLoads": null,
+    "actualProtection": null,
+    "actualSectionDepth": null,
+    "rule": "Fixed, supported and flush where exposed to the room; cabinet load path independent of removable infill and service pipes. No hanger capacity assigned to cabinet loads."
+  },
+  "variants": [
+    {
+      "id": "A",
+      "name": "Retained cabinet",
+      "rectangle": [
+        9385,
+        4675,
+        600,
+        750
+      ],
+      "bathGap": 190,
+      "doorwaySouthJambGap": 25,
+      "basinGap": 770,
+      "eastFreeStrip": 1597.5,
+      "openingOutsideCabinetM2": 0.11,
+      "entry": {
+        "path": [
+          [
+            6000,
+            3250
+          ],
+          [
+            8750,
+            3250
+          ],
+          [
+            8750,
+            6000
+          ],
+          [
+            9480,
+            6000
+          ],
+          [
+            9480,
+            5880
+          ],
+          [
+            9710,
+            5880
+          ],
+          [
+            9710,
+            5750
+          ]
+        ],
+        "sliderState": "open",
+        "segments": [
+          {
+            "from": [
+              6000,
+              3250
+            ],
+            "to": [
+              8750,
+              3250
+            ],
+            "obstacle": "wet-spine:0",
+            "margin": 165
+          },
+          {
+            "from": [
+              8750,
+              3250
+            ],
+            "to": [
+              8750,
+              6000
+            ],
+            "obstacle": "slider-open",
+            "margin": 106
+          },
+          {
+            "from": [
+              8750,
+              6000
+            ],
+            "to": [
+              9480,
+              6000
+            ],
+            "obstacle": "slider-north-jamb",
+            "margin": 18
+          },
+          {
+            "from": [
+              9480,
+              6000
+            ],
+            "to": [
+              9480,
+              5880
+            ],
+            "obstacle": "slider-north-jamb",
+            "margin": 31.88702897220918
+          },
+          {
+            "from": [
+              9480,
+              5880
+            ],
+            "to": [
+              9710,
+              5880
+            ],
+            "obstacle": "family-basin",
+            "margin": 27.604945017623322
+          },
+          {
+            "from": [
+              9710,
+              5880
+            ],
+            "to": [
+              9710,
+              5750
+            ],
+            "obstacle": "cabinet",
+            "margin": 25
+          }
+        ],
+        "minimumMargin": 18,
+        "passes": true
+      },
+      "coupled": {
+        "initialBodyCabinetMargin": 25,
+        "cabinetBodySampleMinimum": 25,
+        "cabinetArmSampleMinimum": 129.6890329668899,
+        "combinedBodyLowerBound": 24.9675,
+        "combinedArmLowerBound": 10.109163842720633,
+        "bodyHalfStepBound": 0.0325,
+        "armHalfStepBound": 0.18,
+        "passes": true
+      },
+      "inheritedClosedTasks": {
+        "WC approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10700,
+              5880
+            ],
+            [
+              10700,
+              6070
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10700,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10700,
+                5880
+              ],
+              "to": [
+                10700,
+                6070
+              ],
+              "obstacle": "family-WC",
+              "margin": 22.5
+            }
+          ],
+          "minimumMargin": 15,
+          "passes": true
+        },
+        "basin approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10000,
+              5880
+            ],
+            [
+              10000,
+              5890
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10000,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10000,
+                5880
+              ],
+              "to": [
+                10000,
+                5890
+              ],
+              "obstacle": "family-basin",
+              "margin": 5
+            }
+          ],
+          "minimumMargin": 5,
+          "passes": true
+        },
+        "bath approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10500,
+              5880
+            ],
+            [
+              10500,
+              4800
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10500,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10500,
+                5880
+              ],
+              "to": [
+                10500,
+                4800
+              ],
+              "obstacle": "family-bath1700",
+              "margin": 15
+            }
+          ],
+          "minimumMargin": 15,
+          "passes": true
+        },
+        "cabinet approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10300,
+              5880
+            ],
+            [
+              10300,
+              5050
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10300,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10300,
+                5880
+              ],
+              "to": [
+                10300,
+                5050
+              ],
+              "obstacle": "cabinet",
+              "margin": 15
+            }
+          ],
+          "minimumMargin": 15,
+          "passes": true
+        }
+      },
+      "revisedCabinetApproach": null,
+      "completeInheritedSequencePasses": true,
+      "completeComparedSequencePasses": true
+    },
+    {
+      "id": "B",
+      "name": "Full enlargement",
+      "rectangle": [
+        9385,
+        4575,
+        770,
+        950
+      ],
+      "bathGap": 90,
+      "doorwaySouthJambGap": -75,
+      "basinGap": 670,
+      "eastFreeStrip": 1427.5,
+      "openingOutsideCabinetM2": 0.012,
+      "entry": {
+        "path": [
+          [
+            6000,
+            3250
+          ],
+          [
+            8750,
+            3250
+          ],
+          [
+            8750,
+            6000
+          ],
+          [
+            9480,
+            6000
+          ],
+          [
+            9480,
+            5880
+          ],
+          [
+            9710,
+            5880
+          ],
+          [
+            9710,
+            5750
+          ]
+        ],
+        "sliderState": "open",
+        "segments": [
+          {
+            "from": [
+              6000,
+              3250
+            ],
+            "to": [
+              8750,
+              3250
+            ],
+            "obstacle": "wet-spine:0",
+            "margin": 165
+          },
+          {
+            "from": [
+              8750,
+              3250
+            ],
+            "to": [
+              8750,
+              6000
+            ],
+            "obstacle": "slider-open",
+            "margin": 106
+          },
+          {
+            "from": [
+              8750,
+              6000
+            ],
+            "to": [
+              9480,
+              6000
+            ],
+            "obstacle": "slider-north-jamb",
+            "margin": 18
+          },
+          {
+            "from": [
+              9480,
+              6000
+            ],
+            "to": [
+              9480,
+              5880
+            ],
+            "obstacle": "slider-north-jamb",
+            "margin": 31.88702897220918
+          },
+          {
+            "from": [
+              9480,
+              5880
+            ],
+            "to": [
+              9710,
+              5880
+            ],
+            "obstacle": "family-basin",
+            "margin": 27.604945017623322
+          },
+          {
+            "from": [
+              9710,
+              5880
+            ],
+            "to": [
+              9710,
+              5750
+            ],
+            "obstacle": "cabinet",
+            "margin": -75
+          }
+        ],
+        "minimumMargin": -75,
+        "passes": false
+      },
+      "coupled": {
+        "initialBodyCabinetMargin": -75,
+        "cabinetBodySampleMinimum": -75,
+        "cabinetArmSampleMinimum": 37.867911679766465,
+        "combinedBodyLowerBound": -75.0325,
+        "combinedArmLowerBound": 10.109163842720633,
+        "bodyHalfStepBound": 0.0325,
+        "armHalfStepBound": 0.18,
+        "passes": false
+      },
+      "inheritedClosedTasks": {
+        "WC approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10700,
+              5880
+            ],
+            [
+              10700,
+              6070
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10700,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10700,
+                5880
+              ],
+              "to": [
+                10700,
+                6070
+              ],
+              "obstacle": "family-WC",
+              "margin": 22.5
+            }
+          ],
+          "minimumMargin": 15,
+          "passes": true
+        },
+        "basin approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10000,
+              5880
+            ],
+            [
+              10000,
+              5890
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10000,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10000,
+                5880
+              ],
+              "to": [
+                10000,
+                5890
+              ],
+              "obstacle": "family-basin",
+              "margin": 5
+            }
+          ],
+          "minimumMargin": 5,
+          "passes": true
+        },
+        "bath approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10500,
+              5880
+            ],
+            [
+              10500,
+              4800
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10500,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10500,
+                5880
+              ],
+              "to": [
+                10500,
+                4800
+              ],
+              "obstacle": "family-bath1700",
+              "margin": 15
+            }
+          ],
+          "minimumMargin": 15,
+          "passes": true
+        },
+        "cabinet approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10300,
+              5880
+            ],
+            [
+              10300,
+              5050
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10300,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10300,
+                5880
+              ],
+              "to": [
+                10300,
+                5050
+              ],
+              "obstacle": "cabinet",
+              "margin": -155
+            }
+          ],
+          "minimumMargin": -155,
+          "passes": false
+        }
+      },
+      "revisedCabinetApproach": null,
+      "completeInheritedSequencePasses": false,
+      "completeComparedSequencePasses": false
+    },
+    {
+      "id": "C",
+      "name": "East-only enlargement",
+      "rectangle": [
+        9385,
+        4675,
+        770,
+        750
+      ],
+      "bathGap": 190,
+      "doorwaySouthJambGap": 25,
+      "basinGap": 770,
+      "eastFreeStrip": 1427.5,
+      "openingOutsideCabinetM2": 0.04625,
+      "entry": {
+        "path": [
+          [
+            6000,
+            3250
+          ],
+          [
+            8750,
+            3250
+          ],
+          [
+            8750,
+            6000
+          ],
+          [
+            9480,
+            6000
+          ],
+          [
+            9480,
+            5880
+          ],
+          [
+            9710,
+            5880
+          ],
+          [
+            9710,
+            5750
+          ]
+        ],
+        "sliderState": "open",
+        "segments": [
+          {
+            "from": [
+              6000,
+              3250
+            ],
+            "to": [
+              8750,
+              3250
+            ],
+            "obstacle": "wet-spine:0",
+            "margin": 165
+          },
+          {
+            "from": [
+              8750,
+              3250
+            ],
+            "to": [
+              8750,
+              6000
+            ],
+            "obstacle": "slider-open",
+            "margin": 106
+          },
+          {
+            "from": [
+              8750,
+              6000
+            ],
+            "to": [
+              9480,
+              6000
+            ],
+            "obstacle": "slider-north-jamb",
+            "margin": 18
+          },
+          {
+            "from": [
+              9480,
+              6000
+            ],
+            "to": [
+              9480,
+              5880
+            ],
+            "obstacle": "slider-north-jamb",
+            "margin": 31.88702897220918
+          },
+          {
+            "from": [
+              9480,
+              5880
+            ],
+            "to": [
+              9710,
+              5880
+            ],
+            "obstacle": "family-basin",
+            "margin": 27.604945017623322
+          },
+          {
+            "from": [
+              9710,
+              5880
+            ],
+            "to": [
+              9710,
+              5750
+            ],
+            "obstacle": "cabinet",
+            "margin": 25
+          }
+        ],
+        "minimumMargin": 18,
+        "passes": true
+      },
+      "coupled": {
+        "initialBodyCabinetMargin": 25,
+        "cabinetBodySampleMinimum": 25,
+        "cabinetArmSampleMinimum": 129.6890329668899,
+        "combinedBodyLowerBound": 24.9675,
+        "combinedArmLowerBound": 10.109163842720633,
+        "bodyHalfStepBound": 0.0325,
+        "armHalfStepBound": 0.18,
+        "passes": true
+      },
+      "inheritedClosedTasks": {
+        "WC approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10700,
+              5880
+            ],
+            [
+              10700,
+              6070
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10700,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10700,
+                5880
+              ],
+              "to": [
+                10700,
+                6070
+              ],
+              "obstacle": "family-WC",
+              "margin": 22.5
+            }
+          ],
+          "minimumMargin": 15,
+          "passes": true
+        },
+        "basin approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10000,
+              5880
+            ],
+            [
+              10000,
+              5890
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10000,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10000,
+                5880
+              ],
+              "to": [
+                10000,
+                5890
+              ],
+              "obstacle": "family-basin",
+              "margin": 5
+            }
+          ],
+          "minimumMargin": 5,
+          "passes": true
+        },
+        "bath approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10500,
+              5880
+            ],
+            [
+              10500,
+              4800
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10500,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10500,
+                5880
+              ],
+              "to": [
+                10500,
+                4800
+              ],
+              "obstacle": "family-bath1700",
+              "margin": 15
+            }
+          ],
+          "minimumMargin": 15,
+          "passes": true
+        },
+        "cabinet approach": {
+          "path": [
+            [
+              9710,
+              5880
+            ],
+            [
+              10300,
+              5880
+            ],
+            [
+              10300,
+              5050
+            ]
+          ],
+          "sliderState": "closed",
+          "segments": [
+            {
+              "from": [
+                9710,
+                5880
+              ],
+              "to": [
+                10300,
+                5880
+              ],
+              "obstacle": "family-basin",
+              "margin": 15
+            },
+            {
+              "from": [
+                10300,
+                5880
+              ],
+              "to": [
+                10300,
+                5050
+              ],
+              "obstacle": "cabinet",
+              "margin": -155
+            }
+          ],
+          "minimumMargin": -155,
+          "passes": false
+        }
+      },
+      "revisedCabinetApproach": {
+        "path": [
+          [
+            9710,
+            5880
+          ],
+          [
+            10500,
+            5880
+          ],
+          [
+            10500,
+            5050
+          ]
+        ],
+        "sliderState": "closed",
+        "segments": [
+          {
+            "from": [
+              9710,
+              5880
+            ],
+            "to": [
+              10500,
+              5880
+            ],
+            "obstacle": "family-basin",
+            "margin": 15
+          },
+          {
+            "from": [
+              10500,
+              5880
+            ],
+            "to": [
+              10500,
+              5050
+            ],
+            "obstacle": "cabinet",
+            "margin": 45
+          }
+        ],
+        "minimumMargin": 15,
+        "passes": true
+      },
+      "completeInheritedSequencePasses": false,
+      "completeComparedSequencePasses": true
+    }
+  ],
+  "renewal": {
+    "firstRelease": "East nonstructural face only; support it before releasing its accessible room-side fixings.",
+    "retained": "Permanent trim, fixed chassis, cabinet load supports, floor closure outside actual service apertures and structural protection.",
+    "actualClearFaceOpening": null,
+    "actualPartWithdrawalEnvelope": null,
+    "actualSealingAndReinstatement": null,
+    "limit": "HAD supplies a complete declared door/body/arm proxy sequence, not human acceptance. The closed cabinet approach does not prove actual face release, tools, handling or component withdrawal."
+  }
+}
