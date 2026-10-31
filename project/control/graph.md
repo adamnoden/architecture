@@ -97,6 +97,7 @@ flowchart LR
   subgraph g_EPR["EPR"]
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
+    n_EPR_DESK_REVIEW["EPR-DESK-REVIEW<br/>Answer current-house technical review questions through internal evidence and challenge<br/><b>READY</b>"]
     n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
   end
   subgraph g_DPL["DPL"]
@@ -108,7 +109,7 @@ flowchart LR
     direction TB
     n_PHY_01["PHY-01<br/>W2 wall-bay optional physical research<br/><b>HELD</b>"]
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
-    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>READY</b>"]
+    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Internal floor-edge research, calculations and provisional option reduction<br/><b>READY</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
   end
   n_IAS_03 --> n_TRIAD_GATE
@@ -165,7 +166,7 @@ flowchart LR
   n_DEL_BAY_PACK --> n_EPR_BAY_REVIEW
   n_DPL_COMMISSION --> n_DPL_SITE_ASSESSMENT
   n_DPL_SITE_ASSESSMENT --> n_DEL_COMMISSION_PLAN
-  n_EPR_BAY_REVIEW --> n_DEL_COMMISSION_PLAN
+  n_DEL_BAY_PACK --> n_DEL_COMMISSION_PLAN
   n_BCR_CONVERGENCE --> n_DEL_CURRENT
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
@@ -241,6 +242,7 @@ flowchart LR
   class n_PHY_02 held;
   class n_PHY_03_ENGINEERING ready;
   class n_PHY_04 ready;
+  class n_EPR_DESK_REVIEW ready;
   class n_EPR_RH11 ready;
   class n_DEL_CURRENT blocked;
 ```
@@ -271,6 +273,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_REVIEW_POLICY["PCO-REVIEW-POLICY<br/>Separate internal development from external assurance and remove unnecessary review waits<br/><b>DONE</b>"]
     n_PCO_MODES["PCO-MODES<br/>Close regular-chat PR association and confirm shared worker topologies<br/><b>DONE</b>"]
     n_PCO_GATEWAY["PCO-GATEWAY<br/>Expose canonical self-service leases to connector-only chats through a minimal issue gateway<br/><b>DONE</b>"]
     n_PCO_CRASH["PCO-CRASH<br/>Recover interrupted swarms and support connector-constrained chat execution<br/><b>DONE</b>"]
@@ -447,6 +450,7 @@ flowchart LR
   subgraph g_EPR["EPR"]
     direction TB
     n_EPR_BAY_REVIEW["EPR-BAY-REVIEW<br/>Obtain and disposition actual designer and contractor bay feedback<br/><b>BLOCKED</b>"]
+    n_EPR_DESK_REVIEW["EPR-DESK-REVIEW<br/>Answer current-house technical review questions through internal evidence and challenge<br/><b>READY</b>"]
     n_EPR_RH11["EPR-RH11<br/>Obtain and process competent Reference House reviews<br/><b>READY</b>"]
     n_EPR_REFRESH["EPR-REFRESH<br/>Refresh current-house review briefs and questions<br/><b>DONE</b>"]
   end
@@ -460,7 +464,7 @@ flowchart LR
     direction TB
     n_PHY_01["PHY-01<br/>W2 wall-bay optional physical research<br/><b>HELD</b>"]
     n_PHY_02["PHY-02<br/>Selective floor-access physical research<br/><b>HELD</b>"]
-    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Structural floor-edge engineering option reduction<br/><b>READY</b>"]
+    n_PHY_03_ENGINEERING["PHY-03-ENGINEERING<br/>Internal floor-edge research, calculations and provisional option reduction<br/><b>READY</b>"]
     n_PHY_04["PHY-04<br/>Wall/ceiling movement-junction build and test<br/><b>READY</b>"]
     n_PHY_APPLICABILITY["PHY-APPLICABILITY<br/>Reconcile prototype applicability and earned evidence requirements<br/><b>DONE</b>"]
   end
@@ -471,6 +475,7 @@ flowchart LR
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
   n_CCR_DRAINAGE --> n_CCR_IDENTITY
+  n_PCO_HOUSE_PLAN --> n_PCO_REVIEW_POLICY
   n_PCO_GATEWAY --> n_PCO_MODES
   n_PCO_CRASH --> n_PCO_GATEWAY
   n_PCO_COMMS --> n_PCO_CRASH
@@ -699,9 +704,10 @@ flowchart LR
   n_DPL_SITE_BRIEF --> n_DPL_COMMISSION
   n_DPL_COMMISSION --> n_DPL_SITE_ASSESSMENT
   n_DPL_SITE_ASSESSMENT --> n_DEL_COMMISSION_PLAN
-  n_EPR_BAY_REVIEW --> n_DEL_COMMISSION_PLAN
+  n_DEL_BAY_PACK --> n_DEL_COMMISSION_PLAN
   n_PHY_APPLICABILITY --> n_PHY_03_ENGINEERING
   n_PHY_APPLICABILITY --> n_PHY_04
+  n_EPR_REFRESH --> n_EPR_DESK_REVIEW
   n_EPR_REFRESH --> n_EPR_RH11
   n_HRS_BASELINE --> n_EPR_REFRESH
   n_BCR_PREFLIGHT --> n_EPR_REFRESH
@@ -753,6 +759,7 @@ flowchart LR
   class n_CCR_STAIR done;
   class n_CCR_DRAINAGE done;
   class n_CCR_IDENTITY done;
+  class n_PCO_REVIEW_POLICY done;
   class n_PCO_MODES done;
   class n_PCO_GATEWAY done;
   class n_PCO_CRASH done;
@@ -880,6 +887,7 @@ flowchart LR
   class n_PHY_02 held;
   class n_PHY_03_ENGINEERING ready;
   class n_PHY_04 ready;
+  class n_EPR_DESK_REVIEW ready;
   class n_EPR_RH11 ready;
   class n_DEL_00 done;
   class n_EPR_REFRESH done;

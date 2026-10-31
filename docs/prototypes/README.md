@@ -24,7 +24,7 @@ The floor-to-masonry edge remains a priority engineering interface. Current entr
 
 The architectural question is not whether a novel connector can be invented. It is whether gravity support, joist stability, wall restraint, diaphragm transfer, movement, tolerance, fire/acoustic closure, durability and realistic repair can be allocated clearly without creating disproportionate structure or serviceability theatre.
 
-The current comparison is:
+The retained comparison below belongs to the earlier timber-edge study. The [structural brief](../reference-house/structural-brief.md) now prioritises non-timber primary structure; retain these families only where applicable:
 
 - **conventional certified hanger/restraint family** — incumbent control;
 - **direct or seated bearing with separate restraint** — comparator;

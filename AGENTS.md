@@ -156,6 +156,8 @@ Automated tests prove only what they legitimately assert. Match validation to th
 
 Do not substitute CI for judgement at a boundary CI does not test.
 
+Follow the [owner's development and assurance policy](project/owner-house-charter.md#development-and-assurance--31-october-2026): exhaust useful internal research, calculation and adversarial review before treating external review as a blocker. Separate completion of a bounded investigation from acceptance of its design for a particular use. A retained external hold must name the missing evidence, affected decision and required resolution point; a general referral or disclaimer is insufficient. Internal AI challenge never counts as independent external review, a physical event or certification.
+
 During iteration, run the relevant checks for the changed boundary. Full repository health may be established by the canonical command in exact-head CI when local runtime capabilities prevent it; record the local limitation and require the CI result before merge. Do not repeatedly rerun successful checks without a changed dependency, new failure or unresolved concern. Reconcile moved main sources and revalidate what the merge can affect; do not reuse a green result for a different head. Never weaken checks, change permissions or modify dependencies merely to manufacture a local pass. The swarm runbook owns runtime-specific launch/transport guidance, not this constitution.
 
 When a controlled baseline, fingerprint, generated family or publication projection changes, reconcile all legitimately dependent artefacts. Do not leave a mixed state.
