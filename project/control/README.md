@@ -96,7 +96,7 @@ Structural eligibility is only one input to acquisition:
 | Ready, self-service and no occupying lease | Candidate for canonical dispatch |
 | Ready and manual | Needs explicit direction; not generic-agent work |
 | Ready or active with a live/grace lease | Reserved; another agent cannot take it merely because it looks quiet |
-| Active without a lease | Handoff/resume candidate, not automatically inherited by the undirected dispatcher |
+| Active without a lease | Self-service recovery candidate only with a predecessor branch and actionable checkpoint; otherwise a handoff requiring review. See [crash recovery](#crash-recovery-and-connector-only-chats) |
 | Terminal/blocked/held node with an occupying lease | Coordination inconsistency; inspect/reconcile it, do not mask it |
 | Lease store unavailable or malformed | Availability unknown; automatic acquisition fails closed |
 
@@ -210,7 +210,7 @@ npm run control:claim-next -- --holder-kind chatgpt --holder-label session-name
 npm run control:claim-next -- --holder-kind chatgpt --holder-label session-name --workstream OAS
 ```
 
-`control:next` is read-only and explainable. It ranks only structurally READY, explicitly `self-service`, presently unclaimed nodes. The ordering is lexicographic rather than a hand-tuned score:
+`control:next` is read-only and explainable. It ranks presently unclaimed, explicitly `self-service` nodes that are structurally READY or meet the [guarded started-packet recovery conditions](#crash-recovery-and-connector-only-chats). The ordering is lexicographic rather than a hand-tuned score:
 
 1. longer remaining structural critical depth;
 2. greater direct blocker relief;
@@ -222,13 +222,13 @@ The metrics are structural. They are not wall-clock duration estimates.
 
 `control:claim-next` applies the same ranking and acquires the top candidate through the ordinary ACO compare-and-swap protocol. If another agent wins that node concurrently, the dispatcher reloads live occupancy, reranks the complete eligible frontier and attempts the new best candidate. It never calls force takeover.
 
-Manual READY nodes remain visible with their exclusion reason but are never auto-selected. This includes physical tests and competent external/professional review gates. Durably active but unclaimed nodes are shown as handoff/resume candidates; the default dispatcher does not silently inherit them.
+Manual READY nodes remain visible with their exclusion reason but are never auto-selected. This includes physical tests and competent external/professional review gates. Durably active, unclaimed self-service nodes can re-enter dispatch only with a predecessor branch and actionable checkpoint, rechecked at acquisition. Active nodes without that recovery evidence, and manual active nodes, remain handoffs requiring review.
 
 Any invalid live claim makes automatic dispatch fail closed until the coordination inconsistency is resolved. A missing dispatch policy on any live non-terminal node is also a repository-validation failure, so newly added work cannot silently become generic-agent work.
 
 The stable machine-consumption surface is `control:next -- --format json`. An optional `--workstream CODE` filter only narrows eligible work; it cannot turn a manual node into self-service work.
 
-The full policy rationale and adversarial contract live in `project/pco/pco-dispatcher-design.md`.
+The [founding dispatcher design](../pco/pco-dispatcher-design.md) retains the original ranking rationale and adversarial contract. Its READY-only eligibility was extended by the [crash-recovery result](../pco/mvb-crash-recovery-result.md); the current recovery conditions are below.
 
 ## Visual control map
 
@@ -297,7 +297,7 @@ Ordinary chats with the GitHub connector, but without local GitHub CLI/network a
 
 ## Crash recovery and connector-only chats
 
-MVB assumes workers can disappear at any instruction, including from usage exhaustion. This is **execution loss**, not automatically a failed packet or an abandoned branch. An expired/released planned self-service lease can already be reacquired; a started self-service packet now re-enters the **same** dispatcher only when its predecessor claim has a branch and actionable checkpoint. Otherwise it remains an active-unclaimed handoff for review. No automatic force takeover, dead-worker verdict or second queue exists. Acquisition rechecks recovery evidence and writes a new generation with an immediate predecessor identity and a separately retained **last durable evidence source**. If a replacement itself dies before checkpointing, a later generation can still recover the earlier pushed work without falsely attributing that evidence to the dead successor. That pointer does not copy the old checkpoint as current progress or authorise publishing its head.
+MVB assumes workers can disappear at any instruction, including from usage exhaustion. This is **execution loss**, not automatically a failed packet or an abandoned branch. An expired/released planned self-service lease can already be reacquired; a started self-service packet now re-enters the **same** dispatcher only when its predecessor claim retains a branch and actionable checkpoint, available directly or through its retained recovery evidence pointer. Otherwise it remains an active-unclaimed handoff for review. No automatic force takeover, dead-worker verdict or second queue exists. Acquisition rechecks recovery evidence and writes a new generation with an immediate predecessor identity and a separately retained **last durable evidence source**. If a replacement itself dies before checkpointing, a later generation can still recover the earlier pushed work without falsely attributing that evidence to the dead successor. That pointer does not copy the old checkpoint as current progress or authorise publishing its head.
 
 The read-only operations briefing distinguishes eligible predecessor recovery, active packets requiring review, and observed unmerged PR evidence. **A released lease is not a merged PR.** Missing PR observations or claims remain unknown; missing local-only work and lost-session wall time cannot be reconstructed. The [runbook](swarm-runbook.md#resilience-recovery-and-publication-preflight) owns startup, validation and exact-head publication, including the stale-worker rule. Prefer useful separate work if one packet needs review.
 
