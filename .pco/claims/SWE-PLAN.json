@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "node": "SWE-PLAN",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "0c4ea538-1658-41c0-b52e-59d63f13e775",
+  "holder": {
+    "kind": "codex",
+    "label": "swe-1174-registration"
+  },
+  "claimedAt": "2026-10-31T20:03:16.960Z",
+  "heartbeatAt": "2026-10-31T20:03:16.960Z",
+  "expiresAt": "2026-10-31T20:48:16.960Z",
+  "checkpoint": {
+    "evidence": "Issue #1174 records the owner-directed registration bootstrap and all nine accepted findings.",
+    "next": "Validate and merge the SWE registration PR; release this bootstrap lease before ordinary packet acquisition."
+  },
+  "branch": "work/swe-plan-1174",
+  "note": "Exceptional new-node bootstrap recorded in #1174; unknown live claim temporarily inhibits automatic dispatch until registration merges. No existing worker displaced."
+}
