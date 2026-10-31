@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {seamCoverage, capRelease, rectanglesOverlap, tailApertureMargin, outputs} from './outer-west-receiver-renewal.mjs';
+import {seamCoverage, capRelease, rectanglesOverlap, tailApertureMargin, flatStripResponse, outputs} from './outer-west-receiver-renewal.mjs';
 
 const basis = {gauge: 2000, footprint: 40, placement: 2, seatWidth: 50,
   alpha: 17e-6, installed: 20, cold: -10, hot: 70};
@@ -73,7 +73,48 @@ test('invalid physical intervals are rejected', () => {
   assert.throws(() => tailApertureMargin({opening: 0, carriedWidth: 10}));
 });
 
-test('owning generator reproduces both sheets and the located record', () => {
+test('strip pressure and reactions retain units and copper selfweight', () => {
+  const r = flatStripResponse({thicknessMm: 0.7, spanMm: 100, waterDepthMm: 50});
+  close(r.copperMassKgPerM2, 6.23);
+  close(r.waterPressureKPa, 0.4905);
+  close(r.selfWeightPressureKPa, 0.0611163);
+  close(r.totalPressureKPa, 0.5516163);
+  // Independent metre-wide equilibrium: q[kN/m²] times 0.1 m span.
+  close(2 * r.reactionEachKNPerM, r.totalPressureKPa * 0.1);
+  close(r.momentKNmPerM, r.totalPressureKPa * 0.1 ** 2 / 8);
+  close(r.nominalBendingStressMPa, 8.443106632653061);
+  close(r.linearDeflectionMm, 0.21295164029994564);
+  close(r.linearEndSlopeRad, 3.2 * r.deflectionOverSpan);
+});
+
+test('support-line sensitivity is cubic/quadratic/quartic without a capacity verdict', () => {
+  const a = flatStripResponse({thicknessMm: 0.7, spanMm: 100, waterDepthMm: 50});
+  const b = flatStripResponse({thicknessMm: 0.7, spanMm: 300, waterDepthMm: 50});
+  close(b.reactionEachKNPerM / a.reactionEachKNPerM, 3);
+  close(b.nominalBendingStressMPa / a.nominalBendingStressMPa, 9);
+  close(b.linearEndSlopeRad / a.linearEndSlopeRad, 27);
+  close(b.linearDeflectionMm / a.linearDeflectionMm, 81);
+  const stiffer = flatStripResponse({thicknessMm: 0.7, spanMm: 300,
+    waterDepthMm: 50, modulusMPa: 236000});
+  close(stiffer.linearDeflectionMm, b.linearDeflectionMm / 2);
+  close(stiffer.nominalBendingStressMPa, b.nominalBendingStressMPa);
+});
+
+test('emptying removes water and debris but leaves a selfweight support state', () => {
+  const empty = flatStripResponse({thicknessMm: 0.7, spanMm: 300, waterDepthMm: 0});
+  close(empty.waterPressureKPa, 0);
+  close(empty.totalPressureKPa, 0.0611163);
+  close(empty.linearDeflectionMm, 1.9111112613038002);
+  const loaded = flatStripResponse({thicknessMm: 0.7, spanMm: 300,
+    waterDepthMm: 150, debrisKPa: 0.5});
+  close(loaded.totalPressureKPa, 2.0326163);
+  close(loaded.linearDeflectionMm, 63.560063366296884);
+  assert.throws(() => flatStripResponse({thicknessMm: 0, spanMm: 100, waterDepthMm: 0}));
+  assert.throws(() => flatStripResponse({thicknessMm: 0.7, spanMm: 100, waterDepthMm: -1}));
+  assert.throws(() => flatStripResponse({thicknessMm: 0.7, spanMm: 100, waterDepthMm: 0, debrisKPa: NaN}));
+});
+
+test('owning generator reproduces all three sheets and the located record', () => {
   for (const [name, content] of outputs)
     assert.equal(readFileSync(new URL(name, import.meta.url), 'utf8'), content, name);
 });

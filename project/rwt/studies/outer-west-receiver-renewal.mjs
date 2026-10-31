@@ -62,6 +62,42 @@ export function tailApertureMargin({opening, carriedWidth, lateralOffset = 0}) {
   return (opening - carriedWidth) / 2 - Math.abs(lateralOffset);
 }
 
+/** Linear bending sensitivity for a 1 mm wide, simply supported flat strip.
+ * Span is between ideal reaction lines, not an adopted clear inspection gap.
+ * Pressure is fixed on the original horizontal projection. One end is free
+ * in-plane; no membrane, two-way plate, formed-sidewall or continuity credit.
+ * This is not a strength check, actual deflected water profile or collapse model.
+ */
+export function flatStripResponse({thicknessMm, spanMm, waterDepthMm,
+  debrisKPa = 0, modulusMPa = 118000, copperDensityKgM3 = 8900}) {
+  if (![thicknessMm, spanMm, waterDepthMm, debrisKPa, modulusMPa,
+    copperDensityKgM3].every(Number.isFinite) || thicknessMm <= 0 || spanMm <= 0 ||
+    waterDepthMm < 0 || debrisKPa < 0 || modulusMPa <= 0 || copperDensityKgM3 <= 0)
+    throw Error('Invalid flat-strip inputs');
+  const gravity = 9.81, unitWidthMm = 1;
+  const waterPressureKPa = 1000 * gravity * waterDepthMm / 1e6;
+  const selfWeightPressureKPa = copperDensityKgM3 * gravity * thicknessMm / 1e6;
+  const totalPressureKPa = waterPressureKPa + debrisKPa + selfWeightPressureKPa;
+  const lineLoadNPerMm = totalPressureKPa / 1000 * unitWidthMm;
+  const inertiaMm4 = unitWidthMm * thicknessMm ** 3 / 12;
+  const momentNmm = lineLoadNPerMm * spanMm ** 2 / 8;
+  const linearDeflectionMm = 5 * lineLoadNPerMm * spanMm ** 4 /
+    (384 * modulusMPa * inertiaMm4);
+  const linearEndSlopeRad = lineLoadNPerMm * spanMm ** 3 /
+    (24 * modulusMPa * inertiaMm4);
+  return {thicknessMm, spanBetweenIdealReactionLinesMm: spanMm, waterDepthMm,
+    debrisKPa, modulusMPa, copperDensityKgM3, gravityMPerS2: gravity, unitWidthMm,
+    copperMassKgPerM2: copperDensityKgM3 * thicknessMm / 1000,
+    waterPressureKPa, selfWeightPressureKPa, totalPressureKPa,
+    lineLoadNPerMm, inertiaMm4,
+    reactionEachKNPerM: totalPressureKPa * spanMm / 2000,
+    momentKNmPerM: momentNmm / 1000,
+    nominalBendingStressMPa: 6 * momentNmm / (unitWidthMm * thicknessMm ** 2),
+    linearDeflectionMm, linearEndSlopeRad,
+    deflectionOverSpan: linearDeflectionMm / spanMm,
+    deflectionOverThickness: linearDeflectionMm / thicknessMm};
+}
+
 const thermal = {gauge: 2000, footprint: 40, placement: 2, seatWidth: 50,
   alpha: 17e-6, installed: 20, cold: -10, hot: 70};
 const keeper = {hole: [36, 44], stud: [37, 43], capBottom: 5, capTop: 9, studTop: 20, lift: 16};
@@ -127,10 +163,71 @@ const localConstruction = {
       use: 'Architectural expansion coefficient; fixed/moving zones; supporting gutter frame; movement at outlet. Roof construction guidance, not this ground receiver or a prescribed seam-only bearing.'},
     C11: {url: 'https://archive.copper.org/applications/architecture/arch_dhb/arch-details/gutters_downspouts/gutter_linings.php',
       originalHandbook: 'https://copper.org/wp-content/uploads/2026/04/A4050-Architectural-Handbook.pdf',
-      edition: 'A4050-8/24', printedPage: 148,
+      edition: 'A4050-8/24', printedPages: [144, 148],
       sha256: 'da66c45cfb35fb94adaad908fffc79545a722faa2b4e8694ab4c913c9ea6d7c0',
       sections: ['10.3 introduction', '10.3F'],
       use: 'Free lining movement, locked/soldered or riveted/soldered seams, outside-frame fabrication/inspection. No smooth-underside, bare sliding bearing or UK installed-system approval.'},
+  },
+};
+
+const stripReference = {thicknessMm: 0.7, waterDepthMm: 50, debrisKPa: 0};
+const backingCases = [
+  ...[50, 100, 150, 300].map(spanMm => ({group: 'support-line span',
+    ...flatStripResponse({...stripReference, spanMm})})),
+  ...[0.6, 1, 2].flatMap(thicknessMm => [150, 300].map(spanMm => ({
+    group: 'thickness sensitivity', ...flatStripResponse({...stripReference, thicknessMm, spanMm})}))),
+  ...[0, 0.5].flatMap(debrisKPa => [100, 300].map(spanMm => ({
+    group: 'water and additional uniform debris action',
+    ...flatStripResponse({...stripReference, waterDepthMm: 150, debrisKPa, spanMm})}))),
+  ...[100, 300].map(spanMm => ({group: 'emptied sheet still carries selfweight',
+    ...flatStripResponse({...stripReference, waterDepthMm: 0, spanMm})})),
+];
+const backingConstruction = {
+  startingMain: 'd4cad187f71b8c025fa681fab15e4ce847333c67',
+  authority: 'Authored flat-base backing and repair comparison for outer-west R1; no selected receiver width, depth, sheet, support spacing or load capacity.',
+  decision: 'Develop a supported copper liner with the backing retained during routine wet-side cleaning. Underbody access requires a designed opening/support arrangement, temporary load transfer, or declared larger liner removal; ordinary grate removal is insufficient.',
+  sourceProperties: {
+    C9: {edition: 'Aurubis Copper Book, second edition 2013',
+      printedPages: [31, 32, 106, 108],
+      sha256: 'c4e9867841bb4c05e05c3e6211897dfabd1256d3fe72efc1187da51f48d891bc',
+      modulusMPa: 118000, densityKgM3: 8900,
+      annealedR220ProofMinimumMPa: null, annealedR220ProofMaximumMPa: 140,
+      limit: 'Published maximum proof strength is not minimum resistance or an allowable stress. No as-formed/as-joined temper, loss allowance or strength check is established.'},
+    C11: {edition: 'CDA A4050-8/24', printedPages: [144, 148],
+      sha256: 'da66c45cfb35fb94adaad908fffc79545a722faa2b4e8694ab4c913c9ea6d7c0',
+      limit: 'Framed built-in copper liner and fabrication outside the frame; not a qualified ground-receiver substrate or removable backing package.'},
+  },
+  idealisation: {
+    model: 'Euler-Bernoulli linear bending of a 1 mm wide flat strip on two simple ideal reaction lines; one end free in-plane. No continuity or actual support patch selected.',
+    load: 'Fixed uniform pressure on the original horizontal projection: water over the undeformed base + authored debris action + sheet selfweight. No rain-impact, ice, pedestrian, grate, stored-stone, handling or underside uplift action.',
+    formulas: {I: 'b*t^3/12', R: 'w*s/2', M: 'w*s^2/8',
+      stress: '6*M/(b*t^2)', displacement: '5*w*s^4/(384*E*I)',
+      endSlope: 'w*s^3/(24*E*I)'},
+    limits: ['No membrane, two-way plate, formed-sidewall, seam or continuous-beam stiffness credit',
+      'No ponding feedback: deflection can change retained depth, pressure and fall',
+      'No yield, fatigue, creep, denting, buckling, joint, contact or support capacity',
+      'No universal deflection/thickness cutoff or conservative-bound claim; in-plane restraint and rotations matter',
+      'Large linear extrapolations are model warnings, not predictions of the actual loaded shape or collapse',
+      'Ideal support-line span is not automatically a clear inspection opening or bracket pitch'],
+  },
+  reference: stripReference,
+  cases: backingCases,
+  supportWithdrawalComparison: {
+    before: flatStripResponse({...stripReference, spanMm: 100}),
+    after: flatStripResponse({...stripReference, spanMm: 300}),
+    momentAndStressRatio: 9, displacementRatio: 81, reactionRatio: 3,
+    interpretation: 'Two independent ideal strip comparisons at identical pressure, not a continuous multispan removal analysis. Losing intermediate backing can change the span and support path; retain or transfer that support before withdrawal. Emptying removes water/debris but not sheet selfweight.',
+  },
+  loadPaths: {
+    wetBody: 'Water/debris and copper selfweight -> compatible support/contact -> load-bearing backing -> frame/cradles -> qualified foundation',
+    upperUnits: 'Pedestrian, grate/impact-unit and handling actions -> independent upper seats/frame -> qualified foundation; no credit through wet sheet or solder seam',
+  },
+  access: {
+    ordinary: 'Divert/control incoming roof water, remove independent upper units, clear and inspect the wet face/terminal/visible edges with backing and structural restraints retained.',
+    underside: 'Backing hides its contact face. A view opening must have a real supported span and reachable observation route; absence of visible dripping does not prove dry contact.',
+    backingRemoval: 'Isolate continuing water, empty and clean, then independently support or remove the wet body before withdrawing required backing. Selfweight, solder seams, fixed datum, all keepers and terminal remain separate duties.',
+    reinstatement: 'Verify actual backing/contact, seam clearance, fall, movement, fixed datum and captures, terminal, cleanup and leak/overflow routes before returning water.',
+    leakage: 'No waterproof or harmless secondary route is credited to the backing. Locate the first observation and vulnerable fabric; a concealed leak can spread behind the liner.',
   },
 };
 
@@ -185,6 +282,7 @@ const data = {
     C12: 'CDA 10.5B: separately moving receiving gutter; 10.5C/D are different joined arrangements',
   },
   seamSupportContinuation: localConstruction,
+  backingContinuation: backingConstruction,
   unresolved: ['Actual alloy/temper/finish and joint consumables/residues',
     'Support loads, restraint, movement, wear and every retained accessory',
     'Receiver widths, roof discharge/capture, splash, flow and debris',
@@ -347,8 +445,85 @@ function seamSheet() {
   return out + '</svg>\n';
 }
 
+// Separate backing sheet: earlier R1/R2 and keeper sheets are preserved.
+function backingSheet() {
+  const ref = backingCases.filter(c => c.group === 'support-line span');
+  const fmt = (value, places = 3) => value.toFixed(places);
+  let out = '<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><title>Copper receiver backing and the inspection boundary</title><desc>Authored support and repair comparison for the outer-west wet liner. A nominal linear strip sensitivity accompanies separate load paths and explicit hidden-face access limits; no selected construction or capacity.</desc><rect width="420" height="297" fill="white"/><defs><marker id="back-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto-start-reverse"><path d="M0 0L6 3L0 6Z" fill="#287989"/></marker><pattern id="back-hatch" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 3L3 0" stroke="#a4b3b4" stroke-width=".3"/></pattern></defs><style>text{font-family:Arial,sans-serif;font-size:3.15px;fill:#203943}.title{font-size:6px;font-weight:bold}.head{font-size:4.1px;font-weight:bold}.small{font-size:2.8px}.bold{font-weight:bold}.line{fill:none;stroke:#768589;stroke-width:.4}.wet{fill:none;stroke:#a76532;stroke-width:1.2}.back{fill:url(#back-hatch);stroke:#768589;stroke-width:.4}.frame{fill:#dbe5e7;stroke:#496e76;stroke-width:.45}.water{fill:#e0f0f3;stroke:none}.move{fill:none;stroke:#287989;stroke-width:.6;marker-end:url(#back-arrow)}.rule{stroke:#cfdbde;stroke-width:.45}.alert{fill:#a04733}.panel{fill:#f5f8f8;stroke:#d7e0e1;stroke-width:.4}</style>';
+  const tx = (x,y,s,c='') => out += `<text x="${x}" y="${y}" class="${c}">${esc(s)}</text>`;
+  const pa = (path,c='line') => out += `<path d="${path}" class="${c}"/>`;
+  const re = (x,y,w,h,c) => out += `<rect x="${x}" y="${y}" width="${w}" height="${h}" class="${c}"/>`;
+  tx(12,15,'Backing changes the inspection and repair promise','title');
+  tx(12,24,'Outer-west R1 / 31 October 2026 / construction and linear-bending comparison / schematic, not for construction');
+  pa('M12 30H408','rule');
+
+  tx(12,41,'A  Retain backing; keep upper loads independent','head');
+  tx(12,49,'Flat-base support topology — sidewalls and all contacts need design','small');
+  re(43,66,4,48,'frame'); re(169,66,4,48,'frame');
+  re(39,62,138,4,'frame');
+  for(let x=49;x<167;x+=10) pa(`M${x} 61V67`);
+  re(55,96,102,8,'back');
+  re(64,104,10,12,'frame'); re(138,104,10,12,'frame');
+  re(56,81,100,14,'water');
+  pa('M55 72V95H157V72','wet');
+  pa('M68 54V60 M147 54V60','move');
+  pa('M95 74V91 M120 74V91','move');
+  pa('M36 116H180');
+  tx(12,78,'Upper loads','small'); pa('M31 80L44 88');
+  tx(12,86,'bypass sheet','small');
+  tx(178,85,'Wet','small'); tx(178,90,'face','small'); pa('M175 89L158 93');
+  tx(178,102,'Hidden','small'); tx(178,107,'contact','small'); pa('M175 100H158');
+  tx(52,124,'Backing → frame/cradles → qualified foundation','small');
+  tx(12,132,'Contact/separator, seam relief and movement remain to qualify.','small');
+
+  tx(220,41,'B  Opening a gap changes bending sensitivity','head');
+  tx(220,49,'AUTHOR reference: t = 0.7 mm / water 50 mm / debris 0 kPa','small');
+  tx(220,56,`q=${fmt(ref[0].totalPressureKPa,7)} kPa including copper selfweight`,'small');
+  tx(220,65,'Span s'); tx(252,65,'R/line'); tx(289,65,'Stress'); tx(328,65,'δ linear'); tx(371,65,'δ/s');
+  tx(220,71,'mm','small'); tx(252,71,'kN/m','small'); tx(289,71,'MPa','small'); tx(328,71,'mm','small'); tx(371,71,'ratio','small');
+  pa('M220 74H408','rule');
+  ref.forEach((row,i) => {
+    const y=83+i*9;
+    tx(220,y,row.spanBetweenIdealReactionLinesMm);
+    tx(252,y,fmt(row.reactionEachKNPerM,5));
+    tx(289,y,fmt(row.nominalBendingStressMPa,2));
+    tx(328,y,fmt(row.linearDeflectionMm,4));
+    tx(371,y,fmt(row.deflectionOverSpan,6));
+  });
+  tx(220,119,'s: ideal reaction-line span, not a clear aperture or bracket pitch.','small');
+  tx(220,126,'R220 proof 140 MPa is a MAXIMUM, not minimum resistance.','small');
+  tx(220,133,'No strength, actual deformed shape or collapse result.','small alert');
+  pa('M12 140H408','rule');
+
+  tx(12,152,'C  The operation determines what remains supported and what can be inspected','head');
+  re(12,159,396,11,'panel');
+  tx(17,166,'Operation','bold'); tx(112,166,'Support / water state','bold'); tx(274,166,'Inspection limit','bold');
+  const rows = [
+    ['Routine upper-unit removal', 'Control water; retain backing and captures.', 'Wet face, visible edges and terminal.'],
+    ['Designed underside opening', 'Actual span/profile and support must be proved.', 'Real line of sight and reachable tool path.'],
+    ['Withdraw required backing', 'Empty, then support or remove the wet body first.', 'Hidden face; selfweight does not disappear.'],
+    ['Larger liner removal', 'Free terminal, datum and every keeper; handle safely.', 'Bench access is a larger declared intervention.'],
+  ];
+  rows.forEach((row,i) => {
+    const y=180+i*12;
+    tx(17,y,row[0],'small'); tx(112,y,row[1],'small'); tx(274,y,row[2],'small');
+    pa(`M12 ${y+5}H408`,'rule');
+  });
+  tx(12,234,'Backing is not a secondary waterproof tray. Locate first leak observation and first vulnerable fabric.','bold');
+
+  pa('M12 241H408','rule');
+  tx(12,252,'D  What the numbers earn','head');
+  tx(12,261,'100 → 300 mm, same pressure: stress ×9 / δ ×81 / reaction ×3. Two ideal strips, not a support-removal analysis.','small');
+  tx(12,268,'Empty t0.7 / s300 trial: δ = 1.9111 mm from selfweight. Water 150 mm + debris 0.5 kPa: δ = 63.5601 mm is a linear extrapolation.','small');
+  tx(12,275,'E = 118000 N/mm²; density 8900 kg/m³. Fixed projected pressure; one end free in-plane. No ponding, formed-side or membrane credit.','small');
+  tx(12,282,'δ/t alone is not a validity cutoff. Actual profile, restraint, rotations, joints, loads and contact need design; no universal bound.','small');
+  tx(12,291,'Sources: Aurubis 2013 pp 31/32/106/108; CDA A4050-8/24 pp 144/148. No backing material, receiver size or installed load capacity admitted.','small');
+  return out + '</svg>\n';
+}
+
 export const outputs = [['outer-west-receiver-renewal.json', JSON.stringify(data,null,2)+'\n'],
-  ['outer-west-receiver-renewal.svg', svg], ['outer-west-seam-support.svg', seamSheet()]];
+  ['outer-west-receiver-renewal.svg', svg], ['outer-west-seam-support.svg', seamSheet()],
+  ['outer-west-receiver-backing.svg', backingSheet()]];
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   for(const [name, content] of outputs) {
     const target = new URL(name, import.meta.url);
