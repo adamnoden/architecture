@@ -141,20 +141,20 @@ engine; it does not certify structural adequacy or complete 3D/BIM capability.
 
 ## Orthographic view context (ADE-SECTION-VIEW)
 
-\`section-view.ts\` is the bounded source-space companion to the existing
-\`section-assemblies.ts\`. It creates planar hosted facade material with true
+`section-view.ts` is the bounded source-space companion to the existing
+`section-assemblies.ts`. It creates planar hosted facade material with true
 rectangular aperture voids, validates source-owned sash grids against their hosts,
 chooses an orthographic cut/look direction, retains the geometrically correct
 halfspace, removes edges hidden by other source faces or explicit cut faces, and
 keeps cut and beyond-cut strokes semantically distinct. It reuses the existing
-\`projection-3d\`, \`visibility-3d\`, \`boundary-mesh-edges\`,
-\`spatial-visibility\` and \`spatial-line-drawing\` utilities, without touching
+`projection-3d`, `visibility-3d`, `boundary-mesh-edges`,
+`spatial-visibility` and `spatial-line-drawing` utilities, without touching
 the deterministic SVG/PDF terminal.
 
-\`section-view-contrast-fixture.ts\` is a non-Reference-House asymmetric proof
+`section-view-contrast-fixture.ts` is a non-Reference-House asymmetric proof
 at 1:100 and 1:50. This module **does not infer a solid cut from planar
 surfaces** or choose an architectural roof, wall cap, construction detail or
 source status. Source adapters must provide roof planes, facade termination,
 openings and any actual cut material. The exact source-to-view, cross-view
 and publication migration contract is in
-[\`project/ade/section-view-contract.md\`](../../project/ade/section-view-contract.md).
+[`project/ade/section-view-contract.md`](../../project/ade/section-view-contract.md).
