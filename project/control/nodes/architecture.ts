@@ -197,6 +197,15 @@ export const architectureNodes = defineNodes([
     closeoutEvidence: ['project/oas/oas-03-selection-result.md', 'docs/reference-house/opening-assembly-selection.md', 'project/oas/studies/selected-opening-renewal.svg']
   },
   {
+    id: 'HAD-BOUNDARY',
+    owners: ['HAD'],
+    title: 'Compare the Boundary Service Lodge and accessible external service raceway',
+    dependencies: ['HAD-01E', 'DPL-SITE-BRIEF'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/had/boundary-service-lodge-options-result.md']
+  },
+  {
     id: 'HAD-03',
     owners: ['HAD'],
     title: 'Architectural design convergence and visual synthesis',
