@@ -134,3 +134,31 @@ test('face ordering is stable, incorrect section caps/geometry are rejected', ()
   assert.throws(() => create({roof: {...roof, id: 'far-asymmetric-elevation:material:0:0'}}),
     /Duplicate section face/)
 })
+
+test('generic section contrast composes exact scale-independent vectors with semantic cut hierarchy', async () => {
+  const {createSectionViewContrastScene} = await import('./section-view-contrast-fixture.js')
+  const book = createSectionViewContrastScene(100), wall = createSectionViewContrastScene(50)
+  assert.deepEqual(book, createSectionViewContrastScene(100))
+  assert.deepEqual(wall, createSectionViewContrastScene(50))
+  assert.ok(book.primitives.length > 15)
+  assert.equal(book.scaleDenominator, 100)
+  assert.equal(wall.scaleDenominator, 50)
+  assert.ok(book.primitives.some(p => p.kind === 'line' && p.role === 'cut'))
+  assert.ok(book.primitives.some(p => p.kind === 'line' && p.role === 'secondary'))
+  assert.ok(book.primitives.every(p => p.kind === 'line' &&
+    p.metadata?.sources === 'compiler/architectural-drawing/section-view-contrast-fixture.ts'))
+  const ids = book.primitives.map(p => p.id)
+  assert.equal(new Set(ids).size, ids.length)
+  // The roof ridge survives behind the wall; the nearer cut obscures its centre.
+  const ridges = book.primitives.filter(p => p.kind === 'line' &&
+    p.metadata?.meaning?.includes('contrast-leaning-roof') &&
+    p.metadata?.modelA?.includes('"z":4980') &&
+    p.metadata?.modelB?.includes('"z":4980'))
+  assert.equal(ridges.length, 2)
+  // True architectural scale, not a fit-to-box transformation.
+  const length = (p: typeof book.primitives[number]) => p.kind === 'line'
+    ? Math.hypot(p.b.x - p.a.x, p.b.y - p.a.y) : 0
+  const cut = book.primitives.find(p => p.kind === 'line' && p.role === 'cut')!
+  const wallCut = wall.primitives.find(p => p.kind === 'line' && p.role === 'cut' && p.id === cut.id)!
+  assert.ok(near(length(wallCut), length(cut) * 2))
+})
