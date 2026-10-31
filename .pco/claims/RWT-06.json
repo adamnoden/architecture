@@ -9,8 +9,8 @@
     "label": "services-recovery-983b7ee-20261031"
   },
   "claimedAt": "2026-10-31T17:15:27.079Z",
-  "heartbeatAt": "2026-10-31T17:36:15.216Z",
-  "expiresAt": "2026-10-31T18:21:15.216Z",
+  "heartbeatAt": "2026-10-31T17:50:06.122Z",
+  "expiresAt": "2026-10-31T18:35:06.122Z",
   "branch": "work/swarm-court-access-20261031",
   "predecessor": {
     "leaseId": "72497b0a-9437-4b0f-9488-cf5ce88ff19b",
@@ -34,7 +34,8 @@
   },
   "pr": 1160,
   "checkpoint": {
-    "evidence": "PR1160 published at d273cbf0807fc9cfa1a0084e2ced1eaae49a8c00. All three RWT-06 source blobs match the independently reviewed payload. Source parent43b5b4dec25cc287a761613232980055f0da6ca9 is preserved. Primary source and architecture reviews, local non-browser health stages, integrity, final docs build and rendered anchor checks passed; full local health was limited by missing Chrome155.",
-    "next": "Require full exact-head CI and fresh canonical preflight for both common-PR nodes, then expected-head merge and closeout. This is a bounded court personnel-platform comparison; RWT-06 remains planned with actual load paths, work position and receiver/roof renewal unresolved."
+    "evidence": "PR1160 merged at 08c68ef0e3014efb8d6aecbcdb1bb208a57425ae. Premerge CI41225375984 passed head6cf4e839/treea688337692d8f327a416d5ee114c7b71690b978a; concurrent disjoint IAS/MAT main additions produced accepted treef2a2283d17b896df1a0eb2a20e5318fc1a05c43b. Exact accepted-merge push run41225736909 passed canonical repository health, both publication builds and metadata checks. All seven combined owner blobs and both reviewed source parents are retained. RWT-06 delivers the bounded court personnel-platform task comparison and preserves the threshold witness; no complete house access or load pass is inferred.",
+    "next": "Handoff the still-planned RWT-06 packet after verified integration and cleanup. Next actual court access design needs located machine/task geometry, door and threshold transport, independently qualified wheel and outrigger support, lowered entry/control access, and a separate receiver/roof renewal method. Threshold work still requires its actual W2, ground-boundary and release-interface section.",
+    "blocker": "No complete installed access, support-load, eave-work or renewable threshold assembly is qualified; these are remaining design duties, not an unresolved publication failure."
   }
 }
