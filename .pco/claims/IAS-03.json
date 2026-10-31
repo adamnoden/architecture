@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 10,
-  "state": "released",
-  "leaseId": "73aa7dc9-af13-474b-b663-5780130655fd",
+  "generation": 11,
+  "state": "claimed",
+  "leaseId": "12aa043e-cef4-4c1a-8ae8-8401e2ca7664",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-2900-worker-one-ias"
+    "label": "swarm-2900-worker-two-next"
   },
-  "claimedAt": "2026-10-31T17:09:27.406Z",
-  "heartbeatAt": "2026-10-31T17:42:42.729Z",
-  "expiresAt": "2026-10-31T17:42:42.729Z",
-  "branch": "work/swarm-2900-interfaces-20261031",
+  "claimedAt": "2026-10-31T17:46:06.841Z",
+  "heartbeatAt": "2026-10-31T17:46:06.841Z",
+  "expiresAt": "2026-10-31T18:31:06.841Z",
+  "branch": "work/swarm-2900-worker-two-next-20261031",
   "predecessor": {
-    "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
-    "generation": 9,
-    "branch": "work/mvb-chat-6541790969",
-    "pr": 1144,
+    "leaseId": "73aa7dc9-af13-474b-b663-5780130655fd",
+    "generation": 10,
+    "branch": "work/swarm-2900-interfaces-20261031",
+    "pr": 1157,
     "checkpoint": {
-      "evidence": "PR #1144 merged at 4d16682a2a9ff4ac8662cdb3cd0f505e313b35dd. Final head 4a0cd63805d237d4153f43336d6c611175641e08 passed full CI 41190592004 and canonical preflight at 09:58:41.658 UTC.",
-      "next": "Choose and detail the real replacement boundary: verified separate bowl/kit, or integral top with its actual support, joints, materials, service release and handling arrangement.",
-      "blocker": "IAS-03 remains planned. Full-top flat staging fails this field; local wet-top joints/materials and actual connected renewal remain unresolved. Current Franke kit is still unbound."
+      "evidence": "PR #1157 merged as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b; accepted tree equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI 41225448974 succeeded; IAS canonical preflight passed 17:40:56.322Z. Independent manual/source review, repository validation and docs build passed.",
+      "next": "Handoff this merged partial result. Obtain an identified current bowl-seat/downstream waste assembly and bind its full constituents, actual sealing faces, support and withdrawal sequence before further IAS adoption.",
+      "blocker": "Current supplied variant, every retained ring and connection, installed clearance and release travel remain unbound; generic assembly diagrams do not resolve those inputs. IAS-03 remains incomplete."
     }
   },
   "recoverySource": {
-    "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
-    "generation": 9,
-    "branch": "work/mvb-chat-6541790969",
-    "pr": 1144,
+    "leaseId": "73aa7dc9-af13-474b-b663-5780130655fd",
+    "generation": 10,
+    "branch": "work/swarm-2900-interfaces-20261031",
+    "pr": 1157,
     "checkpoint": {
-      "evidence": "PR #1144 merged at 4d16682a2a9ff4ac8662cdb3cd0f505e313b35dd. Final head 4a0cd63805d237d4153f43336d6c611175641e08 passed full CI 41190592004 and canonical preflight at 09:58:41.658 UTC.",
-      "next": "Choose and detail the real replacement boundary: verified separate bowl/kit, or integral top with its actual support, joints, materials, service release and handling arrangement.",
-      "blocker": "IAS-03 remains planned. Full-top flat staging fails this field; local wet-top joints/materials and actual connected renewal remain unresolved. Current Franke kit is still unbound."
+      "evidence": "PR #1157 merged as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b; accepted tree equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI 41225448974 succeeded; IAS canonical preflight passed 17:40:56.322Z. Independent manual/source review, repository validation and docs build passed.",
+      "next": "Handoff this merged partial result. Obtain an identified current bowl-seat/downstream waste assembly and bind its full constituents, actual sealing faces, support and withdrawal sequence before further IAS adoption.",
+      "blocker": "Current supplied variant, every retained ring and connection, installed clearance and release travel remain unbound; generic assembly diagrams do not resolve those inputs. IAS-03 remains incomplete."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1157 merged as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b; accepted tree equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI 41225448974 succeeded; IAS canonical preflight passed 17:40:56.322Z. Independent manual/source review, repository validation and docs build passed.",
-    "next": "Handoff this merged partial result. Obtain an identified current bowl-seat/downstream waste assembly and bind its full constituents, actual sealing faces, support and withdrawal sequence before further IAS adoption.",
-    "blocker": "Current supplied variant, every retained ring and connection, installed clearance and release travel remain unbound; generic assembly diagrams do not resolve those inputs. IAS-03 remains incomplete."
-  },
-  "pr": 1157,
-  "releasedAt": "2026-10-31T17:42:42.729Z",
-  "releaseReason": "handoff"
+  }
 }
