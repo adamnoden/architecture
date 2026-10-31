@@ -1,9 +1,7 @@
 # Temporary read-only native preflight for owner-directed ADE-SECTION-PARITY.
 # Lives only on a disposal-bound helper branch, not on main or the work PR.
 name: ADE current section-parity publication preflight
-on:
-  push:
-    branches: [work/ade-section-preflight-1189]
+on: workflow_dispatch
 permissions:
   contents: read
 jobs:
