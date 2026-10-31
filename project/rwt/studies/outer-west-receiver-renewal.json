@@ -1,0 +1,57 @@
+{
+  "authority": "Located construction/renewal comparison. No selected receiver, metal, support, joint, level or capacity.",
+  "startingMain": "2512f116e277d3ab724fd0bcf0f13ba1d04533c3",
+  "source": {
+    "path": "project/rwt/studies/free-shedding.json",
+    "blob": "49b3b9077d737028e114df3a1567c46e01c4265b"
+  },
+  "location": {
+    "edge": "outer-west",
+    "shellSideMm": 12000,
+    "courtSideMm": 3500,
+    "nominalDoorIntervals": [],
+    "disposition": "Conditional garden test candidate; no site territory established"
+  },
+  "territories": {
+    "a": "Wall-base inspection/protection",
+    "b": "Proved impact/capture and wet receiver",
+    "c": "Additional handling/maintenance/root territory",
+    "allWidthsMm": null
+  },
+  "retainedBody": {
+    "ordinaryRemoval": "Separately supported grates/contained impact units",
+    "wetBody": "One qualified continuous body between deliberate hydraulic/movement divisions; no selected length",
+    "proposedRestraint": "Defined fixed datum near terminal, sliding seats elsewhere; exact design unproved",
+    "largerRepair": "Qualified consumptive local repair or release of terminal/retainers and larger body renewal"
+  },
+  "separateTrays": {
+    "mechanism": "Individually watertight bodies with visible open transfers; not sealed ordinary laps",
+    "variables": {
+      "zLip": "Actual outlet-lip elevation of tray i, including offsets and sheet thickness",
+      "ZWater": "Governing downstream receiving-water elevation at transfer i",
+      "g": "Positive evidenced free separation; no selected value",
+      "h": "Non-negative downstream water depth above its entry floor",
+      "F": "Non-negative fall from each tray entry floor to its outlet lip",
+      "Delta": "Step from upstream outlet lip down to downstream entry floor",
+      "D": "Total available drop from first entry floor to last outlet lip"
+    },
+    "localFreeTransfer": "z_lip,i >= Z_water,i+1 + g_i",
+    "localStep": "Delta_i >= h_i+1 + g_i",
+    "serialDrop": "D = sum(F_i) + sum(Delta_i) >= sum(F_i) + sum(h_i+1 + g_i)",
+    "transferCount": "n - 1 for a serial chain of n trays",
+    "rejection": "For n > 1, zero available drop cannot accommodate positive free separations and non-negative falls/depths.",
+    "limit": "Check actual lip/invert datums and permitted movement. A raised lip giving negative F lies outside this comparator; a local raised lip may still pond with positive F. The final lip-to-terminal gap and onward receiving drop lie outside D. Losing free separation under backwater invalidates this free-transfer claim, not every possible submerged gravity route."
+  },
+  "sourceMechanisms": {
+    "C11": "CDA 10.3F: fixed soldered copper transverse seams for its watertight condition",
+    "C12": "CDA 10.5B: separately moving receiving gutter; 10.5C/D are different joined arrangements"
+  },
+  "unresolved": [
+    "Actual alloy/temper/finish and joint consumables/residues",
+    "Support loads, restraint, movement, wear and every retained accessory",
+    "Receiver widths, roof discharge/capture, splash, flow and debris",
+    "Every receiving-water elevation, free separation, fall and terminal level",
+    "Harmless leakage/overflow paths and real site territory",
+    "Complete first-motion, handling and reinstatement demonstration"
+  ]
+}
