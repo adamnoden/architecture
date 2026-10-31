@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 7,
-  "state": "released",
-  "leaseId": "5ad665a5-8a14-4779-8cce-ab3434d47091",
+  "generation": 8,
+  "state": "claimed",
+  "leaseId": "6b888f33-8d6e-41f2-8d06-346d8bd154af",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-had-design-983b7ee"
+    "label": "swarm-structural-rooms-2043-20261031"
   },
-  "claimedAt": "2026-10-31T19:36:45.785Z",
-  "heartbeatAt": "2026-10-31T19:58:40.890Z",
-  "expiresAt": "2026-10-31T19:58:40.890Z",
-  "branch": "work/swarm-riser-recovery-20261031",
+  "claimedAt": "2026-10-31T20:50:13.455Z",
+  "heartbeatAt": "2026-10-31T20:50:13.455Z",
+  "expiresAt": "2026-10-31T22:20:13.455Z",
+  "branch": "work/swarm-next-2043-20261031",
   "predecessor": {
-    "leaseId": "b69d3feb-4ddc-4a18-baab-fd43fb21972e",
-    "generation": 6,
-    "branch": "work/swarm-2900-next-20261031",
+    "leaseId": "5ad665a5-8a14-4779-8cce-ab3434d47091",
+    "generation": 7,
+    "branch": "work/swarm-riser-recovery-20261031",
+    "pr": 1170,
     "checkpoint": {
-      "evidence": "Published source 1cafd7afca71801f7729d41964a55eceda1050b6, tree 69a8a9f8b0ac8a9e703ecdb54393d9402d4a7f95. Independent primary-source, code and rendered reviews passed; original riser JSON/SVG unchanged; repository integrity and docs build passed. Current HAD slider result reconciled. No product or geometry adoption.",
-      "next": "Integrate the independently leased IAS cabinet and floor-closure comparison, require full exact-head CI and fresh publication preflight for both nodes, then merge and hand off the partial results.",
-      "blocker": "Actual HC150 hanger or paired deeper assembly, receiving-panel layout, supported closure/cabinet frame, one-sided spine connection and installed constituents remain unbound. STR-HOUSE remains incomplete."
+      "evidence": "PR1170 merged19:55:10Z as899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b. Independently fetched current main equals that merge; accepted tree50158c3bb7c3b26102df235b91efc59956d29592 equals exact tested c3953e189583f42c101223057f2b7671877c732b tree, with no union delta. All10 reviewed owner blobs, including STR linked-note6aaad687, are exact; original riser JSON/SVG preserved. Tested head, STR1cafd7af, IAS6416dddd, original coordinated0a1e6e8d and publication basec9e9a2c0 are accepted ancestors. Full CI41236042786 attempt2 succeeded; attempt1 correctly failed before lease binding. Fresh STR preflight19:54:58.712Z and IAS19:55:05.091Z preceded actual merge under live90min leases. New common feature ref absent; old predecessor ref remains exactly0a1e for root cleanup after accepted proof. Primary-source/code/architectural/render reviews and combined reproducers/repository/publication/docs checks passed. No source geometry, capacity, component, material or node-completion adoption.",
+      "next": "Handoff release of this completed bounded recovery. Next canonical STR-HOUSE owner should carry accepted1170 product/depth and cabinet/floor-closure evidence into a connected actual support/closure and component-renewal section, or another genuinely open HOUSE junction selected from the owning programme. Bind real receiving units, one-sided spine and plant-door reactions, permanent cabinet supports, flush closure and accessible service withdrawal together; preserve separate IAS/HAD/MAT duties and existing source/review ancestry. Root coordinates fresh dispatch; old source branch cleanup only with expected0a1e guard.",
+      "blocker": "HC150 hanger or approved deeper pairing, receiving-panel layout, actual structural/closure capacities, complete cabinet support and service release, protection and installed constituents remain unbound. Nominal shared200 depth is not assembly approval. STR-HOUSE remains planned and incomplete."
     }
   },
   "recoverySource": {
-    "leaseId": "b69d3feb-4ddc-4a18-baab-fd43fb21972e",
-    "generation": 6,
-    "branch": "work/swarm-2900-next-20261031",
+    "leaseId": "5ad665a5-8a14-4779-8cce-ab3434d47091",
+    "generation": 7,
+    "branch": "work/swarm-riser-recovery-20261031",
+    "pr": 1170,
     "checkpoint": {
-      "evidence": "Published source 1cafd7afca71801f7729d41964a55eceda1050b6, tree 69a8a9f8b0ac8a9e703ecdb54393d9402d4a7f95. Independent primary-source, code and rendered reviews passed; original riser JSON/SVG unchanged; repository integrity and docs build passed. Current HAD slider result reconciled. No product or geometry adoption.",
-      "next": "Integrate the independently leased IAS cabinet and floor-closure comparison, require full exact-head CI and fresh publication preflight for both nodes, then merge and hand off the partial results.",
-      "blocker": "Actual HC150 hanger or paired deeper assembly, receiving-panel layout, supported closure/cabinet frame, one-sided spine connection and installed constituents remain unbound. STR-HOUSE remains incomplete."
+      "evidence": "PR1170 merged19:55:10Z as899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b. Independently fetched current main equals that merge; accepted tree50158c3bb7c3b26102df235b91efc59956d29592 equals exact tested c3953e189583f42c101223057f2b7671877c732b tree, with no union delta. All10 reviewed owner blobs, including STR linked-note6aaad687, are exact; original riser JSON/SVG preserved. Tested head, STR1cafd7af, IAS6416dddd, original coordinated0a1e6e8d and publication basec9e9a2c0 are accepted ancestors. Full CI41236042786 attempt2 succeeded; attempt1 correctly failed before lease binding. Fresh STR preflight19:54:58.712Z and IAS19:55:05.091Z preceded actual merge under live90min leases. New common feature ref absent; old predecessor ref remains exactly0a1e for root cleanup after accepted proof. Primary-source/code/architectural/render reviews and combined reproducers/repository/publication/docs checks passed. No source geometry, capacity, component, material or node-completion adoption.",
+      "next": "Handoff release of this completed bounded recovery. Next canonical STR-HOUSE owner should carry accepted1170 product/depth and cabinet/floor-closure evidence into a connected actual support/closure and component-renewal section, or another genuinely open HOUSE junction selected from the owning programme. Bind real receiving units, one-sided spine and plant-door reactions, permanent cabinet supports, flush closure and accessible service withdrawal together; preserve separate IAS/HAD/MAT duties and existing source/review ancestry. Root coordinates fresh dispatch; old source branch cleanup only with expected0a1e guard.",
+      "blocker": "HC150 hanger or approved deeper pairing, receiving-panel layout, actual structural/closure capacities, complete cabinet support and service release, protection and installed constituents remain unbound. Nominal shared200 depth is not assembly approval. STR-HOUSE remains planned and incomplete."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1170 merged19:55:10Z as899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b. Independently fetched current main equals that merge; accepted tree50158c3bb7c3b26102df235b91efc59956d29592 equals exact tested c3953e189583f42c101223057f2b7671877c732b tree, with no union delta. All10 reviewed owner blobs, including STR linked-note6aaad687, are exact; original riser JSON/SVG preserved. Tested head, STR1cafd7af, IAS6416dddd, original coordinated0a1e6e8d and publication basec9e9a2c0 are accepted ancestors. Full CI41236042786 attempt2 succeeded; attempt1 correctly failed before lease binding. Fresh STR preflight19:54:58.712Z and IAS19:55:05.091Z preceded actual merge under live90min leases. New common feature ref absent; old predecessor ref remains exactly0a1e for root cleanup after accepted proof. Primary-source/code/architectural/render reviews and combined reproducers/repository/publication/docs checks passed. No source geometry, capacity, component, material or node-completion adoption.",
-    "next": "Handoff release of this completed bounded recovery. Next canonical STR-HOUSE owner should carry accepted1170 product/depth and cabinet/floor-closure evidence into a connected actual support/closure and component-renewal section, or another genuinely open HOUSE junction selected from the owning programme. Bind real receiving units, one-sided spine and plant-door reactions, permanent cabinet supports, flush closure and accessible service withdrawal together; preserve separate IAS/HAD/MAT duties and existing source/review ancestry. Root coordinates fresh dispatch; old source branch cleanup only with expected0a1e guard.",
-    "blocker": "HC150 hanger or approved deeper pairing, receiving-panel layout, actual structural/closure capacities, complete cabinet support and service release, protection and installed constituents remain unbound. Nominal shared200 depth is not assembly approval. STR-HOUSE remains planned and incomplete."
-  },
-  "pr": 1170,
-  "releasedAt": "2026-10-31T19:58:40.890Z",
-  "releaseReason": "handoff"
+  }
 }
