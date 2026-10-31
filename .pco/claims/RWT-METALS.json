@@ -1,44 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 15,
-  "state": "released",
-  "leaseId": "66f58601-32fa-4b7b-8b10-401db5e3471b",
+  "generation": 16,
+  "state": "claimed",
+  "leaseId": "12e9e5ac-c75f-4035-bac1-7e0dd4252d62",
   "holder": {
     "kind": "chatgpt",
-    "label": "rwt-leak-witness-2144-20261031"
+    "label": "issue-comment-6550189103"
   },
-  "claimedAt": "2026-10-31T21:44:14.594Z",
-  "heartbeatAt": "2026-10-31T22:01:37.264Z",
-  "expiresAt": "2026-10-31T22:01:37.264Z",
-  "branch": "work/rwt-metal-leak-witness-20261031",
-  "note": "Owner-directed continuation of RWT-METALS: outer-west backed copper receiver first passive leak observation and replacement/repair water consequences. Bounded source-owned study; no hydrostatic or site approval.",
+  "claimedAt": "2026-10-31T22:50:47.000Z",
+  "heartbeatAt": "2026-10-31T22:50:47.000Z",
+  "expiresAt": "2026-10-31T23:35:47.000Z",
+  "branch": "work/mvb-chat-6550189103",
   "predecessor": {
-    "leaseId": "fb8a27f4-48d8-452f-8d08-afd2baae5724",
-    "generation": 14,
-    "branch": "work/swarm-next-services-2041-20261031",
-    "pr": 1186,
+    "leaseId": "66f58601-32fa-4b7b-8b10-401db5e3471b",
+    "generation": 15,
+    "branch": "work/rwt-metal-leak-witness-20261031",
+    "pr": 1191,
     "checkpoint": {
-      "evidence": "PR1186 accepted as7223a6b75033186db75070df934bed80de80bc58 after full exact-head CI41242048869 attempt1 success on2c458cd85591b74648cc26c5f8e11150fdd0ca2e and canonical preflight21:09:56.733Z CLI73256 exit0. Independently fetched: accepted tree exactly equals tested d6694191f424d315104c9c856d24a709c3684031; all seven owner blobs exact, reviewed remote source369a and tested head2c458 are accepted ancestors. Source609c/integration899f retained locally; remote feature ref absent. Current main subsequently advanced to11da37a3 ADE registration, contains7223 and retains all seven blobs; this is after acceptance, not a false equal-tree claim for later main. Root and peer source/math/architecture/render review passed, no physical acceptance or node completion inferred.",
-      "next": "Normal handoff release next. RWT-METALS remains planned: actual compatible backing/contact and retained constituents, sheet/profile/loads/support capacity, first passive leak observation, terminal and complete liner handling remain to qualify. Retain accepted backed-liner routine-access versus supported hidden-face intervention decision; do not repeat this bounded comparison or attribute unrelated PHY/EPR/ADE changes to it."
+      "evidence": "PR1191 open, final head6965b841dfc01386b80639c69c94d69e4f443a8c; full exact-head PR CI41245931223 SUCCESS (health, PDFs, metadata, nomenclature). Three authored RWT source files, inspected SVG and current programme link preserved. Current main moved independently after last reconciliation and includes owner boundary service-lodge/raceway; source-side overlap checked absent; new rainwater/service separation is consistent. No physical leak/detection/capacity proof or RWT-METALS node completion.",
+      "next": "Reacquire fresh RWT-METALS lease for resumption, inspect latest main and PR1191, reconcile main changes, run exact-head CI, run repository-required canonical control:merge-check on capable GitHub-connected runner bound to fresh lease, then expected-head merge and verify accepted tree, release lease. Existing generation15 must not publish after release.",
+      "blocker": "Connector-only chat cannot run canonical publication preflight; CI packet-check is not a substitute. PR intentionally left unmerged. Actual protected setback, contact/backing, harmless leak/overflow destination, first leak observation and repair access remain unqualified."
     }
   },
   "recoverySource": {
-    "leaseId": "fb8a27f4-48d8-452f-8d08-afd2baae5724",
-    "generation": 14,
-    "branch": "work/swarm-next-services-2041-20261031",
-    "pr": 1186,
+    "leaseId": "66f58601-32fa-4b7b-8b10-401db5e3471b",
+    "generation": 15,
+    "branch": "work/rwt-metal-leak-witness-20261031",
+    "pr": 1191,
     "checkpoint": {
-      "evidence": "PR1186 accepted as7223a6b75033186db75070df934bed80de80bc58 after full exact-head CI41242048869 attempt1 success on2c458cd85591b74648cc26c5f8e11150fdd0ca2e and canonical preflight21:09:56.733Z CLI73256 exit0. Independently fetched: accepted tree exactly equals tested d6694191f424d315104c9c856d24a709c3684031; all seven owner blobs exact, reviewed remote source369a and tested head2c458 are accepted ancestors. Source609c/integration899f retained locally; remote feature ref absent. Current main subsequently advanced to11da37a3 ADE registration, contains7223 and retains all seven blobs; this is after acceptance, not a false equal-tree claim for later main. Root and peer source/math/architecture/render review passed, no physical acceptance or node completion inferred.",
-      "next": "Normal handoff release next. RWT-METALS remains planned: actual compatible backing/contact and retained constituents, sheet/profile/loads/support capacity, first passive leak observation, terminal and complete liner handling remain to qualify. Retain accepted backed-liner routine-access versus supported hidden-face intervention decision; do not repeat this bounded comparison or attribute unrelated PHY/EPR/ADE changes to it."
+      "evidence": "PR1191 open, final head6965b841dfc01386b80639c69c94d69e4f443a8c; full exact-head PR CI41245931223 SUCCESS (health, PDFs, metadata, nomenclature). Three authored RWT source files, inspected SVG and current programme link preserved. Current main moved independently after last reconciliation and includes owner boundary service-lodge/raceway; source-side overlap checked absent; new rainwater/service separation is consistent. No physical leak/detection/capacity proof or RWT-METALS node completion.",
+      "next": "Reacquire fresh RWT-METALS lease for resumption, inspect latest main and PR1191, reconcile main changes, run exact-head CI, run repository-required canonical control:merge-check on capable GitHub-connected runner bound to fresh lease, then expected-head merge and verify accepted tree, release lease. Existing generation15 must not publish after release.",
+      "blocker": "Connector-only chat cannot run canonical publication preflight; CI packet-check is not a substitute. PR intentionally left unmerged. Actual protected setback, contact/backing, harmless leak/overflow destination, first leak observation and repair access remain unqualified."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1191 open, final head6965b841dfc01386b80639c69c94d69e4f443a8c; full exact-head PR CI41245931223 SUCCESS (health, PDFs, metadata, nomenclature). Three authored RWT source files, inspected SVG and current programme link preserved. Current main moved independently after last reconciliation and includes owner boundary service-lodge/raceway; source-side overlap checked absent; new rainwater/service separation is consistent. No physical leak/detection/capacity proof or RWT-METALS node completion.",
-    "next": "Reacquire fresh RWT-METALS lease for resumption, inspect latest main and PR1191, reconcile main changes, run exact-head CI, run repository-required canonical control:merge-check on capable GitHub-connected runner bound to fresh lease, then expected-head merge and verify accepted tree, release lease. Existing generation15 must not publish after release.",
-    "blocker": "Connector-only chat cannot run canonical publication preflight; CI packet-check is not a substitute. PR intentionally left unmerged. Actual protected setback, contact/backing, harmless leak/overflow destination, first leak observation and repair access remain unqualified."
-  },
-  "pr": 1191,
-  "releasedAt": "2026-10-31T22:01:37.264Z",
-  "releaseReason": "handoff"
+  }
 }
