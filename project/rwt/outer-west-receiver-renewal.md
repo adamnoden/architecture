@@ -39,11 +39,11 @@ The later [sheet-solder evidence](../../docs/research/roof-rainwater-material-co
 
 ## R1 — retained wet body, independent routine access
 
-**Construction.** Develop one wet body between deliberately designed hydraulic/movement divisions, not an arbitrarily continuous 12 m trough. Form the sidewalls and ends; qualify its fixed cross-seams and outlet as a matched fabrication. Use independently supported removable grates or impact units above it. Leave the wet body's underside and terminal accessible for inspection through a credible access arrangement; a continuous stone bed that hides every seam does not meet that promise.
+**Construction.** Develop one wet body between deliberately designed hydraulic/movement divisions, not an arbitrarily continuous 12 m trough. Form the sidewalls and ends; qualify its fixed cross-seams and outlet as a matched fabrication. Use independently supported removable grates or impact units above it. Distinguish routine wet-face/visible-edge inspection from inspection of hidden support contacts. The [backing continuation](#backing-changes-the-inspection-and-repair-promise) below replaces an undifferentiated underside-access promise with supported access or declared larger liner removal; a continuous bed does not expose the underside when the grate is lifted.
 
 **Movement.** The illustrated body has a defined fixed datum near its terminal and sliding seats elsewhere. This is a proposed restraint arrangement, not a sized support detail. Do not rigidly bolt every cradle or confuse a soldered seam with a movement joint. Keep the terminal's capture envelope valid through relative movement and support deflection. If that outlet is rigidly connected to a pipe, include the pipe's restraint and repair; the diagram's open-transfer logic cannot be claimed for it. Required bearing, wear, restraint against uplift and any separator still need material and load evidence.
 
-**Routine work.** Control continuing roof water through a qualified alternative route; lift and secure the actual grate or impact unit; remove debris without driving it into the outlet; inspect the wet body, supports and terminal; reinstate each unit and verify seating and water passage. A cleanable grate must be removable with its fasteners, deposits and handling mass, not just in a catalogue drawing. Isolate the working area from pedestrians and preserve the wall-base inspection territory.
+**Routine work.** Control continuing roof water through a qualified alternative route; lift and secure the actual grate or impact unit; remove debris without driving it into the outlet; inspect the wet face, accessible supports, edges and terminal; reinstate each unit and verify seating and water passage. This does not inspect a concealed liner/backing contact. A cleanable grate must be removable with its fasteners, deposits and handling mass, not just in a catalogue drawing. Isolate the working area from pedestrians and preserve the wall-base inspection territory.
 
 **Eventual wet-body repair.** A damaged seam calls for either a qualified local repair with accessible sound metal and joining/inspection space, or renewal of the larger wet body. Soldered repairs may consume a bounded length. To renew the body, first clear overhead units, support it, release the real terminal and retainers, then lift through its complete envelope. If an outlet tail is captured below the support, removal from above has not been established. Show the access or declared larger support reconstruction needed; do not simply rename it demountable. Rebuild and verify the joints, fall, supports and escape route before returning the roof water.
 
@@ -114,6 +114,58 @@ The eventual sequence must retain independent support at every stage. A body lif
 
 **Decision advanced:** keep a defined terminal-station restraint, require the cross-seam's full relative support envelope, and develop a removable dry-side keeper instead of equating sliding with lift-out. Return the actual backing, loads and anchorage demands to STR when the profile is chosen. No court pan, room floor, DPC, threshold, landscape level or occupied IAS/MAT source is changed.
 
+## Backing changes the inspection and repair promise
+
+**31 October 2026 continuation, starting main `d4cad187f71b8c025fa681fab15e4ce847333c67`.** Develop the copper R1 comparator as a **supported liner with backing retained during routine wet-side cleaning**. Do not turn the earlier seam seats into proof that the intervening flat sheet supports itself, or remove backing solely to expose an underside without assessing the changed load path. A formed or stiffened self-supporting trough remains a different alternative requiring its actual profile and design. The following strip calculation neither rejects every such body nor qualifies one.
+
+![Backing, load paths and the repair boundary](studies/outer-west-receiver-backing.svg)
+
+The existing [reproducer](studies/outer-west-receiver-renewal.mjs) adds `backingContinuation` to the [record](studies/outer-west-receiver-renewal.json). Both earlier A3 sheets remain unchanged. The new sheet is a construction and linear-bending comparison, with no selected receiver or support dimensions.
+
+### Conventional construction and its material limit
+
+The further [C9/C11 source inspection](../../docs/research/roof-rainwater-material-compatibility.md#flat-liner-backing-and-hidden-contact) supplies a coherent comparator. Aurubis's **flat roof/facade sheet** guidance calls for stable support; its separate gutter-frame discussion requires loads and dimensions to be considered. CDA's built-in gutter liner follows a supporting frame while remaining free to move, and recommends fabrication outside the frame where possible so seams can be inspected and watertightness tested before installation. This supports a backed fabrication/installation sequence. It supplies no actual ground-receiver contact, bearing capacity or later lift-out method.
+
+Keep two load paths explicit. Water, debris and copper selfweight pass through the qualified contact/backing to the frame and foundation. Pedestrian, grate, impact-piece and handling loads use independent upper supports, bypassing the wet sheet and solder seam. Independence here means an identified load path; the actual upper frame, cradles and foundation still need STR design. No pedestal size or support resistance follows from the schematic.
+
+Neither source admits an unspecified mineral bed. Aurubis p 106 excludes direct copper-on-concrete within its stated construction guidance; its timber/felt and conditional mineral-substrate examples are not adopted. CDA's separate contact-treatment requirements remain in C13. Qualify the complete backing/contact or separator, fixings, wear, corrosion, movement and retained constituents under MAT. A seam fold, rivet or solder projection also needs compatible shaped support; a nominal flat bearing is insufficient.
+
+### An inspection opening changes the bending problem
+
+Use a **1 mm wide flat strip** spanning between two ideal simple-support reaction lines, one end free in-plane. The span is neither an adopted clear inspection opening nor a bracket pitch. With `b=1 mm`, thickness `t`, span `s`, `I=b t³/12`, uniform line load `w` and `E=118000 N/mm²`:
+
+`R = w s/2`; `M = w s²/8`; `σ = 6 M/(b t²)`; `δ = 5 w s⁴/(384 E I)`; end slope `θ = w s³/(24 E I)`.
+
+The pressure is fixed on the original horizontal projection: an authored water depth over the undeformed base, plus an authored uniform debris action, plus copper selfweight using `8900 kg/m³` and `g=9.81 m/s²`. E and density are the Aurubis p 32 comparison properties. No particular delivered temper, local forming/joining condition or loss allowance is qualified. In particular, p 31's annealed R220 **140 MPa proof value is a maximum, not a minimum resistance**; it is not used as an allowable stress.
+
+The reference trial uses `t=0.7 mm`, water depth `50 mm` and zero additional debris action, giving `q=0.5516163 kPa`, including `0.0611163 kPa` sheet selfweight. All dimensions and water/debris scenarios are authored.
+
+| Span between ideal reaction lines (mm) | Reaction at each line (kN per metre of width) | Nominal bending stress (MPa) | Linear deflection δ (mm) | δ/s | δ/t |
+|---|---:|---:|---:|---:|---:|
+| 50 | 0.01379 | 2.11 | 0.0133 | 0.000266 | 0.0190 |
+| 100 | 0.02758 | 8.44 | 0.2130 | 0.002130 | 0.3042 |
+| 150 | 0.04137 | 19.00 | 1.0781 | 0.007187 | 1.5401 |
+| 300 | 0.08274 | 75.99 | 17.2491 | 0.057497 | 24.6415 |
+
+These are linear bending outputs, **not strength checks or predictions of the actual deflected trough**. The record also varies thickness through 0.6/1/2 mm, water depth to 150 mm and additional debris action to 0.5 kPa. For example, the 0.7 mm/300 mm trial at 150 mm water plus 0.5 kPa debris extrapolates to 63.5601 mm displacement and 280.00 MPa nominal bending stress. Its large displacement and rotation preclude treating the linear numbers as an established loaded shape or collapse result. Deflection/thickness alone is not a universal validity cutoff for an axially free strip: rotation, deflection/span and actual in-plane restraint matter. There is no universal conservative-bound claim.
+
+The model gives no credit for two-way plate action, formed sides, continuity, membrane action or a seam's stiffness. It also omits ponding feedback: deformation can change water depth, pressure and fall. It excludes rain impact, ice, pedestrian/grate/stone/handling actions and underside uplift, and evaluates no yield, creep, fatigue, denting, buckling, contact, joint or support resistance. These are actual design duties, not loads accepted as absent from the receiver.
+
+### Repair keeps support, or transfers it before removal
+
+Comparing two independent ideal strips at 100 and 300 mm under the same reference pressure multiplies moment/stress by **9**, linear deflection by **81**, and each reaction by **3**. This is a span-sensitivity comparison, not analysis of removing a support from a continuous sheet. It demonstrates why an inspection opening and a removable backing panel need a real intervening support/repair state. Even after emptying, the same 0.7 mm sheet has non-zero selfweight: the 300 mm ideal trial gives 1.9111 mm linear displacement under selfweight alone.
+
+| Operation | Support and access consequence |
+|---|---|
+| Routine clearing and visible inspection | Manage incoming water; remove independently supported upper units; inspect wet face, exposed edges and terminal with liner backing, fixed restraint and captures retained. This does not inspect hidden contact faces. |
+| Inspect through a designed underside opening | Establish the actual supported span/profile, opening, line of sight and hand/tool route. An unmeasured void or absence of visible dripping does not prove the hidden interface dry. |
+| Withdraw required backing or repair its contact face | Isolate continuing water, empty and clean; then independently support or remove the wet body **before** withdrawing its required backing. Clearance alone is insufficient. A declared larger removal retains the terminal/anchor/keeper and handling duties above. |
+| Reinstate and return water | Verify support/contact, seam relief, fall, freedom to move, restraint/captures, terminal, cleanup and actual leak/overflow routes. Initial outside-frame inspection does not establish the condition of a later concealed seam. |
+
+Backing is not credited as a waterproof secondary collector. Locate where a liner leak first becomes observable, how water can spread along its concealed contact, and the first vulnerable wall/foundation material. If passive secondary containment is needed, its fall, outfall and repair are additional design work. Do not equate a structural bed with a harmless drainage route or claim complete detection from top access.
+
+**Decision advanced:** retain the conventional backed copper liner for the next complete section, keep upper loads independent, and allocate hidden-underface work to a qualified supported intervention or larger liner removal. Reject the unsupported combination of sparse seats, no intervening sheet design and an unrestricted underside-access promise. Actual backing/contact, profile, load capacity, first leak observation, terminal and full handling remain specific unresolved interfaces. The brass body still needs its own complete fabrication/support evidence; this copper-property sensitivity does not qualify it.
+
 ## R2 — separately renewable wet trays with open transfers
 
 Each tray has its own qualified watertight body, restraint and terminal lip. It discharges across a **visible separation** into the next receiving tray or independently accessible collector. Removal must not require tearing the neighbour's waterproof seam. A spanning grate or impact frame is independently removable; it must not tie the two trays rigidly together. At a terminal outlet, compare an open receiving space with a genuinely releasable sealed connection rather than silently substituting one for the other.
@@ -152,6 +204,6 @@ The outboard spill must act below the first harmful wall, opening or boundary le
 
 ## Validation and handoff
 
-Run `node project/rwt/studies/outer-west-receiver-renewal.mjs --check` to verify the pinned inherited edge source and deterministic record/sheets, and `node project/rwt/studies/outer-west-receiver-renewal.test.mjs` for the eight focused controls. They cover full footprint/placement expansion, a narrow seat, relative support movement, signed and zero gauges, retained stud/cap capture, complete terminal envelopes, invalid inputs and deterministic outputs. The local A3 sheet is rendered and inspected. Exact-head repository/publication checks remain required for integration. This is a located construction and maintenance comparison, not a hydraulic solver, structural calculation or installed prototype test.
+Run `node project/rwt/studies/outer-west-receiver-renewal.mjs --check` to verify the pinned inherited edge source and deterministic record/sheets, and `node project/rwt/studies/outer-west-receiver-renewal.test.mjs` for the focused controls. They cover full footprint/placement expansion, a narrow seat, relative support movement, signed and zero gauges, retained stud/cap capture, complete terminal envelopes, strip units/equilibrium/scaling/selfweight, invalid inputs and deterministic outputs. The new A3 sheet is rendered and inspected; the original two sheets remain byte-identical. Exact-head repository/publication checks remain required for integration. This is a located construction and maintenance comparison with an explicit linear-bending sensitivity, not a hydraulic solver, structural acceptance calculation or installed prototype test.
 
 RWT-METALS remains planned. RWT-SHED's edge disposition is retained; RWT-ROBUSTNESS still owns full-duty failure acceptance, ROF/HAD the roof and architectural interfaces, MAT the complete constituents and DPL the real receiving/site conditions. No house geometry, completion status or construction authority changes.
