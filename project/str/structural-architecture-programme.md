@@ -24,6 +24,12 @@ Read the current source and latest results before each packet; names alone are n
 
 The [BCR preflight](../bcr/bcr-preflight-result.md), shared obligation matrix, occupation/service/wet studies and [construction-bay brief](../bcr/bay-brief-result.md) remain inputs at their stated scope. Their completion is not evidence that these conflicts have been resolved.
 
+## P0 foundation / ground-movement investigation — owner direction, 31 October 2026
+
+The owner has raised soil movement and tree-heavy construction to **P0**. The project must investigate a house whose principal masonry does not rely on stable shallow soil; the starting hypothesis is deep support, a continuous/stiff load-distribution grid and a movement-isolated suspended mineral floor, not simply 'double the concrete'. The [P0 ground-movement and substructure brief](ground-movement-and-substructure-brief.md) owns alternatives, clay/tree/root interactions, quantified movement-serviceability expectations, concrete/pile inspection and the full wall/plinth/floor/soil interface. This does not waive actual site geotechnical evidence or select piles.
+
+**Execution seam:** investigate the pre-site foundation family as a separate bounded structural question without colliding with occupied STR-HOUSE. STR-RECONCILE must consume its earned support and movement result before the final structural handoff. Register any genuinely independent task through the canonical PCO graph and ACO protocol; this document alone is not a packet or lease. MAT-ENVELOPE retains mineral DPC/floor materials, and [Boundary Service Lodge / raceway design](../had/boundary-service-lodge-and-raceway-brief.md) remains architecturally separate while its support and movement interfaces return to STR.
+
 ## Ownership and interfaces
 
 | Owner | Responsibility at this boundary |
