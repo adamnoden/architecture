@@ -9,8 +9,8 @@
     "label": "swarm-had-continuation-983b7ee"
   },
   "claimedAt": "2026-10-31T18:19:19.480Z",
-  "heartbeatAt": "2026-10-31T18:19:19.480Z",
-  "expiresAt": "2026-10-31T19:04:19.480Z",
+  "heartbeatAt": "2026-10-31T18:29:49.886Z",
+  "expiresAt": "2026-10-31T19:14:49.886Z",
   "branch": "work/swarm-had-continuation-20261031",
   "predecessor": {
     "leaseId": "fc5c036f-4d10-44fb-b870-0623d4d17135",
@@ -33,5 +33,9 @@
       "next": "Carry the retained-handing two-grip sequence and reversible chair/window state comparison into actual doorset and room decisions. Bind actual frame/stop/hardware placement and real two-hand operation, the Study chair/desk section, and first south-window use/release. Assess broader HAD continuation from current sources before producing another isolated witness.",
       "blocker": "HAD-03 remains planned. Small proxy clearances and authored contacts establish neither installed fit nor human suitability, seated comfort, material admission, sash operation or a coherent completed house selection."
     }
+  },
+  "checkpoint": {
+    "evidence": "Read accepted Study PR1163 on main7f747d98, isolated worktree based76addac4; source layout/door pins unchanged and low hinge retained. Root reports latest main8bebd445 adds MAT only. Read-only exact-helper reproduction confirms alternative retained low90 parked-state approach via (3020,1385.5) to (2530,1385.5), then G-minus contact and P=(clamp(Cx,2530,3000),Cy-500) through90-to0: continuous arm-leaf lower2.194025mm, reach upper521.215410mm, entry fixed17.5mm, closed chair-side25mm. Existing two-hand1163 result remains valid and untouched. Exact mirrored high hinge3231 at90 has G=(3315,1885.5), arm endpoint radius40 overlaps cloak wall by17.5mm. Revised high85 entry dogleg via (2800,2350),(2700,2350) passes; tested P=(min(Cx,3000),Cy-500) starts with arm-leaf penetration5.303805mm independently reproduced. No high-loop pass, actual parking/control, latch, grasp or installed hardware qualification. No source edits or new PR yet.",
+    "next": "Prepare contained comparison in existing Study source/generator with retained low90 complete entry-close-chair-side-reopen-exit loop, failed high90/high85 controls and high closed-hardware west-route interaction; preserve accepted operation JSON/SVG bytes and source geometry. Independently review full diff, exact continuous bounds and rendered output before repository checks and root publication. Retain source handing as eligible; do not infer universal high-hinge impossibility or one-handed physical use."
   }
 }
