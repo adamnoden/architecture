@@ -10,6 +10,8 @@ Retain **hinged cabinet access with independently supported services, no fixed c
 
 The [A3 plan/section](studies/sink-cabinet.svg) and [quantity record](studies/sink-cabinet.json) expose the remaining territory. They are a cabinet and mounting comparison, **not a product installation drawing**. No sink, valve, trap, appliance, worktop, material exception or house geometry is selected here.
 
+The [manufacturer-drawing and renewal successor](ias-03-sink-renewal.md) recovers the dated illustrated waste projection and actual cutout dimensions, locates a separate nominal set-out and develops supported lowering/front withdrawal. It keeps current kit identity, connected fit and complete material admission unresolved; this original simplified comparison remains provenance.
+
 ## One located occurrence, with its source identity retained
 
 This is conditional on [HAD's kitchen Option B](../had/had-03-kitchen-options.md). That proposal raises two north kitchen window sills from 750 to 1050, retains their heads at 2850, and remains unadopted. It cannot be inserted into the current 750-sill house merely because a cabinet study works on paper.
