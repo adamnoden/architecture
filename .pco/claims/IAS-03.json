@@ -9,8 +9,8 @@
     "label": "swarm-ias-floor-recovery-1937"
   },
   "claimedAt": "2026-10-31T19:40:53.427Z",
-  "heartbeatAt": "2026-10-31T19:51:00.862Z",
-  "expiresAt": "2026-10-31T21:21:00.862Z",
+  "heartbeatAt": "2026-10-31T19:57:28.012Z",
+  "expiresAt": "2026-10-31T21:27:28.012Z",
   "branch": "work/swarm-riser-recovery-20261031",
   "predecessor": {
     "leaseId": "12aa043e-cef4-4c1a-8ae8-8401e2ca7664",
@@ -29,9 +29,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1170 publishes c3953e189583f42c101223057f2b7671877c732b, exact reviewed tree50158c3bb7c3b26102df235b91efc59956d29592. Five IAS files equal published6416 source under preserved0a1e ancestry; all10 coordinated owner blobs and current mainc9e9 preserved. Independent code/geometry/A3 reviews, pinned HAD and IAS reproducers, combined repo/publication checks and docs build passed.",
-    "next": "Full CI on published head, both fresh canonical preflights, expected-head merge and actual accepted tree/owner-blob verification.90min TTL addresses the evidenced48min prior connector delay without changing normal checkpoint practice.",
-    "blocker": "Actual supported flush floor closure, fixed cabinet load path, receiving panels, installed constituents and service-component aperture/travel/reinstatement remain unresolved. IAS-03 remains incomplete."
+    "evidence": "PR1170 merged as 899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b at 2026-10-31T19:55:10Z. Fresh native fetch independently verified accepted tree 50158c3bb7c3b26102df235b91efc59956d29592 and all five IAS blobs byte-identical to published predecessor 6416dddda7584491829bbf53ccfa10ad01c2cfbb; IAS6416, STR1cafd7af and combined0a1e are preserved ancestors. Root verified full CI41236042786 attempt2 success on exact c3953e189583f42c101223057f2b7671877c732b, IAS preflight19:55:05.091Z and common branch deletion. Independent code, note and A3 review passed unchanged; HAD and IAS reproducer checks passed before publication.",
+    "next": "Release this exact IAS-03 generation12 as handoff after actual checkpoint receipt. Accepted result retains A and conditionally compares east-only C with supported flush closure; continue from accepted main only after fresh canonical allocation.",
+    "blocker": "IAS-03 remains planned and incomplete: actual supported floor closure and cabinet chassis, specific service component and renewable aperture/withdrawal, structural receiving panels and connections, installed constituents and physical acceptance are unresolved. B remains a failed comparator, not adopted."
   },
   "pr": 1170
 }
