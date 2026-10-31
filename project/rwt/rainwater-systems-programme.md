@@ -202,6 +202,8 @@ The [retained court-tail comparison](segmented-copper-access.md#a-retained-court
 
 The [retained-tail leak-route result](retained-tail-leak-route.md) locates the secondary-water duty: a high return fails its no-ponding elevation screen, while a northward continuation crosses another 3832.5 mm before the exterior face. Its combined collector/flange screen preserves the unresolved floor, support, receiving-water and maintenance duties. No retained-tail assembly is selected.
 
+The [outer-west receiver construction comparison](outer-west-receiver-renewal.md) distinguishes removable grates/impact units from renewal of the watertight body. It develops a retained wet-body repair strategy against separate open-transfer trays, whose positive free separations require actual longitudinal drop and receiving-level evidence. Named brass, tin-bronze and grate sources are reconciled in the shared compatibility record without selecting a channel, support, joint or site level. RWT-METALS remains planned.
+
 ### RWT-ROBUSTNESS — independent paths and degraded operation
 
 After RWT-SHED, RWT-METALS and RWT-05, compare full-duty surviving paths under blockage, accessible capacity/freeboard, common debris/frost/backwater and passive final spill. Use actual candidate elevation ledgers and downstream topology. A second outlet must have a reachable and independent path; a clean-system capacity result cannot prove degraded-operation safety.
