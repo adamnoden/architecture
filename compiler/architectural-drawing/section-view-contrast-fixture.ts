@@ -44,7 +44,7 @@ export function createSectionViewContrastScene(scale: 50 | 100): DrawingSceneV2 
   return {
     widthMm: scale === 100 ? 145 : 420,
     heightMm: scale === 100 ? 190 : 594,
-    viewId: \`ADE-GENERIC-SECTION-CONTEXT-\${scale}\`,
+    viewId: `ADE-GENERIC-SECTION-CONTEXT-${scale}`,
     sourceId: 'ADE-SECTION-VIEW-CONTRAST-01',
     title: 'Orthographic section contrast',
     description: 'Hosted openings, far roof and cut screen; source geometry, not selected construction.',
