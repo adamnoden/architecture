@@ -50,7 +50,7 @@ The paired cellular plan permits the following first support study. It is an arr
 
 A simple four-sided “all floors span the short way” instruction is inadequate. The SW rotated field, NS east gallery and local stair/bridge frames have different lengths, supports and loads. HC150 is still only a family enquiry for the longer fields. HC200 untopped, a changed floor allocation, a different local family or a revised wall/support arrangement must remain live if 150 fails. No load table is imported as acceptance.
 
-**Preferred next opposed-bearing comparison:** draw two genuinely different solutions. First, supplier-specific narrow-wall end/support details with explicit end closures and upper wall transmission; second, widen the actual two-sided support line and rerun the room/door/arrival geometry. Widening a 140 core to 215 adds 75 overall, commonly 37.5 into each adjacent space. The current 1100 arrival and nearly tight bedroom dimensions cannot be reported unchanged. An invented universal shelf/cap is not a completed alternative.
+The subsequent [east-spine shared-bearing comparison](house-spine-bearing-study.md) locates an actual supplier tied 140 mm detail against an authored full-width bay and tests centred/eastward/westward 215 mm widenings. It prioritises the supplier-specific narrow junction for further design because widening has concrete bedroom, riser, fitting and door conflicts. It selects no end dimensions, connection capacity or upper-wall transmission detail. The 140 mm option's temporary works, core alignment, full remote bearing and staged upper-wall loading are actual design duties; an invented universal shelf/cap is not an alternative.
 
 ## 4. Entrance bridge: reducing the court opening is meaningful
 

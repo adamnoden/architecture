@@ -11,6 +11,7 @@ The study joins three kinds of evidence without confusing their claims:
 - [Joined occupation comparison](house-plan-study.md), [paired proposed ground and upper plans](studies/house-plan.svg), with [exact plan/route/enclosure record](studies/house-plan.json) and [source inventory](studies/house-source.json). These show rooms, masonry reservations, openings, stair, furniture and service locations together.
 - [Support and section study](house-support-study.md), its [drawing](studies/house-supports.svg) and [calculation](studies/house-supports.json). These name actual floor fields, finite bridge/stair reactions, roof corners, collectors, a foundation-grid concept and service crossings.
 - [Junction and arch study](house-junction-study.md), [declared alternatives](studies/house-junctions.json), [wet-door action sheet](studies/house-wet-actions.svg) and [planning/quantity comparison](studies/house-quantities.json). These retain local positive witnesses and failed controls.
+- [East-spine shared-bearing comparison](house-spine-bearing-study.md) and [dimensioned sheet](studies/house-spine-bearing.svg) locate an actual tied 140 mm supplier detail and the spatial consequences of three 215 mm widenings. This chooses the next local junction enquiry; it does not approve a structural connection or the whole house.
 
 The starting authority is main **68d0273f928681aed7222bba2927dc8a89ae5ead**, after both prerequisite studies. Accepted geometry remains RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02. The source calculation guards exact owning-file blobs; the support record fingerprints the paired-plan and accepted span inputs. The drawing is an inspection of declared geometry, not a new source of adopted house dimensions.
 
@@ -100,7 +101,7 @@ The foundation concept is a supporting grid under named walls and arch piers, wi
 
 | Unclosed boundary | Next comparison that can change the decision |
 |---|---|
-| Opposed ends and upper-wall transmission | Actual supplier narrow-wall detail versus a dimensioned wider support, with room/door effects rerun; continue floor-direction comparison without merely moving the clash |
+| Opposed ends and upper-wall transmission | Develop the supplier-specific tied 140 mm junction at the east-spine full-width trial bay, including actual core alignment, temporary support, upper-wall transmission and remote bearings. The dimensioned 215 mm alternatives require explicit room/service replanning; no drop-in widening is accepted |
 | Stair/bridge frame and landing dogleg | Integrated seat versus changed window/arch/member geometry, with full finite bearings, protection, landing and headroom |
 | Riser and adjacent floor edge | Actual trimmed bay and finite support reactions, including any external opening it loads |
 | Arch thrust and construction | Choose and draw the participating abutment or permanent tie, its anchorage and DPC/foundation path; include centering and staged loads |
