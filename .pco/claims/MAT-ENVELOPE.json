@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 5,
-  "state": "released",
-  "leaseId": "6a340394-845c-4377-b276-8cc209132648",
+  "generation": 6,
+  "state": "claimed",
+  "leaseId": "969557ee-4ce8-435f-9ca3-c8899addae15",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-mat-next-983b7ee"
+    "label": "swarm-mat-round4-983b7ee"
   },
-  "claimedAt": "2026-10-31T10:20:03.100Z",
-  "heartbeatAt": "2026-10-31T10:53:34.060Z",
-  "expiresAt": "2026-10-31T10:53:34.060Z",
-  "branch": "work/swarm-maintenance-integration-20261031",
+  "claimedAt": "2026-10-31T10:54:25.889Z",
+  "heartbeatAt": "2026-10-31T10:54:25.889Z",
+  "expiresAt": "2026-10-31T11:39:25.889Z",
+  "branch": "work/swarm-mat-round4-983b7ee-20261031",
   "predecessor": {
-    "leaseId": "66e37744-c45f-484e-800d-f583195525e2",
-    "generation": 4,
-    "branch": "work/swarm-materials-integration-20261031",
-    "pr": 1145,
+    "leaseId": "6a340394-845c-4377-b276-8cc209132648",
+    "generation": 5,
+    "branch": "work/swarm-maintenance-integration-20261031",
+    "pr": 1148,
     "checkpoint": {
-      "evidence": "PR #1145 merged as adee2d3197fd7af8af06fd5b0668f7acd6c8debd. Full CI41191566272 succeeded on exact18a8f2bdf39e3fef253e866a148cfdf1cbbc402a; all three canonical preflights passed against main4d, envelope at2026-10-31T10:15:04.090Z. Fresh fetch verified accepted tree03bc2783319a7229e9940615449b9c010d73e177, exact envelope study/G02 and all three source-head ancestries. Combined remote branch deletion verified. Root owns superseded PR1133 and source-branch cleanup.",
-      "next": "Release this integrated bounded amendment as handoff, then re-enter canonical MAT dispatcher on a fresh dedicated branch. MAT-ENVELOPE remains planned. If selected again, develop the separate floor-barrier/service-access comparison using dated IKO floor-field and repair evidence plus MAC wall-key limits; preserve W1, fixed court W2 and ground damp/gas as distinct duties. Exact mortar/slate, connected wall/floor/threshold/penetration, thermal/support and actual constituents remain unqualified."
+      "evidence": "PR #1148 accepted as 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Full CI 41193874119 succeeded on 90de6288688004c8568f0a0665977e1045f953d8; canonical envelope preflight passed 2026-10-31T10:51:27.645Z. Fresh main verification equals the accepted merge and validated tree 8967b8d8feea905ccc5cf7582447deca7af351e0. Validated head and envelope source parent cc4fbd296d9c1eae97c58fa61cb8d4fee2ac9e65 are ancestors. Study blob 40ae213b78fdc5abd0974d8d69cd211248724dc4 and G03 remain exact; all 54 audit row identities/order and other audit bytes are preserved, with combined changes confined to G03/S01. The accepted result rejects routine carrier renewal that consumes the retained ground boundary and separates ground duty from W1 and court W2.",
+      "next": "Release handoff with MAT-ENVELOPE still planned. Carry forward the accepted requirement to keep routine carrier work on the maintainable side of an intact supported ground boundary. Remaining work requires exact retained constituents and a qualified floor-to-wall DPC/upstand/penetration arrangement, actual first-release/tool/heat/handling access, separate leak and open-tail management, and any independently required gas or pressure-water qualification. No complete mineral junction, selected floor geometry, 300 mm fit or installed assembly acceptance has been earned."
     }
   },
   "recoverySource": {
-    "leaseId": "66e37744-c45f-484e-800d-f583195525e2",
-    "generation": 4,
-    "branch": "work/swarm-materials-integration-20261031",
-    "pr": 1145,
+    "leaseId": "6a340394-845c-4377-b276-8cc209132648",
+    "generation": 5,
+    "branch": "work/swarm-maintenance-integration-20261031",
+    "pr": 1148,
     "checkpoint": {
-      "evidence": "PR #1145 merged as adee2d3197fd7af8af06fd5b0668f7acd6c8debd. Full CI41191566272 succeeded on exact18a8f2bdf39e3fef253e866a148cfdf1cbbc402a; all three canonical preflights passed against main4d, envelope at2026-10-31T10:15:04.090Z. Fresh fetch verified accepted tree03bc2783319a7229e9940615449b9c010d73e177, exact envelope study/G02 and all three source-head ancestries. Combined remote branch deletion verified. Root owns superseded PR1133 and source-branch cleanup.",
-      "next": "Release this integrated bounded amendment as handoff, then re-enter canonical MAT dispatcher on a fresh dedicated branch. MAT-ENVELOPE remains planned. If selected again, develop the separate floor-barrier/service-access comparison using dated IKO floor-field and repair evidence plus MAC wall-key limits; preserve W1, fixed court W2 and ground damp/gas as distinct duties. Exact mortar/slate, connected wall/floor/threshold/penetration, thermal/support and actual constituents remain unqualified."
+      "evidence": "PR #1148 accepted as 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Full CI 41193874119 succeeded on 90de6288688004c8568f0a0665977e1045f953d8; canonical envelope preflight passed 2026-10-31T10:51:27.645Z. Fresh main verification equals the accepted merge and validated tree 8967b8d8feea905ccc5cf7582447deca7af351e0. Validated head and envelope source parent cc4fbd296d9c1eae97c58fa61cb8d4fee2ac9e65 are ancestors. Study blob 40ae213b78fdc5abd0974d8d69cd211248724dc4 and G03 remain exact; all 54 audit row identities/order and other audit bytes are preserved, with combined changes confined to G03/S01. The accepted result rejects routine carrier renewal that consumes the retained ground boundary and separates ground duty from W1 and court W2.",
+      "next": "Release handoff with MAT-ENVELOPE still planned. Carry forward the accepted requirement to keep routine carrier work on the maintainable side of an intact supported ground boundary. Remaining work requires exact retained constituents and a qualified floor-to-wall DPC/upstand/penetration arrangement, actual first-release/tool/heat/handling access, separate leak and open-tail management, and any independently required gas or pressure-water qualification. No complete mineral junction, selected floor geometry, 300 mm fit or installed assembly acceptance has been earned."
     }
-  },
-  "pr": 1148,
-  "checkpoint": {
-    "evidence": "PR #1148 accepted as 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Full CI 41193874119 succeeded on 90de6288688004c8568f0a0665977e1045f953d8; canonical envelope preflight passed 2026-10-31T10:51:27.645Z. Fresh main verification equals the accepted merge and validated tree 8967b8d8feea905ccc5cf7582447deca7af351e0. Validated head and envelope source parent cc4fbd296d9c1eae97c58fa61cb8d4fee2ac9e65 are ancestors. Study blob 40ae213b78fdc5abd0974d8d69cd211248724dc4 and G03 remain exact; all 54 audit row identities/order and other audit bytes are preserved, with combined changes confined to G03/S01. The accepted result rejects routine carrier renewal that consumes the retained ground boundary and separates ground duty from W1 and court W2.",
-    "next": "Release handoff with MAT-ENVELOPE still planned. Carry forward the accepted requirement to keep routine carrier work on the maintainable side of an intact supported ground boundary. Remaining work requires exact retained constituents and a qualified floor-to-wall DPC/upstand/penetration arrangement, actual first-release/tool/heat/handling access, separate leak and open-tail management, and any independently required gas or pressure-water qualification. No complete mineral junction, selected floor geometry, 300 mm fit or installed assembly acceptance has been earned."
-  },
-  "releasedAt": "2026-10-31T10:53:34.060Z",
-  "releaseReason": "handoff"
+  }
 }
