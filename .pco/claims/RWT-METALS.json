@@ -9,8 +9,8 @@
     "label": "swarm-access-recovery-root-983b7ee"
   },
   "claimedAt": "2026-10-31T16:49:34.863Z",
-  "heartbeatAt": "2026-10-31T16:49:34.863Z",
-  "expiresAt": "2026-10-31T17:34:34.863Z",
+  "heartbeatAt": "2026-10-31T16:53:44.769Z",
+  "expiresAt": "2026-10-31T17:38:44.769Z",
   "branch": "work/swarm-access-recovery-20261031",
   "predecessor": {
     "leaseId": "15e1539e-9225-472e-9c06-1bc2a00d6a4e",
@@ -26,5 +26,11 @@
       "evidence": "PR1148 merged at 2512f116e277d3ab724fd0bcf0f13ba1d04533c3; exact accepted tree8967b8d8feea905ccc5cf7582447deca7af351e0 and all source-parent ancestry verified. Full CI41193874119 succeeded at head90de6288688004c8568f0a0665977e1045f953d8; RWT preflight2026-10-31T10:51:39.690Z passed. Retained-tail leak-route comparator and routine-versus-larger-repair distinction accepted as bounded partial evidence, no geometry, hydraulic, installed-material or lifecycle pass.",
       "next": "Release completed integration lease and re-enter canonical dispatcher. A connected outer-west copper collection and brass or bronze ground-receiver construction comparison is a useful remaining RWT-METALS direction if selected."
     }
+  },
+  "pr": 1150,
+  "checkpoint": {
+    "evidence": "PR 1150 publishes reviewed common head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 / tree e235ccc6c960795483ba906f10dae0a2ff01ec07 on unchanged main 2512f116. Native fetch verified exact tree and all three published source parents. Independent source/architectural reviews and combined owner-byte, repository/publication and docs checks pass. Fresh generation reacquired after delayed publication outlasted earlier claims; no expired request replayed.",
+    "next": "Observe full exact-head CI, verify all three common source owners, run three fresh canonical merge-checks and expected-head merge, then verify accepted main and release. All three nodes remain planned.",
+    "blocker": "Full published-head CI and fresh preflights pending; no complete installed assembly, material, hydraulic or physical pass."
   }
 }
