@@ -1,0 +1,4 @@
+Superseded MAT-ENVELOPE PR1117.
+Original head8e6eddb0e2ae2f64c37810bd0a337596a93637d3 preserved as ancestry.
+Reviewed content integrated by PR1124, main178c43815ba318a09f0f62c344aed37f15a71f16, with documented DoP attribution correction.
+Disposal only; no main or architectural authority change.

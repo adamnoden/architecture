@@ -148,7 +148,6 @@ export interface ReferenceHouseSource<CourtPlacement extends 'centred-in-shell' 
   }
   stair: {
     riseTopology: SourceFact<{ riserCount: number; flightRiseGroups: number[] }>
-    // One shared going count admits equal flights, each ending one rise above its last going.
     goingTopology: SourceFact<{ going: Millimetres; goingsPerFlight: number }>
     clearWidthTarget: SourceFact<Millimetres>
     reservation: SourceFact<{ min: Millimetres; max: Millimetres }>

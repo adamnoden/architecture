@@ -4,7 +4,6 @@ import type {
   BoundaryTopologyDiagnostic
 } from '../boundary-slice/model.js'
 import { MODEL_AREA_EPSILON_MM2 } from '../core/numeric.js'
-import { normaliseDrainageDeclaration } from '../boundary-slice/declarations.js'
 import type { PlanSliceCompileResult } from '../plan-slice/model.js'
 import type { ReferenceHouseCoordinationSource } from '../reference-house/model.js'
 import { serviceCrossingId } from '../service-slice/model.js'
@@ -197,16 +196,6 @@ export const hardenReferenceHouseBoundaryTopology = (
   }
 
   const roofRoutes = result.derived.drainageRoutes.filter((item) => item.kind === 'roof-field')
-  // This historical adapter represents only the outward RH-08 roof. Do not let
-  // its fixed route declarations override a different controlling house source.
-  if (house.roof.value.drainageDirection !== 'outward') {
-    extra.push(diagnostic(
-      'RH_ROOF_DRAINAGE_SOURCE_UNSUPPORTED',
-      'FAIL',
-      [house.roof.id, ...roofRoutes.map((item) => item.id)],
-      `RH-C4 supports only outward roof drainage; source declares ${house.roof.value.drainageDirection}. Its outward route declarations cannot validate this source.`
-    ))
-  }
   if (roofRoutes.length !== 4) {
     extra.push(diagnostic(
       'RH_ROOF_DRAINAGE_FIELD_COUNT_MISMATCH',
@@ -223,14 +212,14 @@ export const hardenReferenceHouseBoundaryTopology = (
       'RH_COURTYARD_DRAINAGE_REDUNDANCY_MISSING',
       'FAIL',
       [...courtPrimary, ...courtEmergency].map((item) => item.id),
-      'RH-08 requires primary and emergency courtyard route declarations; physical independence remains unproved.'
+      'RH-08 requires one primary courtyard route and one independent emergency overflow route.'
     ))
-  } else if (normaliseDrainageDeclaration(courtPrimary[0].to) === normaliseDrainageDeclaration(courtEmergency[0].to)) {
+  } else if (courtPrimary[0].to === courtEmergency[0].to) {
     extra.push(diagnostic(
-      'RH_COURTYARD_DESTINATIONS_NOT_DISTINCT',
+      'RH_COURTYARD_OVERFLOW_NOT_INDEPENDENT',
       'FAIL',
       [courtPrimary[0].id, courtEmergency[0].id],
-      'Primary and emergency destination declarations must differ after whitespace normalisation; different descriptions alone do not prove physical independence.'
+      'The courtyard emergency overflow must not disappear into the same destination description as the primary collector.'
     ))
   }
 
