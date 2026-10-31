@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
   "generation": 8,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "159ca45a-6ae5-4ddc-b848-6ea159652f44",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-782cae-root-materials"
   },
   "claimedAt": "2026-10-31T17:50:42.793Z",
-  "heartbeatAt": "2026-10-31T18:02:29.262Z",
-  "expiresAt": "2026-10-31T18:47:29.262Z",
+  "heartbeatAt": "2026-10-31T18:02:54.879Z",
+  "expiresAt": "2026-10-31T18:02:54.879Z",
   "branch": "work/swarm-782cae-interiors",
   "predecessor": {
     "leaseId": "7da738bf-93a5-473d-8385-4aa7b97264bf",
@@ -39,5 +39,7 @@
     "evidence": "PR #1162 merged as b3a11fa79906619e4d5889fc79c1fc73cb8f2a28. Accepted tree 830edea432e9172c102f2467fdbd7da198b0a1eb equals validated head 86c7c5aab4b44506ca95b900cb8f362771246c92. Full CI 41227047898 passed; fresh canonical preflight passed at 18:01:39.917 UTC. Independent sources, arithmetic, source identities and repository validation passed; remote branch absence verified.",
     "next": "Retain the named Conserv family and 24 mm adverse baseline. Resolve the actual inner-leaf surface, complete key/repair/edge constituents, supported coat thickness and coating/deviation allowance before adopting a thinner assembly or reconciling a finish-depth change. Solo composition and masonry-specific build-up remain unresolved.",
     "blocker": "MAT-INTERIORS remains planned. No complete installed finish, supplied-batch constituent pass, physical bond/repair evidence, owner exception or house source change is accepted."
-  }
+  },
+  "releasedAt": "2026-10-31T18:02:54.879Z",
+  "releaseReason": "handoff"
 }
