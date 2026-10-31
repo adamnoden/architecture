@@ -9,7 +9,11 @@
     "label": "swarm-epr-internal-20261031"
   },
   "claimedAt": "2026-10-31T20:18:18.662Z",
-  "heartbeatAt": "2026-10-31T20:18:18.662Z",
-  "expiresAt": "2026-10-31T21:48:18.662Z",
-  "branch": "work/swarm-internal-technical-review-20261031"
+  "heartbeatAt": "2026-10-31T20:32:22.476Z",
+  "expiresAt": "2026-10-31T22:02:22.476Z",
+  "branch": "work/swarm-internal-technical-review-20261031",
+  "checkpoint": {
+    "evidence": "Current accepted baseline 1378e24905ceca1713e217355eacd7fab01e2815 reconciled after 1175 ventilation and 1179 receiver support; source geometry pins verified and current triad0ff9e055 distinguished from historical789df054. Internal 33-question technical-answer draft prepared, root whole-document challenge passed subject to explicit DHW density units; independent FIRE1-7/MEP5-6 challenge passed. Embedded calculations and exact rational controls, repository/publication integrity and docs build passed on prior source. Draft is not yet published; no design adoption, physical evidence or external EPR completion is claimed.",
+    "next": "Apply DHW-unit clarification, record final internal review dispositions and current-main applicability, complete only EPR-DESK-REVIEW node/programme, run targeted checks and provide exact committed publication payload to root. Root will publish and bind actual PR/head before full CI and fresh preflight; external EPR-RH11 stays manual and incomplete."
+  }
 }
