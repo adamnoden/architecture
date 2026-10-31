@@ -1,5 +1,5 @@
 import type { CalculationCheckInput, CalculationMethod } from '../calculation-slice/model.js'
-import type { ReferenceHouseCompileResult, ReferenceHouseCoordinationSource } from '../reference-house/model.js'
+import type { ReferenceHouseCompileResult } from '../reference-house/model.js'
 import type { RhC4CompileResult } from '../rhc4/compile.js'
 
 export const privateStairGeometryMethod = {
@@ -78,12 +78,9 @@ export const privateStairGeometryMethod = {
 } as const satisfies CalculationMethod
 
 export const createReferenceHousePrivateStairInputFromHouse = (
-  house: ReferenceHouseCompileResult,
-  source: ReferenceHouseCoordinationSource
+  house: ReferenceHouseCompileResult
 ): CalculationCheckInput => {
   const stair = house.derived.stair
-  const riseSources = [source.levels.groundFfl.id, source.levels.firstFfl.id, source.stair.riseTopology.id]
-  const goingSources = [source.stair.goingTopology.id]
   return {
     id: 'RH-C5-REFERENCE-HOUSE-PRIVATE-STAIR',
     context: {
@@ -95,28 +92,27 @@ export const createReferenceHousePrivateStairInputFromHouse = (
       rise: {
         value: stair.rise,
         unit: 'mm',
-        sourceIds: [...riseSources]
+        sourceIds: ['RHCF-FFL-1', 'RHCF-STAIR-N']
       },
       going: {
         value: stair.going,
         unit: 'mm',
-        sourceIds: [...goingSources]
+        sourceIds: ['RHCF-STAIR-G']
       },
       pitch: {
         value: stair.pitch,
         unit: 'deg',
-        sourceIds: [...riseSources, ...goingSources]
+        sourceIds: ['RHCF-FFL-1', 'RHCF-STAIR-N', 'RHCF-STAIR-G']
       },
       twoRPlusG: {
         value: stair.twoRPlusG,
         unit: 'mm',
-        sourceIds: [...riseSources, ...goingSources]
+        sourceIds: ['RHCF-FFL-1', 'RHCF-STAIR-N', 'RHCF-STAIR-G']
       }
     }
   }
 }
 
 export const createReferenceHousePrivateStairInput = (
-  c4: RhC4CompileResult,
-  source: ReferenceHouseCoordinationSource
-): CalculationCheckInput => createReferenceHousePrivateStairInputFromHouse(c4.c3.c2.house, source)
+  c4: RhC4CompileResult
+): CalculationCheckInput => createReferenceHousePrivateStairInputFromHouse(c4.c3.c2.house)

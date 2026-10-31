@@ -133,7 +133,7 @@ describe('CH-05 determinism, identity and provenance', () => {
     )
     assert.deepEqual(
       result.lineage.privateStairGeometry.criteria['ADK-K1-PRIVATE-RISE'].sourceFactIds,
-      ['RHCF-FFL-1', 'RHCF-FFL-G', 'RHCF-STAIR-N']
+      ['RHCF-FFL-1', 'RHCF-STAIR-N']
     )
     assert.deepEqual(
       result.lineage.privateStairGeometry.criteria['ADK-K1-PRIVATE-GOING'].sourceFactIds,

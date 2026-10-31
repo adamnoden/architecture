@@ -503,7 +503,7 @@ Timber, tile and stone do not require identical substrates. Tile may need greate
 - acoustic seating;
 - replacement sequence.
 
-This proposes a **finish-agnostic floor platform**, whose extra interfaces must earn their depth, handling and reinstatement burden against an ordinary supported floor. The present house retains conventional dry floors; the more elaborate platform has not earned adoption.
+The result is a **finish-agnostic floor platform** rather than a removable timber floor.
 
 It must not feel temporary. In ordinary use the floor should be quiet, rigid and convincingly solid. Removability is a maintenance state, not an everyday aesthetic. Critical diaphragm action should normally remain in the structural layer rather than depend on routinely removable finish panels.
 

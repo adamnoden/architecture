@@ -8,9 +8,6 @@ on:
       - 'publication/specimens/typ03/open-fonts.ts'
       - 'docs/reference-house/publication-ground-floor-plan.svg'
       - 'docs/reference-house/publication-principal-section.svg'
-      - 'scripts/proof-scope.mjs'
-      - 'scripts/proof-scope.test.mjs'
-      - '.github/workflows/proof-scope.yml'
       - 'package.json'
       - 'package-lock.json'
   workflow_dispatch:
@@ -19,11 +16,7 @@ permissions:
   contents: read
 
 jobs:
-  scope:
-    uses: ./.github/workflows/proof-scope.yml
   proof:
-    needs: scope
-    if: needs.scope.outputs.run != 'false'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository

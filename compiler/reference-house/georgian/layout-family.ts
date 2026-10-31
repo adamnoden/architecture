@@ -40,25 +40,8 @@ export function createLayoutElevation(view:ElevationView,scale:100|50):DrawingSc
   line('cornice-lower',0,top-design.facade.corniceDepth,design.shell,top-design.facade.corniceDepth,'primary')
   line('cornice-fascia',0,top-60,design.shell,top-60)
  }
- scene.primitives.push(...layoutAperturePrimitives(view,model.apertures,p))
- let cursor=model.min
- for(const d of model.apertures.filter(a=>a.kind==='door'&&a.level==='GROUND').sort((a,b)=>a.u-b.u)){line('plinth-'+d.id,cursor,150,d.u-d.width/2,150);cursor=d.u+d.width/2}
- line('plinth-end',cursor,150,model.max,150);line('grade',model.min-100,-150,model.max+100,-150)
- for(const [id,z,value]of [['ground',0,'0.00'],['first',design.levels.first,'+3.45'],['eaves',top,'+6.80']] as const){line('level-'+id,model.min-250,z,model.min-50,z);text('datum-'+id,model.min-650,z+90,value)}
- text('height',6000,roofTop()+650,`Ridge +${(roofTop()/1000).toFixed(2)} m / eaves +6.80 m`)
- text('width',6000,-550,`${model.width/1000} m`)
- text('scope',6000,-1100,model.court?'Nominal joinery / profiles; court drainage and detailed closures unresolved':view==='SERVICE'?'Plant replacement door retained; roof-work access unresolved':'Nominal joinery / profiles; ground -150 mm / entrance threshold 0')
- return finish()
-}
-
-/** Shared face-on aperture convention. Its drawing plane does not select a frame setback. */
-export function layoutAperturePrimitives(view:ElevationView,apertures:ReturnType<typeof elevationSource>['apertures'],p:ReturnType<typeof createSectionPaperProjection>):DrawingSceneV2['primitives']{
- const out:DrawingSceneV2['primitives']=[]
- const model={apertures}
- const line=(id:string,x:number,z:number,xx:number,zz:number,role:DrawingLineRole='secondary')=>out.push({kind:'line',id,a:p.point(x,z),b:p.point(xx,zz),role,dash:undefined,metadata})
- const box=(id:string,x:number,z:number,w:number,h:number)=>out.push({kind:'path',id,rings:[[p.point(x,z),p.point(x+w,z),p.point(x+w,z+h),p.point(x,z+h)]],stroke:'secondary',fill:'none',dash:undefined,metadata})
  for(const a of model.apertures){
-  if(a.kind==='window')out.push(...framedApertureToDrawingPrimitives({id:a.id,left:a.u-a.width/2,bottom:a.sill,width:a.width,height:a.head-a.sill,frameInset:design.facade.frameFace,columns:3,rows:4,head:{height:design.facade.headHeight,projection:0},sill:{height:60,projection:design.facade.sillProjection},role:'secondary',outlineRole:'primary',provenance},p))
+  if(a.kind==='window')scene.primitives.push(...framedApertureToDrawingPrimitives({id:a.id,left:a.u-a.width/2,bottom:a.sill,width:a.width,height:a.head-a.sill,frameInset:design.facade.frameFace,columns:3,rows:4,head:{height:design.facade.headHeight,projection:0},sill:{height:60,projection:design.facade.sillProjection},role:'secondary',outlineRole:'primary',provenance},p))
   else{
    if(view==='FRONT'){
     box(a.id,a.u-a.width/2,a.sill,a.width,a.head-a.sill)
@@ -72,12 +55,19 @@ export function layoutAperturePrimitives(view:ElevationView,apertures:ReturnType
    }else{
     const joinery=framedApertureToDrawingPrimitives({id:a.id,left:a.u-a.width/2,bottom:a.sill,width:a.width,height:a.head-a.sill,frameInset:design.facade.frameFace,columns:a.leaves,rows:1,role:'secondary',outlineRole:'primary',provenance},p)
     for(const q of joinery)if(q.id===a.id+'-outline')q.id=a.id
-    out.push(...joinery)
+    scene.primitives.push(...joinery)
    }
    line(a.id+'-threshold',a.u-a.width/2-80,a.sill+50,a.u+a.width/2+80,a.sill+50,'primary')
   }
  }
- return out
+ let cursor=model.min
+ for(const d of model.apertures.filter(a=>a.kind==='door'&&a.level==='GROUND').sort((a,b)=>a.u-b.u)){line('plinth-'+d.id,cursor,150,d.u-d.width/2,150);cursor=d.u+d.width/2}
+ line('plinth-end',cursor,150,model.max,150);line('grade',model.min-100,-150,model.max+100,-150)
+ for(const [id,z,value]of [['ground',0,'0.00'],['first',design.levels.first,'+3.45'],['eaves',top,'+6.80']] as const){line('level-'+id,model.min-250,z,model.min-50,z);text('datum-'+id,model.min-650,z+90,value)}
+ text('height',6000,roofTop()+650,`Ridge +${(roofTop()/1000).toFixed(2)} m / eaves +6.80 m`)
+ text('width',6000,-550,`${model.width/1000} m`)
+ text('scope',6000,-1100,model.court?'Nominal joinery / profiles; court drainage and detailed closures unresolved':view==='SERVICE'?'Plant replacement door retained; roof-work access unresolved':'Nominal joinery / profiles; ground -150 mm / entrance threshold 0')
+ return finish()
 }
 
 export function createLayoutSection(view:'PRINCIPAL'|'SERVICE-SECTION',scale:100|50|25){

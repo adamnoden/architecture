@@ -1,7 +1,5 @@
 # Reference House — RH-C0 Model Baseline
 
-**Applicability:** this is retained predecessor evidence, not a current-house acceptance record. Dimensions, selections and “current” statements below refer to its named historical baseline. See [Current House Basis](current-house-basis.md) for the accepted revision-02 source and the specific rechecks/owners; no proof identity is changed here.
-
 **Status:** **RH-C0 PASS — controlled pre-compiler fixture frozen; HFI-08B stair fact refreshed**  
 **Date:** 2026-10-12; HFI-08B refresh 2026-10-19  
 **Reference House maturity:** **M3 — Coordinated at virtual-design scope (unchanged)**  
