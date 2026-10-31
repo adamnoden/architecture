@@ -9,8 +9,8 @@
     "label": "swarm-access-recovery-mat-a-983b7ee"
   },
   "claimedAt": "2026-10-31T16:50:20.509Z",
-  "heartbeatAt": "2026-10-31T16:53:33.961Z",
-  "expiresAt": "2026-10-31T17:38:33.961Z",
+  "heartbeatAt": "2026-10-31T16:57:23.981Z",
+  "expiresAt": "2026-10-31T17:42:23.981Z",
   "branch": "work/swarm-access-recovery-20261031",
   "predecessor": {
     "leaseId": "969557ee-4ce8-435f-9ca3-c8899addae15",
@@ -29,8 +29,7 @@
   },
   "pr": 1150,
   "checkpoint": {
-    "evidence": "PR 1150 publishes reviewed common head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 / tree e235ccc6c960795483ba906f10dae0a2ff01ec07 on unchanged main 2512f116. Native fetch verified exact tree and all three published source parents. Independent source/architectural reviews and combined owner-byte, repository/publication and docs checks pass. Fresh generation reacquired after delayed publication outlasted earlier claims; no expired request replayed.",
-    "next": "Observe full exact-head CI, verify all three common source owners, run three fresh canonical merge-checks and expected-head merge, then verify accepted main and release. All three nodes remain planned.",
-    "blocker": "Full published-head CI and fresh preflights pending; no complete installed assembly, material, hydraulic or physical pass."
+    "evidence": "PR 1150 merged as 03bba64db58024cf8bfdd7c1f7afa865e9b072c8. Fresh native main verification confirms accepted tree e235ccc6c960795483ba906f10dae0a2ff01ec07 equals full-CI head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 and all three reviewed remote source parents are ancestors. Full CI 41221814322 succeeded; all three canonical preflights passed at 16:56:05/11/16 UTC. Common feature and all intended individual source refs are absent; no source branch was published this round. Bounded results only, no lifecycle completion.",
+    "next": "MAT-ENVELOPE remains planned. Resolve the actual mineral DPC, floor return, clear-cavity or drained-tray junction and constituent-qualified outlets/supports. Preserve the lowest relevant DPC datum, structural fill role and passive site-water conditions."
   }
 }
