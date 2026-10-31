@@ -28,14 +28,14 @@ h1{font-size:25px}
 <text x="109" y="201" class="note">vulnerable</text>
 <text x="109" y="217" class="note">boundary?</text>
 <rect x="217" y="208" width="557" height="46" class="bed"/>
-<text x="525" y="236" text-anchor="middle">continuous backing / concealed wetting</text>
+<text x="796" y="192" class="note">concealed contact</text>
 <path d="M217 169 L217 207 L773 207 L773 169" class="metal"/>
 <path d="M452 154 L452 192" class="water"/>
 <text x="471" y="163" class="note">normal rainwater</text>
 <circle cx="504" cy="207" r="7" fill="#a34b3d"/>
 <path d="M504 216 C459 250 339 246 222 247" class="leak"/>
 <path d="M504 216 C568 267 672 254 793 260" class="leak"/>
-<text x="444" y="186" class="note">defect</text>
+<text x="520" y="189" class="note">defect</text>
 <text x="796" y="235" class="note">first drip?</text>
 <text x="796" y="253" class="note">unknown</text>
 <text x="60" y="284" class="note">A visible outlet somewhere along the bed does not show that all leaks reach it before the wall.</text>
@@ -48,7 +48,7 @@ h1{font-size:25px}
 <text x="280" y="402" text-anchor="middle" class="note">separation</text>
 <text x="280" y="419" text-anchor="middle" class="note">and access</text>
 <rect x="365" y="440" width="450" height="46" class="bed"/>
-<text x="586" y="469" text-anchor="middle">qualified support: wettable until proved otherwise</text>
+<text x="837" y="418" class="note">support may wet</text>
 <path d="M365 400 L365 439 L814 439 L814 400" class="metal"/>
 <circle cx="559" cy="440" r="7" fill="#a34b3d"/>
 <path d="M562 448 C645 494 730 487 844 495" class="leak"/>
