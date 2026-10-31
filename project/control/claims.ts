@@ -4,7 +4,7 @@ import type { ControlNode, DerivedNodeState, NodeId } from './types.js'
 export const claimsBranch = 'runtime/claims'
 export const claimsDirectory = '.pco/claims'
 export const claimSchemaVersion = 1 as const
-export const defaultLeaseMinutes = 45
+export const defaultLeaseMinutes = 120
 export const minimumLeaseMinutes = 15
 export const maximumLeaseMinutes = 8 * 60
 export const expiryGraceMs = 2 * 60 * 1000
@@ -25,31 +25,6 @@ export interface SupersededLease {
   reason: string
 }
 
-/** Historical evidence pointer, not transferred ownership or validated current progress. */
-/** Most recent durable remote evidence, retained across repeated empty successor runs. */
-export interface RecoverySource {
-  leaseId: string
-  generation: number
-  branch: string
-  pr?: number
-  checkpoint: RecoveryCheckpoint
-}
-
-export interface PredecessorClaim {
-  leaseId: string
-  generation: number
-  branch?: string
-  pr?: number
-  checkpoint?: RecoveryCheckpoint
-}
-
-export interface RecoveryCheckpoint {
-  /** Recoverable repository/PR evidence; never a path in another agent's scratch space. */
-  evidence: string
-  next: string
-  blocker?: string
-}
-
 export interface ClaimRecord {
   schemaVersion: typeof claimSchemaVersion
   node: NodeId
@@ -62,25 +37,19 @@ export interface ClaimRecord {
   expiresAt: string
   branch?: string
   pr?: number
-  checkpoint?: RecoveryCheckpoint
   note?: string
   releasedAt?: string
   releaseReason?: 'completed' | 'handoff' | 'abandoned' | 'superseded' | 'other'
   supersedes?: SupersededLease
-  predecessor?: PredecessorClaim
-  recoverySource?: RecoverySource
 }
 
 export interface ClaimMetadata {
   branch?: string
   pr?: number
-  checkpoint?: RecoveryCheckpoint
   note?: string
 }
 
 export interface AcquireClaimInput extends ClaimMetadata {
-  predecessor?: PredecessorClaim
-  recoverySource?: RecoverySource
   node: NodeId
   generation: number
   leaseId: string
@@ -167,15 +136,6 @@ export function parseClaimRecord(raw: string, expectedNode?: NodeId): ClaimRecor
   if (!isIsoDate(value.claimedAt) || !isIsoDate(value.heartbeatAt) || !isIsoDate(value.expiresAt)) {
     throw new Error('Claim record has invalid lease timestamps')
   }
-  if (Date.parse(value.claimedAt as string) > Date.parse(value.heartbeatAt as string) || Date.parse(value.heartbeatAt as string) > Date.parse(value.expiresAt as string)) {
-    throw new Error('Lease timestamps must satisfy claimedAt <= heartbeatAt <= expiresAt')
-  }
-  if (value.checkpoint !== undefined) {
-    const c = value.checkpoint
-    if (!isRecord(c) || !nonEmptyString(c.evidence) || !nonEmptyString(c.next) || !optionalNonEmptyString(c.blocker)) {
-      throw new Error('Invalid recovery checkpoint: evidence and next are required')
-    }
-  }
   if (!optionalNonEmptyString(value.branch) || !optionalNonEmptyString(value.note)) {
     throw new Error('Claim branch/note must be non-empty when present')
   }
@@ -185,30 +145,6 @@ export function parseClaimRecord(raw: string, expectedNode?: NodeId): ClaimRecor
     if (!isIsoDate(value.releasedAt)) throw new Error('Released claim requires releasedAt')
     if (!['completed', 'handoff', 'abandoned', 'superseded', 'other'].includes(String(value.releaseReason))) {
       throw new Error('Released claim requires a valid releaseReason')
-    }
-  }
-
-  if (value.recoverySource !== undefined) {
-    const r = value.recoverySource
-    if (!isRecord(r) || !nonEmptyString(r.leaseId) || !Number.isInteger(r.generation) || Number(r.generation) < 1 || Number(r.generation) >= Number(value.generation) || r.leaseId === value.leaseId || !nonEmptyString(r.branch)) {
-      throw new Error('Invalid retained recovery source identity')
-    }
-    if (r.pr !== undefined && (!Number.isInteger(r.pr) || Number(r.pr) <= 0)) throw new Error('Invalid retained recovery PR')
-    if (!isRecord(r.checkpoint) || !nonEmptyString(r.checkpoint.evidence) || !nonEmptyString(r.checkpoint.next) || !optionalNonEmptyString(r.checkpoint.blocker)) {
-      throw new Error('Invalid retained recovery source checkpoint')
-    }
-  }
-
-  if (value.predecessor !== undefined) {
-    const p = value.predecessor
-    if (!isRecord(p) || !nonEmptyString(p.leaseId) || !Number.isInteger(p.generation) || Number(p.generation) < 1 || Number(p.generation) >= Number(value.generation) || p.leaseId === value.leaseId) {
-      throw new Error('Invalid predecessor lease identity/generation')
-    }
-    if (!optionalNonEmptyString(p.branch) || (p.pr !== undefined && (!Number.isInteger(p.pr) || Number(p.pr) <= 0))) {
-      throw new Error('Invalid predecessor branch/PR')
-    }
-    if (p.checkpoint !== undefined && (!isRecord(p.checkpoint) || !nonEmptyString(p.checkpoint.evidence) || !nonEmptyString(p.checkpoint.next) || !optionalNonEmptyString(p.checkpoint.blocker))) {
-      throw new Error('Invalid predecessor checkpoint')
     }
   }
 
@@ -263,18 +199,6 @@ export function createClaimRecord(input: AcquireClaimInput): ClaimRecord {
   if (!Number.isFinite(now.getTime())) throw new Error('Claim time is invalid')
   if (!Number.isInteger(input.generation) || input.generation < 1) throw new Error('Claim generation must be positive')
   if (!nonEmptyString(input.leaseId)) throw new Error('Claim leaseId must be non-empty')
-  if (input.predecessor && (input.predecessor.generation >= input.generation || input.predecessor.leaseId === input.leaseId)) {
-    throw new Error('Predecessor must identify an older, distinct lease')
-  }
-  if (input.recoverySource && (input.recoverySource.generation >= input.generation || input.recoverySource.leaseId === input.leaseId)) {
-    throw new Error('Recovery source must identify an older, distinct lease')
-  }
-  if (input.recoverySource?.branch && input.branch === input.recoverySource.branch) {
-    throw new Error('Recovery must not reuse the source branch')
-  }
-  if (input.predecessor?.branch && input.branch === input.predecessor.branch) {
-    throw new Error('Recovery must not reuse the predecessor branch')
-  }
 
   const expires = new Date(now.getTime() + ttl * 60 * 1000)
   return {
@@ -287,35 +211,16 @@ export function createClaimRecord(input: AcquireClaimInput): ClaimRecord {
     claimedAt: now.toISOString(),
     heartbeatAt: now.toISOString(),
     expiresAt: expires.toISOString(),
-    ...(input.checkpoint ? { checkpoint: input.checkpoint } : {}),
     ...(input.branch ? { branch: input.branch } : {}),
     ...(input.pr ? { pr: input.pr } : {}),
     ...(input.note ? { note: input.note } : {}),
-    ...(input.supersedes ? { supersedes: input.supersedes } : {}),
-    ...(input.predecessor ? { predecessor: input.predecessor } : {}),
-    ...(input.recoverySource ? { recoverySource: input.recoverySource } : {})
+    ...(input.supersedes ? { supersedes: input.supersedes } : {})
   }
-}
-
-/** An evidence pointer, never an acceptance or ownership claim. */
-export function lastRecoverableEvidence(record: ClaimRecord): RecoverySource | null {
-  if (record.branch && record.checkpoint) return {
-    leaseId: record.leaseId, generation: record.generation, branch: record.branch,
-    ...(record.pr ? { pr: record.pr } : {}), checkpoint: record.checkpoint
-  }
-  if (record.recoverySource) return record.recoverySource
-  if (record.predecessor?.branch && record.predecessor.checkpoint) return {
-    leaseId: record.predecessor.leaseId, generation: record.predecessor.generation,
-    branch: record.predecessor.branch,
-    ...(record.predecessor.pr ? { pr: record.predecessor.pr } : {}),
-    checkpoint: record.predecessor.checkpoint
-  }
-  return null
 }
 
 export function nextNormalAcquisition(
   previous: ClaimRecord | null,
-  input: Omit<AcquireClaimInput, 'generation' | 'predecessor' | 'recoverySource'>
+  input: Omit<AcquireClaimInput, 'generation'>
 ): ClaimRecord {
   if (previous) {
     const state = leaseTemporalState(previous, input.now)
@@ -326,15 +231,7 @@ export function nextNormalAcquisition(
 
   return createClaimRecord({
     ...input,
-    generation: previous ? previous.generation + 1 : 1,
-    ...(previous && lastRecoverableEvidence(previous) ? { recoverySource: lastRecoverableEvidence(previous)! } : {}),
-    ...(previous ? { predecessor: {
-      leaseId: previous.leaseId,
-      generation: previous.generation,
-      ...(previous.branch ? { branch: previous.branch } : {}),
-      ...(previous.pr ? { pr: previous.pr } : {}),
-      ...(previous.checkpoint ? { checkpoint: previous.checkpoint } : {})
-    } } : {})
+    generation: previous ? previous.generation + 1 : 1
   })
 }
 
@@ -384,7 +281,6 @@ export function renewClaim(
     expiresAt: expires.toISOString(),
     ...(metadata.branch !== undefined ? { branch: metadata.branch } : {}),
     ...(metadata.pr !== undefined ? { pr: metadata.pr } : {}),
-    ...(metadata.checkpoint !== undefined ? { checkpoint: metadata.checkpoint } : {}),
     ...(metadata.note !== undefined ? { note: metadata.note } : {})
   }
 }

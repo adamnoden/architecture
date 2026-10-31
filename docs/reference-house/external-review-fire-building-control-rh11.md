@@ -1,44 +1,198 @@
-# Reference House — Fire and Building-Control Review Brief
+# Reference House — RH-11 Fire & Building-Control Review Brief
 
-**Reviewed architectural basis:** RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02, source snapshot 29 October 2026. [Current House Basis](current-house-basis.md) identifies the accepted source; [review applicability](../../project/epr/current-house-review-applicability.md) records its exact identities and the replaced predecessor inputs.  
-**Status:** current questions prepared; unissued, with no competent review response or technical acceptance. The source package must be fixed at issue and any changed geometry or system reconciled first.
+**Status:** ready for competent fire / building-control practitioner review  
+**Parent pack:** [RH-11 External Review Brief](external-review-brief.md)  
+**Current project maturity:** M3 coordinated virtual design; **no compliance claim**
 
-This brief supersedes the predecessor geometry in this discipline's review preparation. The earlier three-flight stair, +3300 mm upper floor and outward low-slope roof are historical evidence, not inputs to the present review. Use the [parent questions](external-review-brief.md), [regulatory snapshot](external-review-regulatory-baseline-rh11.md) and [response template](external-review-response-template-rh11.md) with this brief.
+## Review question
 
-## Decision to resolve
+> **Does the current two-storey house admit a credible ordinary dwelling compliance route without hidden fire/access contradictions that would materially change the stair, openings, service core, entrance/WC or occupied-interface strategy?**
 
-What coherent escape, fire-separation and falls-protection strategy can the actual two-storey house support, and what architecture must change before technical design? Establish the intended jurisdiction, occupancy and regulatory route with the project; England is the present research assumption, not a site fact. Do not assume an access category, a protected stair or a window-escape strategy has already been selected.
+The reviewer is asked to challenge the current route, not to certify a virtual building with no site or technical specification.
 
-## Current facts that matter
+---
 
-The 12 × 12 m house has a 3.5 m square open court, a +3450 mm upper floor, two stair flights with 20 rises, an entrance void and an upper bridge. The ordinary ground ceiling is +3100 mm. The stair, open entrance volume, upper landing and bedroom routes form one smoke/escape problem; no enclosure or compensating measure is demonstrated.
+## 1. Current regulatory baseline
 
-Flights are nominally 1100 mm wide, the west gallery 1015 mm and the bridge 1120 mm. These are source dimensions before selected rails, guards, finishes and opening hardware. The 2275 × 2295 mm void has no selected guard. An actual stair aperture and trimmer soffit are required for continuous headroom assessment.
+Use the date-stamped [RH-11 Regulatory Baseline](external-review-regulatory-baseline-rh11.md) and state the versions actually relied upon.
 
-Typical windows are nominally 1000 mm wide with sill +750 mm and head +2850 mm relative to their storey. These dimensions are not clear opening, usable escape area or a hardware specification. The nominal 1800 mm paired entrance is not one 1800 mm clear leaf. Court and outside grade of −150 mm against threshold 0 are schematic; no accessible approach, safe external landing or final discharge has been designed.
+In particular, the review should use the **current Approved Document B Volume 1 position as at October 2026**, not an older RH-03/RH-10 citation by habit.
 
-The fully allocated floor and the 550 × 700 mm gross riser must support their own structural, fire, acoustic and access boundaries. No ventilation route, PV field, stove/flue or heating product is selected by this review preparation.
+The current project assumes only a baseline Category-1 / M4(1) dwelling because no planning permission exists requiring M4(2) or M4(3).
 
-The later [court-level comparison](../../project/had/had-03-court-levels.md) proposes walking level 0 over a lower water plane, but remains unadopted. Its trial sill/pan levels and water target establish neither a dry safe destination nor access compliance. Review the actual threshold, removable surfaces and water/escape sequence together if that option proceeds.
+Approved Documents are guidance, not the legislation itself; flag any better or necessary alternate compliance route.
 
-## Questions and required evidence
+---
 
-| Question | Evidence needed | Owning correction |
-|---|---|---|
-| **FIRE-1 — Escape and smoke.** Does the open entrance/bridge/stair arrangement support a defensible strategy for every bedroom and ordinary night-time use? | Located escape routes, smoke movement assumptions, warning/alarm strategy, enclosure/fire-resistance needs and applicable guidance or justified alternative | HAD and the stair/entrance owner must compare enclosure, route and plan changes; an alarm alone must not be presumed to cure geometry |
-| **FIRE-2 — Windows and court.** Which openings, if any, form part of escape, rescue or ventilation, and where do they actually lead? | Selected clear opening/hardware/restrictor positions, reach and external receiving conditions; court route with blocked roof drainage and rain considered | OAS/HAD/RWT must reconcile windows, guards, court discharge and access. An open-to-sky court is not automatically a safe escape destination |
-| **FIRE-3 — Stair, bridge and falling.** How do guarding, handrails, collision/glazing protection and headroom work together? | Continuous finished sections and complete-action checks with the actual aperture, trimmers, rail projections and guard fixing loads | HAD/structure/OAS; no statutory pass follows from nominal going/rise or an isolated nosing check |
-| **FIRE-4 — Compartments and penetrations.** How are floor, service enclosure, duct, pipe and access-panel duties maintained during normal use and replacement? | Selected assemblies, classified/tested details applicable to actual substrates and movements, installation/inspection access and reinstatement method | IAS/OAS/services and structure; decorative trim or a removable panel is not the primary fire boundary |
-| **FIRE-5 — Roof and equipment.** Do the eventual roof assembly, cavity paths, penetrations and selected equipment introduce additional fire duties? | Actual ROF system, boundary distances/site information, equipment and any PV/storage/flue arrangement before appraisal | ROF/OAS/DPL and services. Do not review the historical low-slope PV layout as the accepted roof |
-| **FIRE-6 — Access and sanitary provision.** Which access requirements apply, and what current geometry can support them? | Actual application/planning basis, finished entry route, thresholds, door sweeps, WC use and any required sleeping/washing adaptation | HAD/HFI/IAS/DPL. The ground WC is not a demonstrated shower room; a change in category may require plan revision |
-| **FIRE-7 — Security and opening compatibility.** Can secure locking, restrictors and everyday ventilation coexist with any escape/rescue role? | Selected door/window hardware, usable opening/release sequence, security evidence and actual site risk | OAS/HAD with the fire/access reviewer; no nominal aperture proves either security or escape |
+## 2. Controlled architectural facts
 
-## Ordinary adverse cases
+### House / levels
 
-Review smoke affecting the open stair at night; a window whose secure/restricted mode defeats the proposed escape action; and water or a removed receiver obstructing the court route. Separately test a service replacement that leaves the primary fire boundary open. State which failures require architectural change and which can be closed by an applicable technical detail.
+- two principal storeys;
+- first-floor FFL **+3.300 m** above ground FFL;
+- ground clear ceiling **+2.950 m**;
+- four first-floor bedrooms;
+- principal three-flight stair in the entrance hall;
+- no basement or habitable roof storey;
+- open central courtyard;
+- garden/rear and side external routes remain part of the maintenance / escape geography but no real site boundary exists.
 
-## Issue inputs and return route
+### Current escape proposition
 
-Use the [occupation study](../../project/bcr/bcr-occupation-result.md), [structural study](../../project/bcr/bcr-structure-result.md), [services study](../../project/bcr/bcr-services-result.md), current roof/rainwater studies and [construction-resolution findings](../../project/bcr/construction-resolution-matrix.md). The [human-factors brief](external-review-human-factors-inclusive-design-rh11.md) concerns complete use, not a substitute for statutory assessment.
+RH-10 carries a project-level assumption that each first-floor bedroom retains an **outer-façade emergency-escape-window duty**.
 
-Record the exact reviewed source, the adopted statutory/guidance basis and unresolved inputs. Route findings through BCR to the named architectural/assembly owner and HRS. No guidance correspondence, internal drawing or prepared review package establishes compliance, a building-control decision or competent fire advice.
+Current planning opening family is broadly:
+
+- width about 900–950 mm;
+- sill about 800 mm above first FFL;
+- opening height about 1550 mm.
+
+Actual sash/frame free opening is not designed. RH-10 therefore asserts only geometric plausibility, not compliance.
+
+The stair is **not currently treated as a protected stair enclosure solely to rescue first-floor bedrooms**.
+
+### Ground-floor visitability
+
+Current intention:
+
+- principal entrance and internal ground floor substantially step-free;
+- `TH-02` principal entrance threshold to be substantially level / weathered / replaceable;
+- entrance-storey WC `G-WC-01` retained within the tight south service band;
+- socket/switch positions are not placed at skirting level;
+- real-site approach gradient/levels remain unknown.
+
+### Service / interface conditions
+
+- `SV-01` is an approximately **900 × 700 mm clear** service zone crossing the first floor;
+- MVHR trunks, soil/vent, water and dry services share that bounded geography with separation/support still unresolved;
+- `G-PLANT-01` contains MVHR, DHW/hydraulics, electrical/control and riser access;
+- numerous structural/envelope penetrations are registered in the [Service Crossing Register](service-crossing-register-rh06.md);
+- `W0` direct plaster is baseline; `W1` selective attachment/service datums; `W2` removable lining remains experimental;
+- wall/ceiling movement junction `WCJ-01` deliberately avoids brittle bridging and will be physically tested at P04;
+- PV is reserved on the low-slope roof, but no battery is selected.
+
+---
+
+## 3. Review documents / drawings
+
+Primary:
+
+1. [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md)
+2. [RH-03 Stair / Upper Floor Development](upper-floor-and-stair-development.md)
+3. [RH-03 stair section](stair-courtyard-section.svg)
+4. [RH-04 Plan / Section / Elevation Gate](plan-section-elevation-gate.md)
+5. [RH-04 principal section](principal-section-rh04.svg)
+6. [RH-10 outer elevation coordination](outer-elevation-coordination-rh10.md)
+7. [RH-06 Services and Failure Geography](service-topology-rh06.md)
+8. [RH-07 MVHR Addendum](service-topology-rh07-mvhr-addendum.md)
+9. [Service Crossing Register](service-crossing-register-rh06.md)
+10. [RH-09 Tectonic Integration](tectonic-integration-rh09.md)
+11. [RH-10 Energy / Heat / Renewable Coordination](energy-heat-coordination-rh10.md)
+12. [External Access & Maintenance Plan](external-access-maintenance-plan.md)
+
+---
+
+## 4. Questions requiring review
+
+### Means of escape / warning
+
+1. Is the current **escape-window-led first-floor strategy** a credible ordinary route for this two-storey geometry under the current ADB guidance?
+2. Does the open relationship of entrance hall, stair and adjacent rooms create a condition RH-10 has understated even if bedroom escape windows are available?
+3. What exact doors / enclosure / detection arrangement would normally be required at this geometry, and does any requirement materially alter the architectural plan?
+4. Are rear-bedroom escape windows useful only if a safe route from rear garden toward the street is preserved, and what site/boundary assumptions must be tested later?
+5. Could the courtyard create an escape misconception—i.e. an apparently external route that is actually an enclosed court without a final exit?
+6. What duties should be placed on opening restrictors, sash geometry and security hardware so `OW-01` can satisfy both normal safety/security and emergency escape?
+
+### Internal fire spread / service geography
+
+7. What fire-resistance / closure obligations should be expected around `SV-01`, `PEN-SV-01`, floor edge and other registered service penetrations?
+8. Is the proposal to keep active dampers/components out of inaccessible floor zones sufficient, or are additional access/fire-stopping constraints needed at MVHR branches?
+9. Do W1 attachment zones, removable skirting routes or any possible future W2 lining introduce cavity / concealed-spread / reinstatement risks that must alter RH-09?
+10. What must P04 wall/ceiling-junction testing preserve so movement accommodation does not weaken fire/smoke performance where such a boundary exists?
+11. Are courtyard / external cavity barriers and opening-edge conditions likely to create visible architectural consequences at the current masonry/opening geometry?
+
+### Roof / PV
+
+12. Does the low-slope roof + PV reserve create any current fire-safety obligation that should change array zoning, cable routes, roof access or separation from openings/terminals?
+13. Is keeping inverter/isolation in accessible service geography a sound first principle, and what additional fire/electrical access duties should be carried into technical design?
+14. Does the absence of a permanent roof hatch create any fire/building-control issue distinct from occupational maintenance safety?
+
+### Access / use
+
+15. Is the intended M4(1) principal approach / substantially level entrance / ground-floor circulation credible at current architectural resolution?
+16. Is the current `G-WC-01` / utility reservation likely to accommodate the required Category-1 entrance-storey WC geometry without altering the shell?
+17. What door / corridor / approach widths should be frozen architecturally before later joinery/lining steals the available clearance?
+18. Are courtyard and garden thresholds being treated correctly as separate from the principal visitable entrance duty?
+
+### Other Building Regulations interfaces
+
+19. Does the replaceable-window / replaceable-door logic create any conflict with current Part Q security expectations?
+20. Are any Part K guarding/fall issues likely at courtyard windows, stair windows or low-sill upper openings that RH-04 has not allowed for?
+21. Are there foreseeable Part E / fire-interface conflicts around plant, bathroom, soil stack or service riser that should change room/partition geometry rather than only construction build-up?
+
+---
+
+## 5. Required red-team cases
+
+### F-RT1 — escape windows fail as installed
+
+Assume the chosen G-01 sash/window family cannot produce the required unobstructed emergency opening while also meeting security/fall/weathering duties.
+
+- Can another opening mechanism fit within the same architectural opening?
+- If not, which RH-04 elevation coordinates must reopen?
+- Would a protected-stair strategy be a proportionate alternative or a more damaging rescue?
+
+### F-RT2 — stair enclosure becomes necessary
+
+Assume competent fire design concludes the stair/hall relationship needs materially more enclosure than the current architecture anticipates.
+
+- Which ground/upper openings or circulation relationships move?
+- Does the front→court sequence survive?
+- At what point is this an RH-03/RH-04 rewind rather than joinery design?
+
+### F-RT3 — service-shaft closure grows
+
+Assume `SV-01` needs a materially thicker fire/acoustic enclosure, larger access doors or compartment-specific treatment.
+
+- Can the current **900 × 700 mm clear** zone survive?
+- If not, should services reduce/split before the architectural service block grows?
+
+### F-RT4 — M4(1) WC conflict
+
+Assume the current south service-band partition cannot fit the required WC use/access geometry alongside the utility function.
+
+- Confirm whether utility area should yield first as RH-10 directs.
+- State the minimum architectural reservation worth protecting before technical design.
+
+---
+
+## 6. Rewind conditions
+
+Treat these as likely architectural rewinds if confirmed:
+
+1. the first-floor escape strategy cannot work within the current outer opening families and materially different openings/stair enclosure are required;
+2. a protected stair or fire-resisting lobby arrangement materially breaks the RH-03 circulation or RH-04 court/front sequence;
+3. `SV-01` fire closure makes the current clear service reservation unworkable after reasonable service simplification;
+4. cavity barriers / structural fire measures require material movement of the controlled façade/courtyard openings;
+5. M4(1) entrance/WC requirements cannot fit without moving primary ground-floor boundaries or enlarging the shell;
+6. PV/fire requirements force a materially different roof geometry or access strategy;
+7. Part Q/security and emergency-escape duties cannot coexist in the selected opening family without architectural change.
+
+A different door rating, alarm specification, fire-stop product or local lining build-up within the same architecture is **not** automatically a rewind.
+
+---
+
+## 7. What the project wants back
+
+Please return:
+
+- overall fire/building-control disposition;
+- the current ordinary compliance route you believe is most credible;
+- any condition where the project is relying on an outdated or oversimplified reading of current guidance;
+- exact architectural reservations that should be protected now;
+- material findings / rewinds;
+- specialist fire-stopping / cavity / PV questions requiring another expert;
+- at least two ordinary counterexamples that would break the current route;
+- the exact guidance / standards / versions used.
+
+The project does **not** need a compliance certificate at RH-11. It needs to know whether the coordinated architecture has painted itself into a regulatory corner.

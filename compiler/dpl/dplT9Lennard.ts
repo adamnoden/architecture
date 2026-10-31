@@ -1,5 +1,4 @@
 import { readFileSync } from 'node:fs'
-import { createHash } from 'node:crypto'
 import { resolve } from 'node:path'
 import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPLT8LennardSubstantiveDisposition } from './dplT8Lennard.js'
@@ -17,11 +16,6 @@ export const DPL_T9_PLANNING_REVIEW_PATH =
   'project/dpl/dpl-t9-lennard-planning-context-review.md' as const
 export const DPL_T9_BASE_STRUCTURAL_BRIEF_PATH =
   'docs/reference-house/external-review-structural-rh11.md' as const
-// Exact pre-refresh bytes for the historical Lennard candidate, not current-house applicability.
-export const DPL_T9_HISTORICAL_STRUCTURAL_BRIEF_PATH =
-  'project/dpl/evidence-briefs/rh11-structural-pre-refresh.txt' as const
-export const DPL_T9_HISTORICAL_STRUCTURAL_BRIEF_BLOB =
-  '9ee85484ab6972a1063c4226c643f5bed146f8d8' as const
 
 export const dplT9Dispositions = [
   'RESOLVED_BOUNDED_PROJECT_AUTHORITY',
@@ -145,24 +139,11 @@ const readAuthorityEvidence = (): { record: T9AuthorityEvidence; fingerprint: st
   return { record, fingerprint: sha256SemanticFingerprint(record), sourceIds }
 }
 
-/** Historical byte identity is required before replay; current briefs cannot substitute. */
-export const assertDPLT9HistoricalStructuralBrief = (baseStructural: string): void => {
-  const bytes = Buffer.from(baseStructural, 'utf8')
-  const historicalBlob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
-  if (historicalBlob !== DPL_T9_HISTORICAL_STRUCTURAL_BRIEF_BLOB) {
-    throw new Error('DPL-T9 historical RH-11 source identity drifted.')
-  }
-}
-
 const assertBriefs = (): void => {
   const structural = readText(DPL_T9_STRUCTURAL_BRIEF_PATH)
   const geometry = readText(DPL_T9_GEOMETRY_BRIEF_PATH)
   const planning = readText(DPL_T9_PLANNING_REVIEW_PATH)
-  const baseStructural = readText(DPL_T9_HISTORICAL_STRUCTURAL_BRIEF_PATH)
-  assertDPLT9HistoricalStructuralBrief(baseStructural)
-  if (!structural.includes(DPL_T9_HISTORICAL_STRUCTURAL_BRIEF_PATH)) {
-    throw new Error('DPL-T9 historical structural brief binding drifted.')
-  }
+  const baseStructural = readText(DPL_T9_BASE_STRUCTURAL_BRIEF_PATH)
   if (!structural.includes(DPL_T9_BASE_STRUCTURAL_BRIEF_PATH)) throw new Error('DPL-T9 structural base brief binding drifted.')
   if (!baseStructural.includes('no structural adequacy claim')) throw new Error('DPL-T9 RH-11 authority boundary drifted.')
   if (!geometry.includes('REFERENCE_HOUSE:RH-PROT-14') || !geometry.includes('PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY')) {

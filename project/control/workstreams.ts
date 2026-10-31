@@ -8,14 +8,13 @@ export interface WorkstreamDefinition {
 
 const workstreamRegistry = [
   { code: 'ACO', title: 'Agent Claim Orchestration', issue: 960, programme: 'project/aco/agent-claim-orchestration-programme.md' },
-  { code: 'ADE', title: 'Architectural Drawing Engine', issue: 1008, programme: 'project/ade/construction-information-programme.md' },
+  { code: 'ADE', title: 'Architectural Drawing Engine', issue: 812 },
   {
     code: 'BCR',
     title: 'Buildability & Construction Resolution',
     issue: 944,
     programme: 'project/bcr/buildability-construction-resolution-programme.md'
   },
-  { code: 'CCR', title: 'Compiler Correctness Repair', issue: 1004, programme: 'project/ccr/compiler-correctness-repair-programme.md' },
   { code: 'BSR', title: 'Book Structure Refactor', issue: 940, programme: 'project/book-resolution-programme.md' },
   {
     code: 'DEL',
@@ -26,12 +25,12 @@ const workstreamRegistry = [
   {
     code: 'DPL',
     title: 'Deployment / real-site design study',
-    issue: 1009,
-    programme: 'project/dpl/owner-house-site-programme.md'
+    issue: 299,
+    programme: 'project/dpl/deployment-programme.md'
   },
   { code: 'DRW', title: 'Architectural drawing programme' },
-  { code: 'EDA', title: 'Editorial Doctrine Audit', issue: 1005, programme: 'docs/editorial/eda-programme.md' },
-  { code: 'EPR', title: 'External professional review', issue: 913, programme: 'project/epr/external-professional-review-programme.md' },
+  { code: 'EDA', title: 'Editorial Doctrine Audit', programme: 'docs/editorial/eda-programme.md' },
+  { code: 'EPR', title: 'External professional review', issue: 913 },
   {
     code: 'HAD',
     title: 'House Architectural Design',
@@ -52,12 +51,6 @@ const workstreamRegistry = [
     programme: 'project/ias/interior-architecture-system-programme.md'
   },
   { code: 'ILA', title: 'ILA workstream' },
-  {
-    code: 'MAT',
-    title: 'Material Integrity and Synthetic-Polymer Avoidance',
-    issue: 1100,
-    programme: 'project/mat/material-integrity-programme.md'
-  },
   {
     code: 'MRA',
     title: 'Moisture Resilience Assurance',
@@ -86,24 +79,6 @@ const workstreamRegistry = [
   },
   { code: 'PLT', title: 'Architectural Plate Refinement', issue: 422 },
   { code: 'PUB', title: 'Publication credibility and release', issue: 71, aliases: ['PR'] },
-  {
-    code: 'ROF',
-    title: 'Roof Systems Architecture',
-    issue: 991,
-    programme: 'project/rof/roof-systems-programme.md'
-  },
-  {
-    code: 'RWT',
-    title: 'Rainwater Systems Architecture',
-    issue: 992,
-    programme: 'project/rwt/rainwater-systems-programme.md'
-  },
-  {
-    code: 'STR',
-    title: 'Structural Architecture',
-    issue: 1103,
-    programme: 'project/str/structural-architecture-programme.md'
-  },
   { code: 'TYP', title: 'Publication typography' }
 ] as const satisfies readonly WorkstreamDefinition[]
 
