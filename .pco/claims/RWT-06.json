@@ -9,8 +9,8 @@
     "label": "issue-comment-6541503746"
   },
   "claimedAt": "2026-10-31T09:08:23.000Z",
-  "heartbeatAt": "2026-10-31T09:33:53.000Z",
-  "expiresAt": "2026-10-31T10:18:53.000Z",
+  "heartbeatAt": "2026-10-31T09:43:24.000Z",
+  "expiresAt": "2026-10-31T10:28:24.000Z",
   "branch": "work/mvb-chat-6541503746",
   "predecessor": {
     "leaseId": "70d03fe9-7eb7-4a0b-bd36-7cc37e600d6a",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1134 head 39adfd61ad448205bb0c10611096a76b91225333 preserves main's copper-repair and IAS work. Six-path threshold comparison passed generator, independent source/geometry and rendered-sheet review.",
-    "next": "Require full exact-head CI and fresh canonical publication preflight, then integrate the partial result and hand off unresolved assembly duties.",
-    "blocker": "Actual threshold joints, retained W2 architecture, floor/support/tool access, dry maintenance and hydraulic acceptance remain unproved."
+    "evidence": "PR #1134 now at 8af03a533974b76162e75f6927c1a938e5ec0325 on main b9f64d69; exact six reviewed blobs preserved through concurrent housekeeping/projection/MAT merges. Prior CI passed; fresh-head CI is running.",
+    "next": "Require current-head CI and fresh canonical preflight, merge the reviewed threshold partial, then checkpoint remaining assembly work and release.",
+    "blocker": "Actual joint release/reinstatement, W2 penetration, support/floor/tool arrangements, dry maintenance and hydraulic acceptance remain unproved."
   },
   "pr": 1134
 }
