@@ -113,7 +113,7 @@ Keep three interfaces distinct:
 
 | Interface in the retained-tail hypothesis | Established starting point | Missing qualification |
 |---|---|---|
-| Pan → fixed sheet flange | CDA 10.6B identifies a continuous soldered attachment (C10) | Actual solder, flux, seam geometry and thermal limits; the drawing alone does not identify its filler |
+| Pan → fixed sheet flange | CDA 10.6B identifies a continuous soldered attachment (C10) | The matched roofing consumables below narrow the filler/flux inquiry; actual pan seam geometry, retained residues, duty and thermal limits remain unqualified |
 | Sheet flange → copper tail | The same detail identifies a brazed joint (C10) | Fabricated sheet-to-tube geometry and process; this is not an Endbraze socket and inherits no fitting approval |
 | Copper tube → 108 mm Endbraze cup | Brazing-only product family, with a copper-to-copper filler/flux route in C7 | Exact matched fitting, tube, consumable and service duty; a class match is not approval of the complete court assembly |
 
@@ -123,7 +123,7 @@ For the last interface, C7's CP104/CP105 route and the current Johnson Matthey s
 
 | Intervention | Proposed sequence to develop | What it earns and what it does not |
 |---|---|---|
-| Initial outlet/tail fabrication | Fixture the open copper subassembly; make its qualified brazed connections, clean and inspect them; then attach it to the pan using a qualified lower-temperature soldering process | Makes the difficult braze surfaces accessible before enclosure. The actual alloys, order, fixtures and heat cycle must demonstrate that later work leaves earlier joints sound; the pan filler is not yet known |
+| Initial outlet/tail fabrication | Fixture the open copper subassembly; make its qualified brazed connections, clean and inspect them; then attach it to the pan using a qualified lower-temperature soldering process | Makes the difficult braze surfaces accessible before enclosure. The actual alloys, order, fixtures and heat cycle must demonstrate that later work leaves earlier joints sound; the roofing lead below adds a separate sheet-seam cleanup duty |
 | Ordinary room-carrier renewal | Retain the pan attachment and threshold tail; release or cut at the accessible downstream service position using the demonstrated insertion/reinstatement method | Keeps the larger fixed package in place only if the actual repair heat, forces and temporary rain management preserve it. An arbitrary distance from the pan is not proof |
 | Eventual tail or fixed-joint renewal | Either demonstrate separation, withdrawal, cleaning and remaking beside the retained pan, or expose and renew the larger outlet/pan package | Makes the larger intervention explicit. Open-bench first assembly does not establish an in-situ repair sequence or the ability to retain W2 throughout it |
 
@@ -133,7 +133,19 @@ Harris provides counterevidence to an irreversible-joint assumption (C17): its g
 
 Brazing also changes the material condition being assessed. CDA's tube guidance (C18) accounts for heat-softened copper and the limiting tube/fitting/joint rating. Apply that principle to the actual fabricated assembly and its support loads; do not infer a stronger complete system from a stronger joint or import US tube pressure values into this 108 mm comparison.
 
-**Earned:** named joining-consumable leads and a construction/repair sequence tied to the three actual interfaces. **Still open:** the matched outlet section, pan solder and residues, process qualification, heat/control access, material condition, support and demonstrated reinstatement. The generated geometry is unchanged; no thermal clearance or construction approval is added.
+**Earned:** named joining-consumable leads and a construction/repair sequence tied to the three actual interfaces. **Still open:** the matched outlet section, qualified pan seam and retained residues, process qualification, heat/control access, material condition, support and demonstrated reinstatement. The generated geometry is unchanged; no thermal clearance or construction approval is added.
+
+### Sheet seam fabrication and later repair
+
+**31 October 2026, from main `9f1e6f8b4df6e9df4e617238a75b3e202f93b191`.** The [shared sheet-seam evidence](../../docs/research/roof-rainwater-material-compatibility.md#sheet-solder-cleanup-and-the-brass-boundary) now binds a real copper-roofing process lead: FELDER Sn97Cu3 rod 12970120 with KD flux. The rod's nominal metal composition does not clear the complete process. Dated KD evidence identifies polyethylene glycol in the supplied flux; the maker requires thorough warm-water removal of corrosive residues but does not demonstrate the resulting material retained in this pan seam. A completely removed fabrication aid needs no installed-material exception solely for its temporary use. The actual retained residue and current formulation remain to establish.
+
+**Keep the seam and cleanup accessible during fabrication.** Develop the fixed outlet/pan assembly with its joining faces, lap or lock, underside and support sequence exposed sufficiently for preparation, joining, cleaning and inspection before the enclosure prevents those operations. Collect the cleaning liquid through a managed route separate from ordinary rainwater disposal. This is an authored construction requirement, not proof that washing can reach every closed capillary crevice. The actual fabricator's process and finished-joint evidence must establish the cleanup result and retained constituents. The source's copper-gutter use does not qualify the court's backwater duty or the separate flange-to-tail braze.
+
+**Distinguish the actual seam.** CDA shows a plain soldered lap as well as a soldered flat lock and a riveted/soldered lap; its 10.6B pan attachment does not identify one of those mechanical details. If the actual seam uses a lock or rivets, remelting the solder alone does not demonstrate release. FELDER's statement that prior riveting is unnecessary for its roofing application is not permission to delete a mechanical connection from a particular chosen detail. This comparison prescribes no universal rivet or lock requirement. No handbook lap dimension, alloy tensile value or generic melting range becomes a pan-joint capacity, adopted overlap or safe hot-work distance.
+
+**Compare later repair against the whole initial operation.** A local seam repair must provide its required surface preparation, protect the retained braze and construction, then complete qualified joining, cleanup and verification. Where the chosen repair requires component or seam separation, demonstrate the actual mechanical release or consumptive cut; resealing alone does not automatically require either. A top opening that admits an iron but cannot support cleaning/inspection of the affected hidden faces does not establish that repair. If those operations require removal of a pan portion, tail or supporting construction, declare that larger package and its reconstruction rather than claim an in-place remake. During the larger repair W2 may be deliberately opened: temporary rain management, support and separate W1/W2 reinstatement must be designed. Ordinary downstream carrier renewal still promises to retain W2 and the threshold tail.
+
+This advances a specific sheet-seam fabrication and maintenance comparison while leaving the installed material result open. It adds no complete process qualification, thermal setback, current-house geometry or pan/pressure rating.
 
 ## What must now be resolved
 
