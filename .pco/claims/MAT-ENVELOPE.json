@@ -9,8 +9,8 @@
     "label": "swarm-envelope-glazing-2116-20261031"
   },
   "claimedAt": "2026-10-31T21:16:17.744Z",
-  "heartbeatAt": "2026-10-31T21:16:17.744Z",
-  "expiresAt": "2026-10-31T22:46:17.744Z",
+  "heartbeatAt": "2026-10-31T21:30:59.614Z",
+  "expiresAt": "2026-10-31T23:00:59.614Z",
   "branch": "work/swarm-envelope-glazing-2116-20261031",
   "predecessor": {
     "leaseId": "2118792d-930f-4f5f-bcec-ca847f83c5ab",
@@ -31,5 +31,9 @@
       "evidence": "PR1175 merged as6e1260eef6e3c209abb62df41ced8964320e0ac5. Accepted tree d479863bb17b30561813e062d92241553ac83813 exactly equals full-CI41238393149 tested head3089e0688bd7106f493231a9acd3835e5d8fc69d. Coordinator fresh canonical preflight passed20:22:11.536Z. Independent Git verification confirms all six reviewed MAT blobs at accepted/current main, sourcee9e4c827 and tested-head ancestry, unchanged original section outputs and absent remote feature ref. Primary-source and architectural reviews passed the corrected outside-body-envelope/aperture distinction.",
       "next": "Release this completed bounded investigation as handoff. MAT-ENVELOPE remains planned: actual supported air passage, lowest aperture/water exposure, DPC continuity, complete constituents, clearing/replacement and floor/gas assembly require coordinated evidence. Next worker must freshly dispatch and inspect accepted1175 before extending scope."
     }
+  },
+  "checkpoint": {
+    "evidence": "Draft installed-glazing comparison now locates the actual Study aperture and separates the pane core, complete edge/support/bedding and safety duties. Official Spacia GL046/047/071 identify its permanent plastic cap. FINEO EPD packaging is distinguished from installed Others; retrofit limitations and the small-pane exceptions are bounded. Public technical assessments are being checked before external holds. No geometry, material exception or node completion.",
+    "next": "Inspect FINEO CSTB DTA and ETA, close the candidate comparison and constituent/programme links, independently review exact sources and final manuscript, then publish with exact-head full CI and fresh canonical merge preflight."
   }
 }
