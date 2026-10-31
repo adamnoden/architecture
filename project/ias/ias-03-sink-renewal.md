@@ -84,7 +84,7 @@ If the exact undermount assembly cannot achieve admissible materials and practic
 
 **Continuation base: `b9f64d69c8c5226580a9a459c1820bce42c51b7b`.** A welded bowl and worktop offer a real alternative to the separate rim fixings, but change the object being renewed. The result is to retain an integral sinktop as an explicit assembly challenger, with its replacement boundary designed at the same time. It earns neither material admission nor a smaller maintenance task.
 
-The current Franke waste remains unbound. A fresh read of the [French manufacturer page for 112.0264.985][current-waste] recovers its 90 mm description, overflow connection and an installation-guide label, but no usable current installed section. That retrieval limit is not evidence that a drawing does not exist. Those facts do not convert the earlier approximate 636 datum into a current sealing plane or establish the delivered UK kit.
+The current Franke waste remains unbound. The initial read of the [French manufacturer page for 112.0264.985][current-waste] recovered its 90 mm description, overflow connection and an installation-guide label, but no usable current installed section. The later [waste-manual review](ias-03-sink-service-parts.md#recovered-waste-kit-manual--31-october-2026) recovers and visually inspects that linked generic assembly guide. It distinguishes alternative sink-seat and downstream interfaces without supplying an installed section, dimensions or a delivered-kit declaration. Neither result converts the earlier approximate 636 datum into a current sealing plane or establishes the delivered UK kit.
 
 ### One actual integrated family, with the support and joint duties retained
 

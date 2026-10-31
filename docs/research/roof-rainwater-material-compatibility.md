@@ -72,7 +72,9 @@ Direct primary HTML evidence now adds:
 
 The copper/brass preference does not remove the previous zinc/aluminium runoff exclusions or establish harmlessness to planted soil. No coating, liner, sealing compound or anchor accessory receives a hidden-material exemption. These are current selection constraints, not a generic approval of all soldered copper or low-zinc brass.
 
-## Local copper repair evidence — 31 October 2026
+## Local copper repair evidence
+
+**31 October 2026.**
 
 For local copper repair, product size and removability must be distinguished from insertion and joining. These sources establish different things; they are not a combined manufacturer-approved assembly.
 
@@ -89,7 +91,9 @@ For local copper repair, product size and removability must be distinguished fro
 
 The unselected filler, flux and retained residues remain within the material policy. A slip coupling is an assembly aid before joining, not an expansion joint or a demountable joint after joining. The existing metal/runoff exclusions and actual service-duty requirements still apply.
 
-## Fixed copper outlet evidence — 31 October 2026
+## Fixed copper outlet evidence
+
+**31 October 2026.**
 
 Two inspected primary details give the fixed collector-to-pipe interface a construction basis. They establish no complete assembly for the house.
 
@@ -104,7 +108,9 @@ Both pages were visually inspected. US/regional dimensions, supports and hydraul
 |---|---|---|
 | Copper pan → fixed copper flange/outlet → retained tail → accessible service joint | **Conditional construction and maintenance comparator.** Keeping the tail during carrier replacement transfers its own eventual renewal into a larger fixed-assembly intervention. | Exact metals, solder/braze/flux and residues; qualified pan/outlet joint and service duty; independent support/movement; accessible service-joint release; passive observation of concealed tail leakage and a credible larger repair route. Retaining the pan seam does not close the outlet bore during maintenance. |
 
-## Ground receiver construction — 31 October 2026
+## Ground receiver construction
+
+**31 October 2026.**
 
 These primary sources sharpen the distinction between a renewable upper component and a watertight wet body. They do not qualify a complete brass/bronze channel or a mixed supplied system.
 
@@ -126,7 +132,9 @@ CDA pages and the alloy sheets were visually inspected. CDA archive text was als
 | Individually renewable wet trays joined by ordinary loose laps | **Reject the unsupported watertight and independent-lift claims.** An open transfer is a different possible architecture. | A qualified detachable sealed joint, or visible free transfers with actual receiving levels, drop, capture, movement and handling evidence. No synthetic seal is silently admitted. |
 | Supplied bronze grate over a different wet channel | **Identify the separate materials honestly.** A bronze grate does not make a bronze channel. | Exact wet body, joints, frame, seals, anchors and finish; structural rating of the actual assembly. Do not delete prescribed sealant or borrow the grate rating for custom support. |
 
-## Copper joining and remaking — 31 October 2026
+## Copper joining and remaking
+
+**31 October 2026.**
 
 The following primary evidence gives the retained outlet/tail comparison specific joining and repair starting points. It does not combine the roof detail, plumbing fitting and filler products into an approved assembly.
 
