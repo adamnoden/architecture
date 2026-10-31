@@ -9,8 +9,8 @@
     "label": "swarm-782cae-worker-two"
   },
   "claimedAt": "2026-10-31T17:13:43.517Z",
-  "heartbeatAt": "2026-10-31T17:13:43.517Z",
-  "expiresAt": "2026-10-31T17:58:43.517Z",
+  "heartbeatAt": "2026-10-31T17:30:16.481Z",
+  "expiresAt": "2026-10-31T18:15:16.481Z",
   "branch": "work/swarm-782cae-worker-two",
   "predecessor": {
     "leaseId": "9666a1cd-0d68-4864-8ba1-dd2ab4de6a17",
@@ -33,5 +33,11 @@
       "next": "STR-HOUSE remains planned. Select the actual threshold support and wet assembly together, retain an independently supported openable room route, and reconcile chosen reactions, abutments, floor boundaries and renewal occupation with RWT.",
       "blocker": "The recovered comparison rejects two trial arch envelopes; it supplies no selected support, admitted wet assembly, engineering capacity or construction acceptance."
     }
+  },
+  "pr": 1158,
+  "checkpoint": {
+    "evidence": "PR #1158 at 3ddf861c3f131f0a61496c74fdbcd0b9969f1ed7 preserves the independently reviewed riser-trim topology and supported closure comparison. Source guards, adverse controls, repository validation and rendered inspection pass.",
+    "next": "Require exact-head full CI, reconcile current main if moved, then fresh canonical publication preflight and expected-head merge.",
+    "blocker": "STR-HOUSE remains planned; no support capacity, closed floor assembly or construction acceptance is earned."
   }
 }
