@@ -54,8 +54,8 @@ h1{font-size:25px}
 <path d="M562 448 C645 494 730 487 844 495" class="leak"/>
 <path d="M814 440 L903 440 L925 460" class="water"/>
 <text x="779" y="390" class="note">receiver outboard</text>
-<text x="827" y="483" class="note">observable?</text>
-<text x="827" y="501" class="note">test required</text>
+<text x="865" y="478" class="note">observable?</text>
+<text x="865" y="496" class="note">test required</text>
 <text x="61" y="519" class="note">The entire possible wetting zone, blocked outlet, capillary bridges, support and safe outfall require a real site section.</text>
 <text x="44" y="552" class="note">Decision: outboard consequence first; leak witness conditional. Dotted arrows are possible paths, not verified drainage.</text>
 </svg>
