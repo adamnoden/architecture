@@ -46,6 +46,15 @@ export const structureNodes = defineNodes([
     ]
   },
   {
+    id: 'STR-GROUND',
+    owners: ['STR'],
+    title: 'Compare tree-tolerant foundations, ground movement isolation and substructure interfaces',
+    dependencies: ['STR-00'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/str/ground-movement-foundation-options-result.md']
+  },
+  {
     id: 'STR-HOUSE',
     owners: ['STR', 'HAD'],
     title: 'Coordinate whole-house structure with the inhabited plan and section',
@@ -58,7 +67,7 @@ export const structureNodes = defineNodes([
     id: 'STR-RECONCILE',
     owners: ['STR'],
     title: 'Reconcile structural interfaces and affected evidence for house selection',
-    dependencies: ['STR-HOUSE'],
+    dependencies: ['STR-HOUSE', 'STR-GROUND'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
