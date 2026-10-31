@@ -45,6 +45,10 @@ MAT-ENVELOPE should first develop the ground/wall/floor section and substantial 
 
 Historical holds preserve the old source identities and technical learning. Existing completed research packets remain complete at their original scope; successors and the final material gate prevent old evidence being silently promoted to new policy compliance.
 
+## Design comparisons
+
+- [Mineral ground boundary and floor junction comparison](envelope-ground-boundary.md) — MAT-ENVELOPE develops the bonded DPC1/slate comparison, separates floor insulation from moisture/gas and movement duties, and excludes exact lined cellular-glass variants under the default policy. It defines the next wall/floor, internal-support, threshold and penetration junctions; no complete assembly, house geometry or packet closeout is selected.
+
 ## Primary-source reconnaissance, accessed 30 October 2026
 
 The following observations bound the initial design work. They are not procurement recommendations or a complete lifecycle assessment.
