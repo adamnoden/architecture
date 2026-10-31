@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 5,
-  "state": "released",
-  "leaseId": "5b44c665-d4bc-4838-991f-5419beda9ee8",
+  "generation": 6,
+  "state": "claimed",
+  "leaseId": "22e0c87d-ee24-45f7-b5a8-5b190b400260",
   "holder": {
     "kind": "chatgpt",
-    "label": "mat-waste-20261031-1653"
+    "label": "mat-drain-detail-20261031-1728"
   },
-  "claimedAt": "2026-10-31T16:53:20.924Z",
-  "heartbeatAt": "2026-10-31T17:14:15.190Z",
-  "expiresAt": "2026-10-31T17:14:15.190Z",
-  "branch": "work/mat-waste-20261031-1653",
+  "claimedAt": "2026-10-31T17:27:43.167Z",
+  "heartbeatAt": "2026-10-31T17:27:43.167Z",
+  "expiresAt": "2026-10-31T18:12:43.167Z",
+  "branch": "work/mat-drain-detail-20261031-1728",
   "predecessor": {
-    "leaseId": "d5937b54-a057-41e5-89f0-2fb76d65e801",
-    "generation": 4,
-    "branch": "work/swarm-maintenance-integration-20261031",
-    "pr": 1148,
+    "leaseId": "5b44c665-d4bc-4838-991f-5419beda9ee8",
+    "generation": 5,
+    "branch": "work/mat-waste-20261031-1653",
+    "pr": 1153,
     "checkpoint": {
-      "evidence": "PR 1148 accepted by merge 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Accepted tree 8967b8d8feea905ccc5cf7582447deca7af351e0 exactly matches full-CI head 90de6288688004c8568f0a0665977e1045f953d8; CI run 41193874119 passed and services canonical preflight passed at 2026-10-31T10:51:33.864Z. Fresh native verification confirms common head and published services source 22890a23e8cd89f5262b58738ac2d1bc8639215a are main ancestors, exact services study and S01 bytes are preserved, and common feature ref is absent.",
-      "next": "Release handoff and re-enter fresh canonical dispatch. MAT-SERVICES remains planned: actual union compound, first-release geometry, pipe-end repair and full water system remain unresolved; the next useful services comparison may address soil/waste/vent joints and their accessible support and penetration reinstatement duties rather than repeat exhausted catalogue-only water-joint searches."
+      "evidence": "PR #1153 merged at 09130048037f20fdc86b60959b2c631db18b6a6f; validated head 9551f4dda91866d487b42facfb58c63823d59608; full CI 41223154542 passed; accepted tree matches checked head",
+      "next": "Bind a current complete caulked soil-joint package and a supported repair section through the owning BCR/IAS service access; MAT-SERVICES remains planned",
+      "blocker": "Coating, packing, accessory constituents and full release/repair proof remain unresolved"
     }
   },
   "recoverySource": {
-    "leaseId": "d5937b54-a057-41e5-89f0-2fb76d65e801",
-    "generation": 4,
-    "branch": "work/swarm-maintenance-integration-20261031",
-    "pr": 1148,
+    "leaseId": "5b44c665-d4bc-4838-991f-5419beda9ee8",
+    "generation": 5,
+    "branch": "work/mat-waste-20261031-1653",
+    "pr": 1153,
     "checkpoint": {
-      "evidence": "PR 1148 accepted by merge 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Accepted tree 8967b8d8feea905ccc5cf7582447deca7af351e0 exactly matches full-CI head 90de6288688004c8568f0a0665977e1045f953d8; CI run 41193874119 passed and services canonical preflight passed at 2026-10-31T10:51:33.864Z. Fresh native verification confirms common head and published services source 22890a23e8cd89f5262b58738ac2d1bc8639215a are main ancestors, exact services study and S01 bytes are preserved, and common feature ref is absent.",
-      "next": "Release handoff and re-enter fresh canonical dispatch. MAT-SERVICES remains planned: actual union compound, first-release geometry, pipe-end repair and full water system remain unresolved; the next useful services comparison may address soil/waste/vent joints and their accessible support and penetration reinstatement duties rather than repeat exhausted catalogue-only water-joint searches."
+      "evidence": "PR #1153 merged at 09130048037f20fdc86b60959b2c631db18b6a6f; validated head 9551f4dda91866d487b42facfb58c63823d59608; full CI 41223154542 passed; accepted tree matches checked head",
+      "next": "Bind a current complete caulked soil-joint package and a supported repair section through the owning BCR/IAS service access; MAT-SERVICES remains planned",
+      "blocker": "Coating, packing, accessory constituents and full release/repair proof remain unresolved"
     }
-  },
-  "pr": 1153,
-  "checkpoint": {
-    "evidence": "PR #1153 merged at 09130048037f20fdc86b60959b2c631db18b6a6f; validated head 9551f4dda91866d487b42facfb58c63823d59608; full CI 41223154542 passed; accepted tree matches checked head",
-    "next": "Bind a current complete caulked soil-joint package and a supported repair section through the owning BCR/IAS service access; MAT-SERVICES remains planned",
-    "blocker": "Coating, packing, accessory constituents and full release/repair proof remain unresolved"
-  },
-  "releasedAt": "2026-10-31T17:14:15.190Z",
-  "releaseReason": "handoff"
+  }
 }
