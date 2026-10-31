@@ -15,6 +15,10 @@ BCR owns construction-resolution coordination and evidence routing. It does not 
 
 The accepted 12 × 12 m house is the working architectural basis. Early BCR work tests its physical relationships against current candidate systems; it does not reopen the brief, select architecture or wait for finished IAS/HAD/ROF/RWT outputs. Findings return to the existing design owners before integration. Final convergence rechecks the adopted result rather than treating a successful early study as permanent assurance.
 
+## Ground and boundary-service construction obligations — 31 October 2026
+
+Carry the owner's [P0 structural ground brief](../str/ground-movement-and-substructure-brief.md) and [Boundary Service Lodge / accessible raceway candidate](../had/boundary-service-lodge-and-raceway-brief.md) into the **existing** BCR obligation matrix, not a parallel task register. Require buildable tree/root-sensitive foundation and utility operations, verified concrete/pile/void workmanship and inspection holds, safe service-lodge/cover access and lifting, labelled independent house and boundary isolation, movement-tolerant supports/penetrations, supplier-approved meter compartments, frost/ventilation/electrical segregation and demonstrable buried-to-accessible transitions. Carry site-dependent choices explicitly to DPL/DEL rather than guessing connection locations and sewer levels. These are new design obligations, not currently resolved construction details.
+
 ## Inputs
 
 - `HRS-BASELINE` current-house identity and historical-result applicability;

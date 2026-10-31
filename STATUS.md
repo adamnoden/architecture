@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 101 · **Cancelled:** 0
+**Structurally ready:** 18 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 101 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -22,10 +22,12 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
+| `HAD-BOUNDARY` | Compare the Boundary Service Lodge and accessible external service raceway | HAD | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
 | `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | — |
 | `RWT-METALS` | Develop copper collection, brass channels and non-plastic concealed routes | RWT | RWT-ROBUSTNESS |
-| `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | STR / HAD | STR-RECONCILE |
+| `STR-GROUND` | Compare tree-tolerant foundations, ground movement isolation and substructure interfaces | STR | — |
+| `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | STR / HAD | — |
 | `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT | — |
 | `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT | — |
 | `MAT-INTERIORS` | Resolve non-plastic interior and wet-room assembly alternatives | MAT | — |
@@ -59,7 +61,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | RWT-07, HAD-03, STR-RECONCILE |
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
-| `STR-RECONCILE` | Reconcile structural interfaces and affected evidence for house selection | STR-HOUSE |
+| `STR-RECONCILE` | Reconcile structural interfaces and affected evidence for house selection | STR-HOUSE, STR-GROUND |
 | `MAT-COORDINATION` | Reconcile selected-house material compliance and explicit owner exceptions | MAT-ENVELOPE, MAT-SERVICES, MAT-INTERIORS, IAS-03, HAD-03, ROF-RWT-GATE |
 | `MRA-01` | External water and ground-envelope assault | TRIAD-GATE |
 | `MRA-02` | Internal water and wet-zone assault | TRIAD-GATE |
@@ -129,7 +131,7 @@ The named subject/source bindings live in `project/maturity-subjects.ts`. Source
 | Assessment | Named assessed subject / revision | Source watch | Applicability limit |
 |---|---|---|---|
 | **Public architectural position** | PR-01 controlled architectural proposition with HFI integration (reviewed 2026-10-19) | **REASSESS applicability** (`docs/manuscript/governing-principles.md`, `docs/manuscript/part-i.md`, `docs/manuscript/part-ii.md`) | Architectural doctrine at its stated scope; no particular house or construction acceptance. |
-| **Pattern language** | 21 active patterns, three strategies and held candidates (reviewed 2026-10-12) | **REASSESS applicability** (`docs/patterns/README.md`) | Pattern meanings and corpus only; occurrence in a changed house needs separate design evidence. |
+| **Pattern language** | 21 active patterns, three strategies and held candidates (reviewed 2026-10-12) | **REASSESS applicability** (`docs/patterns/README.md`, `docs/patterns/controlled-utility-entry.md`) | Pattern meanings and corpus only; occurrence in a changed house needs separate design evidence. |
 | **Architectural grammar framework** | Coordinated grammar framework (reviewed 2026-10-12) | monitored sources unchanged; no automatic applicability pass | Framework scope only; neither a new grammar nor a house conformance result is admitted. |
 | **G-01 grammar instance** | G-01 v0.1 frozen grammar and its historical D12/D13 tests (reviewed 2026-10-14) | **REASSESS applicability** (`project/triad-interface-contract.md`) | G-01 grammar evidence survives; historical conformance does not transfer automatically to revision 02. |
 | **Reference House** | Historical RH-00–RH-10 technical house with HFI-RW-01 stair rewind (reviewed 2026-10-19) | **REASSESS applicability** (`compiler/reference-house/compile.ts`, `compiler/reference-house/derive.ts`, `compiler/reference-house/model.ts`, `project/triad-interface-contract.md`) | Historical subject only; applicability to RH-LAYOUT-REVISION-02 is not established. HRS and the owning assessment must explicitly reassess it. |
