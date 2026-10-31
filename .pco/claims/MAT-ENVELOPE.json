@@ -9,8 +9,8 @@
     "label": "swarm-envelope-dpc-983b7ee"
   },
   "claimedAt": "2026-10-31T09:18:30.617Z",
-  "heartbeatAt": "2026-10-31T09:18:30.617Z",
-  "expiresAt": "2026-10-31T10:03:30.617Z",
+  "heartbeatAt": "2026-10-31T09:32:51.212Z",
+  "expiresAt": "2026-10-31T10:17:51.212Z",
   "branch": "work/swarm-envelope-dpc-20261031",
   "predecessor": {
     "leaseId": "650de713-dbb7-479c-a948-c5e784f2560f",
@@ -31,5 +31,11 @@
       "evidence": "PR #1124 merged as 178c43815ba318a09f0f62c344aed37f15a71f16 after full CI41187669477 success on head24b7f82b8408f4582241e220ea83d85eef416443 and fresh merge-check09:15:46.537Z. Fresh main tree2bada5b4ea5aeff43f51ab9179f7fd06d2b62d65 matches all three recovered files; new work branch auto-deleted. This integrates reviewed #1117 plus precise product-label DoP attribution only.",
       "next": "MAT-ENVELOPE remains planned. Bind exact DPC1 unit/mortar and suitable slate, then qualify complete straight wall/floor junctions for both boundary locations and internal-support, threshold, penetration and movement details. Other envelope assemblies, site inputs, thermal/structural proof, constituents and costs remain unresolved. Root will supersede predecessor #1117 after this verified integration."
     }
+  },
+  "pr": 1133,
+  "checkpoint": {
+    "evidence": "PR #1133 published at 75a9d8782839340169b590ee0811d53b544ce493; remote tree c14027fa3782251600a8d74dd7381bd02a3b22cc exactly matches independently reviewed two-file candidate amendment. WCBL65 current DoP and separate historical test bound; M12 additive chemistry, slate product and inner-leaf floor connection remain held. Reconciled main1486, preserved all54 audit entries and non-G02 bytes, local source/integrity/docs checks passed.",
+    "next": "Require full exact-head CI, reconcile any moved main while preserving other MAT rows, run fresh merge-check and integrate the bounded candidate amendment. Then continue exact mortar/slate disclosure and qualified floor junction work; MAT-ENVELOPE remains planned with no adopted assembly.",
+    "blocker": "Full exact-head CI pending; known local Chrome155 figure dependency unavailable."
   }
 }
