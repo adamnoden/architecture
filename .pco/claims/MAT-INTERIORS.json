@@ -9,8 +9,8 @@
     "label": "mat-recovery-20261031"
   },
   "claimedAt": "2026-10-31T09:08:01.775Z",
-  "heartbeatAt": "2026-10-31T09:32:46.192Z",
-  "expiresAt": "2026-10-31T10:17:46.192Z",
+  "heartbeatAt": "2026-10-31T09:41:54.529Z",
+  "expiresAt": "2026-10-31T10:26:54.529Z",
   "branch": "work/mat-recovery-20261031",
   "predecessor": {
     "leaseId": "5fd39800-a275-449f-b5c0-f94b5aaf56ce",
@@ -34,8 +34,8 @@
   },
   "pr": 1126,
   "checkpoint": {
-    "evidence": "PR #1126; published head b4a8713486492d0b859dcfe534603d4e0c4112a2; located tray SVG/data and source-reviewed support/waste/renewal study",
-    "next": "Require exact-head CI, canonical merge-check, integrate bounded partial, retire recovered predecessor and release",
-    "blocker": "CI pending; no complete installation accepted; MAT-INTERIORS remains open"
+    "evidence": "Merged PR #1126 at b9f64d69c8c5226580a9a459c1820bce42c51b7b; validated head 3fcb2d5fc57fe6bc2fc7d2bdf0ce621ad8104c58; predecessor #1115 integrated and branches deleted",
+    "next": "Bind exact tray/Upstand/metal-frame/waste package and complete west-access section, whole-body withdrawal and carrying route; wider MAT-INTERIORS stays open",
+    "blocker": "Complete constituent disclosure and installation/renewal evidence remain unresolved; no assembly accepted"
   }
 }
