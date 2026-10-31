@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 4,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9666a1cd-0d68-4864-8ba1-dd2ab4de6a17",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6546346708"
   },
   "claimedAt": "2026-10-31T16:53:38.000Z",
-  "heartbeatAt": "2026-10-31T17:10:53.781Z",
-  "expiresAt": "2026-10-31T17:55:53.781Z",
+  "heartbeatAt": "2026-10-31T17:11:14.715Z",
+  "expiresAt": "2026-10-31T17:11:14.715Z",
   "branch": "work/mvb-chat-6546346708",
   "predecessor": {
     "leaseId": "44f12563-59a9-4117-aa66-8bf547550f46",
@@ -39,5 +39,7 @@
     "evidence": "PR #1152 merged as e89b0253bf1a66c14307196bcd80303b72de5c85. Head 826e934017ab6ef525041e5d77f512577f942c52 passed full CI 41222622272 and canonical preflight at 17:08:05.189 UTC. Ten tests, pinned evidence and Inkscape sheet inspection passed.",
     "next": "STR-HOUSE remains planned. Select the actual threshold support and wet assembly together, retain an independently supported openable room route, and reconcile chosen reactions, abutments, floor boundaries and renewal occupation with RWT.",
     "blocker": "The recovered comparison rejects two trial arch envelopes; it supplies no selected support, admitted wet assembly, engineering capacity or construction acceptance."
-  }
+  },
+  "releasedAt": "2026-10-31T17:11:14.715Z",
+  "releaseReason": "handoff"
 }
