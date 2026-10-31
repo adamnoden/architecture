@@ -9,8 +9,8 @@
     "label": "swarm-materials-section-983b7ee"
   },
   "claimedAt": "2026-10-31T17:27:12.055Z",
-  "heartbeatAt": "2026-10-31T17:36:03.529Z",
-  "expiresAt": "2026-10-31T18:21:03.529Z",
+  "heartbeatAt": "2026-10-31T17:49:37.928Z",
+  "expiresAt": "2026-10-31T18:34:37.928Z",
   "branch": "work/swarm-court-access-20261031",
   "predecessor": {
     "leaseId": "5304f182-0e60-4948-87e1-527354d1a11b",
@@ -34,8 +34,7 @@
   },
   "pr": 1160,
   "checkpoint": {
-    "evidence": "Root published common PR1160 at d273cbf0807fc9cfa1a0084e2ced1eaae49a8c00, tree5017da3af804e6a8a9561eabd2a95f7bbaf45664, preserving navigation source parent5ef0c8a438362136ea279c7bb37b07bfaf39145a. Reviewed local source3315ad58 fixes four section anchors and five incoming links only; exact reversal and independent review preserve all technical text. Repository/publication source/integrity and docs build passed; all five fragments resolve to actual generated IDs.",
-    "next": "Independently compare the four owner blobs and source ancestry at published common head; require full exact-head CI and fresh canonical preflight before merge. No technical or lifecycle completion.",
-    "blocker": "Full common-head CI and fresh publication preflight pending; local figure validation lacks Chrome155."
+    "evidence": "PR1160 merged as08c68ef0e3014efb8d6aecbcdb1bb208a57425ae. Tested PR head6cf4e839953eb79adf89af10cb0575db3f0a4968/treea688337692d8f327a416d5ee114c7b71690b978a passed PR CI. Accepted treef2a2283d17b896df1a0eb2a20e5318fc1a05c43b differs because first parentab36b0bd added seven disjoint IAS/MAT files after preflight. Exact accepted-tree push run41225736909 now passed canonical check, both PDFs and metadata in build124610030013; deploy124610418674 passed. Native verification confirms all four reviewed navigation blobs unchanged, all five accepted incoming fragments valid, and source5ef0c8a438362136ea279c7bb37b07bfaf39145a plus tested head are ancestors. No equal-tree or lifecycle-completion claim.",
+    "next": "Navigation repair is integrated and independently checked. Release handoff; RWT-METALS remains planned for actual pan/outlet and carrier construction, supplied consumables, joint duty, support and complete repair access. Preserve the accepted primary-source limits and use coordinated fresh canonical dispatch before new work."
   }
 }
