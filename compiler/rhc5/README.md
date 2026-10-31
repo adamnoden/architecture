@@ -6,11 +6,7 @@ The initial selected family is deliberately narrow: **private-stair rise, going,
 
 This is **not** a release-grade compiler target. House Kernel already defines a compiler target more strictly: jurisdiction + legal snapshot + transitional basis + building/work classification + selected compliance routes + referenced standards. RH-C5 does not pretend those applicability questions have been discharged merely because one guidance table can be encoded.
 
-The canonical Reference House already owns the required geometry: ground and first-floor datums, riser topology and going. C5 consumes those derived values; it does not create a second stair description.
-
-CCR-STAIR corrects rise to `(firstFfl - groundFfl) / riserCount` and accumulates landing elevations from ground FFL. The source adapter carries actual controlling fact IDs, including both floors, into rise/pitch/2R+G provenance. A common elevation translation therefore changes absolute landings, not rise, pitch or the numeric result.
-
-The existing single `goingsPerFlight` field admits equal straight-flight rise groups only: positive safely represented integer counts, each flight with one more rise than going and terminating at a landing or upper floor. Unequal flights need a separately justified representation; fractional/empty/non-finite/inconsistent declarations fail rather than being regrouped. Floor/storey inputs must be finite and ordered. This checks internal topology and arithmetic, not whether a flight run fits a plan reservation or whether its landing, headroom, guarding, support or construction is adequate. The historical canonical three-flight fixture and current Georgian house remain distinct sources; this repair does not migrate or redesign either.
+The canonical Reference House already owns the required geometry: first-floor datum, riser topology and going. C5 consumes those derived values; it does not create a second stair description.
 
 ```text
 SELECTED NUMERIC METHOD CORRESPONDENCE  MACHINE-CHECKED

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="-1050 -1750 16550 11185" role="img" aria-labelledby="title desc" data-output-id="RH-SECTION-AA-1" data-renderer-version="1.0.0" data-source-compile="c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f" data-compile-status="PASS" data-section="A–A">
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="-1050 -1750 16550 11185" role="img" aria-labelledby="title desc" data-output-id="RH-SECTION-AA-1" data-renderer-version="1.0.0" data-source-compile="16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c" data-compile-status="PASS" data-section="A–A">
 <title id="title">Reference House — principal section A–A</title>
 <desc id="desc">Deterministic south-to-north semantic inspection section through the courtyard centreline. Occupied volumes, datums, roof screening geometry and stair landing guides are represented without inventing construction build-ups.</desc>
 <style>
@@ -81,5 +81,5 @@
 <text x="11450" y="6435" class="oh-note">courtyard open to sky</text>
 <text x="11450" y="6835" class="oh-note">Stair 18 rises · 6/6/6 · rise 183.333 mm · going 300 mm</text>
 <text x="0" y="8785" class="oh-note">Stair landings are datum guides only. No strings, treads, guards, headroom, floor build-up or exact well geometry is implied.</text>
-<text x="0" y="9085" class="oh-id">Source compile c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f</text>
+<text x="0" y="9085" class="oh-id">Source compile 16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c</text>
 </svg>

@@ -1,7 +1,5 @@
 # PCO — Project Control & Orchestration
 
-**Role:** founding implementation programme and retained design rationale. For the current integrated system, start with the [Minimum Viable Bureaucracy (MVB) manual](../control/README.md). Dated examples and rollout steps here do not override the current executable schema, runbook or later owning results.
-
 **State:** complete / self-hosted control plane  
 **Issue:** [#953](https://github.com/adamnoden/architecture/issues/953)  
 **Date:** 2026-10-28
@@ -377,18 +375,3 @@ PCO closes with the following conditions satisfied:
 - overlapping status machinery is removed, reduced to projection, or explicitly retained for a distinct non-overlapping compatibility role.
 
 PCO closeout proves project-control coherence only. It does not prove architectural quality, construction adequacy, external validation or publication readiness.
-## Bounded 29 October refurbishment successor
-
-PCO-00–08/VIS/DISPATCH retain their historical completion. The owner-directed `PCO-REFURB-PLAN` records the [refurbishment plan](../refurbishment-plan.md), updates existing programmes and exposes bounded work through the same dispatcher. It does not redesign the control plane.
-
-### PCO-APPLICABILITY — assessment subject and evidence freshness
-
-**Dependencies:** PCO-DISPATCH and HRS-BASELINE. **Dispatch:** self-service. **Result:** `project/pco/pco-applicability-result.md`.
-
-**Current result:** [PCO applicability repair](pco-applicability-result.md) is complete at monitoring/reporting scope. Existing M-levels, dates, historical evidence and current-house admission limits are preserved.
-
-On the audit baseline, changing `compiler/reference-house/georgian/layout-revision.ts` alone leaves Reference House and Computational track assessments fresh. The watch checks assessment-document paths, not necessarily the design being assessed. Bind each consequential assessment to its named design revision and the small set of actual controlling source inputs. Distinguish evidence-content freshness, subject applicability and maturity judgement. Historical M-level evidence survives at its original scope; a new assessment must be explicit.
-
-Acceptance: a material current-design change requires applicability reassessment even if old review prose is untouched; an evidence edit still triggers its own review; unrelated changes do not invalidate every assessment; missing/unreadable baseline is **unknown**, never reported as unchanged/fresh; rendered status and CLI messages preserve those distinctions. Reproduce the recorded source-change probe and test both positive and negative controls. Do not create a general provenance framework or silently change maturity levels.
-
-The planning packet also performs a one-time, lease-protected continuation requeue. The same node IDs, incomplete results and unresolved obligations survive. No PCO-RESUME feature or altered dispatcher policy is authorised by this repair.

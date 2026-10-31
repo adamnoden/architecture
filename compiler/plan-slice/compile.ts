@@ -8,7 +8,6 @@ import { mm, mm2 } from '../units.js'
 import type { Millimetres } from '../units.js'
 import { derivePlanSlice } from './derive.js'
 import { planBoundaryId } from './model.js'
-import { regionOverlapArea } from './region-area.js'
 import type {
   DerivedBoundary,
   DerivedOpening,
@@ -261,7 +260,10 @@ const derivedDiagnostics = (
       const a = derived.voids[index]
       const b = derived.voids[other]
       if (a.levelId !== b.levelId) continue
-      const overlap = regionOverlapArea(a.boxes, b.boxes)
+      const overlap = a.boxes.reduce(
+        (sum, aBox) => sum + b.boxes.reduce((inner, bBox) => inner + overlapArea(aBox, bBox), 0),
+        0
+      )
       if (overlap <= MODEL_AREA_EPSILON_MM2) continue
       diagnostics.push(
         diagnostic(
@@ -312,7 +314,10 @@ const derivedDiagnostics = (
       for (let other = index + 1; other < spaces.length; other += 1) {
         const a = spaces[index]
         const b = spaces[other]
-        const overlap = regionOverlapArea(a.boxes, b.boxes)
+        const overlap = a.boxes.reduce(
+          (sum, aBox) => sum + b.boxes.reduce((inner, bBox) => inner + overlapArea(aBox, bBox), 0),
+          0
+        )
         if (overlap <= MODEL_AREA_EPSILON_MM2) continue
         diagnostics.push(
           diagnostic(

@@ -2,7 +2,6 @@ import type { Box2D } from '../core/geometry.js'
 import { mm, mm2, square } from '../units.js'
 import type { Millimetres } from '../units.js'
 import { planBoundaryId } from './model.js'
-import { regionUnionArea } from './region-area.js'
 import type {
   AreaResult,
   DerivedBoundary,
@@ -64,7 +63,7 @@ const deriveRegion = (
     id: region.id,
     levelId: region.levelId,
     boxes,
-    area: regionUnionArea(boxes),
+    area: mm2(boxes.reduce((sum, box) => sum + box.width * box.height, 0)),
     bounds: boundsOf(boxes),
     provisional: region.provisional || pieces.some((piece) => piece.provisional)
   }

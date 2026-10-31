@@ -1,8 +1,5 @@
-import { GitHubClaimStore } from '../project/control/github-claim-store.js'
-import { GitConnectorClaimStore, connectorMailbox, readGitClaimSnapshot } from '../project/control/git-connector-claim-store.js'
-import { leaseHealth } from '../project/control/lease-health.js'
-import { publicationPreflight, renderPublicationReport } from '../project/control/publication-preflight.js'
 import { execFileSync } from 'node:child_process'
+import { Buffer } from 'node:buffer'
 import {
   ClaimConflictError,
   ClaimStoreUnavailableError,
@@ -11,12 +8,16 @@ import {
   forceAcquireClaimFromStore,
   releaseClaimInStore,
   renewClaimInStore,
+  storedClaimFromRaw,
   verifyClaimInStore,
   type ClaimStore,
-  type ClaimWriteResult
+  type ClaimWriteResult,
+  type StoredClaim
 } from '../project/control/claim-store.js'
 import {
+  claimPath,
   claimsBranch,
+  claimsDirectory,
   leaseTemporalState,
   operationalState,
   serializeClaimRecord,
@@ -34,6 +35,13 @@ import {
 import { controlNodes } from '../project/control/nodes/index.js'
 import { isWorkstreamCode, type WorkstreamCode } from '../project/control/workstreams.js'
 
+interface GitHubContentFile {
+  type: 'file'
+  path: string
+  sha: string
+  content?: string
+  encoding?: string
+}
 
 interface ParsedArgs {
   command: string
@@ -44,7 +52,7 @@ interface ParsedArgs {
 type OutputFormat = 'text' | 'json'
 
 function git(args: readonly string[]): string {
-  return execFileSync('git', [...args], { encoding: 'utf8', timeout: 30000, stdio: ['ignore', 'pipe', 'pipe'] }).trim()
+  return execFileSync('git', [...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim()
 }
 
 function repositorySlug(): string {
@@ -134,10 +142,7 @@ function metadata(flags: Map<string, string>) {
   const branch = flags.get('branch')?.trim()
   const note = flags.get('note')?.trim()
   const pr = optionalInt(flags, 'pr')
-  const evidence = flags.get('checkpoint-evidence'), next = flags.get('checkpoint-next'), blocker = flags.get('checkpoint-blocker')
-  if ((evidence || next || blocker) && (!evidence?.trim() || !next?.trim())) throw new Error('Checkpoint requires --checkpoint-evidence and --checkpoint-next')
   return {
-    ...(evidence && next ? { checkpoint: { evidence, next, ...(blocker ? { blocker } : {}) } } : {}),
     ...(branch ? { branch } : {}),
     ...(note ? { note } : {}),
     ...(pr ? { pr } : {})
@@ -175,23 +180,139 @@ function ensureDispatcherViewMatchesMain(): void {
   ensureControlViewMatchesMain([
     'project/control/dispatch.ts',
     'project/control/claims.ts',
-    'project/control/lease-health.ts',
     'project/control/claim-store.ts',
-    'project/control/git-connector-claim-store.ts',
-    'project/control/github-claim-store.ts',
     'scripts/project-claims.ts'
   ])
 }
 
+function observedAt(response: Response): Date {
+  const serverDate = response.headers.get('date')
+  const parsed = serverDate ? new Date(serverDate) : new Date()
+  return Number.isFinite(parsed.getTime()) ? parsed : new Date()
+}
 
-function storeFor(command: string, flags: Map<string, string>): ClaimStore {
-  const transport = flags.get('transport') ?? 'github'
-  if (transport === 'connector') {
-    const root = git(['rev-parse', '--show-toplevel'])
-    const dir = flags.get('bridge-dir')
-    return new GitConnectorClaimStore(repositorySlug(), async () => readGitClaimSnapshot(root), dir ? connectorMailbox(root, dir) : undefined)
+function encodedPath(path: string): string {
+  return path.split('/').map(encodeURIComponent).join('/')
+}
+
+class GitHubClaimStore implements ClaimStore {
+  private branchChecked = false
+
+  constructor(
+    private readonly repo: string,
+    private readonly token?: string
+  ) {}
+
+  private headers(write = false): Record<string, string> {
+    return {
+      Accept: 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28',
+      ...(this.token ? { Authorization: `Bearer ${this.token}` } : {}),
+      ...(write ? { 'Content-Type': 'application/json' } : {})
+    }
   }
-  if (transport !== 'github') throw new Error('--transport must be github or connector')
+
+  private async assertBranch(): Promise<void> {
+    if (this.branchChecked) return
+    const response = await fetch(
+      `https://api.github.com/repos/${this.repo}/branches/${encodeURIComponent(claimsBranch)}`,
+      { headers: this.headers() }
+    )
+    if (!response.ok) {
+      throw new ClaimStoreUnavailableError(
+        response.status === 404
+          ? `ACO runtime branch ${claimsBranch} does not exist`
+          : `Cannot read ACO runtime branch ${claimsBranch}: GitHub ${response.status}`
+      )
+    }
+    this.branchChecked = true
+  }
+
+  async read(node: string) {
+    await this.assertBranch()
+    const path = claimPath(node)
+    const response = await fetch(
+      `https://api.github.com/repos/${this.repo}/contents/${encodedPath(path)}?ref=${encodeURIComponent(claimsBranch)}`,
+      { headers: this.headers() }
+    )
+    const at = observedAt(response)
+    if (response.status === 404) return { stored: null, observedAt: at }
+    if (!response.ok) throw new ClaimStoreUnavailableError(`Cannot read ${path}: GitHub ${response.status}`)
+
+    const value = (await response.json()) as GitHubContentFile
+    if (value.type !== 'file' || !value.content || value.encoding !== 'base64') {
+      throw new ClaimStoreUnavailableError(`Unexpected GitHub contents response for ${path}`)
+    }
+
+    try {
+      const raw = Buffer.from(value.content.replace(/\n/g, ''), 'base64').toString('utf8')
+      return { stored: storedClaimFromRaw(raw, value.sha, node), observedAt: at }
+    } catch (error) {
+      throw new ClaimStoreUnavailableError(
+        `Malformed lease record ${path}: ${error instanceof Error ? error.message : String(error)}`
+      )
+    }
+  }
+
+  async create(node: string, record: ClaimRecord): Promise<ClaimWriteResult> {
+    return this.write(node, record)
+  }
+
+  async update(node: string, expectedSha: string, record: ClaimRecord): Promise<ClaimWriteResult> {
+    return this.write(node, record, expectedSha)
+  }
+
+  private async write(node: string, record: ClaimRecord, expectedSha?: string): Promise<ClaimWriteResult> {
+    await this.assertBranch()
+    if (!this.token) throw new ClaimStoreUnavailableError('Claim mutation requires GH_TOKEN or GITHUB_TOKEN')
+    const path = claimPath(node)
+    const response = await fetch(`https://api.github.com/repos/${this.repo}/contents/${encodedPath(path)}`, {
+      method: 'PUT',
+      headers: this.headers(true),
+      body: JSON.stringify({
+        message: expectedSha ? `ACO: update ${node} lease` : `ACO: claim ${node}`,
+        content: Buffer.from(serializeClaimRecord(record), 'utf8').toString('base64'),
+        branch: claimsBranch,
+        ...(expectedSha ? { sha: expectedSha } : {})
+      })
+    })
+    const at = observedAt(response)
+    if (response.status === 409 || response.status === 422) {
+      throw new ClaimConflictError(`${node} lease CAS conflict (GitHub ${response.status})`)
+    }
+    if (!response.ok) throw new ClaimStoreUnavailableError(`Cannot write ${path}: GitHub ${response.status}`)
+
+    const value = (await response.json()) as { content?: { sha?: string } }
+    const sha = value.content?.sha
+    if (!sha) throw new ClaimStoreUnavailableError(`GitHub did not return a content SHA for ${path}`)
+    return { stored: { record, sha }, observedAt: at }
+  }
+
+  async list(): Promise<{ claims: readonly StoredClaim[]; observedAt: Date }> {
+    await this.assertBranch()
+    const response = await fetch(
+      `https://api.github.com/repos/${this.repo}/contents/${encodedPath(claimsDirectory)}?ref=${encodeURIComponent(claimsBranch)}`,
+      { headers: this.headers() }
+    )
+    const at = observedAt(response)
+    if (response.status === 404) return { claims: [], observedAt: at }
+    if (!response.ok) throw new ClaimStoreUnavailableError(`Cannot list ${claimsDirectory}: GitHub ${response.status}`)
+
+    const entries = (await response.json()) as GitHubContentFile[]
+    const claims: StoredClaim[] = []
+    for (const entry of entries) {
+      if (entry.type !== 'file' || !entry.path.endsWith('.json')) continue
+      const filename = entry.path.split('/').at(-1)!
+      const node = filename.slice(0, -'.json'.length)
+      const read = await this.read(node)
+      if (!read.stored) throw new ClaimStoreUnavailableError(`Claim disappeared while listing: ${node}`)
+      claims.push(read.stored)
+    }
+    return { claims, observedAt: at }
+  }
+}
+
+function storeFor(command: string): GitHubClaimStore {
   const mutation = ['claim', 'claim-next', 'renew', 'release', 'force'].includes(command)
   return new GitHubClaimStore(
     repositorySlug(),
@@ -218,7 +339,6 @@ function candidateJson(candidate: DispatchCandidate) {
     node: candidate.node.id,
     title: candidate.node.title,
     owners: candidate.node.owners,
-    recovery: candidate.previousClaim ? { branch: candidate.previousClaim.branch ?? null, pr: candidate.previousClaim.pr ?? null, checkpoint: candidate.previousClaim.checkpoint ?? null, note: candidate.previousClaim.note ?? null, generation: candidate.previousClaim.generation } : null,
     metrics: candidate.metrics
   }
 }
@@ -243,8 +363,6 @@ function snapshotJson(snapshot: DispatchSnapshot, limit = defaultDispatchLimit) 
       title: item.node.title,
       holder: item.claim.holder,
       expiresAt: item.claim.expiresAt,
-      health: leaseHealth(item.claim, snapshot.observedAt),
-      checkpoint: item.claim.checkpoint ?? null,
       grace: item.grace,
       branch: item.claim.branch ?? null,
       pr: item.claim.pr ?? null
@@ -300,7 +418,7 @@ function printDispatchSnapshot(snapshot: DispatchSnapshot, limit: number, format
   console.log('\n## Claimed')
   for (const item of snapshot.claimed) {
     console.log(
-      `- ${item.node.id} — ${item.claim.holder.label ?? item.claim.holder.kind}; last heartbeat ${leaseHealth(item.claim, snapshot.observedAt).heartbeatAgeMinutes} min ago; ${item.grace ? 'grace; expires' : 'expires'} ${item.claim.expiresAt}; ${item.claim.checkpoint?.next ?? item.claim.note ?? 'no recovery checkpoint'}`
+      `- ${item.node.id} — ${item.claim.holder.label ?? item.claim.holder.kind}; ${item.grace ? 'grace through' : 'expires'} ${item.claim.expiresAt}`
     )
   }
   if (!snapshot.claimed.length) console.log('- none')
@@ -319,7 +437,7 @@ function printDispatchSnapshot(snapshot: DispatchSnapshot, limit: number, format
   }
 }
 
-async function next(store: ClaimStore, flags: Map<string, string>): Promise<void> {
+async function next(store: GitHubClaimStore, flags: Map<string, string>): Promise<void> {
   ensureDispatcherViewMatchesMain()
   const listed = await store.list()
   const snapshot = buildDispatchSnapshot(
@@ -331,7 +449,7 @@ async function next(store: ClaimStore, flags: Map<string, string>): Promise<void
   printDispatchSnapshot(snapshot, positiveInt(flags, 'limit', defaultDispatchLimit), outputFormat(flags))
 }
 
-async function claimNext(store: ClaimStore, flags: Map<string, string>): Promise<void> {
+async function claimNext(store: GitHubClaimStore, flags: Map<string, string>): Promise<void> {
   ensureDispatcherViewMatchesMain()
   const format = outputFormat(flags)
   const result = await claimNextFromStore(store, controlNodes, {
@@ -375,7 +493,7 @@ async function claimNext(store: ClaimStore, flags: Map<string, string>): Promise
   printWrite(result.claim)
 }
 
-async function status(store: ClaimStore): Promise<void> {
+async function status(store: GitHubClaimStore): Promise<void> {
   ensureControlViewMatchesMain()
   const listed = await store.list()
   const claims = new Map<string, ClaimRecord>(listed.claims.map((claim) => [claim.record.node, claim.record]))
@@ -422,7 +540,7 @@ async function status(store: ClaimStore): Promise<void> {
   console.log('\n## Claimed')
   for (const item of claimed) {
     console.log(
-      `- ${item.node} — ${item.record.holder.label ?? item.record.holder.kind}; ${item.grace ? 'expiry grace through' : 'expires'} ${item.record.expiresAt}; heartbeat ${leaseHealth(item.record, listed.observedAt).heartbeatAgeMinutes} min ago${item.record.branch ? `; branch ${item.record.branch}` : ''}${item.record.pr ? `; PR #${item.record.pr}` : ''}`
+      `- ${item.node} — ${item.record.holder.label ?? item.record.holder.kind}; ${item.grace ? 'expiry grace through' : 'expires'} ${item.record.expiresAt}${item.record.branch ? `; branch ${item.record.branch}` : ''}${item.record.pr ? `; PR #${item.record.pr}` : ''}`
     )
   }
   if (!claimed.length) console.log('- none')
@@ -444,18 +562,9 @@ async function status(store: ClaimStore): Promise<void> {
 
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2))
-  const store = storeFor(args.command, args.flags)
+  const store = storeFor(args.command)
 
   switch (args.command) {
-    case 'doctor': {
-      ensureDispatcherViewMatchesMain()
-      const listed = await store.list()
-      const transport = args.flags.get('transport') ?? 'github'
-      const configured = transport === 'connector' ? Boolean(args.flags.get('bridge-dir')) : Boolean(process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN)
-      console.log(JSON.stringify({ transport, read: 'verified', mutationConfigured: configured, writeAuthorization: 'unproven until successful CAS write', observedAt: listed.observedAt.toISOString(), claims: listed.claims.length }, null, 2))
-      if (!configured) process.exitCode = 2
-      return
-    }
     case 'status':
       await status(store)
       return
@@ -478,26 +587,11 @@ async function main(): Promise<void> {
       return
     }
 
-    case 'merge-check':
     case 'verify': {
       if (!args.node) throw new Error('verify requires NODE')
-      const node = args.node
-      if (args.command === 'merge-check') {
-        // Preserve the existing default JSON; readable operational wording is explicit opt-in.
-        const format = args.flags.has('format') ? outputFormat(args.flags) : 'json'
-        const leaseId = requiredFlag(args.flags, 'lease-id')
-        requiredFlag(args.flags, 'generation')
-        const generation = optionalInt(args.flags, 'generation')!
-        const result = await publicationPreflight({
-          repository: repositorySlug(), branch: requiredFlag(args.flags, 'branch'),
-          head: requiredFlag(args.flags, 'head'), leaseId, generation
-        }, { git, verify: () => verifyClaimInStore(store, node, controlNodes, {leaseId, generation}) })
-        console.log(format === 'text' ? renderPublicationReport(result) : JSON.stringify(result, null, 2))
-        return
-      }
       // Verification is deliberately occupancy-only. PCO/merge validation is
       // the independent durable structural check.
-      const verified = await verifyClaimInStore(store, node, controlNodes, {
+      const verified = await verifyClaimInStore(store, args.node, controlNodes, {
         leaseId: requiredFlag(args.flags, 'lease-id'),
         generation: optionalInt(args.flags, 'generation')
       })
@@ -567,7 +661,7 @@ async function main(): Promise<void> {
 
     default:
       throw new Error(
-        `Unknown command ${args.command}. Use doctor, status, next, claim-next, show, verify, merge-check, claim, renew, release or force.`
+        `Unknown command ${args.command}. Use status, next, claim-next, show, verify, claim, renew, release or force.`
       )
   }
 }

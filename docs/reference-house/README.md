@@ -2,11 +2,7 @@
 
 The **Reference House** is one deliberately specific integration test for Ovid’s House. It forces doctrine, selected patterns, a selected architectural grammar, programme, structure, envelope, services, environmental strategy and maintenance geography into one building so conflicts cannot remain abstract.
 
-It is **not proof of Ovid’s House** and it is not a universal house type. It is also the pre-site design study for the owner’s eventual home: a real London plot will establish a distinct site-specific design basis. The book and computational work support that objective; neither currently establishes construction readiness.
-
-## Current design basis
-
-Start with [Current House Basis](current-house-basis.md): the accepted 12 × 12 m house, its owning sources and the limits of inherited technical evidence. Historical compiler fixtures and predecessor design and review studies remain available at their own scope; they do not establish current-house technical coordination.
+It is **not proof of Ovid’s House** and it is not a universal house type.
 
 ## Authority stack
 
@@ -28,7 +24,7 @@ For the current maturity assessment and active work, use `STATUS.md`. Structural
 
 ## Authorised resolution programme
 
-The next major Reference House development is coordinated internally by `project/book-resolution-programme.md`. It works from the accepted current layout and preserves earlier studies as historical evidence. It adds first-class downstream design/resolution work that the current virtual-design scope deliberately does not complete:
+The next major Reference House development is coordinated internally by `project/book-resolution-programme.md`. It does not invalidate the present coordinated virtual-design house or silently replace its controlled geometry. It adds first-class downstream design/resolution work that the current virtual-design scope deliberately does not complete:
 
 - `BSR` refactors the book structure and ownership boundaries;
 - `IAS` develops the selected interior architecture system;
@@ -68,12 +64,10 @@ Occurrence is not proof. A pattern, grammar relation or technical idea does not 
 Use the following records according to the question:
 
 - `docs/reference-house/brief-and-constraint-ledger.md` — project brief, constraints and controlled design obligations;
-- [Current House Basis](current-house-basis.md) — current architectural source and explicit technical/applicability limits;
-- [Whole-house material policy](material-policy.md) — owner requirements for installed materials and constituent evidence;
-- [Ground water and rising-damp policy](ground-water-policy.md) — passive dryness and substantial non-plastic DPCs with generous evidence-based margin;
-- [Coordinated current drawing family](https://github.com/adamnoden/architecture/blob/main/docs/publication/architectural-plate-layout-family.md) — source-derived plan, section and elevation correspondence;
-- [Historical Pattern Occurrence Register](pattern-occurrence-register.md) — predecessor occurrences to recheck against current selections;
-- [Historical G-01 conformance](g01-v0.1-conformance-d12.md) — bounded predecessor judgement, not automatic successor conformance;
+- [Current Technical Coordination](structural-coordination.md) — whole-house architectural/technical coordination and its proof limits;
+- `docs/reference-house/plan-section-elevation-gate.md` — cross-view architectural consistency gate;
+- [Pattern Occurrence Register](pattern-occurrence-register.md) — which reusable patterns are actually selected here;
+- [G-01 conformance](g01-v0.1-conformance-d12.md) — bounded conformance to the selected G-01 grammar;
 - [Independent Review Questions](external-review-brief.md) — questions that require competent professional review rather than internal assertion.
 
 This README intentionally does not duplicate live dimensions, packet state or model values that have their own owners.
@@ -88,7 +82,7 @@ Most coordination Markdown and controlled architectural drawing/source records a
 
 ### Generated semantic inspection
 
-[`generated/`](generated/) is downstream of the historical technical fixture's canonical Metamorph Compiler source/compile, not the accepted revision-02 architectural model. It contains human-readable semantic inspection views and reports.
+[`generated/`](generated/) is downstream of the canonical Metamorph Compiler source/compile. It contains human-readable semantic inspection views and reports.
 
 **Do not hand-edit generated inspection artefacts.** Change the owning source or renderer and regenerate them. The local [`generated/README.md`](generated/) explains the uncertainty language, manifest and verification command.
 

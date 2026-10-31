@@ -29,31 +29,14 @@ If one tool lacks a capability, pursue an available safe workaround before decla
 
 Ask only when a material ambiguity cannot reasonably be resolved from project context, an action exceeds the delegated scope, or a real blocker remains after available alternatives. Complete independent authorised work first and state the exact blocker rather than stopping at a proposal or partial handoff.
 
-### Undirected swarm sessions
-
-Workers in independent chats and centrally coordinated sessions use the same canonical claims; each executing worker owns its own lease.
-
-The owner's standalone command **`swarm`** (case-insensitive) means: enter the existing autonomous, self-service project-control loop, not an invitation to redesign it. Start by reading this constitution and `project/control/README.md`; establish current `main` authority and live occupancy, then use the canonical dispatcher (`npm run control:claim-next`) to acquire the highest-ranked eligible packet. Complete and verify the bounded packet, integrate and close it out, release its lease, and repeat while safe, useful, unclaimed work remains. Prefer another eligible packet over stopping because one candidate is blocked. Never bypass manual-dispatch policy, leases, validation or merge safety.
-
-A successful packet is a checkpoint, not a reason to end an undirected swarm. Do not invent a trial, packet-count cap or elapsed-time budget. Stop only for owner interruption, an actual execution limit, an evidenced empty eligible frontier or a coordination/environment blocker after safe alternatives. If one candidate is blocked, dispatch another. A directed, explicitly bounded assignment may end when its scope is complete. State the concrete stop reason and evidence; never imply the frontier is exhausted because you chose to stop.
-
-Use the [swarm runbook and report contract](project/control/swarm-runbook.md). Capture timing and graph baseline before acquisition; keep session attribution separate from net programme changes by other agents. Report measured wall duration, merged outputs, before/after packet counts and labelled coverage percentages, scope/requeue changes, remaining structural and live frontiers, manual gates, validation, leases, cleanup and stop reason. Unknown timings/availability stay unknown. Packet coverage is not effort, architectural maturity or construction readiness; a graph with new/reopened tasks may legitimately show a lower percentage after useful work. Do not fabricate progress bars or ETAs.
-
-For human navigation, announce the first claimed work as **`CODE · concise packet title`**, using its canonical three-letter workstream code. If the chat environment offers an authorised rename action, use that title; otherwise offer it as a title suggestion without claiming to have renamed the chat. At subsequent workstream changes, report the new code in the ordinary checkpoint/SITREP. Do not fabricate completion percentages or suggest that a ChatGPT sidebar title can be updated automatically when no such control exists. Live progress belongs to the control plane, not a manually maintained title.
-
-Run within the current execution's actual capabilities and time limits; this command does not authorise asynchronous work beyond the active task or silently retaining an unmaintained lease. On interruption or unavoidable limits, leave durable handoff state and handle the lease according to the protocol. A process can vanish before any handoff: push bounded, verifiable work and update its remote checkpoint at meaningful milestones rather than relying on a final chat message. On startup, inspect predecessor and open-PR evidence before choosing fresh work; expired leases are not proof of death or correctness. A returning stale worker must reverify its generation before any publication.
-
-When the canonical Git/CLI dispatcher cannot run in an ordinary chat, first use the locked [three-command gateway](project/control/swarm-runbook.md#regular-chat-gateway-three-commands-only) where it is verified operational: it invokes the same CLI on a GitHub Actions runner. Never infer that posting a request means it executed; observe the correlated response and current lease. Do not present connector read/write access alone as full swarm capability. The [runbook](project/control/swarm-runbook.md#connector-only-chat-boundary) permits a narrowly owner-directed connector-only CAS operation with explicit graph and occupancy checks; it cannot silently invent dispatcher ranking or acquire arbitrary READY packets. Continue read-only investigation or independent noncolliding work if those checks cannot be established.
-
 ## 2. Canonical anchors
 
 Follow changing facts at their source:
 
 - `README.md` — project proposition and conceptual structure;
-- `project/owner-house-charter.md` — governing owner purpose and priority when house, book and tooling objectives conflict; read before scoping substantial work;
 - `docs/README.md` — documentation ownership and information architecture;
 - `STATUS.md` — generated durable structural execution state and maturity projection;
-- `project/control/README.md` — PCO/ACO execution, dispatcher and live-claim mechanics; `npm run control:brief` gives a current-main operational briefing, never an alternative scheduler;
+- `project/control/README.md` — PCO/ACO execution, dispatcher and live-claim mechanics;
 - `project/authority.ts` — machine-readable claim ceiling;
 - `docs/editorial/editorial-doctrine.md` — public-facing editorial standard;
 - `docs/computational/README.md` and `compiler/README.md` — computational role and proof boundaries;
@@ -156,8 +139,6 @@ Automated tests prove only what they legitimately assert. Match validation to th
 
 Do not substitute CI for judgement at a boundary CI does not test.
 
-During iteration, run the relevant checks for the changed boundary. Full repository health may be established by the canonical command in exact-head CI when local runtime capabilities prevent it; record the local limitation and require the CI result before merge. Do not repeatedly rerun successful checks without a changed dependency, new failure or unresolved concern. Reconcile moved main sources and revalidate what the merge can affect; do not reuse a green result for a different head. Never weaken checks, change permissions or modify dependencies merely to manufacture a local pass. The swarm runbook owns runtime-specific launch/transport guidance, not this constitution.
-
 When a controlled baseline, fingerprint, generated family or publication projection changes, reconcile all legitimately dependent artefacts. Do not leave a mixed state.
 
 ## 8. Public surfaces
@@ -181,15 +162,13 @@ For bounded work:
 - preserve meaningful provenance when controlled baselines move;
 - avoid force updates unless intentional, necessary and lease-protected.
 
-For substantial execution against a PCO node, structural `READY` is necessary but not sufficient. Before beginning work that could collide with another agent's durable output, query ACO and acquire the canonical node lease. Renew at meaningful execution checkpoints and leave recoverable branch/PR evidence and a next action. Before final merge run the control runbook’s publication preflight against the validated remote head, verify ownership before handoff, and release it after completion, handoff or abandonment. Read-only investigation that cannot collide with durable output does not require a lease.
+For substantial execution against a PCO node, structural `READY` is necessary but not sufficient. Before beginning work that could collide with another agent's durable output, query ACO and acquire the canonical node lease. Renew it when necessary, verify ownership before final merge/handoff, and release it after completion, handoff or abandonment. Read-only investigation that cannot collide with durable output does not require a lease.
 
 When an agent is idle and has **not** been explicitly assigned a packet, it must use the PCO dispatcher (`npm run control:next` / `npm run control:claim-next`) rather than choosing an arbitrary READY node. The dispatcher may auto-claim only nodes whose durable `agentDispatch` policy is `self-service`; `manual` nodes require explicit direction even when structurally READY. A direct owner assignment overrides dispatcher ranking but never bypasses the ACO lease protocol.
 
 ACO occupancy is volatile and deliberately separate from PCO lifecycle. Do not infer ownership from branch names or `STATUS.md`. If the live lease store cannot be read safely, fail closed for new collision-prone work rather than assuming the node is free. Normal agents must not force-take an active lease; exceptional takeover requires explicit owner/admin intent and a recorded reason.
 
 `runtime/claims` is retained coordination infrastructure, not a feature branch. Never merge it into `main`, and do not delete it during ordinary branch cleanup. Its per-node records are runtime state and must not be copied into source branches.
-
-Packet PRs declare `Work: CANONICAL-NODE` (comma-separated for shared scopes) and one `Lease: NODE / UUID / generation N` line per packet. Non-packet PRs declare `Work: none` and `Work reason: ...`; that exemption may not change canonical node sources. CI observes the declaration and current lease; it does not replace final publication preflight.
 
 Before merge, verify that the validated head is still the head being merged and that the intended base relationship still holds. If `main` has moved materially, reconcile and revalidate rather than assuming the earlier green result proves the resulting merge.
 

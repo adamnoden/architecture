@@ -29,10 +29,10 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Validate packet and lease declaration
+      - name: Probe live self-service dispatcher
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: node --import tsx scripts/control-operations.ts packet-check
+        run: npm run control:next -- --format json --limit 20
 
       - name: Render project-control projections for validation
         run: npm run status:update
@@ -42,6 +42,9 @@ jobs:
 
       - name: Validate project control
         run: npx tsx scripts/validate-project-control.ts
+
+      - name: Prove project-control invariants
+        run: node --import tsx --test project/control/control.test.ts
 
       - name: Validate public nomenclature source
         run: npx tsx scripts/validate-public-nomenclature.ts --source

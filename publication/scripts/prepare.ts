@@ -139,7 +139,6 @@ copyFileSync(repoPath('README.md'), workPath('README.md'))
 mkdirSync(workPath('publication'), { recursive: true })
 cpSync(repoPath('publication/primer'), workPath('publication/primer'), { recursive: true })
 copyFileSync(repoPath('publication/part-iii.md'), workPath('publication/part-iii.md'))
-copyFileSync(repoPath('publication/pattern-reference.md'), workPath('publication/pattern-reference.md'))
 
 const metadata = editionMetadata()
 const titlePage = smokeMode ? null : writeTitlePage(metadata, primerMode ? 'Primer' : 'Working Edition')
