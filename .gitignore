@@ -7,3 +7,4 @@ publication/dist/
 .DS_Store
 publication/specimens/*/.work/
 publication/specimens/*/dist/
+public/drawing-gallery/
