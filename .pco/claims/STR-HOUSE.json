@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 7,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "5ad665a5-8a14-4779-8cce-ab3434d47091",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-had-design-983b7ee"
   },
   "claimedAt": "2026-10-31T19:36:45.785Z",
-  "heartbeatAt": "2026-10-31T19:57:31.969Z",
-  "expiresAt": "2026-10-31T21:27:31.969Z",
+  "heartbeatAt": "2026-10-31T19:58:40.890Z",
+  "expiresAt": "2026-10-31T19:58:40.890Z",
   "branch": "work/swarm-riser-recovery-20261031",
   "predecessor": {
     "leaseId": "b69d3feb-4ddc-4a18-baab-fd43fb21972e",
@@ -37,5 +37,7 @@
     "next": "Handoff release of this completed bounded recovery. Next canonical STR-HOUSE owner should carry accepted1170 product/depth and cabinet/floor-closure evidence into a connected actual support/closure and component-renewal section, or another genuinely open HOUSE junction selected from the owning programme. Bind real receiving units, one-sided spine and plant-door reactions, permanent cabinet supports, flush closure and accessible service withdrawal together; preserve separate IAS/HAD/MAT duties and existing source/review ancestry. Root coordinates fresh dispatch; old source branch cleanup only with expected0a1e guard.",
     "blocker": "HC150 hanger or approved deeper pairing, receiving-panel layout, actual structural/closure capacities, complete cabinet support and service release, protection and installed constituents remain unbound. Nominal shared200 depth is not assembly approval. STR-HOUSE remains planned and incomplete."
   },
-  "pr": 1170
+  "pr": 1170,
+  "releasedAt": "2026-10-31T19:58:40.890Z",
+  "releaseReason": "handoff"
 }
