@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "ADE-SECTION-PARITY",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ab2cc511-c16c-4c94-90fa-ccac785aac21",
   "holder": {
     "kind": "chatgpt",
     "label": "ade-section-parity"
   },
   "claimedAt": "2026-10-31T21:53:32.902Z",
-  "heartbeatAt": "2026-10-31T22:03:09.963Z",
-  "expiresAt": "2026-10-31T22:48:09.963Z",
+  "heartbeatAt": "2026-10-31T22:30:38.030Z",
+  "expiresAt": "2026-10-31T22:30:38.030Z",
   "branch": "work/ade-section-parity-1187",
   "checkpoint": {
-    "evidence": "PR #1192 branch head 6e3d1fe: shared ring roof mesh; courtyard hosted section backgrounds; principal/service cut integration; source-level unique aperture IDs; source-unified roof height law and tests",
-    "next": "Inspect exact-head CI, fix failures, inspect rendered section artifact, write closeout and merge only with fresh runner preflight"
+    "evidence": "ADE-SECTION-PARITY #1192 merged to main b927525d8b375bdaf4e97d4c8304ed62c8d81628; all 13 exact-head checks green; fresh native preflight attempt 2 at 22:29:40Z succeeded",
+    "next": "Node complete. Final PLT-FINAL-PREP and actual-size human print review remain independent."
   },
-  "pr": 1192
+  "pr": 1192,
+  "releaseReason": "completed",
+  "releasedAt": "2026-10-31T22:30:38.030Z"
 }
