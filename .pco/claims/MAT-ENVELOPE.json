@@ -9,8 +9,8 @@
     "label": "swarm-envelope-dpc-983b7ee"
   },
   "claimedAt": "2026-10-31T09:18:30.617Z",
-  "heartbeatAt": "2026-10-31T09:32:51.212Z",
-  "expiresAt": "2026-10-31T10:17:51.212Z",
+  "heartbeatAt": "2026-10-31T09:45:37.176Z",
+  "expiresAt": "2026-10-31T10:30:37.176Z",
   "branch": "work/swarm-envelope-dpc-20261031",
   "predecessor": {
     "leaseId": "650de713-dbb7-479c-a948-c5e784f2560f",
@@ -34,8 +34,8 @@
   },
   "pr": 1133,
   "checkpoint": {
-    "evidence": "PR #1133 published at 75a9d8782839340169b590ee0811d53b544ce493; remote tree c14027fa3782251600a8d74dd7381bd02a3b22cc exactly matches independently reviewed two-file candidate amendment. WCBL65 current DoP and separate historical test bound; M12 additive chemistry, slate product and inner-leaf floor connection remain held. Reconciled main1486, preserved all54 audit entries and non-G02 bytes, local source/integrity/docs checks passed.",
-    "next": "Require full exact-head CI, reconcile any moved main while preserving other MAT rows, run fresh merge-check and integrate the bounded candidate amendment. Then continue exact mortar/slate disclosure and qualified floor junction work; MAT-ENVELOPE remains planned with no adopted assembly.",
-    "blocker": "Full exact-head CI pending; known local Chrome155 figure dependency unavailable."
+    "evidence": "PR #1133 latest head 7f74c7d6885bcc89880491e15cf4e3703f13bc9c, tree eceb2cffbdaf60563f7999efdba8144c990aba07, exactly verified against local. Current main b9f64d69 integrated, including MAT-INTERIORS #1126 and housekeeping. Only reviewed envelope study and G02 differ from main; all54 audit entries and non-owned content preserved. Relevant repository, publication and documentation checks passed; earlier1005 head full CI passed before base moved.",
+    "next": "Observe fresh full CI on 7f74c7d6, run canonical merge-check against current main immediately before expected-head merge, then record actual merge and release handoff. Candidate evidence does not close mortar chemistry, DPC-use slate, mineral inner-leaf/floor junctions or broader MAT-ENVELOPE assembly work.",
+    "blocker": "Latest exact-head full CI pending after main reconciliation; no construction assembly selected."
   }
 }
