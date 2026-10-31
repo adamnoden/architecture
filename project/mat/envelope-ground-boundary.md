@@ -1,6 +1,6 @@
 # MAT-ENVELOPE — mineral ground boundary and floor junction comparison
 
-**30 October 2026; exact-candidate review added 31 October 2026. Bounded design study; no construction selection or packet closeout.** This develops the first ground/wall/floor comparison required by the [MAT programme](material-integrity-programme.md), from the [constituent register](constituent-audit.md). The [material policy](../../docs/reference-house/material-policy.md) and [ground-water policy](../../docs/reference-house/ground-water-policy.md) control the decision. Source keys below identify the primary evidence and its revision limits.
+**30 October 2026; exact-candidate and floor-access reviews added 31 October 2026. Bounded design study; no construction selection or packet closeout.** This develops the first ground/wall/floor comparison required by the [MAT programme](material-integrity-programme.md), from the [constituent register](constituent-audit.md). The [material policy](../../docs/reference-house/material-policy.md) and [ground-water policy](../../docs/reference-house/ground-water-policy.md) control the decision. Source keys below identify the primary evidence and its revision limits.
 
 ## Design result
 
@@ -80,6 +80,50 @@ For B, MAC's flooring guidance distinguishes grades and separating membranes, in
 
 Therefore B is a useful junction-development priority, not a completed alternative. Do not combine guidance fragments into a claimed tested recipe. There is no retrieved evidence of an entirely no-synthetic floor moisture/gas system connected to the proposed mineral wall baseline.
 
+## Floor barrier and room-side carrier renewal — 31 October 2026
+
+**Develop routine carrier access wholly on the maintainable side of a retained, continuously supported ground boundary. Reject a layout that requires cutting or puncturing that boundary for ordinary carrier renewal.** This gives arrangement B a concrete interface test, rather than treating an above-slab layer as inherently accessible. The carrier, joint release, tools, supports and complete removal/insertion path must all satisfy it. No new void, floor level, access opening or fit within the represented 300 mm reserve is established.
+
+Here **W1** follows [RWT's water-boundary terminology](../rwt/segmented-copper-access.md#w1-and-w2-must-survive-different-operations): water inside the carrier and its joints. **W2** is the retained court pan/collector and its fixed penetrations. The house's ground-moisture boundary is a third duty; any required ground-gas protection needs independent qualification. Neither the court enclosure nor a damp-resistant floor field is automatically all three boundaries or a safe catchment for a leaking W1 pipe.
+
+### What the floor evidence adds
+
+MAC's concrete-base guidance places required damp membranes and/or insulation below the base slab. Preserve that as its stated arrangement; it does not qualify moving those layers above the slab. [M3]
+
+IKO's May 2019 guide separately presents the floor as a damp membrane and gives these concrete-base examples. They keep B's floor field under investigation; the whole assembly remains unqualified. [I1]
+
+| IKO example, May 2019 | Stated use and thickness | Separator over concrete |
+|---|---|---|
+| Floorstar L, code 42010000 | Includes domestic floors; 15–20 mm | With lower DPC: felt or glass tissue. Without lower DPC: glass tissue |
+| Floorstar M, code 42170000 | Medium duty; 20–30 mm | Glass tissue with or without lower DPC |
+
+These dated codes establish no current recipe or extra damp redundancy. The guide cites BR211 (1999) for radon and identifies possible adhesive/latex finishes; neither supplies whole-system qualification. [I1] Current ground-gas and pressure-water performance remain unqualified.
+
+The July 2023 sheet for IKO glass tissue 14280000/14290000 describes separation and lateral vapour release: loose laying with minimum 50 mm laps, and two layers over bituminous bases or residue. That is a different function from the damp barrier. Binder and sizing chemistry are not disclosed, so retain the required separation duty without declaring this tissue either polymer-free or polymer-bearing. [I2] The asphalt, substrate preparation, finishes, movement joints and every retained accessory still need an exact composition and suitability assessment under the material policy.
+
+### The perimeter does not become a qualified mineral junction
+
+MAC's flooring text refers vertical/sloping **key preparation** to its roofing section. That section's engineering-brick detail requires high-bond primer **and** mechanically fixed expanded metal lath; its table confirms both treatments. A plain asphalt turn-up against the proposed engineering brick is therefore not supported by this route. The referral does not transfer roof upstand heights or chase details into the floor design. [M1, M4]
+
+The older MAC material definition describes the primer as latex containing modified synthetic rubber. That described treatment conflicts with the default policy. [M5] The separately dated March 2018 IKOpro primer sheet, code 23170005, identifies a water-based modified-rubber product without a complete formulation. Do not transfer the generic MAC definition into an exact current IKO composition claim. [I3] Omitting the primer or lath would abandon the cited key preparation; neither that omission nor a different primer name qualifies the rigid-DPC transition. The floor-to-wall connection remains a design hold, not proof that every possible asphalt junction is impossible.
+
+### Keep routine service work distinct from boundary repair
+
+The [connected RWT renewal comparison](../rwt/segmented-copper-access.md#local-cutting-is-not-yet-a-complete-renewal-method) and [threshold access result](../rwt/threshold-renewal-access.md) require more than lifting a floor cover. Apply their first movement and joining questions to the ground boundary as well as W2:
+
+| Work state | Consequence for the floor and retained boundaries |
+|---|---|
+| Expose the room carrier | Covers and selected finishes may open; the ground boundary, its support, upstands and qualified penetrations must remain intact. Fixings and temporary handling loads cannot silently puncture it. A barrier carried on the removable cover fails this routine-access comparison |
+| Open the W1 joint | Manage incoming rain and relevant receiving-water conditions independently. A retained threshold tail still conveys W1, and its bore remains open unless separately isolated or diverted. Show an observable passive leakage route without assuming either W2 or the ground barrier safely contains that water; protect the occupied route |
+| Remove, reinsert and join the replacement | Demonstrate the full first release, tool approach and receiving path. Cold cutting does not prove access for the actual joining process. Protect the ground boundary, W2 and retained support from tools, heat and movement; an unspecified shield or a metal/mineral label supplies no protection result |
+| Return to service | Inspect and reinstate the actual disturbed work, then assess W1, retained W2 and the ground moisture/gas duties separately. Restoring the visible floor or passing one water test does not demonstrate the other boundaries |
+
+IKO reserves asphalt repair to specialists, describes softening with molten asphalt or grinding, and rejects cutting cold asphalt with a hammer and chisel. [I1] This does not specify complete patching, a transition to the wall DPC or gas-boundary reinstatement.
+
+Eventual renewal of a failed ground boundary, or the larger fixed-tail/pan/threshold package, remains a separate planned repair question. It must carry its own temporary protection, reconstruction, access and verification. The preference for keeping routine W1 work clear does not prohibit that larger repair or make a retained tail permanent by assumption.
+
+The next section must locate the retained ground boundary and its support relative to the entire service operation, then resolve its actual wall/threshold/penetration connections and insulation. If the necessary access, joining protection or passive leakage route cannot coexist with those boundaries, change the service route or floor section. Do not obtain clearance by creating a low well dependent on pumping or inaccessible groundwater tanking. The dated floor examples narrow the comparison; they do not select a product, qualify the wall junction or demonstrate a 300 mm fit.
+
 ## Section topology and consequential junctions
 
 This handoff defines connected duties without inventing a plot datum, a safe water margin or a buildable thickness. The first coordinated section must show a continuous moisture boundary across the occupied footprint **and** its independent thermal and load paths. It must also show what happens outside that boundary when the primary drain is blocked and the receiving system is flooded, under the existing ground-water/RWT policy.
@@ -141,4 +185,10 @@ Accessed **30–31 October 2026**. Page numbers are printed page numbers unless 
 | F5 | [PC 74A1 product data](https://www.foamglas.com/-/media/project/foamglas/public/shared/files/accessories/pc-74-a1/pds/pds-pc-74-a1-en.pdf), 9 February 2026, §§2.3 and 5, pp1–2 | Current formulation disclosure limit; generic application is distinct from F4 |
 | M1 | [MAC Detail considerations — flooring](https://masticasphaltcouncil.co.uk/wp-content/uploads/2020/12/Detail-considerations-flooring.pdf), revision not printed, pp10–11 | Grade-dependent separation and movement-joint duties; no exact non-synthetic product recipe |
 | M2 | [MAC Mastic asphalt flooring with skirting board](https://masticasphaltcouncil.co.uk/wp-content/uploads/2017/06/01-Mastic-asphalt-flooring-with-skirting-board.pdf), revision not printed, p19 | Illustrative projecting DPC, not a rigid-mineral-DPC junction qualification |
+| M3 | [MAC Design of the base — flooring](https://masticasphaltcouncil.co.uk/wp-content/uploads/2024/05/Design-of-base-flooring.pdf), revision not printed, p5 | Its required damp/insulation layers remain below the concrete base; URL year is not a document revision |
+| M4 | [MAC Detail considerations — roofing](https://masticasphaltcouncil.co.uk/wp-content/uploads/2021/05/Detail-Considerations-Roofing.pdf), revision not printed, pp13, 15; key-treatment table visually inspected | Scope of M1's key-preparation referral; engineering brick requires both primer and lath, without transferring roofing dimensions |
+| M5 | [MAC General information](https://masticasphaltcouncil.co.uk/wp-content/uploads/2017/06/General-information-PDF-download.pdf), older undated guide, p6 | Synthetic-rubber primer definition for that described route; no complete current-product formulation |
+| I1 | [IKO flooring design guide landing page](https://iko.ie/documents-downloads/download-info/a-specifiers-design-guide-for-mastic-asphalt-flooring/) and [retrieved PDF](https://iko.ie/download/69963/?tmstv=1757068443), May 2019, pp3, 8, 12–13 | Dated floor and repair evidence; PDF text inspected, no drawing-based junction claim |
+| I2 | [IKO Glass Fibre Tissue data sheet](https://ikogroup.co.uk/wp-content/uploads/2023/11/IKO-Glass-Fibre-Tissue-TDS.pdf), July 2023, p1, visually inspected | Exact separator identities, substrate/lap conditions and vapour-release function; binder/sizing undisclosed |
+| I3 | [IKOpro High Bond Primer data sheet](https://ikogroup.co.uk/wp-content/uploads/2023/11/IKOpro-High-Bond-Primer-TDS-.pdf), March 2018, pp1–2 | Separate product identity and limited rubber-based description; no generic-definition transfer |
 | P1 | [Wienerberger Declaration of Performance retrieval](https://www.wienerberger.co.uk/tools-and-downloads/find/declaration-of-performance-dop.html), undated page, product-label/DoP instructions | Procurement identity gap; no unit has been declared selected here |
