@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "PHY-03-ENGINEERING",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ce5e76d5-bf42-49d0-9f5b-fce70678b3e6",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-phy-internal-983b7ee"
   },
   "claimedAt": "2026-10-31T20:18:44.290Z",
-  "heartbeatAt": "2026-10-31T20:47:01.104Z",
-  "expiresAt": "2026-10-31T22:17:01.104Z",
+  "heartbeatAt": "2026-10-31T20:53:33.000Z",
+  "expiresAt": "2026-10-31T20:53:33.000Z",
   "branch": "work/swarm-floor-edge-internal-20261031",
   "checkpoint": {
     "evidence": "Completed internal floor-edge study published as PR1185 head8298ddab73af7c72760a6720757a9d1098516aed, exact reviewed treeb20238b2dc3dd6fa8f801619d0e9fe8cc480bd57; local source984c80416c23fa24d1e19ddfa844b8416a5b0813 and accepted EPR parentd4cad187 preserved. Five-family calculation/source and whole-study independent challenges passed; root reproduced calculations and inspected actual A3. Nine files only; PHY completion with external structural/specimen/material/fire duties retained. Local unchanged external-overlay figure bounds failed under Chrome155 and is not counted as passed; full exact-head CI required.",
     "next": "Verify remote tree and nine reviewed blobs; observe full canonical CI on exact published head, reconcile any moved main, run fresh canonical preflight, expected-head merge and accepted-tree/lifecycle verification. On accepted completion release through normal completed-node path, record canonical completion and clean feature ref without post-completion renewal."
   },
-  "pr": 1185
+  "pr": 1185,
+  "releasedAt": "2026-10-31T20:53:33.000Z",
+  "releaseReason": "completed"
 }
