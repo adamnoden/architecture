@@ -9,8 +9,13 @@
     "label": "swe-1174-publication"
   },
   "claimedAt": "2026-10-31T20:29:23.177Z",
-  "heartbeatAt": "2026-10-31T20:38:30.408Z",
-  "expiresAt": "2026-10-31T21:23:30.408Z",
-  "branch": "work/swe-publication-1174",
-  "note": "Implementation and targeted tests complete locally; preparing remote publication and native PDF validation."
+  "heartbeatAt": "2026-10-31T20:42:58.810Z",
+  "expiresAt": "2026-10-31T21:27:58.810Z",
+  "branch": "work/swe-identity-1174",
+  "note": "Implementation and targeted tests complete locally; preparing remote publication and native PDF validation.",
+  "pr": 1180,
+  "checkpoint": {
+    "evidence": "Original publication PR #1184, head a14f3cc45b563e58c72e9713108572109a007c24, exact tree 0297aa66b76dd773343061b9ed7febfdc1f45dbd; project/swe/publication-result.md records 31 corrected routes, 17 passing tests, and seven-to-zero warm font downloads; integration PR #1180 retains packet commit as a parent.",
+    "next": "Inspect exact-head required CI and PDF/metadata/typography proofs on shared PR #1180; run fresh canonical preflight for SWE-PUBLICATION before expected-head integration; release only after verified main merge."
+  }
 }
