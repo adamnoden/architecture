@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
   "generation": 7,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "7da738bf-93a5-473d-8385-4aa7b97264bf",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-2900-worker-two-duct"
   },
   "claimedAt": "2026-10-31T17:22:25.363Z",
-  "heartbeatAt": "2026-10-31T17:42:18.390Z",
-  "expiresAt": "2026-10-31T18:27:18.390Z",
+  "heartbeatAt": "2026-10-31T17:43:16.481Z",
+  "expiresAt": "2026-10-31T17:43:16.481Z",
   "branch": "work/swarm-2900-interfaces-20261031",
   "predecessor": {
     "leaseId": "8f8a053b-9104-42c3-a1a5-02b4b34db3ca",
@@ -40,5 +40,7 @@
     "evidence": "PR1157 merged at17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI41225448974 succeeded; canonical MAT-INTERIORS preflight passed17:40:17.505Z. Independent primary-source and integrated-source reviews passed. Shared remote branch is absent.",
     "next": "Bind the actual plaster, patching and preparation to a room surface and its allocated thickness; confirm supplied powder shade and Fixative revisions; assess representative finish and repair. Preserve the separate configured tray/support/withdrawal obligations in the wet-assembly study.",
     "blocker": "Actual substrate, complete preparation/accessory set, supplied colour/revision and physical finish/repair evidence remain unresolved. No finished wall, ceiling or complete interior assembly is accepted; MAT-INTERIORS remains incomplete."
-  }
+  },
+  "releasedAt": "2026-10-31T17:43:16.481Z",
+  "releaseReason": "handoff"
 }
