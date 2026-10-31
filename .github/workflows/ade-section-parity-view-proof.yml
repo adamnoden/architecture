@@ -1,4 +1,5 @@
 name: ADE orthographic-section visual proof (temporary)
+# Final PR #1192 proof: source-hosted walls and partition occlusion.
 on:
   push:
     branches: [work/ade-section-preflight-1189]
