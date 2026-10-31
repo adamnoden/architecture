@@ -9,8 +9,14 @@
     "label": "Owner-directed external-review blocker audit"
   },
   "claimedAt": "2026-10-31T19:49:19.417Z",
-  "heartbeatAt": "2026-10-31T19:49:19.417Z",
-  "expiresAt": "2026-10-31T20:34:19.417Z",
+  "heartbeatAt": "2026-10-31T19:55:07.000Z",
+  "expiresAt": "2026-10-31T20:40:07.000Z",
   "branch": "work/review-development-policy-20261031",
-  "note": "Explicit owner-directed policy audit, 31 October 2026. Exceptional bootstrap per swarm-runbook: PCO-REVIEW-POLICY is absent from main and is registered in this same bounded PR. Fresh current-main and retained-store reads verified no same-node claim or overlapping EPR/PHY/DEL policy work. Unknown-node occupancy may temporarily make new automatic dispatch fail closed until registration merges; existing leases and all design ownership remain untouched. Scope: internal-development policy, EPR/PHY/DEL contracts and graph; no design adoption or external evidence completion."
+  "note": "Explicit owner-directed policy audit, 31 October 2026. Exceptional bootstrap per swarm-runbook: PCO-REVIEW-POLICY is absent from main and is registered in this same bounded PR. Fresh current-main and retained-store reads verified no same-node claim or overlapping EPR/PHY/DEL policy work. Unknown-node occupancy may temporarily make new automatic dispatch fail closed until registration merges; existing leases and all design ownership remain untouched. Scope: internal-development policy, EPR/PHY/DEL contracts and graph; no design adoption or external evidence completion.",
+  "pr": 1172,
+  "checkpoint": {
+    "evidence": "PR #1172 at e4918e5ee277a814ee6228a3b47ca458e860013b, exact tree95621a70. 116 control tests, typecheck, graph/workflow/repository/link validation passed. Two internal semantic reviews reconciled stale PHY wording and retained no-specimen fallback. Local full-health unit/output suites passed up to missing pinned Chrome.",
+    "next": "Require full exact-head CI; reconcile any moved main, run canonical publication preflight, merge with expected head, then update eight issue bodies and verify lease/branch cleanup.",
+    "blocker": "CI pending; local Chrome155.0.8059.39 absent. No substantive design, external review or physical test completed."
+  }
 }
