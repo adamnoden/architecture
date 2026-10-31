@@ -40,7 +40,7 @@ export const houseDeliveryNodes = defineNodes([
   {
     id: 'ADE-SECTION-PARITY', owners: ['ADE'],
     title: 'Migrate principal and service sections to source-bound visible geometry and cross-view parity',
-    dependencies: ['ADE-SECTION-VIEW', 'PLT-CURRENT-REVIEW'], lifecycle: 'planned',
+    dependencies: ['ADE-SECTION-VIEW', 'PLT-CURRENT-REVIEW'], lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/ade/section-parity-result.md']
   },
