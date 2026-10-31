@@ -9,8 +9,8 @@
     "label": "mat-recovery-20261031"
   },
   "claimedAt": "2026-10-31T09:08:01.775Z",
-  "heartbeatAt": "2026-10-31T09:19:51.159Z",
-  "expiresAt": "2026-10-31T10:04:51.159Z",
+  "heartbeatAt": "2026-10-31T09:32:46.192Z",
+  "expiresAt": "2026-10-31T10:17:46.192Z",
   "branch": "work/mat-recovery-20261031",
   "predecessor": {
     "leaseId": "5fd39800-a275-449f-b5c0-f94b5aaf56ce",
@@ -34,8 +34,8 @@
   },
   "pr": 1126,
   "checkpoint": {
-    "evidence": "PR #1126; published head 06adf983996221e042829786e6bd98baf17157b6; recovered #1115 and programme link",
-    "next": "Locate manufacturer drain in IAS comparison, complete support and renewal evidence, validate and integrate bounded partial",
-    "blocker": "Exact assembly remains unselected; current main reconciliation and CI pending"
+    "evidence": "PR #1126; published head b4a8713486492d0b859dcfe534603d4e0c4112a2; located tray SVG/data and source-reviewed support/waste/renewal study",
+    "next": "Require exact-head CI, canonical merge-check, integrate bounded partial, retire recovered predecessor and release",
+    "blocker": "CI pending; no complete installation accepted; MAT-INTERIORS remains open"
   }
 }
