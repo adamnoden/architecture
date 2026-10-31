@@ -104,6 +104,7 @@ const workstreamRegistry = [
     issue: 1103,
     programme: 'project/str/structural-architecture-programme.md'
   },
+  { code: 'SWE', title: 'Software Reliability and Efficiency', issue: 1174, programme: 'project/swe/software-reliability-programme.md' },
   { code: 'TYP', title: 'Publication typography' }
 ] as const satisfies readonly WorkstreamDefinition[]
 
