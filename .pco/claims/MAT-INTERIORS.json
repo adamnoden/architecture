@@ -9,9 +9,9 @@
     "label": "swarm-2900-worker-two-duct"
   },
   "claimedAt": "2026-10-31T17:22:25.363Z",
-  "heartbeatAt": "2026-10-31T17:22:25.363Z",
-  "expiresAt": "2026-10-31T18:07:25.363Z",
-  "branch": "work/swarm-2900-mat-duct-20261031",
+  "heartbeatAt": "2026-10-31T17:27:25.851Z",
+  "expiresAt": "2026-10-31T18:12:25.851Z",
+  "branch": "work/swarm-2900-interior-finish-20261031",
   "predecessor": {
     "leaseId": "8f8a053b-9104-42c3-a1a5-02b4b34db3ca",
     "generation": 6,
@@ -33,5 +33,6 @@
       "next": "Bind the configured tray/Upstand/frame/waste package and all support/contact constituents, then draw north/east wall and independent west service sections with full waste withdrawal and the tray/frame carrying route.",
       "blocker": "Complete non-synthetic installation, applicable support details, physical fit and renewal remain unresolved. MAT-INTERIORS stays planned; this is bounded partial progress."
     }
-  }
+  },
+  "note": "Investigating I02 dry interior coating: exact two-component BEECK declarations and compatible substrate/accessory limits. No source publication yet; MAT-INTERIORS remains incomplete."
 }
