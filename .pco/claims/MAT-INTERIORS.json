@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
-  "generation": 4,
+  "generation": 5,
   "state": "claimed",
-  "leaseId": "5921a8d9-3549-4eac-acd9-ac34c0167a12",
+  "leaseId": "a65098e6-f17f-45df-a781-c83ba02da995",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-mat-interfaces-983b7ee"
+    "label": "swarm-access-recovery-mat-b-983b7ee"
   },
-  "claimedAt": "2026-10-31T10:56:01.489Z",
-  "heartbeatAt": "2026-10-31T10:56:01.489Z",
-  "expiresAt": "2026-10-31T11:41:01.489Z",
-  "branch": "work/swarm-mat-interfaces-20261031",
+  "claimedAt": "2026-10-31T16:50:36.707Z",
+  "heartbeatAt": "2026-10-31T16:50:36.707Z",
+  "expiresAt": "2026-10-31T17:35:36.707Z",
+  "branch": "work/swarm-access-recovery-20261031",
   "predecessor": {
-    "leaseId": "2a096f0e-ba23-46a7-a4e7-4617620fa822",
-    "generation": 3,
-    "branch": "work/mat-package-20261031-0948"
+    "leaseId": "5921a8d9-3549-4eac-acd9-ac34c0167a12",
+    "generation": 4,
+    "branch": "work/swarm-mat-interfaces-20261031"
   },
   "recoverySource": {
     "leaseId": "aa287637-308e-476a-9a5c-4cf2510b68c2",
