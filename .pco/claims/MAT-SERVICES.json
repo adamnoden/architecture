@@ -9,9 +9,9 @@
     "label": "swarm-mat-followon-983b7ee"
   },
   "claimedAt": "2026-10-31T09:23:30.382Z",
-  "heartbeatAt": "2026-10-31T09:56:45.204Z",
-  "expiresAt": "2026-10-31T10:41:45.204Z",
-  "branch": "work/swarm-mat-followon-20261031",
+  "heartbeatAt": "2026-10-31T10:09:42.062Z",
+  "expiresAt": "2026-10-31T10:54:42.062Z",
+  "branch": "work/swarm-materials-integration-20261031",
   "predecessor": {
     "leaseId": "b81cce7d-4da5-440d-8c97-c8a733678faa",
     "generation": 2,
@@ -31,5 +31,11 @@
       "evidence": "PR #1125 integrated as aa22421b5cf86b0bf893218191f82b22c36d9786; validated head f955db535028f9420ec0578d8d1d29f2735cb87f; full CI 41188095197 success; canonical preflight passed 2026-10-31T09:21:01.127Z; current main tree 1ce6c2dff4b5bf72bcb4c722ab7a467aed935387 matches; recovery branch deletion verified.",
       "next": "MAT-SERVICES stays planned. Bind exact current bare cable and complete matching termination, support, enclosure and accessory declarations to real IAS/BCR route/renewal design. Water, heating, waste, ventilation, controls and equipment constituents remain open; no accepted circuit or exception."
     }
+  },
+  "pr": 1145,
+  "checkpoint": {
+    "evidence": "Draft PR #1145 published at 18a8f2bdf39e3fef253e866a148cfdf1cbbc402a, tree 03bc2783319a7229e9940615449b9c010d73e177. Reviewed services parent b6b4d21f4a20f2536ef1fde227ba285566cb3e50 preserved. Combined local ownership check passed: exact study blob 90e9ed837fa965b0625bdccbbf8c8015788d4713, S01, SUPPLY-STUDY and programme link unchanged; all 54 row identities/order preserved.",
+    "next": "Keep source frozen. Root will observe full exact-head CI and run all three canonical preflights from the common checkout before expected-head integration. MAT-SERVICES remains planned; water-system admission and repair geometry remain open.",
+    "blocker": "Draft combined PR: exact-head CI and all three lease preflights pending."
   }
 }
