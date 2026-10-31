@@ -6,12 +6,13 @@ No accepted house geometry, structural system, product or foundation is adopted.
 
 ## 1. What is now available to judge
 
-The study joins three kinds of evidence without confusing their claims:
+The following studies join their evidence without confusing their claims:
 
 - [Joined occupation comparison](house-plan-study.md), [paired proposed ground and upper plans](studies/house-plan.svg), with [exact plan/route/enclosure record](studies/house-plan.json) and [source inventory](studies/house-source.json). These show rooms, masonry reservations, openings, stair, furniture and service locations together.
 - [Support and section study](house-support-study.md), its [drawing](studies/house-supports.svg) and [calculation](studies/house-supports.json). These name actual floor fields, finite bridge/stair reactions, roof corners, collectors, a foundation-grid concept and service crossings.
 - [Junction and arch study](house-junction-study.md), [declared alternatives](studies/house-junctions.json), [wet-door action sheet](studies/house-wet-actions.svg) and [planning/quantity comparison](studies/house-quantities.json). These retain local positive witnesses and failed controls.
 - [East-spine shared-bearing comparison](house-spine-bearing-study.md) and [dimensioned sheet](studies/house-spine-bearing.svg) locate an actual tied 140 mm supplier detail and the spatial consequences of three 215 mm widenings. This chooses the next local junction enquiry; it does not approve a structural connection or the whole house.
+- [North drainage support comparison](north-drainage-support-result.md) and [connected section](studies/north-drainage-support.svg) separate permanent threshold support from removable room-floor access and pipe supports. The tested arch envelopes conflict with the retained pipe levels; this partial result selects no support, wet assembly or whole-house section.
 
 The starting authority is main **68d0273f928681aed7222bba2927dc8a89ae5ead**, after both prerequisite studies. Accepted geometry remains RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02. The source calculation guards exact owning-file blobs; the support record fingerprints the paired-plan and accepted span inputs. The drawing is an inspection of declared geometry, not a new source of adopted house dimensions.
 
