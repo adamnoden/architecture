@@ -9,12 +9,12 @@
     "label": "services-recovery-next-20261031"
   },
   "claimedAt": "2026-10-31T17:53:34.129Z",
-  "heartbeatAt": "2026-10-31T18:14:08.162Z",
-  "expiresAt": "2026-10-31T18:59:08.162Z",
+  "heartbeatAt": "2026-10-31T18:19:00.849Z",
+  "expiresAt": "2026-10-31T19:04:00.849Z",
   "checkpoint": {
-    "evidence": "PR1165 published at 9eb985832ea9fcbb0e297d3e4eeda3036c51410a with tree 25f1c6c0f46afde10bc510305694d3c4eaec0f3d. Remote source parent eaa5165f9a368435355eeb18fe58e238d53d3faf retains the reviewed source tree 774091869087d295a58c3303d13f6a9470a07f7c from base9f1e6f8b; integration includes main7f747d98. All three final owner blobs match independent source and architecture review. Repository/public-surface checks, integrated documentation build and rendered source anchor passed locally. The bounded result connects exact copper roofing consumables to fabrication cleanup and later repair, and prevents unsupported transfer to the brass trough; RWT-METALS remains planned.",
-    "next": "Require full exact-head CI, fresh canonical publication preflight and expected-head merge. Verify the actual accepted tree and source ancestry, addressing any concurrent-main delta with exact accepted-tree health before handoff release. Actual pan section, finished residue/current formulation, joining process, support, water duty and complete repair remain design qualifications.",
-    "blocker": "Full exact-head CI pending; no complete installed material, pan, thermal-clearance or repair-method admission is claimed."
+    "evidence": "PR1165 merged at 76addac4dfcb64d54ce6a794b07d012de7349435. Accepted tree 25f1c6c0f46afde10bc510305694d3c4eaec0f3d exactly equals the validated head9eb985832ea9fcbb0e297d3e4eeda3036c51410a tree. Full CI41228323275 passed; fresh canonical preflight passed18:17:14.811Z against main7f747d98 and live generation12. Native verification confirms all three reviewed owner blobs, remote source eaa5165f9a368435355eeb18fe58e238d53d3faf and tested-head ancestry. Remote feature ref is absent. The bounded copper sheet-seam fabrication, cleanup, repair and brass recipe-transfer result is integrated; RWT-METALS remains planned.",
+    "next": "Release for handoff after verified integration. Next candidate qualification requires the actual pan or trough seam and section, current supplied formulation and retained constituents after demonstrated cleaning, matched joining/repair process, support and movement, water/backwater duty and complete access. Preserve the distinction between removed process aids and installed residues, and between copper and brass joining instructions.",
+    "blocker": "No complete installed pan, brass wet-body or hidden carrier assembly is admitted by this bounded result; actual construction and process qualification remain design duties rather than publication failures."
   },
   "branch": "work/swarm-recovery-1753-20261031",
   "predecessor": {
