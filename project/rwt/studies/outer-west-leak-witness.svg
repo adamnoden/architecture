@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="222mm" viewBox="0 0 1080 570" role="img" aria-labelledby="title desc">
+<title id="title">Outer-west copper receiver: concealed leak versus outboard consequence</title>
+<desc id="desc">Two schematic sections compare a backed copper liner contiguous with a wall to an outboard receiver with a separated wall and visible inspection territory. Dotted leakage paths are not demonstrated; geometry and levels remain unknown.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#2d7380"/></marker>
+<marker id="riskarrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#a34b3d"/></marker>
+</defs>
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#21383e;font-size:15px}
+h1{font-size:25px}
+.head{font-size:19px;font-weight:bold}.note{font-size:13px}.strong{font-weight:bold}
+.panel{fill:#fcfcfb;stroke:#c7d2d2;stroke-width:1.5}
+.wall{fill:#e2e4de;stroke:#718085;stroke-width:2}
+.bed{fill:#dad6c9;stroke:#9f9785;stroke-width:2}
+.metal{fill:none;stroke:#b66e37;stroke-width:5;stroke-linejoin:round}
+.line{fill:none;stroke:#667f83;stroke-width:2}
+.leak{fill:none;stroke:#a34b3d;stroke-width:2.5;stroke-dasharray:7 5;marker-end:url(#riskarrow)}
+.water{fill:none;stroke:#2d7380;stroke-width:3;marker-end:url(#arrow)}
+.air{fill:#f0f6f6;stroke:#91abad;stroke-width:1;stroke-dasharray:5 5}
+</style>
+<rect width="1080" height="570" fill="white"/>
+<text x="44" y="37" style="font-weight:bold;font-size:26px">A backed liner cannot promise first-leak visibility</text>
+<text x="44" y="64" class="note">Outer-west / RWT-METALS / 31 October 2026 / functional section sketches only — no selected widths, heights, falls or materials below the liner</text>
+<rect class="panel" x="42" y="88" width="996" height="209" rx="6"/>
+<text x="60" y="116" class="head">A — Wall-contiguous backing: no witness credit</text>
+<rect x="88" y="149" width="129" height="111" class="wall"/>
+<text x="108" y="183" class="strong">HOUSE</text>
+<text x="109" y="201" class="note">vulnerable</text>
+<text x="109" y="217" class="note">boundary?</text>
+<rect x="279" y="208" width="495" height="46" class="bed"/>
+<text x="525" y="236" text-anchor="middle">continuous backing / concealed wetting</text>
+<path d="M278 169 L278 207 L773 207 L773 169" class="metal"/>
+<path d="M452 154 L452 192" class="water"/>
+<text x="471" y="163" class="note">normal rainwater</text>
+<circle cx="504" cy="207" r="7" fill="#a34b3d"/>
+<path d="M504 216 C459 250 339 246 222 247" class="leak"/>
+<path d="M504 216 C568 267 672 254 793 260" class="leak"/>
+<text x="444" y="186" class="note">defect</text>
+<text x="796" y="235" class="note">first drip?</text>
+<text x="796" y="253" class="note">unknown</text>
+<text x="60" y="284" class="note">A visible outlet somewhere along the bed does not show that all leaks reach it before the wall.</text>
+<rect class="panel" x="42" y="311" width="996" height="220" rx="6"/>
+<text x="60" y="340" class="head">D — Outboard exposure: protect the wall before claiming a witness</text>
+<rect x="88" y="378" width="129" height="110" class="wall"/>
+<text x="108" y="410" class="strong">HOUSE</text>
+<text x="107" y="430" class="note">dry boundary</text>
+<rect x="225" y="383" width="112" height="98" class="air"/>
+<text x="280" y="402" text-anchor="middle" class="note">separation</text>
+<text x="280" y="419" text-anchor="middle" class="note">and access</text>
+<rect x="365" y="440" width="450" height="46" class="bed"/>
+<text x="586" y="469" text-anchor="middle">qualified support: wettable until proved otherwise</text>
+<path d="M365 400 L365 439 L814 439 L814 400" class="metal"/>
+<circle cx="559" cy="440" r="7" fill="#a34b3d"/>
+<path d="M562 448 C645 494 730 487 844 495" class="leak"/>
+<path d="M814 440 L903 440 L925 460" class="water"/>
+<text x="779" y="390" class="note">receiver outboard</text>
+<text x="827" y="483" class="note">observable?</text>
+<text x="827" y="501" class="note">test required</text>
+<text x="61" y="519" class="note">The entire possible wetting zone, blocked outlet, capillary bridges, support and safe outfall require a real site section.</text>
+<text x="44" y="552" class="note">Decision: outboard consequence first; leak witness conditional. Dotted arrows are possible paths, not verified drainage.</text>
+</svg>
