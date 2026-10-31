@@ -49,6 +49,53 @@ Every standard/base needs a located receiving patch on the court construction, a
 
 This option remains unresolved rather than accepted. If a conventional designed scaffold cannot fit its actual bases, access, working platforms and receiving ties without disproportionate interventions, return to roof/collector topology and component design. Do not declare the obstacle a generic future contractor detail.
 
+## Outdoor personnel platform and separate renewal duties
+
+**31 October 2026 continuation. Retain a second access topology for further design: a lowered mobile personnel platform brought through the north room, then deployed in the court for a defined task performed inside its basket.** The Genie AWP-25S standard-base **CE outdoor-outrigger** comparison survives the empty-court plan screen that rejected the BoSS tower. It does not yet establish delivery, setup or a usable eave work position. Keep the designed-scaffold comparison for receiver handling and roof work until those complete operations have a demonstrated alternative.
+
+### Exact configuration and source limits
+
+Genie's [operator-manual index](https://manuals.genielift.com/operators/engomplifts1.htm) assigns [1337927GT](https://manuals.genielift.com/operators/english/1337927.pdf) to **CE machines from AWPT-6454**. The inspected document is **sixth edition, second printing, August 2026**; printed pp10–13,23,27 and39–40 govern this comparison. Its SHA-256 is `83881f197253ee751a11bc8d2ff595362b6c72b005cda97e5836b3fbb488366f`. No actual machine or serial plate has been selected.
+
+| AWP-25S standard-base input | Published value and boundary |
+|---|---|
+| Lowered dimensions | 1308 long × 736 wide × 1980 high, mm |
+| Outdoor-outrigger footprint | **3.0 × 2.8 m**, rounded metric values |
+| Maximum platform height | 7.5 m above its base datum |
+| Outdoor corner / wall access | 825 / 434 mm; the table's top-rail/wall-corner/leveling-jack footnote controls interpretation |
+| Occupancy / capacity | One person; 159 kg including occupant, equipment and materials |
+| Maximum wheel load / machine mass | 231 kg / refer to the actual serial label |
+
+The source also requires four firm outrigger contacts, with casters lifted slightly clear during setup. It forbids raised travel or exit, adjusting outriggers while occupied or raised, tying the platform to a structure, and fixed or overhanging loads. The outdoor wind limit does not waive its separate strong/gusty-wind prohibition. This comparison uses no numerical hand-reach or permissible working-force allowance.
+
+### The route and the deployed territory are different states
+
+Retain the existing **x6000 garden-to-court logistics axis**. Against each nominal 2400-wide opening, the published width leaves **1664 mm** in total. **With the machine base at z0**, its 1980 height leaves **870 mm** below the +2850 head. The latter is a conditional datum subtraction, not a headroom allowance across a different grade, ramp or threshold. Both comparisons precede the installed door/frame/hardware, an open leaf and people moving the machine. They supply no loading or handling pass.
+
+HAD's **Six side chairs: the table underside controls the arrangement** comparison retains a nominal x5500–6500 central strip. Its 1000 width exceeds the machine's 736 by **264 mm total**; the earlier 600 mm walking disc is not its movement test. A delivery state must clear furniture, protect the floor, retain a handler's actual position and show the complete body sweep through both doors. It must also provide a wheel-transfer method across each real threshold and any level change. A drawn straight centreline supplies neither a ramp nor a supported bridge over a removable cover. The complete transport configuration, carrying the separate outriggers and subsequent installation all need room.
+
+For one explicitly centred **empty-court envelope** trial, place the nominal 3000 × 2800 rectangle at **x4500–7500 / y4600–7400**, within x/y4250–7750. That leaves **250 at each side and 350 at each end**. These are envelope leftovers, not operator paths or work clearances. The manual table does not locate the actual chassis, basket, jacks or outrigger voids within it. It therefore cannot settle door-leaf collisions, entry to the lowered platform, access to ground controls/manual lowering, deployment sweep or a rotated/off-centre working position. Those must be drawn from the actual configuration; no door may be credited as usable merely because the bounding rectangle stops short of the wall.
+
+### Make the floor carry both operations
+
+Transport loads pass through the room floor, thresholds and court surface on wheels. Deployed loads pass through four separate jack contacts. The maximum **wheel** value above is not a pad reaction, total mass or permission to divide load equally between four supports.
+
+Genie's currently linked [Floor Loading Specifications, 97897 Rev J, March 2017](https://manuals.genielift.com/Misc%20Manuals/97897.pdf), PDF p13, provide an older AWP-25S CE/AUS outdoor standard-base comparison, with the serial field **from3896-101**: rear/front pad pressures **140.2 / 137.75 kPa** and an occupied-floor-pressure field of **0.63 kPa**. These approximate configuration data are distinct from the current serial-specific manual; they do not establish the actual foot areas, reactions or this floor's resistance. Do not average the load across the court or the 8.4 m² deployment rectangle. The small occupied-pressure field cannot stand in for the individual contact demands.
+
+HAD's **Court walking level, lower water plane and threshold proposal** has an unadopted walking datum of0 over a lower wet pan, with a 20 mm paver, 6 mm pad and pedestal territory. It explicitly leaves maintenance bearing unresolved. Each wheel path and jack patch therefore needs a supported load path through the **actual** finish/support assembly, with pan protection and access to both drainage routes retained. Merely lifting pavers and standing the jacks on the waterproofing is not a solution. Any temporary load-spreading or bridging construction needs its own located contacts, installation/removal and verified capacity; none is inserted here.
+
+The represented −150 court grade and that later walking datum0 remain separate alternatives. The latter removes an assumed court step only if its complete threshold/floor proposal is earned. Do not combine its level with the older source's unverified support or treat the pan's −180/−215 water-boundary levels as a machine foundation.
+
+### Allocate the actual high-level tasks
+
+The useful next target is **inspection or a small clearing task at one named court eave/collector**, conducted entirely from the guarded basket. Its required evidence is a section through that component, the chosen platform, actual guard/worker/tool positions and the complete ground-contact arrangement. The nominal +6800 eave, 200 overhang and 180 cornice reservation do not locate a safe working position. Neither the 7.5 m maximum platform height nor the scalar corner/wall-access values supplies that section.
+
+Receiver exchange additionally needs the actual body, retained water, fixings, withdrawal direction, independent support and a compatible handling route. A basket that can lift one worker does not allocate those tasks. Treating this lift as a receiver hoist, attaching a temporary catchment to it or transferring onto the roof conflicts with the stated candidate scope and cannot rescue an unfitted renewal sequence. Independent temporary rain capture, the court's maintained escape and safe lowering/recovery remain part of the operation.
+
+This changes the next house detail: preserve a **continuous, supported delivery route and four actual setup contacts** for the limited platform task if it is retained, while resolving the separate receiver/roof-renewal arrangement. The court need not be rejected solely by the previous tower's footprint; equally, a nominally fitting lift cannot remove the scaffold/renewal obligation. If the supported route, lowered access, protected eave position and lowering/recovery access cannot coexist with the court's water and occupation functions, reject this configuration or revise the house interface explicitly.
+
+This RWT-06 continuation changes no source geometry, material policy, threshold-renewal witness or ROF-06 lifecycle. The earlier generator and SVG still depict the tower/scaffold study. The new arithmetic is the source dimensions subtracted above; no machine outline, loading model or installed arrangement is generated from incomplete inputs. Primary tables and operating pages were visually checked, and independent review checked the configuration, task and load boundaries. RWT-06 remains planned.
+
 ## Work sequences at the located roof stations
 
 The following are design-review sequences. They identify what an eventual safe method must contain; they do not instruct an unqualified person to execute the work. All start with the actual component/defect, permissible weather, occupancy restrictions and a verified access/support plan. All end with boundary reinstatement, drainage/condition inspection and a record of disturbed work.
@@ -71,4 +118,4 @@ Removing a receiver below an inner valley interrupts a concentrated water path. 
 
 Separate three scales of removal: a local covering element; an installed seam/receiver assembly; and a major roof field with its layers. Each has different adjacent-work disturbance and handling space. At the four-way ridge and concentrated court corners, independent replacement must be demonstrated by actual fixing/lap access and temporary water control, not granted by the word “modular”. A large sheet or whole receiver may need a different route from the small pieces that initially assembled its support.
 
-Roof-system comparison receives a concrete condition: retain only candidates with a credible high-level court method, roof-slope work route and temporary recovery state at the claimed architectural scope. The current ordinary-tower option is rejected; the designed-scaffold alternative remains conditional. Rainwater, opening, occupation and construction design, supported by competent temporary-works and structural review, must resolve these interfaces before a safe/buildable house claim. No source geometry, permanent access apparatus, product selection, technical acceptance or manual gate changes here.
+Roof-system comparison receives a concrete condition: retain only candidates with a credible high-level court method, roof-slope work route and temporary recovery state at the claimed architectural scope. The current ordinary-tower option is rejected; the designed-scaffold alternative remains conditional. The outdoor personnel-platform comparison adds a potential in-basket task option with distinct delivery, contact-load and working-position duties; it does not replace the complete receiver/roof-renewal method. Rainwater, opening, occupation and construction design, supported by competent temporary-works and structural review, must resolve these interfaces before a safe/buildable house claim. No source geometry, permanent access apparatus, product selection, technical acceptance or manual gate changes here.

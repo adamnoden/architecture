@@ -186,6 +186,8 @@ The [raised copper-terminal comparison](raised-terminal-section.md) rejects tran
 
 The [threshold-only renewal comparison](threshold-renewal-access.md) develops inward withdrawal into an opened room route, distinguishing a leading enlargement from one that must traverse the band. Its finite-body witness and actual cutting/reinstatement evidence narrow the next joint-and-access trial while retaining the fixed water-boundary, floor/support, occupation and site duties. It selects no assembly or working allowance and does not close RWT-06.
 
+The [outdoor court-platform comparison](../../docs/research/roof-access-and-renewal.md#outdoor-personnel-platform-and-separate-renewal-duties) adds a current CE configuration that survives the nominal court-envelope screen for a defined task performed inside its basket. It makes the loaded delivery route and four supported setup contacts explicit, while leaving actual eave working geometry, lowering/recovery access and separate receiver/roof-renewal methods unresolved. The existing tower rejection and conditional scaffold comparison remain; no equipment, floor assembly or access pass is selected.
+
 ### RWT-SHED — free shedding and planted ground receivers
 
 After MAT-00, RWT-01 and ROF-02, develop the condition-by-condition comparisons specified in the [new brief](rainwater-elegance-brief.md): catchment flow, eave detachment/wind/splash evidence, receiving section, independent no-plant performance, access, foundations and safe overflow. Compare each eligible edge against controlled copper collection. Identify actual mock-up/evidence needs; do not adopt a safe overhang from a ballistic toy model or generic hedge interception.
