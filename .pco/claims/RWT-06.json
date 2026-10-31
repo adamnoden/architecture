@@ -9,8 +9,8 @@
     "label": "issue-comment-6541503746"
   },
   "claimedAt": "2026-10-31T09:08:23.000Z",
-  "heartbeatAt": "2026-10-31T09:16:08.000Z",
-  "expiresAt": "2026-10-31T10:01:08.000Z",
+  "heartbeatAt": "2026-10-31T09:26:23.000Z",
+  "expiresAt": "2026-10-31T10:11:23.000Z",
   "branch": "work/mvb-chat-6541503746",
   "predecessor": {
     "leaseId": "70d03fe9-7eb7-4a0b-bd36-7cc37e600d6a",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "RWT-06 branch work/mvb-chat-6541503746 at ba68ed64; predecessor #1119 reviewed. Current work isolates threshold-only renewal direction and access, without editing RWT-METALS components.",
-    "next": "Compare inward withdrawal with leading/trailing joint positions; bind actual cutting/reinstatement access and retained W2 duties, then draw and review.",
-    "blocker": "No installed assembly, water isolation, working clearance or site/hydraulic acceptance; RWT-06 stays planned."
+    "evidence": "Reviewed six-path threshold renewal comparison pushed at292bb9be7ba8466c122c471be64a94363546dee8. Generator/source/independent geometry and actual rendered A3 inspection passed.",
+    "next": "Open PR on reconciled current main; require exact-head CI and fresh canonical preflight, then integrate bounded partial and handoff.",
+    "blocker": "Actual end joints, retained W2 architecture, floor/support/tool access and hydraulic acceptance remain unproved; no assembly adopted."
   }
 }
