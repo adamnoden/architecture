@@ -9,8 +9,8 @@
     "label": "swarm-782cae-root-rwt"
   },
   "claimedAt": "2026-10-31T17:16:15.611Z",
-  "heartbeatAt": "2026-10-31T17:45:13.548Z",
-  "expiresAt": "2026-10-31T18:30:13.548Z",
+  "heartbeatAt": "2026-10-31T17:46:44.724Z",
+  "expiresAt": "2026-10-31T18:31:44.724Z",
   "branch": "work/swarm-782cae-had-review",
   "predecessor": {
     "leaseId": "3c0342c6-a6c9-4683-b892-2f238354cfb3",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1159 refreshed to current main at 8c94c444a515db6db88278de8897914827be4d3e, tree d0e1764f5fc62f7bec43ab80ce1927885a35d83b. Independent geometry/source/drawing reviews and pinned/adverse checks pass. Earlier exact-head full CI passed; current integrated-head run 41225843519 is in progress.",
-    "next": "Require successful integrated-head full CI, then fresh canonical preflight and expected-head merge. Broader HAD continuation is being assessed read-only; all other self-service nodes were occupied at 17:43:11.",
-    "blocker": "HAD-03 remains planned. Actual hardware and support sections, material disposition, privacy, operation and physical use are not established by the geometric proxy sequence."
+    "evidence": "PR #1159 merged as 9f1e6f8b4df6e9df4e617238a75b3e202f93b191. Accepted tree d0e1764f5fc62f7bec43ab80ce1927885a35d83b equals validated head 8c94c444a515db6db88278de8897914827be4d3e. Full CI 41225843519 passed; canonical preflight passed at 17:46:01.083 UTC. Geometry, primary-source and rendered reviews passed; remote branch absence verified.",
+    "next": "Retain the exposed-pull slider as an unadopted joined-STR comparison. Bind actual hardware/support, material disposition, privacy and use before adoption. A distinct next HAD comparison can test the accepted Study door, desk and chair sequence; use fresh canonical dispatch before execution.",
+    "blocker": "HAD-03 remains planned. The 638 opening, 650 reach sensitivity and 5 mm basin reserve do not establish an installed doorset, human suitability or a complete house selection."
   },
   "pr": 1159
 }
