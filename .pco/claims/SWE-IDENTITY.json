@@ -9,11 +9,11 @@
     "label": "swe-1174-identity"
   },
   "claimedAt": "2026-10-31T20:18:15.654Z",
-  "heartbeatAt": "2026-10-31T20:18:15.654Z",
-  "expiresAt": "2026-10-31T21:18:15.654Z",
+  "heartbeatAt": "2026-10-31T20:25:53.642Z",
+  "expiresAt": "2026-10-31T21:25:53.642Z",
   "checkpoint": {
-    "evidence": "SWE registration merged in PR #1176; owner accepted all nine findings in #1174.",
-    "next": "Implement ambient-locale-independent canonical identities and verify frozen compatibility."
+    "evidence": "Published tested implementation at b7a903f55eccbc8748b885391f675dc68b91d671; identity-result and baseline record all tests and frozen compatibility.",
+    "next": "Inspect exact-head CI, reconcile other SWE packets, then complete final closeout."
   },
   "branch": "work/swe-identity-1174"
 }
