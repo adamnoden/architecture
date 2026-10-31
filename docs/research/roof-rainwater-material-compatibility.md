@@ -169,6 +169,19 @@ The FELDER p 2 sheets, KD composition page and CDA/Aurubis construction pages we
 
 **Do not transfer this copper recipe to the brass wet trough.** KD's declared ammonium chloride meets the constituent addressed by C9's brass warning. The outer-west receiver comparison therefore needs a separately qualified CuZn10 joining process, with actual formed-material condition, stress, flux, cleanup and water duty. This rejects the unsupported recipe transfer, not every brass joint or every removable fabrication aid. The copper and brass bodies remain conditional candidates; no owner exception or complete assembly admission follows.
 
+### Liner support, movement and release
+
+**31 October 2026 continuation.** The outer-west seam/support comparison carries the copper process lead into a local construction question. It retains the existing source identities:
+
+| Further inspection | Evidence and limit |
+|---|---|
+| **C9 — Aurubis Copper Book, second edition 2013, printed pp 81, 84, 108 and 117** | The architectural comparison gives copper `17×10⁻⁶/K`; identifies fixed and moving zones; and describes gutter-frame support and movement at outlet connections. The frame is designed for its loads and dimensions, not prescribed as an isolated seam-only seat. Roof-strip lengths, frame materials and fastenings are not transferred to the ground receiver. |
+| **C11 — CDA 10.3 introduction and 10.3F; original A4050-8/24, printed p 148, same handbook as C10/C22** | The lining is to remain free to move; the transverse seam is locked/soldered or riveted/soldered. The inspected lap drawing includes an underside rivet projection. Outside-frame fabrication allows seam inspection and testing. Neither a smooth sliding surface nor vertical release from hooked edges follows from this construction family. |
+
+The original [Aurubis PDF](https://www.nordiccopper.com/nordic-copper-aurubis-com/sv/dam/jcr%3A70b6c19f-a408-4165-98f4-74b15e7c3fb3/copperbook-2024.pdf) has SHA-256 `c4e9867841bb4c05e05c3e6211897dfabd1256d3fe72efc1187da51f48d891bc`; printed pp 81/84/108 were visually inspected and p 117 text checked. The original [CDA handbook](https://copper.org/wp-content/uploads/2026/04/A4050-Architectural-Handbook.pdf) has SHA-256 `da66c45cfb35fb94adaad908fffc79545a722faa2b4e8694ab4c913c9ea6d7c0`; p 148 was visually inspected. Failed legacy-URL retrievals are not the current evidence limit.
+
+The **project inference** is to distinguish sheet-to-sheet continuity, bearing, dry-side restraint and uplift capture. The local 40 mm support-demand footprint and removable-keeper dimensions are authored, not supplier dimensions. Actual folded/riveted underside, compatible contact or separator, support capacity, transverse movement and complete terminal restraint remain unresolved. Moving the fixed datum to improve a seam's local coverage would also change terminal movement. A complete repair needs the fixed restraint and every keeper released, and the terminal freed for the intended movement; an open transfer may have no pipe connection to disconnect. Removing a grate or satisfying a longitudinal expansion calculation is insufficient.
+
 ## Applying the comparison to the house
 
 The represented inward/outward pitched ring concentrates water at inner valleys as well as along inner eaves. A courtyard collector therefore cannot be chosen from a facade colour chart. Roof and rainwater design must trace each covering/valley/collector/outlet chain, including secondary or failed-flow paths, before selecting metals. The current drawings do not prove either safe access or a viable court-to-outside route.

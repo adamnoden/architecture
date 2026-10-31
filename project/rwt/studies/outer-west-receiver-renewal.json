@@ -46,6 +46,286 @@
     "C11": "CDA 10.3F: fixed soldered copper transverse seams for its watertight condition",
     "C12": "CDA 10.5B: separately moving receiving gutter; 10.5C/D are different joined arrangements"
   },
+  "seamSupportContinuation": {
+    "startingMain": "899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b",
+    "authority": "Authored local seam-support and dry-edge keeper comparison; not an installed bearing or whole-body release result.",
+    "location": "Outer-west R1 wet body; local longitudinal coordinate s measured from a separately supported dry-side terminal-station datum. No global seam station, body length or capture width selected.",
+    "construction": {
+      "seam": "Develop a mechanically locked and soldered copper cross-seam; its sheet-to-sheet continuity does not anchor it to the substrate.",
+      "support": "40 mm installation-temperature support-demand footprint is an authored screen, not a recovered folded/riveted underside. Profiled contact, support of adjacent sheet, capacity and friction remain unresolved.",
+      "fixedDatum": "A separately supported, releasable dry-side restraint at s=0; the soldered outlet seam is not the anchorage or lifting connection.",
+      "keepers": "Removable dry-side top caps retain an authored folded-edge envelope without through-fixing the wet liner. Along-run sliding, vertical capture and eventual cap removal are different actions.",
+      "terminal": "Retain an open receiving transition as the distinct R1 development case. It is not a qualified capture or free-discharge result. A rigid connection at another station changes the restraint system.",
+      "transverse": "Cross-width movement, actual folded edge, contacts, restraint and uplift loads are not resolved by this longitudinal comparison."
+    },
+    "inputs": {
+      "thermal": {
+        "gauge": 2000,
+        "footprint": 40,
+        "placement": 2,
+        "seatWidth": 50,
+        "alpha": 0.000017,
+        "installed": 20,
+        "cold": -10,
+        "hot": 70
+      },
+      "attribution": "Only alpha is from the Aurubis architectural comparison (printed p81). Gauge, footprint, temperatures, positioning and seat are authored. The installation error changes the gauge and the footprint also expands.",
+      "supportMotion": "Stationary seat and fixed datum. Actual frame temperature, expansion, settlement and deflection require a relative-motion model."
+    },
+    "longitudinalCoverage": {
+      "centreMotion": [
+        -1.02,
+        1.7000000000000002
+      ],
+      "interval": [
+        -23.008780000000115,
+        23.718700000000126
+      ],
+      "extremes": {
+        "minimum": {
+          "temperature": -10,
+          "installationError": -2,
+          "endpoint": -20,
+          "seatShift": 0,
+          "relative": -23.008780000000115
+        },
+        "maximum": {
+          "temperature": 70,
+          "installationError": 2,
+          "endpoint": 20,
+          "seatShift": 0,
+          "relative": 23.718700000000126
+        }
+      },
+      "leftMargin": 1.9912199999998847,
+      "rightMargin": 1.2812999999998738,
+      "minimumMargin": 1.2812999999998738,
+      "strictlyCovered": true
+    },
+    "adverse": {
+      "narrow46Seat": {
+        "centreMotion": [
+          -1.02,
+          1.7000000000000002
+        ],
+        "interval": [
+          -23.008780000000115,
+          23.718700000000126
+        ],
+        "extremes": {
+          "minimum": {
+            "temperature": -10,
+            "installationError": -2,
+            "endpoint": -20,
+            "seatShift": 0,
+            "relative": -23.008780000000115
+          },
+          "maximum": {
+            "temperature": 70,
+            "installationError": 2,
+            "endpoint": 20,
+            "seatShift": 0,
+            "relative": 23.718700000000126
+          }
+        },
+        "leftMargin": -0.008780000000115251,
+        "rightMargin": -0.7187000000001262,
+        "minimumMargin": -0.7187000000001262,
+        "strictlyCovered": false
+      },
+      "supportMovesPositive2": {
+        "centreMotion": [
+          -1.02,
+          1.7000000000000002
+        ],
+        "interval": [
+          -25.008780000000115,
+          21.718700000000126
+        ],
+        "extremes": {
+          "minimum": {
+            "temperature": -10,
+            "installationError": -2,
+            "endpoint": -20,
+            "seatShift": 2,
+            "relative": -25.008780000000115
+          },
+          "maximum": {
+            "temperature": 70,
+            "installationError": 2,
+            "endpoint": 20,
+            "seatShift": 2,
+            "relative": 21.718700000000126
+          }
+        },
+        "leftMargin": -0.008780000000115251,
+        "rightMargin": 3.2812999999998738,
+        "minimumMargin": -0.008780000000115251,
+        "strictlyCovered": false
+      },
+      "secondRigidAnchor": {
+        "stationMm": 300,
+        "freeCopperMotionMm": [
+          -0.15300000000000002,
+          0.255
+        ],
+        "consequence": "A separately rigid terminal at s=300 cannot share the zero-displacement assumption at s=0. Restraint stress, compliant connection or changed fixed zone requires design; no failure capacity is calculated."
+      }
+    },
+    "fixedAtSeamAlternative": {
+      "localCoverage": {
+        "centreMotion": [
+          0,
+          0
+        ],
+        "interval": [
+          -22.0187,
+          22.0187
+        ],
+        "extremes": {
+          "minimum": {
+            "temperature": 70,
+            "installationError": -2,
+            "endpoint": -20,
+            "seatShift": 0,
+            "relative": -22.0187
+          },
+          "maximum": {
+            "temperature": 70,
+            "installationError": 2,
+            "endpoint": 20,
+            "seatShift": 0,
+            "relative": 22.0187
+          }
+        },
+        "leftMargin": 2.981300000000001,
+        "rightMargin": 2.981300000000001,
+        "minimumMargin": 2.981300000000001,
+        "strictlyCovered": true
+      },
+      "consequence": "Greater local coverage does not make this the preferred restraint: the terminal would now move relative to its receiver or pipe. Keep the original terminal-station datum until that different connection is designed."
+    },
+    "dryEdgeKeeper": {
+      "inputs": {
+        "hole": [
+          36,
+          44
+        ],
+        "stud": [
+          37,
+          43
+        ],
+        "capBottom": 5,
+        "capTop": 9,
+        "studTop": 20,
+        "lift": 16
+      },
+      "authoredSection": {
+        "edge": [
+          0,
+          0,
+          20,
+          3
+        ],
+        "cap": [
+          -5,
+          5,
+          50,
+          9
+        ],
+        "capHole": [
+          36,
+          44
+        ],
+        "stud": [
+          37,
+          -4,
+          43,
+          20
+        ],
+        "nutEnvelopeBeforeRemoval": [
+          34,
+          9,
+          46,
+          15
+        ],
+        "capAlongRunWidth": 30,
+        "holeAndStud": "Coaxial cylindrical 8 mm hole and 6 mm stud, centre v=40/s=0; no thread or fastener capacity inferred.",
+        "retainedSupportStartsAt": 30,
+        "lateralRunoutAfterLift": 65
+      },
+      "result": {
+        "holeMargins": [
+          1,
+          1
+        ],
+        "finalStudClearance": 1,
+        "canTranslateAfterLift": true,
+        "liftedCapHeight": [
+          21,
+          25
+        ]
+      },
+      "adverse15Lift": {
+        "holeMargins": [
+          1,
+          1
+        ],
+        "finalStudClearance": 0,
+        "canTranslateAfterLift": false,
+        "liftedCapHeight": [
+          20,
+          24
+        ]
+      },
+      "retainedCapBlocks5LinerLift": true,
+      "scope": "Complete axial cap passage through the authored coaxial cylindrical hole is clear, then a 65 mm outward translation clears the stud by 17 mm horizontally. Nut and upper units are already removed. Working space is authored empty; tools, fastener access, force, corrosion, deposits and capacity remain unverified."
+    },
+    "eventualRepair": {
+      "prerequisites": [
+        "Qualified incoming-water diversion and a protected work area",
+        "Independent temporary support for the actual wet body",
+        "Independent grate/impact units removed and safely staged",
+        "Terminal and all carried tail/flange projections freed",
+        "Dry-side longitudinal fixed restraint released",
+        "Every sliding/uplift cap removed or retracted"
+      ],
+      "localResult": "The authored keeper has a finite first release; the retained-cap control prevents a direct 5 mm liner lift. This does not demonstrate complete wet-body extraction.",
+      "terminalCondition": "A retained aperture needs clearance for the maximum carried tail/flange envelope, not just the stem: opening > carried width + 2*abs(offset) for this straight-lift screen. Actual dimensions are unknown.",
+      "actualTerminal": {
+        "openingMm": null,
+        "carriedWidthMm": null,
+        "releaseStrokeMm": null
+      },
+      "localSeamRepair": "A soldered seam is not released by removing its keeper. A qualified local repair may consume metal and needs sound accessible copper, cleanup, heating protection and reinstatement; larger renewal remains a separate operation."
+    },
+    "primaryEvidence": {
+      "C9": {
+        "url": "https://www.nordiccopper.com/nordic-copper-aurubis-com/sv/dam/jcr%3A70b6c19f-a408-4165-98f4-74b15e7c3fb3/copperbook-2024.pdf",
+        "edition": "Second edition 2013",
+        "printedPages": [
+          81,
+          84,
+          108,
+          117
+        ],
+        "sha256": "c4e9867841bb4c05e05c3e6211897dfabd1256d3fe72efc1187da51f48d891bc",
+        "use": "Architectural expansion coefficient; fixed/moving zones; supporting gutter frame; movement at outlet. Roof construction guidance, not this ground receiver or a prescribed seam-only bearing."
+      },
+      "C11": {
+        "url": "https://archive.copper.org/applications/architecture/arch_dhb/arch-details/gutters_downspouts/gutter_linings.php",
+        "originalHandbook": "https://copper.org/wp-content/uploads/2026/04/A4050-Architectural-Handbook.pdf",
+        "edition": "A4050-8/24",
+        "printedPage": 148,
+        "sha256": "da66c45cfb35fb94adaad908fffc79545a722faa2b4e8694ab4c913c9ea6d7c0",
+        "sections": [
+          "10.3 introduction",
+          "10.3F"
+        ],
+        "use": "Free lining movement, locked/soldered or riveted/soldered seams, outside-frame fabrication/inspection. No smooth-underside, bare sliding bearing or UK installed-system approval."
+      }
+    }
+  },
   "unresolved": [
     "Actual alloy/temper/finish and joint consumables/residues",
     "Support loads, restraint, movement, wear and every retained accessory",
