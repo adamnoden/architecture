@@ -9,11 +9,12 @@
     "label": "services-recovery-next-20261031"
   },
   "claimedAt": "2026-10-31T17:53:34.129Z",
-  "heartbeatAt": "2026-10-31T17:53:34.129Z",
-  "expiresAt": "2026-10-31T18:38:34.129Z",
+  "heartbeatAt": "2026-10-31T18:14:08.162Z",
+  "expiresAt": "2026-10-31T18:59:08.162Z",
   "checkpoint": {
-    "evidence": "Fresh main9f1e6f8b and canonical doctor17:52:53 verified. Direct connector review confirms predecessor PR1160 merged at08c68ef0; its exact accepted-tree push health passed. Only open PR1161 belongs to the occupied MAT-SERVICES worker. No source changes made for this acquisition.",
-    "next": "Inspect the actual selected packet exit criteria and accepted source evidence; develop only a distinct grounded bounded construction or repair result, preserving predecessor authority and primary-source limits."
+    "evidence": "PR1165 published at 9eb985832ea9fcbb0e297d3e4eeda3036c51410a with tree 25f1c6c0f46afde10bc510305694d3c4eaec0f3d. Remote source parent eaa5165f9a368435355eeb18fe58e238d53d3faf retains the reviewed source tree 774091869087d295a58c3303d13f6a9470a07f7c from base9f1e6f8b; integration includes main7f747d98. All three final owner blobs match independent source and architecture review. Repository/public-surface checks, integrated documentation build and rendered source anchor passed locally. The bounded result connects exact copper roofing consumables to fabrication cleanup and later repair, and prevents unsupported transfer to the brass trough; RWT-METALS remains planned.",
+    "next": "Require full exact-head CI, fresh canonical publication preflight and expected-head merge. Verify the actual accepted tree and source ancestry, addressing any concurrent-main delta with exact accepted-tree health before handoff release. Actual pan section, finished residue/current formulation, joining process, support, water duty and complete repair remain design qualifications.",
+    "blocker": "Full exact-head CI pending; no complete installed material, pan, thermal-clearance or repair-method admission is claimed."
   },
   "branch": "work/swarm-recovery-1753-20261031",
   "predecessor": {
@@ -35,5 +36,6 @@
       "evidence": "PR1160 merged as08c68ef0e3014efb8d6aecbcdb1bb208a57425ae. Tested PR head6cf4e839953eb79adf89af10cb0575db3f0a4968/treea688337692d8f327a416d5ee114c7b71690b978a passed PR CI. Accepted treef2a2283d17b896df1a0eb2a20e5318fc1a05c43b differs because first parentab36b0bd added seven disjoint IAS/MAT files after preflight. Exact accepted-tree push run41225736909 now passed canonical check, both PDFs and metadata in build124610030013; deploy124610418674 passed. Native verification confirms all four reviewed navigation blobs unchanged, all five accepted incoming fragments valid, and source5ef0c8a438362136ea279c7bb37b07bfaf39145a plus tested head are ancestors. No equal-tree or lifecycle-completion claim.",
       "next": "Navigation repair is integrated and independently checked. Release handoff; RWT-METALS remains planned for actual pan/outlet and carrier construction, supplied consumables, joint duty, support and complete repair access. Preserve the accepted primary-source limits and use coordinated fresh canonical dispatch before new work."
     }
-  }
+  },
+  "pr": 1165
 }
