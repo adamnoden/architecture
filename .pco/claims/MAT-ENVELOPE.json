@@ -1,45 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 10,
-  "state": "released",
-  "leaseId": "2118792d-930f-4f5f-bcec-ca847f83c5ab",
+  "generation": 11,
+  "state": "claimed",
+  "leaseId": "645bd93f-654f-47a8-9a5b-ec2c2b0f2800",
   "holder": {
     "kind": "chatgpt",
-    "label": "services-mat-recovery-1936-20261031"
+    "label": "swarm-envelope-glazing-2116-20261031"
   },
-  "claimedAt": "2026-10-31T19:39:42.972Z",
-  "heartbeatAt": "2026-10-31T20:23:54.470Z",
-  "expiresAt": "2026-10-31T20:23:54.470Z",
-  "branch": "work/swarm-mat-recovery-1936-20261031",
+  "claimedAt": "2026-10-31T21:16:17.744Z",
+  "heartbeatAt": "2026-10-31T21:16:17.744Z",
+  "expiresAt": "2026-10-31T22:46:17.744Z",
+  "branch": "work/swarm-envelope-glazing-2116-20261031",
   "predecessor": {
-    "leaseId": "d599fb57-c857-41b2-bdbc-8c4f1b90d8aa",
-    "generation": 9,
-    "branch": "work/mvb-chat-6546969637",
-    "pr": 1164,
+    "leaseId": "2118792d-930f-4f5f-bcec-ca847f83c5ab",
+    "generation": 10,
+    "branch": "work/swarm-mat-recovery-1936-20261031",
+    "pr": 1175,
     "checkpoint": {
-      "evidence": "PR #1164 head c9f5bf0bdeda35018a8f2788a594df6bad14766c; suspended mineral-floor strategy, connected A3 section and six local Node22 regression tests",
-      "next": "Reconcile current main, reproduce source-pinned outputs on runner, require exact-head CI and canonical merge preflight; integrate and release",
-      "blocker": "No DPM omission, actual site/floor/DPC/vent material qualification or construction selection; MAT-ENVELOPE remains planned"
+      "evidence": "PR1175 merged as6e1260eef6e3c209abb62df41ced8964320e0ac5. Accepted tree d479863bb17b30561813e062d92241553ac83813 exactly equals full-CI41238393149 tested head3089e0688bd7106f493231a9acd3835e5d8fc69d. Coordinator fresh canonical preflight passed20:22:11.536Z. Independent Git verification confirms all six reviewed MAT blobs at accepted/current main, sourcee9e4c827 and tested-head ancestry, unchanged original section outputs and absent remote feature ref. Primary-source and architectural reviews passed the corrected outside-body-envelope/aperture distinction.",
+      "next": "Release this completed bounded investigation as handoff. MAT-ENVELOPE remains planned: actual supported air passage, lowest aperture/water exposure, DPC continuity, complete constituents, clearing/replacement and floor/gas assembly require coordinated evidence. Next worker must freshly dispatch and inspect accepted1175 before extending scope."
     }
   },
   "recoverySource": {
-    "leaseId": "d599fb57-c857-41b2-bdbc-8c4f1b90d8aa",
-    "generation": 9,
-    "branch": "work/mvb-chat-6546969637",
-    "pr": 1164,
+    "leaseId": "2118792d-930f-4f5f-bcec-ca847f83c5ab",
+    "generation": 10,
+    "branch": "work/swarm-mat-recovery-1936-20261031",
+    "pr": 1175,
     "checkpoint": {
-      "evidence": "PR #1164 head c9f5bf0bdeda35018a8f2788a594df6bad14766c; suspended mineral-floor strategy, connected A3 section and six local Node22 regression tests",
-      "next": "Reconcile current main, reproduce source-pinned outputs on runner, require exact-head CI and canonical merge preflight; integrate and release",
-      "blocker": "No DPM omission, actual site/floor/DPC/vent material qualification or construction selection; MAT-ENVELOPE remains planned"
+      "evidence": "PR1175 merged as6e1260eef6e3c209abb62df41ced8964320e0ac5. Accepted tree d479863bb17b30561813e062d92241553ac83813 exactly equals full-CI41238393149 tested head3089e0688bd7106f493231a9acd3835e5d8fc69d. Coordinator fresh canonical preflight passed20:22:11.536Z. Independent Git verification confirms all six reviewed MAT blobs at accepted/current main, sourcee9e4c827 and tested-head ancestry, unchanged original section outputs and absent remote feature ref. Primary-source and architectural reviews passed the corrected outside-body-envelope/aperture distinction.",
+      "next": "Release this completed bounded investigation as handoff. MAT-ENVELOPE remains planned: actual supported air passage, lowest aperture/water exposure, DPC continuity, complete constituents, clearing/replacement and floor/gas assembly require coordinated evidence. Next worker must freshly dispatch and inspect accepted1175 before extending scope."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1175 merged as6e1260eef6e3c209abb62df41ced8964320e0ac5. Accepted tree d479863bb17b30561813e062d92241553ac83813 exactly equals full-CI41238393149 tested head3089e0688bd7106f493231a9acd3835e5d8fc69d. Coordinator fresh canonical preflight passed20:22:11.536Z. Independent Git verification confirms all six reviewed MAT blobs at accepted/current main, sourcee9e4c827 and tested-head ancestry, unchanged original section outputs and absent remote feature ref. Primary-source and architectural reviews passed the corrected outside-body-envelope/aperture distinction.",
-    "next": "Release this completed bounded investigation as handoff. MAT-ENVELOPE remains planned: actual supported air passage, lowest aperture/water exposure, DPC continuity, complete constituents, clearing/replacement and floor/gas assembly require coordinated evidence. Next worker must freshly dispatch and inspect accepted1175 before extending scope."
-  },
-  "note": "Meaningful source and predecessor reconciliation checkpoint; root alone performs external connector writes.",
-  "pr": 1175,
-  "releasedAt": "2026-10-31T20:23:54.470Z",
-  "releaseReason": "handoff"
+  }
 }
