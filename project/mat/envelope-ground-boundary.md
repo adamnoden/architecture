@@ -1,6 +1,6 @@
 # MAT-ENVELOPE — mineral ground boundary and floor junction comparison
 
-**30 October 2026; exact-candidate and floor-access reviews added 31 October 2026. Bounded design study; no construction selection or packet closeout.** This develops the first ground/wall/floor comparison required by the [MAT programme](material-integrity-programme.md), from the [constituent register](constituent-audit.md). The [material policy](../../docs/reference-house/material-policy.md) and [ground-water policy](../../docs/reference-house/ground-water-policy.md) control the decision. Source keys below identify the primary evidence and its revision limits.
+**30 October 2026; exact-candidate, floor-access and cavity-base reviews added 31 October 2026. Bounded design study; no construction selection or packet closeout.** This develops the first ground/wall/floor comparison required by the [MAT programme](material-integrity-programme.md), from the [constituent register](constituent-audit.md). The [material policy](../../docs/reference-house/material-policy.md) and [ground-water policy](../../docs/reference-house/ground-water-policy.md) control the decision. Source keys below identify the primary evidence and its revision limits.
 
 ## Design result
 
@@ -124,6 +124,27 @@ Eventual renewal of a failed ground boundary, or the larger fixed-tail/pan/thres
 
 The next section must locate the retained ground boundary and its support relative to the entire service operation, then resolve its actual wall/threshold/penetration connections and insulation. If the necessary access, joining protection or passive leakage route cannot coexist with those boundaries, change the service route or floor section. Do not obtain clearance by creating a low well dependent on pumping or inaccessible groundwater tanking. The dated floor examples narrow the comparison; they do not select a product, qualify the wall junction or demonstrate a 300 mm fit.
 
+## Wall-base cavity and the mineral DPC — 31 October 2026
+
+**Reject a detail that combines cavity fill at external ground level and a lowest DPC only 150 mm above it while claiming the 225 mm clear-cavity option.** This comparison concerns the proposed masonry cavity-wall base under England guidance. Retain clear-cavity and separately drained-tray routes as distinct options, conditional on site and structure. Extra mineral courses do not themselves provide a route for downward rainwater. BDA distinguishes that duty from the rising-moisture use of rigid clay DPCs and slate. [B2]
+
+The source details have different contexts and must not be spliced into one purported approved assembly:
+
+| Source and detail | Relationship stated by the source | Limit carried into this comparison |
+|---|---|---|
+| AD C §5.5(c), Diagram 9(a) | Clear cavity at least 225 mm below the lowest DPC | Applies to its ordinary non-pressure-water wall example; it does not establish a final outfall. [A1] |
+| AD C alternative, Diagram 9(b) | Tray with at least 150 mm vertical drop; §5.5(c) gives 900 mm weep spacing and stop ends/two weeps for a limited-length tray | The tray drop is a different measurement from the clear-cavity depth. [A1] |
+| BDA p16, base fill | Fine-concrete fill to ground level; weeps immediately above it at no more than 1 m; DPC at least 150 mm above ground | Fill also restrains the leaves against ground/backfill pressure. This is not the same minimum detail as AD C 9(a). [B2] |
+| BDA pp17–18, trays at interruptions | Outward interception, waterproof stop-end attachment and weeps immediately above the tray at no more than 450 mm, at least two over an opening | These tray weeps are distinct from the base-fill rule. A nominal 10 mm unfilled cross joint is described, with blockage/wind-ingress qualifications; no proprietary vent is selected. [B2] |
+
+For the dimensional comparison, let **D** be the explicitly identified lowest relevant DPC level across both leaves, **F** the highest top-of-fill level bounding the clear cavity, and **G** finished external ground. AD C's clear-cavity route requires **D − F ≥ 225 mm**. If **F = G** and **D − G = 150 mm**, only **150 mm** remains: **75 mm short** of that route. This is arithmetic on stated assumptions, not a universal instruction to lower fill by 75 mm or raise a house datum. A lower inner-leaf DPC controls D. For the substantial mineral assembly, show its lower and upper beds and establish the relevant datum; a thin-line DPC diagram does not license counting occupied brickwork as clear cavity.
+
+The section must resolve the consequence on both sides of the wall. Lowering structurally required fill solely to recover clearance is unqualified. Raising the DPC changes its floor connection, thresholds and accessible approach; those changes require the owning designers. The clear cavity alone proves neither safe collection/discharge nor groundwater-pressure resistance. Apply the existing passive-dryness policy rather than creating a sunken drainage trough or relying on pumping.
+
+Keep the floor barrier connected to the inner-leaf mineral DPC without letting its return, insulation, finishes or service supports bridge the rainwater path. This cavity is not a service void. BDA identifies dropped mortar and inward-sloping ties as water bridges; more DPC material does not remove them. [B2] A required tray needs its actual joints, support, stop ends, outlets and retained constituents; neither a generic metal sheet nor the brick DPC supplies that qualification. Form any weeps at the designed drainage course, not by leaving gaps through the bonded mineral barrier.
+
+Before concealment, record the two DPC levels, fill profile, clear path and complete floor return after debris removal. Check accessible outlet mouths again after external paving/landscaping; do not point them shut as a cosmetic repair. This adds a connected construction check, not a new inspection-access opening. AD C's diagram and BDA pp16/18 were visually inspected. No floor level, foundation, tray product, complete mineral junction or house fit is accepted.
+
 ## Section topology and consequential junctions
 
 This handoff defines connected duties without inventing a plot datum, a safe water margin or a buildable thickness. The first coordinated section must show a continuous moisture boundary across the occupied footprint **and** its independent thermal and load paths. It must also show what happens outside that boundary when the primary drain is blocked and the receiving system is flooded, under the existing ground-water/RWT policy.
@@ -167,9 +188,9 @@ Accessed **30–31 October 2026**. Page numbers are printed page numbers unless 
 
 | Key | Primary reference and precise location | Use in this comparison |
 |---|---|---|
-| A1 | [Approved Document C, England, 2004 edition incorporating 2010/2013 amendments](https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf), §§4.2, 4.7–4.10, 5.5, pp24–25, 29; [official edition page](https://www.gov.uk/government/publications/site-preparation-and-resistance-to-contaminates-and-moisture-approved-document-c) | Separate ground duties, conditional floor-layer positions, mineral wall-DPC route and continuity; no plot or product approval |
+| A1 | [Approved Document C, England, 2004 edition incorporating 2010/2013 amendments](https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf), §§4.2, 4.7–4.10, 5.5, pp24–25, 29–30; Diagram 9 visually inspected; [official edition page](https://www.gov.uk/government/publications/site-preparation-and-resistance-to-contaminates-and-moisture-approved-document-c) | Separate ground duties, floor-layer positions, mineral-DPC continuity and alternative cavity-base relationships; no plot or product approval |
 | B1 | [BDA Design Note 7, Brickwork durability](https://www.brick.org.uk/uploads/downloads/g-brickwork-durability.pdf), January 2011, p5 and pp9–10 | Bonded DPC1 comparison and limits; older guidance, no verified current SKU |
-| B2 | [BDA Resisting Rainwater Penetration](https://www.brick.org.uk/uploads/downloads/11.-Resisting-rainwater-penetration-Technical-Guide-2023.f1678701309.pdf), April 2023, pp15–17 | Full-width continuity, finish bridges, movement/load duties, junctions and separate cavity-tray function |
+| B2 | [BDA Resisting Rainwater Penetration](https://www.brick.org.uk/uploads/downloads/11.-Resisting-rainwater-penetration-Technical-Guide-2023.f1678701309.pdf), April 2023, pp14–18; pp16/18 visually inspected | Continuity, bridges, movement/load duties, structurally consequential cavity fill and context-specific tray/weep guidance |
 | B3 | [BDA Mortar for Brickwork](https://www.brick.org.uk/uploads/downloads/08.-Mortar-for-Brickwork-Technical-Guide-2023.f1678701358.pdf), April 2023, pp6, 8–13 | Designed/prescribed distinction, constituent and workability/bond/gauging duties; no house-specific mix approval |
 | K1 | [Ketley WCBL65 Declaration of Performance](https://www.ketley-brick.co.uk/res/Blue%20Solids%2065mm.pdf), 1 January 2026, p1; [manufacturer's declaration index](https://www.ketley-brick.co.uk/ketley-declaration-of-performance) | Exact current linked solid-unit identity and declared component properties |
 | K2 | [Lucideon 65mm Solid Blue water-absorption report](https://www.ketley-brick.co.uk/res/65mm%20Staffs%20Blue%20Water%20Absoprtion%20Test%20%20Report.pdf), (145914)-31179 supplement, 22 January 2015, p1 | Explicit five-hour boiling method and results for the tested sample only |
