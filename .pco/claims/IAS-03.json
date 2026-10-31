@@ -9,9 +9,9 @@
     "label": "swarm-ias-floor-recovery-1937"
   },
   "claimedAt": "2026-10-31T19:40:53.427Z",
-  "heartbeatAt": "2026-10-31T19:43:56.595Z",
-  "expiresAt": "2026-10-31T20:28:56.595Z",
-  "branch": "work/swarm-ias-recovery-1937-20261031",
+  "heartbeatAt": "2026-10-31T19:51:00.862Z",
+  "expiresAt": "2026-10-31T21:21:00.862Z",
+  "branch": "work/swarm-riser-recovery-20261031",
   "predecessor": {
     "leaseId": "12aa043e-cef4-4c1a-8ae8-8401e2ca7664",
     "generation": 11,
@@ -29,8 +29,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published IAS source 6416dddda7584491829bbf53ccfa10ad01c2cfbb is preserved in remote shared tip 0a1e6e8d4804a6d77b1f58b4736579dc48b761aa. Five IAS files recovered byte-identically onto main c9e9a2c0 in local merge ebe60e8966a60d4aa1522f76a64b1c0429208444; no new remote publication claimed. Fresh HAD slider and IAS reproducers pass; source/code review and new A3 raster inspection pass.",
-    "next": "Complete independent STR/IAS integration review, retain both published source parents, bind actual common branch and PR, then full exact-head CI and both fresh preflights.",
-    "blocker": "Actual supported floor closure, receiving panels, cabinet load path, installed constituents and identified service-component withdrawal remain unresolved; IAS-03 stays incomplete."
-  }
+    "evidence": "PR1170 publishes c3953e189583f42c101223057f2b7671877c732b, exact reviewed tree50158c3bb7c3b26102df235b91efc59956d29592. Five IAS files equal published6416 source under preserved0a1e ancestry; all10 coordinated owner blobs and current mainc9e9 preserved. Independent code/geometry/A3 reviews, pinned HAD and IAS reproducers, combined repo/publication checks and docs build passed.",
+    "next": "Full CI on published head, both fresh canonical preflights, expected-head merge and actual accepted tree/owner-blob verification.90min TTL addresses the evidenced48min prior connector delay without changing normal checkpoint practice.",
+    "blocker": "Actual supported flush floor closure, fixed cabinet load path, receiving panels, installed constituents and service-component aperture/travel/reinstatement remain unresolved. IAS-03 remains incomplete."
+  },
+  "pr": 1170
 }
