@@ -9,12 +9,12 @@
     "label": "mat-waste-package-recovery-20261031-1934"
   },
   "claimedAt": "2026-10-31T19:34:04.422Z",
-  "heartbeatAt": "2026-10-31T19:35:14.750Z",
-  "expiresAt": "2026-10-31T20:20:14.750Z",
+  "heartbeatAt": "2026-10-31T19:40:01.266Z",
+  "expiresAt": "2026-10-31T20:25:01.266Z",
   "checkpoint": {
-    "evidence": "PR #1168 published at aa1f164e39204f34e6a10949b9af1274d9a349e5; exact API/local tree 4d5c281bf9a42ddc6c740e4116f5a0bf193d4705. Current main 1036a9de is an ancestor. Predecessor PR #1167 and commit are preserved. Three independent reviews, source drawing inspections and local repository/docs/generator checks passed.",
-    "next": "Verify full exact-head CI, fresh canonical preflight, merge and reconcile the tracker; release as handoff because this is partial material work.",
-    "blocker": "MAT-INTERIORS remains planned. Current seat, full constituents, coupled hydraulics, installed height, supports, wall package and physical renewal remain unresolved."
+    "evidence": "PR #1168 merged as c9e9a2c0087ef4e18b5fa4527826767ba4f0c8bd; accepted tree 4d5c281bf9a42ddc6c740e4116f5a0bf193d4705 equals validated head aa1f164e39204f34e6a10949b9af1274d9a349e5. Full CI 41234904005 passed. Fresh canonical preflight passed at 19:38:40.785 UTC. Sources, three independent reviews and final integration review passed. Recovery branch automatic deletion is verified; predecessor commit is an ancestor of accepted main and draft #1167 is closed as superseded.",
+    "next": "Bind the current 5600 outlet seat, all constituents and complete vertical/support/wall package before adopting the alternative; then prove connected flow, first disengagement and outlet/trap renewal. Session will finish tracker reconciliation and dispose the superseded branch through the established sink.",
+    "blocker": "MAT-INTERIORS remains planned. No matched installed assembly, material pass, accepted height/support/wall detail or physical renewal is established."
   },
   "branch": "work/mat-waste-package-recovery-20261031-1934",
   "predecessor": {
