@@ -33,7 +33,7 @@ export const houseDeliveryNodes = defineNodes([
   {
     id: 'ADE-SECTION-VIEW', owners: ['ADE'],
     title: 'Prove source-owned orthographic cut, context and occlusion semantics',
-    dependencies: ['ADE-DELIVERY-AUDIT'], lifecycle: 'planned',
+    dependencies: ['ADE-DELIVERY-AUDIT'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed section-view engine uplift; prove generality before Reference House migration.' },
     closeoutEvidence: ['project/ade/section-view-result.md']
   },
