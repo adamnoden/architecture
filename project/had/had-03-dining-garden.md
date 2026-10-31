@@ -10,6 +10,8 @@ Advance a **four-side-place alternative** for a furnishing and occupied-use comp
 
 The [A3 sheet](studies/dining-garden.svg), [source calculation](studies/dining-garden.ts) and [values](studies/dining-garden.json) separate actual product dimensions, authored positions and unresolved duties. No furniture or door product is selected.
 
+The subsequent [six-side-chair comparison](had-03-six-side-dining.md) tests a larger manufacturer-matched table/chair pair without reducing the trial count to four. Its published placement dimension rejects the authored 600 mm pitch envelope-fit claim; a tighter sensitivity remains unadopted and retains actual occupation, conversion and opening duties. It does not supersede this study's Quaker inputs or make its four-place result a six-place selection.
+
 ## Product evidence and invented quantities kept separate
 
 The [ercol Quaker Dining Chair page](https://www.ercol.com/en-gb/dining/dining-chairs/quaker-dining-chair) and its [manufacturer fact sheet, including the page 2 drawing](https://www.ercol.com/application/files/8317/6942/2844/ercol_-_Quaker_Dining_Chair_-_1875_-_datasheet.pdf) were inspected on 30 October 2026. The comparator is **1875, unupholstered**, not 1875U.
