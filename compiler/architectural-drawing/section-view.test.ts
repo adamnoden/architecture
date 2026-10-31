@@ -55,6 +55,7 @@ test('unrelated geometry cannot produce a hosted aperture; invalid hosts and ove
   assert.throws(() => hostedFacadeGeometry({...facade, openings: [
     {...facade.openings[0], end: 6100}
   ]}), /does not fit host/)
+  assert.throws(() => hostedFacadeGeometry({...facade, axis: 'oblique' as 'x'}), /Unsupported hosted facade axis/)
   assert.throws(() => hostedFacadeGeometry({...facade, openings: [
     facade.openings[0], {...facade.openings[0], id: 'intersecting-window', start: 1600}
   ]}), /overlap/)
