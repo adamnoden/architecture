@@ -9,8 +9,8 @@
     "label": "issue-comment-6546346708"
   },
   "claimedAt": "2026-10-31T16:53:38.000Z",
-  "heartbeatAt": "2026-10-31T17:00:42.377Z",
-  "expiresAt": "2026-10-31T17:45:42.377Z",
+  "heartbeatAt": "2026-10-31T17:10:53.781Z",
+  "expiresAt": "2026-10-31T17:55:53.781Z",
   "branch": "work/mvb-chat-6546346708",
   "predecessor": {
     "leaseId": "44f12563-59a9-4117-aa66-8bf547550f46",
@@ -36,8 +36,8 @@
   },
   "pr": 1152,
   "checkpoint": {
-    "evidence": "PR #1152 at 391459a405345f810db7bb916ac6ae83186a64fb recovers #1131 calculation/tests/SVG, with current-source links and explicit ideal-section limits. Ten tests, deterministic check and rendered inspection passed.",
-    "next": "Reconcile moved main, require exact-head full CI, then run fresh canonical preflight and expected-head merge.",
-    "blocker": "STR-HOUSE remains planned; support/wet assembly selection and engineering remain unresolved."
+    "evidence": "PR #1152 merged as e89b0253bf1a66c14307196bcd80303b72de5c85. Head 826e934017ab6ef525041e5d77f512577f942c52 passed full CI 41222622272 and canonical preflight at 17:08:05.189 UTC. Ten tests, pinned evidence and Inkscape sheet inspection passed.",
+    "next": "STR-HOUSE remains planned. Select the actual threshold support and wet assembly together, retain an independently supported openable room route, and reconcile chosen reactions, abutments, floor boundaries and renewal occupation with RWT.",
+    "blocker": "The recovered comparison rejects two trial arch envelopes; it supplies no selected support, admitted wet assembly, engineering capacity or construction acceptance."
   }
 }
