@@ -9,9 +9,9 @@
     "label": "swarm-782cae-root-rwt"
   },
   "claimedAt": "2026-10-31T17:16:15.611Z",
-  "heartbeatAt": "2026-10-31T17:16:15.611Z",
-  "expiresAt": "2026-10-31T18:01:15.611Z",
-  "branch": "work/swarm-782cae-rwt-access",
+  "heartbeatAt": "2026-10-31T17:17:07.836Z",
+  "expiresAt": "2026-10-31T18:02:07.836Z",
+  "branch": "work/swarm-782cae-had-review",
   "predecessor": {
     "leaseId": "3c0342c6-a6c9-4683-b892-2f238354cfb3",
     "generation": 11,
@@ -33,5 +33,10 @@
       "next": "Confirm required regular and guest seating and obtain actual paired sections and occupied-use evidence; preserve both unadopted comparisons and opening/conversion limits.",
       "blocker": "HAD-03 remains planned. Six-side envelope study does not select furniture, establish occupied comfort, material admission or actual conversion."
     }
+  },
+  "checkpoint": {
+    "evidence": "Acquired via canonical dispatcher after an RWT-06 CAS race; reviewing current HAD source at main09130048. No durable output yet.",
+    "next": "Advance an unaddressed actual room or operation comparison, preserving existing dining and wet-room limits.",
+    "blocker": "Household seat count and existing dining use remain unresolved; do not repeat top-outline arithmetic or claim overall HAD completion."
   }
 }
