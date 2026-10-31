@@ -18,7 +18,8 @@ const section = (
 const startSidebar: DefaultTheme.SidebarItem[] = [
   group('Start here', [
     page('Project overview', '/'),
-    page('Reading guide', '/docs/reading-guide')
+    page('Reading guide', '/docs/reading-guide'),
+    page('Drawings', '/docs/drawings')
   ], false)
 ]
 
@@ -494,6 +495,7 @@ const projectSidebar: DefaultTheme.SidebarItem[] = [
 
 export const nav: DefaultTheme.NavItem[] = [
   { text: 'Start reading', link: '/docs/reading-guide' },
+  { text: 'Drawings', link: '/docs/drawings' },
   {
     text: 'Architecture',
     items: [
