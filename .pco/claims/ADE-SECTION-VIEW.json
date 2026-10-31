@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "ADE-SECTION-VIEW",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ef3a98c4-6fc9-4fbc-8034-913830891a3a",
   "holder": {
     "kind": "chatgpt",
     "label": "directed-section-view-20261031"
   },
   "claimedAt": "2026-10-31T21:10:53.737Z",
-  "heartbeatAt": "2026-10-31T21:16:06.000Z",
-  "expiresAt": "2026-10-31T22:46:06.000Z",
+  "heartbeatAt": "2026-10-31T21:32:40.375Z",
+  "expiresAt": "2026-10-31T21:32:40.375Z",
   "branch": "work/ade-section-view-1187",
   "checkpoint": {
-    "evidence": "Branch work/ade-section-view-1187, draft PR #1188, first engine module and adversarial unit tests on head 0bb7f2a",
-    "next": "Add contrast scene + provenance tests and contract, inspect exact-head CI; do not merge without fresh runner preflight"
+    "evidence": "ADE-SECTION-VIEW code and generic tests complete on draft PR #1188 head 605a454e, full PR validation success on implementation head aa720044; latest closeout-head CI in progress; packet-check passed",
+    "next": "Reacquire ADE-SECTION-VIEW generation 2 (manual owner-directed), update PR Lease line, inspect exact-head CI, execute native control:merge-check on runner, merge with expected head SHA, release and verify main. Then claim ADE-SECTION-PARITY for accepted layout-family current house migration."
   },
-  "pr": 1188
+  "pr": 1188,
+  "releasedAt": "2026-10-31T21:32:40.375Z",
+  "releaseReason": "handoff"
 }
