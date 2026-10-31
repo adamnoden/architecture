@@ -27,6 +27,23 @@ export const houseDeliveryNodes = defineNodes([
     dependencies: ['BCR-BAY-BRIEF', 'TRIAD-GATE'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/bcr/bay-design-result.md']
   },
+  // Owner-directed ADE section-view uplift, 31 Oct 2026 (#1187).
+  // Exceptional registry-only bootstrap: these nodes must exist on main before an
+  // ACO claim can be safely written without blocking dispatcher on an unknown ID.
+  {
+    id: 'ADE-SECTION-VIEW', owners: ['ADE'],
+    title: 'Prove source-owned orthographic cut, context and occlusion semantics',
+    dependencies: ['ADE-DELIVERY-AUDIT'], lifecycle: 'planned',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed section-view engine uplift; prove generality before Reference House migration.' },
+    closeoutEvidence: ['project/ade/section-view-result.md']
+  },
+  {
+    id: 'ADE-SECTION-PARITY', owners: ['ADE'],
+    title: 'Migrate principal and service sections to source-bound visible geometry and cross-view parity',
+    dependencies: ['ADE-SECTION-VIEW', 'PLT-CURRENT-REVIEW'], lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/ade/section-parity-result.md']
+  },
   {
     id: 'ADE-MODEL', owners: ['ADE'], title: 'Connect current design identities to construction-information outputs',
     dependencies: ['ADE-DELIVERY-AUDIT', 'HRS-TECHNICAL'], lifecycle: 'planned', agentDispatch: { mode: 'self-service' },
