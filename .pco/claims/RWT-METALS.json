@@ -9,9 +9,9 @@
     "label": "swarm-third-root-983b7ee"
   },
   "claimedAt": "2026-10-31T10:27:06.840Z",
-  "heartbeatAt": "2026-10-31T10:27:06.840Z",
-  "expiresAt": "2026-10-31T11:12:06.840Z",
-  "branch": "work/swarm-third-root-20261031",
+  "heartbeatAt": "2026-10-31T10:43:32.520Z",
+  "expiresAt": "2026-10-31T11:28:32.520Z",
+  "branch": "work/swarm-maintenance-integration-20261031",
   "predecessor": {
     "leaseId": "2e587ba5-88a2-4da1-ac81-7a556a28cdb8",
     "generation": 6,
@@ -33,5 +33,11 @@
       "next": "RWT-METALS remains planned. Qualify the actual fixed pan/outlet and choose between a separately renewable threshold piece and retained tail with a credible larger repair, passive leak observation, exact service joint, independent support/movement and full W1/W2 maintenance sequence. Coordinate real floor/threshold and receiving-level evidence with RWT-06 and MAT. Root will dispose only verified integrated old source refs.",
       "blocker": "No complete connected assembly, constituent admission, physical renewal or hydraulic rating is established by these bounded comparisons."
     }
+  },
+  "pr": 1148,
+  "checkpoint": {
+    "evidence": "Draft PR #1148 published exact head 90de6288688004c8568f0a0665977e1045f953d8, tree 8967b8d8feea905ccc5cf7582447deca7af351e0, from main adee2d3197fd7af8af06fd5b0668f7acd6c8debd. RWT source parent a3231d6a7ae5b4e5c6eab04bb51e5fc2a86132ab has exact independently reviewed tree 93b1c98fa9c4910aa1d6caaca56c09ff0a532370. Located leak-route bound, 3832.5 mm continuation and max-envelope screen independently reviewed; final sheet inspected. Combined generator, repository, publication source/integrity, docs build and source-preservation guards passed.",
+    "next": "Complete all three unchanged lease bindings, require full exact-head CI and three fresh canonical merge-checks, then expected-head merge and reconcile/release. RWT-METALS remains planned; no installed collector, dry service condition, floor fit or hydraulic acceptance.",
+    "blocker": "Full CI and final publication preflights pending; actual connected assembly and secondary receiver remain unqualified."
   }
 }
