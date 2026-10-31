@@ -128,6 +128,11 @@ export function hostedFacadeGeometry(f: HostedFacade): HostedFacadeGeometry {
  * visual tokens remain with the existing DrawingSceneV2 SVG backend. */
 export function sectionProjectionBasis(section: OrthographicSectionCut): ParallelProjectionBasis3D {
   finite(section.at)
+  // Runtime inputs can originate from JSON, not only compile-time type-safe callers.
+  if ((section.axis !== 'x' && section.axis !== 'y') ||
+      (section.looking !== 'positive' && section.looking !== 'negative')) {
+    throw new Error('Unsupported section axis or viewing direction')
+  }
   if (section.axis === 'x') return section.looking === 'negative'
     ? {horizontal: [0, 1, 0], vertical: [0, 0, 1], viewDirection: [1, 0, 0]}
     : {horizontal: [0, -1, 0], vertical: [0, 0, 1], viewDirection: [-1, 0, 0]}
