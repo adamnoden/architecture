@@ -9,8 +9,8 @@
     "label": "swarm-2900-worker-two-duct"
   },
   "claimedAt": "2026-10-31T17:22:25.363Z",
-  "heartbeatAt": "2026-10-31T17:35:49.836Z",
-  "expiresAt": "2026-10-31T18:20:49.836Z",
+  "heartbeatAt": "2026-10-31T17:38:28.782Z",
+  "expiresAt": "2026-10-31T18:23:28.782Z",
   "branch": "work/swarm-2900-interfaces-20261031",
   "predecessor": {
     "leaseId": "8f8a053b-9104-42c3-a1a5-02b4b34db3ca",
@@ -34,6 +34,11 @@
       "blocker": "Complete non-synthetic installation, applicable support details, physical fit and renewal remain unresolved. MAT-INTERIORS stays planned; this is bounded partial progress."
     }
   },
-  "note": "Reviewed I02 coating result is prepared for coordinated integration into PR1157. The coating update has not yet been published to that branch; MAT-INTERIORS remains incomplete.",
-  "pr": 1157
+  "note": "Partial I02 coating result published in PR1157; no finished wall, ceiling, shade, geometry or material exception selected.",
+  "pr": 1157,
+  "checkpoint": {
+    "evidence": "PR1157 published head2c8169e4584c1196e1e0a60dad3cc86226d0e946 includes the independently reviewed I02 coating study. Retained source parent936766687a523773d87865bae0a45e65a04ad8ef has reviewed tree05a239c1efa18819207b36aff3df8a0f137fca4d. Repository integrity and docs build passed; full exact-head CI pending.",
+    "next": "Verify exact-head CI and current-main publication preflight, integrate the partial result, then bind actual plaster, preparation and product revisions to a room surface and assess representative finish and repair.",
+    "blocker": "The installed substrate, full preparation/accessory set, supplied shade/revision and physical finish/repair evidence remain unresolved. MAT-INTERIORS remains incomplete; no whole assembly is accepted."
+  }
 }
