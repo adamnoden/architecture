@@ -83,6 +83,8 @@ The [sink-cabinet material and maintenance comparison](ias-03-sink-cabinet.md) r
 
 The [sink set-out and renewal successor](ias-03-sink-renewal.md) adds the manufacturer's dated waste projection and cutout, distinguishes nominal set-out from tolerance, and develops a supported lowering/front-withdrawal direction. It does not identify the current waste kit, prove a complete removal route or clear materials; IS-04 and IAS-03 remain open.
 
+The [service-parts and fixing-release continuation](ias-03-sink-service-parts.md) supplies current model-associated service codes and distinguishes generic clip anchorage from the complete installed mounting assembly. It carries the release task into all four sides of the existing cabinet comparison, while leaving delivered-kit identity, connection faces, constituent admission and actual human access unverified. IS-04 and IAS-03 remain open.
+
 IAS runs in parallel with OAS #942 and HAD #943 after BSR. It works against the controlled current Reference House/PLT geometry. Any material section-depth, plan, opening or service-space conflict is an explicit rewind request; IAS may not silently fork the house.
 
 OAS owns the opening cassette/envelope crossing; IAS owns the room-side assembly meeting it. HAD owns visible composition/material expression and consumes IAS dimensional/assembly constraints.
