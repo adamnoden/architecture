@@ -9,7 +9,8 @@
     "label": "swe-1174-publication"
   },
   "claimedAt": "2026-10-31T20:29:23.177Z",
-  "heartbeatAt": "2026-10-31T20:29:23.177Z",
-  "expiresAt": "2026-10-31T21:14:23.177Z",
-  "branch": "work/swe-publication-1174"
+  "heartbeatAt": "2026-10-31T20:38:30.408Z",
+  "expiresAt": "2026-10-31T21:23:30.408Z",
+  "branch": "work/swe-publication-1174",
+  "note": "Implementation and targeted tests complete locally; preparing remote publication and native PDF validation."
 }
