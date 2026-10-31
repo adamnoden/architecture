@@ -1,0 +1,28 @@
+name: IAS integral sink renewal publication preflight
+on:
+  push:
+    branches: [work/mvb-chat-6541790969]
+    paths: [.github/workflows/ias-integral-preflight.yml]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6541790969
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Check current branch head and canonical lease
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          node --import tsx scripts/project-claims.ts merge-check IAS-03
+          --transport connector --lease-id 74a7da76-e532-4b27-a631-854577a384ac --generation 9
+          --branch work/mvb-chat-6541790969 --head "$(git rev-parse HEAD)" --format text
