@@ -9,8 +9,8 @@
     "label": "swarm-access-recovery-root-983b7ee"
   },
   "claimedAt": "2026-10-31T16:49:34.863Z",
-  "heartbeatAt": "2026-10-31T16:53:44.769Z",
-  "expiresAt": "2026-10-31T17:38:44.769Z",
+  "heartbeatAt": "2026-10-31T16:57:34.398Z",
+  "expiresAt": "2026-10-31T17:42:34.398Z",
   "branch": "work/swarm-access-recovery-20261031",
   "predecessor": {
     "leaseId": "15e1539e-9225-472e-9c06-1bc2a00d6a4e",
@@ -29,8 +29,7 @@
   },
   "pr": 1150,
   "checkpoint": {
-    "evidence": "PR 1150 publishes reviewed common head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 / tree e235ccc6c960795483ba906f10dae0a2ff01ec07 on unchanged main 2512f116. Native fetch verified exact tree and all three published source parents. Independent source/architectural reviews and combined owner-byte, repository/publication and docs checks pass. Fresh generation reacquired after delayed publication outlasted earlier claims; no expired request replayed.",
-    "next": "Observe full exact-head CI, verify all three common source owners, run three fresh canonical merge-checks and expected-head merge, then verify accepted main and release. All three nodes remain planned.",
-    "blocker": "Full published-head CI and fresh preflights pending; no complete installed assembly, material, hydraulic or physical pass."
+    "evidence": "PR 1150 merged as 03bba64db58024cf8bfdd7c1f7afa865e9b072c8. Fresh native main verification confirms accepted tree e235ccc6c960795483ba906f10dae0a2ff01ec07 equals full-CI head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 and all three reviewed remote source parents are ancestors. Full CI 41221814322 succeeded; all three canonical preflights passed at 16:56:05/11/16 UTC. Common feature and all intended individual source refs are absent; no source branch was published this round. Bounded results only, no lifecycle completion.",
+    "next": "RWT-METALS remains planned. Obtain a complete retained wet-body fabrication/support/contact/outlet detail and credible larger repair, or justify open transfers with actual capture and receiving levels. Concealed crossing and whole-assembly constituent/hydraulic/renewal duties remain open."
   }
 }
