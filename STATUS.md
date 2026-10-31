@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 32 · **Held:** 2 · **Done:** 100 · **Cancelled:** 0
+**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 101 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -29,7 +29,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT | — |
 | `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT | — |
 | `MAT-INTERIORS` | Resolve non-plastic interior and wet-room assembly alternatives | MAT | — |
-| `ADE-SECTION-VIEW` | Prove source-owned orthographic cut, context and occlusion semantics | ADE | ADE-SECTION-PARITY |
+| `ADE-SECTION-PARITY` | Migrate principal and service sections to source-bound visible geometry and cross-view parity | ADE | — |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
@@ -72,7 +72,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `PLT-FINAL-PREP` | Prepare coherent final current-house digital and print proof set | HRS-SYNTHESIS |
 | `PLT-PRINT-REVIEW` | Receive and disposition actual-size BOOK and WALL print verdicts | PLT-FINAL-PREP |
 | `BCR-BAY-DESIGN` | Resolve the selected bay as a coordinated design study | TRIAD-GATE |
-| `ADE-SECTION-PARITY` | Migrate principal and service sections to source-bound visible geometry and cross-view parity | ADE-SECTION-VIEW |
 | `ADE-MODEL` | Connect current design identities to construction-information outputs | HRS-TECHNICAL |
 | `ADE-DETAILS` | Produce source-bound technical bay drawings and details | ADE-MODEL, BCR-BAY-DESIGN |
 | `ADE-SCHEDULES` | Produce linked bay schedules specifications and quantities | ADE-MODEL, BCR-BAY-DESIGN |
