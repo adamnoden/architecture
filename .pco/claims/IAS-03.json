@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 12,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "7619f2db-fb07-4914-b2fb-dd2284fe29a0",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-ias-floor-recovery-1937"
   },
   "claimedAt": "2026-10-31T19:40:53.427Z",
-  "heartbeatAt": "2026-10-31T19:57:28.012Z",
-  "expiresAt": "2026-10-31T21:27:28.012Z",
+  "heartbeatAt": "2026-10-31T19:58:03.802Z",
+  "expiresAt": "2026-10-31T19:58:03.802Z",
   "branch": "work/swarm-riser-recovery-20261031",
   "predecessor": {
     "leaseId": "12aa043e-cef4-4c1a-8ae8-8401e2ca7664",
@@ -33,5 +33,7 @@
     "next": "Release this exact IAS-03 generation12 as handoff after actual checkpoint receipt. Accepted result retains A and conditionally compares east-only C with supported flush closure; continue from accepted main only after fresh canonical allocation.",
     "blocker": "IAS-03 remains planned and incomplete: actual supported floor closure and cabinet chassis, specific service component and renewable aperture/withdrawal, structural receiving panels and connections, installed constituents and physical acceptance are unresolved. B remains a failed comparator, not adopted."
   },
-  "pr": 1170
+  "pr": 1170,
+  "releasedAt": "2026-10-31T19:58:03.802Z",
+  "releaseReason": "handoff"
 }
