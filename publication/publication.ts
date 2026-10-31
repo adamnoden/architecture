@@ -112,7 +112,7 @@ export const primerPublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'primer-patterns',
     source: 'docs/patterns/README.md',
-    title: 'From doctrine to patterns',
+    title: 'From constitution to patterns',
     kind: 'primer',
     adapter: 'primer-patterns'
   },
@@ -126,7 +126,7 @@ export const primerPublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'primer-outlook',
     source: 'publication/primer/outlook.md',
-    title: 'Making and proving the platform',
+    title: 'Making and testing the house',
     kind: 'primer'
   }
 ] as const
