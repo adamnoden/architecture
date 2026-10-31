@@ -1,15 +1,20 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 1,
+  "generation": 2,
   "state": "claimed",
-  "leaseId": "6ffa2193-9eaf-4029-9db8-b5e646c1438c",
+  "leaseId": "b81cce7d-4da5-440d-8c97-c8a733678faa",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-root-1cd2b9a76146"
+    "label": "swarm-resume-interiors-983b7ee"
   },
-  "claimedAt": "2026-10-30T23:25:13.987Z",
-  "heartbeatAt": "2026-10-30T23:25:13.987Z",
-  "expiresAt": "2026-10-31T00:10:13.987Z",
-  "branch": "work/swarm-root-mat-services-20261030"
+  "claimedAt": "2026-10-31T09:10:38.085Z",
+  "heartbeatAt": "2026-10-31T09:10:38.085Z",
+  "expiresAt": "2026-10-31T09:55:38.085Z",
+  "branch": "work/swarm-resume-interiors-20261031",
+  "predecessor": {
+    "leaseId": "6ffa2193-9eaf-4029-9db8-b5e646c1438c",
+    "generation": 1,
+    "branch": "work/swarm-root-mat-services-20261030"
+  }
 }
