@@ -64,6 +64,13 @@ boundary or protective clearcoat is added by this comparison.
 
 ## Design consequence and remaining decision
 
+The [located Study plaster comparison](interior-plaster-substrate.md) now names
+Conserv hydraulic base/finish products and rejects their recommended 24 mm
+three-coat arrangement within the unchanged 15 mm envelope-wall allowance.
+Its authored 14 mm challenger leaves only 1 mm before coating, preparation and
+deviation; no substrate-specific two-coat system or complete material pass is
+established. The separate Solo enquiry retains unidentified additives.
+
 I02 can now distinguish the evidenced powder/binder components from the
 unresolved whole finish. The next design step is to bind the actual plaster,
 patching materials and preparation to a room surface, including complete
