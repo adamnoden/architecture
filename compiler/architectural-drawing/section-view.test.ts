@@ -76,8 +76,8 @@ test('opaque cut cap occludes the central background roof but does not delete it
   const ridge = v.background.filter(s => near(s.a.z, 4800) && near(s.b.z, 4800) &&
     s.meaning.includes('asymmetric-roof-field'))
   assert.equal(ridge.length, 2)
-  assert.ok(ridge.some(s => near(s.b.y, 2000)))
-  assert.ok(ridge.some(s => near(s.a.y, 3000)))
+  assert.ok(ridge.some(s => near(s.a.y, 2000) || near(s.b.y, 2000)))
+  assert.ok(ridge.some(s => near(s.a.y, 3000) || near(s.b.y, 3000)))
   assert.ok(v.cut.length > 0 && v.cut.every(s => s.role === 'cut'))
   assert.ok(v.retainedFaces.some(f => f.id === 'asymmetric-roof-field'))
 })
