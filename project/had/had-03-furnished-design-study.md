@@ -156,6 +156,12 @@ It keeps a pull exposed through a reduced opening and checks the connected hall
 route and closed-door approach states. Its reach sensitivity, small margins and
 unselected installed hardware do not transfer a pass to this accepted-house study.
 
+The later [accepted-Study operation comparison](had-03-study-operation.md) keeps
+the existing low-hinge door eligible: its fully open route obstruction does not
+defeat a complete closing-and-return sequence. The witness requires an explicit
+two-hand handover and small geometric margins. Its separate chair/window approach
+states establish neither an installed doorset nor actual seated or window use.
+
 ## Verification
 
 Source datums/apertures and new reservation arithmetic are checked independently.
