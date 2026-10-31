@@ -1,0 +1,86 @@
+name: TYP-08 full-book candidate
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/typ08-full-book-candidate.yml'
+      - 'publication/specimens/typ08/**'
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Install PDF inspectors
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils qpdf
+
+      - name: Build exact A4 and B5 whole-book candidates
+        run: npx tsx publication/specimens/typ08/build.ts
+
+      - name: Capture finished-PDF diagnostics
+        run: |
+          mkdir -p publication/.proof/typ08a/diagnostics
+          pdffonts publication/.proof/typ08a/a4/typ08a-full-book-a4.pdf > publication/.proof/typ08a/diagnostics/a4-pdffonts.txt
+          pdffonts publication/.proof/typ08a/b5/typ08a-full-book-b5.pdf > publication/.proof/typ08a/diagnostics/b5-pdffonts.txt
+          pdfinfo publication/.proof/typ08a/a4/typ08a-full-book-a4.pdf > publication/.proof/typ08a/diagnostics/a4-pdfinfo.txt
+          pdfinfo publication/.proof/typ08a/b5/typ08a-full-book-b5.pdf > publication/.proof/typ08a/diagnostics/b5-pdfinfo.txt
+          pdftotext -layout publication/.proof/typ08a/a4/typ08a-full-book-a4.pdf /tmp/typ08-a4.txt 2> publication/.proof/typ08a/diagnostics/a4-pdftotext-stderr.txt || true
+          pdftotext -layout publication/.proof/typ08a/b5/typ08a-full-book-b5.pdf /tmp/typ08-b5.txt 2> publication/.proof/typ08a/diagnostics/b5-pdftotext-stderr.txt || true
+          npx tsx publication/specimens/typ08/verify-corrections.ts > publication/.proof/typ08a/diagnostics/correction-verifier-stdout.txt 2> publication/.proof/typ08a/diagnostics/correction-verifier-stderr.txt || true
+
+      - name: Upload finished-PDF diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: typ08c-pdf-diagnostics
+          path: |
+            publication/.proof/typ08a/diagnostics/*
+            publication/.proof/typ08a/a4/typ08a-full-book-a4.pdf
+            publication/.proof/typ08a/b5/typ08a-full-book-b5.pdf
+            publication/.work/source/docs/manuscript/part-*.md
+            publication/.work/source/publication/part-iii.md
+            publication/.work/typ08a/vivliostyle-a4/**/*.html
+            publication/.work/typ08a/vivliostyle-b5/**/*.html
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 7
+
+      - name: Verify finished PDFs
+        run: npx tsx publication/specimens/typ08/verify.ts
+
+      - name: Verify TYP-08C bounded corrections
+        run: npx tsx publication/specimens/typ08/verify-corrections.ts
+
+      - name: Render B5 review corpus
+        run: npx tsx publication/specimens/typ08/render.ts
+
+      - name: Upload whole-book proof family
+        uses: actions/upload-artifact@v4
+        with:
+          name: typ08a-full-book-candidate
+          path: |
+            publication/.proof/typ08a/a4/typ08a-full-book-a4.pdf
+            publication/.proof/typ08a/b5/typ08a-full-book-b5.pdf
+            publication/.proof/typ08a/a4/*.destination-normalization.json
+            publication/.proof/typ08a/b5/*.destination-normalization.json
+            publication/.proof/typ08a/manifest.json
+            publication/.proof/typ08a/verification.json
+            publication/.proof/typ08a/corrections.json
+            publication/.proof/typ08a/correction-verification.json
+            publication/.proof/typ08a/review-index.json
+            publication/.proof/typ08a/b5-review/*.jpg
+          if-no-files-found: error
+          retention-days: 90

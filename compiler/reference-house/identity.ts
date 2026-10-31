@@ -1,6 +1,6 @@
 import type { CalculationMethod } from '../calculation-slice/model.js'
 import { sha256SemanticFingerprint } from '../core/identity.js'
-import type { ReferenceHouseSource } from './model.js'
+import type { ReferenceHouseCoordinationSource } from './model.js'
 import type { ReferenceHouseSystemCoreResult } from './system-compile.js'
 
 export const REFERENCE_HOUSE_COMPILE_SCHEMA_VERSION = 'HK-RH-COMPILE-1' as const
@@ -13,8 +13,8 @@ const byId = <T extends { id: string }>(items: readonly T[]): T[] =>
  * Nested arrays are otherwise preserved: stable hashing must not erase authored sequence.
  */
 export const canonicalReferenceHouseSource = (
-  source: ReferenceHouseSource
-): ReferenceHouseSource => ({
+  source: ReferenceHouseCoordinationSource
+): ReferenceHouseCoordinationSource => ({
   ...source,
   spaces: byId(source.spaces),
   boundaries: byId(source.boundaries),
@@ -24,7 +24,7 @@ export const canonicalReferenceHouseSource = (
   qualitativeOpeningRelationships: byId(source.qualitativeOpeningRelationships)
 })
 
-export const referenceHouseSourceFingerprint = (source: ReferenceHouseSource): string =>
+export const referenceHouseSourceFingerprint = (source: ReferenceHouseCoordinationSource): string =>
   sha256SemanticFingerprint(canonicalReferenceHouseSource(source))
 
 export const canonicalCalculationMethod = (method: CalculationMethod): CalculationMethod => ({
@@ -178,7 +178,7 @@ export interface ReferenceHouseCompileIdentity {
 }
 
 export const createReferenceHouseCompileIdentity = (
-  source: ReferenceHouseSource,
+  source: ReferenceHouseCoordinationSource,
   result: ReferenceHouseSystemCoreResult,
   privateStairMethod: CalculationMethod
 ): ReferenceHouseCompileIdentity => {
@@ -248,29 +248,30 @@ export interface ReferenceHouseLineage {
 }
 
 export const createReferenceHouseLineage = (
+  source: ReferenceHouseCoordinationSource,
   result: ReferenceHouseSystemCoreResult
 ): ReferenceHouseLineage => {
   const stair = result.calculations.privateStairGeometry
   return {
     floorZoneDepth: {
-      sourceFactIds: ['RHCF-CEIL-G', 'RHCF-FFL-1'],
+      sourceFactIds: [source.levels.groundCeiling.id, source.levels.firstFfl.id],
       ruleId: 'RH-FLOOR-ZONE-DEPTH'
     },
     boundaryCoordination: {
       roofCatchmentTotal: {
-        sourceFactIds: ['RHCF-SHELL-X', 'RHCF-SHELL-Y', 'RHCF-COURT-SIZE'],
+        sourceFactIds: [source.shell.width.id, source.shell.depth.id, source.court.id],
         ruleId: 'RH-C4-ROOF-CATCHMENT-GEOMETRY'
       },
       enclosedPlateArea: {
-        sourceFactIds: ['RHCF-SHELL-X', 'RHCF-SHELL-Y', 'RHCF-COURT-SIZE'],
+        sourceFactIds: [source.shell.width.id, source.shell.depth.id, source.court.id],
         ruleId: 'RH-C4-ENCLOSED-PLATE-CLOSURE'
       },
       courtyardOpenSkyArea: {
-        sourceFactIds: ['RHCF-COURT-SIZE'],
+        sourceFactIds: [source.court.id],
         ruleId: 'RH-C4-COURTYARD-CATCHMENT-GEOMETRY'
       },
       wallPlanningStressThickness: {
-        sourceFactIds: ['RHCF-WALL-STRESS'],
+        sourceFactIds: [source.wallPlanning.stressThickness.id],
         ruleId: 'RH-C4-WALL-PLANNING-STRESS'
       }
     },

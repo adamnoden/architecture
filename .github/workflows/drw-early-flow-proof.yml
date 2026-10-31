@@ -1,0 +1,57 @@
+name: Prove DRW early-book FLOW figures
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/manuscript/figures/selective-permanence-platform.svg'
+      - 'docs/manuscript/figures/designed-interface-functions.svg'
+      - 'docs/manuscript/figures/failure-architecture-sequence.svg'
+      - 'docs/manuscript/figures/maintenance-geography-route.svg'
+      - 'docs/manuscript/figures/pattern-language-fields-sequence.svg'
+      - 'docs/publication/architectural-drawing-drw11f*.md'
+      - 'publication/specimens/drw11f/**'
+      - '.github/workflows/drw-early-flow-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drw-early-flow-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build A4 proof
+        run: DRW11F_FORMAT=a4 npx vivliostyle build -c publication/specimens/drw11f/vivliostyle.config.js
+
+      - name: Build B5 proof
+        run: DRW11F_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw11f/vivliostyle.config.js
+
+      - name: Validate physical proof
+        run: npx tsx publication/specimens/drw11f/validate.ts
+
+      - name: Upload early-FLOW proof PDFs
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-11f-early-flow-proof
+          path: |
+            publication/specimens/drw11f/dist/drw11f-a4.pdf
+            publication/specimens/drw11f/dist/drw11f-b5.pdf
+          if-no-files-found: error
+          retention-days: 30

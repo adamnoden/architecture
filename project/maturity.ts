@@ -42,26 +42,17 @@ interface WorkstreamBase {
 
 type M1Assessment = WorkstreamBase & {
   maturity: 'M1'
-  evidence: {
-    framed: EvidenceSet
-  }
+  evidence: { framed: EvidenceSet }
 }
 
 type M2Assessment = WorkstreamBase & {
   maturity: 'M2'
-  evidence: {
-    framed: EvidenceSet
-    developed: EvidenceSet
-  }
+  evidence: { framed: EvidenceSet; developed: EvidenceSet }
 }
 
 type M3Assessment = WorkstreamBase & {
   maturity: 'M3'
-  evidence: {
-    framed: EvidenceSet
-    developed: EvidenceSet
-    coordinated: EvidenceSet
-  }
+  evidence: { framed: EvidenceSet; developed: EvidenceSet; coordinated: EvidenceSet }
 }
 
 type M4Assessment = WorkstreamBase & {
@@ -97,9 +88,9 @@ export const workstreamStatuses = [
     id: 'public-architectural-position',
     name: 'Public architectural position',
     maturity: 'M4',
-    reviewedOn: '2026-10-15',
+    reviewedOn: '2026-10-19',
     currentState:
-      'The core architectural position has survived the bounded PR-01 adversarial review after material narrowing: proportional serviceability can reject overprovision, transfer claims are bounded, foreseeable human life-course and future-climate change are explicit, the Repose structural-perception claim is qualified, and architecture is separated from delivery and stewardship assumptions.',
+      'The core architectural position remains the internally controlled PR-01 baseline after material narrowing: proportional serviceability can reject overprovision, transfer claims are bounded, foreseeable human life-course and future-climate change are explicit, the Repose structural-perception claim is qualified, and architecture is separated from delivery and stewardship assumptions. The completed HFI programme has now integrated foreseeable human variance and complete-action / low-vigilance consequences into the governing principles without creating a parallel human-factors doctrine.',
     nextGate:
       'Hold the corrected position as the internally controlled baseline through PR-02; PR-03/PR-04 external critical reading and downstream physical/professional evidence remain capable of reopening it. M5 requires competent independent validation at the stated scope.',
     evidence: {
@@ -113,7 +104,8 @@ export const workstreamStatuses = [
         'publication/pr01-r6-cross-book-contradiction-omission.md',
         'publication/pr01-r8a-comparative-proportionality-closeout.md',
         'publication/pr01-r8f-local-findings-constitution-climate.md',
-        'publication/pr01-r9-reproof-refreeze.md'
+        'publication/pr01-r9-reproof-refreeze.md',
+        'project/hfi/hfi-10-adversarial-closeout.md'
       ]
     }
   },
@@ -160,10 +152,7 @@ export const workstreamStatuses = [
       'Hold v0.1 as the controlled baseline. Reopen only when competent external criticism, a real-project contradiction, a materially different second grammar, publication adversarial review or material new evidence creates a concrete question. M5 requires independent architectural validation at the stated scope.',
     evidence: {
       framed: ['docs/grammar/g01-grammar-charter.md'],
-      developed: [
-        'docs/grammar/g01-research-brief.md',
-        'docs/grammar/g01-v0.1.md'
-      ],
+      developed: ['docs/grammar/g01-research-brief.md', 'docs/grammar/g01-v0.1.md'],
       coordinated: [
         'docs/grammar/g01-d10-normative-reduction.md',
         'docs/reference-house/g01-v0.1-conformance-d12.md'
@@ -180,11 +169,11 @@ export const workstreamStatuses = [
     id: 'reference-house',
     name: 'Reference House',
     maturity: 'M3',
-    reviewedOn: '2026-10-12',
+    reviewedOn: '2026-10-19',
     currentState:
-      'RH-00 through RH-10 are coordinated at virtual-design scope, RH-11 provides issue-ready discipline review packages, and RH-C0 has frozen a controlled pre-compiler model without converting unresolved technical assumptions into certainty.',
+      'RH-00 through RH-10 remain coordinated at virtual-design scope and RH-11 remains issue-ready. HFI-RW-01 has deliberately rewound the principal stair from 280 mm to the project-preferred 300 mm going while preserving the shell, courtyard, programme and circulation topology; the HFI review handoff is integrated without claiming external validation.',
     nextGate:
-      'Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, and progress P03/P04 validation; RH-C0 does not raise Reference House maturity.',
+      'Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, progress P03/P04 validation, and retain the explicitly unresolved HFI handoffs for finished interfaces, real-site access, stairlift compatibility, future lift provision and laundry topology with their downstream owners.',
     evidence: {
       framed: ['docs/reference-house/README.md'],
       developed: [
@@ -196,7 +185,8 @@ export const workstreamStatuses = [
         'docs/reference-house/whole-house-coordination-audit.md',
         'docs/reference-house/energy-heat-coordination-rh10.md',
         'docs/reference-house/envelope-coordination-rh10.md',
-        'docs/reference-house/model-baseline-rhc0.md'
+        'docs/reference-house/model-baseline-rhc0.md',
+        'project/hfi/hfi-08b-rh03-stair-rewind.md'
       ]
     }
   },
@@ -238,11 +228,11 @@ export const workstreamStatuses = [
     id: 'computational-track',
     name: 'Computational track',
     maturity: 'M4',
-    reviewedOn: '2026-10-13',
+    reviewedOn: '2026-10-19',
     currentState:
-      'The bounded Reference House executable sequence remains closed PASS through RH-C5, and the CH-00 through CH-08 Compiler Hardening programme is complete. The compiler now has a frozen semantic/artefact baseline, deterministic fail-closed behaviour, machine-enforced runtime boundaries, single-pass Reference House orchestration, selective representation hardening, stable source/method/result/compile identity and lineage, deterministic law/property/metamorphic evidence, one reproducible repository-health and artefact-verification contract, and a final deletion/proof audit that preserves the pre-hardening conclusions while removing only unearned compatibility machinery. This is an internally validated/controlled computational baseline at its stated proof boundaries; it does not expand Reference House technical authority or establish physical, regulatory or whole-building adequacy.',
+      'The bounded Reference House executable sequence remains closed PASS through RH-C5 and CH-00 through CH-08 remain complete. The intentional HFI stair rewind has propagated through the controlled semantic source and deterministic projections; RH-C5 now checks the selected 300 mm going while HFI-09C/09D explicitly refuse to turn that project preference into a universal human-factors or statutory rule.',
     nextGate:
-      'Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope.',
+      'Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, DPL target/site work, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
@@ -296,7 +286,9 @@ export const workstreamStatuses = [
         'compiler/ch06/ch06.test.ts',
         'compiler/ch06/geometry-positive.test.ts',
         'compiler/ch07/ch07.test.ts',
-        'compiler/ch08/ch08.test.ts'
+        'compiler/ch08/ch08.test.ts',
+        'project/hfi/hfi-09c-computational-admission.md',
+        'project/hfi/hfi-09d-regression-locks.md'
       ]
     }
   },
@@ -305,8 +297,7 @@ export const workstreamStatuses = [
     name: 'Evidence / precedent research',
     maturity: 'M3',
     reviewedOn: '2026-10-12',
-    currentState:
-      'Major evidence packages exist and taxonomy ambiguities are largely closed.',
+    currentState: 'Major evidence packages exist and taxonomy ambiguities are largely closed.',
     nextGate: 'Targeted claim hardening where physical or publication maturity requires it.',
     evidence: {
       framed: ['docs/research/README.md'],
@@ -318,20 +309,28 @@ export const workstreamStatuses = [
     id: 'publication',
     name: 'Publication',
     maturity: 'M4',
-    reviewedOn: '2026-10-17',
+    reviewedOn: '2026-10-28',
     currentState:
-      'PR-00 and PR-01 established and internally challenged the corrected publication candidate. PUB-SAN SAN-00 through SAN-06 removed development-history residue, and PUB-NOM NOM-00 through NOM-10 completed the reader-facing nomenclature architecture and adversarial source/rendered enforcement. The completed DRW baseline through DRW-01B is now integrated on main; no architectural drawing implementation has begun. The resolved Working Edition remains the controlled publication source while DRW proceeds from DRW-01C.',
+      'PR-00, PR-01, PUB-SAN and PUB-NOM remain complete for the source/object scopes they actually reviewed; DRW v1 remains frozen and TYP has an accepted RC2 production release. EDA-00–08 remain valid historical assurance for the 128-source candidate book, and ADE remains internally complete at its stated representation scope. BSR has now completed the six-part structural migration: the Working Edition has stable Part IV design-proposition, Part V proving/technical-closure and Part VI resolved-house interfaces. IAS/OAS/HAD are unblocked against those interfaces, but the previous EDA clearance and PLT-only manufacture path remain insufficient for the enlarged final book. Publication maturity remains M4; no prior evidence is erased or promoted.',
     nextGate:
-      'Resume DRW at DRW-01C, complete the controlled architectural-drawing programme and re-run the PUB-NOM integration gates at DRW-10 and DRW-12. PR-02 then produces the private 12-copy physical object without reopening the manuscript by preference; PR-03/PR-04 supply the independent critical cycle required before any M5 or public-release claim.',
+      'PUB-02 may continue content-independent object preparation using the accepted typography contract. Final private-object content/drawing freeze and manufacture now require IAS/OAS/HAD design resolution; BCR construction-resolution convergence; HRS final architectural synthesis; final PLT integration/physical drawing freeze; and renewed EDA assurance over the enlarged source/object. PUB-03/PUB-04 independent criticism remains required before M5 or public-release claims.',
     evidence: {
       framed: ['docs/manuscript/publication-architecture.md'],
       developed: ['publication/publication.ts'],
       coordinated: [
         'publication/pr00h-candidate-book-freeze.md',
         'publication/pr01-r8f-local-findings-constitution-climate.md',
-        'docs/publication/architectural-drawing-drw01b-graphic-tokens.md'
+        'docs/publication/architectural-drawing-programme.md',
+        'docs/publication/architectural-drawing-execution-plan.md'
       ],
       internallyValidated: [
+        'docs/publication/publication-typography-v1-release.md',
+        'docs/publication/architectural-drawing-engine-ade00-audit.md',
+        'docs/publication/architectural-drawing-engine-ade03b-wall-grammar.md',
+        'docs/publication/architectural-drawing-engine-ade04b-opening-uncertainty.md',
+        'docs/editorial/eda-programme.md',
+        'docs/editorial/eda-00-doctrine-audit.md',
+        'docs/editorial/eda-01-corpus-register.md',
         'publication/pr01-r7-findings-freeze.md',
         'publication/pr01-r9-reproof-refreeze.md',
         'docs/publication/resolved-work-sanitation-closeout.md',
@@ -340,16 +339,87 @@ export const workstreamStatuses = [
     }
   },
   {
+    id: 'deployment-real-site',
+    name: 'Deployment / real-site integration',
+    maturity: 'M4',
+    reviewedOn: '2026-10-27',
+    currentState:
+      'The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. DPL-01 through DPL-14 are complete. DPL-15J adds explicit assumption-based trials across all eight sites, a conditional envelope, reader-facing computational explanation and internal adversarial checks. Geometry hypotheses do not discharge evidence-backed readiness: corpus readiness remains 0/8 after DPL-15I, and real-site compatibility remains unestablished. The user has explicitly revised DPL-15/16/17/18 to conditional research scope. Their final authored case and closeout complete that revised programme; the original empirical criteria remain unearned and real-site verification is deferred. Lennard remains excluded from empirical sampling.',
+    nextGate:
+      'No standing DPL research packet remains. Trigger a separate verification follow-on only for a selected real commission/site or explicit evidence-backed request; then replace the applicable premises with controlled site data and stage-specific professional evidence. Conditional completion does not raise maturity or authority, and authorises no external contact or spend.',
+    evidence: {
+      framed: ['project/dpl/deployment-programme.md'],
+      developed: [
+        'project/dpl/dpl-01-deployment-ontology.md',
+        'project/dpl/dpl-02-reference-house-conformance.md',
+        'project/dpl/dpl-03-assurance-result-semantics.md',
+        'project/dpl/dpl-04-compilation-maturity.md',
+        'project/dpl/dpl-05-target-stack-model.md',
+        'project/dpl/dpl-06-site-manifest-model.md',
+        'project/dpl/dpl-foundation-coherence-review.md',
+        'project/dpl/dpl-08b-ground-datum-plinth-approach-interface.md',
+        'project/dpl/dpl-09b-structure-ground-moisture-materials.md',
+        'project/dpl/dpl-10b-london-strategic-residential-design.md',
+        'project/dpl/dpl-14b-three-site-real-corpus-pilot.md'
+      ],
+      coordinated: [
+        'project/dpl/dpl-12a-minimal-orchestration.md',
+        'compiler/dpl/compile.ts',
+        'project/dpl/dpl-08c-foul-surface-site-water-interface.md',
+        'project/dpl/dpl-09c-england-drainage-waste-water.md',
+        'project/dpl/dpl-10c-croydon-planning-plugin.md',
+        'project/dpl/dpl-14c-five-site-gap-correction.md',
+        'project/dpl/dpl-wave-c-integration-maturity-review.md',
+        'project/dpl/dpl-12b-authored-candidate-conformance.md',
+        'project/dpl/dpl-10d-bromley-adversarial-replay.md',
+        'project/dpl/dpl-12c-wave-c-runtime-composition.md',
+        'project/dpl/dpl-wave-d-integration-admission-review.md'
+      ],
+      internallyValidated: [
+        'project/dpl/exploration/README.md',
+        'project/dpl/dpl-conditional-closeout.md',
+        'compiler/dpl/exploration.test.ts',
+        'project/dpl/dpl-15e-rp006-spatial-preflight.md',
+        'project/dpl/dpl-15f-rp006-residual-recovery.md',
+        'project/dpl/dpl-t11-lennard-no-spend-evidence.md',
+        'project/dpl/dpl-13a-canonical-reference-site-compile.md',
+        'compiler/dpl/canonical.ts',
+        'compiler/dpl/dpl13a.test.ts',
+        'project/dpl/dpl-e-post-13a-review.md',
+        'project/dpl/dpl-02c-conformance-coverage.md',
+        'project/dpl/dpl-09d-england-screening-coverage.md',
+        'project/dpl/dpl-11b-nonplanning-screening-coverage.md',
+        'project/dpl/dpl-f-coverage-foundations-integration-review.md',
+        'project/dpl/dpl-10e-planning-screening-coverage.md',
+        'project/dpl/dpl-g-post-planning-coverage-integration-review.md',
+        'project/dpl/dpl-10f-planning-target-identity-reconciliation.md',
+        'project/dpl/dpl-h-post-planning-identity-admission-review.md',
+        'project/dpl/dpl-13b-screening-coverage-readiness.md',
+        'compiler/dpl/coverage-readiness.ts',
+        'project/dpl/dpl-i-post-13b-unresolved-admission-review.md',
+        'project/dpl/dpl-13c-screening-substantive-aggregation.md',
+        'compiler/dpl/substantive-aggregation.ts',
+        'compiler/dpl/dpl13c.test.ts',
+        'project/dpl/dpl-j-post-13c-unresolved-result-validation.md'
+      ]
+    }
+  },
+  {
     id: 'delivery',
     name: 'Delivery',
     maturity: 'M2',
-    reviewedOn: '2026-10-12',
+    reviewedOn: '2026-10-28',
     currentState:
-      'The implementation-brief structure exists, but downstream requirements remain intentionally incomplete.',
-    nextGate: 'Populate only as architectural and validation decisions mature.',
+      'DEL-00 inventories the existing delivery modules, N01–N17 and other brief obligations, with provisional discipline/stage allocations, evidence dependencies and rewind owners under #854. The authorised IAS/OAS/HAD/BCR/HRS programme now creates concrete future assembly and construction-resolution inputs, but no new delivery acceptance is implied. Current-house technical migration, competent review, physical evidence and commission-specific acceptance remain outstanding.',
+    nextGate:
+      'Reconcile DEL when BCR admits concrete IAS/OAS/HAD assembly obligations, and when RH-11/EPR, applicable PHY results or a real commission supplies evidence. Add fabrication, tolerance, shop-drawing, equivalence, first-article, commissioning or reinstatement requirements only where a selected assembly earns them. Declare source applicability before issuing older packages for the Georgian proposal. No project acceptance or maturity increase follows from programme authorisation.',
     evidence: {
-      framed: ['docs/delivery/README.md'],
-      developed: ['docs/delivery/riba-implementation-brief-template.md']
+      framed: ['docs/delivery/README.md', 'project/del/delivery-programme.md'],
+      developed: [
+        'docs/delivery/riba-implementation-brief-template.md',
+        'docs/delivery/human-factors-verification-requirements.md',
+        'project/del/del-00-delivery-baseline.md'
+      ]
     }
   }
 ] as const satisfies readonly WorkstreamStatus[]

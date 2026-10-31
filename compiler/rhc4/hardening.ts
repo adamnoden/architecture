@@ -5,7 +5,7 @@ import type {
 } from '../boundary-slice/model.js'
 import { MODEL_AREA_EPSILON_MM2 } from '../core/numeric.js'
 import type { PlanSliceCompileResult } from '../plan-slice/model.js'
-import type { ReferenceHouseSource } from '../reference-house/model.js'
+import type { ReferenceHouseCoordinationSource } from '../reference-house/model.js'
 import { serviceCrossingId } from '../service-slice/model.js'
 import type { ServiceTopologyCompileResult } from '../service-slice/model.js'
 import { mm2, square } from '../units.js'
@@ -46,7 +46,7 @@ export interface RhC4Coordination {
 }
 
 export const deriveReferenceHouseBoundaryCoordination = (
-  house: ReferenceHouseSource,
+  house: ReferenceHouseCoordinationSource,
   upstream: ReferenceHouseBoundaryUpstream
 ): RhC4Coordination => {
   const shellWidth = house.shell.width.value
@@ -78,7 +78,7 @@ export const deriveReferenceHouseBoundaryCoordination = (
 }
 
 export const hardenReferenceHouseBoundaryTopology = (
-  house: ReferenceHouseSource,
+  house: ReferenceHouseCoordinationSource,
   upstream: ReferenceHouseBoundaryUpstream,
   result: BoundaryTopologyCompileResult
 ): BoundaryTopologyCompileResult => {

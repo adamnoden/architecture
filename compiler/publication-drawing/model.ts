@@ -3,6 +3,7 @@ export type DrawingTextRole = 'label' | 'note' | 'marker'
 export type DrawingFillRole = 'none' | 'paper' | 'ink' | 'context' | 'faint'
 export type DrawingDashRole = 'none' | 'overhead' | 'datum' | 'provisional'
 export type DrawingTextAnchor = 'start' | 'middle' | 'end'
+export type DrawingScaleDenominator = number | 'NTS'
 
 export interface PaperPoint {
   x: number
@@ -55,7 +56,7 @@ export interface DrawingScene {
   viewId: string
   title: string
   description: string
-  scaleDenominator: number
+  scaleDenominator: DrawingScaleDenominator
   sourceId: string
   primitives: DrawingPrimitive[]
 }

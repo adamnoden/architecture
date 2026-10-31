@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "dpl.lennardT9AuthorityEvidence.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "candidateId": "DPL-T-CANDIDATE-004-01",
+  "researchDate": "2026-10-26",
+  "assuranceProfile": "SCREENING",
+  "parentT8ResultFingerprint": "e2532fe6bd77016cba92490120ea36d172fbed57ca66913d7419bcd5d6ef1bb7",
+  "authorityBoundary": "Current public-source status and exact-site historical context only. This record is not a statutory planning determination, legal-boundary opinion, measured survey, structural opinion or property-level flood conclusion.",
+  "sources": [
+    {
+      "id": "T9-AUTH-01",
+      "sourceClass": "OFFICIAL_BOROUGH_PLAN_REVIEW_STATUS",
+      "title": "Review of the Bromley Local Plan",
+      "url": "https://www.bromley.gov.uk/planning-policy/review-bromley-local-plan",
+      "observed": [
+        "The adopted Bromley Local Plan 2019 remains under review.",
+        "The council records the 2025 Direction of Travel as its second Regulation 18 consultation.",
+        "The current review surface does not establish a replacement Local Plan as adopted development-plan policy."
+      ],
+      "authorityBoundary": "Official source/status evidence only; it does not assign proposal-specific planning weight."
+    },
+    {
+      "id": "T9-AUTH-02",
+      "sourceClass": "OFFICIAL_BOROUGH_EMERGING_PLAN_STAGE",
+      "title": "Direction of Travel Consultation July to September 2025",
+      "url": "https://www.bromley.gov.uk/planning-policy/review-bromley-local-plan/2",
+      "observed": [
+        "The Direction of Travel consultation ran from 25 July to 26 September 2025.",
+        "The council explicitly states that the Direction of Travel document does not contain draft policies.",
+        "The next stage described by the council is preparation of a Submission Draft Local Plan."
+      ],
+      "authorityBoundary": "The Direction of Travel is emerging plan-making material, not operative development-plan policy."
+    },
+    {
+      "id": "T9-AUTH-03",
+      "sourceClass": "OFFICIAL_LONDON_PLAN_STAGE_STATUS",
+      "title": "Draft London Plan consultation",
+      "url": "https://www.london.gov.uk/programmes-strategies/planning/london-plan/next-london-plan/draft-london-plan-consultation",
+      "observed": [
+        "Consultation on the Draft London Plan closed at 17:00 on 15 October 2026.",
+        "Examination in public is scheduled for 2027 and adoption for 2028.",
+        "The Draft London Plan is therefore not the adopted London spatial development strategy at this gate."
+      ],
+      "authorityBoundary": "Official strategic source/status evidence only; no scalar material weight is inferred."
+    },
+    {
+      "id": "T9-AUTH-04",
+      "sourceClass": "OFFICIAL_NATIONAL_PLANNING_POLICY",
+      "title": "National Planning Policy Framework — DM4 Emerging development plan proposals",
+      "url": "https://www.gov.uk/guidance/national-planning-policy-framework-chapter-3-decision-making-policies-dm1-10",
+      "observed": [
+        "Relevant emerging-plan policies may be given weight according to stage of preparation, unresolved objections and compliance with national plan-making policy.",
+        "The policy does not provide a universal numeric weight.",
+        "Proposal-specific weight remains a decision-maker judgement."
+      ],
+      "authorityBoundary": "National policy supplies the weighting factors, not a native project planning determination."
+    },
+    {
+      "id": "T9-AUTH-05",
+      "sourceClass": "OFFICIAL_ENVIRONMENT_AGENCY_OPEN_DATA",
+      "title": "Flood risk: postcode search tool data",
+      "url": "https://www.data.gov.uk/dataset/87b9fa90-86c8-45f1-9211-9496d66b7168/flood-risk-postcode-search-tool-data",
+      "observed": [
+        "The Environment Agency publishes the postcode flood-risk dataset as open data.",
+        "The tool reports counts of properties in high, medium and low long-term flood-risk areas for a postcode and directs users to the address-level GOV.UK service.",
+        "Risk is for the area around an address/property, not a property-specific guarantee.",
+        "The exact BR2 8LN authoritative row could not be acquired by the T9 automated execution path; no secondary mirror is promoted in its place."
+      ],
+      "authorityBoundary": "Competent high-level public source identified; exact control-postcode result remains pending authoritative byte/row recovery."
+    },
+    {
+      "id": "T9-CONTEXT-01",
+      "sourceClass": "PUBLIC_COPY_OF_CURRENT_APPLICATION_PLANNING_STATEMENT_QUOTING_PRIOR_COUNCIL_REFUSAL",
+      "title": "41 Lennard Road planning statement — history of 23/00297/FULL6",
+      "url": "https://docs.planning.org.uk/20240909/108/SJCF0KBTMXE00/nync6wgbf4wjnom3.pdf",
+      "observed": [
+        "The exact-site 23/00297/FULL6 proposal was refused on 21 March 2024.",
+        "The reproduced refusal reason identified design and inadequate side space, disproportion to the host dwelling, dominance relative to the row, visual amenity and street-scene harm.",
+        "The reproduced reason cites Bromley Local Plan Policies 6, 8 and 37 and London Plan Policy D3."
+      ],
+      "authorityBoundary": "Proposal-specific historical context from a public planning-document copy. It is not transferred into a refusal of the different Reference House candidate and is not treated as the official decision notice itself."
+    },
+    {
+      "id": "T9-PROJECT-01",
+      "sourceClass": "CONTROLLED_PROJECT_CANDIDATE_FACT",
+      "title": "DPL-T3/T4 authored Reference House placement",
+      "repositoryRef": "project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json",
+      "observed": [
+        "The unchanged Reference House canonical front is constructed 26.0 m inward from the admitted screening frontage midpoint, plus a 4.5 m along-frontage offset.",
+        "The placement is street-facing but materially inland from the frontage rather than a simple street-line replacement.",
+        "Indicative title-index side clearances are below the Bromley Policy 8 one-metre numeric floor on both sides, but the title-index polygon is not legal or measured boundary evidence."
+      ],
+      "authorityBoundary": "Current controlled project geometry; does not itself decide planning acceptability."
+    }
+  ],
+  "interpretiveRules": [
+    "Emerging-source status may be resolved from official sources without pretending to assign a statutory scalar planning weight.",
+    "A prior refusal on a different proposal is positive site/context evidence but not a reusable refusal rule.",
+    "The exact-site prior side-space/street-scene refusal and the authored 26 m inward placement make local/strategic design-context judgement genuinely decision-critical rather than safely self-passable.",
+    "The official Environment Agency postcode dataset must be recovered directly before flood screening is discharged; secondary postcode mirrors are not substitutes.",
+    "No source in this record authorises Reference House mutation, route search, whole-site compatibility or incompatibility."
+  ]
+}

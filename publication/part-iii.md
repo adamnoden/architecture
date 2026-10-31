@@ -2,9 +2,7 @@
 
 The constitutional provisions in Parts I and II are deliberately broad. They describe what Ovid’s House values: selective permanence, designed interfaces, failure tolerance, maintenance geography, repose, passive-first environmental design and stewardship.
 
-A house cannot be drawn from principles alone.
-
-Between doctrine and construction sits a more operational layer: recurring architectural responses to recurring situations. These are the patterns.
+Drawing a house also requires recurring architectural responses to recurring situations. These are the patterns.
 
 A pattern is specific enough to change a plan, section, boundary or interface, but general enough to admit materially different constructions. **Plant Room as Service Hub** does not prescribe a boiler, heat pump, manifold or wall system. It says something architectural: maintenance-intensive plant, primary isolation and distribution should have real working geography rather than being scattered through residual cupboards. **Permanent Opening / Replaceable Window** does not prescribe timber or aluminium. It separates the long-lived architectural opening from the shorter-lived frame and the interface between them.
 
@@ -127,8 +125,6 @@ Four propositions remain held.
 - **Local Deep Service Zone**
 - **Selective Floor Access**
 
-They are not weak ideas. They are unresolved ideas.
-
 The remaining questions concern transfer, proportionality or physical quality. A removable lining, for example, is not admitted merely because it is technically demountable; it must justify its depth, joints, acoustic behaviour, solidity, fixing and reinstatement against an excellent conventional wall. Selective floor access must earn itself against the maintenance task beneath it rather than becoming infrastructure in search of a future use.
 
 Holding a candidate is therefore part of the system’s discipline. The book does not require every promising idea to mature at the same speed.
@@ -141,6 +137,4 @@ The Reference House in Part IV selects some of these patterns, rejects others an
 
 A compact-terrace transfer test removed several advantages of the Reference House’s detached, generous, courtyard-based form. Literal devices such as the dedicated service flank, large plant room and side replacement opening then had to shrink or disappear rather than being exported as doctrine.
 
-The distinction is deliberate:
-
-> **the patterns propose recurring relationships; the house accepts the consequences of choosing among them; transfer is tested by what survives when the house changes.**
+The patterns propose recurring relationships; the house accepts the consequences of choosing among them. Transfer is tested by what survives when the house changes.

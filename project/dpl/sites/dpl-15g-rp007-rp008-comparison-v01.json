@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "dpl.corpusNoSpendPathComparison.v1",
+  "packet": "DPL-15G",
+  "issue": 865,
+  "assuranceProfile": "SCREENING",
+  "researchDate": "2026-10-26",
+  "parent": {
+    "packet": "DPL-15F",
+    "mergeSha": "578fabff928af324de95dbbbfd5b314becd25fd5",
+    "resultFingerprint": "035ef8d620c4a1f7f5117344c298ddac5b58ed1d4260548975826ce6395bc942",
+    "result": "RP006_NOT_READY_RESIDUAL_PUBLIC_GEOMETRY_DATUM_BOUNDARY"
+  },
+  "comparisonUniverse": ["DPL-RP-007", "DPL-RP-008"],
+  "criteria": [
+    "EXACT_SITE_IDENTITY",
+    "CONTROLLED_GEOMETRY_RECOVERY_PATH",
+    "REAL_ORIENTATION_FRAME_PATH",
+    "DATUM_TOPOGRAPHY_PATH",
+    "PHYSICAL_ACCESS_STREET_PATH",
+    "ONE_HOUSE_EXPERIMENT_COHERENCE",
+    "DOCUMENT_TRANSPORT_PATH",
+    "KNOWN_EXTERNAL_EVIDENCE_ESCALATION"
+  ],
+  "sites": [
+    {
+      "siteId": "DPL-RP-007",
+      "site": "Land at 28 Godstone Road, Kenley, CR8 5JE",
+      "planningAuthority": "London Borough of Croydon",
+      "applicationRef": "25/03774/FUL",
+      "currentPlanningIdentity": {
+        "state": "EXACT_APPLICATION_IDENTITY",
+        "uprn": "10095497120",
+        "proposal": "Erection of three terraced dwellings with associated landscaping, cycle/refuse storage and communal garden.",
+        "decisionState": "CONFLICTING_PUBLIC_DECISION_LABELS_NOT_USED",
+        "decisionUse": "PROVENANCE_ONLY_NOT_CANDIDATE_READINESS"
+      },
+      "publicEvidence": [
+        {
+          "id": "15G-RP007-E01",
+          "sourceClass": "PUBLIC_CAPTURE_OF_CROYDON_REGISTER",
+          "source": "Planning Atlas capture of Croydon application 25/03774/FUL",
+          "observed": [
+            "Exact site/application identity and UPRN 10095497120 are linked.",
+            "Twenty-nine planning documents are linked to the council file.",
+            "Indexed documents include the decision notice, final officer report, BNG metric, application form, location plan, flood-risk assessment, biodiversity survey and additional documents.",
+            "The captured register records refusal on 23 January 2026."
+          ],
+          "authorityBoundary": "Useful document-transport and exact-identity evidence derived from a capture of the council register; decision outcome and applicant proposal do not prove Reference House acceptability."
+        },
+        {
+          "id": "15G-RP007-E02",
+          "sourceClass": "FROZEN_DPL14_REAL_SITE_RECORD",
+          "source": "project/dpl/sites/dpl-rp-007-land-28-godstone-road-kenley.md",
+          "observed": [
+            "Site is materially steep/sloping and was admitted specifically as a topography stress case.",
+            "Measured contours, gradients and usable level datum were not frozen by DPL-14.",
+            "Application proposal contains three dwellings and cannot be transferred into a one-house Reference House candidate."
+          ],
+          "authorityBoundary": "Corpus authority for the admitted stress condition and unknowns; not measured survey geometry."
+        },
+        {
+          "id": "15G-RP007-E03",
+          "sourceClass": "CONTROLLED_DPL_PRECEDENT",
+          "source": "DPL-T2/T3 Lennard evidence route",
+          "observed": [
+            "Environment Agency LiDAR Composite DTM 1 m has already been accepted by DPL as SCREENING datum/topography authority when exact site identity and CRS are controlled.",
+            "The DTM remains explicitly below private measured topographic survey authority."
+          ],
+          "authorityBoundary": "Proves an admissible SCREENING source class, not that RP-007 terrain bytes have already been acquired."
+        },
+        {
+          "id": "15G-RP007-E04",
+          "sourceClass": "FIRST_PARTY_CROYDON_WEEKLY_DECISION_PUBLICATION",
+          "source": "Croydon Weekly Decisions 05.01.26 to 25.01.26",
+          "observed": [
+            "The first-party weekly decision publication places 25/03774/FUL under a Permission Granted heading with decision date 23 January 2026.",
+            "This conflicts with the captured register and other public surfaces that label the same application refused."
+          ],
+          "authorityBoundary": "The conflicting decision label is retained as a provenance conflict and is not consumed by candidate-readiness selection. Direct decision-notice inspection is required before any planning-outcome use."
+        }
+      ],
+      "dispositions": {
+        "EXACT_SITE_IDENTITY": "STRONG",
+        "CONTROLLED_GEOMETRY_RECOVERY_PATH": "MATERIAL_PUBLIC_PATH",
+        "REAL_ORIENTATION_FRAME_PATH": "MATERIAL_PUBLIC_PATH",
+        "DATUM_TOPOGRAPHY_PATH": "MATERIAL_PUBLIC_PATH_WITH_STEEP_STRESS",
+        "PHYSICAL_ACCESS_STREET_PATH": "MATERIAL_PUBLIC_PATH",
+        "ONE_HOUSE_EXPERIMENT_COHERENCE": "BOUNDED_REVIEW_REQUIRED_NO_PARCEL_REDEFINITION",
+        "DOCUMENT_TRANSPORT_PATH": "STRONG_29_LINKED_DOCUMENTS",
+        "KNOWN_EXTERNAL_EVIDENCE_ESCALATION": "NOT_YET_EARNED_AT_SCREENING"
+      },
+      "nextPacketSuitability": "SELECT"
+    },
+    {
+      "siteId": "DPL-RP-008",
+      "site": "Land at rear of 32 Gleneldon Road / Ashlake Road, Streatham, SW16 2BD",
+      "planningAuthority": "London Borough of Lambeth",
+      "applicationRef": "24/00124/FUL",
+      "currentPlanningIdentity": {
+        "state": "EXACT_APPLICATION_IDENTITY",
+        "proposal": "Demolition of three existing garages and erection of one one-bedroom dwelling.",
+        "decisionState": "NOT_REQUIRED_FOR_15G_SELECTION",
+        "decisionUse": "PROVENANCE_ONLY_NOT_CANDIDATE_READINESS"
+      },
+      "publicEvidence": [
+        {
+          "id": "15G-RP008-E01",
+          "sourceClass": "FIRST_PARTY_LOCAL_AUTHORITY_WEEKLY_LIST",
+          "source": "Lambeth Planning Weekly List 26 January 2024",
+          "observed": [
+            "Exact application reference 24/00124/FUL and site identity are published by Lambeth.",
+            "The proposal is one dwelling on the garage site, making the planning parcel conceptually aligned with a one-house deployment experiment."
+          ],
+          "authorityBoundary": "First-party application identity/proposal evidence only; the weekly list does not provide placement-ready geometry."
+        },
+        {
+          "id": "15G-RP008-E02",
+          "sourceClass": "FROZEN_DPL14_REAL_SITE_RECORD",
+          "source": "project/dpl/sites/dpl-rp-008-rear-32-gleneldon-road-streatham.md",
+          "observed": [
+            "Site is the corpus lower-pathology small-plot control.",
+            "Current marketing reports approximately 97 square metres, but DPL classifies this only as approximate marketing measurement.",
+            "Exact legal/title/red-line extent, surveyed dimensions, orientation and levels remain unknown."
+          ],
+          "authorityBoundary": "Approximate 97 square metre marketing area cannot establish fit, no-fit or controlled geometry."
+        },
+        {
+          "id": "15G-RP008-E03",
+          "sourceClass": "FIRST_PARTY_LOCAL_AUTHORITY_DOCUMENT_ROUTE",
+          "source": "Lambeth planning database/document-access guidance",
+          "observed": [
+            "Lambeth provides online planning application records and documents for modern applications.",
+            "The current bounded search has not yet recovered the exact RP-008 site-plan/drawing bytes or an indexed document stack comparable to RP-007."
+          ],
+          "authorityBoundary": "A generic authority-hosted document route is not evidence that the decision-critical RP-008 geometry bytes are retrievable."
+        }
+      ],
+      "dispositions": {
+        "EXACT_SITE_IDENTITY": "STRONG",
+        "CONTROLLED_GEOMETRY_RECOVERY_PATH": "POSSIBLE_NOT_YET_DEMONSTRATED",
+        "REAL_ORIENTATION_FRAME_PATH": "POSSIBLE_NOT_YET_DEMONSTRATED",
+        "DATUM_TOPOGRAPHY_PATH": "NO_INTRINSIC_STEEP_STRESS_KNOWN_BUT_DATUM_UNRECOVERED",
+        "PHYSICAL_ACCESS_STREET_PATH": "CONTEXTUALLY_SIMPLE_GEOMETRY_UNRECOVERED",
+        "ONE_HOUSE_EXPERIMENT_COHERENCE": "STRONG",
+        "DOCUMENT_TRANSPORT_PATH": "GENERIC_COUNCIL_ROUTE_EXACT_BYTES_NOT_YET_RECOVERED",
+        "KNOWN_EXTERNAL_EVIDENCE_ESCALATION": "NOT_YET_EARNED_AT_SCREENING"
+      },
+      "nextPacketSuitability": "HOLD_AS_LOWER_PATHOLOGY_CONTROL"
+    }
+  ],
+  "selection": {
+    "siteId": "DPL-RP-007",
+    "result": "RP007_SELECTED_NEXT_NO_SPEND_CORPUS_EVIDENCE_TARGET",
+    "reason": "RP-007 currently has the stronger demonstrated evidence transport: exact application identity and UPRN plus a 29-document council-linked stack containing the classes needed to pursue geometry, orientation and terrain. Its steep topography is a deliberate corpus stress condition, not a reason to reject the site, and DPL already has an admissible EA DTM route for SCREENING datum evidence. The three-dwelling applicant scheme is not transferred; the next packet must prove that the full controlled parcel can support one independently authored Reference House experiment without parcel redefinition. RP-008 remains the cleaner one-house control but its decision-critical geometry document route is not yet demonstrated strongly enough to displace RP-007. The conflicting public planning-decision labels for RP-007 are explicitly irrelevant to this selection."
+  },
+  "nextPacket": "DPL-15H — RP-007 bounded spatial-evidence acquisition and R1-R6 re-run",
+  "proofBoundary": {
+    "scalarRanking": "PROHIBITED",
+    "marketingGeometryAsAuthority": "PROHIBITED",
+    "applicantProposalTransfer": "PROHIBITED",
+    "referenceHouseCandidate": "NOT_AUTHORISED_IN_15G",
+    "referenceHouseMutation": "PROHIBITED",
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "dpl16": "HELD",
+    "externalSpend": "NONE"
+  }
+}

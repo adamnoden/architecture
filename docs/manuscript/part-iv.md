@@ -1,14 +1,12 @@
-# Part IV — Reference House
+# Part IV — The Reference House: Design Proposition
 
 The Reference House is not a prototype offered as proof, nor a model house intended for repetition. It is a worked interpretation: one contemporary family house in which the propositions of Ovid’s House are forced to coexist with an architectural language, a programme, a structure, an envelope, services, weather, maintenance and the ordinary inconveniences of occupation.
 
-Its value lies in specificity. General propositions are easy to preserve while they remain abstract. A house makes them collide.
+The worked house tests how general propositions interact in a specific arrangement.
 
 The Reference House therefore carries several authorities at once. Ovid’s House supplies the long-life architectural position. The pattern set supplies reusable responses, with the service-topology family providing the strongest current generative sequence. G-01 supplies a bounded Georgian-derived grammar. The courtyard is a project morphology. The material and tectonic choices belong to this house. Technical systems remain project selections rather than doctrine. None of these authorities is allowed to absorb the others.
 
 The result is a four-bedroom detached courtyard house, developed at virtual-design scope. It is coordinated strongly enough to expose architectural consequences, but it is not a completed technical design. Structural capacity, detailed building physics, regulatory approval, plant sizing, product selection and physical interface performance remain downstream work.
-
-That distinction is essential. The house is useful because it is concrete. It remains credible only if concreteness is not mistaken for proof.
 
 It is also a deliberately favourable integration fixture. A detached perimeter, open courtyard and concentrated service flank make several maintenance and service-topology problems easier than they would be in compact attached housing. A compact-terrace transfer test therefore matters separately: the value of this house is that the propositions coexist here, not that its plant room, service flank or maintenance strips should be exported as a template.
 
@@ -89,9 +87,7 @@ The principal front is organised as a centred four-bay field. The entrance occup
 
 That decision is not a tolerated imperfection. It is the architectural resolution of a real conflict. A centred entrance would interfere with the principal stair or require a contrived internal vestibule whose only purpose was to satisfy exterior symmetry. The alternative—allowing each room to punch an opening independently—would dissolve the façade into plan residue.
 
-The selected front therefore separates two ideas that are often lazily conflated:
-
-> the façade is ordered; the entrance is off-centre.
+The façade remains ordered while the entrance is off-centre.
 
 The principal bay axes remain stable while individual attributes respond to the spaces behind them. The stair window retains the bay centreline but raises its sill because the stair owns that requirement. Ground-floor principal openings are taller than the upper family. The entrance is ranked within the same field rather than enlarged into a portico-scale event.
 
@@ -132,8 +128,6 @@ Where structure is conspicuous, support, mass and equilibrium are reviewed as ar
 This has direct consequences.
 
 Quiet masonry walls remain directly finished where no service burden justifies another layer. Principal floors remain continuous rather than raised or panelised. Technical access is concentrated at real interfaces and service spaces. Plant and terminals are given hierarchy rather than hidden behind fake architecture. Metal is used sparsely where touch, wear, indexing or disassembly gives it a reason to exist.
-
-The house should not continually explain itself.
 
 ## Tectonic language
 
@@ -265,7 +259,7 @@ The service side also hosts the principal utility approach, ventilation terminal
 
 This concentration protects principal rooms from becoming service corridors while avoiding the opposite mistake of hiding infrastructure so thoroughly that it can no longer be worked on.
 
-## Human adaptation within the same geography
+## Loss of stair use
 
 The same finite service suite now carries a second foreseeable future obligation.
 
@@ -301,7 +295,7 @@ The service side is the most important current working strip because it combines
 
 The courtyard is also treated as a working space when necessary. Components of a mobile tower can be brought through the garden-to-court route and erected inside the court for maintenance to courtyard elevations.
 
-The architectural implication is subtle but significant: landscape cannot be treated as independent decoration. Permanent raised planters, fountains, stores or other fixed objects must not casually consume the only credible maintenance position.
+Landscape must be coordinated with those maintenance positions. Permanent raised planters, fountains, stores or other fixed objects must not casually consume the only credible maintenance position.
 
 A real site can invalidate this geography. If boundaries or ownership remove the assumed side route, the correct response is to mirror, relocate, simplify or reopen the architecture—not to cite the virtual strip as evidence that external maintenance has been solved.
 
@@ -420,108 +414,30 @@ The architecture’s current claim is prior and narrower: it has not knowingly c
 
 ---
 
-# 18. Future maintenance scenarios
+# The Interior Architecture System
 
-A long-life proposition should be judged by future interventions, not by the stillness of a completion photograph.
+This chapter interface is deliberately established before the selected interior system is fully authored.
 
-The scenarios below are not predictions and they are not physical proof. They are design tests: plausible future tasks used to ask whether the house provides approach, isolation, working space, release, replacement route and reinstatement without unnecessary destruction.
+Part IV already fixes several constraints that the eventual interior architecture must respect: quiet permanent walls remain the default where service burden is low; principal floors should feel continuous and settled; technical access must occur at credible architectural datums rather than turning every surface into equipment; and visible joinery must belong to the rooms even when it also carries fixing, service or replacement logic.
 
-## Plant replacement
+The resolved chapter will define the selected family of wall finishes and linings, floor/ceiling relationships, skirtings, architraves, grilles, access pieces, fixing grounds and other repeated interior interfaces. It must distinguish what is permanent, what is replaceable, what is merely conventional finish, and what has genuinely earned a special interface.
 
-A major plant component reaches the end of its service life.
+It must not assume that removable construction is better construction. Conventional plaster, timber, stone, tile and other ordinary finishes remain valid wherever the lifecycle case for a more elaborate system is weak.
 
-The intervention begins on the service side rather than in a principal room. The current external plant-room opening target provides a candidate direct handling route. Isolation and distribution are available within the plant geography. The intent is that replacement should not require enlarging a kitchen doorway, removing a façade window or dismantling permanent masonry merely to move equipment.
+This structural placeholder is therefore an invitation to resolve one interior architecture, not a licence to invent a universal kit of parts.
 
-The exact future appliance is unknown, and the proportionality test does not treat the present plant-room size as pre-approved. Equipment selection, area, working clearance and the value of the external opening must still earn the final geometry.
+---
 
-If a future system exceeds the justified envelope, the house should first question whether the equipment is proportionate before enlarging permanent service infrastructure.
+# Openings as Replaceable Assemblies
 
-## Window replacement
+This chapter interface is reserved for the selected opening family: windows, external doors, internal doors where relevant, thresholds, reveals, architraves, fixing/tolerance zones and the junction between permanent masonry and faster-lived assemblies.
 
-A frame fails or becomes obsolete while the masonry opening remains sound.
+The governing relationship is already clear:
 
-Internal trim is removed to expose the fixing/tolerance zone. Sash, glazing and hardware may be serviced from inside where the selected product permits. Full frame replacement can use ordinary external scaffold or tower access preserved by the site/landscape strategy where the real site actually provides it.
+**permanent opening → designed adjustment/fixing zone → replaceable assembly → architectural overlap**.
 
-The permanent wall opening remains intact. New frame tolerances are resolved within the designed interface rather than by breaking back large areas of masonry or wet finish.
+The unresolved work is to turn that relationship into one coherent architectural and technical family for this house without making trim carry weather, air, fire or structural duties it cannot honestly own.
 
-The scenario depends on a technically successful jamb/head/sill detail that has not yet been physically proven. The life-separation logic is selected; the final interface remains a validation task.
+The resolved chapter must address the repeated architectural logic of heads, jambs, sills, thresholds, internal reveals and replacement access while keeping product selection, engineering adequacy and competent envelope/fire/security validation within their proper evidence owners.
 
-## A leak in the service suite
-
-A connection or appliance leaks.
-
-The event occurs inside deliberately high-service geography with a robust floor and a visible/manageable failure route. Primary isolation is nearby. The leak does not first announce itself as staining in a principal ceiling several rooms away.
-
-This does not imply that every fitting is exposed. It means the house concentrates the places most likely to require intervention and gives failure somewhere intelligible to appear.
-
-Sensors may supplement this behaviour. They do not replace it.
-
-## Bathroom intervention
-
-A concealed valve, waste connection or service component associated with the family bathroom requires work.
-
-Where practical, access is taken from the dry gallery side rather than through waterproofed tile. The wet surface remains intact while the maintainable component is reached through a real joinery or panel field on the dry side.
-
-The principle is consequence-based: keep routine service access out of the highest-consequence finish layer.
-
-## New dry service route
-
-A future owner adds data, controls or another small dry service.
-
-Where the room already contains the selected route family, a local skirting section can be removed and the service carried along the low-level path. It rises at a known door/architrave or other declared service zone to an accessible accessory position.
-
-The whole wall is not opened. The permanent masonry remains outside the routine distribution path.
-
-Where no route exists, the house does not pretend that every possible future service has been pre-provisioned. Local alteration remains legitimate.
-
-## Roof and gutter maintenance
-
-An external gutter blocks or a roof edge requires repair.
-
-The task is approached from planned ground-supported scaffold or tower positions within the current surrogate-site geometry. The primary rainwater system sits at external edges rather than inside an inaccessible roof valley. Failure is visible outside. Materials and workers reach the task without passing through a decorative roof hatch that provides no working platform.
-
-Courtyard-side work uses the court as a temporary working zone when necessary, reached through the garden-to-court logistics route.
-
-The landscape is therefore part of the maintenance design: it must remain possible to occupy the necessary ground temporarily. A real boundary that removes that ground is an architectural/site finding, not something the virtual house has already solved.
-
-## Loss of stair use
-
-An occupant is temporarily or permanently unable to use the principal stair.
-
-The west/rear family room can become an entrance-storey sleeping room without structural alteration. The detailed plan must preserve a step-free route to entrance-storey living and to the service-suite sanitary room, whose subdivision must allow a potential level-access shower without enlarging the house.
-
-The current stair width also preserves a lower-burden future stair-lift option. A lift shaft is not reserved merely because reduced mobility is foreseeable.
-
-This scenario demonstrates a different kind of selective permanence: the stair can remain a strong enduring architectural element while the ground floor preserves a credible way to live when that stair becomes unusable.
-
-## A changed household
-
-The family composition changes without requiring wholesale reconstruction.
-
-The house is not designed as an infinitely neutral shell. Its stair, courtyard, principal rooms and major loadbearing boundaries are deliberately enduring. Adaptation occurs within that persistent architecture.
-
-Bedrooms can change use. The study can absorb work or guest functions. Dry fit-out and services can change more readily than the masonry order. A bathroom can be renewed without moving the primary service geography. Plant can change technology while remaining in plant/service geography.
-
-This is selective permanence rather than universal flexibility.
-
-## A change the house did not prepare for
-
-A future owner wants to move the kitchen to the opposite flank, far from the concentrated wet-service geography.
-
-The house does **not** contain duplicate stacks and wet routes merely to make that arbitrary future change easy. The owner may accept a major renovation, new local route, opening and making-good, or a broader redesign.
-
-That destruction is not automatically evidence of failure. Some future change should remain expensive if avoiding it today would require permanent infrastructure with no proportionate case.
-
-The same limit applies when a bounded riser eventually fills or a future system requires geometry nobody could responsibly predict. Remove obsolete services, reuse capacity, add a local route or undertake a later project; do not make the first building infinitely provisional.
-
-## The final test
-
-These scenarios matter only if the completed house remains desirable in ordinary life.
-
-A house that is easy to dismantle but unpleasant to inhabit has failed. A house whose maintenance logic dominates every room has failed. A house whose infrastructure anticipates so many hypothetical futures that the present becomes expensive, thick and technical has also failed.
-
-The Reference House therefore treats future work as one claimant among several.
-
-Architecture remains the enduring frame. The faster systems are given enough room to change without asking the whole building to become temporary.
-
-Transfer remains a separate question. The detached perimeter, courtyard and service flank make this a favourable worked house; a compact attached house should be allowed to satisfy the same decision logic with materially less serviceability infrastructure.
+A successful system should make the opening feel like permanent architecture even though the frame or doorset can change. Replaceability is a property of the interface, not the visual subject of the room or façade.

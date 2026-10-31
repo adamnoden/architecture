@@ -179,14 +179,14 @@ describe('DRW-04B first-floor publication plan scene', () => {
     assert.ok(gallery)
     assert.deepEqual(
       { x: gallery.x, y: gallery.y, anchor: gallery.anchor },
-      { x: 83.5, y: 66, anchor: 'end' }
+      { x: 83.5, y: 56, anchor: 'end' }
     )
 
     const leader = scene().primitives.find((primitive) => primitive.id === 'label-leader-U-GAL-02')
     assert.ok(leader?.kind === 'line')
     assert.deepEqual(
       { a: leader.a, b: leader.b, role: leader.role },
-      { a: { x: 84.5, y: 66 }, b: { x: 92.5, y: 66 }, role: 'secondary' }
+      { a: { x: 84.5, y: 56 }, b: { x: 92.5, y: 56 }, role: 'secondary' }
     )
   })
 

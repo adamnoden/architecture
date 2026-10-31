@@ -1,0 +1,33 @@
+{
+  "id": "DPL-COND-01",
+  "authority": "CONDITIONAL_DESIGN_STUDY",
+  "siteKind": "SYNTHETIC_ORDINARY_STREET_FRONT",
+  "contextRef": "DPL-RP-004",
+  "identityBoundary": "A hypothetical site informed by the ordinary replacement-dwelling context; these are not Nelmes Way measurements.",
+  "parcel": { "widthM": 17.4, "depthM": 30, "longitudinalSlopeDeg": 0 },
+  "fixedPlacement": { "centreXM": 0, "frontYM": 9, "rotationDeg": 0, "fflAboveFrontGroundM": 0.3 },
+  "approach": {
+    "alignment": "Straight route aligned with the unchanged Reference House entrance centre",
+    "widthM": 1.5,
+    "bottomLandingLengthM": 1.5,
+    "slopingLengthM": 6,
+    "topLandingLengthM": 1.5,
+    "riseM": 0.3,
+    "illustrativeMaxGradient": 0.05,
+    "authority": "AUTHORED_GEOMETRIC_CONCEPT_NOT_ACCESS_COMPLIANCE"
+  },
+  "premises": [
+    { "id": "SPATIAL", "state": "ASSUMED", "proposition": "The stated rectangle, flat front ground and usable approach territory are available.", "replacement": "Exact parcel extent, measured orientation, levels and approach geometry." },
+    { "id": "CONTROL_RIGHTS", "state": "ASSUMED", "proposition": "Control, private rights and access entitlements permit the authored works.", "replacement": "Title/control and rights evidence for the actual commission." },
+    { "id": "SUPPORT_GROUND", "state": "ASSUMED", "proposition": "A competent ground/foundation/structural design can support the unchanged house through its declared site interfaces.", "replacement": "Ground evidence and competent structural/foundation design." },
+    { "id": "WATER_ENVIRONMENT", "state": "ASSUMED", "proposition": "Flood, groundwater, contamination and site-water conditions have viable responses within the available external territory.", "replacement": "Triggered site investigations and a competent site-water/environmental response." },
+    { "id": "DRAINAGE_UTILITIES", "state": "ASSUMED", "proposition": "Permitted drainage destinations and utility connections with sufficient capacity and maintainable routes can be provided.", "replacement": "Connection, capacity, outfall, route and rights evidence." },
+    { "id": "CONTEXT_PLANNING", "state": "ASSUMED", "proposition": "Orientation, neighbour amenity, heritage, ecology, noise, trees and applicable planning judgements do not require mutation of the house.", "replacement": "Exact site/context evidence and applicable policy/professional/statutory assessment." },
+    { "id": "ACCESS_LOGISTICS", "state": "ASSUMED", "proposition": "Detailed inclusive access, emergency access, deliveries, refuse, construction and maintenance logistics can be resolved within the authored territory.", "replacement": "Complete routes, vehicle/equipment needs, detailed thresholds and applicable access assessments." },
+    { "id": "TECHNICAL_COMPLETION", "state": "ASSUMED", "proposition": "Unmodelled Reference House clauses and outstanding fire, envelope, ventilation, energy, acoustic and other technical duties admit adequate detailed solutions without changing protected house identity.", "replacement": "Relevant coordinated design, calculation, professional review and physical evidence at the due stage." }
+  ],
+  "conclusion": "CONDITIONAL_DESIGN_CASE_COMPLETE",
+  "conclusionBoundary": "The authored placement and approach are geometrically coherent under stated inputs. Adequacy of untested disciplines is a premise, not a derived result. No actual site is verified.",
+  "verifiedReadiness": "UNCHANGED_0_OF_8",
+  "referenceHouseMutation": false
+}

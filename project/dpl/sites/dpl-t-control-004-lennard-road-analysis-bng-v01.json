@@ -1,0 +1,44 @@
+{
+  "schema": "dpl.controlAnalysisGeometry.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "revision": "0.1",
+  "purpose": "Bounded post-T3 screening-containment replay only; not a legal-boundary or survey artifact.",
+  "source": {
+    "path": "project/dpl/sites/dpl-t-control-004-lennard-road-title-boundary.json",
+    "gitBlobSha": "2e73185ae1bd0cb8b9b10130abde31d14745f5b3",
+    "sourceCrs": "EPSG:4326",
+    "sourceWktSha256": "316c7f30cc418d1dcbd1a3900b98d2aeda4c3982821df023e2a45bacc6c7b676",
+    "hmlrReference": "57071807"
+  },
+  "derivation": {
+    "analysisCrs": "EPSG:27700",
+    "method": "Coordinate transformation of each source WKT vertex from EPSG:4326 to EPSG:27700 using pyproj 3.7.2 / PROJ 9.5.1 with always_xy=true.",
+    "authority": "DERIVED_SCREENING_GEOMETRY",
+    "limitation": "The transformation makes the admitted indicative title-index polygon usable for deterministic planar replay. It does not improve the source polygon's legal authority or precision."
+  },
+  "polygonBngM": [
+    [542948.692093709, 166244.686694083],
+    [542944.000559235, 166250.564779663],
+    [542935.045984542, 166244.527245397],
+    [542930.065431056, 166240.826682691],
+    [542907.712544912, 166223.285597843],
+    [542904.177813369, 166220.181956378],
+    [542891.036042378, 166209.46460662],
+    [542898.27019621, 166202.322202887],
+    [542920.722809643, 166216.304889763],
+    [542928.28562118, 166222.303437254],
+    [542937.773180989, 166231.694448533],
+    [542937.703589573, 166231.6925004],
+    [542939.526525259, 166233.746674369],
+    [542942.383990907, 166236.163667555],
+    [542948.692093709, 166244.686694083]
+  ],
+  "crossChecks": {
+    "derivedAreaSquareMetres": 783.6969066670147,
+    "expectedParcelCentroidBngM": [542920.6050359857, 166225.57538616494],
+    "expectedFrontageSegmentBngM": {
+      "start": [542891.0360423778, 166209.4646066198],
+      "end": [542898.2701962102, 166202.3222028868]
+    }
+  }
+}

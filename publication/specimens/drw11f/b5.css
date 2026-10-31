@@ -1,0 +1,4 @@
+/* Conservative robustness proof only; not a final PR-02 trim/margin decision. */
+@page { size: B5; margin-top: 18mm; margin-bottom: 18mm; }
+@page flow:left { margin-left: 16mm; margin-right: 22mm; @top-left { content: "DRW-11F early FLOW proof"; font: 7.5pt Arial; color: #666; } @bottom-left { content: counter(page); font: 7.5pt Arial; } }
+@page flow:right { margin-left: 22mm; margin-right: 16mm; @top-right { content: "B5 robustness proof"; font: 7.5pt Arial; color: #666; } @bottom-right { content: counter(page); font: 7.5pt Arial; } }

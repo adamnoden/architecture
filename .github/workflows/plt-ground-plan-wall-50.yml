@@ -1,0 +1,70 @@
+name: Prove PLT ground-plan A2 1:50 WALL candidate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'publication/specimens/plt03/**'
+      - 'publication/specimens/plt03b1/**'
+      - '.github/workflows/plt-ground-plan-wall-50.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: plt-ground-plan-wall-50-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Install PDF inspection tools
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: Regenerate PLT-03A controlled candidates
+        run: npx tsx publication/specimens/plt03/prepare.ts
+
+      - name: Prepare true 1:50 WALL candidate
+        run: npx tsx publication/specimens/plt03b1/prepare.ts
+
+      - name: Build exact A2 comparison
+        run: npx vivliostyle build -c publication/specimens/plt03b1/vivliostyle.config.js
+
+      - name: Validate semantic, physical-scale and font contracts
+        run: npx tsx publication/specimens/plt03b1/validate.ts
+
+      - name: Raster comparison pages for screen review
+        run: |
+          mkdir -p publication/specimens/plt03b1/review
+          pdftoppm -png -r 110 -f 1 -singlefile publication/specimens/plt03b1/dist/plt03b1-a2.pdf publication/specimens/plt03b1/review/a2-100-control
+          pdftoppm -png -r 110 -f 2 -singlefile publication/specimens/plt03b1/dist/plt03b1-a2.pdf publication/specimens/plt03b1/review/a2-50-candidate
+
+      - name: Upload proof and review artefacts
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: plt-03b1-a2-wall-50-proof
+          path: |
+            publication/specimens/plt03b1/dist/plt03b1-a2.pdf
+            publication/specimens/plt03b1/review/a2-100-control.png
+            publication/specimens/plt03b1/review/a2-50-candidate.png
+            publication/specimens/plt03b1/.work/combined-100.svg
+            publication/specimens/plt03b1/.work/combined-50.svg
+            publication/specimens/plt03b1/.work/manifest.json
+            publication/specimens/plt03b1/.work/validation-evidence.json
+          if-no-files-found: error
+          retention-days: 30

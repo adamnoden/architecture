@@ -1,0 +1,11 @@
+/* Conservative robustness proof only; not a final PR-02 trim decision.
+   Wide 166 mm sheets remain literal-size, leaving 5 mm each side on B5. */
+:root { --page-width: 176mm; --page-height: 250mm; }
+@page proof {
+  size: B5;
+  margin: 0;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}

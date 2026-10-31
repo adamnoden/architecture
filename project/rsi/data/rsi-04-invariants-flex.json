@@ -1,0 +1,134 @@
+{
+  "id": "RSI-04-INVARIANTS-FLEX-V0.1",
+  "programme": "RSI",
+  "issue": 899,
+  "upstreamCollision": "RSI-03-COLLISION-V0.1",
+  "rule": "Protect architectural principles, not inherited dimensions. Unknown project-specific temporary-work requirements must not become canonical geometry by guesswork.",
+  "classes": {
+    "PROTECTED": [
+      {
+        "id": "COURTYARD_ROLE",
+        "property": "A real internal courtyard remains a primary spatial/environmental object rather than a decorative lightwell.",
+        "dimensionProtected": false
+      },
+      {
+        "id": "SERVICEABILITY",
+        "property": "No service inside permanent fabric; service zones/cavities remain accessible and replaceable.",
+        "dimensionProtected": false
+      },
+      {
+        "id": "ACCESSIBLE_NOT_EXPOSED",
+        "property": "Maintenance access remains designed and comprehensible without turning the house into an exposed technical object.",
+        "dimensionProtected": false
+      },
+      {
+        "id": "WET_SERVICE_CLUSTER",
+        "property": "Wet/service functions remain deliberately clustered so infrastructure is short, legible and maintainable.",
+        "dimensionProtected": false
+      },
+      {
+        "id": "ROOM_QUALITY",
+        "property": "Principal rooms retain generous usable proportions, ceiling quality and calm; compactness may not be purchased by mean rooms.",
+        "dimensionProtected": false
+      },
+      {
+        "id": "STAIR_QUALITY",
+        "property": "The principal stair remains an architectural room/circulation object with deep-tread quality and credible clearances.",
+        "dimensionProtected": false
+      },
+      {
+        "id": "DOMESTIC_HIERARCHY",
+        "property": "The house retains a legible front-to-rear domestic hierarchy and a strong relationship to the rear garden.",
+        "dimensionProtected": false
+      },
+      {
+        "id": "GEORGIAN_COMPOSURE",
+        "property": "The outward house remains classically/Georgian composed rather than becoming arbitrary contemporary massing to solve the plot.",
+        "dimensionProtected": false
+      },
+      {
+        "id": "REPLACEMENT_LOGIC",
+        "property": "Major maintainable/replaced elements, including courtyard-facing elements, must have an explicit credible replacement route.",
+        "dimensionProtected": false
+      },
+      {
+        "id": "GEOMETRY_FIRST",
+        "property": "Water management, movement interfaces and maintainability continue to prefer geometry and designed interfaces over sealant/chemistry dependence.",
+        "dimensionProtected": false
+      }
+    ],
+    "HIGH_RESISTANCE": [
+      {
+        "id": "COURTYARD_CENTRALITY",
+        "property": "The courtyard should remain spatially central enough to organise the house; meaningful offset is allowed only where the resulting plan is better, not merely narrower."
+      },
+      {
+        "id": "TWO_STOREY_ORDER",
+        "property": "The present two-storey domestic order is the default. Extra storeys/basement are not a cheap way to recover footprint."
+      },
+      {
+        "id": "PRIMARY_ROOM_SEPARATION",
+        "property": "The house should retain distinct principal domestic territories rather than solving width entirely through one undifferentiated open plan."
+      },
+      {
+        "id": "MAINTENANCE_TWO_FLANKS",
+        "property": "Both detached side elevations should remain inspectable and ordinarily reachable. One side may carry more technical duty, but the other should not become a meaningless leftover slot."
+      },
+      {
+        "id": "FRONT_COMPOSITION",
+        "property": "Front elevation hierarchy and bay rhythm should remain capable of a calm classical composition; internal optimisation may not leave the facade as an afterthought."
+      }
+    ],
+    "FLEXIBLE": [
+      "total shell width",
+      "total shell depth",
+      "gross floor area",
+      "exact courtyard width/depth",
+      "exact courtyard offset",
+      "exact stair position and topology",
+      "room width/depth distribution",
+      "gallery/corridor dimensions above quality thresholds",
+      "service-suite packing",
+      "side-service bias",
+      "front/rear allocation of secondary rooms",
+      "number and position of secondary side windows",
+      "bay widths and exact facade opening centres",
+      "structural span direction and grid",
+      "partition positions",
+      "door positions and local circulation geometry",
+      "exact front/rear opening widths",
+      "external plant location where serviceability and quietness survive"
+    ],
+    "PROJECT_SPECIFIC": [
+      "exact scaffold/tower/outrigger working width",
+      "exact crane/lifting strategy",
+      "exact ASHP or other plant model clearances",
+      "sewer/outfall location and capacity",
+      "utility connection routes/rights",
+      "neighbour window positions and privacy rights",
+      "planning setback/overlooking verdicts",
+      "title/legal boundary evidence",
+      "ground-bearing/foundation parameters",
+      "flood/groundwater/contamination response",
+      "detailed vehicle/refuse/fire access geometry"
+    ]
+  },
+  "successorGenerationRules": [
+    "Do not uniformly scale the B4 plan.",
+    "Do not choose a target shell width before spatial concepts are compared.",
+    "Include the current B4 arrangement as a control where useful.",
+    "Every candidate must show ground and first floors together on RSI-RS-01.",
+    "Every candidate must state what it gains in side territory and what architectural cost pays for it.",
+    "Every candidate must expose service/wet-room geography and a courtyard replacement route.",
+    "Every candidate must be checked on the 14 x 40 m counterfactual without separate optimisation.",
+    "No candidate may rely on project-specific temporary-work dimensions invented for RSI.",
+    "No candidate may become canonical before OWNER GATE A and OWNER GATE B."
+  ],
+  "ownerGateAReadyWhen": [
+    "3-5 materially different rough plan concepts exist",
+    "all schemes preserve protected principles or explicitly flag a proposed freeze break",
+    "trade-offs are visible without PLT styling",
+    "current B4 control is available for comparison",
+    "plot and side-territory consequences are shown"
+  ]
+}

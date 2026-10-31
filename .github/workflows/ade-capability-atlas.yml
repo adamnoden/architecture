@@ -1,0 +1,52 @@
+name: Prove ADE exact-size capability atlas
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/architectural-drawing/**'
+      - 'compiler/reference-house/internal-partitions*'
+      - 'compiler/publication-drawing-v2/**'
+      - 'publication/specimens/ade06/**'
+      - '.github/workflows/ade-capability-atlas.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ade-capability-atlas-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Prove ADE semantics and Reference House partition source
+        run: npm run test:architectural-drawing && npm run test:rh-c1
+      - name: Prove frozen terminal drawing contracts
+        run: npm run test:publication-drawing && npm run test:drw-freeze && node --import tsx --test compiler/publication-drawing-v2/*.test.ts
+      - name: Generate exact-size A1 atlas
+        run: npx tsx publication/specimens/ade06/generate.ts
+      - name: Validate scale, provenance and representation contracts
+        run: npx tsx publication/specimens/ade06/validate.ts
+      - name: Upload exact-size atlas
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: ade-06-capability-atlas
+          path: |
+            publication/specimens/ade06/.work/ade06-capability-atlas-1-100.svg
+            publication/specimens/ade06/.work/ade06-capability-atlas-1-50.svg
+            publication/specimens/ade06/.work/manifest.json
+          if-no-files-found: error
+          retention-days: 30

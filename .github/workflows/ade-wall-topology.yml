@@ -1,0 +1,61 @@
+name: Prove ADE wall topology
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/architectural-drawing/**'
+      - 'compiler/publication-drawing-v2/**'
+      - 'publication/specimens/ade02/**'
+      - '.github/workflows/ade-wall-topology.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ade-wall-topology-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Prove frozen v1 renderer remains intact
+        run: npm run test:publication-drawing && npm run test:drw-freeze
+
+      - name: Prove v2 terminal IR compatibility and path extension
+        run: node --import tsx --test compiler/publication-drawing-v2/*.test.ts
+
+      - name: Prove architectural wall topology
+        run: npm run test:architectural-drawing
+
+      - name: Generate exact-size capability sheets
+        run: npx tsx publication/specimens/ade02/generate.ts
+
+      - name: Validate scale and joined-region contract
+        run: npx tsx publication/specimens/ade02/validate.ts
+
+      - name: Upload exact-size topology specimens
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: ade-02-wall-topology-capabilities
+          path: |
+            publication/specimens/ade02/.work/ade02-wall-topology-1-100.svg
+            publication/specimens/ade02/.work/ade02-wall-topology-1-50.svg
+            publication/specimens/ade02/.work/manifest.json
+          if-no-files-found: error
+          retention-days: 30

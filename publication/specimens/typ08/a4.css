@@ -1,0 +1,33 @@
+:root {
+  --typ08-page-width: 210mm;
+  --typ08-page-height: 297mm;
+  --typ08-measure: 125mm;
+  --typ08-live-height: 250mm;
+}
+
+@page {
+  size: A4;
+  margin-top: 23mm;
+  margin-bottom: 24mm;
+}
+
+/* Vivliostyle does not reliably inherit unnamed-page size onto a newly
+   introduced named page. TYP-08C therefore pins only its new named page
+   classes to the already-authoritative format geometry. */
+@page typ08-division {
+  size: A4;
+}
+
+@page typ08-imprint {
+  size: A4;
+}
+
+@page :left {
+  margin-left: 22mm;
+  margin-right: 30mm;
+}
+
+@page :right {
+  margin-left: 30mm;
+  margin-right: 22mm;
+}

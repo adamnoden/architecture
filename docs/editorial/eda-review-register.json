@@ -1,0 +1,1042 @@
+{
+  "baseline": "ccb9664b6d5a06203be3c8a8cfba488a4dc064cc",
+  "scope": "Contextual source review and dispositions for all baseline candidates; EDA-01 owns prose modes. EDA-06/07/08 reading-order, adversarial and physical-proof findings are recorded separately in eda-programme.md. No heuristic is a verdict.",
+  "sources": [
+    {
+      "source": "README.md",
+      "baselineSha256": "134f61de9ea6d0f4f677c5497efdfd1c5e06994211838004cda1cf0ebdb7e220",
+      "baselineCandidates": 5,
+      "sourceReview": "reviewed",
+      "reviewSha256": "134f61de9ea6d0f4f677c5497efdfd1c5e06994211838004cda1cf0ebdb7e220",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/README.md",
+      "baselineSha256": "4fdf0ee9145ce8ef8b44244703f36d2857b158905d684bcab244bf5810a522dd",
+      "baselineCandidates": 4,
+      "sourceReview": "reviewed",
+      "reviewSha256": "4fdf0ee9145ce8ef8b44244703f36d2857b158905d684bcab244bf5810a522dd",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/architectural-grammar-and-proportion.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/architectural-grammar-modelling-corrections-v01.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/boundary-semantics.md",
+      "baselineSha256": "800f05900089ea18004d3a3e0e7bb6dc632f62394861e6c6dd9874b15095e4f5",
+      "baselineCandidates": 49,
+      "sourceReview": "reviewed",
+      "reviewSha256": "800f05900089ea18004d3a3e0e7bb6dc632f62394861e6c6dd9874b15095e4f5",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/compiler-targets.md",
+      "baselineSha256": "ebd187413903a8637545858a7e39dff5a3525e66d4270fef94c8c1ef9f4ab434",
+      "baselineCandidates": 35,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ebd187413903a8637545858a7e39dff5a3525e66d4270fef94c8c1ef9f4ab434",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/evidence-and-provenance.md",
+      "baselineSha256": "0fa82ff42046e46d0206960d90b98baf63f5c4688130538dcb0be2f076785281",
+      "baselineCandidates": 53,
+      "sourceReview": "reviewed",
+      "reviewSha256": "0fa82ff42046e46d0206960d90b98baf63f5c4688130538dcb0be2f076785281",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/executable-architecture.md",
+      "baselineSha256": "5b72b10d56fa0483e236b94c77f14e57e3cc93573a48a8bec729d6028ef1adcf",
+      "baselineCandidates": 51,
+      "sourceReview": "reviewed",
+      "reviewSha256": "1a36a069b61f93308ec5abf04860a47e131d17cde85435c606fefa9fce574c31",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/external-evidence-trial-mapeguard-wp-v01.md",
+      "baselineSha256": "84b8b26d28e73951414ba1321ede87b38752e2a721339f1204148f49a3206457",
+      "baselineCandidates": 27,
+      "sourceReview": "reviewed",
+      "reviewSha256": "bcb9c4d2341c3602d351da112f7aba4aba02e842b01780227f90eed7e4bca33f",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/formal-architectural-model.md",
+      "baselineSha256": "230d9657041de3fcb619dc3f630fa988a80ff0e50c212a2a444ac7472c07713a",
+      "baselineCandidates": 64,
+      "sourceReview": "reviewed",
+      "reviewSha256": "230d9657041de3fcb619dc3f630fa988a80ff0e50c212a2a444ac7472c07713a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-annotation-schema.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-candidate-constraints-v01.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-cases/76-dean-street.md",
+      "baselineSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-cases/README.md",
+      "baselineSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-cases/bedford-square.md",
+      "baselineSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-cases/danson-d5-d6-web-evidence-v02.md",
+      "baselineSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-cases/danson-house.md",
+      "baselineSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-cases/marble-hill-d5-d6-web-evidence-v02.md",
+      "baselineSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-cases/marble-hill-house.md",
+      "baselineSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ed69d735e67f05d24cb61ea10674ad82c9262801578276e251e9afc593abe19c",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-corpus-register.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-d5-d6-web-pass-v02.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-d5-d6-web-pass-v03.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-d6-mutation-run-01-danson-sequence.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-dimensional-analysis.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-grammar-charter.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-plan-section-elevation-coupling.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-research-brief.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/g01-topology-comparison.md",
+      "baselineSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "891c2ff5a211b5056fd10d2403a20ae9e1c0c4949022409bcbcbb83df42aa75a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/interface-obligation-bundles.md",
+      "baselineSha256": "5778f99280ab6f85261aa80c4365afb90db69e72449acfadeb813a0e99152afa",
+      "baselineCandidates": 20,
+      "sourceReview": "reviewed",
+      "reviewSha256": "5778f99280ab6f85261aa80c4365afb90db69e72449acfadeb813a0e99152afa",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/prior-art-map.md",
+      "baselineSha256": "03d3104ace2f25e6d33d46cec3ca700a5fde29f77790ec01fff6077c49814701",
+      "baselineCandidates": 38,
+      "sourceReview": "reviewed",
+      "reviewSha256": "03d3104ace2f25e6d33d46cec3ca700a5fde29f77790ec01fff6077c49814701",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/structural-semantics.md",
+      "baselineSha256": "b9998b08afae0473475a7de316acb975270df37fd9660b54e7ffc4b9bc47a1d9",
+      "baselineCandidates": 40,
+      "sourceReview": "reviewed",
+      "reviewSha256": "b9998b08afae0473475a7de316acb975270df37fd9660b54e7ffc4b9bc47a1d9",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/supported-domain.md",
+      "baselineSha256": "990d0cfabd254399a6fde1b43108c7f43ea532811a97b6b8d819667fefc596b6",
+      "baselineCandidates": 34,
+      "sourceReview": "reviewed",
+      "reviewSha256": "df5197b88aae7d6bd3f87ec3e07e811e615101541a560ddf72e38a39bd14e438",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/computational/validity-and-obligations.md",
+      "baselineSha256": "e427c00f4ee165d480ae8239e637c35186a7eae9bd5ed66dd4e820d0d2bf2a27",
+      "baselineCandidates": 57,
+      "sourceReview": "reviewed",
+      "reviewSha256": "e427c00f4ee165d480ae8239e637c35186a7eae9bd5ed66dd4e820d0d2bf2a27",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/delivery/README.md",
+      "baselineSha256": "3451c16e078552bb894bed1eb38d253cdab29b73cde8b9fbfc15539b1a166dd5",
+      "baselineCandidates": 6,
+      "sourceReview": "reviewed",
+      "reviewSha256": "3451c16e078552bb894bed1eb38d253cdab29b73cde8b9fbfc15539b1a166dd5",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/delivery/external-maintenance-access-requirements.md",
+      "baselineSha256": "c97e682d5ded8d73efe6361df4ad2bb9005a16967348528fc27f2e00284b9bab",
+      "baselineCandidates": 10,
+      "sourceReview": "reviewed",
+      "reviewSha256": "c97e682d5ded8d73efe6361df4ad2bb9005a16967348528fc27f2e00284b9bab",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/delivery/human-factors-verification-requirements.md",
+      "baselineSha256": "e8c2a757232afede1fd733667fcb85a14ee82bf21554785f578620125a2b743c",
+      "baselineCandidates": 22,
+      "sourceReview": "reviewed",
+      "reviewSha256": "e8c2a757232afede1fd733667fcb85a14ee82bf21554785f578620125a2b743c",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/delivery/riba-implementation-brief-template.md",
+      "baselineSha256": "ac02a8621e3a4cadb43e04ef7bd81f8024b74d685746e812c3f925be4b6d6527",
+      "baselineCandidates": 42,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ac02a8621e3a4cadb43e04ef7bd81f8024b74d685746e812c3f925be4b6d6527",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/README.md",
+      "baselineSha256": "14cd2987d7824a821e2c524b0cc220d50915e508aad915a50690a2f96216017d",
+      "baselineCandidates": 6,
+      "sourceReview": "reviewed",
+      "reviewSha256": "14cd2987d7824a821e2c524b0cc220d50915e508aad915a50690a2f96216017d",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/architectural-grammar-and-proportion.md",
+      "baselineSha256": "b139065bb224f45d4d20b40c3fbc8ec35f3c388abae7f64bea3f8f4203c1095b",
+      "baselineCandidates": 54,
+      "sourceReview": "reviewed",
+      "reviewSha256": "adb4c15011a4357ff73ba3e94b53309d8cf3f63af7bc1cafe4dd4b17329f01c8",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-annotation-schema.md",
+      "baselineSha256": "9d0cccf6ecad46c13f46fbbc492a1c3aa7d54711ea0c983be0c0fe340f68fd77",
+      "baselineCandidates": 36,
+      "sourceReview": "reviewed",
+      "reviewSha256": "10e22909afd35807be59e3e8a952c967300cb46a4638e60edbcf94581e6e82ba",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-candidate-constraints-v01.md",
+      "baselineSha256": "fbc27393e885b948dcea32fda529fe61e23434557d49372f8270aab45fa60eb9",
+      "baselineCandidates": 19,
+      "sourceReview": "reviewed",
+      "reviewSha256": "fbc27393e885b948dcea32fda529fe61e23434557d49372f8270aab45fa60eb9",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-cases/76-dean-street.md",
+      "baselineSha256": "f842df06cf3b9b8351b5d423322a2e6ef19529f5cf48a89cce7420a9ee394424",
+      "baselineCandidates": 48,
+      "sourceReview": "reviewed",
+      "reviewSha256": "7e811a85f0a35d7c9abc5036524c3cecd02e0038480f2c37d167d10ed01ea065",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-cases/README.md",
+      "baselineSha256": "f2fca1fe2ce9fb67d85ff792825cdff770e63ce768ec6664ca9a3c680cfe1461",
+      "baselineCandidates": 5,
+      "sourceReview": "reviewed",
+      "reviewSha256": "f2fca1fe2ce9fb67d85ff792825cdff770e63ce768ec6664ca9a3c680cfe1461",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-cases/bedford-square.md",
+      "baselineSha256": "549fb2d8c19500e41b3662ce7b7a38481c068cb98a6e96b2d1d0998e742412c5",
+      "baselineCandidates": 28,
+      "sourceReview": "reviewed",
+      "reviewSha256": "a5317a7bc456f6da2a67b6e4fe23ce7da6549c3bacaef8a2bc227e3def903cfb",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-cases/danson-d5-d6-web-evidence-v02.md",
+      "baselineSha256": "abfb972793c12b684d0390cd7b9538bb4a3744aea19f29d06caff8046108a7c8",
+      "baselineCandidates": 17,
+      "sourceReview": "reviewed",
+      "reviewSha256": "abfb972793c12b684d0390cd7b9538bb4a3744aea19f29d06caff8046108a7c8",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-cases/danson-house.md",
+      "baselineSha256": "7febcf5e21aab184e00bca2f3d18b95c72650a5b0a12c310a75c42b9b77e7dc8",
+      "baselineCandidates": 39,
+      "sourceReview": "reviewed",
+      "reviewSha256": "219889f5b522e4cb582f2f21dab09502b829d2f2654ae487563361d80b76d9af",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-cases/marble-hill-d5-d6-web-evidence-v02.md",
+      "baselineSha256": "4746eda0922f0d9c90c312421fdd1e909129fedc0453523661fc169aa2b0b43a",
+      "baselineCandidates": 19,
+      "sourceReview": "reviewed",
+      "reviewSha256": "4746eda0922f0d9c90c312421fdd1e909129fedc0453523661fc169aa2b0b43a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-cases/marble-hill-house.md",
+      "baselineSha256": "e7bc7a85c9258636214cfe0c8d4ab47d829786280713b1762c0cf510c6e9712a",
+      "baselineCandidates": 40,
+      "sourceReview": "reviewed",
+      "reviewSha256": "e7bc7a85c9258636214cfe0c8d4ab47d829786280713b1762c0cf510c6e9712a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-corpus-register.md",
+      "baselineSha256": "c88ae655721bddd207489a3342be4d97931e4dab52b1b77a8f844d6a6fdce697",
+      "baselineCandidates": 14,
+      "sourceReview": "reviewed",
+      "reviewSha256": "b9ee500e654ef68f9d6e2e64f49f8d3a7d30b6118b7c896561eb1ba114e5268a",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-dimensional-analysis.md",
+      "baselineSha256": "db9059e484ea54f3e360b948597753de2fbba53c1928dc06dd251cd1f217d61f",
+      "baselineCandidates": 19,
+      "sourceReview": "reviewed",
+      "reviewSha256": "69413a2b1bbedde1511dc28dba41d1a639d1d20154ed7e6bb2cd46cb94d13971",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-grammar-charter.md",
+      "baselineSha256": "db14ab65e6e039c13c7dfb722fcbd2c1cf7eba53f149dc67f0c33ea12c4c1335",
+      "baselineCandidates": 10,
+      "sourceReview": "reviewed",
+      "reviewSha256": "db14ab65e6e039c13c7dfb722fcbd2c1cf7eba53f149dc67f0c33ea12c4c1335",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-plan-section-elevation-coupling.md",
+      "baselineSha256": "9cc1da2242b3bbb641942d4cb4ea1e3f9fefbb5b4dd60cb9b2120a6b501e08ce",
+      "baselineCandidates": 46,
+      "sourceReview": "reviewed",
+      "reviewSha256": "9cc1da2242b3bbb641942d4cb4ea1e3f9fefbb5b4dd60cb9b2120a6b501e08ce",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-research-brief.md",
+      "baselineSha256": "fa810da22299242c748185017094bdc6676b9a7205d57cef42ae7c89b2ad4c48",
+      "baselineCandidates": 14,
+      "sourceReview": "reviewed",
+      "reviewSha256": "fa810da22299242c748185017094bdc6676b9a7205d57cef42ae7c89b2ad4c48",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-topology-comparison.md",
+      "baselineSha256": "cf79c1ce2dbd501a5d01041a704f4cae909e308d0d1357b8758a85a5cbb50582",
+      "baselineCandidates": 33,
+      "sourceReview": "reviewed",
+      "reviewSha256": "32fb79e15da0eb30c91c69652076ecda4a86feb8622ab94f69c2c4a8bdb15406",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-v0.1.md",
+      "baselineSha256": "8720930a6470152ba4dcf908af337a7670e96074334f82ad2ba0db0e0ef6cd49",
+      "baselineCandidates": 42,
+      "sourceReview": "reviewed",
+      "reviewSha256": "8720930a6470152ba4dcf908af337a7670e96074334f82ad2ba0db0e0ef6cd49",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/grammar/g01-validation.md",
+      "baselineSha256": "58f067f2f849a555b9f7b5d049b831065f4264dee8889efe99ede67420f23be3",
+      "baselineCandidates": 13,
+      "sourceReview": "reviewed",
+      "reviewSha256": "58f067f2f849a555b9f7b5d049b831065f4264dee8889efe99ede67420f23be3",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/manuscript/README.md",
+      "baselineSha256": "ebb9deb2f20e56dbd2accf71fcc13187dae1def91263978afcd737176d8c009d",
+      "baselineCandidates": 0,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ebb9deb2f20e56dbd2accf71fcc13187dae1def91263978afcd737176d8c009d",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/manuscript/evidence-and-precedent-notes.md",
+      "baselineSha256": "301d33a3479720592dccdf67a19677726a2f46605297d4f4bd127656a5adc2e7",
+      "baselineCandidates": 22,
+      "sourceReview": "reviewed",
+      "reviewSha256": "628907a46393f6372dc8ed50cfe1cca4e09df0b77f7bc8b2302b490fb2e1ec03",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/glossary.md",
+      "baselineSha256": "916b395a5674e5e3ee42928618239a24f6081a427028cd67f11656af929a656e",
+      "baselineCandidates": 11,
+      "sourceReview": "reviewed",
+      "reviewSha256": "916b395a5674e5e3ee42928618239a24f6081a427028cd67f11656af929a656e",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/governing-principles.md",
+      "baselineSha256": "97ec6bf762b4dd05abfad682fceb9a4ffd5d01bdbf48c11b9639f0848be58e76",
+      "baselineCandidates": 24,
+      "sourceReview": "reviewed",
+      "reviewSha256": "97ec6bf762b4dd05abfad682fceb9a4ffd5d01bdbf48c11b9639f0848be58e76",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/maintenance-geography-external.md",
+      "baselineSha256": "75b2cfec1e58e10851ecd4b366a48b7da2b52b4ef7205b0fcc06f9402cb4e665",
+      "baselineCandidates": 17,
+      "sourceReview": "reviewed",
+      "reviewSha256": "3c5a492fea78f396564d9dc284382e39e537a8f4b4894591cd158e329faaf772",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/part-i.md",
+      "baselineSha256": "647ef502dbff69cd46472971a3b65bb665e84d88209cbd89bf5d3023f6d03e07",
+      "baselineCandidates": 42,
+      "sourceReview": "reviewed",
+      "reviewSha256": "1702250203e2f8045ed9c7d14dc968bd39256ea4cddaa72b86cfa3f31dc625b9",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/part-ii.md",
+      "baselineSha256": "c3225f979b3b2d2a2af93cc52a38426fc29c1f0de1e38cf1149efd5d85a640da",
+      "baselineCandidates": 74,
+      "sourceReview": "reviewed",
+      "reviewSha256": "c4c57e95a879bfceacef8459afc779158d414de881ba99bf3e96ca7f4504e18e",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/part-iv.md",
+      "baselineSha256": "64fd6f653fb66073714d90b2cc4a1674a88b79bceaa7599eef4743beba6e9d30",
+      "baselineCandidates": 85,
+      "sourceReview": "reviewed",
+      "reviewSha256": "01ab818e0fad61698a0fa99f9351b95a279ada71b671b8b8c56548b9088d0919",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/part-v.md",
+      "baselineSha256": "a067cc86c808964d9781c470cc71b197d3bdc12fd13c5b1c733931bb8326654b",
+      "baselineCandidates": 54,
+      "sourceReview": "reviewed",
+      "reviewSha256": "3e186f3224cd71ba18cad8610d2e2c4402b9adcb4ec78d0043ece385c0d38a39",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/preface.md",
+      "baselineSha256": "75712739b5f7b7771995a1449c60d5e1a5fea84e822b4aab4dc3d119959c4167",
+      "baselineCandidates": 34,
+      "sourceReview": "reviewed",
+      "reviewSha256": "2b07656478a378a894d63ad1269d83a175d3359737848a520643cd139ba0b83b",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/principle-08-repose.md",
+      "baselineSha256": "1d35026905f1c1b9a5478818923c3ddcf16bd7671a973dfc0f154b5e9516f94e",
+      "baselineCandidates": 11,
+      "sourceReview": "reviewed",
+      "reviewSha256": "1d35026905f1c1b9a5478818923c3ddcf16bd7671a973dfc0f154b5e9516f94e",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/readers-guide.md",
+      "baselineSha256": "32ed42ff2ab3aec1af52d77b28de3f70babb0437c41205f05b8d3bfd4bf5de1f",
+      "baselineCandidates": 7,
+      "sourceReview": "reviewed",
+      "reviewSha256": "32ed42ff2ab3aec1af52d77b28de3f70babb0437c41205f05b8d3bfd4bf5de1f",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/reference-house-implementation-schedule.md",
+      "baselineSha256": "1d56a75d41cd521600bcfa4076c9df00d6e6e8695d925916b5031a19137a1f8d",
+      "baselineCandidates": 8,
+      "sourceReview": "reviewed",
+      "reviewSha256": "cca385269c777f0620a41a3eed2576eb49978697b761586671807421961556ae",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff. Factual drift reconciled separately: 300 mm planning going follows the existing controlled fixture and RHC5/principal-section evidence, replacing stale 280 mm prose; no geometry changed."
+    },
+    {
+      "source": "docs/manuscript/research-agenda.md",
+      "baselineSha256": "412c18ab77d66699920eac35691ccbc5cf85a75f8357f3cec6628258ac7edade",
+      "baselineCandidates": 27,
+      "sourceReview": "reviewed",
+      "reviewSha256": "412c18ab77d66699920eac35691ccbc5cf85a75f8357f3cec6628258ac7edade",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/manuscript/sources-and-further-reading.md",
+      "baselineSha256": "38df9147e2db58dcfd08370c9e782f9d746e94f7becbc921c9d98b99fa199370",
+      "baselineCandidates": 2,
+      "sourceReview": "reviewed",
+      "reviewSha256": "38df9147e2db58dcfd08370c9e782f9d746e94f7becbc921c9d98b99fa199370",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/patterns/README.md",
+      "baselineSha256": "70027bc04599d8423bb41a054d9b1213a99ab1f643ca88bd3a38866b1273c57a",
+      "baselineCandidates": 4,
+      "sourceReview": "reviewed",
+      "reviewSha256": "70027bc04599d8423bb41a054d9b1213a99ab1f643ca88bd3a38866b1273c57a",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/accessible-rainwater-route.md",
+      "baselineSha256": "d26a740c6e9daf6bcc6fd8210fa82e826bc23ad56be41718cf0cb36157212102",
+      "baselineCandidates": 5,
+      "sourceReview": "reviewed",
+      "reviewSha256": "d26a740c6e9daf6bcc6fd8210fa82e826bc23ad56be41718cf0cb36157212102",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/accessible-room-service-route.md",
+      "baselineSha256": "b114190f5493b3cbd40646b3ef256b14f634249fcff848be4da24b8b171cd46c",
+      "baselineCandidates": 6,
+      "sourceReview": "reviewed",
+      "reviewSha256": "b114190f5493b3cbd40646b3ef256b14f634249fcff848be4da24b8b171cd46c",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/accessible-vertical-service-zone.md",
+      "baselineSha256": "e6e226662dd476fa27bb978c41cefe55fb0ae83931ad63b796056a56e234172f",
+      "baselineCandidates": 8,
+      "sourceReview": "reviewed",
+      "reviewSha256": "e6e226662dd476fa27bb978c41cefe55fb0ae83931ad63b796056a56e234172f",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/candidates/README.md",
+      "baselineSha256": "dccc939f1eb9dfa33088bd1912a26705bcb78ddeeb50108f72cfa6fdcf7a8676",
+      "baselineCandidates": 1,
+      "sourceReview": "reviewed",
+      "reviewSha256": "dccc939f1eb9dfa33088bd1912a26705bcb78ddeeb50108f72cfa6fdcf7a8676",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/candidates/individually-isolatable-manifold-distribution.md",
+      "baselineSha256": "70116f1483e1669a096a6942e0263542a150f08f711a08894649751978ea2a51",
+      "baselineCandidates": 5,
+      "sourceReview": "reviewed",
+      "reviewSha256": "70116f1483e1669a096a6942e0263542a150f08f711a08894649751978ea2a51",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/candidates/local-deep-service-zone.md",
+      "baselineSha256": "4b7b14a2527c1d0a1a156326ef7afb815b75c0614cdfa5e15eabf8d4b6d3fe45",
+      "baselineCandidates": 3,
+      "sourceReview": "reviewed",
+      "reviewSha256": "4b7b14a2527c1d0a1a156326ef7afb815b75c0614cdfa5e15eabf8d4b6d3fe45",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/candidates/replaceable-architectural-lining.md",
+      "baselineSha256": "3eb6a139d55e4f7132a20299ceb10bb7251ee2f6888d92fd03cac39ed0fc2384",
+      "baselineCandidates": 5,
+      "sourceReview": "reviewed",
+      "reviewSha256": "3eb6a139d55e4f7132a20299ceb10bb7251ee2f6888d92fd03cac39ed0fc2384",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/candidates/selective-floor-access.md",
+      "baselineSha256": "9652e9520e40641cfc9519cbf571d30725abe10064ce3a45e90edd04035eb0df",
+      "baselineCandidates": 5,
+      "sourceReview": "reviewed",
+      "reviewSha256": "9652e9520e40641cfc9519cbf571d30725abe10064ce3a45e90edd04035eb0df",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/coherent-horizontal-service-route.md",
+      "baselineSha256": "9c6c591c7108d270c6a33bcf4e3089bb219906a9650a85777e05085d1283a9c4",
+      "baselineCandidates": 2,
+      "sourceReview": "reviewed",
+      "reviewSha256": "9c6c591c7108d270c6a33bcf4e3089bb219906a9650a85777e05085d1283a9c4",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/compartmented-service-void.md",
+      "baselineSha256": "8a21f79213362ebbc05dbbbbbc775ab1869b2f0eff564d1e71737a7bcb8508f2",
+      "baselineCandidates": 7,
+      "sourceReview": "reviewed",
+      "reviewSha256": "8a21f79213362ebbc05dbbbbbc775ab1869b2f0eff564d1e71737a7bcb8508f2",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/controlled-attachment-plane.md",
+      "baselineSha256": "c41d4d9dc8c363be09a24082cfabe1abb8e7946fe9d71f1402876f229823d3f7",
+      "baselineCandidates": 6,
+      "sourceReview": "reviewed",
+      "reviewSha256": "c41d4d9dc8c363be09a24082cfabe1abb8e7946fe9d71f1402876f229823d3f7",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/controlled-utility-entry.md",
+      "baselineSha256": "0180ed2ef0a2c52302376a992f433469f6bb5b89ef88932e71653c4defd78f5c",
+      "baselineCandidates": 4,
+      "sourceReview": "reviewed",
+      "reviewSha256": "0180ed2ef0a2c52302376a992f433469f6bb5b89ef88932e71653c4defd78f5c",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/designed-structural-penetration.md",
+      "baselineSha256": "975fcea547c98020c824f37051e6da31b344730b4c8d7bc9ee091476bcbd48d9",
+      "baselineCandidates": 7,
+      "sourceReview": "reviewed",
+      "reviewSha256": "975fcea547c98020c824f37051e6da31b344730b4c8d7bc9ee091476bcbd48d9",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/designed-threshold.md",
+      "baselineSha256": "3ab964fb715bc8c092ab50fadfbb7a2828310d57c3d4a556821270e43ae62c15",
+      "baselineCandidates": 2,
+      "sourceReview": "reviewed",
+      "reviewSha256": "3ab964fb715bc8c092ab50fadfbb7a2828310d57c3d4a556821270e43ae62c15",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/failure-tolerant-wet-service-room.md",
+      "baselineSha256": "ff0b05ca62fca0c0f5aec1a4eac7ec3f8d6c00a1b48610fd09d15f4f2bb5cb77",
+      "baselineCandidates": 4,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ff0b05ca62fca0c0f5aec1a4eac7ec3f8d6c00a1b48610fd09d15f4f2bb5cb77",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/ground-supported-facade-access.md",
+      "baselineSha256": "271857f9e2083a6c02da8d99829e255f24be204c7834bd6533b5636a76bf5fd8",
+      "baselineCandidates": 17,
+      "sourceReview": "reviewed",
+      "reviewSha256": "9842aaf13bd85b5a13343343d3fbf40cc041cca32521662f8f26d34936e5f5ce",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/high-service-room-service-wall.md",
+      "baselineSha256": "e6cb0d1da777befcbb315c57b9a54c942d485ffa4e0d5e45bb386098c8374c12",
+      "baselineCandidates": 4,
+      "sourceReview": "reviewed",
+      "reviewSha256": "e6cb0d1da777befcbb315c57b9a54c942d485ffa4e0d5e45bb386098c8374c12",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/language-model.md",
+      "baselineSha256": "bfa074bacb5c8fa3b27a32356582a3ee82fc2855c285a3fd67973e0ec77045bb",
+      "baselineCandidates": 41,
+      "sourceReview": "reviewed",
+      "reviewSha256": "bfa074bacb5c8fa3b27a32356582a3ee82fc2855c285a3fd67973e0ec77045bb",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/movement-slip-junction.md",
+      "baselineSha256": "da0484105bec1f1398c6c2649dce4af2c54c7a94df15d547ef105ab9fba19d91",
+      "baselineCandidates": 3,
+      "sourceReview": "reviewed",
+      "reviewSha256": "da0484105bec1f1398c6c2649dce4af2c54c7a94df15d547ef105ab9fba19d91",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/permanent-opening-replaceable-door.md",
+      "baselineSha256": "9d8575ae15f19b3b70bc81932b78abb04143b4b6c7bd9ce9cb2681cfd1341bdc",
+      "baselineCandidates": 4,
+      "sourceReview": "reviewed",
+      "reviewSha256": "9d8575ae15f19b3b70bc81932b78abb04143b4b6c7bd9ce9cb2681cfd1341bdc",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/permanent-opening-replaceable-window.md",
+      "baselineSha256": "9f0ff67cc83d636336d7683529396e0b83c13a4583ac6bfd5f506ffd668d0964",
+      "baselineCandidates": 5,
+      "sourceReview": "reviewed",
+      "reviewSha256": "9f0ff67cc83d636336d7683529396e0b83c13a4583ac6bfd5f506ffd668d0964",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/physical-service-index.md",
+      "baselineSha256": "5f8010493c40367af181be3e71ff83c7856ee5bdf19f2a51398c8d98bb195081",
+      "baselineCandidates": 6,
+      "sourceReview": "reviewed",
+      "reviewSha256": "5f8010493c40367af181be3e71ff83c7856ee5bdf19f2a51398c8d98bb195081",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/plant-room-service-hub.md",
+      "baselineSha256": "a48b19f0b34654fedc7abfeb115ecbe76593664d1c86282d56a4bd4fa67d0986",
+      "baselineCandidates": 4,
+      "sourceReview": "reviewed",
+      "reviewSha256": "a48b19f0b34654fedc7abfeb115ecbe76593664d1c86282d56a4bd4fa67d0986",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/roof-maintenance-route.md",
+      "baselineSha256": "f6d70a060d17d305484834b490a89e220cb9ce5db06674c5acfa9fde11f25a60",
+      "baselineCandidates": 2,
+      "sourceReview": "reviewed",
+      "reviewSha256": "f6d70a060d17d305484834b490a89e220cb9ce5db06674c5acfa9fde11f25a60",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/service-topology-sequence.md",
+      "baselineSha256": "8f25d84ce404075852ad9c3ea0e5c814618247284b29c57092ce89af3461003a",
+      "baselineCandidates": 20,
+      "sourceReview": "reviewed",
+      "reviewSha256": "f4868032e753e3165966d9497c1c13d330e853d71e44b2eb927a9aaafb3be1ae",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/source-capture-bathroom-extract.md",
+      "baselineSha256": "44c71d92fed42220b270fd3eb144969840b0f5620334332f78a0a837bb0d781c",
+      "baselineCandidates": 5,
+      "sourceReview": "reviewed",
+      "reviewSha256": "44c71d92fed42220b270fd3eb144969840b0f5620334332f78a0a837bb0d781c",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/source-capture-kitchen-extract.md",
+      "baselineSha256": "4a6970558f5d93047571958641ce802e056ec10bc83faa097dc0a558348228a7",
+      "baselineCandidates": 4,
+      "sourceReview": "reviewed",
+      "reviewSha256": "4a6970558f5d93047571958641ce802e056ec10bc83faa097dc0a558348228a7",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/strategies/README.md",
+      "baselineSha256": "537500a446fe613129fb415ff0b516d8db2e6cd5bac528ad951ba23e7d2b5f0c",
+      "baselineCandidates": 4,
+      "sourceReview": "reviewed",
+      "reviewSha256": "537500a446fe613129fb415ff0b516d8db2e6cd5bac528ad951ba23e7d2b5f0c",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/strategies/decompose-structural-interface-functions.md",
+      "baselineSha256": "3a827741a1fabb39a61f1fb453f9016a27c5b7d2a268749847187cc1d3f7a0c6",
+      "baselineCandidates": 3,
+      "sourceReview": "reviewed",
+      "reviewSha256": "3a827741a1fabb39a61f1fb453f9016a27c5b7d2a268749847187cc1d3f7a0c6",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/strategies/fail-safe-water-distribution.md",
+      "baselineSha256": "95d706193010a5f7b8ac0bbc752f519abc503e2d517ee7fce7206de5ee696986",
+      "baselineCandidates": 4,
+      "sourceReview": "reviewed",
+      "reviewSha256": "95d706193010a5f7b8ac0bbc752f519abc503e2d517ee7fce7206de5ee696986",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/strategies/separate-structural-floor-changeable-layers.md",
+      "baselineSha256": "beecc24835579c2735cfacfe383c9ec6573d03b4864d7d1aec43b22f7b7a7bb4",
+      "baselineCandidates": 5,
+      "sourceReview": "reviewed",
+      "reviewSha256": "beecc24835579c2735cfacfe383c9ec6573d03b4864d7d1aec43b22f7b7a7bb4",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/patterns/visible-leakage-path.md",
+      "baselineSha256": "0c6b226eeeb73a0c1233ff380529263af53cf13cec967b92b6cca8c3c4470486",
+      "baselineCandidates": 6,
+      "sourceReview": "reviewed",
+      "reviewSha256": "0c6b226eeeb73a0c1233ff380529263af53cf13cec967b92b6cca8c3c4470486",
+      "disposition": "Contextual review: pattern statements, requirements, evidence limits and task-specific questions retained; only demonstrated duplicate/staged rhetoric revised. Canonical/held status and technical qualifications preserved."
+    },
+    {
+      "source": "docs/prototypes/README.md",
+      "baselineSha256": "a6b1d4c64b84ed1b6b3d0889388a4b9e8ec9c6fc5969f56fb094de1478328c5e",
+      "baselineCandidates": 12,
+      "sourceReview": "reviewed",
+      "reviewSha256": "a6b1d4c64b84ed1b6b3d0889388a4b9e8ec9c6fc5969f56fb094de1478328c5e",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reading-guide.md",
+      "baselineSha256": "c0d751e1346d555f6a6bb62ee665c9463b917cf9abef3b79fd9c626aced2ed16",
+      "baselineCandidates": 2,
+      "sourceReview": "reviewed",
+      "reviewSha256": "c0d751e1346d555f6a6bb62ee665c9463b917cf9abef3b79fd9c626aced2ed16",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reference-house/README.md",
+      "baselineSha256": "7d213bf974172e86c80bc54e262644c788a0175ec16d9f55dec9a49cb51224e2",
+      "baselineCandidates": 6,
+      "sourceReview": "reviewed",
+      "reviewSha256": "7d213bf974172e86c80bc54e262644c788a0175ec16d9f55dec9a49cb51224e2",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reference-house/external-review-brief.md",
+      "baselineSha256": "fae57ae83aed1a957426a77bb7dd39e8f68b52e093489f51f0885e8c86a67d09",
+      "baselineCandidates": 9,
+      "sourceReview": "reviewed",
+      "reviewSha256": "fae57ae83aed1a957426a77bb7dd39e8f68b52e093489f51f0885e8c86a67d09",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reference-house/g01-v0.1-conformance-d12.md",
+      "baselineSha256": "68c706896dc8a21ef1456d6642ecc9c3a0d80474469c1a1ee8d609898d9fdfbe",
+      "baselineCandidates": 14,
+      "sourceReview": "reviewed",
+      "reviewSha256": "68c706896dc8a21ef1456d6642ecc9c3a0d80474469c1a1ee8d609898d9fdfbe",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reference-house/generated/README.md",
+      "baselineSha256": "b5b37fffb1eb09ed627f70940ee0e8bfea9ca527b8e135638ca6364acd45f358",
+      "baselineCandidates": 3,
+      "sourceReview": "reviewed",
+      "reviewSha256": "b5b37fffb1eb09ed627f70940ee0e8bfea9ca527b8e135638ca6364acd45f358",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reference-house/generated/boundary-register.md",
+      "baselineSha256": "57f64df6d05f66157d5d811326d094d047547acd689aeff23fd99e5ec2ff7b3d",
+      "baselineCandidates": 0,
+      "sourceReview": "reviewed",
+      "reviewSha256": "57f64df6d05f66157d5d811326d094d047547acd689aeff23fd99e5ec2ff7b3d",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reference-house/generated/service-register.md",
+      "baselineSha256": "1c7db35287b222012cde2e7ba9ec0f0ef3fca6b9a5b9c3a7559e0b4176ac9964",
+      "baselineCandidates": 0,
+      "sourceReview": "reviewed",
+      "reviewSha256": "1c7db35287b222012cde2e7ba9ec0f0ef3fca6b9a5b9c3a7559e0b4176ac9964",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reference-house/pattern-occurrence-register.md",
+      "baselineSha256": "fe942795d7448417c201c5276742ffb0898d5f369e23b760b1d26b395c12c876",
+      "baselineCandidates": 5,
+      "sourceReview": "reviewed",
+      "reviewSha256": "fe942795d7448417c201c5276742ffb0898d5f369e23b760b1d26b395c12c876",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reference-house/structural-coordination.md",
+      "baselineSha256": "81dd05784434636ff144ce790e403676f58bd3b331c14af892b670e328810063",
+      "baselineCandidates": 30,
+      "sourceReview": "reviewed",
+      "reviewSha256": "81dd05784434636ff144ce790e403676f58bd3b331c14af892b670e328810063",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reference-house/tectonic-architectural-language.md",
+      "baselineSha256": "63604939d8d011d68e80055569a7e76488edce1de87650b61ec69debd47e2471",
+      "baselineCandidates": 28,
+      "sourceReview": "reviewed",
+      "reviewSha256": "63604939d8d011d68e80055569a7e76488edce1de87650b61ec69debd47e2471",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/reference-house/vertical-bay-coordination.md",
+      "baselineSha256": "4e0bd1d7830d78ab16323da6979ec44c5d59aca8709dae1e882dc72d157f1cca",
+      "baselineCandidates": 18,
+      "sourceReview": "reviewed",
+      "reviewSha256": "4e0bd1d7830d78ab16323da6979ec44c5d59aca8709dae1e882dc72d157f1cca",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/research/README.md",
+      "baselineSha256": "17805490fbfaf5ecbe9370581d1a63f3db6c9db9795ce99114b3ef840c832a50",
+      "baselineCandidates": 3,
+      "sourceReview": "reviewed",
+      "reviewSha256": "17805490fbfaf5ecbe9370581d1a63f3db6c9db9795ce99114b3ef840c832a50",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/research/external-maintenance-access.md",
+      "baselineSha256": "f1c7a5e6c398ed297d13e3195f08ad4c04df47887261d87a7f9e4a5536cd5bec",
+      "baselineCandidates": 20,
+      "sourceReview": "reviewed",
+      "reviewSha256": "f03f0df3e41b404807566e66863b7798409f97737ae761546bd26aa7f18ce7ee",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/research/finish-agnostic-floor-platform-options.md",
+      "baselineSha256": "04daf1a854b51b13f727cffade7a329e129ff87bdaac847e28fab73561553826",
+      "baselineCandidates": 33,
+      "sourceReview": "reviewed",
+      "reviewSha256": "509a4165ae2941e3d47975dd18b01106d95999711fe71f37e82fe978c1760980",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/research/preface-precedents.md",
+      "baselineSha256": "299abd83044550db2d82392b1508e76832d7c284bdf6964d578b7dfc4594109f",
+      "baselineCandidates": 24,
+      "sourceReview": "reviewed",
+      "reviewSha256": "d894f6d87d10cd78d729258ef5d1462e5adf4f8267084ce70976c11253d4b2b9",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/research/replaceable-wall-system-options.md",
+      "baselineSha256": "3f53069f2513ebc8c0eba5efd7c095fc04139f32777a2125a1077e51e51ef922",
+      "baselineCandidates": 39,
+      "sourceReview": "reviewed",
+      "reviewSha256": "2a9f16dca388860ddc45e5fd69721233a0df53d540d4dd20bc6703a410f7bc40",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/research/repose-and-low-vigilance.md",
+      "baselineSha256": "4ac831dbef2dbd98cf5b2e5a5e04c8a8e6801570dc673ff71baf799594442a74",
+      "baselineCandidates": 42,
+      "sourceReview": "reviewed",
+      "reviewSha256": "abeea27633c87d69bde847d1e4de27530e9571257528025bac825669e7d7efa6",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/research/repose-evidence-audit.md",
+      "baselineSha256": "3031ff5616cb2cdb2dff706afc8105bfdd350be1c4f347bd7076c45cba61bd3c",
+      "baselineCandidates": 13,
+      "sourceReview": "reviewed",
+      "reviewSha256": "3031ff5616cb2cdb2dff706afc8105bfdd350be1c4f347bd7076c45cba61bd3c",
+      "disposition": "Contextual review completed under EDA-01 prose mode. Task questions, bounded requirements, source/phase uncertainty and proof limits retained; demonstrated staged rhetoric revised at owning source. Generated reports and compatibility redirects retained without output-layer edits."
+    },
+    {
+      "source": "docs/research/seated-floor-structure-options.md",
+      "baselineSha256": "0dce3b111bbb2ea9079bc96d02de612d7b46feb3f567a204dab2fdddc5fe65a7",
+      "baselineCandidates": 21,
+      "sourceReview": "reviewed",
+      "reviewSha256": "1f6a2b95ae6fe3d409c5c54d56f92d5b3264399155f600242533b26b3de44c4b",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "docs/research/workmanship-robustness.md",
+      "baselineSha256": "5afe2203996a7ae216166fd78cbbced90cb7b99a8ec4a7a7eafc0f81782a5945",
+      "baselineCandidates": 31,
+      "sourceReview": "reviewed",
+      "reviewSha256": "9e16ab1c0db15099a6691d785d49d2fb1a39f4e3b77c1fd4f85fd244c5560d03",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "publication/part-iii.md",
+      "baselineSha256": "9d4b699b5919821fa040e565ca4410ad8c217a0c81d18bb1009c7cf25a9172f8",
+      "baselineCandidates": 17,
+      "sourceReview": "reviewed",
+      "reviewSha256": "ae88b62146b94e644b399fb2be6ca4d746f37ddcc11b2a84bd90132017aeb89c",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "publication/primer/outlook.md",
+      "baselineSha256": "1475515962c5ee5deabd5633c03eae77a82935842f8e1e47dd621ba56065ba4c",
+      "baselineCandidates": 0,
+      "sourceReview": "reviewed",
+      "reviewSha256": "1475515962c5ee5deabd5633c03eae77a82935842f8e1e47dd621ba56065ba4c",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    },
+    {
+      "source": "publication/primer/proposition.md",
+      "baselineSha256": "25d42d438f5b833b6302c25910306b89875bee163a392bb75368c6a4bdaf5c65",
+      "baselineCandidates": 10,
+      "sourceReview": "reviewed",
+      "reviewSha256": "841ff6aef605ab99bebf48db5f4ae519ba4de984a4e2b174a42c560b71be6ffe",
+      "disposition": "Contextual source review: explanatory sequence, isolation, repeated morals and claim fidelity checked; normative provisions, evidence qualifications and structured reference labels retained. Revisions are recoverable in the EDA branch diff."
+    }
+  ],
+  "supplementalReview": [
+    {
+      "source": "publication/figures.ts",
+      "reviewSha256": "f1d828b901d2fa4832d154b464c12b1255a9e694e99b8e2ca5bd19a43407e4bc",
+      "disposition": "Caption text reviewed; descriptive labels, scales and bounded claim qualifications retained."
+    },
+    {
+      "source": "publication/plates.ts",
+      "reviewSha256": "4e175b16bf09e120ac0a82b0c86b068a2b7b12e420e0462243dba80aa5b5261d",
+      "disposition": "Caption text reviewed; descriptive labels, scales, bounded qualifications and the frozen drawing register retained. Production heading/paragraph placement is repaired in publication/scripts/typography.ts, without altering this frozen source."
+    }
+  ]
+}

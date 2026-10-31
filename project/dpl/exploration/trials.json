@@ -1,0 +1,479 @@
+{
+  "schema": "dpl.exploration.v1",
+  "authority": "ASSUMPTION_BASED_EXPLORATION_ONLY",
+  "decisionBasis": "User direction 2026-10-27: progress through explicit educated assumptions and state their consequences. This adds conditional design exploration; it does not replace or discharge the evidence-backed readiness contract.",
+  "projectCriteria": {
+    "sideWorkingSpaceM": 1,
+    "rearWorkingSpaceM": 3,
+    "illustrativeApproachMaxGradient": 0.05,
+    "illustrativeLogisticsWidthM": 2.5,
+    "status": "PROJECT_TEST_CHOICES_NOT_REGULATORY_LIMITS"
+  },
+  "trials": [
+    {
+      "siteId": "DPL-RP-001",
+      "sourceRecord": "project/dpl/sites/dpl-rp-001-26-the-avenue-finchley.md",
+      "context": "Footpath arrival; approximate marketed area is 491.7 m².",
+      "shapeBasis": "Area magnitude is anchored to RP001-C03; widths and rectangular shape are uncalibrated alternatives, not inferred parcel dimensions.",
+      "areaAnchorM2": 491.7,
+      "widthM": {
+        "samples": [
+          12,
+          17.4,
+          22
+        ],
+        "basis": "Area magnitude is anchored to RP001-C03; widths and rectangular shape are uncalibrated alternatives, not inferred parcel dimensions.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "depthM": {
+        "samples": [
+          22.349999999999998,
+          28.258620689655174,
+          40.975
+        ],
+        "basis": "Area magnitude is anchored to RP001-C03; widths and rectangular shape are uncalibrated alternatives, not inferred parcel dimensions. Cross-product tests intentionally vary area too; they are not eight area-consistent reconstructions.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "slopeDeg": {
+        "samples": [
+          0,
+          3,
+          6
+        ],
+        "basis": "Positive and negative planar front-to-rear slopes are stress probes. Except for qualitative RP007 steepness, no measured gradient is claimed.",
+        "replacement": "Controlled terrain/datum package, including crossfall and local irregularities."
+      },
+      "accessWidthM": {
+        "samples": [
+          0.9,
+          1.2,
+          1.8
+        ],
+        "basis": "Widths chosen to probe the recorded access typology; no current route measurement or legal entitlement is asserted.",
+        "replacement": "Measured complete approach, pinch points, turning, overhead constraints and rights evidence as separately required."
+      },
+      "fixedPlacement": {
+        "centreXM": 0,
+        "frontYM": 5.2,
+        "rotationDeg": 0,
+        "fflAboveFrontGroundM": 0.3
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ]
+    },
+    {
+      "siteId": "DPL-RP-002",
+      "sourceRecord": "project/dpl/sites/dpl-rp-002-rear-10-highland-road-bromley.md",
+      "context": "Backland garage parcel; historic access-lane context 3.2–3.8 m; tree constraint retained.",
+      "shapeBasis": "No parcel dimensions recovered. Broad rectangular hypotheses; the 950 m² combined application area is deliberately not used.",
+      "areaAnchorM2": null,
+      "widthM": {
+        "samples": [
+          10,
+          16,
+          22
+        ],
+        "basis": "No parcel dimensions recovered. Broad rectangular hypotheses; the 950 m² combined application area is deliberately not used.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "depthM": {
+        "samples": [
+          16,
+          25,
+          35
+        ],
+        "basis": "No parcel dimensions recovered. Broad rectangular hypotheses; the 950 m² combined application area is deliberately not used. Cross-product tests intentionally vary area too; they are not eight area-consistent reconstructions.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "slopeDeg": {
+        "samples": [
+          0,
+          3,
+          6
+        ],
+        "basis": "Positive and negative planar front-to-rear slopes are stress probes. Except for qualitative RP007 steepness, no measured gradient is claimed.",
+        "replacement": "Controlled terrain/datum package, including crossfall and local irregularities."
+      },
+      "accessWidthM": {
+        "samples": [
+          3.2,
+          3.5,
+          3.8
+        ],
+        "basis": "Historic 3.2–3.8 m range is a context clue from the larger 2017 application, not current verified RP002 access.",
+        "replacement": "Measured complete approach, pinch points, turning, overhead constraints and rights evidence as separately required."
+      },
+      "fixedPlacement": {
+        "centreXM": 0,
+        "frontYM": 5.2,
+        "rotationDeg": 0,
+        "fflAboveFrontGroundM": 0.3
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ]
+    },
+    {
+      "siteId": "DPL-RP-003",
+      "sourceRecord": "project/dpl/sites/dpl-rp-003-rear-73a-73b-woodside-green-croydon.md",
+      "context": "Garage infill with demonstrated proposal-specific context and amenity sensitivity.",
+      "shapeBasis": "No parcel dimensions recovered. Broad rectangular hypotheses only; no approved or refused applicant geometry is transferred.",
+      "areaAnchorM2": null,
+      "widthM": {
+        "samples": [
+          10,
+          16,
+          22
+        ],
+        "basis": "No parcel dimensions recovered. Broad rectangular hypotheses only; no approved or refused applicant geometry is transferred.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "depthM": {
+        "samples": [
+          16,
+          25,
+          35
+        ],
+        "basis": "No parcel dimensions recovered. Broad rectangular hypotheses only; no approved or refused applicant geometry is transferred. Cross-product tests intentionally vary area too; they are not eight area-consistent reconstructions.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "slopeDeg": {
+        "samples": [
+          0,
+          3,
+          6
+        ],
+        "basis": "Positive and negative planar front-to-rear slopes are stress probes. Except for qualitative RP007 steepness, no measured gradient is claimed.",
+        "replacement": "Controlled terrain/datum package, including crossfall and local irregularities."
+      },
+      "accessWidthM": {
+        "samples": [
+          1.2,
+          2.5,
+          3.5
+        ],
+        "basis": "Widths chosen to probe the recorded access typology; no current route measurement or legal entitlement is asserted.",
+        "replacement": "Measured complete approach, pinch points, turning, overhead constraints and rights evidence as separately required."
+      },
+      "fixedPlacement": {
+        "centreXM": 0,
+        "frontYM": 5.2,
+        "rotationDeg": 0,
+        "fflAboveFrontGroundM": 0.3
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ]
+    },
+    {
+      "siteId": "DPL-RP-004",
+      "sourceRecord": "project/dpl/sites/dpl-rp-004-4-nelmes-way-hornchurch.md",
+      "context": "Ordinary street-front replacement dwelling; the primary provisional design study.",
+      "shapeBasis": "Nominal 17.4 × 30 m is borrowed openly from synthetic DPL-RS-01, not estimated for Nelmes Way. Wide alternatives test the consequences of being wrong.",
+      "areaAnchorM2": null,
+      "widthM": {
+        "samples": [
+          12,
+          17.4,
+          22
+        ],
+        "basis": "Nominal 17.4 × 30 m is borrowed openly from synthetic DPL-RS-01, not estimated for Nelmes Way. Wide alternatives test the consequences of being wrong.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "depthM": {
+        "samples": [
+          18,
+          30,
+          40
+        ],
+        "basis": "Nominal 17.4 × 30 m is borrowed openly from synthetic DPL-RS-01, not estimated for Nelmes Way. Wide alternatives test the consequences of being wrong. Cross-product tests intentionally vary area too; they are not eight area-consistent reconstructions.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "slopeDeg": {
+        "samples": [
+          0,
+          3,
+          6
+        ],
+        "basis": "Positive and negative planar front-to-rear slopes are stress probes. Except for qualitative RP007 steepness, no measured gradient is claimed.",
+        "replacement": "Controlled terrain/datum package, including crossfall and local irregularities."
+      },
+      "accessWidthM": {
+        "samples": [
+          2.5,
+          3.5,
+          4.5
+        ],
+        "basis": "Widths chosen to probe the recorded access typology; no current route measurement or legal entitlement is asserted.",
+        "replacement": "Measured complete approach, pinch points, turning, overhead constraints and rights evidence as separately required."
+      },
+      "fixedPlacement": {
+        "centreXM": 0,
+        "frontYM": 5.2,
+        "rotationDeg": 0,
+        "fflAboveFrontGroundM": 0.3
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ]
+    },
+    {
+      "siteId": "DPL-RP-005",
+      "sourceRecord": "project/dpl/sites/dpl-rp-005-great-west-road-stucley-road-hounslow.md",
+      "context": "Corner / side-road relationship; exact host/subparcel identity remains unresolved.",
+      "shapeBasis": "Typological corner-subparcel hypothesis only. No identity resolution, site-specific fit or host-property dimensions are claimed.",
+      "areaAnchorM2": null,
+      "widthM": {
+        "samples": [
+          10,
+          16,
+          22
+        ],
+        "basis": "Typological corner-subparcel hypothesis only. No identity resolution, site-specific fit or host-property dimensions are claimed.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "depthM": {
+        "samples": [
+          16,
+          25,
+          35
+        ],
+        "basis": "Typological corner-subparcel hypothesis only. No identity resolution, site-specific fit or host-property dimensions are claimed. Cross-product tests intentionally vary area too; they are not eight area-consistent reconstructions.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "slopeDeg": {
+        "samples": [
+          0,
+          3,
+          6
+        ],
+        "basis": "Positive and negative planar front-to-rear slopes are stress probes. Except for qualitative RP007 steepness, no measured gradient is claimed.",
+        "replacement": "Controlled terrain/datum package, including crossfall and local irregularities."
+      },
+      "accessWidthM": {
+        "samples": [
+          1.2,
+          2.5,
+          3.5
+        ],
+        "basis": "Widths chosen to probe the recorded access typology; no current route measurement or legal entitlement is asserted.",
+        "replacement": "Measured complete approach, pinch points, turning, overhead constraints and rights evidence as separately required."
+      },
+      "fixedPlacement": {
+        "centreXM": 0,
+        "frontYM": 5.2,
+        "rotationDeg": 0,
+        "fflAboveFrontGroundM": 0.3
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state",
+        "Host/subparcel identity must be resolved before a real-site deployment case"
+      ]
+    },
+    {
+      "siteId": "DPL-RP-006",
+      "sourceRecord": "project/dpl/sites/dpl-rp-006-land-adjacent-50-camelot-close-thamesmead.md",
+      "context": "Approximate marketed 217 m² parcel; flood/water/highway overlap triggers retained.",
+      "shapeBasis": "Nominal area anchored to RP006-C03. Width/depth decomposition and rectangular shape are uncalibrated hypotheses.",
+      "areaAnchorM2": 217,
+      "widthM": {
+        "samples": [
+          10.85,
+          14,
+          17.5
+        ],
+        "basis": "Nominal area anchored to RP006-C03. Width/depth decomposition and rectangular shape are uncalibrated hypotheses.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "depthM": {
+        "samples": [
+          12.4,
+          15.5,
+          20.0
+        ],
+        "basis": "Nominal area anchored to RP006-C03. Width/depth decomposition and rectangular shape are uncalibrated hypotheses. Cross-product tests intentionally vary area too; they are not eight area-consistent reconstructions.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "slopeDeg": {
+        "samples": [
+          0,
+          3,
+          6
+        ],
+        "basis": "Positive and negative planar front-to-rear slopes are stress probes. Except for qualitative RP007 steepness, no measured gradient is claimed.",
+        "replacement": "Controlled terrain/datum package, including crossfall and local irregularities."
+      },
+      "accessWidthM": {
+        "samples": [
+          1.2,
+          2.5,
+          3.5
+        ],
+        "basis": "Widths chosen to probe the recorded access typology; no current route measurement or legal entitlement is asserted.",
+        "replacement": "Measured complete approach, pinch points, turning, overhead constraints and rights evidence as separately required."
+      },
+      "fixedPlacement": {
+        "centreXM": 0,
+        "frontYM": 5.2,
+        "rotationDeg": 0,
+        "fflAboveFrontGroundM": 0.3
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ]
+    },
+    {
+      "siteId": "DPL-RP-007",
+      "sourceRecord": "project/dpl/sites/dpl-rp-007-land-28-godstone-road-kenley.md",
+      "context": "Steep strip between roads; slope magnitude and exact geometry unmeasured.",
+      "shapeBasis": "Broad uncalibrated strip hypotheses; steep context motivates 5/10/15 degree probes, not a claim that those are measured site gradients.",
+      "areaAnchorM2": null,
+      "widthM": {
+        "samples": [
+          10,
+          16,
+          22
+        ],
+        "basis": "Broad uncalibrated strip hypotheses; steep context motivates 5/10/15 degree probes, not a claim that those are measured site gradients.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "depthM": {
+        "samples": [
+          18,
+          30,
+          40
+        ],
+        "basis": "Broad uncalibrated strip hypotheses; steep context motivates 5/10/15 degree probes, not a claim that those are measured site gradients. Cross-product tests intentionally vary area too; they are not eight area-consistent reconstructions.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "slopeDeg": {
+        "samples": [
+          5,
+          10,
+          15
+        ],
+        "basis": "Positive and negative planar front-to-rear slopes are stress probes. Except for qualitative RP007 steepness, no measured gradient is claimed.",
+        "replacement": "Controlled terrain/datum package, including crossfall and local irregularities."
+      },
+      "accessWidthM": {
+        "samples": [
+          1.2,
+          2.5,
+          3.5
+        ],
+        "basis": "Widths chosen to probe the recorded access typology; no current route measurement or legal entitlement is asserted.",
+        "replacement": "Measured complete approach, pinch points, turning, overhead constraints and rights evidence as separately required."
+      },
+      "fixedPlacement": {
+        "centreXM": 0,
+        "frontYM": 5.2,
+        "rotationDeg": 0,
+        "fflAboveFrontGroundM": 0.3
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ]
+    },
+    {
+      "siteId": "DPL-RP-008",
+      "sourceRecord": "project/dpl/sites/dpl-rp-008-rear-32-gleneldon-road-streatham.md",
+      "context": "Small garage redevelopment; approximate marketed area 97 m².",
+      "shapeBasis": "Nominal area anchored to RP008-C02. Width/depth decomposition and rectangular shape are hypotheses, not survey measurements.",
+      "areaAnchorM2": 97,
+      "widthM": {
+        "samples": [
+          8,
+          9.7,
+          12
+        ],
+        "basis": "Nominal area anchored to RP008-C02. Width/depth decomposition and rectangular shape are hypotheses, not survey measurements.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "depthM": {
+        "samples": [
+          8.083333333333334,
+          10,
+          12.125
+        ],
+        "basis": "Nominal area anchored to RP008-C02. Width/depth decomposition and rectangular shape are hypotheses, not survey measurements. Cross-product tests intentionally vary area too; they are not eight area-consistent reconstructions.",
+        "replacement": "Controlled site extent and metric boundary geometry for this exact parcel."
+      },
+      "slopeDeg": {
+        "samples": [
+          0,
+          3,
+          6
+        ],
+        "basis": "Positive and negative planar front-to-rear slopes are stress probes. Except for qualitative RP007 steepness, no measured gradient is claimed.",
+        "replacement": "Controlled terrain/datum package, including crossfall and local irregularities."
+      },
+      "accessWidthM": {
+        "samples": [
+          1.2,
+          2.5,
+          3.5
+        ],
+        "basis": "Widths chosen to probe the recorded access typology; no current route measurement or legal entitlement is asserted.",
+        "replacement": "Measured complete approach, pinch points, turning, overhead constraints and rights evidence as separately required."
+      },
+      "fixedPlacement": {
+        "centreXM": 0,
+        "frontYM": 5.2,
+        "rotationDeg": 0,
+        "fflAboveFrontGroundM": 0.3
+      },
+      "unresolved": [
+        "Exact parcel geometry and usable extent",
+        "Current topography, datum, frontage and complete access route",
+        "Foundation/structural adequacy and ground conditions",
+        "Flood, groundwater, contamination and drainage",
+        "Utility routes/capacity and rights",
+        "Trees, neighbours, privacy, daylight and local policy judgement",
+        "Title/private rights, statutory approval and current physical state"
+      ]
+    }
+  ]
+}

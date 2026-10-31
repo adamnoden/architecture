@@ -1,0 +1,152 @@
+{
+  "schemaVersion": "dpl.rp007SpatialEvidence.v1",
+  "packet": "DPL-15H",
+  "issue": 872,
+  "siteId": "DPL-RP-007",
+  "site": "Land at 28 Godstone Road, Kenley, CR8 5JE",
+  "assuranceProfile": "SCREENING",
+  "researchDate": "2026-10-26",
+  "parent": {
+    "packet": "DPL-15G",
+    "mergeSha": "a53d1c12eb19de53830baf774104d74a62846045",
+    "resultFingerprint": "de89a475c840b8c4deaf1509662389e26d7199c31439a7034a3190dd771cfb71",
+    "result": "RP007_SELECTED_NEXT_NO_SPEND_CORPUS_EVIDENCE_TARGET"
+  },
+  "controlledIdentity": {
+    "planningAuthority": "London Borough of Croydon",
+    "applicationRef": "25/03774/FUL",
+    "uprn": "10095497120",
+    "proposal": "Erection of three terraced dwellings with associated landscaping, cycle/refuse storage and communal garden.",
+    "applicantProposalTransfer": "PROHIBITED"
+  },
+  "acquisitionAttempts": [
+    {
+      "id": "15H-A01",
+      "target": "ORIGINAL_CROYDON_LOCATION_AND_SITE_DRAWING_BYTES",
+      "route": "Croydon public application portal via exact application key T6862LJLFL600 and public document index",
+      "observed": [
+        "The exact Croydon application portal URL and application key are publicly corroborated.",
+        "Planning Atlas captures twenty-nine linked documents including THE LOCATION PLAN, FLOOD RISK ASSESSMENT, BNG METRIC, final officer report and decision notice.",
+        "The Croydon portal rejects direct document retrieval in the current execution environment, so the location/site drawing bytes cannot be admitted into the controlled evidence packet."
+      ],
+      "result": "DOCUMENT_BYTES_NOT_RECOVERED",
+      "authorityBoundary": "Document titles and an index prove that evidence exists; they do not substitute for the source drawing bytes, scale, geometry or measured values."
+    },
+    {
+      "id": "15H-A02",
+      "target": "CONTROLLED_TITLE_INDEX_GEOMETRY",
+      "route": "HM Land Registry title-boundary dataset via Planning Data",
+      "observed": [
+        "Planning Data exposes HM Land Registry title-index polygons as an admissible SCREENING source class.",
+        "The exact RP-007 title entity/polygon could not be recovered and identity-bound into this packet from the available interface.",
+        "Postcode-centroid geometry is explicitly not substituted for parcel geometry."
+      ],
+      "result": "EXACT_TITLE_INDEX_GEOMETRY_NOT_RECOVERED",
+      "authorityBoundary": "Even if recovered, title-index geometry would remain an indicative registered-property extent rather than a determined legal boundary."
+    },
+    {
+      "id": "15H-A03",
+      "target": "AUTHORITATIVE_SCREENING_DATUM",
+      "route": "Environment Agency LiDAR Composite DTM 1 m",
+      "observed": [
+        "DPL already accepts EA 1 m DTM as SCREENING datum/topography authority when bound to a controlled site extent/frame.",
+        "The public corpus and current searches materially corroborate steep/sloping topography but do not provide a controlled ODN terrain sample for RP-007.",
+        "Postcode-level elevation around 80 m and narrative descriptions of steep levels are not promoted to R4."
+      ],
+      "result": "EA_DTM_BYTES_NOT_BOUND_TO_CONTROLLED_SITE_EXTENT",
+      "authorityBoundary": "Narrative steepness and postcode elevation are context only; neither is a private topographic survey or a DPL SCREENING datum."
+    },
+    {
+      "id": "15H-A04",
+      "target": "PHYSICAL_ACCESS_STREET_RELATIONSHIP",
+      "route": "Exact-site planning/refusal context plus Godstone Road/Lower Road public context",
+      "observed": [
+        "Public exact-site material places the parcel between Godstone Road and Lower Road.",
+        "Planning-refusal commentary records a proposed vehicle relationship to the A22/Godstone Road and an internal-turning concern.",
+        "No controlled frontage/access geometry tied to the application extent has been recovered."
+      ],
+      "result": "ACCESS_CONTEXT_RECOVERED_GEOMETRY_NOT_RECOVERED",
+      "authorityBoundary": "Planning commentary about the applicant scheme does not prove Reference House access geometry or legal access rights."
+    },
+    {
+      "id": "15H-A05",
+      "target": "DECISION_STATUS_CONFLICT",
+      "route": "First-party Croydon weekly decision publication versus captured register/direct public commentary",
+      "observed": [
+        "Croydon's weekly decision publication places 25/03774/FUL beneath a Permission Granted heading for 23 January 2026.",
+        "Planning Atlas and later local planning commentary describe refusal on the same date and cite nine refusal grounds.",
+        "The conflict is retained and deliberately excluded from candidate-readiness reasoning."
+      ],
+      "result": "CONFLICT_RETAINED_NOT_READINESS_INPUT",
+      "authorityBoundary": "Direct decision-notice bytes would be required before using planning outcome; DPL-15H does not need that outcome to assess R1-R6."
+    }
+  ],
+  "readiness": [
+    {
+      "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15H-A01", "15H-A02"],
+      "reason": "Exact application identity and UPRN are strong, but no placement-ready application/title geometry has been recovered into the controlled packet."
+    },
+    {
+      "dimension": "R2_FOOTPRINT_TEST_GEOMETRY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15H-A01", "15H-A02"],
+      "reason": "No controlled boundary shape/dimensions have been recovered that can honestly test the unchanged 12.0 m x 10.8 m Reference House footprint."
+    },
+    {
+      "dimension": "R3_REAL_ORIENTATION_FRAME",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15H-A01", "15H-A02"],
+      "reason": "A location plan is indexed but its source bytes and controlled geometry were not recovered; postcode/street context is insufficient to author a parcel orientation frame."
+    },
+    {
+      "dimension": "R4_DATUM_LEVEL_EVIDENCE",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15H-A03"],
+      "reason": "Steep topography is well corroborated, but no authoritative terrain sample or usable ODN datum has been bound to the controlled parcel."
+    },
+    {
+      "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15H-A04"],
+      "reason": "The Godstone Road/Lower Road relationship and applicant access concern are known contextually, but exact frontage/access geometry tied to the controlled site extent remains absent."
+    },
+    {
+      "dimension": "R6_SITE_IDENTITY_COHERENCE",
+      "state": "SATISFIED",
+      "evidenceRefs": ["15H-A01", "15H-A05"],
+      "reason": "Application reference, address and UPRN converge on the same real corpus site; the planning-decision label conflict does not make the spatial subject ambiguous."
+    }
+  ],
+  "satisfiedDimensions": ["R6_SITE_IDENTITY_COHERENCE"],
+  "residualDimensions": [
+    "R1_CONTROLLED_SPATIAL_IDENTITY",
+    "R2_FOOTPRINT_TEST_GEOMETRY",
+    "R3_REAL_ORIENTATION_FRAME",
+    "R4_DATUM_LEVEL_EVIDENCE",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY"
+  ],
+  "candidateAuthoringReady": false,
+  "nextDisposition": {
+    "rp007": "HOLD_AT_EXTERNAL_OR_PORTAL_CONTROLLED_SPATIAL_EVIDENCE_BOUNDARY",
+    "rp008": "EXECUTE_BOUNDED_NO_SPEND_TRANSPORT_TEST_NEXT",
+    "reason": "RP-007's apparent 29-document advantage does not survive the authority/transport test in the current environment. Repeating more indexed searches would reproduce the same failure class. RP-008 remains the deliberately lower-pathology one-house control and now earns one bounded transport/evidence pass before DPL declares the empirical corpus generally external-evidence-bound."
+  },
+  "proofBoundary": {
+    "marketingGeometryAsAuthority": "PROHIBITED",
+    "applicantProposalTransfer": "PROHIBITED",
+    "planningRedLineAsLegalTitle": "PROHIBITED",
+    "titleIndexAsDeterminedBoundary": "PROHIBITED",
+    "narrativeSteepnessAsDatum": "PROHIBITED",
+    "referenceHouseCandidate": "NOT_AUTHORISED",
+    "referenceHouseMutation": "PROHIBITED",
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "externalSpend": "NONE",
+    "dpl16": "HELD"
+  },
+  "result": "RP007_NOT_READY_CROYDON_DOCUMENT_TRANSPORT_AND_SPATIAL_AUTHORITY_BOUNDARY",
+  "nextPacket": "DPL-15I — RP-008 bounded no-spend spatial-evidence transport test and R1-R6 re-run"
+}

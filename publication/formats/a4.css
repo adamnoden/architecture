@@ -1,0 +1,23 @@
+:root {
+  --publication-page-width: 210mm;
+  --publication-page-height: 297mm;
+  --publication-measure: 125mm;
+  --publication-live-height: 250mm;
+}
+
+@page {
+  size: A4;
+  margin-top: 23mm;
+  margin-bottom: 24mm;
+}
+@page :left { margin-left: 22mm; margin-right: 30mm; }
+@page :right { margin-left: 30mm; margin-right: 22mm; }
+@page title { size: A4; }
+@page contents { size: A4; }
+@page publication-imprint { size: A4; }
+@page publication-part-i { size: A4; }
+@page publication-part-ii { size: A4; }
+@page publication-part-iii { size: A4; }
+@page publication-part-iv { size: A4; }
+@page publication-part-v { size: A4; }
+@page hk-plate { size: A4; }

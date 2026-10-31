@@ -1,0 +1,85 @@
+name: Publication typography production proof
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/publication-typography.yml'
+      - 'publication/**'
+      # Specimen harnesses do not feed the production book. Their own proofs remain.
+      - '!publication/specimens/**'
+      - 'docs/manuscript/**'
+      - 'docs/patterns/**'
+      - 'docs/reference-house/**'
+      - 'README.md'
+      - 'package.json'
+      - 'package-lock.json'
+
+concurrency:
+  group: publication-typography-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies and PDF inspectors
+        run: |
+          # Independent installs; wait for both and preserve either failure.
+          (
+            sudo apt-get update
+            sudo apt-get install -y poppler-utils qpdf
+          ) &
+          pdf_inspectors_pid=$!
+          dependencies_status=0
+          npm ci --no-audit --no-fund || dependencies_status=$?
+          inspectors_status=0
+          wait "$pdf_inspectors_pid" || inspectors_status=$?
+          if (( dependencies_status != 0 || inspectors_status != 0 )); then
+            echo "Dependency install status: $dependencies_status; PDF inspectors status: $inspectors_status"
+            exit 1
+          fi
+
+      - name: Build paired production typography proof
+        run: npx tsx publication/scripts/build-typography-proof.ts
+
+      - name: Verify production typography
+        run: npx tsx publication/scripts/verify-typography.ts
+
+      - name: Verify paired pagination ledger
+        run: npx tsx publication/scripts/verify-typography-ledger.ts
+
+      - name: Upload reader-facing proof PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-typography-production-proof
+          path: |
+            publication/.proof/typ09b/a4/publication-typography-production-a4.pdf
+            publication/.proof/typ09b/b5/publication-typography-production-b5.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload typography diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-typography-production-diagnostics
+          path: |
+            publication/typography-metadata.json
+            publication/.proof/typ09b/verification.json
+            publication/.proof/typ09b/build.json
+            publication/.proof/typ09b/typography-integration.json
+            publication/.proof/typ09b/font-upstream-evidence.json
+            publication/.proof/typ09b/a4/*.destination-normalization.json
+            publication/.proof/typ09b/b5/*.destination-normalization.json
+            publication/.proof/typ09b/diagnostics/*
+          if-no-files-found: error
+          retention-days: 30

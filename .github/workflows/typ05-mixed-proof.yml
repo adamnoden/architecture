@@ -1,0 +1,86 @@
+name: TYP-05 mixed-content proof
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/typ05-mixed-proof.yml'
+      - 'publication/specimens/typ05/**'
+      - 'publication/specimens/typ03/open-fonts.ts'
+      - 'publication/figures.ts'
+      - 'publication/plates.ts'
+      - 'docs/manuscript/part-v.md'
+      - 'docs/manuscript/reference-house-implementation-schedule.md'
+      - 'docs/manuscript/maintenance-geography-external.md'
+      - 'publication/part-iii.md'
+      - 'docs/manuscript/sources-and-further-reading.md'
+      - 'docs/patterns/controlled-utility-entry.md'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Install PDF font inspector
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Build exact A4 and B5 mixed-content proofs
+        run: npx tsx publication/specimens/typ05/mixed-build.ts
+
+      - name: Verify rendered Source font identities
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          verify_pdf() {
+            local pdf="$1"
+            local report="${pdf}.fonts.txt"
+            pdffonts "$pdf" | tee "$report"
+
+            for required in SourceSerif4-Regular SourceSerif4-Bold SourceSans3-Regular SourceSans3-Bold; do
+              grep -E "${required}.*yes[[:space:]]+yes" "$report" >/dev/null || {
+                echo "Missing embedded required font $required in $pdf" >&2
+                exit 1
+              }
+            done
+
+            if grep -Eiq 'Liberation|Arial|Helvetica|Times|Georgia' "$report"; then
+              echo "System-font fallback detected in $pdf" >&2
+              exit 1
+            fi
+          }
+
+          verify_pdf publication/.work/typ05b/a4/typ05b-mixed-content-a4.pdf
+          verify_pdf publication/.work/typ05b/b5/typ05b-mixed-content-b5.pdf
+
+      - name: Upload mixed-content proof family
+        uses: actions/upload-artifact@v4
+        with:
+          name: typ05b-mixed-content-proof
+          path: |
+            publication/.work/typ05b/a4/typ05b-mixed-content-a4.pdf
+            publication/.work/typ05b/a4/manifest.json
+            publication/.work/typ05b/a4/typ05b-mixed-content-a4.pdf.fonts.txt
+            publication/.work/typ05b/b5/typ05b-mixed-content-b5.pdf
+            publication/.work/typ05b/b5/manifest.json
+            publication/.work/typ05b/b5/typ05b-mixed-content-b5.pdf.fonts.txt
+          if-no-files-found: error
+          retention-days: 14

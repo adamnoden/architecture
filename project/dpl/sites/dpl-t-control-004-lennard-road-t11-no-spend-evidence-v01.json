@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "dpl.lennardT11NoSpendEvidence.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "candidateId": "DPL-T-CANDIDATE-004-01",
+  "researchDate": "2026-10-26",
+  "assuranceProfile": "SCREENING",
+  "parentT10ResultFingerprint": "7a429b81016943fb12ba84b08df5ee18f618f85fc896253f983dd0b95bdfdaca",
+  "authorityBoundary": "No-spend evidence exhaustion and acquisition-readiness only. Public planning drawings retain planning-evidence authority unless their measurement provenance independently earns more. No external professional evidence is deemed returned by this record.",
+  "floodAuthorityRecovery": {
+    "publisher": "Environment Agency",
+    "datasetTitle": "Flood risk: Postcode search tool data",
+    "datasetPage": "https://www.data.gov.uk/dataset/87b9fa90-86c8-45f1-9211-9496d66b7168/flood-risk-postcode-search-tool-data",
+    "directCsvResource": "https://environment.data.gov.uk/api/file/download?fileDataSetId=fb921496-1788-4fc2-b469-7b51e2a45553&fileName=Postcodes_Risk_Assessment_All.csv",
+    "targetPostcode": "BR2 8LN",
+    "attempts": [
+      "Official dataset page and direct Environment Agency CSV resource resolved.",
+      "Web retrieval rejected the resource because it is served as application/octet-stream.",
+      "The previous container path could not retrieve the external resource.",
+      "No secondary postcode-risk website is promoted as competent evidence."
+    ],
+    "state": "AUTHORITATIVE_RESOURCE_KNOWN_EXECUTION_ENVIRONMENT_CANNOT_ACQUIRE_BYTES",
+    "decision": "KEEP_NO_COST_PUBLIC_RECOVERY_ACTIVE_DO_NOT_ESCALATE_TO_CONSULTANT"
+  },
+  "publicGeometryAudit": {
+    "currentApplication": "26/02618/FPA",
+    "currentApplicationIndexedDocuments": [
+      "DRAW/41.LR/0626/001/R1 — Location Plan & Site Plan",
+      "DRAW/41.LR/0626/002/R1 — Existing Floor, Roof & Site Plans",
+      "DRAW/41.LR/0626/004/R1 — Proposed Floor, Roof & Site Plans",
+      "DRAW/41.LR/0626/010 — Existing & Proposed Streetscene Elevations incl. AOD Levels"
+    ],
+    "currentDocumentAcquisitionState": "DOCUMENT_INDEX_IDENTIFIED_CURRENT_DRAWING_BYTES_NOT_CONTROLLED_IN_T11_EXECUTION_PATH",
+    "priorExactSiteDrawing": {
+      "applicationContext": "24/03352/FULL6 public planning-document set",
+      "drawingReference": "DRAW/41.LR/0924/002",
+      "drawingDescription": "Existing Floor Plans with site plan",
+      "scale": "1:50 / 1:200 @ A1",
+      "measurementProvenance": "Drawing note states site measurements were taken by Langleys Chartered Surveyors' office in September 2022.",
+      "neighbourGeometryLimitation": "Drawing note states relevant neighbouring-building measurements may have been taken from public drawings, printed to scale and hand-dimensioned before redrawing; elevations are representational rather than exact.",
+      "planningUseLimitation": "Drawing notes state drawings are for planning purposes only, warn against errors from scaling, and require construction information to be cross-checked on site."
+    },
+    "decision": "SUPPLEMENTAL_MEASURED_SITE_CONTEXT_IDENTIFIED_FIELD_RETURN_STILL_REQUIRED",
+    "scopeEffect": [
+      "Use the prior measured-site drawing and current indexed planning plans as orientation/context inputs for the field package if controlled copies are available.",
+      "Do not derive the Policy 8 one-metre decision or RH-PROT-14 maintenance clearance by scaling a planning drawing.",
+      "Do not convert physical fence/wall/hedge depiction into a determined legal boundary.",
+      "The field package remains targeted to the exact east/west control features and usable passages adjacent to the unchanged T3/T4 Reference House placement."
+    ]
+  },
+  "structuralPackAudit": {
+    "baseBrief": "docs/reference-house/external-review-structural-rh11.md",
+    "lennardAddendum": "project/dpl/evidence-briefs/dpl-t9-lennard-structural-concept-addendum.md",
+    "finding": "RH-11 already contains the generic load-path, stability, floor, masonry/opening, roof/PV, foundation, adverse-case and rewind questions. The Lennard addendum supplies only site/candidate-specific context.",
+    "additionalGenericEngineeringQuestionsEarned": 0,
+    "decision": "PACKAGE_NOT_SCOPE_EXPANSION_REQUIRED"
+  },
+  "geometryPackAudit": {
+    "baseBrief": "project/dpl/evidence-briefs/dpl-t9-lennard-side-boundary-maintenance-geometry.md",
+    "finding": "Public planning material improves orientation and provenance context but does not supply the centimetre-scale, uncertainty-bearing physical-control return required by the existing decision rules.",
+    "additionalFullTopoScopeEarned": false,
+    "legalBoundaryOpinionEarned": false,
+    "decision": "TARGETED_FIELD_PACKAGE_REMAINS_MINIMUM_COMPETENT_RETURN"
+  }
+}

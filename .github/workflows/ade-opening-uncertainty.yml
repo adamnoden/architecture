@@ -1,0 +1,49 @@
+name: Prove ADE opening uncertainty grammar
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/architectural-drawing/**'
+      - 'compiler/publication-drawing-v2/**'
+      - 'publication/specimens/ade04b/**'
+      - '.github/workflows/ade-opening-uncertainty.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ade-opening-uncertainty-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Prove ADE semantic, wall and opening contracts
+        run: npm run test:architectural-drawing
+      - name: Generate exact-size opening-authority atlas
+        run: npx tsx publication/specimens/ade04b/generate.ts
+      - name: Validate uncertainty grammar and scale
+        run: npx tsx publication/specimens/ade04b/validate.ts
+      - name: Upload opening-authority atlas
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: ade-04b-opening-uncertainty
+          path: |
+            publication/specimens/ade04b/.work/ade04b-opening-uncertainty-1-100.svg
+            publication/specimens/ade04b/.work/ade04b-opening-uncertainty-1-50.svg
+            publication/specimens/ade04b/.work/manifest.json
+          if-no-files-found: error
+          retention-days: 30

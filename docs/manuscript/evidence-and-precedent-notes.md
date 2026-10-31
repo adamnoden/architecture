@@ -120,6 +120,4 @@ The remaining back matter records the limits and next obligations of the work ra
 
 The **Research Agenda** states what remains genuinely unanswered. The **Reference House Implementation Schedule** shows where virtual coordination ends and professional/project work begins. **Sources and further reading** provide the external intellectual and technical routes into the subject.
 
-Together they support one methodological claim:
-
-> **A proposition becomes more credible when the limits of its evidence are made as legible as the proposition itself.**
+Together they make the propositions and the limits of their evidence available for review.

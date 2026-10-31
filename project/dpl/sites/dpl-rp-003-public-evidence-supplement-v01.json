@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "dpl.realSitePublicEvidenceSupplement.v1",
+  "siteId": "DPL-RP-003",
+  "supplementId": "DPL-RP-003-DPL15B-PUBLIC-EVIDENCE-v0.1",
+  "supplementRevision": "0.1",
+  "assuranceProfile": "SCREENING",
+  "retrievalDate": "2026-10-24",
+  "baseline": {
+    "dpl15aMergeCommit": "732dabfca881cbb43b35a109d861e8921bbb0122",
+    "manifestPath": "project/dpl/sites/dpl-rp-003-trial-manifest-v01.json"
+  },
+  "sources": [
+    {
+      "id": "E1",
+      "url": "https://croydon.moderngov.co.uk/documents/s64687/Weekly_Decisions_310325to270425.pdf",
+      "host": "croydon.moderngov.co.uk",
+      "publisher": "London Borough of Croydon",
+      "authorityClass": "FIRST_PARTY_LOCAL_AUTHORITY_DECISION_RECORD",
+      "sourceRelationship": "FIRST_PARTY",
+      "applicationRef": "24/03598/FUL",
+      "documentIdentity": "Delegated Planning Decisions 31.03.2025 to 27.04.2025 / ward order",
+      "retrievalMode": "PUBLIC_WEB_TEXT_EXTRACTION_FROM_OFFICIAL_PDF",
+      "remoteByteIdentity": "NOT_ACQUIRED",
+      "geometryAuthority": "NO_GEOMETRY_AUTHORITY",
+      "recoveredFacts": [
+        "Site: 73A and 73B Woodside Green, South Norwood, London, SE25 5HU",
+        "Application type: Full planning permission",
+        "Proposal: demolition of existing garages and construction of a replacement two-storey four-bedroom dwellinghouse with off-street parking",
+        "Decision: Permission Granted",
+        "Decision date: 2025-04-11"
+      ],
+      "limitations": [
+        "Decision-list evidence confirms status/proposal identity only",
+        "No approved-plan schedule or dimensioned site geometry was recovered from this source"
+      ]
+    },
+    {
+      "id": "E2",
+      "url": "https://docs.planning.org.uk/20250225/117/SS8MYVJLJ6W00/yp3zbnvdl787fhmd.pdf",
+      "host": "docs.planning.org.uk",
+      "publisher": "Public planning-document mirror of applicant material",
+      "authorityClass": "PUBLIC_DOCUMENT_MIRROR_APPLICANT_STATEMENT",
+      "sourceRelationship": "MIRROR",
+      "applicationRef": "24/03598/FUL",
+      "documentIdentity": "Design and Access Statement",
+      "retrievalMode": "PUBLIC_WEB_INDEXED_TEXT_ONLY_PDF_PAGE_INSPECTION_UNAVAILABLE",
+      "remoteByteIdentity": "NOT_ACQUIRED",
+      "geometryAuthority": "CONTEXT_GEOMETRY_ONLY",
+      "recoveredFacts": [
+        "Proposal: demolition of existing garages and construction of a replacement two-storey four-bedroom dwellinghouse with off-street parking",
+        "Application site: 73A and 73B Woodside Green",
+        "Rear development land contains garages facing Dickenson's Lane and part of the rear gardens",
+        "Similar consent 18/05834/FUL granted 2019-03-08",
+        "Applicant statement says the application seeks to reinstate that consent"
+      ],
+      "limitations": [
+        "Applicant statement is not first-party decision authority",
+        "Controlled PDF page inspection was unavailable in this acquisition pass",
+        "No explicit site width, depth, area, levels, drawing scale, drawing number or approved-plan status was recovered",
+        "No pixel-derived measurement is admitted"
+      ]
+    },
+    {
+      "id": "E3",
+      "url": "https://docs.planning.org.uk/20250225/117/SS8MYVJLJ6W00/1bidftjj9lki2cty.pdf",
+      "host": "docs.planning.org.uk",
+      "publisher": "Public planning-document mirror of applicant material",
+      "authorityClass": "PUBLIC_DOCUMENT_MIRROR_APPLICANT_STATEMENT",
+      "sourceRelationship": "MIRROR",
+      "applicationRef": "24/03598/FUL",
+      "documentIdentity": "Fire Safety Statement",
+      "retrievalMode": "PUBLIC_WEB_INDEXED_TEXT_AND_VISUAL_METADATA_ONLY_PDF_PAGE_INSPECTION_UNAVAILABLE",
+      "remoteByteIdentity": "NOT_ACQUIRED",
+      "geometryAuthority": "CONTEXT_GEOMETRY_ONLY",
+      "recoveredFacts": [
+        "Property address: rear of 73A and 73B Woodside Green, South Norwood, London, SE25 5HU",
+        "Rear site includes garages facing Dickenson's Lane and part of rear gardens",
+        "Proposal: one four-bedroom dwelling with associated works, bin and cycle storage",
+        "Indexed visual metadata reports a site-location plan with red application boundary and north arrow"
+      ],
+      "limitations": [
+        "Applicant statement is not first-party decision authority",
+        "Indexed visual metadata is contextual evidence only",
+        "Controlled PDF page inspection was unavailable in this acquisition pass",
+        "No explicit scale/dimensions or approved-plan status was recovered",
+        "Red-line visual is not converted into numeric geometry"
+      ]
+    },
+    {
+      "id": "E4",
+      "url": "https://planning-records.uk/croydon/2024/",
+      "host": "planning-records.uk",
+      "publisher": "Planning-Records.uk",
+      "authorityClass": "THIRD_PARTY_INDEX",
+      "sourceRelationship": "THIRD_PARTY",
+      "applicationRef": "24/03598/FUL",
+      "documentIdentity": "Croydon 2024 application index",
+      "retrievalMode": "PUBLIC_WEB_INDEX_TEXT",
+      "remoteByteIdentity": "NOT_ACQUIRED",
+      "geometryAuthority": "NO_GEOMETRY_AUTHORITY",
+      "recoveredFacts": [
+        "Index reports 24/03598/FUL as withdrawn on 2024-10-25"
+      ],
+      "limitations": [
+        "Conflicts with later first-party Croydon decision authority",
+        "Not admitted as controlled decision status",
+        "Retained only as provenance/source-quality conflict evidence"
+      ]
+    }
+  ],
+  "decisionStatusResolution": {
+    "applicationRef": "24/03598/FUL",
+    "selectedSourceId": "E1",
+    "selectedStatus": "PERMISSION_GRANTED",
+    "selectedDecisionDate": "2025-04-11",
+    "conflictingSourceIds": ["E4"],
+    "resolutionRule": "Prefer later directly relevant first-party local-authority decision record over conflicting third-party index metadata."
+  },
+  "geometryReadiness": {
+    "state": "NOT_READY_PUBLIC_GEOMETRY_INSUFFICIENT",
+    "requiredForReady": [
+      "controlled application/red-line boundary geometry",
+      "explicit scale or dimensions sufficient to test a 12.0m x 10.8m screening footprint",
+      "controlled drawing identity/number/revision/date",
+      "reliable relationship between application boundary, Dickenson's Lane and retained 73A/73B land",
+      "sufficient explicit access geometry for screening placement"
+    ],
+    "available": [
+      "first-party permission/proposal identity",
+      "rear-site relationship to garages, Dickenson's Lane and rear gardens",
+      "contextual red-line location-plan metadata",
+      "historical related-consent reference 18/05834/FUL"
+    ],
+    "missing": [
+      "approved-plan schedule",
+      "controlled dimensioned site/block plan",
+      "explicit site width/depth/area usable at screening",
+      "controlled planning drawing scale sufficient for placement",
+      "explicit screening access dimensions",
+      "screening level/topography geometry"
+    ],
+    "candidateAuthoring": "NOT_AUTHORISED"
+  },
+  "unchangedExternalEvidenceBoundary": {
+    "legalTitleBoundary": "UNRESOLVED",
+    "ownershipControl": "UNRESOLVED",
+    "privateRights": "UNRESOLVED",
+    "currentPhysicalState": "UNRESOLVED",
+    "surveyGradeTopography": "UNRESOLVED",
+    "groundDrainageSewerUtilities": "UNRESOLVED",
+    "structuralAdequacy": "UNRESOLVED"
+  },
+  "resultBoundary": {
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "referenceHouseCandidate": "NOT_AUTHORED",
+    "referenceHouseMutation": "NOT_AUTHORISED",
+    "planningLikelihood": "NOT_CLAIMED",
+    "purchaseRecommendation": "NOT_CLAIMED"
+  }
+}

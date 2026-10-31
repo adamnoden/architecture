@@ -1,0 +1,48 @@
+name: TYP-05 difficult-content inventory
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/typ05-content-inventory.yml'
+      - 'publication/specimens/typ05/**'
+      - 'publication/publication.ts'
+      - 'publication/adapters.ts'
+      - 'publication/figures.ts'
+      - 'publication/plates.ts'
+      - 'docs/manuscript/**'
+      - 'docs/patterns/**'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Inventory reader-facing difficult content
+        run: npx tsx publication/specimens/typ05/inventory.ts
+
+      - name: Upload inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: typ05a-difficult-content-inventory
+          path: |
+            publication/.work/typ05/inventory.json
+            publication/.work/typ05/inventory.md
+          if-no-files-found: error
+          retention-days: 14

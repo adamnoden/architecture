@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "dpl.lennardT8AuthorityEvidence.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "researchDate": "2026-10-26",
+  "assuranceProfile": "SCREENING",
+  "authorityBoundary": "This record freezes current authoritative source/status facts used to classify the ten DPL-T7 substantive blockers. It does not perform planning determination, structural engineering, legal boundary determination, measured survey, flood modelling or evidence commissioning.",
+  "sources": [
+    {
+      "id": "T8-AUTH-01",
+      "sourceClass": "ADOPTED_LOCAL_DEVELOPMENT_PLAN_POLICY",
+      "title": "Bromley Local Plan 2019 — Policy 8 Side Space",
+      "url": "https://www.bromley.gov.uk/downloads/file/51/bromley-local-plan",
+      "retrievedAt": "2026-10-26",
+      "observed": [
+        "The Bromley Local Plan was adopted in 2019 and remains part of the operative development plan.",
+        "Policy 8 normally requires a minimum 1 metre side space for a residential proposal of two or more storeys, retained for the full height and length of the building.",
+        "Where higher standards of separation already exist, Policy 8 expects more generous side space, so 1 metre is a numeric floor rather than a complete qualitative planning pass."
+      ],
+      "authorityBoundary": "Adopted planning policy. Exact compliance still requires authoritative site-boundary geometry and planning judgement for the higher-separation remainder."
+    },
+    {
+      "id": "T8-AUTH-02",
+      "sourceClass": "OFFICIAL_EMERGING_LOCAL_PLAN_STATUS",
+      "title": "Review of the Bromley Local Plan / Direction of Travel",
+      "url": "https://www.bromley.gov.uk/planning-policy/review-bromley-local-plan/2",
+      "retrievedAt": "2026-10-26",
+      "observed": [
+        "The current official Bromley review surface records the 2025 Direction of Travel as the second Regulation 18 consultation.",
+        "The council explicitly states that the Direction of Travel does not contain draft policies.",
+        "The page describes preparation of a Submission Draft as a next step; it does not expose such a draft as adopted or operative development-plan policy."
+      ],
+      "authorityBoundary": "Current source/status fact only. It does not assign planning weight to any future or unpublished policy."
+    },
+    {
+      "id": "T8-AUTH-03",
+      "sourceClass": "OFFICIAL_EMERGING_STRATEGIC_PLAN_STATUS",
+      "title": "Draft London Plan consultation",
+      "url": "https://www.london.gov.uk/programmes-strategies/planning/london-plan/next-london-plan/draft-london-plan-consultation",
+      "retrievedAt": "2026-10-26",
+      "observed": [
+        "The Mayor published a Draft London Plan for statutory consultation from 16 July to 15 October 2026.",
+        "The draft is not the adopted London Plan; examination is scheduled for 2027 and adoption for 2028."
+      ],
+      "authorityBoundary": "Emerging strategic-plan status only. Candidate-specific material weight remains planning judgement."
+    },
+    {
+      "id": "T8-AUTH-04",
+      "sourceClass": "CURRENT_NATIONAL_PLANNING_POLICY",
+      "title": "National Planning Policy Framework — DM4 Emerging development plan proposals",
+      "url": "https://www.gov.uk/guidance/national-planning-policy-framework-chapter-3-decision-making-policies-dm1-10",
+      "retrievedAt": "2026-10-26",
+      "observed": [
+        "Relevant emerging-plan policies may be given weight according to stage of preparation, unresolved objections and compliance with the Framework.",
+        "The Framework does not supply one universal scalar material weight for a candidate site."
+      ],
+      "authorityBoundary": "National policy supplies the weighting factors; application of those factors to relevant emerging policies remains planning judgement."
+    },
+    {
+      "id": "T8-AUTH-05",
+      "sourceClass": "CURRENT_STATUTORY_TRANSITION_RULE",
+      "title": "Building Regulations etc. (Amendment) (England) Regulations 2026 — regulation 5",
+      "url": "https://www.legislation.gov.uk/uksi/2026/335/regulation/5/made",
+      "retrievedAt": "2026-10-26",
+      "observed": [
+        "For non-HRB work, the 2026 amendments have a transition keyed to whether the relevant notice/application is given before 24 March 2027 and work is commenced before 24 March 2028.",
+        "The Lennard Reference House control has no admitted future building-control notice/application date or qualifying commencement event."
+      ],
+      "authorityBoundary": "The transition rule is authoritative, but exact future source applicability cannot be selected before the project events on which the rule turns exist."
+    },
+    {
+      "id": "T8-AUTH-06",
+      "sourceClass": "ENVIRONMENT_AGENCY_PUBLIC_SCREENING_SERVICE",
+      "title": "Check the long term flood risk for an area in England",
+      "url": "https://www.gov.uk/check-long-term-flood-risk",
+      "retrievedAt": "2026-10-26",
+      "observed": [
+        "The Environment Agency service provides area-level long-term screening for rivers/sea, surface water, reservoirs and groundwater where data is available.",
+        "The service explicitly does not state whether an individual property will flood."
+      ],
+      "authorityBoundary": "Appropriate high-level SCREENING source, not a property-specific flood assessment, FRA, drainage design or proof of absence. Exact address-level output for the Lennard candidate has not yet been admitted into the control record."
+    }
+  ],
+  "controlledProjectEvidence": [
+    "project/dpl/sites/dpl-t-control-004-lennard-road-analysis-bng-v01.json",
+    "project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json",
+    "project/dpl/sites/dpl-t-control-004-lennard-road-street-access.json",
+    "project/dpl/sites/dpl-t-control-004-lennard-road-source-manifest.json",
+    "project/dpl/targets/bromley-local-planning-v1.json",
+    "project/dpl/dpl-t7-lennard-acceleration-disposition.md"
+  ],
+  "classificationRules": [
+    "A future project event is not missing site evidence merely because it has not happened yet.",
+    "A planning-weight judgement is not converted into a survey requirement.",
+    "The HMLR title-index polygon may expose a decision-critical geometry risk but cannot prove a legal or measured side-boundary clearance.",
+    "Where one narrow evidence item legitimately serves multiple blockers, T8 records a shared evidence class rather than duplicating procurement.",
+    "No evidence is commissioned by T8."
+  ]
+}

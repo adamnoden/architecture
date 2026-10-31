@@ -1,0 +1,69 @@
+{
+  "schema": "dpl.controlStreetAccessEvidence.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "site": "41 Lennard Road, Bromley, BR2 8LN",
+  "retrievedAt": "2026-10-25",
+  "sources": [
+    {
+      "id": "T2-R5-01",
+      "sourceType": "SUBMITTED_PLANNING_DESIGN_ACCESS_STATEMENT_PUBLIC_MIRROR",
+      "url": "https://docs.planning.org.uk/20240909/108/SJCF0KBTMXE00/nync6wgbf4wjnom3.pdf",
+      "projectReference": "41.LR/0924",
+      "reportDate": "2024-09-04",
+      "authorityClass": "PUBLIC_DOCUMENT_MIRROR_APPLICANT_STATEMENT",
+      "exactIdentityFacts": {
+        "address": "41 Lennard Road, Bromley, BR2 8LN",
+        "easting": 542903,
+        "northing": 166217
+      },
+      "physicalRelationshipFacts": [
+        "The bungalow front elevation faces south-west and the property is on the eastern side of Lennard Road.",
+        "The site description identifies the front / south-west adjoining land as Lennard Road public highway.",
+        "The primary existing access route is through the front door and garden.",
+        "A dropped kerb is recorded directly in front of the site, allowing vehicles to enter the front garden."
+      ],
+      "limitations": [
+        "Applicant-authored planning evidence mirrored publicly; not a council highway-adoption certificate.",
+        "The phrase public highway is retained as the applicant statement's proposition, not promoted to independently proved legal highway extent.",
+        "Private access rights are not established."
+      ]
+    },
+    {
+      "id": "T2-R5-02",
+      "sourceType": "CURRENT_PLANNING_REGISTER_INDEX",
+      "applicationRef": "26/02618/FPA",
+      "authorityClass": "CURRENT_PUBLIC_INDEX_OF_BROMLEY_REGISTER",
+      "currentProposalFact": "The current replacement-house proposal includes front driveway alterations.",
+      "limitations": [
+        "Used as current planning-lineage corroboration of the continuing front-access relationship, not as precise street geometry or private-right evidence."
+      ]
+    }
+  ],
+  "controlledGeometryComposition": {
+    "titleBoundaryReference": "57071807",
+    "titleBoundaryCrs": "EPSG:4326 transformed to EPSG:27700 for analysis",
+    "streetSide": "SOUTH_WEST",
+    "frontageDerivation": "Applicant statement identifies the south-west/front boundary as Lennard Road; exact HMLR screening polygon supplies the controlled parcel geometry.",
+    "southWestBoundarySegmentBng": {
+      "start": [542891.0360423778, 166209.4646066198],
+      "end": [542898.2701962102, 166202.3222028868],
+      "lengthMetres": 10.165968362933082,
+      "bearingFromBngEastingDegrees": -44.63434764710605
+    },
+    "note": "The boundary segment is SCREENING parcel geometry only; it is not asserted to be the legally determined highway boundary."
+  },
+  "transportAttempts": {
+    "openRoadGeometry": "NOT_REQUIRED_FOR_FINAL_R5_AFTER_SITE_SPECIFIC_PLANNING_EVIDENCE",
+    "overpassPrimaryPost": "HTTP_406",
+    "overpassKumiGet": "READ_TIMEOUT",
+    "overpassPrimaryGet": "HTTP_406",
+    "overpassNchcGet": "DNS_FAILURE",
+    "disposition": "Do not build or retain road-scraping machinery merely to duplicate the site-specific frontage/access evidence already available."
+  },
+  "r5Disposition": "SATISFIED_SCREENING_PHYSICAL_STREET_ACCESS_RELATIONSHIP",
+  "heldAuthority": [
+    "LEGAL_HIGHWAY_EXTENT_OR_ADOPTION",
+    "PRIVATE_ACCESS_RIGHTS",
+    "CURRENT_SURVEYED_KERB_AND_CROSSOVER_GEOMETRY"
+  ]
+}

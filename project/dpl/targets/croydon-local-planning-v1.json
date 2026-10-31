@@ -1,0 +1,306 @@
+{
+  "schemaVersion": "dpl.boroughPlanningSlice.v1",
+  "id": "CROYDON-LOCAL-PLANNING-2018-2026-10-21",
+  "borough": "London Borough of Croydon",
+  "researchDate": "2026-10-21",
+  "parentStrategicTargetId": "LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20",
+  "proofSiteId": "DPL-RP-003",
+  "scope": [
+    "Local Plan 2018 design / character / amenity",
+    "Local Plan 2018 sustainable drainage / flood-risk planning policy",
+    "Local Plan 2018 sustainable travel / highway safety",
+    "Local Plan 2018 car / cycle parking quality and local requirements",
+    "current source-status / emerging-plan / revoked-guidance separation"
+  ],
+  "sourceSnapshots": [
+    {
+      "id": "CROY-DEVELOPMENT-PLAN-PAGE-2026-10-21",
+      "sourceClass": "OFFICIAL_DEVELOPMENT_PLAN_MEMBERSHIP_RECORD",
+      "title": "Croydon's development plan",
+      "canonicalSource": "https://www.croydon.gov.uk/planning-and-regeneration/planning-policy/croydons-development-plan",
+      "status": "CURRENT_COUNCIL_DEVELOPMENT_PLAN_PAGE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-21",
+      "authorityNote": "Identifies the Croydon Local Plan 2018 and London Plan as current development-plan components."
+    },
+    {
+      "id": "CROY-LOCAL-PLAN-2018",
+      "sourceClass": "ADOPTED_LOCAL_DEVELOPMENT_PLAN_POLICY",
+      "title": "Croydon Local Plan 2018",
+      "adoptedDate": "2018-02-27",
+      "canonicalSource": "https://www.croydon.gov.uk/sites/default/files/2022-01/croydon-local-plan-20180.pdf",
+      "status": "OPERATIVE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-21"
+    },
+    {
+      "id": "CROY-LOCAL-PLAN-REVIEW-EXAM-2026-10-21",
+      "sourceClass": "EMERGING_LOCAL_PLAN",
+      "title": "Croydon Local Plan review examination",
+      "canonicalSource": "https://www.croydon.gov.uk/planning-and-regeneration/planning-policy/local-plan-review/local-plan-review-examination",
+      "status": "EMERGING_NON_OPERATIVE_AT_RESEARCH_DATE",
+      "retrievedAt": "2026-10-21",
+      "authorityNote": "Submitted for examination and progressing through examination/main-modification process; not substituted for the adopted 2018 plan in this target."
+    },
+    {
+      "id": "CROY-SUBURBAN-DESIGN-GUIDE-REVOCATION-2022",
+      "sourceClass": "REVOKED_SUPPLEMENTARY_PLANNING_DOCUMENT",
+      "title": "Suburban Design Guide Supplementary Planning Document (SPD2) — revocation",
+      "canonicalSource": "https://www.croydon.gov.uk/planning-and-regeneration/planning-policy/further-planning-guidance/supplementary-planning-documents-and-guidance",
+      "status": "REVOKED_FROM_2022-07-26",
+      "retrievedAt": "2026-10-21",
+      "authorityNote": "Council states SPD2 ceased to be used as material guidance for determining planning applications from 26 July 2022."
+    }
+  ],
+  "methodClasses": [
+    {
+      "id": "LOCAL_NATIVE_NUMERIC",
+      "kind": "NATIVE_DETERMINISTIC",
+      "claimBoundary": "Evaluates only explicit local numeric policy terms from admitted proposal/site facts; does not decide overall policy compliance or planning permission."
+    },
+    {
+      "id": "LOCAL_DESIGN_JUDGEMENT",
+      "kind": "EXTERNAL_PLANNING_OR_ARCHITECTURAL_JUDGEMENT",
+      "claimBoundary": "Character, layout, massing, amenity and context response remain planning/architectural judgement supported by evidence."
+    },
+    {
+      "id": "LOCAL_TECHNICAL_PLANNING_EVIDENCE",
+      "kind": "EXTERNAL_EVIDENCE_AND_INSPECTION",
+      "claimBoundary": "Flood/drainage/highway/parking evidence required by local planning policy remains external evidence and planning assessment; this class does not replace specialist technical design."
+    },
+    {
+      "id": "LOCAL_PLANNING_DETERMINATION",
+      "kind": "EXTERNAL_PLANNING_DETERMINATION",
+      "claimBoundary": "Planning permission, refusal, appeal and condition discharge remain external authority outcomes."
+    }
+  ],
+  "obligations": [
+    {
+      "id": "CROY-DM10-1-DESIGN-CHARACTER",
+      "sourceSnapshot": "CROY-LOCAL-PLAN-2018",
+      "sourceProvision": "Policy DM10.1-10.3",
+      "title": "High-quality design respecting development pattern, scale, massing, appearance and local character",
+      "applicability": "APPLIES_TO_RELEVANT_NEW_RESIDENTIAL_DEVELOPMENT_UNLESS_A_MORE_SPECIFIC_LOCAL_POLICY_OVERRIDES",
+      "resolutionMethod": "LOCAL_DESIGN_JUDGEMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "authoritative proposal geometry / massing / siting",
+        "evidenced local character / surrounding built and natural features",
+        "applicable place-specific-policy status",
+        "cumulative/context evidence where material"
+      ],
+      "proofCaseEvidenceRefs": [
+        "DPL-RP-003:C06"
+      ],
+      "nonClaim": "The two-house appeal's character harm is proposal-specific evidence and is not converted into a site-level fail or a universal dimensional rule."
+    },
+    {
+      "id": "CROY-DM10-4-PRIVATE-AMENITY-AREA",
+      "sourceSnapshot": "CROY-LOCAL-PLAN-2018",
+      "sourceProvision": "Policy DM10.4(a-d)",
+      "title": "Minimum private amenity-space quantity plus functional-quality duties",
+      "applicability": "APPLIES_TO_NEW_RESIDENTIAL_DEVELOPMENT",
+      "resolutionMethod": "LOCAL_NATIVE_NUMERIC",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "occupant or bedspace count",
+        "qualifying private amenity area after local-policy exclusions",
+        "balcony dimensions where a balcony is relied upon"
+      ],
+      "deterministicRule": "minimum private amenity area = 5m2 for 1-2 occupants + 1m2 for each additional occupant; if a balcony is relied upon, minimum balcony width and depth = 1.5m",
+      "judgementRemainder": [
+        "high-quality design",
+        "functional usability beyond the numeric minimum",
+        "local-character response",
+        "correct exclusion of footpaths, driveways, front gardens, vehicle/cycle/refuse areas where applicable"
+      ],
+      "proofCaseEvidenceRefs": [
+        "DPL-RP-003:C07"
+      ],
+      "compositionNote": "This local obligation may overlap numerically with London Plan D6 but remains a separate local development-plan obligation with additional local exclusions / quality duties."
+    },
+    {
+      "id": "CROY-DM10-4-HOST-GARDEN-RETENTION",
+      "sourceSnapshot": "CROY-LOCAL-PLAN-2018",
+      "sourceProvision": "Policy DM10.4(e)",
+      "title": "Host-property garden retention where development occurs in the grounds of an existing retained building",
+      "applicability": "CONDITIONAL_ON_DEVELOPMENT_IN_GROUNDS_OF_EXISTING_RETAINED_BUILDING",
+      "resolutionMethod": "LOCAL_NATIVE_NUMERIC",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "whether the proposal is development in the grounds of an existing retained building",
+        "authoritative existing host-garden area",
+        "authoritative retained host-garden area",
+        "retained host-garden length"
+      ],
+      "deterministicRule": "retained host garden must have minimum length 10m and area no less than the smaller of one-half of the existing garden area or 200m2",
+      "proofCaseEvidenceRefs": [
+        "DPL-RP-003:C10",
+        "DPL-RP-003:C15"
+      ],
+      "nonClaim": "DPL-RP-003 does not currently provide survey/title-grade host-garden geometry or legal parcel relationships sufficient to run this rule."
+    },
+    {
+      "id": "CROY-DM10-6-NEIGHBOUR-AMENITY",
+      "sourceSnapshot": "CROY-LOCAL-PLAN-2018",
+      "sourceProvision": "Policy DM10.6",
+      "title": "Protect neighbouring amenity, privacy, sunlight/daylight and functional private-space relationships",
+      "applicability": "APPLIES_TO_RELEVANT_DEVELOPMENT",
+      "resolutionMethod": "LOCAL_DESIGN_JUDGEMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "surveyed neighbour/opening/private-space geometry",
+        "proposal openings / levels / massing",
+        "sunlight/daylight evidence where material",
+        "privacy/overlooking evidence"
+      ],
+      "boundedPolicyFact": "DM10.6(c) identifies direct overlooking of private outdoor space within 10m perpendicular to the rear elevation of a dwelling, but the complete DM10.6 assessment remains wider than one distance check."
+    },
+    {
+      "id": "CROY-DM25-SUDS-FLOOD",
+      "sourceSnapshot": "CROY-LOCAL-PLAN-2018",
+      "sourceProvision": "Policy DM25",
+      "title": "Local flood-risk and sustainable-drainage planning duties",
+      "applicability": "APPLIES_TO_DEVELOPMENT_WITH_SUBTESTS_FACT_GATED_BY_FLOOD_RISK_AND_PROPOSAL_CLASS",
+      "resolutionMethod": "LOCAL_TECHNICAL_PLANNING_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "authoritative flood-risk evidence from applicable sources",
+        "proposal/site class for sequential/exception-test applicability",
+        "surface-water flow/topography evidence",
+        "drainage strategy / runoff evidence",
+        "SuDS maintenance and multifunctionality evidence"
+      ],
+      "policyFacts": [
+        "DM25.3 states sustainable drainage systems are required in all development",
+        "surface run-off should be managed as close to source as possible",
+        "policy seeks better-than-greenfield runoff rates",
+        "drainage should accord with the London Plan sustainable-drainage hierarchy",
+        "future maintenance must be considered"
+      ],
+      "crossAuthorityRefs": [
+        "DPL-09C Part H target",
+        "London strategic planning target"
+      ],
+      "nonClaim": "Local planning drainage policy does not replace Part H, hydraulic design, LLFA evidence or environmental/sewer authority."
+    },
+    {
+      "id": "CROY-DM29-SUSTAINABLE-TRAVEL-HIGHWAY",
+      "sourceSnapshot": "CROY-LOCAL-PLAN-2018",
+      "sourceProvision": "Policy DM29",
+      "title": "Sustainable travel, highway safety and severe-network-impact duties",
+      "applicability": "APPLIES_TO_DEVELOPMENT; MAJOR_DEVELOPMENT_HAS_ADDITIONAL_TRANSPORT_DOCUMENT_EXPECTATIONS",
+      "resolutionMethod": "LOCAL_DESIGN_JUDGEMENT",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "proposal access / parking / movement geometry",
+        "local highway and pedestrian/cycle context",
+        "public-transport context",
+        "transport evidence proportionate to development scale"
+      ],
+      "proofCaseEvidenceRefs": [
+        "DPL-RP-003:C08"
+      ]
+    },
+    {
+      "id": "CROY-DM30-CAR-CYCLE-PARKING",
+      "sourceSnapshot": "CROY-LOCAL-PLAN-2018",
+      "sourceProvision": "Policy DM30 / Table 10.1",
+      "title": "Local car/cycle-parking quality, safety and local requirements",
+      "applicability": "APPLIES_TO_NEW_DEVELOPMENT_WITH_FACT_GATED_SUBCLAUSES",
+      "resolutionMethod": "LOCAL_TECHNICAL_PLANNING_EVIDENCE",
+      "defaultResultAtCurrentDPLEvidence": "UNRESOLVED",
+      "requiredInputs": [
+        "current London strategic parking-standard target applicable to the proposal",
+        "PTAL / on-street parking-stress evidence where relevant",
+        "proposal parking/cycle/storage geometry",
+        "highway/dropped-kerb context",
+        "loss-of-existing-parking evidence where relevant"
+      ],
+      "compositionNote": "The adopted local policy expressly refers to pan-London parking standards. DPL-10C does not hard-code superseded 2018-era London Plan table values as the current strategic target; current London strategic authority must be composed separately.",
+      "proofCaseEvidenceRefs": [
+        "DPL-RP-003:C08"
+      ]
+    }
+  ],
+  "excludedOrHeldSources": [
+    {
+      "id": "CROY-DM47-WOODSIDE-PLACE-SPECIFIC",
+      "reason": "Woodside place context does not by itself prove DM47's named Portland Road spatial clauses apply to DPL-RP-003. Spatial applicability must come from the policy text / policies map, not the word 'Woodside'."
+    },
+    {
+      "id": "CROY-SUBURBAN-DESIGN-GUIDE-SPD2",
+      "reason": "Revoked from 26 July 2022 and not admitted as current material guidance."
+    },
+    {
+      "id": "CROY-LOCAL-PLAN-REVIEW",
+      "reason": "Emerging examination-stage plan is not substituted for the adopted 2018 plan at the 2026-10-21 target snapshot."
+    }
+  ],
+  "proofCaseEvidence": [
+    {
+      "id": "CROY-24-03598-FUL",
+      "sourceClass": "OFFICIAL_LOCAL_AUTHORITY_PLANNING_DECISION_EVIDENCE",
+      "siteRef": "DPL-RP-003",
+      "proposal": "one two-storey four-bedroom dwelling with off-street parking",
+      "outcome": "PERMISSION_GRANTED",
+      "authorityBoundary": "Proposal-specific external permission evidence; not a reusable site pass."
+    },
+    {
+      "id": "CROY-25-02151-FUL",
+      "sourceClass": "PUBLIC_LOCAL_PLANNING_RECORD",
+      "siteRef": "DPL-RP-003",
+      "proposal": "two dwellinghouses on the rear site",
+      "outcome": "REFUSED_BEFORE_APPEAL",
+      "authorityBoundary": "Proposal-specific decision evidence."
+    },
+    {
+      "id": "PINS-6005406-SUMMARY",
+      "sourceClass": "PUBLIC_SUMMARY_OF_PLANNING_INSPECTORATE_DECISION",
+      "siteRef": "DPL-RP-003",
+      "decisionDate": "2026-05-12",
+      "outcome": "APPEAL_DISMISSED",
+      "issues": [
+        "character and appearance",
+        "future-occupier private amenity / living conditions",
+        "highway safety / parking"
+      ],
+      "authorityBoundary": "The controlled corpus has not yet recovered an Inspectorate-hosted primary decision document; this summary evidence must not be promoted into target policy or universal site rules."
+    }
+  ],
+  "composition": {
+    "strategicTargetId": "LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20",
+    "rule": "Local and strategic obligations coexist as typed development-plan authority. No precedence is inferred from list order or locality. Apparent conflict requires the planning/legal conflict semantics defined by DPL-10A rather than a more-local-wins rule.",
+    "duplicateNumericPolicyRule": "Where local and strategic policies express similar numeric requirements, preserve both obligation identities and their distinct additional conditions; do not merge them merely because the numeric baseline happens to match."
+  },
+  "proofBoundary": {
+    "nativeNow": [
+      "exact source/status identity",
+      "DM10.4 explicit private-amenity numeric baseline once proposal facts exist",
+      "DM10.4(e) host-garden retention formula once applicability and survey facts exist"
+    ],
+    "judgementOrExternalNow": [
+      "DM10 character / massing / siting",
+      "DM10.6 neighbour amenity",
+      "DM25 flood / SuDS planning assessment",
+      "DM29 highway / sustainable-travel judgement",
+      "DM30 parking/highway context",
+      "planning permission / refusal / appeal outcome"
+    ],
+    "unsupportedUntilFurtherPacket": [
+      "whole Croydon planning compliance",
+      "Reference House planning-permission prediction",
+      "site-level planning suitability",
+      "generic borough abstraction proven beyond Croydon"
+    ]
+  },
+  "predeclaredAdversarialReplay": {
+    "borough": "London Borough of Bromley",
+    "status": "HELD_UNTIL_DPL-10C_CLOSES",
+    "attackAxes": [
+      "backland/private-access condition",
+      "tree/TPO history",
+      "drainage-condition history",
+      "different local-plan / guidance source ecology",
+      "different proposal-history structure"
+    ]
+  }
+}

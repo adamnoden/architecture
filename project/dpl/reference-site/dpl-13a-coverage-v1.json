@@ -1,0 +1,271 @@
+{
+  "schemaVersion": "dpl.canonicalCoverageManifest.v1",
+  "id": "DPL-13A-COVERAGE-v1",
+  "assuranceProfile": "SCREENING",
+  "authoritySources": [
+    "project/dpl/dpl-02-reference-house-conformance.md",
+    "project/dpl/dpl-04-compilation-maturity.md",
+    "project/dpl/dpl-07-reference-site.md",
+    "project/dpl/dpl-08b-ground-datum-plinth-approach-interface.md",
+    "project/dpl/dpl-08c-foul-surface-site-water-interface.md",
+    "project/dpl/dpl-09b-structure-ground-moisture-materials.md",
+    "project/dpl/dpl-09c-england-drainage-waste-water.md",
+    "project/dpl/dpl-10b-london-strategic-residential-design.md",
+    "project/dpl/dpl-11-site-due-diligence-model.md",
+    "project/dpl/dpl-12b-authored-candidate-conformance.md",
+    "project/dpl/dpl-wave-d-integration-admission-review.md"
+  ],
+  "coverageCompleteness": "NOT_ESTABLISHED",
+  "conclusionReadiness": "NOT_ESTABLISHED",
+  "entries": [
+    {
+      "id": "COV-RH-CONFORMANCE-BOUNDED",
+      "classification": "RUNTIME_REPRESENTED",
+      "owner": "DPL-02 / DPL-12B",
+      "subject": "bounded executable Reference House candidate conformance",
+      "representedBy": ["RH-I02", "RH-PROT-01", "RH-PROT-04", "RH-PROT-06", "RH-V01", "RH-V02"],
+      "boundary": "Only currently executable DPL-02 clauses/routes are represented; other identity/protected-order clauses remain OPEN."
+    },
+    {
+      "id": "COV-IF-08B",
+      "classification": "RUNTIME_REPRESENTED",
+      "owner": "DPL-08B",
+      "subject": "ground / datum / plinth / accessible-approach interface identity",
+      "representedBy": ["DPL-08B-GROUND-DATUM-PLINTH-APPROACH"]
+    },
+    {
+      "id": "COV-IF-08C",
+      "classification": "RUNTIME_REPRESENTED",
+      "owner": "DPL-08C",
+      "subject": "foul / surface-water / site-water interface identity",
+      "representedBy": ["DPL-08C-FOUL-SURFACE-SITE-WATER"]
+    },
+    {
+      "id": "COV-ENG-09B",
+      "classification": "RUNTIME_REPRESENTED",
+      "owner": "DPL-09B",
+      "subject": "England structure / ground / moisture / materials target slice",
+      "representedBy": ["ENG-BC-STRUCTURE-GROUND-MOISTURE-MATERIALS-2026-10-20"]
+    },
+    {
+      "id": "COV-ENG-09C",
+      "classification": "RUNTIME_REPRESENTED",
+      "owner": "DPL-09C",
+      "subject": "England drainage / waste-water target slice",
+      "representedBy": ["ENG-BC-DRAINAGE-WASTE-WATER-2026-10-21"]
+    },
+    {
+      "id": "COV-LON-10B",
+      "classification": "RUNTIME_REPRESENTED",
+      "owner": "DPL-10B",
+      "subject": "London strategic residential/design planning target",
+      "representedBy": ["LON-PLAN-2021-RESIDENTIAL-DESIGN-2026-10-20"]
+    },
+    {
+      "id": "COV-RS01-CLAIMS",
+      "classification": "SITE_CLAIM_ONLY",
+      "owner": "DPL-07",
+      "subject": "complete DPL-RS-01 v0.1 synthetic claim register",
+      "representedBy": [
+        "RS-PARCEL-01",
+        "RS-FRAME-01",
+        "RS-STREET-01",
+        "RS-HOUSE-XFORM-01",
+        "RS-SIDES-01",
+        "RS-GARDENS-01",
+        "RS-TOPO-01",
+        "RS-FFL-01",
+        "RS-ACCESS-01",
+        "RS-NBR-W-01",
+        "RS-NBR-E-01",
+        "RS-NBR-OPEN-01",
+        "RS-TREE-01",
+        "RS-TREE-ROOT-01",
+        "RS-GROUND-01",
+        "RS-SEWER-STREET-01",
+        "RS-SEWER-DETAIL-01",
+        "RS-SW-01",
+        "RS-UTIL-E-01",
+        "RS-UTIL-W-01",
+        "RS-UTIL-T-01",
+        "RS-UTIL-CAP-01",
+        "RS-HERITAGE-01",
+        "RS-TITLE-CONTROL-01",
+        "RS-TITLE-DETAIL-01",
+        "RS-FLOOD-01",
+        "RS-NOISE-01",
+        "RS-ECO-01",
+        "RS-CONST-01"
+      ],
+      "boundary": "A represented site claim is not automatically connected to an executable due obligation."
+    },
+    {
+      "id": "COV-RH-CONFORMANCE-OPEN",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-02 / DPL-12B",
+      "subject": "non-native Reference House identity/protected-order conformance clauses",
+      "boundary": "DPL-12B deliberately leaves unrepresented clauses OPEN rather than inferring conformance."
+    },
+    {
+      "id": "COV-DPL11-TITLE-BOUNDARY",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-11",
+      "subject": "authoritative title/control and precise legal boundary evidence",
+      "claimRefs": ["RS-TITLE-CONTROL-01", "RS-TITLE-DETAIL-01"]
+    },
+    {
+      "id": "COV-DPL11-PRIVATE-RIGHTS",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-11",
+      "subject": "covenants, easements, rights of way, wayleaves, ransom strips and third-party access rights",
+      "claimRefs": ["RS-TITLE-DETAIL-01"]
+    },
+    {
+      "id": "COV-DPL11-PARTY-WALL-NEIGHBOUR",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-11",
+      "subject": "Party Wall / neighbour-process applicability and evidence",
+      "claimRefs": ["RS-NBR-W-01", "RS-NBR-E-01", "RS-NBR-OPEN-01"]
+    },
+    {
+      "id": "COV-DPL11-SEWER-UNDERTAKER",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-11",
+      "subject": "public sewer location/depth/capacity/connection rights and undertaker relationship",
+      "claimRefs": ["RS-SEWER-STREET-01", "RS-SEWER-DETAIL-01", "RS-SW-01"]
+    },
+    {
+      "id": "COV-DPL11-UTILITIES",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-11",
+      "subject": "utility capacity, exact routes, connection rights, diversions and easements",
+      "claimRefs": ["RS-UTIL-E-01", "RS-UTIL-W-01", "RS-UTIL-T-01", "RS-UTIL-CAP-01"]
+    },
+    {
+      "id": "COV-DPL11-GROUND",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-11",
+      "subject": "ground/geotechnics, contamination, groundwater, gas/radon and tree-ground interaction evidence",
+      "claimRefs": ["RS-GROUND-01", "RS-TREE-01", "RS-TREE-ROOT-01"]
+    },
+    {
+      "id": "COV-DPL11-PHYSICAL-WATER-FLOOD",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-11 / competent site evidence",
+      "subject": "physical flood/water evidence outside planning-policy abstraction",
+      "claimRefs": ["RS-FLOOD-01", "RS-SW-01", "RS-GROUND-01"]
+    },
+    {
+      "id": "COV-DPL11-CONSTRUCTION-LOGISTICS",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-11 / delivery",
+      "subject": "detailed temporary access, scaffold/tower bearing, highway occupation, oversailing and construction logistics",
+      "claimRefs": ["RS-CONST-01", "RS-ACCESS-01"]
+    },
+    {
+      "id": "COV-ENGLAND-TARGET-COMPLETENESS",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-09",
+      "subject": "full England new-dwelling obligation corpus",
+      "boundary": "DPL-09B/C are intentionally bounded slices, not complete Building Regulations coverage."
+    },
+    {
+      "id": "COV-LOCAL-BOROUGH-TARGET",
+      "classification": "DUE_CLASSIFICATION_NOT_ESTABLISHED",
+      "owner": "DPL-10",
+      "subject": "local borough planning target for a real London parcel",
+      "boundary": "DPL-RS-01 is synthetic and has no real borough. No Croydon/Bromley target is fabricated; absence here is not general real-site non-applicability."
+    },
+    {
+      "id": "COV-CLAIM-OBLIGATION-MAPPING",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-04 / DPL-11 / target owners",
+      "subject": "complete profile-aware mapping from consequential site claims/unknowns to due obligations",
+      "boundary": "The canonical claim register is represented, but not every claim has an executable due obligation."
+    },
+    {
+      "id": "COV-ROUTE-EXHAUSTION",
+      "classification": "KNOWN_RUNTIME_GAP",
+      "owner": "DPL-02 / future deployment conclusion machinery",
+      "subject": "admitted-route exhaustion or invariant-blocker proof",
+      "boundary": "Required before candidate failure can become site INCOMPATIBLE."
+    },
+    {
+      "id": "COV-FUTURE-TOPOGRAPHY",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING",
+      "subject": "detailed topographic levels beyond the authored broad synthetic plane",
+      "boundary": "Normally future-due at screening unless decision-critical evidence accelerates it."
+    },
+    {
+      "id": "COV-FUTURE-TITLE-DUE-DILIGENCE",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING",
+      "subject": "full title/legal due diligence",
+      "boundary": "Normally future-due at screening unless a known private constraint becomes decision-critical."
+    },
+    {
+      "id": "COV-FUTURE-UTIL-SEWER-MAPPING",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING",
+      "subject": "detailed utilities and sewer mapping",
+      "boundary": "Normally future-due at screening unless a known network/easement issue becomes decision-critical."
+    },
+    {
+      "id": "COV-FUTURE-GEOTECH",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING",
+      "subject": "geotechnical investigation",
+      "boundary": "Normally future-due at screening unless a known ground/tree condition becomes decision-critical."
+    },
+    {
+      "id": "COV-FUTURE-DRAINAGE-DESIGN",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING",
+      "subject": "detailed drainage design",
+      "boundary": "Normally future-due at screening unless a known drainage constraint becomes decision-critical."
+    },
+    {
+      "id": "COV-FUTURE-PLANNING-JUDGEMENT",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING / DPL-10",
+      "subject": "detailed planning assessment and contextual judgement",
+      "boundary": "Normally future-due at screening unless a known designation/context issue becomes decision-critical."
+    },
+    {
+      "id": "COV-FUTURE-STRUCTURAL-CAPACITY",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING / competent engineering",
+      "subject": "detailed structural capacity evidence",
+      "boundary": "Normally future-due at screening absent an accelerated structural red flag."
+    },
+    {
+      "id": "COV-FUTURE-PRODUCT-SYSTEM",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING / technical design",
+      "subject": "product/system-specific evidence",
+      "boundary": "Normally future-due at screening."
+    },
+    {
+      "id": "COV-FUTURE-ENERGY-ENVIRONMENT",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING / technical design",
+      "subject": "detailed energy/environment modelling",
+      "boundary": "Normally future-due at screening unless current evidence makes an environmental condition decision-critical."
+    },
+    {
+      "id": "COV-FUTURE-CONSTRUCTION-DESIGN",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING / delivery",
+      "subject": "detailed construction-logistics design",
+      "boundary": "Normally future-due at screening unless access constraints become decision-critical."
+    },
+    {
+      "id": "COV-FUTURE-INSPECTION-COMMISSIONING",
+      "classification": "FUTURE_DUE_WHERE_ESTABLISHED",
+      "owner": "DPL-04 SCREENING / later assurance profiles",
+      "subject": "physical inspection and commissioning evidence",
+      "boundary": "Explicitly future-due at screening."
+    }
+  ]
+}

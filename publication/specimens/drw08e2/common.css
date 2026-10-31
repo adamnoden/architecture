@@ -1,0 +1,27 @@
+:root {
+  --sans: Arial, Helvetica, sans-serif;
+  --serif: Georgia, Cambria, "Times New Roman", serif;
+  --ink: #000;
+  --paper: #fff;
+  --fold-exclusion: 12mm;
+  --drawing-fold-offset: 5mm;
+  --drawing-top: 28mm;
+}
+html, body { margin: 0; padding: 0; color: var(--ink); background: var(--paper); }
+body { font-family: var(--serif); font-size: 10.5pt; line-height: 1.45; }
+* { box-sizing: border-box; }
+section.page { break-before: page; break-after: page; position: relative; width: var(--page-width); height: var(--page-height); overflow: hidden; }
+section.page:first-child { break-before: auto; }
+.blank-page { page: blank; }
+.blank-sentinel { width: 1mm; height: 1mm; }
+.spread-left { page: spread-left; font-family: var(--sans); }
+.spread-right { page: spread-right; font-family: var(--sans); }
+.spread-furniture { position: absolute; left: var(--outer-margin); top: 32mm; width: 145mm; }
+.plate-title { margin: 0 0 3mm; font-size: 11pt; line-height: 1.15; font-weight: 700; }
+.plate-scale { margin: 0 0 12mm; font-size: 8.3pt; line-height: 1.2; }
+.plate-caption { margin: 0; max-width: 132mm; font-size: 8.3pt; line-height: 1.4; }
+.service-side-frame { position: absolute; left: var(--drawing-fold-offset); top: var(--drawing-top); width: 166mm; height: 96mm; }
+.service-side-elevation { display: block; width: 166mm; height: 96mm; max-width: none; }
+.folio { position: absolute; bottom: 10mm; font: 7.5pt/1 var(--sans); }
+.spread-left .folio { left: var(--outer-margin); }
+.spread-right .folio { right: var(--outer-margin); }

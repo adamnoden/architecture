@@ -1,0 +1,58 @@
+name: Prove ADE opening subtraction
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'compiler/architectural-drawing/**'
+      - 'compiler/publication-drawing-v2/**'
+      - 'publication/specimens/ade04a/**'
+      - '.github/workflows/ade-opening-subtraction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ade-opening-subtraction-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Prove frozen v1 and v2 terminal drawing contracts
+        run: npm run test:publication-drawing && npm run test:drw-freeze && node --import tsx --test compiler/publication-drawing-v2/*.test.ts
+
+      - name: Prove ADE semantic and topology contracts
+        run: npm run test:architectural-drawing
+
+      - name: Generate exact-size opening-subtraction sheets
+        run: npx tsx publication/specimens/ade04a/generate.ts
+
+      - name: Validate topological subtraction and scale
+        run: npx tsx publication/specimens/ade04a/validate.ts
+
+      - name: Upload opening-subtraction capability sheets
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: ade-04a-opening-subtraction
+          path: |
+            publication/specimens/ade04a/.work/ade04a-opening-subtraction-1-100.svg
+            publication/specimens/ade04a/.work/ade04a-opening-subtraction-1-50.svg
+            publication/specimens/ade04a/.work/manifest.json
+          if-no-files-found: error
+          retention-days: 30

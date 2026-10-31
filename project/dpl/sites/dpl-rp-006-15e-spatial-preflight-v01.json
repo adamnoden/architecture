@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "dpl.rp006SpatialPreflight.v1",
+  "packet": "DPL-15E",
+  "siteId": "DPL-RP-006",
+  "site": "Land adjacent to 50 Camelot Close, Thamesmead, SE28 0ET",
+  "assuranceProfile": "SCREENING",
+  "researchDate": "2026-10-26",
+  "parentReadiness": {
+    "assessmentId": "DPL-15C-CORPUS-1-v0.1",
+    "path": "project/dpl/sites/dpl-corpus-1-candidate-readiness-v01.json",
+    "gitBlobSha": "b2c46eb08ebe3bd1599bedc8716bcac35f0bdf08",
+    "corpusIndexGitBlobSha": "aeaa0aaf0b97caea066934687a5c350d111d7233",
+    "rp006RecordGitBlobSha": "14a6209dc3e75e3690a1db209f0b82448d02dc43"
+  },
+  "sources": [
+    {
+      "id": "15E-E01",
+      "sourceClass": "OFFICIAL_LOCAL_AUTHORITY_PLANNING_PUBLICATION",
+      "title": "Royal Greenwich weekly planning applications — 25/3755/F",
+      "url": "https://www.royalgreenwich.gov.uk/sites/default/files/2025-12/Planning%20Applications%2024%20November%20to%2028%20November%202025.pdf",
+      "observed": [
+        "Exact site is Land adjacent to 50 Camelot Close, Thamesmead, London, SE28 0ET.",
+        "Application reference is 25/3755/F.",
+        "Proposal is a two-storey dwelling attached to no. 50 with associated landscaping, waste storage and cycle parking."
+      ],
+      "authorityBoundary": "Official application identity only; weekly-list publication does not itself provide placement geometry."
+    },
+    {
+      "id": "15E-E02",
+      "sourceClass": "EXACT_SITE_APPLICATION_TECHNICAL_REPORT_PUBLIC_COPY",
+      "title": "Contaminated Land Risk Assessment — PH1-2025-000093",
+      "url": "https://docs.planning.org.uk/20251125/53/_GRNW_DCAPR_126622/e6g7dvvl8zgaosc0.pdf",
+      "observed": [
+        "Exact site address matches the application site.",
+        "Report states site centre at British National Grid 544654, 179561.",
+        "Report states application-site area approximately 0.03 ha.",
+        "Report includes a north-referenced site location/aerial map and Groundsure OS MasterMap site outline.",
+        "Appendix material embeds Enclosure Architects drawing (P)02 rev A, Site Plan & Landscape, scale 1:100 @ A3.",
+        "Embedded site plan identifies 50A Camelot Close as the application site, no. 50 as neighbouring property, a front gate, path, fences/hedges and a north-south section.",
+        "The same appendix embeds proposed plans/sections/elevations at 1:100 @ A3; applicant-house dimensions are not transferable to the Reference House."
+      ],
+      "authorityBoundary": "Exact-site planning/technical evidence with a real BNG frame and scaled application drawing. Text extraction does not itself recover a placement-ready boundary vector or certified survey geometry. Groundsure/application site outline is not a determined legal boundary."
+    },
+    {
+      "id": "15E-E03",
+      "sourceClass": "EXACT_SITE_DESIGN_ACCESS_STATEMENT_PUBLIC_COPY",
+      "title": "50A Camelot Close Design & Access Statement",
+      "url": "https://docs.planning.org.uk/20251125/53/_GRNW_DCAPR_126622/ubiwo8ucxwrwqvyn.pdf",
+      "observed": [
+        "Site lies at the north-eastern boundary of the Camelot Close housing development.",
+        "Design statement describes level front-door access via a gently sloping garden path and no on-site car parking.",
+        "An eight-space parking area is described immediately adjacent at the turning head.",
+        "The statement records no public right of way across the site."
+      ],
+      "authorityBoundary": "Proposal-specific access/context evidence. It does not prove highway adoption extent, private access rights or a Reference House access solution."
+    },
+    {
+      "id": "15E-E04",
+      "sourceClass": "PUBLIC_COUNCIL_DOCUMENT_INDEX_CORROBORATION",
+      "title": "25/3755/F public council-document index surfaced by Free Builder Leads",
+      "url": "https://freebuilderleads.co.uk/lead/greenwich/greenwich-25-3755-f-86075147",
+      "observed": [
+        "Index lists Proposed site arrangement, Existing site arrangement, Location plan & block plan, and Proposed plans, sections & elevations as council documents dated 10 November 2025.",
+        "Index also lists decision notice and officer delegated report."
+      ],
+      "authorityBoundary": "Third-party index of council-hosted documents only. It establishes a concrete retrieval route; it is not substituted for the source drawing bytes."
+    },
+    {
+      "id": "15E-E05",
+      "sourceClass": "GOVERNMENT_DATA_ROUTE",
+      "title": "Planning Data title-boundary dataset and API documentation",
+      "url": "https://www.planning.data.gov.uk/dataset/title-boundary",
+      "observed": [
+        "HM Land Registry title-boundary index polygons are available through Planning Data.",
+        "Planning Data documents spatial entity queries by latitude/longitude and returns geometry in WKT/GeoJSON.",
+        "The exact RP-006 title entity/geometry has not yet been acquired into the controlled packet."
+      ],
+      "authorityBoundary": "Route identified only. Any recovered polygon would be an indicative registered-property index extent, not a determined legal boundary."
+    }
+  ],
+  "coordinateFrame": {
+    "bng": [544654, 179561],
+    "crs": "EPSG:27700",
+    "derivedWgs84": [0.0824584796087989, 51.4964889490764],
+    "derivation": "Deterministic EPSG:27700 -> EPSG:4326 transform for source-routing only; does not change source authority."
+  },
+  "readiness": [
+    {
+      "dimension": "R1_CONTROLLED_SPATIAL_IDENTITY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15E-E01", "15E-E02", "15E-E04", "15E-E05"],
+      "reason": "Exact application identity, BNG centre, scaled site-plan evidence and a mapped site outline are now controlled as evidence, but the packet has not yet recovered a placement-ready application/title geometry with explicit boundary coordinates."
+    },
+    {
+      "dimension": "R2_FOOTPRINT_TEST_GEOMETRY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15E-E02", "15E-E04"],
+      "reason": "A 1:100 application site plan is now evidenced and the technical report gives approximately 0.03 ha, but the boundary shape/dimensions have not been recovered in a form that can honestly test a 12.0 m x 10.8 m unchanged Reference House footprint. Applicant-house dimensions are explicitly non-transferable."
+    },
+    {
+      "dimension": "R3_REAL_ORIENTATION_FRAME",
+      "state": "SATISFIED",
+      "evidenceRefs": ["15E-E02"],
+      "reason": "The exact-site technical report supplies a British National Grid centre and north-referenced mapped/site-plan evidence, giving a real SCREENING orientation frame independent of marketing geometry."
+    },
+    {
+      "dimension": "R4_DATUM_LEVEL_EVIDENCE",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15E-E02"],
+      "reason": "No controlled screening ground-level datum/terrain sample has yet been recovered. The BNG position makes Environment Agency DTM acquisition concrete but does not itself supply elevation."
+    },
+    {
+      "dimension": "R5_PHYSICAL_ACCESS_STREET_GEOMETRY",
+      "state": "NOT_SATISFIED",
+      "evidenceRefs": ["15E-E02", "15E-E03"],
+      "reason": "The front gate/path, cul-de-sac/turning-head relationship and public-right-of-way state are materially better evidenced, but exact physical frontage/access geometry and the adopted-highway overlap remain unresolved for Reference House placement."
+    },
+    {
+      "dimension": "R6_SITE_IDENTITY_COHERENCE",
+      "state": "SATISFIED",
+      "evidenceRefs": ["15E-E01", "15E-E02", "15E-E03"],
+      "reason": "Official application identity and exact-site technical/supporting material converge on the same land adjacent to 50 Camelot Close."
+    }
+  ],
+  "candidateAuthoringReady": false,
+  "satisfiedDimensions": [
+    "R3_REAL_ORIENTATION_FRAME",
+    "R6_SITE_IDENTITY_COHERENCE"
+  ],
+  "residualDimensions": [
+    "R1_CONTROLLED_SPATIAL_IDENTITY",
+    "R2_FOOTPRINT_TEST_GEOMETRY",
+    "R4_DATUM_LEVEL_EVIDENCE",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY"
+  ],
+  "nextNoSpendRoute": [
+    "Recover exact RP-006 title-index polygon from Planning Data at the controlled exact-site point and preserve its indicative-boundary limitation.",
+    "Recover/retain the actual current planning site-arrangement/location-plan bytes rather than relying on an index or text extraction.",
+    "Acquire Environment Agency 1 m DTM at the controlled site extent/point and freeze an ODN screening datum/terrain range.",
+    "Reconcile planning-site outline, title-index extent and physical Camelot Close access relationship without conflating their authority classes."
+  ],
+  "result": "RP006_MATERIALLY_STRONGER_PUBLIC_ROUTE_CONFIRMED_NOT_YET_CANDIDATE_READY"
+}

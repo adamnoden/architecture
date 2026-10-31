@@ -1,0 +1,19 @@
+@page {
+  size: B5;
+  margin-top: 20mm;
+  margin-bottom: 21mm;
+}
+
+@page :left {
+  margin-left: 18mm;
+  margin-right: 24mm;
+}
+
+@page :right {
+  margin-left: 24mm;
+  margin-right: 18mm;
+}
+
+body {
+  max-width: var(--typ03-measure, 112mm);
+}

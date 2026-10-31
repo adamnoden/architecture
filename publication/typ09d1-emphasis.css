@@ -1,0 +1,11 @@
+/* TYP-09D.1 explicit freeze break.
+   Owner review found the RC1 serif emphasis too heavy. Preserve all body,
+   hierarchy and drawing metrics; reduce only the serif emphasis role. */
+
+strong {
+  font-weight: 600;
+}
+
+.schedule-subject {
+  font-weight: 600;
+}

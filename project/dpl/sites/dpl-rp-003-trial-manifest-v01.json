@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "dpl.realSiteTrialManifest.v1",
+  "siteId": "DPL-RP-003",
+  "manifestId": "DPL-RP-003-DPL15A-v0.1",
+  "manifestRevision": "0.1",
+  "siteKind": "REAL",
+  "assuranceProfile": "SCREENING",
+  "researchDate": "2026-10-20",
+  "authoritySource": "project/dpl/sites/dpl-rp-003-rear-73a-73b-woodside-green-croydon.md",
+  "authorityGitBlobSha": "fb1c01a5e28044eda9ac275c2881082bb1917826",
+  "authorityBoundary": "Machine representation of the frozen DPL-14B screening record only. It is not a survey, title record, refreshed planning search, deployment candidate or compatibility conclusion.",
+  "planningAuthority": {
+    "strategicTargetId": "LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20",
+    "localTargetId": "CROYDON-LOCAL-PLANNING-2018-2026-10-21"
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "sourceClass": "OFFICIAL_LOCAL_AUTHORITY_PUBLIC_RECORD",
+      "subject": "Croydon decision record 24/03598/FUL / one-house permission",
+      "temporalScope": "decision recorded 2025-04-11",
+      "authorityBoundary": "Historical proposal/decision evidence only; does not prove current physical state, implementation, Reference House acceptability or technical compliance."
+    },
+    {
+      "id": "S2",
+      "sourceClass": "PUBLIC_PLANNING_RECORD",
+      "subject": "25/02151/FUL / later two-house proposal and refusal context",
+      "temporalScope": "record recovered at DPL-14B research date",
+      "authorityBoundary": "Proposal-specific public planning history."
+    },
+    {
+      "id": "S3",
+      "sourceClass": "PUBLIC_SUMMARY_OF_PLANNING_INSPECTORATE_DECISION",
+      "subject": "Appeal 6005406 / dismissed 2026-05-12",
+      "temporalScope": "decision date 2026-05-12",
+      "authorityBoundary": "Public summary evidence of proposal-specific appeal judgement; not a reusable site rule or current planning permission."
+    }
+  ],
+  "claims": [
+    {
+      "id": "RP003-C01",
+      "subject": "site identity",
+      "proposition": "A real garage/redevelopment parcel at/rear of 73A and 73B Woodside Green is identified by Croydon planning records and appeal history.",
+      "evidenceState": "KNOWN_AT_SCREENING",
+      "evidenceRefs": ["S1", "S2", "S3"],
+      "coverageFamilyRefs": ["NON_PLANNING:DPL11-COV-SITE-CONTROL"],
+      "limitation": "Identified screening subject does not itself prove title/control extent."
+    },
+    {
+      "id": "RP003-C02",
+      "subject": "borough and planning authority",
+      "proposition": "The site lies in the London Borough of Croydon.",
+      "evidenceState": "KNOWN_AT_SCREENING",
+      "evidenceRefs": ["S1", "S3"],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-SOURCE-COMPOSITION-STATUS"],
+      "limitation": "Borough identity selects authority context only; it does not prove policy compliance."
+    },
+    {
+      "id": "RP003-C03",
+      "subject": "historical garage/redevelopment condition",
+      "proposition": "Relevant historical proposals described demolition of existing garages.",
+      "evidenceState": "HISTORICAL_PUBLIC_RECORD",
+      "evidenceRefs": ["S1", "S2"],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY"],
+      "currentStateQualifier": "UNKNOWN",
+      "limitation": "Current October 2026 physical state is not established; the site is not modelled as definitely garage-occupied, cleared or built out."
+    },
+    {
+      "id": "RP003-C04",
+      "subject": "historical one-house permission",
+      "proposition": "Croydon granted 24/03598/FUL for demolition of garages and one two-storey four-bedroom dwelling with off-street parking.",
+      "evidenceState": "EXTERNAL_PLANNING_DECISION_EVIDENCE",
+      "evidenceRefs": ["S1"],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-EXTERNAL-DETERMINATION-HISTORY-CONDITIONS"],
+      "limitation": "Does not establish implementation, current permission status, Reference House acceptability, technical compliance or present site condition."
+    },
+    {
+      "id": "RP003-C05",
+      "subject": "later two-house refusal and appeal",
+      "proposition": "A later two-dwelling proposal was refused and appeal 6005406 was dismissed on 2026-05-12.",
+      "evidenceState": "EXTERNAL_PLANNING_DECISION_EVIDENCE",
+      "evidenceRefs": ["S2", "S3"],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-EXTERNAL-DETERMINATION-HISTORY-CONDITIONS"],
+      "limitation": "Proposal-specific decision evidence only."
+    },
+    {
+      "id": "RP003-C06",
+      "subject": "character and massing sensitivity",
+      "proposition": "The 2026 appeal treated character/appearance and scale/massing relationship as material and harmful for the two-house scheme.",
+      "evidenceState": "EXTERNAL_PLANNING_JUDGEMENT_EVIDENCE",
+      "evidenceRefs": ["S3"],
+      "coverageFamilyRefs": [
+        "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY",
+        "PLANNING:DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY"
+      ],
+      "limitation": "Does not imply the Reference House fails D3 or any local design policy."
+    },
+    {
+      "id": "RP003-C07",
+      "subject": "private amenity-space sensitivity",
+      "proposition": "The appeal found one proposed private garden insufficiently functional/usable in the two-house scheme.",
+      "evidenceState": "EXTERNAL_PLANNING_JUDGEMENT_EVIDENCE",
+      "evidenceRefs": ["S3"],
+      "coverageFamilyRefs": [
+        "PLANNING:DPL10-COV-LOCAL-QUALITATIVE-EVIDENCE-POLICY",
+        "PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY"
+      ],
+      "limitation": "Qualitative amenity judgement is not converted into a numeric site rule or a Reference House verdict."
+    },
+    {
+      "id": "RP003-C08",
+      "subject": "parking and highway issue",
+      "proposition": "Parking provision formed an appeal issue, but highway-safety harm was not the decisive basis of the appeal outcome in the recovered summary.",
+      "evidenceState": "EXTERNAL_PLANNING_JUDGEMENT_EVIDENCE",
+      "evidenceRefs": ["S3"],
+      "coverageFamilyRefs": [
+        "PLANNING:DPL10-COV-TRANSPORT-ACCESS-HIGHWAY-PARKING",
+        "PLANNING:DPL10-COV-EXTERNAL-DETERMINATION-HISTORY-CONDITIONS"
+      ],
+      "limitation": "Does not create a site-wide parking entitlement or prove current access/highway adequacy."
+    },
+    {
+      "id": "RP003-C09",
+      "subject": "site area",
+      "proposition": "Exact parcel area is not established by the admitted screening evidence.",
+      "evidenceState": "UNKNOWN_AT_ADMITTED_EVIDENCE",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": [
+        "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY",
+        "PLANNING:DPL10-COV-LOCAL-QUANTITATIVE-POLICY"
+      ],
+      "limitation": "No area is reverse-engineered from screenshots, map tiles or marketing material."
+    },
+    {
+      "id": "RP003-C10",
+      "subject": "boundary geometry, frontage and depth",
+      "proposition": "Exact legal/survey boundary geometry, frontage and depth are not established.",
+      "evidenceState": "UNKNOWN_AT_SURVEY_OR_TITLE_PRECISION",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": [
+        "NON_PLANNING:DPL11-COV-SITE-CONTROL",
+        "NON_PLANNING:DPL11-COV-LEGAL-BOUNDARY-TITLE",
+        "NON_PLANNING:DPL11-COV-ACCESS-STATUS",
+        "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY"
+      ],
+      "limitation": "Constrained urban-parcel history is not a substitute for title/survey geometry."
+    },
+    {
+      "id": "RP003-C11",
+      "subject": "access geometry and status",
+      "proposition": "Vehicle/site-access relationships existed in historical proposals, but exact current access geometry, construction access, legal rights and route levels are not established.",
+      "evidenceState": "PARTIALLY_EVIDENCED_NOT_SURVEYED",
+      "evidenceRefs": ["S1", "S3"],
+      "coverageFamilyRefs": [
+        "NON_PLANNING:DPL11-COV-ACCESS-STATUS",
+        "NON_PLANNING:DPL11-COV-PRIVATE-RIGHTS",
+        "PLANNING:DPL10-COV-TRANSPORT-ACCESS-HIGHWAY-PARKING"
+      ],
+      "limitation": "Historical proposal access is not current survey/title/highway evidence."
+    },
+    {
+      "id": "RP003-C12",
+      "subject": "topography and levels",
+      "proposition": "Current site topography and levels are unknown at admitted evidence.",
+      "evidenceState": "UNKNOWN",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": [
+        "NON_PLANNING:DPL11-COV-GROUND-ENVIRONMENT",
+        "NON_PLANNING:DPL11-COV-ACCESS-STATUS",
+        "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY",
+        "PLANNING:DPL10-COV-FLOOD-DRAINAGE-SUDS-PLANNING"
+      ],
+      "limitation": "Proposal-specific raised-garden discussion is not treated as a topographical survey."
+    },
+    {
+      "id": "RP003-C13",
+      "subject": "trees and landscape",
+      "proposition": "Current tree/TPO/arboricultural condition is not established by the admitted screening evidence.",
+      "evidenceState": "UNKNOWN_AT_ADMITTED_EVIDENCE",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": [
+        "PLANNING:DPL10-COV-TREES-LANDSCAPE-URBAN-GREENING",
+        "NON_PLANNING:DPL11-COV-GROUND-ENVIRONMENT"
+      ],
+      "limitation": "No tree/TPO conclusion is inferred from absence of evidence."
+    },
+    {
+      "id": "RP003-C14",
+      "subject": "ground, drainage, utilities and sewers",
+      "proposition": "Ground/geotechnics, drainage, utilities and sewer conditions are unknown at admitted evidence.",
+      "evidenceState": "UNKNOWN",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": [
+        "NON_PLANNING:DPL11-COV-GROUND-ENVIRONMENT",
+        "NON_PLANNING:DPL11-COV-SEWER-UNDERTAKER",
+        "NON_PLANNING:DPL11-COV-UTILITIES",
+        "NON_PLANNING:DPL11-COV-PHYSICAL-FLOOD-WATER",
+        "PLANNING:DPL10-COV-FLOOD-DRAINAGE-SUDS-PLANNING"
+      ],
+      "limitation": "Historical planning permission does not discharge technical/site due diligence."
+    },
+    {
+      "id": "RP003-C15",
+      "subject": "title and private rights",
+      "proposition": "Title, easements, covenants, rights and related private constraints are unknown.",
+      "evidenceState": "UNKNOWN",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": [
+        "NON_PLANNING:DPL11-COV-SITE-CONTROL",
+        "NON_PLANNING:DPL11-COV-LEGAL-BOUNDARY-TITLE",
+        "NON_PLANNING:DPL11-COV-PRIVATE-RIGHTS"
+      ],
+      "limitation": "No title/private-right conclusion is inferred from public planning history."
+    }
+  ],
+  "candidateAuthoring": {
+    "state": "NOT_AUTHORED_INSUFFICIENT_GEOMETRY",
+    "reason": "The admitted corpus evidence does not establish legal/survey parcel geometry, frontage/depth, reliable levels or exact access relationship sufficient to author a controlled Reference House placement without guessing.",
+    "missingEvidence": [
+      "authoritative legal or survey parcel boundary geometry",
+      "authoritative frontage/depth/shape sufficient to test 12.0m x 10.8m Reference House footprint",
+      "reliable site coordinate/orientation frame tied to the real parcel",
+      "surveyed site levels/topography sufficient to author a ground-floor datum",
+      "surveyed physical access geometry and street/approach relationship",
+      "title/control relationship sufficient to know the land on which placement is being authored"
+    ]
+  },
+  "syntheticVocabularyBoundary": {
+    "directDPL13BClaimVocabularyReuse": "NOT_ADMITTED",
+    "reason": "DPL-13B reference-site coverage binds synthetic RS-* claim ids carrying fixture-specific parcel/frame/placement propositions. RP-003 retains its real corpus claim ids; owner-family mapping is explicit rather than achieved by synthetic renaming.",
+    "requiredNextAbstraction": "REAL_CLAIM_TO_OWNER_FAMILY_ADAPTER_IF_EARNED"
+  },
+  "resultBoundary": {
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "referenceHouseMutation": "NOT_AUTHORISED",
+    "planningLikelihood": "NOT_CLAIMED",
+    "purchaseRecommendation": "NOT_CLAIMED"
+  }
+}

@@ -1,7 +1,7 @@
 # Print publication scope crosswalk
 
 **Status:** internal publication-control record  
-**Updated:** 2026-10-17  
+**Updated:** 2026-10-28  
 **Editorial authority:** [`../manuscript/publication-architecture.md`](../manuscript/publication-architecture.md)  
 **Machine compile authority:** [`../../publication/publication.ts`](../../publication/publication.ts)
 
@@ -47,13 +47,14 @@ This file records the exact machine scope of the Working Edition. It is intentio
 | 31 | candidate | Individually Isolatable Manifold Distribution | `docs/patterns/candidates/individually-isolatable-manifold-distribution.md` | `—` |
 | 32 | candidate | Local Deep Service Zone | `docs/patterns/candidates/local-deep-service-zone.md` | `—` |
 | 33 | candidate | Selective Floor Access | `docs/patterns/candidates/selective-floor-access.md` | `—` |
-| 34 | part | Part IV — Reference House | `docs/manuscript/part-iv.md` | `—` |
-| 35 | part | Part V — Making and Testing the Platform | `docs/manuscript/part-v.md` | `part-v-wrapper` |
-| 36 | back-matter | Appendix A — Evidence and Precedent Notes | `docs/manuscript/evidence-and-precedent-notes.md` | `—` |
-| 37 | back-matter | Appendix B — Research Agenda | `docs/manuscript/research-agenda.md` | `—` |
-| 38 | back-matter | Appendix C — Reference House Implementation Schedule | `docs/manuscript/reference-house-implementation-schedule.md` | `—` |
-| 39 | back-matter | Appendix D — Glossary | `docs/manuscript/glossary.md` | `—` |
-| 40 | back-matter | Appendix E — Sources and Further Reading | `docs/manuscript/sources-and-further-reading.md` | `—` |
+| 34 | part | Part IV — The Reference House: Design Proposition | `docs/manuscript/part-iv.md` | `—` |
+| 35 | part | Part V — Making and Proving the Platform | `docs/manuscript/part-v.md` | `—` |
+| 36 | part | Part VI — The House | `docs/manuscript/part-vi.md` | `—` |
+| 37 | back-matter | Appendix A — Evidence and Precedent Notes | `docs/manuscript/evidence-and-precedent-notes.md` | `—` |
+| 38 | back-matter | Appendix B — Research Agenda | `docs/manuscript/research-agenda.md` | `—` |
+| 39 | back-matter | Appendix C — Reference House Implementation Schedule | `docs/manuscript/reference-house-implementation-schedule.md` | `—` |
+| 40 | back-matter | Appendix D — Glossary | `docs/manuscript/glossary.md` | `—` |
+| 41 | back-matter | Appendix E — Sources and Further Reading | `docs/manuscript/sources-and-further-reading.md` | `—` |
 <!-- generated: publication-manifest:end -->
 
 ## Scope rule

@@ -1,0 +1,64 @@
+name: Prove DRW analytical family
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'publication/specimens/drw10f/**'
+      - 'docs/publication/architectural-drawing-drw10f-analytical-family-proof.md'
+      - 'docs/reference-house/publication-structural-span-overlay.svg'
+      - 'docs/reference-house/publication-synthetic-setting.svg'
+      - 'docs/reference-house/publication-external-maintenance-setting-overlay.svg'
+      - 'docs/reference-house/publication-ground-service-maintenance-overlay.svg'
+      - 'docs/reference-house/publication-first-service-maintenance-overlay.svg'
+      - 'docs/reference-house/publication-roof-drainage.svg'
+      - 'docs/reference-house/publication-roof-water-failure-overlay.svg'
+      - 'docs/reference-house/publication-future-adaptation-overlay.svg'
+      - '.github/workflows/drw-analytical-family-proof.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drw-analytical-family-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Prepare frozen analytical family
+        run: npx tsx publication/specimens/drw10f/prepare.ts
+
+      - name: Build A4 analytical-family proof
+        run: DRW10F_FORMAT=a4 npx vivliostyle build -c publication/specimens/drw10f/vivliostyle.config.js
+
+      - name: Build B5 analytical-family proof
+        run: DRW10F_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw10f/vivliostyle.config.js
+
+      - name: Validate analytical-family proof
+        run: npx tsx publication/specimens/drw10f/validate.ts
+
+      - name: Upload analytical-family proof PDFs
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-10f-analytical-family-proof
+          path: |
+            publication/specimens/drw10f/dist/drw10f-a4.pdf
+            publication/specimens/drw10f/dist/drw10f-b5.pdf
+          if-no-files-found: error
+          retention-days: 30

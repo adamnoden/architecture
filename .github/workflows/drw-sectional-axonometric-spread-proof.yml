@@ -1,0 +1,54 @@
+name: Prove DRW sectional axonometric spread
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'publication/specimens/drw09e/**'
+      - 'docs/publication/architectural-drawing-drw09e-sectional-axonometric-spread-proof.md'
+      - 'docs/reference-house/publication-sectional-axonometric.svg'
+      - 'compiler/reference-house/publication-sectional-axonometric*.ts'
+      - 'compiler/reference-house/generate-publication-sectional-axonometric.ts'
+      - '.github/workflows/drw-sectional-axonometric-spread-proof.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: drw-sectional-axonometric-spread-proof-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Regenerate controlled axonometric SVG
+        run: npx tsx compiler/reference-house/generate-publication-sectional-axonometric.ts
+      - name: Prove committed SVG bytes
+        run: git diff --exit-code -- docs/reference-house/publication-sectional-axonometric.svg
+      - name: Prepare spread
+        run: npx tsx publication/specimens/drw09e/prepare.ts
+      - name: Build A4 proof
+        run: DRW09E_FORMAT=a4 npx vivliostyle build -c publication/specimens/drw09e/vivliostyle.config.js
+      - name: Build B5 proof
+        run: DRW09E_FORMAT=b5 npx vivliostyle build -c publication/specimens/drw09e/vivliostyle.config.js
+      - name: Validate physical spread
+        run: npx tsx publication/specimens/drw09e/validate.ts
+      - name: Upload controlled drawing and proof PDFs
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: drw-09e-sectional-axonometric-spread-proof
+          path: |
+            docs/reference-house/publication-sectional-axonometric.svg
+            publication/specimens/drw09e/dist/drw09e-a4.pdf
+            publication/specimens/drw09e/dist/drw09e-b5.pdf
+          if-no-files-found: error
+          retention-days: 30

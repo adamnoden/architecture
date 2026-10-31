@@ -1,0 +1,54 @@
+name: TYP-03F selected Source proof
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/typ03-selected-proof.yml'
+      - 'publication/specimens/typ03/**'
+      - 'docs/manuscript/part-i.md'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Install PDF font inspector
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+
+      - name: Build exact selected Source proof
+        env:
+          TYP03_PACK_ID: typ03f-source-confirmation
+        run: npx tsx publication/specimens/typ03/proof-pack.ts --selected
+
+      - name: Verify embedded Source font identities
+        run: >-
+          npx tsx publication/specimens/typ03/validate-pdf-fonts.ts
+          publication/.work/typ03-proof-packs/typ03f-source-confirmation/typ03-set-selected-b5-spaced-ragged.pdf
+          source
+
+      - name: Upload selected Source proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: typ03f-source-confirmation
+          path: publication/.work/typ03-proof-packs/typ03f-source-confirmation/
+          if-no-files-found: error
+          retention-days: 14

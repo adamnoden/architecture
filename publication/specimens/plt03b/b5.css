@@ -1,0 +1,16 @@
+@page proof:left {
+  size: 176mm 250mm;
+  margin: 18mm 22mm 18mm 14mm;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+@page proof:right {
+  size: 176mm 250mm;
+  margin: 18mm 14mm 18mm 22mm;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}

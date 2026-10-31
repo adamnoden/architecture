@@ -1,0 +1,9 @@
+:root { --page-width: 210mm; --page-height: 297mm; }
+@page proof {
+  size: A4;
+  margin: 0;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}

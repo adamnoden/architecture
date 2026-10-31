@@ -1,66 +1,110 @@
 # Project Status
 
-**Canonical project-wide status overview**  
-**Last updated:** 2026-10-17  
-**Current phase:** **private-publication preparation / downstream validation**
+**Generated project-wide projection — do not hand-edit mutable status here.**
 
-This page answers one question: **where is Ovid’s House now?** Detailed programme histories and gate records remain in their owning areas; this page records the current state, next meaningful work and principal risks.
+Durable execution authority lives in `project/control/`. Live claim occupancy lives separately in ACO on `runtime/claims`. Epistemic maturity authority lives in `project/maturity.ts`. Workstream issues and programme/result records retain reasoning, scope and provenance.
 
-The public architectural position and publication have survived a bounded internal adversarial cycle, resolved-work sanitation and the completed reader-facing nomenclature programme. Both remain controlled at M4. The largest remaining uncertainties sit downstream: architectural drawing quality, physical prototypes, competent professional review, real-site evidence and independent criticism. Publication work is now in controlled pre-production: DRW resumes at DRW-01C and must close its integration gates before PR-02 produces the private physical object.
+## Execution
 
-## Active now
+<!-- project-control:start -->
+Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.
 
-### Reference House
+Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-The Reference House has passed **RH-00 through RH-11**. It remains **M3 — Coordinated at virtual-design scope**. RH-10 reconciled the whole virtual building; RH-11 turned the remaining structural, fire/building-control, MEP/acoustic and building-physics/energy uncertainties into issue-ready review briefs. RH-C0 froze a controlled pre-compiler source contract; RH-C1 reproduces that bounded fixture deterministically; CF-01 challenges the shared plan slice; RH-C2 reproduces the bounded RH-05 structural topology; RH-C3 reproduces the bounded RH-06/RH-07/RH-10 service topology; RH-C4 reproduces the bounded RH-08/RH-09/RH-10 envelope/boundary topology; and RH-C5 adds one selected numeric method check over the same source chain.
+**Structurally ready:** 9 · **Active:** 3 · **Blocked:** 17 · **Held:** 2 · **Done:** 27 · **Cancelled:** 0
 
-The design-gate sequence is complete at its current virtual scope. **Active evidence work remains:** issue the RH-11 pack to competent reviewers, record findings against the owning RH gate, and progress the P03 structural floor-edge and P04 wall/ceiling physical-validation work. RH-C0/RH-C1, CF-01 and RH-C2–RH-C5 are internal model-control results, not construction validation, and do not raise Reference House maturity.
+### Structurally ready frontier
 
-The later D12 grammar trial also records the coordinated house as conforming to independently frozen **G-01 v0.1** with no house rewind or grammar change. That is an architectural-language conformance result only; it does not raise Reference House maturity.
+These nodes satisfy hard dependencies. A structurally ready node may already have a live ACO lease; query `npm run control:claims` before starting collision-prone durable work.
 
-### Architectural grammar
+| Node | Work | Owner | Completion would immediately unlock |
+|---|---|---|---|
+| `OAS-01E` | Envelope openings, external doors, thresholds and boundary candidates | OAS | — |
+| `OAS-01I` | Internal door assembly candidates | OAS | — |
+| `IAS-02S` | Interior services and access family | IAS | — |
+| `IAS-02W` | Wet-room and kitchen interior-system variants | IAS | — |
+| `IAS-HAD-JUNCTION` | Interior-system to architectural-expression reconciliation | IAS / HAD | — |
+| `BCR-SCAFFOLD` | Construction-resolution inventory and matrix scaffolding | BCR | — |
+| `PHY-03-ENGINEERING` | Structural floor-edge engineering option reduction | PHY | — |
+| `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
+| `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
 
-**G-01 v0.1 — Georgian-Derived Domestic Grammar** is now frozen and the G-01 workstream is **M4 — Internally validated / controlled at its bounded v0.1 scope**.
+### Active durable work
 
-D8 deliberately falsified or narrowed universal ratio, centred-entry, fixed-sequence and mandatory double-height claims. D9 tested surviving candidates against predeclared hold-outs. D10 refused release when the remaining set proved too style-neutral. D10-S then recovered a small amount of positive Georgian-derived specificity using a fresh validation subset frozen before extraction; that validation materially rejected the original roof-subordination candidate before a corrected roof/termination relation survived two remaining validators. D11 froze the grammar before D12 tested the Reference House. D13 then attacked contamination, overfit, historicism, false precision, framework leakage and false positives, including negative controls from Gothic/Arts-and-Crafts and Modern domestic languages.
+`active` means the packet is durably started; it is not an agent-presence or lease. Live occupancy belongs to ACO on `runtime/claims`.
 
-The controlled v0.1 rule set is intentionally small: ordered classical architectural field, related/ranked opening family, architecturally ranked entrance, integrated upper termination/roof order, relational spatial/sectional hierarchy, and concentrated classical articulation as a preference. It explicitly does **not** require universal room ratios, a centred entrance, one roof type, historic sash pane counts, servant circulation, courtyard morphology, red brick, brass/bronze tectonics or House Kernel technical choices.
+| Node | Work | Owner |
+|---|---|---|
+| `MRA-00` | Moisture constitution, inventory and threat model | MRA |
+| `PLT-CURRENT-REVIEW` | Current-source plate capability and physical review work | PLT |
+| `PUB-02-PREP` | Content-independent private-object preparation | PUB |
 
-The largest remaining limitation is explicit: v0.1 is stronger at architectural body/elevation/threshold specificity than at positive Georgian-specific internal plan grammar. That is research debt, not a standing v0.2 programme. Reopen only when external criticism, a real-project contradiction, a second grammar, publication review or material new evidence creates a concrete question. M5 requires independent architectural validation.
+### Blocked
 
-### Computational implementation
+| Node | Work | Direct blockers |
+|---|---|---|
+| `IAS-OAS-JUNCTION` | Interior-system to opening-assembly junction reconciliation | OAS-01E, OAS-01I |
+| `OAS-HAD-JUNCTION` | Opening-assembly to facade/interior-expression reconciliation | OAS-01E, OAS-01I |
+| `HAD-02M` | Material and finish synthesis | IAS-HAD-JUNCTION, OAS-HAD-JUNCTION |
+| `IAS-03` | Selected interior family, drawings and disassembly set | IAS-02S, IAS-02W, IAS-OAS-JUNCTION, IAS-HAD-JUNCTION |
+| `OAS-03` | Selected opening family and replacement/reinstatement set | OAS-01E, OAS-01I, IAS-OAS-JUNCTION, OAS-HAD-JUNCTION |
+| `HAD-03` | Architectural design convergence and visual synthesis | IAS-HAD-JUNCTION, OAS-HAD-JUNCTION, HAD-02M |
+| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, OAS-03, HAD-03 |
+| `BCR-CONVERGENCE` | Substantive construction-resolution convergence | BCR-SCAFFOLD, TRIAD-GATE, MRA-04 |
+| `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05 |
+| `MRA-01` | External water and ground-envelope assault | MRA-00, TRIAD-GATE |
+| `MRA-02` | Internal water and wet-zone assault | MRA-00, TRIAD-GATE |
+| `MRA-03` | Vapour, condensation and drying assault | MRA-00, TRIAD-GATE |
+| `MRA-04` | Whole-house moisture failure matrix and adversarial gate | MRA-01, MRA-02, MRA-03 |
+| `MRA-05` | Post-BCR moisture assurance closeout | BCR-CONVERGENCE |
+| `PLT-FINAL-FREEZE` | Final resolved-house plate integration and freeze | HRS-SYNTHESIS, PLT-CURRENT-REVIEW |
+| `EDA-RENEWED` | Renewed editorial-doctrine assurance over enlarged final source | PLT-FINAL-FREEZE |
+| `PUB-02-FINAL` | Final private-object content, drawing and manufacture gate | PUB-02-PREP, EDA-RENEWED |
 
-The currently authorised bounded Reference House executable sequence is closed **PASS through RH-C5**. P0 remains 17/17, PAT-XW-01 6/6, RH-C1 27/27, CF-01 7/7, RH-C2 17/17, RH-C3 21/21, RH-C4 29/29 and RH-C5 adds **16/16** selected-calculation tests while preserving the earlier regression suites. The separate **CH — Compiler Hardening** programme is complete through **CH-08**. Its final distillation removed unused historical compatibility machinery while preserving the pre-hardening semantic/proof baseline and canonical drawing identities.
+### Structural critical path
 
-The computational workstream is **M4 — Internally validated / controlled at its bounded proof scope**. That judgement rests on the combined CH-00→CH-08 evidence: frozen semantic and artefact identity, adversarial fail-closed behaviour, enforced runtime architecture, single-pass equivalence, representation and immutability contracts, deterministic source/method/result/compile identity and lineage, law/property/metamorphic testing, reproducible developer/CI health and the final deletion/proof audit. It is a statement about the controlled compiler baseline, not about the physical adequacy of the Reference House.
+`OAS-01E` → `OAS-HAD-JUNCTION` → `HAD-02M` → `HAD-03` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
-RH-C5 admits only the technical family for which the canonical fixture currently has sufficiently controlled inputs: private-stair geometry. The same derived stair values used by RH-C1 — approximately **183.333 mm rise, 280 mm going, 33.215° pitch and 646.667 mm for 2R+G** — correspond to the selected Approved Document K 2013 numeric guidance values for the declared England dwelling/private-stair research context.
+This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
+<!-- project-control:end -->
 
-The method records its external source, edition, paragraph/table, source-check date, applicability and implementation version. It can return `PASS`, `FAIL` or `UNSUPPORTED`; missing, wrong-unit, non-finite, malformed or out-of-domain evidence fails closed rather than being guessed. Incomplete evidence takes precedence over a simultaneous negative criterion so an incomplete check cannot manufacture a definitive technical conclusion.
+## Maturity
 
-**This is bounded numeric method correspondence, not Building Regulations compliance.** RH-C5 does not establish a release-grade compiler target, Requirement K1 compliance as a whole, or whole-building technical adequacy. U-values, thermal bridges, condensation, rainwater capacity, structural capacity and MEP sizing remain unsupported until authoritative inputs and bounded methods exist.
+Maturity is an **epistemic judgement**, not execution progress. Completing a graph node does not promote maturity, and reopening work does not automatically demote it.
 
-**There is no standing CH-09 or RH-C6.** The compiler is held as a controlled baseline. New computational capability should be demand-led by external review, physical validation, a real project, newly authoritative inputs or another concrete proof family worth formalising. M5 would require appropriate external validation of the computational proposition at its stated scope.
+### Scale
 
-### Physical and engineering validation
+| Level | Meaning | Gate |
+|---|---|---|
+| **M1** | **Framed** | The problem, scope and intended direction are explicit enough to guide further work. |
+| **M2** | **Developed** | Substantive design or research material exists and the main choices and trade-offs are visible, but important coordination remains. |
+| **M3** | **Coordinated** | The workstream has been reconciled with adjacent parts of the project and is internally coherent at its stated scope. |
+| **M4** | **Internally validated / controlled** | The proposition has been deliberately challenged against internal tests or evidence and is stable enough to act as the controlled baseline. |
+| **M5** | **Externally validated / release-ready** | Competent independent review or real-world validation has tested the proposition, material findings are resolved, and it is release-ready at its stated scope. |
 
-This remains a major evidence gap between a coordinated architectural system and a credible building system. P03 structural floor-edge work is a real RH-05 engineering dependency and P04 tests the selected RH-09 wall/ceiling movement interface. P01 W2 remains an optional challenger rather than an architectural dependency; P02 selective floor access is not currently selected by the Reference House.
+### Evidence freshness
 
-Prototype outcomes should be allowed to reject or simplify implementations. A successful mock-up does not promote a general Ovid’s House proposition automatically, and a failed challenger does not invalidate the house where a conventional baseline already exists.
+PCO monitors the evidence content from baseline `c3701c5`. A changed evidence file marks the affected assessment **stale / reassessment required**; it does not automatically lower the M-level. The baseline establishes future drift surveillance and does not itself constitute independent revalidation of earlier evidence.
 
-### Professional review
+| Assessment | Maturity | Reviewed | Evidence files | Evidence watch |
+|---|---:|---|---:|---|
+| **Public architectural position** | **M4** | 2026-10-19 | 12 | fresh against PCO evidence baseline |
+| **Pattern language** | **M4** | 2026-10-12 | 4 | fresh against PCO evidence baseline |
+| **Architectural grammar framework** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **G-01 grammar instance** | **M4** | 2026-10-14 | 9 | fresh against PCO evidence baseline |
+| **Reference House** | **M3** | 2026-10-19 | 9 | fresh against PCO evidence baseline |
+| **Physical prototypes** | **M2** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **External professional review** | **M1** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **Computational track** | **M4** | 2026-10-19 | 45 | fresh against PCO evidence baseline |
+| **Evidence / precedent research** | **M3** | 2026-10-12 | 3 | fresh against PCO evidence baseline |
+| **Publication** | **M4** | 2026-10-28 | 17 | fresh against PCO evidence baseline |
+| **Deployment / real-site integration** | **M4** | 2026-10-27 | 48 | fresh against PCO evidence baseline |
+| **Delivery** | **M2** | 2026-10-28 | 5 | fresh against PCO evidence baseline |
 
-The [RH-11 External Review Brief](docs/reference-house/external-review-brief.md) is issue-ready, with separate structural, fire/building-control, MEP/acoustic and building-physics/energy appendices plus a date-stamped regulatory baseline and response template.
+<details>
+<summary>Legacy maturity compatibility projection (non-authoritative)</summary>
 
-**No competent review response has yet been recorded.** External professional review therefore remains M1. The next value comes from actual independent findings, especially negative ones that force a bounded rewind, qualification or rejection. A review request, meeting or unprocessed consultant note is not validation.
-
-### Publication and delivery
-
-**PR-00, PR-01, PUB-SAN and PUB-NOM are complete and integrated on `main`.** PUB-NOM separated reader identity, machine identity, order, version, maturity and workflow provenance; migrated brand-coupled canonical namespaces; and made source plus rendered nomenclature enforcement adversarially testable. PR #157 has merged. **DRW — Architectural Drawing Programme** is paused at a clean restart-safe boundary: DRW-00, DRW-01A and DRW-01B are complete; DRW-01C has not started and is the next authorised packet. No architectural source hardening, renderer implementation or replacement publication drawing has begun. The combined nomenclature / visual-reference system must still be revalidated at DRW-10 and DRW-12 before PR-02 freezes the physical object. PR-02 continues to own physical-object design and production, not another discretionary manuscript-development cycle.
-
-Delivery material should continue to lag the research deliberately: only decisions mature enough to become requirements for an appointed team should enter it.
-
-## Maturity and workstream status
+This collapsed block is retained temporarily because the existing repository-integrity check still verifies the historical renderer. Its `Current state` / `Next meaningful gate` columns are **not execution authority**; PCO owns current durable execution state above.
 
 <!-- maturity-status:start -->
 Ovid’s House uses a **project-specific maturity model**. It is not a RIBA Plan of Work stage, BIM level-of-detail convention, Technology Readiness Level or other external industry standard. The codes use **M** for maturity so they are less likely to be mistaken for those systems.
@@ -87,59 +131,27 @@ That enforcement prevents invalid codes, missing evidence references and duplica
 
 | Workstream | Maturity | Reviewed | Current state | Next meaningful gate |
 |---|---:|---|---|---|
-| **Public architectural position** | **M4** | 2026-10-15 | The core architectural position has survived the bounded PR-01 adversarial review after material narrowing: proportional serviceability can reject overprovision, transfer claims are bounded, foreseeable human life-course and future-climate change are explicit, the Repose structural-perception claim is qualified, and architecture is separated from delivery and stewardship assumptions. | Hold the corrected position as the internally controlled baseline through PR-02; PR-03/PR-04 external critical reading and downstream physical/professional evidence remain capable of reopening it. M5 requires competent independent validation at the stated scope. |
+| **Public architectural position** | **M4** | 2026-10-19 | The core architectural position remains the internally controlled PR-01 baseline after material narrowing: proportional serviceability can reject overprovision, transfer claims are bounded, foreseeable human life-course and future-climate change are explicit, the Repose structural-perception claim is qualified, and architecture is separated from delivery and stewardship assumptions. The completed HFI programme has now integrated foreseeable human variance and complete-action / low-vigilance consequences into the governing principles without creating a parallel human-factors doctrine. | Hold the corrected position as the internally controlled baseline through PR-02; PR-03/PR-04 external critical reading and downstream physical/professional evidence remain capable of reopening it. M5 requires competent independent validation at the stated scope. |
 | **Pattern language** | **M4** | 2026-10-12 | 21 active patterns, three strategies and four held candidates are canonical at current internal scope. | Reopen only when new architectural, physical or external evidence requires change. |
 | **Architectural grammar framework** | **M3** | 2026-10-12 | Grammar is a first-class layer separate from Ovid’s House doctrine and is coordinated at framework level. | Continue to test neutrality across concrete grammar instances. |
 | **G-01 grammar instance** | **M4** | 2026-10-14 | G-01 v0.1 is frozen as a bounded Georgian-derived domestic grammar. D8 falsification, predeclared D9 hold-outs, D10 normative reduction, fresh D10-S positive-specificity validation, freeze-before-project D12 conformance and D13 negative controls leave a small controlled rule set with explicit limitations: no universal ratios, centred-entry rule, fixed roof type or historical service topology. Positive specificity is strongest at architectural body/elevation/threshold scale; morphology-specific interior grammar remains open research debt rather than an invented rule set. | Hold v0.1 as the controlled baseline. Reopen only when competent external criticism, a real-project contradiction, a materially different second grammar, publication adversarial review or material new evidence creates a concrete question. M5 requires independent architectural validation at the stated scope. |
-| **Reference House** | **M3** | 2026-10-12 | RH-00 through RH-10 are coordinated at virtual-design scope, RH-11 provides issue-ready discipline review packages, and RH-C0 has frozen a controlled pre-compiler model without converting unresolved technical assumptions into certainty. | Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, and progress P03/P04 validation; RH-C0 does not raise Reference House maturity. |
+| **Reference House** | **M3** | 2026-10-19 | RH-00 through RH-10 remain coordinated at virtual-design scope and RH-11 remains issue-ready. HFI-RW-01 has deliberately rewound the principal stair from 280 mm to the project-preferred 300 mm going while preserving the shell, courtyard, programme and circulation topology; the HFI review handoff is integrated without claiming external validation. | Issue RH-11 packages, resolve material reviewer findings through the owning RH gates, progress P03/P04 validation, and retain the explicitly unresolved HFI handoffs for finished interfaces, real-site access, stairlift compatibility, future lift provision and laundry topology with their downstream owners. |
 | **Physical prototypes** | **M2** | 2026-10-12 | The validation programme is defined but no physical result has yet been recorded; after RH-09/RH-10, P03 floor-edge and P04 wall/ceiling-joint evidence are the Reference House priorities, while P01 W2 remains an optional challenger and P02 is not a current house dependency. | Engineer and test P03 structural floor edge, then build/test P04 wall/ceiling joint; continue P01 W2 only as optional research where resources justify it. |
 | **External professional review** | **M1** | 2026-10-12 | RH-11 now provides issue-ready structural, fire/building-control, MEP/acoustic and building-physics/energy review briefs with explicit rewind criteria; no competent review response has yet been recorded. | Obtain and process competent discipline reviews; material findings reopen the owning Reference House gate and remain unresolved until closure evidence is recorded. |
-| **Computational track** | **M4** | 2026-10-13 | The bounded Reference House executable sequence remains closed PASS through RH-C5, and the CH-00 through CH-08 Compiler Hardening programme is complete. The compiler now has a frozen semantic/artefact baseline, deterministic fail-closed behaviour, machine-enforced runtime boundaries, single-pass Reference House orchestration, selective representation hardening, stable source/method/result/compile identity and lineage, deterministic law/property/metamorphic evidence, one reproducible repository-health and artefact-verification contract, and a final deletion/proof audit that preserves the pre-hardening conclusions while removing only unearned compatibility machinery. This is an internally validated/controlled computational baseline at its stated proof boundaries; it does not expand Reference House technical authority or establish physical, regulatory or whole-building adequacy. | Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope. |
+| **Computational track** | **M4** | 2026-10-19 | The bounded Reference House executable sequence remains closed PASS through RH-C5 and CH-00 through CH-08 remain complete. The intentional HFI stair rewind has propagated through the controlled semantic source and deterministic projections; RH-C5 now checks the selected 300 mm going while HFI-09C/09D explicitly refuse to turn that project preference into a universal human-factors or statutory rule. | Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, DPL target/site work, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope. |
 | **Evidence / precedent research** | **M3** | 2026-10-12 | Major evidence packages exist and taxonomy ambiguities are largely closed. | Targeted claim hardening where physical or publication maturity requires it. |
-| **Publication** | **M4** | 2026-10-17 | PR-00 and PR-01 established and internally challenged the corrected publication candidate. PUB-SAN SAN-00 through SAN-06 removed development-history residue, and PUB-NOM NOM-00 through NOM-10 completed the reader-facing nomenclature architecture and adversarial source/rendered enforcement. The completed DRW baseline through DRW-01B is now integrated on main; no architectural drawing implementation has begun. The resolved Working Edition remains the controlled publication source while DRW proceeds from DRW-01C. | Resume DRW at DRW-01C, complete the controlled architectural-drawing programme and re-run the PUB-NOM integration gates at DRW-10 and DRW-12. PR-02 then produces the private 12-copy physical object without reopening the manuscript by preference; PR-03/PR-04 supply the independent critical cycle required before any M5 or public-release claim. |
-| **Delivery** | **M2** | 2026-10-12 | The implementation-brief structure exists, but downstream requirements remain intentionally incomplete. | Populate only as architectural and validation decisions mature. |
+| **Publication** | **M4** | 2026-10-28 | PR-00, PR-01, PUB-SAN and PUB-NOM remain complete for the source/object scopes they actually reviewed; DRW v1 remains frozen and TYP has an accepted RC2 production release. EDA-00–08 remain valid historical assurance for the 128-source candidate book, and ADE remains internally complete at its stated representation scope. BSR has now completed the six-part structural migration: the Working Edition has stable Part IV design-proposition, Part V proving/technical-closure and Part VI resolved-house interfaces. IAS/OAS/HAD are unblocked against those interfaces, but the previous EDA clearance and PLT-only manufacture path remain insufficient for the enlarged final book. Publication maturity remains M4; no prior evidence is erased or promoted. | PUB-02 may continue content-independent object preparation using the accepted typography contract. Final private-object content/drawing freeze and manufacture now require IAS/OAS/HAD design resolution; BCR construction-resolution convergence; HRS final architectural synthesis; final PLT integration/physical drawing freeze; and renewed EDA assurance over the enlarged source/object. PUB-03/PUB-04 independent criticism remains required before M5 or public-release claims. |
+| **Deployment / real-site integration** | **M4** | 2026-10-27 | The M4 claim ceiling remains bounded canonical synthetic integration, controlled SCREENING owner/readiness composition and the canonical DPL-RS-01 UNRESOLVED result scope; later execution does not silently widen it. DPL-01 through DPL-14 are complete. DPL-15J adds explicit assumption-based trials across all eight sites, a conditional envelope, reader-facing computational explanation and internal adversarial checks. Geometry hypotheses do not discharge evidence-backed readiness: corpus readiness remains 0/8 after DPL-15I, and real-site compatibility remains unestablished. The user has explicitly revised DPL-15/16/17/18 to conditional research scope. Their final authored case and closeout complete that revised programme; the original empirical criteria remain unearned and real-site verification is deferred. Lennard remains excluded from empirical sampling. | No standing DPL research packet remains. Trigger a separate verification follow-on only for a selected real commission/site or explicit evidence-backed request; then replace the applicable premises with controlled site data and stage-specific professional evidence. Conditional completion does not raise maturity or authority, and authorises no external contact or spend. |
+| **Delivery** | **M2** | 2026-10-28 | DEL-00 inventories the existing delivery modules, N01–N17 and other brief obligations, with provisional discipline/stage allocations, evidence dependencies and rewind owners under #854. The authorised IAS/OAS/HAD/BCR/HRS programme now creates concrete future assembly and construction-resolution inputs, but no new delivery acceptance is implied. Current-house technical migration, competent review, physical evidence and commission-specific acceptance remain outstanding. | Reconcile DEL when BCR admits concrete IAS/OAS/HAD assembly obligations, and when RH-11/EPR, applicable PHY results or a real commission supplies evidence. Add fabrication, tolerance, shop-drawing, equivalence, first-article, commissioning or reinstatement requirements only where a selected assembly earns them. Declare source applicability before issuing older packages for the Georgian proposal. No project acceptance or maturity increase follows from programme authorisation. |
 <!-- maturity-status:end -->
 
-## Principal risks
+</details>
 
-**Physical quality.** Replaceable walls, floors and interfaces may work technically yet feel hollow, temporary or over-detailed. Tactile, acoustic and architectural quality must survive the serviceability agenda.
+## Reading current state
 
-**Complexity and proportionality.** Serviceability infrastructure can consume more space, money, carbon and maintenance than the future work it avoids. PR-01 materially hardened this risk: future provision is no longer rewarded for sounding maintainable, and higher-burden B2/B3 interventions fail closed to HOLD/BASELINE unless they earn themselves against an excellent conventional comparator.
-
-**Workmanship.** A detail that works only under designer supervision fails the project. Tests should include imperfect backgrounds, realistic tolerances and ordinary competent installation.
-
-**Environmental performance.** Passive-first is a hierarchy, not a predetermined system answer. Actual orientation, glazing, gains, heat loss, ASHP acoustics, PV performance and dynamic overheating remain unproved until a real site and specialist models exist. PR-01 adds a real-project obligation to test expensive-to-change geometry against relevant future climate/hazard conditions rather than present climate alone.
-
-**External validation gap.** Internal M4 control is not external proof. Structural, fire/building-control, MEP/acoustic and building-physics assumptions are issue-ready but remain vulnerable until competent reviewers attack them and findings are resolved; the corrected public argument likewise remains open to the PR-03/PR-04 independent critical cycle.
-
-**Authority drift.** The Reference House is the project's dominant concrete example. Repetition can make its Georgian grammar, courtyard form, masonry family, low-slope roof, ASHP/PV or tectonic vocabulary appear inevitable even when they are project choices. Generalise the reason; keep the taste and technology local. PR-01's compact-terrace counter-morphology explicitly confirms that several Reference House conveniences are not transferable requirements.
-
-**Grammar scope.** G-01 v0.1 is a controlled bounded grammar, not a historical period classifier or complete generative system. Its positive specificity is stronger at architectural body/elevation/threshold scale than in morphology-specific interior planning. Do not hide that limitation by inventing weak internal rules or by treating conformance as architectural quality.
-
-**Compiler proof boundary.** CF-01 supplies only bounded plan generality; RH-C2, RH-C3 and RH-C4 supply structural, service and envelope/boundary topology coherence respectively; RH-C5 supplies only one bounded numeric guidance-method correspondence. A machine-checked relationship or number can still belong to a physically inadequate building. New methods must not be added without authoritative inputs, applicability and a proof boundary.
-
-## Closed or frozen tracks
-
-These areas are not current work queues. Their detailed records remain available for provenance.
-
-- **Naming history — recorded.** The project began as **House Design Doctrine**, became **Long-Life House**, then **House Systems Architecture**, then **House Kernel**, and is now **Ovid’s House**. **House Kernel** is retained as the formal architectural/computational system within Ovid’s House rather than treated as a retired name; **Metamorph Compiler** is the human-facing name of its executable machinery. Earlier names remain only where they describe historical state or a stable legacy identifier.
-- **Original doctrine discovery — closed.** House Design Doctrine v7 is preserved as source material rather than a live specification.
-- **Architectural-specificity audit — complete.** Gates 0–7 established the boundary between project doctrine, patterns, technical scope, grammar and Reference House choices. See the [audit](docs/development/architectural-specificity-audit.md) and [adversarial test](docs/development/architectural-specificity-adversarial-test.md).
-- **Pattern-language migration — complete.** Phases 0–7 established the current canonical language. The stable `PAT-*` pattern namespace dates from the House Systems Architecture phase and is retained for identifier stability. See the [Phase 7 review](docs/development/pattern-language-phase7-review.md).
-- **Pattern → computational crosswalk — complete at internal mapping scope.** Phase 8 showed that pattern provenance can remain separate from technical obligation derivation. See the [Phase 8 review](docs/development/pattern-language-phase8-review.md).
-- **G-01 completion programme D8 → D13 — complete.** G-01 v0.1 is frozen at M4 internal scope after falsification, two hold-out phases, normative reduction, independent positive-specificity validation, freeze-before-project Reference House conformance and adversarial negative controls. There is no standing v0.2; reopen only on an explicit evidence trigger. See [G-01 v0.1](docs/grammar/g01-v0.1.md) and [D13 closeout](docs/grammar/g01-d13-adversarial-closeout.md).
-- **P0 + PAT-XW-01 — passed.** The executable kernel and first crosswalk fixture are retained as regression tests. See the [gate result](docs/computational/p0-pat-xw-01-result.md).
-- **RH-C0 + RH-C1 + CF-01 + RH-C2 + RH-C3 + RH-C4 + RH-C5 — passed.** The Reference House has a frozen source contract, deterministic architectural projection, bounded two-fixture plan evidence, machine-checked structural/service/envelope topologies and one versioned selected numeric method correspondence check. Structural, MEP, building-physics and regulatory adequacy remain outside those claims. See the [Reference House executable programme](docs/computational/reference-house-executable-slice.md), [drawing parity result](docs/reference-house/rhc1-drawing-parity-result.md) and [CF-01 result](docs/computational/compiler-generality-assurance-cf01.md).
-- **Compiler Output Architecture COA-00 → COA-06 — complete.** Controlled compiler-generated plan, section, structural, service and boundary inspection artefacts now provide the trusted semantic source family for publication/inspection use; COA does not raise Reference House maturity and there is no standing COA-07.
-- **Compiler Hardening CH-00 → CH-08 — complete.** The bounded computational workstream has an M4 internally validated/controlled baseline. The hardening programme is closed rather than extended by inertia; future compiler work is demand-led, with no standing CH-09 or RH-C6.
-- **Publication PR-00 + PR-01 — complete.** One candidate was frozen, attacked through R0→R7, corrected through R8-A→F, re-proved and re-frozen through R9. The corrected content identity `a628f6855789a3c591cd052b54f1bfb45de23b39` remains the historical PR-01 proof baseline rather than the current reader-facing publication source.
-- **Resolved-work sanitation PUB-SAN — complete.** SAN-00→SAN-06 removed development-history residue from public site/publication surfaces, preserved unique substantive content under current owners, added a regression guard, passed full validation and merged through PR #150 as `02e152019c8f08ae71009ae7ab5b61e1ab575244`.
-- **Reader-facing nomenclature PUB-NOM — complete.** NOM-00→NOM-10 established the reader/machine identity boundary, migrated legacy public identifiers, added fail-closed source/rendered enforcement and adversarial regression proof, and merged through PR #157 as `d004b00db861b9e0b5f6f7f6550763180ad283d1`. DRW owns any future publication figure-reference system and must re-enter PUB-NOM validation at DRW-10 and DRW-12.
-- **Computational paper programme — frozen.** S0 → S1 → S2 → H1 answered the current paper-research question; further expansion requires evidence from another workstream.
-- **Information-architecture migration — complete.** Repository ownership, publication structure, website navigation and project state now have distinct roles. See the [closeout record](docs/development/information-architecture-migration.md).
-
-## Status-maintenance rule
-
-Update this page when a major workstream changes maturity, prototype or professional evidence changes a conclusion, the Reference House reaches a new integration state, or the project's recommended next work materially changes.
-
-The maturity block is generated from `project/maturity.ts`; use `npm run status:update` after changing the typed maturity registry and commit the generated result together.
+- Use the **Structurally ready frontier** above to identify work whose hard dependencies are satisfied.
+- Use [`project/control/graph.md`](project/control/graph.md) for the generated structural Mermaid dependency map.
+- Before substantial execution, query `npm run control:claims` and acquire the ACO lease; structural READY does not mean unclaimed.
+- Use owning workstream issues/programmes for the architectural question, scope and exit criteria behind a node.
+- A completed node does not itself raise maturity; maturity remains an explicit evidence-backed judgement.
+- Possible future PHY/EPR/DEL work is not a blocker until a concrete obligation is admitted into the graph.

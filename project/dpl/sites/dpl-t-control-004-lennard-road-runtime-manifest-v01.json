@@ -1,0 +1,281 @@
+{
+  "schemaVersion": "dpl.instrumentedRealControlRuntimeManifest.v1",
+  "controlId": "DPL-T-CONTROL-004",
+  "manifestId": "DPL-T-CONTROL-004-T5-v0.1",
+  "manifestRevision": "0.1",
+  "controlKind": "INSTRUMENTED_REAL_CONTROL",
+  "sampleMembership": "EXCLUDED_FROM_DEPLOYMENT_ENVELOPE_SAMPLE",
+  "assuranceProfile": "SCREENING",
+  "researchDate": "2026-10-25",
+  "displayName": "41 Lennard Road — DPL instrumented real control",
+  "borough": "Bromley",
+  "address": "41 Lennard Road, Bromley, BR2 8LN",
+  "planningApplicationRef": "26/02618/FPA",
+  "uprn": "100020404537",
+  "authorityBoundary": "Machine-readable real-control evidence and runtime admission layer only. The control is not part of the DPL-14 corpus or DPL-16 sample, and this manifest is not a legal boundary, measured survey, planning determination or whole-site compatibility conclusion.",
+  "sources": [
+    {
+      "id": "S1",
+      "path": "project/dpl/sites/dpl-t-control-004-lennard-road-title-boundary.json",
+      "gitBlobSha": "2e73185ae1bd0cb8b9b10130abde31d14745f5b3",
+      "sourceClass": "HMLR_PLANNING_DATA_TITLE_INDEX",
+      "subject": "Indicative registered-property title-index geometry / HMLR reference 57071807",
+      "authorityBoundary": "Authoritative index source for SCREENING spatial identity; not a determined legal boundary."
+    },
+    {
+      "id": "S2",
+      "path": "project/dpl/sites/dpl-t-control-004-lennard-road-elevation.json",
+      "gitBlobSha": "6665b293048b40015e08883f14548be40adb3b70",
+      "sourceClass": "ENVIRONMENT_AGENCY_LIDAR_DTM",
+      "subject": "Environment Agency LiDAR Composite DTM 1 m / ODN parcel terrain evidence",
+      "authorityBoundary": "SCREENING terrain evidence only; not a measured private topographic survey or construction datum."
+    },
+    {
+      "id": "S3",
+      "path": "project/dpl/sites/dpl-t-control-004-lennard-road-street-access.json",
+      "gitBlobSha": "789b2591d113ea691bb9dc369685c03cc55917b3",
+      "sourceClass": "EXACT_SITE_PUBLIC_PLANNING_EVIDENCE",
+      "subject": "Lennard Road frontage, existing front-access relationship, dropped kerb and current application context",
+      "authorityBoundary": "Physical/public-planning SCREENING relationship only; no private-right, highway-adoption or planning-acceptability conclusion."
+    },
+    {
+      "id": "S4",
+      "path": "project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json",
+      "gitBlobSha": "530deb7166d2b9a75ff40eaaaf8c8cbd7593611a",
+      "sourceClass": "ARCHITECTURE_AUTHORED_REFERENCE_HOUSE_CANDIDATE",
+      "subject": "DPL-T-CANDIDATE-004-01 / revision 0.1",
+      "authorityBoundary": "One human-authored unchanged Reference House placement; not route search, optimisation or whole-site compatibility."
+    },
+    {
+      "id": "S5",
+      "path": "project/dpl/sites/dpl-t-control-004-lennard-road-verification-v01.json",
+      "gitBlobSha": "2208e0a558636b79c53f481265d61fbc3d36e301",
+      "sourceClass": "DPL_T4_DETERMINISTIC_VERIFICATION",
+      "subject": "T4 bounded candidate verification / result fingerprint 0fafa462472370e54d5e1e3aba40e88cb594e8aafb877e0c687af0e5c5fc96dc",
+      "authorityBoundary": "Proves pinned candidate reproduction and bounded Reference House conformance only; RH-SI02/RH-SI05 and whole-site conclusions remain open."
+    }
+  ],
+  "claims": [
+    {
+      "id": "LNR-C01",
+      "subject": "site identity",
+      "proposition": "The instrumented control is the real property/planning subject at 41 Lennard Road, Bromley BR2 8LN, UPRN 100020404537.",
+      "evidenceState": "KNOWN_AT_SCREENING",
+      "evidenceRefs": ["S1", "S3"],
+      "coverageFamilyRefs": ["NON_PLANNING:DPL11-COV-SITE-CONTROL"],
+      "limitation": "Address/UPRN/property-index convergence identifies the screening subject but does not prove every legal interest or boundary."
+    },
+    {
+      "id": "LNR-C02",
+      "subject": "planning authority and target context",
+      "proposition": "The site is in the London Borough of Bromley and the controlled Bromley local-planning target composes beneath the current London strategic target.",
+      "evidenceState": "KNOWN_AT_SCREENING",
+      "evidenceRefs": ["S3"],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-SOURCE-COMPOSITION-STATUS"],
+      "limitation": "Authority selection does not establish compliance or planning likelihood."
+    },
+    {
+      "id": "LNR-C03",
+      "subject": "indicative parcel geometry",
+      "proposition": "HMLR/Planning Data provides a controlled indicative title-index polygon with derived screening area 783.6969 m².",
+      "evidenceState": "KNOWN_AT_SCREENING",
+      "evidenceRefs": ["S1"],
+      "coverageFamilyRefs": [
+        "NON_PLANNING:DPL11-COV-SITE-CONTROL",
+        "NON_PLANNING:DPL11-COV-LEGAL-BOUNDARY-TITLE",
+        "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY"
+      ],
+      "limitation": "The index polygon is not a determined legal or measured survey boundary."
+    },
+    {
+      "id": "LNR-C04",
+      "subject": "verified Reference House placement",
+      "proposition": "DPL-T-CANDIDATE-004-01 is a verified unchanged 12.0 m × 10.8 m unmirrored Reference House placement contained by the admitted screening polygon.",
+      "evidenceState": "VERIFIED_CONTROL_RESULT",
+      "evidenceRefs": ["S4", "S5"],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY"],
+      "limitation": "Candidate fit/conformance is not a planning design judgement or whole-site compatibility result."
+    },
+    {
+      "id": "LNR-C05",
+      "subject": "screening terrain and candidate datum",
+      "proposition": "EA 1 m DTM indicates a 70.20–71.10 m ODN parcel terrain envelope and T3 authors a 70.70 m ODN SCREENING FFL.",
+      "evidenceState": "PARTIALLY_EVIDENCED_NOT_SURVEYED",
+      "evidenceRefs": ["S2", "S4", "S5"],
+      "coverageFamilyRefs": [
+        "NON_PLANNING:DPL11-COV-GROUND-ENVIRONMENT",
+        "NON_PLANNING:DPL11-COV-ACCESS-STATUS",
+        "PLANNING:DPL10-COV-STRATEGIC-DESIGN-CONTEXT-CAPACITY",
+        "PLANNING:DPL10-COV-FLOOD-DRAINAGE-SUDS-PLANNING"
+      ],
+      "limitation": "No measured topographic survey, threshold design, cut/fill design, retaining design or accessible-gradient proof exists."
+    },
+    {
+      "id": "LNR-C06",
+      "subject": "physical street/access relationship",
+      "proposition": "Exact-site planning evidence identifies the south-west Lennard Road frontage, existing front-garden/front-door access and a dropped kerb directly in front of the site.",
+      "evidenceState": "PARTIALLY_EVIDENCED_NOT_SURVEYED",
+      "evidenceRefs": ["S3"],
+      "coverageFamilyRefs": [
+        "NON_PLANNING:DPL11-COV-ACCESS-STATUS",
+        "PLANNING:DPL10-COV-TRANSPORT-ACCESS-HIGHWAY-PARKING"
+      ],
+      "limitation": "Physical screening evidence does not prove highway adoption extent, private access rights, construction access, detailed route levels or policy acceptability."
+    },
+    {
+      "id": "LNR-C07",
+      "subject": "legal boundary precision",
+      "proposition": "The determined legal boundary and construction-grade boundary survey are unresolved.",
+      "evidenceState": "UNKNOWN_AT_SURVEY_OR_TITLE_PRECISION",
+      "evidenceRefs": ["S1"],
+      "coverageFamilyRefs": [
+        "NON_PLANNING:DPL11-COV-SITE-CONTROL",
+        "NON_PLANNING:DPL11-COV-LEGAL-BOUNDARY-TITLE"
+      ],
+      "limitation": "The ~0.640 m title-index clearance cannot be promoted into a legal setback or construction tolerance."
+    },
+    {
+      "id": "LNR-C08",
+      "subject": "highway extent and private rights",
+      "proposition": "Highway adoption extent, easements, covenants and private access rights are unresolved.",
+      "evidenceState": "UNKNOWN_AT_ADMITTED_EVIDENCE",
+      "evidenceRefs": ["S3"],
+      "coverageFamilyRefs": [
+        "NON_PLANNING:DPL11-COV-ACCESS-STATUS",
+        "NON_PLANNING:DPL11-COV-PRIVATE-RIGHTS"
+      ],
+      "limitation": "Publicly visible access relationships do not determine private-law rights or highway boundaries."
+    },
+    {
+      "id": "LNR-C09",
+      "subject": "neighbour geometry, openings and amenity",
+      "proposition": "Decision-grade neighbouring-building geometry, openings, privacy and daylight/sunlight relationships have not been acquired for the Reference House candidate.",
+      "evidenceState": "UNKNOWN_AT_ADMITTED_EVIDENCE",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-NEIGHBOUR-AMENITY-PRIVACY-DAYLIGHT"],
+      "limitation": "No planning amenity judgement is inferred from the title-index fit."
+    },
+    {
+      "id": "LNR-C10",
+      "subject": "trees and landscape",
+      "proposition": "Current tree/TPO/arboricultural constraints and a candidate-specific landscape response are not established.",
+      "evidenceState": "UNKNOWN_AT_ADMITTED_EVIDENCE",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": [
+        "PLANNING:DPL10-COV-TREES-LANDSCAPE-URBAN-GREENING",
+        "NON_PLANNING:DPL11-COV-GROUND-ENVIRONMENT"
+      ],
+      "limitation": "No absence of tree constraint is inferred from missing evidence."
+    },
+    {
+      "id": "LNR-C11",
+      "subject": "flood, drainage and sewer conditions",
+      "proposition": "Candidate-specific flood constraints, infiltration suitability, foul/surface-water route, sewer relationship and discharge strategy are unresolved.",
+      "evidenceState": "UNKNOWN_AT_ADMITTED_EVIDENCE",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": [
+        "PLANNING:DPL10-COV-FLOOD-DRAINAGE-SUDS-PLANNING",
+        "NON_PLANNING:DPL11-COV-SEWER-UNDERTAKER",
+        "NON_PLANNING:DPL11-COV-PHYSICAL-FLOOD-WATER",
+        "NON_PLANNING:DPL11-COV-GROUND-ENVIRONMENT"
+      ],
+      "limitation": "EA terrain evidence is not a drainage, sewer or flood-risk solution."
+    },
+    {
+      "id": "LNR-C12",
+      "subject": "utilities and external plant",
+      "proposition": "Utility routes, capacities, easements, meters and candidate external-plant/service approaches are unresolved.",
+      "evidenceState": "UNKNOWN_AT_ADMITTED_EVIDENCE",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": ["NON_PLANNING:DPL11-COV-UTILITIES"],
+      "limitation": "No utility availability or route is inferred from an occupied existing site."
+    },
+    {
+      "id": "LNR-C13",
+      "subject": "ground and foundations",
+      "proposition": "Geotechnical conditions, bearing/settlement behaviour, contamination and candidate foundation response are unresolved.",
+      "evidenceState": "UNKNOWN_AT_ADMITTED_EVIDENCE",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": ["NON_PLANNING:DPL11-COV-GROUND-ENVIRONMENT"],
+      "limitation": "Terrain elevation is not ground investigation."
+    },
+    {
+      "id": "LNR-C14",
+      "subject": "heritage",
+      "proposition": "Current heritage/designation/setting applicability has not been established in the admitted T1–T4 evidence package.",
+      "evidenceState": "UNKNOWN_AT_ADMITTED_EVIDENCE",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-HERITAGE-DESIGNATION-SETTING"],
+      "limitation": "No no-designation assumption is admitted."
+    },
+    {
+      "id": "LNR-C15",
+      "subject": "ecology and biodiversity",
+      "proposition": "Current ecology, habitat, biodiversity and green-infrastructure evidence is not established for the candidate.",
+      "evidenceState": "UNKNOWN_AT_ADMITTED_EVIDENCE",
+      "evidenceRefs": [],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-ECOLOGY-BIODIVERSITY-GREEN-INFRASTRUCTURE"],
+      "limitation": "No ecological absence or planning acceptability is inferred."
+    },
+    {
+      "id": "LNR-C16",
+      "subject": "candidate-specific London housing policy facts",
+      "proposition": "The verified Reference House source establishes two principal storeys, but candidate-specific policy-defined GIA, bedspace count, built-in storage, qualifying 2.5 m height area, qualifying private outdoor-space geometry and planning M4 assignment are not admitted as T5 proposal facts.",
+      "evidenceState": "PARTIALLY_EVIDENCED_NOT_POLICY_MEASURED",
+      "evidenceRefs": ["S4", "S5"],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-HOUSING-QUALITY-ACCESSIBILITY"],
+      "limitation": "Applicant-proposal attributes for 26/02618/FPA are not silently transferred to the different unchanged Reference House candidate."
+    },
+    {
+      "id": "LNR-C17",
+      "subject": "current application context",
+      "proposition": "Bromley application 26/02618/FPA concerns demolition of the existing bungalow and a detached replacement dwelling on the same site and remains contextual external planning evidence for the control.",
+      "evidenceState": "EXTERNAL_PLANNING_RECORD_CONTEXT",
+      "evidenceRefs": ["S3"],
+      "coverageFamilyRefs": ["PLANNING:DPL10-COV-EXTERNAL-DETERMINATION-HISTORY-CONDITIONS"],
+      "limitation": "The application is not the Reference House candidate and supplies no transferable planning permission, design approval or candidate fact unless separately justified."
+    }
+  ],
+  "runtimeProposalFacts": {
+    "dwellingStoreys": {
+      "value": 2,
+      "evidenceRefs": ["S4", "S5"],
+      "derivation": "Direct mapping from the current controlled Reference House bounded fact storeys=2 to the DPL-12A proposal fact dwellingStoreys.",
+      "boundary": "No bedroom, bedspace, GIA, storage, private-outdoor-space, M4-category or other applicant-proposal fact is inferred."
+    }
+  },
+  "decisionCriticalUnknowns": [
+    "determined legal boundary / construction-grade boundary survey",
+    "measured topographic survey and RH-SI02 threshold/grading response",
+    "RH-SI05 principal approach/access/landscape response",
+    "neighbour geometry/openings and planning amenity relationship",
+    "current tree/TPO/arboricultural constraints",
+    "ground/geotechnical and foundation evidence",
+    "flood/drainage/sewer strategy and undertaker evidence",
+    "utility routes/capacity/private rights",
+    "candidate-specific London housing-policy measurements and planning accessibility assignment",
+    "candidate-specific planning design/context judgement"
+  ],
+  "candidate": {
+    "id": "DPL-T-CANDIDATE-004-01",
+    "revision": "0.1",
+    "sourceRef": "S4",
+    "verificationRef": "S5",
+    "verificationResultFingerprint": "0fafa462472370e54d5e1e3aba40e88cb594e8aafb877e0c687af0e5c5fc96dc",
+    "state": "VERIFIED_BOUNDED_CANDIDATE"
+  },
+  "planningAuthority": {
+    "strategicTargetId": "LON-STRATEGIC-RESIDENTIAL-DESIGN-2021-2026-10-20",
+    "localTargetId": "BROMLEY-LOCAL-PLANNING-2019-2026-10-22"
+  },
+  "proofBoundary": {
+    "compatibleAtScreening": "NOT_ADMITTED",
+    "incompatible": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "referenceHouseMutation": "PROHIBITED",
+    "planningLikelihood": "NOT_CLAIMED",
+    "legalBoundary": "UNRESOLVED",
+    "measuredTopography": "NOT_ACQUIRED",
+    "dpl16": "HELD"
+  }
+}

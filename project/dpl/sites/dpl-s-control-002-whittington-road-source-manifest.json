@@ -1,0 +1,120 @@
+{
+  "schema": "dpl.instrumentedRealControlSourceManifest.v1",
+  "controlId": "DPL-S-CONTROL-002",
+  "controlSiteKind": "INSTRUMENTED_REAL_CONTROL",
+  "sampleMembership": "EXCLUDED_FROM_DEPLOYMENT_ENVELOPE_SAMPLE",
+  "researchDate": "2026-10-25",
+  "baselineMainSha": "e498e55b479ece575872068d39cab82cc0a66608",
+  "issue": 663,
+  "site": {
+    "address": "1 Whittington Road, Wood Green, London, N22 8YS",
+    "planningAuthority": "London Borough of Haringey",
+    "applicationRef": "HGY/2026/2550",
+    "applicationType": "Full planning permission",
+    "validatedDate": "2026-10-02",
+    "snapshotStatus": "UNDER_CONSULTATION",
+    "proposal": "Demolition of existing garage and erection of two detached houses and associated landscaping changes"
+  },
+  "authority": {
+    "firstPartyApplicationRecord": "https://publicregister.haringey.gov.uk/pr/s/planning-application/a0iP200000IsXB7IAN/hgy20262550?c__r=Arcus_BE_Public_Register",
+    "discoveryIndexes": [
+      "https://plota.co.uk/application/lxnmyxix",
+      "https://planindex.co.uk/planning-applications/haringey/hgy-2026-2550",
+      "https://plotedge.uk/planning-applications/haringey/hgy-2026-2550/"
+    ]
+  },
+  "sources": [
+    {
+      "sourceId": "S1-WHIT-01",
+      "documentName": "SiteLocation.geojson",
+      "documentDate": "2026-09-10",
+      "authorityClass": "FIRST_PARTY_SUBMITTED_APPLICATION_DOCUMENT",
+      "intendedRole": [
+        "CONTROLLED_SPATIAL_EXTENT",
+        "FOOTPRINT_TEST_GEOMETRY",
+        "ORIENTATION_FRAME"
+      ],
+      "retrievalState": "DOCUMENT_IDENTITY_CONFIRMED_BYTES_NOT_ACQUIRED",
+      "geometryAuthority": "MACHINE_READABLE_GEOMETRY_EXPECTED_NOT_YET_INSPECTED"
+    },
+    {
+      "sourceId": "S1-WHIT-02",
+      "documentName": "571725 060 existing site plan and site sections.pdf",
+      "documentDate": "2026-09-10",
+      "authorityClass": "FIRST_PARTY_SUBMITTED_APPLICATION_DOCUMENT",
+      "intendedRole": [
+        "EXISTING_SITE_GEOMETRY",
+        "EXISTING_LEVEL_SECTION_EVIDENCE",
+        "STREET_ACCESS_RELATION"
+      ],
+      "retrievalState": "DOCUMENT_IDENTITY_CONFIRMED_BYTES_NOT_ACQUIRED",
+      "geometryAuthority": "EXPLICIT_SOURCE_CONTENT_NOT_YET_INSPECTED"
+    },
+    {
+      "sourceId": "S1-WHIT-03",
+      "documentName": "571725 061 proposed site block plan.pdf",
+      "documentDate": "2026-09-10",
+      "authorityClass": "FIRST_PARTY_SUBMITTED_APPLICATION_DOCUMENT",
+      "intendedRole": [
+        "SITE_BLOCK_CONTEXT",
+        "STREET_ACCESS_RELATION"
+      ],
+      "retrievalState": "DOCUMENT_IDENTITY_CONFIRMED_BYTES_NOT_ACQUIRED",
+      "geometryAuthority": "EXPLICIT_SOURCE_CONTENT_NOT_YET_INSPECTED"
+    },
+    {
+      "sourceId": "S1-WHIT-04",
+      "documentName": "571725 062 proposed site plan.pdf",
+      "documentDate": "2026-09-10",
+      "authorityClass": "FIRST_PARTY_SUBMITTED_APPLICATION_DOCUMENT",
+      "intendedRole": [
+        "PROPOSED_SITE_CONTEXT",
+        "STREET_ACCESS_RELATION"
+      ],
+      "retrievalState": "DOCUMENT_IDENTITY_CONFIRMED_BYTES_NOT_ACQUIRED",
+      "geometryAuthority": "EXPLICIT_SOURCE_CONTENT_NOT_YET_INSPECTED"
+    },
+    {
+      "sourceId": "S1-WHIT-05",
+      "documentName": "571725 065 proposed site section.pdf",
+      "documentDate": "2026-09-10",
+      "authorityClass": "FIRST_PARTY_SUBMITTED_APPLICATION_DOCUMENT",
+      "intendedRole": [
+        "PROPOSED_LEVEL_SECTION_EVIDENCE"
+      ],
+      "retrievalState": "DOCUMENT_IDENTITY_CONFIRMED_BYTES_NOT_ACQUIRED",
+      "geometryAuthority": "EXPLICIT_SOURCE_CONTENT_NOT_YET_INSPECTED"
+    },
+    {
+      "sourceId": "S1-WHIT-06",
+      "documentName": "LocationPlan.pdf",
+      "documentDate": "2026-09-10",
+      "authorityClass": "FIRST_PARTY_SUBMITTED_APPLICATION_DOCUMENT",
+      "intendedRole": [
+        "SITE_IDENTITY_CROSS_CHECK",
+        "ORIENTATION_CONTEXT"
+      ],
+      "retrievalState": "DOCUMENT_IDENTITY_CONFIRMED_BYTES_NOT_ACQUIRED",
+      "geometryAuthority": "CONTEXT_ONLY_UNTIL_INSPECTED"
+    }
+  ],
+  "readiness": {
+    "R1_CONTROLLED_SPATIAL_IDENTITY": "SATISFIED_AT_SOURCE_IDENTITY_LEVEL",
+    "R2_FOOTPRINT_TEST_GEOMETRY": "PENDING_SOURCE_BYTE_INSPECTION",
+    "R3_REAL_ORIENTATION_FRAME": "PENDING_SOURCE_BYTE_INSPECTION",
+    "R4_DATUM_LEVEL_EVIDENCE": "PENDING_DOCUMENT_INSPECTION",
+    "R5_PHYSICAL_ACCESS_STREET_GEOMETRY": "PENDING_DOCUMENT_INSPECTION",
+    "R6_SITE_IDENTITY_COHERENCE": "SATISFIED_AT_SOURCE_IDENTITY_LEVEL"
+  },
+  "packetState": "CONTROL_SELECTED_SOURCE_BYTES_PENDING",
+  "finalResult": null,
+  "candidateAuthoringState": "NOT_AUTHORED_IN_DPL_S1",
+  "restraints": {
+    "pixelMeasurement": "PROHIBITED",
+    "referenceHouseMutation": "PROHIBITED",
+    "compatibilityConclusion": "NOT_ADMITTED",
+    "incompatibilityConclusion": "NOT_ADMITTED",
+    "routeExhaustion": "NOT_IMPLEMENTED",
+    "dpl16": "HELD"
+  }
+}

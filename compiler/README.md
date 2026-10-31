@@ -1,8 +1,8 @@
 # Metamorph Compiler
 
-**Metamorph Compiler** is the human-facing name for the executable machinery under `compiler/`.
+**Metamorph Compiler** is the executable machinery under `compiler/`.
 
-It sits inside a deliberately simple hierarchy:
+It sits inside a deliberately bounded hierarchy:
 
 ```text
 Ovid’s House
@@ -14,58 +14,64 @@ Metamorph Compiler
 compiled architectural state + diagnostics + bounded evidence
 ```
 
-**Ovid’s House** is the architectural research project. **House Kernel** is its formal architectural/computational system: the bounded facts, relationships, invariants, obligations and proof boundaries that can legitimately be expressed explicitly. **Metamorph Compiler** is the software that compiles and checks those representations.
+**Ovid’s House** is the architectural research project. **House Kernel** is the formal architectural/computational system used where facts, relationships, invariants, obligations and proof boundaries can legitimately be made explicit. **Metamorph Compiler** is the software that compiles and checks those representations.
 
-The names do not widen authority. A successful compile establishes only the claims owned by the relevant supported domain and proof boundary. It is not architectural merit, engineering adequacy, regulatory approval or a building-release certificate.
+A successful compile establishes only the claims owned by the relevant supported domain and proof contract. It is not architectural merit, engineering adequacy, regulatory approval or a building-release certificate.
+
+## What `compiler/` owns
+
+This tree owns executable source, tests, deterministic renderers, proof fixtures and local implementation contracts.
+
+It does **not** own:
+
+- the public architectural proposition — see [`../docs/manuscript/`](../docs/manuscript/);
+- pattern validity or architectural grammar — see [`../docs/patterns/`](../docs/patterns/) and [`../docs/grammar/`](../docs/grammar/);
+- Reference House architectural decisions merely because they are represented — see [`../docs/reference-house/`](../docs/reference-house/);
+- current project-wide status — see [`../STATUS.md`](../STATUS.md);
+- publication layout/build authority — see [`../publication/`](../publication/).
+
+Local chapter, RH-C and COA READMEs define narrower proof contracts where those distinctions are materially useful. Their packet names are durable provenance, not a live roadmap.
 
 ## Naming boundary
 
-`Metamorph Compiler` is a system name, not a vocabulary migration through the source tree.
+`Metamorph Compiler` is the human-facing system name. Existing implementation names such as `compiler/`, `compileReferenceHouseSystem()`, RH-C, CH and COA identities remain descriptive technical/provenance names rather than a vocabulary that must be themed for consistency.
 
-The implementation deliberately retains ordinary, descriptive names such as:
+Metamorphosis is not itself a compiler primitive. The software checks a bounded set of architectural states, relationships and obligations for which deterministic representation has earned its place.
 
-- `compiler/`;
-- `compileReferenceHouse()`;
-- `compile.ts`;
-- `plan-slice`, `structure-slice`, `service-slice`, `boundary-slice` and `calculation-slice`;
-- RH-C, CF, CH and COA regression/gate identities;
-- `HK-RH-COMPILE-1` and other stable semantic/provenance identifiers.
+## Canonical Reference House compile
 
-Those names describe domains, operations or durable history. Renaming them for thematic consistency would add churn without adding architectural or software meaning.
+The controlled Reference House source is compiled through the canonical Reference House system path rather than through parallel authored projections.
 
-Likewise, **metamorphosis is not a compiler primitive**. The software does not attempt to model every future transformation of a house. It checks a deliberately bounded set of architectural states, relationships and obligations for which deterministic representation has earned its place.
+Human-readable semantic inspection outputs are emitted under [`../docs/reference-house/generated/`](../docs/reference-house/generated/). The output contract and deterministic renderers live under `compiler/reference-house/output/`, and the generated manifest binds successor artefacts to compile/render identities.
 
-## Current authority
+The generated inspection family is downstream evidence for human checking. It is not architectural source authority and it is not a construction drawing set.
 
-Compiler Hardening CH-00 through CH-08 is complete. The hardening programme strengthened fail-closed behaviour, runtime boundaries, single-pass compilation, representation, determinism, identity/provenance, test quality, tooling and final codebase distillation while preserving the frozen Reference House semantics and proof boundaries.
+## Ordinary workflow
 
-Compiler Output Architecture COA-00 through COA-06 is the downstream inspection/output programme over that same controlled compile. It does not add building capability or technical authority. It separates machine identity, non-spatial semantic reports and spatial inspection drawings, while preserving the six CH-frozen RH-C1–RH-C4 SVGs as historical executable evidence.
+Use [`../package.json`](../package.json) as command authority.
 
-Computational maturity remains **M4 — Internally validated / controlled** at the same bounded scope. There is no CH-09, RH-C6 or standing COA-07.
-
-## Canonical Reference House output surface
-
-The canonical production source remains `createReferenceHouseSource()` and the canonical production compile remains `compileReferenceHouseSystem(source)`.
-
-The successor human-inspection outputs are downstream of that single-pass result:
-
-- `docs/reference-house/generated/ground-floor-plan.svg`;
-- `docs/reference-house/generated/first-floor-plan.svg`;
-- `docs/reference-house/generated/principal-section.svg`;
-- `docs/reference-house/generated/first-floor-structure.svg`;
-- `docs/reference-house/generated/service-register.md`;
-- `docs/reference-house/generated/boundary-register.md`.
-
-`compiler/reference-house/output/` owns their output contract, shared build path and deterministic renderers. The machine-readable `docs/reference-house/generated/output-manifest.json` binds each successor artefact to the canonical compile fingerprint, renderer version and content hash.
-
-Normal commands are:
-
-```text
-npm run outputs:generate   # regenerate the complete successor family + manifest
-npm run outputs:check      # verify committed outputs without mutating them
-npm run check              # canonical repository health command
+```sh
+npm run outputs:generate   # regenerate the complete semantic-inspection family + manifest
+npm run outputs:check      # verify committed generated outputs without mutating them
+npm run check              # canonical repository-health entry point
 ```
 
-Output medium follows information character rather than compiler-domain symmetry: metric/spatial views use SVG; service and boundary registers use generated Markdown. Publication figures remain downstream editorial work rather than compiler output authority.
+Change the owning source or renderer first, then regenerate. Do not patch a generated artefact to hide a source/model defect.
 
-For current computational authority, programme history and proof boundaries, use [`../docs/computational/README.md`](../docs/computational/README.md), [`../docs/computational/compiler-hardening-programme.md`](../docs/computational/compiler-hardening-programme.md), [`../docs/computational/compiler-output-architecture-programme.md`](../docs/computational/compiler-output-architecture-programme.md) and [`../STATUS.md`](../STATUS.md).
+Publication drawings are a separate representation boundary. Their authority/proof records live in [`../docs/publication/`](../docs/publication/) and their build/layout machinery under [`../publication/`](../publication/).
+
+## Proof boundary
+
+The compiler may prove deterministic relationships that have explicit source authority, supported-domain scope and encoded checks. It cannot manufacture missing engineering, building-physics, regulatory, product or professional evidence.
+
+A machine-checked weak assumption remains a weak assumption. Missing evidence should remain unsupported or unresolved rather than being replaced by a plausible value.
+
+The computational conceptual model and its limits are documented in [`../docs/computational/README.md`](../docs/computational/README.md).
+
+## Targets, jurisdiction and deployment
+
+The separate DPL programme is establishing how external targets, jurisdiction, site evidence, scenarios and deployment results should relate to the controlled architectural proposition.
+
+Nothing in this README implies that a release-grade site/jurisdiction deployment compiler already exists. Such capability should enter `compiler/` only when the owning DPL/evidence work creates a concrete deterministic obligation worth implementing.
+
+For present project state, maturity and active programme gates, use [`../STATUS.md`](../STATUS.md).

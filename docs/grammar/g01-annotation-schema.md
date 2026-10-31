@@ -2,8 +2,6 @@
 
 The precedent evidence behind G-01 is read through a common annotation method so that one building is not interpreted by whatever feature happens to look interesting while another is measured differently.
 
-> **Annotate the building first. Infer the grammar later.**
-
 The method is deliberately implementation-independent. It is an evidence discipline, not a proposed database schema.
 
 ## Evidence states

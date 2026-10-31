@@ -126,7 +126,7 @@ export const primerPublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'primer-outlook',
     source: 'publication/primer/outlook.md',
-    title: 'Making and testing the platform',
+    title: 'Making and proving the platform',
     kind: 'primer'
   }
 ] as const
@@ -238,16 +238,21 @@ export const publicationEntries: readonly PublicationEntry[] = [
   {
     id: 'part-iv',
     source: 'docs/manuscript/part-iv.md',
-    title: 'Part IV — Reference House',
+    title: 'Part IV — The Reference House: Design Proposition',
     kind: 'part'
   },
 
   {
     id: 'part-v',
     source: 'docs/manuscript/part-v.md',
-    title: 'Part V — Making and Testing the Platform',
-    kind: 'part',
-    adapter: 'part-v-wrapper'
+    title: 'Part V — Making and Proving the Platform',
+    kind: 'part'
+  },
+  {
+    id: 'part-vi',
+    source: 'docs/manuscript/part-vi.md',
+    title: 'Part VI — The House',
+    kind: 'part'
   },
   {
     id: 'evidence-and-precedent-notes',

@@ -8,10 +8,28 @@ Where a chapter uses numbered notes, those remain the evidence trail for specifi
 
 - N. John Habraken, *Supports: An Alternative to Mass Housing*.
 - Stephen Kendall & N. John Habraken, *Open Building for Architects* (2024).
-- Stewart Brand, *How Buildings Learn: What Happens After They’re Built* (1994).
-- Christopher Alexander, Sara Ishikawa & Murray Silverstein, *A Pattern Language: Towns, Buildings, Construction* (1977).
+- Frank Duffy, Colin Cave & John Worthington, *Planning Office Space* (Architectural Press, 1976).
+- Stewart Brand, *How Buildings Learn: What Happens After They’re Built* (Viking, 1994).
+- Aldo van Eyck, “Steps towards a configurative discipline”, *Forum* 16, 1962, 81–94.
+- Herman Hertzberger, “Flexibility and Polyvalency”, *Forum*, 1962; English excerpt in *Ekistics* 15(89), 1963, 238–239. https://www.hertzberger.nl/images/publicaties/HermanHertzbergerPublications.pdf
+- Louis I. Kahn, “Architecture Is the Thoughtful Making of Spaces”, *Perspecta* 4, 1957, 2–3. https://www.jstor.org/stable/1566850
 - David Pye, *The Nature and Art of Workmanship* (1968).
 - Ignaz Strebel, “The living building: towards a geography of maintenance work”, *Social & Cultural Geography* 12(3), 2011. https://doi.org/10.1080/14649365.2011.564732
+
+## Pattern language and generative knowledge
+
+- Christopher Alexander, Sara Ishikawa & Murray Silverstein, *A Pattern Language: Towns, Buildings, Construction* (1977).
+- Christopher Alexander, “Systems Generating Systems”, *Systemat* (1967), reprinted in *Architectural Design* 38, 1968, 605–610. https://christopher-alexander-ces-archive.org/article/systems-generating-systems/
+- Christopher Alexander, *The Timeless Way of Building* (Oxford University Press, 1979). https://christopher-alexander-ces-archive.org/book/the-timeless-way-of-building/
+- Christopher Alexander, “The Origins of Pattern Theory: The Future of the Theory, and the Generation of a Living World”, OOPSLA keynote, 1996. https://www.patternlanguage.com/archive/ieee.html
+
+## Open systems, standardisation and interoperability
+
+- W. E. Tatton-Brown / British Modular Society, contemporary reports on opening closed building systems through interchangeability and common jointing conventions, *The Architects’ Journal*, 16 February and 12 April 1956. https://www.usmodernist.org/AJUK/AJUK-1956-02-16.pdf · https://www.usmodernist.org/AJUK/AJUK-1956-04-12.pdf
+- British Modular Society, first Modular Assembly, contemporary post-construction report, *The Architects’ Journal*, 1 January 1959. https://www.usmodernist.org/AJUK/AJUK-1959-01-01.pdf
+- First California Commission on School Construction Systems, *Contract Documents and Performance Specifications* (1963).
+- Christine Wall, *An Architecture of Parts: Architects, Building Workers and Industrialisation in Britain 1940–1970* (Routledge, 2013).
+- Stephen Kendall & Jonathan Teicher, *Residential Open Building* (E & FN Spon, 2000).
 
 ## Systems, resilience and coupling
 
@@ -35,12 +53,26 @@ Where a chapter uses numbered notes, those remain the evidence trail for specifi
 - Ursula M. Franklin, *The Real World of Technology* (1990; expanded ed. 1999).
 - Michael Polanyi, *The Tacit Dimension* (1966).
 
+## Domestic repose, privacy and humane occupation
+
+- A. S. Wainwright, “A Birmingham architect: W. H. Bidlake”, *International Studio*, no. 64, June 1902. Wainwright’s article reports Bidlake’s teaching and calls the first reported domestic principle the “Lamp of Repose”. https://doi.org/10.11588/diglit.22773.37
+- Witold Rybczynski, *Home: A Short History of an Idea* (1986). https://www.cca.qc.ca/en/search/details/library/publication/14966304
+- Alvar Aalto, “The Humanizing of Architecture” (1940). https://www.fondazionebrunozevi.it/it/alvar-aalto-the-humanizing-of-architecture/
+- Irwin Altman, *The Environment and Social Behavior: Privacy, Personal Space, Territory, Crowding* (1975).
+
 ## Occupation, perception and control
 
 - Alex Coburn et al., “Psychological and neural responses to architectural interiors”, *Cortex* 126, 2020, 217–241. https://doi.org/10.1016/j.cortex.2020.01.009
 - Runa T. Hellwig, “Perceived control in indoor environments: a conceptual approach”, *Building Research & Information* 43(3), 2015. https://doi.org/10.1080/09613218.2015.1004150
 - P. F. de Macedo, S. W. Ornstein & G. A. Elali, “Privacy and housing: research perspectives based on a systematic literature review”, *Journal of Housing and the Built Environment* 37, 2022, 653–683. https://doi.org/10.1007/s10901-022-09939-z
 - W. Bi & I. Yildirim, “Visual Perception of Intuitive Physics and Its Computational Foundations”, *Annual Review of Vision Science* 12, 2026, 491–513. https://doi.org/10.1146/annurev-vision-110423-024138
+
+## Environmental design and selective control
+
+- Victor Olgyay, *Design with Climate: Bioclimatic Approach to Architectural Regionalism* (Princeton University Press, 1963). https://books.google.com/books?id=eSkzAAAAMAAJ
+- Dean Hawkes, “The theoretical basis of comfort in the ‘selective’ control of environments”, *Energy and Buildings* 5(2), 1982, 127–134. https://www.sciencedirect.com/science/article/pii/0378778882900081
+- Dean Hawkes, Jane McDonald & Koen Steemers, *The Selective Environment* (2002). https://www.routledge.com/The-Selective-Environment/Hawkes-McDonald-Steemers/p/book/9781138157309
+- Reyner Banham, *The Architecture of the Well-Tempered Environment* (1969).
 
 ## Agency, legibility and technical dependence
 
