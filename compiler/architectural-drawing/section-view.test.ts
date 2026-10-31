@@ -162,3 +162,28 @@ test('generic section contrast composes exact scale-independent vectors with sem
   const wallCut = wall.primitives.find(p => p.kind === 'line' && p.role === 'cut' && p.id === cut.id)!
   assert.ok(near(length(wallCut), length(cut) * 2))
 })
+
+test('Y-oriented facade, runtime camera rejection, and SVG semantic hierarchy', async () => {
+  const shifted: HostedFacade = {...facade, id: 'non-house-y-elevation', axis: 'y', plane: 4000}
+  const cut = {axis: 'y', at: 5000, looking: 'negative'} as const
+  const visible = compileOrthographicSectionView({section: cut, facades: [shifted]})
+  assert.ok(visible.background.some(s => s.meaning.includes('non-house-y-elevation')))
+  const excluded = compileOrthographicSectionView({
+    section: {...cut, looking: 'positive'}, facades: [shifted]
+  })
+  assert.equal(excluded.background.length, 0)
+  assert.throws(() => sectionProjectionBasis({...cut, looking: 'sideways' as 'negative'}),
+    /Unsupported section axis or viewing direction/)
+  assert.throws(() => sectionProjectionBasis({...cut, axis: 'w' as 'x'}),
+    /Unsupported section axis or viewing direction/)
+  const {createSectionViewContrastScene} = await import('./section-view-contrast-fixture.js')
+  const {renderDrawingSceneV2Svg} = await import('../publication-drawing-v2/svg.js')
+  const svg = renderDrawingSceneV2Svg(createSectionViewContrastScene(100))
+  assert.match(svg, /width="145mm"/)
+  assert.match(svg, /data-scale-denominator="100"/)
+  assert.match(svg, /data-source-id="ADE-SECTION-VIEW-CONTRAST-01"/)
+  assert.match(svg, /class="line-cut"/)
+  assert.match(svg, /class="line-secondary"/)
+  assert.match(svg, /data-meaning="hosted-aperture:contrast-east-wall\/high-sash"/)
+  assert.equal(svg, renderDrawingSceneV2Svg(createSectionViewContrastScene(100)))
+})
