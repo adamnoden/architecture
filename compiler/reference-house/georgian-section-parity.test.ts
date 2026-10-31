@@ -16,7 +16,7 @@ test('accepted principal section projects the real far courtyard roof and host w
 })
 test('service and principal differ through retained geometry, not hard-coded window selection',()=>{
  const p=createLayoutSection('PRINCIPAL',100),s=createLayoutSection('SERVICE-SECTION',100)
- const context=scene=>scene.primitives.filter(p=>p.kind==='line'&&p.id.startsWith('mesh-'))
+ const context=(scene:ReturnType<typeof createLayoutSection>)=>scene.primitives.filter(p=>p.kind==='line'&&p.id.startsWith('mesh-'))
  const a=context(p),b=context(s)
  assert.ok(a.length>0&&b.length>0)
  assert.notDeepEqual(a.map(q=>q.id),b.map(q=>q.id))
@@ -31,7 +31,7 @@ test('model geometry doubles at WALL 1:50 while physical cut and context roles r
  assert.ok(s&&s.kind==='line')
  const other=w.primitives.find(p=>p.id===s.id)
  assert.ok(other&&other.kind==='line')
- const len=q=>Math.hypot(q.b.x-q.a.x,q.b.y-q.a.y)
+ const len=(q:{a:{x:number;y:number};b:{x:number;y:number}})=>Math.hypot(q.b.x-q.a.x,q.b.y-q.a.y)
  assert.ok(eq(len(other),2*len(s)))
  assert.equal(s.role,'secondary');assert.equal(other.role,'secondary')
  assert.ok(b.primitives.some(p=>p.id==='section-roof-0'&&p.kind==='path'))
