@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { extractText, getDocumentProxy } from 'unpdf'
-import { publicationPlatePlacements } from '../plates-current.js'
+import { publicationPlatePlacements } from '../plates.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const workingEditionPath = resolve(repoRoot, 'publication/dist/ovids-house.pdf')

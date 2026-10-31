@@ -1,45 +1,203 @@
-# Reference House — Structural Review Brief
+# Reference House — RH-11 Structural Review Brief
 
-**Reviewed architectural basis:** RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02, source snapshot 29 October 2026. [Current House Basis](current-house-basis.md) identifies the accepted source; [review applicability](../../project/epr/current-house-review-applicability.md) records its exact identities and the replaced predecessor inputs.  
-**Status:** current questions prepared; unissued, with no competent review response or technical acceptance. The source package must be fixed at issue and any changed geometry or system reconciled first.
+**Status:** ready for competent structural-engineer review  
+**Parent pack:** [RH-11 External Review Brief](external-review-brief.md)  
+**Current project maturity:** M3 coordinated virtual design; **no structural adequacy claim**
 
-This brief supersedes the predecessor geometry in this discipline's review preparation. The earlier three-flight stair, +3300 mm upper floor and outward low-slope roof are historical evidence, not inputs to the present review. Use the [parent questions](external-review-brief.md), [regulatory snapshot](external-review-regulatory-baseline-rh11.md) and [response template](external-review-response-template-rh11.md) with this brief.
+## Review question
 
-## Decision to resolve
+> **Can the selected architectural geometry be carried by the RH-05 short-span masonry-ring concept without disproportionate member depth, transfer structure, unstable masonry, unacceptable service penetrations or roof/PV structure that materially rewrites the house?**
 
-Can ordinary masonry and timber construction support the actual house, including its openings and service routes, within the architectural layer budgets? Identify where a local frame or a revised opening is preferable to preserving a nominal support ring. The review must produce located support alternatives and their consequences; a statement that an engineer will later resolve them is insufficient.
+The project is seeking a structural red team, not member design by correspondence.
 
-## Current geometry and observed conflicts
+---
 
-The shell is 12 × 12 m with a 3.5 × 3.5 m court. The represented envelope is 417.5 mm overall; its layers do not establish a loadbearing width. The surrounding 4250 mm gross band and the distances between finished faces are not member spans or bearing lengths.
+## 1. Controlled assumptions to attack
 
-The upper floor is at +3450 mm and the ordinary ground ceiling at +3100 mm. The complete 350 mm package is allocated: 20 mm finish, 22 mm deck, 238 mm framing, 55 mm services and 15 mm ceiling. Neither the framing zone nor the service zone can be counted twice. No member family or capacity is selected.
+### Primary vertical structure
 
-The two-flight stair has 20 rises of 172.5 mm, 300 mm going, 1100 mm flights and a 1635 mm landing. The entrance void is 2275 × 2295 mm with a 1120 mm bridge. Its guards, aperture edges, trimmers and reactions remain unselected. A full aperture and a stepped aperture are alternatives in the [structural study](../../project/bcr/bcr-structure-result.md), not changes to the source model. The section helper's omission of a stair opening is a representation limitation, not evidence that a slab actually blocks the stair.
+Working family:
 
-The study's candidate void-side reactions at x=4862.5 and 7137.5 mm meet a court-south door opening spanning x=4800–7200 mm. Offset trials at x=4600 and 7400 mm require a roughly 2800 mm header and finite piers/bearings; moving a line does not prove them. The services trial runs west at y=3300 mm across the bridge band and these candidate trimmers.
+- loadbearing inner leaf of outer masonry envelope;
+- loadbearing inner leaf of courtyard envelope;
+- facing masonry / cavity / insulation treated as envelope layers rather than assumed gravity structure;
+- non-loadbearing internal room partitions unless a later engineered reason says otherwise.
 
-The accepted roof is a 25° inward/outward ring at an eave datum of +6800 mm. Its 300 mm vertical package is about 271.9 mm normal to the slope for **all** layers. Four inner valleys concentrate runoff at court corners. Ridge and valley lines in the drawing are not structural supports. The [roof comparison](../research/roof-system-candidates.md) includes named covering/system families and an outward-only alternative; none is admitted as the house roof.
+RH-10 envelope planning family is **400–425 mm overall**, with **450 mm** as a geometry stress limit. A roughly **140 mm-class inner masonry leaf** is only the first robust comparator, not a selected structural thickness.
 
-The later unadopted [court-level proposal](../../project/had/had-03-court-levels.md) introduces pedestal/paver loads and a northward carrier through two threshold/support territories. A door aperture does not remove the need for independent support, insulation and waterproof continuity. Include that alternative if selected for option reduction; no court deck or maintenance scaffold bearing capacity is established.
+### First-floor structure
 
-## Questions and required evidence
+Working topology:
 
-| Question | Evidence needed | Architectural consequence if it fails |
-|---|---|---|
-| **STR-1 — Load path and stability.** Where are actual bearing faces, lintels, ties, diaphragm edges and restraint paths around the court and external openings? | Located framing/support plan, reaction paths and reasoned preliminary member/connection envelopes; separate dead, imposed, wind and maintenance loads | Reopen opening widths, piers or structural family through HAD/OAS and the structural owner; do not assign support to a void edge |
-| **STR-2 — Floor and bridge.** Can stiffness, vibration, fire and acoustic duties fit the 238 mm structural allocation and the complete 350 mm floor? | Member-depth and connection comparison with real bearings, bridge/guard loads and diaphragm continuity | Change framing, relocate services, or explicitly revise floor/ceiling datums; reassess stair and all dependent sections |
-| **STR-3 — Stair opening.** Which full or stepped aperture gives a supported edge and adequate continuous pitch-line headroom? | Dimensioned trimmer/soffit/guard sections, not just a headroom check at isolated nosings; inspect installation and renewal | Rewind stair/void/bridge geometry. The hostile ordinary-ceiling checks of 2065 mm at nosing 6 and 1892.5 mm at 7 are conditional diagnostics, not an adopted aperture |
-| **STR-4 — Penetrations.** Can the y=3300 mm route, riser and candidate wet-room stacks cross the selected framing without borrowing its structural depth? | Located holes, framed openings, local loads, fire/acoustic sealing and access/replacement sections | Reroute services or alter structure explicitly; a 550 × 700 mm gross riser reservation is not a pre-approved opening |
-| **STR-5 — Roof.** How are ridge/valley, covering, insulation, access and wind-uplift loads carried within a real assembly? | System-specific framing and edge support, actual loads and full normal-to-slope depth; compare current ring and outward-only challenger without equating face run with member span | Reopen ROF geometry/assembly and OAS edge details; no standing loft or PV load allowance is inherited |
-| **STR-6 — Ground and drainage.** What support crossings and settlement assumptions must await a site? | Foundation/ground information from DPL; located court-to-outside carrier crossings and sleeve/support alternatives | Reopen RWT route/levels and substructure together; the ground-floor reserve is not a tunnel through footings |
+- west/east strips span approximately **4.2 m gross** between outer and courtyard structural lines;
+- south/north central strips span approximately **3.4 m gross**;
+- four approximately **3.4 m** edge-beam conditions continue the courtyard support lines across front/rear wings:
+  - `EB-W-S`
+  - `EB-E-S`
+  - `EB-W-N`
+  - `EB-E-N`;
+- stair opening `ST-01` uses local trimmers;
+- `PEN-SV-01` creates the principal framed service opening;
+- structural deck remains the diaphragm independently of any changeable finish layer.
 
-## Ordinary adverse cases
+### Floor depth
 
-Test a frame that needs more depth than the current structural allocation; a court-door reaction that needs a wider pier than the plan supplies; and a service crossing directly through the chosen bridge trimmer. Give a conventional fallback and its actual spatial cost for each. Compare a simplified support/opening arrangement before proposing a bespoke concealed transfer.
+Architectural control:
 
-## Issue inputs and return route
+- ground clear ceiling: +2950 mm;
+- first-floor FFL: +3300 mm;
+- **350 mm total floor/service/ceiling zone**.
 
-Supply the exact source snapshot, the structural study's drawing and calculations, the [services study](../../project/bcr/bcr-services-result.md), [occupation study](../../project/bcr/bcr-occupation-result.md), [water study](../../project/bcr/bcr-water-result.md) and the [construction-resolution findings](../../project/bcr/construction-resolution-matrix.md). Historical RH-05 and P03 records may inform a comparator only after the reviewer declares their applicability; they do not supply current member capacities.
+The first engineering comparator is an engineered-timber / I-joist family around the 300 mm class. This has not been sized.
 
-Return each finding against a located object and the smallest owning correction: structural geometry/HAD for support and apertures, IAS for floor layers, OAS for envelope openings, ROF for roof support and RWT for drainage crossings. BCR records the unresolved dependency; HRS absorbs accepted changes. PHY specimens follow engineering option reduction and cannot establish whole-house stability or capacity.
+### Roof
+
+RH-08/RH-10 replace the earlier pitched-roof preference with four very-low-slope roof fields draining outward from the courtyard.
+
+Structural expectation:
+
+- preserve the same short-span outer-wall ↔ courtyard-wall logic where practical;
+- coordinate low-slope deck, parapet/coping and diaphragm;
+- carry a distributed **~50 m² PV-capable reservation** without assuming exact module/ballast/mounting loads;
+- keep primary drainage geometry intact;
+- no large roof transfer frame is intended.
+
+### Protected zones
+
+Do not assume future service drilling through:
+
+- courtyard corner reaction nodes;
+- `EB-*` edge beams;
+- stair trimmers;
+- opening bearing / lintel zones;
+- structural deck/diaphragm outside engineered openings.
+
+The current [Service Crossing Register](service-crossing-register-rh06.md) should be treated as proposed openings requiring structural acceptance, not pre-approved holes.
+
+---
+
+## 2. Review documents / drawings
+
+Primary:
+
+1. [RH-05 Structural Coordination](structural-coordination.md)
+2. [RH-05 Structural Concept Overlay](structural-concept-overlay.svg)
+3. [RH-10 Whole-House Coordination Audit](whole-house-coordination-audit.md)
+4. [RH-10 Envelope Coordination](envelope-coordination-rh10.md)
+5. [RH-10 Energy / Heat / Renewable Coordination](energy-heat-coordination-rh10.md)
+6. [RH-08 Roof / Drainage / Access](roof-drainage-access-rh08.md)
+7. [RH-08 Roof / Drainage Plan](roof-drainage-plan-rh08.svg)
+8. [Service Crossing Register](service-crossing-register-rh06.md)
+9. [RH-04 front elevation](front-elevation-study.svg) and [courtyard elevations](courtyard-elevations-study.svg)
+10. [RH-10 outer elevation coordination](outer-elevation-coordination-rh10.md)
+
+Prototype dependency:
+
+- [Tectonic Prototype Programme — P03 Structural Floor Edge](../development/tectonic-prototype-programme.md)
+
+---
+
+## 3. Questions requiring a structural answer
+
+### Load path / stability
+
+1. Is the basic **outer masonry + courtyard masonry + short-span floor ring** a credible primary structure for a two-storey house of this geometry?
+2. Is there any missing global stability / robustness action that makes the apparently simple ring misleading?
+3. Can the courtyard walls reasonably remain loadbearing through the current opening families without requiring a concealed independent frame?
+4. Are the four courtyard corner nodes likely to become structurally disproportionate because they collect wall, floor-edge, roof and diaphragm reactions?
+
+### Floor framing
+
+5. Is a 4.2 m engineered-timber floor span compatible in principle with the current **350 mm architectural floor zone** once strength, vibration, deflection, fire and acoustic build-up are considered?
+6. Are the four `EB-*` edge-beam conditions genuinely ordinary/local, or are their reactions/connections likely to become transfer structures in disguise?
+7. Does the three-flight stair opening create any load-path or diaphragm problem not captured by RH-05?
+8. Is the approximately **1050 × 850 mm** starting opening around `SV-01` plausible without compromising the short-span floor system?
+
+### Masonry / openings
+
+9. Does the RH-04 four-bay front leave credible pier/bearing geometry once a real loadbearing inner leaf and lintels are designed?
+10. Do the courtyard north/south broad openings and east/west opening rhythms leave adequate structural wall/pier behaviour, or is any façade currently over-opened?
+11. Is a 140 mm-class dense masonry inner leaf a sensible first comparator, or should the project test a materially different thickness/block family?
+12. Are there differential-movement / restraint implications at the masonry ↔ engineered-timber interfaces that should alter the P03 prototype scope?
+
+### Roof / PV
+
+13. Can the outward-draining low-slope roof follow the same short-span structural logic without excessive depth or steelwork?
+14. What roof framing / deck families are most credible if the outer cornice datum and courtyard high edge are to stay visually quiet?
+15. Does a ~50 m² PV reserve create a material loading, local concentration, wind-uplift or mounting issue that should change the roof concept before product layout?
+16. Are parapet/coping and gutter-edge support loads being underestimated as architectural trim rather than structural edge conditions?
+
+### Foundations / ground
+
+17. With no real ground/site, is there any foundation assumption embedded in the current load-path concept that is unsafe even as a virtual baseline?
+18. Does the courtyard/outer-wall ring create differential-settlement sensitivity worth recording now?
+19. Are the foul/courtyard drain crossings likely to create avoidable foundation complications that should alter their current locations?
+
+---
+
+## 4. Required red-team cases
+
+Please test at least these ordinary adverse cases.
+
+### S-RT1 — floor depth fails
+
+Assume vibration/fire/acoustic design pushes the repeated floor zone materially beyond **350 mm**.
+
+- What is the credible required depth?
+- Can the difference be localised?
+- At what point should RH-04 reopen rather than lower the 2.95 m ground ceiling?
+
+### S-RT2 — courtyard opening expansion pressure
+
+Assume architectural development asks for a wider north garden/courtyard opening or larger courtyard glazing.
+
+- Which pier/corner dimensions become controlling first?
+- What maximum change can occur before a new frame/transfer family is required?
+
+### S-RT3 — service opening congestion
+
+Assume MEP requests a larger `PEN-SV-01` or another duct penetration near an `EB-*` line.
+
+- What opening strategy remains ordinary?
+- At what point should the service topology move rather than the structure adapt?
+
+### S-RT4 — PV roof case
+
+Assume realistic PV mounting/wind actions concentrate loads unfavourably on one or two roof fields.
+
+- Can the current roof framing remain short-span and repetitive?
+- What would force an RH-08 roof/architectural rewind?
+
+---
+
+## 5. Rewind conditions
+
+Treat the following as likely `REWIND` findings rather than normal technical detailing if confirmed:
+
+1. repeated floor/edge-beam design requires a floor zone materially deeper than **350 mm** and cannot preserve the RH-04 clear-height hierarchy;
+2. courtyard or outer masonry requires an independent frame substantial enough that the RH-05 load-path concept is no longer truthful;
+3. normal structural adequacy requires columns/posts in principal rooms or a long transfer beam not currently shown;
+4. the stair must move materially for structural reasons;
+5. courtyard openings / front bay axes must move materially;
+6. `SV-01` / registered crossings cannot be accommodated without structural proliferation;
+7. the low-slope roof / PV requires a structural depth or visible geometry incompatible with the RH-04/RH-08 cornice control;
+8. a generally thicker structural/envelope wall pushes the house beyond the **450 mm** geometry stress limit.
+
+A different joist, beam, lintel, connection or foundation family **within the same architectural coordinates** is not automatically a rewind.
+
+---
+
+## 6. What the project wants back
+
+Please return:
+
+- overall structural disposition;
+- material findings / rewinds first;
+- the most plausible structural family at this geometry;
+- which RH-05 assumptions are safe enough to freeze for technical design;
+- which dimensions should remain architectural reservations rather than nominal engineering guesses;
+- P03 prototype changes required before physical testing;
+- at least two counterexamples that would break the current structural concept;
+- standards / Eurocodes / National Annex basis used.
+
+A detailed member schedule is **not** required for this review gate.

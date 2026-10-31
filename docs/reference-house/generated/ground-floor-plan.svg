@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1120" viewBox="-1500 -1800 18200 14700" role="img" aria-labelledby="title desc" data-output-id="RH-PLAN-GROUND-1" data-renderer-version="1.0.0" data-source-compile="c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f" data-compile-status="PASS">
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1120" viewBox="-1500 -1800 18200 14700" role="img" aria-labelledby="title desc" data-output-id="RH-PLAN-GROUND-1" data-renderer-version="1.0.0" data-source-compile="16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c" data-compile-status="PASS">
 <title id="title">Reference House — ground-floor plan</title>
 <desc id="desc">North-up deterministic semantic inspection plan. Human labels lead; semantic IDs remain secondary. Wall faces and unresolved construction geometry are not invented.</desc>
 <style>
@@ -225,5 +225,5 @@
 <text x="12900" y="7460" class="oh-note">Going 300 mm · width target ≈1000 mm</text>
 <text x="12900" y="7690" class="oh-note">Reservation 2400–2500 mm</text>
 <text x="0" y="12250" class="oh-note">Boundary strokes are semantic lines, not wall faces. Exact internal door positions and stair construction remain deliberately unresolved.</text>
-<text x="0" y="12550" class="oh-id">Source compile c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f</text>
+<text x="0" y="12550" class="oh-id">Source compile 16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c</text>
 </svg>

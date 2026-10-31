@@ -45,45 +45,26 @@ IAS-01V and IAS-02S / IAS-02W as coordination item I00-C1, not silently repositi
 
 This is a read-only baseline packet, not a selected assembly or performance
 verdict. BSR closed through PR #950, establishing the chapter/ownership interfaces.
-IAS-00 supplied the now-completed shared interface contract with OAS-00 and
-HAD-00. The vertical candidates work through one quiet wall/attachment datum
-and one service-access front; horizontal candidates reconcile the 350 mm package.
-The candidate/service handoff below records the surviving directions and
-unresolved adoption obligations.
+IAS-00 now supplies the shared interface freeze; OAS-00 and HAD-00 must also
+complete before that contract. The vertical candidate work then starts with one
+quiet wall/attachment datum and one high-service access front, including returns
+and removal/reinstatement; horizontal candidates reconcile the 350 mm package.
 
 ## Candidate outputs
 
-- [Service/access family](ias-02s-services-access.md).
-- [Wet/kitchen variants](ias-02w-wet-kitchen-variants.md).
-- [IAS/HAD candidate junction](ias-had-junction.md).
-- [Candidate/service handoff and adoption ledger](ias-candidate-service-handoff.md).
 - [Vertical candidates](ias-01v-vertical-candidates.md).
 - [Horizontal candidates](ias-01h-horizontal-candidates.md).
 - [Dimensioned section/access comparison](studies/ias-core-sections.svg).
 
-The shared interface contract and all candidate junctions are complete at their
-stated scope. [IAS/OAS reconciliation](../oas/ias-oas-junction.md) now supplies
-the opening edge/release contract. IAS-03 owns actual selection and the detailed
-disassembly set. The adoption ledger carries unresolved fit, depth, access and
-performance questions forward.
-
-## Selected dry-family development
-
-- [Partial selection and adoption hold](ias-03-partial-selection-result.md).
-- [Selected dry family, dimensions and disassembly](../../docs/reference-house/interior-family-selection.md).
-- [Dimensioned dry interface sheet](studies/selected-dry-interfaces.svg).
-
-IAS-03 has a bounded dry-family result but remains incomplete. Wet depth, actual
-service-front section/task, small-en-suite fit and wet-component failure records
-remain explicit adoption obligations; TRIAD-GATE cannot pass on the partial set.
+The shared interface contract is complete. These are candidates, not selected
+assemblies; services, wet variants and cross-stream junctions follow their
+canonical dependencies.
 
 ## Parallel interfaces
 
 IAS runs in parallel with OAS #942 and HAD #943 after BSR. It works against the controlled current Reference House/PLT geometry. Any material section-depth, plan, opening or service-space conflict is an explicit rewind request; IAS may not silently fork the house.
 
 OAS owns the opening cassette/envelope crossing; IAS owns the room-side assembly meeting it. HAD owns visible composition/material expression and consumes IAS dimensional/assembly constraints.
-
-The [MRA-00 interior/interface questions](../mra/mra-00-moisture-constitution-threat-model.md#9-ias-assurance-questions) require actual first-wetted surfaces, declaration, isolation, drying and complete renewal. IAS retains constructive design; a waterproof core, accessible face or named evidence owner is not an assurance pass.
 
 ## Evidence boundary
 
@@ -95,15 +76,3 @@ IAS closes when a selected bounded interior system is coordinated across represe
 the shared TRIAD-GATE establishes one coordinated house with OAS and HAD.
 
 Closure is not construction adequacy or physical acceptance.
-
-
-## 29 October refurbishment interface
-
-Retain the explicit IS-01–06 adoption obligations, including the 26.5 mm wet trial against a 20 mm allowance, access-front section and U-ENS3 sanitary/door fit. Finish or simplify the actual occurrence; do not transfer an unfitted room to BCR as if it were resolved.
-
-The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.
-
-
-## Bedroom 4 wet-service section checkpoint
-
-The [located wet-service comparison](ias-03-bedroom4-wet-section.md) develops the unadopted HAD Bedroom 4 alternative with an explicit raised-tray/floor budget, perimeter waste route and disassembly sequence. It exposes an unresolved under-tray fitting/access condition and retains exact product-generation and wet-system holds. This narrows IW-01/IS-02; it does not close IAS-03, adopt the alternative, or remove the existing IS-01–06 obligations.
