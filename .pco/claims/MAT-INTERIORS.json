@@ -1,20 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
-  "generation": 1,
+  "generation": 2,
   "state": "claimed",
-  "leaseId": "5fd39800-a275-449f-b5c0-f94b5aaf56ce",
+  "leaseId": "aa287637-308e-476a-9a5c-4cf2510b68c2",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-worker-c-1cd2b9a76146"
+    "label": "mat-recovery-20261031"
   },
-  "claimedAt": "2026-10-30T23:24:27.057Z",
-  "heartbeatAt": "2026-10-30T23:30:55.376Z",
-  "expiresAt": "2026-10-31T00:15:55.376Z",
-  "branch": "work/swarm-c-materials-20261030",
-  "checkpoint": {
-    "evidence": "PR #1115; published head bd22447008a9ff38054237fbf10119151ddfff29; interior-shower-tray-alternatives.md",
-    "next": "Reconcile current main, require exact-head CI, run canonical merge-check, integrate bounded partial and release",
-    "blocker": "Exact-head CI and base reconciliation pending; no complete installation accepted"
+  "claimedAt": "2026-10-31T09:08:01.775Z",
+  "heartbeatAt": "2026-10-31T09:08:01.775Z",
+  "expiresAt": "2026-10-31T09:53:01.775Z",
+  "branch": "work/mat-recovery-20261031",
+  "predecessor": {
+    "leaseId": "5fd39800-a275-449f-b5c0-f94b5aaf56ce",
+    "generation": 1,
+    "branch": "work/swarm-c-materials-20261030",
+    "checkpoint": {
+      "evidence": "PR #1115; published head bd22447008a9ff38054237fbf10119151ddfff29; interior-shower-tray-alternatives.md",
+      "next": "Reconcile current main, require exact-head CI, run canonical merge-check, integrate bounded partial and release",
+      "blocker": "Exact-head CI and base reconciliation pending; no complete installation accepted"
+    }
+  },
+  "recoverySource": {
+    "leaseId": "5fd39800-a275-449f-b5c0-f94b5aaf56ce",
+    "generation": 1,
+    "branch": "work/swarm-c-materials-20261030",
+    "checkpoint": {
+      "evidence": "PR #1115; published head bd22447008a9ff38054237fbf10119151ddfff29; interior-shower-tray-alternatives.md",
+      "next": "Reconcile current main, require exact-head CI, run canonical merge-check, integrate bounded partial and release",
+      "blocker": "Exact-head CI and base reconciliation pending; no complete installation accepted"
+    }
   }
 }
