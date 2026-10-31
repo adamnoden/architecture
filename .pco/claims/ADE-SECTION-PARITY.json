@@ -9,12 +9,12 @@
     "label": "ade-section-parity"
   },
   "claimedAt": "2026-10-31T21:53:32.902Z",
-  "heartbeatAt": "2026-10-31T21:53:32.902Z",
-  "expiresAt": "2026-10-31T22:38:32.902Z",
+  "heartbeatAt": "2026-10-31T22:03:09.963Z",
+  "expiresAt": "2026-10-31T22:48:09.963Z",
   "branch": "work/ade-section-parity-1187",
   "checkpoint": {
-    "evidence": "Shared roof-surfaces extraction and source parity tests committed 31e375a; draft PR #1192",
-    "next": "Implement hosted courtyard background view for principal and service sections, then cross-view tests and rendered proof."
+    "evidence": "PR #1192 branch head 6e3d1fe: shared ring roof mesh; courtyard hosted section backgrounds; principal/service cut integration; source-level unique aperture IDs; source-unified roof height law and tests",
+    "next": "Inspect exact-head CI, fix failures, inspect rendered section artifact, write closeout and merge only with fresh runner preflight"
   },
   "pr": 1192
 }
