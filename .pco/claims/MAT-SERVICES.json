@@ -9,8 +9,8 @@
     "label": "mat-drain-detail-20261031-1728"
   },
   "claimedAt": "2026-10-31T17:27:43.167Z",
-  "heartbeatAt": "2026-10-31T17:27:43.167Z",
-  "expiresAt": "2026-10-31T18:12:43.167Z",
+  "heartbeatAt": "2026-10-31T17:45:42.600Z",
+  "expiresAt": "2026-10-31T18:30:42.600Z",
   "branch": "work/mat-drain-detail-20261031-1728",
   "predecessor": {
     "leaseId": "5b44c665-d4bc-4838-991f-5419beda9ee8",
@@ -33,5 +33,11 @@
       "next": "Bind a current complete caulked soil-joint package and a supported repair section through the owning BCR/IAS service access; MAT-SERVICES remains planned",
       "blocker": "Coating, packing, accessory constituents and full release/repair proof remain unresolved"
     }
+  },
+  "pr": 1161,
+  "checkpoint": {
+    "evidence": "PR 1161 published at 9b0ae727e41cfc962b767a9b3bb3278581d900e5 with tree563b6bcd838c2c01c76af8ab19d23f02dd04ddce equal to reviewed local index. Source, independent geometry/integration reviews, drawing check and rendering, repository integrity and docs build passed.",
+    "next": "Reconcile concurrent main changes, require exact-head full CI and fresh canonical merge preflight, then merge and release with the services packet still planned.",
+    "blocker": "Exact joint, complete waste/support/opening envelopes and installed physical renewal remain unresolved; no complete material pass. Current integration and CI pending."
   }
 }
