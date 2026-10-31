@@ -9,11 +9,12 @@
     "label": "swe-1174-identity"
   },
   "claimedAt": "2026-10-31T20:18:15.654Z",
-  "heartbeatAt": "2026-10-31T20:25:53.642Z",
-  "expiresAt": "2026-10-31T21:25:53.642Z",
+  "heartbeatAt": "2026-10-31T20:46:45.254Z",
+  "expiresAt": "2026-10-31T21:46:45.254Z",
   "checkpoint": {
-    "evidence": "Published tested implementation at b7a903f55eccbc8748b885391f675dc68b91d671; identity-result and baseline record all tests and frozen compatibility.",
-    "next": "Inspect exact-head CI, reconcile other SWE packets, then complete final closeout."
+    "evidence": "Identity source b7a903f passed full exact-head CI and historical owner proof; all four implementation sources now preserved in remote PRs for shared integration.",
+    "next": "Integrate all nine fixes into PR 1180; validate combined exact head, run four canonical merge checks, merge and release."
   },
-  "branch": "work/swe-identity-1174"
+  "branch": "work/swe-identity-1174",
+  "pr": 1180
 }
