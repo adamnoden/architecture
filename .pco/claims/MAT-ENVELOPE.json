@@ -9,8 +9,8 @@
     "label": "services-mat-recovery-1936-20261031"
   },
   "claimedAt": "2026-10-31T19:39:42.972Z",
-  "heartbeatAt": "2026-10-31T20:03:47.640Z",
-  "expiresAt": "2026-10-31T21:33:47.640Z",
+  "heartbeatAt": "2026-10-31T20:18:57.656Z",
+  "expiresAt": "2026-10-31T21:48:57.656Z",
   "branch": "work/swarm-mat-recovery-1936-20261031",
   "predecessor": {
     "leaseId": "d599fb57-c857-41b2-bdbc-8c4f1b90d8aa",
@@ -35,9 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1175 publishes 488d82966d2e3ef0adba89976f4ab78792dc25f2 with exact reviewed treea7bd6c6cb887b825972c9e0f8dd46fdbbc18c806. Sourcee9e4c827e21197c43843a48dbe7afd16b2ae57c1 preserves reviewed local385ff4bd on c9e9; integration preserves accepted e760b101 and all six final reviewed blobs. Independent primary/code/architectural/numerical and final A3 review passed after correcting outside-body versus open-aperture positions. Original section outputs unchanged; G03 only of54 audit rows changed. Integrated repo/docs and reproducer/source checks pass.",
-    "next": "Require full CI on actual published head and fresh canonical preflight, then expected-head merge and exact accepted-result verification.90min TTL covers prior evidenced connector delay; no automatic heartbeat.",
-    "blocker": "This internal comparison is complete at its bounded scope; complete wall crossing, actual clear passage/aperture, support, water protection, retained constituents, site/airflow and maintenance remain unresolved for assembly acceptance. MAT-ENVELOPE remains incomplete."
+    "evidence": "PR1175 preserves reviewed source e9e4c827e21197c43843a48dbe7afd16b2ae57c1 and six exact MAT blobs. Full CI41237104989 passed published head488d82966d2e3ef0adba89976f4ab78792dc25f2. Accepted main through a86ad87950d007f862b6004769bbea56e8bfd946 independently inspected; local reconciliation preserves all six blobs and source ancestry, awaiting remote publication and new exact-head CI. Bounded ventilation study remains a comparison, not installed assembly approval.",
+    "next": "Coordinator publishes reconciled integration on PR1175, then full new exact-head CI and fresh canonical preflight; verify accepted tree, six owner blobs and source ancestry before final checkpoint and release. MAT-ENVELOPE remains planned."
   },
   "note": "Meaningful source and predecessor reconciliation checkpoint; root alone performs external connector writes.",
   "pr": 1175
