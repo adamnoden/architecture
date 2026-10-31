@@ -9,9 +9,9 @@
     "label": "swarm-had-design-983b7ee"
   },
   "claimedAt": "2026-10-31T19:36:45.785Z",
-  "heartbeatAt": "2026-10-31T19:45:23.774Z",
-  "expiresAt": "2026-10-31T20:30:23.774Z",
-  "branch": "work/swarm-had-design-20261031",
+  "heartbeatAt": "2026-10-31T19:50:42.302Z",
+  "expiresAt": "2026-10-31T21:20:42.302Z",
+  "branch": "work/swarm-riser-recovery-20261031",
   "predecessor": {
     "leaseId": "b69d3feb-4ddc-4a18-baab-fd43fb21972e",
     "generation": 6,
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Recovered actual preserved predecessor: branch work/swarm-2900-next-20261031 tips0a1e6e8d4804a6d77b1f58b4736579dc48b761aa, with published STR1cafd7afca71801f7729d41964a55eceda1050b6, IAS6416dddda7584491829bbf53ccfa10ad01c2cfbb and former mainb3a11fa7 parents; no PR found for that branch. STR-only recovery3929f57ea4297c5d6346d80bc0cafd9f48539aca on current mainc9e9a2c0087ef4e18b5fa4527826767ba4f0c8bd has tree42741cb6bb4c0bafc5375d38a3a71aa3613e3a35 and exactly5 STR files identical to1cafd. Original riser JSON/SVG preserved. Fresh manufacturer source review matches PETRA04/2025 PDF2083337B SHA73d418fa20f659dbb6ef5586e9c9e765238a42298b596b626e77adfde349a640 and current Ibstock nominal depths; independent root review agrees. Reproducer, A3 visual inspection, repository integrity, publication source/integrity and docs build passed. IAS is separately owned gen12 UUID7619f2db-fb07-4914-b2fb-dd2284fe29a0; its reviewer confirms unchanged6416 five-file result. Original coordinated STR cross-link blob6aaad687 is reviewed and may accompany that exact IAS source; not silently added to STR-only checkout.",
-    "next": "Prepare a common recovery candidate from freshest main plus preserved original0a1e/1cafd/6416 ancestry, under both STR-HOUSE and IAS-03 current leases. Preserve current main and all reviewed owner blobs; include the already reviewed cross-link only with IAS source. Require exact combined repository/publication checks, full exact-head CI and both fresh canonical preflights before expected-head merge; verify actual accepted tree and operation timing before closeout. No predecessor cleanup until integration verified.",
-    "blocker": "Actual HC150 hanger or paired deeper assembly, receiving-panel layout, permanent cabinet/floor-closure support, one-sided spine reactions, component withdrawal, protection and installed constituents remain unbound. Shared200 depth is not approved pairing; no capacity or assembly adoption and STR-HOUSE remains incomplete."
-  }
+    "evidence": "PR1170 publishes c3953e189583f42c101223057f2b7671877c732b, exact reviewed tree50158c3bb7c3b26102df235b91efc59956d29592 on mainc9e9 with original0a1e/1cafd/6416 ancestry. All10 original owner blobs preserved. Independent primary, code, architectural and A3 reviews plus combined reproducers, workflow/repo/publication checks and docs build passed.",
+    "next": "Full CI on published head, fresh STR-HOUSE and IAS-03 canonical preflights, expected-head merge and exact accepted-result verification.90min TTL covers the evidenced48min prior connector delay; normal meaningful checkpoints retained.",
+    "blocker": "Actual HC150 or deeper hanger assembly, receiving panels, cabinet and floor-closure supports, spine reactions, protection and installed constituents remain unbound. No structural acceptance or STR-HOUSE completion."
+  },
+  "pr": 1170
 }
