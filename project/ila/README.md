@@ -242,7 +242,7 @@ The canonical source surface now includes proportionate records for:
 - Hawkes;
 - Alexander primary pattern/generative sources.
 
-The bibliography expansion legitimately changed live production pagination to:
+At ILA-05B, the bibliography expansion changed the then-current production pagination to:
 
 - A4: **279 pages / 140 duplex leaves**;
 - conservative B5: **335 pages / 168 duplex leaves**.

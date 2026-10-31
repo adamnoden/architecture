@@ -1,6 +1,6 @@
-# House Kernel — Primer publication contract
+# Ovid’s House — Primer publication contract
 
-The Primer is the compact companion to the House Kernel Working Edition. Its job is to give a technically literate reader the **complete mental model of the project in one sitting**. It is not an abridged copy of the long-form book and it is not a promotional summary.
+The Primer is the compact companion to the Ovid’s House Working Edition. Its job is to give a technically literate reader the **complete mental model of the project in one sitting**. It is not an abridged copy of the long-form book and it is not a promotional summary.
 
 ## Editorial target
 
@@ -21,6 +21,7 @@ The Primer deliberately has very little prose of its own.
 | Primer material | Authority |
 | --- | --- |
 | Opening proposition and connective compression | `publication/primer/proposition.md` |
+| Section framing and composition slots | `publication/primer/constitution.md`, `publication/primer/patterns.md`, `publication/primer/reference-house.md` |
 | Eleven governing principles | `docs/manuscript/governing-principles.md` |
 | Active pattern identities and representative pattern statements | canonical files under `docs/patterns/` |
 | Reference House claims and composition | `docs/reference-house/README.md` |
@@ -49,9 +50,9 @@ The Primer may state evidence boundaries that are necessary to prevent a false i
 
 ## Publication rules
 
-- The Primer and Working Edition use the same print system and are built from the same repository commit.
-- The stable public path is `/architecture/house-kernel-primer.pdf`.
-- The title is **House Kernel — Primer**.
+- The Primer and Working Edition share preparation/rendering infrastructure and are built from the same repository commit. The full Working Edition additionally uses the released production typography overlays defined in `publication/vivliostyle.config.js`.
+- The stable public path is `/architecture/ovids-house-primer.pdf`.
+- The title is **Ovid’s House — Primer**, derived from `project/identity.ts`.
 - The website should present the Primer as the compact entry point and the Working Edition as the complete publication.
 - All eleven governing principles must remain present.
 - All active canonical patterns must remain represented by identity in the pattern map.

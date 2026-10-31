@@ -184,6 +184,6 @@ CH-05 passes only if:
 - authored sequence remains identity-bearing;
 - M3 remains unchanged and no RH-C6 appears.
 
-## Next gate
+## Historical handoff
 
-After CH-05 passes, **CH-06 — strengthen the kinds of tests — is NEXT**. It may generalise the focused metamorphic evidence here into broader property/mutation testing where the expected value justifies the machinery. CH-05 does not pre-authorise that implementation.
+CH-05 handed the question of broader property/mutation testing to [CH-06 — strengthen the kinds of tests](../ch06/README.md). That gate records the bounded law tests adopted and frameworks declined. The [CH programme](../../docs/computational/compiler-hardening-programme.md) is complete; this historical handoff creates no further test-infrastructure work.
