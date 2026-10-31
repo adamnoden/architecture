@@ -9,8 +9,8 @@
     "label": "swarm-resume-interiors-983b7ee"
   },
   "claimedAt": "2026-10-31T09:10:38.085Z",
-  "heartbeatAt": "2026-10-31T09:18:11.005Z",
-  "expiresAt": "2026-10-31T10:03:11.005Z",
+  "heartbeatAt": "2026-10-31T09:22:02.374Z",
+  "expiresAt": "2026-10-31T10:07:02.374Z",
   "branch": "work/swarm-resume-interiors-20261031",
   "predecessor": {
     "leaseId": "6ffa2193-9eaf-4029-9db8-b5e646c1438c",
@@ -19,8 +19,7 @@
   },
   "pr": 1125,
   "checkpoint": {
-    "evidence": "PR #1125 at f955db535028f9420ec0578d8d1d29f2735cb87f, tree 1ce6c2dff4b5bf72bcb4c722ab7a467aed935387; recovers #1116 unchanged after main 178c4381; repository/publication checks and 54-row guard passed; remote tree matched.",
-    "next": "Observe full exact-head CI; fresh canonical preflight; root merges expected head; retain MAT-SERVICES planned.",
-    "blocker": "Full exact-head CI pending."
+    "evidence": "PR #1125 integrated as aa22421b5cf86b0bf893218191f82b22c36d9786; validated head f955db535028f9420ec0578d8d1d29f2735cb87f; full CI 41188095197 success; canonical preflight passed 2026-10-31T09:21:01.127Z; current main tree 1ce6c2dff4b5bf72bcb4c722ab7a467aed935387 matches; recovery branch deletion verified.",
+    "next": "MAT-SERVICES stays planned. Bind exact current bare cable and complete matching termination, support, enclosure and accessory declarations to real IAS/BCR route/renewal design. Water, heating, waste, ventilation, controls and equipment constituents remain open; no accepted circuit or exception."
   }
 }
