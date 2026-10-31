@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 9,
-  "state": "released",
-  "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
+  "generation": 10,
+  "state": "claimed",
+  "leaseId": "73aa7dc9-af13-474b-b663-5780130655fd",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6541790969"
+    "label": "swarm-2900-worker-one-ias"
   },
-  "claimedAt": "2026-10-31T09:39:55.000Z",
-  "heartbeatAt": "2026-10-31T10:01:30.000Z",
-  "expiresAt": "2026-10-31T10:01:30.000Z",
-  "branch": "work/mvb-chat-6541790969",
+  "claimedAt": "2026-10-31T17:09:27.406Z",
+  "heartbeatAt": "2026-10-31T17:09:27.406Z",
+  "expiresAt": "2026-10-31T17:54:27.406Z",
+  "branch": "work/swarm-2900-ias-waste-20261031",
   "predecessor": {
-    "leaseId": "678ba801-95cf-4d69-8a2b-e00185ef1597",
-    "generation": 8,
-    "branch": "work/mvb-chat-6541529143",
-    "pr": 1129,
+    "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
+    "generation": 9,
+    "branch": "work/mvb-chat-6541790969",
+    "pr": 1144,
     "checkpoint": {
-      "evidence": "PR #1129 merged at 74ed890c657d5148a00eb14d9ecb5a5104d30c1b. Final head 61d1eb865ae8a6dd1ae431ae8c9bedf3c1cffd4e passed full CI 41188791019 and canonical preflight at 09:32:07.497 UTC.",
-      "next": "Bind the current delivered kit and complete waste/trap/appliance assembly; locate all fixings and supported withdrawal before claiming material or maintenance acceptance.",
-      "blocker": "IAS-03 remains planned. Model service identities and conditional release duties are earned; actual connected geometry, constituents, drying and physical renewal remain unproved."
+      "evidence": "PR #1144 merged at 4d16682a2a9ff4ac8662cdb3cd0f505e313b35dd. Final head 4a0cd63805d237d4153f43336d6c611175641e08 passed full CI 41190592004 and canonical preflight at 09:58:41.658 UTC.",
+      "next": "Choose and detail the real replacement boundary: verified separate bowl/kit, or integral top with its actual support, joints, materials, service release and handling arrangement.",
+      "blocker": "IAS-03 remains planned. Full-top flat staging fails this field; local wet-top joints/materials and actual connected renewal remain unresolved. Current Franke kit is still unbound."
     }
   },
   "recoverySource": {
-    "leaseId": "678ba801-95cf-4d69-8a2b-e00185ef1597",
-    "generation": 8,
-    "branch": "work/mvb-chat-6541529143",
-    "pr": 1129,
+    "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
+    "generation": 9,
+    "branch": "work/mvb-chat-6541790969",
+    "pr": 1144,
     "checkpoint": {
-      "evidence": "PR #1129 merged at 74ed890c657d5148a00eb14d9ecb5a5104d30c1b. Final head 61d1eb865ae8a6dd1ae431ae8c9bedf3c1cffd4e passed full CI 41188791019 and canonical preflight at 09:32:07.497 UTC.",
-      "next": "Bind the current delivered kit and complete waste/trap/appliance assembly; locate all fixings and supported withdrawal before claiming material or maintenance acceptance.",
-      "blocker": "IAS-03 remains planned. Model service identities and conditional release duties are earned; actual connected geometry, constituents, drying and physical renewal remain unproved."
+      "evidence": "PR #1144 merged at 4d16682a2a9ff4ac8662cdb3cd0f505e313b35dd. Final head 4a0cd63805d237d4153f43336d6c611175641e08 passed full CI 41190592004 and canonical preflight at 09:58:41.658 UTC.",
+      "next": "Choose and detail the real replacement boundary: verified separate bowl/kit, or integral top with its actual support, joints, materials, service release and handling arrangement.",
+      "blocker": "IAS-03 remains planned. Full-top flat staging fails this field; local wet-top joints/materials and actual connected renewal remain unresolved. Current Franke kit is still unbound."
     }
-  },
-  "pr": 1144,
-  "checkpoint": {
-    "evidence": "PR #1144 merged at 4d16682a2a9ff4ac8662cdb3cd0f505e313b35dd. Final head 4a0cd63805d237d4153f43336d6c611175641e08 passed full CI 41190592004 and canonical preflight at 09:58:41.658 UTC.",
-    "next": "Choose and detail the real replacement boundary: verified separate bowl/kit, or integral top with its actual support, joints, materials, service release and handling arrangement.",
-    "blocker": "IAS-03 remains planned. Full-top flat staging fails this field; local wet-top joints/materials and actual connected renewal remain unresolved. Current Franke kit is still unbound."
-  },
-  "releasedAt": "2026-10-31T10:01:30.000Z",
-  "releaseReason": "handoff"
+  }
 }
