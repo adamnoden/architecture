@@ -64,8 +64,34 @@ The retained floor enquiry places the HC soffit at +3170 and ceiling top at +311
 
 Trimmers, adjacent slabs, permanent ties and the cabinet's load-bearing frame remain in place during ordinary service replacement. Renewable service closures and fire/acoustic seals need their own accessible reinstatement sequence. Their removal must not release the structural trim or reduce its protection. No tested firestop, plastic exception, service capacity or professional acceptance is created by this study.
 
+## Dimensioned hanger and floor-depth comparison
+
+**Further comparison from main `08c68ef0e3014efb8d6aecbcdb1bb208a57425ae`.** The [depth sheet](studies/house-riser-product.svg) and [source-bound record](studies/house-riser-product.json) add a separate, named hanger enquiry. The earlier Ibstock isometric and authored tail sensitivities remain unchanged.
+
+The [Peikko UK product page](https://www.peikko.co.uk/products/product/petra-slab-hanger/) links the [PETRA manual, PEIKKO GROUP 04/2025](https://media.peikko.com/file/dl/i/TTEgOw/DF_du37YwNLtV2TBUjJW6Q/PETRA_PEIKKO_GROUP_04_Technical_Manual_Web.pdf?fv=72d1). Table 3 starts at 175 mm; it does not list HC150. Its 175/200 rows give `b1=140`, `L2=150`, `b2=100`, tolerance ±2 mm. Pages 7–8 give 50–70 lateral joints and maximum 80 supported-slab bearing at depths ≤200. Page 22 depicts 55 overlap on a sound receiving edge and excludes bearing over an empty, unreinforced hollow. The nominal 100 flange, illustrated 55 contact and earlier authored 100 tail are different quantities. Steel thickness and installed downstand remain unbound.
+
+With fire reinforcement, page 8 requires at least 51 between opening edge and supported slab at these depths. Its 30 alternative applies to short hangers without fire rebar; that fire strategy is not selected. Receiving slabs require their own reaction check. Direct point/line loads need individual design, so cabinet/closure loads cannot inherit the standard diagrams. The fire mechanism uses reinforced grouted concrete under stated exposure conditions. Neither that mechanism nor the steel grades qualifies the service-penetration seals or complete constituents.
+
+Accessed 31 October 2026; the downloaded manual is 2,083,337 bytes, SHA-256 `73d418fa20f659dbb6ef5586e9c9e765238a42298b596b626e77adfde349a640`. Relevant diagrams and installation pages were visually inspected. No capacity graph is used here.
+
+The [Ibstock nominal-depth list](https://www.ibstock.co.uk/products/flooring-and-lintels/hollowcore/plank-technical-details), accessed the same day, includes 150 and 200 but not 175. Thus **200 is the smallest shared listed depth**, not evidence of an approved pairing. A special HC150 hanger remains a separate supplier enquiry; its dimensions cannot be supplied by relabelling either current standard row.
+
+Hold the source slab top at +3320 and ceiling top at +3115. The arithmetic then exposes the cost of changing slab depth:
+
+| Slab depth comparison | Slab soffit | Gross depth above unchanged ceiling | Ceiling underside if the original 55 services and 15 ceiling are retained |
+|---|---:|---:|---:|
+| 150, retained enquiry | +3170 | 55 | +3100 |
+| 175, listed PETRA depth only in these two sources | +3145 | 30 | +3075 |
+| 200, first shared listed depth | +3120 | 5 | +3050 |
+
+These values precede the hanger, protection and tolerances. They do not establish that 5 mm can accommodate the actual metal. Keeping the 55 service reservation with the 200 case already lowers the ceiling 50 mm, before any additional downstand; changing another layer instead needs its own explicit reconciliation. The complete floor, supporting masonry, adjacent bay transitions, arch/header levels and occupied room section must be redrawn together. A locally deeper plank cannot quietly retain the original neighbour and bearing geometry.
+
+There is a plan consequence too. For the conditional fire-rebar arrangement, retaining opening edge x10070 puts the supported slab face at least at x10121. The remaining 1476.5 to the outer structural face is a geometric interval, not a slab cut length or design span; the outer seat, panel grid, joint profiles and actual hanger remain to be bound. Do not put the slab face directly on the opening-edge line.
+
+**Decision:** retain the supplier-specific HC150 enquiry and the independent-frame comparator. A current standard PETRA arrangement has not earned an unchanged floor section. Keep the cabinet's permanent support, floor closure and renewable service faces as separate duties: neither the dimensioned flange nor a lowered ceiling completes them. The next actual product pairing must resolve those duties together with the one-sided spine and plant-door reactions. No selected assembly, material exception or STR-HOUSE completion follows.
+
 ## Verification and next decision
 
-Run `node project/str/studies/house-riser-trim.mjs --check`. It checks immutable source identities, actual gross envelopes, closure area, finite bearing-territory bounds, the located doorway interaction, invalid inputs and adverse service-depth controls. It reproduces the JSON and drawing. Source review and rendered inspection remain distinct from these arithmetic checks; full repository health and fresh lease/publication checks are separate integration requirements.
+Run `node project/str/studies/house-riser-trim.mjs --check`. It checks immutable source identities, actual gross envelopes, closure area, finite bearing-territory bounds, the located doorway interaction, invalid inputs and adverse service-depth controls. It reproduces the original JSON/drawing and the separate product/depth record and sheet, checking the conditional cut-face and complete datum arithmetic. Source review and rendered inspection remain distinct from these arithmetic checks; full repository health and fresh lease/publication checks are separate integration requirements.
 
 The next comparison must bind one real supplier trim and receiving-panel layout **together with** the supported floor closure, cabinet support and one-sided spine detail. If that arrangement consumes required service/closure space or cannot carry the named reactions, return to the independent frame or an explicit riser/plan adjustment. The source-backed topology is advanced; assembly selection and STR-HOUSE completion remain unearned.
