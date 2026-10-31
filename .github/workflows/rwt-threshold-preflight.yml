@@ -1,0 +1,28 @@
+name: RWT threshold access publication preflight
+on:
+  push:
+    branches: [work/mvb-chat-6541503746]
+    paths: [.github/workflows/rwt-threshold-preflight.yml]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6541503746
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Check current branch head and canonical lease
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          node --import tsx scripts/project-claims.ts merge-check RWT-06
+          --transport connector --lease-id 163e3d83-5472-4e4e-a89c-4069877a8a3e --generation 15
+          --branch work/mvb-chat-6541503746 --head "$(git rev-parse HEAD)" --format text
