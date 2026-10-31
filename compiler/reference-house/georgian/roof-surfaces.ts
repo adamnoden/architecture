@@ -27,15 +27,18 @@ export function ringRoofHeight(s: RingRoofSource, x: number, y: number): number 
   validate(s)
   if (!Number.isFinite(x) || !Number.isFinite(y)) throw Error('Invalid ring roof coordinate')
   const d = Math.min(x, y, s.shell - x, s.shell - y)
+  return ringRoofHeightAtDistance(s,d)
+}
+/** Height at a known nearest-edge distance, shared with elevation profiles. */
+export function ringRoofHeightAtDistance(s:RingRoofSource,d:number):number {
+  validate(s)
+  if (!Number.isFinite(d)) throw Error('Invalid ring roof distance')
   return s.eaves + Math.min(d, s.courtInset - d) * Math.tan(s.pitchDeg * Math.PI / 180)
 }
 /** Previous exterior-isometric face IDs and vertex order are intentionally stable. */
 export function roofRingFaces(s: RingRoofSource): ModelFace3D[] {
   validate(s)
-  const roofAt = (x: number, y: number) => {
-    const d = Math.min(x, y, s.shell - x, s.shell - y)
-    return s.eaves + Math.min(d, s.courtInset - d) * Math.tan(s.pitchDeg * Math.PI / 180)
-  }
+  const roofAt = (x: number, y: number) => ringRoofHeight(s,x,y)
   const ring = (a: number) => [[a,a],[s.shell-a,a],[s.shell-a,s.shell-a],[a,s.shell-a]]
   const outer = ring(-s.overhang), ridge = ring(s.ridgeInset), inner = ring(s.courtInset+s.overhang)
   const faces: ModelFace3D[] = []

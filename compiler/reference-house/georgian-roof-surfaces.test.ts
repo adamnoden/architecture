@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
-import {roofRingFaces,ringRoofHeight,type RingRoofSource} from './georgian/roof-surfaces.js'
+import {roofRingFaces,ringRoofHeight,ringRoofHeightAtDistance,type RingRoofSource} from './georgian/roof-surfaces.js'
 import {layoutRevision as d} from './georgian/layout-revision.js'
-import {currentRoofZ} from './georgian/layout-family.js'
+import {currentRoofZ,roofHeight} from './georgian/layout-family.js'
 import {exteriorFaces} from './georgian/exterior-isometrics.js'
 
 const source = (): RingRoofSource => ({
@@ -34,4 +34,10 @@ test('impossible ring geometry fails closed rather than fabricate flat or invert
  const s=source()
  for(const other of [{...s,pitchDeg:0},{...s,ridgeInset:s.courtInset},{...s,overhang:4000},{...s,buildDepth:0},{...s,shell:NaN}])
    assert.throws(()=>roofRingFaces(other),/Invalid/)
+})
+
+test('elevation height and section roof share one distance-based law',()=>{
+ const s=source()
+ for(const d of [-200,0,200,800,2125,3500,4250])
+  assert.ok(eq(roofHeight(d),ringRoofHeightAtDistance(s,d)))
 })

@@ -5,6 +5,7 @@ import {sectionWallToDrawingPrimitives,sectionFloorToDrawingPrimitives} from '..
 import {framedApertureToDrawingPrimitives,cutApertureToDrawingPrimitives} from '../../architectural-drawing/aperture-drawing.js'
 import {createSectionPaperProjection} from '../../publication-drawing/projection.js'
 import {compileCurrentSectionContext} from './section-context.js'
+import {ringRoofHeight,ringRoofHeightAtDistance} from './roof-surfaces.js'
 import {spatialSegmentsToDrawingPrimitives} from '../../architectural-drawing/spatial-line-drawing.js'
 import type {DrawingSceneV2,DrawingLineRole,DrawingDashRole} from '../../publication-drawing-v2/model.js'
 
@@ -16,8 +17,12 @@ export const layoutFamilyViews=['GROUND','FIRST','LOCATOR','PRINCIPAL','SERVICE-
 export type LayoutFamilyView=typeof layoutFamilyViews[number]
 const provenance={...sectionProvenance,sourceIds:['docs/publication/architectural-plate-layout-family.md']}
 const metadata={sources:provenance.sourceIds.join(','),authority:provenance.authority,precision:provenance.precision,constructionDetailSelected:false}
-/** Height of the authored twin-pitched ring, not a generic roof solver. */
-export const currentRoofZ=(x:number,y:number)=>roofHeight(Math.min(x,y,design.shell-x,design.shell-y))
+/** One source adaptor drives elevation datums, cut sections and roof meshes. */
+const roofHeightSource=()=>({shell:design.shell,courtInset:design.court.x,
+ ridgeInset:design.roof.ridgeInset,overhang:design.roof.overhang,
+ eaves:design.roof.eaves,pitchDeg:design.roof.upperPitchDeg,
+ buildDepth:layoutFamilySource.roofBuildZone})
+export const currentRoofZ=(x:number,y:number)=>ringRoofHeight(roofHeightSource(),x,y)
 const context=(view:string,scale:100|50|25)=>{
  const origin=scale===100?{x:12.5,y:18}:scale===25?{x:57,y:70}:{x:90,y:150}
  const p=createSectionPaperProjection({scaleDenominator:scale,horizontalBounds:{min:0,max:design.shell},verticalBounds:{min:-2400,max:design.shell},paperOrigin:origin})
@@ -181,7 +186,7 @@ export function layoutSectionAt(x:number){
  const storageDeckRuns=floorRuns.map(([a,b])=>[Math.max(a,1000),Math.min(b,d.shell-1000)]).map(([a,b],i)=>court?(i===0?[a,c.y-1000]:[c.y+c.depth+1000,b]):[a,b]).filter(([a,b])=>b>a)
  return {x,court,walls,partitions,floorRuns,firstFloorRuns,storageDeckRuns,voidCut}
 }
-export const roofHeight=(distance:number)=>design.roof.eaves+Math.min(distance,design.court.x-distance)*Math.tan(design.roof.upperPitchDeg*Math.PI/180)
+export const roofHeight=(distance:number)=>ringRoofHeightAtDistance(roofHeightSource(),distance)
 export const roofTop=()=>roofHeight(design.roof.ridgeInset)
 export function elevationSource(view:ElevationView){
  const config={FRONT:{wall:'outer-south',reverse:false,court:false},REAR:{wall:'outer-north',reverse:true,court:false},SERVICE:{wall:'outer-east',reverse:false,court:false},'COURT-ENTRY':{wall:'court-north',reverse:false,court:true},'COURT-WINDOWS':{wall:'court-south',reverse:true,court:true}}[view]
