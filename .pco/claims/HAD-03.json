@@ -9,8 +9,8 @@
     "label": "issue-comment-6541677482"
   },
   "claimedAt": "2026-10-31T09:27:32.000Z",
-  "heartbeatAt": "2026-10-31T09:40:22.000Z",
-  "expiresAt": "2026-10-31T10:25:22.000Z",
+  "heartbeatAt": "2026-10-31T09:49:39.000Z",
+  "expiresAt": "2026-10-31T10:34:39.000Z",
   "branch": "work/mvb-chat-6541677482",
   "predecessor": {
     "leaseId": "94253a5c-bac5-44d8-b016-7c1f4b0fc69b",
@@ -29,8 +29,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Reviewed three-file table/chair continuation pushed at 5b42b1ac3817a73cdd858815ff28eba90879b6de. Manufacturer identities and conditional span/height arithmetic independently checked; authored room geometry unchanged.",
-    "next": "Reconcile current main after RWT integration, open PR, require exact-head CI and fresh canonical preflight, then merge partial and hand off.",
-    "blocker": "Actual table/chair insertion sections, occupied use, household regular/guest seating and complete material admission remain unproved; HAD-03 stays planned."
-  }
+    "evidence": "PR #1143 head dfdf2ef27431af7d6df897eb2a473e0d77618414 preserves latest RWT/MAT work. Three Markdown files bind actual table/chair sources and conditional fit arithmetic; independent reviews passed.",
+    "next": "Verify exact-head full CI and fresh canonical preflight, integrate partial, then record remaining occupied-fit evidence and release.",
+    "blocker": "The 100 mm insertion, occupied use, regular/guest household seat counts and complete material admission remain unproved; HAD-03 stays planned."
+  },
+  "pr": 1143
 }
