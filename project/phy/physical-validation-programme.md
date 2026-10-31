@@ -15,7 +15,7 @@ PHY does not convert a prepared prototype into evidence merely because drawings,
 |---|---|---|---|
 | `PHY-01` | W2 wall bay | held / optional research | `P01` |
 | `PHY-02` | Selective floor access | held | `P02` |
-| `PHY-03` | Floor-edge research and provisional engineering | self-service internal study; structural/specimen acceptance remains separate | `P03` |
+| `PHY-03` | Floor-edge research and provisional engineering | [internal study complete](floor-edge-internal-study.md); structural/specimen acceptance remains separate | `P03` |
 | `PHY-04` | Wall/ceiling movement junction | priority; build/test | `P04` |
 
 Historical derived identifiers such as `P03-A`, `P03-B`, `P04-BUILD`, `P04-TEST` and existing `p03-*` / `p04-*` filenames remain valid evidence identities. New live control should use `PHY-*` and may include the historical alias where it materially aids recovery.
@@ -26,12 +26,18 @@ The [current-house applicability result](current-house-prototype-applicability.m
 
 ## Current priority
 
-1. `PHY-03-ENGINEERING` — internally reduce the floor-edge options through research and preliminary calculations under the contract below. Complete that development work without waiting for external review; competent structural/specimen acceptance remains required before a loaded test or reliance as verified structure.
+1. `PHY-03` — carry the [completed internal floor-edge investigation](floor-edge-internal-study.md) into the existing structural and assembly decisions. `PHY-03-ENGINEERING` is complete; actual structural acceptance and safe real-unit/specimen release remain under ER-STR-01 / EPR-RH11 before construction or reliance as verified structure.
 2. `PHY-04` — build and test the wall/ceiling movement junction against the existing protocol.
 3. `PHY-01` — optional challenger only when resources or a real high-change lining problem justify it.
 4. `PHY-02` — reopen only when a real maintainable under-floor service condition earns it.
 
 ## Book / house-resolution interface
+
+### Completed floor-edge investigation — 31 October 2026
+
+The [internal study](floor-edge-internal-study.md), [reproducible calculations](studies/floor-edge-internal.py), [complete numerical output](studies/floor-edge-internal.json) and [A3 comparison](studies/floor-edge-internal.svg) compare five floor families against the current source geometry and explicit scenario actions. They distinguish gravity bearing, restraint, diaphragm action, movement, closure and repair, including the entrance, stair, riser and wet interruptions. The conventional RC200 comparison, construction stages, asymmetric contact loss, long-field failure and independent challenge prevent a favourable ordinary strip from becoming a whole-floor pass.
+
+The provisional next enquiry favours direct bearing with supplier-qualified joints/ties, retaining untopped HC200 at the explicitly authored 3370 mm slab top as a distinct alternative before assuming a bespoke shallow riser hanger. HC200 plus 75 mm topping exceeds the held depth budget; untopped HC200 remains live. RC200 remains the separately designed conventional fallback. Neither the new slab-top trial nor any product pairing is adopted. An access-only surrogate may answer a limited closure question; real concrete units already load their supports under selfweight and require the stated safe release. The study closes the internal development contract below, while its decision-specific acceptance obligations remain in their existing routes.
 
 ### PHY-03-ENGINEERING — internal development contract
 

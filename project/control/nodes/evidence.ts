@@ -37,7 +37,7 @@ export const evidenceNodes = defineNodes([
     owners: ['PHY'],
     title: 'Internal floor-edge research, calculations and provisional option reduction',
     dependencies: ['PHY-APPLICABILITY'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     aliases: ['PHY-03', 'P03'],
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/phy/floor-edge-internal-study.md']
