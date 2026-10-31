@@ -65,12 +65,6 @@ A [Plant Room as Service Hub](plant-room-service-hub.md) commonly completes the 
 - blank unused capacity robustly;
 - keep the transition from buried/external infrastructure to inspectable internal infrastructure short and legible where practical.
 
-## Optional two-stage, off-house interface
-
-Where an owner-controlled site service route is substantial, the controlled building entry may be **preceded by an off-house boundary service point**. This can separate network/provider handoff and owner-side upstream isolation from a later house intake. An accessible private raceway can connect the two, potentially reducing excavation, hiding of joints and repeated intervention in permanent fabric. A below-grade **readily accessible** chamber is not intrinsically the same thing as a service buried in soil; accessibility must be proven by actual access, working and component-withdrawal routes.
-
-This is **an available pattern application, not a universal requirement**. Maintain independently approved utility compartments, clear ownership of every meter/stop/isolator, protected power and water entry, gas/fire/frost/pest/weather controls, moving-ground joints and realistic working clearance. Do not assume a common public connection point, combine incompatible apparatus to save space, or bypass required external stop taps and operator-controlled isolation. Use upstream owner controls to complement, not replace, internal house isolation. An external service trench covered with an open grate can become a rainwater/silt collector; a sealed one can become a water trap. The water destination must be real, not merely gravel.
-
 ## Proportionality
 
 Permanent spare capacity is justified only for credible future services whose later entry would otherwise damage difficult-to-alter fabric. A speculative array of empty holes is not resilience.
@@ -110,7 +104,7 @@ These precedents do not establish that every domestic utility should share one e
 
 ## Reference House application
 
-The Reference House uses a side/rear intake condition close to the principal service hub so the transition into internal distribution can remain short, accessible and subordinate to the main elevations.
+The Reference House keeps a short side/rear intake to its internal service hub. A small boundary service lodge and an accessible private raceway are being investigated upstream, subject to utility rules, water protection and differential ground movement.
 
 ## Formalisation boundary
 
