@@ -130,7 +130,7 @@ RH-08 rainwater topology is directional. Four roof fields drain outward. Baselin
 
 The total closes to the architectural plate. Courtyard-width mutation changes those fields rather than preserving stale values. The courtyard open-sky catchment is 14.40 m² at baseline.
 
-The courtyard declares `RW-COURT-PRIMARY` to external inspection and `RW-COURT-EMERGENCY` to a different higher-level overflow destination description. Canonical occurrence `PEN-CD-01` owns both. Deleting the occurrence, dropping the emergency declaration, omitting the visible-failure flag, supplying a non-outward controlling roof source, leaving an endpoint blank or collapsing the destinations after whitespace normalisation fails the compile. These are declaration and source-consistency checks: unequal text and a visibility flag do not prove independent physical paths, gravity continuity, safe discharge or actual visible failure. The historical outward adapter does not select the current Georgian roof/rainwater system.
+The courtyard retains two distinct routes: `RW-COURT-PRIMARY` to external inspection and `RW-COURT-EMERGENCY` as an independent higher-level visible overflow. Canonical occurrence `PEN-CD-01` owns both. Deleting the occurrence, dropping the emergency route, hiding failure behaviour, turning a roof field inward or collapsing the two destinations fails the compile.
 
 C4 does not establish U-values, ψ-values, condensation/hygrothermal safety, airtightness, rain penetration resistance, drainage capacity, fire/acoustic performance, exact roof/ground build-ups or product compliance. The RH-10 400–425 mm planning family / 450 mm stress value remains coordination authority, not a construction specification.
 

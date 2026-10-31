@@ -1,7 +1,5 @@
 # Reference House — RH-07 Environmental Coordination
 
-**Applicability:** this is retained predecessor evidence, not a current-house acceptance record. Dimensions, selections and “current” statements below refer to its named historical baseline. See [Current House Basis](current-house-basis.md) for the accepted revision-02 source and the specific rechecks/owners; no proof identity is changed here.
-
 **Status:** RH-07 design gate record / pre-simulation environmental concept  
 **Date:** 2026-10-12  
 **Question:** can the current architecture provide credible daylight, useful sunlight, purge/cross ventilation and summer resilience before active systems are used to rescue poor form?  

@@ -1,9 +1,7 @@
 # Reference House — RH-11 Regulatory Baseline
 
-**Architectural scope:** RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02. This snapshot supports the [current review questions](external-review-brief.md); it does not establish project-specific applicability or a compliance result.
-
 **Status:** date-stamped review aid; not a legal opinion or substitute for the reviewer confirming applicability  
-**Date checked:** 2026-10-29  
+**Date checked:** 2026-10-12  
 **Applies to:** Reference House external review in England
 
 This page prevents the RH-11 review pack from quietly relying on stale regulatory guidance.
@@ -21,9 +19,9 @@ Approved Documents are guidance on ways of satisfying the Building Regulations. 
 
 ---
 
-## 1. England guidance snapshot — 29 October 2026
+## 1. England guidance snapshot — 12 October 2026
 
-| Area | Published guidance to check for the actual project | Project use |
+| Area | Current public guidance relevant to RH-11 | Project use |
 |---|---|---|
 | Structure | **Approved Document A — Structure**, current GOV.UK edition published 2013 | structural concept, masonry, floor/roof, foundations, robustness |
 | Fire | **Approved Document B Volume 1 — Dwellings**, current page updated **16 September 2026**; 2019 edition incorporating 2020, 2022, 2025 and 2026 amendments and collating future 2029 changes | escape, warning, internal/external fire spread, structure, fire-service interface |
@@ -34,12 +32,10 @@ Approved Documents are guidance on ways of satisfying the Building Regulations. 
 | Drainage | **Approved Document H — Drainage and waste disposal**, current GOV.UK guidance | foul / soil / rainwater routes and access |
 | Stairs | **Approved Document K — Protection from falling, collision and impact**, current GOV.UK edition | stair, guarding, headroom and falling risk |
 | Energy | **Approved Document L Volume 1 — Dwellings, 2026 edition**, published 24 March 2026 and revised 8 September 2026 | Future Homes energy / services / renewable-electricity direction |
-| Access | **Approved Document M Volume 1 — Dwellings, 2015 edition with 2016 amendments** | Confirm applicable category and planning conditions; do not infer a selected category from this virtual house |
+| Access | **Approved Document M Volume 1 — Dwellings, 2015 edition with 2016 amendments** | Category-1 visitability baseline unless planning requires M4(2)/M4(3) |
 | Overheating | **Approved Document O — Overheating**, 2021 edition republished with corrections in 2022 | new-dwelling overheating strategy / modelling |
 | Electrical | **Approved Document P — Electrical safety, dwellings**, current GOV.UK edition | domestic electrical safety / notification context |
 | Security | **Approved Document Q — Security in dwellings**, current GOV.UK page with 2024 FAQ | accessible door/window security and hardware |
-
-Official publication pages below were checked on 29 October 2026. A page update date is not necessarily a new edition or commencement date. In particular, the fire publication collates future amendments and the 2026 F/L publications do not make those provisions applicable to every project today. Review the actual document and transition conditions for the intended application.
 
 Canonical GOV.UK collection: https://www.gov.uk/government/collections/approved-documents
 
@@ -79,16 +75,16 @@ Canonical source:
 
 https://www.gov.uk/guidance/approved-document-l-energy-and-greenhouse-gas-emissions-frequently-asked-questions
 
-RH-10's approximately **50 m² PV-capable roof reservation** belongs to the predecessor low-slope roof. It is not a current roof layout, available area or compliance result. The present pitched roof requires a new arrangement, loading/access assessment and applicable energy calculation if a renewable system is selected.
+RH-10's approximately **50 m² PV-capable roof reservation** is only a geometric stress test against that known direction. It is not a Future Homes compliance result.
 
 ### RH-11 review instruction
 
 The building-physics/energy reviewer should assess both:
 
-1. which published route and commencement/transitional provisions would apply to the actual project, including the 2026 / Future Homes route where relevant; and
+1. what can be said about the house under the **known 2026 / Future Homes route**; and
 2. what remains impossible to determine without a real site, orientation, application date, fabric specification and approved compliance model.
 
-Do not assume the virtual project's 29 October 2026 date fixes the regulatory route of a later real building.
+Do not assume the virtual project's 12 October 2026 date fixes the regulatory route of a later real building.
 
 ---
 

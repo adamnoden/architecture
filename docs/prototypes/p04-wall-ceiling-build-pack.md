@@ -1,7 +1,5 @@
 # P04 — Wall / Ceiling Movement Junction Build Pack
 
-> **Historical preparation scope.** The dated record below retains its original geometry and claims. Current-house use is governed by the [prototype applicability and release requirements](https://github.com/adamnoden/architecture/blob/main/project/phy/current-house-prototype-applicability.md); this record alone is not a current specimen release or physical result.
-
 **Status:** build-ready prototype pack at architectural evidence scope  
 **Date:** 2026-10-12  
 **Programme:** [Tectonic Prototype and Engineering Programme](../development/tectonic-prototype-programme.md)  

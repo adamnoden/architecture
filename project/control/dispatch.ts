@@ -35,7 +35,6 @@ export interface DispatchMetrics {
 }
 
 export interface DispatchCandidate {
-  previousClaim?: ClaimRecord
   node: ControlNode
   metrics: DispatchMetrics
 }
@@ -301,7 +300,6 @@ export function buildDispatchSnapshot(
 
     const relief = blockerReliefFor(node, nodes)
     candidates.push({
-      ...(claim ? { previousClaim: claim } : {}),
       node,
       metrics: {
         criticalDepth: depths.get(node.id) ?? 1,

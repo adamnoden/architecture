@@ -1,13 +1,10 @@
 import type { ControlNode } from '../types.js'
-import { houseDeliveryNodes } from './house-delivery.js'
-import { ccrNodes } from './ccr.js'
 import { acoNodes } from './aco.js'
 import { architectureNodes } from './architecture.js'
 import { evidenceNodes } from './evidence.js'
 import { mraNodes } from './mra.js'
 import { pcoNodes } from './pco.js'
 import { publicationNodes } from './publication.js'
-import { roofWaterNodes } from './roof-water.js'
 
 /**
  * Deterministic aggregation point only.
@@ -17,12 +14,9 @@ import { roofWaterNodes } from './roof-water.js'
  */
 export const controlNodes = [
   ...acoNodes,
-  ...ccrNodes,
   ...pcoNodes,
   ...architectureNodes,
-  ...roofWaterNodes,
   ...mraNodes,
   ...publicationNodes,
-  ...houseDeliveryNodes,
   ...evidenceNodes
 ] as const satisfies readonly ControlNode[]

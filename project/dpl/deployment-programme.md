@@ -104,8 +104,3 @@ On receipt: preserve the old assumptions and results as history, bind the new ev
 Read this roll-up, `exploration/README.md`, the machine input/result and the latest evidence packet before further work. Reproduce the result with `node --import tsx scripts/dpl-exploration.ts --check`; run the canonical repository health command for implementation changes.
 
 DPL is complete at conditional design-study scope. There is no standing internal next packet. New site evidence and competent external judgement belong to a separately triggered verification follow-on. No external contact, commissioning or spend has occurred or is authorised by this record.
-
-
-## Owner-house successor
-
-The [owner-house site programme](owner-house-site-programme.md), tracked in #1009, now owns the current plot brief and later real-site activation/assessment. This programme and #299 retain their original conditional closeout; no result above is promoted to current-house or actual-site proof. RSI remains closed.
