@@ -2,6 +2,7 @@ node_modules/
 .vitepress/cache/
 .vitepress/dist/
 publication/.work/
+publication/.proof/
 publication/dist/
 .DS_Store
 publication/specimens/*/.work/

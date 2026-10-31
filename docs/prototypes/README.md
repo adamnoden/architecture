@@ -45,6 +45,8 @@ A workshop load test is **not structural validation** unless the engineer define
 
 If the credible structural solution needs materially deeper floors, columns in principal rooms, long transfers or a whole-house independent frame, the architecture should reopen rather than hide the consequence inside the junction.
 
+<a id="wall--ceiling-movement-junction"></a>
+
 ## Wall / ceiling movement junction
 
 The second priority interface is where wall and ceiling finishes meet while their supporting assemblies may move differently.

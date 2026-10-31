@@ -47,6 +47,7 @@ Historical holds preserve the old source identities and technical learning. Exis
 
 ## Design comparisons
 
+- [Enamelled tray, located drain and renewal comparison](interior-shower-tray-alternatives.md) — MAT-INTERIORS locates four 5940 drain orientations against the unadopted IAS room, carries west-side access forward for detailing, identifies a metal support candidate and an explicit plastic waste counterexample, and defines wall/seal/tray renewal duties. I05/I07/I08 are updated; no complete assembly or packet closeout is selected.
 - [Mineral ground boundary and floor junction comparison](envelope-ground-boundary.md) — MAT-ENVELOPE develops the bonded DPC1/slate comparison, separates floor insulation from moisture/gas and movement duties, and excludes exact lined cellular-glass variants under the default policy. It defines the next wall/floor, internal-support, threshold and penetration junctions; no complete assembly, house geometry or packet closeout is selected.
 
 ## Primary-source reconnaissance, accessed 30 October 2026
