@@ -74,7 +74,7 @@ The copper/brass preference does not remove the previous zinc/aluminium runoff e
 
 ## Local copper repair evidence — 31 October 2026
 
-This continuation supports the [connected crossing renewal comparison](../../project/rwt/segmented-copper-access.md#local-cutting-is-not-yet-a-complete-renewal-method). The sources establish different things; they are not a combined manufacturer-approved assembly.
+For local copper repair, product size and removability must be distinguished from insertion and joining. These sources establish different things; they are not a combined manufacturer-approved assembly.
 
 | Primary source, accessed 31 October 2026 | Evidence and limit |
 |---|---|
@@ -85,7 +85,7 @@ This continuation supports the [connected crossing renewal comparison](../../pro
 
 | Candidate interface | Disposition | Evidence required before selection |
 |---|---|---|
-| Retained copper tails → replacement length with locally joined sleeves | **Conditional conventional repair comparator.** It may avoid large mechanical flanges but trades their release/seal burden for consumptive pipe renewal, insertion movement and joining access. | Exact matched product/size, internal geometry and engagement, filler/flux/residues, sound straight tails, sleeve parking/end movement, support and all-round joining/inspection access. Demonstrate the complete repair while retaining W2 and threshold support; do not grind away an ordinary fitting's stops or improvise a mixed-brand approval. |
+| Retained copper tails → replacement length with locally joined sleeves | **Conditional conventional repair comparator.** It may avoid large mechanical flanges but trades their release/seal burden for consumptive pipe renewal, insertion movement and joining access. | Exact matched product/size, internal geometry and engagement, filler/flux/residues, sound straight tails, sleeve parking/end movement, support and all-round joining/inspection access. Demonstrate the complete repair while retaining the fixed court-water boundary and threshold support; do not grind away an ordinary fitting's stops or improvise a mixed-brand approval. |
 
 The unselected filler, flux and retained residues remain within the material policy. A slip coupling is an assembly aid before joining, not an expansion joint or a demountable joint after joining. The existing metal/runoff exclusions and actual service-duty requirements still apply.
 
