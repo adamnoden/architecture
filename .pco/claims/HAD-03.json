@@ -9,8 +9,8 @@
     "label": "swarm-2900-authorised-resume"
   },
   "claimedAt": "2026-10-31T16:54:40.699Z",
-  "heartbeatAt": "2026-10-31T16:54:40.699Z",
-  "expiresAt": "2026-10-31T17:39:40.699Z",
+  "heartbeatAt": "2026-10-31T16:56:53.570Z",
+  "expiresAt": "2026-10-31T17:41:53.570Z",
   "branch": "work/swarm-2900-had-20261031",
   "predecessor": {
     "leaseId": "01578a4c-862a-45a3-aa70-d52bf32157e7",
@@ -33,5 +33,11 @@
       "next": "Obtain applicable table/chair sections and intended occupied arrangement; validate the 100 mm insertion and required regular/guest seating without inheriting the earlier envelope assumptions.",
       "blocker": "HAD-03 remains planned. Product scalars and conditional arithmetic do not establish occupied comfort, seating capacity, full insertion, material admission or an adopted kitchen."
     }
+  },
+  "pr": 1151,
+  "checkpoint": {
+    "evidence": "PR #1151; remote head f558d6fd837195b038fcf72c7086e5bcc32fc5fa. Generator and docs build passed; source and integration reviews passed.",
+    "next": "Reconcile current main, require full exact-head CI and fresh canonical preflight, then merge.",
+    "blocker": "HAD-03 remains planned; occupied use, household seating, conversion and material admission unresolved."
   }
 }
