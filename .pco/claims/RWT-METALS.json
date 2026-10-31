@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-METALS",
   "generation": 6,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "2e587ba5-88a2-4da1-ac81-7a556a28cdb8",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-next-root-983b7ee"
   },
   "claimedAt": "2026-10-31T09:27:55.733Z",
-  "heartbeatAt": "2026-10-31T10:16:27.648Z",
-  "expiresAt": "2026-10-31T11:01:27.648Z",
+  "heartbeatAt": "2026-10-31T10:17:41.616Z",
+  "expiresAt": "2026-10-31T10:17:41.616Z",
   "branch": "work/swarm-materials-integration-20261031",
   "predecessor": {
     "leaseId": "c04b4d58-10c3-48e1-be2c-beb3db9d2129",
@@ -37,5 +37,7 @@
     "next": "RWT-METALS remains planned. Qualify the actual fixed pan/outlet and choose between a separately renewable threshold piece and retained tail with a credible larger repair, passive leak observation, exact service joint, independent support/movement and full W1/W2 maintenance sequence. Coordinate real floor/threshold and receiving-level evidence with RWT-06 and MAT. Root will dispose only verified integrated old source refs.",
     "blocker": "No complete connected assembly, constituent admission, physical renewal or hydraulic rating is established by these bounded comparisons."
   },
-  "pr": 1145
+  "pr": 1145,
+  "releasedAt": "2026-10-31T10:17:41.616Z",
+  "releaseReason": "handoff"
 }
