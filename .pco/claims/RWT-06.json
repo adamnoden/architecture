@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 15,
-  "state": "released",
-  "leaseId": "163e3d83-5472-4e4e-a89c-4069877a8a3e",
+  "generation": 16,
+  "state": "claimed",
+  "leaseId": "72497b0a-9437-4b0f-9488-cf5ce88ff19b",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6541503746"
+    "label": "services-recovery-983b7ee-20261031"
   },
-  "claimedAt": "2026-10-31T09:08:23.000Z",
-  "heartbeatAt": "2026-10-31T09:49:36.000Z",
-  "expiresAt": "2026-10-31T09:49:36.000Z",
-  "branch": "work/mvb-chat-6541503746",
+  "claimedAt": "2026-10-31T16:57:19.342Z",
+  "heartbeatAt": "2026-10-31T16:57:19.342Z",
+  "expiresAt": "2026-10-31T17:42:19.342Z",
+  "branch": "work/swarm-dispatch-recovery-20261031",
   "predecessor": {
-    "leaseId": "70d03fe9-7eb7-4a0b-bd36-7cc37e600d6a",
-    "generation": 14,
-    "branch": "work/swarm-983b7ee4744e-2",
-    "pr": 1119,
+    "leaseId": "163e3d83-5472-4e4e-a89c-4069877a8a3e",
+    "generation": 15,
+    "branch": "work/mvb-chat-6541503746",
+    "pr": 1134,
     "checkpoint": {
-      "evidence": "PR #1119 merged at 5a28e4d5d0f367cd8c3cda10788966b23c93f1a1; final head c3227dfc43a315929470139f0edc88c1920ba599 passed full CI 41146322631 and fresh canonical preflight at 23:48:35 UTC.",
-      "next": "Locate the actual complete terminal and required release sweep in the accessible or raised crossing; coordinate floor and threshold, then rederive receiving and leak-outlet levels before hydraulic admission.",
-      "blocker": "Partial only: old 435 mm raise is not an access pass; actual terminal, safe working arrangement, connected water boundaries and site evidence remain unselected."
+      "evidence": "PR #1134 merged at 1af38036c4e67ad73891e9df31dda991e407599f. Final head 8af03a533974b76162e75f6927c1a938e5ec0325 passed full CI 41189754152 and canonical preflight at 09:46:17.419 UTC.",
+      "next": "Locate actual leading/trailing joints and retained W2 penetration; demonstrate full threshold release, inward withdrawal and reinstatement with real floor/support/tool arrangements.",
+      "blocker": "RWT-06 remains planned. Bare-tube finite-body motion is conditional; actual assembly/material admission, dry maintenance, handling and hydraulic/site acceptance remain unproved."
     }
   },
   "recoverySource": {
-    "leaseId": "70d03fe9-7eb7-4a0b-bd36-7cc37e600d6a",
-    "generation": 14,
-    "branch": "work/swarm-983b7ee4744e-2",
-    "pr": 1119,
+    "leaseId": "163e3d83-5472-4e4e-a89c-4069877a8a3e",
+    "generation": 15,
+    "branch": "work/mvb-chat-6541503746",
+    "pr": 1134,
     "checkpoint": {
-      "evidence": "PR #1119 merged at 5a28e4d5d0f367cd8c3cda10788966b23c93f1a1; final head c3227dfc43a315929470139f0edc88c1920ba599 passed full CI 41146322631 and fresh canonical preflight at 23:48:35 UTC.",
-      "next": "Locate the actual complete terminal and required release sweep in the accessible or raised crossing; coordinate floor and threshold, then rederive receiving and leak-outlet levels before hydraulic admission.",
-      "blocker": "Partial only: old 435 mm raise is not an access pass; actual terminal, safe working arrangement, connected water boundaries and site evidence remain unselected."
+      "evidence": "PR #1134 merged at 1af38036c4e67ad73891e9df31dda991e407599f. Final head 8af03a533974b76162e75f6927c1a938e5ec0325 passed full CI 41189754152 and canonical preflight at 09:46:17.419 UTC.",
+      "next": "Locate actual leading/trailing joints and retained W2 penetration; demonstrate full threshold release, inward withdrawal and reinstatement with real floor/support/tool arrangements.",
+      "blocker": "RWT-06 remains planned. Bare-tube finite-body motion is conditional; actual assembly/material admission, dry maintenance, handling and hydraulic/site acceptance remain unproved."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1134 merged at 1af38036c4e67ad73891e9df31dda991e407599f. Final head 8af03a533974b76162e75f6927c1a938e5ec0325 passed full CI 41189754152 and canonical preflight at 09:46:17.419 UTC.",
-    "next": "Locate actual leading/trailing joints and retained W2 penetration; demonstrate full threshold release, inward withdrawal and reinstatement with real floor/support/tool arrangements.",
-    "blocker": "RWT-06 remains planned. Bare-tube finite-body motion is conditional; actual assembly/material admission, dry maintenance, handling and hydraulic/site acceptance remain unproved."
-  },
-  "pr": 1134,
-  "releasedAt": "2026-10-31T09:49:36.000Z",
-  "releaseReason": "handoff"
+  }
 }
