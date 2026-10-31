@@ -1,0 +1,36 @@
+# Temporary read-only native preflight for owner-directed ADE-SECTION-VIEW recovery.
+# Lives only on a disposal-bound helper branch, not on main or the work PR.
+name: ADE section-view one-off publication preflight
+on:
+  push:
+    branches:
+      - work/ade-section-preflight-1189
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact source candidate
+        uses: actions/checkout@v5
+        with:
+          ref: work/ade-section-view-resume-1187
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Native current-main and exact-head ACO publication preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm run control:merge-check -- ADE-SECTION-VIEW \
+            --lease-id f0c7e09a-bd4c-4849-94d7-dc0793df4253 \
+            --generation 2 \
+            --branch work/ade-section-view-resume-1187 \
+            --head 605a454eeebe578da4a714ac43b56469dba3f75d \
+            --format text
