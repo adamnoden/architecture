@@ -9,8 +9,8 @@
     "label": "swarm-resume-envelope-983b7ee"
   },
   "claimedAt": "2026-10-31T09:05:17.339Z",
-  "heartbeatAt": "2026-10-31T09:12:24.057Z",
-  "expiresAt": "2026-10-31T09:57:24.057Z",
+  "heartbeatAt": "2026-10-31T09:16:45.990Z",
+  "expiresAt": "2026-10-31T10:01:45.990Z",
   "branch": "work/swarm-resume-envelope-20261031",
   "predecessor": {
     "leaseId": "b0f79a4c-1354-49b1-b3c4-d31f64293123",
@@ -32,8 +32,8 @@
   },
   "pr": 1124,
   "checkpoint": {
-    "evidence": "PR #1124 published at 24b7f82b8408f4582241e220ea83d85eef416443; exact tree 2bada5b4ea5aeff43f51ab9179f7fd06d2b62d65 matches reviewed local recovery of #1117 plus DoP-label precision correction. Final docs build, publication integrity and diff check passed; local full check stopped at missing Chrome155.",
-    "next": "Require full CI on exact remote head, reconcile any moved main without losing parallel MAT rows, run fresh merge-check, then integrate bounded comparison. MAT-ENVELOPE remains planned; complete assemblies remain unresolved.",
-    "blocker": "Full exact-head CI pending; local Chrome155 unavailable."
-  }
+    "evidence": "PR #1124 merged as 178c43815ba318a09f0f62c344aed37f15a71f16 after full CI41187669477 success on head24b7f82b8408f4582241e220ea83d85eef416443 and fresh merge-check09:15:46.537Z. Fresh main tree2bada5b4ea5aeff43f51ab9179f7fd06d2b62d65 matches all three recovered files; new work branch auto-deleted. This integrates reviewed #1117 plus precise product-label DoP attribution only.",
+    "next": "MAT-ENVELOPE remains planned. Bind exact DPC1 unit/mortar and suitable slate, then qualify complete straight wall/floor junctions for both boundary locations and internal-support, threshold, penetration and movement details. Other envelope assemblies, site inputs, thermal/structural proof, constituents and costs remain unresolved. Root will supersede predecessor #1117 after this verified integration."
+  },
+  "note": "Bounded recovery integrated; no complete installed assembly, product selection, exception or lifecycle completion. Releasing this generation for canonical future work."
 }
