@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 8,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "678ba801-95cf-4d69-8a2b-e00185ef1597",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6541529143"
   },
   "claimedAt": "2026-10-31T09:11:04.000Z",
-  "heartbeatAt": "2026-10-31T09:33:16.000Z",
-  "expiresAt": "2026-10-31T10:18:16.000Z",
+  "heartbeatAt": "2026-10-31T09:34:55.000Z",
+  "expiresAt": "2026-10-31T09:34:55.000Z",
   "branch": "work/mvb-chat-6541529143",
   "predecessor": {
     "leaseId": "d54f4929-4f06-42e5-9c40-be3707b0f207",
@@ -39,5 +39,7 @@
     "evidence": "PR #1129 merged at 74ed890c657d5148a00eb14d9ecb5a5104d30c1b. Final head 61d1eb865ae8a6dd1ae431ae8c9bedf3c1cffd4e passed full CI 41188791019 and canonical preflight at 09:32:07.497 UTC.",
     "next": "Bind the current delivered kit and complete waste/trap/appliance assembly; locate all fixings and supported withdrawal before claiming material or maintenance acceptance.",
     "blocker": "IAS-03 remains planned. Model service identities and conditional release duties are earned; actual connected geometry, constituents, drying and physical renewal remain unproved."
-  }
+  },
+  "releasedAt": "2026-10-31T09:34:55.000Z",
+  "releaseReason": "handoff"
 }
