@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 9,
+  "generation": 10,
   "state": "claimed",
-  "leaseId": "d599fb57-c857-41b2-bdbc-8c4f1b90d8aa",
+  "leaseId": "2118792d-930f-4f5f-bcec-ca847f83c5ab",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6546969637"
+    "label": "services-mat-recovery-1936-20261031"
   },
-  "claimedAt": "2026-10-31T17:48:34.000Z",
-  "heartbeatAt": "2026-10-31T18:11:13.000Z",
-  "expiresAt": "2026-10-31T18:56:13.000Z",
-  "branch": "work/mvb-chat-6546969637",
+  "claimedAt": "2026-10-31T19:39:42.972Z",
+  "heartbeatAt": "2026-10-31T19:39:42.972Z",
+  "expiresAt": "2026-10-31T20:24:42.972Z",
+  "branch": "work/swarm-mat-recovery-1936-20261031",
   "predecessor": {
-    "leaseId": "77833f2c-876c-438a-bdd9-a2e43f2d1353",
-    "generation": 8,
-    "branch": "work/swarm-2900-interfaces-20261031",
-    "pr": 1157,
+    "leaseId": "d599fb57-c857-41b2-bdbc-8c4f1b90d8aa",
+    "generation": 9,
+    "branch": "work/mvb-chat-6546969637",
+    "pr": 1164,
     "checkpoint": {
-      "evidence": "PR1157 merged at 17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree 0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946; full CI 41225448974 passed. MAT-ENVELOPE canonical preflight passed at 17:40:08.475Z against current main aa8e85bb. Fresh main ancestry verified; shared remote branch absent per root verification. Envelope study and G06 preserve independent source review. Bounded partial result only; MAT-ENVELOPE remains planned.",
-      "next": "Resolve one configured wall-base and floor-to-mineral-DPC junction, preserving the clear-cavity/drained-tray alternatives, all retained constituents, structural fill, passive site-water conditions and maintainable-side service access. Reconcile NCCT outlet instructions and its separate inner-leaf membrane interface before any selection.",
-      "blocker": "No exact complete inner-leaf/floor transition, installed membrane/auxiliary disclosure, project outlet setting-out or actual brick/mortar/load qualification; site levels and complete assembly remain unselected."
+      "evidence": "PR #1164 head c9f5bf0bdeda35018a8f2788a594df6bad14766c; suspended mineral-floor strategy, connected A3 section and six local Node22 regression tests",
+      "next": "Reconcile current main, reproduce source-pinned outputs on runner, require exact-head CI and canonical merge preflight; integrate and release",
+      "blocker": "No DPM omission, actual site/floor/DPC/vent material qualification or construction selection; MAT-ENVELOPE remains planned"
     }
   },
   "recoverySource": {
-    "leaseId": "77833f2c-876c-438a-bdd9-a2e43f2d1353",
-    "generation": 8,
-    "branch": "work/swarm-2900-interfaces-20261031",
-    "pr": 1157,
+    "leaseId": "d599fb57-c857-41b2-bdbc-8c4f1b90d8aa",
+    "generation": 9,
+    "branch": "work/mvb-chat-6546969637",
+    "pr": 1164,
     "checkpoint": {
-      "evidence": "PR1157 merged at 17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree 0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946; full CI 41225448974 passed. MAT-ENVELOPE canonical preflight passed at 17:40:08.475Z against current main aa8e85bb. Fresh main ancestry verified; shared remote branch absent per root verification. Envelope study and G06 preserve independent source review. Bounded partial result only; MAT-ENVELOPE remains planned.",
-      "next": "Resolve one configured wall-base and floor-to-mineral-DPC junction, preserving the clear-cavity/drained-tray alternatives, all retained constituents, structural fill, passive site-water conditions and maintainable-side service access. Reconcile NCCT outlet instructions and its separate inner-leaf membrane interface before any selection.",
-      "blocker": "No exact complete inner-leaf/floor transition, installed membrane/auxiliary disclosure, project outlet setting-out or actual brick/mortar/load qualification; site levels and complete assembly remain unselected."
+      "evidence": "PR #1164 head c9f5bf0bdeda35018a8f2788a594df6bad14766c; suspended mineral-floor strategy, connected A3 section and six local Node22 regression tests",
+      "next": "Reconcile current main, reproduce source-pinned outputs on runner, require exact-head CI and canonical merge preflight; integrate and release",
+      "blocker": "No DPM omission, actual site/floor/DPC/vent material qualification or construction selection; MAT-ENVELOPE remains planned"
     }
-  },
-  "pr": 1164,
-  "checkpoint": {
-    "evidence": "PR #1164 head c9f5bf0bdeda35018a8f2788a594df6bad14766c; suspended mineral-floor strategy, connected A3 section and six local Node22 regression tests",
-    "next": "Reconcile current main, reproduce source-pinned outputs on runner, require exact-head CI and canonical merge preflight; integrate and release",
-    "blocker": "No DPM omission, actual site/floor/DPC/vent material qualification or construction selection; MAT-ENVELOPE remains planned"
   }
 }
