@@ -1,0 +1,28 @@
+name: HAD table and chair publication preflight
+on:
+  push:
+    branches: [work/mvb-chat-6541677482]
+    paths: [.github/workflows/had-table-preflight.yml]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6541677482
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Check current branch head and canonical lease
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          node --import tsx scripts/project-claims.ts merge-check HAD-03
+          --transport connector --lease-id 01578a4c-862a-45a3-aa70-d52bf32157e7 --generation 10
+          --branch work/mvb-chat-6541677482 --head "$(git rev-parse HEAD)" --format text
