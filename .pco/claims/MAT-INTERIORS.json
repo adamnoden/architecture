@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
-  "generation": 8,
-  "state": "released",
-  "leaseId": "159ca45a-6ae5-4ddc-b848-6ea159652f44",
+  "generation": 9,
+  "state": "claimed",
+  "leaseId": "98a4fdd9-d095-44a9-bd43-d2156e841bd7",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-782cae-root-materials"
+    "label": "mat-waste-package-20261031-1805"
   },
-  "claimedAt": "2026-10-31T17:50:42.793Z",
-  "heartbeatAt": "2026-10-31T18:02:54.879Z",
-  "expiresAt": "2026-10-31T18:02:54.879Z",
-  "branch": "work/swarm-782cae-interiors",
+  "claimedAt": "2026-10-31T18:05:07.080Z",
+  "heartbeatAt": "2026-10-31T18:05:07.080Z",
+  "expiresAt": "2026-10-31T18:50:07.080Z",
+  "branch": "work/mat-waste-package-20261031-1805",
   "predecessor": {
-    "leaseId": "7da738bf-93a5-473d-8385-4aa7b97264bf",
-    "generation": 7,
-    "branch": "work/swarm-2900-interfaces-20261031",
-    "pr": 1157,
+    "leaseId": "159ca45a-6ae5-4ddc-b848-6ea159652f44",
+    "generation": 8,
+    "branch": "work/swarm-782cae-interiors",
+    "pr": 1162,
     "checkpoint": {
-      "evidence": "PR1157 merged at17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI41225448974 succeeded; canonical MAT-INTERIORS preflight passed17:40:17.505Z. Independent primary-source and integrated-source reviews passed. Shared remote branch is absent.",
-      "next": "Bind the actual plaster, patching and preparation to a room surface and its allocated thickness; confirm supplied powder shade and Fixative revisions; assess representative finish and repair. Preserve the separate configured tray/support/withdrawal obligations in the wet-assembly study.",
-      "blocker": "Actual substrate, complete preparation/accessory set, supplied colour/revision and physical finish/repair evidence remain unresolved. No finished wall, ceiling or complete interior assembly is accepted; MAT-INTERIORS remains incomplete."
+      "evidence": "PR #1162 merged as b3a11fa79906619e4d5889fc79c1fc73cb8f2a28. Accepted tree 830edea432e9172c102f2467fdbd7da198b0a1eb equals validated head 86c7c5aab4b44506ca95b900cb8f362771246c92. Full CI 41227047898 passed; fresh canonical preflight passed at 18:01:39.917 UTC. Independent sources, arithmetic, source identities and repository validation passed; remote branch absence verified.",
+      "next": "Retain the named Conserv family and 24 mm adverse baseline. Resolve the actual inner-leaf surface, complete key/repair/edge constituents, supported coat thickness and coating/deviation allowance before adopting a thinner assembly or reconciling a finish-depth change. Solo composition and masonry-specific build-up remain unresolved.",
+      "blocker": "MAT-INTERIORS remains planned. No complete installed finish, supplied-batch constituent pass, physical bond/repair evidence, owner exception or house source change is accepted."
     }
   },
   "recoverySource": {
-    "leaseId": "7da738bf-93a5-473d-8385-4aa7b97264bf",
-    "generation": 7,
-    "branch": "work/swarm-2900-interfaces-20261031",
-    "pr": 1157,
+    "leaseId": "159ca45a-6ae5-4ddc-b848-6ea159652f44",
+    "generation": 8,
+    "branch": "work/swarm-782cae-interiors",
+    "pr": 1162,
     "checkpoint": {
-      "evidence": "PR1157 merged at17:41:10Z as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b. Accepted tree0d8cfe064cb5ee8f0fdf6315f1b0c4600fbb3822 equals validated head2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI41225448974 succeeded; canonical MAT-INTERIORS preflight passed17:40:17.505Z. Independent primary-source and integrated-source reviews passed. Shared remote branch is absent.",
-      "next": "Bind the actual plaster, patching and preparation to a room surface and its allocated thickness; confirm supplied powder shade and Fixative revisions; assess representative finish and repair. Preserve the separate configured tray/support/withdrawal obligations in the wet-assembly study.",
-      "blocker": "Actual substrate, complete preparation/accessory set, supplied colour/revision and physical finish/repair evidence remain unresolved. No finished wall, ceiling or complete interior assembly is accepted; MAT-INTERIORS remains incomplete."
+      "evidence": "PR #1162 merged as b3a11fa79906619e4d5889fc79c1fc73cb8f2a28. Accepted tree 830edea432e9172c102f2467fdbd7da198b0a1eb equals validated head 86c7c5aab4b44506ca95b900cb8f362771246c92. Full CI 41227047898 passed; fresh canonical preflight passed at 18:01:39.917 UTC. Independent sources, arithmetic, source identities and repository validation passed; remote branch absence verified.",
+      "next": "Retain the named Conserv family and 24 mm adverse baseline. Resolve the actual inner-leaf surface, complete key/repair/edge constituents, supported coat thickness and coating/deviation allowance before adopting a thinner assembly or reconciling a finish-depth change. Solo composition and masonry-specific build-up remain unresolved.",
+      "blocker": "MAT-INTERIORS remains planned. No complete installed finish, supplied-batch constituent pass, physical bond/repair evidence, owner exception or house source change is accepted."
     }
-  },
-  "pr": 1162,
-  "checkpoint": {
-    "evidence": "PR #1162 merged as b3a11fa79906619e4d5889fc79c1fc73cb8f2a28. Accepted tree 830edea432e9172c102f2467fdbd7da198b0a1eb equals validated head 86c7c5aab4b44506ca95b900cb8f362771246c92. Full CI 41227047898 passed; fresh canonical preflight passed at 18:01:39.917 UTC. Independent sources, arithmetic, source identities and repository validation passed; remote branch absence verified.",
-    "next": "Retain the named Conserv family and 24 mm adverse baseline. Resolve the actual inner-leaf surface, complete key/repair/edge constituents, supported coat thickness and coating/deviation allowance before adopting a thinner assembly or reconciling a finish-depth change. Solo composition and masonry-specific build-up remain unresolved.",
-    "blocker": "MAT-INTERIORS remains planned. No complete installed finish, supplied-batch constituent pass, physical bond/repair evidence, owner exception or house source change is accepted."
-  },
-  "releasedAt": "2026-10-31T18:02:54.879Z",
-  "releaseReason": "handoff"
+  }
 }
