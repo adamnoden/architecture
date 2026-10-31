@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 10,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "73aa7dc9-af13-474b-b663-5780130655fd",
   "holder": {
     "kind": "chatgpt",
     "label": "swarm-2900-worker-one-ias"
   },
   "claimedAt": "2026-10-31T17:09:27.406Z",
-  "heartbeatAt": "2026-10-31T17:42:04.352Z",
-  "expiresAt": "2026-10-31T18:27:04.352Z",
+  "heartbeatAt": "2026-10-31T17:42:42.729Z",
+  "expiresAt": "2026-10-31T17:42:42.729Z",
   "branch": "work/swarm-2900-interfaces-20261031",
   "predecessor": {
     "leaseId": "74a7da76-e532-4b27-a631-854577a384ac",
@@ -39,5 +39,7 @@
     "next": "Handoff this merged partial result. Obtain an identified current bowl-seat/downstream waste assembly and bind its full constituents, actual sealing faces, support and withdrawal sequence before further IAS adoption.",
     "blocker": "Current supplied variant, every retained ring and connection, installed clearance and release travel remain unbound; generic assembly diagrams do not resolve those inputs. IAS-03 remains incomplete."
   },
-  "pr": 1157
+  "pr": 1157,
+  "releasedAt": "2026-10-31T17:42:42.729Z",
+  "releaseReason": "handoff"
 }
