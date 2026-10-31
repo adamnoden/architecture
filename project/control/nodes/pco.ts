@@ -2,6 +2,13 @@ import { defineNodes } from '../types.js'
 
 export const pcoNodes = defineNodes([
   {
+    id: 'PCO-REVIEW-POLICY', owners: ['PCO'],
+    title: 'Separate internal development from external assurance and remove unnecessary review waits',
+    dependencies: ['PCO-HOUSE-PLAN'], lifecycle: 'complete',
+    agentDispatch: { mode: 'manual', reason: 'Owner-directed review-gate audit and development-policy change on 31 October 2026.' },
+    closeoutEvidence: ['project/pco/review-gate-audit.md']
+  },
+  {
     id: 'PCO-MODES', owners: ['PCO'],
     title: 'Close regular-chat PR association and confirm shared worker topologies',
     dependencies: ['PCO-GATEWAY'], lifecycle: 'complete',

@@ -23,6 +23,7 @@ import {
   type PublicationEntry
 } from '../publication.js'
 import { applyProductionTypography } from './typography.js'
+import { fetchPublicationFonts, type PublicationFontSlot } from '../fonts.js'
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const repoRoot = resolve(scriptDirectory, '../..')
@@ -123,7 +124,11 @@ function normalizePreparedHeading(entry: PublicationEntry, markdown: string): st
 
 function writeTitlePage(metadata: ReturnType<typeof editionMetadata>, editionLabel: 'Working Edition' | 'Primer'): string {
   const path = 'publication-title.html'
-  writeFileSync(workPath(path), `<!doctype html>\n<html lang="en-GB">\n<head>\n  <meta charset="utf-8">\n  <title>${projectIdentity.name} — ${editionLabel}</title>\n</head>\n<body class="publication-title-page">\n  <main class="publication-title">\n    <div class="publication-title__primary">\n      <p class="publication-title__edition">${editionLabel}</p>\n      <h1>${projectIdentity.name}</h1>\n    </div>\n    <div class="publication-title__meta">\n      <p>${metadata.dateDisplay}</p>\n      <p>Revision <code>${metadata.revision}</code></p>\n      <p><a href="${liveBaseUrl}">adamnoden.github.io/architecture/</a></p>\n    </div>\n  </main>\n</body>\n</html>\n`)
+  const compactContents = editionLabel === 'Primer'
+    ? `<nav class="primer-contents" aria-label="Contents"><h2>Contents</h2><ol>${entries.map((entry) =>
+      `<li><a href="${entry.source.replace(/\.md$/, '.html')}">${entry.title}</a></li>`).join('')}</ol></nav>`
+    : ''
+  writeFileSync(workPath(path), `<!doctype html>\n<html lang="en-GB">\n<head>\n  <meta charset="utf-8">\n  <title>${projectIdentity.name} — ${editionLabel}</title>\n</head>\n<body class="publication-title-page">\n  <main class="publication-title">\n    <div class="publication-title__primary">\n      <p class="publication-title__edition">${editionLabel}</p>\n      <h1>${projectIdentity.name}</h1>\n      ${compactContents}\n    </div>\n    <div class="publication-title__meta">\n      <p>${metadata.dateDisplay}</p>\n      <p>Revision <code>${metadata.revision}</code></p>\n      <p><a href="${liveBaseUrl}">adamnoden.github.io/architecture/</a></p>\n    </div>\n  </main>\n</body>\n</html>\n`)
   return path
 }
 function writeContentsTemplate(): string {
@@ -143,8 +148,14 @@ copyFileSync(repoPath('publication/pattern-reference.md'), workPath('publication
 
 const metadata = editionMetadata()
 const titlePage = smokeMode ? null : writeTitlePage(metadata, primerMode ? 'Primer' : 'Working Edition')
-const contentsPage = smokeMode ? null : writeContentsTemplate()
+const contentsPage = fullMode ? writeContentsTemplate() : null
 const canonicalSources = new Set(entries.flatMap((entry) => [entry.source, ...dependenciesForAdapter(entry.adapter)]))
+// Explicit source dependencies may live outside docs/ (for example the owner-house charter).
+for (const source of canonicalSources) {
+  if (existsSync(workPath(source))) continue
+  mkdirSync(dirname(workPath(source)), { recursive: true })
+  copyFileSync(repoPath(source), workPath(source))
+}
 const canonicalHashes = new Map([...canonicalSources].map((source) => [source, sha256(repoPath(source))]))
 const included = new Set(entries.map((entry) => entry.source))
 
@@ -190,6 +201,19 @@ writeFileSync(buildPath, JSON.stringify({
 
 if (fullMode && process.env.PUBLICATION_RAW_PREPARE !== '1') {
   await applyProductionTypography({ repoRoot, publicationRoot, workRoot, workSourceRoot })
+}
+if (primerMode) {
+  const fonts = await fetchPublicationFonts(resolve(workRoot, 'publication-fonts'))
+  const definitions = [
+    ['PUBLICATION_SERIF_REGULAR', 'Publication Serif', 'normal', 400],
+    ['PUBLICATION_SERIF_ITALIC', 'Publication Serif', 'italic', 400],
+    ['PUBLICATION_SERIF_SEMIBOLD', 'Publication Serif', 'normal', 600],
+    ['PUBLICATION_SANS_REGULAR', 'Publication Sans', 'normal', 400],
+    ['PUBLICATION_SANS_BOLD', 'Publication Sans', 'normal', 700]
+  ] as const satisfies ReadonlyArray<readonly [PublicationFontSlot, string, string, number]>
+  const faces = definitions.map(([slot, family, style, weight]) =>
+    `@font-face { font-family:"${family}"; src:url("data:font/ttf;base64,${readFileSync(fonts[slot]).toString('base64')}") format("truetype"); font-style:${style}; font-weight:${weight}; font-display:block; }`)
+  writeFileSync(resolve(workRoot, 'primer-fonts.css'), faces.join('\n'))
 }
 
 console.log(`Prepared ${entries.length} ${mode} publication entries in publication/.work.`)

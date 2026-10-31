@@ -4,6 +4,8 @@
 **Owner:** DPL-15J / #876.
 **State:** complete at conditional scope; [the final closeout](../dpl-conditional-closeout.md) revises the remaining programme brief and records the final authored case. Real-site verification is deferred.
 
+**House basis:** this retained study uses the historical 12 × 10.8 m house. Its thresholds, placements and conformance findings do not transfer to the accepted 12 × 12 m design. Use the [current Reference House basis](../../../docs/reference-house/current-house-basis.md) and [owner-house site programme](../owner-house-site-programme.md) for current-house applicability and later site work.
+
 ## Decision
 
 Missing measurements need not prevent an explicit design hypothesis. They do prevent that hypothesis from becoming a verified site fact. The previous proposed DPL-15J blanket pause is superseded for exploration only.

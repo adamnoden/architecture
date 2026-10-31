@@ -35,15 +35,12 @@ export const evidenceNodes = defineNodes([
   {
     id: 'PHY-03-ENGINEERING',
     owners: ['PHY'],
-    title: 'Structural floor-edge engineering option reduction',
+    title: 'Internal floor-edge research, calculations and provisional option reduction',
     dependencies: ['PHY-APPLICABILITY'],
     lifecycle: 'planned',
     aliases: ['PHY-03', 'P03'],
-    agentDispatch: {
-      mode: 'manual',
-      reason: 'The gate requires competent structural-engineering judgement; an agent may assist only when explicitly directed.'
-    },
-    closeoutEvidence: []
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/phy/floor-edge-internal-study.md']
   },
   {
     id: 'PHY-04',
@@ -57,6 +54,15 @@ export const evidenceNodes = defineNodes([
       reason: 'The exit gate requires a physical build/test and cannot be completed by a generic repository agent.'
     },
     closeoutEvidence: []
+  },
+  {
+    id: 'EPR-DESK-REVIEW',
+    owners: ['EPR'],
+    title: 'Answer current-house technical review questions through internal evidence and challenge',
+    dependencies: ['EPR-REFRESH'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/epr/internal-technical-review.md']
   },
   {
     id: 'EPR-RH11',

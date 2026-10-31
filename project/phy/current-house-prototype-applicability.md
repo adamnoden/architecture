@@ -10,7 +10,7 @@ P03's separation of gravity, restraint, diaphragm, movement, closure and repair 
 
 P04's conventional comparison, independent finish termination, decoration challenge and repeated local reinstatement remain useful methods. Its 2950 mm room rig is historical; current clear rooms are 3100. The selected dry interior now uses a plain upper termination by default, with an optional small wall-fixed cover only at a real independently moving junction. It does not adopt a house-wide cornice or require all three prepared families. A retained old rig can answer a bounded local mechanical question if its actual background and scope are declared; it cannot silently represent current room proportions or the current detail.
 
-No test is activated by this result. PHY-03-ENGINEERING and PHY-04 remain manual evidence gates; PHY-01/02 remain held. The existing programmes receive concrete release conditions below. BCR's routed-pending physical findings remain unresolved until their owning design/evidence conditions are met.
+No test is activated by this result. **31 October 2026 development-policy amendment:** PHY-03-ENGINEERING now admits a self-service internal options/calculation study under the [current PHY contract](physical-validation-programme.md#phy-03-engineering--internal-development-contract). Its completion does not release a structural specimen. ER-STR-01 / EPR-RH11 structural acceptance and PHY-04 physical evidence remain separate manual obligations; PHY-01/02 remain held. The dated source/applicability findings below retain their original scope. BCR's routed-pending physical findings remain unresolved until their owning design/evidence conditions are met.
 
 ## Retained source identities
 
@@ -46,7 +46,7 @@ The [structure study](../bcr/bcr-structure-result.md) owns the detailed located 
 
 ## P03: engineering release before any structural claim
 
-Keep the ordinary compatible hanger/restraint family as the control, direct/seated bearing as a comparator, and bespoke shoe/ledge only where it earns an advantage. A conventional family is not selected merely by being listed. The represented 100 projection/40 deep seat and 25 end gap are drawing assumptions, not an engineered connection. The 417.5 envelope is not solid loadbearing material.
+The 29 October study used the ordinary compatible hanger/restraint family as the control, direct/seated bearing as a comparator, and bespoke shoe/ledge only where it earned an advantage. **Current development must first apply the later STR and material direction**, including non-timber primary structure; retain the old families only where applicable as historical comparisons. A conventional family is not selected merely by being listed. The represented 100 projection/40 deep seat and 25 end gap are drawing assumptions, not an engineered connection. The 417.5 envelope is not solid loadbearing material.
 
 Before issuing a current structural specimen definition, the house/HAD structural owner with IAS must identify the actual floor directions, supports, receiving substrate and connections. Competent structural engineering must establish the current actions, load paths and member/connection geometry, including restraint/diaphragm/robustness, stiffness/vibration and any temporary condition. EPR supplies the corresponding professional review route; this preparation does not appoint or impersonate that role.
 
@@ -92,7 +92,7 @@ PHY-01 remains optional/held: selected ordinary direct finishes have not created
 
 ## Release, result and change control
 
-Current-house use of the historical packs requires this addendum and then a specific released specimen revision; the old READY wording describes its dated preparation scope. It is not a present build instruction. PHY-03 requires competent engineering option reduction; PHY-04 requires a real authorised specimen/test and appropriate interpretation. Preparing either release record does not discharge those manual gates. Physical construction, procurement, appointments and external contact require their actual authorisation.
+Current-house use of the historical packs requires this addendum and then a specific released specimen revision; the old READY wording describes its dated preparation scope. It is not a present build instruction. Internal option reduction may complete under PHY-03-ENGINEERING; competent structural/specimen acceptance remains outstanding under ER-STR-01 / EPR-RH11. PHY-04 requires a real authorised specimen/test and appropriate interpretation. Preparing a study or release record does not discharge those external/physical evidence obligations. Physical construction, procurement, appointments and external contact require their actual authorisation.
 
 For any eventual event, retain the question/control/criteria fixed beforehand, actual specimen and product/detail revisions, competence/roles, measured geometry and observations, instrumentation/method where relevant, photographs/raw records, departures and failures, independent comparison, and the precise supported/unsupported conclusion. Separate general proposition evidence, current-house selection and formal technical performance. Record affected design/matrix rows, correction/retest or rejection, and downstream stale outputs. A successful local result does not automatically raise any project or pattern maturity.
 
