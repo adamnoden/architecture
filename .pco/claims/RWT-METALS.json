@@ -9,8 +9,8 @@
     "label": "services-next-2041-20261031"
   },
   "claimedAt": "2026-10-31T20:45:51.135Z",
-  "heartbeatAt": "2026-10-31T20:45:51.135Z",
-  "expiresAt": "2026-10-31T22:15:51.135Z",
+  "heartbeatAt": "2026-10-31T20:56:04.243Z",
+  "expiresAt": "2026-10-31T22:26:04.243Z",
   "branch": "work/swarm-next-services-2041-20261031",
   "note": "Fresh accepted main d4cad187; predecessor PR1179 merged and exact-head CI verified. Next bounded question, if RWT-METALS is selected: compare supported copper wet-sheet backing, water/debris load path, underside inspection and repair access. No selected receiver dimensions, nonlinear collapse, site levels or STR capacity claim. Root owns all connector mutations.",
   "predecessor": {
@@ -34,5 +34,9 @@
       "next": "Release handoff after verified integration and complete local cleanup. Next RWT-METALS work needs the actual seam underside/backing and load path, frame-relative movement, terminal profile and complete accessible repair sequence; retain terminal-side restraint development direction and all authored-input limits.",
       "blocker": "No integration blocker remains. This bounded support/release investigation does not qualify actual bearing, hardware, site levels, complete wet-body extraction or the wider copper/brass/hidden-route candidate; RWT-METALS remains planned."
     }
+  },
+  "checkpoint": {
+    "evidence": "Predecessor PR1179 verified merged at1378e249, exact accepted-main health41239002188 and released gen13 retained. Current source base d4cad187. Aurubis Copper Book second edition2013 SHA256c4e9867841bb4c05e05c3e6211897dfabd1256d3fe72efc1187da51f48d891bc pp31/32/106/108 inspected; R220 proof140MPa is MAX, E118000 and density8900. CDA A4050-8/24 SHA256da66c45cfb35fb94adaad908fffc79545a722faa2b4e8694ab4c913c9ea6d7c0 introduction is p144, seam p148. Local uncommitted backing/strip sensitivity is in progress, not durable published evidence. Root and independent reviewer agree source and scope limits.",
+    "next": "Complete connected backed-liner versus unsupported inspection-gap comparison, preserving installed material, independent loads, temporary support and hidden-underface limits; independently review exact model and A3; then source commit and reconcile latest main including accepted EPR/PHY. RWT-METALS remains planned."
   }
 }
