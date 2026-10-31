@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 16,
-  "state": "released",
-  "leaseId": "72497b0a-9437-4b0f-9488-cf5ce88ff19b",
+  "generation": 17,
+  "state": "claimed",
+  "leaseId": "1e53ffc7-faca-4bfe-ad2e-48876601b545",
   "holder": {
     "kind": "chatgpt",
     "label": "services-recovery-983b7ee-20261031"
   },
-  "claimedAt": "2026-10-31T16:57:19.342Z",
-  "heartbeatAt": "2026-10-31T17:07:12.687Z",
-  "expiresAt": "2026-10-31T17:07:12.687Z",
-  "branch": "work/swarm-dispatch-recovery-20261031",
+  "claimedAt": "2026-10-31T17:15:27.079Z",
+  "heartbeatAt": "2026-10-31T17:15:27.079Z",
+  "expiresAt": "2026-10-31T18:00:27.079Z",
+  "branch": "work/swarm-court-access-20261031",
   "predecessor": {
-    "leaseId": "163e3d83-5472-4e4e-a89c-4069877a8a3e",
-    "generation": 15,
-    "branch": "work/mvb-chat-6541503746",
-    "pr": 1134,
+    "leaseId": "72497b0a-9437-4b0f-9488-cf5ce88ff19b",
+    "generation": 16,
+    "branch": "work/swarm-dispatch-recovery-20261031",
     "checkpoint": {
-      "evidence": "PR #1134 merged at 1af38036c4e67ad73891e9df31dda991e407599f. Final head 8af03a533974b76162e75f6927c1a938e5ec0325 passed full CI 41189754152 and canonical preflight at 09:46:17.419 UTC.",
-      "next": "Locate actual leading/trailing joints and retained W2 penetration; demonstrate full threshold release, inward withdrawal and reinstatement with real floor/support/tool arrangements.",
-      "blocker": "RWT-06 remains planned. Bare-tube finite-body motion is conditional; actual assembly/material admission, dry maintenance, handling and hydraulic/site acceptance remain unproved."
+      "evidence": "No source change earned: PR1134 is merged at1af38036c4e67ad73891e9df31dda991e407599f; exact predecessor head8af03a533974b76162e75f6927c1a938e5ec0325 passed CI41189754152. Its four threshold study/generator/output blobs are identical on main20ca2ad0; threshold generator --check passes. Independent source/topology review found no accepted-source defect.",
+      "next": "Before another threshold motion witness, supply the actual fixed W2 and ground-boundary contours, moving coupon, both release planes and any closure touching the coupon; show installed, first-release and fully absent states with leak/open-bore paths. Broader RWT-06 duties remain open.",
+      "blocker": "The next matched-interface trial lacks a qualified penetration/closure/release section. Existing geometry and repeated warnings cannot prove it. This bounded recovery does not complete or hold the whole RWT-06 packet."
     }
   },
   "recoverySource": {
-    "leaseId": "163e3d83-5472-4e4e-a89c-4069877a8a3e",
-    "generation": 15,
-    "branch": "work/mvb-chat-6541503746",
-    "pr": 1134,
+    "leaseId": "72497b0a-9437-4b0f-9488-cf5ce88ff19b",
+    "generation": 16,
+    "branch": "work/swarm-dispatch-recovery-20261031",
     "checkpoint": {
-      "evidence": "PR #1134 merged at 1af38036c4e67ad73891e9df31dda991e407599f. Final head 8af03a533974b76162e75f6927c1a938e5ec0325 passed full CI 41189754152 and canonical preflight at 09:46:17.419 UTC.",
-      "next": "Locate actual leading/trailing joints and retained W2 penetration; demonstrate full threshold release, inward withdrawal and reinstatement with real floor/support/tool arrangements.",
-      "blocker": "RWT-06 remains planned. Bare-tube finite-body motion is conditional; actual assembly/material admission, dry maintenance, handling and hydraulic/site acceptance remain unproved."
+      "evidence": "No source change earned: PR1134 is merged at1af38036c4e67ad73891e9df31dda991e407599f; exact predecessor head8af03a533974b76162e75f6927c1a938e5ec0325 passed CI41189754152. Its four threshold study/generator/output blobs are identical on main20ca2ad0; threshold generator --check passes. Independent source/topology review found no accepted-source defect.",
+      "next": "Before another threshold motion witness, supply the actual fixed W2 and ground-boundary contours, moving coupon, both release planes and any closure touching the coupon; show installed, first-release and fully absent states with leak/open-bore paths. Broader RWT-06 duties remain open.",
+      "blocker": "The next matched-interface trial lacks a qualified penetration/closure/release section. Existing geometry and repeated warnings cannot prove it. This bounded recovery does not complete or hold the whole RWT-06 packet."
     }
-  },
-  "checkpoint": {
-    "evidence": "No source change earned: PR1134 is merged at1af38036c4e67ad73891e9df31dda991e407599f; exact predecessor head8af03a533974b76162e75f6927c1a938e5ec0325 passed CI41189754152. Its four threshold study/generator/output blobs are identical on main20ca2ad0; threshold generator --check passes. Independent source/topology review found no accepted-source defect.",
-    "next": "Before another threshold motion witness, supply the actual fixed W2 and ground-boundary contours, moving coupon, both release planes and any closure touching the coupon; show installed, first-release and fully absent states with leak/open-bore paths. Broader RWT-06 duties remain open.",
-    "blocker": "The next matched-interface trial lacks a qualified penetration/closure/release section. Existing geometry and repeated warnings cannot prove it. This bounded recovery does not complete or hold the whole RWT-06 packet."
-  },
-  "releasedAt": "2026-10-31T17:07:12.687Z",
-  "releaseReason": "handoff"
+  }
 }
