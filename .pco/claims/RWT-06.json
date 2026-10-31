@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 15,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "163e3d83-5472-4e4e-a89c-4069877a8a3e",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6541503746"
   },
   "claimedAt": "2026-10-31T09:08:23.000Z",
-  "heartbeatAt": "2026-10-31T09:47:55.000Z",
-  "expiresAt": "2026-10-31T10:32:55.000Z",
+  "heartbeatAt": "2026-10-31T09:49:36.000Z",
+  "expiresAt": "2026-10-31T09:49:36.000Z",
   "branch": "work/mvb-chat-6541503746",
   "predecessor": {
     "leaseId": "70d03fe9-7eb7-4a0b-bd36-7cc37e600d6a",
@@ -39,5 +39,7 @@
     "next": "Locate actual leading/trailing joints and retained W2 penetration; demonstrate full threshold release, inward withdrawal and reinstatement with real floor/support/tool arrangements.",
     "blocker": "RWT-06 remains planned. Bare-tube finite-body motion is conditional; actual assembly/material admission, dry maintenance, handling and hydraulic/site acceptance remain unproved."
   },
-  "pr": 1134
+  "pr": 1134,
+  "releasedAt": "2026-10-31T09:49:36.000Z",
+  "releaseReason": "handoff"
 }
