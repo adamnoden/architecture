@@ -9,8 +9,8 @@
     "label": "services-mat-recovery-1936-20261031"
   },
   "claimedAt": "2026-10-31T19:39:42.972Z",
-  "heartbeatAt": "2026-10-31T19:39:42.972Z",
-  "expiresAt": "2026-10-31T20:24:42.972Z",
+  "heartbeatAt": "2026-10-31T19:52:55.024Z",
+  "expiresAt": "2026-10-31T20:37:55.024Z",
   "branch": "work/swarm-mat-recovery-1936-20261031",
   "predecessor": {
     "leaseId": "d599fb57-c857-41b2-bdbc-8c4f1b90d8aa",
@@ -33,5 +33,10 @@
       "next": "Reconcile current main, reproduce source-pinned outputs on runner, require exact-head CI and canonical merge preflight; integrate and release",
       "blocker": "No DPM omission, actual site/floor/DPC/vent material qualification or construction selection; MAT-ENVELOPE remains planned"
     }
-  }
+  },
+  "checkpoint": {
+    "evidence": "PR1164 already accepted as 8bebd4454b5bbfb998a486c3c90c6425ca9588a8; exact tested head 209b8a1199d8dbf1d8eb31702e2b3206439144ef and accepted tree f5b0c928d4066451b44ffd9c0abf4f022c6e945b match, CI41228971744 passed, old ref absent. Fresh source at c9e9a2c0; uncommitted located ventilation continuation in suspended-mineral-ground-floor.md. Primary TE115 June2017 SHA256 9793bd248e21d1b562093a2d575e50c3355b2e3ad22ee0b393e8870308b40b4c; Rytons V5i 6a23814f6825dc688401e9b9472390d1f63864ddc1e4438b93f8057e4c4a196b; GoldenThread Sep2026 e23b439a9fbdaea24447b07b8f8a193f74a25e822c7af58cd500293d4ea86ede. Exact sources/render cache in mat-resume-1936-session/sources; no new PR yet.",
+    "next": "Finish the reproducible straight mineral vent wall/DPC/void comparison, including free-area and exterior-mouth limits, cavity liner versus complete passage, support, water protection and maintenance. Review source claims and inspect sheet; preserve original1164 outputs. Then validate and publish reviewed source through root. Packet remains planned."
+  },
+  "note": "Meaningful source and predecessor reconciliation checkpoint; root alone performs external connector writes."
 }
