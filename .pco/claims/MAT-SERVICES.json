@@ -9,8 +9,8 @@
     "label": "mat-waste-20261031-1653"
   },
   "claimedAt": "2026-10-31T16:53:20.924Z",
-  "heartbeatAt": "2026-10-31T17:05:17.871Z",
-  "expiresAt": "2026-10-31T17:50:17.871Z",
+  "heartbeatAt": "2026-10-31T17:13:53.317Z",
+  "expiresAt": "2026-10-31T17:58:53.317Z",
   "branch": "work/mat-waste-20261031-1653",
   "predecessor": {
     "leaseId": "d5937b54-a057-41e5-89f0-2fb76d65e801",
@@ -34,8 +34,8 @@
   },
   "pr": 1153,
   "checkpoint": {
-    "evidence": "Draft PR #1153 at f000d51b459cc1f14d7204eebdadc9901816638a; primary source review, socket arithmetic and clean current-main integration",
-    "next": "Verify exact-head canonical CI, run fresh merge preflight and close out bounded S02 result",
-    "blocker": "Whole waste assembly and located renewal remain unresolved; CI pending"
+    "evidence": "PR #1153 merged at 09130048037f20fdc86b60959b2c631db18b6a6f; validated head 9551f4dda91866d487b42facfb58c63823d59608; full CI 41223154542 passed; accepted tree matches checked head",
+    "next": "Bind a current complete caulked soil-joint package and a supported repair section through the owning BCR/IAS service access; MAT-SERVICES remains planned",
+    "blocker": "Coating, packing, accessory constituents and full release/repair proof remain unresolved"
   }
 }
