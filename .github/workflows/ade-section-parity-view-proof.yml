@@ -21,6 +21,7 @@ jobs:
       - name: Prove current principal and service BOOK/WALL SVGs
         run: |
           mkdir -p .ade-section-proof
+          git rev-parse HEAD > .ade-section-proof/head.txt
           node --import tsx --input-type=module -e '
             import fs from "node:fs";
             import { createLayoutSection } from "./compiler/reference-house/georgian/layout-family.ts";
