@@ -9,8 +9,8 @@
     "label": "issue-comment-6541790969"
   },
   "claimedAt": "2026-10-31T09:39:55.000Z",
-  "heartbeatAt": "2026-10-31T09:39:55.000Z",
-  "expiresAt": "2026-10-31T10:24:55.000Z",
+  "heartbeatAt": "2026-10-31T09:55:29.000Z",
+  "expiresAt": "2026-10-31T10:40:29.000Z",
   "branch": "work/mvb-chat-6541790969",
   "predecessor": {
     "leaseId": "678ba801-95cf-4d69-8a2b-e00185ef1597",
@@ -33,5 +33,11 @@
       "next": "Bind the current delivered kit and complete waste/trap/appliance assembly; locate all fixings and supported withdrawal before claiming material or maintenance acceptance.",
       "blocker": "IAS-03 remains planned. Model service identities and conditional release duties are earned; actual connected geometry, constituents, drying and physical renewal remain unproved."
     }
+  },
+  "pr": 1144,
+  "checkpoint": {
+    "evidence": "PR #1144 head 4a0cd63805d237d4153f43336d6c611175641e08 compares separate-bowl, full-top and local wet-top renewal in two existing IAS files. Source/geometry reviews and exact source/arithmetic checks passed.",
+    "next": "Require exact-head full CI and fresh canonical preflight, merge the bounded family comparison, then record remaining assembly duties and release.",
+    "blocker": "Actual installed support/materials, counter joints, connections and physical handling remain unproved; current Franke kit still unbound and IAS-03 planned."
   }
 }
