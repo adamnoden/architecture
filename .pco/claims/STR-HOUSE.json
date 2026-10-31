@@ -9,8 +9,8 @@
     "label": "issue-comment-6541491670"
   },
   "claimedAt": "2026-10-31T09:07:16.000Z",
-  "heartbeatAt": "2026-10-31T09:30:49.000Z",
-  "expiresAt": "2026-10-31T10:15:49.000Z",
+  "heartbeatAt": "2026-10-31T09:45:11.000Z",
+  "expiresAt": "2026-10-31T10:30:11.000Z",
   "branch": "work/mvb-chat-6541491670",
   "predecessor": {
     "leaseId": "b717f35b-d7cc-49c4-bff0-dc440d6fa5da",
@@ -34,8 +34,8 @@
   },
   "pr": 1131,
   "checkpoint": {
-    "evidence": "PR #1131 head 497049420e2e2193e2a40dc730364b1d42d9b301; four STR files; ten local tests, pinned input blobs and inspected deterministic A3 section",
-    "next": "Reconcile current main, reproduce on Node24, require exact-head CI and canonical merge-check; merge bounded result and release",
-    "blocker": "No support capacity, wet assembly, hydraulic or house selection acceptance; STR-HOUSE remains planned"
+    "evidence": "PR #1131 head 5132b6217269017c2fc6863859de03d6ce838de8 preserves current main b9f64d69 and all four reviewed blobs. Earlier exact-head CI passed and Node24 reproduced ten tests/SVG; main moved before canonical publication, so combined head is being revalidated.",
+    "next": "Observe final-head CI and rerun 41189042508 canonical preflight, re-read main/head/lease, expected-head merge then release.",
+    "blocker": "Parallel main changes require fresh integration checks. Architectural scope remains a bounded support/access comparison, not STR-HOUSE completion."
   }
 }
