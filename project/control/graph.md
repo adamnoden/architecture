@@ -85,7 +85,6 @@ flowchart LR
   end
   subgraph g_ADE["ADE"]
     direction TB
-    n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>READY</b>"]
     n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
     n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
     n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
@@ -241,7 +240,6 @@ flowchart LR
   class n_PLT_FINAL_PREP blocked;
   class n_PLT_PRINT_REVIEW blocked;
   class n_BCR_BAY_DESIGN blocked;
-  class n_ADE_SECTION_PARITY ready;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
   class n_ADE_SCHEDULES blocked;
@@ -460,7 +458,7 @@ flowchart LR
     direction TB
     n_ADE_DELIVERY_AUDIT["ADE-DELIVERY-AUDIT<br/>Map construction-information needs to existing capabilities<br/><b>DONE</b>"]
     n_ADE_SECTION_VIEW["ADE-SECTION-VIEW<br/>Prove source-owned orthographic cut, context and occlusion semantics<br/><b>DONE</b>"]
-    n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>READY</b>"]
+    n_ADE_SECTION_PARITY["ADE-SECTION-PARITY<br/>Migrate principal and service sections to source-bound visible geometry and cross-view parity<br/><b>DONE</b>"]
     n_ADE_MODEL["ADE-MODEL<br/>Connect current design identities to construction-information outputs<br/><b>BLOCKED</b>"]
     n_ADE_DETAILS["ADE-DETAILS<br/>Produce source-bound technical bay drawings and details<br/><b>BLOCKED</b>"]
     n_ADE_SCHEDULES["ADE-SCHEDULES<br/>Produce linked bay schedules specifications and quantities<br/><b>BLOCKED</b>"]
@@ -915,7 +913,7 @@ flowchart LR
   class n_BCR_BAY_BRIEF done;
   class n_BCR_BAY_DESIGN blocked;
   class n_ADE_SECTION_VIEW done;
-  class n_ADE_SECTION_PARITY ready;
+  class n_ADE_SECTION_PARITY done;
   class n_ADE_MODEL blocked;
   class n_ADE_DETAILS blocked;
   class n_ADE_SCHEDULES blocked;
