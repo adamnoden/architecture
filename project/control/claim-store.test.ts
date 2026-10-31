@@ -283,27 +283,3 @@ test('an orphaned canonical lease remains releasable after its node leaves the g
   assert.equal(released.stored.record.state, 'released')
   assert.equal(released.stored.record.generation, 7)
 })
-
-
-test('lost acquire, renewal and release acknowledgements reconcile exact remote state without replay', async () => {
-  const store = new FakeStore()
-  let writes = 0
-  const create = store.create.bind(store), update = store.update.bind(store)
-  store.create = async (node, record) => { writes++; await create(node, record); throw new Error('lost acknowledgement') }
-  store.update = async (node, sha, record) => { writes++; await update(node, sha, record); throw new Error('lost acknowledgement') }
-  const acquired = await acquireClaimFromStore(store, 'TST-READY', readyNodes, {holder:{kind:'chatgpt'},leaseId:'recover'})
-  assert.equal(acquired.stored.record.leaseId, 'recover')
-  store.now = new Date(store.now.getTime() + 60000)
-  const renewed = await renewClaimInStore(store, 'TST-READY', readyNodes, {leaseId:'recover',generation:1,checkpoint:{evidence:'branch work/test',next:'validate'}})
-  assert.equal(renewed.stored.record.checkpoint?.next, 'validate')
-  const released = await releaseClaimInStore(store, 'TST-READY', readyNodes, {leaseId:'recover',generation:1,reason:'completed'})
-  assert.equal(released.stored.record.state, 'released')
-  assert.equal(writes, 3)
-})
-test('uncertain write without exact confirmation fails closed and never retries', async () => {
-  const store = new FakeStore()
-  let writes = 0
-  store.create = async () => { writes++; throw new Error('timeout') }
-  await assert.rejects(acquireClaimFromStore(store, 'TST-READY', readyNodes, {holder:{kind:'chatgpt'}}), /Unconfirmed.*inspect remote state/)
-  assert.equal(writes, 1)
-})

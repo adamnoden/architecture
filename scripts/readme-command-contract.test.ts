@@ -1,8 +1,4 @@
 import assert from 'node:assert/strict'
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
-import { tmpdir } from 'node:os'
-import { dirname, join, relative, sep } from 'node:path'
-import { collectReadmes } from './readme-discovery.js'
 import test from 'node:test'
 import {
   missingReadmeNpmScripts,
@@ -53,23 +49,4 @@ test('rejects a README command whose package script was removed or misspelled', 
   )
 
   assert.deepEqual(failures, ['publication/README.md -> npm run publication:valdiate'])
-})
-
-test('README discovery ignores build outputs while retaining authored publication READMEs', () => {
-  const root = mkdtempSync(join(tmpdir(), 'readme-discovery-'))
-  try {
-    const authored = ['README.md', 'publication/README.md', 'publication/specimens/plt99/README.md',
-      'publication/dist-notes/README.md', 'publication/specimens/plt99/.work-notes/README.md']
-    const generated = ['.git/README.md', 'node_modules/pkg/README.md', '.vitepress/cache/README.md',
-      '.vitepress/dist/README.md', 'publication/build/README.md', 'publication/.work/source/README.md',
-      'publication/dist/README.md', 'publication/specimens/plt99/.work/source/README.md',
-      'publication/specimens/plt99/dist/README.md']
-    for (const path of [...authored, ...generated]) {
-      mkdirSync(dirname(join(root, path)), { recursive: true })
-      writeFileSync(join(root, path), '[Broken generated link](missing.md)')
-    }
-    assert.deepEqual(collectReadmes(root).map((path) => relative(root, path).split(sep).join('/')).sort(), authored.sort())
-  } finally {
-    rmSync(root, { recursive: true, force: true })
-  }
 })

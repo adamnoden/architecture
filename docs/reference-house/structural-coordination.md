@@ -1,8 +1,6 @@
 # Reference House — Technical Coordination
 
-**Historical technical coordination:** rectangular-shell predecessor, with the 12.0 × 10.8 m shell, +3300 mm first floor and outward low-slope roof. The body retains that record; its “current” labels apply to that predecessor. It is not the technical arrangement of the accepted 12 × 12 m house. Use [Current House Basis](current-house-basis.md) for current facts and applicability.
-
-The Reference House is coordinated as one architectural proposition rather than as a collection of independent technical studies. This page records the **historical technical arrangement**: the structure, envelope, services, environmental strategy, roof and water logic, energy family, external maintenance geography and principal interfaces that presently belong to the house.
+The Reference House is coordinated as one architectural proposition rather than as a collection of independent technical studies. This page records the **current technical arrangement**: the structure, envelope, services, environmental strategy, roof and water logic, energy family, external maintenance geography and principal interfaces that presently belong to the house.
 
 It is not a construction package and it does not convert unresolved specialist work into proof. Its purpose is to state the resolved architectural position cleanly enough that a reader can understand how the house is intended to work and where competent external design must still take over.
 

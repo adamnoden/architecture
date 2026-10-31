@@ -1,33 +1,74 @@
 # Reader's Guide
 
-## Start with the house
+## Abstract
 
-The worked house is a four-bedroom courtyard home within a twelve-metre square. Rooms look towards the garden, street and small open court; masonry openings, stairs and the arrangement of rooms are intended to endure while services and fittings change. These choices create the enquiry's practical stakes. The court brings light into the plan, but also collects water and restricts maintenance access. Concentrating wet rooms can shorten distribution without proving that a shower, drain or replacement operation fits.
+Ovid’s House is a design-research framework for houses intended to remain useful through repeated maintenance, repair, replacement and change. Its starting point is a mismatch of timescales: structure, enclosure, services, fittings and finishes do not fail or change together, yet ordinary construction often binds them as though they do.
 
-This is a design proposition, not a completed building. Part IV presents its current arrangement and identifies the historical illustrations that cannot stand as drawings of the changed house. The eventual resolved plans, sections and views belong in Part VI. Their absence cannot be repaired by a confident description.
+The project asks how architecture can give change deliberate places to occur without turning the house into a technical diagram or a generic shell. It treats permanent fabric, replaceable systems, designed interfaces, failure behaviour and maintenance access as architectural questions. It also treats repose, environmental performance, workmanship, whole-life value and ordinary construction practice as constraints on any technical answer.
 
-Three comparisons give the argument a scale a reader can judge.
+The result is not one construction system or architectural style. It is a stack of increasingly specific propositions: doctrine, strategies, patterns, implementation families, project occurrences, delivery requirements and tests. The Reference House exercises that stack in one building; it does not prove the general case.
 
-**Renew a finish.** Ordinary dry floors and selective local access remain the house's chosen starting point. A whole-house removable platform would add depth, joints, handling and reinstatement duties. It must earn those costs through an actual intervention; demountability alone is no benefit to the room.
+## How to read this book
 
-**Replace a window.** A conventional mechanically fixed frame with removable trim can preserve the permanent opening without a continuous retained cassette. Full replacement still interrupts seals and requires support, working access and making-good. The useful question is which layers actually survive the operation.
+The book has several deliberately different reading modes.
 
-**Follow a leak or blockage.** The pitched roof collects inward as well as outward. An accessible outlet or visible overflow line does not establish a safe route past the first vulnerable court threshold or wall layer. Likewise, putting a wet room in a service cluster does not prevent damage to concealed construction below it. These unresolved cases can still force the plan or section to change.
+**Parts I and II are an argument.** Part I establishes the proposition: buildings change at different rates, permanence should be selective, and a long-lived house needs an architectural platform for change. Part II develops the consequences through interfaces, failure, maintenance geography, environmental resilience, boundaries, replaceable interiors and stewardship.
 
-The book's proposition is to trace approach, isolation, removal, damage and reinstatement before buying permanent provisions for change. Excellent conventional construction is the comparison throughout. This house does not establish a universal construction system, a measured whole-life saving or a transferable compact-house plan.
+**Part III is a reference.** It contains a bounded set of reusable architectural patterns plus generative sequences where the relationships are sufficiently mature to support them. The strongest current sequence is service topology; the other pattern families are not presented as one uniformly mature Alexander-style language. Pattern names are the reader-facing identity. Their order in the book is editorial: it does not rank patterns or define a required design sequence. Strategies sit above patterns where several materially different physical responses can satisfy the same broader proposition. Held candidates remain outside the canonical set until their admission questions are resolved.
 
-## A short route for an architect
+**Part IV is the design proposition.** The Reference House is one coordinated interpretation of Ovid’s House using a controlled Georgian-derived grammar (G-01), a courtyard morphology and project-specific technical choices. Those choices are allowed to be opinionated. They do not travel upstream into the doctrine merely because the house uses them. Part IV presents the house itself: its type, order, selected material/structural proposition, maintenance geography and environmental systems, together with explicit chapter interfaces for the interior-architecture and opening-assembly systems that still require substantive resolution. Structural placement in the book does not turn unresolved engineering, physical or professional-review obligations into proof.
 
-Read this opening, then the house in **Part IV**, the intervention account in **chapter 26 of Part V**, and the comparison against conventional construction in **chapter 19**. **Evidence and Precedent Notes** distinguishes demonstrated results from proposed work. That route gives the claim, object, adverse tests and limits before the detailed vocabulary.
+**Part V is the ordeal.** A proposition is not complete because it reads well. It must survive cost, carbon, professional responsibility, construction variation, prototype work, commissioning, failure/change/occupation scenarios and the specific future interventions used to attack the Reference House. The part ends at technical closure: a boundary that distinguishes resolved architecture from work that still belongs to competent technical design, physical evidence, real-site information or delivery. Additional process is not treated as free; non-standard controls activate only where consequence or novelty earns them, and technical difficulty is allowed to rewind architecture rather than merely elaborate it.
 
-For the continuous argument, continue through the preface and Parts I–II. Part I establishes the lifespan relationships and governing provisions; Part II develops their spatial and construction consequences. Part III introduces pattern selection and one demonstrated service-topology sequence, then leads directly into the house. The complete **Pattern Reference** follows Part VI, where it can be consulted without interrupting the worked argument. Pattern names and contents retain their identities; their position in the book is not a design sequence or maturity ranking.
+**Part VI is the architectural conclusion.** It is deliberately concise and may remain sparse while the house is still being resolved. Its eventual job is to present one reconciled house—plans, sections, elevations, views and selected details—without repeating Part IV’s explanatory case study or importing unresolved proof work for the sake of a satisfying ending.
 
-Part V asks what the propositions cost and what happens during construction, occupation and renewal. Its future tests are duties still to be earned, not reported outcomes. Part VI has a different job from Part IV: the concise architectural object after reconciliation, without a second explanatory case study. It remains spare while that object is unresolved.
+**Sources and further reading** closes the publication with the books, papers, standards and essays most useful for following the architectural and cross-domain ideas further. It is a reading list rather than a second evidence register.
 
-## Reading claims and terms
+## Terms used in a specific sense
 
-A pattern proposes a recurring relationship; a selected construction family is one possible way to realise it; an occurrence is its application in this house. None proves the others automatically. The **Glossary** defines the specialised terms where they are needed, rather than asking the reader to learn a taxonomy first.
+**Permanent fabric** — the slower building layers that should not be consumed at the renewal rate of services, fit-out or ordinary replaceable components. Permanent does not mean eternal; it describes an intended lifespan relationship.
 
-Evidence describes the support for a proposition. Project maturity describes what has actually been drawn, calculated, tested, built or observed. A sound principle can remain unresolved in this house; a deterministic drawing or a completed document cannot supply physical or professional acceptance. Pattern pages state their inference limits under **Does not prove**. Only the service-topology family currently has a demonstrated generative sequence; the whole catalogue is not presented as an equally mature network.
+**Architectural platform** — the combination of enduring fabric, controlled attachment and service interfaces, maintenance geography and boundary strategy that allows shorter-lived systems to change without repeatedly damaging slower ones.
 
-Life safety, law, structural integrity, health and environmental performance govern every comparison. Maintainability cannot purchase weaker fire, acoustic or water boundaries. Space, labour, material, embodied impact, reliability and owner attention also count. The desired result is an ordinary, composed home whose necessary interventions consume less of what remains useful.
+**Interface infrastructure** — a durable intermediary, such as a bearing, rail, mounting frame, backplane or edge condition, that allows faster-changing work to attach to slower construction without every generation making new uncontrolled interventions.
+
+**Maintenance geography** — the deliberate spatial organisation of maintenance-intensive systems, working spaces, approach routes and replacement paths. Access means more than being able to touch a component.
+
+**Boundary debt** — the obligation created when access, services or disassembly interrupt another function of construction: structure, fire, smoke, acoustics, air, vapour, water, thermal continuity, pests or security as applicable.
+
+**Strategy** — a broad design approach that may be realised through materially different patterns or implementation families.
+
+**Pattern** — a recurring architectural response to a recurring context and set of forces, specific enough to shape design but general enough to admit materially different implementations.
+
+**Generative sequence** — an ordered design sequence that invokes patterns where their relationships are mature enough to guide consequential decisions and state rewind conditions. A pattern can be valid without belonging to a mature sequence.
+
+**Implementation family** — a particular construction or system family capable of realising a pattern. Selection between families remains subject to engineering, evidence, project constraints and architectural judgement.
+
+**Occurrence** — one application of a pattern in one project. A Reference House occurrence is evidence about coordination in that house, not evidence that the pattern is generally valid.
+
+## Evidence and maturity
+
+Ovid’s House separates confidence in a proposition from the amount of project work completed on it.
+
+**Evidence** describes the strength of support for the proposition within its stated scope:
+
+- **Established** — strong professional, regulatory, empirical or long-standing practice basis;
+- **Supported** — credible evidence and precedent exist, but material transfer, scope or comparative questions remain;
+- **Proposed** — plausible and reasoned, but evidence is incomplete;
+- **Experimental** — deliberately under test and not presented as a general project requirement.
+
+**Maturity** describes what this project has actually done with the proposition. A proposition may be drawn, calculated, costed, mocked-up, maintenance-tested, built or observed in use. These states are not interchangeable with evidence. A well-established principle may be immature in the Reference House; a carefully built prototype may still test a weakly supported general proposition.
+
+The canonical pattern set and G-01 grammar are internally validated/controlled at their stated scopes; only the service-topology family currently has a mature generative sequence. The architectural grammar framework and Reference House remain internally coordinated; physical prototypes remain developed but not completed; competent external professional review of the Reference House has not yet occurred. The computational workstream is internally validated only within its bounded declared proof domain. These differences are deliberate and should not be flattened into one generic sense of validation.
+
+Pattern pages use **Does not prove** to state the boundary of inference where evidence could otherwise be read too broadly. Renaming, reclassifying or assigning a stable identity does not increase evidence or maturity.
+
+## Governing constraints
+
+Ovid’s House operates inside ordinary non-negotiable requirements for life safety, legal compliance, structural integrity, health and environmental performance. Maintainability does not excuse a weaker fire boundary; reversibility does not excuse poor acoustics; passive-first design does not forbid mechanical systems where measured performance requires them.
+
+Serviceability is also proportionate. Every void, spare route, removable layer and access provision has an initial cost in material, labour, space and complexity. Permanent provision is strongest where the future event is reasonably likely, consequential or destructive to retrofit, and where supporting it at first construction is comparatively cheap.
+
+Foreseeable change includes changes in occupants as well as systems. A modest early provision may be justified where it preserves ordinary use through reduced mobility or care; that does not justify turning every possible future incapacity into permanent infrastructure.
+
+Whole-life cost, carbon, building physics, construction risk, workmanship and occupation remain part of the same judgement. The project is not trying to maximise access or demountability. It is trying to make foreseeable change less destructive while preserving the qualities that make a house worth keeping.

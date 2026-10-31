@@ -1,8 +1,6 @@
 # Part V — Making and Proving the Platform
 
-The comparisons already have consequences. Ordinary dry interiors remain preferable to a universal removable platform at the present selection scope. Conventional renewable frames avoid an unearned continuous cassette, while still owing a complete seal-renewal and handling detail. These are choices about the burden of provision, not measured lifetime savings.
-
-Other questions remain adverse. The current court and roof geometry has not established a complete water-failure route; wet-room and plant reservations have not demonstrated every fitted operation. Chapter 26 follows those interventions. The intervening chapters ask what evidence, responsibility and construction control a consequential proposal needs, while allowing a simpler design to remove the special duty.
+---
 
 # 19. Whole-life value and proportionality
 
@@ -133,7 +131,7 @@ A decision may remain open. Documented uncertainty is preferable to false certai
 
 # 20. Design governance and interface ownership
 
-Where a proposed interface departs from ordinary construction, its design responsibility must remain explicit across professional appointments.
+The doctrine creates unusual work at some interfaces, precisely where professional appointments are most likely to fragment responsibility.
 
 A structural engineer may define bearing, an acoustic consultant decoupling, a services engineer a route, a fabricator tolerances and a fire specialist continuity. The architect composes the visible junction. Each discipline can be locally correct while the combined detail fails.
 
@@ -544,13 +542,13 @@ The platform succeeds when maintenance becomes less destructive without making o
 
 A long-life proposition should be judged by future interventions, not by the stillness of a completion photograph.
 
-The scenarios below are design tests of approach, isolation, working space, release, replacement and reinstatement. They describe intended intervention sequences and the present limits on them. A prepared route or a selected assembly family does not establish that the complete task can be performed.
+The scenarios below are not predictions and they are not physical proof. They are design tests: plausible future tasks used to ask whether the Reference House provides approach, isolation, working space, release, replacement route and reinstatement without unnecessary destruction.
 
 ## Plant replacement
 
 A major plant component reaches the end of its service life.
 
-The service side offers a candidate direct handling route through the plant-room opening. Actual equipment, insulation, connections, isolation, lifting and working positions still have to fit that route. The intent is to avoid enlarging a kitchen doorway, removing a façade window or dismantling sound masonry merely to move equipment; the current reservations do not yet demonstrate that outcome.
+The intervention begins on the service side rather than in a principal room. The current external plant-room opening target provides a candidate direct handling route. Isolation and distribution are available within the plant geography. The intent is that replacement should not require enlarging a kitchen doorway, removing a façade window or dismantling permanent masonry merely to move equipment.
 
 The exact future appliance is unknown, and the proportionality test does not treat the present plant-room size as pre-approved. Equipment selection, area, working clearance and the value of the external opening must still earn the final geometry.
 
@@ -562,7 +560,7 @@ A frame fails or becomes obsolete while the masonry opening remains sound.
 
 Internal trim is removed to expose the fixing/tolerance zone. Sash, glazing and hardware may be serviced from inside where the selected product permits. Full frame replacement can use ordinary external scaffold or tower access preserved by the site/landscape strategy where the real site actually provides it.
 
-The selected interface aims to preserve the permanent opening while exposing the fixings. Full frame exchange must also release and reinstate the interrupted weather and air seals; local trim removal alone cannot perform that work. Actual frame, fixing and tolerance details determine how much surrounding finish can remain.
+The permanent wall opening remains intact. New frame tolerances are resolved within the designed interface rather than by breaking back large areas of masonry or wet finish.
 
 The scenario depends on a technically successful jamb/head/sill detail that has not yet been physically proven. The life-separation logic is selected; the final interface remains a validation task.
 
@@ -570,17 +568,19 @@ The scenario depends on a technically successful jamb/head/sill detail that has 
 
 A connection or appliance leaks.
 
-Concentrating wet services can shorten the route to isolation and reduce crossings, but it does not contain a leak. The current floor, penetrations, first wettable layer, detection path and drying access still need a coordinated section. Until those are resolved, damage to concealed construction or a ceiling below remains a credible adverse outcome.
+The event occurs inside deliberately high-service geography with a robust floor and a visible/manageable failure route. Primary isolation is nearby. The leak does not first announce itself as staining in a principal ceiling several rooms away.
 
-The test must follow the water from the failed connection through detection, isolation, access, drying and reinstatement. A sensor can assist detection; it cannot supply a missing containment or discharge path.
+This does not imply that every fitting is exposed. It means the house concentrates the places most likely to require intervention and gives failure somewhere intelligible to appear.
+
+Sensors may supplement this behaviour. They do not replace it.
 
 ## Bathroom intervention
 
 A concealed valve, waste connection or service component associated with the family bathroom requires work.
 
-Dry-side access is useful where the actual component can be isolated, disconnected and withdrawn through it. The current gallery-side reservation has not yet demonstrated that whole task or the independent wet, fire and acoustic boundaries. A conventional front-service fitting may avoid the extra opening; a failed waterproofed assembly may still require destructive renewal.
+Where practical, access is taken from the dry gallery side rather than through waterproofed tile. The wet surface remains intact while the maintainable component is reached through a real joinery or panel field on the dry side.
 
-Compare those complete interventions before buying a service wall merely to keep tile intact.
+The principle is consequence-based: keep routine service access out of the highest-consequence finish layer.
 
 ## New dry service route
 
@@ -588,7 +588,7 @@ A future owner adds data, controls or another small dry service.
 
 Where the room already contains the selected route family, a local skirting section can be removed and the service carried along the low-level path. It rises at a known door/architrave or other declared service zone to an accessible accessory position.
 
-That local route could avoid chasing masonry, provided its actual cable capacity, supports, bends and accessory connections fit. The route must be tested with its face removed and reinstated, rather than inferred from the depth of the skirting.
+The whole wall is not opened. The permanent masonry remains outside the routine distribution path.
 
 Where no route exists, the house does not pretend that every possible future service has been pre-provisioned. Local alteration remains legitimate.
 
@@ -596,9 +596,9 @@ Where no route exists, the house does not pretend that every possible future ser
 
 An external gutter blocks or a roof edge requires repair.
 
-The current pitched ring collects inward and outward. Its inner valleys and court-side collection create work and failure consequences that the earlier outward-only arrangement did not resolve for this design. A blocked outlet must be traced to the first vulnerable threshold or wall layer and then to a safe receiving route; an overflow line on a drawing does not establish that sequence.
+The task is approached from planned ground-supported scaffold or tower positions within the current surrogate-site geometry. The primary rainwater system sits at external edges rather than inside an inaccessible roof valley. Failure is visible outside. Materials and workers reach the task without passing through a decorative roof hatch that provides no working platform.
 
-Ground-supported scaffold or towers remain candidates. The smaller court needs actual transport, erection, bearing, reach, edge protection and material-handling space, including the effects of its proposed walking surface and drainage below. No permanent roof hatch is selected, but its absence is not evidence that external access works.
+Courtyard-side work uses the court as a temporary working zone when necessary, reached through the garden-to-court logistics route.
 
 The landscape is therefore part of the maintenance design: it must remain possible to occupy the necessary ground temporarily. A real boundary that removes that ground is an architectural/site finding, not something the virtual house has already solved.
 
@@ -606,9 +606,11 @@ The landscape is therefore part of the maintenance design: it must remain possib
 
 An occupant is temporarily or permanently unable to use the principal stair.
 
-Entrance-storey sleeping, living, WC and possible level-access washing need a fitted arrangement for the current house. The former family-room conversion study cannot establish usable bed space, door operation, privacy or shower drainage in this changed plan.
+The west/rear family room can become an entrance-storey sleeping room without structural alteration. The detailed plan must preserve a step-free route to entrance-storey living and to the service-suite sanitary room, whose subdivision must allow a potential level-access shower without enlarging the house.
 
-Nor does the drawn stair width establish stair-lift compatibility: the actual rail, parked chair, transfers, residual passage and landing conflicts must be tested. No lift shaft is selected. The comparison must weigh a real dual-use ground-floor arrangement against user-specific equipment and the burdens each imposes, without promising a fallback that has not been drawn.
+The current stair width also preserves a lower-burden future stair-lift option. A lift shaft is not reserved merely because reduced mobility is foreseeable.
+
+This scenario demonstrates a different kind of selective permanence: the stair can remain a strong enduring architectural element while the ground floor preserves a credible way to live when that stair becomes unusable.
 
 ## A changed household
 

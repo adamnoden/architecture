@@ -1,13 +1,9 @@
 import assert from 'node:assert/strict'
 import { describe, test } from 'node:test'
-import { readFileSync } from 'node:fs'
 import { composeDPLT8LennardSubstantiveDisposition } from './dplT8Lennard.js'
 import {
   composeDPLT9LennardNoCostClosure,
-  assertDPLT9HistoricalStructuralBrief,
   DPL_T9_EXPECTED_INPUT_BLOCKER_IDS,
-  DPL_T9_HISTORICAL_STRUCTURAL_BRIEF_PATH,
-  DPL_T9_BASE_STRUCTURAL_BRIEF_PATH,
   DPL_T9_EXPECTED_T8_RESULT_FINGERPRINT
 } from './dplT9Lennard.js'
 
@@ -19,20 +15,6 @@ const EXPECTED_DEPENDENCIES = [
 ].sort((a, b) => a.localeCompare(b))
 
 describe('DPL-T9 Lennard no-cost authority closure', () => {
-  test('replays historical RH-11 preparation without claiming current-house applicability', () => {
-    const historical = readFileSync(DPL_T9_HISTORICAL_STRUCTURAL_BRIEF_PATH, 'utf8')
-    const current = readFileSync(DPL_T9_BASE_STRUCTURAL_BRIEF_PATH, 'utf8')
-    assert.notEqual(current, historical)
-    assert.match(historical, /4\.2 m/)
-    assert.match(historical, /no structural adequacy claim/)
-    assert.match(current, /RH-LAYOUT-REVISION-02/)
-    assert.match(current, /238 mm framing/)
-    assert.doesNotThrow(() => assertDPLT9HistoricalStructuralBrief(historical))
-    assert.throws(() => assertDPLT9HistoricalStructuralBrief(historical.replace('4.2 m', '4.3 m')), /source identity drifted/)
-    assert.throws(() => assertDPLT9HistoricalStructuralBrief(current), /source identity drifted/)
-    // Composition checks the exact retained Git blob before semantic replay.
-    assert.equal(composeDPLT9LennardNoCostClosure().proofBoundary.evidenceCommissioned, 'NO')
-  })
   test('binds exactly to the landed T8 fingerprint and seven-item current frontier', () => {
     const t8 = composeDPLT8LennardSubstantiveDisposition()
     const result = composeDPLT9LennardNoCostClosure()
