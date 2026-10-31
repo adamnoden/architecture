@@ -105,6 +105,36 @@ The [located leak-route comparison](retained-tail-leak-route.md) now tests the m
 
 **Earned:** a construction-based outlet starting point and a second, explicit allocation of renewal work. **Still open:** the connected section that chooses between these allocations, actual constituent disclosure, supported outlet/tail geometry, pressure duty, passive leak observation and demonstrated renewal of both the room carrier and the larger fixed package. The current diagram continues to show the separately renewable-threshold comparator; it is not a drawing of this retained-tail alternative.
 
+## Joining order changes the repair package
+
+**31 October 2026 continuation, from main `20ca2ad086984af13b1054baac8bb2e5b15dc244`.** Develop an **open-bench outlet/tail fabrication comparator**, with its eventual repair package identified before enclosing it. The [joining evidence](../../docs/research/roof-rainwater-material-compatibility.md#copper-joining-and-remaking--31-october-2026) now supplies named filler candidates and an actual braze-separation precedent. This advances the construction comparison without selecting a house joint or promising that it can be remade in place.
+
+Keep three interfaces distinct:
+
+| Interface in the retained-tail hypothesis | Established starting point | Missing qualification |
+|---|---|---|
+| Pan → fixed sheet flange | CDA 10.6B identifies a continuous soldered attachment (C10) | Actual solder, flux, seam geometry and thermal limits; the drawing alone does not identify its filler |
+| Sheet flange → copper tail | The same detail identifies a brazed joint (C10) | Fabricated sheet-to-tube geometry and process; this is not an Endbraze socket and inherits no fitting approval |
+| Copper tube → 108 mm Endbraze cup | Brazing-only product family, with a copper-to-copper filler/flux route in C7 | Exact matched fitting, tube, consumable and service duty; a class match is not approval of the complete court assembly |
+
+For the last interface, C7's CP104/CP105 route and the current Johnson Matthey sheets identify **Sil-fos 5** and **Silbralloy** as specific candidates (C14/C15). Their self-fluxing action on copper can avoid separately added flux during initial copper-to-copper joining. Specify the supplied rod/wire form and any surface treatment; do not substitute a braze paste and assume identical constituents. Neither candidate grants a no-flux route to brass, bronze or gunmetal, or a constituent pass to the soldered pan seam. Silbralloy's capillary-joint restriction also prevents treating the class name as a gap-filling solution for an unspecified sheet outlet.
+
+### Compare fabrication and the two later interventions
+
+| Intervention | Proposed sequence to develop | What it earns and what it does not |
+|---|---|---|
+| Initial outlet/tail fabrication | Fixture the open copper subassembly; make its qualified brazed connections, clean and inspect them; then attach it to the pan using a qualified lower-temperature soldering process | Makes the difficult braze surfaces accessible before enclosure. The actual alloys, order, fixtures and heat cycle must demonstrate that later work leaves earlier joints sound; the pan filler is not yet known |
+| Ordinary room-carrier renewal | Retain the pan attachment and threshold tail; release or cut at the accessible downstream service position using the demonstrated insertion/reinstatement method | Keeps the larger fixed package in place only if the actual repair heat, forces and temporary rain management preserve it. An arbitrary distance from the pan is not proof |
+| Eventual tail or fixed-joint renewal | Either demonstrate separation, withdrawal, cleaning and remaking beside the retained pan, or expose and renew the larger outlet/pan package | Makes the larger intervention explicit. Open-bench first assembly does not establish an in-situ repair sequence or the ability to retain W2 throughout it |
+
+This sequence is **project analysis**, not a combined manufacturer's installation instruction. Lucas-Milhaupt's joining guidance (C16) explains why later heating can disturb an earlier joint and why compatible joining temperatures/order matter. It provides no safe separation distance for this outlet. The comparison must therefore identify which joints already exist during each operation and inspect/test the affected boundaries after it; neither a generic wet rag nor the metal/mineral label proves thermal protection.
+
+Harris provides counterevidence to an irreversible-joint assumption (C17): its generic braze-separation method heats the joint throughout, withdraws the tube, cleans the mating surfaces and remakes the connection. It also introduces flux around the old joint. That is **not an Endbraze 108 mm remaking approval**, but it makes two renewal duties concrete: axial withdrawal remains necessary for this method, and the initial no-added-flux route does not establish a flux-free repair. A tube trapped between retained ends still needs the demonstrated release or consumptive replacement described above. Cleaning and inspection must reach the actual joint surfaces; visible access from above is insufficient by itself.
+
+Brazing also changes the material condition being assessed. CDA's tube guidance (C18) accounts for heat-softened copper and the limiting tube/fitting/joint rating. Apply that principle to the actual fabricated assembly and its support loads; do not infer a stronger complete system from a stronger joint or import US tube pressure values into this 108 mm comparison.
+
+**Earned:** named joining-consumable leads and a construction/repair sequence tied to the three actual interfaces. **Still open:** the matched outlet section, pan solder and residues, process qualification, heat/control access, material condition, support and demonstrated reinstatement. The generated geometry is unchanged; no thermal clearance or construction approval is added.
+
 ## What must now be resolved
 
 The connected section needs exact mating faces and seal constituents, retained collar/hardware after any backing-ring removal, actual joint positions, independent supports, floor-cover structure and thermal continuity, and a measured full removal/handling path. A local cut-and-replace alternative must instead provide its matched sleeve/end-movement, joining and reinstatement evidence across the same three territories. The retained-tail alternative must separately qualify its larger fixed repair package and passive leak route. Each needs the relevant receiving water, groundwater and court-threshold result. Actual outlet position, module lengths, working clearances, release travel and safe water levels remain **unknown**, not zero.
