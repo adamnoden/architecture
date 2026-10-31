@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 13,
-  "state": "released",
-  "leaseId": "fc5c036f-4d10-44fb-b870-0623d4d17135",
+  "generation": 14,
+  "state": "claimed",
+  "leaseId": "effc35dc-f4dc-4156-8817-7f2cee5e030c",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-782cae-live-triage"
+    "label": "swarm-had-continuation-983b7ee"
   },
-  "claimedAt": "2026-10-31T17:47:38.664Z",
-  "heartbeatAt": "2026-10-31T18:10:53.720Z",
-  "expiresAt": "2026-10-31T18:10:53.720Z",
-  "branch": "work/swarm-782cae-next",
+  "claimedAt": "2026-10-31T18:19:19.480Z",
+  "heartbeatAt": "2026-10-31T18:19:19.480Z",
+  "expiresAt": "2026-10-31T19:04:19.480Z",
+  "branch": "work/swarm-had-continuation-20261031",
   "predecessor": {
-    "leaseId": "a4306499-2ae9-43d1-b3df-4e343c541df6",
-    "generation": 12,
-    "branch": "work/swarm-782cae-had-review",
-    "pr": 1159,
+    "leaseId": "fc5c036f-4d10-44fb-b870-0623d4d17135",
+    "generation": 13,
+    "branch": "work/swarm-782cae-next",
+    "pr": 1163,
     "checkpoint": {
-      "evidence": "PR #1159 merged as 9f1e6f8b4df6e9df4e617238a75b3e202f93b191. Accepted tree d0e1764f5fc62f7bec43ab80ce1927885a35d83b equals validated head 8c94c444a515db6db88278de8897914827be4d3e. Full CI 41225843519 passed; canonical preflight passed at 17:46:01.083 UTC. Geometry, primary-source and rendered reviews passed; remote branch absence verified.",
-      "next": "Retain the exposed-pull slider as an unadopted joined-STR comparison. Bind actual hardware/support, material disposition, privacy and use before adoption. A distinct next HAD comparison can test the accepted Study door, desk and chair sequence; use fresh canonical dispatch before execution.",
-      "blocker": "HAD-03 remains planned. The 638 opening, 650 reach sensitivity and 5 mm basin reserve do not establish an installed doorset, human suitability or a complete house selection."
+      "evidence": "PR #1163 merged as 7f747d98d17887bd66b0bdce78ec0cbdbe94087b. Accepted tree b40ba15da326928f8a16ff14faa2b231060c1c38 equals validated head f8b896d8cc18a1c341099f50aceb54412feb80b7. Full CI 41227653759 passed; fresh canonical preflight passed at 18:08:47.747 UTC. Independent movement and chair/window/source reviews, rendered A3 inspection, deterministic controls and repository validation passed; remote branch absence verified.",
+      "next": "Carry the retained-handing two-grip sequence and reversible chair/window state comparison into actual doorset and room decisions. Bind actual frame/stop/hardware placement and real two-hand operation, the Study chair/desk section, and first south-window use/release. Assess broader HAD continuation from current sources before producing another isolated witness.",
+      "blocker": "HAD-03 remains planned. Small proxy clearances and authored contacts establish neither installed fit nor human suitability, seated comfort, material admission, sash operation or a coherent completed house selection."
     }
   },
   "recoverySource": {
-    "leaseId": "a4306499-2ae9-43d1-b3df-4e343c541df6",
-    "generation": 12,
-    "branch": "work/swarm-782cae-had-review",
-    "pr": 1159,
+    "leaseId": "fc5c036f-4d10-44fb-b870-0623d4d17135",
+    "generation": 13,
+    "branch": "work/swarm-782cae-next",
+    "pr": 1163,
     "checkpoint": {
-      "evidence": "PR #1159 merged as 9f1e6f8b4df6e9df4e617238a75b3e202f93b191. Accepted tree d0e1764f5fc62f7bec43ab80ce1927885a35d83b equals validated head 8c94c444a515db6db88278de8897914827be4d3e. Full CI 41225843519 passed; canonical preflight passed at 17:46:01.083 UTC. Geometry, primary-source and rendered reviews passed; remote branch absence verified.",
-      "next": "Retain the exposed-pull slider as an unadopted joined-STR comparison. Bind actual hardware/support, material disposition, privacy and use before adoption. A distinct next HAD comparison can test the accepted Study door, desk and chair sequence; use fresh canonical dispatch before execution.",
-      "blocker": "HAD-03 remains planned. The 638 opening, 650 reach sensitivity and 5 mm basin reserve do not establish an installed doorset, human suitability or a complete house selection."
+      "evidence": "PR #1163 merged as 7f747d98d17887bd66b0bdce78ec0cbdbe94087b. Accepted tree b40ba15da326928f8a16ff14faa2b231060c1c38 equals validated head f8b896d8cc18a1c341099f50aceb54412feb80b7. Full CI 41227653759 passed; fresh canonical preflight passed at 18:08:47.747 UTC. Independent movement and chair/window/source reviews, rendered A3 inspection, deterministic controls and repository validation passed; remote branch absence verified.",
+      "next": "Carry the retained-handing two-grip sequence and reversible chair/window state comparison into actual doorset and room decisions. Bind actual frame/stop/hardware placement and real two-hand operation, the Study chair/desk section, and first south-window use/release. Assess broader HAD continuation from current sources before producing another isolated witness.",
+      "blocker": "HAD-03 remains planned. Small proxy clearances and authored contacts establish neither installed fit nor human suitability, seated comfort, material admission, sash operation or a coherent completed house selection."
     }
-  },
-  "pr": 1163,
-  "checkpoint": {
-    "evidence": "PR #1163 merged as 7f747d98d17887bd66b0bdce78ec0cbdbe94087b. Accepted tree b40ba15da326928f8a16ff14faa2b231060c1c38 equals validated head f8b896d8cc18a1c341099f50aceb54412feb80b7. Full CI 41227653759 passed; fresh canonical preflight passed at 18:08:47.747 UTC. Independent movement and chair/window/source reviews, rendered A3 inspection, deterministic controls and repository validation passed; remote branch absence verified.",
-    "next": "Carry the retained-handing two-grip sequence and reversible chair/window state comparison into actual doorset and room decisions. Bind actual frame/stop/hardware placement and real two-hand operation, the Study chair/desk section, and first south-window use/release. Assess broader HAD continuation from current sources before producing another isolated witness.",
-    "blocker": "HAD-03 remains planned. Small proxy clearances and authored contacts establish neither installed fit nor human suitability, seated comfort, material admission, sash operation or a coherent completed house selection."
-  },
-  "releasedAt": "2026-10-31T18:10:53.720Z",
-  "releaseReason": "handoff"
+  }
 }
