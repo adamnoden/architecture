@@ -9,8 +9,8 @@
     "label": "swarm-resume-root-983b7ee"
   },
   "claimedAt": "2026-10-31T09:05:14.207Z",
-  "heartbeatAt": "2026-10-31T09:22:15.396Z",
-  "expiresAt": "2026-10-31T10:07:15.396Z",
+  "heartbeatAt": "2026-10-31T09:25:12.703Z",
+  "expiresAt": "2026-10-31T10:10:12.703Z",
   "branch": "work/swarm-resume-root-20261031",
   "predecessor": {
     "leaseId": "834b5455-21ea-4ef4-ba75-0933aeb68c53",
@@ -36,8 +36,8 @@
   },
   "pr": 1128,
   "checkpoint": {
-    "evidence": "PR #1128 at e733527d711e9a762fd85016616ef4ff2ce27cef; exact tree 0c47c4802176fbe516fe0cb3dd4cba3a3bbd5ceb matched. Primary-source and independent review passed; local docs, publication integrity, unchanged study checks passed.",
-    "next": "Require full exact-head CI, reconcile any moved main, fresh canonical merge-check, then integrate bounded repair comparison. RWT-METALS remains planned.",
-    "blocker": "Full exact-head CI pending; physical repair assembly and complete crossing remain unproved."
+    "evidence": "PR #1128 corrected head d6b2cdf3c8425e431e8a92a8736f909d4193a835, exact tree2905d56e1d1554bbfb6b7ad7d157b668a4c7c89b matched. Initial CI exposed public-to-internal link; owning public prose corrected and sanitation/repository checks passed. Canonical local health passed tests and outputs to absent Chrome155 figure gate.",
+    "next": "Require full CI on corrected exact head, fresh current-main/lease merge-check and expected-head merge. Preserve partial and physical limits.",
+    "blocker": "Corrected exact-head CI pending; local Chrome155 absent."
   }
 }
