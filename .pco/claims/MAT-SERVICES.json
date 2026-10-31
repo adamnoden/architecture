@@ -9,8 +9,8 @@
     "label": "swarm-mat-floor-983b7ee"
   },
   "claimedAt": "2026-10-31T10:25:01.213Z",
-  "heartbeatAt": "2026-10-31T10:46:16.197Z",
-  "expiresAt": "2026-10-31T11:31:16.197Z",
+  "heartbeatAt": "2026-10-31T10:52:43.287Z",
+  "expiresAt": "2026-10-31T11:37:43.287Z",
   "branch": "work/swarm-maintenance-integration-20261031",
   "predecessor": {
     "leaseId": "af7d4f6b-5ea9-4059-995c-02faf541f7db",
@@ -34,7 +34,7 @@
   },
   "pr": 1148,
   "checkpoint": {
-    "evidence": "Published common PR 1148 at 90de6288688004c8568f0a0665977e1045f953d8, tree 8967b8d8feea905ccc5cf7582447deca7af351e0. Services parent 22890a23e8cd89f5262b58738ac2d1bc8639215a has exactly the reviewed source tree 1a28f35b6a27220a666a15ca8fb8e0e077335d1e; source ancestry, services-water-joints study and S01 row verified unchanged. Focused source review and local repository, publication integrity/source and docs checks passed; combined guards/checks also passed.",
-    "next": "Await full exact-head CI and all three fresh canonical preflights before expected-head integration. After acceptance verify services source and ancestry, record merge evidence, release handoff; MAT-SERVICES remains planned with compound chemistry, actual first-release geometry, pipe-end repair and wider installed services still unresolved."
+    "evidence": "PR 1148 accepted by merge 2512f116e277d3ab724fd0bcf0f13ba1d04533c3. Accepted tree 8967b8d8feea905ccc5cf7582447deca7af351e0 exactly matches full-CI head 90de6288688004c8568f0a0665977e1045f953d8; CI run 41193874119 passed and services canonical preflight passed at 2026-10-31T10:51:33.864Z. Fresh native verification confirms common head and published services source 22890a23e8cd89f5262b58738ac2d1bc8639215a are main ancestors, exact services study and S01 bytes are preserved, and common feature ref is absent.",
+    "next": "Release handoff and re-enter fresh canonical dispatch. MAT-SERVICES remains planned: actual union compound, first-release geometry, pipe-end repair and full water system remain unresolved; the next useful services comparison may address soil/waste/vent joints and their accessible support and penetration reinstatement duties rather than repeat exhausted catalogue-only water-joint searches."
   }
 }
