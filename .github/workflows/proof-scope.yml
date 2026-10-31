@@ -1,6 +1,12 @@
 name: Select specialised proof scope
 on:
   workflow_call:
+    inputs:
+      compiler-review-only:
+        description: Allow the PLT historical proof to skip its compiler test and README-only changes.
+        type: boolean
+        required: false
+        default: false
     outputs:
       run:
         description: Whether this specialised proof must run
@@ -24,4 +30,5 @@ jobs:
         env:
           SCOPE_BASE: ${{ github.event.pull_request.base.sha }}
           SCOPE_HEAD: ${{ github.event.pull_request.head.sha }}
+          SCOPE_COMPILER_REVIEW: ${{ inputs.compiler-review-only }}
         run: node scripts/proof-scope.mjs

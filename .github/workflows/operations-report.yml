@@ -22,7 +22,7 @@ jobs:
         env:
           RECONCILE_RESULT: ${{ inputs.reconciliation-result }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: node --import tsx scripts/control-operations.ts brief --json operations.json --markdown operations.md
+        run: node scripts/fresh-operations-report.mjs --json operations.json --markdown operations.md
       - name: Preserve machine and human briefing
         if: always()
         uses: actions/upload-artifact@v6

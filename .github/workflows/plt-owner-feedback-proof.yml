@@ -27,6 +27,9 @@ on:
       - 'publication/specimens/plt16/**'
       - 'publication/specimens/plt17/**'
       - 'publication/specimens/plt18/**'
+      - 'scripts/proof-scope.mjs'
+      - 'scripts/proof-scope.test.mjs'
+      - '.github/workflows/proof-scope.yml'
       - '.github/workflows/plt-owner-feedback-proof.yml'
   workflow_dispatch:
 permissions:
@@ -35,7 +38,13 @@ concurrency:
   group: plt-owner-feedback-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 jobs:
+  scope:
+    uses: ./.github/workflows/proof-scope.yml
+    with:
+      compiler-review-only: true
   proof:
+    needs: scope
+    if: needs.scope.outputs.run != 'false'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5

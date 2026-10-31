@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 17 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 98 · **Cancelled:** 0
+**Structurally ready:** 16 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 99 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -36,7 +36,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `EPR-RH11` | Obtain and process competent Reference House reviews | EPR | — |
 | `SWE-CONTROL` | Repair dispatcher selection races and make lease snapshots efficient and coherent | SWE | — |
 | `SWE-PUBLICATION` | Correct PDF routes, persist pinned fonts and preserve Mermaid transformations | SWE | — |
-| `SWE-AUTOMATION` | Make briefings source-coherent and reduce evidenced setup and proof overhead | SWE | — |
 | `SWE-IDENTITY` | Make canonical compiler fingerprints independent of execution locale | SWE | — |
 
 ### Active durable work

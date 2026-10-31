@@ -25,7 +25,7 @@ export const softwareNodes = defineNodes([
   {
     id: 'SWE-AUTOMATION', owners: ['SWE'],
     title: 'Make briefings source-coherent and reduce evidenced setup and proof overhead',
-    dependencies: ['SWE-PLAN'], lifecycle: 'planned',
+    dependencies: ['SWE-PLAN'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed audit #1174; privileged workflow and proof-trigger changes need bounded review.' },
     closeoutEvidence: ['project/swe/automation-result.md']
   },
