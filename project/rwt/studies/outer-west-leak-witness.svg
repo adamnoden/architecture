@@ -27,9 +27,9 @@ h1{font-size:25px}
 <text x="108" y="183" class="strong">HOUSE</text>
 <text x="109" y="201" class="note">vulnerable</text>
 <text x="109" y="217" class="note">boundary?</text>
-<rect x="279" y="208" width="495" height="46" class="bed"/>
+<rect x="217" y="208" width="557" height="46" class="bed"/>
 <text x="525" y="236" text-anchor="middle">continuous backing / concealed wetting</text>
-<path d="M278 169 L278 207 L773 207 L773 169" class="metal"/>
+<path d="M217 169 L217 207 L773 207 L773 169" class="metal"/>
 <path d="M452 154 L452 192" class="water"/>
 <text x="471" y="163" class="note">normal rainwater</text>
 <circle cx="504" cy="207" r="7" fill="#a34b3d"/>
