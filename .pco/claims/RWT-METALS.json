@@ -9,8 +9,8 @@
     "label": "swarm-copper-joining-root-983b7ee"
   },
   "claimedAt": "2026-10-31T17:01:18.306Z",
-  "heartbeatAt": "2026-10-31T17:01:18.306Z",
-  "expiresAt": "2026-10-31T17:46:18.306Z",
+  "heartbeatAt": "2026-10-31T17:12:02.407Z",
+  "expiresAt": "2026-10-31T17:57:02.407Z",
   "branch": "work/swarm-copper-joining-20261031",
   "predecessor": {
     "leaseId": "717428f5-9876-4909-956f-12fc5180865b",
@@ -31,5 +31,10 @@
       "evidence": "PR 1150 merged as 03bba64db58024cf8bfdd7c1f7afa865e9b072c8. Fresh native main verification confirms accepted tree e235ccc6c960795483ba906f10dae0a2ff01ec07 equals full-CI head 73d6e6e8e3ceb6cd88f6537f444d7023aadf7fa5 and all three reviewed remote source parents are ancestors. Full CI 41221814322 succeeded; all three canonical preflights passed at 16:56:05/11/16 UTC. Common feature and all intended individual source refs are absent; no source branch was published this round. Bounded results only, no lifecycle completion.",
       "next": "RWT-METALS remains planned. Obtain a complete retained wet-body fabrication/support/contact/outlet detail and credible larger repair, or justify open transfers with actual capture and receiving levels. Concealed crossing and whole-assembly constituent/hydraulic/renewal duties remain open."
     }
+  },
+  "pr": 1154,
+  "checkpoint": {
+    "evidence": "PR 1154 publishes reviewed head ea1a4a044c9bd10bf172d874a0c900aa2977e2df with exact local tree 4f0df242f4593f30ebd876b8eb58fc67cf05b8c4. Two source reviews passed; repository/publication source and integrity checks and docs build passed locally. Full exact-head CI remains required.",
+    "next": "Wait for full exact-head CI; reconcile current main, run canonical preflight, expected-head merge, accepted-tree verification and release. The bounded joining result does not complete RWT-METALS."
   }
 }
