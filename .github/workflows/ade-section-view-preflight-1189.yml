@@ -1,7 +1,9 @@
-# Temporary read-only native preflight for owner-directed ADE-SECTION-VIEW recovery.
+# Temporary read-only native preflight for owner-directed ADE-SECTION-PARITY.
 # Lives only on a disposal-bound helper branch, not on main or the work PR.
-name: ADE section-view one-off publication preflight
-on: workflow_dispatch
+name: ADE current section-parity publication preflight
+on:
+  push:
+    branches: [work/ade-section-preflight-1189]
 permissions:
   contents: read
 jobs:
@@ -11,7 +13,7 @@ jobs:
       - name: Check out exact source candidate
         uses: actions/checkout@v5
         with:
-          ref: work/ade-section-view-resume-1187
+          ref: work/ade-section-parity-1187
           fetch-depth: 0
           persist-credentials: false
       - name: Install Node
@@ -25,9 +27,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          npm run control:merge-check -- ADE-SECTION-VIEW \
-            --lease-id f0c7e09a-bd4c-4849-94d7-dc0793df4253 \
-            --generation 2 \
-            --branch work/ade-section-view-resume-1187 \
-            --head 605a454eeebe578da4a714ac43b56469dba3f75d \
+          npm run control:merge-check -- ADE-SECTION-PARITY \
+            --lease-id ab2cc511-c16c-4c94-90fa-ccac785aac21 \
+            --generation 1 \
+            --branch work/ade-section-parity-1187 \
+            --head 265b61e711617c2a4709c34a3dd5b0171a315003 \
             --format text
