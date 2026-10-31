@@ -1,6 +1,6 @@
 # MAT-INTERIORS — enamelled tray, located drain and renewal comparison
 
-**31 October 2026. Bounded alternatives result; no installation selected.** Recovers [PR #1115](https://github.com/adamnoden/architecture/pull/1115) at `15669da144e64e0a1d0b6408ee66440c6e9eb622` and extends it against main `178c43815ba318a09f0f62c344aed37f15a71f16`. Original research started from `b8544ee3ab3ea94b7ea8ea1c0e40ad5a87becf9c`. This serves the [MAT programme](material-integrity-programme.md), [material policy](../../docs/reference-house/material-policy.md) and single [constituent register](constituent-audit.md), especially I05/I07/I08. MAT-INTERIORS remains open.
+**31 October 2026. Bounded alternatives result; no installation selected.** Recovers [PR #1115](https://github.com/adamnoden/architecture/pull/1115) at `15669da144e64e0a1d0b6408ee66440c6e9eb622` and extends it against main `1486df666d2c6758ccc0e93212f9d5290f7da7dd`. Original research started from `b8544ee3ab3ea94b7ea8ea1c0e40ad5a87becf9c`. This serves the [MAT programme](material-integrity-programme.md), [material policy](../../docs/reference-house/material-policy.md) and single [constituent register](constituent-audit.md), especially I05/I07/I08. MAT-INTERIORS remains open.
 
 ## Question and result
 

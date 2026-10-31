@@ -72,6 +72,23 @@ Direct primary HTML evidence now adds:
 
 The copper/brass preference does not remove the previous zinc/aluminium runoff exclusions or establish harmlessness to planted soil. No coating, liner, sealing compound or anchor accessory receives a hidden-material exemption. These are current selection constraints, not a generic approval of all soldered copper or low-zinc brass.
 
+## Local copper repair evidence — 31 October 2026
+
+For local copper repair, product size and removability must be distinguished from insertion and joining. These sources establish different things; they are not a combined manufacturer-approved assembly.
+
+| Primary source, accessed 31 October 2026 | Evidence and limit |
+|---|---|
+| **C5 — [Aalberts Endex N1, item 89601](https://aalberts-ips.co.uk/products/item/89601/)** | 108 mm ordinary end-feed coupling; 60 × 114 × 114 mm; CW024A copper, no finish and no supplied sealing rings/gaskets. This does not establish full slip travel, socket engagement or a renewal method. Generic solder metadata does not supersede the Endbraze joining instruction. |
+| **C6 — [Aalberts N1 Slip assortment](https://aalberts-ips.co.uk/products/detail/n1-slip/); [Lawton end-feed slip coupler](https://lawtontubes.co.uk/product/slip-coupling-2/)** | Both retrieved assortments list 15–54 mm. Lawton describes sliding the coupling fully over the tube for repair. Neither page supplies a 108 mm variant; do not borrow the whole fitting family's larger size range for this particular repair fitting. |
+| **C7 — [Endex brochure hosted December 2023](https://aalberts-ips.co.uk/wp-content/uploads/2023/12/Endex-09969088_56035915_Brochure_2023.pdf), printed pp5, 56–57** | Separates large-size Endbraze joining from small-bore soft soldering; explains no-stop repair fittings and all-round brazing access, cooling, cleaning and flushing. Its qualified general-range remaking discussion is not approval to repeatedly remake a 108 mm brazed joint. No existing design standard is silently updated by this dated brochure. |
+| **C8 — [WRAS, Linhai Hengye approval 251015004](https://www.wrasapprovals.co.uk/approvals-directory/?company=22992&perpage=20)** | Names end-feed slip coupling 5270S108 at 108 mm, with listed approval expiry 31 October 2030. This counters a blanket unavailability claim. It supplies no retrieved drawing, repair-travel dimensions or whole-assembly constituent/renewal qualification, and is not evidence of current stock or suitability for this court crossing. |
+
+| Candidate interface | Disposition | Evidence required before selection |
+|---|---|---|
+| Retained copper tails → replacement length with locally joined sleeves | **Conditional conventional repair comparator.** It may avoid large mechanical flanges but trades their release/seal burden for consumptive pipe renewal, insertion movement and joining access. | Exact matched product/size, internal geometry and engagement, filler/flux/residues, sound straight tails, sleeve parking/end movement, support and all-round joining/inspection access. Demonstrate the complete repair while retaining the fixed court-water boundary and threshold support; do not grind away an ordinary fitting's stops or improvise a mixed-brand approval. |
+
+The unselected filler, flux and retained residues remain within the material policy. A slip coupling is an assembly aid before joining, not an expansion joint or a demountable joint after joining. The existing metal/runoff exclusions and actual service-duty requirements still apply.
+
 ## Applying the comparison to the house
 
 The represented inward/outward pitched ring concentrates water at inner valleys as well as along inner eaves. A courtyard collector therefore cannot be chosen from a facade colour chart. Roof and rainwater design must trace each covering/valley/collector/outlet chain, including secondary or failed-flow paths, before selecting metals. The current drawings do not prove either safe access or a viable court-to-outside route.
