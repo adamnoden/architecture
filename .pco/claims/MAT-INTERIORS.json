@@ -1,27 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
-  "generation": 3,
+  "generation": 4,
   "state": "claimed",
-  "leaseId": "2a096f0e-ba23-46a7-a4e7-4617620fa822",
+  "leaseId": "5921a8d9-3549-4eac-acd9-ac34c0167a12",
   "holder": {
     "kind": "chatgpt",
-    "label": "mat-package-20261031-0948"
+    "label": "swarm-mat-interfaces-983b7ee"
   },
-  "claimedAt": "2026-10-31T09:49:44.657Z",
-  "heartbeatAt": "2026-10-31T09:49:44.657Z",
-  "expiresAt": "2026-10-31T10:34:44.657Z",
-  "branch": "work/mat-package-20261031-0948",
+  "claimedAt": "2026-10-31T10:56:01.489Z",
+  "heartbeatAt": "2026-10-31T10:56:01.489Z",
+  "expiresAt": "2026-10-31T11:41:01.489Z",
+  "branch": "work/swarm-mat-interfaces-20261031",
   "predecessor": {
-    "leaseId": "aa287637-308e-476a-9a5c-4cf2510b68c2",
-    "generation": 2,
-    "branch": "work/mat-recovery-20261031",
-    "pr": 1126,
-    "checkpoint": {
-      "evidence": "Merged PR #1126 at b9f64d69c8c5226580a9a459c1820bce42c51b7b; validated head 3fcb2d5fc57fe6bc2fc7d2bdf0ce621ad8104c58; predecessor #1115 integrated and branches deleted",
-      "next": "Bind exact tray/Upstand/metal-frame/waste package and complete west-access section, whole-body withdrawal and carrying route; wider MAT-INTERIORS stays open",
-      "blocker": "Complete constituent disclosure and installation/renewal evidence remain unresolved; no assembly accepted"
-    }
+    "leaseId": "2a096f0e-ba23-46a7-a4e7-4617620fa822",
+    "generation": 3,
+    "branch": "work/mat-package-20261031-0948"
   },
   "recoverySource": {
     "leaseId": "aa287637-308e-476a-9a5c-4cf2510b68c2",
