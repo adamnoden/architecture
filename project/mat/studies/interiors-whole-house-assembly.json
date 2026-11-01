@@ -14,9 +14,571 @@
     "project/mat/joined-ground-floor-and-court-boundary.md": "4b35b8d898a04994d950da1cdd51539c4388fb68519f8c51cdd6dff86cedbd1b"
   },
   "geometry": {
-    "HADHead": "c83a06f26cf3b146d7cdc8254b4799f390508196",
-    "HADJSONBlob": "b15df3b374717d8b3a724900036525a5cd991d22",
-    "protectedRevision": "Pending exact protected-volume JSON; no rated occurrence freeze",
+    "HADHead": "a324a50d047843603d6fc275c4062bc9d0c1cb90",
+    "HADJSONBlob": "1412e628aa6b539664c8f5efd507595623cf2a21",
+    "logicalInput": "project/had/studies/open-north-loggia.json",
+    "protectedRevision": "Exact protected occurrence reference imported one way; product/physical/statutory admission not earned",
+    "protectedRoute": {
+      "basis": "One conventional reference topology under currentADB2.5a; no regulatory approval or classified assembly claimed.",
+      "official": "https://assets.publishing.service.gov.uk/media/6aa3bb335f6e942efe37f150/AD_B1_2026.pdf",
+      "edition": "2019+2020/2022/2025/2026;2029futureprovisionsnotclaimedcurrent",
+      "measurement": "D6 lowest SIDE outsideground, notsolum;4750onlyifactualoutside−1300.",
+      "geometry": {
+        "groundStairEastWall": {
+          "finished": [
+            2817.5,
+            4185,
+            130,
+            4752.5
+          ],
+          "core": [
+            2832.5,
+            4185,
+            100,
+            4752.5
+          ],
+          "scope": "Nonloadbearing100core+15each; whollyoutside1100flight. Bonds to4250return/rearwall, noSouthlandingcutoff."
+        },
+        "groundProtected": "Stair+Southlanding/gallery+frontentrance/void→FRONTfinalexit; living/kitchen north of crossdoors excluded.",
+        "upperProtected": "Whole gallery/landing and stair are one protected volume; no added fullheight stairEwall or room-to-room shortcut.",
+        "roof": "Actualcontinuousroof/ceilingclosureandcavitybarriersrequired;15skin alone notEI30.",
+        "courtyardGlazing": "Actualcourtexposure/protectedboundaryglazingmustpreserveapplicablefirestrategy; ordinaryglassnotassumedadequate; no flats-onlyruleapplied."
+      },
+      "rectangularAssemblyHeightMaximum": 2250,
+      "upperClosure": "Independent classified closure between rectangular assembly and actual masonry arch/ceiling.2850openinghead is notleafheight.",
+      "doors": [
+        {
+          "id": "FD-WEST-CROSS",
+          "level": "GROUND",
+          "host": "protected-west-cross",
+          "rough": [
+            2947.5,
+            3832.5
+          ],
+          "axis": 4250,
+          "frameEach": 25,
+          "leaf": [
+            830,
+            44
+          ],
+          "hinge": [
+            3802.5,
+            4250
+          ],
+          "opening": "NORTHintoexcludedgallery",
+          "closed": [
+            2972.5,
+            4228,
+            830,
+            44
+          ],
+          "open": [
+            3780.5,
+            4250,
+            44,
+            830
+          ],
+          "minimumClearBudget": 791,
+          "performance": "E20minimumreference;classifiedfullassembly/actualgaprequired"
+        },
+        {
+          "id": "FD-EAST-CROSS",
+          "level": "GROUND",
+          "host": "protected-east-cross",
+          "rough": [
+            8241.25,
+            9141.25
+          ],
+          "axis": 4250,
+          "frameEach": 25,
+          "leaf": [
+            845,
+            44
+          ],
+          "hinge": [
+            9111.25,
+            4250
+          ],
+          "opening": "NORTHintoexcludedgallery",
+          "closed": [
+            8266.25,
+            4228,
+            845,
+            44
+          ],
+          "open": [
+            9089.25,
+            4250,
+            44,
+            845
+          ],
+          "minimumClearBudget": 806,
+          "performance": "E20minimumreference;classifiedfullassemblyrequired"
+        },
+        {
+          "id": "STUDY",
+          "level": "GROUND",
+          "host": "study-L-north",
+          "rough": [
+            1350,
+            2250
+          ],
+          "axis": 3247.5,
+          "frameEach": 25,
+          "leaf": [
+            830,
+            44
+          ],
+          "hinge": [
+            1385,
+            3247.5
+          ],
+          "opening": "SOUTHINTOSTUDY",
+          "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim"
+        },
+        {
+          "id": "GUEST-WC",
+          "level": "GROUND",
+          "host": "wc-north",
+          "rough": [
+            7650,
+            8550
+          ],
+          "axis": 2650,
+          "performance": "Protectedhallboundarydoor;actualbathroom/firestrategyexceptionnotassumed"
+        },
+        {
+          "id": "PLANT",
+          "level": "GROUND",
+          "host": "service-spine",
+          "rough": [
+            2750,
+            3650
+          ],
+          "axis": 9300,
+          "performance": "Protectedhallboundarydoor;plantactualhazard/requiredratingtoconfirm"
+        },
+        {
+          "id": "BED2",
+          "level": "FIRST",
+          "host": "bed2-north-main",
+          "rough": [
+            3450,
+            4350
+          ],
+          "axis": 2650,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        },
+        {
+          "id": "BED3",
+          "level": "FIRST",
+          "host": "bed3-north-main",
+          "rough": [
+            8250,
+            9150
+          ],
+          "axis": 2650,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        },
+        {
+          "id": "BED4",
+          "level": "FIRST",
+          "host": "rear-west",
+          "rough": [
+            3100,
+            4000
+          ],
+          "axis": 8852.5,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        },
+        {
+          "id": "PRINCIPAL",
+          "level": "FIRST",
+          "host": "rear-east",
+          "rough": [
+            8250,
+            9150
+          ],
+          "axis": 8290,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        },
+        {
+          "id": "FAMILY-BATH",
+          "level": "FIRST",
+          "host": "wet-spine",
+          "rough": [
+            5450,
+            6350
+          ],
+          "axis": 9300,
+          "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating"
+        }
+      ],
+      "internalClosers": "Notautomaticallyrequiredsolelywithindwellinghouse(currentAppendixC5). Noarbitrarycloserremovedfromactuallyclassifiedassembly.",
+      "smokeVentTransfer": "Sa/smokegapand7600mm2venttransfermustmatchactualclassifieddoorset; no10mmundercutassumedapproved.",
+      "livingArch": {
+        "rough": [
+          3100,
+          4000
+        ],
+        "axis": 8852.5,
+        "scope": "Outsideprotectedstair/hall; losesacoustic/privacyclosure. Truearch/beamreceiverloadpathwithSTR."
+      },
+      "kitchenArch": {
+        "rough": [
+          8250,
+          9150
+        ],
+        "axis": 8290,
+        "scope": "OutsideprotectedSouthhall; no shared-room leaf, actualstructuralarchwithSTR."
+      }
+    },
+    "groundFurniture": {
+      "study-desk": [
+        600,
+        600,
+        1600,
+        700
+      ],
+      "study-chair": [
+        1000,
+        1400,
+        1000,
+        900
+      ],
+      "cloak-hanging": [
+        3537.5,
+        1337.5,
+        1125,
+        600
+      ],
+      "guest-WC-pan": [
+        8700,
+        600,
+        400,
+        650
+      ],
+      "guest-WC-basin": [
+        7450,
+        600,
+        400,
+        400
+      ],
+      "plant-water-reserve": [
+        9485,
+        3900,
+        700,
+        700
+      ],
+      "plant-riser": [
+        9410,
+        4700,
+        550,
+        700
+      ],
+      "Q350-body": [
+        9862.5,
+        5550,
+        570,
+        725
+      ],
+      "pantry-shelf-comparison": [
+        9385,
+        6800,
+        600,
+        1150
+      ],
+      "rear-stack": [
+        417.5,
+        10800,
+        300,
+        750
+      ],
+      "reading-sofa1900x850": [
+        800,
+        8950,
+        850,
+        1900
+      ],
+      "reading-side-table300": [
+        1800,
+        10650,
+        300,
+        300
+      ],
+      "family-sofa1900x750": [
+        3425,
+        9650,
+        750,
+        1900
+      ],
+      "family-side-table300": [
+        3000,
+        9700,
+        300,
+        300
+      ],
+      "dining-table1200x800": [
+        8500,
+        9050,
+        800,
+        1200
+      ],
+      "dining-chair-west-south": [
+        8000,
+        9100,
+        500,
+        500
+      ],
+      "dining-chair-west-north": [
+        8000,
+        9700,
+        500,
+        500
+      ],
+      "dining-chair-east-south": [
+        9300,
+        9100,
+        500,
+        500
+      ],
+      "dining-chair-east-north": [
+        9300,
+        9700,
+        500,
+        500
+      ],
+      "north-sink-station": [
+        8700,
+        10982.5,
+        900,
+        600
+      ],
+      "north-cooking-station": [
+        10800,
+        10982.5,
+        600,
+        600
+      ],
+      "cold-storage": [
+        10932.5,
+        9025,
+        650,
+        650
+      ]
+    },
+    "upperFurniture": {
+      "bed2": [
+        1125,
+        1062.5,
+        900,
+        2000
+      ],
+      "bed2-head": [
+        1125,
+        3062.5,
+        900,
+        100
+      ],
+      "bed2-wardrobe": [
+        4055,
+        1017.5,
+        660,
+        900
+      ],
+      "bed3": [
+        10033.75,
+        1525,
+        900,
+        2000
+      ],
+      "bed3-head": [
+        10033.75,
+        3525,
+        900,
+        90
+      ],
+      "bed3-wardrobe": [
+        7285,
+        1017.5,
+        660,
+        1500
+      ],
+      "bed4": [
+        5447.5,
+        9350,
+        2000,
+        1500
+      ],
+      "bed4-head": [
+        7447.5,
+        9350,
+        90,
+        1500
+      ],
+      "bed4-island-wardrobe": [
+        3000,
+        9800,
+        1500,
+        660
+      ],
+      "principal": [
+        9492.5,
+        9175,
+        2000,
+        1600
+      ],
+      "principal-head": [
+        11492.5,
+        9175,
+        90,
+        1600
+      ],
+      "principal-wardrobe": [
+        7707.5,
+        9300,
+        660,
+        1500
+      ],
+      "rear-shower1000": [
+        1817.5,
+        8937.5,
+        1000,
+        1000
+      ],
+      "rear-WC": [
+        717.5,
+        11000,
+        560,
+        355
+      ],
+      "rear-basin": [
+        1000,
+        8937.5,
+        400,
+        220
+      ],
+      "rear-cabinet": [
+        417.5,
+        10800,
+        300,
+        750
+      ],
+      "rear-west-low-box": [
+        417.5,
+        9937.5,
+        150,
+        862.5
+      ],
+      "principal-shower900": [
+        9400,
+        6600,
+        900,
+        900
+      ],
+      "principal-WC": [
+        10972.5,
+        7412.5,
+        355,
+        560
+      ],
+      "principal-basin": [
+        9400,
+        7600,
+        340,
+        450
+      ],
+      "family-bath1700": [
+        9460,
+        3785,
+        1700,
+        700
+      ],
+      "family-WC": [
+        11022.5,
+        5900,
+        560,
+        355
+      ],
+      "family-basin": [
+        9800,
+        6195,
+        400,
+        220
+      ],
+      "family-service-cabinet": [
+        9385,
+        4675,
+        600,
+        750
+      ],
+      "principal-local-soil-column": [
+        11342.5,
+        7950,
+        180,
+        180
+      ]
+    },
+    "roomFaces": {
+      "living": {
+        "bounds": [
+          417.5,
+          8937.5,
+          3875,
+          2645
+        ],
+        "twoSofas": true,
+        "groundReadingWallRemoved": true,
+        "sofaFaces": [
+          "EAST",
+          "WEST"
+        ],
+        "scope": "Open arch loses acoustic/privacy closure; full body/window/stack/receiver/fire tests required before selection."
+      },
+      "kitchenDining": {
+        "bounds": [
+          7707.5,
+          8412.5,
+          3875,
+          3170
+        ],
+        "fourPlaces": true,
+        "northWorkingGap": 732.5,
+        "southEntryGap": 637.5,
+        "fridgeToEastWindowProjectionGap": 25,
+        "trade": "Separate dryprep table deleted; dining table has separate meal/prep states."
+      },
+      "principalBath": {
+        "northFinishedFace": 8152.5,
+        "westFinishedFace": 9400,
+        "southFinishedFace": 6600,
+        "door": [
+          9900,
+          10800
+        ],
+        "WC": "SOUTH-facing355x560 with north180serviceband/cistern; actual product and operation owned by MATINTERIORS",
+        "soilColumnCentre": [
+          11432.5,
+          8040
+        ],
+        "eastFinishedFace": 11567.5,
+        "scope": "Live MATINTERIORS constructivegeometry; exactselectedproduct/frame/servicebranch still tojoin."
+      }
+    },
+    "finishDeviation": {
+      "source": 15,
+      "proposed": 17,
+      "roomFacingGrowth": 2,
+      "rule": "Source geometry retained; finish growth is a bounded sensitivity, not silently adopted room faces"
+    },
+    "studyDoorSensitivity": {
+      "nominalContinuousBodyReserve": 10.213220396523681,
+      "nominalContinuousArmReserve": 4.595699193285377,
+      "conservativeTwoSurfaceFinishLoss": 4,
+      "remainingBody": 6.213220396523681,
+      "remainingArm": 0.5956991932853768,
+      "scope": "Arithmetic warning only; no actual geometry rerun or fit PASS. Finish17 already clashes principal head and cannot consume controlled frame budgets."
+    },
     "scope": "Outer417.5 retained; loggia507.5 sidewalls are not a global envelope change. Principal30 does not extend into family/Bed3 by default."
   },
   "systems": [
@@ -26,7 +588,7 @@
         "I02"
       ],
       "name": "Dry masonry finish",
-      "direction": "Develop authored two-coat mineral plaster with pure silicate finish; retain conventional24 plaster as control",
+      "direction": "Retain15 HARD maximum for unchanged source geometry; develop17 authored challenger only through an explicit HAD geometry rewind, with27 conventional control",
       "layers": [
         [
           "hydraulic-lime base",
@@ -449,8 +1011,82 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "ground"
+      "ratedRole": "Actual protected-boundary reference; complete assembly/rating/operation admission remains held",
+      "protectedDoors": [
+        {
+          "id": "FD-WEST-CROSS",
+          "level": "GROUND",
+          "host": "protected-west-cross",
+          "rough": [
+            2947.5,
+            3832.5
+          ],
+          "axis": 4250,
+          "frameEach": 25,
+          "leaf": [
+            830,
+            44
+          ],
+          "hinge": [
+            3802.5,
+            4250
+          ],
+          "opening": "NORTHintoexcludedgallery",
+          "closed": [
+            2972.5,
+            4228,
+            830,
+            44
+          ],
+          "open": [
+            3780.5,
+            4250,
+            44,
+            830
+          ],
+          "minimumClearBudget": 791,
+          "performance": "E20minimumreference;classifiedfullassembly/actualgaprequired"
+        },
+        {
+          "id": "FD-EAST-CROSS",
+          "level": "GROUND",
+          "host": "protected-east-cross",
+          "rough": [
+            8241.25,
+            9141.25
+          ],
+          "axis": 4250,
+          "frameEach": 25,
+          "leaf": [
+            845,
+            44
+          ],
+          "hinge": [
+            9111.25,
+            4250
+          ],
+          "opening": "NORTHintoexcludedgallery",
+          "closed": [
+            8266.25,
+            4228,
+            845,
+            44
+          ],
+          "open": [
+            9089.25,
+            4250,
+            44,
+            845
+          ],
+          "minimumClearBudget": 806,
+          "performance": "E20minimumreference;classifiedfullassemblyrequired"
+        }
+      ],
+      "floorDatum": "ground",
+      "taskDirections": [
+        "trim",
+        "doors"
+      ]
     },
     {
       "id": "G-STAIR",
@@ -460,14 +1096,17 @@
         "F-D",
         "C-G",
         "J-T",
-        "D-R",
         "H-M",
         "B-S"
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "ground"
+      "ratedRole": "Within protected volume; applicable wall/glazing/ceiling and penetration boundary required",
+      "protectedDoors": [],
+      "floorDatum": "ground",
+      "taskDirections": [
+        "trim"
+      ]
     },
     {
       "id": "G-STUDY",
@@ -485,8 +1124,36 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "ground"
+      "ratedRole": "Actual protected-boundary reference; complete assembly/rating/operation admission remains held",
+      "protectedDoors": [
+        {
+          "id": "STUDY",
+          "level": "GROUND",
+          "host": "study-L-north",
+          "rough": [
+            1350,
+            2250
+          ],
+          "axis": 3247.5,
+          "frameEach": 25,
+          "leaf": [
+            830,
+            44
+          ],
+          "hinge": [
+            1385,
+            3247.5
+          ],
+          "opening": "SOUTHINTOSTUDY",
+          "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim"
+        }
+      ],
+      "floorDatum": "ground",
+      "taskDirections": [
+        "trim",
+        "storage",
+        "doors"
+      ]
     },
     {
       "id": "G-CLOAK",
@@ -498,14 +1165,18 @@
         "J-T",
         "J-C",
         "J-P",
-        "D-R",
         "H-M",
         "B-S"
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "ground"
+      "ratedRole": "Outside protected volume; actual privacy and other safety duties retained",
+      "protectedDoors": [],
+      "floorDatum": "ground",
+      "taskDirections": [
+        "trim",
+        "storage"
+      ]
     },
     {
       "id": "G-WC",
@@ -519,12 +1190,31 @@
         "D-O",
         "H-M",
         "S-W",
-        "B-S"
+        "B-S",
+        "D-R"
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "ground"
+      "ratedRole": "Actual protected-boundary reference; complete assembly/rating/operation admission remains held",
+      "protectedDoors": [
+        {
+          "id": "GUEST-WC",
+          "level": "GROUND",
+          "host": "wc-north",
+          "rough": [
+            7650,
+            8550
+          ],
+          "axis": 2650,
+          "performance": "Protectedhallboundarydoor;actualbathroom/firestrategyexceptionnotassumed"
+        }
+      ],
+      "floorDatum": "ground",
+      "taskDirections": [
+        "trim",
+        "doors",
+        "wetCabinet"
+      ]
     },
     {
       "id": "G-UTILITY",
@@ -542,8 +1232,13 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "ground"
+      "ratedRole": "Outside protected volume; actual privacy and other safety duties retained",
+      "protectedDoors": [],
+      "floorDatum": "ground",
+      "taskDirections": [
+        "wetCabinet",
+        "doors"
+      ]
     },
     {
       "id": "G-PLANT",
@@ -558,8 +1253,24 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "ground"
+      "ratedRole": "Actual protected-boundary reference; complete assembly/rating/operation admission remains held",
+      "protectedDoors": [
+        {
+          "id": "PLANT",
+          "level": "GROUND",
+          "host": "service-spine",
+          "rough": [
+            2750,
+            3650
+          ],
+          "axis": 9300,
+          "performance": "Protectedhallboundarydoor;plantactualhazard/requiredratingtoconfirm"
+        }
+      ],
+      "floorDatum": "ground",
+      "taskDirections": [
+        "doors"
+      ]
     },
     {
       "id": "G-PANTRY",
@@ -576,8 +1287,13 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "ground"
+      "ratedRole": "Outside protected volume; actual privacy and other safety duties retained",
+      "protectedDoors": [],
+      "floorDatum": "ground",
+      "taskDirections": [
+        "storage",
+        "doors"
+      ]
     },
     {
       "id": "G-LIVING",
@@ -588,14 +1304,17 @@
         "C-G",
         "J-T",
         "J-P",
-        "D-R",
         "H-M",
         "B-S"
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "ground"
+      "ratedRole": "Outside protected volume; actual privacy and other safety duties retained",
+      "protectedDoors": [],
+      "floorDatum": "ground",
+      "taskDirections": [
+        "trim"
+      ]
     },
     {
       "id": "G-KITCHEN",
@@ -608,15 +1327,19 @@
         "J-T",
         "J-C",
         "J-P",
-        "D-R",
         "H-M",
         "S-W",
         "B-S"
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "ground"
+      "ratedRole": "Outside protected volume; actual privacy and other safety duties retained",
+      "protectedDoors": [],
+      "floorDatum": "ground",
+      "taskDirections": [
+        "trim",
+        "kitchen"
+      ]
     },
     {
       "id": "U-B2",
@@ -634,8 +1357,26 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "upper"
+      "ratedRole": "Actual protected-boundary reference; complete assembly/rating/operation admission remains held",
+      "protectedDoors": [
+        {
+          "id": "BED2",
+          "level": "FIRST",
+          "host": "bed2-north-main",
+          "rough": [
+            3450,
+            4350
+          ],
+          "axis": 2650,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        }
+      ],
+      "floorDatum": "upper",
+      "taskDirections": [
+        "trim",
+        "storage",
+        "doors"
+      ]
     },
     {
       "id": "U-B3",
@@ -653,8 +1394,26 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "upper"
+      "ratedRole": "Actual protected-boundary reference; complete assembly/rating/operation admission remains held",
+      "protectedDoors": [
+        {
+          "id": "BED3",
+          "level": "FIRST",
+          "host": "bed3-north-main",
+          "rough": [
+            8250,
+            9150
+          ],
+          "axis": 2650,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        }
+      ],
+      "floorDatum": "upper",
+      "taskDirections": [
+        "trim",
+        "storage",
+        "doors"
+      ]
     },
     {
       "id": "U-B4",
@@ -673,8 +1432,26 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "upper"
+      "ratedRole": "Actual protected-boundary reference; complete assembly/rating/operation admission remains held",
+      "protectedDoors": [
+        {
+          "id": "BED4",
+          "level": "FIRST",
+          "host": "rear-west",
+          "rough": [
+            3100,
+            4000
+          ],
+          "axis": 8852.5,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        }
+      ],
+      "floorDatum": "upper",
+      "taskDirections": [
+        "trim",
+        "storage",
+        "doors"
+      ]
     },
     {
       "id": "U-PRINCIPAL",
@@ -693,8 +1470,26 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "upper"
+      "ratedRole": "Actual protected-boundary reference; complete assembly/rating/operation admission remains held",
+      "protectedDoors": [
+        {
+          "id": "PRINCIPAL",
+          "level": "FIRST",
+          "host": "rear-east",
+          "rough": [
+            8250,
+            9150
+          ],
+          "axis": 8290,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        }
+      ],
+      "floorDatum": "upper",
+      "taskDirections": [
+        "trim",
+        "storage",
+        "doors"
+      ]
     },
     {
       "id": "U-REAR-WET",
@@ -713,8 +1508,13 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "upper"
+      "ratedRole": "Outside protected volume; actual privacy and other safety duties retained",
+      "protectedDoors": [],
+      "floorDatum": "upper",
+      "taskDirections": [
+        "wetCabinet",
+        "doors"
+      ]
     },
     {
       "id": "U-FAMILY",
@@ -733,8 +1533,25 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "upper"
+      "ratedRole": "Actual protected-boundary reference; complete assembly/rating/operation admission remains held",
+      "protectedDoors": [
+        {
+          "id": "FAMILY-BATH",
+          "level": "FIRST",
+          "host": "wet-spine",
+          "rough": [
+            5450,
+            6350
+          ],
+          "axis": 9300,
+          "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating"
+        }
+      ],
+      "floorDatum": "upper",
+      "taskDirections": [
+        "wetCabinet",
+        "doors"
+      ]
     },
     {
       "id": "U-PRINCIPAL-WET",
@@ -752,8 +1569,13 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "upper"
+      "ratedRole": "Outside protected volume; actual privacy and other safety duties retained",
+      "protectedDoors": [],
+      "floorDatum": "upper",
+      "taskDirections": [
+        "wetCabinet",
+        "doors"
+      ]
     },
     {
       "id": "U-ROUTE",
@@ -763,14 +1585,17 @@
         "F-D",
         "C-U",
         "J-T",
-        "D-R",
         "H-M",
         "B-S"
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
-      "floorDatum": "upper"
+      "ratedRole": "Within protected volume; applicable wall/glazing/ceiling and penetration boundary required",
+      "protectedDoors": [],
+      "floorDatum": "upper",
+      "taskDirections": [
+        "trim"
+      ]
     }
   ],
   "floorDatums": {
@@ -788,6 +1613,89 @@
       "FFL": 0
     }
   },
+  "dryFinishDisposition": {
+    "sourceMaximum": 15,
+    "challenger": 17,
+    "control": 27,
+    "challengerSelected": false,
+    "unchangedGeometryFit": false,
+    "principalHeadEast": 11582.5,
+    "sourceDryEastFace": 11582.5,
+    "challengerEastFace": 11580.5,
+    "headOverlap": 2,
+    "controlledDoorRule": "No finish increment may consume the applicable frame/jamb/perimeter boundary. Source15 remains a hard maximum until an exact complete rewind is earned.",
+    "correction": "HAD must author all affected room faces, furniture and actual opening/frame boundaries before selecting17;15 is not a demonstrated supplied finish recipe."
+  },
+  "finiteDryCorrection": {
+    "manufacturer": "British Gypsum",
+    "selector": "PL0031",
+    "selectorLayers": [
+      [
+        "HardWall",
+        11
+      ],
+      [
+        "MultiFinish",
+        2
+      ]
+    ],
+    "selectorTotal": 13,
+    "currentPDSDate": "2026-09-15",
+    "currentHandUndercoatMaximum": 8,
+    "disposition": "Unselected: reconcile current11 selector versus8 maximum hand-application instruction. Establish actual suction/background, complete preparation/additives and compatible decoration; no pure-silicate-on-gypsum transfer.",
+    "unchangedGeometryAdmission": false
+  },
+  "taskDirections": {
+    "storage": "Retain external HAD envelope and operation. Independent screw-fixed face/track, lift-out shelves and captured removable back; no service/fixture supported by removable carcass. Remove stored contents first. A sliding front remains sliding unless IAS proves a new hinged sweep.",
+    "kitchen": "Retain900x600 sink and600x600 cooking stations plus650-square cold-store envelope; do not invent a continuous backed worktop. Develop discrete plain stainless worktop on independent metal rails, unclad underside, mechanical bowl clips and replaceable exposed perimeter joint. Isolate water/power, remove front/shelf, support bowl and release waste/supplies before lifting top. First-wetted surface is the exposed joint/catchable underside; leak declaration and drying must not depend on an absorbent concealed back.",
+    "wetCabinet": "Use solid timber frame and removable slatted/raised base outside the actual splash boundary; wet face itself remains the complete30 reference only where set out. Do not hide a cistern coupling behind a glued back. Remove contents/front and support fixture independently before disconnecting. Actual waterproofing remains intact or is isolated and reinstated/tested.",
+    "doors": "Privacy remains a functional requirement. Keep actual hinged/slider/folding operation and all required fire constituents; remove supported leaf at accessible hardware before frame/trim intervention. A room name is not a fire-role exemption.",
+    "trim": "Independent150x18 skirt and70x18 architrave; where an actual corner return is narrower, shorten/localise the decorative member only with the rated perimeter boundary retained. No hidden frame joint or seal is trimmed to make space."
+  },
+  "holds": [
+    {
+      "audit": "I01",
+      "decision": "Ground80 overlay over100glass versus upper80; point-load supports, acoustic/moisture boundary and first board detail",
+      "owner": "MAT-INTERIORS with STR/IAS and MAT-ENVELOPE",
+      "latest": "Before floor selection and anchor release",
+      "disposition": "Keep datums; qualify complete support/barrier recipe, or explicitly rewind floor depth. Never delete the100glass or required boundary."
+    },
+    {
+      "audit": "I02",
+      "decision": "Authored17 dry finish and roof/slab fire-boundary separation",
+      "owner": "MAT-INTERIORS with HAD/STR",
+      "latest": "Before actual room/ceiling freeze",
+      "disposition": "Keep15 hard maximum for unchanged source. Neither17 nor27 is a drop-in or supplied recipe. Qualify the actual background/application and author the entire room/furniture/frame rewind before selecting either. Determine roof duty/exposure/support before selecting C-U."
+    },
+    {
+      "audit": "I03/O01/O03/O05",
+      "decision": "Whole timber joints/paint/metal hardware and complete protected/private closures",
+      "owner": "MAT-INTERIORS with IAS/OAS/HAD; BCR for applicable tested kit",
+      "latest": "Before assembly selection; policy-changing residue before procurement",
+      "disposition": "Prefer mechanical ordinary joinery; retain certified glues/seals/pads/coatings where required. Actual known polymer remains inadmissible without explicit standing-owner disposition; unknown remains unknown."
+    },
+    {
+      "audit": "I04/I05/I06/I07/I08",
+      "decision": "Complete water-safe wet lining/tray/waste/support",
+      "owner": "MAT-INTERIORS with IAS/MAT-SERVICES and STR",
+      "latest": "Before wet assembly selection and structural port release",
+      "disposition": "Use120-rim local-port principal constructive direction; actual matched parts/support/seals and complete membrane remain held. Reject any kit that cannot satisfy the documented first-release/stripping/temporary-closure sequence."
+    },
+    {
+      "audit": "I09/I10",
+      "decision": "Other sanitaryware, cistern, kitchen/utility wet worktops and leak/drying routes",
+      "owner": "MAT-INTERIORS with IAS/MAT-SERVICES",
+      "latest": "Before fixture/worktop selection",
+      "disposition": "Plain ceramic/stainless body direction; inspect whole assembly and demonstrate isolated supported renewal. No body-only pass or unproved invisible dry state."
+    },
+    {
+      "audit": "S09/S10",
+      "decision": "Concealed electrical/fire/acoustic boundaries and accessible covers",
+      "owner": "MAT-SERVICES with HAD/STR and MAT-INTERIORS",
+      "latest": "Before lining closure and each intervention",
+      "disposition": "Retain required certified insulation, collars, compounds and closures; independent ordinary finish does not replace the safety boundary."
+    }
+  ],
   "checks": {
     "dryStandardControl": 27,
     "dryControlOver15": 12,
