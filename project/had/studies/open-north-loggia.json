@@ -1,5 +1,5 @@
 {
-  "status": "FIRST WHOLE-HOUSE CANDIDATE, NOT ADOPTED. Known failures/interfaces are explicit; no support/water/material/site acceptance.",
+  "status": "ONE INCOMPLETE27DRY/30WET WHOLE-HOUSE TRIAL; explicit failures retained. Prior15control49a44045 preserved. Not adopted.",
   "startingMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
   "base": {
     "path": "project/str/studies/house-plan.json",
@@ -40,7 +40,7 @@
     3500,
     3500
   ],
-  "envelope": 417.5,
+  "envelope": 429.5,
   "loggia": {
     "clear": [
       4800,
@@ -54,11 +54,11 @@
     "warning": "New weatherwalls cost additional room area. Neither10.2 nor9.198 is final net conditioned-floor loss."
   },
   "weather": {
-    "total": 507.5,
+    "total": 519.5,
     "layersRoomToWeather": [
       [
         "mineralFinish",
-        15
+        27
       ],
       [
         "structuralMasonry",
@@ -90,8 +90,20 @@
         4800,
         1200
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        4730,
+        4870
+      ],
+      "finishedFaces": [
+        4703,
+        4897
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "cloak-east",
@@ -103,12 +115,24 @@
         4800,
         2650
       ],
-      "t": 170,
+      "t": 194,
       "holes": [
         [
           1700,
           2500
         ]
+      ],
+      "structuralCore": [
+        4730,
+        4870
+      ],
+      "finishedFaces": [
+        4703,
+        4897
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -121,8 +145,20 @@
         3400,
         2650
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        3330,
+        3470
+      ],
+      "finishedFaces": [
+        3303,
+        3497
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "cloak-south",
@@ -134,8 +170,20 @@
         4800,
         1200
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        1130,
+        1270
+      ],
+      "finishedFaces": [
+        1103,
+        1297
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "study-cloak-north",
@@ -147,8 +195,20 @@
         4800,
         2650
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        2580,
+        2720
+      ],
+      "finishedFaces": [
+        2553,
+        2747
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "study-L-return",
@@ -160,8 +220,20 @@
         2817.5,
         3247.5
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        2747.5,
+        2887.5
+      ],
+      "finishedFaces": [
+        2720.5,
+        2914.5
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "study-L-north",
@@ -173,12 +245,24 @@
         2817.5,
         3247.5
       ],
-      "t": 170,
+      "t": 194,
       "holes": [
         [
           1350,
           2250
         ]
+      ],
+      "structuralCore": [
+        3177.5,
+        3317.5
+      ],
+      "finishedFaces": [
+        3150.5,
+        3344.5
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -191,8 +275,20 @@
         7200,
         2650
       ],
-      "t": 170,
-      "holes": []
+      "t": 197,
+      "holes": [],
+      "structuralCore": [
+        7130,
+        7270
+      ],
+      "finishedFaces": [
+        7103,
+        7300
+      ],
+      "faceFinish": [
+        27,
+        30
+      ]
     },
     {
       "id": "wc-north",
@@ -204,12 +300,24 @@
         9300,
         2650
       ],
-      "t": 170,
+      "t": 197,
       "holes": [
         [
           7650,
           8550
         ]
+      ],
+      "structuralCore": [
+        2580,
+        2720
+      ],
+      "finishedFaces": [
+        2550,
+        2747
+      ],
+      "faceFinish": [
+        30,
+        27
       ]
     },
     {
@@ -222,12 +330,24 @@
         9300,
         8290
       ],
-      "t": 170,
+      "t": 194,
       "holes": [
         [
           2750,
           3650
         ]
+      ],
+      "structuralCore": [
+        9230,
+        9370
+      ],
+      "finishedFaces": [
+        9203,
+        9397
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -240,12 +360,24 @@
         12000,
         2550
       ],
-      "t": 170,
+      "t": 194,
       "holes": [
         [
           10250,
           11150
         ]
+      ],
+      "structuralCore": [
+        2480,
+        2620
+      ],
+      "finishedFaces": [
+        2453,
+        2647
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -258,12 +390,24 @@
         12000,
         3700
       ],
-      "t": 170,
+      "t": 194,
       "holes": [
         [
           9650,
           11050
         ]
+      ],
+      "structuralCore": [
+        3630,
+        3770
+      ],
+      "finishedFaces": [
+        3603,
+        3797
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -276,8 +420,20 @@
         12000,
         6500
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        6430,
+        6570
+      ],
+      "finishedFaces": [
+        6403,
+        6597
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "rear-west",
@@ -289,12 +445,24 @@
         4377.5,
         8852.5
       ],
-      "t": 170,
+      "t": 194,
       "holes": [
         [
           3100,
           4000
         ]
+      ],
+      "structuralCore": [
+        8782.5,
+        8922.5
+      ],
+      "finishedFaces": [
+        8755.5,
+        8949.5
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -307,7 +475,7 @@
         12000,
         8290
       ],
-      "t": 245,
+      "t": 269,
       "holes": [
         [
           8250,
@@ -317,6 +485,18 @@
           10450,
           11350
         ]
+      ],
+      "structuralCore": [
+        8182.5,
+        8397.5
+      ],
+      "finishedFaces": [
+        8155.5,
+        8424.5
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -329,10 +509,10 @@
         4377.5,
         12000
       ],
-      "t": 507.5,
+      "t": 519.5,
       "holes": [],
       "finishedFaces": [
-        4292.5,
+        4280.5,
         4800
       ],
       "structuralCore": [
@@ -351,11 +531,11 @@
         7622.5,
         12000
       ],
-      "t": 507.5,
+      "t": 519.5,
       "holes": [],
       "finishedFaces": [
         7200,
-        7707.5
+        7719.5
       ],
       "structuralCore": [
         7552.5,
@@ -366,22 +546,26 @@
     {
       "id": "protected-stair-east",
       "a": [
-        2882.5,
-        4185
+        2894.5,
+        4173
       ],
       "b": [
-        2882.5,
-        8937.5
+        2894.5,
+        8949.5
       ],
-      "t": 130,
+      "t": 154,
       "holes": [],
       "finishedFaces": [
         2817.5,
-        2947.5
+        2971.5
       ],
       "structuralCore": [
-        2832.5,
-        2932.5
+        2844.5,
+        2944.5
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -391,15 +575,27 @@
         4250
       ],
       "b": [
-        3832.5,
+        3820.5,
         4250
       ],
-      "t": 130,
+      "t": 154,
       "holes": [
         [
-          2947.5,
-          3832.5
+          2971.5,
+          3820.5
         ]
+      ],
+      "structuralCore": [
+        4200,
+        4300
+      ],
+      "finishedFaces": [
+        4173,
+        4327
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -412,12 +608,24 @@
         9370,
         4250
       ],
-      "t": 130,
+      "t": 154,
       "holes": [
         [
           8241.25,
           9141.25
         ]
+      ],
+      "structuralCore": [
+        4200,
+        4300
+      ],
+      "finishedFaces": [
+        4173,
+        4327
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     }
   ],
@@ -432,8 +640,20 @@
         4800,
         2650
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        4730,
+        4870
+      ],
+      "finishedFaces": [
+        4703,
+        4897
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "bed2-north-main",
@@ -445,12 +665,24 @@
         4800,
         2650
       ],
-      "t": 170,
+      "t": 194,
       "holes": [
         [
           3450,
           4350
         ]
+      ],
+      "structuralCore": [
+        2580,
+        2720
+      ],
+      "finishedFaces": [
+        2553,
+        2747
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -463,8 +695,20 @@
         2817.5,
         3247.5
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        2747.5,
+        2887.5
+      ],
+      "finishedFaces": [
+        2720.5,
+        2914.5
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "bed2-L-north",
@@ -476,8 +720,20 @@
         2817.5,
         3247.5
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        3177.5,
+        3317.5
+      ],
+      "finishedFaces": [
+        3150.5,
+        3344.5
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "bed3-west",
@@ -489,8 +745,20 @@
         7200,
         2650
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        7130,
+        7270
+      ],
+      "finishedFaces": [
+        7103,
+        7297
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "bed3-north-main",
@@ -502,12 +770,24 @@
         9300,
         2650
       ],
-      "t": 170,
+      "t": 194,
       "holes": [
         [
           8250,
           9150
         ]
+      ],
+      "structuralCore": [
+        2580,
+        2720
+      ],
+      "finishedFaces": [
+        2553,
+        2747
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -520,7 +800,7 @@
         9300,
         6500
       ],
-      "t": 170,
+      "t": 194,
       "holes": [
         [
           5450,
@@ -528,12 +808,16 @@
         ]
       ],
       "finishedFaces": [
-        9215,
-        9385
+        9203,
+        9397
       ],
       "structuralCore": [
         9230,
         9370
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -546,8 +830,20 @@
         12000,
         3700
       ],
-      "t": 170,
-      "holes": []
+      "t": 197,
+      "holes": [],
+      "structuralCore": [
+        3630,
+        3770
+      ],
+      "finishedFaces": [
+        3603,
+        3800
+      ],
+      "faceFinish": [
+        27,
+        30
+      ]
     },
     {
       "id": "bath-north",
@@ -559,15 +855,19 @@
         12000,
         6500
       ],
-      "t": 185,
+      "t": 200,
       "holes": [],
       "finishedFaces": [
-        6415,
+        6400,
         6600
       ],
       "structuralCore": [
         6430,
         6570
+      ],
+      "faceFinish": [
+        30,
+        30
       ]
     },
     {
@@ -580,12 +880,24 @@
         4377.5,
         8852.5
       ],
-      "t": 170,
+      "t": 194,
       "holes": [
         [
           3100,
           4000
         ]
+      ],
+      "structuralCore": [
+        8782.5,
+        8922.5
+      ],
+      "finishedFaces": [
+        8755.5,
+        8949.5
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -598,8 +910,20 @@
         4377.5,
         8852.5
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        4307.5,
+        4447.5
+      ],
+      "finishedFaces": [
+        4280.5,
+        4474.5
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "rear-east",
@@ -611,7 +935,7 @@
         9300,
         8290
       ],
-      "t": 245,
+      "t": 269,
       "holes": [
         [
           8250,
@@ -619,12 +943,16 @@
         ]
       ],
       "finishedFaces": [
-        8167.5,
-        8412.5
+        8155.5,
+        8424.5
       ],
       "structuralCore": [
         8182.5,
         8397.5
+      ],
+      "faceFinish": [
+        27,
+        27
       ]
     },
     {
@@ -637,8 +965,20 @@
         7622.5,
         12000
       ],
-      "t": 170,
-      "holes": []
+      "t": 194,
+      "holes": [],
+      "structuralCore": [
+        7552.5,
+        7692.5
+      ],
+      "finishedFaces": [
+        7525.5,
+        7719.5
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
     },
     {
       "id": "rear-wet-east",
@@ -650,12 +990,24 @@
         2902.5,
         12000
       ],
-      "t": 170,
+      "t": 197,
       "holes": [
         [
           10350,
           11250
         ]
+      ],
+      "structuralCore": [
+        2832.5,
+        2972.5
+      ],
+      "finishedFaces": [
+        2802.5,
+        2999.5
+      ],
+      "faceFinish": [
+        30,
+        27
       ]
     },
     {
@@ -668,15 +1020,19 @@
         9300,
         8290
       ],
-      "t": 185,
+      "t": 197,
       "holes": [],
       "finishedFaces": [
-        9215,
+        9203,
         9400
       ],
       "structuralCore": [
         9230,
         9370
+      ],
+      "faceFinish": [
+        27,
+        30
       ]
     },
     {
@@ -689,7 +1045,7 @@
         12000,
         8290
       ],
-      "t": 260,
+      "t": 272,
       "holes": [
         [
           9900,
@@ -698,11 +1054,15 @@
       ],
       "finishedFaces": [
         8152.5,
-        8412.5
+        8424.5
       ],
       "structuralCore": [
         8182.5,
         8397.5
+      ],
+      "faceFinish": [
+        30,
+        27
       ]
     }
   ],
@@ -711,23 +1071,23 @@
       "level": "GROUND/FIRST",
       "wall": "outer-north",
       "fromCentre": 3900,
-      "toCentre": 3550,
-      "width": 1000,
+      "toCentre": 3700,
+      "width": 700,
       "reason": "Actual room/weatherwall and north pier width"
     },
     {
       "level": "GROUND/FIRST",
       "wall": "outer-north",
       "fromCentre": 8100,
-      "toCentre": 8450,
-      "width": 1000,
+      "toCentre": 8300,
+      "width": 700,
       "reason": "Paired north facade re-composition"
     },
     {
       "level": "GROUND",
       "wall": "outer-north",
       "centres": [
-        8450,
+        8300,
         10200
       ],
       "sill": 1050,
@@ -968,9 +1328,10 @@
       {
         "id": "north-window-1",
         "wall": "outer-north",
-        "centre": 3550,
-        "width": 1000,
-        "kind": "window"
+        "centre": 3700,
+        "width": 700,
+        "kind": "window",
+        "operation": "FIXED; ordinary operation not credited"
       },
       {
         "id": "garden-entry",
@@ -986,8 +1347,8 @@
       {
         "id": "north-window-3",
         "wall": "outer-north",
-        "centre": 8450,
-        "width": 1000,
+        "centre": 8300,
+        "width": 700,
         "kind": "window"
       },
       {
@@ -1127,8 +1488,8 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "fixedTransomTopBand": 100,
-        "openingLeafHeadMaximum": 2750
+        "fixedTransomTopBand": 480,
+        "openingLeafHeadMaximum": 2370
       },
       {
         "id": "east-window-3",
@@ -1190,15 +1551,15 @@
       {
         "id": "north-window-1",
         "wall": "outer-north",
-        "centre": 3550,
-        "width": 1000,
+        "centre": 3700,
+        "width": 700,
         "kind": "window"
       },
       {
         "id": "north-window-3",
         "wall": "outer-north",
-        "centre": 8450,
-        "width": 1000,
+        "centre": 8300,
+        "width": 700,
         "kind": "window"
       },
       {
@@ -1329,7 +1690,7 @@
     ],
     "reading-sofa1900x850": [
       800,
-      8975,
+      9000,
       850,
       1900
     ],
@@ -1340,7 +1701,7 @@
       300
     ],
     "family-sofa1900x750": [
-      3415,
+      3403,
       9650,
       750,
       1900
@@ -1353,31 +1714,31 @@
     ],
     "dining-table1200x800": [
       8500,
-      9050,
+      9100,
       800,
       1200
     ],
     "dining-chair-west-south": [
       8000,
-      9100,
+      9150,
       500,
       500
     ],
     "dining-chair-west-north": [
       8000,
-      9700,
+      9750,
       500,
       500
     ],
     "dining-chair-east-south": [
       9300,
-      9100,
+      9150,
       500,
       500
     ],
     "dining-chair-east-north": [
       9300,
-      9700,
+      9750,
       500,
       500
     ],
@@ -1394,7 +1755,7 @@
       600
     ],
     "cold-storage": [
-      10932.5,
+      10920.5,
       9025,
       650,
       650
@@ -1438,44 +1799,44 @@
       1500
     ],
     "bed4": [
-      5417.5,
+      5405.5,
       9350,
       2000,
       1500
     ],
     "bed4-head": [
-      7417.5,
+      7405.5,
       9350,
       90,
       1500
     ],
     "bed4-island-wardrobe": [
-      3030,
+      3042,
       9800,
       1500,
       660
     ],
     "principal": [
-      9462.5,
+      9450.5,
       9175,
       2000,
       1600
     ],
     "principal-head": [
-      11462.5,
+      11450.5,
       9175,
       90,
       1600
     ],
     "principal-wardrobe": [
-      7737.5,
+      7749.5,
       9300,
       660,
       1500
     ],
     "rear-shower1000": [
-      1817.5,
-      8937.5,
+      1802.5,
+      8952.5,
       1000,
       1000
     ],
@@ -1487,7 +1848,7 @@
     ],
     "rear-basin": [
       1000,
-      8937.5,
+      8952.5,
       400,
       220
     ],
@@ -1523,24 +1884,24 @@
     ],
     "family-bath1700": [
       9460,
-      3785,
+      3800,
       1700,
       700
     ],
     "family-WC": [
-      11022.5,
-      5900,
+      10777.5,
+      5800,
       560,
       355
     ],
     "family-basin": [
-      9800,
-      6195,
-      400,
-      220
+      11227.5,
+      5300,
+      340,
+      450
     ],
     "family-service-cabinet": [
-      9385,
+      9397,
       4675,
       600,
       750
@@ -1548,6 +1909,12 @@
     "principal-local-soil-column": [
       11342.5,
       7950,
+      180,
+      180
+    ],
+    "family-local-soil-column": [
+      11342.5,
+      6180,
       180,
       180
     ]
@@ -1569,28 +1936,28 @@
       [
         "wetBeamSouthReceiver",
         [
-          2817.5,
-          8687.5,
-          170,
-          330
+          2745.5,
+          8600.5,
+          314,
+          504
         ]
       ],
       [
         "wetBeamNorthReceiver",
         [
-          2817.5,
-          11502.5,
-          170,
-          330
+          2745.5,
+          11260.5,
+          314,
+          477
         ]
       ],
       [
         "stairMidPostFinished",
         [
           2817.5,
-          7117.5,
-          265,
-          280
+          7105.5,
+          277,
+          304
         ]
       ]
     ],
@@ -1600,7 +1967,7 @@
         [
           11567.5,
           6600,
-          15,
+          3,
           1552.5
         ]
       ]
@@ -1647,27 +2014,43 @@
       "beamBottom": 3020,
       "finishedGroundSoffit": 3005,
       "southReceiverFinished": [
-        2817.5,
-        8687.5,
-        170,
-        330
+        2745.5,
+        8600.5,
+        314,
+        504
       ],
       "northReceiverFinished": [
-        2817.5,
-        11502.5,
-        170,
-        330
-      ]
+        2745.5,
+        11260.5,
+        314,
+        477
+      ],
+      "beamWidth": 200,
+      "southReceiverCore": [
+        2772.5,
+        8627.5,
+        260,
+        450
+      ],
+      "northReceiverCore": [
+        2772.5,
+        11287.5,
+        260,
+        450
+      ],
+      "northSupportAxis": 11512.5,
+      "northLoadedCantilever": 155,
+      "scope": "LatestSTR260proposal; actual spatial/arch/weather junction NOT passed. No finish applied into north cavity."
     },
     "exposedSoffit": "Actual thermal/fire/weather package below upper floor over loggia unqualified."
   },
   "rooms": {
     "living": {
       "bounds": [
-        417.5,
-        8937.5,
-        3875,
-        2645
+        429.5,
+        8949.5,
+        3851,
+        2621
       ],
       "twoSofas": true,
       "groundReadingWallRemoved": true,
@@ -1679,10 +2062,10 @@
     },
     "kitchenDining": {
       "bounds": [
-        7707.5,
-        8412.5,
-        3875,
-        3170
+        7719.5,
+        8424.5,
+        3851,
+        3146
       ],
       "fourPlaces": true,
       "northWorkingGap": 732.5,
@@ -1715,19 +2098,19 @@
   "furnitureRequirements": {
     "principalBed": {
       "whole": [
-        9462.5,
+        9450.5,
         9175,
         2090,
         1600
       ],
       "body": [
-        9462.5,
+        9450.5,
         9175,
         2000,
         1600
       ],
       "head": [
-        11462.5,
+        11450.5,
         9175,
         90,
         1600
@@ -1740,20 +2123,20 @@
       "southPassageFromActualLeaf8474": 701,
       "declaredCombinedPositionLoss": 50,
       "bodyDiameter": 600,
-      "remainingPassageAfterLoss": 651,
+      "remainingPassageAfterLoss": 639,
       "maintenance": {
         "translation": [
           0,
           500
         ],
         "whole": [
-          9462.5,
+          9450.5,
           9675,
           2090,
           1600
         ],
         "swept": [
-          9462.5,
+          9450.5,
           9175,
           2090,
           2100
@@ -1777,17 +2160,18 @@
           1100
         ],
         "stageToTemporaryBedGap": 135
-      }
+      },
+      "southPassageFromActualLeaf8486": 689
     },
     "bed4": {
       "whole": [
-        5417.5,
+        5405.5,
         9350,
         2090,
         1500
       ],
       "maxHeadHeight": 700,
-      "westFootGap": 887.5,
+      "westFootGap": 863.5,
       "northBedPassage": 732.5,
       "rearR01PanStageWithPad": [
         3700,
@@ -1924,15 +2308,15 @@
       "groundStairEastWall": {
         "finished": [
           2817.5,
-          4185,
-          130,
-          4752.5
+          4173,
+          154,
+          4776.5
         ],
         "core": [
-          2832.5,
-          4185,
+          2844.5,
+          4173,
           100,
-          4752.5
+          4776.5
         ],
         "scope": "Nonloadbearing100core+15each; whollyoutside1100flight. Bonds to4250return/rearwall, noSouthlandingcutoff."
       },
@@ -1949,34 +2333,34 @@
         "level": "GROUND",
         "host": "protected-west-cross",
         "rough": [
-          2947.5,
-          3832.5
+          2971.5,
+          3820.5
         ],
         "axis": 4250,
         "frameEach": 25,
         "leaf": [
-          830,
+          794,
           44
         ],
         "hinge": [
-          3805,
+          3793,
           4250
         ],
         "opening": "NORTHintoexcludedgallery",
         "closed": [
-          2975,
+          2999,
           4228,
-          830,
+          794,
           44
         ],
         "open": [
-          3783,
+          3771,
           4250,
           44,
-          830
+          794
         ],
         "edgeGapsEach": 2.5,
-        "minimumClearBudget": 791,
+        "minimumClearBudget": 755,
         "performance": "E20minimumreference;classifiedfullassembly/actualgaprequired"
       },
       {
@@ -2033,7 +2417,8 @@
           3247.5
         ],
         "opening": "SOUTHINTOSTUDY",
-        "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim"
+        "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim",
+        "frameDepth": 194
       },
       {
         "id": "GUEST-WC",
@@ -2110,7 +2495,28 @@
           6350
         ],
         "axis": 9300,
-        "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating"
+        "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating",
+        "trial": {
+          "rough": [
+            5450,
+            6350
+          ],
+          "completeFrame": 825,
+          "leaf": [
+            762,
+            44
+          ],
+          "hinge": [
+            9397,
+            6279
+          ],
+          "clear": [
+            5516.5,
+            6283.5
+          ],
+          "net": 767,
+          "status": "IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified"
+        }
       }
     ],
     "internalClosers": "Notautomaticallyrequiredsolelywithindwellinghouse(currentAppendixC5). Noarbitrarycloserremovedfromactuallyclassifiedassembly.",
@@ -2132,6 +2538,103 @@
       "scope": "OutsideprotectedSouthhall; no shared-room leaf, actualstructuralarchwithSTR."
     }
   },
+  "finishRewind": {
+    "status": "EXPLICIT INCOMPLETE27DRY/30WET TRIAL; failed witnesses retained, no adoption.",
+    "passingControl": "49a44045a305ce2ceda397097f7572cd812e10b6",
+    "dry": {
+      "total": 27,
+      "scratch": 10,
+      "float": 10,
+      "finish": 4,
+      "silicatePreparationTerritory": 1,
+      "fitAllowance": 2,
+      "owner": "MAT-INTERIORS Conserv/BEECK source-backed comparison; no thin invented plaster."
+    },
+    "wet": 30,
+    "deltaDry": 12,
+    "scope": "Core axes held except nonloadbearing protected wall moved12E to retain1100flight. Whole furniture/frame/door fit must be rerun, not inherited."
+  },
+  "familyWetTrial": {
+    "westDryFace": 9397,
+    "localBathEndWetFace": 9400,
+    "southWetFace": 3800,
+    "northWetFace": 6400,
+    "eastWetFace": 11567.5,
+    "door": {
+      "rough": [
+        5450,
+        6350
+      ],
+      "completeFrame": 825,
+      "leaf": [
+        762,
+        44
+      ],
+      "hinge": [
+        9397,
+        6279
+      ],
+      "clear": [
+        5516.5,
+        6283.5
+      ],
+      "net": 767,
+      "status": "IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified"
+    },
+    "serviceBand": [
+      11337.5,
+      5800,
+      230,
+      560
+    ],
+    "port": [
+      11432.5,
+      6270
+    ],
+    "column": [
+      11342.5,
+      6180,
+      180,
+      180
+    ],
+    "scope": "One coordinated fixture proposal;230band/200turn support envelope still unresolved. No hole/product/cistern adoption."
+  },
+  "stairFinishRewind": {
+    "raw": [
+      417.5,
+      4432.5,
+      2400,
+      4335
+    ],
+    "finished": [
+      429.5,
+      4432.5,
+      2388,
+      4335
+    ],
+    "retainedWell": 200,
+    "provisionalEqualFlightWidth": 1094,
+    "reference1100NotClaimed": true,
+    "scope": "Outerwest27finish costs12total despite protectedEastwallshift;1094each BEFORE actualrail. STR/IAS actualstair/landing/guard recheck pending."
+  },
+  "principalExtractCassette": {
+    "band": [
+      2370,
+      2850
+    ],
+    "openingLeafHeadMaximum": 2370,
+    "port": [
+      7400,
+      2610,
+      280
+    ],
+    "maximumActualHeadMullionIntrusion": 75,
+    "rawRadialReserve": 100,
+    "finalReserveAfter75": 25,
+    "podUnderside": 2430,
+    "scope": "Selected finite480fixed insulated head cassette. Actual matched OAS frame/usable port/thermal/material/fire assembly unqualified."
+  },
+  "retainedOuterCoreWeatherBudget": 417.5,
   "actions": {
     "method": "Exact Euclidean segment-to-closed-rectangle clearance with a300radius horizontal body proxy. Furniture and finished wall/receiver/post rectangles are obstacles. Ordinary18mm trim is conservatively added to walls/receivers; post trim is excluded from stair-facing side to retain1100flight and reserved18 on roomside. Every segment tested analytically; no sampling gaps. Not an actual-human, door-force, accessible-route or 3D/headroom admission.",
     "witnesses": [
@@ -2154,11 +2657,11 @@
           ],
           [
             3200,
-            3500
+            3485
           ],
           [
             6000,
-            3500
+            3485
           ],
           [
             6000,
@@ -2166,7 +2669,7 @@
           ]
         ],
         "state": "cross fire doors CLOSED",
-        "minimumReserve": 14.5,
+        "minimumReserve": 17.5,
         "controlling": {
           "obstacle": "court-south+18trim",
           "segment": 3
@@ -2200,24 +2703,24 @@
           ],
           [
             3450,
-            3500
+            3485
           ],
           [
             8700,
-            3500
+            3485
           ],
           [
             8700,
-            8740.25
+            8771.25
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 9.75,
+        "minimumReserve": -84.9128083776256,
         "controlling": {
-          "obstacle": "dining-table1200x800",
-          "segment": 6
+          "obstacle": "wetBeamSouthReceiver",
+          "segment": 1
         },
-        "pass": true
+        "pass": false
       },
       {
         "id": "living-seating-rear-stack",
@@ -2258,12 +2761,12 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 14.5,
+        "minimumReserve": -84.9128083776256,
         "controlling": {
           "obstacle": "wetBeamSouthReceiver",
-          "segment": 3
+          "segment": 1
         },
-        "pass": true
+        "pass": false
       },
       {
         "id": "living-north-window1800",
@@ -2284,12 +2787,12 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 14.5,
+        "minimumReserve": -97.5,
         "controlling": {
-          "obstacle": "outer-north+18trim",
-          "segment": 0
+          "obstacle": "wetBeamNorthReceiver",
+          "segment": 1
         },
-        "pass": true
+        "pass": false
       },
       {
         "id": "living-north-window3550",
@@ -2302,20 +2805,20 @@
           ],
           [
             2500,
-            11150
+            11090
           ],
           [
             3100,
-            11150
+            11090
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 15,
+        "minimumReserve": -147.5,
         "controlling": {
-          "obstacle": "family-sofa1900x750",
+          "obstacle": "wetBeamNorthReceiver",
           "segment": 1
         },
-        "pass": true
+        "pass": false
       },
       {
         "id": "kitchen-entry-to-working-aisle",
@@ -2324,30 +2827,30 @@
         "points": [
           [
             8700,
-            8740.25
+            8771.25
           ],
           [
             10200,
-            8740.25
+            8771.25
           ],
           [
             10200,
-            10616.25
+            10641.25
           ],
           [
-            8350,
-            10616.25
+            8250,
+            10641.25
           ],
           [
-            8350,
-            11250
+            8250,
+            11235
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 9.75,
+        "minimumReserve": 17.5,
         "controlling": {
-          "obstacle": "rear-east+18trim",
-          "segment": 0
+          "obstacle": "outer-north+18trim",
+          "segment": 3
         },
         "pass": true
       },
@@ -2358,7 +2861,7 @@
         "points": [
           [
             10200,
-            8740.25
+            8771.25
           ],
           [
             10200,
@@ -2366,9 +2869,9 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 9.75,
+        "minimumReserve": 2.5,
         "controlling": {
-          "obstacle": "rear-east+18trim",
+          "obstacle": "outer-north+18trim",
           "segment": 0
         },
         "pass": true
@@ -2380,11 +2883,11 @@
         "points": [
           [
             10200,
-            8740.25
+            8771.25
           ],
           [
             10800,
-            8740.25
+            8771.25
           ],
           [
             10800,
@@ -2392,12 +2895,12 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 9.75,
+        "minimumReserve": -19.09198569638494,
         "controlling": {
-          "obstacle": "rear-east+18trim",
+          "obstacle": "cold-storage",
           "segment": 0
         },
-        "pass": true
+        "pass": false
       },
       {
         "id": "principal-to-protected-stair",
@@ -2406,15 +2909,15 @@
         "points": [
           [
             8700,
-            8740.25
+            8771.25
           ],
           [
             8700,
-            3500
+            3485
           ],
           [
             3450,
-            3500
+            3485
           ],
           [
             3450,
@@ -2426,7 +2929,7 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 14.5,
+        "minimumReserve": 17.5,
         "controlling": {
           "obstacle": "court-south+18trim",
           "segment": 1
@@ -2474,7 +2977,7 @@
         "points": [
           [
             8700,
-            8740.25
+            8771.25
           ],
           [
             8700,
@@ -2528,12 +3031,12 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 2.5,
+        "minimumReserve": -9.5,
         "controlling": {
           "obstacle": "principal-wardrobe",
           "segment": 0
         },
-        "pass": true
+        "pass": false
       },
       {
         "id": "bed4-entry-foot-north",
@@ -2574,7 +3077,7 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 14.5,
+        "minimumReserve": 2.5,
         "controlling": {
           "obstacle": "outer-north+18trim",
           "segment": 4
@@ -2622,7 +3125,7 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 14.5,
+        "minimumReserve": 2.5,
         "controlling": {
           "obstacle": "outer-north+18trim",
           "segment": 0
@@ -2664,7 +3167,7 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 12,
+        "minimumReserve": 0,
         "controlling": {
           "obstacle": "study-cloak-north+18trim",
           "segment": 2
@@ -2690,7 +3193,7 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 14.5,
+        "minimumReserve": 2.5,
         "controlling": {
           "obstacle": "outer-west+18trim",
           "segment": 0
@@ -2698,7 +3201,7 @@
         "pass": true
       }
     ],
-    "pass": true,
+    "pass": false,
     "notTransferred": [
       "Front-single detailed coupled door/window proofs retain their dated B source identities; actual fire doorset still unselected.",
       "Pantry shelf working state needs door CLOSED; not simultaneous with open-leaf transport.",
@@ -2761,15 +3264,15 @@
     ],
     "handleState": "Southface0–45deg; explicit two-hand handover at45; oppositeface45–90.",
     "stepDegrees": 0.1,
-    "sampledBodyReserve": 12.466220396523681,
+    "sampledBodyReserve": 4.187853143415339,
     "sampledArmReserve": 4.855070906388498,
     "sampledReach": 552.9078478020924,
-    "continuousBodyLowerBound": 10.213220396523681,
+    "continuousBodyLowerBound": 1.9348531434153386,
     "continuousArmLowerBound": 1.7820709063884976,
     "continuousReachUpperBound": 555.1953478020924,
     "bodyAt": {
-      "angle": 52.3,
-      "obstacle": "study-chair"
+      "angle": 15,
+      "obstacle": "study-L-return+18trim"
     },
     "armAt": {
       "angle": 0,
@@ -2784,10 +3287,10 @@
       "bodyPath": "H+390u+345n;u=(-cosθ,sinθ),n=(-sinθ,-cosθ),0≤θ≤90deg",
       "gripPath": "H+(leafwidth−50)u+84n",
       "sampleStep": 0.1,
-      "continuousBodyLowerBound": 10.603352257859843,
-      "continuousArmLowerBound": 6.050221583856965,
-      "continuousReachUpperBound": 470.47710363920504,
-      "pass": true,
+      "continuousBodyLowerBound": -25.396647742140157,
+      "continuousArmLowerBound": 5.83327783918463,
+      "continuousReachUpperBound": 441.014733723191,
+      "pass": false,
       "scope": "Finite push-open/reverse-close geometry including25jambs and2.5leaf gaps. Operator R300/forearmR40/600reach proxy only; qualified installed frame/handles/forces/fire assembly not admitted."
     },
     {
@@ -2825,13 +3328,13 @@
       "id": "living3550",
       "body": [
         3100,
-        11150
+        11090
       ],
       "handle": [
         3130,
         11582.5
       ],
-      "planReach": 433.5392139126517,
+      "planReach": 493.41285958110177,
       "maximumPlanReach": 600,
       "requirement": "HingeHIGH to place handleLOW; actual frame/hardware procurement requirement",
       "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
@@ -2840,14 +3343,14 @@
       "level": "GROUND",
       "id": "kitchen8450",
       "body": [
-        8350,
-        11250
+        8250,
+        11235
       ],
       "handle": [
         8030,
         11582.5
       ],
-      "planReach": 461.4718301261736,
+      "planReach": 411.28609264112004,
       "maximumPlanReach": 600,
       "requirement": "Raised1050cill; station sink starts8700",
       "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
@@ -3022,7 +3525,7 @@
     "palette": "Warm mineral masonry, quiet pale opening family, dark pitched ring roof; locally rendered insulated loggia arches are a visible material/shape rewind."
   },
   "qualityCosts": {
-    "dailyLivingKitchenCentreline": 17290.25,
+    "dailyLivingKitchenCentreline": 17351.25,
     "living": "Two original-size sofas retained; separate reading enclosure removed, shared arch loses acoustic privacy.",
     "dining": "Four places, no end seats; separate prep table removed. Actual chair/support/table leg fit is not earned from500plan boxes.",
     "private": "Four bedrooms retained, two compact singles, two rear doubles rotatedEW; principal lowbed/window compatibility and660wardrobe are explicit choices.",
@@ -3030,8 +3533,8 @@
     "height": "Current support trial stillD1300: no approach/eaves reduction credited against prior buried-box comparator.",
     "groundClearFloor": {
       "baseB": 89.7864,
-      "loggia": 78.278675,
-      "loss": 11.507724999999994,
+      "loggia": 77.3428015,
+      "loss": 12.443598500000007,
       "unit": "m2",
       "method": "Exact clipped rectangle union inside12×12shell; excludes outer417.5 walls, full court+wall rectangle, stair footprint, internal wall rectangles/holes, new outside loggia and fixed receivers/post. Furniture not subtracted. Ground entrance doubleheight has a floor; not a void. Comparison includes new protected walls/support footprints, so loss is not solely loggia."
     }
