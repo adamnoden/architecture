@@ -1262,7 +1262,8 @@
         "J-T",
         "D-R",
         "H-M",
-        "B-S"
+        "B-S",
+        "J-P"
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
@@ -1355,7 +1356,8 @@
         "C-G",
         "J-T",
         "H-M",
-        "B-S"
+        "B-S",
+        "J-P"
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
@@ -1450,7 +1452,8 @@
         "H-M",
         "S-W",
         "B-S",
-        "D-R"
+        "D-R",
+        "J-P"
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
@@ -1867,7 +1870,8 @@
         "C-U",
         "J-T",
         "H-M",
-        "B-S"
+        "B-S",
+        "J-P"
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
