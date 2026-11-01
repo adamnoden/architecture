@@ -2,19 +2,22 @@
   "schemaVersion": 1,
   "node": "STR-GROUND",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "abfe3a52-4e9f-44e1-8175-f1b828901d13",
   "holder": {
     "kind": "chatgpt",
     "label": "owner-directed-structural-ground-20261101"
   },
   "claimedAt": "2026-11-01T09:51:11.838Z",
-  "heartbeatAt": "2026-11-01T09:56:12.436Z",
-  "expiresAt": "2026-11-01T11:56:12.436Z",
+  "heartbeatAt": "2026-11-01T10:01:07.152Z",
+  "expiresAt": "2026-11-01T10:01:07.152Z",
   "branch": "work/str-ground-20261101",
   "checkpoint": {
-    "evidence": "PR1205 sources on original current main, two authored STR source files, interim P0 foundation option reduction; STR-GROUND deliberately remains planned.",
-    "next": "Native exact-head CI and canonical merge-check, merge expected-head, release handoff; source-backed grid and 1:10 sections remain to be developed."
+    "evidence": "PR1205 merged as 2e48e9763d0dfb09a31fdba37666336ee26d30b4, validated full exact-head CI and native STR-GROUND publication preflight run 41295268857. P0 options/source constraints recorded, no site engineering acceptance.",
+    "next": "STR-GROUND remains planned: build source-bound pile/grid plan and representative 1:10 outer/court sections, three-axis service and tree-constrained approach and sensitivity trials, then final comparative pre-site closure.",
+    "blocker": "No plotted site strata, soil heave, root survey, ground-water or real bearing evidence; no dimensioned source-bound grid and sections yet."
   },
-  "pr": 1205
+  "pr": 1205,
+  "releasedAt": "2026-11-01T10:01:07.152Z",
+  "releaseReason": "handoff"
 }
