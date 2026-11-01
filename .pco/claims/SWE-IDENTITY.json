@@ -1,20 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "SWE-IDENTITY",
-  "generation": 1,
+  "generation": 2,
   "state": "claimed",
-  "leaseId": "d9c735cb-01bd-4748-a8da-d604accb1c26",
+  "leaseId": "6f37c5d0-c6bb-4166-9980-c5c8b0f04151",
   "holder": {
-    "kind": "codex",
-    "label": "swe-1174-identity"
+    "kind": "chatgpt",
+    "label": "swe-main-reconciliation-20261101"
   },
-  "claimedAt": "2026-10-31T20:18:15.654Z",
-  "heartbeatAt": "2026-10-31T20:46:45.254Z",
-  "expiresAt": "2026-10-31T21:46:45.254Z",
+  "claimedAt": "2026-11-01T09:15:02.921Z",
+  "heartbeatAt": "2026-11-01T09:15:02.921Z",
+  "expiresAt": "2026-11-01T12:15:02.921Z",
+  "branch": "work/swe-recovery-20261101",
   "checkpoint": {
-    "evidence": "Identity source b7a903f passed full exact-head CI and historical owner proof; all four implementation sources now preserved in remote PRs for shared integration.",
-    "next": "Integrate all nine fixes into PR 1180; validate combined exact head, run four canonical merge checks, merge and release."
+    "evidence": "Owner-directed recovery of four SWE packets; prior exact-head CI passed on PR #1180 but merged main now conflicts in generated projections only.",
+    "next": "Construct source-preserving merged branch from latest main plus SWE reviewed blobs; open replacement PR, validate exact head and run four fresh canonical merge-checks; expected-head merge and release."
   },
-  "branch": "work/swe-identity-1174",
-  "pr": 1180
+  "predecessor": {
+    "leaseId": "d9c735cb-01bd-4748-a8da-d604accb1c26",
+    "generation": 1,
+    "branch": "work/swe-identity-1174",
+    "pr": 1180,
+    "checkpoint": {
+      "evidence": "Identity source b7a903f passed full exact-head CI and historical owner proof; all four implementation sources now preserved in remote PRs for shared integration.",
+      "next": "Integrate all nine fixes into PR 1180; validate combined exact head, run four canonical merge checks, merge and release."
+    }
+  },
+  "recoverySource": {
+    "leaseId": "d9c735cb-01bd-4748-a8da-d604accb1c26",
+    "generation": 1,
+    "branch": "work/swe-identity-1174",
+    "pr": 1180,
+    "checkpoint": {
+      "evidence": "Identity source b7a903f passed full exact-head CI and historical owner proof; all four implementation sources now preserved in remote PRs for shared integration.",
+      "next": "Integrate all nine fixes into PR 1180; validate combined exact head, run four canonical merge checks, merge and release."
+    }
+  }
 }
