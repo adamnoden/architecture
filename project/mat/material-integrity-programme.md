@@ -62,6 +62,8 @@ Historical holds preserve the old source identities and technical learning. Exis
 
 - [Installed glazing: core, support and weather joint](envelope-glazing-alternatives.md) — completed bounded comparison ranks non-laminated FINEO as the conditional insulated candidate and single glazing/traditional bedding as the simple control; rejects documented Spacia/PIB and synthetic installation examples under the default policy. Current DTA/ETA, installed-versus-packaging constituents and three real-pane grid sensitivities distinguish support, safety and energy duties. No product, facade change, exception or broad envelope closeout is selected.
 
+- [Cold metal roof, complete functions and the wall head](envelope-cold-metal-roof.md) — compares the unbacked zinc/open-board challenger with complete warm-zinc, copper and discrete-covering controls. Insulation-side weather protection and warm-side air/vapour duties remain explicit; a 200 mm insulation probe exposes about 50 mm wall-head depth deficit before omitted functions. Source wording differences and unknown interlayer bonds prevent a false membrane-free claim. No roof, exception or envelope closeout is selected.
+
 ## Primary-source reconnaissance, accessed 30 October 2026
 
 The following observations bound the initial design work. They are not procurement recommendations or a complete lifecycle assessment.
