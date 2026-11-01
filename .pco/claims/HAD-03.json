@@ -9,8 +9,8 @@
     "label": "issue-comment-6558099791"
   },
   "claimedAt": "2026-11-01T12:43:47.000Z",
-  "heartbeatAt": "2026-11-01T12:43:47.000Z",
-  "expiresAt": "2026-11-01T13:28:47.000Z",
+  "heartbeatAt": "2026-11-01T12:57:19.000Z",
+  "expiresAt": "2026-11-01T13:42:19.000Z",
   "branch": "work/mvb-chat-6558099791",
   "predecessor": {
     "leaseId": "c6afe8b9-939f-40a1-8edf-eddd2d2602ca",
@@ -33,5 +33,11 @@
       "next": "Require exact-head full CI and source-regeneration test PASS; native live-lease merge-check against current main and head, expected-head merge, release then helper cleanup.",
       "blocker": "No accepted B/D site levels, structural portal/threshold assemblies, water head or independently harmless N/E discharge; HAD-03 remains planned."
     }
+  },
+  "pr": 1213,
+  "checkpoint": {
+    "evidence": "PR1213 head 6f584233: controlled shallow pan/outlet free-grade sensitivity, generated SVG+JSON, deterministic drawing test and HAD/RWT handoff; full CI 41308734847 running.",
+    "next": "Verify full exact-head CI; run fresh native lease/head preflight after CI; expected-head merge; release and retire preflight helper.",
+    "blocker": "HAD-03 remains planned: actual door/wall first-harm level, supported local N/E passages, site receiving levels and full-duty relief unproven."
   }
 }
