@@ -9,9 +9,9 @@
     "label": "zerg2-s02-inventory"
   },
   "claimedAt": "2026-11-01T19:52:49.569Z",
-  "heartbeatAt": "2026-11-01T20:46:18.828Z",
-  "expiresAt": "2026-11-01T21:31:18.828Z",
-  "branch": "work/zerg2-s02-inventory",
+  "heartbeatAt": "2026-11-01T20:50:32.893Z",
+  "expiresAt": "2026-11-01T21:35:32.893Z",
+  "branch": "work/zerg3-services-interiors-20261101",
   "predecessor": {
     "leaseId": "a17ca040-a77b-4229-8273-15b4964bf355",
     "generation": 7,
@@ -29,9 +29,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1231 remote4b7294c5d6b7a7af896274315f6243a25a3220b8 tree28ea31b40a37a4ede52c3625a7f149aa1763fb34; sharedDrop JSONblob4680446018e2e530caf09e29bd8c90cbe26d3e5c. Finite collector and320arch, single T/A/B interface, full20panel layers, five SVGs rendered. Source/output/diff checks pass; independent access QA reports only final wording delta corrected.",
-    "next": "Root/access integrate with consuming interiors one-way interface; exact combined-head CI and per-node preflight; release after verified merge.",
-    "blocker": "Reference development only; actual product/structure/material/physical selection remains unaccepted. Wider MAT-SERVICES node stays planned."
+    "evidence": "Shared PR1232 head56db74debbd796894e9e15d79c5b3ed202369e18 tree04c9f3ec20fecb8da36873ffd827e83b7c21f843 preserves explicit services4b7294c5 and interiors source parents. Access independently verified fresh-main combined reproduction and actual renders; exact canonical shared JSON46804460 retained. Commander bounded review passed.",
+    "next": "Sole CI observer access reports exact-head result; root runs both fresh per-node merge preflights and expected-head merge; verify then release.",
+    "blocker": "CI and root final preflights pending. No technical/material/physical acceptance or MAT lifecycle closure."
   },
-  "pr": 1231
+  "pr": 1232
 }
