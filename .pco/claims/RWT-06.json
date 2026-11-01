@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 20,
-  "state": "released",
-  "leaseId": "3e29a531-eb41-4c6d-ae4e-e033bcf7aaeb",
+  "generation": 21,
+  "state": "claimed",
+  "leaseId": "5ded4cf2-206c-4922-9ab1-aba902031d2a",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6556166287"
+    "label": "issue-comment-6556544021"
   },
-  "claimedAt": "2026-11-01T09:34:46.000Z",
-  "heartbeatAt": "2026-11-01T09:45:23.000Z",
-  "expiresAt": "2026-11-01T09:45:23.000Z",
-  "branch": "work/mvb-chat-6556166287",
+  "claimedAt": "2026-11-01T10:10:21.000Z",
+  "heartbeatAt": "2026-11-01T10:10:21.000Z",
+  "expiresAt": "2026-11-01T10:55:21.000Z",
+  "branch": "work/mvb-chat-6556544021",
   "predecessor": {
-    "leaseId": "c9511c0e-98d6-4364-9f1d-3155ae1fa7fc",
-    "generation": 19,
-    "branch": "work/swarm-782cae-worker-two-next",
+    "leaseId": "3e29a531-eb41-4c6d-ae4e-e033bcf7aaeb",
+    "generation": 20,
+    "branch": "work/mvb-chat-6556166287",
+    "pr": 1201,
     "checkpoint": {
-      "evidence": "Read-only verification against accepted main b3a11fa79906619e4d5889fc79c1fc73cb8f2a28 confirms the generation-18 evidence boundary. PR #1160 and existing court/threshold/outer-west-renewal studies already cover the available envelope, inward-pull and retained-body comparisons. No materially distinct witness, source change, feature branch, PR or shipment was earned.",
-      "next": "Re-enter when a matched current AWPT-6454+ outdoor jack/wheel/basket/control/deployment layout with a located task and actual support route is available, or a matched W1/W2/support/joint-release assembly and required site datums are supplied. Preserve predecessor evidence and do not repeat unchanged generic comparisons.",
-      "blocker": "Actual machine contacts, floor support/paver conditions and matched W1/W2 release geometry remain unbound. An indoor 1.75 x 1.55 deployment lead cannot qualify the current 3.0 x 2.8 outdoor comparison. The limitation is missing required evidence, not a publication or transport failure."
+      "evidence": "PR1201 captures RWT-06 topological negative disposition and architectural N/E egress redesign; RWT-06 lifecycle deliberately remains planned.",
+      "next": "Full exact-head CI and canonical merge-check; merge and retain RWT-06 as planned for redesigned source-backed section; release this generation as handoff."
     }
   },
   "recoverySource": {
-    "leaseId": "c9511c0e-98d6-4364-9f1d-3155ae1fa7fc",
-    "generation": 19,
-    "branch": "work/swarm-782cae-worker-two-next",
+    "leaseId": "3e29a531-eb41-4c6d-ae4e-e033bcf7aaeb",
+    "generation": 20,
+    "branch": "work/mvb-chat-6556166287",
+    "pr": 1201,
     "checkpoint": {
-      "evidence": "Read-only verification against accepted main b3a11fa79906619e4d5889fc79c1fc73cb8f2a28 confirms the generation-18 evidence boundary. PR #1160 and existing court/threshold/outer-west-renewal studies already cover the available envelope, inward-pull and retained-body comparisons. No materially distinct witness, source change, feature branch, PR or shipment was earned.",
-      "next": "Re-enter when a matched current AWPT-6454+ outdoor jack/wheel/basket/control/deployment layout with a located task and actual support route is available, or a matched W1/W2/support/joint-release assembly and required site datums are supplied. Preserve predecessor evidence and do not repeat unchanged generic comparisons.",
-      "blocker": "Actual machine contacts, floor support/paver conditions and matched W1/W2 release geometry remain unbound. An indoor 1.75 x 1.55 deployment lead cannot qualify the current 3.0 x 2.8 outdoor comparison. The limitation is missing required evidence, not a publication or transport failure."
+      "evidence": "PR1201 captures RWT-06 topological negative disposition and architectural N/E egress redesign; RWT-06 lifecycle deliberately remains planned.",
+      "next": "Full exact-head CI and canonical merge-check; merge and retain RWT-06 as planned for redesigned source-backed section; release this generation as handoff."
     }
-  },
-  "pr": 1201,
-  "checkpoint": {
-    "evidence": "PR1201 captures RWT-06 topological negative disposition and architectural N/E egress redesign; RWT-06 lifecycle deliberately remains planned.",
-    "next": "Full exact-head CI and canonical merge-check; merge and retain RWT-06 as planned for redesigned source-backed section; release this generation as handoff."
-  },
-  "releasedAt": "2026-11-01T09:45:23.000Z",
-  "releaseReason": "handoff"
+  }
 }
