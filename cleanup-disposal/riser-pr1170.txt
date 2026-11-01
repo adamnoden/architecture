@@ -1,0 +1,6 @@
+Disposal of work/swarm-2900-next-20261031 after verified integration through PR #1170.
+Original head: 0a1e6e8d4804a6d77b1f58b4736579dc48b761aa
+Accepted main merge: 899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b
+Accepted tree: 50158c3bb7c3b26102df235b91efc59956d29592 (exact full-CI tree).
+Original source head and both STR/IAS sources are ancestors of accepted main. STR-HOUSE generation7 and IAS-03 generation12 are released. Fresh runtime claims6ac84f8d show no current claim points to the old branch.
+Marker-only disposal targets delete-me for automatic source-ref deletion. No architectural change enters main.

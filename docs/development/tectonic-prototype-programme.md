@@ -327,8 +327,3 @@ Pattern promotion should require the evidence appropriate to the claim, not only
 A Reference House selection decision never raises general pattern evidence or maturity by itself.
 
 Rejection is a successful research result. House Kernel should survive the failure of any particular implementation.
-## Current-house applicability repair
-
-The owner-directed refurbishment plan adds the self-service `PHY-APPLICABILITY` packet after HRS-BASELINE and BCR-PREFLIGHT. Reconcile the existing P03/P04 briefs and protocols against current selected geometry, datums, interfaces and their precise claims. Retain historical specimens as evidence for their actual configurations. Identify which representative geometry must change, what competent input is required before a meaningful test, and whether a conventional fallback removes the need. Record `project/phy/current-house-prototype-applicability.md`.
-
-Under the 31 October development policy, [PHY-03-ENGINEERING](../../project/phy/physical-validation-programme.md#phy-03-engineering--internal-development-contract) is a self-service internal research/calculation study after that preparation. Competent structural/specimen acceptance remains separate under ER-STR-01 / EPR-RH11; PHY-04 still requires actual physical evidence. A rewritten protocol is not a test result; optional PHY-01/02 remain held. Only concrete material obligations earn further hard dependencies. Source authority and execution allocation are in `project/refurbishment-plan.md` and PCO.

@@ -40,7 +40,7 @@ Metamorphosis is not itself a compiler primitive. The software checks a bounded 
 
 ## Canonical Reference House compile
 
-The retained Reference House technical fixture is compiled through the canonical Reference House system path rather than through parallel authored projections. Its RH-C/CH proof scope is distinct from the later Georgian house revision; the [CCR closeout](../project/ccr/ccr-identity-result.md#consumer-audit-and-disposition) records that applicability boundary.
+The controlled Reference House source is compiled through the canonical Reference House system path rather than through parallel authored projections.
 
 Human-readable semantic inspection outputs are emitted under [`../docs/reference-house/generated/`](../docs/reference-house/generated/). The output contract and deterministic renderers live under `compiler/reference-house/output/`, and the generated manifest binds successor artefacts to compile/render identities.
 
@@ -70,7 +70,7 @@ The computational conceptual model and its limits are documented in [`../docs/co
 
 ## Targets, jurisdiction and deployment
 
-The [bounded deployment compiler](dpl/README.md) implements obligation/evidence orchestration, authored-candidate conformance and coverage/readiness checks. The [DPL programme](../project/dpl/deployment-programme.md) owns its accepted scope, conditional exploration and deferred real-site verification.
+The separate DPL programme is establishing how external targets, jurisdiction, site evidence, scenarios and deployment results should relate to the controlled architectural proposition.
 
 Nothing in this README implies that a release-grade site/jurisdiction deployment compiler already exists. Such capability should enter `compiler/` only when the owning DPL/evidence work creates a concrete deterministic obligation worth implementing.
 

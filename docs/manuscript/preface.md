@@ -42,11 +42,33 @@ Standardisation is often imagined as the enemy of variety. At the right layer it
 
 * * *
 
+Architecture has done this before. Joseph Paxton came to the Crystal Palace from gardens and glasshouses. As head gardener at Chatsworth he had spent years working with light, ventilation, condensation, drainage, structure, repeatable panes, ironwork and rapid assembly. His conservatories were not sketches for an exhibition hall in the ordinary sense. They were another building culture.
+
+In 1850, with the Great Exhibition approaching and the available schemes proving unsatisfactory, Paxton transferred that culture into a problem of very different scale.
+
+The Crystal Palace was a system of standardised, prefabricated iron, timber and glass components assembled with remarkable speed. The V&A records that the building was completed roughly seven months after construction began. After the exhibition it was dismantled, and its components were used in the larger Crystal Palace at Sydenham.[4]
+
+A house is not an exhibition hall, and a temporary iron-and-glass building is not evidence that domestic architecture should become a kit of parts. The narrower lesson is more useful. Paxton carried knowledge across a professional boundary because he understood another construction culture well enough to recognise its principles in a new problem.
+
+Paxton's authority as an outsider came from practical experience.
+
+The result also matters because it became architecture. Technical rationality is no excuse for ugliness, and manufacture need not produce provisionality. A coherent construction system can result in a building whose architectural presence exceeds the logic by which it was assembled.
+
+That requirement applies throughout this book. Visible services are not virtuous merely because they are accessible. An access panel is not an architectural language. A room does not become better because its floor can be opened. The technical condition still has to become architecture.
+
+* * *
+
 I am not an architect. That fact requires neither apology nor romanticisation. Architecture contains knowledge that is difficult to see from outside it. Details that first appear irrational may embody lessons purchased through fire, water, movement, labour, litigation and failure. A regulation that frustrates a clean diagram may exist because somebody has already experienced the consequence of the simpler answer. A builder's conservative preference may reflect hundreds of repetitions of a detail that works. A plastered wall, properly made in the right place, can be beautiful, robust and extremely difficult to improve upon.
 
 An outsider can therefore mistake accumulated intelligence for inertia. Familiarity creates the opposite risk: a choice can stop looking like a choice.
 
+Settled disciplines accumulate both wisdom and sediment. Trades inherit scopes. Contracts acquire conventions. Manufacturers make products for the details people already draw, and people draw those details because the products exist. Regulation, procurement and training settle around the arrangement until it becomes difficult to distinguish the convention from the underlying physical problem.
+
+Distance can occasionally help an outsider remain surprised by familiar arrangements. It is reasonable to find it strange that a component expected to be replaced several times may be buried behind a surface intended to last much longer; that routine electrical change can require cutting masonry; or that access is sometimes declared complete when the component can be seen but not withdrawn.
+
 Surprise proves nothing. It opens the question. The responsibility then reverses: if the proposed alternative cannot survive the accumulated knowledge of the profession, it should die.
+
+Convention deserves respect, not immunity; novelty deserves scrutiny, not admiration. Those positions belong together. A common detail comes with serious advantages: trades understand it, suppliers support it, building control recognises it and generations of failure have already exposed many of its weaknesses. Common use is evidence that an arrangement can work. It is not proof that the arrangement is inevitable.
 
 A new detail earns nothing by being new. If a removable floor is noisy, it has failed. If a demountable wall feels hollow and temporary, it has failed. If an ingenious service interface depends on a vanished proprietary clip twenty years from now, it has failed. If a custom structural connection creates ambiguity where an ordinary certified hanger would work, the hanger should win. The comparison must be against excellent conventional construction, not a caricature of it.
 
@@ -78,7 +100,7 @@ Things that exist deserve to be understood before they are rejected. Old things 
 
 What is not useful is refusing the question because the arrangement has become familiar.
 
-I am interested in the moment when something ordinary becomes strange again: when the corridor returns to being a line somebody chose to draw; when a kitchen becomes bodies moving through space rather than a list of appliances; when the container becomes an agreement at its corners.
+I am interested in the moment when something ordinary becomes strange again: when the corridor returns to being a line somebody chose to draw; when a kitchen becomes bodies moving through space rather than a list of appliances; when the container becomes an agreement at its corners; when a gardener recognises the logic of a glasshouse in a monumental building.
 
 Expertise is needed to test what follows from that reconsideration. The propositions in this book therefore move from argument to pattern, drawing and prototype. Some will survive; others should not. Where the conventional answer proves better, it should remain.
 
@@ -88,7 +110,7 @@ This book is an attempt to give change its own architecture: not a house that ch
 
 * * *
 
-The name **Ovid’s House** came late to this enquiry. Ovid’s *Metamorphoses* is a poem of altered forms, but the connection is not that Roman poetry contains a concealed theory of building. It does not. The useful affinity is narrower: transformation repeatedly makes identity a question. What has changed, what remains, and when has one thing become another?[4]
+The name **Ovid’s House** came late to this enquiry. Ovid’s *Metamorphoses* is a poem of altered forms, but the connection is not that Roman poetry contains a concealed theory of building. It does not. The useful affinity is narrower: transformation repeatedly makes identity a question. What has changed, what remains, and when has one thing become another?[5]
 
 Architecture usually meets that question without magic. A boiler is replaced. Wiring is renewed. A window reaches the end of its useful life. A room accepts another use. Roof coverings, controls and finishes disappear while structure and spatial order continue. Over a sufficiently long life, a house can become materially different from the thing first handed over while remaining, in ordinary architectural and cultural terms, the same house.
 
@@ -106,5 +128,6 @@ Permanence, then, need not mean stasis. A house may remain itself not by refusin
 
 [3] Smithsonian Magazine, “The Now-Ubiquitous Shipping Container Was an Idea Before Its Time”; International Organization for Standardization, ISO/TC 104, *Freight containers*. ISO records the committee's creation in 1961 and the publication of its first freight-container standard in 1968.
 
+[4] Victoria and Albert Museum, “The foundation of the V&A's Collections: the Great Exhibition of 1851”; Historic England's Crystal Palace records; Chatsworth, “Joseph and Sarah Paxton: an Introduction”. The V&A traces Paxton's exhibition design to his earlier glasshouse work and records the extensive use of standardised prefabricated parts; Historic England records the dismantling and reuse of components at Sydenham.
 
-[4] Llewelyn Morgan, *Ovid: A Very Short Introduction*, ch. 4, “Metamorphoses” (Oxford University Press, 2020); Alessandro Barchiesi, “Reading Metamorphosis in Ovid’s Metamorphoses”, in Alison Sharrock, Daniel Möller and Mats Malm (eds.), *Metamorphic Readings* (Oxford University Press, 2020); Marie Louise von Glinski, *Simile and Identity in Ovid’s Metamorphoses* (Cambridge University Press, 2012).
+[5] Llewelyn Morgan, *Ovid: A Very Short Introduction*, ch. 4, “Metamorphoses” (Oxford University Press, 2020); Alessandro Barchiesi, “Reading Metamorphosis in Ovid’s Metamorphoses”, in Alison Sharrock, Daniel Möller and Mats Malm (eds.), *Metamorphic Readings* (Oxford University Press, 2020); Marie Louise von Glinski, *Simile and Identity in Ovid’s Metamorphoses* (Cambridge University Press, 2012).

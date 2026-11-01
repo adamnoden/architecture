@@ -1,0 +1,38 @@
+# Temporary read-only native preflight; dispose into delete-me after source merge.
+name: RWT-METALS publication preflight PR1198
+on:
+  push:
+    branches: [work/rwt-preflight-1198]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - name: Check out exact RWT source branch
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6556032783
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Guard exact candidate head
+        shell: bash
+        run: test "$(git rev-parse HEAD)" = "fa7f71270b6f799a1b5761869b01b819e46d25b3"
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Native current-main and exact-head publication preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm run control:merge-check -- RWT-METALS \
+            --lease-id aeca7c76-d95c-45c0-95f0-35f23f713f3f \
+            --generation 17 \
+            --branch work/mvb-chat-6556032783 \
+            --head fa7f71270b6f799a1b5761869b01b819e46d25b3 \
+            --format text

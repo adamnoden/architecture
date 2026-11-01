@@ -4,7 +4,7 @@ import { extname, posix, resolve } from 'node:path'
 
 import { fetchPublicationFonts, type PublicationFontSlot } from '../fonts.js'
 import { publicationFigurePlacements } from '../figures.js'
-import { publicationPlatePlacements } from '../plates-current.js'
+import { publicationPlatePlacements } from '../plates.js'
 import { publicationEntries, type PublicationEntry } from '../publication.js'
 
 export type ProductionTypographyContext = {

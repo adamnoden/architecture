@@ -46,6 +46,6 @@ These distinctions keep the set selective and preserve the difference between a 
 
 The [Pattern Model and Authoring Contract](language-model.md) defines pattern identity, evidence, relationships and admission. The [Service Topology — Generative Sequence](service-topology-sequence.md) shows the most mature current example of patterns being invoked in a consequential design order without turning the graph into a universal procedure.
 
-The [historical Pattern Occurrence Register](../reference-house/pattern-occurrence-register.md) records predecessor selections. Current-house occurrences require rechecking against [Current House Basis](../reference-house/current-house-basis.md); earlier selections do not transfer automatically. Use in the house does not increase a pattern's general evidence or maturity.
+The Reference House records the patterns that materially shape it in [Pattern Selection](../reference-house/pattern-occurrence-register.md). Use in that house does not increase a pattern's general evidence or maturity.
 
 The active list above reflects the current canonical set and evidence status.

@@ -1,6 +1,6 @@
 # Reference House Design Programme
 
-**Current-house supersession:** [Current House Basis](../reference-house/current-house-basis.md) owns the accepted RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02 house. The execution-state list and gate narratives below record the predecessor RH-02–RH-11 programme; their uses of “current”, low-slope roof, +3300 mm and selected services do not govern the successor. The five [external review briefs](../reference-house/external-review-brief.md) have since been rewritten against the accepted house and physical findings; [EPR applicability](../../project/epr/current-house-review-applicability.md) records their exact scope. They remain unissued and without competent responses. Source design obligations and prototype applicability remain open under their current owners.
+**Current-house supersession:** the owner-selected [Georgian re-plan](../reference-house/georgian-replan.md) develops the square-house programme and a west stair to attic. New project designs exclude flat and very-low-slope roofs. The RH-08/RH-10 low-slope roof and dimensions below remain historical technical coordination, not the new architectural brief. Full successor technical migration remains open.
 
 
 **Status:** active programme control  
@@ -8,7 +8,7 @@
 
 The Reference House is the principal integration test for House Kernel. Progress lives in the repository because work may be interrupted repeatedly. Existing geometry has authority only where a later gate explicitly retains it.
 
-## Historical execution state — predecessor RH-11 closeout
+## Current execution state
 
 - **Active work:** `Post-RH-11 — competent external review execution`.
 - **Last closed stage:** `RH-11 — External-review package` — **PASS: issue-ready discipline packages with explicit assumptions, review questions and rewind conditions; no maturity promotion**; canonical pack: [RH-11 External Review Brief](../reference-house/external-review-brief.md).
@@ -221,7 +221,7 @@ If external review is interrupted, commit each received finding and project disp
 
 ---
 
-## RH-11 — Historical external-review preparation — CLOSED PASS
+## RH-11 — External-review package — CLOSED PASS
 
 **Question:** is the coordinated house explicit enough for competent outsiders to attack real assumptions rather than react to a concept?
 

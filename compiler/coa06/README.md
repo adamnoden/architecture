@@ -30,7 +30,7 @@ The first four are SVG because their meaning materially depends on metric positi
 Every successor output carries or is bound to:
 
 - stable artefact ID;
-- current output schema `RH-OUTPUT-1`, owned by [`output/contract.ts`](../reference-house/output/contract.ts);
+- output schema `OH-RH-OUTPUT-1`;
 - renderer version;
 - the canonical `HK-RH-COMPILE-1` compile fingerprint;
 - deterministic SHA-256 content identity in `docs/reference-house/generated/output-manifest.json`.

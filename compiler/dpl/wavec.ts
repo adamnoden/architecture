@@ -1,6 +1,6 @@
-import { sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { compileDeploymentCase } from './compile.js'
 import {
   loadB2InterfaceContracts,
@@ -175,8 +175,8 @@ export const loadWaveCSite = (
 
   const recordPath = `project/dpl/sites/${site.record}`
   const recordText = readText(recordPath)
-  const recordFingerprint = sha256DplSemanticFingerprint({ recordPath, recordText })
-  const indexEntryFingerprint = sha256DplSemanticFingerprint(site)
+  const recordFingerprint = sha256SemanticFingerprint({ recordPath, recordText })
+  const indexEntryFingerprint = sha256SemanticFingerprint(site)
 
   return {
     indexPath,
@@ -277,7 +277,7 @@ export const loadWaveCBoroughTarget = (
     throw new Error(`Borough target ${target.id} does not declare ${borough}; found ${declaredBorough}.`)
   }
 
-  const targetFingerprint = sha256DplSemanticFingerprint(target)
+  const targetFingerprint = sha256SemanticFingerprint(target)
   const runtimeTarget = {
     authorityClass: 'LOCAL_BOROUGH_PLANNING',
     target
@@ -386,6 +386,6 @@ export const compileWaveCDeploymentCase = (
   return {
     ledger,
     composition,
-    compositionFingerprint: sha256DplSemanticFingerprint(composition)
+    compositionFingerprint: sha256SemanticFingerprint(composition)
   }
 }

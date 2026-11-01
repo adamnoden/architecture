@@ -18,13 +18,7 @@ const globalThemes = fullPublication
       resolve(publicationRoot, 'page-furniture.css'),
       resolve(publicationRoot, 'formats', `${format}.css`)
     ]
-  : [
-      resolve(publicationRoot, 'theme.css'),
-      ...(build.mode === 'primer' ? [
-        resolve(workRoot, 'primer-fonts.css'),
-        resolve(publicationRoot, 'primer/theme.css')
-      ] : [])
-    ]
+  : [resolve(publicationRoot, 'theme.css')]
 const divisionIds = new Set(['part-i', 'part-ii', 'part-iii', 'part-iv', 'part-v', 'part-vi'])
 const divisionRectoTheme = resolve(publicationRoot, 'division-recto-entry.css')
 const contentEntries = build.entries.map((entry) => ({
@@ -37,10 +31,8 @@ const hasFrontMatter = build.mode === 'full' || build.mode === 'primer'
 const entries = hasFrontMatter
   ? [
       { path: build.titlePage, title: build.title, rel: 'titlepage' },
-      ...(fullPublication ? [
-        { path: build.imprintPage, title: 'Imprint / provenance' },
-        { path: build.contentsPage, output: 'contents.html', title: 'Contents', rel: 'contents' }
-      ] : []),
+      ...(fullPublication ? [{ path: build.imprintPage, title: 'Imprint / provenance' }] : []),
+      { path: build.contentsPage, output: 'contents.html', title: 'Contents', rel: 'contents' },
       ...contentEntries
     ]
   : contentEntries
@@ -56,7 +48,7 @@ export default defineConfig({
   entryContext: resolve(workRoot, 'source'),
   entry: entries,
   theme: globalThemes,
-  toc: build.mode === 'primer' ? false : {
+  toc: {
     htmlPath: hasFrontMatter ? 'contents.html' : 'index.html',
     title: 'Contents',
     sectionDepth: 1
