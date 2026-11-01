@@ -1,6 +1,6 @@
-import { sha256DplSemanticFingerprint } from './identity-order.js'
 import assert from 'node:assert/strict'
 import { describe, test } from 'node:test'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { loadB2TargetComposition, loadTargetSlice } from './load.js'
 import type { RawTargetSlice } from './model.js'
 import { controlledPlanningTargetIds } from './planning-coverage.js'
@@ -60,7 +60,7 @@ describe('DPL-10F planning strategic/local target identity graph', () => {
     const badLoaded = {
       ...loaded,
       target: target as unknown as RawTargetSlice,
-      targetFingerprint: sha256DplSemanticFingerprint(target),
+      targetFingerprint: sha256SemanticFingerprint(target),
       runtimeTarget: {
         ...loaded.runtimeTarget,
         target: target as unknown as RawTargetSlice
@@ -94,8 +94,8 @@ describe('DPL-10F planning strategic/local target identity graph', () => {
     changed.parentStrategicTargetId = 'ANOTHER-STRATEGIC-TARGET'
 
     assert.notEqual(
-      sha256DplSemanticFingerprint(loaded.target),
-      sha256DplSemanticFingerprint(changed)
+      sha256SemanticFingerprint(loaded.target),
+      sha256SemanticFingerprint(changed)
     )
   })
 

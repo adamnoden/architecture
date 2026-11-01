@@ -56,14 +56,13 @@ export const deriveReferenceHouse = (
 
   const { riserCount, flightRiseGroups } = source.stair.riseTopology.value
   const { going, goingsPerFlight } = source.stair.goingTopology.value
-  const groundFfl = source.levels.groundFfl.value
   const firstFfl = source.levels.firstFfl.value
-  const rise = mm((firstFfl - groundFfl) / riserCount)
+  const rise = mm(firstFfl / riserCount)
   const flightRun = mm(going * goingsPerFlight)
   let accumulatedRises = 0
   const landingDatums = flightRiseGroups.slice(0, -1).map((group) => {
     accumulatedRises += group
-    return mm(groundFfl + accumulatedRises * rise)
+    return mm(accumulatedRises * rise)
   })
   const pitch = deg((Math.atan(rise / going) * 180) / Math.PI)
 

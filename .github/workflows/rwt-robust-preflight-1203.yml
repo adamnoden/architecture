@@ -1,0 +1,37 @@
+# Temporary read-only native preflight for RWT-ROBUSTNESS PR1203.
+name: RWT-ROBUSTNESS publication preflight PR1203
+on:
+  push:
+    branches: [work/rwt-robust-preflight-1203]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - name: Exact source checkout
+        uses: actions/checkout@v5
+        with:
+          ref: work/rwt-robustness-20261101
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Guard exact reviewed head
+        run: test "$(git rev-parse HEAD)" = "9f772d81065d287b8e3551188b79df2bfb124456"
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Current-main, exact-lease native publication preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm run control:merge-check -- RWT-ROBUSTNESS \
+            --lease-id d7e6bf63-98ec-4a5b-ae19-c4db4f25a986 \
+            --generation 1 \
+            --branch work/rwt-robustness-20261101 \
+            --head 9f772d81065d287b8e3551188b79df2bfb124456 \
+            --format text

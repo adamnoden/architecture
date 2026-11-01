@@ -1,6 +1,6 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPLT7LennardAccelerationDisposition } from './dplT7Lennard.js'
 
 export const DPL_T8_SCHEMA_VERSION = 'DPL-T8-LENNARD-SUBSTANTIVE-DISPOSITION-1' as const
@@ -159,7 +159,7 @@ export const DPL_T8_EXPECTED_INPUT_BLOCKER_IDS = [
   'NON_PLANNING:DPL11-COV-ACCESS-STATUS',
   'NON_PLANNING:DPL11-COV-PHYSICAL-FLOOD-WATER',
   'NON_PLANNING:DPL11-COV-SITE-CONTROL'
-].sort((a, b) => compareDplIdentityStrings(a, b)) as readonly string[]
+].sort((a, b) => a.localeCompare(b)) as readonly string[]
 
 const dispositionSpecs: readonly DispositionSpec[] = [
   {
@@ -235,7 +235,7 @@ const dispositionSpecs: readonly DispositionSpec[] = [
 ]
 
 const canonicalStrings = <T extends string>(values: readonly T[]): T[] =>
-  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
+  [...new Set(values)].sort((a, b) => a.localeCompare(b))
 
 const readJson = <T>(path: string): T =>
   JSON.parse(readFileSync(resolve(process.cwd(), path), 'utf8')) as T
@@ -255,7 +255,7 @@ const readAuthorityEvidence = (): { record: T8AuthorityEvidence; fingerprint: st
   }
   const sourceIds = new Set(record.sources.map((source) => source.id))
   if (sourceIds.size !== record.sources.length) throw new Error('DPL-T8 authority evidence has duplicate source ids.')
-  return { record, fingerprint: sha256DplSemanticFingerprint(record), sourceIds }
+  return { record, fingerprint: sha256SemanticFingerprint(record), sourceIds }
 }
 
 const squared = (value: number): number => value * value
@@ -382,8 +382,8 @@ export const composeDPLT8LennardSubstantiveDisposition = (): DPLT8Result => {
       evidenceRefs: canonicalStrings(spec.evidenceRefs),
       sharedDependencyIds: canonicalStrings(spec.sharedDependencyIds ?? [])
     }
-    return { ...payload, fingerprint: sha256DplSemanticFingerprint(payload) }
-  }).sort((a, b) => compareDplIdentityStrings(a.blockerId, b.blockerId))
+    return { ...payload, fingerprint: sha256SemanticFingerprint(payload) }
+  }).sort((a, b) => a.blockerId.localeCompare(b.blockerId))
 
   const countsByDisposition = counts(dplT8Dispositions, records.map((record) => record.disposition))
   const survivingEvidenceClasses = canonicalStrings(
@@ -395,15 +395,15 @@ export const composeDPLT8LennardSubstantiveDisposition = (): DPLT8Result => {
   const dueNowUnresolvedBlockerIds = records
     .filter((record) => record.disposition === 'SURVIVES_DUE_NOW_EXTERNAL_EVIDENCE' || record.disposition === 'UNRESOLVED_AUTHORITY')
     .map((record) => record.blockerId)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
   const futureDueBlockerIds = records
     .filter((record) => record.disposition === 'RECLASSIFIED_FUTURE_DUE')
     .map((record) => record.blockerId)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
   const resolvedBlockerIds = records
     .filter((record) => record.disposition === 'RESOLVED_EXISTING_AUTHORITY')
     .map((record) => record.blockerId)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
 
   const sideSpaceScreening = {
     policyId: 'BROM-P8-SIDE-SPACE' as const,
@@ -430,8 +430,8 @@ export const composeDPLT8LennardSubstantiveDisposition = (): DPLT8Result => {
     controlId: t7.controlId,
     candidateId: t7.candidateId,
     authorityEvidenceFingerprint: authority.fingerprint,
-    candidateFingerprint: sha256DplSemanticFingerprint(candidate),
-    analysisGeometryFingerprint: sha256DplSemanticFingerprint(analysis),
+    candidateFingerprint: sha256SemanticFingerprint(candidate),
+    analysisGeometryFingerprint: sha256SemanticFingerprint(analysis),
     inputBlockerCount: records.length,
     records,
     countsByDisposition,
@@ -448,6 +448,6 @@ export const composeDPLT8LennardSubstantiveDisposition = (): DPLT8Result => {
   return {
     ...resultPayload,
     inputBlockerCount: 10,
-    resultFingerprint: sha256DplSemanticFingerprint(resultPayload)
+    resultFingerprint: sha256SemanticFingerprint(resultPayload)
   }
 }

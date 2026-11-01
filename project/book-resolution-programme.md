@@ -1,14 +1,10 @@
 # Book resolution programme
 
-**State:** BSR structural root complete; current-house refurbishment adds early feasibility and authority repair before final integration
-
-**Date:** 2026-10-29
-
+**State:** BSR structural root complete; IAS/OAS/HAD and MRA-00 unblocked for parallel work  
+**Date:** 2026-10-28  
 **Completed root:** [BSR #940](https://github.com/adamnoden/architecture/issues/940)
 
 This programme records the accepted next major development of *Ovid’s House*: the book now has the six-part reader structure needed to design the missing interior/opening architectural systems and finished house, subject that integrated design to deliberately high moisture-resilience assurance, force the resulting propositions through bounded construction resolution, then synthesize one resolved Reference House before final plate/editorial/publication freeze.
-
-The accepted 12 × 12 m house remains the working architectural basis. The refurbishment addresses conflicting current-house identities, incomplete physical integration, unsupported inherited proof and proportionality; it does not authorise an unrelated architectural redesign.
 
 It is a programme-control map, not an architectural authority source. Each workstream owns its declared problem; existing `PLT`, `PHY`, `EPR`, `DEL`, `EDA` and `PUB` retain their existing responsibilities.
 
@@ -32,25 +28,48 @@ BSR has integrated this topology into the manuscript, navigation and mechanical 
 | `OAS` | Opening Assembly System | #942 | **unblocked / parallel** | selected window/door/threshold cassette and replacement-interface family |
 | `HAD` | House Architectural Design | #943 | **unblocked / parallel** | resolved exterior/interior architecture, materials, joinery, lighting and room language |
 | `MRA` | Moisture Resilience Assurance | #959 | **MRA-00 unblocked; integrated-house assault gated** | whole-house moisture failure model, adversarial obligations and post-BCR assurance closeout |
-| `BCR` | Buildability & Construction Resolution | #944 | early feasibility/comparison; final convergence gated | five physical studies, conventional comparison, shared resolution matrix and reconciled technical closure |
-| `HRS` | House Resolution & Synthesis | #945 | early identity/applicability repair; technical migration and final synthesis gated | one current-house authority chain and resolved design handoff to PLT and Part VI |
+| `BCR` | Buildability & Construction Resolution | #944 | scaffolding ready; substantive convergence gated | construction-resolution matrix, evidence routing and reconciled technical closure |
+| `HRS` | House Resolution & Synthesis | #945 | queued final synthesis gate | one authoritative resolved-house design handoff to PLT and Part VI |
 
-## Dependency and acceptance sequence
+## Dependency graph
 
-The canonical execution DAG is [project control](control/graph.md). This table explains the architectural purpose of its gates; it is not a second live scheduler.
+```text
+BSR #940 — COMPLETE
+       │
+       ├──────── IAS #941 ────────────┐
+       ├──────── OAS #942 ────────────┼────► shared triad integration gate
+       ├──────── HAD #943 ────────────┘                │
+       │                                               │
+       └──────── MRA-00 #959 ── assurance questions ───┘
+                                                       │
+                                      ┌────────────────┼────────────────┐
+                                      ▼                ▼                ▼
+                                   MRA-01           MRA-02           MRA-03
+                                      └────────────────┼────────────────┘
+                                                       ▼
+                                                    MRA-04
+                                                       │
+BCR scaffolding + controlled RH/PLT + available evidence ───────────────┤
+                                                       ▼
+                                                  BCR #944
+                                                       │
+                                                       ▼
+                                                    MRA-05
+                                                       │
+                                                       ▼
+                                                  HRS #945
+                                                       │
+                                              ┌────────┴────────┐
+                                              ▼                 ▼
+                                       final PLT work      Part VI source
+                                              └────────┬────────┘
+                                                       ▼
+                                                 renewed EDA
+                                                       ▼
+                                                    PUB-02
+```
 
-| Stage | Inputs and consequence |
-|---|---|
-| Current authority and inventory | `HRS-BASELINE` repairs the accepted house's current/historical applicability; `BCR-SCAFFOLD` establishes one obligation matrix. Neither waits for final selected design. |
-| Parallel feasibility | `BCR-STRUCTURE`, `BCR-WET`, `BCR-SERVICES`, `BCR-WATER` and `BCR-OCCUPATION` each depend on those two foundations. They inspect current candidate geometry and feed physical constraints to existing design owners. `BCR-PROPORTIONALITY` runs independently from the same foundations. |
-| Early coordination | `BCR-PREFLIGHT` reconciles the five studies and feeds their constraints/findings to `TRIAD-GATE`. A completed adverse study is not a passed architectural design. |
-| Selected house | IAS/OAS/HAD selection and the shared ROF/RWT/HAD roof-water gate feed `TRIAD-GATE`; material preflight conflicts require explicit treatment before adoption. |
-| Assurance and technical applicability | MRA-01/02/03 → MRA-04 attacks the selected house. In parallel, `HRS-TECHNICAL` follows `TRIAD-GATE` and `CCR-IDENTITY` to reconcile current-house supported computational claims and explicit unknowns. |
-| Final construction convergence | `BCR-CONVERGENCE` consumes TRIAD, MRA-04, HRS-TECHNICAL and the conventional comparison. It verifies actual dispositions and rechecks affected physical studies. Referral alone is not resolution. |
-| Final synthesis | MRA-05 checks post-BCR moisture consequences; HRS-SYNTHESIS reconciles the final house, technical applicability, Part VI and PLT handoffs. |
-| Publication | Final PLT integration/freeze → renewed EDA → PUB-02 final content/manufacture gate. Content-independent object preparation may continue separately. |
-
-Targeted PHY / EPR / DEL obligations are admitted only where the selected design, MRA or BCR earns a concrete evidence need. Self-service preparation and evidence processing remain distinct from manual competent reviews, physical tests and external commitments.
+Targeted PHY / EPR / DEL obligations are admitted only where the selected design, MRA or BCR earns a concrete evidence need.
 
 ## Project-control overlay
 
@@ -70,8 +89,6 @@ MRA-00 may publish moisture questions and invariants into those streams, but MRA
 
 The shared Wave-0.5 interface freeze, pairwise reconciliation work and triad integration gate recorded in IAS #941, OAS #942 and HAD #943 remain the substantive concurrency controls. PCO represents those gates; it does not replace them.
 
-The early BCR studies test candidates and representative physical relationships; they do not depend on completed IAS/HAD/ROF/RWT selection. This prevents a cycle in which feasibility cannot constrain a design until after it is frozen. Existing owners make the design decisions and explicit source rewinds. BCR-PREFLIGHT records shared constraints; TRIAD accepts only a design that has addressed its material findings. A later source change reopens affected applicability, not every unrelated completed study.
-
 ## Moisture-resilience gate
 
 [MRA #959](https://github.com/adamnoden/architecture/issues/959) is deliberately cross-cutting rather than another local water-detail stream.
@@ -82,7 +99,7 @@ The integrated selected house therefore passes through:
 
 **MRA-01 external water + MRA-02 internal water + MRA-03 vapour/drying → MRA-04 whole-house adversarial matrix → BCR technical resolution → MRA-05 post-BCR closeout.**
 
-`BCR-SCAFFOLD` may proceed independently; the early BCR water/wet studies provide candidate constraints without replacing MRA. `BCR-CONVERGENCE` must consume MRA-04 rather than treating moisture as a generic matrix row. Final HRS-SYNTHESIS waits for MRA-05 so architectural synthesis cannot inherit an undisclosed moisture debt. Early HRS-BASELINE and intermediate HRS-TECHNICAL retain their separate purposes and dependencies.
+`BCR-SCAFFOLD` may proceed independently. `BCR-CONVERGENCE` must consume MRA-04 rather than treating moisture as a generic matrix row. HRS waits for MRA-05 so the final architectural synthesis cannot inherit an undisclosed moisture debt.
 
 ## Authority boundaries
 
@@ -91,8 +108,8 @@ The integrated selected house therefore passes through:
 - **OAS** owns opening/cassette architecture, not facade composition or competent envelope/security/fire validation.
 - **HAD** owns visible architectural design, not the engineering mechanics of IAS/OAS.
 - **MRA** owns whole-house moisture failure modelling and assurance criteria; it does not replace envelope/building-physics/MEP engineering or site evidence.
-- **BCR** owns early physical feasibility/comparison and final construction-resolution coordination; existing design owners retain selection, while professional judgement and physical proof remain external evidence roles.
-- **HRS** owns current-house identity/applicability repair, bounded selected-house technical migration and post-BCR/post-MRA synthesis; it does not replace compiler correctness work, competent engineering, final plates or publication manufacture.
+- **BCR** owns construction-resolution coordination and evidence routing, not professional judgement or physical proof.
+- **HRS** owns post-BCR/post-MRA architectural synthesis, not final plate production or publication manufacture.
 - **PLT** remains the publication drawing/plate owner. It must not be asked to invent unresolved architecture.
 - **PHY** remains the owner of physical validation.
 - **EPR** remains the owner of competent external/professional review.
@@ -114,23 +131,14 @@ A downstream technical problem is classified before adding complexity:
 
 No workstream may promote internal plausibility into engineering adequacy, physical proof, statutory approval or real-site compatibility.
 
-For final BCR/HRS acceptance, **resolved at stated scope**, **eliminated by adopted change**, **bounded residual** and **routed-pending/blocked** are different states. BCR's exit rule owns their exact meanings. A bounded residual withholds the unearned claim and cannot conceal an unresolved material architectural fit, route, topology or safety dependency. Naming a future reviewer or test does not discharge an obligation. Admit a hard manual-evidence blocker only when that concrete dependency requires it; otherwise continue independent work or adopt a substantiated simplification.
-
-Each materially unusual provision receives a credible conventional comparison in BCR-PROPORTIONALITY, including space/depth, installation, maintenance/replacement, reinstatement, supplier/tool and owner-attention burdens. Available evidence controls financial/carbon claims; no assumed lifetime saving is used to protect a preferred system.
-
 ## Publication consequence
 
 The completed EDA audit and previous publication content freeze remain valid evidence for the manuscript they reviewed, but the six-part source migration makes them **stale as final-production gates** for the enlarged book. The provenance-preserving successor trigger is [`project/eda/eda-successor-trigger-2026-10-28.md`](eda/eda-successor-trigger-2026-10-28.md).
 
 Physical-object preparation under PUB-02 may continue where content-independent. Final content/drawing freeze and manufacture now require, in order:
 
-**Current authority + early BCR feasibility → selected-house TRIAD, including roof/water integration → MRA integrated-house assault and HRS technical applicability → BCR final convergence with proportionality → MRA post-BCR closeout → HRS final synthesis → final PLT integration/freeze → renewed EDA assurance → PUB-02 final manufacture gate.**
+**IAS/OAS/HAD → MRA integrated-house assault → BCR → MRA post-BCR closeout → HRS → final PLT integration/freeze → renewed EDA assurance → PUB-02 final manufacture gate.**
 
 PCO changes how that sequence is controlled and scheduled; it does not add a publication maturity gate of its own.
 
 BSR completion, MRA authorisation and PCO authorisation do not themselves raise any maturity rating.
-
-
-## Relationship to the owner's actual house
-
-The [owner-house charter](owner-house-charter.md) and [DEL route](del/owner-house-delivery-plan.md) establish the larger purpose. This programme remains the reference-house/book reconciliation path. Completing it does not complete the real commission; real-house work does not wait for publication manufacture or editorial freeze. Findings flow both ways, with current design ownership and evidence preserved.

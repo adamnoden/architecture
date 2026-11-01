@@ -1,6 +1,6 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 
 export const DPL10E_COVERAGE_SCHEMA_VERSION = 'dpl.planningScreeningCoverageRegistry.v1' as const
 
@@ -165,7 +165,7 @@ const expectStringArray = (value: unknown, label: string, allowEmpty = false): r
 }
 
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
+  [...new Set(values)].sort((a, b) => a.localeCompare(b))
 
 const canonicalEntry = (entry: PlanningCoverageEntry): PlanningCoverageEntry => ({
   ...entry,
@@ -184,7 +184,7 @@ const canonicalRegistry = (registry: PlanningCoverageRegistry): PlanningCoverage
     ...registry.canonicalFixture,
     localPlanningTargetIds: canonicalStrings(registry.canonicalFixture.localPlanningTargetIds)
   },
-  entries: [...registry.entries].map(canonicalEntry).sort((a, b) => compareDplIdentityStrings(a.id, b.id))
+  entries: [...registry.entries].map(canonicalEntry).sort((a, b) => a.id.localeCompare(b.id))
 })
 
 const readReferenceSiteClaimIds = (path: string): readonly string[] => {
@@ -202,7 +202,7 @@ const readTargetIds = (): readonly string[] =>
   targetPaths.map((path) => {
     const raw = expectRecord(readJson(path), `Planning target ${path}`)
     return expectString(raw.id, `Planning target ${path}.id`)
-  }).sort((a, b) => compareDplIdentityStrings(a, b))
+  }).sort((a, b) => a.localeCompare(b))
 
 const validateRegistry = (value: unknown, path: string): PlanningCoverageRegistry => {
   const raw = expectRecord(value, `DPL-10E registry ${path}`)
@@ -226,7 +226,7 @@ const validateRegistry = (value: unknown, path: string): PlanningCoverageRegistr
 
   const claimIds = new Set(readReferenceSiteClaimIds(siteManifestPath))
   const actualTargetIds = readTargetIds()
-  if (JSON.stringify(actualTargetIds) !== JSON.stringify([...controlledPlanningTargetIds].sort((a, b) => compareDplIdentityStrings(a, b)))) {
+  if (JSON.stringify(actualTargetIds) !== JSON.stringify([...controlledPlanningTargetIds].sort((a, b) => a.localeCompare(b)))) {
     throw new Error(`DPL-10E controlled planning target identities drifted from the current target artefacts.`)
   }
 
@@ -325,9 +325,9 @@ const validateRegistry = (value: unknown, path: string): PlanningCoverageRegistr
 }
 
 const authoritySetFingerprint = (paths: readonly string[]): string =>
-  sha256DplSemanticFingerprint(canonicalStrings(paths).map((path) => ({
+  sha256SemanticFingerprint(canonicalStrings(paths).map((path) => ({
     path,
-    fingerprint: sha256DplSemanticFingerprint({ path, content: readText(path) })
+    fingerprint: sha256SemanticFingerprint({ path, content: readText(path) })
   })))
 
 export const loadPlanningCoverageRegistry = (path = registryPath): LoadedPlanningCoverageRegistry => {
@@ -336,10 +336,10 @@ export const loadPlanningCoverageRegistry = (path = registryPath): LoadedPlannin
   const targetIds = readTargetIds()
   return {
     registry,
-    fingerprint: sha256DplSemanticFingerprint(registry),
+    fingerprint: sha256SemanticFingerprint(registry),
     authoritySetFingerprint: authoritySetFingerprint(registry.authoritySources),
-    canonicalSiteClaimSetFingerprint: sha256DplSemanticFingerprint(siteClaimIds),
-    targetIdentitySetFingerprint: sha256DplSemanticFingerprint(targetIds)
+    canonicalSiteClaimSetFingerprint: sha256SemanticFingerprint(siteClaimIds),
+    targetIdentitySetFingerprint: sha256SemanticFingerprint(targetIds)
   }
 }
 

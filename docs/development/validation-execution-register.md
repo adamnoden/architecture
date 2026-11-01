@@ -1,13 +1,11 @@
 # Validation Execution Register
 
 **Status:** active evidence-control register  
-**Applicability reconciled:** 2026-10-29
-
-**Development-policy amendment:** 2026-10-31. Follow the [owner's development and assurance policy](../../project/owner-house-charter.md#development-and-assurance--31-october-2026). Internal research, calculation and challenge may complete without an external response. The rows below track distinct evidence events, not a competing execution queue; canonical PCO nodes and live ACO claims govern dispatch.
+**Date:** 2026-10-27
 
 **Purpose:** distinguish prepared work from issued work, physical work and actual evidence after RH-11.
 
-The accepted house is RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02. Historical gate closure and maturity do not validate its changed geometry or selected assemblies. The current physical findings still require architectural decisions as well as competent external findings, calculations and physical evidence.
+The Reference House is M3 at coordinated virtual-design scope. The design-gate sequence is closed. Progress now means converting bounded uncertainties into competent external findings, calculations, simulations or physical results.
 
 A document being ready is not evidence that the underlying proposition passed.
 
@@ -18,7 +16,7 @@ A document being ready is not evidence that the underlying proposition passed.
 
 **Live execution issues:**
 
-- [#30 — PHY-03 floor-edge research, calculations and provisional option reduction](https://github.com/adamnoden/architecture/issues/30) — legacy `P03`
+- [#30 — PHY-03 structural floor-edge engineering option reduction](https://github.com/adamnoden/architecture/issues/30) — legacy `P03`
 - [#31 — PHY-04 wall/ceiling movement-junction build and test](https://github.com/adamnoden/architecture/issues/31) — legacy `P04`
 - [#32 — RH-11 competent external-review execution](https://github.com/adamnoden/architecture/issues/32) — Reference House gate executed through EPR
 
@@ -26,11 +24,9 @@ Historical `P01`–`P04`, derived `P03-*` / `P04-*` identifiers and existing evi
 
 ## State vocabulary
 
-- **PREPARED / UNISSUED** — current questions are written; source manifest and remaining issue inputs must be confirmed before authorised issue;
-- **READY** — sufficient at the package’s recorded historical scope; current issue/build release requires explicit applicability, not just the inherited label;
+- **READY** — brief/protocol is sufficient to issue/build;
 - **UNISSUED** — ready package has not yet been given to the relevant competent reviewer;
-- **INTERNAL DEVELOPMENT** — research/calculation work can proceed under its canonical packet; no external or physical result is implied;
-- **BLOCKED — EXTERNAL** — a named acceptance/evidence event requires an external input not yet received; this does not prohibit preceding internal development;
+- **BLOCKED — EXTERNAL** — next result requires competence/tooling not present inside the project;
 - **BLOCKED — BUILD** — protocol exists but physical specimen has not been built;
 - **IN REVIEW / IN TEST** — evidence generation has actually started;
 - **FINDING OPEN** — material negative/qualifying result received and not closed;
@@ -43,28 +39,24 @@ Historical `P01`–`P04`, derived `P03-*` / `P04-*` identifiers and existing evi
 
 | ID | Work | Current state | Prepared package | Next evidence event | Rewind owner if material failure |
 |---|---|---|---|---|---|
-| `ER-STR-01` | structural engineering review | **PREPARED / UNISSUED** | `external-review-structural-rh11.md` | source-bound response on actual support/aperture/member envelopes and service crossings; engineering release before any relevant prototype | structural owner / HAD / IAS / OAS / ROF / RWT, through BCR and HRS |
-| `ER-FIRE-01` | fire / building-control review | **PREPARED / UNISSUED** | `external-review-fire-building-control-rh11.md` | actual escape/smoke, guard/access, primary closure and opening/security strategy | HAD / OAS / IAS / services / DPL; BCR routes material findings |
-| `ER-MEP-01` | MEP / acoustic review | **PREPARED / UNISSUED** | `external-review-mep-acoustic-rh11.md` | selected duties, continuous routes, real connections, acoustic/support/renewal evidence; no inherited MVHR/ASHP selection | services / HAD / IAS / structure / OAS / RWT / DPL |
-| `ER-BPE-01` | building physics / energy review | **PREPARED / UNISSUED** | `external-review-building-physics-energy-rh11.md` | actual layered enclosure, current roof/court/opening model, climate/site and applicable calculation basis | OAS / IAS / ROF / RWT / services / HAD / DPL |
-| `ER-HFI-01` | human-factors / inclusive-design review | **PREPARED / UNISSUED** | `external-review-human-factors-inclusive-design-rh11.md` | complete occupied actions with actual leaves/furniture/guards/products, adaptation and renewal; retained adverse cases | HAD / IAS / OAS / services; real-site approach remains DPL |
+| `ER-STR-01` | structural engineering review | **READY / UNISSUED** | `external-review-structural-rh11.md` | competent structural response + PHY-03 engineering option reduction | RH-05, possibly RH-04 |
+| `ER-FIRE-01` | fire / building-control review | **READY / UNISSUED** | `external-review-fire-building-control-rh11.md` | competent review of escape, Part M, service/interface closure | RH-03/RH-04/RH-09 as finding dictates |
+| `ER-MEP-01` | MEP / acoustic review | **READY / UNISSUED** | `external-review-mep-acoustic-rh11.md` | plant-room packing, MVHR/ASHP/acoustic response | RH-06/RH-07/RH-10 |
+| `ER-BPE-01` | building physics / energy review | **READY / UNISSUED** | `external-review-building-physics-energy-rh11.md` | envelope/junction/overheating/daylight/energy response | RH-02/RH-04/RH-07/RH-08/RH-10 |
+| `ER-HFI-01` | human-factors / inclusive-design review | **READY / UNISSUED** | `external-review-human-factors-inclusive-design-rh11.md` | competent complete-action / finished-interface response; unresolved laundry and life-course questions retained | relevant RH plan/stair/interface owner; site approach stays with DPL |
 
 Workstream owner: [EPR #913](https://github.com/adamnoden/architecture/issues/913).  
 Reference House execution gate: [RH-11 #32](https://github.com/adamnoden/architecture/issues/32).
 
 No row above may move to **EVIDENCED** because an email was sent or a meeting occurred. Record the actual finding and closure evidence.
 
-`EPR-DESK-REVIEW` is the separate self-service investigation of these five question sets under the [EPR internal-review contract](../../project/epr/external-professional-review-programme.md#epr-desk-review--internal-technical-answers-and-challenge). Its supported, contradicted or unresolved findings must answer the questions and route design consequences. It does not change the external response state in this table.
-
 ---
 
 ## Baseline applicability before issue or build
 
-The [EPR applicability result](../../project/epr/current-house-review-applicability.md) records the corrected five briefs, exact source identities and remaining issue prerequisites. Their preparation does not authorise contact or establish professional evidence. Fix the actual reviewed source and selected-system manifest, identify missing information and recheck changes before issue.
+READY describes the prepared package at its recorded source scope. The [current Georgian re-plan](../reference-house/georgian-replan.md) is an architectural proposal awaiting technical migration, with changed stair, attic, roof and service geometry. Before issuing any RH-11 brief or releasing a prototype for that proposal, the execution owner must declare its source revision and reconcile affected inputs, review questions and acceptance limits. Historical compiler passes and older review/prototype geometry do not validate the successor.
 
-The PHY-04 READY labels below describe retained historical preparation, not release of a current-house specimen. Current applicability requires selected receiving/support/closure geometry and engineer-defined structural scope for the floor edge, or the current ordinary/optional upper-joint occurrence and actual movement basis for the wall/ceiling study. The retained 2950 mm rig, ±5 mm capability and old SVGs do not prove the current 3100 mm room or its movement demand. Height difference alone proves neither adequacy nor failure. The [PHY applicability result](../../project/phy/current-house-prototype-applicability.md) owns that separate reconciliation and release; no prototype is built or passed here. Historical document bodies, P01/P02 holds and actual manual evidence gates remain intact; internal floor-edge investigation is explicitly separated below.
-
-The [DEL inventory](../../project/del/del-00-delivery-baseline.md) routes delivery consequences. The current-house design and physical findings remain applicable inputs; no prepared brief or test protocol closes them.
+For P04, explicitly assess the applicability of the retained 2950 mm rig to the proposed 3100 mm clear rooms and the relevant movement demand before build. Height difference alone establishes neither adequacy nor failure. Retain the older baseline as provenance. The [DEL inventory](../../project/del/del-00-delivery-baseline.md) routes the delivery consequences without changing these execution states.
 
 ---
 
@@ -72,13 +64,13 @@ The [DEL inventory](../../project/del/del-00-delivery-baseline.md) routes delive
 
 Historical evidence identity: `P03`.
 
-### `PHY-03A` — internal calculations and provisional option reduction
+### `PHY-03A` — engineered option reduction
 
 Historical alias: `P03-A`.  
-**State:** **INTERNAL DEVELOPMENT** — canonical `PHY-03-ENGINEERING` is self-service
+**State:** **READY / BLOCKED — EXTERNAL**  
 **Execution issue:** [#30](https://github.com/adamnoden/architecture/issues/30)
 
-Retained historical inputs:
+Inputs now frozen:
 
 - [P03 Engineering Brief](../prototypes/p03-floor-edge-engineering-brief.md);
 - [P03 Test Protocol](../prototypes/p03-floor-edge-test-protocol.md);
@@ -88,18 +80,16 @@ Retained historical inputs:
 - direct/seated-bearing comparator;
 - bespoke shoe/ledge only as earned challenger.
 
-Current inputs must first apply STR/material direction and a named source revision. The retained timber/hanger families are not a compulsory baseline for the later non-timber structural brief. Follow the [PHY internal-development contract](../../project/phy/physical-validation-programme.md#phy-03-engineering--internal-development-contract).
+Next evidence event:
 
-Next development result:
-
-> An internally challenged options study with reproducible preliminary calculations, failure/sensitivity checks, a reasoned recommendation and proposed test scope. External response is not a completion condition; structural/specimen acceptance remains separate.
+> competent structural engineer reduces the set to calculable geometries and states what, if anything, a full-scale specimen can prove.
 
 ### `PHY-03B` — full-scale junction evidence
 
 Historical alias: `P03-B`.  
 **State:** **BLOCKED — EXTERNAL**
 
-Internal PHY-03A completion does **not** release geometry. Before building/loading a structural specimen, obtain the competent source-bound structural/specimen release through **ER-STR-01 / EPR-RH11**, including accepted actions, detail, safe method and limits in the [PHY release conditions](../../project/phy/current-house-prototype-applicability.md#p03-engineering-release-before-any-structural-claim). A physical connection assembled without that release cannot establish structural evidence.
+Do not build until PHY-03A releases the geometry. A physical connection assembled before engineering is an architectural mock-up, not structural evidence.
 
 ---
 
@@ -120,7 +110,7 @@ Inputs:
 - RH-09 `WCJ-01` architectural location;
 - three families: conventional control / concealed slip / functional metal challenger.
 
-Retained historical build target:
+Build target:
 
 - full-height **2950 mm** room-corner specimen;
 - ≥1200 mm wall width;

@@ -1,4 +1,4 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { referenceHouseSourceFingerprint } from '../reference-house/identity.js'
 import type { ReferenceHouseSource } from '../reference-house/model.js'
 import {
@@ -33,7 +33,7 @@ const externallyClassifiedClauses = [
 ] as const
 
 const sortedUnique = <T extends string>(values: readonly T[] | undefined): T[] =>
-  [...new Set(values ?? [])].sort((a, b) => compareDplIdentityStrings(a, b))
+  [...new Set(values ?? [])].sort((a, b) => a.localeCompare(b))
 
 const canonicalCandidate = (candidate: DeploymentCandidateInput): DeploymentCandidateInput => ({
   ...candidate,
@@ -231,7 +231,7 @@ export const evaluateCandidateConformance = (
   source: ReferenceHouseSource
 ): CandidateConformanceEvaluation => {
   const candidate = canonicalCandidate(candidateInput)
-  const candidateFingerprint = sha256DplSemanticFingerprint(candidate)
+  const candidateFingerprint = sha256SemanticFingerprint(candidate)
   const currentFingerprint = referenceHouseSourceFingerprint(source)
   const referenceRevisionMatches = candidate.referenceHouseSourceFingerprint === currentFingerprint
 
@@ -251,8 +251,8 @@ export const evaluateCandidateConformance = (
       ...routeFindings(candidate),
       ...openAuthorityFindings()
     ].sort((a, b) => {
-      const byClause = compareDplIdentityStrings(a.clauseId, b.clauseId)
-      return byClause || compareDplIdentityStrings(a.checkKind, b.checkKind)
+      const byClause = a.clauseId.localeCompare(b.clauseId)
+      return byClause || a.checkKind.localeCompare(b.checkKind)
     })
   }
 
@@ -285,6 +285,6 @@ export const evaluateCandidateConformance = (
     executableClauseIds,
     openClauseIds,
     findings,
-    resultFingerprint: sha256DplSemanticFingerprint(resultManifest)
+    resultFingerprint: sha256SemanticFingerprint(resultManifest)
   }
 }

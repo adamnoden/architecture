@@ -1,0 +1,4 @@
+Disposal-only record; never merge this branch into main.
+HAD-03 PR1209 source head 35ac7d61cc6c16c06719dcbdf7c635491ea7d738 merged as 6f2e3fb5757fec7b085ea63a364eb5c5fdd867a3.
+Full exact-head CI 41298531549: success. Fresh native preflight 41298836483: success.
+The helper workflow was removed from this disposal-tree snapshot; the runner log preserves the original workflow commit.

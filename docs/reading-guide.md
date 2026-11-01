@@ -1,7 +1,7 @@
 ---
 next:
   text: Preface
-  link: /manuscript/preface
+  link: /docs/manuscript/preface
 ---
 
 # Reading guide
