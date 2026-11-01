@@ -9,8 +9,8 @@
     "label": "zerg4-whole-house-services"
   },
   "claimedAt": "2026-11-01T21:02:38.591Z",
-  "heartbeatAt": "2026-11-01T23:23:02.577Z",
-  "expiresAt": "2026-11-02T00:08:02.577Z",
+  "heartbeatAt": "2026-11-01T23:49:10.740Z",
+  "expiresAt": "2026-11-02T00:34:10.740Z",
   "branch": "work/zerg4-whole-house-services",
   "predecessor": {
     "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published0e54959e28946b1bab1f04d439588477c05eb3d2 tree4076697c2802754a4c622a271bc9ecb5486558fa; testedTitonfamily pressure comparison and WESTrear1000 interface preserve constructive source.",
-    "next": "Finish actual source-bound terminal drawings and emitter placement; reconcile metal concealment and IAS140high skate interface.",
-    "blocker": "Internal finite emitter/drawing joins remain; later apparatus/material/site admission explicitly separate."
-  }
+    "evidence": "DraftPR1234 head4d4625a2024f5cc26f0f3f0192f2bbe2b195c57d tree19ee03243c6083e6f9f8def6e90198111700a468. Fivefiles reproduce;16emitters/14duties andactualrenderedrenewal/plan preserved. Freshactualmain546c98f9 verifiedancestor.",
+    "next": "FreezecanonicalIAShead-firstsinkcontract andbindrepairedHAD068e33actualinventory/terminaljoin; independentreviewthenrootsequencing.",
+    "blocker": "Draftinternaljoinsnamedexplicitly; noapparatus/material/site/physicalacceptance claimed."
+  },
+  "pr": 1234
 }
