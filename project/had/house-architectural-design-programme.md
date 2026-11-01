@@ -29,6 +29,8 @@ The owner has adopted **Boundary Service Lodge** as the name for an elegant, sma
 
 The [owner-house lodge/raceway brief](boundary-service-lodge-and-raceway-brief.md) defines comparative cabinet/lodge/segregated-compartment options, utility-provider constraints, wet/dry routes, weather, root-sensitive construction and movement interface obligations. HAD owns form, access and architectural site composition; PAT-001, STR, MAT, DPL, MRA and BCR retain their separate technical authorities. This is an **outward site infrastructure candidate**, not an alteration to the accepted house footprint or a pass through HAD-03. Do not treat a pretty image as supplier-approved equipment or construct a duplicate site programme; register any independent execution packet under PCO.
 
+The [pre-site lodge/raceway comparison](boundary-service-lodge-options-result.md) compares three built forms and a connected route with frost and flooded-outlet counterexamples. It recommends separate small front-access cells with a separate protected water route and conventional burial as the benchmark. The bounded comparison is complete; actual site, operator-approved equipment/roof/entry, material admission, movement, lifting and maintenance acceptance remain explicitly unearned. No house or site installation is adopted.
+
 ## Packet topology
 
 The original linear HAD-00…06 outline is superseded by the topology below,
@@ -86,6 +88,9 @@ but final roof/water material choices remain conditional on ROF/RWT system
 selection and shared compatibility checks.
 
 ## Convergence development
+
+- [One joined local N/E portal reference design](had-03-local-portal-design.md) allocates 600 mm surface-access corridors, short locally released segments and a 300 mm unadopted relative-level rewind. It retains the plant room, rejects the solid-pier route as an unchanged-plant drop-in, and makes pantry loss/structural bridges explicit. Complete floor materials, first-harm and event-bound hydraulic acceptance remain unproved; this is the current physical architectural challenger, not a selected house.
+- [Recovered source-exact east-pier comparison](had-03-east-egress-pier-options.md) records the 300 mm piece-width precursor and plant conflicts; the joined design above tests the full access width.
 
 - [Selected expression and furnished rear-room/kitchen study](had-03-furnished-design-study.md).
 - [Bedroom 3 reuse after proposed suite relocation](had-03-bedroom3-reuse.md).

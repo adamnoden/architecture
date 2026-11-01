@@ -201,7 +201,7 @@ export const architectureNodes = defineNodes([
     owners: ['HAD'],
     title: 'Compare the Boundary Service Lodge and accessible external service raceway',
     dependencies: ['HAD-01E', 'DPL-SITE-BRIEF'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/had/boundary-service-lodge-options-result.md']
   },

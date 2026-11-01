@@ -1,0 +1,400 @@
+{
+  "basis": "RH-LAYOUT-REVISION-02",
+  "sourceRole": "Accepted source supplies intersections only; all portal dimensions below are an UNADOPTED reference design.",
+  "decision": "Allocate pantry E-W1 and north N as the single joined architectural candidate. Reject E-P as an unchanged-plant installation; do not infer structural or water acceptance.",
+  "referenceDesign": {
+    "relativeFFLAboveSyntheticReceiver": 450,
+    "wholeHouseRiseRelativeToExisting": 300,
+    "receiverRelativeToFFL": -450,
+    "receiverRole": "synthetic comparison, not a site high-water datum",
+    "grossAccessWidth": 600,
+    "carrierOutsideWidth": 200,
+    "carrierOutsideHeight": 160,
+    "inletInvert": -320,
+    "outletInvert": -362.5,
+    "terminalInvertAt12050": -363,
+    "fall": 42.5,
+    "coverDepth": 100,
+    "minCrownDepth": 160,
+    "installationSpaceBelowCover": 60,
+    "lowestServiceBox": -400,
+    "outletInvertClearanceAboveSyntheticReceiver": 87.5,
+    "normalPanPerimeter": -86,
+    "normalPanLow": -121,
+    "normalCollectorToCarrierDrop": 199,
+    "emergencyTrialCrest": -75,
+    "emergencyOperatingWater": "unknown",
+    "lowestSusceptibleJoint": "unknown",
+    "hydraulicCapacity": "unproven",
+    "completeMaterialAssembly": "unqualified"
+  },
+  "slots": {
+    "north": {
+      "axis": 6000,
+      "band": [
+        5700,
+        6300
+      ],
+      "run": [
+        7750,
+        12000
+      ],
+      "coverSegments": [
+        417.5,
+        487.85714285714283,
+        487.85714285714283,
+        487.85714285714283,
+        487.85714285714283,
+        487.85714285714283,
+        487.85714285714283,
+        487.85714285714283,
+        417.5
+      ],
+      "coverBreaks": [
+        7750,
+        8167.5,
+        8655.357142857143,
+        9143.214285714286,
+        9631.071428571428,
+        10118.92857142857,
+        10606.785714285714,
+        11094.642857142857,
+        11582.5,
+        12000
+      ]
+    },
+    "east": {
+      "axis": 7125,
+      "band": [
+        6825,
+        7425
+      ],
+      "run": [
+        7750,
+        12000
+      ],
+      "coverSegments": [
+        417.5,
+        423.3333333333333,
+        423.3333333333333,
+        423.3333333333333,
+        125,
+        404,
+        404,
+        404,
+        404,
+        404,
+        417.5
+      ],
+      "coverBreaks": [
+        7750,
+        8167.5,
+        8590.833333333334,
+        9014.166666666666,
+        9437.5,
+        9562.5,
+        9966.5,
+        10370.5,
+        10774.5,
+        11178.5,
+        11582.5,
+        12000
+      ]
+    }
+  },
+  "crossingRenewal": [
+    {
+      "route": "north",
+      "permanent": [
+        7750,
+        8167.5
+      ],
+      "piece": [
+        7725,
+        8225
+      ],
+      "destination": [
+        8225,
+        8725
+      ],
+      "translation": 500,
+      "clearRoom": [
+        8167.5,
+        11582.5
+      ],
+      "verticalTranslationAtOnePercent": -5,
+      "totalLift": 450,
+      "requiredInitialRemovedNeighbor": [
+        8225,
+        8725
+      ],
+      "envelopeWitness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 120.25
+      }
+    },
+    {
+      "route": "north",
+      "permanent": [
+        11582.5,
+        12000
+      ],
+      "piece": [
+        11550,
+        12050
+      ],
+      "destination": [
+        11050,
+        11550
+      ],
+      "translation": -500,
+      "clearRoom": [
+        8167.5,
+        11582.5
+      ],
+      "verticalTranslationAtOnePercent": 5,
+      "totalLift": 450,
+      "requiredInitialRemovedNeighbor": [
+        11050,
+        11550
+      ],
+      "envelopeWitness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 92
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        7750,
+        8167.5
+      ],
+      "piece": [
+        7725,
+        8225
+      ],
+      "destination": [
+        8225,
+        8725
+      ],
+      "translation": 500,
+      "clearRoom": [
+        8167.5,
+        9437.5
+      ],
+      "verticalTranslationAtOnePercent": -5,
+      "totalLift": 450,
+      "requiredInitialRemovedNeighbor": [
+        8225,
+        8725
+      ],
+      "envelopeWitness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 120.25
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        9437.5,
+        9562.5
+      ],
+      "piece": [
+        9225,
+        9725
+      ],
+      "destination": [
+        8725,
+        9225
+      ],
+      "translation": -500,
+      "clearRoom": [
+        8167.5,
+        9437.5
+      ],
+      "verticalTranslationAtOnePercent": 5,
+      "totalLift": 450,
+      "requiredInitialRemovedNeighbor": [
+        8725,
+        9225
+      ],
+      "envelopeWitness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 115.25
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        11582.5,
+        12000
+      ],
+      "piece": [
+        11550,
+        12050
+      ],
+      "destination": [
+        11050,
+        11550
+      ],
+      "translation": -500,
+      "clearRoom": [
+        9562.5,
+        11582.5
+      ],
+      "verticalTranslationAtOnePercent": 5,
+      "totalLift": 450,
+      "requiredInitialRemovedNeighbor": [
+        11050,
+        11550
+      ],
+      "envelopeWitness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 92
+      }
+    }
+  ],
+  "wetSegments": {
+    "north": [
+      [
+        7725,
+        8225
+      ],
+      [
+        8225,
+        8725
+      ],
+      [
+        8725,
+        9190
+      ],
+      [
+        9190,
+        9655
+      ],
+      [
+        9655,
+        10120
+      ],
+      [
+        10120,
+        10585
+      ],
+      [
+        10585,
+        11050
+      ],
+      [
+        11050,
+        11550
+      ],
+      [
+        11550,
+        12050
+      ]
+    ],
+    "east": [
+      [
+        7725,
+        8225
+      ],
+      [
+        8225,
+        8725
+      ],
+      [
+        8725,
+        9225
+      ],
+      [
+        9225,
+        9725
+      ],
+      [
+        9725,
+        10166.666666666666
+      ],
+      [
+        10166.666666666666,
+        10608.333333333334
+      ],
+      [
+        10608.333333333334,
+        11050
+      ],
+      [
+        11050,
+        11550
+      ],
+      [
+        11550,
+        12050
+      ]
+    ]
+  },
+  "eastConsequences": {
+    "pantryBand": [
+      6825,
+      7425
+    ],
+    "courtWindowProjection": [
+      6350,
+      7350
+    ],
+    "outerWindowProjection": [
+      6900,
+      7900
+    ],
+    "courtProjectionOverrun": 75,
+    "outerProjectionOverrun": 75,
+    "remainingPantryStrips": [
+      175,
+      680
+    ],
+    "fixedStorageInBand": "prohibited in candidate; current pantry has no adopted fitted storage model"
+  },
+  "rejectedPier": {
+    "axis": 6000,
+    "grossBand": [
+      5700,
+      6300
+    ],
+    "nominalCourtPierShoulders": [
+      50,
+      50
+    ],
+    "fixedPlantDryOverlap": 600,
+    "workingFloorOverlap": 600,
+    "interpretation": "Fixed plant obstruction requires reallocation. Working-floor overlap alone is not fixed obstruction: closed load-capable covers may serve working floor, but repair needs plant isolation and a second usable route."
+  },
+  "support": "Two permanent longitudinal edge supports lie outside each 600 mm access corridor. Independently supported threshold/window/spine bridge caps span the corridor; the carrier supports neither floor nor masonry. All member sizes, reactions and thermal/gas/water continuity remain unproved.",
+  "repair": {
+    "segmentMaxLength": 500,
+    "coverMaxLength": 500,
+    "coverWidth": 600,
+    "carrierJointEnvelopeWidth": 300,
+    "clearSideToolSpace": 150,
+    "totalVerticalLiftInOpenFloor": 450,
+    "firstRelease": "Lift a dry floor cover; isolate/empty N at exposed court inlet while E stays operative. For E repair provide an independently admitted temporary rain diversion or postpone repair: N alone is not equivalent redundancy.",
+    "joint": "Top-access detachable all-metal-joint trial; seal, bolt access and repeated watertight reinstatement must be proved before admission.",
+    "removal": "Room segments lift450 mm through removed covers. Fixed bridge crossings first translate500 mm into an emptied adjacent500 mm segment position, following1% slope (5 mm vertical change), then lift450 mm. Both joint terminations are at least25 mm outside the wall/spine; actual bolt/tool approach remains unproved; bridge remains intact. No4.25 m axial withdrawal is assumed.",
+    "leakage": "A separate exposed inspection/secondary-containment space is reserved, but passive external declaration and its own water boundary are unresolved; no dry-floor claim."
+  },
+  "approach": {
+    "extraRise": 300,
+    "illustrativeGradient": "1:20 arithmetic only, not access approval",
+    "horizontalRunBeforeLandings": 6000,
+    "availableSiteLength": "unknown"
+  },
+  "acceptance": "NOT ACCEPTED. This closes the room/route allocation choice for the next joined section; HAD-03 and RWT-06 remain incomplete/blocked. Actual support, complete no-plastic wet/thermal/gas floor, first-harm joints, full-duty flow and independent event-bound receivers can reject this candidate."
+}
