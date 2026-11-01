@@ -9,8 +9,8 @@
     "label": "worker-seven"
   },
   "claimedAt": "2026-11-01T15:03:32.487Z",
-  "heartbeatAt": "2026-11-01T15:03:32.487Z",
-  "expiresAt": "2026-11-01T15:48:32.487Z",
+  "heartbeatAt": "2026-11-01T15:15:16.876Z",
+  "expiresAt": "2026-11-01T16:00:16.876Z",
   "branch": "work/mat-worker-seven",
   "predecessor": {
     "leaseId": "6fa407d3-8717-438a-820e-c95fd705d962",
@@ -33,5 +33,11 @@
       "next": "Bind the current 5600 outlet seat, all constituents and complete vertical/support/wall package before adopting the alternative; then prove connected flow, first disengagement and outlet/trap renewal. Session will finish tracker reconciliation and dispose the superseded branch through the established sink.",
       "blocker": "MAT-INTERIORS remains planned. No matched installed assembly, material pass, accepted height/support/wall detail or physical renewal is established."
     }
+  },
+  "pr": 1219,
+  "checkpoint": {
+    "evidence": "PR #1219 remote head 6bb49d8cd4fb71585e85486951538c02c438be9c; tree equals locally checked result; source visual checks and control/repro checks pass",
+    "next": "Reconcile current main, verify exact-head full CI and fresh merge-check before integration",
+    "blocker": "Main reconciliation and exact-head CI pending; wider MAT-INTERIORS remains planned"
   }
 }
