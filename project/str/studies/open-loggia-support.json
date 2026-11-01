@@ -1,0 +1,582 @@
+{
+  "identity": "OPEN-N / first whole-floor support calculation checkpoint, unadopted",
+  "source": {
+    "path": "project/had/studies/open-north-loggia.json",
+    "commit": "1068dd38dc5f9fd682b11bb64c395eede4d4f090",
+    "sha256": "a181df7876311b8bb92eac88a880468e64bbd5033d0d465f10ddc65f12f3c911"
+  },
+  "units": "mm / kN / kPa / MPa",
+  "floor_fields": [
+    {
+      "id": "SW-L",
+      "direction": "NS",
+      "rectangle": [
+        332.5,
+        332.5,
+        2817.5,
+        3247.5
+      ],
+      "axis_span": 2915,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 13.940759765625,
+        "V": 19.1296875
+      },
+      "fully_cracked_phi3_mm": 4.2016792499089775,
+      "differential_shrinkage_300microstrain_mm": 1.5932296874999998,
+      "L250_comparator_mm": 11.66,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "SW-main",
+      "direction": "NS",
+      "rectangle": [
+        2817.5,
+        332.5,
+        4800,
+        2650
+      ],
+      "axis_span": 2317.5,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 8.811479003906248,
+        "V": 15.208593749999999
+      },
+      "fully_cracked_phi3_mm": 1.67860159256247,
+      "differential_shrinkage_300microstrain_mm": 1.007026171875,
+      "L250_comparator_mm": 9.27,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "SE-front",
+      "direction": "NS",
+      "rectangle": [
+        7200,
+        332.5,
+        9300,
+        2650
+      ],
+      "axis_span": 2317.5,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 8.811479003906248,
+        "V": 15.208593749999999
+      },
+      "fully_cracked_phi3_mm": 1.67860159256247,
+      "differential_shrinkage_300microstrain_mm": 1.007026171875,
+      "L250_comparator_mm": 9.27,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "east-strip",
+      "direction": "EW",
+      "rectangle": [
+        9300,
+        332.5,
+        11667.5,
+        8290
+      ],
+      "axis_span": 2367.5,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 9.19579541015625,
+        "V": 15.53671875
+      },
+      "fully_cracked_phi3_mm": 1.8282206508311334,
+      "differential_shrinkage_300microstrain_mm": 1.0509480468749999,
+      "L250_comparator_mm": 9.47,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "south-W-gallery",
+      "direction": "NS",
+      "rectangle": [
+        2817.5,
+        2650,
+        4800,
+        3917.5
+      ],
+      "axis_span": 1267.5,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 2.63575634765625,
+        "V": 8.31796875
+      },
+      "fully_cracked_phi3_mm": 0.15019674868042726,
+      "differential_shrinkage_300microstrain_mm": 0.30122929687499994,
+      "L250_comparator_mm": 5.07,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "south-E-gallery",
+      "direction": "NS",
+      "rectangle": [
+        7200,
+        2650,
+        9300,
+        3917.5
+      ],
+      "axis_span": 1267.5,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 2.63575634765625,
+        "V": 8.31796875
+      },
+      "fully_cracked_phi3_mm": 0.15019674868042726,
+      "differential_shrinkage_300microstrain_mm": 0.30122929687499994,
+      "L250_comparator_mm": 5.07,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "east-gallery",
+      "direction": "EW",
+      "rectangle": [
+        8082.5,
+        3917.5,
+        9300,
+        8082.5
+      ],
+      "axis_span": 1217.5,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 2.43190869140625,
+        "V": 7.98984375
+      },
+      "fully_cracked_phi3_mm": 0.12786289671659729,
+      "differential_shrinkage_300microstrain_mm": 0.27793242187499995,
+      "L250_comparator_mm": 4.87,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "west-south",
+      "direction": "EW",
+      "rectangle": [
+        332.5,
+        3247.5,
+        3917.5,
+        4332.5
+      ],
+      "axis_span": 3585,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 21.085681640625,
+        "V": 23.5265625
+      },
+      "fully_cracked_phi3_mm": 9.612255354930607,
+      "differential_shrinkage_300microstrain_mm": 2.4097921875,
+      "L250_comparator_mm": 14.34,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "west-stair-gallery",
+      "direction": "EW",
+      "rectangle": [
+        2917.5,
+        4432.5,
+        3917.5,
+        8767.5
+      ],
+      "axis_span": 1000,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 1.640625,
+        "V": 6.5625
+      },
+      "fully_cracked_phi3_mm": 0.058192720323459096,
+      "differential_shrinkage_300microstrain_mm": 0.18749999999999997,
+      "L250_comparator_mm": 4.0,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "NW",
+      "direction": "NS",
+      "rectangle": [
+        332.5,
+        8852.5,
+        4377.5,
+        11667.5
+      ],
+      "axis_span": 2815,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 13.000681640624999,
+        "V": 18.4734375
+      },
+      "fully_cracked_phi3_mm": 3.65411538048878,
+      "differential_shrinkage_300microstrain_mm": 1.4857921874999998,
+      "L250_comparator_mm": 11.26,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "above-loggia",
+      "direction": "EW",
+      "rectangle": [
+        4377.5,
+        8082.5,
+        7622.5,
+        11667.5
+      ],
+      "axis_span": 3245,
+      "G": 8.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 19.052763984375005,
+        "V": 23.485687500000004
+      },
+      "fully_cracked_phi3_mm": 7.170832066945128,
+      "differential_shrinkage_300microstrain_mm": 1.9743796874999997,
+      "L250_comparator_mm": 12.98,
+      "passes_declared_sensitivity": true
+    },
+    {
+      "id": "NE",
+      "direction": "NS",
+      "rectangle": [
+        7622.5,
+        8290,
+        11667.5,
+        11667.5
+      ],
+      "axis_span": 3377.5,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 18.71543994140625,
+        "V": 22.16484375
+      },
+      "fully_cracked_phi3_mm": 7.572688459673061,
+      "differential_shrinkage_300microstrain_mm": 2.138907421875,
+      "L250_comparator_mm": 13.51,
+      "passes_declared_sensitivity": true
+    }
+  ],
+  "wet_wall_beam": {
+    "axis_x": 2902.5,
+    "support_axes_y": [
+      8852.5,
+      11667.5
+    ],
+    "span": 2815,
+    "top": 3520,
+    "bottom": 3170,
+    "upstand_above_FFL": 70,
+    "tributary_width": 2022.5,
+    "G": 24.37375,
+    "Q": 4.045,
+    "section": {
+      "b": 140,
+      "h": 350,
+      "d": 310,
+      "As": 508.93800988154646,
+      "cover": 25,
+      "x": 116.21711953816826,
+      "x_d": 0.37489393399409116,
+      "z": 263.5131521847327,
+      "MR": 58.30950402196128,
+      "VRdc": 30.77171255986849,
+      "As_min": 65.4472,
+      "ductility": true
+    },
+    "action": {
+      "M": 38.60292399550782,
+      "V": 54.85317796875001
+    },
+    "links": {
+      "diameter": 6,
+      "pitch": 100,
+      "VRs": 68.59599263620844,
+      "VRmax": 175.30128000000002,
+      "minimum_ratio": 0.12268985288115722,
+      "provided_ratio": 0.5654866776461628,
+      "maximum_pitch": 232.5
+    },
+    "south_receiving_core": [
+      2832.5,
+      8702.5,
+      140,
+      300
+    ],
+    "south_receiving_finished": [
+      2817.5,
+      8687.5,
+      170,
+      330
+    ],
+    "north_receiving_core": [
+      2832.5,
+      11517.5,
+      140,
+      300
+    ],
+    "door_edge_x": 3100,
+    "north_window_edge_x": 3050,
+    "south_pier_projection_beyond_140_wall_each_side": 80,
+    "actual_receiving_pier_material": "RC140x300 trial, not an assumed masonry capacity",
+    "shear_links_required": true,
+    "resolved": false
+  },
+  "lower_grid": {
+    "top": -180,
+    "bottom": -630,
+    "width": 250,
+    "depth": 450,
+    "maximum_support_pitch": 3000,
+    "cap_envelope_bottom": -680,
+    "cap_size_xy": [
+      650,
+      650
+    ],
+    "cap_depth": 500,
+    "cover_comparator": 40,
+    "G": 57.06,
+    "Q": 10.17,
+    "section": {
+      "b": 250,
+      "h": 450,
+      "d": 391,
+      "As": 760.26542216873,
+      "cover": 40,
+      "x": 97.22064222106522,
+      "x_d": 0.2486461437878906,
+      "z": 352.1117431115739,
+      "MR": 116.39060131621224,
+      "VRdc": 57.49132521121887,
+      "As_min": 147.407,
+      "ductility": true
+    },
+    "action": {
+      "M": 103.82175000000001,
+      "V": 138.429
+    },
+    "links": {
+      "diameter": 8,
+      "pitch": 100,
+      "VRs": 153.81237631975628,
+      "VRmax": 394.83180000000004,
+      "minimum_ratio": 0.21908902300206645,
+      "provided_ratio": 1.0053096491487339,
+      "maximum_pitch": 293.25
+    },
+    "shear_links_required": true,
+    "four_arm_node_vertical_demand": 553.716,
+    "pile_capacity": null,
+    "soil_stiffness": null,
+    "cap_adequacy": null,
+    "masonry_DPC": "150 above grid top -180..-30 hypothesis; MAT moisture junction unqualified",
+    "target_D": 1200,
+    "heave_stress": 300,
+    "construction_loss": 50,
+    "ventilation_comparator": 150,
+    "raw_clearance_below_cap": 520,
+    "post_heave_and_loss": 170,
+    "ventilation_surplus": 20
+  },
+  "E02_service_port": {
+    "wall": "plant-north",
+    "axis_y": 6500,
+    "centre_x": 10800,
+    "clear_width": 240,
+    "spring": 2740,
+    "rise": 120,
+    "intrados_crown": 2860,
+    "radial_ring": 215,
+    "extrados_crown": 3075,
+    "upper_slab_soffit": 3170,
+    "vertical_remainder": 95,
+    "outside_ring_x": [
+      10465,
+      11135
+    ],
+    "east_abutment_territory": 447.5,
+    "permitted_assembly_OD": 160,
+    "annular_geometric_clearance": 40,
+    "capacity": null
+  },
+  "retained_open_items": [
+    "HAD finishedFaces/t disagreement and cabinet lining collision must be corrected at source.",
+    "Actual stair reactions/finite frame, entrance bridge, all tied arches and roof heel/reaction envelope remain design work.",
+    "Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.",
+    "Wet-wall beam receiving RC piers project80 beyond original wall faces; HAD must check actual door/sofa tasks.",
+    "Ground cap envelope, actual reinforcement/pilehead/node behaviour and DPC/floor moisture route not yet resolved.",
+    "Exposed-soffit anchors/rails/wind and2930 finished soffit require actual arch/head coordination.",
+    "No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows."
+  ]
+}
