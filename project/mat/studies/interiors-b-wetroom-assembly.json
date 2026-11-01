@@ -1,4 +1,84 @@
 {
+  "initialModuleParts": [
+    [
+      9428,
+      6628,
+      100,
+      100,
+      0,
+      85
+    ],
+    [
+      10172,
+      6628,
+      100,
+      100,
+      0,
+      85
+    ],
+    [
+      9428,
+      7372,
+      100,
+      100,
+      0,
+      85
+    ],
+    [
+      10172,
+      7372,
+      100,
+      100,
+      0,
+      85
+    ],
+    [
+      9400,
+      6600,
+      30,
+      900,
+      85,
+      10
+    ],
+    [
+      10270,
+      6600,
+      30,
+      900,
+      85,
+      10
+    ],
+    [
+      9400,
+      6600,
+      900,
+      30,
+      85,
+      10
+    ],
+    [
+      9400,
+      7470,
+      900,
+      30,
+      85,
+      10
+    ],
+    [
+      9400,
+      6600,
+      900,
+      900,
+      95,
+      25
+    ]
+  ],
+  "spoolSweep": [
+    10150,
+    6710,
+    100,
+    250
+  ],
   "splitRenewal": {
     "first": "Support trap/tail and both downstream members independently; disconnect two actual true unions in ceiling box",
     "lowerSpoolTranslation": [
@@ -26,6 +106,8 @@
     "maximumTrapTopAfterWithdrawal": 595,
     "floorSleeveTop": 20,
     "temporarySupport": "Independent removable cradle; no load on waterproofing or loose tail",
+    "openBoundary": "With tail and annular seals removed, sleeve is an OPEN floor water/air/fire/acoustic path",
+    "temporaryClosure": "Isolate wet use and affected lower area; fit removable qualified sleeve cap/closure until compatible annular and penetration seals reinstated/tested",
     "sealSequence": "Fixed sleeve remains; demountable pipe seal is released only after tray module out; floor/fire/acoustic seals reinstated and tested"
   },
   "bedroomTrial": {
@@ -1248,7 +1330,7 @@
     "secondJointGlobal": [
       10200,
       6910,
-      2797.25
+      2794.75
     ],
     "firstReleaseVector": [
       0,
@@ -1267,7 +1349,7 @@
       100,
       200
     ],
-    "lowerSpoolLowestGlobal": 2697.25,
+    "lowerSpoolLowestGlobal": 2694.75,
     "actualConnectionEnvelopes": null
   },
   "branch": {
