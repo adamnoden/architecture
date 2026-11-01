@@ -1,7 +1,7 @@
 {
   "units": "mm unless explicitly stated; all floor layer checks use level-local FFL0",
   "status": "Bounded whole-house development schedule checkpoint; no complete material/product/physical admission",
-  "baseMain": "546c98f93a3dccbfe48119bd2e92117b6e2d766f",
+  "baseMain": "eab4ec0370d82790cb6da0fd11b03587eb925d12",
   "fingerprints": {
     "project/mat/constituent-audit.md": "d378d86664cd7b3d95863d698fe778accea6c7c019c981736f798c1e079fb534",
     "project/mat/interior-plaster-substrate.md": "56b3f51185ba5a89db06f742e47ee2970185ca16903007122dc4adce8160491c",
@@ -977,7 +977,7 @@
         ]
       ],
       "oldDepth": 70,
-      "scope": "Ground rooms beneath the actual first RC floor; no duplicate rated ceiling by default",
+      "scope": "Ground fields where the actual FIRST RC slab exists; exclude the entrance void and stair aperture. No duplicate rated ceiling by default",
       "constituents": "Bare off-white SUPALUX is the facing control; choose exposed flush mechanical joints with plain metal backing/fasteners. No unverified coating is selected. Actual support/joint recipe and RC fire cover/openings/loads remain separate.",
       "firstRelease": "Open a genuinely independent service cover; do not remove the qualified slab/penetration boundary.",
       "residue": "Neither a15 skin nor RC200 as a name proves REI30. Ordinary and protective layers are distinct.",
@@ -1041,7 +1041,7 @@
         ]
       ],
       "oldDepth": 70,
-      "scope": "Upper protected ring/stair only; complete176 candidate, not ordinary-room/global adoption. Top6620, underside6444/local2994; independent max4000span and actual seats/perimeter must be qualified.",
+      "scope": "Actual protected upper circulation, stair aperture and entrance void only; complete176 candidate, not ordinary-room/global adoption. Top6620, underside6444/local2994; independent max4000span and actual seats/perimeter must be qualified.",
       "infill": [
         [
           "stone mineral wool within C web",
@@ -1259,6 +1259,7 @@
         "W-D",
         "F-D",
         "C-G",
+        "C-U",
         "J-T",
         "D-R",
         "H-M",
@@ -1354,6 +1355,7 @@
         "W-D",
         "F-D",
         "C-G",
+        "C-U",
         "J-T",
         "H-M",
         "B-S",
@@ -1483,6 +1485,7 @@
       "name": "Utility",
       "families": [
         "W-D",
+        "W-W",
         "F-M",
         "C-G",
         "J-C",
@@ -1564,6 +1567,7 @@
         "W-D",
         "F-D",
         "C-G",
+        "J-C",
         "J-T",
         "J-P",
         "H-M",
@@ -1575,6 +1579,7 @@
       "protectedDoors": [],
       "floorDatum": "ground",
       "taskDirections": [
+        "storage",
         "trim"
       ]
     },
@@ -2009,7 +2014,7 @@
         4500
       ],
       "retainedCabinet": [
-        9385,
+        9397,
         4675,
         600,
         750
@@ -2494,6 +2499,7 @@
     "RC": "Retain the27 spatial reservation. Prefer plain off-form mineral surface only where actual structural/fire duty earns that exposure; reject automatic lime adhesion or cover abrasion. Where protection is required retain a complete applicable protective assembly and reopen depth if needed—never strip it for material purity.",
     "ordinaryBoards": "Choose bare off-white facing and expressed mechanical joints; substrate-specific carrier/joints required, no Pure Crystalline-on-gypsum/board transfer.",
     "timber": "Plain mechanical complete joinery with disclosed three-coat ordinary paint where selected; no generic natural-finish admission.",
+    "looseFurnitureDirection": "Retain the complete source external envelope; develop mechanically assembled solid-timber/metal bed and sofa frames with replaceable solid slats and removable covers. Prefer mechanically retained springs with disclosed wool/cotton/coir fill over routine glued sheet frames and polyurethane foam. Mattress and upholstery construction, every interliner/thread/adhesive/treatment, and required fire performance remain explicit; do not delete a safety constituent. Reject any actual package that cannot supply the complete frame/constituent/performance evidence or fit the source envelope; change the actual furniture and recheck routes rather than approve plywood or foam by a control label.",
     "looseFurniture": "Whole external envelopes include frame/head/feet/projections, not mattress boxes. Actual primary furnishing controls do not clear plywood/slat/upholstery/mattress constituents or imply an owner exception; installed joinery remains fully audited."
   },
   "pendingGeometryJoins": [
@@ -2570,7 +2576,7 @@
     "skirtingOverlapOver15FloorGap": 3,
     "upperCeilingControlUnderside": 2994,
     "upperCeilingDrop": 106,
-    "headTrimToControlCeiling": 74,
+    "complete2250DoorToControlCeiling": 744,
     "galleryHistoricControl": 979,
     "with12ExtraFinishEachSide": 955,
     "cabinet660ClearBeforeHardware": 629
