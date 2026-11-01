@@ -9,11 +9,12 @@
     "label": "owner-directed-rwt-robustness-20261101"
   },
   "claimedAt": "2026-11-01T09:40:58.053Z",
-  "heartbeatAt": "2026-11-01T09:40:58.053Z",
-  "expiresAt": "2026-11-01T11:40:58.053Z",
+  "heartbeatAt": "2026-11-01T09:46:52.913Z",
+  "expiresAt": "2026-11-01T11:46:52.913Z",
   "branch": "work/rwt-robustness-20261101",
   "checkpoint": {
-    "evidence": "Owner-directed RWT-ROBUSTNESS packet based on merged RWT-METALS #1198, RWT-SHED and RWT-05. Current main e4e9b3d283307217953561dde203978aee0d71cc.",
-    "next": "Develop adversarial full-duty surviving paths and elevation/failure logic, preserve unresolved site/detail obligations; exact-head CI and native publication preflight before merge."
-  }
+    "evidence": "PR1203 head 9f772d81065d287b8e3551188b79df2bfb124456, merged current RWT-06 and authoritative robust fault-disposition; node complete at comparative analysis only.",
+    "next": "Validate exact head in native CI, run fresh native canonical merge-check, merge expected head, verify accepted main, release as completed."
+  },
+  "pr": 1203
 }
