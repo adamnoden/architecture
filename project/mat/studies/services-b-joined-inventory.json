@@ -343,7 +343,9 @@
         "panelTop": 2665,
         "panelThickness": 20,
         "finishedUnderside": 2645,
-        "width": 320
+        "width": 320,
+        "localAccessWidth": 440,
+        "rule": "320 ordinary branch band widens locally to the440 outer hood at the400clear union aperture; never cut a400 opening into a320 box."
       },
       "renewal": {
         "installedSpoolBounds": [
