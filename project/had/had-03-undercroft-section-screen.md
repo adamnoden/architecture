@@ -1,6 +1,6 @@
 # HAD-03 — the dry-access undercroft must be earned in section
 
-**1 November 2026 · source-bound negative feasibility screen · not a new accepted house, site, engineering section or HAD-03 closeout.** Read with the [accepted Reference House](../../docs/reference-house/current-house-basis.md), [courtyard gravity-egress rewind](../rwt/court-egress-architectural-rewind.md), [ground-water policy](../../docs/reference-house/ground-water-policy.md), [HAD threshold study](had-03-court-threshold-first-failure.md) and [STR-GROUND option reduction](../str/ground-movement-foundation-options-result.md). This screen advances the architectural comparison requested by RWT-06; it does **not** recover or replace any unpublished HAD-03 study-room files from a prior agent's private workspace.
+**1 November 2026 · source-bound negative feasibility screen · not a new accepted house, site, engineering section or HAD-03 closeout.** Read with the [accepted Reference House](../../docs/reference-house/current-house-basis.md), [courtyard gravity-egress rewind](../rwt/court-egress-architectural-rewind.md), [ground-water policy](../../docs/reference-house/ground-water-policy.md), [HAD threshold study](had-03-court-threshold-first-failure.md) and [STR-GROUND option reduction](../str/ground-movement-foundation-options-result.md). This screen advances the architectural comparison requested by RWT-06.
 
 ## The critical section, not another pipe catalogue
 
