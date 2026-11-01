@@ -1,0 +1,82 @@
+{
+  "authority": "Unadopted joined reference design; dimensions are design hypotheses, not product/site/ground-gas acceptance.",
+  "baseline": "1e7b2cbce408834ca3cbb91c286af37eda066829",
+  "sourceBlobs": {
+    "compiler/reference-house/georgian/section-source.ts": "1617867dc3441206c116ddf877dcfd5ba89fb5a4",
+    "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
+    "project/had/had-03-local-portal-design.md": "5b6ae012f230a6b04c4cf4595e8f0b1e5745564f"
+  },
+  "coverLayers": {
+    "stone": 15,
+    "distribution": 65,
+    "glass": 100,
+    "rcCap": 100,
+    "airLid": 6,
+    "copperSealEnvelope": 2
+  },
+  "mineralCap": 280,
+  "bridgeBottom": -300,
+  "lidTop": -310,
+  "lidBottom": -316,
+  "sealBottom": -318,
+  "cover": 318,
+  "fieldDepth": 380,
+  "corridorClear": 600,
+  "tray": 1.5,
+  "sideInsulation": 100,
+  "rcSides": 100,
+  "outerWidth": 1003,
+  "rcClearSpan": 803,
+  "crown": -378,
+  "invert": -538,
+  "exit": -580.5,
+  "trayBottom": -638,
+  "outerUnderside": -839.5,
+  "heaveStress": 300,
+  "constructionLoss": 50,
+  "residualReserve": 50,
+  "requiredD": 1239.5,
+  "recommendedD": 1300,
+  "rawClearance": 460.5,
+  "afterStress": 110.5,
+  "reserveSurplus": 60.5,
+  "failedD1200": -39.5,
+  "ordinaryDpc": {
+    "courses": 2,
+    "units": 65,
+    "beds": 10,
+    "band": 150,
+    "fieldTop": -380,
+    "fieldBottom": -530,
+    "bridgeTop": -300,
+    "bridgeBottom": -450
+  },
+  "sensitivities": [
+    {
+      "heave": 0,
+      "residualClearance": 410.5,
+      "surplusOver50": 360.5
+    },
+    {
+      "heave": 150,
+      "residualClearance": 260.5,
+      "surplusOver50": 210.5
+    },
+    {
+      "heave": 300,
+      "residualClearance": 110.5,
+      "surplusOver50": 60.5
+    },
+    {
+      "heave": 350,
+      "residualClearance": 60.5,
+      "surplusOver50": 10.5
+    },
+    {
+      "heave": 400,
+      "residualClearance": 10.5,
+      "surplusOver50": -39.5
+    }
+  ],
+  "coreThermalResistance": 2.4390243902439024
+}
