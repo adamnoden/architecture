@@ -145,7 +145,7 @@ assert 6825<principal_axis<7425
 
 # E-02 is a finite compatibility design, not evidence that the current pan/fitting matches it.
 # The coordinated principal port moved west to leave an honest terminal turn field.
-collector_x=10800; cross_y=6500; arch_spring=2740; arch_r=120; ring=215; fall_ratio=40
+collector_x=10800; cross_y=6500; arch_spring=2740; arch_r=160; ring=215; fall_ratio=40
 principal_feed=[[11432.5,8040],[10800,8040],[10800,5200],[9800,5200]]
 family_feed=[[11432.5,6077.5],[10800,6077.5],[10800,5200],[9800,5200]]
 def length(path):return sum(abs(a[0]-b[0])+abs(a[1]-b[1]) for a,b in zip(path,path[1:]))
@@ -161,11 +161,11 @@ def stations(path,start):
 arch_corner_vertical=math.sqrt(arch_r**2-80**2)-80
 wall_half_slope=85/40
 arch_through_wall_corner=arch_corner_vertical-wall_half_slope
-assert arch_corner_vertical>0 and arch_spring+arch_r+ring==3075
-assert arch_through_wall_corner>0 and 40-wall_half_slope>0
-assert joined['rcSoffit']-(arch_spring+arch_r+ring)==95
-assert arch_spring-80>arch_spring-120
-assert math.sqrt(100**2+100**2)>arch_r # A200square cannot be passed through this port.
+assert arch_corner_vertical>0 and arch_spring+arch_r+ring==3115
+assert arch_through_wall_corner>0 and 80-wall_half_slope>0
+assert joined['rcSoffit']-(arch_spring+arch_r+ring)==55
+assert arch_spring-80>arch_spring-160
+assert math.sqrt(120**2+120**2)>arch_r # A240square cannot pass;200 is now admitted geometrically.
 assert abs(end_z-2682.5)<1e-8 and family_start==2745.25
 ceiling_underside=2540; box_top=2900; assembly_half=80; panel_thick=20
 assert end_z-assembly_half-panel_thick-ceiling_underside==42.5
@@ -196,10 +196,12 @@ sections['selectedConditionalCollector']={
  'socketEvidence':{'identity':'BLUCHER811.XXX.110','pipeOD':110,'socketOD':123,'socketLength':57,'source':'https://www.blucher.com/dfsmedia/0533dbba17714b1ab581ab07a4cbb521/53115-source/639220620240000000/socketinfouk.pdf'},
  'compatibilityRequirements':{'maxInstalledLocalEnvelope':160,'maxTurnAlongEachTangent':200,'portSpoolMaxSquare':160,
   'maxTurnOutwardFromRouteAxis':80,'demonstratedRemovableStraightPiece':200,'freeRetainedTailEachEnd':250,'slipCouplingBodyEvidence':130,
-  'warning':'These are authored procurement/design limits, not measured supplied bend/branch/support or guaranteed socket-release dimensions. Straight160square alone is checked at the arch;200turns stay outside it. Measured products exceeding any requirement reject this design.'},
- 'wallPort':{'centre':[10800,6500,2740],'clearSpan':240,'spring':2740,'bottom':2620,'intradosCrown':2860,'radialRing':215,'extrados':3075,
+  'warning':'These are authored procurement/design limits, not measured supplied bend/branch/support or guaranteed socket-release dimensions. Fixed straight160spool retained at the arch;200turns stay outside it for renewal independence even though their square fits the wider aperture. Measured products exceeding any requirement reject this design.'},
+ 'wallPort':{'centre':[10800,6500,2740],'clearSpan':320,'spring':2740,'bottom':2580,'intradosCrown':2900,'radialRing':215,'extrados':3115,
   'square160CornerVerticalClearanceAtMidplane':arch_corner_vertical,'wallThickness':170,'slopeCentreShiftAcrossHalfWall':wall_half_slope,
-  'minimumThroughWallUpperCornerClearance':arch_through_wall_corner,'minimumThroughWallBottomClearance':40-wall_half_slope,'toRCSoffit':95,'eastAbutmentTerritory':11582.5-(10800+335),
+  'minimumThroughWallUpperCornerClearance':arch_through_wall_corner,'minimumThroughWallBottomClearance':80-wall_half_slope,'toRCSoffit':55,'eastAbutmentTerritory':11582.5-(10800+375),
+  'alternatives':[{'clearSpan':d,'corner160ThroughWall':math.sqrt((d/2)**2-80**2)-80-wall_half_slope,'extrados':2740+d/2+215,'toRCSoffit':3170-(2740+d/2+215),'eastAbutment':11582.5-(10800+d/2+215)} for d in [240,320]],
+  'square200ThroughWallCorner':math.sqrt(160**2-100**2)-100-wall_half_slope,
   'rule':'Fixed straight spool and qualified floor/wall boundary retained. Arch ring, abutments, load transfer and movement need STR design; no capacity follows from geometric fit.'},
  'maintenanceModule':{'centreline':[10800,6900,10800,7100],'length':200,'retainedTailTerritories':[[10800,6650,10800,6900],[10800,7100,10800,7350]],'slipBodyLength':130,
   'freeTailMinusSleeveBody':120,'southTailMinusWallNorthFace6585':65,'D50JunctionStart7400MinusNorthTail':50,
@@ -217,19 +219,37 @@ d50_path=[[10200,6810],[10200,7500],[10800,7500]]
 d50_join=arch_spring+(7500-cross_y)/40
 d50_start=d50_join+length(d50_path)/40
 assert d50_start==2797.25 and d50_join==2765
-sections['selectedConditionalCollector']['principalShowerDrop']={
+drop_interface={
+ 'schemaVersion':1,'id':'B-PRINCIPAL-SHOWER-DROP-01','units':'mm','datum':'Local proposed ground FFL0',
+ 'status':'Authored compatibility interface; no actual fitting, material, hydraulic or installed operation acceptance',
  'authority':'Coordinated MAT-INTERIORS120-rim trial; upper fixture/frame/outlet remains unqualified',
  'formedFloorPort':[10200,6810,110],'pipeOD':50,'retainedDropMaxEnvelope':100,
- 'firstUnion':[10200,6810,d50_start],'firstUnionMaxOD':100,'requiredAxialRelease':50,
- 'firstUnionClearAperture':[10050,6660,300,300],'path':stations(d50_path,d50_start),'length':length(d50_path),
+ 'turnT':{'point':[10200,6810,d50_start],'maxEnvelope':[100,100,100]},
+ 'unionA':{'point':[10200,6810,3000],'axis':'vertical','maxOD':100,'maxAxialLength':100},
+ 'unionB':{'point':[10200,6910,d50_start-100/40],'axis':'north','maxOD':100,'maxAxialLength':100},
+ 'requiredFaceRelease':50,
+ 'clearUndersideAperture':[10000,6640,400,400],'outerApertureFrame':[9980,6620,440,440],
+ 'path':[stations(d50_path,d50_start)[0],[10200,6910,d50_start-2.5],*stations(d50_path,d50_start)[1:]],'length':length(d50_path),
  'fallDenominator':40,'fall':length(d50_path)/40,'soilJoin':[10800,7500,d50_join],
- 'unionBelowRCSoffit':3170-d50_start,'fixedTailFromRCTopToUnion':3370-d50_start,
- 'boxUnderside':2700,'boxWidth':320,'soilJunctionMaxEnvelope':[200,200,200],
- 'rule':'Fixed outlet/drop tail and floor seals remain during ordinary below-slab union renewal.100OD union plus50release and200tool sensitivity must fit the300clear underside opening; actual union, matching tail and trapping/flow not proved. The low120rim replaces the former250step only if actual retained tail/drop and frame/outlet fit these requirements. No horizontal D50 route crosses the upper doorway.',
+ 'unionABelowRCSoffit':170,'fixedTailFromRCTopToUnionA':370,
+ 'boxing':{'lowestFittingAtJoin':2715,'supportDepth':25,'supportBottom':2690,'finalAirReserve':25,'panelTop':2665,'panelThickness':20,'finishedUnderside':2645,'width':320},
+ 'renewal':{'installedSpoolBounds':[10150,6760,2744.75,100,200,305.25],'firstMovement':[0,-50,-50],'subsequentLowering':[0,0,-400],
+  'firstMovementLowest':2694.75,'fullyLoweredHighest':2600,'fullMovingPlanBounds':[10150,6710,100,250],
+  'clearancesToAperture':{'west':150,'east':150,'south':70,'north':80},'toolDiameterSensitivity':200,
+  'retained':'Upper outlet/drop tail, both floor seals, fixed unionA half and downstream fixed unionB half; independent supports retained',
+  'rule':'Both accessible flat-face unions released before the supported elbow spool moves50south+50down. This is a required compatible joint action, not proof of a particular named union. Then lower400 under independent control through the open face; reverse with actual new seals and tests.'},
+ 'soilJunctionMaxEnvelope':[200,200,200],
+ 'upperRenewalBoundary':'MAT-INTERIORS owns the separate upper tray/tail withdrawal: the100 upper unionA half is retained only for ordinary lower-spool work. Full upper withdrawal must strip every nut/clamp/half exceeding its75 stem requirement below first, to pass its97 clear sleeve in the110 port. Actual kit strippability is unproved; an unstrippable100 part rejects that upper renewal. Interiors owns its500 upward stroke and explicit upper-FFL-relative handling coordinates; no reverse source import.',
+ 'rule':'Fixed outlet/drop tail and floor seals remain during ordinary below-slab union renewal.100OD unions plus50release and200tool sensitivity must fit the400clear underside opening; actual unions, matching tail and trapping/flow not proved. The low120rim replaces the former250step only if actual retained tail/drop and frame/outlet fit these requirements. No horizontal D50 route crosses the upper doorway.',
  'material':'Manufacturer-matched B568 geometry control retains PP/seals; no material admission or altered seal package. Actual component duty, hydraulic flow, support and joint recipe remain MAT-INTERIORS/MAT-SERVICES acceptance dependencies.'}
+assert drop_interface['unionB']['point'][2]==2794.75
+assert drop_interface['boxing']['supportBottom']-drop_interface['boxing']['panelTop']==25
+assert drop_interface['boxing']['panelTop']-drop_interface['boxing']['finishedUnderside']==20
+assert 2600<drop_interface['boxing']['finishedUnderside']
 
 data={'title':'Compact B service-demand, crossing and renewal reconciliation','baselineMain':'6a953ef6d3131364aca740eaff2a06f301adbc2e',
  'sourceBlobs':PINS,'joinedReference':joined,'fixtureDuties':duties,'inheritedPacking':conditional,
+ 'interfaces':{'principalShowerDrop':drop_interface},
  'boundedRewindLedger':{'id':'B-SERVICES-REWIND-01','status':'Explicit conditional design ledger; no accepted geometry or cyclic cross-owner source hashes',
   'outerEnvelope':417.5,'eastDryFace':11582.5,'eastStructuralFace':11597.5,'eastStructuralOuterFace':11737.5,
   'principalWetLining':30,'principalEastWetFace':11567.5,'principalSouthWetFace':6600,
@@ -308,8 +328,8 @@ for label,path in [('P',principal_feed),('F',family_feed)]:
 for a,b in zip(d50_path,d50_path[1:]):v.append(line(VX(a[0]),VY(a[1]),VX(b[0]),VY(b[1]),'#466cb2'))
 v += [f'<circle cx="{VX(10200)}" cy="{VY(6810)}" r="2" fill="#466cb2"/>',txt(VX(10200)-12,VY(6810)+6,'D50',2.8,'#466cb2')]
 v += [line(VX(9300),VY(6500),VX(11582.5),VY(6500),'#596b70','2 1'),rect(VX(10680),VY(6585),9.6,6.8,'none','#a24d36'),txt(156,74,'Plant north wall / proposed new port',2.8),txt(156,84,'x10800 / y6500 / centre z2740',2.8)]
-for i,label in enumerate(['P feed4472.5 at1:40:111.8125 fall.', 'F feed2510 at1:40:62.75 fall.', 'Shared stack entry centre z2682.5.', '400 route boxing, northern edge8160.', 'Underside2540: local560 ceiling cost.', '123 socket evidence;160 installed limit.', '200 turns outside fixed wall spool.', '200 renewal spool;250 retained tails.', '130 sleeve body is not release travel.', 'D50 first union10200/6810/z2797.25.']):v.append(txt(156,104+i*9,label,2.8))
-v += [txt(16,227,'Port arch:240 clear; spring2740; crown2860;215ring→3075;95 below RC3170.',3),txt(16,237,'160square corners:9.44 midplane /7.32 through170wall at1:40.200square fails; fixed spool retained.',2.9),txt(16,247,'New principal port11432.5/8040 remains a coordinated proposal; family feed requires its own fixture/frontage rewind.',2.9),txt(16,257,'No full-height stack passes through ground E containment. No source door arch is crossed; new wall port needs STR.',2.9),txt(16,270,'Local dropped service boxing is the chosen development cost. Actual outlet geometry, fittings, boundary and operation remain unaccepted.',2.8,'#a14738')]
+for i,label in enumerate(['P feed4472.5 at1:40:111.8125 fall.', 'F feed2510 at1:40:62.75 fall.', 'Shared stack entry centre z2682.5.', '400 route boxing, northern edge8160.', 'Underside2540: local560 ceiling cost.', '123 socket evidence;160 installed limit.', 'Fixed wall spool retained for renewal.', '200 renewal spool;250 retained tails.', '130 sleeve body is not release travel.', 'D50 first union A:10200/6810/z3000.']):v.append(txt(156,104+i*9,label,2.8))
+v += [txt(16,227,'Chosen arch320 clear: spring2740 /crown2900 /215ring→3115 /55 below RC3170.',3),txt(16,237,'160square corners56.44 through170wall at1:40;200square22.77;240square fails. Fixed spool retained.',2.9),txt(16,247,'Principal port11432.5/8040 remains conditional; family feed requires its own fixture/frontage rewind.',2.9),txt(16,257,'No full-height stack passes through ground E containment. Source door arches avoided; new wall port needs STR.',2.9),txt(16,270,'Local dropped service boxing is the chosen development cost. Actual outlet geometry, fittings, boundary and operation remain unaccepted.',2.8,'#a14738')]
 w=[txt(16,43,'G  PRINCIPAL COLLECTOR / DEVELOPED PROFILE · 1:20',3.3),txt(266,43,'H  NEW WALL PORT · 1:5',3.3)]
 HX=lambda d:16+d/20; HZ=lambda z:54+(3500-z)/20
 w += [rect(HX(0),HZ(3370),length(principal_feed)/20,10,'#bec8c2'),line(HX(0),HZ(3450),HX(length(principal_feed)),HZ(3450)),line(HX(0),HZ(2540),HX(length(principal_feed)),HZ(2540),'#aa7754','2 1')]
@@ -318,9 +338,9 @@ for a,b in zip(principal_feed,principal_feed[1:]):
  travel+=abs(a[0]-b[0])+abs(a[1]-b[1]);profile.append([travel,principal_start-travel/40])
 for a,b in zip(profile,profile[1:]):
  for dz in [-80,80]:w.append(line(HX(a[0]),HZ(a[1]+dz),HX(b[0]),HZ(b[1]+dz),'#327c7a'))
-w += [line(HX(principal_to_wall),HZ(3075),HX(principal_to_wall),HZ(2620),'#9e584c'),txt(16,117,'160 installed design envelope, including actual123 socket control.',2.8),txt(16,126,'Start2794.3125 →fixed wall spool2740 →retained east stack2682.5.',2.8),txt(16,135,'RC soffit3170 stays. Removable local boxing underside2540.',2.8),txt(16,144,'Upper drop port and sealed tail stay during below-ceiling service.',2.8)]
-CX=336; CY=140
-w += [f'<path d="M{CX-67} {CY} A67 67 0 0 1 {CX+67} {CY} L{CX+24} {CY} A24 24 0 0 0 {CX-24} {CY} Z" fill="#d9c4a5" stroke="#6e665c" stroke-width=".4"/>',line(CX-24,CY,CX-24,CY+24),line(CX+24,CY,CX+24,CY+24),line(CX-24,CY+24,CX+24,CY+24),rect(CX-16,CY-16,32,32,'none','#2b7d7b'),f'<circle cx="{CX}" cy="{CY}" r="12.3" fill="none" stroke="#567fbd" stroke-width=".4"/>',line(266,54,404,54),txt(266,62,'RC soffit3170; arch extrados3075',2.7),txt(266,176,'240clear /160square /actual123socket',2.7),txt(266,185,'Corners7.32 through wall; bottom37.88.',2.7),txt(266,194,'200square fails; turns stay outside.',2.7)]
+w += [line(HX(principal_to_wall),HZ(3115),HX(principal_to_wall),HZ(2580),'#9e584c'),txt(16,117,'160 installed design envelope, including actual123 socket control.',2.8),txt(16,126,'Start2794.3125 →fixed wall spool2740 →retained east stack2682.5.',2.8),txt(16,135,'RC soffit3170 stays. Removable local boxing underside2540.',2.8),txt(16,144,'Upper drop port and sealed tail stay during below-ceiling service.',2.8)]
+CX=329; CY=140
+w += [f'<path d="M{CX-75} {CY} A75 75 0 0 1 {CX+75} {CY} L{CX+32} {CY} A32 32 0 0 0 {CX-32} {CY} Z" fill="#d9c4a5" stroke="#6e665c" stroke-width=".4"/>',line(CX-32,CY,CX-32,CY+32),line(CX+32,CY,CX+32,CY+32),line(CX-32,CY+32,CX+32,CY+32),rect(CX-16,CY-16,32,32,'none','#2b7d7b'),f'<circle cx="{CX}" cy="{CY}" r="12.3" fill="none" stroke="#567fbd" stroke-width=".4"/>',line(254,54,404,54),txt(266,62,'RC soffit3170; arch extrados3115',2.7),txt(266,182,'320clear /160square /actual123socket',2.7),txt(266,191,'Corners56.44; bottom77.88 through wall.',2.7),txt(266,200,'200square fits22.77;240square fails.',2.7)]
 for i,label in enumerate(['Inspection spool:200 atx10800/y6900–7100; retained250 tails6650–6900 and7100–7350.',
  'These avoid fixed wall north face6585 by65 and D50 junction start7400 by50.130 sleeve leaves120 gross in each tail.',
  'No actual release stroke is inferred.400/750 spools at this position clash with the new D50 branch or its parked sleeves.',
