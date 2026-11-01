@@ -56,7 +56,7 @@ assert.equal(out.excavationPrismM3,6.816);
 assert(exitInvert-(-700)<0,'Outfall above trench invert cannot drain this trial by gravity');
 assert(0>-r.depthAtHouse,'Flooded trench does not remain a dry electrical space');
 assert(600<1000,'A 600-deep front strip cannot satisfy the source 1000 front field');
-assert(600<r.waterPipeCrownDepth,'Water at 900 cover does not fit above this 650 base');
+assert(r.depthAtHouse<r.waterPipeCrownDepth,'Water at 900 cover does not fit above this 650 base');
 assert.notEqual(out.movementAngleDegrees,0,'Relative endpoint movement is not a rigid straight connection');
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;');
 let s='';
