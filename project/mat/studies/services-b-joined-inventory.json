@@ -1,6 +1,6 @@
 {
   "title": "Compact B service-demand, crossing and renewal reconciliation",
-  "baselineMain": "1e7b2cbce408834ca3cbb91c286af37eda066829",
+  "baselineMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
   "sourceBlobs": {
     "project/str/studies/house-plan.json": "d722ada30df5729852043f0010433a890e399999",
     "project/bcr/studies/services-feasibility.json": "7365a81b2b598aa79c35ad903aefe77cf18d76c3",
@@ -243,6 +243,41 @@
       "warning": "No fitted insulation, joints, fire/acoustic seal or separation proof; do not infer service need from this test"
     }
   ],
+  "boundedRewindLedger": {
+    "id": "B-SERVICES-REWIND-01",
+    "status": "Explicit conditional design ledger; no accepted geometry or cyclic cross-owner source hashes",
+    "outerEnvelope": 417.5,
+    "eastDryFace": 11582.5,
+    "eastStructuralFace": 11597.5,
+    "eastStructuralOuterFace": 11737.5,
+    "principalWetLining": 30,
+    "principalEastWetFace": 11567.5,
+    "principalSouthWetFace": 6600,
+    "principalPort": [
+      11432.5,
+      8040,
+      160
+    ],
+    "portToStructuralFace": 85,
+    "portToWetFace": 55,
+    "principalColumn": [
+      11342.5,
+      7950,
+      180,
+      180
+    ],
+    "columnToWetFace": 45,
+    "rejectedEarlierPort": [
+      11492.5,
+      8040,
+      160
+    ],
+    "rejectedEarlierStructuralGap": 25,
+    "loggiaWall": "507.5 applies only to the new loggia sidewalls, not the existing outer house envelope",
+    "principalFixture": "Latest MAT-INTERIORS/HAD north-facing WC/door and120-rim shower are a bounded room rewind; source original WC remains the7277.5 adverse control, not the selected new port position",
+    "familyPort": "11432.5/6077.5 is an authored compatibility alternative, not a relocated family WC acceptance; its back service frontage/body route must be reconciled by HAD/IAS",
+    "outerWallMaterials": "417.5 is still a reference reservation; whole thermal/moisture/material recipe remains MAT-ENVELOPE scope"
+  },
   "rearCrossingProposal": {
     "id": "R-01",
     "cabinet": [
@@ -458,6 +493,247 @@
         7357.5
       ],
       "status": "Conditional near-fixture vertical route would intersect the integrated unadopted E water passage; no such drop is currently selected. Replan foul branch or court route together, including next loggia trial."
+    },
+    "selectedConditionalCollector": {
+      "status": "Selected finite compatibility design for development; no fixture, port or plumbing-system acceptance",
+      "principalFeed": [
+        [
+          11432.5,
+          8040,
+          2794.3125
+        ],
+        [
+          10800,
+          8040,
+          2778.5
+        ],
+        [
+          10800,
+          5200,
+          2707.5
+        ],
+        [
+          9800,
+          5200,
+          2682.5
+        ]
+      ],
+      "familyFeed": [
+        [
+          11432.5,
+          6077.5,
+          2745.25
+        ],
+        [
+          10800,
+          6077.5,
+          2729.4375
+        ],
+        [
+          10800,
+          5200,
+          2707.5
+        ],
+        [
+          9800,
+          5200,
+          2682.5
+        ]
+      ],
+      "principalLength": 4472.5,
+      "familyLength": 2510.0,
+      "fallDenominator": 40,
+      "principalFall": 111.8125,
+      "familyFall": 62.75,
+      "commonStackEntryCentre": 2682.5,
+      "principalPort": [
+        11432.5,
+        8040,
+        160
+      ],
+      "familyPort": [
+        11432.5,
+        6077.5,
+        160
+      ],
+      "portRule": "Principal port coordinated as a proposal with MAT-INTERIORS; family port is an authored alternative requiring a moved pan/back service frontage. Neither creates drilling permission or inherits an actual outlet height.",
+      "boxes": [
+        [
+          10600,
+          7760,
+          952.5,
+          400
+        ],
+        [
+          10600,
+          5000,
+          400,
+          3160
+        ],
+        [
+          10600,
+          5877.5,
+          952.5,
+          400
+        ],
+        [
+          9600,
+          5000,
+          1400,
+          400
+        ]
+      ],
+      "boxTop": 2900,
+      "underside": 2540,
+      "dropFrom3100": 560,
+      "socketEvidence": {
+        "identity": "BLUCHER811.XXX.110",
+        "pipeOD": 110,
+        "socketOD": 123,
+        "socketLength": 57,
+        "source": "https://www.blucher.com/dfsmedia/0533dbba17714b1ab581ab07a4cbb521/53115-source/639220620240000000/socketinfouk.pdf"
+      },
+      "compatibilityRequirements": {
+        "maxInstalledLocalEnvelope": 160,
+        "maxTurnAlongEachTangent": 200,
+        "portSpoolMaxSquare": 160,
+        "maxTurnOutwardFromRouteAxis": 80,
+        "demonstratedRemovableStraightPiece": 200,
+        "freeRetainedTailEachEnd": 250,
+        "slipCouplingBodyEvidence": 130,
+        "warning": "These are authored procurement/design limits, not measured supplied bend/branch/support or guaranteed socket-release dimensions. Straight160square alone is checked at the arch;200turns stay outside it. Measured products exceeding any requirement reject this design."
+      },
+      "wallPort": {
+        "centre": [
+          10800,
+          6500,
+          2740
+        ],
+        "clearSpan": 240,
+        "spring": 2740,
+        "bottom": 2620,
+        "intradosCrown": 2860,
+        "radialRing": 215,
+        "extrados": 3075,
+        "square160CornerVerticalClearanceAtMidplane": 9.442719099991592,
+        "wallThickness": 170,
+        "slopeCentreShiftAcrossHalfWall": 2.125,
+        "minimumThroughWallUpperCornerClearance": 7.317719099991592,
+        "minimumThroughWallBottomClearance": 37.875,
+        "toRCSoffit": 95,
+        "eastAbutmentTerritory": 447.5,
+        "rule": "Fixed straight spool and qualified floor/wall boundary retained. Arch ring, abutments, load transfer and movement need STR design; no capacity follows from geometric fit."
+      },
+      "maintenanceModule": {
+        "centreline": [
+          10800,
+          6900,
+          10800,
+          7100
+        ],
+        "length": 200,
+        "retainedTailTerritories": [
+          [
+            10800,
+            6650,
+            10800,
+            6900
+          ],
+          [
+            10800,
+            7100,
+            10800,
+            7350
+          ]
+        ],
+        "slipBodyLength": 130,
+        "freeTailMinusSleeveBody": 120,
+        "southTailMinusWallNorthFace6585": 65,
+        "D50JunctionStart7400MinusNorthTail": 50,
+        "fixedSupportStations": [
+          6625,
+          7375
+        ],
+        "supportAxialWidthRequirement": 20,
+        "undersideOpening": [
+          10620,
+          6600,
+          360,
+          800
+        ],
+        "handlingCradleFootprint": [
+          10500,
+          6800,
+          600,
+          800
+        ],
+        "requiredControlledLowering": 500,
+        "pipeLowestAfterLowering": 2170,
+        "rule": "250 tail territory must contain the entire actual parked130 sleeve, its release stroke, clamps and margins;120 arithmetic remainder is not the required stroke or a qualified removal. No ordinary joint lies within the fixed wall spool or D50 junction. The actual independent support/access/handling equipment must fit the declared floor territory; no equipment capacity or human operation is proved. This is one200 inspection/renewal spool, not a direction to joint all runs every200."
+      },
+      "maintenance": "Remove independently supported underside panels, retain wall spool and floor seals, isolate affected appliances and drain, support both fixed ends, park the actual sleeves within the250 retained-tail territories around the200 branch-free spool, then lower it500 under controlled support. Actual sleeve/union stroke, water containment, fixings, working access and reinstatement must meet those design requirements.",
+      "material": "EuroPipe geometric comparator has required elastomer/lubricant/accessory duties; it does not pass the material policy. No seals or hangers are removed to obtain a metal label.",
+      "supports": "Independently anchored hangers above the removable face, outside the160 local envelope where rods continue to RC; actual spacing, loads, anchors and acoustic/fire isolation unqualified",
+      "roomCost": "Local collector underside2540,560 below current3100. Source plant bodies and integrated pantry shelf clear in plan only; full installed overhead apparatus remains to reconcile. Existing plant arches are avoided in plan; the new port is explicit, not an unnoticed hole.",
+      "principalShowerDrop": {
+        "authority": "Coordinated MAT-INTERIORS120-rim trial; upper fixture/frame/outlet remains unqualified",
+        "formedFloorPort": [
+          10200,
+          6810,
+          110
+        ],
+        "pipeOD": 50,
+        "retainedDropMaxEnvelope": 100,
+        "firstUnion": [
+          10200,
+          6810,
+          2797.25
+        ],
+        "firstUnionMaxOD": 100,
+        "requiredAxialRelease": 50,
+        "firstUnionClearAperture": [
+          10050,
+          6660,
+          300,
+          300
+        ],
+        "path": [
+          [
+            10200,
+            6810,
+            2797.25
+          ],
+          [
+            10200,
+            7500,
+            2780.0
+          ],
+          [
+            10800,
+            7500,
+            2765.0
+          ]
+        ],
+        "length": 1290,
+        "fallDenominator": 40,
+        "fall": 32.25,
+        "soilJoin": [
+          10800,
+          7500,
+          2765.0
+        ],
+        "unionBelowRCSoffit": 372.75,
+        "fixedTailFromRCTopToUnion": 572.75,
+        "boxUnderside": 2700,
+        "boxWidth": 320,
+        "soilJunctionMaxEnvelope": [
+          200,
+          200,
+          200
+        ],
+        "rule": "Fixed outlet/drop tail and floor seals remain during ordinary below-slab union renewal.100OD union plus50release and200tool sensitivity must fit the300clear underside opening; actual union, matching tail and trapping/flow not proved. The low120rim replaces the former250step only if actual retained tail/drop and frame/outlet fit these requirements. No horizontal D50 route crosses the upper doorway.",
+        "material": "Manufacturer-matched B568 geometry control retains PP/seals; no material admission or altered seal package. Actual component duty, hydraulic flow, support and joint recipe remain MAT-INTERIORS/MAT-SERVICES acceptance dependencies."
+      }
     }
   },
   "materialBoundary": {
