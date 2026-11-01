@@ -17,6 +17,12 @@ FIRE_BLOB='1412e628aa6b539664c8f5efd507595623cf2a21'
 fire_raw=subprocess.check_output(['git','show',FIRE_HEAD+':'+PATH],cwd=ROOT)
 assert hashlib.sha1(b'blob '+str(len(fire_raw)).encode()+b'\0'+fire_raw).hexdigest()==FIRE_BLOB
 fire_house=json.loads(fire_raw)
+REWIND_HEAD='0b2f7d48c82459214cae4b6778c3ced7b3e6c54b'
+REWIND_BLOB='6affb39e28a777e36532729183152c8c588e4989'
+rwraw=subprocess.check_output(['git','show',REWIND_HEAD+':'+PATH],cwd=ROOT)
+assert hashlib.sha1(b'blob '+str(len(rwraw)).encode()+b'\0'+rwraw).hexdigest()==REWIND_BLOB
+rwhouse=json.loads(rwraw)
+
 fire=fire_house['protectedRoute']
 shared_path=ROOT/'project/mat/studies/services-b-joined-inventory.json'
 shared=json.loads(shared_path.read_text())['interfaces']['principalShowerDrop']
@@ -464,7 +470,7 @@ for u in sink['unions']:
  u['planReachFromOperator']=math.dist([x,y],sink['operatorCentre'])
  assert u['planReachFromOperator']<600
 assert sink['initialLift']-sink['retainedStudHeight']==5
-sink['handlingRequirement']={'movingHeadPlan':[900,670],'firstTranslation':[-600,0],'secondTranslation':[0,-600],'tableInitialYRequired':9100,'tableFirstY':9000,'tableFinalY':9650,'ENchairPark':[10800,8475,500,500],'otherChairParks':[[7750,y,500,500] for y in [8600,9150,9700]],'status':'Narrow IAS coordination rewind; actual HAD immutable table-source pin and full sequence reproduction pending. No old chair parking or stale c83 table location credited.'}
+sink['handlingRequirement']={'movingHeadPlan':[900,670],'firstTranslation':[-600,0],'secondTranslation':[0,-600],'tableSource':{'head':REWIND_HEAD,'blob':REWIND_BLOB,'table':rwhouse['groundFurniture']['dining-table1200x800']},'tableInitialYRequired':9100,'tableFirstY':9000,'tableFinalY':9650,'ENchairPark':[10800,8475,500,500],'otherChairParks':[[7750,y,500,500] for y in [8600,9150,9700]],'status':'Narrow IAS coordination rewind; Actual0b2 table source pinned; full IAS sequence reproduction pending. No old chair parking or stale c83 table location credited.'}
 sink['retainedTrap']='Trap isfixedbelowwasteunion; movingstation tail terminatesat475 before20lift and≥495after. Actual trap/waterseal/cleanout mustfit below475; no movingPtrap sweptthroughfixedpipe.'
 sink['retainedFeed']={'verticalCornerColumn':[11425,11188,145,224],
  'coldPath':[[10500,10800,2945],[11487,10800,2945],[11487,11250,2945],[11487,11250,212],[9025,11250,212],[9025,10950.5,212],[9025,10950.5,425]],
@@ -606,18 +612,19 @@ residues.append({'id':'PV','quantity':'8 modules +1inverter + matched DC cable/c
  'proposal':'Exact certified system residuals after roof/material comparison; no owner exception approved.'})
 
 rear_drop={'status':'Constructive compatibility requirement for separate rear1000 tray, not actual matched outlet/support/union admission.',
- 'port':[2675,9500,110],'trayDrainEvidence':{'selectedReference':'BetteUltra5940 eastdrain; interiors auditedB2 nativeDW_0082','tray':[1802.5,8952.5,1000,1000],'drainCentre':[2592.5,9452.5],'requiredTailOffset':[82.5,47.5],'requiredPlanOffsetMagnitude':math.hypot(82.5,47.5),'status':'Authored250x160connectionterritory cancontain offset, butactualB568outlet/elbow/support/seat/height/release mustmatch; not1000frameapprovalor900transfer.'},'clearSleeveInside':97,'maximumRenewableStem':75,
- 'unionA':[2675,9500,2950],'turnT':[2675,9500,2790],'unionB':[2575,9500,2787.5],
- 'branch':[[2675,9500,2790],[1750,9500,2766.875],[1750,11177.5,2724.9375],[567.5,11177.5,2695.375]],
+ 'port':[2122.5,9452.5,110],'trayDrainEvidence':{'selectedReference':'BetteUltra5940 WESTdrain; interiors auditedB2 nativeDW_0082','tray':[1802.5,8952.5,1000,1000],'drainCentre':[2012.5,9452.5],'requiredTailOffset':[110,0],'requiredPlanOffsetMagnitude':110,'status':'Authored250x160connectionterritory cancontain offset, butactualB568outlet/elbow/support/seat/height/release mustmatch; not1000frameapprovalor900transfer.'},'clearSleeveInside':97,'maximumRenewableStem':75,
+ 'unionA':[2122.5,9452.5,2950],'turnT':[2122.5,9452.5,2777.375],'unionB':[2022.5,9452.5,2774.875],
+ 'branch':[[2122.5,9452.5,2777.375],[1750,9452.5,2768.0625],[1750,11177.5,2724.9375],[567.5,11177.5,2695.375]],
  'gradient':40,'maximumCompleteFittingOD':100,'supportDepth':25,'airReserve':25,'innerPanelTop':2595.375,'panelThickness':20,'finishedPanelUnderside':2575.375,
- 'clearHatch':[2275,9100,800,800],'outerHatch':[2255,9080,840,840],
- 'fixedBeamFinishedWestFace':2817.5,'fixedBeamSoffit':3005,
+ 'clearHatch':[1722.5,9052.5,800,800],'outerHatch':[1702.5,9032.5,840,840],
+ 'fixedBeamFinishedWestFace':2775.5,'fixedBeamSoffit':3005,
  'spoolMotion':[[50,0,-50],[0,0,-450]],'spoolMaximumTopBefore':3000,'spoolMaximumTopAfter':2500,'finalPanelClearance':75.375,
  'upperRenewal':{'tailBelowUpperFFL':500,'upwardStroke':550,'finalStemAboveFFL':50,'stripBeforeWithdrawal':'All A upper halves/nuts/clamps wider than75 must actually detach below before75stem passes97sleeve; ordinary lower renewal retains A upperhalf.'},
- 'workingPlatformRequiredPlan':[1950,9050,1200,1500],'operatorShoulder':[2635,9725,2450],'headPlanRadius':150,'maximumHeadTop':2750,
- 'toolContacts':[[2675,9600,2950],[2575,9560,2787.5]],
- 'boundary':'800 hatch is panel aperture, not a free vertical prism through retained beam. All A/T/B complete bodies/tool/spool stay west of2817.5. Upper tray drain/feet must match this authored port or this specific route fails; no automatic principal900 transfer. New formedport requires STR support proof; not drilling permission.'}
-assert length([x[:2] for x in rear_drop['branch']])==3785
+ 'workingPlatformRequiredPlan':[1675,9150,1000,1250],'actualReceiverSource':{'head':REWIND_HEAD,'blob':REWIND_BLOB,'fixedObstacle':rwhouse['fixedObstacles']['GROUND'][0],'fullFinishEachSide':18,'reserveToPlatform':27.5},'actualTableSource':rwhouse['groundFurniture']['reading-side-table300'],'operatorShoulder':[2082.5,9677.5,2450],'headPlanRadius':150,'maximumHeadTop':2750,
+ 'toolContacts':[[2122.5,9552.5,2950],[2022.5,9512.5,2774.875]],
+ 'furnitureMaintenance':{'sourceHead':REWIND_HEAD,'sourceBlob':REWIND_BLOB,'familySofaBefore':rwhouse['groundFurniture']['family-sofa1900x750'],'familySofaPark':[2337.5,10450,1900,750],'northTranslation':650,'reserves':{'readingSofaToPlatform':25,'southReceiverToPlatform':27.5,'parkedSofaToPlatform':50,'northReceiverToParkedSofa':42.5,'weatherWallWith18TrimToSofa':25},'repeatableAction':'TranslatefamilysofaN650first; platformerectedafterthatmove. Restorebothafterdisconnection. Nofixedreceiver/beam/support removed.'},
+ 'boundary':'800 hatch is panel aperture, not a free vertical prism through retained beam. All A/T/B complete bodies/tool/spool stay west of2775.5. Upper tray drain/feet must match this authored port or this specific route fails; no automatic principal900 transfer. New formedport requires STR support proof; not drilling permission.'}
+assert length([x[:2] for x in rear_drop['branch']])==3280
 for a,c in zip(rear_drop['branch'],rear_drop['branch'][1:]):assert abs((a[2]-c[2])-math.dist(a[:2],c[:2])/40)<1e-8
 assert max(math.dist(rear_drop['operatorShoulder'],x) for x in rear_drop['toolContacts'])<600
 assert rear_drop['fixedBeamFinishedWestFace']-(rear_drop['operatorShoulder'][0]+rear_drop['headPlanRadius'])>=25
@@ -625,7 +632,7 @@ assert rear_drop['finishedPanelUnderside']-rear_drop['spoolMaximumTopAfter']>=25
 
 result={'status':'Constructive provisional whole-house service baseline; no accepted apparatus, materials, fire route, site loading or commissioning.',
  'basis':{'HADHead':HEAD,'HADPath':PATH,'HADBlob':BLOB,'HADStatus':b['status'],
-  'mergedInterfaceMain':'546c98f93a3dccbfe48119bd2e92117b6e2d766f','units':'mm, local proposed groundFFL0; first3450; all z use one datum'},
+  'narrowObstacleFurnitureRewind':{'head':REWIND_HEAD,'blob':REWIND_BLOB,'scope':'Onlyactualgroundreceivers/table/side-table used bynamed renewalchecks; wholec83roomsource remainscontrol, notsilentwholehouseadoption.'},'mergedInterfaceMain':'546c98f93a3dccbfe48119bd2e92117b6e2d766f','units':'mm, local proposed groundFFL0; first3450; all z use one datum'},
  'selection':'Local continuousMEV + background vents + separate cooker capture +8kW compatibility monobloc/radiators +300L hotwater.',
  'air':air,'extract':extract,'supply':supplies,
  'cooker':{'extractPoint':[11200,12000,2400],'duct':160,'exhaustRadialInsulation':50,'metalJacketEachSide':1,'fullInsulatedOD':262,'formedWallTerritory':320,'minimumCaptureLps':30,'makeupPoint':[12000,8600,2400],
@@ -653,6 +660,7 @@ def plan(level,ox,oy):
   furniture.update({'family-WC':family['WC'],'family-basin':family['basin'],'family-bath':family['bath'],'family-column':family['column'],'riser':plant['riserGross']})
  else:
   for k in ['Q350-body','north-sink-station','north-cooking-station']:furniture.pop(k,None)
+  furniture['dining-table1200x800']=rwhouse['groundFurniture']['dining-table1200x800'];furniture['reading-side-table300']=rwhouse['groundFurniture']['reading-side-table300']
   furniture.update({'sink':sink['station'],'cooker':sink['cookingStationRewind']['footprint'],'washer':rewinds['utility']['washer'],'utilitysink':rewinds['utility']['sink'],'primarybuffer':plant['primaryBuffer']['station'],'hydraulics':plant['controlsHydraulics']})
  for n,r in furniture.items():s.append(box(r,'#b8b1a4'))
  if not level:
