@@ -37,10 +37,23 @@ test('HAD near-level court pan and gravity comparison is reproducible and remain
  assert.equal(data.emergency.operatingLevel,'unknown')
  assert.equal(data.emergency.firstSusceptibleInterface,'unknown')
  assert.equal(data.emergency.independentReceiver,'unproven')
+
+ const pinch=data.portalPinch
+ assert.equal(pinch.maxAllowedInletInvertDepthAtSchematicGrade,82.5)
+ assert.equal(pinch.compactCollectorInvertDepth,131)
+ assert.equal(pinch.carrierCoverTrials.length,3)
+ assert.deepEqual(pinch.carrierCoverTrials.map((c:any)=>c.additionalRelativeRiseNeeded),[48.5,77.5,137.5])
+ for(const c of pinch.carrierCoverTrials){
+  assert.equal(c.controllingInvertDepth,Math.max(pinch.compactCollectorInvertDepth,c.carrierHeight+c.retainedCover))
+  assert.equal(c.requiredRelativeHeight,c.controllingInvertDepth+pinch.crossingFall+pinch.receiverClearance)
+  assert.equal(c.additionalRelativeRiseNeeded,Math.max(0,c.requiredRelativeHeight-pinch.availableRelativeHeight))
+ }
+ assert.equal(pinch.carrierCoverTrials[1].controls,'physical envelope')
  const svg=read('court-near-level-window.svg')
  assert.match(svg,/viewBox="0 0 420 297"/)
  assert.match(svg,/NOT a drain or section acceptance/)
  assert.match(svg,/D = 150/)
  assert.match(svg,/48\.5 mm beyond/)
+ assert.match(svg,/48\.5 mm is NOT a buildable passage/)
  assert.doesNotMatch(svg,/-7\.8 spare/)
 })
