@@ -1,0 +1,137 @@
+{
+  "basis": "RH-LAYOUT-REVISION-02",
+  "scope": "UNADOPTED geometric envelope comparison only. Does not select a bore, structural portal, water boundary, equipment layout, room finish or exterior receiver.",
+  "source": {
+    "shell": 12000,
+    "court": {
+      "x": 4250,
+      "y": 4250,
+      "width": 3500,
+      "depth": 3500
+    },
+    "envelope": 417.5,
+    "courtWindows": [
+      [
+        4650,
+        5650
+      ],
+      [
+        6350,
+        7350
+      ]
+    ],
+    "plantReplacementDoor": [
+      3900,
+      5300
+    ],
+    "outerWindow": [
+      6900,
+      7900
+    ],
+    "courtPier": [
+      5650,
+      6350
+    ],
+    "outerPier": [
+      5300,
+      6900
+    ],
+    "commonPier": [
+      5650,
+      6350
+    ],
+    "commonWindow": [
+      6900,
+      7350
+    ],
+    "plantRoom": {
+      "x": 9500,
+      "y": 2550,
+      "width": 2500,
+      "depth": 4100
+    },
+    "pantry": {
+      "x": 9500,
+      "y": 6650,
+      "width": 2500,
+      "depth": 1455
+    },
+    "plantDry": {
+      "x": 9862.5,
+      "y": 5400,
+      "width": 500,
+      "depth": 1000
+    },
+    "plantWorking": {
+      "x": 10662.5,
+      "y": 2800,
+      "width": 920,
+      "depth": 3700
+    },
+    "riser": {
+      "x": 9862.5,
+      "y": 4500,
+      "width": 550,
+      "depth": 700
+    }
+  },
+  "scenarios": {
+    "oldPantry": {
+      "axisY": 7000,
+      "width": 300,
+      "band": [
+        6850,
+        7150
+      ],
+      "courtBayOverhang": 0,
+      "outerBayOverhang": 50,
+      "room": "G-PANTRY",
+      "status": "Centreline lies within both window bays but a 300 mm passage projection overlaps outer window-jamb bearing territory by 50 mm. No structure has been selected."
+    },
+    "shiftedPantry": {
+      "axisY": 7125,
+      "width": 300,
+      "band": [
+        6975,
+        7275
+      ],
+      "commonWindowWidth": 450,
+      "nominalCommonWindowSideMargins": [
+        75,
+        75
+      ],
+      "room": "G-PANTRY",
+      "status": "Nominally stays within overlapping bay projections but leaves only 75 mm each side before actual window support, crossing protection or structural bearing."
+    },
+    "pierPlant": {
+      "axisY": 6000,
+      "width": 300,
+      "band": [
+        5850,
+        6150
+      ],
+      "commonPierWidth": 700,
+      "nominalCourtPierSideMargins": [
+        200,
+        200
+      ],
+      "nominalOuterPierSideMargins": [
+        550,
+        750
+      ],
+      "room": "G-PLANT",
+      "plantDryOverlapY": 300,
+      "plantWorkingOverlapY": 300,
+      "riserOverlapY": 0,
+      "status": "Better nominal sub-window masonry alignment but collides with unselected plant dry-unit and equipment working-footprint reservations. Not an accepted passage."
+    }
+  },
+  "openQuestions": [
+    "Permanent wall/loadbearing below window or door pier",
+    "Wet-to-dry boundary across plant room",
+    "Full local floor layers and removable service cover",
+    "Actual supported aperture and lateral/restraint route",
+    "Rainwater full duty and first wetting/hydraulic head",
+    "Independent lawful high-water exterior receiving territory"
+  ]
+}
