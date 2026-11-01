@@ -43,6 +43,15 @@
   "afterStress": 110.5,
   "reserveSurplus": 60.5,
   "failedD1200": -39.5,
+  "permanentBridge": {
+    "flangeDepth": 120,
+    "flangeTop": -180,
+    "flangeBottom": -300,
+    "ribWidth": 140,
+    "ribHeight": 100,
+    "ribTop": -80,
+    "ribBottom": -180
+  },
   "capModuleLength": 400,
   "airLidGross": [
     660,
