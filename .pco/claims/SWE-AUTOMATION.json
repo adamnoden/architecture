@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "SWE-AUTOMATION",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "70980b2f-f5d8-457b-9446-00d50b648234",
   "holder": {
     "kind": "chatgpt",
     "label": "swe-main-reconciliation-20261101"
   },
   "claimedAt": "2026-11-01T09:15:00.234Z",
-  "heartbeatAt": "2026-11-01T09:18:59.621Z",
-  "expiresAt": "2026-11-01T12:18:59.621Z",
+  "heartbeatAt": "2026-11-01T09:29:48.000Z",
+  "expiresAt": "2026-11-01T09:29:48.000Z",
   "branch": "work/swe-recovery-20261101",
   "checkpoint": {
     "evidence": "Owner-directed recovery of four SWE packets; prior exact-head CI passed on PR #1180 but merged main now conflicts in generated projections only.",
@@ -36,5 +36,7 @@
       "next": "Integrate packet commit as parent of shared PR #1180, run final exact-head CI and canonical four-packet publication preflight, then merge once."
     }
   },
-  "pr": 1197
+  "pr": 1197,
+  "releasedAt": "2026-11-01T09:29:48.000Z",
+  "releaseReason": "completed"
 }
