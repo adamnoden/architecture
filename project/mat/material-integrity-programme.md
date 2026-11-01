@@ -60,6 +60,8 @@ Historical holds preserve the old source identities and technical learning. Exis
 - [Soil-pipe joints and replaceable sections](services-waste-joints.md) — MAT-SERVICES retains a documented caulked lead-wool challenger, records exact seal/coating exclusions in current metal-pipe systems, and compares a real socket and slip coupling with BCR's bare-body packing and IAS access. S02 remains unresolved as a complete system and renewal detail; no geometry, exception or packet closeout is selected.
 - [Shower-waste connection and first release](services-shower-waste-interface.md) — MAT-SERVICES draws the retained west interface and separates its conditional 43 mm installed budget from face-open release and whole-body parking. The manufacturer height datum is identified while the complete outlet, support and opening envelopes remain unbound. The connected joint and material package still need establishing; no tray/room geometry or lifecycle changes are adopted.
 
+- [Installed glazing: core, support and weather joint](envelope-glazing-alternatives.md) — completed bounded comparison ranks non-laminated FINEO as the conditional insulated candidate and single glazing/traditional bedding as the simple control; rejects documented Spacia/PIB and synthetic installation examples under the default policy. Current DTA/ETA, installed-versus-packaging constituents and three real-pane grid sensitivities distinguish support, safety and energy duties. No product, facade change, exception or broad envelope closeout is selected.
+
 ## Primary-source reconnaissance, accessed 30 October 2026
 
 The following observations bound the initial design work. They are not procurement recommendations or a complete lifecycle assessment.
