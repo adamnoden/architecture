@@ -136,7 +136,9 @@ export const roofWaterNodes = defineNodes([
     id: 'RWT-06',
     owners: ['RWT'],
     title: 'Rainwater access, courtyard transition and site handoff',
-    dependencies: ['RWT-03', 'RWT-05'],
+    // HAD-03 must first produce or reject a located court egress section;
+    // further carrier detail cannot resolve the missing house-ring passage.
+    dependencies: ['RWT-03', 'RWT-05', 'HAD-03'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
