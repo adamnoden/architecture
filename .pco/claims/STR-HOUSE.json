@@ -9,8 +9,8 @@
     "label": "zerg3-structure-loggia"
   },
   "claimedAt": "2026-11-01T20:04:17.184Z",
-  "heartbeatAt": "2026-11-01T23:37:10.026Z",
-  "expiresAt": "2026-11-02T00:22:10.026Z",
+  "heartbeatAt": "2026-11-01T23:44:18.726Z",
+  "expiresAt": "2026-11-02T00:29:18.726Z",
   "branch": "work/zerg3-structure-loggia",
   "predecessor": {
     "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Source PR1235 head4c6f282560354a7a34a2a74531d100451393ba3f tree5547c1f25d2a1423fa59ea7dac23ed0eae74040a exactlocalremote; actualHAD0b2f floor/stair/receiver calculation/render checks and repository integrity PASS; frozen node review/failed LP preserved; owning bounded acceptance table",
-    "next": "Commander independent review/exact-head CI and bounded source integration; owning STR continues roof circular arch lateral service and inhabited source joins after frozen PR snapshot",
-    "blocker": "STR-HOUSE remains incomplete; no accepted house/foundation detail; actual source/root adoption conditions explicitly separated from later competent engineering/site acceptance"
+    "evidence": "PR1235 correctedheadf5c3aa0d0827d3fb06777d317e9e7480dcdface2 tree21456e2f025c823c3c7aa54f95b715a3c3a7e505; normal-waist vertical unitload projection sec pitch applied BOTH deflection terms;8.699077+2.467287=11.166364<11.700; virtualwork quadrature and source generator --check pass; actual stair render inspected; only4 correction files",
+    "next": "Commander fresh exact-head CI and independent numerical delta verification; bounded source integration with STR-HOUSE still incomplete",
+    "blocker": "No new engineering or geometry adoption; existing bounded acceptance table and failed node evidence unchanged"
   },
   "pr": 1235
 }
