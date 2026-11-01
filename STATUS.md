@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 13 · **Active:** 0 · **Blocked:** 30 · **Held:** 2 · **Done:** 107 · **Cancelled:** 0
+**Structurally ready:** 12 · **Active:** 0 · **Blocked:** 30 · **Held:** 2 · **Done:** 108 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -24,8 +24,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-BOUNDARY` | Compare the Boundary Service Lodge and accessible external service raceway | HAD | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | — |
-| `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | — |
-| `RWT-ROBUSTNESS` | Test full-duty independent paths, reserve and common-cause rainwater failures | RWT | — |
+| `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | RWT-07 |
 | `STR-GROUND` | Compare tree-tolerant foundations, ground movement isolation and substructure interfaces | STR | — |
 | `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | STR / HAD | — |
 | `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT | — |
@@ -51,7 +50,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, DEL-CURRENT |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE |
-| `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-06, RWT-ROBUSTNESS |
+| `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-06 |
 | `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | RWT-07, HAD-03, STR-RECONCILE |
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
