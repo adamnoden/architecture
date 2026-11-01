@@ -1,39 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 12,
-  "state": "released",
-  "leaseId": "7619f2db-fb07-4914-b2fb-dd2284fe29a0",
+  "generation": 13,
+  "state": "claimed",
+  "leaseId": "10049375-f6a2-4aa4-87a5-3da538b5d0dd",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-ias-floor-recovery-1937"
+    "label": "zerg2-access"
   },
-  "claimedAt": "2026-10-31T19:40:53.427Z",
-  "heartbeatAt": "2026-10-31T19:58:03.802Z",
-  "expiresAt": "2026-10-31T19:58:03.802Z",
-  "branch": "work/swarm-riser-recovery-20261031",
+  "claimedAt": "2026-11-01T19:25:45.832Z",
+  "heartbeatAt": "2026-11-01T19:25:45.832Z",
+  "expiresAt": "2026-11-01T20:10:45.832Z",
+  "branch": "work/zerg2-ias-b-joined",
   "predecessor": {
-    "leaseId": "12aa043e-cef4-4c1a-8ae8-8401e2ca7664",
-    "generation": 11,
-    "branch": "work/swarm-2900-next-20261031"
-  },
-  "recoverySource": {
-    "leaseId": "73aa7dc9-af13-474b-b663-5780130655fd",
-    "generation": 10,
-    "branch": "work/swarm-2900-interfaces-20261031",
-    "pr": 1157,
+    "leaseId": "7619f2db-fb07-4914-b2fb-dd2284fe29a0",
+    "generation": 12,
+    "branch": "work/swarm-riser-recovery-20261031",
+    "pr": 1170,
     "checkpoint": {
-      "evidence": "PR #1157 merged as ab36b0bd8ae03d754cd9b7332f42e90282c1b28b; accepted tree equals validated head 2c8169e4584c1196e1e0a60dad3cc86226d0e946. Full CI 41225448974 succeeded; IAS canonical preflight passed 17:40:56.322Z. Independent manual/source review, repository validation and docs build passed.",
-      "next": "Handoff this merged partial result. Obtain an identified current bowl-seat/downstream waste assembly and bind its full constituents, actual sealing faces, support and withdrawal sequence before further IAS adoption.",
-      "blocker": "Current supplied variant, every retained ring and connection, installed clearance and release travel remain unbound; generic assembly diagrams do not resolve those inputs. IAS-03 remains incomplete."
+      "evidence": "PR1170 merged as 899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b at 2026-10-31T19:55:10Z. Fresh native fetch independently verified accepted tree 50158c3bb7c3b26102df235b91efc59956d29592 and all five IAS blobs byte-identical to published predecessor 6416dddda7584491829bbf53ccfa10ad01c2cfbb; IAS6416, STR1cafd7af and combined0a1e are preserved ancestors. Root verified full CI41236042786 attempt2 success on exact c3953e189583f42c101223057f2b7671877c732b, IAS preflight19:55:05.091Z and common branch deletion. Independent code, note and A3 review passed unchanged; HAD and IAS reproducer checks passed before publication.",
+      "next": "Release this exact IAS-03 generation12 as handoff after actual checkpoint receipt. Accepted result retains A and conditionally compares east-only C with supported flush closure; continue from accepted main only after fresh canonical allocation.",
+      "blocker": "IAS-03 remains planned and incomplete: actual supported floor closure and cabinet chassis, specific service component and renewable aperture/withdrawal, structural receiving panels and connections, installed constituents and physical acceptance are unresolved. B remains a failed comparator, not adopted."
     }
   },
-  "checkpoint": {
-    "evidence": "PR1170 merged as 899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b at 2026-10-31T19:55:10Z. Fresh native fetch independently verified accepted tree 50158c3bb7c3b26102df235b91efc59956d29592 and all five IAS blobs byte-identical to published predecessor 6416dddda7584491829bbf53ccfa10ad01c2cfbb; IAS6416, STR1cafd7af and combined0a1e are preserved ancestors. Root verified full CI41236042786 attempt2 success on exact c3953e189583f42c101223057f2b7671877c732b, IAS preflight19:55:05.091Z and common branch deletion. Independent code, note and A3 review passed unchanged; HAD and IAS reproducer checks passed before publication.",
-    "next": "Release this exact IAS-03 generation12 as handoff after actual checkpoint receipt. Accepted result retains A and conditionally compares east-only C with supported flush closure; continue from accepted main only after fresh canonical allocation.",
-    "blocker": "IAS-03 remains planned and incomplete: actual supported floor closure and cabinet chassis, specific service component and renewable aperture/withdrawal, structural receiving panels and connections, installed constituents and physical acceptance are unresolved. B remains a failed comparator, not adopted."
-  },
-  "pr": 1170,
-  "releasedAt": "2026-10-31T19:58:03.802Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "7619f2db-fb07-4914-b2fb-dd2284fe29a0",
+    "generation": 12,
+    "branch": "work/swarm-riser-recovery-20261031",
+    "pr": 1170,
+    "checkpoint": {
+      "evidence": "PR1170 merged as 899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b at 2026-10-31T19:55:10Z. Fresh native fetch independently verified accepted tree 50158c3bb7c3b26102df235b91efc59956d29592 and all five IAS blobs byte-identical to published predecessor 6416dddda7584491829bbf53ccfa10ad01c2cfbb; IAS6416, STR1cafd7af and combined0a1e are preserved ancestors. Root verified full CI41236042786 attempt2 success on exact c3953e189583f42c101223057f2b7671877c732b, IAS preflight19:55:05.091Z and common branch deletion. Independent code, note and A3 review passed unchanged; HAD and IAS reproducer checks passed before publication.",
+      "next": "Release this exact IAS-03 generation12 as handoff after actual checkpoint receipt. Accepted result retains A and conditionally compares east-only C with supported flush closure; continue from accepted main only after fresh canonical allocation.",
+      "blocker": "IAS-03 remains planned and incomplete: actual supported floor closure and cabinet chassis, specific service component and renewable aperture/withdrawal, structural receiving panels and connections, installed constituents and physical acceptance are unresolved. B remains a failed comparator, not adopted."
+    }
+  }
 }
