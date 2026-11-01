@@ -1,3 +1,4 @@
+# Post-CI fresh preflight: exact-head PR validation 41308734847 succeeded.
 name: HAD-03 near-level court window preflight PR1213
 on:
   push:
