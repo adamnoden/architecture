@@ -64,4 +64,4 @@ It is valid now to publish the **data schema** and a rejected, source-bounded hi
 
 What it **does** resolve is the programme-level *choice of next question*: abandon the repeated historical carrier's product search as the default research loop. The next useful action is a **coupled architectural section** with a new N service passage and independent E gravity escape, and direct rejection of any unchanged plan lacking them. If no such section survives the owner’s requirements, formally ask HAD to rewind the house rather than embed a pump or concealed failure zone to preserve a neat diagram.
 
-This is an explicit project design constraint, not an extra workstream or another editable task graph. It protects the correctness of the later TRlAD/ROF-RWT-GATE and the owner’s no-service-in-permanent-fabric, passive-dryness principles.
+This is an explicit project design constraint, not an extra workstream or another editable task graph. It protects the correctness of the later TRIAD/ROF-RWT-GATE and the owner’s no-service-in-permanent-fabric, passive-dryness principles.
