@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "HAD-BOUNDARY",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "fdd34ebe-2de7-42c9-810c-ddc374031bc0",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-worker-four-20261101"
+  },
+  "claimedAt": "2026-11-01T15:00:01.129Z",
+  "heartbeatAt": "2026-11-01T15:00:01.129Z",
+  "expiresAt": "2026-11-01T15:45:01.129Z",
+  "branch": "work/zerg-had-boundary-20261101"
+}
