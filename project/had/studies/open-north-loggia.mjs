@@ -62,7 +62,7 @@ const candidate={
  status:'FIRST WHOLE-HOUSE CANDIDATE, NOT ADOPTED. Known failures/interfaces are explicit; no support/water/material/site acceptance.',startingMain:'6a953ef6d3131364aca740eaff2a06f301adbc2e',base:{path:basePath,sha256:sha},
  shell:12000,insulatedPortal,court:[4250,4250,3500,3500],envelope:417.5,loggia,weather,groundWalls,upperWalls,openingRewinds,openings,groundFurniture:ground,upperFurniture:upper,stair:b.stair,void:b.void,
  fixedObstacles:{GROUND:[['wetBeamSouthReceiver',[2817.5,8687.5,170,330]],['wetBeamNorthReceiver',[2817.5,11502.5,170,330]],['stairMidPostFinished',[2817.5,7117.5,265,280]]],FIRST:[['principalEastExtraWetLining',[11567.5,6600,15,1552.5]]]},structuralChanges:{stairMidPost:{concrete:[2817.5,7132.5,250,250],eastRoomFinish:15,eastFinishedFace:3082.5,courtWestFace:3832.5,grossGalleryClear:750,scope:'ActualSTRnewpostoutside1100flight; body/window/guard/escape testrequired.'},upperFloor:'Continuous RC200 trial, not adopted. Ordinary short spans/support schedule owned by STR.',upperRearDivider:{from:7400,to:7622.5,finished:170,core:140},upperRearWestReturn:{from:4450,to:4377.5,finished:170,core:140},newWetWallBeam:{axisX:2902.5,supportAxesY:[8852.5,11667.5],span:2815,reason:'Ground reading partition removed; actualupperwetwall needs a finite separate beam/support, no unproved slab line-load spreading.',southDoorEdge:3100,northWindowStart:3050,beamTop:3370,beamBottom:3020,finishedGroundSoffit:3005,southReceiverFinished:[2817.5,8687.5,170,330],northReceiverFinished:[2817.5,11502.5,170,330]},exposedSoffit:'Actual thermal/fire/weather package below upper floor over loggia unqualified.'},
- rooms:{living:{bounds:[417.5,8937.5,3875,2645],twoSofas:true,groundReadingWallRemoved:true,sofaFaces:['EAST','WEST'],scope:'Open arch loses acoustic/privacy closure; full body/window/stack/receiver/fire tests required before selection.'},kitchenDining:{bounds:[7707.5,8412.5,3875,3170],fourPlaces:true,northWorkingGap:732.5,southEntryGap:637.5,fridgeToEastWindowProjectionGap:25,trade:'Separate dryprep table deleted; dining table has separate meal/prep states.'},principalBath:{northFinishedFace:8152.5,westFinishedFace:9400,southFinishedFace:6600,door:[9900,10800],WC:'SOUTH-facing355x560 with north180serviceband/cistern; actual product and operation owned by MATINTERIORS',soilColumnCentre:[11432.5,8040],eastFinishedFace:11567.5,scope:'Live MATINTERIORS constructivegeometry; exactselectedproduct/frame/servicebranch still tojoin.'}},
+ rooms:{living:{bounds:[417.5,8937.5,3875,2645],twoSofas:true,groundReadingWallRemoved:true,sofaFaces:['EAST','SOUTH'],scope:'Open arch loses acoustic/privacy closure; full body/window/stack/receiver/fire tests required before selection.'},kitchenDining:{bounds:[7707.5,8412.5,3875,3170],fourPlaces:true,northWorkingGap:732.5,southEntryGap:637.5,fridgeToEastWindowProjectionGap:25,trade:'Separate dryprep table deleted; dining table has separate meal/prep states.'},principalBath:{northFinishedFace:8152.5,westFinishedFace:9400,southFinishedFace:6600,door:[9900,10800],WC:'SOUTH-facing355x560 with north180serviceband/cistern; actual product and operation owned by MATINTERIORS',soilColumnCentre:[11432.5,8040],eastFinishedFace:11567.5,scope:'Live MATINTERIORS constructivegeometry; exactselectedproduct/frame/servicebranch still tojoin.'}},
  water:{normal:'Outdoor west-edge copper channel; exact width/fall/inlet/receiver awaitingjoinedMATspatialselection.',relief:'Independent E or separately visible passive overland route must be drawn with blockedN/high-tailwater/common-obstruction states. No independentpair acceptance from two loggia strips.',oldD1300:'Retained cost benchmark only; deleting waterboxes does not adopt grade150 or prove a shallower ground-support section.'},
  furnitureRequirements:{principalBed:{whole:[9462.5,9175,2090,1600],body:upper.principal,head:upper['principal-head'],maxHeadHeight:700,maxBedMattressTop:600,minCill:750,verticalReserve:50,windowOperation:'Compatible leaf/frame lower envelope staysat/above750; actualOASfamily/3Doperation not yet matched.',southPassageFromActualLeaf8474:701,declaredCombinedPositionLoss:50,bodyDiameter:600,remainingPassageAfterLoss:651,maintenance:{translation:[0,500],whole:[9462.5,9675,2090,1600],swept:[9462.5,9175,2090,2100],trayStage:[10275,8540,250,900],handlingPad:100,nominalStageGap:235,after100Pad:135,windowTasks:'Unavailable during bedroom maintenance; restore ordinary state.'}},bed4:{whole:[5417.5,9350,2090,1500],maxHeadHeight:700,westFootGap:887.5,northBedPassage:732.5,rearR01PanStageWithPad:[3700,10522.5,760,555],noR01Conflict:true}},sections:{groundFFL:0,firstFFL:3450,atticDatum:6900,groundFloorRC:{top:-180,bottom:-380},firstFloorRC:{top:3370,bottom:3170},loggiaSoffit:{insulation:240,railLathTerritory:15,mineralProtection:25,underside:2890,scope:'MAT provisional exact recipe; arch/head thermal interface notyet admitted.'},groundSupport:{grid:[600,450],top:-180,bottom:-630,integralNode:[600,600,570],lowTies:[600,200],lowTieTop:-550,lowestNodeTie:-750,heaveStress:300,constructionLoss:50,ventilationReserve:150,Drequired:1250,Dtrial:1300,Dsurplus:50,scope:'STR reference capacity/actualventilation/site condition unqualified. D1300 is solum/grade trial, not sitefact.'},waterLevels:{southLandingStart:0,landingRun:1500,landingDrop:30,courtNorth:-110,courtRun:3500,loggiaNorth:-152.5,loggiaRun:4250,scope:'MAT constructiveONEproposal; structure/slopes/receivers/firstharm need joined check.'},fireHeight:{firstAboveAuthoredExterior:4750,lowRiseComparison:4500,scope:'D1300 crossesADBupperfloor4.5m groundheight boundary; actualadjacentground/storey interpretation/strategy required. Solum andexternalground notinterchangeable.'}},knownInterfaces:['Ground NSbeam under upper rearwetwall must earn bearings/arch interaction.','Protected-route topology is authored; classified walls/doors/glazing/joints and real site/fire admission remain unearned. Living open arch is outside protected volume.','Principal low-bed/window compatibility is an explicit procurement requirement; leaf/frame lower envelope and actual installed operation remain unproved.','Principalbath cistern, door handling and whole soil/hot/cold inventory remain explicit joined work.','No outdoor N/independentE topology or new moisture/DPC/soffit detail yet admitted.']
 };
@@ -111,8 +111,9 @@ ground['reading-sofa1900x850'][1]+=25;ground['family-sofa1900x750'][0]-=12;
 ground['cold-storage'][0]-=12;
 for(const id of ['dining-table1200x800','dining-chair-west-south','dining-chair-west-north','dining-chair-east-south','dining-chair-east-north'])ground[id][1]+=50;
 // Current joined wet-room proposal; IAS retains actual family-door arm/regrip failures.
+ground['study-chair'][0]=900;
 Object.assign(upper,{'family-bath1700':[9460,3800,1700,700],'family-WC':[10777.5,5800,560,355],'family-basin':[11227.5,5300,340,450],'family-local-soil-column':[11342.5,6180,180,180],'rear-shower1000':[1802.5,8952.5,1000,1000],'rear-basin':[1000,8952.5,400,220]});
-const familyDoor={rough:[5450,6350],completeFrame:825,leaf:[762,44],hinge:[9397,6279],clear:[5516.5,6283.5],net:767,status:'IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified'};
+const familyDoor={rough:[5450,6350],completeFrame:825,leaf:[762,44],hinge:[9397,6281],clear:[5516.5,6283.5],net:767,status:'IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified'};
 candidate.protectedRoute.doors.find(d=>d.id==='FAMILY-BATH').trial=familyDoor;
 candidate.familyWetTrial={westDryFace:9397,localBathEndWetFace:9400,southWetFace:3800,northWetFace:6400,eastWetFace:11567.5,door:familyDoor,serviceBand:[11337.5,5800,230,560],port:[11432.5,6270],column:upper['family-local-soil-column'],scope:'One coordinated fixture proposal;230band/200turn support envelope still unresolved. No hole/product/cistern adoption.'};
 // Final STR260×450 receiver proposal; room/arch fit has not been passed.
@@ -136,6 +137,26 @@ Object.assign(candidate.furnitureRequirements.principalBed.maintenance,{whole:[9
 candidate.furnitureRequirements.bed4.whole=[5405.5,9350,2090,1500];candidate.furnitureRequirements.bed4.westFootGap=863.5;
 candidate.rooms.living.bounds=[429.5,8949.5,3851,2621];candidate.rooms.kitchenDining.bounds=[7719.5,8424.5,3851,3146];
 candidate.status='ONE INCOMPLETE27DRY/30WET WHOLE-HOUSE TRIAL; explicit failures retained. Prior15control49a44045 preserved. Not adopted.';
+delete candidate.furnitureRequirements.principalBed.southPassageFromActualLeaf8474;
+candidate.structuralChanges.stairMidPost.eastRoomFinish=27;candidate.structuralChanges.stairMidPost.eastFinishedFace=3094.5;candidate.structuralChanges.stairMidPost.courtWestFace=3820.5;candidate.structuralChanges.stairMidPost.grossGalleryClear=726;candidate.structuralChanges.upperRearDivider.finished=194;candidate.structuralChanges.upperRearWestReturn.finished=194;
+candidate.rooms.kitchenDining.northWorkingGap=670.5;candidate.rooms.kitchenDining.southEntryGap=675.5;
+candidate.stairGuard={
+ basis:'Authored spatial selection against England ADK2013§1.34,1.39/Diagram3.1. No guard/anchor capacity or final regulatory admission.',official:'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/996860/Approved_Document_K.pdf',
+ finishedAperture:[429.5,4432.5,2388,4323],lowerFlightX:[429.5,1523.5],wellX:[1523.5,1723.5],upperFlightX:[1723.5,2817.5],bodyTerritoryEach:1094,midlandingDepth:1623,
+ handrail:{diameter:40,wallClear:50,wallsideProjection:90,wellsideRailWhollyInWell:true,betweenRails:1004,declaredCombinedPositionLoss:20,after20Loss:984,topAbovePitchAndLanding:1000,scope:'1004nominal, not1100clear and not a statutory private-stair minimum. Actual brackets/continuity/load/support/whole operator still qualify.'},
+ infill:{verticalDiameter:12,centrePitch:100,nominalClear:88,bottomGapMaximum:80,scope:'No climbable horizontal infill;100sphere exclusion includes sloping triangles/returns, not just88straight gap. Actual assembledtest unearned.'},
+ stairRailSouthExtension:300,midlandingUTurnRadius:80,
+ firstFloorGuards:[['stair-east-edge',[2817.5,4432.5,50,4323]],['entry-void-west',[4835,429.5,50,2305.5]],['entry-void-east',[7115,429.5,50,2305.5]],['entry-void-north',[4885,2735,2230,50]],['stair-top-return',[2747.5,4112.5,120,40]]],
+ entranceBridgeClear:[2785,3802.5],entranceBridgeWidth:1017.5,
+ treadGeometry:{risers:20,rise:172.5,goingsEachFlight:9,going:300,lowerFirstNose:[4432.5,172.5],midlandingNose:[7132.5,1725],upperArrivalNose:[4432.5,3450],pitchDegrees:Math.atan2(172.5,300)*180/Math.PI,bearingAxesY:[4332.5,7257.5],bearingSpan:2925,scope:'Actual finishednose levels held0/1725/3450; no extra80atfinalriser. Earlier2700scalar structural flightspan is superseded; STR actual waist/support check pending.'},
+ minimumDeclaredHeadrooms:{firstNoseUnderSouthHeader:3055-172.5,upperArrivalBelowRoofControl:2994,scope:'Limited reference zones only. Full continuous actual soffit, beam/rail/wall transition, qualified roof closure and service intrusions still require joined3D section.'}
+};
+// Checked IAS deltas against20ff: ordinary standard-hinge rehand, not a new mechanism.
+ground['family-sofa1900x750']=[2337.5,9800,1900,750];ground['reading-side-table300']=[800,10925,300,300];ground['family-side-table300']=[3900,9450,300,300];
+candidate.livingTableMaintenance={ordinary:[800,10925,300,300],westIntermediate:[480,10925,300,300],parked:[480,10600,300,300],sequence:'MoveTableAwestfirstthenSouth;R01body/serviceONLYafterparking;restoreafterwork.',minimumSweptSofaGap:20,minimumWestWallSkirtGap:32.5,scope:'Finite table-envelope and body-route states; completeoperator/grip/handling and actualproductheight remain unqualified.'};
+candidate.livingFurnitureRequirements={maximumSofaBackArmHeight:700,maximumTableHeight:700,minCill:750,requiredLeafLowerEnvelope:750,verticalReserve:50,scope:'Actualproduct/3Dleaf/force notadmitted; low furniture is a procurement requirement, not inferred fromplan boxes.'};
+candidate.pantrystandardDoor={rough:[10450,11350],frameEach:25,gapEach:10,hinge:[11315,8290],leaf:[830,44],operation:'SOUTH intoPantry/highEhinge',closed:[10485,8268,830,44],open:[11293,7460,44,830],clearBudget:806,scope:'IAS continuous geometric witness; actual frame/hinge/hardware/force not product-qualified.'};
+candidate.fridgeDoor={hinge:[10920.5,9025],panel:[650,70],operation:'WEST fromLOW/southhinge; pantrydoor CLOSED for task',scope:'Whole moving-panel allowance, not actual appliance part admission.'};
 
 function wallRects(walls){const out=[];for(const w of walls){const [x,y]=w.a,[xx,yy]=w.b,h=y===yy,lo=h?x:y,hi=h?xx:yy;const faces=w.finishedFaces??[(h?y:x)-w.t/2,(h?y:x)+w.t/2];const cuts=[...new Set([lo,hi,...w.holes.flat().filter(q=>q>lo&&q<hi)])].sort((a,b)=>a-b);for(let i=1;i<cuts.length;i++){const a=cuts[i-1],b=cuts[i];if(w.holes.some(([l,r])=>a>=l&&b<=r))continue;out.push([w.id,h?[a,faces[0],b-a,faces[1]-faces[0]]:[faces[0],a,faces[1]-faces[0],b-a]])}}return out}
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
@@ -148,48 +169,56 @@ function sd(a,b,c,d){const ca=cross(a,b,c),cb=cross(a,b,d),cc=cross(c,d,a),cd=cr
 function sr(a,b,r){if(pd(a,r)===0||pd(b,r)===0)return 0;const [x,y,w,h]=r,cs=[[x,y],[x+w,y],[x+w,y+h],[x,y+h]];return Math.min(...cs.map((p,i)=>sd(a,b,p,cs[(i+1)%4])))}
 const outerDefs=[['outer-south',[0,208.75],[12000,208.75]],['outer-north',[0,11791.25],[12000,11791.25]],['outer-west',[208.75,417.5],[208.75,11582.5]],['outer-east',[11791.25,417.5],[11791.25,11582.5]],['court-south',[3832.5,4041.25],[8167.5,4041.25]],['court-north',[3832.5,7958.75],[8167.5,7958.75]],['court-west',[4041.25,4250],[4041.25,7750]],['court-east',[7958.75,4250],[7958.75,7750]]];
 const bedroomLeaves=[['bed4-entry-open',[3078,8852.5,44,900]],['principal-entry-open',[8228,8290,44,900]]];
-function obstacles(level,{closedCross=false,omit=[]}={}){
+function obstacles(level,{closedCross=false,omit=[],extra=[],includeTrim=true}={}){
  const walls=level==='GROUND'?groundWalls:upperWalls;
  const enclosure=outerDefs.map(([id,a,b])=>({id,a,b,t:429.5,finishedFaces:id==='outer-south'||id==='outer-west'?[0,429.5]:id==='outer-north'||id==='outer-east'?[11570.5,12000]:id==='court-south'||id==='court-west'?[3820.5,4250]:[7750,8179.5],holes:openings[level].filter(o=>o.wall===id&&['door','open-loggia'].includes(o.kind)).map(o=>[o.centre-o.width/2,o.centre+o.width/2])}));
  const trim=r=>[r[0]-18,r[1]-18,r[2]+36,r[3]+36];
- const r=[...wallRects([...walls,...enclosure]).map(([id,r])=>[id+'+18trim',trim(r)]),...candidate.fixedObstacles[level].map(([id,r])=>[id,id==='stairMidPostFinished'?[r[0],r[1]-18,r[2]+18,r[3]+36]:trim(r)]),...Object.entries(level==='GROUND'?ground:upper),['stair-plan-void',b.stair],['court-outdoor-not-indoor-shortcut',[4250,4250,3500,3500]]];
- if(level==='FIRST')r.push(['entrance-floor-void',b.void],...bedroomLeaves,['principal-bath-slider-closed',[9875,8430,950,44]]);
- else r.push(['pantry-open-leaf',[10428,7390,44,900]],...candidate.protectedRoute.doors.filter(d=>d.id.startsWith('FD-')).map(d=>[d.id,closedCross?d.closed:d.open]));
- return r.filter(([id])=>!omit.includes(id));
+ const r=[...wallRects([...walls,...enclosure]).map(([id,r])=>[id+(includeTrim?'+18trim':''),includeTrim?trim(r):r]),...candidate.fixedObstacles[level].map(([id,r])=>[id,!includeTrim?r:id==='stairMidPostFinished'?[r[0],r[1]-18,r[2]+18,r[3]+36]:trim(r)]),...Object.entries(level==='GROUND'?ground:upper),['stair-plan-void',b.stair],['court-outdoor-not-indoor-shortcut',[4250,4250,3500,3500]]];
+ if(level==='FIRST')r.push(...candidate.stairGuard.firstFloorGuards,['entrance-floor-void',b.void],...bedroomLeaves,['principal-bath-slider-closed',[9875,8442,950,44]]);
+ else r.push(['pantry-open-leaf',candidate.pantrystandardDoor.open],...candidate.protectedRoute.doors.filter(d=>d.id.startsWith('FD-')).map(d=>[d.id,closedCross?d.closed:d.open]));
+ return [...r.filter(([id])=>!omit.includes(id)),...extra];
 }
 const witnesses=[];
-function route(id,level,points,opts={}){const obs=obstacles(level,opts);let min=Infinity,at=null;for(let i=0;i<points.length;i++)for(const [name,r]of obs){const gap=sr(points[i],points[Math.min(i+1,points.length-1)],r)-300;if(gap<min){min=gap;at={obstacle:name,segment:i}}}const result={id,level,bodyRadius:300,points,state:opts.closedCross?'cross fire doors CLOSED':'cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED',minimumReserve:min,controlling:at,pass:min>=-1e-7};witnesses.push(result);return result}
+function route(id,level,points,opts={}){const obs=obstacles(level,opts);let min=Infinity,at=null;for(let i=0;i<points.length;i++)for(const [name,r]of obs){const gap=sr(points[i],points[Math.min(i+1,points.length-1)],r)-300;if(gap<min){min=gap;at={obstacle:name,segment:i}}}const result={id,level,bodyRadius:300,points,state:opts.state??(opts.closedCross?'cross fire doors CLOSED':'cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED'),minimumReserve:min,controlling:at,pass:min>=-1e-7};witnesses.push(result);return result}
 route('protected-stair-bottom-to-front','GROUND',[[967.5,4100],[967.5,3782.5],[3200,3782.5],[3200,3485],[6000,3485],[6000,417.5]],{closedCross:true});
-route('daily-living-to-kitchen','GROUND',[[2500,9350],[3150,9350],[3150,9325],[3450,9325],[3450,3782.5],[3450,3485],[8700,3485],[8700,8771.25]]);
-route('living-seating-rear-stack','GROUND',[[3450,8500],[3450,9325],[3150,9325],[3150,9350],[2500,9350],[2500,11232.25],[1100,11232.25],[1100,11200]]);
-route('living-north-window1800','GROUND',[[2500,9350],[2500,11250],[2525,11250]]);
-route('living-north-window3550','GROUND',[[2500,11232.25],[2500,11090],[3100,11090]]);
+route('daily-living-to-kitchen','GROUND',[[1993.75,9455],[3450,9455],[3450,3782.5],[3450,3470],[8700,3470],[8700,8771.25]]);
+route('courtwest-window6850','GROUND',[[3450,6500],[3470,6850]]);
+route('living-entry','GROUND',[[3450,8500],[3450,9455],[1993.75,9455]]);
+route('living-seating-rear-stack','GROUND',[[1993.75,9455],[1993.75,11226.25],[1100,11226.25]],{omit:['reading-side-table300'],extra:[['TableA-PARKED',[480,10600,300,300]]],state:'R01SERVICEONLY:TableAPARKED480/10600;restoreordinary800/10925afterwork'});
+route('living-north-window1800','GROUND',[[1993.75,9455],[1993.75,10900],[2363.75,11075]]);
+route('living-fixed3700-inspection-only','GROUND',[[1993.75,10900],[3420,10900],[3420,11150]]);
 route('kitchen-entry-to-working-aisle','GROUND',[[8700,8771.25],[10200,8771.25],[10200,10641.25],[8250,10641.25],[8250,11235]]);
-route('kitchen-north-window10200','GROUND',[[10200,8771.25],[10200,11250]]);
-route('kitchen-pantry-open-door-approach','GROUND',[[10200,8771.25],[10800,8771.25],[10800,7900]],{omit:[]});
-route('principal-to-protected-stair','FIRST',[[8700,8771.25],[8700,3485],[3450,3485],[3450,4100],[2267.5,4100]]);
-route('bed4-to-protected-stair','FIRST',[[3550,9300],[3550,8500],[3450,8500],[3450,4100],[2267.5,4100]]);
+route('kitchen-north-window10200','GROUND',[[10200,8771.25],[10200,11235]]);
+route('kitchen-pantry-open-door-approach','GROUND',[[10200,8771.25],[10600,8771.25],[10750,8700],[10925,8635]],{omit:[]});
+route('principal-to-protected-stair','FIRST',[[8700,8771.25],[8700,3485],[3450,3485],[3450,3782.5],[2270.5,3782.5],[2270.5,4100]]);
+route('bed4-to-protected-stair','FIRST',[[3550,9300],[3550,8500],[3450,8500],[3450,3782.5],[2270.5,3782.5],[2270.5,4100]]);
 route('principal-ordinary-entry-bath','FIRST',[[8700,8771.25],[8700,8824.5],[10400,8824.5],[10400,8850]]);
-route('principal-wardrobe-foot-north-windows','FIRST',[[8700,8824.5],[8700,10000],[9000,10000],[9000,11250],[10200,11250],[11250,11100]]);
-route('bed4-entry-foot-north','FIRST',[[3550,8500],[3550,9300],[4875,9300],[4875,10100],[5100,10100],[5100,11250],[3550,11250],[6000,11250]]);
+route('principal-wardrobe-foot-north-windows','FIRST',[[8730,8824.5],[8730,10000],[9000,10000],[9000,11235],[10200,11235],[11235,11100]]);
+route('bed4-entry-foot-north','FIRST',[[3550,8500],[3550,9300],[4875,9300],[4875,10100],[5100,10100],[5100,11235],[3550,11235],[6000,11235]]);
 route('bed4-wardrobe-operation','FIRST',[[3550,9300],[3750,9480]]);
-route('bed4-rear-ensuite-door-approach','FIRST',[[5100,11250],[5100,10800],[3350,10800]]);
-route('study-closed-door-window-tasks','GROUND',[[1800,2800],[2400,2800],[2400,2235],[2950,2235],[2950,750],[3900,750],[2525,750]]);
-route('study-west-window-closed-door','GROUND',[[1800,2800],[750,2800],[750,2650]]);
+route('bed4-rear-ensuite-door-approach','FIRST',[[5100,11235],[5100,10800],[3350,10800]]);
+route('study-closed-door-window-tasks','GROUND',[[1800,2800],[2400,2800],[2400,2210],[2950,2210],[2950,765],[3900,765],[2525,765]]);
+route('study-west-window-closed-door','GROUND',[[1800,2800],[770,2800],[770,2650]]);
 // Check the complete bed translation and handling pad, rather than just end positions.
 const maintenance=candidate.furnitureRequirements.principalBed.maintenance;
 const maintObs=obstacles('FIRST',{omit:['principal','principal-head']});
 const rectGap=(a,b)=>Math.hypot(Math.max(a[0]-b[0]-b[2],b[0]-a[0]-a[2],0),Math.max(a[1]-b[1]-b[3],b[1]-a[1]-a[3],0));
 const overlap=(a,b)=>a[0]<b[0]+b[2]&&a[0]+a[2]>b[0]&&a[1]<b[1]+b[3]&&a[1]+a[3]>b[1];
+candidate.fullHouseFootprint={method:'Positive rectangle overlap of each represented whole furniture/fixture with actual nominal finished walls/receivers, before decorative18skirt. Wall-mounted contact at zero is not counted. No vertical exception silently invented.',conflicts:[]};
+for(const[level,furniture,walls]of [['GROUND',ground,groundWalls],['FIRST',upper,upperWalls]]){
+ const names=new Set([...walls.map(w=>w.id),...outerDefs.map(d=>d[0]),...candidate.fixedObstacles[level].map(([id])=>id)]);
+ for(const[id,r]of Object.entries(furniture))for(const[name,o]of obstacles(level,{includeTrim:false}).filter(([name])=>names.has(name)))if(overlap(r,o))candidate.fullHouseFootprint.conflicts.push({level,object:id,wall:name,overlap:[Math.max(r[0],o[0]),Math.max(r[1],o[1]),Math.min(r[0]+r[2],o[0]+o[2])-Math.max(r[0],o[0]),Math.min(r[1]+r[3],o[1]+o[3])-Math.max(r[1],o[1])]});
+}
+candidate.fullHouseFootprint.pass=candidate.fullHouseFootprint.conflicts.length===0;
 maintenance.sweptConflicts=maintObs.filter(([,r])=>overlap(maintenance.swept,r)).map(([id])=>id);
 maintenance.pass=maintenance.sweptConflicts.length===0;
 maintenance.paddedStage=maintenance.trayStage.map((v,i)=>i<2?v-100:v+200);
 maintenance.stageToTemporaryBedGap=rectGap(maintenance.paddedStage,maintenance.whole);
 // Source-derived dimensions govern the selection, not an all-purpose body acceptance claim.
 candidate.actions={method:'Exact Euclidean segment-to-closed-rectangle clearance with a300radius horizontal body proxy. Furniture and finished wall/receiver/post rectangles are obstacles. Ordinary18mm trim is conservatively added to walls/receivers; post trim is excluded from stair-facing side to retain1100flight and reserved18 on roomside. Every segment tested analytically; no sampling gaps. Not an actual-human, door-force, accessible-route or 3D/headroom admission.',witnesses,pass:witnesses.every(w=>w.pass)&&maintenance.pass,notTransferred:['Front-single detailed coupled door/window proofs retain their dated B source identities; actual fire doorset still unselected.','Pantry shelf working state needs door CLOSED; not simultaneous with open-leaf transport.','Principal and rear wetroom internal tasks use separately merged MAT witnesses; this plan only binds entries, staging and furniture sweep.','Study inside rehand has its separate bounded coupled witness. New cross-door operation still needs finite coupled test; proxy routes alone are insufficient.']};
-const studyKnots=[[0,2350,2800],[15,2400,2600],[30,2400,2400],[45,2350,2350],[60,2150,2625],[90,1780,2625]];
+const studyKnots=[[0,2275,2800],[15,2400,2600],[30,2400,2400],[45,2350,2350],[60,2150,2625],[90,1780,2625]];
 function studyBody(a){const k=studyKnots.findIndex((p,i)=>i<studyKnots.length-1&&a>=p[0]&&a<=studyKnots[i+1][0]);const p=studyKnots[Math.max(0,k)],q=studyKnots[Math.max(0,k)+1],t=(a-p[0])/(q[0]-p[0]);return[p[1]+t*(q[1]-p[1]),p[2]+t*(q[2]-p[2])]}
-const studyStatic=[...obstacles('GROUND'),['study-frame-low',[1350,3144.5,25,206]],['study-frame-high',[2225,3144.5,25,206]]];let bodyMin=Infinity,armMin=Infinity,reachMax=0,bodyAt,armAt;
+const studyStatic=[...obstacles('GROUND'),['study-frame-low',[1350,3132.5,25,230]],['study-frame-high',[2225,3132.5,25,230]]];let bodyMin=Infinity,armMin=Infinity,reachMax=0,bodyAt,armAt;
 for(let k=0;k<=900;k++){
  const a=k/10,t=a*Math.PI/180,u=[Math.cos(t),-Math.sin(t)],n=[-Math.sin(t),-Math.cos(t)],hinge=[1385,3247.5],tip=[1385+830*u[0],3247.5+830*u[1]],body=studyBody(a);
  for(const [id,r]of studyStatic){const d=pd(body,r)-300;if(d<bodyMin){bodyMin=d;bodyAt={angle:a,obstacle:id}}}
@@ -205,30 +234,43 @@ const bodySamplingBound=(29.35+15.71)*.05,armSamplingBound=(29.35+16.40+15.71)*.
 candidate.studyDoorOperation={rough:[1350,2250],frameEach:25,leafEdgeGapEach:10,hinge:[1385,3247.5],leaf:[830,44],minimumClearBudget:786,bodyRadius:300,forearmRadius:40,handleAlong:780,handleFaceOffset:84,bodyKnots:studyKnots,handleState:'Southface0–45deg; explicit two-hand handover at45; oppositeface45–90.',stepDegrees:.1,sampledBodyReserve:bodyMin,sampledArmReserve:armMin,sampledReach:reachMax,continuousBodyLowerBound:bodyMin-bodySamplingBound,continuousArmLowerBound:armMin-armSamplingBound,continuousReachUpperBound:reachMax+reachSamplingBound,bodyAt,armAt,pass:bodyMin>bodySamplingBound&&armMin>armSamplingBound&&reachMax+reachSamplingBound<=600,scope:'One geometric inside close/reopen sequence from leaf-open entry, not actual operator strength, hardware, classified frame or outside first-opening admission. Both hands have reachable collision-free paths at45; no teleporting hand throughleaf.'};
 candidate.actions.pass&&=candidate.studyDoorOperation.pass;
 candidate.crossDoorOperations=candidate.protectedRoute.doors.filter(d=>d.id.startsWith('FD-')).map(d=>{
- const stat=[...obstacles('GROUND',{omit:[d.id]}),['low-frame',[d.rough[0],4167,25,166]],['high-frame',[d.rough[1]-25,4167,25,166]]];
+ const stat=[...obstacles('GROUND',{omit:[d.id]}),['low-frame',[d.rough[0],4155,25,190]],['high-frame',[d.rough[1]-25,4155,25,190]]];const bodyAlong=d.id==='FD-WEST-CROSS'?360:390,bodyNormal=d.id==='FD-WEST-CROSS'?330:345;
  let bodyMin=Infinity,armMin=Infinity,reachMax=0;
- for(let k=0;k<=900;k++){const t=k*Math.PI/1800,u=[-Math.cos(t),Math.sin(t)],n=[-Math.sin(t),-Math.cos(t)],H=d.hinge,tip=[H[0]+d.leaf[0]*u[0],H[1]+d.leaf[0]*u[1]],body=[H[0]+390*u[0]+345*n[0],H[1]+390*u[1]+345*n[1]],grip=[H[0]+(d.leaf[0]-50)*u[0]+84*n[0],H[1]+(d.leaf[0]-50)*u[1]+84*n[1]];
+ for(let k=0;k<=900;k++){const t=k*Math.PI/1800,u=[-Math.cos(t),Math.sin(t)],n=[-Math.sin(t),-Math.cos(t)],H=d.hinge,tip=[H[0]+d.leaf[0]*u[0],H[1]+d.leaf[0]*u[1]],body=[H[0]+bodyAlong*u[0]+bodyNormal*n[0],H[1]+bodyAlong*u[1]+bodyNormal*n[1]],grip=[H[0]+(d.leaf[0]-50)*u[0]+84*n[0],H[1]+(d.leaf[0]-50)*u[1]+84*n[1]];
   for(const[,r]of stat){bodyMin=Math.min(bodyMin,pd(body,r)-300);armMin=Math.min(armMin,sr(body,grip,r)-40)}
   bodyMin=Math.min(bodyMin,ps(body,H,tip)-322);armMin=Math.min(armMin,sd(body,grip,H,tip)-62);reachMax=Math.max(reachMax,Math.hypot(body[0]-grip[0],body[1]-grip[1]));
  }
  const bodyBound=(9.2+14.8)*.05,armBound=(9.2+14.8+14.8)*.05,reachBound=(9.2+14.8)*.05;
- return{id:d.id,bodyPath:'H+390u+345n;u=(-cosθ,sinθ),n=(-sinθ,-cosθ),0≤θ≤90deg',gripPath:'H+(leafwidth−50)u+84n',sampleStep:.1,continuousBodyLowerBound:bodyMin-bodyBound,continuousArmLowerBound:armMin-armBound,continuousReachUpperBound:reachMax+reachBound,pass:bodyMin>=bodyBound&&armMin>=armBound&&reachMax+reachBound<=600,scope:'Finite push-open/reverse-close geometry including25jambs and2.5leaf gaps. Operator R300/forearmR40/600reach proxy only; qualified installed frame/handles/forces/fire assembly not admitted.'};
+ return{id:d.id,bodyPath:`H+${bodyAlong}u+${bodyNormal}n;u=(-cosθ,sinθ),n=(-sinθ,-cosθ),0≤θ≤90deg`,gripPath:'H+(leafwidth−50)u+84n',sampleStep:.1,continuousBodyLowerBound:bodyMin-bodyBound,continuousArmLowerBound:armMin-armBound,continuousReachUpperBound:reachMax+reachBound,pass:bodyMin>=bodyBound&&armMin>=armBound&&reachMax+reachBound<=600,scope:'Finite push-open/reverse-close geometry including25jambs and2.5leaf gaps. Operator R300/forearmR40/600reach proxy only; qualified installed frame/handles/forces/fire assembly not admitted.'};
 });
 candidate.actions.pass&&=candidate.crossDoorOperations.every(d=>d.pass);
+function taskMotion(id,H,width,thickness,axes,bodyAt,gripAt,staticExtra=[],omit=[]){
+ const stat=[...obstacles('GROUND',{omit}),...staticExtra];let bm=Infinity,am=Infinity,rm=0;
+ for(let k=0;k<=900;k++){const t=k*Math.PI/1800,[u,n]=axes(t),tip=H.map((v,i)=>v+width*u[i]),body=bodyAt(H,u,n),grip=gripAt(H,u,n);
+  for(const[,r]of stat){bm=Math.min(bm,pd(body,r)-300);am=Math.min(am,sr(body,grip,r)-40)}
+  bm=Math.min(bm,ps(body,H,tip)-300-thickness/2);am=Math.min(am,sd(body,grip,H,tip)-40-thickness/2);rm=Math.max(rm,Math.hypot(body[0]-grip[0],body[1]-grip[1]));
+ }
+ const bb=(9.2+14.8)*.05,ab=(9.2+14.8+14.8)*.05,rb=(9.2+14.8)*.05;
+ return{id,continuousBodyLowerBound:bm-bb,continuousArmLowerBound:am-ab,continuousReachUpperBound:rm+rb,pass:bm>=bb&&am>=ab&&rm+rb<=600,scope:'Full300body/40forearm/600reach geometric sequence with actual static walls/trim/furniture/frame and moving panel. Not actual hardware/force/physical admission.'};
+}
+candidate.pantrystandardDoor.operationWitness=taskMotion('PANTRY-HIGH-HINGE',[11315,8290],830,44,t=>[[-Math.cos(t),-Math.sin(t)],[Math.sin(t),-Math.cos(t)]],(H,u,n)=>H.map((v,i)=>v+390*u[i]-345*n[i]),(H,u,n)=>H.map((v,i)=>v+780*u[i]-84*n[i]),[['low-frame',[10450,8137.5,25,305]],['high-frame',[11325,8137.5,25,305]]],['pantry-open-leaf']);
+candidate.fridgeDoor.operationWitness=taskMotion('FRIDGE-LOW-HINGE',[10920.5,9025],650,70,t=>[[-Math.sin(t),Math.cos(t)],[-Math.cos(t),-Math.sin(t)]],(H,u,n)=>H.map((v,i)=>v+250*u[i]+345*n[i]),(H,u,n)=>H.map((v,i)=>v+600*u[i]+95*n[i]),[['pantry-CLOSED',candidate.pantrystandardDoor.closed]],['pantry-open-leaf']);
+candidate.actions.pass&&=candidate.pantrystandardDoor.operationWitness.pass&&candidate.fridgeDoor.operationWitness.pass;
 candidate.stairPostFinishRequirement='Post ends below FIRST RC/trimmer, no first-floor obstacle. No applied baseboard on stair-facing post edge;1100flight retained. Roomside18baseboard counted, reducing nominal750 to714 between roomside projections.';
 candidate.windowRequirements=[
- ['GROUND','living1800',[2525,11250],[2220,11582.5],'Northwindow HIGHhand; existing table/sofas retained'],
- ['GROUND','living3550',[3100,11090],[3130,11582.5],'HingeHIGH to place handleLOW; actual frame/hardware procurement requirement'],
+ ['GROUND','living1800',[2363.75,11075],[2220,11582.5],'Northwindow HIGHhand; existing table/sofas retained'],
  ['GROUND','kitchen8450',[8250,11235],[8030,11582.5],'Raised1050cill; station sink starts8700'],
- ['GROUND','kitchen10200',[10200,11250],[10620,11582.5],'Raised1050cill; separate sink/cook piers'],
- ['GROUND','courtwest6850',[3500,6850],[3832.5,7270],'Actual750gallery beside post; not universal accessibility'],
- ['GROUND','studySouth1800',[2525,750],[2220,417.5],'Desk/chair retained; inside door CLOSED'],
- ['GROUND','studySouth3900',[3900,750],[4320,417.5],'Inside door CLOSED'],
- ['GROUND','studyWest1800',[750,2650],[417.5,2220],'Inside door CLOSED'],
+ ['GROUND','kitchen10200',[10200,11235],[10620,11582.5],'Raised1050cill; separate sink/cook piers'],
+ ['GROUND','courtwest6850',[3470,6850],[3832.5,7270],'Actual750gallery beside post; not universal accessibility'],
+ ['GROUND','studySouth1800',[2525,765],[2220,417.5],'Desk/chair retained; inside door CLOSED'],
+ ['GROUND','studySouth3900',[3900,765],[4320,417.5],'Inside door CLOSED'],
+ ['GROUND','studyWest1800',[770,2650],[417.5,2220],'Inside door CLOSED'],
  ['FIRST','principalEast10200',[11250,11100],[11582.5,10620],'Lowhead≤700/bed≤600; actual lower leaf/frame envelope≥750; no3D leaf pass'],
  ['FIRST','principalNorth8450',[8700,11250],[8870,11582.5],'Unavailable during+500bed maintenance'],
- ['FIRST','principalNorth10200',[10200,11250],[10620,11582.5],'Unavailable during+500bed maintenance'],
+ ['FIRST','principalNorth10200',[10200,11235],[10620,11582.5],'Unavailable during+500bed maintenance'],
 ].map(([level,id,body,handle,requirement])=>({level,id,body,handle,planReach:Math.hypot(body[0]-handle[0],body[1]-handle[1]),maximumPlanReach:600,requirement,scope:'Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted.'}));
+for(const w of candidate.windowRequirements)w.handle=w.handle.map(v=>v===11582.5?11570.5:v===417.5?429.5:v);
+for(const w of candidate.windowRequirements)w.planReach=Math.hypot(w.body[0]-w.handle[0],w.body[1]-w.handle[1]);
 candidate.actions.windowPlanReachPass=candidate.windowRequirements.every(w=>w.planReach<=600);
 candidate.actions.pass&&=candidate.actions.windowPlanReachPass;
 candidate.approaches={authoredExteriorGrade:-1300,front:{rise:1300,slope:20,slopingRun:26000,flights:[9000,9000,8000],landingLength:1200,landings:4,totalStraightReservation:30800},garden:{terrace:-152.5,rise:1147.5,slope:20,slopingRun:22950,flights:[8000,8000,6950],landingLength:1200,landings:4,totalStraightReservation:27750},clearWidthReservation:1200,scope:'Finite authored plot reservation, not a compliant access design or available site. Guards, edge protection, turning/door/approach geometry and actual access category remain to qualify. Court/loggia not credited as protected final exit.'};
@@ -236,7 +278,8 @@ candidate.exterior={eaves:6800,ridge:6800+2125*Math.tan(25*Math.PI/180),eavesAbo
 candidate.qualityCosts={dailyLivingKitchenCentreline:witnesses.find(w=>w.id==='daily-living-to-kitchen').points.reduce((sum,p,i,a)=>i?sum+Math.hypot(p[0]-a[i-1][0],p[1]-a[i-1][1]):0,0),living:'Two original-size sofas retained; separate reading enclosure removed, shared arch loses acoustic privacy.',dining:'Four places, no end seats; separate prep table removed. Actual chair/support/table leg fit is not earned from500plan boxes.',private:'Four bedrooms retained, two compact singles, two rear doubles rotatedEW; principal lowbed/window compatibility and660wardrobe are explicit choices.',loggia:'Deletes occupied-floor renewable watercaps/gas lids. Costs new weatherwalls, displaced room territory, long daily indoor connection and exposed floor/arch insulation.',height:'Current support trial stillD1300: no approach/eaves reduction credited against prior buried-box comparator.'};
 function unionArea(rects){const xs=[...new Set(rects.flatMap(r=>[Math.max(0,r[0]),Math.min(12000,r[0]+r[2])]))].sort((a,b)=>a-b);let area=0;for(let i=1;i<xs.length;i++){const lo=xs[i-1],hi=xs[i],mid=(lo+hi)/2,ys=rects.filter(r=>r[0]<=mid&&r[0]+r[2]>=mid).map(r=>[Math.max(0,r[1]),Math.min(12000,r[1]+r[3])]).sort((a,b)=>a[0]-b[0]);let length=0,end=-Infinity;for(const[a,b]of ys)if(b>end){length+=b-Math.max(a,end);end=b}area+=(hi-lo)*length}return area}
 const areaBase=[[0,0,12000,417.5],[0,11582.5,12000,417.5],[0,417.5,417.5,11165],[11582.5,417.5,417.5,11165],[3832.5,3832.5,4335,4335],b.stair];
-const oldArea=(144e6-unionArea([...areaBase,...wallRects(b.ground_walls).map(([,r])=>r)]))/1e6,newArea=(144e6-unionArea([...areaBase,loggia.clear,...wallRects(groundWalls).map(([,r])=>r),...candidate.fixedObstacles.GROUND.map(([,r])=>r)]))/1e6;
+const newAreaBase=[[0,0,12000,429.5],[0,11570.5,12000,429.5],[0,429.5,429.5,11141],[11570.5,429.5,429.5,11141],[3820.5,3820.5,4359,4359],b.stair];
+const oldArea=(144e6-unionArea([...areaBase,...wallRects(b.ground_walls).map(([,r])=>r)]))/1e6,newArea=(144e6-unionArea([...newAreaBase,loggia.clear,...wallRects(groundWalls).map(([,r])=>r),...candidate.fixedObstacles.GROUND.map(([,r])=>r)]))/1e6;
 candidate.qualityCosts.groundClearFloor={baseB:oldArea,loggia:newArea,loss:oldArea-newArea,unit:'m2',method:'Exact clipped rectangle union inside12×12shell; excludes outer417.5 walls, full court+wall rectangle, stair footprint, internal wall rectangles/holes, new outside loggia and fixed receivers/post. Furniture not subtracted. Ground entrance doubleheight has a floor; not a void. Comparison includes new protected walls/support footprints, so loss is not solely loggia.'};
 const T=(x,y,s,size=3.1,w='normal')=>`<text x="${x}" y="${y}" font-family="DejaVu Sans,Arial,sans-serif" font-size="${size}" font-weight="${w}" fill="#293a40">${esc(s)}</text>`;
 const R=(x,y,w,h,c,stroke='#617069')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${c}" stroke="${stroke}" stroke-width=".25"/>`;
@@ -245,15 +288,16 @@ const sheet=[];
 for(const [column,lev,walls,furniture]of [[0,'GROUND',groundWalls,ground],[1,'FIRST',upperWalls,upper]]){
  const X=x=>20+195*column+x/100,Y=y=>174-y/100;
  sheet.push(T(20+195*column,44,lev+' / ONE CONNECTED CANDIDATE',3.7,'bold'));
- sheet.push(R(X(0),Y(12000),120,120,'#bac2bd'),R(X(417.5),Y(11582.5),111.65,111.65,'#f0eadc'),R(X(3832.5),Y(8167.5),43.35,43.35,'#bac2bd'),R(X(4250),Y(7750),35,35,'#d8eee8'));
- const wallDefs=[['outer-south',true,0,417.5,0,12000],['outer-north',true,11582.5,417.5,0,12000],['outer-west',false,0,417.5,417.5,11582.5],['outer-east',false,11582.5,417.5,417.5,11582.5],['court-south',true,3832.5,417.5,3832.5,8167.5],['court-north',true,7750,417.5,3832.5,8167.5],['court-west',false,3832.5,417.5,4250,7750],['court-east',false,7750,417.5,4250,7750]];
+ sheet.push(R(X(0),Y(12000),120,120,'#bac2bd'),R(X(429.5),Y(11570.5),111.41,111.41,'#f0eadc'),R(X(3820.5),Y(8179.5),43.59,43.59,'#bac2bd'),R(X(4250),Y(7750),35,35,'#d8eee8'));
+ const wallDefs=[['outer-south',true,0,429.5,0,12000],['outer-north',true,11570.5,429.5,0,12000],['outer-west',false,0,429.5,429.5,11570.5],['outer-east',false,11570.5,429.5,429.5,11570.5],['court-south',true,3820.5,429.5,3820.5,8179.5],['court-north',true,7750,429.5,3820.5,8179.5],['court-west',false,3820.5,429.5,4250,7750],['court-east',false,7750,429.5,4250,7750]];
  for(const [name,h,at,t,lo,hi]of wallDefs)for(const o of openings[lev].filter(o=>o.wall===name)){const a=o.centre-o.width/2;sheet.push(h?R(X(a),Y(at+t),o.width/100,t/100,'#f0eadc','none'):R(X(at),Y(a+o.width),t/100,o.width/100,'#f0eadc','none'))}
- if(lev==='GROUND')sheet.push(R(X(4800),Y(12000),24,42.5,'#d8eee8'));
+ if(lev==='GROUND'){sheet.push(R(X(4800),Y(12000),24,42.5,'#d8eee8'));for(const y of [7732.5,11317.5])for(const x of [4520,7200])sheet.push(R(X(x),Y(y+700),2.8,7,'#b9c99e'));}
  for(const [,r]of wallRects(walls))sheet.push(R(X(r[0]),Y(r[1]+r[3]),r[2]/100,r[3]/100,'#bac2bd','none'));
  sheet.push(R(X(b.stair[0]),Y(b.stair[1]+b.stair[3]),b.stair[2]/100,b.stair[3]/100,'#cccabb'),R(X(b.void[0]),Y(b.void[1]+b.void[3]),b.void[2]/100,b.void[3]/100,lev==='GROUND'?'#eadfc8':'#fffdf7'));
  for(const [,r]of candidate.fixedObstacles[lev])sheet.push(R(X(r[0]),Y(r[1]+r[3]),r[2]/100,r[3]/100,'#a65f4d'));
  for(const [id,r]of Object.entries(furniture))sheet.push(R(X(r[0]),Y(r[1]+r[3]),r[2]/100,r[3]/100,id.includes('chair')?'#dfb466':id.includes('soil')?'#a4c4c4':'#ded6c4'));
  for(const d of candidate.protectedRoute.doors.filter(d=>d.level===lev&&d.open)){const r=d.open;sheet.push(R(X(r[0]),Y(r[1]+r[3]),r[2]/100,r[3]/100,'#b86b56'))}
+ if(lev==='FIRST')for(const[,r]of candidate.stairGuard.firstFloorGuards)sheet.push(R(X(r[0]),Y(r[1]+r[3]),r[2]/100,r[3]/100,'#65888b'));
  if(lev==='FIRST')for(const[,r]of bedroomLeaves)sheet.push(R(X(r[0]),Y(r[1]+r[3]),r[2]/100,r[3]/100,'#b86b56'));
  const protectedWitness=lev==='GROUND'?witnesses.find(w=>w.id==='protected-stair-bottom-to-front'):witnesses.find(w=>w.id==='principal-to-protected-stair');
  sheet.push(`<path d="${protectedWitness.points.map((p,i)=>`${i?'L':'M'}${X(p[0])} ${Y(p[1])}`).join('')}" fill="none" stroke="#226e9a" stroke-width=".7"/>`);
@@ -262,7 +306,7 @@ for(const [column,lev,walls,furniture]of [[0,'GROUND',groundWalls,ground],[1,'FI
 }
 const notes=[
  ['27DRY/30WET FAILED TRIAL:519.5loggiawalls,140axes held.','Principal divider194finished after27each;140core held.'],
- ['Two sofas retained; ground readingwall removed → REALbeam needed.','Rear westreturn4450→4377.5; actualsupport/bearing notadopted.'],
+ ['Two full1900sofas retained in Lshape;27finish and260receivers held.','Rear westreturn4450→4377.5; actualsupport/bearing notadopted.'],
  ['Dining moves east; dryprep table deleted; refrigerator moves to eastwall.','Front singles and reduced wardrobe follow compact B.'],
  ['Living3100–4000 OPENARCH preferred; fire strategy stillcontrols.','Principal bath rotatedWC and relocateddoor follow liveMAT work.'],
  ['Paired northwindows3550/8450; kitchen northsills1050.','Both rear beds rotateEW; lowheads and windowoperation required.'],
@@ -319,6 +363,30 @@ run(200,'FRONT:26m sloping +4.8m landings =30.8m straight reservation',[9000,900
 run(224,'GARDEN:22.95m sloping +4.8m landings =27.75m',[8000,8000,6950],1147.5);
 e.push(T(18,249,'1200 clearwidth authored; actual approachcategory, turning/handrails/guards/site availability NOT established.',2.8),T(18,258,'No height saving versus D1300 indoor-box benchmark. Benefit is removal of heavy indoor caps/gas lids; room/circulation price remains.',2.8),T(18,267,'The elevated garden terrace requires real support/guarded spill edges. It is not ground level and does not evade fire-height measurement.',2.8));
 const exteriorSvg=wrapSheet('OPEN NORTH LOGGIA / WHOLE-HOUSE EXPRESSION AND PLOT PRICE','Orthographic1:100 front/garden elevation references; roof remains a schematic inward/outward ring, not a structural or rain-capacity claim.',e.join(''));
-for(const [name,body]of Object.entries({'open-north-loggia.json':JSON.stringify(candidate,null,2)+'\n','open-north-loggia.svg':svg,'open-north-loggia-sections.svg':sectionSvg,'open-north-loggia-exterior.svg':exteriorSvg})){const p=new URL(name,OUT);if(process.argv.includes('--check')){if(readFileSync(p,'utf8')!==body)throw Error('Stale '+name)}else writeFileSync(p,body)}
+const st=[],PX=x=>20+(x-200)/50,PY=y=>166-(y-4000)/50;
+st.push(T(15,44,'01 / STAIR, LANDING AND GUARD PLAN /1:50',3.2,'bold'),R(PX(429.5),PY(8755.5),2388/50,4323/50,'#e5dfcf'),R(PX(1523.5),PY(7132.5),4,54,'#fffdf7'));
+for(let i=0;i<10;i++)for(const[l,r]of [[429.5,1523.5],[1723.5,2817.5]])st.push(L(PX(l),PY(4432.5+i*300),PX(r),PY(4432.5+i*300),'#7f8d88',.3));
+for(const x of [499.5,1543.5,1703.5,2747.5])st.push(L(PX(x),PY(4132.5),PX(x),PY(7132.5),'#355960',.8));
+st.push(L(PX(1543.5),PY(7132.5),PX(1703.5),PY(7132.5),'#355960',.8));
+for(const[,r]of candidate.stairGuard.firstFloorGuards.filter(([id])=>id.startsWith('stair')))st.push(R(PX(r[0]),PY(r[1]+r[3]),r[2]/50,r[3]/50,'#b4c1bc'));
+st.push(T(15,181,'2388 finished =1094+200well+1094.',2.75),T(15,188,'Landing1623; railturn80 projectsinto landing.',2.75),T(15,195,'300South returns: approachviaY3782.5.',2.75));
+const Q=y=>125+(y-4132.5)/50,Z=z=>185-z/50;
+st.push(T(120,44,'02 / ACTUAL FINISHED NOSES /1:50',3.2,'bold'));
+const lower=[[4432.5,0]],upp=[[7132.5,1725]];
+for(let i=0;i<10;i++){lower.push([4432.5+i*300,(i+1)*172.5]);if(i<9)lower.push([4732.5+i*300,(i+1)*172.5]);upp.push([7132.5-i*300,1725+(i+1)*172.5]);if(i<9)upp.push([6832.5-i*300,1725+(i+1)*172.5])}
+for(const[p,c]of [[lower,'#9b7656'],[upp,'#496e75']])st.push(`<path d="${p.map(([y,z],i)=>`${i?'L':'M'}${Q(y)} ${Z(z)}`).join('')}" fill="none" stroke="${c}" stroke-width=".7"/>`);
+st.push(R(Q(7132.5),Z(1725),1623/50,4,'#aab3ae'),R(Q(7132.5),Z(1725),5,370/50,'#9d8171'),L(Q(4132.5),Z(6444),Q(8755.5),Z(6444),'#a7b791',1),L(Q(4132.5),Z(0),Q(4432.5),Z(0)),L(Q(4132.5),Z(3450),Q(4432.5),Z(3450)));
+st.push(T(120,198,'20×172.5;2×9goings300; pitch29.898deg.',2.75),T(120,205,'Bearing4332.5→7257.5 =2925, not2700.',2.75),T(120,212,'Midbeam top1725/bottom1355;250travel.',2.75),T(120,219,'STR actualwaist/seat/anchor check pending.',2.75));
+const TX=x=>264+(x-429.5)/20,TZ=z=>111-z/20;
+st.push(T(258,44,'03 / REAL HANDRAIL WIDTH /1:20',3.2,'bold'),L(TX(429.5),TZ(0),TX(2817.5),TZ(0),'#7f8d88',.8));
+for(const x of [499.5,1543.5,1703.5,2747.5])st.push(`<circle cx="${TX(x)}" cy="${TZ(980)}" r="1" fill="#355960"/>`);
+for(const x of [429.5,2817.5])st.push(L(TX(x),TZ(0),TX(x),TZ(1200),'#aab3ae',1));
+st.push(L(TX(519.5),TZ(-100),TX(1523.5),TZ(-100),'#355960',.4),L(TX(1723.5),TZ(-100),TX(2727.5),TZ(-100),'#355960',.4),T(TX(650),TZ(-240),'1004',3),T(TX(1900),TZ(-240),'1004',3));
+st.push(T(258,136,'D40 +50wallclear→90projection.',2.75),T(258,143,'Wellrail whollywithin200well.',2.75),T(258,150,'Top1000; verticalD12@100→88gap.',2.75),T(258,157,'Bottom/triangle/return gaps≤80required.',2.75),T(258,164,'1004nominal;20combinedloss→984.',2.75),T(258,171,'No private-stair1000minimum invented.',2.75),T(258,178,'Guardload/anchors/handgrip not admitted.',2.75));
+st.push(T(15,237,'FIRST entrance-void guard consumes50floor strip: northy2735–2785; Southbridgeclear1017.5 after27finish+18trim.',2.8),T(15,246,'ProtectedstairEastwall isGROUNDonly; uppergalleryguard is not a new fullheight wall cutting off the top landing.',2.8),T(15,255,'Noses remain0/1725/3450 with integralRCwearing: actual RC-floor80overlay joint must not add80 to finalriser.',2.8),T(15,264,'Geometry is one authored reservation. ADK§1.34/Diagram3.1 references do not certify the assembly or a real occupant.',2.8));
+const stairSvg=wrapSheet('OPEN NORTH LOGGIA / STAIR AND GUARD GEOGRAPHY','One27dry/30wet trial. Rail and guard projections are real occupied space; body territory is not a clear-width label.',st.join(''));
+candidate.wholeHouseFit={listedProxyPass:candidate.actions.pass,footprintPass:candidate.fullHouseFootprint.pass,pass:false,remaining:['Resolve all recorded whole furniture/wall overlaps, including frontheads.','Rebind actual front-single door/closed-room paths after complete finish/frame correction.','Join IAS familydoor arm/regrip and all wet30 boundary patches.'],scope:'No actual product/force/material/fire/physical certification is made a substitute for these internal geometry corrections.'};
+for(const [name,body]of Object.entries({'open-north-loggia.json':JSON.stringify(candidate,null,2)+'\n','open-north-loggia.svg':svg,'open-north-loggia-sections.svg':sectionSvg,'open-north-loggia-exterior.svg':exteriorSvg,'open-north-loggia-stair.svg':stairSvg})){const p=new URL(name,OUT);if(process.argv.includes('--check')){if(readFileSync(p,'utf8')!==body)throw Error('Stale '+name)}else writeFileSync(p,body)}
+if(process.argv.includes('--require-whole-house-fit')&&!candidate.wholeHouseFit.pass)throw Error('Explicit whole-house fit debts remain');
 if(process.argv.includes('--require-spatial-pass')&&!candidate.actions.pass)throw Error('Finite spatial witness failed');
-console.log(JSON.stringify({spatialPass:candidate.actions.pass,failedRoutes:candidate.actions.witnesses.filter(w=>!w.pass).map(w=>w.id),files:['open-north-loggia.json','open-north-loggia.svg','open-north-loggia-sections.svg','open-north-loggia-exterior.svg'],status:'first candidate, not adopted',weatherAxes:[4377.5,7622.5],knownInterfaces:candidate.knownInterfaces.length}));
+console.log(JSON.stringify({wholeHouseFootprintPass:candidate.fullHouseFootprint.pass,wholeHouseFitPass:candidate.wholeHouseFit.pass,spatialPass:candidate.actions.pass,failedRoutes:candidate.actions.witnesses.filter(w=>!w.pass).map(w=>w.id),files:['open-north-loggia.json','open-north-loggia.svg','open-north-loggia-sections.svg','open-north-loggia-exterior.svg','open-north-loggia-stair.svg'],status:'first candidate, not adopted',weatherAxes:[4377.5,7622.5],knownInterfaces:candidate.knownInterfaces.length}));
