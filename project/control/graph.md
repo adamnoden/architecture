@@ -39,7 +39,7 @@ flowchart LR
   end
   subgraph g_RWT["RWT"]
     direction TB
-    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>READY</b>"]
+    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
@@ -122,6 +122,7 @@ flowchart LR
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
+  n_HAD_03 --> n_RWT_06
   n_RWT_06 --> n_RWT_07
   n_RWT_07 --> n_ROF_RWT_GATE
   n_HAD_03 --> n_ROF_RWT_GATE
@@ -202,7 +203,7 @@ flowchart LR
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_TECHNICAL blocked;
-  class n_RWT_06 ready;
+  class n_RWT_06 blocked;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
@@ -375,7 +376,7 @@ flowchart LR
     n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>DONE</b>"]
     n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>DONE</b>"]
     n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>DONE</b>"]
-    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>READY</b>"]
+    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
     n_RWT_METALS["RWT-METALS<br/>Develop copper collection, brass channels and non-plastic concealed routes<br/><b>DONE</b>"]
     n_RWT_ROBUSTNESS["RWT-ROBUSTNESS<br/>Test full-duty independent paths, reserve and common-cause rainwater failures<br/><b>DONE</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
@@ -619,6 +620,7 @@ flowchart LR
   n_RWT_04 --> n_RWT_05
   n_RWT_03 --> n_RWT_06
   n_RWT_05 --> n_RWT_06
+  n_HAD_03 --> n_RWT_06
   n_MAT_00 --> n_RWT_SHED
   n_RWT_01 --> n_RWT_SHED
   n_ROF_02 --> n_RWT_SHED
@@ -852,7 +854,7 @@ flowchart LR
   class n_RWT_03 done;
   class n_RWT_04 done;
   class n_RWT_05 done;
-  class n_RWT_06 ready;
+  class n_RWT_06 blocked;
   class n_RWT_SHED done;
   class n_RWT_METALS done;
   class n_RWT_ROBUSTNESS done;
