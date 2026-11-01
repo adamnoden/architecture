@@ -1,21 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "SWE-PUBLICATION",
-  "generation": 1,
+  "generation": 2,
   "state": "claimed",
-  "leaseId": "48b0aeac-e4d7-431d-906e-2cd60a467b76",
+  "leaseId": "12d3282e-e86a-46d0-9169-e7bd3fa2bd6d",
   "holder": {
-    "kind": "codex",
-    "label": "swe-1174-publication"
+    "kind": "chatgpt",
+    "label": "swe-main-reconciliation-20261101"
   },
-  "claimedAt": "2026-10-31T20:29:23.177Z",
-  "heartbeatAt": "2026-10-31T20:42:58.810Z",
-  "expiresAt": "2026-10-31T21:27:58.810Z",
-  "branch": "work/swe-identity-1174",
-  "note": "Implementation and targeted tests complete locally; preparing remote publication and native PDF validation.",
-  "pr": 1180,
+  "claimedAt": "2026-11-01T09:14:57.115Z",
+  "heartbeatAt": "2026-11-01T09:14:57.115Z",
+  "expiresAt": "2026-11-01T12:14:57.115Z",
+  "branch": "work/swe-recovery-20261101",
   "checkpoint": {
-    "evidence": "Original publication PR #1184, head a14f3cc45b563e58c72e9713108572109a007c24, exact tree 0297aa66b76dd773343061b9ed7febfdc1f45dbd; project/swe/publication-result.md records 31 corrected routes, 17 passing tests, and seven-to-zero warm font downloads; integration PR #1180 retains packet commit as a parent.",
-    "next": "Inspect exact-head required CI and PDF/metadata/typography proofs on shared PR #1180; run fresh canonical preflight for SWE-PUBLICATION before expected-head integration; release only after verified main merge."
+    "evidence": "Owner-directed recovery of four SWE packets; prior exact-head CI passed on PR #1180 but merged main now conflicts in generated projections only.",
+    "next": "Construct source-preserving merged branch from latest main plus SWE reviewed blobs; open replacement PR, validate exact head and run four fresh canonical merge-checks; expected-head merge and release."
+  },
+  "predecessor": {
+    "leaseId": "48b0aeac-e4d7-431d-906e-2cd60a467b76",
+    "generation": 1,
+    "branch": "work/swe-identity-1174",
+    "pr": 1180,
+    "checkpoint": {
+      "evidence": "Original publication PR #1184, head a14f3cc45b563e58c72e9713108572109a007c24, exact tree 0297aa66b76dd773343061b9ed7febfdc1f45dbd; project/swe/publication-result.md records 31 corrected routes, 17 passing tests, and seven-to-zero warm font downloads; integration PR #1180 retains packet commit as a parent.",
+      "next": "Inspect exact-head required CI and PDF/metadata/typography proofs on shared PR #1180; run fresh canonical preflight for SWE-PUBLICATION before expected-head integration; release only after verified main merge."
+    }
+  },
+  "recoverySource": {
+    "leaseId": "48b0aeac-e4d7-431d-906e-2cd60a467b76",
+    "generation": 1,
+    "branch": "work/swe-identity-1174",
+    "pr": 1180,
+    "checkpoint": {
+      "evidence": "Original publication PR #1184, head a14f3cc45b563e58c72e9713108572109a007c24, exact tree 0297aa66b76dd773343061b9ed7febfdc1f45dbd; project/swe/publication-result.md records 31 corrected routes, 17 passing tests, and seven-to-zero warm font downloads; integration PR #1180 retains packet commit as a parent.",
+      "next": "Inspect exact-head required CI and PDF/metadata/typography proofs on shared PR #1180; run fresh canonical preflight for SWE-PUBLICATION before expected-head integration; release only after verified main merge."
+    }
   }
 }
