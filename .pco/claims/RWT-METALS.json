@@ -9,8 +9,8 @@
     "label": "issue-comment-6556032783"
   },
   "claimedAt": "2026-11-01T09:20:43.000Z",
-  "heartbeatAt": "2026-11-01T09:20:43.000Z",
-  "expiresAt": "2026-11-01T10:05:43.000Z",
+  "heartbeatAt": "2026-11-01T09:27:25.000Z",
+  "expiresAt": "2026-11-01T10:12:25.000Z",
   "branch": "work/mvb-chat-6556032783",
   "predecessor": {
     "leaseId": "12e9e5ac-c75f-4035-bac1-7e0dd4252d62",
@@ -31,5 +31,10 @@
       "evidence": "Recovered PR1191 RWT sources into PR1195 head a424d1312d9ecb45b941c654af5b56bc048d4fe6 with current main ancestry.",
       "next": "Pass full CI, run canonical merge-check with current lease and head, merge and close source PR1191."
     }
+  },
+  "pr": 1198,
+  "checkpoint": {
+    "evidence": "PR1198 branch work/mvb-chat-6556032783; bounded metals disposition and node closure authored at head 7863ac1d.",
+    "next": "Complete exact-head native CI, fresh RWT-METALS publication preflight, expected-head merge and accepted-tree verification; release or handoff."
   }
 }
