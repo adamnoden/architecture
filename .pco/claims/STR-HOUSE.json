@@ -9,8 +9,8 @@
     "label": "zerg-worker-three-20261101"
   },
   "claimedAt": "2026-11-01T14:58:14.650Z",
-  "heartbeatAt": "2026-11-01T14:58:14.650Z",
-  "expiresAt": "2026-11-01T15:43:14.650Z",
+  "heartbeatAt": "2026-11-01T15:20:58.845Z",
+  "expiresAt": "2026-11-01T16:05:58.845Z",
   "branch": "work/zerg-str-house-20261101",
   "predecessor": {
     "leaseId": "6b888f33-8d6e-41f2-8d06-346d8bd154af",
@@ -29,5 +29,9 @@
       "evidence": "Developed a separate unadopted front-allocation B/C/D comparison in project/str/house-front-allocation-study.md and contained house-front-allocation.py/json/svg, preserving the original pinned structural geometry. Peer independently reproduced both 1801-angle finite-door curves and 18 upper whole-segment paths; area convention and own-handle contact limitations are explicit. Complete paired-floor, structural-span, ground-WC/plant, facade/roof, smaller-furniture and material-finish consequences are drafted. Final ground replay found and records the old kitchen route 10 mm clash, testing a declared 20 mm west correction; outputs are regenerating. No geometry adoption or STR-HOUSE completion.",
       "next": "Finish regenerated ground-path and A3 review, add the owning programme/result links, reconcile current main, run targeted checks and submit the exact reviewed source payload for root publication, full exact-head CI and fresh canonical preflight."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote ef000123 on work/zerg-str-house-20261101, verified tree efa1540a: compact bedrooms, coupled front-door actions and14whole-segment routes. No adoption or HOUSE completion.",
+    "next": "Finish owning result and programme reconciliation, inspect actual SVG, validate and submit exact-head CI."
   }
 }
