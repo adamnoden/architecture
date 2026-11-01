@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594mm" height="420mm" viewBox="0 0 594 420">
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44} .small{font-size:3.1px} .title{font-size:5px;font-weight:bold} .note{font-size:3.6px} .line{stroke:#243a44;stroke-width:.4;fill:none}</style>
+<rect width="594" height="420" fill="#faf8f1"/>
+<text x="16" y="14" class="title">J-RC3 / compact B: one joined reference with explicit acceptance limits</text>
+<text x="16" y="22" class="note">1 November 2026 · UNADOPTED · mm / kN · calculated assumptions are not installed or accepted capacities</text>
+<path d="M16,28 L578,28" stroke="#243a44" stroke-width=".4" fill="none"/>
+<text x="16" y="39" class="title">A / UPPER RISER · 1:10</text>
+<rect x="23.000" y="47.000" width="14.000" height="90.000" fill="#aebeba" stroke="#243a44" stroke-width=".35"/>
+<rect x="37.000" y="47.000" width="90.000" height="90.000" fill="#e4e9e7" stroke="#243a44" stroke-width=".35"/>
+<rect x="38.500" y="54.500" width="60.000" height="75.000" fill="none" stroke="#aa6a35" stroke-width=".35"/>
+<rect x="41.000" y="57.000" width="55.000" height="70.000" fill="none" stroke="#6e91a0" stroke-width=".35"/>
+<rect x="37.0" y="52.0" width="70" height="80" fill="none" stroke="#b35b60" stroke-dasharray="2 1" stroke-width=".4"/>
+<circle cx="50.0" cy="112.0" r="2.5" fill="white" stroke="#243a44" stroke-width=".4"/>
+<circle cx="70.0" cy="112.0" r="2.5" fill="white" stroke="#243a44" stroke-width=".4"/>
+<circle cx="80.0" cy="77.0" r="8.0" fill="white" stroke="#243a44" stroke-width=".4"/>
+<rect x="43.500" y="117.000" width="10.000" height="10.000" fill="#ad8755" stroke="#243a44" stroke-width=".35"/>
+<rect x="83.500" y="117.000" width="10.000" height="10.000" fill="#ad8755" stroke="#243a44" stroke-width=".35"/>
+<rect x="43.500" y="57.000" width="10.000" height="10.000" fill="#ad8755" stroke="#243a44" stroke-width=".35"/>
+<rect x="83.500" y="57.000" width="10.000" height="10.000" fill="#ad8755" stroke="#243a44" stroke-width=".35"/>
+<text x="139" y="57" class="small">Solid RC200 replaces dashed 700 × 800 hole.</text>
+<text x="139" y="64" class="small">Two formed Ø50 / 22 copper examples.</text>
+<text x="139" y="71" class="small">One formed Ø160 / 110 stack comparator.</text>
+<text x="139" y="78" class="small">Other services remain unallocated.</text>
+<text x="139" y="88" class="small">Four 100 × 100 plinths contact RC directly.</text>
+<text x="139" y="95" class="small">Upper layers carry no cabinet gravity load.</text>
+<text x="139" y="105" class="small">Brown: fixed cabinet; blue: gross riser.</text>
+<text x="139" y="112" class="small">Grey: core x9230–9370; all other B faces retained.</text>
+<text x="139" y="122" class="small">Holes set before reinforcement / casting.</text>
+<text x="139" y="129" class="small">No ordinary service operation cuts the slab.</text>
+<text x="300" y="39" class="title">B / UPPER FLOOR &amp; SERVICE SECTION · 1:5</text>
+<rect x="310.000" y="80.000" width="95.000" height="4.000" fill="#c1a57d" stroke="#243a44" stroke-width=".35"/>
+<rect x="310.000" y="84.000" width="95.000" height="12.000" fill="#e1d6b8" stroke="#243a44" stroke-width=".35"/>
+<rect x="310.000" y="96.000" width="95.000" height="40.000" fill="#aebeba" stroke="#243a44" stroke-width=".35"/>
+<rect x="310.000" y="136.000" width="95.000" height="11.000" fill="#eef1ed" stroke="#243a44" stroke-width=".35"/>
+<rect x="310.000" y="147.000" width="95.000" height="3.000" fill="#d1d6d2" stroke="#243a44" stroke-width=".35"/>
+<path d="M407,80.0 L420,80.0" stroke="#243a44" stroke-width=".4" fill="none"/>
+<text x="424" y="81.0" class="small">FFL +3450</text>
+<path d="M407,96.0 L420,96.0" stroke="#243a44" stroke-width=".4" fill="none"/>
+<text x="424" y="97.0" class="small">RC top +3370</text>
+<path d="M407,136.0 L420,136.0" stroke="#243a44" stroke-width=".4" fill="none"/>
+<text x="424" y="137.0" class="small">RC soffit +3170</text>
+<path d="M407,150.0 L420,150.0" stroke="#243a44" stroke-width=".4" fill="none"/>
+<text x="424" y="151.0" class="small">ceiling +3100</text>
+<text x="310" y="53" class="small">20 finish + 60 IAS + 200 RC + 55 services + 15 ceiling = 350.</text>
+<text x="310" y="61" class="small">EW span 2367.5; M 9.99 / MR 27.92 kNm per metre.</text>
+<text x="310" y="69" class="small">Net width 800; H10/150 each face/direction; d160, cover25 trial.</text>
+<text x="16" y="177" class="title">C / FULL COURT BOX · 1:10 transverse</text>
+<rect x="25.000" y="220.000" width="10.000" height="45.950" fill="#aebeba" stroke="#243a44" stroke-width=".35"/>
+<rect x="115.300" y="220.000" width="10.000" height="45.950" fill="#aebeba" stroke="#243a44" stroke-width=".35"/>
+<rect x="25.000" y="265.950" width="100.300" height="10.000" fill="#aebeba" stroke="#243a44" stroke-width=".35"/>
+<rect x="35.000" y="220.000" width="10.000" height="35.950" fill="#d4c28b" stroke="#243a44" stroke-width=".35"/>
+<rect x="105.300" y="220.000" width="10.000" height="35.950" fill="#d4c28b" stroke="#243a44" stroke-width=".35"/>
+<rect x="45.000" y="255.800" width="60.300" height="0.300" fill="#7896a3" stroke="#243a44" stroke-width=".35"/>
+<rect x="35.000" y="255.950" width="80.300" height="10.000" fill="#d4c28b" stroke="#243a44" stroke-width=".35"/>
+<rect x="25.000" y="192.000" width="100.300" height="1.500" fill="#c1a57d" stroke="#243a44" stroke-width=".35"/>
+<rect x="25.000" y="193.500" width="100.300" height="6.500" fill="#e1d6b8" stroke="#243a44" stroke-width=".35"/>
+<rect x="25.000" y="200.000" width="100.300" height="10.000" fill="#d4c28b" stroke="#243a44" stroke-width=".35"/>
+<rect x="25.000" y="210.000" width="100.300" height="10.000" fill="#aebeba" stroke="#243a44" stroke-width=".35"/>
+<path d="M45.15,229.8 L105.15,229.8" stroke="#477e98" stroke-width=".4" fill="none"/>
+<text x="34" y="236.0" class="small">600 CLEAR carrier space</text>
+<path d="M18,322.0 L240,322.0" stroke="#987852" stroke-width=".4" fill="none"/>
+<text x="25" y="320.0" class="small">soil/grade −1300; 460.5 raw clearance</text>
+<text x="247" y="199" class="small">Full width 1003, not 800.</text>
+<text x="247" y="207" class="small">Tray1.5 + foam100 each side.</text>
+<text x="247" y="215" class="small">RC clear 803; seats100.</text>
+<text x="247" y="223" class="small">Cap support axes 903.</text>
+<text x="247" y="231" class="small">Cap100 + foam100 + 65 + 15.</text>
+<text x="247" y="239" class="small">60 below bridge to crown −378.</text>
+<text x="247" y="247" class="small">Tray invert depth / flow by HAD.</text>
+<text x="247" y="255" class="small">U base underside −839.5.</text>
+<text x="247" y="263" class="small">No discharge to structural void.</text>
+<text x="247" y="271" class="small">D1300 after H300 + loss50</text>
+<text x="247" y="279" class="small">leaves 60.5 above final reserve50.</text>
+<text x="363" y="177" class="title">D / FINITE LOAD PATHS &amp; ADVERSE BOUNDARIES</text>
+<text x="363" y="192" class="note">Removable cap</text>
+<text x="363" y="200" class="small">M 1.04 / MR 4.86; V 3.08 / VRdc 17.24</text>
+<text x="363" y="208" class="small">b400 / h100 / d62; As201.1; x/d0.259</text>
+<text x="363" y="220" class="note">Permanent masonry bridge</text>
+<text x="363" y="228" class="small">M 10.21 / MR 17.20; V 31.33 / VRdc 42.19</text>
+<text x="363" y="236" class="small">b700 / h120 / d82; As549.8; x/d0.306</text>
+<text x="363" y="248" class="note">Fixed U / each sidewall</text>
+<text x="363" y="256" class="small">M 24.82 / MR 46.62; V 23.36 / VRdc 23.43</text>
+<text x="363" y="264" class="small">b100 / h559.5 / d503; As226.2; x/d0.144</text>
+<text x="363" y="276" class="small">Masonry bridge: 700 along travel; 1603 across; 300 seats.</text>
+<text x="363" y="284" class="small">Seats outside U-box → permanent piers → reinforced grid.</text>
+<text x="363" y="292" class="small">Box: two 100 × 559.5 longitudinal beams; 2H12 stacked.</text>
+<text x="363" y="300" class="small">Box end seats 100 × 300; max calculation span 4250.</text>
+<text x="363" y="308" class="small">25 cover is a TRIAL; RC100 bridge rejected; RC120 checked.</text>
+<text x="363" y="316" class="small">Wall plinth through insulation needs thermal / DPC splice.</text>
+<text x="363" y="324" class="small">Cap 400 long: bare RC ≈100 kg; lifting equipment required.</text>
+<path d="M16,394 L578,394" stroke="#243a44" stroke-width=".4" fill="none"/>
+<text x="16" y="402" class="small">REFERENCE DESIGN ONLY / derived resistances require specified materials, bond, cover, detailing, bearings and competent acceptance.</text>
+<text x="16" y="409" class="small">Source pins, equations, load envelopes and falsifiers: joined-rc-reference.json + ../joined-rc-reference.md. No site, fire, acoustic or whole-house approval.</text>
+</svg>
