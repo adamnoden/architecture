@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 14,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-mat-joined"
   },
   "claimedAt": "2026-11-01T19:28:00.966Z",
-  "heartbeatAt": "2026-11-01T19:52:17.278Z",
-  "expiresAt": "2026-11-01T20:37:17.278Z",
+  "heartbeatAt": "2026-11-01T20:01:27.258Z",
+  "expiresAt": "2026-11-01T20:01:27.258Z",
   "branch": "work/zerg2-integration-20261101",
   "predecessor": {
     "leaseId": "814b6dcb-3d75-4eb4-9063-b6f39846bdeb",
@@ -37,5 +37,7 @@
     "next": "Root observes exact-head fullCI; upon command fetchsharedhead and run own freshcanonicalmergepreflight, then root expected-head merge and verified closeout",
     "blocker": "Shared exact-head CI pending; reference candidate is not technical/material admission or MAT-ENVELOPE completion"
   },
-  "pr": 1229
+  "pr": 1229,
+  "releasedAt": "2026-11-01T20:01:27.258Z",
+  "releaseReason": "handoff"
 }
