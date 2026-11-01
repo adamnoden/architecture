@@ -12,7 +12,8 @@
     "project/had/had-02m-material-finish-synthesis.md": "338f9f0fe4aed085fe6db2909bde6a4023f2ba08ec97048a2eb4bcb375d25b81",
     "docs/reference-house/interior-family-selection.md": "47b71d40e99f5832638f4bc53b68576f53c857d57364fe74d1c87ec669099819",
     "docs/reference-house/material-policy.md": "a1002d7ecea0de2fe27b541785c61ea45f65fbbb7bd9dda235a1fb6c7be2511e",
-    "project/mat/joined-ground-floor-and-court-boundary.md": "4b35b8d898a04994d950da1cdd51539c4388fb68519f8c51cdd6dff86cedbd1b"
+    "project/mat/joined-ground-floor-and-court-boundary.md": "4b35b8d898a04994d950da1cdd51539c4388fb68519f8c51cdd6dff86cedbd1b",
+    "project/mat/studies/services-b-joined-inventory.json": "424fe5df34b921915b33bd846606d6b3508d944232eefc724aad7d18dc66ef94"
   },
   "geometry": {
     "HADHead": "a324a50d047843603d6fc275c4062bc9d0c1cb90",
@@ -735,11 +736,15 @@
         "S10"
       ],
       "name": "Ceiling beneath RC200",
-      "direction": "Treat the actual slab as the prospective fire boundary; use an ordinary non-protective finish below it",
+      "direction": "Treat the actual slab as prospective fire boundary; choose bare off-white12 mineral board with3 joint/fit territory below it, independently supported",
       "layers": [
         [
-          "ordinary ceiling finish reservation",
-          15
+          "bare mineral board",
+          12
+        ],
+        [
+          "mechanical joint/fit territory",
+          3
         ],
         [
           "service/support reservation",
@@ -748,7 +753,7 @@
       ],
       "oldDepth": 70,
       "scope": "Ground rooms beneath the actual first RC floor; no duplicate rated ceiling by default",
-      "constituents": "Actual mineral facing/support/joints and decorations; RC fire resistance, cover, openings and loads stay with STR.",
+      "constituents": "Bare off-white SUPALUX is the facing control; choose exposed flush mechanical joints with plain metal backing/fasteners. No unverified coating is selected. Actual support/joint recipe and RC fire cover/openings/loads remain separate.",
       "firstRelease": "Open a genuinely independent service cover; do not remove the qualified slab/penetration boundary.",
       "residue": "Neither a15 skin nor RC200 as a name proves REI30. Ordinary and protective layers are distinct.",
       "totalDepth": 70,
@@ -763,14 +768,14 @@
         "S10"
       ],
       "name": "Ordinary upper-room ceiling",
-      "direction": "Use an independently supported mineral board ceiling within70; keep the actual roof fire/cavity boundary separate",
+      "direction": "Use bare off-white12 mineral board with expressed mechanical joints and independent support within70; keep roof fire/cavity boundary separate",
       "layers": [
         [
           "mineral board reference",
           12
         ],
         [
-          "joint/finish reservation",
+          "mechanical joint/fit territory",
           3
         ],
         [
@@ -780,7 +785,7 @@
       ],
       "oldDepth": 70,
       "scope": "Upper bedrooms and wet rooms outside the independently determined protected roof boundary",
-      "constituents": "SUPALUX12 is the facing control only; actual carriers, fasteners, joint/finish recipe, moisture suitability and roof interfaces remain specified as a complete ordinary assembly.",
+      "constituents": "Bare off-white SUPALUX12 facing, plain metal mechanical backing/fasteners and actual carriers; no automatic film coat or masonry silicate applied to board. Complete joints/support/moisture/roof interfaces remain required.",
       "firstRelease": "Isolate devices; remove a supported local access panel or sacrificial board without disturbing the independent qualified roof boundary.",
       "residue": "Authored70 compatibility requirement, not a delivered ceiling or EI claim. Do not transfer pure-silicate coating compatibility from mineral masonry to a board.",
       "totalDepth": 70,
@@ -1632,6 +1637,24 @@
       "glass": 100,
       "overlay": 80,
       "FFL": 0,
+      "retainedMaintenanceCaps": {
+        "finish": 15,
+        "mineralDistribution": 65,
+        "glass": 100,
+        "localRC": 100,
+        "rule": "Retain the owning removable dry-cap assembly and actual lifting/isolation; timber boards/grounds never bridge its release joints or replace the independently sealed lid",
+        "transitionRequirement": {
+          "material": "plain uncoated stainless",
+          "coverWidth": 40,
+          "maximumFaceThickness": 2,
+          "flushRecessRequired": true,
+          "fixedSideBearing": 18,
+          "timberMovementGap": 15,
+          "timberOverlap": 7,
+          "fixing": "independent mechanical fixing to the fixed support only; no screw into removable cap or primary boundary",
+          "admission": "Authored complete transition compatibility requirement; actual anchors, flatness, movement and wear need product/physical qualification"
+        }
+      },
       "rule": "Retain the bare-glass field and independent air/gas/water boundary; overlay anchors cannot puncture it by assumption"
     },
     "upper": {
@@ -1959,6 +1982,20 @@
     "kitchenAdverse": "Add actual18trim to raw kfixed: first supported north-sink withdrawal intersects outer-north+18trim. Source already marks finish/trim join pending; no transport/rig/force admission.",
     "verification": "Exact detached head/tree, source-bound --check, all3SVGs rendered/viewed; no IAS files edited.",
     "admission": "Reach600/650 are authored sensitivities; small geometric reserves are not comfort/product/force/physical/material or fire-kit acceptance."
+  },
+  "ceilingProfiles": {
+    "ordinaryGroundField": 3100,
+    "localPrincipalShowerBox": 2645,
+    "localSoilCollectorBox": 2540,
+    "upperProtectedControl": 2994,
+    "rule": "3100 is the ordinary field only. Retain actual local branch/beam/hood drops, independently supported covers and primary fire boundary; no universal3100 or universal176 ceiling."
+  },
+  "substrateDecisions": {
+    "renderableMasonry": "Complete27 lime direction with actual background/preparation qualified; no14/17 unproved substitution.",
+    "RC": "Retain the27 spatial reservation. Prefer plain off-form mineral surface only where actual structural/fire duty earns that exposure; reject automatic lime adhesion or cover abrasion. Where protection is required retain a complete applicable protective assembly and reopen depth if needed—never strip it for material purity.",
+    "ordinaryBoards": "Choose bare off-white facing and expressed mechanical joints; substrate-specific carrier/joints required, no Pure Crystalline-on-gypsum/board transfer.",
+    "timber": "Plain mechanical complete joinery with disclosed three-coat ordinary paint where selected; no generic natural-finish admission.",
+    "looseFurniture": "Whole external envelopes include frame/head/feet/projections, not mattress boxes. Actual primary furnishing controls do not clear plywood/slat/upholstery/mattress constituents or imply an owner exception; installed joinery remains fully audited."
   },
   "checks": {
     "dryStandardControl": 27,
