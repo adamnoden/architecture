@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 8,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-s02-inventory"
   },
   "claimedAt": "2026-11-01T19:52:49.569Z",
-  "heartbeatAt": "2026-11-01T20:50:32.893Z",
-  "expiresAt": "2026-11-01T21:35:32.893Z",
+  "heartbeatAt": "2026-11-01T20:58:36.102Z",
+  "expiresAt": "2026-11-01T20:58:36.102Z",
   "branch": "work/zerg3-services-interiors-20261101",
   "predecessor": {
     "leaseId": "a17ca040-a77b-4229-8273-15b4964bf355",
@@ -33,5 +33,7 @@
     "next": "Sole CI observer access reports exact-head result; root runs both fresh per-node merge preflights and expected-head merge; verify then release.",
     "blocker": "CI and root final preflights pending. No technical/material/physical acceptance or MAT lifecycle closure."
   },
-  "pr": 1232
+  "pr": 1232,
+  "releasedAt": "2026-11-01T20:58:36.102Z",
+  "releaseReason": "handoff"
 }
