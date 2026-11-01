@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 21,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "5ded4cf2-206c-4922-9ab1-aba902031d2a",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6556544021"
   },
   "claimedAt": "2026-11-01T10:10:21.000Z",
-  "heartbeatAt": "2026-11-01T10:27:19.000Z",
-  "expiresAt": "2026-11-01T11:12:19.000Z",
+  "heartbeatAt": "2026-11-01T10:30:01.000Z",
+  "expiresAt": "2026-11-01T10:30:01.000Z",
   "branch": "work/mvb-chat-6556544021",
   "predecessor": {
     "leaseId": "3e29a531-eb41-4c6d-ae4e-e033bcf7aaeb",
@@ -37,5 +37,7 @@
     "evidence": "PR1207 head 0fd395af: four source/control files add N/E court escape screen and HAD-03 dependency; exact-head full CI 41297209760 PASS.",
     "next": "Verify native preflight job for exact head/live lease, merge PR1207 with expected SHA, release and dispose helper branch.",
     "blocker": "Actual HAD-03 plan and section plus site flood, structural/assembly and flow acceptance not yet earned."
-  }
+  },
+  "releasedAt": "2026-11-01T10:30:01.000Z",
+  "releaseReason": "handoff"
 }
