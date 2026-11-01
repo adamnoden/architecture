@@ -159,8 +159,75 @@ export const buildCourtEgressStudy = function build(d,ops){
  return {data,files:{'court-egress-plan.svg':planSvg,'court-egress-north-section.svg':section('N'),'court-egress-east-section.svg':section('E'),'court-egress-study.json':JSON.stringify(data,null,2)+'\n'}};
 };
 
+
+/** An authored architectural allocation, deliberately separate from adopted house geometry. */
+export function buildLocalPortalCandidate(d,ops){
+ const source=buildCourtEgressStudy(d,ops).data;
+ const scanWidth=600,axisE=7125,fflRise=300,relativeHeight=450,cover=100;
+ const inletInvert=-320,carrierHeight=160,carrierWidth=200,run=source.plan.north.length;
+ const outletInvert=inletInvert-run*.01;
+ const band=[axisE-scanWidth/2,axisE+scanWidth/2];
+ const slots={north:{axis:6000,band:[5700,6300],run:[7750,12000],coverSegments:[]},east:{axis:axisE,band,run:[7750,12000],coverSegments:[]}};
+ // Avoid tiny pieces: the permanent wall/spine crossings have independent bridge caps;
+ // occupied-floor covers split each clear run into equal pieces no longer than 500 mm.
+ for(const [key,breaks] of Object.entries({north:[7750,8167.5,11582.5,12000],east:[7750,8167.5,9437.5,9562.5,11582.5,12000]})){
+  const s=slots[key];s.coverSegments=[];s.coverBreaks=[breaks[0]];
+  for(let i=1;i<breaks.length;i++){
+   const n=Math.ceil((breaks[i]-breaks[i-1])/500),len=(breaks[i]-breaks[i-1])/n;
+   for(let j=1;j<=n;j++){s.coverSegments.push(len);s.coverBreaks.push(breaks[i-1]+j*len)}
+  }
+ }
+ const plantDry=d.services.plantDry,work=d.services.plantWorking;
+ const intersect=(a,b)=>Math.max(0,Math.min(a[1],b[1])-Math.max(a[0],b[0]));
+ const data={basis:d.id,sourceRole:'Accepted source supplies intersections only; all portal dimensions below are an UNADOPTED reference design.',decision:'Allocate pantry E-W1 and north N as the single joined architectural candidate. Reject E-P as an unchanged-plant installation; do not infer structural or water acceptance.',
+  referenceDesign:{relativeFFLAboveSyntheticReceiver:relativeHeight,wholeHouseRiseRelativeToExisting:fflRise,receiverRelativeToFFL:-relativeHeight,receiverRole:'synthetic comparison, not a site high-water datum',grossAccessWidth:scanWidth,carrierOutsideWidth:carrierWidth,carrierOutsideHeight:carrierHeight,inletInvert,outletInvert,fall:run*.01,coverDepth:cover,minCrownDepth:-inletInvert-carrierHeight,installationSpaceBelowCover:-inletInvert-carrierHeight-cover,lowestServiceBox:-400,outletInvertClearanceAboveSyntheticReceiver:outletInvert+relativeHeight,normalPanPerimeter:-86,normalPanLow:-121,normalCollectorToCarrierDrop:199,emergencyTrialCrest:-75,emergencyOperatingWater:'unknown',lowestSusceptibleJoint:'unknown',hydraulicCapacity:'unproven',completeMaterialAssembly:'unqualified'},slots,
+  eastConsequences:{pantryBand:band,courtWindowProjection:[6350,7350],outerWindowProjection:[6900,7900],courtProjectionOverrun:Math.max(0,band[1]-7350),outerProjectionOverrun:Math.max(0,6900-band[0]),remainingPantryStrips:[band[0]-6650,8105-band[1]],fixedStorageInBand:'prohibited in candidate; current pantry has no adopted fitted storage model'},
+  rejectedPier:{axis:6000,grossBand:[5700,6300],nominalCourtPierShoulders:[50,50],fixedPlantDryOverlap:intersect([5700,6300],[plantDry.y,plantDry.y+plantDry.depth]),workingFloorOverlap:intersect([5700,6300],[work.y,work.y+work.depth]),interpretation:'Fixed plant obstruction requires reallocation. Working-floor overlap alone is not fixed obstruction: closed load-capable covers may serve working floor, but repair needs plant isolation and a second usable route.'},
+  support:'Two permanent longitudinal edge supports lie outside each 600 mm access corridor. Independently supported threshold/window/spine bridge caps span the corridor; the carrier supports neither floor nor masonry. All member sizes, reactions and thermal/gas/water continuity remain unproved.',
+  repair:{segmentMaxLength:500,coverMaxLength:500,coverWidth:600,carrierJointEnvelopeWidth:300,clearSideToolSpace:150,verticalLiftAfterJointRelease:200,firstRelease:'Lift a dry floor cover; isolate/empty N at exposed court inlet while E stays operative. For E repair provide an independently admitted temporary rain diversion or postpone repair: N alone is not equivalent redundancy.',joint:'Top-access detachable all-metal-joint trial; seal, bolt access and repeated watertight reinstatement must be proved before admission.',removal:'Lift vertically inside opened 600 mm strip; stage each emptied segment on protected court/room surface. No axial pull through a 4.25 m wall sleeve, fixed furniture or permanent masonry.',leakage:'A separate exposed inspection/secondary-containment space is reserved, but passive external declaration and its own water boundary are unresolved; no dry-floor claim.'},
+  approach:{extraRise:300,illustrativeGradient:'1:20 arithmetic only, not access approval',horizontalRunBeforeLandings:6000,availableSiteLength:'unknown'},
+  acceptance:'NOT ACCEPTED. This closes the room/route allocation choice for the next joined section; HAD-03 and RWT-06 remain incomplete/blocked. Actual support, complete no-plastic wet/thermal/gas floor, first-harm joints, full-duty flow and independent event-bound receivers can reject this candidate.'};
+ const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+ const t=(x,y,s,size=3)=>`<text x="${x}" y="${y}" font-family="DejaVu Sans,Arial,sans-serif" font-size="${size}" fill="#233b42">${esc(s)}</text>`;
+ const r=(x,y,w,h,fill,stroke='#506569')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}" stroke="${stroke}" stroke-width=".35"/>`;
+ const l=(x,y,xx,yy,color='#506569')=>`<path d="M${x} ${y}L${xx} ${yy}" stroke="${color}" stroke-width=".6" fill="none"/>`;
+ const page=(title,body)=>`<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" role="img" aria-label="${esc(title)}"><rect width="420" height="297" fill="#fffdf8"/>${t(15,18,title,5)}${t(15,27,'UNADOPTED reference design · accepted source intersections, authored section and room reservations',2.8)}${l(15,33,405,33)}${body.join('')}${l(15,275,405,275)}${t(15,284,'No structural sizing, complete material assembly, site datum, hydraulic capacity or first-harm acceptance.',2.8)}${t(15,291,'HAD-03 remains planned · RWT-06 remains blocked · RH-LAYOUT-REVISION-02 · 1 November 2026',2.8)}</svg>\n`;
+ const plan=[],X=x=>20+x/100,Y=y=>169-y/100;
+ plan.push(r(X(0),Y(12000),120,120,'#cbd0cb'),r(X(417.5),Y(11582.5),111.65,111.65,'#f1ecdf'),r(X(3832.5),Y(8167.5),43.35,43.35,'#cbd0cb'),r(X(4250),Y(7750),35,35,'#d7ebe7'));
+ plan.push(r(X(9437.5),Y(8105),1.25,81.05,'#b9c1bc'));
+ for(const [key,s]of Object.entries(slots)){
+  const n=key==='north',color=n?'#5a9894':'#b78254';
+  plan.push(n?r(X(s.band[0]),Y(12000),6,42.5,color):r(X(7750),Y(s.band[1]),42.5,6,color));
+  for(const z of s.coverBreaks)plan.push(n?l(X(5700),Y(z),X(6300),Y(z)):l(X(z),Y(band[0]),X(z),Y(band[1])));
+ }
+ plan.push(t(25,82,'FAMILY',2.5),t(119,88,'PANTRY',2.3),t(118,116,'PLANT',2.4),t(102,112,'GALLERY',2.2));
+ plan.push(t(68,68,'N',4),t(104,94,'E-W1',3),t(165,47,'Plan 1:100 at A3. All covers lift from the occupied side.',3.4));
+ const notes=['N: x5700–6300 through both door thresholds and family floor.','E: y6825–7425 via east gallery, service spine and pantry.','No fixed pantry cabinets or appliance bases in the E strip.','Pantry residual y-strips: 175 mm south / 680 mm north.','These are not both usable storage depths: E corridor is floor.','E cover crosses window projection edges by 75 mm.','Therefore a separately engineered window-base bridge is mandatory.','Four bedrooms, 12 m shell and room partitions stay as source.','Candidate raises all building levels 300 mm relative to fixed grade.','Front/rear step-free approach needs a real site: 6 m at 1:20','before landings is arithmetic; no site length is claimed.','','E-P at y6000: 600 mm access strip overlaps fixed plant 600 mm.','Do not substitute a 300 mm wet piece for full repair width.','No plant reallocation has been earned; retain it as rejected drop-in.','','Covers <=500 mm long; walls/spine have independent bridge caps.','Room covers may carry routine traffic only after load proof.','Door/window support must survive every carrier-removal state.'];notes.forEach((s,i)=>plan.push(t(165,58+i*9.8,s,2.85)));
+ plan.push(t(20,190,'First release from above; every carrier segment <=500 mm.',3),t(20,200,'Nominal carrier joint width 300 inside 600 access strip.',2.8),t(20,210,'150 mm each side is reserved tool space, not verified ergonomics.',2.6),t(20,224,'N and E remain distinct until exterior receivers: no shared sump.',2.7),t(20,237,'Opposite destinations do not establish event independence.',2.7),t(20,250,'Furniture and safe temporary rain routing govern repair states.',2.7));
+ const sections=[];
+ for(const [i,key]of ['north','east'].entries()){
+  const s=slots[key],xx=q=>30+(q-7750)/25,yy=z=>73+i*74-z/25;
+  sections.push(t(20,45+i*74,key==='north'?'N / NORTH LONGITUDINAL 1:25':'E-W1 / EAST LONGITUDINAL 1:25',3.5));
+  const pan=key==='north'?-121:-75;
+  sections.push(l(xx(7350),yy(pan),xx(7650),yy(pan),'#267b80'),l(xx(7650),yy(pan),xx(7750),yy(inletInvert),'#267b80'));
+  sections.push(t(14,yy(pan)-3,key==='north'?'pan -121':'crest -75',2.4));
+  sections.push(r(xx(7750),yy(0),170,cover/25,'#d6ccae'));
+  sections.push(r(xx(7750),yy(-100),170,300/25,'#edf0e9'));
+  sections.push(l(xx(7750),yy(inletInvert),xx(12000),yy(outletInvert),'#267b80'),l(xx(7750),yy(inletInvert+carrierHeight),xx(12000),yy(outletInvert+carrierHeight),'#267b80'));
+  for(const z of s.coverBreaks)sections.push(l(xx(z),yy(0),xx(z),yy(-100)));
+  for(const [a,b]of key==='north'?[[7750,8167.5],[11582.5,12000]]:[[7750,8167.5],[9437.5,9562.5],[11582.5,12000]])sections.push(r(xx(a),yy(350),(b-a)/25,350/25,'#b6bdb5'));
+  sections.push(l(xx(12000),yy(-450),xx(12900),yy(-450),'#9c684b'),t(212,yy(-450)+5,'synthetic receiver -450',2.6));
+  sections.push(t(30,102+i*74,'Inlet invert -320; outside height160; 1% fall42.5; exit invert -362.5 mm.',2.85));
+ }
+ sections.push(t(20,205,'TRANSVERSE 1:10 / authored space, no member sizing',3.4));
+ sections.push(r(33,216,10,40,'#b6bdb5'),r(103,216,10,40,'#b6bdb5'),r(43,216,60,10,'#d6ccae'),r(43,226,60,30,'#edf0e9'),r(63,232,20,16,'#75a8a1'));
+ sections.push(t(124,216,'600 clear access between independent edge supports.',2.8),t(124,225,'100 cover package; 60 space above inlet carrier crown.',2.8),t(124,234,'160 carrier height; installation and joint envelope explicit.',2.8),t(124,243,'Support depths / floor U-value / gas seals are unproved.',2.8),t(124,252,'Secondary containment/declaration route remains unresolved.',2.8),t(124,263,'Keep structure intact; lift emptied segments 200 vertically.',2.8));
+ return {data,files:{'court-local-portals.json':JSON.stringify(data,null,2)+'\n','court-local-portals-plan.svg':page('COURT LOCAL PORTALS / ONE JOINED ROOM ALLOCATION',plan),'court-local-portals-sections.svg':page('COURT LOCAL PORTALS / LONGITUDINAL AND TRANSVERSE SECTIONS',sections)}};
+}
+
 if(process.argv[1]&&fileURLToPath(import.meta.url)===resolve(process.argv[1])){
  const result=buildCourtEgressStudy(layoutRevision,revisionOpenings('GROUND'));
+ Object.assign(result.files,buildLocalPortalCandidate(layoutRevision,revisionOpenings('GROUND')).files);
  const check=process.argv.includes('--check');
  for(const [name,content] of Object.entries(result.files)){
   const path=new URL(name,import.meta.url);
