@@ -9,7 +9,12 @@
     "label": "zerg-worker-four-20261101"
   },
   "claimedAt": "2026-11-01T15:00:01.129Z",
-  "heartbeatAt": "2026-11-01T15:00:01.129Z",
-  "expiresAt": "2026-11-01T15:45:01.129Z",
-  "branch": "work/zerg-had-boundary-20261101"
+  "heartbeatAt": "2026-11-01T15:15:21.435Z",
+  "expiresAt": "2026-11-01T16:00:21.435Z",
+  "branch": "work/zerg-had-boundary-20261101",
+  "pr": 1218,
+  "checkpoint": {
+    "evidence": "PR #1218 head00d0eb4003c13c9422e41c60a2fa19a7d99a8bb9; primary source and rendered sheets reviewed",
+    "next": "Publish commander scale and wording corrections, reconcile main, exact-head CI and fresh merge-check"
+  }
 }
