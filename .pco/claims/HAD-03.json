@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-03",
   "generation": 17,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "c6afe8b9-939f-40a1-8edf-eddd2d2602ca",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6557421818"
   },
   "claimedAt": "2026-11-01T11:38:49.000Z",
-  "heartbeatAt": "2026-11-01T11:54:20.000Z",
-  "expiresAt": "2026-11-01T12:39:20.000Z",
+  "heartbeatAt": "2026-11-01T12:03:41.000Z",
+  "expiresAt": "2026-11-01T12:03:41.000Z",
   "branch": "work/mvb-chat-6557421818",
   "predecessor": {
     "leaseId": "cc21538d-3614-4fa3-8e93-314ed86fdf3b",
@@ -39,5 +39,7 @@
     "evidence": "PR1211 head 826d689ed17d: guarded accepted-plan N/E egress renderer, 3 generated A3 SVGs, JSON ledger, source-freshness test, HAD/RWT architectural decision and links. Full CI in progress.",
     "next": "Require exact-head full CI and source-regeneration test PASS; native live-lease merge-check against current main and head, expected-head merge, release then helper cleanup.",
     "blocker": "No accepted B/D site levels, structural portal/threshold assemblies, water head or independently harmless N/E discharge; HAD-03 remains planned."
-  }
+  },
+  "releasedAt": "2026-11-01T12:03:41.000Z",
+  "releaseReason": "handoff"
 }
