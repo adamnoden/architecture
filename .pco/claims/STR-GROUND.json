@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-GROUND",
   "generation": 2,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "154dd8a1-1011-4a20-a4f8-70d3f464d9fc",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-two-20261101"
   },
   "claimedAt": "2026-11-01T14:56:31.714Z",
-  "heartbeatAt": "2026-11-01T15:24:54.201Z",
-  "expiresAt": "2026-11-01T16:09:54.201Z",
+  "heartbeatAt": "2026-11-01T15:32:16.000Z",
+  "expiresAt": "2026-11-01T15:32:16.000Z",
   "branch": "work/zerg-integration-20261101",
   "predecessor": {
     "leaseId": "abfe3a52-4e9f-44e1-8175-f1b828901d13",
@@ -39,5 +39,7 @@
     "evidence": "PR1221 combined head336947a9ebe29b4632beb91f85b696269ae08469 incorporates reviewed STR-GROUND output ad369e2e14767a464eba2baaf4e5263e10157fa5 via preserved history; PR1220 remains preserved. Source checks, rendered review, repository integrity,153 control tests and typecheck passed locally.",
     "next": "Root/worker_one sole publisher: combined exact-head full CI, fresh per-node canonical merge checks, immediate expected-head merge, then close originals and release own lease.",
     "blocker": "Combined exact-head full CI and fresh publication preflight pending; no design/adoption acceptance inferred."
-  }
+  },
+  "releasedAt": "2026-11-01T15:32:16.000Z",
+  "releaseReason": "completed"
 }
