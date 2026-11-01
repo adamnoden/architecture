@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 18,
-  "state": "released",
-  "leaseId": "5c4b89d9-ff6c-46d5-86d3-fe44774bc6df",
+  "generation": 19,
+  "state": "claimed",
+  "leaseId": "80e2e12c-e0f1-43f7-bd23-7977f10acdb6",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6558099791"
+    "label": "issue-comment-6558300375"
   },
-  "claimedAt": "2026-11-01T12:43:47.000Z",
-  "heartbeatAt": "2026-11-01T13:00:12.000Z",
-  "expiresAt": "2026-11-01T13:00:12.000Z",
-  "branch": "work/mvb-chat-6558099791",
+  "claimedAt": "2026-11-01T13:02:22.000Z",
+  "heartbeatAt": "2026-11-01T13:02:22.000Z",
+  "expiresAt": "2026-11-01T13:47:22.000Z",
+  "branch": "work/mvb-chat-6558300375",
   "predecessor": {
-    "leaseId": "c6afe8b9-939f-40a1-8edf-eddd2d2602ca",
-    "generation": 17,
-    "branch": "work/mvb-chat-6557421818",
-    "pr": 1211,
+    "leaseId": "5c4b89d9-ff6c-46d5-86d3-fe44774bc6df",
+    "generation": 18,
+    "branch": "work/mvb-chat-6558099791",
+    "pr": 1213,
     "checkpoint": {
-      "evidence": "PR1211 head 826d689ed17d: guarded accepted-plan N/E egress renderer, 3 generated A3 SVGs, JSON ledger, source-freshness test, HAD/RWT architectural decision and links. Full CI in progress.",
-      "next": "Require exact-head full CI and source-regeneration test PASS; native live-lease merge-check against current main and head, expected-head merge, release then helper cleanup.",
-      "blocker": "No accepted B/D site levels, structural portal/threshold assemblies, water head or independently harmless N/E discharge; HAD-03 remains planned."
+      "evidence": "PR1213 head 6f584233: controlled shallow pan/outlet free-grade sensitivity, generated SVG+JSON, deterministic drawing test and HAD/RWT handoff; full CI 41308734847 running.",
+      "next": "Verify full exact-head CI; run fresh native lease/head preflight after CI; expected-head merge; release and retire preflight helper.",
+      "blocker": "HAD-03 remains planned: actual door/wall first-harm level, supported local N/E passages, site receiving levels and full-duty relief unproven."
     }
   },
   "recoverySource": {
-    "leaseId": "c6afe8b9-939f-40a1-8edf-eddd2d2602ca",
-    "generation": 17,
-    "branch": "work/mvb-chat-6557421818",
-    "pr": 1211,
+    "leaseId": "5c4b89d9-ff6c-46d5-86d3-fe44774bc6df",
+    "generation": 18,
+    "branch": "work/mvb-chat-6558099791",
+    "pr": 1213,
     "checkpoint": {
-      "evidence": "PR1211 head 826d689ed17d: guarded accepted-plan N/E egress renderer, 3 generated A3 SVGs, JSON ledger, source-freshness test, HAD/RWT architectural decision and links. Full CI in progress.",
-      "next": "Require exact-head full CI and source-regeneration test PASS; native live-lease merge-check against current main and head, expected-head merge, release then helper cleanup.",
-      "blocker": "No accepted B/D site levels, structural portal/threshold assemblies, water head or independently harmless N/E discharge; HAD-03 remains planned."
+      "evidence": "PR1213 head 6f584233: controlled shallow pan/outlet free-grade sensitivity, generated SVG+JSON, deterministic drawing test and HAD/RWT handoff; full CI 41308734847 running.",
+      "next": "Verify full exact-head CI; run fresh native lease/head preflight after CI; expected-head merge; release and retire preflight helper.",
+      "blocker": "HAD-03 remains planned: actual door/wall first-harm level, supported local N/E passages, site receiving levels and full-duty relief unproven."
     }
-  },
-  "pr": 1213,
-  "checkpoint": {
-    "evidence": "PR1213 head 6f584233: controlled shallow pan/outlet free-grade sensitivity, generated SVG+JSON, deterministic drawing test and HAD/RWT handoff; full CI 41308734847 running.",
-    "next": "Verify full exact-head CI; run fresh native lease/head preflight after CI; expected-head merge; release and retire preflight helper.",
-    "blocker": "HAD-03 remains planned: actual door/wall first-harm level, supported local N/E passages, site receiving levels and full-duty relief unproven."
-  },
-  "releasedAt": "2026-11-01T13:00:12.000Z",
-  "releaseReason": "handoff"
+  }
 }
