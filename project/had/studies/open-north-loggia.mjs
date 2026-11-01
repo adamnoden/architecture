@@ -113,7 +113,7 @@ for(const id of ['dining-table1200x800','dining-chair-west-south','dining-chair-
 // Current joined wet-room proposal; IAS retains actual family-door arm/regrip failures.
 ground['study-chair'][0]=900;
 Object.assign(upper,{'family-bath1700':[9460,3800,1700,700],'family-WC':[10777.5,5800,560,355],'family-basin':[11227.5,5300,340,450],'family-local-soil-column':[11342.5,6180,180,180],'rear-shower1000':[1802.5,8952.5,1000,1000],'rear-basin':[1000,8952.5,400,220]});
-const familyDoor={rough:[5450,6350],completeFrame:825,leaf:[762,44],hinge:[9397,6281],clear:[5516.5,6283.5],net:767,status:'IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified'};
+const familyDoor={rough:[5450,6350],completeFrame:825,leaf:[762,44],hinge:[9397,6281],clear:[5516.5,6283.5],net:767,status:'IAS delayed-closer release/wait direction; manual arm/regrip rejected. Final600reach immutable proof pending binding; E20 assembly not qualified'};
 candidate.protectedRoute.doors.find(d=>d.id==='FAMILY-BATH').trial=familyDoor;
 candidate.familyWetTrial={westDryFace:9397,localBathEndWetFace:9400,southWetFace:3800,northWetFace:6400,eastWetFace:11567.5,door:familyDoor,serviceBand:[11337.5,5800,230,560],port:[11432.5,6270],column:upper['family-local-soil-column'],scope:'One coordinated fixture proposal;230band/200turn support envelope still unresolved. No hole/product/cistern adoption.'};
 // Final STR260×450 receiver proposal; room/arch fit has not been passed.
@@ -140,6 +140,33 @@ candidate.status='ONE INCOMPLETE27DRY/30WET WHOLE-HOUSE TRIAL; explicit failures
 delete candidate.furnitureRequirements.principalBed.southPassageFromActualLeaf8474;
 candidate.structuralChanges.stairMidPost.eastRoomFinish=27;candidate.structuralChanges.stairMidPost.eastFinishedFace=3094.5;candidate.structuralChanges.stairMidPost.courtWestFace=3820.5;candidate.structuralChanges.stairMidPost.grossGalleryClear=726;candidate.structuralChanges.upperRearDivider.finished=194;candidate.structuralChanges.upperRearWestReturn.finished=194;
 candidate.rooms.kitchenDining.northWorkingGap=670.5;candidate.rooms.kitchenDining.southEntryGap=675.5;
+
+// Whole objects move; full27 primary finishes remain behind fixed cabinetry.
+ground['pantry-shelf-comparison'][0]+=12;ground['rear-stack'][0]+=12;
+for(const id of ['north-sink-station','north-cooking-station'])ground[id][1]-=12;
+for(const id of ['rear-cabinet','rear-west-low-box'])upper[id][0]+=12;upper['rear-WC'][0]+=12;
+upper['bed2-wardrobe'][0]-=12;upper['bed2-wardrobe'][1]+=50;upper['bed3-wardrobe'][0]+=12;upper['bed3-wardrobe'][1]+=30;
+upper.bed2=[1100,1065.5,950,2055];upper.bed3=[9942.5,1518,950,2055];delete upper['bed2-head'];delete upper['bed3-head'];
+candidate.frontBedControl={source:'https://www.vidaxl.co.uk/e/vidaxl-bed-frame-without-mattress-solid-wood-90x200-cm/8720286996843.html',publisher:'vidaXL',SKU:'814739',EAN:'8720286996843',retrieved:'2026-11-01',completeFrameIncludingHead:[950,2055,695],suitableMattress:[900,2000],material:'Manufacturer declares untreatedpine frame andPLYWOODslats. Material/hiddencomponents/capacity/actualsupply NOTadopted; no polymerexception approved.',architecturalScope:'Real complete outside dimensions, not a mattressbox plus an invented thinhead. Actual chosen materialfamily must fit the complete control or trigger replan.',bed2:{whole:upper.bed2,backGap:30,sidesAfter18Trim:[652.5,652.5],footBandAfter18Trim:618,footBandAfter25PositionLoss:593,scope:'Limited geometric reserve, not comfort/accessibility or25loss pass.'},bed3:{ordinary:upper.bed3,primarySide:'EAST',ordinarySideBandsAfter18Trim:{west:527.5,east:660},temporary:[10075,1518,950,2055],translation:[132.5,0],temporarySideBandsAfter18Trim:{west:660,east:527.5},scope:'Full Westhead/secondary-side bedding/cleaning ONLYafter132.5Ewhole-frame move andrestoration. Supersedes simultaneoustwo600dailyclaim; ordinaryprimaryside/foot/door/storage/window paths mustpass.'},rejectedEW:{whole:[8600,1065,2055,950],retainedEastHingedDoor:'Inwardsweep crosses frame; outwardNorth leaf blocks protectedSouthringbypass. No overallimpossibility claim; one ordinary orientation was tested before any walltransfer.'}};
+candidate.baseboardTerminations={fixedCabinets:['pantry-shelf-comparison','north-sink-station','north-cooking-station','bed2-wardrobe','bed3-wardrobe','rear-cabinet'],rule:'Decorative18base may terminate behindFIXEDjoinery with full27primaryfinish and independentfloor/wallboundary retained. No18deletion inprotectedhall. Actualcaptivebase/endreturns/release remainIAS/MATdetail.',northStationsOnly:true};
+// Current ONE coordinated wet30 proposal; retain dry27 outside named returns.
+Object.assign(upper,{'family-WC':[10777.5,5750,560,355],'family-basin':[11227.5,5200,340,450],'family-local-soil-column':[11297.5,6135,270,265]});
+candidate.familyWetTrial.serviceBand=[11337.5,5750,230,650];candidate.familyWetTrial.port=[11432.5,6260];candidate.familyWetTrial.column=upper['family-local-soil-column'];candidate.familyWetTrial.scope='Oneactual270x265corner;max200turnabovefloor, plain110tailthrough160bore. Actualsupport/fire/material/productqualification unearned.';
+const rearEastWet=upperWalls.find(w=>w.id==='rear-wet-east');rearEastWet.finishedFaces=[2805.5,2999.5];rearEastWet.t=194;rearEastWet.faceFinish=[27,27];
+const rearDry=upperWalls.find(w=>w.id==='rear-west');rearDry.a[0]=2902.5;
+upperWalls.push({id:'rear-wet-south',a:[0,8852.5],b:[2902.5,8852.5],t:197,holes:[],structuralCore:[8782.5,8922.5],finishedFaces:[8755.5,8952.5],faceFinish:[27,30]});
+candidate.wetBoundaryPatches=[['familyEastWetFace',[11567.5,3800,3,2600]],['familyWestBathEndWetReturn',[9397,3800,3,700]],['rearShowerWetReturn',[2802.5,8952.5,3,1000]]];candidate.fixedObstacles.FIRST.push(...candidate.wetBoundaryPatches);
+for(const r of openingRewinds)if(r.level==='FIRST'&&r.wall==='outer-east'&&r.centre===7400){r.fixedTransomTopBand=480;r.openingLeafHeadMaximum=2370;r.reason='Complete280exhaustcassette with75maxactualhead intrusion; unqualified actualOASfamily.'}
+for(const level of ['GROUND','FIRST'])for(const o of openings[level])if(o.kind==='window'){o.sill??=750;o.head??=2850;o.spring??=2550;if(level==='GROUND'&&o.wall==='outer-north'&&[8300,10200].includes(o.centre))o.sill=1050;}
+candidate.archOpeningRegister=Object.fromEntries(['GROUND','FIRST'].map(level=>[level,openings[level].filter(o=>o.kind==='window'||o.kind==='door').map(o=>({...o,head:o.head??2850,spring:o.spring??2550,radialRingTrial:215,scope:'Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted.'}))]));
+candidate.stairPostFinishRequirement='Post ends belowFIRST RC/trimmer. Core250 plus27roomfinish ends3094.5; Court dryface3820.5.18base each gives690clear, not714or1100. Actualstairs1094bodyterritory/1004nominalhandrails; no aboveFFLfirstpost.';
+candidate.structuralChanges.stairMidPost.scope='Actual postoutside1094finishedflight; no appliedbase on stairfacingedge.690betweenroomsidebaseboards; actualsupport/guard qualifiedseparately.';
+
+
+const midRingRadius=rawArchRadius+215/2,midHingeHalf=1480*midRingRadius/rawArchRadius,midHingeZ=rawArchCentre+(2250-rawArchCentre)*midRingRadius/rawArchRadius;
+Object.assign(insulatedPortal,{coreAxial:215,finishedAxial:775,courtFaces:[7695,8470],gardenFaces:[11280,12055],localExternalProjectionBeyond12000:55,midRingHinges:[[6000-midHingeHalf,midHingeZ],[6000+midHingeHalf,midHingeZ]],tie:{centre:2200,depth:50,underside:2175,courtCentralHeadroom:2285,gardenCentralHeadroom:2327.5,scope:'Visible enduring tie/transom; actualmember/anchors/material/fire/thermal bridging not admitted.'},piers:{westEW:[4307.5,4520],eastEW:[7480,7692.5],courtNS:[7975,8190],gardenNS:[11560,11775],section:[212.5,215],scope:'Full lowerRCpier development, not a shortheadcapital or assumed140masonrybuttress. RCtop flat2404.303639 toX4370.282309, then radialbevel toX4520/Z2250; mirrorEast. RCstops atskewback; masonryspandrel above, not RCthroughring. Cage/groundthermalstarter remainsSTR/MAT evidence.'},wrap:{jambEW:{west:[4520,4800],east:[7200,7480]},faceNS:280,warmCoreClipWest:[4307.5,4447.5],exposedPierExtensionWest:[4447.5,4520],composition:[['bareCellularGlass',240],['mineralLining',40]],localReplacement:'Within775portal territory, this replaces ordinary200glass/50gap/102.5weather; it is NOT an additional overlapping stack.',thermal:'Actualcorner/end/tie bridges andDPC/groundstarter unqualified.'},scope:'One actual215AXIAL brickarch +212.5EWlowerRCpiers +280orthogonalface/jambwrap.50visibletie lowers centralwalkinghead; no structural/thermal/fire/material adoption.'});
+
+candidate.outdoorWaterTerritories={normalGross:[4825,7750,400,4250],normalLiner:{outside:303,inside:250,insideWallHeight:75,gauge:1.5,bodyMassKG:25.704,liftAperture:360,sideReserve:28.5,wholeLift:600,permanentFloorBridge:false},relief:[5300,7750,1800,4250],gap:75,scope:'ENV explicitdevelopment. Separateintakes/terminals/receivers andactualblocked-primary/high-tailwater/common-obstruction cases mustbind before independence. No retired750wetpiece witness transferred.'};
 candidate.stairGuard={
  basis:'Authored spatial selection against England ADK2013§1.34,1.39/Diagram3.1. No guard/anchor capacity or final regulatory admission.',official:'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/996860/Approved_Document_K.pdf',
  finishedAperture:[429.5,4432.5,2388,4323],lowerFlightX:[429.5,1523.5],wellX:[1523.5,1723.5],upperFlightX:[1723.5,2817.5],bodyTerritoryEach:1094,midlandingDepth:1623,
@@ -173,7 +200,7 @@ function obstacles(level,{closedCross=false,omit=[],extra=[],includeTrim=true}={
  const walls=level==='GROUND'?groundWalls:upperWalls;
  const enclosure=outerDefs.map(([id,a,b])=>({id,a,b,t:429.5,finishedFaces:id==='outer-south'||id==='outer-west'?[0,429.5]:id==='outer-north'||id==='outer-east'?[11570.5,12000]:id==='court-south'||id==='court-west'?[3820.5,4250]:[7750,8179.5],holes:openings[level].filter(o=>o.wall===id&&['door','open-loggia'].includes(o.kind)).map(o=>[o.centre-o.width/2,o.centre+o.width/2])}));
  const trim=r=>[r[0]-18,r[1]-18,r[2]+36,r[3]+36];
- const r=[...wallRects([...walls,...enclosure]).map(([id,r])=>[id+(includeTrim?'+18trim':''),includeTrim?trim(r):r]),...candidate.fixedObstacles[level].map(([id,r])=>[id,!includeTrim?r:id==='stairMidPostFinished'?[r[0],r[1]-18,r[2]+18,r[3]+36]:trim(r)]),...Object.entries(level==='GROUND'?ground:upper),['stair-plan-void',b.stair],['court-outdoor-not-indoor-shortcut',[4250,4250,3500,3500]]];
+ const r=[...wallRects([...walls,...enclosure]).map(([id,r])=>[id+(includeTrim?'+18trim':''),includeTrim?trim(r):r]),...candidate.fixedObstacles[level].map(([id,r])=>[id,!includeTrim||candidate.wetBoundaryPatches.some(([name])=>name===id)||id==='principalEastExtraWetLining'?r:id==='stairMidPostFinished'?[r[0],r[1]-18,r[2]+18,r[3]+36]:trim(r)]),...Object.entries(level==='GROUND'?ground:upper),['stair-plan-void',b.stair],['court-outdoor-not-indoor-shortcut',[4250,4250,3500,3500]]];
  if(level==='FIRST')r.push(...candidate.stairGuard.firstFloorGuards,['entrance-floor-void',b.void],...bedroomLeaves,['principal-bath-slider-closed',[9875,8442,950,44]]);
  else r.push(['pantry-open-leaf',candidate.pantrystandardDoor.open],...candidate.protectedRoute.doors.filter(d=>d.id.startsWith('FD-')).map(d=>[d.id,closedCross?d.closed:d.open]));
  return [...r.filter(([id])=>!omit.includes(id)),...extra];
@@ -256,6 +283,42 @@ function taskMotion(id,H,width,thickness,axes,bodyAt,gripAt,staticExtra=[],omit=
 candidate.pantrystandardDoor.operationWitness=taskMotion('PANTRY-HIGH-HINGE',[11315,8290],830,44,t=>[[-Math.cos(t),-Math.sin(t)],[Math.sin(t),-Math.cos(t)]],(H,u,n)=>H.map((v,i)=>v+390*u[i]-345*n[i]),(H,u,n)=>H.map((v,i)=>v+780*u[i]-84*n[i]),[['low-frame',[10450,8137.5,25,305]],['high-frame',[11325,8137.5,25,305]]],['pantry-open-leaf']);
 candidate.fridgeDoor.operationWitness=taskMotion('FRIDGE-LOW-HINGE',[10920.5,9025],650,70,t=>[[-Math.sin(t),Math.cos(t)],[-Math.cos(t),-Math.sin(t)]],(H,u,n)=>H.map((v,i)=>v+250*u[i]+345*n[i]),(H,u,n)=>H.map((v,i)=>v+600*u[i]+95*n[i]),[['pantry-CLOSED',candidate.pantrystandardDoor.closed]],['pantry-open-leaf']);
 candidate.actions.pass&&=candidate.pantrystandardDoor.operationWitness.pass&&candidate.fridgeDoor.operationWitness.pass;
+// New complete-frame front-room witnesses replace the dated mattress-box routes.
+function frontSearch(start,target,obs,room){
+ const step=10,radius=305,x0=room==='bed2'?756.5:7516.5,x1=room==='bed2'?4476.5:11246.5,y0=756.5,y1=3546.5,nx=Math.floor((x1-x0)/step)+1,ny=Math.floor((y1-y0)/step)+1;
+ const point=(i)=>[x0+(i%nx)*step,y0+Math.floor(i/nx)*step],free=new Map(),edges=new Map();
+ const good=i=>{if(!free.has(i))free.set(i,obs.every(([,r])=>pd(point(i),r)>=radius-1e-8));return free.get(i)};
+ const link=(p,q)=>obs.every(([,r])=>sr(p,q,r)>=radius-1e-8);
+ function connectors(p){const c=Math.round((p[0]-x0)/step),r=Math.round((p[1]-y0)/step),out=[];for(let a=-3;a<=3;a++)for(let b=-3;b<=3;b++){const cc=c+a,rr=r+b;if(cc<0||cc>=nx||rr<0||rr>=ny)continue;const i=rr*nx+cc;if(!good(i))continue;const q=point(i);for(const mid of [[p[0],q[1]],[q[0],p[1]]])if(link(p,mid)&&link(mid,q)){out.push({i,points:[p,mid,q],d:Math.hypot(q[0]-p[0],q[1]-p[1])});break}}return out.sort((a,b)=>a.d-b.d).slice(0,6)}
+ const starts=connectors(start),ends=connectors(target);if(!starts.length||!ends.length)return{pass:false,reason:'No305radius endpoint connection',start,target};
+ const endsById=new Map(ends.map(v=>[v.i,v])),prev=new Map(),orig=new Map(),queue=[];for(const v of starts){prev.set(v.i,-1);orig.set(v.i,v);queue.push(v.i)}let found;
+ for(let at=0;at<queue.length&&found===undefined;at++){const i=queue[at];if(endsById.has(i)){found=i;break}const c=i%nx,r=Math.floor(i/nx);for(const j of [c?i-1:-1,c+1<nx?i+1:-1,r?i-nx:-1,r+1<ny?i+nx:-1]){if(j<0||prev.has(j)||!good(j))continue;const key=i<j?`${i}:${j}`:`${j}:${i}`;if(!edges.has(key))edges.set(key,link(point(i),point(j)));if(edges.get(key)){prev.set(j,i);orig.set(j,orig.get(i));queue.push(j)}}}
+ if(found===undefined)return{pass:false,reason:'No305radius connected route',start,target};
+ const chain=[];let i=found;while(prev.get(i)!==-1){chain.push(point(i));i=prev.get(i)}chain.push(point(i));chain.reverse();const raw=[...orig.get(found).points,...chain,...endsById.get(found).points.toReversed()],points=[];
+ for(const p of raw){if(points.length&&p[0]===points.at(-1)[0]&&p[1]===points.at(-1)[1])continue;if(points.length>1&&((points.at(-2)[0]===points.at(-1)[0]&&p[0]===points.at(-1)[0])||(points.at(-2)[1]===points.at(-1)[1]&&p[1]===points.at(-1)[1])))points[points.length-1]=p;else points.push(p)}
+ let min=Infinity,at=null;for(let j=0;j<points.length-1;j++)for(const[id,r]of obs){const v=sr(points[j],points[j+1],r)-300;if(v<min){min=v;at={obstacle:id,segment:j}}}
+ return{pass:min>=5-1e-7,bodyRadius:300,searchRadius:305,points,minimumReserve:min,controlling:at};
+}
+candidate.frontRooms=[];
+for(const room of ['bed2','bed3']){
+ const is2=room==='bed2',H=[is2?3485:9115,2650],sgn=is2?-1:1,leafSign=is2?1:-1,total=is2?110:90,host=room+'-north-main',width=830;
+ const stat=[...obstacles('FIRST'),['frame-low',[is2?3450:8250,2535,25,230]],['frame-high',[is2?4325:9125,2535,25,230]]];
+ let bm=Infinity,am=Infinity,lm=Infinity,rm=0,closedBody,openedBody,tipOpen;
+ for(let k=0;k<=total*20;k++){const angle=k/20,t=sgn*angle*Math.PI/180,co=Math.cos(t),si=Math.sin(t),rot=v=>[H[0]+co*v[0]-si*v[1],H[1]+si*v[0]+co*v[1]],body=rot(is2?[400+200*angle/110,-375]:[-350,-400]),tip=rot([leafSign*width,0]),grip=rot([leafSign*780,-84]);
+  for(const[id,r]of stat){bm=Math.min(bm,pd(body,r)-300);am=Math.min(am,sr(body,grip,r)-40);if(id!==host+'+18trim'&&!id.startsWith('frame-'))lm=Math.min(lm,sr(H,tip,r)-22)}
+  bm=Math.min(bm,ps(body,H,tip)-322);am=Math.min(am,sd(body,grip,H,tip)-62);rm=Math.max(rm,Math.hypot(body[0]-grip[0],body[1]-grip[1]));if(k===0)closedBody=body;if(k===total*20){openedBody=body;tipOpen=tip}
+ }
+ const speed=is2?Math.hypot(600,375)+200/(110*Math.PI/180):Math.hypot(350,400),half=.025*Math.PI/180,bb=(speed+830)*half,ab=(speed+Math.hypot(780,84)+830)*half,lb=830*half,rb=(speed+Math.hypot(780,84))*half;
+ const door={hinge:H,leaf:[830,44],frameEach:25,gapEach:10,rotationDegrees:sgn*total,handleAlong:780,handleFaceOffset:84,closedBody,openedBody,continuousBodyLowerBound:bm-bb,continuousArmLowerBound:am-ab,continuousLeafFixedLowerBound:lm-lb,continuousReachUpperBound:rm+rb,pass:bm>=bb&&am>=ab&&lm>=lb&&rm+rb<=600,scope:'New actual complete-frame/27+18 witness. Ownhost/ownframe intended leafcontact excepted; actual classified hinges/frame/force not admitted.'};
+ const closedRect=[is2?H[0]:H[0]-830,2628,830,44],closedObs=[...obstacles('FIRST'),['own-front-door-CLOSED',closedRect]],openPieces=[];for(let j=0;j<40;j++){const a=H.map((v,i)=>v+(tipOpen[i]-v)*j/40),b=H.map((v,i)=>v+(tipOpen[i]-v)*(j+1)/40);openPieces.push(['own-front-door-OPEN',[Math.min(a[0],b[0])-22,Math.min(a[1],b[1])-22,Math.abs(a[0]-b[0])+44,Math.abs(a[1]-b[1])+44]])}
+ const frame=upper[room],targets=is2?{leftLower:[775,1565.5],leftHead:[775,2765.5],rightLower:[2375,1565.5],rightHead:[2375,2765.5],foot:[1575,756.5],wardrobe:[3713,1500],southWindow1800:[1800,756.5],southWindow3900:[3850,756.5]}:{primaryEastLower:[11217.5,2018],primaryEastHead:[11217.5,3218],westLowerOnly:[9617.5,2018],foot:[10417.5,1193],wardrobe:[8287,1700],southWindow8100:[8100,756.5],southWindow10200:[10200,756.5],eastWindow1800:[11217.5,1800]};
+ const paths=Object.fromEntries(Object.entries(targets).map(([id,target])=>[id,frontSearch(closedBody,target,closedObs,room)]));paths.hallToOpen=frontSearch(is2?[3500,3485]:[8700,3485],openedBody,[...obstacles('FIRST'),...openPieces],room);
+ const result={room,completeFrame:frame,door,paths,ordinaryPass:door.pass&&Object.values(paths).every(p=>p.pass),scope:'BothBed2sides; Bed3ordinaryEASTprimary/foot/lowerWESTonly. Old simultaneoustwo600claim superseded explicitly.'};
+ if(!is2){const temporary=candidate.frontBedControl.bed3.temporary,temporaryObs=[...obstacles('FIRST',{omit:['bed3']}),['bed3-TEMPORARY',temporary],['own-front-door-CLOSED',closedRect]];result.temporaryPaths={westHead:frontSearch(closedBody,[9750,3218],temporaryObs,room),westLower:frontSearch(closedBody,[9750,2018],temporaryObs,room)};const swept=[9942.5,1518,1082.5,2055];result.completeMovement={translation:[132.5,0],swept,conflicts:obstacles('FIRST',{omit:['bed3']}).filter(([,r])=>overlap(swept,r)).map(([id])=>id),operatorBodyFrom:[10417.5,1178],operatorBodyTo:[10550,1178],scope:'Wholeframe sweep/footoperator plan, reversible forrestoration. No casters/friction/force/realhuman/plywoodmaterial approval inferred.'};result.temporaryPass=Object.values(result.temporaryPaths).every(p=>p.pass)&&result.completeMovement.conflicts.length===0;}
+ candidate.frontRooms.push(result);
+}
+candidate.actions.frontRoomsPass=candidate.frontRooms.every(r=>r.ordinaryPass&&(r.temporaryPass??true));
+candidate.actions.pass&&=candidate.actions.frontRoomsPass;
 candidate.stairPostFinishRequirement='Post ends below FIRST RC/trimmer, no first-floor obstacle. No applied baseboard on stair-facing post edge;1100flight retained. Roomside18baseboard counted, reducing nominal750 to714 between roomside projections.';
 candidate.windowRequirements=[
  ['GROUND','living1800',[2363.75,11075],[2220,11582.5],'Northwindow HIGHhand; existing table/sofas retained'],
@@ -274,7 +337,7 @@ for(const w of candidate.windowRequirements)w.planReach=Math.hypot(w.body[0]-w.h
 candidate.actions.windowPlanReachPass=candidate.windowRequirements.every(w=>w.planReach<=600);
 candidate.actions.pass&&=candidate.actions.windowPlanReachPass;
 candidate.approaches={authoredExteriorGrade:-1300,front:{rise:1300,slope:20,slopingRun:26000,flights:[9000,9000,8000],landingLength:1200,landings:4,totalStraightReservation:30800},garden:{terrace:-152.5,rise:1147.5,slope:20,slopingRun:22950,flights:[8000,8000,6950],landingLength:1200,landings:4,totalStraightReservation:27750},clearWidthReservation:1200,scope:'Finite authored plot reservation, not a compliant access design or available site. Guards, edge protection, turning/door/approach geometry and actual access category remain to qualify. Court/loggia not credited as protected final exit.'};
-candidate.exterior={eaves:6800,ridge:6800+2125*Math.tan(25*Math.PI/180),eavesAboveAuthoredGrade:8100,ridgeAboveAuthoredGrade:8100+2125*Math.tan(25*Math.PI/180),source:'Retains HAD furnished-design visual roof geometry:2125inset/25degree inward-outward ring, not actual roof/support/collection proof.',palette:'Warm mineral masonry, quiet pale opening family, dark pitched ring roof; locally rendered insulated loggia arches are a visible material/shape rewind.'};
+candidate.exterior={eaves:7100,ridge:7100+2125*Math.tan(25*Math.PI/180),eavesAboveAuthoredGrade:8400,ridgeAboveAuthoredGrade:8400+2125*Math.tan(25*Math.PI/180),overhang:200,physicalOuterEdge:7100-200*Math.tan(25*Math.PI/180),source:'Explicit+300eavesdatum rewind from6800;25degree/2125inset/200overhang retained. Material/support/ROFRWTadoption not claimed.',palette:'Warm mineral masonry, quiet pale opening family, dark pitched ring roof; locally rendered insulated loggia arches are a visible material/shape rewind.'};
 candidate.qualityCosts={dailyLivingKitchenCentreline:witnesses.find(w=>w.id==='daily-living-to-kitchen').points.reduce((sum,p,i,a)=>i?sum+Math.hypot(p[0]-a[i-1][0],p[1]-a[i-1][1]):0,0),living:'Two original-size sofas retained; separate reading enclosure removed, shared arch loses acoustic privacy.',dining:'Four places, no end seats; separate prep table removed. Actual chair/support/table leg fit is not earned from500plan boxes.',private:'Four bedrooms retained, two compact singles, two rear doubles rotatedEW; principal lowbed/window compatibility and660wardrobe are explicit choices.',loggia:'Deletes occupied-floor renewable watercaps/gas lids. Costs new weatherwalls, displaced room territory, long daily indoor connection and exposed floor/arch insulation.',height:'Current support trial stillD1300: no approach/eaves reduction credited against prior buried-box comparator.'};
 function unionArea(rects){const xs=[...new Set(rects.flatMap(r=>[Math.max(0,r[0]),Math.min(12000,r[0]+r[2])]))].sort((a,b)=>a-b);let area=0;for(let i=1;i<xs.length;i++){const lo=xs[i-1],hi=xs[i],mid=(lo+hi)/2,ys=rects.filter(r=>r[0]<=mid&&r[0]+r[2]>=mid).map(r=>[Math.max(0,r[1]),Math.min(12000,r[1]+r[3])]).sort((a,b)=>a[0]-b[0]);let length=0,end=-Infinity;for(const[a,b]of ys)if(b>end){length+=b-Math.max(a,end);end=b}area+=(hi-lo)*length}return area}
 const areaBase=[[0,0,12000,417.5],[0,11582.5,12000,417.5],[0,417.5,417.5,11165],[11582.5,417.5,417.5,11165],[3832.5,3832.5,4335,4335],b.stair];
@@ -291,7 +354,7 @@ for(const [column,lev,walls,furniture]of [[0,'GROUND',groundWalls,ground],[1,'FI
  sheet.push(R(X(0),Y(12000),120,120,'#bac2bd'),R(X(429.5),Y(11570.5),111.41,111.41,'#f0eadc'),R(X(3820.5),Y(8179.5),43.59,43.59,'#bac2bd'),R(X(4250),Y(7750),35,35,'#d8eee8'));
  const wallDefs=[['outer-south',true,0,429.5,0,12000],['outer-north',true,11570.5,429.5,0,12000],['outer-west',false,0,429.5,429.5,11570.5],['outer-east',false,11570.5,429.5,429.5,11570.5],['court-south',true,3820.5,429.5,3820.5,8179.5],['court-north',true,7750,429.5,3820.5,8179.5],['court-west',false,3820.5,429.5,4250,7750],['court-east',false,7750,429.5,4250,7750]];
  for(const [name,h,at,t,lo,hi]of wallDefs)for(const o of openings[lev].filter(o=>o.wall===name)){const a=o.centre-o.width/2;sheet.push(h?R(X(a),Y(at+t),o.width/100,t/100,'#f0eadc','none'):R(X(at),Y(a+o.width),t/100,o.width/100,'#f0eadc','none'))}
- if(lev==='GROUND'){sheet.push(R(X(4800),Y(12000),24,42.5,'#d8eee8'));for(const y of [7732.5,11317.5])for(const x of [4520,7200])sheet.push(R(X(x),Y(y+700),2.8,7,'#b9c99e'));}
+ if(lev==='GROUND'){sheet.push(R(X(4800),Y(12000),24,42.5,'#d8eee8'));for(const y of [7695,11280])for(const x of [4520,7200])sheet.push(R(X(x),Y(y+775),2.8,7.75,'#b9c99e'));}
  for(const [,r]of wallRects(walls))sheet.push(R(X(r[0]),Y(r[1]+r[3]),r[2]/100,r[3]/100,'#bac2bd','none'));
  sheet.push(R(X(b.stair[0]),Y(b.stair[1]+b.stair[3]),b.stair[2]/100,b.stair[3]/100,'#cccabb'),R(X(b.void[0]),Y(b.void[1]+b.void[3]),b.void[2]/100,b.void[3]/100,lev==='GROUND'?'#eadfc8':'#fffdf7'));
  for(const [,r]of candidate.fixedObstacles[lev])sheet.push(R(X(r[0]),Y(r[1]+r[3]),r[2]/100,r[3]/100,'#a65f4d'));
@@ -305,16 +368,17 @@ for(const [column,lev,walls,furniture]of [[0,'GROUND',groundWalls,ground],[1,'FI
  else sheet.push(T(X(1200),Y(2100),'SINGLE',2),T(X(10200),Y(2300),'SINGLE',2),T(X(5300),Y(9300),'BED4',2),T(X(9200),Y(9150),'PRINCIPAL',2));
 }
 const notes=[
- ['27DRY/30WET FAILED TRIAL:519.5loggiawalls,140axes held.','Principal divider194finished after27each;140core held.'],
+ ['27DRY/30WET repaired trial:519.5loggiawalls,140axes held.','Principal divider194finished after27each;140core held.'],
  ['Two full1900sofas retained in Lshape;27finish and260receivers held.','Rear westreturn4450→4377.5; actualsupport/bearing notadopted.'],
  ['Dining moves east; dryprep table deleted; refrigerator moves to eastwall.','Front singles and reduced wardrobe follow compact B.'],
  ['Living3100–4000 OPENARCH preferred; fire strategy stillcontrols.','Principal bath rotatedWC and relocateddoor follow liveMAT work.'],
- ['Paired northwindows3550/8450; kitchen northsills1050.','Both rear beds rotateEW; lowheads and windowoperation required.'],
- ['No underground waterboxes credited as automatic normal/relief route.','No physical task/certified assembly pass;27trial has explicit failures.'],
- ['Provisionalgeometry for STR/MAT/body/door/window tests.','EXPLICIT FAILED27/30TRIAL;15control49a44045 preserved.']
+ ['Paired northwindows3700/8300; kitchen northsills1050.','Both rear beds rotateEW; lowheads and windowoperation required.'],
+ ['No underground waterboxes credited as automatic normal/relief route.','No physical task/certified assembly pass; service joins remain explicit.'],
+ ['Provisionalgeometry for STR/MAT/body/door/window tests.','REPAIRED27/30TRIAL;15control49a44045 preserved.']
 ];notes.forEach((p,i)=>{sheet.push(T(20,191+i*10,p[0],2.85),T(215,191+i*10,p[1],2.85))});
-const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" role="img" aria-label="First whole-house open north loggia candidate"><rect width="420" height="297" fill="#fffdf7"/>${T(15,17,'OPEN NORTH LOGGIA / ONE WHOLE-HOUSE CANDIDATE',5,'bold')}${T(15,26,'INCOMPLETE27dry/30wet mineral trial /1:100 / failed witnesses retained;15control49a44045 preserved',2.9)}${L(15,32,405,32)}${sheet.join('')}${L(15,273,405,273)}${T(15,284,'FAILED27/30 development draft. Actual route/door failures retained; NOTADOPTED or released for construction.',2.8)}${T(15,291,'HAD03 convergence / startingmain6a953ef6 / explicit assumptions / 1 November2026',2.8)}</svg>\n`;
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" role="img" aria-label="First whole-house open north loggia candidate"><rect width="420" height="297" fill="#fffdf7"/>${T(15,17,'OPEN NORTH LOGGIA / ONE WHOLE-HOUSE CANDIDATE',5,'bold')}${T(15,26,'REPAIRED27dry/30wet mineral trial /1:100 / prior failed controls retained in history',2.9)}${L(15,32,405,32)}${sheet.join('')}${L(15,273,405,273)}${T(15,284,'REPAIRED27/30 development. Spatial proxies pass; service/assembly joins remain; NOTADOPTED.',2.8)}${T(15,291,'HAD03 convergence / startingmain6a953ef6 / explicit assumptions / 1 November2026',2.8)}</svg>\n`;
 const wrapSheet=(title,subtitle,body)=>`<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" role="img" aria-label="${esc(title)}"><rect width="420" height="297" fill="#fffdf7"/>${T(15,17,title,5,'bold')}${T(15,26,subtitle,2.9)}${L(15,32,405,32)}${body}${L(15,277,405,277)}${T(15,288,'Authored unadopted design. Site, structural, thermal, fire, material and hydraulic admission remains bounded by named interfaces.',2.7)}</svg>\n`;
+candidate.roofDevelopment={eavesDatum:7100,pitch:25,ridgeInset:2125,overhang:200,normalLayers:[['primary',80],['lowerBoards',24],['metalAVCL',1],['bareCellularGlass',320],['breather',1],['ventCounterrail',50],['openBoards',24],['zinc',.7]],totalNormal:500.7,totalVertical:500.7/Math.cos(25*Math.PI/180),rafterCentreAtOuterCore:6746.721,tieBounds:[6721.721,6771.721],purlinLowest:6658.45,protectedCeiling:{top:6620,bottom:6444,total:176,scope:'Actualprotectedcirculation/stair/entrancevoid only; ordinaryprivateceilings not automatically176.'},purlinToCeilingTop:38.45,scope:'One fullrecipe geometry; actual200overhang/reactions, supportjunctions, material/fire/thermal/ROFRWTqualification remainexplicit. No freeatticstorage.'};
 const a=[];
 // Arch elevation at1:40. The face insulation is also real axial volume, below.
 const AX=x=>78+x/40,AZ=z=>139-z/40;
@@ -326,37 +390,48 @@ a.push(`<path d="${openingPath(rawArchRadius,1480)}" fill="#b9c99e"/>`,`<path d=
 a.push(`<path d="${archCurve(rawArchRadius,-1480,1480)}" fill="none" stroke="#926d51" stroke-width=".7"/>`);
 a.push(`<path d="${archCurve(finishedArchRadius,-1200,1200)}" fill="none" stroke="#a6bc8d" stroke-width=".8"/>`,L(AX(-1200),AZ(0),AX(-1200),AZ(insulatedPortal.finishedJambSpring),'#6b8a56',2),L(AX(1200),AZ(0),AX(1200),AZ(insulatedPortal.finishedJambSpring),'#6b8a56',2));
 a.push(L(AX(-1480),AZ(0),AX(-1480),AZ(2250),'#6b8a56',.5),L(AX(1480),AZ(0),AX(1480),AZ(2250),'#6b8a56',.5),L(AX(-1800),AZ(-110),AX(1800),AZ(-110),'#628a8a',.7));
-a.push(T(20,151,'Raw2960 / spring2250 / crown2850 / radius2125.333',2.65),T(20,158,'280 radial wrap → crown2570; jamb/arc2126.54.',2.65),T(20,165,'Finished2400 to2126.54; width2077.13 at2250.',2.65),T(20,172,'Walk−110 gives2680 crown /2236.54 jamb headroom.',2.65),T(20,179,'470 gross pier to adjacent window; thrust/tie not admitted.',2.65));
-// Actual axial head section, independent mineral cap/soffit boundary.
-a.push(T(155,43,'02 / LONGITUDINAL COURT–LOGGIA / 1:60',3.4,'bold'));
-const SX=y=>163+y/60,SZ=z=>125-z/60;
-a.push(R(SX(0),SZ(3370),200,200/60,'#aab3ae'),R(SX(7750),SZ(3170),4250/60,280/60,'#b9c99e'));
-for(const [l,r]of [[7732.5,8432.5],[11317.5,12017.5]])a.push(R(SX(l),SZ(3170), (r-l)/60,600/60,'#b9c99e'),R(SX(l+280),SZ(3170),140/60,320/60,'#9a8b78'));
+a.push(`<defs><clipPath id="portalClear"><path d="${openingPath(finishedArchRadius,1200)}"/></clipPath></defs>`,R(AX(-midHingeHalf),AZ(2225),2*midHingeHalf/40,50/40,'#49656b').replace('/>',' clip-path="url(#portalClear)"/>'));
+a.push(T(20,151,'Raw2960 / spring2250 / crown2850 / radius2125.333',2.65),T(20,158,'280 radial wrap → crown2570; jamb/arc2126.54.',2.65),T(20,165,'Finished2400 to2126.54; width2077.13 at2250.',2.65),T(20,172,'Tie underside2175→2285 above centralcourt walk.',2.65),T(20,179,'Fulljamb head2236.54; tie/groundstarter not admitted.',2.65));
+
+// Complete centreline section. Ordinary private ceilings do not inherit176.
+a.push(T(155,43,'02 / WHOLE HOUSE / 1:75',3.4,'bold'));
+const SX=y=>163+y/75,SZ=z=>165-z/75;
+for(const [l,r]of [[2735,4250],[7750,12000]])a.push(R(SX(l),SZ(3370),(r-l)/75,200/75,'#aab3ae'));
+a.push(R(SX(7750),SZ(3170),4250/75,280/75,'#b9c99e'));
+// Centreline wall sections stop at actual central openings rather than floating roof/slabs.
+for(const [l,r]of [[0,429.5]]){a.push(R(SX(l),SZ(6620),(r-l)/75,320/75,'#ded5c4'),R(SX(l),SZ(4200),(r-l)/75,750/75,'#ded5c4'),R(SX(l),SZ(3450),(r-l)/75,600/75,'#ded5c4'));}
+a.push(R(SX(3820.5),SZ(6620),429.5/75,3770/75,'#ded5c4'));
+for(const [l,r]of [[8179.5,8373.5],[11570.5,12000]])a.push(R(SX(l),SZ(6620),(r-l)/75,3170/75,'#ded5c4'));
+a.push(R(SX(0),SZ(-180),4250/75,200/75,'#aab3ae'),L(SX(0),SZ(0),SX(4250),SZ(0),'#776e5d',.5));
+for(const [l,r]of [[7695,8470],[11280,12055]])a.push(R(SX(l),SZ(3170),(r-l)/75,600/75,'#b9c99e'),R(SX(l+280),SZ(3170),215/75,320/75,'#9a8b78'));
+const roofSurface=y=>7100+Math.min(y,4250-y)*Math.tan(25*Math.PI/180),roofVert=candidate.roofDevelopment.totalVertical;
+for(const ys of [[-200,2125,4450],[7550,9875,12200]]){
+ const z=ys.map(y=>roofSurface(y>6000?12000-y:y)),pts=[...ys.map((y,i)=>[y,z[i]]),...ys.map((y,i)=>[y,z[i]-roofVert]).toReversed()];
+ a.push(`<path d="${pts.map(([y,z],i)=>`${i?'L':'M'}${SX(y)} ${SZ(z)}`).join('')}Z" fill="#8e9d98" stroke="#667a76" stroke-width=".3"/>`);
+}
+a.push(R(SX(429.5),SZ(6620),(3820.5-429.5)/75,176/75,'#c6bdae'),R(SX(8179.5),SZ(6620),(11570.5-8179.5)/75,70/75,'#d8cfbf'));
 a.push(L(SX(4250),SZ(0),SX(5750),SZ(-30),'#547e83',1),L(SX(5750),SZ(-30),SX(7750),SZ(-110),'#547e83',1),L(SX(7750),SZ(-110),SX(12000),SZ(-152.5),'#547e83',1),L(SX(0),SZ(-1300),SX(12000),SZ(-1300),'#91684d',.6));
-for(const centre of [8050,11700])a.push(R(SX(centre-125),SZ(-550),250/60,200/60,'#b35e4f'));
-a.push(`<path d="M${SX(7750)} ${SZ(-180)}L${SX(12000)} ${SZ(-222.5)}L${SX(12000)} ${SZ(-422.5)}L${SX(7750)} ${SZ(-380)}Z" fill="#aab3ae"/>`,T(165,151,'RC200:3370–3170; soffit240glass+15+25→2890.',2.7),T(165,158,'Two700-deep wrapped cores replace cold outer arches locally.',2.7),T(165,165,'Court1500/30fall +2000/80fall; loggia4250/42.5fall.',2.7),T(165,172,'Deepest conditional tie/node−750. Ground−1300 is authored.',2.7),T(165,179,'750+H300+loss50+vent150=1250 → D1300;50surplus.',2.7));
-a.push(T(18,194,'03 / PROTECTED ROUTE AND ACTUAL CEILING PRICES',3.4,'bold'));
-const secNotes=[
- 'FirstFFL3450 − exterior(−1300)=4750: conventional protected stair/ring→southhall→frontexit selected for development.',
- '27trial stairwall x2817.5–2971.5/y4173–8949.5; finishedstair2388, provisional1094flights/200well BEFORErails.',
- '27trial West849rough→755referenceclear; existing coupled witness FAILS. East900→806.2250completeassembly max.',
- 'Wetwallbeam3370–3020/15finish→3005 groundreading ceiling; no70upstand across rearensuite doorway.',
- 'South stairheader3370–3070/15→3055; groundwest4600 window arch100lower. Raised west7400 sill1750 is a visible price.',
- 'Protected roof-route176ceiling is a material comparison, not adopted15skin: at localtop3170 gives2994,−106 vs3100.',
- 'Actual REI/EI boundaries, court exposure/glazing, classified doorsets/gaps and penetration closures remain qualification duties.'
-];secNotes.forEach((s,i)=>a.push(T(18,204+i*9,s,2.65)));
-const sectionSvg=wrapSheet('OPEN NORTH LOGGIA / SECTIONS AND PROTECTED ROUTE','One physical section; all dimensions mm. Local shell finish projects17.5 at garden portal; no hidden weatherleaf overlap.',a.join(''));
+for(const centre of [8050,11700])a.push(R(SX(centre-300),SZ(-550),600/75,200/75,'#b35e4f'));
+a.push(`<path d="M${SX(7750)} ${SZ(-180)}L${SX(12000)} ${SZ(-222.5)}L${SX(12000)} ${SZ(-422.5)}L${SX(7750)} ${SZ(-380)}Z" fill="#aab3ae"/>`);
+const sectionLabels=['Roof500.7normal/552.46vertical','Datum7100/ridge8090.9','Overhang200;edge7006.74','Purlin6658.45/ceilingtop6620','Protected6444/private6550','First3450;RC3370–3170','Exposedsoffit2890','775axialportal/215brick','Central tie underside2175','Court1500/30+2000/80','Loggia4250/42.5','Soil−1300 isauthored','Deepest tie/node−750','D1300;50adverse surplus'];
+sectionLabels.forEach((t,i)=>a.push(T(332,62+i*8,t,2.45)));
+a.push(T(18,194,'03 / WEST PIER PLAN /1:15 / ORTHOGONAL LAYERS',3.3,'bold'));
+const CX=x=>23+(x-4280.5)/15,CY=y=>263-(y-7695)/15;
+a.push(R(CX(4307.5),CY(8470),492.5/15,775/15,'#d6c4a3'),R(CX(4447.5),CY(8430),312.5/15,695/15,'#b9c99e'),R(CX(4307.5),CY(8470),140/15,775/15,'#ded5c4'),R(CX(4307.5),CY(8190),212.5/15,215/15,'#af8a74'),R(CX(4280.5),CY(8470),27/15,775/15,'#eee4d2'));
+a.push(T(67,211,'Brown212.5EW ×215NS actual lowerRCpier.',2.7),T(67,220,'EWjamb:structure4307.5–4520;240glass4520–4760;40finish4760–4800.',2.7),T(67,229,'NSwrap280 clips continuing warm140core; exposed72.5extension is wrapped.',2.7),T(67,238,'WarmWroom27finish stays4280.5–4307.5; ordinary519.5wall is locally REPLACED.',2.7),T(67,247,'Groundthermalstarter/skewback/tie-end bridges unearned; no AACcourse drawn throughRC.',2.7),T(67,256,'Protectedroute/stair details on companion sheet; no room-through escape shortcut.',2.7),T(67,265,'Actualmaterial/thermal/fire/structural admission remains distinct from spatial selection.',2.7));
+const sectionSvg=wrapSheet('OPEN NORTH LOGGIA / SECTIONS AND PROTECTED ROUTE','One physical section; all dimensions mm. Local shell finish projects55 at garden portal; no hidden weatherleaf overlap.',a.join(''));
 const e=[];
 const roofRidge=candidate.exterior.ridge;
-function elevation(left,top,side){const X=x=>left+x/100,Z=z=>top+(8000-z)/100;
- e.push(R(X(0),Z(6800),120,68,'#c7aa89'),R(X(0),Z(0),120,13,'#aa9175'),`<path d="M${X(0)} ${Z(6800)}L${X(2125)} ${Z(roofRidge)}L${X(9875)} ${Z(roofRidge)}L${X(12000)} ${Z(6800)}Z" fill="#3d4b4a" stroke="#273c3d" stroke-width=".4"/>`,L(X(-500),Z(-1300),X(12500),Z(-1300),'#91684d',.6));
- for(const level of ['GROUND','FIRST'])for(const o of openings[level].filter(o=>o.wall===side&&o.kind==='window')){const sill=level==='GROUND'&&side==='outer-north'&&[8450,10200].includes(o.centre)?1050:750,base=level==='FIRST'?3450:0;e.push(R(X(o.centre-o.width/2),Z(base+(o.head??2850)),o.width/100,((o.head??2850)-sill)/100,'#dce5df','#f4eadb'))}
+function elevation(left,top,side){const X=x=>left+x/100,Z=z=>top+(8200-z)/100,eave=candidate.exterior.eaves,edge=candidate.exterior.physicalOuterEdge;
+ e.push(R(X(0),Z(eave),120,eave/100,'#c7aa89'),R(X(0),Z(0),120,13,'#aa9175'),`<path d="M${X(-200)} ${Z(edge)}L${X(2125)} ${Z(roofRidge)}L${X(9875)} ${Z(roofRidge)}L${X(12200)} ${Z(edge)}Z" fill="#3d4b4a" stroke="#273c3d" stroke-width=".4"/>`,L(X(-500),Z(-1300),X(12500),Z(-1300),'#91684d',.6));
+ for(const level of ['GROUND','FIRST'])for(const o of openings[level].filter(o=>o.wall===side&&o.kind==='window')){const sill=level==='GROUND'&&side==='outer-north'&&[8300,10200].includes(o.centre)?1050:750,base=level==='FIRST'?3450:0;const head=o.head??2850,spring=o.spring??2550,rise=head-spring,radius=o.width**2/(8*rise)+rise/2,cz=head-radius,inner=radius-60,jamb=o.width/2-60,isp=cz+Math.sqrt(inner**2-jamb**2);for(const[j,r,sp,bottom,fill]of [[o.width/2,radius,spring,sill,'#f4eadb'],[jamb,inner,isp,sill+60,'#dce5df']])e.push(`<path d="M${X(o.centre-j)} ${Z(base+bottom)}L${X(o.centre-j)} ${Z(base+sp)}A${r/100} ${r/100} 0 0 1 ${X(o.centre+j)} ${Z(base+sp)}L${X(o.centre+j)} ${Z(base+bottom)}Z" fill="${fill}"/>`)}
  if(side==='outer-south')e.push(R(X(5100),Z(2850),18,28.5,'#e6ded0','#eee8db'),R(X(5300),Z(2200),14,22,'#48534c','#eee8db'));
  else{const c=6000;for(const [jamb,radius,spring,fill]of [[1480,rawArchRadius,2250,'#e8e2d4'],[1200,finishedArchRadius,insulatedPortal.finishedJambSpring,'#445f5d']])e.push(`<path d="M${X(c-jamb)} ${Z(0)}L${X(c-jamb)} ${Z(spring)} A${radius/100} ${radius/100} 0 0 1 ${X(c+jamb)} ${Z(spring)}L${X(c+jamb)} ${Z(0)}Z" fill="${fill}"/>`)}
+ if(side==='outer-north'){const half=Math.sqrt(finishedArchRadius**2-(2200-rawArchCentre)**2);e.push(R(X(6000-half),Z(2225),2*half/100,50/100,'#aab8b5','none'));}
  e.push(T(left,top+101,side==='outer-south'?'SOUTH / retained five-axis principal front':'NORTH / lowered wide insulated loggia arch',2.8));
 }
 elevation(22,45,'outer-south');elevation(220,45,'outer-north');
-e.push(T(18,159,'Roof geometry:6800eaves/7790.9ridge. With authoredground−1300:8100/9090.9 abovegrade.',2.85),T(18,167,'Warm masonry +pale openings +dark ring roof retained; north material/arch and pairedwindow order are actual rewinds.',2.85));
+e.push(T(18,159,'Roofdatum7100/ridge8090.9;200overhang actualedge7006.74. Grade−1300→8400datum/9390.9ridge.',2.85),T(18,167,'Warm masonry +pale openings +dark ring roof retained; north material/arch and pairedwindow order are actual rewinds.',2.85));
 e.push(T(18,183,'FINITE PLOT / APPROACH RESERVATIONS / 1:200',3.5,'bold'));
 const run=(y,label,flights,rise)=>{let x=20;e.push(T(20,y-4,label,2.8));for(let i=0;i<flights.length;i++){e.push(R(x,y,6,7,'#e4d4b2'));x+=6;e.push(R(x,y,flights[i]/200,7,'#c2d5cd'));x+=flights[i]/200;}e.push(R(x,y,6,7,'#e4d4b2'),T(210,y+5,`Rise${rise}; sloping${flights.reduce((a,b)=>a+b,0)/1000}m +4×1.2m landings.`,2.8));};
 run(200,'FRONT:26m sloping +4.8m landings =30.8m straight reservation',[9000,9000,8000],1300);
@@ -385,7 +460,7 @@ st.push(L(TX(519.5),TZ(-100),TX(1523.5),TZ(-100),'#355960',.4),L(TX(1723.5),TZ(-
 st.push(T(258,136,'D40 +50wallclear→90projection.',2.75),T(258,143,'Wellrail whollywithin200well.',2.75),T(258,150,'Top1000; verticalD12@100→88gap.',2.75),T(258,157,'Bottom/triangle/return gaps≤80required.',2.75),T(258,164,'1004nominal;20combinedloss→984.',2.75),T(258,171,'No private-stair1000minimum invented.',2.75),T(258,178,'Guardload/anchors/handgrip not admitted.',2.75));
 st.push(T(15,237,'FIRST entrance-void guard consumes50floor strip: northy2735–2785; Southbridgeclear1017.5 after27finish+18trim.',2.8),T(15,246,'ProtectedstairEastwall isGROUNDonly; uppergalleryguard is not a new fullheight wall cutting off the top landing.',2.8),T(15,255,'Noses remain0/1725/3450 with integralRCwearing: actual RC-floor80overlay joint must not add80 to finalriser.',2.8),T(15,264,'Geometry is one authored reservation. ADK§1.34/Diagram3.1 references do not certify the assembly or a real occupant.',2.8));
 const stairSvg=wrapSheet('OPEN NORTH LOGGIA / STAIR AND GUARD GEOGRAPHY','One27dry/30wet trial. Rail and guard projections are real occupied space; body territory is not a clear-width label.',st.join(''));
-candidate.wholeHouseFit={listedProxyPass:candidate.actions.pass,footprintPass:candidate.fullHouseFootprint.pass,pass:false,remaining:['Resolve all recorded whole furniture/wall overlaps, including frontheads.','Rebind actual front-single door/closed-room paths after complete finish/frame correction.','Join IAS familydoor arm/regrip and all wet30 boundary patches.'],scope:'No actual product/force/material/fire/physical certification is made a substitute for these internal geometry corrections.'};
+candidate.wholeHouseFit={listedProxyPass:candidate.actions.pass,footprintPass:candidate.fullHouseFootprint.pass,pass:false,remaining:['Bind the final IAS600reach familydoor release/wait/closer proof; manual regrip was rejected.','Join actual whole-house services/emitter territories and fan renewal fields.','Reconcile final775portal/tie2200/roof7100 source with STR/MAT.'],scope:'No actual product/force/material/fire/physical certification is made a substitute for these internal geometry corrections.'};
 for(const [name,body]of Object.entries({'open-north-loggia.json':JSON.stringify(candidate,null,2)+'\n','open-north-loggia.svg':svg,'open-north-loggia-sections.svg':sectionSvg,'open-north-loggia-exterior.svg':exteriorSvg,'open-north-loggia-stair.svg':stairSvg})){const p=new URL(name,OUT);if(process.argv.includes('--check')){if(readFileSync(p,'utf8')!==body)throw Error('Stale '+name)}else writeFileSync(p,body)}
 if(process.argv.includes('--require-whole-house-fit')&&!candidate.wholeHouseFit.pass)throw Error('Explicit whole-house fit debts remain');
 if(process.argv.includes('--require-spatial-pass')&&!candidate.actions.pass)throw Error('Finite spatial witness failed');

@@ -20,19 +20,93 @@
     "finishedJambSpring": 2126.5422357208927,
     "finishedCrown": 2570,
     "finishedWidthAt2250": 2077.1262198848995,
-    "coreAxial": 140,
+    "coreAxial": 215,
     "faceWrapEach": 280,
-    "finishedAxial": 700,
+    "finishedAxial": 775,
     "courtFaces": [
-      7732.5,
-      8432.5
+      7695,
+      8470
     ],
     "gardenFaces": [
-      11317.5,
-      12017.5
+      11280,
+      12055
     ],
-    "localExternalProjectionBeyond12000": 17.5,
-    "scope": "Single development candidate; 2400 is vertical-jamb width to2126.54, not a2400rectangle to2850. Locally replaces weatherbrick arch/cavity with rendered wrapped140core. Structural thrust/tie/pier/bearing and actual thermal/fire/weather junction unearned."
+    "localExternalProjectionBeyond12000": 55,
+    "scope": "One actual215AXIAL brickarch +212.5EWlowerRCpiers +280orthogonalface/jambwrap.50visibletie lowers centralwalkinghead; no structural/thermal/fire/material adoption.",
+    "midRingHinges": [
+      [
+        4445.141154328732,
+        2327.1518193224592
+      ],
+      [
+        7554.858845671268,
+        2327.1518193224592
+      ]
+    ],
+    "tie": {
+      "centre": 2200,
+      "depth": 50,
+      "underside": 2175,
+      "courtCentralHeadroom": 2285,
+      "gardenCentralHeadroom": 2327.5,
+      "scope": "Visible enduring tie/transom; actualmember/anchors/material/fire/thermal bridging not admitted."
+    },
+    "piers": {
+      "westEW": [
+        4307.5,
+        4520
+      ],
+      "eastEW": [
+        7480,
+        7692.5
+      ],
+      "courtNS": [
+        7975,
+        8190
+      ],
+      "gardenNS": [
+        11560,
+        11775
+      ],
+      "section": [
+        212.5,
+        215
+      ],
+      "scope": "Full lowerRCpier development, not a shortheadcapital or assumed140masonrybuttress. RCtop flat2404.303639 toX4370.282309, then radialbevel toX4520/Z2250; mirrorEast. RCstops atskewback; masonryspandrel above, not RCthroughring. Cage/groundthermalstarter remainsSTR/MAT evidence."
+    },
+    "wrap": {
+      "jambEW": {
+        "west": [
+          4520,
+          4800
+        ],
+        "east": [
+          7200,
+          7480
+        ]
+      },
+      "faceNS": 280,
+      "warmCoreClipWest": [
+        4307.5,
+        4447.5
+      ],
+      "exposedPierExtensionWest": [
+        4447.5,
+        4520
+      ],
+      "composition": [
+        [
+          "bareCellularGlass",
+          240
+        ],
+        [
+          "mineralLining",
+          40
+        ]
+      ],
+      "localReplacement": "Within775portal territory, this replaces ordinary200glass/50gap/102.5weather; it is NOT an additional overlapping stack.",
+      "thermal": "Actualcorner/end/tie bridges andDPC/groundstarter unqualified."
+    }
   },
   "court": [
     4250,
@@ -873,7 +947,7 @@
     {
       "id": "rear-west",
       "a": [
-        0,
+        2902.5,
         8852.5
       ],
       "b": [
@@ -990,7 +1064,7 @@
         2902.5,
         12000
       ],
-      "t": 197,
+      "t": 194,
       "holes": [
         [
           10350,
@@ -1002,11 +1076,11 @@
         2972.5
       ],
       "finishedFaces": [
-        2802.5,
+        2805.5,
         2999.5
       ],
       "faceFinish": [
-        30,
+        27,
         27
       ]
     },
@@ -1064,6 +1138,31 @@
         30,
         27
       ]
+    },
+    {
+      "id": "rear-wet-south",
+      "a": [
+        0,
+        8852.5
+      ],
+      "b": [
+        2902.5,
+        8852.5
+      ],
+      "t": 197,
+      "holes": [],
+      "structuralCore": [
+        8782.5,
+        8922.5
+      ],
+      "finishedFaces": [
+        8755.5,
+        8952.5
+      ],
+      "faceFinish": [
+        27,
+        30
+      ]
     }
   ],
   "openingRewinds": [
@@ -1107,9 +1206,9 @@
       "wall": "outer-east",
       "centre": 7400,
       "head": 2850,
-      "fixedTransomTopBand": 100,
-      "openingLeafHeadMaximum": 2750,
-      "reason": "Principal bath extract pod underside2800; retain50 vertical operation separation."
+      "fixedTransomTopBand": 480,
+      "openingLeafHeadMaximum": 2370,
+      "reason": "Complete280exhaustcassette with75maxactualhead intrusion; unqualified actualOASfamily."
     },
     {
       "level": "GROUND",
@@ -1193,7 +1292,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "south-window-1",
@@ -1203,7 +1305,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "front-door",
@@ -1223,7 +1328,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "south-window-4",
@@ -1233,7 +1341,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "east-window-0",
@@ -1243,7 +1354,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "plant-replacement",
@@ -1263,7 +1377,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "east-window-3",
@@ -1273,7 +1390,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "west-window-0",
@@ -1283,7 +1403,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "west-window-1",
@@ -1295,7 +1418,8 @@
         "hinge": "low",
         "leaves": 1,
         "head": 2750,
-        "spring": 2450
+        "spring": 2450,
+        "sill": 750
       },
       {
         "id": "west-window-2",
@@ -1306,7 +1430,9 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 1750
+        "sill": 1750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "west-window-3",
@@ -1316,14 +1442,20 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "north-window-0",
         "wall": "outer-north",
         "centre": 1800,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "north-window-1",
@@ -1331,7 +1463,10 @@
         "centre": 3700,
         "width": 700,
         "kind": "window",
-        "operation": "FIXED; ordinary operation not credited"
+        "operation": "FIXED; ordinary operation not credited",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "garden-entry",
@@ -1349,14 +1484,20 @@
         "wall": "outer-north",
         "centre": 8300,
         "width": 700,
-        "kind": "window"
+        "kind": "window",
+        "sill": 1050,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "north-window-4",
         "wall": "outer-north",
         "centre": 10200,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 1050,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "grand-court-entry-south",
@@ -1384,28 +1525,40 @@
         "wall": "court-east",
         "centre": 5150,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-east-1",
         "wall": "court-east",
         "centre": 6850,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-west-0",
         "wall": "court-west",
         "centre": 5150,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-west-1",
         "wall": "court-west",
         "centre": 6850,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       }
     ],
     "FIRST": [
@@ -1417,7 +1570,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "south-window-1",
@@ -1427,7 +1583,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "south-window-2",
@@ -1437,7 +1596,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "south-window-3",
@@ -1447,7 +1609,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "south-window-4",
@@ -1457,7 +1622,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "east-window-0",
@@ -1467,7 +1635,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "east-window-1",
@@ -1477,7 +1648,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "east-window-2",
@@ -1489,7 +1663,10 @@
         "hinge": "low",
         "leaves": 1,
         "fixedTransomTopBand": 480,
-        "openingLeafHeadMaximum": 2370
+        "openingLeafHeadMaximum": 2370,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "east-window-3",
@@ -1499,7 +1676,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "west-window-0",
@@ -1509,7 +1689,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "west-window-1",
@@ -1519,7 +1702,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "west-window-2",
@@ -1529,7 +1715,10 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "west-window-3",
@@ -1539,91 +1728,130 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "north-window-0",
         "wall": "outer-north",
         "centre": 1800,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "north-window-1",
         "wall": "outer-north",
         "centre": 3700,
         "width": 700,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "north-window-3",
         "wall": "outer-north",
         "centre": 8300,
         "width": 700,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "north-window-4",
         "wall": "outer-north",
         "centre": 10200,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-south-0",
         "wall": "court-south",
         "centre": 5150,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-south-1",
         "wall": "court-south",
         "centre": 6850,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-north-0",
         "wall": "court-north",
         "centre": 5150,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-north-1",
         "wall": "court-north",
         "centre": 6700,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-east-0",
         "wall": "court-east",
         "centre": 5150,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-east-1",
         "wall": "court-east",
         "centre": 6850,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-west-0",
         "wall": "court-west",
         "centre": 5150,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       },
       {
         "id": "court-west-1",
         "wall": "court-west",
         "centre": 6850,
         "width": 1000,
-        "kind": "window"
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
       }
     ]
   },
@@ -1677,13 +1905,13 @@
       725
     ],
     "pantry-shelf-comparison": [
-      9385,
+      9397,
       6800,
       600,
       1150
     ],
     "rear-stack": [
-      417.5,
+      429.5,
       10800,
       300,
       750
@@ -1744,13 +1972,13 @@
     ],
     "north-sink-station": [
       8700,
-      10982.5,
+      10970.5,
       900,
       600
     ],
     "north-cooking-station": [
       10800,
-      10982.5,
+      10970.5,
       600,
       600
     ],
@@ -1763,38 +1991,26 @@
   },
   "upperFurniture": {
     "bed2": [
-      1125,
-      1062.5,
-      900,
-      2000
-    ],
-    "bed2-head": [
-      1125,
-      3062.5,
-      900,
-      100
+      1100,
+      1065.5,
+      950,
+      2055
     ],
     "bed2-wardrobe": [
-      4055,
-      1017.5,
+      4043,
+      1067.5,
       660,
       900
     ],
     "bed3": [
-      10033.75,
-      1525,
-      900,
-      2000
-    ],
-    "bed3-head": [
-      10033.75,
-      3525,
-      900,
-      90
+      9942.5,
+      1518,
+      950,
+      2055
     ],
     "bed3-wardrobe": [
-      7285,
-      1017.5,
+      7297,
+      1047.5,
       660,
       1500
     ],
@@ -1841,7 +2057,7 @@
       1000
     ],
     "rear-WC": [
-      717.5,
+      729.5,
       11000,
       560,
       355
@@ -1853,13 +2069,13 @@
       220
     ],
     "rear-cabinet": [
-      417.5,
+      429.5,
       10800,
       300,
       750
     ],
     "rear-west-low-box": [
-      417.5,
+      429.5,
       9937.5,
       150,
       862.5
@@ -1890,13 +2106,13 @@
     ],
     "family-WC": [
       10777.5,
-      5800,
+      5750,
       560,
       355
     ],
     "family-basin": [
       11227.5,
-      5300,
+      5200,
       340,
       450
     ],
@@ -1913,10 +2129,10 @@
       180
     ],
     "family-local-soil-column": [
-      11342.5,
-      6180,
-      180,
-      180
+      11297.5,
+      6135,
+      270,
+      265
     ]
   },
   "stair": [
@@ -1970,6 +2186,33 @@
           3,
           1552.5
         ]
+      ],
+      [
+        "familyEastWetFace",
+        [
+          11567.5,
+          3800,
+          3,
+          2600
+        ]
+      ],
+      [
+        "familyWestBathEndWetReturn",
+        [
+          9397,
+          3800,
+          3,
+          700
+        ]
+      ],
+      [
+        "rearShowerWetReturn",
+        [
+          2802.5,
+          8952.5,
+          3,
+          1000
+        ]
       ]
     ]
   },
@@ -1985,7 +2228,7 @@
       "eastFinishedFace": 3094.5,
       "courtWestFace": 3820.5,
       "grossGalleryClear": 726,
-      "scope": "ActualSTRnewpostoutside1100flight; body/window/guard/escape testrequired."
+      "scope": "Actual postoutside1094finishedflight; no appliedbase on stairfacingedge.690betweenroomsidebaseboards; actualsupport/guard qualifiedseparately."
     },
     "upperFloor": "Continuous RC200 trial, not adopted. Ordinary short spans/support schedule owned by STR.",
     "upperRearDivider": {
@@ -2514,7 +2757,7 @@
             6283.5
           ],
           "net": 767,
-          "status": "IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified"
+          "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Final600reach immutable proof pending binding; E20 assembly not qualified"
         }
       }
     ],
@@ -2578,25 +2821,25 @@
         6283.5
       ],
       "net": 767,
-      "status": "IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified"
+      "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Final600reach immutable proof pending binding; E20 assembly not qualified"
     },
     "serviceBand": [
       11337.5,
-      5800,
+      5750,
       230,
-      560
+      650
     ],
     "port": [
       11432.5,
-      6270
+      6260
     ],
     "column": [
-      11342.5,
-      6180,
-      180,
-      180
+      11297.5,
+      6135,
+      270,
+      265
     ],
-    "scope": "One coordinated fixture proposal;230band/200turn support envelope still unresolved. No hole/product/cistern adoption."
+    "scope": "Oneactual270x265corner;max200turnabovefloor, plain110tailthrough160bore. Actualsupport/fire/material/productqualification unearned."
   },
   "stairFinishRewind": {
     "raw": [
@@ -2634,6 +2877,797 @@
     "scope": "Selected finite480fixed insulated head cassette. Actual matched OAS frame/usable port/thermal/material/fire assembly unqualified."
   },
   "retainedOuterCoreWeatherBudget": 417.5,
+  "frontBedControl": {
+    "source": "https://www.vidaxl.co.uk/e/vidaxl-bed-frame-without-mattress-solid-wood-90x200-cm/8720286996843.html",
+    "publisher": "vidaXL",
+    "SKU": "814739",
+    "EAN": "8720286996843",
+    "retrieved": "2026-11-01",
+    "completeFrameIncludingHead": [
+      950,
+      2055,
+      695
+    ],
+    "suitableMattress": [
+      900,
+      2000
+    ],
+    "material": "Manufacturer declares untreatedpine frame andPLYWOODslats. Material/hiddencomponents/capacity/actualsupply NOTadopted; no polymerexception approved.",
+    "architecturalScope": "Real complete outside dimensions, not a mattressbox plus an invented thinhead. Actual chosen materialfamily must fit the complete control or trigger replan.",
+    "bed2": {
+      "whole": [
+        1100,
+        1065.5,
+        950,
+        2055
+      ],
+      "backGap": 30,
+      "sidesAfter18Trim": [
+        652.5,
+        652.5
+      ],
+      "footBandAfter18Trim": 618,
+      "footBandAfter25PositionLoss": 593,
+      "scope": "Limited geometric reserve, not comfort/accessibility or25loss pass."
+    },
+    "bed3": {
+      "ordinary": [
+        9942.5,
+        1518,
+        950,
+        2055
+      ],
+      "primarySide": "EAST",
+      "ordinarySideBandsAfter18Trim": {
+        "west": 527.5,
+        "east": 660
+      },
+      "temporary": [
+        10075,
+        1518,
+        950,
+        2055
+      ],
+      "translation": [
+        132.5,
+        0
+      ],
+      "temporarySideBandsAfter18Trim": {
+        "west": 660,
+        "east": 527.5
+      },
+      "scope": "Full Westhead/secondary-side bedding/cleaning ONLYafter132.5Ewhole-frame move andrestoration. Supersedes simultaneoustwo600dailyclaim; ordinaryprimaryside/foot/door/storage/window paths mustpass."
+    },
+    "rejectedEW": {
+      "whole": [
+        8600,
+        1065,
+        2055,
+        950
+      ],
+      "retainedEastHingedDoor": "Inwardsweep crosses frame; outwardNorth leaf blocks protectedSouthringbypass. No overallimpossibility claim; one ordinary orientation was tested before any walltransfer."
+    }
+  },
+  "baseboardTerminations": {
+    "fixedCabinets": [
+      "pantry-shelf-comparison",
+      "north-sink-station",
+      "north-cooking-station",
+      "bed2-wardrobe",
+      "bed3-wardrobe",
+      "rear-cabinet"
+    ],
+    "rule": "Decorative18base may terminate behindFIXEDjoinery with full27primaryfinish and independentfloor/wallboundary retained. No18deletion inprotectedhall. Actualcaptivebase/endreturns/release remainIAS/MATdetail.",
+    "northStationsOnly": true
+  },
+  "wetBoundaryPatches": [
+    [
+      "familyEastWetFace",
+      [
+        11567.5,
+        3800,
+        3,
+        2600
+      ]
+    ],
+    [
+      "familyWestBathEndWetReturn",
+      [
+        9397,
+        3800,
+        3,
+        700
+      ]
+    ],
+    [
+      "rearShowerWetReturn",
+      [
+        2802.5,
+        8952.5,
+        3,
+        1000
+      ]
+    ]
+  ],
+  "archOpeningRegister": {
+    "GROUND": [
+      {
+        "id": "south-window-0",
+        "wall": "outer-south",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "south-window-1",
+        "wall": "outer-south",
+        "centre": 3900,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "front-door",
+        "wall": "outer-south",
+        "centre": 6000,
+        "width": 1800,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 2,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "south-window-3",
+        "wall": "outer-south",
+        "centre": 8100,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "south-window-4",
+        "wall": "outer-south",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "east-window-0",
+        "wall": "outer-east",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "plant-replacement",
+        "wall": "outer-east",
+        "centre": 4600,
+        "width": 1400,
+        "kind": "door",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 1,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "east-window-2",
+        "wall": "outer-east",
+        "centre": 7400,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "east-window-3",
+        "wall": "outer-east",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "west-window-0",
+        "wall": "outer-west",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "west-window-1",
+        "wall": "outer-west",
+        "centre": 4600,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "head": 2750,
+        "spring": 2450,
+        "sill": 750,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "west-window-2",
+        "wall": "outer-west",
+        "centre": 7400,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 1750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "west-window-3",
+        "wall": "outer-west",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "north-window-0",
+        "wall": "outer-north",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "north-window-1",
+        "wall": "outer-north",
+        "centre": 3700,
+        "width": 700,
+        "kind": "window",
+        "operation": "FIXED; ordinary operation not credited",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "north-window-3",
+        "wall": "outer-north",
+        "centre": 8300,
+        "width": 700,
+        "kind": "window",
+        "sill": 1050,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "north-window-4",
+        "wall": "outer-north",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "sill": 1050,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "grand-court-entry-south",
+        "wall": "court-south",
+        "centre": 6000,
+        "width": 1800,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 2,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-east-0",
+        "wall": "court-east",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-east-1",
+        "wall": "court-east",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-west-0",
+        "wall": "court-west",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-west-1",
+        "wall": "court-west",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      }
+    ],
+    "FIRST": [
+      {
+        "id": "south-window-0",
+        "wall": "outer-south",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "south-window-1",
+        "wall": "outer-south",
+        "centre": 3900,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "south-window-2",
+        "wall": "outer-south",
+        "centre": 6000,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "south-window-3",
+        "wall": "outer-south",
+        "centre": 8100,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "south-window-4",
+        "wall": "outer-south",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "east-window-0",
+        "wall": "outer-east",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "east-window-1",
+        "wall": "outer-east",
+        "centre": 4600,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "east-window-2",
+        "wall": "outer-east",
+        "centre": 7400,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "fixedTransomTopBand": 480,
+        "openingLeafHeadMaximum": 2370,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "east-window-3",
+        "wall": "outer-east",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "west-window-0",
+        "wall": "outer-west",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "west-window-1",
+        "wall": "outer-west",
+        "centre": 4600,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "west-window-2",
+        "wall": "outer-west",
+        "centre": 7400,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "west-window-3",
+        "wall": "outer-west",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1,
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "north-window-0",
+        "wall": "outer-north",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "north-window-1",
+        "wall": "outer-north",
+        "centre": 3700,
+        "width": 700,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "north-window-3",
+        "wall": "outer-north",
+        "centre": 8300,
+        "width": 700,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "north-window-4",
+        "wall": "outer-north",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-south-0",
+        "wall": "court-south",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-south-1",
+        "wall": "court-south",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-north-0",
+        "wall": "court-north",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-north-1",
+        "wall": "court-north",
+        "centre": 6700,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-east-0",
+        "wall": "court-east",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-east-1",
+        "wall": "court-east",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-west-0",
+        "wall": "court-west",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "court-west-1",
+        "wall": "court-west",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      }
+    ]
+  },
+  "stairPostFinishRequirement": "Post ends below FIRST RC/trimmer, no first-floor obstacle. No applied baseboard on stair-facing post edge;1100flight retained. Roomside18baseboard counted, reducing nominal750 to714 between roomside projections.",
+  "outdoorWaterTerritories": {
+    "normalGross": [
+      4825,
+      7750,
+      400,
+      4250
+    ],
+    "normalLiner": {
+      "outside": 303,
+      "inside": 250,
+      "insideWallHeight": 75,
+      "gauge": 1.5,
+      "bodyMassKG": 25.704,
+      "liftAperture": 360,
+      "sideReserve": 28.5,
+      "wholeLift": 600,
+      "permanentFloorBridge": false
+    },
+    "relief": [
+      5300,
+      7750,
+      1800,
+      4250
+    ],
+    "gap": 75,
+    "scope": "ENV explicitdevelopment. Separateintakes/terminals/receivers andactualblocked-primary/high-tailwater/common-obstruction cases mustbind before independence. No retired750wetpiece witness transferred."
+  },
   "stairGuard": {
     "basis": "Authored spatial selection against England ADK2013§1.34,1.39/Diagram3.1. No guard/anchor capacity or final regulatory admission.",
     "official": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/996860/Approved_Document_K.pdf",
@@ -2853,119 +3887,8 @@
   },
   "fullHouseFootprint": {
     "method": "Positive rectangle overlap of each represented whole furniture/fixture with actual nominal finished walls/receivers, before decorative18skirt. Wall-mounted contact at zero is not counted. No vertical exception silently invented.",
-    "conflicts": [
-      {
-        "level": "GROUND",
-        "object": "pantry-shelf-comparison",
-        "wall": "service-spine",
-        "overlap": [
-          9385,
-          6800,
-          12,
-          1150
-        ]
-      },
-      {
-        "level": "GROUND",
-        "object": "rear-stack",
-        "wall": "outer-west",
-        "overlap": [
-          417.5,
-          10800,
-          12,
-          750
-        ]
-      },
-      {
-        "level": "GROUND",
-        "object": "north-sink-station",
-        "wall": "outer-north",
-        "overlap": [
-          8700,
-          11570.5,
-          900,
-          12
-        ]
-      },
-      {
-        "level": "GROUND",
-        "object": "north-cooking-station",
-        "wall": "outer-north",
-        "overlap": [
-          10800,
-          11570.5,
-          600,
-          12
-        ]
-      },
-      {
-        "level": "FIRST",
-        "object": "bed2-head",
-        "wall": "bed2-L-north",
-        "overlap": [
-          1125,
-          3150.5,
-          900,
-          12
-        ]
-      },
-      {
-        "level": "FIRST",
-        "object": "bed2-wardrobe",
-        "wall": "bed2-east",
-        "overlap": [
-          4703,
-          1017.5,
-          12,
-          900
-        ]
-      },
-      {
-        "level": "FIRST",
-        "object": "bed3-head",
-        "wall": "bed3-L-north",
-        "overlap": [
-          10033.75,
-          3603,
-          900,
-          12
-        ]
-      },
-      {
-        "level": "FIRST",
-        "object": "bed3-wardrobe",
-        "wall": "bed3-west",
-        "overlap": [
-          7285,
-          1017.5,
-          12,
-          1500
-        ]
-      },
-      {
-        "level": "FIRST",
-        "object": "rear-cabinet",
-        "wall": "outer-west",
-        "overlap": [
-          417.5,
-          10800,
-          12,
-          750
-        ]
-      },
-      {
-        "level": "FIRST",
-        "object": "rear-west-low-box",
-        "wall": "outer-west",
-        "overlap": [
-          417.5,
-          9937.5,
-          12,
-          862.5
-        ]
-      }
-    ],
-    "pass": false
+    "conflicts": [],
+    "pass": true
   },
   "actions": {
     "method": "Exact Euclidean segment-to-closed-rectangle clearance with a300radius horizontal body proxy. Furniture and finished wall/receiver/post rectangles are obstacles. Ordinary18mm trim is conservatively added to walls/receivers; post trim is excluded from stair-facing side to retain1100flight and reserved18 on roomside. Every segment tested analytically; no sampling gaps. Not an actual-human, door-force, accessible-route or 3D/headroom admission.",
@@ -3572,6 +4495,7 @@
       "Principal and rear wetroom internal tasks use separately merged MAT witnesses; this plan only binds entries, staging and furniture sweep.",
       "Study inside rehand has its separate bounded coupled witness. New cross-door operation still needs finite coupled test; proxy routes alone are insufficient."
     ],
+    "frontRoomsPass": true,
     "windowPlanReachPass": true
   },
   "studyDoorOperation": {
@@ -3669,7 +4593,3221 @@
       "scope": "Finite push-open/reverse-close geometry including25jambs and2.5leaf gaps. Operator R300/forearmR40/600reach proxy only; qualified installed frame/handles/forces/fire assembly not admitted."
     }
   ],
-  "stairPostFinishRequirement": "Post ends below FIRST RC/trimmer, no first-floor obstacle. No applied baseboard on stair-facing post edge;1100flight retained. Roomside18baseboard counted, reducing nominal750 to714 between roomside projections.",
+  "frontRooms": [
+    {
+      "room": "bed2",
+      "completeFrame": [
+        1100,
+        1065.5,
+        950,
+        2055
+      ],
+      "door": {
+        "hinge": [
+          3485,
+          2650
+        ],
+        "leaf": [
+          830,
+          44
+        ],
+        "frameEach": 25,
+        "gapEach": 10,
+        "rotationDegrees": -110,
+        "handleAlong": 780,
+        "handleFaceOffset": 84,
+        "closedBody": [
+          3885,
+          2275
+        ],
+        "openedBody": [
+          2927.4031812098833,
+          2214.4419812755805
+        ],
+        "continuousBodyLowerBound": 18.435948903208356,
+        "continuousArmLowerBound": 18.941356244618245,
+        "continuousLeafFixedLowerBound": 29.21121081649384,
+        "continuousReachUpperBound": 479.3205575351065,
+        "pass": true,
+        "scope": "New actual complete-frame/27+18 witness. Ownhost/ownframe intended leafcontact excepted; actual classified hinges/frame/force not admitted."
+      },
+      "paths": {
+        "leftLower": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              3885,
+              2275
+            ],
+            [
+              3885,
+              2266.5
+            ],
+            [
+              3616.5,
+              2266.5
+            ],
+            [
+              3616.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2226.5
+            ],
+            [
+              2356.5,
+              2226.5
+            ],
+            [
+              2356.5,
+              986.5
+            ],
+            [
+              2346.5,
+              986.5
+            ],
+            [
+              2346.5,
+              956.5
+            ],
+            [
+              2336.5,
+              956.5
+            ],
+            [
+              2336.5,
+              936.5
+            ],
+            [
+              2326.5,
+              936.5
+            ],
+            [
+              2326.5,
+              916.5
+            ],
+            [
+              2316.5,
+              916.5
+            ],
+            [
+              2316.5,
+              896.5
+            ],
+            [
+              2306.5,
+              896.5
+            ],
+            [
+              2306.5,
+              876.5
+            ],
+            [
+              2296.5,
+              876.5
+            ],
+            [
+              2296.5,
+              866.5
+            ],
+            [
+              2286.5,
+              866.5
+            ],
+            [
+              2286.5,
+              856.5
+            ],
+            [
+              2276.5,
+              856.5
+            ],
+            [
+              2276.5,
+              846.5
+            ],
+            [
+              2266.5,
+              846.5
+            ],
+            [
+              2266.5,
+              836.5
+            ],
+            [
+              2256.5,
+              836.5
+            ],
+            [
+              2256.5,
+              826.5
+            ],
+            [
+              2246.5,
+              826.5
+            ],
+            [
+              2246.5,
+              816.5
+            ],
+            [
+              2226.5,
+              816.5
+            ],
+            [
+              2226.5,
+              806.5
+            ],
+            [
+              2216.5,
+              806.5
+            ],
+            [
+              2216.5,
+              796.5
+            ],
+            [
+              2196.5,
+              796.5
+            ],
+            [
+              2196.5,
+              786.5
+            ],
+            [
+              2176.5,
+              786.5
+            ],
+            [
+              2176.5,
+              776.5
+            ],
+            [
+              2156.5,
+              776.5
+            ],
+            [
+              2156.5,
+              766.5
+            ],
+            [
+              2116.5,
+              766.5
+            ],
+            [
+              2116.5,
+              756.5
+            ],
+            [
+              776.5,
+              756.5
+            ],
+            [
+              776.5,
+              1556.5
+            ],
+            [
+              775,
+              1556.5
+            ],
+            [
+              775,
+              1565.5
+            ]
+          ],
+          "minimumReserve": 5.111864731609558,
+          "controlling": {
+            "obstacle": "bed2",
+            "segment": 15
+          }
+        },
+        "leftHead": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              3885,
+              2275
+            ],
+            [
+              3885,
+              2266.5
+            ],
+            [
+              3616.5,
+              2266.5
+            ],
+            [
+              3616.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2226.5
+            ],
+            [
+              2356.5,
+              2226.5
+            ],
+            [
+              2356.5,
+              986.5
+            ],
+            [
+              2346.5,
+              986.5
+            ],
+            [
+              2346.5,
+              956.5
+            ],
+            [
+              2336.5,
+              956.5
+            ],
+            [
+              2336.5,
+              936.5
+            ],
+            [
+              2326.5,
+              936.5
+            ],
+            [
+              2326.5,
+              916.5
+            ],
+            [
+              2316.5,
+              916.5
+            ],
+            [
+              2316.5,
+              896.5
+            ],
+            [
+              2306.5,
+              896.5
+            ],
+            [
+              2306.5,
+              876.5
+            ],
+            [
+              2296.5,
+              876.5
+            ],
+            [
+              2296.5,
+              866.5
+            ],
+            [
+              2286.5,
+              866.5
+            ],
+            [
+              2286.5,
+              856.5
+            ],
+            [
+              2276.5,
+              856.5
+            ],
+            [
+              2276.5,
+              846.5
+            ],
+            [
+              2266.5,
+              846.5
+            ],
+            [
+              2266.5,
+              836.5
+            ],
+            [
+              2256.5,
+              836.5
+            ],
+            [
+              2256.5,
+              826.5
+            ],
+            [
+              2246.5,
+              826.5
+            ],
+            [
+              2246.5,
+              816.5
+            ],
+            [
+              2226.5,
+              816.5
+            ],
+            [
+              2226.5,
+              806.5
+            ],
+            [
+              2216.5,
+              806.5
+            ],
+            [
+              2216.5,
+              796.5
+            ],
+            [
+              2196.5,
+              796.5
+            ],
+            [
+              2196.5,
+              786.5
+            ],
+            [
+              2176.5,
+              786.5
+            ],
+            [
+              2176.5,
+              776.5
+            ],
+            [
+              2156.5,
+              776.5
+            ],
+            [
+              2156.5,
+              766.5
+            ],
+            [
+              2116.5,
+              766.5
+            ],
+            [
+              2116.5,
+              756.5
+            ],
+            [
+              776.5,
+              756.5
+            ],
+            [
+              776.5,
+              2756.5
+            ],
+            [
+              775,
+              2756.5
+            ],
+            [
+              775,
+              2765.5
+            ]
+          ],
+          "minimumReserve": 5.111864731609558,
+          "controlling": {
+            "obstacle": "bed2",
+            "segment": 15
+          }
+        },
+        "rightLower": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              3885,
+              2275
+            ],
+            [
+              3885,
+              2266.5
+            ],
+            [
+              3616.5,
+              2266.5
+            ],
+            [
+              3616.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2226.5
+            ],
+            [
+              2376.5,
+              2226.5
+            ],
+            [
+              2376.5,
+              1576.5
+            ],
+            [
+              2375,
+              1576.5
+            ],
+            [
+              2375,
+              1565.5
+            ]
+          ],
+          "minimumReserve": 6.258877422353237,
+          "controlling": {
+            "obstacle": "bed2-north-main+18trim",
+            "segment": 7
+          }
+        },
+        "rightHead": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              3885,
+              2275
+            ],
+            [
+              3885,
+              2266.5
+            ],
+            [
+              3616.5,
+              2266.5
+            ],
+            [
+              3616.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2226.5
+            ],
+            [
+              2376.5,
+              2226.5
+            ],
+            [
+              2376.5,
+              2756.5
+            ],
+            [
+              2375,
+              2756.5
+            ],
+            [
+              2375,
+              2765.5
+            ]
+          ],
+          "minimumReserve": 6.258877422353237,
+          "controlling": {
+            "obstacle": "bed2-north-main+18trim",
+            "segment": 7
+          }
+        },
+        "foot": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              3885,
+              2275
+            ],
+            [
+              3885,
+              2266.5
+            ],
+            [
+              3616.5,
+              2266.5
+            ],
+            [
+              3616.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2226.5
+            ],
+            [
+              2356.5,
+              2226.5
+            ],
+            [
+              2356.5,
+              986.5
+            ],
+            [
+              2346.5,
+              986.5
+            ],
+            [
+              2346.5,
+              956.5
+            ],
+            [
+              2336.5,
+              956.5
+            ],
+            [
+              2336.5,
+              936.5
+            ],
+            [
+              2326.5,
+              936.5
+            ],
+            [
+              2326.5,
+              916.5
+            ],
+            [
+              2316.5,
+              916.5
+            ],
+            [
+              2316.5,
+              896.5
+            ],
+            [
+              2306.5,
+              896.5
+            ],
+            [
+              2306.5,
+              876.5
+            ],
+            [
+              2296.5,
+              876.5
+            ],
+            [
+              2296.5,
+              866.5
+            ],
+            [
+              2286.5,
+              866.5
+            ],
+            [
+              2286.5,
+              856.5
+            ],
+            [
+              2276.5,
+              856.5
+            ],
+            [
+              2276.5,
+              846.5
+            ],
+            [
+              2266.5,
+              846.5
+            ],
+            [
+              2266.5,
+              836.5
+            ],
+            [
+              2256.5,
+              836.5
+            ],
+            [
+              2256.5,
+              826.5
+            ],
+            [
+              2246.5,
+              826.5
+            ],
+            [
+              2246.5,
+              816.5
+            ],
+            [
+              2226.5,
+              816.5
+            ],
+            [
+              2226.5,
+              806.5
+            ],
+            [
+              2216.5,
+              806.5
+            ],
+            [
+              2216.5,
+              796.5
+            ],
+            [
+              2196.5,
+              796.5
+            ],
+            [
+              2196.5,
+              786.5
+            ],
+            [
+              2176.5,
+              786.5
+            ],
+            [
+              2176.5,
+              776.5
+            ],
+            [
+              2156.5,
+              776.5
+            ],
+            [
+              2156.5,
+              766.5
+            ],
+            [
+              2116.5,
+              766.5
+            ],
+            [
+              2116.5,
+              756.5
+            ],
+            [
+              1575,
+              756.5
+            ]
+          ],
+          "minimumReserve": 5.111864731609558,
+          "controlling": {
+            "obstacle": "bed2",
+            "segment": 15
+          }
+        },
+        "wardrobe": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              3885,
+              2275
+            ],
+            [
+              3885,
+              2266.5
+            ],
+            [
+              3716.5,
+              2266.5
+            ],
+            [
+              3716.5,
+              1506.5
+            ],
+            [
+              3713,
+              1506.5
+            ],
+            [
+              3713,
+              1500
+            ]
+          ],
+          "minimumReserve": 26.5,
+          "controlling": {
+            "obstacle": "bed2-wardrobe",
+            "segment": 2
+          }
+        },
+        "southWindow1800": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              3885,
+              2275
+            ],
+            [
+              3885,
+              2266.5
+            ],
+            [
+              3616.5,
+              2266.5
+            ],
+            [
+              3616.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2256.5
+            ],
+            [
+              3596.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2246.5
+            ],
+            [
+              3576.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2236.5
+            ],
+            [
+              3536.5,
+              2226.5
+            ],
+            [
+              2356.5,
+              2226.5
+            ],
+            [
+              2356.5,
+              986.5
+            ],
+            [
+              2346.5,
+              986.5
+            ],
+            [
+              2346.5,
+              956.5
+            ],
+            [
+              2336.5,
+              956.5
+            ],
+            [
+              2336.5,
+              936.5
+            ],
+            [
+              2326.5,
+              936.5
+            ],
+            [
+              2326.5,
+              916.5
+            ],
+            [
+              2316.5,
+              916.5
+            ],
+            [
+              2316.5,
+              896.5
+            ],
+            [
+              2306.5,
+              896.5
+            ],
+            [
+              2306.5,
+              876.5
+            ],
+            [
+              2296.5,
+              876.5
+            ],
+            [
+              2296.5,
+              866.5
+            ],
+            [
+              2286.5,
+              866.5
+            ],
+            [
+              2286.5,
+              856.5
+            ],
+            [
+              2276.5,
+              856.5
+            ],
+            [
+              2276.5,
+              846.5
+            ],
+            [
+              2266.5,
+              846.5
+            ],
+            [
+              2266.5,
+              836.5
+            ],
+            [
+              2256.5,
+              836.5
+            ],
+            [
+              2256.5,
+              826.5
+            ],
+            [
+              2246.5,
+              826.5
+            ],
+            [
+              2246.5,
+              816.5
+            ],
+            [
+              2226.5,
+              816.5
+            ],
+            [
+              2226.5,
+              806.5
+            ],
+            [
+              2216.5,
+              806.5
+            ],
+            [
+              2216.5,
+              796.5
+            ],
+            [
+              2196.5,
+              796.5
+            ],
+            [
+              2196.5,
+              786.5
+            ],
+            [
+              2176.5,
+              786.5
+            ],
+            [
+              2176.5,
+              776.5
+            ],
+            [
+              2156.5,
+              776.5
+            ],
+            [
+              2156.5,
+              766.5
+            ],
+            [
+              2116.5,
+              766.5
+            ],
+            [
+              2116.5,
+              756.5
+            ],
+            [
+              1800,
+              756.5
+            ]
+          ],
+          "minimumReserve": 5.111864731609558,
+          "controlling": {
+            "obstacle": "bed2",
+            "segment": 15
+          }
+        },
+        "southWindow3900": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              3885,
+              2275
+            ],
+            [
+              3885,
+              2266.5
+            ],
+            [
+              3736.5,
+              2266.5
+            ],
+            [
+              3736.5,
+              986.5
+            ],
+            [
+              3746.5,
+              986.5
+            ],
+            [
+              3746.5,
+              956.5
+            ],
+            [
+              3756.5,
+              956.5
+            ],
+            [
+              3756.5,
+              936.5
+            ],
+            [
+              3766.5,
+              936.5
+            ],
+            [
+              3766.5,
+              916.5
+            ],
+            [
+              3776.5,
+              916.5
+            ],
+            [
+              3776.5,
+              896.5
+            ],
+            [
+              3786.5,
+              896.5
+            ],
+            [
+              3786.5,
+              886.5
+            ],
+            [
+              3796.5,
+              886.5
+            ],
+            [
+              3796.5,
+              866.5
+            ],
+            [
+              3806.5,
+              866.5
+            ],
+            [
+              3806.5,
+              856.5
+            ],
+            [
+              3816.5,
+              856.5
+            ],
+            [
+              3816.5,
+              846.5
+            ],
+            [
+              3826.5,
+              846.5
+            ],
+            [
+              3826.5,
+              836.5
+            ],
+            [
+              3836.5,
+              836.5
+            ],
+            [
+              3836.5,
+              826.5
+            ],
+            [
+              3846.5,
+              826.5
+            ],
+            [
+              3846.5,
+              766.5
+            ],
+            [
+              3850,
+              766.5
+            ],
+            [
+              3850,
+              756.5
+            ]
+          ],
+          "minimumReserve": 5.815712480572188,
+          "controlling": {
+            "obstacle": "bed2-wardrobe",
+            "segment": 13
+          }
+        },
+        "hallToOpen": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              3500,
+              3485
+            ],
+            [
+              3500,
+              3476.5
+            ],
+            [
+              3816.5,
+              3476.5
+            ],
+            [
+              3816.5,
+              2546.5
+            ],
+            [
+              3806.5,
+              2546.5
+            ],
+            [
+              3806.5,
+              2506.5
+            ],
+            [
+              3796.5,
+              2506.5
+            ],
+            [
+              3796.5,
+              2476.5
+            ],
+            [
+              3786.5,
+              2476.5
+            ],
+            [
+              3786.5,
+              2456.5
+            ],
+            [
+              3776.5,
+              2456.5
+            ],
+            [
+              3776.5,
+              2426.5
+            ],
+            [
+              3766.5,
+              2426.5
+            ],
+            [
+              3766.5,
+              2396.5
+            ],
+            [
+              3756.5,
+              2396.5
+            ],
+            [
+              3756.5,
+              2366.5
+            ],
+            [
+              3746.5,
+              2366.5
+            ],
+            [
+              3746.5,
+              2346.5
+            ],
+            [
+              3736.5,
+              2346.5
+            ],
+            [
+              3736.5,
+              2316.5
+            ],
+            [
+              3726.5,
+              2316.5
+            ],
+            [
+              3726.5,
+              2286.5
+            ],
+            [
+              3716.5,
+              2286.5
+            ],
+            [
+              3716.5,
+              2256.5
+            ],
+            [
+              3706.5,
+              2256.5
+            ],
+            [
+              3706.5,
+              2236.5
+            ],
+            [
+              3696.5,
+              2236.5
+            ],
+            [
+              3696.5,
+              2206.5
+            ],
+            [
+              3686.5,
+              2206.5
+            ],
+            [
+              3686.5,
+              2176.5
+            ],
+            [
+              3676.5,
+              2176.5
+            ],
+            [
+              3676.5,
+              2146.5
+            ],
+            [
+              3666.5,
+              2146.5
+            ],
+            [
+              3666.5,
+              2126.5
+            ],
+            [
+              3656.5,
+              2126.5
+            ],
+            [
+              3656.5,
+              2096.5
+            ],
+            [
+              3646.5,
+              2096.5
+            ],
+            [
+              3646.5,
+              2066.5
+            ],
+            [
+              3636.5,
+              2066.5
+            ],
+            [
+              3636.5,
+              2036.5
+            ],
+            [
+              3626.5,
+              2036.5
+            ],
+            [
+              3626.5,
+              2016.5
+            ],
+            [
+              3616.5,
+              2016.5
+            ],
+            [
+              3616.5,
+              1986.5
+            ],
+            [
+              3606.5,
+              1986.5
+            ],
+            [
+              3606.5,
+              1956.5
+            ],
+            [
+              3596.5,
+              1956.5
+            ],
+            [
+              3596.5,
+              1926.5
+            ],
+            [
+              3586.5,
+              1926.5
+            ],
+            [
+              3586.5,
+              1906.5
+            ],
+            [
+              3576.5,
+              1906.5
+            ],
+            [
+              3576.5,
+              1876.5
+            ],
+            [
+              3566.5,
+              1876.5
+            ],
+            [
+              3566.5,
+              1846.5
+            ],
+            [
+              3556.5,
+              1846.5
+            ],
+            [
+              3556.5,
+              1816.5
+            ],
+            [
+              3546.5,
+              1816.5
+            ],
+            [
+              3546.5,
+              1796.5
+            ],
+            [
+              3536.5,
+              1796.5
+            ],
+            [
+              3536.5,
+              1766.5
+            ],
+            [
+              3526.5,
+              1766.5
+            ],
+            [
+              3526.5,
+              1736.5
+            ],
+            [
+              3516.5,
+              1736.5
+            ],
+            [
+              3516.5,
+              1716.5
+            ],
+            [
+              3506.5,
+              1716.5
+            ],
+            [
+              3506.5,
+              1696.5
+            ],
+            [
+              3496.5,
+              1696.5
+            ],
+            [
+              3496.5,
+              1676.5
+            ],
+            [
+              3486.5,
+              1676.5
+            ],
+            [
+              3486.5,
+              1666.5
+            ],
+            [
+              3476.5,
+              1666.5
+            ],
+            [
+              3476.5,
+              1646.5
+            ],
+            [
+              3466.5,
+              1646.5
+            ],
+            [
+              3466.5,
+              1636.5
+            ],
+            [
+              3456.5,
+              1636.5
+            ],
+            [
+              3456.5,
+              1626.5
+            ],
+            [
+              3446.5,
+              1626.5
+            ],
+            [
+              3446.5,
+              1616.5
+            ],
+            [
+              3436.5,
+              1616.5
+            ],
+            [
+              3436.5,
+              1606.5
+            ],
+            [
+              3416.5,
+              1606.5
+            ],
+            [
+              3416.5,
+              1596.5
+            ],
+            [
+              3406.5,
+              1596.5
+            ],
+            [
+              3406.5,
+              1586.5
+            ],
+            [
+              3396.5,
+              1586.5
+            ],
+            [
+              3396.5,
+              1576.5
+            ],
+            [
+              3376.5,
+              1576.5
+            ],
+            [
+              3376.5,
+              1566.5
+            ],
+            [
+              3356.5,
+              1566.5
+            ],
+            [
+              3356.5,
+              1556.5
+            ],
+            [
+              3326.5,
+              1556.5
+            ],
+            [
+              3326.5,
+              1546.5
+            ],
+            [
+              3276.5,
+              1546.5
+            ],
+            [
+              3276.5,
+              1536.5
+            ],
+            [
+              2866.5,
+              1536.5
+            ],
+            [
+              2866.5,
+              1956.5
+            ],
+            [
+              2876.5,
+              1956.5
+            ],
+            [
+              2876.5,
+              2006.5
+            ],
+            [
+              2886.5,
+              2006.5
+            ],
+            [
+              2886.5,
+              2026.5
+            ],
+            [
+              2896.5,
+              2026.5
+            ],
+            [
+              2896.5,
+              2056.5
+            ],
+            [
+              2906.5,
+              2056.5
+            ],
+            [
+              2906.5,
+              2086.5
+            ],
+            [
+              2916.5,
+              2086.5
+            ],
+            [
+              2916.5,
+              2116.5
+            ],
+            [
+              2926.5,
+              2116.5
+            ],
+            [
+              2926.5,
+              2206.5
+            ],
+            [
+              2927.4031812098833,
+              2206.5
+            ],
+            [
+              2927.4031812098833,
+              2214.4419812755805
+            ]
+          ],
+          "minimumReserve": 5.0377748304806005,
+          "controlling": {
+            "obstacle": "own-front-door-OPEN",
+            "segment": 99
+          }
+        }
+      },
+      "ordinaryPass": true,
+      "scope": "BothBed2sides; Bed3ordinaryEASTprimary/foot/lowerWESTonly. Old simultaneoustwo600claim superseded explicitly."
+    },
+    {
+      "room": "bed3",
+      "completeFrame": [
+        9942.5,
+        1518,
+        950,
+        2055
+      ],
+      "door": {
+        "hinge": [
+          9115,
+          2650
+        ],
+        "leaf": [
+          830,
+          44
+        ],
+        "frameEach": 25,
+        "gapEach": 10,
+        "rotationDegrees": 90,
+        "handleAlong": 780,
+        "handleFaceOffset": 84,
+        "closedBody": [
+          8765,
+          2250
+        ],
+        "openedBody": [
+          9515,
+          2300
+        ],
+        "continuousBodyLowerBound": 6.055567583041394,
+        "continuousArmLowerBound": 19.0636232951838,
+        "continuousLeafFixedLowerBound": 47.637844180211175,
+        "continuousReachUpperBound": 534.1995576148372,
+        "pass": true,
+        "scope": "New actual complete-frame/27+18 witness. Ownhost/ownframe intended leafcontact excepted; actual classified hinges/frame/force not admitted."
+      },
+      "paths": {
+        "primaryEastLower": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8765,
+              2250
+            ],
+            [
+              8765,
+              2246.5
+            ],
+            [
+              9026.5,
+              2246.5
+            ],
+            [
+              9026.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2226.5
+            ],
+            [
+              9636.5,
+              2226.5
+            ],
+            [
+              9636.5,
+              1436.5
+            ],
+            [
+              9646.5,
+              1436.5
+            ],
+            [
+              9646.5,
+              1406.5
+            ],
+            [
+              9656.5,
+              1406.5
+            ],
+            [
+              9656.5,
+              1386.5
+            ],
+            [
+              9666.5,
+              1386.5
+            ],
+            [
+              9666.5,
+              1366.5
+            ],
+            [
+              9676.5,
+              1366.5
+            ],
+            [
+              9676.5,
+              1346.5
+            ],
+            [
+              9686.5,
+              1346.5
+            ],
+            [
+              9686.5,
+              1336.5
+            ],
+            [
+              9696.5,
+              1336.5
+            ],
+            [
+              9696.5,
+              1316.5
+            ],
+            [
+              9706.5,
+              1316.5
+            ],
+            [
+              9706.5,
+              1306.5
+            ],
+            [
+              9716.5,
+              1306.5
+            ],
+            [
+              9716.5,
+              1296.5
+            ],
+            [
+              9726.5,
+              1296.5
+            ],
+            [
+              9726.5,
+              1286.5
+            ],
+            [
+              9736.5,
+              1286.5
+            ],
+            [
+              9736.5,
+              1276.5
+            ],
+            [
+              9746.5,
+              1276.5
+            ],
+            [
+              9746.5,
+              1266.5
+            ],
+            [
+              9766.5,
+              1266.5
+            ],
+            [
+              9766.5,
+              1256.5
+            ],
+            [
+              9776.5,
+              1256.5
+            ],
+            [
+              9776.5,
+              1246.5
+            ],
+            [
+              9796.5,
+              1246.5
+            ],
+            [
+              9796.5,
+              1236.5
+            ],
+            [
+              9816.5,
+              1236.5
+            ],
+            [
+              9816.5,
+              1226.5
+            ],
+            [
+              9846.5,
+              1226.5
+            ],
+            [
+              9846.5,
+              1216.5
+            ],
+            [
+              9886.5,
+              1216.5
+            ],
+            [
+              9886.5,
+              1206.5
+            ],
+            [
+              11216.5,
+              1206.5
+            ],
+            [
+              11216.5,
+              2006.5
+            ],
+            [
+              11217.5,
+              2006.5
+            ],
+            [
+              11217.5,
+              2018
+            ]
+          ],
+          "minimumReserve": 5.601865177554146,
+          "controlling": {
+            "obstacle": "bed3-north-main+18trim",
+            "segment": 3
+          }
+        },
+        "primaryEastHead": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8765,
+              2250
+            ],
+            [
+              8765,
+              2246.5
+            ],
+            [
+              9026.5,
+              2246.5
+            ],
+            [
+              9026.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2226.5
+            ],
+            [
+              9636.5,
+              2226.5
+            ],
+            [
+              9636.5,
+              1436.5
+            ],
+            [
+              9646.5,
+              1436.5
+            ],
+            [
+              9646.5,
+              1406.5
+            ],
+            [
+              9656.5,
+              1406.5
+            ],
+            [
+              9656.5,
+              1386.5
+            ],
+            [
+              9666.5,
+              1386.5
+            ],
+            [
+              9666.5,
+              1366.5
+            ],
+            [
+              9676.5,
+              1366.5
+            ],
+            [
+              9676.5,
+              1346.5
+            ],
+            [
+              9686.5,
+              1346.5
+            ],
+            [
+              9686.5,
+              1336.5
+            ],
+            [
+              9696.5,
+              1336.5
+            ],
+            [
+              9696.5,
+              1316.5
+            ],
+            [
+              9706.5,
+              1316.5
+            ],
+            [
+              9706.5,
+              1306.5
+            ],
+            [
+              9716.5,
+              1306.5
+            ],
+            [
+              9716.5,
+              1296.5
+            ],
+            [
+              9726.5,
+              1296.5
+            ],
+            [
+              9726.5,
+              1286.5
+            ],
+            [
+              9736.5,
+              1286.5
+            ],
+            [
+              9736.5,
+              1276.5
+            ],
+            [
+              9746.5,
+              1276.5
+            ],
+            [
+              9746.5,
+              1266.5
+            ],
+            [
+              9766.5,
+              1266.5
+            ],
+            [
+              9766.5,
+              1256.5
+            ],
+            [
+              9776.5,
+              1256.5
+            ],
+            [
+              9776.5,
+              1246.5
+            ],
+            [
+              9796.5,
+              1246.5
+            ],
+            [
+              9796.5,
+              1236.5
+            ],
+            [
+              9816.5,
+              1236.5
+            ],
+            [
+              9816.5,
+              1226.5
+            ],
+            [
+              9846.5,
+              1226.5
+            ],
+            [
+              9846.5,
+              1216.5
+            ],
+            [
+              9886.5,
+              1216.5
+            ],
+            [
+              9886.5,
+              1206.5
+            ],
+            [
+              11216.5,
+              1206.5
+            ],
+            [
+              11216.5,
+              3206.5
+            ],
+            [
+              11217.5,
+              3206.5
+            ],
+            [
+              11217.5,
+              3218
+            ]
+          ],
+          "minimumReserve": 5.601865177554146,
+          "controlling": {
+            "obstacle": "bed3-north-main+18trim",
+            "segment": 3
+          }
+        },
+        "westLowerOnly": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8765,
+              2250
+            ],
+            [
+              8765,
+              2246.5
+            ],
+            [
+              9026.5,
+              2246.5
+            ],
+            [
+              9026.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2226.5
+            ],
+            [
+              9616.5,
+              2226.5
+            ],
+            [
+              9616.5,
+              2026.5
+            ],
+            [
+              9617.5,
+              2026.5
+            ],
+            [
+              9617.5,
+              2018
+            ]
+          ],
+          "minimumReserve": 5.601865177554146,
+          "controlling": {
+            "obstacle": "bed3-north-main+18trim",
+            "segment": 3
+          }
+        },
+        "foot": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8765,
+              2250
+            ],
+            [
+              8765,
+              2246.5
+            ],
+            [
+              9026.5,
+              2246.5
+            ],
+            [
+              9026.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2226.5
+            ],
+            [
+              9636.5,
+              2226.5
+            ],
+            [
+              9636.5,
+              1436.5
+            ],
+            [
+              9646.5,
+              1436.5
+            ],
+            [
+              9646.5,
+              1406.5
+            ],
+            [
+              9656.5,
+              1406.5
+            ],
+            [
+              9656.5,
+              1386.5
+            ],
+            [
+              9666.5,
+              1386.5
+            ],
+            [
+              9666.5,
+              1366.5
+            ],
+            [
+              9676.5,
+              1366.5
+            ],
+            [
+              9676.5,
+              1346.5
+            ],
+            [
+              9686.5,
+              1346.5
+            ],
+            [
+              9686.5,
+              1336.5
+            ],
+            [
+              9696.5,
+              1336.5
+            ],
+            [
+              9696.5,
+              1316.5
+            ],
+            [
+              9706.5,
+              1316.5
+            ],
+            [
+              9706.5,
+              1306.5
+            ],
+            [
+              9716.5,
+              1306.5
+            ],
+            [
+              9716.5,
+              1296.5
+            ],
+            [
+              9726.5,
+              1296.5
+            ],
+            [
+              9726.5,
+              1286.5
+            ],
+            [
+              9736.5,
+              1286.5
+            ],
+            [
+              9736.5,
+              1276.5
+            ],
+            [
+              9746.5,
+              1276.5
+            ],
+            [
+              9746.5,
+              1266.5
+            ],
+            [
+              9766.5,
+              1266.5
+            ],
+            [
+              9766.5,
+              1256.5
+            ],
+            [
+              9776.5,
+              1256.5
+            ],
+            [
+              9776.5,
+              1246.5
+            ],
+            [
+              9796.5,
+              1246.5
+            ],
+            [
+              9796.5,
+              1236.5
+            ],
+            [
+              9816.5,
+              1236.5
+            ],
+            [
+              9816.5,
+              1226.5
+            ],
+            [
+              9846.5,
+              1226.5
+            ],
+            [
+              9846.5,
+              1216.5
+            ],
+            [
+              9886.5,
+              1216.5
+            ],
+            [
+              9886.5,
+              1206.5
+            ],
+            [
+              10406.5,
+              1206.5
+            ],
+            [
+              10406.5,
+              1196.5
+            ],
+            [
+              10417.5,
+              1196.5
+            ],
+            [
+              10417.5,
+              1193
+            ]
+          ],
+          "minimumReserve": 5.601865177554146,
+          "controlling": {
+            "obstacle": "bed3-north-main+18trim",
+            "segment": 3
+          }
+        },
+        "wardrobe": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8765,
+              2250
+            ],
+            [
+              8765,
+              2246.5
+            ],
+            [
+              8376.5,
+              2246.5
+            ],
+            [
+              8376.5,
+              2236.5
+            ],
+            [
+              8336.5,
+              2236.5
+            ],
+            [
+              8336.5,
+              2226.5
+            ],
+            [
+              8296.5,
+              2226.5
+            ],
+            [
+              8296.5,
+              1706.5
+            ],
+            [
+              8287,
+              1706.5
+            ],
+            [
+              8287,
+              1700
+            ]
+          ],
+          "minimumReserve": 6.258877422353237,
+          "controlling": {
+            "obstacle": "bed3-north-main+18trim",
+            "segment": 3
+          }
+        },
+        "southWindow8100": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8765,
+              2250
+            ],
+            [
+              8765,
+              2246.5
+            ],
+            [
+              8376.5,
+              2246.5
+            ],
+            [
+              8376.5,
+              2236.5
+            ],
+            [
+              8336.5,
+              2236.5
+            ],
+            [
+              8336.5,
+              2226.5
+            ],
+            [
+              8266.5,
+              2226.5
+            ],
+            [
+              8266.5,
+              986.5
+            ],
+            [
+              8256.5,
+              986.5
+            ],
+            [
+              8256.5,
+              946.5
+            ],
+            [
+              8246.5,
+              946.5
+            ],
+            [
+              8246.5,
+              916.5
+            ],
+            [
+              8236.5,
+              916.5
+            ],
+            [
+              8236.5,
+              896.5
+            ],
+            [
+              8226.5,
+              896.5
+            ],
+            [
+              8226.5,
+              886.5
+            ],
+            [
+              8216.5,
+              886.5
+            ],
+            [
+              8216.5,
+              866.5
+            ],
+            [
+              8206.5,
+              866.5
+            ],
+            [
+              8206.5,
+              856.5
+            ],
+            [
+              8196.5,
+              856.5
+            ],
+            [
+              8196.5,
+              846.5
+            ],
+            [
+              8186.5,
+              846.5
+            ],
+            [
+              8186.5,
+              826.5
+            ],
+            [
+              8176.5,
+              826.5
+            ],
+            [
+              8176.5,
+              816.5
+            ],
+            [
+              8156.5,
+              816.5
+            ],
+            [
+              8156.5,
+              806.5
+            ],
+            [
+              8146.5,
+              806.5
+            ],
+            [
+              8146.5,
+              796.5
+            ],
+            [
+              8136.5,
+              796.5
+            ],
+            [
+              8136.5,
+              786.5
+            ],
+            [
+              8116.5,
+              786.5
+            ],
+            [
+              8116.5,
+              776.5
+            ],
+            [
+              8106.5,
+              776.5
+            ],
+            [
+              8106.5,
+              766.5
+            ],
+            [
+              8100,
+              766.5
+            ],
+            [
+              8100,
+              756.5
+            ]
+          ],
+          "minimumReserve": 5.07581025050149,
+          "controlling": {
+            "obstacle": "bed3-wardrobe",
+            "segment": 21
+          }
+        },
+        "southWindow10200": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8765,
+              2250
+            ],
+            [
+              8765,
+              2246.5
+            ],
+            [
+              9026.5,
+              2246.5
+            ],
+            [
+              9026.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2226.5
+            ],
+            [
+              9636.5,
+              2226.5
+            ],
+            [
+              9636.5,
+              1436.5
+            ],
+            [
+              9646.5,
+              1436.5
+            ],
+            [
+              9646.5,
+              1406.5
+            ],
+            [
+              9656.5,
+              1406.5
+            ],
+            [
+              9656.5,
+              1386.5
+            ],
+            [
+              9666.5,
+              1386.5
+            ],
+            [
+              9666.5,
+              1366.5
+            ],
+            [
+              9676.5,
+              1366.5
+            ],
+            [
+              9676.5,
+              1346.5
+            ],
+            [
+              9686.5,
+              1346.5
+            ],
+            [
+              9686.5,
+              1336.5
+            ],
+            [
+              9696.5,
+              1336.5
+            ],
+            [
+              9696.5,
+              1316.5
+            ],
+            [
+              9706.5,
+              1316.5
+            ],
+            [
+              9706.5,
+              1306.5
+            ],
+            [
+              9716.5,
+              1306.5
+            ],
+            [
+              9716.5,
+              1296.5
+            ],
+            [
+              9726.5,
+              1296.5
+            ],
+            [
+              9726.5,
+              1286.5
+            ],
+            [
+              9736.5,
+              1286.5
+            ],
+            [
+              9736.5,
+              1276.5
+            ],
+            [
+              9746.5,
+              1276.5
+            ],
+            [
+              9746.5,
+              1266.5
+            ],
+            [
+              9766.5,
+              1266.5
+            ],
+            [
+              9766.5,
+              1256.5
+            ],
+            [
+              9776.5,
+              1256.5
+            ],
+            [
+              9776.5,
+              1246.5
+            ],
+            [
+              9796.5,
+              1246.5
+            ],
+            [
+              9796.5,
+              1236.5
+            ],
+            [
+              9816.5,
+              1236.5
+            ],
+            [
+              9816.5,
+              1226.5
+            ],
+            [
+              9846.5,
+              1226.5
+            ],
+            [
+              9846.5,
+              1216.5
+            ],
+            [
+              9886.5,
+              1216.5
+            ],
+            [
+              9886.5,
+              1206.5
+            ],
+            [
+              10196.5,
+              1206.5
+            ],
+            [
+              10196.5,
+              766.5
+            ],
+            [
+              10200,
+              766.5
+            ],
+            [
+              10200,
+              756.5
+            ]
+          ],
+          "minimumReserve": 5.601865177554146,
+          "controlling": {
+            "obstacle": "bed3-north-main+18trim",
+            "segment": 3
+          }
+        },
+        "eastWindow1800": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8765,
+              2250
+            ],
+            [
+              8765,
+              2246.5
+            ],
+            [
+              9026.5,
+              2246.5
+            ],
+            [
+              9026.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2226.5
+            ],
+            [
+              9636.5,
+              2226.5
+            ],
+            [
+              9636.5,
+              1436.5
+            ],
+            [
+              9646.5,
+              1436.5
+            ],
+            [
+              9646.5,
+              1406.5
+            ],
+            [
+              9656.5,
+              1406.5
+            ],
+            [
+              9656.5,
+              1386.5
+            ],
+            [
+              9666.5,
+              1386.5
+            ],
+            [
+              9666.5,
+              1366.5
+            ],
+            [
+              9676.5,
+              1366.5
+            ],
+            [
+              9676.5,
+              1346.5
+            ],
+            [
+              9686.5,
+              1346.5
+            ],
+            [
+              9686.5,
+              1336.5
+            ],
+            [
+              9696.5,
+              1336.5
+            ],
+            [
+              9696.5,
+              1316.5
+            ],
+            [
+              9706.5,
+              1316.5
+            ],
+            [
+              9706.5,
+              1306.5
+            ],
+            [
+              9716.5,
+              1306.5
+            ],
+            [
+              9716.5,
+              1296.5
+            ],
+            [
+              9726.5,
+              1296.5
+            ],
+            [
+              9726.5,
+              1286.5
+            ],
+            [
+              9736.5,
+              1286.5
+            ],
+            [
+              9736.5,
+              1276.5
+            ],
+            [
+              9746.5,
+              1276.5
+            ],
+            [
+              9746.5,
+              1266.5
+            ],
+            [
+              9766.5,
+              1266.5
+            ],
+            [
+              9766.5,
+              1256.5
+            ],
+            [
+              9776.5,
+              1256.5
+            ],
+            [
+              9776.5,
+              1246.5
+            ],
+            [
+              9796.5,
+              1246.5
+            ],
+            [
+              9796.5,
+              1236.5
+            ],
+            [
+              9816.5,
+              1236.5
+            ],
+            [
+              9816.5,
+              1226.5
+            ],
+            [
+              9846.5,
+              1226.5
+            ],
+            [
+              9846.5,
+              1216.5
+            ],
+            [
+              9886.5,
+              1216.5
+            ],
+            [
+              9886.5,
+              1206.5
+            ],
+            [
+              11206.5,
+              1206.5
+            ],
+            [
+              11206.5,
+              1796.5
+            ],
+            [
+              11217.5,
+              1796.5
+            ],
+            [
+              11217.5,
+              1800
+            ]
+          ],
+          "minimumReserve": 5.601865177554146,
+          "controlling": {
+            "obstacle": "bed3-north-main+18trim",
+            "segment": 3
+          }
+        },
+        "hallToOpen": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8700,
+              3485
+            ],
+            [
+              8700,
+              3476.5
+            ],
+            [
+              8786.5,
+              3476.5
+            ],
+            [
+              8786.5,
+              1716.5
+            ],
+            [
+              8796.5,
+              1716.5
+            ],
+            [
+              8796.5,
+              1686.5
+            ],
+            [
+              8806.5,
+              1686.5
+            ],
+            [
+              8806.5,
+              1666.5
+            ],
+            [
+              8816.5,
+              1666.5
+            ],
+            [
+              8816.5,
+              1646.5
+            ],
+            [
+              8826.5,
+              1646.5
+            ],
+            [
+              8826.5,
+              1626.5
+            ],
+            [
+              8836.5,
+              1626.5
+            ],
+            [
+              8836.5,
+              1616.5
+            ],
+            [
+              8846.5,
+              1616.5
+            ],
+            [
+              8846.5,
+              1596.5
+            ],
+            [
+              8856.5,
+              1596.5
+            ],
+            [
+              8856.5,
+              1586.5
+            ],
+            [
+              8866.5,
+              1586.5
+            ],
+            [
+              8866.5,
+              1576.5
+            ],
+            [
+              8876.5,
+              1576.5
+            ],
+            [
+              8876.5,
+              1566.5
+            ],
+            [
+              8886.5,
+              1566.5
+            ],
+            [
+              8886.5,
+              1556.5
+            ],
+            [
+              8906.5,
+              1556.5
+            ],
+            [
+              8906.5,
+              1546.5
+            ],
+            [
+              8916.5,
+              1546.5
+            ],
+            [
+              8916.5,
+              1536.5
+            ],
+            [
+              8926.5,
+              1536.5
+            ],
+            [
+              8926.5,
+              1526.5
+            ],
+            [
+              8946.5,
+              1526.5
+            ],
+            [
+              8946.5,
+              1516.5
+            ],
+            [
+              8966.5,
+              1516.5
+            ],
+            [
+              8966.5,
+              1506.5
+            ],
+            [
+              8996.5,
+              1506.5
+            ],
+            [
+              8996.5,
+              1496.5
+            ],
+            [
+              9046.5,
+              1496.5
+            ],
+            [
+              9046.5,
+              1486.5
+            ],
+            [
+              9506.5,
+              1486.5
+            ],
+            [
+              9506.5,
+              2286.5
+            ],
+            [
+              9515,
+              2286.5
+            ],
+            [
+              9515,
+              2300
+            ]
+          ],
+          "minimumReserve": 5.064747225896269,
+          "controlling": {
+            "obstacle": "own-front-door-OPEN",
+            "segment": 35
+          }
+        }
+      },
+      "ordinaryPass": true,
+      "scope": "BothBed2sides; Bed3ordinaryEASTprimary/foot/lowerWESTonly. Old simultaneoustwo600claim superseded explicitly.",
+      "temporaryPaths": {
+        "westHead": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8765,
+              2250
+            ],
+            [
+              8765,
+              2246.5
+            ],
+            [
+              9026.5,
+              2246.5
+            ],
+            [
+              9026.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2226.5
+            ],
+            [
+              9746.5,
+              2226.5
+            ],
+            [
+              9746.5,
+              3206.5
+            ],
+            [
+              9750,
+              3206.5
+            ],
+            [
+              9750,
+              3218
+            ]
+          ],
+          "minimumReserve": 5.601865177554146,
+          "controlling": {
+            "obstacle": "bed3-north-main+18trim",
+            "segment": 3
+          }
+        },
+        "westLower": {
+          "pass": true,
+          "bodyRadius": 300,
+          "searchRadius": 305,
+          "points": [
+            [
+              8765,
+              2250
+            ],
+            [
+              8765,
+              2246.5
+            ],
+            [
+              9026.5,
+              2246.5
+            ],
+            [
+              9026.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2236.5
+            ],
+            [
+              9066.5,
+              2226.5
+            ],
+            [
+              9746.5,
+              2226.5
+            ],
+            [
+              9746.5,
+              2026.5
+            ],
+            [
+              9750,
+              2026.5
+            ],
+            [
+              9750,
+              2018
+            ]
+          ],
+          "minimumReserve": 5.601865177554146,
+          "controlling": {
+            "obstacle": "bed3-north-main+18trim",
+            "segment": 3
+          }
+        }
+      },
+      "completeMovement": {
+        "translation": [
+          132.5,
+          0
+        ],
+        "swept": [
+          9942.5,
+          1518,
+          1082.5,
+          2055
+        ],
+        "conflicts": [],
+        "operatorBodyFrom": [
+          10417.5,
+          1178
+        ],
+        "operatorBodyTo": [
+          10550,
+          1178
+        ],
+        "scope": "Wholeframe sweep/footoperator plan, reversible forrestoration. No casters/friction/force/realhuman/plywoodmaterial approval inferred."
+      },
+      "temporaryPass": true
+    }
+  ],
   "windowRequirements": [
     {
       "level": "GROUND",
@@ -3865,11 +8003,13 @@
     "scope": "Finite authored plot reservation, not a compliant access design or available site. Guards, edge protection, turning/door/approach geometry and actual access category remain to qualify. Court/loggia not credited as protected final exit."
   },
   "exterior": {
-    "eaves": 6800,
-    "ridge": 7790.903773579372,
-    "eavesAboveAuthoredGrade": 8100,
-    "ridgeAboveAuthoredGrade": 9090.903773579372,
-    "source": "Retains HAD furnished-design visual roof geometry:2125inset/25degree inward-outward ring, not actual roof/support/collection proof.",
+    "eaves": 7100,
+    "ridge": 8090.903773579372,
+    "eavesAboveAuthoredGrade": 8400,
+    "ridgeAboveAuthoredGrade": 9390.903773579372,
+    "overhang": 200,
+    "physicalOuterEdge": 7006.738468369001,
+    "source": "Explicit+300eavesdatum rewind from6800;25degree/2125inset/200overhang retained. Material/support/ROFRWTadoption not claimed.",
     "palette": "Warm mineral masonry, quiet pale opening family, dark pitched ring roof; locally rendered insulated loggia arches are a visible material/shape rewind."
   },
   "qualityCosts": {
@@ -3887,14 +8027,70 @@
       "method": "Exact clipped rectangle union inside12×12shell; excludes outer417.5 walls, full court+wall rectangle, stair footprint, internal wall rectangles/holes, new outside loggia and fixed receivers/post. Furniture not subtracted. Ground entrance doubleheight has a floor; not a void. Comparison includes new protected walls/support footprints, so loss is not solely loggia."
     }
   },
+  "roofDevelopment": {
+    "eavesDatum": 7100,
+    "pitch": 25,
+    "ridgeInset": 2125,
+    "overhang": 200,
+    "normalLayers": [
+      [
+        "primary",
+        80
+      ],
+      [
+        "lowerBoards",
+        24
+      ],
+      [
+        "metalAVCL",
+        1
+      ],
+      [
+        "bareCellularGlass",
+        320
+      ],
+      [
+        "breather",
+        1
+      ],
+      [
+        "ventCounterrail",
+        50
+      ],
+      [
+        "openBoards",
+        24
+      ],
+      [
+        "zinc",
+        0.7
+      ]
+    ],
+    "totalNormal": 500.7,
+    "totalVertical": 552.4613240245196,
+    "rafterCentreAtOuterCore": 6746.721,
+    "tieBounds": [
+      6721.721,
+      6771.721
+    ],
+    "purlinLowest": 6658.45,
+    "protectedCeiling": {
+      "top": 6620,
+      "bottom": 6444,
+      "total": 176,
+      "scope": "Actualprotectedcirculation/stair/entrancevoid only; ordinaryprivateceilings not automatically176."
+    },
+    "purlinToCeilingTop": 38.45,
+    "scope": "One fullrecipe geometry; actual200overhang/reactions, supportjunctions, material/fire/thermal/ROFRWTqualification remainexplicit. No freeatticstorage."
+  },
   "wholeHouseFit": {
     "listedProxyPass": true,
-    "footprintPass": false,
+    "footprintPass": true,
     "pass": false,
     "remaining": [
-      "Resolve all recorded whole furniture/wall overlaps, including frontheads.",
-      "Rebind actual front-single door/closed-room paths after complete finish/frame correction.",
-      "Join IAS familydoor arm/regrip and all wet30 boundary patches."
+      "Bind the final IAS600reach familydoor release/wait/closer proof; manual regrip was rejected.",
+      "Join actual whole-house services/emitter territories and fan renewal fields.",
+      "Reconcile final775portal/tie2200/roof7100 source with STR/MAT."
     ],
     "scope": "No actual product/force/material/fire/physical certification is made a substitute for these internal geometry corrections."
   }
