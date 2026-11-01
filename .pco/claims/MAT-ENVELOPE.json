@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 13,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "814b6dcb-3d75-4eb4-9063-b6f39846bdeb",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-six-roof"
   },
   "claimedAt": "2026-11-01T15:15:13.602Z",
-  "heartbeatAt": "2026-11-01T15:49:18.389Z",
-  "expiresAt": "2026-11-01T16:34:18.389Z",
+  "heartbeatAt": "2026-11-01T15:51:11.543Z",
+  "expiresAt": "2026-11-01T15:51:11.543Z",
   "branch": "work/zerg-final-integration-20261101",
   "predecessor": {
     "leaseId": "a0c5a0df-62b2-47dc-b1c9-147075dead28",
@@ -34,5 +34,7 @@
     "evidence": "PR1224 merged1e7b2cbce408834ca3cbb91c286af37eda066829. Exact reviewed MAT dfea1516 and all3MATblobs verified on fresh main; original1222 auto-incorporated, both remote refs deleted. Full sharedCI41322417761 attempt2 passed; fresh MAT preflight15:46:21.034Z. MAT1100 updated with findings and remaining-work handoff; node remains planned.",
     "next": "Future worker must freshly dispatch: resolve actual roof wall-head/hip/valley, continuous ventilation, insulation-side protection, warm air/vapour joints and separated copper receiver; ground/floor moisture/gas and other envelope duties remain. Release current generation as handoff now; no new work in this session."
   },
-  "pr": 1224
+  "pr": 1224,
+  "releasedAt": "2026-11-01T15:51:11.543Z",
+  "releaseReason": "handoff"
 }
