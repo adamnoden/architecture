@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-METALS",
-  "generation": 16,
-  "state": "released",
-  "leaseId": "12e9e5ac-c75f-4035-bac1-7e0dd4252d62",
+  "generation": 17,
+  "state": "claimed",
+  "leaseId": "aeca7c76-d95c-45c0-95f0-35f23f713f3f",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6550189103"
+    "label": "issue-comment-6556032783"
   },
-  "claimedAt": "2026-10-31T22:50:47.000Z",
-  "heartbeatAt": "2026-10-31T23:00:40.000Z",
-  "expiresAt": "2026-10-31T23:00:40.000Z",
-  "branch": "work/mvb-chat-6550189103",
+  "claimedAt": "2026-11-01T09:20:43.000Z",
+  "heartbeatAt": "2026-11-01T09:20:43.000Z",
+  "expiresAt": "2026-11-01T10:05:43.000Z",
+  "branch": "work/mvb-chat-6556032783",
   "predecessor": {
-    "leaseId": "66f58601-32fa-4b7b-8b10-401db5e3471b",
-    "generation": 15,
-    "branch": "work/rwt-metal-leak-witness-20261031",
-    "pr": 1191,
+    "leaseId": "12e9e5ac-c75f-4035-bac1-7e0dd4252d62",
+    "generation": 16,
+    "branch": "work/mvb-chat-6550189103",
+    "pr": 1195,
     "checkpoint": {
-      "evidence": "PR1191 open, final head6965b841dfc01386b80639c69c94d69e4f443a8c; full exact-head PR CI41245931223 SUCCESS (health, PDFs, metadata, nomenclature). Three authored RWT source files, inspected SVG and current programme link preserved. Current main moved independently after last reconciliation and includes owner boundary service-lodge/raceway; source-side overlap checked absent; new rainwater/service separation is consistent. No physical leak/detection/capacity proof or RWT-METALS node completion.",
-      "next": "Reacquire fresh RWT-METALS lease for resumption, inspect latest main and PR1191, reconcile main changes, run exact-head CI, run repository-required canonical control:merge-check on capable GitHub-connected runner bound to fresh lease, then expected-head merge and verify accepted tree, release lease. Existing generation15 must not publish after release.",
-      "blocker": "Connector-only chat cannot run canonical publication preflight; CI packet-check is not a substitute. PR intentionally left unmerged. Actual protected setback, contact/backing, harmless leak/overflow destination, first leak observation and repair access remain unqualified."
+      "evidence": "Recovered PR1191 RWT sources into PR1195 head a424d1312d9ecb45b941c654af5b56bc048d4fe6 with current main ancestry.",
+      "next": "Pass full CI, run canonical merge-check with current lease and head, merge and close source PR1191."
     }
   },
   "recoverySource": {
-    "leaseId": "66f58601-32fa-4b7b-8b10-401db5e3471b",
-    "generation": 15,
-    "branch": "work/rwt-metal-leak-witness-20261031",
-    "pr": 1191,
+    "leaseId": "12e9e5ac-c75f-4035-bac1-7e0dd4252d62",
+    "generation": 16,
+    "branch": "work/mvb-chat-6550189103",
+    "pr": 1195,
     "checkpoint": {
-      "evidence": "PR1191 open, final head6965b841dfc01386b80639c69c94d69e4f443a8c; full exact-head PR CI41245931223 SUCCESS (health, PDFs, metadata, nomenclature). Three authored RWT source files, inspected SVG and current programme link preserved. Current main moved independently after last reconciliation and includes owner boundary service-lodge/raceway; source-side overlap checked absent; new rainwater/service separation is consistent. No physical leak/detection/capacity proof or RWT-METALS node completion.",
-      "next": "Reacquire fresh RWT-METALS lease for resumption, inspect latest main and PR1191, reconcile main changes, run exact-head CI, run repository-required canonical control:merge-check on capable GitHub-connected runner bound to fresh lease, then expected-head merge and verify accepted tree, release lease. Existing generation15 must not publish after release.",
-      "blocker": "Connector-only chat cannot run canonical publication preflight; CI packet-check is not a substitute. PR intentionally left unmerged. Actual protected setback, contact/backing, harmless leak/overflow destination, first leak observation and repair access remain unqualified."
+      "evidence": "Recovered PR1191 RWT sources into PR1195 head a424d1312d9ecb45b941c654af5b56bc048d4fe6 with current main ancestry.",
+      "next": "Pass full CI, run canonical merge-check with current lease and head, merge and close source PR1191."
     }
-  },
-  "pr": 1195,
-  "checkpoint": {
-    "evidence": "Recovered PR1191 RWT sources into PR1195 head a424d1312d9ecb45b941c654af5b56bc048d4fe6 with current main ancestry.",
-    "next": "Pass full CI, run canonical merge-check with current lease and head, merge and close source PR1191."
-  },
-  "releasedAt": "2026-10-31T23:00:40.000Z",
-  "releaseReason": "handoff"
+  }
 }
