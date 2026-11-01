@@ -9,8 +9,8 @@
     "label": "zerg-worker-six-roof"
   },
   "claimedAt": "2026-11-01T15:15:13.602Z",
-  "heartbeatAt": "2026-11-01T15:15:13.602Z",
-  "expiresAt": "2026-11-01T16:00:13.602Z",
+  "heartbeatAt": "2026-11-01T15:25:17.969Z",
+  "expiresAt": "2026-11-01T16:10:17.969Z",
   "branch": "work/zerg-mat-roof-20261101",
   "predecessor": {
     "leaseId": "a0c5a0df-62b2-47dc-b1c9-147075dead28",
@@ -29,5 +29,9 @@
       "evidence": "Pushed installed-glazing comparison, constituent O02 and programme link; DTA6/23-2441_V2 and ETA20/0048 reviewed with exact source counterevidence and bounded recommendation.",
       "next": "Independent exact-source review, correct any findings, then full exact-head CI and coordinator merge sequencing."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote cold-roof comparison and audit/programme links published; exact tree9d474bd68842d694f88a910b35dbb2f302268b6b. Complete layer-function comparison, source recipe discrepancy and located wall-head deficit internally challenged; repository integrity passed.",
+    "next": "Independent architectural/source review, exact-head full CI, fresh preflight and coordinator merge sequencing."
   }
 }
