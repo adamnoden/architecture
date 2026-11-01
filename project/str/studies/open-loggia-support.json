@@ -657,6 +657,11 @@
     "torsion_effective_area_mm2": 175000,
     "outer_link_torsion_plus_shear_ratio": 0.34533586762117346,
     "outer_link_provided_ratio": 0.5026548245743669,
+    "longitudinal_cage": "3H20 TOP +3H20 BOTTOM;2H12 on each side face;closed4legH8/100",
+    "torsion_longitudinal_total_required": 110.12360170982143,
+    "bottom_flexural_As_required": 798.4172406463512,
+    "bottom_corner_available_after_flexure_each": 72.03027771529338,
+    "torsion_corner_required_each": 27.530900427455357,
     "TRmax": 157.08000000000004,
     "V_T_strut_utilisation": 0.2439517697704081,
     "cap_envelope_bottom": -630,
@@ -701,16 +706,16 @@
     "soil_stiffness": null,
     "cap_adequacy": null,
     "masonry_DPC": "150 above grid top -180..-30 hypothesis; MAT moisture junction unqualified",
-    "target_D": 1200,
+    "target_D": 1300,
     "heave_stress": 300,
     "construction_loss": 50,
     "ventilation_comparator": 150,
-    "lowest_member": -650,
+    "lowest_member": -750,
     "raw_clearance_below_lowest_member": 550,
     "post_heave_and_loss": 200,
     "ventilation_surplus": 50,
     "cavity_route": "Drained tray above common beam; NOT225 clear cavity. MAT owns actual tray/weep return.",
-    "deck_cap_route": "Integral600 nodes stay within600 weatherbeam footprint. No900 cap islands; independent sloped deck retains25gap. Lowties top-450/bottom-650 pass below deck.",
+    "deck_cap_route": "Integral600 nodes stay within600 weatherbeam footprint. No900 cap islands; independent sloped deck retains25gap. Lowties top-550/bottom-750 pass below depresseddeck.",
     "actual_routes": [
       [
         "outer-W",
@@ -806,7 +811,7 @@
           4500,
           8852.5
         ],
-        250
+        600
       ],
       [
         "wet-wall-node-line",
@@ -818,7 +823,7 @@
           2902.5,
           11667.5
         ],
-        250
+        600
       ],
       [
         "stair-post-node-line",
@@ -830,7 +835,7 @@
           2942.5,
           8852.5
         ],
-        250
+        600
       ],
       [
         "stair-header-line",
@@ -842,7 +847,7 @@
           3950,
           4332.5
         ],
-        250
+        600
       ],
       [
         "court-W",
@@ -914,7 +919,7 @@
           9300,
           8290
         ],
-        250
+        600
       ],
       [
         "rear-E",
@@ -926,7 +931,151 @@
           11700,
           8290
         ],
-        250
+        600
+      ],
+      [
+        "actual-study-east",
+        [
+          4800,
+          332.5
+        ],
+        [
+          4800,
+          1200
+        ],
+        600
+      ],
+      [
+        "actual-cloak-east",
+        [
+          4800,
+          1200
+        ],
+        [
+          4800,
+          2650
+        ],
+        600
+      ],
+      [
+        "actual-cloak-west",
+        [
+          3400,
+          1200
+        ],
+        [
+          3400,
+          2650
+        ],
+        600
+      ],
+      [
+        "actual-cloak-south",
+        [
+          3400,
+          1200
+        ],
+        [
+          4800,
+          1200
+        ],
+        600
+      ],
+      [
+        "actual-study-cloak-north",
+        [
+          2817.5,
+          2650
+        ],
+        [
+          4800,
+          2650
+        ],
+        600
+      ],
+      [
+        "actual-study-L-return",
+        [
+          2817.5,
+          2650
+        ],
+        [
+          2817.5,
+          3247.5
+        ],
+        600
+      ],
+      [
+        "actual-study-L-north",
+        [
+          332.5,
+          3247.5
+        ],
+        [
+          2817.5,
+          3247.5
+        ],
+        600
+      ],
+      [
+        "actual-wc-west",
+        [
+          7200,
+          332.5
+        ],
+        [
+          7200,
+          2650
+        ],
+        600
+      ],
+      [
+        "actual-wc-north",
+        [
+          7200,
+          2650
+        ],
+        [
+          9300,
+          2650
+        ],
+        600
+      ],
+      [
+        "actual-utility-north",
+        [
+          9300,
+          2550
+        ],
+        [
+          11667.5,
+          2550
+        ],
+        600
+      ],
+      [
+        "actual-plant-intermediate-arch",
+        [
+          9300,
+          3700
+        ],
+        [
+          11667.5,
+          3700
+        ],
+        600
+      ],
+      [
+        "actual-plant-north",
+        [
+          9300,
+          6500
+        ],
+        [
+          11667.5,
+          6500
+        ],
+        600
       ]
     ],
     "actual_cap_nodes": [
@@ -1066,10 +1215,10 @@
       },
       {
         "xy": [
-          300.0,
-          300.0
+          300,
+          300
         ],
-        "source": "outer-S",
+        "source": "outer-W x outer-S",
         "point_ULS": 0,
         "cap_size": [
           600,
@@ -1087,6 +1236,12 @@
         ],
         "source": "outer-W",
         "point_ULS": 0,
+        "connected_nearby_axes": [
+          [
+            332.5,
+            3247.5
+          ]
+        ],
         "cap_size": [
           600,
           600
@@ -1136,10 +1291,10 @@
       },
       {
         "xy": [
-          300.0,
-          11700.0
+          300,
+          11700
         ],
-        "source": "outer-N-W",
+        "source": "outer-W x outer-N-W",
         "point_ULS": 0,
         "cap_size": [
           600,
@@ -1152,10 +1307,10 @@
       },
       {
         "xy": [
-          11700.0,
-          300.0
+          11700,
+          300
         ],
-        "source": "outer-S",
+        "source": "outer-E x outer-S",
         "point_ULS": 0,
         "cap_size": [
           600,
@@ -1216,10 +1371,10 @@
       },
       {
         "xy": [
-          11700.0,
-          11700.0
+          11700,
+          11700
         ],
-        "source": "outer-N-E",
+        "source": "outer-E x outer-N-E",
         "point_ULS": 0,
         "cap_size": [
           600,
@@ -1302,35 +1457,37 @@
       },
       {
         "xy": [
-          4500.0,
-          11700.0
+          4500,
+          11700
         ],
-        "source": "loggia-W",
+        "source": "outer-N-W x loggia-W",
         "point_ULS": 0,
         "cap_size": [
           600,
           600
         ],
         "top": -180,
-        "bottom": -630,
+        "bottom": -750,
         "outside_deck_notch_25": false,
-        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck. Local lowtie receiver extends to-750; barlayer/headclearance remains explicit.",
+        "local_depth": 570
       },
       {
         "xy": [
-          7500.0,
-          11700.0
+          7500,
+          11700
         ],
-        "source": "loggia-E",
+        "source": "outer-N-E x loggia-E",
         "point_ULS": 0,
         "cap_size": [
           600,
           600
         ],
         "top": -180,
-        "bottom": -630,
+        "bottom": -750,
         "outside_deck_notch_25": false,
-        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck. Local lowtie receiver extends to-750; barlayer/headclearance remains explicit.",
+        "local_depth": 570
       },
       {
         "xy": [
@@ -1350,19 +1507,20 @@
       },
       {
         "xy": [
-          4500.0,
-          8050.0
+          4500,
+          8050
         ],
-        "source": "court-N-W",
+        "source": "loggia-W x court-N-W",
         "point_ULS": 0,
         "cap_size": [
           600,
           600
         ],
         "top": -180,
-        "bottom": -630,
+        "bottom": -750,
         "outside_deck_notch_25": false,
-        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck. Local lowtie receiver extends to-750; barlayer/headclearance remains explicit.",
+        "local_depth": 570
       },
       {
         "xy": [
@@ -1382,10 +1540,10 @@
       },
       {
         "xy": [
-          7500.0,
-          8050.0
+          7500,
+          8050
         ],
-        "source": "court-N-E",
+        "source": "loggia-E x court-N-E",
         "point_ULS": 0,
         "connected_nearby_axes": [
           [
@@ -1398,9 +1556,10 @@
           600
         ],
         "top": -180,
-        "bottom": -630,
+        "bottom": -750,
         "outside_deck_notch_25": false,
-        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck. Local lowtie receiver extends to-750; barlayer/headclearance remains explicit.",
+        "local_depth": 570
       },
       {
         "xy": [
@@ -1436,10 +1595,10 @@
       },
       {
         "xy": [
-          4500.0,
+          4500,
           8852.5
         ],
-        "source": "rear-W",
+        "source": "loggia-W x rear-W",
         "point_ULS": 0,
         "cap_size": [
           600,
@@ -1455,7 +1614,7 @@
           2942.5,
           4332.5
         ],
-        "source": "stair-post-node-line",
+        "source": "stair-post-node-line x stair-header-line",
         "point_ULS": 0,
         "cap_size": [
           600,
@@ -1516,10 +1675,10 @@
       },
       {
         "xy": [
-          3950.0,
-          8050.0
+          3950,
+          8050
         ],
-        "source": "court-N-W",
+        "source": "court-W x court-N-W",
         "point_ULS": 0,
         "cap_size": [
           600,
@@ -1532,10 +1691,10 @@
       },
       {
         "xy": [
-          8050.0,
-          3950.0
+          8050,
+          3950
         ],
-        "source": "court-S",
+        "source": "court-E x court-S",
         "point_ULS": 0,
         "cap_size": [
           600,
@@ -1564,10 +1723,10 @@
       },
       {
         "xy": [
-          8050.0,
-          8050.0
+          8050,
+          8050
         ],
-        "source": "court-N-E",
+        "source": "court-E x court-N-E",
         "point_ULS": 0,
         "cap_size": [
           600,
@@ -1601,6 +1760,16 @@
         ],
         "source": "spine",
         "point_ULS": 0,
+        "connected_nearby_axes": [
+          [
+            9300.0,
+            2650.0
+          ],
+          [
+            9300.0,
+            2550.0
+          ]
+        ],
         "cap_size": [
           600,
           600
@@ -1628,10 +1797,10 @@
       },
       {
         "xy": [
-          9300.0,
-          8290.0
+          9300,
+          8290
         ],
-        "source": "spine",
+        "source": "spine x rear-E",
         "point_ULS": 0,
         "connected_nearby_axes": [
           [
@@ -1650,10 +1819,234 @@
       },
       {
         "xy": [
-          11700.0,
-          8290.0
+          11700,
+          8290
         ],
-        "source": "rear-E",
+        "source": "outer-E x rear-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          4800.0,
+          332.5
+        ],
+        "source": "actual-study-east",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          4800,
+          1200
+        ],
+        "source": "actual-cloak-east x actual-cloak-south",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          4800,
+          2650
+        ],
+        "source": "actual-cloak-east x actual-study-cloak-north",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          3400,
+          1200
+        ],
+        "source": "actual-cloak-west x actual-cloak-south",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          3400,
+          2650
+        ],
+        "source": "actual-cloak-west x actual-study-cloak-north",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          2817.5,
+          2650
+        ],
+        "source": "actual-study-cloak-north x actual-study-L-return",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          2817.5,
+          3247.5
+        ],
+        "source": "actual-study-L-return x actual-study-L-north",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          7200.0,
+          332.5
+        ],
+        "source": "actual-wc-west",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          7200,
+          2650
+        ],
+        "source": "actual-wc-west x actual-wc-north",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          11667.5,
+          2550.0
+        ],
+        "source": "actual-utility-north",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          9300,
+          3700
+        ],
+        "source": "spine x actual-plant-intermediate-arch",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          11667.5,
+          3700.0
+        ],
+        "source": "actual-plant-intermediate-arch",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          9300,
+          6500
+        ],
+        "source": "spine x actual-plant-north",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          11667.5,
+          6500.0
+        ],
+        "source": "actual-plant-north",
         "point_ULS": 0,
         "cap_size": [
           600,
@@ -1665,6 +2058,7 @@
         "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
       }
     ],
+    "width_reason": "Uniform600 prototype keeps all eight H22 pile starters inside real full-height arms; no hidden850mm development into250 or lowtie arms. This is a material/cost/thermal price, not an optimised site foundation.",
     "low_loggia_ties": [
       {
         "y": 8050,
@@ -1672,15 +2066,46 @@
           4500,
           7500
         ],
-        "top": -450,
-        "bottom": -650,
-        "section": [
-          250,
-          200
-        ],
-        "steel": "2H16 each face;H8/100",
+        "top": -550,
+        "bottom": -750,
+        "section": {
+          "b": 600,
+          "h": 200,
+          "d": 140,
+          "As": 942.4777960769379,
+          "cover": 40,
+          "x": 50.217273874517154,
+          "x_d": 0.35869481338940823,
+          "z": 119.91309045019314,
+          "MR": 49.13714139490111,
+          "VRdc": 65.092091531237,
+          "As_min": 126.67200000000001,
+          "ductility": true
+        },
+        "steel": "3H20 TOP+BOTTOM;4legH8/100",
+        "links": {
+          "diameter": 8,
+          "pitch": 100,
+          "VRs": 110.14697025455695,
+          "VRmax": 339.29280000000006,
+          "minimum_ratio": 0.5258136552049595,
+          "provided_ratio": 2.0106192982974678,
+          "maximum_pitch": 105.0
+        },
         "axial_action_ceiling": 100,
-        "gravity_wall_load": 0
+        "gravity_wall_load": 0,
+        "outdoor_deck_line_reaction": 27.890625,
+        "loaded_width": 2350,
+        "loaded_x": [
+          4825,
+          7175
+        ],
+        "M": 34.4602294921875,
+        "V": 38.846484375,
+        "As_combined_axial_flexure": 775.9664343940157,
+        "deck_bearing": "Finite100NS wide RC bearing rail on beam,top follows actualslabunderside;Cu liner carriesNO floor reaction.",
+        "depressed_soffit_lowest": -522.5,
+        "minimum_height_to_depressed_soffit": 27.5
       },
       {
         "y": 11700,
@@ -1688,15 +2113,46 @@
           4500,
           7500
         ],
-        "top": -450,
-        "bottom": -650,
-        "section": [
-          250,
-          200
-        ],
-        "steel": "2H16 each face;H8/100",
+        "top": -550,
+        "bottom": -750,
+        "section": {
+          "b": 600,
+          "h": 200,
+          "d": 140,
+          "As": 942.4777960769379,
+          "cover": 40,
+          "x": 50.217273874517154,
+          "x_d": 0.35869481338940823,
+          "z": 119.91309045019314,
+          "MR": 49.13714139490111,
+          "VRdc": 65.092091531237,
+          "As_min": 126.67200000000001,
+          "ductility": true
+        },
+        "steel": "3H20 TOP+BOTTOM;4legH8/100",
+        "links": {
+          "diameter": 8,
+          "pitch": 100,
+          "VRs": 110.14697025455695,
+          "VRmax": 339.29280000000006,
+          "minimum_ratio": 0.5258136552049595,
+          "provided_ratio": 2.0106192982974678,
+          "maximum_pitch": 105.0
+        },
         "axial_action_ceiling": 100,
-        "gravity_wall_load": 0
+        "gravity_wall_load": 0,
+        "outdoor_deck_line_reaction": 27.890625,
+        "loaded_width": 2350,
+        "loaded_x": [
+          4825,
+          7175
+        ],
+        "M": 34.4602294921875,
+        "V": 38.846484375,
+        "As_combined_axial_flexure": 775.9664343940157,
+        "deck_bearing": "Finite100NS wide RC bearing rail on beam,top follows actualslabunderside;Cu liner carriesNO floor reaction.",
+        "depressed_soffit_lowest": -522.5,
+        "minimum_height_to_depressed_soffit": 27.5
       }
     ]
   },
@@ -1715,40 +2171,833 @@
     "head_stress_MPa": 6.764085081405552,
     "concrete_node_limit_MPa": 8.976,
     "tie_demand_kN_each_direction": 385.1351351351351,
-    "bottom_steel_each_direction": "4H20, orthogonal layers",
-    "As_each_direction": 1256.6370614359173,
-    "tie_resistance_kN": 546.3639397547466,
+    "bottom_steel_each_direction": "5H20, orthogonal layers;60/110/300/490/540 positions",
+    "As_each_direction": 1570.7963267948967,
+    "tie_resistance_kN": 682.9549246934333,
     "continuous_straight_development_into_beam_arms": 750,
     "terminal_corner_mandrel": 330,
     "bottom_bar_positions_in_600": [
-      50,
-      150,
-      450,
-      550
+      60,
+      110,
+      300,
+      490,
+      540
     ],
     "pile_vertical_bar_centres": [
       [
-        200,
-        200
+        430.26701408409144,
+        353.95836396347767
       ],
       [
-        200,
-        400
+        353.95836396347767,
+        430.26701408409144
       ],
       [
-        400,
-        200
+        246.04163603652233,
+        430.26701408409144
       ],
       [
-        400,
-        400
+        169.73298591590856,
+        353.95836396347767
+      ],
+      [
+        169.73298591590856,
+        246.04163603652236
+      ],
+      [
+        246.0416360365224,
+        169.73298591590856
+      ],
+      [
+        353.95836396347767,
+        169.73298591590859
+      ],
+      [
+        430.26701408409144,
+        246.04163603652236
       ]
     ],
     "full_yield_bond_length_mm": 724.6376811594204,
     "available_straight_development_mm": 750,
     "footing_role": "Integral grillage node, not isolated cap: bars continue into actual beam arms; terminal corner cages and pilehead lateral/uplift remain explicit admission duties.",
     "per_bar_force_kN": 96.28378378378378,
-    "required_mandrel_mm": 254.86883942766295
+    "required_mandrel_mm": 254.86883942766295,
+    "pile_head_section": {
+      "diameter": 400,
+      "C": "C30",
+      "steel": "8H22 at22.5+45kdegrees;R141",
+      "concrete_law": "parabolic-rectangle;epsc2=.002,epscu=.0035;no tension",
+      "displaced_concrete_subtracted": true,
+      "sampled_N_domain": [
+        0,
+        850
+      ],
+      "sampled_curvature_angles": [
+        0,
+        45,
+        5
+      ],
+      "moment_vector_demand": [
+        100,
+        100
+      ],
+      "resultant_demand": 141.4213562373095,
+      "sampled_minimum_resultant": 152.5712231718726,
+      "samples": [
+        {
+          "N": -4.627509042620659e-12,
+          "Mx": 152.57122317187262,
+          "My": -1.3038516044616699e-14,
+          "curvature_angle": 0,
+          "c": 133.55666600364353,
+          "resultant": 152.57122317187262
+        },
+        {
+          "N": 3.536115400493145e-12,
+          "Mx": 152.26422616160832,
+          "My": 12.36614806791003,
+          "curvature_angle": 5,
+          "c": 133.79547007901812,
+          "resultant": 152.76555955656656
+        },
+        {
+          "N": -2.9103830456733705e-12,
+          "Mx": 151.38731559964415,
+          "My": 24.399969733194514,
+          "curvature_angle": 10,
+          "c": 134.65572205039305,
+          "resultant": 153.3410507576072
+        },
+        {
+          "N": 1.1088559404015541e-11,
+          "Mx": 149.46696968694513,
+          "My": 36.63515922165626,
+          "curvature_angle": 15,
+          "c": 135.69038984779056,
+          "resultant": 153.89122755568064
+        },
+        {
+          "N": 1.5425030142068862e-12,
+          "Mx": 144.2282838870584,
+          "My": 51.287034983387926,
+          "curvature_angle": 20,
+          "c": 135.36933826547966,
+          "resultant": 153.07566047674976
+        },
+        {
+          "N": 1.520675141364336e-12,
+          "Mx": 138.25020779914277,
+          "My": 65.71938735173214,
+          "curvature_angle": 25,
+          "c": 135.36933826547966,
+          "resultant": 153.07566047674976
+        },
+        {
+          "N": 1.1117663234472275e-11,
+          "Mx": 131.59407734452506,
+          "My": 79.78413831356099,
+          "curvature_angle": 30,
+          "c": 135.69038984779056,
+          "resultant": 153.89122755568062
+        },
+        {
+          "N": -2.8594513423740865e-12,
+          "Mx": 124.30038150522476,
+          "My": 89.79361338704803,
+          "curvature_angle": 35,
+          "c": 134.65572205039305,
+          "resultant": 153.3410507576072
+        },
+        {
+          "N": 3.441073204157874e-12,
+          "Mx": 116.41125400697148,
+          "My": 98.92287969501925,
+          "curvature_angle": 40,
+          "c": 133.79547007901812,
+          "resultant": 152.76555955656656
+        },
+        {
+          "N": -4.627509042620659e-12,
+          "Mx": 107.88414651875723,
+          "My": 107.8841465187572,
+          "curvature_angle": 45,
+          "c": 133.55666600364353,
+          "resultant": 152.5712231718726
+        },
+        {
+          "N": 50.000000000001194,
+          "Mx": 156.66245356677678,
+          "My": -7.450580596923828e-15,
+          "curvature_angle": 0,
+          "c": 138.0475871223109,
+          "resultant": 156.66245356677678
+        },
+        {
+          "N": 50.00000000000797,
+          "Mx": 156.3613832518605,
+          "My": 12.238678675946392,
+          "curvature_angle": 5,
+          "c": 138.33902955162364,
+          "resultant": 156.83962327220843
+        },
+        {
+          "N": 50.000000000001,
+          "Mx": 155.45422789893007,
+          "My": 24.21809398533717,
+          "curvature_angle": 10,
+          "c": 139.20574013971483,
+          "resultant": 157.32937757435866
+        },
+        {
+          "N": 50.00000000001054,
+          "Mx": 152.03197758427024,
+          "My": 37.88616071282494,
+          "curvature_angle": 15,
+          "c": 139.2262374572876,
+          "resultant": 156.68147108622017
+        },
+        {
+          "N": 50.00000000000236,
+          "Mx": 146.84399673844038,
+          "My": 52.433932435860505,
+          "curvature_angle": 20,
+          "c": 138.90188242601408,
+          "resultant": 155.92458641538053
+        },
+        {
+          "N": 50.000000000002366,
+          "Mx": 140.9107750599607,
+          "My": 66.75799668061222,
+          "curvature_angle": 25,
+          "c": 138.90188242601408,
+          "resultant": 155.92458641538056
+        },
+        {
+          "N": 50.0000000000107,
+          "Mx": 134.2924034602006,
+          "My": 80.71328115387676,
+          "curvature_angle": 30,
+          "c": 139.2262374572876,
+          "resultant": 156.6814710862202
+        },
+        {
+          "N": 50.000000000001094,
+          "Mx": 127.04751719589753,
+          "My": 92.7979602270074,
+          "curvature_angle": 35,
+          "c": 139.20574013971483,
+          "resultant": 157.32937757435872
+        },
+        {
+          "N": 50.00000000000779,
+          "Mx": 119.21824709762416,
+          "My": 101.91014172857433,
+          "curvature_angle": 40,
+          "c": 138.33902955162364,
+          "resultant": 156.83962327220848
+        },
+        {
+          "N": 50.000000000001094,
+          "Mx": 110.77708327439049,
+          "My": 110.77708327439049,
+          "curvature_angle": 45,
+          "c": 138.0475871223109,
+          "resultant": 156.66245356677678
+        },
+        {
+          "N": 100.00000000000286,
+          "Mx": 160.6747041220146,
+          "My": -1.1175870895385742e-14,
+          "curvature_angle": 0,
+          "c": 142.68397219082843,
+          "resultant": 160.6747041220146
+        },
+        {
+          "N": 100.00000000000242,
+          "Mx": 160.37972813468485,
+          "My": 12.102150537648685,
+          "curvature_angle": 5,
+          "c": 143.03877600368241,
+          "resultant": 160.8356902064692
+        },
+        {
+          "N": 100.0000000000091,
+          "Mx": 158.90952863140174,
+          "My": 24.58631333174112,
+          "curvature_angle": 10,
+          "c": 143.51976847662556,
+          "resultant": 160.80026459275757
+        },
+        {
+          "N": 100.00000000000513,
+          "Mx": 154.57751729446431,
+          "My": 39.12103193737051,
+          "curvature_angle": 15,
+          "c": 142.86933167277328,
+          "resultant": 159.45113355747955
+        },
+        {
+          "N": 99.99999999999842,
+          "Mx": 149.43851503932356,
+          "My": 53.56943057746342,
+          "curvature_angle": 20,
+          "c": 142.54393982297447,
+          "resultant": 158.74997218756232
+        },
+        {
+          "N": 99.9999999999984,
+          "Mx": 143.54829498037998,
+          "My": 67.78967972912716,
+          "curvature_angle": 25,
+          "c": 142.54393982297447,
+          "resultant": 158.74997218756235
+        },
+        {
+          "N": 100.00000000000517,
+          "Mx": 136.96555766782674,
+          "My": 81.64006372796631,
+          "curvature_angle": 30,
+          "c": 142.86933167277328,
+          "resultant": 159.45113355747952
+        },
+        {
+          "N": 100.00000000000922,
+          "Mx": 129.75115417167342,
+          "My": 94.98085640917063,
+          "curvature_angle": 35,
+          "c": 143.51976847662556,
+          "resultant": 160.8002645927576
+        },
+        {
+          "N": 100.00000000000242,
+          "Mx": 121.9631060410024,
+          "My": 104.84808061677874,
+          "curvature_angle": 40,
+          "c": 143.03877600368241,
+          "resultant": 160.8356902064692
+        },
+        {
+          "N": 100.00000000000286,
+          "Mx": 113.61417284981862,
+          "My": 113.61417284981862,
+          "curvature_angle": 45,
+          "c": 142.68397219082843,
+          "resultant": 160.67470412201456
+        },
+        {
+          "N": 149.99999999999326,
+          "Mx": 164.6081705764303,
+          "My": -4.656612873077393e-15,
+          "curvature_angle": 0,
+          "c": 147.50555333853953,
+          "resultant": 164.6081705764303
+        },
+        {
+          "N": 149.99999999999918,
+          "Mx": 164.304522133235,
+          "My": 11.979758843243237,
+          "curvature_angle": 5,
+          "c": 147.8785020793428,
+          "resultant": 164.7406768693542
+        },
+        {
+          "N": 150.0000000000055,
+          "Mx": 161.37720839509174,
+          "My": 25.891146231378432,
+          "curvature_angle": 10,
+          "c": 147.27496971696434,
+          "resultant": 163.44098275086176
+        },
+        {
+          "N": 149.99999999998798,
+          "Mx": 157.09820685378142,
+          "My": 40.338194368975415,
+          "curvature_angle": 15,
+          "c": 146.62191377186952,
+          "resultant": 162.19437882251881
+        },
+        {
+          "N": 150.000000000008,
+          "Mx": 152.0069330438596,
+          "My": 54.69145915248604,
+          "curvature_angle": 20,
+          "c": 146.29290360965106,
+          "resultant": 161.54647442029943
+        },
+        {
+          "N": 150.0000000000078,
+          "Mx": 146.15783478239254,
+          "My": 68.81243150297266,
+          "curvature_angle": 25,
+          "c": 146.29290360965106,
+          "resultant": 161.54647442029943
+        },
+        {
+          "N": 149.99999999998795,
+          "Mx": 139.60861815767936,
+          "My": 82.56179659943224,
+          "curvature_angle": 30,
+          "c": 146.62191377186952,
+          "resultant": 162.19437882251881
+        },
+        {
+          "N": 150.00000000000549,
+          "Mx": 132.41872345802426,
+          "My": 95.80311331222377,
+          "curvature_angle": 35,
+          "c": 147.27496971696434,
+          "resultant": 163.44098275086176
+        },
+        {
+          "N": 149.99999999999883,
+          "Mx": 124.65181049506248,
+          "My": 107.70987306498883,
+          "curvature_angle": 40,
+          "c": 147.8785020793428,
+          "resultant": 164.7406768693542
+        },
+        {
+          "N": 149.99999999999324,
+          "Mx": 116.39555365330581,
+          "My": 116.39555365330578,
+          "curvature_angle": 45,
+          "c": 147.50555333853953,
+          "resultant": 164.6081705764303
+        },
+        {
+          "N": 199.99999999999653,
+          "Mx": 168.46053729327812,
+          "My": -5.587935447692871e-15,
+          "curvature_angle": 0,
+          "c": 152.5646921348847,
+          "resultant": 168.46053729327812
+        },
+        {
+          "N": 200.00000000000077,
+          "Mx": 167.1749672753866,
+          "My": 12.841954371816993,
+          "curvature_angle": 5,
+          "c": 152.11559677714646,
+          "resultant": 167.66748484907384
+        },
+        {
+          "N": 200.00000000000466,
+          "Mx": 163.81533866305742,
+          "My": 27.172657353967562,
+          "curvature_angle": 10,
+          "c": 151.13964703149745,
+          "resultant": 166.0536614741401
+        },
+        {
+          "N": 199.99999999999554,
+          "Mx": 159.58868401270323,
+          "My": 41.53582632084219,
+          "curvature_angle": 15,
+          "c": 150.48373245290264,
+          "resultant": 164.90534537443475
+        },
+        {
+          "N": 200.00000000000034,
+          "Mx": 154.54379956481827,
+          "My": 55.798078429020556,
+          "curvature_angle": 20,
+          "c": 150.15188715148153,
+          "resultant": 164.30828201981132
+        },
+        {
+          "N": 200.00000000000028,
+          "Mx": 148.73416829695688,
+          "My": 69.82376902827835,
+          "curvature_angle": 25,
+          "c": 150.15188715148153,
+          "resultant": 164.30828201981134
+        },
+        {
+          "N": 199.99999999999557,
+          "Mx": 142.21650511967385,
+          "My": 83.47597621236542,
+          "curvature_angle": 30,
+          "c": 150.48373245290264,
+          "resultant": 164.90534537443477
+        },
+        {
+          "N": 200.00000000000495,
+          "Mx": 135.04890710886772,
+          "My": 96.62096655316972,
+          "curvature_angle": 35,
+          "c": 151.13964703149745,
+          "resultant": 166.0536614741401
+        },
+        {
+          "N": 200.00000000000065,
+          "Mx": 127.29118602506512,
+          "My": 109.129919985065,
+          "curvature_angle": 40,
+          "c": 152.11559677714646,
+          "resultant": 167.6674848490739
+        },
+        {
+          "N": 199.9999999999966,
+          "Mx": 119.11958828240626,
+          "My": 119.11958828240624,
+          "curvature_angle": 45,
+          "c": 152.5646921348847,
+          "resultant": 168.46053729327812
+        },
+        {
+          "N": 300.00000000000136,
+          "Mx": 173.05730356859718,
+          "My": -2.1420419216156006e-14,
+          "curvature_angle": 0,
+          "c": 160.73069304185714,
+          "resultant": 173.05730356859718
+        },
+        {
+          "N": 300.00000000000193,
+          "Mx": 171.8221473379048,
+          "My": 15.527039117964343,
+          "curvature_angle": 5,
+          "c": 160.21395589810763,
+          "resultant": 172.5222862692802
+        },
+        {
+          "N": 299.99999999999324,
+          "Mx": 168.579325342322,
+          "My": 29.660176664670836,
+          "curvature_angle": 10,
+          "c": 159.19907798307545,
+          "resultant": 171.16867415696112
+        },
+        {
+          "N": 300.0000000000082,
+          "Mx": 164.4554310457112,
+          "My": 43.865437931838095,
+          "curvature_angle": 15,
+          "c": 158.5369490241398,
+          "resultant": 170.20506880049905
+        },
+        {
+          "N": 299.99999999999903,
+          "Mx": 159.38345083714796,
+          "My": 57.90969273811252,
+          "curvature_angle": 20,
+          "c": 158.3209697131869,
+          "resultant": 169.57776066978877
+        },
+        {
+          "N": 299.999999999999,
+          "Mx": 153.64945532740873,
+          "My": 71.75278246431128,
+          "curvature_angle": 25,
+          "c": 158.3209697131869,
+          "resultant": 169.57776066978874
+        },
+        {
+          "N": 300.00000000000813,
+          "Mx": 147.3050991166994,
+          "My": 85.27000187405872,
+          "curvature_angle": 30,
+          "c": 158.5369490241398,
+          "resultant": 170.20506880049905
+        },
+        {
+          "N": 299.9999999999932,
+          "Mx": 140.17649616818886,
+          "My": 98.23067206662932,
+          "curvature_angle": 35,
+          "c": 159.19907798307545,
+          "resultant": 171.16867415696115
+        },
+        {
+          "N": 300.00000000000205,
+          "Mx": 132.47588019272794,
+          "My": 110.51733088860516,
+          "curvature_angle": 40,
+          "c": 160.21395589810763,
+          "resultant": 172.52228626928013
+        },
+        {
+          "N": 300.00000000000136,
+          "Mx": 122.369992887214,
+          "My": 122.36999288721395,
+          "curvature_angle": 45,
+          "c": 160.73069304185714,
+          "resultant": 173.05730356859718
+        },
+        {
+          "N": 499.99999999999676,
+          "Mx": 178.25311971535885,
+          "My": -1.4901161193847656e-14,
+          "curvature_angle": 0,
+          "c": 175.10801542699403,
+          "resultant": 178.25311971535885
+        },
+        {
+          "N": 500.0000000000031,
+          "Mx": 177.59350528725054,
+          "My": 16.191863614748478,
+          "curvature_angle": 5,
+          "c": 175.30924384548769,
+          "resultant": 178.33011402321063
+        },
+        {
+          "N": 500.00000000001074,
+          "Mx": 175.50195698061677,
+          "My": 32.01092974597674,
+          "curvature_angle": 10,
+          "c": 175.99448408491378,
+          "resultant": 178.3974117727836
+        },
+        {
+          "N": 499.99999999999375,
+          "Mx": 172.54440541526225,
+          "My": 47.69263897873596,
+          "curvature_angle": 15,
+          "c": 176.80099966609728,
+          "resultant": 179.01441185799098
+        },
+        {
+          "N": 499.9999999999962,
+          "Mx": 167.74476905313918,
+          "My": 61.57671709390527,
+          "curvature_angle": 20,
+          "c": 176.71724346037797,
+          "resultant": 178.6896741078058
+        },
+        {
+          "N": 499.99999999999613,
+          "Mx": 162.154777926352,
+          "My": 75.07214948574003,
+          "curvature_angle": 25,
+          "c": 176.71724346037797,
+          "resultant": 178.68967410780579
+        },
+        {
+          "N": 499.9999999999935,
+          "Mx": 155.73110755947886,
+          "My": 88.28353069038671,
+          "curvature_angle": 30,
+          "c": 176.80099966609728,
+          "resultant": 179.01441185799098
+        },
+        {
+          "N": 500.00000000001063,
+          "Mx": 146.7337693879702,
+          "My": 101.46347839703753,
+          "curvature_angle": 35,
+          "c": 175.99448408491378,
+          "resultant": 178.39741177278364
+        },
+        {
+          "N": 500.00000000000324,
+          "Mx": 137.02694844534022,
+          "My": 114.12819532126744,
+          "curvature_angle": 40,
+          "c": 175.30924384548769,
+          "resultant": 178.33011402321063
+        },
+        {
+          "N": 499.99999999999693,
+          "Mx": 126.04398971838772,
+          "My": 126.04398971838765,
+          "curvature_angle": 45,
+          "c": 175.10801542699403,
+          "resultant": 178.25311971535882
+        },
+        {
+          "N": 699.9999999999972,
+          "Mx": 182.03240014524977,
+          "My": -1.8626451492309572e-14,
+          "curvature_angle": 0,
+          "c": 191.57210182092948,
+          "resultant": 182.03240014524977
+        },
+        {
+          "N": 700.0000000000056,
+          "Mx": 181.2947878580376,
+          "My": 15.311538365762747,
+          "curvature_angle": 5,
+          "c": 191.8386020367956,
+          "resultant": 181.9402190600448
+        },
+        {
+          "N": 699.9999999999899,
+          "Mx": 179.22842811090692,
+          "My": 30.745360308756783,
+          "curvature_angle": 10,
+          "c": 192.53314964390424,
+          "resultant": 181.84638193712243
+        },
+        {
+          "N": 699.9999999999998,
+          "Mx": 176.04516129304457,
+          "My": 46.07800630519059,
+          "curvature_angle": 15,
+          "c": 193.15269669932937,
+          "resultant": 181.9754969213033
+        },
+        {
+          "N": 700.0000000000005,
+          "Mx": 170.70095970009237,
+          "My": 61.669009928226444,
+          "curvature_angle": 20,
+          "c": 193.07389165351032,
+          "resultant": 181.49899291197252
+        },
+        {
+          "N": 700.0000000000007,
+          "Mx": 164.3103812682963,
+          "My": 77.0972310496774,
+          "curvature_angle": 25,
+          "c": 193.07389165351032,
+          "resultant": 181.4989929119725
+        },
+        {
+          "N": 699.9999999999999,
+          "Mx": 157.06479806734808,
+          "My": 91.90065662343456,
+          "curvature_angle": 30,
+          "c": 193.15269669932937,
+          "resultant": 181.97549692130326
+        },
+        {
+          "N": 699.9999999999898,
+          "Mx": 148.4738896629736,
+          "My": 104.99338413428227,
+          "curvature_angle": 35,
+          "c": 192.53314964390424,
+          "resultant": 181.84638193712243
+        },
+        {
+          "N": 700.0000000000056,
+          "Mx": 139.0216664970238,
+          "My": 117.3678812793661,
+          "curvature_angle": 40,
+          "c": 191.8386020367956,
+          "resultant": 181.9402190600448
+        },
+        {
+          "N": 699.9999999999973,
+          "Mx": 128.71634453836919,
+          "My": 128.71634453836916,
+          "curvature_angle": 45,
+          "c": 191.57210182092948,
+          "resultant": 182.03240014524974
+        },
+        {
+          "N": 850.0000000000091,
+          "Mx": 182.65301846035396,
+          "My": -1.1175870895385742e-14,
+          "curvature_angle": 0,
+          "c": 205.06405397238777,
+          "resultant": 182.65301846035396
+        },
+        {
+          "N": 850.0000000000086,
+          "Mx": 181.83227430500412,
+          "My": 15.352986118939937,
+          "curvature_angle": 5,
+          "c": 204.73664264806342,
+          "resultant": 182.47928693881568
+        },
+        {
+          "N": 850.0000000000047,
+          "Mx": 179.1231033077663,
+          "My": 30.775871912290707,
+          "curvature_angle": 10,
+          "c": 204.43883356590476,
+          "resultant": 181.74773844691012
+        },
+        {
+          "N": 850.0000000000072,
+          "Mx": 174.89748091164626,
+          "My": 46.29709477990569,
+          "curvature_angle": 15,
+          "c": 204.3839754863611,
+          "resultant": 180.92139125680865
+        },
+        {
+          "N": 849.9999999999959,
+          "Mx": 169.67181330284453,
+          "My": 61.593037053889454,
+          "curvature_angle": 20,
+          "c": 204.30632571785884,
+          "resultant": 180.50547482831962
+        },
+        {
+          "N": 849.999999999996,
+          "Mx": 163.52894393733877,
+          "My": 76.4232355879797,
+          "curvature_angle": 25,
+          "c": 204.30632571785884,
+          "resultant": 180.50547482831962
+        },
+        {
+          "N": 850.0000000000075,
+          "Mx": 156.40818443317744,
+          "My": 90.93420509696215,
+          "curvature_angle": 30,
+          "c": 204.3839754863611,
+          "resultant": 180.92139125680862
+        },
+        {
+          "N": 850.0000000000048,
+          "Mx": 148.42098874220943,
+          "My": 104.89733328999066,
+          "curvature_angle": 35,
+          "c": 204.43883356590476,
+          "resultant": 181.7477384469101
+        },
+        {
+          "N": 850.0000000000088,
+          "Mx": 139.4310347958062,
+          "My": 117.71863360347545,
+          "curvature_angle": 40,
+          "c": 204.73664264806342,
+          "resultant": 182.47928693881565
+        },
+        {
+          "N": 850.0000000000091,
+          "Mx": 129.155187957508,
+          "My": 129.15518795750796,
+          "curvature_angle": 45,
+          "c": 205.06405397238777,
+          "resultant": 182.65301846035402
+        }
+      ],
+      "convergence_200_to_800_relative": 0.00012490475897337838,
+      "admission": "Finite section screen; exact N-M vector interpolation,head/arm anchorage and site axial/lateral/group response remain to review."
+    },
+    "pile_bar_development": {
+      "bar": "H22",
+      "full_yield_straight_required": 797.1014492753624,
+      "proposed_horizontal_straight_after_bend": 850,
+      "internal_mandrel": 440,
+      "centreline_radius": 231,
+      "bend_start_heights_above_pilehead_cutoff": [
+        0,
+        50
+      ],
+      "horizontal_layers_above_regular_node_bottom": [
+        281,
+        331
+      ],
+      "receiver_arms": "At least2 actual full-height arms;600wide development zones for1250 from nodecentre, no bar anchored into lowtie alone.",
+      "terminal_routing": "Eight starters assigned4peravailablearm with two horizontal layers; actual node-by-node routes/congestion still to verify.",
+      "no_anchorage_acceptance": true,
+      "full_yield_bend_force_kN": 165.27509177581086,
+      "required_mandrel_at_ab50_mm": 415.3972894900059,
+      "rebar_layers_mm_regular_node": {
+        "bottom_EW": 60,
+        "bottom_NS": 80,
+        "pile_horizontal": [
+          281,
+          331
+        ],
+        "top_beam": 392
+      }
+    },
+    "cage_limit": "Checks cover stated straight/orthogonal projections. Terminal bend routes,arm availability and all eight physical starter routes remain actual 3D detailing debt, not passed by section strength."
   },
   "special_ground_nodes": [
     {
@@ -1870,7 +3119,35 @@
         4332.5
       ],
       "point_from_CW": 5.689453125000001,
-      "north_reaction": 4.570032921619615
+      "north_reaction": 4.570032921619615,
+      "section": {
+        "b": 200,
+        "h": 250,
+        "d": 210,
+        "As": 307.8760800517997,
+        "cover": 25,
+        "x": 49.21292839702681,
+        "x_d": 0.23434727808108002,
+        "z": 190.31482864118928,
+        "MR": 25.475384094686667,
+        "VRdc": 27.9004677725584,
+        "As_min": 63.336,
+        "ductility": true
+      },
+      "M": 1.8646534009050004,
+      "reactions": [
+        1.6872639533803866,
+        4.570032921619615
+      ],
+      "links": {
+        "diameter": 6,
+        "pitch": 100,
+        "VRs": 46.468253076141195,
+        "VRmax": 169.64640000000003,
+        "minimum_ratio": 0.17527121840165316,
+        "provided_ratio": 0.5654866776461628,
+        "maximum_pitch": 157.5
+      }
     },
     "long_trimmer": {
       "axis_x": 2917.5,
@@ -1902,6 +3179,15 @@
         "VRdc": 36.084272903721896,
         "As_min": 93.496,
         "ductility": true
+      },
+      "links": {
+        "diameter": 6,
+        "pitch": 100,
+        "VRs": 68.59599263620844,
+        "VRmax": 250.43040000000005,
+        "minimum_ratio": 0.17527121840165316,
+        "provided_ratio": 0.5654866776461628,
+        "maximum_pitch": 232.5
       }
     },
     "stair_header": {
@@ -1926,32 +3212,51 @@
         38.61207881623162
       ],
       "section": {
-        "b": 250,
-        "h": 350,
-        "d": 310,
-        "As": 763.4070148223198,
+        "b": 200,
+        "h": 300,
+        "d": 259,
+        "As": 603.1857894892403,
         "cover": 25,
-        "x": 97.62238041206135,
-        "x_d": 0.3149109045550366,
-        "z": 270.9510478351755,
-        "MR": 89.93301330036124,
-        "VRdc": 51.846972538472244,
-        "As_min": 116.87,
+        "x": 96.41716583907294,
+        "x_d": 0.3722670495717102,
+        "z": 220.4331336643708,
+        "MR": 57.80962337344815,
+        "VRdc": 38.17632280418918,
+        "As_min": 78.11439999999999,
         "ductility": true
       },
       "links": {
         "diameter": 8,
         "pitch": 100,
-        "VRs": 121.94843135325948,
-        "VRmax": 313.038,
-        "minimum_ratio": 0.21908902300206645,
+        "VRs": 101.88594748546517,
+        "VRmax": 209.23056000000003,
+        "minimum_ratio": 0.17527121840165316,
         "provided_ratio": 1.0053096491487339,
-        "maximum_pitch": 232.5
+        "maximum_pitch": 194.25
       },
+      "footprint": [
+        262.5,
+        4232.5,
+        3725,
+        200
+      ],
       "top": 3370,
-      "bottom": 3020,
-      "finished_soffit": 3005,
-      "west_window_arch_must_rewind": true
+      "bottom": 3070,
+      "finished_soffit": 3055,
+      "west_window_arch_rewind": {
+        "centre_y": 4600,
+        "from_spring": 2550,
+        "to_spring": 2450,
+        "from_crown": 2850,
+        "to_crown": 2750,
+        "ring": 215,
+        "actual_patch": [
+          4232.5,
+          4432.5
+        ],
+        "seat": 3060,
+        "min_reserve": 113.157316509265
+      }
     },
     "stair": {
       "risers": 20,
@@ -2021,11 +3326,22 @@
     "annular_geometric_clearance": 40,
     "capacity": null
   },
+  "fire_field_comparator": {
+    "thickness": 200,
+    "outer_main_axis": 31,
+    "reference_hs": 60,
+    "reference_a": 10,
+    "route": "TCC linked2018StructuralFireDesign SlabsTable5 firstgeneration one-wayREI30 comparator ONLY",
+    "source": "https://www.concretecentre.com/TCC/media/TCCMediaLibrary/Events/Online%20course/CCIP_HowToComp_Feb18.pdf",
+    "rating_qualified": false,
+    "holds": "Current edition/UKNA,fireactions,supports,spalling,actualports/edges/seals"
+  },
   "retained_open_items": [
     "HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.",
     "Corner collectors and finite field edges now calculated. Actual midlanding/post, entrance bridge, tied arches and roof remain to complete.",
     "Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.",
     "Wet-wall beam receiving RC piers project80 beyond original wall faces; HAD must check actual door/sofa tasks.",
+    "Wetbeam2H18/pier4H12 jointbar clash remains: separate section strength is NOT a passed3Djoint.",
     "Integral600node S&T/cage model replaces900caps; terminal cages, actual pilehead/group/lateral/uplift and DPC/floor moisture remain to verify.",
     "Revised240glass+40lining\u21922890soffit requires actual arch/head/thermal coordination; anchorsunfinished.",
     "No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows."

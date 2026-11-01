@@ -92,8 +92,8 @@
 <text x="304" y="207" class="">RC600×450 both leaves;40cover;3H20 bottom,4legH8/100;actual point receivers are nodes.</text>
 <text x="304" y="215" class="">M129.11/MR152.40; V172.14/VRs308.41.</text>
 <text x="304" y="223" class="">Top−180/bottom−630;integral600×600×450 node/400pilehead;4H20eachdirectioncontinue750.</text>
-<text x="304" y="231" class="">Node envelopeN850/M100;tie385.1kN vssteel546.4;pile/soilUNKNOWN.</text>
-<text x="304" y="239" class="">Lowtiebottom−650controlsD1200:650+H300+loss50+vent150=1150;50surplus. Notfield-onlyD900.</text>
+<text x="304" y="231" class="">Node envelopeN850/M100;tie385.1kN vssteel683.0;pile/soilUNKNOWN.</text>
+<text x="304" y="239" class="">Lowtie/localnode−750 controlsD1300:750+H300+loss50+vent150=1250;50surplus.</text>
 <text x="304" y="247" class="">Masonry DPC ABOVE grid −180..−30 is a deliberate hypothesis; concrete/floor moisture route unqualified.</text>
 <text x="304" y="255" class="">No900cap/deckoverlap. Drainedtrayroute required;225clearcavity isNOTclaimed overwidebeam.</text>
 <text x="304" y="280" class="title">D / E02 SERVICE ARCH GEOMETRY ONLY</text>
@@ -105,8 +105,9 @@
 <text x="16" y="367" class="">Corner collectors and finite field edges now calculated. Actual midlanding/post, entrance bridge, tied arches and roof remain to complete.</text>
 <text x="16" y="373" class="">Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.</text>
 <text x="16" y="379" class="">Wet-wall beam receiving RC piers project80 beyond original wall faces; HAD must check actual door/sofa tasks.</text>
-<text x="16" y="385" class="">Integral600node S&amp;T/cage model replaces900caps; terminal cages, actual pilehead/group/lateral/uplift and DPC/floor moisture remain to verify.</text>
-<text x="16" y="391" class="">Revised240glass+40lining→2890soffit requires actual arch/head/thermal coordination; anchorsunfinished.</text>
-<text x="16" y="397" class="">No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows.</text>
+<text x="16" y="385" class="">Wetbeam2H18/pier4H12 jointbar clash remains: separate section strength is NOT a passed3Djoint.</text>
+<text x="16" y="391" class="">Integral600node S&amp;T/cage model replaces900caps; terminal cages, actual pilehead/group/lateral/uplift and DPC/floor moisture remain to verify.</text>
+<text x="16" y="397" class="">Revised240glass+40lining→2890soffit requires actual arch/head/thermal coordination; anchorsunfinished.</text>
+<text x="16" y="403" class="">No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows.</text>
 <text x="16" y="410" class="">REPRODUCIBLE CONDITIONAL DESIGN / calculations, exact source pins and adverse controls accompany every resistance. No programme completion claimed.</text>
 </svg>
