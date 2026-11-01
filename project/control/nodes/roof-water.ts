@@ -163,9 +163,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Develop copper collection, brass channels and non-plastic concealed routes',
     dependencies: ['MAT-00', 'RWT-04'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-metals-option-disposition.md']
   },
   {
     id: 'RWT-ROBUSTNESS',
