@@ -108,7 +108,13 @@ export const buildCourtEgressStudy = function build(d,ops){
   // support/pier band below floor separate from upper closure; no filled portal in floor
   for(const [label,lo,hi] of dimensions){
     if(label.includes('wall')||label==='partition'||label.includes('boundary')){
-      pts.push(R(x(lo),y(raised+790),(hi-lo)/25,(790)/25,'#adb3b0','#5d6462',.35));
+      if(n){
+        // The north cut coincides with both door apertures: never draw a masonry pier across the doorway.
+        pts.push(R(x(lo),y(raised+790),(hi-lo)/25,790/25,'#f5f9f8','#3d768e',.45,'stroke-dasharray="2 1"'));
+      }else{
+        // The east cut is below two window bays; show solid load-bearing material only to nominal +750 sill.
+        pts.push(R(x(lo),y(raised+750),(hi-lo)/25,750/25,'#adb3b0','#5d6462',.35));
+      }
       // below floor unsized aperture demand, not open portal adopted
       pts.push(R(x(lo),y(raised-floor),(hi-lo)/25,(raised-floor-grade)/25,'none',color,.6,'stroke-dasharray="2 1.5"'));
     }
