@@ -9,9 +9,9 @@
     "label": "zerg2-structure"
   },
   "claimedAt": "2026-11-01T19:23:15.470Z",
-  "heartbeatAt": "2026-11-01T19:39:50.481Z",
-  "expiresAt": "2026-11-01T20:24:50.481Z",
-  "branch": "work/zerg2-structure",
+  "heartbeatAt": "2026-11-01T19:52:22.099Z",
+  "expiresAt": "2026-11-01T20:37:22.099Z",
+  "branch": "work/zerg2-integration-20261101",
   "predecessor": {
     "leaseId": "fddbc95b-91e0-4257-8c44-85427d4e08d7",
     "generation": 9,
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote1d21d96043e0d21598279324f610ddbbbbb088b3; four joinedRC source/calculation/section files; source and mechanics checks passed; tree equality verified",
-    "next": "Resolve reviewer local Uwall/bridge clash, finish actual render and anchorage/crack review, then submit integrated head",
-    "blocker": "Engineering and material review active; not ready for merge"
-  }
+    "evidence": "Shared PR1229 exacthead8e14606f4d232646c43f73910126fff72e27149e; STR parent329396f081ed6a2e882fa12e18bb76bc1905a317 exacttreef859b416a7913414cda78cff0af0fcf0f0cde46a; engineering and assembly exact-payload PASS; custom source/calculation/render checks passed",
+    "next": "Root full exact-head CI and per-node fresh publication preflight; integrate shared PR1229 then release STR lease",
+    "blocker": "Shared exact-head full CI pending; no geometry adoption or STR-HOUSE completion"
+  },
+  "pr": 1229
 }
