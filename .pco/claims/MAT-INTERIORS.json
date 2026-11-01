@@ -9,8 +9,8 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-01T23:26:23.548Z",
-  "expiresAt": "2026-11-02T00:11:23.548Z",
+  "heartbeatAt": "2026-11-01T23:41:49.632Z",
+  "expiresAt": "2026-11-02T00:26:49.632Z",
   "branch": "work/zerg4-interiors-whole-house",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -36,9 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1233 a9012017 tree16936808; currentHAD0b2f/blob6aff and canonicalservices0e549/blob6b05 one-way imports; actual5940Westdrain;10rawclashes and source mismatches explicit; repro/integritypass",
-    "next": "Consume ONE final whole-frame/finish/wet geometry, import final service/IAS proofs, assess authoritative developmentexit then root integration",
-    "blocker": "Actual tenfurniture/wall and localwet/source joins still internalwork; material/product/physical admission separate"
+    "evidence": "Published a9012017/tree16936808: source-bound 16-family/18-occurrence schedule, West-drain rear service import, obsolete indoor caps removed, bounded IAS peer review. Small trim-paint coverage and stale dimension prose corrections verified locally.",
+    "next": "Bind next coherent HAD27/30 repaired source once plus final family/ordinary renewal interfaces; independent exact combined-source review and reasoned development closeout.",
+    "blocker": "HAD publishing repaired full-house geometry; final IAS family600 push/closer and simpler sink-head renewal source not yet frozen. No admission/exception inferred."
   },
   "pr": 1233
 }
