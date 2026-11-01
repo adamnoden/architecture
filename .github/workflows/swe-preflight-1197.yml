@@ -19,7 +19,7 @@ jobs:
           persist-credentials: false
       - name: Guard exact reviewed SWE head
         shell: bash
-        run: test "$(git rev-parse HEAD)" = "fc6ab1b26a350419d6e2f11d49efcc9c81ba4d10"
+        run: test "$(git rev-parse HEAD)" = "80dde3b63f498e3dd812d643245bb440e36a704f"
       - name: Set up Node
         uses: actions/setup-node@v7
         with:
@@ -35,23 +35,23 @@ jobs:
             --lease-id 435def2d-ba6e-4dd6-adba-fc57174af361 \
             --generation 2 \
             --branch work/swe-recovery-20261101 \
-            --head fc6ab1b26a350419d6e2f11d49efcc9c81ba4d10 \
+            --head 80dde3b63f498e3dd812d643245bb440e36a704f \
             --format text
           npm run control:merge-check -- SWE-PUBLICATION \
             --lease-id 12d3282e-e86a-46d0-9169-e7bd3fa2bd6d \
             --generation 2 \
             --branch work/swe-recovery-20261101 \
-            --head fc6ab1b26a350419d6e2f11d49efcc9c81ba4d10 \
+            --head 80dde3b63f498e3dd812d643245bb440e36a704f \
             --format text
           npm run control:merge-check -- SWE-AUTOMATION \
             --lease-id 70980b2f-f5d8-457b-9446-00d50b648234 \
             --generation 2 \
             --branch work/swe-recovery-20261101 \
-            --head fc6ab1b26a350419d6e2f11d49efcc9c81ba4d10 \
+            --head 80dde3b63f498e3dd812d643245bb440e36a704f \
             --format text
           npm run control:merge-check -- SWE-IDENTITY \
             --lease-id 6f37c5d0-c6bb-4166-9980-c5c8b0f04151 \
             --generation 2 \
             --branch work/swe-recovery-20261101 \
-            --head fc6ab1b26a350419d6e2f11d49efcc9c81ba4d10 \
+            --head 80dde3b63f498e3dd812d643245bb440e36a704f \
             --format text
