@@ -9,8 +9,8 @@
     "label": "zerg-worker-six-roof"
   },
   "claimedAt": "2026-11-01T15:15:13.602Z",
-  "heartbeatAt": "2026-11-01T15:41:00.462Z",
-  "expiresAt": "2026-11-01T16:26:00.462Z",
+  "heartbeatAt": "2026-11-01T15:49:18.389Z",
+  "expiresAt": "2026-11-01T16:34:18.389Z",
   "branch": "work/zerg-final-integration-20261101",
   "predecessor": {
     "leaseId": "a0c5a0df-62b2-47dc-b1c9-147075dead28",
@@ -31,9 +31,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Shared PR1224 head78457f42d3ab32a2a62c1ab64b8465bc3466b15f preserves reviewed MAT dfea1516 and STR a3b404f4 with main cf466b58. Own MAT source/arithmetic/architecture review passed, exact local relevant checks passed. Standalone1222 is superseded by combined assurance.",
-    "next": "Full exact combined-head CI; coordinator final publication preflight and expected-head merge. Verify accepted MAT blobs, then release this own generation promptly.",
-    "blocker": "Combined full CI pending; no individual1222merge or new source scope."
+    "evidence": "PR1224 merged1e7b2cbce408834ca3cbb91c286af37eda066829. Exact reviewed MAT dfea1516 and all3MATblobs verified on fresh main; original1222 auto-incorporated, both remote refs deleted. Full sharedCI41322417761 attempt2 passed; fresh MAT preflight15:46:21.034Z. MAT1100 updated with findings and remaining-work handoff; node remains planned.",
+    "next": "Future worker must freshly dispatch: resolve actual roof wall-head/hip/valley, continuous ventilation, insulation-side protection, warm air/vapour joints and separated copper receiver; ground/floor moisture/gas and other envelope duties remain. Release current generation as handoff now; no new work in this session."
   },
   "pr": 1224
 }
