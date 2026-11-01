@@ -171,6 +171,8 @@ RWT designs the physical route. MRA later tests whether the whole-house conseque
 
 ### RWT-06 — access, courtyard/ground transition and site handoff
 
+**1 November direction:** the [courtyard gravity-egress architectural rewind](court-egress-architectural-rewind.md) rejects continued catalogue-led refinement of the historic deep crossing as the route to closure. The current enclosed court has **no demonstrated continuously accessible normal outlet or independent harmless failed-state escape**. Future RWT-06 work starts by co-designing the architectural through-ring passage and separate passive relief with STR/HAD/IAS/OAS, not by inferring a qualified fitting from nominal old geometry. A real site datum, court threshold and first susceptible boundary remain unestablished. RWT-06 **remains planned**; this is a negative design decision and a rework priority, not a lifecycle closeout.
+
 Resolve:
 
 - cleaning/rodding access;
