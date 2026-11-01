@@ -3,7 +3,7 @@
   "startingMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
   "hadSource": {
     "path": "project/had/studies/open-north-loggia.json",
-    "sha256": "3696b58656ac54ec6a5ff8d7cf57e11b73e049d1c0836011b18d8a7a3c0e0bd4"
+    "sha256": "d8420ea3155ccac9be39844604e4f4d0365c678b5d557d63cca5b02a9db951fb"
   },
   "wallLayers": [
     [
@@ -275,6 +275,20 @@
     ],
     "thresholdGap": 4,
     "leafThickness": 45,
+    "leafHeight": 2100,
+    "leafBottom": 19,
+    "leafTop": 2119,
+    "transom": [
+      2119,
+      2189
+    ],
+    "fanlight": {
+      "bottom": 2189,
+      "rawArchSpan": 1800,
+      "rawSpring": 2550,
+      "rawCrown": 2850,
+      "status": "HAD assemblyreservation; actualOASframe/glazing/seals not bound"
+    },
     "leafSweepEnvelope": 850,
     "landingEndY": 5750,
     "clearBeyondOpenTip": 650,
@@ -289,25 +303,10 @@
       "material": "Authored1.5uncoated316L, welded corners/ends; exact grade/filler/process unknown",
       "insideBottom": -75,
       "rearCrest": 15,
-      "jambEnds": 75,
+      "jambEnds": 300,
       "frontDrip": -80
     },
-    "anchorLowest": 150,
-    "bracket": {
-      "material": "Authored6SS verticalweb, no material/capacity pass",
-      "height": 60,
-      "arm": 350,
-      "levels": [
-        200,
-        1000,
-        2000
-      ],
-      "leafMassStressKg": 70,
-      "weightKn": 0.6867,
-      "sagMomentKnM": 0.2918475,
-      "outwardOffsetMm": 262.5,
-      "outwardMomentKnM": 0.18025875
-    },
+    "anchorLowest": 325,
     "springMetal": {
       "component": "PEMKO73B bronze V strip research comparator",
       "thicknessInch": 0.008,
@@ -323,7 +322,27 @@
       "position": "Pan end return to masonry/DPC at−30; timber/stone/metal seam and meetingstile at+15",
       "status": "Actual leakage/firstharm remains unqualified. +15 is only open-door geometricoverflow crest, not accepted firstharm."
     },
-    "renewal": "Support leaves, remove local dry-side trim/above-pan fixings, lift frame outward into1500landing; welded pan retained for ordinary frame renewal. Pan renewal requires fullframe+saddle removal and temporary weather cover, not routine strip replacement."
+    "renewal": "Support leaves, remove local dry-side trim/above-pan fixings, lift frame outward into1500landing; welded pan retained for ordinary frame renewal. Pan renewal requires fullframe+saddle removal and temporary weather cover, not routine strip replacement.",
+    "loadStress": {
+      "leafKg": 70,
+      "leafHeight": 2100,
+      "windKpa": 1.5,
+      "userForceKn": 1,
+      "closerStopMomentKnM": 0.25,
+      "scope": "Separateauthoredchallengeenvelopes, actualhardware/combination remains toverify."
+    },
+    "support": "Directbearing on supported102.5outerleaf and saddle; short175armplate +axialM12through-ties toinnercore.",
+    "mineralDpc": {
+      "inner": [
+        -180,
+        -30
+      ],
+      "outer": [
+        150,
+        300
+      ],
+      "scope": "Authoredsouthdoorjambband, distinctfromnewloggiasideouter120..270. Panend300 mustjoinactualmasonry/DPC; bondunqualified."
+    }
   },
   "protectedWater": {
     "scope": "New finite candidate; actual lowtie crossing geometry. No full hydraulic/site/material pass.",
@@ -470,6 +489,277 @@
       "damToGeometric15Crest": 125,
       "scope": "Staticlevelonly; actualfirstharm unqualified atpan/DPC anddoor seals."
     }
+  },
+  "thresholdSupport": {
+    "scope": "Authored internalstructural screen, NOT product/installedcapacity approval.",
+    "preferred": "Directbearing on supported102.5outerleaf and saddle; short175armplate +axialM12through-ties toinnercore.",
+    "rejected": "60×6web weak-axis~4.5mm;350boxcantilever unnecessary when directbearing/restraint is deliberately detailed.",
+    "leafKg": 70,
+    "frameFanlightAllowancePerJambKg": 30,
+    "gravityFactor": 1.35,
+    "windKpa": 1.5,
+    "windFactor": 1.5,
+    "unequalHingeShare": 1.5,
+    "leafWidth": 0.8455,
+    "leafHeight": 2.1,
+    "hingeLevels": [
+      400,
+      1100,
+      1900
+    ],
+    "hingeSeparation": 1500,
+    "outerLeaf": 102.5,
+    "foot": [
+      50,
+      102.5
+    ],
+    "outerLeafCentreY": 4198.75,
+    "hingeY": 4250,
+    "shortPlate": {
+      "arm": 175,
+      "height": 240,
+      "thickness": 14,
+      "E": 193000,
+      "I": 54880,
+      "bendingMpa": 118.09532428112065,
+      "deflectionMm": 0.8923437715542365
+    },
+    "throughTie": {
+      "countPerLevel": 4,
+      "diameter": 12,
+      "threadArea": 84.3,
+      "verticalPitch": 150,
+      "horizontalPitch": 100,
+      "axisX": 4975,
+      "hingeX": 5150,
+      "pinOutstand": 20,
+      "maxPreloadKn": 4,
+      "frontAndBackBearingPlate": [
+        200,
+        260,
+        8
+      ],
+      "cavityFacePlates": [
+        200,
+        260,
+        8
+      ],
+      "spacer": {
+        "OD": 25,
+        "wall": 3,
+        "freeLength": 144
+      },
+      "material": "Authoreduncoatedstainless, exactgrade/heat/proof/seams/residues not admitted."
+    },
+    "timberFasteners": {
+      "perHingeSide": 8,
+      "diameter": 5,
+      "verticalPitch": 26,
+      "backstrap": [
+        45,
+        240,
+        6
+      ],
+      "nutWasherOD": 10,
+      "washerHole": 6,
+      "maxPreloadKn": 0.25,
+      "minAuthoredEnd": 80,
+      "jambWidth": 50,
+      "leafStileMinimum": 120
+    },
+    "hinge": {
+      "pin": 12,
+      "lugThickness": 8,
+      "pinFreeSpan": 16,
+      "steelStressComparator": 150
+    },
+    "authoredRequiredDesignProperties": {
+      "masonryBearingMpa": 1,
+      "timberWasherBearingMpa": 1.5,
+      "steelProofMpa": 200
+    },
+    "service": "Rod/plate access behindremovabletrim; no nut load throughglass. Twocavityfaceplates +144spacer fill160cavity. No holebelow325; panend300 staysbelow.",
+    "Gkn": 0.981,
+    "leafSagKnM": 0.29030242500000003,
+    "sagCoupleKn": 0.19353495,
+    "offsetMomentKnM": 0.050276249999999995,
+    "footStressMpa": 0.258409756097561,
+    "windLeafKn": 2.6633250000000004,
+    "windOnlyLevelKn": 1.9974937500000003,
+    "userForceKn": 1,
+    "closerStopMomentKnM": 0.25,
+    "allWindOneLevelKn": 3.9949875000000006,
+    "windLevelKn": 5.290670527794205,
+    "combination": "Allleafwindandgravityononehinge+1kNvectoruser+closer stress, NOT normativecodecombination or chosenhardwaretorque.",
+    "yawMomentKnMm": 925.8673423639859,
+    "pinOffsetGravityMomentKnMm": 87.32965685876847,
+    "maxRodExternalKn": 6.243103199964375,
+    "rodAxialStressMpa": 121.50774851677788,
+    "masonryPlateStressMpa": 0.7879310153818749,
+    "rodGroup": {
+      "xOffsets": [
+        -50,
+        50
+      ],
+      "zOffsets": [
+        -75,
+        75
+      ],
+      "scope": "Fourrod axialgroup uses correcthorizontal lever for yaw, verticallever for pinoutstand. Noverticalpair falselycredited with yawcapacity."
+    },
+    "rodShearKn": 1.2025767423939355,
+    "rodCombinedMpa": 123.99452180438213,
+    "spacer": {
+      "I": 12777.642720313086,
+      "A": 207.34511513692635,
+      "stressMpa": 48.423105300253056,
+      "eulerKn": 1173.7694740448612
+    },
+    "backPlateStrip": {
+      "scope": "Conservativeunbackedcantileverstripprobe; actualmasonrycontact remains tosolve.",
+      "overhang": 42.5,
+      "bendingMpa": 66.71251858750836,
+      "deflectionMm": 0.03902185450087013
+    },
+    "timber": {
+      "washerArea": 1350,
+      "washerBearingMpa": 0.6750620859068709,
+      "minLeafEndMm": 128,
+      "jambEdgeMm": 25,
+      "spacingMm": 26,
+      "scope": "Actualspecies/grade, Johansen/yield/withdrawal/creep/endgrain/moisture and hingeleaf stiffness not admitted.",
+      "johansen": {
+        "rhoK": 350,
+        "fuProbe": 400,
+        "twood": 45,
+        "kmod": 0.5,
+        "gamma": 1.3,
+        "fh": 27.265,
+        "My": 7879.583413211303,
+        "modesN": [
+          6134.625,
+          2785.2396075192264,
+          2383.7857421722915
+        ],
+        "perFastenerDesignKn": 0.9168406700662659,
+        "effectiveNumberParallel": 5.167684441544054,
+        "groupDesignKn": 4.737943266076268,
+        "ropeEffect": 0,
+        "scope": "SwedishWood2022educationalEC5method; originalstandard/actualspecies/grade/service/combinedaxial-lateralcapacity still required."
+      },
+      "gravityShearKn": 1.3498763187226872,
+      "shearProbeKn": 2.3498763187226874,
+      "axialGroupProbeKn": 7.290670527794205,
+      "axialGroupComparatorKn": 16.2,
+      "linearInteraction": 0.8931242277942655,
+      "userAngleDegrees": 73.69761586965254,
+      "backstrapScope": "Continuous45×240×6 strap replaces overlapping40washers at26pitch; fullwoodcontact must be earned.",
+      "interactionScope": "Authoredconservativelinear axialwasher+Johansenshear sensitivity, NOT wholeconnectioncodeacceptance."
+    },
+    "pin": {
+      "combinedProbeKn": 5.460161234754751,
+      "doubleShearMpa": 24.139212516387925,
+      "lugBearingMpa": 56.87667952869532,
+      "bendingMpa": 128.74246675406894
+    },
+    "fixedHardwareMassKg": 22.828086290550957,
+    "fixedHardwareGravityKn": 0.2239435265103049,
+    "deadToBeam": {
+      "fixedHardwareKg": 136.96851774330574,
+      "leavesKg": 140,
+      "frameFanlightKg": 60,
+      "saddleKg": 101.088,
+      "mineralSeatKg": 94.5,
+      "panKg": 9.702,
+      "totalKg": 542.2585177433057,
+      "characteristicKn": 5.319556059061829
+    },
+    "massScope": "About23kgfixedsteel perlevel, retainedon masonryduring ordinaryframerenewal. Selfweight goes throughwallfixings, NOT silently into timberhinge/30kgfanlightallowance. Leafsidehinge belongs70kgleaf.",
+    "weld": {
+      "fillet": 6,
+      "effectiveThroat": 4.2,
+      "twoRuns": 240,
+      "effectiveArea": 2016,
+      "I": 98784,
+      "normalMpa": 68.23285402909194,
+      "authoredComparator": 100,
+      "scope": "Simpleelasticpairedweldlineprobe; actualstainlessweldgroup/orientation/HAZ/filler/WPS not admitted."
+    },
+    "weather": "Through-ties require actualdrip/collar fallingoutward, cavitytray/insulation/airline join and accessible headseals; no torque/friction/watertightness/lubricant is assumed. Exactcoupledwall/frame/hinge/boltgroup model remains unqualified."
+  },
+  "terminals": {
+    "scope": "Finite exterior development. Receivingplanes are authoredhandoffs, NOT acceptedsitelevels/outfalls.",
+    "guardNorthY": 13200,
+    "normal": {
+      "centreX": 5000,
+      "coveredExtension": 350,
+      "endY": 13550,
+      "invert": -271.75,
+      "closedDownroute": {
+        "clear": [
+          250,
+          100
+        ],
+        "outlet": -600,
+        "material": "Custom1.5Cu closedtransition/downbody, exactseam/filler/pressure/corrosion qualification unknown"
+      },
+      "receiver": {
+        "bounds": [
+          4250,
+          13650,
+          1500,
+          1500
+        ],
+        "nominalWaterPlane": -800,
+        "airgap": 200,
+        "identity": "N/W independentreceiving territory; no sharedbasinwithE assumed"
+      }
+    },
+    "relief": {
+      "x": [
+        6500,
+        7100
+      ],
+      "crest": -152.5,
+      "endY": 13200,
+      "visibleChute": {
+        "width": 600,
+        "sideHeight": 100,
+        "run": 350,
+        "outlet": -600
+      },
+      "receiver": {
+        "bounds": [
+          6050,
+          13650,
+          1500,
+          1500
+        ],
+        "nominalWaterPlane": -800,
+        "airgap": 200,
+        "identity": "E receivingterritory distinctfromN/W; sitecommonfloodunresolved"
+      }
+    },
+    "support": "Bothsmallterminalbodies mechanicallycradled fromindependentexteriordeckedge, not masonry/thermalwrap; actualguard/edge/cantilever capacity toSTR. No danglingunsupportedpost or hiddenfooting assumed.",
+    "states": [
+      {
+        "event": "Referencebothreceivers−800",
+        "effect": "200freegapbelow−600outlets; actualcapacity stillunqualified."
+      },
+      {
+        "event": "Normalreceiverblocked/high, Ereceiver−800",
+        "effect": "Normalroute notcredited; broadsurface+Echute must takeassignedflow."
+      },
+      {
+        "event": "Terracepond+50above−152.5 withnormalreceiver−800",
+        "effect": "Normalcovers/transitions mayseehead; no pressuretightcover claim. Closedterminalmustremainconnected and inletcapacity earnadditionalflow."
+      },
+      {
+        "event": "Commonexternalwater+30",
+        "effect": "Bothoutlets submerged andwaterabove15doorcrest: candidatefails. No unconditionalreceiverindependence."
+      }
+    ],
+    "heaveBoundary": "D1300/150vent appliesunderfloorlowest−750, not exteriorchuteoutlets. Receiver/groundmovement/erosion/support need actualsitecheck."
   },
   "wetDeadKpa": 0.827964,
   "gridWetDeadKn": 0.22355028000000002,
