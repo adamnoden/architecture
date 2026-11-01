@@ -9,8 +9,8 @@
     "label": "zerg4-ias-convergence"
   },
   "claimedAt": "2026-11-01T21:28:29.086Z",
-  "heartbeatAt": "2026-11-01T22:01:10.704Z",
-  "expiresAt": "2026-11-01T22:46:10.704Z",
+  "heartbeatAt": "2026-11-01T22:18:33.587Z",
+  "expiresAt": "2026-11-01T23:03:33.587Z",
   "branch": "work/zerg4-ias-convergence",
   "predecessor": {
     "leaseId": "10049375-f6a2-4aa4-87a5-3da538b5d0dd",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote c96e3d6836a5505ccf9a194a3336bb824ba1b2b2 tree029763760c0ebc3a342040533de1a53cf5a15e80; finite361-state family push-open/body/arm and delayed closer requirements; source reproducer and actual rendered SVG inspected.",
-    "next": "Join immutable HAD27/30 record; complete kitchen, wet and storage renewal occurrences and IS01-06 dispositions; independent peer review.",
-    "blocker": "Working development checkpoint, no IAS completion; complete classified assembly/physical forces and family/rear wet renewal still bounded."
+    "evidence": "Remote0f8d4cddd02864ead08614f9155d7c571080fa7f tree79349c2acc293e026a042a55e5f249023090a7b3 nativefetch exact; source20ff finite ordinary West, wardrobe, pantry/fridge corrections; continuous mechanical closer hand withdrawal; kitchen chair/station body route; three actual SVG renders inspected; reproducer/typecheck/diffcheck pass.",
+    "next": "Finish supported first releases, rear/family renewal and occurrence register; compose exact HAD/services/MAT pins, peer review and root integration.",
+    "blocker": "Whole20ff house remains failed; pending joined geometry and actual assemblies remain explicit. No IAS completion."
   }
 }
