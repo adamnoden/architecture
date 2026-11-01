@@ -9,8 +9,8 @@
     "label": "zerg4-whole-house-services"
   },
   "claimedAt": "2026-11-01T21:02:38.591Z",
-  "heartbeatAt": "2026-11-01T21:44:12.521Z",
-  "expiresAt": "2026-11-01T22:29:12.521Z",
+  "heartbeatAt": "2026-11-01T22:27:49.259Z",
+  "expiresAt": "2026-11-01T23:12:49.259Z",
   "branch": "work/zerg4-whole-house-services",
   "predecessor": {
     "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remotebd379879/tree46d1daa4: four ownfiles whole-house-service-baseline note/py/json/svg.65Lps complete inventory,14waterendpoints,actualterminal/cylinder/pipe-tree reservations,heat/air failedbounds and residuegroups; reproducible check/diffcheck/renderinspection.",
-    "next": "Converge compact retained riser support withSTR, actual lowered arch/fireband profiles withHAD, utility/power/PV roof and guaranteed hydronic defrostvolume; publish corrected next checkpoint then bounded review.",
-    "blocker": "No installed/product/material/site acceptance. Specific riserfeet/doortransfer/certifiedresidues remain unearned, not waived."
+    "evidence": "Publishedbd379879/tree46d1daa4 recoverable; localnextcheckpoint contains corrected insulatedfan/cassette, retainedsupportplant/buffer paths, fullfoul/grade paths andactual lowercase archbanks. All new source remains bounded unqualified.",
+    "next": "Publish current corrected source checkpoint immediately, then join stable family/kitchen interfaces toIAS/interiors and render/review final bounded baseline.",
+    "blocker": "Pendingactual update publication, source27 interfaces, STRsupport/archprofile andexactapparatus. No unearned system/material/site claim."
   }
 }
