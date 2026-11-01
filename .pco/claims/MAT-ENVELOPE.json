@@ -9,9 +9,9 @@
     "label": "zerg2-mat-joined"
   },
   "claimedAt": "2026-11-01T19:28:00.966Z",
-  "heartbeatAt": "2026-11-01T19:43:35.474Z",
-  "expiresAt": "2026-11-01T20:28:35.474Z",
-  "branch": "work/zerg2-mat-joined",
+  "heartbeatAt": "2026-11-01T19:52:17.278Z",
+  "expiresAt": "2026-11-01T20:37:17.278Z",
+  "branch": "work/zerg2-integration-20261101",
   "predecessor": {
     "leaseId": "814b6dcb-3d75-4eb4-9063-b6f39846bdeb",
     "generation": 13,
@@ -33,9 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1225 remoteheadb40d74fad7f3c25c58472f0727077b2b96787a6a tree677ab45af64f0b304b7519c10269a3a60a5611b1 exactlocalequal; independentmaterialreview boundedreferencePASS; bothA3renderedinspected; repro/control/diffchecks pass",
-    "next": "Root batch integration after all four lane reviews; rebind lease to integration branch and run fresh canonical exact-head preflight before root expected-head merge",
-    "blocker": "No technical/material admission, house adoption or MAT-ENVELOPE completion; actual custom seal and bonded threshold/DPC/A-G transitions remain unqualified"
+    "evidence": "SharedPR1229 head8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 preserves all4sourceparents; MAT845bab92 reviewed and included; integrator reports allcustom/relevant/tsc/repo checks pass",
+    "next": "Root observes exact-head fullCI; upon command fetchsharedhead and run own freshcanonicalmergepreflight, then root expected-head merge and verified closeout",
+    "blocker": "Shared exact-head CI pending; reference candidate is not technical/material admission or MAT-ENVELOPE completion"
   },
-  "pr": 1225
+  "pr": 1229
 }
