@@ -49,8 +49,8 @@ export const buildNearLevelWindow = function buildWindow(d){
   bits.push(t(15,y+4,a.label,2.65));
   bits.push(l(x0,y+9,357,y+9,"#adb5b1",.3));
   bits.push(b(x0,y,Math.round(a.minimumRelativeFloorAboveReceiver*scale*10)/10,9,fill));
-  bits.push(t(Math.min(349,x0+a.minimumRelativeFloorAboveReceiver*scale+3),y+6,a.minimumRelativeFloorAboveReceiver.toFixed(2).replace(/\.?0+$/,"")+" mm",2.7,"bold"));
-  bits.push(t(357,y+6,a.additionalRelativeRiseNeeded>0?`+${a.additionalRelativeRiseNeeded} rise`:`${Math.round(-a.nominalSurplus*10)/10} spare`,2.65,"normal",a.additionalRelativeRiseNeeded>0?"#943e2f":"#466d5a"));
+  bits.push(t((a.minimumRelativeFloorAboveReceiver>270?x0+a.minimumRelativeFloorAboveReceiver*scale-29:x0+a.minimumRelativeFloorAboveReceiver*scale+3),y+6,a.minimumRelativeFloorAboveReceiver.toFixed(2).replace(/\.?0+$/,"")+" mm",2.7,"bold"));
+  bits.push(t(357,y+6,a.additionalRelativeRiseNeeded>0?`+${a.additionalRelativeRiseNeeded} rise`:`${Math.round(a.nominalSurplus*10)/10} spare`,2.65,"normal",a.additionalRelativeRiseNeeded>0?"#943e2f":"#466d5a"));
  });
  bits.push(l(15,239,405,239));
  bits.push(t(15,248,"At 1% fall, a 20+6+60 mm pan needs 198.5 mm relative height: 48.5 mm beyond the drawn 150.",3.1,"bold"));
