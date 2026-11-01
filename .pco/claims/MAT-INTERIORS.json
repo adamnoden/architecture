@@ -9,8 +9,8 @@
     "label": "zerg2_interiors"
   },
   "claimedAt": "2026-11-01T19:57:48.734Z",
-  "heartbeatAt": "2026-11-01T20:32:01.123Z",
-  "expiresAt": "2026-11-01T21:17:01.123Z",
+  "heartbeatAt": "2026-11-01T20:46:25.677Z",
+  "expiresAt": "2026-11-01T21:31:25.677Z",
   "branch": "work/zerg2-mat-interiors",
   "note": "Owner-directed compact B principal900 wetroom assembly",
   "predecessor": {
@@ -36,8 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote93ee99ac tree8aaaa2e7 matches checked source;120rim localport;1290lowerbranch to P2765; split tray/trap/tail renewal drawn",
-    "next": "Independent split-renewal review, source/HAD/service joins, final validation and PR",
-    "blocker": "Actual products/ports/seals/coupled operation remain admission requirements; broad MAT-INTERIORS incomplete"
-  }
+    "evidence": "PR1230 remote310b26f3 treece36fb52 matches locally checked4files; canonicalserviceJSON46804460 from38d4d803 importedoneway",
+    "next": "Combinedservices/interiors independentreview and exactintegrationCI; rootcontrolledmerge thenrelease",
+    "blocker": "SourcePRdepends onservicesPR1231; no standalone merge; broadMAT-INTERIORSandproductmaterialadmissionremainopen"
+  },
+  "pr": 1230
 }
