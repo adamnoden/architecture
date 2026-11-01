@@ -64,11 +64,17 @@ test('joined local portals preserve full repair width, segmented release and exp
  assert.match(j.repair.firstRelease,/N alone is not equivalent redundancy/)
  assert.equal(j.repair.totalVerticalLiftInOpenFloor,450)
  assert.ok(j.repair.totalVerticalLiftInOpenFloor > -d.outletInvert)
+ for(const segments of Object.values(j.wetSegments) as number[][][]){
+  assert.equal(segments[0][0],7725)
+  assert.equal(segments.at(-1)![1],12050)
+  segments.forEach((p,i)=>{assert.ok(p[1]>p[0]&&p[1]-p[0]<=500);if(i)assert.equal(p[0],segments[i-1][1])})
+ }
  assert.equal(j.crossingRenewal.length,5)
  for(const c of j.crossingRenewal){
   assert.ok(c.piece[0]<=c.permanent[0]-25&&c.piece[1]>=c.permanent[1]+25)
   assert.ok(c.piece[1]-c.piece[0]<=500)
   assert.deepEqual(c.destination,c.piece.map((n:number)=>n+c.translation))
+  assert.ok(j.wetSegments[c.route].some((p:number[])=>p[0]===c.destination[0]&&p[1]===c.destination[1]))
   assert.ok(c.destination[0]>=c.clearRoom[0]&&c.destination[1]<=c.clearRoom[1])
   assert.ok(c.destination[1]<=c.permanent[0]||c.destination[0]>=c.permanent[1])
   assert.ok(Math.abs(c.verticalTranslationAtOnePercent)<d.installationSpaceBelowCover)
@@ -90,7 +96,9 @@ test('fixed-cap crossing witness rejects occupied destination, incomplete withdr
  const c={permanent:[7750,8167.5],piece:[7725,8225],destination:[8225,8725],translation:500,clearRoom:[8167.5,11582.5],requiredInitialRemovedNeighbor:[8225,8725],totalLift:450};
  assert.equal(verifyCrossingRenewal(c).bridgeIntact,true);
  assert.throws(()=>verifyCrossingRenewal(c,{removedNeighbor:null}),/adjacent segment/);
- assert.throws(()=>verifyCrossingRenewal({...c,translation:400}),/still below fixed cap/);
+ assert.throws(()=>verifyCrossingRenewal({...c,translation:400}),/differs from declared destination/);
+ assert.throws(()=>verifyCrossingRenewal({...c,translation:400,destination:[8125,8625],requiredInitialRemovedNeighbor:[8125,8625]}),/still below fixed cap/);
+ assert.throws(()=>verifyCrossingRenewal({...c,destination:[9000,9500],requiredInitialRemovedNeighbor:[9000,9500]}),/differs from declared destination/);
  assert.throws(()=>verifyCrossingRenewal(c,{totalLift:200}),/full extraction/);
  assert.throws(()=>verifyCrossingRenewal(c,{coverDepth:200}),/fixed cover/);
  assert.throws(()=>verifyCrossingRenewal({...c,piece:[7750,8250]}),/joint termination/);`
