@@ -9,8 +9,8 @@
     "label": "zerg2-had-joined"
   },
   "claimedAt": "2026-11-01T19:21:35.996Z",
-  "heartbeatAt": "2026-11-01T19:21:35.996Z",
-  "expiresAt": "2026-11-01T20:06:35.996Z",
+  "heartbeatAt": "2026-11-01T19:36:55.097Z",
+  "expiresAt": "2026-11-01T20:21:55.097Z",
   "branch": "work/zerg2-had-b-joined",
   "predecessor": {
     "leaseId": "537b440b-2a31-4854-a692-ccd6824a33c8",
@@ -33,5 +33,10 @@
       "next": "Continue HAD03 from merged main and project/had/had-03-local-portal-design.md: develop or reject complete100mm no-plastic cover/joint/containment assembly and actual threshold first-harm/room convergence. Do not reuse spatial witness as installed acceptance.",
       "blocker": "HAD03 remains incomplete, RWT06 blocked; no complete floor/material/support/hydraulic/site acceptance earned. Integration branch auto-deleted after verified merge; durable evidence is main and mergedPR1221."
     }
+  },
+  "checkpoint": {
+    "evidence": "Pushed exact tree330839c25612a0c70df9aa1239cf6f35ab109c83 atdfab7051f3b26b80dcde49c5ba9f6284bd94b647: B9300 source bound room/first-release witness, D1300 peer datums. Generation22 source; generator passes finite chair and600body paths.",
+    "next": "Finish joined material/support readback, correct section/site rendering, write owning result, inspect actual renders and validate; root batches integration.",
+    "blocker": "Checkpoint not yet final visual QA. Actual product-bound first-harm, mechanical handling, material/gas/hydraulic/site acceptance unearned; HAD03 remains incomplete."
   }
 }
