@@ -9,8 +9,8 @@
     "label": "zerg-worker-one"
   },
   "claimedAt": "2026-11-01T14:55:11.984Z",
-  "heartbeatAt": "2026-11-01T15:08:09.963Z",
-  "expiresAt": "2026-11-01T15:53:09.963Z",
+  "heartbeatAt": "2026-11-01T15:16:56.128Z",
+  "expiresAt": "2026-11-01T16:01:56.128Z",
   "branch": "work/zerg-one-20261101",
   "predecessor": {
     "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
@@ -36,8 +36,8 @@
   },
   "pr": 1217,
   "checkpoint": {
-    "evidence": "PR #1217 head f87758bb0284bf330a33bdf8e5d098b189bf321b: recovered90c36965 history; joined600mm N/E room allocation, cover and repair sections. Typecheck, repo integrity,9 drawing tests and rendered inspection pass.",
-    "next": "Inspect exact-head full CI, then fresh canonical preflight and expected-head merge after coordinator sequencing",
-    "blocker": "Full CI pending; complete floor materials and hydraulic/site acceptance remain outside reference design"
+    "evidence": "PR #1217 corrected head73de01658dcba974a4336c600b8f270bd596ebb4: joined N/E allocation, rigid-envelope side-then-lift crossing witness, continuous wet-piece segmentation. Root actual-render review and independent adversarial review resolved fixed-cap/extraction defects;10 drawing tests/typecheck/repo integrity pass.",
+    "next": "Wait for exact-head full CI41320331069, obtain coordinator merge slot, then fresh canonical preflight and expected-head merge; retain incomplete HAD/RWT limits",
+    "blocker": "Full CI pending; material, structural, hydraulic and site acceptance remain unearned"
   }
 }
