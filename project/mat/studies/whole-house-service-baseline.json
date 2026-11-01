@@ -354,19 +354,28 @@
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "fullRouteLengthMM": 2358.806130178211,
-      "maintenancePlatformMaximum": [
+      "maintenancePlatformWorkingHeightRange": [
         700,
-        700,
-        400
+        1100
       ],
-      "platformStatus": "Complete rated stable workplatform includingfeet mustfit700square at≤400workingheight; actualload/guard/access/manufacturerproof required. No standingonpan/sink/counter or removalofretainedpipe/support.",
+      "platformStatus": "Qualifiedadjustablesteps/workplatform inclfeet/guards/stabilisers mustfitactualfloorfield, withperson-specificworkingheight700..1100. Old700square/H400 control cannotreach2800face andisREJECTED. Stability/load/access/fullworker/toolreach areactualequipment/physicalmatchingrequirements, notprovedbyanuniversal600sphere. No standingonpan/sink/counter orremovedfixedsupport.",
       "ordinaryMode": "Poweredfan continuous; no occupied floorprojection below2800pod, exceptprincipaldescenderunderside2430. Mirrors/cisterns/appliances mustremainbelow the declared ceilingboundaries.",
       "maintenancePlatformPlan": [
-        7850,
-        1300,
-        700,
-        700
+        7715,
+        1050,
+        750,
+        1100
       ],
+      "workerEquipmentRequirement": {
+        "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+        "maximumHeadTopLocal": 2750,
+        "ceilingFaceLocal": 2800,
+        "requiredTaskContactLocal": [
+          2800,
+          2900
+        ],
+        "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+      },
       "raisedExhaustSection": {
         "axis": 3010,
         "insulatedOD": 227,
@@ -413,8 +422,8 @@
         195,
         116
       ],
-      "platformMinimumFurnitureReserve": 158.11388300841898,
-      "platformClosestFurniture": "guest-WC-pan",
+      "platformMinimumFurnitureReserve": 50.0,
+      "platformClosestFurniture": "guest-WC-basin",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
     },
     {
@@ -485,19 +494,28 @@
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "fullRouteLengthMM": 2208.806130178211,
-      "maintenancePlatformMaximum": [
+      "maintenancePlatformWorkingHeightRange": [
         700,
-        700,
-        400
+        1100
       ],
-      "platformStatus": "Complete rated stable workplatform includingfeet mustfit700square at≤400workingheight; actualload/guard/access/manufacturerproof required. No standingonpan/sink/counter or removalofretainedpipe/support.",
+      "platformStatus": "Qualifiedadjustablesteps/workplatform inclfeet/guards/stabilisers mustfitactualfloorfield, withperson-specificworkingheight700..1100. Old700square/H400 control cannotreach2800face andisREJECTED. Stability/load/access/fullworker/toolreach areactualequipment/physicalmatchingrequirements, notprovedbyanuniversal600sphere. No standingonpan/sink/counter orremovedfixedsupport.",
       "ordinaryMode": "Poweredfan continuous; no occupied floorprojection below2800pod, exceptprincipaldescenderunderside2430. Mirrors/cisterns/appliances mustremainbelow the declared ceilingboundaries.",
       "maintenancePlatformPlan": [
-        10700,
-        1550,
-        700,
-        700
+        10245,
+        1525,
+        1100,
+        750
       ],
+      "workerEquipmentRequirement": {
+        "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+        "maximumHeadTopLocal": 2750,
+        "ceilingFaceLocal": 2800,
+        "requiredTaskContactLocal": [
+          2800,
+          2900
+        ],
+        "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+      },
       "raisedExhaustSection": {
         "axis": 3010,
         "insulatedOD": 227,
@@ -544,7 +562,7 @@
         195,
         116
       ],
-      "platformMinimumFurnitureReserve": 150.0,
+      "platformMinimumFurnitureReserve": 125.0,
       "platformClosestFurniture": "utility-sink",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
     },
@@ -616,19 +634,28 @@
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "fullRouteLengthMM": 3191.306130178211,
-      "maintenancePlatformMaximum": [
+      "maintenancePlatformWorkingHeightRange": [
         700,
-        700,
-        400
+        1100
       ],
-      "platformStatus": "Complete rated stable workplatform includingfeet mustfit700square at≤400workingheight; actualload/guard/access/manufacturerproof required. No standingonpan/sink/counter or removalofretainedpipe/support.",
+      "platformStatus": "Qualifiedadjustablesteps/workplatform inclfeet/guards/stabilisers mustfitactualfloorfield, withperson-specificworkingheight700..1100. Old700square/H400 control cannotreach2800face andisREJECTED. Stability/load/access/fullworker/toolreach areactualequipment/physicalmatchingrequirements, notprovedbyanuniversal600sphere. No standingonpan/sink/counter orremovedfixedsupport.",
       "ordinaryMode": "Poweredfan continuous; no occupied floorprojection below2800pod, exceptprincipaldescenderunderside2430. Mirrors/cisterns/appliances mustremainbelow the declared ceilingboundaries.",
       "maintenancePlatformPlan": [
+        9750,
         9850,
-        10000,
-        700,
-        700
+        1100,
+        750
       ],
+      "workerEquipmentRequirement": {
+        "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+        "maximumHeadTopLocal": 2750,
+        "ceilingFaceLocal": 2800,
+        "requiredTaskContactLocal": [
+          2800,
+          2900
+        ],
+        "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+      },
       "raisedExhaustSection": {
         "axis": 3010,
         "insulatedOD": 227,
@@ -675,8 +702,23 @@
         195,
         116
       ],
-      "platformMinimumFurnitureReserve": 50.0,
-      "platformClosestFurniture": "dining-chair-east-north",
+      "maintenanceFurniture": {
+        "eastNorthChairPark": [
+          10800,
+          8475,
+          500,
+          500
+        ],
+        "eastSouthChairPark": [
+          7750,
+          10400,
+          500,
+          500
+        ],
+        "state": "Parktworigidchairsbeforeplatformerection; restoreaftercompletefanreassembly/testing/platformremoval. Actualotherchairs/table retained."
+      },
+      "platformMinimumFurnitureReserve": 193.47157413945854,
+      "platformClosestFurniture": "cold-storage",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
     },
     {
@@ -742,19 +784,28 @@
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "fullRouteLengthMM": 1800.0,
-      "maintenancePlatformMaximum": [
+      "maintenancePlatformWorkingHeightRange": [
         700,
-        700,
-        400
+        1100
       ],
-      "platformStatus": "Complete rated stable workplatform includingfeet mustfit700square at≤400workingheight; actualload/guard/access/manufacturerproof required. No standingonpan/sink/counter or removalofretainedpipe/support.",
+      "platformStatus": "Qualifiedadjustablesteps/workplatform inclfeet/guards/stabilisers mustfitactualfloorfield, withperson-specificworkingheight700..1100. Old700square/H400 control cannotreach2800face andisREJECTED. Stability/load/access/fullworker/toolreach areactualequipment/physicalmatchingrequirements, notprovedbyanuniversal600sphere. No standingonpan/sink/counter orremovedfixedsupport.",
       "ordinaryMode": "Poweredfan continuous; no occupied floorprojection below2800pod, exceptprincipaldescenderunderside2430. Mirrors/cisterns/appliances mustremainbelow the declared ceilingboundaries.",
       "maintenancePlatformPlan": [
-        1050,
-        9200,
-        700,
-        700
+        650,
+        9250,
+        1100,
+        750
       ],
+      "workerEquipmentRequirement": {
+        "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+        "maximumHeadTopLocal": 2750,
+        "ceilingFaceLocal": 2800,
+        "requiredTaskContactLocal": [
+          2800,
+          2900
+        ],
+        "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+      },
       "alongWallOpeningClearance": 260.0,
       "normalResistanceScreen": {
         "tubeLengthM": 1.8,
@@ -787,8 +838,8 @@
         195,
         116
       ],
-      "platformMinimumFurnitureReserve": 42.5,
-      "platformClosestFurniture": "rear-basin",
+      "platformMinimumFurnitureReserve": 52.5,
+      "platformClosestFurniture": "rear-shower1000",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
     },
     {
@@ -854,19 +905,28 @@
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "fullRouteLengthMM": 1425.0,
-      "maintenancePlatformMaximum": [
+      "maintenancePlatformWorkingHeightRange": [
         700,
-        700,
-        400
+        1100
       ],
-      "platformStatus": "Complete rated stable workplatform includingfeet mustfit700square at≤400workingheight; actualload/guard/access/manufacturerproof required. No standingonpan/sink/counter or removalofretainedpipe/support.",
+      "platformStatus": "Qualifiedadjustablesteps/workplatform inclfeet/guards/stabilisers mustfitactualfloorfield, withperson-specificworkingheight700..1100. Old700square/H400 control cannotreach2800face andisREJECTED. Stability/load/access/fullworker/toolreach areactualequipment/physicalmatchingrequirements, notprovedbyanuniversal600sphere. No standingonpan/sink/counter orremovedfixedsupport.",
       "ordinaryMode": "Poweredfan continuous; no occupied floorprojection below2800pod, exceptprincipaldescenderunderside2430. Mirrors/cisterns/appliances mustremainbelow the declared ceilingboundaries.",
       "maintenancePlatformPlan": [
-        10200,
-        5025,
-        700,
-        700
+        10100,
+        4875,
+        1100,
+        750
       ],
+      "workerEquipmentRequirement": {
+        "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+        "maximumHeadTopLocal": 2750,
+        "ceilingFaceLocal": 2800,
+        "requiredTaskContactLocal": [
+          2800,
+          2900
+        ],
+        "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+      },
       "alongWallOpeningClearance": 510.0,
       "normalResistanceScreen": {
         "tubeLengthM": 1.425,
@@ -899,8 +959,8 @@
         195,
         116
       ],
-      "platformMinimumFurnitureReserve": 25.0,
-      "platformClosestFurniture": "family-WC",
+      "platformMinimumFurnitureReserve": 27.5,
+      "platformClosestFurniture": "family-basin",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
     },
     {
@@ -1013,19 +1073,28 @@
         "pass": false
       },
       "fullRouteLengthMM": 1765.0,
-      "maintenancePlatformMaximum": [
+      "maintenancePlatformWorkingHeightRange": [
         700,
-        700,
-        400
+        1100
       ],
-      "platformStatus": "Complete rated stable workplatform includingfeet mustfit700square at≤400workingheight; actualload/guard/access/manufacturerproof required. No standingonpan/sink/counter or removalofretainedpipe/support.",
+      "platformStatus": "Qualifiedadjustablesteps/workplatform inclfeet/guards/stabilisers mustfitactualfloorfield, withperson-specificworkingheight700..1100. Old700square/H400 control cannotreach2800face andisREJECTED. Stability/load/access/fullworker/toolreach areactualequipment/physicalmatchingrequirements, notprovedbyanuniversal600sphere. No standingonpan/sink/counter orremovedfixedsupport.",
       "ordinaryMode": "Poweredfan continuous; no occupied floorprojection below2800pod, exceptprincipaldescenderunderside2430. Mirrors/cisterns/appliances mustremainbelow the declared ceilingboundaries.",
       "maintenancePlatformPlan": [
-        10400,
-        6650,
-        700,
-        700
+        10325,
+        6625,
+        1200,
+        750
       ],
+      "workerEquipmentRequirement": {
+        "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+        "maximumHeadTopLocal": 2750,
+        "ceilingFaceLocal": 2800,
+        "requiredTaskContactLocal": [
+          2800,
+          2900
+        ],
+        "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+      },
       "alongWallOpeningClearance": -640.0,
       "alongWallOpeningClearanceStatus": "Insideexistingwindowbyintent; cassetteproof replacespiercheck, not a new masonrybore.",
       "normalResistanceScreen": {
@@ -1059,8 +1128,8 @@
         195,
         116
       ],
-      "platformMinimumFurnitureReserve": 62.5,
-      "platformClosestFurniture": "principal-WC",
+      "platformMinimumFurnitureReserve": 25.0,
+      "platformClosestFurniture": "principal-shower900",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
     }
   ],
@@ -1429,6 +1498,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1481,6 +1552,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1521,6 +1594,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1569,6 +1644,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1617,6 +1694,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1665,6 +1744,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1721,6 +1802,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1777,6 +1860,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1821,6 +1906,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1865,6 +1952,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1905,6 +1994,196 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "utility-E",
+        "room": "utility",
+        "level": 0,
+        "family": "StelradCompactK3H600",
+        "length": 500,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          11370.5,
+          1778,
+          200,
+          650
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 1194.5,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 408.519,
+        "dryMassKg": 26.25,
+        "filledMassKg": 31.15,
+        "pressurePairBranchPlan": [
+          [
+            11200,
+            1800
+          ],
+          [
+            11200,
+            2400
+          ],
+          [
+            11470.5,
+            2400
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "Cillunderside≥800required; occupiedsinkbody11045.5/1725 clearsfullradiator25X. FanplatformshiftedW.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "plant-N",
+        "room": "plant",
+        "level": 0,
+        "family": "StelradCompactK3H600",
+        "length": 400,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          9422,
+          6203,
+          550,
+          200
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 955.6,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 326.81520000000006,
+        "dryMassKg": 21.0,
+        "filledMassKg": 24.92,
+        "pressurePairBranchPlan": [
+          [
+            9800,
+            5000
+          ],
+          [
+            10500,
+            5000
+          ],
+          [
+            10500,
+            6300
+          ],
+          [
+            9697,
+            6300
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "Nwall6403/Wdry9397; fullradiator25fromWcorner. Roundbufferrelocationand150maxfrontunhangrequired; noerasedQ350/riser/cylinder/controls.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 150,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "protected-G",
+        "room": "protectedCirculation",
+        "level": 0,
+        "family": "StelradCompactK3H600",
+        "length": 400,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          3500,
+          2747.5,
+          550,
+          200
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 955.6,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 326.81520000000006,
+        "dryMassKg": 21.0,
+        "filledMassKg": 24.92,
+        "pressurePairBranchPlan": [
+          [
+            3500,
+            3500
+          ],
+          [
+            3750,
+            3500
+          ],
+          [
+            3750,
+            2847.5
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "Nface study-cloak-north; exactHADconditionalsolidwall; protectedroute600body/doortrim mustremain.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "protected-F",
+        "room": "protectedCirculation",
+        "level": 1,
+        "family": "StelradCompactK3H600",
+        "length": 400,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          8180,
+          4400,
+          200,
+          550
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 955.6,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 326.81520000000006,
+        "dryMassKg": 21.0,
+        "filledMassKg": 24.92,
+        "pressurePairBranchPlan": [
+          [
+            8500,
+            5900
+          ],
+          [
+            8500,
+            4400
+          ],
+          [
+            8280,
+            4400
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "CourtEactualdryface8179.5;0.5setoutnominal, noairtightlayermissing. Complete200depth+18wetspinebaseleaves805routewidth,600bodywith102.5each. SolidwallbeforeactualcourtEwindow6200.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1949,6 +2228,8 @@
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
+          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillReserveAfterLift": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       }
@@ -1965,9 +2246,7 @@
       "scope": "ActualK3lowtemperature/mass/profilecomparison; exactpaint/coating/plasticbracketclips/valves andhumiditycompatibility remainunadmitted. No strippingfactoryfinish. Capacityscreen isagainstauthored8kWroomallocation, notsiteheatloss."
     },
     "emitterRemainingInternal": [
-      "Utility.35kW complete650x200territory andfanplatformjoin",
-      "Plant.2kW complete550x200territory/bufferrenewal",
-      "Protectedcirculation.6kW two327Wunits withoutdoor/ringbodyclash"
+      "BindfinalHADrepairedsource, actualwindowcillunderside800/setoutandfullbodycheck; noactualapparatusorfixingadmission."
     ]
   },
   "pipeCrossovers": [
@@ -2543,7 +2822,7 @@
       "door": "Existing5450–6350rough; IAS owns actual mechanicaldelayed-action762leaf/825frame withcontinuousfirst2degree handwithdrawal, notpoweredoperator/stationarydwell.27dryreturntrial putsroomsidehost9397; actualmatchedjoint/door source stillpendingfreeze."
     },
     "kitchenSinkStation": {
-      "status": "One-wayrequired interface forIAS sink firstrelease in27dryfinish trial; actual apparatus/frame/joints not admitted.",
+      "status": "Draft interface: selecteddevelopment direction ishead-first disassembly, exactIAScontractpending. Whole-frameW/S/rig fields belowareREJECTED historicalcontrol, notadoptedhandlingproof; retainedunion/servicegeometryremaincompatibilitytargets.",
       "station": [
         8700,
         10970.5,
@@ -2955,6 +3234,7 @@
       "spoolMaximumTopAfter": 2500,
       "finalPanelClearance": 75.375,
       "upperRenewal": {
+        "temporaryClosure": "75stemwithdrawalopenspipe-to-sleevewater/air/fire/acousticboundary. Isolatewetuseandaffectedlowerzone; fitqualifiedremovabletemporaryclosuretoretainedsleeveuntilcompatiblesealsreinstated/tested. Fixedsleeve/flangealoneisnotclosedboundary.",
         "tailBelowUpperFFL": 500,
         "upwardStroke": 550,
         "finalStemAboveFFL": 50,
@@ -3029,7 +3309,7 @@
           "northReceiverToParkedSofa": 42.5,
           "weatherWallWith18TrimToSofa": 25
         },
-        "repeatableAction": "TranslatefamilysofaN650first; platformerectedafterthatmove. Restorebothafterdisconnection. Nofixedreceiver/beam/support removed.",
+        "repeatableAction": "TranslatefamilysofaN650first; platformerectedafterthatmove. Restorefurniture/useonlyafterreassembly,completeboundary/sealreinstatementandtesting,platformremoval/panelclosure. Nofixedreceiver/beam/support removed.",
         "sweptRectangle": [
           2337.5,
           9800,
@@ -3275,7 +3555,7 @@
       "status": "Explicit12east finish correction from417.5 to429.5; floorport unchanged. Old merged pan withdrawal witness must be repeated against shifted cabinet/pan; no automatic pass."
     },
     "kitchenSinkStation": {
-      "status": "One-wayrequired interface forIAS sink firstrelease in27dryfinish trial; actual apparatus/frame/joints not admitted.",
+      "status": "Draft interface: selecteddevelopment direction ishead-first disassembly, exactIAScontractpending. Whole-frameW/S/rig fields belowareREJECTED historicalcontrol, notadoptedhandlingproof; retainedunion/servicegeometryremaincompatibilitytargets.",
       "station": [
         8700,
         10970.5,
@@ -4115,24 +4395,27 @@
     "controlsMaximumHeight": 2300,
     "primaryBuffer": {
       "requiredUsableAlwaysConnectedLitres": 100,
+      "stationRewind": "Relocatedfrom9800/5550afterfiniteemittercoordination; oldQ350isretireduninstalledcomparison, notsilentlyremovedsupport.",
       "station": [
-        9800,
-        5550,
+        10025,
+        5525,
         650,
         650
       ],
+      "completeRoundBodyMaximumDiameter": 600,
+      "completeRoundBodyIncludes": "Allinsulation/feet/supports/collarsandretainedfittingsfit600round;650stationincludes25edgeclear. No barevesselnominalsubstitution.",
       "maximumBodyHeight": 1600,
       "nominalVolumeNotUsableProof": true,
       "reason": "Separated primary cannot borrow unproved radiator volume across plateHX fordefrost.100usable is an authorselected compatibility target, not a claimed universal supplierminimum.",
       "control": "Always-connected usable volume, guaranteed minimum flow and both HX pumps during defrost; valve/check/bypass states must preserve it. Exact chosen unit determines actual minimum and usable port arrangement.",
       "replacementCentrePath": [
         [
-          10125,
-          5875
+          10350,
+          5850
         ],
         [
           10700,
-          5875
+          5850
         ],
         [
           10700,
@@ -4228,7 +4511,40 @@
       "Delete unselected Q350 comparison body, not an installed accepted MVHR; put bufferinthisrealplantterritory.",
       "Hydrauliccontrols mountedEwall, not a floorblock over buffer trolley path.",
       "No floor-level eastsoil crossbar: highlevelbranch exitsEaty5700 beforedownstack."
-    ]
+    ],
+    "emitterJoin": {
+      "radComplete": [
+        9422,
+        6203,
+        550,
+        200
+      ],
+      "radRoutineBody": [
+        9725,
+        5878,
+        300
+      ],
+      "radAfter150PullBody": [
+        9725,
+        5728,
+        300
+      ],
+      "controlsBody": [
+        10957.5,
+        6078,
+        300
+      ],
+      "bufferFrontServiceBody": [
+        10350,
+        5200,
+        300
+      ],
+      "bufferPortFaceRequirement": "Southfaceaccessiblevalves/instrumentation600..1600, drainlowerwithqualifiedkneelingtask; nohiddenrearserviceassumed.",
+      "failed200Pull": "Operatorneeded5678wouldintersectretainedriser; chosen≤150requiresactualunhang/socketmatch. Nofixedsupportdeleted.",
+      "radToBufferBodyReserve": 25.626885611544026,
+      "controlsToBufferBodyReserve": 48.87614380558023,
+      "frontServiceToBufferReserve": 50
+    }
   },
   "trunks": [
     {
@@ -6753,6 +7069,17 @@
       "alternative": "Mineral-insulated metallic routes and metalfaces reduce concealed polymers; not proof that certified terminations can be rebuilt or seals omitted.",
       "replacement": "Accessible isolated complete accessory/device exchange; no embedding as permanent fabric. Fireboundary remains closed by matched retained system.",
       "proposal": "Narrow exact certified accessory exceptions with installed extent/inspection interval; no generic electrical or fire exemption."
+    },
+    {
+      "id": "wall-emitters",
+      "quantity": "16completewallradiators/11.0bodymetres",
+      "location": "All14explicitroom/circulationduties",
+      "known": "Steelwaterwaysdo notqualifyfinish, paint/polyester/epoxy, plasticbracketclips, valveheads/seats/diaphragms orjointseals. Exactproductrevision/installedextentrequired.",
+      "dryMassComparisonKg": 577.5,
+      "filledMassComparisonKg": 685.3,
+      "alternative": "Bare/mineralfinishedmetalapprovedvariantorcompatibleallmetalcontrolsarecomparisonrequirements; nostrippingfactorycoating/valveseals.",
+      "replacement": "Isolate/drainlocalradiator; retainfixedwallpipepairandcaps; actual50up/200front(orplant150)unhangtarget, mechanicalhandlingandfixingloads.",
+      "proposal": "Noownerexceptionapproved; exactvisible/hiddenconstituentsandmanufacturer-permittedfinishmustbequalified."
     },
     {
       "id": "PV",
