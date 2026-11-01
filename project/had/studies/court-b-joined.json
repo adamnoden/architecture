@@ -64,6 +64,20 @@
       ]
     ]
   },
+  "bridgeProfile": {
+    "flangeDepth": 120,
+    "flangeTop": -180,
+    "underside": -300,
+    "ribWidth": 140,
+    "ribAboveFlange": 100,
+    "ribTop": -80,
+    "actualRibAxes": {
+      "court": 8082.5,
+      "spine": 9300,
+      "outer": 11667.5
+    },
+    "meaning": "Monolithic140x220 rib supports actual wall;120flange is not a700-wide masonry beam. Rib replaces100insulation locally; thermal bridge unqualified."
+  },
   "crossingRenewal": [
     {
       "route": "north",
