@@ -9,8 +9,8 @@
     "label": "zerg2-access"
   },
   "claimedAt": "2026-11-01T19:25:45.832Z",
-  "heartbeatAt": "2026-11-01T19:25:45.832Z",
-  "expiresAt": "2026-11-01T20:10:45.832Z",
+  "heartbeatAt": "2026-11-01T19:33:05.167Z",
+  "expiresAt": "2026-11-01T20:18:05.167Z",
   "branch": "work/zerg2-ias-b-joined",
   "predecessor": {
     "leaseId": "7619f2db-fb07-4914-b2fb-dd2284fe29a0",
@@ -33,5 +33,10 @@
       "next": "Release this exact IAS-03 generation12 as handoff after actual checkpoint receipt. Accepted result retains A and conditionally compares east-only C with supported flush closure; continue from accepted main only after fresh canonical allocation.",
       "blocker": "IAS-03 remains planned and incomplete: actual supported floor closure and cabinet chassis, specific service component and renewable aperture/withdrawal, structural receiving panels and connections, installed constituents and physical acceptance are unresolved. B remains a failed comparator, not adopted."
     }
+  },
+  "checkpoint": {
+    "evidence": "Published7b3d93073b661dece03a11e24b513ceea2d13985 exacttree75c2b411f844b43f1f606e51fa063a9505e86649 matcheslocale932a0e9; IAS/HADchecks andInkscapeA3inspection pass; independentinternalreview pass",
+    "next": "Rootintegrate sharedSTR/HAD/MATcandidate; exactheadCI andfreshpernodepreflight beforemerge",
+    "blocker": "Two-pipewitness only; fullstack,circuit,material,actualtool andphysicalacceptance remainopen"
   }
 }
