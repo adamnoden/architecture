@@ -9,8 +9,8 @@
     "label": "zerg-worker-six-roof"
   },
   "claimedAt": "2026-11-01T15:15:13.602Z",
-  "heartbeatAt": "2026-11-01T15:25:17.969Z",
-  "expiresAt": "2026-11-01T16:10:17.969Z",
+  "heartbeatAt": "2026-11-01T15:33:46.810Z",
+  "expiresAt": "2026-11-01T16:18:46.810Z",
   "branch": "work/zerg-mat-roof-20261101",
   "predecessor": {
     "leaseId": "a0c5a0df-62b2-47dc-b1c9-147075dead28",
@@ -31,7 +31,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote cold-roof comparison and audit/programme links published; exact tree9d474bd68842d694f88a910b35dbb2f302268b6b. Complete layer-function comparison, source recipe discrepancy and located wall-head deficit internally challenged; repository integrity passed.",
-    "next": "Independent architectural/source review, exact-head full CI, fresh preflight and coordinator merge sequencing."
-  }
+    "evidence": "PR1222 final reviewed head dfea1516fb1682d7a4734d0167ba7ab62e4e172e, tree b9fe2518957f9ff150e314b8f493c0ef39dd2125 reconciles main cf466b58 and1219interiors; independent source/architecture/arithmetic review passed after unit/provenance corrections. Local repository/public-boundary/diff checks passed.",
+    "next": "Wait for full exact-head CI, obtain coordinator integration slot, run fresh canonical publication preflight and expected-head merge; release promptly after verification.",
+    "blocker": "Full exact-head CI pending; no broad envelope completion claimed."
+  },
+  "pr": 1222
 }
