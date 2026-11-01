@@ -1,41 +1,33 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 8,
+  "generation": 9,
   "state": "claimed",
-  "leaseId": "6b888f33-8d6e-41f2-8d06-346d8bd154af",
+  "leaseId": "fddbc95b-91e0-4257-8c44-85427d4e08d7",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-structural-rooms-2043-20261031"
+    "label": "zerg-worker-three-20261101"
   },
-  "claimedAt": "2026-10-31T20:50:13.455Z",
-  "heartbeatAt": "2026-10-31T21:31:02.199Z",
-  "expiresAt": "2026-10-31T23:01:02.199Z",
-  "branch": "work/swarm-next-2043-20261031",
+  "claimedAt": "2026-11-01T14:58:14.650Z",
+  "heartbeatAt": "2026-11-01T14:58:14.650Z",
+  "expiresAt": "2026-11-01T15:43:14.650Z",
+  "branch": "work/zerg-str-house-20261101",
   "predecessor": {
-    "leaseId": "5ad665a5-8a14-4779-8cce-ab3434d47091",
-    "generation": 7,
-    "branch": "work/swarm-riser-recovery-20261031",
-    "pr": 1170,
+    "leaseId": "6b888f33-8d6e-41f2-8d06-346d8bd154af",
+    "generation": 8,
+    "branch": "work/swarm-next-2043-20261031",
     "checkpoint": {
-      "evidence": "PR1170 merged19:55:10Z as899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b. Independently fetched current main equals that merge; accepted tree50158c3bb7c3b26102df235b91efc59956d29592 equals exact tested c3953e189583f42c101223057f2b7671877c732b tree, with no union delta. All10 reviewed owner blobs, including STR linked-note6aaad687, are exact; original riser JSON/SVG preserved. Tested head, STR1cafd7af, IAS6416dddd, original coordinated0a1e6e8d and publication basec9e9a2c0 are accepted ancestors. Full CI41236042786 attempt2 succeeded; attempt1 correctly failed before lease binding. Fresh STR preflight19:54:58.712Z and IAS19:55:05.091Z preceded actual merge under live90min leases. New common feature ref absent; old predecessor ref remains exactly0a1e for root cleanup after accepted proof. Primary-source/code/architectural/render reviews and combined reproducers/repository/publication/docs checks passed. No source geometry, capacity, component, material or node-completion adoption.",
-      "next": "Handoff release of this completed bounded recovery. Next canonical STR-HOUSE owner should carry accepted1170 product/depth and cabinet/floor-closure evidence into a connected actual support/closure and component-renewal section, or another genuinely open HOUSE junction selected from the owning programme. Bind real receiving units, one-sided spine and plant-door reactions, permanent cabinet supports, flush closure and accessible service withdrawal together; preserve separate IAS/HAD/MAT duties and existing source/review ancestry. Root coordinates fresh dispatch; old source branch cleanup only with expected0a1e guard.",
-      "blocker": "HC150 hanger or approved deeper pairing, receiving-panel layout, actual structural/closure capacities, complete cabinet support and service release, protection and installed constituents remain unbound. Nominal shared200 depth is not assembly approval. STR-HOUSE remains planned and incomplete."
+      "evidence": "Developed a separate unadopted front-allocation B/C/D comparison in project/str/house-front-allocation-study.md and contained house-front-allocation.py/json/svg, preserving the original pinned structural geometry. Peer independently reproduced both 1801-angle finite-door curves and 18 upper whole-segment paths; area convention and own-handle contact limitations are explicit. Complete paired-floor, structural-span, ground-WC/plant, facade/roof, smaller-furniture and material-finish consequences are drafted. Final ground replay found and records the old kitchen route 10 mm clash, testing a declared 20 mm west correction; outputs are regenerating. No geometry adoption or STR-HOUSE completion.",
+      "next": "Finish regenerated ground-path and A3 review, add the owning programme/result links, reconcile current main, run targeted checks and submit the exact reviewed source payload for root publication, full exact-head CI and fresh canonical preflight."
     }
   },
   "recoverySource": {
-    "leaseId": "5ad665a5-8a14-4779-8cce-ab3434d47091",
-    "generation": 7,
-    "branch": "work/swarm-riser-recovery-20261031",
-    "pr": 1170,
+    "leaseId": "6b888f33-8d6e-41f2-8d06-346d8bd154af",
+    "generation": 8,
+    "branch": "work/swarm-next-2043-20261031",
     "checkpoint": {
-      "evidence": "PR1170 merged19:55:10Z as899a6d32d5c7b37a6d3f5c544c90d5f4204e1c7b. Independently fetched current main equals that merge; accepted tree50158c3bb7c3b26102df235b91efc59956d29592 equals exact tested c3953e189583f42c101223057f2b7671877c732b tree, with no union delta. All10 reviewed owner blobs, including STR linked-note6aaad687, are exact; original riser JSON/SVG preserved. Tested head, STR1cafd7af, IAS6416dddd, original coordinated0a1e6e8d and publication basec9e9a2c0 are accepted ancestors. Full CI41236042786 attempt2 succeeded; attempt1 correctly failed before lease binding. Fresh STR preflight19:54:58.712Z and IAS19:55:05.091Z preceded actual merge under live90min leases. New common feature ref absent; old predecessor ref remains exactly0a1e for root cleanup after accepted proof. Primary-source/code/architectural/render reviews and combined reproducers/repository/publication/docs checks passed. No source geometry, capacity, component, material or node-completion adoption.",
-      "next": "Handoff release of this completed bounded recovery. Next canonical STR-HOUSE owner should carry accepted1170 product/depth and cabinet/floor-closure evidence into a connected actual support/closure and component-renewal section, or another genuinely open HOUSE junction selected from the owning programme. Bind real receiving units, one-sided spine and plant-door reactions, permanent cabinet supports, flush closure and accessible service withdrawal together; preserve separate IAS/HAD/MAT duties and existing source/review ancestry. Root coordinates fresh dispatch; old source branch cleanup only with expected0a1e guard.",
-      "blocker": "HC150 hanger or approved deeper pairing, receiving-panel layout, actual structural/closure capacities, complete cabinet support and service release, protection and installed constituents remain unbound. Nominal shared200 depth is not assembly approval. STR-HOUSE remains planned and incomplete."
+      "evidence": "Developed a separate unadopted front-allocation B/C/D comparison in project/str/house-front-allocation-study.md and contained house-front-allocation.py/json/svg, preserving the original pinned structural geometry. Peer independently reproduced both 1801-angle finite-door curves and 18 upper whole-segment paths; area convention and own-handle contact limitations are explicit. Complete paired-floor, structural-span, ground-WC/plant, facade/roof, smaller-furniture and material-finish consequences are drafted. Final ground replay found and records the old kitchen route 10 mm clash, testing a declared 20 mm west correction; outputs are regenerating. No geometry adoption or STR-HOUSE completion.",
+      "next": "Finish regenerated ground-path and A3 review, add the owning programme/result links, reconcile current main, run targeted checks and submit the exact reviewed source payload for root publication, full exact-head CI and fresh canonical preflight."
     }
-  },
-  "checkpoint": {
-    "evidence": "Developed a separate unadopted front-allocation B/C/D comparison in project/str/house-front-allocation-study.md and contained house-front-allocation.py/json/svg, preserving the original pinned structural geometry. Peer independently reproduced both 1801-angle finite-door curves and 18 upper whole-segment paths; area convention and own-handle contact limitations are explicit. Complete paired-floor, structural-span, ground-WC/plant, facade/roof, smaller-furniture and material-finish consequences are drafted. Final ground replay found and records the old kitchen route 10 mm clash, testing a declared 20 mm west correction; outputs are regenerating. No geometry adoption or STR-HOUSE completion.",
-    "next": "Finish regenerated ground-path and A3 review, add the owning programme/result links, reconcile current main, run targeted checks and submit the exact reviewed source payload for root publication, full exact-head CI and fresh canonical preflight."
   }
 }
