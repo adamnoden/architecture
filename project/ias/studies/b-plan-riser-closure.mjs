@@ -193,6 +193,85 @@ const data = {
     limit:'HAD supplies a complete declared door/body/arm proxy sequence, not human acceptance. The closed cabinet approach does not prove actual face release, tools, handling or component withdrawal.'},
 };
 
+
+// J-RC2 is a deliberately reduced service witness, never a packing proof for the gross stack.
+const joined = {
+  id:'J-RC2', status:'Unadopted joined compact-B witness; whole-house stack not resolved',
+  geometry:{bay,riser,cabinet},
+  fixedFloor:{soffit:3170,slabTop:3370,slabDepth:200,functionLayer:60,finish:20,ffl:3450,
+    castBores:[[9500,4850,50],[9700,4850,50]],examplePipeOD:22,
+    plinths:[[9435,4700,100,100],[9835,4700,100,100],[9435,5300,100,100],[9835,5300,100,100]],
+    load:'STR trial 1.0kN total on four slab-contact plinths; not product mass or capacity',
+    scope:'Solid floor replaces the hole ONLY for the two-pipe witness. The inherited whole-house gross stack remains an unresolved alternative.'},
+  cabinetFrame:{posts:[[9450,4715,25,25],[9900,4715,25,25],[9450,5335,25,25],[9900,5335,25,25]],
+    material:'Authored 25 square steel fixed frame; section, anchors, corrosion constituents and capacity unaccepted',
+    plinthHeight:80,rule:'Plinths contact RC, bypass upper layers, finish flush at3450; frame remains during renewal'},
+  component:{manufacturer:'Spirax Sarco',identity:'Fig12 bronze 1/2in BSP strainer, TI-P164-02 CMGT Issue13',
+    source:'https://www.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/ti/Fig_12-TI-P164-02-EN',
+    inspected:'2026-11-01',length:72,bodyDepthBelowPipeCentre:54,withdrawalDatumBelowPipeCentre:85,capEnvelopeAF:30,
+    pipeCentre:[9850,5000,4350],bodyPlan:[9830,4964,40,72],bodyPlanWidth:'40 is an authored schematic allowance; source supplies no complete lateral width',
+    maintenanceVoid:[9750,4900,4100,200,200,400],
+    constituents:'Bronze body, brass cap,316L screen, reinforced exfoliated graphite gasket; complete compound/binder declaration unverified',
+    sourceConflict:'Dimension table30AF vs torque table22AF; verify actual cap/tool and torque before physical trial. No copied torque selected.',
+    application:'Isolated closed-water branch witness only; service need, flow,pressure,temperature and drinking-water suitability not established'},
+  access:{aperture:{x:9985,y:4900,z:3950,widthY:200,height:600},
+    panel:{x:9985,y:4890,z:3940,widthY:220,height:620,thickness:2,material:'Authored plain steel plate; coating/constituents unadmitted',densityKgM3:7850,massKg:0.220*0.620*0.002*7850},
+    screws:[[9985,4890,3950],[9985,5110,3950],[9985,4890,4550],[9985,5110,4550]],
+    panelReleaseEast:30,panelParkingNorth:300,parkedPanel:[10015,5190,220],
+    transferPrism:[9750,4900,4100,285,200,400],
+    parkingRail:[9958,4700,3910,25,700,25],
+    railBrackets:[[9925,4715,3910,33,25,25],[9925,5335,3910,33,25,25]],
+    parkingHooks:[5220,5380].map(y=>({back:[9983,y,3935,3,25,30],seat:[9983,y,3937,39,25,3],lip:[10019,y,3940,3,25,10]})),
+    parkingRule:'Gravity: panel bottom3940 onto two39x25x3 steel seats; fixed rail via two33long brackets to retained east posts. Connection/capacity/corrosion not accepted.',
+    firstReleaseBody:[10350,5300],taskBody:[10350,5050],bodyRadius:300,reachSensitivity:650,
+    approach:[[9710,5880],[10350,5880],[10350,5300]],
+    taskTransfer:[[10350,5300],[10350,5050]],
+    toolReservation:{diameter:180,source:'Authored tool/hand occupancy allowance, not a selected wrench or real-human proof'},
+    panelFixing:'Four room-side captive metal screws to fixed frame; support panel before release; two fixed metal parking hooks',
+    seal:'Face is a dry access cover, not the floor/fire/water boundary. No admitted gasket or performance assigned'},
+  retained:['RC floor and both service seals','four RC-contact plinths','cabinet fixed frame','strainer body and both supported pipe connections','upstream/downstream isolation and retained pipe supports'],
+  renewable:['local east cover and its accessible fixing','strainer cap','screen','new cap gasket'],
+  sequence:['Close accessible upstream/downstream isolation; cool,drain and verify zero pressure into supported catch vessel',
+    'At north body position support cover, release four screws, move30 east then300 north onto fixed hooks',
+    'Move south to task position; support cap, counterhold fixed body and release actual cap with verified tool',
+    'Withdraw cap/screen down the pocket into the200x200x400 maintenance void; move free pieces east through200x600 aperture',
+    'Clean seats; reinstate screen and new identified gasket; tighten to verified current product torque',
+    'Restore pressure slowly and inspect cap,body,pipe joints and catch vessel; dry every affected surface before cover reinstatement',
+    'Reverse body transfer and cover parking/release path; refit four screws; verify independent isolation remains accessible'],
+  limits:['Two22OD pipes cannot substitute for the inherited550x700 whole-house stack and its foul/vent/water/power duties',
+    'Two50 bores leave14 radial geometric annulus, not qualified fire/acoustic/moisture seals or insulation capacity',
+    'Fixed isolation valves,adapters,drain connection,pipe supports and complete circuit remain to be identified; no live operation is authorised',
+    'Component geometry is source-dimensioned; cap-thread disengagement and pocket axis are not dimensioned, so reserve the complete local void rather than inventing axial travel',
+    'Authored panel and tool paths are collision/reach sensitivities, not force,balance,two-handed handling,human or physical acceptance']
+};
+assert.equal(joined.fixedFloor.slabTop-joined.fixedFloor.soffit,200);
+assert.equal(joined.fixedFloor.slabTop+60+20,3450);
+for(const [x,y,d] of joined.fixedFloor.castBores) {
+  assert(x-d/2>=riser[0] && x+d/2<=riser[0]+riser[2] && y-d/2>=riser[1] && y+d/2<=riser[1]+riser[3]);
+  for(const p of joined.fixedFloor.plinths) assert(pointGap([x,y],p)>d/2);
+}
+const access=joined.access;
+const taskApproach=checkRoute(access.approach,cabinet,'closed');
+const taskTransfer=checkRoute(access.taskTransfer,cabinet,'closed');
+assert(taskApproach.passes && taskTransfer.passes);
+const panelPaths=[[[9985,4890],[10015,4890]],[[10015,4890],[10015,5190]]];
+const panelSweep=[9985,4890,32,520];
+const panelBodyMargin=pointGap(access.firstReleaseBody,panelSweep)-300;
+assert(panelBodyMargin>0);
+const screwReach=Math.max(...access.screws.map(([x,y])=>Math.hypot(x-access.firstReleaseBody[0],y-access.firstReleaseBody[1])));
+const componentReach=Math.hypot(9850-access.taskBody[0],5000-access.taskBody[1]);
+assert(screwReach<650 && componentReach<650);
+assert(joined.component.pipeCentre[2]-85>joined.component.maintenanceVoid[2]);
+assert(access.transferPrism[0]+access.transferPrism[3]>access.aperture.x+30);
+assert(access.transferPrism[1]===access.aperture.y && access.transferPrism[4]===access.aperture.widthY);
+assert(access.transferPrism[2]>=access.aperture.z && access.transferPrism[2]+access.transferPrism[5]<=access.aperture.z+access.aperture.height);
+assert(72<200 && 180<200 && joined.component.pipeCentre[2]-85>3450);
+joined.checks={taskApproach,taskTransfer,panelPaths,panelSweep,panelBodyMargin,screwReach,componentReach,
+  boreAnnulusGeometric:14,wholeStackFit:false,physicalAcceptance:false,
+  adverseWholeFloorRemoval:'Removing700x800 floor remains rejected: destroys permanent walking boundary and supports; no maintenance need established',
+  adverseOldBodyPositionPanelMargin:(10300-300)-10017};
+data.joinedTrial=joined;
+
 const svg = [], add = s => svg.push(s);
 const esc = s => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const text = (x,y,t,c='') => add(`<text x="${x}" y="${y}" class="${c}">${esc(t)}</text>`);
@@ -251,7 +330,82 @@ line(12,273,408,273);
 text(12,282,'HAD limits remain: 638 opening, 650 reach sensitivity, 5 basin margin. Develop A first; C needs actual access benefit; B needs redesign.','small');
 text(12,290,'Support/frame outlines are occupancy territories, not bearing/member sizes. No selected material, firestop, capacity or IAS-03 completion.','small');
 add('</svg>');
-const outputs = {'project/ias/studies/b-plan-riser-closure.json':JSON.stringify(data,null,2)+'\n','project/ias/studies/b-plan-riser-closure.svg':svg.join('\n')+'\n'};
+const taskSvg=[];
+const t=s=>taskSvg.push(s);
+const tt=(x,y,s,c='')=>t(`<text x="${x}" y="${y}" class="${c}">${esc(s)}</text>`);
+const rr=(x,y,w,h,c)=>t(`<rect x="${x}" y="${y}" width="${w}" height="${h}" class="${c}"/>`);
+const ll=(x,y,a,b,c='line')=>t(`<path d="M${x},${y}L${a},${b}" class="${c}"/>`);
+t('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect width="420" height="297" fill="#fffdf8"/><style>text{font-family:Arial,sans-serif;font-size:3.1px;fill:#243d43}.title{font-size:6px;font-weight:bold}.head{font-size:4px;font-weight:bold}.small{font-size:2.65px}.line{stroke:#536d73;stroke-width:.35;fill:none}.fixed{fill:#d6dddb;stroke:#526c70;stroke-width:.4}.floor{fill:#d9c9ad;stroke:#806b53;stroke-width:.4}.frame{fill:#839ba0;stroke:#345a65;stroke-width:.4}.void{fill:#e6f1ea;stroke:#35816d;stroke-width:.4;stroke-dasharray:1,1}.part{fill:#bb9762;stroke:#805f36;stroke-width:.5}.panel{fill:#e8dce9;stroke:#916a9f;stroke-width:.5}.motion{fill:none;stroke:#277f69;stroke-width:.7}.warn{fill:#9d4f32}.old{fill:none;stroke:#b18472;stroke-dasharray:2,1;stroke-width:.4}</style>');
+tt(12,14,'J-RC2: keep the floor; renew the local service part','title');
+tt(12,23,'1 November 2026 / joined compact-B comparison / mm / A3 at100% / no adopted source or construction release');
+tt(12,31,'Two-pipe witness only. The550×700 whole-house stack is still unproved; the700×800 full opening remains the adverse alternative.','small warn');
+tt(12,43,'A  Permanent floor / plan1:10','head');
+const PX=x=>12+(x-9300)/10,PY=y=>51+(5500-y)/10;
+const pb=(r,c)=>rr(PX(r[0]),PY(r[1]+r[3]),r[2]/10,r[3]/10,c);
+pb(bay,'fixed');pb(riser,'old');pb(cabinet,'old');
+for(const p of joined.fixedFloor.plinths)pb(p,'floor');
+for(const p of joined.cabinetFrame.posts)pb(p,'frame');
+for(const [x,y,d]of joined.fixedFloor.castBores)t(`<circle cx="${PX(x)}" cy="${PY(y)}" r="${d/20}" fill="#fffdf8" stroke="#526c70" stroke-width=".4"/>`);
+for(const [x,y]of joined.fixedFloor.castBores)t(`<circle cx="${PX(x)}" cy="${PY(y)}" r="1.1" fill="#aa8252"/>`);
+pb(joined.component.bodyPlan,'part');
+ll(PX(9985),PY(4900),PX(9985),PY(5100),'motion');
+tt(12,143,'RC is continuous outside two cast50 bores.','small');
+tt(12,150,'Four100×100 plinths contact slab directly.','small');
+tt(12,157,'25 square fixed frame above; no pipe support.','small');
+tt(12,164,'14 radial annulus ≠ qualified seal.','small warn');
+tt(122,43,'B  Floor section1:5','head');
+const Z=z=>170-(z-3100)/5;
+rr(126,Z(3370),96,40,'fixed');rr(126,Z(3430),96,12,'floor');rr(126,Z(3450),96,4,'floor');
+rr(135,Z(3450),20,16,'fixed');rr(201,Z(3450),20,16,'fixed');
+rr(140,Z(3630),5,36,'frame');rr(206,Z(3630),5,36,'frame');
+ll(124,Z(3115),225,Z(3115));ll(124,Z(3100),225,Z(3100));
+tt(122,57,'Fixed frame (cropped above)','small');
+tt(122,67,'Slab-contact plinths bypass upper layers','small');
+tt(128,Z(3450)-3,'FFL3450 /20finish +60function','small');
+tt(128,Z(3370)+8,'RC200 / top3370','small');
+tt(128,Z(3170)-3,'soffit3170','small');
+tt(128,Z(3115)-3,'55 services;15 ceiling','small');
+tt(122,183,'STR trial1.0kN on four contacts; not rated.','small warn');
+tt(245,43,'C  East access face /1:10','head');
+const EY=y=>245+(y-4675)/10,EZ=z=>171-(z-3450)/10;
+rr(EY(4675),EZ(4650),75,120,'fixed');
+rr(EY(4900),EZ(4550),20,60,'void');
+rr(EY(5190),EZ(4560),22,62,'panel');
+rr(EY(4890),EZ(4560),22,62,'old');
+rr(EY(4900),EZ(4500),20,40,'void');
+rr(EY(4964),EZ(4350),7.2,5.4,'part');
+ll(EY(5000),EZ(4350),EY(5000),EZ(4265),'motion');
+t(`<circle cx="${EY(5000)}" cy="${EZ(4220)}" r="2" fill="none" stroke="#277f69" stroke-width=".5"/>`);
+t(`<circle cx="${EY(5000)}" cy="${EZ(4220)}" r=".5" fill="#277f69"/>`);
+for(const hook of access.parkingHooks)rr(EY(hook.seat[1]),EZ(3940),2.5,.6,'frame');
+rr(EY(4700),EZ(3935),70,2.5,'frame');
+for(const [,y,z]of access.screws)t(`<circle cx="${EY(y)}" cy="${EZ(z)}" r=".7" fill="#805f36"/>`);
+tt(326,60,'Cover220×620×2','small');
+tt(326,68,'Steel cover2.14kg (trial)','small');
+tt(326,84,'Release30 east','small');
+tt(326,76,'Park300 north','small');
+tt(326,91,'Clear200×600','small');
+tt(326,99,'Dry cover only','small');
+tt(326,115,'Pipe centre+900','small');
+tt(326,123,'C85 below centre','small');
+tt(326,143,'Dot: east, normal to sheet','small');
+tt(326,151,'Arrow: authored pocket reserve','small');
+tt(326,159,'Rail + two fixed parking hooks','small');
+tt(326,131,'Void200×200×400','small');
+tt(245,184,'Screen/cap leave locally; body and pipes stay fixed.','small');
+ll(12,194,408,194);
+tt(12,204,'D  Connected first release and reinstatement','head');
+tt(12,214,'1  Isolate both sides, cool, drain, verify zero pressure; support catch vessel.');
+tt(12,223,'2  Body(10350,5300): support cover; release four screws;30 east then300 north.');
+tt(12,232,'3  Move to(10350,5050). Counterhold fixed body; release cap; withdraw into local void.');
+tt(12,241,'4  Move free screen/cap east. New identified gasket; verified tool/torque; inspect leak test.');
+tt(12,250,'5  Dry all affected surfaces; reverse cover/body paths. Floor, penetrations and frame stay fixed.');
+tt(12,263,`Plan sensitivities: screw reach${screwReach.toFixed(1)}; part reach${componentReach.toFixed(1)}; cover/body reserve${panelBodyMargin.toFixed(0)}.`,'small');
+tt(12,271,'These omit articulated hands, force, balance, vertical reach and actual handling. Pocket angle/thread travel and actual tool need verification.','small warn');
+tt(12,280,'Complete graphite-gasket recipe, pipe seals, supports/isolation, hydraulic duty, structural design and physical operation remain unaccepted.','small');
+tt(12,290,'Reference design — not released for construction. This local witness does not discharge IAS-03 or the inherited whole-house riser obligation.','small');
+t('</svg>');
+const outputs = {'project/ias/studies/b-plan-riser-closure.json':JSON.stringify(data,null,2)+'\n','project/ias/studies/b-plan-riser-closure.svg':svg.join('\n')+'\n','project/ias/studies/b-plan-riser-task.svg':taskSvg.join('\n')+'\n'};
 for(const [path,contents] of Object.entries(outputs)) {
   if(process.argv.includes('--check')) assert.equal(read(path),contents,'Stale output: '+path);
   else writeFileSync(new URL(path,root),contents);
