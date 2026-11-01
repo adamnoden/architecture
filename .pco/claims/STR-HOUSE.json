@@ -9,8 +9,8 @@
     "label": "zerg3-structure-loggia"
   },
   "claimedAt": "2026-11-01T20:04:17.184Z",
-  "heartbeatAt": "2026-11-01T20:21:43.424Z",
-  "expiresAt": "2026-11-01T21:06:43.424Z",
+  "heartbeatAt": "2026-11-01T21:03:16.537Z",
+  "expiresAt": "2026-11-01T21:48:16.537Z",
   "branch": "work/zerg3-structure-loggia",
   "predecessor": {
     "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remoteaed16e56912586dbb24b03d18b7e836fff4a3a62 exacttree3653e94b1fda695c35204c77a4fd41b70e0a5f67; owningHAD1068dd38 source pin; 12 finite RC floor fields, actual NSwetwallbeam and grid target calculations; generator and rendered inspection passed at first bounded checkpoint",
-    "next": "Engineering review then complete stair/entrance frames, actual tied arches, receiving piers/cap, roof and full service/soffit interfaces on one joined source",
-    "blocker": "Incomplete candidate; HAD finished-face/cabinet discrepancy, actual piers/cap/arches/frame/roof/ports remain explicit design work"
+    "evidence": "Remoteb2efa4030d137e9c1279ec0b9aa905cdf6eebf04 exacttree9023e24eea97c5fa32c7cff8e1b3d0b1eccd9c2a; correctedHADc83a06f2 pin; actual finite edge unions/collectors, lowered doorway-safe wetbeam, two-leaf600grid torsion, explicit point nodes and integralnode calculation; generator/diffcheck passed",
+    "next": "High review corrected bounded model; finish midlanding/post, entrance/tied arches, actual roof/ports and soffit thermal bridge before any joined pass",
+    "blocker": "Incomplete candidate; integral600node/pilehead/cage needs review, no foundation or geometric adoption"
   }
 }
