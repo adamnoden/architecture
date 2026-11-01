@@ -9,8 +9,8 @@
     "label": "zerg4-whole-house-services"
   },
   "claimedAt": "2026-11-01T21:02:38.591Z",
-  "heartbeatAt": "2026-11-01T21:02:38.591Z",
-  "expiresAt": "2026-11-01T21:47:38.591Z",
+  "heartbeatAt": "2026-11-01T21:12:39.636Z",
+  "expiresAt": "2026-11-01T21:57:39.636Z",
   "branch": "work/zerg4-whole-house-services",
   "predecessor": {
     "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
@@ -33,5 +33,10 @@
       "next": "Sole CI observer access reports exact-head result; root runs both fresh per-node merge preflights and expected-head merge; verify then release.",
       "blocker": "CI and root final preflights pending. No technical/material/physical acceptance or MAT lifecycle closure."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote12e75ce5/treeee37dbf2; new whole-house-service-baseline.md records HADc83/b15df3b3 basis, selected local-MEV architecture and explicit complete duty boundary.",
+    "next": "Generate actual terminal/routes, heat and airflow sensitivity, maintenance and full constituent residue schedule; coordinate protected-door transfer and finite plant replacement.",
+    "blocker": "Protected ring revision pending; no actual product material, heat-load or physical route acceptance."
   }
 }
