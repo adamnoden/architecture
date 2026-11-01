@@ -1,41 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 16,
-  "state": "released",
-  "leaseId": "cc21538d-3614-4fa3-8e93-314ed86fdf3b",
+  "generation": 17,
+  "state": "claimed",
+  "leaseId": "c6afe8b9-939f-40a1-8edf-eddd2d2602ca",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6556750838"
+    "label": "issue-comment-6557421818"
   },
-  "claimedAt": "2026-11-01T10:30:45.000Z",
-  "heartbeatAt": "2026-11-01T10:46:39.000Z",
-  "expiresAt": "2026-11-01T10:46:39.000Z",
-  "branch": "work/mvb-chat-6556750838",
+  "claimedAt": "2026-11-01T11:38:49.000Z",
+  "heartbeatAt": "2026-11-01T11:38:49.000Z",
+  "expiresAt": "2026-11-01T12:23:49.000Z",
+  "branch": "work/mvb-chat-6557421818",
   "predecessor": {
-    "leaseId": "1df49455-4f9f-4f04-a218-abba2e9a8b82",
-    "generation": 15,
-    "branch": "work/swarm-study-room-2106-20261031",
+    "leaseId": "cc21538d-3614-4fa3-8e93-314ed86fdf3b",
+    "generation": 16,
+    "branch": "work/mvb-chat-6556750838",
+    "pr": 1209,
     "checkpoint": {
-      "evidence": "Six-file whole accepted Study draft ready for independent/root review at had-study-room-2106: owning had-03-study-room.md, programme link, deterministic study-room-arrangements.py/JSON and twoA3SVGs. Exact private guard reviewed-draft-blobs.json: study e4a3dd20, generator6cd9201c, JSONada8d4b3, SVG263c1aae/7ff6e097, programmefff7d66d. No remote publication or completed-node claim. Retained/source R, northdesk N and rotated T compared with same1600x700 desk and490x600 chair. N preserves whole relocated1000x900 chair reservation during unchanged low-hinge door proof; complete entry/close, empty-chair150withdrawal/reverse-restow, all3window approach circuit, reverse reopen/exit checked. Window circuit fixedmargin37.5 overall, frontage57.5(source)/53.5(+9southfinish). West centre still blocked; conditional594.643planar reach at trialplane360 leaves80verticaldifference, not actual operation. Source/4oldoutputs unchanged. Reproducer, repository/workflow, publication source/integrity,5gallerychecks and docs build pass; bothactualA3PDFs rendered/visually inspected. Fresh main4e9839d4 has11RWT/controlpaths only, noHAD/source-pin overlap.",
-      "next": "Resolve independent architectural/source/geometry findings, retain section projection and necessary-only reach scope, then immutable sourcecommit on72c6 followed by fresh-main integration preserving all concurrent work. Publish exact six-file bounded result through root, bind actualPR/head, require fullCI and freshcanonicalpreflight, verify accepted result and handoffrelease. Actual occupied workstation, parked-leaf preparation/latch/grip, all3window controls/sash/shade, finish/projection and furniture/sash/fullframe handling remain specific selection obligations; no sourceadoption or HAD03 lifecycle completion."
+      "evidence": "PR1209 exact head 35ac7d61: undercroft grade/floor clearance inequality, N/E failure table, authored sensitivity SVG and HAD/RWT programme links. HAD-03 remains planned.",
+      "next": "Require green full PR CI 41298531549 and native live-lease preflight 41298673106; merge with exact reviewed head, release as handoff, dispose helper branch.",
+      "blocker": "Accepted architectural N/E plan+sections, site grade/high-water and threshold/structure design are still unresolved."
     }
   },
   "recoverySource": {
-    "leaseId": "1df49455-4f9f-4f04-a218-abba2e9a8b82",
-    "generation": 15,
-    "branch": "work/swarm-study-room-2106-20261031",
+    "leaseId": "cc21538d-3614-4fa3-8e93-314ed86fdf3b",
+    "generation": 16,
+    "branch": "work/mvb-chat-6556750838",
+    "pr": 1209,
     "checkpoint": {
-      "evidence": "Six-file whole accepted Study draft ready for independent/root review at had-study-room-2106: owning had-03-study-room.md, programme link, deterministic study-room-arrangements.py/JSON and twoA3SVGs. Exact private guard reviewed-draft-blobs.json: study e4a3dd20, generator6cd9201c, JSONada8d4b3, SVG263c1aae/7ff6e097, programmefff7d66d. No remote publication or completed-node claim. Retained/source R, northdesk N and rotated T compared with same1600x700 desk and490x600 chair. N preserves whole relocated1000x900 chair reservation during unchanged low-hinge door proof; complete entry/close, empty-chair150withdrawal/reverse-restow, all3window approach circuit, reverse reopen/exit checked. Window circuit fixedmargin37.5 overall, frontage57.5(source)/53.5(+9southfinish). West centre still blocked; conditional594.643planar reach at trialplane360 leaves80verticaldifference, not actual operation. Source/4oldoutputs unchanged. Reproducer, repository/workflow, publication source/integrity,5gallerychecks and docs build pass; bothactualA3PDFs rendered/visually inspected. Fresh main4e9839d4 has11RWT/controlpaths only, noHAD/source-pin overlap.",
-      "next": "Resolve independent architectural/source/geometry findings, retain section projection and necessary-only reach scope, then immutable sourcecommit on72c6 followed by fresh-main integration preserving all concurrent work. Publish exact six-file bounded result through root, bind actualPR/head, require fullCI and freshcanonicalpreflight, verify accepted result and handoffrelease. Actual occupied workstation, parked-leaf preparation/latch/grip, all3window controls/sash/shade, finish/projection and furniture/sash/fullframe handling remain specific selection obligations; no sourceadoption or HAD03 lifecycle completion."
+      "evidence": "PR1209 exact head 35ac7d61: undercroft grade/floor clearance inequality, N/E failure table, authored sensitivity SVG and HAD/RWT programme links. HAD-03 remains planned.",
+      "next": "Require green full PR CI 41298531549 and native live-lease preflight 41298673106; merge with exact reviewed head, release as handoff, dispose helper branch.",
+      "blocker": "Accepted architectural N/E plan+sections, site grade/high-water and threshold/structure design are still unresolved."
     }
-  },
-  "pr": 1209,
-  "checkpoint": {
-    "evidence": "PR1209 exact head 35ac7d61: undercroft grade/floor clearance inequality, N/E failure table, authored sensitivity SVG and HAD/RWT programme links. HAD-03 remains planned.",
-    "next": "Require green full PR CI 41298531549 and native live-lease preflight 41298673106; merge with exact reviewed head, release as handoff, dispose helper branch.",
-    "blocker": "Accepted architectural N/E plan+sections, site grade/high-water and threshold/structure design are still unresolved."
-  },
-  "releasedAt": "2026-11-01T10:46:39.000Z",
-  "releaseReason": "handoff"
+  }
 }
