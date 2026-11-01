@@ -9,8 +9,8 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-01T21:01:08.006Z",
-  "expiresAt": "2026-11-01T21:46:08.006Z",
+  "heartbeatAt": "2026-11-01T21:20:23.938Z",
+  "expiresAt": "2026-11-01T22:05:23.938Z",
   "branch": "work/zerg4-interiors-whole-house",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -34,5 +34,10 @@
       "next": "SoleCIobserveraccess; rootexactheadpreflights+merge, then workerrelease",
       "blocker": "ExactcombinedheadfullCIpending; material/product/physicaladmissionandbroadMATremainopen"
     }
+  },
+  "checkpoint": {
+    "evidence": "Publishedwholehouse4filecheckpoint;14families18referenceoccurrences; finish17vs15 andcompleteceiling176control costs explicit; noadmissionclaim",
+    "next": "JoinHADprotected-routeledger, refineactualassemblyrecommendations andrepair/residualschedule; independentlyreviewthenPR",
+    "blocker": "ExactHADprotectedboundariesandroofclosureselectionpending; coreactualproduct/materialadmissionremainsseparate"
   }
 }
