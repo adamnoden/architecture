@@ -14,8 +14,8 @@ from html import escape
 OUT=Path(__file__).resolve().parent
 ROOT=OUT.parents[2]
 HAD_PATH='project/had/studies/open-north-loggia.json'
-HAD_COMMIT='c83a06f26cf3b146d7cdc8254b4799f390508196'
-HAD_SHA='bf98f77a4cc2a8704adf931ef469ceaf3228811dd666cf9250050d0c9d9b32c2'
+HAD_COMMIT='0b2f7d48c82459214cae4b6778c3ced7b3e6c54b'
+HAD_SHA='9984a61f84943abe8b95b59db6da675b43999e9d1530b2508b7ade67062c2936'
 local=ROOT/HAD_PATH
 raw=local.read_bytes() if local.exists() else subprocess.check_output(['git','show',HAD_COMMIT+':'+HAD_PATH],cwd=ROOT)
 if hashlib.sha256(raw).hexdigest()!=HAD_SHA:
@@ -81,7 +81,8 @@ fields=[
  ('west-stair-gallery','EW',[2917.5,4432.5,3917.5,8082.5],1000,7.5),
  ('west-stair-gallery-N','EW',[2917.5,8082.5,4377.5,8852.5],1460,7.5),
  ('east-gallery-N','EW',[7622.5,8082.5,9300,8290],1677.5,7.5),
- ('NW','NS',[332.5,8852.5,4377.5,11667.5],2815,7.5),
+ ('NW-W','EW',[332.5,8852.5,2902.5,11667.5],2570,7.5),
+ ('NW-E','EW',[2902.5,8852.5,4377.5,11667.5],1475,7.5),
  ('above-loggia','EW',[4377.5,8082.5,7622.5,11667.5],3245,8.5),
  ('NE','NS',[7622.5,8290,11667.5,11667.5],3377.5,7.5),
 ]
@@ -113,7 +114,7 @@ horizontal={332.5:[(332.5,11667.5,'outer-S')],11667.5:[(332.5,11667.5,'outer-N')
 vertical={332.5:[(332.5,11667.5,'outer-W')],11667.5:[(332.5,11667.5,'outer-E')],
           3917.5:[(3917.5,8082.5,'court-W')],8082.5:[(3917.5,8082.5,'court-E')],
           9300:[(332.5,8290,'spine')],4377.5:[(7750,11667.5,'loggia-W')],
-          7622.5:[(7750,11667.5,'loggia-E')],2917.5:[(2650,8852.5,'return-and-trimmer')]}
+          7622.5:[(7750,11667.5,'loggia-E')],2902.5:[(8852.5,11667.5,'actual-wet-beam')],2917.5:[(2650,8852.5,'return-and-trimmer')]}
 def edge_covered(interval,segments):
     cursor=interval[0]
     for lo,hi,name in sorted(segments):
@@ -153,9 +154,9 @@ wet=dict(axis_x=2902.5,support_axes_y=[8852.5,11512.5],span=2660,loaded_north_ov
          tributary_width=wet_trib*1000,G=wet_G,Q=wet_Q,
          section=wet_section,action=wet_action,links=wet_links,
          south_receiving_core=[2772.5,8627.5,260,450],
-         south_receiving_finished=[2757.5,8612.5,290,480],
+         south_receiving_finished=had['structuralChanges']['newWetWallBeam']['southReceiverFinished'],
          north_receiving_core=[2772.5,11287.5,260,450],
-         north_receiving_finished=[2757.5,11272.5,290,480],
+         north_receiving_finished=had['structuralChanges']['newWetWallBeam']['northReceiverFinished'],
          door_edge_x=3100,north_window_edge_x=3050,
          actual_receiving_pier_material='RC260x450;H6/100;4H16;16mm maximum aggregate',
          shear_links_required=wet_action['V']>wet_section['VRdc'],resolved=False)
@@ -453,16 +454,79 @@ return_M=max(return_RL*x-return_w*x*x/2-return_P*max(0,x-return_a)
              for x in [return_L*i/500 for i in range(501)])
 return_links=links(200,210,6,100)
 assert return_M<return_sec['MR'] and max(return_RL,return_reaction)<return_links['VRs']
-long_line=(1.35*7.5+1.5*2)*.5+1.35*(.2*.15*25+1.0)
-long_spans=[udl(long_line,L) for L in [2.8,1.72]]
-stair_angle=math.atan2(1.725,2.7)
+# Actual source-bound stair; scalar2700 and old1100flight are superseded.
+sg=had['stairGuard'];tg=sg['treadGeometry']
+assert tg['bearingAxesY']==[4332.5,7257.5]
+stair_angle=math.radians(tg['pitchDegrees']);stair_span=tg['bearingSpan']/1000
 stair_G=.15/math.cos(stair_angle)*25+.1725/2*25+.9
-stair_flight=udl(1.35*stair_G+1.5*3,2.7)
-stair_flight_reaction=stair_flight['V']*1.1
+stair_flight=udl(1.35*stair_G+1.5*3,stair_span)
+stair_flight_reaction=stair_flight['V']*sg['bodyTerritoryEach']/1000
+stair_sec=rc(1000,150,119,area(12)*1000/125,25)
+stair_axial=stair_flight['V']*math.sin(stair_angle)
+assert stair_flight['M']/stair_sec['MR']+stair_axial*1000/(stair_sec['As']*(500/1.15))<1
+assert stair_flight['V']<stair_sec['VRdc']
+# Continuous longtrimmer, not independent simply supported reactions summed.
+# Three-moment compatibility integrates actualpiecewise tributary widths.
+def beam_line(xs,supports,loads):
+    n=len(xs);K=[[0.0]*(2*n) for _ in range(2*n)];F=[0.0]*(2*n);els=[]
+    for i,(x0,x1,q) in enumerate(zip(xs,xs[1:],loads)):
+        L=x1-x0;k=[[12,6*L,-12,6*L],[6*L,4*L*L,-6*L,2*L*L],[-12,-6*L,12,-6*L],[6*L,2*L*L,-6*L,4*L*L]]
+        k=[[v/L**3 for v in row] for row in k];f=[-q*L/2,-q*L*L/12,-q*L/2,q*L*L/12];dofs=[2*i,2*i+1,2*i+2,2*i+3]
+        for a,ia in enumerate(dofs):
+            F[ia]+=f[a]
+            for b,ib in enumerate(dofs):K[ia][ib]+=k[a][b]
+        els.append((L,k,f,dofs,q))
+    fixed=[2*i for i in supports];free=[i for i in range(2*n) if i not in fixed]
+    A=[[K[i][j] for j in free]+[F[i]] for i in free]
+    for k in range(len(free)):
+        pivot=max(range(k,len(free)),key=lambda i:abs(A[i][k]));A[k],A[pivot]=A[pivot],A[k]
+        v=A[k][k];assert abs(v)>1e-10
+        A[k]=[x/v for x in A[k]]
+        for i in range(len(free)):
+            if i==k:continue
+            v=A[i][k];A[i]=[x-v*y for x,y in zip(A[i],A[k])]
+    u=[0.0]*(2*n)
+    for i,d in enumerate(free):u[d]=A[i][-1]
+    reactions=[sum(K[2*i][j]*u[j] for j in range(2*n))-F[2*i] for i in supports]
+    member=[]
+    for L,k,f,dofs,q in els:
+        end=[sum(k[a][b]*u[dofs[b]] for b in range(4))-f[a] for a in range(4)]
+        values=[-end[1]+end[0]*x-q*x*x/2 for x in [L*i/1000 for i in range(1001)]]
+        member.append(dict(L=L,q=q,end_forces=end,Mpositive=max(values),Mnegative=min(values),Vmax=max(abs(end[0]),abs(end[2]))))
+    assert abs(sum(reactions)-sum(e[0]*e[4] for e in els))<1e-8
+    assert abs(sum(R*xs[i] for R,i in zip(reactions,supports))-sum((xs[k]+L/2)*L*q for k,(L,_,_,_,q) in enumerate(els)))<1e-8
+    return dict(reactions=reactions,elements=member)
+control=beam_line([0,2],[0,1],[8])
+assert math.isclose(control['reactions'][0],8) and math.isclose(control['elements'][0]['Mpositive'],4)
+long_x=[0,2.925,3.750,4.520];long_width=[.5,.5,.73]
+long_cases=[]
+for leftQ,rightQ in [(0,0),(1,0),(0,1),(1,1)]:
+    loads=[1.35*(7.5*b+.2*.15*25+1)+(1.5*2*b*(leftQ if i==0 else rightQ)) for i,b in enumerate(long_width)]
+    c=beam_line(long_x,[0,1,3],loads);c['Qpattern']=[leftQ,rightQ];long_cases.append(c)
+long_spans=[dict(M=max(max(abs(e['Mpositive']),abs(e['Mnegative'])) for e in c['elements']),
+                 V=max(e['Vmax'] for e in c['elements'])) for c in long_cases]
+long_reaction_max=[max(c['reactions'][i] for c in long_cases) for i in range(3)]
+landing_L=1.595;landing_G=5.5;landing_Q=3
+landing_action=udl(1.35*landing_G+1.5*landing_Q,landing_L)
+landing_sec=rc(1000,200,169,area(12)*1000/150,25)
+assert landing_action['M']<landing_sec['MR'] and landing_action['V']<landing_sec['VRdc']
+mid_L=2.610;mid_w=(1.35*landing_G+1.5*landing_Q)*landing_L/2+1.35*.25*.17*25
+mid_points=[(stair_flight_reaction,(sum(sg[k])/2-332.5)/1000) for k in ['lowerFlightX','upperFlightX']]
+mid_RL=mid_w*mid_L/2+sum(P*(mid_L-a)/mid_L for P,a in mid_points)
+mid_RR=mid_w*mid_L/2+sum(P*a/mid_L for P,a in mid_points)
+mid_M=max(mid_RL*x-mid_w*x*x/2-sum(P*max(0,x-a) for P,a in mid_points) for x in [mid_L*i/1000 for i in range(1001)])
+mid_sec=rc(250,370,327,2*area(20),25);mid_links=links(250,327,8,125)
+assert mid_M<mid_sec['MR'] and max(mid_RL,mid_RR)<min(mid_links['VRs'],mid_links['VRmax'])
+mid_post_N=mid_RR+long_reaction_max[1]+1.35*.25*.25*3.55*25
+mid_post_Pcr=math.pi**2*.25*E*(250**4/12)/3550**2/1000
+mid_post_M=(mid_post_N*.02+long_reaction_max[1]*.025)/(1-mid_post_N/mid_post_Pcr)
+mid_post_NR=.6*17*(250**2-4*area(16))/1000
+mid_post_sec=rc(250,250,211,2*area(16),25)
+assert mid_post_N/mid_post_NR+mid_post_M/mid_post_sec['MR']<1
 # Header is supported by outer AND court walls, not by its own hanging trimmer.
 header_L=3.585
-header_points=[(long_spans[0]['V']+return_reaction,(2917.5-332.5)/1000),
-               (stair_flight_reaction,(2267.5-332.5)/1000)]
+header_points=[(long_reaction_max[0]+return_reaction,(2917.5-332.5)/1000),
+               (stair_flight_reaction,(sum(sg['upperFlightX'])/2-332.5)/1000)]
 header_w=1.35*.2*.15*25+(1.35*7.5+1.5*2)*1.085/2
 header_RL=header_w*header_L/2+sum(P*(header_L-a)/header_L for P,a in header_points)
 header_RR=header_w*header_L/2+sum(P*a/header_L for P,a in header_points)
@@ -475,24 +539,166 @@ assert max(header_RL,header_RR)<min(header_link['VRs'],header_link['VRmax'])
 frame=dict(corner_collectors=collectors,
            west_return=dict(axis_x=2917.5,y_supports=[2650,4332.5],point_from_CW=corner_W['V'],north_reaction=return_reaction,
                             section=return_sec,M=return_M,reactions=[return_RL,return_reaction],links=return_links),
-           long_trimmer=dict(axis_x=2917.5,y_supports=[4332.5,7132.5,8852.5],spans=long_spans,section=rc(200,350,310,2*area(16),25),links=links(200,310,6,100)),
+           long_trimmer=dict(axis_x=2917.5,y_supports=[4332.5,7257.5,8852.5],spans=long_spans,continuous_cases=long_cases,reaction_envelope=long_reaction_max,load_break_y=8082.5,top_steel='2H10 continuous;negativeMchecked',section=rc(200,350,310,2*area(16),25),links=links(200,310,6,100)),
            stair_header=dict(axis_y=4332.5,x_supports=[332.5,3917.5],points=header_points,
                              M=header_M,reactions=[header_RL,header_RR],section=header_sec,links=header_link,
                              footprint=[262.5,4232.5,3725,200],
                              top=3370,bottom=3070,finished_soffit=3055,
                              west_window_arch_rewind=dict(centre_y=4600,from_spring=2550,to_spring=2450,from_crown=2850,to_crown=2750,
                                                            ring=215,actual_patch=[4232.5,4432.5],seat=3060,min_reserve=113.157316509265)),
-           stair=dict(risers=20,rise=172.5,going=300,landing_depth=1635,flight_clear_width=1100,
-                      waist=150,waist_section=rc(1000,150,109,area(12)*1000/125,25),
+           stair=dict(risers=20,rise=172.5,going=300,pitch_degrees=tg['pitchDegrees'],
+                      bearing_axes_y=tg['bearingAxesY'],bearing_span=stair_span*1000,
+                      landing_depth=sg['midlandingDepth'],flight_body_width=sg['bodyTerritoryEach'],
+                      between_rails=sg['handrail']['betweenRails'],after20_position_loss=sg['handrail']['after20Loss'],
+                      waist=150,waist_normal=True,waist_section=stair_sec,
+                      steel='H12/125 main eachface;H10/150 distribution',
                       G=stair_G,Q=3,flight_action=stair_flight,flight_end_reaction=stair_flight_reaction,
-                      midlanding_post_core=[2817.5,7007.5,250,250],
-                      finished_gallery_remaining=750,
+                      axial_sensitivity=stair_axial,main_nose_levels=[0,1725,3450],
+                      upper_floor80_not_added_to_final_riser=True,
+                      fully_cracked_phi3_mm=cracked(1000,150,119,stair_sec['As'],stair_G,3,stair_span,3),
+                      differential_shrinkage_300microstrain_mm=300e-6/150*(stair_span*1000)**2/8,
+                      L250_comparator=stair_span*1000/250,
+                      midlanding_slab=dict(top=1725,bottom=1525,NSsupport_axes=[7257.5,8852.5],
+                                          full_north_seat=[8782.5,8922.5],section=landing_sec,action=landing_action,
+                                          actual_northwall_bearing_admission=False),
+                      midlanding_beam=dict(footprint=[262.5,7132.5,2805,250],support_axes_x=[332.5,2942.5],
+                                          top=1725,bottom=1355,normal_waist_soffit_last_lower=1552.5-150/math.cos(stair_angle),
+                                          section=mid_sec,links=mid_links,point_loads=mid_points,udl=mid_w,M=mid_M,reactions=[mid_RL,mid_RR],
+                                          steel='2H20bottom/2H10top;H8/125',
+                                          west_RC_sill_receiver=[262.5,6200,140,2100],receiver_top=1725,receiver_bottom=1355,
+                                          west_RC_pier=[262.5,7007.5,140,500],
+                                          window_sill=1750,frame_bearing_joint_height=25,
+                                          actual_joint_cage_anchorage_qualified=False),
+                      midlanding_post_core=[2817.5,7132.5,250,250],post_end=3370,
+                      post_section=dict(steel='4H16/H6/100',N=mid_post_N,M=mid_post_M,Pcr=mid_post_Pcr,NR=mid_post_NR,MR=mid_post_sec['MR'],
+                                        actual_RC_joint_cage_qualified=False),
+                      ground_toe_support=dict(control_RC_top=-180,new_MAT_thermal_level_unjoined=True),
+                      guard_load_and_anchor_capacity_qualified=False,
                       actual_midlanding_EWbeam_and_post_design_pending=True),
            NE_return=dict(original_endpoint=7750,required_endpoint=7552.5,overlap_core=[7552.5,7692.5],
                           reason='Full140 material junction to loggia core; source rewind required, no57.5void.'))
 for a in long_spans:
-    assert a['M']<frame['long_trimmer']['section']['MR']
+    assert a['M']<min(frame['long_trimmer']['section']['MR'],rc(200,350,314,2*area(10),25)['MR'])
     assert a['V']<frame['long_trimmer']['links']['VRs']
+
+floor_reactions=[]
+for f in floor:
+    x1,y1,x2,y2=f['rectangle'];L=f['axis_span']/1000
+    endpoints=[([x1,y1,x2,y1],[x1,y2,x2,y2])] if f['direction']=='NS' else [([x1,y1,x1,y2],[x2,y1,x2,y2])]
+    for pair in endpoints:
+        for e in pair:floor_reactions.append(dict(field=f['id'],support_segment=e,G_per_m=f['G']*L/2,Q_per_m=f['Q']*L/2,
+                                                 ULS_per_m=(1.35*f['G']+1.5*f['Q'])*L/2))
+for i,a in enumerate(floor):
+    ax,ay,bx,by=a['rectangle']
+    for b in floor[:i]:
+        cx,cy,dx,dy=b['rectangle'];assert max(0,min(bx,dx)-max(ax,cx))*max(0,min(by,dy)-max(ay,cy))==0
+wet_collected=sum(r['G_per_m'] for r in floor_reactions if r['field'] in ['NW-W','NW-E'] and r['support_segment'][0]==r['support_segment'][2]==2902.5)
+assert math.isclose(wet_collected,7.5*wet_trib)
+frame['floor_reaction_inventory']=dict(reactions=floor_reactions,axis_fields_nonoverlapping=True,
+    NW_resolution='TwoEWfields2570/1475physicallyendatwetbeam;theirfloorloadisNOTalsosummedontorearW/outerN.',
+    limits='Supportaxisrectanglesomitwallwidth/cantileverbands,entrancebridgeandactualports;fullslabphysicalmass/edge/supportopeningadmissionstillrequired.')
+frame['actual_ground_receivers']=[dict(id='stair-midpost',xy=[2942.5,7257.5],N=mid_post_N,M=mid_post_M),
+                                    dict(id='stair-mid-W',xy=[332.5,7257.5],vertical_ULS=mid_RL),
+                                    dict(id='header-W',xy=[332.5,4332.5],vertical_ULS=header_RL),
+                                    dict(id='header-E',xy=[3917.5,4332.5],vertical_ULS=header_RR)]
+frame['frozen_node_submodel']=dict(review_input='bee433780a6a72e2a352ec6b913a9c51c93c486b',
+    meaning='Nodefunctions/parametersunchangedawaitspecialist;actualstairreceivercoordinatesandloadsaboverequirebinding,notimplicitN850admission.')
+
+# A finite conventional westreceiver: RC140window-sill beam, not a wider
+#column obstructing the stair. Its two deliberate masonry bearing patches and
+#two-strut/continuous-H12tie transfer are explicit and material-strength bounded.
+sill_G=.14*.37*25+1.0 # includes authored1kN/m window/frame dead-loadbudget.
+sill_N=mid_RL+1.35*sill_G*2.1+1.35*.14*.7*1.535*20
+sill_e=20;sill_bearing_area=2*140*275
+sill_max_bearing=sill_N*1000/sill_bearing_area*(1+6*sill_e/140)
+sill_H=mid_RL/2*200/(1680-1436)
+sill_strut=math.hypot(mid_RL/2,sill_H)
+assert sill_H<area(12)*(500/1.15)/1000
+assert sill_strut*1000/(140*150)<.528*17
+sill=dict(concrete=[262.5,6200,140,2100],top=1725,bottom=1355,
+          two_NS_bearing_patches=[[6920,7195],[7320,7595]],masonry_territory=[262.5,6907.5,140,700],
+          vertical_load=mid_RL,total_with_sill_window_wall=sill_N,window_G_budget_per_m=1,
+          minimum_eccentricity=sill_e,required_simple_bearing_fd=sill_max_bearing,
+          masonry_modulus_second_order_admission=False,
+          strut_nodes_relative_to_7257p5=[[-200,1436],[0,1680],[200,1436]],
+          strut_force=sill_strut,strut_area=140*150,strut_stress=sill_strut*1000/(140*150),
+          continuous_bottom_tie=dict(bar='H12',x=350,z=1436,y=[6557.5,7957.5],demand=sill_H,
+                                     capacity=area(12)*(500/1.15)/1000,straight_beyond_each_node=500,full_fyd_lbrqd=12/4*(500/1.15)/3),
+          cantilever_top='2H10continuousNSx310.5/354.5,z1650,y6225..8275;fullpoorbonddevelopmentbeyond700masonrysupport',
+          full_ground_moment_from_32p5axis_offset=sill_N*(.020+.0325),
+          geometry_and_force_path_only=True)
+# ALL enumerated barpaths, including corner-column bars andlinkplanes. East
+#downhooks; westH20turnshorizontallyoppositeNSinsidetheactualsillreceiver.
+mid_e=[];mid_w=[]
+for i,y in enumerate([85,165]):
+    R=220;start=185-R
+    points=[(-200,y,1398),(start,y,1398)]
+    points += [(start+R*math.sin(math.radians(t)),y,1398-R*(1-math.cos(math.radians(t)))) for t in range(2,91,2)]
+    points.append((185,y,428));mid_e.append(dict(id='EB'+str(i+1),dia=20,points=points))
+    direction=-1 if i==0 else 1
+    start=310.5+R;global_y=7132.5+y
+    points=[(700,global_y,1398),(start,global_y,1398)]
+    points += [(start-R*math.sin(math.radians(t)),global_y+direction*R*(1-math.cos(math.radians(t))),1398) for t in range(2,91,2)]
+    points.append((310.5,global_y+direction*(R+750),1398));mid_w.append(dict(id='WB'+str(i+1),dia=20,points=points))
+for i,y in enumerate([85,165]):
+    R=95;start=185-R
+    points=[(-200,y,1687),(start,y,1687)]
+    points += [(start+R*math.sin(math.radians(t)),y,1687-R*(1-math.cos(math.radians(t)))) for t in range(2,91,2)]
+    points.append((185,y,1482));mid_e.append(dict(id='ET'+str(i+1),dia=10,points=points))
+    direction=-1 if i==0 else 1;start=310.5+R;global_y=7132.5+y
+    points=[(700,global_y,1687),(start,global_y,1687)]
+    points += [(start-R*math.sin(math.radians(t)),global_y+direction*R*(1-math.cos(math.radians(t))),1687) for t in range(2,91,2)]
+    points.append((310.5,global_y+direction*(R+550),1687));mid_w.append(dict(id='WT'+str(i+1),dia=10,points=points))
+mid_column=[dict(id='PC'+str(i),dia=16,points=[(x,y,-180),(x,y,3345)]) for i,(x,y) in enumerate([(39,39),(39,211),(211,39),(211,211)])]
+post_link_z=[z for z in range(-150,3251,100) if z!=3050]+[3010,3110,3290]
+mid_column += [dict(id='PL'+str(z),dia=6,points=[(28,28,z),(222,28,z),(222,222,z),(28,222,z),(28,28,z)]) for z in post_link_z]
+mid_e_clear=[dict(a=a['id'],b=b['id'],clear=path_clear(a,b)) for i,a in enumerate(mid_e) for b in mid_e[:i]+mid_column]
+assert min(c['clear'] for c in mid_e_clear)>=21
+sill_fixed=[dict(id='SILLtie',dia=12,points=[(350,6557.5,1436),(350,7957.5,1436)])]
+sill_fixed += [dict(id='SILLtop'+str(x),dia=10,points=[(x,6225,1650),(x,8275,1650)]) for x in [310.5,354.5]]
+mid_w_clear=[dict(a=a['id'],b=b['id'],clear=path_clear(a,b)) for i,a in enumerate(mid_w) for b in mid_w[:i]+sill_fixed]
+assert min(c['clear'] for c in mid_w_clear)>=21
+mid_bend20=area(20)*(500/1.15)*(1/40+1/40)/17
+assert mid_bend20<420 and 20/4*(500/1.15)/3<750
+assert 10/4*(500/1.15)/2.1<550
+sill_hoops=[dict(id='SH'+str(y),dia=6,points=[(290.5,y,1383),(374.5,y,1383),(374.5,y,1697),(290.5,y,1697),(290.5,y,1383)])
+             for y in [6250,6450,6650,6850,7050,7100,7257.5,7415,7500,7700,7900,8100,8250]]
+sill_hoop_clear=[dict(a=a['id'],b=b['id'],clear=path_clear(a,b)) for a in mid_w+sill_fixed for b in sill_hoops]
+# Ownlongitudinalbarsinsideownstirrupsdonotneedaggregateclearspacing; nointerpenetration.
+assert min(c['clear'] for c in sill_hoop_clear)>=0
+assert max(b-a for a,b in zip([h['points'][0][1] for h in sill_hoops],[h['points'][0][1] for h in sill_hoops][1:]))<=200
+sill['actual_H6_hoops']=sill_hoops;sill['own_hoop_physical_min']=min(c['clear'] for c in sill_hoop_clear)
+sill['stirrup_capacity']=links(140,289,6,200)
+sill['top_cantilever_M']=1.35*sill_G*.8075**2/2
+sill['top_cantilever_capacity']=rc(140,370,295,2*area(10),25)['MR']
+assert sill['top_cantilever_M']<sill['top_cantilever_capacity']
+# Central-pointplacementmaximisespositive simple-span deflection: this is a
+#declaredupperboundforthetwoactualflightpointloads, notanUDLsubstitution.
+def beam_SLS_bound(Gw,Qw,GP,QP,L,section,phi=3):
+    answer=0
+    for q,P,creep in [(Gw,GP,phi),(Qw,QP,0)]:
+        Ec=E/(1+creep);n=200000/Ec;b=section['b'];d=section['d'];As=section['As']
+        x=(-n*As+math.sqrt((n*As)**2+2*b*n*As*d))/b
+        I=b*x**3/3+n*As*(d-x)**2
+        answer+=5*q*(L*1000)**4/(384*Ec*I)+P*1000*(L*1000)**3/(48*Ec*I)
+    return answer
+mid_delta=beam_SLS_bound(landing_G*landing_L/2+.25*.17*25,landing_Q*landing_L/2,
+                         2*stair_G*stair_span/2*1.094,2*3*stair_span/2*1.094,mid_L,mid_sec)
+frame['stair']['midlanding_beam']['fully_cracked_phi3_central_point_bound_mm']=mid_delta
+frame['stair']['midlanding_beam']['shrinkage300microstrain_mm']=300e-6/370*(mid_L*1000)**2/8
+frame['stair']['midlanding_beam']['L250_comparator_mm']=mid_L*1000/250
+assert mid_delta+300e-6/370*(mid_L*1000)**2/8<mid_L*1000/250
+frame['stair']['west_receiver']=sill
+frame['stair']['midlanding_beam']['west_RC_pier']=None
+frame['stair']['midlanding_beam']['joint_paths']=dict(east=mid_e,west=mid_w,column_cage=mid_column,sill_fixed=sill_fixed,sill_hoops=sill_hoops,midbeam_stirrup_stations_x=list(range(600,2726,125)),
+    east_min_clear=min(c['clear'] for c in mid_e_clear),west_min_clear=min(c['clear'] for c in mid_w_clear),
+    east_critical=sorted(mid_e_clear,key=lambda c:c['clear'])[:5],west_critical=sorted(mid_w_clear,key=lambda c:c['clear'])[:5],
+    H20_full_fyd_mandrel_required=mid_bend20,H20_selected_mandrel=420,H20_after_curve=750,
+    H10_selected_mandrel=180,H10_after_curve_east=110,H10_after_curve_west=550,
+    scope='Mainhooks/columncage/sillhoopstakenin3D;midbeamhoops600..2725onlystraightentry,maximumendgap198<.75d. Uppertrimmer/waistcagethroughpost,windowframebedandmasonrybearingstillunearned.Noentirejointrelease.')
+frame['actual_ground_receivers'].append(dict(id='stair-west-masonry',xy=[332.5,7257.5],N=sill_N,M=sill_N*.02,
+                                           grid_axis=[300,7257.5],grid_moment=sill['full_ground_moment_from_32p5axis_offset']))
+assert frame['stair']['fully_cracked_phi3_mm']+frame['stair']['differential_shrinkage_300microstrain_mm']<frame['stair']['L250_comparator']
 
 # Wet-beam RC piers: conditional second-order screen with no favourable masonry
 # stiffness. Pinned3200,0.25EcIg, minimum20 eccentricity, no primary lateral role.
@@ -674,11 +880,11 @@ cap['pile_bar_development'].update(bend_start_absolute=[-623,-573],horizontal_ab
 cap['cage_limit']='Twoactual450/570profilesclose8starterrouteandbarclearancegeometry;othernodearms,lowtieanchorageandnodeinteriortransverseconfinement/N-Mstruttransferremainintrinsicdesignwork.'
 # E02 service port geometric envelope only; actual circular compression ring and
 # springing ties are the next calculation, never replaced by the ideal ratio.
-port=dict(wall='plant-north',axis_y=6500,centre_x=10800,clear_width=240,
-          spring=2740,rise=120,intrados_crown=2860,radial_ring=215,
-          extrados_crown=3075,upper_slab_soffit=3170,vertical_remainder=95,
-          outside_ring_x=[10465,11135],east_abutment_territory=447.5,
-          permitted_assembly_OD=160,annular_geometric_clearance=40,capacity=None)
+port=dict(wall='plant-north',axis_y=6500,centre_x=10800,clear_width=320,
+          spring=2740,rise=160,intrados_crown=2900,radial_ring=215,
+          extrados_crown=3115,upper_slab_soffit=3170,vertical_remainder=55,
+          outside_ring_x=[10425,11175],east_abutment_territory=407.5,
+          permitted_assembly_OD=160,annular_geometric_clearance=80,capacity=None)
 
 for w,L in [(12.7,3.245),(0,1)]:
     a=udl(w,L)
@@ -693,17 +899,18 @@ result=dict(identity='OPEN-N / first whole-floor support calculation checkpoint,
             source=dict(path=HAD_PATH,commit=HAD_COMMIT,sha256=HAD_SHA),
             units='mm / kN / kPa / MPa',floor_fields=floor,wet_wall_beam=wet,
             lower_grid=grid,cap=cap,special_ground_nodes=special_nodes,finite_floor_frame=frame,E02_service_port=port,
+            node_review_known_gaps=['Onlyenumeratedcageclearances;4leginnerlink/H12sidebarsmissing,coincidentEW/NStoprows,terminalmaintiedevelopmentandN-Mstrutfieldunearned.Specialistownsnextnodecorrection.'],
             fire_field_comparator=dict(thickness=200,outer_main_axis=31,reference_hs=60,reference_a=10,
                                        route='TCC linked2018StructuralFireDesign SlabsTable5 firstgeneration one-wayREI30 comparator ONLY',
                                        source='https://www.concretecentre.com/TCC/media/TCCMediaLibrary/Events/Online%20course/CCIP_HowToComp_Feb18.pdf',
                                        rating_qualified=False,holds='Current edition/UKNA,fireactions,supports,spalling,actualports/edges/seals'),
             retained_open_items=[
                 'HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.',
-                'Corner collectors and finite field edges now calculated. Actual midlanding/post, entrance bridge, tied arches and roof remain to complete.',
+                'Actual2925stairs/midlandingmemberreactionsnowcalculated;physicaljoints/guards,entrancebridge,tiedarchesandroofremain.',
                 'Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.',
                 'Wet receivers260x450 andnorthsupport11512.5: actual door/window/spatial readback required.',
                 'Wetjoint3H16downhooks/4H16pier: finite3Dclearance/development calculated; lowercolumnjoint remains.',
-                'Integral600node S&T/cage model replaces900caps; terminal cages, actual pilehead/group/lateral/uplift and DPC/floor moisture remain to verify.',
+                'NodeFROZENbee43378: omittedinnerlinks/H12sidebars andcoincidenttoprows requireAstraredesign;no cage/nodePASS.',
                 'Revised240glass+40lining→2890soffit requires actual arch/head/thermal coordination; anchorsunfinished.',
                 'No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows.'])
 
@@ -717,7 +924,7 @@ def box(x,y,w,h,fill,stroke='#345460'):
 def ln(x1,y1,x2,y2,c='#345460'):
     parts.append(f'<path d="M{x1},{y1} L{x2},{y2}" fill="none" stroke="{c}" stroke-width=".65"/>')
 txt(16,15,'OPEN N / actual whole-floor support checkpoint','title')
-txt(16,24,'HADc83a06f2 · RC200 whole upper floor · unadopted / incomplete support design, not for construction')
+txt(16,24,'HAD0b2f7d48 · RC200 whole upper floor · unadopted / incomplete support design, not for construction')
 txt(16,36,'A / UPPER STRUCTURAL FIELDS · 1:50','title')
 xx=lambda x:20+x/50
 yy=lambda y:286-y/50
@@ -749,7 +956,7 @@ box(320,98,10,40,'#aebeba');box(450,98,10,40,'#aebeba')
 txt(320,148,'Diagrammatic elevation; support2660+155overhang and pier footprints in JSON.')
 txt(304,159,'South RC260×450 pier: x2772.5–3032.5, y8627.5–9077.5.')
 txt(304,167,'Actual450downhooks+600tails; full-yieldbend/bond and3Dbarclearance checked.')
-txt(304,175,'Finishx2757.5–3047.5; northwindow3050gap2.5 needsHADreadback, no spatialPASS.')
+txt(304,175,'HAD27finishx2745.5–3059.5; new700northwindowstarts3350; actualbodytasknotpassed.')
 
 txt(304,196,'C / GROUND GRID TARGET, NOT SITE ACCEPTANCE','title')
 txt(304,207,'RC600×450 both leaves;40cover;3H20 top/bottom+sideH12;4legH8/100;actual point nodes.')
@@ -761,8 +968,8 @@ txt(304,247,'Masonry DPC ABOVE grid −180..−30 is a deliberate hypothesis; co
 txt(304,255,'No900cap/deckoverlap. Drainedtrayroute required;225clearcavity isNOTclaimed overwidebeam.')
 
 txt(304,280,'D / E02 SERVICE ARCH GEOMETRY ONLY','title')
-txt(304,291,'Plant-north y6500, x10800;240clear semicircle, spring2740/rise120/ring215.')
-txt(304,299,'Extrados3075 leaves95 to slabsoffit3170;447.5 east abutment territory is NOT capacity.')
+txt(304,291,'Plant-north y6500, x10800;320clear semicircle, spring2740/rise160/ring215.')
+txt(304,299,'Extrados3115 leaves55 to slabsoffit3170;407.5 east abutment territory is NOT capacity.')
 txt(304,307,'Actual pipe/socket,bends, ties, ring actions and downstream high-level branch still to join.')
 txt(16,350,'WORK STILL TO DO','title')
 for i,t in enumerate(result['retained_open_items']):txt(16,361+i*6,t)
@@ -857,7 +1064,59 @@ txt(14,278,'Separate downstream duties: lowercolumn/groundjoint, uppermasonryent
 txt(14,287,'Curves2degreechords; numericalclearances subtract0.1mm >0.036mmchorderror. No site reinforcement acceptance follows.')
 parts.append('</svg>\n')
 joint_svg='\n'.join(parts)
-for name,content in [('open-loggia-support.json',json.dumps(result,indent=2)+'\n'),('open-loggia-support.svg',main_svg),('open-loggia-node.svg',node_svg),('open-loggia-wet-joint.svg',joint_svg)]:
+parts=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">',
+       '<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:2.9px}.title{font-size:4.4px;font-weight:bold}</style>',
+       '<rect width="420" height="297" fill="#faf8f1"/>']
+txt(12,13,'OPEN N / actual stair, midlanding and receiving frame','title')
+txt(12,22,'HAD0b2f7d48 / 27finish / 1094body +200well;1004betweenrails / unadopted; no body,guard or whole-house PASS')
+txt(12,34,'A / FINITE PLAN · 1:20','title')
+sx=lambda x:12+(x-262.5)/20
+sy=lambda y:274-(y-4332.5)/20
+box(sx(429.5),sy(8755.5),2388/20,(8755.5-4432.5)/20,'#e5ebe7')
+box(sx(1523.5),sy(7132.5),200/20,2700/20,'#faf8f1')
+box(sx(262.5),sy(7382.5),2805/20,250/20,'#c5cfca')
+box(sx(2817.5),sy(8852.5),200/20,(8852.5-4332.5)/20,'#c5cfca')
+box(sx(2817.5),sy(7382.5),250/20,250/20,'#b95351')
+box(sx(262.5),sy(8300),140/20,2100/20,'#b4753c')
+box(sx(262.5),sy(4432.5),3725/20,200/20,'#c5cfca')
+box(sx(332.5),sy(8922.5),(3987.5-332.5)/20,140/20,'#aebeba')
+for i in range(10):
+    y=4432.5+i*300
+    ln(sx(429.5),sy(y),sx(1523.5),sy(y),'#4b716c')
+    ln(sx(1723.5),sy(y),sx(2817.5),sy(y),'#b4753c')
+    if i in [0,5,9]:txt(sx(470),sy(y)-1,f'{172.5*(i+1):g}')
+txt(sx(550),sy(8150),'Landingdepth1623; RCtop1725.')
+txt(sx(550),sy(7700),'Full140northseat8782.5..8922.5.')
+txt(215,34,'B / MEMBER ACTIONS AND REAL LIMITS','title')
+for i,line in enumerate([f'Flightbearing2925, pitch{tg["pitchDegrees"]:.3f}°,150normalwaist.',
+ f'Per1mM{stair_flight["M"]:.2f}/MR{stair_sec["MR"]:.2f}; eachend{stair_flight_reaction:.2f}kN.',
+ f'Waistphi3+shrink9.680 <11.700L/250comparison.',
+ f'Midbeam250×370/top1725/bottom1355,M{mid_M:.2f}.',
+ f'WestR{mid_RL:.2f}/EastR{mid_RR:.2f};postN{mid_post_N:.2f}/M{mid_post_M:.2f}.',
+ f'Continuoustrimmerpostreaction{long_reaction_max[1]:.2f}, nottwoindependentbays.',
+ 'WestH20horizN/Shooks→actualRC140sill;H12tie+2struts.',
+ f'Actualmasonrypadsneedfd≥{sill_max_bearing:.3f}MPa beforesecondorder/bedadmission.',
+ 'EastH20downhooks/postcageenumerated; upperwaist/trimmerjointstillopen.',
+ 'Guardposts/anchors,fullphysicalslabedge/portmass andwindow25jointunearned.']):txt(215,45+i*8,line)
+txt(215,134,'C / PROJECTED FLIGHT SECTIONS · 1:30','title')
+fx=lambda y:220+(y-4332.5)/30
+fz=lambda z:264-z/30
+box(fx(4232.5),fz(3370),200/30,300/30,'#c5cfca')
+box(fx(7132.5),fz(1725),250/30,370/30,'#c5cfca')
+box(fx(7132.5),fz(1725),(8922.5-7132.5)/30,200/30,'#d9e2de')
+for direction,first_y,base,colour in [(1,4432.5,0,'#4b716c'),(-1,7132.5,1725,'#b4753c')]:
+    pts=[]
+    for i in range(10):
+        y=first_y+direction*300*i;z=base+172.5*(i+1)
+        if i:pts.append((fx(y),fz(z-172.5)))
+        pts.append((fx(y),fz(z)))
+    parts.append('<path d="M'+' L'.join(f'{x:.3f},{y:.3f}' for x,y in pts)+f'" fill="none" stroke="{colour}" stroke-width=".7"/>')
+    y0=first_y;y1=first_y+direction*2700;drop=150/math.cos(stair_angle)
+    ln(fx(y0),fz(base-drop),fx(y1),fz(base+1552.5-drop),colour)
+txt(215,277,'Greenlower/ochreupperprojected; differentxterritories, notoverlappingflights.')
+txt(12,289,'ONEcurrentcandidate: actualwaist/beamgeometry, tributaryloadsandcontinuouscompatibility. Frozenunearnednodeprototypecontinuesawaitspecialist.')
+parts.append('</svg>\n');stair_svg='\n'.join(parts)
+for name,content in [('open-loggia-support.json',json.dumps(result,indent=2)+'\n'),('open-loggia-support.svg',main_svg),('open-loggia-node.svg',node_svg),('open-loggia-wet-joint.svg',joint_svg),('open-loggia-stair.svg',stair_svg)]:
     p=OUT/name
     if '--check' in sys.argv:
         if not p.exists() or p.read_text()!=content: raise SystemExit('STALE '+str(p))
