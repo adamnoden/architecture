@@ -9,8 +9,8 @@
     "label": "zerg2-access"
   },
   "claimedAt": "2026-11-01T19:25:45.832Z",
-  "heartbeatAt": "2026-11-01T19:37:58.732Z",
-  "expiresAt": "2026-11-01T20:22:58.732Z",
+  "heartbeatAt": "2026-11-01T19:48:00.042Z",
+  "expiresAt": "2026-11-01T20:33:00.042Z",
   "branch": "work/zerg2-ias-b-joined",
   "predecessor": {
     "leaseId": "7619f2db-fb07-4914-b2fb-dd2284fe29a0",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Publishedac32d86e017e19c1cfdda0d59f89474a489044cf exacttree4d30323e8d0f2c20df86434fea55e99807f2dc80 equalslocalc9769d97; retained110stack160bore joinedfixedobstacle; --check,diffcheck,actualInkscapeinspection,independentinternalreview pass",
-    "next": "Rootintegrate sharedcandidate; exactheadCI andfreshpernodepreflight beforemerge",
-    "blocker": "Completewholehouseinventory,circuit,seal/material,actualtool andphysicaloperation remainopen; IAS03incomplete"
+    "evidence": "FrozenIAS910cd2d8807c4f7a78ac5f2614bcd0ce89369a54 tree8181590d6a8328a2542553b739a42df3a934ddeb; --check,diffcheck,actualA3render and independentinternalreviewPASS; localD1300datumexplicit",
+    "next": "Prepare root-directed4scopeintegration afterfinalHAD/STRreviewPASS; preserve4sourceparents; exactheadCI/preflights beforemerge",
+    "blocker": "WaitingfinalHAD/STRcaptionheads and exactreviewPASS; wholeinventory and physicalacceptance remainopen"
   }
 }
