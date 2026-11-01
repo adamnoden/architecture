@@ -9,8 +9,8 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-01T21:20:23.938Z",
-  "expiresAt": "2026-11-01T22:05:23.938Z",
+  "heartbeatAt": "2026-11-01T21:31:36.275Z",
+  "expiresAt": "2026-11-01T22:16:36.275Z",
   "branch": "work/zerg4-interiors-whole-house",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -36,8 +36,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Publishedwholehouse4filecheckpoint;14families18referenceoccurrences; finish17vs15 andcompleteceiling176control costs explicit; noadmissionclaim",
-    "next": "JoinHADprotected-routeledger, refineactualassemblyrecommendations andrepair/residualschedule; independentlyreviewthenPR",
-    "blocker": "ExactHADprotectedboundariesandroofclosureselectionpending; coreactualproduct/materialadmissionremainsseparate"
+    "evidence": "Remote ed8e1db1 treebf1dac8c;15families18occurrences;ground100glass+80overlay andupper80checked;ordinaryupperceilingcoveragecomplete;reproducerpasses",
+    "next": "Join actual HAD protected-route geometry and STR ceiling duty then resolve occurrence-specific joinery/first release and independent review",
+    "blocker": "Protected-route JSON and actual roof boundary duty pending; no material or physical admission earned"
   }
 }
