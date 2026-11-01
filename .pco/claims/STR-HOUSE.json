@@ -9,8 +9,8 @@
     "label": "zerg3-structure-loggia"
   },
   "claimedAt": "2026-11-01T20:04:17.184Z",
-  "heartbeatAt": "2026-11-01T21:03:16.537Z",
-  "expiresAt": "2026-11-01T21:48:16.537Z",
+  "heartbeatAt": "2026-11-01T21:47:15.477Z",
+  "expiresAt": "2026-11-01T22:32:15.477Z",
   "branch": "work/zerg3-structure-loggia",
   "predecessor": {
     "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remoteb2efa4030d137e9c1279ec0b9aa905cdf6eebf04 exacttree9023e24eea97c5fa32c7cff8e1b3d0b1eccd9c2a; correctedHADc83a06f2 pin; actual finite edge unions/collectors, lowered doorway-safe wetbeam, two-leaf600grid torsion, explicit point nodes and integralnode calculation; generator/diffcheck passed",
-    "next": "High review corrected bounded model; finish midlanding/post, entrance/tied arches, actual roof/ports and soffit thermal bridge before any joined pass",
-    "blocker": "Incomplete candidate; integral600node/pilehead/cage needs review, no foundation or geometric adoption"
+    "evidence": "Remote b2efa4030d137e9c1279ec0b9aa905cdf6eebf04 tree9023e24eea97c5fa32c7cff8e1b3d0b1eccd9c2a exact fetched verification; newer bounded local2c98e2f997e5b44b65f358c6394cddc4e54c0115 tree7454129410ea1517ae8f045a1d80d6a581b1d3f1 checked and rendered pending immediate Git-data publication",
+    "next": "Publish reproducible node/cage checkpoint then independent High engineering review at immutable remote tree",
+    "blocker": "No joined pass: node anchorage/terminal arm routing, wet receiver joint cage, stair source rebind, actual roof/arch/ports and exposed-floor admission remain unearned"
   }
 }
