@@ -1,46 +1,38 @@
 {
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
-  "generation": 12,
-  "state": "released",
-  "leaseId": "17844eac-e5ae-487e-ab87-f02d04893b87",
+  "generation": 13,
+  "state": "claimed",
+  "leaseId": "3a3b9c38-e90b-40b2-af8f-ec76d7b01a3b",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg2_interiors"
+    "label": "zerg4_interiors_whole_house"
   },
-  "claimedAt": "2026-11-01T19:57:48.734Z",
-  "heartbeatAt": "2026-11-01T20:58:58.827Z",
-  "expiresAt": "2026-11-01T20:58:58.827Z",
-  "branch": "work/zerg3-services-interiors-20261101",
-  "note": "Owner-directed compact B principal900 wetroom assembly",
+  "claimedAt": "2026-11-01T21:01:08.006Z",
+  "heartbeatAt": "2026-11-01T21:01:08.006Z",
+  "expiresAt": "2026-11-01T21:46:08.006Z",
+  "branch": "work/zerg4-interiors-whole-house",
+  "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
-    "leaseId": "64cf8505-5f25-4d68-a68c-921fd2ae1005",
-    "generation": 11,
-    "branch": "work/mat-worker-seven",
-    "pr": 1219,
+    "leaseId": "17844eac-e5ae-487e-ab87-f02d04893b87",
+    "generation": 12,
+    "branch": "work/zerg3-services-interiors-20261101",
+    "pr": 1232,
     "checkpoint": {
-      "evidence": "PR #1219 remote head 6bb49d8cd4fb71585e85486951538c02c438be9c; tree equals locally checked result; source visual checks and control/repro checks pass",
-      "next": "Reconcile current main, verify exact-head full CI and fresh merge-check before integration",
-      "blocker": "Main reconciliation and exact-head CI pending; wider MAT-INTERIORS remains planned"
+      "evidence": "PR1232 combinedhead56db74debbd796894e9e15d79c5b3ed202369e18 tree04c9f3ec20fecb8da36873ffd827e83b7c21f843 preservesinteriors310b26f3 andservices4b7294c5; independentbothrepro/renderreviewPASS",
+      "next": "SoleCIobserveraccess; rootexactheadpreflights+merge, then workerrelease",
+      "blocker": "ExactcombinedheadfullCIpending; material/product/physicaladmissionandbroadMATremainopen"
     }
   },
   "recoverySource": {
-    "leaseId": "64cf8505-5f25-4d68-a68c-921fd2ae1005",
-    "generation": 11,
-    "branch": "work/mat-worker-seven",
-    "pr": 1219,
+    "leaseId": "17844eac-e5ae-487e-ab87-f02d04893b87",
+    "generation": 12,
+    "branch": "work/zerg3-services-interiors-20261101",
+    "pr": 1232,
     "checkpoint": {
-      "evidence": "PR #1219 remote head 6bb49d8cd4fb71585e85486951538c02c438be9c; tree equals locally checked result; source visual checks and control/repro checks pass",
-      "next": "Reconcile current main, verify exact-head full CI and fresh merge-check before integration",
-      "blocker": "Main reconciliation and exact-head CI pending; wider MAT-INTERIORS remains planned"
+      "evidence": "PR1232 combinedhead56db74debbd796894e9e15d79c5b3ed202369e18 tree04c9f3ec20fecb8da36873ffd827e83b7c21f843 preservesinteriors310b26f3 andservices4b7294c5; independentbothrepro/renderreviewPASS",
+      "next": "SoleCIobserveraccess; rootexactheadpreflights+merge, then workerrelease",
+      "blocker": "ExactcombinedheadfullCIpending; material/product/physicaladmissionandbroadMATremainopen"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1232 combinedhead56db74debbd796894e9e15d79c5b3ed202369e18 tree04c9f3ec20fecb8da36873ffd827e83b7c21f843 preservesinteriors310b26f3 andservices4b7294c5; independentbothrepro/renderreviewPASS",
-    "next": "SoleCIobserveraccess; rootexactheadpreflights+merge, then workerrelease",
-    "blocker": "ExactcombinedheadfullCIpending; material/product/physicaladmissionandbroadMATremainopen"
-  },
-  "pr": 1232,
-  "releasedAt": "2026-11-01T20:58:58.827Z",
-  "releaseReason": "completed"
+  }
 }
