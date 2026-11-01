@@ -571,9 +571,9 @@ txt(304,167,'Local pier projects80 beyond original140 wall each side; no invente
 txt(304,175,'Door starts3100; north window starts3050. Actual finished pier/door tasks require HAD recheck.')
 
 txt(304,196,'C / GROUND GRID TARGET, NOT SITE ACCEPTANCE','title')
-txt(304,207,'RC600×450 both leaves;40cover;3H20 bottom,4legH8/100;actual point receivers are nodes.')
+txt(304,207,'RC600×450 both leaves;40cover;3H20 top/bottom+sideH12;4legH8/100;actual point nodes.')
 txt(304,215,f"M{grid_action['M']:.2f}/MR{grid_section['MR']:.2f}; V{grid_action['V']:.2f}/VRs{grid_links['VRs']:.2f}.")
-txt(304,223,'Top−180/bottom−630;integral600×600×450 node/400pilehead;4H20eachdirectioncontinue750.')
+txt(304,223,'Top−180/bottom−630;integral600×600×450 node/400pilehead;5H20eachdirectioncontinue750.')
 txt(304,231,f"Node envelopeN{cap_N:g}/M100;tie{cap_tie:.1f}kN vssteel{cap['tie_resistance_kN']:.1f};pile/soilUNKNOWN.")
 txt(304,239,'Lowtie/localnode−750 controlsD1300:750+H300+loss50+vent150=1250;50surplus.')
 txt(304,247,'Masonry DPC ABOVE grid −180..−30 is a deliberate hypothesis; concrete/floor moisture route unqualified.')

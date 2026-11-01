@@ -89,9 +89,9 @@
 <text x="304" y="167" class="">Local pier projects80 beyond original140 wall each side; no invented300 bearing on140 wall.</text>
 <text x="304" y="175" class="">Door starts3100; north window starts3050. Actual finished pier/door tasks require HAD recheck.</text>
 <text x="304" y="196" class="title">C / GROUND GRID TARGET, NOT SITE ACCEPTANCE</text>
-<text x="304" y="207" class="">RC600×450 both leaves;40cover;3H20 bottom,4legH8/100;actual point receivers are nodes.</text>
+<text x="304" y="207" class="">RC600×450 both leaves;40cover;3H20 top/bottom+sideH12;4legH8/100;actual point nodes.</text>
 <text x="304" y="215" class="">M129.11/MR152.40; V172.14/VRs308.41.</text>
-<text x="304" y="223" class="">Top−180/bottom−630;integral600×600×450 node/400pilehead;4H20eachdirectioncontinue750.</text>
+<text x="304" y="223" class="">Top−180/bottom−630;integral600×600×450 node/400pilehead;5H20eachdirectioncontinue750.</text>
 <text x="304" y="231" class="">Node envelopeN850/M100;tie385.1kN vssteel683.0;pile/soilUNKNOWN.</text>
 <text x="304" y="239" class="">Lowtie/localnode−750 controlsD1300:750+H300+loss50+vent150=1250;50surplus.</text>
 <text x="304" y="247" class="">Masonry DPC ABOVE grid −180..−30 is a deliberate hypothesis; concrete/floor moisture route unqualified.</text>
