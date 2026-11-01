@@ -9,11 +9,12 @@
     "label": "owner-directed-structural-ground-20261101"
   },
   "claimedAt": "2026-11-01T09:51:11.838Z",
-  "heartbeatAt": "2026-11-01T09:51:11.838Z",
-  "expiresAt": "2026-11-01T11:51:11.838Z",
+  "heartbeatAt": "2026-11-01T09:56:12.436Z",
+  "expiresAt": "2026-11-01T11:56:12.436Z",
   "branch": "work/str-ground-20261101",
   "checkpoint": {
-    "evidence": "Owner-directed STR-GROUND from main 6d613a200d7349eca227bfe7f169f54f68a527ec; P0 tree/clay/movement foundation comparison and owner-ground brief.",
-    "next": "Reduce options with sourced heave/movement/dry-boundary cases, preserve actual-site geotechnical evidence and preliminary section constraints; publish through exact-head CI and native preflight."
-  }
+    "evidence": "PR1205 sources on original current main, two authored STR source files, interim P0 foundation option reduction; STR-GROUND deliberately remains planned.",
+    "next": "Native exact-head CI and canonical merge-check, merge expected-head, release handoff; source-backed grid and 1:10 sections remain to be developed."
+  },
+  "pr": 1205
 }
