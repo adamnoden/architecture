@@ -1,4 +1,162 @@
 {
+  "sharedProvenance": {
+    "logicalSource": "project/mat/studies/services-b-joined-inventory.json",
+    "object": "interfaces.principalShowerDrop",
+    "interfaceSHA256": "30a685afb41a0329a43ae5e8ab0786912ac6326125db0a0d6911ea11ced0b40a",
+    "hashConvention": "Recursive key sort, JSON.stringify with JavaScript numeric normalization",
+    "owningHead": "38d4d803ea042abec878877e6fa4d37be7b697ae",
+    "owningBlob": "4680446018e2e530caf09e29bd8c90cbe26d3e5c",
+    "direction": "Services owns the lower interface; interiors consumes it. No reverse source hash."
+  },
+  "sharedLowerInterface": {
+    "schemaVersion": 1,
+    "id": "B-PRINCIPAL-SHOWER-DROP-01",
+    "units": "mm",
+    "datum": "Local proposed ground FFL0",
+    "status": "Authored compatibility interface; no actual fitting, material, hydraulic or installed operation acceptance",
+    "authority": "Coordinated MAT-INTERIORS120-rim trial; upper fixture/frame/outlet remains unqualified",
+    "formedFloorPort": [
+      10200,
+      6810,
+      110
+    ],
+    "pipeOD": 50,
+    "retainedDropMaxEnvelope": 100,
+    "turnT": {
+      "point": [
+        10200,
+        6810,
+        2797.25
+      ],
+      "maxEnvelope": [
+        100,
+        100,
+        100
+      ]
+    },
+    "unionA": {
+      "point": [
+        10200,
+        6810,
+        3000
+      ],
+      "axis": "vertical",
+      "maxOD": 100,
+      "maxAxialLength": 100
+    },
+    "unionB": {
+      "point": [
+        10200,
+        6910,
+        2794.75
+      ],
+      "axis": "north",
+      "maxOD": 100,
+      "maxAxialLength": 100
+    },
+    "requiredFaceRelease": 50,
+    "clearUndersideAperture": [
+      10000,
+      6640,
+      400,
+      400
+    ],
+    "outerApertureFrame": [
+      9980,
+      6620,
+      440,
+      440
+    ],
+    "path": [
+      [
+        10200,
+        6810,
+        2797.25
+      ],
+      [
+        10200,
+        6910,
+        2794.75
+      ],
+      [
+        10200,
+        7500,
+        2780
+      ],
+      [
+        10800,
+        7500,
+        2765
+      ]
+    ],
+    "length": 1290,
+    "fallDenominator": 40,
+    "fall": 32.25,
+    "soilJoin": [
+      10800,
+      7500,
+      2765
+    ],
+    "unionABelowRCSoffit": 170,
+    "fixedTailFromRCTopToUnionA": 370,
+    "boxing": {
+      "lowestFittingAtJoin": 2715,
+      "supportDepth": 25,
+      "supportBottom": 2690,
+      "finalAirReserve": 25,
+      "panelTop": 2665,
+      "panelThickness": 20,
+      "finishedUnderside": 2645,
+      "width": 320,
+      "localAccessWidth": 440,
+      "rule": "320 ordinary branch band widens locally to the440 outer hood at the400clear union aperture; never cut a400 opening into a320 box."
+    },
+    "renewal": {
+      "installedSpoolBounds": [
+        10150,
+        6760,
+        2744.75,
+        100,
+        200,
+        305.25
+      ],
+      "firstMovement": [
+        0,
+        -50,
+        -50
+      ],
+      "subsequentLowering": [
+        0,
+        0,
+        -400
+      ],
+      "firstMovementLowest": 2694.75,
+      "fullyLoweredHighest": 2600,
+      "fullMovingPlanBounds": [
+        10150,
+        6710,
+        100,
+        250
+      ],
+      "clearancesToAperture": {
+        "west": 150,
+        "east": 150,
+        "south": 70,
+        "north": 80
+      },
+      "toolDiameterSensitivity": 200,
+      "retained": "Upper outlet/drop tail, both floor seals, fixed unionA half and downstream fixed unionB half; independent supports retained",
+      "rule": "Both accessible flat-face unions released before the supported elbow spool moves50south+50down. This is a required compatible joint action, not proof of a particular named union. Then lower400 under independent control through the open face; reverse with actual new seals and tests."
+    },
+    "soilJunctionMaxEnvelope": [
+      200,
+      200,
+      200
+    ],
+    "upperRenewalBoundary": "MAT-INTERIORS owns the separate upper tray/tail withdrawal: the100 upper unionA half is retained only for ordinary lower-spool work. Full upper withdrawal must strip every nut/clamp/half exceeding its75 stem requirement below first, to pass its97 clear sleeve in the110 port. Actual kit strippability is unproved; an unstrippable100 part rejects that upper renewal. Interiors owns its500 upward stroke and explicit upper-FFL-relative handling coordinates; no reverse source import.",
+    "rule": "Fixed outlet/drop tail and floor seals remain during ordinary below-slab union renewal.100OD unions plus50release and200tool sensitivity must fit the400clear underside opening; actual unions, matching tail and trapping/flow not proved. The low120rim replaces the former250step only if actual retained tail/drop and frame/outlet fit these requirements. No horizontal D50 route crosses the upper doorway.",
+    "material": "Manufacturer-matched B568 geometry control retains PP/seals; no material admission or altered seal package. Actual component duty, hydraulic flow, support and joint recipe remain MAT-INTERIORS/MAT-SERVICES acceptance dependencies."
+  },
   "initialModuleParts": [
     [
       9428,
@@ -86,6 +244,12 @@
       -50,
       -50
     ],
+    "lowerSpoolSubsequentMovement": [
+      0,
+      0,
+      -400
+    ],
+    "lowerSpoolFullyLoweredHighest": 2600,
     "flangeRelease": "Three B568 screws from above only after lower body supported; exact manufacturer sequence must agree",
     "trayFrameMaximum": [
       900,
@@ -99,12 +263,14 @@
       "floor sleeve and seal"
     ],
     "tailLowestLocal": -450,
+    "stripBeforeUpperWithdrawal": "Actual upper unionA half, nuts and clamps wider than75 must remove below the floor. Installed100 profile is retained only for the ordinary lower-spool task.",
     "tailMaximumOutside": 75,
     "clearSleeveInside": 97,
     "upperWithdrawal": 500,
     "tailLowestAfterWithdrawal": 50,
     "maximumTrapTopAfterWithdrawal": 595,
     "floorSleeveTop": 20,
+    "seatReleaseRequirement": "All upper flange/ring/screws free; no retaining neck/collar interlocks with tray aperture. Initial solid-part check is a required unseated state, not delivered B568 seat dimensions.",
     "temporarySupport": "Independent removable cradle; no load on waterproofing or loose tail",
     "openBoundary": "With tail and annular seals removed, sleeve is an OPEN floor water/air/fire/acoustic path",
     "temporaryClosure": "Isolate wet use and affected lower area; fit removable qualified sleeve cap/closure until compatible annular and penetration seals reinstated/tested",
@@ -204,6 +370,7 @@
   "status": "Connected internal development direction; material/physical admission rejected pending named corrections",
   "basisMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
   "pins": {
+    "project/str/joined-rc-reference.md": "f53292c7cbe97772e3a0b2efd8fc2a6bcfcd094b7c39debe72d278407408e797",
     "project/str/studies/house-plan.json": "193805456e26533026814bebe8c6be862e26a7d944c360dbb6047a1bde2d2282",
     "project/str/studies/house-bedroom-options.json": "57137bfc955d9dc26ad3037952cbf193753649a7464d2c1b9113bcac23e259b9",
     "project/had/studies/court-b-joined.json": "2916038341433d5a35ab7e9fc0caaeae4518e80add0384a2542d60c7718fc829",
@@ -1159,8 +1326,8 @@
   "bodyResults": {
     "entry": {
       "radius": 300,
-      "minimumSpare": 64.0054944640259,
-      "governing": "tray"
+      "minimumSpare": 25,
+      "governing": "concurrent HAD bed trial"
     },
     "shower": {
       "radius": 300,
@@ -1339,9 +1506,15 @@
     ],
     "workingBox": [
       10000,
-      6610,
+      6640,
       400,
       400
+    ],
+    "outerCoverFrame": [
+      9980,
+      6620,
+      440,
+      440
     ],
     "maximumLowerSpoolPlan": [
       10150,
@@ -1362,6 +1535,10 @@
       ],
       [
         10200,
+        6910
+      ],
+      [
+        10200,
         7500
       ],
       [
@@ -1376,7 +1553,10 @@
     "nominalPipeOutside": 50,
     "lowest100FittingGlobal": 2715,
     "supportReservation": 25,
-    "ceilingBoxUndersideTarget": 2665,
+    "finalAirReserve": 25,
+    "ceilingBoxInnerTop": 2665,
+    "ceilingPanelThickness": 20,
+    "ceilingBoxUndersideTarget": 2645,
     "existingSoilZoneUnderside": 2540,
     "actualConnectedCapacity": null,
     "soilPort": [
