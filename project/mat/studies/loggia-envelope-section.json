@@ -3,7 +3,7 @@
   "startingMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
   "hadSource": {
     "path": "project/had/studies/open-north-loggia.json",
-    "sha256": "a181df7876311b8bb92eac88a880468e64bbd5033d0d465f10ddc65f12f3c911"
+    "sha256": "bf98f77a4cc2a8704adf931ef469ceaf3228811dd666cf9250050d0c9d9b32c2"
   },
   "wallLayers": [
     [
@@ -52,22 +52,32 @@
       -30
     ],
     "outer": [
-      150,
-      300
+      120,
+      270
     ],
     "status": "Different-height bonded bands; actual returns/cavity tray and floor moisture route require qualification."
   },
   "supportHypothesis": {
+    "beamWidth": 600,
+    "beamAxes": [
+      4500,
+      7500
+    ],
     "beamTop": -180,
     "beamBottom": -630,
-    "lowestCap": -680,
-    "soil": -1200,
+    "cap": [
+      900,
+      900,
+      500
+    ],
+    "lowestCap": -722.5,
+    "soil": -1300,
     "heave": 300,
     "constructionLoss": 50,
     "ventClearance": 150,
-    "status": "STR calculation hypothesis only, not frozen support or selected D1200.",
-    "requiredD": 1180,
-    "residualAtD1200": 170
+    "status": "STR calculation hypothesis only, not frozen support or selected D1300.",
+    "requiredD": 1222.5,
+    "residualAtD1300": 227.5
   },
   "wetDeadKgM2": 80,
   "windStressKpa": 1.5,
@@ -75,6 +85,83 @@
     600,
     450
   ],
+  "cavityTray": {
+    "innerBase": -20,
+    "outerWeep": -35,
+    "innerReturn": 190,
+    "backLeg": 210,
+    "outerDpc": [
+      120,
+      270
+    ],
+    "spoutProjection": 60,
+    "spoutClearToHighestWalk": 75,
+    "status": "Custom formed metal tray/embedded return requires qualification; no225mm clear cavity claimed."
+  },
+  "outdoor": {
+    "southLanding": {
+      "run": 600,
+      "drop": 15
+    },
+    "remainingCourt": {
+      "run": 2900,
+      "drop": 95
+    },
+    "courtWalking": [
+      0,
+      -15,
+      -110
+    ],
+    "loggiaRun": 4250,
+    "loggiaFall": 42.5,
+    "gardenTerrace": -152.5,
+    "stone": 40,
+    "mineralBed": 30,
+    "rc": 200,
+    "deckTop": [
+      -70,
+      -85,
+      -180,
+      -222.5
+    ],
+    "deckSoffit": [
+      -270,
+      -285,
+      -380,
+      -422.5
+    ],
+    "weatherFaceGap": 25,
+    "soilHypothesis": -1300,
+    "terraceHeightAboveSoil": 1147.5,
+    "gardenRamp": {
+      "width": 1200,
+      "slope": 0.05,
+      "slopingRun": 22950,
+      "flightRuns": [
+        10000,
+        10000,
+        2950
+      ],
+      "landingLengths": [
+        1200,
+        1200,
+        1200,
+        1200
+      ],
+      "totalRouteRun": 27750,
+      "headLanding": [
+        7200,
+        12000,
+        1200,
+        1200
+      ],
+      "rampScope": "East-turn then north, no surveyed plot",
+      "scope": "Required external territory plus landings/support/guards; no surveyed plot or access acceptance"
+    },
+    "frontApproachSlopingRun": 26000,
+    "normal": "Accessible edge copper collector; exact cross-section and receiver to qualify",
+    "relief": "Broad walking-surface gravity route to guarded exterior spill/cascade; independent receiver not yet accepted"
+  },
   "wetDeadKpa": 0.7848,
   "gridWetDeadKn": 0.211896,
   "gridUlsStressKn": 0.8935596000000001,
