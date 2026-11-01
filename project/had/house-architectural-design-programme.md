@@ -87,7 +87,7 @@ selection and shared compatibility checks.
 
 ## Convergence development
 
-- [One joined local N/E portal reference design](had-03-local-portal-design.md) allocates 600 mm surface-access corridors, short vertical-release segments and a 300 mm unadopted relative-level rewind. It retains the plant room, rejects the solid-pier route as an unchanged-plant drop-in, and makes pantry loss/structural bridges explicit. Complete floor materials, first-harm and event-bound hydraulic acceptance remain unproved; this is the current physical architectural challenger, not a selected house.
+- [One joined local N/E portal reference design](had-03-local-portal-design.md) allocates 600 mm surface-access corridors, short locally released segments and a 300 mm unadopted relative-level rewind. It retains the plant room, rejects the solid-pier route as an unchanged-plant drop-in, and makes pantry loss/structural bridges explicit. Complete floor materials, first-harm and event-bound hydraulic acceptance remain unproved; this is the current physical architectural challenger, not a selected house.
 - [Recovered source-exact east-pier comparison](had-03-east-egress-pier-options.md) records the 300 mm piece-width precursor and plant conflicts; the joined design above tests the full access width.
 
 - [Selected expression and furnished rear-room/kitchen study](had-03-furnished-design-study.md).

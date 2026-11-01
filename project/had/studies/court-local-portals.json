@@ -12,6 +12,7 @@
     "carrierOutsideHeight": 160,
     "inletInvert": -320,
     "outletInvert": -362.5,
+    "terminalInvertAt12050": -363,
     "fall": 42.5,
     "coverDepth": 100,
     "minCrownDepth": 160,
@@ -101,6 +102,168 @@
       ]
     }
   },
+  "crossingRenewal": [
+    {
+      "route": "north",
+      "permanent": [
+        7750,
+        8167.5
+      ],
+      "piece": [
+        7725,
+        8225
+      ],
+      "destination": [
+        8225,
+        8725
+      ],
+      "translation": 500,
+      "clearRoom": [
+        8167.5,
+        11582.5
+      ],
+      "verticalTranslationAtOnePercent": -5,
+      "totalLift": 450,
+      "requiredInitialRemovedNeighbor": [
+        8225,
+        8725
+      ],
+      "envelopeWitness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 120.25
+      }
+    },
+    {
+      "route": "north",
+      "permanent": [
+        11582.5,
+        12000
+      ],
+      "piece": [
+        11550,
+        12050
+      ],
+      "destination": [
+        11050,
+        11550
+      ],
+      "translation": -500,
+      "clearRoom": [
+        8167.5,
+        11582.5
+      ],
+      "verticalTranslationAtOnePercent": 5,
+      "totalLift": 450,
+      "requiredInitialRemovedNeighbor": [
+        11050,
+        11550
+      ],
+      "envelopeWitness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 92
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        7750,
+        8167.5
+      ],
+      "piece": [
+        7725,
+        8225
+      ],
+      "destination": [
+        8225,
+        8725
+      ],
+      "translation": 500,
+      "clearRoom": [
+        8167.5,
+        9437.5
+      ],
+      "verticalTranslationAtOnePercent": -5,
+      "totalLift": 450,
+      "requiredInitialRemovedNeighbor": [
+        8225,
+        8725
+      ],
+      "envelopeWitness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 120.25
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        9437.5,
+        9562.5
+      ],
+      "piece": [
+        9225,
+        9725
+      ],
+      "destination": [
+        8725,
+        9225
+      ],
+      "translation": -500,
+      "clearRoom": [
+        8167.5,
+        9437.5
+      ],
+      "verticalTranslationAtOnePercent": 5,
+      "totalLift": 450,
+      "requiredInitialRemovedNeighbor": [
+        8725,
+        9225
+      ],
+      "envelopeWitness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 115.25
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        11582.5,
+        12000
+      ],
+      "piece": [
+        11550,
+        12050
+      ],
+      "destination": [
+        11050,
+        11550
+      ],
+      "translation": -500,
+      "clearRoom": [
+        9562.5,
+        11582.5
+      ],
+      "verticalTranslationAtOnePercent": 5,
+      "totalLift": 450,
+      "requiredInitialRemovedNeighbor": [
+        11050,
+        11550
+      ],
+      "envelopeWitness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 92
+      }
+    }
+  ],
   "eastConsequences": {
     "pantryBand": [
       6825,
@@ -143,10 +306,10 @@
     "coverWidth": 600,
     "carrierJointEnvelopeWidth": 300,
     "clearSideToolSpace": 150,
-    "verticalLiftAfterJointRelease": 200,
+    "totalVerticalLiftInOpenFloor": 450,
     "firstRelease": "Lift a dry floor cover; isolate/empty N at exposed court inlet while E stays operative. For E repair provide an independently admitted temporary rain diversion or postpone repair: N alone is not equivalent redundancy.",
     "joint": "Top-access detachable all-metal-joint trial; seal, bolt access and repeated watertight reinstatement must be proved before admission.",
-    "removal": "Lift vertically inside opened 600 mm strip; stage each emptied segment on protected court/room surface. No axial pull through a 4.25 m wall sleeve, fixed furniture or permanent masonry.",
+    "removal": "Room segments lift450 mm through removed covers. Fixed bridge crossings first translate500 mm into an emptied adjacent500 mm segment position, following1% slope (5 mm vertical change), then lift450 mm. Both joint terminations are at least25 mm outside the wall/spine; actual bolt/tool approach remains unproved; bridge remains intact. No4.25 m axial withdrawal is assumed.",
     "leakage": "A separate exposed inspection/secondary-containment space is reserved, but passive external declaration and its own water boundary are unresolved; no dry-floor claim."
   },
   "approach": {

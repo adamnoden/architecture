@@ -160,6 +160,27 @@ export const buildCourtEgressStudy = function build(d,ops){
 };
 
 
+
+// Bounded rigid-envelope motion: no selected fastener, gasket or human handling claim.
+export function verifyCrossingRenewal(c,{inletInvert=-320,carrierHeight=160,coverDepth=100,boxBottom=-400,removedNeighbor=c.requiredInitialRemovedNeighbor,totalLift=c.totalLift}={}){
+ const fail=s=>{throw Error('Crossing renewal rejected: '+s)};
+ if(!removedNeighbor||removedNeighbor[0]>c.destination[0]||removedNeighbor[1]<c.destination[1])fail('adjacent segment still occupies withdrawal destination');
+ if(c.piece[0]>c.permanent[0]-25||c.piece[1]<c.permanent[1]+25)fail('joint termination beneath permanent support');
+ const end=c.piece.map(x=>x+c.translation);
+ if(!(end[1]<=c.permanent[0]||end[0]>=c.permanent[1]))fail('piece still below fixed cap before lift');
+ if(end[0]<c.clearRoom[0]||end[1]>c.clearRoom[1])fail('withdrawn piece outside clear room');
+ const samples=[];
+ for(let i=0;i<=50;i++){
+  const a=c.piece[0]+c.translation*i/50,b=c.piece[1]+c.translation*i/50;
+  const top=inletInvert-(a-7750)*.01+carrierHeight,bottom=inletInvert-(b-7750)*.01;
+  if(top>-coverDepth||bottom<boxBottom)fail('translation crosses fixed cover or service-box bottom');
+  samples.push({fraction:i/50,start:a,end:b,top,bottom});
+ }
+ const lowestBottom=inletInvert-(end[1]-7750)*.01;
+ if(lowestBottom+totalLift<50)fail('full extraction does not clear FFL by50 mm');
+ return {samples: samples.length,bridgeIntact:true,adjacentSegmentAbsent:true,finalLowestBottom:lowestBottom+totalLift};
+}
+
 /** An authored architectural allocation, deliberately separate from adopted house geometry. */
 export function buildLocalPortalCandidate(d,ops){
  const source=buildCourtEgressStudy(d,ops).data;
@@ -177,14 +198,22 @@ export function buildLocalPortalCandidate(d,ops){
    for(let j=1;j<=n;j++){s.coverSegments.push(len);s.coverBreaks.push(breaks[i-1]+j*len)}
   }
  }
+ const crossingRenewal=[
+  {route:'north',permanent:[7750,8167.5],piece:[7725,8225],destination:[8225,8725],translation:500,clearRoom:[8167.5,11582.5]},
+  {route:'north',permanent:[11582.5,12000],piece:[11550,12050],destination:[11050,11550],translation:-500,clearRoom:[8167.5,11582.5]},
+  {route:'east',permanent:[7750,8167.5],piece:[7725,8225],destination:[8225,8725],translation:500,clearRoom:[8167.5,9437.5]},
+  {route:'east',permanent:[9437.5,9562.5],piece:[9225,9725],destination:[8725,9225],translation:-500,clearRoom:[8167.5,9437.5]},
+  {route:'east',permanent:[11582.5,12000],piece:[11550,12050],destination:[11050,11550],translation:-500,clearRoom:[9562.5,11582.5]}
+ ].map(c=>({...c,verticalTranslationAtOnePercent:-c.translation*.01,totalLift:450,requiredInitialRemovedNeighbor:c.destination}));
+ for(const c of crossingRenewal)c.envelopeWitness=verifyCrossingRenewal(c);
  const plantDry=d.services.plantDry,work=d.services.plantWorking;
  const intersect=(a,b)=>Math.max(0,Math.min(a[1],b[1])-Math.max(a[0],b[0]));
  const data={basis:d.id,sourceRole:'Accepted source supplies intersections only; all portal dimensions below are an UNADOPTED reference design.',decision:'Allocate pantry E-W1 and north N as the single joined architectural candidate. Reject E-P as an unchanged-plant installation; do not infer structural or water acceptance.',
-  referenceDesign:{relativeFFLAboveSyntheticReceiver:relativeHeight,wholeHouseRiseRelativeToExisting:fflRise,receiverRelativeToFFL:-relativeHeight,receiverRole:'synthetic comparison, not a site high-water datum',grossAccessWidth:scanWidth,carrierOutsideWidth:carrierWidth,carrierOutsideHeight:carrierHeight,inletInvert,outletInvert,fall:run*.01,coverDepth:cover,minCrownDepth:-inletInvert-carrierHeight,installationSpaceBelowCover:-inletInvert-carrierHeight-cover,lowestServiceBox:-400,outletInvertClearanceAboveSyntheticReceiver:outletInvert+relativeHeight,normalPanPerimeter:-86,normalPanLow:-121,normalCollectorToCarrierDrop:199,emergencyTrialCrest:-75,emergencyOperatingWater:'unknown',lowestSusceptibleJoint:'unknown',hydraulicCapacity:'unproven',completeMaterialAssembly:'unqualified'},slots,
+  referenceDesign:{relativeFFLAboveSyntheticReceiver:relativeHeight,wholeHouseRiseRelativeToExisting:fflRise,receiverRelativeToFFL:-relativeHeight,receiverRole:'synthetic comparison, not a site high-water datum',grossAccessWidth:scanWidth,carrierOutsideWidth:carrierWidth,carrierOutsideHeight:carrierHeight,inletInvert,outletInvert,terminalInvertAt12050:outletInvert-.5,fall:run*.01,coverDepth:cover,minCrownDepth:-inletInvert-carrierHeight,installationSpaceBelowCover:-inletInvert-carrierHeight-cover,lowestServiceBox:-400,outletInvertClearanceAboveSyntheticReceiver:outletInvert+relativeHeight,normalPanPerimeter:-86,normalPanLow:-121,normalCollectorToCarrierDrop:199,emergencyTrialCrest:-75,emergencyOperatingWater:'unknown',lowestSusceptibleJoint:'unknown',hydraulicCapacity:'unproven',completeMaterialAssembly:'unqualified'},slots,crossingRenewal,
   eastConsequences:{pantryBand:band,courtWindowProjection:[6350,7350],outerWindowProjection:[6900,7900],courtProjectionOverrun:Math.max(0,band[1]-7350),outerProjectionOverrun:Math.max(0,6900-band[0]),remainingPantryStrips:[band[0]-6650,8105-band[1]],fixedStorageInBand:'prohibited in candidate; current pantry has no adopted fitted storage model'},
   rejectedPier:{axis:6000,grossBand:[5700,6300],nominalCourtPierShoulders:[50,50],fixedPlantDryOverlap:intersect([5700,6300],[plantDry.y,plantDry.y+plantDry.depth]),workingFloorOverlap:intersect([5700,6300],[work.y,work.y+work.depth]),interpretation:'Fixed plant obstruction requires reallocation. Working-floor overlap alone is not fixed obstruction: closed load-capable covers may serve working floor, but repair needs plant isolation and a second usable route.'},
   support:'Two permanent longitudinal edge supports lie outside each 600 mm access corridor. Independently supported threshold/window/spine bridge caps span the corridor; the carrier supports neither floor nor masonry. All member sizes, reactions and thermal/gas/water continuity remain unproved.',
-  repair:{segmentMaxLength:500,coverMaxLength:500,coverWidth:600,carrierJointEnvelopeWidth:300,clearSideToolSpace:150,verticalLiftAfterJointRelease:200,firstRelease:'Lift a dry floor cover; isolate/empty N at exposed court inlet while E stays operative. For E repair provide an independently admitted temporary rain diversion or postpone repair: N alone is not equivalent redundancy.',joint:'Top-access detachable all-metal-joint trial; seal, bolt access and repeated watertight reinstatement must be proved before admission.',removal:'Lift vertically inside opened 600 mm strip; stage each emptied segment on protected court/room surface. No axial pull through a 4.25 m wall sleeve, fixed furniture or permanent masonry.',leakage:'A separate exposed inspection/secondary-containment space is reserved, but passive external declaration and its own water boundary are unresolved; no dry-floor claim.'},
+  repair:{segmentMaxLength:500,coverMaxLength:500,coverWidth:600,carrierJointEnvelopeWidth:300,clearSideToolSpace:150,totalVerticalLiftInOpenFloor:450,firstRelease:'Lift a dry floor cover; isolate/empty N at exposed court inlet while E stays operative. For E repair provide an independently admitted temporary rain diversion or postpone repair: N alone is not equivalent redundancy.',joint:'Top-access detachable all-metal-joint trial; seal, bolt access and repeated watertight reinstatement must be proved before admission.',removal:'Room segments lift450 mm through removed covers. Fixed bridge crossings first translate500 mm into an emptied adjacent500 mm segment position, following1% slope (5 mm vertical change), then lift450 mm. Both joint terminations are at least25 mm outside the wall/spine; actual bolt/tool approach remains unproved; bridge remains intact. No4.25 m axial withdrawal is assumed.',leakage:'A separate exposed inspection/secondary-containment space is reserved, but passive external declaration and its own water boundary are unresolved; no dry-floor claim.'},
   approach:{extraRise:300,illustrativeGradient:'1:20 arithmetic only, not access approval',horizontalRunBeforeLandings:6000,availableSiteLength:'unknown'},
   acceptance:'NOT ACCEPTED. This closes the room/route allocation choice for the next joined section; HAD-03 and RWT-06 remain incomplete/blocked. Actual support, complete no-plastic wet/thermal/gas floor, first-harm joints, full-duty flow and independent event-bound receivers can reject this candidate.'};
  const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -203,7 +232,7 @@ export function buildLocalPortalCandidate(d,ops){
  plan.push(t(25,82,'FAMILY',2.5),t(119,88,'PANTRY',2.3),t(118,116,'PLANT',2.4),t(102,112,'GALLERY',2.2));
  plan.push(t(68,68,'N',4),t(104,94,'E-W1',3),t(165,47,'Plan 1:100 at A3. All covers lift from the occupied side.',3.4));
  const notes=['N: x5700–6300 through both door thresholds and family floor.','E: y6825–7425 via east gallery, service spine and pantry.','No fixed pantry cabinets or appliance bases in the E strip.','Pantry residual y-strips: 175 mm south / 680 mm north.','These are not both usable storage depths: E corridor is floor.','E cover crosses window projection edges by 75 mm.','Therefore a separately engineered window-base bridge is mandatory.','Four bedrooms, 12 m shell and room partitions stay as source.','Candidate raises all building levels 300 mm relative to fixed grade.','Front/rear step-free approach needs a real site: 6 m at 1:20','before landings is arithmetic; no site length is claimed.','','E-P at y6000: 600 mm access strip overlaps fixed plant 600 mm.','Do not substitute a 300 mm wet piece for full repair width.','No plant reallocation has been earned; retain it as rejected drop-in.','','Covers <=500 mm long; walls/spine have independent bridge caps.','Room covers may carry routine traffic only after load proof.','Door/window support must survive every carrier-removal state.'];notes.forEach((s,i)=>plan.push(t(165,58+i*9.8,s,2.85)));
- plan.push(t(20,190,'First release from above; every carrier segment <=500 mm.',3),t(20,200,'Nominal carrier joint width 300 inside 600 access strip.',2.8),t(20,210,'150 mm each side is reserved tool space, not verified ergonomics.',2.6),t(20,224,'N and E remain distinct until exterior receivers: no shared sump.',2.7),t(20,237,'Opposite destinations do not establish event independence.',2.7),t(20,250,'Furniture and safe temporary rain routing govern repair states.',2.7));
+ plan.push(t(20,190,'Room pieces lift450; crossing pieces shift500 then lift450.',3),t(20,200,'Nominal carrier joint width 300 inside 600 access strip.',2.8),t(20,210,'Remove the adjacent piece before withdrawing a fixed-cap crossing.',2.6),t(20,224,'N and E remain distinct until exterior receivers: no shared sump.',2.7),t(20,237,'Opposite destinations do not establish event independence.',2.7),t(20,250,'Furniture and safe temporary rain routing govern repair states.',2.7));
  const sections=[];
  for(const [i,key]of ['north','east'].entries()){
   const s=slots[key],xx=q=>30+(q-7750)/25,yy=z=>73+i*74-z/25;
@@ -215,13 +244,21 @@ export function buildLocalPortalCandidate(d,ops){
   sections.push(r(xx(7750),yy(-100),170,300/25,'#edf0e9'));
   sections.push(l(xx(7750),yy(inletInvert),xx(12000),yy(outletInvert),'#267b80'),l(xx(7750),yy(inletInvert+carrierHeight),xx(12000),yy(outletInvert+carrierHeight),'#267b80'));
   for(const z of s.coverBreaks)sections.push(l(xx(z),yy(0),xx(z),yy(-100)));
-  for(const [a,b]of key==='north'?[[7750,8167.5],[11582.5,12000]]:[[7750,8167.5],[9437.5,9562.5],[11582.5,12000]])sections.push(r(xx(a),yy(350),(b-a)/25,350/25,'#b6bdb5'));
+  for(const [a,b]of key==='north'?[[7750,8167.5],[11582.5,12000]]:[[7750,8167.5],[9437.5,9562.5],[11582.5,12000]]){
+   // Doors have no above-floor masonry upstand. A dashed below-FFL reservation
+   // identifies the independent threshold bridge; it does not size that support.
+   if(key==='north')sections.push(r(xx(a),yy(0),(b-a)/25,cover/25,'none','#964d39').replace('/>',' stroke-dasharray="1 1"/>'));
+   else sections.push(r(xx(a),yy(350),(b-a)/25,350/25,'#b6bdb5'));
+  }
+  sections.push(t(212,60+i*74,key==='north'?'Dashed: below-FFL bridge reservation':'Grey: truncated wall above floor',2.6),t(212,67+i*74,key==='north'?'No upstand; support sizing unproved.':'Not a selected wall/sill height.',2.6),t(212,75+i*74,'Red: piece-centre shift500 / lift450.',2.6));
   sections.push(l(xx(12000),yy(-450),xx(12900),yy(-450),'#9c684b'),t(212,yy(-450)+5,'synthetic receiver -450',2.6));
+  const crossing=crossingRenewal.find(c=>c.route===key),centre=(crossing.piece[0]+crossing.piece[1])/2,cz=inletInvert-(centre-7750)*.01+carrierHeight/2,translatedZ=cz+crossing.verticalTranslationAtOnePercent;
+  sections.push(l(xx(centre),yy(cz),xx(centre+crossing.translation),yy(translatedZ),'#964d39'),l(xx(centre+crossing.translation),yy(translatedZ),xx(centre+crossing.translation),yy(translatedZ+crossing.totalLift),'#964d39'));
   sections.push(t(30,102+i*74,'Inlet invert -320; outside height160; 1% fall42.5; exit invert -362.5 mm.',2.85));
  }
  sections.push(t(20,205,'TRANSVERSE 1:10 / authored space, no member sizing',3.4));
- sections.push(r(33,216,10,40,'#b6bdb5'),r(103,216,10,40,'#b6bdb5'),r(43,216,60,10,'#d6ccae'),r(43,226,60,30,'#edf0e9'),r(63,232,20,16,'#75a8a1'));
- sections.push(t(124,216,'600 clear access between independent edge supports.',2.8),t(124,225,'100 cover package; 60 space above inlet carrier crown.',2.8),t(124,234,'160 carrier height; installation and joint envelope explicit.',2.8),t(124,243,'Support depths / floor U-value / gas seals are unproved.',2.8),t(124,252,'Secondary containment/declaration route remains unresolved.',2.8),t(124,263,'Keep structure intact; lift emptied segments 200 vertically.',2.8));
+ sections.push(l(43,216,43,256),l(103,216,103,256),l(35,219,43,224),l(35,234,43,239),l(35,249,43,254),l(103,219,111,224),l(103,234,111,239),l(103,249,111,254),r(43,216,60,10,'#d6ccae'),r(43,226,60,30,'#edf0e9'),r(63,232,20,16,'#75a8a1'));
+ sections.push(t(124,216,'600 clear access; hatched sides are cropped support territories.',2.8),t(124,225,'100 cover package; 60 space above inlet carrier crown.',2.8),t(124,234,'160 carrier height; installation and joint envelope explicit.',2.8),t(124,243,'Support depths / floor U-value / gas seals are unproved.',2.8),t(124,252,'Secondary containment/declaration route remains unresolved.',2.8),t(124,263,'Keep caps intact: crossing shifts500, then lifts450 in open floor.',2.8));
  return {data,files:{'court-local-portals.json':JSON.stringify(data,null,2)+'\n','court-local-portals-plan.svg':page('COURT LOCAL PORTALS / ONE JOINED ROOM ALLOCATION',plan),'court-local-portals-sections.svg':page('COURT LOCAL PORTALS / LONGITUDINAL AND TRANSVERSE SECTIONS',sections)}};
 }
 

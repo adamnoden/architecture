@@ -62,6 +62,18 @@ test('joined local portals preserve full repair width, segmented release and exp
  assert.ok(j.slots.east.coverBreaks.includes(9562.5))
  assert.equal((d.grossAccessWidth-j.repair.carrierJointEnvelopeWidth)/2,j.repair.clearSideToolSpace)
  assert.match(j.repair.firstRelease,/N alone is not equivalent redundancy/)
+ assert.equal(j.repair.totalVerticalLiftInOpenFloor,450)
+ assert.ok(j.repair.totalVerticalLiftInOpenFloor > -d.outletInvert)
+ assert.equal(j.crossingRenewal.length,5)
+ for(const c of j.crossingRenewal){
+  assert.ok(c.piece[0]<=c.permanent[0]-25&&c.piece[1]>=c.permanent[1]+25)
+  assert.ok(c.piece[1]-c.piece[0]<=500)
+  assert.deepEqual(c.destination,c.piece.map((n:number)=>n+c.translation))
+  assert.ok(c.destination[0]>=c.clearRoom[0]&&c.destination[1]<=c.clearRoom[1])
+  assert.ok(c.destination[1]<=c.permanent[0]||c.destination[0]>=c.permanent[1])
+  assert.ok(Math.abs(c.verticalTranslationAtOnePercent)<d.installationSpaceBelowCover)
+  assert.ok(c.totalLift>-d.outletInvert)
+ }
  assert.match(j.acceptance,/NOT ACCEPTED/)
  for(const name of ['court-local-portals-plan.svg','court-local-portals-sections.svg']){
   const svg=study(name)
@@ -69,4 +81,18 @@ test('joined local portals preserve full repair width, segmented release and exp
   assert.match(svg,/UNADOPTED reference design/)
   assert.match(svg,/RWT-06 remains blocked/)
  }
+})
+
+test('fixed-cap crossing witness rejects occupied destination, incomplete withdrawal and short lift',()=>{
+ const moduleURL=new URL('../project/had/studies/court-egress-study.mjs',import.meta.url).href
+ const source=`import assert from 'node:assert/strict';
+ import {verifyCrossingRenewal} from ${JSON.stringify(moduleURL)};
+ const c={permanent:[7750,8167.5],piece:[7725,8225],destination:[8225,8725],translation:500,clearRoom:[8167.5,11582.5],requiredInitialRemovedNeighbor:[8225,8725],totalLift:450};
+ assert.equal(verifyCrossingRenewal(c).bridgeIntact,true);
+ assert.throws(()=>verifyCrossingRenewal(c,{removedNeighbor:null}),/adjacent segment/);
+ assert.throws(()=>verifyCrossingRenewal({...c,translation:400}),/still below fixed cap/);
+ assert.throws(()=>verifyCrossingRenewal(c,{totalLift:200}),/full extraction/);
+ assert.throws(()=>verifyCrossingRenewal(c,{coverDepth:200}),/fixed cover/);
+ assert.throws(()=>verifyCrossingRenewal({...c,piece:[7750,8250]}),/joint termination/);`
+ execFileSync(process.execPath,['--import','tsx','--input-type=module','-e',source],{encoding:'utf8',timeout:45000})
 })
