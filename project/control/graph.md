@@ -18,7 +18,6 @@ flowchart LR
   end
   subgraph g_HAD["HAD"]
     direction TB
-    n_HAD_BOUNDARY["HAD-BOUNDARY<br/>Compare the Boundary Service Lodge and accessible external service raceway<br/><b>READY</b>"]
     n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>READY</b>"]
   end
   subgraph g_SHARED["Shared integration gates"]
@@ -197,7 +196,6 @@ flowchart LR
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_IAS_03 ready;
-  class n_HAD_BOUNDARY ready;
   class n_HAD_03 ready;
   class n_TRIAD_GATE blocked;
   class n_BCR_CONVERGENCE blocked;
@@ -322,7 +320,7 @@ flowchart LR
     n_HAD_01P["HAD-01P<br/>Principal-interior architectural design<br/><b>DONE</b>"]
     n_HAD_01S["HAD-01S<br/>Private and service-interior architectural design<br/><b>DONE</b>"]
     n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>DONE</b>"]
-    n_HAD_BOUNDARY["HAD-BOUNDARY<br/>Compare the Boundary Service Lodge and accessible external service raceway<br/><b>READY</b>"]
+    n_HAD_BOUNDARY["HAD-BOUNDARY<br/>Compare the Boundary Service Lodge and accessible external service raceway<br/><b>DONE</b>"]
     n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>READY</b>"]
   end
   subgraph g_SHARED["Shared integration gates"]
@@ -824,7 +822,7 @@ flowchart LR
   class n_HAD_02M done;
   class n_IAS_03 ready;
   class n_OAS_03 done;
-  class n_HAD_BOUNDARY ready;
+  class n_HAD_BOUNDARY done;
   class n_HAD_03 ready;
   class n_OAS_DETAIL done;
   class n_TRIAD_GATE blocked;

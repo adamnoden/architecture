@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 11 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 108 · **Cancelled:** 0
+**Structurally ready:** 10 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 109 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -22,7 +22,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
-| `HAD-BOUNDARY` | Compare the Boundary Service Lodge and accessible external service raceway | HAD | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | RWT-06 |
 | `STR-GROUND` | Compare tree-tolerant foundations, ground movement isolation and substructure interfaces | STR | — |
 | `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | STR / HAD | — |

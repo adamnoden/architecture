@@ -29,6 +29,8 @@ The owner has adopted **Boundary Service Lodge** as the name for an elegant, sma
 
 The [owner-house lodge/raceway brief](boundary-service-lodge-and-raceway-brief.md) defines comparative cabinet/lodge/segregated-compartment options, utility-provider constraints, wet/dry routes, weather, root-sensitive construction and movement interface obligations. HAD owns form, access and architectural site composition; PAT-001, STR, MAT, DPL, MRA and BCR retain their separate technical authorities. This is an **outward site infrastructure candidate**, not an alteration to the accepted house footprint or a pass through HAD-03. Do not treat a pretty image as supplier-approved equipment or construct a duplicate site programme; register any independent execution packet under PCO.
 
+The [pre-site lodge/raceway comparison](boundary-service-lodge-options-result.md) compares three built forms and a connected route with frost and flooded-outlet counterexamples. It recommends separate small front-access cells with a separate protected water route and conventional burial as the benchmark. The bounded comparison is complete; actual site, operator-approved equipment/roof/entry, material admission, movement, lifting and maintenance acceptance remain explicitly unearned. No house or site installation is adopted.
+
 ## Packet topology
 
 The original linear HAD-00…06 outline is superseded by the topology below,
