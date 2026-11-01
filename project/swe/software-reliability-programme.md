@@ -21,10 +21,14 @@ All four implementation packets depend only on completed registration (SWE-PLAN)
 
 ## Registration and recovery
 
-SWE-PLAN registers the workstream, this programme and its packets. The owner explicitly directed this new work, but the node does not yet exist on main. Under the existing runbook's exceptional bootstrap rule, the registration PR uses a create-if-absent SWE-PLAN lease with a recorded UUID/generation. Until registration merges, that unknown live claim can correctly inhibit new automatic dispatch. This temporary conservative effect is declared in #1174; no existing worker is displaced and no dispatcher/CI requirement is relaxed. Release the bootstrap lease immediately after registration.
+SWE-PLAN registered the workstream, this programme and its packets in [PR #1176](https://github.com/adamnoden/architecture/pull/1176), merge `a86ad87950d007f862b6004769bbea56e8bfd946`. The owner explicitly directed the new work before its node existed on main. Under the existing runbook's exceptional bootstrap rule, the registration used a create-if-absent SWE-PLAN lease with a recorded UUID/generation. Its temporary unknown-claim effect on automatic dispatch was declared in #1174; no existing worker was displaced and no dispatcher/CI requirement was relaxed. The bootstrap lease was verified released after registration, before ordinary implementation acquisition.
 
 For each implementation packet, preserve pushed branch/PR evidence and meaningful checkpoints, renew at execution milestones, run relevant local regressions, and establish canonical full repository health on the exact merged head. Fresh publication preflight, expected-head merge and prompt lease release remain required. A deferred or rejected optimisation needs evidence and a reason; an unmeasured hoped-for gain is not completion.
 
 ## Closeout
 
 The owning result records must distinguish measured results from estimates, identify commands and fixtures used, list material limitations and any changed controlled baselines, and link integrated PRs. Final closeout verifies all nine acceptance conditions, generated projections, repository health, the parent issue, released leases and safely removed feature branches. No new external review requirement is introduced, and this software work grants no additional architectural claim authority.
+
+## Implemented disposition — 31 October 2026
+
+All nine accepted findings are implemented in the four owning results. [Shared integration PR #1180](https://github.com/adamnoden/architecture/pull/1180) retains the exact independently published packet commits and reconciles current main. Its final-head checks, expected-head merge and subsequent operational closeout are the acceptance authority. The [integration result](integration-result.md) records the complete disposition, measured gains, source provenance and validation boundaries. The four canonical implementation nodes are complete in this integrated source; the parent issue records final merge, lease release and cleanup rather than duplicating runtime state here.

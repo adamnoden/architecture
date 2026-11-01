@@ -1,7 +1,7 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPL15BPublicEvidence } from './public-evidence-readiness.js'
 
 export const DPL15C_SCHEMA_VERSION = 'dpl.realSiteCandidateReadiness.v1' as const
@@ -122,7 +122,7 @@ const exact = <T extends string | number | boolean>(value: unknown, expected: T,
   return expected
 }
 
-const uniqueSorted = (values: readonly string[]): string[] => [...new Set(values)].sort((a, b) => a.localeCompare(b))
+const uniqueSorted = (values: readonly string[]): string[] => [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const canonicalDimensionAssessment = (value: unknown, siteId: string, index: number): DimensionAssessment => {
   const raw = asRecord(value, `${siteId}.assessments[${index}]`)
@@ -152,7 +152,7 @@ const canonicalSite = (value: unknown, index: number): SiteAssessment => {
   }
   const assessments = raw.assessments.map((entry, assessmentIndex) =>
     canonicalDimensionAssessment(entry, siteId, assessmentIndex)
-  ).sort((a, b) => a.dimension.localeCompare(b.dimension))
+  ).sort((a, b) => compareDplIdentityStrings(a.dimension, b.dimension))
   const dimensions = assessments.map((assessment) => assessment.dimension).sort()
   if (new Set(dimensions).size !== DPL15C_DIMENSIONS.length || JSON.stringify(dimensions) !== JSON.stringify([...DPL15C_DIMENSIONS].sort())) {
     throw new Error(`${siteId} must assess each readiness dimension exactly once.`)
@@ -188,7 +188,7 @@ export const validateDPL15CAssessment = (value: unknown): RawAssessment => {
   }
 
   if (!Array.isArray(raw.sites) || raw.sites.length !== EXPECTED_SITE_IDS.length) throw new Error('DPL-15C requires exactly eight site assessments.')
-  const sites = raw.sites.map(canonicalSite).sort((a, b) => a.siteId.localeCompare(b.siteId))
+  const sites = raw.sites.map(canonicalSite).sort((a, b) => compareDplIdentityStrings(a.siteId, b.siteId))
   const siteIds = sites.map((site) => site.siteId)
   if (new Set(siteIds).size !== EXPECTED_SITE_IDS.length || JSON.stringify(siteIds) !== JSON.stringify([...EXPECTED_SITE_IDS])) {
     throw new Error('DPL-15C site universe must be exactly DPL-RP-001 through DPL-RP-008.')
@@ -257,14 +257,14 @@ export const composeDPL15CCorpusReadiness = (
       readiness,
       gaps: unsatisfied.map((entry) => DPL15C_GAP_BY_DIMENSION[entry.dimension]).sort(),
       nextPublicEvidenceCandidate: site.nextPublicEvidenceCandidate,
-      assessmentFingerprint: sha256SemanticFingerprint({
+      assessmentFingerprint: sha256DplSemanticFingerprint({
         siteId: site.siteId,
         recordGitBlobSha: site.recordGitBlobSha,
         assessments: site.assessments,
         nextPublicEvidenceCandidate: site.nextPublicEvidenceCandidate
       })
     }
-  }).sort((a, b) => a.siteId.localeCompare(b.siteId))
+  }).sort((a, b) => compareDplIdentityStrings(a.siteId, b.siteId))
 
   const readySiteIds = sites.filter((site) => site.readiness === 'CANDIDATE_AUTHORING_READY').map((site) => site.siteId)
   const notReadySiteIds = sites.filter((site) => site.readiness === 'NOT_READY').map((site) => site.siteId)
@@ -274,11 +274,11 @@ export const composeDPL15CCorpusReadiness = (
     if (!site || site.readiness !== 'NOT_READY') throw new Error(`DPL-15C public-evidence candidate ${siteId} must remain NOT_READY in this packet.`)
   }
 
-  const corpusFingerprint = sha256SemanticFingerprint({
+  const corpusFingerprint = sha256DplSemanticFingerprint({
     corpusIndex: assessment.corpusIndex,
     sourceRecords: assessment.sites.map((site) => ({ siteId: site.siteId, recordPath: site.recordPath, recordGitBlobSha: site.recordGitBlobSha }))
   })
-  const assessmentFingerprint = sha256SemanticFingerprint({
+  const assessmentFingerprint = sha256DplSemanticFingerprint({
     schemaVersion: assessment.schemaVersion,
     assessmentId: assessment.assessmentId,
     corpusFingerprint,
@@ -298,7 +298,7 @@ export const composeDPL15CCorpusReadiness = (
     counts: { ready: readySiteIds.length, notReady: notReadySiteIds.length },
     corpusFingerprint,
     assessmentFingerprint,
-    resultFingerprint: sha256SemanticFingerprint({
+    resultFingerprint: sha256DplSemanticFingerprint({
       assessmentFingerprint,
       sites,
       readySiteIds,

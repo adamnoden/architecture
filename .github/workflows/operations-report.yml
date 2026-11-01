@@ -17,16 +17,12 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - uses: actions/setup-node@v7
-        with:
-          node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci --no-audit --no-fund
+      - uses: ./.github/actions/control-runtime
       - name: Snapshot current canonical sources and live occupancy
         env:
           RECONCILE_RESULT: ${{ inputs.reconciliation-result }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: node --import tsx scripts/control-operations.ts brief --json operations.json --markdown operations.md
+        run: node scripts/fresh-operations-report.mjs --json operations.json --markdown operations.md
       - name: Preserve machine and human briefing
         if: always()
         uses: actions/upload-artifact@v6

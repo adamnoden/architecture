@@ -1,4 +1,4 @@
-import { sha256SemanticFingerprint } from '../core/identity.js'
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import {
   loadCanonicalReferenceSiteManifest,
   type ReferenceSiteClaim,
@@ -136,7 +136,7 @@ export interface ScreeningCoverageReadinessOverrides {
 }
 
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => a.localeCompare(b))
+  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const ownerOrder: Readonly<Record<CoverageOwner, number>> = {
   REFERENCE_HOUSE: 0,
@@ -277,7 +277,7 @@ const canonicalCoverage = (references: readonly NormalizedCoverageReference[]): 
     .map((reference) => ({ ...reference, claimRefs: canonicalStrings(reference.claimRefs) }))
     .sort((a, b) => {
       const byOwner = ownerOrder[a.owner] - ownerOrder[b.owner]
-      return byOwner || a.ownerEntryId.localeCompare(b.ownerEntryId) || a.normalizedDisposition.localeCompare(b.normalizedDisposition)
+      return byOwner || compareDplIdentityStrings(a.ownerEntryId, b.ownerEntryId) || compareDplIdentityStrings(a.normalizedDisposition, b.normalizedDisposition)
     })
 
 const buildPlanningGraph = (
@@ -291,10 +291,10 @@ const buildPlanningGraph = (
       localTargetId: loaded.target.id,
       strategicTargetId: strategicId
     }
-  }).sort((a, b) => a.borough.localeCompare(b.borough))
+  }).sort((a, b) => compareDplIdentityStrings(a.borough, b.borough))
 
   const manifest = { strategicTargetId: strategicId, localEdges }
-  return { ...manifest, fingerprint: sha256SemanticFingerprint(manifest) }
+  return { ...manifest, fingerprint: sha256DplSemanticFingerprint(manifest) }
 }
 
 const registryIdentities = (
@@ -336,7 +336,7 @@ const canonicalInterfaceAuthorities = (
   authorities: readonly SiteInterfaceClaimAuthority[]
 ): SiteInterfaceClaimAuthority[] => [...authorities]
   .map((authority) => ({ ...authority }))
-  .sort((a, b) => a.claimId.localeCompare(b.claimId) || a.authorityId.localeCompare(b.authorityId))
+  .sort((a, b) => compareDplIdentityStrings(a.claimId, b.claimId) || compareDplIdentityStrings(a.authorityId, b.authorityId))
 
 const claimOwnership = (
   site: ReferenceSiteManifest,
@@ -360,7 +360,7 @@ const claimOwnership = (
       ])
     }
   })
-  .sort((a, b) => a.claimId.localeCompare(b.claimId))
+  .sort((a, b) => compareDplIdentityStrings(a.claimId, b.claimId))
 
 const dispositionCounts = (
   coverage: readonly NormalizedCoverageReference[]
@@ -432,7 +432,7 @@ export const composeScreeningCoverageReadiness = (
       ? 'NOT_READY_PROFILE_DISPOSITION_UNRESOLVED'
       : 'READY_FOR_SUBSTANTIVE_AGGREGATION_REVIEW'
 
-  const manifestFingerprint = sha256SemanticFingerprint(site)
+  const manifestFingerprint = sha256DplSemanticFingerprint(site)
   const identityManifest = {
     schemaVersion: DPL13B_SCHEMA_VERSION,
     assuranceProfile: 'SCREENING' as const,
@@ -451,7 +451,7 @@ export const composeScreeningCoverageReadiness = (
     profileUniverseState,
     conclusionReadiness
   }
-  const identityFingerprint = sha256SemanticFingerprint(identityManifest)
+  const identityFingerprint = sha256DplSemanticFingerprint(identityManifest)
   const proofBoundary = {
     wholeSiteCompatibilityConclusion: 'NOT_IMPLEMENTED' as const,
     substantiveConclusionAggregation: 'NOT_ADMITTED' as const,
@@ -484,7 +484,7 @@ export const composeScreeningCoverageReadiness = (
     profileUniverseState,
     conclusionReadiness,
     identityFingerprint,
-    resultFingerprint: sha256SemanticFingerprint({ identityFingerprint, dispositionCounts: counts, proofBoundary }),
+    resultFingerprint: sha256DplSemanticFingerprint({ identityFingerprint, dispositionCounts: counts, proofBoundary }),
     proofBoundary
   }
 }

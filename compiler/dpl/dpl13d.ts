@@ -1,6 +1,6 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import { referenceHouseSourceFingerprint } from '../reference-house/identity.js'
 import {
@@ -74,7 +74,7 @@ const readText = (path: string): string => readFileSync(resolve(process.cwd(), p
 const readJson = (path: string): unknown => JSON.parse(readText(path)) as unknown
 
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => a.localeCompare(b))
+  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const ownerOrder: Readonly<Record<CoverageOwner, number>> = {
   REFERENCE_HOUSE: 0,
@@ -89,7 +89,7 @@ const canonicalCoverage = (
   .map((reference) => ({ ...reference, claimRefs: canonicalStrings(reference.claimRefs) }))
   .sort((a, b) => {
     const byOwner = ownerOrder[a.owner] - ownerOrder[b.owner]
-    return byOwner || a.ownerEntryId.localeCompare(b.ownerEntryId) || a.normalizedDisposition.localeCompare(b.normalizedDisposition)
+    return byOwner || compareDplIdentityStrings(a.ownerEntryId, b.ownerEntryId) || compareDplIdentityStrings(a.normalizedDisposition, b.normalizedDisposition)
   })
 
 const dispositionCounts = (
@@ -165,13 +165,13 @@ const createSecondFixtureCandidateInput = (site: SyntheticReferenceSiteManifest)
 }
 
 const authorityFingerprint = (path: string): string =>
-  sha256SemanticFingerprint({ path, content: readText(path) })
+  sha256DplSemanticFingerprint({ path, content: readText(path) })
 
 export const compileDPL13DSecondFixtureCase = (
   site: SyntheticReferenceSiteManifest = loadDPL13DReferenceSiteManifest()
 ): CanonicalReferenceSiteCompile => {
   const baseline = compileCanonicalReferenceSiteCase()
-  const siteFingerprint = sha256SemanticFingerprint(site)
+  const siteFingerprint = sha256DplSemanticFingerprint(site)
   const candidateInput = createSecondFixtureCandidateInput(site)
   const authoredCandidate = createCanonicalReferenceSiteCandidate(
     site as unknown as ReferenceSiteManifest,
@@ -202,7 +202,7 @@ export const compileDPL13DSecondFixtureCase = (
       recordPath: DPL13D_SITE_PATH,
       recordText,
       recordFingerprint: siteFingerprint,
-      indexEntryFingerprint: sha256SemanticFingerprint({
+      indexEntryFingerprint: sha256DplSemanticFingerprint({
         siteId: site.siteId,
         manifestId: site.manifestId,
         manifestRevision: site.manifestRevision,
@@ -218,10 +218,10 @@ export const compileDPL13DSecondFixtureCase = (
 
   const interfaceIds = deploymentLedger.caseIdentity.manifest.interfaceContracts
     .map((item) => item.id)
-    .sort((a, b) => a.localeCompare(b))
+    .sort((a, b) => compareDplIdentityStrings(a, b))
   const targetIds = deploymentLedger.caseIdentity.manifest.targets
     .map((item) => item.targetId)
-    .sort((a, b) => a.localeCompare(b))
+    .sort((a, b) => compareDplIdentityStrings(a, b))
   const siteAuthorityFingerprint = authorityFingerprint(site.authoritySource)
   const identityManifest = {
     schemaVersion: DPL13D_SCHEMA_VERSION,
@@ -240,7 +240,7 @@ export const compileDPL13DSecondFixtureCase = (
     localBoroughTarget: DPL13D_LOCAL_TARGET_ID,
     methodVersion: DPL13D_SCHEMA_VERSION
   }
-  const canonicalCaseFingerprint = sha256SemanticFingerprint(identityManifest)
+  const canonicalCaseFingerprint = sha256DplSemanticFingerprint(identityManifest)
   const authoredClaimIds = site.claims.filter((claim) => claim.state === 'AUTHORED').map((claim) => claim.id).sort()
   const unknownClaimIds = site.claims.filter((claim) => claim.state === 'UNKNOWN').map((claim) => claim.id).sort()
   const proofBoundary = {
@@ -251,7 +251,7 @@ export const compileDPL13DSecondFixtureCase = (
     architecturalCandidateSelection: 'NOT_IMPLEMENTED' as const,
     localBoroughTarget: DPL13D_LOCAL_TARGET_ID
   }
-  const resultFingerprint = sha256SemanticFingerprint({
+  const resultFingerprint = sha256DplSemanticFingerprint({
     schemaVersion: DPL13D_SCHEMA_VERSION,
     canonicalCaseFingerprint,
     siteManifestFingerprint: siteFingerprint,
@@ -362,7 +362,7 @@ export const rebindScreeningCoverageReadinessToSyntheticContext = (
     : profileUniverseState === 'PROFILE_DISPOSITION_UNRESOLVED'
       ? 'NOT_READY_PROFILE_DISPOSITION_UNRESOLVED'
       : 'READY_FOR_SUBSTANTIVE_AGGREGATION_REVIEW'
-  const manifestFingerprint = sha256SemanticFingerprint(site)
+  const manifestFingerprint = sha256DplSemanticFingerprint(site)
   const siteView = {
     siteId: site.siteId,
     manifestId: site.manifestId,
@@ -389,7 +389,7 @@ export const rebindScreeningCoverageReadinessToSyntheticContext = (
     profileUniverseState,
     conclusionReadiness
   }
-  const identityFingerprint = sha256SemanticFingerprint(identityManifest)
+  const identityFingerprint = sha256DplSemanticFingerprint(identityManifest)
   const proofBoundary = { ...base.proofBoundary }
 
   return {
@@ -402,7 +402,7 @@ export const rebindScreeningCoverageReadinessToSyntheticContext = (
     profileUniverseState,
     conclusionReadiness,
     identityFingerprint,
-    resultFingerprint: sha256SemanticFingerprint({ identityFingerprint, dispositionCounts: counts, proofBoundary }),
+    resultFingerprint: sha256DplSemanticFingerprint({ identityFingerprint, dispositionCounts: counts, proofBoundary }),
     proofBoundary
   }
 }
@@ -429,7 +429,7 @@ export const composeDPL13DSecondFixture = (): DPL13DSecondFixtureResult => {
     canonicalCase,
     readiness,
     changedClassificationKeys,
-    identityFingerprint: sha256SemanticFingerprint({
+    identityFingerprint: sha256DplSemanticFingerprint({
       schemaVersion: DPL13D_SCHEMA_VERSION,
       siteFingerprint: canonicalCase.site.fingerprint,
       canonicalCaseFingerprint: canonicalCase.canonicalCaseIdentity.fingerprint,

@@ -1,6 +1,6 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPL15FRp006 } from './dpl15fRp006.js'
 
 export const DPL15G_PATH = 'project/dpl/sites/dpl-15g-rp007-rp008-comparison-v01.json' as const
@@ -98,14 +98,14 @@ export const composeDPL15G = (value: unknown = JSON.parse(text(DPL15G_PATH)) as 
       ...evidence,
       observed: [...(evidence.observed as string[])].sort()
     }))
-    publicEvidence.sort((a, b) => String(a.id).localeCompare(String(b.id)))
+    publicEvidence.sort((a, b) => compareDplIdentityStrings(String(a.id), String(b.id)))
     return {
       ...site,
       publicEvidence,
-      dispositions: Object.fromEntries(Object.entries(site.dispositions as Record<string, unknown>).sort(([a], [b]) => a.localeCompare(b)))
+      dispositions: Object.fromEntries(Object.entries(site.dispositions as Record<string, unknown>).sort(([a], [b]) => compareDplIdentityStrings(a, b)))
     }
   })
-  sites.sort((a, b) => String(a.siteId).localeCompare(String(b.siteId)))
+  sites.sort((a, b) => compareDplIdentityStrings(String(a.siteId), String(b.siteId)))
 
   const canonical = {
     ...validated,
@@ -118,7 +118,7 @@ export const composeDPL15G = (value: unknown = JSON.parse(text(DPL15G_PATH)) as 
     selectedSiteId: 'DPL-RP-007',
     heldSiteId: 'DPL-RP-008',
     comparisonCount: 2,
-    resultFingerprint: sha256SemanticFingerprint(canonical),
+    resultFingerprint: sha256DplSemanticFingerprint(canonical),
     nextPacket: string(validated.nextPacket, 'nextPacket')
   }
 }

@@ -1,8 +1,8 @@
+import { sha256DplSemanticFingerprint } from './identity-order.js'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 import { describe, test } from 'node:test'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import { referenceHouseSourceFingerprint } from '../reference-house/identity.js'
 import { compileReferenceHouseSystem } from '../reference-house/system-compile.js'
@@ -436,7 +436,7 @@ describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
 
     assert.deepEqual(runtimePayload, verification.payload)
     assert.equal(
-      sha256SemanticFingerprint(runtimePayload),
+      sha256DplSemanticFingerprint(runtimePayload),
       verification.resultFingerprint
     )
     assert.equal(

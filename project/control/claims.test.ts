@@ -3,6 +3,7 @@ import test from 'node:test'
 import type { ControlNode } from './types.js'
 import { controlNodes } from './nodes/index.js'
 import {
+  ClaimOccupiedError,
   canonicalNodeId,
   claimPath,
   createClaimRecord,
@@ -76,7 +77,7 @@ test('normal acquisition creates generation 1 and rejects a live second claimant
         holder: { kind: 'codex', label: 'session-b' },
         now: new Date('2026-10-28T23:00:00.000Z')
       }),
-    /already claimed/
+    error => error instanceof ClaimOccupiedError && /already claimed/.test(error.message)
   )
 })
 
@@ -99,7 +100,7 @@ test('expiry grace prevents boundary overlap, then permits reacquisition', () =>
         holder: { kind: 'codex' },
         now: new Date('2026-10-28T22:55:30.000Z')
       }),
-    /already claimed/
+    error => error instanceof ClaimOccupiedError && /already claimed/.test(error.message)
   )
 
   const second = nextNormalAcquisition(first, {

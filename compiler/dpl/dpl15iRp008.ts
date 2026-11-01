@@ -1,6 +1,6 @@
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPL15HRp007 } from './dpl15hRp007.js'
 
 export const DPL15I_PATH = 'project/dpl/sites/dpl-15i-rp008-spatial-evidence-v01.json' as const
@@ -99,11 +99,11 @@ export const composeDPL15IRp008 = (value: unknown = JSON.parse(text(DPL15I_PATH)
   const attempts = (validated.acquisitionAttempts as Record<string, unknown>[]).map((attempt): Record<string, unknown> => ({
     ...attempt,
     observed: [...(attempt.observed as string[])].sort()
-  })).sort((a, b) => String(a.id).localeCompare(String(b.id)))
+  })).sort((a, b) => compareDplIdentityStrings(String(a.id), String(b.id)))
   const readiness = (validated.readiness as Record<string, unknown>[]).map((entry): Record<string, unknown> => ({
     ...entry,
     evidenceRefs: [...(entry.evidenceRefs as string[])].sort()
-  })).sort((a, b) => String(a.dimension).localeCompare(String(b.dimension)))
+  })).sort((a, b) => compareDplIdentityStrings(String(a.dimension), String(b.dimension)))
   const canonical = {
     ...validated,
     acquisitionAttempts: attempts,
@@ -118,7 +118,7 @@ export const composeDPL15IRp008 = (value: unknown = JSON.parse(text(DPL15I_PATH)
     residualCount: 5,
     candidateAuthoringReady: false,
     closeNoSpendCorpusTransportSearch: true,
-    resultFingerprint: sha256SemanticFingerprint(canonical),
+    resultFingerprint: sha256DplSemanticFingerprint(canonical),
     nextPacket: string(validated.nextPacket, 'nextPacket')
   }
 }
