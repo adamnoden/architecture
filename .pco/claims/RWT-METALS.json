@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-METALS",
   "generation": 17,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "aeca7c76-d95c-45c0-95f0-35f23f713f3f",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6556032783"
   },
   "claimedAt": "2026-11-01T09:20:43.000Z",
-  "heartbeatAt": "2026-11-01T09:27:25.000Z",
-  "expiresAt": "2026-11-01T10:12:25.000Z",
+  "heartbeatAt": "2026-11-01T09:34:15.000Z",
+  "expiresAt": "2026-11-01T09:34:15.000Z",
   "branch": "work/mvb-chat-6556032783",
   "predecessor": {
     "leaseId": "12e9e5ac-c75f-4035-bac1-7e0dd4252d62",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "PR1198 branch work/mvb-chat-6556032783; bounded metals disposition and node closure authored at head 7863ac1d.",
     "next": "Complete exact-head native CI, fresh RWT-METALS publication preflight, expected-head merge and accepted-tree verification; release or handoff."
-  }
+  },
+  "releasedAt": "2026-11-01T09:34:15.000Z",
+  "releaseReason": "completed"
 }
