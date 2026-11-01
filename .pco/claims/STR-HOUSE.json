@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 10,
-  "state": "released",
-  "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
+  "generation": 11,
+  "state": "claimed",
+  "leaseId": "62b3cbcd-60b8-45ea-a263-d1c45df66454",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg2-structure"
+    "label": "zerg3-structure-loggia"
   },
-  "claimedAt": "2026-11-01T19:23:15.470Z",
-  "heartbeatAt": "2026-11-01T20:01:26.298Z",
-  "expiresAt": "2026-11-01T20:01:26.298Z",
-  "branch": "work/zerg2-integration-20261101",
+  "claimedAt": "2026-11-01T20:04:17.184Z",
+  "heartbeatAt": "2026-11-01T20:04:17.184Z",
+  "expiresAt": "2026-11-01T20:49:17.184Z",
+  "branch": "work/zerg3-structure-loggia",
   "predecessor": {
-    "leaseId": "fddbc95b-91e0-4257-8c44-85427d4e08d7",
-    "generation": 9,
-    "branch": "work/zerg-final-integration-20261101",
-    "pr": 1224,
+    "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
+    "generation": 10,
+    "branch": "work/zerg2-integration-20261101",
+    "pr": 1229,
     "checkpoint": {
-      "evidence": "Merged PR1224 at1e7b2cbce408834ca3cbb91c286af37eda066829; main ancestry and all6HOUSEfile payloads verified. FinalHOUSE a3b404f4 is included. Exact-head fullCI41322417761 attempt2 and15:46:02Z STR-HOUSE preflight passed. STR-HOUSE remains planned.",
-      "next": "Develop one joined structural candidate: actual140mm shared/one-sided riser bearings and supported closure, stair/bridge seats/headroom, arch thrust/base paths and roof heel/corners. Rebind HAD600mm court passages and ground-floor splice to B geometry; confirm compact-single/storage premise before adoption."
+      "evidence": "Shared PR1229 exacthead8e14606f4d232646c43f73910126fff72e27149e; STR parent329396f081ed6a2e882fa12e18bb76bc1905a317 exacttreef859b416a7913414cda78cff0af0fcf0f0cde46a; engineering and assembly exact-payload PASS; custom source/calculation/render checks passed",
+      "next": "Root full exact-head CI and per-node fresh publication preflight; integrate shared PR1229 then release STR lease",
+      "blocker": "Shared exact-head full CI pending; no geometry adoption or STR-HOUSE completion"
     }
   },
   "recoverySource": {
-    "leaseId": "fddbc95b-91e0-4257-8c44-85427d4e08d7",
-    "generation": 9,
-    "branch": "work/zerg-final-integration-20261101",
-    "pr": 1224,
+    "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
+    "generation": 10,
+    "branch": "work/zerg2-integration-20261101",
+    "pr": 1229,
     "checkpoint": {
-      "evidence": "Merged PR1224 at1e7b2cbce408834ca3cbb91c286af37eda066829; main ancestry and all6HOUSEfile payloads verified. FinalHOUSE a3b404f4 is included. Exact-head fullCI41322417761 attempt2 and15:46:02Z STR-HOUSE preflight passed. STR-HOUSE remains planned.",
-      "next": "Develop one joined structural candidate: actual140mm shared/one-sided riser bearings and supported closure, stair/bridge seats/headroom, arch thrust/base paths and roof heel/corners. Rebind HAD600mm court passages and ground-floor splice to B geometry; confirm compact-single/storage premise before adoption."
+      "evidence": "Shared PR1229 exacthead8e14606f4d232646c43f73910126fff72e27149e; STR parent329396f081ed6a2e882fa12e18bb76bc1905a317 exacttreef859b416a7913414cda78cff0af0fcf0f0cde46a; engineering and assembly exact-payload PASS; custom source/calculation/render checks passed",
+      "next": "Root full exact-head CI and per-node fresh publication preflight; integrate shared PR1229 then release STR lease",
+      "blocker": "Shared exact-head full CI pending; no geometry adoption or STR-HOUSE completion"
     }
-  },
-  "checkpoint": {
-    "evidence": "Shared PR1229 exacthead8e14606f4d232646c43f73910126fff72e27149e; STR parent329396f081ed6a2e882fa12e18bb76bc1905a317 exacttreef859b416a7913414cda78cff0af0fcf0f0cde46a; engineering and assembly exact-payload PASS; custom source/calculation/render checks passed",
-    "next": "Root full exact-head CI and per-node fresh publication preflight; integrate shared PR1229 then release STR lease",
-    "blocker": "Shared exact-head full CI pending; no geometry adoption or STR-HOUSE completion"
-  },
-  "pr": 1229,
-  "releasedAt": "2026-11-01T20:01:26.298Z",
-  "releaseReason": "handoff"
+  }
 }
