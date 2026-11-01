@@ -491,6 +491,7 @@ rewinds={'familyWetRoom':{'status':'Shared MAT/IAS/HAD trial only; no selected p
 for work in ['electricalWorkingField','PVworkingField']:
  for fixed in ['washer','sink']:assert not overlap(rewinds['utility'][work],rewinds['utility'][fixed])
 rewinds['rearSource27']={'groundStackCabinet':[429.5,10800,300,750],'upperCabinet':[429.5,10800,300,750],'lowBox':[429.5,9937.5,150,862.5],'panBack':729.5,'retainedFloorPort':[567.5,11177.5,160],'portEdgeReserves':[58,82],'requiredBackProjection':162,'status':'Explicit12east finish correction from417.5 to429.5; floorport unchanged. Old merged pan withdrawal witness must be repeated against shifted cabinet/pan; no automatic pass.'}
+rear_tray_target=[1802.5,8952.5,1000,1000]
 family=rewinds['familyWetRoom'];col=family['column'];px,py,pd=family['port']
 for d in [pd,family['aboveFloorTerminalSupportEnvelope']]:
  assert min(px-d/2-col[0],col[0]+col[2]-px-d/2,py-d/2-col[1],col[1]+col[3]-py-d/2)>=25
@@ -539,7 +540,7 @@ for e in extract:
  furniture=dict(b['upperFurniture' if e['level'] else 'groundFurniture'])
  if e['level']:
   for k in ['family-WC','family-basin','family-bath1700','family-service-cabinet']:furniture.pop(k,None)
-  furniture.update({'family-WC':family['WC'],'family-basin':family['basin'],'family-bath':family['bath'],'family-column':family['column'],'selected-riser':plant['riserGross']})
+  furniture.update({'rear-WC':[729.5,11000,560,355],'rear-cabinet':rewinds['rearSource27']['upperCabinet'],'rear-west-low-box':rewinds['rearSource27']['lowBox'],'rear-shower1000':rear_tray_target,'family-WC':family['WC'],'family-basin':family['basin'],'family-bath':family['bath'],'family-column':family['column'],'selected-riser':plant['riserGross']})
  else:
   furniture.pop('Q350-body',None);furniture.pop('north-sink-station',None)
   furniture.update({'sink-station':sink['station'],'washer':rewinds['utility']['washer'],'utility-sink':rewinds['utility']['sink'],'CU':rewinds['utility']['electricalStation'],'inverter':rewinds['utility']['PVinverter']})
@@ -656,7 +657,7 @@ residues.append({'id':'PV','quantity':'8 modules +1inverter + matched DC cable/c
  'proposal':'Exact certified system residuals after roof/material comparison; no owner exception approved.'})
 
 rear_drop={'status':'Constructive compatibility requirement for separate rear1000 tray, not actual matched outlet/support/union admission.',
- 'port':[2122.5,9452.5,110],'trayDrainEvidence':{'selectedReference':'BetteUltra5940 WESTdrain; interiors auditedB2 nativeDW_0082','tray':[1802.5,8952.5,1000,1000],'drainCentre':[2012.5,9452.5],'requiredTailOffset':[110,0],'requiredPlanOffsetMagnitude':110,'status':'Authored250x160connectionterritory cancontain offset, butactualB568outlet/elbow/support/seat/height/release mustmatch; not1000frameapprovalor900transfer.'},'clearSleeveInside':97,'maximumRenewableStem':75,
+ 'port':[2122.5,9452.5,110],'trayDrainEvidence':{'selectedReference':'BetteUltra5940 WESTdrain; interiors auditedB2 nativeDW_0082','tray':rear_tray_target,'drainCentre':[2012.5,9452.5],'requiredTailOffset':[110,0],'requiredPlanOffsetMagnitude':110,'status':'Authored250x160connectionterritory cancontain offset, butactualB568outlet/elbow/support/seat/height/release mustmatch; not1000frameapprovalor900transfer.'},'clearSleeveInside':97,'maximumRenewableStem':75,
  'unionA':[2122.5,9452.5,2950],'turnT':[2122.5,9452.5,2777.375],'unionB':[2022.5,9452.5,2774.875],
  'branch':[[2122.5,9452.5,2777.375],[1750,9452.5,2768.0625],[1750,11177.5,2724.9375],[567.5,11177.5,2695.375]],
  'gradient':40,'maximumCompleteFittingOD':100,'supportDepth':25,'airReserve':25,'innerPanelTop':2595.375,'panelThickness':20,'finishedPanelUnderside':2575.375,
@@ -694,7 +695,7 @@ for y in [9475+i*650/20 for i in range(21)]:
 
 result={'status':'Constructive provisional whole-house service baseline; no accepted apparatus, materials, fire route, site loading or commissioning.',
  'basis':{'HADHead':HEAD,'HADPath':PATH,'HADBlob':BLOB,'HADStatus':b['status'],
-  'narrowObstacleFurnitureRewind':{'head':REWIND_HEAD,'blob':REWIND_BLOB,'scope':'Onlyactualgroundreceivers/table/side-table used bynamed renewalchecks; wholec83roomsource remainscontrol, notsilentwholehouseadoption.'},'mergedInterfaceMain':'546c98f93a3dccbfe48119bd2e92117b6e2d766f','units':'mm, local proposed groundFFL0; first3450; all z use one datum'},
+  'narrowObstacleFurnitureRewind':{'head':REWIND_HEAD,'blob':REWIND_BLOB,'scope':'Onlyactualgroundreceivers/table/reading+familysofas/side-tables used bynamed renewalchecks anddrawnplan; wholec83roomsource remainscontrol, notsilentwholehouseadoption.'},'mergedInterfaceMain':'546c98f93a3dccbfe48119bd2e92117b6e2d766f','units':'mm, local proposed groundFFL0; first3450; all z use one datum'},
  'selection':'Local continuousMEV + background vents + separate cooker capture +8kW compatibility monobloc/radiators +300L hotwater.',
  'air':air,'extract':extract,'supply':supplies,
  'cooker':{'extractPoint':[11200,12000,2400],'duct':160,'exhaustRadialInsulation':50,'metalJacketEachSide':1,'fullInsulatedOD':262,'formedWallTerritory':320,'minimumCaptureLps':30,'makeupPoint':[12000,8600,2400],
@@ -719,12 +720,15 @@ def plan(level,ox,oy):
  furniture=dict(b['upperFurniture' if level else 'groundFurniture'])
  if level:
   for k in ['family-WC','family-basin','family-bath1700','family-service-cabinet']:furniture.pop(k,None)
-  furniture.update({'family-WC':family['WC'],'family-basin':family['basin'],'family-bath':family['bath'],'family-column':family['column'],'riser':plant['riserGross']})
+  furniture.update({'rear-WC':[729.5,11000,560,355],'rear-cabinet':rewinds['rearSource27']['upperCabinet'],'rear-west-low-box':rewinds['rearSource27']['lowBox'],'rear-shower1000':rear_tray_target,'family-WC':family['WC'],'family-basin':family['basin'],'family-bath':family['bath'],'family-column':family['column'],'riser':plant['riserGross']})
  else:
   for k in ['Q350-body','north-sink-station','north-cooking-station']:furniture.pop(k,None)
-  furniture['dining-table1200x800']=rwhouse['groundFurniture']['dining-table1200x800'];furniture['reading-side-table300']=rwhouse['groundFurniture']['reading-side-table300']
+  for fk in ['dining-table1200x800','reading-side-table300','reading-sofa1900x850','family-sofa1900x750','family-side-table300']:furniture[fk]=rwhouse['groundFurniture'][fk]
+  furniture['rear-stack']=rewinds['rearSource27']['groundStackCabinet']
   furniture.update({'sink':sink['station'],'cooker':sink['cookingStationRewind']['footprint'],'washer':rewinds['utility']['washer'],'utilitysink':rewinds['utility']['sink'],'primarybuffer':plant['primaryBuffer']['station'],'hydraulics':plant['controlsHydraulics']})
  for n,r in furniture.items():s.append(box(r,'#b8b1a4'))
+ for rad in emitters:
+  if rad['level']==level:s.append(box(rad['completePlanWithValvesAndBrackets'],'#1a7c83','#d7eeee'))
  if not level:
   s.append(box(fire['geometry']['groundStairEastWall']['finished'],'#69458a','#eee4f3'))
   for d in fire['doors'][:2]:s.append(box(d['closed'],'#69458a','#eee4f3'))
