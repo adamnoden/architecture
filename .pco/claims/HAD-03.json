@@ -1,27 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 19,
+  "generation": 20,
   "state": "claimed",
-  "leaseId": "80e2e12c-e0f1-43f7-bd23-7977f10acdb6",
+  "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6558300375"
+    "label": "issue-comment-6559339044"
   },
-  "claimedAt": "2026-11-01T13:02:22.000Z",
-  "heartbeatAt": "2026-11-01T13:02:22.000Z",
-  "expiresAt": "2026-11-01T13:47:22.000Z",
-  "branch": "work/mvb-chat-6558300375",
+  "claimedAt": "2026-11-01T14:32:58.000Z",
+  "heartbeatAt": "2026-11-01T14:32:58.000Z",
+  "expiresAt": "2026-11-01T15:17:58.000Z",
+  "branch": "work/mvb-chat-6559339044",
   "predecessor": {
-    "leaseId": "5c4b89d9-ff6c-46d5-86d3-fe44774bc6df",
-    "generation": 18,
-    "branch": "work/mvb-chat-6558099791",
-    "pr": 1213,
-    "checkpoint": {
-      "evidence": "PR1213 head 6f584233: controlled shallow pan/outlet free-grade sensitivity, generated SVG+JSON, deterministic drawing test and HAD/RWT handoff; full CI 41308734847 running.",
-      "next": "Verify full exact-head CI; run fresh native lease/head preflight after CI; expected-head merge; release and retire preflight helper.",
-      "blocker": "HAD-03 remains planned: actual door/wall first-harm level, supported local N/E passages, site receiving levels and full-duty relief unproven."
-    }
+    "leaseId": "80e2e12c-e0f1-43f7-bd23-7977f10acdb6",
+    "generation": 19,
+    "branch": "work/mvb-chat-6558300375"
   },
   "recoverySource": {
     "leaseId": "5c4b89d9-ff6c-46d5-86d3-fe44774bc6df",
