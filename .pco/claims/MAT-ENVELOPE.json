@@ -9,8 +9,8 @@
     "label": "zerg2-mat-joined"
   },
   "claimedAt": "2026-11-01T19:28:00.966Z",
-  "heartbeatAt": "2026-11-01T19:38:29.531Z",
-  "expiresAt": "2026-11-01T20:23:29.531Z",
+  "heartbeatAt": "2026-11-01T19:43:35.474Z",
+  "expiresAt": "2026-11-01T20:28:35.474Z",
   "branch": "work/zerg2-mat-joined",
   "predecessor": {
     "leaseId": "814b6dcb-3d75-4eb4-9063-b6f39846bdeb",
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote checkpoint68569fc20632c775548e537bcb728652bbcf99b5 tree03a27ce7 verified equal local. Joined D1300 derivation/layers committed; reviewers identified remaining capseat/lid/junction corrections.",
-    "next": "Correct connected wall/threshold/DPC and final bridge/lid geometry, render inspect, peer review, submit to root integration batch",
-    "blocker": "Reference candidate only; complete gas seal, constituent and technical admission not earned"
-  }
+    "evidence": "PR1225 remoteheadb40d74fad7f3c25c58472f0727077b2b96787a6a tree677ab45af64f0b304b7519c10269a3a60a5611b1 exactlocalequal; independentmaterialreview boundedreferencePASS; bothA3renderedinspected; repro/control/diffchecks pass",
+    "next": "Root batch integration after all four lane reviews; rebind lease to integration branch and run fresh canonical exact-head preflight before root expected-head merge",
+    "blocker": "No technical/material admission, house adoption or MAT-ENVELOPE completion; actual custom seal and bonded threshold/DPC/A-G transitions remain unqualified"
+  },
+  "pr": 1225
 }
