@@ -1,0 +1,1598 @@
+{
+  "status": "FIRST WHOLE-HOUSE CANDIDATE, NOT ADOPTED. Known failures/interfaces are explicit; no support/water/material/site acceptance.",
+  "startingMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
+  "base": {
+    "path": "project/str/studies/house-plan.json",
+    "sha256": "193805456e26533026814bebe8c6be862e26a7d944c360dbb6047a1bde2d2282"
+  },
+  "shell": 12000,
+  "court": [
+    4250,
+    4250,
+    3500,
+    3500
+  ],
+  "envelope": 417.5,
+  "loggia": {
+    "clear": [
+      4800,
+      7750,
+      2400,
+      4250
+    ],
+    "axis": 6000,
+    "wholeRingClearStripM2": 10.2,
+    "formerFamilyGrossStripM2": 9.198,
+    "warning": "New weatherwalls cost additional room area. Neither10.2 nor9.198 is final net conditioned-floor loss."
+  },
+  "weather": {
+    "total": 507.5,
+    "layersRoomToWeather": [
+      [
+        "mineralFinish",
+        15
+      ],
+      [
+        "structuralMasonry",
+        140
+      ],
+      [
+        "bareCellularGlass",
+        200
+      ],
+      [
+        "drainedGap",
+        50
+      ],
+      [
+        "weatherBrick",
+        102.5
+      ]
+    ],
+    "scope": "ONE provisional material/structure recipe;140 core adequacy, exact material admission and whole-wall thermal bridge remain with STR/MAT."
+  },
+  "groundWalls": [
+    {
+      "id": "study-east",
+      "a": [
+        4800,
+        0
+      ],
+      "b": [
+        4800,
+        1200
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "cloak-east",
+      "a": [
+        4800,
+        1200
+      ],
+      "b": [
+        4800,
+        2650
+      ],
+      "t": 170,
+      "holes": [
+        [
+          1700,
+          2500
+        ]
+      ]
+    },
+    {
+      "id": "cloak-west",
+      "a": [
+        3400,
+        1200
+      ],
+      "b": [
+        3400,
+        2650
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "cloak-south",
+      "a": [
+        3400,
+        1200
+      ],
+      "b": [
+        4800,
+        1200
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "study-cloak-north",
+      "a": [
+        2817.5,
+        2650
+      ],
+      "b": [
+        4800,
+        2650
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "study-L-return",
+      "a": [
+        2817.5,
+        2650
+      ],
+      "b": [
+        2817.5,
+        3247.5
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "study-L-north",
+      "a": [
+        0,
+        3247.5
+      ],
+      "b": [
+        2817.5,
+        3247.5
+      ],
+      "t": 170,
+      "holes": [
+        [
+          1350,
+          2250
+        ]
+      ]
+    },
+    {
+      "id": "wc-west",
+      "a": [
+        7200,
+        0
+      ],
+      "b": [
+        7200,
+        2650
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "wc-north",
+      "a": [
+        7200,
+        2650
+      ],
+      "b": [
+        9300,
+        2650
+      ],
+      "t": 170,
+      "holes": [
+        [
+          7650,
+          8550
+        ]
+      ]
+    },
+    {
+      "id": "service-spine",
+      "a": [
+        9300,
+        0
+      ],
+      "b": [
+        9300,
+        8290
+      ],
+      "t": 170,
+      "holes": [
+        [
+          2750,
+          3650
+        ]
+      ]
+    },
+    {
+      "id": "utility-north",
+      "a": [
+        9300,
+        2550
+      ],
+      "b": [
+        12000,
+        2550
+      ],
+      "t": 170,
+      "holes": [
+        [
+          10250,
+          11150
+        ]
+      ]
+    },
+    {
+      "id": "plant-intermediate-arch",
+      "a": [
+        9300,
+        3700
+      ],
+      "b": [
+        12000,
+        3700
+      ],
+      "t": 170,
+      "holes": [
+        [
+          9650,
+          11050
+        ]
+      ]
+    },
+    {
+      "id": "plant-north",
+      "a": [
+        9300,
+        6500
+      ],
+      "b": [
+        12000,
+        6500
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "rear-west",
+      "a": [
+        0,
+        8852.5
+      ],
+      "b": [
+        4377.5,
+        8852.5
+      ],
+      "t": 170,
+      "holes": [
+        [
+          3100,
+          4000
+        ]
+      ]
+    },
+    {
+      "id": "rear-east",
+      "a": [
+        7750,
+        8290
+      ],
+      "b": [
+        12000,
+        8290
+      ],
+      "t": 245,
+      "holes": [
+        [
+          8250,
+          9150
+        ],
+        [
+          10450,
+          11350
+        ]
+      ]
+    },
+    {
+      "id": "loggia-west-weather",
+      "a": [
+        4377.5,
+        7750
+      ],
+      "b": [
+        4377.5,
+        12000
+      ],
+      "t": 507.5,
+      "holes": [],
+      "finishedFaces": [
+        4292.5,
+        4800
+      ],
+      "structuralCore": [
+        4307.5,
+        4447.5
+      ],
+      "roomSide": "west"
+    },
+    {
+      "id": "loggia-east-weather",
+      "a": [
+        7622.5,
+        7750
+      ],
+      "b": [
+        7622.5,
+        12000
+      ],
+      "t": 507.5,
+      "holes": [],
+      "finishedFaces": [
+        7200,
+        7707.5
+      ],
+      "structuralCore": [
+        7552.5,
+        7692.5
+      ],
+      "roomSide": "east"
+    }
+  ],
+  "upperWalls": [
+    {
+      "id": "bed2-east",
+      "a": [
+        4800,
+        0
+      ],
+      "b": [
+        4800,
+        2650
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "bed2-north-main",
+      "a": [
+        2817.5,
+        2650
+      ],
+      "b": [
+        4800,
+        2650
+      ],
+      "t": 170,
+      "holes": [
+        [
+          3450,
+          4350
+        ]
+      ]
+    },
+    {
+      "id": "bed2-L-return",
+      "a": [
+        2817.5,
+        2650
+      ],
+      "b": [
+        2817.5,
+        3247.5
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "bed2-L-north",
+      "a": [
+        0,
+        3247.5
+      ],
+      "b": [
+        2817.5,
+        3247.5
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "bed3-west",
+      "a": [
+        7200,
+        0
+      ],
+      "b": [
+        7200,
+        2650
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "bed3-north-main",
+      "a": [
+        7200,
+        2650
+      ],
+      "b": [
+        9300,
+        2650
+      ],
+      "t": 170,
+      "holes": [
+        [
+          8250,
+          9150
+        ]
+      ]
+    },
+    {
+      "id": "wet-spine",
+      "a": [
+        9300,
+        2650
+      ],
+      "b": [
+        9300,
+        8290
+      ],
+      "t": 170,
+      "holes": [
+        [
+          5450,
+          6350
+        ]
+      ],
+      "finishedFaces": [
+        9215,
+        9400
+      ],
+      "structuralCore": [
+        9230,
+        9370
+      ]
+    },
+    {
+      "id": "bed3-L-north",
+      "a": [
+        9300,
+        3700
+      ],
+      "b": [
+        12000,
+        3700
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "bath-north",
+      "a": [
+        9300,
+        6500
+      ],
+      "b": [
+        12000,
+        6500
+      ],
+      "t": 170,
+      "holes": [],
+      "finishedFaces": [
+        6415,
+        6600
+      ],
+      "structuralCore": [
+        6430,
+        6570
+      ]
+    },
+    {
+      "id": "rear-west",
+      "a": [
+        0,
+        8852.5
+      ],
+      "b": [
+        4377.5,
+        8852.5
+      ],
+      "t": 170,
+      "holes": [
+        [
+          3100,
+          4000
+        ]
+      ]
+    },
+    {
+      "id": "rear-west-return",
+      "a": [
+        4377.5,
+        8012.5
+      ],
+      "b": [
+        4377.5,
+        8852.5
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "rear-east",
+      "a": [
+        7750,
+        8290
+      ],
+      "b": [
+        12000,
+        8290
+      ],
+      "t": 245,
+      "holes": [
+        [
+          8250,
+          9150
+        ],
+        [
+          9900,
+          10800
+        ]
+      ],
+      "finishedFaces": [
+        8152.5,
+        8412.5
+      ],
+      "structuralCore": [
+        8182.5,
+        8397.5
+      ]
+    },
+    {
+      "id": "rear-divider",
+      "a": [
+        7622.5,
+        8167.5
+      ],
+      "b": [
+        7622.5,
+        12000
+      ],
+      "t": 170,
+      "holes": []
+    },
+    {
+      "id": "rear-wet-east",
+      "a": [
+        2902.5,
+        8852.5
+      ],
+      "b": [
+        2902.5,
+        12000
+      ],
+      "t": 170,
+      "holes": [
+        [
+          10350,
+          11250
+        ]
+      ]
+    }
+  ],
+  "openingRewinds": [
+    {
+      "level": "GROUND/FIRST",
+      "wall": "outer-north",
+      "fromCentre": 3900,
+      "toCentre": 3550,
+      "width": 1000,
+      "reason": "Actual room/weatherwall and north pier width"
+    },
+    {
+      "level": "GROUND/FIRST",
+      "wall": "outer-north",
+      "fromCentre": 8100,
+      "toCentre": 8450,
+      "width": 1000,
+      "reason": "Paired north facade re-composition"
+    },
+    {
+      "level": "GROUND",
+      "wall": "outer-north",
+      "centres": [
+        8450,
+        10200
+      ],
+      "sill": 1050,
+      "head": 2850,
+      "reason": "900high solid-pier kitchen stations may now overlap the adjustedwindow projection without crossing750sill"
+    },
+    {
+      "level": "GROUND",
+      "wall": "court-north",
+      "id": "grand-court-entry-north",
+      "kind": "open-loggia",
+      "width": 2400,
+      "reason": "Outdoor through-route, no door leaves"
+    },
+    {
+      "level": "GROUND",
+      "wall": "outer-north",
+      "id": "garden-entry",
+      "kind": "open-loggia",
+      "width": 2400,
+      "reason": "Outdoor through-route, no door leaves"
+    },
+    {
+      "level": "GROUND",
+      "wall": "rear-west",
+      "interval": [
+        3100,
+        4000
+      ],
+      "hinge": [
+        3100,
+        8852.5
+      ],
+      "operation": "Open SOUTH90degrees into west gallery",
+      "reason": "Leaves both sofas and old beam-end receiving pier clear; actual coupled operation must be checked"
+    }
+  ],
+  "openings": {
+    "GROUND": [
+      {
+        "id": "south-window-0",
+        "wall": "outer-south",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "south-window-1",
+        "wall": "outer-south",
+        "centre": 3900,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "front-door",
+        "wall": "outer-south",
+        "centre": 6000,
+        "width": 1800,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 2
+      },
+      {
+        "id": "south-window-3",
+        "wall": "outer-south",
+        "centre": 8100,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "south-window-4",
+        "wall": "outer-south",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "east-window-0",
+        "wall": "outer-east",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "plant-replacement",
+        "wall": "outer-east",
+        "centre": 4600,
+        "width": 1400,
+        "kind": "door",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "east-window-2",
+        "wall": "outer-east",
+        "centre": 7400,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "east-window-3",
+        "wall": "outer-east",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "west-window-0",
+        "wall": "outer-west",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "west-window-1",
+        "wall": "outer-west",
+        "centre": 4600,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "west-window-2",
+        "wall": "outer-west",
+        "centre": 7400,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "west-window-3",
+        "wall": "outer-west",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "north-window-0",
+        "wall": "outer-north",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "north-window-1",
+        "wall": "outer-north",
+        "centre": 3550,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "garden-entry",
+        "wall": "outer-north",
+        "centre": 6000,
+        "width": 2400,
+        "kind": "open-loggia",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 2
+      },
+      {
+        "id": "north-window-3",
+        "wall": "outer-north",
+        "centre": 8450,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "north-window-4",
+        "wall": "outer-north",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "grand-court-entry-south",
+        "wall": "court-south",
+        "centre": 6000,
+        "width": 1800,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 2
+      },
+      {
+        "id": "grand-court-entry-north",
+        "wall": "court-north",
+        "centre": 6000,
+        "width": 2400,
+        "kind": "open-loggia",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 2
+      },
+      {
+        "id": "court-east-0",
+        "wall": "court-east",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-east-1",
+        "wall": "court-east",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-west-0",
+        "wall": "court-west",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-west-1",
+        "wall": "court-west",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "study-door",
+        "wall": "study-north",
+        "centre": 2850,
+        "width": 900,
+        "kind": "door",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "cloak-door",
+        "wall": "cloak-east",
+        "centre": 2100,
+        "width": 800,
+        "kind": "door",
+        "swing": "right",
+        "hinge": "high",
+        "leaves": 1
+      },
+      {
+        "id": "wc-door",
+        "wall": "wc-north",
+        "centre": 8100,
+        "width": 900,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "utility-door",
+        "wall": "service-spine",
+        "centre": 1500,
+        "width": 900,
+        "kind": "door",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "plant-door",
+        "wall": "service-spine",
+        "centre": 3200,
+        "width": 900,
+        "kind": "door",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "pantry-door",
+        "wall": "pantry-north",
+        "centre": 10900,
+        "width": 900,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "high",
+        "leaves": 1
+      }
+    ],
+    "FIRST": [
+      {
+        "id": "south-window-0",
+        "wall": "outer-south",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "south-window-1",
+        "wall": "outer-south",
+        "centre": 3900,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "south-window-2",
+        "wall": "outer-south",
+        "centre": 6000,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "south-window-3",
+        "wall": "outer-south",
+        "centre": 8100,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "south-window-4",
+        "wall": "outer-south",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "east-window-0",
+        "wall": "outer-east",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "east-window-1",
+        "wall": "outer-east",
+        "centre": 4600,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "east-window-2",
+        "wall": "outer-east",
+        "centre": 7400,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "east-window-3",
+        "wall": "outer-east",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "west-window-0",
+        "wall": "outer-west",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "west-window-1",
+        "wall": "outer-west",
+        "centre": 4600,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "west-window-2",
+        "wall": "outer-west",
+        "centre": 7400,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "west-window-3",
+        "wall": "outer-west",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "north-window-0",
+        "wall": "outer-north",
+        "centre": 1800,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "north-window-1",
+        "wall": "outer-north",
+        "centre": 3550,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "north-window-3",
+        "wall": "outer-north",
+        "centre": 8450,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "north-window-4",
+        "wall": "outer-north",
+        "centre": 10200,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-south-0",
+        "wall": "court-south",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-south-1",
+        "wall": "court-south",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-north-0",
+        "wall": "court-north",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-north-1",
+        "wall": "court-north",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-east-0",
+        "wall": "court-east",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-east-1",
+        "wall": "court-east",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-west-0",
+        "wall": "court-west",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "court-west-1",
+        "wall": "court-west",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window"
+      },
+      {
+        "id": "bed2-door",
+        "wall": "bed2-north",
+        "centre": 3900,
+        "width": 900,
+        "kind": "door",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "bed3-door",
+        "wall": "bed3-north",
+        "centre": 8700,
+        "width": 900,
+        "kind": "door",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "ensuite3-door",
+        "wall": "bed3-north",
+        "centre": 10900,
+        "width": 900,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "family-bath-door",
+        "wall": "wet-spine",
+        "centre": 5900,
+        "width": 900,
+        "kind": "door",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "principal-ensuite-door",
+        "wall": "rear-split-east",
+        "centre": 10900,
+        "width": 900,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "principal-door",
+        "wall": "rear-split-east",
+        "centre": 8800,
+        "width": 1000,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "bed4-door",
+        "wall": "rear-split-west",
+        "centre": 3300,
+        "width": 900,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      },
+      {
+        "id": "wardrobe-door",
+        "wall": "wardrobe-east",
+        "centre": 9000,
+        "width": 900,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 1
+      }
+    ]
+  },
+  "groundFurniture": {
+    "study-desk": [
+      600,
+      600,
+      1600,
+      700
+    ],
+    "study-chair": [
+      1000,
+      1400,
+      1000,
+      900
+    ],
+    "cloak-hanging": [
+      3537.5,
+      1337.5,
+      1125,
+      600
+    ],
+    "guest-WC-pan": [
+      8700,
+      600,
+      400,
+      650
+    ],
+    "guest-WC-basin": [
+      7450,
+      600,
+      400,
+      400
+    ],
+    "plant-water-reserve": [
+      9485,
+      3900,
+      700,
+      700
+    ],
+    "plant-riser": [
+      9410,
+      4700,
+      550,
+      700
+    ],
+    "Q350-body": [
+      9862.5,
+      5550,
+      570,
+      725
+    ],
+    "pantry-shelf-comparison": [
+      9385,
+      6800,
+      600,
+      1150
+    ],
+    "rear-stack": [
+      417.5,
+      10800,
+      300,
+      750
+    ],
+    "reading-sofa1900x850": [
+      800,
+      8950,
+      850,
+      1900
+    ],
+    "reading-side-table300": [
+      1800,
+      9200,
+      300,
+      300
+    ],
+    "family-sofa1900x750": [
+      3400,
+      9350,
+      750,
+      1900
+    ],
+    "family-side-table300": [
+      3650,
+      9000,
+      300,
+      300
+    ],
+    "dining-table1200x800": [
+      8500,
+      9050,
+      800,
+      1200
+    ],
+    "dining-chair-west-south": [
+      8000,
+      9100,
+      500,
+      500
+    ],
+    "dining-chair-west-north": [
+      8000,
+      9700,
+      500,
+      500
+    ],
+    "dining-chair-east-south": [
+      9300,
+      9100,
+      500,
+      500
+    ],
+    "dining-chair-east-north": [
+      9300,
+      9700,
+      500,
+      500
+    ],
+    "north-sink-station": [
+      8700,
+      10982.5,
+      900,
+      600
+    ],
+    "north-cooking-station": [
+      10800,
+      10982.5,
+      600,
+      600
+    ],
+    "cold-storage": [
+      10932.5,
+      9025,
+      650,
+      650
+    ]
+  },
+  "upperFurniture": {
+    "bed2": [
+      1125,
+      1062.5,
+      900,
+      2000
+    ],
+    "bed2-head": [
+      1125,
+      3062.5,
+      900,
+      100
+    ],
+    "bed2-wardrobe": [
+      4055,
+      1017.5,
+      660,
+      900
+    ],
+    "bed3": [
+      10033.75,
+      1525,
+      900,
+      2000
+    ],
+    "bed3-head": [
+      10033.75,
+      3525,
+      900,
+      90
+    ],
+    "bed3-wardrobe": [
+      7285,
+      1017.5,
+      660,
+      1500
+    ],
+    "bed4": [
+      5150,
+      9492.5,
+      1500,
+      2000
+    ],
+    "bed4-head": [
+      5150,
+      11492.5,
+      1500,
+      90
+    ],
+    "bed4-island-wardrobe": [
+      3000,
+      9800,
+      1500,
+      660
+    ],
+    "principal": [
+      9150,
+      9492.5,
+      1600,
+      2000
+    ],
+    "principal-head": [
+      9150,
+      11492.5,
+      1600,
+      90
+    ],
+    "principal-wardrobe": [
+      7707.5,
+      9300,
+      660,
+      1500
+    ],
+    "rear-shower1000": [
+      1817.5,
+      8937.5,
+      1000,
+      1000
+    ],
+    "rear-WC": [
+      717.5,
+      11000,
+      560,
+      355
+    ],
+    "rear-basin": [
+      1000,
+      8937.5,
+      400,
+      220
+    ],
+    "rear-cabinet": [
+      417.5,
+      10800,
+      300,
+      750
+    ],
+    "rear-west-low-box": [
+      417.5,
+      9937.5,
+      150,
+      862.5
+    ],
+    "principal-shower900": [
+      9400,
+      6600,
+      900,
+      900
+    ],
+    "principal-WC": [
+      10972.5,
+      7412.5,
+      355,
+      560
+    ],
+    "principal-basin": [
+      9400,
+      7600,
+      340,
+      450
+    ],
+    "family-bath1700": [
+      9460,
+      3785,
+      1700,
+      700
+    ],
+    "family-WC": [
+      11022.5,
+      5900,
+      560,
+      355
+    ],
+    "family-basin": [
+      9800,
+      6195,
+      400,
+      220
+    ],
+    "family-service-cabinet": [
+      9385,
+      4675,
+      600,
+      750
+    ],
+    "principal-local-soil-column": [
+      11402.5,
+      7950,
+      180,
+      180
+    ]
+  },
+  "stair": [
+    417.5,
+    4432.5,
+    2400,
+    4335
+  ],
+  "void": [
+    4885,
+    417.5,
+    2230,
+    2317.5
+  ],
+  "structuralChanges": {
+    "upperFloor": "Continuous RC200 trial, not adopted. Ordinary short spans/support schedule owned by STR.",
+    "upperRearDivider": {
+      "from": 7400,
+      "to": 7622.5,
+      "finished": 170,
+      "core": 140
+    },
+    "upperRearWestReturn": {
+      "from": 4450,
+      "to": 4377.5,
+      "finished": 170,
+      "core": 140
+    },
+    "newWetWallBeam": {
+      "axisX": 2902.5,
+      "supportAxesY": [
+        8852.5,
+        11667.5
+      ],
+      "span": 2815,
+      "reason": "Ground reading partition removed; actualupperwetwall needs a finite separate beam/support, no unproved slab line-load spreading.",
+      "southDoorEdge": 3100,
+      "northWindowStart": 3050
+    },
+    "exposedSoffit": "Actual thermal/fire/weather package below upper floor over loggia unqualified."
+  },
+  "rooms": {
+    "living": {
+      "bounds": [
+        417.5,
+        8937.5,
+        3875,
+        2645
+      ],
+      "twoSofas": true,
+      "groundReadingWallRemoved": true,
+      "sofaFaces": [
+        "EAST",
+        "WEST"
+      ],
+      "scope": "Actual body/door/window/stack operations must be checked before selection."
+    },
+    "kitchenDining": {
+      "bounds": [
+        7707.5,
+        8412.5,
+        3875,
+        3170
+      ],
+      "fourPlaces": true,
+      "northWorkingGap": 732.5,
+      "southEntryGap": 637.5,
+      "fridgeToEastWindowProjectionGap": 25,
+      "trade": "Separate dryprep table deleted; dining table has separate meal/prep states."
+    },
+    "principalBath": {
+      "northFinishedFace": 8152.5,
+      "westFinishedFace": 9400,
+      "southFinishedFace": 6600,
+      "door": [
+        9900,
+        10800
+      ],
+      "WC": "NORTH-facing355x560; north180serviceband/cistern unqualified",
+      "soilColumnCentre": [
+        11492.5,
+        8040
+      ],
+      "scope": "Live MATINTERIORS constructivegeometry; exactselectedproduct/frame/servicebranch still tojoin."
+    }
+  },
+  "water": {
+    "normal": "Outdoor north-loggia edge channel; exact width/fall/inlet/receiver not yet selected.",
+    "relief": "Independent E or separately visible passive overland route must be drawn with blockedN/high-tailwater/common-obstruction states. No independentpair acceptance from two loggia strips.",
+    "oldD1300": "Retained cost benchmark only; deleting waterboxes does not adopt grade150 or prove a shallower ground-support section."
+  },
+  "knownInterfaces": [
+    "Ground NSbeam under upper rearwetwall must earn bearings/arch interaction.",
+    "Living rearwestdoor outward operation/corridor and window/stack actions must be proved.",
+    "Principal existing north-head bed still blocks direct northwindow approach: actual private-room replan required.",
+    "Principalbath cistern, door handling and whole soil/hot/cold inventory remain explicit joined work.",
+    "No outdoor N/independentE topology or new moisture/DPC/soffit detail yet admitted."
+  ]
+}
