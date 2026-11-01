@@ -110,6 +110,11 @@ The current roof silhouette/eaves/cornice remain a provisional architectural
 baseline during HAD-03. A material ROF/RWT finding may trigger an explicit
 architectural rewind at ROF-RWT-GATE; current drawings do not get veto power.
 
+The [RWT-06 court-egress architectural screen](../rwt/court-egress-architectural-rewind.md) makes one geometric question part of **HAD-03's architectural exit**: propose **or reject** a located, inspectable passage through the occupied house ring for normal court rainwater, with a *separately daylighted* passive relief route. Compare the proposed north/east suspended-ground-floor undercroft with a genuinely open north garden loggia (whose nominal 2,400 mm strip displaces 9.198 m² of the current family/dining rectangle), and an honest architectural replan if neither works. Show paired plan and longitudinal/transverse sections grounded in the current house source; preserve/quantify the four-bedroom programme, north family/dining room, door circulation, primary support, floor/thermal/gas/water separation, renewal approach, and both distinct external exits. A new opening or court-level change is an explicit source-rewind candidate, not a silently adopted layout or an attractive schematic labelled feasible.
+
+This is a **physical spatial disposition**, not a hydraulic RWT-06 closeout. HAD-03 may reject an unworkable configuration and propose the next design-level change rather than manufacture a working detail. RWT still owns blocked-state inflow/head, first-susceptible-water-interface tests and actual flow routing; STR/IAS/OAS own structure, floor and opening assembly evidence; DPL owns real site/flood conditions. HAD must identify the chosen candidate's *actual space and interfaces* (or document that no acceptable option exists) **before RWT-06 is structurally dispatched for further detail**. Roof-water material/selection remains at the joint ROF-RWT gate; this narrower architectural dependency is not a claim of earlier final hydraulic selection.
+
+
 ## Governing tests
 
 The house should read as settled domestic architecture. Technical intelligence
