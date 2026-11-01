@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-03",
   "generation": 20,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6559339044"
   },
   "claimedAt": "2026-11-01T14:32:58.000Z",
-  "heartbeatAt": "2026-11-01T14:49:02.000Z",
-  "expiresAt": "2026-11-01T15:34:02.000Z",
+  "heartbeatAt": "2026-11-01T14:51:53.000Z",
+  "expiresAt": "2026-11-01T14:51:53.000Z",
   "branch": "work/mvb-chat-6559339044",
   "predecessor": {
     "leaseId": "80e2e12c-e0f1-43f7-bd23-7977f10acdb6",
@@ -33,5 +33,7 @@
     "evidence": "PR #1215 head abec91851b9117909717b699391e008c9288b442: coupled gravity and carrier-cover clearance, generator, SVG/JSON, regression. Exact-head CI 41317424055 passed.",
     "next": "Run native control:merge-check against live lease and main; merge with expected head if valid. Otherwise retain PR as handoff.",
     "blocker": "Connector-only chat cannot run native preflight; HAD-03 remains planned pending complete N/E physical design."
-  }
+  },
+  "releasedAt": "2026-11-01T14:51:53.000Z",
+  "releaseReason": "handoff"
 }
