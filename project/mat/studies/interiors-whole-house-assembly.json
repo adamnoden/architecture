@@ -1637,25 +1637,7 @@
       "glass": 100,
       "overlay": 80,
       "FFL": 0,
-      "retainedMaintenanceCaps": {
-        "finish": 15,
-        "mineralDistribution": 65,
-        "glass": 100,
-        "localRC": 100,
-        "rule": "Retain the owning removable dry-cap assembly and actual lifting/isolation; timber boards/grounds never bridge its release joints or replace the independently sealed lid",
-        "transitionRequirement": {
-          "material": "plain uncoated stainless",
-          "coverWidth": 40,
-          "maximumFaceThickness": 2,
-          "flushRecessRequired": true,
-          "fixedSideBearing": 18,
-          "timberMovementGap": 15,
-          "timberOverlap": 7,
-          "fixing": "independent mechanical fixing to the fixed support only; no screw into removable cap or primary boundary",
-          "admission": "Authored complete transition compatibility requirement; actual anchors, flatness, movement and wear need product/physical qualification"
-        }
-      },
-      "rule": "Retain the bare-glass field and independent air/gas/water boundary; overlay anchors cannot puncture it by assumption"
+      "rule": "Retain bare-glass field and continuous fixed floor/wall/port water/air and any site-required gas boundary; no anchor puncture is assumed. No obsolete removable indoor cap/lid is reintroduced."
     },
     "upper": {
       "datum": "first-floor local FFL0, global+3450",
@@ -1982,6 +1964,18 @@
     "kitchenAdverse": "Add actual18trim to raw kfixed: first supported north-sink withdrawal intersects outer-north+18trim. Source already marks finish/trim join pending; no transport/rig/force admission.",
     "verification": "Exact detached head/tree, source-bound --check, all3SVGs rendered/viewed; no IAS files edited.",
     "admission": "Reach600/650 are authored sensitivities; small geometric reserves are not comfort/product/force/physical/material or fire-kit acceptance."
+  },
+  "historicalGroundComparison": {
+    "source": "project/mat/joined-ground-floor-and-court-boundary.md",
+    "status": "DATED CONTROL ONLY; not a current interior occurrence",
+    "obsolete": [
+      "Indoor N/E water service boxes",
+      "Heavy insulated floor caps",
+      "Custom removable floor air/gas lid",
+      "New timber/cap transition contract"
+    ],
+    "currentTopology": "Court water moves outdoors through the open north loggia; no genuinely retained indoor heavy cap identified. Outdoor channel covers remain MAT-ENVELOPE-owned.",
+    "retainedFunctions": "Continuous conditioned floor/wall/port water/air/site-required gas/fire functions remain; removing obsolete hardware does not remove duties."
   },
   "ceilingProfiles": {
     "ordinaryGroundField": 3100,
