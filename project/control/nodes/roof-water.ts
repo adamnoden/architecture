@@ -172,9 +172,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Test full-duty independent paths, reserve and common-cause rainwater failures',
     dependencies: ['RWT-SHED', 'RWT-METALS', 'RWT-05'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-robustness-result.md']
   },
   {
     id: 'RWT-07',
