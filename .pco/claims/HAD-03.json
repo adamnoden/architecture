@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 22,
-  "state": "released",
-  "leaseId": "6880ac9f-d9b0-4763-998c-f7820e975912",
+  "generation": 23,
+  "state": "claimed",
+  "leaseId": "dd7d0505-f503-41b9-b1e8-effbb249e0e5",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg2-had-joined"
+    "label": "zerg2-had-open-loggia"
   },
-  "claimedAt": "2026-11-01T19:21:35.996Z",
-  "heartbeatAt": "2026-11-01T20:01:23.550Z",
-  "expiresAt": "2026-11-01T20:01:23.550Z",
-  "branch": "work/zerg2-integration-20261101",
+  "claimedAt": "2026-11-01T20:03:03.859Z",
+  "heartbeatAt": "2026-11-01T20:03:03.859Z",
+  "expiresAt": "2026-11-01T20:48:03.859Z",
+  "branch": "work/zerg2-had-open-loggia",
   "predecessor": {
-    "leaseId": "537b440b-2a31-4854-a692-ccd6824a33c8",
-    "generation": 21,
-    "branch": "work/zerg-integration-20261101",
-    "pr": 1221,
+    "leaseId": "6880ac9f-d9b0-4763-998c-f7820e975912",
+    "generation": 22,
+    "branch": "work/zerg2-integration-20261101",
+    "pr": 1229,
     "checkpoint": {
-      "evidence": "PR #1221 mergedcf466b583a91ed2bd936ad3499cce31ca84a584b verified on main; exact-head full CI41321065041 attempt2 passed, all3fresh canonical preflights passed. HAD03 local portal design and side-then-lift witness integrated; source geometry unadopted.",
-      "next": "Continue HAD03 from merged main and project/had/had-03-local-portal-design.md: develop or reject complete100mm no-plastic cover/joint/containment assembly and actual threshold first-harm/room convergence. Do not reuse spatial witness as installed acceptance.",
-      "blocker": "HAD03 remains incomplete, RWT06 blocked; no complete floor/material/support/hydraulic/site acceptance earned. Integration branch auto-deleted after verified merge; durable evidence is main and mergedPR1221."
+      "evidence": "SharedPR1229 exacthead8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 preservesall4sourcehistories includingHAD08a6883d. SourceboundjoinedB/D1300,4actualrenderedSVGs, head/treeboundpeerPASS; allcustom/relevant/tsc/repointegritypassedoncombinedtree.",
+      "next": "RootobservesonecanonicalexactheadCI, thenfreshper-nodepreflight/expectedheadmerge; verifyintegration/releaseHAD22. NoindependentsourcePRmerge.",
+      "blocker": "CanonicalsharedexactheadCIandpublicationpreflightpending. HAD03remainsincomplete/RWT06blocked; noarchitecture/material/hydraulic/siteadoption."
     }
   },
   "recoverySource": {
-    "leaseId": "537b440b-2a31-4854-a692-ccd6824a33c8",
-    "generation": 21,
-    "branch": "work/zerg-integration-20261101",
-    "pr": 1221,
+    "leaseId": "6880ac9f-d9b0-4763-998c-f7820e975912",
+    "generation": 22,
+    "branch": "work/zerg2-integration-20261101",
+    "pr": 1229,
     "checkpoint": {
-      "evidence": "PR #1221 mergedcf466b583a91ed2bd936ad3499cce31ca84a584b verified on main; exact-head full CI41321065041 attempt2 passed, all3fresh canonical preflights passed. HAD03 local portal design and side-then-lift witness integrated; source geometry unadopted.",
-      "next": "Continue HAD03 from merged main and project/had/had-03-local-portal-design.md: develop or reject complete100mm no-plastic cover/joint/containment assembly and actual threshold first-harm/room convergence. Do not reuse spatial witness as installed acceptance.",
-      "blocker": "HAD03 remains incomplete, RWT06 blocked; no complete floor/material/support/hydraulic/site acceptance earned. Integration branch auto-deleted after verified merge; durable evidence is main and mergedPR1221."
+      "evidence": "SharedPR1229 exacthead8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 preservesall4sourcehistories includingHAD08a6883d. SourceboundjoinedB/D1300,4actualrenderedSVGs, head/treeboundpeerPASS; allcustom/relevant/tsc/repointegritypassedoncombinedtree.",
+      "next": "RootobservesonecanonicalexactheadCI, thenfreshper-nodepreflight/expectedheadmerge; verifyintegration/releaseHAD22. NoindependentsourcePRmerge.",
+      "blocker": "CanonicalsharedexactheadCIandpublicationpreflightpending. HAD03remainsincomplete/RWT06blocked; noarchitecture/material/hydraulic/siteadoption."
     }
-  },
-  "checkpoint": {
-    "evidence": "SharedPR1229 exacthead8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 preservesall4sourcehistories includingHAD08a6883d. SourceboundjoinedB/D1300,4actualrenderedSVGs, head/treeboundpeerPASS; allcustom/relevant/tsc/repointegritypassedoncombinedtree.",
-    "next": "RootobservesonecanonicalexactheadCI, thenfreshper-nodepreflight/expectedheadmerge; verifyintegration/releaseHAD22. NoindependentsourcePRmerge.",
-    "blocker": "CanonicalsharedexactheadCIandpublicationpreflightpending. HAD03remainsincomplete/RWT06blocked; noarchitecture/material/hydraulic/siteadoption."
-  },
-  "pr": 1229,
-  "releasedAt": "2026-11-01T20:01:23.550Z",
-  "releaseReason": "handoff"
+  }
 }
