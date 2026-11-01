@@ -9,8 +9,8 @@
     "label": "swe-main-reconciliation-20261101"
   },
   "claimedAt": "2026-11-01T09:14:53.791Z",
-  "heartbeatAt": "2026-11-01T09:14:53.791Z",
-  "expiresAt": "2026-11-01T12:14:53.791Z",
+  "heartbeatAt": "2026-11-01T09:18:51.667Z",
+  "expiresAt": "2026-11-01T12:18:51.667Z",
   "branch": "work/swe-recovery-20261101",
   "checkpoint": {
     "evidence": "Owner-directed recovery of four SWE packets; prior exact-head CI passed on PR #1180 but merged main now conflicts in generated projections only.",
@@ -35,5 +35,6 @@
       "evidence": "PR #1182 head 79a098a90afe3253500c020c21ab299effd4d9ee retained for integration in PR #1180; project/swe/control-result.md",
       "next": "Validate shared integration head, run four fresh publication preflights, merge, and verify original packet inclusion"
     }
-  }
+  },
+  "pr": 1197
 }
