@@ -1,46 +1,53 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">
 <style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:3.1px}.title{font-size:4.6px;font-weight:bold}</style>
 <rect width="420" height="297" fill="#faf8f1"/>
-<text x="14" y="14" class="title">OPEN N / integral node, actual cage and N–M screen</text>
-<text x="14" y="23" class="">PROPOSED / no pile-soil or anchorage admission / actual bar coordinates, not a circularly smeared steel area</text>
-<text x="14" y="36" class="title">A / 600 NODE PLAN · 1:3</text>
-<rect x="20.000" y="45.000" width="200.000" height="200.000" fill="#d9e2de" stroke="#345460" stroke-width=".35"/>
-<circle cx="120" cy="145" r="66.6667" fill="none" stroke="#557f90" stroke-width=".5"/>
-<path d="M20,65.0 L220,65.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
-<path d="M40.0,45 L40.0,245" fill="none" stroke="#8d6544" stroke-width=".65"/>
-<path d="M20,81.66666666666666 L220,81.66666666666666" fill="none" stroke="#b4753c" stroke-width=".65"/>
-<path d="M56.666666666666664,45 L56.666666666666664,245" fill="none" stroke="#8d6544" stroke-width=".65"/>
-<path d="M20,145.0 L220,145.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
-<path d="M120.0,45 L120.0,245" fill="none" stroke="#8d6544" stroke-width=".65"/>
-<path d="M20,208.33333333333334 L220,208.33333333333334" fill="none" stroke="#b4753c" stroke-width=".65"/>
-<path d="M183.33333333333334,45 L183.33333333333334,245" fill="none" stroke="#8d6544" stroke-width=".65"/>
-<path d="M20,225.0 L220,225.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
-<path d="M200.0,45 L200.0,245" fill="none" stroke="#8d6544" stroke-width=".65"/>
-<circle cx="163.422" cy="162.986" r="3.6667" fill="#a34f4d"/>
-<circle cx="137.986" cy="188.422" r="3.6667" fill="#a34f4d"/>
-<circle cx="102.014" cy="188.422" r="3.6667" fill="#a34f4d"/>
-<circle cx="76.578" cy="162.986" r="3.6667" fill="#a34f4d"/>
-<circle cx="76.578" cy="127.014" r="3.6667" fill="#a34f4d"/>
-<circle cx="102.014" cy="101.578" r="3.6667" fill="#a34f4d"/>
-<circle cx="137.986" cy="101.578" r="3.6667" fill="#a34f4d"/>
-<circle cx="163.422" cy="127.014" r="3.6667" fill="#a34f4d"/>
-<text x="20" y="253" class="">5H20 each direction:60/110/300/490/540; orthogonal planes60/80 above base.</text>
-<text x="20" y="260" class="">8H22 pile cage R141 at22.5+45k; minimum line/axis clearance checked.</text>
-<text x="20" y="267" class="">Brown: node bars / red: actual pile bars / blue:400 concrete pilehead.</text>
-<text x="242" y="36" class="title">B / REPRESENTATIVE STARTERS · 1:4</text>
-<rect x="255.000" y="50.000" width="150.000" height="142.500" fill="#d9e2de" stroke="#345460" stroke-width=".35"/>
-<rect x="280.000" y="180.000" width="100.000" height="65.000" fill="#c5cfca" stroke="#345460" stroke-width=".35"/>
-<path d="M255,162.5 L405,162.5" fill="none" stroke="#8b9995" stroke-width=".65"/>
-<path d="M255,177.5 L405,177.5" fill="none" stroke="#b4753c" stroke-width=".65"/>
-<path d="M255,172.5 L405,172.5" fill="none" stroke="#8d6544" stroke-width=".65"/>
-<path d="M255,64.5 L405,64.5" fill="none" stroke="#b4753c" stroke-width=".65"/>
-<path d="M316.5,245 L316.5,180 A57.75,57.75 0 0 0 258.75,122.25 L240,122.25" fill="none" stroke="#a34f4d" stroke-width="1.1"/>
-<path d="M343.5,245 L343.5,167.5 A57.75,57.75 0 0 1 401.25,109.75 L415,109.75" fill="none" stroke="#a34f4d" stroke-width="1.1"/>
-<text x="245" y="203" class="">Regular node450; local lowtie receiver570, bottom−750.</text>
-<text x="245" y="211" class="">H22 bend440 internal / centrelineR231; planes281/331.</text>
-<text x="245" y="219" class="">850 STRAIGHT after bend vs797 full-yield bond assumption.</text>
-<text x="245" y="227" class="">Actual arm/terminal route and all8starters still require review.</text>
-<text x="245" y="235" class="">Red depicts2representative routes; this is not a 3D shop drawing.</text>
-<text x="14" y="282" class="">N samples0–850;curvature0–45/5degrees;min resultant152.57kNm vs141.42; section screen ONLY.</text>
-<text x="14" y="290" class="">Lowtie/deck bearing, arch/frame/roof/ports and actual node/pile connection remain explicit duties; no joined or foundation pass.</text>
+<text x="14" y="14" class="title">OPEN N / eight actual starter routes and signed head actions</text>
+<text x="14" y="23" class="">Two finite references: SWregular450(E/Narms) andloggiaNW570(W/Sarms); othernodeassignmentsstillintrinsicdesignwork</text>
+<text x="14" y="36" class="title">A / ALL8ROUTES AT SW · 1:10</text>
+<rect x="15.000" y="42.000" width="60.000" height="205.000" fill="#e5ebe7" stroke="#345460" stroke-width=".35"/>
+<rect x="75.000" y="187.000" width="145.000" height="60.000" fill="#e5ebe7" stroke="#345460" stroke-width=".35"/>
+<rect x="15.000" y="187.000" width="60.000" height="60.000" fill="#c5cfca" stroke="#345460" stroke-width=".35"/>
+<circle cx="45.0" cy="217.0" r="20" fill="none" stroke="#557f90" stroke-width=".5"/>
+<path d="M58.027,211.604 L58.027,211.604 L58.044,211.604 L58.098,211.604 L58.186,211.604 L58.310,211.604 L58.469,211.604 L58.663,211.604 L58.891,211.604 L59.154,211.604 L59.451,211.604 L59.782,211.604 L60.146,211.604 L60.543,211.604 L60.972,211.604 L61.433,211.604 L61.925,211.604 L62.449,211.604 L63.002,211.604 L63.584,211.604 L64.196,211.604 L64.835,211.604 L65.501,211.604 L66.194,211.604 L66.912,211.604 L67.655,211.604 L68.422,211.604 L69.211,211.604 L70.022,211.604 L70.854,211.604 L71.706,211.604 L72.577,211.604 L73.465,211.604 L74.370,211.604 L75.291,211.604 L76.226,211.604 L77.174,211.604 L78.134,211.604 L79.106,211.604 L80.087,211.604 L81.076,211.604 L82.074,211.604 L83.077,211.604 L84.085,211.604 L85.097,211.604 L86.111,211.604 L87.127,211.604 L207.127,211.604" fill="none" stroke="#a34f4d" stroke-width="1.1"/>
+<text x="59.026701408409146" y="210.60416360365224" class="">P1</text>
+<path d="M50.396,203.973 L50.396,203.973 L50.414,203.973 L50.467,203.973 L50.555,203.973 L50.679,203.973 L50.838,203.973 L51.032,203.973 L51.260,203.973 L51.523,203.973 L51.820,203.973 L52.151,203.973 L52.515,203.973 L52.912,203.973 L53.341,203.973 L53.802,203.973 L54.294,203.973 L54.818,203.973 L55.371,203.973 L55.953,203.973 L56.565,203.973 L57.204,203.973 L57.870,203.973 L58.563,203.973 L59.281,203.973 L60.024,203.973 L60.791,203.973 L61.580,203.973 L62.391,203.973 L63.223,203.973 L64.075,203.973 L64.946,203.973 L65.834,203.973 L66.739,203.973 L67.660,203.973 L68.595,203.973 L69.543,203.973 L70.503,203.973 L71.475,203.973 L72.456,203.973 L73.446,203.973 L74.443,203.973 L75.446,203.973 L76.454,203.973 L77.466,203.973 L78.480,203.973 L79.496,203.973 L199.496,203.973" fill="none" stroke="#a34f4d" stroke-width="1.1"/>
+<text x="51.39583639634777" y="202.97329859159086" class="">P2</text>
+<path d="M39.604,203.973 L39.604,203.973 L39.604,203.956 L39.604,203.902 L39.604,203.814 L39.604,203.690 L39.604,203.531 L39.604,203.337 L39.604,203.109 L39.604,202.846 L39.604,202.549 L39.604,202.218 L39.604,201.854 L39.604,201.457 L39.604,201.028 L39.604,200.567 L39.604,200.075 L39.604,199.551 L39.604,198.998 L39.604,198.416 L39.604,197.804 L39.604,197.165 L39.604,196.499 L39.604,195.806 L39.604,195.088 L39.604,194.345 L39.604,193.578 L39.604,192.789 L39.604,191.978 L39.604,191.146 L39.604,190.294 L39.604,189.423 L39.604,188.535 L39.604,187.630 L39.604,186.709 L39.604,185.774 L39.604,184.826 L39.604,183.866 L39.604,182.894 L39.604,181.913 L39.604,180.924 L39.604,179.926 L39.604,178.923 L39.604,177.915 L39.604,176.903 L39.604,175.889 L39.604,174.873 L39.604,54.873" fill="none" stroke="#a34f4d" stroke-width="1.1"/>
+<text x="40.60416360365223" y="202.97329859159086" class="">P3</text>
+<path d="M31.973,211.604 L31.973,211.604 L31.973,211.586 L31.973,211.533 L31.973,211.445 L31.973,211.321 L31.973,211.162 L31.973,210.968 L31.973,210.740 L31.973,210.477 L31.973,210.180 L31.973,209.849 L31.973,209.485 L31.973,209.088 L31.973,208.659 L31.973,208.198 L31.973,207.706 L31.973,207.182 L31.973,206.629 L31.973,206.047 L31.973,205.435 L31.973,204.796 L31.973,204.130 L31.973,203.437 L31.973,202.719 L31.973,201.976 L31.973,201.209 L31.973,200.420 L31.973,199.609 L31.973,198.777 L31.973,197.925 L31.973,197.054 L31.973,196.166 L31.973,195.261 L31.973,194.340 L31.973,193.405 L31.973,192.457 L31.973,191.497 L31.973,190.525 L31.973,189.544 L31.973,188.554 L31.973,187.557 L31.973,186.554 L31.973,185.546 L31.973,184.534 L31.973,183.520 L31.973,182.504 L31.973,62.504" fill="none" stroke="#a34f4d" stroke-width="1.1"/>
+<text x="32.973298591590854" y="210.60416360365224" class="">P4</text>
+<path d="M31.973,222.396 L31.973,222.396 L31.991,222.396 L32.044,222.396 L32.133,222.396 L32.256,222.396 L32.415,222.396 L32.609,222.396 L32.838,222.396 L33.101,222.396 L33.398,222.396 L33.728,222.396 L34.092,222.396 L34.489,222.396 L34.918,222.396 L35.380,222.396 L35.872,222.396 L36.395,222.396 L36.948,222.396 L37.531,222.396 L38.142,222.396 L38.781,222.396 L39.448,222.396 L40.141,222.396 L40.859,222.396 L41.602,222.396 L42.368,222.396 L43.158,222.396 L43.969,222.396 L44.801,222.396 L45.653,222.396 L46.523,222.396 L47.412,222.396 L48.317,222.396 L49.237,222.396 L50.172,222.396 L51.121,222.396 L52.081,222.396 L53.052,222.396 L54.033,222.396 L55.023,222.396 L56.020,222.396 L57.023,222.396 L58.032,222.396 L59.043,222.396 L60.058,222.396 L61.073,222.396 L181.073,222.396" fill="none" stroke="#b4753c" stroke-width="1.1"/>
+<text x="32.973298591590854" y="221.39583639634776" class="">P5</text>
+<path d="M39.604,230.027 L39.604,230.027 L39.622,230.027 L39.675,230.027 L39.764,230.027 L39.887,230.027 L40.046,230.027 L40.240,230.027 L40.469,230.027 L40.731,230.027 L41.028,230.027 L41.359,230.027 L41.723,230.027 L42.120,230.027 L42.549,230.027 L43.010,230.027 L43.503,230.027 L44.026,230.027 L44.579,230.027 L45.162,230.027 L45.773,230.027 L46.412,230.027 L47.079,230.027 L47.771,230.027 L48.490,230.027 L49.232,230.027 L49.999,230.027 L50.788,230.027 L51.600,230.027 L52.432,230.027 L53.284,230.027 L54.154,230.027 L55.043,230.027 L55.948,230.027 L56.868,230.027 L57.803,230.027 L58.751,230.027 L59.712,230.027 L60.683,230.027 L61.664,230.027 L62.654,230.027 L63.651,230.027 L64.654,230.027 L65.662,230.027 L66.674,230.027 L67.689,230.027 L68.704,230.027 L188.704,230.027" fill="none" stroke="#a34f4d" stroke-width="1.1"/>
+<text x="40.60416360365224" y="229.02670140840914" class="">P6</text>
+<path d="M50.396,230.027 L50.396,230.027 L50.396,230.009 L50.396,229.956 L50.396,229.867 L50.396,229.744 L50.396,229.585 L50.396,229.391 L50.396,229.162 L50.396,228.899 L50.396,228.602 L50.396,228.272 L50.396,227.908 L50.396,227.511 L50.396,227.082 L50.396,226.620 L50.396,226.128 L50.396,225.605 L50.396,225.052 L50.396,224.469 L50.396,223.858 L50.396,223.219 L50.396,222.552 L50.396,221.859 L50.396,221.141 L50.396,220.398 L50.396,219.632 L50.396,218.842 L50.396,218.031 L50.396,217.199 L50.396,216.347 L50.396,215.477 L50.396,214.588 L50.396,213.683 L50.396,212.763 L50.396,211.828 L50.396,210.879 L50.396,209.919 L50.396,208.948 L50.396,207.967 L50.396,206.977 L50.396,205.980 L50.396,204.977 L50.396,203.968 L50.396,202.957 L50.396,201.942 L50.396,200.927 L50.396,80.927" fill="none" stroke="#a34f4d" stroke-width="1.1"/>
+<text x="51.39583639634777" y="229.02670140840914" class="">P7</text>
+<path d="M58.027,222.396 L58.027,222.396 L58.027,222.378 L58.027,222.325 L58.027,222.236 L58.027,222.113 L58.027,221.954 L58.027,221.760 L58.027,221.531 L58.027,221.269 L58.027,220.972 L58.027,220.641 L58.027,220.277 L58.027,219.880 L58.027,219.451 L58.027,218.990 L58.027,218.497 L58.027,217.974 L58.027,217.421 L58.027,216.838 L58.027,216.227 L58.027,215.588 L58.027,214.921 L58.027,214.229 L58.027,213.510 L58.027,212.768 L58.027,212.001 L58.027,211.212 L58.027,210.400 L58.027,209.568 L58.027,208.716 L58.027,207.846 L58.027,206.957 L58.027,206.052 L58.027,205.132 L58.027,204.197 L58.027,203.249 L58.027,202.288 L58.027,201.317 L58.027,200.336 L58.027,199.346 L58.027,198.349 L58.027,197.346 L58.027,196.338 L58.027,195.326 L58.027,194.311 L58.027,193.296 L58.027,73.296" fill="none" stroke="#b4753c" stroke-width="1.1"/>
+<text x="59.026701408409146" y="221.39583639634776" class="">P8</text>
+<text x="14" y="250" class="">E: P1/P2/P5/P6→actualouter-S; N:P3/P4/P7/P8→outer-W.</text>
+<text x="14" y="258" class="">LoggiaNW rotates180: W→outer-N-W; S→loggia-W.</text>
+<text x="14" y="266" class="">Botharms600wide/full450deep;1700developmentterritory.</text>
+<text x="225" y="36" class="title">B / ABSOLUTE z / ONE DATUM</text>
+<text x="225" y="47" class="">ORDINATE              REGULAR450     LOW570</text>
+<text x="225" y="55" class="">NodeTOP                    −180            −180</text>
+<text x="225" y="63" class="">NodeBASE / pilecutoff      −630            −750</text>
+<text x="225" y="71" class="">PrincipalEW/NSmats     −572/−552       −572/−552</text>
+<text x="225" y="79" class="">BendSTARTS             −623/−573       −623/−573</text>
+<text x="225" y="87" class="">H22horizontalplanes    −332/−282       −332/−282</text>
+<text x="225" y="95" class="">NormalARMbottom           −630            −630</text>
+<text x="225" y="103" class="">ArmTOPsteel               −238            −238</text>
+<text x="225" y="121" class="">H22internal560 / R291;1200straight vs1139POORbond.</text>
+<text x="225" y="129" class="">Eightstarterpairclear≥45.63; fixedcagesandbendscheckedatdeclared22mmclear.</text>
+<text x="225" y="137" class="">Curvedreturnscheckedin3D; nodeinteriorconfinementstillopen.</text>
+<text x="225" y="153" class="title">C / ACTUAL100/100 INTERFACE TRACTIONS</text>
+<text x="225" y="164" class="">N0: C437.8; steelT628.4/C190.6kN.</text>
+<text x="225" y="173" class="">N100: C463.0; steelT566.5/C203.6kN.</text>
+<text x="225" y="182" class="">N300: C526.4; steelT470.1/C243.7kN.</text>
+<text x="225" y="191" class="">N850: C747.2; steelT251.6/C354.3kN.</text>
+<text x="225" y="205" class="">Sectoravg10.3–10.9;unredistributedpeak17&gt;CTT11.22.</text>
+<text x="225" y="213" class="">8.976iscrackedSTRUTcontrol;N/A6.76isnotN–Mproof.</text>
+<text x="225" y="225" class="">Signedsector+8steelforcescloseN/Mx/My; capstrutfield,</text>
+<text x="225" y="233" class="">bend-bearingconfinement andstartercoupletransferOPEN.</text>
+<text x="14" y="282" class="">INTERNALWORKREMAINS: allothernodearmrouting/interiortransversecage+N–Mcapcompressionfield. Site/soil/group/lateral/upliftacceptanceisseparate.</text>
+<text x="14" y="290" class="">Nojoinednode,floor,houseorfoundationPASS. Drawn450/570profilesareexplicitcalculationscope,notconstructionrelease.</text>
 </svg>

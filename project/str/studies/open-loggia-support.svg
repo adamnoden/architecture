@@ -70,24 +70,24 @@
 <path d="M107.55,131.0 L107.55,46.0" fill="none" stroke="#b47742" stroke-width=".65"/>
 <path d="M172.45,131.0 L172.45,46.0" fill="none" stroke="#b47742" stroke-width=".65"/>
 <path d="M78.05,108.94999999999999 L78.05,52.650000000000006" fill="none" stroke="#b95351" stroke-width=".65"/>
-<rect x="76.650" y="105.950" width="2.800" height="6.000" fill="#b95351" stroke="#345460" stroke-width=".35"/>
-<rect x="76.650" y="49.650" width="2.800" height="6.000" fill="#b95351" stroke="#345460" stroke-width=".35"/>
+<rect x="75.450" y="104.450" width="5.200" height="9.000" fill="#b95351" stroke="#345460" stroke-width=".35"/>
+<rect x="75.450" y="51.250" width="5.200" height="9.000" fill="#b95351" stroke="#345460" stroke-width=".35"/>
 <text x="16" y="300" class="">Green: actual upper wall axes; ochre: new ground loggia supports; red: real wet-wall transfer beam.</text>
 <text x="16" y="308" class="">No slab fills the stair/entrance holes. Fields are support rectangles, not a net-area union or full plate analysis.</text>
 <text x="16" y="316" class="">G7.5 internal /8.5 exposed-loggia, Q2; H12/150 each face/direction, d157, cover25 trial.</text>
 <text x="304" y="36" class="title">B / WET-WALL BEAM &amp; FINITE SUPPORTS</text>
-<text x="304" y="47" class="">Removed lower reading wall → upper140 masonry → real RC140×350 beam.</text>
-<text x="304" y="55" class="">2H18 bottom,2H10 top,H6/100; total350, z3020–3370; lined soffit3005, NO doorway upstand.</text>
-<text x="304" y="63" class="">G24.374/Q4.045 kN/m; M38.60/MR58.31; V54.85/VRs68.60.</text>
+<text x="304" y="47" class="">Removed lower reading wall → upper140 masonry → real RC200×350 beam.</text>
+<text x="304" y="55" class="">3H16 bottom,2H10 top,H6/100; total350, z3020–3370; lined soffit3005, NO doorway upstand.</text>
+<text x="304" y="63" class="">G24.599/Q4.045 kN/m; M34.50/MR71.45; V58.50/VRs68.82.</text>
 <rect x="320.000" y="88.000" width="140.000" height="10.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
 <rect x="320.000" y="78.000" width="140.000" height="10.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
 <rect x="320.000" y="68.000" width="140.000" height="10.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
 <rect x="320.000" y="98.000" width="10.000" height="40.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
 <rect x="450.000" y="98.000" width="10.000" height="40.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
-<text x="320" y="148" class="">Diagrammatic elevation; actual span2815 and pier footprints in JSON.</text>
-<text x="304" y="159" class="">South RC140×300 receiving pier: x2832.5–2972.5, y8702.5–9002.5.</text>
-<text x="304" y="167" class="">Local pier projects80 beyond original140 wall each side; no invented300 bearing on140 wall.</text>
-<text x="304" y="175" class="">Door starts3100; north window starts3050. Actual finished pier/door tasks require HAD recheck.</text>
+<text x="320" y="148" class="">Diagrammatic elevation; support2660+155overhang and pier footprints in JSON.</text>
+<text x="304" y="159" class="">South RC260×450 pier: x2772.5–3032.5, y8627.5–9077.5.</text>
+<text x="304" y="167" class="">Actual450downhooks+600tails; full-yieldbend/bond and3Dbarclearance checked.</text>
+<text x="304" y="175" class="">Finishx2757.5–3047.5; northwindow3050gap2.5 needsHADreadback, no spatialPASS.</text>
 <text x="304" y="196" class="title">C / GROUND GRID TARGET, NOT SITE ACCEPTANCE</text>
 <text x="304" y="207" class="">RC600×450 both leaves;40cover;3H20 top/bottom+sideH12;4legH8/100;actual point nodes.</text>
 <text x="304" y="215" class="">M129.11/MR152.40; V172.14/VRs308.41.</text>
@@ -104,8 +104,8 @@
 <text x="16" y="361" class="">HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.</text>
 <text x="16" y="367" class="">Corner collectors and finite field edges now calculated. Actual midlanding/post, entrance bridge, tied arches and roof remain to complete.</text>
 <text x="16" y="373" class="">Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.</text>
-<text x="16" y="379" class="">Wet-wall beam receiving RC piers project80 beyond original wall faces; HAD must check actual door/sofa tasks.</text>
-<text x="16" y="385" class="">Wetbeam2H18/pier4H12 jointbar clash remains: separate section strength is NOT a passed3Djoint.</text>
+<text x="16" y="379" class="">Wet receivers260x450 andnorthsupport11512.5: actual door/window/spatial readback required.</text>
+<text x="16" y="385" class="">Wetjoint3H16downhooks/4H16pier: finite3Dclearance/development calculated; lowercolumnjoint remains.</text>
 <text x="16" y="391" class="">Integral600node S&amp;T/cage model replaces900caps; terminal cages, actual pilehead/group/lateral/uplift and DPC/floor moisture remain to verify.</text>
 <text x="16" y="397" class="">Revised240glass+40lining→2890soffit requires actual arch/head/thermal coordination; anchorsunfinished.</text>
 <text x="16" y="403" class="">No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows.</text>

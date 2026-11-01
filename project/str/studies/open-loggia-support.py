@@ -134,27 +134,104 @@ assert not edge_covered([2817.5,3917.5],[(3917.5,8082.5,'court-S')])
 # The removed ground reading wall requires an ACTUAL beam under its upper wall.
 # All adjacent NW slab tributary width is conservatively collected by this beam.
 wet_trib=(2902.5-332.5+4377.5-2902.5)/2/1000
-wet_G=7.5*wet_trib+.14*3.1*20+.14*.15*25
+wet_G=7.5*wet_trib+.14*3.1*20+.2*.15*25
 wet_Q=2*wet_trib
-wet_section=rc(140,350,310,2*area(18),25)
-wet_action=udl(1.35*wet_G+1.5*wet_Q,2.815)
-wet_links=links(140,310,6,100)
-wet=dict(axis_x=2902.5,support_axes_y=[8852.5,11667.5],span=2815,
+wet_section=rc(200,350,311,3*area(16),25)
+wet_w=1.35*wet_G+1.5*wet_Q
+# North receiver remains INSIDE the actual inner-core north face11737.5.
+# Shift its reaction to11512.5 and calculate the155 loaded overhang explicitly.
+wet_L=2.660;wet_a=.155;wet_total=wet_L+wet_a
+wet_RN=wet_w*wet_total**2/(2*wet_L);wet_RS=wet_w*wet_total-wet_RN
+wet_M=wet_RS**2/(2*wet_w);wet_MN=-wet_w*wet_a**2/2
+wet_action=dict(M=wet_M,V=max(wet_RS,wet_RN),south_reaction=wet_RS,north_reaction=wet_RN,
+                north_support_hogging=wet_MN,loaded_length=wet_total,
+                reaction_equilibrium=wet_RS+wet_RN-wet_w*wet_total,
+                moment_equilibrium=wet_RN*wet_L-wet_w*wet_total**2/2)
+wet_links=links(200,311,6,100)
+wet=dict(axis_x=2902.5,support_axes_y=[8852.5,11512.5],span=2660,loaded_north_overhang=155,
          top=3370,bottom=3020,finished_soffit=3005,upstand_above_FFL=0,
          tributary_width=wet_trib*1000,G=wet_G,Q=wet_Q,
          section=wet_section,action=wet_action,links=wet_links,
-         south_receiving_core=[2832.5,8702.5,140,300],
-         south_receiving_finished=[2817.5,8687.5,170,330],
-         north_receiving_core=[2832.5,11517.5,140,300],
+         south_receiving_core=[2772.5,8627.5,260,450],
+         south_receiving_finished=[2757.5,8612.5,290,480],
+         north_receiving_core=[2772.5,11287.5,260,450],
+         north_receiving_finished=[2757.5,11272.5,290,480],
          door_edge_x=3100,north_window_edge_x=3050,
-         south_pier_projection_beyond_140_wall_each_side=80,
-         actual_receiving_pier_material='RC140x300 trial, not an assumed masonry capacity',shear_links_required=wet_action['V']>wet_section['VRdc'],
-         resolved=False)
-wet['fully_cracked_phi3_deflection_mm']=cracked(140,350,310,wet_section['As'],wet_G,wet_Q,2.815,3)
+         actual_receiving_pier_material='RC260x450;H6/100;4H16;16mm maximum aggregate',
+         shear_links_required=wet_action['V']>wet_section['VRdc'],resolved=False)
+# Retain longer2815 sensitivity for sagging; no fictitious span shortening credit.
+wet['fully_cracked_phi3_deflection_mm']=cracked(200,350,311,wet_section['As'],wet_G,wet_Q,2.815,3)
 wet['differential_shrinkage_300microstrain_mm']=300e-6/350*2815**2/8
 wet['L250_comparator_mm']=2815/250
+wet['top_hogging_section']=rc(200,350,314,2*area(10),25)
 assert wet_action['M']<wet_section['MR'] and wet_section['ductility']
+assert abs(wet_MN)<wet['top_hogging_section']['MR']
 assert wet_action['V']<min(wet_links['VRs'],wet_links['VRmax'])
+assert abs(wet_action['reaction_equilibrium'])<1e-9 and abs(wet_action['moment_equilibrium'])<1e-9
+
+# Finite wet receiver reinforcement: all coordinates local x/y, absolute z.
+# Curve chords2degrees have <0.036mm maximum radial error; clearances below
+# include0.1mm subtraction. No made-up tolerance is added to physical spacing.
+def seg_distance(p0,p1,q0,q1):
+    sub=lambda a,b:tuple(x-y for x,y in zip(a,b))
+    dot=lambda a,b:sum(x*y for x,y in zip(a,b))
+    u=sub(p1,p0);v=sub(q1,q0);w=sub(p0,q0)
+    a=dot(u,u);b=dot(u,v);c=dot(v,v);d=dot(u,w);e=dot(v,w)
+    def at(t,z):return math.dist(tuple(p0[i]+t*u[i] for i in range(3)),tuple(q0[i]+z*v[i] for i in range(3)))
+    values=[at(0,max(0,min(1,e/c))),at(1,max(0,min(1,(e+b)/c))),
+            at(max(0,min(1,-d/a)),0),at(max(0,min(1,(b-d)/a)),1)]
+    det=a*c-b*b
+    if det>1e-10:
+        t=(b*e-c*d)/det;z=(a*e-b*d)/det
+        if 0<=t<=1 and 0<=z<=1:values.append(at(t,z))
+    return min(values)
+def path_clear(a,b):
+    return min(seg_distance(p,q,r,t) for p,q in zip(a['points'],a['points'][1:])
+               for r,t in zip(b['points'],b['points'][1:]))-(a['dia']+b['dia'])/2-.1
+joint_bars=[]
+def bent_bar(name,x,z,dia,mandrel,tail):
+    R=(mandrel+dia)/2;leg_y=90;start_y=leg_y+R
+    points=[(x,450,z),(x,start_y,z)]
+    points += [(x,start_y-R*math.sin(math.radians(t)),z-R*(1-math.cos(math.radians(t)))) for t in range(2,91,2)]
+    points.append((x,leg_y,z-R-tail))
+    return dict(id=name,dia=dia,points=points,mandrel=mandrel,tail=tail,
+                anchorage_length=450-start_y+math.pi*R/2+tail,
+                bond_MPa=(2.1 if dia==10 else 3),
+                full_yield_lbrqd=dia/4*(500/1.15)/(2.1 if dia==10 else 3),
+                bend_required_at_full_fyd=area(dia)*(500/1.15)*(1/(20 if dia==16 else 40)+1/(2*dia))/17)
+for i,x in enumerate([90,130,170]):joint_bars.append(bent_bar('B'+str(i+1),x,3059,16,450,600))
+for i,x in enumerate([90,170]):joint_bars.append(bent_bar('T'+str(i+1),x,3334,10,180,110))
+for a in joint_bars:
+    assert a['mandrel']>=a['bend_required_at_full_fyd']
+    assert a['anchorage_length']>=a['full_yield_lbrqd']
+    assert a['tail']>=5*a['dia']
+column_bars=[dict(id='C'+str(i+1),dia=16,points=[(x,y,0),(x,y,3330)])
+             for i,(x,y) in enumerate([(39,39),(39,411),(221,39),(221,411)])]
+column_links=[]
+for z in list(range(2160,2961,100))+[3010,3110,3210,3270]:
+    column_links.append(dict(id='CL'+str(z),dia=6,points=[(28,28,z),(232,28,z),(232,422,z),(28,422,z),(28,28,z)]))
+beam_links=[dict(id='BL'+str(y),dia=6,points=[(58,y,3048),(202,y,3048),(202,y,3342),(58,y,3342),(58,y,3048)]) for y in [350,450]]
+checks=[]
+for i,a in enumerate(joint_bars):
+    for b in joint_bars[i+1:]+column_bars+column_links+beam_links:
+        # Beam longitudinal bars physically contact their own stirrup by design.
+        if b['id'].startswith('BL'):
+            assert all(p[1]<350 for p in a['points'][2:]) # onlystraightentrytoucheshoop
+            continue
+        checks.append(dict(a=a['id'],b=b['id'],clear=path_clear(a,b)))
+for a in column_bars:
+    for b in beam_links:checks.append(dict(a=a['id'],b=b['id'],clear=path_clear(a,b)))
+for a in column_links:
+    for b in beam_links:checks.append(dict(a=a['id'],b=b['id'],clear=path_clear(a,b)))
+assert min(c['clear'] for c in checks)>=21
+wet['receiver_joint']=dict(coordinates='Receiver localx0..260/y0..450; zabsolute. NorthmirrorNS.',
+                           bars=joint_bars,column_bars=column_bars,column_links=column_links,beam_links=beam_links,
+                           clearance_minimum=min(c['clear'] for c in checks),critical=sorted(checks,key=lambda c:c['clear'])[:10],
+                           minimum_clear=21,maximum_aggregate=16,curve_chord_radial_error_bound=.036,
+                           links_omitted_from_longitudinal_clearance='Onlystraightentryownhoops350/450touchlongitudinalbars;hookcurvesareinsidethoseplanes.',
+                           positive_and_negative_full_yield_anchorage=True,
+                           link_planes='Columnlinks3010/3110 bracketbeam3059entry;topring3270belowtop3334entry;beamlinks350/450atstraightentry;noclosedbeamhoopcrossescurvedhook.',
+                           holds='Columnlowerlap/groundjoint and uppermasonryloadentry remain separate. HAD must acceptwiderreceiver/windowgap.')
 
 # Quantified lower-grid target, not a soil or installed foundation selection.
 # Support pitch must remain <=3000 for this line envelope; cap below beam remains
@@ -208,8 +285,8 @@ assert grid_action['V']<min(grid_links['VRs'],grid_links['VRmax'])
 # Named ground supports: no arbitrary3m bay is asked to absorb concentrated
 # wet-beam/pier or stair-frame reactions. Each special receiver is a cap node.
 special_nodes=[
- dict(id='wet-S',xy=[2902.5,8852.5],point_ULS=wet_action['V']),
- dict(id='wet-N',xy=[2902.5,11667.5],point_ULS=wet_action['V']),
+ dict(id='wet-S',xy=[2902.5,8852.5],point_ULS=wet_RS),
+ dict(id='wet-N',xy=[2902.5,11512.5],point_ULS=wet_RN),
  dict(id='stair-post',xy=[2942.5,7132.5],point_ULS=100),
  dict(id='stair-header-W',xy=[332.5,4332.5],point_ULS=100),
  dict(id='stair-header-E',xy=[3917.5,4332.5],point_ULS=100),
@@ -227,7 +304,8 @@ cap_As=5*area(20)
 cap=dict(plan=[600,600],minimum_depth=450,d=370,cover=40,
          N_envelope_kN=cap_N,M_envelope_kNm_each_axis=cap_M,
          specified_pile_head_diameter=400,pile_soil_capacity=None,
-         head_stress_MPa=cap_N*1000/area(400),concrete_node_limit_MPa=.528*17,
+         average_head_stress_MPa=cap_N*1000/area(400),average_only_not_nodal_capacity=True,
+         N_M_node_transfer_qualified=False,
          tie_demand_kN_each_direction=cap_tie,
          bottom_steel_each_direction='5H20, orthogonal layers;60/110/300/490/540 positions',As_each_direction=cap_As,
          tie_resistance_kN=cap_As*(500/1.15)/1000,
@@ -238,17 +316,16 @@ cap=dict(plan=[600,600],minimum_depth=450,d=370,cover=40,
          full_yield_bond_length_mm=20/4*(500/1.15)/3,
          available_straight_development_mm=750,
          footing_role='Integral grillage node, not isolated cap: bars continue into actual beam arms; terminal corner cages and pilehead lateral/uplift remain explicit admission duties.')
-assert cap['head_stress_MPa']<cap['concrete_node_limit_MPa']
 assert cap_tie<cap['tie_resistance_kN']
 assert cap['available_straight_development_mm']>cap['full_yield_bond_length_mm']
-cap['per_bar_force_kN']=cap_tie/4
+cap['per_bar_force_kN']=cap_tie/5
 cap['required_mandrel_mm']=cap['per_bar_force_kN']*1000*(1/50+1/(2*20))/17
 assert cap['required_mandrel_mm']<=330
 for v in cap['pile_vertical_bar_centres']:
     assert min(abs(v[0]-q) for q in cap['bottom_bar_positions_in_600'])>=41
     assert min(abs(v[1]-q) for q in cap['bottom_bar_positions_in_600'])>=41
 
-def circle_NM(Ntarget,angle_deg,bar_dia=22,nstrip=400):
+def circle_NM(Ntarget,angle_deg,bar_dia=22,nstrip=400,epsmax=.0035,details=False):
     """Actual8bar circular section; resultant capacity for curvature angle.
     Parabolic-rectangular concrete, displaced concrete subtracted at steel.
     Returns BOTH moment components: no fictitious rotation of an axisymmetric cage.
@@ -257,25 +334,30 @@ def circle_NM(Ntarget,angle_deg,bar_dia=22,nstrip=400):
     bars=[(rs*math.cos(math.radians(22.5+45*i)),rs*math.sin(math.radians(22.5+45*i))) for i in range(8)]
     def stress(e):return 0 if e<=0 else 17 if e>=.002 else 17*(1-(1-e/.002)**2)
     def calc(c):
-        dz=400/nstrip;N=Mn=0
+        dz=400/nstrip;N=Mn=0;steel=[];Cs=0;Csx=0;Csy=0
         for k in range(nstrip):
             z=(k+.5)*dz;y=R-z
-            F=stress(.0035*(c-z)/c)*2*math.sqrt(max(0,R*R-y*y))*dz
+            F=stress(epsmax*(c-z)/c)*2*math.sqrt(max(0,R*R-y*y))*dz
             N+=F;Mn+=F*y
-        Mx=Mn*math.cos(phi);My=Mn*math.sin(phi)
+        Cgross=N;Cx=Mn*math.cos(phi);Cy=Mn*math.sin(phi)
+        Mx=Cx;My=Cy
         for x,y in bars:
-            z=R-(x*math.cos(phi)+y*math.sin(phi));e=.0035*(c-z)/c
+            z=R-(x*math.cos(phi)+y*math.sin(phi));e=epsmax*(c-z)/c
             s=max(-500/1.15,min(500/1.15,200000*e))
             F=area(bar_dia)*(s-stress(e))
+            Cs+=area(bar_dia)*stress(e);Csx+=area(bar_dia)*stress(e)*x;Csy+=area(bar_dia)*stress(e)*y
+            steel.append(dict(id='P'+str(len(steel)+1),x=x,y=y,strain=e,stress=s,force_kN=area(bar_dia)*s/1000))
             N+=F;Mx+=F*x;My+=F*y
-        return N/1000,Mx/1e6,My/1e6
-    lo,hi=1,2000
+        return N/1000,Mx/1e6,My/1e6,dict(concrete_kN=(Cgross-Cs)/1000,
+                  concrete_centroid=[(Cx-Csx)/(Cgross-Cs),(Cy-Csy)/(Cgross-Cs)],steel=steel,epsmax=epsmax)
+    lo,hi=1,2000000
+    if calc(hi)[0]<Ntarget:raise ValueError('strain too small for axial compression')
     for _ in range(50):
         c=(lo+hi)/2
         if calc(c)[0]<Ntarget:lo=c
         else:hi=c
-    N,Mx,My=calc((lo+hi)/2)
-    return dict(N=N,Mx=Mx,My=My,curvature_angle=angle_deg,c=(lo+hi)/2)
+    N,Mx,My,detail=calc((lo+hi)/2)
+    return dict(N=N,Mx=Mx,My=My,curvature_angle=angle_deg,c=(lo+hi)/2,**(detail if details else {}))
 
 pile_domain=[]
 for N in [0,50,100,150,200,300,500,700,850]:
@@ -301,22 +383,55 @@ cap['pile_head_section']=dict(diameter=400,C='C30',steel='8H22 at22.5+45kdegrees
                               sampled_minimum_resultant=pile_min,samples=pile_domain,
                               convergence_200_to_800_relative=abs(coarse['Mx']-fine['Mx'])/fine['Mx'],
                               admission='Finite section screen; exact N-M vector interpolation,head/arm anchorage and site axial/lateral/group response remain to review.')
-cap['pile_bar_development']=dict(bar='H22',full_yield_straight_required=22/4*(500/1.15)/3,
-                                  proposed_horizontal_straight_after_bend=850,
-                                  internal_mandrel=440,centreline_radius=231,
-                                  bend_start_heights_above_pilehead_cutoff=[0,50],
-                                  horizontal_layers_above_regular_node_bottom=[281,331],
-                                  receiver_arms='At least2 actual full-height arms;600wide development zones for1250 from nodecentre, no bar anchored into lowtie alone.',
+# ACTUAL traction decomposition at the signed100/100 load pair, distinct
+# from section boundary capacity. A uniform N/A is not substituted for this.
+head_states=[]
+for Ntarget in [0,100,300,850]:
+    lo,hi=.000001,.0035
+    for iteration in range(42):
+        eps=(lo+hi)/2
+        try: state=circle_NM(Ntarget,45,epsmax=eps,details=True)
+        except ValueError:lo=eps;continue
+        if state['Mx']<100:lo=eps
+        else:hi=eps
+    state=circle_NM(Ntarget,45,epsmax=(lo+hi)/2,details=True)
+    state['steel_compression_kN']=sum(max(0,b['force_kN']) for b in state['steel'])
+    state['steel_tension_kN']=-sum(min(0,b['force_kN']) for b in state['steel'])
+    state['concrete_max_MPa']=17 if state['epsmax']>=.002 else 17*(1-(1-state['epsmax']/.002)**2)
+    state['compression_segment_depth']=min(400,state['c'])
+    t=max(-1,min(1,(200-state['c'])/200))
+    state['concrete_compressed_gross_area']=200**2*(math.acos(t)-t*math.sqrt(1-t*t))
+    state['compression_area_average_MPa']=state['concrete_kN']*1000/state['concrete_compressed_gross_area']
+    state['cracked_strut_8p976_area_required']=state['concrete_kN']*1000/(.528*17)
+    state['CTT_node_control_MPa']=.75*(1-30/250)*17
+    state['unredistributed_peak_below_CTT_control']=state['concrete_max_MPa']<=state['CTT_node_control_MPa']
+    assert abs(state['N']-Ntarget)<.01 and abs(state['Mx']-100)<.01 and abs(state['My']-100)<.01
+    assert abs(state['concrete_kN']+sum(b['force_kN'] for b in state['steel'])-Ntarget)<.01
+    assert abs(state['concrete_kN']*state['concrete_centroid'][0]/1000+sum(b['force_kN']*b['x']/1000 for b in state['steel'])-100)<.01
+    head_states.append(state)
+cap['actual_head_N_M_interface']=dict(loadpairs=head_states,
+    meaning='Signed concretecompressedsector+eightactualsteelforces reproduce N/Mx/My; this is boundarytraction,NOTcapnodalstrutcapacity.',
+    node_qualified=False,
+    primary_node_source='https://www.concretecentre.com/TCC/media/TCCMediaLibrary/PDF%20attachments/Lecture-4-Analysis-cg-12-Oct-2017.pdf',
+    distinction='0.6nuprimefcd8.976iscrackedSTRUTcontrol;CTTnode0.75nuprimefcd11.22.CorrectcoefficientaloneisNOTstressfieldproof.',
+    intrinsic_remaining='Each starter bends its signedverticalforce into a realarm; capcompressionfield/bendbearing/confining transversecage must close thisforcecouple. AverageN/Aisnotnodalcapacity.')
+cap['pile_bar_development']=dict(bar='H22',full_yield_straight_required=22/4*(500/1.15)/2.1,
+                                  bond_MPa=2.1,poor_bond_eta1=.7,
+                                  proposed_horizontal_straight_after_bend=1200,
+                                  internal_mandrel=560,centreline_radius=291,
+                                  bend_start_heights_above_pilehead_cutoff=[7,57],
+                                  horizontal_layers_above_regular_node_bottom=[298,348],
+                                  receiver_arms='At least2 actual full-height arms;600wide development zones for1700 from nodecentre, no bar anchored into lowtie alone.',
                                   terminal_routing='Eight starters assigned4peravailablearm with two horizontal layers; actual node-by-node routes/congestion still to verify.',
                                   no_anchorage_acceptance=True)
 cap['pile_bar_development']['full_yield_bend_force_kN']=area(22)*(500/1.15)/1000
-cap['pile_bar_development']['required_mandrel_at_ab50_mm']=area(22)*(500/1.15)*(1/50+1/44)/17
-assert cap['pile_bar_development']['required_mandrel_at_ab50_mm']<440
-assert cap['pile_bar_development']['full_yield_straight_required']<850
-cap['pile_bar_development']['rebar_layers_mm_regular_node']=dict(bottom_EW=60,bottom_NS=80,
-                                                                 pile_horizontal=[281,331],top_beam=392)
-assert 392-331-(10+11)>=20
-assert 331-281-22>=20
+cap['pile_bar_development']['required_mandrel_at_ab30_mm']=area(22)*(500/1.15)*(1/30+1/44)/17
+assert cap['pile_bar_development']['required_mandrel_at_ab30_mm']<560
+assert cap['pile_bar_development']['full_yield_straight_required']<1200
+cap['pile_bar_development']['rebar_layers_mm_regular_node']=dict(bottom_EW=58,bottom_NS=78,
+                                                                 pile_horizontal=[298,348],top_beam=392)
+assert 392-348-(10+11)>=20
+assert 348-298-22>=20
 cap['cage_limit']='Checks cover stated straight/orthogonal projections. Terminal bend routes,arm availability and all eight physical starter routes remain actual 3D detailing debt, not passed by section strength.'
 
 # Actual unsupported slab corners get finite collectors, not relabelled supports.
@@ -381,14 +496,14 @@ for a in long_spans:
 
 # Wet-beam RC piers: conditional second-order screen with no favourable masonry
 # stiffness. Pinned3200,0.25EcIg, minimum20 eccentricity, no primary lateral role.
-pier_N=wet_action['V']+1.35*.14*.3*3.2*25
-pier_I=300*140**3/12
+pier_N=wet_action['V']+1.35*.26*.45*3.2*25
+pier_I=450*260**3/12
 pier_Pcr=math.pi**2*(E*.25)*pier_I/3200**2/1000
 pier_amp=1/(1-pier_N/pier_Pcr)
 pier_M=pier_N*.02*pier_amp
-pier_sec=rc(300,140,103,2*area(12),25)
-pier_NR=.6*17*(140*300-4*area(12))/1000
-wet['receiving_pier_check']=dict(core=[140,300],height=3200,steel='4H12;H6/100 closed links',
+pier_sec=rc(450,260,221,2*area(16),25)
+pier_NR=.6*17*(260*450-4*area(16))/1000
+wet['receiving_pier_check']=dict(core=[260,450],height=3200,steel='4H16;H6/100 closed links',
                               N=pier_N,Pcr=pier_Pcr,EI_fraction=.25,amplification=pier_amp,
                               e0=20,M=pier_M,NR_screen=pier_NR,MR_screen=pier_sec['MR'],
                               linear_interaction=pier_N/pier_NR+pier_M/pier_sec['MR'],
@@ -461,7 +576,7 @@ for p,node in cap_nodes.items():
                 role='Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck.')
 grid['actual_routes']=ground_routes
 grid['actual_cap_nodes']=list(cap_nodes.values())
-grid['width_reason']='Uniform600 prototype keeps all eight H22 pile starters inside real full-height arms; no hidden850mm development into250 or lowtie arms. This is a material/cost/thermal price, not an optimised site foundation.'
+grid['width_reason']='Uniform600 prototype permits two actual8starter references. All othernodearmroutesstillrequireliteralassignment; no hidden850developmentinto250orlowties. Thisisamaterial/cost/thermalprice,notoptimisedsitefoundation.'
 deck_q=1.35*7.5+1.5*2
 deck_line_reaction=deck_q*4.25/2 # includes both300 exterior panel overhangs.
 deck_total_reaction=deck_line_reaction*2.35
@@ -491,6 +606,72 @@ for node in grid['actual_cap_nodes']:
 assert all(n['point_ULS']<=200 for n in cap_nodes.values())
 assert 4*grid_action['V']+100+low_V<cap_N
 
+# Two literal joined reference nodes: the outerSW regular450 node and
+# loggiaNW lowreceiver570. All8starters have named routes into ACTUAL twoarms;
+# no arm is invented at another node merely because this reference works.
+starter_options=[0,0,2,2,1,0,2,3]
+starter_paths=[]
+for i,opt in enumerate(starter_options):
+    direction,plane=[('E',-332),('E',-282),('N',-332),('N',-282)][opt]
+    x,y=cap['pile_vertical_bar_centres'][i];z0=plane-291
+    points=[(x,y,-1000),(x,y,z0)]
+    for t in range(2,91,2):
+        a=math.radians(t);r=291*(1-math.cos(a));z=z0+291*math.sin(a)
+        points.append((x+r if direction=='E' else x,y+r if direction=='N' else y,z))
+    p=points[-1];points.append((p[0]+(1200 if direction=='E' else 0),p[1]+(1200 if direction=='N' else 0),p[2]))
+    starter_paths.append(dict(id='P'+str(i+1),dia=22,points=points,direction=direction,
+                              horizontal_plane=plane,bend_start=z0,internal_mandrel=560,
+                              straight_after_bend=1200))
+starter_pairs=[dict(a=a['id'],b=b['id'],clear=path_clear(a,b))
+               for i,a in enumerate(starter_paths) for b in starter_paths[:i]]
+assert min(c['clear'] for c in starter_pairs)>=22
+assert min(c['clear'] for c in starter_pairs)+22>=60 # actualcentreclearance>=2ab30
+profiles=[]
+for ident,xy,base,rotation,arms in [
+ ('SW-regular',[300,300],-630,0,[('outer-S','E',11700),('outer-W','N',11700)]),
+ ('loggia-NW-lowreceiver',[4500,11700],-750,180,[('outer-N-W','W',4200),('loggia-W','S',3650)])]:
+    assert any(math.dist(n['xy'],xy)<.01 for n in grid['actual_cap_nodes'])
+    # Literal path in globalordinates; 180rotation preserves all actual barangles.
+    sign=1 if rotation==0 else -1
+    paths=[]
+    for a in starter_paths:
+        d=a['direction'] if sign==1 else {'E':'W','N':'S'}[a['direction']]
+        arm=next(k for k in arms if k[1]==d)
+        assert any(r[0]==arm[0] for r in ground_routes)
+        points=[(xy[0]+sign*(x-300),xy[1]+sign*(y-300),z) for x,y,z in a['points']]
+        # The1700developmentreceiver stays in a real600wide fullheight arm.
+        assert arm[2]>=1700
+        assert max(abs((p[0]-xy[0]) if d in ['E','W'] else (p[1]-xy[1])) for p in points)<1700
+        b=dict(a,points=points,actual_direction=d,arm=arm[0],arm_available=arm[2])
+        paths.append(b)
+    # Compare ALLcurvedreturns against the two realnode bottommats and armtopbars.
+    fixed=[]
+    for q in [60,110,300,490,540]:
+        fixed += [dict(id='bottomEW'+str(q),dia=20,points=[(-300,q,-572),(2050,q,-572)]),
+                  dict(id='bottomNS'+str(q),dia=20,points=[(q,-300,-552),(q,2050,-552)])]
+    for q in [60,300,540]:
+        fixed += [dict(id='armtopE'+str(q),dia=20,points=[(0,q,-238),(2050,q,-238)]),
+                  dict(id='armtopN'+str(q),dia=20,points=[(q,0,-238),(q,2050,-238)])]
+    for station in range(650,2051,100):
+        fixed += [dict(id='EL'+str(station),dia=8,points=[(station,44,-586),(station,556,-586),(station,556,-224),(station,44,-224),(station,44,-586)]),
+                  dict(id='NL'+str(station),dia=8,points=[(44,station,-586),(556,station,-586),(556,station,-224),(44,station,-224),(44,station,-586)])]
+    clearance=[dict(a=a['id'],b=b['id'],clear=path_clear(a,b)) for a in starter_paths for b in fixed]
+    assert min(c['clear'] for c in clearance)>=22
+    profiles.append(dict(id=ident,xy=xy,top=-180,bottom=base,pile_cutoff=base,
+                         node_bottom_mats=[-572,-552],local_lowtie_steel=([-692,-608] if base==-750 else None),lowtie_anchorage_qualified=False,normal_arm_bottom=-630,
+                         arm_top_steel=-238,pile_bend_starts=[-623,-573],pile_horizontal_planes=[-332,-282],
+                         above_cutoff_bend_starts=[-623-base,-573-base],
+                         actual_arms=arms,starters=paths,all8pair_minimum=min(c['clear'] for c in starter_pairs),
+                         fixed_cage_minimum=min(c['clear'] for c in clearance),
+                         critical_fixed=sorted(clearance,key=lambda c:c['clear'])[:10],
+                         transverse_cage_limit='Armclosedlinksstart650fromnodeorigin;nodeinteriortransverseconfinement/STMstilltodesign.Nobodyclaimedall57nodesdetailed.'))
+cap['named_starter_profiles']=profiles
+cap['pile_bar_development'].update(bend_start_absolute=[-623,-573],horizontal_absolute=[-332,-282],
+   horizontal_layers_above_regular_node_bottom=[298,348],
+   bend_start_heights_above_pilehead_cutoff=[7,57],
+   terminal_routing='8namedroutesintorealE/NarmsatSWregularandrotatedW/SarmsatloggiaNW570;allothernodesremainunassigned.',
+   no_anchorage_acceptance=True)
+cap['cage_limit']='Twoactual450/570profilesclose8starterrouteandbarclearancegeometry;othernodearms,lowtieanchorageandnodeinteriortransverseconfinement/N-Mstruttransferremainintrinsicdesignwork.'
 # E02 service port geometric envelope only; actual circular compression ring and
 # springing ties are the next calculation, never replaced by the ideal ratio.
 port=dict(wall='plant-north',axis_y=6500,centre_x=10800,clear_width=240,
@@ -520,8 +701,8 @@ result=dict(identity='OPEN-N / first whole-floor support calculation checkpoint,
                 'HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.',
                 'Corner collectors and finite field edges now calculated. Actual midlanding/post, entrance bridge, tied arches and roof remain to complete.',
                 'Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.',
-                'Wet-wall beam receiving RC piers project80 beyond original wall faces; HAD must check actual door/sofa tasks.',
-                'Wetbeam2H18/pier4H12 jointbar clash remains: separate section strength is NOT a passed3Djoint.',
+                'Wet receivers260x450 andnorthsupport11512.5: actual door/window/spatial readback required.',
+                'Wetjoint3H16downhooks/4H16pier: finite3Dclearance/development calculated; lowercolumnjoint remains.',
                 'Integral600node S&T/cage model replaces900caps; terminal cages, actual pilehead/group/lateral/uplift and DPC/floor moisture remain to verify.',
                 'Revised240glass+40lining→2890soffit requires actual arch/head/thermal coordination; anchorsunfinished.',
                 'No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows.'])
@@ -558,17 +739,17 @@ txt(16,308,'No slab fills the stair/entrance holes. Fields are support rectangle
 txt(16,316,'G7.5 internal /8.5 exposed-loggia, Q2; H12/150 each face/direction, d157, cover25 trial.')
 
 txt(304,36,'B / WET-WALL BEAM & FINITE SUPPORTS','title')
-txt(304,47,'Removed lower reading wall → upper140 masonry → real RC140×350 beam.')
-txt(304,55,'2H18 bottom,2H10 top,H6/100; total350, z3020–3370; lined soffit3005, NO doorway upstand.')
+txt(304,47,'Removed lower reading wall → upper140 masonry → real RC200×350 beam.')
+txt(304,55,'3H16 bottom,2H10 top,H6/100; total350, z3020–3370; lined soffit3005, NO doorway upstand.')
 txt(304,63,f"G{wet_G:.3f}/Q{wet_Q:.3f} kN/m; M{wet_action['M']:.2f}/MR{wet_section['MR']:.2f}; V{wet_action['V']:.2f}/VRs{wet_links['VRs']:.2f}.")
 box(320,88,140,10,'#aebeba')
 box(320,78,140,10,'#aebeba')
 box(320,68,140,10,'#aebeba')
 box(320,98,10,40,'#aebeba');box(450,98,10,40,'#aebeba')
-txt(320,148,'Diagrammatic elevation; actual span2815 and pier footprints in JSON.')
-txt(304,159,'South RC140×300 receiving pier: x2832.5–2972.5, y8702.5–9002.5.')
-txt(304,167,'Local pier projects80 beyond original140 wall each side; no invented300 bearing on140 wall.')
-txt(304,175,'Door starts3100; north window starts3050. Actual finished pier/door tasks require HAD recheck.')
+txt(320,148,'Diagrammatic elevation; support2660+155overhang and pier footprints in JSON.')
+txt(304,159,'South RC260×450 pier: x2772.5–3032.5, y8627.5–9077.5.')
+txt(304,167,'Actual450downhooks+600tails; full-yieldbend/bond and3Dbarclearance checked.')
+txt(304,175,'Finishx2757.5–3047.5; northwindow3050gap2.5 needsHADreadback, no spatialPASS.')
 
 txt(304,196,'C / GROUND GRID TARGET, NOT SITE ACCEPTANCE','title')
 txt(304,207,'RC600×450 both leaves;40cover;3H20 top/bottom+sideH12;4legH8/100;actual point nodes.')
@@ -591,37 +772,92 @@ main_svg='\n'.join(parts)
 parts=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">',
        '<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:3.1px}.title{font-size:4.6px;font-weight:bold}</style>',
        '<rect width="420" height="297" fill="#faf8f1"/>']
-txt(14,14,'OPEN N / integral node, actual cage and N–M screen','title')
-txt(14,23,'PROPOSED / no pile-soil or anchorage admission / actual bar coordinates, not a circularly smeared steel area')
-txt(14,36,'A / 600 NODE PLAN · 1:3','title')
-box(20,45,200,200,'#d9e2de')
-parts.append('<circle cx="120" cy="145" r="66.6667" fill="none" stroke="#557f90" stroke-width=".5"/>')
-for p in cap['bottom_bar_positions_in_600']:
-    ln(20,45+p/3,220,45+p/3,'#b4753c')
-    ln(20+p/3,45,20+p/3,245,'#8d6544')
-for x,y in cap['pile_vertical_bar_centres']:
-    parts.append(f'<circle cx="{20+x/3:.3f}" cy="{45+y/3:.3f}" r="3.6667" fill="#a34f4d"/>')
-txt(20,253,'5H20 each direction:60/110/300/490/540; orthogonal planes60/80 above base.')
-txt(20,260,'8H22 pile cage R141 at22.5+45k; minimum line/axis clearance checked.')
-txt(20,267,'Brown: node bars / red: actual pile bars / blue:400 concrete pilehead.')
-txt(242,36,'B / REPRESENTATIVE STARTERS · 1:4','title')
-box(255,50,150,142.5,'#d9e2de')
-box(280,180,100,65,'#c5cfca')
-ln(255,162.5,405,162.5,'#8b9995')
-ln(255,177.5,405,177.5,'#b4753c');ln(255,172.5,405,172.5,'#8d6544')
-ln(255,64.5,405,64.5,'#b4753c')
-parts.append('<path d="M316.5,245 L316.5,180 A57.75,57.75 0 0 0 258.75,122.25 L240,122.25" fill="none" stroke="#a34f4d" stroke-width="1.1"/>')
-parts.append('<path d="M343.5,245 L343.5,167.5 A57.75,57.75 0 0 1 401.25,109.75 L415,109.75" fill="none" stroke="#a34f4d" stroke-width="1.1"/>')
-txt(245,203,'Regular node450; local lowtie receiver570, bottom−750.')
-txt(245,211,'H22 bend440 internal / centrelineR231; planes281/331.')
-txt(245,219,'850 STRAIGHT after bend vs797 full-yield bond assumption.')
-txt(245,227,'Actual arm/terminal route and all8starters still require review.')
-txt(245,235,'Red depicts2representative routes; this is not a 3D shop drawing.')
-txt(14,282,f"N samples0–850;curvature0–45/5degrees;min resultant{pile_min:.2f}kNm vs141.42; section screen ONLY.")
-txt(14,290,'Lowtie/deck bearing, arch/frame/roof/ports and actual node/pile connection remain explicit duties; no joined or foundation pass.')
+txt(14,14,'OPEN N / eight actual starter routes and signed head actions','title')
+txt(14,23,'Two finite references: SWregular450(E/Narms) andloggiaNW570(W/Sarms); othernodeassignmentsstillintrinsicdesignwork')
+txt(14,36,'A / ALL8ROUTES AT SW · 1:10','title')
+nx=lambda x:15+x/10
+ny=lambda y:247-y/10
+box(nx(0),ny(2050),600/10,2050/10,'#e5ebe7')
+box(nx(600),ny(600),1450/10,600/10,'#e5ebe7')
+box(nx(0),ny(600),60,60,'#c5cfca')
+parts.append(f'<circle cx="{nx(300)}" cy="{ny(300)}" r="20" fill="none" stroke="#557f90" stroke-width=".5"/>')
+for a in starter_paths:
+    d='M'+' L'.join(f'{nx(x):.3f},{ny(y):.3f}' for x,y,z in a['points'])
+    colour='#a34f4d' if a['horizontal_plane']==-332 else '#b4753c'
+    parts.append(f'<path d="{d}" fill="none" stroke="{colour}" stroke-width="1.1"/>')
+    x,y,z=a['points'][0];txt(nx(x)+1,ny(y)-1,a['id'])
+txt(14,250,'E: P1/P2/P5/P6→actualouter-S; N:P3/P4/P7/P8→outer-W.')
+txt(14,258,'LoggiaNW rotates180: W→outer-N-W; S→loggia-W.')
+txt(14,266,'Botharms600wide/full450deep;1700developmentterritory.')
+txt(225,36,'B / ABSOLUTE z / ONE DATUM','title')
+for i,line in enumerate(['ORDINATE              REGULAR450     LOW570',
+                        'NodeTOP                    −180            −180',
+                        'NodeBASE / pilecutoff      −630            −750',
+                        'PrincipalEW/NSmats     −572/−552       −572/−552',
+                        'BendSTARTS             −623/−573       −623/−573',
+                        'H22horizontalplanes    −332/−282       −332/−282',
+                        'NormalARMbottom           −630            −630',
+                        'ArmTOPsteel               −238            −238']):txt(225,47+i*8,line)
+txt(225,121,'H22internal560 / R291;1200straight vs1139POORbond.')
+txt(225,129,f"Eightstarterpairclear≥{min(c['clear'] for c in starter_pairs):.2f}; fixedcagesandbendscheckedatdeclared22mmclear.")
+txt(225,137,'Curvedreturnscheckedin3D; nodeinteriorconfinementstillopen.')
+txt(225,153,'C / ACTUAL100/100 INTERFACE TRACTIONS','title')
+for i,state in enumerate(head_states):
+    txt(225,164+i*9,f"N{state['N']:.0f}: C{state['concrete_kN']:.1f}; steelT{state['steel_tension_kN']:.1f}/C{state['steel_compression_kN']:.1f}kN.")
+txt(225,205,'Sectoravg10.3–10.9;unredistributedpeak17>CTT11.22.')
+txt(225,213,'8.976iscrackedSTRUTcontrol;N/A6.76isnotN–Mproof.')
+txt(225,225,'Signedsector+8steelforcescloseN/Mx/My; capstrutfield,')
+txt(225,233,'bend-bearingconfinement andstartercoupletransferOPEN.')
+txt(14,282,'INTERNALWORKREMAINS: allothernodearmrouting/interiortransversecage+N–Mcapcompressionfield. Site/soil/group/lateral/upliftacceptanceisseparate.')
+txt(14,290,'Nojoinednode,floor,houseorfoundationPASS. Drawn450/570profilesareexplicitcalculationscope,notconstructionrelease.')
 parts.append('</svg>\n')
 node_svg='\n'.join(parts)
-for name,content in [('open-loggia-support.json',json.dumps(result,indent=2)+'\n'),('open-loggia-support.svg',main_svg),('open-loggia-node.svg',node_svg)]:
+parts=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">',
+       '<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:3.1px}.title{font-size:4.6px;font-weight:bold}</style>',
+       '<rect width="420" height="297" fill="#faf8f1"/>']
+txt(14,14,'OPEN N / wet beam–receiver joint, finite bars and hooks','title')
+txt(14,23,'RC200×350 / receiver260×450 / c25,H6links,16maximumaggregate / no room or whole-house acceptance')
+txt(14,36,'A / RECEIVER PLAN · 1:3','title')
+box(20,45,260/3,150,'#d9e2de')
+box(30,45,200/3,150,'none','#b4753c')
+for a in column_bars:
+    x,y,z=a['points'][0]
+    parts.append(f'<circle cx="{20+x/3}" cy="{45+y/3}" r="{8/3}" fill="#4b716c"/>')
+for a in joint_bars:
+    x=a['points'][0][0]
+    ln(20+x/3,45+90/3,20+x/3,195,'#a34f4d' if a['dia']==16 else '#b4753c')
+txt(14,207,'Beam centred: localx30..230; bottomx90/130/170.')
+txt(14,215,'Column4H16: x39/221,y39/411; linksH6 c25.')
+txt(14,223,'Jointbeamlinks y350/450 only, beforecurves; ownbarcontactintentional.')
+txt(150,36,'B / NS HOOK PROFILE · 1:6','title')
+jx=lambda y:145+y/6
+jz=lambda z:45+(3370-z)/6
+box(jx(0),jz(3370),450/6,(3370-2100)/6,'#d9e2de')
+box(jx(450),jz(3370),25,350/6,'#c5cfca')
+for a in [joint_bars[0],joint_bars[3]]:
+    d='M'+' L'.join(f'{jx(y):.3f},{jz(z):.3f}' for x,y,z in a['points'])
+    parts.append(f'<path d="{d}" fill="none" stroke="{"#a34f4d" if a["dia"]==16 else "#b4753c"}" stroke-width="{a["dia"]/6}"/>')
+for z in [3010,3110,3210,3270]:ln(jx(28),jz(z),jx(422),jz(z),'#8b9995')
+txt(256,55,'Top3370 / beamsoffit3020 / lining3005.')
+txt(256,65,'BottomH16: z3059, internalmandrel450;')
+txt(256,73,'centrelineR233, verticaltail600 toz2226.')
+txt(256,85,'TopH10: z3334, internalmandrel180;')
+txt(256,93,'R95, tail110 toz3129, abovemainbars.')
+txt(256,105,'Allhooks: leglocaly90; south/northmirrored.')
+txt(256,117,f"Minimumindependentbarclear{wet['receiver_joint']['clearance_minimum']:.2f} >=21mm.")
+txt(256,129,'Bottomfullfy lbrqd580; actualpath1093mm.')
+txt(256,137,'TopPOORbond lbrqd518; actualpath524mm.')
+txt(256,149,'Fullfyconcretebenddemand: H16~418<450;')
+txt(256,157,'H10~151<180. No shortmandrelshortcut.')
+txt(256,173,'Southsupport8852.5; north11512.5;')
+txt(256,181,'loaded155cantileverto11667.5 explicit.')
+txt(256,197,'Northpierends11737.5, insideinnercore;')
+txt(256,205,'not projecting concrete into weathercavity.')
+txt(14,278,'Separate downstream duties: lowercolumn/groundjoint, uppermasonryentry, localtolerances/exposure andHADdoor/windowfit.')
+txt(14,287,'Curves2degreechords; numericalclearances subtract0.1mm >0.036mmchorderror. No site reinforcement acceptance follows.')
+parts.append('</svg>\n')
+joint_svg='\n'.join(parts)
+for name,content in [('open-loggia-support.json',json.dumps(result,indent=2)+'\n'),('open-loggia-support.svg',main_svg),('open-loggia-node.svg',node_svg),('open-loggia-wet-joint.svg',joint_svg)]:
     p=OUT/name
     if '--check' in sys.argv:
         if not p.exists() or p.read_text()!=content: raise SystemExit('STALE '+str(p))
