@@ -9,8 +9,8 @@
     "label": "zerg2-mat-loggia"
   },
   "claimedAt": "2026-11-01T20:06:02.804Z",
-  "heartbeatAt": "2026-11-01T23:17:12.841Z",
-  "expiresAt": "2026-11-02T00:02:12.841Z",
+  "heartbeatAt": "2026-11-01T23:31:02.296Z",
+  "expiresAt": "2026-11-02T00:16:02.296Z",
   "branch": "work/zerg2-mat-loggia",
   "predecessor": {
     "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published roof4f40a85df6adf4dfe7befb1258ce02fda1a3778a treebff067c78e5a633350a4a625d940af8a81fed43f exactnative/local tree verified. Roof500.7normal/purlin120/complete176protectedceiling geometry generated checked rendered and inspected.",
-    "next": "Join actual roof support and weather/material boundaries; compare current complete PERINSUL-HL thermalcourse against AAC; reconcile immutable HAD0b2f and upcoming actual arch repairs.",
-    "blocker": "No roof material/fire/thermal admission; full ground node still unproved after bounded specialist subdetail. Ground D1600 remains unselected costcontrol."
+    "evidence": "Published f8784112a84c6c0d6c760d246c197c7a5e9989c4 tree4d9e0c96bb5d6f80f278d486217e4cf7838571da exact tree verified. Complete PERINSUL stock/factory-scope contact comparison checked at5/2.5grid and actual rendered adverse sections inspected. Roof actual grid and176protectedceiling joined.",
+    "next": "Repair actual775portal and wholeliner renewal sweep; give owning exit table separating earned internal development, real design gaps and later product/site acceptance.",
+    "blocker": "Ground course comparison rejects complete recommendation: PEretained, stockline/pointfoot failures and widened thermal penalty. D1400/D1600 unselected; fullprimarynode unproved."
   }
 }
