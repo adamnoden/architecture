@@ -9,8 +9,8 @@
     "label": "zerg4-whole-house-services"
   },
   "claimedAt": "2026-11-01T21:02:38.591Z",
-  "heartbeatAt": "2026-11-01T23:04:28.384Z",
-  "expiresAt": "2026-11-01T23:49:28.384Z",
+  "heartbeatAt": "2026-11-01T23:23:02.577Z",
+  "expiresAt": "2026-11-02T00:08:02.577Z",
   "branch": "work/zerg4-whole-house-services",
   "predecessor": {
     "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote 26ee1258d1c4f3311faea18ccface1acd3607fb2 tree c7923d979641639cf5d34598ce8010daf39112a9 preserves bounded incomplete whole-house baseline.",
-    "next": "Close actual fan operating point and terminal renewal contracts; publish updated sink and rear shower interfaces.",
-    "blocker": "Internal fan performance and final terminal renewal joins remain incomplete; no product or material admission claimed."
+    "evidence": "Published0e54959e28946b1bab1f04d439588477c05eb3d2 tree4076697c2802754a4c622a271bc9ecb5486558fa; testedTitonfamily pressure comparison and WESTrear1000 interface preserve constructive source.",
+    "next": "Finish actual source-bound terminal drawings and emitter placement; reconcile metal concealment and IAS140high skate interface.",
+    "blocker": "Internal finite emitter/drawing joins remain; later apparatus/material/site admission explicitly separate."
   }
 }
