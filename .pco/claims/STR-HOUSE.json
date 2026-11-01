@@ -9,8 +9,8 @@
     "label": "zerg3-structure-loggia"
   },
   "claimedAt": "2026-11-01T20:04:17.184Z",
-  "heartbeatAt": "2026-11-01T23:35:29.207Z",
-  "expiresAt": "2026-11-02T00:20:29.207Z",
+  "heartbeatAt": "2026-11-01T23:37:10.026Z",
+  "expiresAt": "2026-11-02T00:22:10.026Z",
   "branch": "work/zerg3-structure-loggia",
   "predecessor": {
     "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote dce8f4dae4ffc3201056d5885ed8181949699e8d exacttree372d9df416c2e30de330afe464189759fb21ef58; HAD0b2f actual stair/floor receiver calculation and renders; sealed Astra scripts preserved and LP negativecontrol independently reproduced; source PR acceptance table prepared",
-    "next": "Create reviewable bounded source PR; complete actual repaired HAD roof arch lateral and service topology while retaining STR-HOUSE incomplete; root sequences independent review/integration",
-    "blocker": "No adopted house or joint pass: known400 detail rejected/unearned; actual roof/circular arch/bridge/ports and inhabited tests still to join; site/final fabrication is later acceptance rather than invented own exit"
-  }
+    "evidence": "Source PR1235 head4c6f282560354a7a34a2a74531d100451393ba3f tree5547c1f25d2a1423fa59ea7dac23ed0eae74040a exactlocalremote; actualHAD0b2f floor/stair/receiver calculation/render checks and repository integrity PASS; frozen node review/failed LP preserved; owning bounded acceptance table",
+    "next": "Commander independent review/exact-head CI and bounded source integration; owning STR continues roof circular arch lateral service and inhabited source joins after frozen PR snapshot",
+    "blocker": "STR-HOUSE remains incomplete; no accepted house/foundation detail; actual source/root adoption conditions explicitly separated from later competent engineering/site acceptance"
+  },
+  "pr": 1235
 }
