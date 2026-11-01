@@ -9,8 +9,8 @@
     "label": "zerg4-ias-convergence"
   },
   "claimedAt": "2026-11-01T21:28:29.086Z",
-  "heartbeatAt": "2026-11-01T21:28:29.086Z",
-  "expiresAt": "2026-11-01T22:13:29.086Z",
+  "heartbeatAt": "2026-11-01T21:41:37.128Z",
+  "expiresAt": "2026-11-01T22:26:37.128Z",
   "branch": "work/zerg4-ias-convergence",
   "predecessor": {
     "leaseId": "10049375-f6a2-4aa4-87a5-3da538b5d0dd",
@@ -33,5 +33,10 @@
       "next": "ObserveexactheadfullCI assoleobserver; rootcommandsfresh4pernodepreflights thenexpectedheadmerge",
       "blocker": "FullCIpending; wholeinventory/physical/materialadmission remainunaccepted"
     }
+  },
+  "checkpoint": {
+    "evidence": "Published0e8313d866ff5cae9286046af256f68af49a95d1 exacttree9e736db041c754356029e1780423e476404f7daf; selected family direction and IS01-06 candidate dispositions durably recorded; HADa324 immutable input documented, no fake parents",
+    "next": "Produce located occurrence/disassembly drawings and source checks; join stable MAT/services baseline and protected HAD operation; independent review before PR",
+    "blocker": "Convergence in progress; previous mailbox timed out without CAS and remote exact gen14 reconciled before this fresh renewal"
   }
 }
