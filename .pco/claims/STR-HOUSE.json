@@ -9,8 +9,8 @@
     "label": "zerg-worker-three-20261101"
   },
   "claimedAt": "2026-11-01T14:58:14.650Z",
-  "heartbeatAt": "2026-11-01T15:41:00.056Z",
-  "expiresAt": "2026-11-01T16:26:00.056Z",
+  "heartbeatAt": "2026-11-01T15:48:22.821Z",
+  "expiresAt": "2026-11-01T16:33:22.821Z",
   "branch": "work/zerg-final-integration-20261101",
   "predecessor": {
     "leaseId": "6b888f33-8d6e-41f2-8d06-346d8bd154af",
@@ -31,9 +31,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Combined PR1224 head78457f42d3ab32a2a62c1ab64b8465bc3466b15f preserves finalHOUSE a3b404f4: guarded deterministic study,16paths with20mm radial reserve, actualSVG inspection, root/peer source and pathQA. No geometry adoption or HOUSE completion.",
-    "next": "Wait full exact-head combinedCI; run own fresh merge-check against combinedhead; integrate then release handoff. Remaining HOUSE duties are joined structural junctions and whole-house occupation/services.",
-    "blocker": "Combined exact-head CI pending"
+    "evidence": "Merged PR1224 at1e7b2cbce408834ca3cbb91c286af37eda066829; main ancestry and all6HOUSEfile payloads verified. FinalHOUSE a3b404f4 is included. Exact-head fullCI41322417761 attempt2 and15:46:02Z STR-HOUSE preflight passed. STR-HOUSE remains planned.",
+    "next": "Develop one joined structural candidate: actual140mm shared/one-sided riser bearings and supported closure, stair/bridge seats/headroom, arch thrust/base paths and roof heel/corners. Rebind HAD600mm court passages and ground-floor splice to B geometry; confirm compact-single/storage premise before adoption."
   },
   "pr": 1224
 }
