@@ -9,8 +9,8 @@
     "label": "zerg2-mat-loggia"
   },
   "claimedAt": "2026-11-01T20:06:02.804Z",
-  "heartbeatAt": "2026-11-01T20:20:41.299Z",
-  "expiresAt": "2026-11-01T21:05:41.299Z",
+  "heartbeatAt": "2026-11-01T20:48:02.817Z",
+  "expiresAt": "2026-11-01T21:33:02.817Z",
   "branch": "work/zerg2-mat-loggia",
   "predecessor": {
     "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote checkpoint4eae06e14b470aa99b814b76257967fbfba3d759 treef4ac0fb6 exact local equality; actual source-bound507.5 wall/2930 soffit/separate DPC bands A3 section rendered and inspected; reproducer/diffcheck pass against HAD1068dd38",
-    "next": "Resolve outdoor suspended deck and finite N/E route, cavity tray/floor-DPC path and actual remaining south court door first harm; complete anchors/thermal checks with HAD/STR then independent review",
-    "blocker": "Conditional development checkpoint: no complete deck/tray/water boundary, support/ground level or material/technical admission"
+    "evidence": "Remote checkpointbfceca7fb553fe32041fc0ce821b49a381afa370 tree45f59e48 exact local equality; actual507.5 wall/2930soffit,600beam cap-island geometry, formed cavity tray and sloped outdoor deck/raised outlet/access are durable; repr/diff checks pass",
+    "next": "Complete cap-island movement cover and cavity outlet/collector detail, actual remaining south-door first harm, finite N/E receiving states and thermal/anchor checks; render and independent review before integration",
+    "blocker": "Reference target D1300 from actual cap722.5; deck joints/supports/receivers and technical/material admission remain unqualified"
   }
 }
