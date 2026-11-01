@@ -1,10 +1,10 @@
 {
   "status": "In-progress interior selection; no whole-house, material or physical admission",
   "source": {
-    "hadCommit": "a324a50d047843603d6fc275c4062bc9d0c1cb90",
+    "hadCommit": "20ff8709a79a63e7d4bcd13fc6b86ef36a5a9a00",
     "hadPath": "project/had/studies/open-north-loggia.json",
-    "hadBlob": "1412e628aa6b539664c8f5efd507595623cf2a21",
-    "fetch": "git fetch origin a324a50d047843603d6fc275c4062bc9d0c1cb90"
+    "hadBlob": "bd3ba6057ed8f58cd14120bad9aab04553d309c0",
+    "fetch": "git fetch origin 20ff8709a79a63e7d4bcd13fc6b86ef36a5a9a00"
   },
   "family": {
     "id": "IAS-FAM-27-01",
@@ -29,13 +29,13 @@
     ],
     "basin": [
       11227.5,
-      5300,
+      5200,
       340,
       450
     ],
     "pan": [
       10777.5,
-      5800,
+      5750,
       560,
       355
     ],
@@ -46,10 +46,10 @@
       1900
     ],
     "column": [
-      11342.5,
-      6180,
-      180,
-      180
+      11297.5,
+      6135,
+      270,
+      265
     ],
     "door": {
       "roughY": [
@@ -127,11 +127,11 @@
         ],
         [
           10350,
-          5475
+          5425
         ],
         [
           10880,
-          5475
+          5425
         ]
       ],
       "bath": [
@@ -242,11 +242,11 @@
         ],
         [
           10350,
-          5475
+          5425
         ],
         [
           10880,
-          5475
+          5425
         ]
       ],
       "minimumReserve": 25,
@@ -303,18 +303,18 @@
     "sampleIntervals": 3000,
     "openReleaseStraightArmReserve": 15,
     "openReleaseReach": 614.456670563515,
-    "minimumFixedSample": 80.79686185681732,
+    "minimumFixedSample": 77.5,
     "minimumLeafSample": 70.68398036428107,
     "bodyHalfStepBound": 0,
     "leafHalfStepBound": 0.1998234312946098,
-    "minimumFixedLowerBound": 80.79686185681732,
+    "minimumFixedLowerBound": 77.5,
     "minimumLeafLowerBound": 70.48415693298647,
-    "operation": "Enter with the complete closer-supported door OPEN; release the exposed outer handle at the waiting station; let the selected controlled closer shut/latch while the body waits outside the swept leaf; then walk to the closed-door task station. No mid-sweep regrip is selected.",
+    "operation": "Enter with the controlled mechanical door OPEN; release and withdraw the hand during the first2degrees of slow controlled closing; then let the complete delayed-action closer shut/latch while the body waits outside the swept leaf; then walk to the closed-door task station. No mid-sweep regrip is selected.",
     "rejectedPullControl": "A separate manual pull/regrip at30degrees had a13.604mm straight-arm collision despite clear body/reach; rejected.",
     "armAndRegripAccepted": false,
     "closerRequired": true,
     "physicalForceAndCertifiedCompatibilityAccepted": false,
-    "delayRequirement": "The complete compatible closer must provide a controlled OPEN dwell sufficient for hand withdrawal before sweep; an arbitrary moving-leaf pause is not assumed. Actual delay, withdrawal time, force and classification are admission requirements."
+    "delayRequirement": "Configure and physically verify the complete compatible mechanical delayed-action closer so this hand withdrawal completes before2degrees of closing; no stationary pause, powered operator or ordinary hold-open arm is assumed."
   },
   "push": {
     "bodyPath": [
@@ -1789,5 +1789,632 @@
     "governor": "cabinet",
     "passes": true,
     "doorState": "OPEN"
+  },
+  "withdrawal": {
+    "start": [
+      10009,
+      6224
+    ],
+    "end": [
+      10282.7,
+      5892.2
+    ],
+    "doorClosingDegrees": 2,
+    "leafLower": 14.771618603216462,
+    "fixedLower": 135.78494016530277,
+    "speedRequirement": "Configure and physically verify the complete compatible mechanical delayed-action closer so this hand withdrawal completes before2degrees of closing; no stationary pause, powered operator or ordinary hold-open arm is assumed.",
+    "primaryFunctionalControl": "https://dormakaba-res.cloudinary.com/image/upload/v1745407038/dormakaba-prod/120000000136-dormakaba-door-closer-ts83-technical-folder-en.pdf",
+    "controlScope": "TS83 BC+DC manufacturer functional control: retarded180–70degree motion, not a selected classified kit or complete material admission."
+  },
+  "kitchen": {
+    "status": "Authored whole-station renewal witness against pinned HAD furniture; finish/trim join pending",
+    "ordinary": {
+      "dining-table1200x800": [
+        8500,
+        9100,
+        800,
+        1200
+      ],
+      "dining-chair-west-south": [
+        8000,
+        9150,
+        500,
+        500
+      ],
+      "dining-chair-west-north": [
+        8000,
+        9750,
+        500,
+        500
+      ],
+      "dining-chair-east-south": [
+        9300,
+        9150,
+        500,
+        500
+      ],
+      "dining-chair-east-north": [
+        9300,
+        9750,
+        500,
+        500
+      ],
+      "north-sink-station": [
+        8700,
+        10970.5,
+        900,
+        600
+      ],
+      "north-cooking-station": [
+        10800,
+        10970.5,
+        600,
+        600
+      ],
+      "cold-storage": [
+        10920.5,
+        9025,
+        650,
+        650
+      ]
+    },
+    "station": [
+      900,
+      600,
+      1000
+    ],
+    "windowSill": 1050,
+    "handling": "A whole supported sink/frame/top station, not a bowl clip extraction. Disconnect isolated dry services and remove tap to <=1000 before first movement; actual mass, rig, connections and full constituent assembly remain required.",
+    "lostTasks": [
+      "Dining",
+      "Food preparation",
+      "North-window operation",
+      "Ordinary kitchen access during large-piece movement"
+    ],
+    "restoration": "Reverse checked furniture/station sequence, reconnect and test services and wet joints before restoring all tasks.",
+    "deviation": "Both complete north stations12S to10970.5 to clear new11570.5 north face; table/chairs use exact20ff ordinary+50N state; flush constrained base is IAS proposal.",
+    "hallTurn": {
+      "centre": [
+        8740,
+        3330
+      ],
+      "radius": 540.8326913195984,
+      "minimumReserve": 21.989660759634376
+    },
+    "moves": [
+      {
+        "stage": "park chairs1",
+        "id": "dining-chair-east-north",
+        "path": [
+          [
+            9300,
+            9750
+          ],
+          [
+            9900,
+            9750
+          ],
+          [
+            9900,
+            10300
+          ],
+          [
+            7750,
+            10300
+          ],
+          [
+            7750,
+            10250
+          ]
+        ],
+        "minimumSeparation": 0,
+        "governor": "dining-table1200x800"
+      },
+      {
+        "stage": "park chairs2",
+        "id": "dining-chair-west-north",
+        "path": [
+          [
+            8000,
+            9750
+          ],
+          [
+            7750,
+            9750
+          ],
+          [
+            7750,
+            9700
+          ]
+        ],
+        "minimumSeparation": 0,
+        "governor": "dining-table1200x800"
+      },
+      {
+        "stage": "park chairs3",
+        "id": "dining-chair-west-south",
+        "path": [
+          [
+            8000,
+            9150
+          ],
+          [
+            7750,
+            9150
+          ],
+          [
+            7750,
+            9150
+          ]
+        ],
+        "minimumSeparation": 0,
+        "governor": "dining-table1200x800"
+      },
+      {
+        "stage": "park chairs4",
+        "id": "dining-chair-east-south",
+        "path": [
+          [
+            9300,
+            9150
+          ],
+          [
+            9300,
+            8500
+          ],
+          [
+            7750,
+            8500
+          ],
+          [
+            7750,
+            8600
+          ]
+        ],
+        "minimumSeparation": 0,
+        "governor": "dining-table1200x800"
+      },
+      {
+        "stage": "supported withdrawal and aisle translation",
+        "id": "north-sink-station",
+        "path": [
+          [
+            8700,
+            10970.5
+          ],
+          [
+            8700,
+            10370.5
+          ],
+          [
+            9916.25,
+            10370.5
+          ],
+          [
+            9916.25,
+            9700
+          ]
+        ],
+        "minimumSeparation": 0,
+        "governor": "outer-north"
+      },
+      {
+        "stage": "table550 north after sink clears table sweep",
+        "id": "dining-table1200x800",
+        "path": [
+          [
+            8500,
+            9100
+          ],
+          [
+            8500,
+            9650
+          ]
+        ],
+        "minimumSeparation": 250,
+        "governor": "dining-chair-west-south"
+      },
+      {
+        "stage": "station through kitchen open arch",
+        "id": "north-sink-station",
+        "path": [
+          [
+            10066.25,
+            9550
+          ],
+          [
+            10066.25,
+            8512.5
+          ],
+          [
+            8369,
+            8512.5
+          ],
+          [
+            8369,
+            7675
+          ]
+        ],
+        "minimumSeparation": 88,
+        "governor": "rear-east"
+      },
+      {
+        "stage": "east gallery and open cross-door",
+        "id": "north-sink-station",
+        "path": [
+          [
+            8369,
+            7675
+          ],
+          [
+            8369,
+            5500
+          ],
+          [
+            8440,
+            5500
+          ],
+          [
+            8440,
+            2880
+          ]
+        ],
+        "minimumSeparation": 51.75,
+        "governor": "FD-EAST-OPEN"
+      },
+      {
+        "stage": "entrance and front opening",
+        "id": "north-sink-station",
+        "path": [
+          [
+            8290,
+            3030
+          ],
+          [
+            5550,
+            3030
+          ],
+          [
+            5550,
+            -650
+          ]
+        ],
+        "minimumSeparation": 23.853720883753127,
+        "governor": "service-spine"
+      }
+    ],
+    "firstTurn": {
+      "centre": [
+        10366.25,
+        10000
+      ],
+      "radius": 540.8326913195984,
+      "minimumReserve": 101.67650122164457
+    },
+    "lastState": {
+      "dining-table1200x800": [
+        8500,
+        9650,
+        800,
+        1200
+      ],
+      "dining-chair-west-south": [
+        7750,
+        9150,
+        500,
+        500
+      ],
+      "dining-chair-west-north": [
+        7750,
+        9700,
+        500,
+        500
+      ],
+      "dining-chair-east-south": [
+        7750,
+        8600,
+        500,
+        500
+      ],
+      "dining-chair-east-north": [
+        7750,
+        10250,
+        500,
+        500
+      ],
+      "north-sink-station": [
+        5550,
+        -650,
+        900,
+        600
+      ],
+      "north-cooking-station": [
+        10800,
+        10970.5,
+        600,
+        600
+      ],
+      "cold-storage": [
+        10920.5,
+        9025,
+        650,
+        650
+      ]
+    },
+    "scope": "Plan-body transport only; zero contacts at ordinary chair/table interfaces are not handling margins. No100 handling pad, lifting force, dimensional tolerance or safe rig is proved."
+  },
+  "corrections": {
+    "inputStatus": "EXPLICIT INCOMPLETE27DRY/30WET TRIAL; failed witnesses retained, no adoption.",
+    "principalWardrobeRoute": {
+      "points": [
+        [
+          8730,
+          8824.5
+        ],
+        [
+          8730,
+          10000
+        ],
+        [
+          9000,
+          10000
+        ],
+        [
+          9000,
+          11235
+        ],
+        [
+          10200,
+          11235
+        ],
+        [
+          11235,
+          11100
+        ]
+      ],
+      "minimumReserve": 17.5,
+      "governor": "outer-north+18trim",
+      "passes": true
+    },
+    "westCorrection": {
+      "body": "H+360u+330n",
+      "grip": "H+744u+84n",
+      "u": "(-cosθ,sinθ)",
+      "n": "(-sinθ,-cosθ)",
+      "rangeDegrees": [
+        0,
+        90
+      ],
+      "hinge": [
+        3793,
+        4250
+      ],
+      "leaf": [
+        794,
+        44
+      ],
+      "bodyLower": 6.880925760342233,
+      "armLower": 6.426994628954056,
+      "reachUpper": 457.1190379996419,
+      "scope": "One ordinary reversible controlled trajectory under full27faces+18trim and actual25jambs; no new mechanism or assembly qualification."
+    },
+    "pantryCorrection": {
+      "hinge": [
+        11315,
+        8290
+      ],
+      "leaf": [
+        830,
+        44
+      ],
+      "rough": [
+        10450,
+        11350
+      ],
+      "frameEach": 25,
+      "edgeGapEach": 10,
+      "opening": "SOUTH into pantry, high/east hinge; ordinary full closure retained",
+      "body": "H+390u−345n",
+      "grip": "H+780u−84n",
+      "u": "(-cosθ,-sinθ)",
+      "n": "(sinθ,-cosθ)",
+      "bodyLower": 18.124647072060032,
+      "armLower": 14.081295785223285,
+      "reachUpper": 470.4161113444861,
+      "states": [
+        {
+          "degrees": 0,
+          "body": [
+            10925,
+            8635
+          ],
+          "grip": [
+            10535,
+            8374
+          ],
+          "tip": [
+            10485,
+            8290
+          ]
+        },
+        {
+          "degrees": 10,
+          "body": [
+            10871.016355030148,
+            8562.035885499108
+          ],
+          "grip": [
+            10532.263505726456,
+            8237.27827267282
+          ],
+          "tip": [
+            10497.609564999868,
+            8145.872012536448
+          ]
+        },
+        {
+          "degrees": 20,
+          "body": [
+            10830.52292844614,
+            8480.806098274128
+          ],
+          "grip": [
+            10553.310063747635,
+            8102.158468351994
+          ],
+          "tip": [
+            10535.055124747696,
+            8006.123281039695
+          ]
+        },
+        {
+          "degrees": 30,
+          "body": [
+            10804.75009252407,
+            8393.77876430563
+          ],
+          "grip": [
+            10597.500185048139,
+            7972.746133917893
+          ],
+          "tip": [
+            10596.198914858916,
+            7875
+          ]
+        },
+        {
+          "degrees": 40,
+          "body": [
+            10794.480941841743,
+            8303.598165098298
+          ],
+          "grip": [
+            10663.491175153527,
+            7852.973397666494
+          ],
+          "tip": [
+            10679.183112211249,
+            7756.486283960172
+          ]
+        },
+        {
+          "degrees": 50,
+          "body": [
+            10800.027499346203,
+            8213.004392525454
+          ],
+          "grip": [
+            10749.277931222505,
+            7746.479493580867
+          ],
+          "tip": [
+            10781.486283960172,
+            7654.183112211248
+          ]
+        },
+        {
+          "degrees": 60,
+          "body": [
+            10821.22123569437,
+            8124.750092524069
+          ],
+          "grip": [
+            10852.253866082106,
+            7656.500185048138
+          ],
+          "tip": [
+            10900,
+            7571.198914858916
+          ]
+        },
+        {
+          "degrees": 70,
+          "body": [
+            10857.418189931852,
+            8041.516827340851
+          ],
+          "grip": [
+            10969.290108059962,
+            7585.7694478263475
+          ],
+          "tip": [
+            11031.123281039694,
+            7510.055124747696
+          ]
+        },
+        {
+          "degrees": 80,
+          "body": [
+            10907.518535920686,
+            7965.83359762033
+          ],
+          "grip": [
+            11096.830570166769,
+            7536.4363995745
+          ],
+          "tip": [
+            11170.872012536447,
+            7472.609564999867
+          ]
+        },
+        {
+          "degrees": 90,
+          "body": [
+            10970,
+            7900
+          ],
+          "grip": [
+            11231,
+            7510
+          ],
+          "tip": [
+            11315,
+            7460
+          ]
+        }
+      ]
+    },
+    "pantryApproach": {
+      "points": [
+        [
+          10200,
+          8771.25
+        ],
+        [
+          10600,
+          8771.25
+        ],
+        [
+          10750,
+          8700
+        ],
+        [
+          10925,
+          8635
+        ]
+      ],
+      "minimumReserve": 28.75,
+      "governor": "rear-east+18trim",
+      "passes": true
+    },
+    "fridgeCorrection": {
+      "hinge": [
+        10920.5,
+        9025
+      ],
+      "panelBudget": [
+        650,
+        70
+      ],
+      "opening": "LOW/south hinge opens WEST; pantry CLOSED during fridge task",
+      "body": "H+250u+345n",
+      "grip": "H+600u+95n",
+      "u": "(-sinθ,cosθ)",
+      "n": "(-cosθ,-sinθ)",
+      "bodyLower": 9.060962677353777,
+      "armLower": 18.90264667835915,
+      "reachUpper": 431.01818998262075,
+      "scope": "650×650 source appliance box retained, whole650×70 moving-panel compatibility budget; appliance supplied door/hinge/handle/insulation/forces still to bind."
+    }
   }
 }
