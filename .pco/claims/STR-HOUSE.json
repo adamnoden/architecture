@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 10,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-structure"
   },
   "claimedAt": "2026-11-01T19:23:15.470Z",
-  "heartbeatAt": "2026-11-01T19:52:22.099Z",
-  "expiresAt": "2026-11-01T20:37:22.099Z",
+  "heartbeatAt": "2026-11-01T20:01:26.298Z",
+  "expiresAt": "2026-11-01T20:01:26.298Z",
   "branch": "work/zerg2-integration-20261101",
   "predecessor": {
     "leaseId": "fddbc95b-91e0-4257-8c44-85427d4e08d7",
@@ -37,5 +37,7 @@
     "next": "Root full exact-head CI and per-node fresh publication preflight; integrate shared PR1229 then release STR lease",
     "blocker": "Shared exact-head full CI pending; no geometry adoption or STR-HOUSE completion"
   },
-  "pr": 1229
+  "pr": 1229,
+  "releasedAt": "2026-11-01T20:01:26.298Z",
+  "releaseReason": "handoff"
 }
