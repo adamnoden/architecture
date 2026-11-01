@@ -11,6 +11,8 @@
     "distribution": 65,
     "glass": 100,
     "rcCap": 100,
+    "permanentBridgeExtra": 20,
+    "clearanceBelowBridge": 10,
     "airLid": 6,
     "copperSealEnvelope": 2
   },
@@ -41,6 +43,19 @@
   "afterStress": 110.5,
   "reserveSurplus": 60.5,
   "failedD1200": -39.5,
+  "capModuleLength": 400,
+  "airLidGross": [
+    660,
+    840
+  ],
+  "airLidClear": [
+    600,
+    780
+  ],
+  "carrierBodyWidth": 200,
+  "carrierJointWidth": 300,
+  "carrierCrossingPieceLength": 750,
+  "liftTravel": 650,
   "ordinaryDpc": {
     "courses": 2,
     "units": 65,
