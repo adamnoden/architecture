@@ -9,9 +9,9 @@
     "label": "zerg-worker-one"
   },
   "claimedAt": "2026-11-01T14:55:11.984Z",
-  "heartbeatAt": "2026-11-01T14:55:11.984Z",
-  "expiresAt": "2026-11-01T15:40:11.984Z",
-  "branch": "work/zerg-one-20261101",
+  "heartbeatAt": "2026-11-01T14:57:00.692Z",
+  "expiresAt": "2026-11-01T15:42:00.692Z",
+  "branch": "work/mvb-chat-6559339044",
   "predecessor": {
     "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
     "generation": 20,
@@ -33,5 +33,10 @@
       "next": "Run native control:merge-check against live lease and main; merge with expected head if valid. Otherwise retain PR as handoff.",
       "blocker": "Connector-only chat cannot run native preflight; HAD-03 remains planned pending complete N/E physical design."
     }
+  },
+  "pr": 1215,
+  "checkpoint": {
+    "evidence": "Recover unchanged PR #1215 head abec91851b9117909717b699391e008c9288b442; inherited exact-head full CI passed; no code writes to predecessor branch",
+    "next": "Revalidate packet declaration, fresh merge-check and expected-head merge, then return to replacement branch"
   }
 }
