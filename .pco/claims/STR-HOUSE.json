@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 11,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "62b3cbcd-60b8-45ea-a263-d1c45df66454",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg3-structure-loggia"
   },
   "claimedAt": "2026-11-01T20:04:17.184Z",
-  "heartbeatAt": "2026-11-01T23:49:43.545Z",
-  "expiresAt": "2026-11-02T00:34:43.545Z",
+  "heartbeatAt": "2026-11-01T23:54:22.084Z",
+  "expiresAt": "2026-11-01T23:54:22.084Z",
   "branch": "work/zerg3-structure-loggia",
   "predecessor": {
     "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
@@ -39,5 +39,7 @@
     "next": "Commander fresh exact-head CI and integration-only delta review then canonical merge preflight; source frozen while root sequences merge",
     "blocker": "STR-HOUSE bounded output remains incomplete; no changes to accepted geometry or frozen engineering scope; full exact-head CI pending"
   },
-  "pr": 1235
+  "pr": 1235,
+  "releasedAt": "2026-11-01T23:54:22.084Z",
+  "releaseReason": "completed"
 }
