@@ -72,6 +72,8 @@ Missing product/connection, physical and competent-review evidence retains BCR/E
 
 ## Reproduction and inspection
 
+The reproducible study environment is **NumPy 2.3.5 and Matplotlib 3.10.8**. The generator checks those exact versions before producing or comparing its deterministic JSON/SVG. No repository dependency or CI permission is changed.
+
 Run:
 
 ```sh

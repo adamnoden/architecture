@@ -9,6 +9,8 @@ os.environ.setdefault('MPLCONFIGDIR', '/tmp/str-bedroom-mpl')
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
+assert np.__version__ == '2.3.5', 'Use the declared NumPy 2.3.5 study environment'
+assert matplotlib.__version__ == '3.10.8', 'Use the declared Matplotlib 3.10.8 study renderer'
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle, Polygon
 OUT=Path(__file__).resolve().parent
