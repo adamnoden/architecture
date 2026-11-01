@@ -9,8 +9,8 @@
     "label": "zerg-worker-six"
   },
   "claimedAt": "2026-11-01T14:58:17.507Z",
-  "heartbeatAt": "2026-11-01T14:58:17.507Z",
-  "expiresAt": "2026-11-01T15:43:17.507Z",
+  "heartbeatAt": "2026-11-01T15:03:46.299Z",
+  "expiresAt": "2026-11-01T15:48:46.299Z",
   "branch": "work/zerg-mat-envelope-20261101",
   "predecessor": {
     "leaseId": "645bd93f-654f-47a8-9a5b-ec2c2b0f2800",
@@ -29,5 +29,9 @@
       "evidence": "Draft installed-glazing comparison now locates the actual Study aperture and separates the pane core, complete edge/support/bedding and safety duties. Official Spacia GL046/047/071 identify its permanent plastic cap. FINEO EPD packaging is distinguished from installed Others; retrofit limitations and the small-pane exceptions are bounded. Public technical assessments are being checked before external holds. No geometry, material exception or node completion.",
       "next": "Inspect FINEO CSTB DTA and ETA, close the candidate comparison and constituent/programme links, independently review exact sources and final manuscript, then publish with exact-head full CI and fresh canonical merge preflight."
     }
+  },
+  "checkpoint": {
+    "evidence": "Pushed installed-glazing comparison, constituent O02 and programme link; DTA6/23-2441_V2 and ETA20/0048 reviewed with exact source counterevidence and bounded recommendation.",
+    "next": "Independent exact-source review, correct any findings, then full exact-head CI and coordinator merge sequencing."
   }
 }
