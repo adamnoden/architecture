@@ -9,8 +9,8 @@
     "label": "zerg2-s02-inventory"
   },
   "claimedAt": "2026-11-01T19:52:49.569Z",
-  "heartbeatAt": "2026-11-01T20:34:27.531Z",
-  "expiresAt": "2026-11-01T21:19:27.531Z",
+  "heartbeatAt": "2026-11-01T20:46:18.828Z",
+  "expiresAt": "2026-11-01T21:31:18.828Z",
   "branch": "work/zerg2-s02-inventory",
   "predecessor": {
     "leaseId": "a17ca040-a77b-4229-8273-15b4964bf355",
@@ -29,8 +29,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote7abdc5dee6a33d064a47e8d900aa5ac715aa01d9 tree46c7363676b2da448aeb9a72adf607f9c4ee339a; eight new source/output files. E02 finite collector,123socket/160 compatibility/arched port, low120rim D50 drop, bounded face ledger. --check and actual five renders inspected; independent QA pending.",
-    "next": "Access QA exact-source review; correct only owning errors; prepare draft PR and root-reviewed integration independently of loggia wave.",
-    "blocker": "Conditional reference only: product/outlet/material/structural/physical acceptance withheld. Family service frontage remains explicit bounded rewind."
-  }
+    "evidence": "PR1231 remote4b7294c5d6b7a7af896274315f6243a25a3220b8 tree28ea31b40a37a4ede52c3625a7f149aa1763fb34; sharedDrop JSONblob4680446018e2e530caf09e29bd8c90cbe26d3e5c. Finite collector and320arch, single T/A/B interface, full20panel layers, five SVGs rendered. Source/output/diff checks pass; independent access QA reports only final wording delta corrected.",
+    "next": "Root/access integrate with consuming interiors one-way interface; exact combined-head CI and per-node preflight; release after verified merge.",
+    "blocker": "Reference development only; actual product/structure/material/physical selection remains unaccepted. Wider MAT-SERVICES node stays planned."
+  },
+  "pr": 1231
 }
