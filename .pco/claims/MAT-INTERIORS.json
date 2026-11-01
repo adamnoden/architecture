@@ -9,9 +9,9 @@
     "label": "zerg2_interiors"
   },
   "claimedAt": "2026-11-01T19:57:48.734Z",
-  "heartbeatAt": "2026-11-01T20:46:25.677Z",
-  "expiresAt": "2026-11-01T21:31:25.677Z",
-  "branch": "work/zerg2-mat-interiors",
+  "heartbeatAt": "2026-11-01T20:49:50.308Z",
+  "expiresAt": "2026-11-01T21:34:50.308Z",
+  "branch": "work/zerg3-services-interiors-20261101",
   "note": "Owner-directed compact B principal900 wetroom assembly",
   "predecessor": {
     "leaseId": "64cf8505-5f25-4d68-a68c-921fd2ae1005",
@@ -36,9 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1230 remote310b26f3 treece36fb52 matches locally checked4files; canonicalserviceJSON46804460 from38d4d803 importedoneway",
-    "next": "Combinedservices/interiors independentreview and exactintegrationCI; rootcontrolledmerge thenrelease",
-    "blocker": "SourcePRdepends onservicesPR1231; no standalone merge; broadMAT-INTERIORSandproductmaterialadmissionremainopen"
+    "evidence": "PR1232 combinedhead56db74debbd796894e9e15d79c5b3ed202369e18 tree04c9f3ec20fecb8da36873ffd827e83b7c21f843 preservesinteriors310b26f3 andservices4b7294c5; independentbothrepro/renderreviewPASS",
+    "next": "SoleCIobserveraccess; rootexactheadpreflights+merge, then workerrelease",
+    "blocker": "ExactcombinedheadfullCIpending; material/product/physicaladmissionandbroadMATremainopen"
   },
-  "pr": 1230
+  "pr": 1232
 }
