@@ -753,7 +753,7 @@
     },
     {
       "level": "GROUND",
-      "wall": "court-west",
+      "wall": "outer-west",
       "centre": 4600,
       "sill": 750,
       "head": 2750,
@@ -933,7 +933,9 @@
         "kind": "window",
         "swing": "left",
         "hinge": "low",
-        "leaves": 1
+        "leaves": 1,
+        "head": 2750,
+        "spring": 2450
       },
       {
         "id": "west-window-2",
@@ -1327,18 +1329,18 @@
     ],
     "reading-sofa1900x850": [
       800,
-      8950,
+      8975,
       850,
       1900
     ],
     "reading-side-table300": [
       1800,
-      10650,
+      10600,
       300,
       300
     ],
     "family-sofa1900x750": [
-      3425,
+      3415,
       9650,
       750,
       1900
@@ -1436,37 +1438,37 @@
       1500
     ],
     "bed4": [
-      5447.5,
+      5417.5,
       9350,
       2000,
       1500
     ],
     "bed4-head": [
-      7447.5,
+      7417.5,
       9350,
       90,
       1500
     ],
     "bed4-island-wardrobe": [
-      3000,
+      3030,
       9800,
       1500,
       660
     ],
     "principal": [
-      9492.5,
+      9462.5,
       9175,
       2000,
       1600
     ],
     "principal-head": [
-      11492.5,
+      11462.5,
       9175,
       90,
       1600
     ],
     "principal-wardrobe": [
-      7707.5,
+      7737.5,
       9300,
       660,
       1500
@@ -1601,15 +1603,6 @@
           15,
           1552.5
         ]
-      ],
-      [
-        "stairMidPostFinished",
-        [
-          2817.5,
-          7117.5,
-          265,
-          280
-        ]
       ]
     ]
   },
@@ -1722,19 +1715,19 @@
   "furnitureRequirements": {
     "principalBed": {
       "whole": [
-        9492.5,
+        9462.5,
         9175,
         2090,
         1600
       ],
       "body": [
-        9492.5,
+        9462.5,
         9175,
         2000,
         1600
       ],
       "head": [
-        11492.5,
+        11462.5,
         9175,
         90,
         1600
@@ -1754,13 +1747,13 @@
           500
         ],
         "whole": [
-          9492.5,
+          9462.5,
           9675,
           2090,
           1600
         ],
         "swept": [
-          9492.5,
+          9462.5,
           9175,
           2090,
           2100
@@ -1788,14 +1781,14 @@
     },
     "bed4": {
       "whole": [
-        5447.5,
+        5417.5,
         9350,
         2090,
         1500
       ],
       "maxHeadHeight": 700,
-      "westFootGap": 947.5,
-      "northWindowClear": 732.5,
+      "westFootGap": 887.5,
+      "northBedPassage": 732.5,
       "rearR01PanStageWithPad": [
         3700,
         10522.5,
@@ -1834,10 +1827,10 @@
       "integralNode": [
         600,
         600,
-        450
+        570
       ],
       "lowTies": [
-        250,
+        600,
         200
       ],
       "lowTieTop": -550,
@@ -1966,22 +1959,23 @@
           44
         ],
         "hinge": [
-          3802.5,
+          3805,
           4250
         ],
         "opening": "NORTHintoexcludedgallery",
         "closed": [
-          2972.5,
+          2975,
           4228,
           830,
           44
         ],
         "open": [
-          3780.5,
+          3783,
           4250,
           44,
           830
         ],
+        "edgeGapsEach": 2.5,
         "minimumClearBudget": 791,
         "performance": "E20minimumreference;classifiedfullassembly/actualgaprequired"
       },
@@ -2000,22 +1994,23 @@
           44
         ],
         "hinge": [
-          9111.25,
+          9113.75,
           4250
         ],
         "opening": "NORTHintoexcludedgallery",
         "closed": [
-          8266.25,
+          8268.75,
           4228,
           845,
           44
         ],
         "open": [
-          9089.25,
+          9091.75,
           4250,
           44,
           845
         ],
+        "edgeGapsEach": 2.5,
         "minimumClearBudget": 806,
         "performance": "E20minimumreference;classifiedfullassemblyrequired"
       },
@@ -2138,7 +2133,7 @@
     }
   },
   "actions": {
-    "method": "Exact Euclidean segment-to-closed-rectangle clearance with a300radius horizontal body proxy. Furniture and finished wall/receiver/post rectangles are obstacles. Every segment tested analytically; no sampling gaps. Not an actual-human, door-force, accessible-route or 3D/headroom admission.",
+    "method": "Exact Euclidean segment-to-closed-rectangle clearance with a300radius horizontal body proxy. Furniture and finished wall/receiver/post rectangles are obstacles. Ordinary18mm trim is conservatively added to walls/receivers; post trim is excluded from stair-facing side to retain1100flight and reserved18 on roomside. Every segment tested analytically; no sampling gaps. Not an actual-human, door-force, accessible-route or 3D/headroom admission.",
     "witnesses": [
       {
         "id": "protected-stair-bottom-to-front",
@@ -2171,10 +2166,10 @@
           ]
         ],
         "state": "cross fire doors CLOSED",
-        "minimumReserve": 32.5,
+        "minimumReserve": 14.5,
         "controlling": {
-          "obstacle": "stair-plan-void",
-          "segment": 0
+          "obstacle": "court-south+18trim",
+          "segment": 3
         },
         "pass": true
       },
@@ -2213,14 +2208,14 @@
           ],
           [
             8700,
-            8725
+            8740.25
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 25,
+        "minimumReserve": 9.75,
         "controlling": {
-          "obstacle": "family-sofa1900x750",
-          "segment": 2
+          "obstacle": "dining-table1200x800",
+          "segment": 6
         },
         "pass": true
       },
@@ -2251,11 +2246,11 @@
           ],
           [
             2500,
-            11266.25
+            11232.25
           ],
           [
             1100,
-            11266.25
+            11232.25
           ],
           [
             1100,
@@ -2263,10 +2258,10 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 16.25,
+        "minimumReserve": 14.5,
         "controlling": {
-          "obstacle": "outer-north",
-          "segment": 4
+          "obstacle": "wetBeamSouthReceiver",
+          "segment": 3
         },
         "pass": true
       },
@@ -2289,9 +2284,9 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 32.5,
+        "minimumReserve": 14.5,
         "controlling": {
-          "obstacle": "outer-north",
+          "obstacle": "outer-north+18trim",
           "segment": 0
         },
         "pass": true
@@ -2303,21 +2298,21 @@
         "points": [
           [
             2500,
-            11266.25
+            11232.25
           ],
           [
             2500,
-            11190
+            11150
           ],
           [
             3100,
-            11190
+            11150
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 12.5,
+        "minimumReserve": 15,
         "controlling": {
-          "obstacle": "wetBeamNorthReceiver",
+          "obstacle": "family-sofa1900x750",
           "segment": 1
         },
         "pass": true
@@ -2329,11 +2324,11 @@
         "points": [
           [
             8700,
-            8725
+            8740.25
           ],
           [
             10200,
-            8725
+            8740.25
           ],
           [
             10200,
@@ -2349,9 +2344,9 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 12.5,
+        "minimumReserve": 9.75,
         "controlling": {
-          "obstacle": "rear-east",
+          "obstacle": "rear-east+18trim",
           "segment": 0
         },
         "pass": true
@@ -2363,7 +2358,7 @@
         "points": [
           [
             10200,
-            8725
+            8740.25
           ],
           [
             10200,
@@ -2371,9 +2366,9 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 12.5,
+        "minimumReserve": 9.75,
         "controlling": {
-          "obstacle": "rear-east",
+          "obstacle": "rear-east+18trim",
           "segment": 0
         },
         "pass": true
@@ -2385,11 +2380,11 @@
         "points": [
           [
             10200,
-            8725
+            8740.25
           ],
           [
             10800,
-            8725
+            8740.25
           ],
           [
             10800,
@@ -2397,9 +2392,9 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 12.5,
+        "minimumReserve": 9.75,
         "controlling": {
-          "obstacle": "rear-east",
+          "obstacle": "rear-east+18trim",
           "segment": 0
         },
         "pass": true
@@ -2411,7 +2406,7 @@
         "points": [
           [
             8700,
-            8725
+            8740.25
           ],
           [
             8700,
@@ -2431,9 +2426,9 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 32.5,
+        "minimumReserve": 14.5,
         "controlling": {
-          "obstacle": "court-south",
+          "obstacle": "court-south+18trim",
           "segment": 1
         },
         "pass": true
@@ -2479,7 +2474,7 @@
         "points": [
           [
             8700,
-            8725
+            8740.25
           ],
           [
             8700,
@@ -2528,15 +2523,15 @@
             11250
           ],
           [
-            11262.5,
+            11250,
             11100
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 20,
+        "minimumReserve": 2.5,
         "controlling": {
-          "obstacle": "outer-east",
-          "segment": 4
+          "obstacle": "principal-wardrobe",
+          "segment": 0
         },
         "pass": true
       },
@@ -2579,9 +2574,9 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 32.5,
+        "minimumReserve": 14.5,
         "controlling": {
-          "obstacle": "outer-north",
+          "obstacle": "outer-north+18trim",
           "segment": 4
         },
         "pass": true
@@ -2627,9 +2622,9 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 32.5,
+        "minimumReserve": 14.5,
         "controlling": {
-          "obstacle": "outer-north",
+          "obstacle": "outer-north+18trim",
           "segment": 0
         },
         "pass": true
@@ -2649,29 +2644,29 @@
           ],
           [
             2400,
-            2250
+            2235
           ],
           [
-            3000,
-            2250
+            2950,
+            2235
           ],
           [
-            3000,
-            740
+            2950,
+            750
           ],
           [
             3900,
-            740
+            750
           ],
           [
             2525,
-            740
+            750
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 15,
+        "minimumReserve": 12,
         "controlling": {
-          "obstacle": "cloak-west",
+          "obstacle": "study-cloak-north+18trim",
           "segment": 2
         },
         "pass": true
@@ -2686,18 +2681,18 @@
             2800
           ],
           [
-            740,
+            750,
             2800
           ],
           [
-            740,
+            750,
             2650
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 22.5,
+        "minimumReserve": 14.5,
         "controlling": {
-          "obstacle": "outer-west",
+          "obstacle": "outer-west+18trim",
           "segment": 0
         },
         "pass": true
@@ -2709,7 +2704,8 @@
       "Pantry shelf working state needs door CLOSED; not simultaneous with open-leaf transport.",
       "Principal and rear wetroom internal tasks use separately merged MAT witnesses; this plan only binds entries, staging and furniture sweep.",
       "Study inside rehand has its separate bounded coupled witness. New cross-door operation still needs finite coupled test; proxy routes alone are insufficient."
-    ]
+    ],
+    "windowPlanReachPass": true
   },
   "studyDoorOperation": {
     "rough": [
@@ -2734,7 +2730,7 @@
     "bodyKnots": [
       [
         0,
-        2400,
+        2350,
         2800
       ],
       [
@@ -2766,20 +2762,278 @@
     "handleState": "Southface0–45deg; explicit two-hand handover at45; oppositeface45–90.",
     "stepDegrees": 0.1,
     "sampledBodyReserve": 12.466220396523681,
-    "sampledArmReserve": 7.668699193285377,
+    "sampledArmReserve": 4.855070906388498,
     "sampledReach": 552.9078478020924,
     "continuousBodyLowerBound": 10.213220396523681,
-    "continuousArmLowerBound": 4.595699193285377,
+    "continuousArmLowerBound": 1.7820709063884976,
     "continuousReachUpperBound": 555.1953478020924,
     "bodyAt": {
       "angle": 52.3,
       "obstacle": "study-chair"
     },
     "armAt": {
-      "angle": 45,
-      "obstacle": "moving-study-leaf"
+      "angle": 0,
+      "obstacle": "study-frame-high"
     },
     "pass": true,
     "scope": "One geometric inside close/reopen sequence from leaf-open entry, not actual operator strength, hardware, classified frame or outside first-opening admission. Both hands have reachable collision-free paths at45; no teleporting hand throughleaf."
+  },
+  "crossDoorOperations": [
+    {
+      "id": "FD-WEST-CROSS",
+      "bodyPath": "H+390u+345n;u=(-cosθ,sinθ),n=(-sinθ,-cosθ),0≤θ≤90deg",
+      "gripPath": "H+(leafwidth−50)u+84n",
+      "sampleStep": 0.1,
+      "continuousBodyLowerBound": 10.603352257859843,
+      "continuousArmLowerBound": 6.050221583856965,
+      "continuousReachUpperBound": 470.47710363920504,
+      "pass": true,
+      "scope": "Finite push-open/reverse-close geometry including25jambs and2.5leaf gaps. Operator R300/forearmR40/600reach proxy only; qualified installed frame/handles/forces/fire assembly not admitted."
+    },
+    {
+      "id": "FD-EAST-CROSS",
+      "bodyPath": "H+390u+345n;u=(-cosθ,sinθ),n=(-sinθ,-cosθ),0≤θ≤90deg",
+      "gripPath": "H+(leafwidth−50)u+84n",
+      "sampleStep": 0.1,
+      "continuousBodyLowerBound": 21.799999999998295,
+      "continuousArmLowerBound": 6.134702267740577,
+      "continuousReachUpperBound": 483.01531731567263,
+      "pass": true,
+      "scope": "Finite push-open/reverse-close geometry including25jambs and2.5leaf gaps. Operator R300/forearmR40/600reach proxy only; qualified installed frame/handles/forces/fire assembly not admitted."
+    }
+  ],
+  "stairPostFinishRequirement": "Post ends below FIRST RC/trimmer, no first-floor obstacle. No applied baseboard on stair-facing post edge;1100flight retained. Roomside18baseboard counted, reducing nominal750 to714 between roomside projections.",
+  "windowRequirements": [
+    {
+      "level": "GROUND",
+      "id": "living1800",
+      "body": [
+        2525,
+        11250
+      ],
+      "handle": [
+        2220,
+        11582.5
+      ],
+      "planReach": 451.1997894503055,
+      "maximumPlanReach": 600,
+      "requirement": "Northwindow HIGHhand; existing table/sofas retained",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "GROUND",
+      "id": "living3550",
+      "body": [
+        3100,
+        11150
+      ],
+      "handle": [
+        3130,
+        11582.5
+      ],
+      "planReach": 433.5392139126517,
+      "maximumPlanReach": 600,
+      "requirement": "HingeHIGH to place handleLOW; actual frame/hardware procurement requirement",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "GROUND",
+      "id": "kitchen8450",
+      "body": [
+        8350,
+        11250
+      ],
+      "handle": [
+        8030,
+        11582.5
+      ],
+      "planReach": 461.4718301261736,
+      "maximumPlanReach": 600,
+      "requirement": "Raised1050cill; station sink starts8700",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "GROUND",
+      "id": "kitchen10200",
+      "body": [
+        10200,
+        11250
+      ],
+      "handle": [
+        10620,
+        11582.5
+      ],
+      "planReach": 535.6829752754888,
+      "maximumPlanReach": 600,
+      "requirement": "Raised1050cill; separate sink/cook piers",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "GROUND",
+      "id": "courtwest6850",
+      "body": [
+        3500,
+        6850
+      ],
+      "handle": [
+        3832.5,
+        7270
+      ],
+      "planReach": 535.6829752754888,
+      "maximumPlanReach": 600,
+      "requirement": "Actual750gallery beside post; not universal accessibility",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "GROUND",
+      "id": "studySouth1800",
+      "body": [
+        2525,
+        750
+      ],
+      "handle": [
+        2220,
+        417.5
+      ],
+      "planReach": 451.1997894503055,
+      "maximumPlanReach": 600,
+      "requirement": "Desk/chair retained; inside door CLOSED",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "GROUND",
+      "id": "studySouth3900",
+      "body": [
+        3900,
+        750
+      ],
+      "handle": [
+        4320,
+        417.5
+      ],
+      "planReach": 535.6829752754888,
+      "maximumPlanReach": 600,
+      "requirement": "Inside door CLOSED",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "GROUND",
+      "id": "studyWest1800",
+      "body": [
+        750,
+        2650
+      ],
+      "handle": [
+        417.5,
+        2220
+      ],
+      "planReach": 543.5588744561163,
+      "maximumPlanReach": 600,
+      "requirement": "Inside door CLOSED",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "FIRST",
+      "id": "principalEast10200",
+      "body": [
+        11250,
+        11100
+      ],
+      "handle": [
+        11582.5,
+        10620
+      ],
+      "planReach": 583.9145913573319,
+      "maximumPlanReach": 600,
+      "requirement": "Lowhead≤700/bed≤600; actual lower leaf/frame envelope≥750; no3D leaf pass",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "FIRST",
+      "id": "principalNorth8450",
+      "body": [
+        8700,
+        11250
+      ],
+      "handle": [
+        8870,
+        11582.5
+      ],
+      "planReach": 373.43841527084487,
+      "maximumPlanReach": 600,
+      "requirement": "Unavailable during+500bed maintenance",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "FIRST",
+      "id": "principalNorth10200",
+      "body": [
+        10200,
+        11250
+      ],
+      "handle": [
+        10620,
+        11582.5
+      ],
+      "planReach": 535.6829752754888,
+      "maximumPlanReach": 600,
+      "requirement": "Unavailable during+500bed maintenance",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    }
+  ],
+  "approaches": {
+    "authoredExteriorGrade": -1300,
+    "front": {
+      "rise": 1300,
+      "slope": 20,
+      "slopingRun": 26000,
+      "flights": [
+        9000,
+        9000,
+        8000
+      ],
+      "landingLength": 1200,
+      "landings": 4,
+      "totalStraightReservation": 30800
+    },
+    "garden": {
+      "terrace": -152.5,
+      "rise": 1147.5,
+      "slope": 20,
+      "slopingRun": 22950,
+      "flights": [
+        8000,
+        8000,
+        6950
+      ],
+      "landingLength": 1200,
+      "landings": 4,
+      "totalStraightReservation": 27750
+    },
+    "clearWidthReservation": 1200,
+    "scope": "Finite authored plot reservation, not a compliant access design or available site. Guards, edge protection, turning/door/approach geometry and actual access category remain to qualify. Court/loggia not credited as protected final exit."
+  },
+  "exterior": {
+    "eaves": 6800,
+    "ridge": 7790.903773579372,
+    "eavesAboveAuthoredGrade": 8100,
+    "ridgeAboveAuthoredGrade": 9090.903773579372,
+    "source": "Retains HAD furnished-design visual roof geometry:2125inset/25degree inward-outward ring, not actual roof/support/collection proof.",
+    "palette": "Warm mineral masonry, quiet pale opening family, dark pitched ring roof; locally rendered insulated loggia arches are a visible material/shape rewind."
+  },
+  "qualityCosts": {
+    "dailyLivingKitchenCentreline": 17290.25,
+    "living": "Two original-size sofas retained; separate reading enclosure removed, shared arch loses acoustic privacy.",
+    "dining": "Four places, no end seats; separate prep table removed. Actual chair/support/table leg fit is not earned from500plan boxes.",
+    "private": "Four bedrooms retained, two compact singles, two rear doubles rotatedEW; principal lowbed/window compatibility and660wardrobe are explicit choices.",
+    "loggia": "Deletes occupied-floor renewable watercaps/gas lids. Costs new weatherwalls, displaced room territory, long daily indoor connection and exposed floor/arch insulation.",
+    "height": "Current support trial stillD1300: no approach/eaves reduction credited against prior buried-box comparator.",
+    "groundClearFloor": {
+      "baseB": 89.7864,
+      "loggia": 78.278675,
+      "loss": 11.507724999999994,
+      "unit": "m2",
+      "method": "Exact clipped rectangle union inside12×12shell; excludes outer417.5 walls, full court+wall rectangle, stair footprint, internal wall rectangles/holes, new outside loggia and fixed receivers/post. Furniture not subtracted. Ground entrance doubleheight has a floor; not a void. Comparison includes new protected walls/support footprints, so loss is not solely loggia."
+    }
   }
 }
