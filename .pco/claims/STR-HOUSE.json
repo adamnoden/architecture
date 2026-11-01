@@ -9,8 +9,8 @@
     "label": "zerg2-structure"
   },
   "claimedAt": "2026-11-01T19:23:15.470Z",
-  "heartbeatAt": "2026-11-01T19:23:15.470Z",
-  "expiresAt": "2026-11-01T20:08:15.470Z",
+  "heartbeatAt": "2026-11-01T19:39:50.481Z",
+  "expiresAt": "2026-11-01T20:24:50.481Z",
   "branch": "work/zerg2-structure",
   "predecessor": {
     "leaseId": "fddbc95b-91e0-4257-8c44-85427d4e08d7",
@@ -31,5 +31,10 @@
       "evidence": "Merged PR1224 at1e7b2cbce408834ca3cbb91c286af37eda066829; main ancestry and all6HOUSEfile payloads verified. FinalHOUSE a3b404f4 is included. Exact-head fullCI41322417761 attempt2 and15:46:02Z STR-HOUSE preflight passed. STR-HOUSE remains planned.",
       "next": "Develop one joined structural candidate: actual140mm shared/one-sided riser bearings and supported closure, stair/bridge seats/headroom, arch thrust/base paths and roof heel/corners. Rebind HAD600mm court passages and ground-floor splice to B geometry; confirm compact-single/storage premise before adoption."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote1d21d96043e0d21598279324f610ddbbbbb088b3; four joinedRC source/calculation/section files; source and mechanics checks passed; tree equality verified",
+    "next": "Resolve reviewer local Uwall/bridge clash, finish actual render and anchorage/crack review, then submit integrated head",
+    "blocker": "Engineering and material review active; not ready for merge"
   }
 }
