@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-03",
   "generation": 21,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "537b440b-2a31-4854-a692-ccd6824a33c8",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-one"
   },
   "claimedAt": "2026-11-01T14:55:11.984Z",
-  "heartbeatAt": "2026-11-01T15:33:18.024Z",
-  "expiresAt": "2026-11-01T16:18:18.024Z",
+  "heartbeatAt": "2026-11-01T15:34:21.459Z",
+  "expiresAt": "2026-11-01T15:34:21.459Z",
   "branch": "work/zerg-integration-20261101",
   "predecessor": {
     "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
@@ -39,5 +39,7 @@
     "evidence": "PR #1221 mergedcf466b583a91ed2bd936ad3499cce31ca84a584b verified on main; exact-head full CI41321065041 attempt2 passed, all3fresh canonical preflights passed. HAD03 local portal design and side-then-lift witness integrated; source geometry unadopted.",
     "next": "Continue HAD03 from merged main and project/had/had-03-local-portal-design.md: develop or reject complete100mm no-plastic cover/joint/containment assembly and actual threshold first-harm/room convergence. Do not reuse spatial witness as installed acceptance.",
     "blocker": "HAD03 remains incomplete, RWT06 blocked; no complete floor/material/support/hydraulic/site acceptance earned. Integration branch auto-deleted after verified merge; durable evidence is main and mergedPR1221."
-  }
+  },
+  "releasedAt": "2026-11-01T15:34:21.459Z",
+  "releaseReason": "handoff"
 }
