@@ -10,7 +10,8 @@
     "project/str/studies/house-plan.json": "193805456e26533026814bebe8c6be862e26a7d944c360dbb6047a1bde2d2282",
     "project/had/had-02m-material-finish-synthesis.md": "338f9f0fe4aed085fe6db2909bde6a4023f2ba08ec97048a2eb4bcb375d25b81",
     "docs/reference-house/interior-family-selection.md": "47b71d40e99f5832638f4bc53b68576f53c857d57364fe74d1c87ec669099819",
-    "docs/reference-house/material-policy.md": "a1002d7ecea0de2fe27b541785c61ea45f65fbbb7bd9dda235a1fb6c7be2511e"
+    "docs/reference-house/material-policy.md": "a1002d7ecea0de2fe27b541785c61ea45f65fbbb7bd9dda235a1fb6c7be2511e",
+    "project/mat/joined-ground-floor-and-court-boundary.md": "4b35b8d898a04994d950da1cdd51539c4388fb68519f8c51cdd6dff86cedbd1b"
   },
   "geometry": {
     "HADHead": "c83a06f26cf3b146d7cdc8254b4799f390508196",
@@ -113,10 +114,10 @@
         ]
       ],
       "oldDepth": 80,
-      "scope": "Dry rooms;22 board reallocates2 from the60 functional layer while keeping80 total and existing FFL",
+      "scope": "Dry rooms: upper80 above RCtop−80; ground80 overlay plus retained100 bare glass above RCtop−180. Board22 reallocates7 from ground65 distribution versus stone15; no RC/FFL change",
       "constituents": "Whole sawn timber, metal fasteners and disclosed hard packing. Moisture, acoustic, finish and any required barrier remain explicit functions.",
       "firstRelease": "Clear furniture; remove local skirting; expose top fixings or sacrifice the first board; structure and all fire boundaries remain.",
-      "residue": "This is a carpentry reference, not an altered manufacturer package. Required moisture protection cannot be omitted; no bare-oak complete material pass.",
+      "residue": "This is a carpentry reference, not an altered manufacturer package. Required moisture protection cannot be omitted. Ground point loads/packing require an independent load-spreading detail; no fastening through the glass or air/gas boundary is assumed. No bare-oak complete material pass.",
       "totalDepth": 80,
       "depthDelta": 0,
       "materialAdmission": "not earned",
@@ -150,7 +151,7 @@
         ]
       ],
       "oldDepth": 80,
-      "scope": "Bathrooms, guest WC splash field and service/working rooms as located; door saddles and movement joints are separate actual interfaces",
+      "scope": "Upper80 above RCtop−80; ground80 overlay plus retained100 bare glass above RCtop−180. Wet exposure and movement interfaces are located separately",
       "constituents": "Stone/ceramic and binder are not enough: grout, bedding chemistry, collars and movement seals remain in scope.",
       "firstRelease": "Lift a sacrificial local finish patch only after isolation; retain independent supported structure; renew disturbed wet and service seals.",
       "residue": "Substrate load, flatness/falls, complete mixture and slip/cleaning evidence remain required. Dry mineral fields do not automatically need room tanking.",
@@ -182,6 +183,38 @@
       "constituents": "Actual mineral facing/support/joints and decorations; RC fire resistance, cover, openings and loads stay with STR.",
       "firstRelease": "Open a genuinely independent service cover; do not remove the qualified slab/penetration boundary.",
       "residue": "Neither a15 skin nor RC200 as a name proves REI30. Ordinary and protective layers are distinct.",
+      "totalDepth": 70,
+      "depthDelta": 0,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "C-O",
+      "audit": [
+        "I02",
+        "S10"
+      ],
+      "name": "Ordinary upper-room ceiling",
+      "direction": "Use an independently supported mineral board ceiling within70; keep the actual roof fire/cavity boundary separate",
+      "layers": [
+        [
+          "mineral board reference",
+          12
+        ],
+        [
+          "joint/finish reservation",
+          3
+        ],
+        [
+          "carrier/service reservation",
+          55
+        ]
+      ],
+      "oldDepth": 70,
+      "scope": "Upper bedrooms and wet rooms outside the independently determined protected roof boundary",
+      "constituents": "SUPALUX12 is the facing control only; actual carriers, fasteners, joint/finish recipe, moisture suitability and roof interfaces remain specified as a complete ordinary assembly.",
+      "firstRelease": "Isolate devices; remove a supported local access panel or sacrificial board without disturbing the independent qualified roof boundary.",
+      "residue": "Authored70 compatibility requirement, not a delivered ceiling or EI claim. Do not transfer pure-silicate coating compatibility from mineral masonry to a board.",
       "totalDepth": 70,
       "depthDelta": 0,
       "materialAdmission": "not earned",
@@ -288,11 +321,11 @@
         "O01"
       ],
       "name": "Joinery paint / clear finish",
-      "direction": "Use a disclosed linseed-paint family for ordinary timber; delete gratuitous clearcoat and retain a repairable thin finish",
+      "direction": "Develop Brouns ordinary-timber three-coat direction: required primer and two topcoats; omit optional varnish",
       "layers": [],
       "oldDepth": null,
       "scope": "Ordinary trim/cabinet timber only, not automatic floor or rated-door coating approval",
-      "constituents": "Brouns product control includes boiled oil/pigment, a drying agent and its actual primer/shellac requirements; natural is not a full declaration.",
+      "constituents": "Brouns control includes oil/pigment plus drying agent; bare-wood primer50 paint/35 raw linseed/15 balsam turpentine, then two paint coats; shellac knot treatment where required. No optional varnish. Percentages are the supplier recipe, not a complete chemical declaration.",
       "firstRelease": "Clean and locally prepare/recoat; do not bridge mechanical release joints. Replace a damaged sacrificial piece where needed.",
       "residue": "Dryer, pigment, knotting/primer and actual fire/cleaning suitability remain unadmitted. No generic natural-oil approval.",
       "totalDepth": 0,
@@ -416,7 +449,8 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "ground"
     },
     {
       "id": "G-STAIR",
@@ -432,7 +466,8 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "ground"
     },
     {
       "id": "G-STUDY",
@@ -450,7 +485,8 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "ground"
     },
     {
       "id": "G-CLOAK",
@@ -468,7 +504,8 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "ground"
     },
     {
       "id": "G-WC",
@@ -486,7 +523,8 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "ground"
     },
     {
       "id": "G-UTILITY",
@@ -504,7 +542,8 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "ground"
     },
     {
       "id": "G-PLANT",
@@ -519,7 +558,8 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "ground"
     },
     {
       "id": "G-PANTRY",
@@ -536,7 +576,8 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "ground"
     },
     {
       "id": "G-LIVING",
@@ -553,7 +594,8 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "ground"
     },
     {
       "id": "G-KITCHEN",
@@ -573,12 +615,14 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "ground"
     },
     {
       "id": "U-B2",
       "name": "Bedroom2",
       "families": [
+        "C-O",
         "W-D",
         "F-D",
         "J-T",
@@ -590,12 +634,14 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "upper"
     },
     {
       "id": "U-B3",
       "name": "Bedroom3",
       "families": [
+        "C-O",
         "W-D",
         "F-D",
         "J-T",
@@ -607,12 +653,14 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "upper"
     },
     {
       "id": "U-B4",
       "name": "Bedroom4",
       "families": [
+        "C-O",
         "W-D",
         "F-D",
         "J-T",
@@ -625,12 +673,14 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "upper"
     },
     {
       "id": "U-PRINCIPAL",
       "name": "Principal bedroom",
       "families": [
+        "C-O",
         "W-D",
         "F-D",
         "J-T",
@@ -643,12 +693,14 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "upper"
     },
     {
       "id": "U-REAR-WET",
       "name": "Rear wet room",
       "families": [
+        "C-O",
         "W-D",
         "W-W",
         "F-M",
@@ -661,12 +713,14 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "upper"
     },
     {
       "id": "U-FAMILY",
       "name": "Family bathroom",
       "families": [
+        "C-O",
         "W-D",
         "W-W",
         "F-M",
@@ -679,12 +733,14 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "upper"
     },
     {
       "id": "U-PRINCIPAL-WET",
       "name": "Principal en suite",
       "families": [
+        "C-O",
         "W-W",
         "F-M",
         "J-C",
@@ -696,7 +752,8 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "upper"
     },
     {
       "id": "U-ROUTE",
@@ -712,9 +769,25 @@
       ],
       "area": null,
       "quantityStatus": "Reference occurrence, not an installed-house quantity",
-      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze",
+      "floorDatum": "upper"
     }
   ],
+  "floorDatums": {
+    "ground": {
+      "RCtop": -180,
+      "glass": 100,
+      "overlay": 80,
+      "FFL": 0,
+      "rule": "Retain the bare-glass field and independent air/gas/water boundary; overlay anchors cannot puncture it by assumption"
+    },
+    "upper": {
+      "RCtop": -80,
+      "glass": 0,
+      "overlay": 80,
+      "FFL": 0
+    }
+  },
   "checks": {
     "dryStandardControl": 27,
     "dryControlOver15": 12,
