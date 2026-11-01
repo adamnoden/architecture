@@ -1,4 +1,5 @@
 {
+  "units": "mm unless explicitly stated; all floor layer checks use level-local FFL0",
   "status": "Bounded whole-house development schedule checkpoint; no complete material/product/physical admission",
   "baseMain": "546c98f93a3dccbfe48119bd2e92117b6e2d766f",
   "fingerprints": {
@@ -567,17 +568,18 @@
     },
     "finishDeviation": {
       "source": 15,
-      "proposed": 17,
-      "roomFacingGrowth": 2,
-      "rule": "Source geometry retained; finish growth is a bounded sensitivity, not silently adopted room faces"
+      "proposed": 27,
+      "roomFacingGrowth": 12,
+      "unqualified17NotSelected": true,
+      "rule": "Source geometry retained until ONE full HAD dry27/wet30 trial is joined; ordinary head/furniture/frame/task repairs must be attempted, not dismissed by a2 clash"
     },
     "studyDoorSensitivity": {
       "nominalContinuousBodyReserve": 10.213220396523681,
       "nominalContinuousArmReserve": 4.595699193285377,
-      "conservativeTwoSurfaceFinishLoss": 4,
-      "remainingBody": 6.213220396523681,
-      "remainingArm": 0.5956991932853768,
-      "scope": "Arithmetic warning only; no actual geometry rerun or fit PASS. Finish17 already clashes principal head and cannot consume controlled frame budgets."
+      "conservativeTwoSurfaceFinishLoss": 24,
+      "remainingBody": -13.786779603476319,
+      "remainingArm": -19.404300806714623,
+      "scope": "Arithmetic warning only; negative reserves demand actual room/frame/task repairs, not a conclusion that full27 is impracticable. No unchanged task PASS or actual geometry rerun claimed."
     },
     "scope": "Outer417.5 retained; loggia507.5 sidewalls are not a global envelope change. Principal30 does not extend into family/Bed3 by default."
   },
@@ -1604,6 +1606,7 @@
   ],
   "floorDatums": {
     "ground": {
+      "datum": "ground FFL0",
       "RCtop": -180,
       "glass": 100,
       "overlay": 80,
@@ -1611,6 +1614,7 @@
       "rule": "Retain the bare-glass field and independent air/gas/water boundary; overlay anchors cannot puncture it by assumption"
     },
     "upper": {
+      "datum": "first-floor local FFL0, global+3450",
       "RCtop": -80,
       "glass": 0,
       "overlay": 80,
@@ -1742,9 +1746,9 @@
       ],
       "eastServiceBand": [
         11337.5,
-        3800,
+        5800,
         230,
-        2600
+        560
       ],
       "column": [
         11342.5,
@@ -1767,16 +1771,23 @@
           5450,
           6350
         ],
-        "hingeSource": [
-          9385,
-          5480
+        "hingeTrial": [
+          9397,
+          6279
         ],
         "leaf": [
-          840,
+          762,
           44
         ],
-        "opens": "EAST/SOUTH",
-        "dry27TrialHingeX": 9397
+        "completeFrameBudget": 825,
+        "netClearInterval": [
+          5516.5,
+          6283.5
+        ],
+        "opens": "NORTH-HINGED into room",
+        "operationStatus": "R300 body/reach/fixture screen only; coupled regrip/forearm still being earned by IAS",
+        "roughToFrameClosure": 75,
+        "closureRule": "Do not treat75 total as arbitrary packing; actual applicable classified linear joint or supported mineral jamb build-out required"
       },
       "checks": {
         "panToColumnY": 25,
@@ -1828,7 +1839,7 @@
     "upperCeilingDrop": 106,
     "headTrimToControlCeiling": 74,
     "galleryHistoricControl": 979,
-    "with2ExtraFinishEachSide": 975,
+    "with12ExtraFinishEachSide": 955,
     "cabinet660ClearBeforeHardware": 629
   },
   "exceptionsApproved": 0,
