@@ -1,20 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "SWE-CONTROL",
-  "generation": 1,
+  "generation": 2,
   "state": "claimed",
-  "leaseId": "4d1fc99d-e8d3-4b87-b7c8-03ec637915b1",
+  "leaseId": "435def2d-ba6e-4dd6-adba-fc57174af361",
   "holder": {
-    "kind": "codex",
-    "label": "swe-1174-control"
+    "kind": "chatgpt",
+    "label": "swe-main-reconciliation-20261101"
   },
-  "claimedAt": "2026-10-31T20:29:13.618Z",
-  "heartbeatAt": "2026-10-31T20:40:54.654Z",
-  "expiresAt": "2026-10-31T21:25:54.654Z",
-  "branch": "work/swe-identity-1174",
-  "pr": 1180,
+  "claimedAt": "2026-11-01T09:14:53.791Z",
+  "heartbeatAt": "2026-11-01T09:14:53.791Z",
+  "expiresAt": "2026-11-01T12:14:53.791Z",
+  "branch": "work/swe-recovery-20261101",
   "checkpoint": {
-    "evidence": "PR #1182 head 79a098a90afe3253500c020c21ab299effd4d9ee retained for integration in PR #1180; project/swe/control-result.md",
-    "next": "Validate shared integration head, run four fresh publication preflights, merge, and verify original packet inclusion"
+    "evidence": "Owner-directed recovery of four SWE packets; prior exact-head CI passed on PR #1180 but merged main now conflicts in generated projections only.",
+    "next": "Construct source-preserving merged branch from latest main plus SWE reviewed blobs; open replacement PR, validate exact head and run four fresh canonical merge-checks; expected-head merge and release."
+  },
+  "predecessor": {
+    "leaseId": "4d1fc99d-e8d3-4b87-b7c8-03ec637915b1",
+    "generation": 1,
+    "branch": "work/swe-identity-1174",
+    "pr": 1180,
+    "checkpoint": {
+      "evidence": "PR #1182 head 79a098a90afe3253500c020c21ab299effd4d9ee retained for integration in PR #1180; project/swe/control-result.md",
+      "next": "Validate shared integration head, run four fresh publication preflights, merge, and verify original packet inclusion"
+    }
+  },
+  "recoverySource": {
+    "leaseId": "4d1fc99d-e8d3-4b87-b7c8-03ec637915b1",
+    "generation": 1,
+    "branch": "work/swe-identity-1174",
+    "pr": 1180,
+    "checkpoint": {
+      "evidence": "PR #1182 head 79a098a90afe3253500c020c21ab299effd4d9ee retained for integration in PR #1180; project/swe/control-result.md",
+      "next": "Validate shared integration head, run four fresh publication preflights, merge, and verify original packet inclusion"
+    }
   }
 }
