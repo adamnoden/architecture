@@ -1359,9 +1359,28 @@
           9700,
           4850,
           50
+        ],
+        [
+          9800,
+          5200,
+          160
         ]
       ],
       "examplePipeOD": 22,
+      "soilStack": {
+        "centre": [
+          9800,
+          5200
+        ],
+        "pipeOD": 110,
+        "formedBore": 160,
+        "occupiedRadius": 80,
+        "heightInterval": [
+          3370,
+          4650
+        ],
+        "rule": "Conservative160diameter fixed obstacle through cabinet height includes the retained seal territory; actual110pipe constituent/connection/annularseal qualification unresolved"
+      },
       "plinths": [
         [
           9435,
@@ -1389,7 +1408,7 @@
         ]
       ],
       "load": "STR trial 1.0kN total on four slab-contact plinths; not product mass or capacity",
-      "scope": "Solid floor replaces the hole ONLY for the two-pipe witness. The inherited whole-house gross stack remains an unresolved alternative."
+      "scope": "Solid floor replaces the hole ONLY for the joined two-small-pipe plus110soil-stack witness. The inherited whole-house gross stack remains an unresolved alternative."
     },
     "cabinetFrame": {
       "posts": [
@@ -1634,7 +1653,7 @@
       "seal": "Face is a dry access cover, not the floor/fire/water boundary. No admitted gasket or performance assigned"
     },
     "retained": [
-      "RC floor and both service seals",
+      "RC floor and all three service seals",
       "four RC-contact plinths",
       "cabinet fixed frame",
       "strainer body and both supported pipe connections",
@@ -1656,7 +1675,7 @@
       "Reverse body transfer and cover parking/release path; refit four screws; verify independent isolation remains accessible"
     ],
     "limits": [
-      "Two22OD pipes cannot substitute for the inherited550x700 whole-house stack and its foul/vent/water/power duties",
+      "Two22OD pipes plus one110soilstack cannot substitute for the complete inherited550x700 whole-house service inventory",
       "Two50 bores leave14 radial geometric annulus, not qualified fire/acoustic/moisture seals or insulation capacity",
       "Fixed isolation valves,adapters,drain connection,pipe supports and complete circuit remain to be identified; no live operation is authorised",
       "Component geometry is source-dimensioned; cap-thread disengagement and pocket axis are not dimensioned, so reserve the complete local void rather than inventing axial travel",
@@ -1769,6 +1788,11 @@
       "screwReach": 548.9307788783573,
       "componentReach": 502.4937810560445,
       "boreAnnulusGeometric": 14,
+      "soilStackGeometricAnnulus": 25,
+      "stackToTransferMargin": 20,
+      "stackToLocalVoidMargin": 20,
+      "stackToBodyMargin": 86.72132437093944,
+      "fixedStackRetainedDuringRenewal": true,
       "wholeStackFit": false,
       "physicalAcceptance": false,
       "adverseWholeFloorRemoval": "Removing700x800 floor remains rejected: destroys permanent walking boundary and supports; no maintenance need established",

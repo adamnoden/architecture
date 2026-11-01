@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect width="420" height="297" fill="#fffdf8"/><style>text{font-family:Arial,sans-serif;font-size:3.1px;fill:#243d43}.title{font-size:6px;font-weight:bold}.head{font-size:4px;font-weight:bold}.small{font-size:2.65px}.line{stroke:#536d73;stroke-width:.35;fill:none}.fixed{fill:#d6dddb;stroke:#526c70;stroke-width:.4}.floor{fill:#d9c9ad;stroke:#806b53;stroke-width:.4}.frame{fill:#839ba0;stroke:#345a65;stroke-width:.4}.void{fill:#e6f1ea;stroke:#35816d;stroke-width:.4;stroke-dasharray:1,1}.part{fill:#bb9762;stroke:#805f36;stroke-width:.5}.panel{fill:#e8dce9;stroke:#916a9f;stroke-width:.5}.motion{fill:none;stroke:#277f69;stroke-width:.7}.warn{fill:#9d4f32}.old{fill:none;stroke:#b18472;stroke-dasharray:2,1;stroke-width:.4}</style>
 <text x="12" y="14" class="title">J-RC2: keep the floor; renew the local service part</text>
 <text x="12" y="23" class="">1 November 2026 / joined compact-B comparison / mm / A3 at100% / no adopted source or construction release</text>
-<text x="12" y="31" class="small warn">Two-pipe witness only. The550×700 whole-house stack is still unproved; the700×800 full opening remains the adverse alternative.</text>
+<text x="12" y="31" class="small warn">Two-small-pipe +110stack witness. Complete550×700 service inventory remains unproved; the700×800 full opening remains the adverse alternative.</text>
 <text x="12" y="43" class="head">A  Permanent floor / plan1:10</text>
 <rect x="19" y="56" width="70" height="80" class="fixed"/>
 <rect x="23" y="61" width="55" height="70" class="old"/>
@@ -16,14 +16,16 @@
 <rect x="72" y="65" width="2.5" height="2.5" class="frame"/>
 <circle cx="32" cy="116" r="2.5" fill="#fffdf8" stroke="#526c70" stroke-width=".4"/>
 <circle cx="52" cy="116" r="2.5" fill="#fffdf8" stroke="#526c70" stroke-width=".4"/>
+<circle cx="62" cy="81" r="8" fill="#fffdf8" stroke="#526c70" stroke-width=".4"/>
 <circle cx="32" cy="116" r="1.1" fill="#aa8252"/>
 <circle cx="52" cy="116" r="1.1" fill="#aa8252"/>
+<circle cx="62" cy="81" r="5.5" fill="#aa8252"/>
 <rect x="65" y="97.4" width="4" height="7.2" class="part"/>
 <path d="M80.5,111L80.5,91" class="motion"/>
-<text x="12" y="143" class="small">RC is continuous outside two cast50 bores.</text>
+<text x="12" y="143" class="small">RC outside2×50 +1×160 cast bores.</text>
 <text x="12" y="150" class="small">Four100×100 plinths contact slab directly.</text>
 <text x="12" y="157" class="small">25 square fixed frame above; no pipe support.</text>
-<text x="12" y="164" class="small warn">14 radial annulus ≠ qualified seal.</text>
+<text x="12" y="164" class="small warn">110stack /160occupied; task gap20.</text>
 <text x="122" y="43" class="head">B  Floor section1:5</text>
 <rect x="126" y="116" width="96" height="40" class="fixed"/>
 <rect x="126" y="104" width="96" height="12" class="floor"/>
@@ -47,6 +49,8 @@
 <rect x="296.5" y="60" width="22" height="62" class="panel"/>
 <rect x="266.5" y="60" width="22" height="62" class="old"/>
 <rect x="267.5" y="66" width="20" height="40" class="void"/>
+<rect x="289.5" y="51" width="16" height="120" class="old"/>
+<rect x="292" y="51" width="11" height="120" class="part"/>
 <rect x="273.9" y="81" width="7.2" height="5.4" class="part"/>
 <path d="M277.5,81L277.5,89.5" class="motion"/>
 <circle cx="277.5" cy="94" r="2" fill="none" stroke="#277f69" stroke-width=".5"/>
@@ -69,8 +73,9 @@
 <text x="326" y="143" class="small">Dot: east, normal to sheet</text>
 <text x="326" y="151" class="small">Arrow: authored pocket reserve</text>
 <text x="326" y="159" class="small">Rail + two fixed parking hooks</text>
+<text x="326" y="167" class="small">Stack behind face; x9800</text>
 <text x="326" y="131" class="small">Void200×200×400</text>
-<text x="245" y="184" class="small">Screen/cap leave locally; body and pipes stay fixed.</text>
+<text x="245" y="184" class="small">Cap/screen task stays20 clear of retained160 stack field.</text>
 <path d="M12,194L408,194" class="line"/>
 <text x="12" y="204" class="head">D  Connected first release and reinstatement</text>
 <text x="12" y="214" class="">1  Isolate both sides, cool, drain, verify zero pressure; support catch vessel.</text>
