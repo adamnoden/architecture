@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 21,
-  "state": "released",
-  "leaseId": "537b440b-2a31-4854-a692-ccd6824a33c8",
+  "generation": 22,
+  "state": "claimed",
+  "leaseId": "6880ac9f-d9b0-4763-998c-f7820e975912",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-worker-one"
+    "label": "zerg2-had-joined"
   },
-  "claimedAt": "2026-11-01T14:55:11.984Z",
-  "heartbeatAt": "2026-11-01T15:34:21.459Z",
-  "expiresAt": "2026-11-01T15:34:21.459Z",
-  "branch": "work/zerg-integration-20261101",
+  "claimedAt": "2026-11-01T19:21:35.996Z",
+  "heartbeatAt": "2026-11-01T19:21:35.996Z",
+  "expiresAt": "2026-11-01T20:06:35.996Z",
+  "branch": "work/zerg2-had-b-joined",
   "predecessor": {
-    "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
-    "generation": 20,
-    "branch": "work/mvb-chat-6559339044",
-    "pr": 1215,
+    "leaseId": "537b440b-2a31-4854-a692-ccd6824a33c8",
+    "generation": 21,
+    "branch": "work/zerg-integration-20261101",
+    "pr": 1221,
     "checkpoint": {
-      "evidence": "PR #1215 head abec91851b9117909717b699391e008c9288b442: coupled gravity and carrier-cover clearance, generator, SVG/JSON, regression. Exact-head CI 41317424055 passed.",
-      "next": "Run native control:merge-check against live lease and main; merge with expected head if valid. Otherwise retain PR as handoff.",
-      "blocker": "Connector-only chat cannot run native preflight; HAD-03 remains planned pending complete N/E physical design."
+      "evidence": "PR #1221 mergedcf466b583a91ed2bd936ad3499cce31ca84a584b verified on main; exact-head full CI41321065041 attempt2 passed, all3fresh canonical preflights passed. HAD03 local portal design and side-then-lift witness integrated; source geometry unadopted.",
+      "next": "Continue HAD03 from merged main and project/had/had-03-local-portal-design.md: develop or reject complete100mm no-plastic cover/joint/containment assembly and actual threshold first-harm/room convergence. Do not reuse spatial witness as installed acceptance.",
+      "blocker": "HAD03 remains incomplete, RWT06 blocked; no complete floor/material/support/hydraulic/site acceptance earned. Integration branch auto-deleted after verified merge; durable evidence is main and mergedPR1221."
     }
   },
   "recoverySource": {
-    "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
-    "generation": 20,
-    "branch": "work/mvb-chat-6559339044",
-    "pr": 1215,
+    "leaseId": "537b440b-2a31-4854-a692-ccd6824a33c8",
+    "generation": 21,
+    "branch": "work/zerg-integration-20261101",
+    "pr": 1221,
     "checkpoint": {
-      "evidence": "PR #1215 head abec91851b9117909717b699391e008c9288b442: coupled gravity and carrier-cover clearance, generator, SVG/JSON, regression. Exact-head CI 41317424055 passed.",
-      "next": "Run native control:merge-check against live lease and main; merge with expected head if valid. Otherwise retain PR as handoff.",
-      "blocker": "Connector-only chat cannot run native preflight; HAD-03 remains planned pending complete N/E physical design."
+      "evidence": "PR #1221 mergedcf466b583a91ed2bd936ad3499cce31ca84a584b verified on main; exact-head full CI41321065041 attempt2 passed, all3fresh canonical preflights passed. HAD03 local portal design and side-then-lift witness integrated; source geometry unadopted.",
+      "next": "Continue HAD03 from merged main and project/had/had-03-local-portal-design.md: develop or reject complete100mm no-plastic cover/joint/containment assembly and actual threshold first-harm/room convergence. Do not reuse spatial witness as installed acceptance.",
+      "blocker": "HAD03 remains incomplete, RWT06 blocked; no complete floor/material/support/hydraulic/site acceptance earned. Integration branch auto-deleted after verified merge; durable evidence is main and mergedPR1221."
     }
-  },
-  "pr": 1221,
-  "checkpoint": {
-    "evidence": "PR #1221 mergedcf466b583a91ed2bd936ad3499cce31ca84a584b verified on main; exact-head full CI41321065041 attempt2 passed, all3fresh canonical preflights passed. HAD03 local portal design and side-then-lift witness integrated; source geometry unadopted.",
-    "next": "Continue HAD03 from merged main and project/had/had-03-local-portal-design.md: develop or reject complete100mm no-plastic cover/joint/containment assembly and actual threshold first-harm/room convergence. Do not reuse spatial witness as installed acceptance.",
-    "blocker": "HAD03 remains incomplete, RWT06 blocked; no complete floor/material/support/hydraulic/site acceptance earned. Integration branch auto-deleted after verified merge; durable evidence is main and mergedPR1221."
-  },
-  "releasedAt": "2026-11-01T15:34:21.459Z",
-  "releaseReason": "handoff"
+  }
 }
