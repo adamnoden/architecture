@@ -587,11 +587,15 @@
       "audit": [
         "I02"
       ],
-      "name": "Dry masonry finish",
-      "direction": "Retain15 HARD maximum for unchanged source geometry; develop17 authored challenger only through an explicit HAD geometry rewind, with27 conventional control",
+      "name": "Dry masonry mineral finish /27 rewind",
+      "direction": "Prefer the complete source-backed24 lime plaster plus pure-silicate/preparation1 and fit2, with an explicit12-per-dry-face geometry rewind; gypsum remains functional control",
       "layers": [
         [
-          "hydraulic-lime base",
+          "lime scratch",
+          10
+        ],
+        [
+          "lime float",
           10
         ],
         [
@@ -599,21 +603,21 @@
           4
         ],
         [
-          "preparation/coating maximum",
+          "pure-silicate/preparation territory",
           1
         ],
         [
-          "application allowance",
+          "application/plane allowance",
           2
         ]
       ],
       "oldDepth": 15,
-      "scope": "Renderable bare mineral masonry only; not gypsum, timber, coated boards or an assumed smooth concrete face",
-      "constituents": "Named Conserv NHL2/sand and BEECK powder/standard Fixative are the component controls. Key, repairs, edge mesh and delivered composition remain to establish.",
-      "firstRelease": "Remove independently screwed trim; locally repair plaster and recoat. Plaster is sacrificial, not demountable.",
-      "residue": "Actual background, adapted10+4 application and surface trial are not manufacturer approval; extra key consumes allowance. No material admission.",
-      "totalDepth": 17,
-      "depthDelta": 2,
+      "scope": "Actual renderable mineral masonry and qualified substrate/preparation; not automatic gypsum, board or concrete applicability. Source15 geometry stays unchanged until HAD trial is joined.",
+      "constituents": "Conserv NHL2/sand complete24 plaster control and BEECK Powdered Pigment/standard Fixative declaration; actual repairs/key/edge mesh and delivered recipe remain disclosed.",
+      "firstRelease": "Remove independent trim; isolate affected service; sacrifice/repair local plaster and compatible mineral coating; preserve actual fire/water/service boundary.",
+      "residue": "27 is the selected development direction to test, not an adopted room fit or supplied installed assembly. Qualify background/preparation and actual recipe; no owner exception is implied. Gypsum/acrylate paint is only functional control.",
+      "totalDepth": 27,
+      "depthDelta": 12,
       "materialAdmission": "not earned",
       "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
     },
@@ -788,7 +792,7 @@
         "I02",
         "S10"
       ],
-      "name": "Upper protected roof closure",
+      "name": "Upper protected roof closure / finite control",
       "direction": "Locate the actual EI30 duty, exposure and roof support first; compare complete tested systems, not a bare board",
       "layers": [
         [
@@ -1618,13 +1622,16 @@
     "challenger": 17,
     "control": 27,
     "challengerSelected": false,
+    "preferredLimeTrial": 27,
+    "preferredGrowthPerDryFace": 12,
+    "trialAdopted": false,
     "unchangedGeometryFit": false,
     "principalHeadEast": 11582.5,
     "sourceDryEastFace": 11582.5,
     "challengerEastFace": 11580.5,
     "headOverlap": 2,
     "controlledDoorRule": "No finish increment may consume the applicable frame/jamb/perimeter boundary. Source15 remains a hard maximum until an exact complete rewind is earned.",
-    "correction": "HAD must author all affected room faces, furniture and actual opening/frame boundaries before selecting17;15 is not a demonstrated supplied finish recipe."
+    "correction": "HAD must author the full27 dry/30 wet face trial, actual furniture/frames/tasks and ordinary repairs. A2 overlap alone does not prove redesign impracticable. Gypsum with acrylate is functional control, not preferred material selection."
   },
   "finiteDryCorrection": {
     "manufacturer": "British Gypsum",
@@ -1640,9 +1647,18 @@
       ]
     ],
     "selectorTotal": 13,
+    "decorationControl": {
+      "primer": "BEECK Gypsum Primer Fine",
+      "topcoats": "two BEECK Maxil Pro coats",
+      "knownPolymer": "Primer explicitly silicate-acrylate; unapproved",
+      "topcoatDeclaration": "Organic content<5%, not zero or complete formula",
+      "preferredMaterialSelection": false
+    },
+    "method": "Spray11 built in2 passes if required; linked manufacturer guide30November2021 retained in current system page",
+    "decorationAndFitMaximum": 2,
     "currentPDSDate": "2026-09-15",
     "currentHandUndercoatMaximum": 8,
-    "disposition": "Unselected: reconcile current11 selector versus8 maximum hand-application instruction. Establish actual suction/background, complete preparation/additives and compatible decoration; no pure-silicate-on-gypsum transfer.",
+    "disposition": "Functional dimensional control uses11 SPRAY undercoat plus2 finish, supported by selector, current PDS wall table and linked spray guide.8 hand paragraph is not a universal maximum. Current PDS machine paragraph25 wording remains inconsistent with linked max25 guide; seek confirmation before installation, not permission for over-thick coats. Qualify actual suction/background, full preparation/additives and compatible decoration; no pure-silicate transfer.",
     "unchangedGeometryAdmission": false
   },
   "taskDirections": {
@@ -1662,10 +1678,10 @@
     },
     {
       "audit": "I02",
-      "decision": "Authored17 dry finish and roof/slab fire-boundary separation",
+      "decision": "Complete27 mineral dry-finish rewind, and roof/slab fire-boundary separation",
       "owner": "MAT-INTERIORS with HAD/STR",
       "latest": "Before actual room/ceiling freeze",
-      "disposition": "Keep15 hard maximum for unchanged source. Neither17 nor27 is a drop-in or supplied recipe. Qualify the actual background/application and author the entire room/furniture/frame rewind before selecting either. Determine roof duty/exposure/support before selecting C-U."
+      "disposition": "Prefer source-backed24 lime+1 coating/prep+2 allowance=27 with real12/face HAD rewind and task reruns; repair ordinary furniture/frame geometry before declaring impracticability. Keep gypsum/acrylate as functional control. Qualify actual substrate/recipe; establish roof duty/exposure/support before C-U."
     },
     {
       "audit": "I03/O01/O03/O05",
@@ -1696,6 +1712,112 @@
       "disposition": "Retain required certified insulation, collars, compounds and closures; independent ordinary finish does not replace the safety boundary."
     }
   ],
+  "wetRoomTrials": {
+    "status": "Coordinated trial only; awaiting HAD/IAS operating geometry and services source join, no structural port permission",
+    "family": {
+      "wetEast": 11567.5,
+      "wetSouth": 3800,
+      "wetNorth": 6400,
+      "westBathReturn": [
+        3800,
+        4500
+      ],
+      "retainedCabinet": [
+        9385,
+        4675,
+        600,
+        750
+      ],
+      "bath": [
+        9460,
+        3800,
+        1700,
+        700
+      ],
+      "pan": [
+        10777.5,
+        5800,
+        560,
+        355
+      ],
+      "eastServiceBand": [
+        11337.5,
+        3800,
+        230,
+        2600
+      ],
+      "column": [
+        11342.5,
+        6180,
+        180,
+        180
+      ],
+      "port": [
+        11432.5,
+        6270
+      ],
+      "basin": [
+        11227.5,
+        5300,
+        340,
+        450
+      ],
+      "door": {
+        "rough": [
+          5450,
+          6350
+        ],
+        "hingeSource": [
+          9385,
+          5480
+        ],
+        "leaf": [
+          840,
+          44
+        ],
+        "opens": "EAST/SOUTH",
+        "dry27TrialHingeX": 9397
+      },
+      "checks": {
+        "panToColumnY": 25,
+        "columnToNorthFace": 40,
+        "basinToPanY": 50,
+        "bandWidth": 230
+      },
+      "superseded": "Reject source basin5400 against moved pan5800:50Y and110X overlap; reject180west pan move without complete cistern/column envelope"
+    },
+    "rear": {
+      "shower": [
+        1802.5,
+        8952.5,
+        1000,
+        1000
+      ],
+      "basin": [
+        1000,
+        8952.5,
+        400,
+        220
+      ],
+      "wetSouth": 8952.5,
+      "wetEast": 2802.5,
+      "doorHostUnchangedOutsideShowerReturn": true
+    }
+  },
+  "developmentExitAssessment": {
+    "status": "Not yet earned: two finite internal geometry joins remain; later admission alone is not the reason",
+    "internalDesignRemaining": [
+      "Join and test ONE full27 dryfinish room/furniture/frame rewind; repair ordinary changes before rejecting it",
+      "Join family hinged-door/pan/basin/230serviceband and rear30wet local face trials to actual HAD/IAS/service source"
+    ],
+    "laterAdmissionSeparate": [
+      "Actual product/substrate/recipe and compatible installed system",
+      "Material disclosure and explicit owner disposition for remaining known polymers; none approved",
+      "Physical/prototype, structural/fire/water/operation testing and applicable external acceptance"
+    ],
+    "recommendationCoverage": "All18 room/route occurrences have reasoned construction and first-release directions; current trial conflicts are named rather than hidden",
+    "programmeAction": "Assess complete development only after the two internal joins are earned; do not prolong planned solely for later certification"
+  },
   "checks": {
     "dryStandardControl": 27,
     "dryControlOver15": 12,
@@ -1711,5 +1833,5 @@
   },
   "exceptionsApproved": 0,
   "installedQuantities": null,
-  "programmeLifecycle": "planned"
+  "programmeLifecycle": "planned pending two actual internal design joins; separate later admission not used as a blanket delay"
 }
