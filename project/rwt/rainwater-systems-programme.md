@@ -214,6 +214,8 @@ The [outer-west passive leak-witness review](outer-west-leak-witness.md) challen
 
 ### RWT-ROBUSTNESS — independent paths and degraded operation
 
+**1 November bounded comparative result:** [Full-duty and common-cause robustness attack](rwt-robustness-result.md) separates genuine full-duty N+1 survival from safe passive exceedance, attacks shared-throat/receiver, court, ice/debris, failed joints, blocked surface routes, high tailwater, maintenance, movement and missing plant. The existing enclosed court does **not** demonstrate any safe independent failed-state route; neither a second grate nor roof redistribution cures the fatal court cut. The result **completes this comparative packet without selecting or certifying a drainage network**. RWT-06 retains actual crossing/access/threshold duties; RWT-07 must reject any composed house candidate with the same unproved through-ring escape rather than delegate it to a future engineer.
+
 After RWT-SHED, RWT-METALS and RWT-05, compare full-duty surviving paths under blockage, accessible capacity/freeboard, common debris/frost/backwater and passive final spill. Use actual candidate elevation ledgers and downstream topology. A second outlet must have a reachable and independent path; a clean-system capacity result cannot prove degraded-operation safety.
 
 ### RWT-07 — network synthesis and Reference House candidates
