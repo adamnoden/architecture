@@ -114,5 +114,56 @@
     "firstSusceptibleInterface": "unknown",
     "assignedFaultFlow": "unproven",
     "independentReceiver": "unproven"
+  },
+  "portalPinch": {
+    "scope": "One monotone free-outfall carrier with its crown below a retained cover, both measured from the same FFL. Necessary geometric trial only; not structural sizing or a two-route solution.",
+    "inequality": "D >= max(P + courtFall + J, H_carrier + T_cover) + L * S + K",
+    "receiverKind": "synthetic grade only; not observed high water",
+    "compactCollectorInvertDepth": 131,
+    "maxAllowedInletInvertDepthAtSchematicGrade": 82.5,
+    "crossingFall": 42.5,
+    "receiverClearance": 25,
+    "availableRelativeHeight": 150,
+    "carrierCoverTrials": [
+      {
+        "key": "small",
+        "carrierHeight": 60,
+        "retainedCover": 40,
+        "structuralInvertDepth": 100,
+        "controllingInvertDepth": 131,
+        "requiredRelativeHeight": 198.5,
+        "additionalRelativeRiseNeeded": 48.5,
+        "controls": "collector",
+        "evidence": "Hypothetical dimensions, not a specified channel, bearer, floor or capacity"
+      },
+      {
+        "key": "medium",
+        "carrierHeight": 80,
+        "retainedCover": 80,
+        "structuralInvertDepth": 160,
+        "controllingInvertDepth": 160,
+        "requiredRelativeHeight": 227.5,
+        "additionalRelativeRiseNeeded": 77.5,
+        "controls": "physical envelope",
+        "evidence": "Hypothetical dimensions, not a specified channel, bearer, floor or capacity"
+      },
+      {
+        "key": "large",
+        "carrierHeight": 120,
+        "retainedCover": 100,
+        "structuralInvertDepth": 220,
+        "controllingInvertDepth": 220,
+        "requiredRelativeHeight": 287.5,
+        "additionalRelativeRiseNeeded": 137.5,
+        "controls": "physical envelope",
+        "evidence": "Hypothetical dimensions, not a specified channel, bearer, floor or capacity"
+      }
+    ],
+    "limitations": [
+      "No nominated full-flow N or E dimensions",
+      "Cover/bearing and all removable interfaces not designed",
+      "Not applicable to an elevated/side-exiting passage without re-deriving the physical section",
+      "No hydraulic, debris, first-harm or site acceptance"
+    ]
   }
 }
