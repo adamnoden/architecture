@@ -71,23 +71,46 @@
 <text x="247" y="263" class="small">No discharge to structural void.</text>
 <text x="247" y="271" class="small">D1300 after H300 + loss50</text>
 <text x="247" y="279" class="small">leaves 60.5 above final reserve50.</text>
+<text x="155" y="170" class="small">LOCAL BRIDGE / 1:5 CROP</text>
+<rect x="145.000" y="200.000" width="75.000" height="24.000" fill="#aebeba" stroke="#243a44" stroke-width=".35"/>
+<rect x="145.000" y="180.000" width="75.000" height="20.000" fill="#aebeba" stroke="#243a44" stroke-width=".35"/>
+<rect x="175.000" y="230.000" width="20.000" height="60.000" fill="#aebeba" stroke="#243a44" stroke-width=".35"/>
+<rect x="155.000" y="230.000" width="20.000" height="60.000" fill="#d4c28b" stroke="#243a44" stroke-width=".35"/>
+<rect x="155.000" y="227.600" width="40.000" height="2.400" fill="#7896a3" stroke="#243a44" stroke-width=".35"/>
+<path d="M140,226 L175,226" stroke="#477e98" stroke-width=".4" fill="none"/>
+<path d="M175,286 L183,291" stroke="#243a44" stroke-width=".4" fill="none"/>
+<path d="M183,291 L190,286" stroke="#243a44" stroke-width=".4" fill="none"/>
+<path d="M190,286 L195,291" stroke="#243a44" stroke-width=".4" fill="none"/>
+<text x="155" y="299" class="small">rib −80..−300 / flange120</text>
+<text x="155" y="306" class="small">local U top −330; 30 gap</text>
+<text x="155" y="313" class="small">lid top −310; seat12 at−318</text>
+<text x="155" y="337" class="small">Minimum U depth509.5 / d453</text>
+<text x="155" y="344" class="small">2H12 stacked + closedH6/150</text>
+<text x="16" y="346" class="small">FIXED SEATS / plan rectangles in JSON</text>
+<text x="16" y="353" class="small">U ends: inner-leaf grid axes8082.5 /11667.5.</text>
+<text x="16" y="360" class="small">Bridge: seat300 outside U; no cap/lid load path.</text>
+<text x="16" y="367" class="small">Bridge travel:7732.5–8432.5 /8950–9650 /11300–12000.</text>
+<text x="16" y="374" class="small">Flange centre offset17.5; rib stays on actual wall axis.</text>
 <text x="363" y="177" class="title">D / FINITE LOAD PATHS &amp; ADVERSE BOUNDARIES</text>
 <text x="363" y="192" class="note">Removable cap</text>
 <text x="363" y="200" class="small">M 1.04 / MR 4.86; V 3.08 / VRdc 17.24</text>
 <text x="363" y="208" class="small">b400 / h100 / d62; As201.1; x/d0.259</text>
-<text x="363" y="220" class="note">Permanent masonry bridge</text>
-<text x="363" y="228" class="small">M 10.21 / MR 17.20; V 31.33 / VRdc 42.19</text>
-<text x="363" y="236" class="small">b700 / h120 / d82; As549.8; x/d0.306</text>
-<text x="363" y="248" class="note">Fixed U / each sidewall</text>
-<text x="363" y="256" class="small">M 24.82 / MR 46.62; V 23.36 / VRdc 23.43</text>
-<text x="363" y="264" class="small">b100 / h559.5 / d503; As226.2; x/d0.144</text>
-<text x="363" y="276" class="small">Masonry bridge: 700 along travel; 1603 across; 300 seats.</text>
-<text x="363" y="284" class="small">Seats outside U-box → permanent piers → reinforced grid.</text>
-<text x="363" y="292" class="small">Box: two 100 × 559.5 longitudinal beams; 2H12 stacked.</text>
-<text x="363" y="300" class="small">Box end seats 100 × 300; max calculation span 4250.</text>
-<text x="363" y="308" class="small">25 cover is a TRIAL; RC100 bridge rejected; RC120 checked.</text>
-<text x="363" y="316" class="small">Wall plinth through insulation needs thermal / DPC splice.</text>
-<text x="363" y="324" class="small">Cap 400 long: bare RC ≈100 kg; lifting equipment required.</text>
+<text x="363" y="220" class="note">Permanent140 rib / 120 floor flange</text>
+<text x="363" y="228" class="small">M 10.31 / MR 20.60; V 31.64 / VRdc 20.24</text>
+<text x="363" y="236" class="small">b140 / h220 / d182; As307.9; x/d0.386</text>
+<text x="363" y="248" class="note">Fixed U / sidewall; shear links required</text>
+<text x="363" y="256" class="small">M 24.82 / MR 41.71; V 23.36 / VRdc 22.30</text>
+<text x="363" y="264" class="small">b100 / h509.5 / d453; As226.2; x/d0.160</text>
+<text x="363" y="276" class="small">Masonry rib140 ×220; 2H14 bottom; linksH6/100.</text>
+<text x="363" y="284" class="small">Rib links VRs 40.27; plain VRdc below demand.</text>
+<text x="363" y="292" class="small">Seats outside U-box → permanent piers → reinforced grid.</text>
+<text x="363" y="300" class="small">Box: two 100 × 559.5 longitudinal beams; 2H12 stacked.</text>
+<text x="363" y="308" class="small">Links H6/150 VRs 66.83; plain VRdc below demand.</text>
+<text x="363" y="316" class="small">Box end seats 100 × 300; max calculation span 4250.</text>
+<text x="363" y="324" class="small">Local U top −330; 12 SS lid seats bypass insulation.</text>
+<text x="363" y="332" class="small">25 cover is a TRIAL; wide-flange-only wall proof rejected.</text>
+<text x="363" y="340" class="small">RC wall rib through insulation needs thermal / DPC splice.</text>
+<text x="363" y="348" class="small">Cap 400 long: bare RC ≈100 kg; lifting equipment required.</text>
 <path d="M16,394 L578,394" stroke="#243a44" stroke-width=".4" fill="none"/>
 <text x="16" y="402" class="small">REFERENCE DESIGN ONLY / derived resistances require specified materials, bond, cover, detailing, bearings and competent acceptance.</text>
 <text x="16" y="409" class="small">Source pins, equations, load envelopes and falsifiers: joined-rc-reference.json + ../joined-rc-reference.md. No site, fire, acoustic or whole-house approval.</text>

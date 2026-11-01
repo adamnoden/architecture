@@ -1,5 +1,7 @@
 # Riser opening: real trimming and a complete floor boundary
 
+**1 November successor:** [J-RC3](joined-rc-reference.md) changes the first conventional enquiry to a solid RC200 slab with deliberately formed water/soil-stack penetrations and slab-contact cabinet supports. This removes the full-opening/hanger dependency for the demonstrated joint rather than inventing a special HC150 product. The hollowcore comparisons below remain reproducible at their original scope; the complete service programme, seals and lower plant-door reactions are not thereby resolved or adopted.
+
 **31 October 2026 · STR-HOUSE bounded comparison · not for construction.** Starting main `09130048037f20fdc86b60959b2c631db18b6a6f`. This develops the [located riser enquiry](house-support-study.md#riser-the-stacked-cabinet-does-not-design-the-slab-hole) on the **unadopted B plan**. It changes no accepted house geometry, selected floor, structural member or material exception. STR-HOUSE remains planned.
 
 ## Decision

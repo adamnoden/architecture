@@ -77,12 +77,12 @@ cap_sec = section(400, 100, 62, area(8)*400/100)
 # 700 travel-length solid spreader, 300 finite seat each side. Envelope includes
 # floor reaction, upper masonry and roof allowance; not an actual selected roof.
 bridge_L = (outside+300)/1000
-bridge_G = 7.5*floor_L/2 + .14*3.1*20 + 10 + .7*.12*25
+bridge_G = 7.5*floor_L/2 + .14*3.1*20 + 10 + .7*.12*25 + .14*.1*25
 bridge_Q = 2*floor_L/2 + 3
 bridge_w = 1.35*bridge_G+1.5*bridge_Q
 bridge_action = beam_uniform(bridge_w, bridge_L)
-bridge_sec = section(700, 120, 82, area(10)*7)
-bridge_seat_MPa = bridge_action['V_kN']*1000/(700*300)
+bridge_sec = section(140, 220, 182, area(14)*2)
+bridge_seat_MPa = bridge_action['V_kN']*1000/(140*300)
 bridge_bad_cover = section(700, 100, 52, area(10)*7)
 
 def cracked_deflection(b,h,d,As,G,Q,L,creep=0):
@@ -97,11 +97,22 @@ def cracked_deflection(b,h,d,As,G,Q,L,creep=0):
         result+=5*w*(L*1000)**4/(384*Ec*I)
     return result
 
-bridge_sls={str(phi):cracked_deflection(700,120,82,area(10)*7,bridge_G,bridge_Q,bridge_L,phi) for phi in [0,1,2,3]}
-bridge_sls['differential_shrinkage_300_microstrain_mm']=300e-6/120*(bridge_L*1000)**2/8
+bridge_links_VR_kN=(2*area(6)/100)*.9*182*(500/1.15)/1000
+flange_outstand_M_kNm_m=(1.35*6.5+1.5*2)*.28**2/2
+bridge_sls={str(phi):cracked_deflection(140,220,182,area(14)*2,bridge_G,bridge_Q,bridge_L,phi) for phi in [0,1,2,3]}
+bridge_sls['differential_shrinkage_300_microstrain_mm']=300e-6/220*(bridge_L*1000)**2/8
 bridge_sls['L_over_250_comparator_mm']=bridge_L*1000/250
-bridge_sls['cracking_moment_kNm']=2.9*700*120**2/6/1e6
+bridge_sls['cracking_moment_kNm']=2.9*140*220**2/6/1e6
 bridge_sls['SLS_moment_kNm']=(bridge_G+bridge_Q)*bridge_L**2/8
+n=200000/E; As=area(14)*2; b=140; h=220; d=182
+x=(-n*As+math.sqrt((n*As)**2+2*b*n*As*d))/b
+sig=bridge_sls['SLS_moment_kNm']*1e6/(As*(d-x/3))
+heff=min(2.5*(h-d),(h-x)/3,h/2); rho=As/(b*heff)
+sr=3.4*31+.8*.5*.425*14/rho
+strain=max((sig-.4*2.9/rho*(1+n*rho))/200000,.6*sig/200000)
+bridge_sls['crack_width_sensitivity_mm']=sr*strain
+bridge_sls['crack_width_comparator_mm']=.3
+
 assert bridge_sls['3']+bridge_sls['differential_shrinkage_300_microstrain_mm']<bridge_sls['L_over_250_comparator_mm']
 
 # Fixed U-box spans longitudinally between real supports at court and outer
@@ -116,10 +127,10 @@ u_G = concrete_G + 6.5*outside/1000 + 1.0
 u_Q = 2*outside/1000 + .6*.26*10
 u_w = (1.35*u_G+1.5*u_Q)/2
 u_action = beam_uniform(u_w, u_design_length)
-u_sec = section(100, u_depth, 503, 2*area(12))
+u_sec = section(100, u_depth-50, 453, 2*area(12))
 u_seat_MPa = u_action['V_kN']*1000/(100*300)
 
-u_links_VR_kN=(2*area(6)/150)*.9*503*(500/1.15)/1000
+u_links_VR_kN=(2*area(6)/150)*.9*453*(500/1.15)/1000
 u_base_action=beam_uniform(1.35*(2.5+.12+.12+2.6),cap_L)
 u_base_section=section(1000,100,62,area(8)*1000/100)
 assert u_base_action['M_kNm']<u_base_section['MR_kNm']
@@ -150,8 +161,9 @@ for invalid in [(-1,1),(1,0)]:
 assert not bridge_bad_cover['ductility_screen']
 for a,s in [(floor_action,floor_sec),(cap_udl,cap_sec),(cap_point,cap_sec),(bridge_action,bridge_sec),(u_action,u_sec)]:
     assert s['ductility_screen'] and s['As_mm2']>=s['As_min_mm2']
-    assert a['M_kNm']<s['MR_kNm'] and a['V_kN']<s['VRdc_kN']
-assert 2*bridge_action['M_kNm'] > bridge_sec['MR_kNm']
+    assert a['M_kNm']<s['MR_kNm']
+    assert a['V_kN']<(u_links_VR_kN if s is u_sec else bridge_links_VR_kN if s is bridge_sec else s['VRdc_kN'])
+assert 3*bridge_action['M_kNm'] > bridge_sec['MR_kNm']
 
 data = dict(
     identity='J-RC3 compact-B joined RC reference; conditional internal design, unadopted',
@@ -167,7 +179,7 @@ data = dict(
              RC_thickness=100,module_length=400,section_check=cap_sec,UDL=cap_udl,point_alternative=cap_point,
              bare_RC_mass_kg=outside/1000*.4*.1*2500,
              mass_with_80mm_mineral_upper_at_2200_kg_m3=outside/1000*.4*(.1*2500+.08*2200)),
-    bridge=dict(travel_length=700,RC_thickness=120,overall_cross_width=outside+600,seat_each_side=300,
+    bridge=dict(travel_length=700,RC_flange_thickness=120,RC_rib_width=140,RC_rib_height_above_flange=100,links_H6_at_100_VR_kN=bridge_links_VR_kN,flange_outstand_M_kNm_m=flange_outstand_M_kNm_m,overall_cross_width=outside+600,seat_each_side=300,
                 support_axis_span=bridge_L*1000,G_envelope_kN_m=bridge_G,Q_envelope_kN_m=bridge_Q,
                 ULS_kN_m=bridge_w,action=bridge_action,section_check=bridge_sec,
                 seat_stress_MPa=bridge_seat_MPa,rejected_RC100_cover35=bridge_bad_cover,SLS=bridge_sls),
@@ -175,7 +187,7 @@ data = dict(
                  side_RC=100,base_RC=100,physical_inner_leaf_axis_gap=u_clear_length*1000,
                  conservative_calculation_span=u_design_length*1000,G_kN_m=u_G,Q_kN_m=u_Q,
                  per_sidewall_action=u_action,sidewall_section=u_sec,seat_stress_MPa=u_seat_MPa,
-                 seat_length=300,actual_support_stiffness=None,links_H6_at_150_VR_kN=u_links_VR_kN,base_transverse_action=u_base_action,base_section=u_base_section,end_seats_N_xywh=u_end_seats_N,end_seats_E_xywh=u_end_seats_E),
+                 seat_length=300,local_notched_wall_top=-330,notch_taper_each_end=300,actual_support_stiffness=None,links_H6_at_150_VR_kN=u_links_VR_kN,base_transverse_action=u_base_action,base_section=u_base_section,end_seats_N_xywh=u_end_seats_N,end_seats_E_xywh=u_end_seats_E),
     ground=dict(FFL=0,field_RC200_bottom=-380,cover_RC100_bottom=-280,bridge_RC120_bottom=-300,tray_bottom=-639.5,
                 U_bottom=-839.5,grade=-1300,raw_soil_clearance=460.5,
                 authored_heave_stress=300,declared_final_reserve=50,surplus_beyond_reserve=60.5,
@@ -261,22 +273,48 @@ text(247,263,'No discharge to structural void.','small')
 text(247,271,'D1300 after H300 + loss50','small')
 text(247,279,'leaves 60.5 above final reserve50.','small')
 
+# Located local crop through a fixed bridge and the adjacent U wall. Same
+# vertical datums as the ordinary section, enlarged 1:5; lower wall is cropped.
+text(155,170,'LOCAL BRIDGE / 1:5 CROP','small')
+rect(145,200,75,24,'#aebeba')
+rect(145,180,75,20,'#aebeba')
+rect(175,230,20,60,'#aebeba')
+rect(155,230,20,60,'#d4c28b')
+rect(155,227.6,40,2.4,'#7896a3')
+line(140,226,175,226,'#477e98')
+line(175,286,183,291);line(183,291,190,286);line(190,286,195,291)
+text(155,299,'rib −80..−300 / flange120','small')
+text(155,306,'local U top −330; 30 gap','small')
+text(155,313,'lid top −310; seat12 at−318','small')
+text(155,337,'Minimum U depth509.5 / d453','small')
+text(155,344,'2H12 stacked + closedH6/150','small')
+
+# Plan-load destinations, not a floating generic support arrow.
+text(16,346,'FIXED SEATS / plan rectangles in JSON','small')
+text(16,353,'U ends: inner-leaf grid axes8082.5 /11667.5.','small')
+text(16,360,'Bridge: seat300 outside U; no cap/lid load path.','small')
+text(16,367,'Bridge travel:7732.5–8432.5 /8950–9650 /11300–12000.','small')
+text(16,374,'Flange centre offset17.5; rib stays on actual wall axis.','small')
+
 text(363,177,'D / FINITE LOAD PATHS & ADVERSE BOUNDARIES','title')
 rows=[
     ('Removable cap',cap_point,cap_sec),
-    ('Permanent masonry bridge',bridge_action,bridge_sec),
-    ('Fixed U / each sidewall',u_action,u_sec)]
+    ('Permanent140 rib / 120 floor flange',bridge_action,bridge_sec),
+    ('Fixed U / sidewall; shear links required',u_action,u_sec)]
 y=192
 for label,a,s in rows:
     text(363,y,label,'note');y+=8
     text(363,y,f"M {a['M_kNm']:.2f} / MR {s['MR_kNm']:.2f}; V {a['V_kN']:.2f} / VRdc {s['VRdc_kN']:.2f}",'small');y+=8
     text(363,y,f"b{int(s['b_mm'])} / h{s['h_mm']:g} / d{s['d_mm']:g}; As{s['As_mm2']:.1f}; x/d{s['x_over_d']:.3f}",'small');y+=12
-text(363,y,'Masonry bridge: 700 along travel; 1603 across; 300 seats.','small');y+=8
+text(363,y,'Masonry rib140 ×220; 2H14 bottom; linksH6/100.','small');y+=8
+text(363,y,f'Rib links VRs {bridge_links_VR_kN:.2f}; plain VRdc below demand.','small');y+=8
 text(363,y,'Seats outside U-box → permanent piers → reinforced grid.','small');y+=8
 text(363,y,'Box: two 100 × 559.5 longitudinal beams; 2H12 stacked.','small');y+=8
+text(363,y,f'Links H6/150 VRs {u_links_VR_kN:.2f}; plain VRdc below demand.','small');y+=8
 text(363,y,'Box end seats 100 × 300; max calculation span 4250.','small');y+=8
-text(363,y,'25 cover is a TRIAL; RC100 bridge rejected; RC120 checked.','small');y+=8
-text(363,y,'Wall plinth through insulation needs thermal / DPC splice.','small');y+=8
+text(363,y,'Local U top −330; 12 SS lid seats bypass insulation.','small');y+=8
+text(363,y,'25 cover is a TRIAL; wide-flange-only wall proof rejected.','small');y+=8
+text(363,y,'RC wall rib through insulation needs thermal / DPC splice.','small');y+=8
 text(363,y,'Cap 400 long: bare RC ≈100 kg; lifting equipment required.','small')
 line(16,394,578,394)
 text(16,402,'REFERENCE DESIGN ONLY / derived resistances require specified materials, bond, cover, detailing, bearings and competent acceptance.','small')
