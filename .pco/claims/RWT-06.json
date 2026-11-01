@@ -9,8 +9,8 @@
     "label": "issue-comment-6556166287"
   },
   "claimedAt": "2026-11-01T09:34:46.000Z",
-  "heartbeatAt": "2026-11-01T09:34:46.000Z",
-  "expiresAt": "2026-11-01T10:19:46.000Z",
+  "heartbeatAt": "2026-11-01T09:40:20.000Z",
+  "expiresAt": "2026-11-01T10:25:20.000Z",
   "branch": "work/mvb-chat-6556166287",
   "predecessor": {
     "leaseId": "c9511c0e-98d6-4364-9f1d-3155ae1fa7fc",
@@ -31,5 +31,10 @@
       "next": "Re-enter when a matched current AWPT-6454+ outdoor jack/wheel/basket/control/deployment layout with a located task and actual support route is available, or a matched W1/W2/support/joint-release assembly and required site datums are supplied. Preserve predecessor evidence and do not repeat unchanged generic comparisons.",
       "blocker": "Actual machine contacts, floor support/paver conditions and matched W1/W2 release geometry remain unbound. An indoor 1.75 x 1.55 deployment lead cannot qualify the current 3.0 x 2.8 outdoor comparison. The limitation is missing required evidence, not a publication or transport failure."
     }
+  },
+  "pr": 1201,
+  "checkpoint": {
+    "evidence": "PR1201 captures RWT-06 topological negative disposition and architectural N/E egress redesign; RWT-06 lifecycle deliberately remains planned.",
+    "next": "Full exact-head CI and canonical merge-check; merge and retain RWT-06 as planned for redesigned source-backed section; release this generation as handoff."
   }
 }
