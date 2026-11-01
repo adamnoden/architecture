@@ -9,8 +9,8 @@
     "label": "zerg2-mat-loggia"
   },
   "claimedAt": "2026-11-01T20:06:02.804Z",
-  "heartbeatAt": "2026-11-01T20:48:02.817Z",
-  "expiresAt": "2026-11-01T21:33:02.817Z",
+  "heartbeatAt": "2026-11-01T21:12:30.018Z",
+  "expiresAt": "2026-11-01T21:57:30.018Z",
   "branch": "work/zerg2-mat-loggia",
   "predecessor": {
     "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote checkpointbfceca7fb553fe32041fc0ce821b49a381afa370 tree45f59e48 exact local equality; actual507.5 wall/2930soffit,600beam cap-island geometry, formed cavity tray and sloped outdoor deck/raised outlet/access are durable; repr/diff checks pass",
-    "next": "Complete cap-island movement cover and cavity outlet/collector detail, actual remaining south-door first harm, finite N/E receiving states and thermal/anchor checks; render and independent review before integration",
-    "blocker": "Reference target D1300 from actual cap722.5; deck joints/supports/receivers and technical/material admission remain unqualified"
+    "evidence": "Remote a7ddd6f643f826ee25c4283bb9f004bd38ba0e8b tree beab42ec808b2cbd2a2f467111f016d625f454a6 native/local equality; regenerated --check and diffcheck; three actual SVG sheets inspected.",
+    "next": "Develop protected outdoor normal conduit and actual beam crossings; keep independent broad relief and explicit terminal/backwater cases; reconcile arch thermal boundary and structural node.",
+    "blocker": "Technical/material admission remains rejected at actual pan-DPC transition and arch/base thermal bridges; no site acceptance inferred."
   }
 }
