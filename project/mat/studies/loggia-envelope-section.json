@@ -41,10 +41,11 @@
   "upper": {
     "rcTop": 3370,
     "rcSoffit": 3170,
-    "glass": 200,
+    "glass": 240,
     "railLathTerritory": 15,
     "render": 25,
-    "underside": 2930
+    "glassUnderside": 2930,
+    "underside": 2890
   },
   "dpc": {
     "inner": [
@@ -79,7 +80,7 @@
     "requiredD": 1222.5,
     "residualAtD1300": 227.5
   },
-  "wetDeadKgM2": 80,
+  "wetDeadKgM2": 84.4,
   "windStressKpa": 1.5,
   "grid": [
     600,
@@ -100,16 +101,17 @@
   },
   "outdoor": {
     "southLanding": {
-      "run": 600,
-      "drop": 15
+      "run": 1500,
+      "drop": 30,
+      "doorOperation": "Outward north;850 leaf projection leaves650 beyond tip"
     },
     "remainingCourt": {
-      "run": 2900,
-      "drop": 95
+      "run": 2000,
+      "drop": 80
     },
     "courtWalking": [
       0,
-      -15,
+      -30,
       -110
     ],
     "loggiaRun": 4250,
@@ -120,13 +122,13 @@
     "rc": 200,
     "deckTop": [
       -70,
-      -85,
+      -100,
       -180,
       -222.5
     ],
     "deckSoffit": [
       -270,
-      -285,
+      -300,
       -380,
       -422.5
     ],
@@ -162,8 +164,92 @@
     "normal": "Accessible edge copper collector; exact cross-section and receiver to qualify",
     "relief": "Broad walking-surface gravity route to guarded exterior spill/cascade; independent receiver not yet accepted"
   },
-  "wetDeadKpa": 0.7848,
-  "gridWetDeadKn": 0.211896,
-  "gridUlsStressKn": 0.8935596000000001,
-  "coreR": 4.878048780487805
+  "threshold": {
+    "wallReservation": 417.5,
+    "wallScope": "Existing southcourt shell reservation, not507.5loggia wall qualification",
+    "roughOpening": [
+      5100,
+      6900
+    ],
+    "weatherHingeY": 4250,
+    "frameDepth": 140,
+    "frameY": [
+      4110,
+      4250
+    ],
+    "jambFace": 50,
+    "nominalLeaves": [
+      845.5,
+      845.5
+    ],
+    "thresholdGap": 4,
+    "leafThickness": 45,
+    "leafSweepEnvelope": 850,
+    "landingEndY": 5750,
+    "clearBeyondOpenTip": 650,
+    "saddle": {
+      "depth": 250,
+      "top": 15,
+      "chamferRun": 60,
+      "flat": 130,
+      "bottom": -75
+    },
+    "pan": {
+      "material": "Authored1.5uncoated316L, welded corners/ends; exact grade/filler/process unknown",
+      "insideBottom": -75,
+      "rearCrest": 15,
+      "jambEnds": 75,
+      "frontDrip": -80
+    },
+    "anchorLowest": 150,
+    "bracket": {
+      "material": "Authored6SS verticalweb, no material/capacity pass",
+      "height": 60,
+      "arm": 350,
+      "levels": [
+        200,
+        1000,
+        2000
+      ],
+      "leafMassStressKg": 70,
+      "weightKn": 0.6867,
+      "sagMomentKnM": 0.2918475,
+      "outwardOffsetMm": 262.5,
+      "outwardMomentKnM": 0.18025875
+    },
+    "springMetal": {
+      "component": "PEMKO73B bronze V strip research comparator",
+      "thicknessInch": 0.008,
+      "widthInch": 0.625,
+      "nailPitchInch": 3,
+      "gapInch": [
+        0.125,
+        0.1875
+      ],
+      "certifications": "Manufacturer page states none; no weather/flood/fire claim"
+    },
+    "lowestJunction": {
+      "position": "Pan end return to masonry/DPC at−30; timber/stone/metal seam and meetingstile at+15",
+      "status": "Actual leakage/firstharm remains unqualified. +15 is only open-door geometricoverflow crest, not accepted firstharm."
+    },
+    "renewal": "Support leaves, remove local dry-side trim/above-pan fixings, lift frame outward into1500landing; welded pan retained for ordinary frame renewal. Pan renewal requires fullframe+saddle removal and temporary weather cover, not routine strip replacement."
+  },
+  "wetDeadKpa": 0.827964,
+  "gridWetDeadKn": 0.22355028000000002,
+  "gridUlsStressKn": 0.909292878,
+  "coreR": 4.878048780487805,
+  "thermalProbe": {
+    "glassLambda": 0.041,
+    "otherR": 0.4,
+    "steelLambda": 15,
+    "steelShaftDiameter": 0.008,
+    "shaftGrid": [
+      0.6,
+      0.45
+    ],
+    "scope": "Synthetic parallel-path sensitivity, not certified whole-floor U or3D thermal bridge.",
+    "u": 0.1715419246024791,
+    "baseBridge": "600wide concrete beam blocks below-floor vertical insulation. Floor/inner DPC/thermal route not qualified.",
+    "archBridge": "Real masonry arch/spandrel crosses240glass soffit plane; no invisible taper or unchanged finished2400 opening claimed."
+  }
 }
