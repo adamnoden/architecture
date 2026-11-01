@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 11 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 108 · **Cancelled:** 0
+**Structurally ready:** 9 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 110 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -22,10 +22,8 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
-| `HAD-BOUNDARY` | Compare the Boundary Service Lodge and accessible external service raceway | HAD | — |
 | `HAD-03` | Architectural design convergence and visual synthesis | HAD | RWT-06 |
-| `STR-GROUND` | Compare tree-tolerant foundations, ground movement isolation and substructure interfaces | STR | — |
-| `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | STR / HAD | — |
+| `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | STR / HAD | STR-RECONCILE |
 | `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT | — |
 | `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT | — |
 | `MAT-INTERIORS` | Resolve non-plastic interior and wet-room assembly alternatives | MAT | — |
@@ -54,7 +52,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | RWT-07, HAD-03, STR-RECONCILE |
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
-| `STR-RECONCILE` | Reconcile structural interfaces and affected evidence for house selection | STR-HOUSE, STR-GROUND |
+| `STR-RECONCILE` | Reconcile structural interfaces and affected evidence for house selection | STR-HOUSE |
 | `MAT-COORDINATION` | Reconcile selected-house material compliance and explicit owner exceptions | MAT-ENVELOPE, MAT-SERVICES, MAT-INTERIORS, IAS-03, HAD-03, ROF-RWT-GATE |
 | `MRA-01` | External water and ground-envelope assault | TRIAD-GATE |
 | `MRA-02` | Internal water and wet-zone assault | TRIAD-GATE |

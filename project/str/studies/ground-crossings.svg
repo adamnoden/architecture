@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1190.551181pt" height="841.889764pt" viewBox="0 0 1190.551181 841.889764" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>STR-GROUND source-bound generator</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 841.889764 
+L 1190.551181 841.889764 
+L 1190.551181 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 325.984252 487.559055 
+L 666.141732 487.559055 
+L 666.141732 147.401575 
+L 325.984252 147.401575 
+L 325.984252 487.559055 
+z
+" clip-path="url(#p6be4e1a8d1)" style="fill: none; stroke: #22313b; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 446.456693 367.086614 
+L 545.669291 367.086614 
+L 545.669291 267.874016 
+L 446.456693 267.874016 
+L 446.456693 367.086614 
+z
+" clip-path="url(#p6be4e1a8d1)" style="fill: none; stroke: #bfc4c6; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 226.771654 487.559055 
+C 271.877063 487.559055 315.141143 469.638486 347.035484 437.744145 
+C 378.929825 405.849805 396.850394 362.585724 396.850394 317.480315 
+C 396.850394 272.374906 378.929825 229.110825 347.035484 197.216484 
+C 315.141143 165.322144 271.877063 147.401575 226.771654 147.401575 
+C 181.666244 147.401575 138.402164 165.322144 106.507823 197.216484 
+C 74.613482 229.110825 56.692913 272.374906 56.692913 317.480315 
+C 56.692913 362.585724 74.613482 405.849805 106.507823 437.744145 
+C 138.402164 469.638486 181.666244 487.559055 226.771654 487.559055 
+z
+" clip-path="url(#p6be4e1a8d1)" style="fill: #e4eadc; opacity: 0.7; stroke: #236954; stroke-linejoin: miter"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m863b86cc57" d="M -2.95804 2.95804 
+L 2.95804 -2.95804 
+M -2.95804 -2.95804 
+L 2.95804 2.95804 
+" style="stroke: #236954; stroke-width: 1.5"/>
+    </defs>
+    <g clip-path="url(#p6be4e1a8d1)">
+     <use xlink:href="#m863b86cc57" x="226.771654" y="317.480315" style="fill: #236954; stroke: #236954; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_1">
+    <path d="M 291.968504 629.291339 
+L 291.968504 344.409449 
+L 325.984252 344.409449 
+" clip-path="url(#p6be4e1a8d1)" style="fill: none; stroke: #b54736; stroke-width: 1.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 694.488189 629.291339 
+L 694.488189 344.409449 
+L 666.141732 344.409449 
+" clip-path="url(#p6be4e1a8d1)" style="fill: none; stroke: #245f91; stroke-width: 1.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 141.732283 583.937008 
+L 283.464567 583.937008 
+" clip-path="url(#p6be4e1a8d1)" style="fill: none; stroke: #22313b; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="127.559055" y="133.228346" transform="rotate(-0 127.559055 133.228346)">Synthetic 6000 radius exclusion</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #22313b" x="496.062992" y="317.480315" transform="rotate(-0 496.062992 317.480315)">COURT</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #22313b" x="496.062992" y="133.228346" transform="rotate(-0 496.062992 133.228346)">12 m HOUSE EXTENT</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="127.559055" y="629.291339" transform="rotate(-0 127.559055 629.291339)">west control: intersects</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="425.19685" y="629.291339" transform="rotate(-0 425.19685 629.291339)">east trial: clear in this scenario</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #22313b" x="212.598425" y="568.346457" transform="rotate(-0 212.598425 568.346457)">5 m / map 1:100 at A3</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="PathCollection_2">
+    <defs>
+     <path id="m91c2b0a84a" d="M 0 2.95804 
+C 0.784481 2.95804 1.536938 2.646362 2.09165 2.09165 
+C 2.646362 1.536938 2.95804 0.784481 2.95804 0 
+C 2.95804 -0.784481 2.646362 -1.536938 2.09165 -2.09165 
+C 1.536938 -2.646362 0.784481 -2.95804 0 -2.95804 
+C -0.784481 -2.95804 -1.536938 -2.646362 -2.09165 -2.09165 
+C -2.646362 -1.536938 -2.95804 -0.784481 -2.95804 0 
+C -2.95804 0.784481 -2.646362 1.536938 -2.09165 2.09165 
+C -1.536938 2.646362 -0.784481 2.95804 0 2.95804 
+z
+" style="stroke: #22313b"/>
+    </defs>
+    <g clip-path="url(#pc74722ccb1)">
+     <use xlink:href="#m91c2b0a84a" x="816.175478" y="416.692913" style="fill: #ffffff; stroke: #22313b"/>
+    </g>
+   </g>
+   <g id="PathCollection_3">
+    <g clip-path="url(#pc74722ccb1)">
+     <use xlink:href="#m91c2b0a84a" x="1010.551181" y="419.12261" style="fill: #ffffff; stroke: #22313b"/>
+    </g>
+   </g>
+   <g id="line2d_4">
+    <path d="M 748.143982 416.692913 
+L 816.175478 416.692913 
+" clip-path="url(#pc74722ccb1)" style="fill: none; stroke: #22313b; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 1010.551181 419.12261 
+L 1136.895388 419.12261 
+" clip-path="url(#pc74722ccb1)" style="fill: none; stroke: #236954; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 816.175478 416.692913 
+L 1010.551181 419.12261 
+" clip-path="url(#pc74722ccb1)" style="fill: none; stroke: #245f91; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 816.175478 416.692913 
+L 1010.551181 414.263217 
+" clip-path="url(#pc74722ccb1)" style="fill: none; stroke-dasharray: 4.81,2.08; stroke-dashoffset: 0; stroke: #b54736; stroke-width: 1.3"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="748.143982" y="358.380202" transform="rotate(-0 748.143982 358.380202)">HOUSE-FIXED</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="991.113611" y="358.380202" transform="rotate(-0 991.113611 358.380202)">SOIL-FIXED</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="825.894263" y="393.367829" transform="rotate(-0 825.894263 393.367829)">2 m at 1:80 → 25 mm fall</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="777.300337" y="475.005624" transform="rotate(-0 777.300337 475.005624)">+50 mm receiving end rise → −25 mm fall</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="777.300337" y="504.16198" transform="rotate(-0 777.300337 504.16198)">Result: reverse fall. A joint cannot fix gravity.</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="777.300337" y="547.896513" transform="rotate(-0 777.300337 547.896513)">Centreline only / no pipe, port or beam dimensions</text>
+   </g>
+  </g>
+  <g id="text_13">
+   <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="42.519685" y="34.015748" transform="rotate(-0 42.519685 34.015748)">Movement must stay out of the masonry and services</text>
+  </g>
+  <g id="text_14">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="42.519685" y="59.527559" transform="rotate(-0 42.519685 59.527559)">G-03 | Synthetic tree trial + three-axis crossing | No real plot or joint performance represented</text>
+  </g>
+  <g id="text_15">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="42.519685" y="816.377953" transform="rotate(-0 42.519685 816.377953)">STR-GROUND | Reference design — not released for construction | 1 November 2026</text>
+  </g>
+  <g id="text_16">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(42.519685 692.063002)">The circle tests route avoidance, NOT root safety. West closest 2488 mm; east 15529 mm.</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(42.519685 702.844877)">Either route needs real root mapping, rig/load/working footprint and actual network positions.</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(42.519685 713.626752)">A clean centreline cannot authorise excavation, piling or a mixed-utility raceway.</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="737.007874" y="121.744108" transform="rotate(-0 737.007874 121.744108)">Crossing result / conditional failure</text>
+  </g>
+  <g id="text_18">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 156.31497)">Separate house-fixed port from a supported, accessible</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 167.096845)">site segment. Provide a replaceable transition before</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 177.87872)">any soil-fixed receiver. Opening precedes beam design.</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 188.660595)"/>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 199.44247)">Demand trial: ±20 axial, ±20 transverse, ±50 vertical;</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 210.224345)">combined translation 57.45 mm. Independent rotations</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 221.00622)">and required joint lengths remain unknown.</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 231.788095)">No coupling, seal or service has passed this envelope.</text>
+  </g>
+  <g id="text_19">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 663.716545)">No rigid cast-in crossing. No shared gas/water chamber</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 674.49842)">assumed. Foul fall, roof water and court emergency path</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 685.280295)">retain independent checks. A covered trench may flood;</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 696.06217)">reject usable access that needs pumping or tanking.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6be4e1a8d1">
+   <rect x="42.519685" y="90.708661" width="666.141732" height="566.929134"/>
+  </clipPath>
+  <clipPath id="pc74722ccb1">
+   <rect x="748.143982" y="331.653543" width="388.751406" height="255.11811"/>
+  </clipPath>
+ </defs>
+</svg>

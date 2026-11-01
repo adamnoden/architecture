@@ -50,9 +50,17 @@ export const structureNodes = defineNodes([
     owners: ['STR'],
     title: 'Compare tree-tolerant foundations, ground movement isolation and substructure interfaces',
     dependencies: ['STR-00'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/str/ground-movement-foundation-options-result.md']
+    closeoutEvidence: [
+      'project/str/ground-movement-foundation-options-result.md',
+      'project/str/ground-interfaces-result.md',
+      'project/str/studies/ground-interfaces.py',
+      'project/str/studies/ground-interfaces.json',
+      'project/str/studies/ground-grid.svg',
+      'project/str/studies/ground-sections.svg',
+      'project/str/studies/ground-crossings.svg'
+    ]
   },
   {
     id: 'STR-HOUSE',
