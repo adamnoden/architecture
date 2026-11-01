@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 14,
-  "state": "released",
-  "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
+  "generation": 15,
+  "state": "claimed",
+  "leaseId": "2c09ac4d-dc3b-4197-bd82-b17b4097ecb0",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg2-mat-joined"
+    "label": "zerg2-mat-loggia"
   },
-  "claimedAt": "2026-11-01T19:28:00.966Z",
-  "heartbeatAt": "2026-11-01T20:01:27.258Z",
-  "expiresAt": "2026-11-01T20:01:27.258Z",
-  "branch": "work/zerg2-integration-20261101",
+  "claimedAt": "2026-11-01T20:06:02.804Z",
+  "heartbeatAt": "2026-11-01T20:06:02.804Z",
+  "expiresAt": "2026-11-01T20:51:02.804Z",
+  "branch": "work/zerg2-mat-loggia",
   "predecessor": {
-    "leaseId": "814b6dcb-3d75-4eb4-9063-b6f39846bdeb",
-    "generation": 13,
-    "branch": "work/zerg-final-integration-20261101",
-    "pr": 1224,
+    "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
+    "generation": 14,
+    "branch": "work/zerg2-integration-20261101",
+    "pr": 1229,
     "checkpoint": {
-      "evidence": "PR1224 merged1e7b2cbce408834ca3cbb91c286af37eda066829. Exact reviewed MAT dfea1516 and all3MATblobs verified on fresh main; original1222 auto-incorporated, both remote refs deleted. Full sharedCI41322417761 attempt2 passed; fresh MAT preflight15:46:21.034Z. MAT1100 updated with findings and remaining-work handoff; node remains planned.",
-      "next": "Future worker must freshly dispatch: resolve actual roof wall-head/hip/valley, continuous ventilation, insulation-side protection, warm air/vapour joints and separated copper receiver; ground/floor moisture/gas and other envelope duties remain. Release current generation as handoff now; no new work in this session."
+      "evidence": "SharedPR1229 head8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 preserves all4sourceparents; MAT845bab92 reviewed and included; integrator reports allcustom/relevant/tsc/repo checks pass",
+      "next": "Root observes exact-head fullCI; upon command fetchsharedhead and run own freshcanonicalmergepreflight, then root expected-head merge and verified closeout",
+      "blocker": "Shared exact-head CI pending; reference candidate is not technical/material admission or MAT-ENVELOPE completion"
     }
   },
   "recoverySource": {
-    "leaseId": "814b6dcb-3d75-4eb4-9063-b6f39846bdeb",
-    "generation": 13,
-    "branch": "work/zerg-final-integration-20261101",
-    "pr": 1224,
+    "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
+    "generation": 14,
+    "branch": "work/zerg2-integration-20261101",
+    "pr": 1229,
     "checkpoint": {
-      "evidence": "PR1224 merged1e7b2cbce408834ca3cbb91c286af37eda066829. Exact reviewed MAT dfea1516 and all3MATblobs verified on fresh main; original1222 auto-incorporated, both remote refs deleted. Full sharedCI41322417761 attempt2 passed; fresh MAT preflight15:46:21.034Z. MAT1100 updated with findings and remaining-work handoff; node remains planned.",
-      "next": "Future worker must freshly dispatch: resolve actual roof wall-head/hip/valley, continuous ventilation, insulation-side protection, warm air/vapour joints and separated copper receiver; ground/floor moisture/gas and other envelope duties remain. Release current generation as handoff now; no new work in this session."
+      "evidence": "SharedPR1229 head8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 preserves all4sourceparents; MAT845bab92 reviewed and included; integrator reports allcustom/relevant/tsc/repo checks pass",
+      "next": "Root observes exact-head fullCI; upon command fetchsharedhead and run own freshcanonicalmergepreflight, then root expected-head merge and verified closeout",
+      "blocker": "Shared exact-head CI pending; reference candidate is not technical/material admission or MAT-ENVELOPE completion"
     }
-  },
-  "checkpoint": {
-    "evidence": "SharedPR1229 head8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 preserves all4sourceparents; MAT845bab92 reviewed and included; integrator reports allcustom/relevant/tsc/repo checks pass",
-    "next": "Root observes exact-head fullCI; upon command fetchsharedhead and run own freshcanonicalmergepreflight, then root expected-head merge and verified closeout",
-    "blocker": "Shared exact-head CI pending; reference candidate is not technical/material admission or MAT-ENVELOPE completion"
-  },
-  "pr": 1229,
-  "releasedAt": "2026-11-01T20:01:27.258Z",
-  "releaseReason": "handoff"
+  }
 }
