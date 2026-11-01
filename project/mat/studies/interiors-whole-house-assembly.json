@@ -1,0 +1,734 @@
+{
+  "status": "Bounded whole-house development schedule checkpoint; no complete material/product/physical admission",
+  "baseMain": "546c98f93a3dccbfe48119bd2e92117b6e2d766f",
+  "fingerprints": {
+    "project/mat/constituent-audit.md": "d378d86664cd7b3d95863d698fe778accea6c7c019c981736f798c1e079fb534",
+    "project/mat/interior-plaster-substrate.md": "56b3f51185ba5a89db06f742e47ee2970185ca16903007122dc4adce8160491c",
+    "project/mat/interior-mineral-coating.md": "fb005a9936b19d209d309b5085e7bfa981d00fa13ec8e413ca4fc24e29faba87",
+    "project/mat/interiors-b-wetroom-assembly.md": "04947a5dd8be7f1542d610cd120a3dc3052aab1f054e57fdd26fa16a734e2601",
+    "project/str/joined-rc-reference.md": "f53292c7cbe97772e3a0b2efd8fc2a6bcfcd094b7c39debe72d278407408e797",
+    "project/str/studies/house-plan.json": "193805456e26533026814bebe8c6be862e26a7d944c360dbb6047a1bde2d2282",
+    "project/had/had-02m-material-finish-synthesis.md": "338f9f0fe4aed085fe6db2909bde6a4023f2ba08ec97048a2eb4bcb375d25b81",
+    "docs/reference-house/interior-family-selection.md": "47b71d40e99f5832638f4bc53b68576f53c857d57364fe74d1c87ec669099819",
+    "docs/reference-house/material-policy.md": "a1002d7ecea0de2fe27b541785c61ea45f65fbbb7bd9dda235a1fb6c7be2511e"
+  },
+  "geometry": {
+    "HADHead": "c83a06f26cf3b146d7cdc8254b4799f390508196",
+    "HADJSONBlob": "b15df3b374717d8b3a724900036525a5cd991d22",
+    "protectedRevision": "Pending exact protected-volume JSON; no rated occurrence freeze",
+    "scope": "Outer417.5 retained; loggia507.5 sidewalls are not a global envelope change. Principal30 does not extend into family/Bed3 by default."
+  },
+  "systems": [
+    {
+      "id": "W-D",
+      "audit": [
+        "I02"
+      ],
+      "name": "Dry masonry finish",
+      "direction": "Develop authored two-coat mineral plaster with pure silicate finish; retain conventional24 plaster as control",
+      "layers": [
+        [
+          "hydraulic-lime base",
+          10
+        ],
+        [
+          "fine lime finish",
+          4
+        ],
+        [
+          "preparation/coating maximum",
+          1
+        ],
+        [
+          "application allowance",
+          2
+        ]
+      ],
+      "oldDepth": 15,
+      "scope": "Renderable bare mineral masonry only; not gypsum, timber, coated boards or an assumed smooth concrete face",
+      "constituents": "Named Conserv NHL2/sand and BEECK powder/standard Fixative are the component controls. Key, repairs, edge mesh and delivered composition remain to establish.",
+      "firstRelease": "Remove independently screwed trim; locally repair plaster and recoat. Plaster is sacrificial, not demountable.",
+      "residue": "Actual background, adapted10+4 application and surface trial are not manufacturer approval; extra key consumes allowance. No material admission.",
+      "totalDepth": 17,
+      "depthDelta": 2,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "W-W",
+      "audit": [
+        "I04",
+        "I05",
+        "I06"
+      ],
+      "name": "Located wet lining",
+      "direction": "Carry the complete30 principal wet assembly; apply to other actual splash zones only after their own set-out",
+      "layers": [
+        [
+          "mineral render",
+          15
+        ],
+        [
+          "water boundary",
+          2
+        ],
+        [
+          "bedding",
+          3
+        ],
+        [
+          "ceramic",
+          10
+        ]
+      ],
+      "oldDepth": 15,
+      "scope": "Principal bathroom selected internal reference; family/rear wet fields require explicit limits and wall returns",
+      "constituents": "Mineral faces do not remove concealed bonded membrane/tape/collars, grout, movement seal or fixings.",
+      "firstRelease": "Isolate wet use; release screen/trim and sacrificial lower tiles; renew and test the complete disturbed water boundary.",
+      "residue": "Known/unknown synthetic wet-system constituents remain unapproved. Never silently transfer30 to Bed3 or the family service cabinet.",
+      "totalDepth": 30,
+      "depthDelta": 15,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "F-D",
+      "audit": [
+        "I01"
+      ],
+      "name": "Dry solid-timber floor",
+      "direction": "Mechanically fixed unfinished solid boards over discrete timber grounds; no engineered-board or full-glue default",
+      "layers": [
+        [
+          "solid timber board",
+          22
+        ],
+        [
+          "timber grounds",
+          45
+        ],
+        [
+          "hard levelling territory",
+          13
+        ]
+      ],
+      "oldDepth": 80,
+      "scope": "Dry rooms;22 board reallocates2 from the60 functional layer while keeping80 total and existing FFL",
+      "constituents": "Whole sawn timber, metal fasteners and disclosed hard packing. Moisture, acoustic, finish and any required barrier remain explicit functions.",
+      "firstRelease": "Clear furniture; remove local skirting; expose top fixings or sacrifice the first board; structure and all fire boundaries remain.",
+      "residue": "This is a carpentry reference, not an altered manufacturer package. Required moisture protection cannot be omitted; no bare-oak complete material pass.",
+      "totalDepth": 80,
+      "depthDelta": 0,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "F-M",
+      "audit": [
+        "I01",
+        "I05",
+        "I06"
+      ],
+      "name": "Mineral floor / wet floor",
+      "direction": "Stone or ceramic on a complete mineral substrate; retain required water boundary in wet rooms",
+      "layers": [
+        [
+          "mineral finish",
+          15
+        ],
+        [
+          "bedding",
+          5
+        ],
+        [
+          "water boundary where required",
+          2
+        ],
+        [
+          "formed mineral substrate",
+          58
+        ]
+      ],
+      "oldDepth": 80,
+      "scope": "Bathrooms, guest WC splash field and service/working rooms as located; door saddles and movement joints are separate actual interfaces",
+      "constituents": "Stone/ceramic and binder are not enough: grout, bedding chemistry, collars and movement seals remain in scope.",
+      "firstRelease": "Lift a sacrificial local finish patch only after isolation; retain independent supported structure; renew disturbed wet and service seals.",
+      "residue": "Substrate load, flatness/falls, complete mixture and slip/cleaning evidence remain required. Dry mineral fields do not automatically need room tanking.",
+      "totalDepth": 80,
+      "depthDelta": 0,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "C-G",
+      "audit": [
+        "I02",
+        "S10"
+      ],
+      "name": "Ceiling beneath RC200",
+      "direction": "Treat the actual slab as the prospective fire boundary; use an ordinary non-protective finish below it",
+      "layers": [
+        [
+          "ordinary ceiling finish reservation",
+          15
+        ],
+        [
+          "service/support reservation",
+          55
+        ]
+      ],
+      "oldDepth": 70,
+      "scope": "Ground rooms beneath the actual first RC floor; no duplicate rated ceiling by default",
+      "constituents": "Actual mineral facing/support/joints and decorations; RC fire resistance, cover, openings and loads stay with STR.",
+      "firstRelease": "Open a genuinely independent service cover; do not remove the qualified slab/penetration boundary.",
+      "residue": "Neither a15 skin nor RC200 as a name proves REI30. Ordinary and protective layers are distinct.",
+      "totalDepth": 70,
+      "depthDelta": 0,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "C-U",
+      "audit": [
+        "I02",
+        "S10"
+      ],
+      "name": "Upper protected roof closure",
+      "direction": "Locate the actual EI30 duty, exposure and roof support first; compare complete tested systems, not a bare board",
+      "layers": [
+        [
+          "CL SLUX EI60 control steel C",
+          140
+        ],
+        [
+          "required top fillet",
+          12
+        ],
+        [
+          "required underside boards",
+          24
+        ]
+      ],
+      "oldDepth": 70,
+      "scope": "Upper protected ring/stair below roof only;176 is a finite bidirectional control, not a whole-house adoption",
+      "infill": [
+        [
+          "stone mineral wool within C web",
+          100,
+          "two50 layers,80kg/m3; retained in control"
+        ]
+      ],
+      "constituents": "Promat CL SLUX-EI60-024S includes all steel, fillets, two12 skins and stone wool. A1 board is not proof of polymer absence.",
+      "firstRelease": "Isolate the affected protected volume; access only through an applicable complete rated hatch or reconstruct the classified closure.",
+      "residue": "Actual rating/exposure/datum/seats/spans and complete assembly chemistry remain open. Do not automatically spend106 or remove wool/binder.",
+      "totalDepth": 176,
+      "depthDelta": 106,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "J-T",
+      "audit": [
+        "I03"
+      ],
+      "name": "Independent trim",
+      "direction": "Retain ordinary150x18 skirting,70x18 architrave and local normal-to-wall release",
+      "layers": [
+        [
+          "visible timber projection",
+          18
+        ]
+      ],
+      "oldDepth": 18,
+      "scope": "Dry trim; optional ceiling cover only where an actual joint needs it",
+      "constituents": "Solid timber, accessible metal screws, removable wood plugs; exact wall grounds/anchors and finish disclosed.",
+      "firstRelease": "Remove the short door-end first; no mitre, paint bridge or service attachment locks trim to the frame.",
+      "residue": "The decorative member carries no fire/water/service duty. No nylon plug or filler is silently approved.",
+      "totalDepth": 18,
+      "depthDelta": 0,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "J-C",
+      "audit": [
+        "I03",
+        "I10"
+      ],
+      "name": "Fixed cabinets and wardrobes",
+      "direction": "Use solid frame-and-panel joinery, captured backs and replaceable shelves; design out routine sheet-board glue",
+      "layers": [
+        [
+          "side/shelf reference",
+          18
+        ],
+        [
+          "door reference",
+          22
+        ],
+        [
+          "captured back reference",
+          9
+        ]
+      ],
+      "oldDepth": null,
+      "scope": "Actual HAD external envelopes remain fixed; no universal hinged/sliding operation is inferred",
+      "constituents": "Whole timber, pegged/bolted/rebated joints, actual hardware. Do not extend glue deletion to a certified doorset or structural component.",
+      "firstRelease": "Isolate services; remove an independent door/shelf/back or supported worktop; leave basin/fixture supports independent.",
+      "residue": "Wardrobe tracks, drawer bearings, kitchen wet edges, finishes and exact storage/use remain admission work. Flat external dimensions do not prove internal capacity.",
+      "totalDepth": 49,
+      "depthDelta": null,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "J-P",
+      "audit": [
+        "I03",
+        "O01"
+      ],
+      "name": "Joinery paint / clear finish",
+      "direction": "Use a disclosed linseed-paint family for ordinary timber; delete gratuitous clearcoat and retain a repairable thin finish",
+      "layers": [],
+      "oldDepth": null,
+      "scope": "Ordinary trim/cabinet timber only, not automatic floor or rated-door coating approval",
+      "constituents": "Brouns product control includes boiled oil/pigment, a drying agent and its actual primer/shellac requirements; natural is not a full declaration.",
+      "firstRelease": "Clean and locally prepare/recoat; do not bridge mechanical release joints. Replace a damaged sacrificial piece where needed.",
+      "residue": "Dryer, pigment, knotting/primer and actual fire/cleaning suitability remain unadmitted. No generic natural-oil approval.",
+      "totalDepth": 0,
+      "depthDelta": null,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "D-R",
+      "audit": [
+        "O01",
+        "O03",
+        "O05"
+      ],
+      "name": "Protected-route doors and glazing",
+      "direction": "Retain a complete applicable rated assembly and all its required components; prefer ordinary hinged operation where geometry permits",
+      "layers": [],
+      "oldDepth": null,
+      "scope": "Only occurrences in HAD’s actual protected-volume ledger; internal dwelling closer duty is not automatic",
+      "constituents": "Leaf/core/glues, frame/lipping, intumescent/smoke seals, hinge pads, locks, glazing, packing and perimeter seal all remain.",
+      "firstRelease": "Release trim independently; support/unfix the actual frame only for a planned boundary intervention; close the affected route and reinstate/test.",
+      "residue": "The Howdens/Lorient control explicitly contains PVC-encased intumescent; retain required safety constituents, with material admission/owner disposition held.",
+      "totalDepth": 0,
+      "depthDelta": null,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "D-O",
+      "audit": [
+        "O01",
+        "O05",
+        "I03"
+      ],
+      "name": "Other internal doors / folding screens",
+      "direction": "Ordinary solid frame/panel carpentry or a complete matched screen, within the actual operating/parking envelope",
+      "layers": [],
+      "oldDepth": null,
+      "scope": "Internal bathroom/wardrobe closures outside the protected boundary are separately classified; no rated duty is presumed absent merely from a label",
+      "constituents": "Timber/metal/glass faces plus actual guides, bearings, seals, fasteners and finishes.",
+      "firstRelease": "Support moving leaf/panels; remove accessible hardware without consuming the mineral opening; restore any actual boundary.",
+      "residue": "Do not replace an accepted fire leaf with untested glue-free carpentry. The principal folding-screen target remains a compatibility requirement.",
+      "totalDepth": 0,
+      "depthDelta": null,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "H-M",
+      "audit": [
+        "O05",
+        "I03"
+      ],
+      "name": "Ironmongery",
+      "direction": "Prefer plain uncoated stainless/brass bodies with accessible metal fixing and replaceable ordinary bearings",
+      "layers": [],
+      "oldDepth": null,
+      "scope": "Hinges, pulls, latches, wardrobe tracks and guards; rated hardware remains part of its actual assembly",
+      "constituents": "Inspect clear lacquer, bushings, lubricants, nylon rollers, closer internals and fixings—not the metal face alone.",
+      "firstRelease": "Expose screws, support the leaf and exchange the real component; retain seals and tested hinge protection where required.",
+      "residue": "Plain metal is a construction direction, not a disclosed whole product or exception.",
+      "totalDepth": 0,
+      "depthDelta": null,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "S-W",
+      "audit": [
+        "I07",
+        "I08",
+        "I09",
+        "I10"
+      ],
+      "name": "Sanitaryware and worktops",
+      "direction": "Carry the matched enamel-tray reference, plain ceramic basins/WC/bath and mechanically supported plain stainless wet-worktop direction",
+      "layers": [],
+      "oldDepth": null,
+      "scope": "Principal/rear/family wet rooms, guest WC and actual kitchen/utility fixtures; no invented household appliance count",
+      "constituents": "Include tray support/pads, cistern and seat, mixer cartridges, overflow, waste, backing, clamps and complete joints.",
+      "firstRelease": "Use the specific1232 split renewal for principal; each other occurrence needs its own supported connection and withdrawal.",
+      "residue": "The B568 plastic/PP and wet seals remain unapproved. A ceramic pan or stainless bowl does not clear the connected assembly.",
+      "totalDepth": 0,
+      "depthDelta": null,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
+      "id": "B-S",
+      "audit": [
+        "I02",
+        "S09",
+        "S10"
+      ],
+      "name": "Concealed boundaries and terminals",
+      "direction": "Minimise the cavity; independently support service/lighting devices and retain compatible certified closures",
+      "layers": [],
+      "oldDepth": null,
+      "scope": "All rooms, protected-route junctions, service covers and roof/ceiling transitions",
+      "constituents": "Fire/acoustic compounds, collars, mesh/board binders, cable/terminal insulation, sleeves, boards and substrate preparation are in scope.",
+      "firstRelease": "Isolate; open the actual face while retaining the primary boundary where possible; cap/isolate any opened annulus and reinstate/test.",
+      "residue": "Do not remove insulation, fire stop, seal or required lining to manufacture a polymer-free label.",
+      "totalDepth": 0,
+      "depthDelta": null,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "G-HALL",
+      "name": "Entrance/south hall and void",
+      "families": [
+        "W-D",
+        "F-D",
+        "C-G",
+        "J-T",
+        "D-R",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "G-STAIR",
+      "name": "Stair approach and ground protected connection",
+      "families": [
+        "W-D",
+        "F-D",
+        "C-G",
+        "J-T",
+        "D-R",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "G-STUDY",
+      "name": "Study",
+      "families": [
+        "W-D",
+        "F-D",
+        "C-G",
+        "J-T",
+        "J-C",
+        "J-P",
+        "D-R",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "G-CLOAK",
+      "name": "Cloak / storage",
+      "families": [
+        "W-D",
+        "F-D",
+        "C-G",
+        "J-T",
+        "J-C",
+        "J-P",
+        "D-R",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "G-WC",
+      "name": "Guest WC",
+      "families": [
+        "W-D",
+        "W-W",
+        "F-M",
+        "C-G",
+        "J-T",
+        "D-O",
+        "H-M",
+        "S-W",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "G-UTILITY",
+      "name": "Utility",
+      "families": [
+        "W-D",
+        "F-M",
+        "C-G",
+        "J-C",
+        "J-P",
+        "D-O",
+        "H-M",
+        "S-W",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "G-PLANT",
+      "name": "Plant",
+      "families": [
+        "W-D",
+        "F-M",
+        "C-G",
+        "D-R",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "G-PANTRY",
+      "name": "Pantry",
+      "families": [
+        "W-D",
+        "F-M",
+        "C-G",
+        "J-C",
+        "J-P",
+        "D-O",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "G-LIVING",
+      "name": "Living",
+      "families": [
+        "W-D",
+        "F-D",
+        "C-G",
+        "J-T",
+        "J-P",
+        "D-R",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "G-KITCHEN",
+      "name": "Kitchen / dining",
+      "families": [
+        "W-D",
+        "W-W",
+        "F-D",
+        "C-G",
+        "J-T",
+        "J-C",
+        "J-P",
+        "D-R",
+        "H-M",
+        "S-W",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "U-B2",
+      "name": "Bedroom2",
+      "families": [
+        "W-D",
+        "F-D",
+        "J-T",
+        "J-C",
+        "J-P",
+        "D-R",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "U-B3",
+      "name": "Bedroom3",
+      "families": [
+        "W-D",
+        "F-D",
+        "J-T",
+        "J-C",
+        "J-P",
+        "D-R",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "U-B4",
+      "name": "Bedroom4",
+      "families": [
+        "W-D",
+        "F-D",
+        "J-T",
+        "J-C",
+        "J-P",
+        "D-R",
+        "D-O",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "U-PRINCIPAL",
+      "name": "Principal bedroom",
+      "families": [
+        "W-D",
+        "F-D",
+        "J-T",
+        "J-C",
+        "J-P",
+        "D-R",
+        "D-O",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "U-REAR-WET",
+      "name": "Rear wet room",
+      "families": [
+        "W-D",
+        "W-W",
+        "F-M",
+        "J-C",
+        "J-P",
+        "D-O",
+        "H-M",
+        "S-W",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "U-FAMILY",
+      "name": "Family bathroom",
+      "families": [
+        "W-D",
+        "W-W",
+        "F-M",
+        "J-C",
+        "J-P",
+        "D-R",
+        "H-M",
+        "S-W",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "U-PRINCIPAL-WET",
+      "name": "Principal en suite",
+      "families": [
+        "W-W",
+        "F-M",
+        "J-C",
+        "J-P",
+        "D-O",
+        "H-M",
+        "S-W",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    },
+    {
+      "id": "U-ROUTE",
+      "name": "Whole upper ring / stair roof closure",
+      "families": [
+        "W-D",
+        "F-D",
+        "C-U",
+        "J-T",
+        "D-R",
+        "H-M",
+        "B-S"
+      ],
+      "area": null,
+      "quantityStatus": "Reference occurrence, not an installed-house quantity",
+      "ratedRole": "Await exact HAD protected-route occurrence ledger before freeze"
+    }
+  ],
+  "checks": {
+    "dryStandardControl": 27,
+    "dryControlOver15": 12,
+    "dryReferenceOver15": 2,
+    "timberFunctionalDepth": 58,
+    "skirtingOverlapOver15FloorGap": 3,
+    "upperCeilingControlUnderside": 2994,
+    "upperCeilingDrop": 106,
+    "headTrimToControlCeiling": 74,
+    "galleryHistoricControl": 979,
+    "with2ExtraFinishEachSide": 975,
+    "cabinet660ClearBeforeHardware": 629
+  },
+  "exceptionsApproved": 0,
+  "installedQuantities": null,
+  "programmeLifecycle": "planned"
+}
