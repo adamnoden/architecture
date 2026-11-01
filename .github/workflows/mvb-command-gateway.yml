@@ -26,13 +26,8 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - name: Node
-        uses: actions/setup-node@v7
-        with:
-          node-version-file: .nvmrc
-          cache: npm
-      - name: Locked dependencies
-        run: npm ci --no-audit --no-fund
+      - name: Install trusted control runtime
+        uses: ./.github/actions/control-runtime
       - name: Dispatch one validated MVB request
         env:
           GITHUB_TOKEN: ${{ github.token }}

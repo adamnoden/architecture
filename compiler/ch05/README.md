@@ -47,6 +47,8 @@ This is intentionally narrower than a general permutation/property-testing frame
 
 `compiler/reference-house/identity.ts` adds the Reference-House-specific ordering classification before hashing.
 
+Canonical object keys and the Reference House identity collections use explicit UTF-16 code-unit ordering, independent of the process locale and ICU. JSON retains its specified integer-index property order; Unicode spelling and authored array sequence are preserved. Cross-process regressions exercise English, Swedish and Turkish defaults, including mixed case, accented characters and canonically equivalent but differently spelled Unicode. The [SWE identity result](../../project/swe/identity-result.md) records the controlled compatibility comparison.
+
 The canonical result now exposes:
 
 ```text

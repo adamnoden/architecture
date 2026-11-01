@@ -56,6 +56,13 @@ jobs:
             exit 1
           fi
 
+      - name: Cache verified publication fonts
+        uses: actions/cache@v6
+        with:
+          path: node_modules/.cache/ovids-house/publication-fonts
+          key: ${{ runner.os }}-publication-fonts-v1-${{ hashFiles('publication/fonts.ts') }}
+          restore-keys: ${{ runner.os }}-publication-fonts-v1-
+
       - name: Build paired production typography proof
         id: build_proof
         run: npx tsx publication/scripts/build-typography-proof.ts

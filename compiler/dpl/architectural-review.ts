@@ -1,4 +1,4 @@
-import { sha256SemanticFingerprint } from '../core/identity.js'
+import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { loadConformanceCoverageRegistry } from './conformance-coverage.js'
 import { composeDPL13DSecondFixture, type DPL13DSecondFixtureResult } from './dpl13d.js'
 import type { ScreeningCoverageReadinessResult } from './coverage-readiness.js'
@@ -83,7 +83,7 @@ export interface DPL13EArchitecturalReviewResult {
 }
 
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => a.localeCompare(b))
+  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
 
 const requireNonEmpty = (value: string, label: string): string => {
   if (value.trim().length === 0) throw new Error(`${label} must be a non-empty string.`)
@@ -99,7 +99,7 @@ export const architecturalReviewClauseIds = (): string[] => {
       entry.unresolvedBlocksPositiveConformance
     )
     .map((entry) => entry.id)
-    .sort((a, b) => a.localeCompare(b))
+    .sort((a, b) => compareDplIdentityStrings(a, b))
 }
 
 const sameStringSet = (left: readonly string[], right: readonly string[]): boolean => {
@@ -129,7 +129,7 @@ const canonicalReview = (review: ArchitecturalReviewRecordInput): ArchitecturalR
   }
   return {
     ...canonical,
-    recordFingerprint: sha256SemanticFingerprint(canonical)
+    recordFingerprint: sha256DplSemanticFingerprint(canonical)
   }
 }
 
@@ -170,7 +170,7 @@ export const createArchitecturalReviewLedger = (
     }
     seen.add(review.clauseId)
     return canonicalReview(review)
-  }).sort((a, b) => a.clauseId.localeCompare(b.clauseId))
+  }).sort((a, b) => compareDplIdentityStrings(a.clauseId, b.clauseId))
 
   const canonical = {
     schemaVersion: input.schemaVersion,
@@ -190,7 +190,7 @@ export const createArchitecturalReviewLedger = (
 
   return {
     ...canonical,
-    ledgerFingerprint: sha256SemanticFingerprint(canonical)
+    ledgerFingerprint: sha256DplSemanticFingerprint(canonical)
   }
 }
 
@@ -315,7 +315,7 @@ export const composeDPL13EArchitecturalReview = (
     pendingClauseIds,
     proofBoundary
   }
-  const identityFingerprint = sha256SemanticFingerprint(identityManifest)
+  const identityFingerprint = sha256DplSemanticFingerprint(identityManifest)
 
   return {
     schemaVersion: DPL13E_REVIEW_SCHEMA_VERSION,
@@ -324,7 +324,7 @@ export const composeDPL13EArchitecturalReview = (
     pendingClauseIds,
     aggregation,
     identityFingerprint,
-    resultFingerprint: sha256SemanticFingerprint({
+    resultFingerprint: sha256DplSemanticFingerprint({
       identityFingerprint,
       aggregationResultFingerprint: aggregation.resultFingerprint
     }),
