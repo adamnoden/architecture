@@ -932,7 +932,7 @@
       "layers": [],
       "oldDepth": null,
       "scope": "Only occurrences in HAD’s actual protected-volume ledger; internal dwelling closer duty is not automatic",
-      "constituents": "Leaf/core/glues, frame/lipping, intumescent/smoke seals, hinge pads, locks, glazing, packing and perimeter seal all remain.",
+      "constituents": "Leaf/core/glues, frame/lipping, intumescent/smoke seals, hinge pads, locks, glazing, packing and perimeter seal all remain. Selected family mechanical delayed-action closer retains its arm, springs, hydraulic valves/seals/lubricant and compatible fire-door accessories; no arbitrary paused leaf or fire-unapproved hold-open arm.",
       "firstRelease": "Release trim independently; support/unfix the actual frame only for a planned boundary intervention; close the affected route and reinstate/test.",
       "residue": "The Howdens/Lorient control explicitly contains PVC-encased intumescent; retain required safety constituents, with material admission/owner disposition held.",
       "totalDepth": 0,
@@ -1761,29 +1761,29 @@
       ],
       "pan": [
         10777.5,
-        5800,
+        5750,
         560,
         355
       ],
       "eastServiceBand": [
         11337.5,
-        5800,
+        5750,
         230,
-        560
+        385
       ],
       "column": [
-        11342.5,
-        6180,
-        180,
-        180
+        11297.5,
+        6135,
+        270,
+        265
       ],
       "port": [
         11432.5,
-        6270
+        6260
       ],
       "basin": [
         11227.5,
-        5300,
+        5200,
         340,
         450
       ],
@@ -1806,14 +1806,32 @@
           6283.5
         ],
         "opens": "NORTH-HINGED into room",
-        "operationStatus": "R300 body/reach/fixture screen only; coupled regrip/forearm still being earned by IAS",
+        "operationStatus": "IAS mechanical delayed-action target; no stationary dwell or powered operator. Continuous initial2degree hand withdrawal being earned; actual speed/force/classified kit held",
         "roughToFrameClosure": 75,
         "closureRule": "Do not treat75 total as arbitrary packing; actual applicable classified linear joint or supported mineral jamb build-out required"
       },
+      "terminalEnvelope": {
+        "aboveFloorTerminalAndSupport": 200,
+        "floorBore": 160,
+        "crossingPlainTail": 110,
+        "componentMustNotPassBore": true,
+        "cornerXReserves": [
+          35,
+          35
+        ],
+        "cornerYReserves": [
+          25,
+          40
+        ],
+        "lowBandCentreX": 11452.5,
+        "lowBranchBodyMax": 160,
+        "WCBackProjectionMax": 205,
+        "offsetToPort": 20
+      },
       "checks": {
-        "panToColumnY": 25,
-        "columnToNorthFace": 40,
-        "basinToPanY": 50,
+        "panToColumnY": 30,
+        "columnToNorthFace": 0,
+        "basinToPanY": 100,
         "bandWidth": 230
       },
       "superseded": "Reject source basin5400 against moved pan5800:50Y and110X overlap; reject180west pan move without complete cistern/column envelope"
@@ -1928,6 +1946,19 @@
     "fixed3700": "No ordinary operation credited; fixed glazing only",
     "heightRequirement": "Actual sofas/tables<=700 under750cill; no full3D/window/force or seated-ergonomic admission",
     "remaining": "Whole living-kitchen route controlling westFD21 is IAS case; R01 maintenance26.25 nominal/1.25 after25 combined loss is explicitly limited, not comfortable validation"
+  },
+  "peerReviewIAS": {
+    "head": "0f8d4cddd02864ead08614f9155d7c571080fa7f",
+    "tree": "79349c2acc293e026a042a55e5f249023090a7b3",
+    "scope": "West/wardrobe/pantry/fridge ordinary corrections; continuous first2degree withdrawal; kitchen PLAN control only. Newer supported first-release work excluded.",
+    "result": "Bounded PASS ordinary corrections and continuous withdrawal; kitchen only under its explicit raw/flush-base deviation, not unchanged full18trim source.",
+    "withdrawalLowerBounds": {
+      "leaf": 14.771618603216462,
+      "fixed": 135.78494016530277
+    },
+    "kitchenAdverse": "Add actual18trim to raw kfixed: first supported north-sink withdrawal intersects outer-north+18trim. Source already marks finish/trim join pending; no transport/rig/force admission.",
+    "verification": "Exact detached head/tree, source-bound --check, all3SVGs rendered/viewed; no IAS files edited.",
+    "admission": "Reach600/650 are authored sensitivities; small geometric reserves are not comfort/product/force/physical/material or fire-kit acceptance."
   },
   "checks": {
     "dryStandardControl": 27,
