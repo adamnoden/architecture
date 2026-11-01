@@ -56,6 +56,26 @@
     "top": 6771.721089070517
   },
   "ceilingTieClear": 101.72108907051734,
+  "counterrailGrid": {
+    "section": [
+      50,
+      50,
+      3
+    ],
+    "EWspan": 1081.6666666666667,
+    "NSrailCentres": 360.5555555555556,
+    "EWrowPitch": 550,
+    "assembly": "Single50depth welded through/butt grid, not stacked100. Openboards runEW and span<=360.556 between NSrails. Vent remains clear BETWEEN rails, with separate ridge/eave connections.",
+    "railKgPerM": 4.5120000000000005,
+    "normalAreaRailKgM2": 19.94904109002935,
+    "transomProbe": {
+      "pressureKpa": 2.25,
+      "tributaryPlanM": 0.55,
+      "Mknm": 0.18098480468750003,
+      "stressMpa": 21.70164858693619,
+      "limit": "Authored simple distributed wind probe; joints, gravity/suction interaction, actual design actions remain unqualified."
+    }
+  },
   "standoff": {
     "SHS": [
       50,
@@ -139,8 +159,8 @@
     "upperBoardsKgM2": 13.200000000000001,
     "zincKgM2": 4.998,
     "metalAvclKgM2": 8,
-    "secondaryAllowanceKgM2": 10,
-    "subtotalKgM2": 84.59800000000001,
+    "secondaryAllowanceKgM2": 30,
+    "subtotalKgM2": 104.59800000000001,
     "limit": "Authored densities, excludes primary and complete protected ceiling. Reconcile with STR3kPa horizontal budget; normal-area load must divide by cos25. No worker/storage allowance."
   },
   "connections": [

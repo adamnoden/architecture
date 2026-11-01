@@ -1,0 +1,271 @@
+{
+  "status": "Comparison only. Complete current product retained; no material/structural admission or ground recommendation.",
+  "sources": {
+    "PDS": "https://www.foamglas.com/-/media/project/foamglas/public/shared/files/foamglas-b/perinsul-hl/pds/pds-perinsul-hl-uk.pdf",
+    "PDSEdition": "22 October2025",
+    "ETA": "https://www.foamglas.com/-/media/project/foamglas/public/shared/files/certifications/b---common-certificates/eta-180636-perinsul-hl.pdf",
+    "ETAedition": "18/0636 version03,22April2025",
+    "oldGuidelineLimit": "TG2April2017 and BBA2019 are not substituted for current facing/thermal/shear values."
+  },
+  "geometry": {
+    "completeCourse": {
+      "width": 360,
+      "height": 140,
+      "lambda": 0.068,
+      "beamTop": -380,
+      "top": -230,
+      "dpcTop": -80,
+      "axis": -420
+    },
+    "courseZ": [
+      -370,
+      -230
+    ],
+    "M10bottomBed": [
+      -380,
+      -370
+    ],
+    "independentDenseDpcZ": [
+      -230,
+      -80
+    ],
+    "receivingDpcWidth": 360,
+    "wallWidthAbove": 140,
+    "bearingFaces": [
+      -600,
+      -240
+    ],
+    "floorLayers": [
+      15,
+      65,
+      320,
+      200
+    ],
+    "floorRC": [
+      -600,
+      -400
+    ],
+    "beam": [
+      -830,
+      -380
+    ],
+    "slabBeamOverlap": 200,
+    "coldContact": "DPC TOP\u221280 preserves FULL15+65 above widened receivingfoot; no50mm screed deletion. Field RC begins\u2212400 below course\u2212370. Commonbeam/outerleaf retained. Wider receivingDPC locally replaces floorinsulation and increases heatflow.",
+    "DStress": {
+      "deepest": 830,
+      "heave": 300,
+      "loss": 50,
+      "vent": 150,
+      "required": 1330,
+      "trial": 1400,
+      "remaining": 70,
+      "limitation": "Current fullfoundation/pile/pier receivingjoint remains unproved; D1400 not selected."
+    }
+  },
+  "fullMakeup": "Cellular-glass core plus upper/lower bitumen coating and retained green printed PE/glass-fleece liner. PE is polyethylene. Exact bitumen modifiers/printing/fleece sizing quantities unknown; bitumen is not automatically synthetic polymer. No stripping, no exception assumed.",
+  "joint": "Single linear course, full M10 beds with actual compatible masonry; tight dry butt joints per manufacturer system detail. Separate DPC retained; no product capillarity-to-complete-DPC inference. Exact mortar/waterproofing/receiving chemistry and the outer-leaf/cavity transition remain.",
+  "structural": {
+    "source": "Current ETA Table3 solid Group1 clay15/M10 gives fk1.6; unit mean2.9 is not fd. Current Table4 fvko.05/friction.40, not oldBBA.13/.35.",
+    "load": {
+      "G": 54.2475,
+      "Q": 10.17,
+      "innerNuls": 88.489125,
+      "wetReceiverN": 71.138,
+      "wetReceiverM": 1.442,
+      "receiverFootprint": [
+        260,
+        450
+      ]
+    },
+    "screens": [
+      {
+        "gammaM": 3,
+        "brittleFactorStress": 1.2,
+        "minimumWidth": 212,
+        "eccentricityStress": 8.5,
+        "phi": 0.8060836501901142,
+        "fk": 1.6,
+        "NRdKnPerM": 75.95099281791299,
+        "demandKnPerM": 88.489125
+      },
+      {
+        "gammaM": 2.7,
+        "brittleFactorStress": 1.2,
+        "minimumWidth": 212,
+        "eccentricityStress": 8.5,
+        "phi": 0.8060836501901142,
+        "fk": 1.6,
+        "NRdKnPerM": 84.3899920199033,
+        "demandKnPerM": 88.489125
+      },
+      {
+        "gammaM": 2.3,
+        "brittleFactorStress": 1.2,
+        "minimumWidth": 212,
+        "eccentricityStress": 8.5,
+        "phi": 0.8060836501901142,
+        "fk": 1.6,
+        "NRdKnPerM": 99.06651237119085,
+        "demandKnPerM": 88.489125
+      }
+    ],
+    "failure": "Stock215 course cannot directly support260-wide RC receiver. Width/tolerance/eccentricity and moment transfer need actual spreader/joint; continuing RC bypasses it. Gamma3 stress fails wall demand; lower gamma sensitivity does not select execution class or NA.",
+    "factoryScope": "ETA permits90\u2013365width/5steps and50\u2013200height, but currentUKPDS stocks\u2264215. Factory360 is a bounded geometry within assessment scope, NOT confirmed supply/qualification. Single course retained; no side-by-side two-row assumption.",
+    "creep": "ETA100high tested1.2MPa\u22651yr:0.1creep/1.0totalmm at50yr extrapolation; residual mean1.4 after long load. No transfer to1000yr or full pier joint.",
+    "thermalDataLimit": "Current text/PDS\u03bb.068 used in both directions conservatively. ETA AnnexIII retains older R values inconsistent with.068; not imported."
+  },
+  "method": "Same air-backed2D solver/contact model as AAC. Matched planar subtraction, no soil/ISO13370, cavity radiation or point bridges. Effective P/A number is an authored probe, not regulatory U.",
+  "widerCapacityScreen": {
+    "minimumWidth": 357,
+    "eccentricityStress": 11,
+    "phi": 0.8439716312056738,
+    "NRdKnPerM": 133.91016548463358,
+    "limit": "Full360wide M10/masonry spreader fan and260x450 receiver require actual N/M/shear/positivecontact. No continuing RC/starter through thermalcourse."
+  },
+  "cases": [
+    {
+      "glass": 320,
+      "aac": false,
+      "lambdaAAC": 0.29,
+      "grid": 5,
+      "Qroom": 0.5195862735954031,
+      "Qoutside": 0.5195862735955575,
+      "balance": -1.5443202272535927e-13,
+      "UfloorAir": 0.12280347058867579,
+      "Uwall": 0.189493158321766,
+      "psi": 0.1349446395204846,
+      "floorEffectiveProbe": 0.2121861192889195,
+      "minimumT": 2.15433609916454e-16,
+      "maxT": 0.9838730692349158,
+      "courseIdentity": "stock215",
+      "course": {
+        "width": 215,
+        "height": 140,
+        "lambda": 0.068,
+        "beamTop": -380,
+        "top": -230,
+        "dpcTop": -80,
+        "axis": -422.5
+      }
+    },
+    {
+      "glass": 320,
+      "aac": false,
+      "lambdaAAC": 0.29,
+      "grid": 2.5,
+      "Qroom": 0.5192405570140757,
+      "Qoutside": 0.5192405570152394,
+      "balance": -1.163735774412089e-12,
+      "UfloorAir": 0.12280347058867579,
+      "Uwall": 0.189493158321766,
+      "psi": 0.13459892293915718,
+      "floorEffectiveProbe": 0.21195712861653385,
+      "minimumT": 1.2196077724351856e-16,
+      "maxT": 0.9839499295561346,
+      "courseIdentity": "stock215",
+      "course": {
+        "width": 215,
+        "height": 140,
+        "lambda": 0.068,
+        "beamTop": -380,
+        "top": -230,
+        "dpcTop": -80,
+        "axis": -422.5
+      }
+    },
+    {
+      "glass": 320,
+      "aac": false,
+      "lambdaAAC": 0.29,
+      "grid": 5,
+      "Qroom": 0.5790585819537961,
+      "Qoutside": 0.5790585819539804,
+      "balance": -1.8429702208777599e-13,
+      "UfloorAir": 0.12280347058867579,
+      "Uwall": 0.189493158321766,
+      "psi": 0.19441694787887762,
+      "floorEffectiveProbe": 0.25157851356467636,
+      "minimumT": 2.749601205659465e-16,
+      "maxT": 0.9838676122266927,
+      "courseIdentity": "factoryScope360",
+      "course": {
+        "width": 360,
+        "height": 140,
+        "lambda": 0.068,
+        "beamTop": -380,
+        "top": -230,
+        "dpcTop": -80,
+        "axis": -420
+      }
+    },
+    {
+      "glass": 320,
+      "aac": false,
+      "lambdaAAC": 0.29,
+      "grid": 2.5,
+      "Qroom": 0.5779345782628119,
+      "Qoutside": 0.5779345782638455,
+      "balance": -1.0336176359260207e-12,
+      "UfloorAir": 0.12280347058867579,
+      "Uwall": 0.189493158321766,
+      "psi": 0.19329294418789342,
+      "floorEffectiveProbe": 0.25083401250553083,
+      "minimumT": 1.5591655249058392e-16,
+      "maxT": 0.983944623196342,
+      "courseIdentity": "factoryScope360",
+      "course": {
+        "width": 360,
+        "height": 140,
+        "lambda": 0.068,
+        "beamTop": -380,
+        "top": -230,
+        "dpcTop": -80,
+        "axis": -420
+      }
+    }
+  ],
+  "decision": "Much stronger thermal course than AAC per depth is a credible comparison. It does not earn a whole-envelope selection: retained PE conflicts with current no-synthetic policy and current stock width/RC receiving continuity fails the joined pier application. D1600/half-metre field is NOT selected merely because AAC was weak.",
+  "pointReceivers": [
+    {
+      "name": "wet",
+      "Nkn": 71.138,
+      "Mknm": 1.442,
+      "minimumFootprint": [
+        357,
+        647
+      ],
+      "ex": 31.27046023222469,
+      "ey": 8.5,
+      "elasticMaxMpa": 0.49412429152316384,
+      "stressComparator": 0.4444444444444445,
+      "verdict": "FAIL this360x650foot. Full internal M assigned conservatively; no invented pinned/rocker release."
+    },
+    {
+      "name": "midpost",
+      "Nkn": 72.489,
+      "Mknm": 2.222,
+      "minimumFootprint": [
+        357,
+        647
+      ],
+      "ex": 41.65292665094014,
+      "ey": 8.5,
+      "elasticMaxMpa": 0.5582708219358142,
+      "stressComparator": 0.4444444444444445,
+      "verdict": "FAIL this360x650foot. Full internal M assigned conservatively; no invented pinned/rocker release."
+    }
+  ],
+  "targetCalibration": {
+    "authoredTarget": 0.18,
+    "scope": "Combined air-backed planar+psi*P/A design stress only. Not identical to statutory floor-U test.",
+    "currentEnglandBackstop": {
+      "edition": "ADL2021 incorporating2023 amendments",
+      "table": "4.1",
+      "floor": 0.18,
+      "roof": 0.16,
+      "source": "https://assets.publishing.service.gov.uk/media/662a2e3e55e1582b6ca7e592/Approved_Document_L__Conservation_of_fuel_and_power__Volume_1_Dwellings__2021_edition_incorporating_2023_amendments.pdf"
+    },
+    "2026Commencement": "24March2027 ordinary England work, subject transition; site/application/date not established here.",
+    "methodLimit": "Actual ground/void ISO13370/BR443 and thermal-bridge/whole-dwelling accounting must be resolved. Neither air-planar U nor this P/Aprobe is compliance proof."
+  }
+}

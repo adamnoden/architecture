@@ -5,7 +5,7 @@ OUT=Path(__file__).resolve().parent
 from scipy.sparse import coo_matrix
 from scipy.sparse.linalg import spsolve
 
-def solve(glass,aac,la=.29,step=5):
+def solve(glass,aac,la=.29,step=5,course=None):
  x=np.arange(-1800+step/2,100,step);z=np.arange(-1000+step/2,1200,step)
  X,Z=np.meshgrid(x,z);K=np.zeros(X.shape)
  def put(mask,k):K[mask]=k
@@ -15,7 +15,7 @@ def solve(glass,aac,la=.29,step=5):
  put(fld&(Z< -15)&(Z>=-80),1.4)
  put(fld&(Z< -80)&(Z>=-80-glass),.041)
  put(fld&(Z< -80-glass)&(Z>=-280-glass),1.75)
- beamtop=-405 if aac else -180
+ beamtop=course['beamTop'] if course else (-405 if aac else -180)
  put((X>=-600)&(X<=0)&(Z<beamtop)&(Z>=beamtop-450),1.75)
  # core,DPC,inner thermalcourse. No crosscavityAAC/missingcoldweatherleaf.
  core=(X>=-492.5)&(X< -352.5)
@@ -24,8 +24,20 @@ def solve(glass,aac,la=.29,step=5):
  if aac:
   put(core&(Z>=-395)&(Z< -180),la)
   put(core&(Z>=-405)&(Z< -395),.87)
+ if course:
+  ct=course.get('top',-180);dt=course.get('dpcTop',-30);axis=course.get('axis',-422.5)
+  bearing=(X>=axis-course['width']/2)&(X<axis+course['width']/2)
+  put(core&(Z>=dt),.77)
+  put(bearing&(Z>=ct)&(Z<dt),1.3)
+  put(bearing&(Z>=ct-course['height'])&(Z<ct),course['lambda'])
+  put(bearing&(Z>=beamtop)&(Z<ct-course['height']),.87)
  put((X>=-519.5)&(X< -492.5)&(Z>=0),.57)
  put((X>=-352.5)&(X< -152.5)&(Z>=beamtop),.041)
+ if course:
+  # Reapply actual complete receiving width: cavity glass cannot overwrite its outer edge.
+  put(bearing&(Z>=ct)&(Z<dt),1.3)
+  put(bearing&(Z>=ct-course['height'])&(Z<ct),course['lambda'])
+  put(bearing&(Z>=beamtop)&(Z<ct-course['height']),.87)
  put((X>=-102.5)&(X<0)&(Z>=beamtop),.77)
  put((X>=-102.5)&(X<0)&(Z>=120)&(Z<270),1.3)
  warm=(X< -519.5)&(Z>=0)
