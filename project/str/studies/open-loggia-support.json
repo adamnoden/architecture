@@ -10199,8 +10199,11 @@
         3450
       ],
       "upper_floor80_not_added_to_final_riser": true,
-      "fully_cracked_phi3_mm": 7.541285033901641,
-      "differential_shrinkage_300microstrain_mm": 2.13890625,
+      "vertical_displacement_basis": "Normal150waist;verticalunit-loadwork ds=dx/cos(pitch), bothtermsinclude sec(pitch).",
+      "vertical_projection_factor": 1.1535271995059326,
+      "fully_cracked_phi3_mm": 8.699077405832561,
+      "differential_shrinkage_300microstrain_mm": 2.467286536568236,
+      "combined_vertical_sensitivity_mm": 11.166363942400798,
       "L250_comparator": 11.7,
       "midlanding_slab": {
         "top": 1725,

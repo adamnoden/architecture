@@ -465,6 +465,21 @@ stair_sec=rc(1000,150,119,area(12)*1000/125,25)
 stair_axial=stair_flight['V']*math.sin(stair_angle)
 assert stair_flight['M']/stair_sec['MR']+stair_axial*1000/(stair_sec['As']*(500/1.15))<1
 assert stair_flight['V']<stair_sec['VRdc']
+# The waist depth is NORMAL to the pitch, while span and vertical loading use
+# horizontal coordinates. Vertical unit-load work integrates along ds=dx/cosθ:
+# both the EI deflection and imposed-normal-curvature displacement need secθ.
+stair_secant=1/math.cos(stair_angle)
+stair_vertical_phi3=cracked(1000,150,119,stair_sec['As'],stair_G,3,stair_span,3)*stair_secant
+stair_vertical_shrink=300e-6/150*(stair_span*1000)**2/8*stair_secant
+# Independent dimensionless virtual-work quadrature: M=q*x*(L-x)/2 and
+# m=min(x,L-x)/2. This also checks the horizontal limit, without hardcoding
+# this stair's numerical deflection or duplicating the cracked-EI calculation.
+for angle in [0,stair_angle]:
+    n=2000;t=[(i+.5)/n for i in range(n)]
+    bending_work=sum(.25*x*(1-x)*min(x,1-x) for x in t)/(n*math.cos(angle))
+    curvature_work=sum(.5*min(x,1-x) for x in t)/(n*math.cos(angle))
+    assert math.isclose(bending_work,5/(384*math.cos(angle)),rel_tol=1e-6)
+    assert math.isclose(curvature_work,1/(8*math.cos(angle)),rel_tol=1e-6)
 # Continuous longtrimmer, not independent simply supported reactions summed.
 # Three-moment compatibility integrates actualpiecewise tributary widths.
 def beam_line(xs,supports,loads):
@@ -555,8 +570,11 @@ frame=dict(corner_collectors=collectors,
                       G=stair_G,Q=3,flight_action=stair_flight,flight_end_reaction=stair_flight_reaction,
                       axial_sensitivity=stair_axial,main_nose_levels=[0,1725,3450],
                       upper_floor80_not_added_to_final_riser=True,
-                      fully_cracked_phi3_mm=cracked(1000,150,119,stair_sec['As'],stair_G,3,stair_span,3),
-                      differential_shrinkage_300microstrain_mm=300e-6/150*(stair_span*1000)**2/8,
+                      vertical_displacement_basis='Normal150waist;verticalunit-loadwork ds=dx/cos(pitch), bothtermsinclude sec(pitch).',
+                      vertical_projection_factor=stair_secant,
+                      fully_cracked_phi3_mm=stair_vertical_phi3,
+                      differential_shrinkage_300microstrain_mm=stair_vertical_shrink,
+                      combined_vertical_sensitivity_mm=stair_vertical_phi3+stair_vertical_shrink,
                       L250_comparator=stair_span*1000/250,
                       midlanding_slab=dict(top=1725,bottom=1525,NSsupport_axes=[7257.5,8852.5],
                                           full_north_seat=[8782.5,8922.5],section=landing_sec,action=landing_action,
@@ -1090,7 +1108,7 @@ txt(sx(550),sy(7700),'Full140northseat8782.5..8922.5.')
 txt(215,34,'B / MEMBER ACTIONS AND REAL LIMITS','title')
 for i,line in enumerate([f'Flightbearing2925, pitch{tg["pitchDegrees"]:.3f}°,150normalwaist.',
  f'Per1mM{stair_flight["M"]:.2f}/MR{stair_sec["MR"]:.2f}; eachend{stair_flight_reaction:.2f}kN.',
- f'Waistphi3+shrink9.680 <11.700L/250comparison.',
+ f'Verticalwaistphi3+shrink{stair_vertical_phi3+stair_vertical_shrink:.3f} <{stair_span*1000/250:.3f}L/250;sec(pitch)bothterms.',
  f'Midbeam250×370/top1725/bottom1355,M{mid_M:.2f}.',
  f'WestR{mid_RL:.2f}/EastR{mid_RR:.2f};postN{mid_post_N:.2f}/M{mid_post_M:.2f}.',
  f'Continuoustrimmerpostreaction{long_reaction_max[1]:.2f}, nottwoindependentbays.',
