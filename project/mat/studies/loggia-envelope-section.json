@@ -1,0 +1,82 @@
+{
+  "authority": "Conditional joined wall/soffit development; no house, material, support, water or site acceptance.",
+  "startingMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
+  "hadSource": {
+    "path": "project/had/studies/open-north-loggia.json",
+    "sha256": "a181df7876311b8bb92eac88a880468e64bbd5033d0d465f10ddc65f12f3c911"
+  },
+  "wallLayers": [
+    [
+      "mineralFinish",
+      15
+    ],
+    [
+      "structuralMasonry",
+      140
+    ],
+    [
+      "bareCellularGlass",
+      200
+    ],
+    [
+      "drainedGap",
+      50
+    ],
+    [
+      "weatherBrick",
+      102.5
+    ]
+  ],
+  "wallTotal": 507.5,
+  "wallAxes": [
+    4377.5,
+    7622.5
+  ],
+  "loggiaClear": [
+    4800,
+    7750,
+    2400,
+    4250
+  ],
+  "upper": {
+    "rcTop": 3370,
+    "rcSoffit": 3170,
+    "glass": 200,
+    "railLathTerritory": 15,
+    "render": 25,
+    "underside": 2930
+  },
+  "dpc": {
+    "inner": [
+      -180,
+      -30
+    ],
+    "outer": [
+      150,
+      300
+    ],
+    "status": "Different-height bonded bands; actual returns/cavity tray and floor moisture route require qualification."
+  },
+  "supportHypothesis": {
+    "beamTop": -180,
+    "beamBottom": -630,
+    "lowestCap": -680,
+    "soil": -1200,
+    "heave": 300,
+    "constructionLoss": 50,
+    "ventClearance": 150,
+    "status": "STR calculation hypothesis only, not frozen support or selected D1200.",
+    "requiredD": 1180,
+    "residualAtD1200": 170
+  },
+  "wetDeadKgM2": 80,
+  "windStressKpa": 1.5,
+  "grid": [
+    600,
+    450
+  ],
+  "wetDeadKpa": 0.7848,
+  "gridWetDeadKn": 0.211896,
+  "gridUlsStressKn": 0.8935596000000001,
+  "coreR": 4.878048780487805
+}
