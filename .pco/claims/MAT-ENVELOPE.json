@@ -9,8 +9,8 @@
     "label": "zerg2-mat-joined"
   },
   "claimedAt": "2026-11-01T19:28:00.966Z",
-  "heartbeatAt": "2026-11-01T19:28:00.966Z",
-  "expiresAt": "2026-11-01T20:13:00.966Z",
+  "heartbeatAt": "2026-11-01T19:38:29.531Z",
+  "expiresAt": "2026-11-01T20:23:29.531Z",
   "branch": "work/zerg2-mat-joined",
   "predecessor": {
     "leaseId": "814b6dcb-3d75-4eb4-9063-b6f39846bdeb",
@@ -31,5 +31,10 @@
       "evidence": "PR1224 merged1e7b2cbce408834ca3cbb91c286af37eda066829. Exact reviewed MAT dfea1516 and all3MATblobs verified on fresh main; original1222 auto-incorporated, both remote refs deleted. Full sharedCI41322417761 attempt2 passed; fresh MAT preflight15:46:21.034Z. MAT1100 updated with findings and remaining-work handoff; node remains planned.",
       "next": "Future worker must freshly dispatch: resolve actual roof wall-head/hip/valley, continuous ventilation, insulation-side protection, warm air/vapour joints and separated copper receiver; ground/floor moisture/gas and other envelope duties remain. Release current generation as handoff now; no new work in this session."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote checkpoint68569fc20632c775548e537bcb728652bbcf99b5 tree03a27ce7 verified equal local. Joined D1300 derivation/layers committed; reviewers identified remaining capseat/lid/junction corrections.",
+    "next": "Correct connected wall/threshold/DPC and final bridge/lid geometry, render inspect, peer review, submit to root integration batch",
+    "blocker": "Reference candidate only; complete gas seal, constituent and technical admission not earned"
   }
 }
