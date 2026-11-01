@@ -145,9 +145,9 @@ for x in extract:
 supplies=[]
 for name,level,wall,at in [('study',0,'west',2700),('living',0,'north',2675),
  ('bed2',1,'south',2850),('bed3',1,'south',9150),('bed4',1,'north',4800),('principal',1,'north',11150)]:
-    point=([at,0] if wall=='south' else [at,12000] if wall=='north' else [0,at])+[level*3450+2950]
+    point=([at,0] if wall=='south' else [at,12000] if wall=='north' else [0,at])+[level*3450+2850]
     supplies.append({'id':name,'level':level,'wall':wall,'point':point,'measuredEquivalentAreaRequired':10000,
-      'formedWallTerritory':220,'metalTerminalEnvelope':[350,350,100],
+      'formedWallTerritory':360,'metalTerminalEnvelope':[400,400,100],'clearDuct':200,'radialInsulation':50,'metalJacketEachSide':1,'fullInsulatedOD':302,'wallHoleRadialReserve':29,'faceTopLocal':3050,'ceilingClearance':50,
       'status':'Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area'})
 # EA orifice screening uses explicitly declared Cd/rho, not a tested vent curve.
 def flow(ea,dp):return .61*ea/1e6*math.sqrt(2*dp/1.2)*1000
@@ -329,7 +329,7 @@ fixtures=[
  ('principal-WC',1,1,[10972.5,7412.5],['cold','soil']),('principal-basin',1,1,[9400,7600],['cold','hot','waste']),
  ('principal-shower',1,1,[9400,6600],['cold','hot','waste']),('family-WC',1,1,[11022.5,5900],['cold','soil']),
  ('family-basin',1,1,[9800,6195],['cold','hot','waste']),('family-bath',1,1,[9460,3785],['cold','hot','waste']),
- ('rear-WC',1,1,[717.5,11000],['cold','soil']),('rear-basin',1,1,[1000,8937.5],['cold','hot','waste']),
+ ('rear-WC',1,1,[729.5,11000],['cold','soil']),('rear-basin',1,1,[1000,8937.5],['cold','hot','waste']),
  ('rear-shower',1,1,[1817.5,8937.5],['cold','hot','waste'])]
 # One guest pan, not the four-house WC total copied into that fixture row.
 fixtures[0]=('guest-WC',0,1,[8700,600],['cold','soil'])
@@ -419,6 +419,7 @@ rewinds={'familyWetRoom':{'status':'Shared MAT/IAS/HAD trial only; no selected p
  'working':'Washer/sink front at1400, floor task field to2000. Washer valve10800/1250 is450 from front bodycentre10800/1700, not inaccessible behind appliance. Utility door must be checked in actual open/closed modes; no sink-use pass under an untested inward900leaf. Cu/inverter work fields do not intersect proposed fixed appliance bodies.'}}
 for work in ['electricalWorkingField','PVworkingField']:
  for fixed in ['washer','sink']:assert not overlap(rewinds['utility'][work],rewinds['utility'][fixed])
+rewinds['rearSource27']={'groundStackCabinet':[429.5,10800,300,750],'upperCabinet':[429.5,10800,300,750],'lowBox':[429.5,9937.5,150,862.5],'panBack':729.5,'retainedFloorPort':[567.5,11177.5,160],'portEdgeReserves':[58,82],'requiredBackProjection':162,'status':'Explicit12east finish correction from417.5 to429.5; floorport unchanged. Old merged pan withdrawal witness must be repeated against shifted cabinet/pan; no automatic pass.'}
 family=rewinds['familyWetRoom'];col=family['column'];px,py,pd=family['port']
 for d in [pd,family['aboveFloorTerminalSupportEnvelope']]:
  assert min(px-d/2-col[0],col[0]+col[2]-px-d/2,py-d/2-col[1],col[1]+col[3]-py-d/2)>=25
@@ -428,24 +429,25 @@ assert family['WC'][1]-(family['basin'][1]+family['basin'][3])==100
 sink={'status':'One-wayrequired interface forIAS sink firstrelease in27dryfinish trial; actual apparatus/frame/joints not admitted.',
  'station':[8700,10970.5,900,600],'maximumRemovedHeight':1000,'initialLift':20,'retainedStudHeight':15,'retainedBodyTopMaximum':475,'movingUpperLowPointAfterLiftMinimum':495,'maximumCaptureStroke':15,'captureReserveAfterLift':5,'noLowTransverseFrameRail':True,
  'studs':[[x,y] for x in [8765,9535] for y in [11070.5,11470.5]],
- 'frontAccessPlan':[8950,10970.5,400,150],'frontAccessZ':[400,550],
- 'operatorCentre':[9150,10650],'unions':[
-  {'id':'cold','axis':[9025,11045.5,475],'axisDirection':[0,0,1],'maximumDiameter':80,'maximumAxial':100},
-  {'id':'hot','axis':[9130,11045.5,475],'axisDirection':[0,0,1],'maximumDiameter':80,'maximumAxial':100},
-  {'id':'waste','axis':[9275,11045.5,475],'axisDirection':[0,0,1],'maximumDiameter':100,'maximumAxial':100}],
- 'sequence':'Isolate/drain; accessibletrue-uniondisengagement FIRST; independentlysupported retainedpipes capped.20lift thenSwithdrawal ofstation doesnot liftpipe/support/floorseal. Retained trap staysbelowunion; no movingtrap below495. No rearhiddenrelease assumed.',
- 'wasteRequiredRoute':[[9275,11045.5,475],[9275,11045.5,300],[9275,12000,276.1375],[9275,12450,-1980]],
+ 'frontAccessPlan':[8950,10875.5,400,150],'frontAccessZ':[400,550],
+ 'operatorCentre':[9500,10625],'unions':[
+  {'id':'cold','axis':[9025,10950.5,475],'axisDirection':[0,0,1],'maximumDiameter':80,'maximumAxial':100},
+  {'id':'hot','axis':[9130,10950.5,475],'axisDirection':[0,0,1],'maximumDiameter':80,'maximumAxial':100},
+  {'id':'waste','axis':[9275,10950.5,475],'axisDirection':[0,0,1],'maximumDiameter':100,'maximumAxial':100}],
+ 'sequence':'Isolate/drain; accessibletrue-uniondisengagement FIRST; independentlysupported retainedpipes capped.20lift thenW600 andS600 withdrawal ofstation doesnot liftpipe/support/floorseal. Retained trap staysbelowunion; no movingtrap below495. No rearhiddenrelease assumed.',
+ 'wasteRequiredRoute':[[9275,10950.5,475],[9275,10950.5,300],[9275,12000,273.7625],[9275,12450,-1980]],
  'actualSupplierRequired':'Bothpressureunions andwastetrap/union mustbe compatiblewithsame release sequence, material, hygiene andgravity duty; nominalmetal/diameter isnot a completepartpass.'}
 for u in sink['unions']:
  x,y,z=u['axis'];r=u['maximumDiameter']/2;a=u['maximumAxial']/2;box=sink['frontAccessPlan']
  assert min(x-r-box[0],box[0]+box[2]-x-r,y-r-box[1],box[1]+box[3]-y-r,z-a-400,550-z-a)>=25
  u['planReachFromOperator']=math.dist([x,y],sink['operatorCentre'])
- assert u['planReachFromOperator']<415
+ assert u['planReachFromOperator']<600
 assert sink['initialLift']-sink['retainedStudHeight']==5
+sink['handlingRequirement']={'movingHeadPlan':[900,670],'firstTranslation':[-600,0],'secondTranslation':[0,-600],'tableInitialYRequired':9100,'tableFirstY':9000,'tableFinalY':9650,'ENchairPark':[10800,8475,500,500],'otherChairParks':[[7750,y,500,500] for y in [8600,9150,9700]],'status':'Narrow IAS coordination rewind; actual HAD immutable table-source pin and full sequence reproduction pending. No old chair parking or stale c83 table location credited.'}
 sink['retainedTrap']='Trap isfixedbelowwasteunion; movingstation tail terminatesat475 before20lift and≥495after. Actual trap/waterseal/cleanout mustfit below475; no movingPtrap sweptthroughfixedpipe.'
 sink['retainedFeed']={'verticalCornerColumn':[11425,11188,145,224],
- 'coldPath':[[10500,10800,2945],[11487,10800,2945],[11487,11250,2945],[11487,11250,212],[9025,11250,212],[9025,11045.5,212],[9025,11045.5,425]],
- 'hotPath':[[10500,10800,2945],[11487,10800,2945],[11487,11350,2945],[11487,11350,212],[9130,11350,212],[9130,11045.5,212],[9130,11045.5,425]],
+ 'coldPath':[[10500,10800,2945],[11487,10800,2945],[11487,11250,2945],[11487,11250,212],[9025,11250,212],[9025,10950.5,212],[9025,10950.5,425]],
+ 'hotPath':[[10500,10800,2945],[11487,10800,2945],[11487,11350,2945],[11487,11350,212],[9130,11350,212],[9130,10950.5,212],[9130,10950.5,425]],
  'tube':22,'radialInsulation':25,'metalJacketEachSide':1,'fullStraightOD':74,
  'completeCrossingSupportEnvelopeZ':[150,274],
  'rigEnvelopeBeforeLiftZ':[0,100],'rigEnvelopeAfterLiftZ':[0,120],
@@ -582,6 +584,24 @@ residues.append({'id':'PV','quantity':'8 modules +1inverter + matched DC cable/c
  'known':pv['residue'],'alternative':pv['alternative'],'replacement':pv['access'],
  'proposal':'Exact certified system residuals after roof/material comparison; no owner exception approved.'})
 
+rear_drop={'status':'Constructive compatibility requirement for separate rear1000 tray, not actual matched outlet/support/union admission.',
+ 'port':[2675,9500,110],'clearSleeveInside':97,'maximumRenewableStem':75,
+ 'unionA':[2675,9500,2950],'turnT':[2675,9500,2790],'unionB':[2575,9500,2787.5],
+ 'branch':[[2675,9500,2790],[1750,9500,2766.875],[1750,11177.5,2724.9375],[567.5,11177.5,2695.375]],
+ 'gradient':40,'maximumCompleteFittingOD':100,'supportDepth':25,'airReserve':25,'innerPanelTop':2595.375,'panelThickness':20,'finishedPanelUnderside':2575.375,
+ 'clearHatch':[2275,9100,800,800],'outerHatch':[2255,9080,840,840],
+ 'fixedBeamFinishedWestFace':2817.5,'fixedBeamSoffit':3005,
+ 'spoolMotion':[[50,0,-50],[0,0,-450]],'spoolMaximumTopBefore':3000,'spoolMaximumTopAfter':2500,'finalPanelClearance':75.375,
+ 'upperRenewal':{'tailBelowUpperFFL':500,'upwardStroke':550,'finalStemAboveFFL':50,'stripBeforeWithdrawal':'All A upper halves/nuts/clamps wider than75 must actually detach below before75stem passes97sleeve; ordinary lower renewal retains A upperhalf.'},
+ 'workingPlatformRequiredPlan':[1950,9050,1200,1500],'operatorShoulder':[2635,9725,2450],'headPlanRadius':150,'maximumHeadTop':2750,
+ 'toolContacts':[[2675,9600,2950],[2575,9560,2787.5]],
+ 'boundary':'800 hatch is panel aperture, not a free vertical prism through retained beam. All A/T/B complete bodies/tool/spool stay west of2817.5. Upper tray drain/feet must match this authored port or this specific route fails; no automatic principal900 transfer. New formedport requires STR support proof; not drilling permission.'}
+assert length([x[:2] for x in rear_drop['branch']])==3785
+for a,c in zip(rear_drop['branch'],rear_drop['branch'][1:]):assert abs((a[2]-c[2])-math.dist(a[:2],c[:2])/40)<1e-8
+assert max(math.dist(rear_drop['operatorShoulder'],x) for x in rear_drop['toolContacts'])<600
+assert rear_drop['fixedBeamFinishedWestFace']-(rear_drop['operatorShoulder'][0]+rear_drop['headPlanRadius'])>=25
+assert rear_drop['finishedPanelUnderside']-rear_drop['spoolMaximumTopAfter']>=25
+
 result={'status':'Constructive provisional whole-house service baseline; no accepted apparatus, materials, fire route, site loading or commissioning.',
  'basis':{'HADHead':HEAD,'HADPath':PATH,'HADBlob':BLOB,'HADStatus':b['status'],
   'mergedInterfaceMain':'546c98f93a3dccbfe48119bd2e92117b6e2d766f','units':'mm, local proposed groundFFL0; first3450; all z use one datum'},
@@ -590,7 +610,7 @@ result={'status':'Constructive provisional whole-house service baseline; no acce
  'cooker':{'extractPoint':[11200,12000,2400],'duct':160,'exhaustRadialInsulation':50,'metalJacketEachSide':1,'fullInsulatedOD':262,'formedWallTerritory':320,'minimumCaptureLps':30,'makeupPoint':[12000,8600,2400],
    'makeupFormedTerritory':280,'makeupRequirement':'Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from65L/s background; no open-window chore or recirculation-onlyhood credit.',
    'hood':'600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required.'},
- 'heat':heat,'pipeCrossovers':gates,'interfaces':{'familyWetRoom':rewinds['familyWetRoom'],'kitchenSinkStation':sink},'rewinds':rewinds,'eastFoulExit':east_exit,'PV':pv,'pipeInsulation':insulation,'hotWater':hot,'plant':plant,'trunks':trunks,'wallCrossingEnquiries':crossings,'fixtures':schedule,'otherDuties':other,'residues':residues,
+ 'heat':heat,'pipeCrossovers':gates,'interfaces':{'familyWetRoom':rewinds['familyWetRoom'],'kitchenSinkStation':sink,'rearShowerDrop':rear_drop,'rearSource27':rewinds['rearSource27']},'rewinds':rewinds,'eastFoulExit':east_exit,'PV':pv,'pipeInsulation':insulation,'hotWater':hot,'plant':plant,'trunks':trunks,'wallCrossingEnquiries':crossings,'fixtures':schedule,'otherDuties':other,'residues':residues,
  'notAdmitted':['Every exterior core/lintel/thermal/gas/weather junction','Riser trimmed RC opening and upper connections','Specific protected-door transfer and pipe/cable firestops','Exact emitters/pumps/fittings and measured performance','Actual mains, site climate, network/outfall/pressure/noise/pollution and power','Owner-approved polymer exceptions; none created'],
  'reproduction':'Python standard library. If frozen HAD object is absent, explicitly git fetch origin c83a06f26cf3b146d7cdc8254b4799f390508196; verify fullblob. No synthetic merge parent or geometry substitution. Geometry tests distinguish finite reservations from engineering acceptance.'}
 
