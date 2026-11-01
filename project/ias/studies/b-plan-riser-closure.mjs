@@ -198,6 +198,9 @@ const data = {
 const joined = {
   id:'J-RC2', status:'Unadopted joined compact-B witness; whole-house stack not resolved',
   geometry:{bay,riser,cabinet},
+  datum:{origin:'Local proposed ground FFL0; all z values use this same datum',authoredExteriorAndSoil:-1300,
+    proposedGroundAboveAuthoredGrade:1300,translationVsAccepted150IfAdopted:1150,
+    rule:'A later global translation applies to the WHOLE house; no storey height or floor depth is consumed. No second geometry model.'},
   fixedFloor:{soffit:3170,slabTop:3370,slabDepth:200,functionLayer:60,finish:20,ffl:3450,
     castBores:[[9500,4850,50],[9700,4850,50],[9800,5200,160]],examplePipeOD:22,
     soilStack:{centre:[9800,5200],pipeOD:110,formedBore:160,occupiedRadius:80,heightInterval:[3370,4650],
@@ -348,7 +351,7 @@ const rr=(x,y,w,h,c)=>t(`<rect x="${x}" y="${y}" width="${w}" height="${h}" clas
 const ll=(x,y,a,b,c='line')=>t(`<path d="M${x},${y}L${a},${b}" class="${c}"/>`);
 t('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect width="420" height="297" fill="#fffdf8"/><style>text{font-family:Arial,sans-serif;font-size:3.1px;fill:#243d43}.title{font-size:6px;font-weight:bold}.head{font-size:4px;font-weight:bold}.small{font-size:2.65px}.line{stroke:#536d73;stroke-width:.35;fill:none}.fixed{fill:#d6dddb;stroke:#526c70;stroke-width:.4}.floor{fill:#d9c9ad;stroke:#806b53;stroke-width:.4}.frame{fill:#839ba0;stroke:#345a65;stroke-width:.4}.void{fill:#e6f1ea;stroke:#35816d;stroke-width:.4;stroke-dasharray:1,1}.part{fill:#bb9762;stroke:#805f36;stroke-width:.5}.panel{fill:#e8dce9;stroke:#916a9f;stroke-width:.5}.motion{fill:none;stroke:#277f69;stroke-width:.7}.warn{fill:#9d4f32}.old{fill:none;stroke:#b18472;stroke-dasharray:2,1;stroke-width:.4}</style>');
 tt(12,14,'J-RC2: keep the floor; renew the local service part','title');
-tt(12,23,'1 November 2026 / joined compact-B comparison / mm / A3 at100% / no adopted source or construction release');
+tt(12,23,'1 November 2026 / compact-B / mm / A3 at100% / z: LOCAL proposed ground FFL0; authored exterior−1300 / unadopted');
 tt(12,31,'Two-small-pipe +110stack witness. Complete550×700 service inventory remains unproved; the700×800 full opening remains the adverse alternative.','small warn');
 tt(12,43,'A  Permanent floor / plan1:10','head');
 const PX=x=>12+(x-9300)/10,PY=y=>51+(5500-y)/10;
@@ -416,7 +419,7 @@ tt(12,241,'4  Move free screen/cap east. New identified gasket; verified tool/to
 tt(12,250,'5  Dry all affected surfaces; reverse cover/body paths. Floor, penetrations and frame stay fixed.');
 tt(12,263,`Plan sensitivities: screw reach${screwReach.toFixed(1)}; part reach${componentReach.toFixed(1)}; cover/body reserve${panelBodyMargin.toFixed(0)}.`,'small');
 tt(12,271,'These omit articulated hands, force, balance, vertical reach and actual handling. Pocket angle/thread travel and actual tool need verification.','small warn');
-tt(12,280,'Complete graphite-gasket recipe, pipe seals, supports/isolation, hydraulic duty, structural design and physical operation remain unaccepted.','small');
+tt(12,280,'D1300 datum: any later global translation applies to the WHOLE house; no storey height or floor depth is consumed.','small');
 tt(12,290,'Reference design — not released for construction. This local witness does not discharge IAS-03 or the inherited whole-house riser obligation.','small');
 t('</svg>');
 const outputs = {'project/ias/studies/b-plan-riser-closure.json':JSON.stringify(data,null,2)+'\n','project/ias/studies/b-plan-riser-closure.svg':svg.join('\n')+'\n','project/ias/studies/b-plan-riser-task.svg':taskSvg.join('\n')+'\n'};

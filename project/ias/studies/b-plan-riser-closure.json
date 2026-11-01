@@ -1342,6 +1342,13 @@
         750
       ]
     },
+    "datum": {
+      "origin": "Local proposed ground FFL0; all z values use this same datum",
+      "authoredExteriorAndSoil": -1300,
+      "proposedGroundAboveAuthoredGrade": 1300,
+      "translationVsAccepted150IfAdopted": 1150,
+      "rule": "A later global translation applies to the WHOLE house; no storey height or floor depth is consumed. No second geometry model."
+    },
     "fixedFloor": {
       "soffit": 3170,
       "slabTop": 3370,
