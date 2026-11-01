@@ -1,27 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 7,
+  "generation": 8,
   "state": "claimed",
-  "leaseId": "a17ca040-a77b-4229-8273-15b4964bf355",
+  "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-2900-worker-one-next"
+    "label": "zerg2-s02-inventory"
   },
-  "claimedAt": "2026-10-31T18:00:04.239Z",
-  "heartbeatAt": "2026-10-31T18:00:04.239Z",
-  "expiresAt": "2026-10-31T18:45:04.239Z",
-  "branch": "work/swarm-2900-worker-one-next-20261031",
+  "claimedAt": "2026-11-01T19:52:49.569Z",
+  "heartbeatAt": "2026-11-01T19:52:49.569Z",
+  "expiresAt": "2026-11-01T20:37:49.569Z",
+  "branch": "work/zerg2-s02-inventory",
   "predecessor": {
-    "leaseId": "22e0c87d-ee24-45f7-b5a8-5b190b400260",
-    "generation": 6,
-    "branch": "work/mat-drain-detail-20261031-1728",
-    "pr": 1161,
-    "checkpoint": {
-      "evidence": "PR #1161 merged as d81aab99cd8900395deffc16a26f1490fb9658f6; validated head 4c06eeaa17b46d02d71efb9cd20f675753207f3f and merge both have tree a3a1f77d828e4db5767aec5dc69fa410454125d2. Exact-head full CI 41226495636 passed; drawing, source and integration reviews passed. Four separate installation/release/crossing/parking conditions are recorded without accepting a complete assembly.",
-      "next": "Bind an exact compatible outlet-to-branch joint, all retained constituents and its installed/release envelopes; combine with complete waste/support/clear-opening section. Reconcile the current caulked cast-iron stack package and its removal path.",
-      "blocker": "Complete material package, physical fit and renewal remain unresolved. MAT-SERVICES stays planned; the bounded study is merged, not an installed-system acceptance."
-    }
+    "leaseId": "a17ca040-a77b-4229-8273-15b4964bf355",
+    "generation": 7,
+    "branch": "work/swarm-2900-worker-one-next-20261031"
   },
   "recoverySource": {
     "leaseId": "22e0c87d-ee24-45f7-b5a8-5b190b400260",
