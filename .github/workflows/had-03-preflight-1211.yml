@@ -1,3 +1,4 @@
+# Post exact-head full-CI pass 41304272682: rerun canonical live-lease preflight before merge.
 name: HAD-03 source-bound court sections preflight PR1211
 on:
   push:
