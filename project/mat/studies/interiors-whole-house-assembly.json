@@ -851,6 +851,25 @@
       "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
     },
     {
+      "id": "J-S",
+      "audit": [
+        "I03",
+        "O05"
+      ],
+      "name": "Stair wearing surface and guards",
+      "direction": "Retain the actual mineral RC stair wearing surface with integral slip/contrast detail and no unmodelled added tread overlay; bare solid-timber handrail on independently supported plain metal guard",
+      "layers": [],
+      "oldDepth": null,
+      "scope": "Actual stair, landing/void/gallery guarding; no invented tread thickness, guard height or loading acceptance",
+      "constituents": "RC recipe/repair compound, mineral contrast if required, solid rail, mechanical rail joints, metal stanchions/anchors; inspect finish/lubricant/isolator and no concealed adhesive assumption.",
+      "firstRelease": "Locally repair the wearing surface after protecting/closing the walking route; rail releases at accessible supported mechanical brackets only with an actual temporary guarding state. Guard support and fire boundary are independent of decorative trim.",
+      "residue": "Actual slip/visibility/acoustic performance, structural guard/anchor/rail capacity and complete concrete/repair recipe remain existing STR/BCR/physical admission duties. No20 timber overlay changes the first/last riser unnoticed.",
+      "totalDepth": 0,
+      "depthDelta": null,
+      "materialAdmission": "not earned",
+      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+    },
+    {
       "id": "J-C",
       "audit": [
         "I03",
@@ -1098,6 +1117,7 @@
       "id": "G-STAIR",
       "name": "Stair approach and ground protected connection",
       "families": [
+        "J-S",
         "W-D",
         "F-D",
         "C-G",
@@ -1587,6 +1607,7 @@
       "id": "U-ROUTE",
       "name": "Whole upper ring / stair roof closure",
       "families": [
+        "J-S",
         "W-D",
         "F-D",
         "C-U",
@@ -1828,6 +1849,85 @@
     ],
     "recommendationCoverage": "All18 room/route occurrences have reasoned construction and first-release directions; current trial conflicts are named rather than hidden",
     "programmeAction": "Assess complete development only after the two internal joins are earned; do not prolong planned solely for later certification"
+  },
+  "livingRepairProposal": {
+    "basisHADHead": "20ff8709a79a63e7d4bcd13fc6b86ef36a5a9a00",
+    "basisJSONBlob": "bd3ba6057ed8f58cd14120bad9aab04553d309c0",
+    "status": "Checked plan proposal with complete receivers/27finish/18trim; owning HAD composition pending",
+    "sofaB": [
+      2337.5,
+      9800,
+      1900,
+      750
+    ],
+    "sofaFaces": [
+      "EAST",
+      "SOUTH"
+    ],
+    "tableB": [
+      3900,
+      9450,
+      300,
+      300
+    ],
+    "tableAOrdinary": [
+      800,
+      10925,
+      300,
+      300
+    ],
+    "tableAR01Park": [
+      480,
+      10600,
+      300,
+      300
+    ],
+    "tableMove": "West first at10925 then south; restore ordinary end-table state after R01 work",
+    "entryPath": [
+      [
+        3450,
+        8500
+      ],
+      [
+        3450,
+        9455
+      ],
+      [
+        1993.75,
+        9455
+      ]
+    ],
+    "window1800Path": [
+      [
+        1993.75,
+        9455
+      ],
+      [
+        1993.75,
+        10900
+      ],
+      [
+        2363.75,
+        11075
+      ]
+    ],
+    "rearStackPathAfterTablePark": [
+      [
+        1993.75,
+        9455
+      ],
+      [
+        1993.75,
+        11226.25
+      ],
+      [
+        1100,
+        11226.25
+      ]
+    ],
+    "fixed3700": "No ordinary operation credited; fixed glazing only",
+    "heightRequirement": "Actual sofas/tables<=700 under750cill; no full3D/window/force or seated-ergonomic admission",
+    "remaining": "Whole living-kitchen route controlling westFD21 is IAS case; R01 maintenance26.25 nominal/1.25 after25 combined loss is explicitly limited, not comfortable validation"
   },
   "checks": {
     "dryStandardControl": 27,
