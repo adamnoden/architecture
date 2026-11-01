@@ -1,45 +1,38 @@
 {
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
-  "generation": 11,
-  "state": "released",
-  "leaseId": "64cf8505-5f25-4d68-a68c-921fd2ae1005",
+  "generation": 12,
+  "state": "claimed",
+  "leaseId": "17844eac-e5ae-487e-ab87-f02d04893b87",
   "holder": {
-    "kind": "codex",
-    "label": "worker-seven"
+    "kind": "chatgpt",
+    "label": "zerg2_interiors"
   },
-  "claimedAt": "2026-11-01T15:03:32.487Z",
-  "heartbeatAt": "2026-11-01T15:21:28.203Z",
-  "expiresAt": "2026-11-01T15:21:28.203Z",
-  "branch": "work/mat-worker-seven",
+  "claimedAt": "2026-11-01T19:57:48.734Z",
+  "heartbeatAt": "2026-11-01T19:57:48.734Z",
+  "expiresAt": "2026-11-01T20:42:48.734Z",
+  "branch": "work/zerg2-mat-interiors",
+  "note": "Owner-directed compact B principal900 wetroom assembly",
   "predecessor": {
-    "leaseId": "6fa407d3-8717-438a-820e-c95fd705d962",
-    "generation": 10,
-    "branch": "work/mat-waste-package-recovery-20261031-1934",
-    "pr": 1168,
+    "leaseId": "64cf8505-5f25-4d68-a68c-921fd2ae1005",
+    "generation": 11,
+    "branch": "work/mat-worker-seven",
+    "pr": 1219,
     "checkpoint": {
-      "evidence": "PR #1168 merged as c9e9a2c0087ef4e18b5fa4527826767ba4f0c8bd; accepted tree 4d5c281bf9a42ddc6c740e4116f5a0bf193d4705 equals validated head aa1f164e39204f34e6a10949b9af1274d9a349e5. Full CI 41234904005 passed. Fresh canonical preflight passed at 19:38:40.785 UTC. Sources, three independent reviews and final integration review passed. Recovery branch automatic deletion is verified; predecessor commit is an ancestor of accepted main and draft #1167 is closed as superseded.",
-      "next": "Bind the current 5600 outlet seat, all constituents and complete vertical/support/wall package before adopting the alternative; then prove connected flow, first disengagement and outlet/trap renewal. Session will finish tracker reconciliation and dispose the superseded branch through the established sink.",
-      "blocker": "MAT-INTERIORS remains planned. No matched installed assembly, material pass, accepted height/support/wall detail or physical renewal is established."
+      "evidence": "PR #1219 remote head 6bb49d8cd4fb71585e85486951538c02c438be9c; tree equals locally checked result; source visual checks and control/repro checks pass",
+      "next": "Reconcile current main, verify exact-head full CI and fresh merge-check before integration",
+      "blocker": "Main reconciliation and exact-head CI pending; wider MAT-INTERIORS remains planned"
     }
   },
   "recoverySource": {
-    "leaseId": "6fa407d3-8717-438a-820e-c95fd705d962",
-    "generation": 10,
-    "branch": "work/mat-waste-package-recovery-20261031-1934",
-    "pr": 1168,
+    "leaseId": "64cf8505-5f25-4d68-a68c-921fd2ae1005",
+    "generation": 11,
+    "branch": "work/mat-worker-seven",
+    "pr": 1219,
     "checkpoint": {
-      "evidence": "PR #1168 merged as c9e9a2c0087ef4e18b5fa4527826767ba4f0c8bd; accepted tree 4d5c281bf9a42ddc6c740e4116f5a0bf193d4705 equals validated head aa1f164e39204f34e6a10949b9af1274d9a349e5. Full CI 41234904005 passed. Fresh canonical preflight passed at 19:38:40.785 UTC. Sources, three independent reviews and final integration review passed. Recovery branch automatic deletion is verified; predecessor commit is an ancestor of accepted main and draft #1167 is closed as superseded.",
-      "next": "Bind the current 5600 outlet seat, all constituents and complete vertical/support/wall package before adopting the alternative; then prove connected flow, first disengagement and outlet/trap renewal. Session will finish tracker reconciliation and dispose the superseded branch through the established sink.",
-      "blocker": "MAT-INTERIORS remains planned. No matched installed assembly, material pass, accepted height/support/wall detail or physical renewal is established."
+      "evidence": "PR #1219 remote head 6bb49d8cd4fb71585e85486951538c02c438be9c; tree equals locally checked result; source visual checks and control/repro checks pass",
+      "next": "Reconcile current main, verify exact-head full CI and fresh merge-check before integration",
+      "blocker": "Main reconciliation and exact-head CI pending; wider MAT-INTERIORS remains planned"
     }
-  },
-  "pr": 1219,
-  "checkpoint": {
-    "evidence": "PR #1219 remote head 6bb49d8cd4fb71585e85486951538c02c438be9c; tree equals locally checked result; source visual checks and control/repro checks pass",
-    "next": "Reconcile current main, verify exact-head full CI and fresh merge-check before integration",
-    "blocker": "Main reconciliation and exact-head CI pending; wider MAT-INTERIORS remains planned"
-  },
-  "releasedAt": "2026-11-01T15:21:28.203Z",
-  "releaseReason": "handoff"
+  }
 }
