@@ -9,8 +9,8 @@
     "label": "zerg-worker-one"
   },
   "claimedAt": "2026-11-01T14:55:11.984Z",
-  "heartbeatAt": "2026-11-01T15:24:55.758Z",
-  "expiresAt": "2026-11-01T16:09:55.758Z",
+  "heartbeatAt": "2026-11-01T15:33:18.024Z",
+  "expiresAt": "2026-11-01T16:18:18.024Z",
   "branch": "work/zerg-integration-20261101",
   "predecessor": {
     "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
@@ -36,8 +36,8 @@
   },
   "pr": 1221,
   "checkpoint": {
-    "evidence": "Draft integration PR #1221 head336947a9ebe29b4632beb91f85b696269ae08469 retains exact reviewed1217/1218/1220 parent histories on main85a4d83f. Combined163tests, typecheck, repo/brand/public validation and boundary/STR exact generation pass.",
-    "next": "Verify all three owner lease bindings, full exact-head combined CI, then each fresh canonical preflight before coordinator-authorised expected-head merge",
-    "blocker": "Integration full CI and owner binding pending; no merge permission yet"
+    "evidence": "PR #1221 mergedcf466b583a91ed2bd936ad3499cce31ca84a584b verified on main; exact-head full CI41321065041 attempt2 passed, all3fresh canonical preflights passed. HAD03 local portal design and side-then-lift witness integrated; source geometry unadopted.",
+    "next": "Continue HAD03 from merged main and project/had/had-03-local-portal-design.md: develop or reject complete100mm no-plastic cover/joint/containment assembly and actual threshold first-harm/room convergence. Do not reuse spatial witness as installed acceptance.",
+    "blocker": "HAD03 remains incomplete, RWT06 blocked; no complete floor/material/support/hydraulic/site acceptance earned. Integration branch auto-deleted after verified merge; durable evidence is main and mergedPR1221."
   }
 }
