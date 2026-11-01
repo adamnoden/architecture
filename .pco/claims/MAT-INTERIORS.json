@@ -9,8 +9,8 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-01T22:48:09.505Z",
-  "expiresAt": "2026-11-01T23:33:09.505Z",
+  "heartbeatAt": "2026-11-01T22:59:36.478Z",
+  "expiresAt": "2026-11-01T23:44:36.478Z",
   "branch": "work/zerg4-interiors-whole-house",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -36,9 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1233 f7eda370 treee3796d9e;16families18occurrences; exact0f8 IAS peerQA recorded; living repair composed byHAD0b2f; familyterminal270box/200abovefloor explicit",
-    "next": "Consume ONE repaired27/30 input after raw10 overlaps/frontcompleteframes resolved, join IAS continuousclosure/renewal scope then authoritative developmentcloseout",
-    "blocker": "Actual raw furniture/finish joins remain internalwork; product/force/material/fire/water acceptance separate"
+    "evidence": "PR1233 e0ca2916 treec746ca36;16families18occurrences; actualbaremineralceiling direction; canonical2645/2540localboxes; retainedgroundcaps/independenttransition; repro/integrity/renderpass",
+    "next": "Join ONE final HAD27/30 plus completefrontframe and IAS supportedrenewal records, then authoritative developmentcloseout and integration projection",
+    "blocker": "Actual wholefurniture/wall and wetoperation/source joins remain internalwork; no owner exception or material/physical acceptance implied"
   },
   "pr": 1233
 }
