@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
   "generation": 12,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "17844eac-e5ae-487e-ab87-f02d04893b87",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2_interiors"
   },
   "claimedAt": "2026-11-01T19:57:48.734Z",
-  "heartbeatAt": "2026-11-01T20:49:50.308Z",
-  "expiresAt": "2026-11-01T21:34:50.308Z",
+  "heartbeatAt": "2026-11-01T20:58:58.827Z",
+  "expiresAt": "2026-11-01T20:58:58.827Z",
   "branch": "work/zerg3-services-interiors-20261101",
   "note": "Owner-directed compact B principal900 wetroom assembly",
   "predecessor": {
@@ -40,5 +40,7 @@
     "next": "SoleCIobserveraccess; rootexactheadpreflights+merge, then workerrelease",
     "blocker": "ExactcombinedheadfullCIpending; material/product/physicaladmissionandbroadMATremainopen"
   },
-  "pr": 1232
+  "pr": 1232,
+  "releasedAt": "2026-11-01T20:58:58.827Z",
+  "releaseReason": "completed"
 }
