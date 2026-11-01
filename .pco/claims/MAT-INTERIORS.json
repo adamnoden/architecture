@@ -9,8 +9,8 @@
     "label": "zerg2_interiors"
   },
   "claimedAt": "2026-11-01T19:57:48.734Z",
-  "heartbeatAt": "2026-11-01T20:11:57.143Z",
-  "expiresAt": "2026-11-01T20:56:57.143Z",
+  "heartbeatAt": "2026-11-01T20:32:01.123Z",
+  "expiresAt": "2026-11-01T21:17:01.123Z",
   "branch": "work/zerg2-mat-interiors",
   "note": "Owner-directed compact B principal900 wetroom assembly",
   "predecessor": {
@@ -36,8 +36,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote82e7b210 tree571b8db5 equals local checked connected principal B wetroom four-file checkpoint",
-    "next": "Resolve rendered plan clipping, independent assembly challenge and actual service/door coordination; validate and prepare PR",
-    "blocker": "Product mating/frame actual envelopes, structural port and material admission remain conditional"
+    "evidence": "Remote93ee99ac tree8aaaa2e7 matches checked source;120rim localport;1290lowerbranch to P2765; split tray/trap/tail renewal drawn",
+    "next": "Independent split-renewal review, source/HAD/service joins, final validation and PR",
+    "blocker": "Actual products/ports/seals/coupled operation remain admission requirements; broad MAT-INTERIORS incomplete"
   }
 }
