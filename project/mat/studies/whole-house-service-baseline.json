@@ -24,15 +24,15 @@
     ],
     "floorCriterionLps": 58.46992499999999,
     "bedroomCriterionLps": 37,
-    "selectedNormalLps": 65,
-    "floorAreaLimitAtSelectedFlowM2": 216.66666666666669,
-    "normalACHControl": 0.38729588400057946,
+    "selectedNormalLps": 78,
+    "floorAreaLimitAtSelectedFlowM2": 260.0,
+    "normalACHControl": 0.4647550608006954,
     "status": "Author-selected pre-site targets. No actual household, measured air leakage, pollution, climate or commissioning result.",
-    "backgroundAreaMM2": 60000,
+    "backgroundAreaMM2": 90000,
     "orificeScreen": {
       "Cd": 0.61,
       "airDensity": 1.2,
-      "backgroundFlowAt2PaLps": 66.82215201563027,
+      "backgroundFlowAt2PaLps": 100.2332280234454,
       "minimumSix4000EAFlowAt2PaLps": 26.728860806252108,
       "one7600TransferAt3_5PaLps": 11.19700376588904,
       "one3000TransferAt3_5PaLps": 4.419869907587779,
@@ -41,9 +41,9 @@
     "transfer": {
       "normalRequirement": "Every normally closed door on a supply-to-extract path must preserve the design transfer flow, including BOTH bedroom and wet-room doors where in series.",
       "minimumFinishedFreeArea": 7600,
-      "screenPerDoorPressurePa": 3.5,
-      "backgroundScreenPressurePa": 2,
-      "twoDoorPathScreenDepressionPa": 10,
+      "screenPerDoorPressurePa": 5,
+      "backgroundScreenPressurePa": 1.2111439577174596,
+      "twoDoorPathScreenDepressionPa": 10.646995428854174,
       "fireDoorRequirement": "Specific classified E20+ doorset with approved threshold/transfer arrangement at the required area; Sa requirements may invalidate this simple gap. No site cutting, seal deletion or blanket10mm permission.",
       "acceptance": "Not earned until the actual fire/door assembly and measured installed room pressures match. Narrow gap negative control fails.",
       "fireSource": {
@@ -220,22 +220,49 @@
         }
       ],
       "normalFlowNetworkLps": {
-        "eachHabitableSupplyScreen": 10.833333333333334,
-        "BED2_toRing": 10.833333333333334,
-        "BED3_toRing": 10.833333333333334,
-        "ringToBED4andRearBath": 1.166666666666666,
-        "ringToPrincipalAndBath": 1.166666666666666,
-        "ringToFamilyBath": 12,
-        "upperRingDownStair": 7.333333333333336,
-        "studyToProtectedHall": 10.833333333333334,
-        "livingViaWestCrossToHall": 10.833333333333334,
-        "hallToGuestWC": 8,
-        "hallViaPlantAndUtilityDoors": 8,
+        "eachHabitableSupplyScreen": 13,
+        "BED2_toRing": 13,
+        "BED3_toRing": 13,
+        "ringToBED4andRearBath": 0,
+        "ringToPrincipalAndBath": 0,
+        "ringToFamilyBath": 13,
+        "upperRingDownStair": 13,
+        "studyToProtectedHall": 13,
+        "livingViaWestCrossToHall": 13,
+        "hallToGuestWC": 13,
+        "hallViaPlantAndUtilityDoors": 13,
         "hallViaEastCrossToKitchen": 13
       },
       "worstIndividualNormalDoorScreenPa": 4.7179257355683575,
       "normalDoorScreenLimitPa": 5,
-      "worstTwoDoorAndBackgroundScreenPa": 9.994263051935274
+      "worstTwoDoorAndBackgroundScreenPa": 10.646995428854174
+    },
+    "fanChoice": {
+      "selectedDevelopmentFamily": "Titon Ultimate TP640Hi, continuous13L/s each, CF1 explicitly enabled (defaultCF0 is not sufficient). Six normal targets78L/s; boost16L/s moisture response separately commissioned.",
+      "source": "https://products.titon.com/product/titon-ultimate-dmev/",
+      "manual": "https://products.titon.com/wp-content/uploads/2026/03/DO5841.pdf",
+      "publishedDuctedReference": {
+        "flowLps": 13,
+        "powerW": 1.89,
+        "SFP": 0.15,
+        "noiseDBAAt3m": 28,
+        "volumeReductionAt20PaPercent": 1,
+        "testBasis": "BRE SAP10 Consp10 rigidduct; noise100mmround PCDBV2.0:2013. Power/noise reference and20Pa reduction are distinct published quantities, not invented coincident readings."
+      },
+      "fullBody": {
+        "diameter": 195,
+        "projection": 45,
+        "tail": 71,
+        "weightKg": 0.5
+      },
+      "renewal": "Fan mounted to demountable pod underside with195body inside400clear hatch; disconnectelectrical afterisolation; removefascia/4topretainingfixings, supportbody, disconnectactualductcoupling then lowerwhole116deepunit. Fixedduct/supports/weatherseal retained. No inlineductfan substitution claimed.",
+      "fixingRequirement": "Fan centre≥200fromadjacentwall; suppliedIPX4EPDM gasket retained/compressed≥1.5 inallinstallations. Actualceilingfixingpack not assumed suitable. No removal of gasket toclaimmetal-only.",
+      "condensate": "Ceilingmode requiresindividuallyaccessible condensatetrap dischargingoutside; inclinedhorizontal duct awayfromfan; no trap connectedtosanitaryline byassumption. Reserve15drain alongsideownouterwalloutlet, inspectfromsamehatch.",
+      "residues": "ABS body/impeller, EPDMIPX4 gasket, PCB/sensor/DCmotor/wire insulation andactualductcoupling/trap seals remain installed; proposalonly, noownerexception.",
+      "failureBounds": "K125 curve212m3/h413Pa83W iswrongduty, noaffinity/noise admission. DEXA10013Lfreeflow1.8W isnot40Paproof. DEXA150Hcurve about15Paat13L hasinsufficientwindreserve forold40Pascreen; notchosen.",
+      "powerAcceptanceCeilingW": 3.9,
+      "SFPDevelopmentCeiling": 0.3,
+      "noiseDuty": "Published28dBA@3m ductedreference; wetroomdesign≤45dBA andadjacentbedroom≤30. Requirecompletecross-roomattenuation≥10dB atreferenceplusdistance/reverberationmargin; actualinstalled noise/CFpower measured, not claimed fromfreefieldreference."
     }
   },
   "extract": [
@@ -243,7 +270,7 @@
       "id": "ground-WC",
       "level": 0,
       "wall": "south",
-      "normalLps": 8,
+      "normalLps": 13,
       "minimumHighComparator": 6,
       "axis": 2950,
       "path": [
@@ -272,7 +299,7 @@
       "exhaustRadialInsulation": 50,
       "exhaustInsulatedOD": 227,
       "formedWallTerritory": 280,
-      "ductVelocityMps": 0.6518986469044034,
+      "ductVelocityMps": 1.0593353012196554,
       "podPlan": [
         7950,
         1300,
@@ -298,7 +325,7 @@
       "maintenanceBelowPanelClearHeight": 2700,
       "fanTask": "Whole326wide×300axial envelope lowers through400×450 clear aperture:37 lateral/75 axial reserve. Two independently supported duct ends retained; actual collars/tool/release length must fit650pod. Complete fan/terminalbox retained, no factory insulation stripped.",
       "comparatorReference": "fanDimensionComparator; dimensions never prove duty/noise/material or exactrelease",
-      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredCurve": "Chosen Titon ducted13L/s direction with20Pa backpressure evidence. Complete normal resistance screen below20Pa;40Pa old arbitraryallowance is superseded, not proven by free-air rating",
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "fullRouteLengthMM": 2358.806130178211,
@@ -330,6 +357,36 @@
         "scope": "Explicit localceiling/framingcutout belowknownRC3170; notfreeunprovedattic.60riseafterfan mustfitactualturn/collar envelope; no windowleaf crossingbelowrawhead."
       },
       "alongWallOpeningClearance": 210.0,
+      "normalResistanceScreen": {
+        "tubeLengthM": 2.358806130178211,
+        "airDensity": 1.2,
+        "DarcyFactorAllowance": 0.025,
+        "sumKCompleteMaximum": 7,
+        "includes": "Allactualbends,grilles,100to125transition,condensatetrap andconnectioncollars combined; not7percomponent. Actualmatching isrequired.",
+        "ductTerminalPa": 5.030847178298256,
+        "twoDoorAndBackgroundPa": 10.646995428854174,
+        "totalPa": 15.67784260715243,
+        "backpressureEvidencePa": 20,
+        "reservePa": 4.32215739284757
+      },
+      "selectedFanReference": "air.fanChoice",
+      "ceilingTrapDrainTerritoryDiameter": 40,
+      "ceilingTrapDrainPort": {
+        "centre": [
+          9150,
+          0,
+          3010
+        ],
+        "formedDiameter": 40,
+        "maximumDrainOD": 15,
+        "separateFromMainHole": true,
+        "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+      },
+      "ceilingFixingCentreMinimumToWall": 200,
+      "actualFamilyBody": [
+        195,
+        116
+      ],
       "platformMinimumFurnitureReserve": 158.11388300841898,
       "platformClosestFurniture": "guest-WC-pan",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
@@ -338,7 +395,7 @@
       "id": "utility",
       "level": 0,
       "wall": "east",
-      "normalLps": 8,
+      "normalLps": 13,
       "minimumHighComparator": 8,
       "axis": 2950,
       "path": [
@@ -372,7 +429,7 @@
       "exhaustRadialInsulation": 50,
       "exhaustInsulatedOD": 227,
       "formedWallTerritory": 280,
-      "ductVelocityMps": 0.6518986469044034,
+      "ductVelocityMps": 1.0593353012196554,
       "podPlan": [
         10800,
         1650,
@@ -398,7 +455,7 @@
       "maintenanceBelowPanelClearHeight": 2700,
       "fanTask": "Whole326wide×300axial envelope lowers through400×450 clear aperture:37 lateral/75 axial reserve. Two independently supported duct ends retained; actual collars/tool/release length must fit650pod. Complete fan/terminalbox retained, no factory insulation stripped.",
       "comparatorReference": "fanDimensionComparator; dimensions never prove duty/noise/material or exactrelease",
-      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredCurve": "Chosen Titon ducted13L/s direction with20Pa backpressure evidence. Complete normal resistance screen below20Pa;40Pa old arbitraryallowance is superseded, not proven by free-air rating",
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "fullRouteLengthMM": 2208.806130178211,
@@ -430,6 +487,36 @@
         "scope": "Explicit localceiling/framingcutout belowknownRC3170; notfreeunprovedattic.60riseafterfan mustfitactualturn/collar envelope; no windowleaf crossingbelowrawhead."
       },
       "alongWallOpeningClearance": 260.0,
+      "normalResistanceScreen": {
+        "tubeLengthM": 2.208806130178211,
+        "airDensity": 1.2,
+        "DarcyFactorAllowance": 0.025,
+        "sumKCompleteMaximum": 7,
+        "includes": "Allactualbends,grilles,100to125transition,condensatetrap andconnectioncollars combined; not7percomponent. Actualmatching isrequired.",
+        "ductTerminalPa": 5.010647735250873,
+        "twoDoorAndBackgroundPa": 10.646995428854174,
+        "totalPa": 15.657643164105046,
+        "backpressureEvidencePa": 20,
+        "reservePa": 4.342356835894954
+      },
+      "selectedFanReference": "air.fanChoice",
+      "ceilingTrapDrainTerritoryDiameter": 40,
+      "ceilingTrapDrainPort": {
+        "centre": [
+          12000,
+          1100,
+          3010
+        ],
+        "formedDiameter": 40,
+        "maximumDrainOD": 15,
+        "separateFromMainHole": true,
+        "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+      },
+      "ceilingFixingCentreMinimumToWall": 200,
+      "actualFamilyBody": [
+        195,
+        116
+      ],
       "platformMinimumFurnitureReserve": 150.0,
       "platformClosestFurniture": "utility-sink",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
@@ -498,7 +585,7 @@
       "maintenanceBelowPanelClearHeight": 2700,
       "fanTask": "Whole326wide×300axial envelope lowers through400×450 clear aperture:37 lateral/75 axial reserve. Two independently supported duct ends retained; actual collars/tool/release length must fit650pod. Complete fan/terminalbox retained, no factory insulation stripped.",
       "comparatorReference": "fanDimensionComparator; dimensions never prove duty/noise/material or exactrelease",
-      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredCurve": "Chosen Titon ducted13L/s direction with20Pa backpressure evidence. Complete normal resistance screen below20Pa;40Pa old arbitraryallowance is superseded, not proven by free-air rating",
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "fullRouteLengthMM": 3191.306130178211,
@@ -530,6 +617,36 @@
         "scope": "Explicit localceiling/framingcutout belowknownRC3170; notfreeunprovedattic.60riseafterfan mustfitactualturn/collar envelope; no windowleaf crossingbelowrawhead."
       },
       "alongWallOpeningClearance": 442.5,
+      "normalResistanceScreen": {
+        "tubeLengthM": 3.191306130178211,
+        "airDensity": 1.2,
+        "DarcyFactorAllowance": 0.025,
+        "sumKCompleteMaximum": 7,
+        "includes": "Allactualbends,grilles,100to125transition,condensatetrap andconnectioncollars combined; not7percomponent. Actualmatching isrequired.",
+        "ductTerminalPa": 5.142954087211228,
+        "twoDoorAndBackgroundPa": 10.646995428854174,
+        "totalPa": 15.789949516065402,
+        "backpressureEvidencePa": 20,
+        "reservePa": 4.210050483934598
+      },
+      "selectedFanReference": "air.fanChoice",
+      "ceilingTrapDrainTerritoryDiameter": 40,
+      "ceilingTrapDrainPort": {
+        "centre": [
+          11482.5,
+          12000,
+          3010
+        ],
+        "formedDiameter": 40,
+        "maximumDrainOD": 15,
+        "separateFromMainHole": true,
+        "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+      },
+      "ceilingFixingCentreMinimumToWall": 200,
+      "actualFamilyBody": [
+        195,
+        116
+      ],
       "platformMinimumFurnitureReserve": 50.0,
       "platformClosestFurniture": "dining-chair-east-north",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
@@ -538,7 +655,7 @@
       "id": "rear-bath",
       "level": 1,
       "wall": "west",
-      "normalLps": 12,
+      "normalLps": 13,
       "minimumHighComparator": 8,
       "axis": 6400,
       "path": [
@@ -567,7 +684,7 @@
       "exhaustRadialInsulation": 50,
       "exhaustInsulatedOD": 227,
       "formedWallTerritory": 280,
-      "ductVelocityMps": 0.977847970356605,
+      "ductVelocityMps": 1.0593353012196554,
       "podPlan": [
         1050,
         9150,
@@ -593,7 +710,7 @@
       "maintenanceBelowPanelClearHeight": 6150,
       "fanTask": "Whole326wide×300axial envelope lowers through400×450 clear aperture:37 lateral/75 axial reserve. Two independently supported duct ends retained; actual collars/tool/release length must fit650pod. Complete fan/terminalbox retained, no factory insulation stripped.",
       "comparatorReference": "fanDimensionComparator; dimensions never prove duty/noise/material or exactrelease",
-      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredCurve": "Chosen Titon ducted13L/s direction with20Pa backpressure evidence. Complete normal resistance screen below20Pa;40Pa old arbitraryallowance is superseded, not proven by free-air rating",
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "fullRouteLengthMM": 1800.0,
@@ -611,6 +728,36 @@
         700
       ],
       "alongWallOpeningClearance": 260.0,
+      "normalResistanceScreen": {
+        "tubeLengthM": 1.8,
+        "airDensity": 1.2,
+        "DarcyFactorAllowance": 0.025,
+        "sumKCompleteMaximum": 7,
+        "includes": "Allactualbends,grilles,100to125transition,condensatetrap andconnectioncollars combined; not7percomponent. Actualmatching isrequired.",
+        "ductTerminalPa": 4.955596694291169,
+        "twoDoorAndBackgroundPa": 10.646995428854174,
+        "totalPa": 15.602592123145342,
+        "backpressureEvidencePa": 20,
+        "reservePa": 4.397407876854658
+      },
+      "selectedFanReference": "air.fanChoice",
+      "ceilingTrapDrainTerritoryDiameter": 40,
+      "ceilingTrapDrainPort": {
+        "centre": [
+          0,
+          9500,
+          6400
+        ],
+        "formedDiameter": 40,
+        "maximumDrainOD": 15,
+        "separateFromMainHole": true,
+        "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+      },
+      "ceilingFixingCentreMinimumToWall": 200,
+      "actualFamilyBody": [
+        195,
+        116
+      ],
       "platformMinimumFurnitureReserve": 42.5,
       "platformClosestFurniture": "rear-basin",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
@@ -619,7 +766,7 @@
       "id": "family-bath",
       "level": 1,
       "wall": "east",
-      "normalLps": 12,
+      "normalLps": 13,
       "minimumHighComparator": 8,
       "axis": 6400,
       "path": [
@@ -648,7 +795,7 @@
       "exhaustRadialInsulation": 50,
       "exhaustInsulatedOD": 227,
       "formedWallTerritory": 280,
-      "ductVelocityMps": 0.977847970356605,
+      "ductVelocityMps": 1.0593353012196554,
       "podPlan": [
         10225,
         5200,
@@ -674,7 +821,7 @@
       "maintenanceBelowPanelClearHeight": 6150,
       "fanTask": "Whole326wide×300axial envelope lowers through400×450 clear aperture:37 lateral/75 axial reserve. Two independently supported duct ends retained; actual collars/tool/release length must fit650pod. Complete fan/terminalbox retained, no factory insulation stripped.",
       "comparatorReference": "fanDimensionComparator; dimensions never prove duty/noise/material or exactrelease",
-      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredCurve": "Chosen Titon ducted13L/s direction with20Pa backpressure evidence. Complete normal resistance screen below20Pa;40Pa old arbitraryallowance is superseded, not proven by free-air rating",
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "fullRouteLengthMM": 1425.0,
@@ -692,6 +839,36 @@
         700
       ],
       "alongWallOpeningClearance": 510.0,
+      "normalResistanceScreen": {
+        "tubeLengthM": 1.425,
+        "airDensity": 1.2,
+        "DarcyFactorAllowance": 0.025,
+        "sumKCompleteMaximum": 7,
+        "includes": "Allactualbends,grilles,100to125transition,condensatetrap andconnectioncollars combined; not7percomponent. Actualmatching isrequired.",
+        "ductTerminalPa": 4.905098086672712,
+        "twoDoorAndBackgroundPa": 10.646995428854174,
+        "totalPa": 15.552093515526886,
+        "backpressureEvidencePa": 20,
+        "reservePa": 4.447906484473114
+      },
+      "selectedFanReference": "air.fanChoice",
+      "ceilingTrapDrainTerritoryDiameter": 40,
+      "ceilingTrapDrainPort": {
+        "centre": [
+          12000,
+          5950,
+          6400
+        ],
+        "formedDiameter": 40,
+        "maximumDrainOD": 15,
+        "separateFromMainHole": true,
+        "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+      },
+      "ceilingFixingCentreMinimumToWall": 200,
+      "actualFamilyBody": [
+        195,
+        116
+      ],
       "platformMinimumFurnitureReserve": 25.0,
       "platformClosestFurniture": "family-WC",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
@@ -700,7 +877,7 @@
       "id": "principal-bath",
       "level": 1,
       "wall": "east",
-      "normalLps": 12,
+      "normalLps": 13,
       "minimumHighComparator": 8,
       "axis": 6400,
       "path": [
@@ -734,7 +911,7 @@
       "exhaustRadialInsulation": 50,
       "exhaustInsulatedOD": 227,
       "formedWallTerritory": 280,
-      "ductVelocityMps": 0.977847970356605,
+      "ductVelocityMps": 1.0593353012196554,
       "podPlan": [
         10425,
         6650,
@@ -760,7 +937,7 @@
       "maintenanceBelowPanelClearHeight": 6150,
       "fanTask": "Whole326wide×300axial envelope lowers through400×450 clear aperture:37 lateral/75 axial reserve. Two independently supported duct ends retained; actual collars/tool/release length must fit650pod. Complete fan/terminalbox retained, no factory insulation stripped.",
       "comparatorReference": "fanDimensionComparator; dimensions never prove duty/noise/material or exactrelease",
-      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredCurve": "Chosen Titon ducted13L/s direction with20Pa backpressure evidence. Complete normal resistance screen below20Pa;40Pa old arbitraryallowance is superseded, not proven by free-air rating",
       "requiredExternalTerminalFreeArea": 11044.661672776616,
       "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
       "descenderPlan": [
@@ -821,6 +998,36 @@
       ],
       "alongWallOpeningClearance": -640.0,
       "alongWallOpeningClearanceStatus": "Insideexistingwindowbyintent; cassetteproof replacespiercheck, not a new masonrybore.",
+      "normalResistanceScreen": {
+        "tubeLengthM": 1.765,
+        "airDensity": 1.2,
+        "DarcyFactorAllowance": 0.025,
+        "sumKCompleteMaximum": 7,
+        "includes": "Allactualbends,grilles,100to125transition,condensatetrap andconnectioncollars combined; not7percomponent. Actualmatching isrequired.",
+        "ductTerminalPa": 4.950883490913446,
+        "twoDoorAndBackgroundPa": 10.646995428854174,
+        "totalPa": 15.59787891976762,
+        "backpressureEvidencePa": 20,
+        "reservePa": 4.40212108023238
+      },
+      "selectedFanReference": "air.fanChoice",
+      "ceilingTrapDrainTerritoryDiameter": 40,
+      "ceilingTrapDrainPort": {
+        "centre": [
+          12000,
+          7600,
+          6060
+        ],
+        "formedDiameter": 40,
+        "maximumDrainOD": 15,
+        "separateFromMainHole": true,
+        "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+      },
+      "ceilingFixingCentreMinimumToWall": 200,
+      "actualFamilyBody": [
+        195,
+        116
+      ],
       "platformMinimumFurnitureReserve": 62.5,
       "platformClosestFurniture": "principal-WC",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
@@ -836,7 +1043,7 @@
         2700,
         2850
       ],
-      "measuredEquivalentAreaRequired": 10000,
+      "measuredEquivalentAreaRequired": 15000,
       "formedWallTerritory": 360,
       "metalTerminalEnvelope": [
         400,
@@ -861,7 +1068,7 @@
         12000,
         2850
       ],
-      "measuredEquivalentAreaRequired": 10000,
+      "measuredEquivalentAreaRequired": 15000,
       "formedWallTerritory": 360,
       "metalTerminalEnvelope": [
         400,
@@ -886,7 +1093,7 @@
         0,
         6300
       ],
-      "measuredEquivalentAreaRequired": 10000,
+      "measuredEquivalentAreaRequired": 15000,
       "formedWallTerritory": 360,
       "metalTerminalEnvelope": [
         400,
@@ -911,7 +1118,7 @@
         0,
         6300
       ],
-      "measuredEquivalentAreaRequired": 10000,
+      "measuredEquivalentAreaRequired": 15000,
       "formedWallTerritory": 360,
       "metalTerminalEnvelope": [
         400,
@@ -936,7 +1143,7 @@
         12000,
         6300
       ],
-      "measuredEquivalentAreaRequired": 10000,
+      "measuredEquivalentAreaRequired": 15000,
       "formedWallTerritory": 360,
       "metalTerminalEnvelope": [
         400,
@@ -961,7 +1168,7 @@
         12000,
         6300
       ],
-      "measuredEquivalentAreaRequired": 10000,
+      "measuredEquivalentAreaRequired": 15000,
       "formedWallTerritory": 360,
       "metalTerminalEnvelope": [
         400,
@@ -1004,70 +1211,70 @@
     "designCompatibilityDutyKW": 8,
     "designPoint": "Outdoor−3 / indoor20 / emitter45flow40return, authored procurement requirement not actual site weather or manufacturer output",
     "waterFlowAt8KW_5K_Lps": 0.3827751196172249,
-    "maximumFabricPlusInfiltrationWKAtDelta25": 242.0,
+    "maximumFabricPlusInfiltrationWKAtDelta25": 226.4,
     "thermalSensitivity": [
       {
         "fabricPlusInfiltrationWK": 80,
         "deltaTK": 20,
-        "MEVkW": 3.16,
-        "MVHR70percentControlKW": 2.068,
-        "MVHRVentOnlySavingKW": 1.092
+        "MEVkW": 3.472,
+        "MVHR70percentControlKW": 2.1616,
+        "MVHRVentOnlySavingKW": 1.3103999999999998
       },
       {
         "fabricPlusInfiltrationWK": 80,
         "deltaTK": 25,
-        "MEVkW": 3.95,
-        "MVHR70percentControlKW": 2.585,
-        "MVHRVentOnlySavingKW": 1.3649999999999998
+        "MEVkW": 4.34,
+        "MVHR70percentControlKW": 2.702,
+        "MVHRVentOnlySavingKW": 1.638
       },
       {
         "fabricPlusInfiltrationWK": 80,
         "deltaTK": 30,
-        "MEVkW": 4.74,
-        "MVHR70percentControlKW": 3.102,
-        "MVHRVentOnlySavingKW": 1.6379999999999997
+        "MEVkW": 5.208,
+        "MVHR70percentControlKW": 3.2424,
+        "MVHRVentOnlySavingKW": 1.9656
       },
       {
         "fabricPlusInfiltrationWK": 140,
         "deltaTK": 20,
-        "MEVkW": 4.36,
-        "MVHR70percentControlKW": 3.268,
-        "MVHRVentOnlySavingKW": 1.092
+        "MEVkW": 4.672,
+        "MVHR70percentControlKW": 3.3615999999999993,
+        "MVHRVentOnlySavingKW": 1.3103999999999998
       },
       {
         "fabricPlusInfiltrationWK": 140,
         "deltaTK": 25,
-        "MEVkW": 5.45,
-        "MVHR70percentControlKW": 4.085,
-        "MVHRVentOnlySavingKW": 1.3649999999999998
+        "MEVkW": 5.84,
+        "MVHR70percentControlKW": 4.202,
+        "MVHRVentOnlySavingKW": 1.638
       },
       {
         "fabricPlusInfiltrationWK": 140,
         "deltaTK": 30,
-        "MEVkW": 6.54,
-        "MVHR70percentControlKW": 4.902,
-        "MVHRVentOnlySavingKW": 1.6379999999999997
+        "MEVkW": 7.008,
+        "MVHR70percentControlKW": 5.0424,
+        "MVHRVentOnlySavingKW": 1.9656
       },
       {
         "fabricPlusInfiltrationWK": 220,
         "deltaTK": 20,
-        "MEVkW": 5.96,
-        "MVHR70percentControlKW": 4.868,
-        "MVHRVentOnlySavingKW": 1.092
+        "MEVkW": 6.272,
+        "MVHR70percentControlKW": 4.9616,
+        "MVHRVentOnlySavingKW": 1.3103999999999998
       },
       {
         "fabricPlusInfiltrationWK": 220,
         "deltaTK": 25,
-        "MEVkW": 7.45,
-        "MVHR70percentControlKW": 6.085,
-        "MVHRVentOnlySavingKW": 1.3649999999999998
+        "MEVkW": 7.840000000000001,
+        "MVHR70percentControlKW": 6.202,
+        "MVHRVentOnlySavingKW": 1.638
       },
       {
         "fabricPlusInfiltrationWK": 220,
         "deltaTK": 30,
-        "MEVkW": 8.94,
-        "MVHR70percentControlKW": 7.302,
-        "MVHRVentOnlySavingKW": 1.6379999999999997
+        "MEVkW": 9.408,
+        "MVHR70percentControlKW": 7.442399999999999,
+        "MVHRVentOnlySavingKW": 1.9656
       }
     ],
     "noAnnualEnergyOrCOPClaim": true,
@@ -2030,6 +2237,25 @@
         9500,
         110
       ],
+      "trayDrainEvidence": {
+        "selectedReference": "BetteUltra5940 eastdrain; interiors auditedB2 nativeDW_0082",
+        "tray": [
+          1802.5,
+          8952.5,
+          1000,
+          1000
+        ],
+        "drainCentre": [
+          2592.5,
+          9452.5
+        ],
+        "requiredTailOffset": [
+          82.5,
+          47.5
+        ],
+        "requiredPlanOffsetMagnitude": 95.19716382329885,
+        "status": "Authored250x160connectionterritory cancontain offset, butactualB568outlet/elbow/support/seat/height/release mustmatch; not1000frameapprovalor900transfer."
+      },
       "clearSleeveInside": 97,
       "maximumRenewableStem": 75,
       "unionA": [
@@ -5789,7 +6015,7 @@
       "id": "MEV-fans",
       "quantity": "6 complete replaceable stations",
       "location": "Six outer-wall wet-room pods",
-      "known": "Systemair K comparator has glass-reinforced polyamide impeller despite metal casing. Motor varnish, insulation, terminalbox/electronics/grommets and clamps need exact bill.",
+      "known": "Selected development TitonUltimate has ABSbody/impeller, EPDMmandatoryIPX4gasket, PCB/sensor/DCmotor/wireinsulation; exactrevision and completeconstituentextent required. MetalcaseK comparator retainsreinforcedpolyamide andfails duty-specific evidence.",
       "alternative": "No-powered natural/intermittent fails intended airtight simple case; centralMEV/MVHR add distribution. Metal impeller fan may reduce one residue but is not presumed performance-compatible.",
       "replacement": "Isolate electrically, independently support both duct ends, open400×450clear panel, release actual demountable joints and lower complete≤326×300fan into clear room workzone; fixed wall sleeve/weather seal remains.37/75clear task reserve is design requirement, not matched-kit proof.",
       "proposal": "No exception yet; exact fan revision, constituents/quantity, duty/noise/curve and replacement instructions must precede any narrow owner request."

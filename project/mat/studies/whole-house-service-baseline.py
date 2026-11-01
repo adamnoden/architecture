@@ -44,10 +44,10 @@ area=ground+upper
 air={'basis':'Conservative geometric floor-area upper bound, not regulatory measured area',
  'groundM2':ground,'upperM2':upper,'totalM2':area,'oldBControlM2':2*ring-b['void'][2]*b['void'][3]/1e6,
  'clearHeightControl':3.1,'volumeControlM3':area*3.1,'bedrooms':4,'designOccupancyRange':[2,6],
- 'floorCriterionLps':area*.3,'bedroomCriterionLps':37,'selectedNormalLps':65,
- 'floorAreaLimitAtSelectedFlowM2':65/.3,'normalACHControl':65*3.6/(area*3.1),
+ 'floorCriterionLps':area*.3,'bedroomCriterionLps':37,'selectedNormalLps':78,
+ 'floorAreaLimitAtSelectedFlowM2':78/.3,'normalACHControl':78*3.6/(area*3.1),
  'status':'Author-selected pre-site targets. No actual household, measured air leakage, pollution, climate or commissioning result.'}
-assert air['floorCriterionLps']<65 and air['oldBControlM2']*.3<65
+assert air['floorCriterionLps']<78 and air['oldBControlM2']*.3<78
 
 # Each duct station is entirely in its wet room and its own outer wall.
 # Pod500wide x650projection x300high. Real K125EC dimensional comparator is246
@@ -55,9 +55,9 @@ assert air['floorCriterionLps']<65 and air['oldBControlM2']*.3<65
 # No supplier model is claimed to meet the curve/noise/material requirement yet.
 extract=[]
 for name,level,wall,at,q,minimum in [
- ('ground-WC',0,'south',9000,8,6),('utility',0,'east',900,8,8),
- ('kitchen',0,'north',11382.5,13,13),('rear-bath',1,'west',9300,12,8),
- ('family-bath',1,'east',5750,12,8),('principal-bath',1,'east',6750,12,8)]:
+ ('ground-WC',0,'south',9000,13,6),('utility',0,'east',900,13,8),
+ ('kitchen',0,'north',11382.5,13,13),('rear-bath',1,'west',9300,13,8),
+ ('family-bath',1,'east',5750,13,8),('principal-bath',1,'east',6750,13,8)]:
     ffl=level*3450;axis=ffl+2950
     face=11567.5 if level and wall=='east' else 11582.5
     if wall=='east': start=[face-650,at,axis];end=[12000,at,axis];pod=[face-650,at-250,650,500]
@@ -74,7 +74,7 @@ for name,level,wall,at,q,minimum in [
       'maintenanceBelowPanelClearHeight':ffl+2700,
       'fanTask':'Whole326wide×300axial envelope lowers through400×450 clear aperture:37 lateral/75 axial reserve. Two independently supported duct ends retained; actual collars/tool/release length must fit650pod. Complete fan/terminalbox retained, no factory insulation stripped.',
       'comparatorReference':'fanDimensionComparator; dimensions never prove duty/noise/material or exactrelease',
-      'requiredCurve':'Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating',
+      'requiredCurve':'Chosen Titon ducted13L/s direction with20Pa backpressure evidence. Complete normal resistance screen below20Pa;40Pa old arbitraryallowance is superseded, not proven by free-air rating',
       'requiredExternalTerminalFreeArea':.9*math.pi*125**2/4,
       'status':'Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved'})
 principal=next(x for x in extract if x['id']=='principal-bath')
@@ -131,7 +131,7 @@ for x in extract:
  assert x['clearPanel'][0]>=x['fanMaxBody'][0]+50
  assert x['clearPanel'][1]>=x['fanMaxBody'][1]+100
  assert x['panelFrameOuter'][0]<=500 and x['panelFrameOuter'][1]<=650
-assert sum(x['normalLps'] for x in extract)==65
+assert sum(x['normalLps'] for x in extract)==78
 assert all(x['normalLps']>=x['minimumHighComparator'] for x in extract)
 # Windows: along-wall geometric clearance only; no inference about buried lintels.
 for x in extract:
@@ -146,49 +146,70 @@ supplies=[]
 for name,level,wall,at in [('study',0,'west',2700),('living',0,'north',2675),
  ('bed2',1,'south',2850),('bed3',1,'south',9150),('bed4',1,'north',4800),('principal',1,'north',11150)]:
     point=([at,0] if wall=='south' else [at,12000] if wall=='north' else [0,at])+[level*3450+2850]
-    supplies.append({'id':name,'level':level,'wall':wall,'point':point,'measuredEquivalentAreaRequired':10000,
+    supplies.append({'id':name,'level':level,'wall':wall,'point':point,'measuredEquivalentAreaRequired':15000,
       'formedWallTerritory':360,'metalTerminalEnvelope':[400,400,100],'clearDuct':200,'radialInsulation':50,'metalJacketEachSide':1,'fullInsulatedOD':302,'wallHoleRadialReserve':29,'faceTopLocal':3050,'ceilingClearance':50,
       'status':'Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area'})
 # EA orifice screening uses explicitly declared Cd/rho, not a tested vent curve.
 def flow(ea,dp):return .61*ea/1e6*math.sqrt(2*dp/1.2)*1000
 air['backgroundAreaMM2']=sum(x['measuredEquivalentAreaRequired'] for x in supplies)
-air['orificeScreen']={'Cd':.61,'airDensity':1.2,'backgroundFlowAt2PaLps':flow(60000,2),
+air['orificeScreen']={'Cd':.61,'airDensity':1.2,'backgroundFlowAt2PaLps':flow(90000,2),
  'minimumSix4000EAFlowAt2PaLps':flow(24000,2),'one7600TransferAt3_5PaLps':flow(7600,3.5),
  'one3000TransferAt3_5PaLps':flow(3000,3.5),'notATestedCurve':True}
-assert flow(60000,2)>65 and flow(24000,2)<65
-assert flow(7600,3.5)>65/6 and flow(3000,3.5)<65/6
+assert flow(90000,2)>78 and flow(24000,2)<78
+assert flow(7600,5)>78/6 and flow(3000,5)<78/6
 air['transfer']={'normalRequirement':'Every normally closed door on a supply-to-extract path must preserve the design transfer flow, including BOTH bedroom and wet-room doors where in series.',
- 'minimumFinishedFreeArea':7600,'screenPerDoorPressurePa':3.5,'backgroundScreenPressurePa':2,
+ 'minimumFinishedFreeArea':7600,'screenPerDoorPressurePa':5,'backgroundScreenPressurePa':2,
  'twoDoorPathScreenDepressionPa':10,'fireDoorRequirement':'Specific classified E20+ doorset with approved threshold/transfer arrangement at the required area; Sa requirements may invalidate this simple gap. No site cutting, seal deletion or blanket10mm permission.',
  'acceptance':'Not earned until the actual fire/door assembly and measured installed room pressures match. Narrow gap negative control fails.'}
 def pressure(q,ea=7600):return .5*1.2*(q/1000/(.61*ea/1e6))**2
 air['transfer']['fireSource']={'head':FIRE_HEAD,'jsonBlob':FIRE_BLOB,'interface':'protectedRoute only; primary room/furniture baseline remains frozen c83 plus declared rewinds'}
 air['transfer']['doors']=fire['doors']
-air['transfer']['normalFlowNetworkLps']={
- 'eachHabitableSupplyScreen':65/6,'BED2_toRing':65/6,'BED3_toRing':65/6,
- 'ringToBED4andRearBath':12-65/6,'ringToPrincipalAndBath':12-65/6,
- 'ringToFamilyBath':12,'upperRingDownStair':2*65/6-2*(12-65/6)-12,
- 'studyToProtectedHall':65/6,'livingViaWestCrossToHall':65/6,
- 'hallToGuestWC':8,'hallViaPlantAndUtilityDoors':8,'hallViaEastCrossToKitchen':13}
-assert abs(air['transfer']['normalFlowNetworkLps']['upperRingDownStair']+2*65/6-29)<1e-8
+air['transfer']['normalFlowNetworkLps']={'eachHabitableSupplyScreen':13,'BED2_toRing':13,'BED3_toRing':13,'ringToBED4andRearBath':0,'ringToPrincipalAndBath':0,'ringToFamilyBath':13,'upperRingDownStair':13,'studyToProtectedHall':13,'livingViaWestCrossToHall':13,'hallToGuestWC':13,'hallViaPlantAndUtilityDoors':13,'hallViaEastCrossToKitchen':13}
+assert 4*13-3*13==13 and 13+2*13==3*13
+background_dp=pressure(78,90000)
 air['transfer']['worstIndividualNormalDoorScreenPa']=pressure(13)
 air['transfer']['normalDoorScreenLimitPa']=5
 assert pressure(13)<5
-air['transfer']['worstTwoDoorAndBackgroundScreenPa']=pressure(65/6)+pressure(13)+2
-assert air['transfer']['worstTwoDoorAndBackgroundScreenPa']<10.1
+air['transfer']['worstTwoDoorAndBackgroundScreenPa']=2*pressure(13)+background_dp
+air['transfer']['backgroundScreenPressurePa']=background_dp
+air['transfer']['twoDoorPathScreenDepressionPa']=2*pressure(13)+background_dp
+fan_choice={'selectedDevelopmentFamily':'Titon Ultimate TP640Hi, continuous13L/s each, CF1 explicitly enabled (defaultCF0 is not sufficient). Six normal targets78L/s; boost16L/s moisture response separately commissioned.',
+ 'source':'https://products.titon.com/product/titon-ultimate-dmev/',
+ 'manual':'https://products.titon.com/wp-content/uploads/2026/03/DO5841.pdf',
+ 'publishedDuctedReference':{'flowLps':13,'powerW':1.89,'SFP':.15,'noiseDBAAt3m':28,'volumeReductionAt20PaPercent':1,'testBasis':'BRE SAP10 Consp10 rigidduct; noise100mmround PCDBV2.0:2013. Power/noise reference and20Pa reduction are distinct published quantities, not invented coincident readings.'},
+ 'fullBody':{'diameter':195,'projection':45,'tail':71,'weightKg':.5},
+ 'renewal':'Fan mounted to demountable pod underside with195body inside400clear hatch; disconnectelectrical afterisolation; removefascia/4topretainingfixings, supportbody, disconnectactualductcoupling then lowerwhole116deepunit. Fixedduct/supports/weatherseal retained. No inlineductfan substitution claimed.',
+ 'fixingRequirement':'Fan centre≥200fromadjacentwall; suppliedIPX4EPDM gasket retained/compressed≥1.5 inallinstallations. Actualceilingfixingpack not assumed suitable. No removal of gasket toclaimmetal-only.',
+ 'condensate':'Ceilingmode requiresindividuallyaccessible condensatetrap dischargingoutside; inclinedhorizontal duct awayfromfan; no trap connectedtosanitaryline byassumption. Reserve15drain alongsideownouterwalloutlet, inspectfromsamehatch.',
+ 'residues':'ABS body/impeller, EPDMIPX4 gasket, PCB/sensor/DCmotor/wire insulation andactualductcoupling/trap seals remain installed; proposalonly, noownerexception.',
+ 'failureBounds':'K125 curve212m3/h413Pa83W iswrongduty, noaffinity/noise admission. DEXA10013Lfreeflow1.8W isnot40Paproof. DEXA150Hcurve about15Paat13L hasinsufficientwindreserve forold40Pascreen; notchosen.',
+ 'powerAcceptanceCeilingW':3.9,'SFPDevelopmentCeiling':.3,'noiseDuty':'Published28dBA@3m ductedreference; wetroomdesign≤45dBA andadjacentbedroom≤30. Requirecompletecross-roomattenuation≥10dB atreferenceplusdistance/reverberationmargin; actualinstalled noise/CFpower measured, not claimed fromfreefieldreference.'}
+for e in extract:
+ v=e['ductVelocityMps'];dyn=.5*1.2*v*v;L=length(e['path'])/1000
+ ductloss=dyn*(7+.025*L/.125)
+ total=2*pressure(13)+background_dp+ductloss
+ e['normalResistanceScreen']={'tubeLengthM':L,'airDensity':1.2,'DarcyFactorAllowance':.025,'sumKCompleteMaximum':7,'includes':'Allactualbends,grilles,100to125transition,condensatetrap andconnectioncollars combined; not7percomponent. Actualmatching isrequired.','ductTerminalPa':ductloss,'twoDoorAndBackgroundPa':2*pressure(13)+background_dp,'totalPa':total,'backpressureEvidencePa':20,'reservePa':20-total}
+ assert total<20,e['id']
+ e['selectedFanReference']='air.fanChoice';e['normalLps']=13
+ e['ceilingTrapDrainTerritoryDiameter']=40
+ end=e['path'][-1]; dp=list(end); dp[1 if e['wall'] in ['east','west'] else 0]+=200
+ e['ceilingTrapDrainPort']={'centre':dp,'formedDiameter':40,'maximumDrainOD':15,'separateFromMainHole':True,'scope':'Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed.'}
+ e['ceilingFixingCentreMinimumToWall']=200
+ e['actualFamilyBody']=[195,116]
+air['fanChoice']=fan_choice
 
 # Sourced F/L documents control only their stated methodology; these are authored
 # thermal sensitivities. They are neither site weather nor room heat-loss design.
 thermal=[]
 for fabric in [80,140,220]:
  for dt in [20,25,30]:
-    ventilation=1.2*65
+    ventilation=1.2*78
     thermal.append({'fabricPlusInfiltrationWK':fabric,'deltaTK':dt,
       'MEVkW':(fabric+ventilation)*dt/1000,'MVHR70percentControlKW':(fabric+.3*ventilation)*dt/1000,
       'MVHRVentOnlySavingKW':.7*ventilation*dt/1000})
 heat={'selectedArchitecture':'Outdoor R290 monobloc, separated frost-protected primary, indoor plate exchanger, direct weather-compensated radiators; DHW priority. No underfloor polymer tube.',
  'designCompatibilityDutyKW':8,'designPoint':'Outdoor−3 / indoor20 / emitter45flow40return, authored procurement requirement not actual site weather or manufacturer output',
- 'waterFlowAt8KW_5K_Lps':8/(4.18*5),'maximumFabricPlusInfiltrationWKAtDelta25':8000/25-78,
+ 'waterFlowAt8KW_5K_Lps':8/(4.18*5),'maximumFabricPlusInfiltrationWKAtDelta25':8000/25-93.6,
  'thermalSensitivity':thermal,'noAnnualEnergyOrCOPClaim':True,
  'failureRule':'If actual room-by-room loss, design climate, defrost/primary-separation loss or hot-water recovery exceeds the stated duty, resize plant/emitters or change fabric/ventilation before selection.8kW is not a remembered7kW label.',
  'emitterRequirement':'Declared room outputs at45/40/20, not50K catalogue watts; exact radiator size/weight/support and window/furniture clearance must be matched.',
@@ -544,7 +565,7 @@ other=[
 ]
 
 residues=[
- {'id':'MEV-fans','quantity':'6 complete replaceable stations','location':'Six outer-wall wet-room pods','known':'Systemair K comparator has glass-reinforced polyamide impeller despite metal casing. Motor varnish, insulation, terminalbox/electronics/grommets and clamps need exact bill.',
+ {'id':'MEV-fans','quantity':'6 complete replaceable stations','location':'Six outer-wall wet-room pods','known':'Selected development TitonUltimate has ABSbody/impeller, EPDMmandatoryIPX4gasket, PCB/sensor/DCmotor/wireinsulation; exactrevision and completeconstituentextent required. MetalcaseK comparator retainsreinforcedpolyamide andfails duty-specific evidence.',
  'alternative':'No-powered natural/intermittent fails intended airtight simple case; centralMEV/MVHR add distribution. Metal impeller fan may reduce one residue but is not presumed performance-compatible.',
  'replacement':'Isolate electrically, independently support both duct ends, open400×450clear panel, release actual demountable joints and lower complete≤326×300fan into clear room workzone; fixed wall sleeve/weather seal remains.37/75clear task reserve is design requirement, not matched-kit proof.',
  'proposal':'No exception yet; exact fan revision, constituents/quantity, duty/noise/curve and replacement instructions must precede any narrow owner request.'},
@@ -585,7 +606,7 @@ residues.append({'id':'PV','quantity':'8 modules +1inverter + matched DC cable/c
  'proposal':'Exact certified system residuals after roof/material comparison; no owner exception approved.'})
 
 rear_drop={'status':'Constructive compatibility requirement for separate rear1000 tray, not actual matched outlet/support/union admission.',
- 'port':[2675,9500,110],'clearSleeveInside':97,'maximumRenewableStem':75,
+ 'port':[2675,9500,110],'trayDrainEvidence':{'selectedReference':'BetteUltra5940 eastdrain; interiors auditedB2 nativeDW_0082','tray':[1802.5,8952.5,1000,1000],'drainCentre':[2592.5,9452.5],'requiredTailOffset':[82.5,47.5],'requiredPlanOffsetMagnitude':math.hypot(82.5,47.5),'status':'Authored250x160connectionterritory cancontain offset, butactualB568outlet/elbow/support/seat/height/release mustmatch; not1000frameapprovalor900transfer.'},'clearSleeveInside':97,'maximumRenewableStem':75,
  'unionA':[2675,9500,2950],'turnT':[2675,9500,2790],'unionB':[2575,9500,2787.5],
  'branch':[[2675,9500,2790],[1750,9500,2766.875],[1750,11177.5,2724.9375],[567.5,11177.5,2695.375]],
  'gradient':40,'maximumCompleteFittingOD':100,'supportDepth':25,'airReserve':25,'innerPanelTop':2595.375,'panelThickness':20,'finishedPanelUnderside':2575.375,
@@ -666,7 +687,7 @@ svg+=text(15,26,'Local continuous extract / actual outer-wall territories / high
 svg+=plan(0,20,45)+plan(1,205,45)
 notes=[
  'RED: six local extract paths/pods. BLUE: six supplies. BROWN: water/heat tree. GOLD: lower crossings. GREEN:700workbases.',
- '65L/s normal total; separate30L/s cooker capture + dedicated makeup. Four bedrooms / design occupancy2–6, not household facts.',
+ '78L/s normal total; separate30L/s cooker capture + dedicated makeup. Four bedrooms / design occupancy2–6, not household facts.',
  f'Area upper-bound {area:.3f}m²;0.3criterion {area*.3:.3f}L/s. Interior walls/stairs included; not certified SAP/net area.',
  'Violet: protected groundstair wall/crossdoors. No ventilation duct enters protected ring; actual transfer/firedoor still mustmatch.',
  'Ground north shortcut REJECTED: outdoor loggia is not an indoor pipe corridor. Each wall/floor penetration needs actual support/seal.',
@@ -682,4 +703,4 @@ for p,s in outputs.items():
  if '--check' in sys.argv:
   assert p.read_text()==s,'Stale '+str(p)
  else:p.write_text(s)
-print(json.dumps({'floorUpperBoundM2':area,'normalLps':65,'fixtures':len(schedule),'localExtractStations':len(extract),'conditional':True}))
+print(json.dumps({'floorUpperBoundM2':area,'normalLps':78,'fixtures':len(schedule),'localExtractStations':len(extract),'conditional':True}))
