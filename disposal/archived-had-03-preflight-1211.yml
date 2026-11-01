@@ -1,0 +1,38 @@
+# Post exact-head full-CI pass 41304272682: rerun canonical live-lease preflight before merge.
+name: HAD-03 source-bound court sections preflight PR1211
+on:
+  push:
+    branches: [work/had-03-preflight-1211]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    if: github.repository == 'adamnoden/architecture'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout exact reviewed packet
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6557421818
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Assert exact reviewed head
+        run: test "$(git rev-parse HEAD)" = "bd22eb2175242fbf93b0b1cb449da07476670bac"
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Check canonical fresh live-lease publication permission
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm run control:merge-check -- HAD-03 \
+            --lease-id c6afe8b9-939f-40a1-8edf-eddd2d2602ca \
+            --generation 17 \
+            --branch work/mvb-chat-6557421818 \
+            --head bd22eb2175242fbf93b0b1cb449da07476670bac \
+            --format text
