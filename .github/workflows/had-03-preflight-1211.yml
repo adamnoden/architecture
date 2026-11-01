@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Assert exact reviewed head
-        run: test "$(git rev-parse HEAD)" = "826d689ed17dc71c9aa32ca1147287e5c59249b3"
+        run: test "$(git rev-parse HEAD)" = "bd22eb2175242fbf93b0b1cb449da07476670bac"
       - name: Setup Node
         uses: actions/setup-node@v7
         with:
@@ -33,5 +33,5 @@ jobs:
             --lease-id c6afe8b9-939f-40a1-8edf-eddd2d2602ca \
             --generation 17 \
             --branch work/mvb-chat-6557421818 \
-            --head 826d689ed17dc71c9aa32ca1147287e5c59249b3 \
+            --head bd22eb2175242fbf93b0b1cb449da07476670bac \
             --format text
