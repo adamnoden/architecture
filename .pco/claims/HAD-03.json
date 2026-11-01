@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 17,
-  "state": "released",
-  "leaseId": "c6afe8b9-939f-40a1-8edf-eddd2d2602ca",
+  "generation": 18,
+  "state": "claimed",
+  "leaseId": "5c4b89d9-ff6c-46d5-86d3-fe44774bc6df",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6557421818"
+    "label": "issue-comment-6558099791"
   },
-  "claimedAt": "2026-11-01T11:38:49.000Z",
-  "heartbeatAt": "2026-11-01T12:03:41.000Z",
-  "expiresAt": "2026-11-01T12:03:41.000Z",
-  "branch": "work/mvb-chat-6557421818",
+  "claimedAt": "2026-11-01T12:43:47.000Z",
+  "heartbeatAt": "2026-11-01T12:43:47.000Z",
+  "expiresAt": "2026-11-01T13:28:47.000Z",
+  "branch": "work/mvb-chat-6558099791",
   "predecessor": {
-    "leaseId": "cc21538d-3614-4fa3-8e93-314ed86fdf3b",
-    "generation": 16,
-    "branch": "work/mvb-chat-6556750838",
-    "pr": 1209,
+    "leaseId": "c6afe8b9-939f-40a1-8edf-eddd2d2602ca",
+    "generation": 17,
+    "branch": "work/mvb-chat-6557421818",
+    "pr": 1211,
     "checkpoint": {
-      "evidence": "PR1209 exact head 35ac7d61: undercroft grade/floor clearance inequality, N/E failure table, authored sensitivity SVG and HAD/RWT programme links. HAD-03 remains planned.",
-      "next": "Require green full PR CI 41298531549 and native live-lease preflight 41298673106; merge with exact reviewed head, release as handoff, dispose helper branch.",
-      "blocker": "Accepted architectural N/E plan+sections, site grade/high-water and threshold/structure design are still unresolved."
+      "evidence": "PR1211 head 826d689ed17d: guarded accepted-plan N/E egress renderer, 3 generated A3 SVGs, JSON ledger, source-freshness test, HAD/RWT architectural decision and links. Full CI in progress.",
+      "next": "Require exact-head full CI and source-regeneration test PASS; native live-lease merge-check against current main and head, expected-head merge, release then helper cleanup.",
+      "blocker": "No accepted B/D site levels, structural portal/threshold assemblies, water head or independently harmless N/E discharge; HAD-03 remains planned."
     }
   },
   "recoverySource": {
-    "leaseId": "cc21538d-3614-4fa3-8e93-314ed86fdf3b",
-    "generation": 16,
-    "branch": "work/mvb-chat-6556750838",
-    "pr": 1209,
+    "leaseId": "c6afe8b9-939f-40a1-8edf-eddd2d2602ca",
+    "generation": 17,
+    "branch": "work/mvb-chat-6557421818",
+    "pr": 1211,
     "checkpoint": {
-      "evidence": "PR1209 exact head 35ac7d61: undercroft grade/floor clearance inequality, N/E failure table, authored sensitivity SVG and HAD/RWT programme links. HAD-03 remains planned.",
-      "next": "Require green full PR CI 41298531549 and native live-lease preflight 41298673106; merge with exact reviewed head, release as handoff, dispose helper branch.",
-      "blocker": "Accepted architectural N/E plan+sections, site grade/high-water and threshold/structure design are still unresolved."
+      "evidence": "PR1211 head 826d689ed17d: guarded accepted-plan N/E egress renderer, 3 generated A3 SVGs, JSON ledger, source-freshness test, HAD/RWT architectural decision and links. Full CI in progress.",
+      "next": "Require exact-head full CI and source-regeneration test PASS; native live-lease merge-check against current main and head, expected-head merge, release then helper cleanup.",
+      "blocker": "No accepted B/D site levels, structural portal/threshold assemblies, water head or independently harmless N/E discharge; HAD-03 remains planned."
     }
-  },
-  "pr": 1211,
-  "checkpoint": {
-    "evidence": "PR1211 head 826d689ed17d: guarded accepted-plan N/E egress renderer, 3 generated A3 SVGs, JSON ledger, source-freshness test, HAD/RWT architectural decision and links. Full CI in progress.",
-    "next": "Require exact-head full CI and source-regeneration test PASS; native live-lease merge-check against current main and head, expected-head merge, release then helper cleanup.",
-    "blocker": "No accepted B/D site levels, structural portal/threshold assemblies, water head or independently harmless N/E discharge; HAD-03 remains planned."
-  },
-  "releasedAt": "2026-11-01T12:03:41.000Z",
-  "releaseReason": "handoff"
+  }
 }
