@@ -1,0 +1,614 @@
+{
+  "status": "Connected internal development direction; material/physical admission rejected pending named corrections",
+  "basisMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
+  "pins": {
+    "project/str/studies/house-plan.json": "193805456e26533026814bebe8c6be862e26a7d944c360dbb6047a1bde2d2282",
+    "project/str/studies/house-bedroom-options.json": "57137bfc955d9dc26ad3037952cbf193753649a7464d2c1b9113bcac23e259b9",
+    "project/had/studies/court-b-joined.json": "2916038341433d5a35ab7e9fc0caaeae4518e80add0384a2542d60c7718fc829",
+    "docs/reference-house/material-policy.md": "a1002d7ecea0de2fe27b541785c61ea45f65fbbb7bd9dda235a1fb6c7be2511e"
+  },
+  "sourceRoom": [
+    9385,
+    6585,
+    2197.5,
+    1582.5
+  ],
+  "sourceDoor": [
+    10450,
+    11350
+  ],
+  "sourceObjects": {
+    "tray": [
+      9385,
+      6585,
+      900,
+      900
+    ],
+    "basin": [
+      9385,
+      7600,
+      220,
+      400
+    ],
+    "WC": [
+      11022.5,
+      7100,
+      560,
+      355
+    ]
+  },
+  "room": [
+    9400,
+    6600,
+    2182.5,
+    1567.5
+  ],
+  "objects": {
+    "tray": [
+      9400,
+      6600,
+      900,
+      900
+    ],
+    "basin": [
+      9400,
+      7600,
+      340,
+      450
+    ],
+    "WC": [
+      10842.5,
+      7800,
+      560,
+      355
+    ],
+    "stack": [
+      11402.5,
+      7970,
+      180,
+      180
+    ],
+    "southChase": [
+      10300,
+      6600,
+      1282.5,
+      180
+    ],
+    "eastChase": [
+      11402.5,
+      6600,
+      180,
+      1550
+    ],
+    "serviceNose": [
+      10300,
+      6710,
+      60,
+      250
+    ]
+  },
+  "door": {
+    "rough": [
+      9900,
+      10800
+    ],
+    "frameAllowance": 25,
+    "closedLeaf": [
+      9875,
+      8430,
+      950,
+      44
+    ],
+    "openLeaf": [
+      9050,
+      8430,
+      950,
+      44
+    ],
+    "travel": 825,
+    "netOpen": [
+      10000,
+      10775
+    ],
+    "insideGrip": [
+      10050,
+      8360
+    ],
+    "thresholdRise": 20
+  },
+  "bodyRoutes": {
+    "entry": [
+      [
+        10400,
+        8850
+      ],
+      [
+        10400,
+        7850
+      ]
+    ],
+    "shower": [
+      [
+        10400,
+        7850
+      ],
+      [
+        10535,
+        7850
+      ],
+      [
+        10535,
+        7760
+      ],
+      [
+        10540,
+        7760
+      ],
+      [
+        10540,
+        7730
+      ],
+      [
+        10545,
+        7730
+      ],
+      [
+        10545,
+        7710
+      ],
+      [
+        10550,
+        7710
+      ],
+      [
+        10550,
+        7695
+      ],
+      [
+        10555,
+        7695
+      ],
+      [
+        10555,
+        7685
+      ],
+      [
+        10560,
+        7685
+      ],
+      [
+        10560,
+        7670
+      ],
+      [
+        10565,
+        7670
+      ],
+      [
+        10565,
+        7660
+      ],
+      [
+        10570,
+        7660
+      ],
+      [
+        10570,
+        7650
+      ],
+      [
+        10575,
+        7650
+      ],
+      [
+        10575,
+        7640
+      ],
+      [
+        10580,
+        7640
+      ],
+      [
+        10580,
+        7635
+      ],
+      [
+        10585,
+        7635
+      ],
+      [
+        10585,
+        7625
+      ],
+      [
+        10590,
+        7625
+      ],
+      [
+        10590,
+        7620
+      ],
+      [
+        10595,
+        7620
+      ],
+      [
+        10595,
+        7615
+      ],
+      [
+        10600,
+        7615
+      ],
+      [
+        10600,
+        7605
+      ],
+      [
+        10605,
+        7605
+      ],
+      [
+        10605,
+        7600
+      ],
+      [
+        10610,
+        7600
+      ],
+      [
+        10610,
+        7595
+      ],
+      [
+        10615,
+        7595
+      ],
+      [
+        10615,
+        7590
+      ],
+      [
+        10620,
+        7590
+      ],
+      [
+        10620,
+        7585
+      ],
+      [
+        10625,
+        7585
+      ],
+      [
+        10625,
+        7580
+      ],
+      [
+        10630,
+        7580
+      ],
+      [
+        10630,
+        7575
+      ],
+      [
+        10635,
+        7575
+      ],
+      [
+        10635,
+        7570
+      ],
+      [
+        10640,
+        7570
+      ],
+      [
+        10640,
+        7565
+      ],
+      [
+        10645,
+        7565
+      ],
+      [
+        10645,
+        7560
+      ],
+      [
+        10650,
+        7560
+      ],
+      [
+        10650,
+        7555
+      ],
+      [
+        10660,
+        7555
+      ],
+      [
+        10660,
+        7550
+      ],
+      [
+        10665,
+        7550
+      ],
+      [
+        10665,
+        7545
+      ],
+      [
+        10675,
+        7545
+      ],
+      [
+        10675,
+        7540
+      ],
+      [
+        10680,
+        7540
+      ],
+      [
+        10680,
+        7535
+      ],
+      [
+        10690,
+        7535
+      ],
+      [
+        10690,
+        7530
+      ],
+      [
+        10700,
+        7530
+      ],
+      [
+        10700,
+        7100
+      ]
+    ],
+    "basin": [
+      [
+        10400,
+        7850
+      ],
+      [
+        10070,
+        7850
+      ]
+    ],
+    "WC": [
+      [
+        10400,
+        7850
+      ],
+      [
+        10520,
+        7850
+      ],
+      [
+        10520,
+        7900
+      ]
+    ]
+  },
+  "bodyResults": {
+    "entry": {
+      "radius": 300,
+      "minimumSpare": 64.0054944640259,
+      "governing": "tray"
+    },
+    "shower": {
+      "radius": 300,
+      "minimumSpare": 5.01024572954924,
+      "governing": "WC"
+    },
+    "basin": {
+      "radius": 300,
+      "minimumSpare": 30,
+      "governing": "basin"
+    },
+    "WC": {
+      "radius": 300,
+      "minimumSpare": 22.5,
+      "governing": "WC"
+    }
+  },
+  "handling": {
+    "maximumAssembly": [
+      900,
+      900,
+      250
+    ],
+    "initial": [
+      9400,
+      6600
+    ],
+    "firstShift": [
+      9440,
+      6600
+    ],
+    "verticalLift": 400,
+    "rotationAxis": "north-south through envelope centre",
+    "rotationRadius": 467.0385423067351,
+    "rotationCentre": [
+      9890,
+      7050,
+      525
+    ],
+    "onEdge": [
+      9765,
+      6600,
+      250,
+      900
+    ],
+    "translated": [
+      10275,
+      6600,
+      250,
+      900
+    ],
+    "bedroomStage": [
+      10275,
+      8540,
+      250,
+      900
+    ]
+  },
+  "rotationSweep": [
+    9422.961457693265,
+    6600,
+    934.0770846134702,
+    900
+  ],
+  "rotationVertical": [
+    57.96145769326489,
+    992.038542306735
+  ],
+  "drain": {
+    "trayAperture": [
+      10090,
+      6810
+    ],
+    "diameter": 90,
+    "orientation": "corner rotated to southeast",
+    "matchedWaste": "BetteCompact+ B568, manufacturer family compatibility; exact configured kit not admitted",
+    "wasteHeight": 55,
+    "outletAxisZ": null,
+    "firstJointTarget": [
+      10335,
+      6810,
+      125
+    ],
+    "firstReleaseStrokeTarget": 50,
+    "toolBox": [
+      10300,
+      6710,
+      300,
+      250
+    ],
+    "clearFascia": [
+      10300,
+      6600,
+      0,
+      200
+    ],
+    "actualSupportAperture": null
+  },
+  "branch": {
+    "path": [
+      [
+        10335,
+        6810
+      ],
+      [
+        10335,
+        6780
+      ],
+      [
+        11492.5,
+        6780
+      ],
+      [
+        11492.5,
+        8060
+      ]
+    ],
+    "centrelineLength": 2467.5,
+    "fallRatio": 40,
+    "startAxisTarget": 125,
+    "endAxisTarget": 63.3125,
+    "nominalPipeOutside": 50,
+    "minimumBottomBeforeFittings": 38.3125,
+    "maximumChaseHeight": 250,
+    "actualCouplingEnvelope": null,
+    "actualConnectedCapacity": null,
+    "stackCentre": [
+      11492.5,
+      8060
+    ],
+    "maximumBoreTerritory": [
+      11412.5,
+      7980,
+      160,
+      160
+    ],
+    "eastWindowProjection": [
+      6900,
+      7900
+    ],
+    "groundEFullBand": [
+      6623.5,
+      7626.5
+    ]
+  },
+  "adverse": {
+    "oldSoilDropHitsE": true,
+    "oldDoorEntersMovedWC": true,
+    "flatTrayDoesNotPassNetDoor": true,
+    "oldCornerNoRotationRoom": true,
+    "highStackAtOld7827HitsWindow": true
+  },
+  "section": {
+    "rim": 200,
+    "bowlNominal": 175,
+    "upstandTop": 235,
+    "bearing": 0,
+    "floorStructureTop": -80,
+    "floorFinish": 0,
+    "floorLayers": [
+      [
+        "stone",
+        15
+      ],
+      [
+        "bedding",
+        5
+      ],
+      [
+        "waterproofing",
+        2
+      ],
+      [
+        "formed mineral screed",
+        58
+      ]
+    ],
+    "wetWallLayers": [
+      [
+        "ceramic",
+        10
+      ],
+      [
+        "bedding",
+        3
+      ],
+      [
+        "waterproofing",
+        2
+      ],
+      [
+        "mineral render",
+        15
+      ]
+    ],
+    "inheritedFinish": 15,
+    "newWetFinish": 30,
+    "threshold": 20
+  },
+  "unearned": [
+    "exact 900 frame code/geometry and all constituents",
+    "configured tray/upstand maximum and release",
+    "output axis and mating kit; 50 release stroke and tools are targets",
+    "structural bore, floor support and arch/door relocation",
+    "connected drainage/ventilation and physical discharge",
+    "complete waterproofing system compatibility and material admission",
+    "coupled room/shower door hardware and real handling equipment"
+  ]
+}
