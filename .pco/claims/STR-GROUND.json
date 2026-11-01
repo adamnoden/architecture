@@ -9,8 +9,8 @@
     "label": "zerg-worker-two-20261101"
   },
   "claimedAt": "2026-11-01T14:56:31.714Z",
-  "heartbeatAt": "2026-11-01T14:56:31.714Z",
-  "expiresAt": "2026-11-01T15:41:31.714Z",
+  "heartbeatAt": "2026-11-01T15:15:56.944Z",
+  "expiresAt": "2026-11-01T16:00:56.944Z",
   "branch": "work/zerg-two-20261101",
   "predecessor": {
     "leaseId": "abfe3a52-4e9f-44e1-8175-f1b828901d13",
@@ -33,5 +33,11 @@
       "next": "STR-GROUND remains planned: build source-bound pile/grid plan and representative 1:10 outer/court sections, three-axis service and tree-constrained approach and sensitivity trials, then final comparative pre-site closure.",
       "blocker": "No plotted site strata, soil heave, root survey, ground-water or real bearing evidence; no dimensioned source-bound grid and sections yet."
     }
+  },
+  "pr": 1220,
+  "checkpoint": {
+    "evidence": "PR1220 head ce208ac075f01a46e4d720f77185c29363ecc81b; source-bound grid/sections, numeric and source checks, rendered review, repository integrity and14 structural/graph tests pass. Pre-site comparison only, no foundation acceptance.",
+    "next": "Reconcile moved main; commander exact review; exact-head full CI and fresh canonical merge preflight.",
+    "blocker": "CI and source review pending; joined assembly remains adverse with existing acceptance dependencies."
   }
 }
