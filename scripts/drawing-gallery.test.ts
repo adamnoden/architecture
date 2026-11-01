@@ -3,6 +3,7 @@ import { mkdtempSync, mkdirSync, writeFileSync, rmSync, readFileSync } from 'nod
 import { tmpdir } from 'node:os'
 import { dirname, resolve } from 'node:path'
 import { test } from 'node:test'
+import './court-egress-source.test.js'
 import { buildDrawingGallery, frameGalleryScene } from './drawing-gallery.js'
 import { layoutFamilyViews, createLayoutFamilyScene } from '../compiler/reference-house/georgian/layout-family.js'
 import { layoutAnalysisViews, createLayoutAnalysisScene } from '../compiler/reference-house/georgian/layout-analysis.js'

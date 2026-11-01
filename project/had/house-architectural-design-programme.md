@@ -91,6 +91,7 @@ selection and shared compatibility checks.
 - [Bedroom 3 reuse after proposed suite relocation](had-03-bedroom3-reuse.md).
 - [Court walking level, lower water plane and threshold proposal](had-03-court-levels.md).
 - [Dry-access undercroft section/grade screen](had-03-undercroft-section-screen.md) and [vertical sensitivity figure](studies/court-undercroft-section-screen.svg) — rejects a true crawlable void as a drop-in at the current 150 mm grade separation; a raised-house variant is a major architectural and site replan, not selected drainage.
+- [Connected N/E courtyard egress plan and paired sections](had-03-court-egress-plan-sections.md) — [source-generated plan](studies/court-egress-plan.svg), [north section](studies/court-egress-north-section.svg), [east section](studies/court-egress-east-section.svg), with guarded source geometry and deliberately unknown water/structural/site acceptance. Raised plinth B remains a conditional architectural trial; unchanged-level D has no proven outlet, and open north loggia C is a major replan.
 - [Scaled front, interior elevation and furnished plan](studies/selected-house-study.svg).
 - [Continuation: relocate the en suite and test connected bedroom use](had-03-relocation-trial.md).
 - [Larger Bedroom 4 allocation and visible stack candidate](had-03-bedroom4-allocation.md) — unadopted; shared plan/section work continues.
