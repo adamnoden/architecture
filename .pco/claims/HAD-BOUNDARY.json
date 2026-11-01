@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "HAD-BOUNDARY",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "fdd34ebe-2de7-42c9-810c-ddc374031bc0",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-four-20261101"
   },
   "claimedAt": "2026-11-01T15:00:01.129Z",
-  "heartbeatAt": "2026-11-01T15:24:57.130Z",
-  "expiresAt": "2026-11-01T16:09:57.130Z",
+  "heartbeatAt": "2026-11-01T15:32:14.000Z",
+  "expiresAt": "2026-11-01T15:32:14.000Z",
   "branch": "work/zerg-integration-20261101",
   "pr": 1221,
   "checkpoint": {
     "evidence": "Combined PR #1221 head336947a9ebe29b4632beb91f85b696269ae08469 preserves original PR #1218 head a00a6dc49974ae40bafbf50f945824027c65730c; internal source/render review passed",
     "next": "Exact combined-head CI then fresh per-node merge-check and expected-head integration merge; retain original branch until incorporation verified"
-  }
+  },
+  "releasedAt": "2026-11-01T15:32:14.000Z",
+  "releaseReason": "completed"
 }
