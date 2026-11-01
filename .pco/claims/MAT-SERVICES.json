@@ -9,8 +9,8 @@
     "label": "zerg4-whole-house-services"
   },
   "claimedAt": "2026-11-01T21:02:38.591Z",
-  "heartbeatAt": "2026-11-01T21:12:39.636Z",
-  "expiresAt": "2026-11-01T21:57:39.636Z",
+  "heartbeatAt": "2026-11-01T21:44:12.521Z",
+  "expiresAt": "2026-11-01T22:29:12.521Z",
   "branch": "work/zerg4-whole-house-services",
   "predecessor": {
     "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote12e75ce5/treeee37dbf2; new whole-house-service-baseline.md records HADc83/b15df3b3 basis, selected local-MEV architecture and explicit complete duty boundary.",
-    "next": "Generate actual terminal/routes, heat and airflow sensitivity, maintenance and full constituent residue schedule; coordinate protected-door transfer and finite plant replacement.",
-    "blocker": "Protected ring revision pending; no actual product material, heat-load or physical route acceptance."
+    "evidence": "Remotebd379879/tree46d1daa4: four ownfiles whole-house-service-baseline note/py/json/svg.65Lps complete inventory,14waterendpoints,actualterminal/cylinder/pipe-tree reservations,heat/air failedbounds and residuegroups; reproducible check/diffcheck/renderinspection.",
+    "next": "Converge compact retained riser support withSTR, actual lowered arch/fireband profiles withHAD, utility/power/PV roof and guaranteed hydronic defrostvolume; publish corrected next checkpoint then bounded review.",
+    "blocker": "No installed/product/material/site acceptance. Specific riserfeet/doortransfer/certifiedresidues remain unearned, not waived."
   }
 }
