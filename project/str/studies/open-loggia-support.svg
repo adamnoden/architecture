@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594mm" height="420mm" viewBox="0 0 594 420">
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:3.2px}.title{font-size:5px;font-weight:bold}</style>
+<rect width="594" height="420" fill="#faf8f1"/>
+<text x="16" y="15" class="title">OPEN N / actual whole-floor support checkpoint</text>
+<text x="16" y="24" class="">HAD0b2f7d48 · RC200 whole upper floor · unadopted / incomplete support design, not for construction</text>
+<text x="16" y="36" class="title">A / UPPER STRUCTURAL FIELDS · 1:50</text>
+<rect x="25.250" y="51.250" width="229.500" height="229.500" fill="#e5ebe7" stroke="#345460" stroke-width=".35"/>
+<rect x="99.750" y="125.750" width="80.500" height="80.500" fill="#faf8f1" stroke="#345460" stroke-width=".35"/>
+<rect x="28.350" y="110.650" width="48.000" height="86.700" fill="#faf8f1" stroke="#345460" stroke-width=".35"/>
+<rect x="117.700" y="231.300" width="44.600" height="46.350" fill="#faf8f1" stroke="#345460" stroke-width=".35"/>
+<rect x="26.650" y="221.050" width="49.700" height="58.300" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="45.5" y="250.2" class="">SW-L</text>
+<text x="45.5" y="255.2" class="">NS 2915</text>
+<rect x="76.350" y="233.000" width="39.650" height="46.350" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="90.175" y="256.175" class="">SW-main</text>
+<text x="90.175" y="261.175" class="">NS 2317.5</text>
+<rect x="164.000" y="233.000" width="42.000" height="46.350" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="179.0" y="256.175" class="">SE-front</text>
+<text x="179.0" y="261.175" class="">NS 2317.5</text>
+<rect x="206.000" y="120.200" width="47.350" height="159.150" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="223.675" y="199.775" class="">east-strip</text>
+<text x="223.675" y="204.775" class="">EW 2367.5</text>
+<rect x="78.350" y="207.650" width="37.650" height="25.350" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="91.175" y="220.325" class="">south-W-gallery</text>
+<text x="91.175" y="225.325" class="">NS 1267.5</text>
+<rect x="164.000" y="207.650" width="42.000" height="25.350" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="179.0" y="220.325" class="">south-E-gallery</text>
+<text x="179.0" y="225.325" class="">NS 1267.5</text>
+<rect x="181.650" y="124.350" width="24.350" height="83.300" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="187.825" y="166.0" class="">east-gallery</text>
+<text x="187.825" y="171.0" class="">EW 1217.5</text>
+<rect x="26.650" y="199.350" width="49.700" height="21.700" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="45.5" y="210.2" class="">west-south</text>
+<text x="45.5" y="215.2" class="">NS 1085</text>
+<rect x="78.350" y="199.350" width="20.000" height="8.300" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="82.35" y="203.5" class="">SW-collector-bay</text>
+<text x="82.35" y="208.5" class="">NS 415</text>
+<rect x="78.350" y="124.350" width="20.000" height="73.000" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="82.35" y="160.85" class="">west-stair-gallery</text>
+<text x="82.35" y="165.85" class="">EW 1000</text>
+<rect x="78.350" y="108.950" width="29.200" height="15.400" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="86.95" y="116.65" class="">west-stair-gallery-N</text>
+<text x="86.95" y="121.65" class="">EW 1460</text>
+<rect x="172.450" y="120.200" width="33.550" height="4.150" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="183.225" y="122.275" class="">east-gallery-N</text>
+<text x="183.225" y="127.275" class="">EW 1677.5</text>
+<rect x="26.650" y="52.650" width="51.400" height="56.300" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="46.35" y="80.80000000000001" class="">NW-W</text>
+<text x="46.35" y="85.80000000000001" class="">EW 2570</text>
+<rect x="78.050" y="52.650" width="29.500" height="56.300" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="86.8" y="80.80000000000001" class="">NW-E</text>
+<text x="86.8" y="85.80000000000001" class="">EW 1475</text>
+<rect x="107.550" y="52.650" width="64.900" height="71.700" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="134.0" y="88.5" class="">above-loggia</text>
+<text x="134.0" y="93.5" class="">EW 3245</text>
+<rect x="172.450" y="52.650" width="80.900" height="67.550" fill="none" stroke="#98a6a4" stroke-width=".35"/>
+<text x="206.9" y="86.42500000000001" class="">NE</text>
+<text x="206.9" y="91.42500000000001" class="">NS 3377.5</text>
+<path d="M116.0,286.0 L116.0,233.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M76.35,233.0 L116.0,233.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M76.35,233.0 L76.35,221.05" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M20.0,221.05 L76.35,221.05" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M164.0,286.0 L164.0,233.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M164.0,233.0 L206.0,233.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M206.0,233.0 L206.0,156.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M206.0,212.0 L260.0,212.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M206.0,156.0 L260.0,156.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M20.0,108.94999999999999 L107.55,108.94999999999999" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M107.55,125.75 L107.55,108.94999999999999" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M171.05,120.19999999999999 L206.0,120.19999999999999" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M172.45,122.65 L172.45,46.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M78.05,108.94999999999999 L78.05,46.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M206.0,156.0 L206.0,120.19999999999999" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M206.0,120.19999999999999 L260.0,120.19999999999999" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M107.55,131.0 L107.55,46.0" fill="none" stroke="#b47742" stroke-width=".65"/>
+<path d="M172.45,131.0 L172.45,46.0" fill="none" stroke="#b47742" stroke-width=".65"/>
+<path d="M78.05,108.94999999999999 L78.05,52.650000000000006" fill="none" stroke="#b95351" stroke-width=".65"/>
+<rect x="75.450" y="104.450" width="5.200" height="9.000" fill="#b95351" stroke="#345460" stroke-width=".35"/>
+<rect x="75.450" y="51.250" width="5.200" height="9.000" fill="#b95351" stroke="#345460" stroke-width=".35"/>
+<text x="16" y="300" class="">Green: actual upper wall axes; ochre: new ground loggia supports; red: real wet-wall transfer beam.</text>
+<text x="16" y="308" class="">No slab fills the stair/entrance holes. Fields are support rectangles, not a net-area union or full plate analysis.</text>
+<text x="16" y="316" class="">G7.5 internal /8.5 exposed-loggia, Q2; H12/150 each face/direction, d157, cover25 trial.</text>
+<text x="304" y="36" class="title">B / WET-WALL BEAM &amp; FINITE SUPPORTS</text>
+<text x="304" y="47" class="">Removed lower reading wall → upper140 masonry → real RC200×350 beam.</text>
+<text x="304" y="55" class="">3H16 bottom,2H10 top,H6/100; total350, z3020–3370; lined soffit3005, NO doorway upstand.</text>
+<text x="304" y="63" class="">G24.599/Q4.045 kN/m; M34.50/MR71.45; V58.50/VRs68.82.</text>
+<rect x="320.000" y="88.000" width="140.000" height="10.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
+<rect x="320.000" y="78.000" width="140.000" height="10.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
+<rect x="320.000" y="68.000" width="140.000" height="10.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
+<rect x="320.000" y="98.000" width="10.000" height="40.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
+<rect x="450.000" y="98.000" width="10.000" height="40.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
+<text x="320" y="148" class="">Diagrammatic elevation; support2660+155overhang and pier footprints in JSON.</text>
+<text x="304" y="159" class="">South RC260×450 pier: x2772.5–3032.5, y8627.5–9077.5.</text>
+<text x="304" y="167" class="">Actual450downhooks+600tails; full-yieldbend/bond and3Dbarclearance checked.</text>
+<text x="304" y="175" class="">HAD27finishx2745.5–3059.5; new700northwindowstarts3350; actualbodytasknotpassed.</text>
+<text x="304" y="196" class="title">C / GROUND GRID TARGET, NOT SITE ACCEPTANCE</text>
+<text x="304" y="207" class="">RC600×450 both leaves;40cover;3H20 top/bottom+sideH12;4legH8/100;actual point nodes.</text>
+<text x="304" y="215" class="">M129.11/MR152.40; V172.14/VRs308.41.</text>
+<text x="304" y="223" class="">Top−180/bottom−630;integral600×600×450 node/400pilehead;5H20eachdirectioncontinue750.</text>
+<text x="304" y="231" class="">Node envelopeN850/M100;tie385.1kN vssteel683.0;pile/soilUNKNOWN.</text>
+<text x="304" y="239" class="">Lowtie/localnode−750 controlsD1300:750+H300+loss50+vent150=1250;50surplus.</text>
+<text x="304" y="247" class="">Masonry DPC ABOVE grid −180..−30 is a deliberate hypothesis; concrete/floor moisture route unqualified.</text>
+<text x="304" y="255" class="">No900cap/deckoverlap. Drainedtrayroute required;225clearcavity isNOTclaimed overwidebeam.</text>
+<text x="304" y="280" class="title">D / E02 SERVICE ARCH GEOMETRY ONLY</text>
+<text x="304" y="291" class="">Plant-north y6500, x10800;320clear semicircle, spring2740/rise160/ring215.</text>
+<text x="304" y="299" class="">Extrados3115 leaves55 to slabsoffit3170;407.5 east abutment territory is NOT capacity.</text>
+<text x="304" y="307" class="">Actual pipe/socket,bends, ties, ring actions and downstream high-level branch still to join.</text>
+<text x="16" y="350" class="title">WORK STILL TO DO</text>
+<text x="16" y="361" class="">HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.</text>
+<text x="16" y="367" class="">Actual2925stairs/midlandingmemberreactionsnowcalculated;physicaljoints/guards,entrancebridge,tiedarchesandroofremain.</text>
+<text x="16" y="373" class="">Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.</text>
+<text x="16" y="379" class="">Wet receivers260x450 andnorthsupport11512.5: actual door/window/spatial readback required.</text>
+<text x="16" y="385" class="">Wetjoint3H16downhooks/4H16pier: finite3Dclearance/development calculated; lowercolumnjoint remains.</text>
+<text x="16" y="391" class="">NodeFROZENbee43378: omittedinnerlinks/H12sidebars andcoincidenttoprows requireAstraredesign;no cage/nodePASS.</text>
+<text x="16" y="397" class="">Revised240glass+40lining→2890soffit requires actual arch/head/thermal coordination; anchorsunfinished.</text>
+<text x="16" y="403" class="">No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows.</text>
+<text x="16" y="410" class="">REPRODUCIBLE CONDITIONAL DESIGN / calculations, exact source pins and adverse controls accompany every resistance. No programme completion claimed.</text>
+</svg>
