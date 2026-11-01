@@ -2,92 +2,6 @@ import { defineNodes } from '../types.js'
 
 export const pcoNodes = defineNodes([
   {
-    id: 'PCO-REVIEW-POLICY', owners: ['PCO'],
-    title: 'Separate internal development from external assurance and remove unnecessary review waits',
-    dependencies: ['PCO-HOUSE-PLAN'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed review-gate audit and development-policy change on 31 October 2026.' },
-    closeoutEvidence: ['project/pco/review-gate-audit.md']
-  },
-  {
-    id: 'PCO-MODES', owners: ['PCO'],
-    title: 'Close regular-chat PR association and confirm shared worker topologies',
-    dependencies: ['PCO-GATEWAY'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed MVB release fix and cross-topology regression (#1091).' },
-    closeoutEvidence: ['project/pco/mvb-barbell-modes-result.md']
-  },
-  {
-    id: 'PCO-GATEWAY', owners: ['PCO'],
-    title: 'Expose canonical self-service leases to connector-only chats through a minimal issue gateway',
-    dependencies: ['PCO-CRASH'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed, security-sensitive privileged workflow change (#1088).' },
-    closeoutEvidence: ['project/pco/mvb-issue-gateway-result.md']
-  },
-  {
-    id: 'PCO-CRASH', owners: ['PCO'],
-    title: 'Recover interrupted swarms and support connector-constrained chat execution',
-    dependencies: ['PCO-COMMS'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed crash-recovery and cross-runtime MVB uplift (issue #1083).' },
-    closeoutEvidence: ['project/pco/mvb-crash-recovery-result.md']
-  },
-  {
-    id: 'PCO-COMMS', owners: ['PCO'],
-    title: 'Introduce readable MVB communication discipline and scoped preflight observations',
-    dependencies: ['PCO-MVB-REVIEW'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed red team, implementation and MVB 1.1 communications release.' },
-    closeoutEvidence: ['project/control/communications.md', 'project/pco/mvb-communications-result.md']
-  },
-  {
-    id: 'PCO-MVB-REVIEW', owners: ['PCO'],
-    title: 'Assess external orchestration systems and version the MVB operating contract',
-    dependencies: ['PCO-MANUAL'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed build-versus-adopt review and first explicit MVB version baseline.' },
-    closeoutEvidence: ['project/pco/mvb-platform-review.md', 'project/control/releases.md']
-  },
-  {
-    id: 'PCO-MANUAL', owners: ['PCO'],
-    title: 'Document the integrated project execution system for outsiders and maintainers',
-    dependencies: ['PCO-SNAPSHOT'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed cohesive documentation and discoverability review.' },
-    closeoutEvidence: ['project/pco/execution-manual-result.md']
-  },
-  {
-    id: 'PCO-SNAPSHOT', owners: ['PCO'],
-    title: 'Keep claim and briefing snapshots correct during main updates',
-    dependencies: ['PCO-OPERATIONS'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed operations verification exposed shared FETCH_HEAD interference.' },
-    closeoutEvidence: ['project/pco/claim-snapshot-result.md']
-  },
-  {
-    id: 'PCO-OPERATIONS', owners: ['PCO'],
-    title: 'Integrate agent briefing, scoped proof CI and safe post-merge reconciliation',
-    dependencies: ['PCO-RESILIENCE'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed coordination-system upgrade on 29 October 2026.' },
-    closeoutEvidence: ['project/pco/operations-result.md']
-  },
-  {
-    id: 'PCO-RESILIENCE', owners: ['PCO'],
-    title: 'Bound failure recovery and expose lease freshness and handoff evidence',
-    dependencies: ['PCO-SWARM'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed resilience hardening on 29 October 2026.' },
-    closeoutEvidence: ['project/pco/lease-resilience-result.md']
-  },
-  {
-    id: 'PCO-HOUSE-PLAN', owners: ['PCO'],
-    title: 'Record owner-house objective and delivery execution plan',
-    dependencies: ['PCO-DISPATCH'], lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed project planning; register before acquiring its normal lease.' },
-    closeoutEvidence: ['project/pco/pco-house-plan-result.md']
-  },
-  {
-    id: 'PCO-REFURB-PLAN',
-    owners: ['PCO'],
-    title: 'Record owner-directed refurbishment scope and swarmable handoffs',
-    dependencies: ['PCO-DISPATCH'],
-    lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed coordination packet; bootstrap before acquiring its ACO lease.' },
-    closeoutEvidence: ['project/pco/pco-refurbishment-plan-result.md']
-  },
-  {
     id: 'PCO-00',
     owners: ['PCO'],
     title: 'Control-plane inventory and authority map',
@@ -217,24 +131,5 @@ export const pcoNodes = defineNodes([
       'project/control/README.md',
       'AGENTS.md'
     ]
-  },
-  {
-    id: 'PCO-APPLICABILITY',
-    owners: ['PCO'],
-    title: 'Bind maturity applicability to assessed design sources',
-    dependencies: ['PCO-DISPATCH', 'HRS-BASELINE'],
-    lifecycle: 'complete',
-    agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/pco/pco-applicability-result.md']
-  },
-  {
-    id: 'PCO-SWARM',
-    owners: ['PCO'],
-    title: 'Swarm continuation, startup transport and evidence-based run reporting',
-    dependencies: ['PCO-DISPATCH'],
-    lifecycle: 'complete',
-    agentDispatch: { mode: 'manual', reason: 'Owner-directed operating-contract and runtime integration change; explicitly assigned on 29 October 2026.' },
-    closeoutEvidence: ['project/pco/swarm-operations-result.md', 'project/control/swarm-runbook.md', 'project/control/run-report.ts', 'project/control/git-connector-claim-store.ts']
   }
-
 ])

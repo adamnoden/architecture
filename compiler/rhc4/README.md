@@ -4,9 +4,7 @@ RH-C4 compiles the Reference House envelope relationships already coordinated th
 
 The executable slice keeps four independent boundary roles: **weather, air, thermal and moisture**. Each role is carried across outer walls, courtyard walls, roof and a qualitative ground-interface handoff. Openings, thresholds, selected service penetrations and the registered courtyard drainage crossing are typed transitions that must preserve explicit obligations.
 
-The historical rainwater view declares four outward roof fields and primary/emergency courtyard routes with different destination descriptions. A controlling house source that declares inward roof drainage fails explicitly: this adapter does not support that roof system. Every route needs non-blank origin and destination text; courtyard destination comparison collapses superficial whitespace. `PEN-CD-01` remains the registered occurrence owning both courtyard route declarations.
-
-These checks establish source compatibility, declaration completeness and textual destination distinction. They do not establish physically independent paths, gravity continuity, a safe discharge or visible failure in the actual building. `visibleFailure: true` is an authored obligation, not observation or performance evidence. Current-house network selection remains with ROF/RWT and their gate; CCR does not migrate this historical adapter to the provisional Georgian roof.
+The rainwater view is directional. Four roof fields drain outward, while the courtyard has a primary service-side route plus an independent visible emergency overflow. `PEN-CD-01` remains the registered occurrence owning both courtyard conduits rather than allowing them to become anonymous penetrations.
 
 The proof boundary is deliberately narrow:
 

@@ -66,9 +66,7 @@ test('triad fan-out advances only after constitutions and the shared interface g
   )
   complete('TRIAD-IFACE-FREEZE')
   assert.deepEqual(readyIds(), [...candidateIds].sort())
-  assert.equal(node('BCR-CONVERGENCE').dependencies.some((id) => ['EPR-RH11', 'PHY-03-ENGINEERING', 'PHY-04', 'DEL-CURRENT'].includes(id)), false)
-  assert.ok(node('BCR-CONVERGENCE').dependencies.includes('EPR-REFRESH'))
-  assert.ok(node('BCR-CONVERGENCE').dependencies.includes('PHY-APPLICABILITY'))
+  assert.equal(node('BCR-CONVERGENCE').dependencies.some((id) => /PHY|EPR|DEL/.test(id)), false)
 })
 
 test('MRA starts in parallel but gates construction convergence and final synthesis at the correct boundaries', () => {

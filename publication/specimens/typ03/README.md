@@ -1,8 +1,8 @@
 # TYP-03 body-text specimen harness
 
-This directory retains the controlled comparison harness for **TYP-03 — body-text specimen and reading system**. The [Source selection](../../../docs/publication/publication-typography-typ03f-source-selection.md) and [font-identity correction](../../../docs/publication/publication-typography-typ03g-font-identity-correction.md) record its accepted outcome; the comparison options below do not reopen font selection.
+This directory is the controlled comparison harness for **TYP-03 — body-text specimen and reading system**.
 
-It deliberately contains **no proprietary font binaries**. The comparison preparer uses supplied local fonts and does not accept a font licence on the operator's behalf. The separate `open-fonts.ts` helper fetches integrity-pinned open-font files and licences for the Source and Newsreader/Source proof workflows.
+It deliberately contains **no proprietary font binaries** and does not download, activate, upload or accept a font licence on the operator's behalf.
 
 ## What it proves
 
@@ -32,7 +32,7 @@ For a non-baseline candidate the operator must provide **locally held** licensed
 
 Variable fonts may be supplied to more than one slot when their licence and implementation allow it.
 
-The preparer embeds the supplied font bytes as data URIs in ignored generated `candidate.css` for the current local run. It never copies them into tracked source and records only their names and fingerprints in `manifest.json`.
+The harness copies those files only into the ignored work directory for the current local run. It never copies them into tracked source and never writes their contents into the proof record.
 
 **Do not upload proprietary evaluation/test font files to GitHub, CI, ChatGPT or another cloud service unless the licence explicitly permits that distribution/use.** Run restricted-font comparisons on the licensed operator's own machine.
 
@@ -49,7 +49,7 @@ If a non-baseline candidate is declared `preview-only`, the Vivliostyle config r
 
 ## Candidate ids
 
-- `baseline` — historical Georgia / Arial working system; no font files required;
+- `baseline` — current Georgia / Arial working system; no font files required;
 - `lyon-atlas` — Lyon Text + Atlas Grotesk;
 - `tiempos-soehne` — Tiempos Text + Söhne;
 - `scala` — Scala Pro + Scala Sans Pro;
@@ -116,7 +116,7 @@ npx vivliostyle build -c publication/specimens/typ03/vivliostyle.config.js
 
 When the evaluation licence permits local visual/print testing but PDF embedding has not been established, use `preview-only`.
 
-Export the five local font-path variables listed above, then prepare:
+Prepare with the five local font-path variables plus:
 
 ```sh
 TYP03_CANDIDATE=tiempos-soehne \
@@ -124,6 +124,7 @@ TYP03_FONT_RIGHTS=preview-only \
 TYP03_FORMAT=b5 \
 TYP03_RHYTHM=indented \
 TYP03_ALIGN=ragged \
+# ...five TYP03_* font path variables... \
 npx tsx publication/specimens/typ03/prepare.ts
 ```
 
@@ -142,7 +143,7 @@ Do **not** use the preview UI's PDF-save function unless the font licence also p
 
 ## PDF-licensed candidate run
 
-Only when embedding rights are established, export the five local font-path variables listed above and run:
+Only when embedding rights are established:
 
 ```sh
 TYP03_CANDIDATE=newsreader-source \
@@ -150,6 +151,7 @@ TYP03_FONT_RIGHTS=pdf-embed-ok \
 TYP03_FORMAT=b5 \
 TYP03_RHYTHM=indented \
 TYP03_ALIGN=ragged \
+# ...five TYP03_* font path variables... \
 npx tsx publication/specimens/typ03/prepare.ts
 
 TYP03_CANDIDATE=newsreader-source \

@@ -1,16 +1,14 @@
 # CH-00 — baseline freeze and architecture map
 
 **Gate:** CH-00  
-**State:** PASS — historical baseline and pre-hardening audit\
+**State:** execution record; merge only when repository validation is green  
 **Semantic baseline:** `0538be4a9124b107565717bb2f172e73ebfe86ba`  
 **Programme handoff:** `5fd80620de0faecc4c5510e52fef98f9ab7b2495`  
 **Computational maturity:** M3  
-**Historical handoff:** CH-01 — total / fail-closed compilation\
+**Next after CH-00:** CH-01 — total / fail-closed compilation  
 **RH-C sequence:** closed at RH-C5; no RH-C6 is authorised
 
 CH-00 freezes the meaning of the existing compiler before refactoring it. It does not add a Reference House capability or expand any proof boundary.
-
-The runtime map and unresolved implementation issues below describe the CH-00 baseline. [CH-08](../ch08/README.md) records the completed hardening programme; the [compiler overview](../README.md) describes the current entry point and workflow.
 
 ## Baseline reconciliation
 
@@ -165,4 +163,4 @@ Changing those here would weaken the baseline by mixing the measurement instrume
 
 CH-00 passes only when the new baseline gate, all pre-existing repository tests, publication validation/builds and docs build are green on the merge candidate. CI/run evidence belongs in the PR/issue execution record so this file does not need to churn merely to record run IDs.
 
-CH-00 handed the next implementation work to CH-01. Both gates are complete; their separate execution records retain the original scope and evidence.
+After CH-00 passes, **CH-01 is NEXT**. No CH-01 implementation is part of this gate.

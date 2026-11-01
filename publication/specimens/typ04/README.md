@@ -18,7 +18,7 @@ The first controlled candidate is deliberately restrained:
 - entry opening pages suppress running context;
 - parity blanks suppress all furniture.
 
-This candidate was accepted on 23 October 2026 and frozen by the [TYP-04C closeout](../../../docs/publication/publication-typography-typ04c-hierarchy-freeze.md). The harness retains that specimen contract.
+This is a first candidate, not a frozen result.
 
 ## Frozen body input
 
@@ -74,4 +74,4 @@ A green GitHub proof requires both deterministic A4/B5 composition and finished-
 
 That proves the candidate was composed with the frozen Source inputs. It does **not** prove that the hierarchy is aesthetically correct.
 
-TYP-04C records acceptance of the exact reviewed B5 proof at 100% / Actual Size. A later regenerated PDF does not automatically inherit that physical verdict; changes to the accepted metrics require an explicit, evidenced freeze break.
+TYP-04 may freeze visual metrics only after the representative B5 pages have been inspected physically. If the first candidate fails, alter the smallest role that explains the failure; do not reopen the frozen body system or proliferate variants without evidence.

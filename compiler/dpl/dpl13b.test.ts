@@ -1,6 +1,6 @@
-import { sha256DplSemanticFingerprint } from './identity-order.js'
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { loadCanonicalReferenceSiteManifest } from './canonical.js'
 import { composeScreeningCoverageReadiness } from './coverage-readiness.js'
 import { loadEnglandCoverageRegistry } from './england-coverage.js'
@@ -104,7 +104,7 @@ test('DPL-13B reports a removed consequential claim mapping as an incomplete uni
   const mutated = {
     ...planning,
     registry,
-    fingerprint: sha256DplSemanticFingerprint(registry)
+    fingerprint: sha256SemanticFingerprint(registry)
   }
 
   const baseline = composeScreeningCoverageReadiness()
@@ -123,7 +123,7 @@ test('DPL-13B fails closed on a stale borough strategic-parent edge', () => {
   const staleBromley = {
     ...bromley,
     target: target as typeof bromley.target,
-    targetFingerprint: sha256DplSemanticFingerprint(target)
+    targetFingerprint: sha256SemanticFingerprint(target)
   }
 
   assert.throws(
@@ -175,7 +175,7 @@ test('DPL-13B distinguishes profile disposition uncertainty from substantive UNR
       ? { ...entry, defaultScreeningDisposition: 'DUE_CLASSIFICATION_UNRESOLVED' as const }
       : entry)
   }
-  const mutated = { ...england, registry, fingerprint: sha256DplSemanticFingerprint(registry) }
+  const mutated = { ...england, registry, fingerprint: sha256SemanticFingerprint(registry) }
   const result = composeScreeningCoverageReadiness({ england: mutated })
   assert.ok(result.normalizedCoverage.some((entry) => entry.normalizedDisposition === 'DUE_CLASSIFICATION_UNRESOLVED'))
   assert.equal(result.profileUniverseState, 'PROFILE_DISPOSITION_UNRESOLVED')
@@ -206,7 +206,7 @@ test('DPL-13B identity changes with material registry/profile semantics', () => 
       ? { ...entry, defaultScreeningDisposition: changedDisposition }
       : entry)
   }
-  const mutated = { ...planning, registry, fingerprint: sha256DplSemanticFingerprint(registry) }
+  const mutated = { ...planning, registry, fingerprint: sha256SemanticFingerprint(registry) }
   const baseline = composeScreeningCoverageReadiness()
   const result = composeScreeningCoverageReadiness({ planning: mutated })
   assert.notEqual(result.identityFingerprint, baseline.identityFingerprint)

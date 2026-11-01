@@ -7,6 +7,7 @@ import {
   lstatSync,
   mkdirSync,
   readFileSync,
+  renameSync,
   rmSync,
   writeFileSync
 } from 'node:fs'
@@ -22,8 +23,6 @@ import {
   type PublicationEntry
 } from '../publication.js'
 import { applyProductionTypography } from './typography.js'
-import { fetchPublicationFonts, type PublicationFontSlot } from '../fonts.js'
-import { publicationSourceUrl, renderPublicationMermaid } from '../preparation.js'
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const repoRoot = resolve(scriptDirectory, '../..')
@@ -71,8 +70,11 @@ function resolveCanonicalTarget(source: string, hrefPath: string): string | null
   return target
 }
 function liveUrlFor(target: string, suffix: string): string {
-  if (target.endsWith('.md')) return publicationSourceUrl(target, suffix, repoRoot, liveBaseUrl)
-  return `${liveBaseUrl}${target}${suffix}`
+  if (target === 'README.md') return `${liveBaseUrl}${suffix}`
+  let route = target
+  if (route.endsWith('/README.md')) route = route.slice(0, -'README.md'.length)
+  else if (route.endsWith('.md')) route = route.slice(0, -'.md'.length)
+  return `${liveBaseUrl}${route}${suffix}`
 }
 function internalHtmlHref(source: string, target: string, suffix: string): string {
   const sourceDirectory = posix.dirname(source)
@@ -121,11 +123,7 @@ function normalizePreparedHeading(entry: PublicationEntry, markdown: string): st
 
 function writeTitlePage(metadata: ReturnType<typeof editionMetadata>, editionLabel: 'Working Edition' | 'Primer'): string {
   const path = 'publication-title.html'
-  const compactContents = editionLabel === 'Primer'
-    ? `<nav class="primer-contents" aria-label="Contents"><h2>Contents</h2><ol>${entries.map((entry) =>
-      `<li><a href="${entry.source.replace(/\.md$/, '.html')}">${entry.title}</a></li>`).join('')}</ol></nav>`
-    : ''
-  writeFileSync(workPath(path), `<!doctype html>\n<html lang="en-GB">\n<head>\n  <meta charset="utf-8">\n  <title>${projectIdentity.name} — ${editionLabel}</title>\n</head>\n<body class="publication-title-page">\n  <main class="publication-title">\n    <div class="publication-title__primary">\n      <p class="publication-title__edition">${editionLabel}</p>\n      <h1>${projectIdentity.name}</h1>\n      ${compactContents}\n    </div>\n    <div class="publication-title__meta">\n      <p>${metadata.dateDisplay}</p>\n      <p>Revision <code>${metadata.revision}</code></p>\n      <p><a href="${liveBaseUrl}">adamnoden.github.io/architecture/</a></p>\n    </div>\n  </main>\n</body>\n</html>\n`)
+  writeFileSync(workPath(path), `<!doctype html>\n<html lang="en-GB">\n<head>\n  <meta charset="utf-8">\n  <title>${projectIdentity.name} — ${editionLabel}</title>\n</head>\n<body class="publication-title-page">\n  <main class="publication-title">\n    <div class="publication-title__primary">\n      <p class="publication-title__edition">${editionLabel}</p>\n      <h1>${projectIdentity.name}</h1>\n    </div>\n    <div class="publication-title__meta">\n      <p>${metadata.dateDisplay}</p>\n      <p>Revision <code>${metadata.revision}</code></p>\n      <p><a href="${liveBaseUrl}">adamnoden.github.io/architecture/</a></p>\n    </div>\n  </main>\n</body>\n</html>\n`)
   return path
 }
 function writeContentsTemplate(): string {
@@ -141,18 +139,11 @@ copyFileSync(repoPath('README.md'), workPath('README.md'))
 mkdirSync(workPath('publication'), { recursive: true })
 cpSync(repoPath('publication/primer'), workPath('publication/primer'), { recursive: true })
 copyFileSync(repoPath('publication/part-iii.md'), workPath('publication/part-iii.md'))
-copyFileSync(repoPath('publication/pattern-reference.md'), workPath('publication/pattern-reference.md'))
 
 const metadata = editionMetadata()
 const titlePage = smokeMode ? null : writeTitlePage(metadata, primerMode ? 'Primer' : 'Working Edition')
-const contentsPage = fullMode ? writeContentsTemplate() : null
+const contentsPage = smokeMode ? null : writeContentsTemplate()
 const canonicalSources = new Set(entries.flatMap((entry) => [entry.source, ...dependenciesForAdapter(entry.adapter)]))
-// Explicit source dependencies may live outside docs/ (for example the owner-house charter).
-for (const source of canonicalSources) {
-  if (existsSync(workPath(source))) continue
-  mkdirSync(dirname(workPath(source)), { recursive: true })
-  copyFileSync(repoPath(source), workPath(source))
-}
 const canonicalHashes = new Map([...canonicalSources].map((source) => [source, sha256(repoPath(source))]))
 const included = new Set(entries.map((entry) => entry.source))
 
@@ -163,11 +154,14 @@ for (const entry of entries) {
   markdown = stripPreparedFrontmatter(entry.source, markdown)
   if (fullMode) markdown = applyPublicationFigures(entry.id, markdown)
   markdown = normalizePreparedHeading(entry, markdown)
-  markdown = renderPublicationMermaid(markdown, preparedPath, (inputPath, outputPath) => {
-    const mermaidArgs = ['-i', inputPath, '-o', outputPath, '-t', 'neutral', '-b', 'transparent']
+  if (markdown.includes('```mermaid')) {
+    const renderedPath = `${preparedPath}.mmdc.md`
+    const mermaidArgs = ['-i', preparedPath, '-o', renderedPath, '-t', 'neutral', '-b', 'transparent']
     if (process.env.CI) mermaidArgs.unshift('-p', resolve(publicationRoot, 'puppeteer.ci.json'))
     execFileSync('mmdc', mermaidArgs, { stdio: 'inherit' })
-  })
+    renameSync(renderedPath, preparedPath)
+    markdown = readFileSync(preparedPath, 'utf8')
+  }
   markdown = rewritePublicationLinks(entry.source, markdown, included)
   assertNoLocalRepositoryLinks(entry.source, markdown)
   writeFileSync(preparedPath, markdown)
@@ -195,19 +189,6 @@ writeFileSync(buildPath, JSON.stringify({
 
 if (fullMode && process.env.PUBLICATION_RAW_PREPARE !== '1') {
   await applyProductionTypography({ repoRoot, publicationRoot, workRoot, workSourceRoot })
-}
-if (primerMode) {
-  const fonts = await fetchPublicationFonts(resolve(workRoot, 'publication-fonts'))
-  const definitions = [
-    ['PUBLICATION_SERIF_REGULAR', 'Publication Serif', 'normal', 400],
-    ['PUBLICATION_SERIF_ITALIC', 'Publication Serif', 'italic', 400],
-    ['PUBLICATION_SERIF_SEMIBOLD', 'Publication Serif', 'normal', 600],
-    ['PUBLICATION_SANS_REGULAR', 'Publication Sans', 'normal', 400],
-    ['PUBLICATION_SANS_BOLD', 'Publication Sans', 'normal', 700]
-  ] as const satisfies ReadonlyArray<readonly [PublicationFontSlot, string, string, number]>
-  const faces = definitions.map(([slot, family, style, weight]) =>
-    `@font-face { font-family:"${family}"; src:url("data:font/ttf;base64,${readFileSync(fonts[slot]).toString('base64')}") format("truetype"); font-style:${style}; font-weight:${weight}; font-display:block; }`)
-  writeFileSync(resolve(workRoot, 'primer-fonts.css'), faces.join('\n'))
 }
 
 console.log(`Prepared ${entries.length} ${mode} publication entries in publication/.work.`)

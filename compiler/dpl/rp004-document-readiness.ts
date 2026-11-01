@@ -1,7 +1,7 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPL15CCorpusReadiness, DPL15C_DIMENSIONS, type DPL15CDimension } from './corpus-candidate-readiness.js'
 
 export const DPL15D_SCHEMA_VERSION = 'dpl.realSitePlanningDocumentAcquisition.v1' as const
@@ -172,7 +172,7 @@ export const validateDPL15DRecord = (value: unknown): AcquisitionRecord => {
   if (gitBlobSha(DPL15D_SITE_RECORD_PATH) !== DPL15D_SITE_RECORD_BLOB) throw new Error('DPL-15D RP-004 source record changed; acquisition is stale.')
 
   if (!Array.isArray(raw.sources) || raw.sources.length !== 4) throw new Error('DPL-15D requires exactly H1-H4 sources.')
-  const sources = raw.sources.map(canonicalSource).sort((a,b) => compareDplIdentityStrings(a.id, b.id))
+  const sources = raw.sources.map(canonicalSource).sort((a,b) => a.id.localeCompare(b.id))
   if (JSON.stringify(sources.map((source) => source.id)) !== JSON.stringify(['H1','H2','H3','H4'])) throw new Error('DPL-15D source ids must be exactly H1-H4.')
   if (sources.filter((source) => source.relationship === 'FIRST_PARTY').length < 3) throw new Error('DPL-15D must preserve the first-party Havering evidence spine.')
   const h3 = sources.find((source) => source.id === 'H3')!
@@ -200,7 +200,7 @@ export const validateDPL15DRecord = (value: unknown): AcquisitionRecord => {
 
   const externalRaw = object(raw.unchangedEvidenceBoundary, 'unchangedEvidenceBoundary')
   const unchangedEvidenceBoundary: Record<string,'UNRESOLVED'> = {}
-  for (const [key,value] of Object.entries(externalRaw).sort(([a],[b]) => compareDplIdentityStrings(a, b))) unchangedEvidenceBoundary[key] = exact(value, 'UNRESOLVED', `unchangedEvidenceBoundary.${key}`)
+  for (const [key,value] of Object.entries(externalRaw).sort(([a],[b]) => a.localeCompare(b))) unchangedEvidenceBoundary[key] = exact(value, 'UNRESOLVED', `unchangedEvidenceBoundary.${key}`)
   if (Object.keys(unchangedEvidenceBoundary).length < 6) throw new Error('DPL-15D must preserve external evidence boundaries explicitly.')
 
   const boundary = object(raw.proofBoundary, 'proofBoundary')
@@ -245,7 +245,7 @@ export const composeDPL15DRP004Readiness = (
     source.geometryAuthority === 'EXPLICIT_DIMENSIONED_SCREENING_GEOMETRY' || source.geometryAuthority === 'APPROVED_DIMENSIONED_SCREENING_GEOMETRY'
   )).map((source) => source.id)
   const unretrievedDocumentTargetIds = record.documentTargets.filter((target) => target.state !== 'RECOVERED_AND_INSPECTABLE').map((target) => target.id)
-  const acquisitionFingerprint = sha256DplSemanticFingerprint(record)
+  const acquisitionFingerprint = sha256SemanticFingerprint(record)
   return {
     record,
     result: record.result,
@@ -253,7 +253,7 @@ export const composeDPL15DRP004Readiness = (
     unretrievedDocumentTargetIds,
     baselineDpl15cFingerprint: dpl15c.resultFingerprint,
     acquisitionFingerprint,
-    resultFingerprint: sha256DplSemanticFingerprint({
+    resultFingerprint: sha256SemanticFingerprint({
       acquisitionFingerprint,
       baselineDpl15cFingerprint: dpl15c.resultFingerprint,
       result: record.result,

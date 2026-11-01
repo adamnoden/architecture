@@ -1,6 +1,6 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 
 export const DPL11B_COVERAGE_SCHEMA_VERSION = 'dpl.nonPlanningScreeningCoverageRegistry.v1' as const
 
@@ -105,7 +105,7 @@ const expectStringArray = (value: unknown, label: string, allowEmpty = false): r
 }
 
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
+  [...new Set(values)].sort((a, b) => a.localeCompare(b))
 
 const canonicalEntry = (entry: NonPlanningCoverageEntry): NonPlanningCoverageEntry => ({
   ...entry,
@@ -119,7 +119,7 @@ const canonicalEntry = (entry: NonPlanningCoverageEntry): NonPlanningCoverageEnt
 const canonicalRegistry = (registry: NonPlanningCoverageRegistry): NonPlanningCoverageRegistry => ({
   ...registry,
   authoritySources: canonicalStrings(registry.authoritySources),
-  entries: [...registry.entries].map(canonicalEntry).sort((a, b) => compareDplIdentityStrings(a.id, b.id))
+  entries: [...registry.entries].map(canonicalEntry).sort((a, b) => a.id.localeCompare(b.id))
 })
 
 const validateRegistry = (value: unknown, path: string): NonPlanningCoverageRegistry => {
@@ -201,10 +201,10 @@ const validateRegistry = (value: unknown, path: string): NonPlanningCoverageRegi
 }
 
 const authoritySetFingerprint = (paths: readonly string[]): string =>
-  sha256DplSemanticFingerprint(
+  sha256SemanticFingerprint(
     canonicalStrings(paths).map((path) => ({
       path,
-      fingerprint: sha256DplSemanticFingerprint({ path, content: readText(path) })
+      fingerprint: sha256SemanticFingerprint({ path, content: readText(path) })
     }))
   )
 
@@ -214,7 +214,7 @@ export const loadNonPlanningCoverageRegistry = (
   const registry = validateRegistry(readJson(path), path)
   return {
     registry,
-    fingerprint: sha256DplSemanticFingerprint(registry),
+    fingerprint: sha256SemanticFingerprint(registry),
     authoritySetFingerprint: authoritySetFingerprint(registry.authoritySources)
   }
 }

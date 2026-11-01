@@ -2,7 +2,7 @@
   "schemaVersion": "RH-OUTPUT-1",
   "sourceCompile": {
     "schemaVersion": "HK-RH-COMPILE-1",
-    "fingerprint": "c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f"
+    "fingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c"
   },
   "status": "PASS",
   "artefacts": [
@@ -11,10 +11,10 @@
       "path": "docs/reference-house/generated/ground-floor-plan.svg",
       "format": "svg",
       "rendererVersion": "1.0.0",
-      "sourceCompileFingerprint": "c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f",
+      "sourceCompileFingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c",
       "content": {
         "algorithm": "sha256",
-        "fingerprint": "9217a747a1ac5e8d3369541b371aac47c1c5f71ae5c6b1b82fb2b578e20e39ab"
+        "fingerprint": "c84c9329e671a233ac2440a170f4b2acc9be248f6fad2412e6cc689075aab3ff"
       }
     },
     {
@@ -22,10 +22,10 @@
       "path": "docs/reference-house/generated/first-floor-plan.svg",
       "format": "svg",
       "rendererVersion": "1.0.0",
-      "sourceCompileFingerprint": "c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f",
+      "sourceCompileFingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c",
       "content": {
         "algorithm": "sha256",
-        "fingerprint": "9c5eddd2ba05c3b269996e1281783213c1465e83b74196bae811ece137011da4"
+        "fingerprint": "64950078b549365e9bc588a09a5e939fc2c2a975091e5361b97e1c98534ecc21"
       }
     },
     {
@@ -33,10 +33,10 @@
       "path": "docs/reference-house/generated/principal-section.svg",
       "format": "svg",
       "rendererVersion": "1.0.0",
-      "sourceCompileFingerprint": "c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f",
+      "sourceCompileFingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c",
       "content": {
         "algorithm": "sha256",
-        "fingerprint": "5c7462d71d83adfaeaf037ee11510b83829ecfd2e32309193d4fdbe50d0f2218"
+        "fingerprint": "84bfb4e0a96665a2bd58a9dcacf99f264d8b6a41da2f5a3d0686235ed94aa841"
       }
     },
     {
@@ -44,10 +44,10 @@
       "path": "docs/reference-house/generated/first-floor-structure.svg",
       "format": "svg",
       "rendererVersion": "1.0.0",
-      "sourceCompileFingerprint": "c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f",
+      "sourceCompileFingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c",
       "content": {
         "algorithm": "sha256",
-        "fingerprint": "22f88b7435bf9b28ce302ce9f0308f3e582865032088e1574f8e848d0f079efe"
+        "fingerprint": "96ee7113c1f2abd2aa75846a7eb2fb6cf1de80b948d2ba3f01d9370d4e1c10ed"
       }
     },
     {
@@ -55,10 +55,10 @@
       "path": "docs/reference-house/generated/service-register.md",
       "format": "markdown",
       "rendererVersion": "1.0.0",
-      "sourceCompileFingerprint": "c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f",
+      "sourceCompileFingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c",
       "content": {
         "algorithm": "sha256",
-        "fingerprint": "8c10f51f00d9cd4a83fe88aa4f1c6139ce3c1bc58e1c2130be8bb69bc713d5ee"
+        "fingerprint": "1c7db35287b222012cde2e7ba9ec0f0ef3fca6b9a5b9c3a7559e0b4176ac9964"
       }
     },
     {
@@ -66,10 +66,10 @@
       "path": "docs/reference-house/generated/boundary-register.md",
       "format": "markdown",
       "rendererVersion": "1.0.0",
-      "sourceCompileFingerprint": "c303660f559d97ff794f0cd670d54f9b737726038b58ab36e55abc5b5fd60e6f",
+      "sourceCompileFingerprint": "16ffc5c68a0247202997603f5fff48737c4c93d89b5947b40336fde0f63b366c",
       "content": {
         "algorithm": "sha256",
-        "fingerprint": "bba1e479b94f1e5cab5e069e42d1a1ac90970df514df51be7dfab87f747ff112"
+        "fingerprint": "57f64df6d05f66157d5d811326d094d047547acd689aeff23fd99e5ec2ff7b3d"
       }
     }
   ]

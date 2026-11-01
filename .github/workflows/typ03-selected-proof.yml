@@ -6,9 +6,6 @@ on:
       - '.github/workflows/typ03-selected-proof.yml'
       - 'publication/specimens/typ03/**'
       - 'docs/manuscript/part-i.md'
-      - 'scripts/proof-scope.mjs'
-      - 'scripts/proof-scope.test.mjs'
-      - '.github/workflows/proof-scope.yml'
       - 'package.json'
       - 'package-lock.json'
   workflow_dispatch:
@@ -17,11 +14,7 @@ permissions:
   contents: read
 
 jobs:
-  scope:
-    uses: ./.github/workflows/proof-scope.yml
   proof:
-    needs: scope
-    if: needs.scope.outputs.run != 'false'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository

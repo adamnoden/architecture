@@ -1,10 +1,7 @@
 # PCO-DISPATCH — dispatcher closeout
 
-**State:** complete; operational evidence reconciled 2026-10-31
-
+**State:** closeout candidate; final lease release and hygiene reconciliation pending  
 **Date:** 2026-10-29
-
-This record retains the original dispatcher implementation and proof. Its READY-only scope was later extended by [guarded crash recovery](mvb-crash-recovery-result.md); use the [current MVB manual](../control/README.md#self-service-dispatcher) for present eligibility.
 
 ## Result
 
@@ -78,7 +75,7 @@ The implementation was protected through its merge by the real ACO lease:
 - lease id: `47a84b0e-4afa-49dd-98cf-5748a0d2539f`;
 - holder: `architecture-dispatcher-build`;
 - branch: `work/pco-dispatch`;
-- lease remained live through the validated implementation and closeout merges; its subsequent release is recorded below.
+- lease remained live through the validated implementation merge and is intentionally retained until this durable closeout reaches `main`.
 
 ## Implementation merge proof
 
@@ -123,14 +120,18 @@ This demonstrates that the dispatcher is not merely a static ranking function: i
 
 ## Disposable probe hygiene
 
-Probe PR #976 was closed unmerged after its evidence was captured. Its temporary source branch was disposed through `delete-me` by [PR #977](https://github.com/adamnoden/architecture/pull/977). The superseded pre-reconciliation closeout branch was disposed by [PR #982](https://github.com/adamnoden/architecture/pull/982). Neither disposal merged probe or superseded source into `main`; the source refs were confirmed absent during the 2026-10-31 reconciliation.
+Probe PR #976 was closed unmerged after its evidence was captured. Its temporary source branch is being disposed through the repository cleanup path and is not project authority.
 
 ## Completion state
 
 `PCO-DISPATCH` is durably marked `complete` with its implementation/design/test/operating-contract evidence registered in the PCO node.
 
-[Closeout PR #979](https://github.com/adamnoden/architecture/pull/979) merged as `e7ca470eb10f2496f973423177572b16991e8470`. Main projection commit `f01030195e4526668fc074cbaca2ba3a168db674` then recorded `PCO-DISPATCH` as complete.
+The remaining actions are operational only:
 
-Generation `1`, lease id `47a84b0e-4afa-49dd-98cf-5748a0d2539f`, was released at `2026-10-29T09:36:52Z` with reason `completed`, recorded in [runtime commit f99801ee](https://github.com/adamnoden/architecture/commit/f99801eee0703ebf9da40c2854d44f1e19d8028d). The release followed durable completion; it was not still pending.
+1. this closeout PR must pass normal validation and merge while the original ACO lease remains controlled;
+2. main projection reconciliation must observe `PCO-DISPATCH` as complete;
+3. the ACO lease must then be released with reason `completed`;
+4. this record must receive one final hygiene reconciliation recording that release;
+5. temporary dispatcher/probe branches must be removed or explicitly reduced to retained infrastructure (`runtime/claims`).
 
-The final hygiene reconciliation had been preserved in unmerged commit `5069421b59c151ba9178f95c16c933c29aa45945`. Its release and disposal evidence was independently rechecked and reconciled here on 2026-10-31. This corrects the operational record without changing packet lifecycle or claiming a new implementation result. `runtime/claims` remains retained coordination infrastructure.
+Until the lease release and final hygiene reconciliation are recorded, the packet is substantively complete but operational closeout is not yet clean.
