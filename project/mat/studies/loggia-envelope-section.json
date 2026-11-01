@@ -66,19 +66,33 @@
     ],
     "beamTop": -180,
     "beamBottom": -630,
-    "cap": [
-      900,
-      900,
-      500
+    "node": [
+      600,
+      600,
+      450
     ],
-    "lowestCap": -722.5,
+    "ordinaryBeamBottom": -630,
+    "lowTie": {
+      "size": [
+        250,
+        200
+      ],
+      "stations": [
+        8050,
+        11700
+      ],
+      "top": -550,
+      "bottom": -750,
+      "localReceivingNodeBottom": -750
+    },
+    "lowestOutside": -750,
     "soil": -1300,
     "heave": 300,
     "constructionLoss": 50,
     "ventClearance": 150,
-    "status": "STR calculation hypothesis only, not frozen support or selected D1300.",
-    "requiredD": 1222.5,
-    "residualAtD1300": 227.5
+    "status": "STR lowtie/node calculation hypothesis only; no support/site admission. No900cap islands selected.",
+    "requiredD": 1250,
+    "residualAtD1300": 200
   },
   "wetDeadKgM2": 84.4,
   "windStressKpa": 1.5,
@@ -86,6 +100,28 @@
     600,
     450
   ],
+  "floorJoin": {
+    "layers": [
+      15,
+      65,
+      100,
+      200
+    ],
+    "z": [
+      0,
+      -15,
+      -80,
+      -180,
+      -380
+    ],
+    "innerDpc": [
+      -180,
+      -30
+    ],
+    "plasterStops": 0,
+    "airLine": "Wallmineralplaster meets floorfinish at0; movement/airtightness unqualified",
+    "moisture": "40cover suspendedRC is a deliberate moisture hypothesis. NoDPM or site-required gas barrier is waived; exact floor/end/DPC transition not qualified."
+  },
   "cavityTray": {
     "innerBase": -20,
     "outerWeep": -35,
@@ -233,6 +269,130 @@
       "status": "Actual leakage/firstharm remains unqualified. +15 is only open-door geometricoverflow crest, not accepted firstharm."
     },
     "renewal": "Support leaves, remove local dry-side trim/above-pan fixings, lift frame outward into1500landing; welded pan retained for ordinary frame renewal. Pan renewal requires fullframe+saddle removal and temporary weather cover, not routine strip replacement."
+  },
+  "protectedWater": {
+    "scope": "New finite candidate; actual lowtie crossing geometry. No full hydraulic/site/material pass.",
+    "normal": {
+      "inlet": [
+        4250,
+        7000,
+        3500,
+        350
+      ],
+      "channelGross": 350,
+      "channelClear": 250,
+      "inletVoid": 80,
+      "flowSlope": 0.01,
+      "roughnessStress": 0.02,
+      "cover": {
+        "downstream": "Solid10SS,500pitch/50overlap, no hole except upstreaminlet",
+        "module": [
+          350,
+          550,
+          10
+        ],
+        "massKg": 15.4
+      },
+      "intakeCover": {
+        "thickness": 14,
+        "holeDiameter": 9,
+        "pitch": 12,
+        "openAreaFraction": 0.44178646691106466,
+        "stress": "2kN/100gross strip;25net width and250span gives153.1MPa simple bending, before stressconcentration/support qualification"
+      },
+      "westLoggia": [
+        4825,
+        7750,
+        350,
+        5450
+      ],
+      "carrierBottom": [
+        [
+          7000,
+          -206.25
+        ],
+        [
+          7750,
+          -213.75
+        ],
+        [
+          12000,
+          -256.25
+        ],
+        [
+          13200,
+          -268.25
+        ]
+      ],
+      "crossCourtBottom": [
+        -171.5,
+        -206.25
+      ],
+      "material": "1.5uncoatedcopper liner; seams/filler/flux/supports/retained treatments unqualified"
+    },
+    "relief": {
+      "plan": [
+        5300,
+        7750,
+        1800,
+        5450
+      ],
+      "minimumClearWidth": 1800,
+      "roughnessStress": 0.025,
+      "slope": 0.01,
+      "terminal": "Broad guarded E spill physically separate from primary downroute; exact receivers/site backwater remain unaccepted"
+    },
+    "deckRecess": {
+      "depth": 100,
+      "rcRetained": 200,
+      "lowestLocalSoffit": -522.5,
+      "stepHaunch": "Depressedtop−322.5/bottom−522.5; adjacenttop−222.5 with300localdepth, underside tapers200run to−422.5. No variableupperfill.",
+      "status": "Actual lowties−550..−750 below localsoffit−522.5.27.5nominalclear; fourreceivingnodes−750. Capacity/constructability unqualified."
+    },
+    "probes": [
+      {
+        "litresPerSecond": 1,
+        "normalDepthMm": 14.48439069851909,
+        "surfaceDepthMm": 4.858876255998212
+      },
+      {
+        "litresPerSecond": 3,
+        "normalDepthMm": 29.1428552757112,
+        "surfaceDepthMm": 9.411969640316626
+      },
+      {
+        "litresPerSecond": 6,
+        "normalDepthMm": 46.05003970106709,
+        "surfaceDepthMm": 14.296478232725827
+      }
+    ],
+    "failures": [
+      {
+        "event": "Fullwidthsurface dam at loggiamouthy7750",
+        "path": "Upstreaminlet y7000 remains open; continuous covered copper bypassesdam only if realbeam crossings/terminal remain free."
+      },
+      {
+        "event": "Normalinlet orconduit blocked",
+        "path": "Flushinlet can be overrun onto broadsurface; no raised kerb/closedrelief mouth."
+      },
+      {
+        "event": "Raisedterraceflooded",
+        "path": "Primary requires closed/qualified downroute to externalreceiver; covers not admitted pressureseals. Broadsurface may backwater."
+      },
+      {
+        "event": "Separateprimaryreceiverbackwater",
+        "path": "Broadreceiver must remain free; no sharedterminal credited."
+      },
+      {
+        "event": "Blanketdebris spanninginletANDloggia orbothreceiversflooded",
+        "path": "Consequentialcommonfailure remains; no unconditionalindependenceclaim."
+      }
+    ],
+    "commonDamAtCourtMouth": {
+      "damToFfl": 110,
+      "damToGeometric15Crest": 125,
+      "scope": "Staticlevelonly; actualfirstharm unqualified atpan/DPC anddoor seals."
+    }
   },
   "wetDeadKpa": 0.827964,
   "gridWetDeadKn": 0.22355028000000002,
