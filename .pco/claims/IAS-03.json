@@ -9,9 +9,9 @@
     "label": "zerg2-access"
   },
   "claimedAt": "2026-11-01T19:25:45.832Z",
-  "heartbeatAt": "2026-11-01T19:48:00.042Z",
-  "expiresAt": "2026-11-01T20:33:00.042Z",
-  "branch": "work/zerg2-ias-b-joined",
+  "heartbeatAt": "2026-11-01T19:52:03.969Z",
+  "expiresAt": "2026-11-01T20:37:03.969Z",
+  "branch": "work/zerg2-integration-20261101",
   "predecessor": {
     "leaseId": "7619f2db-fb07-4914-b2fb-dd2284fe29a0",
     "generation": 12,
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "FrozenIAS910cd2d8807c4f7a78ac5f2614bcd0ce89369a54 tree8181590d6a8328a2542553b739a42df3a934ddeb; --check,diffcheck,actualA3render and independentinternalreviewPASS; localD1300datumexplicit",
-    "next": "Prepare root-directed4scopeintegration afterfinalHAD/STRreviewPASS; preserve4sourceparents; exactheadCI/preflights beforemerge",
-    "blocker": "WaitingfinalHAD/STRcaptionheads and exactreviewPASS; wholeinventory and physicalacceptance remainopen"
-  }
+    "evidence": "SharedPR1229 head8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 nativefetchverified5sourceparents; all4customchecks,regressions,tsc,control,repo andcommanderreviewPASS",
+    "next": "ObserveexactheadfullCI assoleobserver; rootcommandsfresh4pernodepreflights thenexpectedheadmerge",
+    "blocker": "FullCIpending; wholeinventory/physical/materialadmission remainunaccepted"
+  },
+  "pr": 1229
 }
