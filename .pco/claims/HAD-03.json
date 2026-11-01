@@ -9,9 +9,9 @@
     "label": "zerg2-had-joined"
   },
   "claimedAt": "2026-11-01T19:21:35.996Z",
-  "heartbeatAt": "2026-11-01T19:46:44.281Z",
-  "expiresAt": "2026-11-01T20:31:44.281Z",
-  "branch": "work/zerg2-had-b-joined",
+  "heartbeatAt": "2026-11-01T19:52:11.409Z",
+  "expiresAt": "2026-11-01T20:37:11.409Z",
+  "branch": "work/zerg2-integration-20261101",
   "predecessor": {
     "leaseId": "537b440b-2a31-4854-a692-ccd6824a33c8",
     "generation": 21,
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Draft PR1226 frozenheadf9df969bdfcfe2780ef36859c7c174ccb9a281c3 exacttree8c0c4c58f4ecf9a959ec8e76bb3ba5b512ad1e34: owning joined B/D1300 result,4actualrenderedSVGs, finite room and750/650 wet renewal; local custom negative controls,4regressions,tsc,repointegrity,VitePress passed.",
-    "next": "IAS worker prepares combined4sourcehistory integration; final peer bounded head/tree review; root one canonical exact-head CI and fresh per-node preflight, then merge/release.",
-    "blocker": "Source branch notmerged; rootbatchintegration pending. HAD03 incomplete; actual productbound firstharm, gas/containment seal, mechanical handling, material/hydraulic/site acceptance unearned."
+    "evidence": "SharedPR1229 exacthead8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 preservesall4sourcehistories includingHAD08a6883d. SourceboundjoinedB/D1300,4actualrenderedSVGs, head/treeboundpeerPASS; allcustom/relevant/tsc/repointegritypassedoncombinedtree.",
+    "next": "RootobservesonecanonicalexactheadCI, thenfreshper-nodepreflight/expectedheadmerge; verifyintegration/releaseHAD22. NoindependentsourcePRmerge.",
+    "blocker": "CanonicalsharedexactheadCIandpublicationpreflightpending. HAD03remainsincomplete/RWT06blocked; noarchitecture/material/hydraulic/siteadoption."
   },
-  "pr": 1226
+  "pr": 1229
 }
