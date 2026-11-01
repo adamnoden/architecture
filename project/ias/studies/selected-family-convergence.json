@@ -79,8 +79,8 @@
       "scope": "762 leaf and825 complete width are compatibility budgets, not a classified supplied doorset. Required E20 assembly and protected upper closure remain whole."
     },
     "firstOpenBody": [
-      10400,
-      5750
+      10380,
+      5800
     ],
     "closedBody": [
       9950,
@@ -199,7 +199,11 @@
     "afterClosure": {
       "path": [
         [
-          10400,
+          10380,
+          5800
+        ],
+        [
+          10380,
           5750
         ],
         [
@@ -304,13 +308,13 @@
   "coupling": {
     "sampleIntervals": 3000,
     "openReleaseStraightArmReserve": 15,
-    "openReleaseReach": 616.0008116877768,
-    "minimumFixedSample": 77.5,
-    "minimumLeafSample": 71.61837701902596,
+    "openReleaseReach": 564.9044166936563,
+    "minimumFixedSample": 97.5,
+    "minimumLeafSample": 31.102707174114016,
     "bodyHalfStepBound": 0,
     "leafHalfStepBound": 0.1998234312946098,
-    "minimumFixedLowerBound": 77.5,
-    "minimumLeafLowerBound": 71.41855358773135,
+    "minimumFixedLowerBound": 97.5,
+    "minimumLeafLowerBound": 30.902883742819405,
     "operation": "Enter with the controlled mechanical door OPEN; release and withdraw the hand during the first2degrees of slow controlled closing; then let the complete delayed-action closer shut/latch while the body waits outside the swept leaf; then walk to the closed-door task station. No mid-sweep regrip is selected.",
     "rejectedPullControl": "An earlier6279-hinge manual pull/regrip at30degrees had a13.604mm straight-arm collision despite clear body/reach; rejected.",
     "armAndRegripAccepted": false,
@@ -321,86 +325,6 @@
   "push": {
     "bodyPath": [
       [
-        8750,
-        5500
-      ],
-      [
-        8750,
-        5500
-      ],
-      [
-        8750,
-        5500
-      ],
-      [
-        8750,
-        5500
-      ],
-      [
-        8750,
-        5500
-      ],
-      [
-        8750,
-        5500
-      ],
-      [
-        8750,
-        5500
-      ],
-      [
-        8750,
-        5500
-      ],
-      [
-        8750,
-        5500
-      ],
-      [
-        8750,
-        5500
-      ],
-      [
-        8750,
-        5510
-      ],
-      [
-        8760,
-        5500
-      ],
-      [
-        8760,
-        5500
-      ],
-      [
-        8760,
-        5500
-      ],
-      [
-        8760,
-        5510
-      ],
-      [
-        8770,
-        5500
-      ],
-      [
-        8770,
-        5500
-      ],
-      [
-        8770,
-        5500
-      ],
-      [
-        8770,
-        5510
-      ],
-      [
-        8780,
-        5500
-      ],
-      [
         8780,
         5500
       ],
@@ -411,6 +335,10 @@
       [
         8780,
         5510
+      ],
+      [
+        8790,
+        5500
       ],
       [
         8790,
@@ -450,11 +378,11 @@
       ],
       [
         8810,
-        5500
+        5510
       ],
       [
-        8810,
-        5510
+        8820,
+        5500
       ],
       [
         8820,
@@ -545,8 +473,12 @@
         5510
       ],
       [
-        8870,
-        5520
+        8880,
+        5500
+      ],
+      [
+        8880,
+        5500
       ],
       [
         8880,
@@ -573,12 +505,12 @@
         5560
       ],
       [
-        8880,
-        5570
+        8890,
+        5560
       ],
       [
-        8880,
-        5580
+        8890,
+        5560
       ],
       [
         8890,
@@ -597,7 +529,7 @@
         5600
       ],
       [
-        8890,
+        8900,
         5610
       ],
       [
@@ -615,10 +547,6 @@
       [
         8900,
         5640
-      ],
-      [
-        8900,
-        5650
       ],
       [
         8910,
@@ -649,7 +577,7 @@
         5670
       ],
       [
-        8920,
+        8930,
         5680
       ],
       [
@@ -709,10 +637,6 @@
         5720
       ],
       [
-        8960,
-        5720
-      ],
-      [
         8970,
         5730
       ],
@@ -743,10 +667,6 @@
       [
         8980,
         5740
-      ],
-      [
-        8990,
-        5750
       ],
       [
         8990,
@@ -821,10 +741,6 @@
         5780
       ],
       [
-        9030,
-        5780
-      ],
-      [
         9040,
         5790
       ],
@@ -905,10 +821,6 @@
         5810
       ],
       [
-        9080,
-        5810
-      ],
-      [
         9090,
         5820
       ],
@@ -922,10 +834,6 @@
       ],
       [
         9090,
-        5820
-      ],
-      [
-        9100,
         5820
       ],
       [
@@ -1017,10 +925,6 @@
         5830
       ],
       [
-        9140,
-        5830
-      ],
-      [
         9150,
         5830
       ],
@@ -1141,10 +1045,6 @@
         5840
       ],
       [
-        9200,
-        5840
-      ],
-      [
         9210,
         5840
       ],
@@ -1203,10 +1103,6 @@
       [
         9230,
         5840
-      ],
-      [
-        9230,
-        5850
       ],
       [
         9240,
@@ -1293,30 +1189,30 @@
         5840
       ],
       [
-        9270,
+        9280,
+        5840
+      ],
+      [
+        9280,
+        5840
+      ],
+      [
+        9280,
+        5840
+      ],
+      [
+        9280,
+        5840
+      ],
+      [
+        9280,
+        5840
+      ],
+      [
+        9280,
         5850
       ],
       [
-        9280,
-        5840
-      ],
-      [
-        9280,
-        5840
-      ],
-      [
-        9280,
-        5840
-      ],
-      [
-        9280,
-        5840
-      ],
-      [
-        9280,
-        5840
-      ],
-      [
         9290,
         5840
       ],
@@ -1335,10 +1231,6 @@
       [
         9290,
         5840
-      ],
-      [
-        9290,
-        5850
       ],
       [
         9300,
@@ -1358,7 +1250,7 @@
       ],
       [
         9300,
-        5850
+        5840
       ],
       [
         9300,
@@ -1402,7 +1294,7 @@
       ],
       [
         9320,
-        5850
+        5840
       ],
       [
         9320,
@@ -1446,7 +1338,7 @@
       ],
       [
         9340,
-        5850
+        5840
       ],
       [
         9340,
@@ -1493,30 +1385,30 @@
         5850
       ],
       [
-        9360,
+        9370,
+        5840
+      ],
+      [
+        9370,
+        5840
+      ],
+      [
+        9370,
+        5840
+      ],
+      [
+        9370,
+        5840
+      ],
+      [
+        9370,
+        5840
+      ],
+      [
+        9370,
         5850
       ],
       [
-        9370,
-        5840
-      ],
-      [
-        9370,
-        5840
-      ],
-      [
-        9370,
-        5840
-      ],
-      [
-        9370,
-        5850
-      ],
-      [
-        9370,
-        5850
-      ],
-      [
         9380,
         5840
       ],
@@ -1531,10 +1423,6 @@
       [
         9380,
         5840
-      ],
-      [
-        9380,
-        5850
       ],
       [
         9380,
@@ -1551,6 +1439,14 @@
       [
         9390,
         5840
+      ],
+      [
+        9390,
+        5840
+      ],
+      [
+        9390,
+        5850
       ],
       [
         9390,
@@ -1561,7 +1457,51 @@
         5840
       ],
       [
+        9400,
+        5840
+      ],
+      [
+        9400,
+        5840
+      ],
+      [
+        9400,
+        5850
+      ],
+      [
+        9400,
+        5850
+      ],
+      [
         9410,
+        5840
+      ],
+      [
+        9410,
+        5840
+      ],
+      [
+        9410,
+        5840
+      ],
+      [
+        9410,
+        5840
+      ],
+      [
+        9410,
+        5850
+      ],
+      [
+        9420,
+        5840
+      ],
+      [
+        9420,
+        5840
+      ],
+      [
+        9420,
         5840
       ],
       [
@@ -1573,16 +1513,80 @@
         5830
       ],
       [
+        9430,
+        5830
+      ],
+      [
+        9430,
+        5830
+      ],
+      [
+        9430,
+        5840
+      ],
+      [
+        9430,
+        5840
+      ],
+      [
         9440,
         5830
       ],
       [
-        9450,
+        9440,
         5830
       ],
       [
-        9460,
+        9440,
         5830
+      ],
+      [
+        9440,
+        5840
+      ],
+      [
+        9440,
+        5840
+      ],
+      [
+        9440,
+        5850
+      ],
+      [
+        9440,
+        5850
+      ],
+      [
+        9450,
+        5840
+      ],
+      [
+        9450,
+        5840
+      ],
+      [
+        9450,
+        5840
+      ],
+      [
+        9450,
+        5850
+      ],
+      [
+        9450,
+        5850
+      ],
+      [
+        9460,
+        5840
+      ],
+      [
+        9460,
+        5840
+      ],
+      [
+        9460,
+        5840
       ],
       [
         9470,
@@ -1767,9 +1771,9 @@
     ],
     "angleIntervals": 360,
     "fixedLower": 7.9289321881345245,
-    "leafLower": 112.79189223018946,
+    "leafLower": 98.42630434382707,
     "armLower": 6.588374383456062,
-    "reachUpper": 648.8609767755253,
+    "reachUpper": 599.1778001515712,
     "scope": "One authored ordinary push-open trajectory; spherical300 body, straight40-radius arm,650 reach sensitivity. No force/accessibility acceptance."
   },
   "transfer": {
@@ -1779,12 +1783,12 @@
         5740
       ],
       [
-        10400,
+        10380,
         5740
       ],
       [
-        10400,
-        5750
+        10380,
+        5800
       ]
     ],
     "minimumReserve": 15,
@@ -1798,12 +1802,12 @@
       6226
     ],
     "end": [
-      10282.7,
-      5892.8
+      10268.7,
+      5927.8
     ],
     "doorClosingDegrees": 2,
-    "leafLower": 14.77107815382297,
-    "fixedLower": 133.78439971590927,
+    "leafLower": 14.788961892070912,
+    "fixedLower": 133.80228345415722,
     "speedRequirement": "Configure and physically verify the complete compatible mechanical delayed-action closer so this hand withdrawal completes before2degrees of closing; no stationary pause, powered operator or ordinary hold-open arm is assumed.",
     "primaryFunctionalControl": "https://dormakaba-res.cloudinary.com/image/upload/v1745407038/dormakaba-prod/120000000136-dormakaba-door-closer-ts83-technical-folder-en.pdf",
     "controlScope": "TS83 BC+DC manufacturer functional control: retarded180–70degree motion, not a selected classified kit or complete material admission."
@@ -1860,9 +1864,13 @@
         650
       ]
     },
+    "stationFrame": [
+      900,
+      600
+    ],
     "station": [
       900,
-      600,
+      670,
       1000
     ],
     "windowSill": 1050,
@@ -1880,8 +1888,8 @@
         8690,
         3340
       ],
-      "radius": 540.8326913195984,
-      "minimumReserve": 52.16730868040156
+      "radius": 561.003565051061,
+      "minimumReserve": 31.996434948939054
     },
     "moves": [
       {
@@ -1898,15 +1906,11 @@
           ],
           [
             9900,
-            10300
+            8475
           ],
           [
-            7750,
-            10300
-          ],
-          [
-            7750,
-            10250
+            10800,
+            8475
           ]
         ],
         "pieceSize": [
@@ -1993,40 +1997,64 @@
         "governor": "dining-table1200x800"
       },
       {
-        "stage": "supported withdrawal and aisle translation",
-        "id": "north-sink-station",
-        "path": [
-          [
-            8700,
-            10970.5
-          ],
-          [
-            8700,
-            10370.5
-          ],
-          [
-            9916.25,
-            10370.5
-          ],
-          [
-            9916.25,
-            9700
-          ]
-        ],
-        "pieceSize": [
-          900,
-          600
-        ],
-        "minimumSeparation": 0,
-        "governor": "outer-north"
-      },
-      {
-        "stage": "table550 north after sink clears table sweep",
+        "stage": "table100 south BEFORE union release",
         "id": "dining-table1200x800",
         "path": [
           [
             8500,
             9100
+          ],
+          [
+            8500,
+            9000
+          ]
+        ],
+        "pieceSize": [
+          800,
+          1200
+        ],
+        "minimumSeparation": 250,
+        "governor": "dining-chair-west-south"
+      },
+      {
+        "stage": "supported W600 THEN S600 and aisle translation",
+        "id": "north-sink-station",
+        "path": [
+          [
+            8700,
+            10900.5
+          ],
+          [
+            8100,
+            10900.5
+          ],
+          [
+            8100,
+            10300.5
+          ],
+          [
+            9916.25,
+            10300.5
+          ],
+          [
+            9916.25,
+            9665
+          ]
+        ],
+        "pieceSize": [
+          900,
+          670
+        ],
+        "minimumSeparation": 0,
+        "governor": "outer-north"
+      },
+      {
+        "stage": "table650 north after sink clears table sweep",
+        "id": "dining-table1200x800",
+        "path": [
+          [
+            8500,
+            9000
           ],
           [
             8500,
@@ -2045,79 +2073,79 @@
         "id": "north-sink-station",
         "path": [
           [
-            10066.25,
+            10031.25,
             9550
           ],
           [
-            10066.25,
+            10031.25,
             8512.5
           ],
           [
-            8369,
+            8334,
             8512.5
           ],
           [
-            8369,
+            8334,
             7675
           ]
         ],
         "pieceSize": [
-          600,
+          670,
           900
         ],
-        "minimumSeparation": 88,
-        "governor": "rear-east"
+        "minimumSeparation": 84,
+        "governor": "dining-chair-west-south"
       },
       {
         "stage": "east gallery and open cross-door",
         "id": "north-sink-station",
         "path": [
           [
-            8369,
+            8334,
             7675
           ],
           [
-            8369,
+            8334,
             5500
           ],
           [
-            8390,
+            8355,
             5500
           ],
           [
-            8390,
+            8355,
             2890
           ]
         ],
         "pieceSize": [
-          600,
+          670,
           900
         ],
-        "minimumSeparation": 101.75,
+        "minimumSeparation": 66.75,
         "governor": "FD-EAST-OPEN"
       },
       {
-        "stage": "entrance and front opening",
+        "stage": "entrance interior handoff; exterior ramp not credited",
         "id": "north-sink-station",
         "path": [
           [
             8240,
-            3040
+            3005
           ],
           [
             5550,
-            3040
+            3005
           ],
           [
             5550,
-            -650
+            600
           ]
         ],
         "pieceSize": [
           900,
-          600
+          670
         ],
-        "minimumSeparation": 63.78871373526825,
+        "minimumSeparation": 63,
         "governor": "service-spine"
       }
     ],
@@ -2126,8 +2154,8 @@
         10366.25,
         10000
       ],
-      "radius": 540.8326913195984,
-      "minimumReserve": 101.67650122164457
+      "radius": 561.003565051061,
+      "minimumReserve": 81.50562749018206
     },
     "lastState": {
       "dining-table1200x800": [
@@ -2155,16 +2183,16 @@
         500
       ],
       "dining-chair-east-north": [
-        7750,
-        10250,
+        10800,
+        8475,
         500,
         500
       ],
       "north-sink-station": [
         5550,
-        -650,
+        600,
         900,
-        600
+        670
       ],
       "north-cooking-station": [
         10800,
@@ -2183,16 +2211,23 @@
     "full18Adverse": {
       "failures": [
         {
-          "stage": "supported withdrawal and aisle translation",
+          "stage": "supported W600 THEN S600 and aisle translation",
           "piece": "north-sink-station",
           "obstacle": "outer-north",
           "segment": 0
+        },
+        {
+          "stage": "supported W600 THEN S600 and aisle translation",
+          "piece": "north-sink-station",
+          "obstacle": "outer-north",
+          "segment": 1
         }
       ],
-      "firstTurnReserve": 101.67650122164457,
-      "hallTurnReserve": 33.875060498662606,
+      "firstTurnReserve": 81.50562749018206,
+      "hallTurnReserve": 13.704186767200099,
       "scope": "Replay against actual27finished walls+18decorative projection; retained furniture and25crossdoor frames stay in the main route checks."
-    }
+    },
+    "handlingStatus": "INCOMPLETE: W600/S600 part envelope and furniture sequence pass, but full mass/rig/operator/attachment/control/support-transfer method is not yet qualified as an architectural witness. No safe whole-module renewal PASS."
   },
   "kitchenRelease": {
     "status": "Authored supported frame/anchor and service-interface compatibility target; no supplied assembly/load admission",
@@ -2260,21 +2295,33 @@
     ],
     "temporarySupportTracks": [
       [
-        8830,
-        11020.5,
-        100,
-        500
+        8820,
+        10980.5,
+        120,
+        180
       ],
       [
-        9370,
-        11020.5,
-        100,
-        500
+        9360,
+        10980.5,
+        120,
+        180
+      ],
+      [
+        8820,
+        11370.5,
+        120,
+        180
+      ],
+      [
+        9360,
+        11370.5,
+        120,
+        180
       ]
     ],
     "supportFieldZ": [
       0,
-      150
+      140
     ],
     "frameRequirement": "Four legs/rigid upper frame; no low transverse rail through fixed service field. Temporary two rolling tracks lift leg-side brackets, staying inside900×600.",
     "serviceTarget": {
@@ -2283,8 +2330,8 @@
         9350
       ],
       "y": [
-        10970.5,
-        11120.5
+        10875.5,
+        11025.5
       ],
       "z": [
         400,
@@ -2294,24 +2341,24 @@
     },
     "access": {
       "front": [
-        9150,
-        10650
+        9500,
+        10625
       ],
       "west": [
         8370,
         11240.5
       ],
       "east": [
-        9930,
-        11240.5
+        9900,
+        10900
       ]
     },
     "sequence": [
       "Park chairs, keep table in ordinary9100 state. Isolate/drain, expose front unions, independently support retained pipes, separate/cap actual joints within agreed service zone.",
-      "Engage independently rated two temporary rolling tracks below leg-side brackets; both remain inside moving900×600 and clear fixed service pipes.",
+      "Engage four positively retained swivel/locking roller dollies below leg-side brackets; whole rig<=140high stays below low pipe/support150minimum. Module including proud unions is900×670.",
       "Access four M8 nuts with22diameter×80 tool, keep sealed slab studs/floor boundary fixed; frame legs remain supported.",
       "Lift20 to clear15-high studs by5;1000 maximum moving assembly becomes1020, leaving30 below1050 sill.",
-      "Fit temporary stud guards, withdraw600S and execute checked station route; restore anchors/services and inspect/test before ordinary use."
+      "Withdraw20up, then W600, then S600 before aisle transport; move EN chair east and table100S first, then table650N after head clears. Restore anchors/services and test before use."
     ],
     "limits": [
       "Stud embedment, floor capacity, wet/air/fire seals, frame stiffness/welds, rig capacity and actual mass are unearned.",
@@ -2322,17 +2369,17 @@
       "axes": [
         [
           9025,
-          11045.5,
+          10950.5,
           475
         ],
         [
           9130,
-          11045.5,
+          10950.5,
           475
         ],
         [
           9275,
-          11045.5,
+          10950.5,
           475
         ]
       ],
@@ -2349,14 +2396,14 @@
       "scope": "Service owner proposed positions; exact immutable one-way interface import pending. No supplied true-union stroke/constitution admission."
     },
     "bodyChecks": {
-      "front": 20.5,
+      "front": 45.5,
       "west": 30,
-      "east": 30
+      "east": 8.172435496752371
     },
     "studToolToLegAndPlateReserve": 4,
     "handGripToLegReserve": 75,
     "toolRequirement": "22diameter socket/extension80high,100outboard L handle;40radius hand grip is outside leg field, not squeezed into4mm socket gap. Actual tool/torque and posture remain to verify.",
-    "maximumPlanReach": 457.08314342141296
+    "maximumPlanReach": 629.0431225281778
   },
   "corrections": {
     "inputStatus": "EXPLICIT INCOMPLETE27DRY/30WET TRIAL; failed witnesses retained, no adoption.",
@@ -3266,13 +3313,13 @@
         ],
         "north-sink-station": [
           8700,
-          10970.5,
+          10982.5,
           900,
           600
         ],
         "north-cooking-station": [
           10800,
-          10970.5,
+          10982.5,
           600,
           600
         ],
@@ -3515,8 +3562,8 @@
           "scope": "762 leaf and825 complete width are compatibility budgets, not a classified supplied doorset. Required E20 assembly and protected upper closure remain whole."
         },
         "firstOpenBody": [
-          10400,
-          5750
+          10380,
+          5800
         ],
         "closedBody": [
           9950,
@@ -3722,10 +3769,10 @@
       "cabinet": "Remove only supported local shelf/face; fixture and fixed-service support stay independent. Empty/release actual anti-tip anchors for whole-furniture maintenance.",
       "kitchen": [
         "Park chairs, keep table in ordinary9100 state. Isolate/drain, expose front unions, independently support retained pipes, separate/cap actual joints within agreed service zone.",
-        "Engage independently rated two temporary rolling tracks below leg-side brackets; both remain inside moving900×600 and clear fixed service pipes.",
+        "Engage four positively retained swivel/locking roller dollies below leg-side brackets; whole rig<=140high stays below low pipe/support150minimum. Module including proud unions is900×670.",
         "Access four M8 nuts with22diameter×80 tool, keep sealed slab studs/floor boundary fixed; frame legs remain supported.",
         "Lift20 to clear15-high studs by5;1000 maximum moving assembly becomes1020, leaving30 below1050 sill.",
-        "Fit temporary stud guards, withdraw600S and execute checked station route; restore anchors/services and inspect/test before ordinary use."
+        "Withdraw20up, then W600, then S600 before aisle transport; move EN chair east and table100S first, then table650N after head clears. Restore anchors/services and test before use."
       ],
       "principalWet": "Merged MAT split upper/lower renewal and service-owned interface remain owning evidence; no automatic transfer to rear1000 or family bath.",
       "rearWet": [

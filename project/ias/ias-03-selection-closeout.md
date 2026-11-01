@@ -2,6 +2,10 @@
 
 **1 November 2026 · development checkpoint, not an adoption or construction release.** Base main is `546c98f93a3dccbfe48119bd2e92117b6e2d766f`. The current composition input is the explicitly FAILED HAD27/30 trial commit `0b2f7d48c82459214cae4b6778c3ced7b3e6c54b`, `project/had/studies/open-north-loggia.json` blob `6affb39e28a777e36532729183152c8c588e4989`. Ordinary corrections were first checked against20ff8709 / bd3ba605 and are rerun against this composed/guarded source. Earlier checkpoint input a324/1412 remains provenance, not the current finish model. That immutable comparison is not accepted RH-LAYOUT-REVISION-02. Fetch its Git object when absent; do not manufacture a parent or silently copy its geometry into the accepted compiler.
 
+## Current working boundary — 23:10 UTC
+
+The published frozen ordinary-operation review remains bounded to its exact head. Current kitchen work supersedes the older S-first route below: retained feed pipes collide with its rear leg. The working candidate uses moving head900×670,20up/W600/S600, east EN-chair park10800/8475, three west parks and table100S then650N. Its part-box route fits, but a complete unpowered handling method with mass/rig/operator/attachment/control/support-transfer requirements is **not yet proved**. No safe whole-module renewal PASS or IAS completion follows. Family waiting stance is now10380/5800: release564.904, continuous leaf30.903 and connected approach15; its independent push path has now been reduced below600 reach sensitivity. These changes require fresh exact-head review; earlier quantified checkpoints below remain provenance.
+
 ## Selected recommendation
 
 Develop **fixed mineral background, continuous floors and local mechanically released task pieces**. Reject a universal panel/backplane, accessible floor grid and deep service skirting. Separate private closure, shared-room openings and protected-boundary doors by their actual role. A cabinet face carries no fixture, service, structural or safety boundary. Necessary seals, classified protection and electrical insulation remain part of their assemblies even when material admission fails.
