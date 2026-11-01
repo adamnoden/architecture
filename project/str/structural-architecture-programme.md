@@ -30,6 +30,8 @@ The owner has raised soil movement and tree-heavy construction to **P0**. The pr
 
 **Execution seam:** investigate the pre-site foundation family as a separate bounded structural question without colliding with occupied STR-HOUSE. STR-RECONCILE must consume its earned support and movement result before the final structural handoff. Register any genuinely independent task through the canonical PCO graph and ACO protocol; this document alone is not a packet or lease. MAT-ENVELOPE retains mineral DPC/floor materials, and [Boundary Service Lodge / raceway design](../had/boundary-service-lodge-and-raceway-brief.md) remains architecturally separate while its support and movement interfaces return to STR.
 
+**1 November P0 foundation investigation:** [Pre-site option reduction and moving-ground failure register](ground-movement-foundation-options-result.md) prefers developing a deep-supported reinforced ground-beam grid and genuinely open, movement-isolated suspended mineral ground floor, rejecting shallow strips as the tree-heavy default and hidden polymer void-formers as an automatic answer. It quantifies the historical NHBC 2025 heave-void distinction and hypothetical support-gradient sensitivities, but does **not** select piles, a stratum, soil/damp/gas measures or an installed foundation. **STR-GROUND remains planned** until its P0-required source-bound plan, representative 1:10 wall/court sections, service/trees approach and complete movement/constructability trials are supplied. STR-HOUSE may use the typed constraints; STR-RECONCILE must not treat them as an accepted structure.
+
 ## Ownership and interfaces
 
 | Owner | Responsibility at this boundary |
