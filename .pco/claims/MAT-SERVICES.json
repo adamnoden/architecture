@@ -9,8 +9,8 @@
     "label": "zerg2-s02-inventory"
   },
   "claimedAt": "2026-11-01T19:52:49.569Z",
-  "heartbeatAt": "2026-11-01T19:52:49.569Z",
-  "expiresAt": "2026-11-01T20:37:49.569Z",
+  "heartbeatAt": "2026-11-01T20:10:42.741Z",
+  "expiresAt": "2026-11-01T20:55:42.741Z",
   "branch": "work/zerg2-s02-inventory",
   "predecessor": {
     "leaseId": "a17ca040-a77b-4229-8273-15b4964bf355",
@@ -27,5 +27,10 @@
       "next": "Bind an exact compatible outlet-to-branch joint, all retained constituents and its installed/release envelopes; combine with complete waste/support/clear-opening section. Reconcile the current caulked cast-iron stack package and its removal path.",
       "blocker": "Complete material package, physical fit and renewal remain unresolved. MAT-SERVICES stays planned; the bounded study is merged, not an installed-system acceptance."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote checkpoint7dd6cd532cfa3031df5abb3dbec3bdeda02e0b08 tree27d54725a21c43ed4d2216c83b0f0c421c40bbcc; six new MAT services inventory files; deterministic check passed. Main6a953ef6 integration preserved.",
+    "next": "Complete finite conditional east high-level branch with123socket/bend/ceiling/arch envelopes; render and independent access review; root integration.",
+    "blocker": "Checkpoint is partial: actual fixture outlet and material/circuit selection unqualified; east route not yet a complete conditional geometry."
   }
 }
