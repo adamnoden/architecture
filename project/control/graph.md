@@ -18,7 +18,6 @@ flowchart LR
   end
   subgraph g_HAD["HAD"]
     direction TB
-    n_HAD_BOUNDARY["HAD-BOUNDARY<br/>Compare the Boundary Service Lodge and accessible external service raceway<br/><b>READY</b>"]
     n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>READY</b>"]
   end
   subgraph g_SHARED["Shared integration gates"]
@@ -49,7 +48,6 @@ flowchart LR
   end
   subgraph g_STR["STR"]
     direction TB
-    n_STR_GROUND["STR-GROUND<br/>Compare tree-tolerant foundations, ground movement isolation and substructure interfaces<br/><b>READY</b>"]
     n_STR_RECONCILE["STR-RECONCILE<br/>Reconcile structural interfaces and affected evidence for house selection<br/><b>BLOCKED</b>"]
   end
   subgraph g_MAT["MAT"]
@@ -130,7 +128,6 @@ flowchart LR
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
   n_STR_HOUSE --> n_STR_RECONCILE
-  n_STR_GROUND --> n_STR_RECONCILE
   n_MAT_ENVELOPE --> n_MAT_COORDINATION
   n_MAT_SERVICES --> n_MAT_COORDINATION
   n_MAT_INTERIORS --> n_MAT_COORDINATION
@@ -197,7 +194,6 @@ flowchart LR
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_IAS_03 ready;
-  class n_HAD_BOUNDARY ready;
   class n_HAD_03 ready;
   class n_TRIAD_GATE blocked;
   class n_BCR_CONVERGENCE blocked;
@@ -208,7 +204,6 @@ flowchart LR
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
-  class n_STR_GROUND ready;
   class n_STR_HOUSE ready;
   class n_STR_RECONCILE blocked;
   class n_MAT_ENVELOPE ready;
@@ -322,7 +317,7 @@ flowchart LR
     n_HAD_01P["HAD-01P<br/>Principal-interior architectural design<br/><b>DONE</b>"]
     n_HAD_01S["HAD-01S<br/>Private and service-interior architectural design<br/><b>DONE</b>"]
     n_HAD_02M["HAD-02M<br/>Material and finish synthesis<br/><b>DONE</b>"]
-    n_HAD_BOUNDARY["HAD-BOUNDARY<br/>Compare the Boundary Service Lodge and accessible external service raceway<br/><b>READY</b>"]
+    n_HAD_BOUNDARY["HAD-BOUNDARY<br/>Compare the Boundary Service Lodge and accessible external service raceway<br/><b>DONE</b>"]
     n_HAD_03["HAD-03<br/>Architectural design convergence and visual synthesis<br/><b>READY</b>"]
   end
   subgraph g_SHARED["Shared integration gates"]
@@ -387,7 +382,7 @@ flowchart LR
     n_STR_00["STR-00<br/>Establish the structural brief and coordinated architecture programme<br/><b>DONE</b>"]
     n_STR_MASONRY["STR-MASONRY<br/>Compare solid wall roles and genuine masonry opening systems<br/><b>DONE</b>"]
     n_STR_SPANS["STR-SPANS<br/>Compare primary floor and roof systems with direct support<br/><b>DONE</b>"]
-    n_STR_GROUND["STR-GROUND<br/>Compare tree-tolerant foundations, ground movement isolation and substructure interfaces<br/><b>READY</b>"]
+    n_STR_GROUND["STR-GROUND<br/>Compare tree-tolerant foundations, ground movement isolation and substructure interfaces<br/><b>DONE</b>"]
     n_STR_RECONCILE["STR-RECONCILE<br/>Reconcile structural interfaces and affected evidence for house selection<br/><b>BLOCKED</b>"]
   end
   subgraph g_MAT["MAT"]
@@ -824,7 +819,7 @@ flowchart LR
   class n_HAD_02M done;
   class n_IAS_03 ready;
   class n_OAS_03 done;
-  class n_HAD_BOUNDARY ready;
+  class n_HAD_BOUNDARY done;
   class n_HAD_03 ready;
   class n_OAS_DETAIL done;
   class n_TRIAD_GATE blocked;
@@ -865,7 +860,7 @@ flowchart LR
   class n_STR_00 done;
   class n_STR_MASONRY done;
   class n_STR_SPANS done;
-  class n_STR_GROUND ready;
+  class n_STR_GROUND done;
   class n_STR_HOUSE ready;
   class n_STR_RECONCILE blocked;
   class n_MAT_00 done;
