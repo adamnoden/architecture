@@ -2,8 +2,8 @@
   "identity": "OPEN-N / first whole-floor support calculation checkpoint, unadopted",
   "source": {
     "path": "project/had/studies/open-north-loggia.json",
-    "commit": "1068dd38dc5f9fd682b11bb64c395eede4d4f090",
-    "sha256": "a181df7876311b8bb92eac88a880468e64bbd5033d0d465f10ddc65f12f3c911"
+    "commit": "c83a06f26cf3b146d7cdc8254b4799f390508196",
+    "sha256": "bf98f77a4cc2a8704adf931ef469ceaf3228811dd666cf9250050d0c9d9b32c2"
   },
   "units": "mm / kN / kPa / MPa",
   "floor_fields": [
@@ -40,7 +40,8 @@
       "fully_cracked_phi3_mm": 4.2016792499089775,
       "differential_shrinkage_300microstrain_mm": 1.5932296874999998,
       "L250_comparator_mm": 11.66,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "SW-main",
@@ -75,7 +76,8 @@
       "fully_cracked_phi3_mm": 1.67860159256247,
       "differential_shrinkage_300microstrain_mm": 1.007026171875,
       "L250_comparator_mm": 9.27,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "SE-front",
@@ -110,7 +112,8 @@
       "fully_cracked_phi3_mm": 1.67860159256247,
       "differential_shrinkage_300microstrain_mm": 1.007026171875,
       "L250_comparator_mm": 9.27,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "east-strip",
@@ -145,13 +148,14 @@
       "fully_cracked_phi3_mm": 1.8282206508311334,
       "differential_shrinkage_300microstrain_mm": 1.0509480468749999,
       "L250_comparator_mm": 9.47,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "south-W-gallery",
       "direction": "NS",
       "rectangle": [
-        2817.5,
+        2917.5,
         2650,
         4800,
         3917.5
@@ -180,7 +184,8 @@
       "fully_cracked_phi3_mm": 0.15019674868042726,
       "differential_shrinkage_300microstrain_mm": 0.30122929687499994,
       "L250_comparator_mm": 5.07,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "south-E-gallery",
@@ -215,7 +220,8 @@
       "fully_cracked_phi3_mm": 0.15019674868042726,
       "differential_shrinkage_300microstrain_mm": 0.30122929687499994,
       "L250_comparator_mm": 5.07,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "east-gallery",
@@ -250,18 +256,19 @@
       "fully_cracked_phi3_mm": 0.12786289671659729,
       "differential_shrinkage_300microstrain_mm": 0.27793242187499995,
       "L250_comparator_mm": 4.87,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "west-south",
-      "direction": "EW",
+      "direction": "NS",
       "rectangle": [
         332.5,
         3247.5,
-        3917.5,
+        2817.5,
         4332.5
       ],
-      "axis_span": 3585,
+      "axis_span": 1085,
       "G": 7.5,
       "Q": 2,
       "section": {
@@ -279,13 +286,50 @@
         "ductility": true
       },
       "action": {
-        "M": 21.085681640625,
-        "V": 23.5265625
+        "M": 1.9313847656249998,
+        "V": 7.1203125
       },
-      "fully_cracked_phi3_mm": 9.612255354930607,
-      "differential_shrinkage_300microstrain_mm": 2.4097921875,
-      "L250_comparator_mm": 14.34,
-      "passes_declared_sensitivity": true
+      "fully_cracked_phi3_mm": 0.08064688777330305,
+      "differential_shrinkage_300microstrain_mm": 0.22072968749999997,
+      "L250_comparator_mm": 4.34,
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
+    },
+    {
+      "id": "SW-collector-bay",
+      "direction": "NS",
+      "rectangle": [
+        2917.5,
+        3917.5,
+        3917.5,
+        4332.5
+      ],
+      "axis_span": 415,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 0.28255664062499997,
+        "V": 2.7234374999999997
+      },
+      "fully_cracked_phi3_mm": 0.001726080500608716,
+      "differential_shrinkage_300microstrain_mm": 0.0322921875,
+      "L250_comparator_mm": 1.66,
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "west-stair-gallery",
@@ -294,7 +338,7 @@
         2917.5,
         4432.5,
         3917.5,
-        8767.5
+        8082.5
       ],
       "axis_span": 1000,
       "G": 7.5,
@@ -320,7 +364,80 @@
       "fully_cracked_phi3_mm": 0.058192720323459096,
       "differential_shrinkage_300microstrain_mm": 0.18749999999999997,
       "L250_comparator_mm": 4.0,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
+    },
+    {
+      "id": "west-stair-gallery-N",
+      "direction": "EW",
+      "rectangle": [
+        2917.5,
+        8082.5,
+        4377.5,
+        8852.5
+      ],
+      "axis_span": 1460,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 3.4971562499999997,
+        "V": 9.581249999999999
+      },
+      "fully_cracked_phi3_mm": 0.2644113433905903,
+      "differential_shrinkage_300microstrain_mm": 0.39967499999999995,
+      "L250_comparator_mm": 5.84,
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
+    },
+    {
+      "id": "east-gallery-N",
+      "direction": "EW",
+      "rectangle": [
+        7622.5,
+        8082.5,
+        9300,
+        8290
+      ],
+      "axis_span": 1677.5,
+      "G": 7.5,
+      "Q": 2,
+      "section": {
+        "b": 1000,
+        "h": 200,
+        "d": 157,
+        "As": 753.9822368615504,
+        "cover": 25,
+        "x": 24.104291459768238,
+        "x_d": 0.15353051885202698,
+        "z": 147.35828341609272,
+        "MR": 48.30675136962778,
+        "VRdc": 91.68644480293776,
+        "As_min": 236.756,
+        "ductility": true
+      },
+      "action": {
+        "M": 4.61672900390625,
+        "V": 11.00859375
+      },
+      "fully_cracked_phi3_mm": 0.46080668931367247,
+      "differential_shrinkage_300microstrain_mm": 0.5276261718749999,
+      "L250_comparator_mm": 6.71,
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "NW",
@@ -355,7 +472,8 @@
       "fully_cracked_phi3_mm": 3.65411538048878,
       "differential_shrinkage_300microstrain_mm": 1.4857921874999998,
       "L250_comparator_mm": 11.26,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "above-loggia",
@@ -390,7 +508,8 @@
       "fully_cracked_phi3_mm": 7.170832066945128,
       "differential_shrinkage_300microstrain_mm": 1.9743796874999997,
       "L250_comparator_mm": 12.98,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     },
     {
       "id": "NE",
@@ -425,7 +544,8 @@
       "fully_cracked_phi3_mm": 7.572688459673061,
       "differential_shrinkage_300microstrain_mm": 2.138907421875,
       "L250_comparator_mm": 13.51,
-      "passes_declared_sensitivity": true
+      "passes_declared_sensitivity": true,
+      "both_finite_edges_covered": true
     }
   ],
   "wet_wall_beam": {
@@ -435,9 +555,10 @@
       11667.5
     ],
     "span": 2815,
-    "top": 3520,
-    "bottom": 3170,
-    "upstand_above_FFL": 70,
+    "top": 3370,
+    "bottom": 3020,
+    "finished_soffit": 3005,
+    "upstand_above_FFL": 0,
     "tributary_width": 2022.5,
     "G": 24.37375,
     "Q": 4.045,
@@ -491,52 +612,91 @@
     "south_pier_projection_beyond_140_wall_each_side": 80,
     "actual_receiving_pier_material": "RC140x300 trial, not an assumed masonry capacity",
     "shear_links_required": true,
-    "resolved": false
+    "resolved": false,
+    "fully_cracked_phi3_deflection_mm": 5.714814807260531,
+    "differential_shrinkage_300microstrain_mm": 0.849024107142857,
+    "L250_comparator_mm": 11.26,
+    "receiving_pier_check": {
+      "core": [
+        140,
+        300
+      ],
+      "height": 3200,
+      "steel": "4H12;H6/100 closed links",
+      "N": 59.38917796875001,
+      "Pcr": 542.7772957569898,
+      "EI_fraction": 0.25,
+      "amplification": 1.1228602354573534,
+      "e0": 20,
+      "M": 1.3337149271521862,
+      "NR_screen": 423.7856287104073,
+      "MR_screen": 9.181367916472194,
+      "linear_interaction": 0.2854028742611552,
+      "limit": "No unbalanced arch thrust/wind accepted; ties must close actual springing forces locally."
+    }
   },
   "lower_grid": {
     "top": -180,
     "bottom": -630,
-    "width": 250,
+    "width": 600,
     "depth": 450,
     "maximum_support_pitch": 3000,
-    "cap_envelope_bottom": -680,
-    "cap_size_xy": [
-      650,
-      650
+    "west_weather_beam_bounds_x": [
+      4200,
+      4800
     ],
-    "cap_depth": 500,
+    "east_weather_beam_bounds_x": [
+      7200,
+      7800
+    ],
+    "west_core_axis": 4377.5,
+    "west_weather_axis": 4748.75,
+    "west_beam_axis": 4500,
+    "torsion_kNm": 9.85761140625,
+    "distributed_torque_kNm_m": -6.5717409374999995,
+    "torsion_effective_area_mm2": 175000,
+    "outer_link_torsion_plus_shear_ratio": 0.34533586762117346,
+    "outer_link_provided_ratio": 0.5026548245743669,
+    "TRmax": 157.08000000000004,
+    "V_T_strut_utilisation": 0.2439517697704081,
+    "cap_envelope_bottom": -630,
+    "cap_size_xy": [
+      600,
+      600
+    ],
+    "minimum_cap_depth": 450,
     "cover_comparator": 40,
-    "G": 57.06,
+    "G": 73.7075,
     "Q": 10.17,
     "section": {
-      "b": 250,
+      "b": 600,
       "h": 450,
-      "d": 391,
-      "As": 760.26542216873,
+      "d": 392,
+      "As": 942.4777960769379,
       "cover": 40,
-      "x": 97.22064222106522,
-      "x_d": 0.2486461437878906,
-      "z": 352.1117431115739,
-      "MR": 116.39060131621224,
-      "VRdc": 57.49132521121887,
-      "As_min": 147.407,
+      "x": 50.217273874517154,
+      "x_d": 0.12810529049621722,
+      "z": 371.9130904501931,
+      "MR": 152.3999260085482,
+      "VRdc": 110.83751775993986,
+      "As_min": 354.6816,
       "ductility": true
     },
     "action": {
-      "M": 103.82175000000001,
-      "V": 138.429
+      "M": 129.105140625,
+      "V": 172.1401875
     },
     "links": {
       "diameter": 8,
       "pitch": 100,
-      "VRs": 153.81237631975628,
-      "VRmax": 394.83180000000004,
-      "minimum_ratio": 0.21908902300206645,
-      "provided_ratio": 1.0053096491487339,
-      "maximum_pitch": 293.25
+      "VRs": 308.41151671275946,
+      "VRmax": 950.0198400000002,
+      "minimum_ratio": 0.5258136552049595,
+      "provided_ratio": 2.0106192982974678,
+      "maximum_pitch": 294.0
     },
     "shear_links_required": true,
-    "four_arm_node_vertical_demand": 553.716,
+    "four_arm_node_vertical_demand": 688.56075,
     "pile_capacity": null,
     "soil_stiffness": null,
     "cap_adequacy": null,
@@ -545,9 +705,1300 @@
     "heave_stress": 300,
     "construction_loss": 50,
     "ventilation_comparator": 150,
-    "raw_clearance_below_cap": 520,
-    "post_heave_and_loss": 170,
-    "ventilation_surplus": 20
+    "lowest_member": -650,
+    "raw_clearance_below_lowest_member": 550,
+    "post_heave_and_loss": 200,
+    "ventilation_surplus": 50,
+    "cavity_route": "Drained tray above common beam; NOT225 clear cavity. MAT owns actual tray/weep return.",
+    "deck_cap_route": "Integral600 nodes stay within600 weatherbeam footprint. No900 cap islands; independent sloped deck retains25gap. Lowties top-450/bottom-650 pass below deck.",
+    "actual_routes": [
+      [
+        "outer-W",
+        [
+          300,
+          300
+        ],
+        [
+          300,
+          11700
+        ],
+        600
+      ],
+      [
+        "outer-E",
+        [
+          11700,
+          300
+        ],
+        [
+          11700,
+          11700
+        ],
+        600
+      ],
+      [
+        "outer-S",
+        [
+          300,
+          300
+        ],
+        [
+          11700,
+          300
+        ],
+        600
+      ],
+      [
+        "outer-N-W",
+        [
+          300,
+          11700
+        ],
+        [
+          4500,
+          11700
+        ],
+        600
+      ],
+      [
+        "outer-N-E",
+        [
+          7500,
+          11700
+        ],
+        [
+          11700,
+          11700
+        ],
+        600
+      ],
+      [
+        "loggia-W",
+        [
+          4500,
+          8050
+        ],
+        [
+          4500,
+          11700
+        ],
+        600
+      ],
+      [
+        "loggia-E",
+        [
+          7500,
+          8050
+        ],
+        [
+          7500,
+          11700
+        ],
+        600
+      ],
+      [
+        "rear-W",
+        [
+          300,
+          8852.5
+        ],
+        [
+          4500,
+          8852.5
+        ],
+        250
+      ],
+      [
+        "wet-wall-node-line",
+        [
+          2902.5,
+          8852.5
+        ],
+        [
+          2902.5,
+          11667.5
+        ],
+        250
+      ],
+      [
+        "stair-post-node-line",
+        [
+          2942.5,
+          4332.5
+        ],
+        [
+          2942.5,
+          8852.5
+        ],
+        250
+      ],
+      [
+        "stair-header-line",
+        [
+          300,
+          4332.5
+        ],
+        [
+          3950,
+          4332.5
+        ],
+        250
+      ],
+      [
+        "court-W",
+        [
+          3950,
+          3950
+        ],
+        [
+          3950,
+          8050
+        ],
+        600
+      ],
+      [
+        "court-E",
+        [
+          8050,
+          3950
+        ],
+        [
+          8050,
+          8050
+        ],
+        600
+      ],
+      [
+        "court-S",
+        [
+          3950,
+          3950
+        ],
+        [
+          8050,
+          3950
+        ],
+        600
+      ],
+      [
+        "court-N-W",
+        [
+          3950,
+          8050
+        ],
+        [
+          4500,
+          8050
+        ],
+        600
+      ],
+      [
+        "court-N-E",
+        [
+          7500,
+          8050
+        ],
+        [
+          8050,
+          8050
+        ],
+        600
+      ],
+      [
+        "spine",
+        [
+          9300,
+          300
+        ],
+        [
+          9300,
+          8290
+        ],
+        250
+      ],
+      [
+        "rear-E",
+        [
+          7500,
+          8290
+        ],
+        [
+          11700,
+          8290
+        ],
+        250
+      ]
+    ],
+    "actual_cap_nodes": [
+      {
+        "xy": [
+          2942.5,
+          7132.5
+        ],
+        "source": "stair-post",
+        "point_ULS": 100,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          332.5,
+          4332.5
+        ],
+        "source": "stair-header-W",
+        "point_ULS": 100,
+        "connected_nearby_axes": [
+          [
+            300.0,
+            4332.5
+          ]
+        ],
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          3917.5,
+          4332.5
+        ],
+        "source": "stair-header-E",
+        "point_ULS": 100,
+        "connected_nearby_axes": [
+          [
+            3950.0,
+            4332.5
+          ],
+          [
+            3950.0,
+            3950.0
+          ]
+        ],
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          4785,
+          3917.5
+        ],
+        "source": "entrance-W",
+        "point_ULS": 100,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          7215,
+          3917.5
+        ],
+        "source": "entrance-E",
+        "point_ULS": 100,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          2902.5,
+          8852.5
+        ],
+        "source": "wet-S",
+        "point_ULS": 54.85317796875001,
+        "connected_nearby_axes": [
+          [
+            2942.5,
+            8852.5
+          ]
+        ],
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          2902.5,
+          11667.5
+        ],
+        "source": "wet-N",
+        "point_ULS": 54.85317796875001,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          300.0,
+          300.0
+        ],
+        "source": "outer-S",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          300.0,
+          3150.0
+        ],
+        "source": "outer-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          300.0,
+          6000.0
+        ],
+        "source": "outer-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          300.0,
+          8850.0
+        ],
+        "source": "outer-W",
+        "point_ULS": 0,
+        "connected_nearby_axes": [
+          [
+            300.0,
+            8852.5
+          ]
+        ],
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          300.0,
+          11700.0
+        ],
+        "source": "outer-N-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          11700.0,
+          300.0
+        ],
+        "source": "outer-S",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          11700.0,
+          3150.0
+        ],
+        "source": "outer-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          11700.0,
+          6000.0
+        ],
+        "source": "outer-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          11700.0,
+          8850.0
+        ],
+        "source": "outer-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          11700.0,
+          11700.0
+        ],
+        "source": "outer-N-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          3150.0,
+          300.0
+        ],
+        "source": "outer-S",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          6000.0,
+          300.0
+        ],
+        "source": "outer-S",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          8850.0,
+          300.0
+        ],
+        "source": "outer-S",
+        "point_ULS": 0,
+        "connected_nearby_axes": [
+          [
+            9300.0,
+            300.0
+          ]
+        ],
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          2400.0,
+          11700.0
+        ],
+        "source": "outer-N-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          4500.0,
+          11700.0
+        ],
+        "source": "loggia-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          7500.0,
+          11700.0
+        ],
+        "source": "loggia-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          9600.0,
+          11700.0
+        ],
+        "source": "outer-N-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          4500.0,
+          8050.0
+        ],
+        "source": "court-N-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          4500.0,
+          9875.0
+        ],
+        "source": "loggia-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          7500.0,
+          8050.0
+        ],
+        "source": "court-N-E",
+        "point_ULS": 0,
+        "connected_nearby_axes": [
+          [
+            7500.0,
+            8290.0
+          ]
+        ],
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          7500.0,
+          9875.0
+        ],
+        "source": "loggia-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          2400.0,
+          8852.5
+        ],
+        "source": "rear-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          4500.0,
+          8852.5
+        ],
+        "source": "rear-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          2942.5,
+          4332.5
+        ],
+        "source": "stair-post-node-line",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          2942.5,
+          6592.5
+        ],
+        "source": "stair-post-node-line",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          2125.0,
+          4332.5
+        ],
+        "source": "stair-header-line",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          3950.0,
+          6000.0
+        ],
+        "source": "court-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          3950.0,
+          8050.0
+        ],
+        "source": "court-N-W",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          8050.0,
+          3950.0
+        ],
+        "source": "court-S",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          8050.0,
+          6000.0
+        ],
+        "source": "court-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          8050.0,
+          8050.0
+        ],
+        "source": "court-N-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          6000.0,
+          3950.0
+        ],
+        "source": "court-S",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          9300.0,
+          2963.3333333333335
+        ],
+        "source": "spine",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          9300.0,
+          5626.666666666667
+        ],
+        "source": "spine",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          9300.0,
+          8290.0
+        ],
+        "source": "spine",
+        "point_ULS": 0,
+        "connected_nearby_axes": [
+          [
+            9600.0,
+            8290.0
+          ]
+        ],
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      },
+      {
+        "xy": [
+          11700.0,
+          8290.0
+        ],
+        "source": "rear-E",
+        "point_ULS": 0,
+        "cap_size": [
+          600,
+          600
+        ],
+        "top": -180,
+        "bottom": -630,
+        "outside_deck_notch_25": false,
+        "role": "Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck."
+      }
+    ],
+    "low_loggia_ties": [
+      {
+        "y": 8050,
+        "x_supports": [
+          4500,
+          7500
+        ],
+        "top": -450,
+        "bottom": -650,
+        "section": [
+          250,
+          200
+        ],
+        "steel": "2H16 each face;H8/100",
+        "axial_action_ceiling": 100,
+        "gravity_wall_load": 0
+      },
+      {
+        "y": 11700,
+        "x_supports": [
+          4500,
+          7500
+        ],
+        "top": -450,
+        "bottom": -650,
+        "section": [
+          250,
+          200
+        ],
+        "steel": "2H16 each face;H8/100",
+        "axial_action_ceiling": 100,
+        "gravity_wall_load": 0
+      }
+    ]
+  },
+  "cap": {
+    "plan": [
+      600,
+      600
+    ],
+    "minimum_depth": 450,
+    "d": 370,
+    "cover": 40,
+    "N_envelope_kN": 850,
+    "M_envelope_kNm_each_axis": 100,
+    "specified_pile_head_diameter": 400,
+    "pile_soil_capacity": null,
+    "head_stress_MPa": 6.764085081405552,
+    "concrete_node_limit_MPa": 8.976,
+    "tie_demand_kN_each_direction": 385.1351351351351,
+    "bottom_steel_each_direction": "4H20, orthogonal layers",
+    "As_each_direction": 1256.6370614359173,
+    "tie_resistance_kN": 546.3639397547466,
+    "continuous_straight_development_into_beam_arms": 750,
+    "terminal_corner_mandrel": 330,
+    "bottom_bar_positions_in_600": [
+      50,
+      150,
+      450,
+      550
+    ],
+    "pile_vertical_bar_centres": [
+      [
+        200,
+        200
+      ],
+      [
+        200,
+        400
+      ],
+      [
+        400,
+        200
+      ],
+      [
+        400,
+        400
+      ]
+    ],
+    "full_yield_bond_length_mm": 724.6376811594204,
+    "available_straight_development_mm": 750,
+    "footing_role": "Integral grillage node, not isolated cap: bars continue into actual beam arms; terminal corner cages and pilehead lateral/uplift remain explicit admission duties.",
+    "per_bar_force_kN": 96.28378378378378,
+    "required_mandrel_mm": 254.86883942766295
+  },
+  "special_ground_nodes": [
+    {
+      "id": "wet-S",
+      "xy": [
+        2902.5,
+        8852.5
+      ],
+      "point_ULS": 54.85317796875001
+    },
+    {
+      "id": "wet-N",
+      "xy": [
+        2902.5,
+        11667.5
+      ],
+      "point_ULS": 54.85317796875001
+    },
+    {
+      "id": "stair-post",
+      "xy": [
+        2942.5,
+        7132.5
+      ],
+      "point_ULS": 100
+    },
+    {
+      "id": "stair-header-W",
+      "xy": [
+        332.5,
+        4332.5
+      ],
+      "point_ULS": 100
+    },
+    {
+      "id": "stair-header-E",
+      "xy": [
+        3917.5,
+        4332.5
+      ],
+      "point_ULS": 100
+    },
+    {
+      "id": "entrance-W",
+      "xy": [
+        4785,
+        3917.5
+      ],
+      "point_ULS": 100
+    },
+    {
+      "id": "entrance-E",
+      "xy": [
+        7215,
+        3917.5
+      ],
+      "point_ULS": 100
+    }
+  ],
+  "finite_floor_frame": {
+    "corner_collectors": [
+      {
+        "id": "CW",
+        "axis_y": 3917.5,
+        "x_supports": [
+          2917.5,
+          3917.5
+        ],
+        "section": {
+          "b": 200,
+          "h": 250,
+          "d": 210,
+          "As": 307.8760800517997,
+          "cover": 25,
+          "x": 49.21292839702681,
+          "x_d": 0.23434727808108002,
+          "z": 190.31482864118928,
+          "MR": 25.475384094686667,
+          "VRdc": 27.9004677725584,
+          "As_min": 63.336,
+          "ductility": true
+        },
+        "action": {
+          "M": 1.4223632812500002,
+          "V": 5.689453125000001
+        }
+      },
+      {
+        "id": "CE",
+        "axis_y": 3917.5,
+        "x_supports": [
+          8082.5,
+          9300
+        ],
+        "section": {
+          "b": 200,
+          "h": 250,
+          "d": 210,
+          "As": 307.8760800517997,
+          "cover": 25,
+          "x": 49.21292839702681,
+          "x_d": 0.23434727808108002,
+          "z": 190.31482864118928,
+          "MR": 25.475384094686667,
+          "VRdc": 27.9004677725584,
+          "As_min": 63.336,
+          "ductility": true
+        },
+        "action": {
+          "M": 1.6037569281005861,
+          "V": 5.269016601562501
+        }
+      }
+    ],
+    "west_return": {
+      "axis_x": 2917.5,
+      "y_supports": [
+        2650,
+        4332.5
+      ],
+      "point_from_CW": 5.689453125000001,
+      "north_reaction": 4.570032921619615
+    },
+    "long_trimmer": {
+      "axis_x": 2917.5,
+      "y_supports": [
+        4332.5,
+        7132.5,
+        8852.5
+      ],
+      "spans": [
+        {
+          "M": 8.7465,
+          "V": 12.495000000000001
+        },
+        {
+          "M": 3.300465,
+          "V": 7.6755
+        }
+      ],
+      "section": {
+        "b": 200,
+        "h": 350,
+        "d": 310,
+        "As": 402.1238596594935,
+        "cover": 25,
+        "x": 64.27811055938196,
+        "x_d": 0.2073487437399418,
+        "z": 284.2887557762472,
+        "MR": 49.70403988284334,
+        "VRdc": 36.084272903721896,
+        "As_min": 93.496,
+        "ductility": true
+      }
+    },
+    "stair_header": {
+      "axis_y": 4332.5,
+      "x_supports": [
+        332.5,
+        3917.5
+      ],
+      "points": [
+        [
+          17.065032921619615,
+          2.585
+        ],
+        [
+          21.730658598138195,
+          1.935
+        ]
+      ],
+      "M": 41.53954922357271,
+      "reactions": [
+        29.33974551602619,
+        38.61207881623162
+      ],
+      "section": {
+        "b": 250,
+        "h": 350,
+        "d": 310,
+        "As": 763.4070148223198,
+        "cover": 25,
+        "x": 97.62238041206135,
+        "x_d": 0.3149109045550366,
+        "z": 270.9510478351755,
+        "MR": 89.93301330036124,
+        "VRdc": 51.846972538472244,
+        "As_min": 116.87,
+        "ductility": true
+      },
+      "links": {
+        "diameter": 8,
+        "pitch": 100,
+        "VRs": 121.94843135325948,
+        "VRmax": 313.038,
+        "minimum_ratio": 0.21908902300206645,
+        "provided_ratio": 1.0053096491487339,
+        "maximum_pitch": 232.5
+      },
+      "top": 3370,
+      "bottom": 3020,
+      "finished_soffit": 3005,
+      "west_window_arch_must_rewind": true
+    },
+    "stair": {
+      "risers": 20,
+      "rise": 172.5,
+      "going": 300,
+      "landing_depth": 1635,
+      "flight_clear_width": 1100,
+      "waist": 150,
+      "waist_section": {
+        "b": 1000,
+        "h": 150,
+        "d": 109,
+        "As": 904.7786842338604,
+        "cover": 25,
+        "x": 28.92514975172188,
+        "x_d": 0.26536834634607226,
+        "z": 97.42994009931125,
+        "MR": 38.327188264364636,
+        "VRdc": 76.39239256033756,
+        "As_min": 164.372,
+        "ductility": true
+      },
+      "G": 7.506251950686215,
+      "Q": 3,
+      "flight_action": {
+        "M": 13.3347223215848,
+        "V": 19.75514418012563
+      },
+      "flight_end_reaction": 21.730658598138195,
+      "midlanding_post_core": [
+        2817.5,
+        7007.5,
+        250,
+        250
+      ],
+      "finished_gallery_remaining": 750,
+      "actual_midlanding_EWbeam_and_post_design_pending": true
+    },
+    "NE_return": {
+      "original_endpoint": 7750,
+      "required_endpoint": 7552.5,
+      "overlap_core": [
+        7552.5,
+        7692.5
+      ],
+      "reason": "Full140 material junction to loggia core; source rewind required, no57.5void."
+    }
   },
   "E02_service_port": {
     "wall": "plant-north",
@@ -571,12 +2022,12 @@
     "capacity": null
   },
   "retained_open_items": [
-    "HAD finishedFaces/t disagreement and cabinet lining collision must be corrected at source.",
-    "Actual stair reactions/finite frame, entrance bridge, all tied arches and roof heel/reaction envelope remain design work.",
+    "HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.",
+    "Corner collectors and finite field edges now calculated. Actual midlanding/post, entrance bridge, tied arches and roof remain to complete.",
     "Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.",
     "Wet-wall beam receiving RC piers project80 beyond original wall faces; HAD must check actual door/sofa tasks.",
-    "Ground cap envelope, actual reinforcement/pilehead/node behaviour and DPC/floor moisture route not yet resolved.",
-    "Exposed-soffit anchors/rails/wind and2930 finished soffit require actual arch/head coordination.",
+    "Integral600node S&T/cage model replaces900caps; terminal cages, actual pilehead/group/lateral/uplift and DPC/floor moisture remain to verify.",
+    "Revised240glass+40lining\u21922890soffit requires actual arch/head/thermal coordination; anchorsunfinished.",
     "No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows."
   ]
 }

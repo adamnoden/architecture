@@ -14,8 +14,8 @@ from html import escape
 OUT=Path(__file__).resolve().parent
 ROOT=OUT.parents[2]
 HAD_PATH='project/had/studies/open-north-loggia.json'
-HAD_COMMIT='1068dd38dc5f9fd682b11bb64c395eede4d4f090'
-HAD_SHA='a181df7876311b8bb92eac88a880468e64bbd5033d0d465f10ddc65f12f3c911'
+HAD_COMMIT='c83a06f26cf3b146d7cdc8254b4799f390508196'
+HAD_SHA='bf98f77a4cc2a8704adf931ef469ceaf3228811dd666cf9250050d0c9d9b32c2'
 local=ROOT/HAD_PATH
 raw=local.read_bytes() if local.exists() else subprocess.check_output(['git','show',HAD_COMMIT+':'+HAD_PATH],cwd=ROOT)
 if hashlib.sha256(raw).hexdigest()!=HAD_SHA:
@@ -27,6 +27,10 @@ assert gw['loggia-west-weather']['structuralCore']==[4307.5,4447.5]
 assert gw['loggia-east-weather']['structuralCore']==[7552.5,7692.5]
 assert uw['rear-divider']['a'][0]==7622.5
 assert uw['rear-west-return']['a'][0]==4377.5
+assert gw['rear-east']['a'][0]==7552.5
+assert uw['rear-east']['a'][0]==7552.5
+for w in had['upperWalls']:
+    if 'finishedFaces' in w: assert math.isclose(w['t'],w['finishedFaces'][1]-w['finishedFaces'][0])
 assert not any(w['id']=='rear-reading-east' for w in had['groundWalls'])
 
 def udl(w,L):
@@ -69,11 +73,14 @@ fields=[
  ('SW-main','NS',[2817.5,332.5,4800,2650],2317.5,7.5),
  ('SE-front','NS',[7200,332.5,9300,2650],2317.5,7.5),
  ('east-strip','EW',[9300,332.5,11667.5,8290],2367.5,7.5),
- ('south-W-gallery','NS',[2817.5,2650,4800,3917.5],1267.5,7.5),
+ ('south-W-gallery','NS',[2917.5,2650,4800,3917.5],1267.5,7.5),
  ('south-E-gallery','NS',[7200,2650,9300,3917.5],1267.5,7.5),
  ('east-gallery','EW',[8082.5,3917.5,9300,8082.5],1217.5,7.5),
- ('west-south','EW',[332.5,3247.5,3917.5,4332.5],3585,7.5),
- ('west-stair-gallery','EW',[2917.5,4432.5,3917.5,8767.5],1000,7.5),
+ ('west-south','NS',[332.5,3247.5,2817.5,4332.5],1085,7.5),
+ ('SW-collector-bay','NS',[2917.5,3917.5,3917.5,4332.5],415,7.5),
+ ('west-stair-gallery','EW',[2917.5,4432.5,3917.5,8082.5],1000,7.5),
+ ('west-stair-gallery-N','EW',[2917.5,8082.5,4377.5,8852.5],1460,7.5),
+ ('east-gallery-N','EW',[7622.5,8082.5,9300,8290],1677.5,7.5),
  ('NW','NS',[332.5,8852.5,4377.5,11667.5],2815,7.5),
  ('above-loggia','EW',[4377.5,8082.5,7622.5,11667.5],3245,8.5),
  ('NE','NS',[7622.5,8290,11667.5,11667.5],3377.5,7.5),
@@ -95,6 +102,35 @@ for name,direction,rect,Lmm,G in fields:
     assert s['ductility'] and s['As']>=s['As_min']
     assert a['M']<s['MR'] and a['V']<s['VRdc']
 
+# Actual support-line coverage. Union intervals detect unsupported PARTS of an
+# edge; a nominal span or a nearby corner cannot make an absent wall continuous.
+horizontal={332.5:[(332.5,11667.5,'outer-S')],11667.5:[(332.5,11667.5,'outer-N')],
+            2650:[(2817.5,4800,'front-W'),(7200,9300,'front-E')],
+            3247.5:[(332.5,2817.5,'L-north')],
+            3917.5:[(2917.5,3917.5,'CW-collector'),(3917.5,8082.5,'court-S'),(8082.5,9300,'CE-collector')],
+            4332.5:[(332.5,3917.5,'stair-header')],8852.5:[(332.5,4377.5,'rear-W')],
+            8290:[(7552.5,11667.5,'rear-E-extended')]}
+vertical={332.5:[(332.5,11667.5,'outer-W')],11667.5:[(332.5,11667.5,'outer-E')],
+          3917.5:[(3917.5,8082.5,'court-W')],8082.5:[(3917.5,8082.5,'court-E')],
+          9300:[(332.5,8290,'spine')],4377.5:[(7750,11667.5,'loggia-W')],
+          7622.5:[(7750,11667.5,'loggia-E')],2917.5:[(2650,8852.5,'return-and-trimmer')]}
+def edge_covered(interval,segments):
+    cursor=interval[0]
+    for lo,hi,name in sorted(segments):
+        if hi<=cursor: continue
+        if lo>cursor+1e-8:return False
+        cursor=max(cursor,hi)
+        if cursor>=interval[1]-1e-8:return True
+    return False
+for f in floor:
+    x1,y1,x2,y2=f['rectangle']
+    if f['direction']=='NS':
+        pairs=[([x1,x2],horizontal.get(y,[])) for y in [y1,y2]]
+    else:pairs=[([y1,y2],vertical.get(x,[])) for x in [x1,x2]]
+    assert all(edge_covered(*p) for p in pairs),f['id']+' has an unsupported edge'
+    f['both_finite_edges_covered']=True
+assert not edge_covered([2817.5,3917.5],[(3917.5,8082.5,'court-S')])
+
 # The removed ground reading wall requires an ACTUAL beam under its upper wall.
 # All adjacent NW slab tributary width is conservatively collected by this beam.
 wet_trib=(2902.5-332.5+4377.5-2902.5)/2/1000
@@ -104,7 +140,7 @@ wet_section=rc(140,350,310,2*area(18),25)
 wet_action=udl(1.35*wet_G+1.5*wet_Q,2.815)
 wet_links=links(140,310,6,100)
 wet=dict(axis_x=2902.5,support_axes_y=[8852.5,11667.5],span=2815,
-         top=3520,bottom=3170,upstand_above_FFL=70,
+         top=3370,bottom=3020,finished_soffit=3005,upstand_above_FFL=0,
          tributary_width=wet_trib*1000,G=wet_G,Q=wet_Q,
          section=wet_section,action=wet_action,links=wet_links,
          south_receiving_core=[2832.5,8702.5,140,300],
@@ -114,28 +150,205 @@ wet=dict(axis_x=2902.5,support_axes_y=[8852.5,11667.5],span=2815,
          south_pier_projection_beyond_140_wall_each_side=80,
          actual_receiving_pier_material='RC140x300 trial, not an assumed masonry capacity',shear_links_required=wet_action['V']>wet_section['VRdc'],
          resolved=False)
+wet['fully_cracked_phi3_deflection_mm']=cracked(140,350,310,wet_section['As'],wet_G,wet_Q,2.815,3)
+wet['differential_shrinkage_300microstrain_mm']=300e-6/350*2815**2/8
+wet['L250_comparator_mm']=2815/250
 assert wet_action['M']<wet_section['MR'] and wet_section['ductility']
 assert wet_action['V']<min(wet_links['VRs'],wet_links['VRmax'])
 
 # Quantified lower-grid target, not a soil or installed foundation selection.
 # Support pitch must remain <=3000 for this line envelope; cap below beam remains
 # a finite separate envelope. No number is a geotechnical capacity.
-grid_G=2*.14*3.1*20+2*7.5*3.585/2+10+.25*.45*25
+grid_inner_G=2*.14*3.1*20+2*7.5*3.585/2+10
+grid_weather_G=2*.1025*3.1*20
+grid_G=grid_inner_G+grid_weather_G+.6*.45*25
 grid_Q=2*2*3.585/2+3
-grid_section=rc(250,450,391,2*area(22),40)
+grid_section=rc(600,450,392,3*area(20),40)
 grid_action=udl(1.35*grid_G+1.5*grid_Q,3)
-grid_links=links(250,391,8,100)
-grid=dict(top=-180,bottom=-630,width=250,depth=450,maximum_support_pitch=3000,
-          cap_envelope_bottom=-680,cap_size_xy=[650,650],cap_depth=500,
+grid_links=links(600,392,8,100)
+grid_links['VRs']*=2 # four actual legs: outer closed link plus inner crosstie.
+grid_links['provided_ratio']*=2
+torque_per_m=(1.35*grid_inner_G+1.5*grid_Q)*(-.1225)+(1.35*grid_weather_G)*.24875
+grid_T=abs(torque_per_m)*3/2
+Ak=500*350 # conservative effective torsion-cell area inside actual600x450 cage.
+torsion_leg_ratio=grid_T*1e6/(2*Ak*(500/1.15))
+shear_leg_ratio=grid_action['V']*1000/(.9*392*(500/1.15))/4
+assert torsion_leg_ratio+shear_leg_ratio<area(8)/100
+grid_TRmax=.528*17*Ak*100/1e6
+assert grid_action['V']/grid_links['VRmax']+grid_T/grid_TRmax<1
+grid=dict(top=-180,bottom=-630,width=600,depth=450,maximum_support_pitch=3000,
+          west_weather_beam_bounds_x=[4200,4800],east_weather_beam_bounds_x=[7200,7800],
+          west_core_axis=4377.5,west_weather_axis=4748.75,west_beam_axis=4500,
+          torsion_kNm=grid_T,distributed_torque_kNm_m=torque_per_m,
+          torsion_effective_area_mm2=Ak,outer_link_torsion_plus_shear_ratio=torsion_leg_ratio+shear_leg_ratio,
+          outer_link_provided_ratio=area(8)/100,
+          TRmax=grid_TRmax,V_T_strut_utilisation=grid_action['V']/grid_links['VRmax']+grid_T/grid_TRmax,
+          cap_envelope_bottom=-630,cap_size_xy=[600,600],minimum_cap_depth=450,
           cover_comparator=40,G=grid_G,Q=grid_Q,section=grid_section,
           action=grid_action,links=grid_links,shear_links_required=grid_action['V']>grid_section['VRdc'],
           four_arm_node_vertical_demand=4*grid_action['V'],
           pile_capacity=None,soil_stiffness=None,cap_adequacy=None,
           masonry_DPC='150 above grid top -180..-30 hypothesis; MAT moisture junction unqualified',
           target_D=1200,heave_stress=300,construction_loss=50,ventilation_comparator=150,
-          raw_clearance_below_cap=520,post_heave_and_loss=170,ventilation_surplus=20)
+          lowest_member=-650,raw_clearance_below_lowest_member=550,post_heave_and_loss=200,ventilation_surplus=50,
+          cavity_route='Drained tray above common beam; NOT225 clear cavity. MAT owns actual tray/weep return.',
+          deck_cap_route='Integral600 nodes stay within600 weatherbeam footprint. No900 cap islands; independent sloped deck retains25gap. Lowties top-450/bottom-650 pass below deck.')
 assert grid_action['M']<grid_section['MR'] and grid_section['ductility']
 assert grid_action['V']<min(grid_links['VRs'],grid_links['VRmax'])
+
+# Named ground supports: no arbitrary3m bay is asked to absorb concentrated
+# wet-beam/pier or stair-frame reactions. Each special receiver is a cap node.
+special_nodes=[
+ dict(id='wet-S',xy=[2902.5,8852.5],point_ULS=wet_action['V']),
+ dict(id='wet-N',xy=[2902.5,11667.5],point_ULS=wet_action['V']),
+ dict(id='stair-post',xy=[2942.5,7132.5],point_ULS=100),
+ dict(id='stair-header-W',xy=[332.5,4332.5],point_ULS=100),
+ dict(id='stair-header-E',xy=[3917.5,4332.5],point_ULS=100),
+ dict(id='entrance-W',xy=[4785,3917.5],point_ULS=100),
+ dict(id='entrance-E',xy=[7215,3917.5],point_ULS=100),
+]
+# Conservative cap action envelope covers4wide-beam end reactions plus100point.
+# This is a required pile reaction, not a claim that unknown ground supplies it.
+cap_N=850 # required node-action ceiling >=4maximumwidebeamreactions+100point
+assert cap_N>=4*grid_action['V']+100
+cap_M=100 # authored biaxial moment ceiling; no cancellation of eccentricities.
+cap_d=370;cap_lever=100
+cap_tie=cap_N/2*cap_lever/cap_d+cap_M*1000/cap_d
+cap_As=4*area(20)
+cap=dict(plan=[600,600],minimum_depth=450,d=370,cover=40,
+         N_envelope_kN=cap_N,M_envelope_kNm_each_axis=cap_M,
+         specified_pile_head_diameter=400,pile_soil_capacity=None,
+         head_stress_MPa=cap_N*1000/area(400),concrete_node_limit_MPa=.528*17,
+         tie_demand_kN_each_direction=cap_tie,
+         bottom_steel_each_direction='4H20, orthogonal layers',As_each_direction=cap_As,
+         tie_resistance_kN=cap_As*(500/1.15)/1000,
+         continuous_straight_development_into_beam_arms=750,
+         terminal_corner_mandrel=330,
+         bottom_bar_positions_in_600=[50,150,450,550],
+         pile_vertical_bar_centres=[[200,200],[200,400],[400,200],[400,400]],
+         full_yield_bond_length_mm=20/4*(500/1.15)/3,
+         available_straight_development_mm=750,
+         footing_role='Integral grillage node, not isolated cap: bars continue into actual beam arms; terminal corner cages and pilehead lateral/uplift remain explicit admission duties.')
+assert cap['head_stress_MPa']<cap['concrete_node_limit_MPa']
+assert cap_tie<cap['tie_resistance_kN']
+assert cap['available_straight_development_mm']>cap['full_yield_bond_length_mm']
+cap['per_bar_force_kN']=cap_tie/4
+cap['required_mandrel_mm']=cap['per_bar_force_kN']*1000*(1/50+1/(2*20))/17
+assert cap['required_mandrel_mm']<=330
+for v in cap['pile_vertical_bar_centres']:
+    assert min(abs(v[0]-q) for q in cap['bottom_bar_positions_in_600'])>=50
+    assert min(abs(v[1]-q) for q in cap['bottom_bar_positions_in_600'])>=50
+
+# Actual unsupported slab corners get finite collectors, not relabelled supports.
+corner_W_line=(1.35*7.5+1.5*2)*(1.2675+.415)/2+1.35*.2*.05*25
+corner_E_line=(1.35*7.5+1.5*2)*1.2675/2+1.35*.2*.05*25
+corner_section=rc(200,250,210,2*area(14),25)
+corner_W=udl(corner_W_line,1)
+corner_E=udl(corner_E_line,1.2175)
+collectors=[dict(id='CW',axis_y=3917.5,x_supports=[2917.5,3917.5],section=corner_section,action=corner_W),
+            dict(id='CE',axis_y=3917.5,x_supports=[8082.5,9300],section=corner_section,action=corner_E)]
+for c in collectors:
+    assert c['action']['M']<c['section']['MR'] and c['action']['V']<c['section']['VRdc']
+return_reaction=corner_W['V']*1.2675/1.6825+(1.35*.2*.05*25)*1.6825/2
+long_line=(1.35*7.5+1.5*2)*.5+1.35*(.2*.15*25+1.0)
+long_spans=[udl(long_line,L) for L in [2.8,1.72]]
+stair_angle=math.atan2(1.725,2.7)
+stair_G=.15/math.cos(stair_angle)*25+.1725/2*25+.9
+stair_flight=udl(1.35*stair_G+1.5*3,2.7)
+stair_flight_reaction=stair_flight['V']*1.1
+# Header is supported by outer AND court walls, not by its own hanging trimmer.
+header_L=3.585
+header_points=[(long_spans[0]['V']+return_reaction,(2917.5-332.5)/1000),
+               (stair_flight_reaction,(2267.5-332.5)/1000)]
+header_w=1.35*.2*.15*25+(1.35*7.5+1.5*2)*1.085/2
+header_RL=header_w*header_L/2+sum(P*(header_L-a)/header_L for P,a in header_points)
+header_RR=header_w*header_L/2+sum(P*a/header_L for P,a in header_points)
+header_M=max(header_RL*x-header_w*x*x/2-sum(P*max(0,x-a) for P,a in header_points)
+             for x in [header_L*i/1000 for i in range(1001)])
+header_sec=rc(250,350,310,3*area(18),25)
+header_link=links(250,310,8,100)
+assert header_M<header_sec['MR']
+assert max(header_RL,header_RR)<min(header_link['VRs'],header_link['VRmax'])
+frame=dict(corner_collectors=collectors,
+           west_return=dict(axis_x=2917.5,y_supports=[2650,4332.5],point_from_CW=corner_W['V'],north_reaction=return_reaction),
+           long_trimmer=dict(axis_x=2917.5,y_supports=[4332.5,7132.5,8852.5],spans=long_spans,section=rc(200,350,310,2*area(16),25)),
+           stair_header=dict(axis_y=4332.5,x_supports=[332.5,3917.5],points=header_points,
+                             M=header_M,reactions=[header_RL,header_RR],section=header_sec,links=header_link,
+                             top=3370,bottom=3020,finished_soffit=3005,
+                             west_window_arch_must_rewind=True),
+           stair=dict(risers=20,rise=172.5,going=300,landing_depth=1635,flight_clear_width=1100,
+                      waist=150,waist_section=rc(1000,150,109,area(12)*1000/125,25),
+                      G=stair_G,Q=3,flight_action=stair_flight,flight_end_reaction=stair_flight_reaction,
+                      midlanding_post_core=[2817.5,7007.5,250,250],
+                      finished_gallery_remaining=750,
+                      actual_midlanding_EWbeam_and_post_design_pending=True),
+           NE_return=dict(original_endpoint=7750,required_endpoint=7552.5,overlap_core=[7552.5,7692.5],
+                          reason='Full140 material junction to loggia core; source rewind required, no57.5void.'))
+
+# Wet-beam RC piers: conditional second-order screen with no favourable masonry
+# stiffness. Pinned3200,0.25EcIg, minimum20 eccentricity, no primary lateral role.
+pier_N=wet_action['V']+1.35*.14*.3*3.2*25
+pier_I=300*140**3/12
+pier_Pcr=math.pi**2*(E*.25)*pier_I/3200**2/1000
+pier_amp=1/(1-pier_N/pier_Pcr)
+pier_M=pier_N*.02*pier_amp
+pier_sec=rc(300,140,103,2*area(12),25)
+pier_NR=.6*17*(140*300-4*area(12))/1000
+wet['receiving_pier_check']=dict(core=[140,300],height=3200,steel='4H12;H6/100 closed links',
+                              N=pier_N,Pcr=pier_Pcr,EI_fraction=.25,amplification=pier_amp,
+                              e0=20,M=pier_M,NR_screen=pier_NR,MR_screen=pier_sec['MR'],
+                              linear_interaction=pier_N/pier_NR+pier_M/pier_sec['MR'],
+                              limit='No unbalanced arch thrust/wind accepted; ties must close actual springing forces locally.')
+assert wet['receiving_pier_check']['linear_interaction']<1
+
+# Support-node locations are physical plan rectangles. Weather beams share one
+#600wide body; low axial ties cross OPEN ground loggia instead of a raised beam
+# intersecting its sloping deck.
+ground_routes=[
+ ('outer-W',(300,300),(300,11700),600),('outer-E',(11700,300),(11700,11700),600),
+ ('outer-S',(300,300),(11700,300),600),
+ ('outer-N-W',(300,11700),(4500,11700),600),('outer-N-E',(7500,11700),(11700,11700),600),
+ ('loggia-W',(4500,8050),(4500,11700),600),('loggia-E',(7500,8050),(7500,11700),600),
+ ('rear-W',(300,8852.5),(4500,8852.5),250),
+ ('wet-wall-node-line',(2902.5,8852.5),(2902.5,11667.5),250),
+ ('stair-post-node-line',(2942.5,4332.5),(2942.5,8852.5),250),
+ ('stair-header-line',(300,4332.5),(3950,4332.5),250),
+ ('court-W',(3950,3950),(3950,8050),600),('court-E',(8050,3950),(8050,8050),600),
+ ('court-S',(3950,3950),(8050,3950),600),
+ ('court-N-W',(3950,8050),(4500,8050),600),('court-N-E',(7500,8050),(8050,8050),600),
+ ('spine',(9300,300),(9300,8290),250),('rear-E',(7500,8290),(11700,8290),250),
+]
+cap_nodes={}
+for ident,a,b,width in ground_routes:
+    length=math.dist(a,b);cuts=max(1,math.ceil(length/3000))
+    for i in range(cuts+1):
+        p=tuple(a[k]+(b[k]-a[k])*i/cuts for k in range(2))
+        cap_nodes[p]=dict(xy=p,source=ident,point_ULS=0)
+for s in special_nodes:
+    p=tuple(s['xy']);cap_nodes[p]=dict(xy=p,source=s['id'],point_ULS=s['point_ULS'])
+# Merge coincident/nearby mandatory/intersection nodes so400pileheads never overlap.
+merged={}
+for p,node in sorted(cap_nodes.items(),key=lambda item:-item[1]['point_ULS']):
+    near=next((q for q in merged if math.dist(p,q)<500),None)
+    if near is None:merged[p]=node
+    else:
+        merged[near]['point_ULS']+=node['point_ULS']
+        merged[near].setdefault('connected_nearby_axes',[]).append(p)
+cap_nodes=merged
+for p,node in cap_nodes.items():
+    x,y=p
+    exterior=isinstance(y,(int,float)) and y>=7750 and (4050<=x<=4950 or 7050<=x<=7950)
+    local_deck_top=-180-max(0,min(y,12000)-7750)*.01 if exterior else -180
+    node.update(cap_size=[600,600],top=-180,bottom=-630,
+                outside_deck_notch_25=False,
+                role='Integral continuous-grid node; all600weatherbeam edges remainoutside independentdeck.')
+grid['actual_routes']=ground_routes
+grid['actual_cap_nodes']=list(cap_nodes.values())
+grid['low_loggia_ties']=[dict(y=y,x_supports=[4500,7500],top=-450,bottom=-650,
+                                  section=[250,200],steel='2H16 each face;H8/100',
+                                  axial_action_ceiling=100,gravity_wall_load=0)
+                               for y in [8050,11700]]
+assert all(n['point_ULS']<=200 for n in cap_nodes.values())
 
 # E02 service port geometric envelope only; actual circular compression ring and
 # springing ties are the next calculation, never replaced by the ideal ratio.
@@ -157,14 +370,14 @@ for a in [wet_links,grid_links]:
 result=dict(identity='OPEN-N / first whole-floor support calculation checkpoint, unadopted',
             source=dict(path=HAD_PATH,commit=HAD_COMMIT,sha256=HAD_SHA),
             units='mm / kN / kPa / MPa',floor_fields=floor,wet_wall_beam=wet,
-            lower_grid=grid,E02_service_port=port,
+            lower_grid=grid,cap=cap,special_ground_nodes=special_nodes,finite_floor_frame=frame,E02_service_port=port,
             retained_open_items=[
-                'HAD finishedFaces/t disagreement and cabinet lining collision must be corrected at source.',
-                'Actual stair reactions/finite frame, entrance bridge, all tied arches and roof heel/reaction envelope remain design work.',
+                'HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.',
+                'Corner collectors and finite field edges now calculated. Actual midlanding/post, entrance bridge, tied arches and roof remain to complete.',
                 'Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.',
                 'Wet-wall beam receiving RC piers project80 beyond original wall faces; HAD must check actual door/sofa tasks.',
-                'Ground cap envelope, actual reinforcement/pilehead/node behaviour and DPC/floor moisture route not yet resolved.',
-                'Exposed-soffit anchors/rails/wind and2930 finished soffit require actual arch/head coordination.',
+                'Integral600node S&T/cage model replaces900caps; terminal cages, actual pilehead/group/lateral/uplift and DPC/floor moisture remain to verify.',
+                'Revised240glass+40lining→2890soffit requires actual arch/head/thermal coordination; anchorsunfinished.',
                 'No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows.'])
 
 parts=['<svg xmlns="http://www.w3.org/2000/svg" width="594mm" height="420mm" viewBox="0 0 594 420">',
@@ -177,7 +390,7 @@ def box(x,y,w,h,fill,stroke='#345460'):
 def ln(x1,y1,x2,y2,c='#345460'):
     parts.append(f'<path d="M{x1},{y1} L{x2},{y2}" fill="none" stroke="{c}" stroke-width=".65"/>')
 txt(16,15,'OPEN N / actual whole-floor support checkpoint','title')
-txt(16,24,'HAD1068dd38 · RC200 whole upper floor · unadopted / incomplete support design, not for construction')
+txt(16,24,'HADc83a06f2 · RC200 whole upper floor · unadopted / incomplete support design, not for construction')
 txt(16,36,'A / UPPER STRUCTURAL FIELDS · 1:50','title')
 xx=lambda x:20+x/50
 yy=lambda y:286-y/50
@@ -200,7 +413,7 @@ txt(16,316,'G7.5 internal /8.5 exposed-loggia, Q2; H12/150 each face/direction, 
 
 txt(304,36,'B / WET-WALL BEAM & FINITE SUPPORTS','title')
 txt(304,47,'Removed lower reading wall → upper140 masonry → real RC140×350 beam.')
-txt(304,55,'2H18 bottom,2H10 top,H6/100; total350, z3170–3520, permanent70 upstand in wall.')
+txt(304,55,'2H18 bottom,2H10 top,H6/100; total350, z3020–3370; lined soffit3005, NO doorway upstand.')
 txt(304,63,f"G{wet_G:.3f}/Q{wet_Q:.3f} kN/m; M{wet_action['M']:.2f}/MR{wet_section['MR']:.2f}; V{wet_action['V']:.2f}/VRs{wet_links['VRs']:.2f}.")
 box(320,88,140,10,'#aebeba')
 box(320,78,140,10,'#aebeba')
@@ -212,13 +425,13 @@ txt(304,167,'Local pier projects80 beyond original140 wall each side; no invente
 txt(304,175,'Door starts3100; north window starts3050. Actual finished pier/door tasks require HAD recheck.')
 
 txt(304,196,'C / GROUND GRID TARGET, NOT SITE ACCEPTANCE','title')
-txt(304,207,'RC250×450; 40 cover; 2H22 bottom, H8/100 links; pitch≤3000 under stated envelope.')
+txt(304,207,'RC600×450 both leaves;40cover;3H20 bottom,4legH8/100;actual point receivers are nodes.')
 txt(304,215,f"M{grid_action['M']:.2f}/MR{grid_section['MR']:.2f}; V{grid_action['V']:.2f}/VRs{grid_links['VRs']:.2f}.")
-txt(304,223,'Top−180 / bottom−630; separate650×650×500 cap envelope to−680 must still earn its node design.')
-txt(304,231,f"Four-arm node vertical demand≈{grid['four_arm_node_vertical_demand']:.1f}kN; actual pile/soil capacity UNKNOWN.")
-txt(304,239,'TargetD1200:680+H300+construction50+vent150=1180;20 excess. No inheritedD1300 or field-onlyD900.')
+txt(304,223,'Top−180/bottom−630;integral600×600×450 node/400pilehead;4H20eachdirectioncontinue750.')
+txt(304,231,f"Node envelopeN{cap_N:g}/M100;tie{cap_tie:.1f}kN vssteel{cap['tie_resistance_kN']:.1f};pile/soilUNKNOWN.")
+txt(304,239,'Lowtiebottom−650controlsD1200:650+H300+loss50+vent150=1150;50surplus. Notfield-onlyD900.')
 txt(304,247,'Masonry DPC ABOVE grid −180..−30 is a deliberate hypothesis; concrete/floor moisture route unqualified.')
-txt(304,255,'No thin or omitted DPC is hidden beneath the cap. Grid/seat/cap geometry is still incomplete.')
+txt(304,255,'No900cap/deckoverlap. Drainedtrayroute required;225clearcavity isNOTclaimed overwidebeam.')
 
 txt(304,280,'D / E02 SERVICE ARCH GEOMETRY ONLY','title')
 txt(304,291,'Plant-north y6500, x10800;240clear semicircle, spring2740/rise120/ring215.')
