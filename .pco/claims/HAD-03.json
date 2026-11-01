@@ -9,8 +9,8 @@
     "label": "issue-comment-6559339044"
   },
   "claimedAt": "2026-11-01T14:32:58.000Z",
-  "heartbeatAt": "2026-11-01T14:32:58.000Z",
-  "expiresAt": "2026-11-01T15:17:58.000Z",
+  "heartbeatAt": "2026-11-01T14:49:02.000Z",
+  "expiresAt": "2026-11-01T15:34:02.000Z",
   "branch": "work/mvb-chat-6559339044",
   "predecessor": {
     "leaseId": "80e2e12c-e0f1-43f7-bd23-7977f10acdb6",
@@ -27,5 +27,11 @@
       "next": "Verify full exact-head CI; run fresh native lease/head preflight after CI; expected-head merge; release and retire preflight helper.",
       "blocker": "HAD-03 remains planned: actual door/wall first-harm level, supported local N/E passages, site receiving levels and full-duty relief unproven."
     }
+  },
+  "pr": 1215,
+  "checkpoint": {
+    "evidence": "PR #1215 head abec91851b9117909717b699391e008c9288b442: coupled gravity and carrier-cover clearance, generator, SVG/JSON, regression. Exact-head CI 41317424055 passed.",
+    "next": "Run native control:merge-check against live lease and main; merge with expected head if valid. Otherwise retain PR as handoff.",
+    "blocker": "Connector-only chat cannot run native preflight; HAD-03 remains planned pending complete N/E physical design."
   }
 }
