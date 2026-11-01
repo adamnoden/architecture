@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 12,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a0c5a0df-62b2-47dc-b1c9-147075dead28",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-worker-six"
   },
   "claimedAt": "2026-11-01T14:58:17.507Z",
-  "heartbeatAt": "2026-11-01T15:03:46.299Z",
-  "expiresAt": "2026-11-01T15:48:46.299Z",
+  "heartbeatAt": "2026-11-01T15:11:18.708Z",
+  "expiresAt": "2026-11-01T15:11:18.708Z",
   "branch": "work/zerg-mat-envelope-20261101",
   "predecessor": {
     "leaseId": "645bd93f-654f-47a8-9a5b-ec2c2b0f2800",
@@ -33,5 +33,7 @@
   "checkpoint": {
     "evidence": "Pushed installed-glazing comparison, constituent O02 and programme link; DTA6/23-2441_V2 and ETA20/0048 reviewed with exact source counterevidence and bounded recommendation.",
     "next": "Independent exact-source review, correct any findings, then full exact-head CI and coordinator merge sequencing."
-  }
+  },
+  "releasedAt": "2026-11-01T15:11:18.708Z",
+  "releaseReason": "handoff"
 }
