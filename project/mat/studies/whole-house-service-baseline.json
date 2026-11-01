@@ -1,0 +1,2807 @@
+{
+  "status": "Constructive provisional whole-house service baseline; no accepted apparatus, materials, fire route, site loading or commissioning.",
+  "basis": {
+    "HADHead": "c83a06f26cf3b146d7cdc8254b4799f390508196",
+    "HADPath": "project/had/studies/open-north-loggia.json",
+    "HADBlob": "b15df3b374717d8b3a724900036525a5cd991d22",
+    "HADStatus": "FIRST WHOLE-HOUSE CANDIDATE, NOT ADOPTED. Known failures/interfaces are explicit; no support/water/material/site acceptance.",
+    "mergedInterfaceMain": "546c98f93a3dccbfe48119bd2e92117b6e2d766f",
+    "units": "mm, local proposed groundFFL0; first3450; all z use one datum"
+  },
+  "selection": "Local continuousMEV + background vents + separate cooker capture +8kW compatibility monobloc/radiators +300L hotwater.",
+  "air": {
+    "basis": "Conservative geometric floor-area upper bound, not regulatory measured area",
+    "groundM2": 94.202775,
+    "upperM2": 100.696975,
+    "totalM2": 194.89974999999998,
+    "oldBControlM2": 206.561975,
+    "clearHeightControl": 3.1,
+    "volumeControlM3": 604.189225,
+    "bedrooms": 4,
+    "designOccupancyRange": [
+      2,
+      6
+    ],
+    "floorCriterionLps": 58.46992499999999,
+    "bedroomCriterionLps": 37,
+    "selectedNormalLps": 65,
+    "floorAreaLimitAtSelectedFlowM2": 216.66666666666669,
+    "normalACHControl": 0.38729588400057946,
+    "status": "Author-selected pre-site targets. No actual household, measured air leakage, pollution, climate or commissioning result.",
+    "backgroundAreaMM2": 60000,
+    "orificeScreen": {
+      "Cd": 0.61,
+      "airDensity": 1.2,
+      "backgroundFlowAt2PaLps": 66.82215201563027,
+      "minimumSix4000EAFlowAt2PaLps": 26.728860806252108,
+      "one7600TransferAt3_5PaLps": 11.19700376588904,
+      "one3000TransferAt3_5PaLps": 4.419869907587779,
+      "notATestedCurve": true
+    },
+    "transfer": {
+      "normalRequirement": "Every normally closed door on a supply-to-extract path must preserve the design transfer flow, including BOTH bedroom and wet-room doors where in series.",
+      "minimumFinishedFreeArea": 7600,
+      "screenPerDoorPressurePa": 3.5,
+      "backgroundScreenPressurePa": 2,
+      "twoDoorPathScreenDepressionPa": 10,
+      "fireDoorRequirement": "Specific classified E20+ doorset with approved threshold/transfer arrangement at the required area; Sa requirements may invalidate this simple gap. No site cutting, seal deletion or blanket10mm permission.",
+      "acceptance": "Not earned until the actual fire/door assembly and measured installed room pressures match. Narrow gap negative control fails.",
+      "fireSource": {
+        "head": "a324a50d047843603d6fc275c4062bc9d0c1cb90",
+        "jsonBlob": "1412e628aa6b539664c8f5efd507595623cf2a21",
+        "interface": "protectedRoute only; primary room/furniture baseline remains frozen c83 plus declared rewinds"
+      },
+      "doors": [
+        {
+          "id": "FD-WEST-CROSS",
+          "level": "GROUND",
+          "host": "protected-west-cross",
+          "rough": [
+            2947.5,
+            3832.5
+          ],
+          "axis": 4250,
+          "frameEach": 25,
+          "leaf": [
+            830,
+            44
+          ],
+          "hinge": [
+            3802.5,
+            4250
+          ],
+          "opening": "NORTHintoexcludedgallery",
+          "closed": [
+            2972.5,
+            4228,
+            830,
+            44
+          ],
+          "open": [
+            3780.5,
+            4250,
+            44,
+            830
+          ],
+          "minimumClearBudget": 791,
+          "performance": "E20minimumreference;classifiedfullassembly/actualgaprequired"
+        },
+        {
+          "id": "FD-EAST-CROSS",
+          "level": "GROUND",
+          "host": "protected-east-cross",
+          "rough": [
+            8241.25,
+            9141.25
+          ],
+          "axis": 4250,
+          "frameEach": 25,
+          "leaf": [
+            845,
+            44
+          ],
+          "hinge": [
+            9111.25,
+            4250
+          ],
+          "opening": "NORTHintoexcludedgallery",
+          "closed": [
+            8266.25,
+            4228,
+            845,
+            44
+          ],
+          "open": [
+            9089.25,
+            4250,
+            44,
+            845
+          ],
+          "minimumClearBudget": 806,
+          "performance": "E20minimumreference;classifiedfullassemblyrequired"
+        },
+        {
+          "id": "STUDY",
+          "level": "GROUND",
+          "host": "study-L-north",
+          "rough": [
+            1350,
+            2250
+          ],
+          "axis": 3247.5,
+          "frameEach": 25,
+          "leaf": [
+            830,
+            44
+          ],
+          "hinge": [
+            1385,
+            3247.5
+          ],
+          "opening": "SOUTHINTOSTUDY",
+          "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim"
+        },
+        {
+          "id": "GUEST-WC",
+          "level": "GROUND",
+          "host": "wc-north",
+          "rough": [
+            7650,
+            8550
+          ],
+          "axis": 2650,
+          "performance": "Protectedhallboundarydoor;actualbathroom/firestrategyexceptionnotassumed"
+        },
+        {
+          "id": "PLANT",
+          "level": "GROUND",
+          "host": "service-spine",
+          "rough": [
+            2750,
+            3650
+          ],
+          "axis": 9300,
+          "performance": "Protectedhallboundarydoor;plantactualhazard/requiredratingtoconfirm"
+        },
+        {
+          "id": "BED2",
+          "level": "FIRST",
+          "host": "bed2-north-main",
+          "rough": [
+            3450,
+            4350
+          ],
+          "axis": 2650,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        },
+        {
+          "id": "BED3",
+          "level": "FIRST",
+          "host": "bed3-north-main",
+          "rough": [
+            8250,
+            9150
+          ],
+          "axis": 2650,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        },
+        {
+          "id": "BED4",
+          "level": "FIRST",
+          "host": "rear-west",
+          "rough": [
+            3100,
+            4000
+          ],
+          "axis": 8852.5,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        },
+        {
+          "id": "PRINCIPAL",
+          "level": "FIRST",
+          "host": "rear-east",
+          "rough": [
+            8250,
+            9150
+          ],
+          "axis": 8290,
+          "performance": "E20minimumreference;privateclosurepreserved, actualclassifieddoorset/operationrequired"
+        },
+        {
+          "id": "FAMILY-BATH",
+          "level": "FIRST",
+          "host": "wet-spine",
+          "rough": [
+            5450,
+            6350
+          ],
+          "axis": 9300,
+          "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating"
+        }
+      ],
+      "normalFlowNetworkLps": {
+        "eachHabitableSupplyScreen": 10.833333333333334,
+        "BED2_toRing": 10.833333333333334,
+        "BED3_toRing": 10.833333333333334,
+        "ringToBED4andRearBath": 1.166666666666666,
+        "ringToPrincipalAndBath": 1.166666666666666,
+        "ringToFamilyBath": 12,
+        "upperRingDownStair": 7.333333333333336,
+        "studyToProtectedHall": 10.833333333333334,
+        "livingViaWestCrossToHall": 10.833333333333334,
+        "hallToGuestWC": 8,
+        "hallViaPlantAndUtilityDoors": 8,
+        "hallViaEastCrossToKitchen": 13
+      },
+      "worstIndividualNormalDoorScreenPa": 4.7179257355683575,
+      "normalDoorScreenLimitPa": 5,
+      "worstTwoDoorAndBackgroundScreenPa": 9.994263051935274
+    }
+  },
+  "extract": [
+    {
+      "id": "ground-WC",
+      "level": 0,
+      "wall": "south",
+      "normalLps": 8,
+      "minimumHighComparator": 6,
+      "axis": 2950,
+      "path": [
+        [
+          9000,
+          1017.5,
+          2950
+        ],
+        [
+          9000,
+          0,
+          2950
+        ]
+      ],
+      "ductClear": 125,
+      "formedWallTerritory": 180,
+      "ductVelocityMps": 0.6518986469044034,
+      "podPlan": [
+        8825,
+        417.5,
+        350,
+        600
+      ],
+      "podZ": [
+        2800,
+        3100
+      ],
+      "fanMaxBody": [
+        250,
+        300
+      ],
+      "clearPanel": [
+        300,
+        400
+      ],
+      "panelFrameOuter": [
+        350,
+        450
+      ],
+      "maintenanceBelowPanelClearHeight": 2700,
+      "fanTask": "Complete250diam×300axial envelope lowers through300×400 clear aperture:25 lateral/50 axial reserve. Two independently supported duct ends retained; exact collars/tool/release length must fit600pod. No450hole cut in350box.",
+      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredExternalTerminalFreeArea": 11044.661672776616,
+      "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
+      "alongWallOpeningClearance": 310.0
+    },
+    {
+      "id": "utility",
+      "level": 0,
+      "wall": "east",
+      "normalLps": 8,
+      "minimumHighComparator": 8,
+      "axis": 2950,
+      "path": [
+        [
+          10982.5,
+          900,
+          2950
+        ],
+        [
+          12000,
+          900,
+          2950
+        ]
+      ],
+      "ductClear": 125,
+      "formedWallTerritory": 180,
+      "ductVelocityMps": 0.6518986469044034,
+      "podPlan": [
+        10982.5,
+        725,
+        600,
+        350
+      ],
+      "podZ": [
+        2800,
+        3100
+      ],
+      "fanMaxBody": [
+        250,
+        300
+      ],
+      "clearPanel": [
+        300,
+        400
+      ],
+      "panelFrameOuter": [
+        350,
+        450
+      ],
+      "maintenanceBelowPanelClearHeight": 2700,
+      "fanTask": "Complete250diam×300axial envelope lowers through300×400 clear aperture:25 lateral/50 axial reserve. Two independently supported duct ends retained; exact collars/tool/release length must fit600pod. No450hole cut in350box.",
+      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredExternalTerminalFreeArea": 11044.661672776616,
+      "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
+      "alongWallOpeningClearance": 310.0
+    },
+    {
+      "id": "kitchen",
+      "level": 0,
+      "wall": "north",
+      "normalLps": 13,
+      "minimumHighComparator": 13,
+      "axis": 2950,
+      "path": [
+        [
+          11382.5,
+          10982.5,
+          2950
+        ],
+        [
+          11382.5,
+          12000,
+          2950
+        ]
+      ],
+      "ductClear": 125,
+      "formedWallTerritory": 180,
+      "ductVelocityMps": 1.0593353012196554,
+      "podPlan": [
+        11207.5,
+        10982.5,
+        350,
+        600
+      ],
+      "podZ": [
+        2800,
+        3100
+      ],
+      "fanMaxBody": [
+        250,
+        300
+      ],
+      "clearPanel": [
+        300,
+        400
+      ],
+      "panelFrameOuter": [
+        350,
+        450
+      ],
+      "maintenanceBelowPanelClearHeight": 2700,
+      "fanTask": "Complete250diam×300axial envelope lowers through300×400 clear aperture:25 lateral/50 axial reserve. Two independently supported duct ends retained; exact collars/tool/release length must fit600pod. No450hole cut in350box.",
+      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredExternalTerminalFreeArea": 11044.661672776616,
+      "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
+      "alongWallOpeningClearance": 592.5
+    },
+    {
+      "id": "rear-bath",
+      "level": 1,
+      "wall": "west",
+      "normalLps": 12,
+      "minimumHighComparator": 8,
+      "axis": 6400,
+      "path": [
+        [
+          1017.5,
+          9300,
+          6400
+        ],
+        [
+          0,
+          9300,
+          6400
+        ]
+      ],
+      "ductClear": 125,
+      "formedWallTerritory": 180,
+      "ductVelocityMps": 0.977847970356605,
+      "podPlan": [
+        417.5,
+        9125,
+        600,
+        350
+      ],
+      "podZ": [
+        6250,
+        6550
+      ],
+      "fanMaxBody": [
+        250,
+        300
+      ],
+      "clearPanel": [
+        300,
+        400
+      ],
+      "panelFrameOuter": [
+        350,
+        450
+      ],
+      "maintenanceBelowPanelClearHeight": 6150,
+      "fanTask": "Complete250diam×300axial envelope lowers through300×400 clear aperture:25 lateral/50 axial reserve. Two independently supported duct ends retained; exact collars/tool/release length must fit600pod. No450hole cut in350box.",
+      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredExternalTerminalFreeArea": 11044.661672776616,
+      "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
+      "alongWallOpeningClearance": 310.0
+    },
+    {
+      "id": "family-bath",
+      "level": 1,
+      "wall": "east",
+      "normalLps": 12,
+      "minimumHighComparator": 8,
+      "axis": 6400,
+      "path": [
+        [
+          10982.5,
+          5750,
+          6400
+        ],
+        [
+          12000,
+          5750,
+          6400
+        ]
+      ],
+      "ductClear": 125,
+      "formedWallTerritory": 180,
+      "ductVelocityMps": 0.977847970356605,
+      "podPlan": [
+        10982.5,
+        5575,
+        600,
+        350
+      ],
+      "podZ": [
+        6250,
+        6550
+      ],
+      "fanMaxBody": [
+        250,
+        300
+      ],
+      "clearPanel": [
+        300,
+        400
+      ],
+      "panelFrameOuter": [
+        350,
+        450
+      ],
+      "maintenanceBelowPanelClearHeight": 6150,
+      "fanTask": "Complete250diam×300axial envelope lowers through300×400 clear aperture:25 lateral/50 axial reserve. Two independently supported duct ends retained; exact collars/tool/release length must fit600pod. No450hole cut in350box.",
+      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredExternalTerminalFreeArea": 11044.661672776616,
+      "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
+      "alongWallOpeningClearance": 560.0
+    },
+    {
+      "id": "principal-bath",
+      "level": 1,
+      "wall": "east",
+      "normalLps": 12,
+      "minimumHighComparator": 8,
+      "axis": 6400,
+      "path": [
+        [
+          10982.5,
+          6830,
+          6400
+        ],
+        [
+          11420,
+          6830,
+          6400
+        ],
+        [
+          11500,
+          6750,
+          6400
+        ],
+        [
+          12000,
+          6750,
+          6400
+        ]
+      ],
+      "ductClear": 125,
+      "formedWallTerritory": 180,
+      "ductVelocityMps": 0.977847970356605,
+      "podPlan": [
+        10982.5,
+        6655,
+        600,
+        350
+      ],
+      "podZ": [
+        6250,
+        6550
+      ],
+      "fanMaxBody": [
+        250,
+        300
+      ],
+      "clearPanel": [
+        300,
+        400
+      ],
+      "panelFrameOuter": [
+        350,
+        450
+      ],
+      "maintenanceBelowPanelClearHeight": 6150,
+      "fanTask": "Complete250diam×300axial envelope lowers through300×400 clear aperture:25 lateral/50 axial reserve. Two independently supported duct ends retained; exact collars/tool/release length must fit600pod. No450hole cut in350box.",
+      "requiredCurve": "Normal duty at40Pa pre-site screen (30duct/terminal allowance +10room/transfer); actual total resistance/wind and noise must be verified, not free-air rating",
+      "requiredExternalTerminalFreeArea": 11044.661672776616,
+      "status": "Territory/compatibility envelope; lintel/core/support/fire/weather/acoustic/product fit not approved",
+      "windowRequirement": "HAD selected finite reservation: retain glazedheadFFL+2850 with fixedtop100 band/openingleafhead≤FFL+2750;50clear belowpodFFL+2800. Existing unspecified inwardleaf is NOT passed; actual OAS family/procurement/operation proof still required.",
+      "wallTerritorySouthAndWindowReserves": [
+        60,
+        60
+      ],
+      "alongWallOpeningClearance": 60.0
+    }
+  ],
+  "supply": [
+    {
+      "id": "study",
+      "level": 0,
+      "wall": "west",
+      "point": [
+        0,
+        2700,
+        2950
+      ],
+      "measuredEquivalentAreaRequired": 10000,
+      "formedWallTerritory": 220,
+      "metalTerminalEnvelope": [
+        350,
+        350,
+        100
+      ],
+      "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+    },
+    {
+      "id": "living",
+      "level": 0,
+      "wall": "west",
+      "point": [
+        0,
+        11150,
+        2950
+      ],
+      "measuredEquivalentAreaRequired": 10000,
+      "formedWallTerritory": 220,
+      "metalTerminalEnvelope": [
+        350,
+        350,
+        100
+      ],
+      "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+    },
+    {
+      "id": "bed2",
+      "level": 1,
+      "wall": "south",
+      "point": [
+        2850,
+        0,
+        6400
+      ],
+      "measuredEquivalentAreaRequired": 10000,
+      "formedWallTerritory": 220,
+      "metalTerminalEnvelope": [
+        350,
+        350,
+        100
+      ],
+      "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+    },
+    {
+      "id": "bed3",
+      "level": 1,
+      "wall": "south",
+      "point": [
+        9150,
+        0,
+        6400
+      ],
+      "measuredEquivalentAreaRequired": 10000,
+      "formedWallTerritory": 220,
+      "metalTerminalEnvelope": [
+        350,
+        350,
+        100
+      ],
+      "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+    },
+    {
+      "id": "bed4",
+      "level": 1,
+      "wall": "north",
+      "point": [
+        4800,
+        12000,
+        6400
+      ],
+      "measuredEquivalentAreaRequired": 10000,
+      "formedWallTerritory": 220,
+      "metalTerminalEnvelope": [
+        350,
+        350,
+        100
+      ],
+      "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+    },
+    {
+      "id": "principal",
+      "level": 1,
+      "wall": "north",
+      "point": [
+        11150,
+        12000,
+        6400
+      ],
+      "measuredEquivalentAreaRequired": 10000,
+      "formedWallTerritory": 220,
+      "metalTerminalEnvelope": [
+        350,
+        350,
+        100
+      ],
+      "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+    }
+  ],
+  "cooker": {
+    "extractPoint": [
+      11100,
+      12000,
+      2400
+    ],
+    "duct": 160,
+    "minimumCaptureLps": 30,
+    "makeupPoint": [
+      12000,
+      8600,
+      2400
+    ],
+    "makeupFormedTerritory": 280,
+    "makeupRequirement": "Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from65L/s background; no open-window chore or recirculation-onlyhood credit.",
+    "hood": "600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required."
+  },
+  "heat": {
+    "selectedArchitecture": "Outdoor R290 monobloc, separated frost-protected primary, indoor plate exchanger, direct weather-compensated radiators; DHW priority. No underfloor polymer tube.",
+    "designCompatibilityDutyKW": 8,
+    "designPoint": "Outdoor−3 / indoor20 / emitter45flow40return, authored procurement requirement not actual site weather or manufacturer output",
+    "waterFlowAt8KW_5K_Lps": 0.3827751196172249,
+    "maximumFabricPlusInfiltrationWKAtDelta25": 242.0,
+    "thermalSensitivity": [
+      {
+        "fabricPlusInfiltrationWK": 80,
+        "deltaTK": 20,
+        "MEVkW": 3.16,
+        "MVHR70percentControlKW": 2.068,
+        "MVHRVentOnlySavingKW": 1.092
+      },
+      {
+        "fabricPlusInfiltrationWK": 80,
+        "deltaTK": 25,
+        "MEVkW": 3.95,
+        "MVHR70percentControlKW": 2.585,
+        "MVHRVentOnlySavingKW": 1.3649999999999998
+      },
+      {
+        "fabricPlusInfiltrationWK": 80,
+        "deltaTK": 30,
+        "MEVkW": 4.74,
+        "MVHR70percentControlKW": 3.102,
+        "MVHRVentOnlySavingKW": 1.6379999999999997
+      },
+      {
+        "fabricPlusInfiltrationWK": 140,
+        "deltaTK": 20,
+        "MEVkW": 4.36,
+        "MVHR70percentControlKW": 3.268,
+        "MVHRVentOnlySavingKW": 1.092
+      },
+      {
+        "fabricPlusInfiltrationWK": 140,
+        "deltaTK": 25,
+        "MEVkW": 5.45,
+        "MVHR70percentControlKW": 4.085,
+        "MVHRVentOnlySavingKW": 1.3649999999999998
+      },
+      {
+        "fabricPlusInfiltrationWK": 140,
+        "deltaTK": 30,
+        "MEVkW": 6.54,
+        "MVHR70percentControlKW": 4.902,
+        "MVHRVentOnlySavingKW": 1.6379999999999997
+      },
+      {
+        "fabricPlusInfiltrationWK": 220,
+        "deltaTK": 20,
+        "MEVkW": 5.96,
+        "MVHR70percentControlKW": 4.868,
+        "MVHRVentOnlySavingKW": 1.092
+      },
+      {
+        "fabricPlusInfiltrationWK": 220,
+        "deltaTK": 25,
+        "MEVkW": 7.45,
+        "MVHR70percentControlKW": 6.085,
+        "MVHRVentOnlySavingKW": 1.3649999999999998
+      },
+      {
+        "fabricPlusInfiltrationWK": 220,
+        "deltaTK": 30,
+        "MEVkW": 8.94,
+        "MVHR70percentControlKW": 7.302,
+        "MVHRVentOnlySavingKW": 1.6379999999999997
+      }
+    ],
+    "noAnnualEnergyOrCOPClaim": true,
+    "failureRule": "If actual room-by-room loss, design climate, defrost/primary-separation loss or hot-water recovery exceeds the stated duty, resize plant/emitters or change fabric/ventilation before selection.8kW is not a remembered7kW label.",
+    "emitterRequirement": "Declared room outputs at45/40/20, not50K catalogue watts; exact radiator size/weight/support and window/furniture clearance must be matched.",
+    "outdoorStation": {
+      "body": [
+        14500,
+        3900,
+        1100,
+        600
+      ],
+      "maxHeight": 1600,
+      "replacementPad": [
+        14000,
+        3300,
+        2300,
+        1800
+      ],
+      "reservedClearSite": [
+        13000,
+        2500,
+        5500,
+        4200
+      ],
+      "airDischarge": "east; no walkway, boundary or drain accepted from this abstract site reservation",
+      "hydraulicPath": [
+        [
+          14500,
+          4200,
+          -800
+        ],
+        [
+          12500,
+          4200,
+          -800
+        ],
+        [
+          12500,
+          4300,
+          300
+        ],
+        [
+          12000,
+          4300,
+          300
+        ],
+        [
+          11000,
+          4300,
+          300
+        ]
+      ],
+      "frost": "Select manufacturer-supported separated primary and specified propylene-glycol mixture for local minimum temperature/power loss; no reliance on powered dewatering or continuous electric trace alone.",
+      "condensate": "Own frost-safe gravity receiver outside protective zone/house dryness system; actual receiving ground/outfall qualification required. Not admitted to gardenloggia or foul pipe by assumption."
+    }
+  },
+  "PV": {
+    "selection": "4kWp grid-connected roofPV, no battery; proposed8×500W modules. A declared compatibility package, not an actual roof/yield design.",
+    "reason": "Future L2026 renewable generation duty is not silently treated as optional. Applicability/transition and reasonable site output must be assessed.",
+    "modules": 8,
+    "moduleRequiredWp": 500,
+    "maximumModuleMM": [
+      2200,
+      1150,
+      50
+    ],
+    "arrayRequirements": [
+      {
+        "id": "east",
+        "modules": 4,
+        "grossSinglePlaneTerritoryMM": [
+          3400,
+          5630
+        ],
+        "projectionReservation": [
+          8400,
+          3200,
+          3400,
+          5630
+        ],
+        "scope": "Actual inclination/hip/valley/wind/fire/setback/fixing/maintenance plane must be earned; this is a required roof interface, not an existing proved plane."
+      },
+      {
+        "id": "west",
+        "modules": 4,
+        "grossSinglePlaneTerritoryMM": [
+          3400,
+          5630
+        ],
+        "projectionReservation": [
+          200,
+          3200,
+          3400,
+          5630
+        ],
+        "scope": "Actual inclination/hip/valley/wind/fire/setback/fixing/maintenance plane must be earned; this is a required roof interface, not an existing proved plane."
+      }
+    ],
+    "DCRequiredRoutes": [
+      [
+        [
+          10000,
+          6000,
+          7200
+        ],
+        [
+          10000,
+          5000,
+          6350
+        ],
+        [
+          10000,
+          5000,
+          2925
+        ],
+        [
+          11200,
+          2200,
+          2925
+        ],
+        [
+          9650,
+          650,
+          1600
+        ]
+      ],
+      [
+        [
+          2000,
+          6000,
+          7200
+        ],
+        [
+          3500,
+          6000,
+          6350
+        ],
+        [
+          3500,
+          3500,
+          6350
+        ],
+        [
+          8500,
+          3500,
+          6350
+        ],
+        [
+          10000,
+          5000,
+          6350
+        ]
+      ]
+    ],
+    "inverterRequiredEnvelope": [
+      9400,
+      417.5,
+      500,
+      250
+    ],
+    "inverterWorkingField": [
+      9400,
+      667.5,
+      600,
+      1000
+    ],
+    "access": "Groundutility inverter isolation/terminal service; roof modules from externally engineered scaffold/lift and retained roofanchors, not loftstairs or standing on modules. Roof cable sleeves/firestop and metal weather flashing remain independent of cable replacement.",
+    "electrical": "Matched certified module/inverter/isolator/protection/earthing system; exact cable voltage/current/string topology, rapidshutdown/firestrategy and distribution capacity are unselected. No annual yield, grid export or HP offset claimed.",
+    "residue": "8 module encapsulation/backsheet/junction assemblies plus DC insulation/connectors and1 inverter/control assembly; exact chemistry/mass/length/replacement warranty unknown, never glass/aluminium-only claim.",
+    "alternative": "Omit battery/optimisers unless shading/safety proves need. Groundarray is a separate actual site redesign, not a free fallback. No permission to remove module encapsulation/connector insulation."
+  },
+  "pipeInsulation": {
+    "selectedInternalRadialThickness": 25,
+    "maximumThermalConductivity": 0.035,
+    "basis": "L2026Table3.4 thickness20 for nominalID≤25/24 for≤100 atlambda≤.035, applies only if that edition/route is appropriate.25selected is an evidenced performance choice, not removal to fit. Exterior primary retains50 and whole freeze/weather system.",
+    "old50RadialPipeControl": "Earlier unsourced50radial allowance yields132/132/122/82/115 bodies; five cannot fit300×250 with25edge/interpipe reserve. Rejected band, not nominal pass.",
+    "pipeBodiesAndInsulatedOD": {
+      "heat32": 82,
+      "hot22": 72,
+      "cold22": 72,
+      "return15": 65
+    },
+    "internalBandClear": [
+      310,
+      250
+    ],
+    "sectionCentres": [
+      {
+        "id": "heat-flow",
+        "xy": [
+          66,
+          66
+        ],
+        "diameter": 82
+      },
+      {
+        "id": "heat-return",
+        "xy": [
+          200,
+          66
+        ],
+        "diameter": 82
+      },
+      {
+        "id": "hot",
+        "xy": [
+          61,
+          184
+        ],
+        "diameter": 72
+      },
+      {
+        "id": "cold",
+        "xy": [
+          158,
+          184
+        ],
+        "diameter": 72
+      },
+      {
+        "id": "return",
+        "xy": [
+          251.5,
+          184
+        ],
+        "diameter": 65
+      }
+    ],
+    "notAdmitted": "Actual insulation binder/facing/jacket seams, coldvapour/dewpoint, bends, firestops andwhole systemheatloss. No polymerfoam exemption.",
+    "radialConductionUpperScreenWperM": {
+      "32": 5.8425977209093904,
+      "22": 7.419267753205211,
+      "15": 5.998934090433638
+    }
+  },
+  "hotWater": {
+    "architecture": "One300L60°C heat-pump-compatible unvented store; demand/timed hot-return loop, no continuously heated uninsulated loop.",
+    "designDHWRangeLitres40CPerPersonDay": [
+      30,
+      50
+    ],
+    "occupancyRange": [
+      2,
+      6
+    ],
+    "deliveredDailyRangeLitres40C": [
+      60,
+      300
+    ],
+    "idealMixedLitres40CFrom300L60C_CW10C": 500.0,
+    "idealReheatKWhFrom10to60": 17.441666666666666,
+    "reheatHoursAt4kWNet": 4.360416666666667,
+    "recoveryRule": "4kW net coil duty is a declared requirement, not actual heat-pump output at60°C. DHW priority pauses room heating; actual draw sequence/coil/defrost/hygiene/standing losses must fit, or capacity/control changes.",
+    "deadLegControl": "Require at most3L unrecirculated terminal volume and at most30s warm-up at6L/min after demand-loop readiness. No rule that3L itself proves hygiene.",
+    "simpleUnreturned22mm_20ID_15mLitres": 4.71238898038469,
+    "selected15mm_13ID_3mBranchLitres": 0.39819686884250627,
+    "returnRoute": "Four parallel demand-balanced loops:groundfront-west,groundrear-east,upperfront-west,upperprincipalwet; each hot main returns on a separate15mm tube following the same declared indoor tree toplant. One returnpump with four balancing/check/isolation stations. This adds actual seals/pump and heatloss; no hidden gravity return.",
+    "hygieneScald": "Temperature-control case uses60°C store/return surveillance and local thermostatic mixing at bath/showers; competent design must bind actual temperatures, safe outlets and post-stagnation operation. HSE guidance used as design reference, not asserted private-home legal duty.",
+    "safetyDischarge": {
+      "valveToTundishMaxMM": 600,
+      "tundish": "Visible accessible inplant working strip, lower than relief valve",
+      "route": [
+        [
+          10200,
+          4250,
+          1200
+        ],
+        [
+          10800,
+          4250,
+          1200
+        ],
+        [
+          10800,
+          4250,
+          800
+        ],
+        [
+          12000,
+          4250,
+          750
+        ]
+      ],
+      "selection": "Copper/metal gravity discharge to visible safe external termination outside circulation; actual D1/D2 sizing, vertical leg, resistance and scald containment per matched vessel/G3 design. Not connected invisibly to foul or rainwater."
+    },
+    "loops": [
+      {
+        "route": "ground-front-west",
+        "separateReturnPath": [
+          [
+            3500,
+            9200
+          ],
+          [
+            3500,
+            8500
+          ],
+          [
+            3500,
+            3500
+          ],
+          [
+            8500,
+            3500
+          ],
+          [
+            8500,
+            5000
+          ],
+          [
+            9800,
+            5000
+          ]
+        ],
+        "returnAxisZ": 2925,
+        "independentlySupported": true
+      },
+      {
+        "route": "ground-rear-east",
+        "separateReturnPath": [
+          [
+            10500,
+            10800
+          ],
+          [
+            10500,
+            8500
+          ],
+          [
+            10500,
+            5000
+          ],
+          [
+            9800,
+            5000
+          ]
+        ],
+        "returnAxisZ": 2925,
+        "independentlySupported": true
+      },
+      {
+        "route": "upper-front-west",
+        "separateReturnPath": [
+          [
+            1800,
+            10000
+          ],
+          [
+            1800,
+            8500
+          ],
+          [
+            3500,
+            8500
+          ],
+          [
+            3500,
+            3500
+          ],
+          [
+            8500,
+            3500
+          ],
+          [
+            8500,
+            5000
+          ],
+          [
+            9800,
+            5000
+          ]
+        ],
+        "returnAxisZ": 6375,
+        "independentlySupported": true
+      },
+      {
+        "route": "upper-principal-wet",
+        "separateReturnPath": [
+          [
+            11200,
+            7200
+          ],
+          [
+            11200,
+            5000
+          ],
+          [
+            10500,
+            5000
+          ]
+        ],
+        "returnAxisZ": 6375,
+        "independentlySupported": true
+      }
+    ],
+    "maximumTerminalDeadLegLitresAt13mmID": 0.6271600684269474
+  },
+  "plant": {
+    "cylinder": {
+      "selectedNominalLitres": 300,
+      "comparison": "Vaillant2024 non-plumbed heat-pump cylinder300L:595diam x1745h, empty67.6kg/filled356.8kg. Insulation50 composition still needs declaration.",
+      "body": [
+        9537.5,
+        3952.5,
+        595,
+        595
+      ],
+      "station": [
+        9485,
+        3900,
+        700,
+        700
+      ],
+      "workingEast": [
+        10185,
+        3900,
+        900,
+        700
+      ],
+      "height": 1745,
+      "requiredTopService": 500,
+      "replacementCentrePath": [
+        [
+          9835,
+          4250
+        ],
+        [
+          10500,
+          4250
+        ],
+        [
+          10500,
+          4600
+        ],
+        [
+          12500,
+          4600
+        ]
+      ],
+      "handlingRadius": 425,
+      "removedDryMassComparator": 67.6,
+      "filledSupportLoadBeforeAccessoriesKN": 3.500208,
+      "doorRaw": [
+        3900,
+        5300
+      ],
+      "requiredFinishedClearWidth": 1000,
+      "requiredFinishedClearHeight": 2300,
+      "trolleyRequirement": "Matched rated trolley/handling method, drained cylinder and removable connections; filled apparatus is never lifted. No human lifting capacity invented.",
+      "materialAlternative": "Factory-engineered copper/unvented heat-pump cylinder with demountable mineral insulation is a supplier design requirement, not authorised modification of a certified foam cylinder; bespoke copper capability alone proves no insulation approval.",
+      "initialReplacementMarginToRiser": 25
+    },
+    "controlsHydraulics": [
+      10400,
+      5550,
+      1000,
+      650
+    ],
+    "riserGross": [
+      9400,
+      4700,
+      550,
+      700
+    ],
+    "formedOpeningProposal": [
+      9440,
+      4760,
+      465,
+      545
+    ],
+    "failedBodyOnlyOpening": [
+      9460,
+      4760,
+      450,
+      540
+    ],
+    "cabinetBasis": "Westface corrected to actualwetfinish9400; new550×700 territory ends5400 before bathroomdoor5450. No800×1200 growth over door. Actual frame thickness/clear aperture still must match.",
+    "proposedServices": [
+      {
+        "id": "H-flow",
+        "centre": [
+          9540,
+          4855
+        ],
+        "outerEnvelope": 82,
+        "openingEdgeReserve": 54.0
+      },
+      {
+        "id": "H-return",
+        "centre": [
+          9740,
+          4855
+        ],
+        "outerEnvelope": 82,
+        "openingEdgeReserve": 54.0
+      },
+      {
+        "id": "cold",
+        "centre": [
+          9830,
+          5050
+        ],
+        "outerEnvelope": 72,
+        "openingEdgeReserve": 39.0
+      },
+      {
+        "id": "hot",
+        "centre": [
+          9540,
+          5075
+        ],
+        "outerEnvelope": 72,
+        "openingEdgeReserve": 64.0
+      },
+      {
+        "id": "hot-return",
+        "centre": [
+          9700,
+          5050
+        ],
+        "outerEnvelope": 65,
+        "openingEdgeReserve": 172.5
+      },
+      {
+        "id": "soil-comparator",
+        "centre": [
+          9800,
+          5200
+        ],
+        "outerEnvelope": 160,
+        "openingEdgeReserve": 25.0
+      }
+    ],
+    "supportTaskEnvelope": 230,
+    "openingStatus": "New trimmed-opening structural proposal, not permission to drill, not inherited three-bore acceptance. Complete230 clamp/tool envelopes are above/below slab and used one at a time, not six floor circles. Old south100plinths overlap the opening40: real rim/frame feet MUST be redesigned before fit acceptance; no support removed for service. Exact seals/fire/weather/vapour boundaries remain independent."
+  },
+  "trunks": [
+    {
+      "id": "ground-front-west",
+      "level": 0,
+      "path": [
+        [
+          9800,
+          5000
+        ],
+        [
+          8500,
+          5000
+        ],
+        [
+          8500,
+          3500
+        ],
+        [
+          3500,
+          3500
+        ],
+        [
+          3500,
+          8500
+        ],
+        [
+          3500,
+          9200
+        ]
+      ],
+      "duties": [
+        "heat",
+        "cold",
+        "hot",
+        "hot-return"
+      ],
+      "axisZ": 2925,
+      "lengthMM": 13500.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "ground-rear-east",
+      "level": 0,
+      "path": [
+        [
+          9800,
+          5000
+        ],
+        [
+          10500,
+          5000
+        ],
+        [
+          10500,
+          8500
+        ],
+        [
+          10500,
+          10800
+        ]
+      ],
+      "duties": [
+        "heat",
+        "cold",
+        "hot",
+        "hot-return"
+      ],
+      "axisZ": 2925,
+      "lengthMM": 6500.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "upper-front-west",
+      "level": 1,
+      "path": [
+        [
+          9800,
+          5000
+        ],
+        [
+          8500,
+          5000
+        ],
+        [
+          8500,
+          3500
+        ],
+        [
+          3500,
+          3500
+        ],
+        [
+          3500,
+          8500
+        ],
+        [
+          1800,
+          8500
+        ],
+        [
+          1800,
+          10000
+        ]
+      ],
+      "duties": [
+        "heat",
+        "cold",
+        "hot",
+        "hot-return"
+      ],
+      "axisZ": 6375,
+      "lengthMM": 16000.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "upper-rear-east",
+      "level": 1,
+      "path": [
+        [
+          9800,
+          5000
+        ],
+        [
+          10500,
+          5000
+        ],
+        [
+          10500,
+          8500
+        ],
+        [
+          10500,
+          9000
+        ]
+      ],
+      "duties": [
+        "heat",
+        "cold",
+        "hot"
+      ],
+      "axisZ": 6375,
+      "lengthMM": 4700.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "upper-bed4",
+      "level": 1,
+      "path": [
+        [
+          3500,
+          8500
+        ],
+        [
+          4500,
+          8500
+        ],
+        [
+          4500,
+          9150
+        ]
+      ],
+      "duties": [
+        "heat"
+      ],
+      "axisZ": 6375,
+      "lengthMM": 1650.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "upper-bed2",
+      "level": 1,
+      "path": [
+        [
+          3500,
+          3500
+        ],
+        [
+          2500,
+          3500
+        ],
+        [
+          2500,
+          2500
+        ]
+      ],
+      "duties": [
+        "heat"
+      ],
+      "axisZ": 6375,
+      "lengthMM": 2000.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "upper-bed3",
+      "level": 1,
+      "path": [
+        [
+          8500,
+          3500
+        ],
+        [
+          8500,
+          2500
+        ]
+      ],
+      "duties": [
+        "heat"
+      ],
+      "axisZ": 6375,
+      "lengthMM": 1000.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "ground-study",
+      "level": 0,
+      "path": [
+        [
+          3500,
+          3500
+        ],
+        [
+          2500,
+          3500
+        ],
+        [
+          2500,
+          2500
+        ]
+      ],
+      "duties": [
+        "heat"
+      ],
+      "axisZ": 2925,
+      "lengthMM": 2000.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "ground-WC-branch",
+      "level": 0,
+      "path": [
+        [
+          8500,
+          3500
+        ],
+        [
+          8500,
+          1800
+        ]
+      ],
+      "duties": [
+        "heat",
+        "cold",
+        "hot"
+      ],
+      "axisZ": 2925,
+      "lengthMM": 1700.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "ground-utility",
+      "level": 0,
+      "path": [
+        [
+          10500,
+          5000
+        ],
+        [
+          11200,
+          5000
+        ],
+        [
+          11200,
+          1800
+        ]
+      ],
+      "duties": [
+        "heat",
+        "cold",
+        "hot"
+      ],
+      "axisZ": 2925,
+      "lengthMM": 3900.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "upper-family-wet",
+      "level": 1,
+      "path": [
+        [
+          10500,
+          5000
+        ],
+        [
+          11200,
+          5000
+        ]
+      ],
+      "duties": [
+        "heat",
+        "cold",
+        "hot"
+      ],
+      "axisZ": 6375,
+      "lengthMM": 700.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    },
+    {
+      "id": "upper-principal-wet",
+      "level": 1,
+      "path": [
+        [
+          10500,
+          5000
+        ],
+        [
+          11200,
+          5000
+        ],
+        [
+          11200,
+          7200
+        ]
+      ],
+      "duties": [
+        "heat",
+        "cold",
+        "hot",
+        "hot-return"
+      ],
+      "axisZ": 6375,
+      "lengthMM": 2900.0,
+      "ordinaryBand": [
+        310,
+        250
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate."
+    }
+  ],
+  "wallCrossingEnquiries": [
+    {
+      "route": "ground-front-west",
+      "level": 0,
+      "wall": "service-spine",
+      "point": [
+        9300,
+        5000,
+        2925
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "ground-front-west",
+      "level": 0,
+      "wall": "rear-west",
+      "point": [
+        3500,
+        8852.5,
+        2925
+      ],
+      "planInsideExistingAperture": true,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "ground-rear-east",
+      "level": 0,
+      "wall": "plant-north",
+      "point": [
+        10500,
+        6500,
+        2925
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "ground-rear-east",
+      "level": 0,
+      "wall": "rear-east",
+      "point": [
+        10500,
+        8290,
+        2925
+      ],
+      "planInsideExistingAperture": true,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "upper-front-west",
+      "level": 1,
+      "wall": "wet-spine",
+      "point": [
+        9300,
+        5000,
+        6375
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "upper-front-west",
+      "level": 1,
+      "wall": "rear-west",
+      "point": [
+        1800,
+        8852.5,
+        6375
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "upper-rear-east",
+      "level": 1,
+      "wall": "bath-north",
+      "point": [
+        10500,
+        6500,
+        6375
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "upper-rear-east",
+      "level": 1,
+      "wall": "rear-east",
+      "point": [
+        10500,
+        8290,
+        6375
+      ],
+      "planInsideExistingAperture": true,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "upper-bed4",
+      "level": 1,
+      "wall": "rear-west-return",
+      "point": [
+        4377.5,
+        8500,
+        6375
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "upper-bed2",
+      "level": 1,
+      "wall": "bed2-L-north",
+      "point": [
+        2500,
+        3247.5,
+        6375
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "upper-bed3",
+      "level": 1,
+      "wall": "bed3-north-main",
+      "point": [
+        8500,
+        2650,
+        6375
+      ],
+      "planInsideExistingAperture": true,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "ground-study",
+      "level": 0,
+      "wall": "study-L-north",
+      "point": [
+        2500,
+        3247.5,
+        2925
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "ground-WC-branch",
+      "level": 0,
+      "wall": "wc-north",
+      "point": [
+        8500,
+        2650,
+        2925
+      ],
+      "planInsideExistingAperture": true,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "ground-utility",
+      "level": 0,
+      "wall": "utility-north",
+      "point": [
+        11200,
+        2550,
+        2925
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "ground-utility",
+      "level": 0,
+      "wall": "plant-intermediate-arch",
+      "point": [
+        11200,
+        3700,
+        2925
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "upper-principal-wet",
+      "level": 1,
+      "wall": "bath-north",
+      "point": [
+        11200,
+        6500,
+        6375
+      ],
+      "planInsideExistingAperture": false,
+      "requiredServiceTerritory": [
+        310,
+        250
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "guest-WC",
+      "level": 0,
+      "count": 1,
+      "sourceOrProposedXY": [
+        8700,
+        600
+      ],
+      "duties": [
+        "cold",
+        "soil"
+      ],
+      "waterBranchPlan": [
+        [
+          8500,
+          1800
+        ],
+        [
+          8900,
+          1800
+        ],
+        [
+          8900,
+          650
+        ]
+      ],
+      "valveAxisZ": 300,
+      "waterBranchLengthIncludingDropMM": 4175.0,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall."
+    },
+    {
+      "id": "guest-basin",
+      "level": 0,
+      "count": 1,
+      "sourceOrProposedXY": [
+        7450,
+        600
+      ],
+      "duties": [
+        "cold",
+        "hot",
+        "waste"
+      ],
+      "waterBranchPlan": [
+        [
+          8500,
+          1800
+        ],
+        [
+          7650,
+          1800
+        ],
+        [
+          7650,
+          700
+        ]
+      ],
+      "valveAxisZ": 600,
+      "waterBranchLengthIncludingDropMM": 4275.0,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
+      "terminalDeadLegLitresAt13mmID": 0.5674305381005714,
+      "idealFlushSecondsAt6Lmin": 5.6743053810057145
+    },
+    {
+      "id": "utility-sink-PROPOSED",
+      "level": 0,
+      "count": 1,
+      "sourceOrProposedXY": [
+        11000,
+        1100
+      ],
+      "duties": [
+        "cold",
+        "hot",
+        "waste"
+      ],
+      "waterBranchPlan": [
+        [
+          11200,
+          1800
+        ],
+        [
+          11150,
+          1800
+        ],
+        [
+          11150,
+          1300
+        ]
+      ],
+      "valveAxisZ": 600,
+      "waterBranchLengthIncludingDropMM": 2875.0,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
+      "terminalDeadLegLitresAt13mmID": 0.3816053326407352,
+      "idealFlushSecondsAt6Lmin": 3.816053326407352
+    },
+    {
+      "id": "washer-PROPOSED",
+      "level": 0,
+      "count": 1,
+      "sourceOrProposedXY": [
+        10300,
+        1100
+      ],
+      "duties": [
+        "cold",
+        "waste",
+        "power"
+      ],
+      "waterBranchPlan": [
+        [
+          11200,
+          1800
+        ],
+        [
+          10600,
+          1800
+        ],
+        [
+          10600,
+          1400
+        ]
+      ],
+      "valveAxisZ": 750,
+      "waterBranchLengthIncludingDropMM": 3175.0,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall."
+    },
+    {
+      "id": "kitchen-sink",
+      "level": 0,
+      "count": 1,
+      "sourceOrProposedXY": [
+        8700,
+        10982.5
+      ],
+      "duties": [
+        "cold",
+        "hot",
+        "waste"
+      ],
+      "waterBranchPlan": [
+        [
+          10500,
+          10800
+        ],
+        [
+          9150,
+          10800
+        ],
+        [
+          9150,
+          11282.5
+        ]
+      ],
+      "valveAxisZ": 600,
+      "waterBranchLengthIncludingDropMM": 4157.5,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
+      "terminalDeadLegLitresAt13mmID": 0.5518344940709067,
+      "idealFlushSecondsAt6Lmin": 5.518344940709067
+    },
+    {
+      "id": "principal-WC",
+      "level": 1,
+      "count": 1,
+      "sourceOrProposedXY": [
+        10972.5,
+        7412.5
+      ],
+      "duties": [
+        "cold",
+        "soil"
+      ],
+      "waterBranchPlan": [
+        [
+          11200,
+          7200
+        ],
+        [
+          11200,
+          8040
+        ],
+        [
+          11432.5,
+          8040
+        ]
+      ],
+      "valveAxisZ": 3950,
+      "waterBranchLengthIncludingDropMM": 3497.5,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall."
+    },
+    {
+      "id": "principal-basin",
+      "level": 1,
+      "count": 1,
+      "sourceOrProposedXY": [
+        9400,
+        7600
+      ],
+      "duties": [
+        "cold",
+        "hot",
+        "waste"
+      ],
+      "waterBranchPlan": [
+        [
+          11200,
+          7200
+        ],
+        [
+          10500,
+          7200
+        ],
+        [
+          10500,
+          7800
+        ],
+        [
+          9570,
+          7800
+        ]
+      ],
+      "valveAxisZ": 4050,
+      "waterBranchLengthIncludingDropMM": 4555.0,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
+      "terminalDeadLegLitresAt13mmID": 0.6045955791925387,
+      "idealFlushSecondsAt6Lmin": 6.045955791925387
+    },
+    {
+      "id": "principal-shower",
+      "level": 1,
+      "count": 1,
+      "sourceOrProposedXY": [
+        9400,
+        6600
+      ],
+      "duties": [
+        "cold",
+        "hot",
+        "waste"
+      ],
+      "waterBranchPlan": [
+        [
+          11200,
+          7200
+        ],
+        [
+          10500,
+          7200
+        ],
+        [
+          10500,
+          7050
+        ],
+        [
+          9450,
+          7050
+        ]
+      ],
+      "valveAxisZ": 4550,
+      "waterBranchLengthIncludingDropMM": 3725.0,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
+      "terminalDeadLegLitresAt13mmID": 0.49442777881277866,
+      "idealFlushSecondsAt6Lmin": 4.944277788127787
+    },
+    {
+      "id": "family-WC",
+      "level": 1,
+      "count": 1,
+      "sourceOrProposedXY": [
+        11022.5,
+        5900
+      ],
+      "duties": [
+        "cold",
+        "soil"
+      ],
+      "waterBranchPlan": [
+        [
+          11200,
+          5000
+        ],
+        [
+          11200,
+          6077.5
+        ]
+      ],
+      "valveAxisZ": 3950,
+      "waterBranchLengthIncludingDropMM": 3502.5,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall."
+    },
+    {
+      "id": "family-basin",
+      "level": 1,
+      "count": 1,
+      "sourceOrProposedXY": [
+        9800,
+        6195
+      ],
+      "duties": [
+        "cold",
+        "hot",
+        "waste"
+      ],
+      "waterBranchPlan": [
+        [
+          11200,
+          5000
+        ],
+        [
+          11200,
+          6200
+        ],
+        [
+          10000,
+          6200
+        ]
+      ],
+      "valveAxisZ": 4050,
+      "waterBranchLengthIncludingDropMM": 4725.0,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
+      "terminalDeadLegLitresAt13mmID": 0.6271600684269474,
+      "idealFlushSecondsAt6Lmin": 6.271600684269474
+    },
+    {
+      "id": "family-bath",
+      "level": 1,
+      "count": 1,
+      "sourceOrProposedXY": [
+        9460,
+        3785
+      ],
+      "duties": [
+        "cold",
+        "hot",
+        "waste"
+      ],
+      "waterBranchPlan": [
+        [
+          11200,
+          5000
+        ],
+        [
+          11200,
+          4100
+        ]
+      ],
+      "valveAxisZ": 4050,
+      "waterBranchLengthIncludingDropMM": 3225.0,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
+      "terminalDeadLegLitresAt13mmID": 0.42806163400569425,
+      "idealFlushSecondsAt6Lmin": 4.280616340056943
+    },
+    {
+      "id": "rear-WC",
+      "level": 1,
+      "count": 1,
+      "sourceOrProposedXY": [
+        717.5,
+        11000
+      ],
+      "duties": [
+        "cold",
+        "soil"
+      ],
+      "waterBranchPlan": [
+        [
+          1800,
+          10000
+        ],
+        [
+          1200,
+          10000
+        ],
+        [
+          1200,
+          11177.5
+        ],
+        [
+          650,
+          11177.5
+        ]
+      ],
+      "valveAxisZ": 3750,
+      "waterBranchLengthIncludingDropMM": 4952.5,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall."
+    },
+    {
+      "id": "rear-basin",
+      "level": 1,
+      "count": 1,
+      "sourceOrProposedXY": [
+        1000,
+        8937.5
+      ],
+      "duties": [
+        "cold",
+        "hot",
+        "waste"
+      ],
+      "waterBranchPlan": [
+        [
+          1800,
+          10000
+        ],
+        [
+          1200,
+          10000
+        ],
+        [
+          1200,
+          9000
+        ]
+      ],
+      "valveAxisZ": 4050,
+      "waterBranchLengthIncludingDropMM": 3925.0,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
+      "terminalDeadLegLitresAt13mmID": 0.5209742367356124,
+      "idealFlushSecondsAt6Lmin": 5.209742367356124
+    },
+    {
+      "id": "rear-shower",
+      "level": 1,
+      "count": 1,
+      "sourceOrProposedXY": [
+        1817.5,
+        8937.5
+      ],
+      "duties": [
+        "cold",
+        "hot",
+        "waste"
+      ],
+      "waterBranchPlan": [
+        [
+          1800,
+          10000
+        ],
+        [
+          2300,
+          10000
+        ],
+        [
+          2300,
+          8975
+        ]
+      ],
+      "valveAxisZ": 4550,
+      "waterBranchLengthIncludingDropMM": 3350.0,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
+      "terminalDeadLegLitresAt13mmID": 0.44465317020746536,
+      "idealFlushSecondsAt6Lmin": 4.446531702074654
+    }
+  ],
+  "otherDuties": [
+    {
+      "id": "incoming-water",
+      "count": 1,
+      "path": [
+        [
+          12000,
+          1000,
+          500
+        ],
+        [
+          11200,
+          1000,
+          500
+        ],
+        [
+          11200,
+          4300,
+          500
+        ],
+        [
+          10400,
+          4300,
+          500
+        ]
+      ],
+      "decision": "Service pressure/quality and meter/backflow selection; accessible isolator, drain and actual utility supply. No polymer-free network-pipe claim."
+    },
+    {
+      "id": "foul-ground-WC",
+      "count": 1,
+      "path": [
+        [
+          8900,
+          925,
+          150
+        ],
+        [
+          8900,
+          925,
+          -500
+        ],
+        [
+          12000,
+          925,
+          -600
+        ]
+      ],
+      "decision": "Own formedgroundport, retained supports and gravity outfall; groundbeam/cap/solum checked before permission. Grade/invert/site connection unproved."
+    },
+    {
+      "id": "foul-utility",
+      "count": 2,
+      "path": [
+        [
+          10800,
+          1400,
+          400
+        ],
+        [
+          10800,
+          1400,
+          -450
+        ],
+        [
+          12000,
+          1400,
+          -500
+        ]
+      ],
+      "decision": "Sink/washer trapped branches to accessible foul inspection, not strainer. Gravity falls and actual trap connector seals to match selected appliances."
+    },
+    {
+      "id": "foul-kitchen",
+      "count": 1,
+      "path": [
+        [
+          9150,
+          11282.5,
+          400
+        ],
+        [
+          9150,
+          11282.5,
+          -450
+        ],
+        [
+          9150,
+          12000,
+          -500
+        ]
+      ],
+      "decision": "Accessible sink trap/cleanout; no branch through ground loggia or hidden waterbox."
+    },
+    {
+      "id": "rear-soil",
+      "count": 1,
+      "path": [
+        [
+          567.5,
+          11177.5,
+          7800
+        ],
+        [
+          567.5,
+          11177.5,
+          -450
+        ],
+        [
+          0,
+          11177.5,
+          -550
+        ]
+      ],
+      "decision": "Merged R01 sanitary port remains only conditional; actual roof intersection/termination must be raised above adjacent openings and roof, not fixed by7800 reservation."
+    },
+    {
+      "id": "east-soil",
+      "count": 1,
+      "path": [
+        [
+          9800,
+          5200,
+          7800
+        ],
+        [
+          9800,
+          5200,
+          2682.5
+        ],
+        [
+          9800,
+          5200,
+          -450
+        ],
+        [
+          12000,
+          5200,
+          -550
+        ]
+      ],
+      "decision": "Merged high-level principal/family collector interface retained; vertical soil/vent body above collector is a proposed riser territory, not extra waste capacity. Roof terminal still conditional."
+    },
+    {
+      "id": "rainwater-interface",
+      "count": "RWT-owned",
+      "path": [],
+      "decision": "Copper roof/loggia receivers and independent exceedance route stay MAT/RWT owners. No sanitary, condensate or safety discharge assumed to share their receiver."
+    },
+    {
+      "id": "power-incoming",
+      "count": 1,
+      "path": [
+        [
+          12000,
+          1500,
+          1500
+        ],
+        [
+          11200,
+          1500,
+          1500
+        ]
+      ],
+      "decision": "Meter/metalconsumer-unit station inutility, accessible1000mm workingdepth. Utility-side cabinet/washing-machine layout must retain clear serviceface. Utility capacity/earthing/bonding/RCD/overcurrent and actual circuits by certified design."
+    },
+    {
+      "id": "power-distribution",
+      "count": "Functional circuit groups, not final circuit count",
+      "path": [
+        [
+          11200,
+          1500,
+          2925
+        ],
+        [
+          11200,
+          5000,
+          2925
+        ],
+        [
+          9800,
+          5000,
+          2925
+        ]
+      ],
+      "decision": "Separate metal drytray follows declared indoor tree; own sealed floor aperture/tray supports, not tied to hotpipes. Mineral-insulated cable investigated, but terminations/controls/flex tails remain certified residuals; cable sizing and fire survival not invented."
+    },
+    {
+      "id": "cooking-power",
+      "count": 1,
+      "path": [
+        [
+          11200,
+          1500,
+          2925
+        ],
+        [
+          11200,
+          10800,
+          2925
+        ],
+        [
+          11100,
+          11200,
+          900
+        ]
+      ],
+      "decision": "Electric cooking, accessible isolation and separate hood/control/makeup duty. No gas supply selected."
+    },
+    {
+      "id": "laundry-refrigeration",
+      "count": 2,
+      "path": [],
+      "decision": "One washer at10300/1100 and fridge at10932.5/9025; accessible isolated appliance tails. Washer is new proposal; manufacturer withdrawal/hose/workplate dimensions required, not built into structure."
+    },
+    {
+      "id": "lighting-controls-data",
+      "count": "All occupied rooms, circulation andplant",
+      "path": [],
+      "decision": "Drytray branches drop to inspectable metal face stations; actual circuit/accessory count follows electrical layout. Wired controls, no mandatory cloud/radio. Data/fire-alarm isolation and earthing separate, no implied certified polymer-free circuits."
+    },
+    {
+      "id": "fire-detection",
+      "count": "Whole-house alarm layout to fire strategy",
+      "path": [],
+      "decision": "Protected stair/ring and every habitable/wet risk zone scheduled for actual compliant detector design; no device locations or grade/category invented. Certified alarm internals/backup power are explicit residue; do not delete to satisfy materials."
+    },
+    {
+      "id": "purge-overheating",
+      "count": 6,
+      "path": [],
+      "decision": "Every habitable room retains actual operablewindow task; openings/noise/security/fall protection and orientation/climate/shading must prove purge/overheating.65L/s winterventilation is not cooling and no cooling duty is silently omitted."
+    },
+    {
+      "id": "PV-generation",
+      "count": 8,
+      "path": [
+        [
+          10000,
+          6000,
+          7200
+        ],
+        [
+          10000,
+          5000,
+          6350
+        ],
+        [
+          10000,
+          5000,
+          2925
+        ],
+        [
+          11200,
+          2200,
+          2925
+        ],
+        [
+          9650,
+          650,
+          1600
+        ]
+      ],
+      "decision": "4kWp conditional roof requirement and utility inverter; roofplane/source, solar access, fixation/fire/cable/renewal and actual output must converge before selected apparatus. No energy-offset credit from nameplate."
+    }
+  ],
+  "residues": [
+    {
+      "id": "MEV-fans",
+      "quantity": "6 complete replaceable stations",
+      "location": "Six outer-wall wet-room pods",
+      "known": "Systemair K comparator has glass-reinforced polyamide impeller despite metal casing. Motor varnish, insulation, terminalbox/electronics/grommets and clamps need exact bill.",
+      "alternative": "No-powered natural/intermittent fails intended airtight simple case; centralMEV/MVHR add distribution. Metal impeller fan may reduce one residue but is not presumed performance-compatible.",
+      "replacement": "Isolate electrically, independently support both duct ends, open300×400clear panel, release actual demountable joints and lower complete≤250×300fan into clear room workzone; fixed wall sleeve/weather seal remains.25/50clear task reserve is design requirement, not matched-kit proof.",
+      "proposal": "No exception yet; exact fan revision, constituents/quantity, duty/noise/curve and replacement instructions must precede any narrow owner request."
+    },
+    {
+      "id": "heat-pump",
+      "quantity": "1 outdoor monobloc + indoor hydraulic controls/plateHX/2circulation functions",
+      "location": "Externalstation andplant serviceface",
+      "known": "Certified compressor oil may be PAG; electrical insulation, PCBs, seals, pump internals, antivibration feet and flexible joints remain. R290 itself is a refrigerant, not proof of no polymers.",
+      "alternative": "Directelectric removes refrigeration/hydraulics but increases delivered-electric demand; combustion adds fuel/flue/CO and is not selected. No safety/control parts altered.",
+      "replacement": "Outdoor body exits directly to2300×1800 pad then site vehicle/lifting route; indoor unit to plantreplacementdoor. Exact mass/lift/clearance and freeze fluid declaration required.",
+      "proposal": "Apparatus-only exception candidate, never approved by selecting this architecture; no polymer jacket/tube blanket exception."
+    },
+    {
+      "id": "DHW-vessel",
+      "quantity": "1×300L vessel; standard comparison50mm insulation",
+      "location": "Plant700square station",
+      "known": "Factory foam chemistry/cladding/valves/immersion/thermostat/seals unknown in dimension brochure.67.6kg dry/356.8kg filled comparison; no metal-only admission.",
+      "alternative": "Require factory-engineered demountable mineral insulated pressure-vessel variant; bespoke copper capability is not evidence of approved replacement insulation. Openvented alternative needs a real head/tank/pressure solution, unavailable in unproved attic.",
+      "replacement": "Drain andisolate; disconnect accessible eastserviceface;425radius uprighttrolley path to1000clear replacementdoor; no supporting floor/seals removed.",
+      "proposal": "Do not request whole-cylinder foam exception before the evidenced nonfoam engineered variant is resolved. Exact proprietary safety residues separately bounded."
+    },
+    {
+      "id": "water-waste-joints",
+      "quantity": "14cold endpoints/9hot endpoints/4WCs/3bathing outlets/2sinks/washer; actual joint count unresolved",
+      "location": "Valvefaces, traps, panconnectors, cylinder and retained crossings",
+      "known": "Matched seals, valve seats, TMVs, pump/check/backflow and expansion diaphragms commonly synthetic; exact required kits not selected. Metal tube is not complete assembly.",
+      "alternative": "Copper solder/mechanical joints where appropriate; vitreous fixtures/clay/iron or metal sanitary carriers with actual compatible joints. No failedmatched PP waste replaced by an invented metal seal.",
+      "replacement": "Localisolation/drain/cleanout at each terminal; merged lower shower interface and separate75stem stripping requirement retained exactly.",
+      "proposal": "Product-by-product seal/valve exceptions only after exact kit and alternative testing; none approved."
+    },
+    {
+      "id": "electrical-fire-controls",
+      "quantity": "1consumer station + each final circuit/terminal/alarm/actuator; exact count unselected",
+      "location": "Drytray, inspectable metalface stations and apparatus",
+      "known": "Certified insulation/encapsulation/sleeves/flexes/RCDs/alarms and backup batteries remain in scope. Firestops/door-transfer and makeupdamper seals may add residues.",
+      "alternative": "Mineral-insulated metallic routes and metalfaces reduce concealed polymers; not proof that certified terminations can be rebuilt or seals omitted.",
+      "replacement": "Accessible isolated complete accessory/device exchange; no embedding as permanent fabric. Fireboundary remains closed by matched retained system.",
+      "proposal": "Narrow exact certified accessory exceptions with installed extent/inspection interval; no generic electrical or fire exemption."
+    },
+    {
+      "id": "PV",
+      "quantity": "8 modules +1inverter + matched DC cable/connectors/isolators",
+      "location": "Required roof planes and accessibleutility station",
+      "known": "8 module encapsulation/backsheet/junction assemblies plus DC insulation/connectors and1 inverter/control assembly; exact chemistry/mass/length/replacement warranty unknown, never glass/aluminium-only claim.",
+      "alternative": "Omit battery/optimisers unless shading/safety proves need. Groundarray is a separate actual site redesign, not a free fallback. No permission to remove module encapsulation/connector insulation.",
+      "replacement": "Groundutility inverter isolation/terminal service; roof modules from externally engineered scaffold/lift and retained roofanchors, not loftstairs or standing on modules. Roof cable sleeves/firestop and metal weather flashing remain independent of cable replacement.",
+      "proposal": "Exact certified system residuals after roof/material comparison; no owner exception approved."
+    }
+  ],
+  "notAdmitted": [
+    "Every exterior core/lintel/thermal/gas/weather junction",
+    "Riser trimmed RC opening and upper connections",
+    "Specific protected-door transfer and pipe/cable firestops",
+    "Exact emitters/pumps/fittings and measured performance",
+    "Actual mains, site climate, network/outfall/pressure/noise/pollution and power",
+    "Owner-approved polymer exceptions; none created"
+  ],
+  "reproduction": "Python standard library. If frozen HAD object is absent, explicitly git fetch origin c83a06f26cf3b146d7cdc8254b4799f390508196; verify fullblob. No synthetic merge parent or geometry substitution. Geometry tests distinguish finite reservations from engineering acceptance."
+}
