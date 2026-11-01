@@ -92,15 +92,18 @@ L 283.464567 583.937008
     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="127.559055" y="133.228346" transform="rotate(-0 127.559055 133.228346)">Synthetic 6000 radius exclusion</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #22313b" x="496.062992" y="317.480315" transform="rotate(-0 496.062992 317.480315)">HOUSE</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #22313b" x="496.062992" y="317.480315" transform="rotate(-0 496.062992 317.480315)">COURT</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="127.559055" y="629.291339" transform="rotate(-0 127.559055 629.291339)">west control: intersects</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #22313b" x="496.062992" y="133.228346" transform="rotate(-0 496.062992 133.228346)">12 m HOUSE EXTENT</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="425.19685" y="629.291339" transform="rotate(-0 425.19685 629.291339)">east trial: clear in this scenario</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="127.559055" y="629.291339" transform="rotate(-0 127.559055 629.291339)">west control: intersects</text>
    </g>
    <g id="text_5">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="425.19685" y="629.291339" transform="rotate(-0 425.19685 629.291339)">east trial: clear in this scenario</text>
+   </g>
+   <g id="text_6">
     <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #22313b" x="212.598425" y="568.346457" transform="rotate(-0 212.598425 568.346457)">5 m / map 1:100 at A3</text>
    </g>
   </g>
@@ -148,43 +151,43 @@ L 1010.551181 419.12261
 L 1010.551181 414.263217 
 " clip-path="url(#pc74722ccb1)" style="fill: none; stroke-dasharray: 4.81,2.08; stroke-dashoffset: 0; stroke: #b54736; stroke-width: 1.3"/>
    </g>
-   <g id="text_6">
+   <g id="text_7">
     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="748.143982" y="358.380202" transform="rotate(-0 748.143982 358.380202)">HOUSE-FIXED</text>
    </g>
-   <g id="text_7">
+   <g id="text_8">
     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="991.113611" y="358.380202" transform="rotate(-0 991.113611 358.380202)">SOIL-FIXED</text>
    </g>
-   <g id="text_8">
+   <g id="text_9">
     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="825.894263" y="393.367829" transform="rotate(-0 825.894263 393.367829)">2 m at 1:80 → 25 mm fall</text>
    </g>
-   <g id="text_9">
+   <g id="text_10">
     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="777.300337" y="475.005624" transform="rotate(-0 777.300337 475.005624)">+50 mm receiving end rise → −25 mm fall</text>
    </g>
-   <g id="text_10">
+   <g id="text_11">
     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="777.300337" y="504.16198" transform="rotate(-0 777.300337 504.16198)">Result: reverse fall. A joint cannot fix gravity.</text>
    </g>
-   <g id="text_11">
+   <g id="text_12">
     <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="777.300337" y="547.896513" transform="rotate(-0 777.300337 547.896513)">Centreline only / no pipe, port or beam dimensions</text>
    </g>
   </g>
-  <g id="text_12">
+  <g id="text_13">
    <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="42.519685" y="34.015748" transform="rotate(-0 42.519685 34.015748)">Movement must stay out of the masonry and services</text>
   </g>
-  <g id="text_13">
+  <g id="text_14">
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="42.519685" y="59.527559" transform="rotate(-0 42.519685 59.527559)">G-03 | Synthetic tree trial + three-axis crossing | No real plot or joint performance represented</text>
   </g>
-  <g id="text_14">
+  <g id="text_15">
    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="42.519685" y="816.377953" transform="rotate(-0 42.519685 816.377953)">STR-GROUND | Reference design — not released for construction | 1 November 2026</text>
   </g>
-  <g id="text_15">
+  <g id="text_16">
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(42.519685 692.063002)">The circle tests route avoidance, NOT root safety. West closest 2488 mm; east 15529 mm.</text>
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(42.519685 702.844877)">Either route needs real root mapping, rig/load/working footprint and actual network positions.</text>
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(42.519685 713.626752)">A clean centreline cannot authorise excavation, piling or a mixed-utility raceway.</text>
   </g>
-  <g id="text_16">
+  <g id="text_17">
    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #22313b" x="737.007874" y="121.744108" transform="rotate(-0 737.007874 121.744108)">Crossing result / conditional failure</text>
   </g>
-  <g id="text_17">
+  <g id="text_18">
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 156.31497)">Separate house-fixed port from a supported, accessible</text>
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 167.096845)">site segment. Provide a replaceable transition before</text>
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 177.87872)">any soil-fixed receiver. Opening precedes beam design.</text>
@@ -194,7 +197,7 @@ L 1010.551181 414.263217
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 221.00622)">and required joint lengths remain unknown.</text>
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 231.788095)">No coupling, seal or service has passed this envelope.</text>
   </g>
-  <g id="text_18">
+  <g id="text_19">
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 663.716545)">No rigid cast-in crossing. No shared gas/water chamber</text>
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 674.49842)">assumed. Foul fall, roof water and court emergency path</text>
    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #22313b" transform="translate(737.007874 685.280295)">retain independent checks. A covered trench may flood;</text>
