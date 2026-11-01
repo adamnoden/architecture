@@ -9,8 +9,8 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-01T21:40:38.064Z",
-  "expiresAt": "2026-11-01T22:25:38.064Z",
+  "heartbeatAt": "2026-11-01T21:49:41.841Z",
+  "expiresAt": "2026-11-01T22:34:41.841Z",
   "branch": "work/zerg4-interiors-whole-house",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -36,8 +36,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote d7bcc5da treea12df115; exact HADa324 blob1412 import;10protecteddoors15families18occurrences;15hardmax/17headclash;repro,typecheck,integrity,adversehash,renderreview",
-    "next": "Independent IAS/root review then dependent PR with current HAD geometry; retain all material and physical holds",
-    "blocker": "Actual15 dry recipe and actualroof duty/support unresolved; broad MAT not complete"
+    "evidence": "Remote f2e40f73 tree1c3d2deb; full27lime preferred,gypsum/acrylate functionalcontrol; exactHAD1412 imported;15families18occurrences; finitefamily/rearwettrial; repro/integrity/render checked",
+    "next": "Earn HAD27dryfinish/task rewind and IAS familyhinged-door/230serviceband/rearwet joins; then assess developmentexit independently of later admission",
+    "blocker": "Two actual internal geometry joins pending; no owner/material/product/physical admission inferred"
   }
 }
