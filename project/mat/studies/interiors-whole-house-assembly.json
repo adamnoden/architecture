@@ -16,9 +16,141 @@
     "project/mat/studies/services-b-joined-inventory.json": "424fe5df34b921915b33bd846606d6b3508d944232eefc724aad7d18dc66ef94"
   },
   "geometry": {
-    "HADHead": "a324a50d047843603d6fc275c4062bc9d0c1cb90",
-    "HADJSONBlob": "1412e628aa6b539664c8f5efd507595623cf2a21",
+    "HADHead": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
+    "HADJSONBlob": "6affb39e28a777e36532729183152c8c588e4989",
     "logicalInput": "project/had/studies/open-north-loggia.json",
+    "services": {
+      "head": "0e54959e28946b1bab1f04d439588477c05eb3d2",
+      "blob": "6b05acdd9dc46d1e7088540e7e257787a0ebf788",
+      "logicalInput": "project/mat/studies/whole-house-service-baseline.json"
+    },
+    "wholeHouseFit": {
+      "listedProxyPass": true,
+      "footprintPass": false,
+      "pass": false,
+      "remaining": [
+        "Resolve all recorded whole furniture/wall overlaps, including frontheads.",
+        "Rebind actual front-single door/closed-room paths after complete finish/frame correction.",
+        "Join IAS familydoor arm/regrip and all wet30 boundary patches."
+      ],
+      "scope": "No actual product/force/material/fire/physical certification is made a substitute for these internal geometry corrections."
+    },
+    "rawFootprint": {
+      "method": "Positive rectangle overlap of each represented whole furniture/fixture with actual nominal finished walls/receivers, before decorative18skirt. Wall-mounted contact at zero is not counted. No vertical exception silently invented.",
+      "conflicts": [
+        {
+          "level": "GROUND",
+          "object": "pantry-shelf-comparison",
+          "wall": "service-spine",
+          "overlap": [
+            9385,
+            6800,
+            12,
+            1150
+          ]
+        },
+        {
+          "level": "GROUND",
+          "object": "rear-stack",
+          "wall": "outer-west",
+          "overlap": [
+            417.5,
+            10800,
+            12,
+            750
+          ]
+        },
+        {
+          "level": "GROUND",
+          "object": "north-sink-station",
+          "wall": "outer-north",
+          "overlap": [
+            8700,
+            11570.5,
+            900,
+            12
+          ]
+        },
+        {
+          "level": "GROUND",
+          "object": "north-cooking-station",
+          "wall": "outer-north",
+          "overlap": [
+            10800,
+            11570.5,
+            600,
+            12
+          ]
+        },
+        {
+          "level": "FIRST",
+          "object": "bed2-head",
+          "wall": "bed2-L-north",
+          "overlap": [
+            1125,
+            3150.5,
+            900,
+            12
+          ]
+        },
+        {
+          "level": "FIRST",
+          "object": "bed2-wardrobe",
+          "wall": "bed2-east",
+          "overlap": [
+            4703,
+            1017.5,
+            12,
+            900
+          ]
+        },
+        {
+          "level": "FIRST",
+          "object": "bed3-head",
+          "wall": "bed3-L-north",
+          "overlap": [
+            10033.75,
+            3603,
+            900,
+            12
+          ]
+        },
+        {
+          "level": "FIRST",
+          "object": "bed3-wardrobe",
+          "wall": "bed3-west",
+          "overlap": [
+            7285,
+            1017.5,
+            12,
+            1500
+          ]
+        },
+        {
+          "level": "FIRST",
+          "object": "rear-cabinet",
+          "wall": "outer-west",
+          "overlap": [
+            417.5,
+            10800,
+            12,
+            750
+          ]
+        },
+        {
+          "level": "FIRST",
+          "object": "rear-west-low-box",
+          "wall": "outer-west",
+          "overlap": [
+            417.5,
+            9937.5,
+            12,
+            862.5
+          ]
+        }
+      ],
+      "pass": false
+    },
     "protectedRevision": "Exact protected occurrence reference imported one way; product/physical/statutory admission not earned",
     "protectedRoute": {
       "basis": "One conventional reference topology under currentADB2.5a; no regulatory approval or classified assembly claimed.",
@@ -29,15 +161,15 @@
         "groundStairEastWall": {
           "finished": [
             2817.5,
-            4185,
-            130,
-            4752.5
+            4173,
+            154,
+            4776.5
           ],
           "core": [
-            2832.5,
-            4185,
+            2844.5,
+            4173,
             100,
-            4752.5
+            4776.5
           ],
           "scope": "Nonloadbearing100core+15each; whollyoutside1100flight. Bonds to4250return/rearwall, noSouthlandingcutoff."
         },
@@ -54,33 +186,34 @@
           "level": "GROUND",
           "host": "protected-west-cross",
           "rough": [
-            2947.5,
-            3832.5
+            2971.5,
+            3820.5
           ],
           "axis": 4250,
           "frameEach": 25,
           "leaf": [
-            830,
+            794,
             44
           ],
           "hinge": [
-            3802.5,
+            3793,
             4250
           ],
           "opening": "NORTHintoexcludedgallery",
           "closed": [
-            2972.5,
+            2999,
             4228,
-            830,
+            794,
             44
           ],
           "open": [
-            3780.5,
+            3771,
             4250,
             44,
-            830
+            794
           ],
-          "minimumClearBudget": 791,
+          "edgeGapsEach": 2.5,
+          "minimumClearBudget": 755,
           "performance": "E20minimumreference;classifiedfullassembly/actualgaprequired"
         },
         {
@@ -98,22 +231,23 @@
             44
           ],
           "hinge": [
-            9111.25,
+            9113.75,
             4250
           ],
           "opening": "NORTHintoexcludedgallery",
           "closed": [
-            8266.25,
+            8268.75,
             4228,
             845,
             44
           ],
           "open": [
-            9089.25,
+            9091.75,
             4250,
             44,
             845
           ],
+          "edgeGapsEach": 2.5,
           "minimumClearBudget": 806,
           "performance": "E20minimumreference;classifiedfullassemblyrequired"
         },
@@ -136,7 +270,8 @@
             3247.5
           ],
           "opening": "SOUTHINTOSTUDY",
-          "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim"
+          "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim",
+          "frameDepth": 194
         },
         {
           "id": "GUEST-WC",
@@ -213,7 +348,28 @@
             6350
           ],
           "axis": 9300,
-          "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating"
+          "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating",
+          "trial": {
+            "rough": [
+              5450,
+              6350
+            ],
+            "completeFrame": 825,
+            "leaf": [
+              762,
+              44
+            ],
+            "hinge": [
+              9397,
+              6281
+            ],
+            "clear": [
+              5516.5,
+              6283.5
+            ],
+            "net": 767,
+            "status": "IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified"
+          }
         }
       ],
       "internalClosers": "Notautomaticallyrequiredsolelywithindwellinghouse(currentAppendixC5). Noarbitrarycloserremovedfromactuallyclassifiedassembly.",
@@ -243,7 +399,7 @@
         700
       ],
       "study-chair": [
-        1000,
+        900,
         1400,
         1000,
         900
@@ -298,55 +454,55 @@
       ],
       "reading-sofa1900x850": [
         800,
-        8950,
+        9000,
         850,
         1900
       ],
       "reading-side-table300": [
-        1800,
-        10650,
+        800,
+        10925,
         300,
         300
       ],
       "family-sofa1900x750": [
-        3425,
-        9650,
-        750,
-        1900
+        2337.5,
+        9800,
+        1900,
+        750
       ],
       "family-side-table300": [
-        3000,
-        9700,
+        3900,
+        9450,
         300,
         300
       ],
       "dining-table1200x800": [
         8500,
-        9050,
+        9100,
         800,
         1200
       ],
       "dining-chair-west-south": [
         8000,
-        9100,
+        9150,
         500,
         500
       ],
       "dining-chair-west-north": [
         8000,
-        9700,
+        9750,
         500,
         500
       ],
       "dining-chair-east-south": [
         9300,
-        9100,
+        9150,
         500,
         500
       ],
       "dining-chair-east-north": [
         9300,
-        9700,
+        9750,
         500,
         500
       ],
@@ -363,7 +519,7 @@
         600
       ],
       "cold-storage": [
-        10932.5,
+        10920.5,
         9025,
         650,
         650
@@ -407,44 +563,44 @@
         1500
       ],
       "bed4": [
-        5447.5,
+        5405.5,
         9350,
         2000,
         1500
       ],
       "bed4-head": [
-        7447.5,
+        7405.5,
         9350,
         90,
         1500
       ],
       "bed4-island-wardrobe": [
-        3000,
+        3042,
         9800,
         1500,
         660
       ],
       "principal": [
-        9492.5,
+        9450.5,
         9175,
         2000,
         1600
       ],
       "principal-head": [
-        11492.5,
+        11450.5,
         9175,
         90,
         1600
       ],
       "principal-wardrobe": [
-        7707.5,
+        7749.5,
         9300,
         660,
         1500
       ],
       "rear-shower1000": [
-        1817.5,
-        8937.5,
+        1802.5,
+        8952.5,
         1000,
         1000
       ],
@@ -456,7 +612,7 @@
       ],
       "rear-basin": [
         1000,
-        8937.5,
+        8952.5,
         400,
         220
       ],
@@ -492,24 +648,24 @@
       ],
       "family-bath1700": [
         9460,
-        3785,
+        3800,
         1700,
         700
       ],
       "family-WC": [
-        11022.5,
-        5900,
+        10777.5,
+        5800,
         560,
         355
       ],
       "family-basin": [
-        9800,
-        6195,
-        400,
-        220
+        11227.5,
+        5300,
+        340,
+        450
       ],
       "family-service-cabinet": [
-        9385,
+        9397,
         4675,
         600,
         750
@@ -519,34 +675,40 @@
         7950,
         180,
         180
+      ],
+      "family-local-soil-column": [
+        11342.5,
+        6180,
+        180,
+        180
       ]
     },
     "roomFaces": {
       "living": {
         "bounds": [
-          417.5,
-          8937.5,
-          3875,
-          2645
+          429.5,
+          8949.5,
+          3851,
+          2621
         ],
         "twoSofas": true,
         "groundReadingWallRemoved": true,
         "sofaFaces": [
           "EAST",
-          "WEST"
+          "SOUTH"
         ],
         "scope": "Open arch loses acoustic/privacy closure; full body/window/stack/receiver/fire tests required before selection."
       },
       "kitchenDining": {
         "bounds": [
-          7707.5,
-          8412.5,
-          3875,
-          3170
+          7719.5,
+          8424.5,
+          3851,
+          3146
         ],
         "fourPlaces": true,
-        "northWorkingGap": 732.5,
-        "southEntryGap": 637.5,
+        "northWorkingGap": 670.5,
+        "southEntryGap": 675.5,
         "fridgeToEastWindowProjectionGap": 25,
         "trade": "Separate dryprep table deleted; dining table has separate meal/prep states."
       },
@@ -572,17 +734,80 @@
       "proposed": 27,
       "roomFacingGrowth": 12,
       "unqualified17NotSelected": true,
-      "rule": "Source geometry retained until ONE full HAD dry27/wet30 trial is joined; ordinary head/furniture/frame/task repairs must be attempted, not dismissed by a2 clash"
+      "rule": "Input already contains27dry/30wet. Do not add12 again. Its10raw furniture clashes still require actual repairs; no material exception follows from an overlap."
     },
-    "studyDoorSensitivity": {
-      "nominalContinuousBodyReserve": 10.213220396523681,
-      "nominalContinuousArmReserve": 4.595699193285377,
-      "conservativeTwoSurfaceFinishLoss": 24,
-      "remainingBody": -13.786779603476319,
-      "remainingArm": -19.404300806714623,
-      "scope": "Arithmetic warning only; negative reserves demand actual room/frame/task repairs, not a conclusion that full27 is impracticable. No unchanged task PASS or actual geometry rerun claimed."
+    "studyDoorCheck": {
+      "rough": [
+        1350,
+        2250
+      ],
+      "frameEach": 25,
+      "leafEdgeGapEach": 10,
+      "hinge": [
+        1385,
+        3247.5
+      ],
+      "leaf": [
+        830,
+        44
+      ],
+      "minimumClearBudget": 786,
+      "bodyRadius": 300,
+      "forearmRadius": 40,
+      "handleAlong": 780,
+      "handleFaceOffset": 84,
+      "bodyKnots": [
+        [
+          0,
+          2275,
+          2800
+        ],
+        [
+          15,
+          2400,
+          2600
+        ],
+        [
+          30,
+          2400,
+          2400
+        ],
+        [
+          45,
+          2350,
+          2350
+        ],
+        [
+          60,
+          2150,
+          2625
+        ],
+        [
+          90,
+          1780,
+          2625
+        ]
+      ],
+      "handleState": "Southface0–45deg; explicit two-hand handover at45; oppositeface45–90.",
+      "stepDegrees": 0.1,
+      "sampledBodyReserve": 4.187853143415339,
+      "sampledArmReserve": 7.668699193285377,
+      "sampledReach": 552.9078478020924,
+      "continuousBodyLowerBound": 1.9348531434153386,
+      "continuousArmLowerBound": 4.595699193285377,
+      "continuousReachUpperBound": 555.1953478020924,
+      "bodyAt": {
+        "angle": 15,
+        "obstacle": "study-L-return+18trim"
+      },
+      "armAt": {
+        "angle": 45,
+        "obstacle": "moving-study-leaf"
+      },
+      "pass": true,
+      "scope": "One geometric inside close/reopen sequence from leaf-open entry, not actual operator strength, hardware, classified frame or outside first-opening admission. Both hands have reachable collision-free paths at45; no teleporting hand throughleaf."
     },
-    "scope": "Outer417.5 retained; loggia507.5 sidewalls are not a global envelope change. Principal30 does not extend into family/Bed3 by default."
+    "scope": "Current27 trial has ordinary429.5 envelope and519.5 new loggia walls with core/weather axes retained; not a90 global wall growth. Principal30 is unchanged; local family/rear wet patches are explicit."
   },
   "systems": [
     {
@@ -800,7 +1025,7 @@
         "S10"
       ],
       "name": "Upper protected roof closure / finite control",
-      "direction": "Locate the actual EI30 duty, exposure and roof support first; compare complete tested systems, not a bare board",
+      "direction": "Choose complete CL SLUX-EI60-024S as the upper protected spatial reference at176, subject to actual duty/exposure/support admission; never transfer a bare-board rating",
       "layers": [
         [
           "CL SLUX EI60 control steel C",
@@ -816,7 +1041,7 @@
         ]
       ],
       "oldDepth": 70,
-      "scope": "Upper protected ring/stair below roof only;176 is a finite bidirectional control, not a whole-house adoption",
+      "scope": "Upper protected ring/stair only; complete176 candidate, not ordinary-room/global adoption. Top6620, underside6444/local2994; independent max4000span and actual seats/perimeter must be qualified.",
       "infill": [
         [
           "stone mineral wool within C web",
@@ -1048,33 +1273,34 @@
           "level": "GROUND",
           "host": "protected-west-cross",
           "rough": [
-            2947.5,
-            3832.5
+            2971.5,
+            3820.5
           ],
           "axis": 4250,
           "frameEach": 25,
           "leaf": [
-            830,
+            794,
             44
           ],
           "hinge": [
-            3802.5,
+            3793,
             4250
           ],
           "opening": "NORTHintoexcludedgallery",
           "closed": [
-            2972.5,
+            2999,
             4228,
-            830,
+            794,
             44
           ],
           "open": [
-            3780.5,
+            3771,
             4250,
             44,
-            830
+            794
           ],
-          "minimumClearBudget": 791,
+          "edgeGapsEach": 2.5,
+          "minimumClearBudget": 755,
           "performance": "E20minimumreference;classifiedfullassembly/actualgaprequired"
         },
         {
@@ -1092,22 +1318,23 @@
             44
           ],
           "hinge": [
-            9111.25,
+            9113.75,
             4250
           ],
           "opening": "NORTHintoexcludedgallery",
           "closed": [
-            8266.25,
+            8268.75,
             4228,
             845,
             44
           ],
           "open": [
-            9089.25,
+            9091.75,
             4250,
             44,
             845
           ],
+          "edgeGapsEach": 2.5,
           "minimumClearBudget": 806,
           "performance": "E20minimumreference;classifiedfullassemblyrequired"
         }
@@ -1176,7 +1403,8 @@
             3247.5
           ],
           "opening": "SOUTHINTOSTUDY",
-          "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim"
+          "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim",
+          "frameDepth": 194
         }
       ],
       "floorDatum": "ground",
@@ -1575,7 +1803,28 @@
             6350
           ],
           "axis": 9300,
-          "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating"
+          "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating",
+          "trial": {
+            "rough": [
+              5450,
+              6350
+            ],
+            "completeFrame": 825,
+            "leaf": [
+              762,
+              44
+            ],
+            "hinge": [
+              9397,
+              6281
+            ],
+            "clear": [
+              5516.5,
+              6283.5
+            ],
+            "net": 767,
+            "status": "IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified"
+          }
         }
       ],
       "floorDatum": "upper",
@@ -1656,12 +1905,15 @@
     "preferredGrowthPerDryFace": 12,
     "trialAdopted": false,
     "unchangedGeometryFit": false,
-    "principalHeadEast": 11582.5,
+    "principalHeadEast": 11540.5,
     "sourceDryEastFace": 11582.5,
     "challengerEastFace": 11580.5,
     "headOverlap": 2,
     "controlledDoorRule": "No finish increment may consume the applicable frame/jamb/perimeter boundary. Source15 remains a hard maximum until an exact complete rewind is earned.",
-    "correction": "HAD must author the full27 dry/30 wet face trial, actual furniture/frames/tasks and ordinary repairs. A2 overlap alone does not prove redesign impracticable. Gypsum with acrylate is functional control, not preferred material selection."
+    "correction": "HAD must author the full27 dry/30 wet face trial, actual furniture/frames/tasks and ordinary repairs. A2 overlap alone does not prove redesign impracticable. Gypsum with acrylate is functional control, not preferred material selection.",
+    "actualInputDryEastFace": 11570.5,
+    "actualInputHeadSpare": 30,
+    "inputAlready27": true
   },
   "finiteDryCorrection": {
     "manufacturer": "British Gypsum",
@@ -1774,7 +2026,7 @@
         11337.5,
         5750,
         230,
-        385
+        355
       ],
       "column": [
         11297.5,
@@ -1784,7 +2036,8 @@
       ],
       "port": [
         11432.5,
-        6260
+        6260,
+        160
       ],
       "basin": [
         11227.5,
@@ -1856,14 +2109,261 @@
       ],
       "wetSouth": 8952.5,
       "wetEast": 2802.5,
-      "doorHostUnchangedOutsideShowerReturn": true
+      "doorHostUnchangedOutsideShowerReturn": true,
+      "serviceInterface": {
+        "status": "Constructive compatibility requirement for separate rear1000 tray, not actual matched outlet/support/union admission.",
+        "port": [
+          2122.5,
+          9452.5,
+          110
+        ],
+        "trayDrainEvidence": {
+          "selectedReference": "BetteUltra5940 WESTdrain; interiors auditedB2 nativeDW_0082",
+          "tray": [
+            1802.5,
+            8952.5,
+            1000,
+            1000
+          ],
+          "drainCentre": [
+            2012.5,
+            9452.5
+          ],
+          "requiredTailOffset": [
+            110,
+            0
+          ],
+          "requiredPlanOffsetMagnitude": 110,
+          "status": "Authored250x160connectionterritory cancontain offset, butactualB568outlet/elbow/support/seat/height/release mustmatch; not1000frameapprovalor900transfer."
+        },
+        "clearSleeveInside": 97,
+        "maximumRenewableStem": 75,
+        "unionA": [
+          2122.5,
+          9452.5,
+          2950
+        ],
+        "turnT": [
+          2122.5,
+          9452.5,
+          2777.375
+        ],
+        "unionB": [
+          2022.5,
+          9452.5,
+          2774.875
+        ],
+        "branch": [
+          [
+            2122.5,
+            9452.5,
+            2777.375
+          ],
+          [
+            1750,
+            9452.5,
+            2768.0625
+          ],
+          [
+            1750,
+            11177.5,
+            2724.9375
+          ],
+          [
+            567.5,
+            11177.5,
+            2695.375
+          ]
+        ],
+        "gradient": 40,
+        "maximumCompleteFittingOD": 100,
+        "supportDepth": 25,
+        "airReserve": 25,
+        "innerPanelTop": 2595.375,
+        "panelThickness": 20,
+        "finishedPanelUnderside": 2575.375,
+        "clearHatch": [
+          1722.5,
+          9052.5,
+          800,
+          800
+        ],
+        "outerHatch": [
+          1702.5,
+          9032.5,
+          840,
+          840
+        ],
+        "fixedBeamFinishedWestFace": 2775.5,
+        "fixedBeamSoffit": 3005,
+        "spoolMotion": [
+          [
+            50,
+            0,
+            -50
+          ],
+          [
+            0,
+            0,
+            -450
+          ]
+        ],
+        "spoolMaximumTopBefore": 3000,
+        "spoolMaximumTopAfter": 2500,
+        "finalPanelClearance": 75.375,
+        "upperRenewal": {
+          "tailBelowUpperFFL": 500,
+          "upwardStroke": 550,
+          "finalStemAboveFFL": 50,
+          "stripBeforeWithdrawal": "All A upper halves/nuts/clamps wider than75 must actually detach below before75stem passes97sleeve; ordinary lower renewal retains A upperhalf."
+        },
+        "workingPlatformRequiredPlan": [
+          1675,
+          9150,
+          1000,
+          1250
+        ],
+        "actualReceiverSource": {
+          "head": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
+          "blob": "6affb39e28a777e36532729183152c8c588e4989",
+          "fixedObstacle": [
+            "wetBeamSouthReceiver",
+            [
+              2745.5,
+              8600.5,
+              314,
+              504
+            ]
+          ],
+          "fullFinishEachSide": 18,
+          "reserveToPlatform": 27.5
+        },
+        "actualTableSource": [
+          800,
+          10925,
+          300,
+          300
+        ],
+        "operatorShoulder": [
+          2082.5,
+          9677.5,
+          2450
+        ],
+        "headPlanRadius": 150,
+        "maximumHeadTop": 2750,
+        "toolContacts": [
+          [
+            2122.5,
+            9552.5,
+            2950
+          ],
+          [
+            2022.5,
+            9512.5,
+            2774.875
+          ]
+        ],
+        "furnitureMaintenance": {
+          "sourceHead": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
+          "sourceBlob": "6affb39e28a777e36532729183152c8c588e4989",
+          "familySofaBefore": [
+            2337.5,
+            9800,
+            1900,
+            750
+          ],
+          "familySofaPark": [
+            2337.5,
+            10450,
+            1900,
+            750
+          ],
+          "northTranslation": 650,
+          "reserves": {
+            "readingSofaToPlatform": 25,
+            "southReceiverToPlatform": 27.5,
+            "parkedSofaToPlatform": 50,
+            "northReceiverToParkedSofa": 42.5,
+            "weatherWallWith18TrimToSofa": 25
+          },
+          "repeatableAction": "TranslatefamilysofaN650first; platformerectedafterthatmove. Restorebothafterdisconnection. Nofixedreceiver/beam/support removed."
+        },
+        "boundary": "800 hatch is panel aperture, not a free vertical prism through retained beam. All A/T/B complete bodies/tool/spool stay west of2775.5. Upper tray drain/feet must match this authored port or this specific route fails; no automatic principal900 transfer. New formedport requires STR support proof; not drilling permission."
+      },
+      "source27Interface": {
+        "groundStackCabinet": [
+          429.5,
+          10800,
+          300,
+          750
+        ],
+        "upperCabinet": [
+          429.5,
+          10800,
+          300,
+          750
+        ],
+        "lowBox": [
+          429.5,
+          9937.5,
+          150,
+          862.5
+        ],
+        "panBack": 729.5,
+        "retainedFloorPort": [
+          567.5,
+          11177.5,
+          160
+        ],
+        "portEdgeReserves": [
+          58,
+          82
+        ],
+        "requiredBackProjection": 162,
+        "status": "Explicit12east finish correction from417.5 to429.5; floorport unchanged. Old merged pan withdrawal witness must be repeated against shifted cabinet/pan; no automatic pass."
+      }
     }
   },
+  "rearTrayEvidence": {
+    "reference": "BetteUltra5940 WEST-drain constructive direction",
+    "primary": "https://content.my-bette.com/produkt_downloads/BetteUltra-1000-mm-462223/BetteUltra-1000-700-25-mm-134290/DS-BetteUltra_1000_mm-DW_0082-IT.pdf",
+    "PDFSHA256": "8ace4d9321aa118e6e0561e87252dfadf78f5ce147fb4f594b1429337b8d1a33",
+    "owningEvidence": {
+      "head": "546c98f93a3dccbfe48119bd2e92117b6e2d766f",
+      "path": "project/mat/interior-shower-tray-alternatives.md",
+      "blob": "a55ec18192c2a8658d4f04d4612dc40f72936634",
+      "row": "B2"
+    },
+    "dimensions": [
+      1000,
+      1000,
+      25
+    ],
+    "internalCD": [
+      900,
+      900
+    ],
+    "hole": 90,
+    "GH": [
+      210,
+      500
+    ],
+    "actualDrain": [
+      2012.5,
+      9452.5
+    ],
+    "requiredTailOffset": [
+      110,
+      0
+    ],
+    "actualB568OffsetProved": false,
+    "rule": "Keep actual1000 frame/feet/additional-support/seat/seals/discharge/first release duties. No900 transfer or PP/plastic/epoxy exception; exact manufacturer1000 support arrangement remains unadmitted."
+  },
   "developmentExitAssessment": {
-    "status": "Not yet earned: two finite internal geometry joins remain; later admission alone is not the reason",
+    "status": "Not yet earned: exact27 input has19 route controls passing but10 raw whole-furniture/wall clashes; latest wet/renewal sources still joining",
     "internalDesignRemaining": [
-      "Join and test ONE full27 dryfinish room/furniture/frame rewind; repair ordinary changes before rejecting it",
-      "Join family hinged-door/pan/basin/230serviceband and rear30wet local face trials to actual HAD/IAS/service source"
+      "Repair and bind all10 current raw furniture/27finish overlaps, including actual complete front-bed outside envelopes; do not label route-only pass whole-house fit",
+      "Join actual IAS family delayed-close/wholewet renewal and the canonical West-drain rear service record to one final HAD source"
     ],
     "laterAdmissionSeparate": [
       "Actual product/substrate/recipe and compatible installed system",
@@ -1979,6 +2479,7 @@
   },
   "ceilingProfiles": {
     "ordinaryGroundField": 3100,
+    "localRearShowerBox": 2575.375,
     "localPrincipalShowerBox": 2645,
     "localSoilCollectorBox": 2540,
     "upperProtectedControl": 2994,
@@ -1991,6 +2492,72 @@
     "timber": "Plain mechanical complete joinery with disclosed three-coat ordinary paint where selected; no generic natural-finish admission.",
     "looseFurniture": "Whole external envelopes include frame/head/feet/projections, not mattress boxes. Actual primary furnishing controls do not clear plywood/slat/upholstery/mattress constituents or imply an owner exception; installed joinery remains fully audited."
   },
+  "pendingGeometryJoins": [
+    {
+      "name": "familyWC",
+      "geometry": [
+        10777.5,
+        5800,
+        560,
+        355
+      ],
+      "service": [
+        10777.5,
+        5750,
+        560,
+        355
+      ],
+      "joined": false
+    },
+    {
+      "name": "familyBasin",
+      "geometry": [
+        11227.5,
+        5300,
+        340,
+        450
+      ],
+      "service": [
+        11227.5,
+        5200,
+        340,
+        450
+      ],
+      "joined": false
+    },
+    {
+      "name": "familyColumn",
+      "geometry": [
+        11342.5,
+        6180,
+        180,
+        180
+      ],
+      "service": [
+        11297.5,
+        6135,
+        270,
+        265
+      ],
+      "joined": false
+    },
+    {
+      "name": "rearTray",
+      "geometry": [
+        1802.5,
+        8952.5,
+        1000,
+        1000
+      ],
+      "service": [
+        1802.5,
+        8952.5,
+        1000,
+        1000
+      ],
+      "joined": true
+    }
+  ],
   "checks": {
     "dryStandardControl": 27,
     "dryControlOver15": 12,
