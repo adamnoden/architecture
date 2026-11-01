@@ -1,4 +1,124 @@
 {
+  "splitRenewal": {
+    "first": "Support trap/tail and both downstream members independently; disconnect two actual true unions in ceiling box",
+    "lowerSpoolTranslation": [
+      0,
+      -50,
+      -50
+    ],
+    "flangeRelease": "Three B568 screws from above only after lower body supported; exact manufacturer sequence must agree",
+    "trayFrameMaximum": [
+      900,
+      900,
+      250
+    ],
+    "excludedFromModule": [
+      "trap body",
+      "450-deep tail",
+      "lower spool",
+      "floor sleeve and seal"
+    ],
+    "tailLowestLocal": -450,
+    "tailMaximumOutside": 75,
+    "clearSleeveInside": 97,
+    "upperWithdrawal": 500,
+    "tailLowestAfterWithdrawal": 50,
+    "maximumTrapTopAfterWithdrawal": 595,
+    "floorSleeveTop": 20,
+    "temporarySupport": "Independent removable cradle; no load on waterproofing or loose tail",
+    "sealSequence": "Fixed sleeve remains; demountable pipe seal is released only after tray module out; floor/fire/acoustic seals reinstated and tested"
+  },
+  "bedroomTrial": {
+    "status": "Explicit concurrent HAD assumption; not merged adopted house",
+    "bed": [
+      9492.5,
+      9175,
+      2090,
+      1600
+    ],
+    "wardrobe": [
+      7707.5,
+      9300,
+      660,
+      1500
+    ],
+    "maintenanceBed": [
+      9492.5,
+      9675,
+      2090,
+      1600
+    ],
+    "temporaryTranslation": [
+      0,
+      500
+    ],
+    "outsideEntry": [
+      10400,
+      8850
+    ]
+  },
+  "highStepBenchmark": {
+    "status": "Rejected first direction: above-floor fall imposes250 rim and long return",
+    "rim": 250,
+    "frameH": 200,
+    "mineralBearingPlinth": 50,
+    "firstJointNorth": [
+      10090,
+      7535,
+      180
+    ],
+    "aboveFloorLength": 3577.5,
+    "fallAt1in40": 89.4375,
+    "last100FittingBottom": 40.5625,
+    "decision": "Choose formed local port and below-slab accessible branch; no new floor hole accepted by this comparison"
+  },
+  "showerScreen": {
+    "status": "Unselected inward-folding screen compatibility requirement",
+    "clearOpeningMinimum": 700,
+    "maximumFoldProjectionIntoTray": 450,
+    "openPark": [
+      9850,
+      7450,
+      450,
+      50
+    ],
+    "operatorStation": [
+      10700,
+      7090
+    ],
+    "insideStation": [
+      9850,
+      7090
+    ],
+    "handleEnvelope": [
+      [
+        10300,
+        6810
+      ],
+      [
+        10300,
+        7420
+      ]
+    ],
+    "reachComparison": 600,
+    "coupledOperation": null,
+    "gasketsAndHinges": "unknown/unapproved; no substituted or omitted seals"
+  },
+  "sensitivity": {
+    "criterion": "Authored20 radial route reserve; not human or legal validation",
+    "WCSearchRadius": 320,
+    "showerSearchRadius": 320,
+    "plus10EachFaceRadius300": true,
+    "plus10EachFaceRadius320": true,
+    "plus20EachFaceRadius320": false,
+    "wetFinishExtra15": "Explicitly consumed on all four local wetroom faces; global outer envelope remains417.5",
+    "northStackSpare": 22.5,
+    "eastStackSpare": 45,
+    "plus10NorthFinishStackSpare": 12.5,
+    "showerThroat": 672.5,
+    "plus20EachSideShowerThroat": 632.5,
+    "doorNetAfter10EachSide": 755
+  },
   "status": "Connected internal development direction; material/physical admission rejected pending named corrections",
   "basisMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
   "pins": {
@@ -40,8 +160,8 @@
   "room": [
     9400,
     6600,
-    2182.5,
-    1567.5
+    2167.5,
+    1552.5
   ],
   "objects": {
     "tray": [
@@ -57,34 +177,22 @@
       450
     ],
     "WC": [
-      10842.5,
-      7800,
-      560,
-      355
+      10972.5,
+      7412.5,
+      355,
+      560
+    ],
+    "northChase": [
+      10800,
+      7972.5,
+      767.5,
+      180
     ],
     "stack": [
-      11402.5,
-      7970,
+      11342.5,
+      7950,
       180,
       180
-    ],
-    "southChase": [
-      10300,
-      6600,
-      1282.5,
-      180
-    ],
-    "eastChase": [
-      11402.5,
-      6600,
-      180,
-      1550
-    ],
-    "serviceNose": [
-      10300,
-      6710,
-      60,
-      250
     ]
   },
   "door": {
@@ -133,240 +241,296 @@
         7850
       ],
       [
-        10535,
+        10500,
         7850
       ],
       [
+        10500,
+        7845
+      ],
+      [
+        10505,
+        7845
+      ],
+      [
+        10505,
+        7835
+      ],
+      [
+        10510,
+        7835
+      ],
+      [
+        10510,
+        7825
+      ],
+      [
+        10515,
+        7825
+      ],
+      [
+        10515,
+        7815
+      ],
+      [
+        10520,
+        7815
+      ],
+      [
+        10520,
+        7805
+      ],
+      [
+        10525,
+        7805
+      ],
+      [
+        10525,
+        7800
+      ],
+      [
+        10530,
+        7800
+      ],
+      [
+        10530,
+        7790
+      ],
+      [
         10535,
-        7760
+        7790
+      ],
+      [
+        10535,
+        7785
       ],
       [
         10540,
-        7760
+        7785
       ],
       [
         10540,
-        7730
+        7775
       ],
       [
         10545,
-        7730
+        7775
       ],
       [
         10545,
-        7710
+        7770
       ],
       [
         10550,
-        7710
+        7770
       ],
       [
         10550,
-        7695
+        7765
       ],
       [
         10555,
-        7695
+        7765
       ],
       [
         10555,
-        7685
+        7760
       ],
       [
         10560,
-        7685
+        7760
       ],
       [
         10560,
-        7670
+        7755
       ],
       [
         10565,
-        7670
+        7755
       ],
       [
         10565,
-        7660
+        7750
       ],
       [
         10570,
-        7660
+        7750
       ],
       [
         10570,
-        7650
-      ],
-      [
-        10575,
-        7650
-      ],
-      [
-        10575,
-        7640
+        7740
       ],
       [
         10580,
-        7640
+        7740
       ],
       [
         10580,
-        7635
+        7735
       ],
       [
         10585,
-        7635
+        7735
       ],
       [
         10585,
-        7625
+        7730
       ],
       [
         10590,
-        7625
+        7730
       ],
       [
         10590,
-        7620
+        7725
       ],
       [
         10595,
-        7620
+        7725
       ],
       [
         10595,
-        7615
+        7720
       ],
       [
         10600,
-        7615
+        7720
       ],
       [
         10600,
-        7605
-      ],
-      [
-        10605,
-        7605
-      ],
-      [
-        10605,
-        7600
+        7715
       ],
       [
         10610,
-        7600
+        7715
       ],
       [
         10610,
-        7595
+        7710
       ],
       [
         10615,
-        7595
+        7710
       ],
       [
         10615,
-        7590
+        7705
       ],
       [
         10620,
-        7590
+        7705
       ],
       [
         10620,
-        7585
-      ],
-      [
-        10625,
-        7585
-      ],
-      [
-        10625,
-        7580
+        7700
       ],
       [
         10630,
-        7580
+        7700
       ],
       [
         10630,
-        7575
-      ],
-      [
-        10635,
-        7575
-      ],
-      [
-        10635,
-        7570
+        7695
       ],
       [
         10640,
-        7570
+        7695
       ],
       [
         10640,
-        7565
+        7690
       ],
       [
         10645,
-        7565
+        7690
       ],
       [
         10645,
-        7560
+        7685
       ],
       [
         10650,
-        7560
+        7685
       ],
       [
         10650,
-        7555
+        7370
+      ],
+      [
+        10655,
+        7370
+      ],
+      [
+        10655,
+        7340
       ],
       [
         10660,
-        7555
+        7340
       ],
       [
         10660,
-        7550
+        7320
       ],
       [
         10665,
-        7550
+        7320
       ],
       [
         10665,
-        7545
+        7305
+      ],
+      [
+        10670,
+        7305
+      ],
+      [
+        10670,
+        7290
       ],
       [
         10675,
-        7545
+        7290
       ],
       [
         10675,
-        7540
+        7280
       ],
       [
         10680,
-        7540
+        7280
       ],
       [
         10680,
-        7535
+        7270
+      ],
+      [
+        10685,
+        7270
+      ],
+      [
+        10685,
+        7260
       ],
       [
         10690,
-        7535
+        7260
       ],
       [
         10690,
-        7530
+        7250
+      ],
+      [
+        10695,
+        7250
+      ],
+      [
+        10695,
+        7240
       ],
       [
         10700,
-        7530
+        7240
       ],
       [
         10700,
@@ -389,12 +553,524 @@
         7850
       ],
       [
-        10520,
+        10500,
         7850
       ],
       [
+        10500,
+        7845
+      ],
+      [
+        10505,
+        7845
+      ],
+      [
+        10505,
+        7835
+      ],
+      [
+        10510,
+        7835
+      ],
+      [
+        10510,
+        7825
+      ],
+      [
+        10515,
+        7825
+      ],
+      [
+        10515,
+        7815
+      ],
+      [
         10520,
-        7900
+        7815
+      ],
+      [
+        10520,
+        7805
+      ],
+      [
+        10525,
+        7805
+      ],
+      [
+        10525,
+        7800
+      ],
+      [
+        10530,
+        7800
+      ],
+      [
+        10530,
+        7790
+      ],
+      [
+        10535,
+        7790
+      ],
+      [
+        10535,
+        7785
+      ],
+      [
+        10540,
+        7785
+      ],
+      [
+        10540,
+        7775
+      ],
+      [
+        10545,
+        7775
+      ],
+      [
+        10545,
+        7770
+      ],
+      [
+        10550,
+        7770
+      ],
+      [
+        10550,
+        7765
+      ],
+      [
+        10555,
+        7765
+      ],
+      [
+        10555,
+        7760
+      ],
+      [
+        10560,
+        7760
+      ],
+      [
+        10560,
+        7755
+      ],
+      [
+        10565,
+        7755
+      ],
+      [
+        10565,
+        7750
+      ],
+      [
+        10570,
+        7750
+      ],
+      [
+        10570,
+        7740
+      ],
+      [
+        10580,
+        7740
+      ],
+      [
+        10580,
+        7735
+      ],
+      [
+        10585,
+        7735
+      ],
+      [
+        10585,
+        7730
+      ],
+      [
+        10590,
+        7730
+      ],
+      [
+        10590,
+        7725
+      ],
+      [
+        10595,
+        7725
+      ],
+      [
+        10595,
+        7720
+      ],
+      [
+        10600,
+        7720
+      ],
+      [
+        10600,
+        7715
+      ],
+      [
+        10610,
+        7715
+      ],
+      [
+        10610,
+        7710
+      ],
+      [
+        10615,
+        7710
+      ],
+      [
+        10615,
+        7705
+      ],
+      [
+        10620,
+        7705
+      ],
+      [
+        10620,
+        7700
+      ],
+      [
+        10630,
+        7700
+      ],
+      [
+        10630,
+        7695
+      ],
+      [
+        10640,
+        7695
+      ],
+      [
+        10640,
+        7690
+      ],
+      [
+        10645,
+        7690
+      ],
+      [
+        10645,
+        7685
+      ],
+      [
+        10650,
+        7685
+      ],
+      [
+        10650,
+        7370
+      ],
+      [
+        10655,
+        7370
+      ],
+      [
+        10655,
+        7340
+      ],
+      [
+        10660,
+        7340
+      ],
+      [
+        10660,
+        7320
+      ],
+      [
+        10665,
+        7320
+      ],
+      [
+        10665,
+        7305
+      ],
+      [
+        10670,
+        7305
+      ],
+      [
+        10670,
+        7290
+      ],
+      [
+        10675,
+        7290
+      ],
+      [
+        10675,
+        7280
+      ],
+      [
+        10680,
+        7280
+      ],
+      [
+        10680,
+        7270
+      ],
+      [
+        10685,
+        7270
+      ],
+      [
+        10685,
+        7260
+      ],
+      [
+        10690,
+        7260
+      ],
+      [
+        10690,
+        7250
+      ],
+      [
+        10695,
+        7250
+      ],
+      [
+        10695,
+        7240
+      ],
+      [
+        10700,
+        7240
+      ],
+      [
+        10700,
+        7235
+      ],
+      [
+        10705,
+        7235
+      ],
+      [
+        10705,
+        7225
+      ],
+      [
+        10710,
+        7225
+      ],
+      [
+        10710,
+        7220
+      ],
+      [
+        10715,
+        7220
+      ],
+      [
+        10715,
+        7215
+      ],
+      [
+        10720,
+        7215
+      ],
+      [
+        10720,
+        7205
+      ],
+      [
+        10725,
+        7205
+      ],
+      [
+        10725,
+        7200
+      ],
+      [
+        10730,
+        7200
+      ],
+      [
+        10730,
+        7195
+      ],
+      [
+        10735,
+        7195
+      ],
+      [
+        10735,
+        7190
+      ],
+      [
+        10740,
+        7190
+      ],
+      [
+        10740,
+        7185
+      ],
+      [
+        10745,
+        7185
+      ],
+      [
+        10745,
+        7180
+      ],
+      [
+        10750,
+        7180
+      ],
+      [
+        10750,
+        7175
+      ],
+      [
+        10755,
+        7175
+      ],
+      [
+        10755,
+        7170
+      ],
+      [
+        10760,
+        7170
+      ],
+      [
+        10760,
+        7165
+      ],
+      [
+        10765,
+        7165
+      ],
+      [
+        10765,
+        7160
+      ],
+      [
+        10775,
+        7160
+      ],
+      [
+        10775,
+        7155
+      ],
+      [
+        10780,
+        7155
+      ],
+      [
+        10780,
+        7150
+      ],
+      [
+        10785,
+        7150
+      ],
+      [
+        10785,
+        7145
+      ],
+      [
+        10795,
+        7145
+      ],
+      [
+        10795,
+        7140
+      ],
+      [
+        10800,
+        7140
+      ],
+      [
+        10800,
+        7135
+      ],
+      [
+        10810,
+        7135
+      ],
+      [
+        10810,
+        7130
+      ],
+      [
+        10820,
+        7130
+      ],
+      [
+        10820,
+        7125
+      ],
+      [
+        10830,
+        7125
+      ],
+      [
+        10830,
+        7120
+      ],
+      [
+        10840,
+        7120
+      ],
+      [
+        10840,
+        7115
+      ],
+      [
+        10850,
+        7115
+      ],
+      [
+        10850,
+        7110
+      ],
+      [
+        10865,
+        7110
+      ],
+      [
+        10865,
+        7105
+      ],
+      [
+        10880,
+        7105
+      ],
+      [
+        10880,
+        7100
+      ],
+      [
+        10900,
+        7100
+      ],
+      [
+        10900,
+        7095
+      ],
+      [
+        10930,
+        7095
+      ],
+      [
+        10930,
+        7090
+      ],
+      [
+        11150,
+        7090
+      ],
+      [
+        11150,
+        7000
       ]
     ]
   },
@@ -406,8 +1082,8 @@
     },
     "shower": {
       "radius": 300,
-      "minimumSpare": 5.01024572954924,
-      "governing": "WC"
+      "minimumSpare": 20.009765475992936,
+      "governing": "northChase"
     },
     "basin": {
       "radius": 300,
@@ -416,8 +1092,8 @@
     },
     "WC": {
       "radius": 300,
-      "minimumSpare": 22.5,
-      "governing": "WC"
+      "minimumSpare": 20.009765475992936,
+      "governing": "northChase"
     }
   },
   "handling": {
@@ -472,73 +1148,167 @@
     992.038542306735
   ],
   "drain": {
+    "allowedWasteBodyPlan": [
+      9965,
+      6730,
+      250,
+      160
+    ],
+    "allowedWasteZ": [
+      40,
+      95
+    ],
+    "supportKeepouts": [
+      [
+        9428,
+        6628,
+        100,
+        100
+      ],
+      [
+        10172,
+        6628,
+        100,
+        100
+      ],
+      [
+        9428,
+        7372,
+        100,
+        100
+      ],
+      [
+        10172,
+        7372,
+        100,
+        100
+      ]
+    ],
+    "railKeepouts": [
+      [
+        9400,
+        6600,
+        30,
+        900
+      ],
+      [
+        10270,
+        6600,
+        30,
+        900
+      ],
+      [
+        9400,
+        6600,
+        900,
+        30
+      ],
+      [
+        9400,
+        7470,
+        900,
+        30
+      ]
+    ],
+    "railZ": [
+      85,
+      95
+    ],
     "trayAperture": [
       10090,
       6810
     ],
     "diameter": 90,
     "orientation": "corner rotated to southeast",
-    "matchedWaste": "BetteCompact+ B568, manufacturer family compatibility; exact configured kit not admitted",
+    "matchedWaste": "BetteCompact+ B568; manufacturer family compatibility, no configured kit admission",
     "wasteHeight": 55,
     "outletAxisZ": null,
-    "firstJointTarget": [
-      10335,
+    "outletAxisTarget": 60,
+    "formedPortCentre": [
+      10200,
+      6810
+    ],
+    "formedBore": 110,
+    "sleeveOutside": 100,
+    "sleeveWall": 1.5,
+    "sleeveInside": 97,
+    "maximumRetainedTailOutside": 75,
+    "sealAndSupportFootprint": [
+      10125,
+      6735,
+      150,
+      150
+    ],
+    "firstJointTargetGlobal": [
+      10200,
       6810,
-      125
+      3000
     ],
-    "firstReleaseStrokeTarget": 50,
-    "toolBox": [
-      10300,
-      6710,
-      300,
-      250
+    "firstJointLocalZ": -450,
+    "secondJointGlobal": [
+      10200,
+      6910,
+      2797.25
     ],
-    "clearFascia": [
-      10300,
-      6600,
+    "firstReleaseVector": [
       0,
+      -50,
+      -50
+    ],
+    "workingBox": [
+      10000,
+      6610,
+      400,
+      400
+    ],
+    "maximumLowerSpoolPlan": [
+      10150,
+      6760,
+      100,
       200
     ],
-    "actualSupportAperture": null
+    "lowerSpoolLowestGlobal": 2697.25,
+    "actualConnectionEnvelopes": null
   },
   "branch": {
+    "level": "GROUND ceiling, not the upper walking surface",
+    "maximumFittingOutside": 100,
     "path": [
       [
-        10335,
+        10200,
         6810
       ],
       [
-        10335,
-        6780
+        10200,
+        7500
       ],
       [
-        11492.5,
-        6780
-      ],
-      [
-        11492.5,
-        8060
+        10800,
+        7500
       ]
     ],
-    "centrelineLength": 2467.5,
+    "centrelineLength": 1290,
     "fallRatio": 40,
-    "startAxisTarget": 125,
-    "endAxisTarget": 63.3125,
+    "startAxisGlobal": 2797.25,
+    "endAxisGlobal": 2765,
     "nominalPipeOutside": 50,
-    "minimumBottomBeforeFittings": 38.3125,
-    "maximumChaseHeight": 250,
-    "actualCouplingEnvelope": null,
+    "lowest100FittingGlobal": 2715,
+    "supportReservation": 25,
+    "ceilingBoxUndersideTarget": 2665,
+    "existingSoilZoneUnderside": 2540,
     "actualConnectedCapacity": null,
-    "stackCentre": [
-      11492.5,
-      8060
+    "soilPort": [
+      11432.5,
+      8040
     ],
-    "maximumBoreTerritory": [
-      11412.5,
-      7980,
+    "soilBoreTerritory": [
+      11352.5,
+      7960,
       160,
       160
     ],
+    "outerStructuralLeafWest": 11597.5,
+    "ligament": 85,
     "eastWindowProjection": [
       6900,
       7900
@@ -546,6 +1316,11 @@
     "groundEFullBand": [
       6623.5,
       7626.5
+    ],
+    "PcollectorJoin": [
+      10800,
+      7500,
+      2765
     ]
   },
   "adverse": {
@@ -556,9 +1331,9 @@
     "highStackAtOld7827HitsWindow": true
   },
   "section": {
-    "rim": 200,
-    "bowlNominal": 175,
-    "upstandTop": 235,
+    "rim": 120,
+    "bowlNominal": 95,
+    "upstandTop": 155,
     "bearing": 0,
     "floorStructureTop": -80,
     "floorFinish": 0,
