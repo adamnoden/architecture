@@ -203,6 +203,18 @@ for e in extract:
  e['ceilingFixingCentreMinimumToWall']=200
  e['actualFamilyBody']=[195,116]
 air['fanChoice']=fan_choice
+fan_choice['separateMetalServiceFrontTrial']={'status':'Geometricallycredible boundedsecondaryfront; manufacturer-permissibleconfiguration NOTestablishedbycurrentmanual. NoOEMfascia/gasket/control removed ormodified.',
+ 'metalPanel':[400,450],'minimumNetFreeAreaAfterBaffles':18000,'centralOpaqueDiscMinimumDiameter':200,'OEMFaceMinimumGap':15,'OEMFasciaBottomLocal':2815,'OEMMountPlaneLocal':2860,'OEMTailTopLocal':2931,'separateFrontInnerPlaneLocal':2800,
+ 'minimumPeripheralApproachArea':math.pi*195*15,'additionalLossMaximumPa':2,
+ 'manufacturingRequirement':'Independentremovableallmetalfront withbaffledlouvers preventsnormaldirectviewofABSface; maintainnetfreearea afteropaque200disc/baffles. FullOEMfascia staysfittedduringoperation/commissioning; no coverclipped orsealedtoOEMbody.',
+ 'ductConnectionRequirement':'Exact100spigot/socket/elbow/125transition mustconnectmount2860/tail2931 toductaxis2950 withcompleteinsulatedtop≤3100 (groundraisedruns useexplicitknownRCcutout).100clearhood trialwasrejectedbecauseitraisesupperelbowabovesoffit; nofreeuppervoid.',
+ 'release':'Removeindependentlyretainedmetalfront FIRST; intactOEMfascia/4topfixings/electricalconnection becomeaccessible. Complete195diam116deepunit stillpasses400clearopening; retainfixedductsupports/seals. Actualtool/socketwithdrawal strokesmustfitpod.',
+ 'policyOutcome':'ConcealmentdoesnotexemptretainedABS/EPDM/PCB/motorinsulation. IfOEMconfigurationpermission/intakepressure/connectionstackcannotmatch, omitsecondaryfront anddeclareactualvisibleABSfascia asunapprovedownerexceptionproposal; nevercallwhiteplasticacceptablebydefault.'}
+assert fan_choice['separateMetalServiceFrontTrial']['minimumPeripheralApproachArea']>.9*math.pi*100**2/4
+for e in extract:
+ e['normalResistanceScreen']['includingMetalFrontTrialPa']=e['normalResistanceScreen']['totalPa']+2
+ assert e['normalResistanceScreen']['includingMetalFrontTrialPa']<20
+
 
 # Sourced F/L documents control only their stated methodology; these are authored
 # thermal sensitivities. They are neither site weather nor room heat-loss design.
@@ -232,6 +244,38 @@ heat['fluidFlowBoundary']={'secondaryWaterTargetLps':.4,'primaryGlycolTargetLps'
 heat['roomOutputCompatibilityBudgetsKW']={'study':.8,'living':1.2,'kitchenDining':1.,'bed2':.6,'bed3':.6,'bed4':.8,'principal':.8,'rearBath':.3,'familyBath':.3,'principalBath':.3,'guestWC':.15,'utility':.35,'plant':.2,'protectedCirculation':.6}
 assert abs(sum(heat['roomOutputCompatibilityBudgetsKW'].values())-8)<1e-9
 heat['emitterMatchingBoundary']='14 explicit room/circulation output requirements at45/40/20. These areallocated8kW compatibility budgets, not roomheatlosses or14provedradiatorfit. Selectedradiator fulldepth/valve/bracket/mass andoccupied/window/task clearance mustmatch actualHADroomfields; no automaticfloorheating fallback.'
+# Concrete conventional emitter comparison at conservative22K correction.
+# 45/40/20 has arithmetic22.5K; using22K factor.342 avoids upwardinterpolation.
+heat['roomOutputCompatibilityBudgetsKW']['living']=1.25
+heat['roomOutputCompatibilityBudgetsKW']['kitchenDining']=.95
+assert abs(sum(heat['roomOutputCompatibilityBudgetsKW'].values())-8)<1e-9
+emitters=[]
+for name,room,level,L,r,z,branch,notes in [
+ ('study-S','study',0,1000,[2325,429.5,1150,200],100,[[2500,2500],[2400,2500],[2400,550]],'SolidS pier/drop, notacrosswindowglazing;700topbelow750sill by50.'),
+ ('living-N1','living',0,800,[1200,11370.5,950,200],100,[[3500,9200],[2200,9200],[2200,11200],[2300,11200],[2300,11500]],'TwoNemitters replacefailedWwallpositionbehindR01. DropinsolidpierX2300, avoidNintake2675.'),
+ ('living-N2','living',0,800,[2350,11370.5,950,200],100,[[2300,11500],[2825,11500]],'Lowvisiblefeedbetweenadjacentradiators, noverticalglazingcrossing.'),
+ ('kitchen-E','kitchenDining',0,1200,[11370.5,9700,200,1350],100,[[10500,10800],[11200,10800],[11200,11050],[11470.5,11050]],'Requiredroomallocation.95 notsiteheatloss;10200windowdropisnorthofwindowat11050. Fullvalve/dropmuststaySofcornerpost11188.'),
+ ('bed2-S','bed2',1,800,[3425,429.5,950,200],100,[[3900,2300],[3200,2300],[3200,550],[3425,550]],'DropX3200solidpier betweenS1800/3900openings; lowfeedunderwindow. WardrobeY1017.5remains.'),
+ ('bed3-S','bed3',1,800,[7625,429.5,950,200],100,[[8700,2300],[7500,2300],[7500,550],[7625,550]],'DropX7500solidpier; noverticalpipeatwindow8100.'),
+ ('bed4-N','bed4',1,1000,[2975,11370.5,1150,200],100,[[4500,9150],[4800,9150],[4800,11200],[4300,11200],[4300,11500],[4125,11500]],'DropX4300beyondN3550window; pipepathabovewardrobe/sofa notthroughprotectedfloor.'),
+ ('principal-N','principal',1,1000,[9625,11370.5,1150,200],100,[[10350,8700],[10800,8700],[10800,11200],[11100,11200],[11100,11500],[10775,11500]],'Drop11100solidNpier beyond10200window; notthroughbedhead orwindowglass.'),
+ ('rear-N','rearBath',1,500,[2100,11367.5,650,200],100,[[1800,10800],[2405,10800],[2405,11500]],'Smallradclearsactual2775.5beam/wetfaceby25.5; drop2405solidNpier. WCbody1589.5/11177.5 remainsclear.'),
+ ('family-E','familyBath',1,500,[11367.5,4525,200,650],100,[[11200,5000],[11200,4550],[11467.5,4550]],'25northofbathend4500/25southofbasin5200; actualwindow/bodytaskmustretain600body.'),
+ ('principal-E-high','principalBath',1,500,[11367.5,6775,200,650],1400,[[11200,7000],[11467.5,7000]],'Highmount1400..2000 explicitlyavoidsWCbodyfloorcircle; actualpan/cisternheight≤1250required. Topserviceusesseparate200highplatform11000/6900/400square, notstandingonpan.'),
+ ('guest-WC-E','guestWC',0,400,[9003,1900,200,550],100,[[8500,1800],[8900,1800],[9103,1900]],'Actual27service-spineface9203. Front-facingWCbody8900/1550clear50Ytoemitter; notoldfreewall9300.'),
+]:
+ room_target=22 if room in ['rearBath','familyBath','principalBath','guestWC'] else 20
+ factor=.302 if room_target==22 else .342
+ output=2389*(L/1000)*factor
+ item={'id':name,'room':room,'level':level,'family':'StelradCompactK3H600','length':L,'bodyHeight':600,'completePlanWithValvesAndBrackets':r,'bottomLocal':z,'topLocal':z+600,'nominalDelta50W':2389*L/1000,'roomTargetC':room_target,'conservativeCorrectionFactor':factor,'screenOutputW':output,'dryMassKg':52.5*L/1000,'filledMassKg':62.3*L/1000,'pressurePairBranchPlan':branch,'upperBranchAxisLocal':2945,'notes':notes}
+ item['renewal']={'isolate':'Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.','requiredLift':50,'requiredFrontPull':200,'handling':'600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting.'}
+ emitters.append(item)
+heat['emitterSchedule']=emitters
+heat['emitterEvidence']={'technical':'https://www.stelradprofessional.com/wp-content/uploads/2019/12/28968_Compact_K3_Web.pdf','correction':'https://www.stelrad.ie/wp-content/uploads/2021/10/Stelrad-Correction-Factor-Oct-21.pdf','actualMountedDepth':180,'completeDepthAllowance':200,'valveEndAllowanceEachSide':75,'dryKgPerM':52.5,'waterLPerM':9.8,'nCoefficient':1.32,'scope':'ActualK3lowtemperature/mass/profilecomparison; exactpaint/coating/plasticbracketclips/valves andhumiditycompatibility remainunadmitted. No strippingfactoryfinish. Capacityscreen isagainstauthored8kWroomallocation, notsiteheatloss.'}
+heat['emitterRemainingInternal']=['Utility.35kW complete650x200territory andfanplatformjoin','Plant.2kW complete550x200territory/bufferrenewal','Protectedcirculation.6kW two327Wunits withoutdoor/ringbodyclash']
+for room in set(x['room'] for x in emitters):
+ assert sum(x['screenOutputW'] for x in emitters if x['room']==room)>=heat['roomOutputCompatibilityBudgetsKW'][room]*1000,room
+
 insulation={'selectedInternalRadialThickness':25,'maximumThermalConductivity':.035,
  'basis':'L2026Table3.4 thickness20 for nominalID≤25/24 for≤100 atlambda≤.035, applies only if that edition/route is appropriate.25selected is an evidenced performance choice, not removal to fit. Exterior primary retains50 and whole freeze/weather system.',
  'old50RadialPipeControl':'Earlier unsourced50radial allowance yields132/132/122/82/115 bodies; five cannot fit300×250 with25edge/interpipe reserve. Rejected band, not nominal pass.',
@@ -473,15 +517,15 @@ assert sink['initialLift']-sink['retainedStudHeight']==5
 sink['handlingRequirement']={'movingHeadPlan':[900,670],'firstTranslation':[-600,0],'secondTranslation':[0,-600],'tableSource':{'head':REWIND_HEAD,'blob':REWIND_BLOB,'table':rwhouse['groundFurniture']['dining-table1200x800']},'tableInitialYRequired':9100,'tableFirstY':9000,'tableFinalY':9650,'ENchairPark':[10800,8475,500,500],'otherChairParks':[[7750,y,500,500] for y in [8600,9150,9700]],'status':'Narrow IAS coordination rewind; Actual0b2 table source pinned; full IAS sequence reproduction pending. No old chair parking or stale c83 table location credited.'}
 sink['retainedTrap']='Trap isfixedbelowwasteunion; movingstation tail terminatesat475 before20lift and≥495after. Actual trap/waterseal/cleanout mustfit below475; no movingPtrap sweptthroughfixedpipe.'
 sink['retainedFeed']={'verticalCornerColumn':[11425,11188,145,224],
- 'coldPath':[[10500,10800,2945],[11487,10800,2945],[11487,11250,2945],[11487,11250,212],[9025,11250,212],[9025,10950.5,212],[9025,10950.5,425]],
- 'hotPath':[[10500,10800,2945],[11487,10800,2945],[11487,11350,2945],[11487,11350,212],[9130,11350,212],[9130,10950.5,212],[9130,10950.5,425]],
+ 'coldPath':[[10500,10800,2945],[11487,10800,2945],[11487,11250,2945],[11487,11250,242],[9025,11250,242],[9025,10950.5,242],[9025,10950.5,425]],
+ 'hotPath':[[10500,10800,2945],[11487,10800,2945],[11487,11350,2945],[11487,11350,242],[9130,11350,242],[9130,10950.5,242],[9130,10950.5,425]],
  'tube':22,'radialInsulation':25,'metalJacketEachSide':1,'fullStraightOD':74,
- 'completeCrossingSupportEnvelopeZ':[150,274],
- 'rigEnvelopeBeforeLiftZ':[0,100],'rigEnvelopeAfterLiftZ':[0,120],
- 'minimumRigClearance':30,'crossingTrackX':[9370,9470],'crossingY':[11250,11350],
+ 'completeCrossingSupportEnvelopeZ':[180,304],
+ 'rigEnvelopeBeforeLiftZ':[0,100],'rigEnvelopeAfterLiftZ':[0,140],
+ 'minimumRigClearance':40,'crossingTrackX':[9370,9470],'crossingY':[11250,11350],
  'supports':'Independentlyretainedfloor/wall supports. No bracket within trackcrossingX9370–9470; nearestsupportX9290(max100wide) ends9340,30clear. Nextsupport9800;510span requiresactualsupplier/capacitycheck. Pipe/supportsnevermove with station.',
  'frameRequirement':'No lowfronttransverse rail orsidebrace crossing fixedfeedbands below475. Top/highbraced900stationmustearn actualstiffness/anchorcapacity; no drawnexistingbrace silentlyremoved.',
- 'cookerRequirement':'Built-in COMPACT455high oven over350accessibleplinth, not freestandingfullfloor chassis. Water/support envelope≤274;20deckunder330 leaves56clear. Exactoven/hobventilation/electricalseparation required.'}
+ 'cookerRequirement':'Built-in COMPACT455high oven over350accessibleplinth, not freestandingfullfloor chassis. Water/support envelope≤304;20deckunder330 leaves26clear. Exactoven/hobventilation/electricalseparation required.'}
 sink['cookingStationRewind']={'footprint':[10750,10970.5,600,600],'top':900,'plinth':350,
  'ovenComparator':'BoschCMG7241.1:455h×594w×548d; underworktop niche460+4/min550depth withventilationcutout. Reference only, nomaterial/productapproval.',
  'ovenBodyZ':[350,805],'hobComparator':'BoschPUE611BB5E:51h×592w×522d;4.6kW, min16worktop, manufacturer ventilationpaths retained.',
@@ -630,6 +674,24 @@ assert max(math.dist(rear_drop['operatorShoulder'],x) for x in rear_drop['toolCo
 assert rear_drop['fixedBeamFinishedWestFace']-(rear_drop['operatorShoulder'][0]+rear_drop['headPlanRadius'])>=25
 assert rear_drop['finishedPanelUnderside']-rear_drop['spoolMaximumTopAfter']>=25
 
+sofa=rear_drop['furnitureMaintenance'];sofa['sweptRectangle']=[2337.5,9800,1900,1400]
+sofa['pushingBodyCentrePath']=[[3000,9475],[3000,10125]];sofa['bodyRadius']=300
+sofa['bodyToMovingSofaGap']=25;sofa['handReachToSofa']=325
+for name,r in rwhouse['fixedObstacles']['GROUND']:
+ expanded=[r[0]-18,r[1]-18,r[2]+36,r[3]+36]
+ assert not overlap(sofa['sweptRectangle'],expanded),(name,'sofa')
+ assert not overlap(rear_drop['workingPlatformRequiredPlan'],expanded),(name,'platform')
+for name in ['reading-sofa1900x850','reading-side-table300','family-side-table300']:
+ r=rwhouse['groundFurniture'][name]
+ assert not overlap(sofa['sweptRectangle'],r),(name,'sofa')
+ assert not overlap(rear_drop['workingPlatformRequiredPlan'],r),(name,'platform')
+assert not overlap(rear_drop['workingPlatformRequiredPlan'],sofa['familySofaPark'])
+for y in [9475+i*650/20 for i in range(21)]:
+ for name,r in rwhouse['fixedObstacles']['GROUND']:
+  rr=[r[0]-18,r[1]-18,r[2]+36,r[3]+36]
+  nearest=[min(max(3000,rr[0]),rr[0]+rr[2]),min(max(y,rr[1]),rr[1]+rr[3])]
+  assert math.dist([3000,y],nearest)>=325,(name,'pushbody')
+
 result={'status':'Constructive provisional whole-house service baseline; no accepted apparatus, materials, fire route, site loading or commissioning.',
  'basis':{'HADHead':HEAD,'HADPath':PATH,'HADBlob':BLOB,'HADStatus':b['status'],
   'narrowObstacleFurnitureRewind':{'head':REWIND_HEAD,'blob':REWIND_BLOB,'scope':'Onlyactualgroundreceivers/table/side-table used bynamed renewalchecks; wholec83roomsource remainscontrol, notsilentwholehouseadoption.'},'mergedInterfaceMain':'546c98f93a3dccbfe48119bd2e92117b6e2d766f','units':'mm, local proposed groundFFL0; first3450; all z use one datum'},
@@ -706,7 +768,59 @@ notes=[
 ]
 for i,n in enumerate(notes):svg+=text(15,190+i*9,n,2.85)
 svg+=text(15,285,'All dimensions mm / groundFFL0 / first3450. Reservations are not construction permissions. 1 November2026',2.7)+'</svg>\n'
-outputs={BASE.with_suffix('.json'):json.dumps(result,indent=2,ensure_ascii=False)+'\n',BASE.with_suffix('.svg'):svg}
+def detail_sheet():
+ out='<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">'+rect(0,0,420,297,'none','white')
+ out+=text(12,13,'WHOLE-HOUSE SERVICES — TERMINAL RENEWAL INTERFACES',5)
+ out+=text(12,21,'Conditional authored compatibility geometry; no component, support capacity, material or physical acceptance.',3)
+ for x,y,w,h in [(10,28,190,150),(210,28,200,150),(10,186,190,100),(210,186,200,100)]:out+=rect(x,y,w,h,'#aaa')
+ out+=text(15,36,'REAR1000: GROUND MAINTENANCE / UPPER TAIL PROJECTION',3.2)
+ def box(r,c,fill='none'):
+  return rect(15+(r[0]-780)*.04,43+(r[1]-8500)*.04,r[2]*.04,r[3]*.04,c,fill)
+ out+='<defs><clipPath id="rearplan"><rect x="15" y="43" width="180" height="117"/></clipPath></defs><g clip-path="url(#rearplan)">'
+ for n,r in rwhouse['fixedObstacles']['GROUND']:out+=box([r[0]-18,r[1]-18,r[2]+36,r[3]+36],'#7e46a0','#eadff1')
+ out+=box(rwhouse['groundFurniture']['reading-sofa1900x850'],'#555','#ddd')
+ out+=box(sofa['sweptRectangle'],'#999','#f4f4f4')+box(sofa['familySofaBefore'],'#777')+box(sofa['familySofaPark'],'#555','#ddd')
+ out+=box(rear_drop['workingPlatformRequiredPlan'],'#26834f','#e5f2e8')
+ out+=box(rear_drop['clearHatch'],'#2266a0')
+ px,py=rear_drop['port'][:2];out+=f'<circle cx="{15+(px-780)*.04}" cy="{43+(py-8500)*.04}" r="2.2" stroke="#c44" fill="none"/>'
+ out+='</g>'
+ out+=text(15,168,'Purple fixed RC+18 trim; green platform1000×1250; blue800 hatch projection.',2.6)
+ out+=text(15,174,'Sofa moves N650 first. Reserves25 /27.5 /42.5 /50; +Y(N) is down sheet.',2.6)
+ out+=text(215,36,'REAR LOWER CONNECTION: ALL Z ON GROUND FFL0',3.2)
+ def zz(z):return 160-(z-2400)*.1
+ for z,label,col in [(3450,'Upper FFL3450','#777'),(3170,'RC soffit3170','#777'),(2950,'A vertical union2950','#c44'),(2777.375,'T2777.375 / B2774.875','#c44'),(2575.375,'Finished panel2575.375','#26834f')]:
+  out+=f'<path d="M220 {zz(z)}H400" stroke="{col}" stroke-width=".3"/>'+text(292,zz(z)-1,label,2.6)
+ x=255;out+=rect(x-5.5,zz(3450),11,zz(3170)-zz(3450),'#777')
+ out+=rect(x-3.75,zz(3450),7.5,zz(2950)-zz(3450),'#c44')
+ out+=rect(x-5,zz(3000),10,10,'#c44','#f6dddd')
+ out+=f'<path d="M{x} {zz(2900)}V{zz(2777.375)}H{x-10}" fill="none" stroke="#c44" stroke-width="1"/>'
+ out+=rect(x-15,zz(2824.875),10,10,'#c44','#f6dddd')
+ out+=rect(235,zz(2595.375),50,2,'#26834f','#e5f2e8')
+ out+=text(215,163,'50E+50down, then450down: spool top2500,75.375 below finished panel.',2.6)
+ out+=text(215,170,'Full upper renewal strips >75 parts;75stem /97sleeve /550up. No assumed B568 fit.',2.6)
+ out+=text(15,195,'FAN / SEPARATE METAL FRONT TRIAL',3.2)
+ out+=rect(20,205,75,50,'#666')+rect(28,238,55,2,'#555','#aaa')
+ out+=rect(42,225,25,13,'#777','#ddd')+rect(48,212,13,13,'#777','#ddd')
+ out+=rect(27,242,57,1.5,'#333','#aaa')
+ out+=text(102,209,'Untouched195Ø OEM face',2.8)+text(102,215,'45projection +71tail',2.8)
+ out+=text(102,221,'15clear to metal front',2.8)+text(102,227,'400×450 service opening',2.8)
+ out+=text(102,233,'≥18000 net louvre area',2.8)+text(102,239,'Added loss target≤2Pa',2.8)
+ out+=text(15,261,'OEM CF1 + EPDM retained; secondary front permission/actual connection stack unproved.',2.6)
+ out+=text(15,268,'If incompatible: visible ABS face is an explicit unapproved residue proposal.',2.6)
+ out+=text(15,275,'Diagram is a dimension ledger; no hidden OEM casing/insulation removal.',2.6)
+ out+=text(215,195,'SINK SKATES / COMPLETE RETAINED FEED /350 PLINTH',3.2)
+ def sz(z):return 275-z*.12
+ out+=f'<path d="M220 {sz(0)}H400" stroke="#777" stroke-width=".3"/>'
+ out+=rect(225,sz(140),30,140*.12,'#555','#ddd')
+ out+=rect(265,sz(304),40,(304-180)*.12,'#286ca0','#deebf5')
+ out+=rect(315,sz(350),40,20*.12,'#555','#ddd')
+ out+=rect(365,sz(525),10,100*.12,'#c44','#f6dddd')
+ for x,z,t in [(225,140,'Rig≤140'),(265,180,'Pipe/support180–304'),(315,330,'Deck under330'),(365,475,'Union475')]:out+=text(x,sz(z)-2,t,2.5)
+ out+=text(215,280,'40 above rig;26 below deck. Full insulation/supports remain. W600 before S600.',2.6)
+ out+=text(215,285,'Separate rigid frame, trap and fixed pipes retained; actual jacks/skates/anchors not admitted.',2.6)
+ return out+'</svg>\n'
+
+outputs={BASE.with_suffix('.json'):json.dumps(result,indent=2,ensure_ascii=False)+'\n',BASE.with_suffix('.svg'):svg,BASE.with_name(BASE.name+'-interfaces').with_suffix('.svg'):detail_sheet()}
 for p,s in outputs.items():
  if '--check' in sys.argv:
   assert p.read_text()==s,'Stale '+str(p)

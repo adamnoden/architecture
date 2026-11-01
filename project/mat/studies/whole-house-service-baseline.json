@@ -267,7 +267,27 @@
       "failureBounds": "K125 curve212m3/h413Pa83W iswrongduty, noaffinity/noise admission. DEXA10013Lfreeflow1.8W isnot40Paproof. DEXA150Hcurve about15Paat13L hasinsufficientwindreserve forold40Pascreen; notchosen.",
       "powerAcceptanceCeilingW": 3.9,
       "SFPDevelopmentCeiling": 0.3,
-      "noiseDuty": "Published28dBA@3m ductedreference; wetroomdesign≤45dBA andadjacentbedroom≤30. Requirecompletecross-roomattenuation≥10dB atreferenceplusdistance/reverberationmargin; actualinstalled noise/CFpower measured, not claimed fromfreefieldreference."
+      "noiseDuty": "Published28dBA@3m ductedreference; wetroomdesign≤45dBA andadjacentbedroom≤30. Requirecompletecross-roomattenuation≥10dB atreferenceplusdistance/reverberationmargin; actualinstalled noise/CFpower measured, not claimed fromfreefieldreference.",
+      "separateMetalServiceFrontTrial": {
+        "status": "Geometricallycredible boundedsecondaryfront; manufacturer-permissibleconfiguration NOTestablishedbycurrentmanual. NoOEMfascia/gasket/control removed ormodified.",
+        "metalPanel": [
+          400,
+          450
+        ],
+        "minimumNetFreeAreaAfterBaffles": 18000,
+        "centralOpaqueDiscMinimumDiameter": 200,
+        "OEMFaceMinimumGap": 15,
+        "OEMFasciaBottomLocal": 2815,
+        "OEMMountPlaneLocal": 2860,
+        "OEMTailTopLocal": 2931,
+        "separateFrontInnerPlaneLocal": 2800,
+        "minimumPeripheralApproachArea": 9189.158511750144,
+        "additionalLossMaximumPa": 2,
+        "manufacturingRequirement": "Independentremovableallmetalfront withbaffledlouvers preventsnormaldirectviewofABSface; maintainnetfreearea afteropaque200disc/baffles. FullOEMfascia staysfittedduringoperation/commissioning; no coverclipped orsealedtoOEMbody.",
+        "ductConnectionRequirement": "Exact100spigot/socket/elbow/125transition mustconnectmount2860/tail2931 toductaxis2950 withcompleteinsulatedtop≤3100 (groundraisedruns useexplicitknownRCcutout).100clearhood trialwasrejectedbecauseitraisesupperelbowabovesoffit; nofreeuppervoid.",
+        "release": "Removeindependentlyretainedmetalfront FIRST; intactOEMfascia/4topfixings/electricalconnection becomeaccessible. Complete195diam116deepunit stillpasses400clearopening; retainfixedductsupports/seals. Actualtool/socketwithdrawal strokesmustfitpod.",
+        "policyOutcome": "ConcealmentdoesnotexemptretainedABS/EPDM/PCB/motorinsulation. IfOEMconfigurationpermission/intakepressure/connectionstackcannotmatch, omitsecondaryfront anddeclareactualvisibleABSfascia asunapprovedownerexceptionproposal; nevercallwhiteplasticacceptablebydefault."
+      }
     }
   },
   "extract": [
@@ -372,7 +392,8 @@
         "twoDoorAndBackgroundPa": 10.646995428854174,
         "totalPa": 15.67784260715243,
         "backpressureEvidencePa": 20,
-        "reservePa": 4.32215739284757
+        "reservePa": 4.32215739284757,
+        "includingMetalFrontTrialPa": 17.677842607152428
       },
       "selectedFanReference": "air.fanChoice",
       "ceilingTrapDrainTerritoryDiameter": 40,
@@ -502,7 +523,8 @@
         "twoDoorAndBackgroundPa": 10.646995428854174,
         "totalPa": 15.657643164105046,
         "backpressureEvidencePa": 20,
-        "reservePa": 4.342356835894954
+        "reservePa": 4.342356835894954,
+        "includingMetalFrontTrialPa": 17.657643164105046
       },
       "selectedFanReference": "air.fanChoice",
       "ceilingTrapDrainTerritoryDiameter": 40,
@@ -632,7 +654,8 @@
         "twoDoorAndBackgroundPa": 10.646995428854174,
         "totalPa": 15.789949516065402,
         "backpressureEvidencePa": 20,
-        "reservePa": 4.210050483934598
+        "reservePa": 4.210050483934598,
+        "includingMetalFrontTrialPa": 17.789949516065402
       },
       "selectedFanReference": "air.fanChoice",
       "ceilingTrapDrainTerritoryDiameter": 40,
@@ -743,7 +766,8 @@
         "twoDoorAndBackgroundPa": 10.646995428854174,
         "totalPa": 15.602592123145342,
         "backpressureEvidencePa": 20,
-        "reservePa": 4.397407876854658
+        "reservePa": 4.397407876854658,
+        "includingMetalFrontTrialPa": 17.602592123145342
       },
       "selectedFanReference": "air.fanChoice",
       "ceilingTrapDrainTerritoryDiameter": 40,
@@ -854,7 +878,8 @@
         "twoDoorAndBackgroundPa": 10.646995428854174,
         "totalPa": 15.552093515526886,
         "backpressureEvidencePa": 20,
-        "reservePa": 4.447906484473114
+        "reservePa": 4.447906484473114,
+        "includingMetalFrontTrialPa": 17.552093515526884
       },
       "selectedFanReference": "air.fanChoice",
       "ceilingTrapDrainTerritoryDiameter": 40,
@@ -1013,7 +1038,8 @@
         "twoDoorAndBackgroundPa": 10.646995428854174,
         "totalPa": 15.59787891976762,
         "backpressureEvidencePa": 20,
-        "reservePa": 4.40212108023238
+        "reservePa": 4.40212108023238,
+        "includingMetalFrontTrialPa": 17.59787891976762
       },
       "selectedFanReference": "air.fanChoice",
       "ceilingTrapDrainTerritoryDiameter": 40,
@@ -1346,8 +1372,8 @@
     },
     "roomOutputCompatibilityBudgetsKW": {
       "study": 0.8,
-      "living": 1.2,
-      "kitchenDining": 1.0,
+      "living": 1.25,
+      "kitchenDining": 0.95,
       "bed2": 0.6,
       "bed3": 0.6,
       "bed4": 0.8,
@@ -1360,7 +1386,589 @@
       "plant": 0.2,
       "protectedCirculation": 0.6
     },
-    "emitterMatchingBoundary": "14 explicit room/circulation output requirements at45/40/20. These areallocated8kW compatibility budgets, not roomheatlosses or14provedradiatorfit. Selectedradiator fulldepth/valve/bracket/mass andoccupied/window/task clearance mustmatch actualHADroomfields; no automaticfloorheating fallback."
+    "emitterMatchingBoundary": "14 explicit room/circulation output requirements at45/40/20. These areallocated8kW compatibility budgets, not roomheatlosses or14provedradiatorfit. Selectedradiator fulldepth/valve/bracket/mass andoccupied/window/task clearance mustmatch actualHADroomfields; no automaticfloorheating fallback.",
+    "emitterSchedule": [
+      {
+        "id": "study-S",
+        "room": "study",
+        "level": 0,
+        "family": "StelradCompactK3H600",
+        "length": 1000,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          2325,
+          429.5,
+          1150,
+          200
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 2389.0,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 817.038,
+        "dryMassKg": 52.5,
+        "filledMassKg": 62.3,
+        "pressurePairBranchPlan": [
+          [
+            2500,
+            2500
+          ],
+          [
+            2400,
+            2500
+          ],
+          [
+            2400,
+            550
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "SolidS pier/drop, notacrosswindowglazing;700topbelow750sill by50.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "living-N1",
+        "room": "living",
+        "level": 0,
+        "family": "StelradCompactK3H600",
+        "length": 800,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          1200,
+          11370.5,
+          950,
+          200
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 1911.2,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 653.6304000000001,
+        "dryMassKg": 42.0,
+        "filledMassKg": 49.84,
+        "pressurePairBranchPlan": [
+          [
+            3500,
+            9200
+          ],
+          [
+            2200,
+            9200
+          ],
+          [
+            2200,
+            11200
+          ],
+          [
+            2300,
+            11200
+          ],
+          [
+            2300,
+            11500
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "TwoNemitters replacefailedWwallpositionbehindR01. DropinsolidpierX2300, avoidNintake2675.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "living-N2",
+        "room": "living",
+        "level": 0,
+        "family": "StelradCompactK3H600",
+        "length": 800,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          2350,
+          11370.5,
+          950,
+          200
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 1911.2,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 653.6304000000001,
+        "dryMassKg": 42.0,
+        "filledMassKg": 49.84,
+        "pressurePairBranchPlan": [
+          [
+            2300,
+            11500
+          ],
+          [
+            2825,
+            11500
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "Lowvisiblefeedbetweenadjacentradiators, noverticalglazingcrossing.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "kitchen-E",
+        "room": "kitchenDining",
+        "level": 0,
+        "family": "StelradCompactK3H600",
+        "length": 1200,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          11370.5,
+          9700,
+          200,
+          1350
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 2866.8,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 980.4456,
+        "dryMassKg": 63.0,
+        "filledMassKg": 74.76,
+        "pressurePairBranchPlan": [
+          [
+            10500,
+            10800
+          ],
+          [
+            11200,
+            10800
+          ],
+          [
+            11200,
+            11050
+          ],
+          [
+            11470.5,
+            11050
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "Requiredroomallocation.95 notsiteheatloss;10200windowdropisnorthofwindowat11050. Fullvalve/dropmuststaySofcornerpost11188.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "bed2-S",
+        "room": "bed2",
+        "level": 1,
+        "family": "StelradCompactK3H600",
+        "length": 800,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          3425,
+          429.5,
+          950,
+          200
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 1911.2,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 653.6304000000001,
+        "dryMassKg": 42.0,
+        "filledMassKg": 49.84,
+        "pressurePairBranchPlan": [
+          [
+            3900,
+            2300
+          ],
+          [
+            3200,
+            2300
+          ],
+          [
+            3200,
+            550
+          ],
+          [
+            3425,
+            550
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "DropX3200solidpier betweenS1800/3900openings; lowfeedunderwindow. WardrobeY1017.5remains.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "bed3-S",
+        "room": "bed3",
+        "level": 1,
+        "family": "StelradCompactK3H600",
+        "length": 800,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          7625,
+          429.5,
+          950,
+          200
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 1911.2,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 653.6304000000001,
+        "dryMassKg": 42.0,
+        "filledMassKg": 49.84,
+        "pressurePairBranchPlan": [
+          [
+            8700,
+            2300
+          ],
+          [
+            7500,
+            2300
+          ],
+          [
+            7500,
+            550
+          ],
+          [
+            7625,
+            550
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "DropX7500solidpier; noverticalpipeatwindow8100.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "bed4-N",
+        "room": "bed4",
+        "level": 1,
+        "family": "StelradCompactK3H600",
+        "length": 1000,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          2975,
+          11370.5,
+          1150,
+          200
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 2389.0,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 817.038,
+        "dryMassKg": 52.5,
+        "filledMassKg": 62.3,
+        "pressurePairBranchPlan": [
+          [
+            4500,
+            9150
+          ],
+          [
+            4800,
+            9150
+          ],
+          [
+            4800,
+            11200
+          ],
+          [
+            4300,
+            11200
+          ],
+          [
+            4300,
+            11500
+          ],
+          [
+            4125,
+            11500
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "DropX4300beyondN3550window; pipepathabovewardrobe/sofa notthroughprotectedfloor.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "principal-N",
+        "room": "principal",
+        "level": 1,
+        "family": "StelradCompactK3H600",
+        "length": 1000,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          9625,
+          11370.5,
+          1150,
+          200
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 2389.0,
+        "roomTargetC": 20,
+        "conservativeCorrectionFactor": 0.342,
+        "screenOutputW": 817.038,
+        "dryMassKg": 52.5,
+        "filledMassKg": 62.3,
+        "pressurePairBranchPlan": [
+          [
+            10350,
+            8700
+          ],
+          [
+            10800,
+            8700
+          ],
+          [
+            10800,
+            11200
+          ],
+          [
+            11100,
+            11200
+          ],
+          [
+            11100,
+            11500
+          ],
+          [
+            10775,
+            11500
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "Drop11100solidNpier beyond10200window; notthroughbedhead orwindowglass.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "rear-N",
+        "room": "rearBath",
+        "level": 1,
+        "family": "StelradCompactK3H600",
+        "length": 500,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          2100,
+          11367.5,
+          650,
+          200
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 1194.5,
+        "roomTargetC": 22,
+        "conservativeCorrectionFactor": 0.302,
+        "screenOutputW": 360.739,
+        "dryMassKg": 26.25,
+        "filledMassKg": 31.15,
+        "pressurePairBranchPlan": [
+          [
+            1800,
+            10800
+          ],
+          [
+            2405,
+            10800
+          ],
+          [
+            2405,
+            11500
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "Smallradclearsactual2775.5beam/wetfaceby25.5; drop2405solidNpier. WCbody1589.5/11177.5 remainsclear.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "family-E",
+        "room": "familyBath",
+        "level": 1,
+        "family": "StelradCompactK3H600",
+        "length": 500,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          11367.5,
+          4525,
+          200,
+          650
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 1194.5,
+        "roomTargetC": 22,
+        "conservativeCorrectionFactor": 0.302,
+        "screenOutputW": 360.739,
+        "dryMassKg": 26.25,
+        "filledMassKg": 31.15,
+        "pressurePairBranchPlan": [
+          [
+            11200,
+            5000
+          ],
+          [
+            11200,
+            4550
+          ],
+          [
+            11467.5,
+            4550
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "25northofbathend4500/25southofbasin5200; actualwindow/bodytaskmustretain600body.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "principal-E-high",
+        "room": "principalBath",
+        "level": 1,
+        "family": "StelradCompactK3H600",
+        "length": 500,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          11367.5,
+          6775,
+          200,
+          650
+        ],
+        "bottomLocal": 1400,
+        "topLocal": 2000,
+        "nominalDelta50W": 1194.5,
+        "roomTargetC": 22,
+        "conservativeCorrectionFactor": 0.302,
+        "screenOutputW": 360.739,
+        "dryMassKg": 26.25,
+        "filledMassKg": 31.15,
+        "pressurePairBranchPlan": [
+          [
+            11200,
+            7000
+          ],
+          [
+            11467.5,
+            7000
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "Highmount1400..2000 explicitlyavoidsWCbodyfloorcircle; actualpan/cisternheight≤1250required. Topserviceusesseparate200highplatform11000/6900/400square, notstandingonpan.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      },
+      {
+        "id": "guest-WC-E",
+        "room": "guestWC",
+        "level": 0,
+        "family": "StelradCompactK3H600",
+        "length": 400,
+        "bodyHeight": 600,
+        "completePlanWithValvesAndBrackets": [
+          9003,
+          1900,
+          200,
+          550
+        ],
+        "bottomLocal": 100,
+        "topLocal": 700,
+        "nominalDelta50W": 955.6,
+        "roomTargetC": 22,
+        "conservativeCorrectionFactor": 0.302,
+        "screenOutputW": 288.5912,
+        "dryMassKg": 21.0,
+        "filledMassKg": 24.92,
+        "pressurePairBranchPlan": [
+          [
+            8500,
+            1800
+          ],
+          [
+            8900,
+            1800
+          ],
+          [
+            9103,
+            1900
+          ]
+        ],
+        "upperBranchAxisLocal": 2945,
+        "notes": "Actual27service-spineface9203. Front-facingWCbody8900/1550clear50Ytoemitter; notoldfreewall9300.",
+        "renewal": {
+          "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+          "requiredLift": 50,
+          "requiredFrontPull": 200,
+          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+        }
+      }
+    ],
+    "emitterEvidence": {
+      "technical": "https://www.stelradprofessional.com/wp-content/uploads/2019/12/28968_Compact_K3_Web.pdf",
+      "correction": "https://www.stelrad.ie/wp-content/uploads/2021/10/Stelrad-Correction-Factor-Oct-21.pdf",
+      "actualMountedDepth": 180,
+      "completeDepthAllowance": 200,
+      "valveEndAllowanceEachSide": 75,
+      "dryKgPerM": 52.5,
+      "waterLPerM": 9.8,
+      "nCoefficient": 1.32,
+      "scope": "ActualK3lowtemperature/mass/profilecomparison; exactpaint/coating/plasticbracketclips/valves andhumiditycompatibility remainunadmitted. No strippingfactoryfinish. Capacityscreen isagainstauthored8kWroomallocation, notsiteheatloss."
+    },
+    "emitterRemainingInternal": [
+      "Utility.35kW complete650x200territory andfanplatformjoin",
+      "Plant.2kW complete550x200territory/bufferrenewal",
+      "Protectedcirculation.6kW two327Wunits withoutdoor/ringbodyclash"
+    ]
   },
   "pipeCrossovers": [
     {
@@ -2137,17 +2745,17 @@
           [
             11487,
             11250,
-            212
+            242
           ],
           [
             9025,
             11250,
-            212
+            242
           ],
           [
             9025,
             10950.5,
-            212
+            242
           ],
           [
             9025,
@@ -2174,17 +2782,17 @@
           [
             11487,
             11350,
-            212
+            242
           ],
           [
             9130,
             11350,
-            212
+            242
           ],
           [
             9130,
             10950.5,
-            212
+            242
           ],
           [
             9130,
@@ -2197,8 +2805,8 @@
         "metalJacketEachSide": 1,
         "fullStraightOD": 74,
         "completeCrossingSupportEnvelopeZ": [
-          150,
-          274
+          180,
+          304
         ],
         "rigEnvelopeBeforeLiftZ": [
           0,
@@ -2206,9 +2814,9 @@
         ],
         "rigEnvelopeAfterLiftZ": [
           0,
-          120
+          140
         ],
-        "minimumRigClearance": 30,
+        "minimumRigClearance": 40,
         "crossingTrackX": [
           9370,
           9470
@@ -2219,7 +2827,7 @@
         ],
         "supports": "Independentlyretainedfloor/wall supports. No bracket within trackcrossingX9370–9470; nearestsupportX9290(max100wide) ends9340,30clear. Nextsupport9800;510span requiresactualsupplier/capacitycheck. Pipe/supportsnevermove with station.",
         "frameRequirement": "No lowfronttransverse rail orsidebrace crossing fixedfeedbands below475. Top/highbraced900stationmustearn actualstiffness/anchorcapacity; no drawnexistingbrace silentlyremoved.",
-        "cookerRequirement": "Built-in COMPACT455high oven over350accessibleplinth, not freestandingfullfloor chassis. Water/support envelope≤274;20deckunder330 leaves56clear. Exactoven/hobventilation/electricalseparation required."
+        "cookerRequirement": "Built-in COMPACT455high oven over350accessibleplinth, not freestandingfullfloor chassis. Water/support envelope≤304;20deckunder330 leaves26clear. Exactoven/hobventilation/electricalseparation required."
       },
       "cookingStationRewind": {
         "footprint": [
@@ -2421,7 +3029,26 @@
           "northReceiverToParkedSofa": 42.5,
           "weatherWallWith18TrimToSofa": 25
         },
-        "repeatableAction": "TranslatefamilysofaN650first; platformerectedafterthatmove. Restorebothafterdisconnection. Nofixedreceiver/beam/support removed."
+        "repeatableAction": "TranslatefamilysofaN650first; platformerectedafterthatmove. Restorebothafterdisconnection. Nofixedreceiver/beam/support removed.",
+        "sweptRectangle": [
+          2337.5,
+          9800,
+          1900,
+          1400
+        ],
+        "pushingBodyCentrePath": [
+          [
+            3000,
+            9475
+          ],
+          [
+            3000,
+            10125
+          ]
+        ],
+        "bodyRadius": 300,
+        "bodyToMovingSofaGap": 25,
+        "handReachToSofa": 325
       },
       "boundary": "800 hatch is panel aperture, not a free vertical prism through retained beam. All A/T/B complete bodies/tool/spool stay west of2775.5. Upper tray drain/feet must match this authored port or this specific route fails; no automatic principal900 transfer. New formedport requires STR support proof; not drilling permission."
     },
@@ -2850,17 +3477,17 @@
           [
             11487,
             11250,
-            212
+            242
           ],
           [
             9025,
             11250,
-            212
+            242
           ],
           [
             9025,
             10950.5,
-            212
+            242
           ],
           [
             9025,
@@ -2887,17 +3514,17 @@
           [
             11487,
             11350,
-            212
+            242
           ],
           [
             9130,
             11350,
-            212
+            242
           ],
           [
             9130,
             10950.5,
-            212
+            242
           ],
           [
             9130,
@@ -2910,8 +3537,8 @@
         "metalJacketEachSide": 1,
         "fullStraightOD": 74,
         "completeCrossingSupportEnvelopeZ": [
-          150,
-          274
+          180,
+          304
         ],
         "rigEnvelopeBeforeLiftZ": [
           0,
@@ -2919,9 +3546,9 @@
         ],
         "rigEnvelopeAfterLiftZ": [
           0,
-          120
+          140
         ],
-        "minimumRigClearance": 30,
+        "minimumRigClearance": 40,
         "crossingTrackX": [
           9370,
           9470
@@ -2932,7 +3559,7 @@
         ],
         "supports": "Independentlyretainedfloor/wall supports. No bracket within trackcrossingX9370–9470; nearestsupportX9290(max100wide) ends9340,30clear. Nextsupport9800;510span requiresactualsupplier/capacitycheck. Pipe/supportsnevermove with station.",
         "frameRequirement": "No lowfronttransverse rail orsidebrace crossing fixedfeedbands below475. Top/highbraced900stationmustearn actualstiffness/anchorcapacity; no drawnexistingbrace silentlyremoved.",
-        "cookerRequirement": "Built-in COMPACT455high oven over350accessibleplinth, not freestandingfullfloor chassis. Water/support envelope≤274;20deckunder330 leaves56clear. Exactoven/hobventilation/electricalseparation required."
+        "cookerRequirement": "Built-in COMPACT455high oven over350accessibleplinth, not freestandingfullfloor chassis. Water/support envelope≤304;20deckunder330 leaves26clear. Exactoven/hobventilation/electricalseparation required."
       },
       "cookingStationRewind": {
         "footprint": [
