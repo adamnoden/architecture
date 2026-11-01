@@ -1,39 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-03",
-  "generation": 20,
-  "state": "released",
-  "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
+  "generation": 21,
+  "state": "claimed",
+  "leaseId": "537b440b-2a31-4854-a692-ccd6824a33c8",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6559339044"
+    "label": "zerg-worker-one"
   },
-  "claimedAt": "2026-11-01T14:32:58.000Z",
-  "heartbeatAt": "2026-11-01T14:51:53.000Z",
-  "expiresAt": "2026-11-01T14:51:53.000Z",
-  "branch": "work/mvb-chat-6559339044",
+  "claimedAt": "2026-11-01T14:55:11.984Z",
+  "heartbeatAt": "2026-11-01T14:55:11.984Z",
+  "expiresAt": "2026-11-01T15:40:11.984Z",
+  "branch": "work/zerg-one-20261101",
   "predecessor": {
-    "leaseId": "80e2e12c-e0f1-43f7-bd23-7977f10acdb6",
-    "generation": 19,
-    "branch": "work/mvb-chat-6558300375"
-  },
-  "recoverySource": {
-    "leaseId": "5c4b89d9-ff6c-46d5-86d3-fe44774bc6df",
-    "generation": 18,
-    "branch": "work/mvb-chat-6558099791",
-    "pr": 1213,
+    "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
+    "generation": 20,
+    "branch": "work/mvb-chat-6559339044",
+    "pr": 1215,
     "checkpoint": {
-      "evidence": "PR1213 head 6f584233: controlled shallow pan/outlet free-grade sensitivity, generated SVG+JSON, deterministic drawing test and HAD/RWT handoff; full CI 41308734847 running.",
-      "next": "Verify full exact-head CI; run fresh native lease/head preflight after CI; expected-head merge; release and retire preflight helper.",
-      "blocker": "HAD-03 remains planned: actual door/wall first-harm level, supported local N/E passages, site receiving levels and full-duty relief unproven."
+      "evidence": "PR #1215 head abec91851b9117909717b699391e008c9288b442: coupled gravity and carrier-cover clearance, generator, SVG/JSON, regression. Exact-head CI 41317424055 passed.",
+      "next": "Run native control:merge-check against live lease and main; merge with expected head if valid. Otherwise retain PR as handoff.",
+      "blocker": "Connector-only chat cannot run native preflight; HAD-03 remains planned pending complete N/E physical design."
     }
   },
-  "pr": 1215,
-  "checkpoint": {
-    "evidence": "PR #1215 head abec91851b9117909717b699391e008c9288b442: coupled gravity and carrier-cover clearance, generator, SVG/JSON, regression. Exact-head CI 41317424055 passed.",
-    "next": "Run native control:merge-check against live lease and main; merge with expected head if valid. Otherwise retain PR as handoff.",
-    "blocker": "Connector-only chat cannot run native preflight; HAD-03 remains planned pending complete N/E physical design."
-  },
-  "releasedAt": "2026-11-01T14:51:53.000Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "e3ce5c7b-6bbf-42f4-bde9-f04b32d271c5",
+    "generation": 20,
+    "branch": "work/mvb-chat-6559339044",
+    "pr": 1215,
+    "checkpoint": {
+      "evidence": "PR #1215 head abec91851b9117909717b699391e008c9288b442: coupled gravity and carrier-cover clearance, generator, SVG/JSON, regression. Exact-head CI 41317424055 passed.",
+      "next": "Run native control:merge-check against live lease and main; merge with expected head if valid. Otherwise retain PR as handoff.",
+      "blocker": "Connector-only chat cannot run native preflight; HAD-03 remains planned pending complete N/E physical design."
+    }
+  }
 }
