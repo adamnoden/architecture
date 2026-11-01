@@ -1,3 +1,4 @@
+# CI succeeded; fresh preflight of exact reviewed head after full PR validation
 name: HAD-03 publication preflight PR1209
 on:
   push:
