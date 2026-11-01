@@ -24,6 +24,24 @@ The [source-derived ledger](studies/court-near-level-window.json), [figure](stud
 
 **Result of this geometry screen:** the inherited −180/−215 mm pan is poorly matched to the present nominal site level if a *free* normal gravity exit is required; deliberately raising the court pan into a shallow accessible floor assembly materially improves the level budget. The compared 60 mm pedestal family still misses a synthetic at-grade free-outlet case by **48.5 mm** at the declared fall/drop/clearance assumptions. A small, real relative grade adjustment *could* be explored before moving the entire house by 1,050 mm. Conversely, an unqualified 20 mm support or zero clearances cannot be called a solution. Reducing gradient loses hydraulic head and may worsen silt and rodding; no row here proves transport of rainwater at the actual storm profile.
 
+### The missing second constraint: fit the carrier *and* its retained cover
+
+The free-outlet bars are **necessary but not sufficient**. They measure a water level, not the physical height of an independent, replaceable passage below a load-bearing floor or threshold. A channel must pass through an actual wall/floor portal while retaining a sound cover and separately supported load path. The companion [source-derived portal pinch ledger](studies/court-near-level-window.json) tests that omitted dimension without choosing a pipe or making a hydraulic claim.
+
+For **one monotone gravity carrier beneath a retained cover**, let `H` be the carrier's complete outside height, and `T` the actual required depth from finished floor to the top of that carrier (including supported cover, protection and clearances). The inlet invert must lie at least `H + T` below the floor. Combined with the compact court low and free-outlet test, a **necessary** condition is:
+
+**`D ≥ max(P + C + J, H + T) + 4,250 × S + K`**
+
+At the same synthetic `D = 150`, 1% fall and *hypothetical* 25 mm receiver separation, only **82.5 mm of invert depth below floor** remains at the court end. Yet the compared compact pan plus trial inlet drop already needs **131 mm**. The **48.5 mm** initial shortfall therefore assumes nothing about whether a real carrier and independently load-bearing cover could fit; it is *not* a clearance for them.
+
+| Deliberately synthetic carrier height + retained cover | Controlling inlet depth, below FFL | Relative D required | Additional separation vs 150 |
+|---|---:|---:|---:|
+| 60 + 40 mm | 131 mm, **collector** controls | 198.5 mm | 48.5 mm |
+| 80 + 80 mm | 160 mm, **physical envelope** controls | 227.5 mm | 77.5 mm |
+| 120 + 100 mm | 220 mm, **physical envelope** controls | 287.5 mm | 137.5 mm |
+
+None of those heights is an adopted product, structure, compliant cover or full-duty flow area. The figures deliberately omit horizontal withdrawal, fittings, joint release, floor thermal/gas/water closures, N/E independence and a high-tailwater event. A portal with a different bearing or side-exit arrangement requires its own properly drawn geometry: do **not** transfer this under-cover inequality unchanged. The architectural proposition must establish **both** passable vertical section and independent, maintainable service replacement before the modest raised-pan option can be credited.
+
 ### The second route still has to work
 
 The separate provisional emergency inlet crest at **−75 mm** and a *hypothetical* 1% fall across 4,250 mm give a centreline exit comparison at **−117.5 mm**, 32.5 mm above the synthetic exterior grade. Against an arbitrarily chosen 25 mm receiving separation, that leaves only **7.5 mm geometric surplus** before any inlet transition, outlet casing, flowing head, flow depth, structural support or local backwater. This does **not** size E or qualify its full degraded-duty flow.
