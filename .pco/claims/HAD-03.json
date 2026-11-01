@@ -9,8 +9,8 @@
     "label": "zerg2-had-open-loggia"
   },
   "claimedAt": "2026-11-01T20:03:03.859Z",
-  "heartbeatAt": "2026-11-01T20:03:03.859Z",
-  "expiresAt": "2026-11-01T20:48:03.859Z",
+  "heartbeatAt": "2026-11-01T20:27:40.329Z",
+  "expiresAt": "2026-11-01T21:12:40.329Z",
   "branch": "work/zerg2-had-open-loggia",
   "predecessor": {
     "leaseId": "6880ac9f-d9b0-4763-998c-f7820e975912",
@@ -33,5 +33,10 @@
       "next": "RootobservesonecanonicalexactheadCI, thenfreshper-nodepreflight/expectedheadmerge; verifyintegration/releaseHAD22. NoindependentsourcePRmerge.",
       "blocker": "CanonicalsharedexactheadCIandpublicationpreflightpending. HAD03remainsincomplete/RWT06blocked; noarchitecture/material/hydraulic/siteadoption."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote1068dd38dc5f9fd682b11bb64c395eede4d4f090 exacttreea04b3a462563b528b8b76f0d86f1b0dd9f645c44: firstcompleteground-upperloggiaJSONandactualrenderedpairedplan, knownfailurespreserved.",
+    "next": "Resolvefinitewholehousebed-door-windowandserviceinterfaces; joinSTRbeam/MATweather-soffit, sectionsandindependentoutdoorwater; chooseorrejectcoherentarchitecturalrewind.",
+    "blocker": "Firstcandidateunadopted. Earlier2422e060/ec9da7d0mailboxesUNSERVICEDtimedout;freshreadconfirmedoriginal23recordunchangedbeforethisrenew. Nooldrequestreplayed."
   }
 }
