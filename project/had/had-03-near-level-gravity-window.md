@@ -8,9 +8,7 @@ The [controlled layout](../../compiler/reference-house/georgian/layout-revision.
 
 Let **P** be the perimeter depth below the *same walking-level datum*, **C** the fall to the court low point, **J** the actual collector-to-carrier inlet drop, **S** the 4,250 mm passage gradient, and **K** a trial clear separation between the *exit invert* and an external receiving-water level. The gross required relative floor-over-receiver height for a specifically **free-outfall-style** route is:
 
-[
-D_{\mathrm{required}} = P + C + J + 4250S + K
-]
+**`D_required = P + C + J + 4,250 × S + K`**
 
 The current drawing has **D = 150 mm** *only against synthetic exterior grade −150*. For that one comparison, additional rise relative to an **unchanged** receiving surface is `max(0, D_required − 150)`. If the exterior water/ground rises with the building, the relative gain disappears. A partially submerged terminal may still discharge under sufficient head; this screen **does not** prove total gravity impossibility for a configuration that fails the *free outlet* test.
 
