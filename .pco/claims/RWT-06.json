@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 20,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3e29a531-eb41-4c6d-ae4e-e033bcf7aaeb",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6556166287"
   },
   "claimedAt": "2026-11-01T09:34:46.000Z",
-  "heartbeatAt": "2026-11-01T09:40:20.000Z",
-  "expiresAt": "2026-11-01T10:25:20.000Z",
+  "heartbeatAt": "2026-11-01T09:45:23.000Z",
+  "expiresAt": "2026-11-01T09:45:23.000Z",
   "branch": "work/mvb-chat-6556166287",
   "predecessor": {
     "leaseId": "c9511c0e-98d6-4364-9f1d-3155ae1fa7fc",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "PR1201 captures RWT-06 topological negative disposition and architectural N/E egress redesign; RWT-06 lifecycle deliberately remains planned.",
     "next": "Full exact-head CI and canonical merge-check; merge and retain RWT-06 as planned for redesigned source-backed section; release this generation as handoff."
-  }
+  },
+  "releasedAt": "2026-11-01T09:45:23.000Z",
+  "releaseReason": "handoff"
 }
