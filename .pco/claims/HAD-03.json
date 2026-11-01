@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-03",
   "generation": 22,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "6880ac9f-d9b0-4763-998c-f7820e975912",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-had-joined"
   },
   "claimedAt": "2026-11-01T19:21:35.996Z",
-  "heartbeatAt": "2026-11-01T19:52:11.409Z",
-  "expiresAt": "2026-11-01T20:37:11.409Z",
+  "heartbeatAt": "2026-11-01T20:01:23.550Z",
+  "expiresAt": "2026-11-01T20:01:23.550Z",
   "branch": "work/zerg2-integration-20261101",
   "predecessor": {
     "leaseId": "537b440b-2a31-4854-a692-ccd6824a33c8",
@@ -39,5 +39,7 @@
     "next": "RootobservesonecanonicalexactheadCI, thenfreshper-nodepreflight/expectedheadmerge; verifyintegration/releaseHAD22. NoindependentsourcePRmerge.",
     "blocker": "CanonicalsharedexactheadCIandpublicationpreflightpending. HAD03remainsincomplete/RWT06blocked; noarchitecture/material/hydraulic/siteadoption."
   },
-  "pr": 1229
+  "pr": 1229,
+  "releasedAt": "2026-11-01T20:01:23.550Z",
+  "releaseReason": "handoff"
 }
