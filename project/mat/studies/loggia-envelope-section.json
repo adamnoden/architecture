@@ -3,7 +3,7 @@
   "startingMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
   "hadSource": {
     "path": "project/had/studies/open-north-loggia.json",
-    "sha256": "bf98f77a4cc2a8704adf931ef469ceaf3228811dd666cf9250050d0c9d9b32c2"
+    "sha256": "3696b58656ac54ec6a5ff8d7cf57e11b73e049d1c0836011b18d8a7a3c0e0bd4"
   },
   "wallLayers": [
     [
@@ -200,6 +200,61 @@
     "normal": "Accessible edge copper collector; exact cross-section and receiver to qualify",
     "relief": "Broad walking-surface gravity route to guarded exterior spill/cascade; independent receiver not yet accepted"
   },
+  "portal": {
+    "scope": "Rootdirected one2960rough/280fullwrap candidate; actualring/thrust/pier/bearing/thermal verification beforeadoption.",
+    "roughSpan": 2960,
+    "rawSpring": 2250,
+    "rawRise": 600,
+    "rawCrown": 2850,
+    "radialRing": 215,
+    "rawRadius": 2125.333333333333,
+    "centreZ": 724.666666666667,
+    "glass": 240,
+    "lining": 40,
+    "totalWrap": 280,
+    "finishedSpan": 2400,
+    "finishedRadius": 1845.333333333333,
+    "finishedCrown": 2570,
+    "finishedSpringAtVerticalJamb": 2126.5422357208927,
+    "widthAt2250": 2077.1262198848995,
+    "glassFabrication": {
+      "radialLayers": [
+        120,
+        120
+      ],
+      "authoredStock": [
+        160,
+        160
+      ],
+      "maxChord": 500,
+      "maxInnerGlassSagitta": 16.64882872112412,
+      "scope": "Custom curvedmechanicalcuts from thickerbarecore stock; exactstockavailability/fabrication/strength unknown. Flat600tiles not silently used."
+    },
+    "coreDepth": 140,
+    "finishedAxialDepth": 700,
+    "coreBands": [
+      [
+        8012.5,
+        8152.5
+      ],
+      [
+        11597.5,
+        11737.5
+      ]
+    ],
+    "finishedAxialBands": [
+      [
+        7732.5,
+        8432.5
+      ],
+      [
+        11317.5,
+        12017.5
+      ]
+    ],
+    "weatherLeaf": "Separate102.5weatherarch/cavity locally replaced by wrappedcore. Do not overlap glasswithcoldweatherbrick.",
+    "joint": "240glass wraps BOTH exposed core/spandrelfaces +intrados/jambs, joins flat240soffit and200sidewallglass with actualcuts; no invisibletaper."
+  },
   "threshold": {
     "wallReservation": 417.5,
     "wallScope": "Existing southcourt shell reservation, not507.5loggia wall qualification",
@@ -328,6 +383,28 @@
         -171.5,
         -206.25
       ],
+      "renewal": {
+        "straightLength": 4250,
+        "clearWidth": 250,
+        "wallHeight": 92.25,
+        "flangesEach": 25,
+        "gauge": 1.5,
+        "density": 8960,
+        "screenMassKg": 27.67464,
+        "stage": [
+          5500,
+          7100,
+          350,
+          4250
+        ],
+        "operatorLongEnvelope": [
+          5500,
+          6500,
+          350,
+          5450
+        ],
+        "state": "Covers removed, lift straightliner vertically; stage occupies broadrelief. Incomingrain isolation/temporaryroute mandatory; no bothrouteslive claim."
+      },
       "material": "1.5uncoatedcopper liner; seams/filler/flux/supports/retained treatments unqualified"
     },
     "relief": {
@@ -410,6 +487,6 @@
     "scope": "Synthetic parallel-path sensitivity, not certified whole-floor U or3D thermal bridge.",
     "u": 0.1715419246024791,
     "baseBridge": "600wide concrete beam blocks below-floor vertical insulation. Floor/inner DPC/thermal route not qualified.",
-    "archBridge": "Real masonry arch/spandrel crosses240glass soffit plane; no invisible taper or unchanged finished2400 opening claimed."
+    "archBridge": "Selected2960rough/280fullwrap/2400finished; actualface/intradosconnection drawn,2Dbridge/model remains unqualified."
   }
 }
