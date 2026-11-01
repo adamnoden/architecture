@@ -12,9 +12,6 @@ on:
       - 'docs/patterns/**'
       - 'docs/reference-house/**'
       - 'README.md'
-      - 'scripts/proof-scope.mjs'
-      - 'scripts/proof-scope.test.mjs'
-      - '.github/workflows/proof-scope.yml'
       - 'package.json'
       - 'package-lock.json'
 
@@ -23,11 +20,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  scope:
-    uses: ./.github/workflows/proof-scope.yml
   proof:
-    needs: scope
-    if: needs.scope.outputs.run != 'false'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -56,15 +49,7 @@ jobs:
             exit 1
           fi
 
-      - name: Cache verified publication fonts
-        uses: actions/cache@v6
-        with:
-          path: node_modules/.cache/ovids-house/publication-fonts
-          key: ${{ runner.os }}-publication-fonts-v1-${{ hashFiles('publication/fonts.ts') }}
-          restore-keys: ${{ runner.os }}-publication-fonts-v1-
-
       - name: Build paired production typography proof
-        id: build_proof
         run: npx tsx publication/scripts/build-typography-proof.ts
 
       - name: Verify production typography
@@ -73,9 +58,7 @@ jobs:
       - name: Verify paired pagination ledger
         run: npx tsx publication/scripts/verify-typography-ledger.ts
 
-      # Preserve inspectable outputs when a later verification fails; keep that failure.
       - name: Upload reader-facing proof PDFs
-        if: ${{ !cancelled() && steps.build_proof.outcome == 'success' }}
         uses: actions/upload-artifact@v4
         with:
           name: publication-typography-production-proof
@@ -86,11 +69,9 @@ jobs:
           retention-days: 90
 
       - name: Upload typography diagnostics
-        if: ${{ !cancelled() && steps.build_proof.outcome == 'success' }}
         uses: actions/upload-artifact@v4
         with:
           name: publication-typography-production-diagnostics
-          include-hidden-files: true
           path: |
             publication/typography-metadata.json
             publication/.proof/typ09b/verification.json

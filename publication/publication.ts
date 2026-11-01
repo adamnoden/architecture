@@ -112,7 +112,7 @@ export const primerPublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'primer-patterns',
     source: 'docs/patterns/README.md',
-    title: 'From constitution to patterns',
+    title: 'From doctrine to patterns',
     kind: 'primer',
     adapter: 'primer-patterns'
   },
@@ -126,7 +126,7 @@ export const primerPublicationEntries: readonly PublicationEntry[] = [
   {
     id: 'primer-outlook',
     source: 'publication/primer/outlook.md',
-    title: 'Making and testing the house',
+    title: 'Making and proving the platform',
     kind: 'primer'
   }
 ] as const
@@ -137,16 +137,16 @@ export const primerPublicationEntries: readonly PublicationEntry[] = [
  */
 export const publicationEntries: readonly PublicationEntry[] = [
   {
-    id: 'readers-guide',
-    source: 'docs/manuscript/readers-guide.md',
-    title: "Reader's Guide",
-    kind: 'front-matter'
-  },
-  {
     id: 'preface',
     source: 'docs/manuscript/preface.md',
     title: 'Preface — The Obvious, Eventually',
     kind: 'preface'
+  },
+  {
+    id: 'readers-guide',
+    source: 'docs/manuscript/readers-guide.md',
+    title: "Reader's Guide",
+    kind: 'front-matter'
   },
   {
     id: 'part-i',
@@ -167,32 +167,6 @@ export const publicationEntries: readonly PublicationEntry[] = [
     source: 'publication/part-iii.md',
     title: 'Part III — Patterns and Generative Sequences',
     kind: 'part'
-  },
-
-  {
-    id: 'part-iv',
-    source: 'docs/manuscript/part-iv.md',
-    title: 'Part IV — The Reference House: Design Proposition',
-    kind: 'part'
-  },
-
-  {
-    id: 'part-v',
-    source: 'docs/manuscript/part-v.md',
-    title: 'Part V — Making and Proving the Platform',
-    kind: 'part'
-  },
-  {
-    id: 'part-vi',
-    source: 'docs/manuscript/part-vi.md',
-    title: 'Part VI — The House',
-    kind: 'part'
-  },
-  {
-    id: 'pattern-reference',
-    source: 'publication/pattern-reference.md',
-    title: 'Pattern Reference',
-    kind: 'back-matter'
   },
 
   pattern('PAT-001', 'controlled-utility-entry.md', 'Controlled Utility Entry'),
@@ -261,6 +235,25 @@ export const publicationEntries: readonly PublicationEntry[] = [
     kind: 'candidate'
   },
 
+  {
+    id: 'part-iv',
+    source: 'docs/manuscript/part-iv.md',
+    title: 'Part IV — The Reference House: Design Proposition',
+    kind: 'part'
+  },
+
+  {
+    id: 'part-v',
+    source: 'docs/manuscript/part-v.md',
+    title: 'Part V — Making and Proving the Platform',
+    kind: 'part'
+  },
+  {
+    id: 'part-vi',
+    source: 'docs/manuscript/part-vi.md',
+    title: 'Part VI — The House',
+    kind: 'part'
+  },
   {
     id: 'evidence-and-precedent-notes',
     source: 'docs/manuscript/evidence-and-precedent-notes.md',

@@ -1,7 +1,7 @@
-import { sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { validateTargetSlice } from './target.js'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import type {
   InterfaceContractRef,
   LoadedPilotSite,
@@ -77,8 +77,8 @@ export const loadPilotSite = (
     indexEntry: site,
     recordPath,
     recordText,
-    recordFingerprint: sha256DplSemanticFingerprint({ recordPath, recordText }),
-    indexEntryFingerprint: sha256DplSemanticFingerprint(site)
+    recordFingerprint: sha256SemanticFingerprint({ recordPath, recordText }),
+    indexEntryFingerprint: sha256SemanticFingerprint(site)
   }
 }
 
@@ -90,7 +90,7 @@ export const loadInterfaceContract = (
   return {
     id,
     path,
-    semanticFingerprint: sha256DplSemanticFingerprint({ path, content })
+    semanticFingerprint: sha256SemanticFingerprint({ path, content })
   }
 }
 

@@ -1,6 +1,6 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import {
   composeDPLT6LennardScreeningAggregation,
   type DPLT6BlockerRecord
@@ -105,7 +105,7 @@ export interface DPLT7Result {
 }
 
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
+  [...new Set(values)].sort((a, b) => a.localeCompare(b))
 
 const accelerationKey = (owner: AccelerationOwner, sourceEntryId: string): string =>
   `${owner}:${sourceEntryId}::ACCELERATION_REVIEW`
@@ -126,7 +126,7 @@ export const DPL_T7_EXPECTED_ACCELERATION_IDS = [
   'NON_PLANNING:DPL11-COV-PRIVATE-RIGHTS::ACCELERATION_REVIEW',
   'NON_PLANNING:DPL11-COV-SEWER-UNDERTAKER::ACCELERATION_REVIEW',
   'NON_PLANNING:DPL11-COV-UTILITIES::ACCELERATION_REVIEW'
-].sort((a, b) => compareDplIdentityStrings(a, b)) as readonly string[]
+].sort((a, b) => a.localeCompare(b)) as readonly string[]
 
 const dispositionSpecs: readonly DispositionSpec[] = [
   {
@@ -249,7 +249,7 @@ const readPublicEvidence = (): { record: PublicEvidenceRecord; fingerprint: stri
   }
   const sourceIds = new Set(raw.sources.map((source) => source.id))
   if (sourceIds.size !== raw.sources.length) throw new Error('DPL-T7 public evidence contains duplicate source ids.')
-  return { record: raw, fingerprint: sha256DplSemanticFingerprint(raw), sourceIds }
+  return { record: raw, fingerprint: sha256SemanticFingerprint(raw), sourceIds }
 }
 
 const sourceEntry = (
@@ -283,14 +283,14 @@ export const composeDPLT7LennardAccelerationDisposition = (): DPLT7Result => {
   )
   const actualAccelerationIds = accelerationBlockers
     .map((blocker) => `${blocker.owner}:${blocker.ownerEntryId}`)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
   if (JSON.stringify(actualAccelerationIds) !== JSON.stringify(DPL_T7_EXPECTED_ACCELERATION_IDS)) {
     throw new Error(`DPL-T7 refuses changed acceleration frontier: ${actualAccelerationIds.join(', ')}.`)
   }
 
   const specIds = dispositionSpecs
     .map((spec) => accelerationKey(spec.owner, spec.sourceEntryId))
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
   if (JSON.stringify(specIds) !== JSON.stringify(DPL_T7_EXPECTED_ACCELERATION_IDS)) {
     throw new Error('DPL-T7 disposition specification does not exactly cover the frozen T6 acceleration universe.')
   }
@@ -343,16 +343,16 @@ export const composeDPLT7LennardAccelerationDisposition = (): DPLT7Result => {
       reason: spec.reason,
       evidenceRefs: canonicalStrings(spec.evidenceRefs)
     }
-    return { ...payload, fingerprint: sha256DplSemanticFingerprint(payload) }
+    return { ...payload, fingerprint: sha256SemanticFingerprint(payload) }
   }).sort((a, b) => {
     const ownerOrder = a.owner === b.owner ? 0 : a.owner === 'PLANNING' ? -1 : 1
-    return ownerOrder || compareDplIdentityStrings(a.sourceEntryId, b.sourceEntryId)
+    return ownerOrder || a.sourceEntryId.localeCompare(b.sourceEntryId)
   })
 
   const survivingAccelerationDueNowIds = records
     .filter((record) => record.accelerationAddsDueNowEvidence)
     .map((record) => `${record.owner}:${record.accelerationEntryId}`)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
   if (survivingAccelerationDueNowIds.length !== 0) {
     throw new Error('DPL-T7 unexpectedly created acceleration-driven due-now evidence.')
   }
@@ -360,7 +360,7 @@ export const composeDPLT7LennardAccelerationDisposition = (): DPLT7Result => {
   const remainingBlockers = t6.blockers.filter((blocker) => !blocker.ownerEntryId.endsWith('::ACCELERATION_REVIEW'))
   const remainingBlockerIds = remainingBlockers
     .map((blocker) => `${blocker.owner}:${blocker.ownerEntryId}`)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
   if (remainingBlockers.length !== 10) {
     throw new Error(`DPL-T7 expected ten substantive T6 blockers after acceleration disposition, found ${remainingBlockers.length}.`)
   }
@@ -398,6 +398,6 @@ export const composeDPLT7LennardAccelerationDisposition = (): DPLT7Result => {
     ...resultPayload,
     accelerationInputCount: 15,
     remainingBlockers,
-    resultFingerprint: sha256DplSemanticFingerprint(resultPayload)
+    resultFingerprint: sha256SemanticFingerprint(resultPayload)
   }
 }

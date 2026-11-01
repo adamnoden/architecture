@@ -1,7 +1,7 @@
 # COA-04 — Reference House plan and section successor set
 
 **Gate:** COA-04  
-**Status:** PASS — accepted in the [completed COA programme](../../docs/computational/compiler-output-architecture-programme.md)\
+**Status:** PASS subject to repository CI and generated-output verification  
 **Starting main:** `07d0f310341e647cac59fdeff6219a2285089549`  
 **Issue:** #95  
 **Authority effect:** none
@@ -84,4 +84,4 @@ The CH-frozen RH-C1 drawings remain byte-identical historical evidence. COA-04 c
 
 **Publication consequence:** after COA-04 passes, PR-00D may use these three successor views as trustworthy source material for Reference House plan/section figures. Publication still owns crop, caption, hierarchy and final figure composition.
 
-**Historical handoff:** [COA-05 — topology successor views](../coa05/README.md), subsequently completed.
+**Next gate:** COA-05 — topology successor views.

@@ -3,7 +3,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { applyAdapter } from '../../adapters.js'
 import { publicationFigurePlacements } from '../../figures.js'
-import { publicationPlatePlacements } from '../../plates-current.js'
+import { publicationPlatePlacements } from '../../plates.js'
 import { publicationEntries } from '../../publication.js'
 
 const specimenRoot = dirname(fileURLToPath(import.meta.url))

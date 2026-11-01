@@ -1,0 +1,37 @@
+# Temporary, read-only RWT-06 publication preflight, dispose via delete-me.
+name: RWT-06 publication preflight PR1201
+on:
+  push:
+    branches: [work/rwt06-preflight-1201]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - name: Checkout exact reviewed RWT-06 source
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6556166287
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Guard exact reviewed source
+        run: test "$(git rev-parse HEAD)" = "12e2fddee3550eacafe58b9a4be38a60d3db33c3"
+      - name: Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Native current-main publication preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm run control:merge-check -- RWT-06 \
+            --lease-id 3e29a531-eb41-4c6d-ae4e-e033bcf7aaeb \
+            --generation 20 \
+            --branch work/mvb-chat-6556166287 \
+            --head 12e2fddee3550eacafe58b9a4be38a60d3db33c3 \
+            --format text

@@ -1,7 +1,5 @@
 # Reference House — RH-10 Energy, Heating and Renewable Coordination
 
-**Applicability:** this is retained predecessor evidence, not a current-house acceptance record. Dimensions, selections and “current” statements below refer to its named historical baseline. See [Current House Basis](current-house-basis.md) for the accepted revision-02 source and the specific rechecks/owners; no proof identity is changed here.
-
 **Status:** RH-10 corrective coordination addendum  
 **Date:** 2026-10-12  
 **Triggered by:** whole-house audit  

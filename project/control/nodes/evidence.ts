@@ -35,18 +35,21 @@ export const evidenceNodes = defineNodes([
   {
     id: 'PHY-03-ENGINEERING',
     owners: ['PHY'],
-    title: 'Internal floor-edge research, calculations and provisional option reduction',
-    dependencies: ['PHY-APPLICABILITY'],
-    lifecycle: 'complete',
+    title: 'Structural floor-edge engineering option reduction',
+    dependencies: [],
+    lifecycle: 'planned',
     aliases: ['PHY-03', 'P03'],
-    agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/phy/floor-edge-internal-study.md']
+    agentDispatch: {
+      mode: 'manual',
+      reason: 'The gate requires competent structural-engineering judgement; an agent may assist only when explicitly directed.'
+    },
+    closeoutEvidence: []
   },
   {
     id: 'PHY-04',
     owners: ['PHY'],
     title: 'Wall/ceiling movement-junction build and test',
-    dependencies: ['PHY-APPLICABILITY'],
+    dependencies: [],
     lifecycle: 'planned',
     aliases: ['P04'],
     agentDispatch: {
@@ -56,19 +59,10 @@ export const evidenceNodes = defineNodes([
     closeoutEvidence: []
   },
   {
-    id: 'EPR-DESK-REVIEW',
-    owners: ['EPR'],
-    title: 'Answer current-house technical review questions through internal evidence and challenge',
-    dependencies: ['EPR-REFRESH'],
-    lifecycle: 'complete',
-    agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/epr/internal-technical-review.md']
-  },
-  {
     id: 'EPR-RH11',
     owners: ['EPR'],
     title: 'Obtain and process competent Reference House reviews',
-    dependencies: ['EPR-REFRESH'],
+    dependencies: [],
     lifecycle: 'planned',
     aliases: ['RH-11'],
     agentDispatch: {
@@ -84,32 +78,5 @@ export const evidenceNodes = defineNodes([
     dependencies: [],
     lifecycle: 'complete',
     closeoutEvidence: ['project/del/del-00-delivery-baseline.md']
-  },
-  {
-    id: 'EPR-REFRESH',
-    owners: ['EPR'],
-    title: 'Refresh current-house review briefs and questions',
-    dependencies: ['HRS-BASELINE', 'BCR-PREFLIGHT'],
-    lifecycle: 'complete',
-    agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/epr/current-house-review-applicability.md']
-  },
-  {
-    id: 'PHY-APPLICABILITY',
-    owners: ['PHY'],
-    title: 'Reconcile prototype applicability and earned evidence requirements',
-    dependencies: ['HRS-BASELINE', 'BCR-PREFLIGHT'],
-    lifecycle: 'complete',
-    agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/phy/current-house-prototype-applicability.md']
-  },
-  {
-    id: 'DEL-CURRENT',
-    owners: ['DEL'],
-    title: 'Reconcile selected-house delivery and reinstatement requirements',
-    dependencies: ['BCR-CONVERGENCE'],
-    lifecycle: 'planned',
-    agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/del/current-house-delivery-result.md']
   }
 ])

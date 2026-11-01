@@ -1,4 +1,4 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import {
   compileCanonicalReferenceSiteCase,
   type CanonicalReferenceSiteCompile
@@ -122,7 +122,7 @@ export interface ScreeningSubstantiveAggregationOverrides {
 }
 
 const canonicalStrings = (values: readonly string[]): string[] =>
-  [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b))
+  [...new Set(values)].sort((a, b) => a.localeCompare(b))
 
 const ownerOrder: Readonly<Record<CoverageOwner, number>> = {
   REFERENCE_HOUSE: 0,
@@ -154,7 +154,7 @@ const requiredBlockingCoverage = (
   .filter((entry) => entry.positiveCompatibilityBlockingWhenDue && blockingDispositions.has(entry.normalizedDisposition))
   .sort((a, b) => {
     const byOwner = ownerOrder[a.owner] - ownerOrder[b.owner]
-    return byOwner || compareDplIdentityStrings(a.ownerEntryId, b.ownerEntryId)
+    return byOwner || a.ownerEntryId.localeCompare(b.ownerEntryId)
   })
 
 const futureDueCoverage = (
@@ -168,7 +168,7 @@ const futureDueCoverage = (
   }))
   .sort((a, b) => {
     const byOwner = ownerOrder[a.owner] - ownerOrder[b.owner]
-    return byOwner || compareDplIdentityStrings(a.ownerEntryId, b.ownerEntryId)
+    return byOwner || a.ownerEntryId.localeCompare(b.ownerEntryId)
   })
 
 const candidateState = (
@@ -345,16 +345,16 @@ const obligationRecord = (
     sourceKind: 'DEPLOYMENT_OBLIGATION',
     sourceIds: mapped
       .map((entry) => `${entry.targetId}:${entry.obligationId}`)
-      .sort((a, b) => compareDplIdentityStrings(a, b)),
+      .sort((a, b) => a.localeCompare(b)),
     sourceResult: mapped
       .map((entry) => `${entry.obligationId}=${entry.result}`)
-      .sort((a, b) => compareDplIdentityStrings(a, b))
+      .sort((a, b) => a.localeCompare(b))
       .join(';'),
     aggregationState: state,
     ...(blockerClass ? { blockerClass } : {}),
     reason: mapped
       .map((entry) => `${entry.obligationId}: ${entry.resultReason}`)
-      .sort((a, b) => compareDplIdentityStrings(a, b))
+      .sort((a, b) => a.localeCompare(b))
       .join(' | ')
   }
 }
@@ -385,7 +385,7 @@ export const buildScreeningAggregationRecords = (
     })
     .sort((a, b) => {
       const byOwner = ownerOrder[a.owner] - ownerOrder[b.owner]
-      return byOwner || compareDplIdentityStrings(a.ownerEntryId, b.ownerEntryId)
+      return byOwner || a.ownerEntryId.localeCompare(b.ownerEntryId)
     })
 }
 
@@ -400,12 +400,12 @@ const canonicalRecords = (
     }
     return {
       ...canonical,
-      recordFingerprint: sha256DplSemanticFingerprint(canonical)
+      recordFingerprint: sha256SemanticFingerprint(canonical)
     }
   })
   .sort((a, b) => {
     const byOwner = ownerOrder[a.owner] - ownerOrder[b.owner]
-    return byOwner || compareDplIdentityStrings(a.ownerEntryId, b.ownerEntryId) || compareDplIdentityStrings(a.recordFingerprint, b.recordFingerprint)
+    return byOwner || a.ownerEntryId.localeCompare(b.ownerEntryId) || a.recordFingerprint.localeCompare(b.recordFingerprint)
   })
 
 const blockingScopeComplete = (
@@ -504,7 +504,7 @@ export const composeScreeningSubstantiveAggregation = (
   const futureDue = futureDueCoverage(readiness)
   const siteInterfaceClaimAuthorities = [...readiness.siteInterfaceClaimAuthorities]
     .map((authority) => ({ ...authority }))
-    .sort((a, b) => compareDplIdentityStrings(a.claimId, b.claimId) || compareDplIdentityStrings(a.authorityId, b.authorityId))
+    .sort((a, b) => a.claimId.localeCompare(b.claimId) || a.authorityId.localeCompare(b.authorityId))
   const wholeSiteConclusion = conclusionFor(readiness, records)
 
   const substantiveUnresolved = records.filter((record) =>
@@ -532,7 +532,7 @@ export const composeScreeningSubstantiveAggregation = (
     resultFingerprint: readiness.resultFingerprint,
     profileUniverseState: readiness.profileUniverseState,
     conclusionReadiness: readiness.conclusionReadiness,
-    uncoveredClaimIds: [...readiness.uncoveredClaimIds].sort((a, b) => compareDplIdentityStrings(a, b))
+    uncoveredClaimIds: [...readiness.uncoveredClaimIds].sort((a, b) => a.localeCompare(b))
   }
   const proofBoundary = {
     compatibleAtScreening: 'NOT_ADMITTED' as const,
@@ -551,7 +551,7 @@ export const composeScreeningSubstantiveAggregation = (
     siteInterfaceClaimAuthorities,
     proofBoundary
   }
-  const identityFingerprint = sha256DplSemanticFingerprint(identityManifest)
+  const identityFingerprint = sha256SemanticFingerprint(identityManifest)
 
   return {
     schemaVersion: DPL13C_SCHEMA_VERSION,
@@ -568,7 +568,7 @@ export const composeScreeningSubstantiveAggregation = (
     },
     wholeSiteConclusion,
     identityFingerprint,
-    resultFingerprint: sha256DplSemanticFingerprint({
+    resultFingerprint: sha256SemanticFingerprint({
       identityFingerprint,
       blockerCounts: { substantiveUnresolved, dueClassificationUnresolved, substantiveFailure },
       wholeSiteConclusion

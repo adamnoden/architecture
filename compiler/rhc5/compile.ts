@@ -33,7 +33,7 @@ export const compileReferenceHouseTargetCalculations = (
   const c4 = compileReferenceHouseBoundaryView(source)
   const privateStairGeometry = runCalculationCheck(
     privateStairGeometryMethod,
-    createReferenceHousePrivateStairInput(c4, source)
+    createReferenceHousePrivateStairInput(c4)
   )
 
   return {

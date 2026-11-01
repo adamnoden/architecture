@@ -228,11 +228,11 @@ export const workstreamStatuses = [
     id: 'computational-track',
     name: 'Computational track',
     maturity: 'M4',
-    reviewedOn: '2026-10-30',
+    reviewedOn: '2026-10-19',
     currentState:
-      'The historical Reference House/RH-C5 and CH-00–08 compiler remains M4 only at its bounded internally tested scope after the finite CCR repairs: represented rectangle unions, relative stair datums/discrete topology, authored drainage consistency and an explicitly limited compact identity contract. Current output bytes are separately verified; frozen historical evidence is preserved. This reassessment does not establish a technical pass or maturity for the current 12 × 12 m house, complete stair fit, hydraulic or physical performance.',
+      'The bounded Reference House executable sequence remains closed PASS through RH-C5 and CH-00 through CH-08 remain complete. The intentional HFI stair rewind has propagated through the controlled semantic source and deterministic projections; RH-C5 now checks the selected 300 mm going while HFI-09C/09D explicitly refuse to turn that project preference into a universal human-factors or statutory rule.',
     nextGate:
-      'Hold the reassessed historical compiler at this exact bounded scope; controlling-source changes still require scoped review and HRS-TECHNICAL owns current-house migration. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, DPL target/site work, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope.',
+      'Hold this bounded compiler as the controlled baseline. There is no standing CH-09 or RH-C6; future computational capability should be demand-led by external review, physical validation, DPL target/site work, a real project, newly authoritative inputs or another concrete proof family. M5 requires appropriate external validation of the computational proposition at its stated scope.',
     evidence: {
       framed: ['docs/computational/executable-architecture.md'],
       developed: ['compiler/p0/p0.test.ts'],
@@ -277,9 +277,6 @@ export const workstreamStatuses = [
         'compiler/rhc5/rhc5.test.ts'
       ],
       internallyValidated: [
-        'project/ccr/ccr-identity-result.md',
-        'compiler/coa06/identity-contract.test.ts',
-        'compiler/reference-house/stair-source.test.ts',
         'compiler/ch00/reference-house-baseline.test.ts',
         'compiler/ch01/ch01.test.ts',
         'compiler/ch02/architecture.test.ts',

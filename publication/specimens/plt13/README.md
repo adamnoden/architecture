@@ -1,4 +1,4 @@
-# Retained orthographic family
+# Current orthographic family
 
 Twelve sheets: ground, first, section locator, principal section, service
 section, front, garden, service side, courtyard entrance, courtyard windows,
@@ -7,5 +7,4 @@ PLT13_FORMAT and vivliostyle.config.js, then validate.ts.
 
 Owner: docs/publication/architectural-plate-orthographic-family.md. This is a
 candidate family, not a physical acceptance, final BOOK composition or release.
-This family predates layout revision 02; [PLT16](../plt16/README.md) carries the
-coordinated successor. Historical specimens stay intact. No loft storey or upper stair is restored.
+Historical specimens stay intact. No loft storey or upper stair is restored.

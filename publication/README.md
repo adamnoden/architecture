@@ -38,40 +38,6 @@ Install locked dependencies first:
 npm ci
 ```
 
-Pinned publication fonts and their licences are cached in
-`node_modules/.cache/ovids-house/publication-fonts`, outside disposable preparation
-directories. Every cached file is checked against its existing upstream Git blob
-pin before use; missing or corrupt entries are downloaded and verified before
-replacement. Full, Primer and current specimen preparation can therefore share
-verified bytes and work offline once cached. CI restores this cache after
-`npm ci`; the cache never changes the selected font pins or staged provenance.
-
-### Browser prerequisites
-
-The figure-bounds validator and Mermaid preparation use Puppeteer and require a compatible Chrome/Chromium browser. If a browser is already installed, select it before running those commands (adjust the path for your machine):
-
-```sh
-export PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
-```
-
-Otherwise, install Puppeteer's pinned browsers from the repository root:
-
-```sh
-npx puppeteer browsers install chrome
-npx puppeteer browsers install chrome-headless-shell
-```
-
-Vivliostyle uses its own browser selection. To render with an existing browser, prepare the source and pass its executable explicitly:
-
-```sh
-npm run publication:prepare:smoke
-npx vivliostyle build -c publication/vivliostyle.config.js --executable-browser /usr/bin/chromium
-```
-
-Mermaid preparation loads a local HTML file. A managed browser policy that rejects it with `ERR_BLOCKED_BY_ADMINISTRATOR` requires supported browser access from the environment administrator; selecting an executable does not override that policy. Figure-bounds validation can pass independently of PDF rendering. Keep TLS verification and managed browser policies intact.
-
-### Commands
-
 Useful stable entry points are:
 
 ```sh
@@ -84,10 +50,6 @@ npm run publication:metadata:check # verify committed publication metadata
 ```
 
 Use the dedicated specimen command named by a drawing/proof record when validating a physical page, spread, typography or scale boundary. Do not substitute a generic PDF build for a specialised proof that checks more specific geometry or physical-output invariants.
-
-## Authored Primer framing
-
-`primer/` is a narrow authored-source exception within this build tree. Its proposition, outlook and composition fragments own the Primer’s editorial framing; the linked manuscript, pattern and Reference House sources retain architectural authority. `adapters.ts` selects and compresses those sources and fills explicit `<!-- primer:… -->` composition slots. It does not own architectural prose. All fragments and all pattern metadata used by the complete map are declared through the existing adapter dependencies, which publication preparation and EDA corpus discovery both consume. Inventory counts use the existing canonical pattern order and publication manifest; there is no separate Primer inventory.
 
 ## Source and generated boundaries
 
