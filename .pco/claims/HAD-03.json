@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-03",
   "generation": 16,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "cc21538d-3614-4fa3-8e93-314ed86fdf3b",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6556750838"
   },
   "claimedAt": "2026-11-01T10:30:45.000Z",
-  "heartbeatAt": "2026-11-01T10:43:54.000Z",
-  "expiresAt": "2026-11-01T11:28:54.000Z",
+  "heartbeatAt": "2026-11-01T10:46:39.000Z",
+  "expiresAt": "2026-11-01T10:46:39.000Z",
   "branch": "work/mvb-chat-6556750838",
   "predecessor": {
     "leaseId": "1df49455-4f9f-4f04-a218-abba2e9a8b82",
@@ -35,5 +35,7 @@
     "evidence": "PR1209 exact head 35ac7d61: undercroft grade/floor clearance inequality, N/E failure table, authored sensitivity SVG and HAD/RWT programme links. HAD-03 remains planned.",
     "next": "Require green full PR CI 41298531549 and native live-lease preflight 41298673106; merge with exact reviewed head, release as handoff, dispose helper branch.",
     "blocker": "Accepted architectural N/E plan+sections, site grade/high-water and threshold/structure design are still unresolved."
-  }
+  },
+  "releasedAt": "2026-11-01T10:46:39.000Z",
+  "releaseReason": "handoff"
 }
