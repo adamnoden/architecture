@@ -3,7 +3,8 @@ import {readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
-import {layoutRevision,revisionOpenings} from '../../../compiler/reference-house/georgian/layout-revision.js';
+import {verifyCrossingRenewal} from './court-egress-study.mjs';
+import {revisionOpenings} from '../../../compiler/reference-house/georgian/layout-revision.js';
 
 const ROOT=new URL('../../../',import.meta.url);
 const pins={
@@ -72,7 +73,6 @@ for(const [id,target]of [['dining-chair-west-north',[1600,10900]],['dining-chair
 for(const [id,r]of Object.entries(maintenance))assert(!overlap(Nouter,r),'N first-release blocked by '+id);
 assert(JSON.stringify(maintenance['dining-table1200x800'])===JSON.stringify(B.ground_objects['dining-table1200x800']),'Table must remain fixed');
 const bodyPath=[[5400,7450],[5400,8483.75],[4886.25,8483.75],[4886.25,11250],[5400,11250],[5400,12500]];
-function pointSeg(p,a,b){const dx=b[0]-a[0],dy=b[1]-a[1],d=dx*dx+dy*dy,t=d?Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/d)):0;return Math.hypot(p[0]-a[0]-dx*t,p[1]-a[1]-dy*t)}
 function segmentRectDistance(a,b,r){
  assert(a[0]===b[0]||a[1]===b[1],'Axis body route only');
  const dx=Math.max(r[0]-Math.max(a[0],b[0]),Math.min(a[0],b[0])-r[0]-r[2],0),dy=Math.max(r[1]-Math.max(a[1],b[1]),Math.min(a[1],b[1])-r[1]-r[3],0);return Math.hypot(dx,dy);
@@ -80,6 +80,31 @@ function segmentRectDistance(a,b,r){
 const bodyObstacles=[...fixed,...Object.entries(maintenance),['open N box',Nouter]];
 let minBody=Infinity,governing;
 for(let i=1;i<bodyPath.length;i++)for(const [id,r]of bodyObstacles){const d=segmentRectDistance(bodyPath[i-1],bodyPath[i],r)-300;if(d<minBody){minBody=d;governing=id}assert(d>=-1e-7,'Maintenance body route hits '+id)}
+// Updated fixed bridges, not the old417.5wall-only renewal predicates.
+const bridges={north:[[7732.5,8432.5],[11300,12000]],east:[[7732.5,8432.5],[8950,9650],[11300,12000]]};
+const crossings=[
+ {route:'north',permanent:bridges.north[0],piece:[7707.5,8457.5],destination:[8457.5,9207.5],translation:750,clearRoom:[8432.5,11300]},
+ {route:'north',permanent:bridges.north[1],piece:[11275,12025],destination:[10525,11275],translation:-750,clearRoom:[8432.5,11300]},
+ {route:'east',permanent:bridges.east[0],piece:[7707.5,8457.5],destination:[6957.5,7707.5],translation:-750,clearRoom:[4250,7732.5]},
+ {route:'east',permanent:bridges.east[1],piece:[8925,9675],destination:[9675,10425],translation:750,clearRoom:[9650,11300]},
+ {route:'east',permanent:bridges.east[2],piece:[11275,12025],destination:[10525,11275],translation:-750,clearRoom:[9650,11300]}
+].map(c=>({...c,totalLift:650,requiredInitialRemovedNeighbor:c.destination}));
+for(const c of crossings){
+ for(const p of bridges[c.route])assert(c.destination[1]<=p[0]||c.destination[0]>=p[1],'A second fixed bridge blocks wet-piece lift');
+ c.witness=verifyCrossingRenewal(c,{inletInvert:-538,carrierHeight:160,coverDepth:318,boxBottom:-638});
+ const n=c.route==='north',rect=n?[6098.5,c.destination[0],1003,750]:[c.destination[0],6623.5,750,1003];
+ for(const [id,r]of Object.entries(maintenance))assert(!overlap(rect,r),'Crossing release hits furniture '+id);
+}
+// Negative controls retain the failures this joined geometry was created to expose.
+const mustReject=(fn,label)=>{let rejected=false;try{fn()}catch{rejected=true}assert(rejected,'Missing rejection: '+label)};
+const outerCrossing=crossings.find(c=>c.route==='east'&&c.permanent[0]===11300);
+mustReject(()=>verifyCrossingRenewal(outerCrossing,{inletInvert:-538,carrierHeight:160,coverDepth:318,boxBottom:-638,totalLift:450}),'old450lift');
+mustReject(()=>verifyCrossingRenewal({...crossings[0],piece:[7832.5,8332.5]},{inletInvert:-538,carrierHeight:160,coverDepth:318,boxBottom:-638}),'old500piece under700bridge');
+mustReject(()=>verifyCrossingRenewal(crossings[0],{inletInvert:-538,carrierHeight:160,coverDepth:318,boxBottom:-638,removedNeighbor:[9000,9207.5]}),'neighbor still occupied');
+const EexternalRelease=[6957.5,6623.5,750,1003],NcourtBridge=[5798.5,7732.5,1603,700];
+assert(!overlap(EexternalRelease,NcourtBridge),'E withdrawal consumes N fixed support');
+const failedGalleryDestination=[8457.5,9207.5];
+assert(failedGalleryDestination[1]>8950,'Must preserve rejection of east-gallery lift under adjacent spine bridge');
 const depths={finish:15,distribution:65,insulation:100,rcCap:100};
 const cover=Object.values(depths).reduce((a,b)=>a+b,0),boxBottom=-638,liner=1.5,boxInsulation=100,rcBase=100,outerBottom=boxBottom-liner-boxInsulation-rcBase,D=1300,heaveStress=300,constructionLoss=50,reserve=50;
 assert(cover===280,'Peer joined cover recipe changed');
@@ -88,7 +113,7 @@ assert(levels.beyondFinal50Reserve>=0,'Reject joined D1300 under authored heave 
 const ledger={
  identity:'UNADOPTED compact B joined ground court/room design; not accepted RH layout',sourceSha256:pins,
  authority:'House-plan B geometry plus compact-front bedroom alternative; accepted layout supplies unchanged outer/court openings only, not9500spine.',
- slots,actualCrossings:{court:[7750,8167.5],spine:[9215,9385],outer:[11582.5,12000],plantNorthFaces:[6415,6585],pantryNorthFinishedFace:8167.5},
+ slots,bridges,crossingRenewal:crossings,renewal:{maxWetPiece:750,totalLift:650,grossJointWidth:300,carrierBodyWidth:200,dryCapsLong:400,airLidGrossModuleLong:840,airLidNetClearLong:780,distinctLidRenewal:'Separate lower lid under permanent bridge requires its own bounded side withdrawal; routine wet-piece clearance is not complete lid renewal or seal qualification.',fixedCapNeverRemoved:true,EexteriorReleaseToNbridgeGap:106,failedGalleryLift:'750piece exceeds517.5clear between actual court bridge end8432.5 and spinebridge start8950; withdraw E court piece west instead.'},actualCrossings:{court:[7750,8167.5],spine:[9215,9385],outer:[11582.5,12000],plantNorthFaces:[6415,6585],pantryNorthFinishedFace:8167.5},
  pantry:{oldShelf,newShelf,oldFootprintM2:oldShelf[2]*oldShelf[3]/1e6,newFootprintM2:newShelf[2]*newShelf[3]/1e6,frontageLost:250,depthLost:200,footprintLossPercent:100*(1-900*400/(600*1150)),capacity:'Unknown. This is an explicit smaller furniture envelope, no equivalent storage claim.'},
  ordinaryCollisions:{N:Object.entries(ordinary).filter(([,r])=>overlap(Nouter,r)).map(([id])=>id),EoldShelf:true},
  maintenance:{moves,furniture:maintenance,tableFixed:true,firstReleaseFullOuterWidth:1003,firstReleaseClearOfAllFurniture:true,bodyRadius:300,bodyPath,minStaticBodyReserve:minBody,governing,limits:'Open door APERTURES only; actual leaf/handles, human handling, guarding, temporary rain diversion, safe lifting and egress approval not proved. Reading room deliberately becomes chair store; ordinary room use unavailable.'},
@@ -160,10 +185,25 @@ sections.push(T(20,221,'North door x4800–7200, centre6000; water axis6600. Sup
 const site=[];
 site.push(T(20,45,'05 / ONE RAISED-PLINTH COMPARATOR, WITH ITS PLOT COST',3.8,'bold'));
 const SX=x=>25+x/100,SY=z=>130-z/100;
-site.push(P([[SX(0),SY(-1300)],[SX(28000),SY(0)],[SX(28000),SY(0)]],'#3e7475',1),L(SX(0),SY(-1300),SX(29000),SY(-1300),'#9f865e',.6,'3 1'));
+site.push(P([[SX(0),SY(-1300)],[SX(26000),SY(0)],[SX(28000),SY(0)]],'#3e7475',1),L(SX(0),SY(-1300),SX(29000),SY(-1300),'#9f865e',.6,'3 1'));
 site.push(T(25,102,'Principal approach:26000 horizontal at1:20 rises1300; landings/turns are additional.',3.1),T(25,112,'Grade and path are authored comparison datums, not a surveyed plot or access approval.',2.9));
 site.push(T(SX(0),SY(-1300)+7,'arrival−1300',2.8),T(SX(24000),SY(0)-4,'houseFFL0',2.8));
 site.push(T(20,165,'Accepted synthetic floor/grade150 → proposed1300: whole-house rise1150.',3.1),T(20,175,'All storeys, eaves and roof move1150 relative fixed exterior grade; internal stair heights stay.',3.1),T(20,185,'Actual eaves/ridge heights, street scale, planning limit and neighbouring levels need a real site.',2.9),T(20,195,'The26m straight route is deliberately expensive; a switchback spends landings, width and view.',2.9),T(20,205,'Garden doors also need a terrace or actual graded route; no1300 step is silently accepted.',2.9),T(20,215,'RWT must still calculate assigned rain, operating head and independent event-bound receivers.',2.9),T(20,225,'The existing−75 crest is only activation geometry; it does not prove operating water below harm.',2.9),T(20,240,'Decision: develop this one full-depth comparator; no adopted house or site claim.',3.4,'bold'),T(20,253,'The constructive section spends depth and plot length honestly; it retains explicit door/material holds.',3.0));
-const files={'court-b-joined.json':JSON.stringify(ledger,null,2)+'\n','court-b-joined-plans.svg':page('COMPACT B / COURT PASSAGES IN OCCUPIED AND MAINTENANCE STATES','Source-bound B9300 spine / actual pantry door / fixed table / finite chair removal',plans),'court-b-joined-sections.svg':page('COMPACT B / FULL DEPTH AND FIRST-HARM BOUNDARY','D1300 sole constructive trial / independent carrier and containment / no material or water acceptance',sections),'court-b-joined-site.svg':page('COMPACT B / RAISED WHOLE HOUSE AND APPROACH COST','D1300 = authored reference design, not available site head',site)};
+const longitudinal=[];
+for(const [row,route]of ['north','east'].entries()){
+ const yy=68+row*94,XX=q=>25+(q-6950)/25,YY=z=>yy-z/25;
+ longitudinal.push(T(20,43+row*94,route==='north'?'06 / N LONGITUDINAL · 1:25':'07 / E LONGITUDINAL · 1:25',3.6,'bold'));
+ longitudinal.push(R(XX(7750),YY(0),170,280/25,'#d8d3bf'),L(XX(6950),YY(-318),XX(12025),YY(-318),'#778c91'),L(XX(6950),YY(-638),XX(12025),YY(-638),'#568d94'));
+ longitudinal.push(P([[XX(6957.5),YY(-530.075)],[XX(12025),YY(-580.75)]],'#287678',1),P([[XX(6957.5),YY(-370.075)],[XX(12025),YY(-420.75)]],'#287678',1));
+ for(const [a,b]of bridges[route])longitudinal.push(R(XX(a),YY(-180),(b-a)/25,120/25,'#acb5ae','#646f68'));
+ for(const c of crossings.filter(c=>c.route===route)){
+  const centre=(c.piece[0]+c.piece[1])/2,z=-538-(centre-7750)*.01+80,tx=centre+c.translation,tz=z-c.translation*.01;
+  longitudinal.push(L(XX(centre),YY(z),XX(tx),YY(tz),'#ac4f3d',.7),L(XX(tx),YY(tz),XX(tx),YY(tz+650),'#ac4f3d',.7),R(XX(c.destination[0]),YY(0),750/25,2,'none','#ac4f3d'));
+ }
+ longitudinal.push(T(241,58+row*94,'Grey: permanent RC120 bridge strips.',2.8),T(241,67+row*94,'These stay while750wet pieces move.',2.8),T(241,76+row*94,'Red: slope-following750translation,',2.8),T(241,85+row*94,'then650vertical lift into cleared floor.',2.8),T(241,94+row*94,'Dry caps and lower airlid first release',2.8),T(241,103+row*94,'are separate operations, not one slab.',2.8),T(241,112+row*94,'Caps/lids above red lifts are removed.',2.8));
+ longitudinal.push(T(20,112+row*94,route==='north'?'Court piece moves NORTH into family; garden piece moves SOUTH.':'Court piece moves WEST into court; spine EAST into pantry; outer WEST.',2.8));
+}
+longitudinal.push(T(20,231,'Both joints lie25 outside each700permanent bridge; actual bolt/tool and water/gas seals remain unqualified.',2.9),T(20,241,'N/E court interaction: E full-width outside release endsy7626.5; N bridge beginsy7732.5 →106clear.',2.9),T(20,251,'All other fixed bridges are checked. The old500piece /450lift witness is explicitly rejected for this design.',2.9),T(20,263,'No person enters the low box. A400×1003RC100 cap is about100kg before other layers: engineered lifting needed.',2.8));
+const files={'court-b-joined.json':JSON.stringify(ledger,null,2)+'\n','court-b-joined-plans.svg':page('COMPACT B / COURT PASSAGES IN OCCUPIED AND MAINTENANCE STATES','Source-bound B9300 spine / actual pantry door / fixed table / finite chair removal',plans),'court-b-joined-sections.svg':page('COMPACT B / FULL DEPTH AND FIRST-HARM BOUNDARY','D1300 sole constructive trial / independent carrier and containment / no material or water acceptance',sections),'court-b-joined-longitudinal.svg':page('COMPACT B / ACTUAL PERMANENT BRIDGES AND WET-PIECE RELEASE','Finite750translation /650lift witnesses / no installed joint, handling or assurance claim',longitudinal),'court-b-joined-site.svg':page('COMPACT B / RAISED WHOLE HOUSE AND APPROACH COST','D1300 = authored reference design, not available site head',site)};
 for(const [name,body]of Object.entries(files)){const url=new URL(name,import.meta.url);if(process.argv.includes('--check'))assert(readFileSync(url,'utf8')===body,'Stale joined B drawing '+name);else writeFileSync(url,body)}
 console.log(JSON.stringify({files:Object.keys(files),minBodyReserve:minBody,governing,furnitureTranslations:moves.length,rawSoilClearance:levels.rawClearance,trial:'D1300, not adopted'}));

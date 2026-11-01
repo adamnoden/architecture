@@ -89,6 +89,7 @@ selection and shared compatibility checks.
 
 ## Convergence development
 
+- [Compact B with one full-depth D1300 court design](had-03-compact-b-joined-court.md) joins the x9300 spine, full1003-wide boxes, actual700-long permanent bridges,750-piece/650-lift renewal, reduced pantry shelf and occupied/maintenance states. It preserves the main table and both sofas, while four chairs and one side table move. The derived whole-house rise1150,26m illustrative approach, first-harm/material/handling/site holds are explicit. This supersedes the older accepted-plan portal as the **B trial to develop**, not as adopted geometry or a closed HAD/RWT gate.
 - [One joined local N/E portal reference design](had-03-local-portal-design.md) allocates 600 mm surface-access corridors, short locally released segments and a 300 mm unadopted relative-level rewind. It retains the plant room, rejects the solid-pier route as an unchanged-plant drop-in, and makes pantry loss/structural bridges explicit. Complete floor materials, first-harm and event-bound hydraulic acceptance remain unproved; this is the current physical architectural challenger, not a selected house.
 - [Recovered source-exact east-pier comparison](had-03-east-egress-pier-options.md) records the 300 mm piece-width precursor and plant conflicts; the joined design above tests the full access width.
 

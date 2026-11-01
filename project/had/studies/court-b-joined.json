@@ -38,6 +38,202 @@
       ]
     }
   },
+  "bridges": {
+    "north": [
+      [
+        7732.5,
+        8432.5
+      ],
+      [
+        11300,
+        12000
+      ]
+    ],
+    "east": [
+      [
+        7732.5,
+        8432.5
+      ],
+      [
+        8950,
+        9650
+      ],
+      [
+        11300,
+        12000
+      ]
+    ]
+  },
+  "crossingRenewal": [
+    {
+      "route": "north",
+      "permanent": [
+        7732.5,
+        8432.5
+      ],
+      "piece": [
+        7707.5,
+        8457.5
+      ],
+      "destination": [
+        8457.5,
+        9207.5
+      ],
+      "translation": 750,
+      "clearRoom": [
+        8432.5,
+        11300
+      ],
+      "totalLift": 650,
+      "requiredInitialRemovedNeighbor": [
+        8457.5,
+        9207.5
+      ],
+      "witness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 97.42499999999995
+      }
+    },
+    {
+      "route": "north",
+      "permanent": [
+        11300,
+        12000
+      ],
+      "piece": [
+        11275,
+        12025
+      ],
+      "destination": [
+        10525,
+        11275
+      ],
+      "translation": -750,
+      "clearRoom": [
+        8432.5,
+        11300
+      ],
+      "totalLift": 650,
+      "requiredInitialRemovedNeighbor": [
+        10525,
+        11275
+      ],
+      "witness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 76.75
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        7732.5,
+        8432.5
+      ],
+      "piece": [
+        7707.5,
+        8457.5
+      ],
+      "destination": [
+        6957.5,
+        7707.5
+      ],
+      "translation": -750,
+      "clearRoom": [
+        4250,
+        7732.5
+      ],
+      "totalLift": 650,
+      "requiredInitialRemovedNeighbor": [
+        6957.5,
+        7707.5
+      ],
+      "witness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 112.42499999999995
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        8950,
+        9650
+      ],
+      "piece": [
+        8925,
+        9675
+      ],
+      "destination": [
+        9675,
+        10425
+      ],
+      "translation": 750,
+      "clearRoom": [
+        9650,
+        11300
+      ],
+      "totalLift": 650,
+      "requiredInitialRemovedNeighbor": [
+        9675,
+        10425
+      ],
+      "witness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 85.25
+      }
+    },
+    {
+      "route": "east",
+      "permanent": [
+        11300,
+        12000
+      ],
+      "piece": [
+        11275,
+        12025
+      ],
+      "destination": [
+        10525,
+        11275
+      ],
+      "translation": -750,
+      "clearRoom": [
+        9650,
+        11300
+      ],
+      "totalLift": 650,
+      "requiredInitialRemovedNeighbor": [
+        10525,
+        11275
+      ],
+      "witness": {
+        "samples": 51,
+        "bridgeIntact": true,
+        "adjacentSegmentAbsent": true,
+        "finalLowestBottom": 76.75
+      }
+    }
+  ],
+  "renewal": {
+    "maxWetPiece": 750,
+    "totalLift": 650,
+    "grossJointWidth": 300,
+    "carrierBodyWidth": 200,
+    "dryCapsLong": 400,
+    "airLidGrossModuleLong": 840,
+    "airLidNetClearLong": 780,
+    "distinctLidRenewal": "Separate lower lid under permanent bridge requires its own bounded side withdrawal; routine wet-piece clearance is not complete lid renewal or seal qualification.",
+    "fixedCapNeverRemoved": true,
+    "EexteriorReleaseToNbridgeGap": 106,
+    "failedGalleryLift": "750piece exceeds517.5clear between actual court bridge end8432.5 and spinebridge start8950; withdraw E court piece west instead."
+  },
   "actualCrossings": {
     "court": [
       7750,
