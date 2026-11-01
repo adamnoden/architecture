@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 13,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "10049375-f6a2-4aa4-87a5-3da538b5d0dd",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-access"
   },
   "claimedAt": "2026-11-01T19:25:45.832Z",
-  "heartbeatAt": "2026-11-01T19:52:03.969Z",
-  "expiresAt": "2026-11-01T20:37:03.969Z",
+  "heartbeatAt": "2026-11-01T20:01:22.519Z",
+  "expiresAt": "2026-11-01T20:01:22.519Z",
   "branch": "work/zerg2-integration-20261101",
   "predecessor": {
     "leaseId": "7619f2db-fb07-4914-b2fb-dd2284fe29a0",
@@ -39,5 +39,7 @@
     "next": "ObserveexactheadfullCI assoleobserver; rootcommandsfresh4pernodepreflights thenexpectedheadmerge",
     "blocker": "FullCIpending; wholeinventory/physical/materialadmission remainunaccepted"
   },
-  "pr": 1229
+  "pr": 1229,
+  "releasedAt": "2026-11-01T20:01:22.519Z",
+  "releaseReason": "handoff"
 }
