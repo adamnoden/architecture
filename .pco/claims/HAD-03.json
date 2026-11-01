@@ -9,8 +9,8 @@
     "label": "zerg2-had-open-loggia"
   },
   "claimedAt": "2026-11-01T20:03:03.859Z",
-  "heartbeatAt": "2026-11-01T21:14:13.101Z",
-  "expiresAt": "2026-11-01T22:44:13.101Z",
+  "heartbeatAt": "2026-11-01T21:47:08.800Z",
+  "expiresAt": "2026-11-01T23:17:08.800Z",
   "branch": "work/zerg2-had-open-loggia",
   "predecessor": {
     "leaseId": "6880ac9f-d9b0-4763-998c-f7820e975912",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Publishedc83a06f26cf3b146d7cdc8254b4799f390508196/tree4318ed436ef2893f52a9a8a3d02140a8c9e75015, correctedwholehouseJSONb15df3b3withactualrenderedpairedplans. Freshremoteverifiedgen23at21:13expiry21:32:34.706beforethisrenew.",
-    "next": "Publishconventionalprotected-stair/upperring/groundSouthhallboundaryandfinitebodytests, joinMATarch2960thermalgeometryandoutdoorwater; selectorrejectcoherenthouse.",
-    "blocker": "Architectureunadopted; matchedfire/performanceadmissionunearned. Workcontinuesunder90minuteTTLwithmeaningfulcheckpoints, nodetachedheartbeat."
+    "evidence": "Published a324a50d047843603d6fc275c4062bc9d0c1cb90 tree7d60f63cd823df5b42df4352058bd6153394523b native-fetch verified; protectedRoute inventory,17 nominal-finished-plan routes, full500 bed sweep, framed Study inside operation, raw2960 wrapped portal. Actual paired plan render inspected. Nominal-face pass does not include newly tested full18trim or qualified installed assemblies.",
+    "next": "Publish rendered whole-house sections/exterior and finite trim corrections, then test ONE source-backed27dry/30wet mineral finish rewind with matched frame/head/furniture geometry; coordinate structural arch and water interface.",
+    "blocker": "HAD03 not adopted/completed. Current explicit trim and complete mineral finish trial unresolved; structural arch/support and separate water topology being joined without product/site/hydraulic acceptance."
   }
 }
