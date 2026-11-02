@@ -9,14 +9,14 @@
     "label": "zerg-ias-corner-export"
   },
   "claimedAt": "2026-11-02T10:47:17.454Z",
-  "heartbeatAt": "2026-11-02T11:05:40.752Z",
-  "expiresAt": "2026-11-02T11:50:40.752Z",
+  "heartbeatAt": "2026-11-02T11:15:47.149Z",
+  "expiresAt": "2026-11-02T12:00:47.149Z",
   "checkpoint": {
-    "evidence": "Verified draftPR1268 headc91d9ebd4e33237f06a5da1754370d5bce57c23b treed0f7d280aec07e992ed46f4c4712ab12c66a769d equals localbaf9 fulltree, integrates actualmain86bd and priorcheckpointc5e347ec. OneplannedOAS-NORTH-EXPORT gatesIAS/TRIAD; fourfile source delta, no completednodes/HADchanges. Canonicalcontrol156/156,typecheck/repo/diff pass. Renewal runs from clean86bd main-control view whereIAS remainsready, not branchproposed blockedgraph.",
-    "next": "Hold source for rootCI/current-main preflight andexpectedheadmerge. After verifiedmerge immediately releaseIAS18handoff before claiming newreadyOASnode onfreshmain. Do not reacquireIAS beforeOASoccurrence completes.",
-    "blocker": "No newactualwindow/roof/apparatus/export PASS. Graph153to154; done113same; ready8same IASblocked/newOASready; blocked30to31. Actual FIRST1000window/upperguard/removal predecessor remains planned, NWsolids retained withSTR."
+    "evidence": "Deliberate sharedassociation PR1271/work/zerg-recovery-opening-services headd4b5c091217231fda9771da5701759d0ae293b0c tree98f37b73662b80d95794cdb9021b92e945c16cc8; trueparents main86bd+Servicesaee19ca+IASc91d9ebd. Root verifies all7ownedblobs exact,repo/diff/derivedcounts pass; IAS156tests accepted. IASsource frozen; no independentCI claim. Renewal from clean86bd maincontrol whereIASready.",
+    "next": "Holdsharedhead for root soleCI/preflight/expectedheadmerge. After verifiedmerge immediately release nowblocked IAS18 handoff before freshmain canonical acquisition of ready OAS-NORTH-EXPORT. No sourcechanges until newOASlease.",
+    "blocker": "One newplanned actualwindow predecessor; IAS remainsplanned and becomesblocked, no completion/maturity gain. ActualFIRST1000window/guard/removal and full NW/apparatus/bootstrap/export proof unearned; structuralroof solids remainSTRscope."
   },
-  "branch": "work/zerg-ias-corner-export-20261102",
+  "branch": "work/zerg-recovery-opening-services",
   "predecessor": {
     "leaseId": "c8caf26a-dcbb-4aa2-ae38-7989508916f3",
     "generation": 17,
@@ -39,5 +39,5 @@
       "blocker": "Bounded modeledsolids/prisms and abstract supportstates only. Known-house roof/eaves/gutter/purlin and full apparatus/window/receiver assembly clash survey OMITTED. Actualkit/firstrelease/window/apparatus/site/ground/force unadmitted; no full export or IAS completion."
     }
   },
-  "pr": 1268
+  "pr": 1271
 }
