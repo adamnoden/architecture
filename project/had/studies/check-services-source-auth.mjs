@@ -22,8 +22,12 @@ try{
  const corrected='Separate from78L/s selected background;';
  if(current.split(corrected).length-1!==2)throw Error('Current correction count changed');
  run('--services-current='+file('prose.json',current.replace(corrected,'Separate from78L/s altered background;')),'Current canonical services successor blob mismatch');
- const numeric=JSON.parse(current);numeric.interfaces.architecturalServices.cooker.makeupFormedTerritory=281;
- run('--services-current='+file('numeric.json',JSON.stringify(numeric)),'Current canonical services successor blob mismatch');
+ const number='"makeupFormedTerritory": 280';
+ if(!current.endsWith('\n')||current.split(number).length-1!==2)throw Error('Canonical numeric field/format drift');
+ // Change one numeric token in the untouched canonical 2-space/newline file.
+ // Re-serialising through JS would otherwise erase Python's intentional 50.0 values.
+ const numeric=current.replace(number,'"makeupFormedTerritory": 281');
+ run('--services-current='+file('numeric.json',numeric),'Current canonical services successor blob mismatch');
  run('--services-contract='+file('old-mutation.json',historical.replace('Separate from65L/s background;','Separate from64L/s background;')),'contractblob mismatch');
  console.log(JSON.stringify({defaultCurrent:'pass',exactHistoricalOverride:'pass',unknownProse:'rejected',numericMutation:'rejected',historicalOverrideMutation:'rejected',generatedFiles:'unchanged by --check'}));
 }finally{rmSync(temp,{recursive:true,force:true})}
