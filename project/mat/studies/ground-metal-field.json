@@ -22,7 +22,7 @@
     ],
     "trialReturnDepth_mm": 40,
     "sheetThickness_mm": 1,
-    "nominalRoughWidthAfterTwoJambSheets_mm": 998,
+    "nominalOpeningWidthAfterTwoJambSheets_mm": 998,
     "grossReturnArea_m2": 0.23299803469119967,
     "grossReturnMass_kg_at_7900": 1.8406844740604773,
     "scope": "Local formed metal reveal return, not an accepted window frame or airtight joint. The 40mm depth is an authored reservation, not a product dimension. Real frame position, assembly, arch fabrication, nominal 1mm clear intrusion each jamb, sill, water drainage, movement, support, corrosion, welds, fire and replacement are unresolved; no seam/hole is credited as sealed."
