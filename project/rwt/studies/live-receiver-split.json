@@ -1,0 +1,831 @@
+{
+  "status": "THREE-PIECE DEVELOPMENT: staged nominal clearance and necessary energy screens only",
+  "projection": {
+    "path": "project/had/studies/open-north-facade-projection.json",
+    "blob": "eb70d77ee57571088c4a73caa076681dc00590cd",
+    "source": "HAD courtSouth projection PR #1267; exact blob required"
+  },
+  "courtSouth": {
+    "first": {
+      "id": "court-south",
+      "segment": [
+        [
+          3832.5,
+          4041.25
+        ],
+        [
+          8167.5,
+          4041.25
+        ]
+      ],
+      "thickness": 429.5,
+      "finishedFaces": [
+        3820.5,
+        4250
+      ],
+      "openings": [
+        {
+          "id": "court-south-0",
+          "wall": "court-south",
+          "centre": 5150,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-south-1",
+          "wall": "court-south",
+          "centre": 6850,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        }
+      ]
+    },
+    "ground": {
+      "id": "court-south",
+      "segment": [
+        [
+          3832.5,
+          4041.25
+        ],
+        [
+          8167.5,
+          4041.25
+        ]
+      ],
+      "thickness": 429.5,
+      "finishedFaces": [
+        3820.5,
+        4250
+      ],
+      "openings": [
+        {
+          "id": "grand-court-entry-south",
+          "wall": "court-south",
+          "centre": 6000,
+          "width": 1800,
+          "kind": "door",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 2
+        }
+      ]
+    },
+    "verticalDatums": {
+      "groundFFL": 0,
+      "firstFFL": 3450
+    },
+    "southCourtWeatherDoor": {
+      "rough": [
+        5100,
+        6900
+      ],
+      "frameDepth": [
+        4110,
+        4250
+      ],
+      "jambEach": 50,
+      "hinges": [
+        [
+          5150,
+          4250
+        ],
+        [
+          6850,
+          4250
+        ]
+      ],
+      "leafEach": [
+        845.5,
+        44,
+        2100
+      ],
+      "leafBottom": 19,
+      "leafTop": 2119,
+      "gaps": {
+        "left": 3,
+        "meeting": 3,
+        "right": 3
+      },
+      "transom": [
+        2119,
+        2189
+      ],
+      "fanlightFrom": 2189,
+      "arch": {
+        "span": 1800,
+        "spring": 2550,
+        "crown": 2850,
+        "scope": "Explicit authored reference, actual OAS profile/product junction must qualify."
+      },
+      "grossSweepReservation": 850,
+      "openLeafNorthTip": 5100,
+      "landingNorthEnd": 5750,
+      "clearBeyondOpenTip": 650,
+      "scope": "Outward NORTH;1500full exterior landing. Actual timber/hinge/bracket/weather/leak/firstharm remains with joined MAT/OAS."
+    }
+  },
+  "west": {
+    "x": [
+      4325,
+      4498.5
+    ],
+    "y": [
+      4350,
+      4750
+    ],
+    "z": [
+      6783.5,
+      6878
+    ]
+  },
+  "middle": {
+    "x": [
+      4501.5,
+      7498.5
+    ],
+    "y": [
+      4350,
+      4750
+    ],
+    "z": [
+      6783.5,
+      6890.5
+    ]
+  },
+  "east": {
+    "x": [
+      7501.5,
+      7675
+    ],
+    "y": [
+      4350,
+      4750
+    ],
+    "z": [
+      6783.5,
+      6878
+    ]
+  },
+  "shieldW": {
+    "x": [
+      4400,
+      4550
+    ],
+    "y": [
+      4350,
+      4750
+    ],
+    "z": [
+      6901,
+      6903.5
+    ]
+  },
+  "shieldE": {
+    "x": [
+      7450,
+      7600
+    ],
+    "y": [
+      4350,
+      4750
+    ],
+    "z": [
+      6901,
+      6903.5
+    ]
+  },
+  "drip": {
+    "south": [
+      4450,
+      4470
+    ],
+    "west": [
+      4450,
+      4470
+    ],
+    "east": [
+      7550,
+      7530
+    ],
+    "extent": [
+      4450,
+      7550
+    ]
+  },
+  "movement": {
+    "middle": [
+      {
+        "out": 0,
+        "body": {
+          "x": [
+            4501.5,
+            7498.5
+          ],
+          "y": [
+            4350,
+            4750
+          ],
+          "z": [
+            6783.5,
+            6890.5
+          ]
+        },
+        "south": [
+          true,
+          true
+        ],
+        "sides": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "returnOverlap": 270
+      },
+      {
+        "out": 120,
+        "body": {
+          "x": [
+            4501.5,
+            7498.5
+          ],
+          "y": [
+            4470,
+            4870
+          ],
+          "z": [
+            6783.5,
+            6890.5
+          ]
+        },
+        "south": [
+          false,
+          false
+        ],
+        "sides": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "returnOverlap": 150
+      },
+      {
+        "out": 240,
+        "body": {
+          "x": [
+            4501.5,
+            7498.5
+          ],
+          "y": [
+            4590,
+            4990
+          ],
+          "z": [
+            6783.5,
+            6890.5
+          ]
+        },
+        "south": [
+          false,
+          false
+        ],
+        "sides": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "returnOverlap": 30
+      },
+      {
+        "out": 270,
+        "body": {
+          "x": [
+            4501.5,
+            7498.5
+          ],
+          "y": [
+            4620,
+            5020
+          ],
+          "z": [
+            6783.5,
+            6890.5
+          ]
+        },
+        "south": [
+          false,
+          false
+        ],
+        "sides": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "returnOverlap": 0
+      },
+      {
+        "out": 400,
+        "body": {
+          "x": [
+            4501.5,
+            7498.5
+          ],
+          "y": [
+            4750,
+            5150
+          ],
+          "z": [
+            6783.5,
+            6890.5
+          ]
+        },
+        "south": [
+          false,
+          false
+        ],
+        "sides": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "returnOverlap": 0
+      }
+    ],
+    "corner": [
+      {
+        "out": 0,
+        "inward": 0,
+        "west": {
+          "x": [
+            4325,
+            4498.5
+          ],
+          "y": [
+            4350,
+            4750
+          ],
+          "z": [
+            6783.5,
+            6878
+          ]
+        },
+        "east": {
+          "x": [
+            7501.5,
+            7675
+          ],
+          "y": [
+            4350,
+            4750
+          ],
+          "z": [
+            6783.5,
+            6878
+          ]
+        },
+        "westShield": {
+          "x": [
+            4400,
+            4550
+          ],
+          "y": [
+            4350,
+            4750
+          ],
+          "z": [
+            6901,
+            6903.5
+          ]
+        },
+        "eastShield": {
+          "x": [
+            7450,
+            7600
+          ],
+          "y": [
+            4350,
+            4750
+          ],
+          "z": [
+            6901,
+            6903.5
+          ]
+        },
+        "south": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "sides": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "returnOverlap": 270
+      },
+      {
+        "out": 130,
+        "inward": 155,
+        "west": {
+          "x": [
+            4480,
+            4653.5
+          ],
+          "y": [
+            4480,
+            4880
+          ],
+          "z": [
+            6783.5,
+            6878
+          ]
+        },
+        "east": {
+          "x": [
+            7346.5,
+            7520
+          ],
+          "y": [
+            4480,
+            4880
+          ],
+          "z": [
+            6783.5,
+            6878
+          ]
+        },
+        "westShield": {
+          "x": [
+            4555,
+            4705
+          ],
+          "y": [
+            4480,
+            4880
+          ],
+          "z": [
+            6901,
+            6903.5
+          ]
+        },
+        "eastShield": {
+          "x": [
+            7295,
+            7445
+          ],
+          "y": [
+            4480,
+            4880
+          ],
+          "z": [
+            6901,
+            6903.5
+          ]
+        },
+        "south": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "sides": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "returnOverlap": 140
+      },
+      {
+        "out": 145,
+        "inward": 170,
+        "west": {
+          "x": [
+            4495,
+            4668.5
+          ],
+          "y": [
+            4495,
+            4895
+          ],
+          "z": [
+            6783.5,
+            6878
+          ]
+        },
+        "east": {
+          "x": [
+            7331.5,
+            7505
+          ],
+          "y": [
+            4495,
+            4895
+          ],
+          "z": [
+            6783.5,
+            6878
+          ]
+        },
+        "westShield": {
+          "x": [
+            4570,
+            4720
+          ],
+          "y": [
+            4495,
+            4895
+          ],
+          "z": [
+            6901,
+            6903.5
+          ]
+        },
+        "eastShield": {
+          "x": [
+            7280,
+            7430
+          ],
+          "y": [
+            4495,
+            4895
+          ],
+          "z": [
+            6901,
+            6903.5
+          ]
+        },
+        "south": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "sides": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "returnOverlap": 125
+      }
+    ]
+  },
+  "permanent": {
+    "x": [
+      4350,
+      7650
+    ],
+    "y": [
+      4350,
+      4700
+    ],
+    "bottom": 6590,
+    "back": 6740,
+    "front": 6640,
+    "drop": 170,
+    "moduleLength": 471.42857142857144,
+    "carrierLength": 450,
+    "carrierDepth": 30
+  },
+  "branch": {
+    "corner": {
+      "p": [
+        4412.5,
+        7587.5
+      ],
+      "clearWidth": 150,
+      "boxWidth": 175,
+      "boxY": [
+        5100,
+        5500
+      ],
+      "returnApertureY": [
+        5350,
+        5500
+      ],
+      "pipeOpeningY": [
+        5175,
+        5325
+      ]
+    },
+    "middle": {
+      "p": [
+        4650,
+        7350
+      ],
+      "clearWidth": 300
+    },
+    "pipeOD": 150,
+    "pipeY": 5250,
+    "returnY": [
+      4430,
+      5500
+    ],
+    "returnInlet": 6685,
+    "returnOutlet": 6680,
+    "returnWall": 65,
+    "tailInvert": 6778.8,
+    "sheet": 1.5,
+    "gate": 2,
+    "skirt": 5,
+    "gateTravel": {
+      "pipe": [
+        5175,
+        5325,
+        5025,
+        5175
+      ],
+      "return": [
+        5350,
+        5500,
+        5500,
+        5650
+      ]
+    }
+  },
+  "guard": {
+    "floor": 5540,
+    "innerY": 4780,
+    "outerY": 6150,
+    "top": [
+      6616,
+      6664
+    ],
+    "mid": [
+      6166,
+      6214
+    ],
+    "posts": [
+      4350,
+      5175,
+      6000,
+      6825,
+      7650
+    ],
+    "tube": 48,
+    "toeTop": 5690,
+    "deckX": [
+      4300,
+      7700
+    ],
+    "deckY": [
+      4780,
+      6150
+    ],
+    "padCentres": [
+      [
+        4500,
+        5900
+      ],
+      [
+        6000,
+        5900
+      ],
+      [
+        7500,
+        5900
+      ]
+    ],
+    "padSide": 400
+  },
+  "cornerGate": {
+    "box": {
+      "x": [
+        4325,
+        4498.5
+      ],
+      "y": [
+        5100,
+        5500
+      ],
+      "z": [
+        6777.3,
+        6858.8
+      ]
+    },
+    "pipeClosed": {
+      "x": [
+        4337.5,
+        4487.5
+      ],
+      "y": [
+        5175,
+        5325
+      ],
+      "z": [
+        6765.2,
+        6767.2
+      ]
+    },
+    "pipeOpen": {
+      "x": [
+        4337.5,
+        4487.5
+      ],
+      "y": [
+        5025,
+        5175
+      ],
+      "z": [
+        6765.2,
+        6767.2
+      ]
+    },
+    "returnClosed": {
+      "x": [
+        4337.5,
+        4487.5
+      ],
+      "y": [
+        5350,
+        5500
+      ],
+      "z": [
+        6765.2,
+        6767.2
+      ]
+    },
+    "returnOpen": {
+      "x": [
+        4337.5,
+        4487.5
+      ],
+      "y": [
+        5500,
+        5650
+      ],
+      "z": [
+        6765.2,
+        6767.2
+      ]
+    },
+    "worker": {
+      "x": [
+        4590,
+        4990
+      ],
+      "y": [
+        5520,
+        5920
+      ],
+      "z": [
+        5540,
+        7340
+      ]
+    },
+    "collarBottom": 6767.2,
+    "skirtBottom": 6760.2
+  },
+  "energyMm": {
+    "width150": 58.34144580219353,
+    "width300": 36.75280782374226
+  },
+  "checks": {
+    "middleMissesAllSideLines": true,
+    "middleStopSouthClear": true,
+    "middleStopReturnOverlap": true,
+    "cornerNominalStopClear": true,
+    "cornerNominalStopReturnOverlap": true,
+    "cornerClearanceAfter145": true,
+    "shieldAboveMiddle": true,
+    "shieldBelowSecondary": true,
+    "shieldCoversWestSeam": true,
+    "cornerBoxFits150": true,
+    "openingsSeparated": true,
+    "openGateSweepsDisjoint": true,
+    "gateWorkerClear": true,
+    "gateUnderThroat": true,
+    "gateSkirtOverReturn": true,
+    "returnClearOfTopRail": true,
+    "returnClearOfAFront": true,
+    "skirtAboveReturn": true,
+    "idealReturnHead150": true,
+    "pipeOutsideAWithdrawal": true,
+    "workerStrip": true,
+    "padsBeyondDoor": true,
+    "padsBeforeInlet": true,
+    "carrierBelowTop": true,
+    "carrierAboveMid": true,
+    "carrierIntervalsSeparate": true,
+    "oldOnePieceFails": true
+  },
+  "limits": [
+    "The listed boxes are conservative component extents, not an exhaustive collision engine.",
+    "A and all four temporary routes must operate at full assigned stress and actual backwater before branch isolation.",
+    "Gate collar, plate and skirt envelopes are authored; seal and tail flow need design. Corner flange, return-to-A containment, full tray/corner fall, end support, running gear, bracing and complete access remain unproved.",
+    "No product, structural capacity, hydraulic capacity or physical operation has been admitted."
+  ]
+}
