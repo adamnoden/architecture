@@ -1,44 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 23,
-  "state": "released",
-  "leaseId": "71356323-b777-4f9d-8ac2-4e8f09fb942b",
+  "generation": 24,
+  "state": "claimed",
+  "leaseId": "f2945be5-9ca5-41cd-9870-262c83177fa0",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-rwt06-temporary-rain"
+    "label": "zerg-rwt06-temporary-rain-recovery"
   },
-  "claimedAt": "2026-11-02T07:44:45.811Z",
-  "heartbeatAt": "2026-11-02T08:11:40.861Z",
-  "expiresAt": "2026-11-02T08:11:40.861Z",
-  "branch": "work/rwt06-temporary-rain-20261102",
+  "claimedAt": "2026-11-02T08:13:05.113Z",
+  "heartbeatAt": "2026-11-02T08:13:05.113Z",
+  "expiresAt": "2026-11-02T08:58:05.113Z",
+  "checkpoint": {
+    "evidence": "Recovery read current main d3f254c0 and handoff generation 23; previous temporary-rain branch had no design commits",
+    "next": "Develop connected temporary route and installation/removal comparison against current open-loggia source"
+  },
+  "branch": "work/rwt06-temporary-rain-recovery-20261102",
   "predecessor": {
-    "leaseId": "afeca720-3fcd-457c-a26c-386f7d058324",
-    "generation": 22,
-    "branch": "work/rwt06-open-loggia-recovery-20261102",
-    "pr": 1245,
+    "leaseId": "71356323-b777-4f9d-8ac2-4e8f09fb942b",
+    "generation": 23,
+    "branch": "work/rwt06-temporary-rain-20261102",
     "checkpoint": {
-      "evidence": "PR #1245 head f2d1ffffa6a154c5e69bf222bc86001b6b706931; truthful merge parents c2ec1676 and main483a26c7; five RWT tests/generator, merged envelope generator, repository integrity and typecheck PASS",
-      "next": "Root observes CI on frozen merged head; worker performs fresh canonical publication preflight immediately before root merge",
-      "blocker": "RWT-06 remains planned; no event/inlet/first-harm/temporary-rain/high-level access admission"
+      "evidence": "Current main d3f254c0 contains merged PR #1245 at 42aaecb3; predecessor branch 42aaecb3 has no tracked changes; old mailbox requests all answered; temporary-rain investigation was read-only",
+      "next": "Release generation 23 as handoff; acquire fresh generation for directed RWT-06 temporary route comparison",
+      "blocker": "Connected temporary route and whole-liner installation/removal remain unproved"
     }
   },
   "recoverySource": {
-    "leaseId": "afeca720-3fcd-457c-a26c-386f7d058324",
-    "generation": 22,
-    "branch": "work/rwt06-open-loggia-recovery-20261102",
-    "pr": 1245,
+    "leaseId": "71356323-b777-4f9d-8ac2-4e8f09fb942b",
+    "generation": 23,
+    "branch": "work/rwt06-temporary-rain-20261102",
     "checkpoint": {
-      "evidence": "PR #1245 head f2d1ffffa6a154c5e69bf222bc86001b6b706931; truthful merge parents c2ec1676 and main483a26c7; five RWT tests/generator, merged envelope generator, repository integrity and typecheck PASS",
-      "next": "Root observes CI on frozen merged head; worker performs fresh canonical publication preflight immediately before root merge",
-      "blocker": "RWT-06 remains planned; no event/inlet/first-harm/temporary-rain/high-level access admission"
+      "evidence": "Current main d3f254c0 contains merged PR #1245 at 42aaecb3; predecessor branch 42aaecb3 has no tracked changes; old mailbox requests all answered; temporary-rain investigation was read-only",
+      "next": "Release generation 23 as handoff; acquire fresh generation for directed RWT-06 temporary route comparison",
+      "blocker": "Connected temporary route and whole-liner installation/removal remain unproved"
     }
-  },
-  "checkpoint": {
-    "evidence": "Current main d3f254c0 contains merged PR #1245 at 42aaecb3; predecessor branch 42aaecb3 has no tracked changes; old mailbox requests all answered; temporary-rain investigation was read-only",
-    "next": "Release generation 23 as handoff; acquire fresh generation for directed RWT-06 temporary route comparison",
-    "blocker": "Connected temporary route and whole-liner installation/removal remain unproved"
-  },
-  "releasedAt": "2026-11-02T08:11:40.861Z",
-  "releaseReason": "handoff"
+  }
 }
