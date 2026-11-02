@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 30,
-  "state": "released",
-  "leaseId": "d42d0ec2-7634-4b34-a4f8-527c54b2c4c3",
+  "generation": 31,
+  "state": "claimed",
+  "leaseId": "1fc916bc-d206-468d-94ad-b208b59ddd02",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6585907015"
+    "label": "issue-comment-6589332389"
   },
-  "claimedAt": "2026-11-02T19:06:48.000Z",
-  "heartbeatAt": "2026-11-02T19:18:16.000Z",
-  "expiresAt": "2026-11-02T19:18:16.000Z",
-  "branch": "work/mvb-chat-6585907015",
+  "claimedAt": "2026-11-02T21:49:46.000Z",
+  "heartbeatAt": "2026-11-02T21:49:46.000Z",
+  "expiresAt": "2026-11-02T22:34:46.000Z",
+  "branch": "work/mvb-chat-6589332389",
   "predecessor": {
-    "leaseId": "ee7ee1fe-b31f-4b44-a880-d3ffb7791d4b",
-    "generation": 29,
-    "branch": "work/mvb-chat-6585617535",
-    "pr": 1284,
+    "leaseId": "d42d0ec2-7634-4b34-a4f8-527c54b2c4c3",
+    "generation": 30,
+    "branch": "work/mvb-chat-6585907015",
+    "pr": 1286,
     "checkpoint": {
-      "evidence": "PR #1284 head 41785f1d integrates exact reviewed PR1282 six-file source payload with both main and source as parents; source study remains conditional, node stays planned.",
-      "next": "Verify exact-head full PR CI; execute fresh native canonical control:merge-check; expected-head merge, then release lease and mark PR1282 superseded.",
-      "blocker": "Live temporary roof, weather/condensation, erection/load, court access, blocked-water, complete material and site acceptance unproven."
+      "evidence": "PR1286 head 4df0fab35: generator and JSON bound both-end blocked-gutter gross storage (930.9L/112s ideal; 1052.3L/127s generous upper) with regression and explicit overflow requirement.",
+      "next": "Check exact-head CI, obtain fresh native publication preflight, merge with expected SHA, verify main and release current lease.",
+      "blocker": "Full actual eave/support/outfall and independent safe overflow remain unaccepted; RWT-06 stays planned."
     }
   },
   "recoverySource": {
-    "leaseId": "ee7ee1fe-b31f-4b44-a880-d3ffb7791d4b",
-    "generation": 29,
-    "branch": "work/mvb-chat-6585617535",
-    "pr": 1284,
+    "leaseId": "d42d0ec2-7634-4b34-a4f8-527c54b2c4c3",
+    "generation": 30,
+    "branch": "work/mvb-chat-6585907015",
+    "pr": 1286,
     "checkpoint": {
-      "evidence": "PR #1284 head 41785f1d integrates exact reviewed PR1282 six-file source payload with both main and source as parents; source study remains conditional, node stays planned.",
-      "next": "Verify exact-head full PR CI; execute fresh native canonical control:merge-check; expected-head merge, then release lease and mark PR1282 superseded.",
-      "blocker": "Live temporary roof, weather/condensation, erection/load, court access, blocked-water, complete material and site acceptance unproven."
+      "evidence": "PR1286 head 4df0fab35: generator and JSON bound both-end blocked-gutter gross storage (930.9L/112s ideal; 1052.3L/127s generous upper) with regression and explicit overflow requirement.",
+      "next": "Check exact-head CI, obtain fresh native publication preflight, merge with expected SHA, verify main and release current lease.",
+      "blocker": "Full actual eave/support/outfall and independent safe overflow remain unaccepted; RWT-06 stays planned."
     }
-  },
-  "pr": 1286,
-  "checkpoint": {
-    "evidence": "PR1286 head 4df0fab35: generator and JSON bound both-end blocked-gutter gross storage (930.9L/112s ideal; 1052.3L/127s generous upper) with regression and explicit overflow requirement.",
-    "next": "Check exact-head CI, obtain fresh native publication preflight, merge with expected SHA, verify main and release current lease.",
-    "blocker": "Full actual eave/support/outfall and independent safe overflow remain unaccepted; RWT-06 stays planned."
-  },
-  "releasedAt": "2026-11-02T19:18:16.000Z",
-  "releaseReason": "handoff"
+  }
 }
