@@ -29,6 +29,31 @@
     "sourceHouseRidgeZmm": 8090.903773579372,
     "assumedRidgeGapMm": 1209.0962264206282
   },
+  "scaffoldAxisTrial": {
+    "sourceStructuralSpanMm": 13400,
+    "frameWidthMm": 730,
+    "westernAxesMm": [
+      -1065,
+      -335
+    ],
+    "easternAxesMm": [
+      12335,
+      13065
+    ],
+    "bayAxesYMm": [
+      -2995,
+      -425,
+      2145,
+      4715,
+      7285,
+      9855,
+      12425,
+      14995
+    ],
+    "houseToInnerAxisMm": 335,
+    "projected205mmWingClearanceMm": 232.5,
+    "onePoint09mFrameWingClearanceMm": 52.5
+  },
   "gutterTrial": {
     "westXMm": [
       -1900,
