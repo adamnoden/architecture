@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 27,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f15699e9-f59a-4e64-b2fd-99e97cd805a2",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rwt27-integrated-method"
   },
   "claimedAt": "2026-11-02T12:57:48.300Z",
-  "heartbeatAt": "2026-11-02T14:04:37.040Z",
-  "expiresAt": "2026-11-02T14:49:37.040Z",
+  "heartbeatAt": "2026-11-02T14:08:26.656Z",
+  "expiresAt": "2026-11-02T14:08:26.656Z",
   "branch": "work/rwt27-integrated-method-20261102",
   "note": "Develop integrated conventional access, lifting and protected ground wet route; preserve RWT06 planned and physical gates",
   "predecessor": {
@@ -40,5 +40,7 @@
     "next": "Integration owner checks exact-head CI and preflights before merge",
     "blocker": "Exact-head CI pending; RWT06 and operation unaccepted"
   },
-  "pr": 1276
+  "pr": 1276,
+  "releasedAt": "2026-11-02T14:08:26.656Z",
+  "releaseReason": "completed"
 }
