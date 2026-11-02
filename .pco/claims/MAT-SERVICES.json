@@ -9,11 +9,11 @@
     "label": "zerg-services-joined-system"
   },
   "claimedAt": "2026-11-02T11:27:42.220Z",
-  "heartbeatAt": "2026-11-02T12:13:47.917Z",
-  "expiresAt": "2026-11-02T12:58:47.917Z",
+  "heartbeatAt": "2026-11-02T12:44:33.726Z",
+  "expiresAt": "2026-11-02T13:29:33.726Z",
   "checkpoint": {
-    "evidence": "Verified remote0a843fc3020e17de379fb83ce567c5178ee535f2/tree daa373e6a59a171804c8fef2aefb4e1402f2bd77 equals localaaef14c8: compactNovy810+twoCV20 tempered-air candidate,256mode/lowline/fault/route checks pass; unreviewed WIP, no system admission.",
-    "next": "Resolve actual990033 liveinhibit/control/transient, installedfullkitfan/loss, completefirstrelease/material and net55degree plant join; rootreview before any PR."
+    "evidence": "Remote b62322f900edec6bdd9c37f47aced62689a6995f/tree72386a7dd385003dbba078b13ecbfda45ba675e8 equals localfc3a390a: source-correct motor/fan/contact and inspectedA3 assembly/task drawing. Generator+SVGcheck/diff pass; centredplatform/upwardfilter tasks fail, no admission.",
+    "next": "Resolve offset podium/two-chair maintenance state and full filter withdrawal, actual kit curves/control/live-trip and net55degree plant; continue source development, no acceptance or PR."
   },
   "branch": "work/zerg11-services-joined-system",
   "predecessor": {
