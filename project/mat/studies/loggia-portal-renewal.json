@@ -1,0 +1,495 @@
+{
+  "status": "Bounded geometry/load/renewal reference, not installed performance or whole-envelope admission.",
+  "input": {
+    "path": "project/mat/studies/loggia-envelope-section.json",
+    "sha256": "67dd6e5f92a2156f598517e8e4fc87d5e968ba92bbde9805599202ee84b81b05",
+    "had": {
+      "path": "project/had/studies/open-north-loggia.json",
+      "sha256": "588ee0da0545af391649c8e7d37f5d5c6f01159f93997602048649393f2f5a6e",
+      "commit": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+      "gitBlob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273"
+    }
+  },
+  "portal": {
+    "scope": "Rootdirected one2960rough/280fullwrap candidate; actualring/thrust/pier/bearing/thermal verification beforeadoption.",
+    "roughSpan": 2960,
+    "rawSpring": 2250,
+    "rawRise": 600,
+    "rawCrown": 2850,
+    "radialRing": 215,
+    "rawRadius": 2125.333333333333,
+    "centreZ": 724.666666666667,
+    "glass": 240,
+    "lining": 40,
+    "totalWrap": 280,
+    "finishedSpan": 2400,
+    "finishedRadius": 1845.333333333333,
+    "finishedCrown": 2570,
+    "finishedSpringAtVerticalJamb": 2126.5422357208927,
+    "widthAt2250": 2077.1262198848995,
+    "glassFabrication": {
+      "radialLayers": [
+        120,
+        120
+      ],
+      "authoredStock": [
+        160,
+        160
+      ],
+      "maxChord": 500,
+      "maxInnerGlassSagitta": 16.64882872112412,
+      "scope": "Custom curvedmechanicalcuts from thickerbarecore stock; exactstockavailability/fabrication/strength unknown. Flat600tiles not silently used."
+    },
+    "coreDepth": 215,
+    "finishedAxialDepth": 775,
+    "coreBands": [
+      [
+        7975,
+        8190
+      ],
+      [
+        11560,
+        11775
+      ]
+    ],
+    "finishedAxialBands": [
+      [
+        7695,
+        8470
+      ],
+      [
+        11280,
+        12055
+      ]
+    ],
+    "piers": {
+      "west": [
+        4307.5,
+        4520
+      ],
+      "east": [
+        7480,
+        7692.5
+      ],
+      "height": 2327.152,
+      "scope": "FullheightRC215NS×212.5EW; actualsupport/thrust remainsSTR-owned"
+    },
+    "tie": {
+      "centre": 2200,
+      "envelope": 50,
+      "underside": 2175,
+      "rod": 30,
+      "formedBore": 40,
+      "endPlate": [
+        150,
+        150,
+        15
+      ],
+      "washer": [
+        60,
+        10
+      ],
+      "nut": [
+        50,
+        30
+      ],
+      "roomProjection": 28,
+      "scope": "New2200belowvoussoirs; no2327candidate. Outdoorcollar≤50envelope; exactair/rain/thermal/fire qualification remains."
+    },
+    "weatherLeaf": "Separate102.5weatherarch/cavity locally replaced by wrappedcore. Do not overlap glasswithcoldweatherbrick.",
+    "joint": "240glass wraps BOTH exposed core/spandrelfaces +intrados/jambs, joins flat240soffit and200sidewallglass with actualcuts; no invisibletaper."
+  },
+  "normal": {
+    "inlet": [
+      4250,
+      7000,
+      3500,
+      350
+    ],
+    "channelGross": 400,
+    "channelClear": 250,
+    "inletVoid": 80,
+    "flowSlope": 0.01,
+    "roughnessStress": 0.02,
+    "cover": {
+      "downstream": "Flush10plates,2buttgap. Separate100long×2SSunderstrips overlap49eachside ofgap; topaccessiblebolts release strip BEFORE plate lift. Recessframe2 atstripseat. No stacked10+10lap or pressureseal claim.",
+      "module": [
+        400,
+        550,
+        12
+      ],
+      "massKg": 17.6,
+      "mainPlate": [
+        400,
+        498,
+        10
+      ],
+      "lastPlate": [
+        400,
+        250,
+        10
+      ],
+      "count": 9,
+      "fullCount": 8,
+      "pitch": 500,
+      "buttGap": 2,
+      "understrip": [
+        400,
+        100,
+        2
+      ],
+      "hardwareBudgetEach": 0.96,
+      "lastBudgetKg": 9.6,
+      "totalBudgetKg": 150.4
+    },
+    "intakeCover": {
+      "thickness": 14,
+      "holeDiameter": 9,
+      "pitch": 12,
+      "openAreaFraction": 0.44178646691106466,
+      "stress": "2kN/100gross strip;25net width and250span gives153.1MPa simple bending, before stressconcentration/support qualification"
+    },
+    "westLoggia": [
+      4825,
+      7750,
+      400,
+      5450
+    ],
+    "centreX": 5025,
+    "carrierBottom": [
+      [
+        7000,
+        -206.25
+      ],
+      [
+        7750,
+        -213.75
+      ],
+      [
+        12000,
+        -256.25
+      ],
+      [
+        13200,
+        -268.25
+      ]
+    ],
+    "crossCourtBottom": [
+      -171.5,
+      -206.25
+    ],
+    "renewal": {
+      "straightLength": 4250,
+      "clearWidth": 250,
+      "wallHeight": 75,
+      "flangesEach": 25,
+      "gauge": 1.5,
+      "density": 8960,
+      "screenMassKg": 25.704,
+      "stage": [
+        5700,
+        7100,
+        350,
+        4250
+      ],
+      "operatorLongEnvelope": [
+        6100,
+        6500,
+        600,
+        5450
+      ],
+      "state": "Covers removed, lift straightliner vertically; stage occupies broadrelief. Incomingrain isolation/temporaryroute mandatory; no bothrouteslive claim.",
+      "bodyCentreX": 5025,
+      "bodyOutsideWidth": 303,
+      "lift": 600,
+      "riggingHeightAboveBody": 150,
+      "coverStage": [
+        4300,
+        5750,
+        1250,
+        1700
+      ],
+      "bodyStage": [
+        5700,
+        7100,
+        350,
+        4250
+      ],
+      "riggingStage": [
+        5675,
+        7100,
+        400,
+        4250
+      ],
+      "rainState": "Incomingrain isolated and separatelydemonstratedtemporaryroute: cover/body staging occupiesbroadrelief; bothroutesNOTlive.",
+      "endWorkBodyCentres": [
+        [
+          5025,
+          7400
+        ],
+        [
+          5025,
+          12350
+        ]
+      ],
+      "liftBodyCentres": [
+        [
+          5550,
+          8450
+        ],
+        [
+          5550,
+          11400
+        ]
+      ],
+      "stageBodyCentres": [
+        [
+          6400,
+          7800
+        ],
+        [
+          6400,
+          10750
+        ]
+      ],
+      "joint": "100long removableCuUsaddle over20buttgap/40overlap eachside; separate2Cu gasket and adjustableclamps, no elastomer assumed. Toprelease, bodyliftsclear ofopenUsaddle. Sealing/forming/clampstroke/retainedresidues unqualified; exactlowestwaterweakjoint."
+    },
+    "material": "1.5uncoatedcopper liner; seams/filler/flux/supports/retained treatments unqualified",
+    "frame": {
+      "section": [
+        20,
+        50,
+        3
+      ],
+      "pedestalHeight": 110,
+      "verticalAperture": 360,
+      "insideFrameX": [
+        4845,
+        5205
+      ],
+      "supportPitch": 500,
+      "loadpath": "Cover→SSedgeframes→110mineralpedestals→RC200recess. No floorload throughCu, gasket or carrier."
+    }
+  },
+  "clearances": {
+    "lateralNominal": 28.5,
+    "lateralAdverse": 16,
+    "old350Nominal": 3.5,
+    "old350Adverse": -9,
+    "flangeAboveInsideBottom": 76.5,
+    "coverUnderstripBottomRelativeWalk": -12,
+    "insideBottomRelativeWalk": -103.75,
+    "verticalNominal": 15.25,
+    "verticalAdverse": 5.25,
+    "carrierJointSeatAboveRC": 61.25,
+    "contract": "Adversarial dimensions, not measured tolerances: eachframe5inward, lineroutside+5total, centre5; verticalcover/carrier combined10. Actual fabrication/installation contract must earn them."
+  },
+  "coverMass": {
+    "fullMainKg": 15.936000000000002,
+    "understripKg": 0.6400000000000001,
+    "lastMainKg": 8,
+    "hardwareBudgetEach": 0.96,
+    "totalCalculatedKg": 149.888,
+    "totalRoundedBudgetKg": 150.4,
+    "handling": "Nine separate modules, fullassembly≤17.6kg budget; detachunderstrip first, neverliftentire150kg batch. Distributedstage, not singleheavy pile."
+  },
+  "coverScreen": {
+    "pointN": 2000,
+    "strip": 100,
+    "span": 380,
+    "bendingMpa": 114,
+    "deflectionMm": 1.4215544041450776,
+    "frameSection": [
+      20,
+      50,
+      3
+    ],
+    "frameSpan": 500,
+    "frameReactionKn": 1,
+    "frameBendingMpa": 28.682355532711654,
+    "scope": "Authored100strip/full10plate with continuousedgeframe. Understrip onlyweatherbacking/compressionseat, not thinstructuralspan. Fasteners/welds/framepedestals/RCpointload actual qualification separate."
+  },
+  "tiePenetration": {
+    "finishedInnerX": 4891.556647064603,
+    "glassInnerX": 4826.171505997007,
+    "rawJambX": 4520,
+    "coreFace": 4307.5,
+    "rod": 30,
+    "bore": 40,
+    "dripRingEnvelope": 50,
+    "dripRingThickness": 3,
+    "roomNutProjection": 28,
+    "firstAirJoin": "Roomplaster/backplate/nutbox transition unqualified; formed40RCbore/D30rod has5annulus, not silently foamed.",
+    "firstRainJoin": "Atcurvedlining/collar, notverticaljamb4800;50ODdripring withinselected50tieenvelope doesnotprove wind-drivenrain/airsealing.",
+    "fire": "Complete loadbearing/ceiling/fire boundary must retain actual rated closures; no baremetal/mineral label earns it.",
+    "glassPath": 306.17150599700744,
+    "liningPath": 65.38514106759521,
+    "parallelRodG": 0.03463050936545736
+  },
+  "returnGeometry": {
+    "planCutZ": 1800,
+    "warmCore": [
+      4307.5,
+      4447.5
+    ],
+    "capital": [
+      4307.5,
+      4520,
+      7975,
+      8190
+    ],
+    "exposedCapitalExtension": [
+      4447.5,
+      4520
+    ],
+    "NSglass": [
+      7735,
+      7975,
+      8190,
+      8430
+    ],
+    "finishFaces": [
+      7695,
+      8470
+    ],
+    "EWglass": [
+      4520,
+      4760
+    ],
+    "EWlining": [
+      4760,
+      4800
+    ],
+    "buriedReturn": "Normal200glass x4447.5..4647.5 returns40 into NSface finish band at y7695..7735 and8430..8470. No exposed finish deleted: this is buriedglass-to-glass contact. Glass nevercuts continuing140warmcore.",
+    "water": "Cavity/brick-to-renderedportal shoulder requires actual tray/enddam/weep and movement closure; not a closed225cavity or automatic dry joint."
+  },
+  "sweep": {
+    "bodyInitial": [
+      4873.5,
+      7750,
+      303,
+      4250
+    ],
+    "riggingWidth": 400,
+    "riggingInitialX": [
+      4825,
+      5225
+    ],
+    "lift": 600,
+    "riggingTop": 612.75,
+    "tieUnderside": 2175,
+    "headClear": 1562.25,
+    "translation": [
+      850,
+      -650
+    ],
+    "planUnion": [
+      4825,
+      7100,
+      1250,
+      4900
+    ],
+    "bodyStage": [
+      5723.5,
+      7100,
+      303,
+      4250
+    ],
+    "stageFeet": {
+      "southHeight": 100,
+      "northHeight": 119.5,
+      "reason": "Stagefloor−84at7100 and−146at11350;1%bodyrequires19.5differentpadheight, notforcedonto1:25/1:100surface."
+    },
+    "operators": {
+      "diameter": 600,
+      "reachProbe": 600,
+      "endJointCentres": [
+        [
+          5025,
+          7400
+        ],
+        [
+          5025,
+          12350
+        ]
+      ],
+      "liftCentres": [
+        [
+          5550,
+          8450
+        ],
+        [
+          5550,
+          11400
+        ]
+      ],
+      "stageCentres": [
+        [
+          6400,
+          7800
+        ],
+        [
+          6400,
+          10750
+        ]
+      ]
+    },
+    "scope": "No floorbridge/cap acrossstrip. Actual775overheadpiers/tie remain fixed. Bodycollars/clamps release fromtop; no retired750wetpiece or indoorcap proof transferred. Forces/ergonomics/temporaryworks later admission."
+  },
+  "liftScreen": {
+    "massKg": 25.704,
+    "pickStations": [
+      8350,
+      11400
+    ],
+    "span": 3050,
+    "overhangs": [
+      600,
+      600
+    ],
+    "centroid": 20.5,
+    "I": 568856.25,
+    "bendingMpa": 6.791660596855534,
+    "deflectionMm": 1.1752124758602789,
+    "authoredCopperStressComparator": 35,
+    "scope": "SimplelongitudinalUsection screen withtwo30wide slings/cradles supportingbothsides; actualalloy/temper/localcrippling/torsion/riggingcapacity andtwo-personhandling remain unqualified. No copperflangebolt lifted by assumption."
+  },
+  "walkingHead": {
+    "referenceAtMouthAndEnd": [
+      2285,
+      2327.5
+    ],
+    "actualArchAxes": [
+      8082.5,
+      11667.5
+    ],
+    "surfaceAtAxes": [
+      -113.325,
+      -149.175
+    ],
+    "envelopeHeadAtAxes": [
+      2288.325,
+      2324.175
+    ],
+    "scope": "Selected50tie envelope, not bare30rod; referencehead and actualaxishead are distinct."
+  },
+  "serviceState": {
+    "order": [
+      "Isolate incomingrain; demonstrateindependenttemporaryroute beforeblockingbroadrelief.",
+      "Keepadjacentintake/downstreamcoversclosed forendwork600bodypositions.",
+      "RemoveTWOendcovers toSOUTHstagerow;releaseendjointclamps whileadjacentcoversclosed/endbodypositionsfree. Releaseunderstripfasteners;liftplates/strips into3x3SWcourtstage. Twoendcovers occupySOUTHrow;7middlecovers otherrows.",
+      "Expose/releaseUjointclamps and carrierseatrestraints; remove2Cu seals. Fixededgeframes/mineralpedestals stay.",
+      "Feedtwo30wide temporaryslings belowbody through≥61.25seatspace;raise600,translate850Ethen650S,loweronto100/119.5stagepads.",
+      "Place newbody;reinstateSEVENmiddlecovers first toclearSWstage northrows/endbodyposition. Reworkendjoints withtwoendcovers stillstagedSOUTHrow; theninstallendcovers/plugs and verifywaterfunction. Noendwork whileits600circleisblocked."
+    ],
+    "normalAndReliefLiveDuringRenewal": false,
+    "firstWeakWaterJoint": "RemovableUjoint/2Cuseal/clampcorrespondence atnormalinvert−213.75..−256.25 isunqualified. Leakisoutdoors butmustnotbeclaimedcontained/safe withoutactualrecessdrain/receivingproof.",
+    "commonFailures": [
+      "Blanketdebris spanningupstreaminletandbroadroute",
+      "Bothreceiverstailwater/floodedterrace",
+      "Primaryjointfailure plusunprovedrecessdrain",
+      "Rainarrivingduringstagingwithouttemporaryroute"
+    ],
+    "noGlobalAdoption": true
+  }
+}

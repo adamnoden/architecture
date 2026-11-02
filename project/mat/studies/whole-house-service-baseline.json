@@ -1104,9 +1104,9 @@
       "platformStatus": "Qualifiedadjustablesteps/workplatform inclfeet/guards/stabilisers mustfitactualfloorfield, withperson-specificworkingheight700..1100. Old700square/H400 control cannotreach2800face andisREJECTED. Stability/load/access/fullworker/toolreach areactualequipment/physicalmatchingrequirements, notprovedbyanuniversal600sphere. No standingonpan/sink/counter orremovedfixedsupport.",
       "ordinaryMode": "Poweredfan continuous; no occupied floorprojection below2800pod, exceptprincipaldescenderunderside2430. Mirrors/cisterns/appliances mustremainbelow the declared ceilingboundaries.",
       "maintenancePlatformPlan": [
-        10325,
+        10333.75,
         6625,
-        1200,
+        1000,
         750
       ],
       "workerEquipmentRequirement": {
@@ -1152,7 +1152,7 @@
         195,
         116
       ],
-      "platformMinimumFurnitureReserve": 25.0,
+      "platformMinimumFurnitureReserve": 33.75,
       "platformClosestFurniture": "principal-shower900",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
     }
@@ -1186,10 +1186,10 @@
     {
       "id": "living",
       "level": 0,
-      "wall": "north",
+      "wall": "west",
       "point": [
-        2675,
-        12000,
+        0,
+        9200,
         2850
       ],
       "measuredEquivalentAreaRequired": 15000,
@@ -3985,9 +3985,9 @@
             "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
           },
           "maintenancePlatformPlan": [
-            10325,
+            10333.75,
             6625,
-            1200,
+            1000,
             750
           ],
           "maintenancePlatformWorkingHeightRange": [
@@ -4065,6 +4065,300 @@
           10200
         ]
       },
+      "familyBathDrop": {
+        "status": "Selectedconditionalordinary-rimconfigured-kitrequirement; noactualtrap/outlet/feet/STR/seal/handlingadmission.100plinth660rimcontrolrejectedforquality.",
+        "primarySource": {
+          "url": "https://files.cdn.kaldewei.com/data/sprachen/englisch/techdata/DB04_24-Sort_DB_UK-GBeng_BW_ADV_363-1_SANIFORM_PLUS_SANIFORM_PLUS_STAR.pdf",
+          "nativeModel": "363-1",
+          "fileSHA256": "564cfd7be4ad55cff857f1dae17bbfeb9b20d8b927c411b6d41c485b6411f76b",
+          "body": [
+            9460,
+            3800,
+            1700,
+            700
+          ],
+          "selectedRim": 560,
+          "actualPermittedRimRange": [
+            545,
+            560
+          ],
+          "depthIncludingWaste": 410,
+          "nativeWasteHoleLocalZ": 150,
+          "nativeWasteHole": [
+            10850,
+            4150,
+            52
+          ],
+          "nativeOverflowCentre": [
+            11062,
+            4150,
+            497
+          ],
+          "nativeFootAxes": [
+            [
+              10710,
+              4150
+            ],
+            [
+              9970,
+              4150
+            ]
+          ],
+          "nativeFootWidthMaximum": 380,
+          "longitudinalFootExtent": "Notprovided; actualconfiguredsupportsmustpassthekeepoutwithoutalteringfactoryfeet."
+        },
+        "port": {
+          "centre": [
+            10950,
+            4150
+          ],
+          "formedDiameter": 110,
+          "clearSleeveInside": 97,
+          "maximumPlainRenewableStem": 75,
+          "deliberateNativeHoleOffset": [
+            100,
+            0
+          ],
+          "sealKeepoutDiameter": 200,
+          "maximumSleeveFlangeTopLocal": 20,
+          "scope": "100EoffsetisAUTHORREQUIREMENT, notnativeholeorprovenwastepart. STRformedopening/rebar/support/lining/sealqualificationrequired; nodrillingpermission."
+        },
+        "upperConfiguredKit": {
+          "completeBodyPlan": [
+            10800,
+            4050,
+            300,
+            300
+          ],
+          "completeBodyZLocal": [
+            40,
+            150
+          ],
+          "authoredFloorClearance": 40,
+          "minimumTo20HighFloorSeal": 20,
+          "waterSealMinimum": 50,
+          "minimumTrapBore": 40,
+          "trapImmediatelyAfterNativeWaste": true,
+          "trapBodyAndOutletAreNotNominal100Fitting": true,
+          "requiredTrapOutlet": [
+            10850,
+            4150,
+            120
+          ],
+          "upperFrontUnion": [
+            10850,
+            4250,
+            117.5
+          ],
+          "upperCarrierPlanXYZ": [
+            [
+              10850,
+              4150,
+              120
+            ],
+            [
+              10850,
+              4250,
+              117.5
+            ],
+            [
+              10950,
+              4250,
+              115
+            ],
+            [
+              10950,
+              4150,
+              112.5
+            ]
+          ],
+          "maximumConnectorODInUpperEnvelope": 60,
+          "actualPartMatching": "The50sealtrap,40bore,nuts/seats/overflowinterfaces/threeplanbendsandturnsMUSTfitfull300x300x110bodyboundandactualbathunderside.120outletisdesigncompatibilitytarget, NOTKaldeweimeasurement. Anyconfiguredkitfailingboundsisrejected; nostrippedseal/bespokeapprovalinvented.",
+          "support": "Independentretainedmetal/mineralsupportstoactualqualifiedfloor/framefixingsoutsideseal200keepoutandunmodifiedfactoryfeet. Supportsreachfloorintentionally;40clearanceisBODY/nuts/turns, notpretendedsupportlevitation. Actualfootlongitudinalextent/supportgeometryunproved.",
+          "upperServicePanel": {
+            "frontY": 4500,
+            "clearX": [
+              10625,
+              11125
+            ],
+            "clearZLocal": [
+              0,
+              500
+            ],
+            "requiredAccess": "Firstunion/trapcleanout/wasteandfull52overflowreleasefromFRONTorTOP, neverblindrearreach. Panelisnotarequiredfoot/supportremovedforaccess."
+          },
+          "waterIsolationTargets": {
+            "hot": [
+              10800,
+              4450,
+              350
+            ],
+            "cold": [
+              10900,
+              4450,
+              350
+            ],
+            "actualKitRequirement": "Accessiblefrontisolationandtrueunion, independentsupportedretainedsupply; actualtap/overflow/WCsystemcompatibilitynotassumed."
+          }
+        },
+        "lower": {
+          "A": [
+            10950,
+            4150,
+            3000
+          ],
+          "T": [
+            10950,
+            4150,
+            2737.5
+          ],
+          "B": [
+            10950,
+            4250,
+            2735
+          ],
+          "route": [
+            [
+              10950,
+              4150,
+              2737.5
+            ],
+            [
+              10950,
+              5200,
+              2711.25
+            ],
+            [
+              10800,
+              5200,
+              2707.5
+            ]
+          ],
+          "planLength": 1200,
+          "gradient": 40,
+          "maximumCompleteFittingOD": 100,
+          "supportDepth": 25,
+          "airReserve": 25,
+          "innerPanelTop": 2607.5,
+          "panelThickness": 20,
+          "finishedPanelUnderside": 2587.5,
+          "clearHatch": [
+            10750,
+            3950,
+            400,
+            400
+          ],
+          "outerHatch": [
+            10730,
+            3930,
+            440,
+            440
+          ],
+          "qualifiedEquipmentField": [
+            10535,
+            3900,
+            1000,
+            800
+          ],
+          "fieldToMain320PipeBand": 25,
+          "fieldToEastDryFace": 35.5,
+          "fixedUpperTail": "Plainstemindependentlysupported. AllupperAhalves/nuts/clampswiderthan75muststripBEFORE75stemwithdrawalthrough97sleeve; sleeve/flangealoneisnotclosedboundary.",
+          "spoolRelease": {
+            "requiredSeats": "Actualzero-captureflatfacesatorthogonalA/B; isolate/drain/releasenutsandadhesion/renewseals. Capturedspigotdiagonalreleaseisrejected.",
+            "phases": [
+              [
+                0,
+                -20,
+                0
+              ],
+              [
+                0,
+                0,
+                -20
+              ],
+              [
+                0,
+                0,
+                -450
+              ]
+            ],
+            "movingTopBefore": 3000,
+            "movingTopAfter": 2530,
+            "finishedPanelClearance": 57.5,
+            "completeSpoolPlanBefore": [
+              10900,
+              4100,
+              100,
+              200
+            ],
+            "completeSpoolPlanAfterSouth20": [
+              10900,
+              4080,
+              100,
+              200
+            ],
+            "fixedParts": "UpperAhalf/retainedbranch/trap/sleeveandactualsupportsremainindependent; nofloororsupportremovedtopermitmotion."
+          }
+        },
+        "renewalSplit": {
+          "ordinaryKit": "Openfrontpanel,isolatewater,disengageactualfront/topwaste/overflowandupperunionwithindependentsupport; noautomatic900trayproof.",
+          "wholeBath": "Removefulloverflowandrequiredfeet/kitonlypermanufacturer, supportdrained41kgBODYplusactualaccessories; actualstair/roomcarryandforcesareIASduty. Nohumanliftingcapacityinvented.",
+          "plainTail": "Afterseparatebody/kitreleaseandlowerAupperpartsstrip,550UPmoves−450tailendto+100; temporaryqualifiedclosureofopenedwater/air/fire/acousticannulusuntilcompatiblesealsreinstated/tested.",
+          "restore": "Ordinaryuseonlyafterreassembly,boundaryreinstatementandtests,panelclosure/equipmentremoval."
+        }
+      },
+      "utility": {
+        "status": "New functional proposal, not recovered existing HAD fixtures or admitted final appliance/door operation.",
+        "washer": [
+          10050,
+          700,
+          650,
+          700
+        ],
+        "sink": [
+          10950,
+          700,
+          600,
+          700
+        ],
+        "rearServiceChase": [
+          10050,
+          450,
+          1500,
+          250
+        ],
+        "valveBay": [
+          10700,
+          700,
+          250,
+          700
+        ],
+        "electricalStation": [
+          9397,
+          1750,
+          300,
+          650
+        ],
+        "electricalWorkingField": [
+          9697,
+          1750,
+          1000,
+          650
+        ],
+        "PVinverter": [
+          9400,
+          429.5,
+          500,
+          250
+        ],
+        "PVworkingField": [
+          9400,
+          679.5,
+          600,
+          1000
+        ],
+        "working": "Washer/sink front at1400, floor task field to2000. Washer valve10800/1250 is450 from front bodycentre10800/1700, not inaccessible behind appliance. Utility door must be checked in actual open/closed modes; no sink-use pass under an untested inward900leaf. Cu/inverter work fields do not intersect proposed fixed appliance bodies."
+      },
       "kitchenStationPlan": [
         8700,
         10970.5,
@@ -4101,10 +4395,10 @@
         {
           "id": "living",
           "level": 0,
-          "wall": "north",
+          "wall": "west",
           "point": [
-            2675,
-            12000,
+            0,
+            9200,
             2850
           ],
           "measuredEquivalentAreaRequired": 15000,
@@ -4461,12 +4755,12 @@
               1500
             ],
             [
-              9685,
+              9697,
               2200,
               1500
             ]
           ],
-          "decision": "Meter/metalconsumer-unit onutility westface9385/1750/300×650, separate1000depth workingfield9685/1750. Utility-side cabinet/washing-machine layout must retain clear serviceface. Utility capacity/earthing/bonding/RCD/overcurrent and actual circuits by certified design."
+          "decision": "Meter/metalconsumer-unit onutility westface9397/1750/300×650, separate1000depth workingfield9697/1750. Utility-side cabinet/washing-machine layout must retain clear serviceface. Utility capacity/earthing/bonding/RCD/overcurrent and actual circuits by certified design."
         },
         {
           "id": "power-distribution",
@@ -4516,7 +4810,7 @@
           "id": "laundry-refrigeration",
           "count": 2,
           "path": [],
-          "decision": "One washer reserve10050/700/650×700(requiredactualbody≤600wide) and fridge10932.5/9025; accessible isolated appliance tails. Washer is new proposal; manufacturer withdrawal/hose/workplate dimensions required, not built into structure."
+          "decision": "One washer reserve10050/700/650×700(requiredactualbody≤600wide) and fridge10920.5/9040; accessible isolated appliance tails. Washer is new proposal; manufacturer withdrawal/hose/workplate dimensions required, not built into structure."
         },
         {
           "id": "lighting-controls-data",
@@ -4569,6 +4863,25 @@
           "decision": "4kWp conditional roof requirement and utility inverter; roofplane/source, solar access, fixation/fire/cable/renewal and actual output must converge before selected apparatus. No energy-offset credit from nameplate."
         }
       ],
+      "livingSupplyHostCorrection": {
+        "oldNorth2675": "REJECTED:360holecrossesactualNorthRCreceiver",
+        "selectedPoint": [
+          0,
+          9200,
+          2850
+        ],
+        "formedHole": 360,
+        "face": 400,
+        "maintenanceField": [
+          654.5,
+          9000,
+          750,
+          1100
+        ],
+        "sofaAEastMove": 650,
+        "radiatorToPlatformReserve": 25,
+        "parkedSofaToPlatformReserve": 45.5
+      },
       "sourceOrder": "Servicesownsvalues; HADimportsimmutableobject. Finalsourceequivalence comparesrelevantgeometryonly, excludingcommit-pinmetadata. NoHADcommitaddedasfakeparent.",
       "cooker": {
         "extractPoint": [
@@ -4590,6 +4903,248 @@
         "makeupFormedTerritory": 280,
         "makeupRequirement": "Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from65L/s background; no open-window chore or recirculation-onlyhood credit.",
         "hood": "600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required."
+      }
+    },
+    "familyBathDrop": {
+      "status": "Selectedconditionalordinary-rimconfigured-kitrequirement; noactualtrap/outlet/feet/STR/seal/handlingadmission.100plinth660rimcontrolrejectedforquality.",
+      "primarySource": {
+        "url": "https://files.cdn.kaldewei.com/data/sprachen/englisch/techdata/DB04_24-Sort_DB_UK-GBeng_BW_ADV_363-1_SANIFORM_PLUS_SANIFORM_PLUS_STAR.pdf",
+        "nativeModel": "363-1",
+        "fileSHA256": "564cfd7be4ad55cff857f1dae17bbfeb9b20d8b927c411b6d41c485b6411f76b",
+        "body": [
+          9460,
+          3800,
+          1700,
+          700
+        ],
+        "selectedRim": 560,
+        "actualPermittedRimRange": [
+          545,
+          560
+        ],
+        "depthIncludingWaste": 410,
+        "nativeWasteHoleLocalZ": 150,
+        "nativeWasteHole": [
+          10850,
+          4150,
+          52
+        ],
+        "nativeOverflowCentre": [
+          11062,
+          4150,
+          497
+        ],
+        "nativeFootAxes": [
+          [
+            10710,
+            4150
+          ],
+          [
+            9970,
+            4150
+          ]
+        ],
+        "nativeFootWidthMaximum": 380,
+        "longitudinalFootExtent": "Notprovided; actualconfiguredsupportsmustpassthekeepoutwithoutalteringfactoryfeet."
+      },
+      "port": {
+        "centre": [
+          10950,
+          4150
+        ],
+        "formedDiameter": 110,
+        "clearSleeveInside": 97,
+        "maximumPlainRenewableStem": 75,
+        "deliberateNativeHoleOffset": [
+          100,
+          0
+        ],
+        "sealKeepoutDiameter": 200,
+        "maximumSleeveFlangeTopLocal": 20,
+        "scope": "100EoffsetisAUTHORREQUIREMENT, notnativeholeorprovenwastepart. STRformedopening/rebar/support/lining/sealqualificationrequired; nodrillingpermission."
+      },
+      "upperConfiguredKit": {
+        "completeBodyPlan": [
+          10800,
+          4050,
+          300,
+          300
+        ],
+        "completeBodyZLocal": [
+          40,
+          150
+        ],
+        "authoredFloorClearance": 40,
+        "minimumTo20HighFloorSeal": 20,
+        "waterSealMinimum": 50,
+        "minimumTrapBore": 40,
+        "trapImmediatelyAfterNativeWaste": true,
+        "trapBodyAndOutletAreNotNominal100Fitting": true,
+        "requiredTrapOutlet": [
+          10850,
+          4150,
+          120
+        ],
+        "upperFrontUnion": [
+          10850,
+          4250,
+          117.5
+        ],
+        "upperCarrierPlanXYZ": [
+          [
+            10850,
+            4150,
+            120
+          ],
+          [
+            10850,
+            4250,
+            117.5
+          ],
+          [
+            10950,
+            4250,
+            115
+          ],
+          [
+            10950,
+            4150,
+            112.5
+          ]
+        ],
+        "maximumConnectorODInUpperEnvelope": 60,
+        "actualPartMatching": "The50sealtrap,40bore,nuts/seats/overflowinterfaces/threeplanbendsandturnsMUSTfitfull300x300x110bodyboundandactualbathunderside.120outletisdesigncompatibilitytarget, NOTKaldeweimeasurement. Anyconfiguredkitfailingboundsisrejected; nostrippedseal/bespokeapprovalinvented.",
+        "support": "Independentretainedmetal/mineralsupportstoactualqualifiedfloor/framefixingsoutsideseal200keepoutandunmodifiedfactoryfeet. Supportsreachfloorintentionally;40clearanceisBODY/nuts/turns, notpretendedsupportlevitation. Actualfootlongitudinalextent/supportgeometryunproved.",
+        "upperServicePanel": {
+          "frontY": 4500,
+          "clearX": [
+            10625,
+            11125
+          ],
+          "clearZLocal": [
+            0,
+            500
+          ],
+          "requiredAccess": "Firstunion/trapcleanout/wasteandfull52overflowreleasefromFRONTorTOP, neverblindrearreach. Panelisnotarequiredfoot/supportremovedforaccess."
+        },
+        "waterIsolationTargets": {
+          "hot": [
+            10800,
+            4450,
+            350
+          ],
+          "cold": [
+            10900,
+            4450,
+            350
+          ],
+          "actualKitRequirement": "Accessiblefrontisolationandtrueunion, independentsupportedretainedsupply; actualtap/overflow/WCsystemcompatibilitynotassumed."
+        }
+      },
+      "lower": {
+        "A": [
+          10950,
+          4150,
+          3000
+        ],
+        "T": [
+          10950,
+          4150,
+          2737.5
+        ],
+        "B": [
+          10950,
+          4250,
+          2735
+        ],
+        "route": [
+          [
+            10950,
+            4150,
+            2737.5
+          ],
+          [
+            10950,
+            5200,
+            2711.25
+          ],
+          [
+            10800,
+            5200,
+            2707.5
+          ]
+        ],
+        "planLength": 1200,
+        "gradient": 40,
+        "maximumCompleteFittingOD": 100,
+        "supportDepth": 25,
+        "airReserve": 25,
+        "innerPanelTop": 2607.5,
+        "panelThickness": 20,
+        "finishedPanelUnderside": 2587.5,
+        "clearHatch": [
+          10750,
+          3950,
+          400,
+          400
+        ],
+        "outerHatch": [
+          10730,
+          3930,
+          440,
+          440
+        ],
+        "qualifiedEquipmentField": [
+          10535,
+          3900,
+          1000,
+          800
+        ],
+        "fieldToMain320PipeBand": 25,
+        "fieldToEastDryFace": 35.5,
+        "fixedUpperTail": "Plainstemindependentlysupported. AllupperAhalves/nuts/clampswiderthan75muststripBEFORE75stemwithdrawalthrough97sleeve; sleeve/flangealoneisnotclosedboundary.",
+        "spoolRelease": {
+          "requiredSeats": "Actualzero-captureflatfacesatorthogonalA/B; isolate/drain/releasenutsandadhesion/renewseals. Capturedspigotdiagonalreleaseisrejected.",
+          "phases": [
+            [
+              0,
+              -20,
+              0
+            ],
+            [
+              0,
+              0,
+              -20
+            ],
+            [
+              0,
+              0,
+              -450
+            ]
+          ],
+          "movingTopBefore": 3000,
+          "movingTopAfter": 2530,
+          "finishedPanelClearance": 57.5,
+          "completeSpoolPlanBefore": [
+            10900,
+            4100,
+            100,
+            200
+          ],
+          "completeSpoolPlanAfterSouth20": [
+            10900,
+            4080,
+            100,
+            200
+          ],
+          "fixedParts": "UpperAhalf/retainedbranch/trap/sleeveandactualsupportsremainindependent; nofloororsupportremovedtopermitmotion."
+        }
+      },
+      "renewalSplit": {
+        "ordinaryKit": "Openfrontpanel,isolatewater,disengageactualfront/topwaste/overflowandupperunionwithindependentsupport; noautomatic900trayproof.",
+        "wholeBath": "Removefulloverflowandrequiredfeet/kitonlypermanufacturer, supportdrained41kgBODYplusactualaccessories; actualstair/roomcarryandforcesareIASduty. Nohumanliftingcapacityinvented.",
+        "plainTail": "Afterseparatebody/kitreleaseandlowerAupperpartsstrip,550UPmoves−450tailendto+100; temporaryqualifiedclosureofopenedwater/air/fire/acousticannulusuntilcompatiblesealsreinstated/tested.",
+        "restore": "Ordinaryuseonlyafterreassembly,boundaryreinstatementandtests,panelclosure/equipmentremoval."
       }
     },
     "familyWetRoom": {
@@ -4942,7 +5497,7 @@
       },
       "selectedMethod": "HEAD-FIRST: fixedfloorframe/anchors/servicesstay; historicalwholeframeW/S/skates arenotselected.",
       "headFirst": {
-        "status": "Chosenconstructiveconditionalinterface; independentIAScompositecheckpending. Noactualgrip/force/kit/table/framecapacityadmission.",
+        "status": "INTERNAL CONTINUATION: sampled composite/operator research only; continuous/supportrecord incomplete. Selectedconditional target, notacceptedhandling. Noactualgrip/force/kit/table/framecapacityadmission.",
         "head": {
           "topPlan": [
             8700,
@@ -4954,7 +5509,8 @@
           "returnDepth": 30,
           "supportUndersideZ": 870,
           "maximumMassKg": 15,
-          "minimumBodyZ": 600,
+          "bowlMinimumZ": 600,
+          "wholeCompositeMinimumZ": 575,
           "bowlPlan": [
             8885,
             11050.5,
@@ -5150,45 +5706,82 @@
         },
         "motion": {
           "initialUp": 20,
-          "thenSouth": 930,
+          "initialSouth": 40,
           "windowTrimProjection": 18,
           "windowTrimReserve": 22,
-          "additionalUp": 250,
-          "totalUp": 270,
-          "bowlBottomAfterRaise": 870,
+          "additionalUp": 270,
+          "totalUp": 290,
+          "bowlBottomAfterRaise": 890,
           "sideFrameTop": 850,
-          "sideFrameClearance": 20,
-          "thenEast": 950,
+          "fixedPadsTop": 870,
+          "bowlToPadsClearance": 20,
+          "retainedBMinimumAfterRaise": 865,
+          "BToSideFrameClearance": 15,
+          "BNorthEndAfter40South": 10995.5,
+          "fixedPadSouthY": 11010,
+          "BPlanReserveToPad": 14.5,
+          "transferEast": 950,
+          "transferSouth": 930.5,
           "thenCCWDegrees": 90,
+          "finalWest": 1200,
           "completeHeadPlan": [
             900,
             600
           ]
+        },
+        "operatorPhases": {
+          "initial": [
+            [
+              8792.5,
+              10650
+            ],
+            [
+              9507.5,
+              10650
+            ]
+          ],
+          "after40SouthY": 10610,
+          "shoulderZDuringAdditionalRaise": [
+            1000,
+            1200
+          ],
+          "final": [
+            [
+              9610,
+              9942.5
+            ],
+            [
+              9610,
+              10657.5
+            ]
+          ],
+          "continuation": "Continuouscomposite/worker/supportproofincomplete; numericcompatibilitytargetsnotphysicalacceptance."
         },
         "grips": {
           "padDiameter": 120,
           "padCentres": [
             [
               8792.5,
-              11170.5
+              11060.5
             ],
             [
               8792.5,
-              11370.5
+              11280.5
             ],
             [
               9507.5,
-              11170.5
+              11060.5
             ],
             [
               9507.5,
-              11370.5
+              11280.5
             ]
           ],
-          "gripY": 11270.5,
+          "gripY": 11145.5,
           "operatorSouthY": 10650,
-          "planReachSensitivity": 650,
-          "actualPlanReach": 620.5,
+          "maximum3DReach": 589.174,
+          "maximumDeclaredReachScreen": 600,
+          "continuousBoundStatus": "Independentcontinuous/supportrecordnotyetcomplete; noacceptedphysicalevent",
           "acceptance": "Actualqualifiedsurface/grips/twohandlers/force/stability/healthsafetyrequired; nohandliftingcapacityinvented."
         },
         "tablePlacement": {
@@ -5227,15 +5820,59 @@
             ]
           ],
           "bearerTopZ": 1050,
-          "carryReturnUndersideZ": 1140,
-          "carryClearance": 90,
-          "lowerToSeat": 90,
+          "carryReturnUndersideZ": 1160,
+          "carryTopZ": 1190,
+          "carryClearance": 110,
+          "lowerToSeat": 110,
           "seatedTopZ": 1080,
           "seatedReturnUndersideZ": 1050,
           "seatedBowlBottomZ": 780,
           "bowlToTableClearance": 30,
           "bowlPlanReserveToEachBearer": 35,
-          "supportAllocation": "BearerssupportEND/WINGreturnsoutsidebowl; bowlpassesBETWEEN, neverthroughbearers. Helpersecuresbearersaftertable650NwhiletwohandlersholdheadinEaisle. Completeactualtable/supportcapacityandhandlingeventunearned."
+          "prestage": {
+            "initialTableY": 9100,
+            "prestageTableY": 9000,
+            "initialSouthMove": 100,
+            "bearersBeforeNorthMove": [
+              [
+                8600,
+                9200,
+                600,
+                150,
+                300
+              ],
+              [
+                8600,
+                9950,
+                600,
+                150,
+                300
+              ]
+            ],
+            "helperBeforeHandlers": [
+              [
+                8900,
+                8675
+              ],
+              [
+                8900,
+                10525
+              ]
+            ],
+            "laterTablePushBodyPath": [
+              [
+                8900,
+                8675
+              ],
+              [
+                8900,
+                9325
+              ]
+            ],
+            "laterNorthMove": 650,
+            "rule": "SecurebothwingbearersonEMPTYtableandhelperexitsBEFOREhandlersenter. AfterheadheldCCWintheEaisle,helperpushestable+securedlegs/bearers650N; nobodyclimbsonit."
+          },
+          "supportAllocation": "BearerssupportEND/WINGreturnsoutsidebowl; bowlpassesBETWEEN, neverthroughbearers. LatebearerinstallationbehindfixedframeisREJECTED. Completeactualtable/supportcapacityandcontinuoushandlingeventunearned."
         }
       },
       "historicalWholeFrameControl": {
@@ -5676,26 +6313,26 @@
         700
       ],
       "electricalStation": [
-        9385,
+        9397,
         1750,
         300,
         650
       ],
       "electricalWorkingField": [
-        9685,
+        9697,
         1750,
         1000,
         650
       ],
       "PVinverter": [
         9400,
-        417.5,
+        429.5,
         500,
         250
       ],
       "PVworkingField": [
         9400,
-        667.5,
+        679.5,
         600,
         1000
       ],
@@ -5979,7 +6616,7 @@
       },
       "selectedMethod": "HEAD-FIRST: fixedfloorframe/anchors/servicesstay; historicalwholeframeW/S/skates arenotselected.",
       "headFirst": {
-        "status": "Chosenconstructiveconditionalinterface; independentIAScompositecheckpending. Noactualgrip/force/kit/table/framecapacityadmission.",
+        "status": "INTERNAL CONTINUATION: sampled composite/operator research only; continuous/supportrecord incomplete. Selectedconditional target, notacceptedhandling. Noactualgrip/force/kit/table/framecapacityadmission.",
         "head": {
           "topPlan": [
             8700,
@@ -5991,7 +6628,8 @@
           "returnDepth": 30,
           "supportUndersideZ": 870,
           "maximumMassKg": 15,
-          "minimumBodyZ": 600,
+          "bowlMinimumZ": 600,
+          "wholeCompositeMinimumZ": 575,
           "bowlPlan": [
             8885,
             11050.5,
@@ -6187,45 +6825,82 @@
         },
         "motion": {
           "initialUp": 20,
-          "thenSouth": 930,
+          "initialSouth": 40,
           "windowTrimProjection": 18,
           "windowTrimReserve": 22,
-          "additionalUp": 250,
-          "totalUp": 270,
-          "bowlBottomAfterRaise": 870,
+          "additionalUp": 270,
+          "totalUp": 290,
+          "bowlBottomAfterRaise": 890,
           "sideFrameTop": 850,
-          "sideFrameClearance": 20,
-          "thenEast": 950,
+          "fixedPadsTop": 870,
+          "bowlToPadsClearance": 20,
+          "retainedBMinimumAfterRaise": 865,
+          "BToSideFrameClearance": 15,
+          "BNorthEndAfter40South": 10995.5,
+          "fixedPadSouthY": 11010,
+          "BPlanReserveToPad": 14.5,
+          "transferEast": 950,
+          "transferSouth": 930.5,
           "thenCCWDegrees": 90,
+          "finalWest": 1200,
           "completeHeadPlan": [
             900,
             600
           ]
+        },
+        "operatorPhases": {
+          "initial": [
+            [
+              8792.5,
+              10650
+            ],
+            [
+              9507.5,
+              10650
+            ]
+          ],
+          "after40SouthY": 10610,
+          "shoulderZDuringAdditionalRaise": [
+            1000,
+            1200
+          ],
+          "final": [
+            [
+              9610,
+              9942.5
+            ],
+            [
+              9610,
+              10657.5
+            ]
+          ],
+          "continuation": "Continuouscomposite/worker/supportproofincomplete; numericcompatibilitytargetsnotphysicalacceptance."
         },
         "grips": {
           "padDiameter": 120,
           "padCentres": [
             [
               8792.5,
-              11170.5
+              11060.5
             ],
             [
               8792.5,
-              11370.5
+              11280.5
             ],
             [
               9507.5,
-              11170.5
+              11060.5
             ],
             [
               9507.5,
-              11370.5
+              11280.5
             ]
           ],
-          "gripY": 11270.5,
+          "gripY": 11145.5,
           "operatorSouthY": 10650,
-          "planReachSensitivity": 650,
-          "actualPlanReach": 620.5,
+          "maximum3DReach": 589.174,
+          "maximumDeclaredReachScreen": 600,
+          "continuousBoundStatus": "Independentcontinuous/supportrecordnotyetcomplete; noacceptedphysicalevent",
           "acceptance": "Actualqualifiedsurface/grips/twohandlers/force/stability/healthsafetyrequired; nohandliftingcapacityinvented."
         },
         "tablePlacement": {
@@ -6264,15 +6939,59 @@
             ]
           ],
           "bearerTopZ": 1050,
-          "carryReturnUndersideZ": 1140,
-          "carryClearance": 90,
-          "lowerToSeat": 90,
+          "carryReturnUndersideZ": 1160,
+          "carryTopZ": 1190,
+          "carryClearance": 110,
+          "lowerToSeat": 110,
           "seatedTopZ": 1080,
           "seatedReturnUndersideZ": 1050,
           "seatedBowlBottomZ": 780,
           "bowlToTableClearance": 30,
           "bowlPlanReserveToEachBearer": 35,
-          "supportAllocation": "BearerssupportEND/WINGreturnsoutsidebowl; bowlpassesBETWEEN, neverthroughbearers. Helpersecuresbearersaftertable650NwhiletwohandlersholdheadinEaisle. Completeactualtable/supportcapacityandhandlingeventunearned."
+          "prestage": {
+            "initialTableY": 9100,
+            "prestageTableY": 9000,
+            "initialSouthMove": 100,
+            "bearersBeforeNorthMove": [
+              [
+                8600,
+                9200,
+                600,
+                150,
+                300
+              ],
+              [
+                8600,
+                9950,
+                600,
+                150,
+                300
+              ]
+            ],
+            "helperBeforeHandlers": [
+              [
+                8900,
+                8675
+              ],
+              [
+                8900,
+                10525
+              ]
+            ],
+            "laterTablePushBodyPath": [
+              [
+                8900,
+                8675
+              ],
+              [
+                8900,
+                9325
+              ]
+            ],
+            "laterNorthMove": 650,
+            "rule": "SecurebothwingbearersonEMPTYtableandhelperexitsBEFOREhandlersenter. AfterheadheldCCWintheEaisle,helperpushestable+securedlegs/bearers650N; nobodyclimbsonit."
+          },
+          "supportAllocation": "BearerssupportEND/WINGreturnsoutsidebowl; bowlpassesBETWEEN, neverthroughbearers. LatebearerinstallationbehindfixedframeisREJECTED. Completeactualtable/supportcapacityandcontinuoushandlingeventunearned."
         }
       },
       "historicalWholeFrameControl": {
@@ -6512,13 +7231,13 @@
     ],
     "inverterRequiredEnvelope": [
       9400,
-      417.5,
+      429.5,
       500,
       250
     ],
     "inverterWorkingField": [
       9400,
-      667.5,
+      679.5,
       600,
       1000
     ],
@@ -9433,12 +10152,12 @@
           1500
         ],
         [
-          9685,
+          9697,
           2200,
           1500
         ]
       ],
-      "decision": "Meter/metalconsumer-unit onutility westface9385/1750/300×650, separate1000depth workingfield9685/1750. Utility-side cabinet/washing-machine layout must retain clear serviceface. Utility capacity/earthing/bonding/RCD/overcurrent and actual circuits by certified design."
+      "decision": "Meter/metalconsumer-unit onutility westface9397/1750/300×650, separate1000depth workingfield9697/1750. Utility-side cabinet/washing-machine layout must retain clear serviceface. Utility capacity/earthing/bonding/RCD/overcurrent and actual circuits by certified design."
     },
     {
       "id": "power-distribution",
@@ -9488,7 +10207,7 @@
       "id": "laundry-refrigeration",
       "count": 2,
       "path": [],
-      "decision": "One washer reserve10050/700/650×700(requiredactualbody≤600wide) and fridge10932.5/9025; accessible isolated appliance tails. Washer is new proposal; manufacturer withdrawal/hose/workplate dimensions required, not built into structure."
+      "decision": "One washer reserve10050/700/650×700(requiredactualbody≤600wide) and fridge10920.5/9040; accessible isolated appliance tails. Washer is new proposal; manufacturer withdrawal/hose/workplate dimensions required, not built into structure."
     },
     {
       "id": "lighting-controls-data",
