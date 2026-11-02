@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:2.9px}.title{font-size:4.3px;font-weight:bold}</style>
+<rect width="420" height="297" fill="#faf8f1"/>
+<text x="12" y="13" class="title">STAIR / actual nominal flight–landing–header bar paths</text>
+<text x="12" y="23" class="">170normal waist / 390midbeam / 250local landing patch / c25 and21independentbar clear / not construction release</text>
+<text x="12" y="37" class="title">A / LOWER FLIGHT → MIDLANDING</text>
+<defs><clipPath id="profileL"><rect x="12" y="45" width="190" height="54"/></clipPath></defs>
+<polygon clip-path="url(#profileL)" points="12.000,88.273 41.062,71.562 41.062,96.075 12.000,112.786" fill="#e2e8e2" stroke="#345460" stroke-width=".35"/>
+<rect x="41.062" y="50.000" width="31.250" height="48.750" fill="#bccbc2" stroke="#345460" stroke-width=".35"/>
+<rect x="72.312" y="50.000" width="25.000" height="31.250" fill="#cdd8cf" stroke="#345460" stroke-width=".35"/>
+<rect x="97.312" y="50.000" width="102.188" height="25.000" fill="#e2e8e2" stroke="#345460" stroke-width=".35"/>
+<circle cx="51.688" cy="93.375" r="1.25" fill="#5b7671"/>
+<circle cx="61.688" cy="93.375" r="1.25" fill="#5b7671"/>
+<circle cx="51.688" cy="59.375" r="0.625" fill="#5b7671"/>
+<circle cx="61.688" cy="59.375" r="0.625" fill="#5b7671"/>
+<path d="M90.125,72.85 L187.0,72.85" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<path d="M90.125,56.85 L187.0,56.85" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<text x="12" y="109" class="">Top1725; beam1335 / patch1475 / ordinary landing1525.</text>
+<text x="12" y="117" class="">H12fillets:240internal mandrel; landingH10laps750.</text>
+<g clip-path="url(#profileL)">
+<path d="M-38.000,137.066 L73.034,73.221 L73.514,72.956 L74.003,72.708 L74.499,72.478 L75.004,72.264 L75.516,72.069 L76.034,71.891 L76.558,71.731 L77.088,71.590 L77.622,71.467 L78.159,71.363 L78.701,71.277 L79.244,71.211 L79.790,71.163 L80.337,71.135 L80.885,71.125 L187.000,71.125" fill="none" stroke="#9d4e48" stroke-width="1.5"/>
+<path d="M-38.000,121.493 L73.560,57.346 L74.040,57.081 L74.528,56.833 L75.025,56.603 L75.530,56.389 L76.042,56.194 L76.560,56.016 L77.084,55.856 L77.613,55.715 L78.147,55.592 L78.685,55.488 L79.227,55.402 L79.770,55.336 L80.316,55.288 L80.863,55.260 L81.411,55.250 L187.000,55.250" fill="none" stroke="#b4753c" stroke-width="1.5"/>
+</g>
+<text x="12" y="125" class="">Profile1:8. Orthogonal bars are circles; lap offset is EW, not vertical.</text>
+<text x="220" y="37" class="title">B / UPPER FLIGHT → MIDLANDING</text>
+<defs><clipPath id="profileU"><rect x="220" y="45" width="190" height="54"/></clipPath></defs>
+<polygon clip-path="url(#profileU)" points="220.000,33.289 249.062,50.000 249.062,74.512 220.000,57.802" fill="#e2e8e2" stroke="#345460" stroke-width=".35"/>
+<rect x="249.062" y="50.000" width="31.250" height="48.750" fill="#bccbc2" stroke="#345460" stroke-width=".35"/>
+<rect x="280.312" y="50.000" width="25.000" height="31.250" fill="#cdd8cf" stroke="#345460" stroke-width=".35"/>
+<rect x="305.312" y="50.000" width="102.188" height="25.000" fill="#e2e8e2" stroke="#345460" stroke-width=".35"/>
+<circle cx="259.688" cy="93.375" r="1.25" fill="#5b7671"/>
+<circle cx="269.688" cy="93.375" r="1.25" fill="#5b7671"/>
+<circle cx="259.688" cy="59.375" r="0.625" fill="#5b7671"/>
+<circle cx="269.688" cy="59.375" r="0.625" fill="#5b7671"/>
+<path d="M298.125,72.85 L395.0,72.85" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<path d="M298.125,56.85 L395.0,56.85" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<text x="220" y="109" class="">Top1725; beam1335 / patch1475 / ordinary landing1525.</text>
+<text x="220" y="117" class="">H12fillets:240internal mandrel; landingH10laps750.</text>
+<g clip-path="url(#profileU)">
+<path d="M170.000,24.582 L247.299,69.029 L247.779,69.294 L248.268,69.542 L248.765,69.772 L249.269,69.986 L249.781,70.181 L250.299,70.359 L250.823,70.519 L251.353,70.660 L251.887,70.783 L252.425,70.887 L252.966,70.973 L253.510,71.039 L254.055,71.087 L254.603,71.115 L255.150,71.125 L395.000,71.125" fill="none" stroke="#9d4e48" stroke-width="1.5"/>
+<path d="M170.000,9.009 L246.774,53.154 L247.253,53.419 L247.742,53.667 L248.239,53.897 L248.743,54.111 L249.255,54.306 L249.773,54.484 L250.297,54.644 L250.827,54.785 L251.361,54.908 L251.899,55.012 L252.440,55.098 L252.984,55.164 L253.530,55.212 L254.077,55.240 L254.624,55.250 L395.000,55.250" fill="none" stroke="#b4753c" stroke-width="1.5"/>
+</g>
+<text x="220" y="125" class="">Profile1:8. Orthogonal bars are circles; lap offset is EW, not vertical.</text>
+<text x="12" y="151" class="title">C / UPPER FLIGHT → FIRST FLOOR</text>
+<defs><clipPath id="profileH"><rect x="12" y="159" width="190" height="54"/></clipPath></defs>
+<polygon clip-path="url(#profileH)" points="141.062,175.562 202.000,210.602 202.000,235.114 141.062,200.075" fill="#e2e8e2" stroke="#345460" stroke-width=".35"/>
+<rect x="12.000" y="164.000" width="129.062" height="25.000" fill="#e2e8e2" stroke="#345460" stroke-width=".35"/>
+<rect x="116.062" y="189.000" width="25.000" height="12.500" fill="#bccbc2" stroke="#345460" stroke-width=".35"/>
+<circle cx="121.312" cy="196.250" r="1.0" fill="#5b7671"/>
+<circle cx="127.219" cy="196.250" r="1.0" fill="#5b7671"/>
+<circle cx="133.250" cy="196.250" r="1.0" fill="#5b7671"/>
+<circle cx="120.938" cy="173.500" r="0.625" fill="#5b7671"/>
+<circle cx="135.750" cy="171.500" r="1.0" fill="#5b7671"/>
+<path d="M18.25,186.725 L112.0,186.725" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<path d="M18.25,169.475 L112.0,169.475" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<text x="12" y="214" class="">HeaderRC3070..3370; receiving slab3170..3370.</text>
+<text x="12" y="222" class="">H12floor laps750 at+34EWoffset; localEWtopH16/200.</text>
+<g clip-path="url(#profileH)">
+<path d="M212.000,236.394 L126.482,187.221 L126.002,186.956 L125.514,186.708 L125.017,186.478 L124.512,186.264 L124.000,186.069 L123.482,185.891 L122.958,185.731 L122.429,185.590 L121.895,185.467 L121.357,185.363 L120.816,185.277 L120.272,185.211 L119.726,185.163 L119.179,185.135 L118.631,185.125 L18.250,185.125" fill="none" stroke="#9d4e48" stroke-width="1.5"/>
+<path d="M212.000,220.821 L123.565,169.971 L123.085,169.706 L122.597,169.458 L122.100,169.228 L121.595,169.014 L121.083,168.819 L120.565,168.641 L120.041,168.481 L119.512,168.340 L118.978,168.217 L118.440,168.113 L117.898,168.027 L117.355,167.961 L116.809,167.913 L116.262,167.885 L115.714,167.875 L18.250,167.875" fill="none" stroke="#b4753c" stroke-width="1.5"/>
+</g>
+<text x="12" y="239" class="">Profile1:8. Orthogonal bars are circles; lap offset is EW, not vertical.</text>
+<text x="220" y="151" class="title">D / NOMINAL CHECKS AND BOUNDARIES</text>
+<text x="220" y="164" class="">MIDminclear21.900; HEADER21.527mm.</text>
+<text x="220" y="172" class="">Landing/headerlap minima22.900/21.900; cover25.000.</text>
+<text x="220" y="180" class="">Smallest21.527 leaves0.527 over21: placement NOT qualified.</text>
+<text x="220" y="188" class="">H12benddemand213.8&lt;240; fullfy lap652.2&lt;750.</text>
+<text x="220" y="196" class="">LandingH10forcebound8.99&lt;34.15kN/bar.</text>
+<text x="220" y="204" class="">NorthH10end115≥100required at declared demand.</text>
+<text x="220" y="212" class="">LandingSLS1.013&lt;6.380mm, phi3+300micro.</text>
+<text x="220" y="220" class="">FirstEWmidstirrup548 is beyond curved westH20 hook.</text>
+<text x="220" y="228" class="">OwnH20/H8straightbottom contact intentional; no curved contact.</text>
+<text x="220" y="236" class="">Open: header ends, groundtoe, guard, exposure/fire and tolerances.</text>
+<text x="12" y="280" class="">Paths are the actual calculation polylines, not generic reinforcing symbols. All elevations absolute; steps/finished noses held.</text>
+<text x="12" y="289" class="">ONE developing stair proposition; no blanket joint, stair, foundation or whole-house PASS follows from nominal path checks.</text>
+</svg>
