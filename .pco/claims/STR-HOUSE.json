@@ -9,9 +9,9 @@
     "label": "zerg-structure-corner"
   },
   "claimedAt": "2026-11-02T10:56:48.149Z",
-  "heartbeatAt": "2026-11-02T12:36:20.000Z",
-  "expiresAt": "2026-11-02T13:21:20.000Z",
-  "branch": "work/zerg-str-sw-corner-20261102",
+  "heartbeatAt": "2026-11-02T12:49:30.415Z",
+  "expiresAt": "2026-11-02T13:34:30.415Z",
+  "branch": "work/zerg-corner-convergence",
   "predecessor": {
     "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
     "generation": 19,
@@ -34,10 +34,10 @@
       "blocker": "Actual layers, arches, lower and weather walls, diaphragm and warm/cold support transfer remain unqualified; STR-HOUSE open"
     }
   },
-  "pr": 1269,
+  "pr": 1273,
   "checkpoint": {
-    "evidence": "Draft PR #1269 immutable head c87ae1d9977db4a3d8cb591a88daa974fc5070b8 tree d75ec5866f5417a6b1cadd4683e238f134403d38; source and rendered cage/station verified",
-    "next": "Independent narrow review, coordinated MAT pin, root shared integration and exact-head CI/preflight",
-    "blocker": "Whole-house signed actions, arm/cold-node resistance, envelope and site remain open"
+    "evidence": "Shared PR 1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; STR source reviewed and rebound; MAT pin reconciled",
+    "next": "Root observes exact-head CI, runs owner preflights and merges if earned; then close out STR 20 and reacquire for full corner route",
+    "blocker": "Whole-house signed actions, cold-arm and pile transfer, envelope and site remain open"
   }
 }
