@@ -1,0 +1,377 @@
+{
+  "status": "WIP conditional actual-occurrence candidate. Modeled local profile/ordinary and leaf shape checks only; no product/temporaryequipment/fullrenewal/export PASS.",
+  "source": {
+    "base": "e93c643d36dfb0ee72a2bd2035899dfc5cc94f74",
+    "hadBlob": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+    "servicesBlob": "2d8f7243fb87d350763f2bca3d103b89b9d14b7d",
+    "occurrence": {
+      "id": "north-window-0",
+      "wall": "outer-north",
+      "centre": 1800,
+      "width": 1000,
+      "kind": "window",
+      "sill": 850,
+      "head": 2850,
+      "spring": 2550,
+      "cillUndersideMinimum": 800,
+      "cillDepthMaximum": 50
+    }
+  },
+  "frame": {
+    "outsideX": [
+      1335,
+      2265
+    ],
+    "clearX": [
+      1385,
+      2215
+    ],
+    "outsideZ": [
+      885,
+      2815
+    ],
+    "clearBottom": 935,
+    "clearRadius": 481.66666666666663,
+    "arcCentre": 2283.3333333333335,
+    "normal": [
+      290,
+      430
+    ],
+    "gap": 35,
+    "completeFace": 50,
+    "intrusion": 85,
+    "finish": 27,
+    "finishJointNominal": 8,
+    "nominalGap15Control": -12,
+    "IAS75Compatibility": -10,
+    "scope": "Authored complete spatial candidate; actual profile/material/joint/packing/anchors/tolerance NOT admitted."
+  },
+  "leaf": {
+    "hingesX": [
+      1390,
+      2210
+    ],
+    "hingeY": 11540,
+    "width": 407.5,
+    "normal": [
+      -30,
+      30
+    ],
+    "bottom": 940,
+    "top": 2760,
+    "clearRunningGap": 5,
+    "meetingGap": 5,
+    "handleU": 380,
+    "handleN": 100,
+    "handleZ": 1300,
+    "controlledAngle": 80,
+    "massMaximumKg": 45,
+    "hingeRelease": "Two lift-off hinge pairs;60 axial minimum, use200 supported lift. Captive anti-lift restraint/service release at freeedge controlu380/n100/Z1300; actual linkage/complete mechanism must match, no manual upperhinge task is invented; no inaccessible upper pin is silently omitted. Actual matched mechanism/capacity/security/force remains unqualified."
+  },
+  "guard": {
+    "outsideX": [
+      1360,
+      2240
+    ],
+    "bottom": 910,
+    "top": 2790,
+    "normal": [
+      130,
+      160
+    ],
+    "face": 50,
+    "barD": 12,
+    "barXs": [
+      1500,
+      1600,
+      1700,
+      1800,
+      1900,
+      2000,
+      2100
+    ],
+    "maximumClearGap": 88,
+    "massMaximumKg": 50,
+    "boltXs": [
+      1375,
+      2225
+    ],
+    "boltZ": [
+      2000,
+      2100
+    ],
+    "support": "Independent PERMANENT jamb receiver requirement x1210..1290 and2310..2390,q270..400,Z1900..2200, into actual structural core subject STR design. Bracket stems outside raw jamb, front armsq160..170 endx1380/2220; removableM12 in14holes facesq125,100socket stroke. No weather-leaf/frame/trim capacity; no existingRC receiver invented.",
+    "boundary": "Separate jacket/collar/drained jamb transition at every bracket. Actual load/thermal/water/fire/security/material and fixing admission remains open."
+  },
+  "barrier": {
+    "cross": [
+      1320,
+      10930,
+      0,
+      1497.5,
+      40,
+      1100
+    ],
+    "westReturn": [
+      1300,
+      10950,
+      0,
+      40,
+      620.5,
+      1100
+    ],
+    "struts": [
+      [
+        1530,
+        10950,
+        1080,
+        40,
+        2250,
+        40
+      ],
+      [
+        2030,
+        10950,
+        1080,
+        40,
+        2250,
+        40
+      ]
+    ],
+    "scope": "New OAS takeover geometry, not oldIAS barrier adoption. L return lies east of retainedWC, ends at actualnorthfinishedface11570.5; no cabinet/barrier capacity. Complete matched equipment/erection/room storage remains a qualification duty."
+  },
+  "preparation": {
+    "order": [
+      "Closed glazing and full permanent grille retained; fit independent exterior component hoist/support and qualified worker access.",
+      "OpenEast80 thenWest80 under retained full grille; stays capture actual leaves.",
+      "Assemble internal Lbarrier with permanent grille STILL providing fall protection. Insert40struts at1550/2050 through88grille gaps; positive roomside latches and independentground support verified before grille release.",
+      "Capture whole exteriorgrille. Qualified external worker reaches capturedM12/socket controls; no platformcrane or raisedexit. Release allfixings while glazingopen behind qualified temporarybarrier; withdraw wholeguard outward, to exterior support and restrainedrack.",
+      "Independentrig captures each wholeleaf and handle. Reach freeedge anti-lift servicecontrol from protectedSouth; lift200 clears both lift-off pairs, centre, tilt45 upperedgeSOUTH, lower300, export. No manual upperpin task or hiddenfold/missinghandle.",
+      "Keep qualified temporarybarrier/support and weather isolation for complete frame release and outward fullframe withdrawal; reverse capturedstates for replacement, seals/closure/tests and fullguard reinstatement before removing struts/barrier."
+    ],
+    "barrierFixtureNominal": 10.5,
+    "oldBarrierCabinetOverlap": 150,
+    "strutGrilleNominal": 24,
+    "strutLeafNominal": 39.69413501035956,
+    "slingEnds": [
+      {
+        "eye": [
+          1500,
+          11875,
+          2660
+        ],
+        "support": [
+          1500,
+          13200,
+          3100
+        ],
+        "radius": 10
+      },
+      {
+        "eye": [
+          2100,
+          11875,
+          2660
+        ],
+        "support": [
+          2100,
+          13200,
+          3100
+        ],
+        "radius": 10
+      }
+    ],
+    "slingWindowNominal": 20.421838634181768,
+    "scope": "Finite constructive order and narrow component geometry only. Actual complete barrier components/room storage/erection, workerplatform profile, fullhoist/rig/recovery/roof conflicts and qualifying mechanisms remain prerequisites; no completebootstrap PASS."
+  },
+  "ordinary": [
+    {
+      "side": 1,
+      "bodyLower": 176.7366586935686,
+      "bodyGovernor": "rear-WC",
+      "armLower": 16.186573447814766,
+      "forearmToOwnLeafLower": 4.581492809228429,
+      "reachUpper": 474.44708209774006,
+      "sashFixtureLower": 3.397204617204352,
+      "opening": "2001 coupled samples;body/grip/sash speeds<=2000 ->.5 half-step; own forearm relative bound10000 ->2.5. R300/1800 proxy, shoulder1450/200north;R40 capsules; terminal60 only is handle-contact zone. No generic reach/body/force acceptance."
+    },
+    {
+      "side": -1,
+      "bodyLower": 154.6047113387574,
+      "bodyGovernor": "rear-WC",
+      "armLower": 27.505532212212756,
+      "forearmToOwnLeafLower": 4.581492809228429,
+      "reachUpper": 474.44708209774006,
+      "sashFixtureLower": 48.10680491040944,
+      "opening": "2001 coupled samples;body/grip/sash speeds<=2000 ->.5 half-step; own forearm relative bound10000 ->2.5. R300/1800 proxy, shoulder1450/200north;R40 capsules; terminal60 only is handle-contact zone. No generic reach/body/force acceptance."
+    }
+  ],
+  "walks": [
+    {
+      "points": [
+        [
+          1475,
+          9550
+        ],
+        [
+          1475,
+          10400
+        ],
+        [
+          1800,
+          10400
+        ],
+        [
+          1800,
+          10800
+        ]
+      ],
+      "minimum": 27.5,
+      "method": "Exactsegment/rectangle in fixture and each heldleaf/handle localXY;R300 wholebody, contained/retractedarms during walk. No manualforce or universal anthropometry."
+    },
+    {
+      "points": [
+        [
+          2210,
+          10500
+        ],
+        [
+          1800,
+          10800
+        ]
+      ],
+      "minimum": 160.4154417122686,
+      "method": "Exactsegment/rectangle in fixture and each heldleaf/handle localXY;R300 wholebody, contained/retractedarms during walk. No manualforce or universal anthropometry."
+    },
+    {
+      "points": [
+        [
+          1390,
+          10500
+        ],
+        [
+          1800,
+          10800
+        ]
+      ],
+      "minimum": 160.41544171226872,
+      "method": "Exactsegment/rectangle in fixture and each heldleaf/handle localXY;R300 wholebody, contained/retractedarms during walk. No manualforce or universal anthropometry."
+    }
+  ],
+  "leafRemoval": [
+    {
+      "side": -1,
+      "phase": "supported lift200;anti-lift released",
+      "solidLower": 18.455767409633836,
+      "operatorLower": 515.2657569822691,
+      "governor": "barrierwestreturn",
+      "frameLower": null,
+      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+    },
+    {
+      "side": -1,
+      "phase": "centreX1800/200S over retained low struts",
+      "solidLower": 18,
+      "operatorLower": 415.30748962861,
+      "governor": "retainedstrut0",
+      "frameLower": null,
+      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+    },
+    {
+      "side": -1,
+      "phase": "captured45 tilt; upper edge moves SOUTH",
+      "solidLower": 27.067869873716973,
+      "operatorLower": 334.0749512099967,
+      "governor": "barriercross",
+      "frameLower": 286.37289946340184,
+      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+    },
+    {
+      "side": -1,
+      "phase": "lower300 within protected geometry",
+      "solidLower": 163.0749512099967,
+      "operatorLower": 333.0749512099967,
+      "governor": "retainedstrut1",
+      "frameLower": 23.96498103596855,
+      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+    },
+    {
+      "side": -1,
+      "phase": "north through frame to exterior support",
+      "solidLower": 163.0749512099967,
+      "operatorLower": 333.0749512099967,
+      "governor": "retainedstrut1",
+      "frameLower": 23.96498103596855,
+      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+    },
+    {
+      "side": 1,
+      "phase": "supported lift200;anti-lift released",
+      "solidLower": 37.69413501035979,
+      "operatorLower": 291.6662411884872,
+      "governor": "retainedstrut1",
+      "frameLower": null,
+      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+    },
+    {
+      "side": 1,
+      "phase": "centreX1800/200S over retained low struts",
+      "solidLower": 18,
+      "operatorLower": 290.2158557914213,
+      "governor": "retainedstrut1",
+      "frameLower": null,
+      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+    },
+    {
+      "side": 1,
+      "phase": "captured45 tilt; upper edge moves SOUTH",
+      "solidLower": 27.067869873716973,
+      "operatorLower": 334.0749512099969,
+      "governor": "barriercross",
+      "frameLower": 286.37289946340184,
+      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+    },
+    {
+      "side": 1,
+      "phase": "lower300 within protected geometry",
+      "solidLower": 163.07495120999647,
+      "operatorLower": 333.0749512099969,
+      "governor": "retainedstrut0",
+      "frameLower": 23.96498103596855,
+      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+    },
+    {
+      "side": 1,
+      "phase": "north through frame to exterior support",
+      "solidLower": 163.07495120999647,
+      "operatorLower": 333.0749512099969,
+      "governor": "retainedstrut0",
+      "frameLower": 23.96498103596855,
+      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+    }
+  ],
+  "purge": {
+    "roomArea": 6.24462,
+    "mechanicalHighLps": 16,
+    "fourACHAt3100Lps": 21.509246666666666,
+    "fourACHAt2800Lps": 19.42770666666667,
+    "conservativeGeometricNetAreaM2": 0.6934629045341648,
+    "additionalHardwareShadowMaximumM2": 0.05,
+    "oneTwentiethFloorM2": 0.31223100000000004,
+    "scope": "Geometric criterion screen with80degree opening and retained full grille, not measured air delivery, applicablePartO or compliance. Fixedglass does not erase conditional newwetroompurge duty."
+  },
+  "negative": {
+    "oldGap15With27Finish": -12,
+    "IAS75": -10,
+    "old90LeftArmAtWC": -39.5,
+    "oldFullCrossBarrierCabinetOverlap": 150,
+    "opaqueHandleEnvelopeForearm": -5.320603802512586
+  },
+  "remaining": [
+    "Actual complete frame/leaf/hinge/handle/joint and matched finished dimensional/tolerance qualification; no suppliedproductadoption.",
+    "Full temporaryguard/componentstorage/erection/support/takeover and exteriorguard/capture/hoist/rack fullassembly proof; present barriers are a new conditionalgeometry, not actualratedequipment.",
+    "Actual jambreceivers/anchors/weathercollars/thermal and security/classification admission; no structuralcapacity through trim/frame/weatherleaf.",
+    "Actual NWcorner roof/hip/edge/gutter/fullappliance solids remain STR/MAT scope; no SWmirror or oldordinary extrusion.",
+    "IAS must deliberately reconcile85profile/body/rail/mass/storage requirements; no IASadoption or wholeexport pass."
+  ]
+}
