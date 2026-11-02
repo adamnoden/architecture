@@ -272,6 +272,18 @@
     "oneEndBlockedMinimumStaticRiseMm": 44.975,
     "remainingOneSideLitresPerSecond": 8.31138,
     "full100mmPipeIdealVelocityMperS": 1.0582377687320936,
+    "bothEndsBlockedNoOutflow": {
+      "model": "One side, both endpoint outlets blocked; no discharge or overflow credited",
+      "grossRectangularWidthMm": 300,
+      "highestInvertDepthMm": 150,
+      "lowestInvertDepthMm": 194.97500000000036,
+      "idealLinearInvertGrossStorageLitres": 930.915037499996,
+      "extremeDeepestInvertGrossUpperLitres": 1052.280075000002,
+      "oneSlope216LitresPerSecond": 8.31138,
+      "idealTopFillSecondsAt216": 112.00487012986964,
+      "absoluteGrossUpperSecondsAt216": 126.60714285714309,
+      "limit": "Gross rectangular static geometry only; real usable storage and first harmful spill may be lower. No outlet, receiving route, overflow or watertightness is established."
+    },
     "outletCentresMm": [
       [
         -1750,
