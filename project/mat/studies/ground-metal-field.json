@@ -198,6 +198,7 @@
       "temporaryBottomZ_mm": -461,
       "supports": "36 trial prop heads in an isolated cell at 200 mm grid below double 40 mm angles; neighbouring cells may share edges. Actual whole-site count, prop feet, foundation, lateral stability, access, loads and removal route not designed.",
       "centralWetRCTributary_kN": 0.2,
+      "centralWetRCPlusListedCellMetalUniform_kN": 0.2191249532887487,
       "fieldStuds_count": 36,
       "fieldStud_mm": [
         6,
