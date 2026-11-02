@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 18,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg7-envelope-thermal"
   },
   "claimedAt": "2026-11-02T07:37:31.007Z",
-  "heartbeatAt": "2026-11-02T08:35:47.760Z",
-  "expiresAt": "2026-11-02T09:20:47.760Z",
+  "heartbeatAt": "2026-11-02T08:46:05.875Z",
+  "expiresAt": "2026-11-02T08:46:05.875Z",
   "branch": "work/zerg-recovery-engineering-integration",
   "predecessor": {
     "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
@@ -39,5 +39,7 @@
     "next": "Root observes exact-head CI and runs fresh canonical merge-check against shared PR #1254 head, expected-head merges if earned, then releases MAT lease. Six MAT-ENVELOPE exits remain open.",
     "blocker": "Dry2D screen does not admit dynamic moisture, actual classified ceiling properties, 3D frame/post/collar heat, complete fire/material/site/physical assembly; STR actual collector offset shear needs links and joint proof."
   },
-  "pr": 1254
+  "pr": 1254,
+  "releasedAt": "2026-11-02T08:46:05.875Z",
+  "releaseReason": "handoff"
 }
