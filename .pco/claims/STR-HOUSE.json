@@ -9,12 +9,12 @@
     "label": "zerg4-structure-roof"
   },
   "claimedAt": "2026-11-02T00:02:13.027Z",
-  "heartbeatAt": "2026-11-02T00:28:50.675Z",
-  "expiresAt": "2026-11-02T01:13:50.675Z",
+  "heartbeatAt": "2026-11-02T00:37:27.944Z",
+  "expiresAt": "2026-11-02T01:22:27.944Z",
   "checkpoint": {
-    "evidence": "PR1238 head5ffcc6b28251cdd0732fa634b090568ea456f4b7 treefc8d6385c748a382e7347fb92a5d9a2de81b26c4 exact native387812a9; parentcurrentmainf462415c; HAD068e and MATf376 roof bound; fullroof/circulararch/staircomparison sourcechecks and actualrenders PASS",
-    "next": "Independent bounded roof/arch review, then finite cornerjacks/collector/lateral and actual170stair joint continuation; no source edits during review if frozen by root",
-    "blocker": "STR-HOUSE incomplete: corner member topology, arch material/pierhead joins, collector/bearing/lateral, actual service and entrance routes remain; known400node rejected"
+    "evidence": "PR1238 correctedhead9867b1994533f0d0f3114919225aa89b50eb2f1a treef1bbb8d46de9c01dbf80788f8c9221670786dd87 exactnative85ada463; collectorownweight true1300bearing reactions conserveN/M; coherentbothpieractions; Python--check/diffcheck and actualupdatedrenderPASS; latestmainf462ancestryverified",
+    "next": "Focused independent delta review and root exactheadCI/preflight; freeze source while reviewing",
+    "blocker": "STR-HOUSE remains incomplete; unchanged cornerjack/collectorbearing/lateral/pierhead/roofjoint/service/entrance and foundationconcept conditions, known400node rejected"
   },
   "branch": "work/zerg4-structure-roof",
   "predecessor": {
