@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 20,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "cb17698a-faa2-4295-b195-ad99536bf953",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg7-envelope-corner-junction"
   },
   "claimedAt": "2026-11-02T10:51:13.775Z",
-  "heartbeatAt": "2026-11-02T12:49:29.263Z",
-  "expiresAt": "2026-11-02T13:34:29.263Z",
+  "heartbeatAt": "2026-11-02T12:56:44.093Z",
+  "expiresAt": "2026-11-02T12:56:44.093Z",
   "checkpoint": {
     "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; scoped generators, default HAD and repository checks passed",
     "next": "Root observes exact-head CI and runs fresh publication preflight; controller releases MAT20 after verified merge and claims MAT21",
@@ -39,5 +39,7 @@
       "blocker": "Seat tolerance/bearing and STR adoption, exact components, 3D movement/fire/site/physical verification, ridge/hip/valley and six MAT rows remain open"
     }
   },
-  "pr": 1273
+  "pr": 1273,
+  "releasedAt": "2026-11-02T12:56:44.093Z",
+  "releaseReason": "completed"
 }
