@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 20,
-  "state": "released",
-  "leaseId": "c2ab380b-1e6d-41f7-bb7b-6a49a91f41fb",
+  "generation": 21,
+  "state": "claimed",
+  "leaseId": "fbc7fe0a-7e3c-46b2-93d7-cca0f1e48297",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-structure-corner"
+    "label": "zerg-str-next-nodes"
   },
-  "claimedAt": "2026-11-02T10:56:48.149Z",
-  "heartbeatAt": "2026-11-02T12:56:24.257Z",
-  "expiresAt": "2026-11-02T12:56:24.257Z",
-  "branch": "work/zerg-corner-convergence",
+  "claimedAt": "2026-11-02T12:58:14.324Z",
+  "heartbeatAt": "2026-11-02T12:58:14.324Z",
+  "expiresAt": "2026-11-02T13:43:14.324Z",
+  "checkpoint": {
+    "evidence": "Fresh actual main fad06e513046ad1d198b9d48b2e0505a3384616e; reviewed merged PR 1273; previous generation 20 released",
+    "next": "Compare constant-depth cold ring with local tapers through actual SW adjacent nodes and windows; extend remaining roof-face load path",
+    "blocker": "HOUSE, full signed actions, pile/soil and envelope remain open"
+  },
+  "branch": "work/zerg-str-next-nodes-20261102",
   "predecessor": {
-    "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
-    "generation": 19,
-    "branch": "work/zerg-recovery-constructive-actions",
-    "pr": 1266,
+    "leaseId": "c2ab380b-1e6d-41f7-bb7b-6a49a91f41fb",
+    "generation": 20,
+    "branch": "work/zerg-corner-convergence",
+    "pr": 1273,
     "checkpoint": {
-      "evidence": "Shared PR #1266 head d941e01d8f4194112020360c0af536d8ffafdcd4 tree 611be873bf9db3f600966297bcae0f2e05d8c87f; reviewed STR7119962 true parent, owned blobs unchanged, independent narrow PASS",
-      "next": "Root observes exact-head CI and fresh per-owner publication preflights, then expected-head merge if earned",
-      "blocker": "Actual layers, arches, lower and weather walls, diaphragm and warm/cold support transfer remain unqualified; STR-HOUSE open"
+      "evidence": "Shared PR 1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; STR source reviewed and rebound; MAT pin reconciled",
+      "next": "Root observes exact-head CI, runs owner preflights and merges if earned; then close out STR 20 and reacquire for full corner route",
+      "blocker": "Whole-house signed actions, cold-arm and pile transfer, envelope and site remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
-    "generation": 19,
-    "branch": "work/zerg-recovery-constructive-actions",
-    "pr": 1266,
+    "leaseId": "c2ab380b-1e6d-41f7-bb7b-6a49a91f41fb",
+    "generation": 20,
+    "branch": "work/zerg-corner-convergence",
+    "pr": 1273,
     "checkpoint": {
-      "evidence": "Shared PR #1266 head d941e01d8f4194112020360c0af536d8ffafdcd4 tree 611be873bf9db3f600966297bcae0f2e05d8c87f; reviewed STR7119962 true parent, owned blobs unchanged, independent narrow PASS",
-      "next": "Root observes exact-head CI and fresh per-owner publication preflights, then expected-head merge if earned",
-      "blocker": "Actual layers, arches, lower and weather walls, diaphragm and warm/cold support transfer remain unqualified; STR-HOUSE open"
+      "evidence": "Shared PR 1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; STR source reviewed and rebound; MAT pin reconciled",
+      "next": "Root observes exact-head CI, runs owner preflights and merges if earned; then close out STR 20 and reacquire for full corner route",
+      "blocker": "Whole-house signed actions, cold-arm and pile transfer, envelope and site remain open"
     }
-  },
-  "pr": 1273,
-  "checkpoint": {
-    "evidence": "Shared PR 1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; STR source reviewed and rebound; MAT pin reconciled",
-    "next": "Root observes exact-head CI, runs owner preflights and merges if earned; then close out STR 20 and reacquire for full corner route",
-    "blocker": "Whole-house signed actions, cold-arm and pile transfer, envelope and site remain open"
-  },
-  "releasedAt": "2026-11-02T12:56:24.257Z",
-  "releaseReason": "completed"
+  }
 }
