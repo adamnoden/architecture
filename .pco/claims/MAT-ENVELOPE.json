@@ -9,8 +9,8 @@
     "label": "zerg7-envelope-recovery"
   },
   "claimedAt": "2026-11-02T07:20:02.264Z",
-  "heartbeatAt": "2026-11-02T07:27:21.838Z",
-  "expiresAt": "2026-11-02T08:12:21.838Z",
+  "heartbeatAt": "2026-11-02T07:29:00.070Z",
+  "expiresAt": "2026-11-02T08:14:00.070Z",
   "branch": "work/zerg7-envelope-air-joins",
   "predecessor": {
     "leaseId": "fc6a0e5c-bc22-43ab-988d-e5f49df36802",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote head e09075b75ba0917fa2f595011fb36a15a7a064d8; four MAT blobs match isolated local commit e97636070868598cb8db9c7122513d4971c0b301. q550 primary intersection and proposed all-around collar generated and visually inspected; edge --check and warm grid --check pass; six exits stay open.",
-    "next": "Create Work/Lease PR, inspect exact-head CI, owner integrates after fresh merge preflight. Keep MAT-ENVELOPE open.",
-    "blocker": "Frame weld/end closure, movement, post/breather collars, joined hygrothermal/50-neck and classified ceiling perimeter remain unqualified; no whole roof, product, site, physical or material admission."
-  }
+    "evidence": "PR #1246 head e09075b75ba0917fa2f595011fb36a15a7a064d8, four remote blobs equal local commit e9763607; q550 primary-frame saddle/AVCL collars source-bound. Generator --check and warm-grid --check pass; rendered A3 inspected.",
+    "next": "Root to inspect exact-head CI and current main, run fresh canonical merge-check against PR #1246 head, merge if earned, release lease. MAT-ENVELOPE six exits stay open.",
+    "blocker": "Structural frame weld/end closure, post and breather collars, movement, joined moisture/thermal and classified ceiling96 perimeter remain open; no whole assembly or material/site/physical admission."
+  },
+  "pr": 1246
 }
