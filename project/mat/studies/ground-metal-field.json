@@ -3,7 +3,8 @@
   "sources": {
     "project/had/studies/open-north-loggia.json": "25faad2c4d40df2b7da7212f73808843a88d2f52",
     "project/mat/studies/warm-receiving-grid.json": "a5bff9f37b8d78dfb32359427314b4013fe8a45e",
-    "project/str/studies/sw-corner-station.json": "2c215912f4b55ca4587e32763bf66160d4b433d0"
+    "project/str/studies/sw-corner-station.json": "2c215912f4b55ca4587e32763bf66160d4b433d0",
+    "project/mat/studies/joined-ground-boundary.json": "2a74ab4e2e88bf80405a5ca36a7eaabcd1e93fc6"
   },
   "fieldControl": {
     "outerCoreBounds_mm": [
@@ -80,7 +81,8 @@
       "HADmargin_mm": -38,
       "result": "FAIL on unchanged HAD ground slab: 2 mm clear vs 40 mm trial rail, 38 mm overlap. MAT alternative permits nominal spatial reservation only; adoption, hanger anchorage and insulation repair remain unproved."
     },
-    "girder": "Even in MAT slab alternative, field top \u2212382 is only 2 mm below \u2212380 girder soffit; a 40 mm top-side rail cannot continue through it. End supports, welded transitions, reinforced contact and accessible sequencing are not designed."
+    "girder": "Even in MAT slab alternative, field top \u2212382 is only 2 mm below \u2212380 girder soffit; a 40 mm top-side rail cannot continue through it. End supports, welded transitions, reinforced contact and accessible sequencing are not designed.",
+    "courtServiceAlternative": "The distinct joined-ground service reference starts its DPC field at \u2212380; \u2212383 lies within the upper 3 mm of that DPC band. Its W1 carrier crown \u2212378 and invert \u2212538 straddle the metal plane; a flat sheet intersects the carrier 5 mm below its crown. The independent W2 tray, air lid \u2212310..\u2212316 and seal to \u2212318 also require their own continuous, accessible transitions. This is an incompatible reference comparison, not an assertion both designs are selected."
   },
   "panelSensitivity": {
     "panel_mm": [
