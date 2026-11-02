@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 15,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e688ca41-8539-42c2-bd4f-551257455f4d",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg7-structure-recovery"
   },
   "claimedAt": "2026-11-02T07:15:34.807Z",
-  "heartbeatAt": "2026-11-02T07:49:05.457Z",
-  "expiresAt": "2026-11-02T08:34:05.457Z",
+  "heartbeatAt": "2026-11-02T08:02:40.037Z",
+  "expiresAt": "2026-11-02T08:02:40.037Z",
   "checkpoint": {
     "evidence": "Shared draftPR1249 actualhead522d17aef502593a2f5a132100e854c5f527d471/treeba0e3578480a78eafb2557fd01ee5c2bbdaa944e fetched; all7STRfiles exactlyequal reviewed2ac4e451. True main42aa+STR2ac4+Servicesfe632 histories preserved. Root reports4generators/typecheck/repointegrity passed; CI not observed by worker",
     "next": "Root exactheadCI and shared publication preflight; integrate bounded source only after focusedreview and required checks pass",
@@ -37,5 +37,7 @@
       "blocker": "Fulljoints/guard/corner/lateral/thermalinterface remain unearned; oldnodefailure retained without finalpilefabrication exit"
     }
   },
-  "pr": 1249
+  "pr": 1249,
+  "releasedAt": "2026-11-02T08:02:40.037Z",
+  "releaseReason": "handoff"
 }
