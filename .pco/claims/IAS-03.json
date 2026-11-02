@@ -9,14 +9,14 @@
     "label": "zerg-ias-wet-export"
   },
   "claimedAt": "2026-11-02T08:47:47.148Z",
-  "heartbeatAt": "2026-11-02T10:30:30.796Z",
-  "expiresAt": "2026-11-02T11:15:30.796Z",
+  "heartbeatAt": "2026-11-02T10:41:02.493Z",
+  "expiresAt": "2026-11-02T11:26:02.493Z",
   "checkpoint": {
-    "evidence": "Verified draftPR1262 head3a607a9f3220ec98bcfb81a6a4e7f6c3a3937c98 tree406b1013dc62d87ee74fdd1b9e61b9abe70e709e integrates main207e with actual prior remote90bdf8 parent. Five IAS blobs exactly match independently reviewed ebd9f469/tree15e3501a; generator/check/diff/repo and renderedSVG pass. Work/IAS17 footer present before PR creation. Known-house/fullassembly omitted clash hold explicit.",
-    "next": "Hold exact five reviewed IAS blobs for root combined composition with peer packets, soleCI observation and canonical preflight/merge. Keep source frozen; release only after verified merged notice.",
-    "blocker": "Bounded modeled solids/prisms and abstract support states only. Actual roof/eaves/gutter/purlin and full apparatus/window/receiver clash survey OMITTED; actualkit/windowfirstrelease/apparatus/site/ground/force remain unadmitted; no full export or IAS completion."
+    "evidence": "Deliberate shared association PR1263 branchwork/zerg-recovery-roof-export head247608959f4557c1974a941a5a48708939cd1788 tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b. Root verifies all five independently reviewed IAS blobs exact, six oldHAD outputs unchanged and all generators/repo integrity passed. Worker source frozen; no independentCI claim.",
+    "next": "Hold exact shared source for root soleCI observation, fresh canonical preflight and expected-head merge. Maintain lease; release only after verified merged notice.",
+    "blocker": "Bounded modeledsolids/prisms and abstract supportstates only. Known-house roof/eaves/gutter/purlin and full apparatus/window/receiver assembly clash survey OMITTED. Actualkit/firstrelease/window/apparatus/site/ground/force unadmitted; no full export or IAS completion."
   },
-  "branch": "work/zerg-ias-wet-export-20261102",
+  "branch": "work/zerg-recovery-roof-export",
   "predecessor": {
     "leaseId": "a007262b-2785-40fb-9a7a-008c44be278d",
     "generation": 16,
@@ -39,5 +39,5 @@
       "blocker": "IAS remains incomplete. Ownforearm2.752 nominal/no tolerance; actual apparatus/material/grip/force/recovery and guarded wet export/current occurrence/IS acceptance remain open."
     }
   },
-  "pr": 1262
+  "pr": 1263
 }
