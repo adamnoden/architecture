@@ -1,0 +1,109 @@
+{
+  "status": "Conditional support-envelope redesign and separate ideal straight-beam stress; no engineered support pass",
+  "sources": {
+    "project/rwt/studies/integrated-transfer-deck.json": "3a773461254efdaff13cd4b805dedd24f0dd0448",
+    "project/rwt/studies/integrated-neighbour-clearance.json": "869a800a38cf56da32125939d130f05f98b5b3f5"
+  },
+  "guard": {
+    "y": 4780,
+    "midTop": 6214,
+    "postX": [
+      4350,
+      5175,
+      6000,
+      6825,
+      7650
+    ],
+    "postDiameter": 48
+  },
+  "field": {
+    "top": 6310,
+    "thickness": 2,
+    "backY": 4382
+  },
+  "collector": {
+    "bottom": 6260,
+    "thickness": 2,
+    "y": [
+      5100,
+      5300
+    ]
+  },
+  "support": {
+    "axisY": 5425,
+    "beamX": [
+      4720,
+      5900,
+      6100,
+      7290
+    ],
+    "nominalWidth": 50,
+    "front": {
+      "y": [
+        4382,
+        4900
+      ],
+      "top": 6308,
+      "depth": 80
+    },
+    "incline": {
+      "y": [
+        4900,
+        5100
+      ],
+      "top": [
+        6308,
+        6240
+      ],
+      "depth": 80
+    },
+    "rear": {
+      "y": [
+        5100,
+        5425
+      ],
+      "top": 6240,
+      "depth": 80
+    },
+    "scope": "Stepped envelopes and centre crosshead are authored geometry; connection, step transition, restraint, actual member stiffness and forces are unproved."
+  },
+  "checks": {
+    "straight100AgainstMidrail": -6,
+    "straight80AgainstMidrail": 14,
+    "straight80IntoCollector": 50,
+    "steppedFrontToMidrail": 14,
+    "steppedRearToCollector": 18,
+    "nearestBeamToPost": 51,
+    "shaftCrossingY": [
+      5150,
+      5350
+    ],
+    "beamTopToChuteBottom": 15,
+    "eastBeamToChute": 5,
+    "westBeamToChute": 15
+  },
+  "idealStraightControl": {
+    "section": "RHS 80 x 50 x 5; 80 vertical; perfect clamp",
+    "illustrativePointLoadKg": 300,
+    "realMassEstablished": false,
+    "E_MPa": 200000,
+    "I_mm4": 990000,
+    "Z_mm3": 24750,
+    "spanMm": 1043,
+    "guardDistanceMm": 645,
+    "rootMoment_Nmm": 3069549,
+    "rootStress_MPa": 124.02218181818182,
+    "tipDeflectionMm": 5.621558602863637,
+    "guardDeflectionMm": 2.5600287477272725,
+    "remainingGuardGapMm": 11.439971252272727,
+    "scope": "Single straight cantilever with 300 kg static point load at free end. It is not a structural calculation for the stepped, multi-beam, weathered or dynamically loaded assembly."
+  },
+  "limits": [
+    "An unstepped 100-deep member overlaps the inner midrail by 6 mm; an unstepped 80-deep member clears that rail by 14 but penetrates the collector underside by 50.",
+    "The nominal stepped rear sits 18 below a 2 mm collector underside; real fittings, welds, fixing clips, movement and hydraulic enclosure can remove that clearance.",
+    "Four beam axes leave 51 nominal at the nearest 48 post; the central crosshead and actual bracing must clear the post, ports, workers, chutes, door and full load.",
+    "All four rear beams cross the overflow shaft y5150–5350 at +6160…+6240. They need sealed wall penetrations, retained structural continuity and a water-obstruction/splash test; the east beam is only 5 from the adjacent chute in plan and its top only 15 below that chute bottom.",
+    "The ideal straight-beam control cannot qualify a stepped member, crosshead, plate, steel grade, joint, scaffold, anchor, water load, manufacturing, deflection, uplift or human work. The 300 kg is a chosen stress, not a measured payload.",
+    "No water, weather, blocked shaft, safe access, rescue or physical acceptance is established."
+  ]
+}
