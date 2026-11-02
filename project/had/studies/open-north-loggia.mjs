@@ -269,9 +269,10 @@ for(const key of ["washer","sink","rearServiceChase","valveBay","electricalStati
 upper.principal[1]-=25;upper["principal-head"][1]-=25;Object.assign(candidate.furnitureRequirements.principalBed,{whole:[9450.5,9150,2090,1600],southPassage:664,remainingPassageAfterLoss:614});Object.assign(candidate.furnitureRequirements.principalBed.maintenance,{whole:[9450.5,9650,2090,1600],swept:[9450.5,9150,2090,2100],nominalStageGap:210,after100Pad:110});
 ground["study-desk"]=serviceNumeric.studyRewind.desk;upper.bed4[1]-=100;upper["bed4-head"][1]-=100;candidate.furnitureRequirements.bed4.whole=[5405.5,9250,2090,1500];
 candidate.livingRadiatorMaintenance={...serviceNumeric.livingWestRenewal,scope:'DirectMATcontract; SofaA650E beforeWest radiator/supplyservice; restoreafterwork. Actualequipment/force unqualified.'};
+function enclosureForLevel(level){return outerDefs.map(([id,a,b])=>({id,a,b,t:429.5,finishedFaces:id==='outer-south'||id==='outer-west'?[0,429.5]:id==='outer-north'||id==='outer-east'?[11570.5,12000]:id==='court-south'||id==='court-west'?[3820.5,4250]:[7750,8179.5],holes:openings[level].filter(o=>o.wall===id&&['door','open-loggia'].includes(o.kind)).map(o=>[o.centre-o.width/2,o.centre+o.width/2])}));}
 function obstacles(level,{closedCross=false,omit=[],extra=[],includeTrim=true}={}){
  const walls=level==='GROUND'?groundWalls:upperWalls;
- const enclosure=outerDefs.map(([id,a,b])=>({id,a,b,t:429.5,finishedFaces:id==='outer-south'||id==='outer-west'?[0,429.5]:id==='outer-north'||id==='outer-east'?[11570.5,12000]:id==='court-south'||id==='court-west'?[3820.5,4250]:[7750,8179.5],holes:openings[level].filter(o=>o.wall===id&&['door','open-loggia'].includes(o.kind)).map(o=>[o.centre-o.width/2,o.centre+o.width/2])}));
+ const enclosure=enclosureForLevel(level);
  const trim=r=>[r[0]-18,r[1]-18,r[2]+36,r[3]+36];
  const r=[...wallRects([...walls,...enclosure]).map(([id,r])=>[id+(includeTrim?'+18trim':''),includeTrim?trim(r):r]),...candidate.fixedObstacles[level].map(([id,r])=>[id,!includeTrim||candidate.wetBoundaryPatches.some(([name])=>name===id)||id==='principalEastExtraWetLining'?r:id==='stairMidPostFinished'?[r[0],r[1]-18,r[2]+18,r[3]+36]:trim(r)]),...Object.entries(level==='GROUND'?ground:upper),['stair-plan-void',b.stair],['court-outdoor-not-indoor-shortcut',[4250,4250,3500,3500]]];
  if(level==='FIRST')r.push(...candidate.stairGuard.firstFloorGuards,['entrance-floor-void',b.void],...bedroomLeaves,['principal-bath-slider-closed',[9875,8442,950,44]]);
@@ -593,9 +594,9 @@ candidate.knownInterfaces=['STRownsactualfloor/roof/arch/foundation/guardloadand
 // Keep GROUND loggia/portal and FIRST ordinary outer-north roles distinct.
 const northDef=outerDefs.find(([id])=>id==='outer-north'),courtDef=outerDefs.find(([id])=>id==='court-north');
 if(!northDef||!courtDef)throw Error('HAD exterior scene definitions changed');
-const sceneWall=(level,def)=>({id:def[0],segment:[def[1],def[2]],thickness:429.5,
- finishedFaces:def[0]==='outer-north'?[11570.5,12000]:[7750,8179.5],
- openings:openings[level].filter(o=>o.wall===def[0]).map(o=>({id:o.id,kind:o.kind,centre:o.centre,width:o.width}))});
+const sceneWall=(level,def)=>{const wall=enclosureForLevel(level).find(w=>w.id===def[0]);if(!wall)throw Error('HAD scene enclosure missing');return{id:wall.id,segment:[wall.a,wall.b],thickness:wall.t,
+ finishedFaces:wall.finishedFaces,
+ openings:openings[level].filter(o=>o.wall===def[0]).map(o=>({id:o.id,kind:o.kind,centre:o.centre,width:o.width}))}};
 const northProjection={status:'Selected HAD scene occurrence projection only; MAT/STR joints and ceiling remain separate.',
  selectedHAD: candidate.selection.identity,
  first:{outerNorth:sceneWall('FIRST',northDef),courtNorth:sceneWall('FIRST',courtDef),

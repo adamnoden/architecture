@@ -12,7 +12,7 @@ EXPECTED={
  'project/str/studies/open-loggia-support.json':'20dec4384d09a0d02075fdd34a247e775532763b',
  'project/mat/studies/loggia-roof-edge.json':'731c85d24e775259f1cf84d264d4ceaf75d89774',
  'project/mat/studies/loggia-roof-wall-thermal.json':'3e6c7e91d80249e3ca1c16081d76bd36c88a4345'}
-GENERATOR_SHA256='cfab4dffa6dd8212dac041577b67e675d0419adc6b3387af1cd27f186558a9b7'
+GENERATOR_SHA256='9bc7b9672a7ee451115ac87519faa279ac40a87a470a284bacb05eed9da25537'
 def git(*a):return subprocess.check_output(['git',*a],cwd=ROOT,text=True).strip()
 def blob(raw):return hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()
 def load(path,expected):
