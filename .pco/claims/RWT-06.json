@@ -9,12 +9,12 @@
     "label": "zerg-rwt06-temporary-rain-recovery"
   },
   "claimedAt": "2026-11-02T08:13:05.113Z",
-  "heartbeatAt": "2026-11-02T08:42:09.043Z",
-  "expiresAt": "2026-11-02T09:27:09.043Z",
+  "heartbeatAt": "2026-11-02T08:49:45.268Z",
+  "expiresAt": "2026-11-02T09:34:45.268Z",
   "checkpoint": {
-    "evidence": "PR #1255 corrected head 8c03df7261c42280b869e3eca1c4abc64c21e7dd, tree d0e3b2d49a3eb2c52f8bdab3b9f95614a6c05e71, remote fetched zero diff; RWT generator, repository integrity, typecheck and diff check PASS",
-    "next": "Independent QA and exact-head CI on corrected head; fresh publication preflight before root merge; release after verified integration",
-    "blocker": "Full inlet/first-weak-join and physical hydraulic/temporary works/high-eave admission remain open; bounded development only"
+    "evidence": "PR #1255 frozen corrected head bf77955040467acbd854886e7ec7a096f8a7a530 tree 824522aeab79b1272e74871f14570a84a1f65a27, remote fetched zero diff; SVG rendered and inspected; source generators, repository integrity, typecheck PASS",
+    "next": "Independent QA and exact-head CI on bf779550; fresh canonical publication preflight before root merge; release after verified integration",
+    "blocker": "Full inlet/first-weak-join, both-receiver hydraulic, temporary works, site and high-eave admission remain open; bounded development only"
   },
   "branch": "work/rwt06-temporary-rain-recovery-20261102",
   "predecessor": {
