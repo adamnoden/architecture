@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 15,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9907d87c-6e91-4fcc-9aad-6786f8ff487b",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg5-ias-closeout"
   },
   "claimedAt": "2026-11-02T00:16:03.173Z",
-  "heartbeatAt": "2026-11-02T02:28:55.735Z",
-  "expiresAt": "2026-11-02T03:13:55.735Z",
+  "heartbeatAt": "2026-11-02T07:16:08.080Z",
+  "expiresAt": "2026-11-02T07:16:08.080Z",
   "checkpoint": {
     "evidence": "Deliberate shared association PR1244 work/zerg5-house-integration-20261102 head2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 baseffbe3689 verified by root and provider. IAS reviewed sourcefaec3e04 is preserved actual history; full-delta/focused clamp High PASS, true default IAS reproduction and56 critical cross-owner projections passed without overrides in preparer candidate.",
     "next": "Hold exact shared head for root sole fullCI observation, fresh canonical per-node preflights and expected-head merge. Release only after verified merged notice.",
@@ -39,5 +39,7 @@
       "blocker": "Partial IAS progress only: head-first sink and full guarded wet export/IS reconciliation remain internal work; no node completion or physical/material admission."
     }
   },
-  "pr": 1244
+  "pr": 1244,
+  "releasedAt": "2026-11-02T07:16:08.080Z",
+  "releaseReason": "completed"
 }
