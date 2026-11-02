@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 23,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "71356323-b777-4f9d-8ac2-4e8f09fb942b",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rwt06-temporary-rain"
   },
   "claimedAt": "2026-11-02T07:44:45.811Z",
-  "heartbeatAt": "2026-11-02T08:10:10.903Z",
-  "expiresAt": "2026-11-02T08:55:10.903Z",
+  "heartbeatAt": "2026-11-02T08:11:40.861Z",
+  "expiresAt": "2026-11-02T08:11:40.861Z",
   "branch": "work/rwt06-temporary-rain-20261102",
   "predecessor": {
     "leaseId": "afeca720-3fcd-457c-a26c-386f7d058324",
@@ -38,5 +38,7 @@
     "evidence": "Current main d3f254c0 contains merged PR #1245 at 42aaecb3; predecessor branch 42aaecb3 has no tracked changes; old mailbox requests all answered; temporary-rain investigation was read-only",
     "next": "Release generation 23 as handoff; acquire fresh generation for directed RWT-06 temporary route comparison",
     "blocker": "Connected temporary route and whole-liner installation/removal remain unproved"
-  }
+  },
+  "releasedAt": "2026-11-02T08:11:40.861Z",
+  "releaseReason": "handoff"
 }
