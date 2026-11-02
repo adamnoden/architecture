@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 16,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "8aa8586f-26ce-4d85-b055-6a74ad5121f9",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-structure-fallback"
   },
   "claimedAt": "2026-11-02T08:04:45.848Z",
-  "heartbeatAt": "2026-11-02T08:35:34.322Z",
-  "expiresAt": "2026-11-02T09:20:34.322Z",
+  "heartbeatAt": "2026-11-02T08:46:13.834Z",
+  "expiresAt": "2026-11-02T08:46:13.834Z",
   "checkpoint": {
     "evidence": "Shared draft PR #1254 actual head fb2f1271d609dceb1554255a9cf621337a3fa9aa/treeaaed5e9f4fd8a9ed9f4c757326a54214996be114 verified; STR four files exactly equal reviewed b2f164ad, which is a true parent. Independent bounded STR review passed, no full HOUSE acceptance.",
     "next": "Root observes exact-head CI, checks all four owner leases and fresh canonical publication preflights, then merges if earned; STR worker releases only after verified merged notice",
@@ -39,5 +39,7 @@
       "blocker": "STR-HOUSE remains incomplete; parentroof/corner/lateral, landingEWenddevelopment and completephysicalhouse loadpaths are not admitted"
     }
   },
-  "pr": 1254
+  "pr": 1254,
+  "releasedAt": "2026-11-02T08:46:13.834Z",
+  "releaseReason": "handoff"
 }
