@@ -9,8 +9,8 @@
     "label": "zerg-services-constructive-cooker"
   },
   "claimedAt": "2026-11-02T10:13:45.252Z",
-  "heartbeatAt": "2026-11-02T10:30:34.063Z",
-  "expiresAt": "2026-11-02T11:15:34.063Z",
+  "heartbeatAt": "2026-11-02T10:45:27.380Z",
+  "expiresAt": "2026-11-02T11:30:27.380Z",
   "predecessor": {
     "leaseId": "842350f9-bdfb-4597-88f3-3f4d142fc0f8",
     "generation": 14,
@@ -35,8 +35,8 @@
   },
   "branch": "work/zerg9-services-constructive-cooker",
   "checkpoint": {
-    "evidence": "Remote preliminary three-file constructive checkpoint 3033569e22d26cede8f693fc101c776798dd2c75 tree ec4d6bd9fde27ff886a15b272190a3d32554816c, exact local match; source-pinned allocation/pre-arm generator pass; product/material/physical gates unresolved",
-    "next": "Independent bounded review then draft PR and root integration; investigate actual pressure/control and cill constraints without selection",
-    "blocker": "Actual Ø400 pressure loss, EPDM material, OEM hood trip, first release/weather/fire and net high-temperature plant proof absent"
+    "evidence": "Frozen remote 0ae9950be4542ca453493b86455f5c9d7e6b36f0 tree 280cbbb7ae6754e8132b9908456e58e8ec655909; three-file exact equality, generator/diff pass and independent bounded product/thermal/topology QA pass; no adoption",
+    "next": "Open bounded draft PR and root integration decision; preserve all actual OEM/material/product/fan/thermal/site gates",
+    "blocker": "DTBCU frequent-modulation OEM duty, EPDM material, pressure/capture, hood protective interface, staged support/weather/fire and plant/emitters unqualified"
   }
 }
