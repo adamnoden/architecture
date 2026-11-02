@@ -6,6 +6,22 @@
     "project/str/studies/sw-corner-station.json": "2c215912f4b55ca4587e32763bf66160d4b433d0",
     "project/mat/studies/joined-ground-boundary.json": "2a74ab4e2e88bf80405a5ca36a7eaabcd1e93fc6"
   },
+  "sheetEvidence": {
+    "manufacturer": "Aperam",
+    "family": "316L stainless; page title EN 1.4404",
+    "page": "https://www.aperam.com/product/316l-1-4404/",
+    "dataSheet": "https://www.aperam.com/sites/default/files/documents/FT_316L_en_web.pdf",
+    "declaredSheetThicknessRange_mm": [
+      0.4,
+      15
+    ],
+    "declaredSheetWidthMax_mm": 2000,
+    "typicalDensity_kg_m3": 7900,
+    "typicalConductivity_W_mK": 15,
+    "typicalE_GPa": 200,
+    "meanExpansion_20_100C_perK": 1.6e-05,
+    "typicalValueLimit": "Family data and dimensional ranges only: exact supplied designation, thickness, finish, film/coatings, filler, forming, corrosion/site suitability and system/gas/water acceptance not established. Page heading 1.4404 and norms list 1.4401 require actual supplied identity."
+  },
   "fieldControl": {
     "outerCoreBounds_mm": [
       262.5,
@@ -28,6 +44,7 @@
     "grossControlArea_m2": 103.908875,
     "sheetThickness_mm": 1,
     "grossSheetMass_kg_at_7850": 815.68466875,
+    "grossSheetMass_kg_at_aperam_typical7900": 820.8801125,
     "scope": "Bounding shape only: door/threshold returns, service openings, joints, structural bands, support cuts and actual coverage are not laid out. This is not a cut list or net quantity."
   },
   "datum_mm": {
@@ -273,6 +290,7 @@
     "flatControl_m2": 0.8425199999999998,
     "sheetMass_kg_at_1mm_7850": 12.660479999999998,
     "extraSideMass_kg": 6.046698,
+    "sheetMass_kg_at_aperam_typical7900": 12.741119999999999,
     "route": "Field at \u2212381 turns down the two exterior 1003-wide box faces, passes under the RC underside \u2212839.5, and rises on the other side; 840 length is one part of a continuous wrap, not a removable section. W1 and its lid remain above the retained field.",
     "hold": "Node-side DPC/bearing piers may intersect the fold; ends, turns, fixed collars, continuous corner welds, concrete-on-metal support and friction separation, W2 drainage, site pressure, movement, inspection and repair are unproved. Do not count the geometry as a sealed field or assume access below the box."
   },
