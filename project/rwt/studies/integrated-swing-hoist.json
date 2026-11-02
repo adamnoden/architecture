@@ -99,6 +99,8 @@
     "westRouteGross": 751,
     "eastRouteGross": 751,
     "centreFootBeforeInlet": 1500,
+    "centreModuleFixedArmStart": 900,
+    "centreModuleFixedArmAfterWithdrawal": 500,
     "carrierToUpperRail": 46,
     "carrierToLowerRail": 176
   },
@@ -107,6 +109,7 @@
     "The central added standard and its 150 foot are an authored proposal, not a manufacturer-complete four-standard tower. Its couplings, load path, ties, soleboard, guard gate and use with this winch require a qualified design.",
     "The 751-wide routes are plan strips between open door-leaf and centre-foot reservations, not tested routes around actual stairs, plates, tools, workers, shutter, braces or loaded movements.",
     "Receiver mass, slings, hook/arm height, roof/corner and existing weather-layer clearance, supported lowering, travel and release are not established. The actual hoist may not lift the receiver assembly.",
+    "A fixed-radius arm directly above the centre module requires 900 at installed y4525 and 500 after 400 outward at y4925; one fixed radius cannot occupy both. The module must be positively supported for a qualified release/reposition/re-engagement, or an actually permitted variable reach/load path must be supplied.",
     "The arc is a point-centre stress, not a complete carrier, rope, module, personnel or dropped-load sweep. Workers must be outside the suspended-load exclusion zone; no rescue is inferred."
   ]
 }
