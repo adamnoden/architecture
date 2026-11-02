@@ -1,46 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 28,
-  "state": "released",
-  "leaseId": "c1f3c5f8-4641-4fab-aaf9-4f9507171b6d",
+  "generation": 29,
+  "state": "claimed",
+  "leaseId": "ee7ee1fe-b31f-4b44-a880-d3ffb7791d4b",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-rwt28-supported-method"
+    "label": "issue-comment-6585617535"
   },
-  "claimedAt": "2026-11-02T14:09:42.576Z",
-  "heartbeatAt": "2026-11-02T18:19:57.000Z",
-  "expiresAt": "2026-11-02T18:19:57.000Z",
-  "branch": "work/rwt28-supported-method-20261102",
-  "note": "Develop one supported conventional renewal method with common blocked-water and escape states; preserve no operational acceptance",
+  "claimedAt": "2026-11-02T18:56:31.000Z",
+  "heartbeatAt": "2026-11-02T18:56:31.000Z",
+  "expiresAt": "2026-11-02T19:41:31.000Z",
+  "branch": "work/mvb-chat-6585617535",
   "predecessor": {
-    "leaseId": "f15699e9-f59a-4e64-b2fd-99e97cd805a2",
-    "generation": 27,
-    "branch": "work/rwt27-integrated-method-20261102",
-    "pr": 1276,
+    "leaseId": "c1f3c5f8-4641-4fab-aaf9-4f9507171b6d",
+    "generation": 28,
+    "branch": "work/rwt28-supported-method-20261102",
+    "pr": 1282,
     "checkpoint": {
-      "evidence": "Draft PR #1276 head a9d60b09ddcbcb255782515b1dbef9b7a97060c6 tree 16dda7cede9c5f16af784100a3850d5ed967d387; verified MAT main integrated with RWT reviewed bytes unchanged",
-      "next": "Integration owner checks exact-head CI and preflights before merge",
-      "blocker": "Exact-head CI pending; RWT06 and operation unaccepted"
+      "evidence": "Draft PR 1282 head 87c37b106d84c7f8448877ac980be3fba6846bc7 tree 9e8157e6ffde53359f65b123a781544791495b8a; MAT main reconciled, six reviewed RWT paths unchanged, scoped checks pass.",
+      "next": "Integration owner observes exact-head CI and performs preflight and merge.",
+      "blocker": "No operating, hydraulic, egress or full-system acceptance."
     }
   },
   "recoverySource": {
-    "leaseId": "f15699e9-f59a-4e64-b2fd-99e97cd805a2",
-    "generation": 27,
-    "branch": "work/rwt27-integrated-method-20261102",
-    "pr": 1276,
+    "leaseId": "c1f3c5f8-4641-4fab-aaf9-4f9507171b6d",
+    "generation": 28,
+    "branch": "work/rwt28-supported-method-20261102",
+    "pr": 1282,
     "checkpoint": {
-      "evidence": "Draft PR #1276 head a9d60b09ddcbcb255782515b1dbef9b7a97060c6 tree 16dda7cede9c5f16af784100a3850d5ed967d387; verified MAT main integrated with RWT reviewed bytes unchanged",
-      "next": "Integration owner checks exact-head CI and preflights before merge",
-      "blocker": "Exact-head CI pending; RWT06 and operation unaccepted"
+      "evidence": "Draft PR 1282 head 87c37b106d84c7f8448877ac980be3fba6846bc7 tree 9e8157e6ffde53359f65b123a781544791495b8a; MAT main reconciled, six reviewed RWT paths unchanged, scoped checks pass.",
+      "next": "Integration owner observes exact-head CI and performs preflight and merge.",
+      "blocker": "No operating, hydraulic, egress or full-system acceptance."
     }
-  },
-  "checkpoint": {
-    "evidence": "Draft PR 1282 head 87c37b106d84c7f8448877ac980be3fba6846bc7 tree 9e8157e6ffde53359f65b123a781544791495b8a; MAT main reconciled, six reviewed RWT paths unchanged, scoped checks pass.",
-    "next": "Integration owner observes exact-head CI and performs preflight and merge.",
-    "blocker": "No operating, hydraulic, egress or full-system acceptance."
-  },
-  "pr": 1282,
-  "releasedAt": "2026-11-02T18:19:57.000Z",
-  "releaseReason": "handoff"
+  }
 }
