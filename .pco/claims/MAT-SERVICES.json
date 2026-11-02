@@ -9,11 +9,11 @@
     "label": "zerg-services-joined-system"
   },
   "claimedAt": "2026-11-02T11:27:42.220Z",
-  "heartbeatAt": "2026-11-02T14:18:33.675Z",
-  "expiresAt": "2026-11-02T15:03:33.675Z",
+  "heartbeatAt": "2026-11-02T14:23:44.270Z",
+  "expiresAt": "2026-11-02T15:08:44.270Z",
   "checkpoint": {
-    "evidence": "Draft PR1279 remote0860c405067b77a5b344cfb7aeed87ffddb3da67 treeb2bf1e7a08d57baac5a075934499f426300e650b realmainfcf79a6;256modes and inspected two-sheet drawing;generator check passed;full local check running",
-    "next": "Bounded source review by root; qualify specific safety controller dynamics, first release and net plant/material duties; root owns CI and merge"
+    "evidence": "Draft PR1279 refrozen remotee1ac7f922edfafeff90e8fb7e1e64d9dbe470f4c treeef9307362f1af769cb381aa36c4072bf9096df6c realmainceb2684;256modes;corrected inspected two-sheet legend;generator and repo validation pass;full suite local IPC limitation recorded",
+    "next": "Root exact-head CI/preflight and bounded reviewer final drawing check; operating/controller/firstrelease/netplant/material qualifications remain unresolved"
   },
   "branch": "work/zerg11-services-joined-system",
   "predecessor": {
