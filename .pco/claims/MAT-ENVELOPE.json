@@ -9,8 +9,8 @@
     "label": "zerg7-envelope-thermal"
   },
   "claimedAt": "2026-11-02T07:37:31.007Z",
-  "heartbeatAt": "2026-11-02T07:51:52.180Z",
-  "expiresAt": "2026-11-02T08:36:52.180Z",
+  "heartbeatAt": "2026-11-02T08:03:25.492Z",
+  "expiresAt": "2026-11-02T08:48:25.492Z",
   "branch": "work/zerg7-envelope-thermal-screen",
   "predecessor": {
     "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1250 head 67d6c4079cb4a6277d021aa8e2a7c82b13e0f8d4, four remote blobs equal local commit a1a575f3; dry2D roof/collector screen source-pinned, 10/5/2.5 grid and energy/cut/sensitivity checks, A3 visually inspected.",
-    "next": "Root inspect exact-head CI, current main 42aaecb3 RWT-only drift, fresh canonical merge-check, expected-head merge if earned, release. MAT-ENVELOPE six exits remain open.",
-    "blocker": "No dynamic moisture, actual classified ceiling thermal properties, 3D finite frame/post/collar paths, whole roof/material/site/physical admission."
+    "evidence": "PR #1250 corrected head4a68d3a571e13e3e9c4d5dbf3272d41f042f0cb5 treece4f685ea50875a30f90419a1cb5602ffadbfc97 trueparents67d6+d3f; only4MAT paths differ. Independent lower-cut challenge fixed: z5900 baseline/6100+5700 sweep; STR blob20dec rebind with geometry equality and V20.490/link hold; generator --check and A3 rendered.",
+    "next": "Hold frozen revised PR for independent reviewer and exact-head CI. Root fresh canonical merge-check then expected-head merge if earned; release lease. MAT-ENVELOPE stays open.",
+    "blocker": "Actual classified ceiling, 3D finite frame/post/collar, dynamic climate/vapour/leakage and complete fire/material/site/physical admission remain unearned."
   },
   "pr": 1250
 }
