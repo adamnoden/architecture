@@ -208,7 +208,8 @@
       "minimumReserve": 23.5,
       "governor": "south-jamb",
       "passes": true,
-      "doorState": "OPEN"
+      "doorState": "OPEN",
+      "scope": "OPEN body-only comparison; selected entry uses checked push and held-handle transfer, not a stationary closer dwell."
     },
     "afterClosure": {
       "path": [
@@ -1797,8 +1798,8 @@
         5740
       ],
       [
-        10380,
-        5740
+        9910,
+        5800
       ],
       [
         10380,
@@ -1808,7 +1809,28 @@
     "minimumReserve": 15,
     "governor": "cabinet",
     "passes": true,
-    "doorState": "OPEN"
+    "doorState": "OPEN",
+    "heldHandle": {
+      "grip": [
+        10009,
+        6226
+      ],
+      "samplesPerSegment": 1000,
+      "bodyHalfStepBound": 0.235,
+      "armFixedLower": 133.765,
+      "armLeafLower": 14.765,
+      "reachUpper": 565.1394166936564,
+      "maximumEndpointReach": 564.9044166936563,
+      "mechanism": "Person holds OPEN handle throughout north-first transfer; mechanical closer does not provide a stationary dwell."
+    },
+    "rejectedEastFirstCorner": {
+      "point": [
+        10380,
+        5740
+      ],
+      "heldReach": 611.4221127829775,
+      "limit": 600
+    }
   },
   "withdrawal": {
     "start": [
