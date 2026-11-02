@@ -210,10 +210,10 @@ export const architectureNodes = defineNodes([
     owners: ['HAD'],
     title: 'Architectural design convergence and visual synthesis',
     dependencies: ['IAS-HAD-JUNCTION', 'OAS-HAD-JUNCTION', 'HAD-02M'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     aliases: ['HAD Wave 3'],
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/had/had-03-selection-closeout.md'],
+    closeoutEvidence: ['project/had/had-03-open-north-loggia.md', 'project/had/studies/open-north-loggia.json'],
   },
 
   // Final audit found the bounded OAS topology did not supply its dimensioned studies.

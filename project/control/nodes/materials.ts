@@ -48,9 +48,13 @@ export const materialNodes = defineNodes([
     owners: ['MAT'],
     title: 'Resolve non-plastic interior and wet-room assembly alternatives',
     dependencies: ['MAT-AUDIT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: [
+      'project/mat/interiors-whole-house-assembly-schedule.md',
+      'project/mat/studies/interiors-whole-house-assembly.json',
+      'project/mat/interiors-b-wetroom-assembly.md'
+    ]
   },
   {
     id: 'MAT-COORDINATION',

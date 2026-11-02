@@ -144,6 +144,8 @@ possible future PHY/EPR/DEL work is not invented as an early blocker.
 
 ## HAD-03 selected development source
 
+**Development exit complete in the reviewed shared integration candidate.** The final exact-head checks and merge control operational acceptance; all later technical, material, physical and site duties below remain open.
+
 The [compact B/open north loggia result](had-03-open-north-loggia.md) is the one selected HAD architectural disposition. Its exact model/drawings bind four bedrooms, principal/private/service interiors,27/30 finish depths, protected circulation, actual emitter/fan/plant territories, distinct ordinary/maintenance states and explicit room/height/approach costs. Source-bound finite checks and independent interface reviews qualify only that architectural scope; actual products, structures, materials, fire, rainwater and site admission remain with their owners.
 
 The accepted compiler RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02 A/9500 identity remains distinct from selected HAD B/9300. Do not silently rewrite historical A/B evidence or claim accepted compiler drawings depict B. TRIAD/HRS-TECHNICAL/ADE-MODEL/PLT-FINAL-PREP retain the actual shared-house migration and final-proof duties. This is not an extra prerequisite that prevents HAD from completing its own exit.

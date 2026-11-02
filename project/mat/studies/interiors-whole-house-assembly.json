@@ -1,6 +1,6 @@
 {
   "units": "mm unless explicitly stated; all floor layer checks use level-local FFL0",
-  "status": "Source-joined whole-house interior development result proposed for independent closeout review; no material/product/physical admission",
+  "status": "Independently reviewed interior development complete:16 families/18 occurrences; no material/product/fire/water/structural/physical/statutory admission or owner exception; IAS export and other-owner duties remain separate",
   "baseMain": "6a3c15d6ffb8dac628c42533ba7ea64ac0de2cce",
   "fingerprints": {
     "project/mat/constituent-audit.md": "d378d86664cd7b3d95863d698fe778accea6c7c019c981736f798c1e079fb534",
@@ -7209,5 +7209,5 @@
   },
   "exceptionsApproved": 0,
   "installedQuantities": null,
-  "programmeLifecycle": "planned pending independent exact-source closeout review; proposed complete-development patch is not applied by this result, and separate IAS export/later admission remain unearned"
+  "programmeLifecycle": "complete for MAT-INTERIORS development alternatives after independent exact-source review and combined canonical-path reproduction; material/product/physical/fire/water/structural/statutory admission and complete IAS guarded-stair/export remain unearned in their owning routes"
 }
