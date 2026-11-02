@@ -9,13 +9,14 @@ import json
 import math
 import subprocess
 import sys
+from bisect import bisect_right
 from html import escape
 
 OUT=Path(__file__).resolve().parent
 ROOT=OUT.parents[2]
 HAD_PATH='project/had/studies/open-north-loggia.json'
-HAD_COMMIT='0b2f7d48c82459214cae4b6778c3ced7b3e6c54b'
-HAD_SHA='9984a61f84943abe8b95b59db6da675b43999e9d1530b2508b7ade67062c2936'
+HAD_COMMIT='068e33ae52bbaa5ab0c3e3551350400e958e4033'
+HAD_SHA='588ee0da0545af391649c8e7d37f5d5c6f01159f93997602048649393f2f5a6e'
 local=ROOT/HAD_PATH
 raw=local.read_bytes() if local.exists() else subprocess.check_output(['git','show',HAD_COMMIT+':'+HAD_PATH],cwd=ROOT)
 if hashlib.sha256(raw).hexdigest()!=HAD_SHA:
@@ -717,6 +718,45 @@ frame['stair']['midlanding_beam']['joint_paths']=dict(east=mid_e,west=mid_w,colu
 frame['actual_ground_receivers'].append(dict(id='stair-west-masonry',xy=[332.5,7257.5],N=sill_N,M=sill_N*.02,
                                            grid_axis=[300,7257.5],grid_moment=sill['full_ground_moment_from_32p5axis_offset']))
 assert frame['stair']['fully_cracked_phi3_mm']+frame['stair']['differential_shrinkage_300microstrain_mm']<frame['stair']['L250_comparator']
+stair_sens=[]
+for case,h,d,phi,shrink,added_G in [('control',150,119,3,300,0),('creep3p5',150,119,3.5,300,0),
+                                  ('shrink400',150,119,3,400,0),('waist-minus5',145,114,3,300,0),
+                                  ('extra-permanent0p25',150,119,3,300,.25)]:
+    G=h/1000/math.cos(stair_angle)*25+.1725/2*25+.9+added_G
+    defl=cracked(1000,h,d,stair_sec['As'],G,3,stair_span,phi)*stair_secant
+    imposed=shrink*1e-6/h*(stair_span*1000)**2/8*stair_secant
+    stair_sens.append(dict(case=case,normal_h=h,d=d,phi=phi,differential_microstrain=shrink,added_G=added_G,
+                           deflection=defl,imposed=imposed,total=defl+imposed,
+                           reserve=stair_span*1000/250-defl-imposed))
+frame['stair']['qualification_sensitivities']=stair_sens
+frame['stair']['reserve_warning']='Controlreserve0.534mm is narrow. These separate authored perturbations are not actual tolerances/creep forecasts and do not combine safely by a binaryPASS; actual as-built section, servicecriteria, creep/finishes and movement budget must earn the proposition.'
+# One constructive continuation, kept distinct from the merged150 control until
+# its actual receiving hooks/sill/window guard are regenerated and reconciled.
+new_h=170;new_d=139
+new_G=new_h/1000/math.cos(stair_angle)*25+.1725/2*25+.9
+new_end=udl(1.35*new_G+1.5*3,stair_span)['V']*1.094
+new_mid_w=frame['stair']['midlanding_beam']['udl']+1.35*.25*.02*25
+new_mid_points=[(new_end,a) for P,a in mid_points]
+new_mid_RL=new_mid_w*mid_L/2+sum(P*(mid_L-a)/mid_L for P,a in new_mid_points)
+new_mid_RR=new_mid_w*mid_L/2+sum(P*a/mid_L for P,a in new_mid_points)
+new_mid_M=max(new_mid_RL*x-new_mid_w*x*x/2-sum(P*max(0,x-a) for P,a in new_mid_points)
+              for x in [mid_L*i/1000 for i in range(1001)])
+new_stair_cases=[]
+for case,h,d,phi,shrink,added in [('nominal170',170,139,3,300,0),('adverse165',165,134,3.5,400,.25)]:
+    G=h/1000/math.cos(stair_angle)*25+.1725/2*25+.9+added
+    delta=cracked(1000,h,d,stair_sec['As'],G,3,stair_span,phi)*stair_secant
+    imposed=shrink*1e-6/h*(stair_span*1000)**2/8*stair_secant
+    new_stair_cases.append(dict(case=case,h=h,d=d,phi=phi,microstrain=shrink,added_G=added,
+                               total=delta+imposed,reserve=11.7-delta-imposed))
+frame['stair']['constructive170_comparison']=dict(status='Preferred next geometric comparison, not selected or qualified until actual joints close',
+    normal_waist=170,steel='H12/125 eachface retained',G=new_G,ULS_flight_end=new_end,
+    sensitivities=new_stair_cases,last_lower_waist_soffit=1552.5-170/math.cos(stair_angle),
+    existing_beam_bottom=1355,existing_contact_reserve=1552.5-170/math.cos(stair_angle)-1355,
+    proposed_midbeam=[250,390],top=1725,bottom=1335,mid_actions=dict(M=new_mid_M,RW=new_mid_RL,RE=new_mid_RR),
+    mid_section_screen=rc(250,390,347,2*area(20),25),
+    changed_joint='Midbeam bottom hooks/sill lower20, post reaction/upperheader/stairwaist join and guard anchors must update as one actual model; old3D joint PASS does not transfer.',
+    HAD_readback='2026-11-02:20lower beam is inside stairaperture, outside credited gallery/bodyroute. Window sill1750 stays; West7400 requires FIXEDglazing with actual fallguard, not an unguarded leaf25above landing.',
+    no_second_stair_authority=True)
 
 # Wet-beam RC piers: conditional second-order screen with no favourable masonry
 # stiffness. Pinned3200,0.25EcIg, minimum20 eccentricity, no primary lateral role.
@@ -904,6 +944,243 @@ port=dict(wall='plant-north',axis_y=6500,centre_x=10800,clear_width=320,
           outside_ring_x=[10425,11175],east_abutment_territory=407.5,
           permitted_assembly_OD=160,annular_geometric_clearance=80,capacity=None)
 
+# Actual over-structure roof: own immutable MAT input, never a copied300mm band.
+MAT_ROOF_COMMIT='f376a8a75a12838b2026a9a971ac33bfef470469'
+MAT_ROOF_PATH='project/mat/studies/loggia-roof-section.json'
+MAT_ROOF_SHA='f3ac7756f1b326a9271869732442083a59f604eca8361f157827f01d748c4b8c'
+roof_raw=subprocess.check_output(['git','show',MAT_ROOF_COMMIT+':'+MAT_ROOF_PATH],cwd=ROOT)
+assert hashlib.sha256(roof_raw).hexdigest()==MAT_ROOF_SHA
+mat_roof=json.loads(roof_raw)
+pitch=math.radians(had['roofDevelopment']['pitch']);cosroof=math.cos(pitch)
+assert had['roofDevelopment']['overhang']==200
+assert had['roofDevelopment']['normalLayers'][-1]==['zinc',.7]
+assert math.isclose(sum(t for _,t in mat_roof['layersWeatherToRoom']),500.7)
+assert mat_roof['counterrailGrid']['assembly'].startswith('NS rails ONLY')
+roof_area=12.4**2-3.1**2
+roof_regions=[dict(id='central-'+k,plan_area=3.1*4.65) for k in ['N','S','E','W']]
+roof_regions += [dict(id='corner-'+k,plan_area=4.65**2) for k in ['NW','NE','SW','SE']]
+assert math.isclose(sum(r['plan_area'] for r in roof_regions),roof_area)
+rows=mat_roof['purlins']['rows']
+edges=[7550]+[(a+b)/2 for a,b in zip(rows,rows[1:])]+[12200]
+roof_trib=[(b-a)/1000 for a,b in zip(edges,edges[1:])]
+assert math.isclose(sum(roof_trib),4.65)
+
+def tied_frame(loads,L,angle):
+    """Three-hinged two-rafter frame, axial tie at equal-height seat axes.
+
+    Vertical loads include real cantilevers. Crown moment equilibrium determines
+    tie force; no parabolic-arch ratio substitutes for the actual roof profile.
+    """
+    loads=sorted(loads);pos=[x for x,p in loads];P=[0];PX=[0]
+    for x,p in loads:P.append(P[-1]+p);PX.append(PX[-1]+x*p)
+    RB=PX[-1]/L;RA=P[-1]-RB;f=L/2*math.tan(angle)
+    j=bisect_right(pos,L/2);H=(RA*L/2-(L/2*P[j]-PX[j]))/f
+    def cut(x):
+        j=bisect_right(pos,x)
+        V=(RA if x>=0 else 0)+(RB if x>=L else 0)-P[j]
+        M=(RA*x if x>=0 else 0)+(RB*(x-L) if x>=L else 0)-x*P[j]+PX[j]
+        h=H if 0<=x<=L else 0;theta=angle if x<=L/2 else -angle
+        M-=h*min(x,L-x)*math.tan(angle)
+        return M,h*math.cos(theta)+V*math.sin(theta)
+    samples=[cut(pos[0]+(pos[-1]-pos[0])*k/2000) for k in range(2001)]
+    # Actual force/moment closure and crown hinge; these constrain the mechanics.
+    assert math.isclose(RA+RB,P[-1],abs_tol=1e-9)
+    assert abs(cut(L/2)[0])<1e-8
+    assert abs(cut(pos[-1]+.001)[0])<1e-8
+    return dict(RA=RA,RB=RB,tie=H,max_abs_M=max(abs(m) for m,n in samples),
+                max_compression=max(n for m,n in samples),min_N=min(n for m,n in samples)),cut
+
+def steel_screen(A,I,W,L,fy=355):
+    # Rounded section properties below are from SCI/Tata P363, not sharp corners.
+    # Curve c is an explicit conservative screening assumption, not a complete
+    # EN1993 beam-column/connection/fire verification.
+    Ncr=math.pi**2*210000*I/(L*1000)**2/1000
+    slender=math.sqrt(A*fy/1000/Ncr)
+    phi=.5*(1+.49*(slender-.2)+slender**2)
+    chi=min(1,1/(phi+math.sqrt(phi**2-slender**2)))
+    return dict(A=A,I=I,Wel=W,Lcr=L,fy=fy,alpha=.49,Ncr=Ncr,slenderness=slender,
+                chi=chi,Nb=chi*A*fy/1000,Mel=W*fy/1e6)
+
+roof_cases={}
+for name,q in [('ULS-down',1.35*3+1.5*1.5),('service',3+1.5),('uplift-stress',-1.5*1.5)]:
+    loads=[((y-8082.5)/1000,q*1.55*w) for y,w in zip(rows,roof_trib)]
+    action,_=tied_frame(loads,3.585,pitch)
+    action['primary_SHS80x80x5']=steel_screen(1470,1370000,34200,3.585/(2*cosroof))
+    ss=action['primary_SHS80x80x5']
+    action['linear_Nb_Mel_screen']=max(action['max_compression'],0)/ss['Nb']+action['max_abs_M']/ss['Mel']
+    # Full corner square collapsed onto its diagonal is a conservative ACTION
+    # collector only. It does not prove the jack spans or their actual loadshare.
+    diag_total=4.65*math.sqrt(2);diag_over=.5325*math.sqrt(2);n=1600;ds=diag_total/n
+    diag_load=[((i+.5)*ds-diag_over,q*2*min((i+.5)*ds,diag_total-(i+.5)*ds)*ds) for i in range(n)]
+    diag,_=tied_frame(diag_load,3.585*math.sqrt(2),math.atan(math.tan(pitch)/math.sqrt(2)))
+    assert math.isclose(sum(p for x,p in diag_load),q*4.65**2,rel_tol=1e-12)
+    diag['SHS120x120x6p3_section_only']=steel_screen(2820,6030000,100000,
+                    3.585*math.sqrt(2)/(2*math.cos(math.atan(math.tan(pitch)/math.sqrt(2)))))
+    diag['limit']='Action envelope ONLY: finite jack/purlin spans, actual sharing and hip joints remain internal work. Not a selected complete corner frame.'
+    roof_cases[name]=dict(q_horizontal=q,ordinary_frame=action,corner_action_envelope=diag)
+assert math.isclose(8*roof_cases['ULS-down']['ordinary_frame']['RA']*2+
+                    4*roof_cases['ULS-down']['corner_action_envelope']['RA']*2,
+                    roof_cases['ULS-down']['q_horizontal']*roof_area)
+
+# Actual upperwindows prevent calling every roof seat a continuous masonry pier.
+roof_seats=[]
+for side in ['N','S','W','E']:
+    for transverse in [4377.5,7622.5]:
+        ends=([8082.5,11667.5] if side in ['N','E'] else [332.5,3917.5])
+        for i,end in enumerate(ends):
+            xy=[transverse,end] if side in ['N','S'] else [end,transverse]
+            wall=('outer-' if i==(1 if side in ['N','E'] else 0) else 'court-')+{'N':'north','S':'south','W':'west','E':'east'}[side]
+            coordinate=xy[0] if side in ['N','S'] else xy[1]
+            below=[o['id'] for o in had['openings']['FIRST'] if o['wall']==wall and abs(o['centre']-coordinate)<o['width']/2]
+            roof_seats.append(dict(id=f'{side}-{transverse}-{i}',xy=xy,wall=wall,opening_below=below,
+                                   R_down=roof_cases['ULS-down']['ordinary_frame']['RA'],
+                                   R_uplift=roof_cases['uplift-stress']['ordinary_frame']['RA']))
+assert any(s['opening_below'] for s in roof_seats)
+collector_sec=rc(260,140,103,2*area(12),25)
+collector_P=roof_cases['ULS-down']['ordinary_frame']['RA']
+collector_w=1.35*.26*.14*25
+collector_M=collector_P*1.3/4+collector_w*1.3**2/8
+collector_V=collector_P/2+collector_w*1.3/2
+assert collector_M<collector_sec['MR'] and collector_V<collector_sec['VRdc'] and collector_sec['ductility']
+purlin_M=roof_cases['ULS-down']['q_horizontal']*max(roof_trib)*3.245**2/8
+purlin_delta=5*(3+1.5)*max(roof_trib)*(3245**4)/(384*210000)*(cosroof**2/2410000+math.sin(pitch)**2/812000)
+roof=dict(source=dict(commit=MAT_ROOF_COMMIT,path=MAT_ROOF_PATH,sha256=MAT_ROOF_SHA),
+          weather_eave=7100,physical_outer_edge=7100-200*math.tan(pitch),ridge=mat_roof['ridge'],
+          normal_recipe=mat_roof['layersWeatherToRoom'],total_normal=mat_roof['totalNormal'],
+          primary_centre=mat_roof['primaryCentre'],ordinary_tie=mat_roof['tie'],
+          purlin_under_at_support=mat_roof['purlins']['underside'],ceiling_top=6620,
+          support_clearance=mat_roof['purlins']['underside']-6620,
+          clearance_limit='38.45 is at the core support; overhang steel lies lower OUTSIDE the protected ceiling territory. No global underside assertion.',
+          regions=roof_regions,plan_area=roof_area,normal_area=roof_area/cosroof,
+          loads=dict(Gmax=3,Q=1.5,Gmin_uplift=0,wind_stress=1.5,
+                limit='Authored horizontal load challenges, not site loads or automatic wind-normal conversion. Roof G3 is a maximum action budget, not derived actual mass; independently supported ceilings retain their separate wall reactions. Uplift takes no favourable dead weight.'),
+          north_frames_x=[4377.5,7622.5],seat_y=[8082.5,11667.5],roof_extent_from_seat=532.5,primary_cantilever_each=332.5,
+          purlin_rows=rows,tributaries=roof_trib,edge_cantilever=200,seats=roof_seats,cases=roof_cases,
+          purlin=dict(section=[120,60,4],span=3245,source='SCI P3632015B-31;Hybox rounded properties Iy241/Iz81.2cm4,Wy40.1/Wz27.1cm3',
+                full_UDL_M_bound=purlin_M,biaxial_elastic_stress=purlin_M*1e6*(cosroof/40100+math.sin(pitch)/27100),
+                full_UDL_service_vertical_mm=purlin_delta,L250=3245/250,
+                limit='Two-axis section/deflection screen; actual postpoints, cleats, torsion, buckling, bracing and corner jacks not qualified.'),
+          collector=dict(status='Constructive roofpoint bypass proposal; not adopted or a completed ring joint',section=collector_sec,
+                top=6680,bottom=6540,ordinary_core=140,projection_each=60,
+                steel='2H12top and2H12bottom;H6/75;25cover',clear_window_max=1000,seats_each=300,axis_span=1300,
+                M=collector_M,V=collector_V,upper_window_ring_extrados=6515,ring_clearance=25,
+                plate=[140,240,12],mineral_grout=10,top_of_plate=6702,
+                primary_under_at_support=mat_roof['primaryCentre']-40/cosroof,
+                links=links(260,103,6,75),
+                SLS_phi3_point_bound_mm=beam_SLS_bound(.26*.14*25,0,3*1.55*4.65/2,1.5*1.55*4.65/2,1.3,collector_sec),
+                SLS_shrink300_mm=300e-6/140*1300**2/8,
+                scope='No eccentric roofpoint assigned directly to an upperwindow arch. Actual pier bearing/cage continuity, plate/hold-down and lateral ring joints remain intrinsic work. Ordinary6550ceiling local15lining underside6525 means25drop; protected6444 hides beam.'),
+          remaining=['Corner jack/topology and complete bearing/hip/crown/tie joints','Actual gravity mass ledger including ceiling versus Gmax/Gmin',
+                     'Roof collector pier bearing and continuous lateral/hold-down connections','Actual normal/tangential site wind, snow and load patterns',
+                     'Mechanical/thermal/fire/weather support admission; no roof storage'])
+
+# Lower north circular arches, actual repaired HAD geometry and upperwindows.
+# The mean-line hinge radius gives true circular equilibrium, not an ideal
+# parabolic H=qL^2/8f used as a ring-capacity assertion.
+def north_arch_controls(n=1600):
+    Ri=2.1253333333333333;Rm=Ri+.1075;Ro=Ri+.215;zc=.7246666666666667
+    angle=math.asin(1.48/Ri);a=Rm*math.sin(angle);ys=zc+Rm*math.cos(angle);f=zc+Rm-ys;L=2*a
+    dx=L/n;xs=[-a+(i+.5)*dx for i in range(n)]
+    own=[22*.215**2*Rm/math.sqrt(Rm**2-x*x)*dx+
+         22*.215*(3.17-zc-math.sqrt(Ro**2-x*x))*dx for x in xs]
+    answer={}
+    for side in ['outer-north','court-north']:
+        wins=[o for o in had['openings']['FIRST'] if o['wall']==side and 4520<o['centre']<7480]
+        for mode in ['self','gross-upper','actual-window-arch-transfer','rejected-central-roofpoint']:
+            loads=list(zip(xs,own));heads=[]
+            for o in wins:
+                # The source upper1000/rise300 geometry. Head/spandrel vertical
+                # weight is delivered to its two mean-ring springing lines.
+                uR=(o['width']/2000)**2/(2*.3)+.3/2;um=uR+.1075
+                aa=um*(o['width']/2000)/uR
+                heads.append(dict(c=(o['centre']-6000)/1000,half=o['width']/2000,R=uR,
+                                  zc=2.55-math.sqrt(uR*uR-(o['width']/2000)**2),a=aa,W=0))
+            if mode!='self':
+                for x in xs:
+                    h=next((h for h in heads if abs(x-h['c'])<=h['a']),None)
+                    if mode=='gross-upper' or h is None:base=3.1
+                    else:
+                        r=abs(x-h['c']);base=.75 if r<=h['half'] else 2.55
+                        top=h['zc']+math.sqrt(h['R']**2-r*r) if r<=h['half'] else 2.55
+                        h['W']+=20*.14*(3.1-top)*dx
+                    loads.append((x,20*.14*base*dx))
+                if mode!='gross-upper':
+                    for h in heads:loads.extend([(h['c']-h['a'],h['W']/2),(h['c']+h['a'],h['W']/2)])
+            # Roof collector selfweight follows the upper wall down to this
+            # arch. Its roofpoint action bypasses the opening into endpiers.
+            loads.extend((x,.26*.14*25*dx) for x in xs)
+            loads=[(x,1.35*p) for x,p in loads]
+            if mode=='rejected-central-roofpoint':loads.append((0,collector_P))
+            W=sum(p for x,p in loads);RB=sum(p*(x+a)/L for x,p in loads);RA=W-RB
+            H=(RA*a-sum(p*(-x) for x,p in loads if x<0))/f;cuts=[]
+            for k in range(1,400):
+                x=-a+L*k/400;y=zc+math.sqrt(Rm**2-x*x)-ys
+                V=RA-sum(p for xp,p in loads if xp<=x)
+                theta=math.atan(-x/math.sqrt(Rm**2-x*x));N=H*math.cos(theta)+V*math.sin(theta)
+                M=RA*(x+a)-sum(p*(x-xp) for xp,p in loads if xp<x)-H*y
+                e=M/N;comp=3*(.215/2-abs(e))
+                pressure=(N/(.215*.215)*(1+6*abs(e)/.215) if abs(e)<=.215/6
+                          else (2*N/(.215*comp) if comp>0 else None))
+                cuts.append(dict(x=x,N=N,M=M,e=e,ULS_peak_MPa=None if pressure is None else pressure/1000))
+            worst=max(cuts,key=lambda c:abs(c['e']))
+            answer[side+'/'+mode]=dict(W=W,RA=RA,RB=RB,H=H,max_abs_e=abs(worst['e']),worst_cut=worst,
+                    kern=.215/6,half_ring=.215/2,
+                    load_basis='ULS1.35G; adverse centralpoint uses actual roof ULSP separately',
+                    ULS_required_compression_MPa=(None if any(c['ULS_peak_MPa'] is None for c in cuts)
+                         else max(c['ULS_peak_MPa'] for c in cuts)),
+                    pier_vertical_eccentricity=1.58625-a,pier_tie_vertical_offset=ys-2.2,
+                    pier_M_absolute_sum=abs(H*(ys-2.2))+abs(RA*(1.58625-a)),upperwindow_heads=heads)
+    return dict(Ri=Ri,Rm=Rm,Ro=Ro,hinge_span=L,hinge_z=ys,rise=f,tie_z=2200,tie_visible=[2175,2225],
+                raw_jambs=[4520,7480],RC_pier=[212.5,215],axial_wrap=775,
+                cases=answer,limit='Sampled unilateral compression equilibrium only; brick/mortar directional strength, shear/slip, actual windowhead joints/steel bypass, asymmetry, pier/plate/bore/cage and robustness remain internal/adoption work. No masonry ring pass.')
+arches=north_arch_controls()
+arches_fine=north_arch_controls(3200)
+for key,c in arches['cases'].items():
+    assert abs(c['H']-arches_fine['cases'][key]['H'])<.025
+assert arches['cases']['court-north/rejected-central-roofpoint']['max_abs_e']>arches['cases']['court-north/rejected-central-roofpoint']['half_ring']
+assert arches['cases']['court-north/actual-window-arch-transfer']['max_abs_e']>arches['cases']['court-north/actual-window-arch-transfer']['kern']
+lower_pier_section=rc(215,212.5,173.5,2*area(12),25)
+lower_pier_actions=[]
+for side in ['outer-north','court-north']:
+    a=arches['cases'][side+'/actual-window-arch-transfer']
+    N=max(a['RA'],a['RB'])+collector_P+1.35*.2125*.215*3.17*25
+    M=a['pier_M_absolute_sum']+collector_P*.03625+N*.020
+    I=215*212.5**3/12;Pcr=math.pi**2*.25*E*I/3200**2/1000
+    M/=1-N/Pcr
+    lower_pier_actions.append(dict(side=side,N=N,M=M,Pcr=Pcr,
+        note='Planar action budget: ringreaction, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity.'))
+arches['lower_pier_section_only']=lower_pier_section
+arches['lower_pier_actions']=lower_pier_actions
+arches['tie_and_bore']=dict(rod_dia=30,thread='M30 reference stressarea561',fy_trial=200,gamma=1.1,
+    tie_tension_max=max(arches['cases'][s+'/actual-window-arch-transfer']['H'] for s in ['outer-north','court-north']),
+    rod_thread_yield_screen=561*200/1.1/1000,bore_dia=40,bore_axis_z=2200,bore_axis_NS=107.5,
+    pier_vertical_bar_trial='4H12/H8;centres39/173.5EW and39/176NS',
+    bore_to_vertical_bar_clear=68.5-20-6,near_bore_link_z=[2150,2250],bore_to_link_clear=50-20-4,
+    plate=[150,150,15],plate_NS_centred=True,washer=[60,10],nut=[50,30],
+    limit='Tension-section and geometric bore separation ONLY. Pierhead bar development below radial bevel, plate/concrete bearing/splitting, threads/end details, link/bore tolerance and thermalfire collars remain intrinsic/adoption work. No voussoir drilling.')
+# Negative mechanism control for the actual ordinary roofpoint above an upper
+# window. This is ring selfweight plus point, not a complete window loadcase;
+# removing that point by a collector must be a real physical support change.
+uRi=.5**2/(2*.3)+.3/2;uRm=uRi+.1075;ua=uRm*.5/uRi
+uys=uRm*math.sqrt(1-(.5/uRi)**2);uf=uRm-uys;uL=2*ua
+u_step=uL/1600
+u_loads=[(-ua+(i+.5)*u_step,1.35*22*.215*.14*uRm/
+          math.sqrt(uRm**2-(-ua+(i+.5)*u_step)**2)*u_step) for i in range(1600)]
+u_loads.append((-.2225,collector_P))
+uRB=sum(p*(x+ua)/uL for x,p in u_loads);uRA=sum(p for x,p in u_loads)-uRB
+uH=(uRA*ua-sum(p*(-x) for x,p in u_loads if x<0))/uf;u_e=[]
+for k in range(1,400):
+    x=-ua+uL*k/400;y=math.sqrt(uRm**2-x*x)-uys
+    V=uRA-sum(p for xp,p in u_loads if xp<=x);angle=math.atan(-x/math.sqrt(uRm**2-x*x))
+    N=uH*math.cos(angle)+V*math.sin(angle)
+    M=uRA*(x+ua)-sum(p*(x-xp) for xp,p in u_loads if xp<x)-uH*y
+    u_e.append(abs(M/N))
+roof['upper_window_eccentric_roof_control']=dict(raw_width=1000,rise=300,radial_ring=215,axial=140,
+    point_ULS=collector_P,point_offset=-222.5,max_abs_e=max(u_e),half_ring=.1075,
+    fails_trial_mechanism=max(u_e)>.1075,
+    limit='Ring1.35selfweight+actualULSroofpoint, not fullwindow/spandrelcase. Exposes unsafe directpoint assumption; does not prove no alternative thrustline or masonry capacity. Selected collector must physically bypass point to real piers.')
+assert roof['upper_window_eccentric_roof_control']['fails_trial_mechanism']
+
 for w,L in [(12.7,3.245),(0,1)]:
     a=udl(w,L)
     assert math.isclose(2*a['V'],w*L)
@@ -917,6 +1194,7 @@ result=dict(identity='OPEN-N / first whole-floor support calculation checkpoint,
             source=dict(path=HAD_PATH,commit=HAD_COMMIT,sha256=HAD_SHA),
             units='mm / kN / kPa / MPa',floor_fields=floor,wet_wall_beam=wet,
             lower_grid=grid,cap=cap,special_ground_nodes=special_nodes,finite_floor_frame=frame,E02_service_port=port,
+            actual_roof=roof,north_arches=arches,
             node_review_known_gaps=['Onlyenumeratedcageclearances;4leginnerlink/H12sidebarsmissing,coincidentEW/NStoprows,terminalmaintiedevelopmentandN-Mstrutfieldunearned.Specialistownsnextnodecorrection.'],
             fire_field_comparator=dict(thickness=200,outer_main_axis=31,reference_hs=60,reference_a=10,
                                        route='TCC linked2018StructuralFireDesign SlabsTable5 firstgeneration one-wayREI30 comparator ONLY',
@@ -924,12 +1202,12 @@ result=dict(identity='OPEN-N / first whole-floor support calculation checkpoint,
                                        rating_qualified=False,holds='Current edition/UKNA,fireactions,supports,spalling,actualports/edges/seals'),
             retained_open_items=[
                 'HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.',
-                'Actual2925stairs/midlandingmemberreactionsnowcalculated;physicaljoints/guards,entrancebridge,tiedarchesandroofremain.',
+                'Roof/arch controls now calculated; finite corner jacks, collectors/lateral and actual joint/reaction destinations remain.',
                 'Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.',
-                'Wet receivers260x450 andnorthsupport11512.5: actual door/window/spatial readback required.',
+                'HAD068e repairs wet-receiver door/window geography; new roofcollector projection still needs owning reconciliation.',
                 'Wetjoint3H16downhooks/4H16pier: finite3Dclearance/development calculated; lowercolumnjoint remains.',
-                'NodeFROZENbee43378: omittedinnerlinks/H12sidebars andcoincidenttoprows requireAstraredesign;no cage/nodePASS.',
-                'Revised240glass+40lining→2890soffit requires actual arch/head/thermal coordination; anchorsunfinished.',
+                'Frozen bee43378 and specialist adverse controls preserve actual failed node/cage duties; no joint PASS.',
+                'Actual775 wrapped portal and2890loggia soffit are bound; pierhead, anchor and thermal/fire joins remain.',
                 'No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows.'])
 
 parts=['<svg xmlns="http://www.w3.org/2000/svg" width="594mm" height="420mm" viewBox="0 0 594 420">',
@@ -942,7 +1220,7 @@ def box(x,y,w,h,fill,stroke='#345460'):
 def ln(x1,y1,x2,y2,c='#345460'):
     parts.append(f'<path d="M{x1},{y1} L{x2},{y2}" fill="none" stroke="{c}" stroke-width=".65"/>')
 txt(16,15,'OPEN N / actual whole-floor support checkpoint','title')
-txt(16,24,'HAD0b2f7d48 · RC200 whole upper floor · unadopted / incomplete support design, not for construction')
+txt(16,24,'HAD068e33ae · RC200 whole upper floor · unadopted / incomplete support design, not for construction')
 txt(16,36,'A / UPPER STRUCTURAL FIELDS · 1:50','title')
 xx=lambda x:20+x/50
 yy=lambda y:286-y/50
@@ -974,7 +1252,7 @@ box(320,98,10,40,'#aebeba');box(450,98,10,40,'#aebeba')
 txt(320,148,'Diagrammatic elevation; support2660+155overhang and pier footprints in JSON.')
 txt(304,159,'South RC260×450 pier: x2772.5–3032.5, y8627.5–9077.5.')
 txt(304,167,'Actual450downhooks+600tails; full-yieldbend/bond and3Dbarclearance checked.')
-txt(304,175,'HAD27finishx2745.5–3059.5; new700northwindowstarts3350; actualbodytasknotpassed.')
+txt(304,175,'HAD27finishx2745.5–3059.5; new700northwindowstarts3350; HAD body geometry separate from structural admission.')
 
 txt(304,196,'C / GROUND GRID TARGET, NOT SITE ACCEPTANCE','title')
 txt(304,207,'RC600×450 both leaves;40cover;3H20 top/bottom+sideH12;4legH8/100;actual point nodes.')
@@ -1086,7 +1364,7 @@ parts=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" vie
        '<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:2.9px}.title{font-size:4.4px;font-weight:bold}</style>',
        '<rect width="420" height="297" fill="#faf8f1"/>']
 txt(12,13,'OPEN N / actual stair, midlanding and receiving frame','title')
-txt(12,22,'HAD0b2f7d48 / 27finish / 1094body +200well;1004betweenrails / unadopted; no body,guard or whole-house PASS')
+txt(12,22,'HAD068e33ae / 27finish / 1094body +200well;1004betweenrails / unadopted; no body,guard or whole-house PASS')
 txt(12,34,'A / FINITE PLAN · 1:20','title')
 sx=lambda x:12+(x-262.5)/20
 sy=lambda y:274-(y-4332.5)/20
@@ -1116,6 +1394,7 @@ for i,line in enumerate([f'Flightbearing2925, pitch{tg["pitchDegrees"]:.3f}°,15
  f'Actualmasonrypadsneedfd≥{sill_max_bearing:.3f}MPa beforesecondorder/bedadmission.',
  'EastH20downhooks/postcageenumerated; upperwaist/trimmerjointstillopen.',
  'Guardposts/anchors,fullphysicalslabedge/portmass andwindow25jointunearned.']):txt(215,45+i*8,line)
+txt(215,125,'Reserve0.534mm only;145waist or400microstrain challenges exceed11.7.')
 txt(215,134,'C / PROJECTED FLIGHT SECTIONS · 1:30','title')
 fx=lambda y:220+(y-4332.5)/30
 fz=lambda z:264-z/30
@@ -1132,9 +1411,78 @@ for direction,first_y,base,colour in [(1,4432.5,0,'#4b716c'),(-1,7132.5,1725,'#b
     y0=first_y;y1=first_y+direction*2700;drop=150/math.cos(stair_angle)
     ln(fx(y0),fz(base-drop),fx(y1),fz(base+1552.5-drop),colour)
 txt(215,277,'Greenlower/ochreupperprojected; differentxterritories, notoverlappingflights.')
-txt(12,289,'ONEcurrentcandidate: actualwaist/beamgeometry, tributaryloadsandcontinuouscompatibility. Frozenunearnednodeprototypecontinuesawaitspecialist.')
+txt(12,289,'ONEcurrentcandidate: actualwaist/beamgeometry, tributaryloadsandcontinuouscompatibility. Frozen rejected node evidence preserved; no foundation release.')
 parts.append('</svg>\n');stair_svg='\n'.join(parts)
-for name,content in [('open-loggia-support.json',json.dumps(result,indent=2)+'\n'),('open-loggia-support.svg',main_svg),('open-loggia-node.svg',node_svg),('open-loggia-wet-joint.svg',joint_svg),('open-loggia-stair.svg',stair_svg)]:
+parts=['<svg xmlns="http://www.w3.org/2000/svg" width="594mm" height="420mm" viewBox="0 0 594 420">',
+       '<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:3.1px}.title{font-size:4.5px;font-weight:bold}</style>',
+       '<rect width="594" height="420" fill="#faf8f1"/>']
+txt(12,16,'ROOF / NORTH ARCH · SOURCE-BOUND DEVELOPMENT · NO WHOLE-HOUSE OR COMPONENT RELEASE','title')
+txt(12,24,'HAD068e33ae + MATf376a8a7 · 7100 wallline eave / 200 overhang / 500.7 NORMAL recipe · STR-HOUSE incomplete')
+txt(12,37,'A / DISJOINT ROOF LOAD REGIONS · PLAN1:100','title')
+px=lambda x:24+x/100;py=lambda y:177-y/100
+box(px(-200),py(12200),124,124,'#dfd5be')
+box(px(4450),py(7550),31,31,'#faf8f1')
+for x,y,w,h in [(4450,7550,3100,4650),(4450,-200,3100,4650),(-200,4450,4650,3100),(7550,4450,4650,3100)]:
+    box(px(x),py(y+h),w/100,h/100,'#c7d9d4')
+for s in roof_seats:box(px(s['xy'][0])-1,py(s['xy'][1])-1,2,2,'#b85c40' if s['opening_below'] else '#345460')
+for x,y,xx,yy in [(332.5,332.5,3917.5,3917.5),(11667.5,332.5,8082.5,3917.5),
+                  (332.5,11667.5,3917.5,8082.5),(11667.5,11667.5,8082.5,8082.5)]:ln(px(x),py(y),px(xx),py(yy),'#9a7654')
+for i,t in enumerate(['4central strips14.415m² each +4corner squares21.6225m² each.',
+                      'Sum144.15m²; retained physical edges−200/12200 and4450/7550.',
+                      'RedordinaryseatsoverFIRSTwindows require roofcollector.',
+                      'Corner diagonal lines are ACTION ENVELOPES, not earned jackframes.']):txt(12,194+7*i,t)
+txt(202,37,'B / ACTUAL NORTH STRIP · SECTION1:30','title')
+sx=lambda y:208+(y-7550)/30;sz=lambda z:186-(z-6200)/30
+weather=lambda y:7100+min(12000-y,y-7750)*math.tan(pitch)
+for a,b in [(7550,9875),(9875,12200)]:
+    ln(sx(a),sz(weather(a)),sx(b),sz(weather(b)),'#976938')
+    aa=max(a,7750);bb=min(b,12000)
+    ln(sx(aa),sz(weather(aa)-(500.7-40)/cosroof),sx(bb),sz(weather(bb)-(500.7-40)/cosroof),'#345460')
+    ln(sx(aa),sz(weather(aa)-(420.7+120)/cosroof),sx(bb),sz(weather(bb)-(420.7+120)/cosroof),'#758c85')
+for y in [8082.5,11667.5]:
+    box(sx(y)-4,sz(6680),8,140/30,'#bdc9c2')
+    box(sx(y)-2.333,sz(6702),4.666,12/30,'#345460')
+ln(sx(8082.5),sz(mat_roof['primaryCentre']),sx(11667.5),sz(mat_roof['primaryCentre']),'#a15f46')
+ln(sx(8167.5),sz(6620),sx(11582.5),sz(6620),'#6f728a')
+ln(sx(8167.5),sz(6444),sx(11582.5),sz(6444),'#6f728a')
+for i,t in enumerate(['Roofextent532.5 = primary332.5 + secondary200 beyond purlins.',
+                      'Primarycentre6746.721; tie6721.721–6771.721.',
+                      'Purlinunderside6658.451 ATSEAT; ceilingTOP6620,38.451reserve.',
+                      'Ceiling6444–6620 only in actual protected territory, outside tips lower.',
+                      f"ULS per ordinaryseat{collector_P:.3f}kN; tie{roof_cases['ULS-down']['ordinary_frame']['tie']:.3f}kN.",
+                      'Collector260×140,6540–6680;25 above windowring6515.',
+                      '10mineral bed+12plate→6702; actual cleat/hold-down unearned.']):txt(202,194+7*i,t)
+txt(399,37,'C / ACTUAL NORTH PORTAL · XZ1:20','title')
+ax=lambda x:400+(x-4250)/20;az=lambda z:182-(z-2100)/20
+Ri=arches['Ri']*1000;Ro=arches['Ro']*1000;alpha=math.asin(1480/Ri);zc=724.6666666667
+inner=[(ax(6000+Ri*math.sin(-alpha+2*alpha*i/120)),az(zc+Ri*math.cos(-alpha+2*alpha*i/120))) for i in range(121)]
+outer=[(ax(6000+Ro*math.sin(alpha-2*alpha*i/120)),az(zc+Ro*math.cos(alpha-2*alpha*i/120))) for i in range(121)]
+parts.append('<polygon points="'+' '.join(f'{x:.3f},{y:.3f}' for x,y in inner+outer)+'" fill="#d7b08b" stroke="#976938" stroke-width=".4"/>')
+for pts in [[(4307.5,2100),(4520,2100),(4520,2250),(4370.282309,2404.303639),(4307.5,2404.303639)],
+            [(7480,2100),(7692.5,2100),(7692.5,2404.303639),(7629.717691,2404.303639),(7480,2250)]]:
+    parts.append('<polygon points="'+' '.join(f'{ax(x):.3f},{az(y):.3f}' for x,y in pts)+'" fill="#bdc9c2" stroke="#345460" stroke-width=".4"/>')
+ln(ax(4307.5),az(2200),ax(7692.5),az(2200),'#a15f46')
+for x in [4307.5,7692.5]:box(ax(x)-.375,az(2275),.75,7.5,'#345460')
+for i,t in enumerate(['215radial×215axial brickring;775 including facewrap (not shown).',
+                      'RC212.5×215 ends at RADIALSKEWBACK; no RC through ring.',
+                      'Tie2200/50envelope2175–2225;formed40bore, no voussoirdrill.',
+                      'Central head2285court/2327.5garden; 127.152 tie/hinge offset.',
+                      'Court windowhead-transfer e exceeds kern, but remains inside ring.',
+                      'Required compression is a DEMAND, not masonry strength acceptance.',
+                      'Pierhead anchorage/plate splitting/thermalcollars remain internal work.']):txt(399,194+7*i,t)
+txt(12,266,'D / ACTIONS AND EXPLICIT LIMITS','title')
+for i,(key,c) in enumerate(arches['cases'].items()):
+    pressure='OUTSIDE RING' if c['ULS_required_compression_MPa'] is None else f"requiredp{c['ULS_required_compression_MPa']:.3f}MPa"
+    txt(12,276+6*i,f"{key}: H{c['H']:.2f}kN / e{1000*c['max_abs_e']:.1f}mm / {pressure}")
+txt(12,338,'The central-roofpoint case is rejected; actual roofpoints use the collector/endpier proposal.')
+for i,t in enumerate(['Corner square collapse is a support-action ceiling, not a proof of actual jack/cantilever members or loadsharing.',
+                      'Uppercollector: gravity section screen only; continuous loops, pier reactions, hold-down and lateral closures still to earn.',
+                      'Lowerarches: actual courtwindows create point reactions; gross uniform masonry cannot replace that transfer.',
+                      'Known400pilejoint remains rejected; D1300 is only the earlier conditional connected-foundation concept.',
+                      'Stair11.166/11.700mm sensitivity leaves0.534mm; actual tolerances, creep and finishes require qualification.']):txt(12,355+7*i,t)
+txt(12,407,'Reproduce: python project/str/studies/open-loggia-support.py --check · No construction, geometry adoption or STR-HOUSE completion.')
+parts.append('</svg>\n');roof_arch_svg='\n'.join(parts)
+for name,content in [('open-loggia-support.json',json.dumps(result,indent=2,allow_nan=False)+'\n'),('open-loggia-support.svg',main_svg),('open-loggia-node.svg',node_svg),('open-loggia-wet-joint.svg',joint_svg),('open-loggia-stair.svg',stair_svg),('open-loggia-roof-arch.svg',roof_arch_svg)]:
     p=OUT/name
     if '--check' in sys.argv:
         if not p.exists() or p.read_text()!=content: raise SystemExit('STALE '+str(p))

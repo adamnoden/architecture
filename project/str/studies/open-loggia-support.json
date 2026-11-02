@@ -2,8 +2,8 @@
   "identity": "OPEN-N / first whole-floor support calculation checkpoint, unadopted",
   "source": {
     "path": "project/had/studies/open-north-loggia.json",
-    "commit": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
-    "sha256": "9984a61f84943abe8b95b59db6da675b43999e9d1530b2508b7ade67062c2936"
+    "commit": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+    "sha256": "588ee0da0545af391649c8e7d37f5d5c6f01159f93997602048649393f2f5a6e"
   },
   "units": "mm / kN / kPa / MPa",
   "floor_fields": [
@@ -14534,6 +14534,129 @@
         },
         "top_cantilever_M": 1.01011663828125,
         "top_cantilever_capacity": 19.167280721391126
+      },
+      "qualification_sensitivities": [
+        {
+          "case": "control",
+          "normal_h": 150,
+          "d": 119,
+          "phi": 3,
+          "differential_microstrain": 300,
+          "added_G": 0,
+          "deflection": 8.699077405832561,
+          "imposed": 2.467286536568236,
+          "total": 11.166363942400798,
+          "reserve": 0.5336360575992019
+        },
+        {
+          "case": "creep3p5",
+          "normal_h": 150,
+          "d": 119,
+          "phi": 3.5,
+          "differential_microstrain": 300,
+          "added_G": 0,
+          "deflection": 8.995372011555405,
+          "imposed": 2.467286536568236,
+          "total": 11.462658548123642,
+          "reserve": 0.2373414518763579
+        },
+        {
+          "case": "shrink400",
+          "normal_h": 150,
+          "d": 119,
+          "phi": 3,
+          "differential_microstrain": 400,
+          "added_G": 0,
+          "deflection": 8.699077405832561,
+          "imposed": 3.2897153820909812,
+          "total": 11.988792787923543,
+          "reserve": -0.28879278792354324
+        },
+        {
+          "case": "waist-minus5",
+          "normal_h": 145,
+          "d": 114,
+          "phi": 3,
+          "differential_microstrain": 300,
+          "added_G": 0,
+          "deflection": 9.463706834013655,
+          "imposed": 2.552365382656796,
+          "total": 12.016072216670452,
+          "reserve": -0.3160722166704515
+        },
+        {
+          "case": "extra-permanent0p25",
+          "normal_h": 150,
+          "d": 119,
+          "phi": 3,
+          "differential_microstrain": 300,
+          "added_G": 0.25,
+          "deflection": 8.929017510796282,
+          "imposed": 2.467286536568236,
+          "total": 11.396304047364518,
+          "reserve": 0.30369595263548144
+        }
+      ],
+      "reserve_warning": "Controlreserve0.534mm is narrow. These separate authored perturbations are not actual tolerances/creep forecasts and do not combine safely by a binaryPASS; actual as-built section, servicecriteria, creep/finishes and movement budget must earn the proposition.",
+      "constructive170_comparison": {
+        "status": "Preferred next geometric comparison, not selected or qualified until actual joints close",
+        "normal_waist": 170,
+        "steel": "H12/125 eachface retained",
+        "G": 7.958740597900214,
+        "ULS_flight_end": 24.39049858396929,
+        "sensitivities": [
+          {
+            "case": "nominal170",
+            "h": 170,
+            "d": 139,
+            "phi": 3,
+            "microstrain": 300,
+            "added_G": 0,
+            "total": 8.624121845289697,
+            "reserve": 3.075878154710303
+          },
+          {
+            "case": "adverse165",
+            "h": 165,
+            "d": 134,
+            "phi": 3.5,
+            "microstrain": 400,
+            "added_G": 0.25,
+            "total": 10.311509717111559,
+            "reserve": 1.3884902828884398
+          }
+        ],
+        "last_lower_waist_soffit": 1356.4003760839914,
+        "existing_beam_bottom": 1355,
+        "existing_contact_reserve": 1.400376083991432,
+        "proposed_midbeam": [
+          250,
+          390
+        ],
+        "top": 1725,
+        "bottom": 1335,
+        "mid_actions": {
+          "M": 25.515152931709917,
+          "RW": 39.155031917676624,
+          "RE": 38.63171087526196
+        },
+        "mid_section_screen": {
+          "b": 250,
+          "h": 390,
+          "d": 347,
+          "As": 628.3185307179587,
+          "cover": 25,
+          "x": 80.34763819922745,
+          "x_d": 0.23154938962313384,
+          "z": 314.860944720309,
+          "MR": 86.01433311614475,
+          "VRdc": 51.102317515507124,
+          "As_min": 130.819,
+          "ductility": true
+        },
+        "changed_joint": "Midbeam bottom hooks/sill lower20, post reaction/upperheader/stairwaist join and guard anchors must update as one actual model; old3D joint PASS does not transfer.",
+        "HAD_readback": "2026-11-02:20lower beam is inside stairaperture, outside credited gallery/bodyroute. Window sill1750 stays; West7400 requires FIXEDglazing with actual fallguard, not an unguarded leaf25above landing.",
+        "no_second_stair_authority": true
       }
     },
     "NE_return": {
@@ -15011,6 +15134,883 @@
     "annular_geometric_clearance": 80,
     "capacity": null
   },
+  "actual_roof": {
+    "source": {
+      "commit": "f376a8a75a12838b2026a9a971ac33bfef470469",
+      "path": "project/mat/studies/loggia-roof-section.json",
+      "sha256": "f3ac7756f1b326a9271869732442083a59f604eca8361f157827f01d748c4b8c"
+    },
+    "weather_eave": 7100,
+    "physical_outer_edge": 7006.738468369001,
+    "ridge": 8090.903773579372,
+    "normal_recipe": [
+      [
+        "Natural zinc",
+        0.7
+      ],
+      [
+        "Open-gap untreated boards",
+        24
+      ],
+      [
+        "Clear ventilation / supported counterrails",
+        50
+      ],
+      [
+        "Cold-side breather reserve",
+        1
+      ],
+      [
+        "Bare glass two160 layers",
+        320
+      ],
+      [
+        "Supported metal air/vapour control",
+        1
+      ],
+      [
+        "Lower untreated supportboards",
+        24
+      ],
+      [
+        "Primary SHS depth",
+        80
+      ]
+    ],
+    "total_normal": 500.7,
+    "primary_centre": 6746.721089070517,
+    "ordinary_tie": {
+      "underside": 6721.721089070517,
+      "top": 6771.721089070517
+    },
+    "purlin_under_at_support": 6658.450855553518,
+    "ceiling_top": 6620,
+    "support_clearance": 38.45085555351761,
+    "clearance_limit": "38.45 is at the core support; overhang steel lies lower OUTSIDE the protected ceiling territory. No global underside assertion.",
+    "regions": [
+      {
+        "id": "central-N",
+        "plan_area": 14.415000000000001
+      },
+      {
+        "id": "central-S",
+        "plan_area": 14.415000000000001
+      },
+      {
+        "id": "central-E",
+        "plan_area": 14.415000000000001
+      },
+      {
+        "id": "central-W",
+        "plan_area": 14.415000000000001
+      },
+      {
+        "id": "corner-NW",
+        "plan_area": 21.622500000000002
+      },
+      {
+        "id": "corner-NE",
+        "plan_area": 21.622500000000002
+      },
+      {
+        "id": "corner-SW",
+        "plan_area": 21.622500000000002
+      },
+      {
+        "id": "corner-SE",
+        "plan_area": 21.622500000000002
+      }
+    ],
+    "plan_area": 144.15,
+    "normal_area": 159.0519270184432,
+    "loads": {
+      "Gmax": 3,
+      "Q": 1.5,
+      "Gmin_uplift": 0,
+      "wind_stress": 1.5,
+      "limit": "Authored horizontal load challenges, not site loads or automatic wind-normal conversion. Roof G3 is a maximum action budget, not derived actual mass; independently supported ceilings retain their separate wall reactions. Uplift takes no favourable dead weight."
+    },
+    "north_frames_x": [
+      4377.5,
+      7622.5
+    ],
+    "seat_y": [
+      8082.5,
+      11667.5
+    ],
+    "roof_extent_from_seat": 532.5,
+    "primary_cantilever_each": 332.5,
+    "purlin_rows": [
+      7750,
+      8300,
+      8850,
+      9400,
+      9875,
+      10400,
+      10950,
+      11500,
+      12000
+    ],
+    "tributaries": [
+      0.475,
+      0.55,
+      0.55,
+      0.5125,
+      0.5,
+      0.5375,
+      0.55,
+      0.525,
+      0.45
+    ],
+    "edge_cantilever": 200,
+    "seats": [
+      {
+        "id": "N-4377.5-0",
+        "xy": [
+          4377.5,
+          8082.5
+        ],
+        "wall": "court-north",
+        "opening_below": [],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "N-4377.5-1",
+        "xy": [
+          4377.5,
+          11667.5
+        ],
+        "wall": "outer-north",
+        "opening_below": [],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "N-7622.5-0",
+        "xy": [
+          7622.5,
+          8082.5
+        ],
+        "wall": "court-north",
+        "opening_below": [],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "N-7622.5-1",
+        "xy": [
+          7622.5,
+          11667.5
+        ],
+        "wall": "outer-north",
+        "opening_below": [],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "S-4377.5-0",
+        "xy": [
+          4377.5,
+          332.5
+        ],
+        "wall": "outer-south",
+        "opening_below": [
+          "south-window-1"
+        ],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "S-4377.5-1",
+        "xy": [
+          4377.5,
+          3917.5
+        ],
+        "wall": "court-south",
+        "opening_below": [],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "S-7622.5-0",
+        "xy": [
+          7622.5,
+          332.5
+        ],
+        "wall": "outer-south",
+        "opening_below": [
+          "south-window-3"
+        ],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "S-7622.5-1",
+        "xy": [
+          7622.5,
+          3917.5
+        ],
+        "wall": "court-south",
+        "opening_below": [],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "W-4377.5-0",
+        "xy": [
+          332.5,
+          4377.5
+        ],
+        "wall": "outer-west",
+        "opening_below": [
+          "west-window-1"
+        ],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "W-4377.5-1",
+        "xy": [
+          3917.5,
+          4377.5
+        ],
+        "wall": "court-west",
+        "opening_below": [],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "W-7622.5-0",
+        "xy": [
+          332.5,
+          7622.5
+        ],
+        "wall": "outer-west",
+        "opening_below": [
+          "west-window-2"
+        ],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "W-7622.5-1",
+        "xy": [
+          3917.5,
+          7622.5
+        ],
+        "wall": "court-west",
+        "opening_below": [],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "E-4377.5-0",
+        "xy": [
+          8082.5,
+          4377.5
+        ],
+        "wall": "court-east",
+        "opening_below": [],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "E-4377.5-1",
+        "xy": [
+          11667.5,
+          4377.5
+        ],
+        "wall": "outer-east",
+        "opening_below": [
+          "east-window-1"
+        ],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "E-7622.5-0",
+        "xy": [
+          8082.5,
+          7622.5
+        ],
+        "wall": "court-east",
+        "opening_below": [],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      },
+      {
+        "id": "E-7622.5-1",
+        "xy": [
+          11667.5,
+          7622.5
+        ],
+        "wall": "outer-east",
+        "opening_below": [
+          "east-window-2"
+        ],
+        "R_down": 22.703625000000002,
+        "R_uplift": -8.108437500000003
+      }
+    ],
+    "cases": {
+      "ULS-down": {
+        "q_horizontal": 6.300000000000001,
+        "ordinary_frame": {
+          "RA": 22.703625000000002,
+          "RB": 22.703625000000002,
+          "tie": 17.345781416715443,
+          "max_abs_M": 3.1604323760460256,
+          "max_compression": 23.45849300626344,
+          "min_N": -1.9602619798015168,
+          "primary_SHS80x80x5": {
+            "A": 1470,
+            "I": 1370000,
+            "Wel": 34200,
+            "Lcr": 1.9778049197402665,
+            "fy": 355,
+            "alpha": 0.49,
+            "Ncr": 725.8931557402717,
+            "slenderness": 0.8478841037273522,
+            "chi": 0.6321442315613754,
+            "Nb": 329.8844672403038,
+            "Mel": 12.141
+          },
+          "linear_Nb_Mel_screen": 0.3314219522195617
+        },
+        "corner_action_envelope": {
+          "RA": 68.11087500000001,
+          "RB": 68.11087500000001,
+          "tie": 117.25568404770466,
+          "max_abs_M": 20.26850131867306,
+          "max_compression": 131.5586617290891,
+          "min_N": -1.1160534566782772,
+          "SHS120x120x6p3_section_only": {
+            "A": 2820,
+            "I": 6030000,
+            "Wel": 100000,
+            "Lcr": 2.669226208201321,
+            "fy": 355,
+            "alpha": 0.49,
+            "Ncr": 1754.1454103988785,
+            "slenderness": 0.7554503642615491,
+            "chi": 0.6901216586528639,
+            "Nb": 690.880792477382,
+            "Mel": 35.5
+          },
+          "limit": "Action envelope ONLY: finite jack/purlin spans, actual sharing and hip joints remain internal work. Not a selected complete corner frame."
+        }
+      },
+      "service": {
+        "q_horizontal": 4.5,
+        "ordinary_frame": {
+          "RA": 16.216875000000005,
+          "RB": 16.216874999999998,
+          "tie": 12.389843869082464,
+          "max_abs_M": 2.257451697175733,
+          "max_compression": 16.756066433045316,
+          "min_N": -1.400187128429655,
+          "primary_SHS80x80x5": {
+            "A": 1470,
+            "I": 1370000,
+            "Wel": 34200,
+            "Lcr": 1.9778049197402665,
+            "fy": 355,
+            "alpha": 0.49,
+            "Ncr": 725.8931557402717,
+            "slenderness": 0.8478841037273522,
+            "chi": 0.6321442315613754,
+            "Nb": 329.8844672403038,
+            "Mel": 12.141
+          },
+          "linear_Nb_Mel_screen": 0.23672996587111553
+        },
+        "corner_action_envelope": {
+          "RA": 48.65062500000002,
+          "RB": 48.650625000000005,
+          "tie": 83.75406003407483,
+          "max_abs_M": 14.477500941909504,
+          "max_compression": 93.97047266363512,
+          "min_N": -0.7971810404844876,
+          "SHS120x120x6p3_section_only": {
+            "A": 2820,
+            "I": 6030000,
+            "Wel": 100000,
+            "Lcr": 2.669226208201321,
+            "fy": 355,
+            "alpha": 0.49,
+            "Ncr": 1754.1454103988785,
+            "slenderness": 0.7554503642615491,
+            "chi": 0.6901216586528639,
+            "Nb": 690.880792477382,
+            "Mel": 35.5
+          },
+          "limit": "Action envelope ONLY: finite jack/purlin spans, actual sharing and hip joints remain internal work. Not a selected complete corner frame."
+        }
+      },
+      "uplift-stress": {
+        "q_horizontal": -2.25,
+        "ordinary_frame": {
+          "RA": -8.108437500000003,
+          "RB": -8.108437499999999,
+          "tie": -6.194921934541232,
+          "max_abs_M": 1.1287258485878664,
+          "max_compression": 0.7000935642148275,
+          "min_N": -8.378033216522658,
+          "primary_SHS80x80x5": {
+            "A": 1470,
+            "I": 1370000,
+            "Wel": 34200,
+            "Lcr": 1.9778049197402665,
+            "fy": 355,
+            "alpha": 0.49,
+            "Ncr": 725.8931557402717,
+            "slenderness": 0.8478841037273522,
+            "chi": 0.6321442315613754,
+            "Nb": 329.8844672403038,
+            "Mel": 12.141
+          },
+          "linear_Nb_Mel_screen": 0.09509035070889144
+        },
+        "corner_action_envelope": {
+          "RA": -24.32531250000001,
+          "RB": -24.325312500000003,
+          "tie": -41.87703001703741,
+          "max_abs_M": 7.238750470954752,
+          "max_compression": 0.3985905202422438,
+          "min_N": -46.98523633181756,
+          "SHS120x120x6p3_section_only": {
+            "A": 2820,
+            "I": 6030000,
+            "Wel": 100000,
+            "Lcr": 2.669226208201321,
+            "fy": 355,
+            "alpha": 0.49,
+            "Ncr": 1754.1454103988785,
+            "slenderness": 0.7554503642615491,
+            "chi": 0.6901216586528639,
+            "Nb": 690.880792477382,
+            "Mel": 35.5
+          },
+          "limit": "Action envelope ONLY: finite jack/purlin spans, actual sharing and hip joints remain internal work. Not a selected complete corner frame."
+        }
+      }
+    },
+    "purlin": {
+      "section": [
+        120,
+        60,
+        4
+      ],
+      "span": 3245,
+      "source": "SCI P3632015B-31;Hybox rounded properties Iy241/Iz81.2cm4,Wy40.1/Wz27.1cm3",
+      "full_UDL_M_bound": 4.560817078125001,
+      "biaxial_elastic_stress": 174.20479353648338,
+      "full_UDL_service_vertical_mm": 9.542241484710722,
+      "L250": 12.98,
+      "limit": "Two-axis section/deflection screen; actual postpoints, cleats, torsion, buckling, bracing and corner jacks not qualified."
+    },
+    "collector": {
+      "status": "Constructive roofpoint bypass proposal; not adopted or a completed ring joint",
+      "section": {
+        "b": 260,
+        "h": 140,
+        "d": 103,
+        "As": 226.1946710584651,
+        "cover": 25,
+        "x": 27.812643992040268,
+        "x_d": 0.2700256698256337,
+        "z": 91.8749424031839,
+        "MR": 9.035487989305917,
+        "VRdc": 18.877863062196315,
+        "As_min": 40.38424,
+        "ductility": true
+      },
+      "top": 6680,
+      "bottom": 6540,
+      "ordinary_core": 140,
+      "projection_each": 60,
+      "steel": "2H12top and2H12bottom;H6/75;25cover",
+      "clear_window_max": 1000,
+      "seats_each": 300,
+      "axis_span": 1300,
+      "M": 7.638198750000002,
+      "V": 12.150337500000001,
+      "upper_window_ring_extrados": 6515,
+      "ring_clearance": 25,
+      "plate": [
+        140,
+        240,
+        12
+      ],
+      "mineral_grout": 10,
+      "top_of_plate": 6702,
+      "primary_under_at_support": 6702.5859723120175,
+      "links": {
+        "diameter": 6,
+        "pitch": 75,
+        "VRs": 30.38876232915901,
+        "VRmax": 108.16977600000003,
+        "minimum_ratio": 0.2278525839221491,
+        "provided_ratio": 0.7539822368615503,
+        "maximum_pitch": 77.25
+      },
+      "SLS_phi3_point_bound_mm": 3.2336794742487966,
+      "SLS_shrink300_mm": 0.4526785714285714,
+      "scope": "No eccentric roofpoint assigned directly to an upperwindow arch. Actual pier bearing/cage continuity, plate/hold-down and lateral ring joints remain intrinsic work. Ordinary6550ceiling local15lining underside6525 means25drop; protected6444 hides beam."
+    },
+    "remaining": [
+      "Corner jack/topology and complete bearing/hip/crown/tie joints",
+      "Actual gravity mass ledger including ceiling versus Gmax/Gmin",
+      "Roof collector pier bearing and continuous lateral/hold-down connections",
+      "Actual normal/tangential site wind, snow and load patterns",
+      "Mechanical/thermal/fire/weather support admission; no roof storage"
+    ],
+    "upper_window_eccentric_roof_control": {
+      "raw_width": 1000,
+      "rise": 300,
+      "radial_ring": 215,
+      "axial": 140,
+      "point_ULS": 22.703625000000002,
+      "point_offset": -222.5,
+      "max_abs_e": 0.21257672459870078,
+      "half_ring": 0.1075,
+      "fails_trial_mechanism": true,
+      "limit": "Ring1.35selfweight+actualULSroofpoint, not fullwindow/spandrelcase. Exposes unsafe directpoint assumption; does not prove no alternative thrustline or masonry capacity. Selected collector must physically bypass point to real piers."
+    }
+  },
+  "north_arches": {
+    "Ri": 2.1253333333333333,
+    "Rm": 2.2328333333333332,
+    "Ro": 2.340333333333333,
+    "hinge_span": 3.109717691342534,
+    "hinge_z": 2.327151819322459,
+    "rise": 0.6303481806775411,
+    "tie_z": 2200,
+    "tie_visible": [
+      2175,
+      2225
+    ],
+    "raw_jambs": [
+      4520,
+      7480
+    ],
+    "RC_pier": [
+      212.5,
+      215
+    ],
+    "axial_wrap": 775,
+    "cases": {
+      "outer-north/self": {
+        "W": 14.319128256500804,
+        "RA": 7.159564128250401,
+        "RB": 7.159564128250403,
+        "H": 7.5081631772962,
+        "max_abs_e": 0.0017372454334118445,
+        "worst_cut": {
+          "x": -0.7929780112923462,
+          "N": 8.03074673069991,
+          "M": 0.013951378084795518,
+          "e": 0.0017372454334118445,
+          "ULS_peak_MPa": 0.18215440810084685
+        },
+        "kern": 0.035833333333333335,
+        "half_ring": 0.1075,
+        "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
+        "ULS_required_compression_MPa": 0.22411557782624647,
+        "pier_vertical_eccentricity": 0.03139115432873285,
+        "pier_tie_vertical_offset": 0.12715181932245878,
+        "pier_M_absolute_sum": 1.1794235902394725,
+        "upperwindow_heads": []
+      },
+      "outer-north/gross-upper": {
+        "W": 50.75880016365263,
+        "RA": 25.379400081826315,
+        "RB": 25.379400081826315,
+        "H": 29.979294186706483,
+        "max_abs_e": 0.01653676093130105,
+        "worst_cut": {
+          "x": -1.1194983688833124,
+          "N": 34.72110326386556,
+          "M": -0.5741745839455614,
+          "e": -0.01653676093130105,
+          "ULS_peak_MPa": 1.0977734997325483
+        },
+        "kern": 0.035833333333333335,
+        "half_ring": 0.1075,
+        "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
+        "ULS_required_compression_MPa": 1.1131762126634717,
+        "pier_vertical_eccentricity": 0.03139115432873285,
+        "pier_tie_vertical_offset": 0.12715181932245878,
+        "pier_M_absolute_sum": 4.608610462582206,
+        "upperwindow_heads": []
+      },
+      "outer-north/actual-window-arch-transfer": {
+        "W": 50.75880016365263,
+        "RA": 25.379400081826315,
+        "RB": 25.379400081826315,
+        "H": 29.979294186706483,
+        "max_abs_e": 0.01653676093130105,
+        "worst_cut": {
+          "x": -1.1194983688833124,
+          "N": 34.72110326386556,
+          "M": -0.5741745839455614,
+          "e": -0.01653676093130105,
+          "ULS_peak_MPa": 1.0977734997325483
+        },
+        "kern": 0.035833333333333335,
+        "half_ring": 0.1075,
+        "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
+        "ULS_required_compression_MPa": 1.1131762126634717,
+        "pier_vertical_eccentricity": 0.03139115432873285,
+        "pier_tie_vertical_offset": 0.12715181932245878,
+        "pier_M_absolute_sum": 4.608610462582206,
+        "upperwindow_heads": []
+      },
+      "outer-north/rejected-central-roofpoint": {
+        "W": 73.46242516365264,
+        "RA": 36.73121258182632,
+        "RB": 36.73121258182632,
+        "H": 57.980431686706474,
+        "max_abs_e": 0.08556944318853524,
+        "worst_cut": {
+          "x": -0.8473980708908406,
+          "N": 62.89012305585763,
+          "M": -5.3814728119482,
+          "e": -0.08556944318853524,
+          "ULS_peak_MPa": 8.892073976187863
+        },
+        "kern": 0.035833333333333335,
+        "half_ring": 0.1075,
+        "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
+        "ULS_required_compression_MPa": 8.897666565462307,
+        "pier_vertical_eccentricity": 0.03139115432873285,
+        "pier_tie_vertical_offset": 0.12715181932245878,
+        "pier_M_absolute_sum": 8.52535253690387,
+        "upperwindow_heads": []
+      },
+      "court-north/self": {
+        "W": 14.319128256500804,
+        "RA": 7.159564128250401,
+        "RB": 7.159564128250403,
+        "H": 7.5081631772962,
+        "max_abs_e": 0.0017372454334118445,
+        "worst_cut": {
+          "x": -0.7929780112923462,
+          "N": 8.03074673069991,
+          "M": 0.013951378084795518,
+          "e": 0.0017372454334118445,
+          "ULS_peak_MPa": 0.18215440810084685
+        },
+        "kern": 0.035833333333333335,
+        "half_ring": 0.1075,
+        "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
+        "ULS_required_compression_MPa": 0.22411557782624647,
+        "pier_vertical_eccentricity": 0.03139115432873285,
+        "pier_tie_vertical_offset": 0.12715181932245878,
+        "pier_M_absolute_sum": 1.1794235902394725,
+        "upperwindow_heads": [
+          {
+            "c": -0.85,
+            "half": 0.5,
+            "R": 0.5666666666666667,
+            "zc": 2.283333333333333,
+            "a": 0.5948529411764706,
+            "W": 0
+          },
+          {
+            "c": 0.7,
+            "half": 0.5,
+            "R": 0.5666666666666667,
+            "zc": 2.283333333333333,
+            "a": 0.5948529411764706,
+            "W": 0
+          }
+        ]
+      },
+      "court-north/gross-upper": {
+        "W": 50.75880016365263,
+        "RA": 25.379400081826315,
+        "RB": 25.379400081826315,
+        "H": 29.979294186706483,
+        "max_abs_e": 0.01653676093130105,
+        "worst_cut": {
+          "x": -1.1194983688833124,
+          "N": 34.72110326386556,
+          "M": -0.5741745839455614,
+          "e": -0.01653676093130105,
+          "ULS_peak_MPa": 1.0977734997325483
+        },
+        "kern": 0.035833333333333335,
+        "half_ring": 0.1075,
+        "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
+        "ULS_required_compression_MPa": 1.1131762126634717,
+        "pier_vertical_eccentricity": 0.03139115432873285,
+        "pier_tie_vertical_offset": 0.12715181932245878,
+        "pier_M_absolute_sum": 4.608610462582206,
+        "upperwindow_heads": [
+          {
+            "c": -0.85,
+            "half": 0.5,
+            "R": 0.5666666666666667,
+            "zc": 2.283333333333333,
+            "a": 0.5948529411764706,
+            "W": 0
+          },
+          {
+            "c": 0.7,
+            "half": 0.5,
+            "R": 0.5666666666666667,
+            "zc": 2.283333333333333,
+            "a": 0.5948529411764706,
+            "W": 0
+          }
+        ]
+      },
+      "court-north/actual-window-arch-transfer": {
+        "W": 35.53538304436083,
+        "RA": 17.39614075040856,
+        "RB": 18.139242293952268,
+        "H": 20.5610672054205,
+        "max_abs_e": 0.044619943854646744,
+        "worst_cut": {
+          "x": -0.9095924247176912,
+          "N": 22.574273666169763,
+          "M": -1.0072628235439254,
+          "e": -0.044619943854646744,
+          "ULS_peak_MPa": 1.113194740797787
+        },
+        "kern": 0.035833333333333335,
+        "half_ring": 0.1075,
+        "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
+        "ULS_required_compression_MPa": 1.1166746399241263,
+        "pier_vertical_eccentricity": 0.03139115432873285,
+        "pier_tie_vertical_offset": 0.12715181932245878,
+        "pier_M_absolute_sum": 3.160462041400993,
+        "upperwindow_heads": [
+          {
+            "c": -0.85,
+            "half": 0.5,
+            "R": 0.5666666666666667,
+            "zc": 2.283333333333333,
+            "a": 0.5948529411764706,
+            "W": 1.2333182053017093
+          },
+          {
+            "c": 0.7,
+            "half": 0.5,
+            "R": 0.5666666666666667,
+            "zc": 2.283333333333333,
+            "a": 0.5948529411764706,
+            "W": 1.2333183721525736
+          }
+        ]
+      },
+      "court-north/rejected-central-roofpoint": {
+        "W": 58.23900804436083,
+        "RA": 28.74795325040856,
+        "RB": 29.49105479395227,
+        "H": 48.56220470542049,
+        "max_abs_e": 0.11275544685408481,
+        "worst_cut": {
+          "x": -0.8473980708908406,
+          "N": 52.60144310133468,
+          "M": -5.931099222060709,
+          "e": -0.11275544685408481,
+          "ULS_peak_MPa": null
+        },
+        "kern": 0.035833333333333335,
+        "half_ring": 0.1075,
+        "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
+        "ULS_required_compression_MPa": null,
+        "pier_vertical_eccentricity": 0.03139115432873285,
+        "pier_tie_vertical_offset": 0.12715181932245878,
+        "pier_M_absolute_sum": 7.077204115722656,
+        "upperwindow_heads": [
+          {
+            "c": -0.85,
+            "half": 0.5,
+            "R": 0.5666666666666667,
+            "zc": 2.283333333333333,
+            "a": 0.5948529411764706,
+            "W": 1.2333182053017093
+          },
+          {
+            "c": 0.7,
+            "half": 0.5,
+            "R": 0.5666666666666667,
+            "zc": 2.283333333333333,
+            "a": 0.5948529411764706,
+            "W": 1.2333183721525736
+          }
+        ]
+      }
+    },
+    "limit": "Sampled unilateral compression equilibrium only; brick/mortar directional strength, shear/slip, actual windowhead joints/steel bypass, asymmetry, pier/plate/bore/cage and robustness remain internal/adoption work. No masonry ring pass.",
+    "lower_pier_section_only": {
+      "b": 215,
+      "h": 212.5,
+      "d": 173.5,
+      "As": 226.1946710584651,
+      "cover": 25,
+      "x": 33.63389506014172,
+      "x_d": 0.1938553029402981,
+      "z": 160.0464419759433,
+      "MR": 15.739848824707051,
+      "VRdc": 23.545309796093328,
+      "As_min": 56.25217,
+      "ductility": true
+    },
+    "lower_pier_actions": [
+      {
+        "side": "outer-north",
+        "N": 52.97101648807632,
+        "M": 6.7540462928499085,
+        "Pcr": 1360.2902156353198,
+        "note": "Planar action budget: ringreaction, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity."
+      },
+      {
+        "side": "court-north",
+        "N": 45.73085870020227,
+        "M": 5.068480104250057,
+        "Pcr": 1360.2902156353198,
+        "note": "Planar action budget: ringreaction, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity."
+      }
+    ],
+    "tie_and_bore": {
+      "rod_dia": 30,
+      "thread": "M30 reference stressarea561",
+      "fy_trial": 200,
+      "gamma": 1.1,
+      "tie_tension_max": 29.979294186706483,
+      "rod_thread_yield_screen": 101.99999999999999,
+      "bore_dia": 40,
+      "bore_axis_z": 2200,
+      "bore_axis_NS": 107.5,
+      "pier_vertical_bar_trial": "4H12/H8;centres39/173.5EW and39/176NS",
+      "bore_to_vertical_bar_clear": 42.5,
+      "near_bore_link_z": [
+        2150,
+        2250
+      ],
+      "bore_to_link_clear": 26,
+      "plate": [
+        150,
+        150,
+        15
+      ],
+      "plate_NS_centred": true,
+      "washer": [
+        60,
+        10
+      ],
+      "nut": [
+        50,
+        30
+      ],
+      "limit": "Tension-section and geometric bore separation ONLY. Pierhead bar development below radial bevel, plate/concrete bearing/splitting, threads/end details, link/bore tolerance and thermalfire collars remain intrinsic/adoption work. No voussoir drilling."
+    }
+  },
   "node_review_known_gaps": [
     "Onlyenumeratedcageclearances;4leginnerlink/H12sidebarsmissing,coincidentEW/NStoprows,terminalmaintiedevelopmentandN-Mstrutfieldunearned.Specialistownsnextnodecorrection."
   ],
@@ -15026,12 +16026,12 @@
   },
   "retained_open_items": [
     "HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.",
-    "Actual2925stairs/midlandingmemberreactionsnowcalculated;physicaljoints/guards,entrancebridge,tiedarchesandroofremain.",
+    "Roof/arch controls now calculated; finite corner jacks, collectors/lateral and actual joint/reaction destinations remain.",
     "Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.",
-    "Wet receivers260x450 andnorthsupport11512.5: actual door/window/spatial readback required.",
+    "HAD068e repairs wet-receiver door/window geography; new roofcollector projection still needs owning reconciliation.",
     "Wetjoint3H16downhooks/4H16pier: finite3Dclearance/development calculated; lowercolumnjoint remains.",
-    "NodeFROZENbee43378: omittedinnerlinks/H12sidebars andcoincidenttoprows requireAstraredesign;no cage/nodePASS.",
-    "Revised240glass+40lining\u21922890soffit requires actual arch/head/thermal coordination; anchorsunfinished.",
+    "Frozen bee43378 and specialist adverse controls preserve actual failed node/cage duties; no joint PASS.",
+    "Actual775 wrapped portal and2890loggia soffit are bound; pierhead, anchor and thermal/fire joins remain.",
     "No house pass, adopted geometry, site/soil capacity, installation or competent acceptance follows."
   ]
 }
