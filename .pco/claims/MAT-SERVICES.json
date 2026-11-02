@@ -9,8 +9,8 @@
     "label": "zerg4-whole-house-services"
   },
   "claimedAt": "2026-11-01T21:02:38.591Z",
-  "heartbeatAt": "2026-11-01T23:49:10.740Z",
-  "expiresAt": "2026-11-02T00:34:10.740Z",
+  "heartbeatAt": "2026-11-02T00:25:10.686Z",
+  "expiresAt": "2026-11-02T01:10:10.686Z",
   "branch": "work/zerg4-whole-house-services",
   "predecessor": {
     "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "DraftPR1234 head4d4625a2024f5cc26f0f3f0192f2bbe2b195c57d tree19ee03243c6083e6f9f8def6e90198111700a468. Fivefiles reproduce;16emitters/14duties andactualrenderedrenewal/plan preserved. Freshactualmain546c98f9 verifiedancestor.",
-    "next": "FreezecanonicalIAShead-firstsinkcontract andbindrepairedHAD068e33actualinventory/terminaljoin; independentreviewthenrootsequencing.",
-    "blocker": "Draftinternaljoinsnamedexplicitly; noapparatus/material/site/physicalacceptance claimed."
+    "evidence": "Published0fbc79e84e1591b7d1528d92667ec6a8da6b46f8 tree0f6a7de63e84676419e4bb898705123da71fbb61 owns one numeric projection; current source corrections being prepared with actual HAD receiver/CU/PV/platform and bath local-port joins.",
+    "next": "Publish corrected projection on latestmainf462415; HAD consumes strict keyed equality; record relevant geometry equivalence and independent review.",
+    "blocker": "Head-first continuous/support handling remains internal continuation; bath port structural/material/physical acceptance unearned. No broad closure."
   },
   "pr": 1234
 }
