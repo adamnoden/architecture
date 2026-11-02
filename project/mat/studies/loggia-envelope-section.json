@@ -3,9 +3,9 @@
   "startingMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
   "hadSource": {
     "path": "project/had/studies/open-north-loggia.json",
-    "sha256": "588ee0da0545af391649c8e7d37f5d5c6f01159f93997602048649393f2f5a6e",
-    "commit": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
-    "gitBlob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273"
+    "sha256": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "commit": "cfacc96c61ce1be5befa3bc0a10086c7cb6b4202",
+    "gitBlob": "25faad2c4d40df2b7da7212f73808843a88d2f52"
   },
   "wallLayers": [
     [
