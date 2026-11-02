@@ -109,6 +109,8 @@
     "drainOuter": 150,
     "breatherAtScreen": 6993.1589086267895,
     "breatherAtFrameOutside": 6981.96752483107,
+    "gateContactAngleDeg": 3.390255906934866,
+    "gateContactX": 5994.02029004047,
     "primaryCrossTime": 0.075,
     "primaryCrossZ": 6979.147843369001
   },
@@ -130,6 +132,7 @@
     "screenPrimaryUninterceptedAlgebra": true,
     "secondaryStartsBelowScreenTop": true,
     "screenBreatherGap": true,
+    "closedScreenStopsBuildingLeaf": true,
     "screenGatePadGap": true,
     "screenPadFrameGap": true,
     "drainToAdjacentPadGap": true,
