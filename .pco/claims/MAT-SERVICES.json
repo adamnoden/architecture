@@ -9,11 +9,11 @@
     "label": "zerg-services-joined-system"
   },
   "claimedAt": "2026-11-02T11:27:42.220Z",
-  "heartbeatAt": "2026-11-02T11:47:52.866Z",
-  "expiresAt": "2026-11-02T12:32:52.866Z",
+  "heartbeatAt": "2026-11-02T11:54:53.374Z",
+  "expiresAt": "2026-11-02T12:39:53.374Z",
   "checkpoint": {
-    "evidence": "Unverified WIP a61055498928d4ccf0404bb7b37ab1efc5467b58/tree7c9aa7ed: joined intake/control/heat trial; negative −5 pressure margin and ERA safety interface remain unresolved.",
-    "next": "Develop and review nominal −4 Pa pressure margin and OEM-compatible hood replacement or qualified ERA interlock, then exact kit/plant join; no product or material selection."
+    "evidence": "Recovery verified remote2d69cbbab0933a4c988653aa5d6413cc8d8558c4 tree60e78db67ee402d5cd0d034ce73f8f8874470bb0 equals local11d044fa; unreviewed joined assisted intake/heat WIP.",
+    "next": "Develop source-compatible compact OEM hood/contact family and complete system redesign; retain minus-four protection and all factory modes."
   },
   "branch": "work/zerg11-services-joined-system",
   "predecessor": {
