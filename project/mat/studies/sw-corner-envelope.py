@@ -187,8 +187,8 @@ for bx in (128,275):
  z=lambda v: 38-v*.09
  svg2+=f'<rect x="{q(0)}" y="{z(-80)}" width="{262.5*.15}" height="18" class="rc"/><rect x="{q(562.5)}" y="{z(-80)}" width="{137.5*.15}" height="18" class="rc"/>'
  svg2+=f'<rect x="{q(262.5)}" y="{z(-80)}" width="45" height="27" class="rc"/><rect x="{q(262.5)}" y="{z(-380)}" width="45" height="{194*.09}" class="mineral"/>'
- svg2+=f'<path class="metal" d="M{q(0)} {z(-80)} H{q(262.5)} V{z(-574)} H{q(562.5)} V{z(-80)} H{q(700)}"/>'
  for a in (322.5,502.5):svg2+=f'<path d="M{q(a)} {z(-80)} V{z(-571)} M{q(a)} {z(-574)} V{z(-990)}" stroke="#263e4a" stroke-width="1"/>'
+ svg2+=f'<path class="metal" d="M{q(0)} {z(-80)} H{q(262.5)} V{z(-574)} H{q(562.5)} V{z(-80)} H{q(700)}"/>'
  svg2+=f'<text x="{bx}" y="143">Field −80; pan bottom −574..−571.</text><text x="{bx}" y="149">Split ties: no plate through-hole.</text><text x="{bx}" y="155">Metal sides interrupt warm RC!</text>'
 svg2+='''<text x="10" y="184">RED = proposed continuous metal surface; welds, transitions and movement remain unproved. Schematic, not a construction detail.</text><text x="10" y="191">Structural redesign: sides cross the intended monolithic slab/receiver. Seat, cage, lateral path and all barrier edges are holds.</text><text x="10" y="198">Cold anchor, ground gas/pressure, corrosion, tests, accessible repair and 3D thermal/moisture fields require separate evidence.</text></svg>'''
 output('sw-corner-pan.svg',svg2+'\n')
