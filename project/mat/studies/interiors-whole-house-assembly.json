@@ -20,8 +20,8 @@
     "HADJSONBlob": "6affb39e28a777e36532729183152c8c588e4989",
     "logicalInput": "project/had/studies/open-north-loggia.json",
     "services": {
-      "head": "0e54959e28946b1bab1f04d439588477c05eb3d2",
-      "blob": "6b05acdd9dc46d1e7088540e7e257787a0ebf788",
+      "head": "38194f2988c8cedfce7ee3a066c578afaf0f7c37",
+      "blob": "eb841fcfe6ec77975ee94d48c4cae59a7dc12859",
       "logicalInput": "project/mat/studies/whole-house-service-baseline.json"
     },
     "wholeHouseFit": {
@@ -1866,7 +1866,8 @@
       "floorDatum": "upper",
       "taskDirections": [
         "wetCabinet",
-        "doors"
+        "doors",
+        "rearShower"
       ]
     },
     {
@@ -1924,7 +1925,8 @@
       "floorDatum": "upper",
       "taskDirections": [
         "wetCabinet",
-        "doors"
+        "doors",
+        "bath"
       ]
     },
     {
@@ -1948,7 +1950,8 @@
       "floorDatum": "upper",
       "taskDirections": [
         "wetCabinet",
-        "doors"
+        "doors",
+        "principalShower"
       ]
     },
     {
@@ -2041,6 +2044,9 @@
     "kitchen": "Retain900x600 sink and600x600 cooking stations plus650-square cold-store envelope; do not invent a continuous backed worktop. Select a plain welded stainless head+bowl on independently retained metal frame/rails, unclad underside, releasable front M6/rear15 locating dowels and a replaceable actual wet perimeter joint. Isolate water/power; support the complete head independently, expose/release actual waste/supplies and lift only after first joints and retainers are disengaged. Retain the fixed frame and fixed service supports. The earlier bowl-clip/whole-frame controls do not establish selected renewal. First-wetted surface is the exposed joint/catchable underside; leak declaration and drying must not depend on an absorbent concealed back.",
     "wetCabinet": "Use solid timber frame and removable slatted/raised base outside the actual splash boundary; wet face itself remains the complete30 reference only where set out. Do not hide a cistern coupling behind a glued back. Remove contents/front and support fixture independently before disconnecting. Actual waterproofing remains intact or is isolated and reinstated/tested.",
     "doors": "Privacy remains a functional requirement. Keep actual hinged/slider/folding operation and all required fire constituents; remove supported leaf at accessible hardware before frame/trim intervention. A room name is not a fire-role exemption.",
+    "bath": "Use the separate bathBodyDirection and canonical service-owned bath interface. Retain the immediate under-bath water seal, independent lower spool/tail support and actual strip/cap/reseal sequence; body-to-hall is not guarded-stair/export proof.",
+    "principalShower": "Use the merged principal900 split body/tail contract plus current HAD maintenance furniture state; do not append its long tail to the900 handling body.",
+    "rearShower": "Use the separate canonical rear1000 interface and IAS tray-edge-first sequence; actual5940 West outlet and authored offset are distinct.",
     "trim": "Independent150x18 skirt and70x18 architrave; where an actual corner return is narrower, shorten/localise the decorative member only with the rated perimeter boundary retained. No hidden frame joint or seal is trimmed to make space."
   },
   "holds": [
@@ -2305,6 +2311,7 @@
         "spoolMaximumTopAfter": 2500,
         "finalPanelClearance": 75.375,
         "upperRenewal": {
+          "temporaryClosure": "75stemwithdrawalopenspipe-to-sleevewater/air/fire/acousticboundary. Isolatewetuseandaffectedlowerzone; fitqualifiedremovabletemporaryclosuretoretainedsleeveuntilcompatiblesealsreinstated/tested. Fixedsleeve/flangealoneisnotclosedboundary.",
           "tailBelowUpperFFL": 500,
           "upwardStroke": 550,
           "finalStemAboveFFL": 50,
@@ -2317,8 +2324,8 @@
           1250
         ],
         "actualReceiverSource": {
-          "head": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
-          "blob": "6affb39e28a777e36532729183152c8c588e4989",
+          "head": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+          "blob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
           "fixedObstacle": [
             "wetBeamSouthReceiver",
             [
@@ -2357,8 +2364,8 @@
           ]
         ],
         "furnitureMaintenance": {
-          "sourceHead": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
-          "sourceBlob": "6affb39e28a777e36532729183152c8c588e4989",
+          "sourceHead": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+          "sourceBlob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
           "familySofaBefore": [
             2337.5,
             9800,
@@ -2379,7 +2386,26 @@
             "northReceiverToParkedSofa": 42.5,
             "weatherWallWith18TrimToSofa": 25
           },
-          "repeatableAction": "TranslatefamilysofaN650first; platformerectedafterthatmove. Restorebothafterdisconnection. Nofixedreceiver/beam/support removed."
+          "repeatableAction": "TranslatefamilysofaN650first; platformerectedafterthatmove. Restorefurniture/useonlyafterreassembly,completeboundary/sealreinstatementandtesting,platformremoval/panelclosure. Nofixedreceiver/beam/support removed.",
+          "sweptRectangle": [
+            2337.5,
+            9800,
+            1900,
+            1400
+          ],
+          "pushingBodyCentrePath": [
+            [
+              3000,
+              9475
+            ],
+            [
+              3000,
+              10125
+            ]
+          ],
+          "bodyRadius": 300,
+          "bodyToMovingSofaGap": 25,
+          "handReachToSofa": 325
         },
         "boundary": "800 hatch is panel aperture, not a free vertical prism through retained beam. All A/T/B complete bodies/tool/spool stay west of2775.5. Upper tray drain/feet must match this authored port or this specific route fails; no automatic principal900 transfer. New formedport requires STR support proof; not drilling permission."
       },
@@ -2474,16 +2500,256 @@
       "footEndToDrain": 310
     },
     "proposedOrientation": "Foot end EAST at11160; actual310 foot-end offset and shown longitudinal centreline give native drain10850/4150. Select deliberate100E outlet-to-floor-tail offset to authored port10950/4150, not a claimed native or matched outlet. Foot axes10710/9970 with maximum380 transverse spread; nearest axis240 from port is not clear support width. Actual unmodified support thickness/attachment and complete seal keepout must fit or the configured package is rejected.",
-    "firstInterface": "Select ordinary560 rim within the published545–560 adjustment range, with native waste-hole datum150 and deliberate100E offset/local110 port and independent lower access; reject100plinth/645–660rim control. Isolate/drain; independently support retained pipes/body and release the actual complete lower trap/spool at accessible A/B joints. For upper renewal, remove the independent front panel, release actual waste flange and overflow from the supported body, and strip every foot/frame/clip/outlet protrusion outside the<=550 module. Do not attach the floor tail to that body transport. Retain or separately strip/withdraw the supported plain floor tail only under its specific service contract. Open annular water/air/fire/acoustic boundary requires isolation, temporary compatible closure and complete reseal/test. Reject blind reach, unsupported pipe movement, omitted water seal or unstrippable package.",
+    "firstInterface": "Select ordinary560 rim within the published545–560 adjustment range, with native waste-hole datum150 and deliberate100E offset/local110 port and independent lower access; reject100plinth/645–660rim control. Isolate/drain; independently support retained pipes/body and release the actual lower spool at accessible A/B joints. The complete immediate under-bath water seal/trap remains independently supported until its separate front-serviceable release; the lower turning fitting is not a substitute water seal. For upper renewal, remove the independent front panel, release actual waste flange and overflow from the supported body, and strip every foot/frame/clip/outlet protrusion outside the<=550 module. Do not attach the floor tail to that body transport. Retain or separately strip/withdraw the supported plain floor tail only under its specific service contract. Open annular water/air/fire/acoustic boundary requires isolation, temporary compatible closure and complete reseal/test. Reject blind reach, unsupported pipe movement, omitted water seal or unstrippable package.",
     "transport": "410 is bare dimensional control only; installed feet545–560 are not the<=550 stripped module. Exact retained clips/outlet/overflow must be removed or remain within that module. IAS hall witness is not full guarded-stair/export proof.",
     "material": "Body evidence does not admit feet/pads/coatings/overflow/waste/seals or optional surface treatment; whole product and residue disposition remain held.",
-    "actualCompleteProductAccepted": false
+    "actualCompleteProductAccepted": false,
+    "serviceInterface": {
+      "status": "Selectedconditionalordinary-rimconfigured-kitrequirement; noactualtrap/outlet/feet/STR/seal/handlingadmission.100plinth660rimcontrolrejectedforquality.",
+      "primarySource": {
+        "url": "https://files.cdn.kaldewei.com/data/sprachen/englisch/techdata/DB04_24-Sort_DB_UK-GBeng_BW_ADV_363-1_SANIFORM_PLUS_SANIFORM_PLUS_STAR.pdf",
+        "nativeModel": "363-1",
+        "fileSHA256": "564cfd7be4ad55cff857f1dae17bbfeb9b20d8b927c411b6d41c485b6411f76b",
+        "body": [
+          9460,
+          3800,
+          1700,
+          700
+        ],
+        "selectedRim": 560,
+        "actualPermittedRimRange": [
+          545,
+          560
+        ],
+        "depthIncludingWaste": 410,
+        "nativeWasteHoleLocalZ": 150,
+        "nativeWasteHole": [
+          10850,
+          4150,
+          52
+        ],
+        "nativeOverflowCentre": [
+          11062,
+          4150,
+          497
+        ],
+        "nativeFootAxes": [
+          [
+            10710,
+            4150
+          ],
+          [
+            9970,
+            4150
+          ]
+        ],
+        "nativeFootWidthMaximum": 380,
+        "longitudinalFootExtent": "Notprovided; actualconfiguredsupportsmustpassthekeepoutwithoutalteringfactoryfeet."
+      },
+      "port": {
+        "centre": [
+          10950,
+          4150
+        ],
+        "formedDiameter": 110,
+        "clearSleeveInside": 97,
+        "maximumPlainRenewableStem": 75,
+        "deliberateNativeHoleOffset": [
+          100,
+          0
+        ],
+        "sealKeepoutDiameter": 200,
+        "maximumSleeveFlangeTopLocal": 20,
+        "scope": "100EoffsetisAUTHORREQUIREMENT, notnativeholeorprovenwastepart. STRformedopening/rebar/support/lining/sealqualificationrequired; nodrillingpermission."
+      },
+      "upperConfiguredKit": {
+        "completeBodyPlan": [
+          10800,
+          4050,
+          300,
+          300
+        ],
+        "completeBodyZLocal": [
+          40,
+          150
+        ],
+        "authoredFloorClearance": 40,
+        "minimumTo20HighFloorSeal": 20,
+        "waterSealMinimum": 50,
+        "minimumTrapBore": 40,
+        "trapImmediatelyAfterNativeWaste": true,
+        "trapBodyAndOutletAreNotNominal100Fitting": true,
+        "requiredTrapOutlet": [
+          10850,
+          4150,
+          120
+        ],
+        "upperFrontUnion": [
+          10850,
+          4250,
+          117.5
+        ],
+        "upperCarrierPlanXYZ": [
+          [
+            10850,
+            4150,
+            120
+          ],
+          [
+            10850,
+            4250,
+            117.5
+          ],
+          [
+            10950,
+            4250,
+            115
+          ],
+          [
+            10950,
+            4150,
+            112.5
+          ]
+        ],
+        "maximumConnectorODInUpperEnvelope": 60,
+        "actualPartMatching": "The50sealtrap,40bore,nuts/seats/overflowinterfaces/threeplanbendsandturnsMUSTfitfull300x300x110bodyboundandactualbathunderside.120outletisdesigncompatibilitytarget, NOTKaldeweimeasurement. Anyconfiguredkitfailingboundsisrejected; nostrippedseal/bespokeapprovalinvented.",
+        "support": "Independentretainedmetal/mineralsupportstoactualqualifiedfloor/framefixingsoutsideseal200keepoutandunmodifiedfactoryfeet. Supportsreachfloorintentionally;40clearanceisBODY/nuts/turns, notpretendedsupportlevitation. Actualfootlongitudinalextent/supportgeometryunproved.",
+        "upperServicePanel": {
+          "frontY": 4500,
+          "clearX": [
+            10625,
+            11125
+          ],
+          "clearZLocal": [
+            0,
+            500
+          ],
+          "requiredAccess": "Firstunion/trapcleanout/wasteandfull52overflowreleasefromFRONTorTOP, neverblindrearreach. Panelisnotarequiredfoot/supportremovedforaccess."
+        },
+        "waterIsolationTargets": {
+          "hot": [
+            10800,
+            4450,
+            350
+          ],
+          "cold": [
+            10900,
+            4450,
+            350
+          ],
+          "actualKitRequirement": "Accessiblefrontisolationandtrueunion, independentsupportedretainedsupply; actualtap/overflow/WCsystemcompatibilitynotassumed."
+        }
+      },
+      "lower": {
+        "A": [
+          10950,
+          4150,
+          3000
+        ],
+        "T": [
+          10950,
+          4150,
+          2737.5
+        ],
+        "B": [
+          10950,
+          4250,
+          2735
+        ],
+        "route": [
+          [
+            10950,
+            4150,
+            2737.5
+          ],
+          [
+            10950,
+            5200,
+            2711.25
+          ],
+          [
+            10800,
+            5200,
+            2707.5
+          ]
+        ],
+        "planLength": 1200,
+        "gradient": 40,
+        "maximumCompleteFittingOD": 100,
+        "supportDepth": 25,
+        "airReserve": 25,
+        "innerPanelTop": 2607.5,
+        "panelThickness": 20,
+        "finishedPanelUnderside": 2587.5,
+        "clearHatch": [
+          10750,
+          3950,
+          400,
+          400
+        ],
+        "outerHatch": [
+          10730,
+          3930,
+          440,
+          440
+        ],
+        "qualifiedEquipmentField": [
+          10535,
+          3900,
+          1000,
+          800
+        ],
+        "fieldToMain320PipeBand": 25,
+        "fieldToEastDryFace": 35.5,
+        "fixedUpperTail": "Plainstemindependentlysupported. AllupperAhalves/nuts/clampswiderthan75muststripBEFORE75stemwithdrawalthrough97sleeve; sleeve/flangealoneisnotclosedboundary.",
+        "spoolRelease": {
+          "requiredSeats": "Actualzero-captureflatfacesatorthogonalA/B; isolate/drain/releasenutsandadhesion/renewseals. Capturedspigotdiagonalreleaseisrejected.",
+          "phases": [
+            [
+              0,
+              -20,
+              0
+            ],
+            [
+              0,
+              0,
+              -20
+            ],
+            [
+              0,
+              0,
+              -450
+            ]
+          ],
+          "movingTopBefore": 3000,
+          "movingTopAfter": 2530,
+          "finishedPanelClearance": 57.5,
+          "completeSpoolPlanBefore": [
+            10900,
+            4100,
+            100,
+            200
+          ],
+          "completeSpoolPlanAfterSouth20": [
+            10900,
+            4080,
+            100,
+            200
+          ],
+          "fixedParts": "UpperAhalf/retainedbranch/trap/sleeveandactualsupportsremainindependent; nofloororsupportremovedtopermitmotion."
+        }
+      },
+      "renewalSplit": {
+        "ordinaryKit": "Openfrontpanel,isolatewater,disengageactualfront/topwaste/overflowandupperunionwithindependentsupport; noautomatic900trayproof.",
+        "wholeBath": "Removefulloverflowandrequiredfeet/kitonlypermanufacturer, supportdrained41kgBODYplusactualaccessories; actualstair/roomcarryandforcesareIASduty. Nohumanliftingcapacityinvented.",
+        "plainTail": "Afterseparatebody/kitreleaseandlowerAupperpartsstrip,550UPmoves−450tailendto+100; temporaryqualifiedclosureofopenedwater/air/fire/acousticannulusuntilcompatiblesealsreinstated/tested.",
+        "restore": "Ordinaryuseonlyafterreassembly,boundaryreinstatementandtests,panelclosure/equipmentremoval."
+      }
+    }
   },
   "developmentExitAssessment": {
     "status": "MAT-owned construction recommendations/dispositions are reasoned; exact common-source integration and independent review pending before lifecycle completion",
-    "internalMATChoicesRemaining": [
-      "Finalise the selected normal-rim recommendation against the service-owned complete trap/support/stripping envelope. The100plinth/660rim control is rejected; no further material-family choice remains."
-    ],
+    "internalMATChoicesRemaining": [],
     "dependentSelectedHouseJoins": [
       "Bind one final HAD27/30 authority with actual family600, furniture/emitter and roof-domain composition; current pinned0b2 remains a dated failed control",
       "Bind final service first-interface and IAS ordinary renewal records without retyping their numeric authority; no claim that hall-only body transport is complete exterior renewal"
@@ -2645,6 +2911,7 @@
   "ceilingProfiles": {
     "ordinaryGroundField": 3100,
     "localRearShowerBox": 2575.375,
+    "localBathBox": 2587.5,
     "localPrincipalShowerBox": 2645,
     "localSoilCollectorBox": 2540,
     "upperProtectedControl": 2994,
