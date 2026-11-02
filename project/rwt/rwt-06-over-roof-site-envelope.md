@@ -20,6 +20,14 @@ A notional rectangle of **15.40 × 17.99 m** centered on the selected house cont
 
 The full-cover setup is therefore **a large site and maintenance constraint**, not free flexibility automatically supplied by a 12 m house. The possible decision is to reserve this territory for a future real plot or reject the *full over-roof* maintenance proposition and redesign water/roof renewal at a smaller controlled footprint; it does **not** justify erasing permanent house access, safety equipment or a live water route.
 
+## An equipment-fit rectangle cannot prove an outward overflow
+
+The two hypothetical gutter **exterior lips** are x **−1900** (west) and **13900** (east): they lie **exactly on the lateral boundaries** of the current 15.80 m-wide equipment bounding rectangle. Therefore the current model reserves **zero positive width** beyond either lip. A nominal free-spill path which leaves either lip outwards immediately leaves this rectangle. This is a source-derived *negative topology test*, not a water-jet prediction: gutter lips, trajectories, wind, splash, real land boundaries and lowest first harm are not verified.
+
+A site which contains the whole depicted scaffold/equipment rectangle has **not** thereby demonstrated harmless blocked-gutter spillage. RWT must locate a separate, supported and positively routed overflow and receiving territory, including common outlet/tailwater failures. DPL must verify the land and lawful access/rights needed outside the equipment reservation, or test a genuinely independent alternative contained inside a different engineered arrangement. Neither a gutter counting exercise nor a large temporary sheet alone proves this.
+
+**Design decision:** a whole-house temporary over-roof is an **optional, plot-dependent major-repair technique**, not a premise on which the house's ordinary rainwater maintainability may rely. The permanent roof and collectors must have their own explicit cleaning, local withdrawal, first-harm and safe passive rain-failure states. The over-roof stays a conditional *challenger* for a future real plot, not a preferred requirement or approved installation. The [generated conditional overflow screen](studies/over-roof-site-envelope.json) encodes the zero-width counterexample and is regression-tested.
+
 ## Precise handoff
 
 DPL's [owner-site brief](../dpl/owner-site-brief.md) already requires source-bound external works geometry. For a specific plot, DPL must place these **same x/y rectangles under the actual orientation** and assess usable boundary and rights, neighbouring fabric, underground assets, trees, topography and routes for erection/removal. RWT must locate *independent safe* overflow/receiving territories and a real `SITE-WATER-HANDOFF`; STR/temporary-works and DEL must resolve supports, installation, service access and safe reversal; OAS/HAD must reconcile the actual gate and plant door.
