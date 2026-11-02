@@ -163,6 +163,40 @@
     "endModuleMinShiftMm": 214.28571428571468,
     "status": "Plan arithmetic only; clear frame span is not proven hook travel; 100 mm beam edge reservation is not real collision clearance"
   },
+  "plantDoorControl": {
+    "sourceDoor": {
+      "id": "plant-replacement",
+      "wall": "outer-east",
+      "centre": 4600,
+      "width": 1400,
+      "kind": "door",
+      "swing": "right",
+      "hinge": "low",
+      "leaves": 1
+    },
+    "roughOpeningYMm": [
+      3900,
+      5300
+    ],
+    "innerBoardXMm": [
+      12135,
+      12535
+    ],
+    "innerBoardYMm": [
+      4515,
+      4915
+    ],
+    "boardProjectionOverlapMm": 400,
+    "boardSetbackFromWallMm": 135,
+    "idealLowHingeMm": [
+      12000,
+      3900
+    ],
+    "idealSingleLeafRadiusMm": 1400,
+    "idealFirstContactDegrees": 7.576154895689078,
+    "idealContactRadiusMm": 1023.9384747141793,
+    "scope": "Conditional point-line sweep of ideal leaf to first board corner; real leaf, hinge, stops, seals and use are unqualified"
+  },
   "egressReservation": {
     "sourceFrontDoorCentreXmm": 6000,
     "sourceRoughWidthMm": 1800,
