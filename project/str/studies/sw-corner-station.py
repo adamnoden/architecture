@@ -55,7 +55,7 @@ minroute=min(routes,key=lambda x:x['reserve_to_pier_mm']);assert minroute['reser
 # wall/floor/wind actions. Two-axis moment signs follow r × vertical force.
 def moments(F,origin,point=roofxy):
  rx=(point[0]-origin[0])/1000;ry=(point[1]-origin[1])/1000
- return [ry*F,-rx*F]
+ return [-ry*F,rx*F]
 loads={'roof_down_ULS_kN':exit['roof_ULS'],'roof_uplift_no_favourable_G_kN':uplift,'roof_only_about_warm_centroid_down_kNm':moments(exit['roof_ULS'],centre),'roof_only_about_warm_centroid_uplift_kNm':moments(uplift,centre),'roof_only_about_cold_corner_axes_down_kNm':moments(exit['roof_ULS'],coldaxis),'roof_only_about_cold_corner_axes_uplift_kNm':moments(uplift,coldaxis),'translated_force_only_about_cold_down_kNm':moments(exit['roof_ULS'],coldaxis,centre),'translated_force_only_about_cold_uplift_kNm':moments(uplift,coldaxis,centre),'station_horizontal_unit_kN':1,'height_primary_above_cold_top_m':(roof['actual_roof']['primary_centre']+765)/1000}
 for case in ['down','uplift']:
  warm=loads['roof_only_about_warm_centroid_'+case+'_kNm']; translated=loads['translated_force_only_about_cold_'+case+'_kNm']; cold=loads['roof_only_about_cold_corner_axes_'+case+'_kNm']

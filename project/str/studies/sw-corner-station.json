@@ -69,30 +69,30 @@
     "height_primary_above_cold_top_m": 7.511721089070518,
     "roof_down_ULS_kN": 68.11087500000001,
     "roof_only_about_cold_corner_axes_down_kNm": [
-      2.2136034375,
-      -2.2136034375
+      -2.2136034375,
+      2.2136034375
     ],
     "roof_only_about_cold_corner_axes_uplift_kNm": [
-      -0.7905726562500004,
-      0.7905726562500004
+      0.7905726562500004,
+      -0.7905726562500004
     ],
     "roof_only_about_warm_centroid_down_kNm": [
-      -5.44887,
-      5.44887
+      5.44887,
+      -5.44887
     ],
     "roof_only_about_warm_centroid_uplift_kNm": [
-      1.9460250000000008,
-      -1.9460250000000008
+      -1.9460250000000008,
+      1.9460250000000008
     ],
     "roof_uplift_no_favourable_G_kN": -24.32531250000001,
     "station_horizontal_unit_kN": 1,
     "translated_force_only_about_cold_down_kNm": [
-      7.662473437500001,
-      -7.662473437500001
+      -7.662473437500001,
+      7.662473437500001
     ],
     "translated_force_only_about_cold_uplift_kNm": [
-      -2.736597656250001,
-      2.736597656250001
+      2.736597656250001,
+      -2.736597656250001
     ]
   },
   "sources": {
