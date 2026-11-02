@@ -1,0 +1,37 @@
+{
+  "assumed_uniform_floor_edge_kN_m": 15.536718750000002,
+  "clear_span_m": 0.9,
+  "combined_kN": 24.529246875000005,
+  "floor_edge_length_m": 7.9575,
+  "floor_edge_total_kN": 123.633439453125,
+  "floor_over_opening_kN": 13.983046875000003,
+  "opening_mm": [
+    2750,
+    3650
+  ],
+  "parabolic_three_hinge_unit_rise_thrust_kN_m": 2.7595402734375005,
+  "scope": "Upper gross wall is adverse full-height challenge, not measured spandrel. Floor edge uniformity, head span, pier contact, arch and bearing remain unproved. Do not add transferred actions to their originating floor/wall totals.",
+  "simply_supported_sagging_kNm": 2.7595402734375005,
+  "sources": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "project/str/studies/whole-house-reaction-join.json": "d48f810099cfbe36c3762955bc272df7b8c9fcd222a6bf0ef4c54fdb3a02e97b"
+  },
+  "status": "conditional source-bound line-load sensitivity; no capacity or HOUSE pass",
+  "symmetric_reaction_each_kN": 12.264623437500003,
+  "trial": {
+    "bearing_axes_m": [
+      2.65,
+      3.75
+    ],
+    "bearing_each_m": 0.2,
+    "centre_span_m": 1.1,
+    "loaded_width_m": 0.9,
+    "mean_vertical_contact_MPa": 0.438022265625,
+    "midspan_moment_kNm": 3.9860026171875016,
+    "qualifier": "200 mm plan bearing and 300 mm rise are an unadopted geometric trial; thrust uses symmetric three-hinge crown equilibrium, not an assembled arch or anchor design. No bearing strength, lateral sharing or installed capacity is established.",
+    "three_hinge_horizontal_kN": 13.286675390625005,
+    "trial_rise_m": 0.3
+  },
+  "upper_wall_gross_over_opening_kN": 10.5462
+}
