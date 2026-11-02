@@ -81,7 +81,7 @@ const renderSvg=function renderSvg(o){
     rect(get('house-shell'),'#ffffff','#27353d'),
     rect(get('west-eave-gutter'),'#d6bc84','#976d1e'),
     rect(get('east-eave-gutter'),'#d6bc84','#976d1e'),
-    ...items.filter(x=>x.kind==='scaffold-sole-board').map(b=>rect(b,'#d38c70','#8c3f24','stroke-width="1"')),
+    ...items.filter(x=>x.kind==='scaffold-sole-board').map(b=>rect(b,'#d38c70','#8c3f24')),
     rect(get('conditional-front-gate'),'#ead4a3','#ac7d39','stroke-dasharray="4 3"'),
     '<text x="'+X(4000)+'" y="'+Y(5100)+'" font-size="18">12 m house</text>',
     '<text x="'+X(4770)+'" y="'+Y(6000)+'" font-size="16">court</text>',
