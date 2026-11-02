@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 18,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f832c78d-f649-4cc1-9bc1-a1c0f39c9078",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-ias-corner-export"
   },
   "claimedAt": "2026-11-02T10:47:17.454Z",
-  "heartbeatAt": "2026-11-02T11:15:47.149Z",
-  "expiresAt": "2026-11-02T12:00:47.149Z",
+  "heartbeatAt": "2026-11-02T11:23:49.045Z",
+  "expiresAt": "2026-11-02T11:23:49.045Z",
   "checkpoint": {
     "evidence": "Deliberate sharedassociation PR1271/work/zerg-recovery-opening-services headd4b5c091217231fda9771da5701759d0ae293b0c tree98f37b73662b80d95794cdb9021b92e945c16cc8; trueparents main86bd+Servicesaee19ca+IASc91d9ebd. Root verifies all7ownedblobs exact,repo/diff/derivedcounts pass; IAS156tests accepted. IASsource frozen; no independentCI claim. Renewal from clean86bd maincontrol whereIASready.",
     "next": "Holdsharedhead for root soleCI/preflight/expectedheadmerge. After verifiedmerge immediately release nowblocked IAS18 handoff before freshmain canonical acquisition of ready OAS-NORTH-EXPORT. No sourcechanges until newOASlease.",
@@ -39,5 +39,7 @@
       "blocker": "Bounded modeledsolids/prisms and abstract supportstates only. Known-house roof/eaves/gutter/purlin and full apparatus/window/receiver assembly clash survey OMITTED. Actualkit/firstrelease/window/apparatus/site/ground/force unadmitted; no full export or IAS completion."
     }
   },
-  "pr": 1271
+  "pr": 1271,
+  "releasedAt": "2026-11-02T11:23:49.045Z",
+  "releaseReason": "handoff"
 }
