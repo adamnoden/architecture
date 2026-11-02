@@ -1,45 +1,41 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 16,
-  "state": "released",
-  "leaseId": "a007262b-2785-40fb-9a7a-008c44be278d",
+  "generation": 17,
+  "state": "claimed",
+  "leaseId": "c8caf26a-dcbb-4aa2-ae38-7989508916f3",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-recovery-ias"
+    "label": "zerg-ias-wet-export"
   },
-  "claimedAt": "2026-11-02T07:17:00.962Z",
-  "heartbeatAt": "2026-11-02T08:45:51.271Z",
-  "expiresAt": "2026-11-02T08:45:51.271Z",
+  "claimedAt": "2026-11-02T08:47:47.148Z",
+  "heartbeatAt": "2026-11-02T08:47:47.148Z",
+  "expiresAt": "2026-11-02T09:32:47.148Z",
   "checkpoint": {
-    "evidence": "Deliberate shared association PR1254 work/zerg-recovery-engineering-integration headfb2f1271d609dceb1554255a9cf621337a3fa9aa treeaaed5e9f4fd8a9ed9f4c757326a54214996be114 based3f254c0. Root verified all seven IAS files exactly match independently reviewed250e17; full source histories true parents. Combined IAS/thermal/reaction/defaultHAD generators, authregression/typecheck/repo/diff passed per root; worker does not claim independent CI observation.",
-    "next": "Hold frozen shared head for root sole exact-head CI observation, canonical publication preflight and expected-head merge. Source unchanged; release only after verified merged notice.",
-    "blocker": "IAS remains incomplete. Ownforearm2.752 nominal/no tolerance; actual apparatus/material/grip/force/recovery and guarded wet export/current occurrence/IS acceptance remain open."
+    "evidence": "Fresh main50a3d1d77db9dbc5d1e4bcbe631e0154cee7430c/treeaaed5e9f contains verified merged1251 via1254. IAS16 released completed by canonical exactCAS/readback; old owned source branch absent remotely and deleted locally after verified ancestry. Issue941 bounded progress recorded; IAS incomplete.",
+    "next": "Develop one connected full wet-item export alternative: compare actual guarded stair/carrier/rest/regrip with direct removable-window exterior transfer, starting with rear FIRSTouter-west/window3 centre10200. Preserve complete aperture/support/rig/receiving/guard/material duties and source-owning joins."
   },
-  "branch": "work/zerg-recovery-engineering-integration",
+  "branch": "work/zerg-ias-wet-export-20261102",
   "predecessor": {
-    "leaseId": "9907d87c-6e91-4fcc-9aad-6786f8ff487b",
-    "generation": 15,
-    "branch": "work/zerg5-house-integration-20261102",
-    "pr": 1244,
+    "leaseId": "a007262b-2785-40fb-9a7a-008c44be278d",
+    "generation": 16,
+    "branch": "work/zerg-recovery-engineering-integration",
+    "pr": 1254,
     "checkpoint": {
-      "evidence": "Deliberate shared association PR1244 work/zerg5-house-integration-20261102 head2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 baseffbe3689 verified by root and provider. IAS reviewed sourcefaec3e04 is preserved actual history; full-delta/focused clamp High PASS, true default IAS reproduction and56 critical cross-owner projections passed without overrides in preparer candidate.",
-      "next": "Hold exact shared head for root sole fullCI observation, fresh canonical per-node preflights and expected-head merge. Release only after verified merged notice.",
-      "blocker": "IAS stays planned/incomplete: no transfer of full guarded export, connected handling/support or physical/material/classified-kit acceptance. No source changes, new claims or independent CI polling."
+      "evidence": "Deliberate shared association PR1254 work/zerg-recovery-engineering-integration headfb2f1271d609dceb1554255a9cf621337a3fa9aa treeaaed5e9f4fd8a9ed9f4c757326a54214996be114 based3f254c0. Root verified all seven IAS files exactly match independently reviewed250e17; full source histories true parents. Combined IAS/thermal/reaction/defaultHAD generators, authregression/typecheck/repo/diff passed per root; worker does not claim independent CI observation.",
+      "next": "Hold frozen shared head for root sole exact-head CI observation, canonical publication preflight and expected-head merge. Source unchanged; release only after verified merged notice.",
+      "blocker": "IAS remains incomplete. Ownforearm2.752 nominal/no tolerance; actual apparatus/material/grip/force/recovery and guarded wet export/current occurrence/IS acceptance remain open."
     }
   },
   "recoverySource": {
-    "leaseId": "9907d87c-6e91-4fcc-9aad-6786f8ff487b",
-    "generation": 15,
-    "branch": "work/zerg5-house-integration-20261102",
-    "pr": 1244,
+    "leaseId": "a007262b-2785-40fb-9a7a-008c44be278d",
+    "generation": 16,
+    "branch": "work/zerg-recovery-engineering-integration",
+    "pr": 1254,
     "checkpoint": {
-      "evidence": "Deliberate shared association PR1244 work/zerg5-house-integration-20261102 head2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 baseffbe3689 verified by root and provider. IAS reviewed sourcefaec3e04 is preserved actual history; full-delta/focused clamp High PASS, true default IAS reproduction and56 critical cross-owner projections passed without overrides in preparer candidate.",
-      "next": "Hold exact shared head for root sole fullCI observation, fresh canonical per-node preflights and expected-head merge. Release only after verified merged notice.",
-      "blocker": "IAS stays planned/incomplete: no transfer of full guarded export, connected handling/support or physical/material/classified-kit acceptance. No source changes, new claims or independent CI polling."
+      "evidence": "Deliberate shared association PR1254 work/zerg-recovery-engineering-integration headfb2f1271d609dceb1554255a9cf621337a3fa9aa treeaaed5e9f4fd8a9ed9f4c757326a54214996be114 based3f254c0. Root verified all seven IAS files exactly match independently reviewed250e17; full source histories true parents. Combined IAS/thermal/reaction/defaultHAD generators, authregression/typecheck/repo/diff passed per root; worker does not claim independent CI observation.",
+      "next": "Hold frozen shared head for root sole exact-head CI observation, canonical publication preflight and expected-head merge. Source unchanged; release only after verified merged notice.",
+      "blocker": "IAS remains incomplete. Ownforearm2.752 nominal/no tolerance; actual apparatus/material/grip/force/recovery and guarded wet export/current occurrence/IS acceptance remain open."
     }
-  },
-  "pr": 1254,
-  "releasedAt": "2026-11-02T08:45:51.271Z",
-  "releaseReason": "completed"
+  }
 }
