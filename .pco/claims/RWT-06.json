@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 31,
-  "state": "released",
-  "leaseId": "1fc916bc-d206-468d-94ad-b208b59ddd02",
+  "generation": 32,
+  "state": "claimed",
+  "leaseId": "639837a1-d489-4c4f-8279-e0bd6126442c",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6589332389"
+    "label": "issue-comment-6589670238"
   },
-  "claimedAt": "2026-11-02T21:49:46.000Z",
-  "heartbeatAt": "2026-11-02T22:05:15.000Z",
-  "expiresAt": "2026-11-02T22:05:15.000Z",
-  "branch": "work/mvb-chat-6589332389",
+  "claimedAt": "2026-11-02T22:07:39.000Z",
+  "heartbeatAt": "2026-11-02T22:07:39.000Z",
+  "expiresAt": "2026-11-02T22:52:39.000Z",
+  "branch": "work/mvb-chat-6589670238",
   "predecessor": {
-    "leaseId": "d42d0ec2-7634-4b34-a4f8-527c54b2c4c3",
-    "generation": 30,
-    "branch": "work/mvb-chat-6585907015",
-    "pr": 1286,
+    "leaseId": "1fc916bc-d206-468d-94ad-b208b59ddd02",
+    "generation": 31,
+    "branch": "work/mvb-chat-6589332389",
+    "pr": 1288,
     "checkpoint": {
-      "evidence": "PR1286 head 4df0fab35: generator and JSON bound both-end blocked-gutter gross storage (930.9L/112s ideal; 1052.3L/127s generous upper) with regression and explicit overflow requirement.",
-      "next": "Check exact-head CI, obtain fresh native publication preflight, merge with expected SHA, verify main and release current lease.",
-      "blocker": "Full actual eave/support/outfall and independent safe overflow remain unaccepted; RWT-06 stays planned."
+      "evidence": "PR1288 head d88a560: source-pinned 32-board, gutter and conditional-gate plot envelope generator, JSON, A3 drawing, tests and explicit unresolved plant-door collision.",
+      "next": "Verify full exact-head CI, run fresh canonical generation31 merge-check, expected-head merge, release and dispose temporary preflight helper.",
+      "blocker": "No measured plot/rights, true scaffold ties/bearing, door/egress, site outfall, material or rainwater operational approval; RWT-06 remains planned."
     }
   },
   "recoverySource": {
-    "leaseId": "d42d0ec2-7634-4b34-a4f8-527c54b2c4c3",
-    "generation": 30,
-    "branch": "work/mvb-chat-6585907015",
-    "pr": 1286,
+    "leaseId": "1fc916bc-d206-468d-94ad-b208b59ddd02",
+    "generation": 31,
+    "branch": "work/mvb-chat-6589332389",
+    "pr": 1288,
     "checkpoint": {
-      "evidence": "PR1286 head 4df0fab35: generator and JSON bound both-end blocked-gutter gross storage (930.9L/112s ideal; 1052.3L/127s generous upper) with regression and explicit overflow requirement.",
-      "next": "Check exact-head CI, obtain fresh native publication preflight, merge with expected SHA, verify main and release current lease.",
-      "blocker": "Full actual eave/support/outfall and independent safe overflow remain unaccepted; RWT-06 stays planned."
+      "evidence": "PR1288 head d88a560: source-pinned 32-board, gutter and conditional-gate plot envelope generator, JSON, A3 drawing, tests and explicit unresolved plant-door collision.",
+      "next": "Verify full exact-head CI, run fresh canonical generation31 merge-check, expected-head merge, release and dispose temporary preflight helper.",
+      "blocker": "No measured plot/rights, true scaffold ties/bearing, door/egress, site outfall, material or rainwater operational approval; RWT-06 remains planned."
     }
-  },
-  "pr": 1288,
-  "checkpoint": {
-    "evidence": "PR1288 head d88a560: source-pinned 32-board, gutter and conditional-gate plot envelope generator, JSON, A3 drawing, tests and explicit unresolved plant-door collision.",
-    "next": "Verify full exact-head CI, run fresh canonical generation31 merge-check, expected-head merge, release and dispose temporary preflight helper.",
-    "blocker": "No measured plot/rights, true scaffold ties/bearing, door/egress, site outfall, material or rainwater operational approval; RWT-06 remains planned."
-  },
-  "releasedAt": "2026-11-02T22:05:15.000Z",
-  "releaseReason": "handoff"
+  }
 }
