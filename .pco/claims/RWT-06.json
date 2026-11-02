@@ -9,14 +9,14 @@
     "label": "zerg-rwt26-live-receiver"
   },
   "claimedAt": "2026-11-02T10:48:55.897Z",
-  "heartbeatAt": "2026-11-02T12:39:30.812Z",
-  "expiresAt": "2026-11-02T13:24:30.812Z",
+  "heartbeatAt": "2026-11-02T12:49:11.830Z",
+  "expiresAt": "2026-11-02T13:34:11.830Z",
   "checkpoint": {
-    "evidence": "Draft PR #1272 head 477a1416c0860503faf203b79018da67497916a1 tree c0dfea16c7da56096353ad49f4dd7f44f9e98c07; bounded failure and access evidence",
-    "next": "Integration owner coordinates matching MAT projection, review, exact-head validation and merge",
-    "blocker": "Integrated validation and review pending"
+    "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; frozen RWT26 evidence and coordinated MAT projection",
+    "next": "Integration owner reviews and validates shared exact head, preflights and merges",
+    "blocker": "Exact-head CI and integration review pending"
   },
-  "branch": "work/rwt06-live-receiver-20261102",
+  "branch": "work/zerg-corner-convergence",
   "note": "Owner-directed RWT recovery after verified merged negative study; constructive same-section live capture, receiver removal and reversal. Root sole CI/merger.",
   "predecessor": {
     "leaseId": "e56ff50a-4b82-4233-94cd-4d2b792e283c",
@@ -38,5 +38,5 @@
       "next": "Release completed frozen packet25 canonically; acquire fresh directed RWT06 generation from verified main before implementing constructive live temporary receiver/reversal. RWT06 remains planned, actual method rejected and downstream holds unchanged."
     }
   },
-  "pr": 1272
+  "pr": 1273
 }
