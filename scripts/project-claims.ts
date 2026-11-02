@@ -2,7 +2,7 @@ import { GitHubClaimStore } from '../project/control/github-claim-store.js'
 import { GitConnectorClaimStore, connectorMailbox, readGitClaimSnapshot } from '../project/control/git-connector-claim-store.js'
 import { leaseHealth } from '../project/control/lease-health.js'
 import { publicationPreflight, renderPublicationReport } from '../project/control/publication-preflight.js'
-import { execFileSync } from 'node:child_process'
+import { runGit } from '../project/control/git-command.js'
 import {
   ClaimConflictError,
   ClaimStoreUnavailableError,
@@ -44,7 +44,7 @@ interface ParsedArgs {
 type OutputFormat = 'text' | 'json'
 
 function git(args: readonly string[]): string {
-  return execFileSync('git', [...args], { encoding: 'utf8', timeout: 30000, stdio: ['ignore', 'pipe', 'pipe'] }).trim()
+  return runGit(args).trim()
 }
 
 function repositorySlug(): string {
@@ -151,7 +151,7 @@ function metadata(flags: Map<string, string>) {
 function ensureControlViewMatchesMain(extraPaths: readonly string[] = []): void {
   git(['fetch', 'origin', 'main', '--quiet'])
   try {
-    execFileSync('git', ['merge-base', '--is-ancestor', 'origin/main', 'HEAD'], { stdio: 'ignore' })
+    runGit(['merge-base', '--is-ancestor', 'origin/main', 'HEAD'])
   } catch {
     throw new Error('Local checkout does not contain current origin/main; reconcile before using structural claimability')
   }
@@ -178,6 +178,7 @@ function ensureDispatcherViewMatchesMain(): void {
     'project/control/lease-health.ts',
     'project/control/claim-store.ts',
     'project/control/git-connector-claim-store.ts',
+    'project/control/git-command.ts',
     'project/control/github-claim-store.ts',
     'scripts/project-claims.ts'
   ])
