@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 26,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4ae96a3f-b6f6-499e-b394-3c4f932f9c67",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rwt26-live-receiver"
   },
   "claimedAt": "2026-11-02T10:48:55.897Z",
-  "heartbeatAt": "2026-11-02T12:49:11.830Z",
-  "expiresAt": "2026-11-02T13:34:11.830Z",
+  "heartbeatAt": "2026-11-02T12:56:45.492Z",
+  "expiresAt": "2026-11-02T12:56:45.492Z",
   "checkpoint": {
     "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; frozen RWT26 evidence and coordinated MAT projection",
     "next": "Integration owner reviews and validates shared exact head, preflights and merges",
@@ -38,5 +38,7 @@
       "next": "Release completed frozen packet25 canonically; acquire fresh directed RWT06 generation from verified main before implementing constructive live temporary receiver/reversal. RWT06 remains planned, actual method rejected and downstream holds unchanged."
     }
   },
-  "pr": 1273
+  "pr": 1273,
+  "releasedAt": "2026-11-02T12:56:45.492Z",
+  "releaseReason": "completed"
 }
