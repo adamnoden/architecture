@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:2.9px}.title{font-size:4.4px;font-weight:bold}</style>
+<rect width="420" height="297" fill="#faf8f1"/>
+<text x="12" y="13" class="title">OPEN N / actual stair, midlanding and receiving frame</text>
+<text x="12" y="22" class="">HAD0b2f7d48 / 27finish / 1094body +200well;1004betweenrails / unadopted; no body,guard or whole-house PASS</text>
+<text x="12" y="34" class="title">A / FINITE PLAN · 1:20</text>
+<rect x="20.350" y="52.850" width="119.400" height="216.150" fill="#e5ebe7" stroke="#345460" stroke-width=".35"/>
+<rect x="75.050" y="134.000" width="10.000" height="135.000" fill="#faf8f1" stroke="#345460" stroke-width=".35"/>
+<rect x="12.000" y="121.500" width="140.250" height="12.500" fill="#c5cfca" stroke="#345460" stroke-width=".35"/>
+<rect x="139.750" y="48.000" width="10.000" height="226.000" fill="#c5cfca" stroke="#345460" stroke-width=".35"/>
+<rect x="139.750" y="121.500" width="12.500" height="12.500" fill="#b95351" stroke="#345460" stroke-width=".35"/>
+<rect x="12.000" y="75.625" width="7.000" height="105.000" fill="#b4753c" stroke="#345460" stroke-width=".35"/>
+<rect x="12.000" y="269.000" width="186.250" height="10.000" fill="#c5cfca" stroke="#345460" stroke-width=".35"/>
+<rect x="15.500" y="44.500" width="182.750" height="7.000" fill="#aebeba" stroke="#345460" stroke-width=".35"/>
+<path d="M20.35,269.0 L75.05,269.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M85.05,269.0 L139.75,269.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<text x="22.375" y="268.0" class="">172.5</text>
+<path d="M20.35,254.0 L75.05,254.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M85.05,254.0 L139.75,254.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<path d="M20.35,239.0 L75.05,239.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M85.05,239.0 L139.75,239.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<path d="M20.35,224.0 L75.05,224.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M85.05,224.0 L139.75,224.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<path d="M20.35,209.0 L75.05,209.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M85.05,209.0 L139.75,209.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<path d="M20.35,194.0 L75.05,194.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M85.05,194.0 L139.75,194.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<text x="22.375" y="193.0" class="">1035</text>
+<path d="M20.35,179.0 L75.05,179.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M85.05,179.0 L139.75,179.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<path d="M20.35,164.0 L75.05,164.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M85.05,164.0 L139.75,164.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<path d="M20.35,149.0 L75.05,149.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M85.05,149.0 L139.75,149.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<path d="M20.35,134.0 L75.05,134.0" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M85.05,134.0 L139.75,134.0" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<text x="22.375" y="133.0" class="">1725</text>
+<text x="26.375" y="83.125" class="">Landingdepth1623; RCtop1725.</text>
+<text x="26.375" y="105.625" class="">Full140northseat8782.5..8922.5.</text>
+<text x="215" y="34" class="title">B / MEMBER ACTIONS AND REAL LIMITS</text>
+<text x="215" y="45" class="">Flightbearing2925, pitch29.899°,150normalwaist.</text>
+<text x="215" y="53" class="">Per1mM15.47/MR42.26; eachend23.14kN.</text>
+<text x="215" y="61" class="">Verticalwaistphi3+shrink11.166 &lt;11.700L/250;sec(pitch)bothterms.</text>
+<text x="215" y="69" class="">Midbeam250×370/top1725/bottom1355,M24.55.</text>
+<text x="215" y="77" class="">WestR37.68/EastR37.18;postN72.49/M2.22.</text>
+<text x="215" y="85" class="">Continuoustrimmerpostreaction27.82, nottwoindependentbays.</text>
+<text x="215" y="93" class="">WestH20horizN/Shooks→actualRC140sill;H12tie+2struts.</text>
+<text x="215" y="101" class="">Actualmasonrypadsneedfd≥1.164MPa beforesecondorder/bedadmission.</text>
+<text x="215" y="109" class="">EastH20downhooks/postcageenumerated; upperwaist/trimmerjointstillopen.</text>
+<text x="215" y="117" class="">Guardposts/anchors,fullphysicalslabedge/portmass andwindow25jointunearned.</text>
+<text x="215" y="134" class="title">C / PROJECTED FLIGHT SECTIONS · 1:30</text>
+<rect x="216.667" y="151.667" width="6.667" height="10.000" fill="#c5cfca" stroke="#345460" stroke-width=".35"/>
+<rect x="313.333" y="206.500" width="8.333" height="12.333" fill="#c5cfca" stroke="#345460" stroke-width=".35"/>
+<rect x="313.333" y="206.500" width="59.667" height="6.667" fill="#d9e2de" stroke="#345460" stroke-width=".35"/>
+<path d="M223.333,258.250 L233.333,258.250 L233.333,252.500 L243.333,252.500 L243.333,246.750 L253.333,246.750 L253.333,241.000 L263.333,241.000 L263.333,235.250 L273.333,235.250 L273.333,229.500 L283.333,229.500 L283.333,223.750 L293.333,223.750 L293.333,218.000 L303.333,218.000 L303.333,212.250 L313.333,212.250 L313.333,206.500" fill="none" stroke="#4b716c" stroke-width=".7"/>
+<path d="M223.33333333333334,269.7676359975297 L313.3333333333333,218.01763599752965" fill="none" stroke="#4b716c" stroke-width=".65"/>
+<path d="M313.333,200.750 L303.333,200.750 L303.333,195.000 L293.333,195.000 L293.333,189.250 L283.333,189.250 L283.333,183.500 L273.333,183.500 L273.333,177.750 L263.333,177.750 L263.333,172.000 L253.333,172.000 L253.333,166.250 L243.333,166.250 L243.333,160.500 L233.333,160.500 L233.333,154.750 L223.333,154.750 L223.333,149.000" fill="none" stroke="#b4753c" stroke-width=".7"/>
+<path d="M313.3333333333333,212.26763599752965 L223.33333333333334,160.51763599752968" fill="none" stroke="#b4753c" stroke-width=".65"/>
+<text x="215" y="277" class="">Greenlower/ochreupperprojected; differentxterritories, notoverlappingflights.</text>
+<text x="12" y="289" class="">ONEcurrentcandidate: actualwaist/beamgeometry, tributaryloadsandcontinuouscompatibility. Frozenunearnednodeprototypecontinuesawaitspecialist.</text>
+</svg>
