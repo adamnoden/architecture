@@ -4,7 +4,7 @@ export const pcoNodes = defineNodes([
   {
     id: 'PCO-GIT-DEADLINE', owners: ['PCO'],
     title: 'Bound configurable Git command deadlines across canonical lease operations',
-    dependencies: ['PCO-SNAPSHOT'], lifecycle: 'started',
+    dependencies: ['PCO-SNAPSHOT'], lifecycle: 'complete',
     agentDispatch: { mode: 'manual', reason: 'Owner-directed throughput repair (#1241); exceptional lease bootstrap recorded in #953 before registration.' },
     closeoutEvidence: ['project/pco/git-deadline-result.md']
   },
