@@ -4718,7 +4718,7 @@
       ],
       "supportTransfer": "Fit/test two actual controls while head rests on fixed pads; two handlers take balanced load before20UP. The fixed frame retains its anchors and all service loads. Never release a control while unsupported. Helper PRESTAGES both secured bearers on the empty table before handlers enter, then translates the table+bearers650N only after head is held90degrees in the east aisle.",
       "stopRollback": "Every path is reversible with both controls retained. Before leaving fixed frame, a failed seal/grip/control returns head to pads and retainers. In aisle, stop only under a qualified coordinated two-handler control or reverse to pads; no unmodelled floor park is credited. The qualified actual method must establish fatigue/rest/recovery capability and no abrupt suction loss. If it cannot, this handling direction fails.",
-      "reinstatement": "Reverse110UP/W-to-E/rotation/S-to-N/E-to-W/270DOWN/40N/20DOWN. Seat on pads and15 locating dowels, reinstall front retainers and supported rail, verify stable frame before releasing grips; restore supported spools with new qualified seals, uncap after isolation control, pressure/leak/wet-boundary test, then restore table/chairs and ordinary tasks."
+      "reinstatement": "Use connectedCycle.returnOrder and its exact reverse geometry/state obligations. Table must return650S during held east-aisle state BEFORE reverse rotation; bearers off and chairs ordinary before rail/spool retrieval; table100N last."
     },
     "table": {
       "topZ": 750,
@@ -4835,6 +4835,1562 @@
           "passes": true
         },
         "retreatInstruction": "After pushing650N, helper retreats100S to9225 BEFORE the two handlers bring the head west; head stays held in east aisle meanwhile."
+      },
+      "bearerCarrier": {
+        "status": "Finite full-solid/positive-grip carrier/storage candidate with continuous geometric bounds; actual apparatus/material/force/restraint admission unearned",
+        "box": [
+          600,
+          150,
+          300
+        ],
+        "maximumMassKg": 5,
+        "grips": "Two positive integral grips on selected150-side face at long-axis±100 and midheight. Must remain qualified through complete upright tilt/turn; no generic handhold or suction capacity assumed.",
+        "chairPark": {
+          "ordinaryMaintenance": [
+            [
+              "dining-chair-west-south",
+              [
+                7750,
+                9150,
+                500,
+                500
+              ]
+            ],
+            [
+              "dining-chair-west-north",
+              [
+                7750,
+                9700,
+                500,
+                500
+              ]
+            ],
+            [
+              "dining-chair-east-south",
+              [
+                7750,
+                8600,
+                500,
+                500
+              ]
+            ],
+            [
+              "dining-chair-east-north",
+              [
+                10800,
+                8475,
+                500,
+                500
+              ]
+            ]
+          ],
+          "temporaryEN": [
+            9300,
+            8475,
+            500,
+            500
+          ],
+          "reason": "During bearer transfer only, move EN10800to9300/8475 AFTER south bearer held in aisle9650/9325. Reverse chair move after south bearer returns to aisle, BEFORE lowering it onto table. Head handling retains original10800 chair park."
+        },
+        "journeys": [
+          {
+            "id": "south",
+            "source": [
+              8600,
+              9300,
+              600,
+              150,
+              750,
+              1050
+            ],
+            "storage": {
+              "plan": [
+                9697,
+                6900,
+                150,
+                300
+              ],
+              "z": [
+                900,
+                1500
+              ],
+              "restraint": "Positive mechanically secured upright restraint at900 shelf; retain actual support/capacity/anti-tip and both grips until restraint verified. Not freestanding tall-box balance."
+            },
+            "phases": [
+              {
+                "phase": "lift clear table",
+                "from": {
+                  "c": [
+                    8900,
+                    9375,
+                    900
+                  ],
+                  "body": [
+                    8900,
+                    8775
+                  ],
+                  "tilt": 0,
+                  "spin": 0,
+                  "shoulder": 1000
+                },
+                "to": {
+                  "c": [
+                    8900,
+                    9375,
+                    1100
+                  ],
+                  "body": [
+                    8900,
+                    8775
+                  ],
+                  "tilt": 0,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 349,
+                "reachUpper": 545.7640792732885,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "tilt600 upright",
+                "from": {
+                  "c": [
+                    8900,
+                    9375,
+                    1100
+                  ],
+                  "body": [
+                    8900,
+                    8775
+                  ],
+                  "tilt": 0,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    8900,
+                    9375,
+                    1100
+                  ],
+                  "body": [
+                    8900,
+                    8775
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 313.5898149479235,
+                "reachUpper": 536.4889581607989,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "translate300E above table",
+                "from": {
+                  "c": [
+                    8900,
+                    9375,
+                    1100
+                  ],
+                  "body": [
+                    8900,
+                    8775
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9200,
+                    9375,
+                    1100
+                  ],
+                  "body": [
+                    9200,
+                    8775
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 499,
+                "reachUpper": 536.4889581607988,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "turn positive grips/body to east",
+                "from": {
+                  "c": [
+                    9200,
+                    9375,
+                    1100
+                  ],
+                  "body": [
+                    9200,
+                    8775
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9200,
+                    9375,
+                    1100
+                  ],
+                  "body": [
+                    9800,
+                    9375
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 6.382503071557551,
+                "solidLower": 763.7949074739627,
+                "reachUpper": 536.4889581608007,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "close carry offset600to450",
+                "from": {
+                  "c": [
+                    9200,
+                    9375,
+                    1100
+                  ],
+                  "body": [
+                    9800,
+                    9375
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9200,
+                    9375,
+                    1100
+                  ],
+                  "body": [
+                    9650,
+                    9375
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 49,
+                "solidLower": 781.5,
+                "reachUpper": 536.4889581607988,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "held aisle50N before ENchair move",
+                "from": {
+                  "c": [
+                    9200,
+                    9375,
+                    1100
+                  ],
+                  "body": [
+                    9650,
+                    9375
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9200,
+                    9425,
+                    1100
+                  ],
+                  "body": [
+                    9650,
+                    9425
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 49,
+                "solidLower": 781.5,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "vertical loaded aisle 1",
+                "from": {
+                  "c": [
+                    9200,
+                    9425,
+                    1100
+                  ],
+                  "body": [
+                    9650,
+                    9425
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9900,
+                    9425,
+                    1100
+                  ],
+                  "body": [
+                    10350,
+                    9425
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 49,
+                "solidLower": 299,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "vertical loaded aisle 2",
+                "from": {
+                  "c": [
+                    9900,
+                    9425,
+                    1100
+                  ],
+                  "body": [
+                    10350,
+                    9425
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9900,
+                    8771.25,
+                    1100
+                  ],
+                  "body": [
+                    10350,
+                    8771.25
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 27.75,
+                "solidLower": 24,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "vertical loaded aisle 3",
+                "from": {
+                  "c": [
+                    9900,
+                    8771.25,
+                    1100
+                  ],
+                  "body": [
+                    10350,
+                    8771.25
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10150,
+                    8771.25,
+                    1100
+                  ],
+                  "body": [
+                    10600,
+                    8771.25
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 27.75,
+                "solidLower": 24,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "vertical loaded aisle 4",
+                "from": {
+                  "c": [
+                    10150,
+                    8771.25,
+                    1100
+                  ],
+                  "body": [
+                    10600,
+                    8771.25
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10250,
+                    8700,
+                    1100
+                  ],
+                  "body": [
+                    10700,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 39.27517730369709,
+                "solidLower": 106.5,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "vertical loaded aisle 5",
+                "from": {
+                  "c": [
+                    10250,
+                    8700,
+                    1100
+                  ],
+                  "body": [
+                    10700,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10580,
+                    8700,
+                    1100
+                  ],
+                  "body": [
+                    11030,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 106.5,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "turn loaded part WESTtoSOUTH",
+                "from": {
+                  "c": [
+                    10580,
+                    8700,
+                    1100
+                  ],
+                  "body": [
+                    11030,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    11030,
+                    8250,
+                    1100
+                  ],
+                  "body": [
+                    11030,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 3.141592653589793,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 7.991778016117678,
+                "reachUpper": 390.15436740650233,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "door body60W after loaded turn",
+                "from": {
+                  "c": [
+                    11030,
+                    8250,
+                    1100
+                  ],
+                  "body": [
+                    11030,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 3.141592653589793,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10970,
+                    8250,
+                    1100
+                  ],
+                  "body": [
+                    10970,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 3.141592653589793,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 112,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "through OPEN pantry",
+                "from": {
+                  "c": [
+                    10970,
+                    8250,
+                    1100
+                  ],
+                  "body": [
+                    10970,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 3.141592653589793,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10970,
+                    7350,
+                    1100
+                  ],
+                  "body": [
+                    10970,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 3.141592653589793,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 22,
+                "solidLower": 172,
+                "reachUpper": 390.1543674065015,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "pantry west transfer",
+                "from": {
+                  "c": [
+                    10970,
+                    7350,
+                    1100
+                  ],
+                  "body": [
+                    10970,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 3.141592653589793,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10322,
+                    7350,
+                    1100
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 3.141592653589793,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 22,
+                "solidLower": 172,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "raise clear900 shelf",
+                "from": {
+                  "c": [
+                    10322,
+                    7350,
+                    1100
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 3.141592653589793,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10322,
+                    7350,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 3.141592653589793,
+                  "shoulder": 1200
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 231,
+                "reachUpper": 482.2843178074637,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "regrip SOUTHtoWEST over shelf",
+                "from": {
+                  "c": [
+                    10322,
+                    7350,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 3.141592653589793,
+                  "shoulder": 1200
+                },
+                "to": {
+                  "c": [
+                    9772,
+                    7800,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1200
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 159,
+                "reachUpper": 563.8551263561058,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "upright to secured shelf field",
+                "from": {
+                  "c": [
+                    9772,
+                    7800,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1200
+                },
+                "to": {
+                  "c": [
+                    9772,
+                    7050,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7050
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1200
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 159,
+                "reachUpper": 563.8551263561058,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "seat and restrain upright bearer",
+                "from": {
+                  "c": [
+                    9772,
+                    7050,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7050
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1200
+                },
+                "to": {
+                  "c": [
+                    9772,
+                    7050,
+                    1200
+                  ],
+                  "body": [
+                    10322,
+                    7050
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 1.5707963267948966,
+                  "shoulder": 1200
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 52,
+                "reachUpper": 563.8551263561058,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              }
+            ],
+            "return": "Reverse this complete part/body/grip journey from restrained storage to table; keep all chairs in head-first maintenance positions. Support on table before releasing controls or unsecuring the other bearer."
+          },
+          {
+            "id": "north",
+            "source": [
+              8600,
+              10050,
+              600,
+              150,
+              750,
+              1050
+            ],
+            "storage": {
+              "plan": [
+                9697,
+                7300,
+                150,
+                300
+              ],
+              "z": [
+                900,
+                1500
+              ],
+              "restraint": "Positive mechanically secured upright restraint at900 shelf; retain actual support/capacity/anti-tip and both grips until restraint verified. Not freestanding tall-box balance."
+            },
+            "phases": [
+              {
+                "phase": "lift clear table",
+                "from": {
+                  "c": [
+                    8900,
+                    10125,
+                    900
+                  ],
+                  "body": [
+                    8900,
+                    10645
+                  ],
+                  "tilt": 0,
+                  "spin": 0,
+                  "shoulder": 1000
+                },
+                "to": {
+                  "c": [
+                    8900,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    8900,
+                    10645
+                  ],
+                  "tilt": 0,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24.5,
+                "solidLower": 349,
+                "reachUpper": 468.9814724882015,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "tilt600 upright",
+                "from": {
+                  "c": [
+                    8900,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    8900,
+                    10645
+                  ],
+                  "tilt": 0,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    8900,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    8900,
+                    10645
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24.5,
+                "solidLower": 313.5898149479235,
+                "reachUpper": 458.14757727924865,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "translate300E above table",
+                "from": {
+                  "c": [
+                    8900,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    8900,
+                    10645
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9200,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    9200,
+                    10645
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24.5,
+                "solidLower": 499,
+                "reachUpper": 458.1475772792484,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "turn positive grips/body to east",
+                "from": {
+                  "c": [
+                    9200,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    9200,
+                    10645
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9200,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    9720,
+                    10125
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 17.443657269664072,
+                "solidLower": 676.7949074739627,
+                "reachUpper": 458.1475772792503,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "close carry offset600to450",
+                "from": {
+                  "c": [
+                    9200,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    9720,
+                    10125
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9200,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    9650,
+                    10125
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 49,
+                "solidLower": 694.5,
+                "reachUpper": 458.1475772792484,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "vertical loaded aisle 1",
+                "from": {
+                  "c": [
+                    9200,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    9650,
+                    10125
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9900,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    10350,
+                    10125
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 49,
+                "solidLower": 694.5,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "vertical loaded aisle 2",
+                "from": {
+                  "c": [
+                    9900,
+                    10125,
+                    1100
+                  ],
+                  "body": [
+                    10350,
+                    10125
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    9900,
+                    8771.25,
+                    1100
+                  ],
+                  "body": [
+                    10350,
+                    8771.25
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 27.75,
+                "solidLower": 24,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "vertical loaded aisle 3",
+                "from": {
+                  "c": [
+                    9900,
+                    8771.25,
+                    1100
+                  ],
+                  "body": [
+                    10350,
+                    8771.25
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10150,
+                    8771.25,
+                    1100
+                  ],
+                  "body": [
+                    10600,
+                    8771.25
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 27.75,
+                "solidLower": 24,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "vertical loaded aisle 4",
+                "from": {
+                  "c": [
+                    10150,
+                    8771.25,
+                    1100
+                  ],
+                  "body": [
+                    10600,
+                    8771.25
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10250,
+                    8700,
+                    1100
+                  ],
+                  "body": [
+                    10700,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 39.27517730369709,
+                "solidLower": 106.5,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "vertical loaded aisle 5",
+                "from": {
+                  "c": [
+                    10250,
+                    8700,
+                    1100
+                  ],
+                  "body": [
+                    10700,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10580,
+                    8700,
+                    1100
+                  ],
+                  "body": [
+                    11030,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 106.5,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "turn loaded part WESTtoSOUTH",
+                "from": {
+                  "c": [
+                    10580,
+                    8700,
+                    1100
+                  ],
+                  "body": [
+                    11030,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    11030,
+                    8250,
+                    1100
+                  ],
+                  "body": [
+                    11030,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 7.991778016117678,
+                "reachUpper": 390.15436740650233,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "door body60W after loaded turn",
+                "from": {
+                  "c": [
+                    11030,
+                    8250,
+                    1100
+                  ],
+                  "body": [
+                    11030,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10970,
+                    8250,
+                    1100
+                  ],
+                  "body": [
+                    10970,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 112,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "through OPEN pantry",
+                "from": {
+                  "c": [
+                    10970,
+                    8250,
+                    1100
+                  ],
+                  "body": [
+                    10970,
+                    8700
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10970,
+                    7350,
+                    1100
+                  ],
+                  "body": [
+                    10970,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 22,
+                "solidLower": 172,
+                "reachUpper": 390.1543674065015,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "pantry west transfer",
+                "from": {
+                  "c": [
+                    10970,
+                    7350,
+                    1100
+                  ],
+                  "body": [
+                    10970,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10322,
+                    7350,
+                    1100
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "samples": 1001,
+                "bodyLower": 22,
+                "solidLower": 172,
+                "reachUpper": 390.1543674065006,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "raise clear900 shelf",
+                "from": {
+                  "c": [
+                    10322,
+                    7350,
+                    1100
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1100
+                },
+                "to": {
+                  "c": [
+                    10322,
+                    7350,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1200
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 231,
+                "reachUpper": 482.2843178074637,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "regrip SOUTHtoWEST over shelf",
+                "from": {
+                  "c": [
+                    10322,
+                    7350,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": 0,
+                  "shoulder": 1200
+                },
+                "to": {
+                  "c": [
+                    9772,
+                    7800,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1200
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 45.410824896012855,
+                "reachUpper": 563.8551263561058,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "upright to secured shelf field",
+                "from": {
+                  "c": [
+                    9772,
+                    7800,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7800
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1200
+                },
+                "to": {
+                  "c": [
+                    9772,
+                    7450,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7450
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1200
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 99,
+                "reachUpper": 563.8551263561058,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              },
+              {
+                "phase": "seat and restrain upright bearer",
+                "from": {
+                  "c": [
+                    9772,
+                    7450,
+                    1400
+                  ],
+                  "body": [
+                    10322,
+                    7450
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1200
+                },
+                "to": {
+                  "c": [
+                    9772,
+                    7450,
+                    1200
+                  ],
+                  "body": [
+                    10322,
+                    7450
+                  ],
+                  "tilt": 1.5707963267948966,
+                  "spin": -1.5707963267948966,
+                  "shoulder": 1200
+                },
+                "samples": 1001,
+                "bodyLower": 24,
+                "solidLower": 52,
+                "reachUpper": 563.8551263561058,
+                "halfStepBound": 1,
+                "speedBound": 2000,
+                "speedBasis": "Every authored phase is a linear translation<=900, or a quarter rotation. Largest combined part radius is550+sqrt(300²+150²+75²)<894; quarter rotation plus100 radial change<1505 per unit time. Body radius<=600 gives943; grip follows same bound. Uniform2000 bound is conservative; shoulder translation<=100 gives reach half-step2.05. Sample deltas are a regression check only.",
+                "intentionalSupportContacts": "Table750 during initial lift; shelf900 at final seating. Analytic vertical floors: initial lift bottom>=750; tilt minimum1100-sqrt(300²+150²)>764; shelf entry bottom>=1100 and final vertical lower900. These support planes are excluded only from non-contact clearance minimum; no interpenetration allowed."
+              }
+            ],
+            "return": "Reverse this complete part/body/grip journey from restrained storage to table; keep all chairs in head-first maintenance positions. Support on table before releasing controls or unsecuring the other bearer."
+          }
+        ]
       }
     },
     "lostTasks": [
@@ -5305,7 +6861,830 @@
         "governor": "secured wing bearer final",
         "contact": "Intentional final return-to-bearer support contact; no solid volume intersects."
       }
-    ]
+    ],
+    "connectedCycle": {
+      "status": "Bounded connected support/return ORDER witness: same-set reverse geometry and restored furniture states checked. Bearer ingress/storage/removal route and complete first-release physical event remain internal; no complete connected-operation PASS.",
+      "supportStates": [
+        {
+          "id": "INSTALLED",
+          "head": "Four fixed pads/rear locators plus four front retainers; services connected.",
+          "rail": "Installed",
+          "spools": "Connected",
+          "tableY": 9100,
+          "chairs": "Ordinary"
+        },
+        {
+          "id": "FIRST-RELEASE",
+          "head": "Pads/rear locators carry head continuously while front retainers and supported rail are removed. Required CG field and independent frame stability remain conditions.",
+          "rail": "Pantry shelf900; secured",
+          "spools": "Secured ENchair tray; fixed lower halves supported/capped",
+          "tableY": 9000,
+          "chairs": "Ordinary"
+        },
+        {
+          "id": "CARRY",
+          "head": "Both qualified wing controls take complete load before20UP. Never count removed rail/head as retained frame bracing.",
+          "rail": "Same pantry shelf",
+          "spools": "Same secured tray on parked ENchair",
+          "tableY": "9000 until held head reaches fully rotated east aisle; helper pushes650N then retreats100S",
+          "chairs": "All parked"
+        },
+        {
+          "id": "TABLE-REST",
+          "head": "Wing returns seated on two secured1050 bearer tops; bowl780 clears table750 by30. Remove controls only after verified stable load transfer.",
+          "rail": "Same pantry shelf",
+          "spools": "Same secured parked ENchair tray",
+          "tableY": 9650,
+          "chairs": "All parked"
+        },
+        {
+          "id": "RETURN-EAST-HOLD",
+          "head": "Fit/test both controls while supported, take load, lift110 and reverse clamped west motion to east aisle. Both controls retain complete load while table returns south.",
+          "rail": "Same pantry shelf",
+          "spools": "Same secured parked ENchair tray",
+          "tableY": "9650 then9000; no reverse rotation until complete",
+          "chairs": "All parked"
+        },
+        {
+          "id": "RESEATED",
+          "head": "Reverse rotation/north/west/vertical motions to four870 pads and rear15 locators; verify full seating and stable CG before unloading/releasing controls. No front rail or union needed to support this temporary state.",
+          "rail": "Still secured pantry shelf",
+          "spools": "Still secured parked ENchair tray",
+          "tableY": 9000,
+          "chairs": "All parked"
+        },
+        {
+          "id": "RESTORED",
+          "head": "Return front rail under support, install front retainers and verify retained frame; restore supported spools/new seals under isolation; test before use.",
+          "rail": "Installed",
+          "spools": "Reconnected/tested",
+          "tableY": 9100,
+          "chairs": "All ordinary"
+        }
+      ],
+      "returnOrder": [
+        "From stable table rest, fit/test both controls, take complete load and110UP; reverse west phase to fully90degree east-aisle hold.",
+        "Helper approaches from8900/9225 to9325, grips actual south table edge and pulls table+secured bearers650S toY9000; no handler releases control. Complete helper exit before reverse head rotation.",
+        "Reverse remaining head phases with table at9000. Reseat on all four pads/rear locators, verify stable support, then release/remove controls and handlers exit.",
+        "GATE before chair restoration: both bearers must be removed from tableY9000 and carried to identified supported storage outside the ordinary furniture fields. Existing prestage points/reach do not prove this carrier/storage route; unresolved, so the whole connected cycle remains incomplete. No bearer disappears or remains on the restored dining table.",
+        "Restore chairs in reverse order ES,WS,WN,EN; ENtray stays secured until chair is ordinary. Only now retrieve rail through pantry; the parked ENchair would obstruct the original carrier route.",
+        "Reverse rail shelf placement, vertical carry/regrip and135.5S release; independently support rail while reinstalling. Refit four front M6 retainers. Retrieve each labelled spool from ordinary ENtray, restore both zero-capture union faces/seals with fixed services supported.",
+        "Remove secured spool tray only after reconnection/test; restore pantry shelf/ordinary door and remove temporary stay; table100N to ordinaryY9100 LAST. Restore meal/prep/window/storage tasks only after wet/service/frame tests."
+      ],
+      "reverseHeadPhases": [
+        {
+          "phase": "RETURN lower110 onto wing bearers",
+          "from": {
+            "c": [
+              8900,
+              10300
+            ],
+            "a": 1.5707963267948966,
+            "z": 1080,
+            "ops": [
+              [
+                9610,
+                9942.5
+              ],
+              [
+                9610,
+                10657.5
+              ]
+            ],
+            "shoulder": 1200,
+            "tableY": 9650
+          },
+          "to": {
+            "c": [
+              8900,
+              10300
+            ],
+            "a": 1.5707963267948966,
+            "z": 1190,
+            "ops": [
+              [
+                9610,
+                9942.5
+              ],
+              [
+                9610,
+                10657.5
+              ]
+            ],
+            "shoulder": 1200,
+            "tableY": 9650
+          },
+          "proof": "Exact time reversal of the checked forward phase; same occupied composite/operator set, continuous speed and separation bounds. Restore that phase table state BEFORE motion.",
+          "forwardPhase": "lower110 onto wing bearers",
+          "proofRecords": [
+            "headFirst.phases",
+            "headFirst.fixedSolidContinuousSweeps"
+          ]
+        },
+        {
+          "phase": "RETURN west1200 to table",
+          "from": {
+            "c": [
+              8900,
+              10300
+            ],
+            "a": 1.5707963267948966,
+            "z": 1190,
+            "ops": [
+              [
+                9610,
+                9942.5
+              ],
+              [
+                9610,
+                10657.5
+              ]
+            ],
+            "shoulder": 1200,
+            "tableY": 9650
+          },
+          "to": {
+            "c": [
+              10100,
+              10300
+            ],
+            "a": 1.5707963267948966,
+            "z": 1190,
+            "ops": [
+              [
+                10720.5,
+                9942.5
+              ],
+              [
+                10720.5,
+                10657.5
+              ]
+            ],
+            "shoulder": 1200,
+            "tableY": 9650
+          },
+          "proof": "Exact time reversal of the checked forward phase; same occupied composite/operator set, continuous speed and separation bounds. Restore that phase table state BEFORE motion.",
+          "forwardPhase": "west1200 to table",
+          "proofRecords": [
+            "headFirst.phases",
+            "headFirst.fixedSolidContinuousSweeps"
+          ]
+        },
+        {
+          "phase": "RETURN CCW90",
+          "from": {
+            "c": [
+              10100,
+              10300
+            ],
+            "a": 1.5707963267948966,
+            "z": 1190,
+            "ops": [
+              [
+                10720.5,
+                9942.5
+              ],
+              [
+                10720.5,
+                10657.5
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "to": {
+            "c": [
+              10100,
+              10300
+            ],
+            "a": 0,
+            "z": 1190,
+            "ops": [
+              [
+                9742.5,
+                9679.5
+              ],
+              [
+                10457.5,
+                9679.5
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "proof": "Exact time reversal of the checked forward phase; same occupied composite/operator set, continuous speed and separation bounds. Restore that phase table state BEFORE motion.",
+          "forwardPhase": "CCW90",
+          "proofRecords": [
+            "headFirst.phases",
+            "headFirst.fixedSolidContinuousSweeps"
+          ]
+        },
+        {
+          "phase": "RETURN south930.5",
+          "from": {
+            "c": [
+              10100,
+              10300
+            ],
+            "a": 0,
+            "z": 1190,
+            "ops": [
+              [
+                9742.5,
+                9679.5
+              ],
+              [
+                10457.5,
+                9679.5
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "to": {
+            "c": [
+              10100,
+              11230.5
+            ],
+            "a": 0,
+            "z": 1190,
+            "ops": [
+              [
+                9742.5,
+                10610
+              ],
+              [
+                10457.5,
+                10610
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "proof": "Exact time reversal of the checked forward phase; same occupied composite/operator set, continuous speed and separation bounds. Restore that phase table state BEFORE motion.",
+          "forwardPhase": "south930.5",
+          "proofRecords": [
+            "headFirst.phases",
+            "headFirst.fixedSolidContinuousSweeps"
+          ]
+        },
+        {
+          "phase": "RETURN operator step20N aftereast",
+          "from": {
+            "c": [
+              10100,
+              11230.5
+            ],
+            "a": 0,
+            "z": 1190,
+            "ops": [
+              [
+                9742.5,
+                10610
+              ],
+              [
+                10457.5,
+                10610
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "to": {
+            "c": [
+              10100,
+              11230.5
+            ],
+            "a": 0,
+            "z": 1190,
+            "ops": [
+              [
+                9742.5,
+                10590
+              ],
+              [
+                10457.5,
+                10590
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "proof": "Exact time reversal of the checked forward phase; same occupied composite/operator set, continuous speed and separation bounds. Restore that phase table state BEFORE motion.",
+          "forwardPhase": "operator step20N aftereast",
+          "proofRecords": [
+            "headFirst.phases",
+            "headFirst.fixedSolidContinuousSweeps"
+          ]
+        },
+        {
+          "phase": "RETURN east950",
+          "from": {
+            "c": [
+              10100,
+              11230.5
+            ],
+            "a": 0,
+            "z": 1190,
+            "ops": [
+              [
+                9742.5,
+                10590
+              ],
+              [
+                10457.5,
+                10590
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "to": {
+            "c": [
+              9150,
+              11230.5
+            ],
+            "a": 0,
+            "z": 1190,
+            "ops": [
+              [
+                8792.5,
+                10590
+              ],
+              [
+                9507.5,
+                10590
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "proof": "Exact time reversal of the checked forward phase; same occupied composite/operator set, continuous speed and separation bounds. Restore that phase table state BEFORE motion.",
+          "forwardPhase": "east950",
+          "proofRecords": [
+            "headFirst.phases",
+            "headFirst.fixedSolidContinuousSweeps"
+          ]
+        },
+        {
+          "phase": "RETURN operator step20S beforeeast",
+          "from": {
+            "c": [
+              9150,
+              11230.5
+            ],
+            "a": 0,
+            "z": 1190,
+            "ops": [
+              [
+                8792.5,
+                10590
+              ],
+              [
+                9507.5,
+                10590
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "to": {
+            "c": [
+              9150,
+              11230.5
+            ],
+            "a": 0,
+            "z": 1190,
+            "ops": [
+              [
+                8792.5,
+                10610
+              ],
+              [
+                9507.5,
+                10610
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "proof": "Exact time reversal of the checked forward phase; same occupied composite/operator set, continuous speed and separation bounds. Restore that phase table state BEFORE motion.",
+          "forwardPhase": "operator step20S beforeeast",
+          "proofRecords": [
+            "headFirst.phases",
+            "headFirst.fixedSolidContinuousSweeps"
+          ]
+        },
+        {
+          "phase": "RETURN raise clear fixed frame",
+          "from": {
+            "c": [
+              9150,
+              11230.5
+            ],
+            "a": 0,
+            "z": 1190,
+            "ops": [
+              [
+                8792.5,
+                10610
+              ],
+              [
+                9507.5,
+                10610
+              ]
+            ],
+            "shoulder": 1200
+          },
+          "to": {
+            "c": [
+              9150,
+              11230.5
+            ],
+            "a": 0,
+            "z": 920,
+            "ops": [
+              [
+                8792.5,
+                10610
+              ],
+              [
+                9507.5,
+                10610
+              ]
+            ],
+            "shoulder": 1000
+          },
+          "proof": "Exact time reversal of the checked forward phase; same occupied composite/operator set, continuous speed and separation bounds. Restore that phase table state BEFORE motion.",
+          "forwardPhase": "raise clear fixed frame",
+          "proofRecords": [
+            "headFirst.phases",
+            "headFirst.fixedSolidContinuousSweeps"
+          ]
+        },
+        {
+          "phase": "RETURN 40south",
+          "from": {
+            "c": [
+              9150,
+              11230.5
+            ],
+            "a": 0,
+            "z": 920,
+            "ops": [
+              [
+                8792.5,
+                10610
+              ],
+              [
+                9507.5,
+                10610
+              ]
+            ],
+            "shoulder": 1000
+          },
+          "to": {
+            "c": [
+              9150,
+              11270.5
+            ],
+            "a": 0,
+            "z": 920,
+            "ops": [
+              [
+                8792.5,
+                10650
+              ],
+              [
+                9507.5,
+                10650
+              ]
+            ],
+            "shoulder": 1000
+          },
+          "proof": "Exact time reversal of the checked forward phase; same occupied composite/operator set, continuous speed and separation bounds. Restore that phase table state BEFORE motion.",
+          "forwardPhase": "40south",
+          "proofRecords": [
+            "headFirst.phases",
+            "headFirst.fixedSolidContinuousSweeps"
+          ]
+        },
+        {
+          "phase": "RETURN 20up",
+          "from": {
+            "c": [
+              9150,
+              11270.5
+            ],
+            "a": 0,
+            "z": 920,
+            "ops": [
+              [
+                8792.5,
+                10650
+              ],
+              [
+                9507.5,
+                10650
+              ]
+            ],
+            "shoulder": 1000
+          },
+          "to": {
+            "c": [
+              9150,
+              11270.5
+            ],
+            "a": 0,
+            "z": 900,
+            "ops": [
+              [
+                8792.5,
+                10650
+              ],
+              [
+                9507.5,
+                10650
+              ]
+            ],
+            "shoulder": 1000
+          },
+          "proof": "Exact time reversal of the checked forward phase; same occupied composite/operator set, continuous speed and separation bounds. Restore that phase table state BEFORE motion.",
+          "forwardPhase": "20up",
+          "proofRecords": [
+            "headFirst.phases",
+            "headFirst.fixedSolidContinuousSweeps"
+          ]
+        }
+      ],
+      "tableReturn": {
+        "helper": {
+          "points": [
+            [
+              8900,
+              9225
+            ],
+            [
+              8900,
+              9325
+            ],
+            [
+              8900,
+              8675
+            ]
+          ],
+          "minimumReserve": 28.451290148173996,
+          "governor": "rear-east+18trim",
+          "passes": true
+        },
+        "tableSweep": [
+          8500,
+          9000,
+          800,
+          1850
+        ],
+        "heldHead": {
+          "c": [
+            10100,
+            10300
+          ],
+          "a": 1.5707963267948966,
+          "z": 1190,
+          "ops": [
+            [
+              10720.5,
+              9942.5
+            ],
+            [
+              10720.5,
+              10657.5
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "gripRequirement": {
+          "handsX": [
+            8750,
+            9050
+          ],
+          "edgeOffsetY": 325,
+          "handZ": 750,
+          "shoulderZ": 1000,
+          "reach": 436.60622991432456
+        },
+        "scope": "Body/held-head/table plan coexistence and finite grip reach; actual pulling/pushing force, grip, table/bearer restraint and helper operation remain conditions."
+      },
+      "furnitureReturn": [
+        {
+          "id": "RETURN dining-chair-east-south",
+          "start": [
+            7750,
+            8600,
+            500,
+            500
+          ],
+          "path": [
+            [
+              7750,
+              8600
+            ],
+            [
+              7750,
+              8500
+            ],
+            [
+              9300,
+              8500
+            ],
+            [
+              9300,
+              9150
+            ]
+          ],
+          "minimumSeparation": 0,
+          "governor": "table ordinary BEFORE chairs",
+          "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+        },
+        {
+          "id": "RETURN dining-chair-west-south",
+          "start": [
+            7750,
+            9150,
+            500,
+            500
+          ],
+          "path": [
+            [
+              7750,
+              9150
+            ],
+            [
+              7750,
+              9150
+            ],
+            [
+              8000,
+              9150
+            ]
+          ],
+          "minimumSeparation": 0,
+          "governor": "table ordinary BEFORE chairs",
+          "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+        },
+        {
+          "id": "RETURN dining-chair-west-north",
+          "start": [
+            7750,
+            9700,
+            500,
+            500
+          ],
+          "path": [
+            [
+              7750,
+              9700
+            ],
+            [
+              7750,
+              9750
+            ],
+            [
+              8000,
+              9750
+            ]
+          ],
+          "minimumSeparation": 0,
+          "governor": "table ordinary BEFORE chairs",
+          "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+        },
+        {
+          "id": "RETURN dining-chair-east-north",
+          "start": [
+            10800,
+            8475,
+            500,
+            500
+          ],
+          "path": [
+            [
+              10800,
+              8475
+            ],
+            [
+              9900,
+              8475
+            ],
+            [
+              9900,
+              9750
+            ],
+            [
+              9300,
+              9750
+            ]
+          ],
+          "minimumSeparation": 0,
+          "governor": "table ordinary BEFORE chairs",
+          "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+        }
+      ],
+      "railReturn": {
+        "body": {
+          "points": [
+            [
+              10322,
+              7250
+            ],
+            [
+              10322,
+              7800
+            ],
+            [
+              10970,
+              7800
+            ],
+            [
+              10925,
+              8635
+            ],
+            [
+              10750,
+              8700
+            ],
+            [
+              10600,
+              8771.25
+            ],
+            [
+              10200,
+              8771.25
+            ],
+            [
+              10200,
+              10575
+            ],
+            [
+              9570,
+              10575
+            ]
+          ],
+          "minimumReserve": 23,
+          "governor": "pantry OPEN leaf",
+          "passes": true
+        },
+        "partProof": "Exact reversal of frontRailPark.pieceSegments/regrip/shelf placement only after all chairs ordinary; same retained geometry. Actual supported shelf/regrip remains conditional."
+      },
+      "spoolReturn": {
+        "points": [
+          [
+            10150,
+            10000
+          ],
+          [
+            10150,
+            10575
+          ],
+          [
+            9550,
+            10575
+          ]
+        ],
+        "minimumReserve": 25,
+        "governor": "dining-chair-east-north",
+        "passes": true
+      },
+      "finalTable": {
+        "id": "Restore table100N LAST",
+        "start": [
+          8500,
+          9000,
+          800,
+          1200
+        ],
+        "path": [
+          [
+            8500,
+            9000
+          ],
+          [
+            8500,
+            9100
+          ]
+        ],
+        "minimumSeparation": 0,
+        "governor": "dining-chair-west-south",
+        "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+      },
+      "negativeControl": {
+        "tableLeftNorthAt9650": [
+          -300,
+          -92.5
+        ],
+        "reason": "At least one returned initial handler body intersects table if650S table restoration is omitted; reverse geometry alone cannot ignore changed obstacles."
+      },
+      "recovery": "At stable frame/table contact, remain supported and diagnose before release. During carry both qualified controls must retain load until either checked support state is regained. If fatigue, grip-loss or a required rest cannot be managed by the actual qualified method, this direction fails; reversible geometry does not furnish a safe emergency catch.",
+      "remainingDevelopment": [
+        "Identify and check both600x150x300 bearer carrier/storage paths and simultaneous helper/part support from that storage to prestage and back; prestage reach is insufficient.",
+        "Join actual six-union/rail first-release and reseal/retest event to complete task bodies/tools/supports; current source retains apparatus and material assumptions.",
+        "Full guarded wet export and actual whole-occurrence reconciliation remain open."
+      ],
+      "remainingAcceptance": [
+        "Actual independently stable anchored frame without rail/head, pad/locator/CG/load and wet-joint release capability before front retention release.",
+        "Actual complete head mass, cups/grips/surface, simultaneous two-person load transfer, force, fatigue/rest and recovery; no carrying certificate from the geometry.",
+        "Actual table/bearer/rail-shelf/ENchair-tray capacities, restraint, compatible temporary pantry stay and safe support during each removal/reinstallation.",
+        "Qualified unions/seals/wet boundary, complete MAT constituents and exact new-service/whole-house occurrence join; full guarded wet-item export remains separate."
+      ]
+    }
   },
   "occurrenceSet": {
     "status": "Pinned spatial candidate with explicit IAS/service rewinds; house unadopted and physical/material admission separate",
