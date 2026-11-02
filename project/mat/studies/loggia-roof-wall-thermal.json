@@ -1,0 +1,477 @@
+{
+  "status": "Conditional steady 2D heat-flow screen only; no ISO10211/13788, whole U, condensation or assembly acceptance.",
+  "inputs": {
+    "HAD": {
+      "path": "project/had/studies/open-north-loggia.json",
+      "commit": "cfacc96c61ce1be5befa3bc0a10086c7cb6b4202",
+      "blob": "25faad2c4d40df2b7da7212f73808843a88d2f52"
+    },
+    "STR": {
+      "path": "project/str/studies/open-loggia-support.json",
+      "commit": "9867b1994533f0d0f3114919225aa89b50eb2f1a",
+      "blob": "f2414b24637533e93a0be9d0e0e639a899d18803"
+    },
+    "MATroofEdge": {
+      "path": "project/mat/studies/loggia-roof-edge.json",
+      "commit": "c2586982b86ced332809369912081a1e7b100d8c",
+      "blob": "731c85d24e775259f1cf84d264d4ceaf75d89774"
+    }
+  },
+  "geometry": {
+    "qDomain": [
+      -300.0,
+      1200.0
+    ],
+    "zDomain": [
+      6300.0,
+      7900.0
+    ],
+    "pitch": 25,
+    "ordinaryWall": {
+      "total": 429.5,
+      "roomToWeather": [
+        27,
+        140,
+        110,
+        50,
+        102.5
+      ],
+      "core": [
+        262.5,
+        402.5
+      ],
+      "glass": [
+        152.5,
+        262.5
+      ],
+      "scope": "Ordinary shell spatial reservation. Not the519.5/200glass loggia sidewall and not full constituent/thermal admission."
+    },
+    "weatherLeafHeadHypothesisZ": 6900,
+    "collector": [
+      202.5,
+      462.5,
+      6540,
+      6680
+    ],
+    "roofNormal": 500.7,
+    "roofGlassNormal": 320,
+    "roofGlassEndQ": 152.5,
+    "lowerBoardEndQ": 262.5,
+    "ceiling": [
+      6444,
+      6620
+    ],
+    "ceilingWoolInClassifiedSystem": 100,
+    "framePlanesX": [
+      4377.5,
+      7622.5
+    ]
+  },
+  "model": {
+    "temperatureC": {
+      "room": 20.0,
+      "outdoorVent": 0.0
+    },
+    "surfaceFilmM2KperW": {
+      "inside": 0.13,
+      "outside": 0.04
+    },
+    "conductivityWperMK": {
+      "brick": 0.77,
+      "core": 0.77,
+      "plaster": 0.57,
+      "glass": 0.041,
+      "RC": 1.75,
+      "boardAVCLnormal": 0.1457766424168379,
+      "steel": 15.0
+    },
+    "primaryVoidK": 0.1,
+    "primaryCeilingEffectiveK": 0.06,
+    "geometryLimit": "Dry section with authored glass-to-glass bevel closure. Drained wall cavity and roof 50 ventilation held at outdoor temperature. Weather-leaf head and cap not resolved as a qualified joint. q/z cuts adiabatic. The 24board+1mm AVCL are a 25mm exact normal-series resistance, omitting sheet lateral fin and collars. The 176 ceiling is a homogenized effective-property bracket, not the classified profile. No radiative/cavity airflow or wind-driven rain.",
+    "frameLimit": "Solid 80-normal steel plane is a deliberately severe 2D infinite-width bound, not a hollow SHS, its finite x distribution, 1 mm collar, weld or 3D heat transfer. Post/plate/rail/corner bridges excluded.",
+    "referenceLimit": "No-collector comparison is a numerical counterfactual with the same roof/wall/ceiling cut. Its \u0394L is not an ISO \u03c8 or an available design option. Boundary-width and ceiling-property sensitivities prevent a compliance claim."
+  },
+  "cases": [
+    {
+      "step": 10.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 10051,
+      "heatFromRoomWperM": 5.84440440836093,
+      "heatToOutsideWperM": 5.844404408362234,
+      "energyResidualWperM": -1.3038459201197838e-12,
+      "minimumInsideSurfaceC": 16.661295633057822,
+      "minimumInsideTemperatureFactor": 0.8330647816528911,
+      "coldestInsideFace": {
+        "q": 435.0,
+        "z": 6540.0
+      },
+      "name": "bay",
+      "collectorPenaltyVsNoCollectorWperMK": 0.04466724010367536
+    },
+    {
+      "step": 10.0,
+      "collector": false,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 10003,
+      "heatFromRoomWperM": 4.951059606287423,
+      "heatToOutsideWperM": 4.951059606288539,
+      "energyResidualWperM": -1.1164402735630574e-12,
+      "minimumInsideSurfaceC": 17.723620519080693,
+      "minimumInsideTemperatureFactor": 0.8861810259540347,
+      "coldestInsideFace": {
+        "q": 430.0,
+        "z": 6615.0
+      },
+      "name": "noCollectorReference"
+    },
+    {
+      "step": 10.0,
+      "collector": true,
+      "frameSolidPlaneStress": true,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 10051,
+      "heatFromRoomWperM": 6.098103176925193,
+      "heatToOutsideWperM": 6.098103176924457,
+      "energyResidualWperM": 7.354117315117037e-13,
+      "minimumInsideSurfaceC": 16.33790183503861,
+      "minimumInsideTemperatureFactor": 0.8168950917519305,
+      "coldestInsideFace": {
+        "q": 435.0,
+        "z": 6540.0
+      },
+      "name": "solidFramePlaneStress"
+    },
+    {
+      "step": 10.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.026,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 10051,
+      "heatFromRoomWperM": 5.251335042499753,
+      "heatToOutsideWperM": 5.251335042501033,
+      "energyResidualWperM": -1.2798651027878805e-12,
+      "minimumInsideSurfaceC": 16.828076492397116,
+      "minimumInsideTemperatureFactor": 0.8414038246198559,
+      "coldestInsideFace": {
+        "q": 435.0,
+        "z": 6540.0
+      },
+      "name": "stillVoid"
+    },
+    {
+      "step": 10.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.3,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 10051,
+      "heatFromRoomWperM": 6.364161081435583,
+      "heatToOutsideWperM": 6.364161081437581,
+      "energyResidualWperM": -1.9984014443252818e-12,
+      "minimumInsideSurfaceC": 16.414557588050556,
+      "minimumInsideTemperatureFactor": 0.8207278794025278,
+      "coldestInsideFace": {
+        "q": 435.0,
+        "z": 6540.0
+      },
+      "name": "mixedVoid"
+    },
+    {
+      "step": 10.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.04,
+      "qEnd": 1200.0,
+      "unknownCells": 10051,
+      "heatFromRoomWperM": 5.760088364379358,
+      "heatToOutsideWperM": 5.760088364380698,
+      "energyResidualWperM": -1.3393730569077889e-12,
+      "minimumInsideSurfaceC": 16.57459084023672,
+      "minimumInsideTemperatureFactor": 0.828729542011836,
+      "coldestInsideFace": {
+        "q": 435.0,
+        "z": 6540.0
+      },
+      "name": "ceilingLowerK"
+    },
+    {
+      "step": 10.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.12,
+      "qEnd": 1200.0,
+      "unknownCells": 10051,
+      "heatFromRoomWperM": 5.976884652900856,
+      "heatToOutsideWperM": 5.976884652902342,
+      "energyResidualWperM": -1.4859224961583095e-12,
+      "minimumInsideSurfaceC": 16.832254099226375,
+      "minimumInsideTemperatureFactor": 0.8416127049613188,
+      "coldestInsideFace": {
+        "q": 435.0,
+        "z": 6540.0
+      },
+      "name": "ceilingHigherK"
+    },
+    {
+      "step": 5.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 40055,
+      "heatFromRoomWperM": 5.867470197528169,
+      "heatToOutsideWperM": 5.8674701975334616,
+      "energyResidualWperM": -5.292655202993046e-12,
+      "minimumInsideSurfaceC": 16.651018625884845,
+      "minimumInsideTemperatureFactor": 0.8325509312942423,
+      "coldestInsideFace": {
+        "q": 432.5,
+        "z": 6540.0
+      },
+      "name": "bay",
+      "collectorPenaltyVsNoCollectorWperMK": 0.045188101887166
+    },
+    {
+      "step": 5.0,
+      "collector": false,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 39863,
+      "heatFromRoomWperM": 4.963708159784849,
+      "heatToOutsideWperM": 4.963708159790173,
+      "energyResidualWperM": -5.323741447682551e-12,
+      "minimumInsideSurfaceC": 17.67439087398692,
+      "minimumInsideTemperatureFactor": 0.8837195436993459,
+      "coldestInsideFace": {
+        "q": 430.0,
+        "z": 6617.5
+      },
+      "name": "noCollectorReference"
+    },
+    {
+      "step": 5.0,
+      "collector": true,
+      "frameSolidPlaneStress": true,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 40055,
+      "heatFromRoomWperM": 6.117550683175866,
+      "heatToOutsideWperM": 6.117550683166684,
+      "energyResidualWperM": 9.181988502859895e-12,
+      "minimumInsideSurfaceC": 16.331251740372284,
+      "minimumInsideTemperatureFactor": 0.8165625870186142,
+      "coldestInsideFace": {
+        "q": 432.5,
+        "z": 6540.0
+      },
+      "name": "solidFramePlaneStress"
+    },
+    {
+      "step": 5.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.026,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 40055,
+      "heatFromRoomWperM": 5.265382191504583,
+      "heatToOutsideWperM": 5.265382191508874,
+      "energyResidualWperM": -4.291678123991005e-12,
+      "minimumInsideSurfaceC": 16.817946549201174,
+      "minimumInsideTemperatureFactor": 0.8408973274600587,
+      "coldestInsideFace": {
+        "q": 432.5,
+        "z": 6540.0
+      },
+      "name": "stillVoid"
+    },
+    {
+      "step": 5.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.3,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 40055,
+      "heatFromRoomWperM": 6.409383357788116,
+      "heatToOutsideWperM": 6.409383357794875,
+      "energyResidualWperM": -6.759037773917953e-12,
+      "minimumInsideSurfaceC": 16.39606197113951,
+      "minimumInsideTemperatureFactor": 0.8198030985569755,
+      "coldestInsideFace": {
+        "q": 432.5,
+        "z": 6540.0
+      },
+      "name": "mixedVoid"
+    },
+    {
+      "step": 5.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.04,
+      "qEnd": 1200.0,
+      "unknownCells": 40055,
+      "heatFromRoomWperM": 5.783408554702026,
+      "heatToOutsideWperM": 5.783408554706706,
+      "energyResidualWperM": -4.67981209339996e-12,
+      "minimumInsideSurfaceC": 16.56450431093397,
+      "minimumInsideTemperatureFactor": 0.8282252155466985,
+      "coldestInsideFace": {
+        "q": 432.5,
+        "z": 6540.0
+      },
+      "name": "ceilingLowerK"
+    },
+    {
+      "step": 5.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.12,
+      "qEnd": 1200.0,
+      "unknownCells": 40055,
+      "heatFromRoomWperM": 5.998910709999281,
+      "heatToOutsideWperM": 5.998910710005546,
+      "energyResidualWperM": -6.265210572564683e-12,
+      "minimumInsideSurfaceC": 16.81985854718642,
+      "minimumInsideTemperatureFactor": 0.8409929273593211,
+      "coldestInsideFace": {
+        "q": 432.5,
+        "z": 6540.0
+      },
+      "name": "ceilingHigherK"
+    },
+    {
+      "step": 5.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1400.0,
+      "unknownCells": 49476,
+      "heatFromRoomWperM": 6.1068580184200165,
+      "heatToOutsideWperM": 6.106858018425898,
+      "energyResidualWperM": -5.881517495254229e-12,
+      "minimumInsideSurfaceC": 16.65622671669513,
+      "minimumInsideTemperatureFactor": 0.8328113358347565,
+      "coldestInsideFace": {
+        "q": 432.5,
+        "z": 6540.0
+      },
+      "name": "wideBay"
+    },
+    {
+      "step": 5.0,
+      "collector": false,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1400.0,
+      "unknownCells": 49284,
+      "heatFromRoomWperM": 5.202003920714836,
+      "heatToOutsideWperM": 5.202003920720439,
+      "energyResidualWperM": -5.60262947146839e-12,
+      "minimumInsideSurfaceC": 17.677498701400545,
+      "minimumInsideTemperatureFactor": 0.8838749350700272,
+      "coldestInsideFace": {
+        "q": 430.0,
+        "z": 6617.5
+      },
+      "name": "wideNoCollectorReference"
+    },
+    {
+      "step": 2.5,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 160054,
+      "heatFromRoomWperM": 5.881582195347486,
+      "heatToOutsideWperM": 5.881582195371054,
+      "energyResidualWperM": -2.3568702545162523e-11,
+      "minimumInsideSurfaceC": 16.65265717729224,
+      "minimumInsideTemperatureFactor": 0.832632858864612,
+      "coldestInsideFace": {
+        "q": 431.25,
+        "z": 6540.0
+      },
+      "name": "bay",
+      "collectorPenaltyVsNoCollectorWperMK": 0.04558043391701929
+    },
+    {
+      "step": 2.5,
+      "collector": false,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "unknownCells": 159286,
+      "heatFromRoomWperM": 4.9699735170071,
+      "heatToOutsideWperM": 4.969973517029557,
+      "energyResidualWperM": -2.2457591342117666e-11,
+      "minimumInsideSurfaceC": 17.645571636115918,
+      "minimumInsideTemperatureFactor": 0.8822785818057959,
+      "coldestInsideFace": {
+        "q": 430.0,
+        "z": 6618.75
+      },
+      "name": "noCollectorReference"
+    }
+  ],
+  "convergence": {
+    "bay": {
+      "heatRelative": 0.003931130178889719,
+      "surfaceDeltaC": -0.010277007172977193
+    },
+    "noCollectorReference": {
+      "heatRelative": 0.00254820652025891,
+      "surfaceDeltaC": -0.049229645093774366
+    },
+    "solidFramePlaneStress": {
+      "heatRelative": 0.003178969371542166,
+      "surfaceDeltaC": -0.006650094666326822
+    }
+  },
+  "fineConvergence": {
+    "bay": {
+      "heatRelative": 0.0023993540089399315,
+      "surfaceDeltaC": 0.001638551407395994
+    },
+    "noCollectorReference": {
+      "heatRelative": 0.001260641973405088,
+      "surfaceDeltaC": -0.02881923787100149
+    }
+  },
+  "wideCutSensitivity": {
+    "qEnd": 1400,
+    "collectorPenaltyWperMK": 0.045242704885259014,
+    "penaltyDifferenceFromPrimary": 5.4602998093011834e-05,
+    "surfaceDifferenceC": 0.005208090810285171
+  },
+  "open": [
+    "Actual classified ceiling conductivity/skin/web/fillets and protected void radiation/convection",
+    "All-around frame/post collars and metal-sheet fin effects in 3D",
+    "Indoor moisture production, climate/weather series and constituent vapour/permeance data for transient moisture",
+    "Wall-head cavity cap/drip, plaster and water/air/gas closure, site and physical verification"
+  ]
+}
