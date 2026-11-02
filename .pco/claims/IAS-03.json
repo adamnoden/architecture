@@ -9,12 +9,12 @@
     "label": "zerg5-ias-closeout"
   },
   "claimedAt": "2026-11-02T00:16:03.173Z",
-  "heartbeatAt": "2026-11-02T00:16:03.173Z",
-  "expiresAt": "2026-11-02T01:01:03.173Z",
+  "heartbeatAt": "2026-11-02T00:21:50.999Z",
+  "expiresAt": "2026-11-02T01:06:50.999Z",
   "checkpoint": {
-    "evidence": "Fresh main59ec623d after verified PR1237 merge; previous IAS14 released and issue941 bounded progress reconciled.",
-    "next": "Complete selected head-first sink composite/operator/support and guarded wet export/occurrence reconciliation.",
-    "blocker": "No full IAS node completion or physical/material admission; internal renewal joins remain."
+    "evidence": "Published cf4593842e747ad0cef823a5715fdc2b38cdded9 tree dce8d722f3fd54ec14cd6babd39633e4f652feb3 exact main59ec parent: head-first top/bowl/three retainedB composite, continuous body/reach bounds and rendered drawing; repro/diffcheck pass.",
+    "next": "Finish continuous fixed-solid sweeps, consume corrected canonical service contract, actual guarded stair/export and final IS occurrence reconciliation.",
+    "blocker": "Checkpoint not full handling acceptance: composite collisions sampled; actual apparatus/frame/table/force admission and full guarded export remain open."
   },
   "branch": "work/zerg5-ias-closeout",
   "predecessor": {
