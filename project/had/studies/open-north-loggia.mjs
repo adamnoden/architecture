@@ -592,11 +592,11 @@ candidate.knownInterfaces=['STRownsactualfloor/roof/arch/foundation/guardloadand
 // One small projection from the selected scene definitions. Exterior enclosure
 // is constructed by outerDefs/obstacles, not duplicated in upperWalls JSON.
 // Keep GROUND loggia/portal and FIRST ordinary outer-north roles distinct.
-const northDef=outerDefs.find(([id])=>id==='outer-north'),courtDef=outerDefs.find(([id])=>id==='court-north');
-if(!northDef||!courtDef)throw Error('HAD exterior scene definitions changed');
-const sceneWall=(level,def)=>{const wall=enclosureForLevel(level).find(w=>w.id===def[0]);if(!wall)throw Error('HAD scene enclosure missing');return{id:wall.id,segment:[wall.a,wall.b],thickness:wall.t,
+const northDef=outerDefs.find(([id])=>id==='outer-north'),courtDef=outerDefs.find(([id])=>id==='court-north'),courtSouthDef=outerDefs.find(([id])=>id==='court-south');
+if(!northDef||!courtDef||!courtSouthDef)throw Error('HAD exterior scene definitions changed');
+const sceneWall=(level,def,fullOpenings=false)=>{const wall=enclosureForLevel(level).find(w=>w.id===def[0]);if(!wall)throw Error('HAD scene enclosure missing');return{id:wall.id,segment:[wall.a,wall.b],thickness:wall.t,
  finishedFaces:wall.finishedFaces,
- openings:openings[level].filter(o=>o.wall===def[0]).map(o=>({id:o.id,kind:o.kind,centre:o.centre,width:o.width}))}};
+ openings:openings[level].filter(o=>o.wall===def[0]).map(o=>fullOpenings?structuredClone(o):{id:o.id,kind:o.kind,centre:o.centre,width:o.width})}};
 const northProjection={status:'Selected HAD scene occurrence projection only; MAT/STR joints and ceiling remain separate.',
  selectedHAD: candidate.selection.identity,
  first:{outerNorth:sceneWall('FIRST',northDef),courtNorth:sceneWall('FIRST',courtDef),
@@ -604,10 +604,14 @@ const northProjection={status:'Selected HAD scene occurrence projection only; MA
  ground:{outerNorth:sceneWall('GROUND',northDef),courtNorth:sceneWall('GROUND',courtDef),
   loggiaWeather:groundWalls.filter(w=>['loggia-west-weather','loggia-east-weather'].includes(w.id)).map(w=>({id:w.id,a:w.a,b:w.b,t:w.t,structuralCore:w.structuralCore})),
   portal:candidate.insulatedPortal},
+ courtSouth:{first:sceneWall('FIRST',courtSouthDef,true),ground:sceneWall('GROUND',courtSouthDef,true),
+  verticalDatums:{groundFFL:candidate.sections.groundFFL,firstFFL:candidate.sections.firstFFL},
+  southCourtWeatherDoor:structuredClone(candidate.southCourtWeatherDoor)},
  method:'Derived from this generator outerDefs, openings and selected candidate; no independent reconstructed house model.'};
 if(northProjection.first.outerNorth.finishedFaces[0]!==11570.5||northProjection.first.outerNorth.finishedFaces[1]!==12000||northProjection.first.outerNorth.thickness!==429.5)throw Error('FIRST ordinary north facade drift');
 if(northProjection.first.outerNorth.openings.filter(o=>o.kind==='window').some(o=>o.centre+o.width/2>4377.5&&o.centre-o.width/2<7622.5))throw Error('Selected bay gained a north window');
 if(northProjection.ground.loggiaWeather.length!==2||northProjection.ground.loggiaWeather.some(w=>w.t!==519.5))throw Error('GROUND loggia sidewall drift');
+if(northProjection.courtSouth.first.id!=='court-south'||northProjection.courtSouth.ground.openings.find(o=>o.id==='grand-court-entry-south')?.kind!=='door')throw Error('Court south scene occurrence drift');
 
 for(const [name,body]of Object.entries({'open-north-loggia.json':JSON.stringify(candidate,null,2)+'\n','open-north-loggia.svg':svg,'open-north-loggia-sections.svg':sectionSvg,'open-north-loggia-exterior.svg':exteriorSvg,'open-north-loggia-stair.svg':stairSvg,'open-north-loggia-guard.svg':guardSvg,'open-north-facade-projection.json':JSON.stringify(northProjection,null,2)+'\n'})){const p=new URL(name,OUT);if(process.argv.includes('--check')){if(readFileSync(p,'utf8')!==body)throw Error('Stale '+name)}else writeFileSync(p,body)}
 if(process.argv.includes('--require-whole-house-fit')&&!candidate.wholeHouseFit.pass)throw Error('Explicit whole-house fit debts remain');

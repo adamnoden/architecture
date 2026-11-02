@@ -459,11 +459,154 @@ compact['plantActualChallenger']={
   'HAD/OAS oriented430Xx1200Y outdoorbody rewind, utilitycontrollerplacement/wiring and allroom emitter/output join',
   'Materials includingpropeller/cables/electronics/seals/glycol remainunapproved']}
 
+# Matched external-motor family: keep factory2/5/8 and allowed10V ceiling.
+# Source curves are digitised chart estimates. Unpublished2/8 curves and
+# resistance fits remain explicit; never silently return an OEM operating PASS.
+swegon_sources={
+ 'hood':'https://www.swegon.com/globalassets/digizuite/10096-en-casasalsa_productcatalogue_en.pdf',
+ 'hoodIOM':'https://www.swegon.com/globalassets/digizuite/18988-en-salsa_genius_installation.pdf',
+ 'fan':'https://www.swegon.com/globalassets/digizuite/9780-en-casatwist_productcatalogue_en.pdf',
+ 'fanIOM':'https://www.swegon.com/globalassets/digizuite/10108-en-casatwist_installation_en.pdf',
+ 'hoodBVD2019':'https://www.swegon.com/globalassets/digizuite/9711-en-casasalsa600_bvd_declaration_en.pdf',
+ 'shortBend':'https://itsolution.lindab.com/lindabwebproductsdoc/pdf/documentation/ads/lindab/technical/bku90.pdf',
+ 'grille':'https://itsolution.lindab.com/lindabwebproductsdoc/assets/production/OGMyMTZlODAtNGUyZi00OGIzLWE0NzAtODdiN2ViZGNkMGMy/5249808159374452077/YGC_GLOBAL.pdf?t=481457921',
+ 'emitter':'https://www.stelrad.com/wp-content/uploads/2019/12/25928_Compact_-K3_Web.pdf'}
+fan_charts={5:[(0,150),(20,145),(40,130),(60,105)],
+ 7:[(0,280),(20,270),(40,255),(60,230),(75,170)],
+ 10:[(0,555),(20,520),(40,480),(60,440),(80,395),(90,360),(100,310)]}
+def chart_interp(points,q):
+    assert 0<=q<=points[-1][0]
+    for (x,a),(y,b) in zip(points,points[1:]):
+        if q<=y:return a+(b-a)*(q-x)/(y-x)
+    return points[-1][1]
+def external_fan(u,q):
+    if u in fan_charts:return chart_interp(fan_charts[u],q)
+    anchor=10 if u==2 else 7
+    ratio=u/anchor
+    return chart_interp(fan_charts[anchor],q/ratio)*ratio**2
+#1.0m straight is an explicit conservative pressure proxy for the0.7685m
+#allocated centreline straight; the actual full couplings/seals remain to bind.
+def exhaust_loss(q,wind=0,hood_k=.032,grille_k=.027):
+    v=(q/1000)/(math.pi*.125**2/4)
+    return (hood_k+grille_k)*q*q+(.03*1/.125+.6)*1.2*v*v/2+4+wind
+def exhaust_root(u,wind=0,fan_error=0,hood_k=.032,grille_k=.027):
+    anchor=u if u in fan_charts else (10 if u==2 else 7)
+    ceiling=fan_charts[anchor][-1][0]*(1 if u==anchor else u/anchor)
+    def residual(q):return external_fan(u,q)+fan_error-exhaust_loss(q,wind,hood_k,grille_k)
+    if residual(0)<=0:return {'flowLps':0,'noForwardFlow':True,'chartDomainExhausted':False}
+    if residual(ceiling)>0:return {'flowLps':ceiling,'noForwardFlow':False,'chartDomainExhausted':True}
+    lo,hi=0,ceiling
+    for unused in range(60):
+        mid=(lo+hi)/2
+        if residual(mid)>0:lo=mid
+        else:hi=mid
+    return {'flowLps':(lo+hi)/2,'noForwardFlow':False,'chartDomainExhausted':False}
+#Exact3063314 source3345W replaces length interpolation. It also closes the
+#conservative zero-heat-credit band immediately below1.5m/s.
+swegon_emitter=3345*.6**1.32+2441*.6**1.34
+maximum_unheated_kitchen=1140+36*(math.pi*.2**2/4*1.5*1000)
+assert swegon_emitter>maximum_unheated_kitchen>new_emitter_55
+swegon_rows=[]
+for u in (2,5,8,10):
+    calm=exhaust_root(u)
+    low=exhaust_root(u,50,-15,.035,.030)
+    high=exhaust_root(u,-50,15,.029,.024)
+    #8V source-independent envelope from published7/10 curves is retained,
+    #separate from its explicitly authored affinity nominal point.
+    if u==8:
+        low=exhaust_root(7,50,-15,.035,.030)
+        high=exhaust_root(10,-50,15,.029,.024)
+    for mask in range(64):
+        variants=[]
+        for label,case in [('calmAuthoredNominal',calm),('adverseLower',low),('favourableUpper',high)]:
+            hood=case['flowLps']; air=joined(mask,hood)
+            direct=air['directMakeupLps']; velocity=direct/1000/(math.pi*.2**2/4)
+            ideal=36*direct
+            #No invented derating curve below1.5: credit zero, despite OEM
+            #permitted automatic limiting; below0.7 its cutoff remains binding.
+            credited=min(ideal,low_line_w) if velocity>=1.5 else 0
+            kitchen=1140+ideal-credited
+            physical=(220+1.2*air['outsideLps'])*30
+            variants.append({'case':label,**case,'hoodLps':hood,'directMakeupLps':direct,
+              'hoodPaFit':.032*hood**2,'heaterVelocityMps':velocity,
+              'heaterCreditedW':credited,'remainingKitchenW':kitchen,
+              'physicalWholeHouseW':physical,'hydronicW':physical-credited,
+              'kitchenHeatArithmeticPass':kitchen<swegon_emitter,
+              'net14ArithmeticPass':physical-credited<14000,
+              'sourceCurveDomains':{'hoodWithinPrinted22to71Lps':22<=hood<=71,
+                'grilleWithinPrintedPressure200Pa':.027*hood**2<=200,
+                'publishedFanCurveAtThisVoltage':u in (5,10)},
+              'scope':'Authored coupled steady screen using actual source charts and declared resistance fits. Zero/no-forward or source-domain failure never receives RUN credit.'})
+        swegon_rows.append({'fanMask':mask,'manualCommandV':u,'factoryDefault':u in (2,5,8),
+          'variants':variants,'operationalAdmission':False})
+assert len(swegon_rows)==256
+assert exhaust_root(2,50,-15,.035,.030)['noForwardFlow']
+assert exhaust_root(2,-50,15,.029,.024)['chartDomainExhausted']
+assert exhaust_root(2)['flowLps']<48 and exhaust_root(5)['flowLps']<48
+assert exhaust_root(10)['flowLps']>71
+swegon_variants=[v for row in swegon_rows for v in row['variants']]
+assert all(v['kitchenHeatArithmeticPass'] and v['net14ArithmeticPass'] for v in swegon_variants)
+assert max(v['hoodLps'] for v in swegon_variants)<=100
+swegon={
+ 'status':'Matched actual SalsaPSV6/TwistTTEC development challenger;256modes reviewed, no system/house/operation admission',
+ 'sources':swegon_sources,'factoryCommandV':[2,5,8],'maximumSupportedCommissioningCommandV':10,
+ 'actualInterface':'SalsaAO/GND controls separateTwistECmotor; hood24V and fan230V supplies separate. OEMTwistsolehood application explicitly enablesOFF, all three speed functions retained. No NovyWS polarity or certified-internals modification imported.',
+ 'controlScope':'OFF over the documented motor-control path is supported; exact0V threshold, wire-fault behaviour/coastdown and a specific latched pressure/flow safety controller with independent motor interruption remain unqualified. StandaloneOFF configuration is OEM instruction, not hidden boost cap.',
+ 'hoodDimSource':'Housing598W,glass600W,179overallH,315closed/490extended dimensional drawing versus525depth in family table; use525maximum until exactsupplyrevision reconciles.',
+ 'hoodPlanMM':[10750,11045.5,600,525],'hoodZMM':[1500,1679],
+ 'authoredHobZMM':900,'authoredHoodHobGapMM':600,
+ 'capture':'EN13141-3:2017 source75percent at48Lps at600mm; IEC76percent/40Lps is a different test. Installedcapture not admitted; low-speed rows can fail48.',
+ 'outletMM':[11125,11443.5,1679],
+ 'fanActualW_D_H_MM':[455,200,353],'fanMassKg':9.5,'fanNominalW':115,
+ 'fanDelivery':'Factoryfasteners, externalconnection sleeve, controlcable and twoadditional-extract duct caps retained. No otherwetroom connected; sixTiton nodes remainindependent.',
+ 'hoodMassScope':'2019BVD PSV6/PSR6 says8.5kg, not exactcurrentGenius supplyrevision; total18kg lower-handling comparator, actualall-parts load must bind',
+ 'fanChartSamplesPa':fan_charts,'chartReadUncertaintyPa':15,
+ 'unpublishedCurveTreatment':'2V affinity surrogate scaled from10V;8V nominal scaled from7V, with independent7/10monotone envelope. Neither is an OEMpublished2/8V pressurecurve. Unknown does not receive source qualification.',
+ 'exhaustLossMethod':{'hoodQuadraticPaPerLpsSquared':[.029,.032,.035],
+   'grilleQuadraticPaPerLpsSquared':[.024,.027,.030],
+   'authoredShortBendK':.6,'authoredDarcy':.03,'authoredStraightLengthM':1,
+   'stressWindPa':[-50,0,50],
+   'scope':'Actual source hood/YGC charts anchoredfits; outside printed domains is flagged. Bend/straight/coupling losses, wind and8/2curves are not a qualified installedcurve.'},
+ 'all256Modes':swegon_rows,
+ 'minimum48CaptureCalmCommands':{str(u):exhaust_root(u)['flowLps']>=48 for u in (2,5,8,10)},
+ 'lowFlowHeatPolicy':'RetainOEMViCiQOL limiting below1.5/cutoffbelow0.7; thermalcreditzero below1.5 rather than inventing powercurve. Full power only withinsourceflowdomain, outlet20C/overheat/runon unchanged.',
+ 'maximumZeroCreditSub1_5KitchenW':maximum_unheated_kitchen,
+ 'proposedEastEmitter':'StelradCompactK3 3063314 H600L1400;3345WatDelta50,n1.32,dry73.5kg/water13.72L/filled87.22kg, factorypanels/brackets retained',
+ 'proposedEastEmitterCompletePlanMM':[11370.5,9975,200,1550],
+ 'eastEmitterNorthRoomReserveMM':11570.5-(9975+1550),
+ 'H600L1400plusNorthH700L900At55_45W':swegon_emitter,
+ 'minimumZeroCreditBandHeatMarginW':swegon_emitter-maximum_unheated_kitchen,
+ 'sourceNet14HydronicMarginMinimumW':min(14000-v['hydronicW'] for v in swegon_variants),
+ 'geometry':{'selectedCookerPortMM':[11200,12000,2400],
+   'proposedCookerPortMM':[11125,12000,2400],
+   'ringTranslationLowerBoundMM':239.21430187748706-75,
+   'portScope':'75mm owningHAD/STR/MAT/OAS rewind; geometric bound only, no adopted opening/weather/cavity/fire/structure detail.',
+   'straightRoute':[{'id':'hood-to-fan-connector','zMM':[1679,1879],'allocationMM':200,'source':'OEMsleeve oratleast100mmØ125duct; completeclamps/engagement within200 still tobind'},
+    {'id':'TwistTTEC','zMM':[1879,2232],'overallMM':353},
+    {'id':'outlet-straight-to-short-bend','zMM':[2232,2321],'allocationMM':89},
+    {'id':'BKU125-90','axisZMM':2400,'installedLegMM':79,'massKg':.31,'sourceRevision':'2020-02-24; currentZMvariant77plusminus5 differs, no mixing'},
+    {'id':'north-wall-sleeve','yMM':[11522.5,12000],'axisXMM':11125,'axisZMM':2400},
+    {'id':'YGC125','faceDiameterMM':149,'neckMM':19.5,'projectionMM':2.5,'massKg':.18,'sourceRevision':'2022-02-17;9x9currentwebversus10x10PDF mesh discrepancy mustbind'}],
+   'fanPlanMM':[10886,11334.5,455,200],
+   'fullExhaustCarrierMaximumMM':[10750,11045.5,1500,600,525,1000],
+   'rawDuctODMM':125,'wallJacketRequirementMM':25,
+   'completeSleeveMinimumODMM':175,
+   'allPartsHold':'Completecollars/fasteners/insulation/fireweatherclosure125insource320formedopening, support/PSU/control/casing and tool/human task require joined procurement geometry. No barebody firstrelease pass.'},
+ 'maintenance':'Actualhoodwithdrawal/filter slide, independent9.5kgfan support and front-cover/motor removal, ladder/step/body/deck/driver/door/chair/terminal-cleaning task remain unresolved. Current41972highpodium is not borrowed as proof for lowerhood; no table/fridge removal.',
+ 'materialResidues':'2019SalsaBVD includesPVC,FR4/epoxy,TBBP-A,POM,PC,TPV/Santoprene,silicone andPEpaint; oldBVD filterAl versuscurrentleafletstainless conflict. Fan/coatings/caps/cables/heaters/shutter/filters/couplings/sensors/controls remain unapproved. No strippedrequiredparts or owner exception.',
+ 'intrinsicHolds':['Actual2/8V fan curves and source-completehood/grille/bend/coupling/weather performance; defaultsourcequalificationfalse',
+  'Specificcontroller/wiring/diagnostics/manualreset, pressure-loop/hood-stop/zeroing andwetfan fulltransition/fault response withinretained5Pa/5s contract',
+  'HoodOFF kitchen−8.305/−12.581 background fan/transfer pressure states require scopeddisposition, no claimedprotectedOFF',
+  'Firstrelease/wholehuman/door/chair/hood/terminal/actuator/support and completeprocurementkit',
+  'HAD/STR proposedports +East1400/valve/cill/mass/heat/hob alignment andallroom outputjoin',
+  'Exactnetplant/HX/glycol/pumps/DHW/defrost/electricalcapacity andmaterialpolicy']}
+assert swegon['eastEmitterNorthRoomReserveMM']==45.5
+
 # Single exact SVG drawing: actual source bodies are solid, procurement/task
 # maxima dashed. It deliberately shows the current maintenance failures.
 from html import escape
-sv=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">',
- '<rect width="420" height="297" fill="white"/>',
+sv=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="594mm" viewBox="0 0 420 594">',
+ '<rect width="420" height="594" fill="white"/>',
  '<style>text{font-family:Arial,sans-serif;fill:#172531} .b{font-weight:bold}.s{font-size:2.7px}.xs{font-size:2.2px}.n{font-size:3.5px}.dash{stroke-dasharray:2 1}</style>']
 def txt(x,y,t,cls='s',fill=None):
     sv.append(f'<text x="{x:.3f}" y="{y:.3f}" class="{cls}"'+(f' style="fill:{fill}"' if fill else '')+'>'+escape(str(t))+'</text>')
@@ -621,14 +764,69 @@ txt(146,284,'H700 trial bottom100;50lift →850','xs')
 txt(146,288,'Requires cill underside≥900; no join PASS','xs','#a12d2d')
 compact['maintenanceTask']['northCill']={'selectedSillZ':1050,'actualUnderside':'unknown','radiatorTrialBottomZ':100,'radiatorBodyHeight':700,'upwardReleaseMM':50,'requiredCillUndersideMinimumZ':900,'scope':'Existing constructive trial requirement, no selected cill/valve/support/body admission.'}
 txt(12,294,'Joined cooker study • generated with source-pinned network/HAD • source/result owns uncertainties • all dimensions mm','xs')
+sv.append('<g transform="translate(0,300)">')
+txt(12,10,'SALSA PSV6 + TWIST TTEC — MATCHED EXTERNAL-MOTOR CHALLENGER','n b')
+txt(12,16,'Actual OEM family / factory2,5,8V plus10V ceiling •256 fan-mask/mode rows • no operating or first-release admission','s','#a12d2d')
+txt(12,22,'Retain six Titon13/16 nodes, six inlets,14-node graph. Current makeup train on sheet1 retained; no hidden boost cap.','s')
+# Room plan, with source fixed bodies and proposed actual exhaust/maintenance demands.
+txt(12,29,'F  KITCHEN PLAN • SOURCE + CONDITIONAL REPLANS','s b')
+planbox(room,'#fafbfc','#263743')
+for key,bx in h['groundFurniture'].items():
+    if overlap(room,bx):planbox(bx,'#e4e8eb','#7f8a94')
+planbox(swegon['hoodPlanMM'],'none','#156b9a')
+planbox(swegon['geometry']['fanPlanMM'],'#c7e4ed','#156b9a')
+planbox(swegon['proposedEastEmitterCompletePlanMM'],'none','#b27b25',True)
+planbox(c['kitchenEmitterTrials']['900']['completePlanMM'],'none','#b27b25',True)
+line(px(11125),py(11443.5),px(11125),py(11570.5),'#156b9a')
+txt(px(10750),py(11045.5)+4,'600hood/455fan','xs')
+txt(12,177,'East H600L1400 +north H700L900 trial; east complete1550 leaves45.5 to north room edge.','xs')
+txt(12,182,'Fixed table/coldstore retained. Lowerhood firstrelease, complete body/platform/door/chair route OPEN.','xs','#a12d2d')
+# True Y/Z installed section, to prospective normal north port.
+ex=lambda y:223+(y-10900)*.085
+ez=lambda z:270-z*.065
+txt(223,29,'G  EXHAUST / HOOD SECTION • Y / Z','s b')
+rect(ex(11570.5),ez(3170),429.5*.085,3170*.065,'#e4e8eb','#7f8a94')
+rect(ex(10970.5),ez(900),600*.085,900*.065,'#dce0e3','#7f8a94')
+rect(ex(11045.5),ez(1679),525*.085,179*.065,'none','#156b9a')
+rect(ex(11255.5),ez(1679),315*.085,179*.065,'#b9d5e1','#156b9a')
+rect(ex(11334.5),ez(2232),200*.085,353*.065,'#c7e4ed','#156b9a')
+# Connector maximum200 and outlet straight89 are explicit complete allocations.
+rect(ex(11443.5-62.5),ez(1879),125*.085,200*.065,'none','#95622c',True)
+rect(ex(11443.5-62.5),ez(2321),125*.085,89*.065,'none','#95622c',True)
+line(ex(11443.5),ez(2321),ex(11522.5),ez(2400),'#156b9a')
+rect(ex(11522.5),ez(2462.5),(12000-11522.5)*.085,125*.065,'none','#156b9a')
+rect(ex(11570.5),ez(2487.5),429.5*.085,175*.065,'none','#95622c',True)
+line(ex(10900),ez(3170),ex(12050),ez(3170),'#263743')
+line(ex(10900),ez(0),ex(12050),ez(0),'#263743')
+txt(223,69,'RC3170 • no upper void assumed','xs')
+txt(223,112,'BKU125/90 leg79; Ø125 sleeve; jacket25 demand.','xs')
+txt(223,117,'Proposed portX11125 (selectedX11200),Z2400.','xs','#a12d2d')
+txt(223,122,'YGC125 actualface149; full formed320 closure OPEN.','xs')
+txt(223,165,'Twist353 overall/455wide/200deep/9.5kg;125spigots/caps retained.','xs')
+txt(223,170,'Hood179, glass600,525maximumprojection;600 above authoredhob900.','xs')
+# Readable tabular mode/source limits below the plan.
+txt(12,199,'H  MODE / CURVE / THERMAL BOUNDARY','s b')
+for i,u in enumerate((2,5,8,10)):
+    nominal=exhaust_root(u)
+    txt(12,206+i*6,f'{u}V: calm authoredflow{nominal["flowLps"]:.1f}L/s; '+('sourcechart' if u in (5,10) else 'UNPUBLISHED curve: declared surrogate/envelope'),'s')
+txt(12,235,'2/5/8 factory modes retained;10V is supported ceiling. Source2/8 curves, extrapolation and wind remain OPEN.','xs','#a12d2d')
+txt(12,241,f'Zero heater credit below1.5m/s: kitchen bound{maximum_unheated_kitchen:.1f}W; revised room output{swegon_emitter:.1f}W.','xs')
+txt(12,247,'3345W/n1.32 actual3063314 plus2441W/n1.34 north trial. All256 rows preserve low-flow and source failures.','xs')
+txt(12,253,'EN13141-3:75% at48L/s/600mount; IEC76%/40L/s is different. Installed capture not qualified.','xs')
+txt(12,259,'OFF source kitchen−8.305/−12.581: no invented pressure protection. PREARM/RUN/transitions require real response.','xs','#a12d2d')
+txt(12,265,'Actual0–10 external-motor interface improves OEM path; a specific latched safety controller is still unqualified.','xs','#a12d2d')
+txt(12,271,'Firstrelease, source-complete losses, netplant/HX/flow, all-room output and material policy remain real admission holds.','xs','#a12d2d')
+txt(12,286,'Research draft for exact-source review. Neither curve fitting nor an inspected drawing is physical/OEM/site acceptance.','s b','#a12d2d')
+sv.append('</g>')
 sv.append('</svg>')
 drawing='\n'.join(sv)+'\n'
 drawing_path=P/'joined-cooker-assembly.svg'
 if '--check' in sys.argv:assert drawing_path.read_text()==drawing,'stale joined cooker assembly drawing'
 else:drawing_path.write_text(drawing)
 
-out={'status':'Joined compact Novy810/tempered-air candidate plus inherited ERA trial and rejected6910 comparator; all256 modes enumerated, actual OEM/kit/control/plant admission unresolved.',
+out={'status':'Matched SwegonSalsa/Twist256-mode source/route/thermal challenger plus Novy810 trial and ERA/6910 controls; all system/house/operation admission unresolved.',
      'source':{'startingMain':'e93c643d36dfb0ee72a2bd2035899dfc5cc94f74',
+      'reviewBaseMain':'fcf79a6bf3aba309019cd658135124acc3f45446',
       'networkBlob':'50af6c4734488210e4d0dec8d7b8f4d4d3a9e3c0',
       'constructiveBlob':'8f7a448a2bbf8de7311ea0ccc4b6d01eebe208ae',
       'HADBlob':'25faad2c4d40df2b7da7212f73808843a88d2f52'},
@@ -638,7 +836,7 @@ out={'status':'Joined compact Novy810/tempered-air candidate plus inherited ERA 
        'minus10Disposition':'Incompatible with inherited trip without source-authored redesign and joined room/fan/capture/OEM proof.'},
      'states':states,'terminalSensitivity':intake,
      'pressureTargetSensitivity':pressureSensitivity,
-     'OEMReplacementNegativeControl':novy_case,'compactTemperedCandidate':compact,
+     'OEMReplacementNegativeControl':novy_case,'compactTemperedCandidate':compact,'SwegonExternalMotorCandidate':swegon,
      'layoutMaximumProcurementEnvelopes':port,'heatAt30K':heat,
      'existingH600L1200PlusNewNorthH700L900W':emitter,'netPlantDuty':plant,
      'limits':'Assisted assembly fan curve at installed resistance, stop shutter motor/EPDM, exact all-parts geometry, hood interlock, sealed boundary and all-room output/HX/product/pad fit not established. No material exception, physical admission or selected HAD modification.'}
