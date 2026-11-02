@@ -101,15 +101,15 @@
     ],
     "continuousPier": [
       -80,
-      6640
+      6460
     ],
     "roofCapPlate": [
-      6640,
-      6660
+      6460,
+      6480
     ],
     "continuousBarTrial": [
       -990,
-      6640
+      6460
     ],
     "note": "Cold RC and local warm pad dimensions are coordinated provisional STR station inputs, not selected structural source. Warm-grid material/thermal values came from a 519.5 loggia sidewall and cannot transfer to this 429.5 SW corner."
   },
@@ -173,14 +173,14 @@
       "groundFurniture": [],
       "upperFurniture": []
     },
-    "roofCapNominalGapToAssumedSHS_mm": 26.72099999999955,
+    "roofCapNominalGapToTrialHip_mm": 38.54358438968029,
     "roofPointBilinearFractionsThoughtExperiment": [
       0.8919753086419753,
       0.05246913580246913,
       0.05246913580246913,
       0.0030864197530864196
     ],
-    "limit": "These fractions only demonstrate one nonnegative roof-only equilibrium allocation; actual stiffness, bending, contact, tie capacity, wind combination and biaxial force path belong to STR. The pier replaces a joined 0.0644 m2 ordinary core overlap and projects a 133\u00d7133 mm toe into both storeys; furniture rectangles do not certify door/route/fire/roof clearances. Roof plate gap is an assumed inherited SHS level, not actual hip seat/tolerance."
+    "limit": "These fractions only demonstrate one nonnegative roof-only equilibrium allocation; actual stiffness, bending, contact, tie capacity, wind combination and biaxial force path belong to STR. The pier replaces a joined 0.0644 m2 ordinary core overlap and projects a 133\u00d7133 mm toe into both storeys; furniture rectangles do not certify door/route/fire/roof clearances. Trial lowered hip-to-cap gap is nominal geometry, not qualified hip seat/tolerance."
   },
   "continuousMetalFieldChallenger": {
     "fieldZ_mm": [
@@ -226,13 +226,13 @@
     "plateThickness_mm": 3,
     "upperRodZ": [
       -571,
-      6640
+      6460
     ],
     "lowerRodZ": [
       -990,
       -574
     ],
-    "upperRodLength_mm": 7211,
+    "upperRodLength_mm": 7031,
     "lowerRodLength_mm": 416,
     "weldNote": "Four upper and four lower rod ends join opposite faces of one unperforated plate. Weld size, alloy, fatigue, anchorage, contact and construction access not designed.",
     "plateMass_kg_at_7850": 2.1195,
@@ -298,7 +298,7 @@
   "pathSchedule": [
     {
       "path": "signed force",
-      "sequence": "assumed roof cap at +6640..+6660 \u2192 four continuous pier bars and tied RC 300 square from +6640 to \u221280 \u2192 four \u00d860 band crossings \u2192 cold grid",
+      "sequence": "assumed roof cap at +6460..+6480 \u2192 four continuous pier bars and tied RC 300 square from +6460 to \u221280 \u2192 four \u00d860 band crossings \u2192 cold grid",
       "hold": "STR actual roof hip/seat, cap welded bar ends, cage ties, anchorage, signed N/M/V, stiffness/contact and cold grid; no equal sharing or AAC/DPC tension/shear credit"
     },
     {
