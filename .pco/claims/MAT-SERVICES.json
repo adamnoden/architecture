@@ -9,11 +9,11 @@
     "label": "zerg-services-joined-system"
   },
   "claimedAt": "2026-11-02T11:27:42.220Z",
-  "heartbeatAt": "2026-11-02T13:03:13.648Z",
-  "expiresAt": "2026-11-02T13:48:13.648Z",
+  "heartbeatAt": "2026-11-02T13:11:01.317Z",
+  "expiresAt": "2026-11-02T13:56:01.317Z",
   "checkpoint": {
-    "evidence": "Remote b47efa0c81248b5b46966fe707eee61fcf736630/tree24a094782fac20d275750d424f10ef2484c154f7 equals local3a9f60d0; actual418mm SLU,309x289 PFR panel and inspected north-hatch/offset-podium replan. Generator+SVGcheck/diff pass. Conditional fridge/radiator/chair state, no complete first-release or admission.",
-    "next": "Join actual two-heater/filter/shutter/silencer/terminal pressure loss to K250 fan curves; complete interface/live-trip/fault sequence, coupling/support/human handling and net55C plant. No integration acceptance or PR."
+    "evidence": "Remote20b8dcc73e052bd219969d260df120b5c5189a2a/tree379110181c1604d93d11709631770a6a4b78e6dc equals local8356fc9f. Source-inspected heater curve6/fan/FGR peak ranges joined; official filter regional policy conflict retained. Previous b47 inspected north-hatch/offset-podium plan remains. Generator+SVGcheck/diff pass; no installed pressure/service/plant admission.",
+    "next": "Complete actual full kit mating/support/first-release and fan/hood installed curves; OEM live-inhibit/wiring faults and full transient control; exact current filter policy; net55C plant and HAD/IAS appliance/radiator/chair reconciliation. No PR or adoption."
   },
   "branch": "work/zerg11-services-joined-system",
   "predecessor": {
