@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 31,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1fc916bc-d206-468d-94ad-b208b59ddd02",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6589332389"
   },
   "claimedAt": "2026-11-02T21:49:46.000Z",
-  "heartbeatAt": "2026-11-02T21:58:38.000Z",
-  "expiresAt": "2026-11-02T22:43:38.000Z",
+  "heartbeatAt": "2026-11-02T22:05:15.000Z",
+  "expiresAt": "2026-11-02T22:05:15.000Z",
   "branch": "work/mvb-chat-6589332389",
   "predecessor": {
     "leaseId": "d42d0ec2-7634-4b34-a4f8-527c54b2c4c3",
@@ -39,5 +39,7 @@
     "evidence": "PR1288 head d88a560: source-pinned 32-board, gutter and conditional-gate plot envelope generator, JSON, A3 drawing, tests and explicit unresolved plant-door collision.",
     "next": "Verify full exact-head CI, run fresh canonical generation31 merge-check, expected-head merge, release and dispose temporary preflight helper.",
     "blocker": "No measured plot/rights, true scaffold ties/bearing, door/egress, site outfall, material or rainwater operational approval; RWT-06 remains planned."
-  }
+  },
+  "releasedAt": "2026-11-02T22:05:15.000Z",
+  "releaseReason": "handoff"
 }
