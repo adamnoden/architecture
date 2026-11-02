@@ -1355,9 +1355,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50
       },
       {
         "id": "plant-replacement",
@@ -1391,9 +1393,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50
       },
       {
         "id": "west-window-0",
@@ -1404,9 +1408,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50
       },
       {
         "id": "west-window-1",
@@ -1432,7 +1438,8 @@
         "leaves": 1,
         "sill": 1750,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "operation": "FIXED +independentrevealgrille"
       },
       {
         "id": "west-window-3",
@@ -1443,9 +1450,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50
       },
       {
         "id": "north-window-0",
@@ -1464,9 +1473,11 @@
         "width": 700,
         "kind": "window",
         "operation": "FIXED; ordinary operation not credited",
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50
       },
       {
         "id": "garden-entry",
@@ -1584,9 +1595,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50
       },
       {
         "id": "south-window-2",
@@ -1610,9 +1623,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50
       },
       {
         "id": "south-window-4",
@@ -1649,9 +1664,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50
       },
       {
         "id": "east-window-2",
@@ -1739,9 +1756,11 @@
         "centre": 1800,
         "width": 1000,
         "kind": "window",
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50
       },
       {
         "id": "north-window-1",
@@ -1749,9 +1768,11 @@
         "centre": 3700,
         "width": 700,
         "kind": "window",
-        "sill": 750,
+        "sill": 950,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 900,
+        "cillDepthMaximum": 50
       },
       {
         "id": "north-window-3",
@@ -1769,9 +1790,11 @@
         "centre": 10200,
         "width": 1000,
         "kind": "window",
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
-        "spring": 2550
+        "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50
       },
       {
         "id": "court-south-0",
@@ -1857,7 +1880,7 @@
   },
   "groundFurniture": {
     "study-desk": [
-      600,
+      655,
       600,
       1600,
       700
@@ -1893,16 +1916,10 @@
       700
     ],
     "plant-riser": [
-      9410,
+      9400,
       4700,
       550,
       700
-    ],
-    "Q350-body": [
-      9862.5,
-      5550,
-      570,
-      725
     ],
     "pantry-shelf-comparison": [
       9397,
@@ -1987,6 +2004,102 @@
       9025,
       650,
       650
+    ],
+    "service-emitter-study-W": [
+      429.5,
+      1250,
+      200,
+      1150
+    ],
+    "service-emitter-living-W": [
+      429.5,
+      9800,
+      200,
+      950
+    ],
+    "service-emitter-living-N2": [
+      3102.5,
+      11370.5,
+      950,
+      200
+    ],
+    "service-emitter-kitchen-E": [
+      11370.5,
+      9700,
+      200,
+      1350
+    ],
+    "service-emitter-utility-E": [
+      11370.5,
+      1778,
+      200,
+      650
+    ],
+    "service-emitter-plant-N": [
+      9422,
+      6203,
+      550,
+      200
+    ],
+    "service-emitter-protected-G": [
+      3500,
+      2747.5,
+      550,
+      200
+    ],
+    "service-emitter-guest-WC-E": [
+      9003,
+      1900,
+      200,
+      550
+    ],
+    "plant-primary-buffer-round-bounding600": [
+      10050,
+      5550,
+      600,
+      600
+    ],
+    "plant-controls": [
+      11270.5,
+      5550,
+      300,
+      650
+    ],
+    "service-utility-washer": [
+      10050,
+      700,
+      650,
+      700
+    ],
+    "service-utility-sink": [
+      10950,
+      700,
+      600,
+      700
+    ],
+    "service-utility-rearServiceChase": [
+      10050,
+      450,
+      1500,
+      250
+    ],
+    "service-utility-valveBay": [
+      10700,
+      700,
+      250,
+      700
+    ],
+    "service-utility-electricalStation": [
+      9397,
+      1750,
+      300,
+      650
+    ],
+    "service-utility-PVinverter": [
+      9400,
+      429.5,
+      500,
+      250
     ]
   },
   "upperFurniture": {
@@ -2016,13 +2129,13 @@
     ],
     "bed4": [
       5405.5,
-      9350,
+      9250,
       2000,
       1500
     ],
     "bed4-head": [
       7405.5,
-      9350,
+      9250,
       90,
       1500
     ],
@@ -2034,13 +2147,13 @@
     ],
     "principal": [
       9450.5,
-      9175,
+      9150,
       2000,
       1600
     ],
     "principal-head": [
       11450.5,
-      9175,
+      9150,
       90,
       1600
     ],
@@ -2133,6 +2246,54 @@
       6135,
       270,
       265
+    ],
+    "service-emitter-bed2-S": [
+      3425,
+      429.5,
+      950,
+      200
+    ],
+    "service-emitter-bed3-S": [
+      7625,
+      429.5,
+      950,
+      200
+    ],
+    "service-emitter-bed4-N": [
+      3102.5,
+      11370.5,
+      1050,
+      200
+    ],
+    "service-emitter-principal-N": [
+      9625,
+      11370.5,
+      1150,
+      200
+    ],
+    "service-emitter-rear-N": [
+      2100,
+      11367.5,
+      650,
+      200
+    ],
+    "service-emitter-family-E": [
+      11367.5,
+      4525,
+      200,
+      650
+    ],
+    "service-emitter-principal-E-high": [
+      11367.5,
+      6775,
+      200,
+      650
+    ],
+    "service-emitter-protected-F": [
+      8180,
+      4400,
+      200,
+      550
     ]
   },
   "stair": [
@@ -2342,19 +2503,19 @@
     "principalBed": {
       "whole": [
         9450.5,
-        9175,
+        9150,
         2090,
         1600
       ],
       "body": [
         9450.5,
-        9175,
+        9150,
         2000,
         1600
       ],
       "head": [
         11450.5,
-        9175,
+        9150,
         90,
         1600
       ],
@@ -2365,7 +2526,7 @@
       "windowOperation": "Compatible leaf/frame lower envelope staysat/above750; actualOASfamily/3Doperation not yet matched.",
       "declaredCombinedPositionLoss": 50,
       "bodyDiameter": 600,
-      "remainingPassageAfterLoss": 639,
+      "remainingPassageAfterLoss": 614,
       "maintenance": {
         "translation": [
           0,
@@ -2373,13 +2534,13 @@
         ],
         "whole": [
           9450.5,
-          9675,
+          9650,
           2090,
           1600
         ],
         "swept": [
           9450.5,
-          9175,
+          9150,
           2090,
           2100
         ],
@@ -2390,8 +2551,8 @@
           900
         ],
         "handlingPad": 100,
-        "nominalStageGap": 235,
-        "after100Pad": 135,
+        "nominalStageGap": 210,
+        "after100Pad": 110,
         "windowTasks": "Unavailable during bedroom maintenance; restore ordinary state.",
         "sweptConflicts": [],
         "pass": true,
@@ -2401,14 +2562,15 @@
           450,
           1100
         ],
-        "stageToTemporaryBedGap": 135
+        "stageToTemporaryBedGap": 110
       },
-      "southPassageFromActualLeaf8486": 689
+      "southPassageFromActualLeaf8486": 689,
+      "southPassage": 664
     },
     "bed4": {
       "whole": [
         5405.5,
-        9350,
+        9250,
         2090,
         1500
       ],
@@ -2486,11 +2648,11 @@
     }
   },
   "knownInterfaces": [
-    "Ground NSbeam under upper rearwetwall must earn bearings/arch interaction.",
-    "Protected-route topology is authored; classified walls/doors/glazing/joints and real site/fire admission remain unearned. Living open arch is outside protected volume.",
-    "Principal low-bed/window compatibility is an explicit procurement requirement; leaf/frame lower envelope and actual installed operation remain unproved.",
-    "Principalbath cistern, door handling and whole soil/hot/cold inventory remain explicit joined work.",
-    "No outdoor N/independentE topology or new moisture/DPC/soffit detail yet admitted."
+    "STRownsactualfloor/roof/arch/foundation/guardloadandconnectionadmission; selectedspatialdepthsareconditionaldesignrequirements.",
+    "MAT/OASowncomplete27/30walls,window/frame/guard/thresholdandnonplasticmaterialadmission; bedplywoodcontrolisNOTanapprovedmaterialexception.",
+    "IASownsactualdoorset/closerforce/delay,wholehandlingandqualifiedtemporaryequipmentwithinreservedfields; geometricalproxyPASSisnotphysicalacceptance.",
+    "RWT/ROFowncapacity/event/head/firstleak/receiverandtemporaryrainisolation. Broadblanket/high-tailwater commonFAILisexplicit, notindependencebylabels.",
+    "DPL/BCR/siteandexistingTRIAD/HRS/ADE/PLTgates ownactualgrade/plot/access/fire/sharedsourceintegration."
   ],
   "southCourtWeatherDoor": {
     "rough": [
@@ -2560,7 +2722,7 @@
           100,
           4776.5
         ],
-        "scope": "Nonloadbearing100core+15each; whollyoutside1100flight. Bonds to4250return/rearwall, noSouthlandingcutoff."
+        "scope": "Nonloadbearing100core+15each; whollyoutside1094bodyterritory. Bonds to4250return/rearwall, noSouthlandingcutoff."
       },
       "groundProtected": "Stair+Southlanding/gallery+frontentrance/void→FRONTfinalexit; living/kitchen north of crossdoors excluded.",
       "upperProtected": "Whole gallery/landing and stair are one protected volume; no added fullheight stairEwall or room-to-room shortcut.",
@@ -2660,7 +2822,7 @@
         ],
         "opening": "SOUTHINTOSTUDY",
         "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim",
-        "frameDepth": 194
+        "frameDepth": 230
       },
       {
         "id": "GUEST-WC",
@@ -2781,7 +2943,7 @@
     }
   },
   "finishRewind": {
-    "status": "EXPLICIT INCOMPLETE27DRY/30WET TRIAL; failed witnesses retained, no adoption.",
+    "status": "Selected27DRY/30WET architecturaldepth; datedfailedcontrols retained, technicalmaterialadmission unearned.",
     "passingControl": "49a44045a305ce2ceda397097f7572cd812e10b6",
     "dry": {
       "total": 27,
@@ -2794,7 +2956,7 @@
     },
     "wet": 30,
     "deltaDry": 12,
-    "scope": "Core axes held except nonloadbearing protected wall moved12E to retain1100flight. Whole furniture/frame/door fit must be rerun, not inherited."
+    "scope": "Core axes held except nonloadbearing protected wall moved12E to retain1094bodyterritory. Whole furniture/frame/door fit must be rerun, not inherited."
   },
   "familyWetTrial": {
     "westDryFace": 9397,
@@ -2827,7 +2989,7 @@
       11337.5,
       5750,
       230,
-      650
+      355
     ],
     "port": [
       11432.5,
@@ -2839,7 +3001,13 @@
       270,
       265
     ],
-    "scope": "Oneactual270x265corner;max200turnabovefloor, plain110tailthrough160bore. Actualsupport/fire/material/productqualification unearned."
+    "scope": "Oneactual270x265corner;max200turnabovefloor, plain110tailthrough160bore. Actualsupport/fire/material/productqualification unearned.",
+    "serviceBandGrossReservation": [
+      11337.5,
+      5750,
+      230,
+      650
+    ]
   },
   "stairFinishRewind": {
     "raw": [
@@ -2989,6 +3157,85 @@
       ]
     ]
   ],
+  "radiatorCillRewinds": [
+    [
+      "GROUND",
+      "outer-west",
+      1800,
+      850,
+      800
+    ],
+    [
+      "GROUND",
+      "outer-west",
+      10200,
+      850,
+      800
+    ],
+    [
+      "GROUND",
+      "outer-north",
+      3700,
+      850,
+      800
+    ],
+    [
+      "GROUND",
+      "outer-east",
+      10200,
+      850,
+      800
+    ],
+    [
+      "GROUND",
+      "outer-east",
+      1800,
+      850,
+      800
+    ],
+    [
+      "FIRST",
+      "outer-south",
+      3900,
+      850,
+      800
+    ],
+    [
+      "FIRST",
+      "outer-south",
+      8100,
+      850,
+      800
+    ],
+    [
+      "FIRST",
+      "outer-north",
+      3700,
+      950,
+      900
+    ],
+    [
+      "FIRST",
+      "outer-north",
+      10200,
+      850,
+      800
+    ],
+    [
+      "FIRST",
+      "outer-north",
+      1800,
+      850,
+      800
+    ],
+    [
+      "FIRST",
+      "outer-east",
+      4600,
+      850,
+      800
+    ]
+  ],
   "archOpeningRegister": {
     "GROUND": [
       {
@@ -3074,9 +3321,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3118,9 +3367,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3133,9 +3384,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3167,7 +3420,8 @@
         "head": 2850,
         "spring": 2550,
         "radialRingTrial": 215,
-        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted.",
+        "operation": "FIXED +independentrevealgrille"
       },
       {
         "id": "west-window-3",
@@ -3178,9 +3432,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3203,9 +3459,11 @@
         "width": 700,
         "kind": "window",
         "operation": "FIXED; ordinary operation not credited",
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3321,9 +3579,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3351,9 +3611,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3396,9 +3658,11 @@
         "swing": "left",
         "hinge": "low",
         "leaves": 1,
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3500,9 +3764,11 @@
         "centre": 1800,
         "width": 1000,
         "kind": "window",
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3512,9 +3778,11 @@
         "centre": 3700,
         "width": 700,
         "kind": "window",
-        "sill": 750,
+        "sill": 950,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 900,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3536,9 +3804,11 @@
         "centre": 10200,
         "width": 1000,
         "kind": "window",
-        "sill": 750,
+        "sill": 850,
         "head": 2850,
         "spring": 2550,
+        "cillUndersideMinimum": 800,
+        "cillDepthMaximum": 50,
         "radialRingTrial": 215,
         "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
       },
@@ -3640,7 +3910,7 @@
       }
     ]
   },
-  "stairPostFinishRequirement": "Post ends below FIRST RC/trimmer, no first-floor obstacle. No applied baseboard on stair-facing post edge;1100flight retained. Roomside18baseboard counted, reducing nominal750 to714 between roomside projections.",
+  "stairPostFinishRequirement": "Post ends belowFIRST RC/trimmer. Core250+27roomfinish ends3094.5;18base to3112.5 againstCourtbase3802.5 leaves690. Stair1094bodyterritory; actual1004betweenrails; selectedrevealgrille doesnotconsumehandgripgap. No1100clear/aboveFFLpost claim.",
   "outdoorWaterTerritories": {
     "normalGross": [
       4825,
@@ -3667,6 +3937,219 @@
     ],
     "gap": 75,
     "scope": "ENV explicitdevelopment. Separateintakes/terminals/receivers andactualblocked-primary/high-tailwater/common-obstruction cases mustbind before independence. No retired750wetpiece witness transferred."
+  },
+  "protectedRoofClosureDomains": {
+    "top": 6620,
+    "bottom": 6444,
+    "rectangles": [
+      [
+        "stairVoid",
+        [
+          429.5,
+          4432.5,
+          2388,
+          4323
+        ]
+      ],
+      [
+        "entranceVoid",
+        [
+          4885,
+          429.5,
+          2230,
+          2305.5
+        ]
+      ],
+      [
+        "westUpperGallery",
+        [
+          2999.5,
+          3344.5,
+          821,
+          5411
+        ]
+      ],
+      [
+        "southWestUpperHall",
+        [
+          429.5,
+          3344.5,
+          4405.5,
+          476
+        ]
+      ],
+      [
+        "southUpperBridge",
+        [
+          2914.5,
+          2747,
+          1904.5,
+          1073.5
+        ]
+      ],
+      [
+        "southEastUpperHall",
+        [
+          7180.5,
+          2747,
+          2022.5,
+          1073.5
+        ]
+      ],
+      [
+        "eastUpperGallery",
+        [
+          8179.5,
+          3820.5,
+          1023.5,
+          4359
+        ]
+      ]
+    ],
+    "scope": "Unionincludingassociatedwallheads,notroofoversprivatebedrooms. Actualfire-perimeter/support systemmustbind. GroundC-GRCsoffit appliesonlywhereactualFIRSTslabexists, neveracrosseitheropenvoid."
+  },
+  "stairCarryVolume": {
+    "requiredMinimum": 2300,
+    "overhead": [
+      {
+        "zone": "Southheader atfirstlowernose",
+        "underside": 3055,
+        "walkingMaximumInZone": 172.5,
+        "pointwiseMinimum": 2882.5
+      },
+      {
+        "zone": "Lowerflightandmidlanding afterheader",
+        "underside": 6444,
+        "walkingMaximum": 1725,
+        "pointwiseMinimum": 4719
+      },
+      {
+        "zone": "Upperflight andarrival",
+        "underside": 6444,
+        "walkingMaximum": 3450,
+        "pointwiseMinimum": 2994
+      }
+    ],
+    "scope": "Namedfixedoverheadpiecewise bound, not endpointinference. Midbeam/waist liebelowrespectivewalkingplanes; flightsadjacentacrosswell. Actual700x550carrybox/operators/guards/turn andtemporaryMEPstates still requirewhole-sweep proof; nohandlingcapacity."
+  },
+  "lowCillWindowGuard": {
+    "selection": "Completeindependentrevealgrille; roomside120projection retainedonlyasrejectedcontrol",
+    "opening": {
+      "level": "GROUND",
+      "wall": "outer-west",
+      "centre": 7400,
+      "rawJambs": [
+        6900,
+        7900
+      ],
+      "sill": 1750,
+      "head": 2850,
+      "spring": 2550,
+      "rawRadius": 566.6666666667,
+      "arcCentreZ": 2283.3333333333,
+      "operation": "FIXED; noglassbarriercapacitycredited"
+    },
+    "windowFrame": {
+      "trialEW": [
+        220,
+        360
+      ],
+      "maximumCompleteRoomwardExtent": 360,
+      "source": "OASframe-locationtrial220–360; actualcompletefixedframe mustmatch, notadmittedproduct"
+    },
+    "guard": {
+      "completeEW": [
+        372.5,
+        402.5
+      ],
+      "maximumDepth": 30,
+      "steelFrameNominalDepth": 25,
+      "fastenerTerritory": 5,
+      "rawProfileInset": 60,
+      "outerJambs": [
+        6960,
+        7840
+      ],
+      "outerRadius": 506.6666666667,
+      "outerCrown": 2790,
+      "bottom": 1810,
+      "frameRadialAndSideWidth": 50,
+      "infillDiameter": 12,
+      "infillPitchMaximum": 100,
+      "infillClearMaximum": 88,
+      "fullOpeningScreen": true
+    },
+    "finishedReveal": {
+      "fullMineral": 27,
+      "normalClearance": 33,
+      "bottomClearance": 60,
+      "maximumCornerGap": 68.47627326307996,
+      "sphereGapReservation": 80,
+      "scope": "Independentfullopeningscreen plus retainedmasonry/reveal perimeter, not a shortbalustradewithfreeheadgap; no glassstrengthcredit."
+    },
+    "frameGap": {
+      "nominal": 12.5,
+      "combinedPositionDeflectionBudget": 5,
+      "remaining": 7.5,
+      "scope": "Actualframe/guarddeflection,tolerancesandmaintenance mustmeet; ifnot, replan."
+    },
+    "handrail": {
+      "existingEW": [
+        479.5,
+        519.5
+      ],
+      "axisX": 499.5,
+      "clearToGuard": 77,
+      "requiredClear": 50,
+      "wallsideProjection": 90,
+      "lowerBetweenRails": 1004,
+      "upperBetweenRails": 1004,
+      "after20Loss": 984
+    },
+    "supportEnquiry": {
+      "legsY": [
+        7100,
+        7700
+      ],
+      "retainedBasePlateEW": [
+        292.5,
+        382.5
+      ],
+      "retainedPlateAtZ": 1725,
+      "substrate": "ActualRC140sillbeamx262.5–402.5/y6200–8300; fullplate isBELOWframecill1750, no frame/masonryvolumeoverlap.",
+      "frontReleaseHeadsX": 402.5,
+      "frontReleaseHeadZ": [
+        1825,
+        1875
+      ],
+      "firstPanelTranslationEast": 60,
+      "guardAfterTranslationEW": [
+        432.5,
+        462.5
+      ],
+      "toRetainedHandrail": 17,
+      "firstToolBody": [
+        850,
+        7400
+      ],
+      "maximumPlanReachToLeg": 538.7543503304637,
+      "scope": "Finitecast-in/steelcage/anchor/guardload/firsttool/temporaryguard enquiry. No upperringdrill or assumedweatherbrickcapacity; actualroomsideaccess, mass/support/temporarybarrier needqualifiedmethod."
+    },
+    "rejectedRoomsideControl": {
+      "guardEW": [
+        429.5,
+        459.5
+      ],
+      "handrailEW": [
+        509.5,
+        549.5
+      ],
+      "projection": 120,
+      "lowerClear": 974,
+      "after20Loss": 954,
+      "reason": "Spatialfallback ifactualrevealframe/supportconditionsfail; notselectedwidthandnotanotherparallelhouse."
+    },
+    "scope": "Onecompletecurvedguardwithfull27revealfinish accounted. Selectedarchitecturalterritory, not impact/load/anchor/window/fire/physicaladmission."
   },
   "stairGuard": {
     "basis": "Authored spatial selection against England ADK2013§1.34,1.39/Diagram3.1. No guard/anchor capacity or final regulatory admission.",
@@ -3696,11 +4179,14 @@
       "wallClear": 50,
       "wallsideProjection": 90,
       "wellsideRailWhollyInWell": true,
-      "betweenRails": 1004,
+      "lowerBetweenRails": 1004,
+      "upperBetweenRails": 1004,
+      "betweenRailsMinimum": 1004,
       "declaredCombinedPositionLoss": 20,
-      "after20Loss": 984,
+      "lowerAfter20Loss": 984,
+      "upperAfter20Loss": 984,
       "topAbovePitchAndLanding": 1000,
-      "scope": "1004nominal, not1100clear and not a statutory private-stair minimum. Actual brackets/continuity/load/support/whole operator still qualify."
+      "scope": "Lower/upper1004nominal, not1100clear and not a statutory private-stair minimum. Actual brackets/continuity/load/support/whole operator still qualify."
     },
     "infill": {
       "verticalDiameter": 12,
@@ -3885,14 +4371,1074 @@
       "scope": "Full300body/40forearm/600reach geometric sequence with actual static walls/trim/furniture/frame and moving panel. Not actual hardware/force/physical admission."
     }
   },
+  "servicesProjection": {
+    "source": {
+      "commit": "9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2",
+      "path": "project/mat/studies/whole-house-service-baseline.json",
+      "blob": "e827caa8c6c0cfc23bef0f08b3452f57984875d6",
+      "key": "interfaces.architecturalServices",
+      "projectionSha256": "94906589235797bdcf3ecd921f954bf00fbbfa84cbcaa2a5b0af7e5fd6e91fad"
+    },
+    "keyedFieldsEqual": true,
+    "defaultCanonicalRelativePath": "project/mat/studies/whole-house-service-baseline.json",
+    "method": "DirectMAT-ownedobjectimport; sortedcompactUTF8SHA256 coversEVERYkey/value. No manualnumericdelta. Explicitdevelopmentoverride additionallyrequires exactGitblob; finalintegrationusesdefaultcanonicalpathwithsameprojection.",
+    "pass": true
+  },
+  "servicesAuxiliaryProjection": {
+    "keyedFieldsEqual": true,
+    "sourceBlob": "e827caa8c6c0cfc23bef0f08b3452f57984875d6",
+    "fields": [
+      "extract[].maintenanceFurniture",
+      "extract[].doorMode",
+      "plant.cylinder.body/station/height/workingEast"
+    ]
+  },
+  "servicesInterface": {
+    "source": {
+      "commit": "9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2",
+      "path": "project/mat/studies/whole-house-service-baseline.json",
+      "blob": "e827caa8c6c0cfc23bef0f08b3452f57984875d6",
+      "key": "interfaces.architecturalServices",
+      "projectionSha256": "94906589235797bdcf3ecd921f954bf00fbbfa84cbcaa2a5b0af7e5fd6e91fad"
+    },
+    "emitters": [
+      {
+        "id": "study-W",
+        "level": 0,
+        "plan": [
+          429.5,
+          1250,
+          200,
+          1150
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "living-W",
+        "level": 0,
+        "plan": [
+          429.5,
+          9800,
+          200,
+          950
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "living-N2",
+        "level": 0,
+        "plan": [
+          3102.5,
+          11370.5,
+          950,
+          200
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "kitchen-E",
+        "level": 0,
+        "plan": [
+          11370.5,
+          9700,
+          200,
+          1350
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "bed2-S",
+        "level": 1,
+        "plan": [
+          3425,
+          429.5,
+          950,
+          200
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "bed3-S",
+        "level": 1,
+        "plan": [
+          7625,
+          429.5,
+          950,
+          200
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "bed4-N",
+        "level": 1,
+        "plan": [
+          3102.5,
+          11370.5,
+          1050,
+          200
+        ],
+        "z": [
+          100,
+          800
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 900,
+        "cillTop": 950
+      },
+      {
+        "id": "principal-N",
+        "level": 1,
+        "plan": [
+          9625,
+          11370.5,
+          1150,
+          200
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "rear-N",
+        "level": 1,
+        "plan": [
+          2100,
+          11367.5,
+          650,
+          200
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "family-E",
+        "level": 1,
+        "plan": [
+          11367.5,
+          4525,
+          200,
+          650
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "principal-E-high",
+        "level": 1,
+        "plan": [
+          11367.5,
+          6775,
+          200,
+          650
+        ],
+        "z": [
+          1400,
+          2000
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "utility-E",
+        "level": 0,
+        "plan": [
+          11370.5,
+          1778,
+          200,
+          650
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "plant-N",
+        "level": 0,
+        "plan": [
+          9422,
+          6203,
+          550,
+          200
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 150,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "protected-G",
+        "level": 0,
+        "plan": [
+          3500,
+          2747.5,
+          550,
+          200
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "protected-F",
+        "level": 1,
+        "plan": [
+          8180,
+          4400,
+          200,
+          550
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      },
+      {
+        "id": "guest-WC-E",
+        "level": 0,
+        "plan": [
+          9003,
+          1900,
+          200,
+          550
+        ],
+        "z": [
+          100,
+          700
+        ],
+        "renewalLift": 50,
+        "renewalPull": 200,
+        "cillUnderside": 800,
+        "cillTop": 850
+      }
+    ],
+    "plant": {
+      "controls": [
+        11270.5,
+        5550,
+        300,
+        650
+      ],
+      "buffer": {
+        "requiredUsableAlwaysConnectedLitres": 100,
+        "stationRewind": "Relocatedfrom9800/5550afterfiniteemittercoordination; oldQ350isretireduninstalledcomparison, notsilentlyremovedsupport.",
+        "station": [
+          10025,
+          5525,
+          650,
+          650
+        ],
+        "completeRoundBodyMaximumDiameter": 600,
+        "completeRoundBodyIncludes": "Allinsulation/feet/supports/collarsandretainedfittingsfit600round;650stationincludes25edgeclear. No barevesselnominalsubstitution.",
+        "maximumBodyHeight": 1600,
+        "nominalVolumeNotUsableProof": true,
+        "reason": "Separated primary cannot borrow unproved radiator volume across plateHX fordefrost.100usable is an authorselected compatibility target, not a claimed universal supplierminimum.",
+        "control": "Always-connected usable volume, guaranteed minimum flow and both HX pumps during defrost; valve/check/bypass states must preserve it. Exact chosen unit determines actual minimum and usable port arrangement.",
+        "replacementCentrePath": [
+          [
+            10350,
+            5850
+          ],
+          [
+            10700,
+            5850
+          ],
+          [
+            10700,
+            4600
+          ],
+          [
+            12500,
+            4600
+          ]
+        ],
+        "handlingRadius": 425,
+        "mass": "Unknown matched vessel/primaryfluid mass; no handlifting assumption. Drain/isolatelocaldevice only aftersafe shutdown.",
+        "material": "Second pressure vessel, insulation, expansion/safety/valves and primaryfluid add real residuals; none omitted as partofheatpump."
+      },
+      "riser": [
+        9400,
+        4700,
+        550,
+        700
+      ],
+      "cylinder": {
+        "body": [
+          9537.5,
+          3952.5,
+          595,
+          595
+        ],
+        "station": [
+          9485,
+          3900,
+          700,
+          700
+        ],
+        "height": 1745,
+        "workingEast": [
+          10185,
+          3900,
+          900,
+          700
+        ]
+      }
+    },
+    "extract": [
+      {
+        "id": "ground-WC",
+        "level": 0,
+        "podPlan": [
+          7950,
+          1300,
+          500,
+          650
+        ],
+        "podZ": [
+          2800,
+          3100
+        ],
+        "platform": [
+          7715,
+          1050,
+          750,
+          1100
+        ],
+        "workingHeight": [
+          700,
+          1100
+        ],
+        "mainPort": [
+          8950,
+          0,
+          3010
+        ],
+        "condensatePort": {
+          "centre": [
+            9150,
+            0,
+            3010
+          ],
+          "formedDiameter": 40,
+          "maximumDrainOD": 15,
+          "separateFromMainHole": true,
+          "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+        },
+        "maintenanceFurniture": null
+      },
+      {
+        "id": "utility",
+        "level": 0,
+        "podPlan": [
+          10800,
+          1650,
+          650,
+          500
+        ],
+        "podZ": [
+          2800,
+          3100
+        ],
+        "platform": [
+          10245,
+          1525,
+          1100,
+          750
+        ],
+        "workingHeight": [
+          700,
+          1100
+        ],
+        "mainPort": [
+          12000,
+          900,
+          3010
+        ],
+        "condensatePort": {
+          "centre": [
+            12000,
+            1100,
+            3010
+          ],
+          "formedDiameter": 40,
+          "maximumDrainOD": 15,
+          "separateFromMainHole": true,
+          "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+        },
+        "maintenanceFurniture": null
+      },
+      {
+        "id": "kitchen",
+        "level": 0,
+        "podPlan": [
+          9900,
+          9950,
+          500,
+          650
+        ],
+        "podZ": [
+          2800,
+          3100
+        ],
+        "platform": [
+          9750,
+          9850,
+          1100,
+          750
+        ],
+        "workingHeight": [
+          700,
+          1100
+        ],
+        "mainPort": [
+          11282.5,
+          12000,
+          3010
+        ],
+        "condensatePort": {
+          "centre": [
+            11482.5,
+            12000,
+            3010
+          ],
+          "formedDiameter": 40,
+          "maximumDrainOD": 15,
+          "separateFromMainHole": true,
+          "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+        },
+        "maintenanceFurniture": {
+          "eastNorthChairPark": [
+            10800,
+            8475,
+            500,
+            500
+          ],
+          "eastSouthChairPark": [
+            7750,
+            10400,
+            500,
+            500
+          ],
+          "state": "Parktworigidchairsbeforeplatformerection; restoreaftercompletefanreassembly/testing/platformremoval. Actualotherchairs/table retained."
+        }
+      },
+      {
+        "id": "rear-bath",
+        "level": 1,
+        "podPlan": [
+          1050,
+          9150,
+          650,
+          500
+        ],
+        "podZ": [
+          6250,
+          6550
+        ],
+        "platform": [
+          650,
+          9250,
+          1100,
+          750
+        ],
+        "workingHeight": [
+          700,
+          1100
+        ],
+        "mainPort": [
+          0,
+          9300,
+          6400
+        ],
+        "condensatePort": {
+          "centre": [
+            0,
+            9500,
+            6400
+          ],
+          "formedDiameter": 40,
+          "maximumDrainOD": 15,
+          "separateFromMainHole": true,
+          "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+        },
+        "maintenanceFurniture": null
+      },
+      {
+        "id": "family-bath",
+        "level": 1,
+        "podPlan": [
+          10225,
+          5200,
+          650,
+          500
+        ],
+        "podZ": [
+          6250,
+          6550
+        ],
+        "platform": [
+          10100,
+          4875,
+          1100,
+          750
+        ],
+        "workingHeight": [
+          700,
+          1100
+        ],
+        "mainPort": [
+          12000,
+          5750,
+          6400
+        ],
+        "condensatePort": {
+          "centre": [
+            12000,
+            5950,
+            6400
+          ],
+          "formedDiameter": 40,
+          "maximumDrainOD": 15,
+          "separateFromMainHole": true,
+          "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+        },
+        "maintenanceFurniture": null
+      },
+      {
+        "id": "principal-bath",
+        "level": 1,
+        "podPlan": [
+          10425,
+          6650,
+          650,
+          500
+        ],
+        "podZ": [
+          6250,
+          6550
+        ],
+        "platform": [
+          10333.75,
+          6625,
+          1000,
+          750
+        ],
+        "workingHeight": [
+          700,
+          1100
+        ],
+        "mainPort": [
+          12000,
+          7400,
+          6060
+        ],
+        "condensatePort": {
+          "centre": [
+            12000,
+            7600,
+            6060
+          ],
+          "formedDiameter": 40,
+          "maximumDrainOD": 15,
+          "separateFromMainHole": true,
+          "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+        },
+        "maintenanceFurniture": null
+      }
+    ],
+    "utility": {
+      "status": "New functional proposal, not recovered existing HAD fixtures or admitted final appliance/door operation.",
+      "washer": [
+        10050,
+        700,
+        650,
+        700
+      ],
+      "sink": [
+        10950,
+        700,
+        600,
+        700
+      ],
+      "rearServiceChase": [
+        10050,
+        450,
+        1500,
+        250
+      ],
+      "valveBay": [
+        10700,
+        700,
+        250,
+        700
+      ],
+      "electricalStation": [
+        9397,
+        1750,
+        300,
+        650
+      ],
+      "electricalWorkingField": [
+        9697,
+        1750,
+        1000,
+        650
+      ],
+      "PVinverter": [
+        9400,
+        429.5,
+        500,
+        250
+      ],
+      "PVworkingField": [
+        9400,
+        679.5,
+        600,
+        1000
+      ],
+      "working": "Washer/sink front at1400, floor task field to2000. Washer valve10800/1250 is450 from front bodycentre10800/1700, not inaccessible behind appliance. Utility door must be checked in actual open/closed modes; no sink-use pass under an untested inward900leaf. Cu/inverter work fields do not intersect proposed fixed appliance bodies."
+    },
+    "supply": [
+      {
+        "id": "study",
+        "level": 0,
+        "wall": "west",
+        "point": [
+          0,
+          2700,
+          2850
+        ],
+        "measuredEquivalentAreaRequired": 15000,
+        "formedWallTerritory": 360,
+        "metalTerminalEnvelope": [
+          400,
+          400,
+          100
+        ],
+        "clearDuct": 200,
+        "radialInsulation": 50,
+        "metalJacketEachSide": 1,
+        "fullInsulatedOD": 302,
+        "wallHoleRadialReserve": 29,
+        "faceTopLocal": 3050,
+        "ceilingClearance": 50,
+        "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+      },
+      {
+        "id": "living",
+        "level": 0,
+        "wall": "west",
+        "point": [
+          0,
+          9200,
+          2850
+        ],
+        "measuredEquivalentAreaRequired": 15000,
+        "formedWallTerritory": 360,
+        "metalTerminalEnvelope": [
+          400,
+          400,
+          100
+        ],
+        "clearDuct": 200,
+        "radialInsulation": 50,
+        "metalJacketEachSide": 1,
+        "fullInsulatedOD": 302,
+        "wallHoleRadialReserve": 29,
+        "faceTopLocal": 3050,
+        "ceilingClearance": 50,
+        "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+      },
+      {
+        "id": "bed2",
+        "level": 1,
+        "wall": "south",
+        "point": [
+          2850,
+          0,
+          6300
+        ],
+        "measuredEquivalentAreaRequired": 15000,
+        "formedWallTerritory": 360,
+        "metalTerminalEnvelope": [
+          400,
+          400,
+          100
+        ],
+        "clearDuct": 200,
+        "radialInsulation": 50,
+        "metalJacketEachSide": 1,
+        "fullInsulatedOD": 302,
+        "wallHoleRadialReserve": 29,
+        "faceTopLocal": 3050,
+        "ceilingClearance": 50,
+        "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+      },
+      {
+        "id": "bed3",
+        "level": 1,
+        "wall": "south",
+        "point": [
+          9150,
+          0,
+          6300
+        ],
+        "measuredEquivalentAreaRequired": 15000,
+        "formedWallTerritory": 360,
+        "metalTerminalEnvelope": [
+          400,
+          400,
+          100
+        ],
+        "clearDuct": 200,
+        "radialInsulation": 50,
+        "metalJacketEachSide": 1,
+        "fullInsulatedOD": 302,
+        "wallHoleRadialReserve": 29,
+        "faceTopLocal": 3050,
+        "ceilingClearance": 50,
+        "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+      },
+      {
+        "id": "bed4",
+        "level": 1,
+        "wall": "north",
+        "point": [
+          4800,
+          12000,
+          6300
+        ],
+        "measuredEquivalentAreaRequired": 15000,
+        "formedWallTerritory": 360,
+        "metalTerminalEnvelope": [
+          400,
+          400,
+          100
+        ],
+        "clearDuct": 200,
+        "radialInsulation": 50,
+        "metalJacketEachSide": 1,
+        "fullInsulatedOD": 302,
+        "wallHoleRadialReserve": 29,
+        "faceTopLocal": 3050,
+        "ceilingClearance": 50,
+        "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+      },
+      {
+        "id": "principal",
+        "level": 1,
+        "wall": "north",
+        "point": [
+          11150,
+          12000,
+          6300
+        ],
+        "measuredEquivalentAreaRequired": 15000,
+        "formedWallTerritory": 360,
+        "metalTerminalEnvelope": [
+          400,
+          400,
+          100
+        ],
+        "clearDuct": 200,
+        "radialInsulation": 50,
+        "metalJacketEachSide": 1,
+        "fullInsulatedOD": 302,
+        "wallHoleRadialReserve": 29,
+        "faceTopLocal": 3050,
+        "ceilingClearance": 50,
+        "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+      }
+    ],
+    "cooker": {
+      "extractPoint": [
+        11200,
+        12000,
+        2400
+      ],
+      "duct": 160,
+      "exhaustRadialInsulation": 50,
+      "metalJacketEachSide": 1,
+      "fullInsulatedOD": 262,
+      "formedWallTerritory": 320,
+      "minimumCaptureLps": 30,
+      "makeupPoint": [
+        12000,
+        8600,
+        2400
+      ],
+      "makeupFormedTerritory": 280,
+      "makeupRequirement": "Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from65L/s background; no open-window chore or recirculation-onlyhood credit.",
+      "hood": "600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required."
+    },
+    "eastFoulExit": {
+      "path": [
+        [
+          9800,
+          5200,
+          2682.5
+        ],
+        [
+          10800,
+          5200,
+          2657.5
+        ],
+        [
+          10800,
+          5700,
+          2645
+        ],
+        [
+          12000,
+          5700,
+          2615
+        ]
+      ],
+      "lengthMM": 2700,
+      "fallAt1in40": 67.5,
+      "formedWallTerritory": 200,
+      "faceFlashingTerritory": 300,
+      "externalDownstackBodyTerritory": [
+        12000,
+        5550,
+        450,
+        300
+      ],
+      "doorControl": {
+        "axis": 4600,
+        "roughWidth": 1400,
+        "ringThicknessControl": 215,
+        "allHeightRingEnvelope": [
+          3685,
+          5515
+        ],
+        "holeToRingControlReserve": 85,
+        "flashingToRingControlReserve": 35
+      },
+      "nextWindowControl": {
+        "axis": 7400,
+        "roughWidth": 1000,
+        "ringThicknessControl": 215,
+        "allHeightRingEnvelope": [
+          6685,
+          8115
+        ]
+      },
+      "source": "Current HAD Eopeningrecord checked for ALLwindows/door.215ring is an explicit profile-control awaiting STR/HAD actual inner/weather ring, NOT asserted whole exterior recipe.",
+      "grade": {
+        "trialExterior": -1300,
+        "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
+        "axisOf160OuterEnvelope": -1980,
+        "crownCoverControl": 600,
+        "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
+      },
+      "renewal": "Outside fixed brackets and boundary sleeve retained; separately isolated supported removable cleanout/straight lengths,350jointrelease territory. External scaffold/lift required, not attic access. Exact part length/mass/connector/fastener and facade work field unproved."
+    }
+  },
+  "livingRadiatorMaintenance": {
+    "sofaBefore": [
+      800,
+      9000,
+      850,
+      1900
+    ],
+    "sofaPark": [
+      1450,
+      9000,
+      850,
+      1900
+    ],
+    "eastMove": 650,
+    "sweptRectangle": [
+      800,
+      9000,
+      1500,
+      1900
+    ],
+    "pullingBodyCentrePath": [
+      [
+        1975,
+        9450
+      ],
+      [
+        2625,
+        9450
+      ]
+    ],
+    "bodyRadius": 300,
+    "headRadius": 150,
+    "ordinaryWallGap": 170.5,
+    "parkedSofaBGap": 37.5,
+    "radiatorWorkingBody": [
+      954.5,
+      10200
+    ],
+    "scope": "DirectMATcontract; SofaA650E beforeWest radiator/supplyservice; restoreafterwork. Actualequipment/force unqualified.",
+    "wholeHouseReplay": {
+      "bodyFixedMinimum": 43.16541201001013,
+      "sweptConflicts": [],
+      "bodyToMovingSofa": 25,
+      "pass": true,
+      "scope": "Coupledactor650translation; radius300bodyfixedscreen andconstant325Eastfaceoffset leaves25. Actualgrips/force/supporting/handlingunearned."
+    }
+  },
+  "utilityDisposition": {
+    "opening": [
+      10250,
+      11150
+    ],
+    "axis": 2550,
+    "operation": "OPENARCH within sharedplant/utilityservicezone",
+    "protectedBoundary": "E20referencePlantdoorx9300/y2750..3650 remains; no newprotectedvolumeconnection",
+    "trade": "No separateutilityacoustic/privacyclosure; actualclassifiedPlantboundaryandservicepenetrations mustqualify."
+  },
   "fullHouseFootprint": {
     "method": "Positive rectangle overlap of each represented whole furniture/fixture with actual nominal finished walls/receivers, before decorative18skirt. Wall-mounted contact at zero is not counted. No vertical exception silently invented.",
     "conflicts": [],
     "pass": true
   },
   "actions": {
-    "method": "Exact Euclidean segment-to-closed-rectangle clearance with a300radius horizontal body proxy. Furniture and finished wall/receiver/post rectangles are obstacles. Ordinary18mm trim is conservatively added to walls/receivers; post trim is excluded from stair-facing side to retain1100flight and reserved18 on roomside. Every segment tested analytically; no sampling gaps. Not an actual-human, door-force, accessible-route or 3D/headroom admission.",
+    "method": "Exact Euclidean segment-to-closed-rectangle clearance with a300radius horizontal body proxy. Furniture and finished wall/receiver/post rectangles are obstacles. Ordinary18mm trim is conservatively added to walls/receivers; post trim is excluded from stair-facing side to retain1094bodyterritory and reserved18 on roomside. Every segment tested analytically; no sampling gaps. Not an actual-human, door-force, accessible-route or 3D/headroom admission.",
     "witnesses": [
+      {
+        "id": "utility-to-washer",
+        "level": "GROUND",
+        "bodyRadius": 300,
+        "points": [
+          [
+            8800,
+            3200
+          ],
+          [
+            10700,
+            3200
+          ],
+          [
+            10700,
+            2100
+          ],
+          [
+            10375,
+            2100
+          ],
+          [
+            10375,
+            1725
+          ]
+        ],
+        "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
+        "minimumReserve": 25,
+        "controlling": {
+          "obstacle": "service-utility-washer",
+          "segment": 3
+        },
+        "pass": true
+      },
+      {
+        "id": "utility-to-sink",
+        "level": "GROUND",
+        "bodyRadius": 300,
+        "points": [
+          [
+            10700,
+            2100
+          ],
+          [
+            11045.5,
+            2100
+          ],
+          [
+            11045.5,
+            1725
+          ]
+        ],
+        "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
+        "minimumReserve": 25,
+        "controlling": {
+          "obstacle": "service-emitter-utility-E",
+          "segment": 0
+        },
+        "pass": true
+      },
       {
         "id": "protected-stair-bottom-to-front",
         "level": "GROUND",
@@ -4057,8 +5603,8 @@
             10900
           ],
           [
-            2363.75,
-            11075
+            2300,
+            11045.5
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
@@ -4079,19 +5625,19 @@
             10900
           ],
           [
-            3420,
+            3640,
             10900
           ],
           [
-            3420,
-            11150
+            3640,
+            11045.5
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 42.5,
+        "minimumReserve": 25,
         "controlling": {
-          "obstacle": "wetBeamNorthReceiver",
-          "segment": 0
+          "obstacle": "service-emitter-living-N2",
+          "segment": 1
         },
         "pass": true
       },
@@ -4258,6 +5804,40 @@
         "pass": true
       },
       {
+        "id": "principal-north8300-window",
+        "level": "FIRST",
+        "bodyRadius": 300,
+        "points": [
+          [
+            8730,
+            10000
+          ],
+          [
+            9000,
+            10000
+          ],
+          [
+            9000,
+            11060.25
+          ],
+          [
+            8700,
+            11060.25
+          ],
+          [
+            8700,
+            11250
+          ]
+        ],
+        "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
+        "minimumReserve": 2.5,
+        "controlling": {
+          "obstacle": "outer-north+18trim",
+          "segment": 3
+        },
+        "pass": true
+      },
+      {
         "id": "principal-ordinary-entry-bath",
         "level": "FIRST",
         "bodyRadius": 300,
@@ -4276,7 +5856,7 @@
           ],
           [
             10400,
-            8850
+            8825
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
@@ -4306,11 +5886,15 @@
           ],
           [
             9000,
-            11235
+            11060.25
           ],
           [
             10200,
-            11235
+            11060.25
+          ],
+          [
+            11235,
+            11060.25
           ],
           [
             11235,
@@ -4318,10 +5902,10 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 17.5,
+        "minimumReserve": 10.25,
         "controlling": {
-          "obstacle": "outer-north+18trim",
-          "segment": 2
+          "obstacle": "principal",
+          "segment": 3
         },
         "pass": true
       },
@@ -4352,15 +5936,15 @@
           ],
           [
             5100,
-            11235
+            11060.25
           ],
           [
             3550,
-            11235
+            11060.25
           ],
           [
             6000,
-            11235
+            11060.25
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
@@ -4412,7 +5996,7 @@
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 5.5,
+        "minimumReserve": 9.564613610793742,
         "controlling": {
           "obstacle": "bed4",
           "segment": 0
@@ -4449,7 +6033,7 @@
             765
           ],
           [
-            2525,
+            2580,
             765
           ]
         ],
@@ -4475,15 +6059,15 @@
             2800
           ],
           [
-            770,
-            2650
+            754.5,
+            2724
           ]
         ],
         "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-        "minimumReserve": 22.5,
+        "minimumReserve": 7,
         "controlling": {
           "obstacle": "outer-west+18trim",
-          "segment": 0
+          "segment": 1
         },
         "pass": true
       }
@@ -4499,6 +6083,21 @@
     "windowPlanReachPass": true
   },
   "studyDoorOperation": {
+    "completeFrameEnvelopeDepth": 230,
+    "checkedFramePieces": [
+      [
+        1350,
+        3132.5,
+        25,
+        230
+      ],
+      [
+        2225,
+        3132.5,
+        25,
+        230
+      ]
+    ],
     "rough": [
       1350,
       2250
@@ -5642,114 +7241,34 @@
               2266.5
             ],
             [
-              3736.5,
+              3616.5,
               2266.5
             ],
             [
-              3736.5,
-              986.5
+              3616.5,
+              2256.5
             ],
             [
-              3746.5,
-              986.5
+              3596.5,
+              2256.5
             ],
             [
-              3746.5,
-              956.5
+              3596.5,
+              966.5
             ],
             [
-              3756.5,
-              956.5
+              3590,
+              966.5
             ],
             [
-              3756.5,
-              936.5
-            ],
-            [
-              3766.5,
-              936.5
-            ],
-            [
-              3766.5,
-              916.5
-            ],
-            [
-              3776.5,
-              916.5
-            ],
-            [
-              3776.5,
-              896.5
-            ],
-            [
-              3786.5,
-              896.5
-            ],
-            [
-              3786.5,
-              886.5
-            ],
-            [
-              3796.5,
-              886.5
-            ],
-            [
-              3796.5,
-              866.5
-            ],
-            [
-              3806.5,
-              866.5
-            ],
-            [
-              3806.5,
-              856.5
-            ],
-            [
-              3816.5,
-              856.5
-            ],
-            [
-              3816.5,
-              846.5
-            ],
-            [
-              3826.5,
-              846.5
-            ],
-            [
-              3826.5,
-              836.5
-            ],
-            [
-              3836.5,
-              836.5
-            ],
-            [
-              3836.5,
-              826.5
-            ],
-            [
-              3846.5,
-              826.5
-            ],
-            [
-              3846.5,
-              766.5
-            ],
-            [
-              3850,
-              766.5
-            ],
-            [
-              3850,
-              756.5
+              3590,
+              954.5
             ]
           ],
-          "minimumReserve": 5.815712480572188,
+          "minimumReserve": 6.715666375227727,
           "controlling": {
-            "obstacle": "bed2-wardrobe",
-            "segment": 13
+            "obstacle": "bed2-north-main+18trim",
+            "segment": 3
           }
         },
         "hallToOpen": {
@@ -6952,154 +8471,26 @@
               2246.5
             ],
             [
-              8376.5,
+              8756.5,
               2246.5
             ],
             [
-              8376.5,
-              2236.5
+              8756.5,
+              966.5
             ],
             [
-              8336.5,
-              2236.5
+              8750,
+              966.5
             ],
             [
-              8336.5,
-              2226.5
-            ],
-            [
-              8266.5,
-              2226.5
-            ],
-            [
-              8266.5,
-              986.5
-            ],
-            [
-              8256.5,
-              986.5
-            ],
-            [
-              8256.5,
-              946.5
-            ],
-            [
-              8246.5,
-              946.5
-            ],
-            [
-              8246.5,
-              916.5
-            ],
-            [
-              8236.5,
-              916.5
-            ],
-            [
-              8236.5,
-              896.5
-            ],
-            [
-              8226.5,
-              896.5
-            ],
-            [
-              8226.5,
-              886.5
-            ],
-            [
-              8216.5,
-              886.5
-            ],
-            [
-              8216.5,
-              866.5
-            ],
-            [
-              8206.5,
-              866.5
-            ],
-            [
-              8206.5,
-              856.5
-            ],
-            [
-              8196.5,
-              856.5
-            ],
-            [
-              8196.5,
-              846.5
-            ],
-            [
-              8186.5,
-              846.5
-            ],
-            [
-              8186.5,
-              826.5
-            ],
-            [
-              8176.5,
-              826.5
-            ],
-            [
-              8176.5,
-              816.5
-            ],
-            [
-              8156.5,
-              816.5
-            ],
-            [
-              8156.5,
-              806.5
-            ],
-            [
-              8146.5,
-              806.5
-            ],
-            [
-              8146.5,
-              796.5
-            ],
-            [
-              8136.5,
-              796.5
-            ],
-            [
-              8136.5,
-              786.5
-            ],
-            [
-              8116.5,
-              786.5
-            ],
-            [
-              8116.5,
-              776.5
-            ],
-            [
-              8106.5,
-              776.5
-            ],
-            [
-              8106.5,
-              766.5
-            ],
-            [
-              8100,
-              766.5
-            ],
-            [
-              8100,
-              756.5
+              8750,
+              954.5
             ]
           ],
-          "minimumReserve": 5.07581025050149,
+          "minimumReserve": 69.120576505835,
           "controlling": {
-            "obstacle": "bed3-wardrobe",
-            "segment": 21
+            "obstacle": "service-emitter-bed3-S",
+            "segment": 4
           }
         },
         "southWindow10200": {
@@ -7813,21 +9204,21 @@
       "level": "GROUND",
       "id": "living1800",
       "body": [
-        2363.75,
-        11075
+        2300,
+        11045.5
       ],
       "handle": [
         2220,
         11570.5
       ],
-      "planReach": 515.9305306918752,
+      "planReach": 531.0602602341847,
       "maximumPlanReach": 600,
       "requirement": "Northwindow HIGHhand; existing table/sofas retained",
       "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
     },
     {
       "level": "GROUND",
-      "id": "kitchen8450",
+      "id": "kitchen8300",
       "body": [
         8250,
         11235
@@ -7865,10 +9256,10 @@
         6850
       ],
       "handle": [
-        3832.5,
+        3820.5,
         7270
       ],
-      "planReach": 554.8028929268485,
+      "planReach": 547.0377043678068,
       "maximumPlanReach": 600,
       "requirement": "Actual750gallery beside post; not universal accessibility",
       "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
@@ -7877,14 +9268,14 @@
       "level": "GROUND",
       "id": "studySouth1800",
       "body": [
-        2525,
+        2580,
         765
       ],
       "handle": [
         2220,
         429.5
       ],
-      "planReach": 453.4150967932144,
+      "planReach": 492.0978053192272,
       "maximumPlanReach": 600,
       "requirement": "Desk/chair retained; inside door CLOSED",
       "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
@@ -7909,14 +9300,14 @@
       "level": "GROUND",
       "id": "studyWest1800",
       "body": [
-        770,
-        2650
+        754.5,
+        2724
       ],
       "handle": [
         429.5,
         2220
       ],
-      "planReach": 548.4890609665794,
+      "planReach": 599.7007587122098,
       "maximumPlanReach": 600,
       "requirement": "Inside door CLOSED",
       "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
@@ -7925,30 +9316,46 @@
       "level": "FIRST",
       "id": "principalEast10200",
       "body": [
-        11250,
+        11235,
         11100
       ],
       "handle": [
         11570.5,
         10620
       ],
-      "planReach": 577.1657041093139,
+      "planReach": 585.6280816354353,
       "maximumPlanReach": 600,
       "requirement": "Lowhead≤700/bed≤600; actual lower leaf/frame envelope≥750; no3D leaf pass",
       "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
     },
     {
       "level": "FIRST",
-      "id": "principalNorth8450",
+      "id": "bed4North3700",
+      "body": [
+        3900,
+        11060.25
+      ],
+      "handle": [
+        4120,
+        11570.5
+      ],
+      "planReach": 555.6573247065136,
+      "maximumPlanReach": 600,
+      "requirement": "Under-radiatorcillrewind; actualcompatibleRIGHT-sidegrip",
+      "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    },
+    {
+      "level": "FIRST",
+      "id": "principalNorth8300",
       "body": [
         8700,
         11250
       ],
       "handle": [
-        8870,
+        8570,
         11570.5
       ],
-      "planReach": 362.7950523367153,
+      "planReach": 345.86160527008485,
       "maximumPlanReach": 600,
       "requirement": "Unavailable during+500bed maintenance",
       "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
@@ -7957,17 +9364,49 @@
       "level": "FIRST",
       "id": "principalNorth10200",
       "body": [
-        10200,
-        11235
+        10000,
+        11060.25
       ],
       "handle": [
-        10620,
+        9780,
         11570.5
       ],
-      "planReach": 537.5502302110939,
+      "planReach": 555.6573247065136,
       "maximumPlanReach": 600,
       "requirement": "Unavailable during+500bed maintenance",
       "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
+    }
+  ],
+  "frontWindowRequirements": [
+    {
+      "room": "bed2",
+      "opening": "South3900",
+      "body": [
+        3590,
+        954.5
+      ],
+      "requiredHandle": [
+        3480,
+        429.5
+      ],
+      "operation": "CompatibleLEFT-sidegrip; oldRIGHT4320grip is superseded by radiator/wardrobejoin.",
+      "reach": 536.4000372856065,
+      "scope": "ConnectedR300bodyapproach andrequiredplanhandle only; actualmatchedleaf/verticalreach/force remainsOASinterface."
+    },
+    {
+      "room": "bed3",
+      "opening": "South8100",
+      "body": [
+        8750,
+        954.5
+      ],
+      "requiredHandle": [
+        8520,
+        429.5
+      ],
+      "operation": "CompatibleRIGHT-sidegrip, approachEastofradiator/wardrobe.",
+      "reach": 573.1710041514661,
+      "scope": "ConnectedR300bodyapproach andrequiredplanhandle only; actualmatchedleaf/verticalreach/force remainsOASinterface."
     }
   ],
   "approaches": {
@@ -8083,15 +9522,653 @@
     "purlinToCeilingTop": 38.45,
     "scope": "One fullrecipe geometry; actual200overhang/reactions, supportjunctions, material/fire/thermal/ROFRWTqualification remainexplicit. No freeatticstorage."
   },
+  "familyOperationEvidence": {
+    "source": {
+      "commit": "30cf11096e98ec8c18e6269330b986751b9e63f5",
+      "path": "project/ias/studies/selected-family-convergence.json",
+      "blob": "3bf11679be73d6f7c8566b893f8302fa4454949b"
+    },
+    "familyGeometryEquivalent": true,
+    "projectionEquivalent": true,
+    "proof": {
+      "push": {
+        "fixedLower": 7.9289321881345245,
+        "leafLower": 98.42630434382707,
+        "armLower": 6.588374383456062,
+        "reachUpper": 599.1778001515712
+      },
+      "transfer": {
+        "path": [
+          [
+            9910,
+            5740
+          ],
+          [
+            9910,
+            5800
+          ],
+          [
+            10380,
+            5800
+          ]
+        ],
+        "minimumReserve": 15,
+        "heldHandle": {
+          "grip": [
+            10009,
+            6226
+          ],
+          "samplesPerSegment": 1000,
+          "bodyHalfStepBound": 0.235,
+          "armFixedLower": 133.765,
+          "armLeafLower": 14.765,
+          "reachUpper": 565.1394166936564,
+          "maximumEndpointReach": 564.9044166936563,
+          "mechanism": "Person holds OPEN handle throughout north-first transfer; mechanical closer does not provide a stationary dwell."
+        }
+      },
+      "coupling": {
+        "minimumLeafLowerBound": 30.902883742819405,
+        "minimumFixedLowerBound": 97.5,
+        "openReleaseReach": 564.9044166936563,
+        "operation": "Enter with the controlled mechanical door OPEN; release and withdraw the hand during the first2degrees of slow controlled closing; then let the complete delayed-action closer shut/latch while the body waits outside the swept leaf; then walk to the closed-door task station. No mid-sweep regrip is selected.",
+        "closerRequired": true
+      },
+      "withdrawal": {
+        "start": [
+          10009,
+          6226
+        ],
+        "end": [
+          10268.7,
+          5927.8
+        ],
+        "doorClosingDegrees": 2,
+        "leafLower": 14.788961892070912,
+        "fixedLower": 133.80228345415722
+      }
+    },
+    "wholeHouseFixedBodyReplayMinimum": 6.674094112952446,
+    "pass": true,
+    "scope": "IndependentfocusedIASpeerPASS, actual600boundedpush/heldNorth-firsttransfer/release/first2degreewithdrawal. Mechanicalcloserslowmotion/latching/force/classifiedkit/material/physicaladmission unearned; manualregrip rejected. Metadata-onlysource-pin updates mustnotchange this keyedprojection."
+  },
+  "serviceMaintenanceFields": [
+    {
+      "id": "ground-WC",
+      "platform": [
+        7715,
+        1050,
+        750,
+        1100
+      ],
+      "conflicts": [],
+      "pass": true,
+      "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+    },
+    {
+      "id": "utility",
+      "platform": [
+        10245,
+        1525,
+        1100,
+        750
+      ],
+      "conflicts": [],
+      "pass": true,
+      "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+    },
+    {
+      "id": "kitchen",
+      "platform": [
+        9750,
+        9850,
+        1100,
+        750
+      ],
+      "conflicts": [],
+      "pass": true,
+      "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+    },
+    {
+      "id": "rear-bath",
+      "platform": [
+        650,
+        9250,
+        1100,
+        750
+      ],
+      "conflicts": [],
+      "pass": true,
+      "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+    },
+    {
+      "id": "family-bath",
+      "platform": [
+        10100,
+        4875,
+        1100,
+        750
+      ],
+      "conflicts": [],
+      "pass": true,
+      "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+    },
+    {
+      "id": "principal-bath",
+      "platform": [
+        10333.75,
+        6625,
+        1000,
+        750
+      ],
+      "conflicts": [],
+      "pass": true,
+      "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+    }
+  ],
+  "exteriorPortGeometry": [
+    {
+      "id": "ground-WC-exhaust",
+      "level": 0,
+      "p": [
+        8950,
+        0,
+        3010
+      ],
+      "r": 140,
+      "cassette": false,
+      "wall": "outer-south",
+      "localZ": 3010,
+      "minimumRingOrCassetteReserve": 196.6107785339617,
+      "governingOpening": 8100,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "ground-WC-condensate",
+      "level": 0,
+      "p": [
+        9150,
+        0,
+        3010
+      ],
+      "r": 20,
+      "cassette": false,
+      "wall": "outer-south",
+      "localZ": 3010,
+      "minimumRingOrCassetteReserve": 475.2610699122066,
+      "governingOpening": 8100,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "utility-exhaust",
+      "level": 0,
+      "p": [
+        12000,
+        900,
+        3010
+      ],
+      "r": 140,
+      "cassette": false,
+      "wall": "outer-east",
+      "localZ": 3010,
+      "minimumRingOrCassetteReserve": 235.07204386585647,
+      "governingOpening": 1800,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "utility-condensate",
+      "level": 0,
+      "p": [
+        12000,
+        1100,
+        3010
+      ],
+      "r": 20,
+      "cassette": false,
+      "wall": "outer-east",
+      "localZ": 3010,
+      "minimumRingOrCassetteReserve": 207.31521842564973,
+      "governingOpening": 1800,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "kitchen-exhaust",
+      "level": 0,
+      "p": [
+        11282.5,
+        12000,
+        3010
+      ],
+      "r": 140,
+      "cassette": false,
+      "wall": "outer-north",
+      "localZ": 3010,
+      "minimumRingOrCassetteReserve": 382.1165570497777,
+      "governingOpening": 10200,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "kitchen-condensate",
+      "level": 0,
+      "p": [
+        11482.5,
+        12000,
+        3010
+      ],
+      "r": 20,
+      "cassette": false,
+      "wall": "outer-north",
+      "localZ": 3010,
+      "minimumRingOrCassetteReserve": 672.3925907732925,
+      "governingOpening": 10200,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "rear-bath-exhaust",
+      "level": 1,
+      "p": [
+        0,
+        9300,
+        6400
+      ],
+      "r": 140,
+      "cassette": false,
+      "wall": "outer-west",
+      "localZ": 2950,
+      "minimumRingOrCassetteReserve": 198.3531744274295,
+      "governingOpening": 10200,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "rear-bath-condensate",
+      "level": 1,
+      "p": [
+        0,
+        9500,
+        6400
+      ],
+      "r": 20,
+      "cassette": false,
+      "wall": "outer-west",
+      "localZ": 2950,
+      "minimumRingOrCassetteReserve": 165,
+      "governingOpening": 10200,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "family-bath-exhaust",
+      "level": 1,
+      "p": [
+        12000,
+        5750,
+        6400
+      ],
+      "r": 140,
+      "cassette": false,
+      "wall": "outer-east",
+      "localZ": 2950,
+      "minimumRingOrCassetteReserve": 407.59795877269437,
+      "governingOpening": 4600,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "family-bath-condensate",
+      "level": 1,
+      "p": [
+        12000,
+        5950,
+        6400
+      ],
+      "r": 20,
+      "cassette": false,
+      "wall": "outer-east",
+      "localZ": 2950,
+      "minimumRingOrCassetteReserve": 704.764667688355,
+      "governingOpening": 4600,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "principal-bath-exhaust",
+      "level": 1,
+      "p": [
+        12000,
+        7400,
+        6060
+      ],
+      "r": 140,
+      "cassette": true,
+      "wall": "outer-east",
+      "localZ": 2610,
+      "minimumRingOrCassetteReserve": 25.000000000000114,
+      "governingOpening": 7400,
+      "pass": true,
+      "scope": "Actual1000/300rawarch;75maxcompletehead/cassetteintrusion held. Fixed480band2370–2850/openingleaf≤2370; actualOASprofile/weather/fire/structure unqualified."
+    },
+    {
+      "id": "principal-bath-condensate",
+      "level": 1,
+      "p": [
+        12000,
+        7600,
+        6060
+      ],
+      "r": 20,
+      "cassette": true,
+      "wall": "outer-east",
+      "localZ": 2610,
+      "minimumRingOrCassetteReserve": 88.63780207404744,
+      "governingOpening": 7400,
+      "pass": true,
+      "scope": "Actual1000/300rawarch;75maxcompletehead/cassetteintrusion held. Fixed480band2370–2850/openingleaf≤2370; actualOASprofile/weather/fire/structure unqualified."
+    },
+    {
+      "id": "study-supply",
+      "level": 0,
+      "p": [
+        0,
+        2700,
+        2850
+      ],
+      "r": 180,
+      "wall": "outer-west",
+      "localZ": 2850,
+      "minimumRingOrCassetteReserve": 101.87040890292099,
+      "governingOpening": 1800,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "living-supply",
+      "level": 0,
+      "p": [
+        0,
+        9200,
+        2850
+      ],
+      "r": 180,
+      "wall": "outer-west",
+      "localZ": 2850,
+      "minimumRingOrCassetteReserve": 187.7293099711111,
+      "governingOpening": 10200,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "bed2-supply",
+      "level": 1,
+      "p": [
+        2850,
+        0,
+        6300
+      ],
+      "r": 180,
+      "wall": "outer-south",
+      "localZ": 2850,
+      "minimumRingOrCassetteReserve": 231.48508860636264,
+      "governingOpening": 1800,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "bed3-supply",
+      "level": 1,
+      "p": [
+        9150,
+        0,
+        6300
+      ],
+      "r": 180,
+      "wall": "outer-south",
+      "localZ": 2850,
+      "minimumRingOrCassetteReserve": 231.48508860636264,
+      "governingOpening": 8100,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "bed4-supply",
+      "level": 1,
+      "p": [
+        4800,
+        12000,
+        6300
+      ],
+      "r": 180,
+      "wall": "outer-north",
+      "localZ": 2850,
+      "minimumRingOrCassetteReserve": 406.44314108756726,
+      "governingOpening": 3700,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "principal-supply",
+      "level": 1,
+      "p": [
+        11150,
+        12000,
+        6300
+      ],
+      "r": 180,
+      "wall": "outer-north",
+      "localZ": 2850,
+      "minimumRingOrCassetteReserve": 144.50290040300763,
+      "governingOpening": 10200,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "cooker-exhaust",
+      "level": 0,
+      "p": [
+        11200,
+        12000,
+        2400
+      ],
+      "r": 160,
+      "wall": "outer-north",
+      "localZ": 2400,
+      "minimumRingOrCassetteReserve": 239.21430187748706,
+      "governingOpening": 10200,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "cooker-makeup",
+      "level": 0,
+      "p": [
+        12000,
+        8600,
+        2400
+      ],
+      "r": 140,
+      "wall": "outer-east",
+      "localZ": 2400,
+      "minimumRingOrCassetteReserve": 428.7615545044804,
+      "governingOpening": 7400,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    },
+    {
+      "id": "east-foul-flashing",
+      "level": 0,
+      "p": [
+        12000,
+        5700,
+        2615
+      ],
+      "r": 150,
+      "wall": "outer-east",
+      "localZ": 2615,
+      "minimumRingOrCassetteReserve": 108.11318020028233,
+      "governingOpening": 4600,
+      "pass": true,
+      "scope": "Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified."
+    }
+  ],
+  "rearRenewalEmitterJoin": {
+    "source": "IAS30cf rear1000controls; ordinarywardrobeheld; newemitter correction is explicitHADgeometricrewind",
+    "edgePark": [
+      5500,
+      11100,
+      1000,
+      250
+    ],
+    "selectedWardrobeTurn": {
+      "centre": [
+        4230,
+        10525
+      ],
+      "radius": 819.3900170248598,
+      "minimumReserve": 29.654445886241206,
+      "governor": "service-emitter-bed4-N"
+    },
+    "wardrobeMoves": [
+      {
+        "name": "wardrobeEast",
+        "a": [
+          3042,
+          9800
+        ],
+        "b": [
+          3480,
+          9800
+        ],
+        "size": [
+          1500,
+          660
+        ],
+        "hull": [
+          3042,
+          9800,
+          1938,
+          660
+        ],
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "name": "wardrobeNorth",
+        "a": [
+          3480,
+          9800
+        ],
+        "b": [
+          3480,
+          10195
+        ],
+        "size": [
+          1500,
+          660
+        ],
+        "hull": [
+          3480,
+          9800,
+          1500,
+          1055
+        ],
+        "conflicts": [],
+        "pass": true
+      },
+      {
+        "name": "rotatedWardrobeWest",
+        "a": [
+          3900,
+          9775
+        ],
+        "b": [
+          3030,
+          9775
+        ],
+        "size": [
+          660,
+          1500
+        ],
+        "hull": [
+          3030,
+          9775,
+          1530,
+          1500
+        ],
+        "conflicts": [],
+        "pass": true
+      }
+    ],
+    "park": [
+      3030,
+      9775,
+      660,
+      1500
+    ],
+    "trayReturnHull": [
+      3900,
+      11100,
+      2600,
+      250
+    ],
+    "trayReturnConflicts": [],
+    "northRadiatorGap": 20.5,
+    "oldTurnAndPark": "10650turn/9900park rejectedagainstactualBed4Nrad; noold83.11/202.5reserve transferred",
+    "pass": true,
+    "scope": "Exactconservativecircle/axis-alignedenvelopes andnewactualemitters; fullhandler/rigging/rotation/firstrelease/restorationphysicalproof remainsIAS.20.5tray/radnominalgap islimited, no25handlingreserveclaim.",
+    "independentEvidence": {
+      "commit": "dc3093e4c886dad3fc57c3463e047cb96a2a34e2",
+      "blob": "87a45043dce090adc24f91b92fae70d85e2990d8",
+      "path": "project/ias/studies/selected-family-convergence.json",
+      "key": "rearEmitterRepair",
+      "geometryEquivalent": true
+    }
+  },
+  "guardSpatialFit": {
+    "frameGap": 12.5,
+    "toRail": 77,
+    "revealNormalGap": 33,
+    "maximumCornerGap": 68.47627326307996,
+    "pass": true,
+    "scope": "Actualcompleteenvelopes/fullprofile/fixedframebudget; NOTdeflection/anchor/impact/glass/fireadmission."
+  },
   "wholeHouseFit": {
+    "checks": {
+      "listedSpatial": true,
+      "wholeFurnitureWalls": true,
+      "servicesKeyedProjection": true,
+      "family600": true,
+      "rearRepair": true,
+      "fanFields": true,
+      "exteriorPorts": true,
+      "guardEnvelope": true,
+      "livingRadiatorMove": true
+    },
     "listedProxyPass": true,
     "footprintPass": true,
-    "pass": false,
-    "remaining": [
-      "Bind the final IAS600reach familydoor release/wait/closer proof; manual regrip was rejected.",
-      "Join actual whole-house services/emitter territories and fan renewal fields.",
-      "Reconcile final775portal/tie2200/roof7100 source with STR/MAT."
+    "pass": true,
+    "remaining": [],
+    "scope": "HADfinitearchitecturalfit andexplicitprocurement/maintenancegeography only. Noactualhuman/product/force/material/structural/fire/hydraulic/sitecertification inferred."
+  },
+  "selection": {
+    "decision": "SELECT compactB/openNorthloggia for HADarchitecturaldevelopment",
+    "identity": "HAD-B-OPEN-LOGGIA-2026-11-02",
+    "shell": 12000,
+    "spine": 9300,
+    "owningResult": "project/had/had-03-open-north-loggia.md",
+    "canonicalCompilerBaseline": "AcceptedRH-LAYOUT-REVISION-02/FAMILY-02 A9500 isnotchangedorclaimedtodepictthisHADsource",
+    "handoffs": [
+      "ROF-RWT-GATE",
+      "TRIAD-GATE",
+      "HRS-TECHNICAL",
+      "ADE-MODEL",
+      "PLT-FINAL-PREP"
     ],
-    "scope": "No actual product/force/material/fire/physical certification is made a substitute for these internal geometry corrections."
+    "scope": "Onearchitecturalselection; datedA/Bstudiesretainhistoricalsourceidentity. Sharedactualhouse/compiler/siteadoption remainswith existingowninggates."
   }
 }

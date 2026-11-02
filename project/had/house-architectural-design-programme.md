@@ -110,7 +110,7 @@ selection and shared compatibility checks.
 - [Family-bath inside slider sequence in joined STR candidate B](had-03-family-bath-slider.md) — retains an exposed inside pull and a connected hall/close/approach/reopen comparison, with the reduced opening, reach sensitivity and actual hardware/material duties explicit; neither B nor an installed doorset is adopted.
 - [Study door, chair and window-approach sequence](had-03-study-operation.md) — preserve the retained low hinge's two-hand witness and a second route with one unchanged contact after an unheld approach; bounded mirrored-hinge trials do not justify rehanding. An explicit closed connector retains the chair/window task evidence, with actual parking, hardware and occupied operation unresolved.
 
-HAD-03 is planned and incomplete. The worked kitchen uses solid-pier stations
+HAD-03 now has a selected architectural development result below. The earlier worked kitchen uses solid-pier stations
 and a dry prep table because a continuous 900-high worktop would cross 750-sill
 windows. Actual fitted products/operations and wet/private-room resolution remain
 explicit; the shared triad gate cannot pass on this representative partial set.
@@ -141,6 +141,12 @@ MRA's [moisture design questions](../mra/mra-00-moisture-constitution-threat-mod
 apply during exploration. ROF/RWT construct the preferred roof/water system;
 MRA later attacks that selected result. BCR routes actual evidence obligations;
 possible future PHY/EPR/DEL work is not invented as an early blocker.
+
+## HAD-03 selected development source
+
+The [compact B/open north loggia result](had-03-open-north-loggia.md) is the one selected HAD architectural disposition. Its exact model/drawings bind four bedrooms, principal/private/service interiors,27/30 finish depths, protected circulation, actual emitter/fan/plant territories, distinct ordinary/maintenance states and explicit room/height/approach costs. Source-bound finite checks and independent interface reviews qualify only that architectural scope; actual products, structures, materials, fire, rainwater and site admission remain with their owners.
+
+The accepted compiler RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02 A/9500 identity remains distinct from selected HAD B/9300. Do not silently rewrite historical A/B evidence or claim accepted compiler drawings depict B. TRIAD/HRS-TECHNICAL/ADE-MODEL/PLT-FINAL-PREP retain the actual shared-house migration and final-proof duties. This is not an extra prerequisite that prevents HAD from completing its own exit.
 
 ## Exit gate
 
