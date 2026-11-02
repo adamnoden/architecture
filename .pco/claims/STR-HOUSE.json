@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 11,
-  "state": "released",
-  "leaseId": "62b3cbcd-60b8-45ea-a263-d1c45df66454",
+  "generation": 12,
+  "state": "claimed",
+  "leaseId": "55aa5d86-6d9f-4bed-820a-5f08388eb0f1",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg3-structure-loggia"
+    "label": "zerg4-structure-roof"
   },
-  "claimedAt": "2026-11-01T20:04:17.184Z",
-  "heartbeatAt": "2026-11-01T23:54:22.084Z",
-  "expiresAt": "2026-11-01T23:54:22.084Z",
-  "branch": "work/zerg3-structure-loggia",
+  "claimedAt": "2026-11-02T00:02:13.027Z",
+  "heartbeatAt": "2026-11-02T00:02:13.027Z",
+  "expiresAt": "2026-11-02T00:47:13.027Z",
+  "checkpoint": {
+    "evidence": "PR1235 merged main eab4ec03 exact tree c02680a6; gen11 released/readback ae9e29d7; old remote branch absent; fresh source continuation",
+    "next": "Bind actual HAD068e and MAT roof; calculate roof/arch/lateral/heavy-wall/service topology and foundation concept",
+    "blocker": "STR-HOUSE incomplete; known foundation joint rejected; stair comparator reserve0.5336mm"
+  },
+  "branch": "work/zerg4-structure-roof",
   "predecessor": {
-    "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
-    "generation": 10,
-    "branch": "work/zerg2-integration-20261101",
-    "pr": 1229,
+    "leaseId": "62b3cbcd-60b8-45ea-a263-d1c45df66454",
+    "generation": 11,
+    "branch": "work/zerg3-structure-loggia",
+    "pr": 1235,
     "checkpoint": {
-      "evidence": "Shared PR1229 exacthead8e14606f4d232646c43f73910126fff72e27149e; STR parent329396f081ed6a2e882fa12e18bb76bc1905a317 exacttreef859b416a7913414cda78cff0af0fcf0f0cde46a; engineering and assembly exact-payload PASS; custom source/calculation/render checks passed",
-      "next": "Root full exact-head CI and per-node fresh publication preflight; integrate shared PR1229 then release STR lease",
-      "blocker": "Shared exact-head full CI pending; no geometry adoption or STR-HOUSE completion"
+      "evidence": "PR1235 integrationheadcbade8da93736b6cf7d15d7207153de4eea50382 exactnativec02680a6b7fc632f192e9ea0449a3fa7ba2cf81c; truthfulparentsf5c3aa0d andmain546c98f9; nativeortmergepreservesallmainMATcontent; STRsubtreeunchangeda6ade706; currentmainancestry/fetchedtree equality and focusedPython--check/diffcheckPASS",
+      "next": "Commander fresh exact-head CI and integration-only delta review then canonical merge preflight; source frozen while root sequences merge",
+      "blocker": "STR-HOUSE bounded output remains incomplete; no changes to accepted geometry or frozen engineering scope; full exact-head CI pending"
     }
   },
   "recoverySource": {
-    "leaseId": "44138948-dd4e-4c38-93bb-6b72acc040e8",
-    "generation": 10,
-    "branch": "work/zerg2-integration-20261101",
-    "pr": 1229,
+    "leaseId": "62b3cbcd-60b8-45ea-a263-d1c45df66454",
+    "generation": 11,
+    "branch": "work/zerg3-structure-loggia",
+    "pr": 1235,
     "checkpoint": {
-      "evidence": "Shared PR1229 exacthead8e14606f4d232646c43f73910126fff72e27149e; STR parent329396f081ed6a2e882fa12e18bb76bc1905a317 exacttreef859b416a7913414cda78cff0af0fcf0f0cde46a; engineering and assembly exact-payload PASS; custom source/calculation/render checks passed",
-      "next": "Root full exact-head CI and per-node fresh publication preflight; integrate shared PR1229 then release STR lease",
-      "blocker": "Shared exact-head full CI pending; no geometry adoption or STR-HOUSE completion"
+      "evidence": "PR1235 integrationheadcbade8da93736b6cf7d15d7207153de4eea50382 exactnativec02680a6b7fc632f192e9ea0449a3fa7ba2cf81c; truthfulparentsf5c3aa0d andmain546c98f9; nativeortmergepreservesallmainMATcontent; STRsubtreeunchangeda6ade706; currentmainancestry/fetchedtree equality and focusedPython--check/diffcheckPASS",
+      "next": "Commander fresh exact-head CI and integration-only delta review then canonical merge preflight; source frozen while root sequences merge",
+      "blocker": "STR-HOUSE bounded output remains incomplete; no changes to accepted geometry or frozen engineering scope; full exact-head CI pending"
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1235 integrationheadcbade8da93736b6cf7d15d7207153de4eea50382 exactnativec02680a6b7fc632f192e9ea0449a3fa7ba2cf81c; truthfulparentsf5c3aa0d andmain546c98f9; nativeortmergepreservesallmainMATcontent; STRsubtreeunchangeda6ade706; currentmainancestry/fetchedtree equality and focusedPython--check/diffcheckPASS",
-    "next": "Commander fresh exact-head CI and integration-only delta review then canonical merge preflight; source frozen while root sequences merge",
-    "blocker": "STR-HOUSE bounded output remains incomplete; no changes to accepted geometry or frozen engineering scope; full exact-head CI pending"
-  },
-  "pr": 1235,
-  "releasedAt": "2026-11-01T23:54:22.084Z",
-  "releaseReason": "completed"
+  }
 }
