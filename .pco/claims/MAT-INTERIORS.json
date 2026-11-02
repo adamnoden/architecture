@@ -9,8 +9,8 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-02T00:56:04.288Z",
-  "expiresAt": "2026-11-02T01:41:04.288Z",
+  "heartbeatAt": "2026-11-02T01:25:31.327Z",
+  "expiresAt": "2026-11-02T02:10:31.327Z",
   "branch": "work/zerg4-interiors-whole-house",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -36,9 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1233 head659af5106b8c7d34facd3eca4fcdf1cd6f1319ac tree45dce3af2dcaf28a10ae9512cb0bc3b5040da630: bounded services38194 review/blockers and exact IASdc309 rear-emitter plan repair recorded; source repro/integrity pass, both foreign plan/interface/repair renders viewed. No services or IAS files edited.",
-    "next": "Focused services9476 five-fix delta review, then final coherent HAD/service/IAS source join and independent MAT development exit review; proposed lifecycle remains conditional.",
-    "blocker": "Final source geometry/equivalence pin still pending; old rear9900 rejected in favour of reviewed9775 repair. No whole-services/physical/material/owner admission."
+    "evidence": "PR1233 head40ed40a6d08b3738e5643662db417a014aa6544a tree04150a0651fa275a98497e07af04806feb96785c: actual main6a3c ancestry/fulltree, final HADa510/54f5 and services9476/e827, hard fit/source/role guards, rebuilt16family18occurrence result, bath/collector SVG rendered/viewed; typecheck/integrity/repro/adverse drift pass. Proposed lifecycle only.",
+    "next": "Independent exact-source MAT development exit review, including complete C-U actual collector/end-return reservation; default combined-tree repro; root controls lifecycle projection/integration/merge.",
+    "blocker": "No independent MAT closeout review yet. Actual carrier/anchors/classified perimeter return and product/physical/material/fire/water admission remain unearned; complete IAS export duty separate."
   },
   "pr": 1233
 }
