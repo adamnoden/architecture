@@ -97,7 +97,7 @@ export function render(v) {
   const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;');
   const t=(x,y,s,size=3.2,color='#243b4b')=>`<text x="${x}" y="${y}" font-size="${size}" fill="${color}">${esc(s)}</text>`;
   let s='<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect width="420" height="297" fill="white"/><g font-family="DejaVu Sans,Arial">';
-  s+=t(16,17,'OPEN LOGGIA: THE PAN JOIN CONTROLS THE EVENT',6)+t(16,26,'RWT-06 / selected B source / bounded arithmetic; NOT a hydraulic or safe-access acceptance',3.5);
+  s+=t(16,17,'OPEN LOGGIA: UNQUALIFIED PAN JOIN CHALLENGE',6)+t(16,26,'RWT-06 / selected B source / bounded arithmetic; NOT a hydraulic or safe-access acceptance',3.5);
   const X=y=>22+(y-4250)/30,Y=z=>94-z/3;
   for(const [a,b,za,zb]of [[4250,5750,0,-30],[5750,7750,-30,-110],[7750,12000,-110,-152.5]])s+=`<line x1="${X(a)}" y1="${Y(za)}" x2="${X(b)}" y2="${Y(zb)}" stroke="#437c82" stroke-width="1"/>`;
   for(const [z,label,color]of [[15,'+15 geometric crest only','#7d687e'],[-30,'-30 actual unqualified pan end / DPC join','#b34935'],[-110,'-110 mouth floor','#437c82']]){
