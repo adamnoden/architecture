@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 17,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "628762b1-3992-4657-b353-448910a8fb2f",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-services-joined-system"
   },
   "claimedAt": "2026-11-02T11:27:42.220Z",
-  "heartbeatAt": "2026-11-02T14:23:44.270Z",
-  "expiresAt": "2026-11-02T15:08:44.270Z",
+  "heartbeatAt": "2026-11-02T14:30:57.672Z",
+  "expiresAt": "2026-11-02T14:30:57.672Z",
   "checkpoint": {
     "evidence": "Draft PR1279 refrozen remotee1ac7f922edfafeff90e8fb7e1e64d9dbe470f4c treeef9307362f1af769cb381aa36c4072bf9096df6c realmainceb2684;256modes;corrected inspected two-sheet legend;generator and repo validation pass;full suite local IPC limitation recorded",
     "next": "Root exact-head CI/preflight and bounded reviewer final drawing check; operating/controller/firstrelease/netplant/material qualifications remain unresolved"
@@ -38,5 +38,7 @@
       "blocker": "Connected cooker makeup/control and full-mode heat/emitter/plant fit remain real development defects; no polymer exception or physical/site/product admission"
     }
   },
-  "pr": 1279
+  "pr": 1279,
+  "releasedAt": "2026-11-02T14:30:57.672Z",
+  "releaseReason": "completed"
 }
