@@ -122,6 +122,7 @@ oem_sources={
  'positionAccessory':'https://www.belimo.com/mam/general-documents/datasheets/en-gb/belimo_S2A-F_datasheet_en-gb.pdf',
  'NovyWindowManualMirror':'https://device.report/m/726fcc763197b25f7705aecc6be2129d42933a4da143f5e7c9290f39f1dc1400.pdf',
  'filterChange':'https://www.systemair.com/en-hk/products/fans/accessories/mechanical-accessories/filter-cassettes/fgr',
+ 'filterRegionalConflict':'https://www.systemair.com/en-gb/p/FGR-200-Filter-cassette-56323',
  'fanCard':'https://docs.planning.org.uk/20251224/54/T7BK5SKBJGP00/9quyf95v263jppq1.pdf',
  'pressureSensor':'https://www.halstrup-walcher.de/assets/products/measurement-technology/P26/data-sheet-P26.pdf',
  'silencer':'https://itsolution.lindab.com/LindabWebProductsDoc/PDF/Documentation/ADS/Lindab/Technical/slu.pdf',
@@ -165,6 +166,35 @@ assert 6000>max(r['ideal20CSupplyHeaterW'] for r in all_compact)>low_line_w
 peak=max(all_compact,key=lambda r:r['remainingKitchenW'])
 one_heater_fault_kitchen=1140+peak['ideal20CSupplyHeaterW']-low_line_w/2
 assert one_heater_fault_kitchen>new_emitter_55
+
+# Source-inspected peak chart ranges; no invented catalogue interpolation.
+# FGR graph is an OEM-generated2020 family chart on a distributor mirror,
+# not the selected supply revision. Chartread is bounded development evidence.
+peak_q=peak['directMakeupLps']/1000
+peak_v=peak_q/(math.pi*.2**2/4)
+terminal_peak={str(f):(peak_q/(.61*f*area))**2*1.2/2 for f in (.75,.375)}
+straight_peak=.03*(1.2/.2)*1.2*peak_v**2/2
+peak_partial=[]
+for policy,filter_range in [('familyCleanPlus50',[105,115]),('UKG3Final170',[170,170])]:
+    for fraction in (.75,.375):
+        known_range=[2*13+filter_range[0]+terminal_peak[str(fraction)]+straight_peak-4,
+                     2*18+filter_range[1]+terminal_peak[str(fraction)]+straight_peak-4]
+        peak_partial.append({'dirtyPolicyComparator':policy,'authoredTerminalFreeFraction':fraction,
+          'partialRequiredFanPa':known_range,'remainingAgainstFan285to305Pa':[285-known_range[1],305-known_range[0]],
+          'scope':'Partial only; chart estimates plus authored orifice/Darcy, with actual shutter/reducer/silencer/diffuser/weather/connection losses omitted. Negative upper reserve rejects this stress comparator; positive reserve never earns complete RUN.'})
+pressure_components={'sourcePointLps':peak['directMakeupLps'],'sourceVelocityMps':peak_v,
+ 'fanAvailableChartReadPa':[285,305],'fanSourceDensityKgM3':1.204,
+ 'eachCV20_3000Curve6ChartReadPa':[13,18],
+ 'FGR250CleanChartReadPa':[55,65],
+ 'FGRChartSource':'https://visto-shop.com/media/pdf/62/ec/0d/Systemair_FGR-I_125_Filterkassette_ged-am.pdf',
+ 'FGRChartProvenance':'Systemair-generated2020-02-02 card forFGR-I125 embedsFGRfamily chart incl250; older family comparator, selectedmedia/supplyrevision not qualified',
+ 'terminalOrificeAuthoredPa':terminal_peak,'straightDarcyAuthoredPa':straight_peak,
+ 'partialPeakComparators':peak_partial,
+ 'stillMissing':['Actual hood installed operating curves/capture',
+  'Actual shutter/reducer/silencer/diffuser/terminal/completeconnection loss',
+  'Site wind/frost, clean-to-dirty procurement policy and density/thermal expansion',
+  'Lowflow fan controllability, complete256state installed network and full stop/start/fault transients'],
+ 'status':'No installed system pressure PASS; chartread estimates are not certified points or catalogue interpolation'}
 
 # Full straight train, east-to-west from the PROPOSED 8700/2400 successor.
 # Exact OEM heater body includes its 82mm box; the 500-wide carrier is wholly noncombustible; 100mm clearance to
@@ -223,7 +253,7 @@ compact={'status':'Joined compact OEM/tempered-air development candidate; operat
  'OEMOutput':'990030 V output230VAC; normally closed air-supply/exhaust valve opens on any extraction mode and closes when no extraction. No 990036 five-minute output semantics imported.',
  'heater':'2xVEAB CV20-30-1-ViCi-QOL; nominal3000W230V each; independent dual overheat and integrated flow sensing retained',
  'shutterFeedback':'Belimo LF24 datasheet2026-04-08:75s powered90degree stroke,<20s springreturnat-20..50C,5W/7VA; mechanical indication only. OEMaccessoryS2A-F datasheet2025-05-28 gives2SPDT/0.33kg/1mcable and LF compatibility. ActualLindabshaft/accessorygeometry/clearances and supplyrevision mustjoin; no electrical position proof credited untilthen.',
- 'filterChangeCondition':'CurrentSystemairfamily rule min(initialcleanPa+50,3*initialcleanPa); older170Pa recommendation retained only historical comparator. Actualdirtyloss/flow/media notyetbound.',
+ 'filterChangeCondition':'OfficialHKfamily rule min(initialcleanPa+50,3*initialcleanPa) conflicts with currentUKFGR200/NLFGR315 SKU pages recommending170Pa forG3. Samefamily is not same selectedSKU/revision; exactFGR250/media region must reconcile. No favourable rule selected; dirtyloss/flow unqualified.',
  'fanActual':'K250ECsileo78585 manufacturer2025catalogue card:202axial/336diam/249spigots/40boxprojection/88boxdimension/3.9kg; bracket and fastclamps retained, not bare202box selection.',
  'heaterControllerCaveats':'Current manual limits below1.5m/s and cuts below0.7m/s. All modelled200mm heater modes exceed1.5m/s; previous250mm heater fails that full-power threshold. FGR250 filtration included, actual media/curve/contamination duty unqualified. Heater alarm not proven hood safety trip.',
  'designOutdoorC':-10,'nominalSupplyTargetC':20,'lowLineVoltageFraction':.9,
@@ -250,6 +280,7 @@ compact={'status':'Joined compact OEM/tempered-air development candidate; operat
    'rearFinishedFaceReserveMM':25.5,'coldStoragePlanGapMM':75,
    'firstRelease':release,
    'mounting':'Independent all-component supports and lateral removable noncombustible casing; heater boxes face north for access, no covered rating plates/reset/cover. No joist/RC anchor capacity credited.'},
+ 'pressureComponents':pressure_components,
  'pressureBudget':{'proposedSensor':'HalstrupWalcherP26 +/-10Pa,0.2%FS, fast25ms T63, calibrated18..22C enclosure; candidate only',
    'referenceAndAccuracyPa':.3+.002*20,'temperatureCoefficientAllowancePa':.0003*20*2,
    'authoredTubingStaticErrorAllowancePa':.1,'authoredADCAllowancePa':.05,

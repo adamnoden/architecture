@@ -323,6 +323,7 @@
       "positionAccessory": "https://www.belimo.com/mam/general-documents/datasheets/en-gb/belimo_S2A-F_datasheet_en-gb.pdf",
       "NovyWindowManualMirror": "https://device.report/m/726fcc763197b25f7705aecc6be2129d42933a4da143f5e7c9290f39f1dc1400.pdf",
       "filterChange": "https://www.systemair.com/en-hk/products/fans/accessories/mechanical-accessories/filter-cassettes/fgr",
+      "filterRegionalConflict": "https://www.systemair.com/en-gb/p/FGR-200-Filter-cassette-56323",
       "fanCard": "https://docs.planning.org.uk/20251224/54/T7BK5SKBJGP00/9quyf95v263jppq1.pdf",
       "pressureSensor": "https://www.halstrup-walcher.de/assets/products/measurement-technology/P26/data-sheet-P26.pdf",
       "silencer": "https://itsolution.lindab.com/LindabWebProductsDoc/PDF/Documentation/ADS/Lindab/Technical/slu.pdf",
@@ -350,7 +351,7 @@
     "OEMOutput": "990030 V output230VAC; normally closed air-supply/exhaust valve opens on any extraction mode and closes when no extraction. No 990036 five-minute output semantics imported.",
     "heater": "2xVEAB CV20-30-1-ViCi-QOL; nominal3000W230V each; independent dual overheat and integrated flow sensing retained",
     "shutterFeedback": "Belimo LF24 datasheet2026-04-08:75s powered90degree stroke,<20s springreturnat-20..50C,5W/7VA; mechanical indication only. OEMaccessoryS2A-F datasheet2025-05-28 gives2SPDT/0.33kg/1mcable and LF compatibility. ActualLindabshaft/accessorygeometry/clearances and supplyrevision mustjoin; no electrical position proof credited untilthen.",
-    "filterChangeCondition": "CurrentSystemairfamily rule min(initialcleanPa+50,3*initialcleanPa); older170Pa recommendation retained only historical comparator. Actualdirtyloss/flow/media notyetbound.",
+    "filterChangeCondition": "OfficialHKfamily rule min(initialcleanPa+50,3*initialcleanPa) conflicts with currentUKFGR200/NLFGR315 SKU pages recommending170Pa forG3. Samefamily is not same selectedSKU/revision; exactFGR250/media region must reconcile. No favourable rule selected; dirtyloss/flow unqualified.",
     "fanActual": "K250ECsileo78585 manufacturer2025catalogue card:202axial/336diam/249spigots/40boxprojection/88boxdimension/3.9kg; bracket and fastclamps retained, not bare202box selection.",
     "heaterControllerCaveats": "Current manual limits below1.5m/s and cuts below0.7m/s. All modelled200mm heater modes exceed1.5m/s; previous250mm heater fails that full-power threshold. FGR250 filtration included, actual media/curve/contamination duty unqualified. Heater alarm not proven hood safety trip.",
     "designOutdoorC": -10,
@@ -4424,6 +4425,91 @@
         }
       ],
       "mounting": "Independent all-component supports and lateral removable noncombustible casing; heater boxes face north for access, no covered rating plates/reset/cover. No joist/RC anchor capacity credited."
+    },
+    "pressureComponents": {
+      "sourcePointLps": 161.4482245521563,
+      "sourceVelocityMps": 5.139056598177195,
+      "fanAvailableChartReadPa": [
+        285,
+        305
+      ],
+      "fanSourceDensityKgM3": 1.204,
+      "eachCV20_3000Curve6ChartReadPa": [
+        13,
+        18
+      ],
+      "FGR250CleanChartReadPa": [
+        55,
+        65
+      ],
+      "FGRChartSource": "https://visto-shop.com/media/pdf/62/ec/0d/Systemair_FGR-I_125_Filterkassette_ged-am.pdf",
+      "FGRChartProvenance": "Systemair-generated2020-02-02 card forFGR-I125 embedsFGRfamily chart incl250; older family comparator, selectedmedia/supplyrevision not qualified",
+      "terminalOrificeAuthoredPa": {
+        "0.75": 31.009574211412424,
+        "0.375": 124.0382968456497
+      },
+      "straightDarcyAuthoredPa": 2.852269493681004,
+      "partialPeakComparators": [
+        {
+          "dirtyPolicyComparator": "familyCleanPlus50",
+          "authoredTerminalFreeFraction": 0.75,
+          "partialRequiredFanPa": [
+            160.86184370509343,
+            180.86184370509343
+          ],
+          "remainingAgainstFan285to305Pa": [
+            104.13815629490657,
+            144.13815629490657
+          ],
+          "scope": "Partial only; chart estimates plus authored orifice/Darcy, with actual shutter/reducer/silencer/diffuser/weather/connection losses omitted. Negative upper reserve rejects this stress comparator; positive reserve never earns complete RUN."
+        },
+        {
+          "dirtyPolicyComparator": "familyCleanPlus50",
+          "authoredTerminalFreeFraction": 0.375,
+          "partialRequiredFanPa": [
+            253.8905663393307,
+            273.8905663393307
+          ],
+          "remainingAgainstFan285to305Pa": [
+            11.10943366066931,
+            51.10943366066931
+          ],
+          "scope": "Partial only; chart estimates plus authored orifice/Darcy, with actual shutter/reducer/silencer/diffuser/weather/connection losses omitted. Negative upper reserve rejects this stress comparator; positive reserve never earns complete RUN."
+        },
+        {
+          "dirtyPolicyComparator": "UKG3Final170",
+          "authoredTerminalFreeFraction": 0.75,
+          "partialRequiredFanPa": [
+            225.86184370509343,
+            235.86184370509343
+          ],
+          "remainingAgainstFan285to305Pa": [
+            49.138156294906565,
+            79.13815629490657
+          ],
+          "scope": "Partial only; chart estimates plus authored orifice/Darcy, with actual shutter/reducer/silencer/diffuser/weather/connection losses omitted. Negative upper reserve rejects this stress comparator; positive reserve never earns complete RUN."
+        },
+        {
+          "dirtyPolicyComparator": "UKG3Final170",
+          "authoredTerminalFreeFraction": 0.375,
+          "partialRequiredFanPa": [
+            318.8905663393307,
+            328.8905663393307
+          ],
+          "remainingAgainstFan285to305Pa": [
+            -43.89056633933069,
+            -13.89056633933069
+          ],
+          "scope": "Partial only; chart estimates plus authored orifice/Darcy, with actual shutter/reducer/silencer/diffuser/weather/connection losses omitted. Negative upper reserve rejects this stress comparator; positive reserve never earns complete RUN."
+        }
+      ],
+      "stillMissing": [
+        "Actual hood installed operating curves/capture",
+        "Actual shutter/reducer/silencer/diffuser/terminal/completeconnection loss",
+        "Site wind/frost, clean-to-dirty procurement policy and density/thermal expansion",
+        "Lowflow fan controllability, complete256state installed network and full stop/start/fault transients"
+      ],
+      "status": "No installed system pressure PASS; chartread estimates are not certified points or catalogue interpolation"
     },
     "pressureBudget": {
       "proposedSensor": "HalstrupWalcherP26 +/-10Pa,0.2%FS, fast25ms T63, calibrated18..22C enclosure; candidate only",
