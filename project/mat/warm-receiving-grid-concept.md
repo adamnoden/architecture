@@ -4,6 +4,8 @@
 
 Keep the actual RC receivers, receiving girders and floor connected **above** the mineral bearing line. A warm RC girder distributes each point force and moment before it reaches the continuous course. Cold ties, pile starters and weather-leaf support stay below/outside it; no fictional rocker releases the moment and no retained concrete pier passes through the thermal break. STR has agreed this as a useful concept to develop, with all actual sizes/levels still requiring its readback.
 
+The perimeter profile is the **519.5 mm loggia sidewall** with200 glass, not a silent replacement of the429.5 ordinary outer-shell reservation. Its thermal result cannot be transferred to that thinner shell. The separate internal profile represents a continuous receiving line below a140 wall; local RC point receivers add three-dimensional heat paths outside this linear model.
+
 | Position | Actual hypothesis | Duty and limit |
 |---|---|---|
 | Floor |15 stone+65 distribution; RC200 top−80/bottom−280;320 bare glass below to−600 | Moves the concrete into the warm receiving system. Full floor depth600, not380. Air/gas/moisture/joint performance is still separate. |

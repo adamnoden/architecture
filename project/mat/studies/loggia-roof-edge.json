@@ -1,0 +1,217 @@
+{
+  "status": "ONE unadopted ordinary-eave join. Physical allocation and authored load screens, not whole-roof, fire, water, material or site admission.",
+  "inputs": {
+    "had": {
+      "path": "project/had/studies/open-north-loggia.json",
+      "commit": "a510f30cc82cf9d0142664b72bc272406aed3076",
+      "blob": "54f5ff68fe9bdd9b14fc00d6262d4a2c2366aea2"
+    },
+    "roofControl": {
+      "path": "project/mat/studies/loggia-roof-section.json",
+      "commit": "af453c2314e40fd430471ae1004a6624fc1a72ac",
+      "blob": "a44ff7ae37a71c2da9523cc19b44a60a8888f73c"
+    },
+    "str": {
+      "commit": "6a3c15d6ffb8dac628c42533ba7ea64ac0de2cce",
+      "path": "project/str/studies/open-loggia-support.json",
+      "blob": "f2414b24637533e93a0be9d0e0e639a899d18803"
+    },
+    "coordination": "STR/MAT 2 November2026: q450 end rows; normal346 posts; RHS120x60x5. This delta awaits owning STR source/readback."
+  },
+  "ordinaryWall": {
+    "total": 429.5,
+    "roomToWeather": [
+      27,
+      140,
+      110,
+      50,
+      102.5
+    ],
+    "core": [
+      262.5,
+      402.5
+    ],
+    "glass": [
+      152.5,
+      262.5
+    ],
+    "scope": "Ordinary shell spatial reservation. Not the519.5/200glass loggia sidewall and not full constituent/thermal admission."
+  },
+  "collector": {
+    "bounds": [
+      202.5,
+      462.5,
+      6540,
+      6680
+    ],
+    "plate": {
+      "planNS": [
+        212.5,
+        452.5
+      ],
+      "top": 6702
+    },
+    "remainingGlassAtCollector": 50,
+    "scope": "Actual260collector replaces60 of110glass. Do not draw glass through RC; complete2D/3D heat path remains unproved."
+  },
+  "geometry": {
+    "wallLineWeather": 7100,
+    "edgeQ": -200,
+    "edgeWeather": 7006.738468369001,
+    "normalStack": 500.7,
+    "endPurlinQ": 450,
+    "endRows": [
+      8200,
+      11550
+    ],
+    "purlin": [
+      120,
+      60,
+      5
+    ],
+    "purlinCorners": [
+      [
+        422.8107663889005,
+        6832.968807810009
+      ],
+      [
+        477.1892336110995,
+        6858.32590351445
+      ],
+      [
+        527.9034250199834,
+        6749.568969070052
+      ],
+      [
+        473.52495779778445,
+        6724.211873365611
+      ]
+    ],
+    "purlinLowest": 6724.211873365611,
+    "postBottom": [
+      450,
+      6845.6473556622295
+    ],
+    "postHead": [
+      303.774081437718,
+      7159.22984997691
+    ],
+    "postNormal": 346,
+    "postAvclCrossingQ": 439.4345434564825,
+    "railCantileverPlan": 503.774081437718,
+    "railCantileverNormal": 555.8531976039901,
+    "endTributaryPlan": 700,
+    "lowerBoardEndQ": 262.5,
+    "lowerBoardPlanExtension": 187.5,
+    "roofGlassEndQ": 152.5
+  },
+  "clearances": {
+    "plateVertical": 22.2118733656107,
+    "airReturnQ": 550,
+    "bodyMaxQ": 527.9034250199834,
+    "airReturnHorizontal": 6640,
+    "carrierTopReserve": 6628,
+    "authoredFabricationAllowance": 10,
+    "plateAfterAllowance": 12.2118733656107,
+    "airAfterAllowance": 12.096574980016612
+  },
+  "air": {
+    "roof": "1mm supported stainless control; boundary turns atq550, inside the complete endpurlin body.",
+    "return": "Down to6640, then at6640 (12above carrier reserve6628) to actual collector finishq489.5 (462.5RC+27finish). Below6540 step to ordinary wallfinish429.5. Never run the line through the260collector.",
+    "joints": "Welded sheet corners; mechanically clamped plaster transition, actual bedding/compression/movement and source constituents unqualified. No gas/airtightness pass from metal by name."
+  },
+  "thermal": {
+    "roof320": true,
+    "wall110": true,
+    "collectorNeck": 50,
+    "roofWallJoint": "Raked wallglass meets roofglass at its lower face; roofglass ends atq152.5, lowerboards atq262.5. No phantom500.7 stack projects into overhang.",
+    "retention": "Glass ownweight requires actual toe/support and movement-compatible retainers; cover/gutter loads bypass glass. Roof toe is supported by joined wallglass below, not treated as a structural cantilever.",
+    "limit": "No isolatedR or previous optimistic.1553 probe closes this edge. Collector, post/collar, wallhead and ceiling effects require joined thermal/moisture calculation."
+  },
+  "ceiling": {
+    "finished": 6444,
+    "top": 6620,
+    "completeDepth": 176,
+    "perimeterAtCollectorFinish": 489.5,
+    "carrierReserve": [
+      6468,
+      6628
+    ],
+    "requiredClosedReturn": 96,
+    "scope": "Protected family terminates at actual projecting collector face. Its web may not overlap RC. Close the96 between finished6444 and RCsoffit6540 with the complete applicable classified return, not an unsupported60 board overhang or cut wool; exact classified perimeter and independent end support remain MAT-interiors/STR work. Ordinary ceilings remain separate."
+  },
+  "weather": {
+    "upperBoard": 24,
+    "edgeCleat": {
+      "material": "Authored1.5 uncoated stainless, not a substituted G3 kit",
+      "lengthNormal": 150,
+      "boardRebate": 1.5,
+      "remainingBoard": 22.5,
+      "hem": 30,
+      "movementGapControl": 6
+    },
+    "secondary": {
+      "material": "Retained1mm breather duty on authored1.5 stainless eave support/drip; exact sheet/collars remain unqualified.",
+      "outerDripQ": -220,
+      "dripZ": 6913.88660674044,
+      "lapSupport": "Falls outward below clear vent; no reverse lap. Support is cold-side, clipped to NS rails, not an AVCL bypass.",
+      "clearOverBackCrest": 33.886606740439674
+    },
+    "vent": {
+      "grossNormal": 30,
+      "meshMinimumOpen": 0.5,
+      "equivalentNet": 15,
+      "continuousChannels": [
+        490.8333333333,
+        50
+      ],
+      "scope": "30throat within50zone; metal mesh/baffle below moving edge, no EW blockage. Wind-driven-rain and exact corner continuation remain unproved."
+    },
+    "gutter": {
+      "clearWidth": 200,
+      "depth": 150,
+      "planQ": [
+        -370,
+        -170
+      ],
+      "backCrest": 6880,
+      "frontSpillCrest": 6840,
+      "bottom": 6730,
+      "wetDebrisKgPerM": 52.499,
+      "cradle": {
+        "section": [
+          40,
+          5
+        ],
+        "railSideCleat": [
+          100,
+          50,
+          5
+        ],
+        "railBolts": "TwoM8 on50NS pitch/25end margins, middle of50rail; localbearing/tearout/welds unqualified.",
+        "bottom": 6725
+      },
+      "support": "Removable gutter in separate cradles attached to cold NSrails; topaccessibleM8 releases gutter without removing roof hem or secondary drip. Actual3mm rail-wall/bolt/cleat capacity remains unqualified.",
+      "renewal": "Lower each supported gutter length150, move outward400 into external access platform; do not stand on roof boards. Cradles and roof weathering remain.",
+      "failure": "Front spill40below back crest, below both roof exits. Primary and secondary share this receiver: blocked outlet is a common event, not independent redundancy. Wind/capture/capacity/outlet geography remain RWT work."
+    }
+  },
+  "screens": {
+    "railI": 208492,
+    "railW": 8339.68,
+    "normalCoverKpa": 2.5,
+    "coverCantileverMomentNmm": 208878.4713114487,
+    "gutterPerRailN": 278.5373819250001,
+    "totalAuthoredMomentNmm": 424632.1374325618,
+    "stressMpa": 50.917078045268134,
+    "coverDeflectionMm": 0.40096567985308584,
+    "postEndNormalArea": 0.41772049048721666,
+    "postNormal2_25Kn": 0.9398711035962376,
+    "limit": "Authored distributed cover plus1.35wet/debris-gutter screen, not normative load combination. Coldrail/endpost/weld/hold-down, point/worker loads and local3mmwall capacity are not admitted. Roof is not walkable."
+  },
+  "sources": {
+    "manufacturer": "https://www.vmzinc.com/en-gb/standing-seam-on-open-gap-timber-boarding",
+    "guide": "https://assets.fedrusinternational.be/gen/VMZINC/Documentation/UK/UK%20-%20general%20docs/VMZINC%20SS%20Install%20Guide%202022.pdf",
+    "interpretation": "May2022pp10–12 distinguish moving hem/eavesstrip/support; illustratedPLUS/plywood detail is not copied as approval of this Naturalzinc/openboard/customcleat. All custom dimensions are authored."
+  }
+}
