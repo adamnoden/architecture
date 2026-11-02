@@ -54,6 +54,64 @@
       ]
     }
   ],
+  "alternativeEscape": {
+    "front": {
+      "id": "front-door",
+      "wall": "outer-south",
+      "centre": 6000,
+      "width": 1800,
+      "kind": "door",
+      "swing": "left",
+      "hinge": "low",
+      "leaves": 2
+    },
+    "protectedRoute": "Stair+Southlanding/gallery+frontentrance/void→FRONTfinalexit; living/kitchen north of crossdoors excluded.",
+    "northOpenings": [
+      {
+        "id": "garden-entry",
+        "wall": "outer-north",
+        "centre": 6000,
+        "width": 2960,
+        "kind": "open-loggia",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 2,
+        "finishedWidth": 2400
+      },
+      {
+        "id": "grand-court-entry-north",
+        "wall": "court-north",
+        "centre": 6000,
+        "width": 2960,
+        "kind": "open-loggia",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 2,
+        "finishedWidth": 2400
+      }
+    ],
+    "workerCrossSectionY": 5900,
+    "grossFreeIntervals": [
+      [
+        4800,
+        4925
+      ],
+      [
+        5075,
+        5800
+      ],
+      [
+        6200,
+        6925
+      ],
+      [
+        7075,
+        7200
+      ]
+    ],
+    "bodyProxy": 600,
+    "scope": "Plan widths only; usable stairs, bridge, wet escape, receiving water and rescue not proven."
+  },
   "wallImpact": [
     {
       "drip": "primary",
@@ -132,6 +190,7 @@
     "screenPrimaryUninterceptedAlgebra": true,
     "secondaryStartsBelowScreenTop": true,
     "screenBreatherGap": true,
+    "northPassageStrips": true,
     "closedScreenStopsBuildingLeaf": true,
     "screenGatePadGap": true,
     "screenPadFrameGap": true,
