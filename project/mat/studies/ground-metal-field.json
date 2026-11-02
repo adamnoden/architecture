@@ -1,0 +1,128 @@
+{
+  "status": "One source-located field topology and datum test; not a sealed barrier or selected structural arrangement",
+  "sources": {
+    "project/had/studies/open-north-loggia.json": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+    "project/mat/studies/warm-receiving-grid.json": "a5bff9f37b8d78dfb32359427314b4013fe8a45e",
+    "project/str/studies/sw-corner-station.json": "2c215912f4b55ca4587e32763bf66160d4b433d0"
+  },
+  "fieldControl": {
+    "outerCoreBounds_mm": [
+      262.5,
+      262.5,
+      11737.5,
+      11737.5
+    ],
+    "courtCoreCut_mm": [
+      3987.5,
+      3987.5,
+      8012.5,
+      8012.5
+    ],
+    "loggiaCoreCut_mm": [
+      4447.5,
+      8012.5,
+      7552.5,
+      11737.5
+    ],
+    "grossControlArea_m2": 103.908875,
+    "sheetThickness_mm": 1,
+    "grossSheetMass_kg_at_7850": 815.68466875,
+    "scope": "Bounding shape only: door/threshold returns, service openings, joints, structural bands, support cuts and actual coverage are not laid out. This is not a cut list or net quantity."
+  },
+  "datum_mm": {
+    "field": [
+      -383,
+      -382
+    ],
+    "cornerPatch": [
+      -383,
+      -380
+    ],
+    "upperMortarOriginal": [
+      -390,
+      -380
+    ],
+    "AAC": [
+      -605,
+      -390
+    ],
+    "DPC": [
+      -765,
+      -615
+    ],
+    "warmGirder": [
+      -380,
+      -80
+    ],
+    "MATfloor": [
+      0,
+      -15,
+      -80,
+      -280,
+      -600
+    ],
+    "HADfloorRC": [
+      -380,
+      -180
+    ],
+    "coldNode": [
+      -1257,
+      -765
+    ]
+  },
+  "negativeControls": {
+    "upperBed": "3 mm plate occupies the upper 3 mm of the 10 mm bed, leaving 7 mm beneath; adjacent 1 mm sheet splits it into 7 mm below and 2 mm above. Neither joint, bearing nor monolithic lateral transfer is established.",
+    "slabDatum": {
+      "MATclear_mm": 102,
+      "HADclear_mm": 2,
+      "railDepth_mm": 40,
+      "MATmargin_mm": 62,
+      "HADmargin_mm": -38,
+      "result": "FAIL on unchanged HAD ground slab: 2 mm clear vs 40 mm trial rail, 38 mm overlap. MAT alternative permits nominal spatial reservation only; adoption, hanger anchorage and insulation repair remain unproved."
+    },
+    "girder": "Even in MAT slab alternative, field top \u2212382 is only 2 mm below \u2212380 girder soffit; a 40 mm top-side rail cannot continue through it. End supports, welded transitions, reinforced contact and accessible sequencing are not designed."
+  },
+  "panelSensitivity": {
+    "panel_mm": [
+      1000,
+      1000,
+      1
+    ],
+    "perimeterAngles_mm": [
+      40,
+      40,
+      4
+    ],
+    "fourHangerDiameter_mm": 8,
+    "hangerLength_mm": 102,
+    "sheet_kg": 7.85,
+    "angles_kg": 9.5456,
+    "hangers_kg": 0.16099028721467823,
+    "total_kg": 17.55659028721468,
+    "gravity_kN": 0.172230150717576,
+    "limit": "Local gross self-weight only, no overlap/anchors/welds, glass support, pressure, water, construction or design factors. No stiffness or anchor capacity."
+  },
+  "interfaces": [
+    {
+      "id": "SW",
+      "location": "x/y262.5..562.5",
+      "duty": "split rod/plate, cold node, AAC bed, exterior core/cavity/weather leaf; no through rod or steel bypass declared sealed"
+    },
+    {
+      "id": "court-south-door",
+      "location": "rough x5100..6900, weather face y4250; field control ends at core-face y3987.5",
+      "duty": "262.5 mm to weather face is a geometric interval, not a closed threshold connection"
+    },
+    {
+      "id": "loggia",
+      "location": "between x4447.5..7552.5 from y8012.5..11737.5 control cut",
+      "duty": "separate 519.5 sidewalls, portal, water routes and south/north transitions; no inherited SW detail"
+    },
+    {
+      "id": "services",
+      "location": "whole house, exact points and formation to coordinate",
+      "duty": "complete welded sleeves, access, movement, retained constituents and repair; no omitted penetrations"
+    }
+  ],
+  "decision": "The candidate supplies a single connected bounding field and explicit failure controls, not a complete buildable assembly. Whole perimeter, threshold, services, movement, supported sheet, testing, repair, reinforcement, structural force route, thermal, material and site evidence remain open."
+}
