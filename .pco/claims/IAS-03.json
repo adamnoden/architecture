@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 14,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "c04cb153-03a0-42b1-a663-792b266b81ce",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg4-ias-convergence"
   },
   "claimedAt": "2026-11-01T21:28:29.086Z",
-  "heartbeatAt": "2026-11-02T00:08:33.761Z",
-  "expiresAt": "2026-11-02T00:53:33.761Z",
+  "heartbeatAt": "2026-11-02T00:14:45.577Z",
+  "expiresAt": "2026-11-02T00:14:45.577Z",
   "branch": "work/zerg4-ias-convergence",
   "predecessor": {
     "leaseId": "10049375-f6a2-4aa4-87a5-3da538b5d0dd",
@@ -39,5 +39,7 @@
     "next": "Hold frozen merge head; root sole exact-head CI observation and fresh canonical preflight/expected-head merge. Release after verified merge then reclaim authorized continuation.",
     "blocker": "Partial IAS progress only: head-first sink and full guarded wet export/IS reconciliation remain internal work; no node completion or physical/material admission."
   },
-  "pr": 1237
+  "pr": 1237,
+  "releasedAt": "2026-11-02T00:14:45.577Z",
+  "releaseReason": "handoff"
 }
