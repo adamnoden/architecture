@@ -9,11 +9,12 @@
     "label": "zerg-rwt26-live-receiver"
   },
   "claimedAt": "2026-11-02T10:48:55.897Z",
-  "heartbeatAt": "2026-11-02T10:48:55.897Z",
-  "expiresAt": "2026-11-02T11:33:55.897Z",
+  "heartbeatAt": "2026-11-02T11:11:07.365Z",
+  "expiresAt": "2026-11-02T11:56:07.365Z",
   "checkpoint": {
-    "evidence": "Starting verified maindf410b141fb77257dcbe825de5d20287144d75ee tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; prior RWT25 merged PR1263 and canonically released at10:47:42.876Z; read-only architecture/source adjudication complete, no design edits yet.",
-    "next": "Implement one source-bound south-court receiver renewal reference with actual dual drip capture, A/B overlap and reversal, support/guard/window/handling geometry, both catchment ledgers and explicit unsuccessful controls. Preserve product/site/physical holds; RWT06 stays open."
+    "evidence": "Public branch head a5a9629189905b5b98aa4fd0a2882947a4bc0252 tree fcf64cdc4e5b5318cb77ac8a2928f8aedcb38918; nominal geometry and adverse controls only; no operational admission.",
+    "next": "Develop and independently review finite joined scene and full-edge transfer, support, handling and reversal.",
+    "blocker": "Transfer sockets, end capture and complete supports require finite design."
   },
   "branch": "work/rwt06-live-receiver-20261102",
   "note": "Owner-directed RWT recovery after verified merged negative study; constructive same-section live capture, receiver removal and reversal. Root sole CI/merger.",
