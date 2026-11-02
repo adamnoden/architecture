@@ -18,7 +18,7 @@
   },
   "family": {
     "id": "IAS-FAM-27-01",
-    "status": "Authored joined27dry/30wet trial; awaiting incorporation in HAD geometry, not adopted",
+    "status": "Pinned HAD068e joined27dry/30wet spatial trial; no house adoption or classified-kit admission",
     "room": [
       9397,
       3800,
@@ -1849,7 +1849,7 @@
     "controlScope": "TS83 BC+DC manufacturer functional control: retarded180–70degree motion, not a selected classified kit or complete material admission."
   },
   "kitchen": {
-    "status": "Authored whole-station renewal witness against pinned HAD furniture; finish/trim join pending",
+    "status": "DATED whole-frame plan-control; not selected renewal",
     "ordinary": {
       "dining-table1200x800": [
         8500,
@@ -2263,10 +2263,11 @@
       "hallTurnReserve": 13.704186767200099,
       "scope": "Replay against actual27finished walls+18decorative projection; retained furniture and25crossdoor frames stay in the main route checks."
     },
-    "handlingStatus": "INCOMPLETE: W600/S600 part envelope and furniture sequence pass, but full mass/rig/operator/attachment/control/support-transfer method is not yet qualified as an architectural witness. No safe whole-module renewal PASS."
+    "handlingStatus": "HISTORICAL WHOLE-FRAME CONTROL, NOT SELECTED: INCOMPLETE: W600/S600 part envelope and furniture sequence pass, but full mass/rig/operator/attachment/control/support-transfer method is not yet qualified as an architectural witness. No safe whole-module renewal PASS.",
+    "currentSelectedRecord": "headFirst"
   },
   "kitchenRelease": {
-    "status": "Authored supported frame/anchor and service-interface compatibility target; no supplied assembly/load admission",
+    "status": "DATED whole-frame first-release control; not selected renewal",
     "station": [
       8700,
       10970.5,
@@ -3184,10 +3185,2130 @@
         "handReachToSofa": 325
       },
       "boundary": "800 hatch is panel aperture, not a free vertical prism through retained beam. All A/T/B complete bodies/tool/spool stay west of2775.5. Upper tray drain/feet must match this authored port or this specific route fails; no automatic principal900 transfer. New formedport requires STR support proof; not drilling permission."
-    }
+    },
+    "status": "SUPERSEDED pre38194-emitter room-maintenance CONTROL; not current selected wardrobe state",
+    "currentSelectedRecord": "rearEmitterRepair"
+  },
+  "rearEmitterRepair": {
+    "status": "Selected finite room-maintenance repair against immutable service emitters and explicit HAD furniture rewind; no physical carrying or whole-house admission",
+    "source": {
+      "hadCommit": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+      "hadBlob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
+      "serviceCommit": "38194f2988c8cedfce7ee3a066c578afaf0f7c37",
+      "serviceBlob": "eb841fcfe6ec77975ee94d48c4cae59a7dc12859",
+      "servicePath": "project/mat/studies/whole-house-service-baseline.json",
+      "serviceFetch": "git fetch origin 38194f2988c8cedfce7ee3a066c578afaf0f7c37",
+      "rewind": "HAD approved wholeBed4 body/head100S toY9250; all other Bed4 walls/furniture/guards unchanged from068e. This is explicit bounded composition, not independent adopted house source."
+    },
+    "ordinary": {
+      "wardrobe": [
+        3042,
+        9800,
+        1500,
+        660
+      ],
+      "bed": [
+        5405.5,
+        9250,
+        2000,
+        1500
+      ],
+      "head": [
+        7405.5,
+        9250,
+        90,
+        1500
+      ],
+      "emitters": [
+        {
+          "id": "bed4-N",
+          "room": "bed4",
+          "level": 1,
+          "family": "StelradCompactK3H700",
+          "length": 900,
+          "bodyHeight": 700,
+          "completePlanWithValvesAndBrackets": [
+            3102.5,
+            11370.5,
+            1050,
+            200
+          ],
+          "bottomLocal": 100,
+          "topLocal": 800,
+          "pressurePairBranchPlan": [
+            [
+              4500,
+              9150
+            ],
+            [
+              4800,
+              9150
+            ],
+            [
+              4800,
+              11200
+            ],
+            [
+              4100,
+              11200
+            ],
+            [
+              4100,
+              11500
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 900,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 950,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "rear-N",
+          "room": "rearBath",
+          "level": 1,
+          "family": "StelradCompactK3H600",
+          "length": 500,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            2100,
+            11367.5,
+            650,
+            200
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              1800,
+              10800
+            ],
+            [
+              2405,
+              10800
+            ],
+            [
+              2405,
+              11500
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        }
+      ]
+    },
+    "unchangedExtraction": {
+      "id": "same tray FIRST extraction before wardrobe",
+      "start": [
+        1750,
+        9377.5,
+        1000,
+        250
+      ],
+      "path": [
+        [
+          1750,
+          9377.5
+        ],
+        [
+          1000,
+          9377.5
+        ],
+        [
+          1000,
+          10625
+        ],
+        [
+          3900,
+          10625
+        ],
+        [
+          3900,
+          11100
+        ],
+        [
+          5500,
+          11100
+        ]
+      ],
+      "minimumSeparation": 20.5,
+      "governor": "bed4-N emitter",
+      "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+    },
+    "edgePark": [
+      5500,
+      11100,
+      1000,
+      250
+    ],
+    "wardrobe": {
+      "translation": {
+        "id": "empty wardrobe direct NORTH395 after EAST438",
+        "start": [
+          3042,
+          9800,
+          1500,
+          660
+        ],
+        "path": [
+          [
+            3042,
+            9800
+          ],
+          [
+            3480,
+            9800
+          ],
+          [
+            3480,
+            10195
+          ]
+        ],
+        "minimumSeparation": 24.5,
+        "governor": "rear-wet-east+18trim",
+        "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+      },
+      "turn": {
+        "centre": [
+          4230,
+          10525
+        ],
+        "radius": 819.3900170248598,
+        "minimumReserve": 29.654445886241206
+      },
+      "park": [
+        3030,
+        9775,
+        660,
+        1500
+      ],
+      "parkMove": {
+        "id": "rotated wardrobe from corrected circle",
+        "start": [
+          3900,
+          9775,
+          660,
+          1500
+        ],
+        "path": [
+          [
+            3900,
+            9775
+          ],
+          [
+            3030,
+            9775
+          ]
+        ],
+        "minimumSeparation": 12.5,
+        "governor": "rear-wet-east+18trim",
+        "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+      },
+      "firstRelease": "Empty and independently support; release actual anti-tip restraints before moving; no fixed head anchor or still-loaded furniture credited."
+    },
+    "trayReturn": {
+      "id": "same tray return after wardrobe park",
+      "start": [
+        5500,
+        11100,
+        1000,
+        250
+      ],
+      "path": [
+        [
+          5500,
+          11100
+        ],
+        [
+          3900,
+          11100
+        ],
+        [
+          3900,
+          10375
+        ]
+      ],
+      "minimumSeparation": 20.5,
+      "governor": "bed4-N emitter",
+      "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+    },
+    "stage": [
+      3900,
+      10000,
+      1000,
+      1000
+    ],
+    "handlingReservation": [
+      3800,
+      9900,
+      1200,
+      1200
+    ],
+    "clearances": {
+      "wardrobeCircle": 29.654445886241206,
+      "parkToBed4Radiator": 95.5,
+      "trayEdgeAndReturnToBed4Radiator": 20.5,
+      "stagePadToBed4Radiator": 270.5
+    },
+    "rejected": {
+      "oldTurnCentre": [
+        4230,
+        10650
+      ],
+      "oldCircleReserve": -94.73389167987943,
+      "oldPark": [
+        3030,
+        9900,
+        660,
+        1500
+      ],
+      "oldParkHitsRadiator": true,
+      "reason": "New retained1050x200 radiator invalidates both old circle and old parked wardrobe. No radiator removal credited."
+    },
+    "sequence": [
+      "Keep full new bed/head and both emitters fixed. Isolate/support actual rear drain/floor seals; extract1000 tray FIRST and park onedge5500/11100 using unchanged checked route.",
+      "Empty/support/unfix1500x660 wardrobe; move438E from3042/9800 to3480/9800, then395N to3480/10195. Do not go toold10320 first.",
+      "Rotate90 around4230/10525 using fullR819.390 circle; rotated origin3900/9775 then870W to3030/9775.",
+      "Return same1000x250 onedge tray via3900/11100 to3900/10375, then flatten at1000stage3900/10000. Separate1200handling field3800/9900 retained.",
+      "Reverse all furniture moves and restore actual anti-tip, emitter/window/bedroom functions and disturbed wet/drain/floor joints; test before use."
+    ],
+    "lostTasks": [
+      "Bed4 wardrobe/storage",
+      "Rear shower and affected window tasks",
+      "Bed4 ordinary occupation during maintenance"
+    ],
+    "limits": [
+      "20.5Y is nominal tray/radiator separation, not202.5. No extra handling/tolerance allowance beyond this is earned.",
+      "Circle29-ish reserve is a full-wardrobe analytic plan bound, not a safe person/force/rig/stability certificate.",
+      "Real1000 tray/frame/drain/edge support and mass, wet-boundary closure and complete exterior/stair export remain owning duties. No900-tray proof transfer."
+    ]
+  },
+  "headFirst": {
+    "status": "IN-PROGRESS head-first architectural direction; continuous moving composite/operator phases passed, but connected support/first-release/storage/return review remains internal. Conditional supplied frame, zero-capture union, grip, table and handling compatibility. Whole-frame method retained only as rejected/incomplete control.",
+    "sourceControl": {
+      "commit": "38194f2988c8cedfce7ee3a066c578afaf0f7c37",
+      "path": "project/mat/studies/whole-house-service-baseline.json",
+      "blob": "eb841fcfe6ec77975ee94d48c4cae59a7dc12859",
+      "fetch": "git fetch origin 38194f2988c8cedfce7ee3a066c578afaf0f7c37",
+      "consumption": "One-way exact headFirst interface; no reverse IAS hash in services. Source38194 supersedes270UP/650reach0fbc control.",
+      "deviations": "IAS owns the fully specified M6/tab/rail release and carrier/storage requirement, operator20S/N clearance steps around fixedA during EAST, helper100S retreat and continuous proof; service numeric head/union/grip/table phases imported exactly. Actual supplied kit/force/frame/table/grip admission remains separate."
+    },
+    "control": {
+      "massMaximum": 15,
+      "movingGrossMaximum": 18,
+      "top": [
+        900,
+        600,
+        30
+      ],
+      "bowl": [
+        530,
+        440,
+        270
+      ],
+      "frontRetainers": [
+        [
+          8900,
+          10990.5,
+          830
+        ],
+        [
+          9030,
+          10990.5,
+          830
+        ],
+        [
+          9270,
+          10990.5,
+          830
+        ],
+        [
+          9400,
+          10990.5,
+          830
+        ]
+      ],
+      "rearDowelHeight": 15,
+      "gripLocal": [
+        [
+          -357.5,
+          -125
+        ],
+        [
+          357.5,
+          -125
+        ]
+      ],
+      "gripHeightAboveTop": 80,
+      "frameTop": 850,
+      "bearingPadTop": 870,
+      "totalRaised": 290,
+      "tableTop": 750,
+      "bearerTop": 1050,
+      "seatedTop": 1080
+    },
+    "retainedFrame": [
+      [
+        "leg",
+        [
+          8780,
+          11050.5,
+          40,
+          40
+        ],
+        [
+          0,
+          850
+        ]
+      ],
+      [
+        "leg",
+        [
+          8780,
+          11450.5,
+          40,
+          40
+        ],
+        [
+          0,
+          850
+        ]
+      ],
+      [
+        "leg",
+        [
+          9480,
+          11050.5,
+          40,
+          40
+        ],
+        [
+          0,
+          850
+        ]
+      ],
+      [
+        "leg",
+        [
+          9480,
+          11450.5,
+          40,
+          40
+        ],
+        [
+          0,
+          850
+        ]
+      ],
+      [
+        "sidebeam",
+        [
+          8780,
+          10990.5,
+          40,
+          560
+        ],
+        [
+          810,
+          850
+        ]
+      ],
+      [
+        "sidebeam",
+        [
+          9480,
+          10990.5,
+          40,
+          560
+        ],
+        [
+          810,
+          850
+        ]
+      ],
+      [
+        "backbeam",
+        [
+          8800,
+          11530.5,
+          700,
+          40
+        ],
+        [
+          810,
+          850
+        ]
+      ],
+      [
+        "bearingpad",
+        [
+          8780,
+          11010.5,
+          40,
+          20
+        ],
+        [
+          850,
+          870
+        ]
+      ],
+      [
+        "bearingpad",
+        [
+          8780,
+          11510.5,
+          40,
+          20
+        ],
+        [
+          850,
+          870
+        ]
+      ],
+      [
+        "bearingpad",
+        [
+          9480,
+          11010.5,
+          40,
+          20
+        ],
+        [
+          850,
+          870
+        ]
+      ],
+      [
+        "bearingpad",
+        [
+          9480,
+          11510.5,
+          40,
+          20
+        ],
+        [
+          850,
+          870
+        ]
+      ]
+    ],
+    "retainedUpperB": {
+      "axes": [
+        [
+          9025,
+          10985.5,
+          625
+        ],
+        [
+          9130,
+          10985.5,
+          625
+        ],
+        [
+          9275,
+          10985.5,
+          625
+        ]
+      ],
+      "diameters": [
+        80,
+        80,
+        100
+      ],
+      "northHalfLength": 50,
+      "wholeCompositeMinimumZ": 575,
+      "bowlMinimumZ": 600
+    },
+    "phases": [
+      {
+        "phase": "20up",
+        "start": {
+          "c": [
+            9150,
+            11270.5
+          ],
+          "a": 0,
+          "z": 900,
+          "ops": [
+            [
+              8792.5,
+              10650
+            ],
+            [
+              9507.5,
+              10650
+            ]
+          ],
+          "shoulder": 1000
+        },
+        "end": {
+          "c": [
+            9150,
+            11270.5
+          ],
+          "a": 0,
+          "z": 920,
+          "ops": [
+            [
+              8792.5,
+              10650
+            ],
+            [
+              9507.5,
+              10650
+            ]
+          ],
+          "shoulder": 1000
+        },
+        "samples": 1001,
+        "operatorSpeedBound": 0,
+        "sampledMaximumOperatorSpeed": 0,
+        "bodyLower": 9.929830768191835,
+        "reachUpper": 495.91346842908854,
+        "halfStepBodyBound": 0,
+        "halfStepReachBound": 0.01
+      },
+      {
+        "phase": "40south",
+        "start": {
+          "c": [
+            9150,
+            11270.5
+          ],
+          "a": 0,
+          "z": 920,
+          "ops": [
+            [
+              8792.5,
+              10650
+            ],
+            [
+              9507.5,
+              10650
+            ]
+          ],
+          "shoulder": 1000
+        },
+        "end": {
+          "c": [
+            9150,
+            11230.5
+          ],
+          "a": 0,
+          "z": 920,
+          "ops": [
+            [
+              8792.5,
+              10610
+            ],
+            [
+              9507.5,
+              10610
+            ]
+          ],
+          "shoulder": 1000
+        },
+        "samples": 1001,
+        "operatorSpeedBound": 40,
+        "sampledMaximumOperatorSpeed": 40.000000000873115,
+        "bodyLower": 9.909830768191835,
+        "reachUpper": 495.54,
+        "halfStepBodyBound": 0.02,
+        "halfStepReachBound": 0.04
+      },
+      {
+        "phase": "raise clear fixed frame",
+        "start": {
+          "c": [
+            9150,
+            11230.5
+          ],
+          "a": 0,
+          "z": 920,
+          "ops": [
+            [
+              8792.5,
+              10610
+            ],
+            [
+              9507.5,
+              10610
+            ]
+          ],
+          "shoulder": 1000
+        },
+        "end": {
+          "c": [
+            9150,
+            11230.5
+          ],
+          "a": 0,
+          "z": 1190,
+          "ops": [
+            [
+              8792.5,
+              10610
+            ],
+            [
+              9507.5,
+              10610
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "samples": 1001,
+        "operatorSpeedBound": 0,
+        "sampledMaximumOperatorSpeed": 0,
+        "bodyLower": 43.06923499492052,
+        "reachUpper": 500.6550735382225,
+        "halfStepBodyBound": 0,
+        "halfStepReachBound": 0.235
+      },
+      {
+        "phase": "operator step20S beforeeast",
+        "start": {
+          "c": [
+            9150,
+            11230.5
+          ],
+          "a": 0,
+          "z": 1190,
+          "ops": [
+            [
+              8792.5,
+              10610
+            ],
+            [
+              9507.5,
+              10610
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "end": {
+          "c": [
+            9150,
+            11230.5
+          ],
+          "a": 0,
+          "z": 1190,
+          "ops": [
+            [
+              8792.5,
+              10590
+            ],
+            [
+              9507.5,
+              10590
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "samples": 1001,
+        "operatorSpeedBound": 20,
+        "sampledMaximumOperatorSpeed": 20.000000000436557,
+        "bodyLower": 43.05923499492052,
+        "reachUpper": 520.2409583252423,
+        "halfStepBodyBound": 0.01,
+        "halfStepReachBound": 0.01
+      },
+      {
+        "phase": "east950",
+        "start": {
+          "c": [
+            9150,
+            11230.5
+          ],
+          "a": 0,
+          "z": 1190,
+          "ops": [
+            [
+              8792.5,
+              10590
+            ],
+            [
+              9507.5,
+              10590
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "end": {
+          "c": [
+            10100,
+            11230.5
+          ],
+          "a": 0,
+          "z": 1190,
+          "ops": [
+            [
+              9742.5,
+              10590
+            ],
+            [
+              10457.5,
+              10590
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "samples": 1001,
+        "operatorSpeedBound": 950,
+        "sampledMaximumOperatorSpeed": 950.0000000007276,
+        "bodyLower": 10.025,
+        "reachUpper": 521.1809583252424,
+        "halfStepBodyBound": 0.475,
+        "halfStepReachBound": 0.95
+      },
+      {
+        "phase": "operator step20N aftereast",
+        "start": {
+          "c": [
+            10100,
+            11230.5
+          ],
+          "a": 0,
+          "z": 1190,
+          "ops": [
+            [
+              9742.5,
+              10590
+            ],
+            [
+              10457.5,
+              10590
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "end": {
+          "c": [
+            10100,
+            11230.5
+          ],
+          "a": 0,
+          "z": 1190,
+          "ops": [
+            [
+              9742.5,
+              10610
+            ],
+            [
+              10457.5,
+              10610
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "samples": 1001,
+        "operatorSpeedBound": 20,
+        "sampledMaximumOperatorSpeed": 20.000000000436557,
+        "bodyLower": 87.63223196137953,
+        "reachUpper": 520.2409583252423,
+        "halfStepBodyBound": 0.01,
+        "halfStepReachBound": 0.01
+      },
+      {
+        "phase": "south930.5",
+        "start": {
+          "c": [
+            10100,
+            11230.5
+          ],
+          "a": 0,
+          "z": 1190,
+          "ops": [
+            [
+              9742.5,
+              10610
+            ],
+            [
+              10457.5,
+              10610
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "end": {
+          "c": [
+            10100,
+            10300
+          ],
+          "a": 0,
+          "z": 1190,
+          "ops": [
+            [
+              9742.5,
+              9679.5
+            ],
+            [
+              10457.5,
+              9679.5
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "samples": 1001,
+        "operatorSpeedBound": 930.5,
+        "sampledMaximumOperatorSpeed": 930.5000000003929,
+        "bodyLower": 87.17698196137954,
+        "reachUpper": 501.3505735382225,
+        "halfStepBodyBound": 0.46525,
+        "halfStepReachBound": 0.9305
+      },
+      {
+        "phase": "CCW90",
+        "start": {
+          "c": [
+            10100,
+            10300
+          ],
+          "a": 0,
+          "z": 1190,
+          "ops": [
+            [
+              9742.5,
+              9679.5
+            ],
+            [
+              10457.5,
+              9679.5
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "end": {
+          "c": [
+            10100,
+            10300
+          ],
+          "a": 1.5707963267948966,
+          "z": 1190,
+          "ops": [
+            [
+              10720.5,
+              9942.5
+            ],
+            [
+              10720.5,
+              10657.5
+            ]
+          ],
+          "shoulder": 1200
+        },
+        "samples": 1001,
+        "operatorSpeedBound": 1124.8771801173732,
+        "sampledMaximumOperatorSpeed": 1124.8770644740146,
+        "bodyLower": 13.824663562685462,
+        "reachUpper": 501.2799606213301,
+        "halfStepBodyBound": 0.5624385900586866,
+        "halfStepReachBound": 0.8598870831055656
+      },
+      {
+        "phase": "west1200 to table",
+        "start": {
+          "c": [
+            10100,
+            10300
+          ],
+          "a": 1.5707963267948966,
+          "z": 1190,
+          "ops": [
+            [
+              10720.5,
+              9942.5
+            ],
+            [
+              10720.5,
+              10657.5
+            ]
+          ],
+          "shoulder": 1200,
+          "tableY": 9650
+        },
+        "end": {
+          "c": [
+            8900,
+            10300
+          ],
+          "a": 1.5707963267948966,
+          "z": 1190,
+          "ops": [
+            [
+              9610,
+              9942.5
+            ],
+            [
+              9610,
+              10657.5
+            ]
+          ],
+          "shoulder": 1200,
+          "tableY": 9650
+        },
+        "samples": 1001,
+        "operatorSpeedBound": 1200,
+        "sampledMaximumOperatorSpeed": 1200.0000000007276,
+        "speedBasis": "Piecewise linear1200 speed before clamp, then stationary; endpoint displacement is not the maximum speed.",
+        "bodyLower": 9.4,
+        "reachUpper": 590.3731494221373,
+        "halfStepBodyBound": 0.6,
+        "halfStepReachBound": 1.2
+      },
+      {
+        "phase": "lower110 onto wing bearers",
+        "start": {
+          "c": [
+            8900,
+            10300
+          ],
+          "a": 1.5707963267948966,
+          "z": 1190,
+          "ops": [
+            [
+              9610,
+              9942.5
+            ],
+            [
+              9610,
+              10657.5
+            ]
+          ],
+          "shoulder": 1200,
+          "tableY": 9650
+        },
+        "end": {
+          "c": [
+            8900,
+            10300
+          ],
+          "a": 1.5707963267948966,
+          "z": 1080,
+          "ops": [
+            [
+              9610,
+              9942.5
+            ],
+            [
+              9610,
+              10657.5
+            ]
+          ],
+          "shoulder": 1200,
+          "tableY": 9650
+        },
+        "samples": 1001,
+        "operatorSpeedBound": 0,
+        "sampledMaximumOperatorSpeed": 0,
+        "bodyLower": 10,
+        "reachUpper": 589.2281494221372,
+        "halfStepBodyBound": 0,
+        "halfStepReachBound": 0.055
+      }
+    ],
+    "bodyLower": 9.4,
+    "headBodyPlanLower": 20.499999999996817,
+    "reachUpper": 590.3731494221373,
+    "firstRelease": {
+      "unions": "Isolate/drain. Independently support fixed lower A, retained trap/pipe and head. Release all six nuts and seal adhesion using accessible front tools; actual BOTH A/B unions must be flat-face ZERO capture, no radial nest/cone/spigot. Supported spool20S then20UP; renew seals. Captured orthogonal seats are rejected; do not infer diagonal disengagement.",
+      "spools": "Remove three labelled spools and park in the secured400x400 tray on ordinary EN chair9300/9750: three100maxbody fields atX9600..9700,Y9850/9975/10100; then keep tray secured during existing500square chair movement to10800/8475, maximum total5kg and actual chair/seat/tray stability required; retained lower A ends cap and stay supported. Retained NORTH B halves remain inside900x600 head. No pipe or support disappears.",
+      "bodyFloor": [
+        9550,
+        10575
+      ],
+      "shoulder": [
+        9550,
+        10775,
+        625
+      ],
+      "headCentre": [
+        9550,
+        10775,
+        725
+      ],
+      "headRadius": 150,
+      "frontRetainers": [
+        [
+          8900,
+          10990.5,
+          830
+        ],
+        [
+          9030,
+          10990.5,
+          830
+        ],
+        [
+          9270,
+          10990.5,
+          830
+        ],
+        [
+          9400,
+          10990.5,
+          830
+        ]
+      ],
+      "fastenerTask": "Support/unbolt <=2kg removable front rail atZ850 through actual front fasteners. Remove four front M6 head retainers FIRST while pads/rear15 dowels/rear/sides/high braces still support head, THEN remove supported front rail; rear15 dowels release during20UP. Front shoulder may translateX8800..9500,Y10775,Z625, not reach every screw from one far-side stance.",
+      "frameStability": "The retained four-leg frame, side/rear high braces and independent floor anchors must be stable with front rail and head absent; no reliance on the removed head as bracing. All fixed service supports/insulated fields stay.",
+      "frontRailPark": {
+        "maximumMassKg": 2,
+        "timing": "First table100S to9000 with chairs ordinary; then remove/store rail and spools BEFORE chair parks. This keeps the pantry approach clear; the later EN chair park would obstruct it.",
+        "release": "Supported700x40x40 front member withdraws135.5S while above fixed unions, then rotates EW-to-vertical about9150/10875/Z830. Maximum turn half707.11/2; fixed A front10900.5 leaves5.5 plan separation. Actual hand/force/finish tolerance must match.",
+        "releaseBody": [
+          9570,
+          10575
+        ],
+        "maximumReleaseGripReach": 543.415126767741,
+        "carrier": {
+          "points": [
+            [
+              9570,
+              10575
+            ],
+            [
+              10200,
+              10575
+            ],
+            [
+              10200,
+              8771.25
+            ],
+            [
+              10600,
+              8771.25
+            ],
+            [
+              10750,
+              8700
+            ],
+            [
+              10925,
+              8635
+            ],
+            [
+              10970,
+              7800
+            ],
+            [
+              10322,
+              7800
+            ],
+            [
+              10322,
+              7250
+            ]
+          ],
+          "minimumReserve": 23,
+          "governor": "pantry OPEN leaf",
+          "passes": true
+        },
+        "carrierPart": "Rail vertical700high with40x40plan, centre350WEST of body through kitchen/door; inside pantry regrip quarter-arc to350SOUTH before crossing to shelf. GripZ830/maxhead1180. Secure ordinary non-protected pantry door OPEN by compatible temporary handling stay before entry; restore stay/closure afterwards.",
+        "storageSource": [
+          9397,
+          6800,
+          600,
+          1150
+        ],
+        "storageTarget": {
+          "plan": [
+            9900,
+            6900,
+            40,
+            700
+          ],
+          "supportTopZ": 900,
+          "railSeatedCentreZ": 920,
+          "placement": "From body10322/7250, raise vertical rail axis to1275 (bottom925), bring to9920/7250, rotate toNS700above900shelf, then lower355 to seat. Retain full600x1150 source cabinet and actual supported open900top/bay requirement; capacity/edge/door/wet safety admission held."
+        },
+        "lostTask": "Pantry storage/ordinary door use temporarily unavailable; empty exact shelf territory first and restore complete ordinary state.",
+        "regrip": {
+          "body": [
+            10970,
+            7800
+          ],
+          "partRadius": 350,
+          "rangeDegrees": [
+            0,
+            90
+          ],
+          "minimumLower": 294.59560108082997,
+          "halfStepBound": 0.2748893571891069,
+          "operation": "Keep rail vertical700 high, move held plan centre on350radius quarter-arc from WEST side to SOUTH/front inside pantry; body remains stationary, part stays outsideR300 body by21.7."
+        },
+        "carriedPartLower": 21.715728752538098,
+        "pieceSegments": [
+          [
+            [
+              9220,
+              10575
+            ],
+            [
+              9850,
+              10575
+            ]
+          ],
+          [
+            [
+              9850,
+              10575
+            ],
+            [
+              9850,
+              8771.25
+            ]
+          ],
+          [
+            [
+              9850,
+              8771.25
+            ],
+            [
+              10250,
+              8771.25
+            ]
+          ],
+          [
+            [
+              10250,
+              8771.25
+            ],
+            [
+              10400,
+              8700
+            ]
+          ],
+          [
+            [
+              10400,
+              8700
+            ],
+            [
+              10575,
+              8635
+            ]
+          ],
+          [
+            [
+              10575,
+              8635
+            ],
+            [
+              10620,
+              7800
+            ]
+          ],
+          [
+            [
+              10970,
+              7450
+            ],
+            [
+              10322,
+              7450
+            ]
+          ],
+          [
+            [
+              10322,
+              7450
+            ],
+            [
+              10322,
+              6900
+            ]
+          ]
+        ]
+      },
+      "spoolParkBodyRoute": {
+        "points": [
+          [
+            9550,
+            10575
+          ],
+          [
+            10150,
+            10575
+          ],
+          [
+            10150,
+            10000
+          ]
+        ],
+        "minimumReserve": 25,
+        "governor": "dining-chair-east-north",
+        "passes": true
+      },
+      "spoolParkTask": {
+        "body": [
+          10150,
+          10000
+        ],
+        "shoulder": [
+          10000,
+          10000,
+          625
+        ],
+        "head": [
+          10000,
+          10000,
+          725
+        ],
+        "headRadius": 150,
+        "seatTop": 450,
+        "maximumGripReach": 461.65463281548466,
+        "storage": "Actual EN chair seat/tray restrained and qualified for<=5kg released spools; remove before ordinary chair use. Chair moves ONLY with secured tray in its already checked500square envelope; no part disappears."
+      },
+      "initialTableMove": {
+        "table": {
+          "id": "table100S BEFORE front release",
+          "start": [
+            8500,
+            9100,
+            800,
+            1200
+          ],
+          "path": [
+            [
+              8500,
+              9100
+            ],
+            [
+              8500,
+              9000
+            ]
+          ],
+          "minimumSeparation": 0,
+          "governor": "dining-chair-west-south",
+          "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+        },
+        "helper": {
+          "points": [
+            [
+              8900,
+              8775
+            ],
+            [
+              8900,
+              8675
+            ]
+          ],
+          "minimumReserve": 28.451290148173996,
+          "governor": "rear-east+18trim",
+          "passes": true
+        },
+        "relationship": "Helper325S of moving table edge throughout; table moves100S while chairs ordinary, BEFORE unions/rail/storage. Actualtable mass/force/control remains required."
+      },
+      "frontBoltBodies": {
+        "points": [
+          [
+            8900,
+            10575
+          ],
+          [
+            9030,
+            10575
+          ],
+          [
+            9270,
+            10575
+          ],
+          [
+            9400,
+            10575
+          ]
+        ],
+        "minimumReserve": 25,
+        "governor": "dining-chair-east-north",
+        "passes": true
+      },
+      "sequence": [
+        "Move empty table100S toY9000 while chairs remain ordinary.",
+        "Isolate/drain/support retained services; zero-capture A/B spool release to secured EN seat tray.",
+        "Head remains on four pads/rear locators; remove four front M6 then supported front rail, store vertically-carried rail in actual pantry footprint BEFORE ENchair parks.",
+        "Move chairs with secured spool tray, prestage secured bearers on empty table before two handlers enter.",
+        "Fit/test complete wing grips and take load, follow checked head phases; helper pushes table/bearers650N then retreats100S before WEST transfer.",
+        "Seat on bearers or reverse under qualified controls; actual mechanical support/load-transfer/recovery/return still needs independent complete-event review."
+      ],
+      "headJoint": {
+        "head": "Plain stainless welded head+bowl, no glued laminate/backing; real releasable wet perimeter joint and all required gaskets/isolators/residues retained as MAT duties.",
+        "tabs": [
+          [
+            8880,
+            11030.5,
+            40,
+            3,
+            810,
+            870
+          ],
+          [
+            9010,
+            11030.5,
+            40,
+            3,
+            810,
+            870
+          ],
+          [
+            9250,
+            11030.5,
+            40,
+            3,
+            810,
+            870
+          ],
+          [
+            9380,
+            11030.5,
+            40,
+            3,
+            810,
+            870
+          ]
+        ],
+        "boltHeads": [
+          [
+            8900,
+            10990.5,
+            830
+          ],
+          [
+            9030,
+            10990.5,
+            830
+          ],
+          [
+            9270,
+            10990.5,
+            830
+          ],
+          [
+            9400,
+            10990.5,
+            830
+          ]
+        ],
+        "boltAxis": [
+          0,
+          1,
+          0
+        ],
+        "frontRail": [
+          8800,
+          10990.5,
+          700,
+          40,
+          810,
+          850
+        ],
+        "joint": "Four M6 front screws through40deep rail into captive head-tab nuts behind; source tool/assembly target, not capacity admission. CentreZ830 leaves17 net to40high rail edge. No floating fasteners after rail removal and no hidden rear nut access.",
+        "tool": {
+          "axis": "Y from SOUTH",
+          "extension": 120,
+          "diameter": 10,
+          "handCentreY": 10870.5,
+          "handRadius": 40,
+          "returnUnderside": 870,
+          "toolTop": 835,
+          "toolToReturn": 35,
+          "handNorth": 10910.5,
+          "headFront": 10970.5,
+          "handToHead": 60
+        },
+        "order": "Release wet perimeter/seal bond while head on pads. Remove four M6 FRONT screws and then support/unbolt<=2kg front rail from retained side ends. Head rests on four retained pads and rear15 locating dowels while rail is carried/stored and furniture staged. Only then two qualified wing controls take load and20UP disengages rear dowels.",
+        "pads": [
+          [
+            8800,
+            11020.5,
+            870
+          ],
+          [
+            9500,
+            11020.5,
+            870
+          ],
+          [
+            8800,
+            11520.5,
+            870
+          ],
+          [
+            9500,
+            11520.5,
+            870
+          ]
+        ],
+        "requiredCGField": [
+          9050,
+          11170.5,
+          200,
+          200
+        ],
+        "supportPolygon": [
+          8800,
+          11020.5,
+          700,
+          500
+        ],
+        "minimumCGPlanReserve": 150,
+        "rearLocator": "Two15-high locating pins and reinforced>=18deep blind sockets inside30folded return atrear pads; no rear release. Actual weld/socket/pad/edge/stiffness/load stability must match.",
+        "capacity": "Four pads/support frame remain independently stable with rail/head absent. Head CG must lie in stated interior200square before front retention release. This geometric support polygon does not qualify actual welds/bolts/head/frame capacity."
+      },
+      "maximumThreeDimensionalReach": 573.5200519598247,
+      "frontFastenerReach": 226.1531560690675
+    },
+    "handling": {
+      "method": "Two handlers use two positive qualified vacuum/grip controls on separate185-wide wings, complete mass<=18kg including head<=15kg and grips. This is a finite apparatus/operator requirement, not a human lifting certificate.",
+      "capabilityControl": {
+        "family": "Bohle Veribor BO602.421 two-cup aluminium grip, published60kg/flat airtight-surface control only",
+        "url": "https://assets.bohle.com/image/upload/fl_attachment%3ASuctionlifter-brochure/documents/KA180EN00-Veribor-Saugheber-Broschuere_sst7nm",
+        "cupDiameter": 120,
+        "unitBudget": [
+          340,
+          120
+        ],
+        "constituents": "Retain actual elastomer cup/handle/accessories and their MAT admission duty. Published suction capacity does not qualify this thin worktop, orientation, force, damage, two-person operation or complete apparatus."
+      },
+      "cupCentres": [
+        [
+          8792.5,
+          11060.5
+        ],
+        [
+          8792.5,
+          11280.5
+        ],
+        [
+          9507.5,
+          11060.5
+        ],
+        [
+          9507.5,
+          11280.5
+        ]
+      ],
+      "gripAxes": [
+        [
+          8792.5,
+          11145.5
+        ],
+        [
+          9507.5,
+          11145.5
+        ]
+      ],
+      "gripHeightAboveTop": 80,
+      "bodyRadius": 300,
+      "shoulderModel": [
+        1000,
+        1200
+      ],
+      "supportTransfer": "Fit/test two actual controls while head rests on fixed pads; two handlers take balanced load before20UP. The fixed frame retains its anchors and all service loads. Never release a control while unsupported. Helper PRESTAGES both secured bearers on the empty table before handlers enter, then translates the table+bearers650N only after head is held90degrees in the east aisle.",
+      "stopRollback": "Every path is reversible with both controls retained. Before leaving fixed frame, a failed seal/grip/control returns head to pads and retainers. In aisle, stop only under a qualified coordinated two-handler control or reverse to pads; no unmodelled floor park is credited. The qualified actual method must establish fatigue/rest/recovery capability and no abrupt suction loss. If it cannot, this handling direction fails.",
+      "reinstatement": "Reverse110UP/W-to-E/rotation/S-to-N/E-to-W/270DOWN/40N/20DOWN. Seat on pads and15 locating dowels, reinstall front retainers and supported rail, verify stable frame before releasing grips; restore supported spools with new qualified seals, uncap after isolation control, pressure/leak/wet-boundary test, then restore table/chairs and ordinary tasks."
+    },
+    "table": {
+      "topZ": 750,
+      "ordinary": [
+        8500,
+        9100,
+        800,
+        1200
+      ],
+      "preRelease": [
+        8500,
+        9000,
+        800,
+        1200
+      ],
+      "park": [
+        8500,
+        9650,
+        800,
+        1200
+      ],
+      "securedBearers": [
+        [
+          8600,
+          9850,
+          600,
+          150,
+          300
+        ],
+        [
+          8600,
+          10600,
+          600,
+          150,
+          300
+        ]
+      ],
+      "bearerTop": 1050,
+      "carryReturnUnderside": 1160,
+      "lowerToSeat": 110,
+      "seatedTop": 1080,
+      "seatedReturnUnderside": 1050,
+      "seatedBowlBottom": 780,
+      "bowlToTable": 30,
+      "bowlToBearerPlan": 35,
+      "capacity": "Actual dining table/top, secured bearers and end/wing return contacts must be qualified for complete18kg plus bearers; body/helper loads are not put on it. Bowl passes BETWEEN supports; no invented870-to1050 clearance.",
+      "helper": {
+        "prestage": "After table100S and chair parks, before handler entry/lifting: secure complete two bearer assemblies on empty table atY9200/9950. North helper position8900/10525 remains south of fixed frame; complete and exit before first-release/handler tasks.",
+        "prestageBodyCentres": [
+          [
+            8900,
+            8675
+          ],
+          [
+            8900,
+            10525
+          ]
+        ],
+        "maximumBearerReach": 555.0900827793629,
+        "bearerGripRequirement": "Two positive grips150 either side of bearer centre atfrontY9200 andZ900; north unit reached fromN atY10100. No far-corner600+reach credited.",
+        "supportRequirement": "Two mechanically secured open bearer assemblies, each<=5kg,600x150x300 budget; actual table capacity includes these plus18kg head/control load. No solid heavy timber mass or table-worker load is silently assumed.",
+        "push": {
+          "points": [
+            [
+              8900,
+              8675
+            ],
+            [
+              8900,
+              9325
+            ]
+          ],
+          "minimumReserve": 28.451290148173996,
+          "governor": "rear-east+18trim",
+          "passes": true
+        },
+        "pushRelation": "Table+secured bearers translate650N, helper325S of table edge throughout. Head remains supported by both handlers in the fully90degree east-aisle state. Helper path and moving table are separate simultaneous bodies.",
+        "movingTable": {
+          "id": "empty table plus secured bearers",
+          "start": [
+            8500,
+            9000,
+            800,
+            1200
+          ],
+          "path": [
+            [
+              8500,
+              9000
+            ],
+            [
+              8500,
+              9650
+            ]
+          ],
+          "minimumSeparation": 120.5,
+          "governor": "retained frame",
+          "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
+        },
+        "lostTasks": "Entire meal/prep/window/storage tasks unavailable; restore complete ordinary state.",
+        "retreat": {
+          "points": [
+            [
+              8900,
+              9325
+            ],
+            [
+              8900,
+              9225
+            ]
+          ],
+          "minimumReserve": 350,
+          "governor": "dining-chair-west-south",
+          "passes": true
+        },
+        "retreatInstruction": "After pushing650N, helper retreats100S to9225 BEFORE the two handlers bring the head west; head stays held in east aisle meanwhile."
+      }
+    },
+    "lostTasks": [
+      "Meal/preparation/window tasks unavailable during the complete maintenance state",
+      "Kitchen station and affected services isolated",
+      "Ordinary furniture/chair use unavailable until restoration"
+    ],
+    "limits": [
+      "Continuous R300 body and600 reach bounds are a finite spatial witness, not accessibility, safe force or physical operation approval.",
+      "Composite top+bowl+three retained B halves tested; front rail and three spools have explicit supported removal, fixed frame/anchors/trap/pipes remain.",
+      "Composite solid motion has exact translational prisms and bounded rotational samples. Exact38194 numeric head phases imported; actual connected support/first-release/storage/stop/return independent review and full source/occurrence join still precede whole-IAS acceptance."
+    ],
+    "negativeControls": {
+      "old270Up": "Rejected: lower retained waste-B half crosses retained side frame during east withdrawal; corrected total290UP has positive continuous separation.",
+      "oldCentreGripReach": 620.5,
+      "old650ReachAccepted": false,
+      "capturedOrthogonalSeats": "Any positive radial-nest/spigot capture needs an actual articulated release; selected zero-capture union target cannot infer that compatibility."
+    },
+    "ownerInterface": {
+      "status": "INTERNAL CONTINUATION: sampled composite/operator research only; continuous/supportrecord incomplete. Selectedconditional target, notacceptedhandling. Noactualgrip/force/kit/table/framecapacityadmission.",
+      "head": {
+        "topPlan": [
+          8700,
+          10970.5,
+          900,
+          600
+        ],
+        "topZ": 900,
+        "returnDepth": 30,
+        "supportUndersideZ": 870,
+        "maximumMassKg": 15,
+        "bowlMinimumZ": 600,
+        "wholeCompositeMinimumZ": 575,
+        "bowlPlan": [
+          8885,
+          11050.5,
+          530,
+          440
+        ],
+        "wingWidthEachSide": 185,
+        "retainedUnionBBodyInsideTop": true
+      },
+      "lowerA": [
+        {
+          "id": "cold",
+          "axis": [
+            9025,
+            10950.5,
+            475
+          ],
+          "axisDirection": [
+            0,
+            0,
+            1
+          ],
+          "maximumDiameter": 80,
+          "maximumAxial": 100,
+          "planReachFromOperator": 575.8257114787425
+        },
+        {
+          "id": "hot",
+          "axis": [
+            9130,
+            10950.5,
+            475
+          ],
+          "axisDirection": [
+            0,
+            0,
+            1
+          ],
+          "maximumDiameter": 80,
+          "maximumAxial": 100,
+          "planReachFromOperator": 492.79838676684
+        },
+        {
+          "id": "waste",
+          "axis": [
+            9275,
+            10950.5,
+            475
+          ],
+          "axisDirection": [
+            0,
+            0,
+            1
+          ],
+          "maximumDiameter": 100,
+          "maximumAxial": 100,
+          "planReachFromOperator": 395.69590596820683
+        }
+      ],
+      "upperB": [
+        {
+          "id": "cold",
+          "axis": [
+            9025,
+            10985.5,
+            625
+          ],
+          "faceDirection": [
+            0,
+            -1,
+            0
+          ],
+          "maximumDiameter": 80,
+          "northHeadHalfY": [
+            10985.5,
+            11035.5
+          ],
+          "southSpoolHalfY": [
+            10935.5,
+            10985.5
+          ]
+        },
+        {
+          "id": "hot",
+          "axis": [
+            9130,
+            10985.5,
+            625
+          ],
+          "faceDirection": [
+            0,
+            -1,
+            0
+          ],
+          "maximumDiameter": 80,
+          "northHeadHalfY": [
+            10985.5,
+            11035.5
+          ],
+          "southSpoolHalfY": [
+            10935.5,
+            10985.5
+          ]
+        },
+        {
+          "id": "waste",
+          "axis": [
+            9275,
+            10985.5,
+            625
+          ],
+          "faceDirection": [
+            0,
+            -1,
+            0
+          ],
+          "maximumDiameter": 100,
+          "northHeadHalfY": [
+            10985.5,
+            11035.5
+          ],
+          "southSpoolHalfY": [
+            10935.5,
+            10985.5
+          ]
+        }
+      ],
+      "firstSpoolRelease": {
+        "phases": [
+          [
+            0,
+            -20,
+            0
+          ],
+          [
+            0,
+            0,
+            20
+          ]
+        ],
+        "finalTranslation": [
+          0,
+          -20,
+          20
+        ],
+        "installedMovingLowestZ": 475,
+        "afterLowestZ": 495,
+        "retainedAHighestZ": 475,
+        "clearanceAfter": 20,
+        "maximumCapturedSpigotLengthAfterNutRelease": 0,
+        "requiredJoint": "Qualifiedflat-facezero-capture unions atBOTHorthogonalA/B. No radialnest/guide/cone remainsafterrelease. Two≤15capturedorthogonalseatswouldbindduringdiagonaltranslationandareREJECTED. Actualkitmustdemonstrateflatfacereleaseorroutefails.",
+        "storage": "Isolate/drain, releaseallnutsandsealadhesion, deliberatelyrenewfaceseals.20SfirstfreesB,then20UPfreesAwithZEROcapturednest. ThreesupportedspoolsstripFIRSTandparksealedonlabelledtray; fixedA/trap/pipe/legs cappedandsupported."
+      },
+      "firstTask": {
+        "bodyFloorCentre": [
+          9550,
+          10575
+        ],
+        "bodyRadius": 300,
+        "shoulder": [
+          9550,
+          10775,
+          625
+        ],
+        "headRadius": 150,
+        "maximumHeadTop": 875,
+        "mode": "Qualifiedkneeling/stoopedtask, notstanding900verticalreach; exacthuman/forcesstillphysicalreview."
+      },
+      "frame": {
+        "fixed": true,
+        "retainedFloorAnchors": [
+          [
+            8765,
+            11070.5
+          ],
+          [
+            8765,
+            11470.5
+          ],
+          [
+            9535,
+            11070.5
+          ],
+          [
+            9535,
+            11470.5
+          ]
+        ],
+        "frontRailZ": 850,
+        "frontRailMaximumMassKg": 2,
+        "frontRailRelease": "Support/unboltaccessiblefrontfastenersandhandcarrytoexactmaintenance-tablepark; rear/sides/highbracesremainstable. No hiddenrearbolts ormissingrail.",
+        "headFasteners": "FouraccessibleFRONTM6, rear15-highlocatingdowels, nohiddenrearfixings."
+      },
+      "motion": {
+        "initialUp": 20,
+        "initialSouth": 40,
+        "windowTrimProjection": 18,
+        "windowTrimReserve": 22,
+        "additionalUp": 270,
+        "totalUp": 290,
+        "bowlBottomAfterRaise": 890,
+        "sideFrameTop": 850,
+        "fixedPadsTop": 870,
+        "bowlToPadsClearance": 20,
+        "retainedBMinimumAfterRaise": 865,
+        "BToSideFrameClearance": 15,
+        "BNorthEndAfter40South": 10995.5,
+        "fixedPadSouthY": 11010,
+        "BPlanReserveToPad": 14.5,
+        "transferEast": 950,
+        "transferSouth": 930.5,
+        "thenCCWDegrees": 90,
+        "finalWest": 1200,
+        "completeHeadPlan": [
+          900,
+          600
+        ]
+      },
+      "operatorPhases": {
+        "initial": [
+          [
+            8792.5,
+            10650
+          ],
+          [
+            9507.5,
+            10650
+          ]
+        ],
+        "after40SouthY": 10610,
+        "shoulderZDuringAdditionalRaise": [
+          1000,
+          1200
+        ],
+        "final": [
+          [
+            9610,
+            9942.5
+          ],
+          [
+            9610,
+            10657.5
+          ]
+        ],
+        "continuation": "Continuouscomposite/worker/supportproofincomplete; numericcompatibilitytargetsnotphysicalacceptance."
+      },
+      "grips": {
+        "padDiameter": 120,
+        "padCentres": [
+          [
+            8792.5,
+            11060.5
+          ],
+          [
+            8792.5,
+            11280.5
+          ],
+          [
+            9507.5,
+            11060.5
+          ],
+          [
+            9507.5,
+            11280.5
+          ]
+        ],
+        "gripY": 11145.5,
+        "operatorSouthY": 10650,
+        "maximum3DReach": 589.174,
+        "maximumDeclaredReachScreen": 600,
+        "continuousBoundStatus": "Independentcontinuous/supportrecordnotyetcomplete; noacceptedphysicalevent",
+        "acceptance": "Actualqualifiedsurface/grips/twohandlers/force/stability/healthsafetyrequired; nohandliftingcapacityinvented."
+      },
+      "tablePlacement": {
+        "tableTopZ": 750,
+        "tableY": 9650,
+        "finalHeadCentre": [
+          8900,
+          10300
+        ],
+        "finalTopPlan": [
+          8600,
+          9850,
+          600,
+          900
+        ],
+        "finalBowlPlan": [
+          8680,
+          10035,
+          440,
+          530
+        ],
+        "bearers": [
+          [
+            8600,
+            9850,
+            600,
+            150,
+            300
+          ],
+          [
+            8600,
+            10600,
+            600,
+            150,
+            300
+          ]
+        ],
+        "bearerTopZ": 1050,
+        "carryReturnUndersideZ": 1160,
+        "carryTopZ": 1190,
+        "carryClearance": 110,
+        "lowerToSeat": 110,
+        "seatedTopZ": 1080,
+        "seatedReturnUndersideZ": 1050,
+        "seatedBowlBottomZ": 780,
+        "bowlToTableClearance": 30,
+        "bowlPlanReserveToEachBearer": 35,
+        "prestage": {
+          "initialTableY": 9100,
+          "prestageTableY": 9000,
+          "initialSouthMove": 100,
+          "bearersBeforeNorthMove": [
+            [
+              8600,
+              9200,
+              600,
+              150,
+              300
+            ],
+            [
+              8600,
+              9950,
+              600,
+              150,
+              300
+            ]
+          ],
+          "helperBeforeHandlers": [
+            [
+              8900,
+              8675
+            ],
+            [
+              8900,
+              10525
+            ]
+          ],
+          "laterTablePushBodyPath": [
+            [
+              8900,
+              8675
+            ],
+            [
+              8900,
+              9325
+            ]
+          ],
+          "laterNorthMove": 650,
+          "rule": "SecurebothwingbearersonEMPTYtableandhelperexitsBEFOREhandlersenter. AfterheadheldCCWintheEaisle,helperpushestable+securedlegs/bearers650N; nobodyclimbsonit."
+        },
+        "supportAllocation": "BearerssupportEND/WINGreturnsoutsidebowl; bowlpassesBETWEEN, neverthroughbearers. LatebearerinstallationbehindfixedframeisREJECTED. Completeactualtable/supportcapacityandcontinuoushandlingeventunearned."
+      }
+    },
+    "fixedSolidContinuousSweeps": [
+      {
+        "phase": "20up",
+        "method": "Exact convex swept axis-aligned prism including both endpoints, all intermediate translations and composite parts",
+        "minimumSeparation": 0,
+        "governor": "bearingpad",
+        "contact": "Intentional installed wall/pad contact; actual seal/bond released before separating motion. No retained solid volume intersects."
+      },
+      {
+        "phase": "40south",
+        "method": "Exact convex swept axis-aligned prism including both endpoints, all intermediate translations and composite parts",
+        "minimumSeparation": 0,
+        "governor": "fixed wall outer-north full27",
+        "contact": "Intentional installed wall/pad contact; actual seal/bond released before separating motion. No retained solid volume intersects."
+      },
+      {
+        "phase": "raise clear fixed frame",
+        "method": "Exact convex swept axis-aligned prism including both endpoints, all intermediate translations and composite parts",
+        "minimumSeparation": 20,
+        "governor": "bearingpad",
+        "contact": null
+      },
+      {
+        "phase": "operator step20S beforeeast",
+        "method": "Exact convex swept axis-aligned prism including both endpoints, all intermediate translations and composite parts",
+        "minimumSeparation": 22,
+        "governor": "retained outer-north18",
+        "contact": null
+      },
+      {
+        "phase": "east950",
+        "method": "Exact convex swept axis-aligned prism including both endpoints, all intermediate translations and composite parts",
+        "minimumSeparation": 15,
+        "governor": "bearingpad",
+        "contact": null
+      },
+      {
+        "phase": "operator step20N aftereast",
+        "method": "Exact convex swept axis-aligned prism including both endpoints, all intermediate translations and composite parts",
+        "minimumSeparation": 22,
+        "governor": "retained outer-north18",
+        "contact": null
+      },
+      {
+        "phase": "south930.5",
+        "method": "Exact convex swept axis-aligned prism including both endpoints, all intermediate translations and composite parts",
+        "minimumSeparation": 22,
+        "governor": "retained outer-north18",
+        "contact": null
+      },
+      {
+        "phase": "CCW90",
+        "method": "1001 convex separating-axis samples with maximum-vertex Hausdorff half-step error subtracted",
+        "rawSeparation": 290,
+        "maximumVertexRadius": 540.8326913195984,
+        "halfStepBound": 0.4247690024677117,
+        "minimumSeparation": 289.5752309975323,
+        "governor": "bearingpad"
+      },
+      {
+        "phase": "west1200 to table",
+        "method": "Exact convex swept axis-aligned prism including both endpoints, all intermediate translations and composite parts",
+        "minimumSeparation": 35,
+        "governor": "secured wing bearer final",
+        "contact": null
+      },
+      {
+        "phase": "lower110 onto wing bearers",
+        "method": "Exact convex swept axis-aligned prism including both endpoints, all intermediate translations and composite parts",
+        "minimumSeparation": 0,
+        "governor": "secured wing bearer final",
+        "contact": "Intentional final return-to-bearer support contact; no solid volume intersects."
+      }
+    ]
   },
   "occurrenceSet": {
-    "status": "One selected reference direction; current composed HAD source remains failed/unadopted and physical/material admission separate",
+    "status": "Pinned spatial candidate with explicit IAS/service rewinds; house unadopted and physical/material admission separate",
     "families": {
       "wall": "Complete27 dry mineral/30 wet local field, owner MAT; no arbitrary thinning.",
       "dryFloor": "22board+45grounds+13level=80 above fixed RC; ground100glass remains separate.",
@@ -3722,7 +5843,7 @@
     "localDeviations": {
       "familyWet": {
         "id": "IAS-FAM-27-01",
-        "status": "Authored joined27dry/30wet trial; awaiting incorporation in HAD geometry, not adopted",
+        "status": "Pinned HAD068e joined27dry/30wet spatial trial; no house adoption or classified-kit admission",
         "room": [
           9397,
           3800,
@@ -3895,15 +6016,8 @@
       },
       "kitchenNorthStations": "Sink12S and cooker50W/12S to service-owned footprints; compact455-high oven over350plinth, no freestanding chassis or full-height oven transfer; table/chairs remain exact HAD ordinary state outside maintenance.",
       "rearWardrobeMaintenance": {
-        "ordinary": [
-          3042,
-          9800,
-          1500,
-          660
-        ],
-        "firstRelease": "Empty and independently support; release actual anti-tip restraints before moving; no fixed head anchor or still-loaded furniture credited.",
         "translation": {
-          "id": "empty unanchored wardrobe",
+          "id": "empty wardrobe direct NORTH395 after EAST438",
           "start": [
             3042,
             9800,
@@ -3921,7 +6035,7 @@
             ],
             [
               3480,
-              10320
+              10195
             ]
           ],
           "minimumSeparation": 24.5,
@@ -3931,39 +6045,40 @@
         "turn": {
           "centre": [
             4230,
-            10650
+            10525
           ],
           "radius": 819.3900170248598,
-          "minimumReserve": 83.10998297514016
+          "minimumReserve": 29.654445886241206
         },
         "park": [
           3030,
-          9900,
+          9775,
           660,
           1500
         ],
         "parkMove": {
-          "id": "rotated wardrobe",
+          "id": "rotated wardrobe from corrected circle",
           "start": [
             3900,
-            9900,
+            9775,
             660,
             1500
           ],
           "path": [
             [
               3900,
-              9900
+              9775
             ],
             [
               3030,
-              9900
+              9775
             ]
           ],
           "minimumSeparation": 12.5,
           "governor": "rear-wet-east+18trim",
           "scope": "Actual piece plan envelope; support/mass/handling clearance are separate, not a bodyR300 certificate."
-        }
+        },
+        "firstRelease": "Empty and independently support; release actual anti-tip restraints before moving; no fixed head anchor or still-loaded furniture credited."
       },
       "principalWardrobeApproach": {
         "points": [
@@ -4002,27 +6117,31 @@
       "floor": "Clear furniture and expose real fixings; sacrificial first board is accepted. Fixed RC and qualified boundaries remain.",
       "door": "Support leaf before compatible hinge/retention release; preserve frame/support and restore the complete required seals/accessories.",
       "cabinet": "Remove only supported local shelf/face; fixture and fixed-service support stay independent. Empty/release actual anti-tip anchors for whole-furniture maintenance.",
-      "kitchen": [
-        "Park chairs, keep table in ordinary9100 state. Isolate/drain, expose front unions, independently support retained pipes, separate/cap actual joints within agreed service zone.",
-        "Engage four positively retained swivel/locking roller dollies below leg-side brackets; whole rig<=140high stays below low pipe/support150minimum. Module including proud unions is900×670.",
-        "Access four M8 nuts with22diameter×80 tool, keep sealed slab studs/floor boundary fixed; frame legs remain supported.",
-        "Lift20 to clear15-high studs by5;1000 maximum moving assembly becomes1020, leaving30 below1050 sill.",
-        "Withdraw20up, then W600, then S600 before aisle transport; move EN chair east and table100S first, then table650N after head clears. Restore anchors/services and test before use."
-      ],
+      "kitchen": {
+        "currentRecord": "headFirst",
+        "status": "IN-PROGRESS head-first architectural direction; continuous moving composite/operator phases passed, but connected support/first-release/storage/return review remains internal. Conditional supplied frame, zero-capture union, grip, table and handling compatibility. Whole-frame method retained only as rejected/incomplete control.",
+        "sequence": [
+          "Move empty table100S toY9000 while chairs remain ordinary.",
+          "Isolate/drain/support retained services; zero-capture A/B spool release to secured EN seat tray.",
+          "Head remains on four pads/rear locators; remove four front M6 then supported front rail, store vertically-carried rail in actual pantry footprint BEFORE ENchair parks.",
+          "Move chairs with secured spool tray, prestage secured bearers on empty table before two handlers enter.",
+          "Fit/test complete wing grips and take load, follow checked head phases; helper pushes table/bearers650N then retreats100S before WEST transfer.",
+          "Seat on bearers or reverse under qualified controls; actual mechanical support/load-transfer/recovery/return still needs independent complete-event review."
+        ]
+      },
       "principalWet": "Merged MAT split upper/lower renewal and service-owned interface remain owning evidence; no automatic transfer to rear1000 or family bath.",
-      "rearWet": [
-        "Rear1000 supports/drain first release and wet-floor annulus are NOT the principal900 mechanism. Exact service-owned rear interface is required.",
-        "Module250 thickness, mass, supports, edge stability and safe carrying are compatibility targets, not actual supplied product admission."
-      ],
+      "rearWet": "Current selected geometric repair:rearEmitterRepair /selected-rear-emitter-repair.svg. OldrearRenewal/selected-wet sheet remain dated controls. Actualdrain/support/completeexport holds retained.",
       "familyBath": "Specific stand-on-end route and current drain/support/boundary requirements; exact guards/stair carrying duty remains open"
     },
     "remainingDevelopment": [
-      "Immutable services kitchen/family/rear interface import",
-      "HAD authoritative north-station12S/base/fixture composition and remaining furniture collisions",
+      "Final common-source and complete first-release/support/reinstatement reconciliation",
+      "Final authoritative HAD composition, including guard/overhead and all emitter rewinds",
       "Specific rear shower/family bath supported first drain release and exact guarded stair carry",
       "Whole selected occurrence reconciliation against final MAT functional constituent/exception ledger"
     ],
-    "nodeComplete": false
+    "nodeComplete": false,
+    "currentRearMaintenance": "rearEmitterRepair",
+    "currentKitchen": "headFirst (IN-PROGRESS connected support/release/return review)"
   },
   "consumedInterfaces": {
     "familyWetRoom": {
