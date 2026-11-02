@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-INTERIORS",
   "generation": 13,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3a3b9c38-e90b-40b2-af8f-ec76d7b01a3b",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-02T02:27:15.274Z",
-  "expiresAt": "2026-11-02T03:12:15.274Z",
+  "heartbeatAt": "2026-11-02T02:48:18.000Z",
+  "expiresAt": "2026-11-02T02:48:18.000Z",
   "branch": "work/zerg5-house-integration-20261102",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -40,5 +40,7 @@
     "next": "Existing MAT13 deliberately associated with shared branch/PR1244; await root exact-head CI/preflights/merge, then verified release.",
     "blocker": "Exact-head shared CI/preflights/merge pending; no source/head change or new claim. No selected-house material/product/physical/technical/export admission or owner exception."
   },
-  "pr": 1244
+  "pr": 1244,
+  "releasedAt": "2026-11-02T02:48:18.000Z",
+  "releaseReason": "completed"
 }
