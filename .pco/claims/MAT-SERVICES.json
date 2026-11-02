@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 12,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "63a01d02-5f51-4260-acc5-d5ef22bde250",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-recovery-services"
   },
   "claimedAt": "2026-11-02T07:17:11.072Z",
-  "heartbeatAt": "2026-11-02T07:51:01.506Z",
-  "expiresAt": "2026-11-02T08:36:01.506Z",
+  "heartbeatAt": "2026-11-02T07:58:37.398Z",
+  "expiresAt": "2026-11-02T07:58:37.398Z",
   "branch": "work/zerg-recovery-structure-services",
   "predecessor": {
     "leaseId": "6e052e0d-5d92-4016-bb83-28527465e125",
@@ -37,5 +37,7 @@
     "next": "Root observes exact-head CI and performs publication preflight/merge if independent review and gates pass; MAT-SERVICES broad system/acceptance remains open",
     "blocker": "Room-by-room supply/closed-door network, configured hood/control, net12kW/60-50 heat source and installed material/physical admission remain separately unearned"
   },
-  "pr": 1249
+  "pr": 1249,
+  "releasedAt": "2026-11-02T07:58:37.398Z",
+  "releaseReason": "handoff"
 }
