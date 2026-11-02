@@ -1,0 +1,567 @@
+{
+  "status": "Connected equivalent-area failure screen; no topology/fire, product, installed airflow, thermal or material admission.",
+  "source": {
+    "acceptedMain": "d3f254c09307b7d98e40ba9a14bd963dd97a6e90",
+    "baseAir": "project/mat/studies/whole-house-service-baseline.json",
+    "cookerSuccessor": "project/mat/studies/cooker-capture-modes.json",
+    "HAD": "project/had/studies/open-north-loggia.json"
+  },
+  "nodes": [
+    "study",
+    "living",
+    "westGallery",
+    "bed2",
+    "bed3",
+    "bed4",
+    "principal",
+    "upperRing",
+    "hall",
+    "kitchen",
+    "guestWC",
+    "utility",
+    "rearBath",
+    "familyBath",
+    "principalBath"
+  ],
+  "edges": [
+    {
+      "from": "study",
+      "to": "hall",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "study E20 door"
+    },
+    {
+      "from": "living",
+      "to": "westGallery",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "living door"
+    },
+    {
+      "from": "westGallery",
+      "to": "hall",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "FD-WEST-CROSS"
+    },
+    {
+      "from": "bed2",
+      "to": "upperRing",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "BED2 door"
+    },
+    {
+      "from": "bed3",
+      "to": "upperRing",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "BED3 door"
+    },
+    {
+      "from": "bed4",
+      "to": "upperRing",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "BED4 door"
+    },
+    {
+      "from": "principal",
+      "to": "upperRing",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "PRINCIPAL door"
+    },
+    {
+      "from": "upperRing",
+      "to": "rearBath",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "rear bath door"
+    },
+    {
+      "from": "upperRing",
+      "to": "familyBath",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "family bath door"
+    },
+    {
+      "from": "upperRing",
+      "to": "principalBath",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "principal bath door"
+    },
+    {
+      "from": "upperRing",
+      "to": "hall",
+      "finishedEquivalentAreaMM2": 90000,
+      "sourceRole": "open protected stair/galleries control"
+    },
+    {
+      "from": "hall",
+      "to": "guestWC",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "guest WC door"
+    },
+    {
+      "from": "hall",
+      "to": "utility",
+      "finishedEquivalentAreaMM2": 90000,
+      "sourceRole": "plant door + utility open arch optimistic control"
+    },
+    {
+      "from": "hall",
+      "to": "kitchen",
+      "finishedEquivalentAreaMM2": 7600,
+      "sourceRole": "FD-EAST-CROSS"
+    }
+  ],
+  "roomInletsMM2": {
+    "study": 15000,
+    "living": 15000,
+    "bed2": 15000,
+    "bed3": 15000,
+    "bed4": 15000,
+    "principal": 15000
+  },
+  "localMode": "Six Titon local fans each13 normal or authored16 boost. Mask bits order guestWC,utility,kitchen,rearBath,familyBath,principalBath",
+  "normalHoodOff": {
+    "mask": 0,
+    "localExtractLps": {
+      "guestWC": 13,
+      "utility": 13,
+      "kitchen": 13,
+      "rearBath": 13,
+      "familyBath": 13,
+      "principalBath": 13
+    },
+    "nodePa": {
+      "study": -1.327051561038795,
+      "living": -0.739004843625575,
+      "westGallery": -3.6177460107962864,
+      "bed2": -1.3176101275859025,
+      "bed3": -1.3176101275859025,
+      "bed4": -1.3176101275859025,
+      "principal": -1.3176101275859025,
+      "upperRing": -6.450267307413428,
+      "hall": -6.496487177966663,
+      "kitchen": -11.214412913534554,
+      "guestWC": -11.214412913534554,
+      "utility": -6.530130065585899,
+      "rearBath": -11.168193042981619,
+      "familyBath": -11.168193042981619,
+      "principalBath": -11.168193042981619
+    },
+    "roomSupplyLps": {
+      "study": 13.607845428224516,
+      "living": 10.154747085348983,
+      "bed2": 13.559351871605733,
+      "bed3": 13.559351871605733,
+      "bed4": 13.559351871605733,
+      "principal": 13.559351871605733
+    },
+    "totalHabitableInletLps": 77.99999999999643,
+    "hallToKitchenLps": 12.999999999999357,
+    "maxMassResidualLps": 1.8381131283717878e-08,
+    "iterations": 150
+  },
+  "allBoostHoodOff": {
+    "mask": 63,
+    "localExtractLps": {
+      "guestWC": 16,
+      "utility": 16,
+      "kitchen": 16,
+      "rearBath": 16,
+      "familyBath": 16,
+      "principalBath": 16
+    },
+    "nodePa": {
+      "study": -2.0102082818174543,
+      "living": -1.1194392897563874,
+      "westGallery": -5.480135969035945,
+      "bed2": -1.9959064654526875,
+      "bed3": -1.9959064654526875,
+      "bed4": -1.9959064654526875,
+      "principal": -1.9959064654526875,
+      "upperRing": -9.770819116540894,
+      "hall": -9.8408326483155,
+      "kitchen": -16.987513052490055,
+      "guestWC": -16.987513052490055,
+      "utility": -9.891794655740732,
+      "rearBath": -16.91749952071545,
+      "familyBath": -16.91749952071545,
+      "principalBath": -16.91749952071545
+    },
+    "roomSupplyLps": {
+      "study": 16.74811745015251,
+      "living": 12.498150258913595,
+      "bed2": 16.688433072733474,
+      "bed3": 16.688433072733474,
+      "bed4": 16.688433072733474,
+      "principal": 16.688433072733474
+    },
+    "totalHabitableInletLps": 96.0,
+    "hallToKitchenLps": 16.0,
+    "maxMassResidualLps": 1.4377832258105627e-11,
+    "iterations": 150
+  },
+  "hoodOnAtKitchenMinus4_5Pa": [
+    {
+      "mask": 0,
+      "localExtractLps": {
+        "guestWC": 13,
+        "utility": 13,
+        "kitchen": 13,
+        "rearBath": 13,
+        "familyBath": 13,
+        "principalBath": 13
+      },
+      "nodePa": {
+        "study": -0.919215984857058,
+        "living": -0.5118904834395699,
+        "westGallery": -2.5059237032691306,
+        "bed2": -0.9176212380121451,
+        "bed3": -0.9176212380121451,
+        "bed4": -0.9176212380121451,
+        "principal": -0.9176212380121451,
+        "upperRing": -4.492149952665436,
+        "hall": -4.499956923153981,
+        "kitchen": -4.5,
+        "guestWC": -9.21788265872231,
+        "utility": -4.533599810868328,
+        "rearBath": -9.210075688233765,
+        "familyBath": -9.210075688233765,
+        "principalBath": -9.210075688233765
+      },
+      "roomSupplyLps": {
+        "study": 11.32541833607005,
+        "living": 8.451503909538761,
+        "bed2": 11.315589843181826,
+        "bed3": 11.315589843181826,
+        "bed4": 11.315589843181826,
+        "principal": 11.315589843181826
+      },
+      "totalHabitableInletLps": 65.03928161833612,
+      "hallToKitchenLps": 0.03928165264595607,
+      "maxMassResidualLps": 2.257143716377641e-08,
+      "iterations": 99,
+      "cookerModes": {
+        "publishedLow": {
+          "hoodLps": 34.72222222222222,
+          "requiredDirectMakeupLps": 47.68294056957627,
+          "totalExteriorLps": 112.72222218791238
+        },
+        "publishedBEP": {
+          "hoodLps": 44.44444444444444,
+          "requiredDirectMakeupLps": 57.40516279179849,
+          "totalExteriorLps": 122.44444441013461
+        },
+        "publishedHigh": {
+          "hoodLps": 62.22222222222222,
+          "requiredDirectMakeupLps": 75.18294056957627,
+          "totalExteriorLps": 140.22222218791237
+        },
+        "upperSensitivity": {
+          "hoodLps": 70,
+          "requiredDirectMakeupLps": 82.96071834735405,
+          "totalExteriorLps": 147.99999996569017
+        }
+      }
+    },
+    {
+      "mask": 4,
+      "localExtractLps": {
+        "guestWC": 13,
+        "utility": 13,
+        "kitchen": 16,
+        "rearBath": 13,
+        "familyBath": 13,
+        "principalBath": 13
+      },
+      "nodePa": {
+        "study": -0.919215984857058,
+        "living": -0.5118904834395699,
+        "westGallery": -2.5059237032691306,
+        "bed2": -0.9176212380121451,
+        "bed3": -0.9176212380121451,
+        "bed4": -0.9176212380121451,
+        "principal": -0.9176212380121451,
+        "upperRing": -4.492149952665436,
+        "hall": -4.499956923153981,
+        "kitchen": -4.5,
+        "guestWC": -9.21788265872231,
+        "utility": -4.533599810868328,
+        "rearBath": -9.210075688233765,
+        "familyBath": -9.210075688233765,
+        "principalBath": -9.210075688233765
+      },
+      "roomSupplyLps": {
+        "study": 11.32541833607005,
+        "living": 8.451503909538761,
+        "bed2": 11.315589843181826,
+        "bed3": 11.315589843181826,
+        "bed4": 11.315589843181826,
+        "principal": 11.315589843181826
+      },
+      "totalHabitableInletLps": 65.03928161833612,
+      "hallToKitchenLps": 0.03928165264595607,
+      "maxMassResidualLps": 2.257143716377641e-08,
+      "iterations": 99,
+      "cookerModes": {
+        "publishedLow": {
+          "hoodLps": 34.72222222222222,
+          "requiredDirectMakeupLps": 50.68294056957627,
+          "totalExteriorLps": 115.72222218791238
+        },
+        "publishedBEP": {
+          "hoodLps": 44.44444444444444,
+          "requiredDirectMakeupLps": 60.40516279179849,
+          "totalExteriorLps": 125.44444441013461
+        },
+        "publishedHigh": {
+          "hoodLps": 62.22222222222222,
+          "requiredDirectMakeupLps": 78.18294056957627,
+          "totalExteriorLps": 143.22222218791237
+        },
+        "upperSensitivity": {
+          "hoodLps": 70,
+          "requiredDirectMakeupLps": 85.96071834735405,
+          "totalExteriorLps": 150.99999996569017
+        }
+      }
+    },
+    {
+      "mask": 63,
+      "localExtractLps": {
+        "guestWC": 16,
+        "utility": 16,
+        "kitchen": 16,
+        "rearBath": 16,
+        "familyBath": 16,
+        "principalBath": 16
+      },
+      "nodePa": {
+        "study": -1.1690066386232987,
+        "living": -0.6509932195074914,
+        "westGallery": -3.186891321813337,
+        "bed2": -1.1686211307912067,
+        "bed3": -1.1686211307912067,
+        "bed4": -1.1686211307912067,
+        "principal": -1.1686211307912067,
+        "upperRing": -5.720902197758337,
+        "hall": -5.722789424119181,
+        "kitchen": -4.5,
+        "guestWC": -12.869469828293735,
+        "utility": -5.773751431544462,
+        "rearBath": -12.867582601932892,
+        "familyBath": -12.867582601932892,
+        "principalBath": -12.867582601932892
+      },
+      "roomSupplyLps": {
+        "study": 12.77185436171657,
+        "living": 9.5308953601971,
+        "bed2": 12.769748276210382,
+        "bed3": 12.769748276210382,
+        "bed4": 12.769748276210382,
+        "principal": 12.769748276210382
+      },
+      "totalHabitableInletLps": 73.3817428267552,
+      "hallToKitchenLps": -6.618257173244808,
+      "maxMassResidualLps": 2.020694722659755e-11,
+      "iterations": 150,
+      "cookerModes": {
+        "publishedLow": {
+          "hoodLps": 34.72222222222222,
+          "requiredDirectMakeupLps": 57.34047939546703,
+          "totalExteriorLps": 130.72222222222223
+        },
+        "publishedBEP": {
+          "hoodLps": 44.44444444444444,
+          "requiredDirectMakeupLps": 67.06270161768926,
+          "totalExteriorLps": 140.44444444444446
+        },
+        "publishedHigh": {
+          "hoodLps": 62.22222222222222,
+          "requiredDirectMakeupLps": 84.84047939546704,
+          "totalExteriorLps": 158.22222222222223
+        },
+        "upperSensitivity": {
+          "hoodLps": 70,
+          "requiredDirectMakeupLps": 92.61825717324481,
+          "totalExteriorLps": 166.00000000000003
+        }
+      }
+    }
+  ],
+  "fullOpenAtMinus4_5PaLps": {
+    "300": 74.03010683533405,
+    "350": 100.82641659321357,
+    "400": 131.75367375360463
+  },
+  "portControls": [
+    {
+      "clearBoreMM": 300,
+      "centreY": 8700,
+      "formedTerritoryMM": 450,
+      "completeInsulatedJacketODMM": 402,
+      "faceMM": 500,
+      "rearJunctionFaceReserveMM": 25.5,
+      "cleanFullOpenAtMinus4_5PaLps": 74.03010683533405,
+      "archRingChecks": [
+        {
+          "id": "east-window-0",
+          "completeArchRingHorizontalReserveMM": 5960.0
+        },
+        {
+          "id": "plant-replacement",
+          "completeArchRingHorizontalReserveMM": 2960.0
+        },
+        {
+          "id": "east-window-2",
+          "completeArchRingHorizontalReserveMM": 360.0
+        },
+        {
+          "id": "east-window-3",
+          "completeArchRingHorizontalReserveMM": 560.0
+        }
+      ],
+      "condition": "Along-wall screen only; complete terminal, damper cartridge, platform, structural/rebar/weather/acoustic/thermal/fire and first release remain unjoined."
+    },
+    {
+      "clearBoreMM": 350,
+      "centreY": 8725,
+      "formedTerritoryMM": 500,
+      "completeInsulatedJacketODMM": 452,
+      "faceMM": 550,
+      "rearJunctionFaceReserveMM": 25.5,
+      "cleanFullOpenAtMinus4_5PaLps": 100.82641659321357,
+      "archRingChecks": [
+        {
+          "id": "east-window-0",
+          "completeArchRingHorizontalReserveMM": 5960.0
+        },
+        {
+          "id": "plant-replacement",
+          "completeArchRingHorizontalReserveMM": 2960.0
+        },
+        {
+          "id": "east-window-2",
+          "completeArchRingHorizontalReserveMM": 360.0
+        },
+        {
+          "id": "east-window-3",
+          "completeArchRingHorizontalReserveMM": 510.0
+        }
+      ],
+      "condition": "Along-wall screen only; complete terminal, damper cartridge, platform, structural/rebar/weather/acoustic/thermal/fire and first release remain unjoined."
+    },
+    {
+      "clearBoreMM": 400,
+      "centreY": 8750,
+      "formedTerritoryMM": 550,
+      "completeInsulatedJacketODMM": 502,
+      "faceMM": 600,
+      "rearJunctionFaceReserveMM": 25.5,
+      "cleanFullOpenAtMinus4_5PaLps": 131.75367375360463,
+      "archRingChecks": [
+        {
+          "id": "east-window-0",
+          "completeArchRingHorizontalReserveMM": 5960.0
+        },
+        {
+          "id": "plant-replacement",
+          "completeArchRingHorizontalReserveMM": 2960.0
+        },
+        {
+          "id": "east-window-2",
+          "completeArchRingHorizontalReserveMM": 360.0
+        },
+        {
+          "id": "east-window-3",
+          "completeArchRingHorizontalReserveMM": 460.0
+        }
+      ],
+      "condition": "Along-wall screen only; complete terminal, damper cartridge, platform, structural/rebar/weather/acoustic/thermal/fire and first release remain unjoined."
+    }
+  ],
+  "worstCase": {
+    "mask": 63,
+    "localExtractLps": {
+      "guestWC": 16,
+      "utility": 16,
+      "kitchen": 16,
+      "rearBath": 16,
+      "familyBath": 16,
+      "principalBath": 16
+    },
+    "nodePa": {
+      "study": -1.1690066386232987,
+      "living": -0.6509932195074914,
+      "westGallery": -3.186891321813337,
+      "bed2": -1.1686211307912067,
+      "bed3": -1.1686211307912067,
+      "bed4": -1.1686211307912067,
+      "principal": -1.1686211307912067,
+      "upperRing": -5.720902197758337,
+      "hall": -5.722789424119181,
+      "kitchen": -4.5,
+      "guestWC": -12.869469828293735,
+      "utility": -5.773751431544462,
+      "rearBath": -12.867582601932892,
+      "familyBath": -12.867582601932892,
+      "principalBath": -12.867582601932892
+    },
+    "roomSupplyLps": {
+      "study": 12.77185436171657,
+      "living": 9.5308953601971,
+      "bed2": 12.769748276210382,
+      "bed3": 12.769748276210382,
+      "bed4": 12.769748276210382,
+      "principal": 12.769748276210382
+    },
+    "totalHabitableInletLps": 73.3817428267552,
+    "hallToKitchenLps": -6.618257173244808,
+    "maxMassResidualLps": 2.020694722659755e-11,
+    "iterations": 150,
+    "cookerModes": {
+      "publishedLow": {
+        "hoodLps": 34.72222222222222,
+        "requiredDirectMakeupLps": 57.34047939546703,
+        "totalExteriorLps": 130.72222222222223
+      },
+      "publishedBEP": {
+        "hoodLps": 44.44444444444444,
+        "requiredDirectMakeupLps": 67.06270161768926,
+        "totalExteriorLps": 140.44444444444446
+      },
+      "publishedHigh": {
+        "hoodLps": 62.22222222222222,
+        "requiredDirectMakeupLps": 84.84047939546704,
+        "totalExteriorLps": 158.22222222222223
+      },
+      "upperSensitivity": {
+        "hoodLps": 70,
+        "requiredDirectMakeupLps": 92.61825717324481,
+        "totalExteriorLps": 166.00000000000003
+      }
+    }
+  },
+  "heat": {
+    "existingKitchenBudgetW": 950,
+    "existingEmitter60_50W": 1790.30410975189,
+    "H700L900Delta50W": 2441,
+    "H700L900At60_50W": 1524.3938649031545,
+    "combinedAt60_50W": 3314.6979746550446,
+    "H700CompletePlan": [
+      9675,
+      11370.5,
+      1050,
+      200
+    ],
+    "bottomZ": 100,
+    "topZ": 800,
+    "cillUndersideMinimumFor50LiftPlus50Reserve": 900,
+    "dryMassKg": 54.693000000000005,
+    "filledMassKg": 64.926,
+    "renewal": "Complete body sweeps200south and50up without another HAD furniture overlap. R300 floor handler at10200/10800 has≥25 gap to every actual furniture box. Actual cill underside, valves, wall fixings, stable handling and IAS export still qualify.",
+    "normalLocalAt70KitchenScreenW": 3438.8215504206214,
+    "allBoostAt70KitchenScreenW": 3728.5477151973446,
+    "allBoostWholeHouseAt25KW": 10480.0,
+    "net12kWArithmeticMarginAllBoostW": 1520.0,
+    "condition": "Inherited950W is an allocation, not measured room loss. Actual room heat balance, 60/50 emitter circuit and net12kW delivery require a new connected contract."
+  },
+  "limits": "The ring/stair and utility-arch 90000 controls are generous. 7600 closed/fire door paths and individual15k EA terminals are source requirements, not certified product curves. Componentwise normal/all-boost exhaust endpoints bound intermediate boost modes in this monotone passive network; actual fan curves and control modes still need matching. 13L/s equal room share is preference, not statutory per-room minimum. Fan pressure/capture, acoustic/fire and material approvals require whole installed proof. No additional infiltration or cooking heat credited."
+}
