@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 10,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "0ad30805-f485-47f6-8a0a-950afc272d5a",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg5-services-continuation"
   },
   "claimedAt": "2026-11-02T01:25:13.373Z",
-  "heartbeatAt": "2026-11-02T01:25:13.373Z",
-  "expiresAt": "2026-11-02T02:10:13.373Z",
+  "heartbeatAt": "2026-11-02T01:26:12.351Z",
+  "expiresAt": "2026-11-02T01:26:12.351Z",
   "checkpoint": {
     "evidence": "PR1234 merged main0bba22cc/tree1df93a83; gen9 released exact CAS/readback; timed-out initial claim left runtime released9 unchanged.",
     "next": "Close bounded final handling/source join and stale65L narrative against authoritative HAD; preserve reviewed baseline limits.",
@@ -38,5 +38,7 @@
       "next": "Await root exact-head CI and verified merge; preserve frozen source and bounded continuation holds.",
       "blocker": "No source blocker in reviewed five-fix delta; root is sole CI observer. Whole-house physical/product/material admission remains unearned."
     }
-  }
+  },
+  "releasedAt": "2026-11-02T01:26:12.351Z",
+  "releaseReason": "handoff"
 }
