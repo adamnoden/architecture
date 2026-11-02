@@ -1,6 +1,6 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPLT9LennardNoCostClosure } from './dplT9Lennard.js'
 
 export const DPL_T10_SCHEMA_VERSION = 'DPL-T10-LENNARD-NO-COST-EXECUTION-1' as const
@@ -104,7 +104,7 @@ const readEvidence = (): { record: T10EvidenceRecord; fingerprint: string } => {
   if (record.planningContext.historicalApplication !== '23/00297/FULL6' || record.planningContext.historicalDecisionDate !== '2024-03-21') {
     throw new Error('DPL-T10 planning-history identity drifted.')
   }
-  return { record, fingerprint: sha256DplSemanticFingerprint(record) }
+  return { record, fingerprint: sha256SemanticFingerprint(record) }
 }
 
 const assertPlanningExecution = (): void => {
@@ -135,8 +135,8 @@ export const composeDPLT10LennardNoCostExecution = (): DPLT10Result => {
     'EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY',
     'MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY',
     'PLANNING_DESIGN_CONTEXT_REVIEW'
-  ].sort((a, b) => compareDplIdentityStrings(a, b))
-  if (JSON.stringify([...t9.decisionDependencies].sort((a, b) => compareDplIdentityStrings(a, b))) !== JSON.stringify(expected)) {
+  ].sort((a, b) => a.localeCompare(b))
+  if (JSON.stringify([...t9.decisionDependencies].sort((a, b) => a.localeCompare(b))) !== JSON.stringify(expected)) {
     throw new Error('DPL-T10 parent dependency universe drifted.')
   }
 
@@ -179,8 +179,8 @@ export const composeDPLT10LennardNoCostExecution = (): DPLT10Result => {
     }
   ]
 
-  const records = rawRecords.map((record) => ({ ...record, fingerprint: sha256DplSemanticFingerprint(record) }))
-    .sort((a, b) => compareDplIdentityStrings(a.dependencyClass, b.dependencyClass))
+  const records = rawRecords.map((record) => ({ ...record, fingerprint: sha256SemanticFingerprint(record) }))
+    .sort((a, b) => a.dependencyClass.localeCompare(b.dependencyClass))
 
   const foldedDependencies: T9Dependency[] = records
     .filter((record) => record.state === 'EXECUTED_CONCERN_FOLDED_INTO_EXISTING_DEPENDENCY')
@@ -188,13 +188,13 @@ export const composeDPLT10LennardNoCostExecution = (): DPLT10Result => {
   const activeDependencyClasses = records
     .filter((record) => record.state !== 'EXECUTED_CONCERN_FOLDED_INTO_EXISTING_DEPENDENCY')
     .map((record) => record.dependencyClass)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
   if (activeDependencyClasses.length !== 3) throw new Error('DPL-T10 expected three active dependencies after no-cost execution.')
 
   const externalEvidenceEligibleForCommissioning = records
     .filter((record) => record.commissioningEligible)
     .map((record) => record.dependencyClass)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
   const noCostPublicRecoveryPending = records
     .filter((record) => record.state === 'NO_COST_PUBLIC_RECOVERY_BLOCKED')
     .map((record) => record.dependencyClass)
@@ -229,5 +229,5 @@ export const composeDPLT10LennardNoCostExecution = (): DPLT10Result => {
     proofBoundary
   }
 
-  return { ...resultPayload, resultFingerprint: sha256DplSemanticFingerprint(resultPayload) }
+  return { ...resultPayload, resultFingerprint: sha256SemanticFingerprint(resultPayload) }
 }

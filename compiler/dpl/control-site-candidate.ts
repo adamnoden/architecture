@@ -1,6 +1,6 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPLR1ControlReadiness } from './control-site-readiness.js'
 
 export const DPLR2_SCHEMA_VERSION = 'dpl.realControlCandidateAuthoring.v1' as const
@@ -88,7 +88,7 @@ const sortedUniqueStrings = (value: unknown, label: string): string[] => {
   if (!Array.isArray(value) || value.length === 0) throw new Error(`${label} must be a non-empty array.`)
   const strings = value.map((entry, index) => asString(entry, `${label}[${index}]`))
   if (new Set(strings).size !== strings.length) throw new Error(`${label} must not contain duplicates.`)
-  return [...strings].sort((a, b) => compareDplIdentityStrings(a, b))
+  return [...strings].sort((a, b) => a.localeCompare(b))
 }
 
 const canonicalAttempt = (value: unknown, index: number): RecoveryAttempt => {
@@ -131,7 +131,7 @@ export const validateDPLR2Result = (value: unknown): DPLR2ValidatedResult => {
     throw new Error(`Unsupported geometryRecovery.state ${recoveryState}.`)
   }
   if (!Array.isArray(recovery.attempts) || recovery.attempts.length === 0) throw new Error('geometryRecovery.attempts must not be empty.')
-  const attempts = recovery.attempts.map(canonicalAttempt).sort((a, b) => compareDplIdentityStrings(a.id, b.id))
+  const attempts = recovery.attempts.map(canonicalAttempt).sort((a, b) => a.id.localeCompare(b.id))
   if (new Set(attempts.map((attempt) => attempt.id)).size !== attempts.length) throw new Error('geometryRecovery attempt ids must be unique.')
   exact(recovery.screeningReadinessImplication, 'NONE_DPL_R1_REMAINS_VALID', 'geometryRecovery.screeningReadinessImplication')
   const candidateAuthoringImplication = asString(recovery.candidateAuthoringImplication, 'geometryRecovery.candidateAuthoringImplication')
@@ -223,7 +223,7 @@ export const validateDPLR2Result = (value: unknown): DPLR2ValidatedResult => {
     }
   }
 
-  const resultFingerprint = sha256DplSemanticFingerprint({
+  const resultFingerprint = sha256SemanticFingerprint({
     parentReadinessFingerprint: readiness.resultFingerprint,
     result: canonical
   })
