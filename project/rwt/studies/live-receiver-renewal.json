@@ -275,28 +275,39 @@
         4350,
         4780,
         3300,
-        700
+        1370
       ],
       "pads": [
         [
           4500,
-          4780
+          5900
+        ],
+        [
+          6000,
+          5900
         ],
         [
           7500,
-          4780
-        ],
-        [
-          4500,
-          5480
-        ],
-        [
-          7500,
-          5480
+          5900
         ]
       ],
       "padSquare": 400,
-      "authority": "NEW scaffold/guard envelope; complete bracing, access, rescue, ground bearing and supplier design remain unadmitted."
+      "pipeHoles": [
+        [
+          4400,
+          4600,
+          5200,
+          5400
+        ],
+        [
+          7400,
+          7600,
+          5200,
+          5400
+        ]
+      ],
+      "outerGuardY": 6150,
+      "authority": "Trial outboard-only ground posts with inner edge suspended above door: deck framing, bracing, access, rescue and ground bearing remain unadmitted."
     }
   },
   "world": {
@@ -345,6 +356,8 @@
     "returnToAFront": 18.5,
     "tailToReturn": 16.800000000000182,
     "pipeToWithdrawal": 125,
+    "outerDeckStrip": 726,
+    "padBeyondDoor": 600,
     "endCatchBeyondWeather": 125,
     "returnOverlapAtDrainStop": 30,
     "afterStopDripSeparation": 120
@@ -365,10 +378,13 @@
     "returnStillInAAtDrainStop": true,
     "noDripInBAtDrainStop": true,
     "completePadsOutsideInlet": true,
-    "windowRawHeadBelowCarrier": true
+    "windowRawHeadBelowCarrier": true,
+    "pipeHoleLeavesOuterStrip": true,
+    "groundPadsBeyondOpenDoor": true,
+    "groundPadsBeforeInlet": true
   },
   "negativeControls": {
-    "oldGutterInB": true,
+    "oldGutterCollidesWithBFrame": true,
     "drop150HasZeroNeighbourClearance": true,
     "highPlatform5800BlocksReturn": true,
     "wallLineAndPhysicalCatchmentsConserve": true,
@@ -402,13 +418,14 @@
       "width400": 30.338774406650543
     },
     "BWall": 80,
-    "returnWall": 20,
+    "returnWall": 50,
     "verdict": "50 mm return wall exceeds ideal 300 mm critical specific energy by 13.247 mm. Necessary head screen only: actual inlet/turn/roughness/splash/backwater/freeboard and full event test remain unproved."
   },
   "limits": [
     "Straight weather edge is not a physical corner/valley capture joint.",
     "B frame and scaffold are reserved complete envelopes, not qualified structural members.",
-    "Window raw head screen is not actual sash/guard operation.",
+    "Window raw head screen is not actual sash/guard operation. The inner deck edge is suspended; its beams, bracing and uplift anchors have not been designed.",
+    "Plan-view pipe holes and outboard pad clearance do not prove safe deck, transfer socket, access, egress or load paths.",
     "20 mm return rejected; 50 mm correction passes necessary head screen, not actual hydraulic capacity.",
     "Independent ground outlets, first weak join, receiving head, pad support and access remain with RWT/site owners."
   ]
