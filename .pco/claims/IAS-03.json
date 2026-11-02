@@ -9,11 +9,12 @@
     "label": "zerg-recovery-ias"
   },
   "claimedAt": "2026-11-02T07:17:00.962Z",
-  "heartbeatAt": "2026-11-02T07:17:00.962Z",
-  "expiresAt": "2026-11-02T08:02:00.962Z",
+  "heartbeatAt": "2026-11-02T07:40:17.061Z",
+  "expiresAt": "2026-11-02T08:25:17.061Z",
   "checkpoint": {
-    "evidence": "Current main96005b88 contains merged PR1244 sourcefaec3e04; predecessor generation15 released after merged recovery inspection.",
-    "next": "Develop finite connected kitchen return/support and guarded wet export/door-control requirements; preserve whole IAS acceptance limits."
+    "evidence": "Remote WIP3bebcea0a788987ca927601d0fad73f330a8a535 tree6f61f2827cbe4575cf3c5b18a229e8808c94c20f equals localda43aaea fulltree at main96005b88. Generator passes finite kitchen return and full-solid/body/grip bearer carrier candidate. Not PR-ready: joined event narrative/continuous bounds and current-main reconciliation in progress; no full handling acceptance.",
+    "next": "Reconcile staged table/ENchair/bearer support events, complete continuous bounds/render and owning record, integrate currentmain483a26c7; prepare bounded PR for root sole CI/merge.",
+    "blocker": "IAS remains incomplete: whole guarded wet export, source/occurrence join and actual apparatus/force/material acceptance unearned."
   },
   "branch": "work/zerg-recovery-ias",
   "predecessor": {
