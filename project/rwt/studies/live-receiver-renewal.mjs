@@ -26,10 +26,10 @@ const world=(p,q,z)=>[p,had.court[1]-q,z]
 const qPrimary=edge.geometry.edgeQ,qSecondary=edge.weather.secondary.outerDripQ
 const zPrimary=edge.geometry.edgeWeather,zSecondary=edge.weather.secondary.dripZ
 const A={authority:'NEW RWT geometry; replaces unadopted MAT gutter only at this development occurrence',p:[4350,7650],q:[-450,-100],bottom:6590,back:6740,front:6675,gauge:1.5,
- carrierDepth:30,carrierLength:600,moduleCount:7,drop:170,outward:400,extractionCentres:[4762.5,5587.5,6412.5,7237.5],
- support:'Co-moving carrier; front-operated release. Fixed restraint stays q>=-100. Actual member/connection/handling admission open.'}
+ carrierDepth:30,carrierLength:450,centreInvert:6605,outletsP:[4500,7500],longFall:.01,valleyQ:-250,crossFall:.01,permanentPipeQ:-250,moduleCount:7,drop:170,outward:400,extractionCentres:[4762.5,5587.5,6412.5,7237.5],
+ support:'Co-moving carrier with recessed flush attachment eyes, no projections beyond its 450 x 350 x 30 envelope; front-operated release. Fixed restraint stays q>=-100. Actual member/connection/handling admission open.'}
 A.moduleLength=(A.p[1]-A.p[0])/A.moduleCount
-A.modules=Array.from({length:A.moduleCount},(_,i)=>({p:[A.p[0]+i*A.moduleLength,A.p[0]+(i+1)*A.moduleLength],extractionCentre:A.extractionCentres[Math.min(3,Math.floor(i*4/7))]}))
+A.modules=Array.from({length:A.moduleCount},(_,i)=>{const start=A.p[0]+i*A.moduleLength,centre=start+A.moduleLength/2;return {p:[start,start+A.moduleLength],carrierP:[centre-A.carrierLength/2,centre+A.carrierLength/2],extractionCentre:A.extractionCentres[Math.min(3,Math.floor(i*4/7))]}})
 const B={authority:'NEW temporary full-edge formed tray, independent scaffold support; no roof-layer cuts',p:[4325,7675],q:[-500,-100],valleyQ:-230,centreInvert:6800,outletsP:[4500,7500],longFall:.01,crossFall:.05,gauge:1.5,wall:80,frameDepthReservation:20,
  branch:{clearWidth:300,tailQ:-1050,fall:.01,hopperTop:6600,pipeOuter:150},
  return:{clearWidth:300,inletQ:-1050,inletInvert:6710,outletQ:-180,outletInvert:6695,wall:50,gauge:1.5,drainStopOutward:240},
@@ -38,35 +38,45 @@ const bInvert=p=>B.centreInvert-Math.min(Math.abs(p-6000),1500)*B.longFall+Math.
 const bFloor=(p,q)=>bInvert(p)+Math.abs(q-B.valleyQ)*B.crossFall
 const Bmin=Math.min(...B.outletsP.map(bInvert)),BmaxLip=bFloor(6000,B.q[0])+B.wall
 const tailInvert=Bmin-Math.abs(B.branch.tailQ-B.valleyQ)*B.branch.fall
+const throatAtWall=Bmin-Math.abs(B.q[0]-B.valleyQ)*B.branch.fall
+const floorAtWall=bFloor(B.outletsP[0],B.q[0])
+const frameUnderside=Bmin-B.gauge-B.frameDepthReservation
 const guard={floor:5540,topCentre:6640,midCentre:6190,tubeDiameter:48,posts:[4350,5175,6000,6825,7650],platform:[4350,4780,3300,1370],
- pads:[[4500,5900],[6000,5900],[7500,5900]],padSquare:400,
+ pads:[[4500,5900],[6000,5900],[7500,5900]],padSquare:400,toeBoardHeight:150,innerBaseWidth:100,innerBaseDepth:20,
  pipeHoles:[[4400,4600,5200,5400],[7400,7600,5200,5400]],outerGuardY:6150,
  authority:'Trial outboard-only ground posts with inner edge suspended above door: deck framing, bracing, access, rescue and ground bearing remain unadmitted.'}
 const allowance=10,topFull=guard.topCentre+guard.tubeDiameter/2,topUnder=guard.topCentre-guard.tubeDiameter/2,midFull=guard.midCentre+guard.tubeDiameter/2
 const bodyLow=A.bottom-A.carrierDepth-A.drop,bodyHigh=A.back-A.drop
 const positiveOverlap=(a,b)=>Math.max(0,Math.min(a[1],b[1])-Math.max(a[0],b[0]))
 const checks={
+ AendInvertMatchesBottom:A.centreInvert-(6000-A.outletsP[0])*A.longFall===A.bottom,
+ AsecondaryInside: qSecondary>A.q[0]&&qSecondary<A.q[1],
  bothDripsInB: qPrimary>B.q[0]&&qPrimary<B.q[1]&&qSecondary>B.q[0]&&qSecondary<B.q[1],
  lowerDripAboveCompleteB:BmaxLip+allowance<zSecondary,
- BFrameAboveInstalledA:Bmin-B.gauge-B.frameDepthReservation-A.back>allowance,
+ BFrameAboveInstalledA:frameUnderside-A.back>allowance,
+ endThroatWithinFrameReservation:throatAtWall-B.gauge>frameUnderside+allowance,
+ deckAndToeBoardBelowTravel:guard.floor+guard.toeBoardHeight<bodyLow-allowance,
  wholePhysicalStraightEdgeCovered:B.p[0]<physicalEdge[0].x&&B.p[1]>physicalEdge[1].x,
  AUnderNeighbourAfterDrop:A.bottom-(A.back-A.drop)>allowance,
  carrierAboveMidrail:bodyLow-midFull>allowance,
  carrierBelowToprail:topUnder-bodyHigh>allowance,
- extractionBays:A.extractionCentres.every(p=>guard.posts.every(post=>Math.abs(p-post)>A.carrierLength/2+guard.tubeDiameter/2+allowance)),
+ extractionBays:A.extractionCentres.every(p=>guard.posts.every(post=>Math.abs(p-post)>Math.max(A.carrierLength,A.moduleLength)/2+guard.tubeDiameter/2+allowance)),
+ adjacentCarriersSeparated:A.modules.slice(1).every((m,i)=>m.carrierP[0]-A.modules[i].carrierP[1]>allowance),
  verticalPipesOutsideAWithdrawal:Math.abs(B.branch.tailQ)-B.branch.pipeOuter/2-Math.abs(A.q[0]-A.outward)>allowance,
  returnAboveAFront:B.return.outletInvert-B.return.gauge-A.front>allowance,
  returnAboveGuard:B.return.outletInvert-B.return.gauge-topFull>allowance,
  freefallTailToReturn:tailInvert-(B.return.inletInvert+B.return.wall)>allowance,
  returnStillInAAtDrainStop:B.return.outletQ-B.return.drainStopOutward>A.q[0]+allowance,
+ returnOverlapBeforeFirstDrip:(B.return.outletQ-A.q[0])>(B.q[1]-qSecondary),
  noDripInBAtDrainStop:B.q[1]-B.return.drainStopOutward<qSecondary-allowance,
  completePadsOutsideInlet:guard.pads.every(([x,y])=>x-guard.padSquare/2>had.court[0]&&x+guard.padSquare/2<had.court[0]+had.court[2]&&y+guard.padSquare/2<7000),
  windowRawHeadBelowCarrier:had.openings.FIRST.filter(o=>o.wall==='court-south').every(o=>had.sections.firstFFL+o.head<bodyLow),
+ permanentPipesOutsideDoor: A.outletsP.every(p=>p<had.southCourtWeatherDoor.rough[0]||p>had.southCourtWeatherDoor.rough[1]),
  pipeHoleLeavesOuterStrip:guard.outerGuardY-5400-guard.tubeDiameter/2>700,
  groundPadsBeyondOpenDoor:guard.pads.every(([,y])=>y-guard.padSquare/2>had.southCourtWeatherDoor.openLeafNorthTip),
  groundPadsBeforeInlet:guard.pads.every(([,y])=>y+guard.padSquare/2<7000)
 }
-const clearances={secondaryToB:zSecondary-BmaxLip,BFrameToA:Bmin-B.gauge-B.frameDepthReservation-A.back,AtoNeighbourAfterDrop:A.bottom-bodyHigh,
+const clearances={secondaryToB:zSecondary-BmaxLip,BFrameToA:Bmin-B.gauge-B.frameDepthReservation-A.back,AtoNeighbourAfterDrop:A.bottom-bodyHigh,adjacentCarrierGap:A.moduleLength-A.carrierLength,throatNotchDepth:floorAtWall-throatAtWall,throatUnderToFrameBottom:throatAtWall-B.gauge-frameUnderside,deckToeToCarrier:bodyLow-(guard.floor+guard.toeBoardHeight),
  carrierToMidrail:bodyLow-midFull,carrierToToprail:topUnder-bodyHigh,returnToGuard:B.return.outletInvert-B.return.gauge-topFull,
  returnToAFront:B.return.outletInvert-B.return.gauge-A.front,tailToReturn:tailInvert-(B.return.inletInvert+B.return.wall),
  pipeToWithdrawal:Math.abs(B.branch.tailQ)-B.branch.pipeOuter/2-Math.abs(A.q[0]-A.outward), outerDeckStrip:guard.outerGuardY-5400-guard.tubeDiameter/2, padBeyondDoor:Math.min(...guard.pads.map(([,y])=>y-guard.padSquare/2))-had.southCourtWeatherDoor.openLeafNorthTip, endCatchBeyondWeather:physicalEdge[0].x-B.p[0],
@@ -84,6 +94,7 @@ const negativeControls={oldGutterCollidesWithBFrame:A.back< Bmin&&inputs.rejecte
  wallLineAndPhysicalCatchmentsConserve:Math.abs(rate(physicalRoof+physicalCourt)-catchments.combinedLps)<1e-10,
  doubleCountOverhangRejected:rate(physicalRoof+wallCourt)>catchments.combinedLps,
  full400ReturnMoveLosesAOverlap:B.return.outletQ-400<A.q[0],
+ old700DeckObstructed:5480-5400-guard.tubeDiameter/2<700,
  narrowReturnHydraulicFailure:20<energy(B.return.clearWidth),
  correctedReturnNecessaryHead:B.return.wall>energy(B.return.clearWidth)}
 const result={status:'CONSTRUCTIVE LOCAL REVERSAL REFERENCE; nominal geometry and necessary head screen only; no selected receiver/site/product/operation admission',sourceBlobs,
@@ -91,7 +102,7 @@ const result={status:'CONSTRUCTIVE LOCAL REVERSAL REFERENCE; nominal geometry an
   sceneProjection:'Await coordinated HAD builder export; selected openings below are direct selected JSON, never inferred from upperWalls.',
   firstOpenings:had.openings.FIRST.filter(o=>o.wall==='court-south'),firstFFL:had.sections.firstFFL,groundDoor:had.southCourtWeatherDoor},
  profiles:{A,B,guard},world:{primary:world(6000,qPrimary,zPrimary),secondary:world(6000,qSecondary,zSecondary),A:[world(6000,A.q[0],A.bottom),world(6000,A.q[1],A.back)],B:[world(6000,B.q[0],bFloor(6000,B.q[0])),world(6000,B.q[1],bFloor(6000,B.q[1]))]},
- clearances,checks,negativeControls,catchments,hydraulicScreen,
+ clearances,checks,negativeControls,catchments,hydraulicScreen, movement:{firstReturnOverlapOutward:B.return.outletQ-A.q[0],firstSecondaryCaptureOutward:B.q[1]-qSecondary,firstPrimaryCaptureOutward:B.q[1]-qPrimary,drainStopOutward:B.return.drainStopOutward,scope:'Plan threshold for ideal vertical drips and nominal open edges only.'},
  limits:['Straight weather edge is not a physical corner/valley capture joint.','B frame and scaffold are reserved complete envelopes, not qualified structural members.','Window raw head screen is not actual sash/guard operation. The inner deck edge is suspended; its beams, bracing and uplift anchors have not been designed.', 'Plan-view pipe holes and outboard pad clearance do not prove safe deck, transfer socket, access, egress or load paths.','20 mm return rejected; 50 mm correction passes necessary head screen, not actual hydraulic capacity.','Independent ground outlets, first weak join, receiving head, pad support and access remain with RWT/site owners.']}
 if(!Object.values(checks).every(Boolean)||!Object.values(negativeControls).every(Boolean))throw Error(JSON.stringify({checks,negativeControls},null,2))
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;')

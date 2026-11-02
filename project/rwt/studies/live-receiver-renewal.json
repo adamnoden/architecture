@@ -155,7 +155,16 @@
       "front": 6675,
       "gauge": 1.5,
       "carrierDepth": 30,
-      "carrierLength": 600,
+      "carrierLength": 450,
+      "centreInvert": 6605,
+      "outletsP": [
+        4500,
+        7500
+      ],
+      "longFall": 0.01,
+      "valleyQ": -250,
+      "crossFall": 0.01,
+      "permanentPipeQ": -250,
       "moduleCount": 7,
       "drop": 170,
       "outward": 400,
@@ -165,13 +174,17 @@
         6412.5,
         7237.5
       ],
-      "support": "Co-moving carrier; front-operated release. Fixed restraint stays q>=-100. Actual member/connection/handling admission open.",
+      "support": "Co-moving carrier with recessed flush attachment eyes, no projections beyond its 450 x 350 x 30 envelope; front-operated release. Fixed restraint stays q>=-100. Actual member/connection/handling admission open.",
       "moduleLength": 471.42857142857144,
       "modules": [
         {
           "p": [
             4350,
             4821.428571428572
+          ],
+          "carrierP": [
+            4360.714285714285,
+            4810.714285714285
           ],
           "extractionCentre": 4762.5
         },
@@ -180,26 +193,42 @@
             4821.428571428572,
             5292.857142857143
           ],
+          "carrierP": [
+            4832.142857142857,
+            5282.142857142857
+          ],
           "extractionCentre": 4762.5
         },
         {
           "p": [
             5292.857142857143,
-            5764.285714285714
+            5764.285714285715
+          ],
+          "carrierP": [
+            5303.571428571428,
+            5753.571428571428
           ],
           "extractionCentre": 5587.5
         },
         {
           "p": [
             5764.285714285714,
-            6235.714285714286
+            6235.714285714285
+          ],
+          "carrierP": [
+            5774.999999999999,
+            6224.999999999999
           ],
           "extractionCentre": 5587.5
         },
         {
           "p": [
             6235.714285714286,
-            6707.142857142857
+            6707.142857142858
+          ],
+          "carrierP": [
+            6246.428571428572,
+            6696.428571428572
           ],
           "extractionCentre": 6412.5
         },
@@ -208,12 +237,20 @@
             6707.142857142857,
             7178.571428571428
           ],
+          "carrierP": [
+            6717.857142857142,
+            7167.857142857142
+          ],
           "extractionCentre": 6412.5
         },
         {
           "p": [
             7178.571428571428,
             7650
+          ],
+          "carrierP": [
+            7189.285714285714,
+            7639.285714285714
           ],
           "extractionCentre": 7237.5
         }
@@ -292,6 +329,9 @@
         ]
       ],
       "padSquare": 400,
+      "toeBoardHeight": 150,
+      "innerBaseWidth": 100,
+      "innerBaseDepth": 20,
       "pipeHoles": [
         [
           4400,
@@ -350,6 +390,10 @@
     "secondaryToB": 20.386606740439674,
     "BFrameToA": 23.5,
     "AtoNeighbourAfterDrop": 20,
+    "adjacentCarrierGap": 21.428571428571445,
+    "throatNotchDepth": 16.199999999999818,
+    "throatUnderToFrameBottom": 17.300000000000182,
+    "deckToeToCarrier": 700,
     "carrierToMidrail": 176,
     "carrierToToprail": 46,
     "returnToGuard": 29.5,
@@ -363,22 +407,29 @@
     "afterStopDripSeparation": 120
   },
   "checks": {
+    "AendInvertMatchesBottom": true,
+    "AsecondaryInside": true,
     "bothDripsInB": true,
     "lowerDripAboveCompleteB": true,
     "BFrameAboveInstalledA": true,
+    "endThroatWithinFrameReservation": true,
+    "deckAndToeBoardBelowTravel": true,
     "wholePhysicalStraightEdgeCovered": true,
     "AUnderNeighbourAfterDrop": true,
     "carrierAboveMidrail": true,
     "carrierBelowToprail": true,
     "extractionBays": true,
+    "adjacentCarriersSeparated": true,
     "verticalPipesOutsideAWithdrawal": true,
     "returnAboveAFront": true,
     "returnAboveGuard": true,
     "freefallTailToReturn": true,
     "returnStillInAAtDrainStop": true,
+    "returnOverlapBeforeFirstDrip": true,
     "noDripInBAtDrainStop": true,
     "completePadsOutsideInlet": true,
     "windowRawHeadBelowCarrier": true,
+    "permanentPipesOutsideDoor": true,
     "pipeHoleLeavesOuterStrip": true,
     "groundPadsBeyondOpenDoor": true,
     "groundPadsBeforeInlet": true
@@ -390,6 +441,7 @@
     "wallLineAndPhysicalCatchmentsConserve": true,
     "doubleCountOverhangRejected": true,
     "full400ReturnMoveLosesAOverlap": true,
+    "old700DeckObstructed": true,
     "narrowReturnHydraulicFailure": true,
     "correctedReturnNecessaryHead": true
   },
@@ -420,6 +472,13 @@
     "BWall": 80,
     "returnWall": 50,
     "verdict": "50 mm return wall exceeds ideal 300 mm critical specific energy by 13.247 mm. Necessary head screen only: actual inlet/turn/roughness/splash/backwater/freeboard and full event test remain unproved."
+  },
+  "movement": {
+    "firstReturnOverlapOutward": 270,
+    "firstSecondaryCaptureOutward": 120,
+    "firstPrimaryCaptureOutward": 100,
+    "drainStopOutward": 240,
+    "scope": "Plan threshold for ideal vertical drips and nominal open edges only."
   },
   "limits": [
     "Straight weather edge is not a physical corner/valley capture joint.",
