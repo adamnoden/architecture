@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 16,
+  "generation": 17,
   "state": "claimed",
-  "leaseId": "fc6a0e5c-bc22-43ab-988d-e5f49df36802",
+  "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
   "holder": {
     "kind": "chatgpt",
-    "label": "mat-envelope-joins"
+    "label": "zerg7-envelope-recovery"
   },
-  "claimedAt": "2026-11-02T00:25:15.643Z",
-  "heartbeatAt": "2026-11-02T02:31:48.602Z",
-  "expiresAt": "2026-11-02T03:16:48.602Z",
-  "checkpoint": {
-    "evidence": "SharedPR1244 frozen2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 includes actual reviewedprototype6c9 history/all9MATfiles plus authenticated2JSONprovenance deltas; canonical default envelope/roofedge/warmgrid/portal generationchecks pass with exactcfacc input, unchanged engineering/limits and11SVGs. Independent High bounded review PASS. PR1243 is historical source, not current association.",
-    "next": "Hold frozen sharedPR1244 for root failed-validation retry, freshcanonicalpreflight and expected-head merge. Preserve sourcePR1243 until actual merged ancestry proof; after verified integration perform directed closeout/continuation.",
-    "blocker": "MATENV remains OPEN: no whole-envelope or material/site/physical admission; listedstandardsize notlivestock, q550airreturn still needs primary-frame collars, actualreceiving/contact/DPC/shear/creep/thermal/air/ceiling/temporaryrain joins remain internal exits."
-  },
-  "branch": "work/zerg5-house-integration-20261102",
+  "claimedAt": "2026-11-02T07:20:02.264Z",
+  "heartbeatAt": "2026-11-02T07:20:02.264Z",
+  "expiresAt": "2026-11-02T08:05:02.264Z",
+  "branch": "work/zerg7-envelope-air-joins",
   "predecessor": {
-    "leaseId": "2c09ac4d-dc3b-4197-bd82-b17b4097ecb0",
-    "generation": 15,
-    "branch": "work/zerg2-mat-loggia",
-    "pr": 1236,
+    "leaseId": "fc6a0e5c-bc22-43ab-988d-e5f49df36802",
+    "generation": 16,
+    "branch": "work/zerg5-house-integration-20261102",
+    "pr": 1244,
     "checkpoint": {
-      "evidence": "PR1236 ready head6fe2784cb2604b7b5ce28068f5f5a3e025555baa tree199a179370d1122b58ee5b3adf2df0a7d00fd88b exactnative/localtree verified; trueparents f376a8a7 and latestmain59ec623d. Mainmerge preservesMATsubtree9938aeb1. Onlysourceauthmjs anddocumentdelta; allnumeric/renderedMAToutputs unchanged. Positive/mutated/committedcanonical-rebind checks pass.",
-      "next": "Freeze for focused source-auth delta review and root exact-headCI; legitimate synchronize/ready events use corrected canonical Work/Lease body. Integrationdefaultcanonicalpath derives verified sourceidentity.",
-      "blocker": "MAT-ENVELOPE open; ordinaryroofcrop doesnotcomplete200overhang/weatheredge7006.738 or namedinternaljoins. No groundselection or wholematerial/sitepass."
+      "evidence": "SharedPR1244 frozen2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 includes actual reviewedprototype6c9 history/all9MATfiles plus authenticated2JSONprovenance deltas; canonical default envelope/roofedge/warmgrid/portal generationchecks pass with exactcfacc input, unchanged engineering/limits and11SVGs. Independent High bounded review PASS. PR1243 is historical source, not current association.",
+      "next": "Hold frozen sharedPR1244 for root failed-validation retry, freshcanonicalpreflight and expected-head merge. Preserve sourcePR1243 until actual merged ancestry proof; after verified integration perform directed closeout/continuation.",
+      "blocker": "MATENV remains OPEN: no whole-envelope or material/site/physical admission; listedstandardsize notlivestock, q550airreturn still needs primary-frame collars, actualreceiving/contact/DPC/shear/creep/thermal/air/ceiling/temporaryrain joins remain internal exits."
     }
   },
   "recoverySource": {
-    "leaseId": "2c09ac4d-dc3b-4197-bd82-b17b4097ecb0",
-    "generation": 15,
-    "branch": "work/zerg2-mat-loggia",
-    "pr": 1236,
+    "leaseId": "fc6a0e5c-bc22-43ab-988d-e5f49df36802",
+    "generation": 16,
+    "branch": "work/zerg5-house-integration-20261102",
+    "pr": 1244,
     "checkpoint": {
-      "evidence": "PR1236 ready head6fe2784cb2604b7b5ce28068f5f5a3e025555baa tree199a179370d1122b58ee5b3adf2df0a7d00fd88b exactnative/localtree verified; trueparents f376a8a7 and latestmain59ec623d. Mainmerge preservesMATsubtree9938aeb1. Onlysourceauthmjs anddocumentdelta; allnumeric/renderedMAToutputs unchanged. Positive/mutated/committedcanonical-rebind checks pass.",
-      "next": "Freeze for focused source-auth delta review and root exact-headCI; legitimate synchronize/ready events use corrected canonical Work/Lease body. Integrationdefaultcanonicalpath derives verified sourceidentity.",
-      "blocker": "MAT-ENVELOPE open; ordinaryroofcrop doesnotcomplete200overhang/weatheredge7006.738 or namedinternaljoins. No groundselection or wholematerial/sitepass."
+      "evidence": "SharedPR1244 frozen2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 includes actual reviewedprototype6c9 history/all9MATfiles plus authenticated2JSONprovenance deltas; canonical default envelope/roofedge/warmgrid/portal generationchecks pass with exactcfacc input, unchanged engineering/limits and11SVGs. Independent High bounded review PASS. PR1243 is historical source, not current association.",
+      "next": "Hold frozen sharedPR1244 for root failed-validation retry, freshcanonicalpreflight and expected-head merge. Preserve sourcePR1243 until actual merged ancestry proof; after verified integration perform directed closeout/continuation.",
+      "blocker": "MATENV remains OPEN: no whole-envelope or material/site/physical admission; listedstandardsize notlivestock, q550airreturn still needs primary-frame collars, actualreceiving/contact/DPC/shear/creep/thermal/air/ceiling/temporaryrain joins remain internal exits."
     }
-  },
-  "pr": 1244
+  }
 }
