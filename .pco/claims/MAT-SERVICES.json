@@ -1,40 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 11,
+  "generation": 12,
   "state": "claimed",
-  "leaseId": "6e052e0d-5d92-4016-bb83-28527465e125",
+  "leaseId": "63a01d02-5f51-4260-acc5-d5ef22bde250",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg5-services-mode-closure"
+    "label": "zerg-recovery-services"
   },
-  "claimedAt": "2026-11-02T01:54:09.691Z",
-  "heartbeatAt": "2026-11-02T02:15:05.839Z",
-  "expiresAt": "2026-11-02T03:00:05.839Z",
-  "checkpoint": {
-    "evidence": "Remote599320d3/tree05bc8acc preserves6file bounded cooker checkpoint: real ERA160m3h145Pa73.5W point, mode/makeup stress, actualHADcfacc floor/host controls, visible residues and exact first-release requirements. Stale65L statements fixed. Local/remote exacttree matched.",
-    "next": "Complete owning HAD450/Y8700 projection and independent source/render review; then integrate selected successor interface once exact joins pass.",
-    "blocker": "Checkpoint explicitly incomplete: exact host composition/review and actual configured support/tool/controls compatibility remain distinct. No broad completion or later admission."
-  },
-  "branch": "work/zerg5-services-mode-closure",
+  "claimedAt": "2026-11-02T07:17:11.072Z",
+  "heartbeatAt": "2026-11-02T07:17:11.072Z",
+  "expiresAt": "2026-11-02T08:02:11.072Z",
+  "branch": "work/zerg-recovery-services",
   "predecessor": {
-    "leaseId": "0ad30805-f485-47f6-8a0a-950afc272d5a",
-    "generation": 10,
-    "branch": "work/zerg5-services-continuation",
+    "leaseId": "6e052e0d-5d92-4016-bb83-28527465e125",
+    "generation": 11,
+    "branch": "work/zerg5-services-mode-closure",
     "checkpoint": {
-      "evidence": "PR1234 merged main0bba22cc/tree1df93a83; gen9 released exact CAS/readback; timed-out initial claim left runtime released9 unchanged.",
-      "next": "Close bounded final handling/source join and stale65L narrative against authoritative HAD; preserve reviewed baseline limits.",
-      "blocker": "No node completion or whole-house admission; handling release/support research remains an explicit continuation."
+      "evidence": "Remote599320d3/tree05bc8acc preserves6file bounded cooker checkpoint: real ERA160m3h145Pa73.5W point, mode/makeup stress, actualHADcfacc floor/host controls, visible residues and exact first-release requirements. Stale65L statements fixed. Local/remote exacttree matched.",
+      "next": "Complete owning HAD450/Y8700 projection and independent source/render review; then integrate selected successor interface once exact joins pass.",
+      "blocker": "Checkpoint explicitly incomplete: exact host composition/review and actual configured support/tool/controls compatibility remain distinct. No broad completion or later admission."
     }
   },
   "recoverySource": {
-    "leaseId": "0ad30805-f485-47f6-8a0a-950afc272d5a",
-    "generation": 10,
-    "branch": "work/zerg5-services-continuation",
+    "leaseId": "6e052e0d-5d92-4016-bb83-28527465e125",
+    "generation": 11,
+    "branch": "work/zerg5-services-mode-closure",
     "checkpoint": {
-      "evidence": "PR1234 merged main0bba22cc/tree1df93a83; gen9 released exact CAS/readback; timed-out initial claim left runtime released9 unchanged.",
-      "next": "Close bounded final handling/source join and stale65L narrative against authoritative HAD; preserve reviewed baseline limits.",
-      "blocker": "No node completion or whole-house admission; handling release/support research remains an explicit continuation."
+      "evidence": "Remote599320d3/tree05bc8acc preserves6file bounded cooker checkpoint: real ERA160m3h145Pa73.5W point, mode/makeup stress, actualHADcfacc floor/host controls, visible residues and exact first-release requirements. Stale65L statements fixed. Local/remote exacttree matched.",
+      "next": "Complete owning HAD450/Y8700 projection and independent source/render review; then integrate selected successor interface once exact joins pass.",
+      "blocker": "Checkpoint explicitly incomplete: exact host composition/review and actual configured support/tool/controls compatibility remain distinct. No broad completion or later admission."
     }
   }
 }
