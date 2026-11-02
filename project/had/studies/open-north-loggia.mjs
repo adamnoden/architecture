@@ -207,7 +207,51 @@ function sortedFields(o){return Array.isArray(o)?o.map(sortedFields):o&&typeof o
 function equalFields(a,b){return JSON.stringify(sortedFields(a))===JSON.stringify(sortedFields(b))}
 function readPinnedContract(flag,path,blob){const override=process.argv.find(a=>a.startsWith('--'+flag+'='))?.split('=').slice(1).join('=');const bytes=readFileSync(override??new URL(path,ROOT));if(override){const actual=createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');if(actual!==blob)throw Error('Explicitdevelopment '+flag+' contractblob mismatch '+actual)}return JSON.parse(bytes)}
 const servicesSource={commit:'9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2',path:'project/mat/studies/whole-house-service-baseline.json',blob:'e827caa8c6c0cfc23bef0f08b3452f57984875d6',key:'interfaces.architecturalServices',projectionSha256:'94906589235797bdcf3ecd921f954bf00fbbfa84cbcaa2a5b0af7e5fd6e91fad'};
-const servicesContract=readPinnedContract('services-contract',servicesSource.path,servicesSource.blob),serviceNumeric=servicesContract.interfaces.architecturalServices;
+// HAD selected the immutable MAT9476 object. MAT later corrected two duplicated
+// 65→78 L/s narrative strings without changing a numeric or spatial value.
+// Authenticate the ENTIRE current file, then reconstruct and verify the exact
+// selected Git blob in memory. Any new source revision must be deliberately
+// reconciled rather than flowing through the default path unobserved.
+const currentServicesBlob='2d8f7243fb87d350763f2bca3d103b89b9d14b7d';
+const currentServicesOverride=process.argv.find(a=>a.startsWith('--services-current='))?.split('=').slice(1).join('=');
+const currentServicesBytes=readFileSync(currentServicesOverride??new URL(servicesSource.path,ROOT));
+const gitBlob=bytes=>createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');
+if(gitBlob(currentServicesBytes)!==currentServicesBlob)throw Error('Current canonical services successor blob mismatch');
+let selectedServicesText=currentServicesBytes.toString('utf8');
+for(const [corrected,selected] of [
+ ['Separate from78L/s selected background;','Separate from65L/s background;'],
+ ['78L/s selected winterventilation is not cooling','65L/s winterventilation is not cooling']
+]){
+ if(selectedServicesText.split(corrected).length-1!==2)throw Error('Services prose correction occurrence drift');
+ selectedServicesText=selectedServicesText.replaceAll(corrected,selected);
+}
+const selectedServicesBytes=Buffer.from(selectedServicesText,'utf8');
+if(gitBlob(selectedServicesBytes)!==servicesSource.blob)throw Error('Selected immutable services input reconstruction mismatch');
+const currentServicesObject=JSON.parse(currentServicesBytes),selectedServicesObject=JSON.parse(selectedServicesBytes);
+const allowedServicesTextPaths=new Set([
+ 'cooker.makeupRequirement',
+ 'interfaces.architecturalServices.cooker.makeupRequirement',
+ 'otherDuties[13].decision',
+ 'interfaces.architecturalServices.otherServiceDuties[13].decision'
+]);
+const changedServicesPaths=[];
+function verifyServicesSuccessor(a,b,path=''){
+ if(Array.isArray(a)&&Array.isArray(b)){
+  if(a.length!==b.length)throw Error('Services successor array length drift '+path);
+  for(let i=0;i<a.length;i++)verifyServicesSuccessor(a[i],b[i],path+'['+i+']');
+ }else if(a&&b&&typeof a==='object'&&typeof b==='object'){
+  if(Object.keys(a).length!==Object.keys(b).length||Object.keys(a).some(k=>!(k in b)))throw Error('Services successor keys drift '+path);
+  for(const k of Object.keys(a))verifyServicesSuccessor(a[k],b[k],path?path+'.'+k:k);
+ }else if(a!==b){
+  if(!allowedServicesTextPaths.has(path))throw Error('Unreviewed services successor value '+path);
+  changedServicesPaths.push(path);
+ }
+}
+verifyServicesSuccessor(selectedServicesObject,currentServicesObject);
+if(changedServicesPaths.length!==4||changedServicesPaths.some(p=>!allowedServicesTextPaths.has(p)))throw Error('Services prose correction path drift');
+const servicesContract=process.argv.some(a=>a.startsWith('--services-contract='))
+ ?readPinnedContract('services-contract',servicesSource.path,servicesSource.blob)
+ :JSON.parse(selectedServicesBytes),serviceNumeric=servicesContract.interfaces.architecturalServices;
 const actualServicesProjection=createHash('sha256').update(JSON.stringify(sortedFields(serviceNumeric))).digest('hex');if(actualServicesProjection!==servicesSource.projectionSha256)throw Error('ExactkeyedarchitecturalServices contract drift');
 const serviceInterface={source:servicesSource,emitters:serviceNumeric.emitters.map(e=>({id:e.id,level:e.level,plan:e.completePlanWithValvesAndBrackets,z:[e.bottomLocal,e.topLocal],renewalLift:e.renewal.requiredLift,renewalPull:e.renewal.requiredFrontPull,cillUnderside:e.renewal.cillUndersideMinimumIfUnderWindow,cillTop:e.renewal.requiredDrawnSillTopIfUnderWindow})),plant:{controls:serviceNumeric.plant.controlsHydraulics,buffer:serviceNumeric.plant.primaryBuffer,riser:serviceNumeric.plant.riserGross,cylinder:pickFields(servicesContract.plant.cylinder,['body','station','height','workingEast'])},extract:serviceNumeric.fanAccess.map(e=>({id:e.id,level:e.level,podPlan:e.podPlan,podZ:e.podZ,platform:e.maintenancePlatformPlan,workingHeight:e.maintenancePlatformWorkingHeightRange,mainPort:e.path.at(-1),condensatePort:e.ceilingTrapDrainPort,maintenanceFurniture:e.maintenanceFurniture})),utility:serviceNumeric.utility,supply:serviceNumeric.supply,cooker:serviceNumeric.cooker,eastFoulExit:serviceNumeric.eastFoulExit};
 candidate.servicesProjection={source:servicesSource,keyedFieldsEqual:true,defaultCanonicalRelativePath:servicesSource.path,method:'DirectMAT-ownedobjectimport; sortedcompactUTF8SHA256 coversEVERYkey/value. No manualnumericdelta. Explicitdevelopmentoverride additionallyrequires exactGitblob; finalintegrationusesdefaultcanonicalpathwithsameprojection.',pass:true};
