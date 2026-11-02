@@ -13,6 +13,8 @@ actual=[hashlib.sha256(b).hexdigest() for b in raw]
 assert actual==expected, 'Source changed; re-evaluate topology before updating fingerprints: '+str(actual)
 h,j,s=map(json.loads,raw)
 w=next(w for w in h['groundWalls'] if w['id']=='service-spine')
+door=next(d for d in h['protectedRoute']['doors'] if d['id']=='PLANT')
+assert door['host']=='service-spine' and door['rough']==[2750,3650] and h['protectedRoute']['rectangularAssemblyHeightMaximum']==2250
 assert w['a']==[9300,0] and w['b']==[9300,8290] and w['holes']==[[2750,3650]] and w['structuralCore']==[9230,9370]
 e=next(e for e in j['axis_floor']['support_edges'] if e['field']=='east-strip' and e['ground']['route']=='spine')
 assert e['segment']==[9300,332.5,9300,8290]
@@ -26,7 +28,7 @@ floor=floor_line*L; wall=wall_line*L
 load=floor+wall
 assert math.isclose(floor/2+wall/2,load/2)
 assert math.isclose(2*(load/2),load)
-result={'status':'conditional source-bound line-load sensitivity; no capacity or HOUSE pass','sources':dict(zip(paths,actual)), 'opening_mm':t['hole'], 'clear_span_m':L, 'floor_edge_total_kN':e['vertical_ULS_kN'], 'floor_edge_length_m':span, 'assumed_uniform_floor_edge_kN_m':floor_line, 'floor_over_opening_kN':floor, 'upper_wall_gross_over_opening_kN':wall, 'combined_kN':load, 'symmetric_reaction_each_kN':load/2, 'simply_supported_sagging_kNm':load*L/8, 'parabolic_three_hinge_unit_rise_thrust_kN_m':load*L/8, 'scope':'Upper gross wall is adverse full-height challenge, not measured spandrel. Floor edge uniformity, head span, pier contact, arch and bearing remain unproved. Do not add transferred actions to their originating floor/wall totals.'}
+result={'status':'conditional source-bound line-load sensitivity; no capacity or HOUSE pass','sources':dict(zip(paths,actual)), 'opening_mm':t['hole'], 'protected_boundary_door':door, 'rectangular_assembly_height_maximum_mm':2250, 'clear_span_m':L, 'floor_edge_total_kN':e['vertical_ULS_kN'], 'floor_edge_length_m':span, 'assumed_uniform_floor_edge_kN_m':floor_line, 'floor_over_opening_kN':floor, 'upper_wall_gross_over_opening_kN':wall, 'combined_kN':load, 'symmetric_reaction_each_kN':load/2, 'simply_supported_sagging_kNm':load*L/8, 'parabolic_three_hinge_unit_rise_thrust_kN_m':load*L/8, 'scope':'Upper gross wall is adverse full-height challenge, not measured spandrel. Floor edge uniformity, head span, pier contact, arch and bearing remain unproved. Do not add transferred actions to their originating floor/wall totals.'}
 # Trial bearing patches lie wholly outside the opening; centre span is 1.1 m.
 # Model the specified uniform action over the central 0.9 m only.
 bearing=.2

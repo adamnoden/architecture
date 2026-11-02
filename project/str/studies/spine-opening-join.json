@@ -10,6 +10,18 @@
     3650
   ],
   "parabolic_three_hinge_unit_rise_thrust_kN_m": 2.7595402734375005,
+  "protected_boundary_door": {
+    "axis": 9300,
+    "host": "service-spine",
+    "id": "PLANT",
+    "level": "GROUND",
+    "performance": "Protectedhallboundarydoor;plantactualhazard/requiredratingtoconfirm",
+    "rough": [
+      2750,
+      3650
+    ]
+  },
+  "rectangular_assembly_height_maximum_mm": 2250,
   "scope": "Upper gross wall is adverse full-height challenge, not measured spandrel. Floor edge uniformity, head span, pier contact, arch and bearing remain unproved. Do not add transferred actions to their originating floor/wall totals.",
   "simply_supported_sagging_kNm": 2.7595402734375005,
   "sources": {
