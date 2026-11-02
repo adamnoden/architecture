@@ -1,0 +1,184 @@
+{
+  "status": "ONE unadopted warm receiving concept. Not foundation selection, fulljunction proof, material admission or sitefact.",
+  "source": {
+    "startingMain": "f462415c6832e6470fdb7045e2f9b2e207b700df",
+    "currentMain": "6a3c15d6ffb8dac628c42533ba7ea64ac0de2cce",
+    "STRloadSource": "5ffcc6b28251cdd0732fa634b090568ea456f4b7",
+    "ownership": "MAT geometry/thermal/constituents; STR owns warm/cold receiver/frame/cap and actual load/envelope design. No STR source changed."
+  },
+  "recipe": {
+    "floorRoomToVoid": [
+      15,
+      65,
+      200,
+      320
+    ],
+    "floorZ": [
+      0,
+      -15,
+      -80,
+      -280,
+      -600
+    ],
+    "warmGridTop": -80,
+    "warmGridSoffit": -380,
+    "perimeterWidth": 300,
+    "internalReceivingWidth": 440,
+    "AACsingleUnit": [
+      440,
+      300,
+      215
+    ],
+    "AACZ": [
+      -605,
+      -390
+    ],
+    "M4beds": [
+      [
+        -615,
+        -605
+      ],
+      [
+        -390,
+        -380
+      ]
+    ],
+    "mineralDPC": [
+      -765,
+      -615
+    ],
+    "DPCrecipe": "Two65 solid Ketley WCBL65 engineering-brick courses plus two10 M4 beds; actual300-wide bonded full/cut unit arrangement and compression/capillary/bond evidence remain unqualified. Authored thermal lambda1.3, not a declared product value.",
+    "coldBeamTop": -765,
+    "coldBeamSoffitHypothesis": -1065,
+    "coldPerimeterWidthHypothesis": 850,
+    "coldInternalWidthHypothesis": 600,
+    "cheeks": 120,
+    "shoulderFill": "Internal440beam over300bearing:70shoulders eachside filled385glass (200+185cutfrom200stock); no coldair pocket or load throughglass. Sidecheeks down toDPCbottom. Exactretain/joints unqualified.",
+    "weatherLeaf": "Independent coldweatherleaf load on widenedcoldreceiver; never on warmfloor/foam. No coldtie/starter crossesAAC/DPC toshortcircuit it."
+  },
+  "depth": {
+    "memberOnlyLowest": 1065,
+    "heaveStress": 300,
+    "constructionLoss": 50,
+    "ventilation": 150,
+    "memberOnlyRequired": 1565,
+    "memberOnlyDcost": 1600,
+    "actualLowestColdCap": "Not frozen. A deeper finite coldreceiver/node governs if required; member-onlyD1600 is NOT earned wholehouse clearance. No unchanged570cap quietly inherited or deleted."
+  },
+  "product": {
+    "identity": "H+H HighStrength7.3 foundationblock440\u00d7215face/300width,730kg/m3. Existing product, not new catalogue.",
+    "page": "https://www.hplush.com/en-uk/aircrete/products/foundation-blocks",
+    "datasheet": "https://www.hplush.com/fileadmin/UK/Datasheets_Factsheets/MLM012.00_H_H_datasheet_-_FOUNDATION_BLOCKS_2023_2025.pdf",
+    "strength": "https://www.hplush.com/fileadmin/UK/TSD_Files/TSD03_Characteristic_strength_of_masonry__Jun_2025_.pdf",
+    "strengthScope": "June2025EC6Table3,215height/250+width HighStrengthM4 fk4.9; NOT unitmean7.3 or withdrawnBS5628table. Gamma3 retained.",
+    "thermal": "Producerbelowground.29 used asstress; protectedaboveDPC.18 is sensitivity only, not a retained dry installation assumption.",
+    "joints": "FullM4beds/perps selected, not marketingpermission toomit belowgroundperps. Exactmortar formulation/gradepaint/mouldrelease/creep still require disclosed evidence; no syntheticexception."
+  },
+  "receivers": [
+    {
+      "name": "wet",
+      "N_ULS": 71.13795,
+      "M_ULS": 1.442435,
+      "lineULSIncludingWarmGirder": 92.944125,
+      "lineMinGIncludingWarmGirder": 51.79275,
+      "effectiveWidth": 297,
+      "effectiveLength": 1044,
+      "ex": 45.27658935912547,
+      "ey": 5,
+      "maxMpa": 0.7588147408032296,
+      "minEnvelopeMpa": 0.1873686689649502,
+      "fdComparator": 1.6333333333333335,
+      "limit": "Concept45degreefan through300warmRC; actual reinforcedspreader/foundationelasticity/contact/shear/creep unproved. FullM retained; minimum0.9Gline combinedadversarially withmaxpointenvelope, not a normative combination."
+    },
+    {
+      "name": "stair",
+      "N_ULS": 72.48863,
+      "M_ULS": 2.22228,
+      "lineULSIncludingWarmGirder": 92.944125,
+      "lineMinGIncludingWarmGirder": 51.79275,
+      "effectiveWidth": 297,
+      "effectiveLength": 844,
+      "ex": 55.65694578584255,
+      "ey": 5,
+      "maxMpa": 0.9375550378091927,
+      "minEnvelopeMpa": 0.1281381599663511,
+      "fdComparator": 1.6333333333333335,
+      "limit": "Concept45degreefan through300warmRC; actual reinforcedspreader/foundationelasticity/contact/shear/creep unproved. FullM retained; minimum0.9Gline combinedadversarially withmaxpointenvelope, not a normative combination."
+    }
+  ],
+  "thermalCases": [
+    {
+      "kind": "perimeter",
+      "AACLambda": 0.29,
+      "grid": 5,
+      "Qroom": 0.6928281038146528,
+      "Qoutside": 0.692828103816553,
+      "balance": -1.900257728948418e-12,
+      "planarFloorU": 0.12280347058867579,
+      "psi": 0.3081864697397342,
+      "limit": "Air-backed2D only; allnonroomvoidscold, no soil/radiation/pointbridges or ISO13370 compliance. Internal bearing-line losses must be summed separately, not hidden in perimeterP/A."
+    },
+    {
+      "kind": "internal",
+      "AACLambda": 0.29,
+      "grid": 5,
+      "Qroom": 0.6575098169368645,
+      "Qoutside": 0.6575098169404521,
+      "balance": -3.587574681773731e-12,
+      "planarFloorU": 0.12280347058867579,
+      "psi": 0.23924119611183475,
+      "limit": "Air-backed2D only; allnonroomvoidscold, no soil/radiation/pointbridges or ISO13370 compliance. Internal bearing-line losses must be summed separately, not hidden in perimeterP/A."
+    },
+    {
+      "kind": "perimeter",
+      "AACLambda": 0.18,
+      "grid": 5,
+      "Qroom": 0.6422542172598193,
+      "Qoutside": 0.6422542172617374,
+      "balance": -1.9180212973424204e-12,
+      "planarFloorU": 0.12280347058867579,
+      "psi": 0.2576125831849009,
+      "limit": "Air-backed2D only; allnonroomvoidscold, no soil/radiation/pointbridges or ISO13370 compliance. Internal bearing-line losses must be summed separately, not hidden in perimeterP/A."
+    },
+    {
+      "kind": "internal",
+      "AACLambda": 0.18,
+      "grid": 5,
+      "Qroom": 0.5869771441124899,
+      "Qoutside": 0.5869771441160903,
+      "balance": -3.60034224655692e-12,
+      "planarFloorU": 0.12280347058867579,
+      "psi": 0.16870852328746017,
+      "limit": "Air-backed2D only; allnonroomvoidscold, no soil/radiation/pointbridges or ISO13370 compliance. Internal bearing-line losses must be summed separately, not hidden in perimeterP/A."
+    },
+    {
+      "kind": "perimeter",
+      "AACLambda": 0.29,
+      "grid": 2.5,
+      "Qroom": 0.6926794375110799,
+      "Qoutside": 0.6926794375197215,
+      "balance": -8.641642956774831e-12,
+      "planarFloorU": 0.12280347058867579,
+      "psi": 0.3080378034361614,
+      "limit": "Air-backed2D only; allnonroomvoidscold, no soil/radiation/pointbridges or ISO13370 compliance. Internal bearing-line losses must be summed separately, not hidden in perimeterP/A."
+    },
+    {
+      "kind": "internal",
+      "AACLambda": 0.29,
+      "grid": 2.5,
+      "Qroom": 0.6575364634485735,
+      "Qoutside": 0.657536463465512,
+      "balance": -1.6938450642101088e-11,
+      "planarFloorU": 0.12280347058867579,
+      "psi": 0.23926784262354378,
+      "limit": "Air-backed2D only; allnonroomvoidscold, no soil/radiation/pointbridges or ISO13370 compliance. Internal bearing-line losses must be summed separately, not hidden in perimeterP/A."
+    }
+  ],
+  "internalLimits": [
+    "Warm pier/floor/grillage must be monolithic above course; actual positivecontact/lateralrestraint/shear and movement-compatiblecoldfoundation are designrequirements, not inventedpinnedbase.",
+    "Credible deepestcoldreceiver/actualweatherleafsupport must be supplied bySTR beforefreezingD/approachcost.",
+    "Currentthreshold105mineral-seat detail cannot be copied toRCtop\u221280; localpan/support/air/DPC join mustbe redrawn ifthisconceptsurvives.",
+    "Field/moisture/air/gas functions and lateralDPC/cavity/door transitions still need actual joints; loosebareglass is not a sealed boundary."
+  ],
+  "decision": "Arrangement removes directcoldRCpier bypass in concept and moves pointbearing into an actual warmspreader problem. Receiver screens and both internal/perimeter heatpaths are shown. No whole-envelope recommendation or depth is selected."
+}
