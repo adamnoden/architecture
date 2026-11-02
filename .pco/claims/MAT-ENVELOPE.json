@@ -9,12 +9,12 @@
     "label": "zerg10-ground-contract"
   },
   "claimedAt": "2026-11-02T14:39:28.962Z",
-  "heartbeatAt": "2026-11-02T14:39:28.962Z",
-  "expiresAt": "2026-11-02T15:24:28.962Z",
+  "heartbeatAt": "2026-11-02T14:46:37.008Z",
+  "expiresAt": "2026-11-02T15:31:37.008Z",
   "checkpoint": {
-    "evidence": "PR #1280 merged main 6f658950f976a27b5b74f35fad8b604159c894a9; historical receiver pan remains conditional",
-    "next": "Derive preferred ground slab and warm-cold receiver geometry once from HAD and STR sources",
-    "blocker": "Whole-house current receiver and cold interface are not authored; structural and material acceptance remains open"
+    "evidence": "Draft PR #1281 head cff040719a74550da0e220c4b972df51fd55c944 tree 33b18d812c67964a009c35e8d60dfca4dfd7dc63; source-bound slab and SW contract checked with STR",
+    "next": "Root independent bounded QA, exact-head CI and fresh preflight",
+    "blocker": "Other receiver geometry, structural and material acceptance remain unassigned"
   },
   "branch": "work/zerg10-ground-contract",
   "predecessor": {
@@ -38,5 +38,6 @@
       "next": "Root exact-head CI and fresh preflight after narrow reviewer rebind",
       "blocker": "Receiver, collar, threshold, services, bearing, movement and physical acceptance remain unresolved"
     }
-  }
+  },
+  "pr": 1281
 }
