@@ -9,12 +9,12 @@
     "label": "zerg5-ias-closeout"
   },
   "claimedAt": "2026-11-02T00:16:03.173Z",
-  "heartbeatAt": "2026-11-02T01:02:42.771Z",
-  "expiresAt": "2026-11-02T01:47:42.771Z",
+  "heartbeatAt": "2026-11-02T01:34:36.711Z",
+  "expiresAt": "2026-11-02T02:19:36.711Z",
   "checkpoint": {
-    "evidence": "Draft PR1239 frozen1b37c9a5c37437ab8e10256a94bdede71915658c tree56ab6c4e7f347ed516b7b248df7c1527a024f24e; actualmain6a3c15d6 mergeparent; reviewed rearEmitterRepair unchanged, dated controls/occurrence reconciled. Customcheck/render/typecheck/control/workflow/repo/diff checks passed.",
-    "next": "Hold frozen head for root-assigned Sol High full owned-delta bounded review, then coordinate joined HAD/services/interiors integration. Root sole CI/merge authority.",
-    "blocker": "Head-first independent full-delta review pending; connected support/first-release/storage/return and full guarded export/IAS exit remain internal, no physical/material/kit admission."
+    "evidence": "OWNER-DIRECTED connector-only renewal after canonical CLI failed before any request/write. PR1239 frozen faec3e0468167f452af7a81ea48116a4691a5d84 tree34c163aa9ab2192349d8e22db581624b141eedf6 focused High PASS; exact provider branch head and runtime blob verified; source unchanged.",
+    "next": "Hold frozen head for root integration/CI and continue readonly guarded-export/carrier research against HADa510; no release/reclaim before merged proof.",
+    "blocker": "Native Git runtime refresh times out under PCO-GIT-DEADLINE maintenance. This renewal uses canonical pure functions plus provider file CAS, not canonical CLI success. Full guarded export and physical/material/kit admission remain unearned."
   },
   "branch": "work/zerg5-ias-closeout",
   "predecessor": {
