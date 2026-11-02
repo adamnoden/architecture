@@ -9,12 +9,12 @@
     "label": "zerg7-envelope-corner-junction"
   },
   "claimedAt": "2026-11-02T10:51:13.775Z",
-  "heartbeatAt": "2026-11-02T10:51:13.775Z",
-  "expiresAt": "2026-11-02T11:36:13.775Z",
+  "heartbeatAt": "2026-11-02T11:09:25.662Z",
+  "expiresAt": "2026-11-02T11:54:25.662Z",
   "checkpoint": {
-    "evidence": "Verified merged MAT19 PR #1263 main df410b141fb77257dcbe825de5d20287144d75ee tree 10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; fresh isolated base; no MAT20 source yet",
-    "next": "Coordinate actual SW corner station x/y332.5 with STR signed gravity/uplift/shear route; develop joined thermal/moisture/movement/material/buildability packet",
-    "blocker": "Actual STR station dimensions/contact and lateral connector paths pending; site/material/physical admission not earned"
+    "evidence": "Draft PR #1267 head 6a889aa7b26b0a10719a915972f0204047becf88 tree 580f3401435e41f7aed67d0824bf27f6a0e29f80: HAD courtSouth and MAT pin WIP",
+    "next": "Recover and verify WIP, review STR #1269, coordinate SW corner and affected STR pin rebind",
+    "blocker": "Do not integrate WIP alone; STR rebind and continuous boundary and physical admission unresolved"
   },
   "branch": "work/zerg7-envelope-corner-junction",
   "predecessor": {
