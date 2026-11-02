@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 29,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ee7ee1fe-b31f-4b44-a880-d3ffb7791d4b",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6585617535"
   },
   "claimedAt": "2026-11-02T18:56:31.000Z",
-  "heartbeatAt": "2026-11-02T18:59:28.000Z",
-  "expiresAt": "2026-11-02T19:44:28.000Z",
+  "heartbeatAt": "2026-11-02T19:03:34.000Z",
+  "expiresAt": "2026-11-02T19:03:34.000Z",
   "branch": "work/mvb-chat-6585617535",
   "predecessor": {
     "leaseId": "c1f3c5f8-4641-4fab-aaf9-4f9507171b6d",
@@ -39,5 +39,7 @@
     "evidence": "PR #1284 head 41785f1d integrates exact reviewed PR1282 six-file source payload with both main and source as parents; source study remains conditional, node stays planned.",
     "next": "Verify exact-head full PR CI; execute fresh native canonical control:merge-check; expected-head merge, then release lease and mark PR1282 superseded.",
     "blocker": "Live temporary roof, weather/condensation, erection/load, court access, blocked-water, complete material and site acceptance unproven."
-  }
+  },
+  "releasedAt": "2026-11-02T19:03:34.000Z",
+  "releaseReason": "handoff"
 }
