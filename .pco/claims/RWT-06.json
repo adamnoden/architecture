@@ -9,12 +9,11 @@
     "label": "zerg-rwt06-high-eave-continuation"
   },
   "claimedAt": "2026-11-02T09:11:24.186Z",
-  "heartbeatAt": "2026-11-02T09:48:48.292Z",
-  "expiresAt": "2026-11-02T10:33:48.292Z",
+  "heartbeatAt": "2026-11-02T10:18:57.908Z",
+  "expiresAt": "2026-11-02T11:03:57.908Z",
   "checkpoint": {
-    "evidence": "PR #1258 corrected remote head b616da75/tree dd823289; outboard cup rejected against primary/secondary/gutter sweep; source-pinned A3 and generator, integrity, tsc pass",
-    "next": "Review corrected negative disposition and exact-head CI; integrate changed main and fresh canonical publication preflight before root merge",
-    "blocker": "Roofward dual-layer interception and complete high-eave receiver renewal remain new ROF/MAT/RWT source work; RWT-06 stays planned"
+    "evidence": "PR1258 frozen reviewed negative-study head b616da754f78ca18c2329a4d451e246c2500d4f2 tree dd823289fd5da954d77dd217916ee970688dd262; fresh canonical UUID/gen25 verified live; all old RWT mailbox requests have responses, none replayed.",
+    "next": "Root prepares shared exact-source integration with MAT1259 on verified main207e. Await shared PR identity for rebind; root sole CI/merger. After verified merge release25 and acquire fresh RWT06 before constructive receiver implementation."
   },
   "branch": "work/rwt06-high-eave-20261102",
   "predecessor": {
@@ -39,5 +38,6 @@
       "blocker": "No wet-state/first-harm/hydraulic/physical/site/high-eave admission; RWT-06 remains planned"
     }
   },
-  "pr": 1258
+  "pr": 1258,
+  "note": "Root delegated controller for frozen negative-study integration only; original author stopped. No design writes under generation25."
 }
