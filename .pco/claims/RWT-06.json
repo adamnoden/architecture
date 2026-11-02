@@ -1,45 +1,40 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 25,
-  "state": "released",
-  "leaseId": "e56ff50a-4b82-4233-94cd-4d2b792e283c",
+  "generation": 26,
+  "state": "claimed",
+  "leaseId": "4ae96a3f-b6f6-499e-b394-3c4f932f9c67",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-rwt06-high-eave-continuation"
+    "label": "zerg-rwt26-live-receiver"
   },
-  "claimedAt": "2026-11-02T09:11:24.186Z",
-  "heartbeatAt": "2026-11-02T10:47:42.876Z",
-  "expiresAt": "2026-11-02T10:47:42.876Z",
+  "claimedAt": "2026-11-02T10:48:55.897Z",
+  "heartbeatAt": "2026-11-02T10:48:55.897Z",
+  "expiresAt": "2026-11-02T11:33:55.897Z",
   "checkpoint": {
-    "evidence": "Root verified PR1263 merged as maindf410b141fb77257dcbe825de5d20287144d75ee tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; PR1258 provider merged true; CI41430725270 attempt2 all success; exact-head RWT25 publication preflight10:44:55.637Z.",
-    "next": "Release completed frozen packet25 canonically; acquire fresh directed RWT06 generation from verified main before implementing constructive live temporary receiver/reversal. RWT06 remains planned, actual method rejected and downstream holds unchanged."
+    "evidence": "Starting verified maindf410b141fb77257dcbe825de5d20287144d75ee tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; prior RWT25 merged PR1263 and canonically released at10:47:42.876Z; read-only architecture/source adjudication complete, no design edits yet.",
+    "next": "Implement one source-bound south-court receiver renewal reference with actual dual drip capture, A/B overlap and reversal, support/guard/window/handling geometry, both catchment ledgers and explicit unsuccessful controls. Preserve product/site/physical holds; RWT06 stays open."
   },
-  "branch": "work/zerg-recovery-roof-export",
+  "branch": "work/rwt06-live-receiver-20261102",
+  "note": "Owner-directed RWT recovery after verified merged negative study; constructive same-section live capture, receiver removal and reversal. Root sole CI/merger.",
   "predecessor": {
-    "leaseId": "f2945be5-9ca5-41cd-9870-262c83177fa0",
-    "generation": 24,
-    "branch": "work/rwt06-temporary-rain-recovery-20261102",
-    "pr": 1255,
+    "leaseId": "e56ff50a-4b82-4233-94cd-4d2b792e283c",
+    "generation": 25,
+    "branch": "work/zerg-recovery-roof-export",
+    "pr": 1263,
     "checkpoint": {
-      "evidence": "PR #1255 current-main merge head 9e2abcc5712ef44497fbe29c651facea438f3429, truthful parents bf779550 and main50a3d1d7, tree69cb3420; RWT blobs unchanged; RWT generators, default HAD/IAS, source-auth, integrity and typecheck PASS",
-      "next": "Root observes exact-head CI; reviewer transfers bounded QA; worker runs fresh canonical publication preflight immediately before root merge",
-      "blocker": "No wet-state/first-harm/hydraulic/physical/site/high-eave admission; RWT-06 remains planned"
+      "evidence": "Root verified PR1263 merged as maindf410b141fb77257dcbe825de5d20287144d75ee tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; PR1258 provider merged true; CI41430725270 attempt2 all success; exact-head RWT25 publication preflight10:44:55.637Z.",
+      "next": "Release completed frozen packet25 canonically; acquire fresh directed RWT06 generation from verified main before implementing constructive live temporary receiver/reversal. RWT06 remains planned, actual method rejected and downstream holds unchanged."
     }
   },
   "recoverySource": {
-    "leaseId": "f2945be5-9ca5-41cd-9870-262c83177fa0",
-    "generation": 24,
-    "branch": "work/rwt06-temporary-rain-recovery-20261102",
-    "pr": 1255,
+    "leaseId": "e56ff50a-4b82-4233-94cd-4d2b792e283c",
+    "generation": 25,
+    "branch": "work/zerg-recovery-roof-export",
+    "pr": 1263,
     "checkpoint": {
-      "evidence": "PR #1255 current-main merge head 9e2abcc5712ef44497fbe29c651facea438f3429, truthful parents bf779550 and main50a3d1d7, tree69cb3420; RWT blobs unchanged; RWT generators, default HAD/IAS, source-auth, integrity and typecheck PASS",
-      "next": "Root observes exact-head CI; reviewer transfers bounded QA; worker runs fresh canonical publication preflight immediately before root merge",
-      "blocker": "No wet-state/first-harm/hydraulic/physical/site/high-eave admission; RWT-06 remains planned"
+      "evidence": "Root verified PR1263 merged as maindf410b141fb77257dcbe825de5d20287144d75ee tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; PR1258 provider merged true; CI41430725270 attempt2 all success; exact-head RWT25 publication preflight10:44:55.637Z.",
+      "next": "Release completed frozen packet25 canonically; acquire fresh directed RWT06 generation from verified main before implementing constructive live temporary receiver/reversal. RWT06 remains planned, actual method rejected and downstream holds unchanged."
     }
-  },
-  "pr": 1263,
-  "note": "Frozen RWT25 negative study integrated; root verified merge. Canonical completion checkpoint before release; no positive receiver method or RWT06 lifecycle completion.",
-  "releasedAt": "2026-11-02T10:47:42.876Z",
-  "releaseReason": "completed"
+  }
 }
