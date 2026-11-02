@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "node": "PCO-GIT-DEADLINE",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "ed7edbbc-fb48-4b3e-8c74-af8b951fe7ce",
+  "holder": {
+    "kind": "codex",
+    "label": "zerg9-pco-git-deadline-20261102"
+  },
+  "claimedAt": "2026-11-02T01:29:33.453Z",
+  "heartbeatAt": "2026-11-02T01:29:33.453Z",
+  "expiresAt": "2026-11-02T03:29:33.453Z",
+  "checkpoint": {
+    "evidence": "https://github.com/adamnoden/architecture/issues/1241",
+    "next": "Implement bounded Git timeout and register owner-directed node; independent review before merge"
+  },
+  "branch": "work/pco-git-deadline-20261102",
+  "note": "Exceptional bootstrap authorised at issue953#issuecomment-6566865133; node absent from main; unknown-node claim temporarily fails dispatcher closed until registration."
+}
