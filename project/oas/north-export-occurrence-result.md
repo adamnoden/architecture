@@ -1,0 +1,35 @@
+# OAS-NORTH-EXPORT — actual occurrence development
+
+**2 November2026 · OAS1 WIP research checkpoint. No occurrence, operation, first-release or export PASS.** The [brief](oas-north-export-brief.md) remains the bounded target. Starting main is `e93c643d36dfb0ee72a2bd2035899dfc5cc94f74`, containing verified shared1271. IAS18 was released before canonical OAS generation1 acquisition. No completed OAS result, HAD geometry, IAS numeric proof, material or structural authority changes here.
+
+## Actual input and ordinary duties
+
+Use **FIRST / outer-north / north-window-0**, centre1800/raw1000/sill850/spring2550/head2850, cill underside≥800/depth≤50, wall429.5 at y11570.5–12000 and FIRST FFL3450. HAD source is blob `25faad2c4d40df2b7da7212f73808843a88d2f52`. The700 neighbours, nominal sill750 and GROUND west7400 grille are distinct occurrences and supply no actual window/guard proof here.
+
+The rear room has a1000 tray, WC/basin and local continuous extract. Canonical MAT fan family is Titon Ultimate TP640Hi, CF1 continuous13L/s and separately commissioned moisture boost16L/s; source [service baseline](../mat/studies/whole-house-service-baseline.json), blob `2d8f7243fb87d350763f2bca3d103b89b9d14b7d`. Its six habitable-room operable-window duties do not make this wet room a bedroom. Neither does mechanical extract erase every possible purge obligation.
+
+The current [England ADF1 2026 revision](https://assets.publishing.service.gov.uk/media/6a9a918a01bbff0bf8f97e1b/Approved_Document_F__Volume_1_Dwellings.pdf), retrieved2 November2026, §1.22–27 permits purge through openings or mechanical extract; §3.28 applies that guidance to a new wet room in an existing dwelling. The selected fan's13/16L/s is not a demonstrated four-air-change purge system. Actual2.388×2.615m gives6.24462m²; at3.1m gross height,4ACH needs21.509L/s. Even a conservative full2.8m height needs19.428L/s, above16. This is a conditional applicability/capacity countercase, not a project compliance judgement. **Do not select fixed glazing by assuming purge has disappeared or silently increasing the fan.**
+
+The selected HAD protected-stair/front-exit direction supplies no emergency escape credit through this bathroom window. [Current ADB1](https://assets.publishing.service.gov.uk/media/6aa3bb335f6e942efe37f150/AD_B1_2026.pdf), §2.5(a), §2.10 and AppendixA distinguish the protected-stair route and actual emergency opening. The full grille/fixed-window control would defeat an assigned unobstructed window escape role. Actual BCR/EPR strategy, use, ground and applicability must confirm that this occurrence is not required for escape/rescue before adopting it. No fire compliance or rescue exemption is declared.
+
+## Reveal joint defeats the inherited nominal shortcut
+
+The nominal g15+60-face sensitivity gives75 total intrusion and970 outside frame width. A full27 reveal return occupies27 from the raw jamb at its actual normal-depth zone. Where a full970 frame occupies the same zone,15−27=**−12 overlap**. A real stepped/rebated frame/finish termination could differ; no such profile is established by the old nominal drawing. g15 is not an installation tolerance, and deleting finish cannot earn a fit.
+
+Develop a **conventional complete frame/reveal joint** rather than shrink hardware to preserve that provisional75. The current local candidate reserves35 raw-to-frame gap and50 complete fixed-frame face, giving85 normal perimeter intrusion and830 clear nominal width. With a27 return,35−27 leaves8 nominal for the actual joint. This is an authored spatial allocation, **not** an admitted fabrication/tolerance/seal detail. Actual complete packing, fixings, thermal break, beads, gaskets, seals, drainage and material constituents must fit; if not, reject or openly revise the profile.
+
+The85 direction fails IAS's75 requirement by10. It supplies no75-compliance or inherited IAS pass. Its prospective830 width exceeds the required750 attached-tray composite by80 total; the off-centre rail/arch reserve also falls and needs exact complete-profile reproduction. IAS must deliberately reconcile/rebind its owning window/body/rail proof after the OAS candidate is earned; no IAS source is changed here. Raw HAD aperture and sill/head remain unchanged.
+
+## Coherent candidate being tested
+
+Test **two inward side-hung arched casements with no retained centre post**, controlled stays, complete handles/hinges/seals and a full independent grille outside the glazing/frame plane. This preserves an ordinary guarded opening/purge direction and allows the exterior grille to receive independent support and release while the glazing stays closed. It is a selected development enquiry, not a supplied product or accepted geometry.
+
+The complete ordinary test must include the actual WC/cabinet/radiator and window/frame/guard solids, moving sash and handles, coupled R300/1800 operator and R40 shoulder-to-grip capsules, reach, stay/control states and return. A wide-open handle can conflict with the conservative complete WC volume; do not clear it by testing endpoints or deleting the fixture. An80-degree controlled-opening alternative is under investigation; there is no reproduced positive ordinary sequence yet.
+
+Renewal must then show independent guard support before first fixing release, removal of the **complete** guard/captures without an unproved lift into the arch, supported complete sash/glazing/hinge release, real parking/rack handover, and eventual complete frame exchange with seals/transitions deliberately renewed. A guard moved outward avoids passing through the narrower retained frame, but its legs, fasteners, capture hardware and sling/hoist paths must actually coexist with sill/head/roof and protection. No hardware, guard or long support member disappears.
+
+Use conventional matched exterior worker access/protection where it can serve the actual task. Worker access is separate from the component hoist; mandatory braces, guards, fall protection, platforms and manufacturer restrictions stay. The old internally rig-supported barrier is not credited for the initial opening because its struts need an already-open window. The protected exterior bootstrap, internal protection takeover and full component/worker assembly sequence remain unresolved in this checkpoint.
+
+NW roof/hip/jack/seat/edge/gutter and full apparatus/window/receiver assembly clashes remain explicit unknowns. MAT's ordinary p4377.5–7622.5 bay and the next SW structural-envelope station cannot be mirrored into NW. STR retains owning finite NW structural geometry; actual exterior site/ground/rights, equipment, anchors, weather/air/water, materials, force and physical adoption remain separate and unearned. These holds cannot hide an intrinsic geometric collision.
+
+Next: freeze a complete dimensioned85-profile candidate and its joined ordinary/guard/first-release/support/parking/reinstatement sequence, with reproducible full moving solids and honest failures. Keep the packet planned until its bounded candidate-development exit is actually established; this WIP file is not closeout merely because the expected evidence path now exists.
