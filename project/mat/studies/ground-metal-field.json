@@ -6,6 +6,75 @@
     "project/str/studies/sw-corner-station.json": "2c215912f4b55ca4587e32763bf66160d4b433d0",
     "project/mat/studies/joined-ground-boundary.json": "2a74ab4e2e88bf80405a5ca36a7eaabcd1e93fc6"
   },
+  "SWverticalTurn": {
+    "warmPierFaces_mm": {
+      "x_face": [
+        262.5,
+        262.5,
+        562.5
+      ],
+      "y_face": [
+        262.5,
+        262.5,
+        562.5
+      ]
+    },
+    "sheetZ_mm": [
+      -380,
+      6410
+    ],
+    "nominalThickness_mm": 1,
+    "inGlassNormalBand_mm": [
+      261.5,
+      262.5
+    ],
+    "residualGlass_mm": 109,
+    "drainedCavity_mm": [
+      102.5,
+      152.5
+    ],
+    "sheetGrossFaceArea_m2": 4.074,
+    "sheetMass_kg_at_7900": 32.184599999999996,
+    "firstOpeningControls": [
+      {
+        "level": "GROUND",
+        "wall": "outer-south",
+        "firstOpening": "south-window-0",
+        "firstOpeningStart_mm": 1300.0,
+        "setbackBeyondPierFace_mm": 737.5
+      },
+      {
+        "level": "GROUND",
+        "wall": "outer-west",
+        "firstOpening": "west-window-0",
+        "firstOpeningStart_mm": 1300.0,
+        "setbackBeyondPierFace_mm": 737.5
+      },
+      {
+        "level": "FIRST",
+        "wall": "outer-south",
+        "firstOpening": "south-window-0",
+        "firstOpeningStart_mm": 1300.0,
+        "setbackBeyondPierFace_mm": 737.5
+      },
+      {
+        "level": "FIRST",
+        "wall": "outer-west",
+        "firstOpening": "west-window-0",
+        "firstOpeningStart_mm": 1300.0,
+        "setbackBeyondPierFace_mm": 737.5
+      }
+    ],
+    "nominalRingOuterFace_mm": 272.5,
+    "planGapFromCoreOutsideFaceToRing_mm": 10,
+    "ringBottomZ_mm": 6540,
+    "ringAboveSheetTop_mm": 130,
+    "closestRodCentreFromPierFace_mm": 60,
+    "closestRodSurfaceFromPierFace_mm": 50,
+    "trialLinkOutsideCover_mm": 42,
+    "localRchange_m2K_W": 0.02432357723577236,
+    "scope": "Local SW pier-face turn only, not an installed air/gas or roof connection. Sheets, folded corner and butt weld are proposals; no existing through-opening within those 300mm face runs proves neither fixing nor continuity. Face sheet occupies 1mm of 110mm glass; cut retention, backside support, movement, corrosion, head/cap/wings/ring joints and 3D heat/moisture remain unqualified. The nominal 10mm ring-plan gap omits welds, tolerances, fixings and actual section interactions."
+  },
   "sheetEvidence": {
     "manufacturer": "Aperam",
     "family": "316L stainless; page title EN 1.4404",
