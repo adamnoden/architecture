@@ -29,6 +29,50 @@
     "sourceHouseRidgeZmm": 8090.903773579372,
     "assumedRidgeGapMm": 1209.0962264206282
   },
+  "gantryPlanTrial": {
+    "model": "REID PGRS20; two unloaded nominal placements",
+    "beamLengthMm": 2000,
+    "maximumClearSpanMm": 1500,
+    "sourceRoofOpeningMm": [
+      4450,
+      7550
+    ],
+    "beamXMm": [
+      [
+        4550,
+        6550
+      ],
+      [
+        5450,
+        7450
+      ]
+    ],
+    "frameClearSpanXMm": [
+      [
+        4800,
+        6300
+      ],
+      [
+        5700,
+        7200
+      ]
+    ],
+    "boundingYMm": [
+      4886,
+      6044
+    ],
+    "receiverMm": [
+      4350,
+      7650
+    ],
+    "numberOfModules": 7,
+    "firstAndLastCentreMm": [
+      4585.714285714285,
+      7414.285714285715
+    ],
+    "endModuleMinShiftMm": 214.28571428571468,
+    "status": "Plan arithmetic only; clear frame span is not proven hook travel; 100 mm beam edge reservation is not real collision clearance"
+  },
   "egressReservation": {
     "sourceFrontDoorCentreXmm": 6000,
     "sourceRoughWidthMm": 1800,

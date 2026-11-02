@@ -6,6 +6,7 @@ const source = readFileSync(new URL('project/had/studies/open-north-loggia.json'
 const blob = createHash('sha1').update(`blob ${source.length}\0`).update(source).digest('hex');
 if (blob !== '25faad2c4d40df2b7da7212f73808843a88d2f52') throw Error('HAD source moved: review this candidate');
 const house = JSON.parse(source);
+for (const [path,expected] of [['project/rwt/studies/integrated-neighbour-clearance.json','4e5ba02bf23587e6e2bc2a1f5c85a1a49ff8c909'],['project/rwt/studies/manufacturer-access-comparison.json','8d0998ac04e7492837603a4d938fb0640b69347c']]) { const b=readFileSync(new URL(path,root)); if(createHash('sha1').update(`blob ${b.length}\0`).update(b).digest('hex')!==expected) throw Error(`Source moved: ${path}`); }
 if (house.shell !== 12000 || house.roofDevelopment.eavesDatum !== 7100 || house.roofDevelopment.pitch !== 25) throw Error('House geometry moved');
 const width=15.4, bay=2.57, bays=7, length=bay*bays, area=width*length, rate=216;
 const flow=area*rate/3600, ridge=10050+width*1000/2*Math.tan(18*Math.PI/180);
@@ -14,6 +15,7 @@ const fullPipeVelocity=(sideFlow/1000)/(Math.PI*(0.1/2)**2);
 const result={status:'UNADMITTED geometric and rainfall sensitivity; not an operating method',hadBlob:blob,
   assumptions:{coverWidthM:width,bayM:bay,bays,lengthM:length,xMm:[-1700,13700],yMm:[-2995,14995],eaveZmm:10050,pitchDegrees:18,beamHeightMm:750,houseShellMm:house.shell},
   derived:{horizontalAreaM2:area,flowLitresPerSecond:flow,existingLocalEventLitresPerSecond:3.60375,extraCoveredGroundM2:area-144,ridgeZmm:ridge,assumedBeamLowerEnvelopeZmm:9300,sourceHouseRidgeZmm:8090.903773579372,assumedRidgeGapMm:9300-8090.903773579372},
+  gantryPlanTrial:{model:'REID PGRS20; two unloaded nominal placements',beamLengthMm:2000,maximumClearSpanMm:1500,sourceRoofOpeningMm:[4450,7550],beamXMm:[[4550,6550],[5450,7450]],frameClearSpanXMm:[[4800,6300],[5700,7200]],boundingYMm:[4886,6044],receiverMm:[4350,7650],numberOfModules:7,firstAndLastCentreMm:[4350+3300/14,7650-3300/14],endModuleMinShiftMm:4800-(4350+3300/14),status:'Plan arithmetic only; clear frame span is not proven hook travel; 100 mm beam edge reservation is not real collision clearance'},
   egressReservation:{sourceFrontDoorCentreXmm:6000,sourceRoughWidthMm:1800,candidateCorridorXmm:[5000,7000],candidateCorridorYmm:[-2995,0],nominalGatePlaneYmm:-2995,idealEqualLeafWidthMm:1000,idealOutwardSweepLimitYmm:-3995,status:'Reservation only: no door, latch, first-motion, grading, fire or safe-destination proof'},
   scaffoldAxisTrial:{sourceStructuralSpanMm:13400,frameWidthMm:730,westernAxesMm:[-1065,-335],easternAxesMm:[12335,13065],bayAxesYMm:Array.from({length:8},(_,i)=>-2995+2570*i),houseToInnerAxisMm:335,projected205mmWingClearanceMm:232.5,onePoint09mFrameWingClearanceMm:52.5},
   gutterTrial:{westXMm:[-1900,-1600],eastXMm:[13600,13900],yMm:[-2995,14995],highInvertZmm:9800,endInvertZmm:9800-fall,topZmm:9950,halfRunMm:halfRun,fallMm:fall,oneEndBlockedMinimumStaticRiseMm:fall,remainingOneSideLitresPerSecond:sideFlow,full100mmPipeIdealVelocityMperS:fullPipeVelocity,outletCentresMm:[[-1750,-2800],[-1750,14800],[13750,-2800],[13750,14800]]},
