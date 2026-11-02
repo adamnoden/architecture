@@ -28,6 +28,11 @@
       "scope": "Modular scaffolding stair tower 1400×2570 with 640 comfort stair; not a complete designed installation."
     },
     {
+      "publisher": "Layher",
+      "url": "https://www.layher.com/-/media/project/layher/layherkg/downloads/en_system_solutions_civil_engineering-_2021.pdf",
+      "scope": "Compact tower 1570 x 1400 axes; 1700 x 1530 outside, excluding brackets."
+    },
+    {
       "publisher": "Layher UK",
       "url": "https://www.layher.co.uk/protect-system/",
       "scope": "Protect panel family connects to Allround/SpeedyScaf; system, joints and wind design remain site-specific."
@@ -90,6 +95,10 @@
       1400,
       1570
     ],
+    "outerPlan": [
+      1530,
+      1700
+    ],
     "stair": [
       1250,
       600
@@ -110,8 +119,18 @@
         6910
       ]
     },
+    "outer": {
+      "x": [
+        6135,
+        7665
+      ],
+      "y": [
+        5275,
+        6975
+      ]
+    },
     "footPlate": 150,
-    "scope": "Source ground plan excludes console brackets; exact stability, member positions, support, entry, rescue and transfers must be designed."
+    "scope": "Ground plan is axis-to-axis; outer dimensions are 1530 by 1700 without brackets. Exact stability, member positions, support, entry, rescue and transfers must be designed."
   },
   "reid": {
     "model": "PGRS20",
@@ -179,10 +198,11 @@
     "gantryEyeAboveSecondary": 71.11339325956033,
     "gantryTopAt5540": 7316,
     "gantrySpanDeficit": 1800,
-    "gantryCompactBoundingOverlapM2": 0.704,
-    "compactToAWithdrawal": 240,
+    "gantryCompactBoundingOverlapM2": 0.818985,
+    "compactToAWithdrawal": 175,
+    "compactToEastScreen": 11,
     "compactFootToInlet": 15,
-    "compactGatePlanOverlapY": 155.5,
+    "compactGatePlanOverlapY": 220.5,
     "compactTwo2750ExitShort": 61.80000000000018
   },
   "replan": {
