@@ -1,0 +1,283 @@
+{
+  "connector_sensitivity": {
+    "annulus_radial_mm": 20.0,
+    "bar_centres_mm": [
+      [
+        322.5,
+        322.5
+      ],
+      [
+        322.5,
+        502.5
+      ],
+      [
+        502.5,
+        322.5
+      ],
+      [
+        502.5,
+        502.5
+      ]
+    ],
+    "bar_diameter_mm": 20,
+    "bar_length_mm": 7630,
+    "bilinear_tension_only_witness_kN": [
+      21.697578125000007,
+      1.2763281250000005,
+      1.2763281250000005,
+      0.07507812500000002
+    ],
+    "bore_diameter_mm": 60,
+    "cold_RC_z_mm": [
+      -1215,
+      -765
+    ],
+    "equal_elastic_unilateral_ignored_kN": [
+      16.892578125000007,
+      6.081328125000002,
+      6.081328125000002,
+      -4.7299218750000005
+    ],
+    "gap_mm": 385.0,
+    "gross_bar_area_mm2": 1256.6370614359173,
+    "gross_bar_mass_G_kN_at_78p5": 0.7526690511323497,
+    "ideal_elastic_translation_mm": 0.756869621193461,
+    "ideal_four_bar_moment_each_kNm": 0.048125,
+    "ideal_gross_bending_stress_MPa": 61.27465309037971,
+    "largest_witness_gross_tensile_stress_MPa": 69.06553623432659,
+    "nominal_bar_bottom_top_mm": [
+      -990,
+      6640
+    ],
+    "nominal_bore_area_fraction": 0.12566370614359174,
+    "nominal_cold_RC_embed_mm": 225,
+    "nominal_cover_outside_link_mm": 42,
+    "scope": "Continuous rods connect cold receiver to the underside of a trial cap plate; actual cold anchorage, plate connection, construction sequence and bar material remain unqualified. Fixed-fixed, equal split and nominal smooth gross sections are stress sensitivities only. Real fixity, embedment, shear, tension, fatigue, slip, ductility, reinforcement, DPC, gas, moisture, fire and thermal qualification are absent. The bars and bores are not selected.",
+    "trial_links_diameter_mm": 8,
+    "two_tie_tension_only_control_kN": [
+      25.13615625000001,
+      -0.8108437500000001
+    ],
+    "unit_station_H_kN": 1,
+    "warm_RC_z_mm": [
+      -380,
+      -80
+    ]
+  },
+  "decision": "Inward 300 square and straight roof-to-pier-to-grid route are a source-bound candidate for joint STR/MAT/HAD challenge, not a selected design. The four-bar crossing is unqualified; direct full RC bypass remains a thermal/capillary adverse comparator. No actual ground/support capacity is asserted.",
+  "signed_actions": {
+    "height_primary_above_cold_top_m": 7.511721089070518,
+    "roof_down_ULS_kN": 68.11087500000001,
+    "roof_only_about_cold_corner_axes_down_kNm": [
+      2.2136034375,
+      -2.2136034375
+    ],
+    "roof_only_about_cold_corner_axes_uplift_kNm": [
+      -0.7905726562500004,
+      0.7905726562500004
+    ],
+    "roof_only_about_warm_centroid_down_kNm": [
+      -5.44887,
+      5.44887
+    ],
+    "roof_only_about_warm_centroid_uplift_kNm": [
+      1.9460250000000008,
+      -1.9460250000000008
+    ],
+    "roof_uplift_no_favourable_G_kN": -24.32531250000001,
+    "station_horizontal_unit_kN": 1,
+    "translated_force_only_about_cold_down_kNm": [
+      7.662473437500001,
+      -7.662473437500001
+    ],
+    "translated_force_only_about_cold_uplift_kNm": [
+      -2.736597656250001,
+      2.736597656250001
+    ]
+  },
+  "sources": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/mat/studies/warm-receiving-grid.json": "a2b15c9505ee3888ffb892aa7e5182f80f4aa5a70bd5058a915df6e3bec4de99",
+    "project/str/studies/disjoint-house-actions.json": "3906870b991841aba7769a4d913dce15113ba4a7f8c4f800913d2d86fecaa3a9",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+  },
+  "status": "finite SW corner constructive comparison; incomplete, no structural or building acceptance",
+  "trial_pier": {
+    "all_route_reserves": [
+      {
+        "id": "utility-to-washer",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 8349.440010775264
+      },
+      {
+        "id": "utility-to-sink",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 9953.429304383973
+      },
+      {
+        "id": "protected-stair-bottom-to-front",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 2945.369778623077
+      },
+      {
+        "id": "daily-living-to-kitchen",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 3797.7082009337855
+      },
+      {
+        "id": "courtwest-window6850",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 6302.390665508971
+      },
+      {
+        "id": "living-entry",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 8146.393461116999
+      },
+      {
+        "id": "living-seating-rear-stack",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 8706.943588837448
+      },
+      {
+        "id": "living-north-window1800",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 8706.943588837448
+      },
+      {
+        "id": "living-fixed3700-inspection-only",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 10136.109563074739
+      },
+      {
+        "id": "kitchen-entry-to-working-aisle",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 11258.654022527882
+      },
+      {
+        "id": "kitchen-north-window10200",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 12359.580672854057
+      },
+      {
+        "id": "kitchen-pantry-open-door-approach",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 12359.580672854057
+      },
+      {
+        "id": "principal-to-protected-stair",
+        "level": "FIRST",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 3344.9504797733534
+      },
+      {
+        "id": "bed4-to-protected-stair",
+        "level": "FIRST",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 3344.9504797733534
+      },
+      {
+        "id": "principal-north8300-window",
+        "level": "FIRST",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 12180.964005236134
+      },
+      {
+        "id": "principal-ordinary-entry-bath",
+        "level": "FIRST",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 11258.654022527882
+      },
+      {
+        "id": "principal-wardrobe-foot-north-windows",
+        "level": "FIRST",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 11317.603033758727
+      },
+      {
+        "id": "bed4-entry-foot-north",
+        "level": "FIRST",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 8181.100311869917
+      },
+      {
+        "id": "bed4-wardrobe-operation",
+        "level": "FIRST",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 8934.124890859988
+      },
+      {
+        "id": "bed4-rear-ensuite-door-approach",
+        "level": "FIRST",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 10310.21029480566
+      },
+      {
+        "id": "study-closed-door-window-tasks",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 1727.637171685309
+      },
+      {
+        "id": "study-west-window-closed-door",
+        "level": "GROUND",
+        "radius_mm": 300,
+        "reserve_to_pier_mm": 1870.0106566558607
+      }
+    ],
+    "cold_axis_offset_from_pier_mm": [
+      112.5,
+      112.5
+    ],
+    "core_plan_overlap_m2": 0.0644,
+    "corner_SHS120_comparator_underside_if_same_centre_mm": 6686.721089070517,
+    "minimum_retained_route": {
+      "id": "study-closed-door-window-tasks",
+      "level": "GROUND",
+      "radius_mm": 300,
+      "reserve_to_pier_mm": 1727.637171685309
+    },
+    "nearest_furniture_proxy": {
+      "level": "groundFurniture",
+      "name": "study-desk",
+      "rectangular_gap_mm": 99.81232388838565
+    },
+    "nominal_pier_to_comparator_gap_mm": 46.72108907051734,
+    "pier_bottom_top_mm": [
+      -80,
+      6640
+    ],
+    "pier_bounds_mm": [
+      262.5,
+      262.5,
+      562.5,
+      562.5
+    ],
+    "pier_centroid_mm": [
+      412.5,
+      412.5
+    ],
+    "pier_gross_G_kN_at_25": 15.120000000000001,
+    "pier_gross_volume_m3": 0.6048,
+    "remaining_bed_and_packing_mm": 26.721089070517337,
+    "roof_point_offset_from_pier_mm": [
+      -80.0,
+      -80.0
+    ],
+    "room_projection_mm": 133.0,
+    "trial_plate_mm": 20,
+    "upper_slab_plan_overlap_m2": 0.0529
+  }
+}
