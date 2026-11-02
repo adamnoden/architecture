@@ -9,13 +9,13 @@
     "label": "zerg-rwt06-high-eave-continuation"
   },
   "claimedAt": "2026-11-02T09:11:24.186Z",
-  "heartbeatAt": "2026-11-02T10:18:57.908Z",
-  "expiresAt": "2026-11-02T11:03:57.908Z",
+  "heartbeatAt": "2026-11-02T10:41:37.706Z",
+  "expiresAt": "2026-11-02T11:26:37.706Z",
   "checkpoint": {
-    "evidence": "PR1258 frozen reviewed negative-study head b616da754f78ca18c2329a4d451e246c2500d4f2 tree dd823289fd5da954d77dd217916ee970688dd262; fresh canonical UUID/gen25 verified live; all old RWT mailbox requests have responses, none replayed.",
-    "next": "Root prepares shared exact-source integration with MAT1259 on verified main207e. Await shared PR identity for rebind; root sole CI/merger. After verified merge release25 and acquire fresh RWT06 before constructive receiver implementation."
+    "evidence": "Shared PR1263 head247608959f4557c1974a941a5a48708939cd1788 tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; root confirms all six RWT negative-study blobs match reviewed PR1258 b616; RWT25 prior renewal/readback39c6e229 verified.",
+    "next": "Root sole CI/preflight/merger for shared PR1263. Preserve rejected-method status. After verified shared merge, canonically release25 and acquire fresh RWT06 before source-bound temporary-receiver and live reversal design."
   },
-  "branch": "work/rwt06-high-eave-20261102",
+  "branch": "work/zerg-recovery-roof-export",
   "predecessor": {
     "leaseId": "f2945be5-9ca5-41cd-9870-262c83177fa0",
     "generation": 24,
@@ -38,6 +38,6 @@
       "blocker": "No wet-state/first-harm/hydraulic/physical/site/high-eave admission; RWT-06 remains planned"
     }
   },
-  "pr": 1258,
-  "note": "Root delegated controller for frozen negative-study integration only; original author stopped. No design writes under generation25."
+  "pr": 1263,
+  "note": "Root delegated controller for frozen RWT25 negative-study integration only; source remains six reviewed blobs, no constructive design writes under25."
 }
