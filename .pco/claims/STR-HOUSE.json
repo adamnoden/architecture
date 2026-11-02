@@ -9,8 +9,8 @@
     "label": "zerg-structure-whole-house"
   },
   "claimedAt": "2026-11-02T10:09:55.141Z",
-  "heartbeatAt": "2026-11-02T10:13:35.909Z",
-  "expiresAt": "2026-11-02T10:58:35.909Z",
+  "heartbeatAt": "2026-11-02T10:16:09.965Z",
+  "expiresAt": "2026-11-02T11:01:09.965Z",
   "branch": "work/zerg-str-whole-house-20261102",
   "predecessor": {
     "leaseId": "e9da7d6c-2886-4470-b019-871466f746dd",
@@ -36,8 +36,8 @@
   },
   "pr": 1261,
   "checkpoint": {
-    "evidence": "Draft PR #1261 head 3e9e882bde044ec4f6b3c2a1a219cbc7ca9ae5dd tree efa33dd4a128d216adc9159ddc4fcce2fd9c256e; source-bound combined floor and wall opening sensitivity; local reproducers passed",
-    "next": "Independently challenge head model and exact source geometry; reconcile current main and CI before any publication",
-    "blocker": "Actual arch/head and piers, floor sharing, lateral and warm/cold force transfer, and site support remain unqualified; STR-HOUSE remains open"
+    "evidence": "Draft PR #1261 head 64197071f90193d5f1a90cdddb59a7f8e436d615 tree dd7ae78a0cdaeeecbb8a2811a486f433ffdf58f6; combined opening and protected plant door source-bound; local reproducers passed",
+    "next": "Independently challenge and observe exact-head CI; reconcile current main and publication preflight",
+    "blocker": "Actual head and piers, floor sharing, lateral and warm/cold transfer, and site support remain unqualified; STR-HOUSE remains open"
   }
 }
