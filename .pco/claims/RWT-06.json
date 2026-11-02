@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 32,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "639837a1-d489-4c4f-8279-e0bd6126442c",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6589670238"
   },
   "claimedAt": "2026-11-02T22:07:39.000Z",
-  "heartbeatAt": "2026-11-02T22:12:12.000Z",
-  "expiresAt": "2026-11-02T22:57:12.000Z",
+  "heartbeatAt": "2026-11-02T22:17:06.000Z",
+  "expiresAt": "2026-11-02T22:17:06.000Z",
   "branch": "work/mvb-chat-6589670238",
   "predecessor": {
     "leaseId": "1fc916bc-d206-468d-94ad-b208b59ddd02",
@@ -39,5 +39,7 @@
     "evidence": "PR1290 head 2279baf: source-derived zero outboard spill-strip at both gutter lips, test/JSON, RWT programme and study dispositions, optional full overroof.",
     "next": "Observe complete head CI, fresh canonical preflight, expected-head merge, handoff release and disposal proof cleanup.",
     "blocker": "Actual independent receiving, rainwater/first-harm, installed roof, scaffold/access/egress and real plot/rights remain unearned; node stays planned."
-  }
+  },
+  "releasedAt": "2026-11-02T22:17:06.000Z",
+  "releaseReason": "handoff"
 }
