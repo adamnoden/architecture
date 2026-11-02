@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "node": "OAS-NORTH-EXPORT",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "34303b32-cbe8-4bf6-b0be-29a1a2f5d18d",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "zerg-oas-north-export"
+  },
+  "claimedAt": "2026-11-02T11:24:44.798Z",
+  "heartbeatAt": "2026-11-02T11:24:44.798Z",
+  "expiresAt": "2026-11-02T12:09:44.798Z",
+  "checkpoint": {
+    "evidence": "Fresh currentmain e93c643d36dfb0ee72a2bd2035899dfc5cc94f74 contains verified1271 merge00d2e890; IAS18 exact handoff released4c94bdee at11:23:49.045Z. New OAS prerequisite ready; actual FIRSTnorth1000/sill850/head2850 scope and OS01/02/04 brief onmain. No occurrence PASS yet.",
+    "next": "Develop one source-bound actual FIRSTnorth window/profile/operation/upperguard/protectedrenewal candidate. Test ventilation/purge/rescue/guard obligations before fixedglazing direction; preserve all components/seals and independent supports. No HADgenerator or NW structuralroof scope overlap.",
+    "blocker": "Actual product/profile/support/guard/release and boundary geometry unearned; parentIAS blocked until occurrence evidence developed. Site/structure/weather/material/force/physical adoption remain separate; no wholeexport PASS."
+  },
+  "branch": "work/zerg-oas-north-export-20261102"
+}
