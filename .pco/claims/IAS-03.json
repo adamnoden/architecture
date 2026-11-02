@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 14,
-  "state": "released",
-  "leaseId": "c04cb153-03a0-42b1-a663-792b266b81ce",
+  "generation": 15,
+  "state": "claimed",
+  "leaseId": "9907d87c-6e91-4fcc-9aad-6786f8ff487b",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg4-ias-convergence"
+    "label": "zerg5-ias-closeout"
   },
-  "claimedAt": "2026-11-01T21:28:29.086Z",
-  "heartbeatAt": "2026-11-02T00:14:45.577Z",
-  "expiresAt": "2026-11-02T00:14:45.577Z",
-  "branch": "work/zerg4-ias-convergence",
+  "claimedAt": "2026-11-02T00:16:03.173Z",
+  "heartbeatAt": "2026-11-02T00:16:03.173Z",
+  "expiresAt": "2026-11-02T01:01:03.173Z",
+  "checkpoint": {
+    "evidence": "Fresh main59ec623d after verified PR1237 merge; previous IAS14 released and issue941 bounded progress reconciled.",
+    "next": "Complete selected head-first sink composite/operator/support and guarded wet export/occurrence reconciliation.",
+    "blocker": "No full IAS node completion or physical/material admission; internal renewal joins remain."
+  },
+  "branch": "work/zerg5-ias-closeout",
   "predecessor": {
-    "leaseId": "10049375-f6a2-4aa4-87a5-3da538b5d0dd",
-    "generation": 13,
-    "branch": "work/zerg2-integration-20261101",
-    "pr": 1229,
+    "leaseId": "c04cb153-03a0-42b1-a663-792b266b81ce",
+    "generation": 14,
+    "branch": "work/zerg4-ias-convergence",
+    "pr": 1237,
     "checkpoint": {
-      "evidence": "SharedPR1229 head8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 nativefetchverified5sourceparents; all4customchecks,regressions,tsc,control,repo andcommanderreviewPASS",
-      "next": "ObserveexactheadfullCI assoleobserver; rootcommandsfresh4pernodepreflights thenexpectedheadmerge",
-      "blocker": "FullCIpending; wholeinventory/physical/materialadmission remainunaccepted"
+      "evidence": "PR1237 frozen30cf11096e98ec8c18e6269330b986751b9e63f5 tree1b9070244b877b0528808cd16f9f5952172f5902; corrected family600 north-first held-transfer/ordinary focused independent PASS; generator/render/typecheck/control/workflow checks; actual eab4 main ancestry.",
+      "next": "Hold frozen merge head; root sole exact-head CI observation and fresh canonical preflight/expected-head merge. Release after verified merge then reclaim authorized continuation.",
+      "blocker": "Partial IAS progress only: head-first sink and full guarded wet export/IS reconciliation remain internal work; no node completion or physical/material admission."
     }
   },
   "recoverySource": {
-    "leaseId": "10049375-f6a2-4aa4-87a5-3da538b5d0dd",
-    "generation": 13,
-    "branch": "work/zerg2-integration-20261101",
-    "pr": 1229,
+    "leaseId": "c04cb153-03a0-42b1-a663-792b266b81ce",
+    "generation": 14,
+    "branch": "work/zerg4-ias-convergence",
+    "pr": 1237,
     "checkpoint": {
-      "evidence": "SharedPR1229 head8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 nativefetchverified5sourceparents; all4customchecks,regressions,tsc,control,repo andcommanderreviewPASS",
-      "next": "ObserveexactheadfullCI assoleobserver; rootcommandsfresh4pernodepreflights thenexpectedheadmerge",
-      "blocker": "FullCIpending; wholeinventory/physical/materialadmission remainunaccepted"
+      "evidence": "PR1237 frozen30cf11096e98ec8c18e6269330b986751b9e63f5 tree1b9070244b877b0528808cd16f9f5952172f5902; corrected family600 north-first held-transfer/ordinary focused independent PASS; generator/render/typecheck/control/workflow checks; actual eab4 main ancestry.",
+      "next": "Hold frozen merge head; root sole exact-head CI observation and fresh canonical preflight/expected-head merge. Release after verified merge then reclaim authorized continuation.",
+      "blocker": "Partial IAS progress only: head-first sink and full guarded wet export/IS reconciliation remain internal work; no node completion or physical/material admission."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1237 frozen30cf11096e98ec8c18e6269330b986751b9e63f5 tree1b9070244b877b0528808cd16f9f5952172f5902; corrected family600 north-first held-transfer/ordinary focused independent PASS; generator/render/typecheck/control/workflow checks; actual eab4 main ancestry.",
-    "next": "Hold frozen merge head; root sole exact-head CI observation and fresh canonical preflight/expected-head merge. Release after verified merge then reclaim authorized continuation.",
-    "blocker": "Partial IAS progress only: head-first sink and full guarded wet export/IS reconciliation remain internal work; no node completion or physical/material admission."
-  },
-  "pr": 1237,
-  "releasedAt": "2026-11-02T00:14:45.577Z",
-  "releaseReason": "handoff"
+  }
 }
