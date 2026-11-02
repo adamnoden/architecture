@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-03",
   "generation": 23,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "dd7d0505-f503-41b9-b1e8-effbb249e0e5",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-had-open-loggia"
   },
   "claimedAt": "2026-11-01T20:03:03.859Z",
-  "heartbeatAt": "2026-11-02T02:25:02.531Z",
-  "expiresAt": "2026-11-02T03:55:02.531Z",
+  "heartbeatAt": "2026-11-02T02:48:16.000Z",
+  "expiresAt": "2026-11-02T02:48:16.000Z",
   "branch": "work/zerg5-house-integration-20261102",
   "predecessor": {
     "leaseId": "6880ac9f-d9b0-4763-998c-f7820e975912",
@@ -39,5 +39,7 @@
     "next": "Root sequences remaining owner bindings, exact-head CI and fresh per-node merge preflights; source and shared heads frozen.",
     "blocker": "Shared CI and all owner branch/PR associations must stabilize before merge; no technical/site/material/physical admission claimed."
   },
-  "pr": 1244
+  "pr": 1244,
+  "releasedAt": "2026-11-02T02:48:16.000Z",
+  "releaseReason": "completed"
 }
