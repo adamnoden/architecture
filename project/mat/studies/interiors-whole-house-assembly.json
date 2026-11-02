@@ -1304,11 +1304,11 @@
         "I10"
       ],
       "name": "Sanitaryware and worktops",
-      "direction": "Carry the matched enamel-tray reference, plain ceramic basins/WC/bath and mechanically supported plain stainless wet-worktop direction",
+      "direction": "Carry the matched enamel-tray reference, plain ceramic basins/WC, an enamelled-steel bath and mechanically supported plain stainless wet-worktop direction",
       "layers": [],
       "oldDepth": null,
       "scope": "Principal/rear/family wet rooms, guest WC and actual kitchen/utility fixtures; no invented household appliance count",
-      "constituents": "Include tray support/pads, cistern and seat, mixer cartridges, overflow, waste, backing, clamps and complete joints.",
+      "constituents": "Include bath feet/frame, overflow and front-access release; tray support/pads, cistern and seat, mixer cartridges, overflow, waste, backing, clamps and complete joints.",
       "firstRelease": "Use the specific1232 split renewal for principal; each other occurrence needs its own supported connection and withdrawal.",
       "residue": "The B568 plastic/PP and wet seals remain unapproved. A ceramic pan or stainless bowl does not clear the connected assembly.",
       "totalDepth": 0,
@@ -1992,23 +1992,21 @@
     }
   },
   "dryFinishDisposition": {
-    "sourceMaximum": 15,
-    "challenger": 17,
-    "control": 27,
-    "challengerSelected": false,
-    "preferredLimeTrial": 27,
-    "preferredGrowthPerDryFace": 12,
-    "trialAdopted": false,
-    "unchangedGeometryFit": false,
-    "principalHeadEast": 11540.5,
-    "sourceDryEastFace": 11582.5,
-    "challengerEastFace": 11580.5,
-    "headOverlap": 2,
-    "controlledDoorRule": "No finish increment may consume the applicable frame/jamb/perimeter boundary. Source15 remains a hard maximum until an exact complete rewind is earned.",
-    "correction": "HAD must author the full27 dry/30 wet face trial, actual furniture/frames/tasks and ordinary repairs. A2 overlap alone does not prove redesign impracticable. Gypsum with acrylate is functional control, not preferred material selection.",
-    "actualInputDryEastFace": 11570.5,
-    "actualInputHeadSpare": 30,
-    "inputAlready27": true
+    "legacyUnchangedGeometryBudget": 15,
+    "currentInputDepth": 27,
+    "preferredCompleteLimeDepth": 27,
+    "roomFacingGrowth": 12,
+    "geometryDevelopmentAccepted": false,
+    "currentDryEastFace": 11570.5,
+    "currentWholeBedEast": 11540.5,
+    "rawFurnitureWallConflictCount": 10,
+    "historical17": {
+      "selected": false,
+      "rule": "The incomplete17 recipe is not selected. Its historical2 overlap did not demonstrate that an ordinary room redesign was impracticable."
+    },
+    "gypsumFunctionalControlOnly": true,
+    "rule": "Input already contains the complete27 direction; do not add12 again or consume classified frame/perimeter duties. Final common room/task source join remains required; no material admission follows from spatial fit.",
+    "currentHeadSpare": 30
   },
   "finiteDryCorrection": {
     "manufacturer": "British Gypsum",
@@ -2454,19 +2452,47 @@
     "actualB568OffsetProved": false,
     "rule": "Keep actual1000 frame/feet/additional-support/seat/seals/discharge/first release duties. No900 transfer or PP/plastic/epoxy exception; exact manufacturer1000 support arrangement remains unadmitted."
   },
+  "bathBodyDirection": {
+    "recommended": "Plain enamelled-steel1700x700 with removable independently supported front panel and separately released feet/frame",
+    "functionalControl": {
+      "manufacturer": "Kaldewei",
+      "model": "SANIFORM PLUS363-1",
+      "primary": "https://files.cdn.kaldewei.com/data/sprachen/englisch/techdata/DB04_24-Sort_DB_UK-GBeng_BW_ADV_363-1_SANIFORM_PLUS_SANIFORM_PLUS_STAR.pdf",
+      "retrieved": "2026-11-02",
+      "external": [
+        1700,
+        700
+      ],
+      "bodyDepthIncludingWasteHole": 410,
+      "heightWithFeet": [
+        545,
+        560
+      ],
+      "massKG": 41,
+      "wasteHole": 52,
+      "footEndToDrain": 310
+    },
+    "proposedOrientation": "Foot end EAST, required actual body drain10850/4150 from placed bath9460/3800; service-owner first-interface binding pending",
+    "firstInterface": "Isolate/drain; support body independently; remove the accessible front panel and expose a separately supported removable first waste/supply joint from the room side. Disconnect/temporarily close before releasing rim seals and feet/frame; only then strip all protrusions and use the authored body route. Reject any configured kit that requires blind reach, moves an unsupported pipe or cannot expose/reinstate the actual full joint.",
+    "transport": "410 is bare dimensional control only; installed feet545–560 are not the<=550 stripped module. Exact retained clips/outlet/overflow must be removed or remain within that module. IAS hall witness is not full guarded-stair/export proof.",
+    "material": "Body evidence does not admit feet/pads/coatings/overflow/waste/seals or optional surface treatment; whole product and residue disposition remain held.",
+    "actualCompleteProductAccepted": false
+  },
   "developmentExitAssessment": {
-    "status": "Not yet earned: exact27 input has19 route controls passing but10 raw whole-furniture/wall clashes; latest wet/renewal sources still joining",
-    "internalDesignRemaining": [
-      "Repair and bind all10 current raw furniture/27finish overlaps, including actual complete front-bed outside envelopes; do not label route-only pass whole-house fit",
-      "Join actual IAS family delayed-close/wholewet renewal and the canonical West-drain rear service record to one final HAD source"
+    "status": "MAT-owned construction recommendations/dispositions are reasoned; exact common-source integration and independent review pending before lifecycle completion",
+    "internalMATChoicesRemaining": [],
+    "dependentSelectedHouseJoins": [
+      "Bind one final HAD27/30 authority with actual family600, furniture/emitter and roof-domain composition; current pinned0b2 remains a dated failed control",
+      "Bind final service first-interface and IAS ordinary renewal records without retyping their numeric authority; no claim that hall-only body transport is complete exterior renewal"
     ],
     "laterAdmissionSeparate": [
       "Actual product/substrate/recipe and compatible installed system",
       "Material disclosure and explicit owner disposition for remaining known polymers; none approved",
       "Physical/prototype, structural/fire/water/operation testing and applicable external acceptance"
     ],
-    "recommendationCoverage": "All18 room/route occurrences have reasoned construction and first-release directions; current trial conflicts are named rather than hidden",
-    "programmeAction": "Assess complete development only after the two internal joins are earned; do not prolong planned solely for later certification"
+    "IASDesignDutySeparate": "Exact guarded-stair/bridge/export task remains IAS design work. It does not automatically veto MAT alternatives resolution where the assembly recommendation, supported first interface and honest compatibility conditions are complete.",
+    "recommendationCoverage": "All18 room/route occurrences and16 families have a reasoned construction direction or finite rejection/actionable correction, constituent residue and first release. No owner exception or plastic-free-house claim.",
+    "programmeAction": "Keep planned until exact-source review earns the proposed development closeout. Later admission and dependent IAS export duties are not silently reclassified as unresolved MAT material alternatives."
   },
   "livingRepairProposal": {
     "basisHADHead": "20ff8709a79a63e7d4bcd13fc6b86ef36a5a9a00",
@@ -2698,7 +2724,7 @@
   "checks": {
     "dryStandardControl": 27,
     "dryControlOver15": 12,
-    "dryReferenceOver15": 2,
+    "historical17Over15": 2,
     "timberFunctionalDepth": 58,
     "skirtingOverlapOver15FloorGap": 3,
     "upperCeilingControlUnderside": 2994,
@@ -2710,5 +2736,5 @@
   },
   "exceptionsApproved": 0,
   "installedQuantities": null,
-  "programmeLifecycle": "planned pending two actual internal design joins; separate later admission not used as a blanket delay"
+  "programmeLifecycle": "planned pending exact-source integration and independent review; MAT alternatives directions reasoned, separate IAS export and later admission not used as a blanket delay"
 }

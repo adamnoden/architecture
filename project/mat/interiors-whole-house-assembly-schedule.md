@@ -30,7 +30,7 @@ Develop the complete mineral dry-finish27 rewind, ordinary mineral floor fields 
 | D-R | Preserve the complete applicable rated doorset/glazed assembly at real protected boundaries |Core/glues, frame/lipping, seals, hinge pads, ironmongery, packing and perimeter seal remain together. The documented PVC-encased intumescent control is not admitted as plastic-free and must not be stripped. Internal dwelling closers are not automatic; actual kit and role control. |
 | D-O | Use ordinary solid carpentry or a complete matched folding screen outside a rated role |No untested glue-free leaf replaces a required rated set. The principal screen remains an operating-envelope requirement with actual guides, bearings, seals and release unadmitted. |
 | H-M | Prefer plain uncoated stainless/brass hardware with actual metal fixing and accessible replacement |Inspect clear lacquer, nylon bush/roller, lubricant and closer internals. Rated hinge/lock/seal protection remains. A metal handle does not clear a doorset. |
-| S-W | Carry ceramic sanitary bodies, matched enamel-tray control and plain stainless wet-worktop direction |Include cistern/seat/cartridge, support/pads, overflow, waste, backing, clamps and every joint. Use the [actual1232 principal split renewal](interiors-b-wetroom-assembly.md); do not transfer it to other fixtures by name. |
+| S-W | Carry ceramic basins/WC, an enamelled-steel bath, matched enamel-tray control and plain stainless wet-worktop direction |Include cistern/seat/cartridge, support/pads, overflow, waste, backing, clamps and every joint. Use the [actual1232 principal split renewal](interiors-b-wetroom-assembly.md); do not transfer it to other fixtures by name. |
 | B-S | Minimise concealed construction and independently support terminals/covers |Retain actual fire/acoustic closures, moisture seals and electrical insulation. An opened annulus requires isolation and a suitable temporary closure, then compatible reinstatement/testing. Decorative faces carry no safety or fixture support duty. |
 
 ## Located joinery and wet-working recommendations
@@ -69,9 +69,11 @@ Rear wet30 trial moves the1000 shower15 west/15 north to1802.5/8952.5 and basin1
 
 ## Development exit assessment
 
-Every named room/route now has a reasoned construction direction, constituents/functional residue and first release. Two **internal design** joins still prevent this packet claiming the broad development exit: one full27 dry-finish room/furniture/frame/task rewind, and the complete family hinged-door/service/wet-face plus rear wet-face trial. These are concrete work being coordinated with HAD/IAS/services, not referrals to an external certifier. Their actual source results must be joined before proposing lifecycle completion.
+Every named room/route has a reasoned construction direction, constituents/functional residue and first release. **No MAT-owned material-family choice is left undecided:** complete27 mineral dry finish; located30 complete wet boundary; mechanical timber/mineral floors and joinery; ordinary70 and occurrence-specific complete176 ceilings; complete applicable protected doors/hardware; ceramic basins/WC, enamelled-steel bath/trays and a supported removable stainless wet-worktop direction. Known polymer-bearing controls are retained as rejected/unapproved full-package controls, not selected exceptions.
 
-Later product/substrate/recipe confirmation, material disclosure/owner disposition and physical/technical/statutory acceptance remain separate holds. They do not by themselves justify leaving an otherwise completed development task planned. Conversely, no unapproved polymer, small geometric reserve, mineral face or future certificate is promoted into a completed compliant house. After the two internal joins are earned, reassess the MAT-INTERIORS development exit against the programme, with that distinction explicit.
+The remaining work before proposing lifecycle completion is the exact-source selected-house join and independent review: final HAD family600/emitter/furniture/roof domains, the canonical service first interfaces, and current IAS ordinary-renewal dispositions. These are named dependencies, not another unresolved material catalogue. The complete guarded-stair/bridge/export operation remains **internal IAS design work**. It need not automatically veto MAT alternatives resolution where this packet's assembly recommendation and supported first-interface conditions are complete; the bath path ending in the hall is never described as exterior renewal.
+
+Later product/substrate/recipe confirmation, material disclosure/owner disposition and physical/technical/statutory acceptance remain separate holds. They do not by themselves justify leaving an otherwise completed development task planned. No unapproved residue, mineral face, geometric proxy or future certificate is promoted into a compliant installed house. This working checkpoint remains planned until the exact-source result is independently reviewed and the proposed control projection is authorised through shared integration.
 
 Ordinary ceiling fields choose bare off-white mineral board and expressed mechanical joints, with plain metal backings/fasteners; no coating compatibility is left implied. The actual complete carrier/joint/moisture suitability remains to qualify. RC receivers retain the27 spatial reservation: plain off-form mineral exposure is the preferred simple direction only where STR earns the actual structural/fire duty. Do not abrade cover or assume lime adhesion to a smooth cast face. A required protective system remains whole and must trigger a depth rewind if it cannot fit; exposed concrete is not permission to remove protection.
 
@@ -98,7 +100,7 @@ These are decisions within the existing audit and owning acceptance routes, not 
 | I09/I10 | Other sanitaryware and wet worktop/leak/drying route — MAT with IAS/services | Before fixture selection. Establish whole connected product and supported isolation/removal; ceramic/stainless faces alone cannot discharge it. |
 | S09/S10 | Concealed electrical/fire/acoustic closure — services with HAD/STR/MAT | Before lining closure and each intervention. Retain required insulation, compounds, collars and qualified covers; ordinary finish is separate. |
 
-Development can recommend these coherent directions while identifying the finite work that prevents selection. No undisclosed binder, polymer or owner exception has been accepted. The broad MAT-INTERIORS development exit still requires the two actual internal joins above; later product, material and physical acceptance remain distinct. This working checkpoint does not yet claim the development exit.
+Development can recommend these coherent directions while identifying the finite work that prevents selection. No undisclosed binder, polymer or owner exception has been accepted. The broad MAT-INTERIORS development exit still requires exact-source integration and independent review; later product, material and physical acceptance remain distinct. This working checkpoint does not yet claim the development exit.
 
 ## Evidence already controlling the comparison
 
@@ -126,3 +128,37 @@ In a combined tree, reproduce with `node project/mat/studies/interiors-whole-hou
 
 
 The focused family600 peer review is bound to IAS `30cf11096e98ec8c18e6269330b986751b9e63f5`, tree `1b9070244b877b0528808cd16f9f5952172f5902`, JSON `3bf11679be73d6f7c8566b893f8302fa4454949b`. Exact native identity, source-bound reproduction and actual SVG inspection pass. The corrected north-first transfer holds the OPEN handle continuously: body15, arm-to-fixed133.765 and arm-to-leaf14.765 lower bounds, reach upper565.139 within the authored600 criterion. The rejected east-first611.422 corner is an asserted negative control. This review covers the family operation delta; it does not accept actual force, closer speed, classified-kit chemistry or newer kitchen release work.
+
+
+## Family bath body and first-interface disposition
+
+Recommend a plain enamelled-steel1700×700 bath with a removable, independently supported front panel and separately released feet/frame. One [official Kaldewei SANIFORM PLUS363-1 dimensional control](https://files.cdn.kaldewei.com/data/sprachen/englisch/techdata/DB04_24-Sort_DB_UK-GBeng_BW_ADV_363-1_SANIFORM_PLUS_SANIFORM_PLUS_STAR.pdf), retrieved2November2026, gives a410 body depth including waste hole,545–560 height with feet,41kg bare mass,Ø52 waste and310 foot-end-to-drain. Choose the east foot-end direction, giving a proposed10850/4150 body drain; the service-owned actual first-interface set-out must bind it. No waste/overflow/feet/material approval follows from this body control.
+
+The first release must occur from the room-side front: isolate/drain, independently support the body and retained pipes, remove the front, expose/disconnect the accessible first waste/supply joints, temporarily close opened connections, and then release rim seals and detachable feet/frame. Reject any kit that requires blind rear reach, unsupported pipe movement, destructive access through the primary floor boundary or an unstrippable protrusion outside the authored module. Installed feet up to560 are not the≤550 transport body; the410 control only leaves a potential dimensional margin after actual accessories are stripped. Reinstatement includes the complete rim/wall/drain seals and water test before use. The IAS body-to-hall witness and its later guarded-stair/export duty remain distinct.
+
+## Proposed control projection — apply only after exact-source review
+
+The following is a concrete proposed patch, not the current lifecycle value. Shared integration owns its application after review; no source-only merge or residue approval is requested.
+
+```diff
+--- a/project/control/nodes/materials.ts
++++ b/project/control/nodes/materials.ts
+@@ -48,9 +48,13 @@
+     owners: ['MAT'],
+     title: 'Resolve non-plastic interior and wet-room assembly alternatives',
+     dependencies: ['MAT-AUDIT'],
+-    lifecycle: 'planned',
++    lifecycle: 'complete',
+     agentDispatch: { mode: 'self-service' },
+-    closeoutEvidence: []
++    closeoutEvidence: [
++      'project/mat/interiors-whole-house-assembly-schedule.md',
++      'project/mat/studies/interiors-whole-house-assembly.json',
++      'project/mat/interiors-b-wetroom-assembly.md'
++    ]
+   },
+   {
+     id: 'MAT-COORDINATION',
+```
+
+Proposed programme result: **MAT-INTERIORS development alternatives resolved** by the whole-house schedule and connected principal wetroom evidence. Sixteen families and eighteen current room/route occurrences have a coherent construction recommendation or finite rejection with an actionable disposition, actual dimensional/source joins and first-interface/repair conditions. Exact installed product, constituent/owner disposition, safety/water/fire/physical admission and complete IAS guarded-stair/export duties remain in their existing owning routes. MAT-COORDINATION inherits no owner exception, whole-house material pass or plastic-free-house assertion.
