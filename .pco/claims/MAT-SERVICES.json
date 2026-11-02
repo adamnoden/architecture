@@ -9,9 +9,9 @@
     "label": "zerg-services-connected-network"
   },
   "claimedAt": "2026-11-02T08:00:26.106Z",
-  "heartbeatAt": "2026-11-02T08:29:10.481Z",
-  "expiresAt": "2026-11-02T09:14:10.481Z",
-  "branch": "work/zerg7-services-connected-network",
+  "heartbeatAt": "2026-11-02T08:34:46.198Z",
+  "expiresAt": "2026-11-02T09:19:46.198Z",
+  "branch": "work/zerg-recovery-engineering-integration",
   "predecessor": {
     "leaseId": "63a01d02-5f51-4260-acc5-d5ef22bde250",
     "generation": 12,
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1253 remote81d5e383/tree778eaf7b exact local c9e39f50 on main d3f254c0. Default and old HAD reproduction pass; standard control test catches current prose/numeric and old override mutations. Generated six HAD outputs unchanged.",
-    "next": "Root observes exact-head CI and independent review, then fresh publication preflight/merge; resume connected network on new main",
-    "blocker": "Merged main default HAD check regression is fixed in PR1253 but not yet integrated; local network continuation remains excluded/unpublished"
+    "evidence": "Shared draft PR1254 remote fb2f1271/treeaaed5e9f on main d3f254c0 contains exact three reviewed Services13 auth-repair blobs from81d5e383; true source parents. Root reports default HAD/require-fit, auth regression, IAS/thermal/reaction/typecheck/repo/diff pass; HAD outputs unchanged.",
+    "next": "Root observes exact-head CI and preflight/merge; then close Services13 and resume connected-network investigation from new main",
+    "blocker": "Default HAD regression repaired on shared draft but not yet merged; connected-network probe remains local unpublished and broader material/physical duties open"
   },
-  "pr": 1253
+  "pr": 1254
 }
