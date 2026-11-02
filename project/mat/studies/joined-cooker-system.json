@@ -1,0 +1,345 @@
+{
+  "status": "Connected assisted Ø250 challenger. Minus-five setpoint fails inherited five-second pressure-trip tolerance; no RUN target or product selected.",
+  "source": {
+    "startingMain": "e93c643d36dfb0ee72a2bd2035899dfc5cc94f74",
+    "networkBlob": "50af6c4734488210e4d0dec8d7b8f4d4d3a9e3c0",
+    "constructiveBlob": "8f7a448a2bbf8de7311ea0ccc4b6d01eebe208ae",
+    "HADBlob": "25faad2c4d40df2b7da7212f73808843a88d2f52"
+  },
+  "pressureTrialPa": -5,
+  "inheritedProtection": {
+    "maximumDepressionPa": 5,
+    "sustainedBelowMinus5Seconds": 5,
+    "minus5SetpointDisposition": "At trip boundary with no sensor/control/transient tolerance; rejected as selected RUN target.",
+    "minus4Sensitivity": "Requires 83.115 L/s peak and independently qualified sensor accuracy/transient margin, not selected.",
+    "minus10Disposition": "Incompatible with inherited trip without source-authored redesign and joined room/fan/capture/OEM proof."
+  },
+  "states": {
+    "normalOff": {
+      "mask": 0,
+      "hoodLps": 0,
+      "kitchenPa": -8.3052115815906,
+      "habitableInletsLps": 78.0000000150857,
+      "directMakeupLps": 0,
+      "outsideLps": 78.0000000150857,
+      "roomInletsLps": {
+        "study": 10.111906998625988,
+        "living": 10.111906998625988,
+        "bed2": 10.01250427496642,
+        "bed3": 10.01250427496642,
+        "bed4": 18.87558873395044,
+        "principal": 18.87558873395044
+      },
+      "maximumNodeResidualLps": 1.3234899398639755e-08
+    },
+    "boostOff": {
+      "mask": 63,
+      "hoodLps": 0,
+      "kitchenPa": -12.580675528070595,
+      "habitableInletsLps": 95.99999998842101,
+      "directMakeupLps": 0,
+      "outsideLps": 95.99999998842101,
+      "roomInletsLps": {
+        "study": 12.445423993674565,
+        "living": 12.445423993674565,
+        "bed2": 12.323082179805454,
+        "bed3": 12.323082179805454,
+        "bed4": 23.231493820730485,
+        "principal": 23.231493820730485
+      },
+      "maximumNodeResidualLps": 1.0161972596733904e-08
+    },
+    "normalHoodBEP": {
+      "mask": 0,
+      "hoodLps": 44.44444444444444,
+      "kitchenPa": -5,
+      "habitableInletsLps": 73.30781433594905,
+      "directMakeupLps": 49.13663012559613,
+      "outsideLps": 122.44444446154517,
+      "roomInletsLps": {
+        "study": 9.359336734816775,
+        "living": 9.359336734816775,
+        "bed2": 9.285376998688346,
+        "bed3": 9.285376998688346,
+        "bed4": 18.009193434469402,
+        "principal": 18.009193434469402
+      },
+      "maximumNodeResidualLps": 1.5278649456718085e-08
+    },
+    "normalHood70": {
+      "mask": 0,
+      "hoodLps": 70,
+      "kitchenPa": -5,
+      "habitableInletsLps": 73.30781433594905,
+      "directMakeupLps": 74.69218568115168,
+      "outsideLps": 148.00000001710072,
+      "roomInletsLps": {
+        "study": 9.359336734816775,
+        "living": 9.359336734816775,
+        "bed2": 9.285376998688346,
+        "bed3": 9.285376998688346,
+        "bed4": 18.009193434469402,
+        "principal": 18.009193434469402
+      },
+      "maximumNodeResidualLps": 1.5278649456718085e-08
+    },
+    "boostHood70": {
+      "mask": 63,
+      "hoodLps": 70,
+      "kitchenPa": -5,
+      "habitableInletsLps": 85.6967087648804,
+      "directMakeupLps": 80.3032912511549,
+      "outsideLps": 166.0000000160353,
+      "roomInletsLps": {
+        "study": 10.802536407590233,
+        "living": 10.802536407590233,
+        "bed2": 10.734314335007268,
+        "bed3": 10.734314335007268,
+        "bed4": 21.311503639842698,
+        "principal": 21.311503639842698
+      },
+      "maximumNodeResidualLps": 1.4451416063820943e-08
+    }
+  },
+  "terminalSensitivity": [
+    {
+      "freeFractionGross": 0.75,
+      "terminalPa": 7.671776581913297,
+      "authoredDuctPa": 3.3271156310744434,
+      "totalPlaceholderPa": 10.998892212987741,
+      "fanPressureBeyondKitchenDepressionPa": 5.998892212987741
+    },
+    {
+      "freeFractionGross": 0.5,
+      "terminalPa": 17.26149730930492,
+      "authoredDuctPa": 3.3271156310744434,
+      "totalPlaceholderPa": 20.588612940379363,
+      "fanPressureBeyondKitchenDepressionPa": 15.588612940379363
+    },
+    {
+      "freeFractionGross": 0.375,
+      "terminalPa": 30.687106327653186,
+      "authoredDuctPa": 3.3271156310744434,
+      "totalPlaceholderPa": 34.01422195872763,
+      "fanPressureBeyondKitchenDepressionPa": 29.01422195872763
+    }
+  ],
+  "pressureTargetSensitivity": {
+    "-4": {
+      "normal": {
+        "mask": 0,
+        "hoodLps": 70,
+        "kitchenPa": -4,
+        "habitableInletsLps": 71.35410706500403,
+        "directMakeupLps": 76.64589295386196,
+        "outsideLps": 148.000000018866,
+        "roomInletsLps": {
+          "study": 9.049158007748566,
+          "living": 9.049158007748566,
+          "bed2": 8.98521570284112,
+          "bed3": 8.98521570284112,
+          "bed4": 17.64267982191233,
+          "principal": 17.64267982191233
+        },
+        "maximumNodeResidualLps": 1.6924690982023094e-08
+      },
+      "allBoost": {
+        "mask": 63,
+        "hoodLps": 70,
+        "kitchenPa": -4,
+        "habitableInletsLps": 82.88510879919293,
+        "directMakeupLps": 83.11489121882296,
+        "outsideLps": 166.0000000180159,
+        "roomInletsLps": {
+          "study": 10.362962553445255,
+          "living": 10.362962553445255,
+          "bed2": 10.307929460237307,
+          "bed3": 10.307929460237307,
+          "bed4": 20.771662385913903,
+          "principal": 20.771662385913903
+        },
+        "maximumNodeResidualLps": 1.6313450146299147e-08
+      }
+    },
+    "-4.5": {
+      "normal": {
+        "mask": 0,
+        "hoodLps": 70,
+        "kitchenPa": -4.5,
+        "habitableInletsLps": 72.38482133265273,
+        "directMakeupLps": 75.6151786849327,
+        "outsideLps": 148.00000001758542,
+        "roomInletsLps": {
+          "study": 9.212537391001986,
+          "living": 9.212537391001986,
+          "bed2": 9.143357540667681,
+          "bed3": 9.143357540667681,
+          "bed4": 17.836515734656697,
+          "principal": 17.836515734656697
+        },
+        "maximumNodeResidualLps": 1.573914509833685e-08
+      },
+      "allBoost": {
+        "mask": 63,
+        "hoodLps": 70,
+        "kitchenPa": -4.5,
+        "habitableInletsLps": 84.44993406676014,
+        "directMakeupLps": 81.55006594990188,
+        "outsideLps": 166.000000016662,
+        "roomInletsLps": {
+          "study": 10.607044598806171,
+          "living": 10.607044598806171,
+          "bed2": 10.544772700162904,
+          "bed3": 10.544772700162904,
+          "bed4": 21.073149734410993,
+          "principal": 21.073149734410993
+        },
+        "maximumNodeResidualLps": 1.505472191354329e-08
+      }
+    },
+    "-5": {
+      "normal": {
+        "mask": 0,
+        "hoodLps": 70,
+        "kitchenPa": -5,
+        "habitableInletsLps": 73.30781433594905,
+        "directMakeupLps": 74.69218568115168,
+        "outsideLps": 148.00000001710072,
+        "roomInletsLps": {
+          "study": 9.359336734816775,
+          "living": 9.359336734816775,
+          "bed2": 9.285376998688346,
+          "bed3": 9.285376998688346,
+          "bed4": 18.009193434469402,
+          "principal": 18.009193434469402
+        },
+        "maximumNodeResidualLps": 1.5278649456718085e-08
+      },
+      "allBoost": {
+        "mask": 63,
+        "hoodLps": 70,
+        "kitchenPa": -5,
+        "habitableInletsLps": 85.6967087648804,
+        "directMakeupLps": 80.3032912511549,
+        "outsideLps": 166.0000000160353,
+        "roomInletsLps": {
+          "study": 10.802536407590233,
+          "living": 10.802536407590233,
+          "bed2": 10.734314335007268,
+          "bed3": 10.734314335007268,
+          "bed4": 21.311503639842698,
+          "principal": 21.311503639842698
+        },
+        "maximumNodeResidualLps": 1.4451416063820943e-08
+      }
+    },
+    "-10": {
+      "normal": {
+        "mask": 0,
+        "hoodLps": 70,
+        "kitchenPa": -10,
+        "habitableInletsLps": 79.89323434606573,
+        "directMakeupLps": 68.1067656675339,
+        "outsideLps": 148.00000001359962,
+        "roomInletsLps": {
+          "study": 10.418116257345497,
+          "living": 10.418116257345497,
+          "bed2": 10.30798231659022,
+          "bed3": 10.30798231659022,
+          "bed4": 19.220518599097147,
+          "principal": 19.220518599097147
+        },
+        "maximumNodeResidualLps": 1.1988845471933018e-08
+      },
+      "allBoost": {
+        "mask": 63,
+        "hoodLps": 70,
+        "kitchenPa": -10,
+        "habitableInletsLps": 93.30075143515157,
+        "directMakeupLps": 72.69924855187661,
+        "outsideLps": 165.99999998702816,
+        "roomInletsLps": {
+          "study": 12.010998469065907,
+          "living": 12.010998469065907,
+          "bed2": 11.903565730076647,
+          "bed3": 11.903565730076647,
+          "bed4": 22.735811518433227,
+          "principal": 22.735811518433227
+        },
+        "maximumNodeResidualLps": 1.1523972887061973e-08
+      }
+    }
+  },
+  "layoutMaximumProcurementEnvelopes": {
+    "existingHADCentreY": 8700,
+    "existingFaceMM": [
+      8450,
+      8950
+    ],
+    "maximumCandidateInsulatedFanPlanMM": [
+      10800,
+      8500,
+      228,
+      436
+    ],
+    "maximumCandidateShutterPlanMM": [
+      11200,
+      8500,
+      100,
+      436
+    ],
+    "maximumCandidateServiceBoxMM": [
+      10750,
+      8450,
+      820.5,
+      500
+    ],
+    "maximumCandidateFloorLiftMM": [
+      10550,
+      8375,
+      800,
+      600
+    ],
+    "candidateOperatorCentreMM": [
+      10200,
+      8750
+    ],
+    "operatorRadiusMM": 300
+  },
+  "heatAt30K": {
+    "normalOff": {
+      "physicalWholeHouseW": 9408.000000543085,
+      "conservativeKitchenW": 1140.0
+    },
+    "boostOff": {
+      "physicalWholeHouseW": 10055.999999583157,
+      "conservativeKitchenW": 1140.0
+    },
+    "normalHoodBEP": {
+      "physicalWholeHouseW": 11008.000000615626,
+      "conservativeKitchenW": 2908.918684521461
+    },
+    "normalHood70": {
+      "physicalWholeHouseW": 11928.000000615626,
+      "conservativeKitchenW": 3828.918684521461
+    },
+    "boostHood70": {
+      "physicalWholeHouseW": 12576.00000057727,
+      "conservativeKitchenW": 4030.9184850415763
+    }
+  },
+  "existingH600L1200PlusNewNorthH700L900W": {
+    "65": 3945.5091027938033,
+    "70": 4614.174710098179
+  },
+  "netPlantDuty": {
+    "requiredNetAt30KBoostW": 12576,
+    "14kWNetArithmeticMarginW": 1424,
+    "waterSecondaryLpsAt14kW10K": 0.3349282296650718,
+    "glycolPrimaryLpsAt14kW10K": 0.4375,
+    "waterSecondaryLpsAt14kW5K": 0.6698564593301436,
+    "glycolPrimaryLpsAt14kW5K": 0.875,
+    "requiredPrimarySupplyC": "greater than 70C secondary flow by actual HX approach; source A-10/W>70 net14kW after defrost required"
+  },
+  "limits": "Assisted assembly fan curve at installed resistance, stop shutter motor/EPDM, exact all-parts geometry, hood interlock, sealed boundary and all-room output/HX/product/pad fit not established. No material exception, physical admission or selected HAD modification."
+}
