@@ -33,6 +33,45 @@
     "model": "REID PGRS20; two unloaded nominal placements",
     "beamLengthMm": 2000,
     "maximumClearSpanMm": 1500,
+    "towerAxesMm": [
+      [
+        4720,
+        5425
+      ],
+      [
+        7290,
+        5425
+      ],
+      [
+        4720,
+        6825
+      ],
+      [
+        7290,
+        6825
+      ]
+    ],
+    "towerBoundsTrialMm": [
+      4655,
+      5360,
+      7355,
+      6890
+    ],
+    "projectedTowerEnvelopeOverlapM2": [
+      1.29618,
+      1.30302
+    ],
+    "withdrawnModuleYOverlapWithGantryEnvelopeMm": 214,
+    "towerAxesInProjectedGantryBoundsMm": [
+      [
+        4720,
+        5425
+      ],
+      [
+        7290,
+        5425
+      ]
+    ],
     "sourceRoofOpeningMm": [
       4450,
       7550
