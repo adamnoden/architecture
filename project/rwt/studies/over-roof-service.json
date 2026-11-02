@@ -78,6 +78,12 @@
       4421,
       5579
     ],
+    "existingDeckSouthYMm": 4780,
+    "alternativeBoundsBeyondDeckMm": 359,
+    "alternativeProjectedTowerOverlapM2": [
+      0.415005,
+      0.417195
+    ],
     "towerAxesInProjectedGantryBoundsMm": [
       [
         4720,
