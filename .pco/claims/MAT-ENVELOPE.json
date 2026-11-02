@@ -9,12 +9,12 @@
     "label": "zerg7-envelope-corner-junction"
   },
   "claimedAt": "2026-11-02T10:51:13.775Z",
-  "heartbeatAt": "2026-11-02T11:19:53.394Z",
-  "expiresAt": "2026-11-02T12:04:53.394Z",
+  "heartbeatAt": "2026-11-02T11:36:02.281Z",
+  "expiresAt": "2026-11-02T12:21:02.281Z",
   "checkpoint": {
-    "evidence": "Draft PR #1267 head ec009216d228f14d38127b6b0ec94b1a508ba8e5: SW plan, orthogonal sections, split rod diaphragm and whole-field welded-metal above/below slab comparison; generator check passes",
-    "next": "Reconcile replacement STR station/hip and actual source pin; coordinate shared integration and independent review",
-    "blocker": "No evidenced complete gas/capillary/movement field-to-wall assembly, actual STR geometry pending; no material or site admission"
+    "evidence": "Draft PR #1267 head 401eaac49dd0b9fac59d22930015a26d1013f7dc; rendered SW sections and joined welded-pan topology; generator checks pass; +6460 pier provisional",
+    "next": "Coordinate final STR corrected hip/cold-cage source and rebind station before joint integration",
+    "blocker": "STR -195 hip revision pending; pan crosses monolithic slab/receiver and lacks verified full perimeter, movement, site and seal"
   },
   "branch": "work/zerg7-envelope-corner-junction",
   "predecessor": {
