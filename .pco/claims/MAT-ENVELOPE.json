@@ -9,8 +9,8 @@
     "label": "zerg7-envelope-joined-edge"
   },
   "claimedAt": "2026-11-02T08:48:53.526Z",
-  "heartbeatAt": "2026-11-02T09:07:20.127Z",
-  "expiresAt": "2026-11-02T09:52:20.127Z",
+  "heartbeatAt": "2026-11-02T09:13:57.148Z",
+  "expiresAt": "2026-11-02T09:58:57.148Z",
   "branch": "work/zerg7-envelope-joined-edge",
   "predecessor": {
     "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote c622a56fd5497ed788d85ad0aa50d8479b9f1ca7 tree915a21335ab73887cc9e19754ab221d68defccb0 is initial unmerged candidate, now REJECTED as located joined assembly: HAD has open loggia x4800-7200/y7750-12000, 519.5 sidewalls at x4377.5/7622.5, no ordinary wall at x6000/y7750, and no protected176 ceiling domain at illustrated stations. No PR. Local correction draft unpublished.",
-    "next": "Hold publication; root read-only architectural adjudication locates a genuine wall/roof/ceiling target and directs revised packet. Preserve rejected candidate for recovery.",
-    "blocker": "Source topology invalidates ordinary429.5 collector/50-glass neck/176 classified ceiling transfer to seven-post loggia plan. No joined preferred assembly selected."
+    "evidence": "Remote c622a56fd5497ed788d85ad0aa50d8479b9f1ca7/tree915a21335ab73887cc9e19754ab221d68defccb0 is an unfrozen initial candidate, no PR. Previous blanket no-ordinary-wall inference is WITHDRAWN: HAD generator outerDefs/enclosure/wallDefs constructs upper ordinary court-north 429.5 facade y7750..8179.5; explicit JSON wall arrays alone omit it. HAD protected176 closure rectangles exclude illustrated x6000/y7750 and x4377.5/y8200. Endpoint loggia519.5 transition, collector/ceiling allocation and joined paths await architectural adjudication. Local correction draft unpublished.",
+    "next": "Hold publication and edits; root/Astra adjudicate actual ordinary bay, frame/post, collector and ceiling target; then revise and recheck candidate before PR.",
+    "blocker": "Initial remote drawings incorrectly conflate derived ordinary upper court-north face, open loggia sidewalls and protected ceiling domain; no selected joined assembly or physical/material/site admission."
   }
 }
