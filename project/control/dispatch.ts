@@ -10,10 +10,8 @@ import {
   derivedState
 } from './derive.js'
 import {
-  ClaimOccupiedError,
   leaseTemporalState,
   operationalState,
-  lastRecoverableEvidence,
   type ClaimRecord
 } from './claims.js'
 import type { ControlNode, NodeId } from './types.js'
@@ -37,9 +35,6 @@ export interface DispatchMetrics {
 }
 
 export interface DispatchCandidate {
-  previousClaim?: ClaimRecord
-  /** Started packet with a verified recovery pointer, not a new work queue. */
-  resumeActive?: true
   node: ControlNode
   metrics: DispatchMetrics
 }
@@ -289,18 +284,12 @@ export function buildDispatchSnapshot(
       continue
     }
 
-    // Active work is normally a manual handoff. Only self-service work with a
-    // durable predecessor branch and actionable checkpoint can re-enter dispatch.
-    // Fresh CAS acquisition rechecks this evidence against the current record.
-    const resumeActive = state.occupancy === 'active-unclaimed' &&
-      node.agentDispatch?.mode === 'self-service' &&
-      Boolean(claim && lastRecoverableEvidence(claim))
-    if (state.occupancy === 'active-unclaimed' && !resumeActive) {
+    if (state.occupancy === 'active-unclaimed') {
       activeUnclaimed.push(node)
       continue
     }
 
-    if (!resumeActive && (state.structural !== 'ready' || state.occupancy !== 'available')) continue
+    if (state.structural !== 'ready' || state.occupancy !== 'available') continue
 
     if (node.agentDispatch?.mode === 'manual') {
       manualReady.push({ node, reason: node.agentDispatch.reason ?? 'manual dispatch' })
@@ -311,8 +300,6 @@ export function buildDispatchSnapshot(
 
     const relief = blockerReliefFor(node, nodes)
     candidates.push({
-      ...(claim ? { previousClaim: claim } : {}),
-      ...(resumeActive ? { resumeActive: true as const } : {}),
       node,
       metrics: {
         criticalDepth: depths.get(node.id) ?? 1,
@@ -397,10 +384,10 @@ export async function claimNextFromStore(
     if (!selected) return { snapshot, selected: null, claim: null, selectionRaces }
 
     try {
-      const claim = await acquireClaimFromStore(store, selected.node.id, nodes, { ...options, requireRecoveryEvidence: true })
+      const claim = await acquireClaimFromStore(store, selected.node.id, nodes, options)
       return { snapshot, selected, claim, selectionRaces }
     } catch (error) {
-      if (!(error instanceof ClaimConflictError) && !(error instanceof ClaimOccupiedError)) throw error
+      if (!(error instanceof ClaimConflictError)) throw error
       if (racesRemaining <= 0) {
         throw new ClaimConflictError(
           `Dispatcher exhausted selection-race retries after ${selectionRaces + 1} conflict(s): ${error.message}`

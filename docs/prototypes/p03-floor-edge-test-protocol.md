@@ -1,7 +1,5 @@
 # P03 — Structural Floor Edge Test Protocol
 
-> **Historical preparation scope.** The dated record below retains its original geometry and claims. Current-house use is governed by the [prototype applicability and release requirements](https://github.com/adamnoden/architecture/blob/main/project/phy/current-house-prototype-applicability.md); this record alone is not a current specimen release or physical result.
-
 **Status:** pre-test protocol; blocked on competent engineering geometry  
 **Date:** 2026-10-12  
 **Engineering brief:** [P03 Structural Floor Edge Engineering Brief](p03-floor-edge-engineering-brief.md)  

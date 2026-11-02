@@ -7,9 +7,6 @@ on:
       - 'compiler/publication-drawing/svg.ts'
       - 'compiler/reference-house/plt03-ground-plan.ts'
       - 'publication/specimens/plt03/**'
-      - 'scripts/proof-scope.mjs'
-      - 'scripts/proof-scope.test.mjs'
-      - '.github/workflows/proof-scope.yml'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/plt-ground-plan-candidates.yml'
@@ -23,11 +20,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  scope:
-    uses: ./.github/workflows/proof-scope.yml
   proof:
-    needs: scope
-    if: needs.scope.outputs.run != 'false'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
