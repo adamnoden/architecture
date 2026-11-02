@@ -9,12 +9,12 @@
     "label": "zerg7-envelope-corner-junction"
   },
   "claimedAt": "2026-11-02T10:51:13.775Z",
-  "heartbeatAt": "2026-11-02T12:27:29.825Z",
-  "expiresAt": "2026-11-02T13:12:29.825Z",
+  "heartbeatAt": "2026-11-02T12:42:23.910Z",
+  "expiresAt": "2026-11-02T13:27:23.910Z",
   "checkpoint": {
-    "evidence": "Shared WIP work/zerg-corner-convergence a0606db696ebc502973c2fcf846d1388899c34a8; independent source-bound metal carrier work/zerg7-metal-carrier e5a00c51486a95d1a2e583c68780eda34e42a5aa",
-    "next": "Review STR revised cold node and rebind affected carrier/standard corner sources before shared integration",
-    "blocker": "AAC overlap, 12.5 mm connector overlap, insulation support, complete metal field perimeter and structural/site/physical qualification remain unresolved"
+    "evidence": "Shared local head 1e3478a85ba9aa68688c7c1954c670333b785042 with regenerated STR and MAT; latest durable shared remote a0606db696ebc502973c2fcf846d1388899c34a8; carrier branch e5a00c51486a95d1a2e583c68780eda34e42a5aa",
+    "next": "Root to publish shared head, exact-head checks and preflight; MAT controller release after merge",
+    "blocker": "Local head not yet remote; carrier incomplete and site/physical holds remain"
   },
   "branch": "work/zerg7-envelope-corner-junction",
   "predecessor": {
