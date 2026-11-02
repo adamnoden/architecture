@@ -9,14 +9,14 @@
     "label": "zerg-services-system-alternatives"
   },
   "claimedAt": "2026-11-02T10:59:21.044Z",
-  "heartbeatAt": "2026-11-02T11:07:31.732Z",
-  "expiresAt": "2026-11-02T11:52:31.732Z",
+  "heartbeatAt": "2026-11-02T11:16:13.945Z",
+  "expiresAt": "2026-11-02T12:01:13.945Z",
   "checkpoint": {
-    "evidence": "Draft source PR #1270 frozen head aee19ca25b3f83d7b5b2a31e1b4538542bd3e9d3 tree d1b8e4db32aa4d0f68b2cfa4ed9a0f5d2f8600ea on main86bd; three exact blobs, baseline and HAD default --check/require-fit, diff and independent bounded QA pass",
-    "next": "Root combines reviewed Services16 with IAS/OAS graph on true main; root sole CI/preflight/merge; canonical handoff after verification",
-    "blocker": "Actual connected cooker makeup/control/emitter/plant and complete S01–S10 apparatus/material/renewal selection remain development duties; no owner exception or site admission"
+    "evidence": "Shared draft PR #1271 exact head d4b5c091217231fda9771da5701759d0ae293b0c tree 98f37b73662b80d95794cdb9021b92e945c16cc8, base86bd and real parents main+Services source aee19ca+IAS/OAS c91d9ebd; seven source blobs exact, repo/diff/derived counts and bounded review pass per root; source PR #1270 preserves history",
+    "next": "Root sole CI/preflight/merge; Services16 handoff after verified merge then fresh coherent selected-system development",
+    "blocker": "Connected cooker makeup/control and full-mode heat/emitter/plant fit remain real development defects; no polymer exception or physical/site/product admission"
   },
-  "branch": "work/zerg10-services-system-alternatives",
+  "branch": "work/zerg-recovery-opening-services",
   "predecessor": {
     "leaseId": "70b74776-c5e1-42ce-8c67-138ea615f337",
     "generation": 15,
@@ -39,5 +39,5 @@
       "blocker": "No product/material/site adoption: DTBCU frequent RUN modulation and EPDM, full damper pressure/capture, protective hood interface, staged assembly release and plant/emitter compatibility require qualification"
     }
   },
-  "pr": 1270
+  "pr": 1271
 }
