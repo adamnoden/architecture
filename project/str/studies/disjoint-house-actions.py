@@ -7,7 +7,7 @@ import ast,hashlib,json,math,re,sys
 from pathlib import Path
 R=Path(__file__).resolve().parents[3]
 paths=['project/had/studies/open-north-loggia.json','project/had/studies/open-north-loggia.mjs','project/str/studies/physical-slab-join.json','project/str/studies/spine-opening-join.json']
-expected=['542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd','d69be48865be9b1471cbe2d6fa31e388214f9c73534622589b981413b3278ba6','9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c','4f747ea2c98a774bb50abf0f3e647ff1c96f029ec4dd81699b86cbc01168872b']
+expected=['542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd','9bc7b9672a7ee451115ac87519faa279ac40a87a470a284bacb05eed9da25537','9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c','4f747ea2c98a774bb50abf0f3e647ff1c96f029ec4dd81699b86cbc01168872b']
 raw=[(R/p).read_bytes() for p in paths]
 sha=[hashlib.sha256(x).hexdigest() for x in raw]
 assert sha==expected, 'Source changed; re-evaluate geometry: '+str(sha)

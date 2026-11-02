@@ -269,9 +269,10 @@ for(const key of ["washer","sink","rearServiceChase","valveBay","electricalStati
 upper.principal[1]-=25;upper["principal-head"][1]-=25;Object.assign(candidate.furnitureRequirements.principalBed,{whole:[9450.5,9150,2090,1600],southPassage:664,remainingPassageAfterLoss:614});Object.assign(candidate.furnitureRequirements.principalBed.maintenance,{whole:[9450.5,9650,2090,1600],swept:[9450.5,9150,2090,2100],nominalStageGap:210,after100Pad:110});
 ground["study-desk"]=serviceNumeric.studyRewind.desk;upper.bed4[1]-=100;upper["bed4-head"][1]-=100;candidate.furnitureRequirements.bed4.whole=[5405.5,9250,2090,1500];
 candidate.livingRadiatorMaintenance={...serviceNumeric.livingWestRenewal,scope:'DirectMATcontract; SofaA650E beforeWest radiator/supplyservice; restoreafterwork. Actualequipment/force unqualified.'};
+function enclosureForLevel(level){return outerDefs.map(([id,a,b])=>({id,a,b,t:429.5,finishedFaces:id==='outer-south'||id==='outer-west'?[0,429.5]:id==='outer-north'||id==='outer-east'?[11570.5,12000]:id==='court-south'||id==='court-west'?[3820.5,4250]:[7750,8179.5],holes:openings[level].filter(o=>o.wall===id&&['door','open-loggia'].includes(o.kind)).map(o=>[o.centre-o.width/2,o.centre+o.width/2])}));}
 function obstacles(level,{closedCross=false,omit=[],extra=[],includeTrim=true}={}){
  const walls=level==='GROUND'?groundWalls:upperWalls;
- const enclosure=outerDefs.map(([id,a,b])=>({id,a,b,t:429.5,finishedFaces:id==='outer-south'||id==='outer-west'?[0,429.5]:id==='outer-north'||id==='outer-east'?[11570.5,12000]:id==='court-south'||id==='court-west'?[3820.5,4250]:[7750,8179.5],holes:openings[level].filter(o=>o.wall===id&&['door','open-loggia'].includes(o.kind)).map(o=>[o.centre-o.width/2,o.centre+o.width/2])}));
+ const enclosure=enclosureForLevel(level);
  const trim=r=>[r[0]-18,r[1]-18,r[2]+36,r[3]+36];
  const r=[...wallRects([...walls,...enclosure]).map(([id,r])=>[id+(includeTrim?'+18trim':''),includeTrim?trim(r):r]),...candidate.fixedObstacles[level].map(([id,r])=>[id,!includeTrim||candidate.wetBoundaryPatches.some(([name])=>name===id)||id==='principalEastExtraWetLining'?r:id==='stairMidPostFinished'?[r[0],r[1]-18,r[2]+18,r[3]+36]:trim(r)]),...Object.entries(level==='GROUND'?ground:upper),['stair-plan-void',b.stair],['court-outdoor-not-indoor-shortcut',[4250,4250,3500,3500]]];
  if(level==='FIRST')r.push(...candidate.stairGuard.firstFloorGuards,['entrance-floor-void',b.void],...bedroomLeaves,['principal-bath-slider-closed',[9875,8442,950,44]]);
@@ -588,7 +589,27 @@ candidate.selection={decision:candidate.wholeHouseFit.pass?'SELECT compactB/open
 candidate.status=candidate.selection.decision+'; HAD architectural layer only. Accepted compiler identity and all named later technical/site duties remain distinct.';
 candidate.knownInterfaces=['STRownsactualfloor/roof/arch/foundation/guardloadandconnectionadmission; selectedspatialdepthsareconditionaldesignrequirements.','MAT/OASowncomplete27/30walls,window/frame/guard/thresholdandnonplasticmaterialadmission; bedplywoodcontrolisNOTanapprovedmaterialexception.','IASownsactualdoorset/closerforce/delay,wholehandlingandqualifiedtemporaryequipmentwithinreservedfields; geometricalproxyPASSisnotphysicalacceptance.','RWT/ROFowncapacity/event/head/firstleak/receiverandtemporaryrainisolation. Broadblanket/high-tailwater commonFAILisexplicit, notindependencebylabels.','DPL/BCR/siteandexistingTRIAD/HRS/ADE/PLTgates ownactualgrade/plot/access/fire/sharedsourceintegration.'];
 
-for(const [name,body]of Object.entries({'open-north-loggia.json':JSON.stringify(candidate,null,2)+'\n','open-north-loggia.svg':svg,'open-north-loggia-sections.svg':sectionSvg,'open-north-loggia-exterior.svg':exteriorSvg,'open-north-loggia-stair.svg':stairSvg,'open-north-loggia-guard.svg':guardSvg})){const p=new URL(name,OUT);if(process.argv.includes('--check')){if(readFileSync(p,'utf8')!==body)throw Error('Stale '+name)}else writeFileSync(p,body)}
+// One small projection from the selected scene definitions. Exterior enclosure
+// is constructed by outerDefs/obstacles, not duplicated in upperWalls JSON.
+// Keep GROUND loggia/portal and FIRST ordinary outer-north roles distinct.
+const northDef=outerDefs.find(([id])=>id==='outer-north'),courtDef=outerDefs.find(([id])=>id==='court-north');
+if(!northDef||!courtDef)throw Error('HAD exterior scene definitions changed');
+const sceneWall=(level,def)=>{const wall=enclosureForLevel(level).find(w=>w.id===def[0]);if(!wall)throw Error('HAD scene enclosure missing');return{id:wall.id,segment:[wall.a,wall.b],thickness:wall.t,
+ finishedFaces:wall.finishedFaces,
+ openings:openings[level].filter(o=>o.wall===def[0]).map(o=>({id:o.id,kind:o.kind,centre:o.centre,width:o.width}))}};
+const northProjection={status:'Selected HAD scene occurrence projection only; MAT/STR joints and ceiling remain separate.',
+ selectedHAD: candidate.selection.identity,
+ first:{outerNorth:sceneWall('FIRST',northDef),courtNorth:sceneWall('FIRST',courtDef),
+  upperWallArrayIds:upperWalls.map(w=>w.id),protectedRoofClosureDomains:candidate.protectedRoofClosureDomains},
+ ground:{outerNorth:sceneWall('GROUND',northDef),courtNorth:sceneWall('GROUND',courtDef),
+  loggiaWeather:groundWalls.filter(w=>['loggia-west-weather','loggia-east-weather'].includes(w.id)).map(w=>({id:w.id,a:w.a,b:w.b,t:w.t,structuralCore:w.structuralCore})),
+  portal:candidate.insulatedPortal},
+ method:'Derived from this generator outerDefs, openings and selected candidate; no independent reconstructed house model.'};
+if(northProjection.first.outerNorth.finishedFaces[0]!==11570.5||northProjection.first.outerNorth.finishedFaces[1]!==12000||northProjection.first.outerNorth.thickness!==429.5)throw Error('FIRST ordinary north facade drift');
+if(northProjection.first.outerNorth.openings.filter(o=>o.kind==='window').some(o=>o.centre+o.width/2>4377.5&&o.centre-o.width/2<7622.5))throw Error('Selected bay gained a north window');
+if(northProjection.ground.loggiaWeather.length!==2||northProjection.ground.loggiaWeather.some(w=>w.t!==519.5))throw Error('GROUND loggia sidewall drift');
+
+for(const [name,body]of Object.entries({'open-north-loggia.json':JSON.stringify(candidate,null,2)+'\n','open-north-loggia.svg':svg,'open-north-loggia-sections.svg':sectionSvg,'open-north-loggia-exterior.svg':exteriorSvg,'open-north-loggia-stair.svg':stairSvg,'open-north-loggia-guard.svg':guardSvg,'open-north-facade-projection.json':JSON.stringify(northProjection,null,2)+'\n'})){const p=new URL(name,OUT);if(process.argv.includes('--check')){if(readFileSync(p,'utf8')!==body)throw Error('Stale '+name)}else writeFileSync(p,body)}
 if(process.argv.includes('--require-whole-house-fit')&&!candidate.wholeHouseFit.pass)throw Error('Explicit whole-house fit debts remain');
 if(process.argv.includes('--require-spatial-pass')&&!candidate.actions.pass)throw Error('Finite spatial witness failed');
 console.log(JSON.stringify({wholeHouseFootprintPass:candidate.fullHouseFootprint.pass,wholeHouseFitPass:candidate.wholeHouseFit.pass,spatialPass:candidate.actions.pass,failedRoutes:candidate.actions.witnesses.filter(w=>!w.pass).map(w=>w.id),files:['open-north-loggia.json','open-north-loggia.svg','open-north-loggia-sections.svg','open-north-loggia-exterior.svg','open-north-loggia-stair.svg','open-north-loggia-guard.svg'],status:candidate.selection.decision,weatherAxes:[4377.5,7622.5],knownInterfaces:candidate.knownInterfaces.length}));
