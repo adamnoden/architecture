@@ -9,8 +9,8 @@
     "label": "issue-comment-6585617535"
   },
   "claimedAt": "2026-11-02T18:56:31.000Z",
-  "heartbeatAt": "2026-11-02T18:56:31.000Z",
-  "expiresAt": "2026-11-02T19:41:31.000Z",
+  "heartbeatAt": "2026-11-02T18:59:28.000Z",
+  "expiresAt": "2026-11-02T19:44:28.000Z",
   "branch": "work/mvb-chat-6585617535",
   "predecessor": {
     "leaseId": "c1f3c5f8-4641-4fab-aaf9-4f9507171b6d",
@@ -33,5 +33,11 @@
       "next": "Integration owner observes exact-head CI and performs preflight and merge.",
       "blocker": "No operating, hydraulic, egress or full-system acceptance."
     }
+  },
+  "pr": 1284,
+  "checkpoint": {
+    "evidence": "PR #1284 head 41785f1d integrates exact reviewed PR1282 six-file source payload with both main and source as parents; source study remains conditional, node stays planned.",
+    "next": "Verify exact-head full PR CI; execute fresh native canonical control:merge-check; expected-head merge, then release lease and mark PR1282 superseded.",
+    "blocker": "Live temporary roof, weather/condensation, erection/load, court access, blocked-water, complete material and site acceptance unproven."
   }
 }
