@@ -118,11 +118,11 @@
         },
         "outletAtY7350": -123.5,
         "overrun": {
-          "crestAtY7350": -74,
-          "upstreamEquivalentAtY7000": -60,
+          "crestAtY7350": -94,
+          "upstreamEquivalentAtY7000": -80,
           "apronAtY7750": -110,
-          "apronSlope": 0.09,
-          "scope": "Open x5600–7100 south-face spill at y7350, then 400-long falling apron to existing mouth surface. -60 is a conservative upstream-equivalent level-screen, not a constructed horizontal crest."
+          "apronSlope": 0.04,
+          "scope": "Open x5600–7100 south-face spill flush with walking at y7350, then 400-long existing-grade falling apron to mouth. -80 is an upstream-equivalent level-screen, not a constructed crest."
         },
         "slopes": "1% crossfall from both ends into x5300 and 4% south fall y7000–7350 matching court surface; full 3.60375 L/s assigned conservatively to the longer east branch for section screen."
       },
@@ -181,7 +181,9 @@
         "temporaryIdealLevelAtMouthMm": -109.71230977681907,
         "headerEastUniformDepthMm": 13.01422390232992,
         "headerEastIdealControlLevelMm": -69.05668986813696,
-        "idealFullReliefLevelFromHeaderOverrunMm": -53.9573187719693,
+        "idealFullReliefLevelFromHeaderOverrunMm": -73.9573187719693,
+        "idealLocalOverrunLevelAtY7350Mm": -87.9573187719693,
+        "idealLocalMarginToAdjacentTroughLipMm": 29.457318771969298,
         "reliefIdealControlEnergyMm": 6.042681228030702,
         "idealReliefMouthDamHeightToUnqualifiedJoinMm": 73.9573187719693
       },
@@ -195,7 +197,9 @@
         "temporaryIdealLevelAtMouthMm": -99.26380182763815,
         "headerEastUniformDepthMm": 20.01651880907261,
         "headerEastIdealControlLevelMm": -59.69157272482535,
-        "idealFullReliefLevelFromHeaderOverrunMm": -50.407841461915574,
+        "idealFullReliefLevelFromHeaderOverrunMm": -70.40784146191557,
+        "idealLocalOverrunLevelAtY7350Mm": -84.40784146191557,
+        "idealLocalMarginToAdjacentTroughLipMm": 25.907841461915567,
         "reliefIdealControlEnergyMm": 9.592158538084428,
         "idealReliefMouthDamHeightToUnqualifiedJoinMm": 70.40784146191557
       },
@@ -209,7 +213,9 @@
         "temporaryIdealLevelAtMouthMm": -90.50011331730283,
         "headerEastUniformDepthMm": 25.83136528136752,
         "headerEastIdealControlLevelMm": -51.83657850881215,
-        "idealFullReliefLevelFromHeaderOverrunMm": -47.43071652971392,
+        "idealFullReliefLevelFromHeaderOverrunMm": -67.43071652971392,
+        "idealLocalOverrunLevelAtY7350Mm": -81.43071652971392,
+        "idealLocalMarginToAdjacentTroughLipMm": 22.93071652971392,
         "reliefIdealControlEnergyMm": 12.569283470286079,
         "idealReliefMouthDamHeightToUnqualifiedJoinMm": 67.43071652971392
       }
