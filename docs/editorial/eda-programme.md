@@ -1,8 +1,6 @@
 # EDA — Editorial Doctrine Audit
 
-**Historical audit status:** CLOSED — EDA-00–08 passed for the source/object accepted on 2026-10-27
-
-**Current successor:** EDA-ADAPTER complete — [source-ownership result](../../project/eda/eda-adapter-result.md); EDA-RENEWED remains gated on final PLT integration. See section 9 and the [cross-stream refurbishment plan](../../project/refurbishment-plan.md).
+**Status:** CLOSED — EDA-00–08 passed; final editorial acceptance recorded 2026-10-27
 **Programme owner:** publication editorial control  
 **Baseline:** `816c6ca71e20235dca83350eb0f3e2cd05186169`  
 **Governing relationship:** post-migration assurance of the completed Editorial Overhaul  
@@ -312,85 +310,3 @@ All eight workflows passed on the accepted source/layout head: repository health
 The local runtime required the equivalent `node --import tsx` loader in place of the restricted `tsx` IPC entry point, an isolated Chromium renderer and PDF inspectors. Tracked dependencies, package commands and proof assertions were not weakened to accommodate the environment.
 
 Claim fidelity is preserved apart from the separately documented reconciliation of stale stair-going prose to its existing controlled fixture. No architectural proposition, compiler supported domain, maturity level, regulatory criterion or external-validation claim is promoted. EDA removes its editorial block on PR-02; final manufacture still requires the independent PLT drawing freeze and its owning production authority.
-
----
-
-## 9. Current successor — publication refurbishment
-
-The acceptance above remains historical evidence for its recorded source and typeset object. It does not clear the enlarged, changed-house book for manufacture. The [2026-10-28 successor trigger](../../project/eda/eda-successor-trigger-2026-10-28.md) remains applicable; the [refurbishment plan](../../project/refurbishment-plan.md) adds the bounded prerequisite and acceptance requirements below. No prose repair, new proof or maturity promotion is claimed by this programme amendment.
-
-### EDA-ADAPTER — authored ownership of publication prose
-
-**Accepted result:** [authored Primer ownership](../../project/eda/eda-adapter-result.md). Three authored framing fragments and complete pattern metadata dependencies replace hidden adapter prose; all five adapted and prepared Primer entries remain byte-identical. This completes source ownership only.
-
-**Dispatch:** self-service, independent of final architectural resolution. This is a narrow source-ownership repair, not a free-form editorial reopening during IAS/OAS/HAD.
-
-The packet asks whether every substantive Primer assertion is traceable to an authored source rather than hidden literal prose in `publication/adapters.ts`. Its demonstrated entry points are `adaptPrimerPatterns` and `adaptPrimerReferenceHouse`.
-
-Scope is the adapter, the existing substantive source owners, any narrowly necessary authored Primer material, and publication/EDA dependency discovery. Move substantive prose to its appropriate Markdown owner while keeping selection, compression and presentation in the adapter. Derive mutable inventory claims from existing canonical registries where appropriate. Do not create a second doctrine, a new prose registry or a general rewrite.
-
-Acceptance requires:
-
-- a discoverable authored source for each substantive emitted assertion;
-- all relevant source dependencies included in publication and EDA corpus membership;
-- an assembled Primer before/after comparison demonstrating preserved meaning and proof qualifications, with any deliberate output change explained;
-- inventory claims reconciled to their existing authority;
-- appropriate publication integrity/validation and repository-health checks, plus rendered inspection where layout changes;
-- a short source-bound result recording the ownership change and its validation.
-
-This packet does not change architectural propositions, migrate the house model, accept physical print or authorise manufacture. Its completion is a prerequisite for EDA-RENEWED, not renewed assurance itself.
-
-### EDA-RENEWED — enlarged-book assurance
-
-**Dispatch:** self-service after both EDA-ADAPTER and PLT-FINAL-FREEZE. Use the existing Editorial Doctrine and successor trigger; architectural and technical owners retain their decisions.
-
-In addition to the successor trigger's corpus, recurrence, adversarial-read and typeset checks, renewed assurance must:
-
-- reconcile the Working Edition, Primer, website entry paths, captions and implementation schedule to the same accepted current-house configuration;
-- identify historical fixtures and earlier results as historical wherever they remain reader-facing, preserving provenance without implying that they prove the changed house;
-- distinguish selected design, bounded analytical result, proposed test, completed demonstration and unresolved obligation in Parts IV–VI;
-- trace every claimed positive demonstration to an existing source-bound result from its owning workstream and preserve its actual scope;
-- represent the comparison, complexity and integration findings supplied by the house-resolution owners honestly, without inventing evidence or repeating their technical review;
-- confirm that EDA-ADAPTER's ownership correction survives in the enlarged final corpus.
-
-An unperformed test may remain a clearly identified proposal where the admitted research-publication scope permits it; it may not be narrated as a passed demonstration. A material source contradiction or missing required result returns to the owning workstream. Qualification cannot substitute for resolution, and EDA must not create new physical or professional proof work merely to make the book appear complete.
-
-Closeout records the exact reviewed source/object identities, findings and dispositions, final typeset inspection and remaining admitted limits. A later material change to accepted geometry, scale, placement, fold interaction or graphic hierarchy reopens the affected PLT proof before manufacture. Earlier EDA evidence is not rewritten, and the manual PUB-02 final gate remains intact.
-
-
-## Architect-facing value and narrative review — owner extension, 29 October
-
-The owner asks for a stronger test than intellectual consistency: would a distinguished architect find a consequential architectural contribution, a compelling house and a persuasive book? Do not manufacture novelty, praise or a need for wholesale replacement. No separate PDF report is requested. Record findings in the owning sources and execute through the following packets.
-
-### EDA-ARGUMENT — contribution and adversarial thesis
-
-Read the actual manuscript and relevant evidence. Produce a claim-to-demonstration map and a short adversarial assessment: strongest contribution, strongest objections, inherited ideas, project-specific synthesis, genuinely demonstrated additions and unearned claims. Verify prior-art assertions from primary sources. Compare against excellent ordinary construction, not an incompetent straw man. Test whether proportional serviceability and intervention consequences add a useful operational method beyond their acknowledged lineage. A negative result must be allowed to narrow the thesis.
-
-Exit: one defensible central proposition; each claimed contribution has an explicit demonstration or narrowed wording; objections have accountable dispositions; no assertion of immense value or novelty merely from internal coherence. Result: `project/eda/eda-argument-result.md`.
-
-The [argument review result](../../project/eda/eda-argument-result.md) records the bounded thesis, inspected comparisons, primary lineage and corrected current-house claims. It does not close architectural resolution or final typeset assurance.
-
-### EDA-NARRATIVE — structure, subtraction and architectural reader journey
-
-After EDA-ARGUMENT, edit the publication architecture, manifests and owning manuscript sources as one bounded structural pass. The six parts are a working hypothesis, not protected doctrine. Test whether the house arrives too late; whether Parts I–III repeat the same argument; whether Part IV and VI earn separate roles; whether Part V demonstrates results or mostly describes future tests. Review philosophy/software analogies for explanatory return, avoid repeated qualifications, move specialist apparatus to notes where possible, and remove weak or redundant material rather than adding chapters reflexively.
-
-Provide a chapter-purpose map, keep/cut/move/add decisions and before/after reading sequence. An early, clearly provisional house encounter may establish the architectural stakes without pretending Part VI is resolved. Preserve source ownership and stable cross-reference identities. Avoid concurrent edits to HRS-owned final house prose; supply integration instructions for that owner.
-
-Exit: coherent beginning, argument, worked challenge and architectural payoff; every chapter advances the thesis or supplies necessary evidence; one short route for an architect to understand claim, house, comparison and limits. Result: `project/eda/eda-narrative-result.md`.
-
-The [narrative result](../../project/eda/eda-narrative-result.md) records the chapter-purpose map, reference-catalogue relocation, front-matter subtraction and rendered review. HRS retains ownership of the unresolved final architectural account.
-
-### Architectural merit must be demonstrated by the house
-
-HAD selection and HRS synthesis must test spatial delight, room proportions, arrival, privacy, daylight, relationship to garden/court, architectural section and façade depth as design judgements with drawings and alternatives. A well-managed maintenance system alone is not an architectural achievement. BCR-PROPORTIONALITY supplies honest cost, space, carbon and stewardship trade-offs. PLT must supply a legible inhabited plan/section sequence and at least one actual before/during/after intervention sequence; labels and component inventories alone are insufficient. HRS must incorporate the EDA argument/narrative dispositions before final publication preparation.
-
-### Initial red-team judgement to test, not a claim of external endorsement
-
-Part I explicitly acknowledges that coupling is not a conceptual advance beyond its architectural lineage. The strongest candidate contribution is a precise domestic intervention method: tracing access, isolation, removal, collateral destruction and reinstatement into architectural decisions while retaining composed ordinary rooms. The current compulsory sequence puts constitution, platform taxonomy and the full pattern catalogue ahead of the worked house; Part V postpones its specific intervention ordeal until chapter 26. This risks asking the reader to grant significance before seeing it. Test an early house encounter and three or four comparative interventions as the argument’s spine. Scrutinise the long preface’s invention analogies and outsider defence for disproportionate claims. These are editorial judgements grounded in the current manuscript, not proof that the project has no originality or that a distinguished architect will approve it.
-
-EDA-ARGUMENT must also test transferability: the generous detached courtyard house cannot by itself establish usefulness to ordinary constrained housing. Use one smaller or more constrained counter-case without reopening the owner's accepted reference envelope, or narrow the claimed audience. Advance existing bounded screening comparisons rather than pretending none exist. Require three or four inspectable interventions, including a conventional winning case, with the burden of provision and reinstatement visible. Ask of the compiler one architectural decision improved, one credible error caught and one change reliably propagated; technical machinery otherwise belongs in the companion. If comparisons consistently favour excellent conventional work, reframe the book around disciplined maintainability and limits of flexibility rather than defending a new-system claim. EPR's eventual architect brief should invite rejection and ask what is useful beyond competent practice; no outreach is authorised by this planning packet.
-
-
-## Primary purpose: the owner's actual home
-
-Follow `project/owner-house-charter.md`. Treat the book as an architectural enquiry conducted through designing a particular home. Writing must challenge choices and expose unsupported claims; it must not require an unwanted feature or delay a genuine commission until publication is complete. Distinguish pre-site study, site-adapted design and eventual built evidence. Personal taste may be honestly particular; general claims still require support. EDA-ARGUMENT/NARRATIVE should consume the bay demonstrations when available without inventing results or turning the execution diary into the manuscript. No new book dependency is imposed on the actual-house delivery route.

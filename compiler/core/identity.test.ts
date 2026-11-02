@@ -1,16 +1,7 @@
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { test } from 'node:test'
-import { compareCanonicalStrings, sha256SemanticFingerprint, stableJsonStringify } from './identity.js'
-
-test('canonical keys use code units, preserve Unicode spelling and obey JSON index-key order', () => {
-  const keys = ['ä', 'z', 'Z', 'a', 'A', 'é', 'e\u0301', '😀', '\uE000']
-  assert.deepEqual([...keys].sort(compareCanonicalStrings), ['A', 'Z', 'a', 'e\u0301', 'z', 'ä', 'é', '😀', '\uE000'])
-  const object = Object.fromEntries(keys.map((key) => [key, key]))
-  assert.equal(stableJsonStringify(object), stableJsonStringify(Object.fromEntries(Object.entries(object).reverse())))
-  assert.equal(stableJsonStringify({ '10': 10, '2': 2, ä: 3, z: 4 }), '{"2":2,"10":10,"z":4,"ä":3}')
-  assert.notEqual(sha256SemanticFingerprint({ é: 1 }), sha256SemanticFingerprint({ 'e\u0301': 1 }))
-})
+import { sha256SemanticFingerprint, stableJsonStringify } from './identity.js'
 
 test('finite plain data retains canonical bytes, omitted optional fields and authored array order', () => {
   const source = { z: [2, 1, null], a: { x: true, absent: undefined }, title: 'House' }

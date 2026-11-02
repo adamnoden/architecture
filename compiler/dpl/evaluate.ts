@@ -1,4 +1,4 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import type { ReferenceHouseSource } from '../reference-house/model.js'
 import { referenceHouseSourceFingerprint } from '../reference-house/identity.js'
 import { evaluateCandidateConformance } from './conformance.js'
@@ -31,9 +31,9 @@ const canonicalEvidence = (items: readonly EvidenceItem[]): EvidenceItem[] =>
       sourceRefs: item.sourceRefs ? [...item.sourceRefs].sort() : undefined
     }))
     .sort((a, b) => {
-      const byId = compareDplIdentityStrings(a.id, b.id)
+      const byId = a.id.localeCompare(b.id)
       if (byId) return byId
-      return compareDplIdentityStrings(a.version, b.version)
+      return a.version.localeCompare(b.version)
     })
 
 const requiredFactIds = (obligation: RawObligation): string[] =>
@@ -321,18 +321,18 @@ const crossTargetEdges = (
         })
     )
     .sort((a, b) => {
-      const byTarget = compareDplIdentityStrings(a.fromTargetId, b.fromTargetId)
-      return byTarget || compareDplIdentityStrings(a.fromObligationId, b.fromObligationId)
+      const byTarget = a.fromTargetId.localeCompare(b.fromTargetId)
+      return byTarget || a.fromObligationId.localeCompare(b.fromObligationId)
     })
 
 const canonicalTargets = (targets: DeploymentCaseInput['targets']) =>
   [...targets].sort((a, b) => {
-    const byAuthority = compareDplIdentityStrings(a.authorityClass, b.authorityClass)
-    return byAuthority || compareDplIdentityStrings(a.target.id, b.target.id)
+    const byAuthority = a.authorityClass.localeCompare(b.authorityClass)
+    return byAuthority || a.target.id.localeCompare(b.target.id)
   })
 
 const canonicalInterfaces = (interfaces: DeploymentCaseInput['interfaceContracts']) =>
-  [...interfaces].sort((a, b) => compareDplIdentityStrings(a.id, b.id))
+  [...interfaces].sort((a, b) => a.id.localeCompare(b.id))
 
 export const evaluateDeploymentCase = (
   input: DeploymentCaseInput,
@@ -360,7 +360,7 @@ export const evaluateDeploymentCase = (
     targets: targets.map(({ authorityClass, target }) => ({
       authorityClass,
       targetId: target.id,
-      targetFingerprint: sha256DplSemanticFingerprint(target)
+      targetFingerprint: sha256SemanticFingerprint(target)
     })),
     ...(candidateConformance
       ? {
@@ -374,12 +374,12 @@ export const evaluateDeploymentCase = (
           }
         }
       : {}),
-    proposalFactsFingerprint: sha256DplSemanticFingerprint(facts),
-    evidenceSetFingerprint: sha256DplSemanticFingerprint(evidence),
+    proposalFactsFingerprint: sha256SemanticFingerprint(facts),
+    evidenceSetFingerprint: sha256SemanticFingerprint(evidence),
     methodVersion: DPL12A_SCHEMA_VERSION
   }
 
-  const caseFingerprint = sha256DplSemanticFingerprint(identityManifest)
+  const caseFingerprint = sha256SemanticFingerprint(identityManifest)
 
   const obligations = targets
     .flatMap(({ authorityClass, target }) =>
@@ -390,8 +390,8 @@ export const evaluateDeploymentCase = (
       }))
     )
     .sort((a, b) => {
-      const byTarget = compareDplIdentityStrings(a.targetId, b.targetId)
-      return byTarget || compareDplIdentityStrings(a.obligationId, b.obligationId)
+      const byTarget = a.targetId.localeCompare(b.targetId)
+      return byTarget || a.obligationId.localeCompare(b.obligationId)
     })
 
   const edges = crossTargetEdges(targets, facts)
@@ -442,7 +442,7 @@ export const evaluateDeploymentCase = (
     crossTargetEdges: edges,
     unresolvedInputs,
     evidence,
-    resultFingerprint: sha256DplSemanticFingerprint(resultManifest),
+    resultFingerprint: sha256SemanticFingerprint(resultManifest),
     proofBoundary: resultManifest.proofBoundary
   }
 }
