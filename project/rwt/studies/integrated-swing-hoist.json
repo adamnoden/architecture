@@ -1,0 +1,112 @@
+{
+  "status": "Conditional reach target for one integrated apparatus trial; not manufacturer reach, complete supported lift or operating pass",
+  "source": {
+    "path": "project/rwt/studies/live-receiver-renewal.json",
+    "blob": "8757f546db1d4db76d71aaf084b1f24a1c2f1417",
+    "manufacturer": "https://www.layher.co.uk/wp-content/uploads/2017/11/Layher-System-Free-Accessories-Catalogue.pdf"
+  },
+  "A": {
+    "x": [
+      4350,
+      7650
+    ],
+    "modules": 7,
+    "installedCentreY": 4525,
+    "withdrawal": 400,
+    "loweredZ": [
+      6390,
+      6570
+    ]
+  },
+  "axes": [
+    4720,
+    6000,
+    7290
+  ],
+  "pivotY": 5425,
+  "modules": [
+    {
+      "module": 1,
+      "centreX": 4585.714285714285,
+      "axis": 4720,
+      "reachAtInstalled": 909.9629954351027,
+      "reachAfter400": 517.7187007064982
+    },
+    {
+      "module": 2,
+      "centreX": 5057.142857142857,
+      "axis": 4720,
+      "reachAtInstalled": 961.075078296409,
+      "reachAfter400": 603.0466865197493
+    },
+    {
+      "module": 3,
+      "centreX": 5528.571428571428,
+      "axis": 6000,
+      "reachAtInstalled": 1015.9945363825457,
+      "reachAfter400": 687.2007697603254
+    },
+    {
+      "module": 4,
+      "centreX": 6000,
+      "axis": 6000,
+      "reachAtInstalled": 900,
+      "reachAfter400": 500
+    },
+    {
+      "module": 5,
+      "centreX": 6471.428571428572,
+      "axis": 6000,
+      "reachAtInstalled": 1015.9945363825457,
+      "reachAfter400": 687.2007697603254
+    },
+    {
+      "module": 6,
+      "centreX": 6942.857142857143,
+      "axis": 7290,
+      "reachAtInstalled": 964.6285104978527,
+      "reachAfter400": 608.6938173378352
+    },
+    {
+      "module": 7,
+      "centreX": 7414.285714285714,
+      "axis": 7290,
+      "reachAtInstalled": 908.5411046152562,
+      "reachAfter400": 515.2154294812124
+    }
+  ],
+  "bays": [
+    {
+      "centre": 5587.5,
+      "axis": 4720,
+      "radius": 1001.277309240552,
+      "landingY": 5900,
+      "landingX": 5601.437036889192,
+      "extremeX": 5721.277309240552
+    },
+    {
+      "centre": 6412.5,
+      "axis": 7290,
+      "radius": 1009.9535880425396,
+      "landingY": 5900,
+      "landingX": 6398.719320303643,
+      "extremeX": 6280.046411957461
+    }
+  ],
+  "checks": {
+    "maxInstalledReach": 1015.9945363825457,
+    "maxAfter400": 687.2007697603254,
+    "westRouteGross": 751,
+    "eastRouteGross": 751,
+    "centreFootBeforeInlet": 1500,
+    "carrierToUpperRail": 46,
+    "carrierToLowerRail": 176
+  },
+  "limitations": [
+    "Swing arm 4416.015 and holder 4416.003 are manufacturer-listed with a 150 kg permissible hoist-arm load, but the published catalogue gives no arm radius or confirmed attachment to these specific standards. The 1015.995 target is not an actual reach or rated capacity.",
+    "The central added standard and its 150 foot are an authored proposal, not a manufacturer-complete four-standard tower. Its couplings, load path, ties, soleboard, guard gate and use with this winch require a qualified design.",
+    "The 751-wide routes are plan strips between open door-leaf and centre-foot reservations, not tested routes around actual stairs, plates, tools, workers, shutter, braces or loaded movements.",
+    "Receiver mass, slings, hook/arm height, roof/corner and existing weather-layer clearance, supported lowering, travel and release are not established. The actual hoist may not lift the receiver assembly.",
+    "The arc is a point-centre stress, not a complete carrier, rope, module, personnel or dropped-load sweep. Workers must be outside the suspended-load exclusion zone; no rescue is inferred."
+  ]
+}
