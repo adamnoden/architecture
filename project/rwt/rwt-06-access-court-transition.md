@@ -4,6 +4,8 @@
 **Starting main:** `8cd642ef8ea7c7ec919c71c902f7f8daaf987034`, after the RWT-05/BCR occupation integration.
 **1 November failure/architecture disposition:** [Courtyard gravity-egress architectural rewind](court-egress-architectural-rewind.md) rejects further catalogue-led refinement of the historically narrow/deep north carrier as the default. It requires an architectural section with a maintainable normal N passage and a physically independent passive emergency E route before renewed product sizing; current geometry earns neither and RWT-06 remains planned. Historical drawings and sensitivities remain adverse evidence, not admitted design.
 
+**2 November source reconciliation:** the [selected open-loggia event and service challenge](rwt-06-open-loggia-event.md) now controls current-source RWT-06 continuation. The studies below remain dated enclosed-crossing comparisons; their levels, carriers and renewal witnesses are not selected-source proof. HAD-03 is complete, but RWT-06 remains open: event/inlet/receiving-head, actual first harm, temporary rain control and high-level access are not admitted.
+
 **Purpose:** replace an unspecified court crossing with a located architectural trial and a complete clearance/renewal task, while retaining real-site and competent technical authority.
 
 ## Later connected comparison

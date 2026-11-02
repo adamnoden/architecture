@@ -8,8 +8,8 @@
     },
     "STR": {
       "path": "project/str/studies/open-loggia-support.json",
-      "commit": "9867b1994533f0d0f3114919225aa89b50eb2f1a",
-      "blob": "f2414b24637533e93a0be9d0e0e639a899d18803"
+      "commit": "2ac4e4514e57e2a3e214ddaffac70379cd44d43c",
+      "blob": "20dec4384d09a0d02075fdd34a247e775532763b"
     },
     "MATroofEdge": {
       "path": "project/mat/studies/loggia-roof-edge.json",
@@ -17,13 +17,22 @@
       "blob": "731c85d24e775259f1cf84d264d4ceaf75d89774"
     }
   },
+  "sourceReconciliation": {
+    "olderSTRBlob": "f2414b24637533e93a0be9d0e0e639a899d18803",
+    "unchangedGeometry": [
+      "collector section260x140/top6680/bottom6540/projection60",
+      "north frame axes and seats",
+      "roof normal recipe/primary centre/purlin rows"
+    ],
+    "changedEngineering": "Actual offset transfers raise collector shear V from12.150 to20.490kN. Concrete-only actual shear fails; links are required. This dry thermal screen does not approve the collector structure."
+  },
   "geometry": {
     "qDomain": [
       -300.0,
       1200.0
     ],
     "zDomain": [
-      6300.0,
+      5900.0,
       7900.0
     ],
     "pitch": 25,
@@ -99,18 +108,19 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 10051,
-      "heatFromRoomWperM": 5.84440440836093,
-      "heatToOutsideWperM": 5.844404408362234,
-      "energyResidualWperM": -1.3038459201197838e-12,
-      "minimumInsideSurfaceC": 16.661295633057822,
-      "minimumInsideTemperatureFactor": 0.8330647816528911,
+      "zStart": 5900.0,
+      "unknownCells": 11571,
+      "heatFromRoomWperM": 8.459084547818435,
+      "heatToOutsideWperM": 8.459084547821075,
+      "energyResidualWperM": -2.639666263348772e-12,
+      "minimumInsideSurfaceC": 16.758931438180355,
+      "minimumInsideTemperatureFactor": 0.8379465719090178,
       "coldestInsideFace": {
         "q": 435.0,
         "z": 6540.0
       },
       "name": "bay",
-      "collectorPenaltyVsNoCollectorWperMK": 0.04466724010367536
+      "collectorPenaltyVsNoCollectorWperMK": 0.04558087064650933
     },
     {
       "step": 10.0,
@@ -119,12 +129,13 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 10003,
-      "heatFromRoomWperM": 4.951059606287423,
-      "heatToOutsideWperM": 4.951059606288539,
-      "energyResidualWperM": -1.1164402735630574e-12,
-      "minimumInsideSurfaceC": 17.723620519080693,
-      "minimumInsideTemperatureFactor": 0.8861810259540347,
+      "zStart": 5900.0,
+      "unknownCells": 11523,
+      "heatFromRoomWperM": 7.547467134888248,
+      "heatToOutsideWperM": 7.547467134890621,
+      "energyResidualWperM": -2.3723245590190345e-12,
+      "minimumInsideSurfaceC": 17.75682844211736,
+      "minimumInsideTemperatureFactor": 0.887841422105868,
       "coldestInsideFace": {
         "q": 430.0,
         "z": 6615.0
@@ -138,12 +149,13 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 10051,
-      "heatFromRoomWperM": 6.098103176925193,
-      "heatToOutsideWperM": 6.098103176924457,
-      "energyResidualWperM": 7.354117315117037e-13,
-      "minimumInsideSurfaceC": 16.33790183503861,
-      "minimumInsideTemperatureFactor": 0.8168950917519305,
+      "zStart": 5900.0,
+      "unknownCells": 11571,
+      "heatFromRoomWperM": 8.72036085485223,
+      "heatToOutsideWperM": 8.720360854856656,
+      "energyResidualWperM": -4.426681243785424e-12,
+      "minimumInsideSurfaceC": 16.44330093628649,
+      "minimumInsideTemperatureFactor": 0.8221650468143246,
       "coldestInsideFace": {
         "q": 435.0,
         "z": 6540.0
@@ -157,12 +169,13 @@
       "voidK": 0.026,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 10051,
-      "heatFromRoomWperM": 5.251335042499753,
-      "heatToOutsideWperM": 5.251335042501033,
-      "energyResidualWperM": -1.2798651027878805e-12,
-      "minimumInsideSurfaceC": 16.828076492397116,
-      "minimumInsideTemperatureFactor": 0.8414038246198559,
+      "zStart": 5900.0,
+      "unknownCells": 11571,
+      "heatFromRoomWperM": 7.86276026154677,
+      "heatToOutsideWperM": 7.862760261548898,
+      "energyResidualWperM": -2.1280754936015e-12,
+      "minimumInsideSurfaceC": 16.921979298089713,
+      "minimumInsideTemperatureFactor": 0.8460989649044857,
       "coldestInsideFace": {
         "q": 435.0,
         "z": 6540.0
@@ -176,12 +189,13 @@
       "voidK": 0.3,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 10051,
-      "heatFromRoomWperM": 6.364161081435583,
-      "heatToOutsideWperM": 6.364161081437581,
-      "energyResidualWperM": -1.9984014443252818e-12,
-      "minimumInsideSurfaceC": 16.414557588050556,
-      "minimumInsideTemperatureFactor": 0.8207278794025278,
+      "zStart": 5900.0,
+      "unknownCells": 11571,
+      "heatFromRoomWperM": 8.984119241820665,
+      "heatToOutsideWperM": 8.984119241823818,
+      "energyResidualWperM": -3.1530333899354446e-12,
+      "minimumInsideSurfaceC": 16.51732438800465,
+      "minimumInsideTemperatureFactor": 0.8258662194002324,
       "coldestInsideFace": {
         "q": 435.0,
         "z": 6540.0
@@ -195,12 +209,13 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.04,
       "qEnd": 1200.0,
-      "unknownCells": 10051,
-      "heatFromRoomWperM": 5.760088364379358,
-      "heatToOutsideWperM": 5.760088364380698,
-      "energyResidualWperM": -1.3393730569077889e-12,
-      "minimumInsideSurfaceC": 16.57459084023672,
-      "minimumInsideTemperatureFactor": 0.828729542011836,
+      "zStart": 5900.0,
+      "unknownCells": 11571,
+      "heatFromRoomWperM": 8.376310750952067,
+      "heatToOutsideWperM": 8.376310750954344,
+      "energyResidualWperM": -2.277289468111121e-12,
+      "minimumInsideSurfaceC": 16.676940057005808,
+      "minimumInsideTemperatureFactor": 0.8338470028502905,
       "coldestInsideFace": {
         "q": 435.0,
         "z": 6540.0
@@ -214,12 +229,13 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.12,
       "qEnd": 1200.0,
-      "unknownCells": 10051,
-      "heatFromRoomWperM": 5.976884652900856,
-      "heatToOutsideWperM": 5.976884652902342,
-      "energyResidualWperM": -1.4859224961583095e-12,
-      "minimumInsideSurfaceC": 16.832254099226375,
-      "minimumInsideTemperatureFactor": 0.8416127049613188,
+      "zStart": 5900.0,
+      "unknownCells": 11571,
+      "heatFromRoomWperM": 8.588759860981618,
+      "heatToOutsideWperM": 8.588759860984265,
+      "energyResidualWperM": -2.646771690706373e-12,
+      "minimumInsideSurfaceC": 16.920592649422545,
+      "minimumInsideTemperatureFactor": 0.8460296324711273,
       "coldestInsideFace": {
         "q": 435.0,
         "z": 6540.0
@@ -233,18 +249,19 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 40055,
-      "heatFromRoomWperM": 5.867470197528169,
-      "heatToOutsideWperM": 5.8674701975334616,
-      "energyResidualWperM": -5.292655202993046e-12,
-      "minimumInsideSurfaceC": 16.651018625884845,
-      "minimumInsideTemperatureFactor": 0.8325509312942423,
+      "zStart": 5900.0,
+      "unknownCells": 46135,
+      "heatFromRoomWperM": 8.482163036167599,
+      "heatToOutsideWperM": 8.48216303617761,
+      "energyResidualWperM": -1.0011547146859812e-11,
+      "minimumInsideSurfaceC": 16.749569936333184,
+      "minimumInsideTemperatureFactor": 0.8374784968166592,
       "coldestInsideFace": {
         "q": 432.5,
         "z": 6540.0
       },
       "name": "bay",
-      "collectorPenaltyVsNoCollectorWperMK": 0.045188101887166
+      "collectorPenaltyVsNoCollectorWperMK": 0.04610353409240005
     },
     {
       "step": 5.0,
@@ -253,12 +270,13 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 39863,
-      "heatFromRoomWperM": 4.963708159784849,
-      "heatToOutsideWperM": 4.963708159790173,
-      "energyResidualWperM": -5.323741447682551e-12,
-      "minimumInsideSurfaceC": 17.67439087398692,
-      "minimumInsideTemperatureFactor": 0.8837195436993459,
+      "zStart": 5900.0,
+      "unknownCells": 45943,
+      "heatFromRoomWperM": 7.560092354319598,
+      "heatToOutsideWperM": 7.560092354329109,
+      "energyResidualWperM": -9.511502696568641e-12,
+      "minimumInsideSurfaceC": 17.707528076271373,
+      "minimumInsideTemperatureFactor": 0.8853764038135686,
       "coldestInsideFace": {
         "q": 430.0,
         "z": 6617.5
@@ -272,12 +290,13 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 40055,
-      "heatFromRoomWperM": 6.117550683175866,
-      "heatToOutsideWperM": 6.117550683166684,
-      "energyResidualWperM": 9.181988502859895e-12,
-      "minimumInsideSurfaceC": 16.331251740372284,
-      "minimumInsideTemperatureFactor": 0.8165625870186142,
+      "zStart": 5900.0,
+      "unknownCells": 46135,
+      "heatFromRoomWperM": 8.739703067138947,
+      "heatToOutsideWperM": 8.73970306713091,
+      "energyResidualWperM": 8.038014698286133e-12,
+      "minimumInsideSurfaceC": 16.437504589616413,
+      "minimumInsideTemperatureFactor": 0.8218752294808207,
       "coldestInsideFace": {
         "q": 432.5,
         "z": 6540.0
@@ -291,12 +310,13 @@
       "voidK": 0.026,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 40055,
-      "heatFromRoomWperM": 5.265382191504583,
-      "heatToOutsideWperM": 5.265382191508874,
-      "energyResidualWperM": -4.291678123991005e-12,
-      "minimumInsideSurfaceC": 16.817946549201174,
-      "minimumInsideTemperatureFactor": 0.8408973274600587,
+      "zStart": 5900.0,
+      "unknownCells": 46135,
+      "heatFromRoomWperM": 7.8767887704927855,
+      "heatToOutsideWperM": 7.876788770501931,
+      "energyResidualWperM": -9.14557318765219e-12,
+      "minimumInsideSurfaceC": 16.912646457168837,
+      "minimumInsideTemperatureFactor": 0.8456323228584418,
       "coldestInsideFace": {
         "q": 432.5,
         "z": 6540.0
@@ -310,12 +330,13 @@
       "voidK": 0.3,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 40055,
-      "heatFromRoomWperM": 6.409383357788116,
-      "heatToOutsideWperM": 6.409383357794875,
-      "energyResidualWperM": -6.759037773917953e-12,
-      "minimumInsideSurfaceC": 16.39606197113951,
-      "minimumInsideTemperatureFactor": 0.8198030985569755,
+      "zStart": 5900.0,
+      "unknownCells": 46135,
+      "heatFromRoomWperM": 9.029584091553346,
+      "heatToOutsideWperM": 9.029584091564262,
+      "energyResidualWperM": -1.0915712778114539e-11,
+      "minimumInsideSurfaceC": 16.500154688732025,
+      "minimumInsideTemperatureFactor": 0.8250077344366012,
       "coldestInsideFace": {
         "q": 432.5,
         "z": 6540.0
@@ -329,12 +350,13 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.04,
       "qEnd": 1200.0,
-      "unknownCells": 40055,
-      "heatFromRoomWperM": 5.783408554702026,
-      "heatToOutsideWperM": 5.783408554706706,
-      "energyResidualWperM": -4.67981209339996e-12,
-      "minimumInsideSurfaceC": 16.56450431093397,
-      "minimumInsideTemperatureFactor": 0.8282252155466985,
+      "zStart": 5900.0,
+      "unknownCells": 46135,
+      "heatFromRoomWperM": 8.399651212968996,
+      "heatToOutsideWperM": 8.39965121297807,
+      "energyResidualWperM": -9.07363073565648e-12,
+      "minimumInsideSurfaceC": 16.667805246397428,
+      "minimumInsideTemperatureFactor": 0.8333902623198715,
       "coldestInsideFace": {
         "q": 432.5,
         "z": 6540.0
@@ -348,12 +370,13 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.12,
       "qEnd": 1200.0,
-      "unknownCells": 40055,
-      "heatFromRoomWperM": 5.998910709999281,
-      "heatToOutsideWperM": 5.998910710005546,
-      "energyResidualWperM": -6.265210572564683e-12,
-      "minimumInsideSurfaceC": 16.81985854718642,
-      "minimumInsideTemperatureFactor": 0.8409929273593211,
+      "zStart": 5900.0,
+      "unknownCells": 46135,
+      "heatFromRoomWperM": 8.610804670091543,
+      "heatToOutsideWperM": 8.610804670101736,
+      "energyResidualWperM": -1.0192735544478637e-11,
+      "minimumInsideSurfaceC": 16.90913009569745,
+      "minimumInsideTemperatureFactor": 0.8454565047848724,
       "coldestInsideFace": {
         "q": 432.5,
         "z": 6540.0
@@ -367,12 +390,13 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1400.0,
-      "unknownCells": 49476,
-      "heatFromRoomWperM": 6.1068580184200165,
-      "heatToOutsideWperM": 6.106858018425898,
-      "energyResidualWperM": -5.881517495254229e-12,
-      "minimumInsideSurfaceC": 16.65622671669513,
-      "minimumInsideTemperatureFactor": 0.8328113358347565,
+      "zStart": 5900.0,
+      "unknownCells": 55556,
+      "heatFromRoomWperM": 8.721450721062627,
+      "heatToOutsideWperM": 8.72145072107277,
+      "energyResidualWperM": -1.014299755297543e-11,
+      "minimumInsideSurfaceC": 16.75447046274256,
+      "minimumInsideTemperatureFactor": 0.8377235231371281,
       "coldestInsideFace": {
         "q": 432.5,
         "z": 6540.0
@@ -386,17 +410,98 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1400.0,
-      "unknownCells": 49284,
-      "heatFromRoomWperM": 5.202003920714836,
-      "heatToOutsideWperM": 5.202003920720439,
-      "energyResidualWperM": -5.60262947146839e-12,
-      "minimumInsideSurfaceC": 17.677498701400545,
-      "minimumInsideTemperatureFactor": 0.8838749350700272,
+      "zStart": 5900.0,
+      "unknownCells": 55364,
+      "heatFromRoomWperM": 7.798366790946319,
+      "heatToOutsideWperM": 7.798366790956058,
+      "energyResidualWperM": -9.738876372011873e-12,
+      "minimumInsideSurfaceC": 17.710547097457912,
+      "minimumInsideTemperatureFactor": 0.8855273548728956,
       "coldestInsideFace": {
         "q": 430.0,
         "z": 6617.5
       },
       "name": "wideNoCollectorReference"
+    },
+    {
+      "step": 5.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "zStart": 5700.0,
+      "unknownCells": 49175,
+      "heatFromRoomWperM": 9.77791128171959,
+      "heatToOutsideWperM": 9.777911281731837,
+      "energyResidualWperM": -1.2247980407664727e-11,
+      "minimumInsideSurfaceC": 16.750198667674297,
+      "minimumInsideTemperatureFactor": 0.8375099333837148,
+      "coldestInsideFace": {
+        "q": 432.5,
+        "z": 6540.0
+      },
+      "name": "deeperBay"
+    },
+    {
+      "step": 5.0,
+      "collector": false,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "zStart": 5700.0,
+      "unknownCells": 48983,
+      "heatFromRoomWperM": 8.855723685528465,
+      "heatToOutsideWperM": 8.855723685539855,
+      "energyResidualWperM": -1.1390000054234406e-11,
+      "minimumInsideSurfaceC": 17.707738788078018,
+      "minimumInsideTemperatureFactor": 0.8853869394039009,
+      "coldestInsideFace": {
+        "q": 430.0,
+        "z": 6617.5
+      },
+      "name": "deeperNoCollectorReference"
+    },
+    {
+      "step": 5.0,
+      "collector": true,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "zStart": 6100.0,
+      "unknownCells": 43095,
+      "heatFromRoomWperM": 7.184765295021359,
+      "heatToOutsideWperM": 7.1847652950298135,
+      "energyResidualWperM": -8.454570377125492e-12,
+      "minimumInsideSurfaceC": 16.742022693925364,
+      "minimumInsideTemperatureFactor": 0.8371011346962682,
+      "coldestInsideFace": {
+        "q": 432.5,
+        "z": 6540.0
+      },
+      "name": "shallowerBay"
+    },
+    {
+      "step": 5.0,
+      "collector": false,
+      "frameSolidPlaneStress": false,
+      "voidK": 0.1,
+      "ceilingEffectiveK": 0.06,
+      "qEnd": 1200.0,
+      "zStart": 6100.0,
+      "unknownCells": 42903,
+      "heatFromRoomWperM": 6.264097933371874,
+      "heatToOutsideWperM": 6.264097933379058,
+      "energyResidualWperM": -7.184475236954313e-12,
+      "minimumInsideSurfaceC": 17.70499800238622,
+      "minimumInsideTemperatureFactor": 0.8852499001193109,
+      "coldestInsideFace": {
+        "q": 430.0,
+        "z": 6617.5
+      },
+      "name": "shallowerNoCollectorReference"
     },
     {
       "step": 2.5,
@@ -405,18 +510,19 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 160054,
-      "heatFromRoomWperM": 5.881582195347486,
-      "heatToOutsideWperM": 5.881582195371054,
-      "energyResidualWperM": -2.3568702545162523e-11,
-      "minimumInsideSurfaceC": 16.65265717729224,
-      "minimumInsideTemperatureFactor": 0.832632858864612,
+      "zStart": 5900.0,
+      "unknownCells": 184374,
+      "heatFromRoomWperM": 8.499151210455437,
+      "heatToOutsideWperM": 8.499151210499463,
+      "energyResidualWperM": -4.402522790769581e-11,
+      "minimumInsideSurfaceC": 16.748680872405394,
+      "minimumInsideTemperatureFactor": 0.8374340436202697,
       "coldestInsideFace": {
         "q": 431.25,
         "z": 6540.0
       },
       "name": "bay",
-      "collectorPenaltyVsNoCollectorWperMK": 0.04558043391701929
+      "collectorPenaltyVsNoCollectorWperMK": 0.046466259727334334
     },
     {
       "step": 2.5,
@@ -425,12 +531,13 @@
       "voidK": 0.1,
       "ceilingEffectiveK": 0.06,
       "qEnd": 1200.0,
-      "unknownCells": 159286,
-      "heatFromRoomWperM": 4.9699735170071,
-      "heatToOutsideWperM": 4.969973517029557,
-      "energyResidualWperM": -2.2457591342117666e-11,
-      "minimumInsideSurfaceC": 17.645571636115918,
-      "minimumInsideTemperatureFactor": 0.8822785818057959,
+      "zStart": 5900.0,
+      "unknownCells": 183606,
+      "heatFromRoomWperM": 7.569826015908751,
+      "heatToOutsideWperM": 7.569826015949182,
+      "energyResidualWperM": -4.04316580215891e-11,
+      "minimumInsideSurfaceC": 17.677564689771234,
+      "minimumInsideTemperatureFactor": 0.8838782344885617,
       "coldestInsideFace": {
         "q": 430.0,
         "z": 6618.75
@@ -440,33 +547,48 @@
   ],
   "convergence": {
     "bay": {
-      "heatRelative": 0.003931130178889719,
-      "surfaceDeltaC": -0.010277007172977193
+      "heatRelative": 0.002720825837791371,
+      "surfaceDeltaC": -0.009361501847170217
     },
     "noCollectorReference": {
-      "heatRelative": 0.00254820652025891,
-      "surfaceDeltaC": -0.049229645093774366
+      "heatRelative": 0.0016699821694818014,
+      "surfaceDeltaC": -0.04930036584598696
     },
     "solidFramePlaneStress": {
-      "heatRelative": 0.003178969371542166,
-      "surfaceDeltaC": -0.006650094666326822
+      "heatRelative": 0.002213142956703433,
+      "surfaceDeltaC": -0.005796346670077668
     }
   },
   "fineConvergence": {
     "bay": {
-      "heatRelative": 0.0023993540089399315,
-      "surfaceDeltaC": 0.001638551407395994
+      "heatRelative": 0.001998808335935995,
+      "surfaceDeltaC": -0.0008890639277900902
     },
     "noCollectorReference": {
-      "heatRelative": 0.001260641973405088,
-      "surfaceDeltaC": -0.02881923787100149
+      "heatRelative": 0.0012858501065541982,
+      "surfaceDeltaC": -0.029963386500138967
     }
   },
   "wideCutSensitivity": {
     "qEnd": 1400,
-    "collectorPenaltyWperMK": 0.045242704885259014,
-    "penaltyDifferenceFromPrimary": 5.4602998093011834e-05,
-    "surfaceDifferenceC": 0.005208090810285171
+    "collectorPenaltyWperMK": 0.046154196505815426,
+    "penaltyDifferenceFromPrimary": 5.066241341537825e-05,
+    "surfaceDifferenceC": 0.004900526409375772
+  },
+  "lowerCutSensitivity": {
+    "baselineZ": 5900.0,
+    "shallowerZ": 6100,
+    "deeperZ": 5700,
+    "penaltiesWperMK": {
+      "shallower": 0.04603336808247427,
+      "baseline": 0.04610353409240005,
+      "deeper": 0.046109379809556206
+    },
+    "surfacesC": {
+      "shallower": 16.742022693925364,
+      "baseline": 16.749569936333184,
+      "deeper": 16.750198667674297
+    }
   },
   "open": [
     "Actual classified ceiling conductivity/skin/web/fillets and protected void radiation/convection",

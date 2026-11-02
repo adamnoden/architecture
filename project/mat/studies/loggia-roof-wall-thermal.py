@@ -15,7 +15,7 @@ EDGE=HERE/'loggia-roof-edge.json'
 HAD=ROOT/'project/had/studies/open-north-loggia.json'
 STR=ROOT/'project/str/studies/open-loggia-support.json'
 EXPECTED_BLOBS={'HAD':'25faad2c4d40df2b7da7212f73808843a88d2f52',
-                'STR':'f2414b24637533e93a0be9d0e0e639a899d18803',
+                'STR':'20dec4384d09a0d02075fdd34a247e775532763b',
                 'MATroofEdge':'731c85d24e775259f1cf84d264d4ceaf75d89774'}
 def git(*args):return subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()
 def blob(raw):return hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()
@@ -26,24 +26,35 @@ def tracked(path):
 source={name:tracked(p) for name,p in [('HAD',HAD),('STR',STR),('MATroofEdge',EDGE)]}
 for name,identity in source.items():assert identity['blob']==EXPECTED_BLOBS[name],f'{name} source changed; deliberately rebind and rerun'
 e=json.loads(EDGE.read_text()); h=json.loads(HAD.read_text()); st=json.loads(STR.read_text())['actual_roof']
+old_str_raw=subprocess.check_output(['git','show','9867b1994533f0d0f3114919225aa89b50eb2f1a:project/str/studies/open-loggia-support.json'],cwd=ROOT)
+assert blob(old_str_raw)=='f2414b24637533e93a0be9d0e0e639a899d18803'
+oldst=json.loads(old_str_raw)['actual_roof']
+for field in ('north_frames_x','seat_y','normal_recipe','total_normal','primary_centre','ordinary_tie','purlin_rows','roof_extent_from_seat'):
+ assert oldst[field]==st[field],f'STR {field} changed; thermal geometry must be revised'
+for field in ('section','top','bottom','ordinary_core','projection_each','clear_window_max','seats_each','axis_span'):
+ assert oldst['collector'][field]==st['collector'][field],f'STR collector {field} changed'
 assert e['ordinaryWall']['roomToWeather']==[27,140,110,50,102.5]
 assert h['envelope']==429.5 and h['roofDevelopment']['totalNormal']==500.7
 assert e['collector']['bounds']==[202.5,462.5,6540,6680]
 assert e['ceiling']['top']==6620 and e['ceiling']['finished']==6444 and e['ceiling']['completeDepth']==176
 assert st['collector']['section']['b']==260 and st['north_frames_x']==e['air']['primaryFrame']['axesX']
+assert st['collector']['top']==6680 and st['collector']['bottom']==6540
+assert st['collector']['projection_each']==60 and st['collector']['actual_offset_requires_links'] is True
+assert st['collector']['concrete_only_actual_shear_pass'] is False
+assert math.isclose(oldst['collector']['V'],12.1503375) and math.isclose(st['collector']['V'],20.48955360576923)
 PITCH=math.radians(25); TAN=math.tan(PITCH); COS=math.cos(PITCH)
 def rz(q,d):return 7100+q*TAN-d/COS
 # All dimensions in mm. The finite computational cut is adiabatic at q=1200,
-# z=6300 and z=7900; boundary-sensitivity is reported, not hidden.
-Q0,Q1,Z0,Z1=-300.,1200.,6300.,7900.
+# z=5900 and z=7900; both horizontal and lower-cut sensitivity are reported.
+Q0,Q1,Z0,Z1=-300.,1200.,5900.,7900.
 BOARD_AVCL_NORMAL=25/(24/.14+1/15.)
 LAMBDA={'brick':.77,'core':.77,'plaster':.57,'glass':.041,'RC':1.75,
         'boardAVCLnormal':BOARD_AVCL_NORMAL,'steel':15.}
 FILM={'inside':.13,'outside':.04} # Authored R in m2 K/W, not a declared compliance setup.
 T_IN,T_OUT=20.,0. # Linear solver: results also reported as temperature factors.
 
-def geometry(step,collector=True,frame=False,void_k=.10,ceiling_k=.06,q_end=Q1):
- q=np.arange(Q0+step/2,q_end,step); z=np.arange(Z0+step/2,Z1,step)
+def geometry(step,collector=True,frame=False,void_k=.10,ceiling_k=.06,q_end=Q1,z_start=Z0):
+ q=np.arange(Q0+step/2,q_end,step); z=np.arange(z_start+step/2,Z1,step)
  Q,Z=np.meshgrid(q,z); sh=Q.shape
  # 0: outside fixed air; 1: inside fixed air; 2: unknown void;
  # 3+: named solids. A missing cavity/wall-head cap is not silently sealed:
@@ -58,7 +69,7 @@ def geometry(step,collector=True,frame=False,void_k=.10,ceiling_k=.06,q_end=Q1):
  # The vent is exterior-connected in this dry heat screen. Zinc and open
  # boards are on its cold side and not credited as additional insulation.
  M[(Z>=vent)&(Z<=top)]=ids['outside']
- wall=(Z>=Z0)&(Z<deckbottom)
+ wall=(Z>=z_start)&(Z<deckbottom)
  M[wall&(Q>=0)&(Q<102.5)&(Z<6900)]=ids['brick']
  M[wall&(Q>=102.5)&(Q<152.5)]=ids['outside'] # drained cavity, no closed-air R
  M[wall&(Q>=152.5)&(Q<262.5)&(Z<glassbottom)]=ids['glass']
@@ -89,8 +100,8 @@ def geometry(step,collector=True,frame=False,void_k=.10,ceiling_k=.06,q_end=Q1):
  k[M==ids['void']]=void_k;k[M==ids['ceiling']]=ceiling_k
  return q,z,M,k,ids
 
-def solve(step,collector=True,frame=False,void_k=.10,ceiling_k=.06,q_end=Q1):
- q,z,M,k,ids=geometry(step,collector,frame,void_k,ceiling_k,q_end)
+def solve(step,collector=True,frame=False,void_k=.10,ceiling_k=.06,q_end=Q1,z_start=Z0):
+ q,z,M,k,ids=geometry(step,collector,frame,void_k,ceiling_k,q_end,z_start)
  assert not np.any(((M[:,:-1]==0)&(M[:,1:]==1))|((M[:,:-1]==1)&(M[:,1:]==0)))
  assert not np.any(((M[:-1,:]==0)&(M[1:,:]==1))|((M[:-1,:]==1)&(M[1:,:]==0)))
  nz,nq=M.shape; active=M>=2
@@ -139,7 +150,7 @@ def solve(step,collector=True,frame=False,void_k=.10,ceiling_k=.06,q_end=Q1):
  cold=min(surfacePoints)
  # Adiabatic cuts are intentionally distant, but their impact needs a
  # domain-width sensitivity before a junction coefficient can be asserted.
- return dict(step=step,collector=collector,frameSolidPlaneStress=frame,voidK=void_k,ceilingEffectiveK=ceiling_k,qEnd=q_end,
+ return dict(step=step,collector=collector,frameSolidPlaneStress=frame,voidK=void_k,ceilingEffectiveK=ceiling_k,qEnd=q_end,zStart=z_start,
              unknownCells=int(active.sum()),heatFromRoomWperM=flux['inside'],heatToOutsideWperM=-flux['outside'],
              energyResidualWperM=flux['inside']+flux['outside'],
              minimumInsideSurfaceC=min(surf['inside']),minimumInsideTemperatureFactor=(min(surf['inside'])-T_OUT)/(T_IN-T_OUT),
@@ -155,6 +166,10 @@ for step in (10.,5.):
 for name,kw in [('wideBay',{'q_end':1400.}),('wideNoCollectorReference',{'q_end':1400.,'collector':False})]:
  x=solve(5.,**kw);x['name']=name;cases.append(x)
  assert abs(x['energyResidualWperM'])<1e-5
+for name,kw in [('deeperBay',{'z_start':5700.}),('deeperNoCollectorReference',{'z_start':5700.,'collector':False}),
+                ('shallowerBay',{'z_start':6100.}),('shallowerNoCollectorReference',{'z_start':6100.,'collector':False})]:
+ x=solve(5.,**kw);x['name']=name;cases.append(x)
+ assert abs(x['energyResidualWperM'])<1e-5
 for name,kw in [('bay',{}),('noCollectorReference',{'collector':False})]:
  x=solve(2.5,**kw);x['name']=name;cases.append(x)
  assert abs(x['energyResidualWperM'])<1e-5
@@ -164,13 +179,17 @@ for hstep in (10.,5.,2.5):
 conv={n:dict(heatRelative=abs(by[(5.,n)]['heatFromRoomWperM']-by[(10.,n)]['heatFromRoomWperM'])/by[(5.,n)]['heatFromRoomWperM'],surfaceDeltaC=by[(5.,n)]['minimumInsideSurfaceC']-by[(10.,n)]['minimumInsideSurfaceC']) for n in ('bay','noCollectorReference','solidFramePlaneStress')}
 fineConv={n:dict(heatRelative=abs(by[(2.5,n)]['heatFromRoomWperM']-by[(5.,n)]['heatFromRoomWperM'])/by[(2.5,n)]['heatFromRoomWperM'],surfaceDeltaC=by[(2.5,n)]['minimumInsideSurfaceC']-by[(5.,n)]['minimumInsideSurfaceC']) for n in ('bay','noCollectorReference')}
 widePenalty=(by[(5.,'wideBay')]['heatFromRoomWperM']-by[(5.,'wideNoCollectorReference')]['heatFromRoomWperM'])/(T_IN-T_OUT)
+deepPenalty=(by[(5.,'deeperBay')]['heatFromRoomWperM']-by[(5.,'deeperNoCollectorReference')]['heatFromRoomWperM'])/(T_IN-T_OUT)
+shallowPenalty=(by[(5.,'shallowerBay')]['heatFromRoomWperM']-by[(5.,'shallowerNoCollectorReference')]['heatFromRoomWperM'])/(T_IN-T_OUT)
 v=dict(status='Conditional steady 2D heat-flow screen only; no ISO10211/13788, whole U, condensation or assembly acceptance.',
-       inputs=source,geometry=dict(qDomain=[Q0,Q1],zDomain=[Z0,Z1],pitch=25,ordinaryWall=e['ordinaryWall'],weatherLeafHeadHypothesisZ=6900,collector=e['collector']['bounds'],roofNormal=500.7,roofGlassNormal=320,roofGlassEndQ=152.5,lowerBoardEndQ=262.5,ceiling=[6444,6620],ceilingWoolInClassifiedSystem=100,framePlanesX=st['north_frames_x']),
+       inputs=source,sourceReconciliation=dict(olderSTRBlob='f2414b24637533e93a0be9d0e0e639a899d18803',unchangedGeometry=['collector section260x140/top6680/bottom6540/projection60','north frame axes and seats','roof normal recipe/primary centre/purlin rows'],changedEngineering='Actual offset transfers raise collector shear V from12.150 to20.490kN. Concrete-only actual shear fails; links are required. This dry thermal screen does not approve the collector structure.'),
+       geometry=dict(qDomain=[Q0,Q1],zDomain=[Z0,Z1],pitch=25,ordinaryWall=e['ordinaryWall'],weatherLeafHeadHypothesisZ=6900,collector=e['collector']['bounds'],roofNormal=500.7,roofGlassNormal=320,roofGlassEndQ=152.5,lowerBoardEndQ=262.5,ceiling=[6444,6620],ceilingWoolInClassifiedSystem=100,framePlanesX=st['north_frames_x']),
        model=dict(temperatureC={'room':T_IN,'outdoorVent':T_OUT},surfaceFilmM2KperW=FILM,conductivityWperMK=LAMBDA,primaryVoidK=.10,primaryCeilingEffectiveK=.06,
                   geometryLimit='Dry section with authored glass-to-glass bevel closure. Drained wall cavity and roof 50 ventilation held at outdoor temperature. Weather-leaf head and cap not resolved as a qualified joint. q/z cuts adiabatic. The 24board+1mm AVCL are a 25mm exact normal-series resistance, omitting sheet lateral fin and collars. The 176 ceiling is a homogenized effective-property bracket, not the classified profile. No radiative/cavity airflow or wind-driven rain.',
                   frameLimit='Solid 80-normal steel plane is a deliberately severe 2D infinite-width bound, not a hollow SHS, its finite x distribution, 1 mm collar, weld or 3D heat transfer. Post/plate/rail/corner bridges excluded.',
                   referenceLimit='No-collector comparison is a numerical counterfactual with the same roof/wall/ceiling cut. Its ΔL is not an ISO ψ or an available design option. Boundary-width and ceiling-property sensitivities prevent a compliance claim.'),
        cases=cases,convergence=conv,fineConvergence=fineConv,wideCutSensitivity=dict(qEnd=1400,collectorPenaltyWperMK=widePenalty,penaltyDifferenceFromPrimary=widePenalty-by[(5.,'bay')]['collectorPenaltyVsNoCollectorWperMK'],surfaceDifferenceC=by[(5.,'wideBay')]['minimumInsideSurfaceC']-by[(5.,'bay')]['minimumInsideSurfaceC']),
+       lowerCutSensitivity=dict(baselineZ=Z0,shallowerZ=6100,deeperZ=5700,penaltiesWperMK={'shallower':shallowPenalty,'baseline':by[(5.,'bay')]['collectorPenaltyVsNoCollectorWperMK'],'deeper':deepPenalty},surfacesC={'shallower':by[(5.,'shallowerBay')]['minimumInsideSurfaceC'],'baseline':by[(5.,'bay')]['minimumInsideSurfaceC'],'deeper':by[(5.,'deeperBay')]['minimumInsideSurfaceC']}),
        open=['Actual classified ceiling conductivity/skin/web/fillets and protected void radiation/convection','All-around frame/post collars and metal-sheet fin effects in 3D','Indoor moisture production, climate/weather series and constituent vapour/permeance data for transient moisture','Wall-head cavity cap/drip, plaster and water/air/gas closure, site and physical verification'])
 
 def out(p,s):
@@ -205,8 +224,8 @@ svg+=txt(215,225,f'Collector penalty ΔL {by[(5.,"bay")]["collectorPenaltyVsNoCo
 svg+=txt(215,233,f'Bay energy residual {by[(5.,"bay")]["energyResidualWperM"]:.2e} W/m.',2.8)
 svg+=txt(215,241,f'Bay grid Q difference {conv["bay"]["heatRelative"]*100:.2f}% / surface {conv["bay"]["surfaceDeltaC"]:.2f}°C.',2.8)
 svg+=txt(215,247,f'5→2.5mm: {fineConv["bay"]["heatRelative"]*100:.2f}% heat / {fineConv["bay"]["surfaceDeltaC"]:.2f}°C surface.',2.8)
-svg+=txt(215,253,f'Wider cut: ΔL shift {v["wideCutSensitivity"]["penaltyDifferenceFromPrimary"]:.4f} W/mK.',2.8)
-svg+=txt(215,261,'Ceiling effective k and protected-void mixing are explicit brackets.',2.8)
+svg+=txt(215,253,f'Wider cut: ΔL shift {v["wideCutSensitivity"]["penaltyDifferenceFromPrimary"]:.5f} W/mK.',2.8)
+svg+=txt(215,261,f'Lower z6100/5900/5700: Tmin {v["lowerCutSensitivity"]["surfacesC"]["shallower"]:.2f}/{v["lowerCutSensitivity"]["surfacesC"]["baseline"]:.2f}/{v["lowerCutSensitivity"]["surfacesC"]["deeper"]:.2f}°C.',2.8)
 svg+=txt(215,269,'No climate/humidity/μ, radiation, actual collar fin or complete joints.',2.8)
 svg+=txt(15,287,'Numerical result only; geometry, classified ceiling, structural frame and material policy require their owning admissions.',2.9)+'</g></svg>\n'
 out(HERE/'loggia-roof-wall-thermal.svg',svg)
