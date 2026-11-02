@@ -9,9 +9,9 @@
     "label": "zerg-recovery-services"
   },
   "claimedAt": "2026-11-02T07:17:11.072Z",
-  "heartbeatAt": "2026-11-02T07:39:43.536Z",
-  "expiresAt": "2026-11-02T08:24:43.536Z",
-  "branch": "work/zerg-recovery-services",
+  "heartbeatAt": "2026-11-02T07:51:01.506Z",
+  "expiresAt": "2026-11-02T08:36:01.506Z",
+  "branch": "work/zerg-recovery-structure-services",
   "predecessor": {
     "leaseId": "6e052e0d-5d92-4016-bb83-28527465e125",
     "generation": 11,
@@ -33,9 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Draft PR1248 remote fe6325c0/tree558d4d2d exact local merge; parents old PR fd06b36c + current main483a26c7. Cooker/baseline/roof-edge generators and diff checks pass.",
-    "next": "Root observes exact-head CI and independent review; preflight only if bounded PR accepted for merge; retain broad MAT-SERVICES open",
-    "blocker": "Six room supplies, configured control/kit, 60/50 net heat and physical/material admission unearned"
+    "evidence": "Shared draft PR1249 remote522d17ae/treeba0e3578 on main42aaecb3 includes exact six reviewed Services blobs from fe6325c0/tree558d4d2d; true source parents and combined generator/typecheck/integrity checks verified by coordinator",
+    "next": "Root observes exact-head CI and performs publication preflight/merge if independent review and gates pass; MAT-SERVICES broad system/acceptance remains open",
+    "blocker": "Room-by-room supply/closed-door network, configured hood/control, net12kW/60-50 heat source and installed material/physical admission remain separately unearned"
   },
-  "pr": 1248
+  "pr": 1249
 }
