@@ -30,19 +30,28 @@ steel=cut(60); sleeve=cut(65)
 margin=40
 bounds=[-margin, min(p[1] for p in sleeve)-margin, max(p[0] for p in sleeve)+margin, max(p[1] for p in sleeve)+margin]
 clear_bottom=bounds[1]-6410
+# The sleeve axis follows the hip; these are ideal interior-envelope limits.
+s_cut=[-65*math.tan(theta),65/math.cos(theta)+65*math.tan(theta)]
+def end_bounds(s):
+ qmid=q+s*math.cos(theta)/math.sqrt(2)
+ qhalf=65*(1+math.sin(theta))/math.sqrt(2)
+ zmid=zc+s*math.sin(theta); zhalf=65*math.cos(theta)
+ return {'s_mm':s,'each_xy_bound_mm':[qmid-qhalf,qmid+qhalf],'z_bound_mm':[zmid-zhalf,zmid+zhalf]}
+ends=[end_bounds(-30),end_bounds(100)]
+assert -30 < s_cut[0] < s_cut[1] < 100
 assert 0<clear_bottom<1 and math.isclose(zc,6519.079552999668)
 data={'source_git_blobs':pins,'scope':'Ideal infinite-member section only; not a fabrication pattern, weld, movement, air/gas, fire or structural pass.',
  'coordinate_convention':'x east, y north, z up; u increases from (262.5,262.5) on either sheet face',
  'hip_centre_z_at_common_corner_mm':zc,'bare_hip_face_polygon_u_z_mm':steel,
  'trial_sleeve':'Concentric square 130 mm internal envelope around bare 120 mm SHS; 5 mm nominal per-side radial clearance. Actual wall thickness, end closures and assembly unresolved.',
- 'sleeve_envelope_face_polygon_u_z_mm':sleeve,'trial_flange_bounding_margin_mm':margin,'trial_flange_axis_bounds_u_z_mm':bounds,
- 'lower_margin_above_sheet_start_6410_mm':clear_bottom,'upper_margin_below_sheet_end_6660_mm':6660-bounds[3],
- 'decision':'40 mm bounding flange on the 5 mm clear sleeve leaves less than 1 mm to the assumed +6410 sheet start; reject this arrangement as a credible untoleranced fabrication fit. A change of geometry and full load, movement, seal and installation design are required.'}
+ 'sleeve_envelope_face_polygon_u_z_mm':sleeve,'trial_sleeve_axis_end_s_mm':[-30,100], 'sheet_cut_axis_limits_s_mm':s_cut, 'end_internal_envelope_bounds':ends, 'ideal_envelope_minimum_z_above_cap_top_6430_mm':ends[0]['z_bound_mm'][0]-6430,'trial_flange_bounding_margin_mm':margin,'trial_flange_axis_bounds_u_z_mm':bounds,
+ 'lower_margin_above_extension_joint_6410_mm':clear_bottom,'lower_margin_if_joint_at_6370_mm':bounds[1]-6370,'upper_margin_below_sheet_end_6660_mm':6660-bounds[3],
+ 'decision':'40 mm bounding flange on the 5 mm clear sleeve leaves less than 1 mm to a joint fixed at +6410, so that particular joint position is not a credible untoleranced fit. Moving the joint to +6370 gives 40.637 mm geometrically; the joint, support, loading, movement, seal and installation remain undesigned.'}
 jsonout=json.dumps(data,indent=2)+'\n'
 # Elevation is schematic; values and polygon geometry are the numerical authority.
 def xy(p): return f'{100+p[0]*2:.2f},{500-(p[1]-6400)*1.4:.2f}'
 def poly(p): return ' '.join(map(xy,p))
-svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="820" height="580" viewBox="0 0 820 580"><rect width="100%" height="100%" fill="white"/><text x="30" y="32" font-family="sans-serif" font-size="20">SW hip collar trial — face section, schematic</text><text x="30" y="56" font-family="sans-serif" font-size="14">Ideal member only; flange outline is a bounding rectangle, not a fabrication pattern</text><line x1="100" y1="{500-(6410-6400)*1.4:.2f}" x2="410" y2="{500-(6410-6400)*1.4:.2f}" stroke="#555" stroke-dasharray="5 4"/><line x1="100" y1="{500-(6660-6400)*1.4:.2f}" x2="410" y2="{500-(6660-6400)*1.4:.2f}" stroke="#555" stroke-dasharray="5 4"/><polygon points="{poly([[bounds[0],bounds[1]],[bounds[2],bounds[1]],[bounds[2],bounds[3]],[bounds[0],bounds[3]]])}" fill="#faf2c5" stroke="#b38300"/><polygon points="{poly(sleeve)}" fill="#e7efff" stroke="#315ea9" stroke-width="2"/><polygon points="{poly(steel)}" fill="#9bacc3" stroke="#20354e" stroke-width="2"/><text x="430" y="132" font-family="sans-serif" font-size="15">Sheet top +6660</text><text x="430" y="175" font-family="sans-serif" font-size="15">40 mm bound around sleeve cut</text><text x="430" y="210" font-family="sans-serif" font-size="15">130 mm internal sleeve envelope</text><text x="430" y="245" font-family="sans-serif" font-size="15">120 mm bare hip</text><text x="430" y="462" font-family="sans-serif" font-size="15">Sheet starts +6410</text><text x="30" y="550" font-family="sans-serif" font-size="15" fill="#a01818">Bottom margin {clear_bottom:.3f} mm: no tolerance, weld or assembly acceptance</text></svg>\n'''
+svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="820" height="580" viewBox="0 0 820 580"><rect width="100%" height="100%" fill="white"/><text x="30" y="32" font-family="sans-serif" font-size="20">SW hip collar trial — face section, schematic</text><text x="30" y="56" font-family="sans-serif" font-size="14">Ideal member only; flange outline is a bounding rectangle, not a fabrication pattern</text><line x1="100" y1="{500-(6410-6400)*1.4:.2f}" x2="410" y2="{500-(6410-6400)*1.4:.2f}" stroke="#555" stroke-dasharray="5 4"/><line x1="100" y1="{500-(6660-6400)*1.4:.2f}" x2="410" y2="{500-(6660-6400)*1.4:.2f}" stroke="#555" stroke-dasharray="5 4"/><polygon points="{poly([[bounds[0],bounds[1]],[bounds[2],bounds[1]],[bounds[2],bounds[3]],[bounds[0],bounds[3]]])}" fill="#faf2c5" stroke="#b38300"/><polygon points="{poly(sleeve)}" fill="#e7efff" stroke="#315ea9" stroke-width="2"/><polygon points="{poly(steel)}" fill="#9bacc3" stroke="#20354e" stroke-width="2"/><text x="430" y="132" font-family="sans-serif" font-size="15">Sheet top +6660</text><text x="430" y="175" font-family="sans-serif" font-size="15">40 mm bound around sleeve cut</text><text x="430" y="210" font-family="sans-serif" font-size="15">130 mm internal sleeve envelope</text><text x="430" y="245" font-family="sans-serif" font-size="15">120 mm bare hip</text><text x="430" y="462" font-family="sans-serif" font-size="15">Extension joint +6410</text><text x="30" y="550" font-family="sans-serif" font-size="15" fill="#a01818">Joint margin {clear_bottom:.3f} mm at +6410; lower joint is a separate trial</text></svg>\n'''
 outputs={O/'sw-hip-collar-fit.json':jsonout,O/'sw-hip-collar-fit.svg':svg}
 if '--check' in sys.argv:
  for p,v in outputs.items(): assert p.read_text()==v,p
