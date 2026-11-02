@@ -33,9 +33,14 @@
       "scope": "Protect panel family connects to Allround/SpeedyScaf; system, joints and wind design remain site-specific."
     },
     {
+      "publisher": "Layher UK",
+      "url": "https://www.layher.co.uk/wp-content/uploads/2017/11/Layher-System-Free-Accessories-Catalogue.pdf",
+      "scope": "Layher base plate catalogue: 150 x 150 foot plate, sufficient load distribution required."
+    },
+    {
       "publisher": "REID Lifting",
-      "url": "https://uk.reidlifting.com/s/REID-Safety-Brochure-Portrait-EN-V5-Lo-Res.pdf",
-      "scope": "PGRS20 2000 beam minimum1450 to lifting eye; setup and full kit untested."
+      "url": "https://uk.reidlifting.com/s/REID-UK-MasterBrochure-V22-lo-res.pdf",
+      "scope": "PGRS20, min eye1445, top1776, width1158, beam2000 and max clear span1500; setup and full kit untested."
     }
   ],
   "observed": "2026-11-02",
@@ -80,6 +85,57 @@
     },
     "scope": "Nominal module bounding plan only: exact standards, jacks, braces, ties, stair and rescue movement not authored. No independent stability or safe use inferred."
   },
+  "compact": {
+    "groundPlan": [
+      1400,
+      1570
+    ],
+    "stair": [
+      1250,
+      600
+    ],
+    "exitSpacings": [
+      2500,
+      2750,
+      3000
+    ],
+    "withoutConsoleBrackets": true,
+    "plan": {
+      "x": [
+        6200,
+        7600
+      ],
+      "y": [
+        5340,
+        6910
+      ]
+    },
+    "footPlate": 150,
+    "scope": "Source ground plan excludes console brackets; exact stability, member positions, support, entry, rescue and transfers must be designed."
+  },
+  "reid": {
+    "model": "PGRS20",
+    "sourceVersion": "REID UK Master Brochure V22",
+    "beamLength": 2000,
+    "clearSpan": [
+      1100,
+      1500
+    ],
+    "minimumEye": 1445,
+    "minimumBeamTop": 1776,
+    "width": 1158,
+    "plan": {
+      "x": [
+        5200,
+        7200
+      ],
+      "y": [
+        4886,
+        6044
+      ]
+    },
+    "scope": "All dimensions are selected brochure values; support, product version, actual usable span, load and motion require manufacturer confirmation."
+  },
   "selected": {
     "court": 3500,
     "edge": 7006.738468369001,
@@ -119,8 +175,15 @@
     "eastOpenScreenGateOverlapY": 370.5,
     "eastOpenScreenGateAxisInPlan": true,
     "westOpenScreenGateAxisInPlan": false,
-    "gantryMinimumEyeAt5540": 6990,
-    "gantryEyeAboveSecondary": 76.11339325956033
+    "gantryMinimumEyeAt5540": 6985,
+    "gantryEyeAboveSecondary": 71.11339325956033,
+    "gantryTopAt5540": 7316,
+    "gantrySpanDeficit": 1800,
+    "gantryCompactBoundingOverlapM2": 0.704,
+    "compactToAWithdrawal": 240,
+    "compactFootToInlet": 15,
+    "compactGatePlanOverlapY": 155.5,
+    "compactTwo2750ExitShort": 61.80000000000018
   },
   "replan": {
     "width": 5080,
