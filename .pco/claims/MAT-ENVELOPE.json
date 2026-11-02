@@ -9,9 +9,9 @@
     "label": "zerg7-envelope-thermal"
   },
   "claimedAt": "2026-11-02T07:37:31.007Z",
-  "heartbeatAt": "2026-11-02T08:03:25.492Z",
-  "expiresAt": "2026-11-02T08:48:25.492Z",
-  "branch": "work/zerg7-envelope-thermal-screen",
+  "heartbeatAt": "2026-11-02T08:35:47.760Z",
+  "expiresAt": "2026-11-02T09:20:47.760Z",
+  "branch": "work/zerg-recovery-engineering-integration",
   "predecessor": {
     "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
     "generation": 17,
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1250 corrected head4a68d3a571e13e3e9c4d5dbf3272d41f042f0cb5 treece4f685ea50875a30f90419a1cb5602ffadbfc97 trueparents67d6+d3f; only4MAT paths differ. Independent lower-cut challenge fixed: z5900 baseline/6100+5700 sweep; STR blob20dec rebind with geometry equality and V20.490/link hold; generator --check and A3 rendered.",
-    "next": "Hold frozen revised PR for independent reviewer and exact-head CI. Root fresh canonical merge-check then expected-head merge if earned; release lease. MAT-ENVELOPE stays open.",
-    "blocker": "Actual classified ceiling, 3D finite frame/post/collar, dynamic climate/vapour/leakage and complete fire/material/site/physical admission remain unearned."
+    "evidence": "Shared PR #1254 head fb2f1271d609dceb1554255a9cf621337a3fa9aa tree aaed5e9f4fd8a9ed9f4c757326a54214996be114 on main d3f254c0; four MAT blobs exactly match independently reviewed thermal head4a68d3a5/treece4f685e. Real source parents preserved. Combined thermal/IAS/reaction/default-HAD checks and auth/typecheck/repo/diff pass per integration owner.",
+    "next": "Root observes exact-head CI and runs fresh canonical merge-check against shared PR #1254 head, expected-head merges if earned, then releases MAT lease. Six MAT-ENVELOPE exits remain open.",
+    "blocker": "Dry2D screen does not admit dynamic moisture, actual classified ceiling properties, 3D frame/post/collar heat, complete fire/material/site/physical assembly; STR actual collector offset shear needs links and joint proof."
   },
-  "pr": 1250
+  "pr": 1254
 }
