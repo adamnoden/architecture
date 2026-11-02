@@ -1,17 +1,17 @@
 {
-  "status": "Connected assisted Ø250 challenger. Minus-five setpoint fails inherited five-second pressure-trip tolerance; no RUN target or product selected.",
+  "status": "Connected assisted Ø250 minus-four nominal trial; actual control/OEM/kit/plant evidence fails selection. Minus-five and Novy replacement are explicit negative controls.",
   "source": {
     "startingMain": "e93c643d36dfb0ee72a2bd2035899dfc5cc94f74",
     "networkBlob": "50af6c4734488210e4d0dec8d7b8f4d4d3a9e3c0",
     "constructiveBlob": "8f7a448a2bbf8de7311ea0ccc4b6d01eebe208ae",
     "HADBlob": "25faad2c4d40df2b7da7212f73808843a88d2f52"
   },
-  "pressureTrialPa": -5,
+  "nominalTrialPa": -4,
   "inheritedProtection": {
     "maximumDepressionPa": 5,
     "sustainedBelowMinus5Seconds": 5,
     "minus5SetpointDisposition": "At trip boundary with no sensor/control/transient tolerance; rejected as selected RUN target.",
-    "minus4Sensitivity": "Requires 83.115 L/s peak and independently qualified sensor accuracy/transient margin, not selected.",
+    "minus4Sensitivity": "Requires 83.115 L/s peak and independently qualified sensor accuracy/transient budget below five-second trip, not selected.",
     "minus10Disposition": "Incompatible with inherited trip without source-authored redesign and joined room/fan/capture/OEM proof."
   },
   "states": {
@@ -52,76 +52,76 @@
     "normalHoodBEP": {
       "mask": 0,
       "hoodLps": 44.44444444444444,
-      "kitchenPa": -5,
-      "habitableInletsLps": 73.30781433594905,
-      "directMakeupLps": 49.13663012559613,
-      "outsideLps": 122.44444446154517,
+      "kitchenPa": -4,
+      "habitableInletsLps": 71.35410706500403,
+      "directMakeupLps": 51.090337398306396,
+      "outsideLps": 122.44444446331042,
       "roomInletsLps": {
-        "study": 9.359336734816775,
-        "living": 9.359336734816775,
-        "bed2": 9.285376998688346,
-        "bed3": 9.285376998688346,
-        "bed4": 18.009193434469402,
-        "principal": 18.009193434469402
+        "study": 9.049158007748566,
+        "living": 9.049158007748566,
+        "bed2": 8.98521570284112,
+        "bed3": 8.98521570284112,
+        "bed4": 17.64267982191233,
+        "principal": 17.64267982191233
       },
-      "maximumNodeResidualLps": 1.5278649456718085e-08
+      "maximumNodeResidualLps": 1.6924690982023094e-08
     },
     "normalHood70": {
       "mask": 0,
       "hoodLps": 70,
-      "kitchenPa": -5,
-      "habitableInletsLps": 73.30781433594905,
-      "directMakeupLps": 74.69218568115168,
-      "outsideLps": 148.00000001710072,
+      "kitchenPa": -4,
+      "habitableInletsLps": 71.35410706500403,
+      "directMakeupLps": 76.64589295386196,
+      "outsideLps": 148.000000018866,
       "roomInletsLps": {
-        "study": 9.359336734816775,
-        "living": 9.359336734816775,
-        "bed2": 9.285376998688346,
-        "bed3": 9.285376998688346,
-        "bed4": 18.009193434469402,
-        "principal": 18.009193434469402
+        "study": 9.049158007748566,
+        "living": 9.049158007748566,
+        "bed2": 8.98521570284112,
+        "bed3": 8.98521570284112,
+        "bed4": 17.64267982191233,
+        "principal": 17.64267982191233
       },
-      "maximumNodeResidualLps": 1.5278649456718085e-08
+      "maximumNodeResidualLps": 1.6924690982023094e-08
     },
     "boostHood70": {
       "mask": 63,
       "hoodLps": 70,
-      "kitchenPa": -5,
-      "habitableInletsLps": 85.6967087648804,
-      "directMakeupLps": 80.3032912511549,
-      "outsideLps": 166.0000000160353,
+      "kitchenPa": -4,
+      "habitableInletsLps": 82.88510879919293,
+      "directMakeupLps": 83.11489121882296,
+      "outsideLps": 166.0000000180159,
       "roomInletsLps": {
-        "study": 10.802536407590233,
-        "living": 10.802536407590233,
-        "bed2": 10.734314335007268,
-        "bed3": 10.734314335007268,
-        "bed4": 21.311503639842698,
-        "principal": 21.311503639842698
+        "study": 10.362962553445255,
+        "living": 10.362962553445255,
+        "bed2": 10.307929460237307,
+        "bed3": 10.307929460237307,
+        "bed4": 20.771662385913903,
+        "principal": 20.771662385913903
       },
-      "maximumNodeResidualLps": 1.4451416063820943e-08
+      "maximumNodeResidualLps": 1.6313450146299147e-08
     }
   },
   "terminalSensitivity": [
     {
       "freeFractionGross": 0.75,
-      "terminalPa": 7.671776581913297,
-      "authoredDuctPa": 3.3271156310744434,
-      "totalPlaceholderPa": 10.998892212987741,
-      "fanPressureBeyondKitchenDepressionPa": 5.998892212987741
+      "terminalPa": 8.218393616526606,
+      "authoredDuctPa": 3.564173900518981,
+      "totalPlaceholderPa": 11.782567517045587,
+      "fanPressureBeyondKitchenDepressionPa": 7.782567517045587
     },
     {
       "freeFractionGross": 0.5,
-      "terminalPa": 17.26149730930492,
-      "authoredDuctPa": 3.3271156310744434,
-      "totalPlaceholderPa": 20.588612940379363,
-      "fanPressureBeyondKitchenDepressionPa": 15.588612940379363
+      "terminalPa": 18.491385637184862,
+      "authoredDuctPa": 3.564173900518981,
+      "totalPlaceholderPa": 22.055559537703843,
+      "fanPressureBeyondKitchenDepressionPa": 18.055559537703843
     },
     {
       "freeFractionGross": 0.375,
-      "terminalPa": 30.687106327653186,
-      "authoredDuctPa": 3.3271156310744434,
-      "totalPlaceholderPa": 34.01422195872763,
-      "fanPressureBeyondKitchenDepressionPa": 29.01422195872763
+      "terminalPa": 32.873574466106426,
+      "authoredDuctPa": 3.564173900518981,
+      "totalPlaceholderPa": 36.43774836662541,
+      "fanPressureBeyondKitchenDepressionPa": 32.43774836662541
     }
   ],
   "pressureTargetSensitivity": {
@@ -270,6 +270,30 @@
       }
     }
   },
+  "OEMReplacementNegativeControl": {
+    "model": "Novy 6910 plus source-compatible 990036 I/O, architectural replacement comparison only",
+    "publishedBoostM3h": 618,
+    "publishedBoostLps": 171.66666666666666,
+    "allLocalBoostAtMinus4Pa": {
+      "mask": 63,
+      "hoodLps": 171.66666666666666,
+      "kitchenPa": -4,
+      "habitableInletsLps": 82.88510879919293,
+      "directMakeupLps": 184.7815578854896,
+      "outsideLps": 267.6666666846825,
+      "roomInletsLps": {
+        "study": 10.362962553445255,
+        "living": 10.362962553445255,
+        "bed2": 10.307929460237307,
+        "bed3": 10.307929460237307,
+        "bed4": 20.771662385913903,
+        "principal": 20.771662385913903
+      },
+      "maximumNodeResidualLps": 1.6313450146299147e-08
+    },
+    "30KWholeHousePhysicalW": 16236.000000648568,
+    "30KKitchenConservativeW": 7792.136083877625
+  },
   "layoutMaximumProcurementEnvelopes": {
     "existingHADCentreY": 8700,
     "existingFaceMM": [
@@ -316,16 +340,16 @@
       "conservativeKitchenW": 1140.0
     },
     "normalHoodBEP": {
-      "physicalWholeHouseW": 11008.000000615626,
-      "conservativeKitchenW": 2908.918684521461
+      "physicalWholeHouseW": 11008.000000679176,
+      "conservativeKitchenW": 2979.2521463390303
     },
     "normalHood70": {
-      "physicalWholeHouseW": 11928.000000615626,
-      "conservativeKitchenW": 3828.918684521461
+      "physicalWholeHouseW": 11928.000000679174,
+      "conservativeKitchenW": 3899.2521463390303
     },
     "boostHood70": {
-      "physicalWholeHouseW": 12576.00000057727,
-      "conservativeKitchenW": 4030.9184850415763
+      "physicalWholeHouseW": 12576.000000648572,
+      "conservativeKitchenW": 4132.136083877627
     }
   },
   "existingH600L1200PlusNewNorthH700L900W": {

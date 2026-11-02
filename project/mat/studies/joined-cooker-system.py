@@ -23,7 +23,7 @@ try:
     with contextlib.redirect_stdout(io.StringIO()): model=runpy.run_path(str(P/'connected-cooker-network.py'))
 finally: sys.argv=argv
 
-def joined(mask,hood,target=-5):
+def joined(mask,hood,target=-4):
     row=model['solve'](mask,target if hood else None)
     direct=hood+row['localExtractLps']['kitchen']-row['hallToKitchenLps'] if hood else 0
     total=sum(row['roomSupplyLps'].values())+direct
@@ -42,7 +42,7 @@ assert abs(states['normalOff']['outsideLps']-78)<1e-6
 assert abs(states['boostOff']['outsideLps']-96)<1e-6
 assert abs(states['normalHood70']['outsideLps']-148)<1e-6
 assert abs(states['boostHood70']['outsideLps']-166)<1e-6
-assert abs(states['boostHood70']['directMakeupLps']-80.303291)<.00001
+assert abs(states['boostHood70']['directMakeupLps']-83.114891)<.00001
 
 # Gross Ø250 cartridge sensitivity: the terminal free fraction is of gross
 # area; K2 and 0.6m Darcy .03 are authored placeholders, not a fan curve.
@@ -53,7 +53,7 @@ for fraction in (.75,.5,.375):
     terminal=(q/(.61*fraction*area))**2*1.2/2
     duct=(2+.03*.6/.25)*(q/area)**2*1.2/2
     intake.append({'freeFractionGross':fraction,'terminalPa':terminal,'authoredDuctPa':duct,
-        'totalPlaceholderPa':terminal+duct,'fanPressureBeyondKitchenDepressionPa':terminal+duct-5})
+        'totalPlaceholderPa':terminal+duct,'fanPressureBeyondKitchenDepressionPa':terminal+duct-4})
 assert intake[0]['fanPressureBeyondKitchenDepressionPa']>0
 
 # Full external dimensions are not furnished: these candidate boxes therefore
@@ -85,6 +85,15 @@ for name,s in states.items():
     heat[name]={'physicalWholeHouseW':(220+1.2*s['outsideLps'])*kelvin,
         'conservativeKitchenW':950*kelvin/25+1.2*kelvin*s['directMakeupLps']}
 assert abs(heat['boostHood70']['physicalWholeHouseW']-12576)<1e-6
+novy_hood=618/3.6 # official 6910 boost; no speed is waived
+novy=joined(63,novy_hood)
+novy_case={'model':'Novy 6910 plus source-compatible 990036 I/O, architectural replacement comparison only',
+    'publishedBoostM3h':618,'publishedBoostLps':novy_hood,
+    'allLocalBoostAtMinus4Pa':novy,
+    '30KWholeHousePhysicalW':(220+1.2*novy['outsideLps'])*30,
+    '30KKitchenConservativeW':1140+36*novy['directMakeupLps']}
+assert abs(novy_case['30KWholeHousePhysicalW']-16236)<1e-5
+assert novy_case['30KKitchenConservativeW']>7500
 nomold=2866.8;nomnew=2441
 emitter={str(flow):nomold*((flow-25)/50)**1.32+nomnew*((flow-25)/50)**1.34
          for flow in (65,70)} # 10K radiator water drop, room20: mean excess=flow-25
@@ -95,17 +104,18 @@ plant={'requiredNetAt30KBoostW':12576,'14kWNetArithmeticMarginW':1424,
        'waterSecondaryLpsAt14kW5K':14/(4.18*5),
        'glycolPrimaryLpsAt14kW5K':14/(3.2*5),
        'requiredPrimarySupplyC':'greater than 70C secondary flow by actual HX approach; source A-10/W>70 net14kW after defrost required'}
-out={'status':'Connected assisted Ø250 challenger. Minus-five setpoint fails inherited five-second pressure-trip tolerance; no RUN target or product selected.',
+out={'status':'Connected assisted Ø250 minus-four nominal trial; actual control/OEM/kit/plant evidence fails selection. Minus-five and Novy replacement are explicit negative controls.',
      'source':{'startingMain':'e93c643d36dfb0ee72a2bd2035899dfc5cc94f74',
       'networkBlob':'50af6c4734488210e4d0dec8d7b8f4d4d3a9e3c0',
       'constructiveBlob':'8f7a448a2bbf8de7311ea0ccc4b6d01eebe208ae',
       'HADBlob':'25faad2c4d40df2b7da7212f73808843a88d2f52'},
-     'pressureTrialPa':-5,'inheritedProtection':{'maximumDepressionPa':5,'sustainedBelowMinus5Seconds':5,
+     'nominalTrialPa':-4,'inheritedProtection':{'maximumDepressionPa':5,'sustainedBelowMinus5Seconds':5,
        'minus5SetpointDisposition':'At trip boundary with no sensor/control/transient tolerance; rejected as selected RUN target.',
-       'minus4Sensitivity':'Requires 83.115 L/s peak and independently qualified sensor accuracy/transient margin, not selected.',
+       'minus4Sensitivity':'Requires 83.115 L/s peak and independently qualified sensor accuracy/transient budget below five-second trip, not selected.',
        'minus10Disposition':'Incompatible with inherited trip without source-authored redesign and joined room/fan/capture/OEM proof.'},
      'states':states,'terminalSensitivity':intake,
      'pressureTargetSensitivity':pressureSensitivity,
+     'OEMReplacementNegativeControl':novy_case,
      'layoutMaximumProcurementEnvelopes':port,'heatAt30K':heat,
      'existingH600L1200PlusNewNorthH700L900W':emitter,'netPlantDuty':plant,
      'limits':'Assisted assembly fan curve at installed resistance, stop shutter motor/EPDM, exact all-parts geometry, hood interlock, sealed boundary and all-room output/HX/product/pad fit not established. No material exception, physical admission or selected HAD modification.'}
