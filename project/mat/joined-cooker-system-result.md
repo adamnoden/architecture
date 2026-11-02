@@ -2,7 +2,7 @@
 
 This packet joins an actual **Swegon Salsa PSV6 + Twist TTEC** external-motor family to the retained six Titon13/16L/s extracts, six habitable inlets and connected14-node house. It compares the OEM control path, physical exhaust/makeup kit, all256 fan-mask/command combinations and room/plant heat consequences. The earlier Novy810 tempered-air candidate, oversized6910 and manual-onlyERA remain explicit controls. **No family is selected for the house, operation or procurement.** No HAD/IAS/OAS projection or material exception is adopted.
 
-The [generated result](studies/joined-cooker-system.json) and [two-sheet assembly/task drawing](studies/joined-cooker-assembly.svg) are reproduced with `python project/mat/studies/joined-cooker-system.py --check`. Review-base main is `fcf79a6bf3aba309019cd658135124acc3f45446`; the five exact input blobs are unchanged at that real main. The starting main remains separately recorded. Source comparisons and guarded calculations are reproducible; unsupported curves and physical duties remain visible.
+The [generated result](studies/joined-cooker-system.json) and [two-sheet assembly/task drawing](studies/joined-cooker-assembly.svg) are reproduced with `python project/mat/studies/joined-cooker-system.py --check`. Review-base main is `ceb2684ecd2f6c07fc06a78440fc8df51e5ed51d`; all six declared input blobs are verified at that real main. The starting main remains separately recorded. Source comparisons and guarded calculations are reproducible; unsupported curves and physical duties remain visible.
 
 ## Matched Salsa/Twist challenger: what the sources earn
 

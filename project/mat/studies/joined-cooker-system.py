@@ -799,11 +799,18 @@ rect(ex(11570.5),ez(2487.5),429.5*.085,175*.065,'none','#95622c',True)
 line(ex(10900),ez(3170),ex(12050),ez(3170),'#263743')
 line(ex(10900),ez(0),ex(12050),ez(0),'#263743')
 txt(223,69,'RC3170 • no upper void assumed','xs')
-txt(223,112,'BKU125/90 leg79; Ø125 sleeve; jacket25 demand.','xs')
-txt(223,117,'Proposed portX11125 (selectedX11200),Z2400.','xs','#a12d2d')
-txt(223,122,'YGC125 actualface149; full formed320 closure OPEN.','xs')
-txt(223,165,'Twist353 overall/455wide/200deep/9.5kg;125spigots/caps retained.','xs')
-txt(223,170,'Hood179, glass600,525maximumprojection;600 above authoredhob900.','xs')
+# Numbered leaders are separate from the source legend; text never crosses bodies.
+callouts=[
+ (1,ex(11483),ez(2360),74,['BKU125/90 installed leg79.', 'Ø125 sleeve;25mm jacket demand.']),
+ (2,ex(12000),ez(2400),88,['Proposed X11125/Z2400 port.', 'Selected port remains X11200.', 'Host/arch/weather joins OPEN.']),
+ (3,ex(12000),ez(2462.5),106,['YGC125 actual face149.', 'Full formed320 closure OPEN.']),
+ (4,ex(11434.5),ez(2055.5),120,['Twist353H/455W/200D;9.5kg.', '125 spigots/caps retained.']),
+ (5,ex(11308),ez(1589.5),134,['Hood179H/glass600W.', '525 maximum projection.', '600 above authored hob900.'])]
+for number,x,z,legend_y,labels in callouts:
+    line(x,z,328,z,'#667985')
+    txt(329,z+1,str(number),'xs','#156b9a')
+    txt(335,legend_y,str(number)+'. '+labels[0],'xs')
+    for j,label in enumerate(labels[1:]):txt(338,legend_y+4*(j+1),label,'xs')
 # Readable tabular mode/source limits below the plan.
 txt(12,199,'H  MODE / CURVE / THERMAL BOUNDARY','s b')
 for i,u in enumerate((2,5,8,10)):
@@ -826,7 +833,7 @@ else:drawing_path.write_text(drawing)
 
 out={'status':'Matched SwegonSalsa/Twist256-mode source/route/thermal challenger plus Novy810 trial and ERA/6910 controls; all system/house/operation admission unresolved.',
      'source':{'startingMain':'e93c643d36dfb0ee72a2bd2035899dfc5cc94f74',
-      'reviewBaseMain':'fcf79a6bf3aba309019cd658135124acc3f45446',
+      'reviewBaseMain':'ceb2684ecd2f6c07fc06a78440fc8df51e5ed51d',
       'networkBlob':'50af6c4734488210e4d0dec8d7b8f4d4d3a9e3c0',
       'constructiveBlob':'8f7a448a2bbf8de7311ea0ccc4b6d01eebe208ae',
       'HADBlob':'25faad2c4d40df2b7da7212f73808843a88d2f52'},

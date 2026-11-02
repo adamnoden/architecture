@@ -242,11 +242,28 @@
 <path d="M223.000,63.950 L320.750,63.950" stroke="#263743" stroke-width="0.4" fill="none"/>
 <path d="M223.000,270.000 L320.750,270.000" stroke="#263743" stroke-width="0.4" fill="none"/>
 <text x="223.000" y="69.000" class="xs">RC3170 • no upper void assumed</text>
-<text x="223.000" y="112.000" class="xs">BKU125/90 leg79; Ø125 sleeve; jacket25 demand.</text>
-<text x="223.000" y="117.000" class="xs" style="fill:#a12d2d">Proposed portX11125 (selectedX11200),Z2400.</text>
-<text x="223.000" y="122.000" class="xs">YGC125 actualface149; full formed320 closure OPEN.</text>
-<text x="223.000" y="165.000" class="xs">Twist353 overall/455wide/200deep/9.5kg;125spigots/caps retained.</text>
-<text x="223.000" y="170.000" class="xs">Hood179, glass600,525maximumprojection;600 above authoredhob900.</text>
+<path d="M272.555,116.600 L328.000,116.600" stroke="#667985" stroke-width="0.4" fill="none"/>
+<text x="329.000" y="117.600" class="xs" style="fill:#156b9a">1</text>
+<text x="335.000" y="74.000" class="xs">1. BKU125/90 installed leg79.</text>
+<text x="338.000" y="78.000" class="xs">Ø125 sleeve;25mm jacket demand.</text>
+<path d="M316.500,114.000 L328.000,114.000" stroke="#667985" stroke-width="0.4" fill="none"/>
+<text x="329.000" y="115.000" class="xs" style="fill:#156b9a">2</text>
+<text x="335.000" y="88.000" class="xs">2. Proposed X11125/Z2400 port.</text>
+<text x="338.000" y="92.000" class="xs">Selected port remains X11200.</text>
+<text x="338.000" y="96.000" class="xs">Host/arch/weather joins OPEN.</text>
+<path d="M316.500,109.938 L328.000,109.938" stroke="#667985" stroke-width="0.4" fill="none"/>
+<text x="329.000" y="110.938" class="xs" style="fill:#156b9a">3</text>
+<text x="335.000" y="106.000" class="xs">3. YGC125 actual face149.</text>
+<text x="338.000" y="110.000" class="xs">Full formed320 closure OPEN.</text>
+<path d="M268.433,136.392 L328.000,136.392" stroke="#667985" stroke-width="0.4" fill="none"/>
+<text x="329.000" y="137.392" class="xs" style="fill:#156b9a">4</text>
+<text x="335.000" y="120.000" class="xs">4. Twist353H/455W/200D;9.5kg.</text>
+<text x="338.000" y="124.000" class="xs">125 spigots/caps retained.</text>
+<path d="M257.680,166.683 L328.000,166.683" stroke="#667985" stroke-width="0.4" fill="none"/>
+<text x="329.000" y="167.683" class="xs" style="fill:#156b9a">5</text>
+<text x="335.000" y="134.000" class="xs">5. Hood179H/glass600W.</text>
+<text x="338.000" y="138.000" class="xs">525 maximum projection.</text>
+<text x="338.000" y="142.000" class="xs">600 above authored hob900.</text>
 <text x="12.000" y="199.000" class="s b">H  MODE / CURVE / THERMAL BOUNDARY</text>
 <text x="12.000" y="206.000" class="s">2V: calm authoredflow14.2L/s; UNPUBLISHED curve: declared surrogate/envelope</text>
 <text x="12.000" y="212.000" class="s">5V: calm authoredflow44.0L/s; sourcechart</text>
