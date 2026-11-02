@@ -180,7 +180,7 @@ export const architectureNodes = defineNodes([
     id: 'IAS-03',
     owners: ['IAS'],
     title: 'Selected interior family, drawings and disassembly set',
-    dependencies: ['IAS-02S', 'IAS-02W', 'IAS-OAS-JUNCTION', 'IAS-HAD-JUNCTION'],
+    dependencies: ['IAS-02S', 'IAS-02W', 'IAS-OAS-JUNCTION', 'IAS-HAD-JUNCTION', 'OAS-NORTH-EXPORT'],
     lifecycle: 'planned',
     aliases: ['IAS Wave 3'],
     agentDispatch: { mode: 'self-service' },
@@ -227,12 +227,23 @@ export const architectureNodes = defineNodes([
     closeoutEvidence: ['project/oas/representative-detail-completion.md', 'docs/reference-house/opening-interface-studies.md', 'project/oas/studies/nominal-interface-studies.svg']
   },
 
+  // IAS export exposed an actual occurrence absent from bounded OAS family/nominal studies.
+  {
+    id: 'OAS-NORTH-EXPORT',
+    owners: ['OAS'],
+    title: 'FIRST north-window-0 assembly, upper guard and supported removal',
+    dependencies: ['OAS-03', 'OAS-DETAIL', 'HAD-03'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/oas/north-export-occurrence-result.md'],
+  },
+
   // Wave 4 — one house, including the separately reconciled roof/water system.
   {
     id: 'TRIAD-GATE',
     owners: ['IAS', 'OAS', 'HAD'],
     title: 'Shared selected-house integration gate',
-    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'OAS-DETAIL', 'ROF-RWT-GATE', 'BCR-PREFLIGHT', 'MAT-COORDINATION', 'STR-RECONCILE'],
+    dependencies: ['IAS-03', 'OAS-03', 'HAD-03', 'OAS-DETAIL', 'OAS-NORTH-EXPORT', 'ROF-RWT-GATE', 'BCR-PREFLIGHT', 'MAT-COORDINATION', 'STR-RECONCILE'],
     lifecycle: 'planned',
     aliases: ['IAS/OAS/HAD Wave 4'],
     agentDispatch: { mode: 'self-service' },
