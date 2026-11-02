@@ -1,5 +1,5 @@
 {
-  "status": "CONSTRUCTIVE LOCAL REVERSAL REFERENCE; nominal geometry and necessary head screen only; no selected receiver/site/product/operation admission",
+  "status": "REJECTED HISTORICAL TRIAL: 170 mm shift intersects adjacent carrier and one-piece B still intercepts side drips; no operation admission",
   "sourceBlobs": {
     "had": [
       "project/had/studies/open-north-loggia.json",
@@ -389,7 +389,8 @@
   "clearances": {
     "secondaryToB": 20.386606740439674,
     "BFrameToA": 23.5,
-    "AtoNeighbourAfterDrop": 20,
+    "AtoNeighbourBodyAfterDrop": 20,
+    "AtoNeighbourCarrierAfterDrop": -10,
     "adjacentCarrierGap": 21.428571428571445,
     "throatNotchDepth": 16.199999999999818,
     "throatUnderToFrameBottom": 17.300000000000182,
@@ -415,7 +416,7 @@
     "endThroatWithinFrameReservation": true,
     "deckAndToeBoardBelowTravel": true,
     "wholePhysicalStraightEdgeCovered": true,
-    "AUnderNeighbourAfterDrop": true,
+    "AUnderNeighbourBodyAfterDrop": true,
     "carrierAboveMidrail": true,
     "carrierBelowToprail": true,
     "extractionBays": true,
@@ -437,6 +438,7 @@
   "negativeControls": {
     "oldGutterCollidesWithBFrame": true,
     "drop150HasZeroNeighbourClearance": true,
+    "drop170HitsNeighbourCarrier": true,
     "highPlatform5800BlocksReturn": true,
     "wallLineAndPhysicalCatchmentsConserve": true,
     "doubleCountOverhangRejected": true,
@@ -481,6 +483,7 @@
     "scope": "Plan threshold for ideal vertical drips and nominal open edges only."
   },
   "limits": [
+    "The 170 mm drop has only body-to-body clearance; it intersects the adjacent 30 mm carrier during p-shift. The body-only positive check is not whole-envelope clearance.",
     "The south-only drip test fails to consider perpendicular adjacent roof edges: the source-bound corner counterexample rejects the full-edge reversal.",
     "B frame and scaffold are reserved complete envelopes, not qualified structural members.",
     "Window raw head screen is not actual sash/guard operation. The inner deck edge is suspended; its beams, bracing and uplift anchors have not been designed.",
