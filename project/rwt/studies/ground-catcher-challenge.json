@@ -54,6 +54,14 @@
       ]
     }
   ],
+  "threshold": {
+    "doorBottom": 19,
+    "nominalMotionAllowance": 10,
+    "maxUninterruptedCurbTop": 9,
+    "illustrativeWetCurbTop": 50,
+    "southSeam": 15,
+    "scope": "Static height control only: actual door sweep, sealing, water resistance and first leakage remain unproved."
+  },
   "alternativeEscape": {
     "front": {
       "id": "front-door",
@@ -266,20 +274,38 @@
       ],
       "footSide": 50,
       "ladderX": [
-        6900,
-        7350
+        6200,
+        6650
       ],
       "ladderY": [
-        6500,
-        6550
+        6880,
+        6930
       ],
       "rescueX": [
-        6250,
-        6850
+        6700,
+        7350
       ],
       "rescueY": [
-        6250,
-        6850
+        6210,
+        6860
+      ],
+      "rescueGateY": [
+        6225,
+        6845
+      ],
+      "transferBodyY": [
+        6235,
+        6835
+      ],
+      "climberBounds": [
+        [
+          6080,
+          6680
+        ],
+        [
+          6260,
+          6860
+        ]
       ],
       "landingX": [
         5950,
@@ -488,7 +514,11 @@
     "accessFeetInsideCourt": true,
     "accessFootYGapToMainPads": true,
     "accessLadderHoistPlanSeparate": true,
+    "accessLadderNorthFootClear": true,
+    "accessClimberStationClear": true,
     "accessWestFootOpening": true,
+    "rescueGateCanPassBody": true,
+    "rescueTransferMissesLadderAndFeet": true,
     "accessLandingMeetsRamp": true,
     "casualtyZoneSize": true,
     "casualtyShoesOutsideRelief": true,
@@ -502,6 +532,8 @@
     "escapeFeetAvoidInlet": true,
     "escapeFeetClearFrames": true,
     "escapeFeetOutsideBothLoggiaLanes": true,
+    "raisedCurbBlocksBuildingLeaf": true,
+    "lowCurbBelowSouthSeam": true,
     "closedScreenStopsBuildingLeaf": true,
     "screenGatePadGap": true,
     "gatePullOpensAllAngles": true,
