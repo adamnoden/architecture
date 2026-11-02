@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 15,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "2c09ac4d-dc3b-4197-bd82-b17b4097ecb0",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg2-mat-loggia"
   },
   "claimedAt": "2026-11-01T20:06:02.804Z",
-  "heartbeatAt": "2026-11-02T00:17:49.696Z",
-  "expiresAt": "2026-11-02T01:02:49.696Z",
+  "heartbeatAt": "2026-11-02T00:22:11.135Z",
+  "expiresAt": "2026-11-02T00:22:11.135Z",
   "branch": "work/zerg2-mat-loggia",
   "predecessor": {
     "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
@@ -39,5 +39,7 @@
     "next": "Freeze for focused source-auth delta review and root exact-headCI; legitimate synchronize/ready events use corrected canonical Work/Lease body. Integrationdefaultcanonicalpath derives verified sourceidentity.",
     "blocker": "MAT-ENVELOPE open; ordinaryroofcrop doesnotcomplete200overhang/weatheredge7006.738 or namedinternaljoins. No groundselection or wholematerial/sitepass."
   },
-  "pr": 1236
+  "pr": 1236,
+  "releasedAt": "2026-11-02T00:22:11.135Z",
+  "releaseReason": "completed"
 }
