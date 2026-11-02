@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 20,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "c2ab380b-1e6d-41f7-bb7b-6a49a91f41fb",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-structure-corner"
   },
   "claimedAt": "2026-11-02T10:56:48.149Z",
-  "heartbeatAt": "2026-11-02T12:49:30.415Z",
-  "expiresAt": "2026-11-02T13:34:30.415Z",
+  "heartbeatAt": "2026-11-02T12:56:24.257Z",
+  "expiresAt": "2026-11-02T12:56:24.257Z",
   "branch": "work/zerg-corner-convergence",
   "predecessor": {
     "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
@@ -39,5 +39,7 @@
     "evidence": "Shared PR 1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; STR source reviewed and rebound; MAT pin reconciled",
     "next": "Root observes exact-head CI, runs owner preflights and merges if earned; then close out STR 20 and reacquire for full corner route",
     "blocker": "Whole-house signed actions, cold-arm and pile transfer, envelope and site remain open"
-  }
+  },
+  "releasedAt": "2026-11-02T12:56:24.257Z",
+  "releaseReason": "completed"
 }
