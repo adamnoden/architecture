@@ -9,14 +9,14 @@
     "label": "zerg7-structure-recovery"
   },
   "claimedAt": "2026-11-02T07:15:34.807Z",
-  "heartbeatAt": "2026-11-02T07:39:42.953Z",
-  "expiresAt": "2026-11-02T08:24:42.953Z",
+  "heartbeatAt": "2026-11-02T07:49:05.457Z",
+  "expiresAt": "2026-11-02T08:34:05.457Z",
   "checkpoint": {
-    "evidence": "DraftPR1247 remote2ac4e4514e57e2a3e214ddaffac70379cd44d43c tree50040d62 matches localbd4b; parents4cc819d+freshmain483a26c. Actualoffset roofcollectorV20.490>VRdc18.878 requiresH6/75VRs30.389;30roofexitsconserve908.145; boundedfloorinventory1204.548, no wholejoint pass",
-    "next": "Focused independent actualoffset/foundationconcept review, coordinator exactheadCI, then bounded source integration if checks pass",
-    "blocker": "STR-HOUSE incomplete: transverse landingenddevelopment, fullroof/corner/lateral and fullphysicalhousemass/joint paths remain"
+    "evidence": "Shared draftPR1249 actualhead522d17aef502593a2f5a132100e854c5f527d471/treeba0e3578480a78eafb2557fd01ee5c2bbdaa944e fetched; all7STRfiles exactlyequal reviewed2ac4e451. True main42aa+STR2ac4+Servicesfe632 histories preserved. Root reports4generators/typecheck/repointegrity passed; CI not observed by worker",
+    "next": "Root exactheadCI and shared publication preflight; integrate bounded source only after focusedreview and required checks pass",
+    "blocker": "STR-HOUSE remains incomplete; parentroof/corner/lateral, landingEWenddevelopment and completephysicalhouse loadpaths are not admitted"
   },
-  "branch": "work/zerg7-structure-recovery",
+  "branch": "work/zerg-recovery-structure-services",
   "predecessor": {
     "leaseId": "409bfbc6-b56e-42c1-8494-2512b4b56a91",
     "generation": 14,
@@ -37,5 +37,5 @@
       "blocker": "Fulljoints/guard/corner/lateral/thermalinterface remain unearned; oldnodefailure retained without finalpilefabrication exit"
     }
   },
-  "pr": 1247
+  "pr": 1249
 }
