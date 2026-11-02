@@ -3,8 +3,8 @@
   "authority": {
     "rof04Blob": "78a10d9172421139a18f75df239ffe4ea7a7bf43",
     "matColdRoofBlob": "8db528e607cdc156cbb875f3a458f541b4e91f66",
-    "hadCommit": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
-    "hadJsonBlob": "6affb39e28a777e36532729183152c8c588e4989",
+    "hadCommit": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+    "hadJsonBlob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
     "strStairCommit": "c29cd185c8868bd5c6948d49417f51584440ed5f",
     "roofFrameInput": "STR direct coordination 2026-11-01 23:12Z: SHS80 normal, tie50 vertical, support332.5 from eave, ceiling top6620. Roof frame not yet immutable STR source."
   },
@@ -62,37 +62,52 @@
       50,
       3
     ],
-    "EWspan": 1081.6666666666667,
-    "NSrailCentres": 360.5555555555556,
-    "EWrowPitch": 550,
-    "assembly": "Single50depth welded through/butt grid, not stacked100. Openboards runEW and span<=360.556 between NSrails. Vent remains clear BETWEEN rails, with separate ridge/eave connections.",
+    "NSrailCentres": 540.8333333333334,
+    "NSrailCount": 7,
+    "postRowPitchPlan": 550,
+    "ventChannel": [
+      490.83333333333337,
+      50
+    ],
+    "assembly": "NS rails ONLY; no EW transom above glass. All EW purlins below AVCL. Boards runEW and span540.833. Seven rails directly posted at existing purlin rows.",
     "railKgPerM": 4.5120000000000005,
-    "normalAreaRailKgM2": 19.94904109002935,
-    "transomProbe": {
-      "pressureKpa": 2.25,
-      "tributaryPlanM": 0.55,
-      "Mknm": 0.18098480468750003,
-      "stressMpa": 21.70164858693619,
-      "limit": "Authored simple distributed wind probe; joints, gravity/suction interaction, actual design actions remain unqualified."
+    "normalAreaRailKgM2": 8.342681047765792,
+    "railProbe": {
+      "pressureKpa": 2.5,
+      "span": 606.8578554293705,
+      "Mknm": 0.06224255739477118,
+      "stressMpa": 7.463422744610246
     }
   },
   "standoff": {
     "SHS": [
-      50,
-      50,
+      25,
+      25,
       2
     ],
-    "rodDiameter": 12,
+    "rodDiameter": 8,
     "glassPath": 320,
     "physicalPostAbovePrimary": 346,
     "grid": [
-      1081.6666666666667,
+      540.8333333333334,
       550
     ],
     "railHeight": 50,
-    "loadpath": "Post welded/bolted to primary, through lowerboard cutout. Glass dead load on lowerboards; covering and counterrail loads bypass glass. No clamp or bearing capacity of glass assumed.",
-    "weather": "Actual breather collars/tapes remain required and unqualified; no sheet omission.",
-    "airVapour": "1mm supported stainless comparison with welded collars/seams; thermal movement/perimeter/service continuity unqualified."
+    "loadpath": "Post welded to actual purlin through lowerboard cutout; direct weld to NSrail underside, no additional headplate/stack. Glass dead load on lowerboards; covering loads bypass glass.",
+    "weather": "Actual breather collars/tapes required and unqualified; no sheet omission.",
+    "airVapour": "1mm supported stainless comparison with welded collars/seams; movement/perimeter/service continuity unqualified.",
+    "probe": {
+      "normalArea": 0.32820895681138457,
+      "normalPressureKpa": 2.25,
+      "normalForceKn": 0.7384701528256152,
+      "tangentialPressureStressKpa": 0.75,
+      "tangentKn": 0.2461567176085384,
+      "postI": 16345.333333333334,
+      "postW": 1307.6266666666668,
+      "axialMpa": 4.013424743617475,
+      "bendMpa": 65.13344096114662,
+      "limit": "Separate authored normal/tangent wind screens; no site combination, complete buckling/joints/weld/rail-wall proof. Direct2mm hollow-post weld and3mm rail wall require actual fabrication acceptance."
+    }
   },
   "purlins": {
     "size": [
@@ -147,10 +162,10 @@
     "lambdaGlass": 0.041,
     "lambdaSteel": 15,
     "Rother": 0.4,
-    "metalAreaMm2": 497.09733552923257,
+    "metalAreaMm2": 234.2654824574367,
     "planarU": 0.12187871581450653,
-    "parallelMetalCorrection": 0.03549786975546141,
-    "sum": 0.15737658556996795,
+    "parallelMetalCorrection": 0.03345793666594854,
+    "sum": 0.15533665248045508,
     "limit": "Optimistic parallel-path screen only: excludes lateral spreading, rails, wood, edges, collars and fastener groups; not ISO6946/10211 or whole-roof U."
   },
   "loads": {
@@ -162,6 +177,32 @@
     "secondaryAllowanceKgM2": 30,
     "subtotalKgM2": 104.59800000000001,
     "limit": "Authored densities, excludes primary and complete protected ceiling. Reconcile with STR3kPa horizontal budget; normal-area load must divide by cos25. No worker/storage allowance."
+  },
+  "boardProbe": {
+    "material": "Untreated compatible solid softwood, C24 required,100wide minimum×24finished; boards100–150wide/gaps3–5 perVMZINC. Grade/species/durability/fixings still qualified separately.",
+    "source": "https://www.vmzinc.com/en-gb/standing-seam-on-open-gap-timber-boarding",
+    "propertySource": "https://www.swedishwood.com/siteassets/5-publikationer/pdfer/sw-design-of-timber-structures-vol2-2022.pdf pp7–10, educationalEN338/EC5 table, not official design standard",
+    "Econservative": 7400,
+    "fmk": 24,
+    "kmodStress": 0.5,
+    "gammaStress": 1.3,
+    "fmdStress": 9.23076923076923,
+    "span": 540.8333333333334,
+    "pressureKpa": 2.5,
+    "bendingMpa": 0.9521506980613428,
+    "deflectionMm": 0.32669944209682966,
+    "point1500NStressMpa": 21.126302083333332,
+    "limit": "Simple100strip distributed-load screen only. 1.5kN point fails this conservative strength comparator: NOT WALKABLE/worker support. Manufacturer supplies board dimensions, not540.833 approval; actualfixings/grade/moisture and complete actions remain."
+  },
+  "ventTerminations": {
+    "eaveGrossSlot": 30,
+    "eachSideRidgeGrossSlot": 30,
+    "minimumMeshOpenFraction": 0.5,
+    "equivalentNetMm": 15,
+    "source": "https://www.vmzinc.com/en-gb/substrates",
+    "minimumSourceLinearOpening": 10,
+    "ridgeCap": "Authored50raised cap /100downslope weatherlap with separate30vent throats eachface; wind-driven rain/upstand/support still unqualified.",
+    "continuity": "490.833wide×50clear NS channels reach each eave/ridge. No EW transoms. Rails stop150 before ridge apex to release outlet. Exact end supports and four hip/valley/corner turns remain ROF-owned internal design gaps, not a claim the whole roof is ventilated."
   },
   "connections": [
     "Wall200/outer160 glass turns into roof320 over structural core with cut bevels; no continuous masonry upstand through insulation. Primary and ties are warm-side. Exact wall-head 3D/cavity barrier needs section integration.",

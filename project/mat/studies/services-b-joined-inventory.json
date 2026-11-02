@@ -1,0 +1,865 @@
+{
+  "title": "Compact B service-demand, crossing and renewal reconciliation",
+  "baselineMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
+  "sourceBlobs": {
+    "project/str/studies/house-plan.json": "d722ada30df5729852043f0010433a890e399999",
+    "project/bcr/studies/services-feasibility.json": "7365a81b2b598aa79c35ad903aefe77cf18d76c3",
+    "docs/reference-house/current-house-basis.md": "38306774af8e415441ddbc1f07db6ee4fa3a06f7",
+    "project/mat/services-waste-joints.md": "046ea1cc6521bd51e5051df5aef4a7aed9571aaa",
+    "project/str/studies/joined-rc-reference.json": "43091fe9516cc31bd827fc294827977b6b648777",
+    "project/ias/studies/b-plan-riser-closure.json": "28d23b99bdec5f7edfc25cb193f1f1cd32b2c0b0"
+  },
+  "joinedReference": {
+    "status": "Four-lane candidate merged at6a953ef6; remains unadopted house geometry",
+    "str": {
+      "remoteHead": "329396f081ed6a2e882fa12e18bb76bc1905a317",
+      "tree": "f859b416a7913414cda78cff0af0fcf0f0cde46a",
+      "jsonBlob": "43091fe9516cc31bd827fc294827977b6b648777"
+    },
+    "ias": {
+      "remoteHead": "910cd2d8807c4f7a78ac5f2614bcd0ce89369a54",
+      "tree": "8181590d6a8328a2542553b739a42df3a934ddeb",
+      "jsonBlob": "28d23b99bdec5f7edfc25cb193f1f1cd32b2c0b0"
+    },
+    "datum": "All z local to proposed ground FFL0; a later whole-house translation changes none of these differences",
+    "ffl": 3450,
+    "rcTop": 3370,
+    "rcSoffit": 3170,
+    "ceiling": 3100,
+    "underSlabService": 55,
+    "formedBores": [
+      [
+        9500,
+        4850,
+        50
+      ],
+      [
+        9700,
+        4850,
+        50
+      ],
+      [
+        9800,
+        5200,
+        160
+      ]
+    ],
+    "waterWitnessDuty": "IAS closed-water strainer task, not a selected domestic hot/cold circuit",
+    "completeInventoryAccepted": false
+  },
+  "fixtureDuties": [
+    {
+      "id": "F-REAR",
+      "fixtures": [
+        "rear-WC",
+        "rear-basin",
+        "rear-shower1000"
+      ],
+      "level": "first",
+      "territory": "Rear stack/cabinet R-01, separate from east riser",
+      "needs": [
+        "soil/waste discharge",
+        "hot/cold supply as fixture design requires",
+        "trap protection/soil ventilation",
+        "room ventilation/extract strategy",
+        "electrical/lighting"
+      ],
+      "crossing": "R-01 proposed; branch/outlet/vent/renewal unqualified"
+    },
+    {
+      "id": "F-FAMILY",
+      "fixtures": [
+        "family-WC",
+        "family-basin",
+        "family-bath1700"
+      ],
+      "level": "first",
+      "territory": "East family bath, aligned above plant",
+      "needs": [
+        "soil/waste discharge",
+        "hot/cold supply",
+        "trap protection/soil ventilation",
+        "room ventilation/extract strategy",
+        "electrical/lighting"
+      ],
+      "crossing": "E-01 east stack candidate plus E-02 fixture-side branch territory; actual branch route unresolved"
+    },
+    {
+      "id": "F-PRINCIPAL",
+      "fixtures": [
+        "principal-WC",
+        "principal-basin",
+        "principal-shower900"
+      ],
+      "level": "first",
+      "territory": "East principal wet room north of family bath",
+      "needs": [
+        "soil/waste discharge",
+        "hot/cold supply",
+        "trap protection/soil ventilation",
+        "room ventilation/extract strategy",
+        "electrical/lighting"
+      ],
+      "crossing": "No proved branch to E-01; cannot borrow family or pantry floor depth"
+    },
+    {
+      "id": "G-WC",
+      "fixtures": [
+        "guest-WC-pan",
+        "guest-WC-basin"
+      ],
+      "level": "ground",
+      "territory": "South-east WC",
+      "needs": [
+        "soil/waste discharge",
+        "water supply",
+        "room ventilation/extract strategy",
+        "electrical/lighting"
+      ],
+      "crossing": "Ground external foul connection and distribution not shown by upper three bores"
+    },
+    {
+      "id": "G-KITCHEN",
+      "fixtures": [
+        "north-sink-station",
+        "north-cooking-station"
+      ],
+      "level": "ground",
+      "territory": "North-east kitchen",
+      "needs": [
+        "sink water/waste",
+        "separate cooker source capture",
+        "power/control and appliance replacement"
+      ],
+      "crossing": "Ground routes/outside terminals; cooker extract is not the foul vent or an assumed MVHR duct"
+    },
+    {
+      "id": "G-UTILITY",
+      "fixtures": [],
+      "level": "ground",
+      "territory": "Utility room reservation",
+      "needs": [
+        "actual appliance inventory before fixing water/waste/power/extract"
+      ],
+      "crossing": "Conditional; no appliance counts or terminals invented"
+    },
+    {
+      "id": "G-PLANT",
+      "fixtures": [
+        "plant-water-reserve",
+        "Q350-body"
+      ],
+      "level": "ground",
+      "territory": "Plant reservation, comparison bodies only",
+      "needs": [
+        "actual plant/system selection",
+        "isolation/draining/renewal",
+        "incoming water/electricity/data boundaries"
+      ],
+      "crossing": "No selected heat-pump/MVHR duty; incoming site connections separately unresolved"
+    },
+    {
+      "id": "DRY-ROOMS",
+      "fixtures": [],
+      "level": "both",
+      "territory": "Four bedrooms, study, living, galleries/stair",
+      "needs": [
+        "lighting/power/data/control routes",
+        "heating distribution if selected",
+        "whole-house ventilation strategy"
+      ],
+      "crossing": "Dedicated dry path and any heating/air crossings unallocated; room number does not prescribe cable/pipe count"
+    }
+  ],
+  "inheritedPacking": [
+    {
+      "inheritedObject": "duct A 250 envelope",
+      "envelope": [
+        250,
+        250
+      ],
+      "authority": "Old BCR authored packing probe; not an actual required service or selected diameter",
+      "unchangedRectangleFitsAnyExistingBore": false,
+      "warning": "No fitted insulation, joints, fire/acoustic seal or separation proof; do not infer service need from this test"
+    },
+    {
+      "inheritedObject": "duct B 250 envelope",
+      "envelope": [
+        250,
+        250
+      ],
+      "authority": "Old BCR authored packing probe; not an actual required service or selected diameter",
+      "unchangedRectangleFitsAnyExistingBore": false,
+      "warning": "No fitted insulation, joints, fire/acoustic seal or separation proof; do not infer service need from this test"
+    },
+    {
+      "inheritedObject": "soil body 110",
+      "envelope": [
+        110,
+        110
+      ],
+      "authority": "Old BCR authored packing probe; not an actual required service or selected diameter",
+      "unchangedRectangleFitsAnyExistingBore": true,
+      "warning": "No fitted insulation, joints, fire/acoustic seal or separation proof; do not infer service need from this test"
+    },
+    {
+      "inheritedObject": "water A 72 envelope",
+      "envelope": [
+        72,
+        72
+      ],
+      "authority": "Old BCR authored packing probe; not an actual required service or selected diameter",
+      "unchangedRectangleFitsAnyExistingBore": true,
+      "warning": "No fitted insulation, joints, fire/acoustic seal or separation proof; do not infer service need from this test"
+    },
+    {
+      "inheritedObject": "water B 72 envelope",
+      "envelope": [
+        72,
+        72
+      ],
+      "authority": "Old BCR authored packing probe; not an actual required service or selected diameter",
+      "unchangedRectangleFitsAnyExistingBore": true,
+      "warning": "No fitted insulation, joints, fire/acoustic seal or separation proof; do not infer service need from this test"
+    },
+    {
+      "inheritedObject": "water C 72 envelope",
+      "envelope": [
+        72,
+        72
+      ],
+      "authority": "Old BCR authored packing probe; not an actual required service or selected diameter",
+      "unchangedRectangleFitsAnyExistingBore": true,
+      "warning": "No fitted insulation, joints, fire/acoustic seal or separation proof; do not infer service need from this test"
+    },
+    {
+      "inheritedObject": "dry containment 100 x 50",
+      "envelope": [
+        100,
+        50
+      ],
+      "authority": "Old BCR authored packing probe; not an actual required service or selected diameter",
+      "unchangedRectangleFitsAnyExistingBore": true,
+      "warning": "No fitted insulation, joints, fire/acoustic seal or separation proof; do not infer service need from this test"
+    }
+  ],
+  "interfaces": {
+    "principalShowerDrop": {
+      "schemaVersion": 1,
+      "id": "B-PRINCIPAL-SHOWER-DROP-01",
+      "units": "mm",
+      "datum": "Local proposed ground FFL0",
+      "status": "Authored compatibility interface; no actual fitting, material, hydraulic or installed operation acceptance",
+      "authority": "Coordinated MAT-INTERIORS120-rim trial; upper fixture/frame/outlet remains unqualified",
+      "formedFloorPort": [
+        10200,
+        6810,
+        110
+      ],
+      "pipeOD": 50,
+      "retainedDropMaxEnvelope": 100,
+      "turnT": {
+        "point": [
+          10200,
+          6810,
+          2797.25
+        ],
+        "maxEnvelope": [
+          100,
+          100,
+          100
+        ]
+      },
+      "unionA": {
+        "point": [
+          10200,
+          6810,
+          3000
+        ],
+        "axis": "vertical",
+        "maxOD": 100,
+        "maxAxialLength": 100
+      },
+      "unionB": {
+        "point": [
+          10200,
+          6910,
+          2794.75
+        ],
+        "axis": "north",
+        "maxOD": 100,
+        "maxAxialLength": 100
+      },
+      "requiredFaceRelease": 50,
+      "clearUndersideAperture": [
+        10000,
+        6640,
+        400,
+        400
+      ],
+      "outerApertureFrame": [
+        9980,
+        6620,
+        440,
+        440
+      ],
+      "path": [
+        [
+          10200,
+          6810,
+          2797.25
+        ],
+        [
+          10200,
+          6910,
+          2794.75
+        ],
+        [
+          10200,
+          7500,
+          2780.0
+        ],
+        [
+          10800,
+          7500,
+          2765.0
+        ]
+      ],
+      "length": 1290,
+      "fallDenominator": 40,
+      "fall": 32.25,
+      "soilJoin": [
+        10800,
+        7500,
+        2765.0
+      ],
+      "unionABelowRCSoffit": 170,
+      "fixedTailFromRCTopToUnionA": 370,
+      "boxing": {
+        "lowestFittingAtJoin": 2715,
+        "supportDepth": 25,
+        "supportBottom": 2690,
+        "finalAirReserve": 25,
+        "panelTop": 2665,
+        "panelThickness": 20,
+        "finishedUnderside": 2645,
+        "width": 320,
+        "localAccessWidth": 440,
+        "rule": "320 ordinary branch band widens locally to the440 outer hood at the400clear union aperture; never cut a400 opening into a320 box."
+      },
+      "renewal": {
+        "installedSpoolBounds": [
+          10150,
+          6760,
+          2744.75,
+          100,
+          200,
+          305.25
+        ],
+        "firstMovement": [
+          0,
+          -50,
+          -50
+        ],
+        "subsequentLowering": [
+          0,
+          0,
+          -400
+        ],
+        "firstMovementLowest": 2694.75,
+        "fullyLoweredHighest": 2600,
+        "fullMovingPlanBounds": [
+          10150,
+          6710,
+          100,
+          250
+        ],
+        "clearancesToAperture": {
+          "west": 150,
+          "east": 150,
+          "south": 70,
+          "north": 80
+        },
+        "toolDiameterSensitivity": 200,
+        "retained": "Upper outlet/drop tail, both floor seals, fixed unionA half and downstream fixed unionB half; independent supports retained",
+        "rule": "Both accessible flat-face unions released before the supported elbow spool moves50south+50down. This is a required compatible joint action, not proof of a particular named union. Then lower400 under independent control through the open face; reverse with actual new seals and tests."
+      },
+      "soilJunctionMaxEnvelope": [
+        200,
+        200,
+        200
+      ],
+      "upperRenewalBoundary": "MAT-INTERIORS owns the separate upper tray/tail withdrawal: the100 upper unionA half is retained only for ordinary lower-spool work. Full upper withdrawal must strip every nut/clamp/half exceeding its75 stem requirement below first, to pass its97 clear sleeve in the110 port. Actual kit strippability is unproved; an unstrippable100 part rejects that upper renewal. Interiors owns its500 upward stroke and explicit upper-FFL-relative handling coordinates; no reverse source import.",
+      "rule": "Fixed outlet/drop tail and floor seals remain during ordinary below-slab union renewal.100OD unions plus50release and200tool sensitivity must fit the400clear underside opening; actual unions, matching tail and trapping/flow not proved. The low120rim replaces the former250step only if actual retained tail/drop and frame/outlet fit these requirements. No horizontal D50 route crosses the upper doorway.",
+      "material": "Manufacturer-matched B568 geometry control retains PP/seals; no material admission or altered seal package. Actual component duty, hydraulic flow, support and joint recipe remain MAT-INTERIORS/MAT-SERVICES acceptance dependencies."
+    }
+  },
+  "boundedRewindLedger": {
+    "id": "B-SERVICES-REWIND-01",
+    "status": "Explicit conditional design ledger; no accepted geometry or cyclic cross-owner source hashes",
+    "outerEnvelope": 417.5,
+    "eastDryFace": 11582.5,
+    "eastStructuralFace": 11597.5,
+    "eastStructuralOuterFace": 11737.5,
+    "principalWetLining": 30,
+    "principalEastWetFace": 11567.5,
+    "principalSouthWetFace": 6600,
+    "principalPort": [
+      11432.5,
+      8040,
+      160
+    ],
+    "portToStructuralFace": 85,
+    "portToWetFace": 55,
+    "principalColumn": [
+      11342.5,
+      7950,
+      180,
+      180
+    ],
+    "columnToWetFace": 45,
+    "rejectedEarlierPort": [
+      11492.5,
+      8040,
+      160
+    ],
+    "rejectedEarlierStructuralGap": 25,
+    "loggiaWall": "507.5 applies only to the new loggia sidewalls, not the existing outer house envelope",
+    "principalFixture": "Latest MAT-INTERIORS/HAD north-facing WC/door and120-rim shower are a bounded room rewind; source original WC remains the7277.5 adverse control, not the selected new port position",
+    "familyPort": "11432.5/6077.5 is an authored compatibility alternative, not a relocated family WC acceptance; its back service frontage/body route must be reconciled by HAD/IAS",
+    "outerWallMaterials": "417.5 is still a reference reservation; whole thermal/moisture/material recipe remains MAT-ENVELOPE scope"
+  },
+  "rearCrossingProposal": {
+    "id": "R-01",
+    "cabinet": [
+      417.5,
+      10800,
+      300,
+      750
+    ],
+    "centre": [
+      567.5,
+      11177.5
+    ],
+    "proposedFormedDiameter": 160,
+    "pipeBodyComparator": 110,
+    "structuralWestFace": 402.5,
+    "status": "Proposed crossing territory only; RC design and actual sanitary assembly not accepted",
+    "branchAxisY": 11177.5,
+    "branchToCabinetEastFace": [
+      622.5,
+      717.5
+    ],
+    "bodyTaskAfterWCRemoval": [
+      1100,
+      11177.5,
+      300
+    ],
+    "renewal": "Keep floor seal and independently supported upper/lower stack fixed for a local straight-section task above the floor; actual removable joints, branch levels, panel height and release stroke are unbound. The WC obstructs the east face at branch height: its prior renewal/removal is a dependency, not a free corridor.",
+    "clearances": {
+      "cabinetToBore": 70.0,
+      "westStructuralFaceToBore": 85.0,
+      "eastCabinetFaceToBore": 70.0,
+      "bodyToClosedCabinet": 82.5,
+      "bodyToOuterNorthFinish": 105.0
+    },
+    "maintenanceWitness": {
+      "panPath": [
+        [
+          717.5,
+          11000
+        ],
+        [
+          817.5,
+          11000
+        ],
+        [
+          1500,
+          11000
+        ],
+        [
+          1500,
+          10622.5
+        ],
+        [
+          3800,
+          10622.5
+        ]
+      ],
+      "panHandlingPad": 100,
+      "first100Exception": "No rear-hand reserve for initial100 east movement from back-to-wall position; actual connector/fixing release must be separately accessible. A100 all-round handling envelope starts only after that movement.",
+      "panSweeps": [
+        [
+          717.5,
+          10900,
+          760.0,
+          555
+        ],
+        [
+          717.5,
+          10900,
+          1442.5,
+          555
+        ],
+        [
+          1400,
+          10522.5,
+          760,
+          932.5
+        ],
+        [
+          1400,
+          10522.5,
+          3060,
+          555.0
+        ]
+      ],
+      "parkedPan": [
+        3800,
+        10622.5,
+        560,
+        355
+      ],
+      "panel": {
+        "face": 717.5,
+        "plan": [
+          717.5,
+          10950,
+          2,
+          455
+        ],
+        "height": 800,
+        "z": [
+          3500,
+          4300
+        ],
+        "massAt7850": 5.714800000000001,
+        "path": [
+          [
+            717.5,
+            10950
+          ],
+          [
+            747.5,
+            10950
+          ],
+          [
+            747.5,
+            10200
+          ]
+        ],
+        "temporaryRack": [
+          600,
+          10150,
+          150,
+          550
+        ],
+        "rule": "Authored steel dry cover and temporary independent floor rack only; fixed stack/frame/penetration seals retained; no capacity, fixing or material admission"
+      },
+      "panelSweeps": [
+        [
+          717.5,
+          10950,
+          32.0,
+          455
+        ],
+        [
+          747.5,
+          10200,
+          2.0,
+          1205
+        ]
+      ],
+      "bodyPath": [
+        [
+          3100,
+          10800
+        ],
+        [
+          1100,
+          10800
+        ],
+        [
+          1100,
+          11177.5
+        ]
+      ],
+      "bodyRadius": 300,
+      "bodyMinimumPlanMargin": 40.0,
+      "door": "Actual rear-wet-east raw aperture y10350\u201311250; real leaf, jambs, handles and simultaneous handlers unmodelled",
+      "limits": "Starts after safe water/waste/flush isolation and accessible fixing release; actual connection disengagement, ceramic projections, lifting/force and vertical transport remain unproved. Parked pan and rack temporarily occupy Bedroom4 floor; reverse the exact paths for reinstatement."
+    },
+    "panComparator": {
+      "manufacturer": "Duravit",
+      "identity": "D-Code21150900002",
+      "source": "https://pro.duravit.co.uk/pro/html/default/402880943a1b6e1b013a1bd282eb0051.uk-en.html?ncat=toilets&nser=7120&product=94738",
+      "retrieved": "2026-11-01",
+      "bareDimensions": [
+        355,
+        560,
+        385
+      ],
+      "bareMassKg": 22,
+      "outlet": "Rear horizontal, not a proved downward outlet",
+      "unrecovered": "Exact outlet centre height, spigot projection/diameter/engagement and supplied tolerances. Native technical ZIP retrieval unsuccessful; do not infer180 or borrow another pan variant."
+    }
+  },
+  "eastBranchDepth": {
+    "bodyODComparator": 110,
+    "availableAboveSlab": 80,
+    "aboveSlabShortfallBeforeFall": 30,
+    "availableUnderSlabServices": 55,
+    "underSlabShortfallBeforeSupport": 55,
+    "alternativeLocalLoweredCeiling": {
+      "pipeTop": 3170,
+      "pipeBottom": 3060,
+      "ceilingThickness": 15,
+      "ceilingUnderside": 3045,
+      "dropFrom3100": 55,
+      "status": "Optimistic lower bound only: zero hangers, collars, fall and construction tolerance; actual route/door/headroom not granted"
+    },
+    "alternativeAboveSlabBranch": {
+      "pipeTopAtZeroFall": 3480,
+      "heightAboveFFL": 30,
+      "status": "Optimistic zero bedding/support and zero fall. A real covered branch is higher; must avoid every fixture/body/door route. No raised wet floor selected"
+    },
+    "nearFixtureDropConflict": {
+      "sourceFixture": [
+        11022.5,
+        7100,
+        560,
+        355
+      ],
+      "axisY": 7277.5,
+      "currentGroundEClearBand": [
+        6825,
+        7425
+      ],
+      "currentGroundEFullBand": [
+        6623.5,
+        7626.5
+      ],
+      "conditional160DropBand": [
+        7197.5,
+        7357.5
+      ],
+      "status": "Conditional near-fixture vertical route would intersect the integrated unadopted E water passage; no such drop is currently selected. Replan foul branch or court route together, including next loggia trial."
+    },
+    "selectedConditionalCollector": {
+      "status": "Selected finite compatibility design for development; no fixture, port or plumbing-system acceptance",
+      "principalFeed": [
+        [
+          11432.5,
+          8040,
+          2794.3125
+        ],
+        [
+          10800,
+          8040,
+          2778.5
+        ],
+        [
+          10800,
+          5200,
+          2707.5
+        ],
+        [
+          9800,
+          5200,
+          2682.5
+        ]
+      ],
+      "familyFeed": [
+        [
+          11432.5,
+          6077.5,
+          2745.25
+        ],
+        [
+          10800,
+          6077.5,
+          2729.4375
+        ],
+        [
+          10800,
+          5200,
+          2707.5
+        ],
+        [
+          9800,
+          5200,
+          2682.5
+        ]
+      ],
+      "principalLength": 4472.5,
+      "familyLength": 2510.0,
+      "fallDenominator": 40,
+      "principalFall": 111.8125,
+      "familyFall": 62.75,
+      "commonStackEntryCentre": 2682.5,
+      "principalPort": [
+        11432.5,
+        8040,
+        160
+      ],
+      "familyPort": [
+        11432.5,
+        6077.5,
+        160
+      ],
+      "portRule": "Principal port coordinated as a proposal with MAT-INTERIORS; family port is an authored alternative requiring a moved pan/back service frontage. Neither creates drilling permission or inherits an actual outlet height.",
+      "boxes": [
+        [
+          10600,
+          7760,
+          952.5,
+          400
+        ],
+        [
+          10600,
+          5000,
+          400,
+          3160
+        ],
+        [
+          10600,
+          5877.5,
+          952.5,
+          400
+        ],
+        [
+          9600,
+          5000,
+          1400,
+          400
+        ]
+      ],
+      "boxTop": 2900,
+      "underside": 2540,
+      "dropFrom3100": 560,
+      "socketEvidence": {
+        "identity": "BLUCHER811.XXX.110",
+        "pipeOD": 110,
+        "socketOD": 123,
+        "socketLength": 57,
+        "source": "https://www.blucher.com/dfsmedia/0533dbba17714b1ab581ab07a4cbb521/53115-source/639220620240000000/socketinfouk.pdf"
+      },
+      "compatibilityRequirements": {
+        "maxInstalledLocalEnvelope": 160,
+        "maxTurnAlongEachTangent": 200,
+        "portSpoolMaxSquare": 160,
+        "maxTurnOutwardFromRouteAxis": 80,
+        "demonstratedRemovableStraightPiece": 200,
+        "freeRetainedTailEachEnd": 250,
+        "slipCouplingBodyEvidence": 130,
+        "warning": "These are authored procurement/design limits, not measured supplied bend/branch/support or guaranteed socket-release dimensions. Fixed straight160spool retained at the arch;200turns stay outside it for renewal independence even though their square fits the wider aperture. Measured products exceeding any requirement reject this design."
+      },
+      "wallPort": {
+        "centre": [
+          10800,
+          6500,
+          2740
+        ],
+        "clearSpan": 320,
+        "spring": 2740,
+        "bottom": 2580,
+        "intradosCrown": 2900,
+        "radialRing": 215,
+        "extrados": 3115,
+        "square160CornerVerticalClearanceAtMidplane": 58.5640646055102,
+        "wallThickness": 170,
+        "slopeCentreShiftAcrossHalfWall": 2.125,
+        "minimumThroughWallUpperCornerClearance": 56.4390646055102,
+        "minimumThroughWallBottomClearance": 77.875,
+        "toRCSoffit": 55,
+        "eastAbutmentTerritory": 407.5,
+        "alternatives": [
+          {
+            "clearSpan": 240,
+            "corner160ThroughWall": 7.317719099991592,
+            "extrados": 3075.0,
+            "toRCSoffit": 95.0,
+            "eastAbutment": 447.5
+          },
+          {
+            "clearSpan": 320,
+            "corner160ThroughWall": 56.4390646055102,
+            "extrados": 3115.0,
+            "toRCSoffit": 55.0,
+            "eastAbutment": 407.5
+          }
+        ],
+        "square200ThroughWallCorner": 22.77495996796796,
+        "rule": "Fixed straight spool and qualified floor/wall boundary retained. Arch ring, abutments, load transfer and movement need STR design; no capacity follows from geometric fit."
+      },
+      "maintenanceModule": {
+        "centreline": [
+          10800,
+          6900,
+          10800,
+          7100
+        ],
+        "length": 200,
+        "retainedTailTerritories": [
+          [
+            10800,
+            6650,
+            10800,
+            6900
+          ],
+          [
+            10800,
+            7100,
+            10800,
+            7350
+          ]
+        ],
+        "slipBodyLength": 130,
+        "freeTailMinusSleeveBody": 120,
+        "southTailMinusWallNorthFace6585": 65,
+        "D50JunctionStart7400MinusNorthTail": 50,
+        "fixedSupportStations": [
+          6625,
+          7375
+        ],
+        "supportAxialWidthRequirement": 20,
+        "undersideOpening": [
+          10620,
+          6600,
+          360,
+          800
+        ],
+        "handlingCradleFootprint": [
+          10500,
+          6800,
+          600,
+          800
+        ],
+        "requiredControlledLowering": 500,
+        "pipeLowestAfterLowering": 2170,
+        "rule": "250 tail territory must contain the entire actual parked130 sleeve, its release stroke, clamps and margins;120 arithmetic remainder is not the required stroke or a qualified removal. No ordinary joint lies within the fixed wall spool or D50 junction. The actual independent support/access/handling equipment must fit the declared floor territory; no equipment capacity or human operation is proved. This is one200 inspection/renewal spool, not a direction to joint all runs every200."
+      },
+      "maintenance": "Remove independently supported underside panels, retain wall spool and floor seals, isolate affected appliances and drain, support both fixed ends, park the actual sleeves within the250 retained-tail territories around the200 branch-free spool, then lower it500 under controlled support. Actual sleeve/union stroke, water containment, fixings, working access and reinstatement must meet those design requirements.",
+      "material": "EuroPipe geometric comparator has required elastomer/lubricant/accessory duties; it does not pass the material policy. No seals or hangers are removed to obtain a metal label.",
+      "supports": "Independently anchored hangers above the removable face, outside the160 local envelope where rods continue to RC; actual spacing, loads, anchors and acoustic/fire isolation unqualified",
+      "roomCost": "Local collector underside2540,560 below current3100. Source plant bodies and integrated pantry shelf clear in plan only; full installed overhead apparatus remains to reconcile. Existing plant arches are avoided in plan; the new port is explicit, not an unnoticed hole."
+    }
+  },
+  "materialBoundary": {
+    "EuroPipe110": "123 socket OD, 57 socket length and 40\u201362 engagement are component evidence only; elastomer seals/lubricant and actual slip release remain unqualified",
+    "HeritageNominal100": "Existing April2026 evidence says actual114 body; cannot relabel it110 or reuse an unmeasured caulked socket envelope",
+    "wholeAssembly": "No product/system or polymer exception selected. Keep floor seals independent during ordinary renewal."
+  },
+  "disposition": "REJECT whole-house service acceptance of the three-bore witness. Develop R-01 and a deliberate E-02 branch section, retain conditional air/heating/dry service territories, then re-enter STR before any new penetration is selected.",
+  "unlockedDecision": "The rear sanitary crossing is a separate floor design input; the east 110 branch needs an explicit vertical/route change. A whole-floor solid-slab freeze cannot omit these duties.",
+  "notProved": [
+    "whole-house actual bill of materials",
+    "hydraulic sizing/fall or trap/vent design",
+    "complete ventilation/heating choice",
+    "electrical circuit design/segregation",
+    "structural resistance around new holes",
+    "fire/acoustic/moisture seals",
+    "material admission",
+    "physical operation or installation"
+  ]
+}

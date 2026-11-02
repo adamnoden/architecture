@@ -1,0 +1,23 @@
+{
+  "input_commit": "bee433780a6a72e2a352ec6b913a9c51c93c486b",
+  "input_tree": "0bdfcdd9fcdc6021887d50b510d42404119e9d10",
+  "sealed_archive_sha256": "a09d1753e54c817f14a98a745aa7e4a98e1a6fd24640c2c73b19c1eedced32c2",
+  "review_sha256": "d1930abd5acfa575ea0a2846aa27da10116205be69472490740117cab1d2309f",
+  "files": {
+    "routing_box.py": "3c7dd3f99c9e1eeaa8e82e4f81be33acb6d9549a72b6852b38637f3e7093be12",
+    "section_lp.py": "ecd0cab75661c2c2fd848822be95edc4b5f3dbe355e867ae0cceb27898e6d78b",
+    "section_lp_tolerance_control.py": "608b9cdc4b43dc9aaf7f9963838ead1f37210c6c7a4072e46fe9f385348fc0a9",
+    "routing-output.txt": "7894e6e43c9cfd392ac15707021bc98ff44821205909c4f3cbd1820bf6bb6bcb"
+  },
+  "scope": "Read-only specialist reproducibility evidence; one-arm starter/cage subdetail only. No full node, tolerance-robust section, minimum complete depth or house pass.",
+  "reported_results": {
+    "cartesian_box_per_coordinate_each_bar": 5,
+    "starter_pair_clearance": 27.9,
+    "starter_fixed_clearance": 22.8583639634776,
+    "adjacent_vertical_clearance": 31.366,
+    "section_LP_N0_nominal": 143.904763,
+    "section_LP_N0_axis_inward5mm": 139.278331,
+    "demand_resultant": 141.421356,
+    "lowtie_upper_NS_mat_overlap": 6
+  }
+}
