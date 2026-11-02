@@ -330,6 +330,9 @@
       "filterReplacement": "https://www.systemair.com/en-rs/p/PFR-200-250-Coarse-50percent-5-pcs-57218",
       "fanClamps": "https://www.systemair.com/en-gb/products/fans/accessories/mechanical-accessories/mounting-equipment/brackets-and-clamps/fk",
       "fridgeComparator": "https://bekoplc.blob.core.windows.net/bekoupload/manuals/CNG4582V.pdf",
+      "slideCoupling": "https://itsolution.lindab.com/lindabwebproductsdoc/pdf/documentation/ads/lindab/technical/smfu.pdf",
+      "slideCouplingCurrent": "https://www.lindab-polska.pl/pl/produkty/zlaczka-mufowa-smfu.html",
+      "fanDimensionCard": "https://docs.planning.org.uk/20250708/236/SYF3MUQDG9500/0eewqjijfiz7rvf9.pdf",
       "fridgeBody": "https://www.beko.co.uk/appliances/refrigerators/fridge-freezers/product/freestanding-frost-free-fridge-freezer-harvestfresh-cng4582vw-anthracite-stainless-steel-effect-white"
     },
     "hood": "Novy810 version35; all205/333/399/534m3h modes retained; EN61591 loads not installed curves",
@@ -4755,6 +4758,97 @@
       "requiredSeal": "8mm neoprene lining",
       "fasteners": "two screws and hanging tabs",
       "limits": "Actual250 clamp screw/tabs/mating/60mm axial engagement and support/release stroke must bind full OEM drawing; do not strip required neoprene or equate202fan length to full service envelope."
+    },
+    "heaterCouplingAlternative": {
+      "model": "LindabSMFU200/150",
+      "sourceRevision": "2020-02-25; currentPolishOEMtable agrees",
+      "OEMUse": "Sliding removal/cleaning allowed at200/250; OEMdoesnotrecommend above315. NoClick; secured joints need accessible specified screws/rivets.",
+      "fourCouplerMassKg": 1.96,
+      "interfaces": [
+        {
+          "component": "VEAB-CV20-30-1-ViCi-QOL-1",
+          "end": "west",
+          "actualSMFU200_150BodyMM": 167,
+          "femaleMM": 40,
+          "longMaleMM": 127,
+          "massKg": 0.49,
+          "installedXMM": [
+            9768.5,
+            9935.5
+          ],
+          "retractedXMM": [
+            9718.5,
+            9885.5
+          ],
+          "authoredAxialStrokeMM": 50,
+          "authoredReleasedEndGapMM": 10,
+          "scope": "Complete axial countercheck conditional on full40female engagement,50slide travel, adequate male engagement and no fastener/insulation stop. ActualVEAB neck seal/mating and2D clearance acceptance remain unqualified."
+        },
+        {
+          "component": "VEAB-CV20-30-1-ViCi-QOL-1",
+          "end": "east",
+          "actualSMFU200_150BodyMM": 167,
+          "femaleMM": 40,
+          "longMaleMM": 127,
+          "massKg": 0.49,
+          "installedXMM": [
+            10230.5,
+            10397.5
+          ],
+          "retractedXMM": [
+            10280.5,
+            10447.5
+          ],
+          "authoredAxialStrokeMM": 50,
+          "authoredReleasedEndGapMM": 10,
+          "scope": "Complete axial countercheck conditional on full40female engagement,50slide travel, adequate male engagement and no fastener/insulation stop. ActualVEAB neck seal/mating and2D clearance acceptance remain unqualified."
+        },
+        {
+          "component": "VEAB-CV20-30-1-ViCi-QOL-2",
+          "end": "west",
+          "actualSMFU200_150BodyMM": 167,
+          "femaleMM": 40,
+          "longMaleMM": 127,
+          "massKg": 0.49,
+          "installedXMM": [
+            8993.5,
+            9160.5
+          ],
+          "retractedXMM": [
+            8943.5,
+            9110.5
+          ],
+          "authoredAxialStrokeMM": 50,
+          "authoredReleasedEndGapMM": 10,
+          "scope": "Complete axial countercheck conditional on full40female engagement,50slide travel, adequate male engagement and no fastener/insulation stop. ActualVEAB neck seal/mating and2D clearance acceptance remain unqualified."
+        },
+        {
+          "component": "VEAB-CV20-30-1-ViCi-QOL-2",
+          "end": "east",
+          "actualSMFU200_150BodyMM": 167,
+          "femaleMM": 40,
+          "longMaleMM": 127,
+          "massKg": 0.49,
+          "installedXMM": [
+            9455.5,
+            9622.5
+          ],
+          "retractedXMM": [
+            9505.5,
+            9672.5
+          ],
+          "authoredAxialStrokeMM": 50,
+          "authoredReleasedEndGapMM": 10,
+          "scope": "Complete axial countercheck conditional on full40female engagement,50slide travel, adequate male engagement and no fastener/insulation stop. ActualVEAB neck seal/mating and2D clearance acceptance remain unqualified."
+        }
+      ],
+      "opposingParkedCouplersIn400StraightReserveMM": 46,
+      "rejected250Nominal150Proxy": {
+        "actualBodyMM": 252,
+        "massKg": 0.9,
+        "doesNotFit150Allocation": true
+      },
+      "admission": "Axial alternative only. SMFUfemale end has no automatically credited seal on VEABplainneck; retain actual required gasket/seal, materialpolicy andOEMmating. No use of these seams as accepted2Dclearstraight, pressure loss or complete firstrelease."
     }
   },
   "layoutMaximumProcurementEnvelopes": {

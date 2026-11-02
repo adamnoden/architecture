@@ -129,6 +129,9 @@ oem_sources={
  'filterReplacement':'https://www.systemair.com/en-rs/p/PFR-200-250-Coarse-50percent-5-pcs-57218',
  'fanClamps':'https://www.systemair.com/en-gb/products/fans/accessories/mechanical-accessories/mounting-equipment/brackets-and-clamps/fk',
  'fridgeComparator':'https://bekoplc.blob.core.windows.net/bekoupload/manuals/CNG4582V.pdf',
+ 'slideCoupling':'https://itsolution.lindab.com/lindabwebproductsdoc/pdf/documentation/ads/lindab/technical/smfu.pdf',
+ 'slideCouplingCurrent':'https://www.lindab-polska.pl/pl/produkty/zlaczka-mufowa-smfu.html',
+ 'fanDimensionCard':'https://docs.planning.org.uk/20250708/236/SYF3MUQDG9500/0eewqjijfiz7rvf9.pdf',
  'fridgeBody':'https://www.beko.co.uk/appliances/refrigerators/fridge-freezers/product/freestanding-frost-free-fridge-freezer-harvestfresh-cng4582vw-anthracite-stainless-steel-effect-white'}
 hood_speeds=[205,333,399,534]
 selected_makeup=next(port for port in h['exteriorPortGeometry'] if port['id']=='cooker-makeup')
@@ -391,6 +394,30 @@ compact['fanClampActual']={'family':'SystemairFK','steel':'galvanised',
  'requiredSeal':'8mm neoprene lining','fasteners':'two screws and hanging tabs',
  'limits':'Actual250 clamp screw/tabs/mating/60mm axial engagement and support/release stroke must bind full OEM drawing; do not strip required neoprene or equate202fan length to full service envelope.'}
 
+# Source-bound sliding-coupler alternative: actual body, not nominal150 box.
+# Four heater interfaces only. Female plain-neck sealing is NOT established.
+heater_couplings=[]
+for item in train:
+    if not item['id'].startswith('VEAB'):continue
+    for side,xx,direction in [('west',item['x'][0],-1),('east',item['x'][1],1)]:
+        installed=[xx-40,xx+127] if direction==1 else [xx-127,xx+40]
+        parked=[v+direction*50 for v in installed]
+        assert installed[1]-installed[0]==167
+        assert max(abs(v-xx) for v in parked)==177
+        heater_couplings.append({'component':item['id'],'end':side,
+          'actualSMFU200_150BodyMM':167,'femaleMM':40,'longMaleMM':127,
+          'massKg':.49,'installedXMM':installed,'retractedXMM':parked,
+          'authoredAxialStrokeMM':50,'authoredReleasedEndGapMM':10,
+          'scope':'Complete axial countercheck conditional on full40female engagement,50slide travel, adequate male engagement and no fastener/insulation stop. ActualVEAB neck seal/mating and2D clearance acceptance remain unqualified.'})
+assert 400-2*177==46
+compact['heaterCouplingAlternative']={'model':'LindabSMFU200/150',
+ 'sourceRevision':'2020-02-25; currentPolishOEMtable agrees',
+ 'OEMUse':'Sliding removal/cleaning allowed at200/250; OEMdoesnotrecommend above315. NoClick; secured joints need accessible specified screws/rivets.',
+ 'fourCouplerMassKg':4*.49,'interfaces':heater_couplings,
+ 'opposingParkedCouplersIn400StraightReserveMM':46,
+ 'rejected250Nominal150Proxy':{'actualBodyMM':60+192,'massKg':.9,'doesNotFit150Allocation':True},
+ 'admission':'Axial alternative only. SMFUfemale end has no automatically credited seal on VEABplainneck; retain actual required gasket/seal, materialpolicy andOEMmating. No use of these seams as accepted2Dclearstraight, pressure loss or complete firstrelease.'}
+
 # Single exact SVG drawing: actual source bodies are solid, procurement/task
 # maxima dashed. It deliberately shows the current maintenance failures.
 from html import escape
@@ -464,11 +491,15 @@ for item in train:
         # Boxes face north: cross-projection is indicated, not an invented top box.
         txt(ax(lo),az(2600),'side box82','xs')
 rect(ax(8111.5),az(2581),418*scale,362*scale,'#a6cbda','#156b9a')
+# Actual167mm coupler intervals with authored50mm retraction at both heater ends.
+for joint in heater_couplings:
+    lo,hi=joint['installedXMM'];rect(ax(lo),az(2505),(hi-lo)*scale,210*scale,'none','#95622c',True)
+    lo,hi=joint['retractedXMM'];line(ax(lo),az(2040),ax(hi),az(2040),'#95622c',True)
 # Independently supported cradle/hangers are demands, not rated products.
 for xx in [8050,9300,10100,10900,11450]:line(ax(xx),az(2850),ax(xx),az(3170),'#a37122',True)
 line(ax(7770.5),az(2100),ax(11570.5),az(2100),'#263743')
 txt(223,177,'Dashed blue: complete procurement envelope. Gold: unqualified support demand.','xs')
-txt(223,181,'Motor230 retained; actual fan202/336 + box40; filters239 overall; two heaters375.','xs')
+txt(223,181,'Motor230 / fan202 / filter239 / heaters375; brown167couplers +50stroke conditional.','xs')
 txt(223,185,'Carrier3800 ×500 ×750. West plan reserve51; no clamp/tool/anchor PASS.','xs','#a12d2d')
 # Y/Z section focused on filter service, with a full podium/operator body.
 sy=.028
