@@ -613,18 +613,18 @@
         5500
       ],
       "returnApertureY": [
-        5350,
-        5500
+        5340,
+        5490
       ],
       "pipeOpeningY": [
-        5175,
-        5325
+        5165,
+        5315
       ]
     },
     "middle": {
       "p": [
-        4650,
-        7350
+        4900,
+        7100
       ],
       "clearWidth": 300
     },
@@ -640,19 +640,20 @@
     "tailInvert": 6778.8,
     "sheet": 1.5,
     "gate": 2,
-    "skirt": 5,
+    "sideGateHeight": 65,
+    "pipeStubTop": 6600,
     "gateTravel": {
       "pipe": [
-        5175,
-        5325,
-        5025,
-        5175
+        5165,
+        5315,
+        5015,
+        5165
       ],
       "return": [
-        5350,
-        5500,
-        5500,
-        5650
+        5340,
+        5490,
+        5490,
+        5640
       ]
     }
   },
@@ -678,8 +679,8 @@
     "tube": 48,
     "toeTop": 5690,
     "deckX": [
-      4300,
-      7700
+      4260,
+      7740
     ],
     "deckY": [
       4780,
@@ -722,8 +723,8 @@
         4487.5
       ],
       "y": [
-        5175,
-        5325
+        5165,
+        5315
       ],
       "z": [
         6765.2,
@@ -736,8 +737,8 @@
         4487.5
       ],
       "y": [
-        5025,
-        5175
+        5015,
+        5165
       ],
       "z": [
         6765.2,
@@ -746,30 +747,30 @@
     },
     "returnClosed": {
       "x": [
-        4337.5,
-        4487.5
+        4498.5,
+        4500.5
       ],
       "y": [
-        5350,
-        5500
+        5340,
+        5490
       ],
       "z": [
-        6765.2,
-        6767.2
+        6778.8,
+        6843.8
       ]
     },
     "returnOpen": {
       "x": [
-        4337.5,
-        4487.5
+        4498.5,
+        4500.5
       ],
       "y": [
-        5500,
-        5650
+        5490,
+        5640
       ],
       "z": [
-        6765.2,
-        6767.2
+        6778.8,
+        6843.8
       ]
     },
     "worker": {
@@ -786,8 +787,91 @@
         7340
       ]
     },
-    "collarBottom": 6767.2,
-    "skirtBottom": 6760.2
+    "collarBottom": 6767.2
+  },
+  "westPipe": {
+    "x": [
+      4337.5,
+      4487.5
+    ],
+    "y": [
+      5165,
+      5315
+    ],
+    "z": [
+      5540,
+      6600
+    ]
+  },
+  "westSpool": {
+    "x": [
+      4337.5,
+      4487.5
+    ],
+    "y": [
+      5165,
+      5315
+    ],
+    "z": [
+      6600,
+      6765.2
+    ]
+  },
+  "westReturn": {
+    "x": [
+      4500,
+      4650
+    ],
+    "y": [
+      4430,
+      5500
+    ],
+    "z": [
+      6678.5,
+      6750
+    ]
+  },
+  "westElbow": {
+    "x": [
+      4500.5,
+      4650
+    ],
+    "y": [
+      5340,
+      5490
+    ],
+    "z": [
+      6685,
+      6843.8
+    ]
+  },
+  "westSled": {
+    "x": [
+      4325,
+      4498.5
+    ],
+    "y": [
+      4350,
+      4750
+    ],
+    "z": [
+      6761,
+      6783.5
+    ]
+  },
+  "westGuide": {
+    "x": [
+      4315,
+      4325
+    ],
+    "y": [
+      4350,
+      5150
+    ],
+    "z": [
+      6751,
+      6761
+    ]
   },
   "energyMm": {
     "width150": 58.34144580219353,
@@ -805,13 +889,17 @@
     "shieldCoversWestSeam": true,
     "cornerBoxFits150": true,
     "openingsSeparated": true,
+    "cornerPipeReturnDisjoint": true,
+    "movingCornerPipeDisjoint": true,
+    "sledAboveReturn": true,
+    "guideAboveA": true,
+    "cornerStubBelowGate": true,
+    "upperSpoolRemovalClear": true,
     "openGateSweepsDisjoint": true,
     "gateWorkerClear": true,
     "gateUnderThroat": true,
-    "gateSkirtOverReturn": true,
     "returnClearOfTopRail": true,
     "returnClearOfAFront": true,
-    "skirtAboveReturn": true,
     "idealReturnHead150": true,
     "pipeOutsideAWithdrawal": true,
     "workerStrip": true,
@@ -825,7 +913,7 @@
   "limits": [
     "The listed boxes are conservative component extents, not an exhaustive collision engine.",
     "A and all four temporary routes must operate at full assigned stress and actual backwater before branch isolation.",
-    "Gate collar, plate and skirt envelopes are authored; seal and tail flow need design. Corner flange, return-to-A containment, full tray/corner fall, end support, running gear, bracing and complete access remain unproved.",
+    "The corner has a lateral side gate and separate return corridor to avoid the pipe; its elbow, seal and full tail flow need design. The sled and guide are explicit envelope reservations, not an authored trolley, support or connection design.",
     "No product, structural capacity, hydraulic capacity or physical operation has been admitted."
   ]
 }
