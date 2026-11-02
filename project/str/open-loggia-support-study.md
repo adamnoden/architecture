@@ -7,6 +7,16 @@ The owning trial plan is [HAD's open north loggia JSON](../had/studies/open-nort
 [Calculation](studies/open-loggia-support.json) · [actual support overlay and first section](studies/open-loggia-support.svg) · [reproducer](studies/open-loggia-support.py).
 
 
+## Current stair receiving-member checkpoint
+
+This continuation binds HAD `a510f30cc82cf9d0142664b72bc272406aed3076`, JSON SHA256 `f3d2bd0962dffdbc3129522720501889265a2b6ab623d707542c38a13217ed47`. The active technical trial uses170 normal waist and250×390 midbeam, bottom1335/top1725. The actual west sill is390 deep; bottom H20 hooks and H12 strut tie move down20, topEW H10 moves to1650 and NSsill topH10 to1688. Post links phase around the actual entry rather than retaining the old1350/1650 clashes. Reproducible nominal3D checks cover these enumerated receiving cages; they do not yet admit incoming waist/landing laps or the whole joint.
+
+The first450 of midlanding, y7132.5–7582.5, requires a250-thick local patch, top1725/bottom1475, to receive the actual170-waist bar approach with cover. Its50 additional concrete and receiving reactions are included. HAD reciprocally confirms that the underside patch and20 lower beam lie inside the stair aperture, outside any credited occupied/head/window route. Noses, landing top,1094 bodies and source1004 nominal rail clearances remain held;984 remains a20-position-loss challenge. The reveal grille is an unqualified anchorage/guard comparison, not a second stair authority.
+
+The170 control sensitivity is8.624mm; the coupled165/d134,phi3.5,400microstrain,+0.25kPa challenge gives10.312mm. The historical150 control11.166/11.700 and its failures remain preserved. Actual fillets, flight-to-landing laps, header entry, guard and ground-toe joins are still internal work before a selected stair proposition. No old clearance or engineer acceptance transfers merely by changing thickness.
+
+The roof/arch calculations below remain the merged bounded control. The actual warm edge now needs a joined q450 end-purlin/normal-post/cold-rail revision with ENV; its seat/thermal-return/corner contacts are not silently selected here. D1300 and the rejected400 pile joint retain their earlier concept scope. This checkpoint is recoverable development, not STR-HOUSE completion.
+
 ## Current roof and arch calculation
 
 The [roof/arch sheet](studies/open-loggia-roof-arch.svg) and `actual_roof` / `north_arches` records bind MAT PR1236 head `f376a8a75a12838b2026a9a971ac33bfef470469`, roof JSON SHA256 `f3ac7756f1b326a9271869732442083a59f604eca8361f157827f01d748c4b8c`. The actual recipe is **500.7 normal**, with320 glass, NS-only vent rails and the retained200 overhang. Eave7100 is at the wall line: the physical outer roof edge is7006.738. Primary centre6746.721, tie6721.721–6771.721 and purlin underside6658.451 are at the core support. The38.451 space above protected-ceiling top6620 is a local support comparison. The steel cantilever descends below that datum outside the actual ceiling territory; it is not a global underside.

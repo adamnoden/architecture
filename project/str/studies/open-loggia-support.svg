@@ -2,7 +2,7 @@
 <style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:3.2px}.title{font-size:5px;font-weight:bold}</style>
 <rect width="594" height="420" fill="#faf8f1"/>
 <text x="16" y="15" class="title">OPEN N / actual whole-floor support checkpoint</text>
-<text x="16" y="24" class="">HAD068e33ae · RC200 whole upper floor · unadopted / incomplete support design, not for construction</text>
+<text x="16" y="24" class="">HADa510f30c · RC200 whole upper floor · unadopted / incomplete support design, not for construction</text>
 <text x="16" y="36" class="title">A / UPPER STRUCTURAL FIELDS · 1:50</text>
 <rect x="25.250" y="51.250" width="229.500" height="229.500" fill="#e5ebe7" stroke="#345460" stroke-width=".35"/>
 <rect x="99.750" y="125.750" width="80.500" height="80.500" fill="#faf8f1" stroke="#345460" stroke-width=".35"/>
@@ -110,7 +110,7 @@
 <text x="16" y="361" class="">HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.</text>
 <text x="16" y="367" class="">Roof/arch controls now calculated; finite corner jacks, collectors/lateral and actual joint/reaction destinations remain.</text>
 <text x="16" y="373" class="">Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.</text>
-<text x="16" y="379" class="">HAD068e repairs wet-receiver door/window geography; new roofcollector projection still needs owning reconciliation.</text>
+<text x="16" y="379" class="">HADa510 repairs wet-receiver door/window geography; new roofcollector projection still needs owning reconciliation.</text>
 <text x="16" y="385" class="">Wetjoint3H16downhooks/4H16pier: finite3Dclearance/development calculated; lowercolumnjoint remains.</text>
 <text x="16" y="391" class="">Frozen bee43378 and specialist adverse controls preserve actual failed node/cage duties; no joint PASS.</text>
 <text x="16" y="397" class="">Actual775 wrapped portal and2890loggia soffit are bound; pierhead, anchor and thermal/fire joins remain.</text>
