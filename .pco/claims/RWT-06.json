@@ -9,12 +9,12 @@
     "label": "zerg-rwt26-live-receiver"
   },
   "claimedAt": "2026-11-02T10:48:55.897Z",
-  "heartbeatAt": "2026-11-02T11:11:07.365Z",
-  "expiresAt": "2026-11-02T11:56:07.365Z",
+  "heartbeatAt": "2026-11-02T11:26:59.382Z",
+  "expiresAt": "2026-11-02T12:11:59.382Z",
   "checkpoint": {
-    "evidence": "Public branch head a5a9629189905b5b98aa4fd0a2882947a4bc0252 tree fcf64cdc4e5b5318cb77ac8a2928f8aedcb38918; nominal geometry and adverse controls only; no operational admission.",
-    "next": "Develop and independently review finite joined scene and full-edge transfer, support, handling and reversal.",
-    "blocker": "Transfer sockets, end capture and complete supports require finite design."
+    "evidence": "Public branch head f15748b4525414edad26f3e7b0c5d0d186414d9a tree 9bd45f29cb65c1c6f58a1320c6a5b1876856c223; split trial and separate corner return; incomplete.",
+    "next": "Authenticate checked-out HAD projection and complete finite movement, supports and independent review.",
+    "blocker": "Middle gate, sled/trolley support and full capture/flow remain unproved."
   },
   "branch": "work/rwt06-live-receiver-20261102",
   "note": "Owner-directed RWT recovery after verified merged negative study; constructive same-section live capture, receiver removal and reversal. Root sole CI/merger.",
