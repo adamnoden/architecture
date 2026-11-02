@@ -9,8 +9,8 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-02T00:31:45.099Z",
-  "expiresAt": "2026-11-02T01:16:45.099Z",
+  "heartbeatAt": "2026-11-02T00:43:02.246Z",
+  "expiresAt": "2026-11-02T01:28:02.246Z",
   "branch": "work/zerg4-interiors-whole-house",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -36,9 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1233 head075a467c3ea2e4a32116100ea8a64af9374b2fd0 tree2655a8d9278952e6252e33e09729ed887e6bcfe9: native363-1 PDF rendered/SHA recorded, true310foot waste10850/4150, deliberate100E floorport requirement10950/4150, actual support/overflow stripping conditions and welded kitchen-head direction; source repro/integrity pass.",
-    "next": "Complete service-owned bath full-trap/vertical/strip object, then bind one final HAD/service/IAS authority and independent exact-source review; proposed lifecycle remains conditional.",
-    "blocker": "Normal560rim selected over rejected100plinth/660rim; actual water-seal/support/offset compatibility conditions not yet exported. Final emitter/room authority pending. No material/product/physical or owner exception."
+    "evidence": "PR1233 headbab945035a70729ca28405ab4157b103c287e5f7 tree64bc843ac40b8a406bb14b610382999040d34c1a: one-way frozen bath38194/eb841 import, actual native/offset/trap/body-tail projection SVG rendered/viewed, configured-kit boundaries and conditional proposed lifecycle; repro/integrity pass.",
+    "next": "Read-only bounded services38194 review as root directed; hold final HAD pin, then final canonical source consistency corrections and independent MAT exit review.",
+    "blocker": "Known services global bath water-row mismatch and three-door utility MEV correction required before integration. MAT own assembly directions reasoned; no whole-house/product/material/physical acceptance."
   },
   "pr": 1233
 }
