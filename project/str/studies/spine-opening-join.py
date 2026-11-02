@@ -28,7 +28,7 @@ floor=floor_line*L; wall=wall_line*L
 load=floor+wall
 assert math.isclose(floor/2+wall/2,load/2)
 assert math.isclose(2*(load/2),load)
-result={'status':'conditional source-bound line-load sensitivity; no capacity or HOUSE pass','sources':dict(zip(paths,actual)), 'opening_mm':t['hole'], 'protected_boundary_door':door, 'rectangular_assembly_height_maximum_mm':2250, 'clear_span_m':L, 'floor_edge_total_kN':e['vertical_ULS_kN'], 'floor_edge_length_m':span, 'assumed_uniform_floor_edge_kN_m':floor_line, 'floor_over_opening_kN':floor, 'upper_wall_gross_over_opening_kN':wall, 'combined_kN':load, 'symmetric_reaction_each_kN':load/2, 'simply_supported_sagging_kNm':load*L/8, 'parabolic_three_hinge_unit_rise_thrust_kN_m':load*L/8, 'scope':'Upper gross wall is adverse full-height challenge, not measured spandrel. Floor edge uniformity, head span, pier contact, arch and bearing remain unproved. Do not add transferred actions to their originating floor/wall totals.'}
+result={'status':'conditional source-bound line-load sensitivity; no capacity or HOUSE pass','sources':dict(zip(paths,actual)), 'opening_mm':t['hole'], 'protected_boundary_door':door, 'rectangular_assembly_height_maximum_mm':2250, 'clear_span_m':L, 'floor_edge_total_kN':e['vertical_ULS_kN'], 'floor_edge_length_m':span, 'assumed_uniform_floor_edge_kN_m':floor_line, 'floor_over_opening_kN':floor, 'upper_wall_gross_over_opening_kN':wall, 'combined_kN':load, 'symmetric_reaction_each_kN':load/2, 'simply_supported_sagging_kNm':load*L/8, 'parabolic_three_hinge_unit_rise_thrust_kN_m':load*L/8, 'scope':'Upper gross wall is adverse full-height challenge, not measured spandrel. The 7.5 G floor allowance may overlap some wall loads: this is a potentially overlapping sensitivity, not a disjoint design case or complete upper bound. Floor edge uniformity, head span, pier contact, arch and bearing remain unproved. Do not add transferred actions to their originating floor/wall totals.'}
 # Trial bearing patches lie wholly outside the opening; centre span is 1.1 m.
 # Model the specified uniform action over the central 0.9 m only.
 bearing=.2
@@ -67,7 +67,7 @@ for t in s['upper_wall_opening_transfers']:
     assert math.isclose(rright*span,sum(x['ULS_kN']*((sum(x['interval_mm'])/2-left)/1000) for x in segments),rel_tol=1e-12)
     joined.append({'upper':t['upper'],'lower':t['lower'],'hole_mm':[lo,hi],'trial_bearing_patches_mm':patches,'patches_within_source_wall_plan':patch_fit,'included_actions':segments,'total_kN':total,'left_reaction_kN':rleft,'right_reaction_kN':rright})
 assert len(joined)==8 and next(x for x in joined if x['upper']=='bed2-east')['patches_within_source_wall_plan']==[True,False]
-result['eight_opening_comparison']={'rows':joined,'scope':'Conditional uniform edge-action over overlap plus prior gross wall challenge; not complete head loads. Patch plan fit is not capacity or joint proof; any false patch rejects that simple trial.'}
+result['eight_opening_comparison']={'rows':joined,'scope':'Conditional uniform edge-action over overlap plus prior gross wall challenge; potentially overlapping sensitivity, not a disjoint design case or complete head-load bound. Patch plan fit is not capacity or joint proof; any false patch rejects that simple trial.'}
 out=R/'project/str/studies/spine-opening-join.json'
 text=json.dumps(result,indent=2,sort_keys=True)+'\n'
 if '--check' in sys.argv:

@@ -341,7 +341,7 @@
         "upper": "rear-east-principal"
       }
     ],
-    "scope": "Conditional uniform edge-action over overlap plus prior gross wall challenge; not complete head loads. Patch plan fit is not capacity or joint proof; any false patch rejects that simple trial."
+    "scope": "Conditional uniform edge-action over overlap plus prior gross wall challenge; potentially overlapping sensitivity, not a disjoint design case or complete head-load bound. Patch plan fit is not capacity or joint proof; any false patch rejects that simple trial."
   },
   "floor_edge_length_m": 7.9575,
   "floor_edge_total_kN": 123.633439453125,
@@ -363,7 +363,7 @@
     ]
   },
   "rectangular_assembly_height_maximum_mm": 2250,
-  "scope": "Upper gross wall is adverse full-height challenge, not measured spandrel. Floor edge uniformity, head span, pier contact, arch and bearing remain unproved. Do not add transferred actions to their originating floor/wall totals.",
+  "scope": "Upper gross wall is adverse full-height challenge, not measured spandrel. The 7.5 G floor allowance may overlap some wall loads: this is a potentially overlapping sensitivity, not a disjoint design case or complete upper bound. Floor edge uniformity, head span, pier contact, arch and bearing remain unproved. Do not add transferred actions to their originating floor/wall totals.",
   "simply_supported_sagging_kNm": 2.7595402734375005,
   "sources": {
     "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
