@@ -9,12 +9,12 @@
     "label": "zerg7-envelope-corner-junction"
   },
   "claimedAt": "2026-11-02T10:51:13.775Z",
-  "heartbeatAt": "2026-11-02T11:09:25.662Z",
-  "expiresAt": "2026-11-02T11:54:25.662Z",
+  "heartbeatAt": "2026-11-02T11:11:51.572Z",
+  "expiresAt": "2026-11-02T11:56:51.572Z",
   "checkpoint": {
-    "evidence": "Draft PR #1267 head 6a889aa7b26b0a10719a915972f0204047becf88 tree 580f3401435e41f7aed67d0824bf27f6a0e29f80: HAD courtSouth and MAT pin WIP",
-    "next": "Recover and verify WIP, review STR #1269, coordinate SW corner and affected STR pin rebind",
-    "blocker": "Do not integrate WIP alone; STR rebind and continuous boundary and physical admission unresolved"
+    "evidence": "Draft PR #1267 head b6e76fbe9a2a8da1186de8ace9233433919cc3db tree 34a5aec0fd384f1868ebdae1a098c57334a4f54a; source-checked SW plan, two sections, unsealed crossing failure and schedule; HAD generator SHA256 2c60c151",
+    "next": "Bind corrected STR station after disjoint rebind; coordinate shared integration and peer review final source identities",
+    "blocker": "No continuous capillary air/gas seal, physical admission or complete structural capacity; do not integrate without affected STR pin rebind"
   },
   "branch": "work/zerg7-envelope-corner-junction",
   "predecessor": {
