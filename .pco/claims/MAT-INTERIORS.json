@@ -9,8 +9,8 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-01T23:54:57.716Z",
-  "expiresAt": "2026-11-02T00:39:57.716Z",
+  "heartbeatAt": "2026-11-02T00:08:40.860Z",
+  "expiresAt": "2026-11-02T00:53:40.860Z",
   "branch": "work/zerg4-interiors-whole-house",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -36,9 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1233 head31fc94156d54b53712624f2ff6ff02cc6287c530 tree686b5a7f87ea5c292e76607549e83401e11c70d4; native exact tree and latest main eab4ec03 ancestry/complete STR tree verified. Ordinary trim, loose-furnishing, utility splash and protected void ceiling occurrences reconciled; source repro/integrity pass.",
-    "next": "Bind one final HAD family/emitter source and final IAS/services renewal records; independent exact combined-source review then assess authoritative development closeout.",
-    "blocker": "Coherent geometry068e inspected zero clashes and matched wet fixtures; final600 family/emitter/renewal authority not frozen. Product/material/physical acceptance remains distinct."
+    "evidence": "PR1233 head3b1e9b365af186481ba6c90ae60e865bc0046b51 tree780536103ffb66987738c1c45e0644f6e9216ced: exact family600 delta review on IAS30cf1109, held-transfer611.422 negative/fixed565.139, candidate acceptance table; source repro pass, latestmain eab4 ancestry retained.",
+    "next": "Bind single final coherent HAD family/emitter source and final IAS/services renewal records; exact combined-source independent review and owning development-exit assessment.",
+    "blocker": "Final numeric authority held for emitter/family/renewal composition. Current geometry and service imports remain explicit older controls. No product/material/physical acceptance implied."
   },
   "pr": 1233
 }
