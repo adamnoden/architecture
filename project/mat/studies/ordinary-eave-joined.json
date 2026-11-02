@@ -7,9 +7,9 @@
     },
     "HADsceneProjection": {
       "path": "project/had/studies/open-north-facade-projection.json",
-      "blob": "621d7c41da4ebb9b9fa810be239f8b35eb442106"
+      "blob": "eb70d77ee57571088c4a73caa076681dc00590cd"
     },
-    "HADgeneratorSHA256": "9bc7b9672a7ee451115ac87519faa279ac40a87a470a284bacb05eed9da25537",
+    "HADgeneratorSHA256": "2c60c151478b7596acc3dda8fe5630d43f6365e118956aee22b57b419fd954a6",
     "STR": {
       "path": "project/str/studies/open-loggia-support.json",
       "blob": "20dec4384d09a0d02075fdd34a247e775532763b"
