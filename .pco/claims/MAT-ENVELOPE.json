@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 20,
-  "state": "released",
-  "leaseId": "cb17698a-faa2-4295-b195-ad99536bf953",
+  "generation": 21,
+  "state": "claimed",
+  "leaseId": "74850e01-5d79-4ab4-b419-3b9628e34c8c",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg7-envelope-corner-junction"
+    "label": "zerg8-envelope-field"
   },
-  "claimedAt": "2026-11-02T10:51:13.775Z",
-  "heartbeatAt": "2026-11-02T12:56:44.093Z",
-  "expiresAt": "2026-11-02T12:56:44.093Z",
+  "claimedAt": "2026-11-02T12:57:38.664Z",
+  "heartbeatAt": "2026-11-02T12:57:38.664Z",
+  "expiresAt": "2026-11-02T13:42:38.664Z",
   "checkpoint": {
-    "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; scoped generators, default HAD and repository checks passed",
-    "next": "Root observes exact-head CI and runs fresh publication preflight; controller releases MAT20 after verified merge and claims MAT21",
-    "blocker": "Complete carrier/field, structural/site and physical admission remain open; no adoption asserted"
+    "evidence": "Verified MAT20 merged PR #1273 main fad06e513046ad1d198b9d48b2e0505a3384616e; full boundary remains incomplete",
+    "next": "Develop below-warm-structure field, perimeter, support and movement against actual envelope and STR21",
+    "blocker": "No site, physical, product or structural acceptance"
   },
-  "branch": "work/zerg-corner-convergence",
+  "branch": "work/zerg8-envelope-field",
   "predecessor": {
-    "leaseId": "0741c020-8615-4920-aba4-2b21bcc269b4",
-    "generation": 19,
-    "branch": "work/zerg-recovery-roof-export",
-    "pr": 1263,
+    "leaseId": "cb17698a-faa2-4295-b195-ad99536bf953",
+    "generation": 20,
+    "branch": "work/zerg-corner-convergence",
+    "pr": 1273,
     "checkpoint": {
-      "evidence": "Shared draft PR #1263 head 247608959f4557c1974a941a5a48708939cd1788 tree 10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; all nine MAT19 blobs exact to bounded-PASS reviewed PR #1259 head 2c1c5502; six old HAD outputs unchanged; root generator/repository checks pass",
-      "next": "Root observes exact-head CI, performs fresh canonical preflight, and expected-head merge if earned; then MAT gen19 release and bounded issue progress",
-      "blocker": "Seat tolerance/bearing and STR adoption, exact components, 3D movement/fire/site/physical verification, ridge/hip/valley and six MAT rows remain open"
+      "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; scoped generators, default HAD and repository checks passed",
+      "next": "Root observes exact-head CI and runs fresh publication preflight; controller releases MAT20 after verified merge and claims MAT21",
+      "blocker": "Complete carrier/field, structural/site and physical admission remain open; no adoption asserted"
     }
   },
   "recoverySource": {
-    "leaseId": "0741c020-8615-4920-aba4-2b21bcc269b4",
-    "generation": 19,
-    "branch": "work/zerg-recovery-roof-export",
-    "pr": 1263,
+    "leaseId": "cb17698a-faa2-4295-b195-ad99536bf953",
+    "generation": 20,
+    "branch": "work/zerg-corner-convergence",
+    "pr": 1273,
     "checkpoint": {
-      "evidence": "Shared draft PR #1263 head 247608959f4557c1974a941a5a48708939cd1788 tree 10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; all nine MAT19 blobs exact to bounded-PASS reviewed PR #1259 head 2c1c5502; six old HAD outputs unchanged; root generator/repository checks pass",
-      "next": "Root observes exact-head CI, performs fresh canonical preflight, and expected-head merge if earned; then MAT gen19 release and bounded issue progress",
-      "blocker": "Seat tolerance/bearing and STR adoption, exact components, 3D movement/fire/site/physical verification, ridge/hip/valley and six MAT rows remain open"
+      "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; scoped generators, default HAD and repository checks passed",
+      "next": "Root observes exact-head CI and runs fresh publication preflight; controller releases MAT20 after verified merge and claims MAT21",
+      "blocker": "Complete carrier/field, structural/site and physical admission remain open; no adoption asserted"
     }
-  },
-  "pr": 1273,
-  "releasedAt": "2026-11-02T12:56:44.093Z",
-  "releaseReason": "completed"
+  }
 }
