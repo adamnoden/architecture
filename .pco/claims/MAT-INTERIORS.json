@@ -9,9 +9,9 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-02T01:58:48.080Z",
-  "expiresAt": "2026-11-02T02:43:48.080Z",
-  "branch": "work/zerg4-interiors-whole-house",
+  "heartbeatAt": "2026-11-02T02:27:15.274Z",
+  "expiresAt": "2026-11-02T03:12:15.274Z",
+  "branch": "work/zerg5-house-integration-20261102",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
     "leaseId": "17844eac-e5ae-487e-ab87-f02d04893b87",
@@ -36,9 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Independent full and focused MAT review accepted by commander. Frozen PR1233 d18a3a055ac8e16b145b75408ebcf857f76e6353 tree efdb8665f512f8ed57cc73eb9399ea94ff1b666c. Combined actual-history QA5216caf5 tree df0d498b passes own and services DEFAULT canonical-path reproducers with25fa/e827 inputs and no overrides; owned SVG unchanged from reviewed40ed.",
-    "next": "Await actual shared integration branch/PR identity from root, deliberately bind existing MAT13 and verify unchanged owned files. Coordinate proposed lifecycle/evidence patch only after shared DEFAULT checks.",
-    "blocker": "No MAT-owned development blocker; root-controlled shared integration/CI/merge and explicit lease rebinding pending. No material/product/physical admission or owner residue approval."
+    "evidence": "Root verified shared PR1244 head2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 baseffbe. Independent whole MAT development exit/focused correctedHAD review accepted; combined canonical-path DEFAULT checks pass. Exact status-only owner readback caad9/treee2a398b4: only status/programmeLifecycle differ from reviewed d18a; remaining16family18occurrence data and SVG identical. Four correct lease footer lines verified by root.",
+    "next": "Existing MAT13 deliberately associated with shared branch/PR1244; await root exact-head CI/preflights/merge, then verified release.",
+    "blocker": "Exact-head shared CI/preflights/merge pending; no source/head change or new claim. No selected-house material/product/physical/technical/export admission or owner exception."
   },
-  "pr": 1233
+  "pr": 1244
 }
