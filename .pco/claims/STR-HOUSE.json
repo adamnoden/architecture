@@ -9,12 +9,12 @@
     "label": "zerg-str-next-nodes"
   },
   "claimedAt": "2026-11-02T12:58:14.324Z",
-  "heartbeatAt": "2026-11-02T13:23:26.144Z",
-  "expiresAt": "2026-11-02T14:08:26.144Z",
+  "heartbeatAt": "2026-11-02T13:34:08.000Z",
+  "expiresAt": "2026-11-02T14:19:08.000Z",
   "checkpoint": {
-    "evidence": "Draft PR 1274 head 0907999f15bf724de95096f896c0c15537fc30f6 tree c3d9f3b22b61118a65af153b6e693aa1aa05d0d8; local constant-depth arm route and roof-tip challenger",
-    "next": "Independent geometry, window, load and roof-tip review; coordinate MAT21 field source before integration",
-    "blocker": "Full roof, arm/pile capacity, all wall loads, envelope and site remain open"
+    "evidence": "Draft PR 1274 corrected head 8b01255c4d45520151218e564941e68f8b814f03 tree 3da23e25861bcc1926bdadb479ea41e7526773f3; two-support tip reactions and conditional ground projection",
+    "next": "Independent review of arm/node/roof-tip source; coordinate MAT field and final integration",
+    "blocker": "Actual slab/rebar, full roof and wall loads, arm/pile resistance, MAT field and site remain open"
   },
   "branch": "work/zerg-str-next-nodes-20261102",
   "predecessor": {
