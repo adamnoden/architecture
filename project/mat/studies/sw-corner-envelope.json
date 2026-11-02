@@ -182,6 +182,35 @@
     ],
     "limit": "These fractions only demonstrate one nonnegative roof-only equilibrium allocation; actual stiffness, bending, contact, tie capacity, wind combination and biaxial force path belong to STR. The pier replaces a joined 0.0644 m2 ordinary core overlap and projects a 133\u00d7133 mm toe into both storeys; furniture rectangles do not certify door/route/fire/roof clearances. Roof plate gap is an assumed inherited SHS level, not actual hip seat/tolerance."
   },
+  "splitRodDiaphragmRedesign": {
+    "plateXY": [
+      262.5,
+      262.5,
+      562.5,
+      562.5
+    ],
+    "plateZ": [
+      -574,
+      -571
+    ],
+    "plateThickness_mm": 3,
+    "upperRodZ": [
+      -571,
+      6640
+    ],
+    "lowerRodZ": [
+      -990,
+      -574
+    ],
+    "upperRodLength_mm": 7211,
+    "lowerRodLength_mm": 416,
+    "weldNote": "Four upper and four lower rod ends join opposite faces of one unperforated plate. Weld size, alloy, fatigue, anchorage, contact and construction access not designed.",
+    "plateMass_kg_at_7850": 2.1195,
+    "thermalSeriesIndicator_WK": 0.16446325667803577,
+    "boundaryResult": "FAIL as a complete envelope: no evidenced gas-tight and capillary-tight junction from plate perimeter to actual field barrier, no compatible movement joint, and no admissible field gas barrier established. An unperforated plate alone does not close its perimeter or the rod/concrete interfaces.",
+    "movementChallenge": "Rigid welded crossing ties warm and cold receivers; imposed relative translation, rotation, shrinkage and temperature cycles load bars, welds, plate, concrete and perimeter joint. Their magnitudes and allowable movement require a coupled structural/thermal design; do not assert a sliding or sealed joint.",
+    "erection": "Prefabricate and inspect accessible rod-to-plate welds; survey and anchor lower rods before casting cold receiver; protect plate and join its perimeter before closing the warm work; position long upper rods and reinforcement, then cast warm receiver and pier. This is a proposed sequence requiring fit, temporary support and pre-concealment inspection, not a method statement."
+  },
   "controls": {
     "twoTensionOnly": {
       "centresXY": [
@@ -268,5 +297,5 @@
       "hold": "Core/cold differential motion, corrosion/electrochemistry, bored-unit bond/crack, cap-weld/tool/cage access, pre-concealment test and eventual embedded-anchor renewal method"
     }
   ],
-  "decision": "Retain inward four-bore station as an unadopted STR/MAT shared geometry with exact failed water/air/capillary continuity. Reject bare shanks and solid RC bypass as complete envelope solutions. Do not infer conventional component availability, material approval, site suitability or six-row completion."
+  "decision": "A split-rod unperforated diaphragm removes the four plate penetrations in principle but its perimeter and movement interface remain unresolved; neither crossing is a complete envelope. Reject bare shanks and solid RC bypass as complete envelope solutions. Do not infer conventional component availability, material approval, site suitability or six-row completion."
 }
