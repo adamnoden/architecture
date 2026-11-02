@@ -120,9 +120,35 @@
         -80
       ],
       "upstandAboveSlabTop_mm": 100,
-      "overlapSlabAxisRectangle_m2": 0.0529,
-      "outsideSlabAxisRectangle_m2": 0.0371,
-      "limit": "Pad replaces local 100 mm glass at corner; concrete/slab monolithic reinforcement, actual casting, full thermal bridge and non-double-counted takeoff are unproved."
+      "conditionalOverlapIfFirstFloorRectangleProjected_m2": 0.0529,
+      "conditionalOutsideProjectedRectangle_m2": 0.0371,
+      "limit": "The projected rectangle is from first-floor SW-L; actual ground slab plan is not established. Pad occupies local 100 mm glass territory only if this HAD-aligned build-up is adopted; concrete/slab reinforcement, actual casting, thermal bridge and non-double-counted takeoff unproved."
+    },
+    "hypotheticalMeshControl": {
+      "groundMeshStatus": "H12/150 and 25 mm cover are first-floor source values only; not established ground reinforcement.",
+      "bottomBarCentreZ_mm": -349,
+      "barZ_mm": [
+        -355,
+        -343
+      ],
+      "trialStudZ_mm": [
+        -380,
+        -340
+      ],
+      "regular200Vs150BestClear_mm": 16,
+      "regularGridResult": "If studs are fixed to 200 mm grid and mesh repeats at 150 mm, residues 0/50/100 give some centre separation at most25 mm for any phase; after radii9 mm clear at best16 mm, below illustrative22 mm comparator.",
+      "independentMidpointStudCoordinates_mm": [
+        1075,
+        1225,
+        1375,
+        1525,
+        1675,
+        1825,
+        1975
+      ],
+      "count2D": 49,
+      "minimumPlanClearToHypotheticalBars_mm": 66,
+      "limit": "This is a hypothetical mesh and ideal plan only. Actual ground cage, bar layers, physical stud locations, edge coverage, weld/access, transfer and 22 mm applicability are not established; no accepted stud array."
     },
     "falseworkCell": {
       "xy_mm": [
