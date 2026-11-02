@@ -2,7 +2,7 @@
 <style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:2.9px}.title{font-size:4.4px;font-weight:bold}</style>
 <rect width="420" height="297" fill="#faf8f1"/>
 <text x="12" y="13" class="title">OPEN N / actual stair, midlanding and receiving frame</text>
-<text x="12" y="22" class="">HAD0b2f7d48 / 27finish / 1094body +200well;1004betweenrails / unadopted; no body,guard or whole-house PASS</text>
+<text x="12" y="22" class="">HAD068e33ae / 27finish / 1094body +200well;1004betweenrails / unadopted; no body,guard or whole-house PASS</text>
 <text x="12" y="34" class="title">A / FINITE PLAN · 1:20</text>
 <rect x="20.350" y="52.850" width="119.400" height="216.150" fill="#e5ebe7" stroke="#345460" stroke-width=".35"/>
 <rect x="75.050" y="134.000" width="10.000" height="135.000" fill="#faf8f1" stroke="#345460" stroke-width=".35"/>
@@ -48,6 +48,7 @@
 <text x="215" y="101" class="">Actualmasonrypadsneedfd≥1.164MPa beforesecondorder/bedadmission.</text>
 <text x="215" y="109" class="">EastH20downhooks/postcageenumerated; upperwaist/trimmerjointstillopen.</text>
 <text x="215" y="117" class="">Guardposts/anchors,fullphysicalslabedge/portmass andwindow25jointunearned.</text>
+<text x="215" y="125" class="">Reserve0.534mm only;145waist or400microstrain challenges exceed11.7.</text>
 <text x="215" y="134" class="title">C / PROJECTED FLIGHT SECTIONS · 1:30</text>
 <rect x="216.667" y="151.667" width="6.667" height="10.000" fill="#c5cfca" stroke="#345460" stroke-width=".35"/>
 <rect x="313.333" y="206.500" width="8.333" height="12.333" fill="#c5cfca" stroke="#345460" stroke-width=".35"/>
@@ -57,5 +58,5 @@
 <path d="M313.333,200.750 L303.333,200.750 L303.333,195.000 L293.333,195.000 L293.333,189.250 L283.333,189.250 L283.333,183.500 L273.333,183.500 L273.333,177.750 L263.333,177.750 L263.333,172.000 L253.333,172.000 L253.333,166.250 L243.333,166.250 L243.333,160.500 L233.333,160.500 L233.333,154.750 L223.333,154.750 L223.333,149.000" fill="none" stroke="#b4753c" stroke-width=".7"/>
 <path d="M313.3333333333333,212.26763599752965 L223.33333333333334,160.51763599752968" fill="none" stroke="#b4753c" stroke-width=".65"/>
 <text x="215" y="277" class="">Greenlower/ochreupperprojected; differentxterritories, notoverlappingflights.</text>
-<text x="12" y="289" class="">ONEcurrentcandidate: actualwaist/beamgeometry, tributaryloadsandcontinuouscompatibility. Frozenunearnednodeprototypecontinuesawaitspecialist.</text>
+<text x="12" y="289" class="">ONEcurrentcandidate: actualwaist/beamgeometry, tributaryloadsandcontinuouscompatibility. Frozen rejected node evidence preserved; no foundation release.</text>
 </svg>
