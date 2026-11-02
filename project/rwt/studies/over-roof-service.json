@@ -23,7 +23,7 @@
     "horizontalAreaM2": 277.046,
     "flowLitresPerSecond": 16.62276,
     "existingLocalEventLitresPerSecond": 3.60375,
-    "extraCoveredGroundM2": 133.046,
+    "outsideShellProjectionM2": 133.046,
     "ridgeZmm": 12551.881660993378,
     "assumedBeamLowerEnvelopeZmm": 9300,
     "sourceHouseRidgeZmm": 8090.903773579372,
