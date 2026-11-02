@@ -92,10 +92,23 @@
       7200
     ],
     "gateHead": 2250,
-    "gateLeaf": 1198.5,
-    "gateTipY": 5498.5,
+    "gateLeaf": 1195.5,
+    "gateTipY": 5495.5,
     "padLeadingY": 5700,
+    "padCentres": [
+      4600,
+      6000,
+      7400
+    ],
+    "padHalf": 200,
+    "drainCentres": [
+      5000,
+      7000
+    ],
+    "drainY": 5900,
+    "drainOuter": 150,
     "breatherAtScreen": 6993.1589086267895,
+    "breatherAtFrameOutside": 6981.96752483107,
     "primaryCrossTime": 0.075,
     "primaryCrossZ": 6979.147843369001
   },
@@ -118,6 +131,9 @@
     "secondaryStartsBelowScreenTop": true,
     "screenBreatherGap": true,
     "screenGatePadGap": true,
+    "screenPadFrameGap": true,
+    "drainToAdjacentPadGap": true,
+    "deckInnerStrip": true,
     "screenFrameToReceiver": true,
     "openGateLeafAxisSeparation": true,
     "platform": true,
