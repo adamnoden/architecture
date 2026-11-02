@@ -979,6 +979,13 @@ wet['receiving_pier_check']=dict(core=[260,450],height=3200,steel='4H16;H6/100 c
                               limit='No unbalanced arch thrust/wind accepted; ties must close actual springing forces locally.')
 assert wet['receiving_pier_check']['linear_interaction']<1
 
+# Replace the old stair node's beam-edge y7132.5 by its real reaction axis7257.5.
+# The100kN point allowance remains an allowance, not the actual75 action.
+for node in special_nodes:
+    if node['id']=='stair-post':
+        node.update(xy=[2942.5,7257.5],actual_point_ULS=mid_post_N,actual_M=mid_post_M,
+            old_xy=[2942.5,7132.5],prototype_point_allowance=100)
+
 # Support-node locations are physical plan rectangles. Weather beams share one
 #600wide body; low axial ties cross OPEN ground loggia instead of a raised beam
 # intersecting its sloping deck.
@@ -1245,8 +1252,37 @@ collector_sec=rc(260,140,103,2*area(12),25)
 collector_P=roof_cases['ULS-down']['ordinary_frame']['RA']
 collector_w=1.35*.26*.14*25
 collector_M=collector_P*1.3/4+collector_w*1.3**2/8
-collector_V=collector_P/2+collector_w*1.3/2
-assert collector_M<collector_sec['MR'] and collector_V<collector_sec['VRdc'] and collector_sec['ductility']
+collector_central_V=collector_P/2+collector_w*1.3/2
+collector_transfers=[]
+upper_openings={o['id']:o for o in had['openings']['FIRST']}
+for seat in roof_seats:
+    if not seat['opening_below']:continue
+    assert len(seat['opening_below'])==1
+    opening=upper_openings[seat['opening_below'][0]]
+    assert opening['width']==1000
+    transverse=seat['xy'][0] if seat['wall'].endswith(('north','south')) else seat['xy'][1]
+    a=(transverse-(opening['centre']-650))/1000;L=1.3
+    assert 0<a<L
+    RL=collector_P*(L-a)/L+collector_w*L/2
+    RR=collector_P*a/L+collector_w*L/2
+    points=[]
+    for pos,R in [(opening['centre']-650,RL),(opening['centre']+650,RR)]:
+        xy=[pos,seat['xy'][1]] if seat['wall'].endswith(('north','south')) else [seat['xy'][0],pos]
+        points.append(dict(xy=xy,R=R,roofpoint_only=R-collector_w*L/2))
+    maxM=max(RL*x-collector_w*x*x/2-collector_P*max(0,x-a) for x in [L*i/1000 for i in range(1001)])
+    assert math.isclose(RL+RR,collector_P+collector_w*L)
+    assert math.isclose(RR*L,collector_P*a+collector_w*L*L/2)
+    assert maxM<=collector_M+1e-9
+    collector_transfers.append(dict(seat=seat['id'],opening=opening['id'],point_offset=transverse-opening['centre'],
+        point_a=a,axis_span=L,bearing_axes=points,M=maxM,V=max(RL,RR),
+        lower_path='Upper collector to actual upperwindow piers; lower opening/arch and wallbase transmission still to qualify.'))
+collector_V=max(t['V'] for t in collector_transfers)
+collector_link=links(260,103,6,75)
+assert collector_M<collector_sec['MR'] and collector_sec['ductility']
+assert collector_V<min(collector_link['VRs'],collector_link['VRmax'])
+assert collector_link['pitch']<=collector_link['maximum_pitch']
+assert collector_central_V<collector_sec['VRdc']<collector_V # failed concrete-only actualoffset control
+
 purlin_M=roof_cases['ULS-down']['q_horizontal']*max(roof_trib)*3.245**2/8
 purlin_delta=5*(3+1.5)*max(roof_trib)*(3245**4)/(384*210000)*(cosroof**2/2410000+math.sin(pitch)**2/812000)
 roof=dict(source=dict(commit=MAT_ROOF_COMMIT,path=MAT_ROOF_PATH,sha256=MAT_ROOF_SHA),
@@ -1271,7 +1307,8 @@ roof=dict(source=dict(commit=MAT_ROOF_COMMIT,path=MAT_ROOF_PATH,sha256=MAT_ROOF_
                 M=collector_M,V=collector_V,upper_window_ring_extrados=6515,ring_clearance=25,
                 plate=[140,240,12],mineral_grout=10,top_of_plate=6702,
                 primary_under_at_support=mat_roof['primaryCentre']-40/cosroof,
-                links=links(260,103,6,75),
+                links=collector_link,central_point_shear_control=collector_central_V,actual_offset_transfers=collector_transfers,
+                concrete_only_actual_shear_pass=False,actual_offset_requires_links=True,
                 SLS_phi3_point_bound_mm=beam_SLS_bound(.26*.14*25,0,3*1.55*4.65/2,1.5*1.55*4.65/2,1.3,collector_sec),
                 SLS_shrink300_mm=300e-6/140*1300**2/8,
                 scope='No eccentric roofpoint assigned directly to an upperwindow arch. Actual pier bearing/cage continuity, plate/hold-down and lateral ring joints remain intrinsic work. Ordinary6550ceiling local15lining underside6525 means25drop; protected6444 hides beam.'),
@@ -1283,9 +1320,9 @@ roof=dict(source=dict(commit=MAT_ROOF_COMMIT,path=MAT_ROOF_PATH,sha256=MAT_ROOF_
 # whole-roof reaction model. Its finite first rail needs TWO actual supports;
 # area/tributary alone misses the uplift caused by the long eave cantilever.
 EDGE_PATH='project/mat/studies/loggia-roof-edge.json'
-EDGE_COMMIT='96005b88ef4f3aff98a660261aa2e99ac47f9101'
+EDGE_COMMIT='483a26c72b152ad68184545736216f150c31eb23'
 edge_raw=subprocess.check_output(['git','show',EDGE_COMMIT+':'+EDGE_PATH],cwd=ROOT)
-assert hashlib.sha256(edge_raw).hexdigest()=='30c356c0eace30c888fd32c29f10d87cdc2e7b9f843de2871b7e964fcba7ffa6'
+assert hashlib.sha256(edge_raw).hexdigest()=='c283308185babc8bdba9c56e47d1c1e1c6adc405db65c68c4a50b83678626288'
 edge=json.loads(edge_raw)
 assert edge['geometry']['endPurlinQ']==450 and edge['geometry']['postNormal']==346
 rail_pitch=3245/6/1000
@@ -1511,6 +1548,71 @@ roof['upper_window_eccentric_roof_control']=dict(raw_width=1000,rise=300,radial_
     fails_trial_mechanism=max(u_e)>.1075,
     limit='Ring1.35selfweight+actualULSroofpoint, not fullwindow/spandrelcase. Exposes unsafe directpoint assumption; does not prove no alternative thrustline or masonry capacity. Selected collector must physically bypass point to real piers.')
 assert roof['upper_window_eccentric_roof_control']['fails_trial_mechanism']
+
+# Join current SUPERSTRUCTURE actions to the foundation CONCEPT. Distinguish
+# action levels: finite floor edge reactions, roof collector exits and receiving
+# points are not disjoint totals to add blindly. No old850 node limit is re-earned.
+def nearest_ground_route(point):
+    options=[]
+    for ident,a,b,width in ground_routes:
+        axis=0 if a[0]!=b[0] else 1
+        t=max(0,min(1,(point[axis]-a[axis])/(b[axis]-a[axis])))
+        p=[a[i]+t*(b[i]-a[i]) for i in range(2)]
+        distance=math.dist(point,p)
+        options.append((distance,ident,p,width))
+    distance,ident,p,width=min(options)
+    assert distance<=width/2, (point,ident,distance)
+    return dict(route=ident,beam_axis=p,offset=[point[i]-p[i] for i in range(2)],distance=distance,
+        prototype_width=width,scope='Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred.')
+
+roof_exits=[]
+transfers_by_seat={t['seat']:t for t in collector_transfers}
+for seat in roof_seats:
+    exits=transfers_by_seat[seat['id']]['bearing_axes'] if seat['id'] in transfers_by_seat else [dict(xy=seat['xy'],R=seat['R_down'],roofpoint_only=seat['R_down'])]
+    for i,exit in enumerate(exits):
+        R=exit['roofpoint_only'];route=nearest_ground_route(exit['xy'])
+        roof_exits.append(dict(id=seat['id']+'-exit'+str(i),xy=exit['xy'],roof_ULS=R,
+            collector_selfweight_excluded_from_roof_area_sum=True,ground_concept=route,
+            plan_offset_moments=[abs(R*v/1000) for v in route['offset']],
+            admission='Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence.'))
+for name,outer,inner in [('SW',[332.5,332.5],[3917.5,3917.5]),('SE',[11667.5,332.5],[8082.5,3917.5]),
+                         ('NW',[332.5,11667.5],[3917.5,8082.5]),('NE',[11667.5,11667.5],[8082.5,8082.5])]:
+    for suffix,xy in [('outer',outer),('court',inner)]:
+        R=roof_cases['ULS-down']['corner_action_envelope']['RA'];route=nearest_ground_route(xy)
+        roof_exits.append(dict(id='corner-'+name+'-'+suffix,xy=xy,roof_ULS=R,ground_concept=route,
+            plan_offset_moments=[abs(R*v/1000) for v in route['offset']],
+            admission='Conservative collapsed-corner ACTION only. Finite jack/hip/tie/seat assembly is not yet earned; not a completed physical load path.'))
+roof_exit_total=sum(p['roof_ULS'] for p in roof_exits)
+assert math.isclose(roof_exit_total,roof_area*6.3)
+floor_area=sum((f['rectangle'][2]-f['rectangle'][0])*(f['rectangle'][3]-f['rectangle'][1])/1e6 for f in floor)
+floor_reaction_sum=sum(r['ULS_per_m']*math.dist(r['support_segment'][:2],r['support_segment'][2:])/1000 for r in floor_reactions)
+floor_load_sum=sum((1.35*f['G']+1.5*f['Q'])*(f['rectangle'][2]-f['rectangle'][0])*(f['rectangle'][3]-f['rectangle'][1])/1e6 for f in floor)
+assert math.isclose(floor_reaction_sum,floor_load_sum)
+WARM_PATH='project/mat/studies/warm-receiving-grid.json'
+warm_raw=subprocess.check_output(['git','show',EDGE_COMMIT+':'+WARM_PATH],cwd=ROOT)
+assert hashlib.sha256(warm_raw).hexdigest()=='a2b15c9505ee3888ffb892aa7e5182f80f4aa5a70bd5058a915df6e3bec4de99'
+warm=json.loads(warm_raw)
+rounded={v['name']:v for v in warm['receivers']}
+assert mid_post_N<=rounded['stair']['N_ULS'] and mid_post_M<=rounded['stair']['M_ULS']
+assert math.isclose(pier_N,rounded['wet']['N_ULS'],abs_tol=1e-6,rel_tol=0) and math.isclose(pier_M,rounded['wet']['M_ULS'],abs_tol=1e-6,rel_tol=0)
+grid['current_house_concept_join']=dict(status='Preferred connected warmreceiving/coldgrid development direction; conditional and incomplete, not foundation selection',
+    source_HAD=HAD_COMMIT,roof_parent=MAT_ROOF_COMMIT,
+    floor_level_inventory=dict(axis_field_area=floor_area,ULS=floor_load_sum,reaction_sum=floor_reaction_sum,
+        scope='Nonoverlapping16axisfields only. Retain wallwidth/cantileverbands, entrancebridge, actualports, heavywalls and stair as explicit exclusions. Do not call this full physical slab mass or add transferred wet/stair reactions twice.'),
+    roof_control_exits=roof_exits,roof_ULS_conserved=roof_exit_total,
+    roof_scope='Parent ordinary frame plus collapsedcorner action envelope only. q450 receiving delta remains separate until whole primary/corner joints revalidated. No roof uplift/lateral or ceiling load silently absorbed.',
+    warm_source=dict(commit=EDGE_COMMIT,path=WARM_PATH,sha256=hashlib.sha256(warm_raw).hexdigest()),
+    warm_receiver_actuals=[dict(id='wet-max',N=pier_N,M=pier_M,source='wet.receiving_pier_check',rounded_MAT=[rounded['wet']['N_ULS'],rounded['wet']['M_ULS']]),
+                           dict(id='stair-midpost',xy=[2942.5,7257.5],N=mid_post_N,M=mid_post_M,rounded_MAT=[75,2.30])],
+    cold_interface_readback=dict(top=warm['recipe']['coldBeamTop'],member_soffit=warm['recipe']['coldBeamSoffitHypothesis'],
+        depth=450,member_only_required=warm['depth']['memberOnlyRequired'],member_only_Dcost=warm['depth']['memberOnlyDcost'],
+        deepest_node_not_frozen=True),
+    preferred_route='Actual floor/RCreceivers and tied masonry above monolithic warm reinforced spreader; continuous mineral bearing/DPC to connected coldgrid, then sitejustified deep supports. Separate cold weatherleaf; no RC/starter bypass across thermalbearing.',
+    adoption_conditions=['Complete actual fullmass/opening/heavywall and roofcorner/ceiling action inventory, with lateralcouples/uplift and nodal sharing',
+        'Design warm reinforced spreading/contact and horizontal shear/restraint over actual AAC/DPC; roundedpoint comparison is not a verified spreader',
+        'Select coldreceiver/node depth from actual combined reactions, preserving failed400node/lowtie controls; no850joint or D1800wholehouse pass',
+        'Maintain passive ground/water separation and an inhabited accessible approach at the actual site; no groundwater/pilecapacity invented'],
+    no_new_exit='Final pilebar fabrication is not a new STR-HOUSE exit. Known failed detail cannot be adopted; a credible reaction/receiver topology must still be earned before a passed proposition.')
 
 for w,L in [(12.7,3.245),(0,1)]:
     a=udl(w,L)
@@ -1876,7 +1978,7 @@ for i,(key,c) in enumerate(arches['cases'].items()):
     txt(12,276+6*i,f"{key}: H{c['H']:.2f}kN / e{1000*c['max_abs_e']:.1f}mm / {pressure}")
 txt(12,338,'The central-roofpoint case is rejected; actual roofpoints use the collector/endpier proposal.')
 for i,t in enumerate(['Corner square collapse is a support-action ceiling, not a proof of actual jack/cantilever members or loadsharing.',
-                      'Uppercollector: gravity section screen only; continuous loops, pier reactions, hold-down and lateral closures still to earn.',
+                      f'CollectoractualoffsetV{collector_V:.3f}>VRdc18.878;H6/75VRs30.389needed. Loops/hold-down/lateral unearned.',
                       'Lowerarches: actual courtwindows create point reactions; gross uniform masonry cannot replace that transfer.',
                       'Known400pilejoint remains rejected; D1300 is only the earlier conditional connected-foundation concept.',
                       'Stair170control8.624/adverse10.312; nominal joints only; landingEWenddevelopment remains open.']):txt(12,355+7*i,t)

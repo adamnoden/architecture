@@ -80,7 +80,7 @@
 <text x="12" y="318" class="">court-north/rejected-central-roofpoint: H48.56kN / e117.7mm / OUTSIDE RING</text>
 <text x="12" y="338" class="">The central-roofpoint case is rejected; actual roofpoints use the collector/endpier proposal.</text>
 <text x="12" y="355" class="">Corner square collapse is a support-action ceiling, not a proof of actual jack/cantilever members or loadsharing.</text>
-<text x="12" y="362" class="">Uppercollector: gravity section screen only; continuous loops, pier reactions, hold-down and lateral closures still to earn.</text>
+<text x="12" y="362" class="">CollectoractualoffsetV20.490&gt;VRdc18.878;H6/75VRs30.389needed. Loops/hold-down/lateral unearned.</text>
 <text x="12" y="369" class="">Lowerarches: actual courtwindows create point reactions; gross uniform masonry cannot replace that transfer.</text>
 <text x="12" y="376" class="">Known400pilejoint remains rejected; D1300 is only the earlier conditional connected-foundation concept.</text>
 <text x="12" y="383" class="">Stair170control8.624/adverse10.312; nominal joints only; landingEWenddevelopment remains open.</text>

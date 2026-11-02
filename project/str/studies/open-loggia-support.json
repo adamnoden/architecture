@@ -3049,7 +3049,7 @@
       {
         "xy": [
           2942.5,
-          7132.5
+          7257.5
         ],
         "source": "stair-post",
         "point_ULS": 100,
@@ -4195,7 +4195,900 @@
         "depressed_soffit_lowest": -522.5,
         "minimum_height_to_depressed_soffit": 27.5
       }
-    ]
+    ],
+    "current_house_concept_join": {
+      "status": "Preferred connected warmreceiving/coldgrid development direction; conditional and incomplete, not foundation selection",
+      "source_HAD": "cfacc96c61ce1be5befa3bc0a10086c7cb6b4202",
+      "roof_parent": "f376a8a75a12838b2026a9a971ac33bfef470469",
+      "floor_level_inventory": {
+        "axis_field_area": 90.57854999999999,
+        "ULS": 1204.5484575,
+        "reaction_sum": 1204.5484575,
+        "scope": "Nonoverlapping16axisfields only. Retain wallwidth/cantileverbands, entrancebridge, actualports, heavywalls and stair as explicit exclusions. Do not call this full physical slab mass or add transferred wet/stair reactions twice."
+      },
+      "roof_control_exits": [
+        {
+          "id": "N-4377.5-0-exit0",
+          "xy": [
+            4377.5,
+            8082.5
+          ],
+          "roof_ULS": 22.703625000000002,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "court-N-W",
+            "beam_axis": [
+              4377.5,
+              8050.0
+            ],
+            "offset": [
+              0.0,
+              32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.0,
+            0.7378678125000001
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "N-4377.5-1-exit0",
+          "xy": [
+            4377.5,
+            11667.5
+          ],
+          "roof_ULS": 22.703625000000002,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-N-W",
+            "beam_axis": [
+              4377.5,
+              11700.0
+            ],
+            "offset": [
+              0.0,
+              -32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.0,
+            0.7378678125000001
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "N-7622.5-0-exit0",
+          "xy": [
+            7622.5,
+            8082.5
+          ],
+          "roof_ULS": 22.703625000000002,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "court-N-E",
+            "beam_axis": [
+              7622.5,
+              8050.0
+            ],
+            "offset": [
+              0.0,
+              32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.0,
+            0.7378678125000001
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "N-7622.5-1-exit0",
+          "xy": [
+            7622.5,
+            11667.5
+          ],
+          "roof_ULS": 22.703625000000002,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-N-E",
+            "beam_axis": [
+              7622.5,
+              11700.0
+            ],
+            "offset": [
+              0.0,
+              -32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.0,
+            0.7378678125000001
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "S-4377.5-0-exit0",
+          "xy": [
+            3250,
+            332.5
+          ],
+          "roof_ULS": 3.0125963942307714,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-S",
+            "beam_axis": [
+              3250.0000000000005,
+              300.0
+            ],
+            "offset": [
+              -4.547473508864641e-13,
+              32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            1.3699702295665572e-15,
+            0.09790938281250007
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "S-4377.5-0-exit1",
+          "xy": [
+            4550,
+            332.5
+          ],
+          "roof_ULS": 19.69102860576923,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-S",
+            "beam_axis": [
+              4550.0,
+              300.0
+            ],
+            "offset": [
+              0.0,
+              32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.0,
+            0.6399584296874999
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "S-4377.5-1-exit0",
+          "xy": [
+            4377.5,
+            3917.5
+          ],
+          "roof_ULS": 22.703625000000002,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "court-S",
+            "beam_axis": [
+              4377.5,
+              3950.0
+            ],
+            "offset": [
+              0.0,
+              -32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.0,
+            0.7378678125000001
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "S-7622.5-0-exit0",
+          "xy": [
+            7450,
+            332.5
+          ],
+          "roof_ULS": 19.69102860576923,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-S",
+            "beam_axis": [
+              7449.999999999999,
+              300.0
+            ],
+            "offset": [
+              9.094947017729282e-13,
+              32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            1.7908886189406284e-14,
+            0.6399584296874999
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "S-7622.5-0-exit1",
+          "xy": [
+            8750,
+            332.5
+          ],
+          "roof_ULS": 3.012596394230769,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-S",
+            "beam_axis": [
+              8750.0,
+              300.0
+            ],
+            "offset": [
+              0.0,
+              32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.0,
+            0.0979093828125
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "S-7622.5-1-exit0",
+          "xy": [
+            7622.5,
+            3917.5
+          ],
+          "roof_ULS": 22.703625000000002,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "court-S",
+            "beam_axis": [
+              7622.5,
+              3950.0
+            ],
+            "offset": [
+              0.0,
+              -32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.0,
+            0.7378678125000001
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "W-4377.5-0-exit0",
+          "xy": [
+            332.5,
+            3950
+          ],
+          "roof_ULS": 15.237625240384618,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-W",
+            "beam_axis": [
+              300.0,
+              3950.0
+            ],
+            "offset": [
+              32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.49522282031250014,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "W-4377.5-0-exit1",
+          "xy": [
+            332.5,
+            5250
+          ],
+          "roof_ULS": 7.465999759615386,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-W",
+            "beam_axis": [
+              300.0,
+              5250.0
+            ],
+            "offset": [
+              32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.24264499218750005,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "W-4377.5-1-exit0",
+          "xy": [
+            3917.5,
+            4377.5
+          ],
+          "roof_ULS": 22.703625000000002,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "court-W",
+            "beam_axis": [
+              3950.0,
+              4377.5
+            ],
+            "offset": [
+              -32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.7378678125000001,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "W-7622.5-0-exit0",
+          "xy": [
+            332.5,
+            6750
+          ],
+          "roof_ULS": 7.465999759615386,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-W",
+            "beam_axis": [
+              300.0,
+              6750.0
+            ],
+            "offset": [
+              32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.24264499218750005,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "W-7622.5-0-exit1",
+          "xy": [
+            332.5,
+            8050
+          ],
+          "roof_ULS": 15.237625240384618,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-W",
+            "beam_axis": [
+              300.0,
+              8050.0
+            ],
+            "offset": [
+              32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.49522282031250014,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "W-7622.5-1-exit0",
+          "xy": [
+            3917.5,
+            7622.5
+          ],
+          "roof_ULS": 22.703625000000002,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "court-W",
+            "beam_axis": [
+              3950.0,
+              7622.5
+            ],
+            "offset": [
+              -32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.7378678125000001,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "E-4377.5-0-exit0",
+          "xy": [
+            8082.5,
+            4377.5
+          ],
+          "roof_ULS": 22.703625000000002,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "court-E",
+            "beam_axis": [
+              8050.0,
+              4377.5
+            ],
+            "offset": [
+              32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.7378678125000001,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "E-4377.5-1-exit0",
+          "xy": [
+            11667.5,
+            3950
+          ],
+          "roof_ULS": 15.237625240384618,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-E",
+            "beam_axis": [
+              11700.0,
+              3950.0
+            ],
+            "offset": [
+              -32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.49522282031250014,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "E-4377.5-1-exit1",
+          "xy": [
+            11667.5,
+            5250
+          ],
+          "roof_ULS": 7.465999759615386,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-E",
+            "beam_axis": [
+              11700.0,
+              5250.0
+            ],
+            "offset": [
+              -32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.24264499218750005,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "E-7622.5-0-exit0",
+          "xy": [
+            8082.5,
+            7622.5
+          ],
+          "roof_ULS": 22.703625000000002,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "court-E",
+            "beam_axis": [
+              8050.0,
+              7622.5
+            ],
+            "offset": [
+              32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.7378678125000001,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "E-7622.5-1-exit0",
+          "xy": [
+            11667.5,
+            6750
+          ],
+          "roof_ULS": 7.465999759615386,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-E",
+            "beam_axis": [
+              11700.0,
+              6750.0
+            ],
+            "offset": [
+              -32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.24264499218750005,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "E-7622.5-1-exit1",
+          "xy": [
+            11667.5,
+            8050
+          ],
+          "roof_ULS": 15.237625240384618,
+          "collector_selfweight_excluded_from_roof_area_sum": true,
+          "ground_concept": {
+            "route": "outer-E",
+            "beam_axis": [
+              11700.0,
+              8050.0
+            ],
+            "offset": [
+              -32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.49522282031250014,
+            0.0
+          ],
+          "admission": "Roofpoint portion only. Through-wall/opening path, collector seat/loops and foundation receiving section are not proven by plan coincidence."
+        },
+        {
+          "id": "corner-SW-outer",
+          "xy": [
+            332.5,
+            332.5
+          ],
+          "roof_ULS": 68.11087500000001,
+          "ground_concept": {
+            "route": "outer-S",
+            "beam_axis": [
+              332.5,
+              300.0
+            ],
+            "offset": [
+              0.0,
+              32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.0,
+            2.2136034375
+          ],
+          "admission": "Conservative collapsed-corner ACTION only. Finite jack/hip/tie/seat assembly is not yet earned; not a completed physical load path."
+        },
+        {
+          "id": "corner-SW-court",
+          "xy": [
+            3917.5,
+            3917.5
+          ],
+          "roof_ULS": 68.11087500000001,
+          "ground_concept": {
+            "route": "court-S",
+            "beam_axis": [
+              3950,
+              3950
+            ],
+            "offset": [
+              -32.5,
+              -32.5
+            ],
+            "distance": 45.96194077712559,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            2.2136034375,
+            2.2136034375
+          ],
+          "admission": "Conservative collapsed-corner ACTION only. Finite jack/hip/tie/seat assembly is not yet earned; not a completed physical load path."
+        },
+        {
+          "id": "corner-SE-outer",
+          "xy": [
+            11667.5,
+            332.5
+          ],
+          "roof_ULS": 68.11087500000001,
+          "ground_concept": {
+            "route": "outer-E",
+            "beam_axis": [
+              11700.0,
+              332.5
+            ],
+            "offset": [
+              -32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            2.2136034375,
+            0.0
+          ],
+          "admission": "Conservative collapsed-corner ACTION only. Finite jack/hip/tie/seat assembly is not yet earned; not a completed physical load path."
+        },
+        {
+          "id": "corner-SE-court",
+          "xy": [
+            8082.5,
+            3917.5
+          ],
+          "roof_ULS": 68.11087500000001,
+          "ground_concept": {
+            "route": "court-E",
+            "beam_axis": [
+              8050,
+              3950
+            ],
+            "offset": [
+              32.5,
+              -32.5
+            ],
+            "distance": 45.96194077712559,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            2.2136034375,
+            2.2136034375
+          ],
+          "admission": "Conservative collapsed-corner ACTION only. Finite jack/hip/tie/seat assembly is not yet earned; not a completed physical load path."
+        },
+        {
+          "id": "corner-NW-outer",
+          "xy": [
+            332.5,
+            11667.5
+          ],
+          "roof_ULS": 68.11087500000001,
+          "ground_concept": {
+            "route": "outer-N-W",
+            "beam_axis": [
+              332.5,
+              11700.0
+            ],
+            "offset": [
+              0.0,
+              -32.5
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            0.0,
+            2.2136034375
+          ],
+          "admission": "Conservative collapsed-corner ACTION only. Finite jack/hip/tie/seat assembly is not yet earned; not a completed physical load path."
+        },
+        {
+          "id": "corner-NW-court",
+          "xy": [
+            3917.5,
+            8082.5
+          ],
+          "roof_ULS": 68.11087500000001,
+          "ground_concept": {
+            "route": "court-N-W",
+            "beam_axis": [
+              3950,
+              8050
+            ],
+            "offset": [
+              -32.5,
+              32.5
+            ],
+            "distance": 45.96194077712559,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            2.2136034375,
+            2.2136034375
+          ],
+          "admission": "Conservative collapsed-corner ACTION only. Finite jack/hip/tie/seat assembly is not yet earned; not a completed physical load path."
+        },
+        {
+          "id": "corner-NE-outer",
+          "xy": [
+            11667.5,
+            11667.5
+          ],
+          "roof_ULS": 68.11087500000001,
+          "ground_concept": {
+            "route": "outer-E",
+            "beam_axis": [
+              11700.0,
+              11667.5
+            ],
+            "offset": [
+              -32.5,
+              0.0
+            ],
+            "distance": 32.5,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            2.2136034375,
+            0.0
+          ],
+          "admission": "Conservative collapsed-corner ACTION only. Finite jack/hip/tie/seat assembly is not yet earned; not a completed physical load path."
+        },
+        {
+          "id": "corner-NE-court",
+          "xy": [
+            8082.5,
+            8082.5
+          ],
+          "roof_ULS": 68.11087500000001,
+          "ground_concept": {
+            "route": "court-E",
+            "beam_axis": [
+              8050,
+              8050
+            ],
+            "offset": [
+              32.5,
+              32.5
+            ],
+            "distance": 45.96194077712559,
+            "prototype_width": 600,
+            "scope": "Plan contact territory only; local bending/torsion, bearing/thermal transition and pile-node load sharing remain. No nearest-line load-spreading capacity is inferred."
+          },
+          "plan_offset_moments": [
+            2.2136034375,
+            2.2136034375
+          ],
+          "admission": "Conservative collapsed-corner ACTION only. Finite jack/hip/tie/seat assembly is not yet earned; not a completed physical load path."
+        }
+      ],
+      "roof_ULS_conserved": 908.1450000000001,
+      "roof_scope": "Parent ordinary frame plus collapsedcorner action envelope only. q450 receiving delta remains separate until whole primary/corner joints revalidated. No roof uplift/lateral or ceiling load silently absorbed.",
+      "warm_source": {
+        "commit": "483a26c72b152ad68184545736216f150c31eb23",
+        "path": "project/mat/studies/warm-receiving-grid.json",
+        "sha256": "a2b15c9505ee3888ffb892aa7e5182f80f4aa5a70bd5058a915df6e3bec4de99"
+      },
+      "warm_receiver_actuals": [
+        {
+          "id": "wet-max",
+          "N": 71.13795024582943,
+          "M": 1.4424355523387493,
+          "source": "wet.receiving_pier_check",
+          "rounded_MAT": [
+            71.13795,
+            1.442435
+          ]
+        },
+        {
+          "id": "stair-midpost",
+          "xy": [
+            2942.5,
+            7257.5
+          ],
+          "N": 74.8593414111478,
+          "M": 2.274063533337014,
+          "rounded_MAT": [
+            75,
+            2.3
+          ]
+        }
+      ],
+      "cold_interface_readback": {
+        "top": -765,
+        "member_soffit": -1215,
+        "depth": 450,
+        "member_only_required": 1715,
+        "member_only_Dcost": 1800,
+        "deepest_node_not_frozen": true
+      },
+      "preferred_route": "Actual floor/RCreceivers and tied masonry above monolithic warm reinforced spreader; continuous mineral bearing/DPC to connected coldgrid, then sitejustified deep supports. Separate cold weatherleaf; no RC/starter bypass across thermalbearing.",
+      "adoption_conditions": [
+        "Complete actual fullmass/opening/heavywall and roofcorner/ceiling action inventory, with lateralcouples/uplift and nodal sharing",
+        "Design warm reinforced spreading/contact and horizontal shear/restraint over actual AAC/DPC; roundedpoint comparison is not a verified spreader",
+        "Select coldreceiver/node depth from actual combined reactions, preserving failed400node/lowtie controls; no850joint or D1800wholehouse pass",
+        "Maintain passive ground/water separation and an inhabited accessible approach at the actual site; no groundwater/pilecapacity invented"
+      ],
+      "no_new_exit": "Final pilebar fabrication is not a new STR-HOUSE exit. Known failed detail cannot be adopted; a credible reaction/receiver topology must still be earned before a passed proposition."
+    }
   },
   "cap": {
     "plan": [
@@ -9700,9 +10593,16 @@
       "id": "stair-post",
       "xy": [
         2942.5,
+        7257.5
+      ],
+      "point_ULS": 100,
+      "actual_point_ULS": 74.8593414111478,
+      "actual_M": 2.274063533337014,
+      "old_xy": [
+        2942.5,
         7132.5
       ],
-      "point_ULS": 100
+      "prototype_point_allowance": 100
     },
     {
       "id": "stair-header-W",
@@ -25872,7 +26772,7 @@
       "seats_each": 300,
       "axis_span": 1300,
       "M": 7.638198750000002,
-      "V": 12.150337500000001,
+      "V": 20.48955360576923,
       "upper_window_ring_extrados": 6515,
       "ring_clearance": 25,
       "plate": [
@@ -25892,6 +26792,179 @@
         "provided_ratio": 0.7539822368615503,
         "maximum_pitch": 77.25
       },
+      "central_point_shear_control": 12.150337500000001,
+      "actual_offset_transfers": [
+        {
+          "seat": "S-4377.5-0",
+          "opening": "south-window-1",
+          "point_offset": 477.5,
+          "point_a": 1.1275,
+          "axis_span": 1.3,
+          "bearing_axes": [
+            {
+              "xy": [
+                3250,
+                332.5
+              ],
+              "R": 3.8111213942307716,
+              "roofpoint_only": 3.0125963942307714
+            },
+            {
+              "xy": [
+                4550,
+                332.5
+              ],
+              "R": 20.48955360576923,
+              "roofpoint_only": 19.69102860576923
+            }
+          ],
+          "M": 3.515199727095003,
+          "V": 20.48955360576923,
+          "lower_path": "Upper collector to actual upperwindow piers; lower opening/arch and wallbase transmission still to qualify."
+        },
+        {
+          "seat": "S-7622.5-0",
+          "opening": "south-window-3",
+          "point_offset": -477.5,
+          "point_a": 0.1725,
+          "axis_span": 1.3,
+          "bearing_axes": [
+            {
+              "xy": [
+                7450,
+                332.5
+              ],
+              "R": 20.48955360576923,
+              "roofpoint_only": 19.69102860576923
+            },
+            {
+              "xy": [
+                8750,
+                332.5
+              ],
+              "R": 3.8111213942307693,
+              "roofpoint_only": 3.012596394230769
+            }
+          ],
+          "M": 3.5151997270949997,
+          "V": 20.48955360576923,
+          "lower_path": "Upper collector to actual upperwindow piers; lower opening/arch and wallbase transmission still to qualify."
+        },
+        {
+          "seat": "W-4377.5-0",
+          "opening": "west-window-1",
+          "point_offset": -222.5,
+          "point_a": 0.4275,
+          "axis_span": 1.3,
+          "bearing_axes": [
+            {
+              "xy": [
+                332.5,
+                3950
+              ],
+              "R": 16.036150240384618,
+              "roofpoint_only": 15.237625240384618
+            },
+            {
+              "xy": [
+                332.5,
+                5250
+              ],
+              "R": 8.264524759615385,
+              "roofpoint_only": 7.465999759615386
+            }
+          ],
+          "M": 6.741757644930002,
+          "V": 16.036150240384618,
+          "lower_path": "Upper collector to actual upperwindow piers; lower opening/arch and wallbase transmission still to qualify."
+        },
+        {
+          "seat": "W-7622.5-0",
+          "opening": "west-window-2",
+          "point_offset": 222.5,
+          "point_a": 0.8725,
+          "axis_span": 1.3,
+          "bearing_axes": [
+            {
+              "xy": [
+                332.5,
+                6750
+              ],
+              "R": 8.264524759615385,
+              "roofpoint_only": 7.465999759615386
+            },
+            {
+              "xy": [
+                332.5,
+                8050
+              ],
+              "R": 16.036150240384618,
+              "roofpoint_only": 15.237625240384618
+            }
+          ],
+          "M": 6.741757644930002,
+          "V": 16.036150240384618,
+          "lower_path": "Upper collector to actual upperwindow piers; lower opening/arch and wallbase transmission still to qualify."
+        },
+        {
+          "seat": "E-4377.5-1",
+          "opening": "east-window-1",
+          "point_offset": -222.5,
+          "point_a": 0.4275,
+          "axis_span": 1.3,
+          "bearing_axes": [
+            {
+              "xy": [
+                11667.5,
+                3950
+              ],
+              "R": 16.036150240384618,
+              "roofpoint_only": 15.237625240384618
+            },
+            {
+              "xy": [
+                11667.5,
+                5250
+              ],
+              "R": 8.264524759615385,
+              "roofpoint_only": 7.465999759615386
+            }
+          ],
+          "M": 6.741757644930002,
+          "V": 16.036150240384618,
+          "lower_path": "Upper collector to actual upperwindow piers; lower opening/arch and wallbase transmission still to qualify."
+        },
+        {
+          "seat": "E-7622.5-1",
+          "opening": "east-window-2",
+          "point_offset": 222.5,
+          "point_a": 0.8725,
+          "axis_span": 1.3,
+          "bearing_axes": [
+            {
+              "xy": [
+                11667.5,
+                6750
+              ],
+              "R": 8.264524759615385,
+              "roofpoint_only": 7.465999759615386
+            },
+            {
+              "xy": [
+                11667.5,
+                8050
+              ],
+              "R": 16.036150240384618,
+              "roofpoint_only": 15.237625240384618
+            }
+          ],
+          "M": 6.741757644930002,
+          "V": 16.036150240384618,
+          "lower_path": "Upper collector to actual upperwindow piers; lower opening/arch and wallbase transmission still to qualify."
+        }
+      ],
+      "concrete_only_actual_shear_pass": false,
+      "actual_offset_requires_links": true,
       "SLS_phi3_point_bound_mm": 3.2336794742487966,
       "SLS_shrink300_mm": 0.4526785714285714,
       "scope": "No eccentric roofpoint assigned directly to an upperwindow arch. Actual pier bearing/cage continuity, plate/hold-down and lateral ring joints remain intrinsic work. Ordinary6550ceiling local15lining underside6525 means25drop; protected6444 hides beam."
@@ -25906,9 +26979,9 @@
     "ordinary_edge_development": {
       "status": "Separate q450 constructive receiving trial; parent q550 whole-roof control retained; no fullroof selection",
       "source": {
-        "commit": "96005b88ef4f3aff98a660261aa2e99ac47f9101",
+        "commit": "483a26c72b152ad68184545736216f150c31eb23",
         "path": "project/mat/studies/loggia-roof-edge.json",
-        "sha256": "30c356c0eace30c888fd32c29f10d87cdc2e7b9f843de2871b7e964fcba7ffa6"
+        "sha256": "c283308185babc8bdba9c56e47d1c1e1c6adc405db65c68c4a50b83678626288"
       },
       "first_purlin_q": 450,
       "next_purlin_q": 900,
