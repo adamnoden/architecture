@@ -9,12 +9,12 @@
     "label": "zerg8-envelope-field"
   },
   "claimedAt": "2026-11-02T12:57:38.664Z",
-  "heartbeatAt": "2026-11-02T13:03:33.634Z",
-  "expiresAt": "2026-11-02T13:48:33.634Z",
+  "heartbeatAt": "2026-11-02T13:17:03.010Z",
+  "expiresAt": "2026-11-02T14:02:03.010Z",
   "checkpoint": {
-    "evidence": "Remote branch work/zerg8-envelope-field head d17be9ea40b724f971c54ba5d0043c0e7b19346c; source-bound whole-field control, slab datum and mortar failure, generator and rendered plan verified",
-    "next": "Develop actual perimeter, threshold, supports and joined structural path; reconcile slab alternatives with HAD/STR",
-    "blocker": "HAD slab makes rail collide, altered mortar bed and complete field interfaces remain unqualified"
+    "evidence": "Remote branch work/zerg8-envelope-field head 2ec048f4c46bb9c5033793b71b5b2e6b86375546; source-bound whole-field control, slab conflict, service-box wrap and flush-soffit pour sensitivity",
+    "next": "Resolve actual supported field/perimeter construction, movement and combined structural interfaces; coordinate STR and RWT",
+    "blocker": "Slab source alternatives, bearing/slip, full perimeter, box returns, support, materials and site/physical qualifications remain unresolved"
   },
   "branch": "work/zerg8-envelope-field",
   "predecessor": {
