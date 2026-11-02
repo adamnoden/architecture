@@ -9,12 +9,12 @@
     "label": "zerg7-envelope-corner-junction"
   },
   "claimedAt": "2026-11-02T10:51:13.775Z",
-  "heartbeatAt": "2026-11-02T12:06:39.110Z",
-  "expiresAt": "2026-11-02T12:51:39.110Z",
+  "heartbeatAt": "2026-11-02T12:15:15.478Z",
+  "expiresAt": "2026-11-02T13:00:15.478Z",
   "checkpoint": {
-    "evidence": "Shared WIP work/zerg-corner-convergence head a0606db696ebc502973c2fcf846d1388899c34a8; separate below-structure carrier branch work/zerg7-metal-carrier head aa9ddc57c5a8f7553984e49478bde71ac9b996d0",
-    "next": "Coordinate STR revised cold node and carrier review; integrate only exact reconciled sources and check material geometry",
-    "blocker": "Carrier field perimeter, full structural force path, movements, access, thermal and physical qualification remain unresolved; cold node under revision"
+    "evidence": "Shared WIP work/zerg-corner-convergence head a0606db696ebc502973c2fcf846d1388899c34a8; below-structure carrier branch work/zerg7-metal-carrier head f254abd7c60ecd6a00be78522c6d11afc5b3038e",
+    "next": "Reconcile enlarged cold node, carrier source identities and independent geometry review; coordinate shared integration",
+    "blocker": "Carrier full field and perimeter, split rod/short connector weld, structural and insulation load paths, movement and site acceptance unresolved"
   },
   "branch": "work/zerg7-envelope-corner-junction",
   "predecessor": {
