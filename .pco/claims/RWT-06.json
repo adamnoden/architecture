@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 24,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f2945be5-9ca5-41cd-9870-262c83177fa0",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rwt06-temporary-rain-recovery"
   },
   "claimedAt": "2026-11-02T08:13:05.113Z",
-  "heartbeatAt": "2026-11-02T08:54:53.982Z",
-  "expiresAt": "2026-11-02T09:39:53.982Z",
+  "heartbeatAt": "2026-11-02T09:02:43.657Z",
+  "expiresAt": "2026-11-02T09:02:43.657Z",
   "checkpoint": {
     "evidence": "PR #1255 current-main merge head 9e2abcc5712ef44497fbe29c651facea438f3429, truthful parents bf779550 and main50a3d1d7, tree69cb3420; RWT blobs unchanged; RWT generators, default HAD/IAS, source-auth, integrity and typecheck PASS",
     "next": "Root observes exact-head CI; reviewer transfers bounded QA; worker runs fresh canonical publication preflight immediately before root merge",
@@ -37,5 +37,7 @@
       "blocker": "Connected temporary route and whole-liner installation/removal remain unproved"
     }
   },
-  "pr": 1255
+  "pr": 1255,
+  "releasedAt": "2026-11-02T09:02:43.657Z",
+  "releaseReason": "handoff"
 }
