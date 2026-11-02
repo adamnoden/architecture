@@ -75,6 +75,27 @@
     ],
     "fieldPatchJoin": "Hypothesised continuous butt weld around full 300-square plate. Upper/lower rods terminate on opposite patch faces; weld procedure must retain plate integrity."
   },
+  "partialUpliftEquilibrium": {
+    "source": "STR partial outer-triangle roof route only; not whole corner",
+    "vertical_kN": -8.740242503492782,
+    "resultantXY_mm": [
+      435.5845517224765,
+      416.5514049854576
+    ],
+    "bilinearFractions": [
+      0.17750891247596995,
+      0.1942435779547163,
+      0.29998328204926544,
+      0.3282642275200483
+    ],
+    "witnessTensions_kN": [
+      1.5514709415712526,
+      1.697735976070325,
+      2.621926632104253,
+      2.869108953746951
+    ],
+    "limit": "This is only a nonnegative static equilibrium witness. Plate stiffness, welds, actual unilateral contact, other roof areas, wind, lateral actions, load combinations and node resistance are not demonstrated."
+  },
   "fieldBay": {
     "xy_mm": [
       600,
@@ -129,7 +150,7 @@
     "massScope": "Local gross self-weight only; excludes fixings, welds, returns, sheet overlap, insulation support, water, construction and pressure loads. Shared edges double-counted."
   },
   "collision_and_installation": {
-    "warmConcrete": "Field is below \u2212380 warm girder soffit and does not cut warm RC; split rods and bearing patch still change its structural route.",
+    "warmConcrete": "Field is 225 mm below \u2212380 warm girder soffit and 160 mm above \u2212765 cold top; it does not cut warm RC; split rods and bearing patch still change the structural route.",
     "glass": "40 mm rail depth occupies \u2212604..\u2212564: glass from \u2212280..\u2212600 is intercepted over 36 mm of rail depth; hangers traverse the glass. No uncut 320 glass claim.",
     "flange": "Panel near edge 600 is 37.5 from patch edge 562.5 in each axis. A 137.5-square connector at x/y512.5..650 overlaps each footprint 50\u00d750 before cutting; trim to matching boundaries and continuously butt weld, with no unsealed lap credited. Actual corner cuts, support and inspection remain to design.",
     "supports": "Four anchors into nominal slab underside; 324 mm vertical hangers through cut/retained glass fixed to upper angles; sheet welded to underside of bottom angle flanges by accessible edge seams, without through-field fixings. Anchor, reinforcement clash, bearing, fixity and void access unproved.",
