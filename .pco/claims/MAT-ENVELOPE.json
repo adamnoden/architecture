@@ -9,8 +9,8 @@
     "label": "zerg2-mat-loggia"
   },
   "claimedAt": "2026-11-01T20:06:02.804Z",
-  "heartbeatAt": "2026-11-02T00:08:06.583Z",
-  "expiresAt": "2026-11-02T00:53:06.583Z",
+  "heartbeatAt": "2026-11-02T00:17:49.696Z",
+  "expiresAt": "2026-11-02T01:02:49.696Z",
   "branch": "work/zerg2-mat-loggia",
   "predecessor": {
     "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "DraftPR1236 headf376a8a75a12838b2026a9a971ac33bfef470469 tree624829a30c6f88da8f0e5c720b23430b40c70dbb exactnative/localtree verified. Currentmaineab4ec03 explicitparent. Roof/vent/775portal/400cover/wholeliner source checked/rendered; sixrowowning exit table truthful.",
-    "next": "Freeze source head for root-arranged independent exact-source review and integration checks; then replenish directed continuation after verified integration.",
-    "blocker": "MAT-ENVELOPE open: actualinternal water/air/thermal/receiving/roofcorner joins remain explicitly listed. No wholehouse/material/site acceptance; D1400/D1600 unselected."
+    "evidence": "PR1236 ready head6fe2784cb2604b7b5ce28068f5f5a3e025555baa tree199a179370d1122b58ee5b3adf2df0a7d00fd88b exactnative/localtree verified; trueparents f376a8a7 and latestmain59ec623d. Mainmerge preservesMATsubtree9938aeb1. Onlysourceauthmjs anddocumentdelta; allnumeric/renderedMAToutputs unchanged. Positive/mutated/committedcanonical-rebind checks pass.",
+    "next": "Freeze for focused source-auth delta review and root exact-headCI; legitimate synchronize/ready events use corrected canonical Work/Lease body. Integrationdefaultcanonicalpath derives verified sourceidentity.",
+    "blocker": "MAT-ENVELOPE open; ordinaryroofcrop doesnotcomplete200overhang/weatheredge7006.738 or namedinternaljoins. No groundselection or wholematerial/sitepass."
   },
   "pr": 1236
 }
