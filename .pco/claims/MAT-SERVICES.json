@@ -9,12 +9,11 @@
     "label": "zerg-services-joined-system"
   },
   "claimedAt": "2026-11-02T11:27:42.220Z",
-  "heartbeatAt": "2026-11-02T11:27:42.220Z",
-  "expiresAt": "2026-11-02T12:12:42.220Z",
+  "heartbeatAt": "2026-11-02T11:47:52.866Z",
+  "expiresAt": "2026-11-02T12:32:52.866Z",
   "checkpoint": {
-    "evidence": "Fresh main e93c643d36dfb0ee72a2bd2035899dfc5cc94f74 after verified #1271 and derived projection update; Services16 released handoff; canonical next safe with sole Services candidate",
-    "next": "Develop one coherent full-mode cooker/makeup/control/room-emitter/plant assembly and first release, with explicit full known constituents and actual HAD fit; validate and publish bounded source",
-    "blocker": "No OEM product/material/site/physical admission; current 300 inlet, conditional 400 regulation/thermal and complete assembly gaps remain"
+    "evidence": "Unverified WIP a61055498928d4ccf0404bb7b37ab1efc5467b58/tree7c9aa7ed: joined intake/control/heat trial; negative −5 pressure margin and ERA safety interface remain unresolved.",
+    "next": "Develop and review nominal −4 Pa pressure margin and OEM-compatible hood replacement or qualified ERA interlock, then exact kit/plant join; no product or material selection."
   },
   "branch": "work/zerg11-services-joined-system",
   "predecessor": {
