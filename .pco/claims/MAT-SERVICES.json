@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 18,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b3a8f164-f58c-467b-905a-c8283b0e5337",
   "holder": {
     "kind": "chatgpt",
     "label": "services18-factory-control"
   },
   "claimedAt": "2026-11-02T14:32:24.599Z",
-  "heartbeatAt": "2026-11-02T14:32:24.599Z",
-  "expiresAt": "2026-11-02T15:17:24.599Z",
+  "heartbeatAt": "2026-11-02T18:18:19.000Z",
+  "expiresAt": "2026-11-02T18:18:19.000Z",
   "branch": "work/services18-factory-control-20261102",
   "note": "Factory-compatible full-mode safety/control and complete first-release successor; retain known failures and plant/material holds",
   "predecessor": {
@@ -32,5 +32,7 @@
       "evidence": "Draft PR1279 refrozen remotee1ac7f922edfafeff90e8fb7e1e64d9dbe470f4c treeef9307362f1af769cb381aa36c4072bf9096df6c realmainceb2684;256modes;corrected inspected two-sheet legend;generator and repo validation pass;full suite local IPC limitation recorded",
       "next": "Root exact-head CI/preflight and bounded reviewer final drawing check; operating/controller/firstrelease/netplant/material qualifications remain unresolved"
     }
-  }
+  },
+  "releasedAt": "2026-11-02T18:18:19.000Z",
+  "releaseReason": "handoff"
 }
