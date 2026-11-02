@@ -1,14 +1,14 @@
 {
   "status": "Constructive provisional whole-house service baseline; no accepted apparatus, materials, fire route, site loading or commissioning.",
   "basis": {
-    "HADHead": "c83a06f26cf3b146d7cdc8254b4799f390508196",
+    "HADHead": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
     "HADPath": "project/had/studies/open-north-loggia.json",
-    "HADBlob": "b15df3b374717d8b3a724900036525a5cd991d22",
-    "HADStatus": "FIRST WHOLE-HOUSE CANDIDATE, NOT ADOPTED. Known failures/interfaces are explicit; no support/water/material/site acceptance.",
+    "HADBlob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
+    "HADStatus": "ONE INCOMPLETE27DRY/30WET WHOLE-HOUSE TRIAL; explicit failures retained. Prior15control49a44045 preserved. Not adopted.",
     "narrowObstacleFurnitureRewind": {
-      "head": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
-      "blob": "6affb39e28a777e36532729183152c8c588e4989",
-      "scope": "Onlyactualgroundreceivers/table/reading+familysofas/side-tables used bynamed renewalchecks anddrawnplan; wholec83roomsource remainscontrol, notsilentwholehouseadoption."
+      "head": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+      "blob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
+      "scope": "Onlyactualgroundreceivers/table/reading+familysofas/side-tables used bynamed renewalchecks anddrawnplan; Room source is068e33 plus declaredservicesrewinds; no livegeometrysubstitution."
     },
     "mergedInterfaceMain": "546c98f93a3dccbfe48119bd2e92117b6e2d766f",
     "units": "mm, local proposed groundFFL0; first3450; all z use one datum"
@@ -16,22 +16,22 @@
   "selection": "Local continuousMEV + background vents + separate cooker capture +8kW compatibility monobloc/radiators +300L hotwater.",
   "air": {
     "basis": "Conservative geometric floor-area upper bound, not regulatory measured area",
-    "groundM2": 94.202775,
-    "upperM2": 100.696975,
-    "totalM2": 194.89974999999998,
-    "oldBControlM2": 206.561975,
+    "groundM2": 93.458775,
+    "upperM2": 99.952975,
+    "totalM2": 193.41174999999998,
+    "oldBControlM2": 205.073975,
     "clearHeightControl": 3.1,
-    "volumeControlM3": 604.189225,
+    "volumeControlM3": 599.576425,
     "bedrooms": 4,
     "designOccupancyRange": [
       2,
       6
     ],
-    "floorCriterionLps": 58.46992499999999,
+    "floorCriterionLps": 58.02352499999999,
     "bedroomCriterionLps": 37,
     "selectedNormalLps": 78,
     "floorAreaLimitAtSelectedFlowM2": 260.0,
-    "normalACHControl": 0.4647550608006954,
+    "normalACHControl": 0.46833062190528923,
     "status": "Author-selected pre-site targets. No actual household, measured air leakage, pollution, climate or commissioning result.",
     "backgroundAreaMM2": 90000,
     "orificeScreen": {
@@ -52,9 +52,9 @@
       "fireDoorRequirement": "Specific classified E20+ doorset with approved threshold/transfer arrangement at the required area; Sa requirements may invalidate this simple gap. No site cutting, seal deletion or blanket10mm permission.",
       "acceptance": "Not earned until the actual fire/door assembly and measured installed room pressures match. Narrow gap negative control fails.",
       "fireSource": {
-        "head": "a324a50d047843603d6fc275c4062bc9d0c1cb90",
-        "jsonBlob": "1412e628aa6b539664c8f5efd507595623cf2a21",
-        "interface": "protectedRoute only; primary room/furniture baseline remains frozen c83 plus declared rewinds"
+        "head": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+        "jsonBlob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
+        "interface": "protectedRoute only; Room/furniture/protected geometry share the same immutable068e33 input plus declared services rewinds"
       },
       "doors": [
         {
@@ -62,33 +62,34 @@
           "level": "GROUND",
           "host": "protected-west-cross",
           "rough": [
-            2947.5,
-            3832.5
+            2971.5,
+            3820.5
           ],
           "axis": 4250,
           "frameEach": 25,
           "leaf": [
-            830,
+            794,
             44
           ],
           "hinge": [
-            3802.5,
+            3793,
             4250
           ],
           "opening": "NORTHintoexcludedgallery",
           "closed": [
-            2972.5,
+            2999,
             4228,
-            830,
+            794,
             44
           ],
           "open": [
-            3780.5,
+            3771,
             4250,
             44,
-            830
+            794
           ],
-          "minimumClearBudget": 791,
+          "edgeGapsEach": 2.5,
+          "minimumClearBudget": 755,
           "performance": "E20minimumreference;classifiedfullassembly/actualgaprequired"
         },
         {
@@ -106,22 +107,23 @@
             44
           ],
           "hinge": [
-            9111.25,
+            9113.75,
             4250
           ],
           "opening": "NORTHintoexcludedgallery",
           "closed": [
-            8266.25,
+            8268.75,
             4228,
             845,
             44
           ],
           "open": [
-            9089.25,
+            9091.75,
             4250,
             44,
             845
           ],
+          "edgeGapsEach": 2.5,
           "minimumClearBudget": 806,
           "performance": "E20minimumreference;classifiedfullassemblyrequired"
         },
@@ -144,7 +146,8 @@
             3247.5
           ],
           "opening": "SOUTHINTOSTUDY",
-          "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim"
+          "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim",
+          "frameDepth": 194
         },
         {
           "id": "GUEST-WC",
@@ -221,7 +224,28 @@
             6350
           ],
           "axis": 9300,
-          "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating"
+          "performance": "Actualprotectedboundarybathroomroletoqualify; inside-slideroperationisnotfirerating",
+          "trial": {
+            "rough": [
+              5450,
+              6350
+            ],
+            "completeFrame": 825,
+            "leaf": [
+              762,
+              44
+            ],
+            "hinge": [
+              9397,
+              6281
+            ],
+            "clear": [
+              5516.5,
+              6283.5
+            ],
+            "net": 767,
+            "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Final600reach immutable proof pending binding; E20 assembly not qualified"
+          }
         }
       ],
       "normalFlowNetworkLps": {
@@ -717,7 +741,7 @@
         ],
         "state": "Parktworigidchairsbeforeplatformerection; restoreaftercompletefanreassembly/testing/platformremoval. Actualotherchairs/table retained."
       },
-      "platformMinimumFurnitureReserve": 193.47157413945854,
+      "platformMinimumFurnitureReserve": 188.66703474640184,
       "platformClosestFurniture": "cold-storage",
       "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
     },
@@ -1458,17 +1482,17 @@
     "emitterMatchingBoundary": "14 explicit room/circulation output requirements at45/40/20. These areallocated8kW compatibility budgets, not roomheatlosses or14provedradiatorfit. Selectedradiator fulldepth/valve/bracket/mass andoccupied/window/task clearance mustmatch actualHADroomfields; no automaticfloorheating fallback.",
     "emitterSchedule": [
       {
-        "id": "study-S",
+        "id": "study-W",
         "room": "study",
         "level": 0,
         "family": "StelradCompactK3H600",
         "length": 1000,
         "bodyHeight": 600,
         "completePlanWithValvesAndBrackets": [
-          2325,
           429.5,
-          1150,
-          200
+          1250,
+          200,
+          1150
         ],
         "bottomLocal": 100,
         "topLocal": 700,
@@ -1476,6 +1500,7 @@
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 817.038,
+        "nCoefficient": 1.32,
         "dryMassKg": 52.5,
         "filledMassKg": 62.3,
         "pressurePairBranchPlan": [
@@ -1484,37 +1509,43 @@
             2500
           ],
           [
-            2400,
+            750,
             2500
           ],
           [
-            2400,
-            550
+            750,
+            1150
+          ],
+          [
+            500,
+            1150
           ]
         ],
         "upperBranchAxisLocal": 2945,
-        "notes": "SolidS pier/drop, notacrosswindowglazing;700topbelow750sill by50.",
+        "notes": "SelectedWESTunit; desk55Eto655. South1800body2580/765, Westbody754.5/2724. Drop1150Sof1800window, notglazing. Sradcontrolblockedactualwindowbodyandrejected.",
         "renewal": {
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
       {
-        "id": "living-N1",
+        "id": "living-W",
         "room": "living",
         "level": 0,
         "family": "StelradCompactK3H600",
         "length": 800,
         "bodyHeight": 600,
         "completePlanWithValvesAndBrackets": [
-          1200,
-          11370.5,
-          950,
-          200
+          429.5,
+          9800,
+          200,
+          950
         ],
         "bottomLocal": 100,
         "topLocal": 700,
@@ -1522,6 +1553,7 @@
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 653.6304000000001,
+        "nCoefficient": 1.32,
         "dryMassKg": 42.0,
         "filledMassKg": 49.84,
         "pressurePairBranchPlan": [
@@ -1535,25 +1567,23 @@
           ],
           [
             2200,
-            11200
+            9550
           ],
           [
-            2300,
-            11200
-          ],
-          [
-            2300,
-            11500
+            550,
+            9550
           ]
         ],
         "upperBranchAxisLocal": 2945,
-        "notes": "TwoNemitters replacefailedWwallpositionbehindR01. DropinsolidpierX2300, avoidNintake2675.",
+        "notes": "WESTunitSofR01cabinet10800. Drop9550Sof10200window; actualpairedtube159territorymuststaySof9700rawedge. SofaA650Eparkbeforeunhang. OriginalN1blockedsoleR01passageandisrejected.",
         "renewal": {
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1565,7 +1595,7 @@
         "length": 800,
         "bodyHeight": 600,
         "completePlanWithValvesAndBrackets": [
-          2350,
+          3102.5,
           11370.5,
           950,
           200
@@ -1576,26 +1606,41 @@
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 653.6304000000001,
+        "nCoefficient": 1.32,
         "dryMassKg": 42.0,
         "filledMassKg": 49.84,
         "pressurePairBranchPlan": [
           [
-            2300,
-            11500
+            3500,
+            9200
           ],
           [
-            2825,
+            4200,
+            9200
+          ],
+          [
+            4200,
+            11200
+          ],
+          [
+            4100,
+            11200
+          ],
+          [
+            4100,
             11500
           ]
         ],
         "upperBranchAxisLocal": 2945,
-        "notes": "Lowvisiblefeedbetweenadjacentradiators, noverticalglazingcrossing.",
+        "notes": "25afterfull18receiver3077.5; drop4100solidNpierbefore4262.5returnbase. Actualopeningarch/profileforhighfeedmustmatch; nolatentcorecut.",
         "renewal": {
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1614,10 +1659,11 @@
         ],
         "bottomLocal": 100,
         "topLocal": 700,
-        "nominalDelta50W": 2866.8,
+        "nominalDelta50W": 2866.7999999999997,
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 980.4456,
+        "nCoefficient": 1.32,
         "dryMassKg": 63.0,
         "filledMassKg": 74.76,
         "pressurePairBranchPlan": [
@@ -1646,6 +1692,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1668,6 +1716,7 @@
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 653.6304000000001,
+        "nCoefficient": 1.32,
         "dryMassKg": 42.0,
         "filledMassKg": 49.84,
         "pressurePairBranchPlan": [
@@ -1696,6 +1745,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1718,6 +1769,7 @@
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 653.6304000000001,
+        "nCoefficient": 1.32,
         "dryMassKg": 42.0,
         "filledMassKg": 49.84,
         "pressurePairBranchPlan": [
@@ -1746,6 +1798,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1753,23 +1807,24 @@
         "id": "bed4-N",
         "room": "bed4",
         "level": 1,
-        "family": "StelradCompactK3H600",
-        "length": 1000,
-        "bodyHeight": 600,
+        "family": "StelradCompactK3H700",
+        "length": 900,
+        "bodyHeight": 700,
         "completePlanWithValvesAndBrackets": [
-          2975,
+          3102.5,
           11370.5,
-          1150,
+          1050,
           200
         ],
         "bottomLocal": 100,
-        "topLocal": 700,
-        "nominalDelta50W": 2389.0,
+        "topLocal": 800,
+        "nominalDelta50W": 2441,
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
-        "screenOutputW": 817.038,
-        "dryMassKg": 52.5,
-        "filledMassKg": 62.3,
+        "screenOutputW": 834.8220000000001,
+        "nCoefficient": 1.34,
+        "dryMassKg": 54.693,
+        "filledMassKg": 64.926,
         "pressurePairBranchPlan": [
           [
             4500,
@@ -1784,26 +1839,24 @@
             11200
           ],
           [
-            4300,
+            4100,
             11200
           ],
           [
-            4300,
-            11500
-          ],
-          [
-            4125,
+            4100,
             11500
           ]
         ],
         "upperBranchAxisLocal": 2945,
-        "notes": "DropX4300beyondN3550window; pipepathabovewardrobe/sofa notthroughprotectedfloor.",
+        "notes": "SelectedH700xL900afterfull18receiver;25left/110right. Cillunderside900for800top+50lift+50reserve. Drop4100replacesfailed4300returnroute; actualfullarchscreenrequired.",
         "renewal": {
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
           "requiredFrontPull": 200,
-          "cillUndersideMinimumIfUnderWindow": 800,
+          "cillUndersideMinimumIfUnderWindow": 900,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 950,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1826,6 +1879,7 @@
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 817.038,
+        "nCoefficient": 1.32,
         "dryMassKg": 52.5,
         "filledMassKg": 62.3,
         "pressurePairBranchPlan": [
@@ -1862,6 +1916,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1884,6 +1940,7 @@
         "roomTargetC": 22,
         "conservativeCorrectionFactor": 0.302,
         "screenOutputW": 360.739,
+        "nCoefficient": 1.32,
         "dryMassKg": 26.25,
         "filledMassKg": 31.15,
         "pressurePairBranchPlan": [
@@ -1908,6 +1965,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1930,6 +1989,7 @@
         "roomTargetC": 22,
         "conservativeCorrectionFactor": 0.302,
         "screenOutputW": 360.739,
+        "nCoefficient": 1.32,
         "dryMassKg": 26.25,
         "filledMassKg": 31.15,
         "pressurePairBranchPlan": [
@@ -1954,6 +2014,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -1976,6 +2038,7 @@
         "roomTargetC": 22,
         "conservativeCorrectionFactor": 0.302,
         "screenOutputW": 360.739,
+        "nCoefficient": 1.32,
         "dryMassKg": 26.25,
         "filledMassKg": 31.15,
         "pressurePairBranchPlan": [
@@ -1996,6 +2059,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -2018,6 +2083,7 @@
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 408.519,
+        "nCoefficient": 1.32,
         "dryMassKg": 26.25,
         "filledMassKg": 31.15,
         "pressurePairBranchPlan": [
@@ -2042,6 +2108,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -2064,6 +2132,7 @@
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 326.81520000000006,
+        "nCoefficient": 1.32,
         "dryMassKg": 21.0,
         "filledMassKg": 24.92,
         "pressurePairBranchPlan": [
@@ -2092,6 +2161,8 @@
           "requiredFrontPull": 150,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -2114,6 +2185,7 @@
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 326.81520000000006,
+        "nCoefficient": 1.32,
         "dryMassKg": 21.0,
         "filledMassKg": 24.92,
         "pressurePairBranchPlan": [
@@ -2138,6 +2210,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -2160,6 +2234,7 @@
         "roomTargetC": 20,
         "conservativeCorrectionFactor": 0.342,
         "screenOutputW": 326.81520000000006,
+        "nCoefficient": 1.32,
         "dryMassKg": 21.0,
         "filledMassKg": 24.92,
         "pressurePairBranchPlan": [
@@ -2184,6 +2259,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       },
@@ -2206,6 +2283,7 @@
         "roomTargetC": 22,
         "conservativeCorrectionFactor": 0.302,
         "screenOutputW": 288.5912,
+        "nCoefficient": 1.32,
         "dryMassKg": 21.0,
         "filledMassKg": 24.92,
         "pressurePairBranchPlan": [
@@ -2230,6 +2308,8 @@
           "requiredFrontPull": 200,
           "cillUndersideMinimumIfUnderWindow": 800,
           "cillReserveAfterLift": 50,
+          "requiredDrawnSillTopIfUnderWindow": 850,
+          "maximumCompleteCillThickness": 50,
           "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
         }
       }
@@ -2717,6 +2797,1801 @@
     }
   ],
   "interfaces": {
+    "architecturalServices": {
+      "schemaVersion": 1,
+      "authority": "MAT-SERVICES numeric interface. HADconsumesonefixedcheckpoint; roomgeometrybasis is068e33+explicitrewinds, notreciprocalHADmetadatahash.",
+      "emitters": [
+        {
+          "id": "study-W",
+          "room": "study",
+          "level": 0,
+          "family": "StelradCompactK3H600",
+          "length": 1000,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            429.5,
+            1250,
+            200,
+            1150
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              2500,
+              2500
+            ],
+            [
+              750,
+              2500
+            ],
+            [
+              750,
+              1150
+            ],
+            [
+              500,
+              1150
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "living-W",
+          "room": "living",
+          "level": 0,
+          "family": "StelradCompactK3H600",
+          "length": 800,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            429.5,
+            9800,
+            200,
+            950
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              3500,
+              9200
+            ],
+            [
+              2200,
+              9200
+            ],
+            [
+              2200,
+              9550
+            ],
+            [
+              550,
+              9550
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "living-N2",
+          "room": "living",
+          "level": 0,
+          "family": "StelradCompactK3H600",
+          "length": 800,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            3102.5,
+            11370.5,
+            950,
+            200
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              3500,
+              9200
+            ],
+            [
+              4200,
+              9200
+            ],
+            [
+              4200,
+              11200
+            ],
+            [
+              4100,
+              11200
+            ],
+            [
+              4100,
+              11500
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "kitchen-E",
+          "room": "kitchenDining",
+          "level": 0,
+          "family": "StelradCompactK3H600",
+          "length": 1200,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            11370.5,
+            9700,
+            200,
+            1350
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              10500,
+              10800
+            ],
+            [
+              11200,
+              10800
+            ],
+            [
+              11200,
+              11050
+            ],
+            [
+              11470.5,
+              11050
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "bed2-S",
+          "room": "bed2",
+          "level": 1,
+          "family": "StelradCompactK3H600",
+          "length": 800,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            3425,
+            429.5,
+            950,
+            200
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              3900,
+              2300
+            ],
+            [
+              3200,
+              2300
+            ],
+            [
+              3200,
+              550
+            ],
+            [
+              3425,
+              550
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "bed3-S",
+          "room": "bed3",
+          "level": 1,
+          "family": "StelradCompactK3H600",
+          "length": 800,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            7625,
+            429.5,
+            950,
+            200
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              8700,
+              2300
+            ],
+            [
+              7500,
+              2300
+            ],
+            [
+              7500,
+              550
+            ],
+            [
+              7625,
+              550
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "bed4-N",
+          "room": "bed4",
+          "level": 1,
+          "family": "StelradCompactK3H700",
+          "length": 900,
+          "bodyHeight": 700,
+          "completePlanWithValvesAndBrackets": [
+            3102.5,
+            11370.5,
+            1050,
+            200
+          ],
+          "bottomLocal": 100,
+          "topLocal": 800,
+          "pressurePairBranchPlan": [
+            [
+              4500,
+              9150
+            ],
+            [
+              4800,
+              9150
+            ],
+            [
+              4800,
+              11200
+            ],
+            [
+              4100,
+              11200
+            ],
+            [
+              4100,
+              11500
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 900,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 950,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "principal-N",
+          "room": "principal",
+          "level": 1,
+          "family": "StelradCompactK3H600",
+          "length": 1000,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            9625,
+            11370.5,
+            1150,
+            200
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              10350,
+              8700
+            ],
+            [
+              10800,
+              8700
+            ],
+            [
+              10800,
+              11200
+            ],
+            [
+              11100,
+              11200
+            ],
+            [
+              11100,
+              11500
+            ],
+            [
+              10775,
+              11500
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "rear-N",
+          "room": "rearBath",
+          "level": 1,
+          "family": "StelradCompactK3H600",
+          "length": 500,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            2100,
+            11367.5,
+            650,
+            200
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              1800,
+              10800
+            ],
+            [
+              2405,
+              10800
+            ],
+            [
+              2405,
+              11500
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "family-E",
+          "room": "familyBath",
+          "level": 1,
+          "family": "StelradCompactK3H600",
+          "length": 500,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            11367.5,
+            4525,
+            200,
+            650
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              11200,
+              5000
+            ],
+            [
+              11200,
+              4550
+            ],
+            [
+              11467.5,
+              4550
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "principal-E-high",
+          "room": "principalBath",
+          "level": 1,
+          "family": "StelradCompactK3H600",
+          "length": 500,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            11367.5,
+            6775,
+            200,
+            650
+          ],
+          "bottomLocal": 1400,
+          "topLocal": 2000,
+          "pressurePairBranchPlan": [
+            [
+              11200,
+              7000
+            ],
+            [
+              11467.5,
+              7000
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "utility-E",
+          "room": "utility",
+          "level": 0,
+          "family": "StelradCompactK3H600",
+          "length": 500,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            11370.5,
+            1778,
+            200,
+            650
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              11200,
+              1800
+            ],
+            [
+              11200,
+              2400
+            ],
+            [
+              11470.5,
+              2400
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "plant-N",
+          "room": "plant",
+          "level": 0,
+          "family": "StelradCompactK3H600",
+          "length": 400,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            9422,
+            6203,
+            550,
+            200
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              9800,
+              5000
+            ],
+            [
+              10500,
+              5000
+            ],
+            [
+              10500,
+              6300
+            ],
+            [
+              9697,
+              6300
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 150,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "protected-G",
+          "room": "protectedCirculation",
+          "level": 0,
+          "family": "StelradCompactK3H600",
+          "length": 400,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            3500,
+            2747.5,
+            550,
+            200
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              3500,
+              3500
+            ],
+            [
+              3750,
+              3500
+            ],
+            [
+              3750,
+              2847.5
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "protected-F",
+          "room": "protectedCirculation",
+          "level": 1,
+          "family": "StelradCompactK3H600",
+          "length": 400,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            8180,
+            4400,
+            200,
+            550
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              8500,
+              5900
+            ],
+            [
+              8500,
+              4400
+            ],
+            [
+              8280,
+              4400
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        },
+        {
+          "id": "guest-WC-E",
+          "room": "guestWC",
+          "level": 0,
+          "family": "StelradCompactK3H600",
+          "length": 400,
+          "bodyHeight": 600,
+          "completePlanWithValvesAndBrackets": [
+            9003,
+            1900,
+            200,
+            550
+          ],
+          "bottomLocal": 100,
+          "topLocal": 700,
+          "pressurePairBranchPlan": [
+            [
+              8500,
+              1800
+            ],
+            [
+              8900,
+              1800
+            ],
+            [
+              9103,
+              1900
+            ]
+          ],
+          "renewal": {
+            "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
+            "requiredLift": 50,
+            "requiredFrontPull": 200,
+            "cillUndersideMinimumIfUnderWindow": 800,
+            "cillReserveAfterLift": 50,
+            "requiredDrawnSillTopIfUnderWindow": 850,
+            "maximumCompleteCillThickness": 50,
+            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          }
+        }
+      ],
+      "plant": {
+        "controlsHydraulics": [
+          11270.5,
+          5550,
+          300,
+          650
+        ],
+        "controlsMaximumHeight": 2300,
+        "primaryBuffer": {
+          "requiredUsableAlwaysConnectedLitres": 100,
+          "stationRewind": "Relocatedfrom9800/5550afterfiniteemittercoordination; oldQ350isretireduninstalledcomparison, notsilentlyremovedsupport.",
+          "station": [
+            10025,
+            5525,
+            650,
+            650
+          ],
+          "completeRoundBodyMaximumDiameter": 600,
+          "completeRoundBodyIncludes": "Allinsulation/feet/supports/collarsandretainedfittingsfit600round;650stationincludes25edgeclear. No barevesselnominalsubstitution.",
+          "maximumBodyHeight": 1600,
+          "nominalVolumeNotUsableProof": true,
+          "reason": "Separated primary cannot borrow unproved radiator volume across plateHX fordefrost.100usable is an authorselected compatibility target, not a claimed universal supplierminimum.",
+          "control": "Always-connected usable volume, guaranteed minimum flow and both HX pumps during defrost; valve/check/bypass states must preserve it. Exact chosen unit determines actual minimum and usable port arrangement.",
+          "replacementCentrePath": [
+            [
+              10350,
+              5850
+            ],
+            [
+              10700,
+              5850
+            ],
+            [
+              10700,
+              4600
+            ],
+            [
+              12500,
+              4600
+            ]
+          ],
+          "handlingRadius": 425,
+          "mass": "Unknown matched vessel/primaryfluid mass; no handlifting assumption. Drain/isolatelocaldevice only aftersafe shutdown.",
+          "material": "Second pressure vessel, insulation, expansion/safety/valves and primaryfluid add real residuals; none omitted as partofheatpump."
+        },
+        "riserGross": [
+          9400,
+          4700,
+          550,
+          700
+        ],
+        "formedOpeningProposal": [
+          9440,
+          4760,
+          465,
+          545
+        ],
+        "emitterJoin": {
+          "radComplete": [
+            9422,
+            6203,
+            550,
+            200
+          ],
+          "radRoutineBody": [
+            9725,
+            5878,
+            300
+          ],
+          "radAfter150PullBody": [
+            9725,
+            5728,
+            300
+          ],
+          "controlsBody": [
+            10945.5,
+            6078,
+            300
+          ],
+          "bufferFrontServiceBody": [
+            10350,
+            5200,
+            300
+          ],
+          "bufferPortFaceRequirement": "Southfaceaccessiblevalves/instrumentation600..1600, drainlowerwithqualifiedkneelingtask; nohiddenrearserviceassumed.",
+          "failed200Pull": "Operatorneeded5678wouldintersectretainedriser; chosen≤150requiresactualunhang/socketmatch. Nofixedsupportdeleted.",
+          "radToBufferBodyReserve": 25.626885611544026,
+          "controlsToBufferBodyReserve": 37.655275207537215,
+          "frontServiceToBufferReserve": 50
+        }
+      },
+      "fanAccess": [
+        {
+          "id": "ground-WC",
+          "level": 0,
+          "podPlan": [
+            7950,
+            1300,
+            500,
+            650
+          ],
+          "podZ": [
+            2800,
+            3100
+          ],
+          "path": [
+            [
+              8200,
+              1600,
+              2950
+            ],
+            [
+              8400,
+              1600,
+              3010
+            ],
+            [
+              8950,
+              1600,
+              3010
+            ],
+            [
+              8950,
+              0,
+              3010
+            ]
+          ],
+          "formedWallTerritory": 280,
+          "ceilingTrapDrainPort": {
+            "centre": [
+              9150,
+              0,
+              3010
+            ],
+            "formedDiameter": 40,
+            "maximumDrainOD": 15,
+            "separateFromMainHole": true,
+            "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+          },
+          "maintenancePlatformPlan": [
+            7715,
+            1050,
+            750,
+            1100
+          ],
+          "maintenancePlatformWorkingHeightRange": [
+            700,
+            1100
+          ],
+          "workerEquipmentRequirement": {
+            "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+            "maximumHeadTopLocal": 2750,
+            "ceilingFaceLocal": 2800,
+            "requiredTaskContactLocal": [
+              2800,
+              2900
+            ],
+            "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+          }
+        },
+        {
+          "id": "utility",
+          "level": 0,
+          "podPlan": [
+            10800,
+            1650,
+            650,
+            500
+          ],
+          "podZ": [
+            2800,
+            3100
+          ],
+          "path": [
+            [
+              10800,
+              1900,
+              2950
+            ],
+            [
+              11000,
+              1900,
+              3010
+            ],
+            [
+              11275,
+              1900,
+              3010
+            ],
+            [
+              11275,
+              900,
+              3010
+            ],
+            [
+              12000,
+              900,
+              3010
+            ]
+          ],
+          "formedWallTerritory": 280,
+          "ceilingTrapDrainPort": {
+            "centre": [
+              12000,
+              1100,
+              3010
+            ],
+            "formedDiameter": 40,
+            "maximumDrainOD": 15,
+            "separateFromMainHole": true,
+            "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+          },
+          "maintenancePlatformPlan": [
+            10245,
+            1525,
+            1100,
+            750
+          ],
+          "maintenancePlatformWorkingHeightRange": [
+            700,
+            1100
+          ],
+          "workerEquipmentRequirement": {
+            "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+            "maximumHeadTopLocal": 2750,
+            "ceilingFaceLocal": 2800,
+            "requiredTaskContactLocal": [
+              2800,
+              2900
+            ],
+            "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+          }
+        },
+        {
+          "id": "kitchen",
+          "level": 0,
+          "podPlan": [
+            9900,
+            9950,
+            500,
+            650
+          ],
+          "podZ": [
+            2800,
+            3100
+          ],
+          "path": [
+            [
+              10150,
+              9950,
+              2950
+            ],
+            [
+              10150,
+              10150,
+              3010
+            ],
+            [
+              10150,
+              10750,
+              3010
+            ],
+            [
+              11282.5,
+              10750,
+              3010
+            ],
+            [
+              11282.5,
+              12000,
+              3010
+            ]
+          ],
+          "formedWallTerritory": 280,
+          "ceilingTrapDrainPort": {
+            "centre": [
+              11482.5,
+              12000,
+              3010
+            ],
+            "formedDiameter": 40,
+            "maximumDrainOD": 15,
+            "separateFromMainHole": true,
+            "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+          },
+          "maintenancePlatformPlan": [
+            9750,
+            9850,
+            1100,
+            750
+          ],
+          "maintenancePlatformWorkingHeightRange": [
+            700,
+            1100
+          ],
+          "workerEquipmentRequirement": {
+            "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+            "maximumHeadTopLocal": 2750,
+            "ceilingFaceLocal": 2800,
+            "requiredTaskContactLocal": [
+              2800,
+              2900
+            ],
+            "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+          }
+        },
+        {
+          "id": "rear-bath",
+          "level": 1,
+          "podPlan": [
+            1050,
+            9150,
+            650,
+            500
+          ],
+          "podZ": [
+            6250,
+            6550
+          ],
+          "path": [
+            [
+              1700,
+              9400,
+              6400
+            ],
+            [
+              750,
+              9400,
+              6400
+            ],
+            [
+              750,
+              9300,
+              6400
+            ],
+            [
+              0,
+              9300,
+              6400
+            ]
+          ],
+          "formedWallTerritory": 280,
+          "ceilingTrapDrainPort": {
+            "centre": [
+              0,
+              9500,
+              6400
+            ],
+            "formedDiameter": 40,
+            "maximumDrainOD": 15,
+            "separateFromMainHole": true,
+            "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+          },
+          "maintenancePlatformPlan": [
+            650,
+            9250,
+            1100,
+            750
+          ],
+          "maintenancePlatformWorkingHeightRange": [
+            700,
+            1100
+          ],
+          "workerEquipmentRequirement": {
+            "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+            "maximumHeadTopLocal": 2750,
+            "ceilingFaceLocal": 2800,
+            "requiredTaskContactLocal": [
+              2800,
+              2900
+            ],
+            "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+          }
+        },
+        {
+          "id": "family-bath",
+          "level": 1,
+          "podPlan": [
+            10225,
+            5200,
+            650,
+            500
+          ],
+          "podZ": [
+            6250,
+            6550
+          ],
+          "path": [
+            [
+              10875,
+              5450,
+              6400
+            ],
+            [
+              11275,
+              5450,
+              6400
+            ],
+            [
+              11275,
+              5750,
+              6400
+            ],
+            [
+              12000,
+              5750,
+              6400
+            ]
+          ],
+          "formedWallTerritory": 280,
+          "ceilingTrapDrainPort": {
+            "centre": [
+              12000,
+              5950,
+              6400
+            ],
+            "formedDiameter": 40,
+            "maximumDrainOD": 15,
+            "separateFromMainHole": true,
+            "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+          },
+          "maintenancePlatformPlan": [
+            10100,
+            4875,
+            1100,
+            750
+          ],
+          "maintenancePlatformWorkingHeightRange": [
+            700,
+            1100
+          ],
+          "workerEquipmentRequirement": {
+            "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+            "maximumHeadTopLocal": 2750,
+            "ceilingFaceLocal": 2800,
+            "requiredTaskContactLocal": [
+              2800,
+              2900
+            ],
+            "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+          }
+        },
+        {
+          "id": "principal-bath",
+          "level": 1,
+          "podPlan": [
+            10425,
+            6650,
+            650,
+            500
+          ],
+          "podZ": [
+            6250,
+            6550
+          ],
+          "path": [
+            [
+              11075,
+              6900,
+              6400
+            ],
+            [
+              11275,
+              6900,
+              6400
+            ],
+            [
+              11275,
+              7400,
+              6400
+            ],
+            [
+              11275,
+              7400,
+              6060
+            ],
+            [
+              12000,
+              7400,
+              6060
+            ]
+          ],
+          "formedWallTerritory": 280,
+          "ceilingTrapDrainPort": {
+            "centre": [
+              12000,
+              7600,
+              6060
+            ],
+            "formedDiameter": 40,
+            "maximumDrainOD": 15,
+            "separateFromMainHole": true,
+            "scope": "Additionalauthoredouterwallsleeve; HADfullopening/arch/weatherprofilecheckpending. Noannularsealborrowedfrom280mainport; nofoul/rainreceiverassumed."
+          },
+          "maintenancePlatformPlan": [
+            10325,
+            6625,
+            1200,
+            750
+          ],
+          "maintenancePlatformWorkingHeightRange": [
+            700,
+            1100
+          ],
+          "workerEquipmentRequirement": {
+            "target": "Actualqualifiedadjustableequipment/person/task combination, notuniversalanthropometry",
+            "maximumHeadTopLocal": 2750,
+            "ceilingFaceLocal": 2800,
+            "requiredTaskContactLocal": [
+              2800,
+              2900
+            ],
+            "conditions": "Allfeet/guards/stabilisersinsidefloorfield; maintainactualdoor/egress/access; actualworkerhead/torso/arms/tools/loads/stabilityandtransfer reviewedforselectedequipment. H400cannotearnthisrouteandisrejected."
+          }
+        }
+      ],
+      "studyRewind": {
+        "desk": [
+          655,
+          600,
+          1600,
+          700
+        ],
+        "South1800Body": [
+          2580,
+          765
+        ],
+        "West1800Body": [
+          754.5,
+          2724
+        ],
+        "West1800Handle": [
+          429.5,
+          2220
+        ]
+      },
+      "livingWestRenewal": {
+        "sofaBefore": [
+          800,
+          9000,
+          850,
+          1900
+        ],
+        "sofaPark": [
+          1450,
+          9000,
+          850,
+          1900
+        ],
+        "eastMove": 650,
+        "sweptRectangle": [
+          800,
+          9000,
+          1500,
+          1900
+        ],
+        "pullingBodyCentrePath": [
+          [
+            1975,
+            9300
+          ],
+          [
+            2625,
+            9300
+          ]
+        ],
+        "bodyRadius": 300,
+        "headRadius": 150,
+        "ordinaryWallGap": 170.5,
+        "parkedSofaBGap": 37.5,
+        "radiatorWorkingBody": [
+          954.5,
+          10200
+        ]
+      },
+      "kitchenStationPlan": [
+        8700,
+        10970.5,
+        900,
+        600
+      ],
+      "kitchenStationTopZ": 900,
+      "supply": [
+        {
+          "id": "study",
+          "level": 0,
+          "wall": "west",
+          "point": [
+            0,
+            2700,
+            2850
+          ],
+          "measuredEquivalentAreaRequired": 15000,
+          "formedWallTerritory": 360,
+          "metalTerminalEnvelope": [
+            400,
+            400,
+            100
+          ],
+          "clearDuct": 200,
+          "radialInsulation": 50,
+          "metalJacketEachSide": 1,
+          "fullInsulatedOD": 302,
+          "wallHoleRadialReserve": 29,
+          "faceTopLocal": 3050,
+          "ceilingClearance": 50,
+          "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+        },
+        {
+          "id": "living",
+          "level": 0,
+          "wall": "north",
+          "point": [
+            2675,
+            12000,
+            2850
+          ],
+          "measuredEquivalentAreaRequired": 15000,
+          "formedWallTerritory": 360,
+          "metalTerminalEnvelope": [
+            400,
+            400,
+            100
+          ],
+          "clearDuct": 200,
+          "radialInsulation": 50,
+          "metalJacketEachSide": 1,
+          "fullInsulatedOD": 302,
+          "wallHoleRadialReserve": 29,
+          "faceTopLocal": 3050,
+          "ceilingClearance": 50,
+          "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+        },
+        {
+          "id": "bed2",
+          "level": 1,
+          "wall": "south",
+          "point": [
+            2850,
+            0,
+            6300
+          ],
+          "measuredEquivalentAreaRequired": 15000,
+          "formedWallTerritory": 360,
+          "metalTerminalEnvelope": [
+            400,
+            400,
+            100
+          ],
+          "clearDuct": 200,
+          "radialInsulation": 50,
+          "metalJacketEachSide": 1,
+          "fullInsulatedOD": 302,
+          "wallHoleRadialReserve": 29,
+          "faceTopLocal": 3050,
+          "ceilingClearance": 50,
+          "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+        },
+        {
+          "id": "bed3",
+          "level": 1,
+          "wall": "south",
+          "point": [
+            9150,
+            0,
+            6300
+          ],
+          "measuredEquivalentAreaRequired": 15000,
+          "formedWallTerritory": 360,
+          "metalTerminalEnvelope": [
+            400,
+            400,
+            100
+          ],
+          "clearDuct": 200,
+          "radialInsulation": 50,
+          "metalJacketEachSide": 1,
+          "fullInsulatedOD": 302,
+          "wallHoleRadialReserve": 29,
+          "faceTopLocal": 3050,
+          "ceilingClearance": 50,
+          "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+        },
+        {
+          "id": "bed4",
+          "level": 1,
+          "wall": "north",
+          "point": [
+            4800,
+            12000,
+            6300
+          ],
+          "measuredEquivalentAreaRequired": 15000,
+          "formedWallTerritory": 360,
+          "metalTerminalEnvelope": [
+            400,
+            400,
+            100
+          ],
+          "clearDuct": 200,
+          "radialInsulation": 50,
+          "metalJacketEachSide": 1,
+          "fullInsulatedOD": 302,
+          "wallHoleRadialReserve": 29,
+          "faceTopLocal": 3050,
+          "ceilingClearance": 50,
+          "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+        },
+        {
+          "id": "principal",
+          "level": 1,
+          "wall": "north",
+          "point": [
+            11150,
+            12000,
+            6300
+          ],
+          "measuredEquivalentAreaRequired": 15000,
+          "formedWallTerritory": 360,
+          "metalTerminalEnvelope": [
+            400,
+            400,
+            100
+          ],
+          "clearDuct": 200,
+          "radialInsulation": 50,
+          "metalJacketEachSide": 1,
+          "fullInsulatedOD": 302,
+          "wallHoleRadialReserve": 29,
+          "faceTopLocal": 3050,
+          "ceilingClearance": 50,
+          "status": "Measured equivalent area, weather, draught and noise data required; geometric screen free area is not equivalent area"
+        }
+      ],
+      "eastFoulExit": {
+        "path": [
+          [
+            9800,
+            5200,
+            2682.5
+          ],
+          [
+            10800,
+            5200,
+            2657.5
+          ],
+          [
+            10800,
+            5700,
+            2645
+          ],
+          [
+            12000,
+            5700,
+            2615
+          ]
+        ],
+        "lengthMM": 2700,
+        "fallAt1in40": 67.5,
+        "formedWallTerritory": 200,
+        "faceFlashingTerritory": 300,
+        "externalDownstackBodyTerritory": [
+          12000,
+          5550,
+          450,
+          300
+        ],
+        "doorControl": {
+          "axis": 4600,
+          "roughWidth": 1400,
+          "ringThicknessControl": 215,
+          "allHeightRingEnvelope": [
+            3685,
+            5515
+          ],
+          "holeToRingControlReserve": 85,
+          "flashingToRingControlReserve": 35
+        },
+        "nextWindowControl": {
+          "axis": 7400,
+          "roughWidth": 1000,
+          "ringThicknessControl": 215,
+          "allHeightRingEnvelope": [
+            6685,
+            8115
+          ]
+        },
+        "source": "Current HAD Eopeningrecord checked for ALLwindows/door.215ring is an explicit profile-control awaiting STR/HAD actual inner/weather ring, NOT asserted whole exterior recipe.",
+        "grade": {
+          "trialExterior": -1300,
+          "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
+          "axisOf160OuterEnvelope": -1980,
+          "crownCoverControl": 600,
+          "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
+        },
+        "renewal": "Outside fixed brackets and boundary sleeve retained; separately isolated supported removable cleanout/straight lengths,350jointrelease territory. External scaffold/lift required, not attic access. Exact part length/mass/connector/fastener and facade work field unproved."
+      },
+      "otherServiceDuties": [
+        {
+          "id": "incoming-water",
+          "count": 1,
+          "path": [
+            [
+              12000,
+              1000,
+              500
+            ],
+            [
+              11200,
+              1000,
+              500
+            ],
+            [
+              11200,
+              4300,
+              500
+            ],
+            [
+              10400,
+              4300,
+              500
+            ]
+          ],
+          "decision": "Service pressure/quality and meter/backflow selection; accessible isolator, drain and actual utility supply. No polymer-free network-pipe claim."
+        },
+        {
+          "id": "foul-ground-WC",
+          "count": 1,
+          "path": [
+            [
+              8900,
+              650,
+              180
+            ],
+            [
+              8900,
+              0,
+              163.75
+            ],
+            [
+              8900,
+              -450,
+              -1980
+            ]
+          ],
+          "decision": "Required compatible horizontalpan outlet abovefloor to own southwall sleeve; no new groundfloor bore.650planat1:40. Actual pan firstrelease and complete connector≤182.5rear axialterritory required; no guessed outlet. Outside receiving invert/site connection unproved."
+        },
+        {
+          "id": "foul-utility",
+          "count": 2,
+          "path": [
+            [
+              10700,
+              600,
+              650
+            ],
+            [
+              10700,
+              600,
+              250
+            ],
+            [
+              12000,
+              600,
+              217.5
+            ],
+            [
+              12450,
+              600,
+              -1980
+            ]
+          ],
+          "decision": "Washerstandpipe andsink trapped branch join accessible rear250chase andeastwall exit ABOVEfloor; no routingthroughappliance chassis.32.5fall on1300plan. Exact trap/hose/branch/outside carrier and workplate required."
+        },
+        {
+          "id": "foul-kitchen",
+          "count": 1,
+          "path": [
+            [
+              9150,
+              11282.5,
+              400
+            ],
+            [
+              9150,
+              12000,
+              382.0625
+            ],
+            [
+              9150,
+              12450,
+              -1980
+            ]
+          ],
+          "decision": "Accessible sinktrap/cleanout to northwall abovefloor,17.9375fall on717.5plan. No branch through groundloggia/hiddenwaterbox. Actual site receiving crown/diameter/invert mustmatch."
+        },
+        {
+          "id": "rear-soil",
+          "count": 1,
+          "path": [
+            [
+              567.5,
+              11177.5,
+              7800
+            ],
+            [
+              567.5,
+              11177.5,
+              200
+            ],
+            [
+              0,
+              11177.5,
+              185.8125
+            ],
+            [
+              -450,
+              11177.5,
+              -1980
+            ]
+          ],
+          "decision": "Merged R01 upper sanitaryport remains conditional; abovefloor westexit avoidsanothergroundbore. Actual roof intersection/termination must be raised above nearbyopenings/roof;7800 is a reservation, not roofheight fact."
+        },
+        {
+          "id": "east-soil",
+          "count": 1,
+          "path": [
+            [
+              9800,
+              5200,
+              2682.5
+            ],
+            [
+              10800,
+              5200,
+              2657.5
+            ],
+            [
+              10800,
+              5700,
+              2645
+            ],
+            [
+              12000,
+              5700,
+              2615
+            ],
+            [
+              12450,
+              5700,
+              -1980
+            ]
+          ],
+          "decision": "Highlevel eastwall exit at5700 avoidsplantdoor/foot-levelcrossbar; ALLouterarches/flashing andvisibleexternalstack mustqualify. No hidden groundfloor stack or additionalfloorbore assumed."
+        },
+        {
+          "id": "rainwater-interface",
+          "count": "RWT-owned",
+          "path": [],
+          "decision": "Copper roof/loggia receivers and independent exceedance route stay MAT/RWT owners. No sanitary, condensate or safety discharge assumed to share their receiver."
+        },
+        {
+          "id": "power-incoming",
+          "count": 1,
+          "path": [
+            [
+              12000,
+              2200,
+              1500
+            ],
+            [
+              9685,
+              2200,
+              1500
+            ]
+          ],
+          "decision": "Meter/metalconsumer-unit onutility westface9385/1750/300×650, separate1000depth workingfield9685/1750. Utility-side cabinet/washing-machine layout must retain clear serviceface. Utility capacity/earthing/bonding/RCD/overcurrent and actual circuits by certified design."
+        },
+        {
+          "id": "power-distribution",
+          "count": "Functional circuit groups, not final circuit count",
+          "path": [
+            [
+              11200,
+              1500,
+              2925
+            ],
+            [
+              11200,
+              5000,
+              2925
+            ],
+            [
+              9800,
+              5000,
+              2925
+            ]
+          ],
+          "decision": "Separate metal drytray follows declared indoor tree; own sealed floor aperture/tray supports, not tied to hotpipes. Mineral-insulated cable investigated, but terminations/controls/flex tails remain certified residuals; cable sizing and fire survival not invented."
+        },
+        {
+          "id": "cooking-power",
+          "count": 1,
+          "path": [
+            [
+              11200,
+              1500,
+              2925
+            ],
+            [
+              11200,
+              10800,
+              2925
+            ],
+            [
+              11100,
+              11200,
+              900
+            ]
+          ],
+          "decision": "Electric cooking, accessible isolation and separate hood/control/makeup duty. No gas supply selected."
+        },
+        {
+          "id": "laundry-refrigeration",
+          "count": 2,
+          "path": [],
+          "decision": "One washer reserve10050/700/650×700(requiredactualbody≤600wide) and fridge10932.5/9025; accessible isolated appliance tails. Washer is new proposal; manufacturer withdrawal/hose/workplate dimensions required, not built into structure."
+        },
+        {
+          "id": "lighting-controls-data",
+          "count": "All occupied rooms, circulation andplant",
+          "path": [],
+          "decision": "Drytray branches drop to inspectable metal face stations; actual circuit/accessory count follows electrical layout. Wired controls, no mandatory cloud/radio. Data/fire-alarm isolation and earthing separate, no implied certified polymer-free circuits."
+        },
+        {
+          "id": "fire-detection",
+          "count": "Whole-house alarm layout to fire strategy",
+          "path": [],
+          "decision": "Protected stair/ring and every habitable/wet risk zone scheduled for actual compliant detector design; no device locations or grade/category invented. Certified alarm internals/backup power are explicit residue; do not delete to satisfy materials."
+        },
+        {
+          "id": "purge-overheating",
+          "count": 6,
+          "path": [],
+          "decision": "Every habitable room retains actual operablewindow task; openings/noise/security/fall protection and orientation/climate/shading must prove purge/overheating.65L/s winterventilation is not cooling and no cooling duty is silently omitted."
+        },
+        {
+          "id": "PV-generation",
+          "count": 8,
+          "path": [
+            [
+              10000,
+              6000,
+              7200
+            ],
+            [
+              10000,
+              5000,
+              6350
+            ],
+            [
+              10000,
+              5000,
+              2925
+            ],
+            [
+              11200,
+              2200,
+              2925
+            ],
+            [
+              9650,
+              650,
+              1600
+            ]
+          ],
+          "decision": "4kWp conditional roof requirement and utility inverter; roofplane/source, solar access, fixation/fire/cable/renewal and actual output must converge before selected apparatus. No energy-offset credit from nameplate."
+        }
+      ],
+      "sourceOrder": "Servicesownsvalues; HADimportsimmutableobject. Finalsourceequivalence comparesrelevantgeometryonly, excludingcommit-pinmetadata. NoHADcommitaddedasfakeparent.",
+      "cooker": {
+        "extractPoint": [
+          11200,
+          12000,
+          2400
+        ],
+        "duct": 160,
+        "exhaustRadialInsulation": 50,
+        "metalJacketEachSide": 1,
+        "fullInsulatedOD": 262,
+        "formedWallTerritory": 320,
+        "minimumCaptureLps": 30,
+        "makeupPoint": [
+          12000,
+          8600,
+          2400
+        ],
+        "makeupFormedTerritory": 280,
+        "makeupRequirement": "Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from65L/s background; no open-window chore or recirculation-onlyhood credit.",
+        "hood": "600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required."
+      }
+    },
     "familyWetRoom": {
       "status": "Shared MAT/IAS/HAD trial only; no selected pan/outlet/door or port acceptance.",
       "eastWetFace": 11567.5,
@@ -2829,14 +4704,7 @@
         900,
         600
       ],
-      "maximumRemovedHeight": 1000,
-      "initialLift": 20,
-      "retainedStudHeight": 15,
       "retainedBodyTopMaximum": 475,
-      "movingUpperLowPointAfterLiftMinimum": 495,
-      "maximumCaptureStroke": 15,
-      "captureReserveAfterLift": 5,
-      "noLowTransverseFrameRail": true,
       "studs": [
         [
           8765,
@@ -2864,10 +4732,6 @@
       "frontAccessZ": [
         400,
         550
-      ],
-      "operatorCentre": [
-        9500,
-        10625
       ],
       "unions": [
         {
@@ -2919,7 +4783,6 @@
           "planReachFromOperator": 395.69590596820683
         }
       ],
-      "sequence": "Isolate/drain; accessibletrue-uniondisengagement FIRST; independentlysupported retainedpipes capped.20lift thenW600 andS600 withdrawal ofstation doesnot liftpipe/support/floorseal. Retained trap staysbelowunion; no movingtrap below495. No rearhiddenrelease assumed.",
       "wasteRequiredRoute": [
         [
           9275,
@@ -2943,61 +4806,7 @@
         ]
       ],
       "actualSupplierRequired": "Bothpressureunions andwastetrap/union mustbe compatiblewithsame release sequence, material, hygiene andgravity duty; nominalmetal/diameter isnot a completepartpass.",
-      "handlingRequirement": {
-        "movingHeadPlan": [
-          900,
-          670
-        ],
-        "firstTranslation": [
-          -600,
-          0
-        ],
-        "secondTranslation": [
-          0,
-          -600
-        ],
-        "tableSource": {
-          "head": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
-          "blob": "6affb39e28a777e36532729183152c8c588e4989",
-          "table": [
-            8500,
-            9100,
-            800,
-            1200
-          ]
-        },
-        "tableInitialYRequired": 9100,
-        "tableFirstY": 9000,
-        "tableFinalY": 9650,
-        "ENchairPark": [
-          10800,
-          8475,
-          500,
-          500
-        ],
-        "otherChairParks": [
-          [
-            7750,
-            8600,
-            500,
-            500
-          ],
-          [
-            7750,
-            9150,
-            500,
-            500
-          ],
-          [
-            7750,
-            9700,
-            500,
-            500
-          ]
-        ],
-        "status": "Narrow IAS coordination rewind; Actual0b2 table source pinned; full IAS sequence reproduction pending. No old chair parking or stale c83 table location credited."
-      },
-      "retainedTrap": "Trap isfixedbelowwasteunion; movingstation tail terminatesat475 before20lift and≥495after. Actual trap/waterseal/cleanout mustfit below475; no movingPtrap sweptthroughfixedpipe.",
+      "retainedTrap": "Trap/Afixedbelow475. UpperA→Bspoolsstrip/capbeforeheadmoves; headlowest600→620after20UP. No retainedtrap/pipe/frame/anchor moves.",
       "retainedFeed": {
         "verticalCornerColumn": [
           11425,
@@ -3130,7 +4939,377 @@
         "bodyGap": 44,
         "worktopToOvenFrontTop": 95,
         "status": "Dimensionallyconstructive samebrandcompactcomparison, notcompleteinstallationapproval. Actualrear/frontventilation,heatresistantcarcass,powerisolations,fitandsafetyinstructionsnotwaived. Fullsize600ovenfails this350plinthcase."
-      }
+      },
+      "selectedMethod": "HEAD-FIRST: fixedfloorframe/anchors/servicesstay; historicalwholeframeW/S/skates arenotselected.",
+      "headFirst": {
+        "status": "Chosenconstructiveconditionalinterface; independentIAScompositecheckpending. Noactualgrip/force/kit/table/framecapacityadmission.",
+        "head": {
+          "topPlan": [
+            8700,
+            10970.5,
+            900,
+            600
+          ],
+          "topZ": 900,
+          "returnDepth": 30,
+          "supportUndersideZ": 870,
+          "maximumMassKg": 15,
+          "minimumBodyZ": 600,
+          "bowlPlan": [
+            8885,
+            11050.5,
+            530,
+            440
+          ],
+          "wingWidthEachSide": 185,
+          "retainedUnionBBodyInsideTop": true
+        },
+        "lowerA": [
+          {
+            "id": "cold",
+            "axis": [
+              9025,
+              10950.5,
+              475
+            ],
+            "axisDirection": [
+              0,
+              0,
+              1
+            ],
+            "maximumDiameter": 80,
+            "maximumAxial": 100,
+            "planReachFromOperator": 575.8257114787425
+          },
+          {
+            "id": "hot",
+            "axis": [
+              9130,
+              10950.5,
+              475
+            ],
+            "axisDirection": [
+              0,
+              0,
+              1
+            ],
+            "maximumDiameter": 80,
+            "maximumAxial": 100,
+            "planReachFromOperator": 492.79838676684
+          },
+          {
+            "id": "waste",
+            "axis": [
+              9275,
+              10950.5,
+              475
+            ],
+            "axisDirection": [
+              0,
+              0,
+              1
+            ],
+            "maximumDiameter": 100,
+            "maximumAxial": 100,
+            "planReachFromOperator": 395.69590596820683
+          }
+        ],
+        "upperB": [
+          {
+            "id": "cold",
+            "axis": [
+              9025,
+              10985.5,
+              625
+            ],
+            "faceDirection": [
+              0,
+              -1,
+              0
+            ],
+            "maximumDiameter": 80,
+            "northHeadHalfY": [
+              10985.5,
+              11035.5
+            ],
+            "southSpoolHalfY": [
+              10935.5,
+              10985.5
+            ]
+          },
+          {
+            "id": "hot",
+            "axis": [
+              9130,
+              10985.5,
+              625
+            ],
+            "faceDirection": [
+              0,
+              -1,
+              0
+            ],
+            "maximumDiameter": 80,
+            "northHeadHalfY": [
+              10985.5,
+              11035.5
+            ],
+            "southSpoolHalfY": [
+              10935.5,
+              10985.5
+            ]
+          },
+          {
+            "id": "waste",
+            "axis": [
+              9275,
+              10985.5,
+              625
+            ],
+            "faceDirection": [
+              0,
+              -1,
+              0
+            ],
+            "maximumDiameter": 100,
+            "northHeadHalfY": [
+              10985.5,
+              11035.5
+            ],
+            "southSpoolHalfY": [
+              10935.5,
+              10985.5
+            ]
+          }
+        ],
+        "firstSpoolRelease": {
+          "phases": [
+            [
+              0,
+              -20,
+              0
+            ],
+            [
+              0,
+              0,
+              20
+            ]
+          ],
+          "finalTranslation": [
+            0,
+            -20,
+            20
+          ],
+          "installedMovingLowestZ": 475,
+          "afterLowestZ": 495,
+          "retainedAHighestZ": 475,
+          "clearanceAfter": 20,
+          "maximumCapturedSpigotLengthAfterNutRelease": 0,
+          "requiredJoint": "Qualifiedflat-facezero-capture unions atBOTHorthogonalA/B. No radialnest/guide/cone remainsafterrelease. Two≤15capturedorthogonalseatswouldbindduringdiagonaltranslationandareREJECTED. Actualkitmustdemonstrateflatfacereleaseorroutefails.",
+          "storage": "Isolate/drain, releaseallnutsandsealadhesion, deliberatelyrenewfaceseals.20SfirstfreesB,then20UPfreesAwithZEROcapturednest. ThreesupportedspoolsstripFIRSTandparksealedonlabelledtray; fixedA/trap/pipe/legs cappedandsupported."
+        },
+        "firstTask": {
+          "bodyFloorCentre": [
+            9550,
+            10575
+          ],
+          "bodyRadius": 300,
+          "shoulder": [
+            9550,
+            10775,
+            625
+          ],
+          "headRadius": 150,
+          "maximumHeadTop": 875,
+          "mode": "Qualifiedkneeling/stoopedtask, notstanding900verticalreach; exacthuman/forcesstillphysicalreview."
+        },
+        "frame": {
+          "fixed": true,
+          "retainedFloorAnchors": [
+            [
+              8765,
+              11070.5
+            ],
+            [
+              8765,
+              11470.5
+            ],
+            [
+              9535,
+              11070.5
+            ],
+            [
+              9535,
+              11470.5
+            ]
+          ],
+          "frontRailZ": 850,
+          "frontRailMaximumMassKg": 2,
+          "frontRailRelease": "Support/unboltaccessiblefrontfastenersandhandcarrytoexactmaintenance-tablepark; rear/sides/highbracesremainstable. No hiddenrearbolts ormissingrail.",
+          "headFasteners": "FouraccessibleFRONTM6, rear15-highlocatingdowels, nohiddenrearfixings."
+        },
+        "motion": {
+          "initialUp": 20,
+          "thenSouth": 930,
+          "windowTrimProjection": 18,
+          "windowTrimReserve": 22,
+          "additionalUp": 250,
+          "totalUp": 270,
+          "bowlBottomAfterRaise": 870,
+          "sideFrameTop": 850,
+          "sideFrameClearance": 20,
+          "thenEast": 950,
+          "thenCCWDegrees": 90,
+          "completeHeadPlan": [
+            900,
+            600
+          ]
+        },
+        "grips": {
+          "padDiameter": 120,
+          "padCentres": [
+            [
+              8792.5,
+              11170.5
+            ],
+            [
+              8792.5,
+              11370.5
+            ],
+            [
+              9507.5,
+              11170.5
+            ],
+            [
+              9507.5,
+              11370.5
+            ]
+          ],
+          "gripY": 11270.5,
+          "operatorSouthY": 10650,
+          "planReachSensitivity": 650,
+          "actualPlanReach": 620.5,
+          "acceptance": "Actualqualifiedsurface/grips/twohandlers/force/stability/healthsafetyrequired; nohandliftingcapacityinvented."
+        },
+        "tablePlacement": {
+          "tableTopZ": 750,
+          "tableY": 9650,
+          "finalHeadCentre": [
+            8900,
+            10300
+          ],
+          "finalTopPlan": [
+            8600,
+            9850,
+            600,
+            900
+          ],
+          "finalBowlPlan": [
+            8680,
+            10035,
+            440,
+            530
+          ],
+          "bearers": [
+            [
+              8600,
+              9850,
+              600,
+              150,
+              300
+            ],
+            [
+              8600,
+              10600,
+              600,
+              150,
+              300
+            ]
+          ],
+          "bearerTopZ": 1050,
+          "carryReturnUndersideZ": 1140,
+          "carryClearance": 90,
+          "lowerToSeat": 90,
+          "seatedTopZ": 1080,
+          "seatedReturnUndersideZ": 1050,
+          "seatedBowlBottomZ": 780,
+          "bowlToTableClearance": 30,
+          "bowlPlanReserveToEachBearer": 35,
+          "supportAllocation": "BearerssupportEND/WINGreturnsoutsidebowl; bowlpassesBETWEEN, neverthroughbearers. Helpersecuresbearersaftertable650NwhiletwohandlersholdheadinEaisle. Completeactualtable/supportcapacityandhandlingeventunearned."
+        }
+      },
+      "historicalWholeFrameControl": {
+        "status": "REJECTED/INCOMPLETE control, never selectedhead-first contract",
+        "fields": {
+          "maximumRemovedHeight": 1000,
+          "initialLift": 20,
+          "retainedStudHeight": 15,
+          "movingUpperLowPointAfterLiftMinimum": 495,
+          "maximumCaptureStroke": 15,
+          "captureReserveAfterLift": 5,
+          "noLowTransverseFrameRail": true,
+          "operatorCentre": [
+            9500,
+            10625
+          ],
+          "sequence": "Isolate/drain; accessibletrue-uniondisengagement FIRST; independentlysupported retainedpipes capped.20lift thenW600 andS600 withdrawal ofstation doesnot liftpipe/support/floorseal. Retained trap staysbelowunion; no movingtrap below495. No rearhiddenrelease assumed.",
+          "handlingRequirement": {
+            "movingHeadPlan": [
+              900,
+              670
+            ],
+            "firstTranslation": [
+              -600,
+              0
+            ],
+            "secondTranslation": [
+              0,
+              -600
+            ],
+            "tableSource": {
+              "head": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+              "blob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
+              "table": [
+                8500,
+                9100,
+                800,
+                1200
+              ]
+            },
+            "tableInitialYRequired": 9100,
+            "tableFirstY": 9000,
+            "tableFinalY": 9650,
+            "ENchairPark": [
+              10800,
+              8475,
+              500,
+              500
+            ],
+            "otherChairParks": [
+              [
+                7750,
+                8600,
+                500,
+                500
+              ],
+              [
+                7750,
+                9150,
+                500,
+                500
+              ],
+              [
+                7750,
+                9700,
+                500,
+                500
+              ]
+            ],
+            "status": "Narrow IAS coordination rewind; Actual0b2 table source pinned; full IAS sequence reproduction pending. No old chair parking or stale c83 table location credited."
+          }
+        }
+      },
+      "frontAccessScope": "This400..550fieldservesLOWERAonly. UpperB625andspooltoolworkhasseparateheadFirst.firstTask; notanassertionthatBfitslowerAfield."
     },
     "rearShowerDrop": {
       "status": "Constructive compatibility requirement for separate rear1000 tray, not actual matched outlet/support/union admission.",
@@ -3247,8 +5426,8 @@
         1250
       ],
       "actualReceiverSource": {
-        "head": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
-        "blob": "6affb39e28a777e36532729183152c8c588e4989",
+        "head": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+        "blob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
         "fixedObstacle": [
           "wetBeamSouthReceiver",
           [
@@ -3287,8 +5466,8 @@
         ]
       ],
       "furnitureMaintenance": {
-        "sourceHead": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
-        "sourceBlob": "6affb39e28a777e36532729183152c8c588e4989",
+        "sourceHead": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+        "sourceBlob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
         "familySofaBefore": [
           2337.5,
           9800,
@@ -3562,14 +5741,7 @@
         900,
         600
       ],
-      "maximumRemovedHeight": 1000,
-      "initialLift": 20,
-      "retainedStudHeight": 15,
       "retainedBodyTopMaximum": 475,
-      "movingUpperLowPointAfterLiftMinimum": 495,
-      "maximumCaptureStroke": 15,
-      "captureReserveAfterLift": 5,
-      "noLowTransverseFrameRail": true,
       "studs": [
         [
           8765,
@@ -3597,10 +5769,6 @@
       "frontAccessZ": [
         400,
         550
-      ],
-      "operatorCentre": [
-        9500,
-        10625
       ],
       "unions": [
         {
@@ -3652,7 +5820,6 @@
           "planReachFromOperator": 395.69590596820683
         }
       ],
-      "sequence": "Isolate/drain; accessibletrue-uniondisengagement FIRST; independentlysupported retainedpipes capped.20lift thenW600 andS600 withdrawal ofstation doesnot liftpipe/support/floorseal. Retained trap staysbelowunion; no movingtrap below495. No rearhiddenrelease assumed.",
       "wasteRequiredRoute": [
         [
           9275,
@@ -3676,61 +5843,7 @@
         ]
       ],
       "actualSupplierRequired": "Bothpressureunions andwastetrap/union mustbe compatiblewithsame release sequence, material, hygiene andgravity duty; nominalmetal/diameter isnot a completepartpass.",
-      "handlingRequirement": {
-        "movingHeadPlan": [
-          900,
-          670
-        ],
-        "firstTranslation": [
-          -600,
-          0
-        ],
-        "secondTranslation": [
-          0,
-          -600
-        ],
-        "tableSource": {
-          "head": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
-          "blob": "6affb39e28a777e36532729183152c8c588e4989",
-          "table": [
-            8500,
-            9100,
-            800,
-            1200
-          ]
-        },
-        "tableInitialYRequired": 9100,
-        "tableFirstY": 9000,
-        "tableFinalY": 9650,
-        "ENchairPark": [
-          10800,
-          8475,
-          500,
-          500
-        ],
-        "otherChairParks": [
-          [
-            7750,
-            8600,
-            500,
-            500
-          ],
-          [
-            7750,
-            9150,
-            500,
-            500
-          ],
-          [
-            7750,
-            9700,
-            500,
-            500
-          ]
-        ],
-        "status": "Narrow IAS coordination rewind; Actual0b2 table source pinned; full IAS sequence reproduction pending. No old chair parking or stale c83 table location credited."
-      },
-      "retainedTrap": "Trap isfixedbelowwasteunion; movingstation tail terminatesat475 before20lift and≥495after. Actual trap/waterseal/cleanout mustfit below475; no movingPtrap sweptthroughfixedpipe.",
+      "retainedTrap": "Trap/Afixedbelow475. UpperA→Bspoolsstrip/capbeforeheadmoves; headlowest600→620after20UP. No retainedtrap/pipe/frame/anchor moves.",
       "retainedFeed": {
         "verticalCornerColumn": [
           11425,
@@ -3863,7 +5976,377 @@
         "bodyGap": 44,
         "worktopToOvenFrontTop": 95,
         "status": "Dimensionallyconstructive samebrandcompactcomparison, notcompleteinstallationapproval. Actualrear/frontventilation,heatresistantcarcass,powerisolations,fitandsafetyinstructionsnotwaived. Fullsize600ovenfails this350plinthcase."
-      }
+      },
+      "selectedMethod": "HEAD-FIRST: fixedfloorframe/anchors/servicesstay; historicalwholeframeW/S/skates arenotselected.",
+      "headFirst": {
+        "status": "Chosenconstructiveconditionalinterface; independentIAScompositecheckpending. Noactualgrip/force/kit/table/framecapacityadmission.",
+        "head": {
+          "topPlan": [
+            8700,
+            10970.5,
+            900,
+            600
+          ],
+          "topZ": 900,
+          "returnDepth": 30,
+          "supportUndersideZ": 870,
+          "maximumMassKg": 15,
+          "minimumBodyZ": 600,
+          "bowlPlan": [
+            8885,
+            11050.5,
+            530,
+            440
+          ],
+          "wingWidthEachSide": 185,
+          "retainedUnionBBodyInsideTop": true
+        },
+        "lowerA": [
+          {
+            "id": "cold",
+            "axis": [
+              9025,
+              10950.5,
+              475
+            ],
+            "axisDirection": [
+              0,
+              0,
+              1
+            ],
+            "maximumDiameter": 80,
+            "maximumAxial": 100,
+            "planReachFromOperator": 575.8257114787425
+          },
+          {
+            "id": "hot",
+            "axis": [
+              9130,
+              10950.5,
+              475
+            ],
+            "axisDirection": [
+              0,
+              0,
+              1
+            ],
+            "maximumDiameter": 80,
+            "maximumAxial": 100,
+            "planReachFromOperator": 492.79838676684
+          },
+          {
+            "id": "waste",
+            "axis": [
+              9275,
+              10950.5,
+              475
+            ],
+            "axisDirection": [
+              0,
+              0,
+              1
+            ],
+            "maximumDiameter": 100,
+            "maximumAxial": 100,
+            "planReachFromOperator": 395.69590596820683
+          }
+        ],
+        "upperB": [
+          {
+            "id": "cold",
+            "axis": [
+              9025,
+              10985.5,
+              625
+            ],
+            "faceDirection": [
+              0,
+              -1,
+              0
+            ],
+            "maximumDiameter": 80,
+            "northHeadHalfY": [
+              10985.5,
+              11035.5
+            ],
+            "southSpoolHalfY": [
+              10935.5,
+              10985.5
+            ]
+          },
+          {
+            "id": "hot",
+            "axis": [
+              9130,
+              10985.5,
+              625
+            ],
+            "faceDirection": [
+              0,
+              -1,
+              0
+            ],
+            "maximumDiameter": 80,
+            "northHeadHalfY": [
+              10985.5,
+              11035.5
+            ],
+            "southSpoolHalfY": [
+              10935.5,
+              10985.5
+            ]
+          },
+          {
+            "id": "waste",
+            "axis": [
+              9275,
+              10985.5,
+              625
+            ],
+            "faceDirection": [
+              0,
+              -1,
+              0
+            ],
+            "maximumDiameter": 100,
+            "northHeadHalfY": [
+              10985.5,
+              11035.5
+            ],
+            "southSpoolHalfY": [
+              10935.5,
+              10985.5
+            ]
+          }
+        ],
+        "firstSpoolRelease": {
+          "phases": [
+            [
+              0,
+              -20,
+              0
+            ],
+            [
+              0,
+              0,
+              20
+            ]
+          ],
+          "finalTranslation": [
+            0,
+            -20,
+            20
+          ],
+          "installedMovingLowestZ": 475,
+          "afterLowestZ": 495,
+          "retainedAHighestZ": 475,
+          "clearanceAfter": 20,
+          "maximumCapturedSpigotLengthAfterNutRelease": 0,
+          "requiredJoint": "Qualifiedflat-facezero-capture unions atBOTHorthogonalA/B. No radialnest/guide/cone remainsafterrelease. Two≤15capturedorthogonalseatswouldbindduringdiagonaltranslationandareREJECTED. Actualkitmustdemonstrateflatfacereleaseorroutefails.",
+          "storage": "Isolate/drain, releaseallnutsandsealadhesion, deliberatelyrenewfaceseals.20SfirstfreesB,then20UPfreesAwithZEROcapturednest. ThreesupportedspoolsstripFIRSTandparksealedonlabelledtray; fixedA/trap/pipe/legs cappedandsupported."
+        },
+        "firstTask": {
+          "bodyFloorCentre": [
+            9550,
+            10575
+          ],
+          "bodyRadius": 300,
+          "shoulder": [
+            9550,
+            10775,
+            625
+          ],
+          "headRadius": 150,
+          "maximumHeadTop": 875,
+          "mode": "Qualifiedkneeling/stoopedtask, notstanding900verticalreach; exacthuman/forcesstillphysicalreview."
+        },
+        "frame": {
+          "fixed": true,
+          "retainedFloorAnchors": [
+            [
+              8765,
+              11070.5
+            ],
+            [
+              8765,
+              11470.5
+            ],
+            [
+              9535,
+              11070.5
+            ],
+            [
+              9535,
+              11470.5
+            ]
+          ],
+          "frontRailZ": 850,
+          "frontRailMaximumMassKg": 2,
+          "frontRailRelease": "Support/unboltaccessiblefrontfastenersandhandcarrytoexactmaintenance-tablepark; rear/sides/highbracesremainstable. No hiddenrearbolts ormissingrail.",
+          "headFasteners": "FouraccessibleFRONTM6, rear15-highlocatingdowels, nohiddenrearfixings."
+        },
+        "motion": {
+          "initialUp": 20,
+          "thenSouth": 930,
+          "windowTrimProjection": 18,
+          "windowTrimReserve": 22,
+          "additionalUp": 250,
+          "totalUp": 270,
+          "bowlBottomAfterRaise": 870,
+          "sideFrameTop": 850,
+          "sideFrameClearance": 20,
+          "thenEast": 950,
+          "thenCCWDegrees": 90,
+          "completeHeadPlan": [
+            900,
+            600
+          ]
+        },
+        "grips": {
+          "padDiameter": 120,
+          "padCentres": [
+            [
+              8792.5,
+              11170.5
+            ],
+            [
+              8792.5,
+              11370.5
+            ],
+            [
+              9507.5,
+              11170.5
+            ],
+            [
+              9507.5,
+              11370.5
+            ]
+          ],
+          "gripY": 11270.5,
+          "operatorSouthY": 10650,
+          "planReachSensitivity": 650,
+          "actualPlanReach": 620.5,
+          "acceptance": "Actualqualifiedsurface/grips/twohandlers/force/stability/healthsafetyrequired; nohandliftingcapacityinvented."
+        },
+        "tablePlacement": {
+          "tableTopZ": 750,
+          "tableY": 9650,
+          "finalHeadCentre": [
+            8900,
+            10300
+          ],
+          "finalTopPlan": [
+            8600,
+            9850,
+            600,
+            900
+          ],
+          "finalBowlPlan": [
+            8680,
+            10035,
+            440,
+            530
+          ],
+          "bearers": [
+            [
+              8600,
+              9850,
+              600,
+              150,
+              300
+            ],
+            [
+              8600,
+              10600,
+              600,
+              150,
+              300
+            ]
+          ],
+          "bearerTopZ": 1050,
+          "carryReturnUndersideZ": 1140,
+          "carryClearance": 90,
+          "lowerToSeat": 90,
+          "seatedTopZ": 1080,
+          "seatedReturnUndersideZ": 1050,
+          "seatedBowlBottomZ": 780,
+          "bowlToTableClearance": 30,
+          "bowlPlanReserveToEachBearer": 35,
+          "supportAllocation": "BearerssupportEND/WINGreturnsoutsidebowl; bowlpassesBETWEEN, neverthroughbearers. Helpersecuresbearersaftertable650NwhiletwohandlersholdheadinEaisle. Completeactualtable/supportcapacityandhandlingeventunearned."
+        }
+      },
+      "historicalWholeFrameControl": {
+        "status": "REJECTED/INCOMPLETE control, never selectedhead-first contract",
+        "fields": {
+          "maximumRemovedHeight": 1000,
+          "initialLift": 20,
+          "retainedStudHeight": 15,
+          "movingUpperLowPointAfterLiftMinimum": 495,
+          "maximumCaptureStroke": 15,
+          "captureReserveAfterLift": 5,
+          "noLowTransverseFrameRail": true,
+          "operatorCentre": [
+            9500,
+            10625
+          ],
+          "sequence": "Isolate/drain; accessibletrue-uniondisengagement FIRST; independentlysupported retainedpipes capped.20lift thenW600 andS600 withdrawal ofstation doesnot liftpipe/support/floorseal. Retained trap staysbelowunion; no movingtrap below495. No rearhiddenrelease assumed.",
+          "handlingRequirement": {
+            "movingHeadPlan": [
+              900,
+              670
+            ],
+            "firstTranslation": [
+              -600,
+              0
+            ],
+            "secondTranslation": [
+              0,
+              -600
+            ],
+            "tableSource": {
+              "head": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+              "blob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
+              "table": [
+                8500,
+                9100,
+                800,
+                1200
+              ]
+            },
+            "tableInitialYRequired": 9100,
+            "tableFirstY": 9000,
+            "tableFinalY": 9650,
+            "ENchairPark": [
+              10800,
+              8475,
+              500,
+              500
+            ],
+            "otherChairParks": [
+              [
+                7750,
+                8600,
+                500,
+                500
+              ],
+              [
+                7750,
+                9150,
+                500,
+                500
+              ],
+              [
+                7750,
+                9700,
+                500,
+                500
+              ]
+            ],
+            "status": "Narrow IAS coordination rewind; Actual0b2 table source pinned; full IAS sequence reproduction pending. No old chair parking or stale c83 table location credited."
+          }
+        }
+      },
+      "frontAccessScope": "This400..550fieldservesLOWERAonly. UpperB625andspooltoolworkhasseparateheadFirst.firstTask; notanassertionthatBfitslowerAfield."
     }
   },
   "eastFoulExit": {
@@ -4387,7 +6870,7 @@
       "initialReplacementMarginToRiser": 25
     },
     "controlsHydraulics": [
-      11282.5,
+      11270.5,
       5550,
       300,
       650
@@ -4530,7 +7013,7 @@
         300
       ],
       "controlsBody": [
-        10957.5,
+        10945.5,
         6078,
         300
       ],
@@ -4542,7 +7025,7 @@
       "bufferPortFaceRequirement": "Southfaceaccessiblevalves/instrumentation600..1600, drainlowerwithqualifiedkneelingtask; nohiddenrearserviceassumed.",
       "failed200Pull": "Operatorneeded5678wouldintersectretainedriser; chosen≤150requiresactualunhang/socketmatch. Nofixedsupportdeleted.",
       "radToBufferBodyReserve": 25.626885611544026,
-      "controlsToBufferBodyReserve": 48.87614380558023,
+      "controlsToBufferBodyReserve": 37.655275207537215,
       "frontServiceToBufferReserve": 50
     }
   },
@@ -5982,6 +8465,23 @@
     {
       "route": "ground-front-west",
       "level": 0,
+      "wall": "protected-west-cross",
+      "point": [
+        3390,
+        4250,
+        2500
+      ],
+      "planInsideExistingAperture": true,
+      "requiredServiceTerritory": [
+        320,
+        260
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port.",
+      "selectedCrossover": "FD-WEST-CROSS"
+    },
+    {
+      "route": "ground-front-west",
+      "level": 0,
       "wall": "rear-west",
       "point": [
         3500,
@@ -5994,6 +8494,23 @@
         260
       ],
       "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port."
+    },
+    {
+      "route": "ground-rear-east",
+      "level": 0,
+      "wall": "protected-east-cross",
+      "point": [
+        8691.25,
+        4250,
+        2500
+      ],
+      "planInsideExistingAperture": true,
+      "requiredServiceTerritory": [
+        320,
+        260
+      ],
+      "status": "Wall-body/lintel/support and actual fire-boundary design enquiry. Plan doorway alignment never proves a high-level pipe port.",
+      "selectedCrossover": "FD-EAST-CROSS"
     },
     {
       "route": "ground-rear-east",
@@ -6100,7 +8617,7 @@
     {
       "route": "upper-rear-east",
       "level": 1,
-      "wall": "rear-east",
+      "wall": "rear-east-principal",
       "point": [
         10350,
         8290,
@@ -7072,11 +9589,11 @@
     },
     {
       "id": "wall-emitters",
-      "quantity": "16completewallradiators/11.0bodymetres",
+      "quantity": "16completewallradiators/10.9bodymetres",
       "location": "All14explicitroom/circulationduties",
       "known": "Steelwaterwaysdo notqualifyfinish, paint/polyester/epoxy, plasticbracketclips, valveheads/seats/diaphragms orjointseals. Exactproductrevision/installedextentrequired.",
-      "dryMassComparisonKg": 577.5,
-      "filledMassComparisonKg": 685.3,
+      "dryMassComparisonKg": 579.693,
+      "filledMassComparisonKg": 687.926,
       "alternative": "Bare/mineralfinishedmetalapprovedvariantorcompatibleallmetalcontrolsarecomparisonrequirements; nostrippingfactorycoating/valveseals.",
       "replacement": "Isolate/drainlocalradiator; retainfixedwallpipepairandcaps; actual50up/200front(orplant150)unhangtarget, mechanicalhandlingandfixingloads.",
       "proposal": "Noownerexceptionapproved; exactvisible/hiddenconstituentsandmanufacturer-permittedfinishmustbequalified."
@@ -7099,5 +9616,5 @@
     "Actual mains, site climate, network/outfall/pressure/noise/pollution and power",
     "Owner-approved polymer exceptions; none created"
   ],
-  "reproduction": "Python standard library. If frozen HAD object is absent, explicitly git fetch origin c83a06f26cf3b146d7cdc8254b4799f390508196; verify fullblob. No synthetic merge parent or geometry substitution. Geometry tests distinguish finite reservations from engineering acceptance."
+  "reproduction": "Python standard library. If frozen HAD object is absent, explicitly git fetch origin 068e33ae52bbaa5ab0c3e3551350400e958e4033; verify fullblob. No synthetic merge parent or geometry substitution. Geometry tests distinguish finite reservations from engineering acceptance."
 }

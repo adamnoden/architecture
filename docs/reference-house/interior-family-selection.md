@@ -1,6 +1,10 @@
 <!-- nav-exclude: redirect -->
 # Reference House — interior family selection and adoption limits
 
+## Joined B/loggia candidate — convergence, not adopted source
+
+The [IAS selected-family closeout](../../project/ias/ias-03-selection-closeout.md) recommends the fixed mineral background/local mechanical-release family for the current B/loggia house trial, with one27 dry/30 wet finish rewind, RC200/80 upper floor, actual protected/private door roles and finite family/kitchen/ordinary correction sheets. This is a candidate direction requiring HAD's authoritative composition and its exact remaining task/assembly duties. The historical adopted-layout dry selection below stays at its original source identity; its125 partition,350 timber-primary floor and150×18 trim are not copied into the joined candidate by analogy. No whole-house or IAS-node completion is made here.
+
 ## Selected family
 
 Select **ordinary quiet finishes with local mechanical release at real tasks**:
