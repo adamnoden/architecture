@@ -17,8 +17,8 @@
     "project/str/studies/open-loggia-support.json": "f7d90af41d3b201d63e6f49fb6d993d3bdfcc7c6425890b3ddfcd3d3b44b51d2"
   },
   "geometry": {
-    "HADHead": "a510f30cc82cf9d0142664b72bc272406aed3076",
-    "HADJSONBlob": "54f5ff68fe9bdd9b14fc00d6262d4a2c2366aea2",
+    "HADHead": "cfacc96c61ce1be5befa3bc0a10086c7cb6b4202",
+    "HADJSONBlob": "25faad2c4d40df2b7da7212f73808843a88d2f52",
     "logicalInput": "project/had/studies/open-north-loggia.json",
     "services": {
       "head": "9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2",
@@ -30,6 +30,7 @@
         "listedSpatial": true,
         "wholeFurnitureWalls": true,
         "servicesKeyedProjection": true,
+        "fixedServiceRegression": true,
         "family600": true,
         "rearRepair": true,
         "fanFields": true,
@@ -44,9 +45,123 @@
       "scope": "HADfinitearchitecturalfit andexplicitprocurement/maintenancegeography only. Noactualhuman/product/force/material/structural/fire/hydraulic/sitecertification inferred."
     },
     "rawFootprint": {
-      "method": "Positive rectangle overlap of each represented whole furniture/fixture with actual nominal finished walls/receivers, before decorative18skirt. Wall-mounted contact at zero is not counted. No vertical exception silently invented.",
+      "method": "Positive rectangle overlap of every represented furniture/fixture with nominal finished walls/receivers AND represented fixed service solids, before decorative18skirt. Contact at zero is not overlap. No vertical exception is silently invented.",
       "conflicts": [],
+      "fixedServiceSolids": {
+        "GROUND": [
+          "plant-water-reserve",
+          "plant-riser",
+          "pantry-shelf-comparison",
+          "rear-stack",
+          "north-sink-station",
+          "north-cooking-station",
+          "cold-storage",
+          "service-kitchen-feed-column",
+          "service-emitter-study-W",
+          "service-emitter-living-W",
+          "service-emitter-living-N2",
+          "service-emitter-kitchen-E",
+          "service-emitter-utility-E",
+          "service-emitter-plant-N",
+          "service-emitter-protected-G",
+          "service-emitter-guest-WC-E",
+          "plant-primary-buffer-round-bounding600",
+          "plant-controls",
+          "service-utility-washer",
+          "service-utility-sink",
+          "service-utility-rearServiceChase",
+          "service-utility-valveBay",
+          "service-utility-electricalStation",
+          "service-utility-PVinverter"
+        ],
+        "FIRST": [
+          "rear-cabinet",
+          "rear-west-low-box",
+          "family-service-cabinet",
+          "family-local-soil-column",
+          "service-emitter-bed2-S",
+          "service-emitter-bed3-S",
+          "service-emitter-bed4-N",
+          "service-emitter-principal-N",
+          "service-emitter-rear-N",
+          "service-emitter-family-E",
+          "service-emitter-principal-E-high",
+          "service-emitter-protected-F"
+        ]
+      },
       "pass": true
+    },
+    "kitchenOccurrence": {
+      "station": [
+        8700,
+        10970.5,
+        900,
+        600
+      ],
+      "cooking": {
+        "footprint": [
+          10750,
+          10970.5,
+          600,
+          600
+        ],
+        "top": 900,
+        "plinth": 350,
+        "ovenBodyZ": [
+          350,
+          805
+        ],
+        "hobBodyZ": [
+          849,
+          900
+        ]
+      },
+      "retainedFeedColumn": [
+        11425,
+        11188,
+        145,
+        224
+      ],
+      "source": {
+        "commit": "9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2",
+        "path": "project/mat/studies/whole-house-service-baseline.json",
+        "blob": "e827caa8c6c0cfc23bef0f08b3452f57984875d6",
+        "key": "interfaces.kitchenSinkStation.station/cookingStationRewind/retainedFeed.verticalCornerColumn"
+      },
+      "keyedFieldsEqual": true,
+      "scope": "DirectfixedMAT9476 spatialinterface; actualappliance/thermal/ventilation/electrical/installationadmission remainsMAT/IAS."
+    },
+    "fixedServiceCollisionRegression": {
+      "source": "Independentwhole-selectionreview ofa510; unchangedMAT9476fixedsolids",
+      "oldCookingPose": [
+        10800,
+        10970.5,
+        600,
+        600
+      ],
+      "oldCollision": {
+        "level": "GROUND",
+        "kind": "fixedServiceSolid",
+        "object": "north-cooking-station",
+        "serviceSolid": "service-emitter-kitchen-E",
+        "overlap": [
+          11370.5,
+          10970.5,
+          29.5,
+          79.5
+        ]
+      },
+      "selectedCookingPose": [
+        10750,
+        10970.5,
+        600,
+        600
+      ],
+      "selectedRadiatorPlanGap": 20.5,
+      "oldPoseFails": true,
+      "selectedPosePasses": true,
+      "pass": true,
+      "scope": "Meaningfulnegativecontrol runs theSAMEgenericfurniture-versus-fixed-service audit overthe oldactualpose; the composedowner-correctedpose mustpass allrepresentedfixedsolids."
     },
     "protectedRevision": "Exact protected occurrence reference imported one way; product/physical/statutory admission not earned",
     "protectedRoute": {
@@ -265,7 +380,7 @@
               6283.5
             ],
             "net": 767,
-            "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Final600reach immutable proof pending binding; E20 assembly not qualified"
+            "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Bound to independently reviewed IAS30cf600 proof; E20 assembly, closer force/delay and physical operation remain unqualified"
           }
         }
       ],
@@ -404,7 +519,7 @@
         600
       ],
       "north-cooking-station": [
-        10800,
+        10750,
         10970.5,
         600,
         600
@@ -414,6 +529,12 @@
         9025,
         650,
         650
+      ],
+      "service-kitchen-feed-column": [
+        11425,
+        11188,
+        145,
+        224
       ],
       "service-emitter-study-W": [
         429.5,
@@ -817,7 +938,6 @@
           ],
           "stageToTemporaryBedGap": 110
         },
-        "southPassageFromActualLeaf8486": 689,
         "southPassage": 664
       },
       "bed4": {
@@ -4281,7 +4401,6 @@
       }
     },
     "noncontrollingLegacyCaptions": [
-      "furnitureRequirements.principalBed.southPassageFromActualLeaf8486=689 is not the active664/614 passage check",
       "furnitureRequirements.bed4.northBedPassage=732.5 is not radiator-clearance credit; actual new emitter/body witnesses govern"
     ],
     "finishDeviation": {
@@ -5400,7 +5519,7 @@
               6283.5
             ],
             "net": 767,
-            "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Final600reach immutable proof pending binding; E20 assembly not qualified"
+            "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Bound to independently reviewed IAS30cf600 proof; E20 assembly, closer force/delay and physical operation remain unqualified"
           }
         }
       ],
