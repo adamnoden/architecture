@@ -68,6 +68,8 @@ At 144 mm/h, dividing those volumes by 2.4025 L/s gives synthetic constant-inflo
 
 The [MAT portal/renewal reference](../mat/studies/loggia-portal-renewal.mjs) retains cover/understrip release order, staging and whole-liner reinstatement. It provides finite geometry and internal load probes, not installed seal, handling or live-rain operation. Temporary capture must itself be installed and removed while a surviving path remains available; it cannot depend on a body already lifted or on the blocked broad strip. Direct court rain must still be handled when roof inflow is diverted.
 
+The later [temporary whole-liner renewal comparison](rwt-06-temporary-renewal-comparison.md) develops a declared major-renewal state with a 300 gross removable surface route, a remaining 1500 broad route, an N/W temporary chute and northward exterior body export. It rejects a permanently buried lower trough as a maintenance trap and identifies the real inlet, stage, receiver and worker costs. This is a conditional development alternative, not a change to the selected normal 1800 width or an admission of wet-state renewal; its stated failure tests remain RWT-06 work.
+
 ## High-level collection access is part of this exit
 
 Reuse the single [ROF access and renewal evidence](../../docs/research/roof-access-and-renewal.md), including its separately sourced CE outdoor AWP-25S comparison and designed scaffold alternative. Its old enclosed-room route, flat court and +6800 eave do not transfer automatically:
