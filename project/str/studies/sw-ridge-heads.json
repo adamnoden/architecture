@@ -10,6 +10,60 @@
       3917.5,
       3917.5
     ],
+    "base_crossing_trial": {
+      "cold_axis_Mx_My_kNm": {
+        "down": [
+          0.6785202555320127,
+          -0.6785202555320127
+        ],
+        "uplift": [
+          -0.24232866269000458,
+          0.24232866269000458
+        ]
+      },
+      "cold_node_offset_xy_mm": [
+        32.5,
+        32.5
+      ],
+      "equal_tie_static_witness_kN": {
+        "down": 5.219386581015482,
+        "uplift": -1.8640666360769584
+      },
+      "first_floor_RC_removed_m3_if_cut_exactly": 0.00288,
+      "maximum_positive_side_sleeve_to_pad_edge_mm": 27.0,
+      "minimum_sleeve_clear_mm": 22,
+      "post_nominal_first_floor_cut_area_m2": 0.0144,
+      "scope": "Four-rod equal split is a geometric equilibrium witness for an isolated centered vertical action only. An actual baseplate, bolt nuts or weld access, hole/slot, cage and anchorage are absent; straight steel pier is not continued through mineral/DPC band. Four sleeves pierce the barrier and have no qualified sealing. A 120-square slab cut excludes opening tolerance and trimming; slab/load continuity and actual FIRST floor geometry are not requalified.",
+      "sleeve_diameter_mm": 32,
+      "steel_post_clear_internal_width_mm": 107.4,
+      "tie_count": 4,
+      "tie_diameter_mm": 20,
+      "tie_offsets_xy_mm": [
+        [
+          -27,
+          -27
+        ],
+        [
+          -27,
+          27
+        ],
+        [
+          27,
+          -27
+        ],
+        [
+          27,
+          27
+        ]
+      ],
+      "tie_outer_to_internal_face_nominal_mm": 16.700000000000003,
+      "unqualified_band_depth_mm": 385,
+      "z_cold_node_top_mm": -765,
+      "z_warm_RC_mm": [
+        -380,
+        -80
+      ]
+    },
     "candidate_SHS_mm": [
       120,
       120,
@@ -77,8 +131,8 @@
     },
     "scope": "Core-contained steel is a finite alternative, not a selected post. Illustrative casing thickness is not a fire specification. SHS runs through the FIRST RC slab envelope and requires a real reinforced opening, seal and load transfer. Below-floor pad needs actual slab, thermal, mineral DPC and protected-route junction. Shank/sealing/baseplate, head, restraints, hollow-section access and cold node are unproved. Adjacent roof, wall and wind actions excluded.",
     "vertical_action_kN": {
-      "down": 20.757659688957197,
-      "uplift": -7.413449888913287
+      "down": 20.877546324061928,
+      "uplift": -7.456266544307834
     },
     "wall_core_envelope_mm": [
       3847.5,
@@ -121,10 +175,10 @@
       ],
       "downward_comparison": {
         "governing_coordinate_mm": 2125,
-        "largest_absolute_M_kNm": 3.7951569940755943,
+        "largest_absolute_M_kNm": 3.8428151041283036,
         "support_forces_kN": [
-          9.244645464905895,
-          10.264619709056879
+          9.335422817387245,
+          10.370526620285121
         ]
       },
       "id": "south",
@@ -170,15 +224,15 @@
           -80
         ]
       },
-      "limitations": "Source wall/floor budget represented as a uniform opening load solely for this separate comparison; no claim of actual distribution, concrete properties, member capacity, bearing, development, full cage, fire, head/door fit or combined permanent/favourable loads.",
-      "roof_increment_down_kN": 10.13486517396277,
-      "roof_increment_uplift_kN": -3.6195947049867043,
+      "limitations": "A continuous 20 mm top plate and 50 mm bearing pack occupy the 70 mm head-to-slab gap, with wide end caps coplanar and joined to it. Their bearing, tie continuity, uplift and interactions remain unproved. Ground head self-weight and added plate are listed separately and not included in the comparisons. Source wall/floor budget represented as a uniform opening load solely for this separate comparison; no claim of actual distribution, concrete properties, member capacity, bearing, development, full cage, fire, head/door fit or combined permanent/favourable loads.",
+      "roof_increment_down_kN": 10.33154943767236,
+      "roof_increment_uplift_kN": -3.689839084882986,
       "roof_only_uplift_comparison": {
         "governing_coordinate_mm": 2125,
-        "largest_absolute_M_kNm": -0.8770556400544706,
+        "largest_absolute_M_kNm": -0.8940763936447237,
         "support_forces_kN": [
-          -1.670582171532325,
-          -1.9490125334543793
+          -1.7030026545613783,
+          -1.9868364303216077
         ]
       },
       "roof_point_axis_mm": 2125,
@@ -188,6 +242,10 @@
       ],
       "separation_below_first_floor_soffit_mm": 70,
       "source_upper_core_plus_floor_ULS_kN": 9.374400000000005,
+      "trial_bearing_pack_z_mm": [
+        3120,
+        3170
+      ],
       "trial_cold_route": {
         "cold_beam_trial_z_mm": [
           -1215,
@@ -195,12 +253,12 @@
         ],
         "cold_width_mm": 600,
         "downward_end_reactions_kN": [
-          7.225327045745142,
-          12.283938128217631
+          7.296540313639994,
+          12.409409124032372
         ],
         "roof_only_uplift_end_reactions_kN": [
-          -1.3105429104262205,
-          -2.309051794560484
+          -1.3359762203886676,
+          -2.3538628644943187
         ],
         "scope": "Statically determinate line-route trial through four hypothetical jamb receivers; these are not established cold girders, actual piles, stiffness shares or ground reactions. Continuous cold reinforcement, local receiver and site must be developed.",
         "source_node_axes_mm": [
@@ -220,6 +278,16 @@
           600
         ]
       },
+      "trial_continuous_head_top_plate_width_mm": 140,
+      "trial_continuous_head_top_plate_z_mm": [
+        3100,
+        3120
+      ],
+      "trial_head_G_kN_at_25": 1.00625,
+      "trial_head_gross_concrete_m3": 0.04025,
+      "trial_head_top_plate_G_kN_at_78p5": 0.25277,
+      "trial_pack_thickness_mm": 50,
+      "trial_rc_minus_masonry_G_kN_at_25_20": 0.20125,
       "trial_rebar": {
         "bar_diameter_mm": 12,
         "bottom_bar_centre_z_mm": 2889,
@@ -263,11 +331,11 @@
         3317.5
       ],
       "downward_comparison": {
-        "governing_coordinate_mm": 1930.1150474170647,
-        "largest_absolute_M_kNm": 8.591332173095637,
+        "governing_coordinate_mm": 1932.6401507962896,
+        "largest_absolute_M_kNm": 8.656657972896774,
         "support_forces_kN": [
-          22.025808120331114,
-          36.297520467954335
+          22.12168124543353,
+          36.67036039890817
         ]
       },
       "id": "west",
@@ -313,15 +381,15 @@
           -80
         ]
       },
-      "limitations": "Source wall/floor budget represented as a uniform opening load solely for this separate comparison; no claim of actual distribution, concrete properties, member capacity, bearing, development, full cage, fire, head/door fit or combined permanent/favourable loads.",
-      "roof_increment_down_kN": 24.152128588285446,
-      "roof_increment_uplift_kN": -8.625760210101944,
+      "limitations": "A continuous 20 mm top plate and 50 mm bearing pack occupy the 70 mm head-to-slab gap, with wide end caps coplanar and joined to it. Their bearing, tie continuity, uplift and interactions remain unproved. Ground head self-weight and added plate are listed separately and not included in the comparisons. Source wall/floor budget represented as a uniform opening load solely for this separate comparison; no claim of actual distribution, concrete properties, member capacity, bearing, development, full cage, fire, head/door fit or combined permanent/favourable loads.",
+      "roof_increment_down_kN": 24.620841644341702,
+      "roof_increment_uplift_kN": -8.793157730122036,
       "roof_only_uplift_comparison": {
         "governing_coordinate_mm": 2125,
-        "largest_absolute_M_kNm": -1.5438150376034727,
+        "largest_absolute_M_kNm": -1.5737753891979778,
         "support_forces_kN": [
-          -1.7643600429753974,
-          -6.861400167126547
+          -1.7986004447976889,
+          -6.994557285324348
         ]
       },
       "roof_point_axis_mm": 2125,
@@ -331,6 +399,10 @@
       ],
       "separation_below_first_floor_soffit_mm": 70,
       "source_upper_core_plus_floor_ULS_kN": 34.1712,
+      "trial_bearing_pack_z_mm": [
+        3120,
+        3170
+      ],
       "trial_cold_route": {
         "cold_beam_trial_z_mm": [
           -1215,
@@ -338,12 +410,12 @@
         ],
         "cold_width_mm": 600,
         "downward_end_reactions_kN": [
-          20.72215092450208,
-          37.60117766378337
+          20.852768144348744,
+          37.93927349999296
         ],
         "roof_only_uplift_end_reactions_kN": [
-          -2.403758126959998,
-          -6.2220020831419465
+          -2.4504071340480924,
+          -6.3427505960739445
         ],
         "scope": "Statically determinate line-route trial through four hypothetical jamb receivers; these are not established cold girders, actual piles, stiffness shares or ground reactions. Continuous cold reinforcement, local receiver and site must be developed.",
         "source_node_axes_mm": [
@@ -363,6 +435,16 @@
           600
         ]
       },
+      "trial_continuous_head_top_plate_width_mm": 140,
+      "trial_continuous_head_top_plate_z_mm": [
+        3100,
+        3120
+      ],
+      "trial_head_G_kN_at_25": 1.1375,
+      "trial_head_gross_concrete_m3": 0.0455,
+      "trial_head_top_plate_G_kN_at_78p5": 0.28574,
+      "trial_pack_thickness_mm": 50,
+      "trial_rc_minus_masonry_G_kN_at_25_20": 0.2275,
       "trial_rebar": {
         "bar_diameter_mm": 12,
         "bottom_bar_centre_z_mm": 2889,
@@ -445,8 +527,8 @@
     ],
     "ridge_axis_z_mm": 7582.577566313353,
     "ridge_point_apex_force_kN": {
-      "down": 6.679275196956796,
-      "uplift": -2.3854554274845703
+      "down": 6.9190484671662595,
+      "uplift": -2.4710887382736644
     },
     "ridge_south_axis_segment_xy_mm": [
       [
@@ -486,8 +568,8 @@
     ],
     "two_force_control_scope": "Only the combined ridge-apex vertical point action, stipulated pinned two-force diagonal members and no other loads. Uplift reverses axial signs; real distributed roof actions, stiffness and all other lateral cases are excluded.",
     "two_force_pin_control_horizontal_each_kN": {
-      "down": 10.128422089112192,
-      "uplift": -3.617293603254354
+      "down": 10.49201316969451,
+      "uplift": -3.747147560605182
     }
   },
   "source_sha256": {
@@ -495,7 +577,7 @@
     "project/str/studies/disjoint-house-actions.json": "8eb7f71f0c59362438e2a992c97ce03bce2eaeac9b6411233654501d7b887abe",
     "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
     "project/str/studies/sw-corner-station.json": "d3f65aa4866b0137f94a03fd3ff61089a782106c181fcfc1b16caec6c0f82d47",
-    "project/str/studies/sw-roof-region-route.json": "8f58d6ebe624ade3215798222ee00e033e08fa9600130d9792f4a27619056ee7"
+    "project/str/studies/sw-roof-region-route.json": "dd6e5359f4f266d5c398d29f776f2dd345173fd0951a9af499339c4e36c98e49"
   },
   "status": "finite roof junction and door-head development geometry; no node, opening, structure or site pass",
   "study_260mm_jamb_body_witness_screen": [
