@@ -1,0 +1,204 @@
+{
+  "exclusions": "Actual arch geometry, wall finish/weather leaves, enclosure portals at ground, roof/floor support sharing, spandrel/crown/steel/RC substitutions, local slab openings, nonwall material actual mass, site wind, ground grid and foundation mass are not complete. Ground walls and weather leaves remain unquantified. Values are a single trial geometry, not site design, structural adequacy or a total whole-house weight.",
+  "head_actions": [
+    {
+      "floor_ULS_nonwall_budget_kN": 0,
+      "head_interval_mm": [
+        1700,
+        2500
+      ],
+      "left_ground_route": "actual-cloak-east",
+      "left_trial_ULS_kN": 4.687200000000013,
+      "lower": "cloak-east",
+      "right_ground_route": "actual-cloak-east",
+      "right_trial_ULS_kN": 4.687199999999992,
+      "sum_kN": 9.374400000000005,
+      "trial_patch_plan_fit": [
+        true,
+        false
+      ],
+      "upper": "bed2-east",
+      "upper_core_trial_ULS_kN": 9.374400000000005
+    },
+    {
+      "floor_ULS_nonwall_budget_kN": 23.625,
+      "head_interval_mm": [
+        1350,
+        2250
+      ],
+      "left_ground_route": "actual-study-L-north",
+      "left_trial_ULS_kN": 17.085600000000003,
+      "lower": "study-L-north",
+      "right_ground_route": "actual-study-L-north",
+      "right_trial_ULS_kN": 17.085599999999996,
+      "sum_kN": 34.1712,
+      "trial_patch_plan_fit": [
+        true,
+        true
+      ],
+      "upper": "bed2-L-north",
+      "upper_core_trial_ULS_kN": 10.5462
+    },
+    {
+      "floor_ULS_nonwall_budget_kN": 21.173906249999998,
+      "head_interval_mm": [
+        7650,
+        8550
+      ],
+      "left_ground_route": "actual-wc-north",
+      "left_trial_ULS_kN": 15.280166761363644,
+      "lower": "wc-north",
+      "right_ground_route": "actual-wc-north",
+      "right_trial_ULS_kN": 13.888439488636356,
+      "sum_kN": 29.16860625,
+      "trial_patch_plan_fit": [
+        true,
+        true
+      ],
+      "upper": "bed3-north-main",
+      "upper_core_trial_ULS_kN": 7.994700000000003
+    },
+    {
+      "floor_ULS_nonwall_budget_kN": 13.983046875000001,
+      "head_interval_mm": [
+        2750,
+        3650
+      ],
+      "left_ground_route": "spine",
+      "left_trial_ULS_kN": 12.264623437499989,
+      "lower": "service-spine",
+      "right_ground_route": "spine",
+      "right_trial_ULS_kN": 12.26462343750001,
+      "sum_kN": 24.529246875,
+      "trial_patch_plan_fit": [
+        true,
+        true
+      ],
+      "upper": "wet-spine",
+      "upper_core_trial_ULS_kN": 10.546199999999997
+    },
+    {
+      "floor_ULS_nonwall_budget_kN": 0,
+      "head_interval_mm": [
+        9650,
+        11050
+      ],
+      "left_ground_route": "actual-plant-intermediate-arch",
+      "left_trial_ULS_kN": 8.20260000000004,
+      "lower": "plant-intermediate-arch",
+      "right_ground_route": "actual-plant-intermediate-arch",
+      "right_trial_ULS_kN": 8.202599999999954,
+      "sum_kN": 16.405199999999994,
+      "trial_patch_plan_fit": [
+        true,
+        true
+      ],
+      "upper": "bed3-L-north",
+      "upper_core_trial_ULS_kN": 16.405199999999994
+    },
+    {
+      "floor_ULS_nonwall_budget_kN": 0,
+      "head_interval_mm": [
+        3100,
+        4000
+      ],
+      "left_ground_route": "rear-W",
+      "left_trial_ULS_kN": 1.445850000000002,
+      "lower": "rear-west",
+      "right_ground_route": "rear-W",
+      "right_trial_ULS_kN": 1.445849999999998,
+      "sum_kN": 2.8917,
+      "trial_patch_plan_fit": [
+        true,
+        true
+      ],
+      "upper": "rear-west",
+      "upper_core_trial_ULS_kN": 2.8917
+    },
+    {
+      "floor_ULS_nonwall_budget_kN": 19.948359375,
+      "head_interval_mm": [
+        8250,
+        9150
+      ],
+      "left_ground_route": "rear-E",
+      "left_trial_ULS_kN": 12.194592187500009,
+      "lower": "rear-east",
+      "right_ground_route": "rear-E",
+      "right_trial_ULS_kN": 12.19459218749999,
+      "sum_kN": 24.389184375,
+      "trial_patch_plan_fit": [
+        true,
+        true
+      ],
+      "upper": "rear-east",
+      "upper_core_trial_ULS_kN": 4.440825000000001
+    },
+    {
+      "floor_ULS_nonwall_budget_kN": 19.948359375,
+      "head_interval_mm": [
+        10450,
+        11350
+      ],
+      "left_ground_route": "rear-E",
+      "left_trial_ULS_kN": 14.643576562499923,
+      "lower": "rear-east",
+      "right_ground_route": "rear-E",
+      "right_trial_ULS_kN": 16.92929531250007,
+      "sum_kN": 31.572871874999993,
+      "trial_patch_plan_fit": [
+        true,
+        true
+      ],
+      "upper": "rear-east-principal",
+      "upper_core_trial_ULS_kN": 11.624512499999994
+    }
+  ],
+  "method": {
+    "core_width_mm": 140,
+    "density_kN_m3": 20,
+    "enclosure": "Eight axes authenticated from HAD generator; 140 core behind 27 finish, extended/trimmed to meet at corners as a STR trial. FIRST windows use source width, sill and head as rectangular voids; real segmental arches retain additional material.",
+    "floor_budget": "RC200=5 kPa G, plus separate 2.5 kPa maximum for non-wall layers/services/ceiling, explicitly excludes all named wall cores; Q=2 kPa. Actual nonwall build-up must fit budget. Remaining exposed-loggia extra 1 kPa omitted here where not in eight head floor segments. Floor line distribution is an assumption.",
+    "internal_rectangular_opening_height_mm": 2250,
+    "intersection_owner": "Enclosure first, then HAD upperWalls order; each 3D core cell assigned once. Reordering alters allocation, not union.",
+    "room_finish_mm": 27,
+    "storey_height_mm": 3100
+  },
+  "naive_sum_before_junction_ownership_m3": 36.13919875,
+  "per_occurrence_core_volume_m3": {
+    "bath-north": 1.0958500000000007,
+    "bed2-L-north": 1.1468449999999997,
+    "bed2-L-return": 0.24412499999999998,
+    "bed2-east": 1.08934,
+    "bed2-north-main": 0.5617149999999999,
+    "bed3-L-north": 1.0806599999999997,
+    "bed3-north-main": 0.6127099999999999,
+    "bed3-west": 1.08934,
+    "court-east": 1.15885,
+    "court-north": 1.2803699999999991,
+    "court-south": 1.2803699999999993,
+    "court-west": 1.15885,
+    "outer-east": 3.6966299999999994,
+    "outer-north": 4.02815,
+    "outer-south": 3.5381500000000004,
+    "outer-west": 3.682629999999999,
+    "rear-divider": 1.5092349999999994,
+    "rear-east": 0.7293337499999999,
+    "rear-east-principal": 1.2475375,
+    "rear-west": 0.35665,
+    "rear-west-return": 0.2886099999999999,
+    "rear-wet-east": 1.0065650000000004,
+    "rear-wet-south": 1.183735,
+    "wet-spine": 1.3722099999999997,
+    "wet-spine-principal": 0.7383425000000002
+  },
+  "slab_RC200_G_kN": 503.30099999999993,
+  "sources": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/had/studies/open-north-loggia.mjs": "d69be48865be9b1471cbe2d6fa31e388214f9c73534622589b981413b3278ba6",
+    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "project/str/studies/spine-opening-join.json": "4f747ea2c98a774bb50abf0f3e647ff1c96f029ec4dd81699b86cbc01168872b"
+  },
+  "status": "disjoint conditional first-storey core and bounded nonwall floor budget; no selected structure or actual takeoff",
+  "upper_core_trial_volume_m3": 35.17680375
+}
