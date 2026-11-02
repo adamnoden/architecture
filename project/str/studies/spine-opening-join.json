@@ -2,6 +2,347 @@
   "assumed_uniform_floor_edge_kN_m": 15.536718750000002,
   "clear_span_m": 0.9,
   "combined_kN": 24.529246875000005,
+  "eight_opening_comparison": {
+    "rows": [
+      {
+        "hole_mm": [
+          1700,
+          2500
+        ],
+        "included_actions": [
+          {
+            "ULS_kN": 9.374400000000001,
+            "field": "upper-wall-gross",
+            "interval_mm": [
+              1700,
+              2500
+            ]
+          }
+        ],
+        "left_reaction_kN": 4.687200000000001,
+        "lower": "cloak-east",
+        "patches_within_source_wall_plan": [
+          true,
+          false
+        ],
+        "right_reaction_kN": 4.687200000000001,
+        "total_kN": 9.374400000000001,
+        "trial_bearing_patches_mm": [
+          [
+            1500,
+            1700
+          ],
+          [
+            2500,
+            2700
+          ]
+        ],
+        "upper": "bed2-east"
+      },
+      {
+        "hole_mm": [
+          1350,
+          2250
+        ],
+        "included_actions": [
+          {
+            "ULS_kN": 17.21671875,
+            "field": "SW-L",
+            "interval_mm": [
+              1350,
+              2250
+            ]
+          },
+          {
+            "ULS_kN": 6.40828125,
+            "field": "west-south",
+            "interval_mm": [
+              1350,
+              2250
+            ]
+          },
+          {
+            "ULS_kN": 10.5462,
+            "field": "upper-wall-gross",
+            "interval_mm": [
+              1350,
+              2250
+            ]
+          }
+        ],
+        "left_reaction_kN": 17.0856,
+        "lower": "study-L-north",
+        "patches_within_source_wall_plan": [
+          true,
+          true
+        ],
+        "right_reaction_kN": 17.0856,
+        "total_kN": 34.1712,
+        "trial_bearing_patches_mm": [
+          [
+            1150,
+            1350
+          ],
+          [
+            2250,
+            2450
+          ]
+        ],
+        "upper": "bed2-L-north"
+      },
+      {
+        "hole_mm": [
+          7650,
+          8550
+        ],
+        "included_actions": [
+          {
+            "ULS_kN": 13.687734374999998,
+            "field": "SE-front",
+            "interval_mm": [
+              7650,
+              8550
+            ]
+          },
+          {
+            "ULS_kN": 7.486171875,
+            "field": "south-E-gallery",
+            "interval_mm": [
+              7650,
+              8550
+            ]
+          },
+          {
+            "ULS_kN": 10.5462,
+            "field": "upper-wall-gross",
+            "interval_mm": [
+              7650,
+              8550
+            ]
+          }
+        ],
+        "left_reaction_kN": 15.860053125000002,
+        "lower": "wc-north",
+        "patches_within_source_wall_plan": [
+          true,
+          true
+        ],
+        "right_reaction_kN": 15.860053124999999,
+        "total_kN": 31.72010625,
+        "trial_bearing_patches_mm": [
+          [
+            7450,
+            7650
+          ],
+          [
+            8550,
+            8750
+          ]
+        ],
+        "upper": "bed3-north-main"
+      },
+      {
+        "hole_mm": [
+          2750,
+          3650
+        ],
+        "included_actions": [
+          {
+            "ULS_kN": 13.983046875000001,
+            "field": "east-strip",
+            "interval_mm": [
+              2750,
+              3650
+            ]
+          },
+          {
+            "ULS_kN": 10.5462,
+            "field": "upper-wall-gross",
+            "interval_mm": [
+              2750,
+              3650
+            ]
+          }
+        ],
+        "left_reaction_kN": 12.2646234375,
+        "lower": "service-spine",
+        "patches_within_source_wall_plan": [
+          true,
+          true
+        ],
+        "right_reaction_kN": 12.264623437500003,
+        "total_kN": 24.529246875000002,
+        "trial_bearing_patches_mm": [
+          [
+            2550,
+            2750
+          ],
+          [
+            3650,
+            3850
+          ]
+        ],
+        "upper": "wet-spine"
+      },
+      {
+        "hole_mm": [
+          9650,
+          11050
+        ],
+        "included_actions": [
+          {
+            "ULS_kN": 16.4052,
+            "field": "upper-wall-gross",
+            "interval_mm": [
+              9650,
+              11050
+            ]
+          }
+        ],
+        "left_reaction_kN": 8.2026,
+        "lower": "plant-intermediate-arch",
+        "patches_within_source_wall_plan": [
+          true,
+          true
+        ],
+        "right_reaction_kN": 8.2026,
+        "total_kN": 16.4052,
+        "trial_bearing_patches_mm": [
+          [
+            9450,
+            9650
+          ],
+          [
+            11050,
+            11250
+          ]
+        ],
+        "upper": "bed3-L-north"
+      },
+      {
+        "hole_mm": [
+          3100,
+          4000
+        ],
+        "included_actions": [
+          {
+            "ULS_kN": 10.5462,
+            "field": "upper-wall-gross",
+            "interval_mm": [
+              3100,
+              4000
+            ]
+          }
+        ],
+        "left_reaction_kN": 5.2731,
+        "lower": "rear-west",
+        "patches_within_source_wall_plan": [
+          true,
+          true
+        ],
+        "right_reaction_kN": 5.2731,
+        "total_kN": 10.5462,
+        "trial_bearing_patches_mm": [
+          [
+            2900,
+            3100
+          ],
+          [
+            4000,
+            4200
+          ]
+        ],
+        "upper": "rear-west"
+      },
+      {
+        "hole_mm": [
+          8250,
+          9150
+        ],
+        "included_actions": [
+          {
+            "ULS_kN": 19.948359375,
+            "field": "NE",
+            "interval_mm": [
+              8250,
+              9150
+            ]
+          },
+          {
+            "ULS_kN": 16.195950000000003,
+            "field": "upper-wall-gross",
+            "interval_mm": [
+              8250,
+              9150
+            ]
+          }
+        ],
+        "left_reaction_kN": 18.072154687500003,
+        "lower": "rear-east",
+        "patches_within_source_wall_plan": [
+          true,
+          true
+        ],
+        "right_reaction_kN": 18.072154687500003,
+        "total_kN": 36.144309375000006,
+        "trial_bearing_patches_mm": [
+          [
+            8050,
+            8250
+          ],
+          [
+            9150,
+            9350
+          ]
+        ],
+        "upper": "rear-east"
+      },
+      {
+        "hole_mm": [
+          10450,
+          11350
+        ],
+        "included_actions": [
+          {
+            "ULS_kN": 19.948359375,
+            "field": "NE",
+            "interval_mm": [
+              10450,
+              11350
+            ]
+          },
+          {
+            "ULS_kN": 16.195950000000003,
+            "field": "upper-wall-gross",
+            "interval_mm": [
+              10450,
+              11350
+            ]
+          }
+        ],
+        "left_reaction_kN": 18.072154687500003,
+        "lower": "rear-east",
+        "patches_within_source_wall_plan": [
+          true,
+          true
+        ],
+        "right_reaction_kN": 18.072154687500003,
+        "total_kN": 36.144309375000006,
+        "trial_bearing_patches_mm": [
+          [
+            10250,
+            10450
+          ],
+          [
+            11350,
+            11550
+          ]
+        ],
+        "upper": "rear-east-principal"
+      }
+    ],
+    "scope": "Conditional uniform edge-action over overlap plus prior gross wall challenge; not complete head loads. Patch plan fit is not capacity or joint proof; any false patch rejects that simple trial."
+  },
   "floor_edge_length_m": 7.9575,
   "floor_edge_total_kN": 123.633439453125,
   "floor_over_opening_kN": 13.983046875000003,

@@ -8,6 +8,23 @@ The service-spine core is x9230–9370; its ground opening is y2750–3650. HAD 
 
 For an explicit sensitivity, distribute the east-strip edge uniformly along its stated 7.9575 m support: 15.537 kN/m, or **13.983 kN** over the 900 mm opening. Add the already recorded gross upper-wall challenge, producing **24.529 kN**. A symmetrical simply supported clear-span idealisation sends **12.265 kN to each end**, before head self-weight and the other loads above. The floor edge distribution is an assumption, not a proven slab line traction, and the upper-wall figure intentionally uses gross full-height weight rather than an actual spandrel. The two actions are transferred from the existing inventories, not new loads to add to them again.
 
+## The same check across the eight aligned openings
+
+The same method intersects each prior upper-wall/opening challenge with every *collinear* axis-floor edge. It allocates each edge uniformly across its own length and conserves force and first moment to the centres of hypothetical 200 mm bearing patches. This is a common, inspectable head strategy, not eight independent new building loads. The source model contains other loads and the residual slab; **no collinear edge means only that no such edge was found in these 16 fields**, not that the actual opening receives no floor, point, roof or temporary load.
+
+| Upper wall at lower opening | Included challenge, kN | Left / right end, kN | Two 200 mm patches inside source wall plan? |
+|---|---:|---:|---|
+| bed2-east / cloak-east | 9.374 | 4.687 / 4.687 | **No:** north side has only 150 mm before the wall ends. |
+| bed2-L-north / study-L-north | 34.171 | 17.086 / 17.086 | Yes |
+| bed3-north-main / WC north | 31.720 | 15.860 / 15.860 | Yes |
+| wet-spine / service spine | 24.529 | 12.265 / 12.265 | Yes |
+| bed3-L-north / plant intermediate | 16.405 | 8.203 / 8.203 | Yes |
+| rear-west / rear-west | 10.546 | 5.273 / 5.273 | Yes |
+| rear-east / rear-east | 36.144 | 18.072 / 18.072 | Yes |
+| rear-east-principal / rear-east | 36.144 | 18.072 / 18.072 | Yes |
+
+The **bed2-east trial fails the simple bearing geometry**: its y2500 opening end is only 150 mm from the y2650 ground-wall termination. A smaller actual bearing, a tested return/junction, or a different transfer is needed; it cannot inherit the 200 mm candidate by drawing it past the wall end. For the other seven, plan containment does not prove continuous sound masonry, thrust restraint, bearing strength, practical installation or avoidance of other interfaces. The calculation lists each included floor segment; unmodelled concentrated reactions, slab edge effects and wall-head self-weight remain for the joined design.
+
 ## A finite trial and its rejection conditions
 
 A candidate opening head occupies the 140 mm core and bears on **200 mm long patches**, y2550–2750 and y3650–3850. Their axes are y2650 and 3750, 1.1 m apart. These patches fit in the unbroken plan wall in the source; that plan fact establishes no sound masonry, contact length, edge distance or usable construction tolerance. Treat the 24.529 kN as uniform over the central 0.9 m between those centres. Elementary equilibrium gives **3.986 kNm** maximum bending moment and **12.265 kN** each reaction. Ideal uniform contact on a full 140 × 200 mm patch gives **0.438 MPa** average, with no local eccentricity or other actions. This is an action/contact sensitivity, not a masonry compression or head capacity check.
@@ -16,6 +33,6 @@ A genuine arch challenger needs a horizontal thrust path. For a *trial* 300 mm r
 
 The physical route is therefore **upper wall and floor → head or verified slab bridge → two masonry/RC bearing zones → continuous warm receiving grid → compression-qualified mineral/AAC/DPC interface → cold grid → site-dependent support group**. The ground spine continues beyond each patch, but the floor's other line reactions, lower-wall self-weight, wind reversal, arch thrust, differential movement and actual openings elsewhere must be combined at the same receiving lengths. The old 850 kN/100 kNm node and rejected 400 mm joint do not prove this path. A head tie, if used, must be anchored through real masonry and its ends, with clearance for the door and services; a steel starter through the mineral band is not silently selected. The floor/roof diaphragm and selected wall lines must separately transfer lateral actions into a qualified shear/tension crossing at the warm/cold boundary. Vertical contact alone cannot do so.
 
-Reject or redesign this trial if the real floor and wall sharing overloads the head or piers, the thrust cannot be contained, bearing or door/section fit fails, or the warm/cold crossing cannot transfer the combined signed actions without defeating moisture, movement and thermal functions. The actual section, wall openings and support sharing are internal design work. Product qualification, real ground/wind, competent engineering and construction acceptance remain distinct later obligations. This one opening is a test of the connected strategy, not a claim that all house openings, roof corners, diaphragm or foundation are solved.
+Reject or redesign this trial if the real floor and wall sharing overloads the head or piers, the thrust cannot be contained, bearing or door/section fit fails, or the warm/cold crossing cannot transfer the combined signed actions without defeating moisture, movement and thermal functions. The actual section, wall openings and support sharing are internal design work. Product qualification, real ground/wind, competent engineering and construction acceptance remain distinct later obligations. The eight-opening screen exposes a connected family of transfers and one failed patch, not a claim that their actual heads, roof corners, diaphragm or foundation are solved.
 
 Run `python project/str/studies/spine-opening-join.py --check`. It checks exact source fingerprints, the named actual opening and action identities, arithmetic and equilibrium; it does not verify structural resistance, arch stability or site adequacy.

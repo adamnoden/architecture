@@ -36,6 +36,38 @@ centres=L+bearing
 M=load*(2*centres-L)/8
 rise=.3
 result['trial']={'bearing_each_m':bearing,'bearing_axes_m':[2.65,3.75], 'centre_span_m':centres,'loaded_width_m':L,'midspan_moment_kNm':M,'mean_vertical_contact_MPa':(load/2)/(.14*bearing)/1000,'three_hinge_horizontal_kN':M/rise,'trial_rise_m':rise,'qualifier':'200 mm plan bearing and 300 mm rise are an unadopted geometric trial; thrust uses symmetric three-hinge crown equilibrium, not an assembled arch or anchor design. No bearing strength, lateral sharing or installed capacity is established.'}
+# Apply the same source-edge idealisation to all eight recorded transfers. This
+# is not a complete floor traction model: residual slab, beams and point loads
+# are not included. Patch geometry is tested in plan, never for capacity.
+joined=[]
+for t in s['upper_wall_opening_transfers']:
+    a,b=t['left_pier'],t['right_pier']; horizontal=a[1]==b[1]
+    ix=0 if horizontal else 1; fixed=1-ix
+    lo,hi=sorted((a[ix],b[ix])); centre=(lo+hi)/2
+    segments=[]
+    for edge in j['axis_floor']['support_edges']:
+        v=edge['segment']; A=v[:2]; B=v[2:]
+        if A[fixed]!=B[fixed] or A[fixed]!=a[fixed]: continue
+        start=max(lo,min(A[ix],B[ix])); end=min(hi,max(A[ix],B[ix]))
+        if end<=start: continue
+        load=edge['vertical_ULS_kN']*(end-start)/abs(B[ix]-A[ix])
+        segments.append({'field':edge['field'],'interval_mm':[start,end],'ULS_kN':load})
+    over=t['overlap']; wall=t['gross_head_challenge_kN']
+    segments.append({'field':'upper-wall-gross','interval_mm':over,'ULS_kN':wall})
+    left=lo-100; right=hi+100; span=(right-left)/1000
+    total=sum(x['ULS_kN'] for x in segments)
+    rright=sum(x['ULS_kN']*((sum(x['interval_mm'])/2-left)/1000) for x in segments)/span
+    rleft=total-rright
+    ground=next(x for x in h['groundWalls'] if x['id']==t['lower'])
+    ends=sorted((ground['a'][ix],ground['b'][ix]))
+    # Check whether any other hole overlaps a patch, as well as wall ends.
+    patches=[[lo-200,lo],[hi,hi+200]]
+    patch_fit=[v[0]>=ends[0] and v[1]<=ends[1] and all(v[1]<=hole[0] or v[0]>=hole[1] for hole in ground['holes']) for v in patches]
+    assert math.isclose(rleft+rright,total,rel_tol=1e-12)
+    assert math.isclose(rright*span,sum(x['ULS_kN']*((sum(x['interval_mm'])/2-left)/1000) for x in segments),rel_tol=1e-12)
+    joined.append({'upper':t['upper'],'lower':t['lower'],'hole_mm':[lo,hi],'trial_bearing_patches_mm':patches,'patches_within_source_wall_plan':patch_fit,'included_actions':segments,'total_kN':total,'left_reaction_kN':rleft,'right_reaction_kN':rright})
+assert len(joined)==8 and next(x for x in joined if x['upper']=='bed2-east')['patches_within_source_wall_plan']==[True,False]
+result['eight_opening_comparison']={'rows':joined,'scope':'Conditional uniform edge-action over overlap plus prior gross wall challenge; not complete head loads. Patch plan fit is not capacity or joint proof; any false patch rejects that simple trial.'}
 out=R/'project/str/studies/spine-opening-join.json'
 text=json.dumps(result,indent=2,sort_keys=True)+'\n'
 if '--check' in sys.argv:
