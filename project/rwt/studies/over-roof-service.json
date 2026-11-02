@@ -29,6 +29,27 @@
     "sourceHouseRidgeZmm": 8090.903773579372,
     "assumedRidgeGapMm": 1209.0962264206282
   },
+  "receiverConversion": {
+    "matTrialQmm": [
+      -370,
+      -170
+    ],
+    "matTrialBottomMm": 6730,
+    "matTrialBackMm": 6880,
+    "matTrialFrontMm": 6840,
+    "proposedAQmm": [
+      -450,
+      -100
+    ],
+    "proposedABottomMm": 6590,
+    "proposedABackMm": 6740,
+    "proposedAFrontMm": 6675,
+    "additionalCourtwardReachMm": 80,
+    "additionalWallwardReachMm": 70,
+    "bottomDifferenceMm": -140,
+    "backDifferenceMm": -140,
+    "frontDifferenceMm": -165
+  },
   "gantryPlanTrial": {
     "model": "REID PGRS20; two unloaded nominal placements",
     "beamLengthMm": 2000,
