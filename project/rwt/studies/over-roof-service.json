@@ -204,6 +204,16 @@
       14995
     ],
     "houseToInnerAxisMm": 335,
+    "plateSizeMm": 150,
+    "soleBoardTrialMm": 400,
+    "boardToHousePlanGapMm": 135,
+    "withinFrameBoardGapMm": 330,
+    "alongBayBoardGapMm": 2170,
+    "boardToGutterPlanGapMm": 335,
+    "boardExtentYMm": [
+      -3195,
+      15195
+    ],
     "projected205mmWingClearanceMm": 232.5,
     "onePoint09mFrameWingClearanceMm": 52.5
   },
