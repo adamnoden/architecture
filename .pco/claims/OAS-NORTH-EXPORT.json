@@ -9,11 +9,11 @@
     "label": "zerg-oas-north-export"
   },
   "claimedAt": "2026-11-02T11:24:44.798Z",
-  "heartbeatAt": "2026-11-02T13:58:06.766Z",
-  "expiresAt": "2026-11-02T14:43:06.766Z",
+  "heartbeatAt": "2026-11-02T14:15:41.078Z",
+  "expiresAt": "2026-11-02T15:00:41.078Z",
   "checkpoint": {
-    "evidence": "Draft PR #1278 head 8697ae77a34f4f56d25cfb9c82f22ec109ae6cc9",
-    "next": "Complete flange, barrier delivery, rig and collar/reinstatement joins"
+    "evidence": "Draft PR #1278 frozen head 48b7e9f82580daaa6ca5e6d7b3d0672f8bb585d0",
+    "next": "Cold review, exact-head CI, coordinator publication preflight"
   },
   "branch": "work/zerg-oas-north-export-20261102"
 }
