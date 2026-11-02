@@ -217,6 +217,26 @@ for case,route in partial_routes.items():
  witness[case]={'F_kN':F,'resultant_xy_mm':[x,y],'rod_axial_signed_kN':forces,'cold_Mx_My_kNm':route['SW_cold_Mx_My_kNm']}
 cold_cage['partial_roof_axial_equilibrium_witness']=witness
 cold_cage['partial_roof_witness_scope']='A statically possible share of two partial roof faces only; positive compression, negative tension. No prediction of stiffness, contact, compression through heads, lateral load, capacity, or addition to collapsed parent roof point.'
+# Resolve the partial node first moments into the actual nearest E/N cold
+# grid node axes. Static reactions alone neither establish a pile at these
+# nodes nor prove arm bending, continuity, stiffness or support resistance.
+node_set={tuple(n['xy']) for n in roof['lower_grid']['actual_cap_nodes']}
+assert (3150.,300.) in node_set and (300.,3150.) in node_set
+three_node={}
+for case,v in witness.items():
+ F=v['F_kN'];x,y=v['resultant_xy_mm'];east=F*(x-300)/2850;north=F*(y-300)/2850;sw=F-east-north
+ assert math.isclose(sw+east+north,F,abs_tol=1e-10)
+ assert math.isclose(sw*300+east*3150+north*300,F*x,abs_tol=1e-8)
+ assert math.isclose(sw*300+east*300+north*3150,F*y,abs_tol=1e-8)
+ # A tension-only set at the SW pile bars has nonnegative weights and can
+ # only locate its resultant in their convex hull. Compute its projection
+ # in the actual demand direction rather than relying on a circular bound.
+ dx=x-300;dy=y-300;radius=math.hypot(dx,dy);ux=dx/radius;uy=dy/radius
+ max_projection=max((b['points'][0][0]-300)*ux+(b['points'][0][1]-300)*uy for b in cold_cage['pile_bars'])
+ assert radius>max_projection
+ three_node[case]={'signed_forces_kN':{'SW_300_300':sw,'E_3150_300':east,'N_300_3150':north},'resultant_radial_mm':radius,'SW_pile_bar_max_projection_mm':max_projection,'pile_only_same_sign_axial_distribution':'geometrically impossible under stipulated pure axial-only model'}
+cold_cage['partial_roof_three_node_equilibrium_witness']=three_node
+cold_cage['three_node_scope']='Ideal static force and first-moment equilibrium at existing conceptual grid axes only. The selected field excludes other actions and facets. Member stiffness and arm torsion/flexure, real nodes/piles, connections, uplift resistance and site capacity remain unqualified. Compression/contact or other actions can change the stipulated axial-only failure.'
 result={'status':'finite SW corner constructive comparison; incomplete, no structural or building acceptance','sources':dict(zip(paths,sha)),'trial_pier':trial,'signed_actions':loads,'connector_sensitivity':connector,'cold_cage_candidate':cold_cage,'finite_roof_candidate':roof_candidate,'decision':'Inward 300 square and straight roof-to-pier-to-grid route are a source-bound candidate for joint STR/MAT/HAD challenge, not a selected design. The four-bar crossing is unqualified; direct full RC bypass remains a thermal/capillary adverse comparator. No actual ground/support capacity is asserted.'}
 out=R/'project/str/studies/sw-corner-station.json';txt=json.dumps(result,indent=2,sort_keys=True)+'\n'
 # Diagram is schematic, dimensions and elevations explicitly stated; never a

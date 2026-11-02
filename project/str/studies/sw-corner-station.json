@@ -2,13 +2,14 @@
   "cold_cage_candidate": {
     "arm_transition": {
       "angle_degrees": 2.3654709378512475,
+      "numerically_bounded_min_cover_mm": 39.9,
       "radius_mm": 181.0,
       "range_mm": [
         2050,
         3050
       ],
       "sampled_min_cover_mm": 40.0,
-      "scope": "Both 600-wide E/N arms. Continuation beyond 3050 and other nodes are not detailed.",
+      "scope": "Both 600-wide E/N arms. S-curve is a separate cover calculation, not appended to return-bar points or screened against additional arm steel. Continuation beyond 3050 and other nodes are not detailed.",
       "soffit_z_mm": [
         -1257,
         -1215
@@ -908,7 +909,8 @@
       "node_bend_min_mm": 40,
       "node_hoop_mm": 40,
       "original_arm_after_transition_mm": 40,
-      "pile_hoop_envelope_mm": 42.5
+      "pile_hoop_envelope_mm": 42.5,
+      "pile_hoop_scope": "Radial envelope only; no pile hoop steel, pitch, anchorage or confinement model is included."
     },
     "force_scope": "The inherited signed roof control and partial two-face resultant are non-additive; neither defines whole-house signed node demand. No arbitrary full-bar-yield requirement is asserted. Actual biaxial and vertical load paths, group interaction, anchorage and pile/arm transfer remain open.",
     "heads": [
@@ -1167,7 +1169,7 @@
       "pile_to_hold": 32.5,
       "pile_to_pile": 30
     },
-    "model_sha256": "7ba1a9c62963329df3adf6aa735e898dae5b5c700512922936255bf1b43dffe3",
+    "model_sha256": "aff65c2b86cef733a8fd10eaa592edb0af33d6e16fd8f13e4a1b075e8af42b08",
     "node_hoops": [
       {
         "closure": "proposed butt weld at (300,-6); weldability, procedure and resistance unqualified",
@@ -3640,6 +3642,28 @@
         ]
       }
     },
+    "partial_roof_three_node_equilibrium_witness": {
+      "down": {
+        "SW_pile_bar_max_projection_mm": 139.65945642836286,
+        "pile_only_same_sign_axial_distribution": "geometrically impossible under stipulated pure axial-only model",
+        "resultant_radial_mm": 178.79429708430033,
+        "signed_forces_kN": {
+          "E_3150_300": 1.1642516536803693,
+          "N_300_3150": 1.0008158324027898,
+          "SW_300_300": 22.307611523696632
+        }
+      },
+      "uplift": {
+        "SW_pile_bar_max_projection_mm": 139.65945642836286,
+        "pile_only_same_sign_axial_distribution": "geometrically impossible under stipulated pure axial-only model",
+        "resultant_radial_mm": 178.79429708430035,
+        "signed_forces_kN": {
+          "E_3150_300": -0.41580416202870324,
+          "N_300_3150": -0.3574342258581394,
+          "SW_300_300": -7.967004115605939
+        }
+      }
+    },
     "partial_roof_witness_scope": "A statically possible share of two partial roof faces only; positive compression, negative tension. No prediction of stiffness, contact, compression through heads, lateral load, capacity, or addition to collapsed parent roof point.",
     "pile_axes_radius_mm": 147,
     "pile_bars": [
@@ -4001,6 +4025,7 @@
         ]
       }
     ],
+    "three_node_scope": "Ideal static force and first-moment equilibrium at existing conceptual grid axes only. The selected field excludes other actions and facets. Member stiffness and arm torsion/flexure, real nodes/piles, connections, uplift resistance and site capacity remain unqualified. Compression/contact or other actions can change the stipulated axial-only failure.",
     "top_corner_returns": [
       {
         "dia": 20,
