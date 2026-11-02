@@ -2038,7 +2038,7 @@
   },
   "taskDirections": {
     "storage": "Retain external HAD envelope and operation. Independent screw-fixed face/track, lift-out shelves and captured removable back; no service/fixture supported by removable carcass. Remove stored contents first. A sliding front remains sliding unless IAS proves a new hinged sweep.",
-    "kitchen": "Retain900x600 sink and600x600 cooking stations plus650-square cold-store envelope; do not invent a continuous backed worktop. Develop discrete plain stainless worktop on independent metal rails, unclad underside, mechanical bowl clips and replaceable exposed perimeter joint. Isolate water/power, remove front/shelf, support bowl and release waste/supplies before lifting top. First-wetted surface is the exposed joint/catchable underside; leak declaration and drying must not depend on an absorbent concealed back.",
+    "kitchen": "Retain900x600 sink and600x600 cooking stations plus650-square cold-store envelope; do not invent a continuous backed worktop. Select a plain welded stainless head+bowl on independently retained metal frame/rails, unclad underside, releasable front M6/rear15 locating dowels and a replaceable actual wet perimeter joint. Isolate water/power; support the complete head independently, expose/release actual waste/supplies and lift only after first joints and retainers are disengaged. Retain the fixed frame and fixed service supports. The earlier bowl-clip/whole-frame controls do not establish selected renewal. First-wetted surface is the exposed joint/catchable underside; leak declaration and drying must not depend on an absorbent concealed back.",
     "wetCabinet": "Use solid timber frame and removable slatted/raised base outside the actual splash boundary; wet face itself remains the complete30 reference only where set out. Do not hide a cistern coupling behind a glued back. Remove contents/front and support fixture independently before disconnecting. Actual waterproofing remains intact or is isolated and reinstated/tested.",
     "doors": "Privacy remains a functional requirement. Keep actual hinged/slider/folding operation and all required fire constituents; remove supported leaf at accessible hardware before frame/trim intervention. A room name is not a fire-role exemption.",
     "trim": "Independent150x18 skirt and70x18 architrave; where an actual corner return is narrower, shorten/localise the decorative member only with the rated perimeter boundary retained. No hidden frame joint or seal is trimmed to make space."
@@ -2453,12 +2453,13 @@
     "rule": "Keep actual1000 frame/feet/additional-support/seat/seals/discharge/first release duties. No900 transfer or PP/plastic/epoxy exception; exact manufacturer1000 support arrangement remains unadmitted."
   },
   "bathBodyDirection": {
-    "recommended": "Plain enamelled-steel1700x700 with removable independently supported front panel and separately released feet/frame",
+    "recommended": "Plain enamelled-steel1700x700 at ordinary560 rim, with removable independently supported front panel and separately released feet/frame",
     "functionalControl": {
       "manufacturer": "Kaldewei",
       "model": "SANIFORM PLUS363-1",
       "primary": "https://files.cdn.kaldewei.com/data/sprachen/englisch/techdata/DB04_24-Sort_DB_UK-GBeng_BW_ADV_363-1_SANIFORM_PLUS_SANIFORM_PLUS_STAR.pdf",
       "retrieved": "2026-11-02",
+      "PDFSHA256": "564cfd7be4ad55cff857f1dae17bbfeb9b20d8b927c411b6d41c485b6411f76b",
       "external": [
         1700,
         700
@@ -2472,15 +2473,17 @@
       "wasteHole": 52,
       "footEndToDrain": 310
     },
-    "proposedOrientation": "Foot end EAST, required actual body drain10850/4150 from placed bath9460/3800; service-owner first-interface binding pending",
-    "firstInterface": "Isolate/drain; support body independently; remove the accessible front panel and expose a separately supported removable first waste/supply joint from the room side. Disconnect/temporarily close before releasing rim seals and feet/frame; only then strip all protrusions and use the authored body route. Reject any configured kit that requires blind reach, moves an unsupported pipe or cannot expose/reinstate the actual full joint.",
+    "proposedOrientation": "Foot end EAST at11160; actual310 foot-end offset and shown longitudinal centreline give native drain10850/4150. Select deliberate100E outlet-to-floor-tail offset to authored port10950/4150, not a claimed native or matched outlet. Foot axes10710/9970 with maximum380 transverse spread; nearest axis240 from port is not clear support width. Actual unmodified support thickness/attachment and complete seal keepout must fit or the configured package is rejected.",
+    "firstInterface": "Select ordinary560 rim within the published545–560 adjustment range, with native waste-hole datum150 and deliberate100E offset/local110 port and independent lower access; reject100plinth/645–660rim control. Isolate/drain; independently support retained pipes/body and release the actual complete lower trap/spool at accessible A/B joints. For upper renewal, remove the independent front panel, release actual waste flange and overflow from the supported body, and strip every foot/frame/clip/outlet protrusion outside the<=550 module. Do not attach the floor tail to that body transport. Retain or separately strip/withdraw the supported plain floor tail only under its specific service contract. Open annular water/air/fire/acoustic boundary requires isolation, temporary compatible closure and complete reseal/test. Reject blind reach, unsupported pipe movement, omitted water seal or unstrippable package.",
     "transport": "410 is bare dimensional control only; installed feet545–560 are not the<=550 stripped module. Exact retained clips/outlet/overflow must be removed or remain within that module. IAS hall witness is not full guarded-stair/export proof.",
     "material": "Body evidence does not admit feet/pads/coatings/overflow/waste/seals or optional surface treatment; whole product and residue disposition remain held.",
     "actualCompleteProductAccepted": false
   },
   "developmentExitAssessment": {
     "status": "MAT-owned construction recommendations/dispositions are reasoned; exact common-source integration and independent review pending before lifecycle completion",
-    "internalMATChoicesRemaining": [],
+    "internalMATChoicesRemaining": [
+      "Finalise the selected normal-rim recommendation against the service-owned complete trap/support/stripping envelope. The100plinth/660rim control is rejected; no further material-family choice remains."
+    ],
     "dependentSelectedHouseJoins": [
       "Bind one final HAD27/30 authority with actual family600, furniture/emitter and roof-domain composition; current pinned0b2 remains a dated failed control",
       "Bind final service first-interface and IAS ordinary renewal records without retyping their numeric authority; no claim that hall-only body transport is complete exterior renewal"
