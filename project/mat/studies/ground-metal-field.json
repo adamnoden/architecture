@@ -6,6 +6,21 @@
     "project/str/studies/sw-corner-station.json": "2c215912f4b55ca4587e32763bf66160d4b433d0",
     "project/mat/studies/joined-ground-boundary.json": "2a74ab4e2e88bf80405a5ca36a7eaabcd1e93fc6"
   },
+  "hipExtensionControl": {
+    "extensionTop_mm": 6660,
+    "hipAxisXY_mm": [
+      262.5,
+      262.5
+    ],
+    "hipAxisZ_mm": 6519.079552999668,
+    "faceProjectedHalfWidth_mm": 84.8528137423857,
+    "faceProjectedVerticalBounds_mm": [
+      6436.118289886794,
+      6602.0408161125415
+    ],
+    "result": "FAIL: the sloped SHS120 axis crosses the folded sheet corner within the extension. The ring-side 10 mm gap is not a hip clearance.",
+    "collarHypothesis": "Cut the sheet around the actual finite hip and use a fully closed, accessible metal saddle/collar to join the sheet to verified closed member skin and roof AVCL. Exact polygon, fabrication, member ends, welds, access, compatible movement, corrosion, 3D thermal/fire and gas/air integrity are unproved. This is a bounding projection, not an exact collar or structural pass."
+  },
   "southWindow0Reveal": {
     "openingX_mm": [
       1300,
