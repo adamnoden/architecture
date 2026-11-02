@@ -9,8 +9,8 @@
     "label": "zerg7-envelope-recovery"
   },
   "claimedAt": "2026-11-02T07:20:02.264Z",
-  "heartbeatAt": "2026-11-02T07:20:02.264Z",
-  "expiresAt": "2026-11-02T08:05:02.264Z",
+  "heartbeatAt": "2026-11-02T07:27:21.838Z",
+  "expiresAt": "2026-11-02T08:12:21.838Z",
   "branch": "work/zerg7-envelope-air-joins",
   "predecessor": {
     "leaseId": "fc6a0e5c-bc22-43ab-988d-e5f49df36802",
@@ -33,5 +33,10 @@
       "next": "Hold frozen sharedPR1244 for root failed-validation retry, freshcanonicalpreflight and expected-head merge. Preserve sourcePR1243 until actual merged ancestry proof; after verified integration perform directed closeout/continuation.",
       "blocker": "MATENV remains OPEN: no whole-envelope or material/site/physical admission; listedstandardsize notlivestock, q550airreturn still needs primary-frame collars, actualreceiving/contact/DPC/shear/creep/thermal/air/ceiling/temporaryrain joins remain internal exits."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote head e09075b75ba0917fa2f595011fb36a15a7a064d8; four MAT blobs match isolated local commit e97636070868598cb8db9c7122513d4971c0b301. q550 primary intersection and proposed all-around collar generated and visually inspected; edge --check and warm grid --check pass; six exits stay open.",
+    "next": "Create Work/Lease PR, inspect exact-head CI, owner integrates after fresh merge preflight. Keep MAT-ENVELOPE open.",
+    "blocker": "Frame weld/end closure, movement, post/breather collars, joined hygrothermal/50-neck and classified ceiling perimeter remain unqualified; no whole roof, product, site, physical or material admission."
   }
 }
