@@ -1,15 +1,12 @@
 /** RWT three-piece trial. Nominal envelopes; no hydraulic or structural admission. */
-import {readFileSync,writeFileSync,existsSync} from 'node:fs'
-import {execFileSync} from 'node:child_process'
+import {readFileSync,writeFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import {dirname,resolve} from 'node:path'
 import {fileURLToPath} from 'node:url'
 const dir=dirname(fileURLToPath(import.meta.url)),root=resolve(dir,'../../..')
 const projection='project/had/studies/open-north-facade-projection.json',expected='eb70d77ee57571088c4a73caa076681dc00590cd',p=resolve(root,projection)
-const local=existsSync(p)?readFileSync(p):null
-const digest=b=>createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex')
-const bytes=local&&digest(local)===expected?local:execFileSync('git',['cat-file','blob',expected],{cwd:root})
-const sha=digest(bytes);if(sha!==expected)throw Error('Court projection drift: reconcile HAD before use')
+const bytes=readFileSync(p)
+const sha=createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');if(sha!==expected)throw Error('Court projection drift: reconcile HAD before use')
 const had=JSON.parse(bytes).courtSouth;if(!had||had.first.openings.length!==2||had.southCourtWeatherDoor.openLeafNorthTip!==5100)throw Error('Selected court projection changed')
 const rect=(x,y,z)=>({x,y,z}),shift=(b,dx,dy)=>rect(b.x.map(v=>v+dx),b.y.map(v=>v+dy),b.z)
 const west=rect([4325,4498.5],[4350,4750],[6783.5,6878]),middle=rect([4501.5,7498.5],[4350,4750],[6783.5,6890.5]),east=rect([7501.5,7675],[4350,4750],[6783.5,6878])
@@ -21,11 +18,12 @@ const movement={middle:[0,120,240,270,400].map(d=>({out:d,body:shift(middle,0,d)
 const rate=3.60375/1000,energy=w=>1.5*Math.cbrt((rate/(w/1000))**2/9.81)*1000
 const guard={floor:5540,innerY:4780,outerY:6150,top:[6616,6664],mid:[6166,6214],posts:[4350,5175,6000,6825,7650],tube:48,toeTop:5690,deckX:[4260,7740],deckY:[4780,6150],padCentres:[[4500,5900],[6000,5900],[7500,5900]],padSide:400}
 const permanent={x:[4350,7650],y:[4350,4700],bottom:6590,back:6740,front:6640,drop:170,moduleLength:3300/7,carrierLength:450,carrierDepth:30}
-const branch={corner:{p:[4412.5,7587.5],clearWidth:150,boxWidth:175,boxY:[5100,5500],returnApertureY:[5340,5490],pipeOpeningY:[5165,5315]},middle:{p:[4900,7100],clearWidth:300},pipeOD:150,pipeY:5250,returnY:[4430,5500],returnInlet:6685,returnOutlet:6680,returnWall:65,tailInvert:6778.8,sheet:1.5,gate:2,sideGateHeight:65,pipeStubTop:6600,gateTravel:{pipe:[5165,5315,5015,5165],return:[5340,5490,5490,5640]}}
+const branch={corner:{p:[4412.5,7587.5],clearWidth:150,boxWidth:175,boxY:[5100,5500],returnApertureY:[5340,5490],pipeOpeningY:[5165,5315]},middle:{p:[4900,7100],clearWidth:300,boxY:[5100,5800],pipeOpeningY:[5200,5350],sideOpeningY:[5450,5750],westReturnX:[5050,5350],eastReturnX:[6650,6950]},pipeOD:150,pipeY:5250,returnY:[4430,5500],returnInlet:6685,returnOutlet:6680,returnWall:65,tailInvert:6778.8,sheet:1.5,gate:2,sideGateHeight:65,pipeStubTop:6600,gateTravel:{pipe:[5165,5315,5015,5165],return:[5340,5490,5490,5640]}}
 const cornerGate={box:rect([4325,4498.5],[5100,5500],[6777.3,6858.8]),pipeClosed:rect([4337.5,4487.5],[5165,5315],[6765.2,6767.2]),pipeOpen:rect([4337.5,4487.5],[5015,5165],[6765.2,6767.2]),returnClosed:rect([4498.5,4500.5],[5340,5490],[6778.8,6843.8]),returnOpen:rect([4498.5,4500.5],[5490,5640],[6778.8,6843.8]),worker:rect([4590,4990],[5520,5920],[5540,7340]),collarBottom:6767.2}
 const clash=(a,b)=>['x','y','z'].every(k=>a[k][0]<b[k][1]&&b[k][0]<a[k][1])
 const westPipe=rect([4337.5,4487.5],[5165,5315],[5540,6600]),westReturn=rect([4500,4650],[4430,5500],[6678.5,6750]),westElbow=rect([4500.5,4650],[5340,5490],[6685,6843.8]),westSled=rect([4325,4498.5],[4350,4750],[6761,6783.5]),westGuide=rect([4315,4325],[4350,5150],[6751,6761])
 const westSpool=rect([4337.5,4487.5],[5165,5315],[6600,6765.2])
+const middlePipe=rect([4825,4975],[5200,5350],[5540,6600]),middleReturn=rect([5050,5350],[4430,5750],[6678.5,6750]),middleElbow=rect([5050,5350],[5450,5750],[6685,6843.8]),middleSpool=rect([4825,4975],[5200,5350],[6600,6765.2]),middlePipeGate=rect([4825,4975],[5200,5350],[6765.2,6767.2]),middleSideGate=rect([5048,5050],[5450,5750],[6778.8,6843.8]),middleSideGateOpen=rect([5048,5050],[5750,6050],[6778.8,6843.8]),middleTrolley=rect([5487.5,5512.5],[4750,4820],[6761,6783.5]),middleGuide=rect([5487.5,5512.5],[4780,5250],[6751,6761])
 const checks={
  middleMissesAllSideLines:movement.middle.every(s=>s.sides.every(v=>!v)),
  middleStopSouthClear:movement.middle.find(s=>s.out===240).south.every(v=>!v),
@@ -38,6 +36,14 @@ const checks={
  shieldCoversWestSeam:shieldW.x[0]<west.x[1]&&shieldW.x[1]>middle.x[0],
  cornerBoxFits150:branch.corner.boxWidth>=branch.corner.clearWidth+2*branch.sheet,
  openingsSeparated:branch.corner.pipeOpeningY[1]<branch.corner.returnApertureY[0],
+ middlePipeReturnDisjoint:!clash(middlePipe,middleReturn)&&!clash(middlePipe,middleElbow),
+ middleSpoolRemovalClear:![middleReturn,middleElbow,middlePipeGate,middleSideGate].some(o=>clash(rect(middleSpool.x,[5200,5750],middleSpool.z),o)),
+ middleTrolleyOnGuideAtBothEnds:[0,400].every(d=>{const t=shift(middleTrolley,0,d);return t.y[0]<middleGuide.y[1]&&t.y[1]>middleGuide.y[0]&&t.z[0]===middleGuide.z[1]}),
+ middleTrolleyMissesDrips:middleTrolley.y[0]>4470&&middleTrolley.x[0]>4470&&middleTrolley.x[1]<7530,
+ middleGateSweepClearsPipe:!clash(rect([5048,5050],[5450,6050],[6778.8,6843.8]),middlePipe),
+ middleBoxClearsOuterRail:(branch.returnOutlet-branch.sheet)-guard.top[1]>10,
+ middleGuideMissesRain:middleGuide.y[0]>4470&&middleGuide.x[0]>4470&&middleGuide.x[1]<7530,
+ middleGuideMissesReturn:!clash(middleGuide,middleReturn),
  cornerPipeReturnDisjoint:!clash(westPipe,westReturn)&&!clash(westPipe,westElbow),
  movingCornerPipeDisjoint:[0,85,170].every(dx=>!clash(westPipe,shift(westReturn,dx,dx*145/170))&&!clash(westPipe,shift(westElbow,dx,dx*145/170))),
  sledAboveReturn:westSled.z[0]-westReturn.z[1]>10,
@@ -61,7 +67,7 @@ const checks={
 }
 if(!Object.values(checks).every(Boolean))throw Error(JSON.stringify(checks,null,2))
 const limits=['The listed boxes are conservative component extents, not an exhaustive collision engine.','A and all four temporary routes must operate at full assigned stress and actual backwater before branch isolation.','The corner has a lateral side gate and separate return corridor to avoid the pipe; its elbow, seal and full tail flow need design. The sled and guide are explicit envelope reservations, not an authored trolley, support or connection design.','No product, structural capacity, hydraulic capacity or physical operation has been admitted.']
-const result={status:'THREE-PIECE DEVELOPMENT: staged nominal clearance and necessary energy screens only',projection:{path:projection,blob:sha,source:'HAD courtSouth projection PR #1267; exact blob required'},courtSouth:had,west,middle,east,shieldW,shieldE,drip,movement,permanent,branch,guard,cornerGate,westPipe,westSpool,westReturn,westElbow,westSled,westGuide,energyMm:{width150:energy(150),width300:energy(300)},checks,limits}
+const result={status:'THREE-PIECE DEVELOPMENT: staged nominal clearance and necessary energy screens only',projection:{path:projection,blob:sha,source:'HAD courtSouth projection PR #1267; exact blob required'},courtSouth:had,west,middle,east,shieldW,shieldE,drip,movement,permanent,branch,guard,cornerGate,westPipe,westSpool,westReturn,westElbow,westSled,westGuide,middlePipe,middleReturn,middleElbow,middleSpool,middlePipeGate,middleSideGate,middleSideGateOpen,middleTrolley,middleGuide,energyMm:{width150:energy(150),width300:energy(300)},checks,limits}
 let svg='<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 1680 1188"><rect width="1680" height="1188" fill="white"/><g font-family="Arial,sans-serif" fill="#20343e"><text x="40" y="48" font-size="28" font-weight="bold">Split receiver / nominal staged plan</text><text x="40" y="80" font-size="18">Corner capture stays live while middle moves; no hydraulic, structural or operation admission</text>'
 const panels=[{title:'1  All three in capture',w:west,m:middle,e:east},{title:'2  Middle out 400',w:west,m:shift(middle,0,400),e:east},{title:'3  Corners diagonal',w:shift(west,170,145),m:null,e:shift(east,-170,145)}]
 panels.forEach((s,i)=>{const ox=45+i*550,oy=145,sc=.145,X=x=>ox+(x-4200)*sc,Y=y=>oy+(y-4200)*sc

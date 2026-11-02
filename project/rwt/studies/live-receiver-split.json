@@ -626,7 +626,27 @@
         4900,
         7100
       ],
-      "clearWidth": 300
+      "clearWidth": 300,
+      "boxY": [
+        5100,
+        5800
+      ],
+      "pipeOpeningY": [
+        5200,
+        5350
+      ],
+      "sideOpeningY": [
+        5450,
+        5750
+      ],
+      "westReturnX": [
+        5050,
+        5350
+      ],
+      "eastReturnX": [
+        6650,
+        6950
+      ]
     },
     "pipeOD": 150,
     "pipeY": 5250,
@@ -873,6 +893,132 @@
       6761
     ]
   },
+  "middlePipe": {
+    "x": [
+      4825,
+      4975
+    ],
+    "y": [
+      5200,
+      5350
+    ],
+    "z": [
+      5540,
+      6600
+    ]
+  },
+  "middleReturn": {
+    "x": [
+      5050,
+      5350
+    ],
+    "y": [
+      4430,
+      5750
+    ],
+    "z": [
+      6678.5,
+      6750
+    ]
+  },
+  "middleElbow": {
+    "x": [
+      5050,
+      5350
+    ],
+    "y": [
+      5450,
+      5750
+    ],
+    "z": [
+      6685,
+      6843.8
+    ]
+  },
+  "middleSpool": {
+    "x": [
+      4825,
+      4975
+    ],
+    "y": [
+      5200,
+      5350
+    ],
+    "z": [
+      6600,
+      6765.2
+    ]
+  },
+  "middlePipeGate": {
+    "x": [
+      4825,
+      4975
+    ],
+    "y": [
+      5200,
+      5350
+    ],
+    "z": [
+      6765.2,
+      6767.2
+    ]
+  },
+  "middleSideGate": {
+    "x": [
+      5048,
+      5050
+    ],
+    "y": [
+      5450,
+      5750
+    ],
+    "z": [
+      6778.8,
+      6843.8
+    ]
+  },
+  "middleSideGateOpen": {
+    "x": [
+      5048,
+      5050
+    ],
+    "y": [
+      5750,
+      6050
+    ],
+    "z": [
+      6778.8,
+      6843.8
+    ]
+  },
+  "middleTrolley": {
+    "x": [
+      5487.5,
+      5512.5
+    ],
+    "y": [
+      4750,
+      4820
+    ],
+    "z": [
+      6761,
+      6783.5
+    ]
+  },
+  "middleGuide": {
+    "x": [
+      5487.5,
+      5512.5
+    ],
+    "y": [
+      4780,
+      5250
+    ],
+    "z": [
+      6751,
+      6761
+    ]
+  },
   "energyMm": {
     "width150": 58.34144580219353,
     "width300": 36.75280782374226
@@ -889,6 +1035,14 @@
     "shieldCoversWestSeam": true,
     "cornerBoxFits150": true,
     "openingsSeparated": true,
+    "middlePipeReturnDisjoint": true,
+    "middleSpoolRemovalClear": true,
+    "middleTrolleyOnGuideAtBothEnds": true,
+    "middleTrolleyMissesDrips": true,
+    "middleGateSweepClearsPipe": true,
+    "middleBoxClearsOuterRail": true,
+    "middleGuideMissesRain": true,
+    "middleGuideMissesReturn": true,
     "cornerPipeReturnDisjoint": true,
     "movingCornerPipeDisjoint": true,
     "sledAboveReturn": true,
