@@ -42,9 +42,9 @@
       "first_moment_x_kNm": 289.47121875,
       "first_moment_y_kNm": 289.47121874999993,
       "proposed_ground_head_jamb_statics": {
-        "cloak_east_y1600_2600": {
-          "left": 4.814060957632316,
-          "right": 5.320804216330455
+        "cloak_east_y1600_2575": {
+          "left": 4.67763008029051,
+          "right": 5.457235093672261
         },
         "study_L_north_x1250_2350": {
           "left": 4.940208120331115,
@@ -225,9 +225,9 @@
       "first_moment_x_kNm": -103.382578125,
       "first_moment_y_kNm": -103.382578125,
       "proposed_ground_head_jamb_statics": {
-        "cloak_east_y1600_2600": {
-          "left": -1.7193074848686845,
-          "right": -1.9002872201180199
+        "cloak_east_y1600_2575": {
+          "left": -1.6705821715323252,
+          "right": -1.949012533454379
         },
         "study_L_north_x1250_2350": {
           "left": -1.764360042975398,

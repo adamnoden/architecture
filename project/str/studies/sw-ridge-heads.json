@@ -1,0 +1,545 @@
+{
+  "court_node": {
+    "SHS_plan_mm": [
+      3857.5,
+      3857.5,
+      3977.5,
+      3977.5
+    ],
+    "axis_mm": [
+      3917.5,
+      3917.5
+    ],
+    "candidate_SHS_mm": [
+      120,
+      120,
+      6.3
+    ],
+    "candidate_cold_grid_axis_mm": [
+      3950,
+      3950
+    ],
+    "casing_core_intrusion_each_side_mm": 5,
+    "casing_each_side_mm": 15,
+    "core_140mm_body_screen": {
+      "box_mm": [
+        3847.5,
+        3847.5,
+        3987.5,
+        3987.5
+      ],
+      "nearest_witness": "protected-stair-bottom-to-front",
+      "nominal_reserve_mm": 62.5
+    },
+    "first_floor_RC_z_mm": [
+      3170,
+      3370
+    ],
+    "illustrative_150mm_case_first_screen": {
+      "box_mm": [
+        3842.5,
+        3842.5,
+        3992.5,
+        3992.5
+      ],
+      "nearest_witness": "principal-to-protected-stair",
+      "nominal_reserve_mm": 57.5
+    },
+    "illustrative_150mm_case_ground_screen": {
+      "box_mm": [
+        3842.5,
+        3842.5,
+        3992.5,
+        3992.5
+      ],
+      "nearest_witness": "protected-stair-bottom-to-front",
+      "nominal_reserve_mm": 57.5
+    },
+    "illustrative_15mm_casing_plan_mm": [
+      3842.5,
+      3842.5,
+      3992.5,
+      3992.5
+    ],
+    "post_z_mm": [
+      -80,
+      6410
+    ],
+    "rejected_inward_300mm_pier": {
+      "box_mm": [
+        3687.5,
+        3687.5,
+        3987.5,
+        3987.5
+      ],
+      "nearest_witness": "protected-stair-bottom-to-front",
+      "nominal_reserve_mm": -97.5
+    },
+    "scope": "Core-contained steel is a finite alternative, not a selected post. Illustrative casing thickness is not a fire specification. SHS runs through the FIRST RC slab envelope and requires a real reinforced opening, seal and load transfer. Below-floor pad needs actual slab, thermal, mineral DPC and protected-route junction. Shank/sealing/baseplate, head, restraints, hollow-section access and cold node are unproved. Adjacent roof, wall and wind actions excluded.",
+    "vertical_action_kN": {
+      "down": 20.757659688957197,
+      "uplift": -7.413449888913287
+    },
+    "wall_core_envelope_mm": [
+      3847.5,
+      3847.5,
+      3987.5,
+      3987.5
+    ],
+    "warm_pad_plan_mm": [
+      3687.5,
+      3687.5,
+      3987.5,
+      3987.5
+    ],
+    "warm_pad_z_mm": [
+      -380,
+      -80
+    ]
+  },
+  "heads": [
+    {
+      "beam_along_axis_mm": [
+        1500,
+        2650
+      ],
+      "beam_section_mm": [
+        140,
+        250
+      ],
+      "beam_z_mm": [
+        2850,
+        3100
+      ],
+      "bearing_lengths_mm": [
+        200,
+        150
+      ],
+      "core_cross_axis_mm": [
+        4730,
+        4870
+      ],
+      "downward_comparison": {
+        "governing_coordinate_mm": 2125,
+        "largest_absolute_M_kNm": 3.7951569940755943,
+        "support_forces_kN": [
+          9.244645464905895,
+          10.264619709056879
+        ]
+      },
+      "id": "south",
+      "jamb_crossing_trial": {
+        "RC_jamb_section_mm": [
+          300,
+          150
+        ],
+        "cap_plate_plan_mm": [
+          300,
+          150
+        ],
+        "cap_plate_z_mm": [
+          3100,
+          3120
+        ],
+        "cap_to_first_soffit_nominal_gap_mm": 50,
+        "cross_wall_jamb_projection_beyond_each_finished_face_mm": 53,
+        "door_projection_scope": "300-square pad projects beneath the door opening and ends at z\u221280, 80 mm below FFL. Actual ground slab, finish, services and door-floor interface are unknown. The jamb replaces wall core; its head cage, door movement and adjoining rooms remain to check.",
+        "nearest_longitudinal_head_bar_plan_clear_mm": 28,
+        "nominal_link_cover_minimum_mm": 25,
+        "nominal_link_diameter_mm": 8,
+        "number_of_jamb_receivers": 2,
+        "scope": "Finite layout sensitivity only. A 20 mm thick cap plate spans the head and outboard tie lines; head anchorage, welding/fastening, access, forces, upper wall continuation and slab clearance remain to design. Sleeve, capillary/air/gas barrier, four tie anchorage, bars/links, wall-head joint, uplift transfer, constructibility and physical tolerances remain unproved; 22 mm nominal sleeve separation is not a placement allowance.",
+        "sleeve_outer_diameter_mm": 32,
+        "sleeve_to_sleeve_nominal_clear_mm": 22,
+        "tie_centres_along_wall_mm": [
+          -27,
+          27
+        ],
+        "tie_centres_cross_wall_mm": [
+          -75,
+          75
+        ],
+        "tie_diameter_mm": 20,
+        "ties_per_receiver": 4,
+        "warm_pad_mm": [
+          300,
+          300
+        ],
+        "warm_pad_z_mm": [
+          -380,
+          -80
+        ]
+      },
+      "limitations": "Source wall/floor budget represented as a uniform opening load solely for this separate comparison; no claim of actual distribution, concrete properties, member capacity, bearing, development, full cage, fire, head/door fit or combined permanent/favourable loads.",
+      "roof_increment_down_kN": 10.13486517396277,
+      "roof_increment_uplift_kN": -3.6195947049867043,
+      "roof_only_uplift_comparison": {
+        "governing_coordinate_mm": 2125,
+        "largest_absolute_M_kNm": -0.8770556400544706,
+        "support_forces_kN": [
+          -1.670582171532325,
+          -1.9490125334543793
+        ]
+      },
+      "roof_point_axis_mm": 2125,
+      "rough_opening_mm": [
+        1700,
+        2500
+      ],
+      "separation_below_first_floor_soffit_mm": 70,
+      "source_upper_core_plus_floor_ULS_kN": 9.374400000000005,
+      "trial_cold_route": {
+        "cold_beam_trial_z_mm": [
+          -1215,
+          -765
+        ],
+        "cold_width_mm": 600,
+        "downward_end_reactions_kN": [
+          7.225327045745142,
+          12.283938128217631
+        ],
+        "roof_only_uplift_end_reactions_kN": [
+          -1.3105429104262205,
+          -2.309051794560484
+        ],
+        "scope": "Statically determinate line-route trial through four hypothetical jamb receivers; these are not established cold girders, actual piles, stiffness shares or ground reactions. Continuous cold reinforcement, local receiver and site must be developed.",
+        "source_node_axes_mm": [
+          1200,
+          2650
+        ],
+        "source_route": [
+          "actual-cloak-east",
+          [
+            4800,
+            1200
+          ],
+          [
+            4800,
+            2650
+          ],
+          600
+        ]
+      },
+      "trial_rebar": {
+        "bar_diameter_mm": 12,
+        "bottom_bar_centre_z_mm": 2889,
+        "bottom_hook_top_centre_z_mm": 2949,
+        "centerline_radius_mm": 30,
+        "inside_bend_diameter_mm": 48,
+        "left_outer_centre_mm": 1531,
+        "left_straight_tangent_mm": 1561,
+        "outer_surface_end_cover_mm": 25,
+        "right_outer_centre_mm": 2619,
+        "right_straight_tangent_mm": 2589,
+        "scope": "Two bottom and two top illustrative \u00d812 longitudinal bars in distinct transverse lanes; 180-degree ends in vertical planes. Hook length, actual reinforcement, cage interaction, anchorage and fit at all ends are not established.",
+        "top_bar_centre_z_mm": 3061,
+        "top_hook_bottom_centre_z_mm": 3001
+      },
+      "trial_support_axes_mm": [
+        1600,
+        2575
+      ],
+      "wall": "cloak-east"
+    },
+    {
+      "beam_along_axis_mm": [
+        1150,
+        2450
+      ],
+      "beam_section_mm": [
+        140,
+        250
+      ],
+      "beam_z_mm": [
+        2850,
+        3100
+      ],
+      "bearing_lengths_mm": [
+        200,
+        200
+      ],
+      "core_cross_axis_mm": [
+        3177.5,
+        3317.5
+      ],
+      "downward_comparison": {
+        "governing_coordinate_mm": 1930.1150474170647,
+        "largest_absolute_M_kNm": 8.591332173095637,
+        "support_forces_kN": [
+          22.025808120331114,
+          36.297520467954335
+        ]
+      },
+      "id": "west",
+      "jamb_crossing_trial": {
+        "RC_jamb_section_mm": [
+          260,
+          200
+        ],
+        "cap_plate_plan_mm": [
+          260,
+          200
+        ],
+        "cap_plate_z_mm": [
+          3100,
+          3120
+        ],
+        "cap_to_first_soffit_nominal_gap_mm": 50,
+        "cross_wall_jamb_projection_beyond_each_finished_face_mm": 33,
+        "door_projection_scope": "300-square pad projects beneath the door opening and ends at z\u221280, 80 mm below FFL. Actual ground slab, finish, services and door-floor interface are unknown. The jamb replaces wall core; its head cage, door movement and adjoining rooms remain to check.",
+        "nearest_longitudinal_head_bar_plan_clear_mm": 28,
+        "nominal_link_cover_minimum_mm": 25,
+        "nominal_link_diameter_mm": 8,
+        "number_of_jamb_receivers": 2,
+        "scope": "Finite layout sensitivity only. A 20 mm thick cap plate spans the head and outboard tie lines; head anchorage, welding/fastening, access, forces, upper wall continuation and slab clearance remain to design. Sleeve, capillary/air/gas barrier, four tie anchorage, bars/links, wall-head joint, uplift transfer, constructibility and physical tolerances remain unproved; 22 mm nominal sleeve separation is not a placement allowance.",
+        "sleeve_outer_diameter_mm": 32,
+        "sleeve_to_sleeve_nominal_clear_mm": 22,
+        "tie_centres_along_wall_mm": [
+          -27,
+          27
+        ],
+        "tie_centres_cross_wall_mm": [
+          -75,
+          75
+        ],
+        "tie_diameter_mm": 20,
+        "ties_per_receiver": 4,
+        "warm_pad_mm": [
+          300,
+          300
+        ],
+        "warm_pad_z_mm": [
+          -380,
+          -80
+        ]
+      },
+      "limitations": "Source wall/floor budget represented as a uniform opening load solely for this separate comparison; no claim of actual distribution, concrete properties, member capacity, bearing, development, full cage, fire, head/door fit or combined permanent/favourable loads.",
+      "roof_increment_down_kN": 24.152128588285446,
+      "roof_increment_uplift_kN": -8.625760210101944,
+      "roof_only_uplift_comparison": {
+        "governing_coordinate_mm": 2125,
+        "largest_absolute_M_kNm": -1.5438150376034727,
+        "support_forces_kN": [
+          -1.7643600429753974,
+          -6.861400167126547
+        ]
+      },
+      "roof_point_axis_mm": 2125,
+      "rough_opening_mm": [
+        1350,
+        2250
+      ],
+      "separation_below_first_floor_soffit_mm": 70,
+      "source_upper_core_plus_floor_ULS_kN": 34.1712,
+      "trial_cold_route": {
+        "cold_beam_trial_z_mm": [
+          -1215,
+          -765
+        ],
+        "cold_width_mm": 600,
+        "downward_end_reactions_kN": [
+          20.72215092450208,
+          37.60117766378337
+        ],
+        "roof_only_uplift_end_reactions_kN": [
+          -2.403758126959998,
+          -6.2220020831419465
+        ],
+        "scope": "Statically determinate line-route trial through four hypothetical jamb receivers; these are not established cold girders, actual piles, stiffness shares or ground reactions. Continuous cold reinforcement, local receiver and site must be developed.",
+        "source_node_axes_mm": [
+          332.5,
+          2817.5
+        ],
+        "source_route": [
+          "actual-study-L-north",
+          [
+            332.5,
+            3247.5
+          ],
+          [
+            2817.5,
+            3247.5
+          ],
+          600
+        ]
+      },
+      "trial_rebar": {
+        "bar_diameter_mm": 12,
+        "bottom_bar_centre_z_mm": 2889,
+        "bottom_hook_top_centre_z_mm": 2949,
+        "centerline_radius_mm": 30,
+        "inside_bend_diameter_mm": 48,
+        "left_outer_centre_mm": 1181,
+        "left_straight_tangent_mm": 1211,
+        "outer_surface_end_cover_mm": 25,
+        "right_outer_centre_mm": 2419,
+        "right_straight_tangent_mm": 2389,
+        "scope": "Two bottom and two top illustrative \u00d812 longitudinal bars in distinct transverse lanes; 180-degree ends in vertical planes. Hook length, actual reinforcement, cage interaction, anchorage and fit at all ends are not established.",
+        "top_bar_centre_z_mm": 3061,
+        "top_hook_bottom_centre_z_mm": 3001
+      },
+      "trial_support_axes_mm": [
+        1250,
+        2350
+      ],
+      "wall": "study-L-north"
+    }
+  ],
+  "hold_down_and_path": "Four trial ties per jamb provide a bounded plan for an intended ridge/head/jamb/warm-pad/thermal-band/cold-rail path. Sleeve clearance is nominal and no actual connection, continuity, lateral resistance, bedding, seal or lower support is qualified.",
+  "limits": [
+    "Head replacements change local masonry and require source-bound door crown/frame, protected-route fire, wall/slab/cage and service compatibility; no raw door arch is assumed to be a 2250 rectangle.",
+    "The selected-source court core corner is not an earned bearing; core SHS and hypothetical 15 mm casing have only geometric body-path screens, and post-to-first-floor, fire and protected-route acceptance are unresolved.",
+    "The 300-wide cloak jamb projects 53 mm each side; the 260-wide study jamb projects 33 mm. Body-path proxy, door leaf and circulation require explicit screening.",
+    "The west ridge carries an overhang beyond its support; adjacent roof region forces are omitted.",
+    "Saddle, bearing, mitres, baseplates and finite bracing are not sized or checked. A 60-square horizontal tie at +6500 crosses the bed2-L-return core and demands an actual framed wall opening; the pin-control force is not a whole-roof thrust or tie capacity.",
+    "Candidate lintel bars are geometry sketches, not reinforcement design, anchorage or construction release."
+  ],
+  "ridge_node": {
+    "concept": "Separate opposed mitred hip and valley meet at their crown; a shaped welded saddle within the 120-square node supports two orthogonal ridge members. The listed gap is a bounding dimension, not a continuous level bearing surface. Exact plate facets, weld access, local load transfer, uplift and horizontal thrust tie remain to resolve.",
+    "court_centre_z_mm": 6551.721089070517,
+    "diagonal_top_at_peak_z_mm": 7450.75507099419,
+    "hip_valley_peak_centre_z_mm": 7387.577566313353,
+    "inclination_each_deg": 18.248902383234398,
+    "inner_valley_SHS_mm": [
+      120,
+      120,
+      6.3
+    ],
+    "inner_valley_axis_end_xy_mm": [
+      3917.5,
+      3917.5
+    ],
+    "inner_valley_axis_start_xy_mm": [
+      2125,
+      2125
+    ],
+    "outer_centre_z_mm": 6551.721089070517,
+    "outer_hip_SHS_mm": [
+      120,
+      120,
+      6.3
+    ],
+    "outer_hip_axis_end_xy_mm": [
+      2125,
+      2125
+    ],
+    "outer_hip_axis_start_xy_mm": [
+      332.5,
+      332.5
+    ],
+    "pedestal_plan_mm": [
+      2065,
+      2065,
+      2185,
+      2185
+    ],
+    "pedestal_vertical_bounding_gap_mm": 71.82249531916295,
+    "ridge_SHS_mm": [
+      120,
+      120,
+      6.3
+    ],
+    "ridge_apex_xy_mm": [
+      2125,
+      2125
+    ],
+    "ridge_axis_z_mm": 7582.577566313353,
+    "ridge_point_apex_force_kN": {
+      "down": 6.679275196956796,
+      "uplift": -2.3854554274845703
+    },
+    "ridge_south_axis_segment_xy_mm": [
+      [
+        2185,
+        2125
+      ],
+      [
+        4800,
+        2125
+      ]
+    ],
+    "ridge_west_axis_segment_xy_mm": [
+      [
+        2125,
+        2185
+      ],
+      [
+        2125,
+        4450
+      ]
+    ],
+    "trial_straight_biaxial_tie_SHS_mm": [
+      60,
+      60
+    ],
+    "trial_tie_axis_z_mm": 6500,
+    "trial_tie_crossing_upper_wall": "bed2-L-return at (2817.5,2817.5), inside core below trial +6550 wall top; a finite reinforced opening/replacement, air/fire seal and actual occupancy must be designed.",
+    "trial_tie_plan_endpoints_mm": [
+      [
+        332.5,
+        332.5
+      ],
+      [
+        3917.5,
+        3917.5
+      ]
+    ],
+    "two_force_control_scope": "Only the combined ridge-apex vertical point action, stipulated pinned two-force diagonal members and no other loads. Uplift reverses axial signs; real distributed roof actions, stiffness and all other lateral cases are excluded.",
+    "two_force_pin_control_horizontal_each_kN": {
+      "down": 10.128422089112192,
+      "uplift": -3.617293603254354
+    }
+  },
+  "source_sha256": {
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/str/studies/disjoint-house-actions.json": "8eb7f71f0c59362438e2a992c97ce03bce2eaeac9b6411233654501d7b887abe",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/sw-corner-station.json": "d3f65aa4866b0137f94a03fd3ff61089a782106c181fcfc1b16caec6c0f82d47",
+    "project/str/studies/sw-roof-region-route.json": "8f58d6ebe624ade3215798222ee00e033e08fa9600130d9792f4a27619056ee7"
+  },
+  "status": "finite roof junction and door-head development geometry; no node, opening, structure or site pass",
+  "study_260mm_jamb_body_witness_screen": [
+    {
+      "box_mm": [
+        1150,
+        3117.5,
+        1350,
+        3377.5
+      ],
+      "nearest_witness": "study-west-window-closed-door",
+      "nominal_reserve_mm": 17.5
+    },
+    {
+      "box_mm": [
+        2250,
+        3117.5,
+        2450,
+        3377.5
+      ],
+      "nearest_witness": "study-closed-door-window-tasks",
+      "nominal_reserve_mm": 17.5
+    }
+  ],
+  "study_300mm_jamb_rejected_controls": [
+    {
+      "box_mm": [
+        1150,
+        3097.5,
+        1350,
+        3397.5
+      ],
+      "nearest_witness": "study-west-window-closed-door",
+      "nominal_reserve_mm": -2.5
+    },
+    {
+      "box_mm": [
+        2250,
+        3097.5,
+        2450,
+        3397.5
+      ],
+      "nearest_witness": "study-closed-door-window-tasks",
+      "nominal_reserve_mm": -2.5
+    }
+  ]
+}
