@@ -95,6 +95,9 @@
     "nominalGatePlaneYmm": -2995,
     "idealEqualLeafWidthMm": 1000,
     "idealOutwardSweepLimitYmm": -3995,
+    "nearestNominalPipeCentreToCorridorMm": 6750,
+    "pipeOuterRadiusTrialMm": 60,
+    "nominalPipeToCorridorGapMm": 6690,
     "status": "Reservation only: no door, latch, first-motion, grading, fire or safe-destination proof"
   },
   "scaffoldAxisTrial": {
