@@ -13,7 +13,7 @@
       4382,
       5100
     ],
-    "top": 6340,
+    "top": 6310,
     "thickness": 2,
     "hole": 9,
     "pitch": 12,
@@ -22,7 +22,7 @@
         4380,
         4382
       ],
-      "top": 6380
+      "top": 6350
     },
     "sideLip": {
       "x": [
@@ -35,9 +35,9 @@
           7670
         ]
       ],
-      "top": 6380
+      "top": 6350
     },
-    "frontCrest": 6350,
+    "frontCrest": 6320,
     "scope": "Flat perforated field over structural grid; holes, water, corrosion, deflection and supports not qualified."
   },
   "ball": {
@@ -50,10 +50,10 @@
       150,
       75
     ],
-    "contactZ": 6340,
-    "flangeZ": 6354.2,
-    "bodyTopZ": 6370,
-    "pedestalTopZ": 6390,
+    "contactZ": 6310,
+    "flangeZ": 6324.2,
+    "bodyTopZ": 6340,
+    "pedestalTopZ": 6360,
     "source": "https://www.alwayse.com/ball-transfer-units/alwayse-ball-transfer-unit-flange-fixing-units-1008/",
     "scope": "Ball-down catalogue rating per unit only; water, point contact, fatigue, fixings, skid and unequal support require proof."
   },
@@ -66,8 +66,8 @@
       5100,
       5300
     ],
-    "bottom": 6290,
-    "frontCrest": 6360,
+    "bottom": 6260,
+    "frontCrest": 6330,
     "scope": "Open common collector with west, middle and east chutes. An all-outlet blockage leaves a central forward spill onto deck."
   },
   "chutes": [
@@ -82,8 +82,8 @@
         6200
       ],
       "floorZ": [
-        6310,
-        5860
+        6280,
+        5830
       ],
       "wall": 50
     },
@@ -98,8 +98,8 @@
         6200
       ],
       "floorZ": [
-        6310,
-        5860
+        6280,
+        5830
       ],
       "wall": 50
     },
@@ -114,8 +114,8 @@
         6200
       ],
       "floorZ": [
-        6310,
-        5860
+        6280,
+        5830
       ],
       "wall": 50
     }
@@ -275,16 +275,16 @@
     "idealBlockedPlateToRearLip": 12.988560457251879,
     "idealHoleBallDip": 0.8239737285571813,
     "nominalRearLipToCarrier": 10,
-    "nominalSheetToMiddleRail": 126,
+    "nominalSheetToMiddleRail": 96,
     "nominalChuteToCarrierAtStart": 30,
     "nominalChuteToCarrierAtEnd": 480,
     "clearDeckBandAfterChannel": 850,
     "westChuteToEndGuard": 6,
     "eastChuteToEndGuard": 6,
     "middleChuteToGuard": 51,
-    "chuteTopAtGuard": 5935,
-    "chuteToMiddleRail": 231,
-    "chuteToToeBoard": 245,
+    "chuteTopAtGuard": 5905,
+    "chuteToMiddleRail": 261,
+    "chuteToToeBoard": 215,
     "workerWidth": 600,
     "workerDepth": 600,
     "tripleBallStaticCatalogueCeilingKg": 75
@@ -300,7 +300,7 @@
     "Four ball-down units are proposed; three times the 25 kg catalogue value is only a nominal static ceiling, not an adopted payload, factor of safety, wet rating, drop capacity or hoist adequacy. The actual complete module, skid and dynamic actions are unknown.",
     "A 200-diameter open sleeve contains a trial skid ball centre (81.44 mm from the sleeve centre). It must be structurally flush-infilled after the upper pipe is disconnected before the receiver is lowered onto the field.",
     "A nominal ball diameter exceeds a 9 mm hole; point contact stress, local bending, burrs, wet debris and movement require product and physical testing.",
-    "The lowered receiver bottom +6390 clears rear lip +6380 by only 10 nominal; attachment, deflection and uncertainty could erase it. The side chutes demand actual supported pipe removal and require continuous protected guards.",
+    "The lowered receiver bottom +6360 clears rear lip +6350 by only 10 nominal; attachment, deflection and uncertainty could erase it. The side chutes demand actual supported pipe removal and require continuous protected guards.",
     "The outer chutes clear nominal end-post circles by only 6 mm at each end; brackets, guard projections and tolerances can erase that reservation. At y6150 their top lies between the toe board and midrail, not proof of a complete guarded penetration.",
     "The 600 x600 proxy is an isolated clear rectangle in a hypothetical standing strip; it does not prove reach, escape, access between tower members or safe work under suspended loads.",
     "The outer chutes intercept parts of adjacent side drips at x4450/7550 and must be included in the single event ledger. Ideal weir head excludes losses, splash, wind, common backwater, clogging and freeboard."

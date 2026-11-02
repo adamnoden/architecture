@@ -14,8 +14,8 @@
     "installedCentreY": 4525,
     "withdrawal": 400,
     "loweredZ": [
-      6390,
-      6570
+      6360,
+      6540
     ]
   },
   "axes": [
@@ -77,20 +77,20 @@
   ],
   "bays": [
     {
-      "centre": 5587.5,
+      "centre": 5540,
       "axis": 4720,
-      "radius": 1001.277309240552,
+      "radius": 960.4165762834375,
       "landingY": 5900,
-      "landingX": 5601.437036889192,
-      "extremeX": 5721.277309240552
+      "landingX": 5554.730495429512,
+      "extremeX": 5680.416576283437
     },
     {
-      "centre": 6412.5,
+      "centre": 6460,
       "axis": 7290,
-      "radius": 1009.9535880425396,
+      "radius": 968.9685237405806,
       "landingY": 5900,
-      "landingX": 6398.719320303643,
-      "extremeX": 6280.046411957461
+      "landingX": 6445.4439035801115,
+      "extremeX": 6321.031476259419
     }
   ],
   "checks": {
@@ -101,8 +101,8 @@
     "centreFootBeforeInlet": 1500,
     "centreModuleFixedArmStart": 900,
     "centreModuleFixedArmAfterWithdrawal": 500,
-    "carrierToUpperRail": 46,
-    "carrierToLowerRail": 176
+    "carrierToUpperRail": 76,
+    "carrierToLowerRail": 146
   },
   "limitations": [
     "Swing arm 4416.015 and holder 4416.003 are manufacturer-listed with a 150 kg permissible hoist-arm load, but the published catalogue gives no arm radius or confirmed attachment to these specific standards. The 1015.995 target is not an actual reach or rated capacity.",

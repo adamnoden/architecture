@@ -2,7 +2,7 @@
   "status": "Conditional joined overflow and high-lift geometry; not an approved wet path, access or lift",
   "source": {
     "path": "project/rwt/studies/integrated-transfer-deck.json",
-    "blob": "aeba2b18860bac98dbdfe2f889c2562bdd217ea9"
+    "blob": "3a773461254efdaff13cd4b805dedd24f0dd0448"
   },
   "shaft": {
     "x": [
@@ -37,8 +37,8 @@
           7620
         ]
       ],
-      "floorAtWall": 6285,
-      "topAtWall": 6412,
+      "floorAtWall": 6255,
+      "topAtWall": 6382,
       "scope": "Three lower conduit collars are sealed around the wall penetration; upper return notches remain open to the shaft. Actual walls, structure and leak paths are unproved."
     },
     "scope": "Closed sided splash shaft under collector, central pitched canopy and open end discharge; structural/flow/weather admission absent."
@@ -66,8 +66,8 @@
   "load": {
     "width": 471.42857142857144,
     "depth": 350,
-    "topAtLow": 6570,
-    "bottomAtLow": 6390,
+    "topAtLow": 6540,
+    "bottomAtLow": 6360,
     "bottomRaised": 7690,
     "topRaised": 7870,
     "boomUnder": 8140,
@@ -122,13 +122,13 @@
       {
         "module": 1,
         "targetX": 4585.714285714285,
-        "targetZ": 6405,
+        "targetZ": 6375,
         "portX": 5450,
-        "requiredGripToTip": 1113.110414971654,
-        "guardZ": 6410.538461538462,
-        "upperGuardGap": 190.4615384615381,
-        "lowerGuardGap": 181.5384615384619,
-        "collectorCrestGap": 71.53846153846189
+        "requiredGripToTip": 1114.726332297918,
+        "guardZ": 6384.2307692307695,
+        "upperGuardGap": 216.7692307692305,
+        "lowerGuardGap": 155.2307692307695,
+        "collectorCrestGap": 99.23076923076951
       },
       {
         "module": 1,
@@ -139,18 +139,18 @@
         "guardZ": 6559.615384615385,
         "upperGuardGap": 41.384615384615245,
         "lowerGuardGap": 330.61538461538476,
-        "collectorCrestGap": 84.61538461538476
+        "collectorCrestGap": 114.61538461538476
       },
       {
         "module": 2,
         "targetX": 5057.142857142857,
-        "targetZ": 6405,
+        "targetZ": 6375,
         "portX": 5450,
-        "requiredGripToTip": 803.9662522107989,
-        "guardZ": 6410.538461538462,
-        "upperGuardGap": 190.4615384615381,
-        "lowerGuardGap": 181.5384615384619,
-        "collectorCrestGap": 71.53846153846189
+        "requiredGripToTip": 806.2020433451391,
+        "guardZ": 6384.2307692307695,
+        "upperGuardGap": 216.7692307692305,
+        "lowerGuardGap": 155.2307692307695,
+        "collectorCrestGap": 99.23076923076951
       },
       {
         "module": 2,
@@ -161,18 +161,18 @@
         "guardZ": 6559.615384615385,
         "upperGuardGap": 41.384615384615245,
         "lowerGuardGap": 330.61538461538476,
-        "collectorCrestGap": 84.61538461538476
+        "collectorCrestGap": 114.61538461538476
       },
       {
         "module": 3,
         "targetX": 5528.571428571428,
-        "targetZ": 6405,
+        "targetZ": 6375,
         "portX": 5450,
-        "requiredGripToTip": 705.831757140294,
-        "guardZ": 6410.538461538462,
-        "upperGuardGap": 190.4615384615381,
-        "lowerGuardGap": 181.5384615384619,
-        "collectorCrestGap": 71.53846153846189
+        "requiredGripToTip": 708.3773495727789,
+        "guardZ": 6384.2307692307695,
+        "upperGuardGap": 216.7692307692305,
+        "lowerGuardGap": 155.2307692307695,
+        "collectorCrestGap": 99.23076923076951
       },
       {
         "module": 3,
@@ -183,18 +183,18 @@
         "guardZ": 6559.615384615385,
         "upperGuardGap": 41.384615384615245,
         "lowerGuardGap": 330.61538461538476,
-        "collectorCrestGap": 84.61538461538476
+        "collectorCrestGap": 114.61538461538476
       },
       {
         "module": 4,
         "targetX": 6000,
-        "targetZ": 6405,
+        "targetZ": 6375,
         "portX": 5450,
-        "requiredGripToTip": 891.3613184337762,
-        "guardZ": 6410.538461538462,
-        "upperGuardGap": 190.4615384615381,
-        "lowerGuardGap": 181.5384615384619,
-        "collectorCrestGap": 71.53846153846189
+        "requiredGripToTip": 893.3784192602819,
+        "guardZ": 6384.2307692307695,
+        "upperGuardGap": 216.7692307692305,
+        "lowerGuardGap": 155.2307692307695,
+        "collectorCrestGap": 99.23076923076951
       },
       {
         "module": 4,
@@ -205,18 +205,18 @@
         "guardZ": 6559.615384615385,
         "upperGuardGap": 41.384615384615245,
         "lowerGuardGap": 330.61538461538476,
-        "collectorCrestGap": 84.61538461538476
+        "collectorCrestGap": 114.61538461538476
       },
       {
         "module": 5,
         "targetX": 6471.428571428572,
-        "targetZ": 6405,
+        "targetZ": 6375,
         "portX": 6900,
-        "requiredGripToTip": 822.0088012836329,
-        "guardZ": 6410.538461538462,
-        "upperGuardGap": 190.4615384615381,
-        "lowerGuardGap": 181.5384615384619,
-        "collectorCrestGap": 71.53846153846189
+        "requiredGripToTip": 824.195649944693,
+        "guardZ": 6384.2307692307695,
+        "upperGuardGap": 216.7692307692305,
+        "lowerGuardGap": 155.2307692307695,
+        "collectorCrestGap": 99.23076923076951
       },
       {
         "module": 5,
@@ -227,18 +227,18 @@
         "guardZ": 6559.615384615385,
         "upperGuardGap": 41.384615384615245,
         "lowerGuardGap": 330.61538461538476,
-        "collectorCrestGap": 84.61538461538476
+        "collectorCrestGap": 114.61538461538476
       },
       {
         "module": 6,
         "targetX": 6942.857142857143,
-        "targetZ": 6405,
+        "targetZ": 6375,
         "portX": 6900,
-        "requiredGripToTip": 702.7529684703421,
-        "guardZ": 6410.538461538462,
-        "upperGuardGap": 190.4615384615381,
-        "lowerGuardGap": 181.5384615384619,
-        "collectorCrestGap": 71.53846153846189
+        "requiredGripToTip": 705.3096729053683,
+        "guardZ": 6384.2307692307695,
+        "upperGuardGap": 216.7692307692305,
+        "lowerGuardGap": 155.2307692307695,
+        "collectorCrestGap": 99.23076923076951
       },
       {
         "module": 6,
@@ -249,18 +249,18 @@
         "guardZ": 6559.615384615385,
         "upperGuardGap": 41.384615384615245,
         "lowerGuardGap": 330.61538461538476,
-        "collectorCrestGap": 84.61538461538476
+        "collectorCrestGap": 114.61538461538476
       },
       {
         "module": 7,
         "targetX": 7414.285714285714,
-        "targetZ": 6405,
+        "targetZ": 6375,
         "portX": 6900,
-        "requiredGripToTip": 869.778590170146,
-        "guardZ": 6410.538461538462,
-        "upperGuardGap": 190.4615384615381,
-        "lowerGuardGap": 181.5384615384619,
-        "collectorCrestGap": 71.53846153846189
+        "requiredGripToTip": 871.8456261967292,
+        "guardZ": 6384.2307692307695,
+        "upperGuardGap": 216.7692307692305,
+        "lowerGuardGap": 155.2307692307695,
+        "collectorCrestGap": 99.23076923076951
       },
       {
         "module": 7,
@@ -271,13 +271,13 @@
         "guardZ": 6559.615384615385,
         "upperGuardGap": 41.384615384615245,
         "lowerGuardGap": 330.61538461538476,
-        "collectorCrestGap": 84.61538461538476
+        "collectorCrestGap": 114.61538461538476
       }
     ]
   },
   "checks": {
     "shaftToSouthPost": 51,
-    "collarTopToShaftTop": 88,
+    "collarTopToShaftTop": 118,
     "canopyUnderToDoor": 269,
     "westSpillToDoor": 350,
     "eastSpillToDoor": 350,
@@ -293,14 +293,14 @@
     "workerHeadToScreen": 260,
     "maxToolGripToTip": 1119.2027501388513,
     "minToolUpperGuardGap": 41.384615384615245,
-    "minToolLowerGuardGap": 181.5384615384619,
-    "minToolCollectorGap": 71.53846153846189,
+    "minToolLowerGuardGap": 155.2307692307695,
+    "minToolCollectorGap": 99.23076923076951,
     "westToolToMiddleCollar": 290,
     "eastToolToEastCollar": 360
   },
   "states": {
     "allChutesBlocked": "Collector spills at y5300 into the shaft between y5150 and5350. Its centre lands on the pitched canopy and goes to open end zones outside the doorway; ends outside the canopy fall directly. This is a still-air geometry path, not demonstrated whole-flow containment or first-harm safety.",
-    "movingLow": "A low suspended A module crosses y5350 at +6390..6570 and intersects the proposed north shaft wall. This motion FAILS.",
+    "movingLow": "A low suspended A module crosses y5350 at +6360..6540 and intersects the proposed north shaft wall. This motion FAILS.",
     "movingHigh": "Before crossing y5350, with supported transfer and valid re-engagement, lift module bottom to +7690, then swing to y5900 and lower after it is wholly beyond the shaft. Its bottom is nominally 90 above the central +7600 screen. This is a declared geometry, not proven equipment capacity."
   },
   "limits": [
