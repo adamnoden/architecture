@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 12,
-  "state": "released",
-  "leaseId": "55aa5d86-6d9f-4bed-820a-5f08388eb0f1",
+  "generation": 13,
+  "state": "claimed",
+  "leaseId": "caf5d89b-0be5-4712-855b-f59b6688b48d",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg4-structure-roof"
+    "label": "zerg5-structure-joins"
   },
-  "claimedAt": "2026-11-02T00:02:13.027Z",
-  "heartbeatAt": "2026-11-02T00:43:56.434Z",
-  "expiresAt": "2026-11-02T00:43:56.434Z",
+  "claimedAt": "2026-11-02T00:45:28.072Z",
+  "heartbeatAt": "2026-11-02T00:45:28.072Z",
+  "expiresAt": "2026-11-02T01:30:28.072Z",
   "checkpoint": {
-    "evidence": "PR1238 correctedhead9867b1994533f0d0f3114919225aa89b50eb2f1a treef1bbb8d46de9c01dbf80788f8c9221670786dd87 exactnative85ada463; collectorownweight true1300bearing reactions conserveN/M; coherentbothpieractions; Python--check/diffcheck and actualupdatedrenderPASS; latestmainf462ancestryverified",
-    "next": "Focused independent delta review and root exactheadCI/preflight; freeze source while reviewing",
-    "blocker": "STR-HOUSE remains incomplete; unchanged cornerjack/collectorbearing/lateral/pierhead/roofjoint/service/entrance and foundationconcept conditions, known400node rejected"
+    "evidence": "PR1238 merged verified main6a3c15d6 exacttreef1bbb8d4; gen12 released/readback5837273b; fresh structural continuation from merged main",
+    "next": "Join roof corner/collector/lateral/archanchorage and actual170waist390beam/guards, entrance/service/heavywall paths and foundation concept with HAD/ENV",
+    "blocker": "STR-HOUSE incomplete; no qualified roofcorner/joint, no selected170stair or thermalreceiving interface; rejected400node retained without finalfabrication exit gate"
   },
-  "branch": "work/zerg4-structure-roof",
+  "branch": "work/zerg5-structure-joins",
   "predecessor": {
-    "leaseId": "62b3cbcd-60b8-45ea-a263-d1c45df66454",
-    "generation": 11,
-    "branch": "work/zerg3-structure-loggia",
-    "pr": 1235,
+    "leaseId": "55aa5d86-6d9f-4bed-820a-5f08388eb0f1",
+    "generation": 12,
+    "branch": "work/zerg4-structure-roof",
+    "pr": 1238,
     "checkpoint": {
-      "evidence": "PR1235 integrationheadcbade8da93736b6cf7d15d7207153de4eea50382 exactnativec02680a6b7fc632f192e9ea0449a3fa7ba2cf81c; truthfulparentsf5c3aa0d andmain546c98f9; nativeortmergepreservesallmainMATcontent; STRsubtreeunchangeda6ade706; currentmainancestry/fetchedtree equality and focusedPython--check/diffcheckPASS",
-      "next": "Commander fresh exact-head CI and integration-only delta review then canonical merge preflight; source frozen while root sequences merge",
-      "blocker": "STR-HOUSE bounded output remains incomplete; no changes to accepted geometry or frozen engineering scope; full exact-head CI pending"
+      "evidence": "PR1238 correctedhead9867b1994533f0d0f3114919225aa89b50eb2f1a treef1bbb8d46de9c01dbf80788f8c9221670786dd87 exactnative85ada463; collectorownweight true1300bearing reactions conserveN/M; coherentbothpieractions; Python--check/diffcheck and actualupdatedrenderPASS; latestmainf462ancestryverified",
+      "next": "Focused independent delta review and root exactheadCI/preflight; freeze source while reviewing",
+      "blocker": "STR-HOUSE remains incomplete; unchanged cornerjack/collectorbearing/lateral/pierhead/roofjoint/service/entrance and foundationconcept conditions, known400node rejected"
     }
   },
   "recoverySource": {
-    "leaseId": "62b3cbcd-60b8-45ea-a263-d1c45df66454",
-    "generation": 11,
-    "branch": "work/zerg3-structure-loggia",
-    "pr": 1235,
+    "leaseId": "55aa5d86-6d9f-4bed-820a-5f08388eb0f1",
+    "generation": 12,
+    "branch": "work/zerg4-structure-roof",
+    "pr": 1238,
     "checkpoint": {
-      "evidence": "PR1235 integrationheadcbade8da93736b6cf7d15d7207153de4eea50382 exactnativec02680a6b7fc632f192e9ea0449a3fa7ba2cf81c; truthfulparentsf5c3aa0d andmain546c98f9; nativeortmergepreservesallmainMATcontent; STRsubtreeunchangeda6ade706; currentmainancestry/fetchedtree equality and focusedPython--check/diffcheckPASS",
-      "next": "Commander fresh exact-head CI and integration-only delta review then canonical merge preflight; source frozen while root sequences merge",
-      "blocker": "STR-HOUSE bounded output remains incomplete; no changes to accepted geometry or frozen engineering scope; full exact-head CI pending"
+      "evidence": "PR1238 correctedhead9867b1994533f0d0f3114919225aa89b50eb2f1a treef1bbb8d46de9c01dbf80788f8c9221670786dd87 exactnative85ada463; collectorownweight true1300bearing reactions conserveN/M; coherentbothpieractions; Python--check/diffcheck and actualupdatedrenderPASS; latestmainf462ancestryverified",
+      "next": "Focused independent delta review and root exactheadCI/preflight; freeze source while reviewing",
+      "blocker": "STR-HOUSE remains incomplete; unchanged cornerjack/collectorbearing/lateral/pierhead/roofjoint/service/entrance and foundationconcept conditions, known400node rejected"
     }
-  },
-  "pr": 1238,
-  "releasedAt": "2026-11-02T00:43:56.434Z",
-  "releaseReason": "completed"
+  }
 }
