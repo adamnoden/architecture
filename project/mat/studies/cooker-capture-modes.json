@@ -1,0 +1,367 @@
+{
+  "status": "Conditional complete development direction; actual configured kit/site/physical/material acceptance unearned.",
+  "family": {
+    "model": "Elica ERA GR/A/52",
+    "code": "PRF0142633",
+    "mode": "Ducted; three factory mechanical speeds retained; no recirculation credit.",
+    "published": {
+      "lowM3h": 125,
+      "highM3h": 224,
+      "BEPm3h": 160,
+      "BEPpa": 145,
+      "BEPw": 73.5,
+      "soundPowerDbA": [
+        45,
+        54
+      ],
+      "greaseFilterEfficiencyPercent": 56,
+      "massKg": 4.3,
+      "outletDiameter": 120,
+      "inductionMinimumSeparation": 500
+    },
+    "notEquivalent": "BEP is not low/high operating point; sound power is not room sound pressure; grease-filter efficiency is not plume-capture efficiency.",
+    "visibleResidue": "Grey factory face/slider, coating and grid/plastics remain disclosed, unapproved. Surrounding removable metal canopy does not exempt or hide these constituents by claim."
+  },
+  "extractPoint": [
+    11200,
+    12000,
+    2400
+  ],
+  "duct": 160,
+  "exhaustRadialInsulation": 50,
+  "metalJacketEachSide": 1,
+  "fullInsulatedOD": 262,
+  "formedWallTerritory": 320,
+  "minimumCaptureLps": 30,
+  "hood": {
+    "canopyTerritory": [
+      10750,
+      10970.5,
+      600,
+      600
+    ],
+    "undersideZ": 1600,
+    "hobTopZ": 900,
+    "separation": 700,
+    "completeUnitMaximum": [
+      550,
+      320,
+      250
+    ],
+    "bodyBoundStatus": "Inspected manual535x300 mainplan/177mainheight; cutout493x255 and4screws. Authored550x320x250 complete accommodation must include collar/leads/supports;177alone is not full installed height.",
+    "outletTarget": [
+      11050,
+      11130.5,
+      1850
+    ],
+    "path": [
+      [
+        11050,
+        11130.5,
+        1850
+      ],
+      [
+        11050,
+        11130.5,
+        2400
+      ],
+      [
+        11200,
+        11130.5,
+        2400
+      ],
+      [
+        11200,
+        12000,
+        2400
+      ]
+    ],
+    "pathLength": 1569.5,
+    "throatLength": 150,
+    "transitionLength": 200,
+    "mainLength": 1219.5,
+    "unitCentreXY": [
+      11050,
+      11130.5
+    ],
+    "transition": "Unmodified120factory throat; supported smooth120→160 expansion; no smaller duct downstream.",
+    "cleaning": "Monthly grease-grid cleaning per manual; grease capture56% demands inspectable duct, not a clean-duct assumption. No charcoal filter in selected ducted mode."
+  },
+  "makeupPoint": [
+    12000,
+    8700,
+    2400
+  ],
+  "makeupFormedTerritory": 450,
+  "makeupAirDiameter": 300,
+  "makeupCompleteInsulatedOD": 402,
+  "makeupTerminalFace": [
+    500,
+    500
+  ],
+  "makeupRequirement": "Dedicated passive pressure-driven air path, normally shut by separate powered damper; current sensing opens damper only while manually operated hood runs. Selected background remains78L/s. All factory speeds retained; actual commissioned capture≥30L/s and maximum flow≤70L/s must match this kit, otherwise reselect/enlarge explicitly.",
+  "pressure": {
+    "density": 1.2,
+    "terminalCd": 0.61,
+    "terminalMinimumFreeAreaFraction": 0.75,
+    "makeupOtherK": 2,
+    "makeupLengthMetres": 0.6,
+    "targetRoomDepressionMaximumPa": 5,
+    "rows": [
+      {
+        "mode": "publishedLow",
+        "lps": 34.72222222222222,
+        "externalExhaustPa": 11.808565376292155,
+        "makeupPa": 0.9899443607232157,
+        "roomPlusDuctPa": 12.79850973701537
+      },
+      {
+        "mode": "publishedBEP",
+        "lps": 44.44444444444444,
+        "externalExhaustPa": 19.34715351251707,
+        "makeupPa": 1.6219248406089164,
+        "roomPlusDuctPa": 20.969078353125987,
+        "authoredFoulingAllowancePa": 25,
+        "authoredAdverseWindAllowancePa": 20,
+        "totalStressPa": 65.96907835312598
+      },
+      {
+        "mode": "publishedHigh",
+        "lps": 62.22222222222222,
+        "externalExhaustPa": 37.92042088453344,
+        "makeupPa": 3.1789726875934754,
+        "roomPlusDuctPa": 41.099393572126914
+      },
+      {
+        "mode": "authoredUpperSensitivity",
+        "lps": 70,
+        "externalExhaustPa": 47.99303268198765,
+        "makeupPa": 4.023387307735494,
+        "roomPlusDuctPa": 52.01641998972315
+      }
+    ],
+    "basis": "All loss coefficients, fouling/wind allowances and70upper sensitivity are authored compatibility requirements, not measured vendor data. Existing280formed/160air control and50%clogged screen fail. PublishedBEP alone provides a plausible margin; actual assembled curve/mode/capture commissioning remains required.",
+    "failedOld160AirAtPublishedHighPa": 39.59256846520617,
+    "failedHalfFreeScreenAtPublishedHighPa": 5.955521546227735
+  },
+  "controls": {
+    "user": "Factory slider alone starts/stops hood; separate labelled manual double-pole isolation. No automatic hood start, timer/programmer or altered factory wiring.",
+    "run": "Current sensor commands separate makeup damper OPEN; end switch proves full opening. BackgroundMEV remains on independently. No supply fan or protected-corridor transfer is credited for cooker makeup.",
+    "fault": "Failure to prove damper within5s, pressure below−5Pa beyond5s, or lost proof trips and latches hood supply OFF with visible fault. Manual reset only with factory slider OFF, then deliberate manual restart; no automatic energisation after power return. Exact protective-control compatibility requires qualified selection; no OEM approval invented.",
+    "stop": "On manual hood OFF close makeup damper after airflow stops. No timed automatic restart or invented hood run-on.",
+    "fire": "No combustion selected. Fire alarm/required fire strategy can remove hood power/close damper; exact classified boundary/weather/seal and fire-control precedence remain explicit design interfaces, never ordinary silicone assumed as firestop."
+  },
+  "interfaces": {
+    "hoodFirstRelease": {
+      "isolation": "Cool hob, electrical double-pole isolation/verify dead; grid/filter remove downward before service. No leaning/standing on hob.",
+      "equipmentTerritory": [
+        10595.5,
+        10295.5,
+        750,
+        650
+      ],
+      "equipmentHeightMaximum": 300,
+      "floorBodyForFasteners": [
+        11045.5,
+        10645
+      ],
+      "holderFloorBody": [
+        10425,
+        11130.5
+      ],
+      "access": "Rated steps/complete guards must fit750x650 for first duct/control task while hood remains FIXED. Remove steps before two floor handlers release unit. Authored front body/shoulder and side holder fields are checked; actual apparatus/humans/forces still qualify. Whole600canopy stays independently supported.",
+      "connectionZone": [
+        10950,
+        11000,
+        250,
+        300,
+        1850,
+        2200
+      ],
+      "sequence": "While four unit screws remain FIXED, access front duct panel from qualified steps, disconnect supported duct spool and isolated accessible electrical lead; then remove steps. Two qualified floor handlers support unit, release four supplied fixings from below through removed grid, lower250 then400S with front handler400S retreat. Hob cold/covered; no load on hob. Front shoulder200N of body is authored task geometry, never a universal human safety claim. Retained duct/canopy frame and supports remain.",
+      "requiredSpool": "Zero-capture flat mating faces at supported160spool ends; clamps/grease seals renewed. Required100axial service zone, no nominal socket travel inferred.",
+      "withdrawalEnvelope": [
+        550,
+        320,
+        250
+      ],
+      "direction": "Downward through493x255 factory mounting CUTOUT is NOT claimed: unit535x300 must lower below its own mounting flange into full600x400 removable lower-canopy bay; independent support frame remains; whole-room carrying remains IAS-owned."
+    },
+    "makeupFirstRelease": {
+      "innerBox": [
+        11170.5,
+        8450,
+        400,
+        500
+      ],
+      "heightBand": [
+        2150,
+        2650
+      ],
+      "clearFrontOpening": [
+        450,
+        450
+      ],
+      "fullModuleMaximum": [
+        400,
+        400,
+        300
+      ],
+      "equipmentTerritory": [
+        10145.5,
+        8467.5,
+        750,
+        1100
+      ],
+      "bodyCentre": [
+        10595.5,
+        8767.5
+      ],
+      "shoulderTarget": [
+        10795.5,
+        8767.5,
+        2100
+      ],
+      "sequence": "Isolate hood/damper and wet affected zone if needed; remove independent metal front, support damper cartridge, unplug accessible lead, release two accessible clamps, withdraw300W into retained400service zone. Wall sleeve, thermal/water/air/fire perimeter stays fixed; temporarily cap any opened duct/boundary until resealed/tested. No screen is omitted.",
+      "external": "Exterior500face/screen separately removable only from rated exterior access; indoor cleaning through sleeve must reach whole screen or exterior task is required."
+    },
+    "controlsFirstRelease": {
+      "station": [
+        10750,
+        10970.5,
+        180,
+        180
+      ],
+      "heightBand": [
+        1875,
+        2075
+      ],
+      "frontClearAperture": [
+        200,
+        220
+      ],
+      "serviceEquipment": "Same hood first-task750x650 steps; hood remains fixed during control service",
+      "exposedMetalConduit20": [
+        [
+          10840,
+          11060,
+          1975
+        ],
+        [
+          10840,
+          11060,
+          3075
+        ],
+        [
+          11400,
+          11060,
+          3075
+        ],
+        [
+          11400,
+          8700,
+          3075
+        ],
+        [
+          11400,
+          8700,
+          2400
+        ],
+        [
+          11570.5,
+          8700,
+          2400
+        ]
+      ],
+      "conduitRule": "Independent ceiling-hung complete20 envelope; top3085 leaves15 to3100 ceiling, above2850 moving-leaf heads. No attic/core/arch hole credited. Actual supports/fill/condensation/seals qualify.",
+      "sequence": "Accessible double-pole isolate, prove dead, support labelled removable control plate, unplug approved connectors and renew complete untouched certified module. Retained wiring/earth bonds stay supported; actual lead/terminal classification and owner residues remain disclosed."
+    }
+  },
+  "geometry": {
+    "HADHead": "cfacc96c61ce1be5befa3bc0a10086c7cb6b4202",
+    "HADBlob": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+    "ringConservativeChecks": [
+      {
+        "id": "east-window-0",
+        "fullRingHorizontalBox": [
+          1085.0,
+          2515.0
+        ],
+        "formed450HorizontalReserve": 5960.0
+      },
+      {
+        "id": "plant-replacement",
+        "fullRingHorizontalBox": [
+          3685.0,
+          5515.0
+        ],
+        "formed450HorizontalReserve": 2960.0
+      },
+      {
+        "id": "east-window-2",
+        "fullRingHorizontalBox": [
+          6685.0,
+          8115.0
+        ],
+        "formed450HorizontalReserve": 360.0
+      },
+      {
+        "id": "east-window-3",
+        "fullRingHorizontalBox": [
+          9485.0,
+          10915.0
+        ],
+        "formed450HorizontalReserve": 560.0
+      }
+    ],
+    "apertureStatus": "450port plus500face are a proposed rewind, not drilling/support/weather approval; exact joined HAD check remains required.",
+    "firstReleaseFloorSweeps": [
+      {
+        "id": "front-handler",
+        "x": 11045.5,
+        "yRange": [
+          10645,
+          10245
+        ],
+        "radius": 300,
+        "governing": "service-emitter-kitchen-E",
+        "minimumFurnitureReserve": 25.0
+      },
+      {
+        "id": "side-holder",
+        "x": 10425,
+        "yRange": [
+          11130.5,
+          10730.5
+        ],
+        "radius": 300,
+        "governing": "north-cooking-station",
+        "minimumFurnitureReserve": 25.0
+      }
+    ],
+    "makeupPlatformToRearWallBaseReserve": 25,
+    "makeup500FaceToRearWallFinishReserve": 25.5,
+    "hoodFastenerReachProxy": 548.8082543111027
+  },
+  "primarySources": {
+    "family": "https://www.elica.com/IE-en/hoods/integrated/era",
+    "fiche": "https://damsrv.elica.com/doc/PLM_Documents/PF/PF-PRF0142633_A_21.pdf",
+    "manual": "https://damsrv.elica.com/doc/PLM_Documents/LibrettiWeb/LIB0142652A_D_2.pdf",
+    "comparator": "https://www.elica.com/GB-en/hoods/hidden-2-0"
+  },
+  "alternatives": {
+    "recirculating": "Rejected as moisture/fume export; no30L/soutdoor capture credit.",
+    "Sleek": "Published300–690m3/h /83.33–191.67L/s,8.25kg/150outlet; excessive makeup territory compared with lower-flow family. Stainless finish alone is not constituent admission.",
+    "old30": "Thirty is minimum duty, not actual hood mode/makeup peak."
+  },
+  "internalOpen": [
+    "Owning HAD composition must consume450makeup at8700 and exact maintenance/control fields; existing frozen280/8600 is an adverse control.",
+    "Render and independently review exact release/support/tool/three-dimensional occurrence sheet."
+  ],
+  "laterAdmission": [
+    "Actual mode/capture/pressure/noise measurements and supplier-compatible kit.",
+    "Exterior formed port/rebar/thermal/rain/air/fire boundaries and support design.",
+    "Apparatus stability, human handling and carrying; IAS owns full export.",
+    "Exact constituents and dated owner material exceptions; none approved."
+  ]
+}

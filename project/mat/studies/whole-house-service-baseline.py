@@ -56,9 +56,10 @@ air={'basis':'Conservative geometric floor-area upper bound, not regulatory meas
 assert air['floorCriterionLps']<78 and air['oldBControlM2']*.3<78
 
 # Each duct station is entirely in its wet room and its own outer wall.
-# Pod500wide x650projection x300high. Real K125EC dimensional comparator is246
-# diameter/203axial plus40x88 terminalbox;326x300 is a conservative wholefan bound.
-# HISTORICAL K125 geometry control only. Current bounded Titon selection is air.fanChoice below; no material or installed duty acceptance follows.
+# Pod500wide x650projection x300high retains the historical K125 geometry control
+# (246diameter/203axial plus40x88 terminalbox);326x300 is its conservative bound.
+# The CURRENT selected family is Titon in air.fanChoice below; this old control
+# is neither the selected apparatus nor evidence of its material/duty acceptance.
 extract=[]
 for name,level,wall,at,q,minimum in [
  ('ground-WC',0,'south',9000,13,6),('utility',0,'east',900,13,8),
@@ -664,7 +665,7 @@ other=[
  {'id':'laundry-refrigeration','count':2,'path':[],'decision':'One washer reserve10050/700/650×700(requiredactualbody≤600wide) and fridge10920.5/9040; accessible isolated appliance tails. Washer is new proposal; manufacturer withdrawal/hose/workplate dimensions required, not built into structure.'},
  {'id':'lighting-controls-data','count':'All occupied rooms, circulation andplant','path':[],'decision':'Drytray branches drop to inspectable metal face stations; actual circuit/accessory count follows electrical layout. Wired controls, no mandatory cloud/radio. Data/fire-alarm isolation and earthing separate, no implied certified polymer-free circuits.'},
  {'id':'fire-detection','count':'Whole-house alarm layout to fire strategy','path':[],'decision':'Protected stair/ring and every habitable/wet risk zone scheduled for actual compliant detector design; no device locations or grade/category invented. Certified alarm internals/backup power are explicit residue; do not delete to satisfy materials.'},
- {'id':'purge-overheating','count':6,'path':[],'decision':'Every habitable room retains actual operablewindow task; openings/noise/security/fall protection and orientation/climate/shading must prove purge/overheating.65L/s winterventilation is not cooling and no cooling duty is silently omitted.'},
+ {'id':'purge-overheating','count':6,'path':[],'decision':'Every habitable room retains actual operablewindow task; openings/noise/security/fall protection and orientation/climate/shading must prove purge/overheating.78L/s selected winterventilation is not cooling and no cooling duty is silently omitted.'},
 ]
 
 residues=[
@@ -826,7 +827,7 @@ result={'status':'Constructive provisional whole-house service baseline; no acce
  'selection':'Local continuousMEV + background vents + separate cooker capture +8kW compatibility monobloc/radiators +300L hotwater.',
  'livingWestPullWitness':living_pull_witness,'air':air,'extract':extract,'supply':supplies,
  'cooker':{'extractPoint':[11200,12000,2400],'duct':160,'exhaustRadialInsulation':50,'metalJacketEachSide':1,'fullInsulatedOD':262,'formedWallTerritory':320,'minimumCaptureLps':30,'makeupPoint':[12000,8600,2400],
-   'makeupFormedTerritory':280,'makeupRequirement':'Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from65L/s background; no open-window chore or recirculation-onlyhood credit.',
+   'makeupFormedTerritory':280,'makeupRequirement':'Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from78L/s selected background; no open-window chore or recirculation-onlyhood credit.',
    'hood':'600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required.'},
  'heat':heat,'pipeCrossovers':gates,'interfaces':{'architecturalServices':architecture_contract,'familyBathDrop':bath_drop,'familyWetRoom':rewinds['familyWetRoom'],'kitchenSinkStation':sink,'rearShowerDrop':rear_drop,'rearSource27':rewinds['rearSource27']},'rewinds':rewinds,'eastFoulExit':east_exit,'PV':pv,'pipeInsulation':insulation,'hotWater':hot,'plant':plant,'trunks':trunks,'wallCrossingEnquiries':crossings,'fixtures':schedule,'otherDuties':other,'residues':residues,
  'notAdmitted':['Every exterior core/lintel/thermal/gas/weather junction','Riser trimmed RC opening and upper connections','Specific protected-door transfer and pipe/cable firestops','Exact emitters/pumps/fittings and measured performance','Actual mains, site climate, network/outfall/pressure/noise/pollution and power','Owner-approved polymer exceptions; none created'],

@@ -1357,7 +1357,7 @@
       2400
     ],
     "makeupFormedTerritory": 280,
-    "makeupRequirement": "Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from65L/s background; no open-window chore or recirculation-onlyhood credit.",
+    "makeupRequirement": "Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from78L/s selected background; no open-window chore or recirculation-onlyhood credit.",
     "hood": "600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required."
   },
   "heat": {
@@ -4858,7 +4858,7 @@
           "id": "purge-overheating",
           "count": 6,
           "path": [],
-          "decision": "Every habitable room retains actual operablewindow task; openings/noise/security/fall protection and orientation/climate/shading must prove purge/overheating.65L/s winterventilation is not cooling and no cooling duty is silently omitted."
+          "decision": "Every habitable room retains actual operablewindow task; openings/noise/security/fall protection and orientation/climate/shading must prove purge/overheating.78L/s selected winterventilation is not cooling and no cooling duty is silently omitted."
         },
         {
           "id": "PV-generation",
@@ -4931,7 +4931,7 @@
           2400
         ],
         "makeupFormedTerritory": 280,
-        "makeupRequirement": "Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from65L/s background; no open-window chore or recirculation-onlyhood credit.",
+        "makeupRequirement": "Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from78L/s selected background; no open-window chore or recirculation-onlyhood credit.",
         "hood": "600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required."
       }
     },
@@ -10400,7 +10400,7 @@
       "id": "purge-overheating",
       "count": 6,
       "path": [],
-      "decision": "Every habitable room retains actual operablewindow task; openings/noise/security/fall protection and orientation/climate/shading must prove purge/overheating.65L/s winterventilation is not cooling and no cooling duty is silently omitted."
+      "decision": "Every habitable room retains actual operablewindow task; openings/noise/security/fall protection and orientation/climate/shading must prove purge/overheating.78L/s selected winterventilation is not cooling and no cooling duty is silently omitted."
     },
     {
       "id": "PV-generation",
