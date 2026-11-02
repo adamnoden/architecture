@@ -9,8 +9,8 @@
     "label": "issue-comment-6589332389"
   },
   "claimedAt": "2026-11-02T21:49:46.000Z",
-  "heartbeatAt": "2026-11-02T21:49:46.000Z",
-  "expiresAt": "2026-11-02T22:34:46.000Z",
+  "heartbeatAt": "2026-11-02T21:58:38.000Z",
+  "expiresAt": "2026-11-02T22:43:38.000Z",
   "branch": "work/mvb-chat-6589332389",
   "predecessor": {
     "leaseId": "d42d0ec2-7634-4b34-a4f8-527c54b2c4c3",
@@ -33,5 +33,11 @@
       "next": "Check exact-head CI, obtain fresh native publication preflight, merge with expected SHA, verify main and release current lease.",
       "blocker": "Full actual eave/support/outfall and independent safe overflow remain unaccepted; RWT-06 stays planned."
     }
+  },
+  "pr": 1288,
+  "checkpoint": {
+    "evidence": "PR1288 head d88a560: source-pinned 32-board, gutter and conditional-gate plot envelope generator, JSON, A3 drawing, tests and explicit unresolved plant-door collision.",
+    "next": "Verify full exact-head CI, run fresh canonical generation31 merge-check, expected-head merge, release and dispose temporary preflight helper.",
+    "blocker": "No measured plot/rights, true scaffold ties/bearing, door/egress, site outfall, material or rainwater operational approval; RWT-06 remains planned."
   }
 }
