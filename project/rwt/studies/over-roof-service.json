@@ -29,6 +29,46 @@
     "sourceHouseRidgeZmm": 8090.903773579372,
     "assumedRidgeGapMm": 1209.0962264206282
   },
+  "gutterTrial": {
+    "westXMm": [
+      -1900,
+      -1600
+    ],
+    "eastXMm": [
+      13600,
+      13900
+    ],
+    "yMm": [
+      -2995,
+      14995
+    ],
+    "highInvertZmm": 9800,
+    "endInvertZmm": 9755.025,
+    "topZmm": 9950,
+    "halfRunMm": 8995,
+    "fallMm": 44.975,
+    "oneEndBlockedMinimumStaticRiseMm": 44.975,
+    "remainingOneSideLitresPerSecond": 8.31138,
+    "full100mmPipeIdealVelocityMperS": 1.0582377687320936,
+    "outletCentresMm": [
+      [
+        -1750,
+        -2800
+      ],
+      [
+        -1750,
+        14800
+      ],
+      [
+        13750,
+        -2800
+      ],
+      [
+        13750,
+        14800
+      ]
+    ]
+  },
   "limits": [
     "Roof outline is a trial, not authenticated support axes or net sheet dimensions",
     "Seven bays and all bracing, connections, eave extensions and actual height require OEM confirmation",
