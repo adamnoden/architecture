@@ -3,7 +3,7 @@ import {readFileSync,writeFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import {dirname,resolve} from 'node:path'
 import {fileURLToPath} from 'node:url'
-const dir=dirname(fileURLToPath(import.meta.url)),root=resolve(dir,'../../..'),sources={'project/rwt/studies/integrated-transfer-deck.json':'3a773461254efdaff13cd4b805dedd24f0dd0448','project/rwt/studies/integrated-neighbour-clearance.json':'869a800a38cf56da32125939d130f05f98b5b3f5'}
+const dir=dirname(fileURLToPath(import.meta.url)),root=resolve(dir,'../../..'),sources={'project/rwt/studies/integrated-transfer-deck.json':'ec1492ee1bd7a80d65f6cab2f42987823f0b3d26','project/rwt/studies/integrated-neighbour-clearance.json':'4e5ba02bf23587e6e2bc2a1f5c85a1a49ff8c909'}
 for(const [p,h] of Object.entries(sources)){const b=readFileSync(resolve(root,p));if(createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex')!==h)throw Error('Reassess '+p)}
 const guard={y:4780,midTop:6214,postX:[4350,5175,6000,6825,7650],postDiameter:48},field={top:6310,thickness:2,backY:4382},collector={bottom:6260,thickness:2,y:[5100,5300]},support={axisY:5425,beamX:[4720,5900,6100,7290],nominalWidth:50,front:{y:[4382,4900],top:6308,depth:80},incline:{y:[4900,5100],top:[6308,6240],depth:80},rear:{y:[5100,5425],top:6240,depth:80},scope:'Stepped envelopes and centre crosshead are authored geometry; connection, step transition, restraint, actual member stiffness and forces are unproved.'}
 const nearestPostGap=Math.min(...support.beamX.flatMap(x=>guard.postX.map(p=>Math.abs(x-p)-(support.nominalWidth+guard.postDiameter)/2))),L=support.axisY-field.backY,x=support.axisY-guard.y,F=300*9.81,E=200000,I=(50*80**3-40*70**3)/12,Z=I/40,tip=F*L**3/(3*E*I),atGuard=F*x*x*(3*L-x)/(6*E*I)

@@ -1,8 +1,8 @@
 {
   "status": "Conditional support-envelope redesign and separate ideal straight-beam stress; no engineered support pass",
   "sources": {
-    "project/rwt/studies/integrated-transfer-deck.json": "3a773461254efdaff13cd4b805dedd24f0dd0448",
-    "project/rwt/studies/integrated-neighbour-clearance.json": "869a800a38cf56da32125939d130f05f98b5b3f5"
+    "project/rwt/studies/integrated-transfer-deck.json": "ec1492ee1bd7a80d65f6cab2f42987823f0b3d26",
+    "project/rwt/studies/integrated-neighbour-clearance.json": "4e5ba02bf23587e6e2bc2a1f5c85a1a49ff8c909"
   },
   "guard": {
     "y": 4780,

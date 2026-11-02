@@ -57,7 +57,7 @@ const checks={
  endThroatWithinFrameReservation:throatAtWall-B.gauge>frameUnderside+allowance,
  deckAndToeBoardBelowTravel:guard.floor+guard.toeBoardHeight<bodyLow-allowance,
  wholePhysicalStraightEdgeCovered:B.p[0]<physicalEdge[0].x&&B.p[1]>physicalEdge[1].x,
- AUnderNeighbourAfterDrop:A.bottom-(A.back-A.drop)>allowance,
+ AUnderNeighbourBodyAfterDrop:A.bottom-(A.back-A.drop)>allowance,
  carrierAboveMidrail:bodyLow-midFull>allowance,
  carrierBelowToprail:topUnder-bodyHigh>allowance,
  extractionBays:A.extractionCentres.every(p=>guard.posts.every(post=>Math.abs(p-post)>Math.max(A.carrierLength,A.moduleLength)/2+guard.tubeDiameter/2+allowance)),
@@ -76,7 +76,7 @@ const checks={
  groundPadsBeyondOpenDoor:guard.pads.every(([,y])=>y-guard.padSquare/2>had.southCourtWeatherDoor.openLeafNorthTip),
  groundPadsBeforeInlet:guard.pads.every(([,y])=>y+guard.padSquare/2<7000)
 }
-const clearances={secondaryToB:zSecondary-BmaxLip,BFrameToA:Bmin-B.gauge-B.frameDepthReservation-A.back,AtoNeighbourAfterDrop:A.bottom-bodyHigh,adjacentCarrierGap:A.moduleLength-A.carrierLength,throatNotchDepth:floorAtWall-throatAtWall,throatUnderToFrameBottom:throatAtWall-B.gauge-frameUnderside,deckToeToCarrier:bodyLow-(guard.floor+guard.toeBoardHeight),
+const clearances={secondaryToB:zSecondary-BmaxLip,BFrameToA:Bmin-B.gauge-B.frameDepthReservation-A.back,AtoNeighbourBodyAfterDrop:A.bottom-bodyHigh,AtoNeighbourCarrierAfterDrop:A.bottom-A.carrierDepth-bodyHigh,adjacentCarrierGap:A.moduleLength-A.carrierLength,throatNotchDepth:floorAtWall-throatAtWall,throatUnderToFrameBottom:throatAtWall-B.gauge-frameUnderside,deckToeToCarrier:bodyLow-(guard.floor+guard.toeBoardHeight),
  carrierToMidrail:bodyLow-midFull,carrierToToprail:topUnder-bodyHigh,returnToGuard:B.return.outletInvert-B.return.gauge-topFull,
  returnToAFront:B.return.outletInvert-B.return.gauge-A.front,tailToReturn:tailInvert-(B.return.inletInvert+B.return.wall),
  pipeToWithdrawal:Math.abs(B.branch.tailQ)-B.branch.pipeOuter/2-Math.abs(A.q[0]-A.outward), outerDeckStrip:guard.outerGuardY-5400-guard.tubeDiameter/2, padBeyondDoor:Math.min(...guard.pads.map(([,y])=>y-guard.padSquare/2))-had.southCourtWeatherDoor.openLeafNorthTip, endCatchBeyondWeather:physicalEdge[0].x-B.p[0],
@@ -90,6 +90,7 @@ const hydraulicScreen={specificEnergyMm:{width100:energy(100),width300:energy(30
  verdict:'50 mm return wall exceeds ideal 300 mm critical specific energy by 13.247 mm. Necessary head screen only: actual inlet/turn/roughness/splash/backwater/freeboard and full event test remain unproved.'}
 const negativeControls={oldGutterCollidesWithBFrame:A.back< Bmin&&inputs.rejected.roofEdge.gutter.back>Bmin,
  drop150HasZeroNeighbourClearance:A.bottom-(A.back-150)===0,
+ drop170HitsNeighbourCarrier:(A.back-A.drop)>(A.bottom-A.carrierDepth),
  highPlatform5800BlocksReturn:5800+1100+24>B.return.outletInvert,
  wallLineAndPhysicalCatchmentsConserve:Math.abs(rate(physicalRoof+physicalCourt)-catchments.combinedLps)<1e-10,
  doubleCountOverhangRejected:rate(physicalRoof+wallCourt)>catchments.combinedLps,
@@ -97,13 +98,13 @@ const negativeControls={oldGutterCollidesWithBFrame:A.back< Bmin&&inputs.rejecte
  old700DeckObstructed:5480-5400-guard.tubeDiameter/2<700,
  narrowReturnHydraulicFailure:20<energy(B.return.clearWidth),
  correctedReturnNecessaryHead:B.return.wall>energy(B.return.clearWidth)}
-const result={status:'CONSTRUCTIVE LOCAL REVERSAL REFERENCE; nominal geometry and necessary head screen only; no selected receiver/site/product/operation admission',sourceBlobs,
+const result={status:'REJECTED HISTORICAL TRIAL: 170 mm shift intersects adjacent carrier and one-piece B still intercepts side drips; no operation admission',sourceBlobs,
  occurrence:{p:'world x',q:'4250-world y',z:'world absolute millimetres',selectedHAD:had.selection.identity,roofSource,weatherFace,physicalEdge,
   sceneProjection:'Await coordinated HAD builder export; selected openings below are direct selected JSON, never inferred from upperWalls.',
   firstOpenings:had.openings.FIRST.filter(o=>o.wall==='court-south'),firstFFL:had.sections.firstFFL,groundDoor:had.southCourtWeatherDoor},
  profiles:{A,B,guard},world:{primary:world(6000,qPrimary,zPrimary),secondary:world(6000,qSecondary,zSecondary),A:[world(6000,A.q[0],A.bottom),world(6000,A.q[1],A.back)],B:[world(6000,B.q[0],bFloor(6000,B.q[0])),world(6000,B.q[1],bFloor(6000,B.q[1]))]},
  clearances,checks,negativeControls,catchments,hydraulicScreen, movement:{firstReturnOverlapOutward:B.return.outletQ-A.q[0],firstSecondaryCaptureOutward:B.q[1]-qSecondary,firstPrimaryCaptureOutward:B.q[1]-qPrimary,drainStopOutward:B.return.drainStopOutward,scope:'Plan threshold for ideal vertical drips and nominal open edges only.'},
- limits:['The south-only drip test fails to consider perpendicular adjacent roof edges: the source-bound corner counterexample rejects the full-edge reversal.','B frame and scaffold are reserved complete envelopes, not qualified structural members.','Window raw head screen is not actual sash/guard operation. The inner deck edge is suspended; its beams, bracing and uplift anchors have not been designed.', 'Plan-view pipe holes and outboard pad clearance do not prove safe deck, transfer socket, access, egress or load paths.','20 mm return rejected; 50 mm correction passes necessary head screen, not actual hydraulic capacity.','Independent ground outlets, first weak join, receiving head, pad support and access remain with RWT/site owners.']}
+ limits:['The 170 mm drop has only body-to-body clearance; it intersects the adjacent 30 mm carrier during p-shift. The body-only positive check is not whole-envelope clearance.','The south-only drip test fails to consider perpendicular adjacent roof edges: the source-bound corner counterexample rejects the full-edge reversal.','B frame and scaffold are reserved complete envelopes, not qualified structural members.','Window raw head screen is not actual sash/guard operation. The inner deck edge is suspended; its beams, bracing and uplift anchors have not been designed.', 'Plan-view pipe holes and outboard pad clearance do not prove safe deck, transfer socket, access, egress or load paths.','20 mm return rejected; 50 mm correction passes necessary head screen, not actual hydraulic capacity.','Independent ground outlets, first weak join, receiving head, pad support and access remain with RWT/site owners.']}
 if(!Object.values(checks).every(Boolean)||!Object.values(negativeControls).every(Boolean))throw Error(JSON.stringify({checks,negativeControls},null,2))
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;')
 const sections=[{name:'1  A installed / B captures both layers',drop:0,out:0,bShift:0},{name:'2  A lowered 170 and out 400',drop:170,out:400,bShift:0},{name:'3  South-only drain stop; FAIL at side edges',drop:0,out:0,bShift:240}]
@@ -120,7 +121,7 @@ sections.forEach((s,i)=>{const ox=45+i*550,oy=130,scale=.42,X=q=>ox+470+q*scale,
  svg+='<text x="'+ox+'" y="540" class="small">q = 4250 − y; p = x; dimensions in mm</text>'
  svg+='<text x="'+ox+'" y="567" class="small">A blue / B ochre / return cyan; end slice diagram</text>'
 })
-const rows=[['Both fixed drips',`q ${qPrimary} / ${qSecondary}; z ${zPrimary.toFixed(3)} / ${zSecondary.toFixed(3)}`],['B / fixed lower drip',`${clearances.secondaryToB.toFixed(3)} vertical; 10 declared allowance`],['B frame / A back',`${clearances.BFrameToA.toFixed(1)} vertical; 20 frame reservation`],['A / neighbouring A',`${clearances.AtoNeighbourAfterDrop} after 170 drop; 150 gives ZERO`],['A complete carrier / guards',`${clearances.carrierToMidrail} above midrail; ${clearances.carrierToToprail} below toprail`],['B return / guard',`${clearances.returnToGuard.toFixed(1)} including 1.5 sheet`],['Return head screen',`20 wall rejected; 50 > ${energy(300).toFixed(2)} ideal specific energy at 3.60375 L/s`],['Catchment conservation',`${physicalRoof.toFixed(4)} roof + ${physicalCourt.toFixed(4)} exposed court = ${(wallRoof+wallCourt).toFixed(4)} m²`]]
+const rows=[['Both fixed drips',`q ${qPrimary} / ${qSecondary}; z ${zPrimary.toFixed(3)} / ${zSecondary.toFixed(3)}`],['B / fixed lower drip',`${clearances.secondaryToB.toFixed(3)} vertical; 10 declared allowance`],['B frame / A back',`${clearances.BFrameToA.toFixed(1)} vertical; 20 frame reservation`],['A / neighbour at 170',`body gap ${clearances.AtoNeighbourBodyAfterDrop}; carrier gap ${clearances.AtoNeighbourCarrierAfterDrop}: FAIL`],['A complete carrier / guards',`${clearances.carrierToMidrail} above midrail; ${clearances.carrierToToprail} below toprail`],['B return / guard',`${clearances.returnToGuard.toFixed(1)} including 1.5 sheet`],['Return head screen',`20 wall rejected; 50 > ${energy(300).toFixed(2)} ideal specific energy at 3.60375 L/s`],['Catchment conservation',`${physicalRoof.toFixed(4)} roof + ${physicalCourt.toFixed(4)} exposed court = ${(wallRoof+wallCourt).toFixed(4)} m²`]]
 rows.forEach(([a,b],i)=>{const y=620+i*37;svg+='<text x="45" y="'+y+'" class="sub">'+esc(a)+'</text><text x="440" y="'+y+'" class="sub">'+esc(b)+'</text>'})
 svg+='<text x="45" y="970" class="sub">REJECTED: B still intercepts side roof drips after south drain stop; see corner failure sheet.</text><text x="45" y="1005" class="sub">Whole 3100 weather edge is covered by B p4325–7675; end valley jets are not proved by the weather mesh.</text><text x="45" y="1040" class="sub">A module carriers move with A. Retained cradles across the drop path are prohibited by this design.</text><text x="45" y="1075" class="sub">South-only geometry: fixed pipes detached; side-edge water still enters B through continued travel.</text><text x="45" y="1120" class="small">Generated from live-receiver-renewal.mjs. Read the owning RWT result for sequence, source authority and required correction.</text></svg>\n'
 for(const [name,data]of Object.entries({'live-receiver-renewal.json':JSON.stringify(result,null,2)+'\n','live-receiver-renewal.svg':svg})){const path=resolve(dir,name);if(process.argv.includes('--check')){if(readFileSync(path,'utf8')!==data)throw Error('Stale '+name)}else writeFileSync(path,data)}

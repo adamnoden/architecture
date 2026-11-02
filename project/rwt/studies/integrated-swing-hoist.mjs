@@ -5,7 +5,7 @@ import {dirname,resolve} from 'node:path'
 import {fileURLToPath} from 'node:url'
 const dir=dirname(fileURLToPath(import.meta.url)),root=resolve(dir,'../../..'),source='project/rwt/studies/live-receiver-renewal.json',data=readFileSync(resolve(root,source)),sha=createHash('sha1').update('blob '+data.length+'\0').update(data).digest('hex')
 // Exact merged study pin, never take dimensions from a different trial silently.
-if(sha!=='8757f546db1d4db76d71aaf084b1f24a1c2f1417')throw Error('Reassess receiver study '+sha)
+if(sha!=='cf3caf0d9ec0dffb06b712ef099e68dec804d47c')throw Error('Reassess receiver study '+sha)
 const axes=[4720,6000,7290],pivotY=5425,A={x:[4350,7650],modules:7,installedCentreY:4525,withdrawal:400,loweredZ:[6360,6540]},step=(A.x[1]-A.x[0])/A.modules
 const modules=Array.from({length:A.modules},(_,i)=>{const x=A.x[0]+(i+.5)*step,axis=axes.reduce((a,b)=>Math.abs(x-a)<=Math.abs(x-b)?a:b);return {module:i+1,centreX:x,axis,reachAtInstalled:Math.hypot(x-axis,pivotY-A.installedCentreY),reachAfter400:Math.hypot(x-axis,pivotY-A.installedCentreY-A.withdrawal)}})
 const bays=[{centre:5540,axis:4720},{centre:6460,axis:7290}].map(({centre,axis})=>{const radius=Math.hypot(centre-axis,500),right=centre>axis,landing=axis+(right?1:-1)*Math.sqrt(radius**2-475**2),extreme=axis+(right?1:-1)*radius;return {centre,axis,radius,landingY:5900,landingX:landing,extremeX:extreme}})
