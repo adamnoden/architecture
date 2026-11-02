@@ -9,8 +9,8 @@
     "label": "zerg-services-constructive-cooker"
   },
   "claimedAt": "2026-11-02T10:13:45.252Z",
-  "heartbeatAt": "2026-11-02T10:48:00.298Z",
-  "expiresAt": "2026-11-02T11:33:00.298Z",
+  "heartbeatAt": "2026-11-02T10:49:48.554Z",
+  "expiresAt": "2026-11-02T11:34:48.554Z",
   "predecessor": {
     "leaseId": "842350f9-bdfb-4597-88f3-3f4d142fc0f8",
     "generation": 14,
@@ -33,11 +33,11 @@
       "blocker": "No selected makeup/plant or site/material admission; actual fan, product, release, thermal and physical interfaces remain open"
     }
   },
-  "branch": "work/zerg9-services-constructive-cooker",
+  "branch": "work/zerg-recovery-constructive-actions",
   "checkpoint": {
-    "evidence": "Draft PR #1265 frozen remote 0ae9950be4542ca453493b86455f5c9d7e6b36f0 tree 280cbbb7ae6754e8132b9908456e58e8ec655909; three-file exact equality, generator/diff pass and independent bounded product/thermal/topology QA pass; no adoption",
-    "next": "Root integrates bounded source after #1263, sole CI/preflight/merge observer; next selected services proposition must resolve material policy and complete assembly/plant interfaces",
-    "blocker": "DTBCU frequent-modulation OEM duty, EPDM material, actual pressure/capture, hood protective interface, staged support/weather/fire and plant/emitters unqualified"
+    "evidence": "Shared draft PR #1266 exact head d941e01d8f4194112020360c0af536d8ffafdcd4 tree 611be873bf9db3f600966297bcae0f2e05d8c87f, base df410, real parents main plus Services source 0ae9950 and STR 7119962; all seven owned blobs exact, Services generator check, STR checks and repository/diff checks pass per root; bounded source PR #1265 preserves history",
+    "next": "Root sole exact-head CI, preflight and merge; canonical Services15 handoff then selected system/material successor after integration",
+    "blocker": "No product/material/site adoption: DTBCU frequent RUN modulation and EPDM, full damper pressure/capture, protective hood interface, staged assembly release and plant/emitter compatibility require qualification"
   },
-  "pr": 1265
+  "pr": 1266
 }
