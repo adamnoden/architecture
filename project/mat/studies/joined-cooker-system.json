@@ -318,6 +318,12 @@
       "heaterInstructions": "https://veab.com/en/customer%20files/files/manuals/173656-01-manual-cv-o-se-en-de-fr-nl-fi-web.pdf",
       "filter": "https://shop.systemair.com/upload/assets/INSTALLATION__OPERATION_AND_MAINTENANCE_INSTRUCTION_FILTER_CASSETTE_004_EN.PDF",
       "reducer": "https://www.lindab.co.uk/globalassets/commerce/lindabwebproductsdoc/assets/production/nge5ytfhmgqtnjdmny00njdkltkyntctn2nmodninzk3mjy3/5250737225389875375/rcu-datasheet-global.pdf",
+      "shutter": "https://itsolution.lindab.com/lindabwebproductsdoc/assets/production/ZDE3OTFkYjQtNGI0MC00NTBmLWJkMjgtZjdmZTI5ZDQ2M2Uz/5249546583833160992/dtbcu.pdf",
+      "actuator": "https://www.belimo.com/mam/general-documents/datasheets/en-gb/belimo_LF24_datasheet_en-gb.pdf",
+      "positionAccessory": "https://www.belimo.com/mam/general-documents/datasheets/en-gb/belimo_S2A-F_datasheet_en-gb.pdf",
+      "NovyWindowManualMirror": "https://device.report/m/726fcc763197b25f7705aecc6be2129d42933a4da143f5e7c9290f39f1dc1400.pdf",
+      "filterChange": "https://www.systemair.com/en-hk/products/fans/accessories/mechanical-accessories/filter-cassettes/fgr",
+      "fanCard": "https://docs.planning.org.uk/20251224/54/T7BK5SKBJGP00/9quyf95v263jppq1.pdf",
       "pressureSensor": "https://www.halstrup-walcher.de/assets/products/measurement-technology/P26/data-sheet-P26.pdf"
     },
     "hood": "Novy810 version35; all205/333/399/534m3h modes retained; EN61591 loads not installed curves",
@@ -335,9 +341,12 @@
       650,
       750
     ],
-    "OEMInput": "990033 cable/window-contact connection in actual810 installation manual; exact polarity, live-trip and auxiliary controller application not yet qualified",
+    "OEMInput": "990033 manufacturer MA2 manual mirror p5 admits810>=v17 potentialfreecontact; p20 diagram OPEN=windowOPEN/hoodON, CLOSED=windowCLOSED/hoodOFF. Does not provide live-trip timing/coastdown or certify pressurecontroller application; open/broken interface wiring can resemble permissive.",
     "OEMOutput": "990030 V output230VAC; normally closed air-supply/exhaust valve opens on any extraction mode and closes when no extraction. No 990036 five-minute output semantics imported.",
     "heater": "2xVEAB CV20-30-1-ViCi-QOL; nominal3000W230V each; independent dual overheat and integrated flow sensing retained",
+    "shutterFeedback": "Belimo LF24 datasheet2026-04-08:75s powered90degree stroke,<20s springreturnat-20..50C,5W/7VA; mechanical indication only. OEMaccessoryS2A-F datasheet2025-05-28 gives2SPDT/0.33kg/1mcable and LF compatibility. ActualLindabshaft/accessorygeometry/clearances and supplyrevision mustjoin; no electrical position proof credited untilthen.",
+    "filterChangeCondition": "CurrentSystemairfamily rule min(initialcleanPa+50,3*initialcleanPa); older170Pa recommendation retained only historical comparator. Actualdirtyloss/flow/media notyetbound.",
+    "fanActual": "K250ECsileo78585 manufacturer2025catalogue card:202axial/336diam/249spigots/40boxprojection/88boxdimension/3.9kg; bracket and fastclamps retained, not bare202box selection.",
     "heaterControllerCaveats": "Current manual limits below1.5m/s and cuts below0.7m/s. All modelled200mm heater modes exceed1.5m/s; previous250mm heater fails that full-power threshold. FGR250 filtration included, actual media/curve/contamination duty unqualified. Heater alarm not proven hood safety trip.",
     "designOutdoorC": -10,
     "nominalSupplyTargetC": 20,
@@ -4238,10 +4247,10 @@
       "reducers": 2,
       "heaterBoreMM": 200,
       "carrierMM": [
-        7900,
+        7770.5,
         8450,
         2100,
-        3670.5,
+        3800,
         500,
         750
       ],
@@ -4255,98 +4264,98 @@
           "kind": "retained boundary; modified centre requires owning rewind"
         },
         {
-          "id": "spring-shutter-and-actuator",
+          "id": "DTBCU250-LF24-shutter-and-actuator",
           "x": [
-            11450,
+            11320.5,
             11570.5
           ],
-          "kind": "complete <=120.5 axial procurement constraint"
+          "kind": "OEM100ductbody/230motor axial/105motor width/135abovebody;250complete allocation, S2A-F/shaft/couplings still to join"
         },
         {
           "id": "Systemair-FGR250-filter",
           "x": [
-            11200,
-            11450
+            11070.5,
+            11320.5
           ],
           "kind": "OEM239overallaxial/123body/302x297transverse/280filterwithdrawal;250axial allocation includes11mm connection reserve"
         },
         {
           "id": "EC-fan-and-terminal-box",
           "x": [
-            10950,
-            11200
+            10820.5,
+            11070.5
           ],
-          "kind": "complete <=250 axial and <=436 transverse procurement constraint"
+          "kind": "K250ECsileo78585 actual202axial/336diam/249spigots/40boxprojection/88boxwidth/3.9kg;250axial436transverse allocation, actual FK clamp/bracket/tools unqualified"
         },
         {
           "id": "Lindab-RCU250-200-reducer",
           "x": [
-            10800,
-            10950
+            10670.5,
+            10820.5
           ],
           "kind": "OEM42body/0.46kg;150overall connection allocation, real insertion/coupling must join"
         },
         {
           "id": "straight-before-heater1",
           "x": [
-            10400,
-            10800
+            10270.5,
+            10670.5
           ],
           "kind": "400mm clear 2D of200; no filter/bend/damper/reducer"
         },
         {
           "id": "VEAB-CV20-30-1-ViCi-QOL-1",
           "x": [
-            10025,
-            10400
+            9895.5,
+            10270.5
           ],
           "kind": "OEM375 axial/200bore/278box-axial-length/82box-projection; side box"
         },
         {
           "id": "straight-between-heaters",
           "x": [
-            9625,
-            10025
+            9495.5,
+            9895.5
           ],
           "kind": "400mm clear 2D"
         },
         {
           "id": "VEAB-CV20-30-1-ViCi-QOL-2",
           "x": [
-            9250,
-            9625
+            9120.5,
+            9495.5
           ],
           "kind": "OEM375 axial/200bore/278box-axial-length/82box-projection; side box"
         },
         {
           "id": "straight-after-heater2",
           "x": [
-            8850,
-            9250
+            8720.5,
+            9120.5
           ],
           "kind": "400mm clear 2D"
         },
         {
           "id": "Lindab-RCU200-250-reducer",
           "x": [
-            8700,
-            8850
+            8570.5,
+            8720.5
           ],
           "kind": "same actual250/200body used in expansion direction; loss distinct from contraction"
         },
         {
           "id": "silencer",
           "x": [
-            8200,
-            8700
+            8070.5,
+            8570.5
           ],
           "kind": "complete500axial procurement constraint; no performance credited"
         },
         {
           "id": "contact-protective-supply-diffuser",
           "x": [
-            7900,
-            8200
+            7770.5,
+            8070.5
           ],
           "kind": "300axial procurement constraint; direction north into kitchen"
         }
@@ -4360,13 +4369,13 @@
         {
           "component": "fan",
           "supportedCradleFloorMM": [
-            10825,
+            10695.5,
             8450,
             500,
             550
           ],
           "operatorCentreMM": [
-            10325,
+            10195.5,
             8750
           ],
           "operatorRadiusMM": 300,
@@ -4377,13 +4386,13 @@
         {
           "component": "heater1",
           "supportedCradleFloorMM": [
-            9962.5,
+            9833.0,
             8450,
             500,
             550
           ],
           "operatorCentreMM": [
-            9462.5,
+            9333.0,
             8750
           ],
           "operatorRadiusMM": 300,
@@ -4394,13 +4403,13 @@
         {
           "component": "heater2",
           "supportedCradleFloorMM": [
-            9187.5,
+            9058.0,
             8450,
             500,
             550
           ],
           "operatorCentreMM": [
-            8687.5,
+            8558.0,
             8750
           ],
           "operatorRadiusMM": 300,
@@ -4422,14 +4431,90 @@
       "limits": "No measured tubing, whole-loop25ms, actuator/fan or hood coastdown proof. P26 zero-calibration interrupts measurement; requires source-qualified off-cycle calibration/drift bound or redundant measured architecture. Beck984 minimum1Pa error alone exhausts nominal margin and is excluded."
     },
     "admissionBlockers": [
-      "Exact990033 polarity/live-inhibit and approved controller application; do not energise hood externally",
+      "Exact990033 live-inhibit timing/coastdown, wiring fault detection and controller application; polarity now sourced, do not energise hood externally",
       "Installedhood and fan curves across fullweather/fouling/modes plus filtration/silencer/valve losses",
       "VEAB actual output/control atallflows/lowline; fullpower threshold resolved by200mm heaters, annual/quarterly maintenance obligations",
       "P26 installed accuracy, fault detection, zeroing and full-loop/hood-stop transient budget",
       "All-parts geometry, filter, couplings and complete firstrelease/supports; HAD/STR port8700 rewinds",
       "55/45 allroom output, actual14kWnet plant/HX/pump/pad/sourceconditions and electricalservice/diversity",
       "All polymer/unknown materials remain unapproved; no exception or stripped seals"
-    ]
+    ],
+    "maintenanceTask": {
+      "platformSource": "https://www.zarges.com/uk/products/mobile-access-steps-with-platform-single-sided-access-with-aluminium-treads-and-platform/mobile-access-steps-with-platform-single-sided-access-with-aluminium-treads-and-platform-41971",
+      "platformComparator": "Zarges41972 variant published base820x1450,deck960,mass31.8kg; fullguard/stair/transport drawing and load certificate must bind",
+      "platformEvents": [
+        {
+          "component": "fan",
+          "baseMM": [
+            10535.5,
+            9000,
+            820,
+            1450
+          ],
+          "selectedFurnitureConflicts": [
+            "cold-storage"
+          ],
+          "currentOccupiedRoomServicePass": false
+        },
+        {
+          "component": "heater1",
+          "baseMM": [
+            9673.0,
+            9000,
+            820,
+            1450
+          ],
+          "selectedFurnitureConflicts": [
+            "dining-chair-east-south",
+            "dining-chair-east-north"
+          ],
+          "currentOccupiedRoomServicePass": false
+        },
+        {
+          "component": "heater2",
+          "baseMM": [
+            8898.0,
+            9000,
+            820,
+            1450
+          ],
+          "selectedFurnitureConflicts": [
+            "dining-table1200x800",
+            "dining-chair-east-south",
+            "dining-chair-east-north"
+          ],
+          "currentOccupiedRoomServicePass": false
+        }
+      ],
+      "platformDeckMM": 960,
+      "authoredOperatorHeightMM": 1750,
+      "authoredHelmetClearanceMM": 100,
+      "standingHelmetTopMM": 2810,
+      "RCRoomHeadReserveMM": 360,
+      "oldUnderCarrierStandingTopMM": 2810,
+      "oldUnderCarrierCollisionMM": 710,
+      "toolComparator": "Bahco808050P manufacturer260mmoverall/40mmhandle/0.27kg; exactbit/fastener match and human grip unknown, retain50mm extra grip allocation",
+      "toolSource": "https://www.bahco.com/int_en/1-4--ratcheting-bit-screwdriver-with-pistol-handle-pb_808050p_.html",
+      "filterBareRiseMM": [
+        2548.5,
+        2828.5
+      ],
+      "filterPlus100GripToolTopMM": 2928.5,
+      "fixedCarrierRoofConflictMM": 78.5,
+      "proposedRoofFirstMotion": "Independently support full500x500x50max panel; raise100 then slide550north before filter extraction. 50panel/100grip are procurement task maxima, not a selected casing product; source mass/support/fasteners/hoist missing.",
+      "proposedRaisedPanelTopWith100GripMM": 3100,
+      "proposedRoofTaskToRCReserveMM": 70,
+      "scope": "Current selected furniture fails side-platform access; furniture removal/park/carrying route not earned. Arm700/standing/platform/body/driver are explicit task screens, not human or lifting qualification. No complete firstrelease PASS.",
+      "northCill": {
+        "selectedSillZ": 1050,
+        "actualUnderside": "unknown",
+        "radiatorTrialBottomZ": 100,
+        "radiatorBodyHeight": 700,
+        "upwardReleaseMM": 50,
+        "requiredCillUndersideMinimumZ": 900,
+        "scope": "Existing constructive trial requirement, no selected cill/valve/support/body admission."
+      }
+    }
   },
   "layoutMaximumProcurementEnvelopes": {
     "selectedHADCentreY": 8600,
