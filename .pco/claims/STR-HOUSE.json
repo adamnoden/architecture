@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 18,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "86aa03de-9616-4922-b6f2-e0d8d14f323c",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-structure-whole-house"
   },
   "claimedAt": "2026-11-02T10:09:55.141Z",
-  "heartbeatAt": "2026-11-02T10:25:00.024Z",
-  "expiresAt": "2026-11-02T11:10:00.024Z",
+  "heartbeatAt": "2026-11-02T10:35:28.404Z",
+  "expiresAt": "2026-11-02T10:35:28.404Z",
   "branch": "work/zerg-str-whole-house-20261102",
   "predecessor": {
     "leaseId": "e9da7d6c-2886-4470-b019-871466f746dd",
@@ -39,5 +39,7 @@
     "evidence": "Draft PR #1261 head 125d7097282434445c2c4cc3b16d7d033e191d1e tree e312b7d61b7c49cc4aed195f03fb223101413b28; independent bounded PASS; local reproducers pass; overlap qualification explicit",
     "next": "Root observes exact-head CI and fresh publication preflight, then expected-head merge if earned",
     "blocker": "Actual heads and piers, floor sharing, lateral and warm/cold transfer, and site support remain unqualified; STR-HOUSE remains open"
-  }
+  },
+  "releasedAt": "2026-11-02T10:35:28.404Z",
+  "releaseReason": "handoff"
 }
