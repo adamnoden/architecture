@@ -1,4 +1,721 @@
 {
+  "cold_cage_candidate": {
+    "bottom_bars": [
+      {
+        "dia": 20,
+        "id": "BE60",
+        "points": [
+          [
+            0,
+            60,
+            -1165
+          ],
+          [
+            2050,
+            60,
+            -1165
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "BN60",
+        "points": [
+          [
+            60,
+            0,
+            -1114
+          ],
+          [
+            60,
+            2050,
+            -1114
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "BE110",
+        "points": [
+          [
+            0,
+            110,
+            -1165
+          ],
+          [
+            2050,
+            110,
+            -1165
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "BN110",
+        "points": [
+          [
+            110,
+            0,
+            -1114
+          ],
+          [
+            110,
+            2050,
+            -1114
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "BE300",
+        "points": [
+          [
+            0,
+            300,
+            -1165
+          ],
+          [
+            2050,
+            300,
+            -1165
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "BN300",
+        "points": [
+          [
+            300,
+            0,
+            -1114
+          ],
+          [
+            300,
+            2050,
+            -1114
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "BE490",
+        "points": [
+          [
+            0,
+            490,
+            -1165
+          ],
+          [
+            2050,
+            490,
+            -1165
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "BN490",
+        "points": [
+          [
+            490,
+            0,
+            -1114
+          ],
+          [
+            490,
+            2050,
+            -1114
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "BE540",
+        "points": [
+          [
+            0,
+            540,
+            -1165
+          ],
+          [
+            2050,
+            540,
+            -1165
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "BN540",
+        "points": [
+          [
+            540,
+            0,
+            -1114
+          ],
+          [
+            540,
+            2050,
+            -1114
+          ]
+        ]
+      }
+    ],
+    "cold_node_bounds_xy_mm": [
+      0,
+      0,
+      600,
+      600
+    ],
+    "cold_node_z_mm": [
+      -1215,
+      -765
+    ],
+    "head_compression_sensitivity": {
+      "hold_head_mean_MPa": 4.604369082288439,
+      "hold_head_net_face_mm2": 4712.38898038469,
+      "hold_roof_witness_max_kN": 21.697578125000007,
+      "old_H22_full_yield_kN": 165.27509177581086,
+      "old_authored_fcd_MPa": 17,
+      "pile_head_mean_MPa": 15.121786620343178,
+      "pile_head_net_face_mm2": 10929.60084183889
+    },
+    "holddown_H20_heads": [
+      {
+        "id": "A1",
+        "r": 40,
+        "thickness": 12,
+        "x": 322.5,
+        "y": 322.5,
+        "z": -990
+      },
+      {
+        "id": "A2",
+        "r": 40,
+        "thickness": 12,
+        "x": 322.5,
+        "y": 502.5,
+        "z": -990
+      },
+      {
+        "id": "A3",
+        "r": 40,
+        "thickness": 12,
+        "x": 502.5,
+        "y": 322.5,
+        "z": -990
+      },
+      {
+        "id": "A4",
+        "r": 40,
+        "thickness": 12,
+        "x": 502.5,
+        "y": 502.5,
+        "z": -990
+      }
+    ],
+    "horizontal_perimeter_hoops": [
+      {
+        "dia": 8,
+        "id": "HL-809",
+        "points": [
+          [
+            44,
+            44,
+            -809
+          ],
+          [
+            556,
+            44,
+            -809
+          ],
+          [
+            556,
+            556,
+            -809
+          ],
+          [
+            44,
+            556,
+            -809
+          ],
+          [
+            44,
+            44,
+            -809
+          ]
+        ]
+      },
+      {
+        "dia": 8,
+        "id": "HL-903",
+        "points": [
+          [
+            44,
+            44,
+            -903
+          ],
+          [
+            556,
+            44,
+            -903
+          ],
+          [
+            556,
+            556,
+            -903
+          ],
+          [
+            44,
+            556,
+            -903
+          ],
+          [
+            44,
+            44,
+            -903
+          ]
+        ]
+      },
+      {
+        "dia": 8,
+        "id": "HL-950",
+        "points": [
+          [
+            44,
+            44,
+            -950
+          ],
+          [
+            556,
+            44,
+            -950
+          ],
+          [
+            556,
+            556,
+            -950
+          ],
+          [
+            44,
+            556,
+            -950
+          ],
+          [
+            44,
+            44,
+            -950
+          ]
+        ]
+      },
+      {
+        "dia": 8,
+        "id": "HL-1030",
+        "points": [
+          [
+            44,
+            44,
+            -1030
+          ],
+          [
+            556,
+            44,
+            -1030
+          ],
+          [
+            556,
+            556,
+            -1030
+          ],
+          [
+            44,
+            556,
+            -1030
+          ],
+          [
+            44,
+            44,
+            -1030
+          ]
+        ]
+      },
+      {
+        "dia": 8,
+        "id": "HL-1100",
+        "points": [
+          [
+            44,
+            44,
+            -1100
+          ],
+          [
+            556,
+            44,
+            -1100
+          ],
+          [
+            556,
+            556,
+            -1100
+          ],
+          [
+            44,
+            556,
+            -1100
+          ],
+          [
+            44,
+            44,
+            -1100
+          ]
+        ]
+      },
+      {
+        "dia": 8,
+        "id": "HL-1151",
+        "points": [
+          [
+            44,
+            44,
+            -1151
+          ],
+          [
+            556,
+            44,
+            -1151
+          ],
+          [
+            556,
+            556,
+            -1151
+          ],
+          [
+            44,
+            556,
+            -1151
+          ],
+          [
+            44,
+            44,
+            -1151
+          ]
+        ]
+      }
+    ],
+    "intentional_mat_hoop_contacts": [
+      [
+        "HL-1100",
+        "BN"
+      ],
+      [
+        "HL-1151",
+        "BE"
+      ],
+      [
+        "HL-809",
+        "TE"
+      ]
+    ],
+    "legacy_bent_starter_translated_minus585_min_clear": {
+      "a": "P7",
+      "b": "R1",
+      "clear_mm": 10.358363963477666
+    },
+    "minimum_geometry_checks": {
+      "bottom_crossing": {
+        "a": "BE110",
+        "b": "BN110",
+        "clear_mm": 30.9
+      },
+      "hold_head_to_bottom": {
+        "a": "A1",
+        "b": "BN300",
+        "clear_mm": 107.9
+      },
+      "hold_head_to_hoops": {
+        "a": "A2",
+        "b": "HL-1030",
+        "clear_mm": 32.48209944768069
+      },
+      "hold_head_to_other_hold": {
+        "a": "A1",
+        "b": "R2",
+        "clear_mm": 129.9
+      },
+      "hold_head_to_pile": {
+        "a": "A3",
+        "b": "P1",
+        "clear_mm": 40.478613431934306
+      },
+      "hold_head_to_top": {
+        "a": "A3",
+        "b": "TN550",
+        "clear_mm": 108.13810722436317
+      },
+      "hold_heads_each_other": {
+        "a": "A1",
+        "b": "A2",
+        "clear_mm": 99.9
+      },
+      "holddown_to_hoops": {
+        "a": "R2",
+        "b": "HL-809",
+        "clear_mm": 39.4
+      },
+      "holddown_to_top": {
+        "a": "R2",
+        "b": "TE550",
+        "clear_mm": 27.4
+      },
+      "holddowns_each_other": {
+        "a": "R1",
+        "b": "R2",
+        "clear_mm": 159.9
+      },
+      "hoop_to_unrelated_mat": {
+        "a": "HL-1151",
+        "b": "BN110",
+        "clear_mm": 22.9
+      },
+      "perimeter_hoops_each_other": {
+        "a": "HL-903",
+        "b": "HL-950",
+        "clear_mm": 38.9
+      },
+      "pile_bars_each_other": {
+        "a": "P6",
+        "b": "P7",
+        "clear_mm": 85.81672792695528
+      },
+      "pile_head_to_bottom": {
+        "a": "H2",
+        "b": "BN300",
+        "clear_mm": 22.9
+      },
+      "pile_head_to_hold": {
+        "a": "H1",
+        "b": "R3",
+        "clear_mm": 28.74473692211256
+      },
+      "pile_head_to_hoops": {
+        "a": "H1",
+        "b": "HL-1030",
+        "clear_mm": 61.632985915908556
+      },
+      "pile_head_to_other_pile": {
+        "a": "H6",
+        "b": "P7",
+        "clear_mm": 36.816727926955274
+      },
+      "pile_head_to_top": {
+        "a": "H3",
+        "b": "TN270",
+        "clear_mm": 147.9
+      },
+      "pile_heads_each_other": {
+        "a": "H1",
+        "b": "H2",
+        "clear_mm": 32.9
+      },
+      "pile_to_bottom": {
+        "a": "P6",
+        "b": "BN300",
+        "clear_mm": 32.85836396347761
+      },
+      "pile_to_hold_heads": {
+        "a": "H1",
+        "b": "A3",
+        "clear_mm": 27.9
+      },
+      "pile_to_holddown": {
+        "a": "P1",
+        "b": "R3",
+        "clear_mm": 67.25854750722465
+      },
+      "pile_to_hoops": {
+        "a": "P1",
+        "b": "HL-1030",
+        "clear_mm": 110.63298591590856
+      },
+      "pile_to_top": {
+        "a": "P3",
+        "b": "TN270",
+        "clear_mm": 144.6407710969346
+      },
+      "top_crossing": {
+        "a": "TE270",
+        "b": "TN270",
+        "clear_mm": 22.9
+      }
+    },
+    "pile_H22_axes_heads": [
+      {
+        "id": "H1",
+        "r": 60,
+        "thickness": 12,
+        "x": 430.26701408409144,
+        "y": 353.95836396347767,
+        "z": -1030
+      },
+      {
+        "id": "H2",
+        "r": 60,
+        "thickness": 12,
+        "x": 353.95836396347767,
+        "y": 430.26701408409144,
+        "z": -1075
+      },
+      {
+        "id": "H3",
+        "r": 60,
+        "thickness": 12,
+        "x": 246.04163603652233,
+        "y": 430.26701408409144,
+        "z": -1030
+      },
+      {
+        "id": "H4",
+        "r": 60,
+        "thickness": 12,
+        "x": 169.73298591590856,
+        "y": 353.95836396347767,
+        "z": -1075
+      },
+      {
+        "id": "H5",
+        "r": 60,
+        "thickness": 12,
+        "x": 169.73298591590856,
+        "y": 246.04163603652236,
+        "z": -1030
+      },
+      {
+        "id": "H6",
+        "r": 60,
+        "thickness": 12,
+        "x": 246.0416360365224,
+        "y": 169.73298591590856,
+        "z": -1075
+      },
+      {
+        "id": "H7",
+        "r": 60,
+        "thickness": 12,
+        "x": 353.95836396347767,
+        "y": 169.73298591590859,
+        "z": -1030
+      },
+      {
+        "id": "H8",
+        "r": 60,
+        "thickness": 12,
+        "x": 430.26701408409144,
+        "y": 246.04163603652236,
+        "z": -1075
+      }
+    ],
+    "scope": "Twelve 12 mm circular heads are trial geometry: no proprietary head, weld, anchorage, concrete strut/tie, bearing, splitting, breakout, fatigue, cover tolerance or pile capacity is accepted. Selected hoop/mat tangencies are intentionally tied contacts, not unrelated-bar clashes. Six horizontal perimeter hoops provide a finite vertical-bar confinement geometry but do not prove joint shear or replace required arm links. Actual joint shear steel, pours, mechanical attachment and full 3D concrete remain to qualify.",
+    "status": "headed straight-bar candidate, not a foundation, head or node adequacy pass",
+    "top_bars": [
+      {
+        "dia": 20,
+        "id": "TE60",
+        "points": [
+          [
+            0,
+            60,
+            -823
+          ],
+          [
+            2050,
+            60,
+            -823
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "TN60",
+        "points": [
+          [
+            60,
+            0,
+            -866
+          ],
+          [
+            60,
+            2050,
+            -866
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "TE270",
+        "points": [
+          [
+            0,
+            270,
+            -823
+          ],
+          [
+            2050,
+            270,
+            -823
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "TN270",
+        "points": [
+          [
+            270,
+            0,
+            -866
+          ],
+          [
+            270,
+            2050,
+            -866
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "TE550",
+        "points": [
+          [
+            0,
+            550,
+            -823
+          ],
+          [
+            2050,
+            550,
+            -823
+          ]
+        ]
+      },
+      {
+        "dia": 20,
+        "id": "TN550",
+        "points": [
+          [
+            550,
+            0,
+            -866
+          ],
+          [
+            550,
+            2050,
+            -866
+          ]
+        ]
+      }
+    ]
+  },
   "connector_sensitivity": {
     "annulus_radial_mm": 20.0,
     "bar_centres_mm": [
@@ -20,7 +737,7 @@
       ]
     ],
     "bar_diameter_mm": 20,
-    "bar_length_mm": 7450,
+    "bar_length_mm": 7400,
     "bilinear_tension_only_witness_kN": [
       21.697578125000007,
       1.2763281250000005,
@@ -40,14 +757,14 @@
     ],
     "gap_mm": 385.0,
     "gross_bar_area_mm2": 1256.6370614359173,
-    "gross_bar_mass_G_kN_at_78p5": 0.7349127694542603,
+    "gross_bar_mass_G_kN_at_78p5": 0.7299804689881244,
     "ideal_elastic_translation_mm": 0.756869621193461,
     "ideal_four_bar_moment_each_kNm": 0.048125,
     "ideal_gross_bending_stress_MPa": 61.27465309037971,
     "largest_witness_gross_tensile_stress_MPa": 69.06553623432659,
     "nominal_bar_bottom_top_mm": [
       -990,
-      6460
+      6410
     ],
     "nominal_bore_area_fraction": 0.12566370614359174,
     "nominal_cold_RC_embed_mm": 225,
@@ -68,45 +785,45 @@
   "finite_roof_candidate": {
     "cap": {
       "cap_plate_z_mm": [
-        6460,
-        6480
+        6410,
+        6430
       ],
-      "ceiling_box_finish_mm": 6425,
-      "ceiling_clear_above_first_FFL_mm": 2975,
+      "ceiling_box_finish_mm": 6375,
+      "ceiling_clear_above_first_FFL_mm": 2925,
       "east_wing_plan_mm": [
         562.5,
         272.5,
         632.5,
         392.5
       ],
-      "hip_bearing_gap_mm": 38.54358438968029,
+      "hip_bearing_gap_mm": 58.54358438968029,
       "north_wing_plan_mm": [
         272.5,
         562.5,
         392.5,
         632.5
       ],
-      "pier_top_mm": 6460,
-      "remaining_hip_packing_mm": 18.54358438968029,
-      "ring_saddle_height_mm": 60,
-      "scope": "Wing overhang and 60 mm saddle are explicit steel bracket candidates, not anchored/capacity-qualified. Proposed 15 mm ceiling liner top6440 leaves20 below pier top; actual ceiling/fire/service layers require review.",
+      "pier_top_mm": 6410,
+      "remaining_hip_packing_mm": 38.54358438968029,
+      "ring_saddle_height_mm": 110,
+      "scope": "Wing overhang and 110 mm saddle are explicit steel bracket candidates, not anchored/capacity-qualified. Proposed 15 mm ceiling liner top6390 leaves20 below pier top; actual ceiling/fire/service layers require review.",
       "trial_hip_bearing_block_mm": 20
     },
     "hip": {
       "actual_end_extension_plan_mm": 332.5,
-      "centre_drop_below_parent_mm": 165.0,
+      "centre_drop_below_parent_mm": 195.0,
       "court_seat_xy_mm": [
         3917.5,
         3917.5
       ],
       "hip_section_angle_degrees": 18.248902383234398,
-      "outer_bottom_z_mm": 6518.54358438968,
-      "outer_centre_z_mm": 6581.721089070517,
+      "outer_bottom_z_mm": 6488.54358438968,
+      "outer_centre_z_mm": 6551.721089070517,
       "outer_seat_xy_mm": [
         332.5,
         332.5
       ],
-      "outer_top_z_mm": 6644.898593751354,
+      "outer_top_z_mm": 6614.898593751354,
       "primary_SHS_mm": [
         120,
         120,
@@ -120,7 +837,7 @@
       "scope": "Axis and section are explicit candidate; separate inner valley, hip tie, crown, steel node and external edge remain to design."
     },
     "jack": {
-      "face_seat_gap_mm": 18.119861696588487,
+      "face_seat_gap_mm": 48.11986169658849,
       "first_x500_clear_between_support_envelopes_mm": 2.647186257614294,
       "first_x500_decision": "Reject two independent seats; hip-rooted cantilever, eave contact omitted, requires moment connection.",
       "hip_plan_face_offset_mm": 84.8528137423857,
@@ -145,7 +862,7 @@
         60,
         4
       ],
-      "remaining_nominal_shim_clear_mm": 8.119861696588487,
+      "remaining_nominal_shim_clear_mm": 38.11986169658849,
       "scope": "Below AVCL/glass. Moment connection, member resistance, steel torsion, lateral restraints, penetrations and exact rail/purlin geometry unproved.",
       "section_mm": [
         80,
@@ -211,6 +928,51 @@
         "west_ring_SW_saddle_kN": -2.7721874050271005,
         "west_ring_y3247p5_kN": -1.699277542021365
       }
+    },
+    "q450_interface": {
+      "hip_centreline_top_z_mm": 6669.689743584567,
+      "north_module_comparator": {
+        "Mx_from_horizontal_kNm": 0.07483941964016025,
+        "Mx_from_vertical_kNm": -0.08074981143209871,
+        "first_horizontal_along_q_kN": -0.4340379352382149,
+        "first_vertical_kN": 2.316880698039484,
+        "horizontal_lever_to_hip_top_m": 0.1724259876019496,
+        "source": "Parent ordinary_edge_development cover-and-wet-gutter; single module comparator only, not an SW action or extra roof load.",
+        "vertical_lever_to_hip_face_m": 0.034852813742385705
+      },
+      "post_25mm_square_near_face_gap_to_ring_mm": 45.0,
+      "post_foot_q_mm": 450.0,
+      "post_foot_z_mm": 6845.6473556622295,
+      "post_normal_length_mm": 346,
+      "purlin_butt_to_jack_face_x_mm": 540,
+      "purlin_scope": "At x500/q450 the cold post bears on the top-flush jack/purlin node, not directly on the eave ring. EW purlin approaches adjacent jack face x540; its below-AVCL steel may pass over the hip within the checked vertical envelope. Moment seat, post base, 50 mm channels, warm AVCL collars, weather, tolerance and actual full 3D section remain unqualified.",
+      "purlin_section_mm": [
+        120,
+        60,
+        4
+      ],
+      "purlin_to_hip_centreline_gap_mm": 43.55226180216323,
+      "purlin_to_hip_far_face_gap_mm": 23.76850337012615,
+      "purlin_under_z_mm": 6713.24200538673,
+      "rail_head_q_mm": 303.774081437718,
+      "rail_head_z_mm": 7159.22984997691,
+      "remaining_worst_nominal_gap_mm": 13.768503370126151,
+      "ring_centre_q_mm": 332.5,
+      "ring_inner_face_q_mm": 392.5,
+      "seat_gap_min_max_mm": [
+        70.20084137985076,
+        86.5216094152757
+      ],
+      "trial_hip_to_jack_seat_plan_mm": [
+        470,
+        435,
+        510,
+        465
+      ],
+      "trial_seat_thickness_mm": 10,
+      "x500_hip_face_y_mm": 415.1471862576143,
+      "x500_jack_ends_at_hip_axis_y_mm": 500,
+      "x500_q450_overhang_from_hip_face_mm": 34.852813742385706
     },
     "ring": {
       "arch_clearance_mm": 25,
@@ -615,11 +1377,11 @@
       "name": "study-desk",
       "rectangular_gap_mm": 99.81232388838565
     },
-    "nominal_pier_to_comparator_gap_mm": 226.72108907051734,
-    "old_parent_SHS120_underside_gap_not_seat_mm": 206.72108907051734,
+    "nominal_pier_to_comparator_gap_mm": 276.72108907051734,
+    "old_parent_SHS120_underside_gap_not_seat_mm": 256.72108907051734,
     "pier_bottom_top_mm": [
       -80,
-      6460
+      6410
     ],
     "pier_bounds_mm": [
       262.5,
@@ -631,8 +1393,8 @@
       412.5,
       412.5
     ],
-    "pier_gross_G_kN_at_25": 14.715,
-    "pier_gross_volume_m3": 0.5886,
+    "pier_gross_G_kN_at_25": 14.602500000000001,
+    "pier_gross_volume_m3": 0.5841000000000001,
     "roof_point_offset_from_pier_mm": [
       -80.0,
       -80.0
