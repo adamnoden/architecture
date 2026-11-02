@@ -9,8 +9,8 @@
     "label": "zerg7-envelope-joined-edge"
   },
   "claimedAt": "2026-11-02T08:48:53.526Z",
-  "heartbeatAt": "2026-11-02T09:40:08.607Z",
-  "expiresAt": "2026-11-02T10:25:08.607Z",
+  "heartbeatAt": "2026-11-02T09:41:42.220Z",
+  "expiresAt": "2026-11-02T10:26:42.220Z",
   "branch": "work/zerg7-envelope-joined-edge",
   "predecessor": {
     "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote branch head afd007137c8a4b7a855d00a4a5971a2b93600d5d tree fa3a6d5fb832d4d65733fa24ef73fc9ae83646f4, base50a3. HAD same-generator FIRST outer-north projection; nine-file corrected MAT ordinary429.5/O70 roof-wall three-cut candidate; six old HAD outputs byte-stable; local HAD/MAT --check, spatial negative controls, diff and rendered SVG pass. Prior c622 hybrid explicitly rejected.",
-    "next": "Independent immutable review of source topology, sections and joints; if pass, open draft PR, exact-head CI and root canonical merge-check. Six MAT exits stay open.",
-    "blocker": "Primary seat0.586 nominal no tolerance; STR q450 owning source, saddle/post collar fabrication and movement, full27 receiver constituents, 3D heat/transient moisture, high vents, cold water/fire/material/site/physical admission remain open."
-  }
+    "evidence": "Draft PR #1259 at remote exact head afd007137c8a4b7a855d00a4a5971a2b93600d5d tree fa3a6d5fb832d4d65733fa24ef73fc9ae83646f4; nine-file FIRST outer-north source-bound candidate, same HAD generator projection, local HAD/MAT --check/negative controls/diff and rendered sections pass. Prior hybrid rejected.",
+    "next": "Independent immutable QA; root observes exact-head CI, resolves any real main integration conflict, canonical merge-check and expected-head merge if earned; six MAT exits remain open.",
+    "blocker": "PR initially mergeable false pending integration determination. Seat0.586 nominal not tolerance proof; q450 owning STR source, post/frame saddle and27 receiver constituents, 3D heat/moisture, high vents, cold water/fire/material/site/physical admission open."
+  },
+  "pr": 1259
 }
