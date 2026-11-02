@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 18,
-  "state": "released",
-  "leaseId": "86aa03de-9616-4922-b6f2-e0d8d14f323c",
+  "generation": 19,
+  "state": "claimed",
+  "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-structure-whole-house"
+    "label": "zerg-structure-disjoint"
   },
-  "claimedAt": "2026-11-02T10:09:55.141Z",
-  "heartbeatAt": "2026-11-02T10:35:28.404Z",
-  "expiresAt": "2026-11-02T10:35:28.404Z",
-  "branch": "work/zerg-str-whole-house-20261102",
+  "claimedAt": "2026-11-02T10:36:39.194Z",
+  "heartbeatAt": "2026-11-02T10:36:39.194Z",
+  "expiresAt": "2026-11-02T11:21:39.194Z",
+  "branch": "work/zerg-str-disjoint-20261102",
   "predecessor": {
-    "leaseId": "e9da7d6c-2886-4470-b019-871466f746dd",
-    "generation": 17,
-    "branch": "work/zerg-recovery-slab-network",
-    "pr": 1260,
+    "leaseId": "86aa03de-9616-4922-b6f2-e0d8d14f323c",
+    "generation": 18,
+    "branch": "work/zerg-str-whole-house-20261102",
+    "pr": 1261,
     "checkpoint": {
-      "evidence": "Shared draft PR #1260 head 158ec3f23e23472065872fd9eda8c402dd3eeedf tree 6ee1c5a36e2b350d644b1e447d9ea5fd729aa94f includes reviewed STR source606a/treeb924 exactly with true parentage; bounded independent PASS and source checks",
-      "next": "Root observes exact-head CI and fresh canonical publication preflights, then expected-head merge if earned; STR releases only after provider-verified merged result",
-      "blocker": "Physical warm/cold shear/tension, roof-wall-corner combined nodes, actual wall/diaphragm/site foundation and final cage remain open; no STR-HOUSE or STR-RECONCILE pass"
+      "evidence": "Draft PR #1261 head 125d7097282434445c2c4cc3b16d7d033e191d1e tree e312b7d61b7c49cc4aed195f03fb223101413b28; independent bounded PASS; local reproducers pass; overlap qualification explicit",
+      "next": "Root observes exact-head CI and fresh publication preflight, then expected-head merge if earned",
+      "blocker": "Actual heads and piers, floor sharing, lateral and warm/cold transfer, and site support remain unqualified; STR-HOUSE remains open"
     }
   },
   "recoverySource": {
-    "leaseId": "e9da7d6c-2886-4470-b019-871466f746dd",
-    "generation": 17,
-    "branch": "work/zerg-recovery-slab-network",
-    "pr": 1260,
+    "leaseId": "86aa03de-9616-4922-b6f2-e0d8d14f323c",
+    "generation": 18,
+    "branch": "work/zerg-str-whole-house-20261102",
+    "pr": 1261,
     "checkpoint": {
-      "evidence": "Shared draft PR #1260 head 158ec3f23e23472065872fd9eda8c402dd3eeedf tree 6ee1c5a36e2b350d644b1e447d9ea5fd729aa94f includes reviewed STR source606a/treeb924 exactly with true parentage; bounded independent PASS and source checks",
-      "next": "Root observes exact-head CI and fresh canonical publication preflights, then expected-head merge if earned; STR releases only after provider-verified merged result",
-      "blocker": "Physical warm/cold shear/tension, roof-wall-corner combined nodes, actual wall/diaphragm/site foundation and final cage remain open; no STR-HOUSE or STR-RECONCILE pass"
+      "evidence": "Draft PR #1261 head 125d7097282434445c2c4cc3b16d7d033e191d1e tree e312b7d61b7c49cc4aed195f03fb223101413b28; independent bounded PASS; local reproducers pass; overlap qualification explicit",
+      "next": "Root observes exact-head CI and fresh publication preflight, then expected-head merge if earned",
+      "blocker": "Actual heads and piers, floor sharing, lateral and warm/cold transfer, and site support remain unqualified; STR-HOUSE remains open"
     }
-  },
-  "pr": 1261,
-  "checkpoint": {
-    "evidence": "Draft PR #1261 head 125d7097282434445c2c4cc3b16d7d033e191d1e tree e312b7d61b7c49cc4aed195f03fb223101413b28; independent bounded PASS; local reproducers pass; overlap qualification explicit",
-    "next": "Root observes exact-head CI and fresh publication preflight, then expected-head merge if earned",
-    "blocker": "Actual heads and piers, floor sharing, lateral and warm/cold transfer, and site support remain unqualified; STR-HOUSE remains open"
-  },
-  "releasedAt": "2026-11-02T10:35:28.404Z",
-  "releaseReason": "handoff"
+  }
 }
