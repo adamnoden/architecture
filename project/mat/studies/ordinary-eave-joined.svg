@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">
+<rect width="420" height="297" fill="white"/><g font-family="Arial,sans-serif">
+<text x="12" y="13" font-size="5" fill="#203746">JOINED NORTH ORDINARY EAVE · plan and orthogonal sections · unselected development</text>
+<text x="12" y="21" font-size="3.2" fill="#203746">q is plan inward from wall weather line y7750; x axes and z are project millimetres.</text>
+<rect x="12" y="28" width="193" height="117" fill="#f5f6f3" stroke="#58717c" stroke-width=".3"/>
+<text x="17" y="35" font-size="4" fill="#203746">PLAN · one 3245 span / seven NS rail centres</text>
+<line x1="22.00" y1="42" x2="22.00" y2="119" stroke="#517687" stroke-width="1.2"/>
+<circle cx="22.00" cy="54.00" r="2.2" fill="#a04439"/>
+<line x1="50.12" y1="42" x2="50.12" y2="119" stroke="#517687" stroke-width="1.2"/>
+<circle cx="50.12" cy="54.00" r="2.2" fill="#39747b"/>
+<line x1="78.25" y1="42" x2="78.25" y2="119" stroke="#517687" stroke-width="1.2"/>
+<circle cx="78.25" cy="54.00" r="2.2" fill="#39747b"/>
+<line x1="106.37" y1="42" x2="106.37" y2="119" stroke="#517687" stroke-width="1.2"/>
+<circle cx="106.37" cy="54.00" r="2.2" fill="#39747b"/>
+<line x1="134.49" y1="42" x2="134.49" y2="119" stroke="#517687" stroke-width="1.2"/>
+<circle cx="134.49" cy="54.00" r="2.2" fill="#39747b"/>
+<line x1="162.62" y1="42" x2="162.62" y2="119" stroke="#517687" stroke-width="1.2"/>
+<circle cx="162.62" cy="54.00" r="2.2" fill="#39747b"/>
+<line x1="190.74" y1="42" x2="190.74" y2="119" stroke="#517687" stroke-width="1.2"/>
+<circle cx="190.74" cy="54.00" r="2.2" fill="#a04439"/>
+<line x1="22" y1="54.00" x2="190.74" y2="54.00" stroke="#6f7984" stroke-width="1.2"/>
+<line x1="22" y1="117.00" x2="190.74" y2="117.00" stroke="#a17861" stroke-width="1"/>
+<text x="17" y="127" font-size="2.8" fill="#203746">Red endpoints: post + frame axis; blue five posts: separate AVCL collars.</text>
+<text x="17" y="134" font-size="2.8" fill="#203746">Six clear 490.833 × 50 channels inward; no EW blocker.</text>
+<rect x="211" y="28" width="197" height="117" fill="#f5f6f3" stroke="#58717c" stroke-width=".3"/>
+<text x="216" y="35" font-size="4" fill="#203746">BAY SECTION q–z · intermediate x6000</text>
+<text x="216" y="46" font-size="3.2" fill="#203746">Zinc /24 board /50 clear vent /1 breather</text>
+<text x="216" y="55" font-size="3.2" fill="#203746">320 bare glass /1 supported AVCL /24 board /80 SHS</text>
+<text x="216" y="64" font-size="3.2" fill="#203746">q450 post crosses AVCL at q439.435; two distinct collars</text>
+<text x="216" y="73" font-size="3.2" fill="#203746">q550 air drops to6640 → collector finish q489.5</text>
+<text x="216" y="82" font-size="3.2" fill="#203746">260 RC at q202.5–462.5, z6540–6680;50 glass neck</text>
+<text x="216" y="91" font-size="3.2" fill="#203746">176 protected ceiling z6444–6620; classified96 return</text>
+<text x="216" y="100" font-size="3.2" fill="#203746">Plate gap22.212; after authored10 =12.212 mm</text>
+<text x="216" y="109" font-size="3.2" fill="#203746">Air/purlin gap22.097; after10 =12.097 mm</text>
+<text x="216" y="121" font-size="3.1" fill="#203746">Collector underside is the dry2D thermal sensitivity locus.</text>
+<rect x="12" y="151" width="193" height="100" fill="#f5f6f3" stroke="#58717c" stroke-width=".3"/>
+<text x="17" y="159" font-size="4" fill="#203746">FRAME SECTION x4377.5 · compound endpoint</text>
+<text x="17" y="170" font-size="3.2" fill="#203746">Roof AVCL at z6918.759</text>
+<text x="17" y="179" font-size="3.2" fill="#203746">Primary SHS at q550: z6804.008–6892.278</text>
+<text x="17" y="188" font-size="3.2" fill="#203746">Return intersects 88.270 mm steel. Saddle to sealed skin.</text>
+<text x="17" y="197" font-size="3.2" fill="#203746">Post at q450 is distinct, though on same frame axis.</text>
+<text x="17" y="206" font-size="3.2" fill="#a04439">All-around weld/access and movement remain UNSOLVED.</text>
+<text x="17" y="215" font-size="3.2" fill="#203746">No sheet penetrates steel; no open SHS cavity credited.</text>
+<text x="17" y="225" font-size="3.2" fill="#203746">Air turn z6640; carrier reserve to6628 is only12.</text>
+<text x="17" y="237" font-size="3.2" fill="#203746">Full classified96 return to soffit6540 still open.</text>
+<rect x="211" y="151" width="197" height="100" fill="#f5f6f3" stroke="#58717c" stroke-width=".3"/>
+<text x="216" y="159" font-size="4" fill="#203746">INDEPENDENT PATHS AND FAILURE</text>
+<text x="216" y="170" font-size="3.1" fill="#203746">Warm: plaster → return → roof sheet; frame skin local.</text>
+<text x="216" y="179" font-size="3.1" fill="#203746">Cold: moving zinc hem; separate breather drip.</text>
+<text x="216" y="188" font-size="3.1" fill="#203746">Vent: 30 gross ×50% mesh =15 equivalent;</text>
+<text x="216" y="197" font-size="3.1" fill="#203746">six NS channels50 clear; ridge/hips still open.</text>
+<text x="216" y="206" font-size="3.1" fill="#203746">Both water sheets share one receiver; blockage common.</text>
+<text x="216" y="215" font-size="3.1" fill="#203746">50 glass neck + frame stress: no 3D/moisture pass.</text>
+<text x="216" y="225" font-size="3.1" fill="#203746">Roof repair needs temporary weather protection.</text>
+<text x="216" y="237" font-size="3.1" fill="#a04439">No material, fire, site, physical or whole-U admission.</text>
+<text x="12" y="266" font-size="3.4" fill="#203746">Source-bound geometry; q450 is a coordinated STR/MAT delta awaiting owning STR source. See joint schedule and six open exits.</text>
+<text x="12" y="277" font-size="3.2" fill="#203746">Thermal screen: bay Tmin16.750°C, severe continuous solid-frame stress16.438°C at authored20/0°C; neither tests collars or climate.</text>
+<text x="12" y="286" font-size="3.2" fill="#203746">This sheet is a spatial falsifier and construction sequence prompt, not a fabrication or classified assembly drawing.</text>
+</g></svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">
+<rect width="420" height="297" fill="white"/><g font-family="Arial,sans-serif">
+<text x="12" y="13" font-size="5" fill="#203746">JOINED NORTH EAVE · two actual q–z cuts · conditional section coordinates</text>
+<text x="12" y="20" font-size="3.2" fill="#203746">Vertical is project z; q is plan inward. Sections have their own stated scales and schematic joint symbols.</text>
+<rect x="12" y="27" width="192" height="239" fill="#f6f7f5" stroke="#647c86" stroke-width=".4"/>
+<rect x="210" y="27" width="198" height="239" fill="#f6f7f5" stroke="#647c86" stroke-width=".4"/>
+<text x="17" y="35" font-size="3.5" fill="#203746">A · intermediate post x6000 · q-z at 0.242 / z0.245</text>
+<text x="215" y="35" font-size="3.5" fill="#203746">B · compound endpoint x4377.5 · enlarged q-z</text>
+<defs><clipPath id="bay"><rect x="15" y="39" width="185" height="224"/></clipPath><clipPath id="frame"><rect x="213" y="39" width="191" height="224"/></clipPath></defs>
+<g clip-path="url(#bay)">
+<polygon points="73.00,225.70 135.93,225.70 135.93,191.40 73.00,191.40" fill="#a9bbc9" stroke="#657987" stroke-width=".45"/>
+<polygon points="87.53,260.00 121.41,260.00 121.41,225.70 87.53,225.70" fill="#b9ad9c" stroke="#657987" stroke-width=".45"/>
+<polygon points="60.91,260.00 87.53,260.00 87.53,225.70 60.91,225.70" fill="#e9d083" stroke="#657987" stroke-width=".45"/>
+<polygon points="73.00,191.40 87.53,191.40 87.53,172.33 73.00,172.33" fill="#e9d083" stroke="#657987" stroke-width=".45"/>
+<polygon points="142.46,249.22 193.40,249.22 193.40,206.10 142.46,206.10" fill="#eadcc6" stroke="#657987" stroke-width=".45"/>
+<polygon points="60.91,91.54 157.10,46.13 157.10,132.63 60.91,178.05" fill="#e9d083" stroke="#657987" stroke-width=".45"/>
+<polygon points="60.91,77.75 157.10,32.34 157.10,46.13 60.91,91.54" fill="#d2e1e5" stroke="#657987" stroke-width=".45"/>
+<polygon points="60.91,71.08 157.10,25.67 157.10,32.34 60.91,77.75" fill="#b99d78" stroke="#657987" stroke-width=".45"/>
+<polygon points="87.53,165.75 157.10,132.90 157.10,139.39 87.53,172.24" fill="#b99d78" stroke="#657987" stroke-width=".45"/>
+<polyline points="132.90,150.82 97.51,73.99" fill="none" stroke="#4b7185" stroke-width="1.35" />
+<polyline points="87.53,165.75 157.10,132.90 157.10,201.20 142.46,201.20 142.46,225.70 127.94,225.70 127.94,260.00" fill="none" stroke="#ad403c" stroke-width="1.35" />
+<polyline points="142.46,249.22 142.46,225.70" fill="none" stroke="#aa6544" stroke-width="1.35" stroke-dasharray="2 1"/>
+</g>
+<g clip-path="url(#frame)">
+<polygon points="247.00,47.13 321.40,14.68 321.40,117.07 247.00,149.52" fill="#e9d083" stroke="#657987" stroke-width=".45"/>
+<polygon points="247.00,30.81 321.40,-1.64 321.40,14.68 247.00,47.13" fill="#d2e1e5" stroke="#657987" stroke-width=".45"/>
+<polygon points="247.00,22.91 321.40,-9.55 321.40,-1.64 247.00,30.81" fill="#b99d78" stroke="#657987" stroke-width=".45"/>
+<polygon points="247.00,149.84 321.40,117.39 321.40,125.07 247.00,157.52" fill="#b99d78" stroke="#657987" stroke-width=".45"/>
+<polygon points="247.00,157.52 321.40,125.07 321.40,150.67 247.00,183.12" fill="#8295a0" stroke="#657987" stroke-width=".45"/>
+<polyline points="262.50,150.76 217.17,59.82" fill="none" stroke="#4b7185" stroke-width="1.35" />
+<polyline points="247.00,149.84 321.40,117.39" fill="none" stroke="#ad403c" stroke-width="1.35" />
+<polyline points="293.50,129.56 293.50,137.24" fill="none" stroke="#ad403c" stroke-width="1.35" />
+<polyline points="293.50,162.84 293.50,210.40 274.75,210.40" fill="none" stroke="#ad403c" stroke-width="1.35" />
+</g>
+<text x="330" y="220" font-size="3.1" fill="#203746">Red: air sheet</text>
+<text x="330" y="228" font-size="3.1" fill="#203746">Blue: post</text>
+<text x="330" y="236" font-size="3.1" fill="#203746">Gray: SHS</text>
+<text x="330" y="244" font-size="3.1" fill="#a04439">Joint unproved</text>
+<text x="17" y="278" font-size="3" fill="#203746">A: geometry at x6000 omits finite bridge/collar heat and qualified glass toe.</text>
+<text x="17" y="287" font-size="3" fill="#203746">B: solid gray primary is actual occupied band; joint marks propose a saddle, not a weld detail or air test.</text>
+</g></svg>

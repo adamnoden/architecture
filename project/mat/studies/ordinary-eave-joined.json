@@ -1,0 +1,208 @@
+{
+  "status": "Conditional connected ordinary north-eave bay and endpoint; no selected fabrication, material, roof, fire, thermal or physical admission.",
+  "inputs": {
+    "MATedge": {
+      "path": "project/mat/studies/loggia-roof-edge.json",
+      "commit": "c2586982b86ced332809369912081a1e7b100d8c",
+      "blob": "731c85d24e775259f1cf84d264d4ceaf75d89774"
+    },
+    "STR": {
+      "path": "project/str/studies/open-loggia-support.json",
+      "commit": "2ac4e4514e57e2a3e214ddaffac70379cd44d43c",
+      "blob": "20dec4384d09a0d02075fdd34a247e775532763b"
+    },
+    "MATthermal": {
+      "path": "project/mat/studies/loggia-roof-wall-thermal.json",
+      "commit": "4a68d3a571e13e3e9c4d5dbf3272d41f042f0cb5",
+      "blob": "3e6c7e91d80249e3ca1c16081d76bd36c88a4345"
+    },
+    "HAD": {
+      "path": "project/had/studies/open-north-loggia.json",
+      "commit": "cfacc96c61ce1be5befa3bc0a10086c7cb6b4202",
+      "blob": "25faad2c4d40df2b7da7212f73808843a88d2f52"
+    }
+  },
+  "plan": {
+    "northEaveWallY": 7750,
+    "frameAxesX": [
+      4377.5,
+      7622.5
+    ],
+    "railCentresX": [
+      4377.5,
+      4918.333333,
+      5459.166667,
+      6000.0,
+      6540.833333,
+      7081.666667,
+      7622.5
+    ],
+    "clearVentChannelsX": [
+      [
+        4402.5,
+        4893.333333
+      ],
+      [
+        4943.333333,
+        5434.166667
+      ],
+      [
+        5484.166667,
+        5975.0
+      ],
+      [
+        6025.0,
+        6515.833333
+      ],
+      [
+        6565.833333,
+        7056.666667
+      ],
+      [
+        7106.666667,
+        7597.5
+      ]
+    ],
+    "endPurlinY": 8200,
+    "postGridAtEndRow": [
+      {
+        "x": 4377.5,
+        "y": 8200,
+        "q": 450,
+        "kind": "endpoint frame/post compound joint",
+        "airCrossQ": 439.4345434564825
+      },
+      {
+        "x": 4918.333333,
+        "y": 8200,
+        "q": 450,
+        "kind": "intermediate post collar",
+        "airCrossQ": 439.4345434564825
+      },
+      {
+        "x": 5459.166667,
+        "y": 8200,
+        "q": 450,
+        "kind": "intermediate post collar",
+        "airCrossQ": 439.4345434564825
+      },
+      {
+        "x": 6000.0,
+        "y": 8200,
+        "q": 450,
+        "kind": "intermediate post collar",
+        "airCrossQ": 439.4345434564825
+      },
+      {
+        "x": 6540.833333,
+        "y": 8200,
+        "q": 450,
+        "kind": "intermediate post collar",
+        "airCrossQ": 439.4345434564825
+      },
+      {
+        "x": 7081.666667,
+        "y": 8200,
+        "q": 450,
+        "kind": "intermediate post collar",
+        "airCrossQ": 439.4345434564825
+      },
+      {
+        "x": 7622.5,
+        "y": 8200,
+        "q": 450,
+        "kind": "endpoint frame/post compound joint",
+        "airCrossQ": 439.4345434564825
+      }
+    ],
+    "qualification": "The q450 row is a MAT/STR coordinated development delta, not the old STR JSON purlin row at8300. The endpoint post/frame/purlin convergence is an unresolved three-dimensional welded/bolted geometry, not a free bay collar."
+  },
+  "sections": {
+    "bay": {
+      "post": {
+        "bottom": [
+          450,
+          6845.6473556622295
+        ],
+        "head": [
+          303.774081437718,
+          7159.22984997691
+        ],
+        "AVCLcrossQ": 439.4345434564825
+      },
+      "roofAVCL": "1 mm supported metal at lower face of320 glass; post has independent welded AVCL collar; no glass bears cover loads.",
+      "airReturn": "q550 down to z6640, q489.5 at collector finish; below collector underside6540 to ordinary q429.5 finish.",
+      "thermal": "500.7 normal roof/320 glass contacts ordinary 429.5 wall/110 glass; collector260 replaces60 locally, leaving50 glass; toe/retainer and wallhead/cavity cap unresolved."
+    },
+    "frame": {
+      "x": 4377.5,
+      "airSheetZ": 6918.7591915328285,
+      "primarySHSZ": [
+        6804.007887960729,
+        6892.278121477729
+      ],
+      "airReturnQ": 550,
+      "postX": 4377.5,
+      "postQ": 450,
+      "compoundJoint": "Separate q450 post collar on field AVCL plus q550 frame-skin saddle; no unpierced q550 drop through steel. Their 100 mm plan separation is not a weld/access clearance proof.",
+      "ceiling": "Protected top6620/bottom6444 stops at collector finish489.5; independent support and complete classified96 return to soffit6540 remain required."
+    }
+  },
+  "clearance": {
+    "purlinToPlateGross": 22.2118733656107,
+    "purlinToPlateAfter10": 12.2118733656107,
+    "purlinToAirGross": 22.096574980016612,
+    "purlinToAirAfter10": 12.096574980016612,
+    "airTurnToCarrierReserve": 12
+  },
+  "paths": {
+    "air": "Room plaster \u2192 clamped finish transition \u2192 bay q550 return \u2192 supported roof AVCL. At discrete frame axes the separate upper/lower sheet edges must connect by an all-around qualified saddle to closed, sealed SHS skin; post collars are separate and remain finite at the q450 grid.",
+    "coldWater": "Moving zinc hem discharges into receiver; separate breather laps over cold-side support to its own drip, also entering the same receiver. A blocked receiver is common failure, not redundancy.",
+    "ventilation": "30 gross eave throat, minimum50 percent mesh yields15 equivalent; each of six 490.833\u00d750 channels runs inward beside NS rails. No EW blocking. High exit/ridge/hip/valley/corners unqualified.",
+    "fire": "The protected ceiling176 with100 wool and classified96 perimeter terminates at projecting collector face; never trim the family or run through RC."
+  },
+  "jointSchedule": [
+    {
+      "id": "A",
+      "operation": "Set collector cage/seat and primary frame with access to its full skin; verify actual load path and linked shear.",
+      "hold": "STR collector and frame ends/joints, closed skin, corrosion and weld-access proof; no frame as generic air seal."
+    },
+    {
+      "id": "B",
+      "operation": "Set end purlin q450 and lower boards; fit post bases at all seven x, including two compound frame axes; reserve collar access before glass.",
+      "hold": "STR owning row/source and local 3D purlin/frame/post weld, bolt, load, erection and 10 allowance."
+    },
+    {
+      "id": "C",
+      "operation": "Join supported AVCL across lower board field; collar each post at q439.435; in bays fold q550 return; at frame axes weld distinct upper/lower saddle edges to closed SHS skin.",
+      "hold": "Full all-around access, sealed frame ends, tested sheet/steel/plaster joint, differential movement, corrosion, serviceability and vapour performance."
+    },
+    {
+      "id": "D",
+      "operation": "Fit320 bare glass and wall110 with actual50 neck around collector, toe support and movement-compatible retention; hold wall cavity head and fire closure.",
+      "hold": "3D post/frame/collector heat and transient hygrothermal/drying, full constituents and mechanical retention."
+    },
+    {
+      "id": "E",
+      "operation": "Complete protected176 ceiling on independent supports to collector finish; provide complete classified96 return at soffit6540.",
+      "hold": "IAS/STR classified assembly and real end support; 12 mm z6640\u20136628 reservation is only a geometry screen."
+    },
+    {
+      "id": "F",
+      "operation": "Install breather with separate collars at posts, cold NS rails, open EW boards, moving zinc hem, vent mesh and secondary drip.",
+      "hold": "ROF system/fasteners, movement, high vent exit and water lap testing; no EW vent blockage."
+    },
+    {
+      "id": "G",
+      "operation": "Use exterior access for inspection; renew gutter from its cold rail cradles, protect exposed roof temporarily for deeper sheet/glass repair.",
+      "hold": "RWT common receiver blockage, catchment/capacity and maintainable weather state; roof is not a walking surface."
+    }
+  ],
+  "thermalFalsifier": {
+    "source": "MAT dry steady2D joined collector screen",
+    "bayMinimumC": 16.75,
+    "solidContinuousFrameStressMinimumC": 16.438,
+    "interpretation": "At authored20/0C and films0.13/0.04, collector underside is sensitive. These cut-specific figures do not include finite post collars, hollow steel or installed vapour/air leakage; no surface, condensation, whole-U or ISO psi acceptance. A worse joined 3D/climate result or failed movement-compatible closure defeats this assembly."
+  },
+  "verdict": "The bay and edge paths can be drawn together, but the two endpoint compound post/frame junctions, actual air weld access, classified perimeter and upper vent exits prevent selection. Six-row owning exit remains open."
+}
