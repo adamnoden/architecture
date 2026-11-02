@@ -8,11 +8,11 @@ import hashlib,json,math,subprocess,sys
 ROOT=Path(__file__).resolve().parents[3]; OUT=Path(__file__).with_suffix('')
 EXPECTED={
  'project/had/studies/open-north-loggia.json':'25faad2c4d40df2b7da7212f73808843a88d2f52',
- 'project/had/studies/open-north-facade-projection.json':'621d7c41da4ebb9b9fa810be239f8b35eb442106',
+ 'project/had/studies/open-north-facade-projection.json':'eb70d77ee57571088c4a73caa076681dc00590cd',
  'project/str/studies/open-loggia-support.json':'20dec4384d09a0d02075fdd34a247e775532763b',
  'project/mat/studies/loggia-roof-edge.json':'731c85d24e775259f1cf84d264d4ceaf75d89774',
  'project/mat/studies/loggia-roof-wall-thermal.json':'3e6c7e91d80249e3ca1c16081d76bd36c88a4345'}
-GENERATOR_SHA256='9bc7b9672a7ee451115ac87519faa279ac40a87a470a284bacb05eed9da25537'
+GENERATOR_SHA256='2c60c151478b7596acc3dda8fe5630d43f6365e118956aee22b57b419fd954a6'
 def git(*a):return subprocess.check_output(['git',*a],cwd=ROOT,text=True).strip()
 def blob(raw):return hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()
 def load(path,expected):
