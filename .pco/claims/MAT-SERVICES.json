@@ -9,8 +9,8 @@
     "label": "zerg-services-connected-system"
   },
   "claimedAt": "2026-11-02T08:48:16.792Z",
-  "heartbeatAt": "2026-11-02T09:07:47.847Z",
-  "expiresAt": "2026-11-02T09:52:47.847Z",
+  "heartbeatAt": "2026-11-02T09:09:02.977Z",
+  "expiresAt": "2026-11-02T09:54:02.977Z",
   "branch": "work/zerg8-services-connected-system",
   "predecessor": {
     "leaseId": "afdc5e64-edf7-4580-9f16-ca67c7f082f8",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote 313700241bc37551c61276cd09922b651cbc7077 tree bd800ede283e66565020d9f7d0854df3d0e60898; exact three-file source tree verified; connected 300 failure, staged 400 and 12/14 kW screens; no adoption",
-    "next": "Open bounded draft PR; independent review and root integration decision",
-    "blocker": "Actual product, boundary, fan, room heat, source and handling proofs remain open"
-  }
+    "evidence": "Draft PR #1257 exact remote head 313700241bc37551c61276cd09922b651cbc7077 tree bd800ede283e66565020d9f7d0854df3d0e60898; three-file bounded connected system screen; no material/house selection",
+    "next": "Independent review of connected network, 400 first release and 14 kW sensitivity; root integration decision",
+    "blocker": "400 actual cartridge, full release/structural/weather/fire, fans, room emitters and net configured plant proof open"
+  },
+  "pr": 1257
 }
