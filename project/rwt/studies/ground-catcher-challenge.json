@@ -65,6 +65,44 @@
       "hinge": "low",
       "leaves": 2
     },
+    "frontWitness": {
+      "id": "protected-stair-bottom-to-front",
+      "level": "GROUND",
+      "bodyRadius": 300,
+      "points": [
+        [
+          967.5,
+          4100
+        ],
+        [
+          967.5,
+          3782.5
+        ],
+        [
+          3200,
+          3782.5
+        ],
+        [
+          3200,
+          3485
+        ],
+        [
+          6000,
+          3485
+        ],
+        [
+          6000,
+          417.5
+        ]
+      ],
+      "state": "cross fire doors CLOSED",
+      "minimumReserve": 17.5,
+      "controlling": {
+        "obstacle": "court-south+18trim",
+        "segment": 3
+      },
+      "pass": true
+    },
     "protectedRoute": "Stair+Southlanding/gallery+frontentrance/void→FRONTfinalexit; living/kitchen north of crossdoors excluded.",
     "northOpenings": [
       {
