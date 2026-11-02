@@ -4849,6 +4849,99 @@
         "doesNotFit150Allocation": true
       },
       "admission": "Axial alternative only. SMFUfemale end has no automatically credited seal on VEABplainneck; retain actual required gasket/seal, materialpolicy andOEMmating. No use of these seams as accepted2Dclearstraight, pressure loss or complete firstrelease."
+    },
+    "plantActualChallenger": {
+      "model": "PanasonicWH-WXG16ME8 +WH-CME8; actualconditionalchallenger, not selected",
+      "manufacturerCapacitySource": "https://www.panasonicproclub.com/uploads/UA/catalogues/2026-2027/01%20Aquarea/01%20EU%20INTRO-AQUAREA%20GEN%2026%20LR.pdf",
+      "sourcePage": 146,
+      "manufacturerAminus15W65": {
+        "heatW": 16000,
+        "inputW": 10150,
+        "COP": 1.58
+      },
+      "manufacturerAminus7W65": {
+        "heatW": 16000,
+        "inputW": 9400,
+        "COP": 1.7
+      },
+      "manufacturerCaveat": "MeasuredEN14511-2, reference only/not guaranteed; no exactAminus10W65 guaranteednet interpolated",
+      "keymarkRegistration": "011-1W0924",
+      "keymarkSource": "https://www.heatpumpkeymark.com/en/nc/ps-keymark/certificate-holders/?cHash=bdb4363a985a82925f4ae94dee067020&tx_pskeymark_frontend%5Baction%5D=generatePdf&tx_pskeymark_frontend%5Bcontroller%5D=Frontend&tx_pskeymark_frontend%5Bsubtype%5D=5982",
+      "keymarkReadbackDate": "2026-11-02",
+      "keymarkMediumTempAverage": {
+        "TbivC": -10,
+        "PdhAtTbivW": 16000,
+        "COPAtTbiv": 2.04,
+        "WTOLC": 55,
+        "defrostTest": "passed"
+      },
+      "certificationLimit": "Medium55C and defrosttest do not guarantee installedAminus10W65 net afterglycol/HX/pumps/defrost. No certification scope transfer.",
+      "proposedPrimaryC": [
+        65,
+        55
+      ],
+      "secondaryC": [
+        55,
+        45
+      ],
+      "requiredCounterflowHXUA_WperK": 1400.0,
+      "requiredPrimaryGlycolLpsAt14kW10K": 0.4375,
+      "requiredSecondaryWaterLpsAt14kW10K": 0.3349282296650718,
+      "combinedUnprovenDeratingBudgetFrom16to14W": 2000,
+      "maximumLowLineHydronicW": 10536.000000648568,
+      "net14MarginW": 3463.999999351432,
+      "bodyHxWxD_MM": [
+        1520,
+        1200,
+        430
+      ],
+      "dryMassKg": 165,
+      "conditionalBodyPlanMM": [
+        14835,
+        3600,
+        430,
+        1200
+      ],
+      "retainedPadMM": [
+        14000,
+        3300,
+        2300,
+        1800
+      ],
+      "retainedClearSiteMM": [
+        13000,
+        2500,
+        5500,
+        4200
+      ],
+      "retainedAirDischarge": "east; actualwidth1200runsY,depth430runsX",
+      "old600YBodyEnvelopeFailsByMM": 600,
+      "heightReserveToOld1600MM": 80,
+      "padBodyMarginsWestEastSouthNorthMM": [
+        835,
+        1035,
+        300,
+        300
+      ],
+      "OEMControllerBodyHxWxD_MM": [
+        450,
+        450,
+        117
+      ],
+      "OEMControllerMassKg": 7,
+      "electrical": "3x400V50Hz; Aminus15W65 sourceinput10.15kW plus6kW intakeheaters =16.15kW before otherhouse/DHW/control/pump loads. Current/phase/protection/cable/servicecapacity require exactIOM and actualdesign.",
+      "sourceNominalWaterFlowLpmAt35Cdelta5": 45.9,
+      "sourceNominalPumpW": [
+        30,
+        175
+      ],
+      "admissionHolds": [
+        "ExactnetAminus10W65 afterdefrost/glycol/HX and actualpump/flow/cycling/DHW priority",
+        "ActualHX model/plate/pass/pressureloss, glycolfluid and pumpoperatingpoint; UA1400requirement isnot productselection",
+        "ActualR290protectionzone, drains/frost, anchors165kg, acoustic/noise, wind and allservice/removalroute",
+        "HAD/OAS oriented430Xx1200Y outdoorbody rewind, utilitycontrollerplacement/wiring and allroom emitter/output join",
+        "Materials includingpropeller/cables/electronics/seals/glycol remainunapproved"
+      ]
     }
   },
   "layoutMaximumProcurementEnvelopes": {

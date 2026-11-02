@@ -127,6 +127,23 @@
 <text x="223.000" y="177.000" class="xs">Dashed blue: complete procurement envelope. Gold: unqualified support demand.</text>
 <text x="223.000" y="181.000" class="xs">Motor230 / fan202 / filter239 / heaters375; brown167couplers +50stroke conditional.</text>
 <text x="223.000" y="185.000" class="xs" style="fill:#a12d2d">Carrier3800 ×500 ×750. West plan reserve51; no clamp/tool/anchor PASS.</text>
+<text x="223.000" y="104.000" class="s b">E  ACTUAL PLANT CHALLENGER • OUTDOOR PLAN</text>
+<rect x="309.000" y="115.000" width="77.000" height="58.800" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="323.000" y="137.400" width="32.200" height="25.200" fill="none" stroke="#a37122" stroke-width="0.35" opacity="1"/>
+<rect x="330.000" y="145.800" width="15.400" height="8.400" fill="none" stroke="#7f8a94" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="334.690" y="141.600" width="6.020" height="16.800" fill="none" stroke="#156b9a" stroke-width="0.35" opacity="1"/>
+<path d="M340.710,150.000 L348.200,150.000" stroke="#156b9a" stroke-width="0.4" fill="none"/>
+<text x="348.200" y="149.000" class="xs">E air</text>
+<text x="223.000" y="111.000" class="xs">WH-WXG16ME8 / WH-CME8</text>
+<text x="223.000" y="116.000" class="xs">Body1200×430×1520 /165kg</text>
+<text x="223.000" y="121.000" class="xs" style="fill:#a12d2d">East discharge:430X×1200Y.</text>
+<text x="223.000" y="126.000" class="xs">Old600Ybox FAIL600; same centre.</text>
+<text x="223.000" y="132.000" class="xs">Pad2300×1800 retained.</text>
+<text x="223.000" y="137.000" class="xs">Clear site5500×4200 retained.</text>
+<text x="223.000" y="143.000" class="xs">R290zone/drain/anchors/acoustics,</text>
+<text x="223.000" y="148.000" class="xs" style="fill:#a12d2d">service and lifting path OPEN.</text>
+<text x="223.000" y="154.000" class="xs">SourceA-15/W65:16kW/10.15kW.</text>
+<text x="223.000" y="159.000" class="xs" style="fill:#a12d2d">Net14 after fullHX/defrost UNKNOWN.</text>
 <text x="12.000" y="195.000" class="s b">C  NORTH HATCH • Y / Z PROJECTION</text>
 <rect x="15.000" y="200.240" width="64.400" height="5.600" fill="#c4cbd0" stroke="#536471" stroke-width="0.35" opacity="1"/>
 <rect x="16.400" y="209.200" width="14.000" height="21.000" fill="none" stroke="#156b9a" stroke-width="0.35" opacity="1" class="dash"/>

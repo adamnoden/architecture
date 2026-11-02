@@ -418,6 +418,47 @@ compact['heaterCouplingAlternative']={'model':'LindabSMFU200/150',
  'rejected250Nominal150Proxy':{'actualBodyMM':60+192,'massKg':.9,'doesNotFit150Allocation':True},
  'admission':'Axial alternative only. SMFUfemale end has no automatically credited seal on VEABplainneck; retain actual required gasket/seal, materialpolicy andOEMmating. No use of these seams as accepted2Dclearstraight, pressure loss or complete firstrelease.'}
 
+# Actual high-temperature plant challenger, separate from a14kW net guarantee.
+panasonic_body=[14835,3600,430,1200] # retain source east discharge:width runsY
+old_outdoor=b['heat']['outdoorStation']
+panasonic_pad=old_outdoor['replacementPad']
+panasonic_site=old_outdoor['reservedClearSite']
+assert panasonic_pad==[14000,3300,2300,1800]
+assert panasonic_site==[13000,2500,5500,4200]
+assert panasonic_body[0]>=panasonic_pad[0] and panasonic_body[0]+430<=panasonic_pad[0]+2300
+assert panasonic_body[1]>=panasonic_pad[1] and panasonic_body[1]+1200<=panasonic_pad[1]+1800
+assert 1200>600 and 1520<1600
+compact['plantActualChallenger']={
+ 'model':'PanasonicWH-WXG16ME8 +WH-CME8; actualconditionalchallenger, not selected',
+ 'manufacturerCapacitySource':'https://www.panasonicproclub.com/uploads/UA/catalogues/2026-2027/01%20Aquarea/01%20EU%20INTRO-AQUAREA%20GEN%2026%20LR.pdf',
+ 'sourcePage':146,'manufacturerAminus15W65':{'heatW':16000,'inputW':10150,'COP':1.58},
+ 'manufacturerAminus7W65':{'heatW':16000,'inputW':9400,'COP':1.70},
+ 'manufacturerCaveat':'MeasuredEN14511-2, reference only/not guaranteed; no exactAminus10W65 guaranteednet interpolated',
+ 'keymarkRegistration':'011-1W0924','keymarkSource':'https://www.heatpumpkeymark.com/en/nc/ps-keymark/certificate-holders/?cHash=bdb4363a985a82925f4ae94dee067020&tx_pskeymark_frontend%5Baction%5D=generatePdf&tx_pskeymark_frontend%5Bcontroller%5D=Frontend&tx_pskeymark_frontend%5Bsubtype%5D=5982',
+ 'keymarkReadbackDate':'2026-11-02','keymarkMediumTempAverage':{'TbivC':-10,'PdhAtTbivW':16000,'COPAtTbiv':2.04,'WTOLC':55,'defrostTest':'passed'},
+ 'certificationLimit':'Medium55C and defrosttest do not guarantee installedAminus10W65 net afterglycol/HX/pumps/defrost. No certification scope transfer.',
+ 'proposedPrimaryC':[65,55],'secondaryC':[55,45],
+ 'requiredCounterflowHXUA_WperK':14000/10,
+ 'requiredPrimaryGlycolLpsAt14kW10K':14/(3.2*10),
+ 'requiredSecondaryWaterLpsAt14kW10K':14/(4.18*10),
+ 'combinedUnprovenDeratingBudgetFrom16to14W':2000,
+ 'maximumLowLineHydronicW':max(r['netHydronicW'] for r in all_compact),
+ 'net14MarginW':14000-max(r['netHydronicW'] for r in all_compact),
+ 'bodyHxWxD_MM':[1520,1200,430],'dryMassKg':165,'conditionalBodyPlanMM':panasonic_body,
+ 'retainedPadMM':panasonic_pad,'retainedClearSiteMM':panasonic_site,
+ 'retainedAirDischarge':'east; actualwidth1200runsY,depth430runsX',
+ 'old600YBodyEnvelopeFailsByMM':600,
+ 'heightReserveToOld1600MM':80,'padBodyMarginsWestEastSouthNorthMM':[835,1035,300,300],
+ 'OEMControllerBodyHxWxD_MM':[450,450,117],'OEMControllerMassKg':7,
+ 'electrical':'3x400V50Hz; Aminus15W65 sourceinput10.15kW plus6kW intakeheaters =16.15kW before otherhouse/DHW/control/pump loads. Current/phase/protection/cable/servicecapacity require exactIOM and actualdesign.',
+ 'sourceNominalWaterFlowLpmAt35Cdelta5':45.9,
+ 'sourceNominalPumpW':[30,175],
+ 'admissionHolds':['ExactnetAminus10W65 afterdefrost/glycol/HX and actualpump/flow/cycling/DHW priority',
+  'ActualHX model/plate/pass/pressureloss, glycolfluid and pumpoperatingpoint; UA1400requirement isnot productselection',
+  'ActualR290protectionzone, drains/frost, anchors165kg, acoustic/noise, wind and allservice/removalroute',
+  'HAD/OAS oriented430Xx1200Y outdoorbody rewind, utilitycontrollerplacement/wiring and allroom emitter/output join',
+  'Materials includingpropeller/cables/electronics/seals/glycol remainunapproved']}
+
 # Single exact SVG drawing: actual source bodies are solid, procurement/task
 # maxima dashed. It deliberately shows the current maintenance failures.
 from html import escape
@@ -501,6 +542,27 @@ line(ax(7770.5),az(2100),ax(11570.5),az(2100),'#263743')
 txt(223,177,'Dashed blue: complete procurement envelope. Gold: unqualified support demand.','xs')
 txt(223,181,'Motor230 / fan202 / filter239 / heaters375; brown167couplers +50stroke conditional.','xs')
 txt(223,185,'Carrier3800 ×500 ×750. West plan reserve51; no clamp/tool/anchor PASS.','xs','#a12d2d')
+# Outdoor footprint inset: site/pad sources, actualbody only; no safetyzone credit.
+txt(223,104,'E  ACTUAL PLANT CHALLENGER • OUTDOOR PLAN','s b')
+opx=lambda x:295+(x-12000)*.014
+opy=lambda y:115+(6700-y)*.014
+def outdoorbox(box,col,dash=False):rect(opx(box[0]),opy(box[1]+box[3]),box[2]*.014,box[3]*.014,'none',col,dash)
+outdoorbox(panasonic_site,'#26794b',True)
+outdoorbox(panasonic_pad,'#a37122')
+outdoorbox(old_outdoor['body'],'#7f8a94',True)
+outdoorbox(panasonic_body,'#156b9a')
+line(opx(15265),opy(4200),opx(15800),opy(4200),'#156b9a')
+txt(opx(15800),opy(4200)-1,'E air','xs')
+txt(223,111,'WH-WXG16ME8 / WH-CME8','xs')
+txt(223,116,'Body1200×430×1520 /165kg','xs')
+txt(223,121,'East discharge:430X×1200Y.','xs','#a12d2d')
+txt(223,126,'Old600Ybox FAIL600; same centre.','xs')
+txt(223,132,'Pad2300×1800 retained.','xs')
+txt(223,137,'Clear site5500×4200 retained.','xs')
+txt(223,143,'R290zone/drain/anchors/acoustics,','xs')
+txt(223,148,'service and lifting path OPEN.','xs','#a12d2d')
+txt(223,154,'SourceA-15/W65:16kW/10.15kW.','xs')
+txt(223,159,'Net14 after fullHX/defrost UNKNOWN.','xs','#a12d2d')
 # Y/Z section focused on filter service, with a full podium/operator body.
 sy=.028
 fx=lambda y:15+(y-8400)*sy
