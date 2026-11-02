@@ -9,12 +9,12 @@
     "label": "zerg-structure-fallback"
   },
   "claimedAt": "2026-11-02T08:04:45.848Z",
-  "heartbeatAt": "2026-11-02T08:04:45.848Z",
-  "expiresAt": "2026-11-02T08:49:45.848Z",
+  "heartbeatAt": "2026-11-02T08:19:46.454Z",
+  "expiresAt": "2026-11-02T09:04:46.454Z",
   "checkpoint": {
-    "evidence": "PR #1249 merged d3f254c09307b7d98e40ba9a14bd963dd97a6e90; reviewed STR source 2ac4e451 is on main",
-    "next": "Join whole-house gravity and lateral destinations with preferred conditional warm/cold foundation concept from fresh main; bounded internal proof and PR",
-    "blocker": "STR-HOUSE remains planned; no full reaction system or foundation-node adequacy yet"
+    "evidence": "Draft PR #1252 head b2f164ad4409505e5eb29ad4f2f77ac713cb85b2/tree2e8246009fd8aaad184a43789bb82806c50f92a9; new+parent reproducible checks and diff check passed; actual remote tree equals isolated local",
+    "next": "Focused STR peer review and exact-head CI; reconcile objections, then root canonical publication preflight and merge if earned",
+    "blocker": "HOUSE incomplete: physical slab/roofcorner/lateral allocation, assembled arch/collector/warm-cold node capacities and site actions unresolved"
   },
   "branch": "work/str-house-gravity-foundation-20261102",
   "predecessor": {
@@ -38,5 +38,6 @@
       "next": "Root exactheadCI and shared publication preflight; integrate bounded source only after focusedreview and required checks pass",
       "blocker": "STR-HOUSE remains incomplete; parentroof/corner/lateral, landingEWenddevelopment and completephysicalhouse loadpaths are not admitted"
     }
-  }
+  },
+  "pr": 1252
 }
