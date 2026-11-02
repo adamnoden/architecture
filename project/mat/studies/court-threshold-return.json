@@ -1,0 +1,45 @@
+{
+  "source_git_blobs": {
+    "project/had/studies/open-north-loggia.json": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+    "project/mat/studies/ground-metal-field.json": "3c07f8b20bad17b46d27f1cbb9af27a5a14cdfc0",
+    "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b"
+  },
+  "opening_x_mm": [
+    5100.0,
+    6900.0
+  ],
+  "trial_jamb_wing_each_mm": 40,
+  "trial_return_x_mm": [
+    5060.0,
+    6940.0
+  ],
+  "trial_return_y_mm": [
+    3987.5,
+    4250
+  ],
+  "field_top_mm": -380,
+  "trial_termination_at_slab_top_mm": -180,
+  "ffl_mm": 0,
+  "shortfall_to_FFL_mm": 180,
+  "vertical_height_to_slab_top_mm": 200,
+  "vertical_height_to_FFL_mm": 380,
+  "horizontal_gross_area_m2": 0.4935,
+  "vertical_to_FFL_gross_area_m2": 0.7144,
+  "horizontal_plus_vertical_gross_area_m2": 1.2079,
+  "historical_STR_court_S_comparator": {
+    "x_bounds_mm": [
+      3950,
+      8050
+    ],
+    "y_bounds_mm": [
+      3650,
+      4250
+    ],
+    "z_bounds_mm": [
+      -630,
+      -180
+    ],
+    "decision": "The whole trial horizontal return overlaps the historical concrete comparator if both are unchanged. The comparator and newer HAD/cold-grid datums are not reconciled; no selected beam is asserted."
+  },
+  "scope": "Trial dimensions only: no frame location, sill, bearing, drainage, actual sheet support, watertight join, accessibility or buildability is established."
+}
