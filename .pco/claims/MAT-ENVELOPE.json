@@ -9,8 +9,8 @@
     "label": "zerg7-envelope-joined-edge"
   },
   "claimedAt": "2026-11-02T08:48:53.526Z",
-  "heartbeatAt": "2026-11-02T09:41:42.220Z",
-  "expiresAt": "2026-11-02T10:26:42.220Z",
+  "heartbeatAt": "2026-11-02T09:48:48.886Z",
+  "expiresAt": "2026-11-02T10:33:48.886Z",
   "branch": "work/zerg7-envelope-joined-edge",
   "predecessor": {
     "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Draft PR #1259 at remote exact head afd007137c8a4b7a855d00a4a5971a2b93600d5d tree fa3a6d5fb832d4d65733fa24ef73fc9ae83646f4; nine-file FIRST outer-north source-bound candidate, same HAD generator projection, local HAD/MAT --check/negative controls/diff and rendered sections pass. Prior hybrid rejected.",
-    "next": "Independent immutable QA; root observes exact-head CI, resolves any real main integration conflict, canonical merge-check and expected-head merge if earned; six MAT exits remain open.",
-    "blocker": "PR initially mergeable false pending integration determination. Seat0.586 nominal not tolerance proof; q450 owning STR source, post/frame saddle and27 receiver constituents, 3D heat/moisture, high vents, cold water/fire/material/site/physical admission open."
+    "evidence": "Draft PR #1259 head 2c1c55024544f9d4ac153a2a3d2efc02a3d2bd8e tree 498675139d5514ad10d61e1fd6058b4913ab9b56; HAD scene projection and MAT joined sections source-bound; generator checks pass",
+    "next": "Independent topology and rendered-section QA, then root CI/preflight and merge if accepted",
+    "blocker": "Seat bearing/tolerance, exact components, 3D movement/fire/site and physical verification remain open"
   },
   "pr": 1259
 }
