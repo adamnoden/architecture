@@ -1,5 +1,7 @@
 # RWT-06 — +7100 court-eave cleaning and receiver renewal
 
+**Development update:** The local q250 interception below remains an unadmitted historical challenger with the failures and design price recorded here. Current comparative development examines the [complete removable over-roof](rwt-06-over-roof-service.md); neither is an accepted renewal method.
+
 **2 November 2026. Bounded selected-source comparison; RWT-06 remains planned.** This consumes the selected [HAD compact B/open loggia](../had/had-03-open-north-loggia.md), the [joined MAT section](../mat/studies/loggia-envelope-section.json), the [open-loggia event challenge](rwt-06-open-loggia-event.md) and the [whole-liner temporary state](rwt-06-temporary-renewal-comparison.md). The [source-pinned finite ledger](studies/high-eave-service.json), [generator](studies/high-eave-service.mjs) and [A3 plan/section](studies/high-eave-service.svg) distinguish the high-eave task from ground-liner renewal. No receiver body, working machine, site, installed temporary work or safe wet-state operation is selected.
 
 ## Decision and design price
