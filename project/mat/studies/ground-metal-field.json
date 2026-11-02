@@ -84,6 +84,43 @@
     "girder": "Even in MAT slab alternative, field top \u2212382 is only 2 mm below \u2212380 girder soffit; a 40 mm top-side rail cannot continue through it. End supports, welded transitions, reinforced contact and accessible sequencing are not designed.",
     "courtServiceAlternative": "The distinct joined-ground service reference starts its DPC field at \u2212380; \u2212383 lies within the upper 3 mm of that DPC band. Its W1 carrier crown \u2212378 and invert \u2212538 straddle the metal plane; a flat sheet intersects the carrier 5 mm below its crown. The independent W2 tray, air lid \u2212310..\u2212316 and seal to \u2212318 also require their own continuous, accessible transitions. This is an incompatible reference comparison, not an assertion both designs are selected."
   },
+  "flushSoffitTrial": {
+    "sheetZ_mm": [
+      -381,
+      -380
+    ],
+    "patchZ_mm": [
+      -383,
+      -380
+    ],
+    "plateUndersideStep_mm": 2,
+    "HADslabBottom_mm": -380,
+    "MATslabBottom_mm": -280,
+    "HADdirectContact": "Field top coincides with selected HAD slab soffit; sheet may be used as permanent formwork only with a fully designed support, bond, movement and sealing strategy.",
+    "MATgap_mm": 100,
+    "MATlimit": "General MAT slab remains 100 mm above the field, so no slab/formwork load or bond is assumed. Warm receiving girder alone reaches \u2212380.",
+    "assumedConcrete_kNm3": 25,
+    "HAD200mmWetDead_kPa": 5,
+    "grossElasticBeamStripControl": [
+      {
+        "span_mm": 100,
+        "grossElasticStress_MPa": 37.5,
+        "grossElasticDeflection_mm": 0.390625
+      },
+      {
+        "span_mm": 250,
+        "grossElasticStress_MPa": 234.375,
+        "grossElasticDeflection_mm": 15.2587890625
+      },
+      {
+        "span_mm": 1000,
+        "grossElasticStress_MPa": 3750.0,
+        "grossElasticDeflection_mm": 3906.25
+      }
+    ],
+    "controlLimit": "1 m-wide, 1 mm thick ideal simply supported strip with E200 GPa under 5 kPa only; excludes plate action, membrane action, restraints and all work/live/water loads. Large deflection and possible yielding invalidate the linear estimate, so it is a failure indicator for this idealization, not a physical prediction or actual plate capacity.",
+    "scope": "Top-aligned 1mm field leaves 9mm below within nominal 10mm bed, while 3mm patch leaves 7mm; field-to-patch underside steps 2mm. Neither metal/concrete contact, bed nor the stepped weld is qualified."
+  },
   "movementChallenge": {
     "trialYSeam_mm": 6000,
     "straightSeamWallIntersections": [
