@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 21,
-  "state": "released",
-  "leaseId": "74850e01-5d79-4ab4-b419-3b9628e34c8c",
+  "generation": 22,
+  "state": "claimed",
+  "leaseId": "64caa2f5-3cb4-40a5-8f62-b69f3b9964d4",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg8-envelope-field"
+    "label": "zerg9-envelope-join"
   },
-  "claimedAt": "2026-11-02T12:57:38.664Z",
-  "heartbeatAt": "2026-11-02T14:03:42.401Z",
-  "expiresAt": "2026-11-02T14:03:42.401Z",
+  "claimedAt": "2026-11-02T14:04:32.556Z",
+  "heartbeatAt": "2026-11-02T14:04:32.556Z",
+  "expiresAt": "2026-11-02T14:49:32.556Z",
   "checkpoint": {
-    "evidence": "Draft PR #1277 head 31ea790915822cce2e75484f86dd01ce98226767 tree 6e8180ee820b175829c61903ae54d00a8f9e2f77; source-bound field, falsework, local turns and negative controls checked",
-    "next": "Root QA, exact-head CI and fresh preflight; continue constructive work only after reviewable packet",
-    "blocker": "Complete barrier, support, movement, frame, structural, site and physical qualification remain open"
+    "evidence": "Verified MAT21 PR #1277 merged main 2c32fdee809db525fd12684a8f83eade91ae2686; no complete envelope accepted",
+    "next": "Develop finite continuous perimeter, roof collar, service and threshold/load-bearing joins with STR and RWT",
+    "blocker": "Frame, movement, bearing, structural, product, site and physical duties remain unqualified"
   },
-  "branch": "work/zerg8-envelope-field",
+  "branch": "work/zerg9-envelope-join",
   "predecessor": {
-    "leaseId": "cb17698a-faa2-4295-b195-ad99536bf953",
-    "generation": 20,
-    "branch": "work/zerg-corner-convergence",
-    "pr": 1273,
+    "leaseId": "74850e01-5d79-4ab4-b419-3b9628e34c8c",
+    "generation": 21,
+    "branch": "work/zerg8-envelope-field",
+    "pr": 1277,
     "checkpoint": {
-      "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; scoped generators, default HAD and repository checks passed",
-      "next": "Root observes exact-head CI and runs fresh publication preflight; controller releases MAT20 after verified merge and claims MAT21",
-      "blocker": "Complete carrier/field, structural/site and physical admission remain open; no adoption asserted"
+      "evidence": "Draft PR #1277 head 31ea790915822cce2e75484f86dd01ce98226767 tree 6e8180ee820b175829c61903ae54d00a8f9e2f77; source-bound field, falsework, local turns and negative controls checked",
+      "next": "Root QA, exact-head CI and fresh preflight; continue constructive work only after reviewable packet",
+      "blocker": "Complete barrier, support, movement, frame, structural, site and physical qualification remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "cb17698a-faa2-4295-b195-ad99536bf953",
-    "generation": 20,
-    "branch": "work/zerg-corner-convergence",
-    "pr": 1273,
+    "leaseId": "74850e01-5d79-4ab4-b419-3b9628e34c8c",
+    "generation": 21,
+    "branch": "work/zerg8-envelope-field",
+    "pr": 1277,
     "checkpoint": {
-      "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; scoped generators, default HAD and repository checks passed",
-      "next": "Root observes exact-head CI and runs fresh publication preflight; controller releases MAT20 after verified merge and claims MAT21",
-      "blocker": "Complete carrier/field, structural/site and physical admission remain open; no adoption asserted"
+      "evidence": "Draft PR #1277 head 31ea790915822cce2e75484f86dd01ce98226767 tree 6e8180ee820b175829c61903ae54d00a8f9e2f77; source-bound field, falsework, local turns and negative controls checked",
+      "next": "Root QA, exact-head CI and fresh preflight; continue constructive work only after reviewable packet",
+      "blocker": "Complete barrier, support, movement, frame, structural, site and physical qualification remain open"
     }
-  },
-  "pr": 1277,
-  "releasedAt": "2026-11-02T14:03:42.401Z",
-  "releaseReason": "completed"
+  }
 }
