@@ -9,14 +9,14 @@
     "label": "mat-envelope-joins"
   },
   "claimedAt": "2026-11-02T00:25:15.643Z",
-  "heartbeatAt": "2026-11-02T02:00:37.827Z",
-  "expiresAt": "2026-11-02T02:45:37.827Z",
+  "heartbeatAt": "2026-11-02T02:31:48.602Z",
+  "expiresAt": "2026-11-02T03:16:48.602Z",
   "checkpoint": {
-    "evidence": "Independent High bounded review PASS on PR1243 head6c9daf4883e7401ca7e52089a5424df2980dae4f tree9a950473c38cd248f1d05e15ec344f12d547a219. Both generators/renders/FVM/contact/primaryH+H checked; exactlocal/remote tree proven. Rootauthorised fullprototype history into sharedhousebatch; oldmainJSON canonicalcfacc provenance-only rebind already verified.",
-    "next": "Join full reviewed9MATfiles/history into sharedbatch, run DEFAULT canonical envelope/roofedge/warmgrid checks with exactcfacc identity, then deliberately rebind onto eventualpublishedsharedPR/branch.",
-    "blocker": "MATENV OPEN: standardproductsize is notlive stock; q550airreturn has projectedprimary-frame crossings requiring actualcollars; complete receiving/contact/DPC/air/roof/ceiling/temporaryrain joins and material/siteadmission remain unearned. Priorprewrite renew failures were30secondGitdeadline; freshmaincode nowuses authorised90000timeout."
+    "evidence": "SharedPR1244 frozen2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 includes actual reviewedprototype6c9 history/all9MATfiles plus authenticated2JSONprovenance deltas; canonical default envelope/roofedge/warmgrid/portal generationchecks pass with exactcfacc input, unchanged engineering/limits and11SVGs. Independent High bounded review PASS. PR1243 is historical source, not current association.",
+    "next": "Hold frozen sharedPR1244 for root failed-validation retry, freshcanonicalpreflight and expected-head merge. Preserve sourcePR1243 until actual merged ancestry proof; after verified integration perform directed closeout/continuation.",
+    "blocker": "MATENV remains OPEN: no whole-envelope or material/site/physical admission; listedstandardsize notlivestock, q550airreturn still needs primary-frame collars, actualreceiving/contact/DPC/shear/creep/thermal/air/ceiling/temporaryrain joins remain internal exits."
   },
-  "branch": "work/mat-envelope-joins-20261102",
+  "branch": "work/zerg5-house-integration-20261102",
   "predecessor": {
     "leaseId": "2c09ac4d-dc3b-4197-bd82-b17b4097ecb0",
     "generation": 15,
@@ -39,5 +39,5 @@
       "blocker": "MAT-ENVELOPE open; ordinaryroofcrop doesnotcomplete200overhang/weatheredge7006.738 or namedinternaljoins. No groundselection or wholematerial/sitepass."
     }
   },
-  "pr": 1243
+  "pr": 1244
 }
