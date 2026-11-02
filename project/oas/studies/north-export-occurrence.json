@@ -8,7 +8,7 @@
     "proposedReserve": 17.296854093923685,
     "status": "Requirement/negative comparison only; no IASsource edit, adoption or inherited PASS."
   },
-  "status": "95 successor WIP: staggeredhandles East1350/West1250, 397.5 sash bodies, full stay not modeled. WIP conditional actual-occurrence candidate. Modeled local profile/ordinary and leaf shape checks only; no product/temporaryequipment/fullrenewal/export PASS.",
+  "status": "95 successor WIP: staggered handles, 397.5 sash bodies and idealised retained stay envelope. Local proxy checks only; actual stay mount and release, complete equipment and renewal are not proved. No product or export PASS.",
   "source": {
     "base": "e93c643d36dfb0ee72a2bd2035899dfc5cc94f74",
     "hadBlob": "25faad2c4d40df2b7da7212f73808843a88d2f52",
@@ -78,7 +78,7 @@
     },
     "controlledAngle": 80,
     "massMaximumKg": 45,
-    "hingeRelease": "Two lift-off hinge pairs;60 axial minimum, use260 supported lift. Captive anti-lift restraint/service release at freeedge controlu380/n100/Z1300; actual linkage/complete mechanism must match, no manual upperhinge task is invented; no inaccessible upper pin is silently omitted. Actual matched mechanism/capacity/security/force remains unqualified."
+    "hingeRelease": "Candidate lift-off hinge pairs, 60 axial allocation and 260 supported lift. Positive closed-state restraint and accessible release are required; no mechanism or linkage is specified or qualified. Real matched hinge, pin retention, access, capacity and force require proof."
   },
   "guard": {
     "outsideX": [
@@ -158,7 +158,7 @@
       "OpenEast80 thenWest80 under retained full grille; stays capture actual leaves.",
       "Assemble internal Lbarrier with permanent grille STILL providing fall protection. Insert40struts at1550/2050 through88grille gaps; positive roomside latches and independentground support verified before grille release.",
       "Capture whole exteriorgrille. Qualified external worker reaches capturedM12/socket controls; no platformcrane or raisedexit. Release allfixings while glazingopen behind qualified temporarybarrier; withdraw wholeguard outward, to exterior support and restrainedrack.",
-      "Partial model only: wholeleaf/handle/capture lift260, centre, tilt45 upperedgeSOUTH, lower360 and export. Complete suppliedstay release and removal remain unmodeled; no firstrelease PASS.",
+      "Partial model only: wholeleaf/handle/capture and idealised folded-stay envelope lift260, centre, tilt45 upperedgeSOUTH, lower360 and export. Frame-end screw release, folding, retention, actual matched stay and other leaf are not modeled; no firstrelease PASS.",
       "Keep qualified temporarybarrier/support and weather isolation for complete frame release and outward fullframe withdrawal; reverse capturedstates for replacement, seals/closure/tests and fullguard reinstatement before removing struts/barrier."
     ],
     "barrierFixtureNominal": 10.5,
@@ -276,90 +276,110 @@
       "phase": "supported lift260; complete folded stay to887",
       "solidLower": 28.455767409633836,
       "operatorLower": 519.599949603651,
+      "otherLeafLower": 591.7024168142361,
+      "otherLeafScope": "1001 poses, opposite open leaf fixed at 80 degrees with declared capture boxes; translation half-step <=2 mm, tilt <=1 mm. Complete rig/tools omitted.",
       "governor": "barrierwestreturn",
       "frameLower": null,
-      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+      "method": "1001 leaf+handle+idealised stay envelope box poses; SAT separation + clipped-wall aperture. Opposite leaf is held at 80 degrees in a separate diagnostic; complete capture/tools are omitted. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": -1,
       "phase": "centreX1800/200S over retained low struts",
       "solidLower": 25,
       "operatorLower": 420.7024771661248,
+      "otherLeafLower": 266.49720288572735,
+      "otherLeafScope": "1001 poses, opposite open leaf fixed at 80 degrees with declared capture boxes; translation half-step <=2 mm, tilt <=1 mm. Complete rig/tools omitted.",
       "governor": "retainedstrut0",
       "frameLower": null,
-      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+      "method": "1001 leaf+handle+idealised stay envelope box poses; SAT separation + clipped-wall aperture. Opposite leaf is held at 80 degrees in a separate diagnostic; complete capture/tools are omitted. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": -1,
       "phase": "captured45 tilt; upper edge moves SOUTH",
       "solidLower": 41.730335442499836,
       "operatorLower": 334.94319209833134,
+      "otherLeafLower": 236.37380888536018,
+      "otherLeafScope": "1001 poses, opposite open leaf fixed at 80 degrees with declared capture boxes; translation half-step <=2 mm, tilt <=1 mm. Complete rig/tools omitted.",
       "governor": "barriercross",
       "frameLower": 285.13436179149335,
-      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+      "method": "1001 leaf+handle+idealised stay envelope box poses; SAT separation + clipped-wall aperture. Opposite leaf is held at 80 degrees in a separate diagnostic; complete capture/tools are omitted. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": -1,
       "phase": "lower360 within protected geometry",
       "solidLower": 160.855910110992,
       "operatorLower": 333.94319209833134,
+      "otherLeafLower": 235.3738088853604,
+      "otherLeafScope": "1001 poses, opposite open leaf fixed at 80 degrees with declared capture boxes; translation half-step <=2 mm, tilt <=1 mm. Complete rig/tools omitted.",
       "governor": "retainedstrut0",
       "frameLower": 8.25361973462941,
-      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+      "method": "1001 leaf+handle+idealised stay envelope box poses; SAT separation + clipped-wall aperture. Opposite leaf is held at 80 degrees in a separate diagnostic; complete capture/tools are omitted. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": -1,
       "phase": "north through frame to exterior support",
       "solidLower": 160.855910110992,
       "operatorLower": 333.94319209833134,
+      "otherLeafLower": 235.3738088853604,
+      "otherLeafScope": "1001 poses, opposite open leaf fixed at 80 degrees with declared capture boxes; translation half-step <=2 mm, tilt <=1 mm. Complete rig/tools omitted.",
       "governor": "retainedstrut0",
       "frameLower": 8.25361973462941,
-      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+      "method": "1001 leaf+handle+idealised stay envelope box poses; SAT separation + clipped-wall aperture. Opposite leaf is held at 80 degrees in a separate diagnostic; complete capture/tools are omitted. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": 1,
       "phase": "supported lift260; complete folded stay to887",
       "solidLower": 29.430616787029066,
       "operatorLower": 296.09800387131634,
+      "otherLeafLower": 591.7024168142361,
+      "otherLeafScope": "1001 poses, opposite open leaf fixed at 80 degrees with declared capture boxes; translation half-step <=2 mm, tilt <=1 mm. Complete rig/tools omitted.",
       "governor": "retainedstrut1",
       "frameLower": null,
-      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+      "method": "1001 leaf+handle+idealised stay envelope box poses; SAT separation + clipped-wall aperture. Opposite leaf is held at 80 degrees in a separate diagnostic; complete capture/tools are omitted. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": 1,
       "phase": "centreX1800/200S over retained low struts",
       "solidLower": 25,
       "operatorLower": 294.50727332912777,
+      "otherLeafLower": 266.49720288572667,
+      "otherLeafScope": "1001 poses, opposite open leaf fixed at 80 degrees with declared capture boxes; translation half-step <=2 mm, tilt <=1 mm. Complete rig/tools omitted.",
       "governor": "retainedstrut1",
       "frameLower": null,
-      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+      "method": "1001 leaf+handle+idealised stay envelope box poses; SAT separation + clipped-wall aperture. Opposite leaf is held at 80 degrees in a separate diagnostic; complete capture/tools are omitted. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": 1,
       "phase": "captured45 tilt; upper edge moves SOUTH",
       "solidLower": 41.730335442499836,
       "operatorLower": 334.9431920983311,
+      "otherLeafLower": 236.3738088853604,
+      "otherLeafScope": "1001 poses, opposite open leaf fixed at 80 degrees with declared capture boxes; translation half-step <=2 mm, tilt <=1 mm. Complete rig/tools omitted.",
       "governor": "barriercross",
       "frameLower": 285.13436179149335,
-      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+      "method": "1001 leaf+handle+idealised stay envelope box poses; SAT separation + clipped-wall aperture. Opposite leaf is held at 80 degrees in a separate diagnostic; complete capture/tools are omitted. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": 1,
       "phase": "lower360 within protected geometry",
       "solidLower": 163.94319209833156,
       "operatorLower": 333.9431920983311,
+      "otherLeafLower": 235.3738088853604,
+      "otherLeafScope": "1001 poses, opposite open leaf fixed at 80 degrees with declared capture boxes; translation half-step <=2 mm, tilt <=1 mm. Complete rig/tools omitted.",
       "governor": "retainedstrut0",
       "frameLower": 8.25361973462941,
-      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+      "method": "1001 leaf+handle+idealised stay envelope box poses; SAT separation + clipped-wall aperture. Opposite leaf is held at 80 degrees in a separate diagnostic; complete capture/tools are omitted. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": 1,
       "phase": "north through frame to exterior support",
       "solidLower": 163.94319209833156,
       "operatorLower": 333.9431920983311,
+      "otherLeafLower": 235.3738088853604,
+      "otherLeafScope": "1001 poses, opposite open leaf fixed at 80 degrees with declared capture boxes; translation half-step <=2 mm, tilt <=1 mm. Complete rig/tools omitted.",
       "governor": "retainedstrut0",
       "frameLower": 8.25361973462941,
-      "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
+      "method": "1001 leaf+handle+idealised stay envelope box poses; SAT separation + clipped-wall aperture. Opposite leaf is held at 80 degrees in a separate diagnostic; complete capture/tools are omitted. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     }
   ],
   "purge": {
