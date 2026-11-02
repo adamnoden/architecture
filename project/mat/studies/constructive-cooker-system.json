@@ -192,6 +192,7 @@
     "failClosedSpringReturnAtMinus20To50S": "<20",
     "motorPositionFeedbackAccuracyPercent": 5,
     "bladeSeal": "EPDM rubber; unapproved material residue",
+    "continuousRegulationHold": "Underlying DTU manufacturer sheet describes blade regulation at rare occasions. A 2–10 V actuator option does not establish frequent closed-loop pressure duty; require explicit OEM lifecycle/duty-cycle approval or reject this RUN family.",
     "casingAndActuatorEnvelope": "Design 3 drawing calls out 230,140,105mm about mounted actuator; complete spatial orientation, connectors, insulation, tool and support still need OEM dimensional drawing and assembly.",
     "performance": "No evidenced full-open pressure loss, screen free area or capture margin at required81.550L/s/4.5Pa; the authored K2 screen cannot be assigned to this damper."
   },
@@ -273,9 +274,9 @@
   "controlSequence": [
     "IDLE: manually operated hood OFF, makeup spring CLOSED; background fans remain independent.",
     "PRE-ARM: separate user action requests makeup OPEN while hood stays manually OFF. SF24A-SR needs up to150s per90°; do not assert old5s proof. Show READY only after independently set full-open auxiliary switch and feedback/pressure agreement.",
-    "RUN: user manually starts hood after READY. Pressure loop modulates damper, preserving all factory hood speeds; full-open switch is not a continuous RUN requirement. Verify pressure, independent position feedback and actual hood current/capture.",
+    "RUN (unqualified): user manually starts hood after READY. A proposed pressure loop would frequently reposition the damper, preserving all factory hood speeds; full-open switch is not a continuous RUN requirement. DTU source only allows regulation on rare occasions, so OEM duty-cycle suitability must be proved or this family rejected. Verify pressure, independent position feedback and actual hood current/capture.",
     "FAULT: on loss of position, low supply, adverse wind/fouling or sensor/controller power fault, latch alarm and qualified protective hood power inhibition/trip with manual reset; no automatic hood ON. Actual OEM electrical permission and safe terminal behavior remain gates.",
     "STOP: user manually stops hood, current/airflow proves OFF, then makeup spring closes. On common power loss the hood also de-energises; do not treat spring travel as immediate if separately powered hood continues."
   ],
-  "limits": "No installed pressure curve, wind/fouling capacity, OEM hood power interruption approval, classified transfer/fan/capture commissioning, support/rebar/weather/thermal/acoustic/fire detail, actor/tool/cold-store-height/first-release proof, complete material admission or heat plant/emitter network selection. Baseline allocation is one explicit ledger, not measured room heat loss."
+  "limits": "No installed pressure curve, wind/fouling capacity, OEM frequent-modulation duty cycle, hood power interruption approval, classified transfer/fan/capture commissioning, support/rebar/weather/thermal/acoustic/fire detail, actor/tool/cold-store-height/first-release proof, complete material admission or heat plant/emitter network selection. Baseline allocation is one explicit ledger, not measured room heat loss."
 }
