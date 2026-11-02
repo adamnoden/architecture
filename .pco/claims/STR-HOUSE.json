@@ -9,8 +9,8 @@
     "label": "zerg-structure-corner"
   },
   "claimedAt": "2026-11-02T10:56:48.149Z",
-  "heartbeatAt": "2026-11-02T11:27:13.755Z",
-  "expiresAt": "2026-11-02T12:12:13.755Z",
+  "heartbeatAt": "2026-11-02T11:29:05.536Z",
+  "expiresAt": "2026-11-02T12:14:05.536Z",
   "branch": "work/zerg-str-sw-corner-20261102",
   "predecessor": {
     "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
@@ -36,8 +36,8 @@
   },
   "pr": 1269,
   "checkpoint": {
-    "evidence": "Draft PR #1269 head a85f3b8bf7dd23485bc9c1efd78cf6a7e3d93b7b tree 0b5888cda405abd42ff0edabf9b3b44c5032d895; finite SW hip, jacks, eave rings and signed partial action; source reproducers and rendered diagrams",
-    "next": "Independent structural review, reconcile current main and MAT generator pins, then exact-head CI/preflight",
-    "blocker": "Full corner roof, inner valley, actual joints, anchors, DPC/thermal crossing, diaphragm and site support remain open"
+    "evidence": "Draft PR #1269 head 83cce4850fb6fe08bdc2421d63f8973ee9a238aa tree 03a668b652e73eed90dd1b525974e46188398ae5; finite SW hip/jacks/ring/cap, current main e93c true parent, reproducers pass",
+    "next": "Develop remaining corner load and joint geometry; reconcile MAT source, obtain independent review and CI before preflight",
+    "blocker": "Full corner, inner valley, fasteners, anchors, sealing, diaphragm and site supports remain open"
   }
 }
