@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 17,
-  "state": "released",
-  "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
+  "generation": 18,
+  "state": "claimed",
+  "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg7-envelope-recovery"
+    "label": "zerg7-envelope-thermal"
   },
-  "claimedAt": "2026-11-02T07:20:02.264Z",
-  "heartbeatAt": "2026-11-02T07:35:49.187Z",
-  "expiresAt": "2026-11-02T07:35:49.187Z",
-  "branch": "work/zerg7-envelope-air-joins",
+  "claimedAt": "2026-11-02T07:37:31.007Z",
+  "heartbeatAt": "2026-11-02T07:37:31.007Z",
+  "expiresAt": "2026-11-02T08:22:31.007Z",
+  "branch": "work/zerg7-envelope-thermal-screen",
   "predecessor": {
-    "leaseId": "fc6a0e5c-bc22-43ab-988d-e5f49df36802",
-    "generation": 16,
-    "branch": "work/zerg5-house-integration-20261102",
-    "pr": 1244,
+    "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
+    "generation": 17,
+    "branch": "work/zerg7-envelope-air-joins",
+    "pr": 1246,
     "checkpoint": {
-      "evidence": "SharedPR1244 frozen2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 includes actual reviewedprototype6c9 history/all9MATfiles plus authenticated2JSONprovenance deltas; canonical default envelope/roofedge/warmgrid/portal generationchecks pass with exactcfacc input, unchanged engineering/limits and11SVGs. Independent High bounded review PASS. PR1243 is historical source, not current association.",
-      "next": "Hold frozen sharedPR1244 for root failed-validation retry, freshcanonicalpreflight and expected-head merge. Preserve sourcePR1243 until actual merged ancestry proof; after verified integration perform directed closeout/continuation.",
-      "blocker": "MATENV remains OPEN: no whole-envelope or material/site/physical admission; listedstandardsize notlivestock, q550airreturn still needs primary-frame collars, actualreceiving/contact/DPC/shear/creep/thermal/air/ceiling/temporaryrain joins remain internal exits."
+      "evidence": "PR #1246 head e09075b75ba0917fa2f595011fb36a15a7a064d8, four remote blobs equal local commit e9763607; q550 primary-frame saddle/AVCL collars source-bound. Generator --check and warm-grid --check pass; rendered A3 inspected.",
+      "next": "Root to inspect exact-head CI and current main, run fresh canonical merge-check against PR #1246 head, merge if earned, release lease. MAT-ENVELOPE six exits stay open.",
+      "blocker": "Structural frame weld/end closure, post and breather collars, movement, joined moisture/thermal and classified ceiling96 perimeter remain open; no whole assembly or material/site/physical admission."
     }
   },
   "recoverySource": {
-    "leaseId": "fc6a0e5c-bc22-43ab-988d-e5f49df36802",
-    "generation": 16,
-    "branch": "work/zerg5-house-integration-20261102",
-    "pr": 1244,
+    "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
+    "generation": 17,
+    "branch": "work/zerg7-envelope-air-joins",
+    "pr": 1246,
     "checkpoint": {
-      "evidence": "SharedPR1244 frozen2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 includes actual reviewedprototype6c9 history/all9MATfiles plus authenticated2JSONprovenance deltas; canonical default envelope/roofedge/warmgrid/portal generationchecks pass with exactcfacc input, unchanged engineering/limits and11SVGs. Independent High bounded review PASS. PR1243 is historical source, not current association.",
-      "next": "Hold frozen sharedPR1244 for root failed-validation retry, freshcanonicalpreflight and expected-head merge. Preserve sourcePR1243 until actual merged ancestry proof; after verified integration perform directed closeout/continuation.",
-      "blocker": "MATENV remains OPEN: no whole-envelope or material/site/physical admission; listedstandardsize notlivestock, q550airreturn still needs primary-frame collars, actualreceiving/contact/DPC/shear/creep/thermal/air/ceiling/temporaryrain joins remain internal exits."
+      "evidence": "PR #1246 head e09075b75ba0917fa2f595011fb36a15a7a064d8, four remote blobs equal local commit e9763607; q550 primary-frame saddle/AVCL collars source-bound. Generator --check and warm-grid --check pass; rendered A3 inspected.",
+      "next": "Root to inspect exact-head CI and current main, run fresh canonical merge-check against PR #1246 head, merge if earned, release lease. MAT-ENVELOPE six exits stay open.",
+      "blocker": "Structural frame weld/end closure, post and breather collars, movement, joined moisture/thermal and classified ceiling96 perimeter remain open; no whole assembly or material/site/physical admission."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1246 head e09075b75ba0917fa2f595011fb36a15a7a064d8, four remote blobs equal local commit e9763607; q550 primary-frame saddle/AVCL collars source-bound. Generator --check and warm-grid --check pass; rendered A3 inspected.",
-    "next": "Root to inspect exact-head CI and current main, run fresh canonical merge-check against PR #1246 head, merge if earned, release lease. MAT-ENVELOPE six exits stay open.",
-    "blocker": "Structural frame weld/end closure, post and breather collars, movement, joined moisture/thermal and classified ceiling96 perimeter remain open; no whole assembly or material/site/physical admission."
-  },
-  "pr": 1246,
-  "releasedAt": "2026-11-02T07:35:49.187Z",
-  "releaseReason": "handoff"
+  }
 }
