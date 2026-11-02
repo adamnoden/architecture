@@ -9,12 +9,12 @@
     "label": "zerg6-structure-joins"
   },
   "claimedAt": "2026-11-02T01:34:34.434Z",
-  "heartbeatAt": "2026-11-02T01:34:34.434Z",
-  "expiresAt": "2026-11-02T02:19:34.434Z",
+  "heartbeatAt": "2026-11-02T02:06:36.429Z",
+  "expiresAt": "2026-11-02T02:51:36.429Z",
   "checkpoint": {
-    "evidence": "DIRECTED CONNECTOR-ONLY normal reacquisition after STR13 fully expired; three canonical CLI attempts failed before any mutation. Recovery is predecessor output fc43581f9fb22fa045c346d78ae3499148ba190c/tree26dbd172098f0eba84d0d7965207a46e148cc6d3 on preserved branchwork/zerg5-structure-joins, not new-generation output. Currentmain0bba policy and exact old runtime86ab77a3 read; node structurally claimable.",
-    "next": "Recover predecessor checkpoint onto new branch with truthful currentmain ancestry; continue actual stair/roof/lateral/arch/service/heavywall and foundation concept within assigned STR-HOUSE scope.",
-    "blocker": "No structural/geometry adoption or full-joint pass. Connector-only acquisition is not CLI/dispatcher success; PCO bootstrap blocks undirected acquisitions."
+    "evidence": "STR14 true recovery merge bac057d663e6f199b03e371c79b5eb42035b33ec tree15754ccd077b564af30e41c31ad49165f36afb88 parents0bba+predecessorfc435; predecessor output remains explicit. Current170/390/250patch receiving checkpoint source preserved; incoming waist/landing/header paths locally in development, not validated or accepted",
+    "next": "Complete actual incoming bar clearance/cover and header/landing laps, then q450roof/corners/lateral/receivingconcept. Use repairedcanonicalCLI with90000msdeadline fromfreshmainffbe; no new acquisition",
+    "blocker": "Fulljoints/guard/corner/lateral/thermalinterface remain unearned; oldnodefailure retained without finalpilefabrication exit"
   },
   "branch": "work/zerg6-structure-joins",
   "predecessor": {
