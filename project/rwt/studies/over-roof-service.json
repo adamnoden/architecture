@@ -29,6 +29,22 @@
     "sourceHouseRidgeZmm": 8090.903773579372,
     "assumedRidgeGapMm": 1209.0962264206282
   },
+  "egressReservation": {
+    "sourceFrontDoorCentreXmm": 6000,
+    "sourceRoughWidthMm": 1800,
+    "candidateCorridorXmm": [
+      5000,
+      7000
+    ],
+    "candidateCorridorYmm": [
+      -2995,
+      0
+    ],
+    "nominalGatePlaneYmm": -2995,
+    "idealEqualLeafWidthMm": 1000,
+    "idealOutwardSweepLimitYmm": -3995,
+    "status": "Reservation only: no door, latch, first-motion, grading, fire or safe-destination proof"
+  },
   "scaffoldAxisTrial": {
     "sourceStructuralSpanMm": 13400,
     "frameWidthMm": 730,
