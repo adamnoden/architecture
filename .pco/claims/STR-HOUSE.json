@@ -1,42 +1,40 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 13,
+  "generation": 14,
   "state": "claimed",
-  "leaseId": "caf5d89b-0be5-4712-855b-f59b6688b48d",
+  "leaseId": "409bfbc6-b56e-42c1-8494-2512b4b56a91",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg5-structure-joins"
+    "label": "zerg6-structure-joins"
   },
-  "claimedAt": "2026-11-02T00:45:28.072Z",
-  "heartbeatAt": "2026-11-02T00:45:28.072Z",
-  "expiresAt": "2026-11-02T01:30:28.072Z",
+  "claimedAt": "2026-11-02T01:34:34.434Z",
+  "heartbeatAt": "2026-11-02T01:34:34.434Z",
+  "expiresAt": "2026-11-02T02:19:34.434Z",
   "checkpoint": {
-    "evidence": "PR1238 merged verified main6a3c15d6 exacttreef1bbb8d4; gen12 released/readback5837273b; fresh structural continuation from merged main",
-    "next": "Join roof corner/collector/lateral/archanchorage and actual170waist390beam/guards, entrance/service/heavywall paths and foundation concept with HAD/ENV",
-    "blocker": "STR-HOUSE incomplete; no qualified roofcorner/joint, no selected170stair or thermalreceiving interface; rejected400node retained without finalfabrication exit gate"
+    "evidence": "DIRECTED CONNECTOR-ONLY normal reacquisition after STR13 fully expired; three canonical CLI attempts failed before any mutation. Recovery is predecessor output fc43581f9fb22fa045c346d78ae3499148ba190c/tree26dbd172098f0eba84d0d7965207a46e148cc6d3 on preserved branchwork/zerg5-structure-joins, not new-generation output. Currentmain0bba policy and exact old runtime86ab77a3 read; node structurally claimable.",
+    "next": "Recover predecessor checkpoint onto new branch with truthful currentmain ancestry; continue actual stair/roof/lateral/arch/service/heavywall and foundation concept within assigned STR-HOUSE scope.",
+    "blocker": "No structural/geometry adoption or full-joint pass. Connector-only acquisition is not CLI/dispatcher success; PCO bootstrap blocks undirected acquisitions."
   },
-  "branch": "work/zerg5-structure-joins",
+  "branch": "work/zerg6-structure-joins",
   "predecessor": {
-    "leaseId": "55aa5d86-6d9f-4bed-820a-5f08388eb0f1",
-    "generation": 12,
-    "branch": "work/zerg4-structure-roof",
-    "pr": 1238,
+    "leaseId": "caf5d89b-0be5-4712-855b-f59b6688b48d",
+    "generation": 13,
+    "branch": "work/zerg5-structure-joins",
     "checkpoint": {
-      "evidence": "PR1238 correctedhead9867b1994533f0d0f3114919225aa89b50eb2f1a treef1bbb8d46de9c01dbf80788f8c9221670786dd87 exactnative85ada463; collectorownweight true1300bearing reactions conserveN/M; coherentbothpieractions; Python--check/diffcheck and actualupdatedrenderPASS; latestmainf462ancestryverified",
-      "next": "Focused independent delta review and root exactheadCI/preflight; freeze source while reviewing",
-      "blocker": "STR-HOUSE remains incomplete; unchanged cornerjack/collectorbearing/lateral/pierhead/roofjoint/service/entrance and foundationconcept conditions, known400node rejected"
+      "evidence": "PR1238 merged verified main6a3c15d6 exacttreef1bbb8d4; gen12 released/readback5837273b; fresh structural continuation from merged main",
+      "next": "Join roof corner/collector/lateral/archanchorage and actual170waist390beam/guards, entrance/service/heavywall paths and foundation concept with HAD/ENV",
+      "blocker": "STR-HOUSE incomplete; no qualified roofcorner/joint, no selected170stair or thermalreceiving interface; rejected400node retained without finalfabrication exit gate"
     }
   },
   "recoverySource": {
-    "leaseId": "55aa5d86-6d9f-4bed-820a-5f08388eb0f1",
-    "generation": 12,
-    "branch": "work/zerg4-structure-roof",
-    "pr": 1238,
+    "leaseId": "caf5d89b-0be5-4712-855b-f59b6688b48d",
+    "generation": 13,
+    "branch": "work/zerg5-structure-joins",
     "checkpoint": {
-      "evidence": "PR1238 correctedhead9867b1994533f0d0f3114919225aa89b50eb2f1a treef1bbb8d46de9c01dbf80788f8c9221670786dd87 exactnative85ada463; collectorownweight true1300bearing reactions conserveN/M; coherentbothpieractions; Python--check/diffcheck and actualupdatedrenderPASS; latestmainf462ancestryverified",
-      "next": "Focused independent delta review and root exactheadCI/preflight; freeze source while reviewing",
-      "blocker": "STR-HOUSE remains incomplete; unchanged cornerjack/collectorbearing/lateral/pierhead/roofjoint/service/entrance and foundationconcept conditions, known400node rejected"
+      "evidence": "PR1238 merged verified main6a3c15d6 exacttreef1bbb8d4; gen12 released/readback5837273b; fresh structural continuation from merged main",
+      "next": "Join roof corner/collector/lateral/archanchorage and actual170waist390beam/guards, entrance/service/heavywall paths and foundation concept with HAD/ENV",
+      "blocker": "STR-HOUSE incomplete; no qualified roofcorner/joint, no selected170stair or thermalreceiving interface; rejected400node retained without finalfabrication exit gate"
     }
   }
 }
