@@ -9,14 +9,14 @@
     "label": "zerg-structure-physical-join"
   },
   "claimedAt": "2026-11-02T08:48:47.553Z",
-  "heartbeatAt": "2026-11-02T09:06:59.929Z",
-  "expiresAt": "2026-11-02T09:51:59.929Z",
+  "heartbeatAt": "2026-11-02T09:42:56.829Z",
+  "expiresAt": "2026-11-02T10:27:56.829Z",
   "checkpoint": {
-    "evidence": "Draft PR #1256 head 606a690c27b18df3d04ff25d3c78e62448ca66d7 tree b924027d2979f5e78a2296859a0010ac0164eb1b exact parent main50a; inner-axis slab and southwest collector source checks pass; bounded review pending",
-    "next": "Independent review and source remedy if needed; root integrates exact tree through CI and fresh preflight, then verify merge before handoff",
-    "blocker": "Physical connection, actual wall masses, warm/cold shear/tension, site foundation admission and final cage remain open"
+    "evidence": "Shared draft PR #1260 head 158ec3f23e23472065872fd9eda8c402dd3eeedf tree 6ee1c5a36e2b350d644b1e447d9ea5fd729aa94f includes reviewed STR source606a/treeb924 exactly with true parentage; bounded independent PASS and source checks",
+    "next": "Root observes exact-head CI and fresh canonical publication preflights, then expected-head merge if earned; STR releases only after provider-verified merged result",
+    "blocker": "Physical warm/cold shear/tension, roof-wall-corner combined nodes, actual wall/diaphragm/site foundation and final cage remain open; no STR-HOUSE or STR-RECONCILE pass"
   },
-  "branch": "work/str-house-physical-slab-foundation-20261102",
+  "branch": "work/zerg-recovery-slab-network",
   "predecessor": {
     "leaseId": "8aa8586f-26ce-4d85-b055-6a74ad5121f9",
     "generation": 16,
@@ -39,5 +39,5 @@
       "blocker": "STR-HOUSE remains planned: physical slab, corner members, lateral distribution and warm/cold/node capacities still open"
     }
   },
-  "pr": 1256
+  "pr": 1260
 }
