@@ -1,5 +1,8 @@
 # RWT-06 — split temporary receiver: corner and middle movement trial
 
+**Correction, 2 November 2026:** The historical 170 mm A drop below checks body-to-body clearance only. The adjacent installed 30 mm carrier projects below that body: a moving +6570 top overlaps its +6560 underside by 10 during p-shift. Do not use the historical 170 mm sequence or its positive neighbour check as a complete envelope result. The [source-pinned 200 mm challenger](rwt-06-integrated-access-first-motion.md) records the correction; it remains unadmitted.
+
+
 **2 November 2026. Constructive nominal geometry, not an operating method or RWT-06 closeout.** The [one-piece rejection](rwt-06-live-receiver-renewal.md) remains valid. Its 400-out movement still intercepted the east and west roof drips after its return left A. This successor divides B into a middle and two independently drained corners, so the middle can move first and each corner can move diagonally toward the court. The [source-bound model](studies/live-receiver-split.mjs), [ledger](studies/live-receiver-split.json) and [plan](studies/live-receiver-split.svg) test selected nominal relationships, not the entire apparatus. The coordinated HAD `courtSouth` projection is Git blob `eb70d77ee57571088c4a73caa076681dc00590cd`, from unmerged PR #1267 at `6a889aa7b26b0a10719a915972f0204047becf88`. The generator reads and authenticates the actual checked-out projection and fails on an older or changed blob; integration must bring the matching projection into main and revalidate. Other selected roof values and the conserved event remain those of the preceding study.
 
 ## Located pieces and capture

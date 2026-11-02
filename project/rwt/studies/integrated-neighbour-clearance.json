@@ -1,0 +1,67 @@
+{
+  "status": "Revised unadmitted 200-drop geometry; no whole-system or operating pass",
+  "source": {
+    "path": "project/rwt/studies/live-receiver-renewal.json",
+    "blob": "8757f546db1d4db76d71aaf084b1f24a1c2f1417"
+  },
+  "old": {
+    "drop": 170,
+    "movingTop": 6570,
+    "neighbourCarrierUnder": 6560,
+    "bodyOnlyGap": 20,
+    "carrierOverlap": 10,
+    "firstNeighbourCarrierEntryShift": 10.714285714285325,
+    "firstModuleRequiredShiftToBay": 954.2857142857138,
+    "scope": "At 170, the body-only 20 mm gap ignored the adjacent 30 mm deep carrier. With the specified overlapping 350 mm y envelopes and crossing in p, 10 mm vertical overlap rejects the 170 p-shift."
+  },
+  "trial": {
+    "drop": 200,
+    "movingEnvelope": [
+      6360,
+      6540
+    ],
+    "neighbourCarrierUnder": 6560,
+    "fieldTop": 6310,
+    "lipTop": 6350,
+    "frontCrest": 6320,
+    "collectorBottom": 6260,
+    "collectorCrest": 6330,
+    "lowFloor": [
+      6280,
+      5830
+    ],
+    "upperFloor": [
+      6332,
+      5882
+    ],
+    "upperWall": 6382,
+    "returnCrest": 6320,
+    "shaftTop": 6500,
+    "upperLipAtGuard": 6382,
+    "highTransfer": [
+      7690,
+      7870
+    ],
+    "scope": "All previous 170-drop z coordinates and their diagrams are historical. This 200-drop set is a geometric adjustment; actual members, support, weather and handling remain to be designed."
+  },
+  "checks": {
+    "neighbourCarrierClearance": 20,
+    "upperGuardClearance": 76,
+    "lowerGuardClearance": 146,
+    "fieldAboveMidrail": 96,
+    "fieldLipToCarrier": 10,
+    "upperReturnIdealHead": 34.93094903627288,
+    "upperReturnIdealFree": 27.069050963727022,
+    "shaftAboveIdealReturn": 145.06905096372702,
+    "lowerToolGuardGap": 155.2307692307695,
+    "installedToolGuardGap": 41.384615384615245,
+    "lowerToolGuardZ": 6384.2307692307695,
+    "installedToolGuardZ": 6559.615384615385
+  },
+  "limits": [
+    "The old source generator measured against the neighbouring body bottom, not its attached carrier. Its historical check is not a whole-envelope clearance pass.",
+    "The 200 drop gives only 20 nominal to neighbour carrier and 10 to the proposed field lip. Tolerances, real lip thickness, skew, deflection, adjacent support and ball assembly must be checked.",
+    "The inlet field, collector and dual conduit are specified 30 lower in this numerical challenger; their actual supports, transitions, collars and connections have not been redrawn or designed. Hydraulics, pressurised caps, source side-drip, clearing, site backwater and common shaft blockage remain unproved.",
+    "The full high-lift, roof/guard/worker/escape sequence, actual manufacturer radius, fit, load and product instructions still require a joined proof."
+  ]
+}
