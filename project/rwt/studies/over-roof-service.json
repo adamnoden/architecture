@@ -66,6 +66,14 @@
       7650
     ],
     "numberOfModules": 7,
+    "minimumEyeAboveDeckMm": 1445,
+    "minimumBeamTopAboveDeckMm": 1776,
+    "minimumRollerTopAboveDeckMm": 1856,
+    "rollerTopAtDeck5540Mm": 7396,
+    "maxDeckWithRollerBelowSecondaryMm": 5057.88660674044,
+    "maxEyeWithRollerBelowSecondaryMm": 6502.88660674044,
+    "receiverLoweredTopMm": 6540,
+    "eyeGapUnderDripMm": -37.113393259560326,
     "firstAndLastCentreMm": [
       4585.714285714285,
       7414.285714285715
