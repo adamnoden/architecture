@@ -9,11 +9,11 @@
     "label": "zerg-oas-north-export"
   },
   "claimedAt": "2026-11-02T11:24:44.798Z",
-  "heartbeatAt": "2026-11-02T13:31:03.982Z",
-  "expiresAt": "2026-11-02T14:16:03.982Z",
+  "heartbeatAt": "2026-11-02T13:36:51.747Z",
+  "expiresAt": "2026-11-02T14:21:51.747Z",
   "checkpoint": {
-    "evidence": "Existing remote 3bff6fdb; local successor under inspection",
-    "next": "Preserve local occurrence study and develop candidate"
+    "evidence": "Remote WIP 54d843ccd5d797694d6573972d5ca4286eb8fdbf",
+    "next": "Complete stay release, barrier, frame joint and joined renewal geometry"
   },
   "branch": "work/zerg-oas-north-export-20261102"
 }
