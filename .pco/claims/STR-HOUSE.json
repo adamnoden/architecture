@@ -9,14 +9,14 @@
     "label": "zerg-structure-fallback"
   },
   "claimedAt": "2026-11-02T08:04:45.848Z",
-  "heartbeatAt": "2026-11-02T08:19:46.454Z",
-  "expiresAt": "2026-11-02T09:04:46.454Z",
+  "heartbeatAt": "2026-11-02T08:35:34.322Z",
+  "expiresAt": "2026-11-02T09:20:34.322Z",
   "checkpoint": {
-    "evidence": "Draft PR #1252 head b2f164ad4409505e5eb29ad4f2f77ac713cb85b2/tree2e8246009fd8aaad184a43789bb82806c50f92a9; new+parent reproducible checks and diff check passed; actual remote tree equals isolated local",
-    "next": "Focused STR peer review and exact-head CI; reconcile objections, then root canonical publication preflight and merge if earned",
-    "blocker": "HOUSE incomplete: physical slab/roofcorner/lateral allocation, assembled arch/collector/warm-cold node capacities and site actions unresolved"
+    "evidence": "Shared draft PR #1254 actual head fb2f1271d609dceb1554255a9cf621337a3fa9aa/treeaaed5e9f4fd8a9ed9f4c757326a54214996be114 verified; STR four files exactly equal reviewed b2f164ad, which is a true parent. Independent bounded STR review passed, no full HOUSE acceptance.",
+    "next": "Root observes exact-head CI, checks all four owner leases and fresh canonical publication preflights, then merges if earned; STR worker releases only after verified merged notice",
+    "blocker": "STR-HOUSE remains planned: physical slab, corner members, lateral distribution and warm/cold/node capacities still open"
   },
-  "branch": "work/str-house-gravity-foundation-20261102",
+  "branch": "work/zerg-recovery-engineering-integration",
   "predecessor": {
     "leaseId": "e688ca41-8539-42c2-bd4f-551257455f4d",
     "generation": 15,
@@ -39,5 +39,5 @@
       "blocker": "STR-HOUSE remains incomplete; parentroof/corner/lateral, landingEWenddevelopment and completephysicalhouse loadpaths are not admitted"
     }
   },
-  "pr": 1252
+  "pr": 1254
 }
