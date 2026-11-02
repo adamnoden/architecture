@@ -2,10 +2,24 @@
 import {mkdtempSync,readFileSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {execFileSync,spawnSync} from 'node:child_process';
+import {spawnSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
 const root=new URL('../../../',import.meta.url),path='project/mat/studies/whole-house-service-baseline.json';
 const current=readFileSync(new URL(path,root),'utf8');
-const historical=execFileSync('git',['show','9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2:'+path],{cwd:root,encoding:'utf8'});
+// Reconstruct the exact MAT9476 selected blob from the authenticated successor.
+ // The generator already proves these are the only four narrative changes.
+ // Do not use git show: CI's checkout need not contain unrelated historical objects.
+let historical=current;
+for(const [corrected,selected] of [
+ ['Separate from78L/s selected background;','Separate from65L/s background;'],
+ ['78L/s selected winterventilation is not cooling','65L/s winterventilation is not cooling']
+]){
+ if(historical.split(corrected).length-1!==2)throw Error('Historical services correction occurrence drift');
+ historical=historical.replaceAll(corrected,selected);
+}
+const historicalBytes=Buffer.from(historical,'utf8');
+const historicBlob=createHash('sha1').update('blob '+historicalBytes.length+'\0').update(historicalBytes).digest('hex');
+if(historicBlob!=='e827caa8c6c0cfc23bef0f08b3452f57984875d6')throw Error('Historical MAT9476 Git blob mismatch');
 const temp=mkdtempSync(join(tmpdir(),'had-services-auth-'));
 const runner=new URL('open-north-loggia.mjs',import.meta.url);
 function file(name,contents){const p=join(temp,name);writeFileSync(p,contents);return p}
