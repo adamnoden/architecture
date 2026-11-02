@@ -1,44 +1,38 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 26,
-  "state": "released",
-  "leaseId": "4ae96a3f-b6f6-499e-b394-3c4f932f9c67",
+  "generation": 27,
+  "state": "claimed",
+  "leaseId": "f15699e9-f59a-4e64-b2fd-99e97cd805a2",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-rwt26-live-receiver"
+    "label": "zerg-rwt27-integrated-method"
   },
-  "claimedAt": "2026-11-02T10:48:55.897Z",
-  "heartbeatAt": "2026-11-02T12:56:45.492Z",
-  "expiresAt": "2026-11-02T12:56:45.492Z",
-  "checkpoint": {
-    "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; frozen RWT26 evidence and coordinated MAT projection",
-    "next": "Integration owner reviews and validates shared exact head, preflights and merges",
-    "blocker": "Exact-head CI and integration review pending"
-  },
-  "branch": "work/zerg-corner-convergence",
-  "note": "Owner-directed RWT recovery after verified merged negative study; constructive same-section live capture, receiver removal and reversal. Root sole CI/merger.",
+  "claimedAt": "2026-11-02T12:57:48.300Z",
+  "heartbeatAt": "2026-11-02T12:57:48.300Z",
+  "expiresAt": "2026-11-02T13:42:48.300Z",
+  "branch": "work/rwt27-integrated-method-20261102",
+  "note": "Develop integrated conventional access, lifting and protected ground wet route; preserve RWT06 planned and physical gates",
   "predecessor": {
-    "leaseId": "e56ff50a-4b82-4233-94cd-4d2b792e283c",
-    "generation": 25,
-    "branch": "work/zerg-recovery-roof-export",
-    "pr": 1263,
+    "leaseId": "4ae96a3f-b6f6-499e-b394-3c4f932f9c67",
+    "generation": 26,
+    "branch": "work/zerg-corner-convergence",
+    "pr": 1273,
     "checkpoint": {
-      "evidence": "Root verified PR1263 merged as maindf410b141fb77257dcbe825de5d20287144d75ee tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; PR1258 provider merged true; CI41430725270 attempt2 all success; exact-head RWT25 publication preflight10:44:55.637Z.",
-      "next": "Release completed frozen packet25 canonically; acquire fresh directed RWT06 generation from verified main before implementing constructive live temporary receiver/reversal. RWT06 remains planned, actual method rejected and downstream holds unchanged."
+      "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; frozen RWT26 evidence and coordinated MAT projection",
+      "next": "Integration owner reviews and validates shared exact head, preflights and merges",
+      "blocker": "Exact-head CI and integration review pending"
     }
   },
   "recoverySource": {
-    "leaseId": "e56ff50a-4b82-4233-94cd-4d2b792e283c",
-    "generation": 25,
-    "branch": "work/zerg-recovery-roof-export",
-    "pr": 1263,
+    "leaseId": "4ae96a3f-b6f6-499e-b394-3c4f932f9c67",
+    "generation": 26,
+    "branch": "work/zerg-corner-convergence",
+    "pr": 1273,
     "checkpoint": {
-      "evidence": "Root verified PR1263 merged as maindf410b141fb77257dcbe825de5d20287144d75ee tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; PR1258 provider merged true; CI41430725270 attempt2 all success; exact-head RWT25 publication preflight10:44:55.637Z.",
-      "next": "Release completed frozen packet25 canonically; acquire fresh directed RWT06 generation from verified main before implementing constructive live temporary receiver/reversal. RWT06 remains planned, actual method rejected and downstream holds unchanged."
+      "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; frozen RWT26 evidence and coordinated MAT projection",
+      "next": "Integration owner reviews and validates shared exact head, preflights and merges",
+      "blocker": "Exact-head CI and integration review pending"
     }
-  },
-  "pr": 1273,
-  "releasedAt": "2026-11-02T12:56:45.492Z",
-  "releaseReason": "completed"
+  }
 }
