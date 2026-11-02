@@ -426,7 +426,7 @@
     "freefallTailToReturn": true,
     "returnStillInAAtDrainStop": true,
     "returnOverlapBeforeFirstDrip": true,
-    "noDripInBAtDrainStop": true,
+    "noSouthDripInBAtDrainStop": true,
     "completePadsOutsideInlet": true,
     "windowRawHeadBelowCarrier": true,
     "permanentPipesOutsideDoor": true,
@@ -481,7 +481,7 @@
     "scope": "Plan threshold for ideal vertical drips and nominal open edges only."
   },
   "limits": [
-    "Straight weather edge is not a physical corner/valley capture joint.",
+    "The south-only drip test fails to consider perpendicular adjacent roof edges: the source-bound corner counterexample rejects the full-edge reversal.",
     "B frame and scaffold are reserved complete envelopes, not qualified structural members.",
     "Window raw head screen is not actual sash/guard operation. The inner deck edge is suspended; its beams, bracing and uplift anchors have not been designed.",
     "Plan-view pipe holes and outboard pad clearance do not prove safe deck, transfer socket, access, egress or load paths.",
