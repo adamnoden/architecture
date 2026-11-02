@@ -40,3 +40,5 @@ The old 400 mm pile joint and low-tie/cage failures remain rejected. The 850 kN/
 ## Reproduction
 
 `python project/str/studies/physical-slab-join.py --check` checks source fingerprints, exact area and RC-volume partition, force/first-moment equilibrium at loggia, west return, header and opened-wall transfers, and the bounded member screens. Continue to run the parent STR and whole-house join reproducers. These checks establish the arithmetic and stated candidate topology, not site conditions, physical capacity or construction acceptance.
+
+The subsequent [service-spine opening join](spine-opening-joined-path.md) tests the east-strip floor action and upper wet-wall challenge together at one actual lower opening, with explicit candidate bearing and arch-thrust sensitivities. It does not select the opening head or close the whole-house path.
