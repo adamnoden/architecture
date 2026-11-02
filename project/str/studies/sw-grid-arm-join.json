@@ -4,10 +4,11 @@
       -380,
       -180
     ],
+    "conditional_pad_increment_G_kN_at_25": 0.4104999999999999,
+    "conditional_pad_increment_m3": 0.016419999999999997,
+    "conditional_projected_overlap_m3": 0.01058,
     "pad_gross_m3": 0.027,
-    "pad_increment_G_kN_at_25": 0.4104999999999999,
-    "pad_increment_relative_to_SW_L_slab_m3": 0.016419999999999997,
-    "pad_outside_SW_L_field_m2": 0.037099999999999994,
+    "pad_outside_projected_field_m2": 0.037099999999999994,
     "pad_plan_mm": [
       262.5,
       262.5,
@@ -20,9 +21,8 @@
       -280,
       -80
     ],
-    "scope": "Geometric pad/slab union only, assuming the full SW-L rectangle and homogeneous monolithic RC. It excludes overlapping warm arms or other concrete and does not prove the upstand, floor build-up, reinforcement, field/patch, construction or capacity.",
-    "slab_overlap_m2": 0.0529,
-    "slab_overlap_m3": 0.01058,
+    "projected_first_floor_overlap_m2": 0.0529,
+    "scope": "Conditional geometric union IF the ground slab locally occupies the projected FIRST-floor SW-L rectangle and is homogeneous monolithic RC. The actual ground slab plan has not been established here. Excludes overlapping warm arms or other concrete; no ground takeoff, upstand, floor build-up, reinforcement, field/patch, construction or capacity is proved.",
     "trial_pad_z_mm": [
       -380,
       -80
@@ -3323,16 +3323,17 @@
   "roof_tip_challenger": {
     "actions": {
       "down": {
-        "combined_partial_SW_kN": 24.72467900977979,
+        "combined_partial_SW_kN": 24.75508068341996,
         "combined_resultant_xy_mm": [
-          430.12574245014264,
-          411.28658621855476
+          434.4085810074074,
+          415.5925611124259
         ],
         "combined_three_node_kN": {
-          "E": 1.1288832326277378,
-          "N": 0.9654474113501579,
-          "SW": 22.630348365801893
+          "E": 1.1674720236429326,
+          "N": 1.004036202365353,
+          "SW": 22.583572457411673
         },
+        "hip_reaction_scope": "Two-support static comparison with the inherited hip far-end release; no actual seat, court hold-down or stiffness is inferred.",
         "jack_root_cantilever_M_kNm": 0.016800000000000002,
         "jack_root_south_Mx_west_My_kNm": [
           0.016800000000000002,
@@ -3348,19 +3349,22 @@
           0.10080000000000003,
           -0.10080000000000003
         ],
-        "tip_force_kN": 0.25200000000000006
+        "tip_force_kN": 0.25200000000000006,
+        "tip_hip_SW_increment_kN": 0.28240167364016744,
+        "tip_hip_court_increment_kN": -0.03040167364016737
       },
       "uplift": {
-        "combined_partial_SW_kN": -8.830242503492782,
+        "combined_partial_SW_kN": -8.841100244078556,
         "combined_resultant_xy_mm": [
-          430.12574245014264,
-          411.2865862185549
+          434.40858100740746,
+          415.592561112426
         ],
         "combined_three_node_kN": {
-          "E": -0.4031725830813349,
-          "N": -0.344802646910771,
-          "SW": -8.082267273500674
+          "E": -0.41695429415819035,
+          "N": -0.3585843579876262,
+          "SW": -8.06556159193274
         },
+        "hip_reaction_scope": "Two-support static comparison with the inherited hip far-end release; no actual seat, court hold-down or stiffness is inferred.",
         "jack_root_cantilever_M_kNm": -0.006,
         "jack_root_south_Mx_west_My_kNm": [
           -0.006,
@@ -3376,7 +3380,9 @@
           -0.036,
           0.036
         ],
-        "tip_force_kN": -0.09
+        "tip_force_kN": -0.09,
+        "tip_hip_SW_increment_kN": -0.10085774058577406,
+        "tip_hip_court_increment_kN": 0.010857740585774057
       }
     },
     "combined_centroid_xy_mm": [
@@ -3507,7 +3513,6 @@
     "project/mat/studies/warm-receiving-grid.json": "a2b15c9505ee3888ffb892aa7e5182f80f4aa5a70bd5058a915df6e3bec4de99",
     "project/str/studies/disjoint-house-actions.json": "8eb7f71f0c59362438e2a992c97ce03bce2eaeac9b6411233654501d7b887abe",
     "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
-    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
     "project/str/studies/sw-corner-cold-node.py": "aff65c2b86cef733a8fd10eaa592edb0af33d6e16fd8f13e4a1b075e8af42b08",
     "project/str/studies/sw-corner-station.json": "d3f65aa4866b0137f94a03fd3ff61089a782106c181fcfc1b16caec6c0f82d47"
   },
