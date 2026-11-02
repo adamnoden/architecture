@@ -9,8 +9,8 @@
     "label": "zerg-str-roof-route"
   },
   "claimedAt": "2026-11-02T13:47:59.018Z",
-  "heartbeatAt": "2026-11-02T13:47:59.018Z",
-  "expiresAt": "2026-11-02T14:32:59.018Z",
+  "heartbeatAt": "2026-11-02T13:54:07.277Z",
+  "expiresAt": "2026-11-02T14:39:07.277Z",
   "branch": "work/zerg-str-roof-route-20261102",
   "predecessor": {
     "leaseId": "fbc7fe0a-7e3c-46b2-93d7-cca0f1e48297",
@@ -33,5 +33,11 @@
       "next": "Independent review of arm/node/roof-tip source; coordinate MAT field and final integration",
       "blocker": "Actual slab/rebar, full roof and wall loads, arm/pile resistance, MAT field and site remain open"
     }
+  },
+  "pr": 1275,
+  "checkpoint": {
+    "evidence": "Draft PR 1275 head b84d9db4d9af55a3b3b9aff3650e28dd2fe63c59 tree debfd0967d69f6d408956ab140916eed6a81e32a: entire SW roof regional static witness and support failures",
+    "next": "Develop physically joined hip valley ridge seats and wall-head to cold-grid route; independent review",
+    "blocker": "Joints, post to ground, eave overhang, adjacent roof, lateral, envelope and site unproved"
   }
 }
