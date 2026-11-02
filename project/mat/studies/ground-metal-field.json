@@ -84,6 +84,23 @@
     "girder": "Even in MAT slab alternative, field top \u2212382 is only 2 mm below \u2212380 girder soffit; a 40 mm top-side rail cannot continue through it. End supports, welded transitions, reinforced contact and accessible sequencing are not designed.",
     "courtServiceAlternative": "The distinct joined-ground service reference starts its DPC field at \u2212380; \u2212383 lies within the upper 3 mm of that DPC band. Its W1 carrier crown \u2212378 and invert \u2212538 straddle the metal plane; a flat sheet intersects the carrier 5 mm below its crown. The independent W2 tray, air lid \u2212310..\u2212316 and seal to \u2212318 also require their own continuous, accessible transitions. This is an incompatible reference comparison, not an assertion both designs are selected."
   },
+  "movementChallenge": {
+    "trialYSeam_mm": 6000,
+    "straightSeamWallIntersections": [
+      {
+        "id": "service-spine",
+        "axisX_mm": 9300
+      },
+      {
+        "id": "protected-stair-east",
+        "axisX_mm": 2894.5
+      }
+    ],
+    "steelFree_mm_at_alpha16e6_delta20": 3.6719999999999997,
+    "concreteFree_mm_at_alpha10e6_delta20": 2.295,
+    "difference_mm": 1.3769999999999998,
+    "scope": "Illustrative uniform temperatures and free strains only; not an imposed joint movement or measured site condition. A 40 mm wide 15 mm deep folded-metal loop cannot simply pass through these walls and receivers; design continuous terminations, structural bearing, actual restraint, fatigue, gas seal, inspection and repair."
+  },
   "serviceBoxWrap": {
     "segmentLength_mm": 840,
     "boxOuterWidth_mm": 1003,
