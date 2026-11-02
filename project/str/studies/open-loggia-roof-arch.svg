@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594mm" height="420mm" viewBox="0 0 594 420">
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:3.1px}.title{font-size:4.5px;font-weight:bold}</style>
+<rect width="594" height="420" fill="#faf8f1"/>
+<text x="12" y="16" class="title">ROOF / NORTH ARCH · SOURCE-BOUND DEVELOPMENT · NO WHOLE-HOUSE OR COMPONENT RELEASE</text>
+<text x="12" y="24" class="">HAD068e33ae + MATf376a8a7 · 7100 wallline eave / 200 overhang / 500.7 NORMAL recipe · STR-HOUSE incomplete</text>
+<text x="12" y="37" class="title">A / DISJOINT ROOF LOAD REGIONS · PLAN1:100</text>
+<rect x="22.000" y="55.000" width="124.000" height="124.000" fill="#dfd5be" stroke="#345460" stroke-width=".35"/>
+<rect x="68.500" y="101.500" width="31.000" height="31.000" fill="#faf8f1" stroke="#345460" stroke-width=".35"/>
+<rect x="68.500" y="55.000" width="31.000" height="46.500" fill="#c7d9d4" stroke="#345460" stroke-width=".35"/>
+<rect x="68.500" y="132.500" width="31.000" height="46.500" fill="#c7d9d4" stroke="#345460" stroke-width=".35"/>
+<rect x="22.000" y="101.500" width="46.500" height="31.000" fill="#c7d9d4" stroke="#345460" stroke-width=".35"/>
+<rect x="99.500" y="101.500" width="46.500" height="31.000" fill="#c7d9d4" stroke="#345460" stroke-width=".35"/>
+<rect x="66.775" y="95.175" width="2.000" height="2.000" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="66.775" y="59.325" width="2.000" height="2.000" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="99.225" y="95.175" width="2.000" height="2.000" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="99.225" y="59.325" width="2.000" height="2.000" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="66.775" y="172.675" width="2.000" height="2.000" fill="#b85c40" stroke="#345460" stroke-width=".35"/>
+<rect x="66.775" y="136.825" width="2.000" height="2.000" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="99.225" y="172.675" width="2.000" height="2.000" fill="#b85c40" stroke="#345460" stroke-width=".35"/>
+<rect x="99.225" y="136.825" width="2.000" height="2.000" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="26.325" y="132.225" width="2.000" height="2.000" fill="#b85c40" stroke="#345460" stroke-width=".35"/>
+<rect x="62.175" y="132.225" width="2.000" height="2.000" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="26.325" y="99.775" width="2.000" height="2.000" fill="#b85c40" stroke="#345460" stroke-width=".35"/>
+<rect x="62.175" y="99.775" width="2.000" height="2.000" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="103.825" y="132.225" width="2.000" height="2.000" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="139.675" y="132.225" width="2.000" height="2.000" fill="#b85c40" stroke="#345460" stroke-width=".35"/>
+<rect x="103.825" y="99.775" width="2.000" height="2.000" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="139.675" y="99.775" width="2.000" height="2.000" fill="#b85c40" stroke="#345460" stroke-width=".35"/>
+<path d="M27.325,173.675 L63.175,137.825" fill="none" stroke="#9a7654" stroke-width=".65"/>
+<path d="M140.675,173.675 L104.825,137.825" fill="none" stroke="#9a7654" stroke-width=".65"/>
+<path d="M27.325,60.325 L63.175,96.175" fill="none" stroke="#9a7654" stroke-width=".65"/>
+<path d="M140.675,60.325 L104.825,96.175" fill="none" stroke="#9a7654" stroke-width=".65"/>
+<text x="12" y="194" class="">4central strips14.415m² each +4corner squares21.6225m² each.</text>
+<text x="12" y="201" class="">Sum144.15m²; retained physical edges−200/12200 and4450/7550.</text>
+<text x="12" y="208" class="">RedordinaryseatsoverFIRSTwindows require roofcollector.</text>
+<text x="12" y="215" class="">Corner diagonal lines are ACTION ENVELOPES, not earned jackframes.</text>
+<text x="202" y="37" class="title">B / ACTUAL NORTH STRIP · SECTION1:30</text>
+<path d="M208.0,159.10871772103332 L285.5,122.96987421402093" fill="none" stroke="#976938" stroke-width=".65"/>
+<path d="M214.66666666666666,172.94420690886733 L285.5,139.91408112288826" fill="none" stroke="#345460" stroke-width=".65"/>
+<path d="M214.66666666666666,175.88654802610066 L285.5,142.8564222401216" fill="none" stroke="#758c85" stroke-width=".65"/>
+<path d="M285.5,122.96987421402093 L363.0,159.10871772103332" fill="none" stroke="#976938" stroke-width=".65"/>
+<path d="M285.5,139.91408112288826 L356.33333333333337,172.94420690886733" fill="none" stroke="#345460" stroke-width=".65"/>
+<path d="M285.5,142.8564222401216 L356.33333333333337,175.88654802610066" fill="none" stroke="#758c85" stroke-width=".65"/>
+<rect x="221.750" y="170.000" width="8.000" height="4.667" fill="#bdc9c2" stroke="#345460" stroke-width=".35"/>
+<rect x="223.417" y="169.267" width="4.666" height="0.400" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="341.250" y="170.000" width="8.000" height="4.667" fill="#bdc9c2" stroke="#345460" stroke-width=".35"/>
+<rect x="342.917" y="169.267" width="4.666" height="0.400" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<path d="M225.75,167.77596369764942 L345.25,167.77596369764942" fill="none" stroke="#a15f46" stroke-width=".65"/>
+<path d="M228.58333333333334,172.0 L342.41666666666663,172.0" fill="none" stroke="#6f728a" stroke-width=".65"/>
+<path d="M228.58333333333334,177.86666666666667 L342.41666666666663,177.86666666666667" fill="none" stroke="#6f728a" stroke-width=".65"/>
+<text x="202" y="194" class="">Roofextent532.5 = primary332.5 + secondary200 beyond purlins.</text>
+<text x="202" y="201" class="">Primarycentre6746.721; tie6721.721–6771.721.</text>
+<text x="202" y="208" class="">Purlinunderside6658.451 ATSEAT; ceilingTOP6620,38.451reserve.</text>
+<text x="202" y="215" class="">Ceiling6444–6620 only in actual protected territory, outside tips lower.</text>
+<text x="202" y="222" class="">ULS per ordinaryseat22.704kN; tie17.346kN.</text>
+<text x="202" y="229" class="">Collector260×140,6540–6680;25 above windowring6515.</text>
+<text x="202" y="236" class="">10mineral bed+12plate→6702; actual cleat/hold-down unearned.</text>
+<text x="399" y="37" class="title">C / ACTUAL NORTH PORTAL · XZ1:20</text>
+<polygon points="413.500,174.500 414.485,173.556 415.482,172.625 416.492,171.707 417.512,170.802 418.545,169.910 419.589,169.031 420.644,168.166 421.709,167.315 422.786,166.477 423.874,165.653 424.972,164.843 426.080,164.048 427.198,163.266 428.327,162.499 429.465,161.747 430.612,161.009 431.769,160.286 432.936,159.578 434.111,158.885 435.295,158.207 436.487,157.545 437.688,156.898 438.898,156.266 440.115,155.650 441.340,155.049 442.572,154.464 443.813,153.896 445.060,153.343 446.314,152.806 447.575,152.285 448.843,151.781 450.117,151.293 451.397,150.821 452.683,150.366 453.975,149.927 455.272,149.505 456.575,149.099 457.883,148.711 459.195,148.339 460.513,147.984 461.834,147.646 463.160,147.325 464.490,147.021 465.824,146.734 467.162,146.464 468.502,146.212 469.846,145.977 471.193,145.759 472.542,145.558 473.894,145.375 475.248,145.209 476.605,145.060 477.963,144.929 479.322,144.815 480.683,144.719 482.045,144.640 483.408,144.579 484.772,144.535 486.136,144.509 487.500,144.500 488.864,144.509 490.228,144.535 491.592,144.579 492.955,144.640 494.317,144.719 495.678,144.815 497.037,144.929 498.395,145.060 499.752,145.209 501.106,145.375 502.458,145.558 503.807,145.759 505.154,145.977 506.498,146.212 507.838,146.464 509.176,146.734 510.510,147.021 511.840,147.325 513.166,147.646 514.487,147.984 515.805,148.339 517.117,148.711 518.425,149.099 519.728,149.505 521.025,149.927 522.317,150.366 523.603,150.821 524.883,151.293 526.157,151.781 527.425,152.285 528.686,152.806 529.940,153.343 531.187,153.896 532.428,154.464 533.660,155.049 534.885,155.650 536.102,156.266 537.312,156.898 538.513,157.545 539.705,158.207 540.889,158.885 542.064,159.578 543.231,160.286 544.388,161.009 545.535,161.747 546.673,162.499 547.802,163.266 548.920,164.048 550.028,164.843 551.126,165.653 552.214,166.477 553.291,167.315 554.356,168.166 555.411,169.031 556.455,169.910 557.488,170.802 558.508,171.707 559.518,172.625 560.515,173.556 561.500,174.500 568.986,166.785 567.901,165.746 566.803,164.720 565.692,163.709 564.568,162.713 563.431,161.731 562.281,160.763 561.120,159.810 559.946,158.873 558.760,157.950 557.563,157.043 556.354,156.151 555.133,155.275 553.902,154.415 552.659,153.570 551.406,152.742 550.142,151.929 548.868,151.133 547.584,150.354 546.290,149.590 544.986,148.844 543.673,148.114 542.351,147.402 541.019,146.706 539.679,146.028 538.330,145.366 536.972,144.722 535.607,144.096 534.233,143.487 532.852,142.896 531.464,142.323 530.068,141.767 528.665,141.230 527.255,140.710 525.839,140.209 524.417,139.726 522.988,139.261 521.554,138.815 520.114,138.387 518.668,137.977 517.217,137.586 515.762,137.214 514.302,136.861 512.837,136.526 511.369,136.210 509.896,135.913 508.420,135.635 506.940,135.376 505.457,135.136 503.971,134.915 502.482,134.713 500.991,134.530 499.498,134.367 498.002,134.222 496.505,134.097 495.006,133.991 493.507,133.904 492.006,133.837 490.504,133.789 489.002,133.760 487.500,133.750 485.998,133.760 484.496,133.789 482.994,133.837 481.493,133.904 479.994,133.991 478.495,134.097 476.998,134.222 475.502,134.367 474.009,134.530 472.518,134.713 471.029,134.915 469.543,135.136 468.060,135.376 466.580,135.635 465.104,135.913 463.631,136.210 462.163,136.526 460.698,136.861 459.238,137.214 457.783,137.586 456.332,137.977 454.886,138.387 453.446,138.815 452.012,139.261 450.583,139.726 449.161,140.209 447.745,140.710 446.335,141.230 444.932,141.767 443.536,142.323 442.148,142.896 440.767,143.487 439.393,144.096 438.028,144.722 436.670,145.366 435.321,146.028 433.981,146.706 432.649,147.402 431.327,148.114 430.014,148.844 428.710,149.590 427.416,150.354 426.132,151.133 424.858,151.929 423.594,152.742 422.341,153.570 421.098,154.415 419.867,155.275 418.646,156.151 417.437,157.043 416.240,157.950 415.054,158.873 413.880,159.810 412.719,160.763 411.569,161.731 410.432,162.713 409.308,163.709 408.197,164.720 407.099,165.746 406.014,166.785" fill="#d7b08b" stroke="#976938" stroke-width=".4"/>
+<polygon points="402.875,182.000 413.500,182.000 413.500,174.500 406.014,166.785 402.875,166.785" fill="#bdc9c2" stroke="#345460" stroke-width=".4"/>
+<polygon points="561.500,182.000 572.125,182.000 572.125,166.785 568.986,166.785 561.500,174.500" fill="#bdc9c2" stroke="#345460" stroke-width=".4"/>
+<path d="M402.875,177.0 L572.125,177.0" fill="none" stroke="#a15f46" stroke-width=".65"/>
+<rect x="402.500" y="173.250" width="0.750" height="7.500" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<rect x="571.750" y="173.250" width="0.750" height="7.500" fill="#345460" stroke="#345460" stroke-width=".35"/>
+<text x="399" y="194" class="">215radial×215axial brickring;775 including facewrap (not shown).</text>
+<text x="399" y="201" class="">RC212.5×215 ends at RADIALSKEWBACK; no RC through ring.</text>
+<text x="399" y="208" class="">Tie2200/50envelope2175–2225;formed40bore, no voussoirdrill.</text>
+<text x="399" y="215" class="">Central head2285court/2327.5garden; 127.152 tie/hinge offset.</text>
+<text x="399" y="222" class="">Court windowhead-transfer e exceeds kern, but remains inside ring.</text>
+<text x="399" y="229" class="">Required compression is a DEMAND, not masonry strength acceptance.</text>
+<text x="399" y="236" class="">Pierhead anchorage/plate splitting/thermalcollars remain internal work.</text>
+<text x="12" y="266" class="title">D / ACTIONS AND EXPLICIT LIMITS</text>
+<text x="12" y="276" class="">outer-north/self: H7.51kN / e1.7mm / requiredp0.224MPa</text>
+<text x="12" y="282" class="">outer-north/gross-upper: H29.98kN / e16.5mm / requiredp1.113MPa</text>
+<text x="12" y="288" class="">outer-north/actual-window-arch-transfer: H29.98kN / e16.5mm / requiredp1.113MPa</text>
+<text x="12" y="294" class="">outer-north/rejected-central-roofpoint: H57.98kN / e85.6mm / requiredp8.898MPa</text>
+<text x="12" y="300" class="">court-north/self: H7.51kN / e31.3mm / requiredp0.325MPa</text>
+<text x="12" y="306" class="">court-north/gross-upper: H29.98kN / e23.3mm / requiredp1.224MPa</text>
+<text x="12" y="312" class="">court-north/actual-window-arch-transfer: H20.56kN / e56.1mm / requiredp1.360MPa</text>
+<text x="12" y="318" class="">court-north/rejected-central-roofpoint: H48.56kN / e117.7mm / OUTSIDE RING</text>
+<text x="12" y="338" class="">The central-roofpoint case is rejected; actual roofpoints use the collector/endpier proposal.</text>
+<text x="12" y="355" class="">Corner square collapse is a support-action ceiling, not a proof of actual jack/cantilever members or loadsharing.</text>
+<text x="12" y="362" class="">Uppercollector: gravity section screen only; continuous loops, pier reactions, hold-down and lateral closures still to earn.</text>
+<text x="12" y="369" class="">Lowerarches: actual courtwindows create point reactions; gross uniform masonry cannot replace that transfer.</text>
+<text x="12" y="376" class="">Known400pilejoint remains rejected; D1300 is only the earlier conditional connected-foundation concept.</text>
+<text x="12" y="383" class="">Stair11.166/11.700mm sensitivity leaves0.534mm; actual tolerances, creep and finishes require qualification.</text>
+<text x="12" y="407" class="">Reproduce: python project/str/studies/open-loggia-support.py --check · No construction, geometry adoption or STR-HOUSE completion.</text>
+</svg>
