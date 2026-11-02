@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 21,
-  "state": "released",
-  "leaseId": "5ded4cf2-206c-4922-9ab1-aba902031d2a",
+  "generation": 22,
+  "state": "claimed",
+  "leaseId": "afeca720-3fcd-457c-a26c-386f7d058324",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6556544021"
+    "label": "zerg-rwt06-recovery"
   },
-  "claimedAt": "2026-11-01T10:10:21.000Z",
-  "heartbeatAt": "2026-11-01T10:30:01.000Z",
-  "expiresAt": "2026-11-01T10:30:01.000Z",
-  "branch": "work/mvb-chat-6556544021",
+  "claimedAt": "2026-11-02T07:14:47.403Z",
+  "heartbeatAt": "2026-11-02T07:14:47.403Z",
+  "expiresAt": "2026-11-02T07:59:47.403Z",
+  "branch": "work/rwt06-open-loggia-recovery-20261102",
   "predecessor": {
-    "leaseId": "3e29a531-eb41-4c6d-ae4e-e033bcf7aaeb",
-    "generation": 20,
-    "branch": "work/mvb-chat-6556166287",
-    "pr": 1201,
+    "leaseId": "5ded4cf2-206c-4922-9ab1-aba902031d2a",
+    "generation": 21,
+    "branch": "work/mvb-chat-6556544021",
+    "pr": 1207,
     "checkpoint": {
-      "evidence": "PR1201 captures RWT-06 topological negative disposition and architectural N/E egress redesign; RWT-06 lifecycle deliberately remains planned.",
-      "next": "Full exact-head CI and canonical merge-check; merge and retain RWT-06 as planned for redesigned source-backed section; release this generation as handoff."
+      "evidence": "PR1207 head 0fd395af: four source/control files add N/E court escape screen and HAD-03 dependency; exact-head full CI 41297209760 PASS.",
+      "next": "Verify native preflight job for exact head/live lease, merge PR1207 with expected SHA, release and dispose helper branch.",
+      "blocker": "Actual HAD-03 plan and section plus site flood, structural/assembly and flow acceptance not yet earned."
     }
   },
   "recoverySource": {
-    "leaseId": "3e29a531-eb41-4c6d-ae4e-e033bcf7aaeb",
-    "generation": 20,
-    "branch": "work/mvb-chat-6556166287",
-    "pr": 1201,
+    "leaseId": "5ded4cf2-206c-4922-9ab1-aba902031d2a",
+    "generation": 21,
+    "branch": "work/mvb-chat-6556544021",
+    "pr": 1207,
     "checkpoint": {
-      "evidence": "PR1201 captures RWT-06 topological negative disposition and architectural N/E egress redesign; RWT-06 lifecycle deliberately remains planned.",
-      "next": "Full exact-head CI and canonical merge-check; merge and retain RWT-06 as planned for redesigned source-backed section; release this generation as handoff."
+      "evidence": "PR1207 head 0fd395af: four source/control files add N/E court escape screen and HAD-03 dependency; exact-head full CI 41297209760 PASS.",
+      "next": "Verify native preflight job for exact head/live lease, merge PR1207 with expected SHA, release and dispose helper branch.",
+      "blocker": "Actual HAD-03 plan and section plus site flood, structural/assembly and flow acceptance not yet earned."
     }
-  },
-  "pr": 1207,
-  "checkpoint": {
-    "evidence": "PR1207 head 0fd395af: four source/control files add N/E court escape screen and HAD-03 dependency; exact-head full CI 41297209760 PASS.",
-    "next": "Verify native preflight job for exact head/live lease, merge PR1207 with expected SHA, release and dispose helper branch.",
-    "blocker": "Actual HAD-03 plan and section plus site flood, structural/assembly and flow acceptance not yet earned."
-  },
-  "releasedAt": "2026-11-01T10:30:01.000Z",
-  "releaseReason": "handoff"
+  }
 }
