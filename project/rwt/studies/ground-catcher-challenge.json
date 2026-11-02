@@ -141,8 +141,18 @@
     "doubleCountRejected": true
   },
   "catchments": {
-    "physicalRoofM2": 50.4525,
-    "exposedCourtM2": 9.61,
+    "wallLine": {
+      "roofM2": 47.8125,
+      "courtM2": 12.25,
+      "roofLps": 2.86875,
+      "courtLps": 0.735
+    },
+    "physical": {
+      "roofM2": 50.4525,
+      "courtM2": 9.61,
+      "roofLps": 3.02715,
+      "courtLps": 0.5765999999999999
+    },
     "totalM2": 60.0625,
     "fullEventLps": 3.60375,
     "scope": "The diverted roof is already in the event ledger; do not add it twice."
