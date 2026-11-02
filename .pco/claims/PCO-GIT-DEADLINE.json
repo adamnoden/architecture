@@ -9,12 +9,13 @@
     "label": "zerg9-pco-git-deadline-20261102"
   },
   "claimedAt": "2026-11-02T01:29:33.453Z",
-  "heartbeatAt": "2026-11-02T01:29:33.453Z",
-  "expiresAt": "2026-11-02T03:29:33.453Z",
+  "heartbeatAt": "2026-11-02T01:34:04.921Z",
+  "expiresAt": "2026-11-02T03:34:04.921Z",
   "checkpoint": {
-    "evidence": "https://github.com/adamnoden/architecture/issues/1241",
-    "next": "Implement bounded Git timeout and register owner-directed node; independent review before merge"
+    "evidence": "https://github.com/adamnoden/architecture/pull/1242 head bd2e4f9095b53f648dae814bd454cbe22c898240; typecheck/control155 pass; native tree equals provider tree",
+    "next": "Run real90000ms canonical preflight; independent review and exact-head full-health CI before integration"
   },
   "branch": "work/pco-git-deadline-20261102",
-  "note": "Exceptional bootstrap authorised at issue953#issuecomment-6566865133; node absent from main; unknown-node claim temporarily fails dispatcher closed until registration."
+  "note": "Exceptional bootstrap authorised at issue953#issuecomment-6566865133; node absent from main; unknown-node claim temporarily fails dispatcher closed until registration.",
+  "pr": 1242
 }
