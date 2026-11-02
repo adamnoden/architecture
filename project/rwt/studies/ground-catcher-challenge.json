@@ -1,0 +1,139 @@
+{
+  "status": "GROUND CHALLENGER: open fall fails bounded idealised facade and platform sensitivities; a separately protected ground arrangement is not excluded",
+  "inputs": {
+    "had": [
+      "project/had/studies/open-north-loggia.json",
+      "25faad2c4d40df2b7da7212f73808843a88d2f52"
+    ],
+    "edge": [
+      "project/mat/studies/loggia-roof-edge.json",
+      "731c85d24e775259f1cf84d264d4ceaf75d89774"
+    ],
+    "event": [
+      "project/rwt/studies/open-loggia-event.json",
+      "f096160f98e175c7d5f3ec117a9ae41da2162b30"
+    ]
+  },
+  "assumption": "Instantaneous zero vertical release speed, constant chosen horizontal speed and gravity only. No drag, wind field, splash or measured likelihood. Secondary direct paths are idealised; the primary wallward path crosses the transferred secondary slope and cannot be credited as a direct wall impact where that layer intercepts it.",
+  "drops": [
+    {
+      "id": "primary",
+      "y": 4450,
+      "z": 7006.738468369001
+    },
+    {
+      "id": "secondary",
+      "y": 4470,
+      "z": 6913.88660674044
+    }
+  ],
+  "door": {
+    "rough": [
+      5100,
+      6900
+    ],
+    "leafZ": [
+      19,
+      2119
+    ],
+    "meetingX": 6000
+  },
+  "windows": [
+    {
+      "x": 5150,
+      "z": [
+        4200,
+        6300
+      ]
+    },
+    {
+      "x": 6850,
+      "z": [
+        4200,
+        6300
+      ]
+    }
+  ],
+  "wallImpact": [
+    {
+      "drip": "primary",
+      "horizontalMmS": -200,
+      "seconds": 1,
+      "z": 2101.7384683690007
+    },
+    {
+      "drip": "secondary",
+      "horizontalMmS": -200,
+      "seconds": 1.1,
+      "z": 978.8366067404386
+    },
+    {
+      "drip": "secondary",
+      "horizontalMmS": -300,
+      "seconds": 0.7333333333333333,
+      "z": 4276.08660674044
+    }
+  ],
+  "interception": {
+    "speedMmS": 200,
+    "seconds": 0.12133306529412718,
+    "y": 4425.733386941175,
+    "z": 6934.528467410355,
+    "scope": "Intersection with transferred continuous secondary slope; actual continuity and local construction are not assumed."
+  },
+  "screen": {
+    "southY": 4300,
+    "westX": 4300,
+    "eastX": 7700,
+    "thickness": 10,
+    "top": 6960,
+    "gateX": [
+      4800,
+      7200
+    ],
+    "gateHead": 2250,
+    "gateLeaf": 1198.5,
+    "gateTipY": 5498.5,
+    "padLeadingY": 5700,
+    "breatherAtScreen": 6993.1589086267895,
+    "primaryCrossTime": 0.075,
+    "primaryCrossZ": 6979.147843369001
+  },
+  "platformImpact": {
+    "drip": "primary",
+    "horizontalMmS": 700,
+    "seconds": 0.5468356694772574,
+    "y": 4832.7849686340805,
+    "z": 5540
+  },
+  "platformY": [
+    4780,
+    6150
+  ],
+  "checks": {
+    "uninterceptedPrimaryDoorAlgebra": true,
+    "secondaryDoor": true,
+    "secondaryWindow": true,
+    "screenPrimaryUninterceptedAlgebra": true,
+    "secondaryStartsBelowScreenTop": true,
+    "screenBreatherGap": true,
+    "screenGatePadGap": true,
+    "screenFrameToReceiver": true,
+    "openGateLeafAxisSeparation": true,
+    "platform": true,
+    "wholeCatchment": true,
+    "doubleCountRejected": true
+  },
+  "catchments": {
+    "physicalRoofM2": 50.4525,
+    "exposedCourtM2": 9.61,
+    "totalM2": 60.0625,
+    "fullEventLps": 3.60375,
+    "scope": "The diverted roof is already in the event ledger; do not add it twice."
+  },
+  "limits": [
+    "Primary wallward rays cross the transferred secondary slope: the un-intercepted wall/screen values are algebra only, not source-complete impact predictions. Secondary rays are below that slope after release. The trajectories are sensitivities, not a weather forecast.",
+    "The chosen catcher, screen, wind/jet/spray containment and worker/access sequence have not been developed as complete physical geometry.",
+    "The actual first leakage, full inlet/relief discharge, tailwaters, common failure and site receivers remain unqualified."
+  ]
+}
