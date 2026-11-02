@@ -84,6 +84,101 @@
     "girder": "Even in MAT slab alternative, field top \u2212382 is only 2 mm below \u2212380 girder soffit; a 40 mm top-side rail cannot continue through it. End supports, welded transitions, reinforced contact and accessible sequencing are not designed.",
     "courtServiceAlternative": "The distinct joined-ground service reference starts its DPC field at \u2212380; \u2212383 lies within the upper 3 mm of that DPC band. Its W1 carrier crown \u2212378 and invert \u2212538 straddle the metal plane; a flat sheet intersects the carrier 5 mm below its crown. The independent W2 tray, air lid \u2212310..\u2212316 and seal to \u2212318 also require their own continuous, accessible transitions. This is an incompatible reference comparison, not an assertion both designs are selected."
   },
+  "HADAlignedDirection": {
+    "floorCandidate": {
+      "layers_mm": [
+        15,
+        65,
+        100,
+        200
+      ],
+      "z_mm": [
+        0,
+        -15,
+        -80,
+        -180,
+        -380
+      ],
+      "source": "HAD RC200 and joined-ground 100 mm glass are coordinated candidates, not an adopted material/whole-floor assembly",
+      "glassR_m2K_W_at_0p041": 2.4390243902439024,
+      "oldMAT320glassR_m2K_W_at_0p041": 7.804878048780488,
+      "limit": "Core-only one-dimensional glass resistance, no whole-floor U or thermal bridge result."
+    },
+    "warmPad": {
+      "boundsXY_mm": [
+        262.5,
+        262.5,
+        562.5,
+        562.5
+      ],
+      "z_mm": [
+        -380,
+        -80
+      ],
+      "upstandAboveSlabTop_mm": 100,
+      "overlapSlabAxisRectangle_m2": 0.0529,
+      "outsideSlabAxisRectangle_m2": 0.0371,
+      "limit": "Pad replaces local 100 mm glass at corner; concrete/slab monolithic reinforcement, actual casting, full thermal bridge and non-double-counted takeoff are unproved."
+    },
+    "falseworkCell": {
+      "xy_mm": [
+        1000,
+        1000,
+        2000,
+        2000
+      ],
+      "representedGroundWallPlanHits": [],
+      "panel_mm": [
+        1000,
+        1000,
+        1
+      ],
+      "wetRC_kPa": 5,
+      "upperAngles_count": 11,
+      "upperAngleSpacing_mm": 100,
+      "lowerBearers_count": 6,
+      "lowerBearerSpacing_mm": 200,
+      "angle_mm": [
+        40,
+        40,
+        4
+      ],
+      "supportGrid": [
+        6,
+        6
+      ],
+      "supportCount": 36,
+      "temporaryBottomZ_mm": -460,
+      "supports": "36 explicit trial prop heads at 200 mm grid below double 40 mm angles; actual prop feet, foundation, lateral stability, access, load combinations and removal route not designed.",
+      "centralWetRCTributary_kN": 0.2,
+      "fieldStuds_count": 36,
+      "fieldStud_mm": [
+        6,
+        40
+      ],
+      "grossMetalMass_kg_excludingPropsWeldsAnchors": 48.73841307020562,
+      "angleGrossI_mm4": 46081.12280701754,
+      "angleGrossZ_mm3": 1615.389913899139,
+      "simpleSpanBeamSensitivities": [
+        {
+          "role": "upper_100mm_tributary",
+          "lineLoad_Nmm": 0.5,
+          "span_mm": 200,
+          "grossElasticStress_MPa": 1.5476139713944592,
+          "grossElasticDeflection_mm": 0.001130253131015326
+        },
+        {
+          "role": "lower_200mm_tributary",
+          "lineLoad_Nmm": 1.0,
+          "span_mm": 200,
+          "grossElasticStress_MPa": 3.0952279427889184,
+          "grossElasticDeflection_mm": 0.002260506262030652
+        }
+      ],
+      "limit": "One clear 1 m cell, straight angle idealisation. No stability, allowable, fastener or physical acceptance. Studs are a detachable-form retention hypothesis, not composite reinforcement or approved concrete connection."
+    },
+    "decision": "HAD-aligned floor is the preferred development basis only. MAT \u221280/\u2212280 remains unadopted whole-house-rewind comparator; field, formwork, seams, all perimeter/box/threshold/penetrations and material/site acceptance remain open."
+  },
   "flushSoffitTrial": {
     "sheetZ_mm": [
       -381,
@@ -141,14 +236,14 @@
   "serviceBoxWrap": {
     "segmentLength_mm": 840,
     "boxOuterWidth_mm": 1003,
-    "fieldBottomZ_mm": -383,
+    "fieldBottomZ_mm": -381,
     "boxBottomZ_mm": -839.5,
-    "verticalDrop_mm": 456.5,
-    "bottomPlusTwoSides_m2": 1.6094399999999998,
+    "verticalDrop_mm": 458.5,
+    "bottomPlusTwoSides_m2": 1.6127999999999998,
     "flatControl_m2": 0.8425199999999998,
-    "sheetMass_kg_at_1mm_7850": 12.634103999999997,
-    "extraSideMass_kg": 6.020322,
-    "route": "Field at \u2212383 turns down the two exterior 1003-wide box faces, passes under the RC underside \u2212839.5, and rises on the other side; 840 length is one part of a continuous wrap, not a removable section. W1 and its lid remain above the retained field.",
+    "sheetMass_kg_at_1mm_7850": 12.660479999999998,
+    "extraSideMass_kg": 6.046698,
+    "route": "Field at \u2212381 turns down the two exterior 1003-wide box faces, passes under the RC underside \u2212839.5, and rises on the other side; 840 length is one part of a continuous wrap, not a removable section. W1 and its lid remain above the retained field.",
     "hold": "Node-side DPC/bearing piers may intersect the fold; ends, turns, fixed collars, continuous corner welds, concrete-on-metal support and friction separation, W2 drainage, site pressure, movement, inspection and repair are unproved. Do not count the geometry as a sealed field or assume access below the box."
   },
   "panelSensitivity": {
