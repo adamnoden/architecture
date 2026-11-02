@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 13,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "afdc5e64-edf7-4580-9f16-ca67c7f082f8",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-services-connected-network"
   },
   "claimedAt": "2026-11-02T08:00:26.106Z",
-  "heartbeatAt": "2026-11-02T08:34:46.198Z",
-  "expiresAt": "2026-11-02T09:19:46.198Z",
+  "heartbeatAt": "2026-11-02T08:46:23.053Z",
+  "expiresAt": "2026-11-02T08:46:23.053Z",
   "branch": "work/zerg-recovery-engineering-integration",
   "predecessor": {
     "leaseId": "63a01d02-5f51-4260-acc5-d5ef22bde250",
@@ -39,5 +39,7 @@
     "next": "Root observes exact-head CI and preflight/merge; then close Services13 and resume connected-network investigation from new main",
     "blocker": "Default HAD regression repaired on shared draft but not yet merged; connected-network probe remains local unpublished and broader material/physical duties open"
   },
-  "pr": 1254
+  "pr": 1254,
+  "releasedAt": "2026-11-02T08:46:23.053Z",
+  "releaseReason": "handoff"
 }
