@@ -98,7 +98,7 @@
       ]
     },
     "preferred_constant_depth_to_axis_mm": 3450,
-    "preferred_late_transition_axis_mm": [
+    "late_transition_trial_axis_mm": [
       3450,
       4450
     ],
