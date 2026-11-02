@@ -9,8 +9,8 @@
     "label": "zerg2-had-open-loggia"
   },
   "claimedAt": "2026-11-01T20:03:03.859Z",
-  "heartbeatAt": "2026-11-02T00:32:31.507Z",
-  "expiresAt": "2026-11-02T02:02:31.507Z",
+  "heartbeatAt": "2026-11-02T01:08:34.206Z",
+  "expiresAt": "2026-11-02T02:38:34.206Z",
   "branch": "work/zerg2-had-open-loggia",
   "predecessor": {
     "leaseId": "6880ac9f-d9b0-4763-998c-f7820e975912",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Publishedrecoverable e9f6fc03 tree1fcee8cc hastrueparents068e33ae andmainf462415c,all60mainfiles retained. Workingjoinedservicesgeometry has20route/frontframe/zerooverlapPASS andIAS30cf600 exactfamilyguard/bodyreplayPASS6.674mm; finalnumericcontract pendingfiniteutility/supply/platformcorrections.",
-    "next": "BindcorrectedimmutableMATservicescontractwithkeyedequality/defaultpath; finishfinitewindowrevealguardcomparison; actualrenders,owningHADselection/PR/exactsourceQA.",
-    "blocker": "No tool/publicationblocker. Ownfinalworkingjoinnotyetpublished; servicesownerpublishingcorrectedcontract. Guard90vs120projectioncomparisonexplicit, noactualkit/equipmentcapacityclaim."
-  }
+    "evidence": "DraftPR1240 frozena510f30c tree2489c95d JSON54f5ff68; allHADfitchecksPASS,5actualrenders,writecheck+tsc+4tests+repository+VitePressPASS; true6a3c15mainparentsretained,WorkLeasebodyverified.",
+    "next": "FREEZE forrootHighreview; combinecanonicalMAT9476+IASdcthenDEFAULTpathreproduction; synchronizestaleJSONtopstatuswithactualSELECTdecision,rootownsfinalpreflight/merge/lifecycle.",
+    "blocker": "Two priorCLIrenewalsfailedbeforewriteatgitrefresh60stimeout; independentread-onlyruntimefetchcompleted,noreplayedmailbox. Actualcombinedreview/defaultdependencychecksremainpending; physicaltechnicalsiteadmissionsseparate."
+  },
+  "pr": 1240
 }
