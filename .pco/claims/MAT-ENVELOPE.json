@@ -9,12 +9,12 @@
     "label": "zerg8-envelope-field"
   },
   "claimedAt": "2026-11-02T12:57:38.664Z",
-  "heartbeatAt": "2026-11-02T13:17:03.010Z",
-  "expiresAt": "2026-11-02T14:02:03.010Z",
+  "heartbeatAt": "2026-11-02T13:30:24.411Z",
+  "expiresAt": "2026-11-02T14:15:24.411Z",
   "checkpoint": {
-    "evidence": "Remote branch work/zerg8-envelope-field head 2ec048f4c46bb9c5033793b71b5b2e6b86375546; source-bound whole-field control, slab conflict, service-box wrap and flush-soffit pour sensitivity",
-    "next": "Resolve actual supported field/perimeter construction, movement and combined structural interfaces; coordinate STR and RWT",
-    "blocker": "Slab source alternatives, bearing/slip, full perimeter, box returns, support, materials and site/physical qualifications remain unresolved"
+    "evidence": "Remote branch work/zerg8-envelope-field head 186631fd2e055246f341ea3a05f020a35374bce3 tree fe2107726b3f1da0375c12bf809827d754f9beba; HAD-aligned field/formwork, whole topology and service wrap checked",
+    "next": "Receive independent STR review and corrected structural source; resolve combined-field interfaces before integration",
+    "blocker": "Ground reinforcement/footprint unselected, structural and perimeter/movement/site/physical qualification open"
   },
   "branch": "work/zerg8-envelope-field",
   "predecessor": {
