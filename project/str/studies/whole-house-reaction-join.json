@@ -40,6 +40,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -64,6 +65,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -88,6 +90,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -112,6 +115,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -136,6 +140,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -160,6 +165,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -184,6 +190,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -208,6 +215,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -232,6 +240,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -256,6 +265,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -280,6 +290,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -304,6 +315,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -328,6 +340,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -352,6 +365,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -376,6 +390,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -400,6 +415,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -424,6 +440,7 @@
           "inside_drawn_width": false,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": "CW collector y3917.5 → west return x2917.5 to header/grid y4250 and court-W x3950; finite joints unproved",
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -448,6 +465,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -472,6 +490,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -496,6 +515,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -520,6 +540,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -544,6 +565,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -568,6 +590,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -592,6 +615,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -616,6 +640,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -640,6 +665,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -664,6 +690,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -688,6 +715,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -712,6 +740,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -736,6 +765,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -760,6 +790,7 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       },
       {
@@ -784,8 +815,12 @@
           "inside_drawn_width": true,
           "status": "Plan territory only; no warm spreader, cold node or support-share capacity"
         },
+        "intermediate_chain": null,
         "status": "First-floor support-edge action; do not add to wet/stair transfer reactions"
       }
+    ],
+    "outside_drawn_grid_direct_edges": [
+      "SW-collector-bay/y3917.5: collector and west-return intermediate chain required"
     ],
     "surface_audit": {
       "gross_12x12_m2": 144,

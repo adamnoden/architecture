@@ -148,10 +148,16 @@ floor_edge = []
 for r in floor_reactions:
     a=r['support_segment'][:2];b=r['support_segment'][2:]
     xy=[(a[i]+b[i])/2 for i in range(2)]
+    ground=ground_territory(xy)
+    chain=('CW collector y3917.5 → west return x2917.5 to header/grid y4250 and court-W x3950; finite joints unproved'
+           if r['field']=='SW-collector-bay' and a[1]==b[1]==3917.5 else None)
+    if not ground['inside_drawn_width'] and chain is None:
+        raise AssertionError(f'unassigned support-line gap: {r["field"]} {r["support_segment"]}')
     floor_edge.append(dict(field=r['field'],segment=r['support_segment'],
                            vertical_ULS_kN=r['ULS_per_m']*math.dist(a,b)/1000,
-                           ground=ground_territory(xy),
+                           ground=ground,intermediate_chain=chain,
                            status='First-floor support-edge action; do not add to wet/stair transfer reactions'))
+assert sum(not r['ground']['inside_drawn_width'] for r in floor_edge)==1
 
 # Surface audit only. The three mutually separate gross openings are exact HAD
 # rectangles; the actual physical slab perimeter, wall bands, local patches and
@@ -216,6 +222,7 @@ result=dict(status='Joined reaction destinations only; incomplete conditional ho
                              scope='Collapsed corners are conservative action exits, not finite jack/hip paths; q450 delta excluded'),
             axis_floor=dict(area_m2=floor['axis_field_area'],ULS_kN=floor['ULS'],
                             support_edges=floor_edge,
+                            outside_drawn_grid_direct_edges=['SW-collector-bay/y3917.5: collector and west-return intermediate chain required'],
                             surface_audit=dict(gross_12x12_m2=144,court_clear_m2=court_area,
                                                entrance_void_m2=entrance_void_area,stair_aperture_m2=stair_area,
                                                gross_outside_openings_m2=gross_surface_domain,
