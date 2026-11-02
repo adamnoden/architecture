@@ -382,5 +382,130 @@
       }
     }
   },
+  "courtSouth": {
+    "first": {
+      "id": "court-south",
+      "segment": [
+        [
+          3832.5,
+          4041.25
+        ],
+        [
+          8167.5,
+          4041.25
+        ]
+      ],
+      "thickness": 429.5,
+      "finishedFaces": [
+        3820.5,
+        4250
+      ],
+      "openings": [
+        {
+          "id": "court-south-0",
+          "wall": "court-south",
+          "centre": 5150,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        },
+        {
+          "id": "court-south-1",
+          "wall": "court-south",
+          "centre": 6850,
+          "width": 1000,
+          "kind": "window",
+          "sill": 750,
+          "head": 2850,
+          "spring": 2550
+        }
+      ]
+    },
+    "ground": {
+      "id": "court-south",
+      "segment": [
+        [
+          3832.5,
+          4041.25
+        ],
+        [
+          8167.5,
+          4041.25
+        ]
+      ],
+      "thickness": 429.5,
+      "finishedFaces": [
+        3820.5,
+        4250
+      ],
+      "openings": [
+        {
+          "id": "grand-court-entry-south",
+          "wall": "court-south",
+          "centre": 6000,
+          "width": 1800,
+          "kind": "door",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 2
+        }
+      ]
+    },
+    "verticalDatums": {
+      "groundFFL": 0,
+      "firstFFL": 3450
+    },
+    "southCourtWeatherDoor": {
+      "rough": [
+        5100,
+        6900
+      ],
+      "frameDepth": [
+        4110,
+        4250
+      ],
+      "jambEach": 50,
+      "hinges": [
+        [
+          5150,
+          4250
+        ],
+        [
+          6850,
+          4250
+        ]
+      ],
+      "leafEach": [
+        845.5,
+        44,
+        2100
+      ],
+      "leafBottom": 19,
+      "leafTop": 2119,
+      "gaps": {
+        "left": 3,
+        "meeting": 3,
+        "right": 3
+      },
+      "transom": [
+        2119,
+        2189
+      ],
+      "fanlightFrom": 2189,
+      "arch": {
+        "span": 1800,
+        "spring": 2550,
+        "crown": 2850,
+        "scope": "Explicit authored reference, actual OAS profile/product junction must qualify."
+      },
+      "grossSweepReservation": 850,
+      "openLeafNorthTip": 5100,
+      "landingNorthEnd": 5750,
+      "clearBeyondOpenTip": 650,
+      "scope": "Outward NORTH;1500full exterior landing. Actual timber/hinge/bracket/weather/leak/firstharm remains with joined MAT/OAS."
+    }
+  },
   "method": "Derived from this generator outerDefs, openings and selected candidate; no independent reconstructed house model."
 }

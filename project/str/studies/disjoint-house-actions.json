@@ -195,7 +195,7 @@
   "slab_RC200_G_kN": 503.30099999999993,
   "sources": {
     "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
-    "project/had/studies/open-north-loggia.mjs": "9bc7b9672a7ee451115ac87519faa279ac40a87a470a284bacb05eed9da25537",
+    "project/had/studies/open-north-loggia.mjs": "2c60c151478b7596acc3dda8fe5630d43f6365e118956aee22b57b419fd954a6",
     "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
     "project/str/studies/spine-opening-join.json": "4f747ea2c98a774bb50abf0f3e647ff1c96f029ec4dd81699b86cbc01168872b"
   },
