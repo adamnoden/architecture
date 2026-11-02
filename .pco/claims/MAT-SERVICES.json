@@ -9,9 +9,9 @@
     "label": "zerg-services-connected-system"
   },
   "claimedAt": "2026-11-02T08:48:16.792Z",
-  "heartbeatAt": "2026-11-02T09:27:48.724Z",
-  "expiresAt": "2026-11-02T10:12:48.724Z",
-  "branch": "work/zerg8-services-connected-system",
+  "heartbeatAt": "2026-11-02T09:43:03.441Z",
+  "expiresAt": "2026-11-02T10:28:03.441Z",
+  "branch": "work/zerg-recovery-slab-network",
   "predecessor": {
     "leaseId": "afdc5e64-edf7-4580-9f16-ca67c7f082f8",
     "generation": 13,
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Draft PR #1257 corrected exact remote head 108e7827f006c446b7a7f1a438e5bf4616905a26 tree 294cf179b93bb1006c2a6299c372e73a2d745a6b; three-file source exact match; independent connected topology and thermal/release QA pass; no adoption",
-    "next": "Root integrates reviewed bounded failure and alternative screen when current main joins; preserve actual component and house gates",
-    "blocker": "400 actual cartridge, complete release/structural/weather/fire, fan curves, room loads and net configured plant proof open"
+    "evidence": "Shared draft PR #1260 exact remote head 158ec3f23e23472065872fd9eda8c402dd3eeedf tree 6ee1c5a36e2b350d644b1e447d9ea5fd729aa94f on main 02ab; Services three files exact reviewed 108e7827; source histories preserved and combined source checks passed per root",
+    "next": "Root observes exact-head CI and preflight/merge; then Services14 canonical closeout and bounded continuation",
+    "blocker": "No selected makeup/plant or site/material admission; actual fan, product, release, thermal and physical interfaces remain open"
   },
-  "pr": 1257
+  "pr": 1260
 }
