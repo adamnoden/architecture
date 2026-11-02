@@ -57,6 +57,16 @@ The proposed complete family wet join is now one finite trial: bath9460/3800/170
 
 Rear wet30 trial moves the1000 shower15 west/15 north to1802.5/8952.5 and basin15 north to1000/8952.5, from the actual south/east substrate faces. Its return stops before the ordinary door host at10350; no wholesale30 application shifts the family cabinet or Bed3. Actual tray support, drain and door/task checks must join before this trial is called adopted.
 
+## Candidate review table
+
+| Scope | Recommended direction and present internal join | Admission or named owning duty |
+|---|---|---|
+| Dry masonry and actual furnishing envelopes | Complete27 mineral finish; ordinary complete-frame/furniture repairs, with final HAD authority pending. Gypsum/acrylate remains the rejected material-policy functional control. | Delivered substrate/preparation/coat recipe; whole furnishing constituents and performance. |
+| Floors, trim, joinery and hardware |80 overlay with retained100 ground glass; mechanical timber/mineral fields, independent18 trim, frame-and-panel storage and accessible hardware. Whole source dimensions and first release retained. | Load spreading, moisture/acoustic duty, actual fixings/packing, coatings, hidden bushes/glues and required safety constituents. |
+| Ordinary and protective ceilings/doors | Ordinary70 beneath actual slab or private-room roof; complete176 only over protected circulation/void domains; complete applicable doorsets plus upper closure. Family600 push/held-transfer/wait/withdrawal is independently reviewed at IAS30cf1109; final roof/domain and common-source join remains pending. | RC/roof support and fire role, complete classified systems/penetrations, compatible closer speed/forces, actual constituents. |
+| Three wet rooms and other wetted fixtures | Matched enamel tray direction with distinct principal900/rear1000 interfaces; located30 lining; family700 bath direction and supported removable wet-worktop. Exact final IAS/services renewal join pending. | Complete water system, actual product outlets/supports/seat/seals, opened-boundary reinstatement, mass/physical handling. The complete guarded-stair carry remains an explicit IAS design duty; a hall-only piece witness is not complete exterior renewal. |
+| Concealed boundaries and occurrence closeout | Independent fixed supports and continuous water/air/fire/acoustic boundaries; isolation/cap/reseal/test after disturbance. No obsolete indoor heavy caps restored. | Actual complete closures and disclosed compounds in their existing owning acceptance routes; no exception approved. |
+
 ## Development exit assessment
 
 Every named room/route now has a reasoned construction direction, constituents/functional residue and first release. Two **internal design** joins still prevent this packet claiming the broad development exit: one full27 dry-finish room/furniture/frame/task rewind, and the complete family hinged-door/service/wet-face plus rear wet-face trial. These are concrete work being coordinated with HAD/IAS/services, not referrals to an external certifier. Their actual source results must be joined before proposing lifecycle completion.
@@ -113,3 +123,6 @@ Local verification: exact immutable HAD6aff and service6b05 inputs reproduce bot
 In a combined tree, reproduce with `node project/mat/studies/interiors-whole-house-assembly.mjs --check`. Before that join, set both `HAD_SOURCE_PATH` and `SERVICES_SOURCE_PATH` to the exact owning JSONs; both recorded git blobs must match. No copied owning JSON is committed here. The arithmetic/control sheet is an inspection aid. It does not certify the adapted plaster, cabinet operation, acoustic floor, fire ceiling or material composition.
 
 **Reference design — not released for construction. Assumptions and outstanding verification accompany the proposal; internal checks do not constitute external assurance or certification.**
+
+
+The focused family600 peer review is bound to IAS `30cf11096e98ec8c18e6269330b986751b9e63f5`, tree `1b9070244b877b0528808cd16f9f5952172f5902`, JSON `3bf11679be73d6f7c8566b893f8302fa4454949b`. Exact native identity, source-bound reproduction and actual SVG inspection pass. The corrected north-first transfer holds the OPEN handle continuously: body15, arm-to-fixed133.765 and arm-to-leaf14.765 lower bounds, reach upper565.139 within the authored600 criterion. The rejected east-first611.422 corner is an asserted negative control. This review covers the family operation delta; it does not accept actual force, closer speed, classified-kit chemistry or newer kitchen release work.

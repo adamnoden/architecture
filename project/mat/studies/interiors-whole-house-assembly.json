@@ -729,6 +729,92 @@
         "scope": "Live MATINTERIORS constructivegeometry; exactselectedproduct/frame/servicebranch still tojoin."
       }
     },
+    "furnitureRequirements": {
+      "principalBed": {
+        "whole": [
+          9450.5,
+          9175,
+          2090,
+          1600
+        ],
+        "body": [
+          9450.5,
+          9175,
+          2000,
+          1600
+        ],
+        "head": [
+          11450.5,
+          9175,
+          90,
+          1600
+        ],
+        "maxHeadHeight": 700,
+        "maxBedMattressTop": 600,
+        "minCill": 750,
+        "verticalReserve": 50,
+        "windowOperation": "Compatible leaf/frame lower envelope staysat/above750; actualOASfamily/3Doperation not yet matched.",
+        "declaredCombinedPositionLoss": 50,
+        "bodyDiameter": 600,
+        "remainingPassageAfterLoss": 639,
+        "maintenance": {
+          "translation": [
+            0,
+            500
+          ],
+          "whole": [
+            9450.5,
+            9675,
+            2090,
+            1600
+          ],
+          "swept": [
+            9450.5,
+            9175,
+            2090,
+            2100
+          ],
+          "trayStage": [
+            10275,
+            8540,
+            250,
+            900
+          ],
+          "handlingPad": 100,
+          "nominalStageGap": 235,
+          "after100Pad": 135,
+          "windowTasks": "Unavailable during bedroom maintenance; restore ordinary state.",
+          "sweptConflicts": [],
+          "pass": true,
+          "paddedStage": [
+            10175,
+            8440,
+            450,
+            1100
+          ],
+          "stageToTemporaryBedGap": 135
+        },
+        "southPassageFromActualLeaf8486": 689
+      },
+      "bed4": {
+        "whole": [
+          5405.5,
+          9350,
+          2090,
+          1500
+        ],
+        "maxHeadHeight": 700,
+        "westFootGap": 863.5,
+        "northBedPassage": 732.5,
+        "rearR01PanStageWithPad": [
+          3700,
+          10522.5,
+          760,
+          555
+        ],
+        "noR01Conflict": true
+      }
+    },
     "finishDeviation": {
       "source": 15,
       "proposed": 27,
@@ -2472,7 +2558,48 @@
     },
     "kitchenAdverse": "Add actual18trim to raw kfixed: first supported north-sink withdrawal intersects outer-north+18trim. Source already marks finish/trim join pending; no transport/rig/force admission.",
     "verification": "Exact detached head/tree, source-bound --check, all3SVGs rendered/viewed; no IAS files edited.",
-    "admission": "Reach600/650 are authored sensitivities; small geometric reserves are not comfort/product/force/physical/material or fire-kit acceptance."
+    "admission": "Reach600/650 are authored sensitivities; small geometric reserves are not comfort/product/force/physical/material or fire-kit acceptance.",
+    "family600Delta": {
+      "head": "30cf11096e98ec8c18e6269330b986751b9e63f5",
+      "tree": "1b9070244b877b0528808cd16f9f5952172f5902",
+      "JSONBlob": "3bf11679be73d6f7c8566b893f8302fa4454949b",
+      "scope": "Focused family600 delta only; no newer kitchen first-release or whole-house acceptance",
+      "result": "Bounded PASS: exact native head/tree/blob, eab4 main ancestry, source-bound --check and actual rendered/viewed SVG",
+      "hinge": [
+        9397,
+        6281
+      ],
+      "heldTransfer": [
+        [
+          9910,
+          5740
+        ],
+        [
+          9910,
+          5800
+        ],
+        [
+          10380,
+          5800
+        ]
+      ],
+      "continuous": {
+        "body": 15,
+        "armFixed": 133.765,
+        "armLeaf": 14.765,
+        "reachUpper": 565.1394166936562
+      },
+      "negativeControl": {
+        "head": "ea4d958b610d4bcdfdc3a328f4572008e169a39d",
+        "eastFirstCorner": [
+          10380,
+          5740
+        ],
+        "heldReach": 611.4221127829775,
+        "limit": 600
+      },
+      "rule": "Hold the OPEN handle through the checked transfer; then retract during first2degrees of controlled closing. No stationary mechanical dwell or manual mid-sweep regrip inferred. Actual closer speed/force/classified kit/constituents and physical operation remain unadmitted."
+    }
   },
   "historicalGroundComparison": {
     "source": "project/mat/joined-ground-floor-and-court-boundary.md",
