@@ -3,8 +3,8 @@
   "inputs": {
     "had": {
       "path": "project/had/studies/open-north-loggia.json",
-      "commit": "a510f30cc82cf9d0142664b72bc272406aed3076",
-      "blob": "54f5ff68fe9bdd9b14fc00d6262d4a2c2366aea2"
+      "commit": "cfacc96c61ce1be5befa3bc0a10086c7cb6b4202",
+      "blob": "25faad2c4d40df2b7da7212f73808843a88d2f52"
     },
     "roofControl": {
       "path": "project/mat/studies/loggia-roof-section.json",

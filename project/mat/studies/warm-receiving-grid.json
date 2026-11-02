@@ -85,10 +85,13 @@
       "effectiveLength": 1044,
       "ex": 45.27658935912547,
       "ey": 5,
-      "maxMpa": 0.7588147408032296,
-      "minEnvelopeMpa": 0.1873686689649502,
+      "lineEx": 25,
+      "centredLineMaxMpa": 0.7588147408032296,
+      "centredLineMinEnvelopeMpa": 0.1873686689649502,
+      "maxMpa": 0.9168668528326145,
+      "minEnvelopeMpa": 0.09929474793648371,
       "fdComparator": 1.6333333333333335,
-      "limit": "Concept45degreefan through300warmRC; actual reinforcedspreader/foundationelasticity/contact/shear/creep unproved. FullM retained; minimum0.9Gline combinedadversarially withmaxpointenvelope, not a normative combination."
+      "limit": "Concept45degreefan through300warmRC; actual reinforcedspreader/foundationelasticity/contact/shear/creep unproved. FullM retained; adverse25mm line eccentricity also retained; minimum0.9Gline combinedadversarially withmaxpointenvelope, not a normative combination."
     },
     {
       "name": "stair",
@@ -100,10 +103,13 @@
       "effectiveLength": 844,
       "ex": 55.65694578584255,
       "ey": 5,
-      "maxMpa": 0.9375550378091927,
-      "minEnvelopeMpa": 0.1281381599663511,
+      "lineEx": 25,
+      "centredLineMaxMpa": 0.9375550378091927,
+      "centredLineMinEnvelopeMpa": 0.1281381599663511,
+      "maxMpa": 1.0956071498385775,
+      "minEnvelopeMpa": 0.040064238937884626,
       "fdComparator": 1.6333333333333335,
-      "limit": "Concept45degreefan through300warmRC; actual reinforcedspreader/foundationelasticity/contact/shear/creep unproved. FullM retained; minimum0.9Gline combinedadversarially withmaxpointenvelope, not a normative combination."
+      "limit": "Concept45degreefan through300warmRC; actual reinforcedspreader/foundationelasticity/contact/shear/creep unproved. FullM retained; adverse25mm line eccentricity also retained; minimum0.9Gline combinedadversarially withmaxpointenvelope, not a normative combination."
     }
   ],
   "thermalCases": [
