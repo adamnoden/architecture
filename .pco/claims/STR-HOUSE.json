@@ -9,12 +9,12 @@
     "label": "zerg-str-next-nodes"
   },
   "claimedAt": "2026-11-02T12:58:14.324Z",
-  "heartbeatAt": "2026-11-02T12:58:14.324Z",
-  "expiresAt": "2026-11-02T13:43:14.324Z",
+  "heartbeatAt": "2026-11-02T13:23:26.144Z",
+  "expiresAt": "2026-11-02T14:08:26.144Z",
   "checkpoint": {
-    "evidence": "Fresh actual main fad06e513046ad1d198b9d48b2e0505a3384616e; reviewed merged PR 1273; previous generation 20 released",
-    "next": "Compare constant-depth cold ring with local tapers through actual SW adjacent nodes and windows; extend remaining roof-face load path",
-    "blocker": "HOUSE, full signed actions, pile/soil and envelope remain open"
+    "evidence": "Draft PR 1274 head 0907999f15bf724de95096f896c0c15537fc30f6 tree c3d9f3b22b61118a65af153b6e693aa1aa05d0d8; local constant-depth arm route and roof-tip challenger",
+    "next": "Independent geometry, window, load and roof-tip review; coordinate MAT21 field source before integration",
+    "blocker": "Full roof, arm/pile capacity, all wall loads, envelope and site remain open"
   },
   "branch": "work/zerg-str-next-nodes-20261102",
   "predecessor": {
@@ -38,5 +38,6 @@
       "next": "Root observes exact-head CI, runs owner preflights and merges if earned; then close out STR 20 and reacquire for full corner route",
       "blocker": "Whole-house signed actions, cold-arm and pile transfer, envelope and site remain open"
     }
-  }
+  },
+  "pr": 1274
 }
