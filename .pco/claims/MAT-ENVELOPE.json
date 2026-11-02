@@ -9,12 +9,12 @@
     "label": "zerg9-envelope-join"
   },
   "claimedAt": "2026-11-02T14:04:32.556Z",
-  "heartbeatAt": "2026-11-02T14:04:32.556Z",
-  "expiresAt": "2026-11-02T14:49:32.556Z",
+  "heartbeatAt": "2026-11-02T14:27:04.323Z",
+  "expiresAt": "2026-11-02T15:12:04.323Z",
   "checkpoint": {
-    "evidence": "Verified MAT21 PR #1277 merged main 2c32fdee809db525fd12684a8f83eade91ae2686; no complete envelope accepted",
-    "next": "Develop finite continuous perimeter, roof collar, service and threshold/load-bearing joins with STR and RWT",
-    "blocker": "Frame, movement, bearing, structural, product, site and physical duties remain unqualified"
+    "evidence": "Draft PR #1280 head 9551e2f505b1471e472ca1e3f2d19cd6b4ee07ea tree f277111bf945e31afcf80031393608220f45ac58; peer-reviewed conditional network and junction controls",
+    "next": "Root independent bounded QA, exact-head CI and fresh preflight",
+    "blocker": "Historical receivers, collar, threshold, services, bearing, movement, perimeter and physical acceptance remain unresolved"
   },
   "branch": "work/zerg9-envelope-join",
   "predecessor": {
@@ -38,5 +38,6 @@
       "next": "Root QA, exact-head CI and fresh preflight; continue constructive work only after reviewable packet",
       "blocker": "Complete barrier, support, movement, frame, structural, site and physical qualification remain open"
     }
-  }
+  },
+  "pr": 1280
 }
