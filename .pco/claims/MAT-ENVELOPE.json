@@ -9,8 +9,8 @@
     "label": "zerg7-envelope-joined-edge"
   },
   "claimedAt": "2026-11-02T08:48:53.526Z",
-  "heartbeatAt": "2026-11-02T09:00:11.456Z",
-  "expiresAt": "2026-11-02T09:45:11.456Z",
+  "heartbeatAt": "2026-11-02T09:07:20.127Z",
+  "expiresAt": "2026-11-02T09:52:20.127Z",
   "branch": "work/zerg7-envelope-joined-edge",
   "predecessor": {
     "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote c622a56fd5497ed788d85ad0aa50d8479b9f1ca7, tree 915a21335ab73887cc9e19754ab221d68defccb0; connected ordinary eave source-bound packet and generated sections; local checks pass",
-    "next": "Open draft PR for independent review, exact-head CI and canonical merge-check by root",
-    "blocker": "Endpoint saddle/post joint, owning STR q450 source, classified perimeter and 3D heat/moisture remain design holds"
+    "evidence": "Remote c622a56fd5497ed788d85ad0aa50d8479b9f1ca7 tree915a21335ab73887cc9e19754ab221d68defccb0 is initial unmerged candidate, now REJECTED as located joined assembly: HAD has open loggia x4800-7200/y7750-12000, 519.5 sidewalls at x4377.5/7622.5, no ordinary wall at x6000/y7750, and no protected176 ceiling domain at illustrated stations. No PR. Local correction draft unpublished.",
+    "next": "Hold publication; root read-only architectural adjudication locates a genuine wall/roof/ceiling target and directs revised packet. Preserve rejected candidate for recovery.",
+    "blocker": "Source topology invalidates ordinary429.5 collector/50-glass neck/176 classified ceiling transfer to seven-post loggia plan. No joined preferred assembly selected."
   }
 }
