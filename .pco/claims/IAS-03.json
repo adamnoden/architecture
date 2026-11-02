@@ -9,14 +9,14 @@
     "label": "zerg5-ias-closeout"
   },
   "claimedAt": "2026-11-02T00:16:03.173Z",
-  "heartbeatAt": "2026-11-02T01:59:22.034Z",
-  "expiresAt": "2026-11-02T02:44:22.034Z",
+  "heartbeatAt": "2026-11-02T02:28:55.735Z",
+  "expiresAt": "2026-11-02T03:13:55.735Z",
   "checkpoint": {
-    "evidence": "Reviewed corrected source PR1239 headfaec3e0468167f452af7a81ea48116a4691a5d84 tree34c163aa9ab2192349d8e22db581624b141eedf6; focused High PASS. Source frozen and included as actual history in HAD preparer batch. Previous directed connector-only renewal exacte5f0f9da reconciled before this fresh canonical ffbe invocation.",
-    "next": "Coordinate true default IAS reproducer and exact source projection in shared integration; rebind only after root supplies exact shared branch/PR/head. Root alone observes CI and merges.",
-    "blocker": "Partial IAS stays planned; complete guarded export/carrier/support/handling and physical/material/kit admission remain unearned. No undirected claim or source edits."
+    "evidence": "Deliberate shared association PR1244 work/zerg5-house-integration-20261102 head2a671ddd93232ad0b1f1cf9eaf93d3ef38264f94 treee2a398b4892c00917ff2f578f4dc4030eb33f9b8 baseffbe3689 verified by root and provider. IAS reviewed sourcefaec3e04 is preserved actual history; full-delta/focused clamp High PASS, true default IAS reproduction and56 critical cross-owner projections passed without overrides in preparer candidate.",
+    "next": "Hold exact shared head for root sole fullCI observation, fresh canonical per-node preflights and expected-head merge. Release only after verified merged notice.",
+    "blocker": "IAS stays planned/incomplete: no transfer of full guarded export, connected handling/support or physical/material/classified-kit acceptance. No source changes, new claims or independent CI polling."
   },
-  "branch": "work/zerg5-ias-closeout",
+  "branch": "work/zerg5-house-integration-20261102",
   "predecessor": {
     "leaseId": "c04cb153-03a0-42b1-a663-792b266b81ce",
     "generation": 14,
@@ -39,5 +39,5 @@
       "blocker": "Partial IAS progress only: head-first sink and full guarded wet export/IS reconciliation remain internal work; no node completion or physical/material admission."
     }
   },
-  "pr": 1239
+  "pr": 1244
 }
