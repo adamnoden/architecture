@@ -1,7 +1,7 @@
 {
   "units": "mm unless explicitly stated; all floor layer checks use level-local FFL0",
-  "status": "Bounded whole-house development schedule checkpoint; no complete material/product/physical admission",
-  "baseMain": "eab4ec0370d82790cb6da0fd11b03587eb925d12",
+  "status": "Source-joined whole-house interior development result proposed for independent closeout review; no material/product/physical admission",
+  "baseMain": "6a3c15d6ffb8dac628c42533ba7ea64ac0de2cce",
   "fingerprints": {
     "project/mat/constituent-audit.md": "d378d86664cd7b3d95863d698fe778accea6c7c019c981736f798c1e079fb534",
     "project/mat/interior-plaster-substrate.md": "56b3f51185ba5a89db06f742e47ee2970185ca16903007122dc4adce8160491c",
@@ -10,146 +10,43 @@
     "project/str/joined-rc-reference.md": "f53292c7cbe97772e3a0b2efd8fc2a6bcfcd094b7c39debe72d278407408e797",
     "project/str/studies/house-plan.json": "193805456e26533026814bebe8c6be862e26a7d944c360dbb6047a1bde2d2282",
     "project/had/had-02m-material-finish-synthesis.md": "338f9f0fe4aed085fe6db2909bde6a4023f2ba08ec97048a2eb4bcb375d25b81",
-    "docs/reference-house/interior-family-selection.md": "47b71d40e99f5832638f4bc53b68576f53c857d57364fe74d1c87ec669099819",
+    "docs/reference-house/interior-family-selection.md": "9fd124ba4e3bfea018d671bc301400ff3810e28c29325bf518398528a243b29b",
     "docs/reference-house/material-policy.md": "a1002d7ecea0de2fe27b541785c61ea45f65fbbb7bd9dda235a1fb6c7be2511e",
     "project/mat/joined-ground-floor-and-court-boundary.md": "4b35b8d898a04994d950da1cdd51539c4388fb68519f8c51cdd6dff86cedbd1b",
-    "project/mat/studies/services-b-joined-inventory.json": "424fe5df34b921915b33bd846606d6b3508d944232eefc724aad7d18dc66ef94"
+    "project/mat/studies/services-b-joined-inventory.json": "424fe5df34b921915b33bd846606d6b3508d944232eefc724aad7d18dc66ef94",
+    "project/str/studies/open-loggia-support.json": "f7d90af41d3b201d63e6f49fb6d993d3bdfcc7c6425890b3ddfcd3d3b44b51d2"
   },
   "geometry": {
-    "HADHead": "0b2f7d48c82459214cae4b6778c3ced7b3e6c54b",
-    "HADJSONBlob": "6affb39e28a777e36532729183152c8c588e4989",
+    "HADHead": "a510f30cc82cf9d0142664b72bc272406aed3076",
+    "HADJSONBlob": "54f5ff68fe9bdd9b14fc00d6262d4a2c2366aea2",
     "logicalInput": "project/had/studies/open-north-loggia.json",
     "services": {
-      "head": "38194f2988c8cedfce7ee3a066c578afaf0f7c37",
-      "blob": "eb841fcfe6ec77975ee94d48c4cae59a7dc12859",
+      "head": "9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2",
+      "blob": "e827caa8c6c0cfc23bef0f08b3452f57984875d6",
       "logicalInput": "project/mat/studies/whole-house-service-baseline.json"
     },
     "wholeHouseFit": {
+      "checks": {
+        "listedSpatial": true,
+        "wholeFurnitureWalls": true,
+        "servicesKeyedProjection": true,
+        "family600": true,
+        "rearRepair": true,
+        "fanFields": true,
+        "exteriorPorts": true,
+        "guardEnvelope": true,
+        "livingRadiatorMove": true
+      },
       "listedProxyPass": true,
-      "footprintPass": false,
-      "pass": false,
-      "remaining": [
-        "Resolve all recorded whole furniture/wall overlaps, including frontheads.",
-        "Rebind actual front-single door/closed-room paths after complete finish/frame correction.",
-        "Join IAS familydoor arm/regrip and all wet30 boundary patches."
-      ],
-      "scope": "No actual product/force/material/fire/physical certification is made a substitute for these internal geometry corrections."
+      "footprintPass": true,
+      "pass": true,
+      "remaining": [],
+      "scope": "HADfinitearchitecturalfit andexplicitprocurement/maintenancegeography only. Noactualhuman/product/force/material/structural/fire/hydraulic/sitecertification inferred."
     },
     "rawFootprint": {
       "method": "Positive rectangle overlap of each represented whole furniture/fixture with actual nominal finished walls/receivers, before decorative18skirt. Wall-mounted contact at zero is not counted. No vertical exception silently invented.",
-      "conflicts": [
-        {
-          "level": "GROUND",
-          "object": "pantry-shelf-comparison",
-          "wall": "service-spine",
-          "overlap": [
-            9385,
-            6800,
-            12,
-            1150
-          ]
-        },
-        {
-          "level": "GROUND",
-          "object": "rear-stack",
-          "wall": "outer-west",
-          "overlap": [
-            417.5,
-            10800,
-            12,
-            750
-          ]
-        },
-        {
-          "level": "GROUND",
-          "object": "north-sink-station",
-          "wall": "outer-north",
-          "overlap": [
-            8700,
-            11570.5,
-            900,
-            12
-          ]
-        },
-        {
-          "level": "GROUND",
-          "object": "north-cooking-station",
-          "wall": "outer-north",
-          "overlap": [
-            10800,
-            11570.5,
-            600,
-            12
-          ]
-        },
-        {
-          "level": "FIRST",
-          "object": "bed2-head",
-          "wall": "bed2-L-north",
-          "overlap": [
-            1125,
-            3150.5,
-            900,
-            12
-          ]
-        },
-        {
-          "level": "FIRST",
-          "object": "bed2-wardrobe",
-          "wall": "bed2-east",
-          "overlap": [
-            4703,
-            1017.5,
-            12,
-            900
-          ]
-        },
-        {
-          "level": "FIRST",
-          "object": "bed3-head",
-          "wall": "bed3-L-north",
-          "overlap": [
-            10033.75,
-            3603,
-            900,
-            12
-          ]
-        },
-        {
-          "level": "FIRST",
-          "object": "bed3-wardrobe",
-          "wall": "bed3-west",
-          "overlap": [
-            7285,
-            1017.5,
-            12,
-            1500
-          ]
-        },
-        {
-          "level": "FIRST",
-          "object": "rear-cabinet",
-          "wall": "outer-west",
-          "overlap": [
-            417.5,
-            10800,
-            12,
-            750
-          ]
-        },
-        {
-          "level": "FIRST",
-          "object": "rear-west-low-box",
-          "wall": "outer-west",
-          "overlap": [
-            417.5,
-            9937.5,
-            12,
-            862.5
-          ]
-        }
-      ],
-      "pass": false
+      "conflicts": [],
+      "pass": true
     },
     "protectedRevision": "Exact protected occurrence reference imported one way; product/physical/statutory admission not earned",
     "protectedRoute": {
@@ -171,7 +68,7 @@
             100,
             4776.5
           ],
-          "scope": "Nonloadbearing100core+15each; whollyoutside1100flight. Bonds to4250return/rearwall, noSouthlandingcutoff."
+          "scope": "Nonloadbearing100core+15each; whollyoutside1094bodyterritory. Bonds to4250return/rearwall, noSouthlandingcutoff."
         },
         "groundProtected": "Stair+Southlanding/gallery+frontentrance/void→FRONTfinalexit; living/kitchen north of crossdoors excluded.",
         "upperProtected": "Whole gallery/landing and stair are one protected volume; no added fullheight stairEwall or room-to-room shortcut.",
@@ -271,7 +168,7 @@
           ],
           "opening": "SOUTHINTOSTUDY",
           "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim",
-          "frameDepth": 194
+          "frameDepth": 230
         },
         {
           "id": "GUEST-WC",
@@ -368,7 +265,7 @@
               6283.5
             ],
             "net": 767,
-            "status": "IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified"
+            "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Final600reach immutable proof pending binding; E20 assembly not qualified"
           }
         }
       ],
@@ -393,7 +290,7 @@
     },
     "groundFurniture": {
       "study-desk": [
-        600,
+        655,
         600,
         1600,
         700
@@ -429,25 +326,19 @@
         700
       ],
       "plant-riser": [
-        9410,
+        9400,
         4700,
         550,
         700
       ],
-      "Q350-body": [
-        9862.5,
-        5550,
-        570,
-        725
-      ],
       "pantry-shelf-comparison": [
-        9385,
+        9397,
         6800,
         600,
         1150
       ],
       "rear-stack": [
-        417.5,
+        429.5,
         10800,
         300,
         750
@@ -508,13 +399,13 @@
       ],
       "north-sink-station": [
         8700,
-        10982.5,
+        10970.5,
         900,
         600
       ],
       "north-cooking-station": [
         10800,
-        10982.5,
+        10970.5,
         600,
         600
       ],
@@ -523,54 +414,138 @@
         9025,
         650,
         650
+      ],
+      "service-emitter-study-W": [
+        429.5,
+        1250,
+        200,
+        1150
+      ],
+      "service-emitter-living-W": [
+        429.5,
+        9800,
+        200,
+        950
+      ],
+      "service-emitter-living-N2": [
+        3102.5,
+        11370.5,
+        950,
+        200
+      ],
+      "service-emitter-kitchen-E": [
+        11370.5,
+        9700,
+        200,
+        1350
+      ],
+      "service-emitter-utility-E": [
+        11370.5,
+        1778,
+        200,
+        650
+      ],
+      "service-emitter-plant-N": [
+        9422,
+        6203,
+        550,
+        200
+      ],
+      "service-emitter-protected-G": [
+        3500,
+        2747.5,
+        550,
+        200
+      ],
+      "service-emitter-guest-WC-E": [
+        9003,
+        1900,
+        200,
+        550
+      ],
+      "plant-primary-buffer-round-bounding600": [
+        10050,
+        5550,
+        600,
+        600
+      ],
+      "plant-controls": [
+        11270.5,
+        5550,
+        300,
+        650
+      ],
+      "service-utility-washer": [
+        10050,
+        700,
+        650,
+        700
+      ],
+      "service-utility-sink": [
+        10950,
+        700,
+        600,
+        700
+      ],
+      "service-utility-rearServiceChase": [
+        10050,
+        450,
+        1500,
+        250
+      ],
+      "service-utility-valveBay": [
+        10700,
+        700,
+        250,
+        700
+      ],
+      "service-utility-electricalStation": [
+        9397,
+        1750,
+        300,
+        650
+      ],
+      "service-utility-PVinverter": [
+        9400,
+        429.5,
+        500,
+        250
       ]
     },
     "upperFurniture": {
       "bed2": [
-        1125,
-        1062.5,
-        900,
-        2000
-      ],
-      "bed2-head": [
-        1125,
-        3062.5,
-        900,
-        100
+        1100,
+        1065.5,
+        950,
+        2055
       ],
       "bed2-wardrobe": [
-        4055,
-        1017.5,
+        4043,
+        1067.5,
         660,
         900
       ],
       "bed3": [
-        10033.75,
-        1525,
-        900,
-        2000
-      ],
-      "bed3-head": [
-        10033.75,
-        3525,
-        900,
-        90
+        9942.5,
+        1518,
+        950,
+        2055
       ],
       "bed3-wardrobe": [
-        7285,
-        1017.5,
+        7297,
+        1047.5,
         660,
         1500
       ],
       "bed4": [
         5405.5,
-        9350,
+        9250,
         2000,
         1500
       ],
       "bed4-head": [
         7405.5,
-        9350,
+        9250,
         90,
         1500
       ],
@@ -582,13 +557,13 @@
       ],
       "principal": [
         9450.5,
-        9175,
+        9150,
         2000,
         1600
       ],
       "principal-head": [
         11450.5,
-        9175,
+        9150,
         90,
         1600
       ],
@@ -605,7 +580,7 @@
         1000
       ],
       "rear-WC": [
-        717.5,
+        729.5,
         11000,
         560,
         355
@@ -617,13 +592,13 @@
         220
       ],
       "rear-cabinet": [
-        417.5,
+        429.5,
         10800,
         300,
         750
       ],
       "rear-west-low-box": [
-        417.5,
+        429.5,
         9937.5,
         150,
         862.5
@@ -654,13 +629,13 @@
       ],
       "family-WC": [
         10777.5,
-        5800,
+        5750,
         560,
         355
       ],
       "family-basin": [
         11227.5,
-        5300,
+        5200,
         340,
         450
       ],
@@ -677,10 +652,58 @@
         180
       ],
       "family-local-soil-column": [
-        11342.5,
-        6180,
-        180,
-        180
+        11297.5,
+        6135,
+        270,
+        265
+      ],
+      "service-emitter-bed2-S": [
+        3425,
+        429.5,
+        950,
+        200
+      ],
+      "service-emitter-bed3-S": [
+        7625,
+        429.5,
+        950,
+        200
+      ],
+      "service-emitter-bed4-N": [
+        3102.5,
+        11370.5,
+        1050,
+        200
+      ],
+      "service-emitter-principal-N": [
+        9625,
+        11370.5,
+        1150,
+        200
+      ],
+      "service-emitter-rear-N": [
+        2100,
+        11367.5,
+        650,
+        200
+      ],
+      "service-emitter-family-E": [
+        11367.5,
+        4525,
+        200,
+        650
+      ],
+      "service-emitter-principal-E-high": [
+        11367.5,
+        6775,
+        200,
+        650
+      ],
+      "service-emitter-protected-F": [
+        8180,
+        4400,
+        200,
+        550
       ]
     },
     "roomFaces": {
@@ -733,19 +756,19 @@
       "principalBed": {
         "whole": [
           9450.5,
-          9175,
+          9150,
           2090,
           1600
         ],
         "body": [
           9450.5,
-          9175,
+          9150,
           2000,
           1600
         ],
         "head": [
           11450.5,
-          9175,
+          9150,
           90,
           1600
         ],
@@ -756,7 +779,7 @@
         "windowOperation": "Compatible leaf/frame lower envelope staysat/above750; actualOASfamily/3Doperation not yet matched.",
         "declaredCombinedPositionLoss": 50,
         "bodyDiameter": 600,
-        "remainingPassageAfterLoss": 639,
+        "remainingPassageAfterLoss": 614,
         "maintenance": {
           "translation": [
             0,
@@ -764,13 +787,13 @@
           ],
           "whole": [
             9450.5,
-            9675,
+            9650,
             2090,
             1600
           ],
           "swept": [
             9450.5,
-            9175,
+            9150,
             2090,
             2100
           ],
@@ -781,8 +804,8 @@
             900
           ],
           "handlingPad": 100,
-          "nominalStageGap": 235,
-          "after100Pad": 135,
+          "nominalStageGap": 210,
+          "after100Pad": 110,
           "windowTasks": "Unavailable during bedroom maintenance; restore ordinary state.",
           "sweptConflicts": [],
           "pass": true,
@@ -792,14 +815,15 @@
             450,
             1100
           ],
-          "stageToTemporaryBedGap": 135
+          "stageToTemporaryBedGap": 110
         },
-        "southPassageFromActualLeaf8486": 689
+        "southPassageFromActualLeaf8486": 689,
+        "southPassage": 664
       },
       "bed4": {
         "whole": [
           5405.5,
-          9350,
+          9250,
           2090,
           1500
         ],
@@ -815,14 +839,3474 @@
         "noR01Conflict": true
       }
     },
+    "houseIdentity": {
+      "decision": "SELECT compactB/openNorthloggia for HADarchitecturaldevelopment",
+      "identity": "HAD-B-OPEN-LOGGIA-2026-11-02",
+      "shell": 12000,
+      "spine": 9300,
+      "owningResult": "project/had/had-03-open-north-loggia.md",
+      "canonicalCompilerBaseline": "AcceptedRH-LAYOUT-REVISION-02/FAMILY-02 A9500 isnotchangedorclaimedtodepictthisHADsource",
+      "handoffs": [
+        "ROF-RWT-GATE",
+        "TRIAD-GATE",
+        "HRS-TECHNICAL",
+        "ADE-MODEL",
+        "PLT-FINAL-PREP"
+      ],
+      "scope": "Onearchitecturalselection; datedA/Bstudiesretainhistoricalsourceidentity. Sharedactualhouse/compiler/siteadoption remainswith existingowninggates."
+    },
+    "protectedRoofClosureDomains": {
+      "top": 6620,
+      "bottom": 6444,
+      "rectangles": [
+        [
+          "stairVoid",
+          [
+            429.5,
+            4432.5,
+            2388,
+            4323
+          ]
+        ],
+        [
+          "entranceVoid",
+          [
+            4885,
+            429.5,
+            2230,
+            2305.5
+          ]
+        ],
+        [
+          "westUpperGallery",
+          [
+            2999.5,
+            3344.5,
+            821,
+            5411
+          ]
+        ],
+        [
+          "southWestUpperHall",
+          [
+            429.5,
+            3344.5,
+            4405.5,
+            476
+          ]
+        ],
+        [
+          "southUpperBridge",
+          [
+            2914.5,
+            2747,
+            1904.5,
+            1073.5
+          ]
+        ],
+        [
+          "southEastUpperHall",
+          [
+            7180.5,
+            2747,
+            2022.5,
+            1073.5
+          ]
+        ],
+        [
+          "eastUpperGallery",
+          [
+            8179.5,
+            3820.5,
+            1023.5,
+            4359
+          ]
+        ]
+      ],
+      "scope": "Unionincludingassociatedwallheads,notroofoversprivatebedrooms. Actualfire-perimeter/support systemmustbind. GroundC-GRCsoffit appliesonlywhereactualFIRSTslabexists, neveracrosseitheropenvoid."
+    },
+    "wetBoundaryPatches": [
+      [
+        "familyEastWetFace",
+        [
+          11567.5,
+          3800,
+          3,
+          2600
+        ]
+      ],
+      [
+        "familyWestBathEndWetReturn",
+        [
+          9397,
+          3800,
+          3,
+          700
+        ]
+      ],
+      [
+        "rearShowerWetReturn",
+        [
+          2802.5,
+          8952.5,
+          3,
+          1000
+        ]
+      ]
+    ],
+    "utilityDisposition": {
+      "opening": [
+        10250,
+        11150
+      ],
+      "axis": 2550,
+      "operation": "OPENARCH within sharedplant/utilityservicezone",
+      "protectedBoundary": "E20referencePlantdoorx9300/y2750..3650 remains; no newprotectedvolumeconnection",
+      "trade": "No separateutilityacoustic/privacyclosure; actualclassifiedPlantboundaryandservicepenetrations mustqualify."
+    },
+    "servicesProjection": {
+      "source": {
+        "commit": "9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2",
+        "path": "project/mat/studies/whole-house-service-baseline.json",
+        "blob": "e827caa8c6c0cfc23bef0f08b3452f57984875d6",
+        "key": "interfaces.architecturalServices",
+        "projectionSha256": "94906589235797bdcf3ecd921f954bf00fbbfa84cbcaa2a5b0af7e5fd6e91fad"
+      },
+      "keyedFieldsEqual": true,
+      "defaultCanonicalRelativePath": "project/mat/studies/whole-house-service-baseline.json",
+      "method": "DirectMAT-ownedobjectimport; sortedcompactUTF8SHA256 coversEVERYkey/value. No manualnumericdelta. Explicitdevelopmentoverride additionallyrequires exactGitblob; finalintegrationusesdefaultcanonicalpathwithsameprojection.",
+      "pass": true
+    },
+    "familyOperationEvidence": {
+      "source": {
+        "commit": "30cf11096e98ec8c18e6269330b986751b9e63f5",
+        "path": "project/ias/studies/selected-family-convergence.json",
+        "blob": "3bf11679be73d6f7c8566b893f8302fa4454949b"
+      },
+      "familyGeometryEquivalent": true,
+      "projectionEquivalent": true,
+      "proof": {
+        "push": {
+          "fixedLower": 7.9289321881345245,
+          "leafLower": 98.42630434382707,
+          "armLower": 6.588374383456062,
+          "reachUpper": 599.1778001515712
+        },
+        "transfer": {
+          "path": [
+            [
+              9910,
+              5740
+            ],
+            [
+              9910,
+              5800
+            ],
+            [
+              10380,
+              5800
+            ]
+          ],
+          "minimumReserve": 15,
+          "heldHandle": {
+            "grip": [
+              10009,
+              6226
+            ],
+            "samplesPerSegment": 1000,
+            "bodyHalfStepBound": 0.235,
+            "armFixedLower": 133.765,
+            "armLeafLower": 14.765,
+            "reachUpper": 565.1394166936564,
+            "maximumEndpointReach": 564.9044166936563,
+            "mechanism": "Person holds OPEN handle throughout north-first transfer; mechanical closer does not provide a stationary dwell."
+          }
+        },
+        "coupling": {
+          "minimumLeafLowerBound": 30.902883742819405,
+          "minimumFixedLowerBound": 97.5,
+          "openReleaseReach": 564.9044166936563,
+          "operation": "Enter with the controlled mechanical door OPEN; release and withdraw the hand during the first2degrees of slow controlled closing; then let the complete delayed-action closer shut/latch while the body waits outside the swept leaf; then walk to the closed-door task station. No mid-sweep regrip is selected.",
+          "closerRequired": true
+        },
+        "withdrawal": {
+          "start": [
+            10009,
+            6226
+          ],
+          "end": [
+            10268.7,
+            5927.8
+          ],
+          "doorClosingDegrees": 2,
+          "leafLower": 14.788961892070912,
+          "fixedLower": 133.80228345415722
+        }
+      },
+      "wholeHouseFixedBodyReplayMinimum": 6.674094112952446,
+      "pass": true,
+      "scope": "IndependentfocusedIASpeerPASS, actual600boundedpush/heldNorth-firsttransfer/release/first2degreewithdrawal. Mechanicalcloserslowmotion/latching/force/classifiedkit/material/physicaladmission unearned; manualregrip rejected. Metadata-onlysource-pin updates mustnotchange this keyedprojection."
+    },
+    "rearRenewalEmitterJoin": {
+      "source": "IAS30cf rear1000controls; ordinarywardrobeheld; newemitter correction is explicitHADgeometricrewind",
+      "edgePark": [
+        5500,
+        11100,
+        1000,
+        250
+      ],
+      "selectedWardrobeTurn": {
+        "centre": [
+          4230,
+          10525
+        ],
+        "radius": 819.3900170248598,
+        "minimumReserve": 29.654445886241206,
+        "governor": "service-emitter-bed4-N"
+      },
+      "wardrobeMoves": [
+        {
+          "name": "wardrobeEast",
+          "a": [
+            3042,
+            9800
+          ],
+          "b": [
+            3480,
+            9800
+          ],
+          "size": [
+            1500,
+            660
+          ],
+          "hull": [
+            3042,
+            9800,
+            1938,
+            660
+          ],
+          "conflicts": [],
+          "pass": true
+        },
+        {
+          "name": "wardrobeNorth",
+          "a": [
+            3480,
+            9800
+          ],
+          "b": [
+            3480,
+            10195
+          ],
+          "size": [
+            1500,
+            660
+          ],
+          "hull": [
+            3480,
+            9800,
+            1500,
+            1055
+          ],
+          "conflicts": [],
+          "pass": true
+        },
+        {
+          "name": "rotatedWardrobeWest",
+          "a": [
+            3900,
+            9775
+          ],
+          "b": [
+            3030,
+            9775
+          ],
+          "size": [
+            660,
+            1500
+          ],
+          "hull": [
+            3030,
+            9775,
+            1530,
+            1500
+          ],
+          "conflicts": [],
+          "pass": true
+        }
+      ],
+      "park": [
+        3030,
+        9775,
+        660,
+        1500
+      ],
+      "trayReturnHull": [
+        3900,
+        11100,
+        2600,
+        250
+      ],
+      "trayReturnConflicts": [],
+      "northRadiatorGap": 20.5,
+      "oldTurnAndPark": "10650turn/9900park rejectedagainstactualBed4Nrad; noold83.11/202.5reserve transferred",
+      "pass": true,
+      "scope": "Exactconservativecircle/axis-alignedenvelopes andnewactualemitters; fullhandler/rigging/rotation/firstrelease/restorationphysicalproof remainsIAS.20.5tray/radnominalgap islimited, no25handlingreserveclaim.",
+      "independentEvidence": {
+        "commit": "dc3093e4c886dad3fc57c3463e047cb96a2a34e2",
+        "blob": "87a45043dce090adc24f91b92fae70d85e2990d8",
+        "path": "project/ias/studies/selected-family-convergence.json",
+        "key": "rearEmitterRepair",
+        "geometryEquivalent": true
+      }
+    },
+    "serviceMaintenanceFields": [
+      {
+        "id": "ground-WC",
+        "platform": [
+          7715,
+          1050,
+          750,
+          1100
+        ],
+        "conflicts": [],
+        "pass": true,
+        "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+      },
+      {
+        "id": "utility",
+        "platform": [
+          10245,
+          1525,
+          1100,
+          750
+        ],
+        "conflicts": [],
+        "pass": true,
+        "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+      },
+      {
+        "id": "kitchen",
+        "platform": [
+          9750,
+          9850,
+          1100,
+          750
+        ],
+        "conflicts": [],
+        "pass": true,
+        "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+      },
+      {
+        "id": "rear-bath",
+        "platform": [
+          650,
+          9250,
+          1100,
+          750
+        ],
+        "conflicts": [],
+        "pass": true,
+        "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+      },
+      {
+        "id": "family-bath",
+        "platform": [
+          10100,
+          4875,
+          1100,
+          750
+        ],
+        "conflicts": [],
+        "pass": true,
+        "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+      },
+      {
+        "id": "principal-bath",
+        "platform": [
+          10333.75,
+          6625,
+          1000,
+          750
+        ],
+        "conflicts": [],
+        "pass": true,
+        "scope": "Maximumcompleteequipmentfield inclguards/stabilisers screened againstactualwalls/trim/furniture atalloverlappingheights. Actualmatchedratedequipment/person/firstrelease/erection/carry/stabilityremainrequired; notphysicalPASS."
+      }
+    ],
+    "crossDoorOperations": [
+      {
+        "id": "FD-WEST-CROSS",
+        "bodyPath": "H+360u+330n;u=(-cosθ,sinθ),n=(-sinθ,-cosθ),0≤θ≤90deg",
+        "gripPath": "H+(leafwidth−50)u+84n",
+        "sampleStep": 0.1,
+        "continuousBodyLowerBound": 6.79999999999909,
+        "continuousArmLowerBound": 5.83327783918463,
+        "continuousReachUpperBound": 457.23947197583794,
+        "pass": true,
+        "scope": "Finite push-open/reverse-close geometry including25jambs and2.5leaf gaps. Operator R300/forearmR40/600reach proxy only; qualified installed frame/handles/forces/fire assembly not admitted."
+      },
+      {
+        "id": "FD-EAST-CROSS",
+        "bodyPath": "H+390u+345n;u=(-cosθ,sinθ),n=(-sinθ,-cosθ),0≤θ≤90deg",
+        "gripPath": "H+(leafwidth−50)u+84n",
+        "sampleStep": 0.1,
+        "continuousBodyLowerBound": 21.799999999998295,
+        "continuousArmLowerBound": 6.134702267740577,
+        "continuousReachUpperBound": 483.01531731567263,
+        "pass": true,
+        "scope": "Finite push-open/reverse-close geometry including25jambs and2.5leaf gaps. Operator R300/forearmR40/600reach proxy only; qualified installed frame/handles/forces/fire assembly not admitted."
+      }
+    ],
+    "frontRooms": [
+      {
+        "room": "bed2",
+        "completeFrame": [
+          1100,
+          1065.5,
+          950,
+          2055
+        ],
+        "door": {
+          "hinge": [
+            3485,
+            2650
+          ],
+          "leaf": [
+            830,
+            44
+          ],
+          "frameEach": 25,
+          "gapEach": 10,
+          "rotationDegrees": -110,
+          "handleAlong": 780,
+          "handleFaceOffset": 84,
+          "closedBody": [
+            3885,
+            2275
+          ],
+          "openedBody": [
+            2927.4031812098833,
+            2214.4419812755805
+          ],
+          "continuousBodyLowerBound": 18.435948903208356,
+          "continuousArmLowerBound": 18.941356244618245,
+          "continuousLeafFixedLowerBound": 29.21121081649384,
+          "continuousReachUpperBound": 479.3205575351065,
+          "pass": true,
+          "scope": "New actual complete-frame/27+18 witness. Ownhost/ownframe intended leafcontact excepted; actual classified hinges/frame/force not admitted."
+        },
+        "paths": {
+          "leftLower": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                3885,
+                2275
+              ],
+              [
+                3885,
+                2266.5
+              ],
+              [
+                3616.5,
+                2266.5
+              ],
+              [
+                3616.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2226.5
+              ],
+              [
+                2356.5,
+                2226.5
+              ],
+              [
+                2356.5,
+                986.5
+              ],
+              [
+                2346.5,
+                986.5
+              ],
+              [
+                2346.5,
+                956.5
+              ],
+              [
+                2336.5,
+                956.5
+              ],
+              [
+                2336.5,
+                936.5
+              ],
+              [
+                2326.5,
+                936.5
+              ],
+              [
+                2326.5,
+                916.5
+              ],
+              [
+                2316.5,
+                916.5
+              ],
+              [
+                2316.5,
+                896.5
+              ],
+              [
+                2306.5,
+                896.5
+              ],
+              [
+                2306.5,
+                876.5
+              ],
+              [
+                2296.5,
+                876.5
+              ],
+              [
+                2296.5,
+                866.5
+              ],
+              [
+                2286.5,
+                866.5
+              ],
+              [
+                2286.5,
+                856.5
+              ],
+              [
+                2276.5,
+                856.5
+              ],
+              [
+                2276.5,
+                846.5
+              ],
+              [
+                2266.5,
+                846.5
+              ],
+              [
+                2266.5,
+                836.5
+              ],
+              [
+                2256.5,
+                836.5
+              ],
+              [
+                2256.5,
+                826.5
+              ],
+              [
+                2246.5,
+                826.5
+              ],
+              [
+                2246.5,
+                816.5
+              ],
+              [
+                2226.5,
+                816.5
+              ],
+              [
+                2226.5,
+                806.5
+              ],
+              [
+                2216.5,
+                806.5
+              ],
+              [
+                2216.5,
+                796.5
+              ],
+              [
+                2196.5,
+                796.5
+              ],
+              [
+                2196.5,
+                786.5
+              ],
+              [
+                2176.5,
+                786.5
+              ],
+              [
+                2176.5,
+                776.5
+              ],
+              [
+                2156.5,
+                776.5
+              ],
+              [
+                2156.5,
+                766.5
+              ],
+              [
+                2116.5,
+                766.5
+              ],
+              [
+                2116.5,
+                756.5
+              ],
+              [
+                776.5,
+                756.5
+              ],
+              [
+                776.5,
+                1556.5
+              ],
+              [
+                775,
+                1556.5
+              ],
+              [
+                775,
+                1565.5
+              ]
+            ],
+            "minimumReserve": 5.111864731609558,
+            "controlling": {
+              "obstacle": "bed2",
+              "segment": 15
+            }
+          },
+          "leftHead": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                3885,
+                2275
+              ],
+              [
+                3885,
+                2266.5
+              ],
+              [
+                3616.5,
+                2266.5
+              ],
+              [
+                3616.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2226.5
+              ],
+              [
+                2356.5,
+                2226.5
+              ],
+              [
+                2356.5,
+                986.5
+              ],
+              [
+                2346.5,
+                986.5
+              ],
+              [
+                2346.5,
+                956.5
+              ],
+              [
+                2336.5,
+                956.5
+              ],
+              [
+                2336.5,
+                936.5
+              ],
+              [
+                2326.5,
+                936.5
+              ],
+              [
+                2326.5,
+                916.5
+              ],
+              [
+                2316.5,
+                916.5
+              ],
+              [
+                2316.5,
+                896.5
+              ],
+              [
+                2306.5,
+                896.5
+              ],
+              [
+                2306.5,
+                876.5
+              ],
+              [
+                2296.5,
+                876.5
+              ],
+              [
+                2296.5,
+                866.5
+              ],
+              [
+                2286.5,
+                866.5
+              ],
+              [
+                2286.5,
+                856.5
+              ],
+              [
+                2276.5,
+                856.5
+              ],
+              [
+                2276.5,
+                846.5
+              ],
+              [
+                2266.5,
+                846.5
+              ],
+              [
+                2266.5,
+                836.5
+              ],
+              [
+                2256.5,
+                836.5
+              ],
+              [
+                2256.5,
+                826.5
+              ],
+              [
+                2246.5,
+                826.5
+              ],
+              [
+                2246.5,
+                816.5
+              ],
+              [
+                2226.5,
+                816.5
+              ],
+              [
+                2226.5,
+                806.5
+              ],
+              [
+                2216.5,
+                806.5
+              ],
+              [
+                2216.5,
+                796.5
+              ],
+              [
+                2196.5,
+                796.5
+              ],
+              [
+                2196.5,
+                786.5
+              ],
+              [
+                2176.5,
+                786.5
+              ],
+              [
+                2176.5,
+                776.5
+              ],
+              [
+                2156.5,
+                776.5
+              ],
+              [
+                2156.5,
+                766.5
+              ],
+              [
+                2116.5,
+                766.5
+              ],
+              [
+                2116.5,
+                756.5
+              ],
+              [
+                776.5,
+                756.5
+              ],
+              [
+                776.5,
+                2756.5
+              ],
+              [
+                775,
+                2756.5
+              ],
+              [
+                775,
+                2765.5
+              ]
+            ],
+            "minimumReserve": 5.111864731609558,
+            "controlling": {
+              "obstacle": "bed2",
+              "segment": 15
+            }
+          },
+          "rightLower": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                3885,
+                2275
+              ],
+              [
+                3885,
+                2266.5
+              ],
+              [
+                3616.5,
+                2266.5
+              ],
+              [
+                3616.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2226.5
+              ],
+              [
+                2376.5,
+                2226.5
+              ],
+              [
+                2376.5,
+                1576.5
+              ],
+              [
+                2375,
+                1576.5
+              ],
+              [
+                2375,
+                1565.5
+              ]
+            ],
+            "minimumReserve": 6.258877422353237,
+            "controlling": {
+              "obstacle": "bed2-north-main+18trim",
+              "segment": 7
+            }
+          },
+          "rightHead": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                3885,
+                2275
+              ],
+              [
+                3885,
+                2266.5
+              ],
+              [
+                3616.5,
+                2266.5
+              ],
+              [
+                3616.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2226.5
+              ],
+              [
+                2376.5,
+                2226.5
+              ],
+              [
+                2376.5,
+                2756.5
+              ],
+              [
+                2375,
+                2756.5
+              ],
+              [
+                2375,
+                2765.5
+              ]
+            ],
+            "minimumReserve": 6.258877422353237,
+            "controlling": {
+              "obstacle": "bed2-north-main+18trim",
+              "segment": 7
+            }
+          },
+          "foot": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                3885,
+                2275
+              ],
+              [
+                3885,
+                2266.5
+              ],
+              [
+                3616.5,
+                2266.5
+              ],
+              [
+                3616.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2226.5
+              ],
+              [
+                2356.5,
+                2226.5
+              ],
+              [
+                2356.5,
+                986.5
+              ],
+              [
+                2346.5,
+                986.5
+              ],
+              [
+                2346.5,
+                956.5
+              ],
+              [
+                2336.5,
+                956.5
+              ],
+              [
+                2336.5,
+                936.5
+              ],
+              [
+                2326.5,
+                936.5
+              ],
+              [
+                2326.5,
+                916.5
+              ],
+              [
+                2316.5,
+                916.5
+              ],
+              [
+                2316.5,
+                896.5
+              ],
+              [
+                2306.5,
+                896.5
+              ],
+              [
+                2306.5,
+                876.5
+              ],
+              [
+                2296.5,
+                876.5
+              ],
+              [
+                2296.5,
+                866.5
+              ],
+              [
+                2286.5,
+                866.5
+              ],
+              [
+                2286.5,
+                856.5
+              ],
+              [
+                2276.5,
+                856.5
+              ],
+              [
+                2276.5,
+                846.5
+              ],
+              [
+                2266.5,
+                846.5
+              ],
+              [
+                2266.5,
+                836.5
+              ],
+              [
+                2256.5,
+                836.5
+              ],
+              [
+                2256.5,
+                826.5
+              ],
+              [
+                2246.5,
+                826.5
+              ],
+              [
+                2246.5,
+                816.5
+              ],
+              [
+                2226.5,
+                816.5
+              ],
+              [
+                2226.5,
+                806.5
+              ],
+              [
+                2216.5,
+                806.5
+              ],
+              [
+                2216.5,
+                796.5
+              ],
+              [
+                2196.5,
+                796.5
+              ],
+              [
+                2196.5,
+                786.5
+              ],
+              [
+                2176.5,
+                786.5
+              ],
+              [
+                2176.5,
+                776.5
+              ],
+              [
+                2156.5,
+                776.5
+              ],
+              [
+                2156.5,
+                766.5
+              ],
+              [
+                2116.5,
+                766.5
+              ],
+              [
+                2116.5,
+                756.5
+              ],
+              [
+                1575,
+                756.5
+              ]
+            ],
+            "minimumReserve": 5.111864731609558,
+            "controlling": {
+              "obstacle": "bed2",
+              "segment": 15
+            }
+          },
+          "wardrobe": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                3885,
+                2275
+              ],
+              [
+                3885,
+                2266.5
+              ],
+              [
+                3716.5,
+                2266.5
+              ],
+              [
+                3716.5,
+                1506.5
+              ],
+              [
+                3713,
+                1506.5
+              ],
+              [
+                3713,
+                1500
+              ]
+            ],
+            "minimumReserve": 26.5,
+            "controlling": {
+              "obstacle": "bed2-wardrobe",
+              "segment": 2
+            }
+          },
+          "southWindow1800": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                3885,
+                2275
+              ],
+              [
+                3885,
+                2266.5
+              ],
+              [
+                3616.5,
+                2266.5
+              ],
+              [
+                3616.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2246.5
+              ],
+              [
+                3576.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2236.5
+              ],
+              [
+                3536.5,
+                2226.5
+              ],
+              [
+                2356.5,
+                2226.5
+              ],
+              [
+                2356.5,
+                986.5
+              ],
+              [
+                2346.5,
+                986.5
+              ],
+              [
+                2346.5,
+                956.5
+              ],
+              [
+                2336.5,
+                956.5
+              ],
+              [
+                2336.5,
+                936.5
+              ],
+              [
+                2326.5,
+                936.5
+              ],
+              [
+                2326.5,
+                916.5
+              ],
+              [
+                2316.5,
+                916.5
+              ],
+              [
+                2316.5,
+                896.5
+              ],
+              [
+                2306.5,
+                896.5
+              ],
+              [
+                2306.5,
+                876.5
+              ],
+              [
+                2296.5,
+                876.5
+              ],
+              [
+                2296.5,
+                866.5
+              ],
+              [
+                2286.5,
+                866.5
+              ],
+              [
+                2286.5,
+                856.5
+              ],
+              [
+                2276.5,
+                856.5
+              ],
+              [
+                2276.5,
+                846.5
+              ],
+              [
+                2266.5,
+                846.5
+              ],
+              [
+                2266.5,
+                836.5
+              ],
+              [
+                2256.5,
+                836.5
+              ],
+              [
+                2256.5,
+                826.5
+              ],
+              [
+                2246.5,
+                826.5
+              ],
+              [
+                2246.5,
+                816.5
+              ],
+              [
+                2226.5,
+                816.5
+              ],
+              [
+                2226.5,
+                806.5
+              ],
+              [
+                2216.5,
+                806.5
+              ],
+              [
+                2216.5,
+                796.5
+              ],
+              [
+                2196.5,
+                796.5
+              ],
+              [
+                2196.5,
+                786.5
+              ],
+              [
+                2176.5,
+                786.5
+              ],
+              [
+                2176.5,
+                776.5
+              ],
+              [
+                2156.5,
+                776.5
+              ],
+              [
+                2156.5,
+                766.5
+              ],
+              [
+                2116.5,
+                766.5
+              ],
+              [
+                2116.5,
+                756.5
+              ],
+              [
+                1800,
+                756.5
+              ]
+            ],
+            "minimumReserve": 5.111864731609558,
+            "controlling": {
+              "obstacle": "bed2",
+              "segment": 15
+            }
+          },
+          "southWindow3900": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                3885,
+                2275
+              ],
+              [
+                3885,
+                2266.5
+              ],
+              [
+                3616.5,
+                2266.5
+              ],
+              [
+                3616.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                2256.5
+              ],
+              [
+                3596.5,
+                966.5
+              ],
+              [
+                3590,
+                966.5
+              ],
+              [
+                3590,
+                954.5
+              ]
+            ],
+            "minimumReserve": 6.715666375227727,
+            "controlling": {
+              "obstacle": "bed2-north-main+18trim",
+              "segment": 3
+            }
+          },
+          "hallToOpen": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                3500,
+                3485
+              ],
+              [
+                3500,
+                3476.5
+              ],
+              [
+                3816.5,
+                3476.5
+              ],
+              [
+                3816.5,
+                2546.5
+              ],
+              [
+                3806.5,
+                2546.5
+              ],
+              [
+                3806.5,
+                2506.5
+              ],
+              [
+                3796.5,
+                2506.5
+              ],
+              [
+                3796.5,
+                2476.5
+              ],
+              [
+                3786.5,
+                2476.5
+              ],
+              [
+                3786.5,
+                2456.5
+              ],
+              [
+                3776.5,
+                2456.5
+              ],
+              [
+                3776.5,
+                2426.5
+              ],
+              [
+                3766.5,
+                2426.5
+              ],
+              [
+                3766.5,
+                2396.5
+              ],
+              [
+                3756.5,
+                2396.5
+              ],
+              [
+                3756.5,
+                2366.5
+              ],
+              [
+                3746.5,
+                2366.5
+              ],
+              [
+                3746.5,
+                2346.5
+              ],
+              [
+                3736.5,
+                2346.5
+              ],
+              [
+                3736.5,
+                2316.5
+              ],
+              [
+                3726.5,
+                2316.5
+              ],
+              [
+                3726.5,
+                2286.5
+              ],
+              [
+                3716.5,
+                2286.5
+              ],
+              [
+                3716.5,
+                2256.5
+              ],
+              [
+                3706.5,
+                2256.5
+              ],
+              [
+                3706.5,
+                2236.5
+              ],
+              [
+                3696.5,
+                2236.5
+              ],
+              [
+                3696.5,
+                2206.5
+              ],
+              [
+                3686.5,
+                2206.5
+              ],
+              [
+                3686.5,
+                2176.5
+              ],
+              [
+                3676.5,
+                2176.5
+              ],
+              [
+                3676.5,
+                2146.5
+              ],
+              [
+                3666.5,
+                2146.5
+              ],
+              [
+                3666.5,
+                2126.5
+              ],
+              [
+                3656.5,
+                2126.5
+              ],
+              [
+                3656.5,
+                2096.5
+              ],
+              [
+                3646.5,
+                2096.5
+              ],
+              [
+                3646.5,
+                2066.5
+              ],
+              [
+                3636.5,
+                2066.5
+              ],
+              [
+                3636.5,
+                2036.5
+              ],
+              [
+                3626.5,
+                2036.5
+              ],
+              [
+                3626.5,
+                2016.5
+              ],
+              [
+                3616.5,
+                2016.5
+              ],
+              [
+                3616.5,
+                1986.5
+              ],
+              [
+                3606.5,
+                1986.5
+              ],
+              [
+                3606.5,
+                1956.5
+              ],
+              [
+                3596.5,
+                1956.5
+              ],
+              [
+                3596.5,
+                1926.5
+              ],
+              [
+                3586.5,
+                1926.5
+              ],
+              [
+                3586.5,
+                1906.5
+              ],
+              [
+                3576.5,
+                1906.5
+              ],
+              [
+                3576.5,
+                1876.5
+              ],
+              [
+                3566.5,
+                1876.5
+              ],
+              [
+                3566.5,
+                1846.5
+              ],
+              [
+                3556.5,
+                1846.5
+              ],
+              [
+                3556.5,
+                1816.5
+              ],
+              [
+                3546.5,
+                1816.5
+              ],
+              [
+                3546.5,
+                1796.5
+              ],
+              [
+                3536.5,
+                1796.5
+              ],
+              [
+                3536.5,
+                1766.5
+              ],
+              [
+                3526.5,
+                1766.5
+              ],
+              [
+                3526.5,
+                1736.5
+              ],
+              [
+                3516.5,
+                1736.5
+              ],
+              [
+                3516.5,
+                1716.5
+              ],
+              [
+                3506.5,
+                1716.5
+              ],
+              [
+                3506.5,
+                1696.5
+              ],
+              [
+                3496.5,
+                1696.5
+              ],
+              [
+                3496.5,
+                1676.5
+              ],
+              [
+                3486.5,
+                1676.5
+              ],
+              [
+                3486.5,
+                1666.5
+              ],
+              [
+                3476.5,
+                1666.5
+              ],
+              [
+                3476.5,
+                1646.5
+              ],
+              [
+                3466.5,
+                1646.5
+              ],
+              [
+                3466.5,
+                1636.5
+              ],
+              [
+                3456.5,
+                1636.5
+              ],
+              [
+                3456.5,
+                1626.5
+              ],
+              [
+                3446.5,
+                1626.5
+              ],
+              [
+                3446.5,
+                1616.5
+              ],
+              [
+                3436.5,
+                1616.5
+              ],
+              [
+                3436.5,
+                1606.5
+              ],
+              [
+                3416.5,
+                1606.5
+              ],
+              [
+                3416.5,
+                1596.5
+              ],
+              [
+                3406.5,
+                1596.5
+              ],
+              [
+                3406.5,
+                1586.5
+              ],
+              [
+                3396.5,
+                1586.5
+              ],
+              [
+                3396.5,
+                1576.5
+              ],
+              [
+                3376.5,
+                1576.5
+              ],
+              [
+                3376.5,
+                1566.5
+              ],
+              [
+                3356.5,
+                1566.5
+              ],
+              [
+                3356.5,
+                1556.5
+              ],
+              [
+                3326.5,
+                1556.5
+              ],
+              [
+                3326.5,
+                1546.5
+              ],
+              [
+                3276.5,
+                1546.5
+              ],
+              [
+                3276.5,
+                1536.5
+              ],
+              [
+                2866.5,
+                1536.5
+              ],
+              [
+                2866.5,
+                1956.5
+              ],
+              [
+                2876.5,
+                1956.5
+              ],
+              [
+                2876.5,
+                2006.5
+              ],
+              [
+                2886.5,
+                2006.5
+              ],
+              [
+                2886.5,
+                2026.5
+              ],
+              [
+                2896.5,
+                2026.5
+              ],
+              [
+                2896.5,
+                2056.5
+              ],
+              [
+                2906.5,
+                2056.5
+              ],
+              [
+                2906.5,
+                2086.5
+              ],
+              [
+                2916.5,
+                2086.5
+              ],
+              [
+                2916.5,
+                2116.5
+              ],
+              [
+                2926.5,
+                2116.5
+              ],
+              [
+                2926.5,
+                2206.5
+              ],
+              [
+                2927.4031812098833,
+                2206.5
+              ],
+              [
+                2927.4031812098833,
+                2214.4419812755805
+              ]
+            ],
+            "minimumReserve": 5.0377748304806005,
+            "controlling": {
+              "obstacle": "own-front-door-OPEN",
+              "segment": 99
+            }
+          }
+        },
+        "ordinaryPass": true,
+        "scope": "BothBed2sides; Bed3ordinaryEASTprimary/foot/lowerWESTonly. Old simultaneoustwo600claim superseded explicitly."
+      },
+      {
+        "room": "bed3",
+        "completeFrame": [
+          9942.5,
+          1518,
+          950,
+          2055
+        ],
+        "door": {
+          "hinge": [
+            9115,
+            2650
+          ],
+          "leaf": [
+            830,
+            44
+          ],
+          "frameEach": 25,
+          "gapEach": 10,
+          "rotationDegrees": 90,
+          "handleAlong": 780,
+          "handleFaceOffset": 84,
+          "closedBody": [
+            8765,
+            2250
+          ],
+          "openedBody": [
+            9515,
+            2300
+          ],
+          "continuousBodyLowerBound": 6.055567583041394,
+          "continuousArmLowerBound": 19.0636232951838,
+          "continuousLeafFixedLowerBound": 47.637844180211175,
+          "continuousReachUpperBound": 534.1995576148372,
+          "pass": true,
+          "scope": "New actual complete-frame/27+18 witness. Ownhost/ownframe intended leafcontact excepted; actual classified hinges/frame/force not admitted."
+        },
+        "paths": {
+          "primaryEastLower": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8765,
+                2250
+              ],
+              [
+                8765,
+                2246.5
+              ],
+              [
+                9026.5,
+                2246.5
+              ],
+              [
+                9026.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2226.5
+              ],
+              [
+                9636.5,
+                2226.5
+              ],
+              [
+                9636.5,
+                1436.5
+              ],
+              [
+                9646.5,
+                1436.5
+              ],
+              [
+                9646.5,
+                1406.5
+              ],
+              [
+                9656.5,
+                1406.5
+              ],
+              [
+                9656.5,
+                1386.5
+              ],
+              [
+                9666.5,
+                1386.5
+              ],
+              [
+                9666.5,
+                1366.5
+              ],
+              [
+                9676.5,
+                1366.5
+              ],
+              [
+                9676.5,
+                1346.5
+              ],
+              [
+                9686.5,
+                1346.5
+              ],
+              [
+                9686.5,
+                1336.5
+              ],
+              [
+                9696.5,
+                1336.5
+              ],
+              [
+                9696.5,
+                1316.5
+              ],
+              [
+                9706.5,
+                1316.5
+              ],
+              [
+                9706.5,
+                1306.5
+              ],
+              [
+                9716.5,
+                1306.5
+              ],
+              [
+                9716.5,
+                1296.5
+              ],
+              [
+                9726.5,
+                1296.5
+              ],
+              [
+                9726.5,
+                1286.5
+              ],
+              [
+                9736.5,
+                1286.5
+              ],
+              [
+                9736.5,
+                1276.5
+              ],
+              [
+                9746.5,
+                1276.5
+              ],
+              [
+                9746.5,
+                1266.5
+              ],
+              [
+                9766.5,
+                1266.5
+              ],
+              [
+                9766.5,
+                1256.5
+              ],
+              [
+                9776.5,
+                1256.5
+              ],
+              [
+                9776.5,
+                1246.5
+              ],
+              [
+                9796.5,
+                1246.5
+              ],
+              [
+                9796.5,
+                1236.5
+              ],
+              [
+                9816.5,
+                1236.5
+              ],
+              [
+                9816.5,
+                1226.5
+              ],
+              [
+                9846.5,
+                1226.5
+              ],
+              [
+                9846.5,
+                1216.5
+              ],
+              [
+                9886.5,
+                1216.5
+              ],
+              [
+                9886.5,
+                1206.5
+              ],
+              [
+                11216.5,
+                1206.5
+              ],
+              [
+                11216.5,
+                2006.5
+              ],
+              [
+                11217.5,
+                2006.5
+              ],
+              [
+                11217.5,
+                2018
+              ]
+            ],
+            "minimumReserve": 5.601865177554146,
+            "controlling": {
+              "obstacle": "bed3-north-main+18trim",
+              "segment": 3
+            }
+          },
+          "primaryEastHead": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8765,
+                2250
+              ],
+              [
+                8765,
+                2246.5
+              ],
+              [
+                9026.5,
+                2246.5
+              ],
+              [
+                9026.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2226.5
+              ],
+              [
+                9636.5,
+                2226.5
+              ],
+              [
+                9636.5,
+                1436.5
+              ],
+              [
+                9646.5,
+                1436.5
+              ],
+              [
+                9646.5,
+                1406.5
+              ],
+              [
+                9656.5,
+                1406.5
+              ],
+              [
+                9656.5,
+                1386.5
+              ],
+              [
+                9666.5,
+                1386.5
+              ],
+              [
+                9666.5,
+                1366.5
+              ],
+              [
+                9676.5,
+                1366.5
+              ],
+              [
+                9676.5,
+                1346.5
+              ],
+              [
+                9686.5,
+                1346.5
+              ],
+              [
+                9686.5,
+                1336.5
+              ],
+              [
+                9696.5,
+                1336.5
+              ],
+              [
+                9696.5,
+                1316.5
+              ],
+              [
+                9706.5,
+                1316.5
+              ],
+              [
+                9706.5,
+                1306.5
+              ],
+              [
+                9716.5,
+                1306.5
+              ],
+              [
+                9716.5,
+                1296.5
+              ],
+              [
+                9726.5,
+                1296.5
+              ],
+              [
+                9726.5,
+                1286.5
+              ],
+              [
+                9736.5,
+                1286.5
+              ],
+              [
+                9736.5,
+                1276.5
+              ],
+              [
+                9746.5,
+                1276.5
+              ],
+              [
+                9746.5,
+                1266.5
+              ],
+              [
+                9766.5,
+                1266.5
+              ],
+              [
+                9766.5,
+                1256.5
+              ],
+              [
+                9776.5,
+                1256.5
+              ],
+              [
+                9776.5,
+                1246.5
+              ],
+              [
+                9796.5,
+                1246.5
+              ],
+              [
+                9796.5,
+                1236.5
+              ],
+              [
+                9816.5,
+                1236.5
+              ],
+              [
+                9816.5,
+                1226.5
+              ],
+              [
+                9846.5,
+                1226.5
+              ],
+              [
+                9846.5,
+                1216.5
+              ],
+              [
+                9886.5,
+                1216.5
+              ],
+              [
+                9886.5,
+                1206.5
+              ],
+              [
+                11216.5,
+                1206.5
+              ],
+              [
+                11216.5,
+                3206.5
+              ],
+              [
+                11217.5,
+                3206.5
+              ],
+              [
+                11217.5,
+                3218
+              ]
+            ],
+            "minimumReserve": 5.601865177554146,
+            "controlling": {
+              "obstacle": "bed3-north-main+18trim",
+              "segment": 3
+            }
+          },
+          "westLowerOnly": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8765,
+                2250
+              ],
+              [
+                8765,
+                2246.5
+              ],
+              [
+                9026.5,
+                2246.5
+              ],
+              [
+                9026.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2226.5
+              ],
+              [
+                9616.5,
+                2226.5
+              ],
+              [
+                9616.5,
+                2026.5
+              ],
+              [
+                9617.5,
+                2026.5
+              ],
+              [
+                9617.5,
+                2018
+              ]
+            ],
+            "minimumReserve": 5.601865177554146,
+            "controlling": {
+              "obstacle": "bed3-north-main+18trim",
+              "segment": 3
+            }
+          },
+          "foot": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8765,
+                2250
+              ],
+              [
+                8765,
+                2246.5
+              ],
+              [
+                9026.5,
+                2246.5
+              ],
+              [
+                9026.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2226.5
+              ],
+              [
+                9636.5,
+                2226.5
+              ],
+              [
+                9636.5,
+                1436.5
+              ],
+              [
+                9646.5,
+                1436.5
+              ],
+              [
+                9646.5,
+                1406.5
+              ],
+              [
+                9656.5,
+                1406.5
+              ],
+              [
+                9656.5,
+                1386.5
+              ],
+              [
+                9666.5,
+                1386.5
+              ],
+              [
+                9666.5,
+                1366.5
+              ],
+              [
+                9676.5,
+                1366.5
+              ],
+              [
+                9676.5,
+                1346.5
+              ],
+              [
+                9686.5,
+                1346.5
+              ],
+              [
+                9686.5,
+                1336.5
+              ],
+              [
+                9696.5,
+                1336.5
+              ],
+              [
+                9696.5,
+                1316.5
+              ],
+              [
+                9706.5,
+                1316.5
+              ],
+              [
+                9706.5,
+                1306.5
+              ],
+              [
+                9716.5,
+                1306.5
+              ],
+              [
+                9716.5,
+                1296.5
+              ],
+              [
+                9726.5,
+                1296.5
+              ],
+              [
+                9726.5,
+                1286.5
+              ],
+              [
+                9736.5,
+                1286.5
+              ],
+              [
+                9736.5,
+                1276.5
+              ],
+              [
+                9746.5,
+                1276.5
+              ],
+              [
+                9746.5,
+                1266.5
+              ],
+              [
+                9766.5,
+                1266.5
+              ],
+              [
+                9766.5,
+                1256.5
+              ],
+              [
+                9776.5,
+                1256.5
+              ],
+              [
+                9776.5,
+                1246.5
+              ],
+              [
+                9796.5,
+                1246.5
+              ],
+              [
+                9796.5,
+                1236.5
+              ],
+              [
+                9816.5,
+                1236.5
+              ],
+              [
+                9816.5,
+                1226.5
+              ],
+              [
+                9846.5,
+                1226.5
+              ],
+              [
+                9846.5,
+                1216.5
+              ],
+              [
+                9886.5,
+                1216.5
+              ],
+              [
+                9886.5,
+                1206.5
+              ],
+              [
+                10406.5,
+                1206.5
+              ],
+              [
+                10406.5,
+                1196.5
+              ],
+              [
+                10417.5,
+                1196.5
+              ],
+              [
+                10417.5,
+                1193
+              ]
+            ],
+            "minimumReserve": 5.601865177554146,
+            "controlling": {
+              "obstacle": "bed3-north-main+18trim",
+              "segment": 3
+            }
+          },
+          "wardrobe": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8765,
+                2250
+              ],
+              [
+                8765,
+                2246.5
+              ],
+              [
+                8376.5,
+                2246.5
+              ],
+              [
+                8376.5,
+                2236.5
+              ],
+              [
+                8336.5,
+                2236.5
+              ],
+              [
+                8336.5,
+                2226.5
+              ],
+              [
+                8296.5,
+                2226.5
+              ],
+              [
+                8296.5,
+                1706.5
+              ],
+              [
+                8287,
+                1706.5
+              ],
+              [
+                8287,
+                1700
+              ]
+            ],
+            "minimumReserve": 6.258877422353237,
+            "controlling": {
+              "obstacle": "bed3-north-main+18trim",
+              "segment": 3
+            }
+          },
+          "southWindow8100": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8765,
+                2250
+              ],
+              [
+                8765,
+                2246.5
+              ],
+              [
+                8756.5,
+                2246.5
+              ],
+              [
+                8756.5,
+                966.5
+              ],
+              [
+                8750,
+                966.5
+              ],
+              [
+                8750,
+                954.5
+              ]
+            ],
+            "minimumReserve": 69.120576505835,
+            "controlling": {
+              "obstacle": "service-emitter-bed3-S",
+              "segment": 4
+            }
+          },
+          "southWindow10200": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8765,
+                2250
+              ],
+              [
+                8765,
+                2246.5
+              ],
+              [
+                9026.5,
+                2246.5
+              ],
+              [
+                9026.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2226.5
+              ],
+              [
+                9636.5,
+                2226.5
+              ],
+              [
+                9636.5,
+                1436.5
+              ],
+              [
+                9646.5,
+                1436.5
+              ],
+              [
+                9646.5,
+                1406.5
+              ],
+              [
+                9656.5,
+                1406.5
+              ],
+              [
+                9656.5,
+                1386.5
+              ],
+              [
+                9666.5,
+                1386.5
+              ],
+              [
+                9666.5,
+                1366.5
+              ],
+              [
+                9676.5,
+                1366.5
+              ],
+              [
+                9676.5,
+                1346.5
+              ],
+              [
+                9686.5,
+                1346.5
+              ],
+              [
+                9686.5,
+                1336.5
+              ],
+              [
+                9696.5,
+                1336.5
+              ],
+              [
+                9696.5,
+                1316.5
+              ],
+              [
+                9706.5,
+                1316.5
+              ],
+              [
+                9706.5,
+                1306.5
+              ],
+              [
+                9716.5,
+                1306.5
+              ],
+              [
+                9716.5,
+                1296.5
+              ],
+              [
+                9726.5,
+                1296.5
+              ],
+              [
+                9726.5,
+                1286.5
+              ],
+              [
+                9736.5,
+                1286.5
+              ],
+              [
+                9736.5,
+                1276.5
+              ],
+              [
+                9746.5,
+                1276.5
+              ],
+              [
+                9746.5,
+                1266.5
+              ],
+              [
+                9766.5,
+                1266.5
+              ],
+              [
+                9766.5,
+                1256.5
+              ],
+              [
+                9776.5,
+                1256.5
+              ],
+              [
+                9776.5,
+                1246.5
+              ],
+              [
+                9796.5,
+                1246.5
+              ],
+              [
+                9796.5,
+                1236.5
+              ],
+              [
+                9816.5,
+                1236.5
+              ],
+              [
+                9816.5,
+                1226.5
+              ],
+              [
+                9846.5,
+                1226.5
+              ],
+              [
+                9846.5,
+                1216.5
+              ],
+              [
+                9886.5,
+                1216.5
+              ],
+              [
+                9886.5,
+                1206.5
+              ],
+              [
+                10196.5,
+                1206.5
+              ],
+              [
+                10196.5,
+                766.5
+              ],
+              [
+                10200,
+                766.5
+              ],
+              [
+                10200,
+                756.5
+              ]
+            ],
+            "minimumReserve": 5.601865177554146,
+            "controlling": {
+              "obstacle": "bed3-north-main+18trim",
+              "segment": 3
+            }
+          },
+          "eastWindow1800": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8765,
+                2250
+              ],
+              [
+                8765,
+                2246.5
+              ],
+              [
+                9026.5,
+                2246.5
+              ],
+              [
+                9026.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2226.5
+              ],
+              [
+                9636.5,
+                2226.5
+              ],
+              [
+                9636.5,
+                1436.5
+              ],
+              [
+                9646.5,
+                1436.5
+              ],
+              [
+                9646.5,
+                1406.5
+              ],
+              [
+                9656.5,
+                1406.5
+              ],
+              [
+                9656.5,
+                1386.5
+              ],
+              [
+                9666.5,
+                1386.5
+              ],
+              [
+                9666.5,
+                1366.5
+              ],
+              [
+                9676.5,
+                1366.5
+              ],
+              [
+                9676.5,
+                1346.5
+              ],
+              [
+                9686.5,
+                1346.5
+              ],
+              [
+                9686.5,
+                1336.5
+              ],
+              [
+                9696.5,
+                1336.5
+              ],
+              [
+                9696.5,
+                1316.5
+              ],
+              [
+                9706.5,
+                1316.5
+              ],
+              [
+                9706.5,
+                1306.5
+              ],
+              [
+                9716.5,
+                1306.5
+              ],
+              [
+                9716.5,
+                1296.5
+              ],
+              [
+                9726.5,
+                1296.5
+              ],
+              [
+                9726.5,
+                1286.5
+              ],
+              [
+                9736.5,
+                1286.5
+              ],
+              [
+                9736.5,
+                1276.5
+              ],
+              [
+                9746.5,
+                1276.5
+              ],
+              [
+                9746.5,
+                1266.5
+              ],
+              [
+                9766.5,
+                1266.5
+              ],
+              [
+                9766.5,
+                1256.5
+              ],
+              [
+                9776.5,
+                1256.5
+              ],
+              [
+                9776.5,
+                1246.5
+              ],
+              [
+                9796.5,
+                1246.5
+              ],
+              [
+                9796.5,
+                1236.5
+              ],
+              [
+                9816.5,
+                1236.5
+              ],
+              [
+                9816.5,
+                1226.5
+              ],
+              [
+                9846.5,
+                1226.5
+              ],
+              [
+                9846.5,
+                1216.5
+              ],
+              [
+                9886.5,
+                1216.5
+              ],
+              [
+                9886.5,
+                1206.5
+              ],
+              [
+                11206.5,
+                1206.5
+              ],
+              [
+                11206.5,
+                1796.5
+              ],
+              [
+                11217.5,
+                1796.5
+              ],
+              [
+                11217.5,
+                1800
+              ]
+            ],
+            "minimumReserve": 5.601865177554146,
+            "controlling": {
+              "obstacle": "bed3-north-main+18trim",
+              "segment": 3
+            }
+          },
+          "hallToOpen": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8700,
+                3485
+              ],
+              [
+                8700,
+                3476.5
+              ],
+              [
+                8786.5,
+                3476.5
+              ],
+              [
+                8786.5,
+                1716.5
+              ],
+              [
+                8796.5,
+                1716.5
+              ],
+              [
+                8796.5,
+                1686.5
+              ],
+              [
+                8806.5,
+                1686.5
+              ],
+              [
+                8806.5,
+                1666.5
+              ],
+              [
+                8816.5,
+                1666.5
+              ],
+              [
+                8816.5,
+                1646.5
+              ],
+              [
+                8826.5,
+                1646.5
+              ],
+              [
+                8826.5,
+                1626.5
+              ],
+              [
+                8836.5,
+                1626.5
+              ],
+              [
+                8836.5,
+                1616.5
+              ],
+              [
+                8846.5,
+                1616.5
+              ],
+              [
+                8846.5,
+                1596.5
+              ],
+              [
+                8856.5,
+                1596.5
+              ],
+              [
+                8856.5,
+                1586.5
+              ],
+              [
+                8866.5,
+                1586.5
+              ],
+              [
+                8866.5,
+                1576.5
+              ],
+              [
+                8876.5,
+                1576.5
+              ],
+              [
+                8876.5,
+                1566.5
+              ],
+              [
+                8886.5,
+                1566.5
+              ],
+              [
+                8886.5,
+                1556.5
+              ],
+              [
+                8906.5,
+                1556.5
+              ],
+              [
+                8906.5,
+                1546.5
+              ],
+              [
+                8916.5,
+                1546.5
+              ],
+              [
+                8916.5,
+                1536.5
+              ],
+              [
+                8926.5,
+                1536.5
+              ],
+              [
+                8926.5,
+                1526.5
+              ],
+              [
+                8946.5,
+                1526.5
+              ],
+              [
+                8946.5,
+                1516.5
+              ],
+              [
+                8966.5,
+                1516.5
+              ],
+              [
+                8966.5,
+                1506.5
+              ],
+              [
+                8996.5,
+                1506.5
+              ],
+              [
+                8996.5,
+                1496.5
+              ],
+              [
+                9046.5,
+                1496.5
+              ],
+              [
+                9046.5,
+                1486.5
+              ],
+              [
+                9506.5,
+                1486.5
+              ],
+              [
+                9506.5,
+                2286.5
+              ],
+              [
+                9515,
+                2286.5
+              ],
+              [
+                9515,
+                2300
+              ]
+            ],
+            "minimumReserve": 5.064747225896269,
+            "controlling": {
+              "obstacle": "own-front-door-OPEN",
+              "segment": 35
+            }
+          }
+        },
+        "ordinaryPass": true,
+        "scope": "BothBed2sides; Bed3ordinaryEASTprimary/foot/lowerWESTonly. Old simultaneoustwo600claim superseded explicitly.",
+        "temporaryPaths": {
+          "westHead": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8765,
+                2250
+              ],
+              [
+                8765,
+                2246.5
+              ],
+              [
+                9026.5,
+                2246.5
+              ],
+              [
+                9026.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2226.5
+              ],
+              [
+                9746.5,
+                2226.5
+              ],
+              [
+                9746.5,
+                3206.5
+              ],
+              [
+                9750,
+                3206.5
+              ],
+              [
+                9750,
+                3218
+              ]
+            ],
+            "minimumReserve": 5.601865177554146,
+            "controlling": {
+              "obstacle": "bed3-north-main+18trim",
+              "segment": 3
+            }
+          },
+          "westLower": {
+            "pass": true,
+            "bodyRadius": 300,
+            "searchRadius": 305,
+            "points": [
+              [
+                8765,
+                2250
+              ],
+              [
+                8765,
+                2246.5
+              ],
+              [
+                9026.5,
+                2246.5
+              ],
+              [
+                9026.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2236.5
+              ],
+              [
+                9066.5,
+                2226.5
+              ],
+              [
+                9746.5,
+                2226.5
+              ],
+              [
+                9746.5,
+                2026.5
+              ],
+              [
+                9750,
+                2026.5
+              ],
+              [
+                9750,
+                2018
+              ]
+            ],
+            "minimumReserve": 5.601865177554146,
+            "controlling": {
+              "obstacle": "bed3-north-main+18trim",
+              "segment": 3
+            }
+          }
+        },
+        "completeMovement": {
+          "translation": [
+            132.5,
+            0
+          ],
+          "swept": [
+            9942.5,
+            1518,
+            1082.5,
+            2055
+          ],
+          "conflicts": [],
+          "operatorBodyFrom": [
+            10417.5,
+            1178
+          ],
+          "operatorBodyTo": [
+            10550,
+            1178
+          ],
+          "scope": "Wholeframe sweep/footoperator plan, reversible forrestoration. No casters/friction/force/realhuman/plywoodmaterial approval inferred."
+        },
+        "temporaryPass": true
+      }
+    ],
+    "qualityCosts": {
+      "dailyLivingKitchenCentreline": 17992.5,
+      "living": "Two original-size sofas retained; separate reading enclosure removed, shared arch loses acoustic privacy.",
+      "dining": "Four places, no end seats; separate prep table removed. Actual chair/support/table leg fit is not earned from500plan boxes.",
+      "private": "Four bedrooms retained, two compact singles, two rear doubles rotatedEW; principal lowbed/window compatibility and660wardrobe are explicit choices.",
+      "loggia": "Deletes occupied-floor renewable watercaps/gas lids. Costs new weatherwalls, displaced room territory, long daily indoor connection and exposed floor/arch insulation.",
+      "height": "Current support trial stillD1300: no approach/eaves reduction credited against prior buried-box comparator.",
+      "groundClearFloor": {
+        "baseB": 89.7864,
+        "loggia": 76.7663815,
+        "loss": 13.020018500000006,
+        "unit": "m2",
+        "method": "Exact clipped rectangle union inside12×12shell; excludes outer417.5 walls, full court+wall rectangle, stair footprint, internal wall rectangles/holes, new outside loggia and fixed receivers/post. Furniture not subtracted. Ground entrance doubleheight has a floor; not a void. Comparison includes new protected walls/support footprints, so loss is not solely loggia."
+      }
+    },
+    "noncontrollingLegacyCaptions": [
+      "furnitureRequirements.principalBed.southPassageFromActualLeaf8486=689 is not the active664/614 passage check",
+      "furnitureRequirements.bed4.northBedPassage=732.5 is not radiator-clearance credit; actual new emitter/body witnesses govern"
+    ],
     "finishDeviation": {
       "source": 15,
       "proposed": 27,
       "roomFacingGrowth": 12,
       "unqualified17NotSelected": true,
-      "rule": "Input already contains27dry/30wet. Do not add12 again. Its10raw furniture clashes still require actual repairs; no material exception follows from an overlap."
+      "rule": "Input already contains27dry/30wet. Do not add12 again. WholeFurnitureWalls and19 listed routes pass in the exact selected source; no material exception follows from fit."
     },
     "studyDoorCheck": {
+      "completeFrameEnvelopeDepth": 230,
+      "checkedFramePieces": [
+        [
+          1350,
+          3132.5,
+          25,
+          230
+        ],
+        [
+          2225,
+          3132.5,
+          25,
+          230
+        ]
+      ],
       "rough": [
         1350,
         2250
@@ -893,7 +4377,7 @@
       "pass": true,
       "scope": "One geometric inside close/reopen sequence from leaf-open entry, not actual operator strength, hardware, classified frame or outside first-opening admission. Both hands have reachable collision-free paths at45; no teleporting hand throughleaf."
     },
-    "scope": "Current27 trial has ordinary429.5 envelope and519.5 new loggia walls with core/weather axes retained; not a90 global wall growth. Principal30 is unchanged; local family/rear wet patches are explicit."
+    "scope": "Selected27 development house has ordinary429.5 envelope and519.5 new loggia walls with core/weather axes retained; not a90 global wall growth. Principal30 is unchanged; local family/rear wet patches are explicit."
   },
   "systems": [
     {
@@ -926,14 +4410,14 @@
         ]
       ],
       "oldDepth": 15,
-      "scope": "Actual renderable mineral masonry and qualified substrate/preparation; not automatic gypsum, board or concrete applicability. Source15 geometry stays unchanged until HAD trial is joined.",
+      "scope": "Actual renderable mineral masonry and qualified substrate/preparation; not automatic gypsum, board or concrete applicability. Exact selected HAD27 faces are joined; actual background qualification remains separate.",
       "constituents": "Conserv NHL2/sand complete24 plaster control and BEECK Powdered Pigment/standard Fixative declaration; actual repairs/key/edge mesh and delivered recipe remain disclosed.",
       "firstRelease": "Remove independent trim; isolate affected service; sacrifice/repair local plaster and compatible mineral coating; preserve actual fire/water/service boundary.",
-      "residue": "27 is the selected development direction to test, not an adopted room fit or supplied installed assembly. Qualify background/preparation and actual recipe; no owner exception is implied. Gypsum/acrylate paint is only functional control.",
+      "residue": "27 is the source-joined development direction, not a supplied installed assembly. Qualify background/preparation and actual recipe; no owner exception is implied. Gypsum/acrylate paint is only functional control.",
       "totalDepth": 27,
       "depthDelta": 12,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "W-W",
@@ -943,7 +4427,7 @@
         "I06"
       ],
       "name": "Located wet lining",
-      "direction": "Carry the complete30 principal wet assembly; apply to other actual splash zones only after their own set-out",
+      "direction": "Use the complete30 assembly only on the three upper wet-room located fields/returns; ordinary fixture splashbacks use S-W",
       "layers": [
         [
           "mineral render",
@@ -963,14 +4447,14 @@
         ]
       ],
       "oldDepth": 15,
-      "scope": "Principal bathroom selected internal reference; family/rear wet fields require explicit limits and wall returns",
+      "scope": "Principal/family/rear fields and returns are bound to HAD.wetBoundaryPatches and room faces; no blanket30 ground-wall growth",
       "constituents": "Mineral faces do not remove concealed bonded membrane/tape/collars, grout, movement seal or fixings.",
       "firstRelease": "Isolate wet use; release screen/trim and sacrificial lower tiles; renew and test the complete disturbed water boundary.",
       "residue": "Known/unknown synthetic wet-system constituents remain unapproved. Never silently transfer30 to Bed3 or the family service cabinet.",
       "totalDepth": 30,
       "depthDelta": 15,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "F-D",
@@ -1001,7 +4485,7 @@
       "totalDepth": 80,
       "depthDelta": 0,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "F-M",
@@ -1038,7 +4522,7 @@
       "totalDepth": 80,
       "depthDelta": 0,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "C-G",
@@ -1070,7 +4554,7 @@
       "totalDepth": 70,
       "depthDelta": 0,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "C-O",
@@ -1102,7 +4586,7 @@
       "totalDepth": 70,
       "depthDelta": 0,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "C-U",
@@ -1141,7 +4625,7 @@
       "totalDepth": 176,
       "depthDelta": 106,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "J-T",
@@ -1164,7 +4648,7 @@
       "totalDepth": 18,
       "depthDelta": 0,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "J-S",
@@ -1183,7 +4667,7 @@
       "totalDepth": 0,
       "depthDelta": null,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "J-C",
@@ -1215,7 +4699,7 @@
       "totalDepth": 49,
       "depthDelta": null,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "J-P",
@@ -1234,7 +4718,7 @@
       "totalDepth": 0,
       "depthDelta": null,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "D-R",
@@ -1254,7 +4738,7 @@
       "totalDepth": 0,
       "depthDelta": null,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "D-O",
@@ -1274,7 +4758,7 @@
       "totalDepth": 0,
       "depthDelta": null,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "H-M",
@@ -1293,7 +4777,7 @@
       "totalDepth": 0,
       "depthDelta": null,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "S-W",
@@ -1314,7 +4798,7 @@
       "totalDepth": 0,
       "depthDelta": null,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     },
     {
       "id": "B-S",
@@ -1334,7 +4818,7 @@
       "totalDepth": 0,
       "depthDelta": null,
       "materialAdmission": "not earned",
-      "developmentDisposition": "Working recommendation, before protected-route/geometry freeze"
+      "developmentDisposition": "Reasoned source-joined development recommendation/conditional package requirement; actual material/product/physical admission unearned"
     }
   ],
   "occurrences": [
@@ -1494,7 +4978,7 @@
           ],
           "opening": "SOUTHINTOSTUDY",
           "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim",
-          "frameDepth": 194
+          "frameDepth": 230
         }
       ],
       "floorDatum": "ground",
@@ -1532,7 +5016,6 @@
       "name": "Guest WC",
       "families": [
         "W-D",
-        "W-W",
         "F-M",
         "C-G",
         "J-T",
@@ -1563,7 +5046,8 @@
       "taskDirections": [
         "trim",
         "doors",
-        "wetCabinet"
+        "wetCabinet",
+        "splashback"
       ]
     },
     {
@@ -1571,12 +5055,10 @@
       "name": "Utility",
       "families": [
         "W-D",
-        "W-W",
         "F-M",
         "C-G",
         "J-C",
         "J-P",
-        "D-O",
         "H-M",
         "S-W",
         "B-S"
@@ -1588,7 +5070,7 @@
       "floorDatum": "ground",
       "taskDirections": [
         "wetCabinet",
-        "doors"
+        "splashback"
       ]
     },
     {
@@ -1674,7 +5156,6 @@
       "name": "Kitchen / dining",
       "families": [
         "W-D",
-        "W-W",
         "F-D",
         "C-G",
         "J-T",
@@ -1691,7 +5172,8 @@
       "floorDatum": "ground",
       "taskDirections": [
         "trim",
-        "kitchen"
+        "kitchen",
+        "splashback"
       ]
     },
     {
@@ -1918,7 +5400,7 @@
               6283.5
             ],
             "net": 767,
-            "status": "IAS finite proposal; arm/regrip not yet passed, E20 assembly not qualified"
+            "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Final600reach immutable proof pending binding; E20 assembly not qualified"
           }
         }
       ],
@@ -1999,16 +5481,16 @@
     "currentInputDepth": 27,
     "preferredCompleteLimeDepth": 27,
     "roomFacingGrowth": 12,
-    "geometryDevelopmentAccepted": false,
+    "geometryDevelopmentAccepted": true,
     "currentDryEastFace": 11570.5,
     "currentWholeBedEast": 11540.5,
-    "rawFurnitureWallConflictCount": 10,
+    "rawFurnitureWallConflictCount": 0,
     "historical17": {
       "selected": false,
       "rule": "The incomplete17 recipe is not selected. Its historical2 overlap did not demonstrate that an ordinary room redesign was impracticable."
     },
     "gypsumFunctionalControlOnly": true,
-    "rule": "Input already contains the complete27 direction; do not add12 again or consume classified frame/perimeter duties. Final common room/task source join remains required; no material admission follows from spatial fit.",
+    "rule": "Input already contains the complete27 direction; do not add12 again or consume classified frame/perimeter duties. Final common room/task source is joined; no material admission follows from spatial fit.",
     "currentHeadSpare": 30
   },
   "finiteDryCorrection": {
@@ -2042,6 +5524,7 @@
   "taskDirections": {
     "storage": "Retain external HAD envelope and operation. Independent screw-fixed face/track, lift-out shelves and captured removable back; no service/fixture supported by removable carcass. Remove stored contents first. A sliding front remains sliding unless IAS proves a new hinged sweep.",
     "kitchen": "Retain900x600 sink and600x600 cooking stations plus650-square cold-store envelope; do not invent a continuous backed worktop. Select a plain welded stainless head+bowl on independently retained metal frame/rails, unclad underside, releasable front M6/rear15 locating dowels and a replaceable actual wet perimeter joint. Isolate water/power; support the complete head independently, expose/release actual waste/supplies and lift only after first joints and retainers are disengaged. Retain the fixed frame and fixed service supports. The earlier bowl-clip/whole-frame controls do not establish selected renewal. First-wetted surface is the exposed joint/catchable underside; leak declaration and drying must not depend on an absorbent concealed back.",
+    "splashback": "Ordinary guest-basin/utility/kitchen splash plate/upstand is independently supported plain stainless within the actual fixture/station envelope; real exposed wet perimeter seal retained. No blanket30 ground-wall growth or water-boundary omission.",
     "wetCabinet": "Use solid timber frame and removable slatted/raised base outside the actual splash boundary; wet face itself remains the complete30 reference only where set out. Do not hide a cistern coupling behind a glued back. Remove contents/front and support fixture independently before disconnecting. Actual waterproofing remains intact or is isolated and reinstated/tested.",
     "doors": "Privacy remains a functional requirement. Keep actual hinged/slider/folding operation and all required fire constituents; remove supported leaf at accessible hardware before frame/trim intervention. A room name is not a fire-role exemption.",
     "bath": "Use the separate bathBodyDirection and canonical service-owned bath interface. Retain the immediate under-bath water seal, independent lower spool/tail support and actual strip/cap/reseal sequence; body-to-hall is not guarded-stair/export proof.",
@@ -2094,7 +5577,7 @@
     }
   ],
   "wetRoomTrials": {
-    "status": "Coordinated trial only; awaiting HAD/IAS operating geometry and services source join, no structural port permission",
+    "status": "Exact HAD/services development join; actual product/water/structural/physical admission and port permission remain unearned",
     "family": {
       "wetEast": 11567.5,
       "wetSouth": 3800,
@@ -2151,7 +5634,7 @@
         ],
         "hingeTrial": [
           9397,
-          6279
+          6281
         ],
         "leaf": [
           762,
@@ -2163,7 +5646,7 @@
           6283.5
         ],
         "opens": "NORTH-HINGED into room",
-        "operationStatus": "IAS mechanical delayed-action target; no stationary dwell or powered operator. Continuous initial2degree hand withdrawal being earned; actual speed/force/classified kit held",
+        "operationStatus": "IAS mechanical delayed-action target; no stationary dwell or powered operator. Exact family600 push/held transfer/wait/first2degree projection joined; actual speed/force/classified kit held",
         "roughToFrameClosure": 75,
         "closureRule": "Do not treat75 total as arbitrary packing; actual applicable classified linear joint or supported mineral jamb build-out required"
       },
@@ -2748,12 +6231,9 @@
     }
   },
   "developmentExitAssessment": {
-    "status": "MAT-owned construction recommendations/dispositions are reasoned; exact common-source integration and independent review pending before lifecycle completion",
+    "status": "MAT-owned alternatives and exact source joins resolved at development scope; independent closeout review pending before lifecycle projection",
     "internalMATChoicesRemaining": [],
-    "dependentSelectedHouseJoins": [
-      "Bind one final HAD27/30 authority with actual family600, furniture/emitter and roof-domain composition; current pinned0b2 remains a dated failed control",
-      "Bind final service first-interface and IAS ordinary renewal records without retyping their numeric authority; no claim that hall-only body transport is complete exterior renewal"
-    ],
+    "dependentSelectedHouseJoins": [],
     "laterAdmissionSeparate": [
       "Actual product/substrate/recipe and compatible installed system",
       "Material disclosure and explicit owner disposition for remaining known polymers; none approved",
@@ -2766,7 +6246,7 @@
   "livingRepairProposal": {
     "basisHADHead": "20ff8709a79a63e7d4bcd13fc6b86ef36a5a9a00",
     "basisJSONBlob": "bd3ba6057ed8f58cd14120bad9aab04553d309c0",
-    "status": "Checked plan proposal with complete receivers/27finish/18trim; owning HAD composition pending",
+    "status": "Selected in exact HAD development source with full receivers/27finish/18trim; physical/force/height admission separate",
     "sofaB": [
       2337.5,
       9800,
@@ -2840,7 +6320,7 @@
     ],
     "fixed3700": "No ordinary operation credited; fixed glazing only",
     "heightRequirement": "Actual sofas/tables<=700 under750cill; no full3D/window/force or seated-ergonomic admission",
-    "remaining": "Whole living-kitchen route controlling westFD21 is IAS case; R01 maintenance26.25 nominal/1.25 after25 combined loss is explicitly limited, not comfortable validation"
+    "remaining": "Exact source has19 route controls and repaired West door; R01 maintenance26.25 nominal/1.25 after25 combined loss remains limited, not comfortable validation"
   },
   "peerReviewIAS": {
     "head": "0f8d4cddd02864ead08614f9155d7c571080fa7f",
@@ -2950,7 +6430,36 @@
     "remainingInternal": "Final authoritative HAD emitter/cill/maintenance/source equivalence; selected head-first complete handling proof remains specifically IAS work, never inherited from part-only or whole-frame controls",
     "laterAdmission": "Actual OEM cover/coupling/pressure/noise, unchanged mandatory gasket/condensate, selected equipment/person/support loads, complete kit/site/fire/water/material and explicit owner disposition remain held. No owner exception approved.",
     "minorClarity": "Bed4H700 generic handling text still says600high; actual body/mass/cill data correctly use700. Mark legacy65L wording as dated control.",
-    "result": "No frozen whole-services PASS until required corrections are joined; reusable bounded positive findings are separate from admission"
+    "result": "No frozen whole-services PASS until required corrections are joined; reusable bounded positive findings are separate from admission",
+    "correctedDelta": {
+      "head": "9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2",
+      "tree": "1df93a838670cae55ecd1ed6cac9a61f95a0e27c",
+      "JSONBlob": "e827caa8c6c0cfc23bef0f08b3452f57984875d6",
+      "result": "Focused five-fix delta PASS with prior bounded caveats retained",
+      "bath": [
+        3545,
+        0.47053596668222825,
+        3800
+      ],
+      "kitchen": {
+        "hotMM": 7179.5,
+        "coldMM": 7084.5,
+        "pipeVolumeLitres": 0.9529514732849247,
+        "remainingActualJointHeadBudgetLitres": 2.0470485267150753
+      },
+      "pressure": {
+        "failedThreeClosedBarePa": 20.375568899673404,
+        "failedWithFrontPa": 22.375568899673404,
+        "selectedTwoDoorWithFrontPa": 17.657643164105046
+      },
+      "topology": "Exact final HAD.utilityDisposition publishes OPENARCH inside excluded service zone; protected Plant boundary remains. Restoring a leaf invalidates this result.",
+      "livingActor": {
+        "Y": 9450,
+        "receiverReserve": 43.16541201001013,
+        "sofaReserve": 50
+      },
+      "unchanged": "Frozen bath/kitchen objects identical. AS diff only16 derived handling strings andtwo actorY values."
+    }
   },
   "historicalGroundComparison": {
     "source": "project/mat/joined-ground-floor-and-court-boundary.md",
@@ -2968,10 +6477,529 @@
     "ordinaryGroundField": 3100,
     "localRearShowerBox": 2575.375,
     "localBathBox": 2587.5,
+    "otherPipeCrossovers": [
+      {
+        "id": "FD-WEST-CROSS",
+        "level": 0,
+        "xy": [
+          3390,
+          4250
+        ],
+        "orientation": "y",
+        "rough": [
+          2947.5,
+          3832.5
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          2370,
+          2630
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 2350,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          282.5,
+          282.5
+        ],
+        "requiredIntradosMinimum": 2680,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "FD-EAST-CROSS",
+        "level": 0,
+        "xy": [
+          8691.25,
+          4250
+        ],
+        "orientation": "y",
+        "rough": [
+          8241.25,
+          9141.25
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          2370,
+          2630
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 2350,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 2680,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "PLANT",
+        "level": 0,
+        "xy": [
+          9300,
+          3200
+        ],
+        "orientation": "x",
+        "rough": [
+          2750,
+          3650
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          2370,
+          2630
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 2350,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 2680,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "plant-intermediate",
+        "level": 0,
+        "xy": [
+          10350,
+          3700
+        ],
+        "orientation": "y",
+        "rough": [
+          9650,
+          11050
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          2370,
+          2630
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 2350,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          540,
+          540
+        ],
+        "requiredIntradosMinimum": 2680,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "utility-north",
+        "level": 0,
+        "xy": [
+          10700,
+          2550
+        ],
+        "orientation": "y",
+        "rough": [
+          10250,
+          11150
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          2370,
+          2630
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 2350,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 2680,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "STUDY",
+        "level": 0,
+        "xy": [
+          1800,
+          3247.5
+        ],
+        "orientation": "y",
+        "rough": [
+          1350,
+          2250
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          2370,
+          2630
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 2350,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 2680,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "GUEST-WC",
+        "level": 0,
+        "xy": [
+          8100,
+          2650
+        ],
+        "orientation": "y",
+        "rough": [
+          7650,
+          8550
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          2370,
+          2630
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 2350,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 2680,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "kitchen-arch",
+        "level": 0,
+        "xy": [
+          8700,
+          8290
+        ],
+        "orientation": "y",
+        "rough": [
+          8250,
+          9150
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          2370,
+          2630
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 2350,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 2680,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "FAMILY-BATH",
+        "level": 1,
+        "xy": [
+          9300,
+          5900
+        ],
+        "orientation": "x",
+        "rough": [
+          5450,
+          6350
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          5820,
+          6080
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 5800,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 6130,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "BED2",
+        "level": 1,
+        "xy": [
+          3900,
+          2650
+        ],
+        "orientation": "y",
+        "rough": [
+          3450,
+          4350
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          5820,
+          6080
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 5800,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 6130,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "BED3",
+        "level": 1,
+        "xy": [
+          8700,
+          2650
+        ],
+        "orientation": "y",
+        "rough": [
+          8250,
+          9150
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          5820,
+          6080
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 5800,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 6130,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "BED4",
+        "level": 1,
+        "xy": [
+          3550,
+          8852.5
+        ],
+        "orientation": "y",
+        "rough": [
+          3100,
+          4000
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          5820,
+          6080
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 5800,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 6130,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "rear-ensuite",
+        "level": 1,
+        "xy": [
+          2902.5,
+          10800
+        ],
+        "orientation": "x",
+        "rough": [
+          10350,
+          11250
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          5820,
+          6080
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 5800,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 6130,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "PRINCIPAL",
+        "level": 1,
+        "xy": [
+          8700,
+          8290
+        ],
+        "orientation": "y",
+        "rough": [
+          8250,
+          9150
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          5820,
+          6080
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 5800,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 6130,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      },
+      {
+        "id": "principal-ensuite",
+        "level": 1,
+        "xy": [
+          10350,
+          8290
+        ],
+        "orientation": "y",
+        "rough": [
+          9900,
+          10800
+        ],
+        "bandWidth": 320,
+        "bandHeight": 260,
+        "completeDoorAssemblyMaximum": 2250,
+        "trimAllowance": 70,
+        "bandZ": [
+          5820,
+          6080
+        ],
+        "panelThickness": 20,
+        "finishedUnderside": 5800,
+        "clearAboveAssemblyAndTrim": 30,
+        "ceilingLossFrom3100": 750,
+        "roughSideReserves": [
+          290,
+          290
+        ],
+        "requiredIntradosMinimum": 6130,
+        "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
+      }
+    ],
     "localPrincipalShowerBox": 2645,
     "localSoilCollectorBox": 2540,
     "upperProtectedControl": 2994,
     "rule": "3100 is the ordinary field only. Retain actual local branch/beam/hood drops, independently supported covers and primary fire boundary; no universal3100 or universal176 ceiling."
+  },
+  "protectedCeilingPerimeter": {
+    "source": "Actual main STR collector and explicit MAT-ENVELOPE edge readback; this is an authored compatibility reservation, not a supplied classified detail",
+    "collector": {
+      "section": {
+        "b": 260,
+        "h": 140,
+        "d": 103,
+        "As": 226.1946710584651,
+        "cover": 25,
+        "x": 27.812643992040268,
+        "x_d": 0.2700256698256337,
+        "z": 91.8749424031839,
+        "MR": 9.035487989305917,
+        "VRdc": 18.877863062196315,
+        "As_min": 40.38424,
+        "ductility": true
+      },
+      "top": 6680,
+      "bottom": 6540,
+      "projectionEach": 60
+    },
+    "ordinaryCoreFace": 402.5,
+    "ordinaryFinishedFace": 429.5,
+    "actualRCFace": 462.5,
+    "actualFinishedBeamFace": 489.5,
+    "ceiling": {
+      "underside": 6444,
+      "boardTop": 6468,
+      "webTop": 6608,
+      "filletTop": 6620
+    },
+    "webStopsAtActualFace": true,
+    "endCarrierReservation": {
+      "bottom": 6468,
+      "top": 6628,
+      "depthIntoRoomMaximum": 65,
+      "actualPartAndAnchorsAccepted": false
+    },
+    "qualifiedPerimeterReturn": {
+      "from": 6444,
+      "to": 6540,
+      "height": 96,
+      "requirement": "Complete applicable classified vertical perimeter return transfers the flat C-U field into the qualified RCcollector/wall boundary. Preserve all required return skins/backing/seals/insulation; no unsupported60 board overhang, C-web notching or wool trimmed around concrete. Full100wool/2x12skins/topfillets remain in the flat ceiling field room-side of actual489.5face. Actual return construction and RC/fire/anchor role remain unadmitted; reject/reopen this local edge if it cannot fit."
+    },
+    "airReturn": {
+      "q": 550,
+      "horizontalZ": 6640,
+      "carrierReserve": 12,
+      "source": "MAT-ENVELOPE authored edge continuation; no extra layer/fire/air admission"
+    },
+    "rule": "Ordinarywall429.5 below6540 is not a C-web continuation. The last60 belongs to the qualified RC/perimeter transition, not a fictitious flat176 panel throughRC."
   },
   "substrateDecisions": {
     "renderableMasonry": "Complete27 lime direction with actual background/preparation qualified; no14/17 unproved substitution.",
@@ -2986,7 +7014,7 @@
       "name": "familyWC",
       "geometry": [
         10777.5,
-        5800,
+        5750,
         560,
         355
       ],
@@ -2996,13 +7024,13 @@
         560,
         355
       ],
-      "joined": false
+      "joined": true
     },
     {
       "name": "familyBasin",
       "geometry": [
         11227.5,
-        5300,
+        5200,
         340,
         450
       ],
@@ -3012,15 +7040,15 @@
         340,
         450
       ],
-      "joined": false
+      "joined": true
     },
     {
       "name": "familyColumn",
       "geometry": [
-        11342.5,
-        6180,
-        180,
-        180
+        11297.5,
+        6135,
+        270,
+        265
       ],
       "service": [
         11297.5,
@@ -3028,7 +7056,7 @@
         270,
         265
       ],
-      "joined": false
+      "joined": true
     },
     {
       "name": "rearTray",
@@ -3057,10 +7085,10 @@
     "upperCeilingDrop": 106,
     "complete2250DoorToControlCeiling": 744,
     "galleryHistoricControl": 979,
-    "with12ExtraFinishEachSide": 955,
+    "historical12ExtraEachSideControl": 955,
     "cabinet660ClearBeforeHardware": 629
   },
   "exceptionsApproved": 0,
   "installedQuantities": null,
-  "programmeLifecycle": "planned pending exact-source integration and independent review; MAT alternatives directions reasoned, separate IAS export and later admission not used as a blanket delay"
+  "programmeLifecycle": "planned pending independent exact-source closeout review; proposed complete-development patch is not applied by this result, and separate IAS export/later admission remain unearned"
 }
