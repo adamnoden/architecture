@@ -9,8 +9,8 @@
     "label": "zerg7-envelope-thermal"
   },
   "claimedAt": "2026-11-02T07:37:31.007Z",
-  "heartbeatAt": "2026-11-02T07:37:31.007Z",
-  "expiresAt": "2026-11-02T08:22:31.007Z",
+  "heartbeatAt": "2026-11-02T07:49:56.145Z",
+  "expiresAt": "2026-11-02T08:34:56.145Z",
   "branch": "work/zerg7-envelope-thermal-screen",
   "predecessor": {
     "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
@@ -33,5 +33,10 @@
       "next": "Root to inspect exact-head CI and current main, run fresh canonical merge-check against PR #1246 head, merge if earned, release lease. MAT-ENVELOPE six exits stay open.",
       "blocker": "Structural frame weld/end closure, post and breather collars, movement, joined moisture/thermal and classified ceiling96 perimeter remain open; no whole assembly or material/site/physical admission."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote head 67d6c4079cb4a6277d021aa8e2a7c82b13e0f8d4, four blobs equal isolated local commit a1a575f363dac874f2d280548379dc33dbd49f5f. Source-pinned dry2D roof/collector solver,10/5/2.5 grid,energy balance,cut/bracket cases and rendered A3; --check passes.",
+    "next": "Open Work/Lease PR; root inspects exact-head CI and fresh publication preflight. MAT-ENVELOPE six exits stay open.",
+    "blocker": "Dry screen omits actual ceiling effective properties, radiative/air exchange, 3D frame/post/collar paths, climate/vapour/leakage, complete fire/material/site/physical admission."
   }
 }
