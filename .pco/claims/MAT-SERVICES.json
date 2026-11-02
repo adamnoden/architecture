@@ -9,8 +9,8 @@
     "label": "zerg4-whole-house-services"
   },
   "claimedAt": "2026-11-01T21:02:38.591Z",
-  "heartbeatAt": "2026-11-02T00:25:10.686Z",
-  "expiresAt": "2026-11-02T01:10:10.686Z",
+  "heartbeatAt": "2026-11-02T00:55:52.644Z",
+  "expiresAt": "2026-11-02T01:40:52.644Z",
   "branch": "work/zerg4-whole-house-services",
   "predecessor": {
     "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published0fbc79e84e1591b7d1528d92667ec6a8da6b46f8 tree0f6a7de63e84676419e4bb898705123da71fbb61 owns one numeric projection; current source corrections being prepared with actual HAD receiver/CU/PV/platform and bath local-port joins.",
-    "next": "Publish corrected projection on latestmainf462415; HAD consumes strict keyed equality; record relevant geometry equivalence and independent review.",
-    "blocker": "Head-first continuous/support handling remains internal continuation; bath port structural/material/physical acceptance unearned. No broad closure."
+    "evidence": "Frozen9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2 tree1df93a838670cae55ecd1ed6cac9a61f95a0e27c preserves latestmain6a3c15d6; five bounded review fixes reproduce. Bath25b4/kitchend2db objects unchanged; architecture949065 corrects sofa actor and derived handling text.",
+    "next": "MAT focused delta review then HAD strict keyed equality/relevant geometry equivalence; root final sequencing. Keep new remotehead frozen.",
+    "blocker": "Head-first handling continuation and later site/product/material/physical admissions remain explicit; no whole-services PASS or node completion."
   },
   "pr": 1234
 }
