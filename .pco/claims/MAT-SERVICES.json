@@ -9,8 +9,8 @@
     "label": "zerg-services-constructive-cooker"
   },
   "claimedAt": "2026-11-02T10:13:45.252Z",
-  "heartbeatAt": "2026-11-02T10:45:27.380Z",
-  "expiresAt": "2026-11-02T11:30:27.380Z",
+  "heartbeatAt": "2026-11-02T10:48:00.298Z",
+  "expiresAt": "2026-11-02T11:33:00.298Z",
   "predecessor": {
     "leaseId": "842350f9-bdfb-4597-88f3-3f4d142fc0f8",
     "generation": 14,
@@ -35,8 +35,9 @@
   },
   "branch": "work/zerg9-services-constructive-cooker",
   "checkpoint": {
-    "evidence": "Frozen remote 0ae9950be4542ca453493b86455f5c9d7e6b36f0 tree 280cbbb7ae6754e8132b9908456e58e8ec655909; three-file exact equality, generator/diff pass and independent bounded product/thermal/topology QA pass; no adoption",
-    "next": "Open bounded draft PR and root integration decision; preserve all actual OEM/material/product/fan/thermal/site gates",
-    "blocker": "DTBCU frequent-modulation OEM duty, EPDM material, pressure/capture, hood protective interface, staged support/weather/fire and plant/emitters unqualified"
-  }
+    "evidence": "Draft PR #1265 frozen remote 0ae9950be4542ca453493b86455f5c9d7e6b36f0 tree 280cbbb7ae6754e8132b9908456e58e8ec655909; three-file exact equality, generator/diff pass and independent bounded product/thermal/topology QA pass; no adoption",
+    "next": "Root integrates bounded source after #1263, sole CI/preflight/merge observer; next selected services proposition must resolve material policy and complete assembly/plant interfaces",
+    "blocker": "DTBCU frequent-modulation OEM duty, EPDM material, actual pressure/capture, hood protective interface, staged support/weather/fire and plant/emitters unqualified"
+  },
+  "pr": 1265
 }
