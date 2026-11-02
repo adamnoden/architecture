@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 25,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e56ff50a-4b82-4233-94cd-4d2b792e283c",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-rwt06-high-eave-continuation"
   },
   "claimedAt": "2026-11-02T09:11:24.186Z",
-  "heartbeatAt": "2026-11-02T10:46:41.572Z",
-  "expiresAt": "2026-11-02T11:31:41.572Z",
+  "heartbeatAt": "2026-11-02T10:47:42.876Z",
+  "expiresAt": "2026-11-02T10:47:42.876Z",
   "checkpoint": {
     "evidence": "Root verified PR1263 merged as maindf410b141fb77257dcbe825de5d20287144d75ee tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; PR1258 provider merged true; CI41430725270 attempt2 all success; exact-head RWT25 publication preflight10:44:55.637Z.",
     "next": "Release completed frozen packet25 canonically; acquire fresh directed RWT06 generation from verified main before implementing constructive live temporary receiver/reversal. RWT06 remains planned, actual method rejected and downstream holds unchanged."
@@ -39,5 +39,7 @@
     }
   },
   "pr": 1263,
-  "note": "Frozen RWT25 negative study integrated; root verified merge. Canonical completion checkpoint before release; no positive receiver method or RWT06 lifecycle completion."
+  "note": "Frozen RWT25 negative study integrated; root verified merge. Canonical completion checkpoint before release; no positive receiver method or RWT06 lifecycle completion.",
+  "releasedAt": "2026-11-02T10:47:42.876Z",
+  "releaseReason": "completed"
 }
