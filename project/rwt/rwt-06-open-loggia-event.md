@@ -81,7 +81,7 @@ Reuse the single [ROF access and renewal evidence](../../docs/research/roof-acce
 
 **No high-level maintenance/receiver-renewal method is accepted at this source.** RWT-06 cannot close on a channel calculation while this retained duty is unsolved. ROF supplies the component/work task; HAD supplies actual passage/occupation, STR the located contact/tie receiving path, IAS the handling/recovery geography, and existing BCR/EPR/DEL routes the qualified temporary works, actual equipment and work acceptance. If these cannot coexist with maintained rain escape, change the collector/roof/access proposition before network selection.
 
-The later [+7100 eave service comparison](rwt-06-high-eave-service-comparison.md) tests the actual selected sloped court against the complete CE outdoor platform footprint, and locates a two-destination temporary roof-water development route for the separate receiver-renewal task. Its support, interception, first-harm, full event and complete receiver export remain unadmitted. It does not turn the nominal platform height into a working method.
+The later [+7100 eave service comparison](rwt-06-high-eave-service-comparison.md) tests the actual selected sloped court against the complete CE outdoor platform footprint. It **rejects** a proposed outboard two-branch temporary roof catcher after joining the primary hem, lower secondary drip and 150-down/400-out gutter withdrawal in one section. A roofward q250 dual-layer interception and live-route sequence are a defined ROF/MAT source replan, not an admitted alternative. It does not turn nominal platform height or a sketched pipe into a working receiver-renewal method.
 
 ## Precise building-to-site and downstream handoff
 
