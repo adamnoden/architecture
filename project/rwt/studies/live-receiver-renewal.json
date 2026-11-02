@@ -1,0 +1,415 @@
+{
+  "status": "CONSTRUCTIVE LOCAL REVERSAL REFERENCE; nominal geometry and necessary head screen only; no selected receiver/site/product/operation admission",
+  "sourceBlobs": {
+    "had": [
+      "project/had/studies/open-north-loggia.json",
+      "25faad2c4d40df2b7da7212f73808843a88d2f52"
+    ],
+    "edge": [
+      "project/mat/studies/loggia-roof-edge.json",
+      "731c85d24e775259f1cf84d264d4ceaf75d89774"
+    ],
+    "rejected": [
+      "project/rwt/studies/high-eave-service.json",
+      "3c8e00cdfb10309468c8dfe4388afc89a83e0a8b"
+    ]
+  },
+  "occurrence": {
+    "p": "world x",
+    "q": "4250-world y",
+    "z": "world absolute millimetres",
+    "selectedHAD": "HAD-B-OPEN-LOGGIA-2026-11-02",
+    "roofSource": {
+      "shell": 12000,
+      "courtInset": 4250,
+      "ridgeInset": 2125,
+      "overhang": 200,
+      "eaves": 7100,
+      "pitchDeg": 25,
+      "buildDepth": 552.4613240245196
+    },
+    "weatherFace": {
+      "id": "roof-inner-0-0",
+      "vertices": [
+        {
+          "x": 2125,
+          "y": 2125,
+          "z": 8090.903773579372
+        },
+        {
+          "x": 9875,
+          "y": 2125,
+          "z": 8090.903773579372
+        },
+        {
+          "x": 7550,
+          "y": 4450,
+          "z": 7006.738468369001
+        },
+        {
+          "x": 4450,
+          "y": 4450,
+          "z": 7006.738468369001
+        }
+      ]
+    },
+    "physicalEdge": [
+      {
+        "x": 4450,
+        "y": 4450,
+        "z": 7006.738468369001
+      },
+      {
+        "x": 7550,
+        "y": 4450,
+        "z": 7006.738468369001
+      }
+    ],
+    "sceneProjection": "Await coordinated HAD builder export; selected openings below are direct selected JSON, never inferred from upperWalls.",
+    "firstOpenings": [
+      {
+        "id": "court-south-0",
+        "wall": "court-south",
+        "centre": 5150,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
+      },
+      {
+        "id": "court-south-1",
+        "wall": "court-south",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
+      }
+    ],
+    "firstFFL": 3450,
+    "groundDoor": {
+      "rough": [
+        5100,
+        6900
+      ],
+      "frameDepth": [
+        4110,
+        4250
+      ],
+      "jambEach": 50,
+      "hinges": [
+        [
+          5150,
+          4250
+        ],
+        [
+          6850,
+          4250
+        ]
+      ],
+      "leafEach": [
+        845.5,
+        44,
+        2100
+      ],
+      "leafBottom": 19,
+      "leafTop": 2119,
+      "gaps": {
+        "left": 3,
+        "meeting": 3,
+        "right": 3
+      },
+      "transom": [
+        2119,
+        2189
+      ],
+      "fanlightFrom": 2189,
+      "arch": {
+        "span": 1800,
+        "spring": 2550,
+        "crown": 2850,
+        "scope": "Explicit authored reference, actual OAS profile/product junction must qualify."
+      },
+      "grossSweepReservation": 850,
+      "openLeafNorthTip": 5100,
+      "landingNorthEnd": 5750,
+      "clearBeyondOpenTip": 650,
+      "scope": "Outward NORTH;1500full exterior landing. Actual timber/hinge/bracket/weather/leak/firstharm remains with joined MAT/OAS."
+    }
+  },
+  "profiles": {
+    "A": {
+      "authority": "NEW RWT geometry; replaces unadopted MAT gutter only at this development occurrence",
+      "p": [
+        4350,
+        7650
+      ],
+      "q": [
+        -450,
+        -100
+      ],
+      "bottom": 6590,
+      "back": 6740,
+      "front": 6675,
+      "gauge": 1.5,
+      "carrierDepth": 30,
+      "carrierLength": 600,
+      "moduleCount": 7,
+      "drop": 170,
+      "outward": 400,
+      "extractionCentres": [
+        4762.5,
+        5587.5,
+        6412.5,
+        7237.5
+      ],
+      "support": "Co-moving carrier; front-operated release. Fixed restraint stays q>=-100. Actual member/connection/handling admission open.",
+      "moduleLength": 471.42857142857144,
+      "modules": [
+        {
+          "p": [
+            4350,
+            4821.428571428572
+          ],
+          "extractionCentre": 4762.5
+        },
+        {
+          "p": [
+            4821.428571428572,
+            5292.857142857143
+          ],
+          "extractionCentre": 4762.5
+        },
+        {
+          "p": [
+            5292.857142857143,
+            5764.285714285714
+          ],
+          "extractionCentre": 5587.5
+        },
+        {
+          "p": [
+            5764.285714285714,
+            6235.714285714286
+          ],
+          "extractionCentre": 5587.5
+        },
+        {
+          "p": [
+            6235.714285714286,
+            6707.142857142857
+          ],
+          "extractionCentre": 6412.5
+        },
+        {
+          "p": [
+            6707.142857142857,
+            7178.571428571428
+          ],
+          "extractionCentre": 6412.5
+        },
+        {
+          "p": [
+            7178.571428571428,
+            7650
+          ],
+          "extractionCentre": 7237.5
+        }
+      ]
+    },
+    "B": {
+      "authority": "NEW temporary full-edge formed tray, independent scaffold support; no roof-layer cuts",
+      "p": [
+        4325,
+        7675
+      ],
+      "q": [
+        -500,
+        -100
+      ],
+      "valleyQ": -230,
+      "centreInvert": 6800,
+      "outletsP": [
+        4500,
+        7500
+      ],
+      "longFall": 0.01,
+      "crossFall": 0.05,
+      "gauge": 1.5,
+      "wall": 80,
+      "frameDepthReservation": 20,
+      "branch": {
+        "clearWidth": 300,
+        "tailQ": -1050,
+        "fall": 0.01,
+        "hopperTop": 6600,
+        "pipeOuter": 150
+      },
+      "return": {
+        "clearWidth": 300,
+        "inletQ": -1050,
+        "inletInvert": 6710,
+        "outletQ": -180,
+        "outletInvert": 6695,
+        "wall": 50,
+        "gauge": 1.5,
+        "drainStopOutward": 240
+      },
+      "renewal": "Returns attached before B enters either drip; pipes connected/tested before A opens; restore/test A, insert returns while pipes live, drain B at 240 out, then export."
+    },
+    "guard": {
+      "floor": 5540,
+      "topCentre": 6640,
+      "midCentre": 6190,
+      "tubeDiameter": 48,
+      "posts": [
+        4350,
+        5175,
+        6000,
+        6825,
+        7650
+      ],
+      "platform": [
+        4350,
+        4780,
+        3300,
+        700
+      ],
+      "pads": [
+        [
+          4500,
+          4780
+        ],
+        [
+          7500,
+          4780
+        ],
+        [
+          4500,
+          5480
+        ],
+        [
+          7500,
+          5480
+        ]
+      ],
+      "padSquare": 400,
+      "authority": "NEW scaffold/guard envelope; complete bracing, access, rescue, ground bearing and supplier design remain unadmitted."
+    }
+  },
+  "world": {
+    "primary": [
+      6000,
+      4450,
+      7006.738468369001
+    ],
+    "secondary": [
+      6000,
+      4470,
+      6913.88660674044
+    ],
+    "A": [
+      [
+        6000,
+        4700,
+        6590
+      ],
+      [
+        6000,
+        4350,
+        6740
+      ]
+    ],
+    "B": [
+      [
+        6000,
+        4750,
+        6813.5
+      ],
+      [
+        6000,
+        4350,
+        6806.5
+      ]
+    ]
+  },
+  "clearances": {
+    "secondaryToB": 20.386606740439674,
+    "BFrameToA": 23.5,
+    "AtoNeighbourAfterDrop": 20,
+    "carrierToMidrail": 176,
+    "carrierToToprail": 46,
+    "returnToGuard": 29.5,
+    "returnToAFront": 18.5,
+    "tailToReturn": 16.800000000000182,
+    "pipeToWithdrawal": 125,
+    "endCatchBeyondWeather": 125,
+    "returnOverlapAtDrainStop": 30,
+    "afterStopDripSeparation": 120
+  },
+  "checks": {
+    "bothDripsInB": true,
+    "lowerDripAboveCompleteB": true,
+    "BFrameAboveInstalledA": true,
+    "wholePhysicalStraightEdgeCovered": true,
+    "AUnderNeighbourAfterDrop": true,
+    "carrierAboveMidrail": true,
+    "carrierBelowToprail": true,
+    "extractionBays": true,
+    "verticalPipesOutsideAWithdrawal": true,
+    "returnAboveAFront": true,
+    "returnAboveGuard": true,
+    "freefallTailToReturn": true,
+    "returnStillInAAtDrainStop": true,
+    "noDripInBAtDrainStop": true,
+    "completePadsOutsideInlet": true,
+    "windowRawHeadBelowCarrier": true
+  },
+  "negativeControls": {
+    "oldGutterInB": true,
+    "drop150HasZeroNeighbourClearance": true,
+    "highPlatform5800BlocksReturn": true,
+    "wallLineAndPhysicalCatchmentsConserve": true,
+    "doubleCountOverhangRejected": true,
+    "full400ReturnMoveLosesAOverlap": true,
+    "narrowReturnHydraulicFailure": true,
+    "correctedReturnNecessaryHead": true
+  },
+  "catchments": {
+    "rainfallMmH": 216,
+    "wallLine": {
+      "roofM2": 47.8125,
+      "courtM2": 12.25,
+      "roofLps": 2.86875,
+      "courtLps": 0.735
+    },
+    "physical": {
+      "roofM2": 50.4525,
+      "exposedCourtM2": 9.61,
+      "roofLps": 3.02715,
+      "courtLps": 0.5765999999999999
+    },
+    "combinedLps": 3.60375,
+    "branchChallengeLps": 3.60375,
+    "scope": "Each branch challenged with whole roof-plus-court total; conservative boundary, no invented equal-edge or valley allocation."
+  },
+  "hydraulicScreen": {
+    "specificEnergyMm": {
+      "width100": 76.44892100590172,
+      "width300": 36.75280782374226,
+      "width400": 30.338774406650543
+    },
+    "BWall": 80,
+    "returnWall": 20,
+    "verdict": "50 mm return wall exceeds ideal 300 mm critical specific energy by 13.247 mm. Necessary head screen only: actual inlet/turn/roughness/splash/backwater/freeboard and full event test remain unproved."
+  },
+  "limits": [
+    "Straight weather edge is not a physical corner/valley capture joint.",
+    "B frame and scaffold are reserved complete envelopes, not qualified structural members.",
+    "Window raw head screen is not actual sash/guard operation.",
+    "20 mm return rejected; 50 mm correction passes necessary head screen, not actual hydraulic capacity.",
+    "Independent ground outlets, first weak join, receiving head, pad support and access remain with RWT/site owners."
+  ]
+}
