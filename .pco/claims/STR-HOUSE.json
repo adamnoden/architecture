@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 21,
-  "state": "released",
-  "leaseId": "fbc7fe0a-7e3c-46b2-93d7-cca0f1e48297",
+  "generation": 22,
+  "state": "claimed",
+  "leaseId": "18a5f416-818a-4a0d-ae20-11ef585cdfda",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-str-next-nodes"
+    "label": "zerg-str-roof-route"
   },
-  "claimedAt": "2026-11-02T12:58:14.324Z",
-  "heartbeatAt": "2026-11-02T13:47:31.000Z",
-  "expiresAt": "2026-11-02T13:47:31.000Z",
-  "checkpoint": {
-    "evidence": "Draft PR 1274 corrected head 8b01255c4d45520151218e564941e68f8b814f03 tree 3da23e25861bcc1926bdadb479ea41e7526773f3; two-support tip reactions and conditional ground projection",
-    "next": "Independent review of arm/node/roof-tip source; coordinate MAT field and final integration",
-    "blocker": "Actual slab/rebar, full roof and wall loads, arm/pile resistance, MAT field and site remain open"
-  },
-  "branch": "work/zerg-str-next-nodes-20261102",
+  "claimedAt": "2026-11-02T13:47:59.018Z",
+  "heartbeatAt": "2026-11-02T13:47:59.018Z",
+  "expiresAt": "2026-11-02T14:32:59.018Z",
+  "branch": "work/zerg-str-roof-route-20261102",
   "predecessor": {
-    "leaseId": "c2ab380b-1e6d-41f7-bb7b-6a49a91f41fb",
-    "generation": 20,
-    "branch": "work/zerg-corner-convergence",
-    "pr": 1273,
+    "leaseId": "fbc7fe0a-7e3c-46b2-93d7-cca0f1e48297",
+    "generation": 21,
+    "branch": "work/zerg-str-next-nodes-20261102",
+    "pr": 1274,
     "checkpoint": {
-      "evidence": "Shared PR 1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; STR source reviewed and rebound; MAT pin reconciled",
-      "next": "Root observes exact-head CI, runs owner preflights and merges if earned; then close out STR 20 and reacquire for full corner route",
-      "blocker": "Whole-house signed actions, cold-arm and pile transfer, envelope and site remain open"
+      "evidence": "Draft PR 1274 corrected head 8b01255c4d45520151218e564941e68f8b814f03 tree 3da23e25861bcc1926bdadb479ea41e7526773f3; two-support tip reactions and conditional ground projection",
+      "next": "Independent review of arm/node/roof-tip source; coordinate MAT field and final integration",
+      "blocker": "Actual slab/rebar, full roof and wall loads, arm/pile resistance, MAT field and site remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "c2ab380b-1e6d-41f7-bb7b-6a49a91f41fb",
-    "generation": 20,
-    "branch": "work/zerg-corner-convergence",
-    "pr": 1273,
+    "leaseId": "fbc7fe0a-7e3c-46b2-93d7-cca0f1e48297",
+    "generation": 21,
+    "branch": "work/zerg-str-next-nodes-20261102",
+    "pr": 1274,
     "checkpoint": {
-      "evidence": "Shared PR 1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; STR source reviewed and rebound; MAT pin reconciled",
-      "next": "Root observes exact-head CI, runs owner preflights and merges if earned; then close out STR 20 and reacquire for full corner route",
-      "blocker": "Whole-house signed actions, cold-arm and pile transfer, envelope and site remain open"
+      "evidence": "Draft PR 1274 corrected head 8b01255c4d45520151218e564941e68f8b814f03 tree 3da23e25861bcc1926bdadb479ea41e7526773f3; two-support tip reactions and conditional ground projection",
+      "next": "Independent review of arm/node/roof-tip source; coordinate MAT field and final integration",
+      "blocker": "Actual slab/rebar, full roof and wall loads, arm/pile resistance, MAT field and site remain open"
     }
-  },
-  "pr": 1274,
-  "releasedAt": "2026-11-02T13:47:31.000Z",
-  "releaseReason": "handoff"
+  }
 }
