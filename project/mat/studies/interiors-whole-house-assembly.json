@@ -2894,7 +2894,63 @@
         "limit": 600
       },
       "rule": "Hold the OPEN handle through the checked transfer; then retract during first2degrees of controlled closing. No stationary mechanical dwell or manual mid-sweep regrip inferred. Actual closer speed/force/classified kit/constituents and physical operation remain unadmitted."
+    },
+    "rearEmitterDelta": {
+      "head": "dc3093e4c886dad3fc57c3463e047cb96a2a34e2",
+      "tree": "4ca498e68ef7deff53c6464aee0b56eee53c0ff1",
+      "JSONBlob": "87a45043dce090adc24f91b92fae70d85e2990d8",
+      "selectedObject": "rearEmitterRepair",
+      "result": "Bounded plan repair PASS; exact input guards/reproducer and actual SVG inspection, no head-first/full carrying/export or physical/material admission",
+      "wardrobeTranslation": [
+        [
+          3042,
+          9800
+        ],
+        [
+          3480,
+          9800
+        ],
+        [
+          3480,
+          10195
+        ]
+      ],
+      "turnCentre": [
+        4230,
+        10525
+      ],
+      "turnRadius": 819.3900170248598,
+      "minimumCircle": 29.654445886241206,
+      "park": [
+        3030,
+        9775,
+        660,
+        1500
+      ],
+      "parkRadiatorGap": 95.5,
+      "translationMinimum": 24.5,
+      "parkMoveMinimum": 12.5,
+      "trayRadiatorMinimum": 20.5,
+      "rule": "Select this repair over old9900 park; retain whole100S bed, both emitters, tray-FIRST sequence and actual release/reinstatement. Small nominal clearances earn no handling/tolerance/force or exterior-renewal admission."
     }
+  },
+  "peerReviewServices": {
+    "head": "38194f2988c8cedfce7ee3a066c578afaf0f7c37",
+    "tree": "ec6dba4bde909f1955d2ceafc5d0b48740651e73",
+    "JSONBlob": "eb841fcfe6ec77975ee94d48c4cae59a7dc12859",
+    "scope": "Independent bounded developmental review only; no services files edited or full CI run",
+    "verification": "Native exact head/tree/blob and f462 ancestry, default Python --check, plan/interface SVGs rendered/viewed; official Titon table/manual and Stelrad technical/correction factors rechecked",
+    "positive": "14cold/9hot/4soil endpoints,16emitters/14duties; conservative correction factors and579.693/687.926kg catalogue dry/filled comparisons reproduce.7.84kW at25K/9.408at30K remains an authored compatibility sensitivity.",
+    "requiredPreintegrationFixes": [
+      "Align global bath water row/path/volume to frozen front isolation interface",
+      "Publish utility OPENARCH at900 opening, retain protected Plant door and model distinct door flows; three closed doors22.376Pa inclfront is a failed control, two17.658Pa remains conditional",
+      "Known LivingWest operatorY9450 correction",
+      "Align global kitchen water route/length/deadleg with selected retained-feed paths: hot7179.5mm/cold7084.5 versus obsolete4177.5mm direct route"
+    ],
+    "remainingInternal": "Final authoritative HAD emitter/cill/maintenance/source equivalence; selected head-first complete handling proof remains specifically IAS work, never inherited from part-only or whole-frame controls",
+    "laterAdmission": "Actual OEM cover/coupling/pressure/noise, unchanged mandatory gasket/condensate, selected equipment/person/support loads, complete kit/site/fire/water/material and explicit owner disposition remain held. No owner exception approved.",
+    "minorClarity": "Bed4H700 generic handling text still says600high; actual body/mass/cill data correctly use700. Mark legacy65L wording as dated control.",
+    "result": "No frozen whole-services PASS until required corrections are joined; reusable bounded positive findings are separate from admission"
   },
   "historicalGroundComparison": {
     "source": "project/mat/joined-ground-floor-and-court-boundary.md",
