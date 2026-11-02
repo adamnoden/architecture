@@ -197,6 +197,204 @@
       "firstHarmComparator": -30,
       "portalSpring": 2126.5422357208927
     },
+    "routeSupport": {
+      "stationsY": [
+        7850,
+        8450,
+        9050,
+        9650,
+        10250,
+        10850,
+        11450,
+        12050,
+        12650,
+        13050
+      ],
+      "shoeX": [
+        5235,
+        5285
+      ],
+      "shoeHalfLength": 75,
+      "boltDiameter": 8,
+      "boltsAlongY": [
+        -40,
+        40
+      ],
+      "beam": {
+        "width": 150,
+        "height": 38,
+        "wall": 3,
+        "top": 20,
+        "bottom": -18,
+        "rootX": 5260,
+        "tipX": 5950,
+        "youngMPa": 200000,
+        "pointN": 1000,
+        "I": 292684,
+        "pointDeflection": 1.8706693908789,
+        "pointStress": 44.792335761435545,
+        "firstHarmAfterIdealDeflection": 10.129330609121102
+      },
+      "scope": "Reversible anchored support candidate, not sized or structurally accepted. RC, finish, waterproofing, anchor and load paths unproved."
+    },
+    "access": {
+      "towerX": [
+        6200,
+        7400
+      ],
+      "towerY": [
+        6150,
+        7000
+      ],
+      "feet": [
+        [
+          6250,
+          6175
+        ],
+        [
+          7350,
+          6175
+        ],
+        [
+          6250,
+          6965
+        ],
+        [
+          7350,
+          6965
+        ]
+      ],
+      "footSide": 50,
+      "ladderX": [
+        6900,
+        7350
+      ],
+      "ladderY": [
+        6500,
+        6550
+      ],
+      "rescueX": [
+        6250,
+        6850
+      ],
+      "rescueY": [
+        6250,
+        6850
+      ],
+      "landingX": [
+        5950,
+        7400
+      ],
+      "landingY": [
+        6150,
+        7000
+      ],
+      "landingTopAtY6150": 26.18421052631579,
+      "landingTopAtY6900": 40,
+      "platformZ": 5540,
+      "intermediateLandings": [
+        1500,
+        3000,
+        4500
+      ],
+      "scope": "Finite access and separate hoist reservation only. Actual ladder, guard, anchorage, rescue equipment, handling and safe refuge unproved."
+    },
+    "casualtyStage": {
+      "x": [
+        5900,
+        7100
+      ],
+      "y": [
+        9000,
+        11200
+      ],
+      "supportStations": [
+        9050,
+        9650,
+        10250,
+        10850
+      ],
+      "westShoeX": [
+        5235,
+        5285
+      ],
+      "eastShoeX": [
+        7120,
+        7180
+      ],
+      "supportSpan": 1890,
+      "beamI": 292684,
+      "pointN": 1000,
+      "youngMPa": 200000,
+      "sideGateY": [
+        9000,
+        10000
+      ],
+      "scope": "1200 x 2200 nominal transfer zone, not proof a casualty, equipment and crew fit or can reach it.",
+      "pointDeflection": 2.4027865804075383,
+      "pointStress": 30.673012532287384
+    },
+    "northGate": {
+      "hinge": [
+        5128,
+        13200
+      ],
+      "leaf": 819,
+      "thickness": 44,
+      "baseZ": 40,
+      "headZ": 1140,
+      "operator": [
+        5500,
+        12850
+      ],
+      "bodyRadius": 300,
+      "scope": "Single outward leaf, push from south. Plan sweep and stated body rectangle only; latch, force, support, receiver safety and actual gate alteration unproved.",
+      "tipOpen": [
+        5128,
+        14019
+      ],
+      "receiverProjection": 369
+    },
+    "gatePull": {
+      "hinge": [
+        4803,
+        4300
+      ],
+      "leaf": 1195.5,
+      "pulley": [
+        4380,
+        5500
+      ],
+      "pulleyRadius": 20,
+      "ropeZ": 2200,
+      "control": [
+        5500,
+        5850
+      ],
+      "handleZ": 1200,
+      "operatorRadius": 300,
+      "operatorBounds": [
+        [
+          5200,
+          5800
+        ],
+        [
+          5550,
+          6150
+        ]
+      ],
+      "leafThickness": 44,
+      "angleRangeDeg": [
+        0,
+        90
+      ],
+      "scope": "Geometric line and nominal rotation only; actual latches, rope, pulleys, strength, effort, snag, weather, rescue and door hardware are unproved.",
+      "cableStroke": 1591.8066405108316,
+      "torqueCoefficients": [
+        1200,
+        423
+      ]
+    },
     "scope": "Trial grating, bridge and route are geometric reservations only; supports, water passage, guard gate, wet escape, receiving water and rescue not proven."
   },
   "wallImpact": [
@@ -235,6 +433,10 @@
     "gateX": [
       4800,
       7200
+    ],
+    "gateHinges": [
+      4803,
+      7197
     ],
     "gateHead": 2250,
     "gateLeaf": 1195.5,
@@ -282,11 +484,31 @@
     "escapeClearWidth": true,
     "escapeHead": true,
     "escapeAboveComparison": true,
+    "accessFeetBeforeInlet": true,
+    "accessFeetInsideCourt": true,
+    "accessFootYGapToMainPads": true,
+    "accessLadderHoistPlanSeparate": true,
+    "accessWestFootOpening": true,
+    "accessLandingMeetsRamp": true,
+    "casualtyZoneSize": true,
+    "casualtyShoesOutsideRelief": true,
+    "supportShoeBetweenLanes": true,
+    "supportStopsBeforeGuard": true,
+    "supportPitchAndLastCantilever": true,
+    "beamAboveComparator": true,
+    "northGateWorkerBeforeSwing": true,
+    "northGateWidthFits": true,
+    "northGateOverReceiver": true,
     "escapeFeetAvoidInlet": true,
     "escapeFeetClearFrames": true,
     "escapeFeetOutsideBothLoggiaLanes": true,
     "closedScreenStopsBuildingLeaf": true,
     "screenGatePadGap": true,
+    "gatePullOpensAllAngles": true,
+    "gatePullBodyOutsideLeafSweep": true,
+    "gatePulleyClearScreen": true,
+    "gateCordAboveDoor": true,
+    "gateControlOnRoute": true,
     "screenPadFrameGap": true,
     "drainToAdjacentPadGap": true,
     "deckInnerStrip": true,
