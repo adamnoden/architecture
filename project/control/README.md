@@ -326,7 +326,7 @@ The read-only operations briefing distinguishes eligible predecessor recovery, a
 | Proof selection is uncertain | Run the proof. The optimisation is intentionally incomplete and never replaces full repository health |
 | A workflow file parses | YAML syntax/basic shape passed, not necessarily GitHub's complete schema, permissions or event semantics. Observe the relevant native event when wiring changes |
 
-The current recovery timing, acknowledgement protocol, merge runway and exact commands are in the [runbook's resilience contract](swarm-runbook.md#resilience-recovery-and-publication-preflight). Source constants live in [`claims.ts`](claims.ts); freshness interpretation in [`lease-health.ts`](lease-health.ts). Transport timeout bounds apply to individual requests/commands, not an invented total job-duration guarantee.
+The current recovery timing, acknowledgement protocol, merge runway and exact commands are in the [runbook's resilience contract](swarm-runbook.md#resilience-recovery-and-publication-preflight). Source constants live in [`claims.ts`](claims.ts); freshness interpretation in [`lease-health.ts`](lease-health.ts). Transport timeout bounds apply to individual requests/commands, not an invented total job-duration guarantee. Canonical Git commands default to 30000 ms; `ACO_GIT_TIMEOUT_MS` accepts only decimal integers from 1 to 120000 ms and rejects invalid explicit values. See the [runbook deadline configuration](swarm-runbook.md#resilience-recovery-and-publication-preflight).
 
 The system has explicit limits:
 
