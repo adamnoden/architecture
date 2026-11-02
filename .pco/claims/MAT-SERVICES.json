@@ -9,8 +9,8 @@
     "label": "zerg-recovery-services"
   },
   "claimedAt": "2026-11-02T07:17:11.072Z",
-  "heartbeatAt": "2026-11-02T07:30:44.700Z",
-  "expiresAt": "2026-11-02T08:15:44.700Z",
+  "heartbeatAt": "2026-11-02T07:39:43.536Z",
+  "expiresAt": "2026-11-02T08:24:43.536Z",
   "branch": "work/zerg-recovery-services",
   "predecessor": {
     "leaseId": "6e052e0d-5d92-4016-bb83-28527465e125",
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote6ef9ea7e exacttree0ad8fcec matches local eac920cf; six owned files include immutable precursor599320d3, 256-mode network, source/heat/first-release and explicit supply-room gap",
-    "next": "Open bounded PR; inspect exact-head CI and independent source/visual review; do not mark broad MAT-SERVICES complete",
-    "blocker": "Actual room-by-room pressure, configured kit, 60/50 net12kW and installed physical/material acceptance unresolved"
-  }
+    "evidence": "Draft PR1248 remote fe6325c0/tree558d4d2d exact local merge; parents old PR fd06b36c + current main483a26c7. Cooker/baseline/roof-edge generators and diff checks pass.",
+    "next": "Root observes exact-head CI and independent review; preflight only if bounded PR accepted for merge; retain broad MAT-SERVICES open",
+    "blocker": "Six room supplies, configured control/kit, 60/50 net heat and physical/material admission unearned"
+  },
+  "pr": 1248
 }
