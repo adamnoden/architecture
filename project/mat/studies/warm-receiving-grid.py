@@ -19,7 +19,7 @@ def thermal(kind,la,step=5):
   put((X< -492.5)&(Z>=-15)&(Z<0),2);put((X< -492.5)&(Z>=-80)&(Z< -15),1.4)
   put((X< -492.5)&(Z>=-280)&(Z< -80),1.75)
   put((X< -492.5)&(Z>=-600)&(Z< -280),.041)
-  put((X>=-801.25)&(X<48.75)&(Z>=-1065)&(Z< -765),1.75)
+  put((X>=-801.25)&(X<48.75)&(Z>=-1215)&(Z< -765),1.75)
   put(wall&(Z>=-80),.77);put((X>=-519.5)&(X< -492.5)&(Z>=0),.57)
   put((X>=-352.5)&(X< -152.5)&(Z>=-80),.041)
   put((X>=-102.5)&(X<0)&(Z>=-765),.77)
@@ -33,7 +33,7 @@ def thermal(kind,la,step=5):
   beam=(X>=-220)&(X<220);bearing=(X>=-150)&(X<150)
   put(((X< -70)|(X>=70))&(Z>=-15)&(Z<0),2);put(((X< -70)|(X>=70))&(Z>=-80)&(Z< -15),1.4)
   put((Z>=-280)&(Z< -80),1.75);put((Z>=-600)&(Z< -280),.041)
-  put((X>=-300)&(X<300)&(Z>=-1065)&(Z< -765),1.75)
+  put((X>=-300)&(X<300)&(Z>=-1215)&(Z< -765),1.75)
   put(wall&(Z>=-80),.77)
   put((((X>=-97)&(X< -70))|((X>=70)&(X<97)))&(Z>=0),.57)
   # Full385glass shoulder infill; no cold void under the70warm overhangs.
@@ -68,14 +68,14 @@ def thermal(kind,la,step=5):
 
 qmax=88.489125+1.35*(.44*.3*25);qmin=.9*(54.2475+.44*.3*25);t=297
 receivers=[]
-for name,N,M,L in [('wet',71.13795,1.442435,1044),('stair',72.48863,2.22228,844)]:
+for name,N,M,L in [('wet',71.13795,1.442435,1044),('stair',75,2.30,844)]:
  ex=M/N*1000+20+5;ey=5;point=N*1000/(t*L)
  receivers.append({'name':name,'N_ULS':N,'M_ULS':M,'lineULSIncludingWarmGirder':qmax,'lineMinGIncludingWarmGirder':qmin,'effectiveWidth':t,'effectiveLength':L,'ex':ex,'ey':ey,'lineEx':25,'centredLineMaxMpa':qmax/t+point*(1+6*ex/t+6*ey/L),'centredLineMinEnvelopeMpa':qmin/t+point*(1-6*ex/t-6*ey/L),'maxMpa':qmax/t*(1+6*25/t)+point*(1+6*ex/t+6*ey/L),'minEnvelopeMpa':qmin/t*(1-6*25/t)+point*(1-6*ex/t-6*ey/L),'fdComparator':4.9/3,'limit':'Concept45degreefan through300warmRC; actual reinforcedspreader/foundationelasticity/contact/shear/creep unproved. FullM retained; adverse25mm line eccentricity also retained; minimum0.9Gline combinedadversarially withmaxpointenvelope, not a normative combination.'})
 cases=[thermal(k,la) for la in (.29,.18) for k in ('perimeter','internal')]+[thermal(k,.29,2.5) for k in ('perimeter','internal')]
 v={'status':'ONE unadopted warm receiving concept. Not foundation selection, fulljunction proof, material admission or sitefact.',
- 'source':{'startingMain':BASE,'currentMain':MAIN,'STRloadSource':STR,'ownership':'MAT geometry/thermal/constituents; STR owns warm/cold receiver/frame/cap and actual load/envelope design. No STR source changed.'},
- 'recipe':{'floorRoomToVoid':[15,65,200,320],'floorZ':[0,-15,-80,-280,-600],'warmGridTop':-80,'warmGridSoffit':-380,'perimeterWidth':300,'internalReceivingWidth':440,'AACsingleUnit':[440,300,215],'AACZ':[-605,-390],'M4beds':[[-615,-605],[-390,-380]],'mineralDPC':[-765,-615],'DPCrecipe':'Two65 solid Ketley WCBL65 engineering-brick courses plus two10 M4 beds; actual300-wide bonded full/cut unit arrangement and compression/capillary/bond evidence remain unqualified. Authored thermal lambda1.3, not a declared product value.','coldBeamTop':-765,'coldBeamSoffitHypothesis':-1065,'coldPerimeterWidthHypothesis':850,'coldInternalWidthHypothesis':600,'cheeks':120,'shoulderFill':'Internal440beam over300bearing:70shoulders eachside filled385glass (200+185cutfrom200stock); no coldair pocket or load throughglass. Sidecheeks down toDPCbottom. Exactretain/joints unqualified.', 'weatherLeaf':'Independent coldweatherleaf load on widenedcoldreceiver; never on warmfloor/foam. No coldtie/starter crossesAAC/DPC toshortcircuit it.'},
- 'depth':{'memberOnlyLowest':1065,'heaveStress':300,'constructionLoss':50,'ventilation':150,'memberOnlyRequired':1565,'memberOnlyDcost':1600,'actualLowestColdCap':'Not frozen. A deeper finite coldreceiver/node governs if required; member-onlyD1600 is NOT earned wholehouse clearance. No unchanged570cap quietly inherited or deleted.'},
+ 'source':{'startingMain':BASE,'currentMain':MAIN,'STRloadSource':STR,'continuationInputs':'STR direct finite-member readback2Nov2026:300colddepth rejected;450colddepth is one development hypothesis. Stair75kN/2.30kNm is an authored rounded envelope around reported74.86/~2.27, not false exact source values. Actual reinforced receiver/node remains unproved.','ownership':'MAT geometry/thermal/constituents; STR owns warm/cold receiver/frame/cap and actual load/envelope design. No STR source changed.'},
+ 'recipe':{'floorRoomToVoid':[15,65,200,320],'floorZ':[0,-15,-80,-280,-600],'warmGridTop':-80,'warmGridSoffit':-380,'perimeterWidth':300,'internalReceivingWidth':440,'AACsingleUnit':[440,300,215],'AACZ':[-605,-390],'M4beds':[[-615,-605],[-390,-380]],'mineralDPC':[-765,-615],'DPCrecipe':'Two65 solid Ketley WCBL65 engineering-brick courses plus two10 M4 beds; actual300-wide bonded full/cut unit arrangement and compression/capillary/bond evidence remain unqualified. Authored thermal lambda1.3, not a declared product value.','coldBeamTop':-765,'coldBeamSoffitHypothesis':-1215,'coldPerimeterWidthHypothesis':850,'coldInternalWidthHypothesis':600,'cheeks':120,'shoulderFill':'Internal440beam over300bearing:70shoulders eachside filled385glass (200+185cutfrom200stock); no coldair pocket or load throughglass. Sidecheeks down toDPCbottom. Exactretain/joints unqualified.', 'weatherLeaf':'Independent coldweatherleaf load on widenedcoldreceiver; never on warmfloor/foam. No coldtie/starter crossesAAC/DPC toshortcircuit it.'},
+ 'depth':{'memberOnlyLowest':1215,'heaveStress':300,'constructionLoss':50,'ventilation':150,'memberOnlyRequired':1715,'memberOnlyDcost':1800,'actualLowestColdCap':'Not frozen. A deeper finite coldreceiver/node governs if required; member-onlyD1800 is NOT earned wholehouse clearance. No unchanged570cap quietly inherited or deleted.'},
  'product':{'identity':'H+H HighStrength7.3 foundationblock440×215face/300width,730kg/m3. Existing product, not new catalogue.', 'page':'https://www.hplush.com/en-uk/aircrete/products/foundation-blocks','datasheet':'https://www.hplush.com/fileadmin/UK/Datasheets_Factsheets/MLM012.00_H_H_datasheet_-_FOUNDATION_BLOCKS_2023_2025.pdf','strength':'https://www.hplush.com/fileadmin/UK/TSD_Files/TSD03_Characteristic_strength_of_masonry__Jun_2025_.pdf','strengthScope':'June2025EC6Table3,215height/250+width HighStrengthM4 fk4.9; NOT unitmean7.3 or withdrawnBS5628table. Gamma3 retained.','thermal':'Producerbelowground.29 used asstress; protectedaboveDPC.18 is sensitivity only, not a retained dry installation assumption.','joints':'FullM4beds/perps selected, not marketingpermission toomit belowgroundperps. Exactmortar formulation/gradepaint/mouldrelease/creep still require disclosed evidence; no syntheticexception.'},
  'receivers':receivers,'thermalCases':cases,
  'internalLimits':['Warm pier/floor/grillage must be monolithic above course; actual positivecontact/lateralrestraint/shear and movement-compatiblecoldfoundation are designrequirements, not inventedpinnedbase.','Credible deepestcoldreceiver/actualweatherleafsupport must be supplied bySTR beforefreezingD/approachcost.','Currentthreshold105mineral-seat detail cannot be copied toRCtop−80; localpan/support/air/DPC join mustbe redrawn ifthisconceptsurvives.','Field/moisture/air/gas functions and lateralDPC/cavity/door transitions still need actual joints; loosebareglass is not a sealed boundary.'],
@@ -100,13 +100,13 @@ for bx,internal,title in [(135,False,'A  PERIMETER300 / WEATHERLEAF SEPARATE'),(
  svg+=rect(X(left),Z(0),(right-left)/10,8,'#ded1b9')+rect(X(left),Z(-80),(right-left)/10,20,'#c2ced6')+rect(X(left),Z(-280),(right-left)/10,32,'#ecd17a')
  if internal:svg+=rect(X(-340),Z(-380),68,38.5,'#ecd17a')
  else:svg+=rect(X(-692.5),Z(-280),12,48.5,'#ecd17a')+rect(X(-272.5),Z(-80),12,68.5,'#ecd17a')
- svg+=rect(X(bl),Z(-80),(br-bl)/10,30,'#a6bdcc')+rect(X(al),Z(-390),(ar-al)/10,21.5,'#9bb8a7')+rect(X(al),Z(-380),(ar-al)/10,1,'#d9cbb3')+rect(X(al),Z(-605),(ar-al)/10,1,'#d9cbb3')+rect(X(al),Z(-615),(ar-al)/10,15,'#8e809b')+rect(X(cl),Z(-765),(cr-cl)/10,30,'#c2ced6')
+ svg+=rect(X(bl),Z(-80),(br-bl)/10,30,'#a6bdcc')+rect(X(al),Z(-390),(ar-al)/10,21.5,'#9bb8a7')+rect(X(al),Z(-380),(ar-al)/10,1,'#d9cbb3')+rect(X(al),Z(-605),(ar-al)/10,1,'#d9cbb3')+rect(X(al),Z(-615),(ar-al)/10,15,'#8e809b')+rect(X(cl),Z(-765),(cr-cl)/10,45,'#c2ced6')
  if internal:
   svg+=rect(X(-70),Z(300),14,38,'#cabaa5')+rect(X(-97),Z(300),2.7,30,'#e7ddca')+rect(X(70),Z(300),2.7,30,'#e7ddca')
   svg+=txt(bx-115,47,'140 wall shown; local RC point receiver is a separate 3D bridge.',2.8)
- svg+=txt(bx-115,198,'WarmRC−80..−380 /AAC−605..−390 /DPC−765..−615.',2.9)
+ svg+=txt(bx-115,208,'WarmRC−80..−380 /AAC−605..−390 /DPC−765..−615.',2.9)
 for i,c in enumerate(cases[:4]):svg+=txt(15,215+i*7,f'{c["kind"]} /AAC lambda{c["AACLambda"]}: Q{c["Qroom"]:.4f}, psi{c["psi"]:.4f} W/mK; field air-U{c["planarFloorU"]:.4f}',3)
 svg+=txt(15,244,'2.5 mm refinement: outer/internal psi '+str(round(cases[4]['psi'],5))+'/'+str(round(cases[5]['psi'],5))+'; all energy balances checked.',3)
-svg+=txt(15,250,'Internalbearing-line losses must be added: a perimeterP/A probe alone cannot claim this whole floor. No ISO13370/compliance result.',3)+txt(15,258,'Member-only−1065+H300+loss50+vent150=1565→D1600 COST; actualdeepercoldnode/cap still controls andmust be earned.',3)+txt(15,266,'FullRCspreader/contact/shear/creep and threshold/air/gas/cavityjoints remain internal work. This is one constructive geometry, not productselection.',3)+txt(15,274,'Yellow glass / blue RC / green AAC / purple mineral DPC / brown masonry; 10 mm beds shown. Geometry and loads remain conditional.',3)+'</g></svg>\n'
+svg+=txt(15,250,'Internalbearing-line losses must be added: a perimeterP/A probe alone cannot claim this whole floor. No ISO13370/compliance result.',3)+txt(15,258,'Member-only−1215+H300+loss50+vent150=1715→D1800 COST; actualdeepercoldnode/cap still controls andmust be earned.',3)+txt(15,266,'FullRCspreader/contact/shear/creep and threshold/air/gas/cavityjoints remain internal work. This is one constructive geometry, not productselection.',3)+txt(15,274,'Yellow glass / blue RC / green AAC / purple mineral DPC / brown masonry; 10 mm beds shown. Geometry and loads remain conditional.',3)+'</g></svg>\n'
 out('warm-receiving-grid.svg',svg)
 print(json.dumps({'receivers':receivers,'thermalCases':cases},indent=2))
