@@ -9,11 +9,12 @@
     "label": "zerg-rwt06-temporary-rain-recovery"
   },
   "claimedAt": "2026-11-02T08:13:05.113Z",
-  "heartbeatAt": "2026-11-02T08:13:05.113Z",
-  "expiresAt": "2026-11-02T08:58:05.113Z",
+  "heartbeatAt": "2026-11-02T08:37:53.692Z",
+  "expiresAt": "2026-11-02T09:22:53.692Z",
   "checkpoint": {
-    "evidence": "Recovery read current main d3f254c0 and handoff generation 23; previous temporary-rain branch had no design commits",
-    "next": "Develop connected temporary route and installation/removal comparison against current open-loggia source"
+    "evidence": "PR #1255 exact head 8cff391e01dab4f4d473b232b67c689743323a83; source-bound calculation check, prior event check, repository integrity, typecheck and diff check PASS; no lifecycle promotion",
+    "next": "Root observes exact-head CI; perform fresh canonical publication preflight before root merge, then release generation 24 after verified main integration",
+    "blocker": "Full inlet/first-weak-join and physical hydraulic/temporary works/high-eave admission remain open; PR is bounded development only"
   },
   "branch": "work/rwt06-temporary-rain-recovery-20261102",
   "predecessor": {
@@ -35,5 +36,6 @@
       "next": "Release generation 23 as handoff; acquire fresh generation for directed RWT-06 temporary route comparison",
       "blocker": "Connected temporary route and whole-liner installation/removal remain unproved"
     }
-  }
+  },
+  "pr": 1255
 }
