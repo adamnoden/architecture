@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 13,
-  "state": "released",
-  "leaseId": "afdc5e64-edf7-4580-9f16-ca67c7f082f8",
+  "generation": 14,
+  "state": "claimed",
+  "leaseId": "842350f9-bdfb-4597-88f3-3f4d142fc0f8",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-services-connected-network"
+    "label": "zerg-services-connected-system"
   },
-  "claimedAt": "2026-11-02T08:00:26.106Z",
-  "heartbeatAt": "2026-11-02T08:46:23.053Z",
-  "expiresAt": "2026-11-02T08:46:23.053Z",
-  "branch": "work/zerg-recovery-engineering-integration",
+  "claimedAt": "2026-11-02T08:48:16.792Z",
+  "heartbeatAt": "2026-11-02T08:48:16.792Z",
+  "expiresAt": "2026-11-02T09:33:16.792Z",
+  "branch": "work/zerg8-services-connected-system",
   "predecessor": {
-    "leaseId": "63a01d02-5f51-4260-acc5-d5ef22bde250",
-    "generation": 12,
-    "branch": "work/zerg-recovery-structure-services",
-    "pr": 1249,
+    "leaseId": "afdc5e64-edf7-4580-9f16-ca67c7f082f8",
+    "generation": 13,
+    "branch": "work/zerg-recovery-engineering-integration",
+    "pr": 1254,
     "checkpoint": {
-      "evidence": "Shared draft PR1249 remote522d17ae/treeba0e3578 on main42aaecb3 includes exact six reviewed Services blobs from fe6325c0/tree558d4d2d; true source parents and combined generator/typecheck/integrity checks verified by coordinator",
-      "next": "Root observes exact-head CI and performs publication preflight/merge if independent review and gates pass; MAT-SERVICES broad system/acceptance remains open",
-      "blocker": "Room-by-room supply/closed-door network, configured hood/control, net12kW/60-50 heat source and installed material/physical admission remain separately unearned"
+      "evidence": "Shared draft PR1254 remote fb2f1271/treeaaed5e9f on main d3f254c0 contains exact three reviewed Services13 auth-repair blobs from81d5e383; true source parents. Root reports default HAD/require-fit, auth regression, IAS/thermal/reaction/typecheck/repo/diff pass; HAD outputs unchanged.",
+      "next": "Root observes exact-head CI and preflight/merge; then close Services13 and resume connected-network investigation from new main",
+      "blocker": "Default HAD regression repaired on shared draft but not yet merged; connected-network probe remains local unpublished and broader material/physical duties open"
     }
   },
   "recoverySource": {
-    "leaseId": "63a01d02-5f51-4260-acc5-d5ef22bde250",
-    "generation": 12,
-    "branch": "work/zerg-recovery-structure-services",
-    "pr": 1249,
+    "leaseId": "afdc5e64-edf7-4580-9f16-ca67c7f082f8",
+    "generation": 13,
+    "branch": "work/zerg-recovery-engineering-integration",
+    "pr": 1254,
     "checkpoint": {
-      "evidence": "Shared draft PR1249 remote522d17ae/treeba0e3578 on main42aaecb3 includes exact six reviewed Services blobs from fe6325c0/tree558d4d2d; true source parents and combined generator/typecheck/integrity checks verified by coordinator",
-      "next": "Root observes exact-head CI and performs publication preflight/merge if independent review and gates pass; MAT-SERVICES broad system/acceptance remains open",
-      "blocker": "Room-by-room supply/closed-door network, configured hood/control, net12kW/60-50 heat source and installed material/physical admission remain separately unearned"
+      "evidence": "Shared draft PR1254 remote fb2f1271/treeaaed5e9f on main d3f254c0 contains exact three reviewed Services13 auth-repair blobs from81d5e383; true source parents. Root reports default HAD/require-fit, auth regression, IAS/thermal/reaction/typecheck/repo/diff pass; HAD outputs unchanged.",
+      "next": "Root observes exact-head CI and preflight/merge; then close Services13 and resume connected-network investigation from new main",
+      "blocker": "Default HAD regression repaired on shared draft but not yet merged; connected-network probe remains local unpublished and broader material/physical duties open"
     }
-  },
-  "checkpoint": {
-    "evidence": "Shared draft PR1254 remote fb2f1271/treeaaed5e9f on main d3f254c0 contains exact three reviewed Services13 auth-repair blobs from81d5e383; true source parents. Root reports default HAD/require-fit, auth regression, IAS/thermal/reaction/typecheck/repo/diff pass; HAD outputs unchanged.",
-    "next": "Root observes exact-head CI and preflight/merge; then close Services13 and resume connected-network investigation from new main",
-    "blocker": "Default HAD regression repaired on shared draft but not yet merged; connected-network probe remains local unpublished and broader material/physical duties open"
-  },
-  "pr": 1254,
-  "releasedAt": "2026-11-02T08:46:23.053Z",
-  "releaseReason": "handoff"
+  }
 }
