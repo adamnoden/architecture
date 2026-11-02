@@ -1,0 +1,56 @@
+{
+  "source_git_blobs": {
+    "project/str/studies/sw-corner-station.json": "2c215912f4b55ca4587e32763bf66160d4b433d0",
+    "project/mat/studies/ground-metal-field.json": "3c07f8b20bad17b46d27f1cbb9af27a5a14cdfc0"
+  },
+  "scope": "Ideal infinite-member section only; not a fabrication pattern, weld, movement, air/gas, fire or structural pass.",
+  "coordinate_convention": "x east, y north, z up; u increases from (262.5,262.5) on either sheet face",
+  "hip_centre_z_at_common_corner_mm": 6519.079552999668,
+  "bare_hip_face_polygon_u_z_mm": [
+    [
+      0,
+      6455.902048318831
+    ],
+    [
+      84.8528137423857,
+      6475.685806750867
+    ],
+    [
+      84.8528137423857,
+      6602.0408161125415
+    ],
+    [
+      0,
+      6582.257057680505
+    ]
+  ],
+  "trial_sleeve": "Concentric square 130 mm internal envelope around bare 120 mm SHS; 5 mm nominal per-side radial clearance. Actual wall thickness, end closures and assembly unresolved.",
+  "sleeve_envelope_face_polygon_u_z_mm": [
+    [
+      0,
+      6450.637256262094
+    ],
+    [
+      91.92388155425118,
+      6472.0696612301335
+    ],
+    [
+      91.92388155425118,
+      6608.9542547052815
+    ],
+    [
+      0,
+      6587.521849737242
+    ]
+  ],
+  "trial_flange_bounding_margin_mm": 40,
+  "trial_flange_axis_bounds_u_z_mm": [
+    -40,
+    6410.637256262094,
+    131.92388155425118,
+    6648.9542547052815
+  ],
+  "lower_margin_above_sheet_start_6410_mm": 0.6372562620936151,
+  "upper_margin_below_sheet_end_6660_mm": 11.045745294718472,
+  "decision": "40 mm bounding flange on the 5 mm clear sleeve leaves less than 1 mm to the assumed +6410 sheet start; reject this arrangement as a credible untoleranced fabrication fit. A change of geometry and full load, movement, seal and installation design are required."
+}
