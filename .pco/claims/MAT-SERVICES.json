@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 12,
-  "state": "released",
-  "leaseId": "63a01d02-5f51-4260-acc5-d5ef22bde250",
+  "generation": 13,
+  "state": "claimed",
+  "leaseId": "afdc5e64-edf7-4580-9f16-ca67c7f082f8",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-recovery-services"
+    "label": "zerg-services-connected-network"
   },
-  "claimedAt": "2026-11-02T07:17:11.072Z",
-  "heartbeatAt": "2026-11-02T07:58:37.398Z",
-  "expiresAt": "2026-11-02T07:58:37.398Z",
-  "branch": "work/zerg-recovery-structure-services",
+  "claimedAt": "2026-11-02T08:00:26.106Z",
+  "heartbeatAt": "2026-11-02T08:00:26.106Z",
+  "expiresAt": "2026-11-02T08:45:26.106Z",
+  "branch": "work/zerg7-services-connected-network",
   "predecessor": {
-    "leaseId": "6e052e0d-5d92-4016-bb83-28527465e125",
-    "generation": 11,
-    "branch": "work/zerg5-services-mode-closure",
+    "leaseId": "63a01d02-5f51-4260-acc5-d5ef22bde250",
+    "generation": 12,
+    "branch": "work/zerg-recovery-structure-services",
+    "pr": 1249,
     "checkpoint": {
-      "evidence": "Remote599320d3/tree05bc8acc preserves6file bounded cooker checkpoint: real ERA160m3h145Pa73.5W point, mode/makeup stress, actualHADcfacc floor/host controls, visible residues and exact first-release requirements. Stale65L statements fixed. Local/remote exacttree matched.",
-      "next": "Complete owning HAD450/Y8700 projection and independent source/render review; then integrate selected successor interface once exact joins pass.",
-      "blocker": "Checkpoint explicitly incomplete: exact host composition/review and actual configured support/tool/controls compatibility remain distinct. No broad completion or later admission."
+      "evidence": "Shared draft PR1249 remote522d17ae/treeba0e3578 on main42aaecb3 includes exact six reviewed Services blobs from fe6325c0/tree558d4d2d; true source parents and combined generator/typecheck/integrity checks verified by coordinator",
+      "next": "Root observes exact-head CI and performs publication preflight/merge if independent review and gates pass; MAT-SERVICES broad system/acceptance remains open",
+      "blocker": "Room-by-room supply/closed-door network, configured hood/control, net12kW/60-50 heat source and installed material/physical admission remain separately unearned"
     }
   },
   "recoverySource": {
-    "leaseId": "6e052e0d-5d92-4016-bb83-28527465e125",
-    "generation": 11,
-    "branch": "work/zerg5-services-mode-closure",
+    "leaseId": "63a01d02-5f51-4260-acc5-d5ef22bde250",
+    "generation": 12,
+    "branch": "work/zerg-recovery-structure-services",
+    "pr": 1249,
     "checkpoint": {
-      "evidence": "Remote599320d3/tree05bc8acc preserves6file bounded cooker checkpoint: real ERA160m3h145Pa73.5W point, mode/makeup stress, actualHADcfacc floor/host controls, visible residues and exact first-release requirements. Stale65L statements fixed. Local/remote exacttree matched.",
-      "next": "Complete owning HAD450/Y8700 projection and independent source/render review; then integrate selected successor interface once exact joins pass.",
-      "blocker": "Checkpoint explicitly incomplete: exact host composition/review and actual configured support/tool/controls compatibility remain distinct. No broad completion or later admission."
+      "evidence": "Shared draft PR1249 remote522d17ae/treeba0e3578 on main42aaecb3 includes exact six reviewed Services blobs from fe6325c0/tree558d4d2d; true source parents and combined generator/typecheck/integrity checks verified by coordinator",
+      "next": "Root observes exact-head CI and performs publication preflight/merge if independent review and gates pass; MAT-SERVICES broad system/acceptance remains open",
+      "blocker": "Room-by-room supply/closed-door network, configured hood/control, net12kW/60-50 heat source and installed material/physical admission remain separately unearned"
     }
-  },
-  "checkpoint": {
-    "evidence": "Shared draft PR1249 remote522d17ae/treeba0e3578 on main42aaecb3 includes exact six reviewed Services blobs from fe6325c0/tree558d4d2d; true source parents and combined generator/typecheck/integrity checks verified by coordinator",
-    "next": "Root observes exact-head CI and performs publication preflight/merge if independent review and gates pass; MAT-SERVICES broad system/acceptance remains open",
-    "blocker": "Room-by-room supply/closed-door network, configured hood/control, net12kW/60-50 heat source and installed material/physical admission remain separately unearned"
-  },
-  "pr": 1249,
-  "releasedAt": "2026-11-02T07:58:37.398Z",
-  "releaseReason": "handoff"
+  }
 }
