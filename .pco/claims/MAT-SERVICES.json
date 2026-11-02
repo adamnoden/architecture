@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 16,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "cf5efabe-a753-426e-beec-d18eddd2cd5b",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-services-system-alternatives"
   },
   "claimedAt": "2026-11-02T10:59:21.044Z",
-  "heartbeatAt": "2026-11-02T11:16:13.945Z",
-  "expiresAt": "2026-11-02T12:01:13.945Z",
+  "heartbeatAt": "2026-11-02T11:23:48.560Z",
+  "expiresAt": "2026-11-02T11:23:48.560Z",
   "checkpoint": {
     "evidence": "Shared draft PR #1271 exact head d4b5c091217231fda9771da5701759d0ae293b0c tree 98f37b73662b80d95794cdb9021b92e945c16cc8, base86bd and real parents main+Services source aee19ca+IAS/OAS c91d9ebd; seven source blobs exact, repo/diff/derived counts and bounded review pass per root; source PR #1270 preserves history",
     "next": "Root sole CI/preflight/merge; Services16 handoff after verified merge then fresh coherent selected-system development",
@@ -39,5 +39,7 @@
       "blocker": "No product/material/site adoption: DTBCU frequent RUN modulation and EPDM, full damper pressure/capture, protective hood interface, staged assembly release and plant/emitter compatibility require qualification"
     }
   },
-  "pr": 1271
+  "pr": 1271,
+  "releasedAt": "2026-11-02T11:23:48.560Z",
+  "releaseReason": "handoff"
 }
