@@ -1,0 +1,1125 @@
+{
+  "status": "IN-DEVELOPMENT connected REQUIREMENT/negative comparison. No admitted first-release/window/equipment/site/physical export PASS.",
+  "source": {
+    "base": "50a3d1d77db9dbc5d1e4bcbe631e0154cee7430c",
+    "hadBlob": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+    "servicesBlob": "2d8f7243fb87d350763f2bca3d103b89b9d14b7d",
+    "selection": {
+      "decision": "SELECT compactB/openNorthloggia for HADarchitecturaldevelopment",
+      "identity": "HAD-B-OPEN-LOGGIA-2026-11-02",
+      "shell": 12000,
+      "spine": 9300,
+      "owningResult": "project/had/had-03-open-north-loggia.md",
+      "canonicalCompilerBaseline": "AcceptedRH-LAYOUT-REVISION-02/FAMILY-02 A9500 isnotchangedorclaimedtodepictthisHADsource",
+      "handoffs": [
+        "ROF-RWT-GATE",
+        "TRIAD-GATE",
+        "HRS-TECHNICAL",
+        "ADE-MODEL",
+        "PLT-FINAL-PREP"
+      ],
+      "scope": "Onearchitecturalselection; datedA/Bstudiesretainhistoricalsourceidentity. Sharedactualhouse/compiler/siteadoption remainswith existingowninggates."
+    },
+    "frameOwner": "OAS E0 architectural family; no fabrication-frozen aperture"
+  },
+  "window": {
+    "source": {
+      "id": "north-window-0",
+      "wall": "outer-north",
+      "centre": 1800,
+      "width": 1000,
+      "kind": "window",
+      "sill": 850,
+      "head": 2850,
+      "spring": 2550,
+      "cillUndersideMinimum": 800,
+      "cillDepthMaximum": 50
+    },
+    "requiredFrame": {
+      "insetMaximum": 75,
+      "clearX": [
+        1375,
+        2225
+      ],
+      "bottom": 925,
+      "radius": 491.66666666666663,
+      "arcCentre": 2283.3333333333335,
+      "wallY": [
+        11570.5,
+        12000
+      ],
+      "status": "Explicit OAS compatibility REQUIREMENT, not admitted actual frame; g15/60 study is not adopted sizing."
+    },
+    "fixedRail": [
+      2000,
+      9300,
+      2450,
+      100,
+      7050,
+      200
+    ],
+    "railFrameReserve": 22.866529750675,
+    "requiredPreparation": "Before first-release work: qualified external working/receiving enclosure, supported COMPLETE infill/sash/grid/required guard/hardware removal to stable exterior rack, then independent internal temporary edge protection. No worker enters exposed room until protection installed. Actual E0 product/release/retainer/strip/restoration task remains UNPROVED; this model does not award that missing task a pass.",
+    "requiredWindowRack": {
+      "plan": [
+        3300,
+        13400,
+        400,
+        1200
+      ],
+      "height": 2200,
+      "restraint": "Positive restraint into independent external rig. This narrow rack is NOT credited as freestanding; its mass and all parked components must remain within whole-rig35..50kN/CG bounds."
+    },
+    "requiredParkedComponentMaximum": [
+      970,
+      1970,
+      150
+    ],
+    "parkedMassMaximumKg": 75,
+    "componentSupport": "Qualified positive window handling/support; all necessary constituents/hardware retained. A nominal one-leaf label does not establish physical removal."
+  },
+  "units": "All geometry mm in houseXY and Z relative FIRST FFL3450 unless explicitly global. Rig forces kN and moments kNm.",
+  "room": [
+    429.5,
+    8952.5,
+    2388,
+    2615
+  ],
+  "fixtures": [
+    [
+      "rear-WC",
+      [
+        729.5,
+        11000,
+        0,
+        560,
+        355,
+        3100
+      ]
+    ],
+    [
+      "rear-basin",
+      [
+        1000,
+        8952.5,
+        0,
+        400,
+        220,
+        3100
+      ]
+    ],
+    [
+      "rear-cabinet",
+      [
+        429.5,
+        10800,
+        0,
+        300,
+        750,
+        3100
+      ]
+    ],
+    [
+      "rear-west-low-box",
+      [
+        429.5,
+        9937.5,
+        0,
+        150,
+        862.5,
+        3100
+      ]
+    ],
+    [
+      "retained actual rear radiator",
+      [
+        2100,
+        11367.5,
+        100,
+        650,
+        200,
+        600
+      ]
+    ],
+    [
+      "retained rear fan pod",
+      [
+        1050,
+        9150,
+        2800,
+        650,
+        500,
+        300
+      ]
+    ],
+    [
+      "west wall",
+      [
+        -1000,
+        8952.5,
+        0,
+        1429.5,
+        2615,
+        3100
+      ]
+    ],
+    [
+      "east wet wall",
+      [
+        2817.5,
+        8952.5,
+        0,
+        1000,
+        2615,
+        3100
+      ]
+    ],
+    [
+      "south wall",
+      [
+        -1000,
+        7952.5,
+        0,
+        4817.5,
+        1000,
+        3100
+      ]
+    ],
+    [
+      "retained sleeve/collar max REQUIRED",
+      [
+        2067.5,
+        9397.5,
+        0,
+        110,
+        110,
+        100
+      ]
+    ],
+    [
+      "independent temporary guard",
+      [
+        579.5,
+        10930,
+        0,
+        2238,
+        40,
+        1100
+      ]
+    ],
+    [
+      "guard support strutW",
+      [
+        1430,
+        10950,
+        1080,
+        40,
+        2050,
+        40
+      ]
+    ],
+    [
+      "guard support strutE",
+      [
+        2130,
+        10950,
+        1080,
+        40,
+        2050,
+        40
+      ]
+    ]
+  ],
+  "operators": {
+    "tasks": [
+      {
+        "id": "actual upper flange",
+        "body": [
+          1475,
+          9550
+        ],
+        "shoulder": [
+          1675,
+          9550,
+          625
+        ],
+        "contact": [
+          2012.5,
+          9452.5,
+          250
+        ],
+        "reach": 513.8457939888192
+      },
+      {
+        "id": "positive cradle W control REQUIRED",
+        "body": [
+          1475,
+          9550
+        ],
+        "shoulder": [
+          1675,
+          9550,
+          625
+        ],
+        "contact": [
+          1850,
+          9952.5,
+          450
+        ],
+        "reach": 472.50000000000006
+      },
+      {
+        "id": "positive cradle E control REQUIRED",
+        "body": [
+          2500,
+          10327.5
+        ],
+        "shoulder": [
+          2500,
+          10127.5,
+          625
+        ],
+        "contact": [
+          2550,
+          9952.5,
+          450
+        ],
+        "reach": 252.48762345905195
+      }
+    ],
+    "operatorRetreats": [
+      {
+        "points": [
+          [
+            1475,
+            9550
+          ],
+          [
+            1475,
+            10400
+          ],
+          [
+            1000,
+            10400
+          ]
+        ],
+        "bodyLower": 27.5,
+        "governor": "installed module",
+        "scope": "R300/1800-high occupied task proxy; actual worker/equipment/posture must fit, not universal anthropometry."
+      },
+      {
+        "points": [
+          [
+            2500,
+            10327.5
+          ],
+          [
+            2500,
+            10600
+          ]
+        ],
+        "bodyLower": 17.5,
+        "governor": "east wet wall",
+        "scope": "R300/1800-high occupied task proxy; actual worker/equipment/posture must fit, not universal anthropometry."
+      }
+    ],
+    "waiting": [
+      [
+        1000,
+        10400
+      ],
+      [
+        2500,
+        10600
+      ]
+    ],
+    "retainedTemporaryGuard": "Full cross-room barrier y10950/top1100, independently rig-supported after opening preparation. Required struts atx1450/2150/Z1080..1120 remain. Load base1175 clears struts55; no guard deletion.",
+    "sequence": "Fit positive support from declared front/W stations; actual flange task remains OEM/seat prerequisite. Both operators retract to waiting points BEFORE any module motion; no human carries suspended module. Actual first-release force/posture/arms/tools qualification remains separate."
+  },
+  "waiting": [
+    [
+      1000,
+      10400
+    ],
+    [
+      2500,
+      10600
+    ]
+  ],
+  "phases": [
+    {
+      "phase": "take supported body650UP",
+      "from": {
+        "c": [
+          2302.5,
+          9452.5,
+          125
+        ],
+        "a": 0,
+        "z": 0
+      },
+      "to": {
+        "c": [
+          2302.5,
+          9452.5,
+          775
+        ],
+        "a": 0,
+        "z": 0
+      },
+      "method": "1001 full-box/rig samples minus exact linear translation speed half-step",
+      "halfStepBound": 0.325,
+      "retainedSolidLower": 0,
+      "governor": "south wall",
+      "operatorLower": 347.175,
+      "floorMinimum": -500,
+      "windowLower": null,
+      "initialRelease": "Only75plain stem may pass97 sleeve:11 radial nominal. Required lower100 member void250x160 contains full110 collar with22.5E/17.5native-drain margins; upper member begins100. Opaque unrelieved body is a retained FAIL. Full500 stem remains, with axial-only bore exception for its actual75 cylinder. This is a1000-specific member compatibility requirement, not measured feet/frame geometry. No selected-kit first-release PASS."
+    },
+    {
+      "phase": "body52.5W50N after axial clearance",
+      "from": {
+        "c": [
+          2302.5,
+          9452.5,
+          775
+        ],
+        "a": 0,
+        "z": 0
+      },
+      "to": {
+        "c": [
+          2250,
+          9502.5,
+          775
+        ],
+        "a": 0,
+        "z": 0
+      },
+      "method": "1001 full-box/rig samples minus exact linear translation speed half-step",
+      "halfStepBound": 0.03625,
+      "retainedSolidLower": 0,
+      "governor": "south wall",
+      "operatorLower": 297.46375,
+      "floorMinimum": 150,
+      "windowLower": null,
+      "initialRelease": null
+    },
+    {
+      "phase": "controlled90 tilt",
+      "from": {
+        "c": [
+          2250,
+          9502.5,
+          775
+        ],
+        "a": 0,
+        "z": 0
+      },
+      "to": {
+        "c": [
+          2250,
+          9502.5,
+          775
+        ],
+        "a": 1.5707963267948966,
+        "z": 0
+      },
+      "method": "1001 full-box/rig samples minus analytic750radius angular Hausdorff half-step",
+      "halfStepBound": 0.5890486225480862,
+      "retainedSolidLower": 34.022749282973514,
+      "governor": "south wall",
+      "operatorLower": 281.5227492829735,
+      "floorMinimum": 148.87602839898625,
+      "windowLower": null,
+      "initialRelease": null
+    },
+    {
+      "phase": "edge250N into turn field",
+      "from": {
+        "c": [
+          2250,
+          9502.5,
+          775
+        ],
+        "a": 1.5707963267948966,
+        "z": 0
+      },
+      "to": {
+        "c": [
+          2250,
+          9752.5,
+          775
+        ],
+        "a": 1.5707963267948966,
+        "z": 0
+      },
+      "method": "1001 full-box/rig samples minus exact linear translation speed half-step",
+      "halfStepBound": 0.125,
+      "retainedSolidLower": 67.5,
+      "governor": "east wet wall",
+      "operatorLower": 151.0540110366394,
+      "floorMinimum": 275,
+      "windowLower": null,
+      "initialRelease": null
+    },
+    {
+      "phase": "cross200W to offset north axis",
+      "from": {
+        "c": [
+          2250,
+          9752.5,
+          775
+        ],
+        "a": 1.5707963267948966,
+        "z": 0
+      },
+      "to": {
+        "c": [
+          2050,
+          9752.5,
+          775
+        ],
+        "a": 1.5707963267948966,
+        "z": 0
+      },
+      "method": "1001 full-box/rig samples minus exact linear translation speed half-step",
+      "halfStepBound": 0.1,
+      "retainedSolidLower": 67.5,
+      "governor": "east wet wall",
+      "operatorLower": 151.0790110366394,
+      "floorMinimum": 275,
+      "windowLower": null,
+      "initialRelease": null
+    },
+    {
+      "phase": "edge90 turn with attached500 stem",
+      "from": {
+        "c": [
+          2050,
+          9752.5,
+          775
+        ],
+        "a": 1.5707963267948966,
+        "z": 0
+      },
+      "to": {
+        "c": [
+          2050,
+          9752.5,
+          775
+        ],
+        "a": 1.5707963267948966,
+        "z": 1.5707963267948966
+      },
+      "method": "1001 full-box/rig samples minus analytic750radius angular Hausdorff half-step",
+      "halfStepBound": 0.5890486225480862,
+      "retainedSolidLower": 174.4109513774519,
+      "governor": "retained sleeve/collar max REQUIRED",
+      "operatorLower": 62.21238876833565,
+      "floorMinimum": 275,
+      "windowLower": null,
+      "initialRelease": null
+    },
+    {
+      "phase": "edge900UP above retained temporary guard",
+      "from": {
+        "c": [
+          2050,
+          9752.5,
+          775
+        ],
+        "a": 1.5707963267948966,
+        "z": 1.5707963267948966
+      },
+      "to": {
+        "c": [
+          2050,
+          9752.5,
+          1675
+        ],
+        "a": 1.5707963267948966,
+        "z": 1.5707963267948966
+      },
+      "method": "1001 full-box/rig samples minus exact linear translation speed half-step",
+      "halfStepBound": 0.45,
+      "retainedSolidLower": 175,
+      "governor": "retained sleeve/collar max REQUIRED",
+      "operatorLower": 175.34538669474296,
+      "floorMinimum": 275,
+      "windowLower": null,
+      "initialRelease": null
+    },
+    {
+      "phase": "supported north window handover",
+      "from": {
+        "c": [
+          2050,
+          9752.5,
+          1675
+        ],
+        "a": 1.5707963267948966,
+        "z": 1.5707963267948966
+      },
+      "to": {
+        "c": [
+          2050,
+          13150,
+          1675
+        ],
+        "a": 1.5707963267948966,
+        "z": 1.5707963267948966
+      },
+      "method": "1001 full-box/rig samples minus exact linear translation speed half-step",
+      "halfStepBound": 1.69875,
+      "retainedSolidLower": 55,
+      "governor": "guard support strutE",
+      "operatorLower": 23.30125,
+      "floorMinimum": 1175,
+      "windowLower": 48.30125,
+      "initialRelease": null
+    }
+  ],
+  "firstRelease": {
+    "serviceOwner": {
+      "status": "Constructive compatibility requirement for separate rear1000 tray, not actual matched outlet/support/union admission.",
+      "port": [
+        2122.5,
+        9452.5,
+        110
+      ],
+      "trayDrainEvidence": {
+        "selectedReference": "BetteUltra5940 WESTdrain; interiors auditedB2 nativeDW_0082",
+        "tray": [
+          1802.5,
+          8952.5,
+          1000,
+          1000
+        ],
+        "drainCentre": [
+          2012.5,
+          9452.5
+        ],
+        "requiredTailOffset": [
+          110,
+          0
+        ],
+        "requiredPlanOffsetMagnitude": 110,
+        "status": "Authored250x160connectionterritory cancontain offset, butactualB568outlet/elbow/support/seat/height/release mustmatch; not1000frameapprovalor900transfer."
+      },
+      "clearSleeveInside": 97,
+      "maximumRenewableStem": 75,
+      "unionA": [
+        2122.5,
+        9452.5,
+        2950
+      ],
+      "turnT": [
+        2122.5,
+        9452.5,
+        2777.375
+      ],
+      "unionB": [
+        2022.5,
+        9452.5,
+        2774.875
+      ],
+      "branch": [
+        [
+          2122.5,
+          9452.5,
+          2777.375
+        ],
+        [
+          1750,
+          9452.5,
+          2768.0625
+        ],
+        [
+          1750,
+          11177.5,
+          2724.9375
+        ],
+        [
+          567.5,
+          11177.5,
+          2695.375
+        ]
+      ],
+      "gradient": 40,
+      "maximumCompleteFittingOD": 100,
+      "supportDepth": 25,
+      "airReserve": 25,
+      "innerPanelTop": 2595.375,
+      "panelThickness": 20,
+      "finishedPanelUnderside": 2575.375,
+      "clearHatch": [
+        1722.5,
+        9052.5,
+        800,
+        800
+      ],
+      "outerHatch": [
+        1702.5,
+        9032.5,
+        840,
+        840
+      ],
+      "fixedBeamFinishedWestFace": 2775.5,
+      "fixedBeamSoffit": 3005,
+      "spoolMotion": [
+        [
+          50,
+          0,
+          -50
+        ],
+        [
+          0,
+          0,
+          -450
+        ]
+      ],
+      "spoolMaximumTopBefore": 3000,
+      "spoolMaximumTopAfter": 2500,
+      "finalPanelClearance": 75.375,
+      "upperRenewal": {
+        "temporaryClosure": "75stemwithdrawalopenspipe-to-sleevewater/air/fire/acousticboundary. Isolatewetuseandaffectedlowerzone; fitqualifiedremovabletemporaryclosuretoretainedsleeveuntilcompatiblesealsreinstated/tested. Fixedsleeve/flangealoneisnotclosedboundary.",
+        "tailBelowUpperFFL": 500,
+        "upwardStroke": 550,
+        "finalStemAboveFFL": 50,
+        "stripBeforeWithdrawal": "All A upper halves/nuts/clamps wider than75 must actually detach below before75stem passes97sleeve; ordinary lower renewal retains A upperhalf."
+      },
+      "workingPlatformRequiredPlan": [
+        1675,
+        9150,
+        1000,
+        1250
+      ],
+      "actualReceiverSource": {
+        "head": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+        "blob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
+        "fixedObstacle": [
+          "wetBeamSouthReceiver",
+          [
+            2745.5,
+            8600.5,
+            314,
+            504
+          ]
+        ],
+        "fullFinishEachSide": 18,
+        "reserveToPlatform": 27.5
+      },
+      "actualTableSource": [
+        800,
+        10925,
+        300,
+        300
+      ],
+      "operatorShoulder": [
+        2082.5,
+        9677.5,
+        2450
+      ],
+      "headPlanRadius": 150,
+      "maximumHeadTop": 2750,
+      "toolContacts": [
+        [
+          2122.5,
+          9552.5,
+          2950
+        ],
+        [
+          2022.5,
+          9512.5,
+          2774.875
+        ]
+      ],
+      "furnitureMaintenance": {
+        "sourceHead": "068e33ae52bbaa5ab0c3e3551350400e958e4033",
+        "sourceBlob": "5f5dd336be7cdadfd83cb869fb8257fad6b5b273",
+        "familySofaBefore": [
+          2337.5,
+          9800,
+          1900,
+          750
+        ],
+        "familySofaPark": [
+          2337.5,
+          10450,
+          1900,
+          750
+        ],
+        "northTranslation": 650,
+        "reserves": {
+          "readingSofaToPlatform": 25,
+          "southReceiverToPlatform": 27.5,
+          "parkedSofaToPlatform": 50,
+          "northReceiverToParkedSofa": 42.5,
+          "weatherWallWith18TrimToSofa": 25
+        },
+        "repeatableAction": "TranslatefamilysofaN650first; platformerectedafterthatmove. Restorefurniture/useonlyafterreassembly,completeboundary/sealreinstatementandtesting,platformremoval/panelclosure. Nofixedreceiver/beam/support removed.",
+        "sweptRectangle": [
+          2337.5,
+          9800,
+          1900,
+          1400
+        ],
+        "pushingBodyCentrePath": [
+          [
+            3000,
+            9475
+          ],
+          [
+            3000,
+            10125
+          ]
+        ],
+        "bodyRadius": 300,
+        "bodyToMovingSofaGap": 25,
+        "handReachToSofa": 325
+      },
+      "boundary": "800 hatch is panel aperture, not a free vertical prism through retained beam. All A/T/B complete bodies/tool/spool stay west of2775.5. Upper tray drain/feet must match this authored port or this specific route fails; no automatic principal900 transfer. New formedport requires STR support proof; not drilling permission."
+    },
+    "body": "Keep flange connection INTACT; independently capture/support tray body AND complete trap/stem so no lifting load is carried by sealing joint. All>75 below-floor parts must actually strip first. Upper1000square<=250 profile and75-only500-belowfloor stem are explicit kit requirements, not OEM admission. No assumed detachment.",
+    "requiredBodyMembers": [
+      [
+        1802.5,
+        8952.5,
+        100,
+        1000,
+        1000,
+        150
+      ],
+      [
+        1802.5,
+        8952.5,
+        0,
+        147.5,
+        1000,
+        100
+      ],
+      [
+        2200,
+        8952.5,
+        0,
+        602.5,
+        1000,
+        100
+      ],
+      [
+        1950,
+        8952.5,
+        0,
+        250,
+        420,
+        100
+      ],
+      [
+        1950,
+        9532.5,
+        0,
+        250,
+        420,
+        100
+      ]
+    ],
+    "connectionVoid": [
+      1950,
+      9372.5,
+      250,
+      160,
+      0,
+      100
+    ],
+    "movingTrapInsideUpperProfileRequired": [
+      250,
+      160,
+      250
+    ],
+    "plainStemRadialReserve": 11,
+    "tiltBodyLift650": "650 whole-assembly lift fulfils the separate550 minimum stem release with150 plain-stem end clearance. Actual body/feet/collar/seat release remains unproved; attached75 stem retained in every subsequent tilt/turn/transfer shape.",
+    "tailAfterBody": "Actual>75 strip happens BEFORE whole650 axial lift. Plain75 stem500 belowfloor travels with independently captured upper assembly. After complete assembly is positively supported outside, qualified temporary sleeve closure/retest before room use. No flange split or separate tail removal inferred.",
+    "closure": "75stemwithdrawalopenspipe-to-sleevewater/air/fire/acousticboundary. Isolatewetuseandaffectedlowerzone; fitqualifiedremovabletemporaryclosuretoretainedsleeveuntilcompatiblesealsreinstated/tested. Fixedsleeve/flangealoneisnotclosedboundary."
+  },
+  "receiver": {
+    "states": [
+      {
+        "id": "positive exterior dock; body/rig captive before A release",
+        "box": [
+          1300,
+          12050,
+          1050,
+          1000,
+          2200,
+          1275
+        ],
+        "deckLocal": 1125
+      },
+      {
+        "id": "move receiving cage1350N BEFORE lowering",
+        "box": [
+          1300,
+          13400,
+          1050,
+          1000,
+          2200,
+          1275
+        ],
+        "deckLocal": 1125
+      },
+      {
+        "id": "stable ground trolley/restraint before B release",
+        "box": [
+          1300,
+          13400,
+          -4525,
+          1000,
+          2200,
+          1275
+        ],
+        "deckLocal": -4450
+      }
+    ],
+    "sweeps": [
+      {
+        "from": "positive exterior dock; body/rig captive before A release",
+        "to": "move receiving cage1350N BEFORE lowering",
+        "swept": [
+          1300,
+          12050,
+          1050,
+          1000,
+          3550,
+          1275
+        ],
+        "minimum": 125,
+        "method": "Exact conservative translational swept prism; receiver/load/retained cage and restraints inside whole1000x2200x1275 budget including75 underside below1125 deck."
+      },
+      {
+        "from": "move receiving cage1350N BEFORE lowering",
+        "to": "stable ground trolley/restraint before B release",
+        "swept": [
+          1300,
+          13400,
+          -4525,
+          1000,
+          2200,
+          6850
+        ],
+        "minimum": 125,
+        "method": "Exact conservative translational swept prism; receiver/load/retained cage and restraints inside whole1000x2200x1275 budget including75 underside below1125 deck."
+      }
+    ],
+    "docked": [
+      1300,
+      12050,
+      1050,
+      1000,
+      2200,
+      1275
+    ],
+    "deck1125": true,
+    "bodyTop2175": true,
+    "loadSpace": "Capture1000normal×750compositeacross×1000bodyhigh, including horizontal500 stem, completely, plus necessary restraints; no people ride. Positive dock takes complete load before body-hoist release; independent second hoist/control and positive secondary hold before dock release.",
+    "groundStage": [
+      1300,
+      13400,
+      -4525,
+      1000,
+      2200,
+      1275
+    ],
+    "trolleyPlan": [
+      1300,
+      13400,
+      1000,
+      2200
+    ],
+    "trolleyTopLocal": -4525,
+    "combinedLiftedPackageMaximumKg": 200,
+    "receiverCageMassMaximumKg": 100,
+    "groundDeckGlobal": -1000,
+    "ground": "Global grade-1300/local-4750 is authored, not site fact. Stage deck300 above grade; restrained receiving trolley/rack must match complete mass/CG before release. No street/delivery PASS."
+  },
+  "rig": {
+    "status": "Required engineered external apparatus envelope, not a fabricated or selected appliance.",
+    "rail": [
+      2000,
+      9300,
+      2450,
+      100,
+      7050,
+      200
+    ],
+    "internalCrossTravel": [
+      1750,
+      9300,
+      2450,
+      750,
+      550,
+      250
+    ],
+    "workingTerritory": [
+      0,
+      12000,
+      4200,
+      4500
+    ],
+    "pads": [
+      {
+        "centre": [
+          600,
+          13000
+        ],
+        "plan": [
+          350,
+          12750,
+          500,
+          500
+        ]
+      },
+      {
+        "centre": [
+          600,
+          16000
+        ],
+        "plan": [
+          350,
+          15750,
+          500,
+          500
+        ]
+      },
+      {
+        "centre": [
+          3000,
+          13000
+        ],
+        "plan": [
+          2750,
+          12750,
+          500,
+          500
+        ]
+      },
+      {
+        "centre": [
+          3000,
+          16000
+        ],
+        "plan": [
+          2750,
+          15750,
+          500,
+          500
+        ]
+      }
+    ],
+    "gridNorth": 12000,
+    "gridPadGap": 750,
+    "permanentHouseLoads": "No added temporary lifting rig/receiver reaction credited to house; normal occupation and retained services remain their own actual floor/support duties. New rig uses no sill/frame/guard/weather-leaf/house-anchor support. Actual ground influence/buried services/site rights unproved.",
+    "deadWeightAndBallastRequiredKN": [
+      35,
+      50
+    ],
+    "cgRelativeMetres": {
+      "rigX": [
+        -0.1,
+        0.1
+      ],
+      "rigY": [
+        -0.25,
+        0.25
+      ],
+      "goodsX": [
+        -0.1,
+        0.1
+      ],
+      "goodsY": [
+        -0.1,
+        0.1
+      ]
+    },
+    "cgRequirement": "Actual complete goods/rig CG must meet these measured bounds; mass geometry is not CG evidence. Positive pose control, not free pendulum.",
+    "bodyAndCaptureMassMaximumKg": 100,
+    "receiverCageMassMaximumKg": 100,
+    "actionScenarios": [
+      {
+        "id": "body first inboard pickup",
+        "lift": 1.5,
+        "loadX": 0.5025,
+        "loadY": -5.0475
+      },
+      {
+        "id": "body at outside dock",
+        "lift": 1.5,
+        "loadX": 0.25,
+        "loadY": -1.35
+      },
+      {
+        "id": "body plus receiving cage at dock",
+        "lift": 3,
+        "loadX": 0,
+        "loadY": -1.35
+      },
+      {
+        "id": "body plus cage over ground stage",
+        "lift": 3,
+        "loadX": 0,
+        "loadY": 0
+      }
+    ],
+    "verticalScreen": "Authored1.5kN screen for100kg body/capture;3kN for200kg body+receiver ONLY outside. Not measured mass or normative lifting factors. Receiver is never lifted into room; impossible200kg inboard load case is not silently conflated with body case.",
+    "horizontalChallenge": "1kN handling plus0.5kN wind in EACH horizontal direction, both signs, lever8.4m. Authored challenge, not site wind design.",
+    "grillage": "Equal vertical stiffness/rigid frame corner reaction screen only. Actual appliance outrigger reactions, all structure/controls/secondary holding and actual TW/ground factors must replace it.",
+    "cases": 512,
+    "minimumPadKN": 0.73734375,
+    "maximumPadKN": 22.20015625,
+    "maximumNominalPadPressureKPa": 88.800625,
+    "unballastedNegativePadKN": -5.675156250000001
+  },
+  "negativeControls": {
+    "stair1000Across984": -16,
+    "rigidBathHandlers1750Against1533": -217,
+    "centredAttachedTail": {
+      "moduleZ": [
+        0,
+        250
+      ],
+      "plainStemZ": [
+        -500,
+        0
+      ],
+      "stemRelativeToModuleCentre": [
+        -625,
+        -125
+      ],
+      "turnedCompositeAcross": [
+        -625,
+        125
+      ],
+      "compositeWidth": 750,
+      "centredLowX": 1175,
+      "frameLowX": 1375,
+      "selectedBodyAxisX": 2050,
+      "selectedAcross": [
+        1425,
+        2175
+      ],
+      "centredJambReserve": -200,
+      "selectedSideReserve": 50
+    },
+    "omittedGuardLift": "Body base275 would strike retained1100 temporary guard; raise to1175 before crossing. No guard removal credited.",
+    "opaqueUnrelievedBodyAtCollar": -100,
+    "unstripped100UnionIn97Bore": -1.5,
+    "fixedTransom2370": "Main rail2650 would be blocked280. Any real fixed transom/post needs whole supported release or route fails."
+  },
+  "remaining": [
+    "Actual intact complete assembly,>75 strip, independent tray AND trap capture,650 axial lift/collar/feet release and qualified temporary closure event.",
+    "Actual complete removable window profile, component support/parking/edge protection and reinstatement; required75 is not admitted aperture.",
+    "Actual lifting apparatus meeting all occupied/mass/CG/control/dock/recovery requirements; whole assembly/temporary protection geometry and first release cannot be inferred from hoist capacity.",
+    "Actual exterior pad/ground/access/rights and all temporary works/load factors/wind; no selected site or structural capacity.",
+    "Actual tray/frame/grip/material/force/physical operation and whole IAS occurrence/IS exit."
+  ]
+}
