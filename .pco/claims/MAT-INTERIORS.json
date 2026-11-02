@@ -9,8 +9,8 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-02T01:25:31.327Z",
-  "expiresAt": "2026-11-02T02:10:31.327Z",
+  "heartbeatAt": "2026-11-02T01:58:48.080Z",
+  "expiresAt": "2026-11-02T02:43:48.080Z",
   "branch": "work/zerg4-interiors-whole-house",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -36,9 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1233 head40ed40a6d08b3738e5643662db417a014aa6544a tree04150a0651fa275a98497e07af04806feb96785c: actual main6a3c ancestry/fulltree, final HADa510/54f5 and services9476/e827, hard fit/source/role guards, rebuilt16family18occurrence result, bath/collector SVG rendered/viewed; typecheck/integrity/repro/adverse drift pass. Proposed lifecycle only.",
-    "next": "Independent exact-source MAT development exit review, including complete C-U actual collector/end-return reservation; default combined-tree repro; root controls lifecycle projection/integration/merge.",
-    "blocker": "No independent MAT closeout review yet. Actual carrier/anchors/classified perimeter return and product/physical/material/fire/water admission remain unearned; complete IAS export duty separate."
+    "evidence": "Independent full and focused MAT review accepted by commander. Frozen PR1233 d18a3a055ac8e16b145b75408ebcf857f76e6353 tree efdb8665f512f8ed57cc73eb9399ea94ff1b666c. Combined actual-history QA5216caf5 tree df0d498b passes own and services DEFAULT canonical-path reproducers with25fa/e827 inputs and no overrides; owned SVG unchanged from reviewed40ed.",
+    "next": "Await actual shared integration branch/PR identity from root, deliberately bind existing MAT13 and verify unchanged owned files. Coordinate proposed lifecycle/evidence patch only after shared DEFAULT checks.",
+    "blocker": "No MAT-owned development blocker; root-controlled shared integration/CI/merge and explicit lease rebinding pending. No material/product/physical admission or owner residue approval."
   },
   "pr": 1233
 }
