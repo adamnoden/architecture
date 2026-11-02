@@ -16,23 +16,25 @@ assert b['air']['transfer']['minimumFinishedFreeArea']==7600
 assert b['air']['fanChoice']['selectedDevelopmentFamily'].find('CF1')>=0
 assert h['servicesInterface']['cooker']['makeupPoint']==[12000,8600,2400]
 assert c['successorCompatibility']['proposedMakeup']['point']==[12000,8700,2400]
-nodes=['study','living','westGallery','bed2','bed3','bed4','principal','upperRing','hall','kitchen','guestWC','utility','rearBath','familyBath','principalBath']
+nodes=['study','living','bed2','bed3','bed4','principal','upperRing','hall','kitchen','guestWC','utility','rearBath','familyBath','principalBath']
 vents=['study','living','bed2','bed3','bed4','principal']
 extract=['guestWC','utility','kitchen','rearBath','familyBath','principalBath']
-# One source-joined topology: upper protected ring is a common node, not a
-# free outdoor inlet. West cross and bedroom/wet-room closed leaves are separate.
+# One source-joined contracted topology: upper protected ring is a common node,
+# not a free outdoor inlet. Actual living/kitchen OPEN arches have no separate
+# door loss and are contracted into their adjacent excluded galleries. West/east
+# classified crosses and bedroom/wet-room closed leaves remain distinct.
 # Each 7600 is the inherited *required finished area*, not certified fire kit.
 # 90000 on the open protected ring/stair is an intentionally generous
 # pressure-loss control, not a measured area or an open protected boundary.
 edges=[('study','hall',7600,'study E20 door'),
- ('living','westGallery',7600,'living door'),('westGallery','hall',7600,'FD-WEST-CROSS'),
+ ('living','hall',7600,'FD-WEST-CROSS after contracted open living arch'),
  ('bed2','upperRing',7600,'BED2 door'),('bed3','upperRing',7600,'BED3 door'),
  ('bed4','upperRing',7600,'BED4 door'),('principal','upperRing',7600,'PRINCIPAL door'),
- ('upperRing','rearBath',7600,'rear bath door'),('upperRing','familyBath',7600,'family bath door'),
- ('upperRing','principalBath',7600,'principal bath door'),
+ ('bed4','rearBath',7600,'rear ensuite door from BED4; normally-closed transfer proxy'),('upperRing','familyBath',7600,'FAMILY-BATH door'),
+ ('principal','principalBath',7600,'principal ensuite door from PRINCIPAL; normally-closed transfer proxy'),
  ('upperRing','hall',90000,'open protected stair/galleries control'),
  ('hall','guestWC',7600,'guest WC door'),('hall','utility',7600,'protected plant E20 door; downstream utility open arch'),
- ('hall','kitchen',7600,'FD-EAST-CROSS')]
+ ('hall','kitchen',7600,'FD-EAST-CROSS before contracted open kitchen arch')]
 assert {x['id'] for x in b['air']['transfer']['doors']}.issuperset({'FD-WEST-CROSS','FD-EAST-CROSS','BED2','BED3','BED4','PRINCIPAL','STUDY'})
 def flow(area,dp):return .61*area/1000*math.copysign(math.sqrt(2*abs(dp)/1.2),dp)
 def solve(mask,kitchen_target=None):
@@ -46,7 +48,7 @@ def solve(mask,kitchen_target=None):
             if n==z:r+=flow(area,p[a]-v)
         return r
     free=[n for n in nodes if n!='kitchen' or kitchen_target is None]
-    for iterations in range(150):
+    for iterations in range(3000):
         change=0
         for n in nodes:
             if n=='kitchen' and kitchen_target is not None:continue
@@ -121,9 +123,9 @@ for label,row,mask in [('normalHoodOff',normal_off,0),('allBoostHoodOff',boost_o
     fan_screens.append({'state':label,'rows':vals,'maximumPa':max(x['roomPlusDuctPa'] for x in vals),
       'qualification':'20Pa published normal backpressure evidence is not a16L/s boost curve. K/Darcy scaled duct is authored sensitivity, not measured configured pressure.'})
 full_300=c['successorCompatibility']['pressureNetwork']['governing']['fullOpenMakeupAt4_5PaLps']
-def full_flow(d):
+def full_flow(d,free_fraction=.75):
     a=math.pi*(d/1000)**2/4
-    k=1/(.61*.75*a)**2+(2+.03*.6/(d/1000))/a**2
+    k=1/(.61*free_fraction*a)**2+(2+.03*.6/(d/1000))/a**2
     return 1000*math.sqrt(2*4.5/(1.2*k))
 assert abs(full_flow(300)-full_300)<1e-8
 port_controls=[]
@@ -176,6 +178,12 @@ release_screen={'inheritedBoxMM':release['innerBox'],'inheritedPlatformMM':old_p
  'gate':'No real 400 modulating cartridge, full axial/actuator/tool envelope, rated support/lift/attachment, loads and human access, vertical lowering sweep, cold-storage height, structural/rebar and complete boundary detail is proved. The24mm storage gap and old-platform collision reject an unstaged drop-in assembly. Product or occurrence redesign is required if any complete envelope exceeds this conditional maximum.'}
 worst=max(cases,key=lambda r:r['cookerModes']['upperSensitivity']['requiredDirectMakeupLps'])
 assert worst['mask']==63
+terminal_sensitivity={str(d):{str(f):full_flow(d,f) for f in [.75,.5,.375]} for d in [300,350,400]}
+boost_required=worst['cookerModes']['upperSensitivity']['requiredDirectMakeupLps']
+assert terminal_sensitivity['300']['0.75']<boost_required
+assert terminal_sensitivity['350']['0.5']<boost_required
+assert terminal_sensitivity['400']['0.5']>boost_required
+assert terminal_sensitivity['400']['0.375']<boost_required
 nominal_old=2866.8;nominal_h700=2441
 factor_old=(35/50)**1.32;factor_h700=(35/50)**1.34
 candidate=[9675,11370.5,1050,200]
@@ -221,9 +229,9 @@ out={'status':'Connected equivalent-area failure screen; no topology/fire, produ
  'roomInletsMM2':{n:15000 for n in vents},'localMode':'Six Titon local fans each13 normal or authored16 boost. Mask bits order '+','.join(extract),
  'normalHoodOff':normal_off,'allBoostHoodOff':boost_off,'hoodOnAtKitchenMinus4_5Pa':cases,
  'localFanPressureScreens':fan_screens,
- 'fullOpenAtMinus4_5PaLps':{str(d):full_flow(d) for d in [300,350,400]},'portControls':port_controls,
+ 'fullOpenAtMinus4_5PaLps':{str(d):full_flow(d) for d in [300,350,400]},'terminalFreeFractionSensitivityAtMinus4_5PaLps':terminal_sensitivity,'portControls':port_controls,
  'fourHundredFirstRelease':release_screen,'worstCase':worst,'heat':heat,
- 'limits':'The open ring/stair 90000 control is generous. The protected plant E20 door remains a7600 path even though utility beyond it is an open arch. Closed/fire door paths and individual15k EA terminals are source requirements, not certified product curves. Componentwise normal/all-boost exhaust endpoints bound intermediate boost modes in this monotone passive network; actual fan curves and control modes still need matching. 13L/s equal room share is preference, not statutory per-room minimum. Fan pressure/capture, acoustic/fire and material approvals require whole installed proof. No additional infiltration or cooking heat credited.'}
+ 'limits':'The actual living/kitchen open arches are contracted into adjacent excluded galleries, not assigned a closed-door loss. The open ring/stair 90000 control is generous, not measured. Rear/principal ensuite paths correctly join their bedrooms, with 7600 normally-closed transfer proxies; actual doors are not listed in HAD protectedRoute and their closure/flow roles need checking. The protected plant E20 door remains a7600 path even though utility beyond it is an open arch. This contracted room/arch topology is not an exact physical door inventory. Closed/fire door paths and individual15k EA terminals are source requirements, not certified product curves. Componentwise normal/all-boost exhaust endpoints bound intermediate boost modes in this monotone passive network; actual fan curves and control modes still need matching. 13L/s equal room share is preference, not statutory per-room minimum. Fan pressure/capture, acoustic/fire and material approvals require whole installed proof. No additional infiltration or cooking heat credited.'}
 txt=json.dumps(out,indent=2,ensure_ascii=False)+'\n';target=P/'connected-cooker-network.json'
 if '--check' in sys.argv:assert target.read_text()==txt,'stale connected cooker result'
 else:target.write_text(txt)

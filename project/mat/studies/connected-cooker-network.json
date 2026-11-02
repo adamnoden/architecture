@@ -18,7 +18,6 @@
   "nodes": [
     "study",
     "living",
-    "westGallery",
     "bed2",
     "bed3",
     "bed4",
@@ -41,15 +40,9 @@
     },
     {
       "from": "living",
-      "to": "westGallery",
-      "finishedEquivalentAreaMM2": 7600,
-      "sourceRole": "living door"
-    },
-    {
-      "from": "westGallery",
       "to": "hall",
       "finishedEquivalentAreaMM2": 7600,
-      "sourceRole": "FD-WEST-CROSS"
+      "sourceRole": "FD-WEST-CROSS after contracted open living arch"
     },
     {
       "from": "bed2",
@@ -76,22 +69,22 @@
       "sourceRole": "PRINCIPAL door"
     },
     {
-      "from": "upperRing",
+      "from": "bed4",
       "to": "rearBath",
       "finishedEquivalentAreaMM2": 7600,
-      "sourceRole": "rear bath door"
+      "sourceRole": "rear ensuite door from BED4; normally-closed transfer proxy"
     },
     {
       "from": "upperRing",
       "to": "familyBath",
       "finishedEquivalentAreaMM2": 7600,
-      "sourceRole": "family bath door"
+      "sourceRole": "FAMILY-BATH door"
     },
     {
-      "from": "upperRing",
+      "from": "principal",
       "to": "principalBath",
       "finishedEquivalentAreaMM2": 7600,
-      "sourceRole": "principal bath door"
+      "sourceRole": "principal ensuite door from PRINCIPAL; normally-closed transfer proxy"
     },
     {
       "from": "upperRing",
@@ -115,7 +108,7 @@
       "from": "hall",
       "to": "kitchen",
       "finishedEquivalentAreaMM2": 7600,
-      "sourceRole": "FD-EAST-CROSS"
+      "sourceRole": "FD-EAST-CROSS before contracted open kitchen arch"
     }
   ],
   "roomInletsMM2": {
@@ -138,34 +131,33 @@
       "principalBath": 13
     },
     "nodePa": {
-      "study": -1.327051561043551,
-      "living": -0.7390048436282382,
-      "westGallery": -3.617746010808878,
-      "bed2": -1.317610127584002,
-      "bed3": -1.317610127584002,
-      "bed4": -1.317610127584002,
-      "principal": -1.317610127584002,
-      "upperRing": -6.450267307403954,
-      "hall": -6.496487177989516,
-      "kitchen": -11.214412913557872,
-      "guestWC": -11.214412913557872,
-      "utility": -11.214412913557872,
-      "rearBath": -11.168193042972312,
-      "familyBath": -11.168193042972312,
-      "principalBath": -11.168193042972312
+      "study": -0.7327826795582637,
+      "living": -0.7327826795582637,
+      "bed2": -0.7184465957625785,
+      "bed3": -0.7184465957625785,
+      "bed4": -2.5533483834326742,
+      "principal": -2.5533483834326742,
+      "upperRing": -3.5171045604582507,
+      "hall": -3.58728584602227,
+      "kitchen": -8.3052115815906,
+      "guestWC": -8.3052115815906,
+      "utility": -8.3052115815906,
+      "rearBath": -7.271274119001003,
+      "familyBath": -8.23503029602658,
+      "principalBath": -7.271274119001003
     },
     "roomSupplyLps": {
-      "study": 13.6078454282489,
-      "living": 10.154747085367282,
-      "bed2": 13.559351871595954,
-      "bed3": 13.559351871595954,
-      "bed4": 13.559351871595954,
-      "principal": 13.559351871595954
+      "study": 10.111906998625988,
+      "living": 10.111906998625988,
+      "bed2": 10.01250427496642,
+      "bed3": 10.01250427496642,
+      "bed4": 18.87558873395044,
+      "principal": 18.87558873395044
     },
-    "totalHabitableInletLps": 78.0,
-    "hallToKitchenLps": 12.999999999999998,
-    "maxMassResidualLps": 4.083844373781176e-12,
-    "iterations": 150
+    "totalHabitableInletLps": 78.0000000150857,
+    "hallToKitchenLps": 12.999999999999961,
+    "maxMassResidualLps": 1.3234899398639755e-08,
+    "iterations": 324
   },
   "allBoostHoodOff": {
     "mask": 63,
@@ -178,34 +170,33 @@
       "principalBath": 16
     },
     "nodePa": {
-      "study": -2.010208281817447,
-      "living": -1.1194392897563834,
-      "westGallery": -5.480135969035925,
-      "bed2": -1.9959064654526897,
-      "bed3": -1.9959064654526897,
-      "bed4": -1.9959064654526897,
-      "principal": -1.9959064654526897,
-      "upperRing": -9.770819116540904,
-      "hall": -9.840832648315468,
-      "kitchen": -16.98751305249002,
-      "guestWC": -16.98751305249002,
-      "utility": -16.98751305249002,
-      "rearBath": -16.91749952071546,
-      "familyBath": -16.91749952071546,
-      "principalBath": -16.91749952071546
+      "study": -1.1100139989775548,
+      "living": -1.1100139989775548,
+      "bed2": -1.0882978010229416,
+      "bed3": -1.0882978010229416,
+      "bed4": -3.8677939990514276,
+      "principal": -3.8677939990514276,
+      "upperRing": -5.327685010780792,
+      "hall": -5.433995123896008,
+      "kitchen": -12.580675528070595,
+      "guestWC": -12.580675528070595,
+      "utility": -12.580675528070595,
+      "rearBath": -11.014474403226016,
+      "familyBath": -12.474365414955379,
+      "principalBath": -11.014474403226016
     },
     "roomSupplyLps": {
-      "study": 16.74811745015248,
-      "living": 12.498150258913572,
-      "bed2": 16.68843307273348,
-      "bed3": 16.68843307273348,
-      "bed4": 16.68843307273348,
-      "principal": 16.68843307273348
+      "study": 12.445423993674565,
+      "living": 12.445423993674565,
+      "bed2": 12.323082179805454,
+      "bed3": 12.323082179805454,
+      "bed4": 23.231493820730485,
+      "principal": 23.231493820730485
     },
-    "totalHabitableInletLps": 95.99999999999997,
-    "hallToKitchenLps": 15.999999999999996,
-    "maxMassResidualLps": 7.077005648170598e-12,
-    "iterations": 150
+    "totalHabitableInletLps": 95.99999998842101,
+    "hallToKitchenLps": 16.000000000000036,
+    "maxMassResidualLps": 1.0161972596733904e-08,
+    "iterations": 336
   },
   "hoodOnAtKitchenMinus4_5Pa": [
     {
@@ -219,54 +210,53 @@
         "principalBath": 13
       },
       "nodePa": {
-        "study": -0.9192159848711801,
-        "living": -0.5118904834514937,
-        "westGallery": -2.5059237033096315,
-        "bed2": -0.9176212380327287,
-        "bed3": -0.9176212380327287,
-        "bed4": -0.9176212380327287,
-        "principal": -0.9176212380327287,
-        "upperRing": -4.492149952733982,
-        "hall": -4.499956923198479,
+        "study": -0.6082296528217124,
+        "living": -0.6082296528217124,
+        "bed2": -0.5991291739961269,
+        "bed3": -0.5991291739961269,
+        "bed4": -2.279969854359265,
+        "principal": -2.279969854359265,
+        "upperRing": -2.9329945504431243,
+        "hall": -2.9775453017051423,
         "kitchen": -4.5,
-        "guestWC": -9.217882658766808,
-        "utility": -9.217882658766808,
-        "rearBath": -9.210075688302311,
-        "familyBath": -9.210075688302311,
-        "principalBath": -9.210075688302311
+        "guestWC": -7.695471037273471,
+        "utility": -7.695471037273471,
+        "rearBath": -6.9978955899275945,
+        "familyBath": -7.650920286011454,
+        "principalBath": -6.9978955899275945
       },
       "roomSupplyLps": {
-        "study": 11.325418336157048,
-        "living": 8.451503909637195,
-        "bed2": 11.315589843308738,
-        "bed3": 11.315589843308738,
-        "bed4": 11.315589843308738,
-        "principal": 11.315589843308738
+        "study": 9.212537391001986,
+        "living": 9.212537391001986,
+        "bed2": 9.143357540667681,
+        "bed3": 9.143357540667681,
+        "bed4": 17.836515734656697,
+        "principal": 17.836515734656697
       },
-      "totalHabitableInletLps": 65.0392816190292,
-      "hallToKitchenLps": 0.03928163235727046,
-      "maxMassResidualLps": 1.2622602518774784e-08,
-      "iterations": 75,
+      "totalHabitableInletLps": 72.38482133265273,
+      "hallToKitchenLps": 7.384821315067305,
+      "maxMassResidualLps": 1.573914509833685e-08,
+      "iterations": 302,
       "cookerModes": {
         "publishedLow": {
           "hoodLps": 34.72222222222222,
-          "requiredDirectMakeupLps": 47.68294058986495,
-          "totalExteriorLps": 112.72222220889415
+          "requiredDirectMakeupLps": 40.337400907154915,
+          "totalExteriorLps": 112.72222223980766
         },
         "publishedBEP": {
           "hoodLps": 44.44444444444444,
-          "requiredDirectMakeupLps": 57.40516281208717,
-          "totalExteriorLps": 122.44444443111637
+          "requiredDirectMakeupLps": 50.05962312937714,
+          "totalExteriorLps": 122.44444446202989
         },
         "publishedHigh": {
           "hoodLps": 62.22222222222222,
-          "requiredDirectMakeupLps": 75.18294058986496,
-          "totalExteriorLps": 140.22222220889415
+          "requiredDirectMakeupLps": 67.83740090715493,
+          "totalExteriorLps": 140.22222223980765
         },
         "upperSensitivity": {
           "hoodLps": 70,
-          "requiredDirectMakeupLps": 82.96071836764273,
-          "totalExteriorLps": 147.99999998667192
+          "requiredDirectMakeupLps": 75.6151786849327,
+          "totalExteriorLps": 148.00000001758542
         }
       }
     },
@@ -281,54 +271,53 @@
         "principalBath": 13
       },
       "nodePa": {
-        "study": -0.9192159848711801,
-        "living": -0.5118904834514937,
-        "westGallery": -2.5059237033096315,
-        "bed2": -0.9176212380327287,
-        "bed3": -0.9176212380327287,
-        "bed4": -0.9176212380327287,
-        "principal": -0.9176212380327287,
-        "upperRing": -4.492149952733982,
-        "hall": -4.499956923198479,
+        "study": -0.6082296528217124,
+        "living": -0.6082296528217124,
+        "bed2": -0.5991291739961269,
+        "bed3": -0.5991291739961269,
+        "bed4": -2.279969854359265,
+        "principal": -2.279969854359265,
+        "upperRing": -2.9329945504431243,
+        "hall": -2.9775453017051423,
         "kitchen": -4.5,
-        "guestWC": -9.217882658766808,
-        "utility": -9.217882658766808,
-        "rearBath": -9.210075688302311,
-        "familyBath": -9.210075688302311,
-        "principalBath": -9.210075688302311
+        "guestWC": -7.695471037273471,
+        "utility": -7.695471037273471,
+        "rearBath": -6.9978955899275945,
+        "familyBath": -7.650920286011454,
+        "principalBath": -6.9978955899275945
       },
       "roomSupplyLps": {
-        "study": 11.325418336157048,
-        "living": 8.451503909637195,
-        "bed2": 11.315589843308738,
-        "bed3": 11.315589843308738,
-        "bed4": 11.315589843308738,
-        "principal": 11.315589843308738
+        "study": 9.212537391001986,
+        "living": 9.212537391001986,
+        "bed2": 9.143357540667681,
+        "bed3": 9.143357540667681,
+        "bed4": 17.836515734656697,
+        "principal": 17.836515734656697
       },
-      "totalHabitableInletLps": 65.0392816190292,
-      "hallToKitchenLps": 0.03928163235727046,
-      "maxMassResidualLps": 1.2622602518774784e-08,
-      "iterations": 75,
+      "totalHabitableInletLps": 72.38482133265273,
+      "hallToKitchenLps": 7.384821315067305,
+      "maxMassResidualLps": 1.573914509833685e-08,
+      "iterations": 302,
       "cookerModes": {
         "publishedLow": {
           "hoodLps": 34.72222222222222,
-          "requiredDirectMakeupLps": 50.68294058986495,
-          "totalExteriorLps": 115.72222220889415
+          "requiredDirectMakeupLps": 43.337400907154915,
+          "totalExteriorLps": 115.72222223980766
         },
         "publishedBEP": {
           "hoodLps": 44.44444444444444,
-          "requiredDirectMakeupLps": 60.40516281208717,
-          "totalExteriorLps": 125.44444443111637
+          "requiredDirectMakeupLps": 53.05962312937714,
+          "totalExteriorLps": 125.44444446202989
         },
         "publishedHigh": {
           "hoodLps": 62.22222222222222,
-          "requiredDirectMakeupLps": 78.18294058986496,
-          "totalExteriorLps": 143.22222220889415
+          "requiredDirectMakeupLps": 70.83740090715493,
+          "totalExteriorLps": 143.22222223980765
         },
         "upperSensitivity": {
           "hoodLps": 70,
-          "requiredDirectMakeupLps": 85.96071836764273,
-          "totalExteriorLps": 150.99999998667192
+          "requiredDirectMakeupLps": 78.6151786849327,
+          "totalExteriorLps": 151.00000001758542
         }
       }
     },
@@ -343,54 +332,53 @@
         "principalBath": 16
       },
       "nodePa": {
-        "study": -1.1690066386222948,
-        "living": -0.6509932195069292,
-        "westGallery": -3.186891321810773,
-        "bed2": -1.1686211307922196,
-        "bed3": -1.1686211307922196,
-        "bed4": -1.1686211307922196,
-        "principal": -1.1686211307922196,
-        "upperRing": -5.7209021977631,
-        "hall": -5.722789424114457,
+        "study": -0.8063022135344489,
+        "living": -0.8063022135344489,
+        "bed2": -0.7968627164604558,
+        "bed3": -0.7968627164604558,
+        "bed4": -3.1824967462431686,
+        "principal": -3.1824967462431686,
+        "upperRing": -3.9009851402513784,
+        "hall": -3.9471955314015816,
         "kitchen": -4.5,
-        "guestWC": -12.869469828288883,
-        "utility": -12.869469828288883,
-        "rearBath": -12.867582601937787,
-        "familyBath": -12.867582601937787,
-        "principalBath": -12.867582601937787
+        "guestWC": -11.09387593557617,
+        "utility": -11.09387593557617,
+        "rearBath": -10.329177150417756,
+        "familyBath": -11.047665544425966,
+        "principalBath": -10.329177150417756
       },
       "roomSupplyLps": {
-        "study": 12.771854361711087,
-        "living": 9.530895360192984,
-        "bed2": 12.769748276215918,
-        "bed3": 12.769748276215918,
-        "bed4": 12.769748276215918,
-        "principal": 12.769748276215918
+        "study": 10.607044598806171,
+        "living": 10.607044598806171,
+        "bed2": 10.544772700162904,
+        "bed3": 10.544772700162904,
+        "bed4": 21.073149734410993,
+        "principal": 21.073149734410993
       },
-      "totalHabitableInletLps": 73.38174282676775,
-      "hallToKitchenLps": -6.618257173232022,
-      "maxMassResidualLps": 7.746956853793563e-09,
-      "iterations": 150,
+      "totalHabitableInletLps": 84.44993406676014,
+      "hallToKitchenLps": 4.449934050098127,
+      "maxMassResidualLps": 1.505472191354329e-08,
+      "iterations": 266,
       "cookerModes": {
         "publishedLow": {
           "hoodLps": 34.72222222222222,
-          "requiredDirectMakeupLps": 57.340479395454246,
-          "totalExteriorLps": 130.722222222222
+          "requiredDirectMakeupLps": 46.27228817212409,
+          "totalExteriorLps": 130.72222223888423
         },
         "publishedBEP": {
           "hoodLps": 44.44444444444444,
-          "requiredDirectMakeupLps": 67.06270161767647,
-          "totalExteriorLps": 140.4444444444442
+          "requiredDirectMakeupLps": 55.994510394346314,
+          "totalExteriorLps": 140.44444446110646
         },
         "publishedHigh": {
           "hoodLps": 62.22222222222222,
-          "requiredDirectMakeupLps": 84.84047939545425,
-          "totalExteriorLps": 158.222222222222
+          "requiredDirectMakeupLps": 73.7722881721241,
+          "totalExteriorLps": 158.22222223888423
         },
         "upperSensitivity": {
           "hoodLps": 70,
-          "requiredDirectMakeupLps": 92.61825717323202,
-          "totalExteriorLps": 165.99999999999977
+          "requiredDirectMakeupLps": 81.55006594990188,
+          "totalExteriorLps": 166.000000016662
         }
       }
     }
@@ -401,42 +389,42 @@
       "rows": [
         {
           "id": "ground-WC",
-          "roomDepressionPa": 11.214412913557872,
+          "roomDepressionPa": 8.3052115815906,
           "authoredScaledDuctPa": 5.030847178298256,
-          "roomPlusDuctPa": 16.245260091856128
+          "roomPlusDuctPa": 13.336058759888855
         },
         {
           "id": "utility",
-          "roomDepressionPa": 11.214412913557872,
+          "roomDepressionPa": 8.3052115815906,
           "authoredScaledDuctPa": 5.010647735250873,
-          "roomPlusDuctPa": 16.225060648808746
+          "roomPlusDuctPa": 13.315859316841472
         },
         {
           "id": "kitchen",
-          "roomDepressionPa": 11.214412913557872,
+          "roomDepressionPa": 8.3052115815906,
           "authoredScaledDuctPa": 5.142954087211228,
-          "roomPlusDuctPa": 16.357367000769102
+          "roomPlusDuctPa": 13.448165668801828
         },
         {
           "id": "rear-bath",
-          "roomDepressionPa": 11.168193042972312,
+          "roomDepressionPa": 7.271274119001003,
           "authoredScaledDuctPa": 4.955596694291169,
-          "roomPlusDuctPa": 16.123789737263483
+          "roomPlusDuctPa": 12.226870813292173
         },
         {
           "id": "family-bath",
-          "roomDepressionPa": 11.168193042972312,
+          "roomDepressionPa": 8.23503029602658,
           "authoredScaledDuctPa": 4.905098086672712,
-          "roomPlusDuctPa": 16.073291129645025
+          "roomPlusDuctPa": 13.140128382699292
         },
         {
           "id": "principal-bath",
-          "roomDepressionPa": 11.168193042972312,
+          "roomDepressionPa": 7.271274119001003,
           "authoredScaledDuctPa": 4.950883490913446,
-          "roomPlusDuctPa": 16.11907653388576
+          "roomPlusDuctPa": 12.222157609914449
         }
       ],
-      "maximumPa": 16.357367000769102,
+      "maximumPa": 13.448165668801828,
       "qualification": "20Pa published normal backpressure evidence is not a16L/s boost curve. K/Darcy scaled duct is authored sensitivity, not measured configured pressure."
     },
     {
@@ -444,42 +432,42 @@
       "rows": [
         {
           "id": "ground-WC",
-          "roomDepressionPa": 16.98751305249002,
+          "roomDepressionPa": 12.580675528070595,
           "authoredScaledDuctPa": 7.6206915836944,
-          "roomPlusDuctPa": 24.608204636184418
+          "roomPlusDuctPa": 20.201367111764995
         },
         {
           "id": "utility",
-          "roomDepressionPa": 16.98751305249002,
+          "roomDepressionPa": 12.580675528070595,
           "authoredScaledDuctPa": 7.590093610794223,
-          "roomPlusDuctPa": 24.577606663284243
+          "roomPlusDuctPa": 20.170769138864816
         },
         {
           "id": "kitchen",
-          "roomDepressionPa": 16.98751305249002,
+          "roomDepressionPa": 12.580675528070595,
           "authoredScaledDuctPa": 7.790510333290382,
-          "roomPlusDuctPa": 24.7780233857804
+          "roomPlusDuctPa": 20.371185861360978
         },
         {
           "id": "rear-bath",
-          "roomDepressionPa": 16.91749952071546,
+          "roomDepressionPa": 11.014474403226016,
           "authoredScaledDuctPa": 7.506702684843429,
-          "roomPlusDuctPa": 24.42420220555889
+          "roomPlusDuctPa": 18.521177088069443
         },
         {
           "id": "family-bath",
-          "roomDepressionPa": 16.91749952071546,
+          "roomDepressionPa": 12.474365414955379,
           "authoredScaledDuctPa": 7.4302077525929855,
-          "roomPlusDuctPa": 24.347707273308444
+          "roomPlusDuctPa": 19.904573167548364
         },
         {
           "id": "principal-bath",
-          "roomDepressionPa": 16.91749952071546,
+          "roomDepressionPa": 11.014474403226016,
           "authoredScaledDuctPa": 7.499563157833387,
-          "roomPlusDuctPa": 24.417062678548845
+          "roomPlusDuctPa": 18.514037561059403
         }
       ],
-      "maximumPa": 24.7780233857804,
+      "maximumPa": 20.371185861360978,
       "qualification": "20Pa published normal backpressure evidence is not a16L/s boost curve. K/Darcy scaled duct is authored sensitivity, not measured configured pressure."
     },
     {
@@ -487,15 +475,15 @@
       "rows": [
         {
           "id": "ground-WC",
-          "roomDepressionPa": 9.217882658766808,
+          "roomDepressionPa": 7.695471037273471,
           "authoredScaledDuctPa": 5.030847178298256,
-          "roomPlusDuctPa": 14.248729837065063
+          "roomPlusDuctPa": 12.726318215571727
         },
         {
           "id": "utility",
-          "roomDepressionPa": 9.217882658766808,
+          "roomDepressionPa": 7.695471037273471,
           "authoredScaledDuctPa": 5.010647735250873,
-          "roomPlusDuctPa": 14.228530394017682
+          "roomPlusDuctPa": 12.706118772524345
         },
         {
           "id": "kitchen",
@@ -505,24 +493,24 @@
         },
         {
           "id": "rear-bath",
-          "roomDepressionPa": 9.210075688302311,
+          "roomDepressionPa": 6.9978955899275945,
           "authoredScaledDuctPa": 4.955596694291169,
-          "roomPlusDuctPa": 14.165672382593481
+          "roomPlusDuctPa": 11.953492284218765
         },
         {
           "id": "family-bath",
-          "roomDepressionPa": 9.210075688302311,
+          "roomDepressionPa": 7.650920286011454,
           "authoredScaledDuctPa": 4.905098086672712,
-          "roomPlusDuctPa": 14.115173774975023
+          "roomPlusDuctPa": 12.556018372684166
         },
         {
           "id": "principal-bath",
-          "roomDepressionPa": 9.210075688302311,
+          "roomDepressionPa": 6.9978955899275945,
           "authoredScaledDuctPa": 4.950883490913446,
-          "roomPlusDuctPa": 14.160959179215757
+          "roomPlusDuctPa": 11.94877908084104
         }
       ],
-      "maximumPa": 14.248729837065063,
+      "maximumPa": 12.726318215571727,
       "qualification": "20Pa published normal backpressure evidence is not a16L/s boost curve. K/Darcy scaled duct is authored sensitivity, not measured configured pressure."
     },
     {
@@ -530,15 +518,15 @@
       "rows": [
         {
           "id": "ground-WC",
-          "roomDepressionPa": 12.869469828288883,
+          "roomDepressionPa": 11.09387593557617,
           "authoredScaledDuctPa": 7.6206915836944,
-          "roomPlusDuctPa": 20.490161411983284
+          "roomPlusDuctPa": 18.71456751927057
         },
         {
           "id": "utility",
-          "roomDepressionPa": 12.869469828288883,
+          "roomDepressionPa": 11.09387593557617,
           "authoredScaledDuctPa": 7.590093610794223,
-          "roomPlusDuctPa": 20.459563439083105
+          "roomPlusDuctPa": 18.683969546370392
         },
         {
           "id": "kitchen",
@@ -548,24 +536,24 @@
         },
         {
           "id": "rear-bath",
-          "roomDepressionPa": 12.867582601937787,
+          "roomDepressionPa": 10.329177150417756,
           "authoredScaledDuctPa": 7.506702684843429,
-          "roomPlusDuctPa": 20.374285286781216
+          "roomPlusDuctPa": 17.835879835261185
         },
         {
           "id": "family-bath",
-          "roomDepressionPa": 12.867582601937787,
+          "roomDepressionPa": 11.047665544425966,
           "authoredScaledDuctPa": 7.4302077525929855,
-          "roomPlusDuctPa": 20.297790354530772
+          "roomPlusDuctPa": 18.477873297018952
         },
         {
           "id": "principal-bath",
-          "roomDepressionPa": 12.867582601937787,
+          "roomDepressionPa": 10.329177150417756,
           "authoredScaledDuctPa": 7.499563157833387,
-          "roomPlusDuctPa": 20.367145759771173
+          "roomPlusDuctPa": 17.82874030825114
         }
       ],
-      "maximumPa": 20.490161411983284,
+      "maximumPa": 18.71456751927057,
       "qualification": "20Pa published normal backpressure evidence is not a16L/s boost curve. K/Darcy scaled duct is authored sensitivity, not measured configured pressure."
     }
   ],
@@ -573,6 +561,23 @@
     "300": 74.03010683533405,
     "350": 100.82641659321357,
     "400": 131.75367375360463
+  },
+  "terminalFreeFractionSensitivityAtMinus4_5PaLps": {
+    "300": {
+      "0.75": 74.03010683533405,
+      "0.5": 54.08687308238316,
+      "0.375": 42.07216607010534
+    },
+    "350": {
+      "0.75": 100.82641659321357,
+      "0.5": 73.64288639632393,
+      "0.375": 57.276488681380634
+    },
+    "400": {
+      "0.75": 131.75367375360463,
+      "0.5": 96.21078792288492,
+      "0.375": 74.82147302781718
+    }
   },
   "portControls": [
     {
@@ -719,54 +724,53 @@
       "principalBath": 16
     },
     "nodePa": {
-      "study": -1.1690066386222948,
-      "living": -0.6509932195069292,
-      "westGallery": -3.186891321810773,
-      "bed2": -1.1686211307922196,
-      "bed3": -1.1686211307922196,
-      "bed4": -1.1686211307922196,
-      "principal": -1.1686211307922196,
-      "upperRing": -5.7209021977631,
-      "hall": -5.722789424114457,
+      "study": -0.8063022135344489,
+      "living": -0.8063022135344489,
+      "bed2": -0.7968627164604558,
+      "bed3": -0.7968627164604558,
+      "bed4": -3.1824967462431686,
+      "principal": -3.1824967462431686,
+      "upperRing": -3.9009851402513784,
+      "hall": -3.9471955314015816,
       "kitchen": -4.5,
-      "guestWC": -12.869469828288883,
-      "utility": -12.869469828288883,
-      "rearBath": -12.867582601937787,
-      "familyBath": -12.867582601937787,
-      "principalBath": -12.867582601937787
+      "guestWC": -11.09387593557617,
+      "utility": -11.09387593557617,
+      "rearBath": -10.329177150417756,
+      "familyBath": -11.047665544425966,
+      "principalBath": -10.329177150417756
     },
     "roomSupplyLps": {
-      "study": 12.771854361711087,
-      "living": 9.530895360192984,
-      "bed2": 12.769748276215918,
-      "bed3": 12.769748276215918,
-      "bed4": 12.769748276215918,
-      "principal": 12.769748276215918
+      "study": 10.607044598806171,
+      "living": 10.607044598806171,
+      "bed2": 10.544772700162904,
+      "bed3": 10.544772700162904,
+      "bed4": 21.073149734410993,
+      "principal": 21.073149734410993
     },
-    "totalHabitableInletLps": 73.38174282676775,
-    "hallToKitchenLps": -6.618257173232022,
-    "maxMassResidualLps": 7.746956853793563e-09,
-    "iterations": 150,
+    "totalHabitableInletLps": 84.44993406676014,
+    "hallToKitchenLps": 4.449934050098127,
+    "maxMassResidualLps": 1.505472191354329e-08,
+    "iterations": 266,
     "cookerModes": {
       "publishedLow": {
         "hoodLps": 34.72222222222222,
-        "requiredDirectMakeupLps": 57.340479395454246,
-        "totalExteriorLps": 130.722222222222
+        "requiredDirectMakeupLps": 46.27228817212409,
+        "totalExteriorLps": 130.72222223888423
       },
       "publishedBEP": {
         "hoodLps": 44.44444444444444,
-        "requiredDirectMakeupLps": 67.06270161767647,
-        "totalExteriorLps": 140.4444444444442
+        "requiredDirectMakeupLps": 55.994510394346314,
+        "totalExteriorLps": 140.44444446110646
       },
       "publishedHigh": {
         "hoodLps": 62.22222222222222,
-        "requiredDirectMakeupLps": 84.84047939545425,
-        "totalExteriorLps": 158.222222222222
+        "requiredDirectMakeupLps": 73.7722881721241,
+        "totalExteriorLps": 158.22222223888423
       },
       "upperSensitivity": {
         "hoodLps": 70,
-        "requiredDirectMakeupLps": 92.61825717323202,
-        "totalExteriorLps": 165.99999999999977
+        "requiredDirectMakeupLps": 81.55006594990188,
+        "totalExteriorLps": 166.000000016662
       }
     }
   },
@@ -791,15 +795,15 @@
     "dryMassKg": 54.693000000000005,
     "filledMassKg": 64.926,
     "renewal": "Complete body sweeps200south and50up without another HAD furniture overlap. R300 floor handler at10200/10800 has≥25 gap to every actual furniture box. Actual cill underside, valves, wall fixings, stable handling and IAS export still qualify.",
-    "normalLocalAt70KitchenScreenW": 3438.8215510292816,
-    "allBoostAt70KitchenScreenW": 3728.547715196961,
+    "normalLocalAt70KitchenScreenW": 3218.455360547981,
+    "allBoostAt70KitchenScreenW": 3396.5019784970564,
     "allBoostWholeHouseAt25KW": 10480.0,
     "allBoostWholeHouseAt30KW": 12576.0,
     "net12kWArithmeticMarginAllBoostW": 1520.0,
     "net12kWAt30KMarginW": -576.0,
     "net14kWAt30KMarginW": 1424.0,
-    "normalAt30KitchenScreenW": 4126.5858612351385,
-    "allBoostAt30KitchenScreenW": 4474.257258236353,
+    "normalAt30KitchenScreenW": 3862.1464326575774,
+    "allBoostAt30KitchenScreenW": 4075.8023741964676,
     "combinedAt70_60W": 4614.174710098179,
     "waterAndGlycolFlowLps": {
       "12": {
@@ -817,5 +821,5 @@
     },
     "condition": "Inherited950W is an allocation, not measured room loss. 65/55 is an unselected higher-water-temperature comparison; net12kW delivered at that temperature after defrost/HX loss, all-room output and hydraulics need a new connected contract."
   },
-  "limits": "The open ring/stair 90000 control is generous. The protected plant E20 door remains a7600 path even though utility beyond it is an open arch. Closed/fire door paths and individual15k EA terminals are source requirements, not certified product curves. Componentwise normal/all-boost exhaust endpoints bound intermediate boost modes in this monotone passive network; actual fan curves and control modes still need matching. 13L/s equal room share is preference, not statutory per-room minimum. Fan pressure/capture, acoustic/fire and material approvals require whole installed proof. No additional infiltration or cooking heat credited."
+  "limits": "The actual living/kitchen open arches are contracted into adjacent excluded galleries, not assigned a closed-door loss. The open ring/stair 90000 control is generous, not measured. Rear/principal ensuite paths correctly join their bedrooms, with 7600 normally-closed transfer proxies; actual doors are not listed in HAD protectedRoute and their closure/flow roles need checking. The protected plant E20 door remains a7600 path even though utility beyond it is an open arch. This contracted room/arch topology is not an exact physical door inventory. Closed/fire door paths and individual15k EA terminals are source requirements, not certified product curves. Componentwise normal/all-boost exhaust endpoints bound intermediate boost modes in this monotone passive network; actual fan curves and control modes still need matching. 13L/s equal room share is preference, not statutory per-room minimum. Fan pressure/capture, acoustic/fire and material approvals require whole installed proof. No additional infiltration or cooking heat credited."
 }
