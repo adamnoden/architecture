@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 15,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "70b74776-c5e1-42ce-8c67-138ea615f337",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-services-constructive-cooker"
   },
   "claimedAt": "2026-11-02T10:13:45.252Z",
-  "heartbeatAt": "2026-11-02T10:49:48.554Z",
-  "expiresAt": "2026-11-02T11:34:48.554Z",
+  "heartbeatAt": "2026-11-02T10:55:47.960Z",
+  "expiresAt": "2026-11-02T10:55:47.960Z",
   "predecessor": {
     "leaseId": "842350f9-bdfb-4597-88f3-3f4d142fc0f8",
     "generation": 14,
@@ -39,5 +39,7 @@
     "next": "Root sole exact-head CI, preflight and merge; canonical Services15 handoff then selected system/material successor after integration",
     "blocker": "No product/material/site adoption: DTBCU frequent RUN modulation and EPDM, full damper pressure/capture, protective hood interface, staged assembly release and plant/emitter compatibility require qualification"
   },
-  "pr": 1266
+  "pr": 1266,
+  "releasedAt": "2026-11-02T10:55:47.960Z",
+  "releaseReason": "handoff"
 }
