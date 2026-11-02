@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 15,
-  "state": "released",
-  "leaseId": "2c09ac4d-dc3b-4197-bd82-b17b4097ecb0",
+  "generation": 16,
+  "state": "claimed",
+  "leaseId": "fc6a0e5c-bc22-43ab-988d-e5f49df36802",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg2-mat-loggia"
+    "label": "mat-envelope-joins"
   },
-  "claimedAt": "2026-11-01T20:06:02.804Z",
-  "heartbeatAt": "2026-11-02T00:22:11.135Z",
-  "expiresAt": "2026-11-02T00:22:11.135Z",
-  "branch": "work/zerg2-mat-loggia",
+  "claimedAt": "2026-11-02T00:25:15.643Z",
+  "heartbeatAt": "2026-11-02T00:25:15.643Z",
+  "expiresAt": "2026-11-02T01:10:15.643Z",
+  "checkpoint": {
+    "evidence": "Verified mergedPR1236 mainf462415c6832e6470fdb7045e2f9b2e207b700df tree199a179370d1122b58ee5b3adf2df0a7d00fd88b exactreviewedcandidate; independentreview/fullCI/freshpreflight passed; MAT15 released/readback and ownobsoletebranches cleaned. Issue1100 boundedprogress recorded.",
+    "next": "Continue finite sixrow internal exits from freshmain: join credibleground/pointreceiving concept withSTR and actualroof/portal/temporaryrain details withHAD. FinalcombinedcanonicalHAD input required.",
+    "blocker": "No broadMATcompletion or material/siteadmission. GroundD1400/D1600 remainunselectedcosts; ordinaryroofcrop doesnotcomplete200overhang or internalwater/air/thermal joins."
+  },
+  "branch": "work/mat-envelope-joins-20261102",
   "predecessor": {
-    "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
-    "generation": 14,
-    "branch": "work/zerg2-integration-20261101",
-    "pr": 1229,
+    "leaseId": "2c09ac4d-dc3b-4197-bd82-b17b4097ecb0",
+    "generation": 15,
+    "branch": "work/zerg2-mat-loggia",
+    "pr": 1236,
     "checkpoint": {
-      "evidence": "SharedPR1229 head8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 preserves all4sourceparents; MAT845bab92 reviewed and included; integrator reports allcustom/relevant/tsc/repo checks pass",
-      "next": "Root observes exact-head fullCI; upon command fetchsharedhead and run own freshcanonicalmergepreflight, then root expected-head merge and verified closeout",
-      "blocker": "Shared exact-head CI pending; reference candidate is not technical/material admission or MAT-ENVELOPE completion"
+      "evidence": "PR1236 ready head6fe2784cb2604b7b5ce28068f5f5a3e025555baa tree199a179370d1122b58ee5b3adf2df0a7d00fd88b exactnative/localtree verified; trueparents f376a8a7 and latestmain59ec623d. Mainmerge preservesMATsubtree9938aeb1. Onlysourceauthmjs anddocumentdelta; allnumeric/renderedMAToutputs unchanged. Positive/mutated/committedcanonical-rebind checks pass.",
+      "next": "Freeze for focused source-auth delta review and root exact-headCI; legitimate synchronize/ready events use corrected canonical Work/Lease body. Integrationdefaultcanonicalpath derives verified sourceidentity.",
+      "blocker": "MAT-ENVELOPE open; ordinaryroofcrop doesnotcomplete200overhang/weatheredge7006.738 or namedinternaljoins. No groundselection or wholematerial/sitepass."
     }
   },
   "recoverySource": {
-    "leaseId": "4435ff22-c95e-461f-9e1b-9b1532a814fa",
-    "generation": 14,
-    "branch": "work/zerg2-integration-20261101",
-    "pr": 1229,
+    "leaseId": "2c09ac4d-dc3b-4197-bd82-b17b4097ecb0",
+    "generation": 15,
+    "branch": "work/zerg2-mat-loggia",
+    "pr": 1236,
     "checkpoint": {
-      "evidence": "SharedPR1229 head8e14606f4d232646c43f73910126fff72e27149e tree3ee4d8605c771199c173e3c4e1380f06ce1b8ac0 preserves all4sourceparents; MAT845bab92 reviewed and included; integrator reports allcustom/relevant/tsc/repo checks pass",
-      "next": "Root observes exact-head fullCI; upon command fetchsharedhead and run own freshcanonicalmergepreflight, then root expected-head merge and verified closeout",
-      "blocker": "Shared exact-head CI pending; reference candidate is not technical/material admission or MAT-ENVELOPE completion"
+      "evidence": "PR1236 ready head6fe2784cb2604b7b5ce28068f5f5a3e025555baa tree199a179370d1122b58ee5b3adf2df0a7d00fd88b exactnative/localtree verified; trueparents f376a8a7 and latestmain59ec623d. Mainmerge preservesMATsubtree9938aeb1. Onlysourceauthmjs anddocumentdelta; allnumeric/renderedMAToutputs unchanged. Positive/mutated/committedcanonical-rebind checks pass.",
+      "next": "Freeze for focused source-auth delta review and root exact-headCI; legitimate synchronize/ready events use corrected canonical Work/Lease body. Integrationdefaultcanonicalpath derives verified sourceidentity.",
+      "blocker": "MAT-ENVELOPE open; ordinaryroofcrop doesnotcomplete200overhang/weatheredge7006.738 or namedinternaljoins. No groundselection or wholematerial/sitepass."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1236 ready head6fe2784cb2604b7b5ce28068f5f5a3e025555baa tree199a179370d1122b58ee5b3adf2df0a7d00fd88b exactnative/localtree verified; trueparents f376a8a7 and latestmain59ec623d. Mainmerge preservesMATsubtree9938aeb1. Onlysourceauthmjs anddocumentdelta; allnumeric/renderedMAToutputs unchanged. Positive/mutated/committedcanonical-rebind checks pass.",
-    "next": "Freeze for focused source-auth delta review and root exact-headCI; legitimate synchronize/ready events use corrected canonical Work/Lease body. Integrationdefaultcanonicalpath derives verified sourceidentity.",
-    "blocker": "MAT-ENVELOPE open; ordinaryroofcrop doesnotcomplete200overhang/weatheredge7006.738 or namedinternaljoins. No groundselection or wholematerial/sitepass."
-  },
-  "pr": 1236,
-  "releasedAt": "2026-11-02T00:22:11.135Z",
-  "releaseReason": "completed"
+  }
 }
