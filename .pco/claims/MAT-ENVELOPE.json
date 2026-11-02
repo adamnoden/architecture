@@ -9,14 +9,14 @@
     "label": "zerg7-envelope-corner-junction"
   },
   "claimedAt": "2026-11-02T10:51:13.775Z",
-  "heartbeatAt": "2026-11-02T12:42:23.910Z",
-  "expiresAt": "2026-11-02T13:27:23.910Z",
+  "heartbeatAt": "2026-11-02T12:49:29.263Z",
+  "expiresAt": "2026-11-02T13:34:29.263Z",
   "checkpoint": {
-    "evidence": "Shared local head 1e3478a85ba9aa68688c7c1954c670333b785042 with regenerated STR and MAT; latest durable shared remote a0606db696ebc502973c2fcf846d1388899c34a8; carrier branch e5a00c51486a95d1a2e583c68780eda34e42a5aa",
-    "next": "Root to publish shared head, exact-head checks and preflight; MAT controller release after merge",
-    "blocker": "Local head not yet remote; carrier incomplete and site/physical holds remain"
+    "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; scoped generators, default HAD and repository checks passed",
+    "next": "Root observes exact-head CI and runs fresh publication preflight; controller releases MAT20 after verified merge and claims MAT21",
+    "blocker": "Complete carrier/field, structural/site and physical admission remain open; no adoption asserted"
   },
-  "branch": "work/zerg7-envelope-corner-junction",
+  "branch": "work/zerg-corner-convergence",
   "predecessor": {
     "leaseId": "0741c020-8615-4920-aba4-2b21bcc269b4",
     "generation": 19,
@@ -38,5 +38,6 @@
       "next": "Root observes exact-head CI, performs fresh canonical preflight, and expected-head merge if earned; then MAT gen19 release and bounded issue progress",
       "blocker": "Seat tolerance/bearing and STR adoption, exact components, 3D movement/fire/site/physical verification, ridge/hip/valley and six MAT rows remain open"
     }
-  }
+  },
+  "pr": 1273
 }
