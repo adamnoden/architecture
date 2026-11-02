@@ -9,8 +9,8 @@
     "label": "zerg-rwt28-supported-method"
   },
   "claimedAt": "2026-11-02T14:09:42.576Z",
-  "heartbeatAt": "2026-11-02T14:18:24.729Z",
-  "expiresAt": "2026-11-02T15:03:24.729Z",
+  "heartbeatAt": "2026-11-02T14:36:20.135Z",
+  "expiresAt": "2026-11-02T15:21:20.135Z",
   "branch": "work/rwt28-supported-method-20261102",
   "note": "Develop one supported conventional renewal method with common blocked-water and escape states; preserve no operational acceptance",
   "predecessor": {
@@ -36,7 +36,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "Public checkpoint 155178668ebe87bd2015c1e34933d3e88955a572: whole-roof geometry and conserved water stress, no operation pass.",
-    "next": "Develop complete compatible weather protection, access, water and support details."
+    "evidence": "Public checkpoint fde2be1af91614dc361b1fd4886ec612c9631b3d: temporary canopy, blocked outlet stress and negative first pickup line; no operation pass.",
+    "next": "Resolve supported gantry placement, compatible dry protection and joined water, egress and installation states."
   }
 }
