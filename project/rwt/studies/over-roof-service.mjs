@@ -1,0 +1,27 @@
+/** Dimension and water-budget stress only. No scaffold, drain or weather-system approval. */
+import {readFileSync, writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const root = new URL('../../../', import.meta.url);
+const source = readFileSync(new URL('project/had/studies/open-north-loggia.json', root));
+const blob = createHash('sha1').update(`blob ${source.length}\0`).update(source).digest('hex');
+if (blob !== '25faad2c4d40df2b7da7212f73808843a88d2f52') throw Error('HAD source moved: review this candidate');
+const house = JSON.parse(source);
+if (house.shell !== 12000 || house.roofDevelopment.eavesDatum !== 7100 || house.roofDevelopment.pitch !== 25) throw Error('House geometry moved');
+const width=15.4, bay=2.57, bays=7, length=bay*bays, area=width*length, rate=216;
+const flow=area*rate/3600, ridge=10050+width*1000/2*Math.tan(18*Math.PI/180);
+const result={status:'UNADMITTED geometric and rainfall sensitivity; not an operating method',hadBlob:blob,
+  assumptions:{coverWidthM:width,bayM:bay,bays,lengthM:length,xMm:[-1700,13700],yMm:[-2995,14995],eaveZmm:10050,pitchDegrees:18,beamHeightMm:750,houseShellMm:house.shell},
+  derived:{horizontalAreaM2:area,flowLitresPerSecond:flow,existingLocalEventLitresPerSecond:3.60375,extraCoveredGroundM2:area-144,ridgeZmm:ridge,assumedBeamLowerEnvelopeZmm:9300,sourceHouseRidgeZmm:8090.903773579372,assumedRidgeGapMm:9300-8090.903773579372},
+  limits:['Roof outline is a trial, not authenticated support axes or net sheet dimensions','Seven bays and all bracing, connections, eave extensions and actual height require OEM confirmation','No site boundary, load path, egress or discharge established','Water rates are horizontal uniform-rain sensitivity, not hydraulic sizing']};
+const lines=[
+ ['Source house','12,000 × 12,000 mm; court 3,500 × 3,500 mm'],
+ ['Trial cover','15,400 × 17,990 mm; 7 × 2,570 mm bays'],
+ ['Plan margin','1,700 mm sides; 2,995 mm ends, before supports and ties'],
+ ['216 mm/h','277.046 m² → 16.62276 L/s; no roof/court double-count'],
+ ['Height trial','+10,050 eave; +12,552 ridge; assumed beam underside +9,300'],
+ ['Precondition','OEM span, tied scaffold, wind, dry-state and discharge unproved']];
+const rect=(x,y,w,h,c)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" ${c}/>`;
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 1680 1188"><rect width="1680" height="1188" fill="white"/><g font-family="Arial,sans-serif" fill="#20343e"><text x="45" y="52" font-size="29" font-weight="bold">Removable over-roof: bounded geometric and rainfall trial</text><text x="45" y="86" font-size="18">Unadmitted candidate: plan is sheet reservation, not structural axes, scaffold or site boundary</text>${rect(110,140,616,720,'fill="#e5f1f5" stroke="#24578c" stroke-width="3"')}${rect(178,260,480,480,'fill="#fff" stroke="#3c4b50" stroke-width="3"')}${rect(348,430,140,140,'fill="#dbeacb" stroke="#617448" stroke-width="2"')}<text x="280" y="242" font-size="20">12 m house</text><text x="351" y="505" font-size="16">court</text><text x="208" y="897" font-size="20">Trial cover: 15.40 × 17.99 m</text><text x="210" y="930" font-size="18">End and side gutter / site route not drawn</text><text x="820" y="160" font-size="22" font-weight="bold">Finite arithmetic; not a joined system</text>${lines.map((a,i)=>`<text x="820" y="${210+i*83}" font-size="19" font-weight="bold">${a[0]}</text><text x="820" y="${238+i*83}" font-size="18">${a[1].replaceAll('&','&amp;')}</text>`).join('')}<text x="45" y="1040" font-size="20">Uncontrolled condensate, side rain, blocked drains and occupied-house protection still require a compatible complete assembly.</text><text x="45" y="1080" font-size="20">No operational, structural, hydraulic, egress or material-policy approval is implied.</text></g></svg>`;
+const outputs=[['project/rwt/studies/over-roof-service.json',JSON.stringify(result,null,2)+'\n'],['project/rwt/studies/over-roof-service.svg',svg+'\n']];
+for(const [path,contents] of outputs){const url=new URL(path,root);if(process.argv.includes('--check')){if(readFileSync(url,'utf8')!==contents)throw Error(`Stale: ${path}`)}else writeFileSync(url,contents)}
+console.log(`Over-roof ${process.argv.includes('--check')?'check':'generated'}: ${area.toFixed(3)} m², ${flow.toFixed(5)} L/s`);
