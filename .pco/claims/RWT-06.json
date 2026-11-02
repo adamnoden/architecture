@@ -9,8 +9,8 @@
     "label": "zerg-rwt28-supported-method"
   },
   "claimedAt": "2026-11-02T14:09:42.576Z",
-  "heartbeatAt": "2026-11-02T14:09:42.576Z",
-  "expiresAt": "2026-11-02T14:54:42.576Z",
+  "heartbeatAt": "2026-11-02T14:18:24.729Z",
+  "expiresAt": "2026-11-02T15:03:24.729Z",
   "branch": "work/rwt28-supported-method-20261102",
   "note": "Develop one supported conventional renewal method with common blocked-water and escape states; preserve no operational acceptance",
   "predecessor": {
@@ -34,5 +34,9 @@
       "next": "Integration owner checks exact-head CI and preflights before merge",
       "blocker": "Exact-head CI pending; RWT06 and operation unaccepted"
     }
+  },
+  "checkpoint": {
+    "evidence": "Public checkpoint 155178668ebe87bd2015c1e34933d3e88955a572: whole-roof geometry and conserved water stress, no operation pass.",
+    "next": "Develop complete compatible weather protection, access, water and support details."
   }
 }
