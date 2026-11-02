@@ -1,0 +1,439 @@
+{
+  "cases": {
+    "down": {
+      "faces": [
+        {
+          "eave_end_reactions_kN": [
+            7.948916269610636,
+            14.13724612578685
+          ],
+          "face": "south",
+          "inner_triangle_force_kN": 17.02771875,
+          "inner_valley_reaction_kN": 8.513859375,
+          "outer_eave_reaction_kN": 22.086162395397487,
+          "outer_rectangle_force_kN": 34.0554375,
+          "outer_ridge_reaction_kN": 11.969275104602508,
+          "ridge_apex_reaction_kN": 10.348269305639736,
+          "ridge_post_reaction_kN": 10.13486517396277,
+          "valley_seat_reactions_kN": [
+            0.5759026216004182,
+            7.937956753399581
+          ]
+        },
+        {
+          "eave_end_reactions_kN": [
+            -0.3333760361569431,
+            22.41953843155443
+          ],
+          "face": "west",
+          "inner_triangle_force_kN": 17.02771875,
+          "inner_valley_reaction_kN": 8.513859375,
+          "outer_eave_reaction_kN": 22.086162395397487,
+          "outer_rectangle_force_kN": 34.0554375,
+          "outer_ridge_reaction_kN": 11.969275104602508,
+          "ridge_apex_reaction_kN": -3.6689941086829396,
+          "ridge_post_reaction_kN": 24.152128588285446,
+          "valley_seat_reactions_kN": [
+            0.5759026216004182,
+            7.937956753399581
+          ]
+        }
+      ],
+      "first_moment_x_kNm": 289.47121875,
+      "first_moment_y_kNm": 289.47121874999993,
+      "proposed_ground_head_jamb_statics": {
+        "cloak_east_y1600_2600": {
+          "left": 4.814060957632316,
+          "right": 5.320804216330455
+        },
+        "study_L_north_x1250_2350": {
+          "left": 4.940208120331115,
+          "right": 19.211920467954332
+        }
+      },
+      "terminal_actions": [
+        {
+          "destination": "SW station, prior strips",
+          "force_kN": 24.472679009779792,
+          "xy_mm": [
+            435.5845517224765,
+            416.55140498545757
+          ]
+        },
+        {
+          "destination": "court diagonal seat, prior strips",
+          "force_kN": 1.5725102573198069,
+          "xy_mm": [
+            3917.5,
+            3917.5
+          ]
+        },
+        {
+          "destination": "south eave x4800, prior strips",
+          "force_kN": 3.000271115240577,
+          "xy_mm": [
+            4800,
+            332.5
+          ]
+        },
+        {
+          "destination": "west eave y3247.5, prior strips",
+          "force_kN": 4.757977117659821,
+          "xy_mm": [
+            332.5,
+            3247.5
+          ]
+        },
+        {
+          "destination": "SW station, prior tips",
+          "force_kN": 0.28240167364016744,
+          "xy_mm": [
+            332.5,
+            332.5
+          ]
+        },
+        {
+          "destination": "court diagonal seat, prior tips",
+          "force_kN": -0.03040167364016737,
+          "xy_mm": [
+            3917.5,
+            3917.5
+          ]
+        },
+        {
+          "destination": "south eave SW saddle",
+          "force_kN": 7.948916269610636,
+          "xy_mm": [
+            597.5,
+            332.5
+          ]
+        },
+        {
+          "destination": "south eave x4800",
+          "force_kN": 14.13724612578685,
+          "xy_mm": [
+            4800,
+            332.5
+          ]
+        },
+        {
+          "destination": "south ridge post x4800",
+          "force_kN": 10.13486517396277,
+          "xy_mm": [
+            4800,
+            2125
+          ]
+        },
+        {
+          "destination": "south diagonal SW",
+          "force_kN": 5.750037274420286,
+          "xy_mm": [
+            332.5,
+            332.5
+          ]
+        },
+        {
+          "destination": "south diagonal court",
+          "force_kN": 13.112091406219449,
+          "xy_mm": [
+            3917.5,
+            3917.5
+          ]
+        },
+        {
+          "destination": "west eave SW saddle",
+          "force_kN": -0.3333760361569431,
+          "xy_mm": [
+            332.5,
+            597.5
+          ]
+        },
+        {
+          "destination": "west eave y3247.5",
+          "force_kN": 22.41953843155443,
+          "xy_mm": [
+            332.5,
+            3247.5
+          ]
+        },
+        {
+          "destination": "west ridge post y3247.5",
+          "force_kN": 24.152128588285446,
+          "xy_mm": [
+            2125,
+            3247.5
+          ]
+        },
+        {
+          "destination": "west diagonal SW",
+          "force_kN": -1.2585944327410516,
+          "xy_mm": [
+            332.5,
+            332.5
+          ]
+        },
+        {
+          "destination": "west diagonal court",
+          "force_kN": 6.103459699058111,
+          "xy_mm": [
+            3917.5,
+            3917.5
+          ]
+        }
+      ],
+      "total_kN": 136.22175
+    },
+    "uplift": {
+      "faces": [
+        {
+          "eave_end_reactions_kN": [
+            -2.8388986677180843,
+            -5.049016473495304
+          ],
+          "face": "south",
+          "inner_triangle_force_kN": -6.081328125,
+          "inner_valley_reaction_kN": -3.0406640625,
+          "outer_eave_reaction_kN": -7.887915141213389,
+          "outer_rectangle_force_kN": -12.16265625,
+          "outer_ridge_reaction_kN": -4.2747411087866105,
+          "ridge_apex_reaction_kN": -3.695810466299906,
+          "ridge_post_reaction_kN": -3.6195947049867043,
+          "valley_seat_reactions_kN": [
+            -0.20567950771443508,
+            -2.834984554785565
+          ]
+        },
+        {
+          "eave_end_reactions_kN": [
+            0.11906287005605112,
+            -8.00697801126944
+          ],
+          "face": "west",
+          "inner_triangle_force_kN": -6.081328125,
+          "inner_valley_reaction_kN": -3.0406640625,
+          "outer_eave_reaction_kN": -7.887915141213389,
+          "outer_rectangle_force_kN": -12.16265625,
+          "outer_ridge_reaction_kN": -4.2747411087866105,
+          "ridge_apex_reaction_kN": 1.3103550388153358,
+          "ridge_post_reaction_kN": -8.625760210101944,
+          "valley_seat_reactions_kN": [
+            -0.20567950771443508,
+            -2.834984554785565
+          ]
+        }
+      ],
+      "first_moment_x_kNm": -103.382578125,
+      "first_moment_y_kNm": -103.382578125,
+      "proposed_ground_head_jamb_statics": {
+        "cloak_east_y1600_2600": {
+          "left": -1.7193074848686845,
+          "right": -1.9002872201180199
+        },
+        "study_L_north_x1250_2350": {
+          "left": -1.764360042975398,
+          "right": -6.861400167126546
+        }
+      },
+      "terminal_actions": [
+        {
+          "destination": "SW station, prior strips",
+          "force_kN": -8.740242503492782,
+          "xy_mm": [
+            435.5845517224765,
+            416.5514049854576
+          ]
+        },
+        {
+          "destination": "court diagonal seat, prior strips",
+          "force_kN": -0.5616108061856455,
+          "xy_mm": [
+            3917.5,
+            3917.5
+          ]
+        },
+        {
+          "destination": "south eave x4800, prior strips",
+          "force_kN": -1.0715253983002062,
+          "xy_mm": [
+            4800,
+            332.5
+          ]
+        },
+        {
+          "destination": "west eave y3247.5, prior strips",
+          "force_kN": -1.699277542021365,
+          "xy_mm": [
+            332.5,
+            3247.5
+          ]
+        },
+        {
+          "destination": "SW station, prior tips",
+          "force_kN": -0.10085774058577406,
+          "xy_mm": [
+            332.5,
+            332.5
+          ]
+        },
+        {
+          "destination": "court diagonal seat, prior tips",
+          "force_kN": 0.010857740585774057,
+          "xy_mm": [
+            3917.5,
+            3917.5
+          ]
+        },
+        {
+          "destination": "south eave SW saddle",
+          "force_kN": -2.8388986677180843,
+          "xy_mm": [
+            597.5,
+            332.5
+          ]
+        },
+        {
+          "destination": "south eave x4800",
+          "force_kN": -5.049016473495304,
+          "xy_mm": [
+            4800,
+            332.5
+          ]
+        },
+        {
+          "destination": "south ridge post x4800",
+          "force_kN": -3.6195947049867043,
+          "xy_mm": [
+            4800,
+            2125
+          ]
+        },
+        {
+          "destination": "south diagonal SW",
+          "force_kN": -2.053584740864388,
+          "xy_mm": [
+            332.5,
+            332.5
+          ]
+        },
+        {
+          "destination": "south diagonal court",
+          "force_kN": -4.682889787935518,
+          "xy_mm": [
+            3917.5,
+            3917.5
+          ]
+        },
+        {
+          "destination": "west eave SW saddle",
+          "force_kN": 0.11906287005605112,
+          "xy_mm": [
+            332.5,
+            597.5
+          ]
+        },
+        {
+          "destination": "west eave y3247.5",
+          "force_kN": -8.00697801126944,
+          "xy_mm": [
+            332.5,
+            3247.5
+          ]
+        },
+        {
+          "destination": "west ridge post y3247.5",
+          "force_kN": -8.625760210101944,
+          "xy_mm": [
+            2125,
+            3247.5
+          ]
+        },
+        {
+          "destination": "west diagonal SW",
+          "force_kN": 0.4494980116932328,
+          "xy_mm": [
+            332.5,
+            332.5
+          ]
+        },
+        {
+          "destination": "west diagonal court",
+          "force_kN": -2.1798070353778973,
+          "xy_mm": [
+            3917.5,
+            3917.5
+          ]
+        }
+      ],
+      "total_kN": -48.650625
+    }
+  },
+  "failure_and_holds": [
+    "Ridge intersections lie above ground door openings: direct uninterrupted pier route fails. Jamb axes are proposed outside rough openings; wall/arch, reinforcement and load transfer must be designed.",
+    "Ridge-post, cap, valley/apex node, diagonal continuity and west-ring extension have no finite 3D joint or steel clearance proof. The hip rises to the ridge and the valley falls to court; an A\u2013B straight member is geometrically wrong. The kinked two-member node and its signed horizontal thrust/tie remain undesigned.",
+    "Eave-axis to weather edge is 532.5 mm; this exceeds the previous 500 mm purlin-cantilever comparator by 32.5 mm and needs a separate support or revised member design.",
+    "Wall head/first slab transfer, jamb footings, wind/diaphragm and signed tie/hold-down paths remain unproved.",
+    "Static force and first-moment balance does not establish stiffness, load distribution, capacities or constructibility. Adjacent roof areas and their endpoint actions are excluded.",
+    "No physical roof, water, thermal, fire, service, ground or site qualification is implied."
+  ],
+  "geometry": {
+    "SW_diagonal_seats_mm": [
+      [
+        332.5,
+        332.5
+      ],
+      [
+        3917.5,
+        3917.5
+      ]
+    ],
+    "eave_axis_to_weather_edge_mm": 532.5,
+    "excess_over_prior_500mm_cantilever_mm": 32.5,
+    "illustrative_upper_wall_top_z_mm": 6550,
+    "nominal_post_core_edge_each_mm": 10,
+    "outer_eave_axes_mm": 332.5,
+    "ridge_apex_mm": [
+      2125,
+      2125
+    ],
+    "ridge_centre_z_mm": 7582.577566313353,
+    "scope": "Ridge post and extended eave ring are unqualified geometric candidates. z6550 is a local 3100 wall-height comparator; actual seat, head and continuity through floors must be authored. A 120 post is not a sized member.",
+    "south_ridge_intersection_mm": [
+      4800,
+      2125
+    ],
+    "square_mm": [
+      -200,
+      -200,
+      4450,
+      4450
+    ],
+    "trial_SHS_ridge_post_mm": [
+      120,
+      120
+    ],
+    "trial_clear_post_length_mm": 972.5775663133527,
+    "trial_post_top_z_mm": 7522.577566313353,
+    "upper_wall_core_mm": 140,
+    "west_rectangle_boundary_y_mm": 4450,
+    "west_ridge_intersection_mm": [
+      2125,
+      3247.5
+    ],
+    "west_ring_required_extension_to_boundary_mm": 1202.5,
+    "west_ring_source_ends_y_mm": 3247.5
+  },
+  "partition_m2": {
+    "inner_two_valley_triangles": 5.405625,
+    "outer_two_original_triangles": 5.405625,
+    "outer_two_rectangles": 10.81125,
+    "total": 21.6225
+  },
+  "sources": {
+    "compiler/reference-house/georgian/roof-surfaces.ts": "cd2e3becfe2a206679e563ceade9128f739b525fef4b2023e3c0cf0d7d2583af",
+    "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/sw-corner-station.json": "d3f65aa4866b0137f94a03fd3ff61089a782106c181fcfc1b16caec6c0f82d47",
+    "project/str/studies/sw-grid-arm-join.json": "ba4176d5cb1c39bef27d7011a34d03dd4f72a708b26050cb1a4ac9036e4df2ec"
+  },
+  "status": "full region static route challenger; no seat, capacity, foundation or HOUSE acceptance"
+}
