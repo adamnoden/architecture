@@ -1,11 +1,11 @@
-import { execFileSync } from 'node:child_process'
+import { runGit } from '../project/control/git-command.js'
 import { existsSync, readFileSync, renameSync, writeFileSync, realpathSync } from 'node:fs'
 import { dirname, isAbsolute, relative, resolve, sep } from 'node:path'
 import { controlNodes } from '../project/control/nodes/index.js'
 import { canonicalNodeId } from '../project/control/claims.js'
 import { parseSwarmRun, progressSnapshot, renderRunReport, type RunCloseout, type SwarmRun } from '../project/control/run-report.js'
 
-const git = (args: string[]) => execFileSync('git', args, { encoding:'utf8',timeout:30000,stdio:['ignore','pipe','pipe'] }).trim()
+const git = (args: string[]) => runGit(args).trim()
 function flags(args: string[]) {
   const result = new Map<string,string>()
   for (let i=0;i<args.length;i+=2) {
@@ -59,16 +59,16 @@ function main() {
     return
   }
   const run=parseSwarmRun(readFileSync(path,'utf8')), current=currentSnapshot()
-  execFileSync('git',['merge-base','--is-ancestor',run.baseline.ref,current.ref],{stdio:'ignore'})
+  runGit(['merge-base','--is-ancestor',run.baseline.ref,current.ref])
   if(command==='record') {
     const node=canonicalNodeId(required(f,'node'),controlNodes), pr=required(f,'pr'), merge=required(f,'merge')
     if(!/^[a-f0-9]{40}$/.test(merge))throw new Error('Use the full merge SHA')
     if(run.merges.some(m=>m.node===node))throw new Error('Packet already recorded in this run')
     if(run.baseline.nodes.find(n=>n.id===node)?.lifecycle==='complete')throw new Error('Packet was already complete at run start; do not claim it as new session output')
     if(current.nodes.find(n=>n.id===node)?.lifecycle!=='complete')throw new Error('Packet is not complete on current main')
-    execFileSync('git',['merge-base','--is-ancestor',merge,current.ref],{stdio:'ignore'})
+    runGit(['merge-base','--is-ancestor',merge,current.ref])
     let predatesBaseline=false
-    try { execFileSync('git',['merge-base','--is-ancestor',merge,run.baseline.ref],{stdio:'ignore'}); predatesBaseline=true } catch { /* newer merge */ }
+    try { runGit(['merge-base','--is-ancestor',merge,run.baseline.ref]); predatesBaseline=true } catch { /* newer merge */ }
     if(predatesBaseline)throw new Error('Merge predates the run baseline; do not attribute historical work to this session')
     // The agent must also verify the PR's merged state and node ownership before recording.
     run.merges.push({node,pr,merge});save(path,run);console.log(`Recorded ${node}`)

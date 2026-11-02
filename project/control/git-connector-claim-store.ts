@@ -1,5 +1,5 @@
 import { createHash, randomUUID } from 'node:crypto'
-import { execFileSync } from 'node:child_process'
+import { runGit } from './git-command.js'
 import { existsSync, readFileSync, realpathSync, renameSync, writeFileSync } from 'node:fs'
 import { isAbsolute, join, relative, sep } from 'node:path'
 import { setTimeout as delay } from 'node:timers/promises'
@@ -78,7 +78,7 @@ export class GitConnectorClaimStore implements ClaimStore {
   }
 }
 export function readGitClaimSnapshot(repoRoot: string): ClaimGitSnapshot {
-  const git = (args: string[]) => execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8', timeout: 30000, maxBuffer: 4 * 1024 * 1024, stdio: ['ignore','pipe','pipe'] }).trim()
+  const git = (args: string[]) => runGit(args, { cwd: repoRoot, maxBuffer: 4 * 1024 * 1024 }).trim()
   try {
     // FETCH_HEAD is shared mutable state: an overlapping main fetch can replace it.
     git(['fetch','--no-write-fetch-head','origin',`refs/heads/${claimsBranch}:refs/remotes/origin/${claimsBranch}`,'--quiet'])
@@ -91,7 +91,7 @@ export function readGitClaimSnapshot(repoRoot: string): ClaimGitSnapshot {
       const match = line.match(/^100644 blob ([a-f0-9]{40})\t(.+)$/)
       if (!match) throw new Error('Unsupported claim tree entry')
       const [,sha,path] = match
-      const content = execFileSync('git',['show',`${ref}:${path}`],{cwd:repoRoot,encoding:'utf8',timeout:30000,maxBuffer:1024*1024})
+      const content = runGit(['show',`${ref}:${path}`],{cwd:repoRoot,maxBuffer:1024*1024})
       return {path,sha,content}
     })
     return { observedAt, files }
