@@ -9,8 +9,8 @@
     "label": "zerg-structure-corner"
   },
   "claimedAt": "2026-11-02T10:56:48.149Z",
-  "heartbeatAt": "2026-11-02T11:06:41.097Z",
-  "expiresAt": "2026-11-02T11:51:41.097Z",
+  "heartbeatAt": "2026-11-02T11:11:14.097Z",
+  "expiresAt": "2026-11-02T11:56:14.097Z",
   "branch": "work/zerg-str-sw-corner-20261102",
   "predecessor": {
     "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
@@ -36,8 +36,8 @@
   },
   "pr": 1269,
   "checkpoint": {
-    "evidence": "Draft PR #1269 head 484a5710823240b42151df6d3016f4b182fe095e tree ab97ed9146fe161d1b82c4de6306929bab5d7a37; SW pier and continuous ties with signed equilibrium, local reproducers and rendered schematic",
-    "next": "Independent structural and MAT interface challenge; reconcile current main, exact-head CI and preflight before publication",
-    "blocker": "Actual hip/seat, welds, anchors, cage, thermal/DPC/gas joins, diaphragm and site support remain unqualified; STR-HOUSE open"
+    "evidence": "Draft PR #1269 head 1b4983136ceda69183926f322567c1f80678ee3c tree 583dcc57dc213afbbda5a28d7fd326658da8a0f4; independent bounded structural PASS, right-handed moment signs and source reproducers verified",
+    "next": "Reconcile successor MAT/HAD source pins with exact invariance evidence, then obtain narrow review, exact-head CI and publication preflight",
+    "blocker": "Actual corner roof, welds, anchor/cage, band sealing, diaphragm and site support remain unqualified; STR-HOUSE open"
   }
 }
