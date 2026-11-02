@@ -840,6 +840,11 @@
       "face_seat_gap_mm": 48.11986169658849,
       "first_x500_clear_between_support_envelopes_mm": 2.647186257614294,
       "first_x500_decision": "Reject two independent seats; hip-rooted cantilever, eave contact omitted, requires moment connection.",
+      "generic_purlin_section_mm": [
+        120,
+        60,
+        4
+      ],
       "hip_plan_face_offset_mm": 84.8528137423857,
       "outer_edge_extension_mm": 200,
       "purlin_SLS_elastic_tip_mm": 0.03473251333728512,
@@ -857,10 +862,10 @@
         2125
       ],
       "purlin_screen_scope": "Trial full UDL, gross major axis and fixed-end geometry only; weld/cleat, torsion, actual loaded rows, second axis, restraints and deflection limits are not qualified.",
-      "purlin_section_mm": [
+      "q450_purlin_section_mm": [
         120,
         60,
-        4
+        5
       ],
       "remaining_nominal_shim_clear_mm": 38.11986169658849,
       "scope": "Below AVCL/glass. Moment connection, member resistance, steel torsion, lateral restraints, penetrations and exact rail/purlin geometry unproved.",
@@ -949,7 +954,7 @@
       "purlin_section_mm": [
         120,
         60,
-        4
+        5
       ],
       "purlin_to_hip_centreline_gap_mm": 43.55226180216323,
       "purlin_to_hip_far_face_gap_mm": 23.76850337012615,
