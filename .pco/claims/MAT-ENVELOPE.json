@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 19,
-  "state": "released",
-  "leaseId": "0741c020-8615-4920-aba4-2b21bcc269b4",
+  "generation": 20,
+  "state": "claimed",
+  "leaseId": "cb17698a-faa2-4295-b195-ad99536bf953",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg7-envelope-joined-edge"
+    "label": "zerg7-envelope-corner-junction"
   },
-  "claimedAt": "2026-11-02T08:48:53.526Z",
-  "heartbeatAt": "2026-11-02T10:47:01.911Z",
-  "expiresAt": "2026-11-02T10:47:01.911Z",
-  "branch": "work/zerg-recovery-roof-export",
+  "claimedAt": "2026-11-02T10:51:13.775Z",
+  "heartbeatAt": "2026-11-02T10:51:13.775Z",
+  "expiresAt": "2026-11-02T11:36:13.775Z",
+  "checkpoint": {
+    "evidence": "Verified merged MAT19 PR #1263 main df410b141fb77257dcbe825de5d20287144d75ee tree 10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; fresh isolated base; no MAT20 source yet",
+    "next": "Coordinate actual SW corner station x/y332.5 with STR signed gravity/uplift/shear route; develop joined thermal/moisture/movement/material/buildability packet",
+    "blocker": "Actual STR station dimensions/contact and lateral connector paths pending; site/material/physical admission not earned"
+  },
+  "branch": "work/zerg7-envelope-corner-junction",
   "predecessor": {
-    "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
-    "generation": 18,
-    "branch": "work/zerg-recovery-engineering-integration",
-    "pr": 1254,
+    "leaseId": "0741c020-8615-4920-aba4-2b21bcc269b4",
+    "generation": 19,
+    "branch": "work/zerg-recovery-roof-export",
+    "pr": 1263,
     "checkpoint": {
-      "evidence": "Shared PR #1254 head fb2f1271d609dceb1554255a9cf621337a3fa9aa tree aaed5e9f4fd8a9ed9f4c757326a54214996be114 on main d3f254c0; four MAT blobs exactly match independently reviewed thermal head4a68d3a5/treece4f685e. Real source parents preserved. Combined thermal/IAS/reaction/default-HAD checks and auth/typecheck/repo/diff pass per integration owner.",
-      "next": "Root observes exact-head CI and runs fresh canonical merge-check against shared PR #1254 head, expected-head merges if earned, then releases MAT lease. Six MAT-ENVELOPE exits remain open.",
-      "blocker": "Dry2D screen does not admit dynamic moisture, actual classified ceiling properties, 3D frame/post/collar heat, complete fire/material/site/physical assembly; STR actual collector offset shear needs links and joint proof."
+      "evidence": "Shared draft PR #1263 head 247608959f4557c1974a941a5a48708939cd1788 tree 10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; all nine MAT19 blobs exact to bounded-PASS reviewed PR #1259 head 2c1c5502; six old HAD outputs unchanged; root generator/repository checks pass",
+      "next": "Root observes exact-head CI, performs fresh canonical preflight, and expected-head merge if earned; then MAT gen19 release and bounded issue progress",
+      "blocker": "Seat tolerance/bearing and STR adoption, exact components, 3D movement/fire/site/physical verification, ridge/hip/valley and six MAT rows remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
-    "generation": 18,
-    "branch": "work/zerg-recovery-engineering-integration",
-    "pr": 1254,
+    "leaseId": "0741c020-8615-4920-aba4-2b21bcc269b4",
+    "generation": 19,
+    "branch": "work/zerg-recovery-roof-export",
+    "pr": 1263,
     "checkpoint": {
-      "evidence": "Shared PR #1254 head fb2f1271d609dceb1554255a9cf621337a3fa9aa tree aaed5e9f4fd8a9ed9f4c757326a54214996be114 on main d3f254c0; four MAT blobs exactly match independently reviewed thermal head4a68d3a5/treece4f685e. Real source parents preserved. Combined thermal/IAS/reaction/default-HAD checks and auth/typecheck/repo/diff pass per integration owner.",
-      "next": "Root observes exact-head CI and runs fresh canonical merge-check against shared PR #1254 head, expected-head merges if earned, then releases MAT lease. Six MAT-ENVELOPE exits remain open.",
-      "blocker": "Dry2D screen does not admit dynamic moisture, actual classified ceiling properties, 3D frame/post/collar heat, complete fire/material/site/physical assembly; STR actual collector offset shear needs links and joint proof."
+      "evidence": "Shared draft PR #1263 head 247608959f4557c1974a941a5a48708939cd1788 tree 10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; all nine MAT19 blobs exact to bounded-PASS reviewed PR #1259 head 2c1c5502; six old HAD outputs unchanged; root generator/repository checks pass",
+      "next": "Root observes exact-head CI, performs fresh canonical preflight, and expected-head merge if earned; then MAT gen19 release and bounded issue progress",
+      "blocker": "Seat tolerance/bearing and STR adoption, exact components, 3D movement/fire/site/physical verification, ridge/hip/valley and six MAT rows remain open"
     }
-  },
-  "checkpoint": {
-    "evidence": "Shared draft PR #1263 head 247608959f4557c1974a941a5a48708939cd1788 tree 10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; all nine MAT19 blobs exact to bounded-PASS reviewed PR #1259 head 2c1c5502; six old HAD outputs unchanged; root generator/repository checks pass",
-    "next": "Root observes exact-head CI, performs fresh canonical preflight, and expected-head merge if earned; then MAT gen19 release and bounded issue progress",
-    "blocker": "Seat tolerance/bearing and STR adoption, exact components, 3D movement/fire/site/physical verification, ridge/hip/valley and six MAT rows remain open"
-  },
-  "pr": 1263,
-  "releasedAt": "2026-11-02T10:47:01.911Z",
-  "releaseReason": "handoff"
+  }
 }
