@@ -9,11 +9,11 @@
     "label": "zerg-services-joined-system"
   },
   "claimedAt": "2026-11-02T11:27:42.220Z",
-  "heartbeatAt": "2026-11-02T11:54:53.374Z",
-  "expiresAt": "2026-11-02T12:39:53.374Z",
+  "heartbeatAt": "2026-11-02T12:13:47.917Z",
+  "expiresAt": "2026-11-02T12:58:47.917Z",
   "checkpoint": {
-    "evidence": "Recovery verified remote2d69cbbab0933a4c988653aa5d6413cc8d8558c4 tree60e78db67ee402d5cd0d034ce73f8f8874470bb0 equals local11d044fa; unreviewed joined assisted intake/heat WIP.",
-    "next": "Develop source-compatible compact OEM hood/contact family and complete system redesign; retain minus-four protection and all factory modes."
+    "evidence": "Verified remote0a843fc3020e17de379fb83ce567c5178ee535f2/tree daa373e6a59a171804c8fef2aefb4e1402f2bd77 equals localaaef14c8: compactNovy810+twoCV20 tempered-air candidate,256mode/lowline/fault/route checks pass; unreviewed WIP, no system admission.",
+    "next": "Resolve actual990033 liveinhibit/control/transient, installedfullkitfan/loss, completefirstrelease/material and net55degree plant join; rootreview before any PR."
   },
   "branch": "work/zerg11-services-joined-system",
   "predecessor": {
