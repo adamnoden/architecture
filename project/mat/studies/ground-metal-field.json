@@ -31,9 +31,13 @@
     "scope": "Bounding shape only: door/threshold returns, service openings, joints, structural bands, support cuts and actual coverage are not laid out. This is not a cut list or net quantity."
   },
   "datum_mm": {
-    "field": [
+    "earlierFieldControl": [
       -383,
       -382
+    ],
+    "preferredField": [
+      -381,
+      -380
     ],
     "cornerPatch": [
       -383,
