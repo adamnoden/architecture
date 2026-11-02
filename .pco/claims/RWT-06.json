@@ -9,11 +9,11 @@
     "label": "zerg-rwt06-high-eave-continuation"
   },
   "claimedAt": "2026-11-02T09:11:24.186Z",
-  "heartbeatAt": "2026-11-02T10:41:37.706Z",
-  "expiresAt": "2026-11-02T11:26:37.706Z",
+  "heartbeatAt": "2026-11-02T10:46:41.572Z",
+  "expiresAt": "2026-11-02T11:31:41.572Z",
   "checkpoint": {
-    "evidence": "Shared PR1263 head247608959f4557c1974a941a5a48708939cd1788 tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; root confirms all six RWT negative-study blobs match reviewed PR1258 b616; RWT25 prior renewal/readback39c6e229 verified.",
-    "next": "Root sole CI/preflight/merger for shared PR1263. Preserve rejected-method status. After verified shared merge, canonically release25 and acquire fresh RWT06 before source-bound temporary-receiver and live reversal design."
+    "evidence": "Root verified PR1263 merged as maindf410b141fb77257dcbe825de5d20287144d75ee tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; PR1258 provider merged true; CI41430725270 attempt2 all success; exact-head RWT25 publication preflight10:44:55.637Z.",
+    "next": "Release completed frozen packet25 canonically; acquire fresh directed RWT06 generation from verified main before implementing constructive live temporary receiver/reversal. RWT06 remains planned, actual method rejected and downstream holds unchanged."
   },
   "branch": "work/zerg-recovery-roof-export",
   "predecessor": {
@@ -39,5 +39,5 @@
     }
   },
   "pr": 1263,
-  "note": "Root delegated controller for frozen RWT25 negative-study integration only; source remains six reviewed blobs, no constructive design writes under25."
+  "note": "Frozen RWT25 negative study integrated; root verified merge. Canonical completion checkpoint before release; no positive receiver method or RWT06 lifecycle completion."
 }
