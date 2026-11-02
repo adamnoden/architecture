@@ -11,10 +11,10 @@ jobs:
   preflight:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out trusted current main control source
+      - name: Check out exact PR candidate with canonical unchanged control source
         uses: actions/checkout@v5
         with:
-          ref: main
+          ref: work/mvb-chat-6585617535
           fetch-depth: 0
           persist-credentials: false
       - name: Install Node
