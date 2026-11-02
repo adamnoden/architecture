@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 9,
-  "state": "released",
-  "leaseId": "9edad0b3-e4cf-4f4c-9d9b-3b13e264c6eb",
+  "generation": 10,
+  "state": "claimed",
+  "leaseId": "0ad30805-f485-47f6-8a0a-950afc272d5a",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg4-whole-house-services"
+    "label": "zerg5-services-continuation"
   },
-  "claimedAt": "2026-11-01T21:02:38.591Z",
-  "heartbeatAt": "2026-11-02T01:22:52.472Z",
-  "expiresAt": "2026-11-02T01:22:52.472Z",
-  "branch": "work/zerg4-whole-house-services",
+  "claimedAt": "2026-11-02T01:25:13.373Z",
+  "heartbeatAt": "2026-11-02T01:25:13.373Z",
+  "expiresAt": "2026-11-02T02:10:13.373Z",
+  "checkpoint": {
+    "evidence": "PR1234 merged main0bba22cc/tree1df93a83; gen9 released exact CAS/readback; timed-out initial claim left runtime released9 unchanged.",
+    "next": "Close bounded final handling/source join and stale65L narrative against authoritative HAD; preserve reviewed baseline limits.",
+    "blocker": "No node completion or whole-house admission; handling release/support research remains an explicit continuation."
+  },
+  "branch": "work/zerg5-services-continuation",
   "predecessor": {
-    "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
-    "generation": 8,
-    "branch": "work/zerg3-services-interiors-20261101",
-    "pr": 1232,
+    "leaseId": "9edad0b3-e4cf-4f4c-9d9b-3b13e264c6eb",
+    "generation": 9,
+    "branch": "work/zerg4-whole-house-services",
+    "pr": 1234,
     "checkpoint": {
-      "evidence": "Shared PR1232 head56db74debbd796894e9e15d79c5b3ed202369e18 tree04c9f3ec20fecb8da36873ffd827e83b7c21f843 preserves explicit services4b7294c5 and interiors source parents. Access independently verified fresh-main combined reproduction and actual renders; exact canonical shared JSON46804460 retained. Commander bounded review passed.",
-      "next": "Sole CI observer access reports exact-head result; root runs both fresh per-node merge preflights and expected-head merge; verify then release.",
-      "blocker": "CI and root final preflights pending. No technical/material/physical acceptance or MAT lifecycle closure."
+      "evidence": "Frozen reviewed source9476f39e/tree1df93a83; independent HADa510 exact service projection949065/907544f8 confirmed, explicit bedroom rewind ledger retained.",
+      "next": "Await root exact-head CI and verified merge; preserve frozen source and bounded continuation holds.",
+      "blocker": "No source blocker in reviewed five-fix delta; root is sole CI observer. Whole-house physical/product/material admission remains unearned."
     }
   },
   "recoverySource": {
-    "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
-    "generation": 8,
-    "branch": "work/zerg3-services-interiors-20261101",
-    "pr": 1232,
+    "leaseId": "9edad0b3-e4cf-4f4c-9d9b-3b13e264c6eb",
+    "generation": 9,
+    "branch": "work/zerg4-whole-house-services",
+    "pr": 1234,
     "checkpoint": {
-      "evidence": "Shared PR1232 head56db74debbd796894e9e15d79c5b3ed202369e18 tree04c9f3ec20fecb8da36873ffd827e83b7c21f843 preserves explicit services4b7294c5 and interiors source parents. Access independently verified fresh-main combined reproduction and actual renders; exact canonical shared JSON46804460 retained. Commander bounded review passed.",
-      "next": "Sole CI observer access reports exact-head result; root runs both fresh per-node merge preflights and expected-head merge; verify then release.",
-      "blocker": "CI and root final preflights pending. No technical/material/physical acceptance or MAT lifecycle closure."
+      "evidence": "Frozen reviewed source9476f39e/tree1df93a83; independent HADa510 exact service projection949065/907544f8 confirmed, explicit bedroom rewind ledger retained.",
+      "next": "Await root exact-head CI and verified merge; preserve frozen source and bounded continuation holds.",
+      "blocker": "No source blocker in reviewed five-fix delta; root is sole CI observer. Whole-house physical/product/material admission remains unearned."
     }
-  },
-  "checkpoint": {
-    "evidence": "Frozen reviewed source9476f39e/tree1df93a83; independent HADa510 exact service projection949065/907544f8 confirmed, explicit bedroom rewind ledger retained.",
-    "next": "Await root exact-head CI and verified merge; preserve frozen source and bounded continuation holds.",
-    "blocker": "No source blocker in reviewed five-fix delta; root is sole CI observer. Whole-house physical/product/material admission remains unearned."
-  },
-  "pr": 1234,
-  "releasedAt": "2026-11-02T01:22:52.472Z",
-  "releaseReason": "handoff"
+  }
 }
