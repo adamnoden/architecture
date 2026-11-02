@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 17,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg7-envelope-recovery"
   },
   "claimedAt": "2026-11-02T07:20:02.264Z",
-  "heartbeatAt": "2026-11-02T07:29:00.070Z",
-  "expiresAt": "2026-11-02T08:14:00.070Z",
+  "heartbeatAt": "2026-11-02T07:35:49.187Z",
+  "expiresAt": "2026-11-02T07:35:49.187Z",
   "branch": "work/zerg7-envelope-air-joins",
   "predecessor": {
     "leaseId": "fc6a0e5c-bc22-43ab-988d-e5f49df36802",
@@ -39,5 +39,7 @@
     "next": "Root to inspect exact-head CI and current main, run fresh canonical merge-check against PR #1246 head, merge if earned, release lease. MAT-ENVELOPE six exits stay open.",
     "blocker": "Structural frame weld/end closure, post and breather collars, movement, joined moisture/thermal and classified ceiling96 perimeter remain open; no whole assembly or material/site/physical admission."
   },
-  "pr": 1246
+  "pr": 1246,
+  "releasedAt": "2026-11-02T07:35:49.187Z",
+  "releaseReason": "handoff"
 }
