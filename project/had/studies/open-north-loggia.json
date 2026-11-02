@@ -1,5 +1,5 @@
 {
-  "status": "ONE INCOMPLETE27DRY/30WET WHOLE-HOUSE TRIAL; explicit failures retained. Prior15control49a44045 preserved. Not adopted.",
+  "status": "SELECT compactB/openNorthloggia for HADarchitecturaldevelopment; HAD architectural layer only. Accepted compiler identity and all named later technical/site duties remain distinct.",
   "startingMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
   "base": {
     "path": "project/str/studies/house-plan.json",
@@ -1994,7 +1994,7 @@
       600
     ],
     "north-cooking-station": [
-      10800,
+      10750,
       10970.5,
       600,
       600
@@ -2004,6 +2004,12 @@
       9025,
       650,
       650
+    ],
+    "service-kitchen-feed-column": [
+      11425,
+      11188,
+      145,
+      224
     ],
     "service-emitter-study-W": [
       429.5,
@@ -2564,7 +2570,6 @@
         ],
         "stageToTemporaryBedGap": 110
       },
-      "southPassageFromActualLeaf8486": 689,
       "southPassage": 664
     },
     "bed4": {
@@ -2919,7 +2924,7 @@
             6283.5
           ],
           "net": 767,
-          "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Final600reach immutable proof pending binding; E20 assembly not qualified"
+          "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Bound to independently reviewed IAS30cf600 proof; E20 assembly, closer force/delay and physical operation remain unqualified"
         }
       }
     ],
@@ -2983,7 +2988,7 @@
         6283.5
       ],
       "net": 767,
-      "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Final600reach immutable proof pending binding; E20 assembly not qualified"
+      "status": "IAS delayed-closer release/wait direction; manual arm/regrip rejected. Bound to independently reviewed IAS30cf600 proof; E20 assembly, closer force/delay and physical operation remain unqualified"
     },
     "serviceBand": [
       11337.5,
@@ -4393,6 +4398,46 @@
       "plant.cylinder.body/station/height/workingEast"
     ]
   },
+  "kitchenOccurrence": {
+    "station": [
+      8700,
+      10970.5,
+      900,
+      600
+    ],
+    "cooking": {
+      "footprint": [
+        10750,
+        10970.5,
+        600,
+        600
+      ],
+      "top": 900,
+      "plinth": 350,
+      "ovenBodyZ": [
+        350,
+        805
+      ],
+      "hobBodyZ": [
+        849,
+        900
+      ]
+    },
+    "retainedFeedColumn": [
+      11425,
+      11188,
+      145,
+      224
+    ],
+    "source": {
+      "commit": "9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2",
+      "path": "project/mat/studies/whole-house-service-baseline.json",
+      "blob": "e827caa8c6c0cfc23bef0f08b3452f57984875d6",
+      "key": "interfaces.kitchenSinkStation.station/cookingStationRewind/retainedFeed.verticalCornerColumn"
+    },
+    "keyedFieldsEqual": true,
+    "scope": "DirectfixedMAT9476 spatialinterface; actualappliance/thermal/ventilation/electrical/installationadmission remainsMAT/IAS."
+  },
   "servicesInterface": {
     "source": {
       "commit": "9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2",
@@ -5372,9 +5417,83 @@
     "trade": "No separateutilityacoustic/privacyclosure; actualclassifiedPlantboundaryandservicepenetrations mustqualify."
   },
   "fullHouseFootprint": {
-    "method": "Positive rectangle overlap of each represented whole furniture/fixture with actual nominal finished walls/receivers, before decorative18skirt. Wall-mounted contact at zero is not counted. No vertical exception silently invented.",
+    "method": "Positive rectangle overlap of every represented furniture/fixture with nominal finished walls/receivers AND represented fixed service solids, before decorative18skirt. Contact at zero is not overlap. No vertical exception is silently invented.",
     "conflicts": [],
+    "fixedServiceSolids": {
+      "GROUND": [
+        "plant-water-reserve",
+        "plant-riser",
+        "pantry-shelf-comparison",
+        "rear-stack",
+        "north-sink-station",
+        "north-cooking-station",
+        "cold-storage",
+        "service-kitchen-feed-column",
+        "service-emitter-study-W",
+        "service-emitter-living-W",
+        "service-emitter-living-N2",
+        "service-emitter-kitchen-E",
+        "service-emitter-utility-E",
+        "service-emitter-plant-N",
+        "service-emitter-protected-G",
+        "service-emitter-guest-WC-E",
+        "plant-primary-buffer-round-bounding600",
+        "plant-controls",
+        "service-utility-washer",
+        "service-utility-sink",
+        "service-utility-rearServiceChase",
+        "service-utility-valveBay",
+        "service-utility-electricalStation",
+        "service-utility-PVinverter"
+      ],
+      "FIRST": [
+        "rear-cabinet",
+        "rear-west-low-box",
+        "family-service-cabinet",
+        "family-local-soil-column",
+        "service-emitter-bed2-S",
+        "service-emitter-bed3-S",
+        "service-emitter-bed4-N",
+        "service-emitter-principal-N",
+        "service-emitter-rear-N",
+        "service-emitter-family-E",
+        "service-emitter-principal-E-high",
+        "service-emitter-protected-F"
+      ]
+    },
     "pass": true
+  },
+  "fixedServiceCollisionRegression": {
+    "source": "Independentwhole-selectionreview ofa510; unchangedMAT9476fixedsolids",
+    "oldCookingPose": [
+      10800,
+      10970.5,
+      600,
+      600
+    ],
+    "oldCollision": {
+      "level": "GROUND",
+      "kind": "fixedServiceSolid",
+      "object": "north-cooking-station",
+      "serviceSolid": "service-emitter-kitchen-E",
+      "overlap": [
+        11370.5,
+        10970.5,
+        29.5,
+        79.5
+      ]
+    },
+    "selectedCookingPose": [
+      10750,
+      10970.5,
+      600,
+      600
+    ],
+    "selectedRadiatorPlanGap": 20.5,
+    "oldPoseFails": true,
+    "selectedPosePasses": true,
+    "pass": true,
+    "scope": "Meaningfulnegativecontrol runs theSAMEgenericfurniture-versus-fixed-service audit overthe oldactualpose; the composedowner-correctedpose mustpass allrepresentedfixedsolids."
   },
   "actions": {
     "method": "Exact Euclidean segment-to-closed-rectangle clearance with a300radius horizontal body proxy. Furniture and finished wall/receiver/post rectangles are obstacles. Ordinary18mm trim is conservatively added to walls/receivers; post trim is excluded from stair-facing side to retain1094bodyterritory and reserved18 on roomside. Every segment tested analytically; no sampling gaps. Not an actual-human, door-force, accessible-route or 3D/headroom admission.",
@@ -10142,6 +10261,7 @@
       "listedSpatial": true,
       "wholeFurnitureWalls": true,
       "servicesKeyedProjection": true,
+      "fixedServiceRegression": true,
       "family600": true,
       "rearRepair": true,
       "fanFields": true,
