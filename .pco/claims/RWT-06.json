@@ -9,8 +9,8 @@
     "label": "issue-comment-6585907015"
   },
   "claimedAt": "2026-11-02T19:06:48.000Z",
-  "heartbeatAt": "2026-11-02T19:06:48.000Z",
-  "expiresAt": "2026-11-02T19:51:48.000Z",
+  "heartbeatAt": "2026-11-02T19:13:31.000Z",
+  "expiresAt": "2026-11-02T19:58:31.000Z",
   "branch": "work/mvb-chat-6585907015",
   "predecessor": {
     "leaseId": "ee7ee1fe-b31f-4b44-a880-d3ffb7791d4b",
@@ -33,5 +33,11 @@
       "next": "Verify exact-head full PR CI; execute fresh native canonical control:merge-check; expected-head merge, then release lease and mark PR1282 superseded.",
       "blocker": "Live temporary roof, weather/condensation, erection/load, court access, blocked-water, complete material and site acceptance unproven."
     }
+  },
+  "pr": 1286,
+  "checkpoint": {
+    "evidence": "PR1286 head 4df0fab35: generator and JSON bound both-end blocked-gutter gross storage (930.9L/112s ideal; 1052.3L/127s generous upper) with regression and explicit overflow requirement.",
+    "next": "Check exact-head CI, obtain fresh native publication preflight, merge with expected SHA, verify main and release current lease.",
+    "blocker": "Full actual eave/support/outfall and independent safe overflow remain unaccepted; RWT-06 stays planned."
   }
 }
