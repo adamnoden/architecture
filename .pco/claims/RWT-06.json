@@ -9,8 +9,8 @@
     "label": "zerg-rwt27-integrated-method"
   },
   "claimedAt": "2026-11-02T12:57:48.300Z",
-  "heartbeatAt": "2026-11-02T13:28:19.180Z",
-  "expiresAt": "2026-11-02T14:13:19.180Z",
+  "heartbeatAt": "2026-11-02T13:54:42.934Z",
+  "expiresAt": "2026-11-02T14:39:42.934Z",
   "branch": "work/rwt27-integrated-method-20261102",
   "note": "Develop integrated conventional access, lifting and protected ground wet route; preserve RWT06 planned and physical gates",
   "predecessor": {
@@ -36,8 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Public head 2c7b5c82ca381d5a64b2a9472fd906da2fcbf105 tree 2d3b6072e724fbade288850704d9c253b2c6c7c1; finite transfer field, pipe sleeve and common wet failure",
-    "next": "Resolve common overflow and joined accessible structural, handling and water states",
-    "blocker": "All-outlet blockage wets working deck; supported assembly and escape unproved"
-  }
+    "evidence": "Draft PR #1276 head 73b3ae60831267a66fb80e1a2a3936d65ab61eb0 tree 699cc1e46bf20d412f2019adb0c01b3147f446d5; corrected historical generator and bounded joined trials",
+    "next": "Integration owner coordinates independent review, exact-head validation, preflight and merge",
+    "blocker": "Review and integrated CI pending; operation and RWT06 remain unaccepted"
+  },
+  "pr": 1276
 }
