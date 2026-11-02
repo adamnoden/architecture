@@ -9,12 +9,12 @@
     "label": "zerg5-ias-closeout"
   },
   "claimedAt": "2026-11-02T00:16:03.173Z",
-  "heartbeatAt": "2026-11-02T01:34:36.711Z",
-  "expiresAt": "2026-11-02T02:19:36.711Z",
+  "heartbeatAt": "2026-11-02T01:59:22.034Z",
+  "expiresAt": "2026-11-02T02:44:22.034Z",
   "checkpoint": {
-    "evidence": "OWNER-DIRECTED connector-only renewal after canonical CLI failed before any request/write. PR1239 frozen faec3e0468167f452af7a81ea48116a4691a5d84 tree34c163aa9ab2192349d8e22db581624b141eedf6 focused High PASS; exact provider branch head and runtime blob verified; source unchanged.",
-    "next": "Hold frozen head for root integration/CI and continue readonly guarded-export/carrier research against HADa510; no release/reclaim before merged proof.",
-    "blocker": "Native Git runtime refresh times out under PCO-GIT-DEADLINE maintenance. This renewal uses canonical pure functions plus provider file CAS, not canonical CLI success. Full guarded export and physical/material/kit admission remain unearned."
+    "evidence": "Reviewed corrected source PR1239 headfaec3e0468167f452af7a81ea48116a4691a5d84 tree34c163aa9ab2192349d8e22db581624b141eedf6; focused High PASS. Source frozen and included as actual history in HAD preparer batch. Previous directed connector-only renewal exacte5f0f9da reconciled before this fresh canonical ffbe invocation.",
+    "next": "Coordinate true default IAS reproducer and exact source projection in shared integration; rebind only after root supplies exact shared branch/PR/head. Root alone observes CI and merges.",
+    "blocker": "Partial IAS stays planned; complete guarded export/carrier/support/handling and physical/material/kit admission remain unearned. No undirected claim or source edits."
   },
   "branch": "work/zerg5-ias-closeout",
   "predecessor": {
