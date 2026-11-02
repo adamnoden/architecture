@@ -9,12 +9,12 @@
     "label": "zerg5-ias-closeout"
   },
   "claimedAt": "2026-11-02T00:16:03.173Z",
-  "heartbeatAt": "2026-11-02T00:54:14.377Z",
-  "expiresAt": "2026-11-02T01:39:14.377Z",
+  "heartbeatAt": "2026-11-02T01:02:42.771Z",
+  "expiresAt": "2026-11-02T01:47:42.771Z",
   "checkpoint": {
-    "evidence": "Published/fetchverified dc3093e4 tree4ca498e6: independent focused rear-emitter repair PASS JSON87a45043, full wardrobe circle29.654/park95.5/tray20.5 and actual render/repro. Earlier unserviced renewal request faaf54a3 timed out, reconciled remote unchanged17771ba6 before this fresh invocation.",
-    "next": "Reconcile selected rear occurrence, then head-first full support/parking review and guarded stair/export join.",
-    "blocker": "Partial IAS development; head-first not independently passed; guarded export/whole occurrence reconciliation and all physical/material/kit admissions remain open."
+    "evidence": "Draft PR1239 frozen1b37c9a5c37437ab8e10256a94bdede71915658c tree56ab6c4e7f347ed516b7b248df7c1527a024f24e; actualmain6a3c15d6 mergeparent; reviewed rearEmitterRepair unchanged, dated controls/occurrence reconciled. Customcheck/render/typecheck/control/workflow/repo/diff checks passed.",
+    "next": "Hold frozen head for root-assigned Sol High full owned-delta bounded review, then coordinate joined HAD/services/interiors integration. Root sole CI/merge authority.",
+    "blocker": "Head-first independent full-delta review pending; connected support/first-release/storage/return and full guarded export/IAS exit remain internal, no physical/material/kit admission."
   },
   "branch": "work/zerg5-ias-closeout",
   "predecessor": {
@@ -38,5 +38,6 @@
       "next": "Hold frozen merge head; root sole exact-head CI observation and fresh canonical preflight/expected-head merge. Release after verified merge then reclaim authorized continuation.",
       "blocker": "Partial IAS progress only: head-first sink and full guarded wet export/IS reconciliation remain internal work; no node completion or physical/material admission."
     }
-  }
+  },
+  "pr": 1239
 }
