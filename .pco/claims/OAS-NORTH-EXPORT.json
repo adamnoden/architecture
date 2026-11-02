@@ -1,21 +1,33 @@
 {
   "schemaVersion": 1,
   "node": "OAS-NORTH-EXPORT",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "34303b32-cbe8-4bf6-b0be-29a1a2f5d18d",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "8ecc576a-9b42-4a60-a258-9e8819ea7223",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-oas-north-export"
+    "label": "oas-north-release-successor"
   },
-  "claimedAt": "2026-11-02T11:24:44.798Z",
-  "heartbeatAt": "2026-11-02T14:22:23.719Z",
-  "expiresAt": "2026-11-02T14:22:23.719Z",
-  "checkpoint": {
-    "evidence": "Draft PR #1278 frozen head 48b7e9f82580daaa6ca5e6d7b3d0672f8bb585d0",
-    "next": "Cold review, exact-head CI, coordinator publication preflight"
+  "claimedAt": "2026-11-02T14:23:36.144Z",
+  "heartbeatAt": "2026-11-02T14:23:36.144Z",
+  "expiresAt": "2026-11-02T15:08:36.144Z",
+  "branch": "work/oas-north-release-successor-20261102",
+  "predecessor": {
+    "leaseId": "34303b32-cbe8-4bf6-b0be-29a1a2f5d18d",
+    "generation": 1,
+    "branch": "work/zerg-oas-north-export-20261102",
+    "checkpoint": {
+      "evidence": "Draft PR #1278 frozen head 48b7e9f82580daaa6ca5e6d7b3d0672f8bb585d0",
+      "next": "Cold review, exact-head CI, coordinator publication preflight"
+    }
   },
-  "branch": "work/zerg-oas-north-export-20261102",
-  "releasedAt": "2026-11-02T14:22:23.719Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "34303b32-cbe8-4bf6-b0be-29a1a2f5d18d",
+    "generation": 1,
+    "branch": "work/zerg-oas-north-export-20261102",
+    "checkpoint": {
+      "evidence": "Draft PR #1278 frozen head 48b7e9f82580daaa6ca5e6d7b3d0672f8bb585d0",
+      "next": "Cold review, exact-head CI, coordinator publication preflight"
+    }
+  }
 }
