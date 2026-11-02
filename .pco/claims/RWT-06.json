@@ -9,8 +9,8 @@
     "label": "zerg-rwt28-supported-method"
   },
   "claimedAt": "2026-11-02T14:09:42.576Z",
-  "heartbeatAt": "2026-11-02T14:49:04.030Z",
-  "expiresAt": "2026-11-02T15:34:04.030Z",
+  "heartbeatAt": "2026-11-02T14:54:47.184Z",
+  "expiresAt": "2026-11-02T15:39:47.184Z",
   "branch": "work/rwt28-supported-method-20261102",
   "note": "Develop one supported conventional renewal method with common blocked-water and escape states; preserve no operational acceptance",
   "predecessor": {
@@ -36,8 +36,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Draft PR 1282 head d6ecb431fd9ef66c9eb2c5623ba8c051e0d60783 tree 08d0f49c04945bab2e4a0bb62b863e39c6792b6e; exact source checks pass.",
-    "next": "Independent bounded review and integration-owner CI, preflight and merge.",
+    "evidence": "Draft PR 1282 head 87c37b106d84c7f8448877ac980be3fba6846bc7 tree 9e8157e6ffde53359f65b123a781544791495b8a; MAT main reconciled, six reviewed RWT paths unchanged, scoped checks pass.",
+    "next": "Integration owner observes exact-head CI and performs preflight and merge.",
     "blocker": "No operating, hydraulic, egress or full-system acceptance."
   },
   "pr": 1282
