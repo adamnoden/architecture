@@ -9,12 +9,12 @@
     "label": "zerg8-envelope-field"
   },
   "claimedAt": "2026-11-02T12:57:38.664Z",
-  "heartbeatAt": "2026-11-02T13:44:18.858Z",
-  "expiresAt": "2026-11-02T14:29:18.858Z",
+  "heartbeatAt": "2026-11-02T13:57:54.016Z",
+  "expiresAt": "2026-11-02T14:42:54.016Z",
   "checkpoint": {
-    "evidence": "Remote branch work/zerg8-envelope-field head de9ff530152b428a3ccfc29d88a6d8fc953df973; HAD field, falsework, SW turn, window return and service wrap; generator and rendered sheets verified",
-    "next": "Resolve actual frame and perimeter/roof joins, movement, floor and support construction; coordinate structural and RWT interfaces",
-    "blocker": "No completed envelope or field selection; mortar/force transfer, welds, frame, thermal, site and physical duties unresolved"
+    "evidence": "Draft PR #1277 head 31ea790915822cce2e75484f86dd01ce98226767 tree 6e8180ee820b175829c61903ae54d00a8f9e2f77; source-bound field, falsework, local turns and negative controls checked",
+    "next": "Root QA, exact-head CI and fresh preflight; continue constructive work only after reviewable packet",
+    "blocker": "Complete barrier, support, movement, frame, structural, site and physical qualification remain open"
   },
   "branch": "work/zerg8-envelope-field",
   "predecessor": {
@@ -38,5 +38,6 @@
       "next": "Root observes exact-head CI and runs fresh publication preflight; controller releases MAT20 after verified merge and claims MAT21",
       "blocker": "Complete carrier/field, structural/site and physical admission remain open; no adoption asserted"
     }
-  }
+  },
+  "pr": 1277
 }
