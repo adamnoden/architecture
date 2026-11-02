@@ -41,6 +41,8 @@
     ]
   },
   "patch": {
+    "connectorToNearestRodNominalClear_mm": 57.17514421272202,
+    "connectorToRodHold": "Moving the connector toward the outside increases NE shank clearance to 57.175 mm but leaves only 12.5 \u00d7 12.5 mm overlap of the patch before trimming. Rod and butt-weld footprints, short joint support, tool access and inspection must be set out together. No fit or strength pass is asserted.",
     "xy_mm": [
       262.5,
       262.5,
@@ -152,7 +154,7 @@
   "collision_and_installation": {
     "warmConcrete": "Field is 225 mm below \u2212380 warm girder soffit and 160 mm above \u2212765 cold top; it does not cut warm RC; split rods and bearing patch still change the structural route.",
     "glass": "40 mm rail depth occupies \u2212604..\u2212564: glass from \u2212280..\u2212600 is intercepted over 36 mm of rail depth; hangers traverse the glass. No uncut 320 glass claim.",
-    "flange": "Panel near edge 600 is 37.5 from patch edge 562.5 in each axis. A 137.5-square connector at x/y512.5..650 overlaps each footprint 50\u00d750 before cutting; trim to matching boundaries and continuously butt weld, with no unsealed lap credited. Actual corner cuts, support and inspection remain to design.",
+    "flange": "Panel near edge 600 is 37.5 from patch edge 562.5 in each axis. A 100-square connector at x/y550..650 overlaps the patch 12.5\u00d712.5 and panel 50\u00d750 before cutting; trim to matching boundaries and continuously butt weld, with no unsealed lap credited. Short joint, support and inspection remain to design.",
     "supports": "Four anchors into nominal slab underside; 324 mm vertical hangers through cut/retained glass fixed to upper angles; sheet welded to underside of bottom angle flanges by accessible edge seams, without through-field fixings. Anchor, reinforcement clash, bearing, fixity and void access unproved.",
     "scope": "One square tests a layout, not evidence exact slab underside, access, services and anchors exist at every point."
   },
