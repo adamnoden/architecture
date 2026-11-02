@@ -9,11 +9,12 @@
     "label": "zerg7-structure-recovery"
   },
   "claimedAt": "2026-11-02T07:15:34.807Z",
-  "heartbeatAt": "2026-11-02T07:15:34.807Z",
-  "expiresAt": "2026-11-02T08:00:34.807Z",
+  "heartbeatAt": "2026-11-02T07:30:00.205Z",
+  "expiresAt": "2026-11-02T08:15:00.205Z",
   "checkpoint": {
-    "evidence": "Recovery fetch verified predecessor work/zerg6-structure-joins head 9dd556cc3a2db422120eec424bfc085a5a66b09a; no successor output yet",
-    "next": "Review full predecessor diff and current main before roof support and foundation concept closure"
+    "evidence": "Remote connector checkpoint4cc819d7989e9864ffcaccd9e109c32cc855712a treeed89ca35 matches locald2ba; preserves main96005 and predecessor9dd parents. Selectedcfacc six structural fields exact; corrected landing25cover/rear110development; finite q450 receiving actions; no complete joint",
+    "next": "Independent corrected-stair review; validate bounded q450 receiving study and actual foundation reaction/concept accounting",
+    "blocker": "Landing EW end development, full roof/corners/lateral and whole-house reaction destinations remain internal design duties"
   },
   "branch": "work/zerg7-structure-recovery",
   "predecessor": {
