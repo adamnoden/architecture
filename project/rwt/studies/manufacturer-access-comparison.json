@@ -19,7 +19,8 @@
     {
       "publisher": "BoSS/Werner",
       "url": "https://wernerco.widen.net/view/pdf/cowf3dw4mg/BoSS_Staircase_AGR_IM_PN126639-01.pdf?t.download=true&u=sdv0ai",
-      "scope": "PN126639-01 schedule pp8–9; 6400 platform has four SP10; 1800 layout X/Y4832; outdoor sheet prohibition p25."
+      "scope": "PN126639-01 Rev B 0725 schedule pp8–9; 6400 platform has four SP10; 1800 layout X/Y4832; no accessing other structures p4; outdoor sheet prohibition p25.",
+      "verifiedCopy": "https://pasma.co.uk/wp-content/uploads/2025/07/PN126639-01_BoSS_Staircase-AGR_IM_RevB-0725_PRINT.pdf"
     },
     {
       "publisher": "Layher UK",
@@ -58,7 +59,8 @@
       4832
     ],
     "externalSheeting": "Outdoor sheets, tarpaulins and signage must not attach to tower",
-    "manual": "BoSS Staircase AGR PN126639-01 pp8–9,25"
+    "otherStructureAccess": "Tower is not for accessing other structures",
+    "manual": "BoSS Staircase AGR PN126639-01 Rev B 0725 pp4,8–9,25"
   },
   "layher": {
     "module": [
@@ -114,6 +116,9 @@
     "layherInletOverlapY": 350,
     "layherReliefOverlapX": 900,
     "layherPlanToEastScreen": 76,
+    "eastOpenScreenGateOverlapY": 370.5,
+    "eastOpenScreenGateAxisInPlan": true,
+    "westOpenScreenGateAxisInPlan": false,
     "gantryMinimumEyeAt5540": 6990,
     "gantryEyeAboveSecondary": 76.11339325956033
   },
