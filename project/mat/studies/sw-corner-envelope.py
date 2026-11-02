@@ -60,6 +60,11 @@ steel_lambda=50;concrete_lambda=1.75
 steel_G=steel_lambda*(steel/1e6)/(band/1000)
 rc_G=concrete_lambda*(300/1000)**2/(band/1000)
 core_replaced=(300*140*2-140*140)/1e6
+# Split-rod comparator: diaphragm is wholly within AAC; stop short of its faces.
+plate_bottom,plate_top=-574,-571
+assert -605 < plate_bottom < plate_top < -390
+assert 6640-plate_top==7211 and plate_bottom-(-990)==416
+assert (6640-plate_top)+(plate_bottom-(-990))+(plate_top-plate_bottom)==7630
 assert math.isclose(core_replaced,.0644)
 furniture_hits={level:[name for name,r in h[level].items() if r[0]<pad[1] and r[0]+r[2]>pad[0] and r[1]<pad[1] and r[1]+r[3]>pad[0]] for level in ('groundFurniture','upperFurniture')}
 assert not any(furniture_hits.values())
