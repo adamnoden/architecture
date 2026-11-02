@@ -132,7 +132,7 @@
     "warmConcrete": "Field is below \u2212380 warm girder soffit and does not cut warm RC; split rods and bearing patch still change its structural route.",
     "glass": "40 mm rail depth occupies \u2212604..\u2212564: glass from \u2212280..\u2212600 is intercepted over 36 mm of rail depth; hangers traverse the glass. No uncut 320 glass claim.",
     "flange": "Panel near edge 600 is 37.5 from patch edge 562.5 in each axis. An actual welded L-shaped bridging strip and corner must connect them.",
-    "supports": "Four anchors into nominal slab underside; 324 mm vertical hangers through cut/retained glass fixed to upper angles; sheet welded to angle top faces without through-field fixings. Anchor, reinforcement clash, bearing, fixity and void access unproved.",
+    "supports": "Four anchors into nominal slab underside; 324 mm vertical hangers through cut/retained glass fixed to upper angles; sheet welded to underside of bottom angle flanges by accessible edge seams, without through-field fixings. Anchor, reinforcement clash, bearing, fixity and void access unproved.",
     "scope": "One square tests a layout, not evidence exact slab underside, access, services and anchors exist at every point."
   },
   "decision": "FAIL as complete barrier: wall, court, doorway, grid, service and drainage perimeter, movement, supports, corrosion, 3D thermal route and repair are unresolved. Retain local geometry as a challenger, not approved waterproof/gas or structural design."
