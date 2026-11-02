@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 18,
-  "state": "released",
-  "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
+  "generation": 19,
+  "state": "claimed",
+  "leaseId": "0741c020-8615-4920-aba4-2b21bcc269b4",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg7-envelope-thermal"
+    "label": "zerg7-envelope-joined-edge"
   },
-  "claimedAt": "2026-11-02T07:37:31.007Z",
-  "heartbeatAt": "2026-11-02T08:46:05.875Z",
-  "expiresAt": "2026-11-02T08:46:05.875Z",
-  "branch": "work/zerg-recovery-engineering-integration",
+  "claimedAt": "2026-11-02T08:48:53.526Z",
+  "heartbeatAt": "2026-11-02T08:48:53.526Z",
+  "expiresAt": "2026-11-02T09:33:53.526Z",
+  "branch": "work/zerg7-envelope-joined-edge",
   "predecessor": {
-    "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
-    "generation": 17,
-    "branch": "work/zerg7-envelope-air-joins",
-    "pr": 1246,
+    "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
+    "generation": 18,
+    "branch": "work/zerg-recovery-engineering-integration",
+    "pr": 1254,
     "checkpoint": {
-      "evidence": "PR #1246 head e09075b75ba0917fa2f595011fb36a15a7a064d8, four remote blobs equal local commit e9763607; q550 primary-frame saddle/AVCL collars source-bound. Generator --check and warm-grid --check pass; rendered A3 inspected.",
-      "next": "Root to inspect exact-head CI and current main, run fresh canonical merge-check against PR #1246 head, merge if earned, release lease. MAT-ENVELOPE six exits stay open.",
-      "blocker": "Structural frame weld/end closure, post and breather collars, movement, joined moisture/thermal and classified ceiling96 perimeter remain open; no whole assembly or material/site/physical admission."
+      "evidence": "Shared PR #1254 head fb2f1271d609dceb1554255a9cf621337a3fa9aa tree aaed5e9f4fd8a9ed9f4c757326a54214996be114 on main d3f254c0; four MAT blobs exactly match independently reviewed thermal head4a68d3a5/treece4f685e. Real source parents preserved. Combined thermal/IAS/reaction/default-HAD checks and auth/typecheck/repo/diff pass per integration owner.",
+      "next": "Root observes exact-head CI and runs fresh canonical merge-check against shared PR #1254 head, expected-head merges if earned, then releases MAT lease. Six MAT-ENVELOPE exits remain open.",
+      "blocker": "Dry2D screen does not admit dynamic moisture, actual classified ceiling properties, 3D frame/post/collar heat, complete fire/material/site/physical assembly; STR actual collector offset shear needs links and joint proof."
     }
   },
   "recoverySource": {
-    "leaseId": "a91ad95a-0084-49de-8ebc-e879b279a6de",
-    "generation": 17,
-    "branch": "work/zerg7-envelope-air-joins",
-    "pr": 1246,
+    "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
+    "generation": 18,
+    "branch": "work/zerg-recovery-engineering-integration",
+    "pr": 1254,
     "checkpoint": {
-      "evidence": "PR #1246 head e09075b75ba0917fa2f595011fb36a15a7a064d8, four remote blobs equal local commit e9763607; q550 primary-frame saddle/AVCL collars source-bound. Generator --check and warm-grid --check pass; rendered A3 inspected.",
-      "next": "Root to inspect exact-head CI and current main, run fresh canonical merge-check against PR #1246 head, merge if earned, release lease. MAT-ENVELOPE six exits stay open.",
-      "blocker": "Structural frame weld/end closure, post and breather collars, movement, joined moisture/thermal and classified ceiling96 perimeter remain open; no whole assembly or material/site/physical admission."
+      "evidence": "Shared PR #1254 head fb2f1271d609dceb1554255a9cf621337a3fa9aa tree aaed5e9f4fd8a9ed9f4c757326a54214996be114 on main d3f254c0; four MAT blobs exactly match independently reviewed thermal head4a68d3a5/treece4f685e. Real source parents preserved. Combined thermal/IAS/reaction/default-HAD checks and auth/typecheck/repo/diff pass per integration owner.",
+      "next": "Root observes exact-head CI and runs fresh canonical merge-check against shared PR #1254 head, expected-head merges if earned, then releases MAT lease. Six MAT-ENVELOPE exits remain open.",
+      "blocker": "Dry2D screen does not admit dynamic moisture, actual classified ceiling properties, 3D frame/post/collar heat, complete fire/material/site/physical assembly; STR actual collector offset shear needs links and joint proof."
     }
-  },
-  "checkpoint": {
-    "evidence": "Shared PR #1254 head fb2f1271d609dceb1554255a9cf621337a3fa9aa tree aaed5e9f4fd8a9ed9f4c757326a54214996be114 on main d3f254c0; four MAT blobs exactly match independently reviewed thermal head4a68d3a5/treece4f685e. Real source parents preserved. Combined thermal/IAS/reaction/default-HAD checks and auth/typecheck/repo/diff pass per integration owner.",
-    "next": "Root observes exact-head CI and runs fresh canonical merge-check against shared PR #1254 head, expected-head merges if earned, then releases MAT lease. Six MAT-ENVELOPE exits remain open.",
-    "blocker": "Dry2D screen does not admit dynamic moisture, actual classified ceiling properties, 3D frame/post/collar heat, complete fire/material/site/physical assembly; STR actual collector offset shear needs links and joint proof."
-  },
-  "pr": 1254,
-  "releasedAt": "2026-11-02T08:46:05.875Z",
-  "releaseReason": "handoff"
+  }
 }
