@@ -1,41 +1,90 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">
-<rect width="420" height="297" fill="white"/><g font-family="Arial,sans-serif">
-<text x="12" y="13" font-size="5" fill="#203746">JOINED NORTH EAVE · two actual q–z cuts · conditional section coordinates</text>
-<text x="12" y="20" font-size="3.2" fill="#203746">Vertical is project z; q is plan inward. Sections have their own stated scales and schematic joint symbols.</text>
-<rect x="12" y="27" width="192" height="239" fill="#f6f7f5" stroke="#647c86" stroke-width=".4"/>
-<rect x="210" y="27" width="198" height="239" fill="#f6f7f5" stroke="#647c86" stroke-width=".4"/>
-<text x="17" y="35" font-size="3.5" fill="#203746">A · intermediate post x6000 · q-z at 0.242 / z0.245</text>
-<text x="215" y="35" font-size="3.5" fill="#203746">B · compound endpoint x4377.5 · enlarged q-z</text>
-<defs><clipPath id="bay"><rect x="15" y="39" width="185" height="224"/></clipPath><clipPath id="frame"><rect x="213" y="39" width="191" height="224"/></clipPath></defs>
-<g clip-path="url(#bay)">
-<polygon points="73.00,225.70 135.93,225.70 135.93,191.40 73.00,191.40" fill="#a9bbc9" stroke="#657987" stroke-width=".45"/>
-<polygon points="87.53,260.00 121.41,260.00 121.41,225.70 87.53,225.70" fill="#b9ad9c" stroke="#657987" stroke-width=".45"/>
-<polygon points="60.91,260.00 87.53,260.00 87.53,225.70 60.91,225.70" fill="#e9d083" stroke="#657987" stroke-width=".45"/>
-<polygon points="73.00,191.40 87.53,191.40 87.53,172.33 73.00,172.33" fill="#e9d083" stroke="#657987" stroke-width=".45"/>
-<polygon points="142.46,249.22 193.40,249.22 193.40,206.10 142.46,206.10" fill="#eadcc6" stroke="#657987" stroke-width=".45"/>
-<polygon points="60.91,91.54 157.10,46.13 157.10,132.63 60.91,178.05" fill="#e9d083" stroke="#657987" stroke-width=".45"/>
-<polygon points="60.91,77.75 157.10,32.34 157.10,46.13 60.91,91.54" fill="#d2e1e5" stroke="#657987" stroke-width=".45"/>
-<polygon points="60.91,71.08 157.10,25.67 157.10,32.34 60.91,77.75" fill="#b99d78" stroke="#657987" stroke-width=".45"/>
-<polygon points="87.53,165.75 157.10,132.90 157.10,139.39 87.53,172.24" fill="#b99d78" stroke="#657987" stroke-width=".45"/>
-<polyline points="132.90,150.82 97.51,73.99" fill="none" stroke="#4b7185" stroke-width="1.35" />
-<polyline points="87.53,165.75 157.10,132.90 157.10,201.20 142.46,201.20 142.46,225.70 127.94,225.70 127.94,260.00" fill="none" stroke="#ad403c" stroke-width="1.35" />
-<polyline points="142.46,249.22 142.46,225.70" fill="none" stroke="#aa6544" stroke-width="1.35" stroke-dasharray="2 1"/>
+<rect x="0.00" y="0.00" width="420.00" height="297.00" fill="white" stroke="#607681" stroke-width=".3"/>
+<defs><clipPath id="clip0"><rect x="13" y="39" width="130" height="221"/></clipPath><clipPath id="clip1"><rect x="149" y="39" width="130" height="221"/></clipPath><clipPath id="clip2"><rect x="285" y="39" width="130" height="221"/></clipPath></defs>
+<g font-family="Arial,sans-serif">
+<text x="12" y="13" font-size="5" fill="#243d49">FIRST OUTER-NORTH · three actual p-station q–z cuts; z project mm</text>
+<text x="12" y="21" font-size="3.2" fill="#243d49">A clear bay p6270.417 · B post p6000 · C primary/seat p4377.5. Common source geometry; joints schematic.</text>
+<rect x="12.00" y="29.00" width="132.00" height="235.00" fill="#f7f7f5" stroke="#607681" stroke-width=".3"/>
+<text x="16" y="37" font-size="3.5" fill="#243d49">A · clear bay</text>
+<g clip-path="url(#clip0)">
+<polygon points="52.93,251.00 62.05,251.00 62.05,146.00 52.93,146.00" fill="#bd9078" stroke="#607681" stroke-width=".3"/>
+<polygon points="66.50,251.00 76.29,251.00 76.29,209.00 66.50,209.00" fill="#e8d17c" stroke="#607681" stroke-width=".3"/>
+<polygon points="76.29,251.00 88.75,251.00 88.75,209.00 76.29,209.00" fill="#b9ad9d" stroke="#607681" stroke-width=".3"/>
+<polygon points="70.95,209.00 94.09,209.00 94.09,184.50 70.95,184.50" fill="#9fb5c2" stroke="#607681" stroke-width=".3"/>
+<polygon points="70.95,213.72 94.09,213.72 94.09,209.00 70.95,209.00" fill="#c4b7a4" stroke="#607681" stroke-width=".3"/>
+<polygon points="96.50,207.25 133.03,207.25 133.03,195.00 96.50,195.00" fill="#e9dcc6" stroke="#607681" stroke-width=".3"/>
+<polygon points="70.95,184.50 76.29,184.50 76.29,170.88 70.95,170.88" fill="#e8d17c" stroke="#607681" stroke-width=".3"/>
+<polygon points="66.50,113.17 133.03,52.17 133.03,113.96 66.50,174.96" fill="#e8d17c" stroke="#607681" stroke-width=".3"/>
+<polygon points="35.13,132.09 133.03,42.33 133.03,51.98 35.13,141.74" fill="#d2e1e6" stroke="#607681" stroke-width=".3"/>
+<polygon points="35.13,127.32 133.03,37.56 133.03,42.33 35.13,132.09" fill="#bca37d" stroke="#607681" stroke-width=".3"/>
+<polygon points="33.35,143.38 133.03,51.98 133.03,52.17 33.35,143.57" fill="#9684a2" stroke="#607681" stroke-width=".3"/>
+<polygon points="76.29,166.18 133.03,114.16 133.03,118.79 76.29,170.81" fill="#bca37d" stroke="#607681" stroke-width=".3"/>
+<polyline points="33.35,143.57 30.68,147.07 30.68,148.62" fill="none" stroke="#756684" stroke-width="0.6" />
+<polyline points="35.13,127.32 33.35,131.52 33.35,148.28" fill="none" stroke="#67798c" stroke-width="0.6" />
+<polygon points="20.00,175.75 37.80,175.75 37.80,174.00 20.00,174.00" fill="#9facb5" stroke="#607681" stroke-width=".3"/>
+<polyline points="20.00,175.75 20.00,156.50" fill="none" stroke="#7d8891" stroke-width="0.6" />
+<polyline points="37.80,175.75 37.80,149.50" fill="none" stroke="#7d8891" stroke-width="0.6" />
+<polyline points="76.29,166.18 101.88,142.72" fill="none" stroke="#a7443d" stroke-width="0.6" />
+<polyline points="101.88,142.72 101.88,191.50 96.50,191.50 96.50,213.72 91.16,213.72 91.16,251.00" fill="none" stroke="#a7443d" stroke-width="0.6" />
 </g>
-<g clip-path="url(#frame)">
-<polygon points="247.00,47.13 321.40,14.68 321.40,117.07 247.00,149.52" fill="#e9d083" stroke="#657987" stroke-width=".45"/>
-<polygon points="247.00,30.81 321.40,-1.64 321.40,14.68 247.00,47.13" fill="#d2e1e5" stroke="#657987" stroke-width=".45"/>
-<polygon points="247.00,22.91 321.40,-9.55 321.40,-1.64 247.00,30.81" fill="#b99d78" stroke="#657987" stroke-width=".45"/>
-<polygon points="247.00,149.84 321.40,117.39 321.40,125.07 247.00,157.52" fill="#b99d78" stroke="#657987" stroke-width=".45"/>
-<polygon points="247.00,157.52 321.40,125.07 321.40,150.67 247.00,183.12" fill="#8295a0" stroke="#657987" stroke-width=".45"/>
-<polyline points="262.50,150.76 217.17,59.82" fill="none" stroke="#4b7185" stroke-width="1.35" />
-<polyline points="247.00,149.84 321.40,117.39" fill="none" stroke="#ad403c" stroke-width="1.35" />
-<polyline points="293.50,129.56 293.50,137.24" fill="none" stroke="#ad403c" stroke-width="1.35" />
-<polyline points="293.50,162.84 293.50,210.40 274.75,210.40" fill="none" stroke="#ad403c" stroke-width="1.35" />
+<text x="17" y="267" font-size="2.5" fill="#243d49">Red air path to real receiver/finish;</text>
+<text x="17" y="274" font-size="2.5" fill="#243d49">cold zinc/breather remain separate.</text>
+<rect x="148.00" y="29.00" width="132.00" height="235.00" fill="#f7f7f5" stroke="#607681" stroke-width=".3"/>
+<text x="152" y="37" font-size="3.5" fill="#243d49">B · intermediate post</text>
+<g clip-path="url(#clip1)">
+<polygon points="188.93,251.00 198.05,251.00 198.05,146.00 188.93,146.00" fill="#bd9078" stroke="#607681" stroke-width=".3"/>
+<polygon points="202.50,251.00 212.29,251.00 212.29,209.00 202.50,209.00" fill="#e8d17c" stroke="#607681" stroke-width=".3"/>
+<polygon points="212.29,251.00 224.75,251.00 224.75,209.00 212.29,209.00" fill="#b9ad9d" stroke="#607681" stroke-width=".3"/>
+<polygon points="206.95,209.00 230.09,209.00 230.09,184.50 206.95,184.50" fill="#9fb5c2" stroke="#607681" stroke-width=".3"/>
+<polygon points="206.95,213.72 230.09,213.72 230.09,209.00 206.95,209.00" fill="#c4b7a4" stroke="#607681" stroke-width=".3"/>
+<polygon points="232.50,207.25 269.03,207.25 269.03,195.00 232.50,195.00" fill="#e9dcc6" stroke="#607681" stroke-width=".3"/>
+<polygon points="206.95,184.50 212.29,184.50 212.29,170.88 206.95,170.88" fill="#e8d17c" stroke="#607681" stroke-width=".3"/>
+<polygon points="202.50,113.17 269.03,52.17 269.03,113.96 202.50,174.96" fill="#e8d17c" stroke="#607681" stroke-width=".3"/>
+<polygon points="171.13,132.09 269.03,42.33 269.03,51.98 171.13,141.74" fill="#d2e1e6" stroke="#607681" stroke-width=".3"/>
+<polygon points="171.13,127.32 269.03,37.56 269.03,42.33 171.13,132.09" fill="#bca37d" stroke="#607681" stroke-width=".3"/>
+<polygon points="169.35,143.38 269.03,51.98 269.03,52.17 169.35,143.57" fill="#9684a2" stroke="#607681" stroke-width=".3"/>
+<polygon points="212.29,166.18 269.03,114.16 269.03,118.79 212.29,170.81" fill="#bca37d" stroke="#607681" stroke-width=".3"/>
+<polyline points="169.35,143.57 166.68,147.07 166.68,148.62" fill="none" stroke="#756684" stroke-width="0.6" />
+<polyline points="171.13,127.32 169.35,131.52 169.35,148.28" fill="none" stroke="#67798c" stroke-width="0.6" />
+<polygon points="156.00,175.75 173.80,175.75 173.80,174.00 156.00,174.00" fill="#9facb5" stroke="#607681" stroke-width=".3"/>
+<polyline points="156.00,175.75 156.00,156.50" fill="none" stroke="#7d8891" stroke-width="0.6" />
+<polyline points="173.80,175.75 173.80,149.50" fill="none" stroke="#7d8891" stroke-width="0.6" />
+<polyline points="212.29,166.18 237.88,142.72" fill="none" stroke="#a7443d" stroke-width="0.6" />
+<polyline points="228.98,155.51 215.97,100.63" fill="none" stroke="#446e83" stroke-width="1.1" />
+<polyline points="237.88,142.72 237.88,191.50 232.50,191.50 232.50,213.72 227.16,213.72 227.16,251.00" fill="none" stroke="#a7443d" stroke-width="0.6" />
+<circle cx="228.04" cy="151.74" r="1.6" fill="#a7443d"/>
 </g>
-<text x="330" y="220" font-size="3.1" fill="#203746">Red: air sheet</text>
-<text x="330" y="228" font-size="3.1" fill="#203746">Blue: post</text>
-<text x="330" y="236" font-size="3.1" fill="#203746">Gray: SHS</text>
-<text x="330" y="244" font-size="3.1" fill="#a04439">Joint unproved</text>
-<text x="17" y="278" font-size="3" fill="#203746">A: geometry at x6000 omits finite bridge/collar heat and qualified glass toe.</text>
-<text x="17" y="287" font-size="3" fill="#203746">B: solid gray primary is actual occupied band; joint marks propose a saddle, not a weld detail or air test.</text>
+<text x="153" y="267" font-size="2.5" fill="#243d49">Red air path to real receiver/finish;</text>
+<text x="153" y="274" font-size="2.5" fill="#243d49">cold zinc/breather remain separate.</text>
+<rect x="284.00" y="29.00" width="132.00" height="235.00" fill="#f7f7f5" stroke="#607681" stroke-width=".3"/>
+<text x="288" y="37" font-size="3.5" fill="#243d49">C · primary/seat</text>
+<g clip-path="url(#clip2)">
+<polygon points="324.93,251.00 334.05,251.00 334.05,146.00 324.93,146.00" fill="#bd9078" stroke="#607681" stroke-width=".3"/>
+<polygon points="338.50,251.00 348.29,251.00 348.29,209.00 338.50,209.00" fill="#e8d17c" stroke="#607681" stroke-width=".3"/>
+<polygon points="348.29,251.00 360.75,251.00 360.75,209.00 348.29,209.00" fill="#b9ad9d" stroke="#607681" stroke-width=".3"/>
+<polygon points="342.95,209.00 366.09,209.00 366.09,184.50 342.95,184.50" fill="#9fb5c2" stroke="#607681" stroke-width=".3"/>
+<polygon points="342.95,213.72 366.09,213.72 366.09,209.00 342.95,209.00" fill="#c4b7a4" stroke="#607681" stroke-width=".3"/>
+<polygon points="368.50,207.25 405.03,207.25 405.03,195.00 368.50,195.00" fill="#e9dcc6" stroke="#607681" stroke-width=".3"/>
+<polygon points="342.95,184.50 348.29,184.50 348.29,170.88 342.95,170.88" fill="#e8d17c" stroke="#607681" stroke-width=".3"/>
+<polygon points="338.50,113.17 405.03,52.17 405.03,113.96 338.50,174.96" fill="#e8d17c" stroke="#607681" stroke-width=".3"/>
+<polygon points="307.13,132.09 405.03,42.33 405.03,51.98 307.13,141.74" fill="#d2e1e6" stroke="#607681" stroke-width=".3"/>
+<polygon points="307.13,127.32 405.03,37.56 405.03,42.33 307.13,132.09" fill="#bca37d" stroke="#607681" stroke-width=".3"/>
+<polygon points="305.35,143.38 405.03,51.98 405.03,52.17 305.35,143.57" fill="#9684a2" stroke="#607681" stroke-width=".3"/>
+<polygon points="348.29,166.18 405.03,114.16 405.03,118.79 348.29,170.81" fill="#bca37d" stroke="#607681" stroke-width=".3"/>
+<polyline points="305.35,143.57 302.68,147.07 302.68,148.62" fill="none" stroke="#756684" stroke-width="0.6" />
+<polyline points="307.13,127.32 305.35,131.52 305.35,148.28" fill="none" stroke="#67798c" stroke-width="0.6" />
+<polygon points="292.00,175.75 309.80,175.75 309.80,174.00 292.00,174.00" fill="#9facb5" stroke="#607681" stroke-width=".3"/>
+<polyline points="292.00,175.75 292.00,156.50" fill="none" stroke="#7d8891" stroke-width="0.6" />
+<polyline points="309.80,175.75 309.80,149.50" fill="none" stroke="#7d8891" stroke-width="0.6" />
+<polyline points="348.29,166.18 373.88,142.72" fill="none" stroke="#a7443d" stroke-width="0.6" />
+<polygon points="343.84,184.50 365.20,184.50 365.20,180.65 343.84,180.65" fill="#708795" stroke="#607681" stroke-width=".3"/>
+<polygon points="354.52,165.10 405.03,118.79 405.03,134.24 354.52,180.55" fill="#7b8d97" stroke="#607681" stroke-width=".3"/>
+<polyline points="373.88,142.72 373.88,147.35" fill="none" stroke="#a7443d" stroke-width="0.6" />
+<polyline points="373.88,162.80 373.88,191.50 368.50,191.50 368.50,213.72 363.16,213.72 363.16,251.00" fill="none" stroke="#a7443d" stroke-width="0.6" />
+<polyline points="364.98,155.51 351.97,100.63" fill="none" stroke="#446e83" stroke-width="1.1" />
+</g>
+<text x="289" y="267" font-size="2.5" fill="#243d49">Red air path to real receiver/finish;</text>
+<text x="289" y="274" font-size="2.5" fill="#243d49">cold zinc/breather remain separate.</text>
+<text x="12" y="286" font-size="3" fill="#243d49">O70 finish6550, local27 under RC to6513; frame seat0.586 nominal. Gutter renewal150 down/400 out; deeper work needs weather cover.</text>
+<text x="12" y="293" font-size="3" fill="#a7443d">No weld/air, thermal/hygro, classified constituent, structural, material or physical acceptance.</text>
 </g></svg>

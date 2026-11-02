@@ -1,184 +1,230 @@
-"""Source-bound joined ordinary north-eave geometry and conditional joint schedule.
+"""FIRST outer-north ordinary eave: source topology and finite section checks.
 
-No fabrication, air test, thermal acceptance, classified perimeter, or site approval.
+Three coordinate cuts and a joint schedule, not a buildable assembly or approval.
 """
 from pathlib import Path
-import hashlib, json, math, subprocess, sys
+import hashlib,json,math,subprocess,sys
 
-ROOT=Path(__file__).resolve().parents[3]
-OUT=Path(__file__).with_suffix('')
-def git(*a): return subprocess.check_output(['git',*a],cwd=ROOT,text=True).strip()
-def blob(b): return hashlib.sha1(f'blob {len(b)}\0'.encode()+b).hexdigest()
-def source(p,expected):
-    raw=(ROOT/p).read_bytes(); commit=git('log','-1','--format=%H','--',p)
-    assert blob(raw)==expected==git('rev-parse',f'{commit}:{p}'), f'Deliberately rebind {p}'
-    return json.loads(raw),dict(path=p,commit=commit,blob=expected)
-
-e,ei=source('project/mat/studies/loggia-roof-edge.json','731c85d24e775259f1cf84d264d4ceaf75d89774')
-s,si=source('project/str/studies/open-loggia-support.json','20dec4384d09a0d02075fdd34a247e775532763b')
-t,ti=source('project/mat/studies/loggia-roof-wall-thermal.json','3e6c7e91d80249e3ca1c16081d76bd36c88a4345')
-h,hi=source('project/had/studies/open-north-loggia.json','25faad2c4d40df2b7da7212f73808843a88d2f52')
-st=s['actual_roof']; g=e['geometry']; a=e['air']; c=e['ceiling']; w=e['weather']
-assert h['envelope']==429.5 and e['ordinaryWall']['roomToWeather']==[27,140,110,50,102.5]
-assert st['north_frames_x']==[4377.5,7622.5] and st['collector']['section']['b']==260
-assert [g['endPurlinQ'],g['postNormal'],g['normalStack']]==[450,346,500.7]
-assert g['endRows']==[8200,11550] and a['primaryFrame']['atQ']==550
-assert c['completeDepth']==176 and c['requiredClosedReturn']==96
-assert w['vent']['continuousChannels']==[490.8333333333,50]
+ROOT=Path(__file__).resolve().parents[3]; OUT=Path(__file__).with_suffix('')
+EXPECTED={
+ 'project/had/studies/open-north-loggia.json':'25faad2c4d40df2b7da7212f73808843a88d2f52',
+ 'project/had/studies/open-north-facade-projection.json':'621d7c41da4ebb9b9fa810be239f8b35eb442106',
+ 'project/str/studies/open-loggia-support.json':'20dec4384d09a0d02075fdd34a247e775532763b',
+ 'project/mat/studies/loggia-roof-edge.json':'731c85d24e775259f1cf84d264d4ceaf75d89774',
+ 'project/mat/studies/loggia-roof-wall-thermal.json':'3e6c7e91d80249e3ca1c16081d76bd36c88a4345'}
+GENERATOR_SHA256='cfab4dffa6dd8212dac041577b67e675d0419adc6b3387af1cd27f186558a9b7'
+def git(*a):return subprocess.check_output(['git',*a],cwd=ROOT,text=True).strip()
+def blob(raw):return hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()
+def load(path,expected):
+ raw=(ROOT/path).read_bytes();assert blob(raw)==expected,(path,'source changed')
+ # Bootstrap permits precisely the newly generated projection before the
+ # author commits it. The final --check is always against tracked bytes.
+ if '--bootstrap' not in sys.argv:
+  assert expected==git('rev-parse',f'HEAD:{path}'),(path,'untracked or changed input')
+ return json.loads(raw),{'path':path,'blob':expected}
+assert hashlib.sha256((ROOT/'project/had/studies/open-north-loggia.mjs').read_bytes()).hexdigest()==GENERATOR_SHA256
+h,hi=load('project/had/studies/open-north-loggia.json',EXPECTED['project/had/studies/open-north-loggia.json'])
+occ,oi=load('project/had/studies/open-north-facade-projection.json',EXPECTED['project/had/studies/open-north-facade-projection.json'])
+s,si=load('project/str/studies/open-loggia-support.json',EXPECTED['project/str/studies/open-loggia-support.json'])
+e,ei=load('project/mat/studies/loggia-roof-edge.json',EXPECTED['project/mat/studies/loggia-roof-edge.json'])
+t,ti=load('project/mat/studies/loggia-roof-wall-thermal.json',EXPECTED['project/mat/studies/loggia-roof-wall-thermal.json'])
+st=s['actual_roof'];g=e['geometry'];frame=e['air']['primaryFrame'];wall=occ['first']['outerNorth']
+assert occ['selectedHAD']==h['selection']['identity']
+assert wall['id']=='outer-north' and wall['finishedFaces']==[11570.5,12000] and wall['thickness']==429.5
+assert not any(o['centre']+o['width']/2>4377.5 and o['centre']-o['width']/2<7622.5 for o in wall['openings'])
+assert [x['t'] for x in occ['ground']['loggiaWeather']]==[519.5,519.5]
+assert st['north_frames_x']==[4377.5,7622.5] and st['seat_y']==[8082.5,11667.5]
+assert st['collector']['section']['b']==260 and st['collector']['top']==6680 and st['collector']['bottom']==6540
+assert e['ordinaryWall']['roomToWeather']==[27,140,110,50,102.5] and g['normalStack']==500.7
+assert [g['endPurlinQ'],g['postNormal'],g['endRows']]==[450,346,[8200,11550]]
 assert t['geometry']['collector']==e['collector']['bounds']
+domains=occ['first']['protectedRoofClosureDomains']['rectangles']
+def protected(x,y):return any(x0<=x<=x0+dx and y0<=y<=y0+dy for _,(x0,y0,dx,dy) in domains)
+assert not protected(6000,11550) and not protected(4377.5,11550)
+assert h['roofDevelopment']['protectedCeiling']['bottom']==6444 # negative control only
 
-left,right=st['north_frames_x']; pitch=(right-left)/6
-rails=[round(left+i*pitch,6) for i in range(7)]
-channels=[[round(x+25,6),round(y-25,6)] for x,y in zip(rails,rails[1:])]
-assert all(abs(b-a-490.8333333333)<1e-5 for a,b in channels)
-posts=[dict(x=x,y=8200,q=450,kind='endpoint frame/post compound joint' if i in (0,6) else 'intermediate post collar',
-            airCrossQ=g['postAvclCrossingQ']) for i,x in enumerate(rails)]
-frame=a['primaryFrame']
-assert frame['lower']<frame['upper']<frame['roofSheet'] and frame['lower']>6640
-assert e['clearances']['plateAfterAllowance']>12 and e['clearances']['airAfterAllowance']>12
-v=dict(status='Conditional connected ordinary north-eave bay and endpoint; no selected fabrication, material, roof, fire, thermal or physical admission.',
- inputs={'MATedge':ei,'STR':si,'MATthermal':ti,'HAD':hi},
- plan=dict(northEaveWallY=7750,frameAxesX=st['north_frames_x'],railCentresX=rails,clearVentChannelsX=channels,
-           endPurlinY=8200,postGridAtEndRow=posts,
-           qualification='The q450 row is a MAT/STR coordinated development delta, not the old STR JSON purlin row at8300. The endpoint post/frame/purlin convergence is an unresolved three-dimensional welded/bolted geometry, not a free bay collar.'),
- sections={'bay':{'post':{'bottom':g['postBottom'],'head':g['postHead'],'AVCLcrossQ':g['postAvclCrossingQ']},
-                   'roofAVCL':'1 mm supported metal at lower face of320 glass; post has independent welded AVCL collar; no glass bears cover loads.',
-                   'airReturn':'q550 down to z6640, q489.5 at collector finish; below collector underside6540 to ordinary q429.5 finish.',
-                   'thermal':'500.7 normal roof/320 glass contacts ordinary 429.5 wall/110 glass; collector260 replaces60 locally, leaving50 glass; toe/retainer and wallhead/cavity cap unresolved.'},
-               'frame':{'x':left,'airSheetZ':frame['roofSheet'],'primarySHSZ':[frame['lower'],frame['upper']],
-                        'airReturnQ':550,'postX':left,'postQ':450,'compoundJoint':'Separate q450 post collar on field AVCL plus q550 frame-skin saddle; no unpierced q550 drop through steel. Their 100 mm plan separation is not a weld/access clearance proof.',
-                        'ceiling':'Protected top6620/bottom6444 stops at collector finish489.5; independent support and complete classified96 return to soffit6540 remain required.'}},
- clearance=dict(purlinToPlateGross=e['clearances']['plateVertical'],purlinToPlateAfter10=e['clearances']['plateAfterAllowance'],
-                purlinToAirGross=550-e['clearances']['bodyMaxQ'],purlinToAirAfter10=e['clearances']['airAfterAllowance'],
-                airTurnToCarrierReserve=6640-c['carrierReserve'][1]),
- paths=dict(air='Room plaster → clamped finish transition → bay q550 return → supported roof AVCL. At discrete frame axes the separate upper/lower sheet edges must connect by an all-around qualified saddle to closed, sealed SHS skin; post collars are separate and remain finite at the q450 grid.',
-            coldWater='Moving zinc hem discharges into receiver; separate breather laps over cold-side support to its own drip, also entering the same receiver. A blocked receiver is common failure, not redundancy.',
-            ventilation='30 gross eave throat, minimum50 percent mesh yields15 equivalent; each of six 490.833×50 channels runs inward beside NS rails. No EW blocking. High exit/ridge/hip/valley/corners unqualified.',
-            fire='The protected ceiling176 with100 wool and classified96 perimeter terminates at projecting collector face; never trim the family or run through RC.'),
- jointSchedule=[
-  dict(id='A',operation='Set collector cage/seat and primary frame with access to its full skin; verify actual load path and linked shear.',hold='STR collector and frame ends/joints, closed skin, corrosion and weld-access proof; no frame as generic air seal.'),
-  dict(id='B',operation='Set end purlin q450 and lower boards; fit post bases at all seven x, including two compound frame axes; reserve collar access before glass.',hold='STR owning row/source and local 3D purlin/frame/post weld, bolt, load, erection and 10 allowance.'),
-  dict(id='C',operation='Join supported AVCL across lower board field; collar each post at q439.435; in bays fold q550 return; at frame axes weld distinct upper/lower saddle edges to closed SHS skin.',hold='Full all-around access, sealed frame ends, tested sheet/steel/plaster joint, differential movement, corrosion, serviceability and vapour performance.'),
-  dict(id='D',operation='Fit320 bare glass and wall110 with actual50 neck around collector, toe support and movement-compatible retention; hold wall cavity head and fire closure.',hold='3D post/frame/collector heat and transient hygrothermal/drying, full constituents and mechanical retention.'),
-  dict(id='E',operation='Complete protected176 ceiling on independent supports to collector finish; provide complete classified96 return at soffit6540.',hold='IAS/STR classified assembly and real end support; 12 mm z6640–6628 reservation is only a geometry screen.'),
-  dict(id='F',operation='Install breather with separate collars at posts, cold NS rails, open EW boards, moving zinc hem, vent mesh and secondary drip.',hold='ROF system/fasteners, movement, high vent exit and water lap testing; no EW vent blockage.'),
-  dict(id='G',operation='Use exterior access for inspection; renew gutter from its cold rail cradles, protect exposed roof temporarily for deeper sheet/glass repair.',hold='RWT common receiver blockage, catchment/capacity and maintainable weather state; roof is not a walking surface.')],
- thermalFalsifier=dict(source='MAT dry steady2D joined collector screen',bayMinimumC=16.750,solidContinuousFrameStressMinimumC=16.438,
-     interpretation='At authored20/0C and films0.13/0.04, collector underside is sensitive. These cut-specific figures do not include finite post collars, hollow steel or installed vapour/air leakage; no surface, condensation, whole-U or ISO psi acceptance. A worse joined 3D/climate result or failed movement-compatible closure defeats this assembly.'),
- verdict='The bay and edge paths can be drawn together, but the two endpoint compound post/frame junctions, actual air weld access, classified perimeter and upper vent exits prevent selection. Six-row owning exit remains open.')
+ang=math.radians(25);cs=math.cos(ang);sn=math.sin(ang)
+def roof(q,d=0):return 7100+q*math.tan(ang)-d/cs
+def y(q):return 12000-q
+axes=st['north_frames_x'];step=(axes[1]-axes[0])/6
+rails=[round(axes[0]+i*step,6) for i in range(7)]
+channels=[[round(x+25,6),round(z-25,6)] for x,z in zip(rails,rails[1:])]
+assert all(abs(z-x-490.8333333333)<1e-5 for x,z in channels)
+post={'bottomQZ':g['postBottom'],'headQZ':g['postHead'],'worldFootAtP6000':[6000,y(450),g['postBottom'][1]],
+      'worldHeadAtP6000':[6000,y(g['postHead'][0]),g['postHead'][1]],
+      'AVCLCrossQ':g['postAvclCrossingQ'],'AVCLCrossWorldY':y(g['postAvclCrossingQ'])}
+assert abs(post['worldHeadAtP6000'][1]-11696.225918562282)<1e-6
+assert abs(roof(-220,75.7)-6913.88717)<.01
+ceiling={'family':'U-B4 / C-O70 ordinary at this FIRST bay','top':6620,'finish':6550,'depth':70,
+ 'localCollectorUndersideReservation':27,'localUnderside':6513,'dropBelowOrdinaryFinish':37,
+ 'receiver':'Mechanically supported mineral/metal underside receiver and complete constituent fit required; lime adhesion not assumed.',
+ 'negativeControl':'C-U176/96 belongs only to protected circulation/void domains, not these stations.'}
+assert ceiling['top']-ceiling['finish']==70 and 6540-ceiling['localUnderside']==27
+plateTop=st['collector']['top_of_plate'];primaryUnder=st['collector']['primary_under_at_support']
+assert plateTop==6702 and 0<primaryUnder-plateTop<1
+assert e['clearances']['plateVertical']>22 and e['clearances']['airAfterAllowance']>12
+air=[(550,roof(550,396.7)),(550,6640),(489.5,6640),(489.5,6513),(429.5,6513),(429.5,6300)]
+assert air[0][1]==frame['roofSheet'] and frame['upper']<air[0][1] and frame['lower']>6640
+def spatial_gate(face='FIRST outer-north',ceiling_family='C-O70',collars=7,receiver=True,
+                 clear_channels=6,vent_depth=50):
+ return (face=='FIRST outer-north' and ceiling_family=='C-O70' and collars==7 and
+         receiver and clear_channels==6 and vent_depth==50 and air[3]==(489.5,6513) and
+         e['ordinaryWall']['roomToWeather']==[27,140,110,50,102.5])
+assert spatial_gate()
+assert not spatial_gate(collars=6)  # one post penetration left open
+assert not spatial_gate(receiver=False)  # lower air edge ends in space
+assert not spatial_gate(clear_channels=5)  # one EW vent block
+assert not spatial_gate(face='GROUND loggia 519.5 / portal 775')
+assert not spatial_gate(ceiling_family='C-U176/96')
 
-def esc(x): return str(x).replace('&','&amp;').replace('<','&lt;').replace('>','&gt;')
-def tx(x,y,s,size=3.3,fill='#203746'):
-    return f'<text x="{x}" y="{y}" font-size="{size}" fill="{fill}">{esc(s)}</text>'
-svg=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">',
-     '<rect width="420" height="297" fill="white"/><g font-family="Arial,sans-serif">',
-     tx(12,13,'JOINED NORTH ORDINARY EAVE · plan and orthogonal sections · unselected development',5),
-     tx(12,21,'q is plan inward from wall weather line y7750; x axes and z are project millimetres.',3.2),
-     '<rect x="12" y="28" width="193" height="117" fill="#f5f6f3" stroke="#58717c" stroke-width=".3"/>',
-     tx(17,35,'PLAN · one 3245 span / seven NS rail centres',4)]
-X=lambda x:22+(x-left)*.052
-Y=lambda y:117-(y-7750)*.14
-for i,x in enumerate(rails):
-    svg += [f'<line x1="{X(x):.2f}" y1="42" x2="{X(x):.2f}" y2="119" stroke="#517687" stroke-width="1.2"/>',
-            f'<circle cx="{X(x):.2f}" cy="{Y(8200):.2f}" r="2.2" fill="{ "#a04439" if i in (0,6) else "#39747b"}"/>']
-svg += [f'<line x1="22" y1="{Y(8200):.2f}" x2="{X(right):.2f}" y2="{Y(8200):.2f}" stroke="#6f7984" stroke-width="1.2"/>',
-        f'<line x1="22" y1="{Y(7750):.2f}" x2="{X(right):.2f}" y2="{Y(7750):.2f}" stroke="#a17861" stroke-width="1"/>',
-        tx(17,127,'Red endpoints: post + frame axis; blue five posts: separate AVCL collars.',2.8),
-        tx(17,134,'Six clear 490.833 × 50 channels inward; no EW blocker.',2.8),
-        '<rect x="211" y="28" width="197" height="117" fill="#f5f6f3" stroke="#58717c" stroke-width=".3"/>',
-        tx(216,35,'BAY SECTION q–z · intermediate x6000',4),
-        tx(216,46,'Zinc /24 board /50 clear vent /1 breather',3.2),
-        tx(216,55,'320 bare glass /1 supported AVCL /24 board /80 SHS',3.2),
-        tx(216,64,'q450 post crosses AVCL at q439.435; two distinct collars',3.2),
-        tx(216,73,'q550 air drops to6640 → collector finish q489.5',3.2),
-        tx(216,82,'260 RC at q202.5–462.5, z6540–6680;50 glass neck',3.2),
-        tx(216,91,'176 protected ceiling z6444–6620; classified96 return',3.2),
-        tx(216,100,'Plate gap22.212; after authored10 =12.212 mm',3.2),
-        tx(216,109,'Air/purlin gap22.097; after10 =12.097 mm',3.2),
-        tx(216,121,'Collector underside is the dry2D thermal sensitivity locus.',3.1),
-        '<rect x="12" y="151" width="193" height="100" fill="#f5f6f3" stroke="#58717c" stroke-width=".3"/>',
-        tx(17,159,'FRAME SECTION x4377.5 · compound endpoint',4),
-        tx(17,170,'Roof AVCL at z6918.759',3.2),
-        tx(17,179,'Primary SHS at q550: z6804.008–6892.278',3.2),
-        tx(17,188,'Return intersects 88.270 mm steel. Saddle to sealed skin.',3.2),
-        tx(17,197,'Post at q450 is distinct, though on same frame axis.',3.2),
-        tx(17,206,'All-around weld/access and movement remain UNSOLVED.',3.2,'#a04439'),
-        tx(17,215,'No sheet penetrates steel; no open SHS cavity credited.',3.2),
-        tx(17,225,'Air turn z6640; carrier reserve to6628 is only12.',3.2),
-        tx(17,237,'Full classified96 return to soffit6540 still open.',3.2),
-        '<rect x="211" y="151" width="197" height="100" fill="#f5f6f3" stroke="#58717c" stroke-width=".3"/>',
-        tx(216,159,'INDEPENDENT PATHS AND FAILURE',4),
-        tx(216,170,'Warm: plaster → return → roof sheet; frame skin local.',3.1),
-        tx(216,179,'Cold: moving zinc hem; separate breather drip.',3.1),
-        tx(216,188,'Vent: 30 gross ×50% mesh =15 equivalent;',3.1),
-        tx(216,197,'six NS channels50 clear; ridge/hips still open.',3.1),
-        tx(216,206,'Both water sheets share one receiver; blockage common.',3.1),
-        tx(216,215,'50 glass neck + frame stress: no 3D/moisture pass.',3.1),
-        tx(216,225,'Roof repair needs temporary weather protection.',3.1),
-        tx(216,237,'No material, fire, site, physical or whole-U admission.',3.1,'#a04439'),
-        tx(12,266,'Source-bound geometry; q450 is a coordinated STR/MAT delta awaiting owning STR source. See joint schedule and six open exits.',3.4),
-        tx(12,277,'Thermal screen: bay Tmin16.750°C, severe continuous solid-frame stress16.438°C at authored20/0°C; neither tests collars or climate.',3.2),
-        tx(12,286,'This sheet is a spatial falsifier and construction sequence prompt, not a fabrication or classified assembly drawing.',3.2),'</g></svg>\n']
-# Two coordinate sections. The frame plane is drawn at its actual q-z occupancy;
-# the endpoint post also lies on this x plane, but the q separation is not access.
-ang=math.radians(25); slope=math.tan(ang); cos=math.cos(ang)
-def roof(q,d): return 7100+q*slope-d/cos
-BX=lambda q:24+q*.242
-BZ=lambda z:260-(z-6400)*.245
-FX=lambda q:216+(q-300)*.31
-FZ=lambda z:251-(z-6500)*.29
-def poly(points,fill,stroke='#657987'):
-    return '<polygon points="'+' '.join(f'{x:.2f},{y:.2f}' for x,y in points)+f'" fill="{fill}" stroke="{stroke}" stroke-width=".45"/>'
-def band(q0,q1,d0,d1,X,Z,fill):
-    return poly([(X(q0),Z(roof(q0,d0))),(X(q1),Z(roof(q1,d0))),
-                 (X(q1),Z(roof(q1,d1))),(X(q0),Z(roof(q0,d1)))],fill)
-def rect(q0,q1,z0,z1,X,Z,fill):
-    return poly([(X(q0),Z(z0)),(X(q1),Z(z0)),(X(q1),Z(z1)),(X(q0),Z(z1))],fill)
-def path(points,X,Z,col='#ad403c',dash=''):
-    return '<polyline points="'+' '.join(f'{X(q):.2f},{Z(z):.2f}' for q,z in points)+f'" fill="none" stroke="{col}" stroke-width="1.35" {dash}/>'
-sec=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">',
-     '<rect width="420" height="297" fill="white"/><g font-family="Arial,sans-serif">',
-     tx(12,13,'JOINED NORTH EAVE · two actual q–z cuts · conditional section coordinates',5),
-     tx(12,20,'Vertical is project z; q is plan inward. Sections have their own stated scales and schematic joint symbols.',3.2),
-     '<rect x="12" y="27" width="192" height="239" fill="#f6f7f5" stroke="#647c86" stroke-width=".4"/>',
-     '<rect x="210" y="27" width="198" height="239" fill="#f6f7f5" stroke="#647c86" stroke-width=".4"/>',
-     tx(17,35,'A · intermediate post x6000 · q-z at 0.242 / z0.245',3.5),
-     tx(215,35,'B · compound endpoint x4377.5 · enlarged q-z',3.5),
-     '<defs><clipPath id="bay"><rect x="15" y="39" width="185" height="224"/></clipPath><clipPath id="frame"><rect x="213" y="39" width="191" height="224"/></clipPath></defs>',
-     '<g clip-path="url(#bay)">',
-     rect(202.5,462.5,6540,6680,BX,BZ,'#a9bbc9'),
-     rect(262.5,402.5,6400,6540,BX,BZ,'#b9ad9c'),
-     rect(152.5,262.5,6400,6540,BX,BZ,'#e9d083'),
-     rect(202.5,262.5,6680,roof(202.5,395.7),BX,BZ,'#e9d083'),
-     rect(489.5,700,6444,6620,BX,BZ,'#eadcc6'),
-     band(152.5,550,75.7,395.7,BX,BZ,'#e9d083'),
-     band(152.5,550,24.7,75.7,BX,BZ,'#d2e1e5'),
-     band(152.5,550,0,24.7,BX,BZ,'#b99d78'),
-     band(262.5,550,396.7,420.7,BX,BZ,'#b99d78'),
-     path([g['postBottom'],g['postHead']],BX,BZ,'#4b7185'),
-     path([(262.5,roof(262.5,396.7)),(550,roof(550,396.7)),(550,6640),(489.5,6640),(489.5,6540),(429.5,6540),(429.5,6400)],BX,BZ),
-     path([(489.5,6444),(489.5,6540)],BX,BZ,'#aa6544','stroke-dasharray="2 1"'),
-     '</g>',
-     '<g clip-path="url(#frame)">',
-     band(400,640,75.7,395.7,FX,FZ,'#e9d083'),
-     band(400,640,24.7,75.7,FX,FZ,'#d2e1e5'),
-     band(400,640,0,24.7,FX,FZ,'#b99d78'),
-     band(400,640,396.7,420.7,FX,FZ,'#b99d78'),
-     band(400,640,420.7,500.7,FX,FZ,'#8295a0'),
-     path([g['postBottom'],g['postHead']],FX,FZ,'#4b7185'),
-     path([(400,roof(400,396.7)),(640,roof(640,396.7))],FX,FZ),
-     path([(550,roof(550,396.7)),(550,frame['upper'])],FX,FZ),
-     path([(550,frame['lower']),(550,6640),(489.5,6640)],FX,FZ),
-     '</g>',
-     tx(330,220,'Red: air sheet',3.1),
-     tx(330,228,'Blue: post',3.1),
-     tx(330,236,'Gray: SHS',3.1),
-     tx(330,244,'Joint unproved',3.1,'#a04439'),
-     tx(17,278,'A: geometry at x6000 omits finite bridge/collar heat and qualified glass toe.',3),
-     tx(17,287,'B: solid gray primary is actual occupied band; joint marks propose a saddle, not a weld detail or air test.',3),
-     '</g></svg>\n']
-outputs={str(OUT)+'.json':json.dumps(v,indent=2)+'\n',str(OUT)+'.svg':'\n'.join(svg),str(OUT)+'-sections.svg':'\n'.join(sec)}
-for p,body in outputs.items():
-    if '--check' in sys.argv: assert Path(p).read_text()==body, p+' stale'
-    else: Path(p).write_text(body)
-print(json.dumps({'rails':rails,'channels':len(channels),'endpointCompound':2,'bayPosts':5,'after10':[v['clearance']['purlinToPlateAfter10'],v['clearance']['purlinToAirAfter10']]}))
+v={'status':'Conditional connected FIRST outer-north ordinary roof/wall/control section. Geometry and finite operations only; no material, weld, fire, moisture, structure, site or physical admission.',
+ 'inputs':{'HADselected':hi,'HADsceneProjection':oi,'HADgeneratorSHA256':GENERATOR_SHA256,'STR':si,'MATedge':ei,'MATthermal':ti},
+ 'historicalRejectedControl':{'remoteHead':'c622a56fd5497ed788d85ad0aa50d8479b9f1ca7',
+  'error':'Earlier plan mapped q450 to y8200 and placed ordinary429.5 plus protected176/96 at x6000. The selected FIRST target is outer-north y12000−q and has ordinary70. Ground519.5 loggia sidewalls/775 portal are separate.'},
+ 'occurrence':{'level':'FIRST','face':'outer-north','pRange':axes,'qRange':[-370,900],
+  'worldTransform':'p=x, y=12000−q, z=7100+q tan25−d/cos25 for roof normal depth d',
+  'outerEnclosure':wall,'groundLoggiaNotThisWall':occ['ground']['loggiaWeather'],
+  'northWindowsOutsideBay':[o for o in wall['openings'] if o['centre'] in [3700,8300]],
+  'actualCoreQ':[262.5,402.5],'actualCoreWorldY':[11597.5,11737.5],'structuralAxisWorldY':11667.5,
+  'collectorQZ':[202.5,462.5,6540,6680],'collectorFinishQ':489.5,'ordinaryFinishQ':429.5,
+  'glassNeck':50,'ceiling':ceiling},
+ 'plan':{'railCentresP':rails,'sixClearChannelsP':channels,'purlinRowsQ':[450,900],
+  'purlinRowsWorldY':[11550,11100],'endPostWorldFootAndHead':post,
+  'clearBayCutP':round((rails[3]+rails[4])/2,6),'postCutP':6000,'primarySeatCutP':4377.5,
+  'seatWorldXY':[[p,11667.5] for p in axes],
+  'groundPortalJambDestinationsOnly':[{'p':[4307.5,4520],'worldY':[11560,11775]},
+                                        {'p':[7480,7692.5],'worldY':[11560,11775]}],
+  'qualification':'Ground jambs are named downstream territories, not columns through arches. STR q450/RHS120x60x5 is coordinated MAT delta, not owning STR source selection.'},
+ 'clearances':{'purlinLowToPlateGross':e['clearances']['plateVertical'],
+  'purlinLowToPlateAfterAuthored10':e['clearances']['plateAfterAllowance'],
+  'purlinBodyToAirGross':550-e['clearances']['bodyMaxQ'],
+  'purlinBodyToAirAfter10':e['clearances']['airAfterAllowance'],
+  'primarySeatPlateTop':plateTop,'primaryUndersideAtSeat':primaryUnder,
+  'primarySeatGrossGap':primaryUnder-plateTop,
+  'primarySeatDisposition':'0.586 mm nominal is NOT tolerance/bearing/hold-down proof. STR must give actual seat plate/grout/bolt/cage readback.'},
+ 'sections':{'clearBay':{'p':round((rails[3]+rails[4])/2,6),'warmAirPolylineQZ':air,
+  'wall':'429.5 ordinary/110 glass;260 RC locally leaves50 neck; supported glass toe/contact required',
+  'roof':'500.7 normal/320 glass/50 open vent; q900 is only next purlin cut, not ridge outlet',
+  'ceiling':'U-B4 C-O70/70, local27 underside receiver to6513,37 drop; exact components/structural support held'},
+  'post':{'p':6000,'post':post,'AVCLCollar':'Distinct continuous welded 1mm warm-sheet collar at q439.435; glass has no cover load.',
+   'breatherCollar':'Distinct cold-side collar near post head crossing, with outward lap/drip; no warm/cold sheet short.',
+   'warmReturn':'The same q550→6640→489.5→6513→429.5 path is retained behind the post; air continuity not supplied by a line touch.'},
+  'primarySeat':{'p':4377.5,'SHSAtQ550Z':[frame['lower'],frame['upper']],
+   'roofSheetAtQ550Z':frame['roofSheet'],'intersectionZ':frame['verticalIntersection'],
+   'saddle':'Upper and lower sheet edges join all-around welded collar to closed SHS skin, then lower sheet reaches collector finish/underside receiver and ordinary plaster. Separate q450 post collar shares p but not q.',
+   'seat':'At core q332.5/axis y11667.5 primary underside6702.586 over plate top6702; local bearing/hold-down/steel clearance unproved.',
+   'ground':'Named portal jamb territories below are load destinations only; first-floor collector and support path must be proved.'}},
+ 'cold':{'zincEdgeQWorldY':[-200,12200],'zincEdgeZ':roof(-200),
+  'breatherDripQWorldY':[-220,12220],'breatherDripZ':roof(-220,75.7),
+  'gutterQ':[-370,-170],'gutterWorldY':[12370,12170],'gutterBottom':6730,
+  'gutterBackCrest':6880,'gutterFrontSpill':6840,
+  'ventGrossThroat':30,'meshOpenMinimum':.5,'netEquivalent':15,
+  'sixChannelsDepth':50,'sharedReceiverFailure':'Zinc hem and secondary breather drip are distinct exits to SAME gutter. Blocked common receiver fails both.',
+  'cavity':'Ordinary50 drained wall cavity has separately supported/weathered head and drainage to its own managed path; no direct leak into room or glass. Exact cap/fire and corner are unproved.',
+  'highExit':'q900 is not a ridge; high ventilation/hip/valley/corner continuation remains ROF work.'},
+ 'operations':[
+  {'step':'1 receiver','action':'Set RC260 collector on real upper masonry/seat territories, frame and plate; resolve linked structure and plate/grout/hold-down at0.586 nominal gap.','stop':'No fictitious member through ground portal arch; STR actual bearing/connection proof.'},
+  {'step':'2 lower deck/post','action':'Install q450 and q900 purlins and lower board, then seven direct post bases, including two primary axes, with access before glass.','stop':'Owning STR q450 geometry, tolerance, frame/post/purlin collision and load path.'},
+  {'step':'3 warm control','action':'Place supported1mm roof AVCL, seven distinct post collars, bay q550 return, and all-around primary skin saddles at two frame axes; continue lower sheet to q489.5 receiver then underside6513 and ordinary q429.5 plaster.','stop':'Full weld access, sealed frame ends, mechanically fixed mineral/plaster receiver, differential movement, corrosion, tested air/gas/vapour continuity.'},
+  {'step':'4 thermal/ceiling','action':'Retain roof320 and wall110 with actual50 collector neck, toe/retainer, O70 ceiling and27 underside receiver below RC; keep cavity head independent.','stop':'Complete constituent fit and mechanical support, collector thermal 3D, vapour/air leak and transient climate/drying; if27 cannot fit, openly revise.'},
+  {'step':'5 cold weather','action':'Independently collar post breather, maintain six clear50 NS channels, mesh30 eave throat, support separate drip and moving zinc hem to shared gutter.','stop':'No EW vent blockage or reverse lap; ROF ridge/hip/valley/corner/wind/weather proof.'},
+  {'step':'6 renewal','action':'From external access lower gutter150 and move outward400 while hem/drip stay fixed; for deeper repair arrange temporary weather protection before dismantling layers.','stop':'RWT receiver blockage/capacity, access/handling; roof boards are not walking surface.'}],
+ 'negativeControls':['Remove post collar: warm air sheet pierced, FAIL','Remove local underside receiver: sheet terminates in space, FAIL',
+  'Block one50 NS channel with EW transom: ventilation continuity FAIL','Substitute GROUND519.5 sidewall/775 portal for FIRST ordinary north enclosure: occurrence FAIL',
+  'Use protected C-U176/96 at these FIRST stations: ceiling-domain FAIL'],
+ 'thermalFalsifier':{'ordinaryBayMinimumOccupiedC':16.750,'severeSolidContinuousFrameMinimumC':16.438,
+  'limit':'Prior dry2D20/0C film0.13/0.04 source omits finite post/collar/hollow steel, actual27 receiver, void exchange and climate. It is a sensitivity locus, not a 3D/whole-U/condensation pass.'},
+ 'verdict':'Connected spatial candidate at genuine FIRST outer-north ordinary bay. Seat0.586, collar/fabrication, receiver constituents, 3D heat/moisture, cold high exits and six owning rows remain open; no selection.'}
+
+def esc(a):return str(a).replace('&','&amp;').replace('<','&lt;').replace('>','&gt;')
+def text(x,y,s,size=3.2,color='#243d49'):return f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}">{esc(s)}</text>'
+def line(points,color='#a7443d',width=.6,dash=''):
+ return '<polyline points="'+' '.join(f'{x:.2f},{y:.2f}' for x,y in points)+f'" fill="none" stroke="{color}" stroke-width="{width}" {dash}/>'
+def rect(x,y,w,h,fill):return f'<rect x="{x:.2f}" y="{y:.2f}" width="{w:.2f}" height="{h:.2f}" fill="{fill}" stroke="#607681" stroke-width=".3"/>'
+def poly(a,fill):return '<polygon points="'+' '.join(f'{x:.2f},{y:.2f}' for x,y in a)+f'" fill="{fill}" stroke="#607681" stroke-width=".3"/>'
+svg=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">',rect(0,0,420,297,'white'),'<g font-family="Arial,sans-serif">',
+ text(12,13,'FIRST OUTER-NORTH · one ordinary bay / actual p–q–world transform',5),
+ text(12,21,'p=x 4377.5..7622.5; q=12000−y. Ground loggia walls and portal are distinct below.',3.2),
+ rect(13,29,394,129,'#f5f6f3'),text(18,37,'PLAN · upper 429.5 enclosure across this bay, windows3700/8300 outside',4)]
+PX=lambda p:38+(p-4377.5)*.104
+QY=lambda q:44+(q+370)*.06
+svg += [rect(PX(4377.5),QY(0),PX(7622.5)-PX(4377.5),QY(429.5)-QY(0),'#d8c3a4'),
+        line([(PX(4377.5),QY(450)),(PX(7622.5),QY(450))],'#7b8290',.8),
+        line([(PX(4377.5),QY(900)),(PX(7622.5),QY(900))],'#7b8290',.8)]
+for i,p in enumerate(rails):
+ svg += [line([(PX(p),QY(-200)),(PX(p),QY(900))],'#527384',.6),
+         f'<circle cx="{PX(p):.2f}" cy="{QY(450):.2f}" r="2" fill="{ "#ad473e" if i in (0,6) else "#30798b"}"/>']
+svg += [text(19,139,'q−200 edge/worldy12200 · q450/y11550 posts · q900/y11100 next row',3),
+        text(19,148,'Six490.833×50 vent channels; primary seats p4377.5/7622.5 at worldy11667.5.',3),
+        rect(13,167,192,113,'#f5f6f3'),rect(214,167,193,113,'#f5f6f3'),
+        text(19,176,'CONNECTED DUTIES',4),
+        text(19,187,'Air: roof sheet → post collars / frame saddles',3),
+        text(19,196,'→ q550 descent → z6640 → q489.5 finish',3),
+        text(19,205,'→ underside receiver z6513 → q429.5 plaster.',3),
+        text(19,216,'O70 top6620/finish6550; local27 reservation',3),
+        text(19,225,'under collector to6513:37 below ordinary finish.',3),
+        text(19,237,'Collector50 glass neck is the thermal locus.',3),
+        text(19,249,'Plate6702 / primary underside6702.586:',3),
+        text(19,258,'0.586 nominal is NOT bearing tolerance proof.',3,'#a7443d'),
+        text(220,176,'INDEPENDENT COLD PATHS / REPAIR',4),
+        text(220,187,'Moving zinc hem q−200 → shared gutter.',3),
+        text(220,196,'Breather/drip q−220/z6913.887 → same.',3),
+        text(220,205,'30 throat×≥50% mesh=15 equivalent.',3),
+        text(220,216,'Wall cavity50 needs own cap/fire/drainage.',3),
+        text(220,225,'Gutter q−370..−170; bottom6730.',3),
+        text(220,237,'External release: lower150/outward400;',3),
+        text(220,246,'temporary weather for deeper repair.',3),
+        text(220,258,'q900 is NOT ridge/high vent exit.',3,'#a7443d'),
+        text(13,291,'Three genuine cuts and finite operation/negative-control schedule on companion sheet/data. No material, fire, 3D heat or site admission.',3),'</g></svg>\n']
+
+# Coordinate sections: 3 panels, q −370..900, z6300..7400. Vary
+# representation by p but retain common receiver and cold exits in each cut.
+def cut(panel,kind):
+ left=12+panel*136;X=lambda q:left+8+(q+370)*.089;Z=lambda z:251-(z-6300)*.175
+ out=[rect(left,29,132,235,'#f7f7f5'),text(left+4,37,kind,3.5)]
+ def R(q0,q1,z0,z1,color):return poly([(X(q0),Z(z0)),(X(q1),Z(z0)),(X(q1),Z(z1)),(X(q0),Z(z1))],color)
+ def B(q0,q1,d0,d1,color):return poly([(X(q0),Z(roof(q0,d0))),(X(q1),Z(roof(q1,d0))),(X(q1),Z(roof(q1,d1))),(X(q0),Z(roof(q0,d1)))],color)
+ out += [f'<g clip-path="url(#clip{panel})">',
+  R(0,102.5,6300,6900,'#bd9078'),R(152.5,262.5,6300,6540,'#e8d17c'),
+  R(262.5,402.5,6300,6540,'#b9ad9d'),R(202.5,462.5,6540,6680,'#9fb5c2'),
+  R(202.5,462.5,6513,6540,'#c4b7a4'),R(489.5,900,6550,6620,'#e9dcc6'),
+  R(202.5,262.5,6680,roof(202.5,395.7),'#e8d17c'),
+  B(152.5,900,75.7,395.7,'#e8d17c'),B(-200,900,24.7,74.7,'#d2e1e6'),
+  B(-200,900,0,24.7,'#bca37d'),B(-220,900,74.7,75.7,'#9684a2'),
+  B(262.5,900,396.7,420.7,'#bca37d'),
+  line([(X(-220),Z(roof(-220,75.7))),(X(-250),Z(roof(-220,75.7)-20)),(X(-250),Z(6885))],'#756684'),
+  line([(X(-200),Z(roof(-200))),(X(-220),Z(roof(-200)-24)),(X(-220),Z(6887))],'#67798c'),
+  R(-370,-170,6730,6740,'#9facb5'),
+  line([(X(-370),Z(6730)),(X(-370),Z(6840))],'#7d8891'),
+  line([(X(-170),Z(6730)),(X(-170),Z(6880))],'#7d8891'),
+  line([(X(262.5),Z(roof(262.5,396.7))),(X(550),Z(roof(550,396.7)))])]
+ if kind.startswith('A'):
+  out += [line([(X(q),Z(z)) for q,z in air]),
+          ]
+ elif kind.startswith('B'):
+  out += [line([(X(q),Z(z)) for q,z in [g['postBottom'],g['postHead']]],'#446e83',1.1),
+          line([(X(q),Z(z)) for q,z in air]),
+          f'<circle cx="{X(g["postAvclCrossingQ"]):.2f}" cy="{Z(roof(g["postAvclCrossingQ"],396.7)):.2f}" r="1.6" fill="#a7443d"/>',
+          ]
+ else:
+  out += [R(212.5,452.5,6680,6702,'#708795'),B(332.5,900,420.7,500.7,'#7b8d97'),
+          line([(X(550),Z(frame['roofSheet'])),(X(550),Z(frame['upper']))]),
+          line([(X(550),Z(frame['lower']))]+[(X(q),Z(z)) for q,z in air[1:]]),
+          line([(X(q),Z(z)) for q,z in [g['postBottom'],g['postHead']]],'#446e83',1.1),
+          ]
+ out += ['</g>',text(left+5,267,'Red air path to real receiver/finish;',2.5),
+         text(left+5,274,'cold zinc/breather remain separate.',2.5)]
+ return out
+sections=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">',rect(0,0,420,297,'white'),
+ '<defs>'+''.join(f'<clipPath id="clip{i}"><rect x="{12+i*136+1}" y="39" width="130" height="221"/></clipPath>' for i in range(3))+'</defs>',
+ '<g font-family="Arial,sans-serif">',text(12,13,'FIRST OUTER-NORTH · three actual p-station q–z cuts; z project mm',5),
+ text(12,21,'A clear bay p6270.417 · B post p6000 · C primary/seat p4377.5. Common source geometry; joints schematic.',3.2)]
+for i,name in enumerate(['A · clear bay','B · intermediate post','C · primary/seat']):sections+=cut(i,name)
+sections += [text(12,286,'O70 finish6550, local27 under RC to6513; frame seat0.586 nominal. Gutter renewal150 down/400 out; deeper work needs weather cover.',3),
+ text(12,293,'No weld/air, thermal/hygro, classified constituent, structural, material or physical acceptance.',3,'#a7443d'),'</g></svg>\n']
+outputs={str(OUT)+'.json':json.dumps(v,indent=2,ensure_ascii=False)+'\n',str(OUT)+'.svg':'\n'.join(svg),str(OUT)+'-sections.svg':'\n'.join(sections)}
+for path,body in outputs.items():
+ if '--check' in sys.argv:assert Path(path).read_text()==body,path+' stale'
+ else:Path(path).write_text(body)
+print(json.dumps({'bay':v['occurrence']['face'],'postFoot':post['worldFootAtP6000'],'postHead':post['worldHeadAtP6000'],
+ 'seatGap':v['clearances']['primarySeatGrossGap'],'channels':len(channels),'gutterDrip':v['cold']['breatherDripZ']}))

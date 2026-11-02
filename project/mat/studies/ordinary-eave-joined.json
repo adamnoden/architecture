@@ -1,34 +1,168 @@
 {
-  "status": "Conditional connected ordinary north-eave bay and endpoint; no selected fabrication, material, roof, fire, thermal or physical admission.",
+  "status": "Conditional connected FIRST outer-north ordinary roof/wall/control section. Geometry and finite operations only; no material, weld, fire, moisture, structure, site or physical admission.",
   "inputs": {
-    "MATedge": {
-      "path": "project/mat/studies/loggia-roof-edge.json",
-      "commit": "c2586982b86ced332809369912081a1e7b100d8c",
-      "blob": "731c85d24e775259f1cf84d264d4ceaf75d89774"
+    "HADselected": {
+      "path": "project/had/studies/open-north-loggia.json",
+      "blob": "25faad2c4d40df2b7da7212f73808843a88d2f52"
     },
+    "HADsceneProjection": {
+      "path": "project/had/studies/open-north-facade-projection.json",
+      "blob": "621d7c41da4ebb9b9fa810be239f8b35eb442106"
+    },
+    "HADgeneratorSHA256": "cfab4dffa6dd8212dac041577b67e675d0419adc6b3387af1cd27f186558a9b7",
     "STR": {
       "path": "project/str/studies/open-loggia-support.json",
-      "commit": "2ac4e4514e57e2a3e214ddaffac70379cd44d43c",
       "blob": "20dec4384d09a0d02075fdd34a247e775532763b"
+    },
+    "MATedge": {
+      "path": "project/mat/studies/loggia-roof-edge.json",
+      "blob": "731c85d24e775259f1cf84d264d4ceaf75d89774"
     },
     "MATthermal": {
       "path": "project/mat/studies/loggia-roof-wall-thermal.json",
-      "commit": "4a68d3a571e13e3e9c4d5dbf3272d41f042f0cb5",
       "blob": "3e6c7e91d80249e3ca1c16081d76bd36c88a4345"
-    },
-    "HAD": {
-      "path": "project/had/studies/open-north-loggia.json",
-      "commit": "cfacc96c61ce1be5befa3bc0a10086c7cb6b4202",
-      "blob": "25faad2c4d40df2b7da7212f73808843a88d2f52"
     }
   },
-  "plan": {
-    "northEaveWallY": 7750,
-    "frameAxesX": [
+  "historicalRejectedControl": {
+    "remoteHead": "c622a56fd5497ed788d85ad0aa50d8479b9f1ca7",
+    "error": "Earlier plan mapped q450 to y8200 and placed ordinary429.5 plus protected176/96 at x6000. The selected FIRST target is outer-north y12000−q and has ordinary70. Ground519.5 loggia sidewalls/775 portal are separate."
+  },
+  "occurrence": {
+    "level": "FIRST",
+    "face": "outer-north",
+    "pRange": [
       4377.5,
       7622.5
     ],
-    "railCentresX": [
+    "qRange": [
+      -370,
+      900
+    ],
+    "worldTransform": "p=x, y=12000−q, z=7100+q tan25−d/cos25 for roof normal depth d",
+    "outerEnclosure": {
+      "id": "outer-north",
+      "segment": [
+        [
+          0,
+          11791.25
+        ],
+        [
+          12000,
+          11791.25
+        ]
+      ],
+      "thickness": 429.5,
+      "finishedFaces": [
+        11570.5,
+        12000
+      ],
+      "openings": [
+        {
+          "id": "north-window-0",
+          "kind": "window",
+          "centre": 1800,
+          "width": 1000
+        },
+        {
+          "id": "north-window-1",
+          "kind": "window",
+          "centre": 3700,
+          "width": 700
+        },
+        {
+          "id": "north-window-3",
+          "kind": "window",
+          "centre": 8300,
+          "width": 700
+        },
+        {
+          "id": "north-window-4",
+          "kind": "window",
+          "centre": 10200,
+          "width": 1000
+        }
+      ]
+    },
+    "groundLoggiaNotThisWall": [
+      {
+        "id": "loggia-west-weather",
+        "a": [
+          4377.5,
+          7750
+        ],
+        "b": [
+          4377.5,
+          12000
+        ],
+        "t": 519.5,
+        "structuralCore": [
+          4307.5,
+          4447.5
+        ]
+      },
+      {
+        "id": "loggia-east-weather",
+        "a": [
+          7622.5,
+          7750
+        ],
+        "b": [
+          7622.5,
+          12000
+        ],
+        "t": 519.5,
+        "structuralCore": [
+          7552.5,
+          7692.5
+        ]
+      }
+    ],
+    "northWindowsOutsideBay": [
+      {
+        "id": "north-window-1",
+        "kind": "window",
+        "centre": 3700,
+        "width": 700
+      },
+      {
+        "id": "north-window-3",
+        "kind": "window",
+        "centre": 8300,
+        "width": 700
+      }
+    ],
+    "actualCoreQ": [
+      262.5,
+      402.5
+    ],
+    "actualCoreWorldY": [
+      11597.5,
+      11737.5
+    ],
+    "structuralAxisWorldY": 11667.5,
+    "collectorQZ": [
+      202.5,
+      462.5,
+      6540,
+      6680
+    ],
+    "collectorFinishQ": 489.5,
+    "ordinaryFinishQ": 429.5,
+    "glassNeck": 50,
+    "ceiling": {
+      "family": "U-B4 / C-O70 ordinary at this FIRST bay",
+      "top": 6620,
+      "finish": 6550,
+      "depth": 70,
+      "localCollectorUndersideReservation": 27,
+      "localUnderside": 6513,
+      "dropBelowOrdinaryFinish": 37,
+      "receiver": "Mechanically supported mineral/metal underside receiver and complete constituent fit required; lime adhesion not assumed.",
+      "negativeControl": "C-U176/96 belongs only to protected circulation/void domains, not these stations."
+    }
+  },
+  "plan": {
+    "railCentresP": [
       4377.5,
       4918.333333,
       5459.166667,
@@ -37,7 +171,7 @@
       7081.666667,
       7622.5
     ],
-    "clearVentChannelsX": [
+    "sixClearChannelsP": [
       [
         4402.5,
         4893.333333
@@ -63,146 +197,230 @@
         7597.5
       ]
     ],
-    "endPurlinY": 8200,
-    "postGridAtEndRow": [
+    "purlinRowsQ": [
+      450,
+      900
+    ],
+    "purlinRowsWorldY": [
+      11550,
+      11100
+    ],
+    "endPostWorldFootAndHead": {
+      "bottomQZ": [
+        450,
+        6845.6473556622295
+      ],
+      "headQZ": [
+        303.774081437718,
+        7159.22984997691
+      ],
+      "worldFootAtP6000": [
+        6000,
+        11550,
+        6845.6473556622295
+      ],
+      "worldHeadAtP6000": [
+        6000,
+        11696.225918562282,
+        7159.22984997691
+      ],
+      "AVCLCrossQ": 439.4345434564825,
+      "AVCLCrossWorldY": 11560.565456543518
+    },
+    "clearBayCutP": 6270.416666,
+    "postCutP": 6000,
+    "primarySeatCutP": 4377.5,
+    "seatWorldXY": [
+      [
+        4377.5,
+        11667.5
+      ],
+      [
+        7622.5,
+        11667.5
+      ]
+    ],
+    "groundPortalJambDestinationsOnly": [
       {
-        "x": 4377.5,
-        "y": 8200,
-        "q": 450,
-        "kind": "endpoint frame/post compound joint",
-        "airCrossQ": 439.4345434564825
+        "p": [
+          4307.5,
+          4520
+        ],
+        "worldY": [
+          11560,
+          11775
+        ]
       },
       {
-        "x": 4918.333333,
-        "y": 8200,
-        "q": 450,
-        "kind": "intermediate post collar",
-        "airCrossQ": 439.4345434564825
-      },
-      {
-        "x": 5459.166667,
-        "y": 8200,
-        "q": 450,
-        "kind": "intermediate post collar",
-        "airCrossQ": 439.4345434564825
-      },
-      {
-        "x": 6000.0,
-        "y": 8200,
-        "q": 450,
-        "kind": "intermediate post collar",
-        "airCrossQ": 439.4345434564825
-      },
-      {
-        "x": 6540.833333,
-        "y": 8200,
-        "q": 450,
-        "kind": "intermediate post collar",
-        "airCrossQ": 439.4345434564825
-      },
-      {
-        "x": 7081.666667,
-        "y": 8200,
-        "q": 450,
-        "kind": "intermediate post collar",
-        "airCrossQ": 439.4345434564825
-      },
-      {
-        "x": 7622.5,
-        "y": 8200,
-        "q": 450,
-        "kind": "endpoint frame/post compound joint",
-        "airCrossQ": 439.4345434564825
+        "p": [
+          7480,
+          7692.5
+        ],
+        "worldY": [
+          11560,
+          11775
+        ]
       }
     ],
-    "qualification": "The q450 row is a MAT/STR coordinated development delta, not the old STR JSON purlin row at8300. The endpoint post/frame/purlin convergence is an unresolved three-dimensional welded/bolted geometry, not a free bay collar."
+    "qualification": "Ground jambs are named downstream territories, not columns through arches. STR q450/RHS120x60x5 is coordinated MAT delta, not owning STR source selection."
+  },
+  "clearances": {
+    "purlinLowToPlateGross": 22.2118733656107,
+    "purlinLowToPlateAfterAuthored10": 12.2118733656107,
+    "purlinBodyToAirGross": 22.096574980016612,
+    "purlinBodyToAirAfter10": 12.096574980016612,
+    "primarySeatPlateTop": 6702,
+    "primaryUndersideAtSeat": 6702.5859723120175,
+    "primarySeatGrossGap": 0.5859723120174749,
+    "primarySeatDisposition": "0.586 mm nominal is NOT tolerance/bearing/hold-down proof. STR must give actual seat plate/grout/bolt/cage readback."
   },
   "sections": {
-    "bay": {
+    "clearBay": {
+      "p": 6270.416666,
+      "warmAirPolylineQZ": [
+        [
+          550,
+          6918.7591915328285
+        ],
+        [
+          550,
+          6640
+        ],
+        [
+          489.5,
+          6640
+        ],
+        [
+          489.5,
+          6513
+        ],
+        [
+          429.5,
+          6513
+        ],
+        [
+          429.5,
+          6300
+        ]
+      ],
+      "wall": "429.5 ordinary/110 glass;260 RC locally leaves50 neck; supported glass toe/contact required",
+      "roof": "500.7 normal/320 glass/50 open vent; q900 is only next purlin cut, not ridge outlet",
+      "ceiling": "U-B4 C-O70/70, local27 underside receiver to6513,37 drop; exact components/structural support held"
+    },
+    "post": {
+      "p": 6000,
       "post": {
-        "bottom": [
+        "bottomQZ": [
           450,
           6845.6473556622295
         ],
-        "head": [
+        "headQZ": [
           303.774081437718,
           7159.22984997691
         ],
-        "AVCLcrossQ": 439.4345434564825
+        "worldFootAtP6000": [
+          6000,
+          11550,
+          6845.6473556622295
+        ],
+        "worldHeadAtP6000": [
+          6000,
+          11696.225918562282,
+          7159.22984997691
+        ],
+        "AVCLCrossQ": 439.4345434564825,
+        "AVCLCrossWorldY": 11560.565456543518
       },
-      "roofAVCL": "1 mm supported metal at lower face of320 glass; post has independent welded AVCL collar; no glass bears cover loads.",
-      "airReturn": "q550 down to z6640, q489.5 at collector finish; below collector underside6540 to ordinary q429.5 finish.",
-      "thermal": "500.7 normal roof/320 glass contacts ordinary 429.5 wall/110 glass; collector260 replaces60 locally, leaving50 glass; toe/retainer and wallhead/cavity cap unresolved."
+      "AVCLCollar": "Distinct continuous welded 1mm warm-sheet collar at q439.435; glass has no cover load.",
+      "breatherCollar": "Distinct cold-side collar near post head crossing, with outward lap/drip; no warm/cold sheet short.",
+      "warmReturn": "The same q550→6640→489.5→6513→429.5 path is retained behind the post; air continuity not supplied by a line touch."
     },
-    "frame": {
-      "x": 4377.5,
-      "airSheetZ": 6918.7591915328285,
-      "primarySHSZ": [
+    "primarySeat": {
+      "p": 4377.5,
+      "SHSAtQ550Z": [
         6804.007887960729,
         6892.278121477729
       ],
-      "airReturnQ": 550,
-      "postX": 4377.5,
-      "postQ": 450,
-      "compoundJoint": "Separate q450 post collar on field AVCL plus q550 frame-skin saddle; no unpierced q550 drop through steel. Their 100 mm plan separation is not a weld/access clearance proof.",
-      "ceiling": "Protected top6620/bottom6444 stops at collector finish489.5; independent support and complete classified96 return to soffit6540 remain required."
+      "roofSheetAtQ550Z": 6918.7591915328285,
+      "intersectionZ": 88.27023351699972,
+      "saddle": "Upper and lower sheet edges join all-around welded collar to closed SHS skin, then lower sheet reaches collector finish/underside receiver and ordinary plaster. Separate q450 post collar shares p but not q.",
+      "seat": "At core q332.5/axis y11667.5 primary underside6702.586 over plate top6702; local bearing/hold-down/steel clearance unproved.",
+      "ground": "Named portal jamb territories below are load destinations only; first-floor collector and support path must be proved."
     }
   },
-  "clearance": {
-    "purlinToPlateGross": 22.2118733656107,
-    "purlinToPlateAfter10": 12.2118733656107,
-    "purlinToAirGross": 22.096574980016612,
-    "purlinToAirAfter10": 12.096574980016612,
-    "airTurnToCarrierReserve": 12
+  "cold": {
+    "zincEdgeQWorldY": [
+      -200,
+      12200
+    ],
+    "zincEdgeZ": 7006.738468369001,
+    "breatherDripQWorldY": [
+      -220,
+      12220
+    ],
+    "breatherDripZ": 6913.88660674044,
+    "gutterQ": [
+      -370,
+      -170
+    ],
+    "gutterWorldY": [
+      12370,
+      12170
+    ],
+    "gutterBottom": 6730,
+    "gutterBackCrest": 6880,
+    "gutterFrontSpill": 6840,
+    "ventGrossThroat": 30,
+    "meshOpenMinimum": 0.5,
+    "netEquivalent": 15,
+    "sixChannelsDepth": 50,
+    "sharedReceiverFailure": "Zinc hem and secondary breather drip are distinct exits to SAME gutter. Blocked common receiver fails both.",
+    "cavity": "Ordinary50 drained wall cavity has separately supported/weathered head and drainage to its own managed path; no direct leak into room or glass. Exact cap/fire and corner are unproved.",
+    "highExit": "q900 is not a ridge; high ventilation/hip/valley/corner continuation remains ROF work."
   },
-  "paths": {
-    "air": "Room plaster \u2192 clamped finish transition \u2192 bay q550 return \u2192 supported roof AVCL. At discrete frame axes the separate upper/lower sheet edges must connect by an all-around qualified saddle to closed, sealed SHS skin; post collars are separate and remain finite at the q450 grid.",
-    "coldWater": "Moving zinc hem discharges into receiver; separate breather laps over cold-side support to its own drip, also entering the same receiver. A blocked receiver is common failure, not redundancy.",
-    "ventilation": "30 gross eave throat, minimum50 percent mesh yields15 equivalent; each of six 490.833\u00d750 channels runs inward beside NS rails. No EW blocking. High exit/ridge/hip/valley/corners unqualified.",
-    "fire": "The protected ceiling176 with100 wool and classified96 perimeter terminates at projecting collector face; never trim the family or run through RC."
-  },
-  "jointSchedule": [
+  "operations": [
     {
-      "id": "A",
-      "operation": "Set collector cage/seat and primary frame with access to its full skin; verify actual load path and linked shear.",
-      "hold": "STR collector and frame ends/joints, closed skin, corrosion and weld-access proof; no frame as generic air seal."
+      "step": "1 receiver",
+      "action": "Set RC260 collector on real upper masonry/seat territories, frame and plate; resolve linked structure and plate/grout/hold-down at0.586 nominal gap.",
+      "stop": "No fictitious member through ground portal arch; STR actual bearing/connection proof."
     },
     {
-      "id": "B",
-      "operation": "Set end purlin q450 and lower boards; fit post bases at all seven x, including two compound frame axes; reserve collar access before glass.",
-      "hold": "STR owning row/source and local 3D purlin/frame/post weld, bolt, load, erection and 10 allowance."
+      "step": "2 lower deck/post",
+      "action": "Install q450 and q900 purlins and lower board, then seven direct post bases, including two primary axes, with access before glass.",
+      "stop": "Owning STR q450 geometry, tolerance, frame/post/purlin collision and load path."
     },
     {
-      "id": "C",
-      "operation": "Join supported AVCL across lower board field; collar each post at q439.435; in bays fold q550 return; at frame axes weld distinct upper/lower saddle edges to closed SHS skin.",
-      "hold": "Full all-around access, sealed frame ends, tested sheet/steel/plaster joint, differential movement, corrosion, serviceability and vapour performance."
+      "step": "3 warm control",
+      "action": "Place supported1mm roof AVCL, seven distinct post collars, bay q550 return, and all-around primary skin saddles at two frame axes; continue lower sheet to q489.5 receiver then underside6513 and ordinary q429.5 plaster.",
+      "stop": "Full weld access, sealed frame ends, mechanically fixed mineral/plaster receiver, differential movement, corrosion, tested air/gas/vapour continuity."
     },
     {
-      "id": "D",
-      "operation": "Fit320 bare glass and wall110 with actual50 neck around collector, toe support and movement-compatible retention; hold wall cavity head and fire closure.",
-      "hold": "3D post/frame/collector heat and transient hygrothermal/drying, full constituents and mechanical retention."
+      "step": "4 thermal/ceiling",
+      "action": "Retain roof320 and wall110 with actual50 collector neck, toe/retainer, O70 ceiling and27 underside receiver below RC; keep cavity head independent.",
+      "stop": "Complete constituent fit and mechanical support, collector thermal 3D, vapour/air leak and transient climate/drying; if27 cannot fit, openly revise."
     },
     {
-      "id": "E",
-      "operation": "Complete protected176 ceiling on independent supports to collector finish; provide complete classified96 return at soffit6540.",
-      "hold": "IAS/STR classified assembly and real end support; 12 mm z6640\u20136628 reservation is only a geometry screen."
+      "step": "5 cold weather",
+      "action": "Independently collar post breather, maintain six clear50 NS channels, mesh30 eave throat, support separate drip and moving zinc hem to shared gutter.",
+      "stop": "No EW vent blockage or reverse lap; ROF ridge/hip/valley/corner/wind/weather proof."
     },
     {
-      "id": "F",
-      "operation": "Install breather with separate collars at posts, cold NS rails, open EW boards, moving zinc hem, vent mesh and secondary drip.",
-      "hold": "ROF system/fasteners, movement, high vent exit and water lap testing; no EW vent blockage."
-    },
-    {
-      "id": "G",
-      "operation": "Use exterior access for inspection; renew gutter from its cold rail cradles, protect exposed roof temporarily for deeper sheet/glass repair.",
-      "hold": "RWT common receiver blockage, catchment/capacity and maintainable weather state; roof is not a walking surface."
+      "step": "6 renewal",
+      "action": "From external access lower gutter150 and move outward400 while hem/drip stay fixed; for deeper repair arrange temporary weather protection before dismantling layers.",
+      "stop": "RWT receiver blockage/capacity, access/handling; roof boards are not walking surface."
     }
   ],
+  "negativeControls": [
+    "Remove post collar: warm air sheet pierced, FAIL",
+    "Remove local underside receiver: sheet terminates in space, FAIL",
+    "Block one50 NS channel with EW transom: ventilation continuity FAIL",
+    "Substitute GROUND519.5 sidewall/775 portal for FIRST ordinary north enclosure: occurrence FAIL",
+    "Use protected C-U176/96 at these FIRST stations: ceiling-domain FAIL"
+  ],
   "thermalFalsifier": {
-    "source": "MAT dry steady2D joined collector screen",
-    "bayMinimumC": 16.75,
-    "solidContinuousFrameStressMinimumC": 16.438,
-    "interpretation": "At authored20/0C and films0.13/0.04, collector underside is sensitive. These cut-specific figures do not include finite post collars, hollow steel or installed vapour/air leakage; no surface, condensation, whole-U or ISO psi acceptance. A worse joined 3D/climate result or failed movement-compatible closure defeats this assembly."
+    "ordinaryBayMinimumOccupiedC": 16.75,
+    "severeSolidContinuousFrameMinimumC": 16.438,
+    "limit": "Prior dry2D20/0C film0.13/0.04 source omits finite post/collar/hollow steel, actual27 receiver, void exchange and climate. It is a sensitivity locus, not a 3D/whole-U/condensation pass."
   },
-  "verdict": "The bay and edge paths can be drawn together, but the two endpoint compound post/frame junctions, actual air weld access, classified perimeter and upper vent exits prevent selection. Six-row owning exit remains open."
+  "verdict": "Connected spatial candidate at genuine FIRST outer-north ordinary bay. Seat0.586, collar/fabrication, receiver constituents, 3D heat/moisture, cold high exits and six owning rows remain open; no selection."
 }
