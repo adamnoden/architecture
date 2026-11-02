@@ -20,7 +20,7 @@
       ]
     ],
     "bar_diameter_mm": 20,
-    "bar_length_mm": 7630,
+    "bar_length_mm": 7450,
     "bilinear_tension_only_witness_kN": [
       21.697578125000007,
       1.2763281250000005,
@@ -40,14 +40,14 @@
     ],
     "gap_mm": 385.0,
     "gross_bar_area_mm2": 1256.6370614359173,
-    "gross_bar_mass_G_kN_at_78p5": 0.7526690511323497,
+    "gross_bar_mass_G_kN_at_78p5": 0.7349127694542603,
     "ideal_elastic_translation_mm": 0.756869621193461,
     "ideal_four_bar_moment_each_kNm": 0.048125,
     "ideal_gross_bending_stress_MPa": 61.27465309037971,
     "largest_witness_gross_tensile_stress_MPa": 69.06553623432659,
     "nominal_bar_bottom_top_mm": [
       -990,
-      6640
+      6460
     ],
     "nominal_bore_area_fraction": 0.12566370614359174,
     "nominal_cold_RC_embed_mm": 225,
@@ -65,6 +65,367 @@
     ]
   },
   "decision": "Inward 300 square and straight roof-to-pier-to-grid route are a source-bound candidate for joint STR/MAT/HAD challenge, not a selected design. The four-bar crossing is unqualified; direct full RC bypass remains a thermal/capillary adverse comparator. No actual ground/support capacity is asserted.",
+  "finite_roof_candidate": {
+    "cap": {
+      "cap_plate_z_mm": [
+        6460,
+        6480
+      ],
+      "ceiling_box_finish_mm": 6425,
+      "ceiling_clear_above_first_FFL_mm": 2975,
+      "east_wing_plan_mm": [
+        562.5,
+        272.5,
+        632.5,
+        392.5
+      ],
+      "hip_bearing_gap_mm": 38.54358438968029,
+      "north_wing_plan_mm": [
+        272.5,
+        562.5,
+        392.5,
+        632.5
+      ],
+      "pier_top_mm": 6460,
+      "remaining_hip_packing_mm": 18.54358438968029,
+      "ring_saddle_height_mm": 60,
+      "scope": "Wing overhang and 60 mm saddle are explicit steel bracket candidates, not anchored/capacity-qualified. Proposed 15 mm ceiling liner top6440 leaves20 below pier top; actual ceiling/fire/service layers require review.",
+      "trial_hip_bearing_block_mm": 20
+    },
+    "hip": {
+      "actual_end_extension_plan_mm": 332.5,
+      "centre_drop_below_parent_mm": 165.0,
+      "court_seat_xy_mm": [
+        3917.5,
+        3917.5
+      ],
+      "hip_section_angle_degrees": 18.248902383234398,
+      "outer_bottom_z_mm": 6518.54358438968,
+      "outer_centre_z_mm": 6581.721089070517,
+      "outer_seat_xy_mm": [
+        332.5,
+        332.5
+      ],
+      "outer_top_z_mm": 6644.898593751354,
+      "primary_SHS_mm": [
+        120,
+        120,
+        6.3
+      ],
+      "ridge_xy_mm": [
+        2125,
+        2125
+      ],
+      "roof_secondary_edge_extension_mm": 200,
+      "scope": "Axis and section are explicit candidate; separate inner valley, hip tie, crown, steel node and external edge remain to design."
+    },
+    "jack": {
+      "face_seat_gap_mm": 18.119861696588487,
+      "first_x500_clear_between_support_envelopes_mm": 2.647186257614294,
+      "first_x500_decision": "Reject two independent seats; hip-rooted cantilever, eave contact omitted, requires moment connection.",
+      "hip_plan_face_offset_mm": 84.8528137423857,
+      "outer_edge_extension_mm": 200,
+      "purlin_SLS_elastic_tip_mm": 0.03473251333728512,
+      "purlin_ULS_UDL_kN_m": 3.15,
+      "purlin_ULS_cantilever_M_kNm": 0.39375,
+      "purlin_ULS_root_shear_kN": 1.575,
+      "purlin_cantilever_max_mm": 500,
+      "purlin_elastic_bending_stress_MPa": 9.819201995012468,
+      "purlin_rows_from_outer_wall_mm": [
+        0,
+        450,
+        950,
+        1450,
+        1950,
+        2125
+      ],
+      "purlin_screen_scope": "Trial full UDL, gross major axis and fixed-end geometry only; weld/cleat, torsion, actual loaded rows, second axis, restraints and deflection limits are not qualified.",
+      "purlin_section_mm": [
+        120,
+        60,
+        4
+      ],
+      "remaining_nominal_shim_clear_mm": 8.119861696588487,
+      "scope": "Below AVCL/glass. Moment connection, member resistance, steel torsion, lateral restraints, penetrations and exact rail/purlin geometry unproved.",
+      "section_mm": [
+        80,
+        80,
+        5
+      ],
+      "support_x_stations_mm": [
+        500,
+        1000,
+        1500,
+        2000,
+        2125
+      ],
+      "trial_hip_seat_plate_mm": 10
+    },
+    "outer_eave_corner_tip_triangle_m2": 0.02,
+    "outer_triangle_full_area_m2": 2.7028125,
+    "outer_triangle_modeled_strip_area_m2": 2.6828125,
+    "partial_south_west_route": {
+      "down": {
+        "SW_cold_Mx_My_kNm": [
+          -2.852325122347951,
+          3.318117212989053
+        ],
+        "SW_node_resultant_xy_mm": [
+          435.5845517224765,
+          416.55140498545757
+        ],
+        "SW_node_vertical_kN": 24.472679009779792,
+        "SW_warm_Mx_My_kNm": [
+          -0.09914873374772458,
+          0.5649408243888261
+        ],
+        "hip_SW_kN": 7.190723539208782,
+        "hip_court_kN": 1.5725102573198069,
+        "hip_relocated_first_moment_kNm": -4.517279741241507,
+        "south_ring_SW_saddle_kN": 9.519830736495127,
+        "south_ring_x4800_kN": 3.000271115240577,
+        "two_faces_total_kN": 33.8034375,
+        "west_ring_SW_saddle_kN": 7.762124734075882,
+        "west_ring_y3247p5_kN": 4.757977117659821
+      },
+      "uplift": {
+        "SW_cold_Mx_My_kNm": [
+          1.0186875436956973,
+          -1.1850418617818044
+        ],
+        "SW_node_resultant_xy_mm": [
+          435.5845517224765,
+          416.5514049854576
+        ],
+        "SW_node_vertical_kN": -8.740242503492782,
+        "SW_warm_Mx_My_kNm": [
+          0.035410262052759274,
+          -0.20176458013886642
+        ],
+        "hip_SW_kN": -2.5681155497174224,
+        "hip_court_kN": -0.5616108061856455,
+        "hip_relocated_first_moment_kNm": 1.613314193300538,
+        "south_ring_SW_saddle_kN": -3.3999395487482595,
+        "south_ring_x4800_kN": -1.0715253983002062,
+        "two_faces_total_kN": -12.072656250000001,
+        "west_ring_SW_saddle_kN": -2.7721874050271005,
+        "west_ring_y3247p5_kN": -1.699277542021365
+      }
+    },
+    "ring": {
+      "arch_clearance_mm": 25,
+      "corner_wing_contact_mm": [
+        70,
+        120
+      ],
+      "ring_to_jack_underside_gap_mm": 42.585972312017475,
+      "scope": "Conventional steel ring candidate substitutes a concrete eave collector at SW, remains inside nominal 140 core. End steel saddles, ring anchorage, casing, fire, local source changes and full member actions are not designed.",
+      "section_mm": [
+        120,
+        120,
+        6.3
+      ],
+      "south_plan": [
+        562.5,
+        272.5,
+        4800,
+        392.5
+      ],
+      "south_support_axes_mm": [
+        597.5,
+        4800
+      ],
+      "upper_arch_extrados_mm": 6515,
+      "west_plan": [
+        272.5,
+        562.5,
+        392.5,
+        3247.5
+      ],
+      "west_support_axes_mm": [
+        597.5,
+        3247.5
+      ],
+      "z_bottom_top_mm": [
+        6540,
+        6660
+      ]
+    },
+    "scope": "One strip family and its mirror preserve vertical force and signed first moments in each assigned strip. The 0.02 m\u00b2 tip, central eave rectangles, ridge/inner valley facets and cantilever-rail torque need their stated independent supports; they are not replaced by the old collapsed corner endpoint. No whole-corner endpoint, capacity or site acceptance is claimed.",
+    "status": "one finite outer-SW triangular face and mirrored west counterpart, not complete corner/roof load path",
+    "tributary_strips": [
+      {
+        "direct_hip_area_m2": 0.0036,
+        "down": {
+          "eave_ring_force_kN": 0.0,
+          "hip_force_kN": 1.4175,
+          "relocated_x_first_moment_kNm": -0.28875,
+          "relocated_y_first_moment_kNm": -0.6405,
+          "south_ring_SW_seat_kN": 0.0,
+          "south_ring_x4800_seat_kN": 0.0,
+          "strip_force_kN": 1.4175
+        },
+        "eave_axis_y_mm": 332.5,
+        "hip_axis_y_mm": 500,
+        "jack_axis_x_mm": 500,
+        "jack_face_y_mm": 415.1471862576143,
+        "jack_loaded_area_m2": 0.2214,
+        "mode": "hip-fixed cantilever; eave support deliberately omitted",
+        "nominal_between_80_seat_envelopes_mm": 2.647186257614294,
+        "roof_area_m2": 0.225,
+        "support_axis_span_mm": 82.6471862576143,
+        "uplift": {
+          "eave_ring_force_kN": 0.0,
+          "hip_force_kN": -0.5062500000000001,
+          "relocated_x_first_moment_kNm": 0.10312499999999998,
+          "relocated_y_first_moment_kNm": 0.22875000000000006,
+          "south_ring_SW_seat_kN": 0.0,
+          "south_ring_x4800_seat_kN": 0.0,
+          "strip_force_kN": -0.50625
+        },
+        "x_band_mm": [
+          0,
+          500
+        ]
+      },
+      {
+        "direct_hip_area_m2": 0.0036,
+        "down": {
+          "eave_ring_force_kN": 3.232607118976178,
+          "hip_force_kN": -0.240107118976178,
+          "relocated_x_first_moment_kNm": -0.6824999999999997,
+          "relocated_y_first_moment_kNm": 0.02101525191659897,
+          "south_ring_SW_seat_kN": 2.922999893422838,
+          "south_ring_x4800_seat_kN": 0.3096072255533402,
+          "strip_force_kN": 2.9925
+        },
+        "eave_axis_y_mm": 332.5,
+        "hip_axis_y_mm": 1000,
+        "jack_axis_x_mm": 1000,
+        "jack_face_y_mm": 915.1471862576143,
+        "jack_loaded_area_m2": 0.4714,
+        "mode": "eave ring and hip-face seat",
+        "nominal_between_80_seat_envelopes_mm": 502.6471862576143,
+        "roof_area_m2": 0.475,
+        "support_axis_span_mm": 582.6471862576143,
+        "uplift": {
+          "eave_ring_force_kN": -1.154502542491492,
+          "hip_force_kN": 0.08575254249149213,
+          "relocated_x_first_moment_kNm": 0.2437499999999999,
+          "relocated_y_first_moment_kNm": -0.007505447113071042,
+          "south_ring_SW_seat_kN": -1.0439285333652992,
+          "south_ring_x4800_seat_kN": -0.11057400912619286,
+          "strip_force_kN": -1.06875
+        },
+        "x_band_mm": [
+          500,
+          1000
+        ]
+      },
+      {
+        "direct_hip_area_m2": 0.003599999999999767,
+        "down": {
+          "eave_ring_force_kN": 3.725660872445812,
+          "hip_force_kN": 0.841839127554188,
+          "relocated_x_first_moment_kNm": -1.0762500000000013,
+          "relocated_y_first_moment_kNm": -0.07079093141951558,
+          "south_ring_SW_seat_kN": 2.9255635643238977,
+          "south_ring_x4800_seat_kN": 0.8000973081219143,
+          "strip_force_kN": 4.5675
+        },
+        "eave_axis_y_mm": 332.5,
+        "hip_axis_y_mm": 1500,
+        "jack_axis_x_mm": 1500,
+        "jack_face_y_mm": 1415.1471862576143,
+        "jack_loaded_area_m2": 0.7214000000000003,
+        "mode": "eave ring and hip-face seat",
+        "nominal_between_80_seat_envelopes_mm": 1002.6471862576143,
+        "roof_area_m2": 0.725,
+        "support_axis_span_mm": 1082.6471862576143,
+        "uplift": {
+          "eave_ring_force_kN": -1.3305931687306471,
+          "hip_force_kN": -0.3006568312693529,
+          "relocated_x_first_moment_kNm": 0.3843750000000005,
+          "relocated_y_first_moment_kNm": 0.02528247550696972,
+          "south_ring_SW_seat_kN": -1.0448441301156777,
+          "south_ring_x4800_seat_kN": -0.2857490386149695,
+          "strip_force_kN": -1.63125
+        },
+        "x_band_mm": [
+          1000,
+          1500
+        ]
+      },
+      {
+        "direct_hip_area_m2": 0.0036,
+        "down": {
+          "eave_ring_force_kN": 4.404761300807417,
+          "hip_force_kN": 1.7377386991925825,
+          "relocated_x_first_moment_kNm": -1.4699999999999998,
+          "relocated_y_first_moment_kNm": -0.1468105309036323,
+          "south_ring_SW_seat_kN": 2.9347606525308194,
+          "south_ring_x4800_seat_kN": 1.4700006482765975,
+          "strip_force_kN": 6.1425
+        },
+        "eave_axis_y_mm": 332.5,
+        "hip_axis_y_mm": 2000,
+        "jack_axis_x_mm": 2000,
+        "jack_face_y_mm": 1915.1471862576143,
+        "jack_loaded_area_m2": 0.9714,
+        "mode": "eave ring and hip-face seat",
+        "nominal_between_80_seat_envelopes_mm": 1502.6471862576143,
+        "roof_area_m2": 0.975,
+        "support_axis_span_mm": 1582.6471862576143,
+        "uplift": {
+          "eave_ring_force_kN": -1.573129036002649,
+          "hip_force_kN": -0.6206209639973509,
+          "relocated_x_first_moment_kNm": 0.5249999999999999,
+          "relocated_y_first_moment_kNm": 0.05243233246558293,
+          "south_ring_SW_seat_kN": -1.0481288044752928,
+          "south_ring_x4800_seat_kN": -0.5250002315273563,
+          "strip_force_kN": -2.19375
+        },
+        "x_band_mm": [
+          1500,
+          2000
+        ]
+      },
+      {
+        "direct_hip_area_m2": 0.003599999999999767,
+        "down": {
+          "eave_ring_force_kN": 1.1570725595062967,
+          "hip_force_kN": 0.6246461904937016,
+          "relocated_x_first_moment_kNm": -0.11033203124999776,
+          "relocated_y_first_moment_kNm": -0.052361499584959344,
+          "south_ring_SW_seat_kN": 0.7365066262175715,
+          "south_ring_x4800_seat_kN": 0.42056593328872527,
+          "strip_force_kN": 1.78171875
+        },
+        "eave_axis_y_mm": 332.5,
+        "hip_axis_y_mm": 2125,
+        "jack_axis_x_mm": 2125,
+        "jack_face_y_mm": 2040.1471862576143,
+        "jack_loaded_area_m2": 0.2792125,
+        "mode": "eave ring and hip-face seat",
+        "nominal_between_80_seat_envelopes_mm": 1627.6471862576143,
+        "roof_area_m2": 0.2828125,
+        "support_axis_span_mm": 1707.6471862576143,
+        "uplift": {
+          "eave_ring_force_kN": -0.4132401998236773,
+          "hip_force_kN": -0.22308792517632206,
+          "relocated_x_first_moment_kNm": 0.039404296874999196,
+          "relocated_y_first_moment_kNm": 0.018700535566056827,
+          "south_ring_SW_seat_kN": -0.2630380807919897,
+          "south_ring_x4800_seat_kN": -0.15020211903168762,
+          "strip_force_kN": -0.636328125
+        },
+        "x_band_mm": [
+          2000,
+          2125
+        ]
+      }
+    ]
+  },
   "signed_actions": {
     "height_primary_above_cold_top_m": 7.511721089070518,
     "roof_down_ULS_kN": 68.11087500000001,
@@ -254,10 +615,11 @@
       "name": "study-desk",
       "rectangular_gap_mm": 99.81232388838565
     },
-    "nominal_pier_to_comparator_gap_mm": 46.72108907051734,
+    "nominal_pier_to_comparator_gap_mm": 226.72108907051734,
+    "old_parent_SHS120_underside_gap_not_seat_mm": 206.72108907051734,
     "pier_bottom_top_mm": [
       -80,
-      6640
+      6460
     ],
     "pier_bounds_mm": [
       262.5,
@@ -269,9 +631,8 @@
       412.5,
       412.5
     ],
-    "pier_gross_G_kN_at_25": 15.120000000000001,
-    "pier_gross_volume_m3": 0.6048,
-    "remaining_bed_and_packing_mm": 26.721089070517337,
+    "pier_gross_G_kN_at_25": 14.715,
+    "pier_gross_volume_m3": 0.5886,
     "roof_point_offset_from_pier_mm": [
       -80.0,
       -80.0

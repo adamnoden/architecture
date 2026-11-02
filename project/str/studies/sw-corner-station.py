@@ -79,20 +79,128 @@ L=385.;E=200000.;I=math.pi*rod_d**4/64;Z=math.pi*rod_d**3/32
 shear_each=250.; bend=shear_each*L/2; delta=shear_each*L**3/(12*E*I)
 axial_each=max(T)*1000;A=math.pi*rod_d**2/4
 # Trial RC pier gross: masonry and slab overlap must be removed in any total.
-column_top=6640;column_bottom=-80
+column_top=6460;column_bottom=-80
 roof_comparator_underside=roof['actual_roof']['primary_centre']-60
 nominal_seat_gap=roof_comparator_underside-column_top
-assert math.isclose(nominal_seat_gap,46.721089070517,abs_tol=1e-9);gross_volume=.3*.3*(column_top-column_bottom)/1000
+# The old +6640 pier is rejected after hip seating: see finite roof trial.
+assert nominal_seat_gap>0;gross_volume=.3*.3*(column_top-column_bottom)/1000
 core_overlap_area=(2*300*140-140*140)/1e6
-trial={'pier_bounds_mm':pier,'pier_bottom_top_mm':[column_bottom,column_top],'pier_centroid_mm':centre,'room_projection_mm':pier[2]-interior_face,'roof_point_offset_from_pier_mm':[roofxy[i]-centre[i] for i in range(2)],'cold_axis_offset_from_pier_mm':[centre[i]-coldaxis[i] for i in range(2)],'corner_SHS120_comparator_underside_if_same_centre_mm':roof_comparator_underside,'nominal_pier_to_comparator_gap_mm':nominal_seat_gap,'trial_plate_mm':20,'remaining_bed_and_packing_mm':nominal_seat_gap-20,'pier_gross_volume_m3':gross_volume,'pier_gross_G_kN_at_25':gross_volume*25,'core_plan_overlap_m2':core_overlap_area,'upper_slab_plan_overlap_m2':((pier[2]-332.5)/1000)**2,'nearest_furniture_proxy':{'name':near[0][2],'level':near[0][1],'rectangular_gap_mm':near[0][0]},'minimum_retained_route':minroute,'all_route_reserves':routes}
+trial={'pier_bounds_mm':pier,'pier_bottom_top_mm':[column_bottom,column_top],'pier_centroid_mm':centre,'room_projection_mm':pier[2]-interior_face,'roof_point_offset_from_pier_mm':[roofxy[i]-centre[i] for i in range(2)],'cold_axis_offset_from_pier_mm':[centre[i]-coldaxis[i] for i in range(2)],'corner_SHS120_comparator_underside_if_same_centre_mm':roof_comparator_underside,'nominal_pier_to_comparator_gap_mm':nominal_seat_gap,'trial_plate_mm':20,'old_parent_SHS120_underside_gap_not_seat_mm':nominal_seat_gap-20,'pier_gross_volume_m3':gross_volume,'pier_gross_G_kN_at_25':gross_volume*25,'core_plan_overlap_m2':core_overlap_area,'upper_slab_plan_overlap_m2':((pier[2]-332.5)/1000)**2,'nearest_furniture_proxy':{'name':near[0][2],'level':near[0][1],'rectangular_gap_mm':near[0][0]},'minimum_retained_route':minroute,'all_route_reserves':routes}
 assert math.isclose(60-rod_d/2-8,42)
 connector={'warm_RC_z_mm':[-380,-80],'cold_RC_z_mm':[-1215,-765],'gap_mm':L,'bar_centres_mm':patch,'bar_diameter_mm':rod_d,'bore_diameter_mm':bore_d,'annulus_radial_mm':(bore_d-rod_d)/2,'nominal_bar_bottom_top_mm':[-990,column_top],'nominal_cold_RC_embed_mm':225,'bar_length_mm':column_top+990,'trial_links_diameter_mm':8,'nominal_cover_outside_link_mm':42,'gross_bar_area_mm2':4*A,'gross_bar_mass_G_kN_at_78p5':4*A/1e6*((column_top+990)/1000)*78.5,'unit_station_H_kN':1,'ideal_four_bar_moment_each_kNm':bend/1e6,'ideal_gross_bending_stress_MPa':bend/Z,'ideal_elastic_translation_mm':delta,'bilinear_tension_only_witness_kN':T,'equal_elastic_unilateral_ignored_kN':elastic,'two_tie_tension_only_control_kN':[old_two_near,old_two_far],'largest_witness_gross_tensile_stress_MPa':axial_each/A,'nominal_bore_area_fraction':4*math.pi*(bore_d/2)**2/(300*300),'scope':'Continuous rods connect cold receiver to the underside of a trial cap plate; actual cold anchorage, plate connection, construction sequence and bar material remain unqualified. Fixed-fixed, equal split and nominal smooth gross sections are stress sensitivities only. Real fixity, embedment, shear, tension, fatigue, slip, ductility, reinforcement, DPC, gas, moisture, fire and thermal qualification are absent. The bars and bores are not selected.'}
-result={'status':'finite SW corner constructive comparison; incomplete, no structural or building acceptance','sources':dict(zip(paths,sha)),'trial_pier':trial,'signed_actions':loads,'connector_sensitivity':connector,'decision':'Inward 300 square and straight roof-to-pier-to-grid route are a source-bound candidate for joint STR/MAT/HAD challenge, not a selected design. The four-bar crossing is unqualified; direct full RC bypass remains a thermal/capillary adverse comparator. No actual ground/support capacity is asserted.'}
+# Explicit outer-SW roof triangle. The candidate retains 25° face planes,
+# diagonal hip from the actual outer seat to the 2125 ridge and an 80 mm
+# jack family. At each strip, transverse purlins cantilever at most 500 mm to
+# the jack; this is a deliberate structural substitution, not MAT roof proof.
+tan=math.tan(math.radians(25)); hipang=math.atan(tan/math.sqrt(2));hiphalf=60/math.cos(hipang); jackhalf=40/math.cos(math.radians(25));faceoffset=60*math.sqrt(2);hipdrop=165.
+base=roof['actual_roof']['primary_centre'];hip_z=base-hipdrop;hip_under=hip_z-hiphalf;hip_top=hip_z+hiphalf
+jack_face_under=base-tan*faceoffset-jackhalf;seat_gap=jack_face_under-hip_top
+assert seat_gap>10 and math.isclose(faceoffset,84.8528137423857,abs_tol=1e-8)
+cap_top=column_top+20;hip_bearing_gap=hip_under-cap_top
+assert hip_bearing_gap>20
+ring={'section_mm':[120,120,6.3],'south_plan':[562.5,272.5,4800,392.5],'west_plan':[272.5,562.5,392.5,3247.5],'z_bottom_top_mm':[6540,6660], 'south_support_axes_mm':[597.5,4800], 'west_support_axes_mm':[597.5,3247.5], 'corner_wing_contact_mm':[70,120], 'ring_to_jack_underside_gap_mm':base-jackhalf-6660,'upper_arch_extrados_mm':6515,'arch_clearance_mm':25, 'scope':'Conventional steel ring candidate substitutes a concrete eave collector at SW, remains inside nominal 140 core. End steel saddles, ring anchorage, casing, fire, local source changes and full member actions are not designed.'}
+assert ring['ring_to_jack_underside_gap_mm']>30
+# Exact polygon centroid for a straight-face triangular roof strip; clip at
+# jack-to-hip face. Other roof facets and whole hip forces remain separate.
+def polygon(poly):
+ twice=0.;cx=0.;cy=0.
+ for (x,y),(X,Y) in zip(poly,poly[1:]+poly[:1]):
+  c=x*Y-X*y;twice+=c;cx+=(x+X)*c;cy+=(y+Y)*c
+ if abs(twice)<1e-9:return (0.,0.,0.)
+ return (abs(twice)/2,cx/(3*twice),cy/(3*twice))
+def clip_y(poly,cap,below=True):
+ out=[]
+ for a,b in zip(poly,poly[1:]+poly[:1]):
+  ia=a[1]<=cap if below else a[1]>=cap;ib=b[1]<=cap if below else b[1]>=cap
+  if ia:out.append(a)
+  if ia!=ib:
+   t=(cap-a[1])/(b[1]-a[1]);out.append((a[0]+t*(b[0]-a[0]),cap))
+ return out
+strips=[]
+for a,b in [(0,500),(500,1000),(1000,1500),(1500,2000),(2000,2125)]:
+ poly=[(a,-200),(b,-200),(b,b),(a,a)];face=b-faceoffset
+ A,x,y=polygon(poly);A1,x1,y1=polygon(clip_y(poly,face,True));A2,x2,y2=polygon(clip_y(poly,face,False))
+ assert math.isclose(A1+A2,A,abs_tol=1e-6)
+ # Half of the 80 section nominally occupies each support end. The x500
+ # pair would leave only 2.65 mm clear and is replaced by a single hip
+ # cantilever, with the exact moment carried into its hip bracket.
+ L=face-332.5;clear=L-80
+ item={'x_band_mm':[a,b],'jack_axis_x_mm':b,'roof_area_m2':A/1e6,'jack_loaded_area_m2':A1/1e6,'direct_hip_area_m2':A2/1e6,'hip_axis_y_mm':b,'jack_face_y_mm':face,'eave_axis_y_mm':332.5,'support_axis_span_mm':L,'nominal_between_80_seat_envelopes_mm':clear,'mode':'hip-fixed cantilever; eave support deliberately omitted' if b==500 else 'eave ring and hip-face seat'}
+ for name,q in [('down',6.3),('uplift',-2.25)]:
+  f1=A1/1e6*q; f2=A2/1e6*q
+  if b==500: re=0.;rh=f1
+  else: rh=f1*(y1-332.5)/L;re=f1-rh
+  # Vertical force at hip is relocated from face to diagonal axis, while
+  # purlin cantilevers relocate x to jack axis. Preserve the missing couples.
+  hipforce=rh+f2
+  cx=(A1*x1+A2*x2)/A;cy=(A1*y1+A2*y2)/A
+  fx=q*A/1e6
+  item[name]={'strip_force_kN':fx,'eave_ring_force_kN':re,'hip_force_kN':hipforce,'relocated_x_first_moment_kNm':fx*(cx-b)/1000,'relocated_y_first_moment_kNm':(fx*cy-re*332.5-hipforce*b)/1000}
+  assert math.isclose(re+hipforce,fx,abs_tol=1e-10)
+  assert math.isclose(re*332.5+hipforce*b+item[name]['relocated_y_first_moment_kNm']*1000,fx*cy,abs_tol=1e-7)
+ strips.append(item)
+assert strips[0]['nominal_between_80_seat_envelopes_mm']<3
+assert math.isclose(sum(x['roof_area_m2'] for x in strips),2.6828125,abs_tol=1e-9)
+# The two eave-ring spans use actual aligned wall intersections. This is only
+# the outer triangular SOUTH face; the reflected west face repeats it, while
+# eave rectangles, inner valley/roof facets and all other actions are omitted.
+for item in strips:
+ for name in ['down','uplift']:
+  F=item[name]['eave_ring_force_kN']; left=F*(4800-item['jack_axis_x_mm'])/(4800-597.5);right=F-left
+  item[name]['south_ring_SW_seat_kN']=left;item[name]['south_ring_x4800_seat_kN']=right
+  assert math.isclose(left+right,F,abs_tol=1e-10)
+# One deliberate force route: jack/purlin relocation couples pass through
+# fixed hip endplates into the closed hip; the far hip end is a torsional
+# release, so those couples are equilibrated by its two vertical supports.
+# South and west eave rings have different actual next supports. Their local
+# seats are 265 mm from the corner axis and transfer that couple into the cap.
+partial_routes={}
+for name in ['down','uplift']:
+ hip_total=2*sum(t[name]['hip_force_kN'] for t in strips)
+ hip_couple=sum(t[name]['relocated_x_first_moment_kNm']+t[name]['relocated_y_first_moment_kNm'] for t in strips)
+ about_A=2*sum(t[name]['hip_force_kN']*(t['jack_axis_x_mm']-332.5)/1000 for t in strips)+hip_couple
+ hip_B=about_A/3.585;hip_A=hip_total-hip_B
+ sL=sum(t[name]['south_ring_SW_seat_kN'] for t in strips);sR=sum(t[name]['south_ring_x4800_seat_kN'] for t in strips)
+ wL=sum(t[name]['eave_ring_force_kN']*(3247.5-t['jack_axis_x_mm'])/(3247.5-597.5) for t in strips)
+ wR=sum(t[name]['eave_ring_force_kN'] for t in strips)-wL
+ source=2*sum(t[name]['strip_force_kN'] for t in strips)
+ assert math.isclose(hip_A+hip_B+sL+sR+wL+wR,source,abs_tol=1e-9)
+ # Both source first moments of mirrored faces are equal. Force through the
+ # ring saddle at x/y597.5 keeps its 265 mm cap offset, not a fictitious point.
+ source_xy=sum(t[name]['strip_force_kN']*t['jack_axis_x_mm']+1000*t[name]['relocated_x_first_moment_kNm']+t[name]['eave_ring_force_kN']*332.5+t[name]['hip_force_kN']*t['jack_axis_x_mm']+1000*t[name]['relocated_y_first_moment_kNm'] for t in strips)
+ rx=(hip_A+sL+wL)*332.5+hip_B*3917.5+sL*265+sR*4800+wR*332.5
+ ry=(hip_A+sL+wL)*332.5+hip_B*3917.5+wL*265+sR*332.5+wR*3247.5
+ assert math.isclose(rx,source_xy,abs_tol=1e-6) and math.isclose(ry,source_xy,abs_tol=1e-6)
+ nodeF=hip_A+sL+wL
+ nodeX=(hip_A*332.5+sL*597.5+wL*332.5)/nodeF
+ nodeY=(hip_A*332.5+sL*332.5+wL*597.5)/nodeF
+ partial_routes[name]={'two_faces_total_kN':source,'hip_SW_kN':hip_A,'hip_court_kN':hip_B,'south_ring_SW_saddle_kN':sL,'south_ring_x4800_kN':sR,'west_ring_SW_saddle_kN':wL,'west_ring_y3247p5_kN':wR,'hip_relocated_first_moment_kNm':hip_couple,'SW_node_vertical_kN':nodeF,'SW_node_resultant_xy_mm':[nodeX,nodeY], 'SW_warm_Mx_My_kNm':[-(nodeY-412.5)*nodeF/1000,(nodeX-412.5)*nodeF/1000], 'SW_cold_Mx_My_kNm':[-(nodeY-300)*nodeF/1000,(nodeX-300)*nodeF/1000]}
+roof_candidate={'status':'one finite outer-SW triangular face and mirrored west counterpart, not complete corner/roof load path','hip':{'outer_seat_xy_mm':[332.5,332.5],'ridge_xy_mm':[2125,2125],'court_seat_xy_mm':[3917.5,3917.5],'primary_SHS_mm':[120,120,6.3],'centre_drop_below_parent_mm':hipdrop,'outer_centre_z_mm':hip_z,'outer_bottom_z_mm':hip_under,'outer_top_z_mm':hip_top,'hip_section_angle_degrees':math.degrees(hipang),'actual_end_extension_plan_mm':332.5,'roof_secondary_edge_extension_mm':200,'scope':'Axis and section are explicit candidate; separate inner valley, hip tie, crown, steel node and external edge remain to design.'},'jack':{'section_mm':[80,80,5],'hip_plan_face_offset_mm':faceoffset,'first_x500_clear_between_support_envelopes_mm':strips[0]['nominal_between_80_seat_envelopes_mm'],'first_x500_decision':'Reject two independent seats; hip-rooted cantilever, eave contact omitted, requires moment connection.','face_seat_gap_mm':seat_gap,'trial_hip_seat_plate_mm':10,'remaining_nominal_shim_clear_mm':seat_gap-10,'support_x_stations_mm':[x['jack_axis_x_mm'] for x in strips],'purlin_cantilever_max_mm':500,'purlin_section_mm':[120,60,4],'purlin_rows_from_outer_wall_mm':[0,450,950,1450,1950,2125], 'outer_edge_extension_mm':200, 'purlin_ULS_UDL_kN_m':6.3*.5, 'purlin_ULS_cantilever_M_kNm':6.3*.5*.5**2/2, 'purlin_ULS_root_shear_kN':6.3*.5*.5, 'purlin_elastic_bending_stress_MPa':(6.3*.5*.5**2/2)*1e6/40100, 'purlin_SLS_elastic_tip_mm':((3+1.5)*.5)*500**4/(8*210000*2.41e6), 'purlin_screen_scope':'Trial full UDL, gross major axis and fixed-end geometry only; weld/cleat, torsion, actual loaded rows, second axis, restraints and deflection limits are not qualified.', 'scope':'Below AVCL/glass. Moment connection, member resistance, steel torsion, lateral restraints, penetrations and exact rail/purlin geometry unproved.'},'cap':{'pier_top_mm':column_top,'cap_plate_z_mm':[column_top,cap_top],'hip_bearing_gap_mm':hip_bearing_gap,'trial_hip_bearing_block_mm':20,'remaining_hip_packing_mm':hip_bearing_gap-20,'east_wing_plan_mm':[562.5,272.5,632.5,392.5],'north_wing_plan_mm':[272.5,562.5,392.5,632.5],'ring_saddle_height_mm':60,'ceiling_box_finish_mm':6425,'ceiling_clear_above_first_FFL_mm':6425-3450,'scope':'Wing overhang and 60 mm saddle are explicit steel bracket candidates, not anchored/capacity-qualified. Proposed 15 mm ceiling liner top6440 leaves20 below pier top; actual ceiling/fire/service layers require review.'},'ring':ring,'tributary_strips':strips,'partial_south_west_route':partial_routes,'outer_eave_corner_tip_triangle_m2':.02,'outer_triangle_modeled_strip_area_m2':sum(x['roof_area_m2'] for x in strips),'outer_triangle_full_area_m2':2.7028125,'scope':'One strip family and its mirror preserve vertical force and signed first moments in each assigned strip. The 0.02 m² tip, central eave rectangles, ridge/inner valley facets and cantilever-rail torque need their stated independent supports; they are not replaced by the old collapsed corner endpoint. No whole-corner endpoint, capacity or site acceptance is claimed.'}
+result={'status':'finite SW corner constructive comparison; incomplete, no structural or building acceptance','sources':dict(zip(paths,sha)),'trial_pier':trial,'signed_actions':loads,'connector_sensitivity':connector,'finite_roof_candidate':roof_candidate,'decision':'Inward 300 square and straight roof-to-pier-to-grid route are a source-bound candidate for joint STR/MAT/HAD challenge, not a selected design. The four-bar crossing is unqualified; direct full RC bypass remains a thermal/capillary adverse comparator. No actual ground/support capacity is asserted.'}
 out=R/'project/str/studies/sw-corner-station.json';txt=json.dumps(result,indent=2,sort_keys=True)+'\n'
 # Diagram is schematic, dimensions and elevations explicitly stated; never a
 # substitute for detailed reinforcement, DPC, architectural or site drawings.
-svg='''<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="210mm" viewBox="0 0 420 210"><rect width="420" height="210" fill="#fff"/><style>text{font-family:Arial,sans-serif;fill:#182b36;font-size:3px}.t{font-size:5px;font-weight:bold}.s{font-size:2.6px}.line{stroke:#526772;stroke-width:.45;fill:none}.rc{fill:#bbc9ce;stroke:#344f5c;stroke-width:.45}.core{fill:#d6c3a5;stroke:#705942;stroke-width:.35}.warning{fill:#903f2f}</style><text x="10" y="10" class="t">SW corner: conditional roof-to-grid station</text><text x="10" y="16" class="s">Source-bound structural trial · no selection, capacity or construction release</text><text x="10" y="25">A  PLAN · structural/core footprint</text><rect x="12" y="31" width="92" height="92" fill="#eff4f5" stroke="#526772"/><rect x="12" y="31" width="92" height="21.5" class="core"/><rect x="12" y="31" width="21.5" height="92" class="core"/><rect x="12" y="31" width="46" height="46" class="rc"/><circle cx="21.2" cy="40.2" r="1.55" fill="#903f2f"/><circle cx="48.8" cy="40.2" r="1.55" fill="#903f2f"/><circle cx="21.2" cy="67.8" r="1.55" fill="#903f2f"/><circle cx="48.8" cy="67.8" r="1.55" fill="#903f2f"/><circle cx="22.7" cy="41.7" r="1.4" fill="#172b36"/><text x="12" y="132">300 × 300 pier; 133 projects into room.</text><text x="12" y="138">Black: roof action axis. Red: trial tie centres.</text><text x="12" y="144">Core 140; pier centroid +80 x/y from roof axis.</text><text x="12" y="150">Furniture and body-path checks are proxy geometry.</text><text x="128" y="25">B  SECTION · conceptual force route</text><rect x="141" y="34" width="35" height="46" class="rc"/><text x="181" y="43">RC pier: −80 to +6640 trial</text><text x="181" y="49">Roof +68.111 / −24.325 kN only</text><rect x="141" y="80" width="35" height="16" class="rc"/><text x="181" y="89">Warm RC −80 to −380</text><rect x="141" y="96" width="35" height="25" fill="#efe2c6" stroke="#705942"/><text x="181" y="105">AAC + beds + mineral DPC</text><text x="181" y="111">385 gap to cold RC; no shear/tension credit</text><rect x="141" y="121" width="35" height="24" class="rc"/><text x="181" y="130">Cold RC −765 to −1215</text><line x1="152" y1="38" x2="152" y2="133" stroke="#903f2f" stroke-width="1"/><line x1="165" y1="38" x2="165" y2="133" stroke="#903f2f" stroke-width="1"/><text x="128" y="154">4 × Ø20 continuous ties; Ø60 bores; 225 cold embed trial.</text><text x="128" y="160" class="warning">Bores breach DPC/air-gas boundary; seal, anchor,</text><text x="128" y="166" class="warning">lateral transfer and thermal performance unproved.</text><text x="10" y="185">C  SIGNED ACTIONS AND LIMITS</text><text x="10" y="191">Roof-only eccentric moments: warm ±5.449 / ±1.946 kNm; cold ±2.214 / ±0.791 kNm (down / uplift magnitudes).</text><text x="10" y="197">1 kN lateral unit: ideal fixed-ended bars ~61.3 MPa bending, ~0.76 mm drift. No wind, support share or capacity inferred.</text><text x="10" y="203">Actual roof corner, pier/slab cages, cap-plate weld, wet boundary, diaphragm, site supports and occupied section remain to be resolved.</text></svg>'''
+svg='''<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="210mm" viewBox="0 0 420 210"><rect width="420" height="210" fill="#fff"/><style>text{font-family:Arial,sans-serif;fill:#182b36;font-size:3px}.t{font-size:5px;font-weight:bold}.s{font-size:2.6px}.line{stroke:#526772;stroke-width:.45;fill:none}.rc{fill:#bbc9ce;stroke:#344f5c;stroke-width:.45}.core{fill:#d6c3a5;stroke:#705942;stroke-width:.35}.warning{fill:#903f2f}</style><text x="10" y="10" class="t">SW corner: conditional roof-to-grid station</text><text x="10" y="16" class="s">Source-bound structural trial · no selection, capacity or construction release</text><text x="10" y="25">A  PLAN · structural/core footprint</text><rect x="12" y="31" width="92" height="92" fill="#eff4f5" stroke="#526772"/><rect x="12" y="31" width="92" height="21.5" class="core"/><rect x="12" y="31" width="21.5" height="92" class="core"/><rect x="12" y="31" width="46" height="46" class="rc"/><circle cx="21.2" cy="40.2" r="1.55" fill="#903f2f"/><circle cx="48.8" cy="40.2" r="1.55" fill="#903f2f"/><circle cx="21.2" cy="67.8" r="1.55" fill="#903f2f"/><circle cx="48.8" cy="67.8" r="1.55" fill="#903f2f"/><circle cx="22.7" cy="41.7" r="1.4" fill="#172b36"/><text x="12" y="132">300 × 300 pier; 133 projects into room.</text><text x="12" y="138">Black: roof action axis. Red: trial tie centres.</text><text x="12" y="144">Core 140; pier centroid +80 x/y from roof axis.</text><text x="12" y="150">Furniture and body-path checks are proxy geometry.</text><text x="128" y="25">B  SECTION · conceptual force route</text><rect x="141" y="34" width="35" height="46" class="rc"/><text x="181" y="43">RC pier: −80 to +6460 trial</text><text x="181" y="49">Roof +68.111 / −24.325 kN control</text><rect x="141" y="80" width="35" height="16" class="rc"/><text x="181" y="89">Warm RC −80 to −380</text><rect x="141" y="96" width="35" height="25" fill="#efe2c6" stroke="#705942"/><text x="181" y="105">AAC + beds + mineral DPC</text><text x="181" y="111">385 gap to cold RC; no shear/tension credit</text><rect x="141" y="121" width="35" height="24" class="rc"/><text x="181" y="130">Cold RC −765 to −1215</text><line x1="152" y1="38" x2="152" y2="133" stroke="#903f2f" stroke-width="1"/><line x1="165" y1="38" x2="165" y2="133" stroke="#903f2f" stroke-width="1"/><text x="128" y="154">4 × Ø20 continuous ties; Ø60 bores; 225 cold embed trial.</text><text x="128" y="160" class="warning">Bores breach DPC/air-gas boundary; seal, anchor,</text><text x="128" y="166" class="warning">lateral transfer and thermal performance unproved.</text><text x="10" y="185">C  SIGNED ACTIONS AND LIMITS</text><text x="10" y="191">Roof-only eccentric moments: warm ±5.449 / ±1.946 kNm; cold ±2.214 / ±0.791 kNm (down / uplift magnitudes).</text><text x="10" y="197">1 kN lateral unit: ideal fixed-ended bars ~61.3 MPa bending, ~0.76 mm drift. No wind, support share or capacity inferred.</text><text x="10" y="203">Actual roof corner, pier/slab cages, cap-plate weld, wet boundary, diaphragm, site supports and occupied section remain to be resolved.</text></svg>'''
+# A second schematic makes the finite roof path and its partial coverage
+# inspectable. The mirrored west facet is calculated, not drawn twice.
+def xy(x,y):return (16+x*.052,148-y*.052)
+def line(a,b,style):
+ x,y=xy(*a);X,Y=xy(*b);return f'<line x1="{x:.3f}" y1="{y:.3f}" x2="{X:.3f}" y2="{Y:.3f}" {style}/>'
+parts=[]
+parts.append(line((0,0),(2125,2125),'stroke="#a25842" stroke-width="1.5"'))
+parts.append(line((332.5,332.5),(2125,2125),'stroke="#a25842" stroke-width="2"'))
+parts.append(line((562.5,332.5),(2125,332.5),'stroke="#37546a" stroke-width="2"'))
+for j in strips:
+ x=j['jack_axis_x_mm']; end=j['jack_face_y_mm']
+ parts.append(line((x,0),(x,end),'stroke="#326b65" stroke-width="1"'))
+ parts.append(line((x,-200),(x,0),'stroke="#326b65" stroke-width=".6" stroke-dasharray="1 1"'))
+ px,py=xy(x,end);parts.append(f'<circle cx="{px:.3f}" cy="{py:.3f}" r="1.1" fill="#a25842"/>')
+for y in [0,450,950,1450,1950,2125]:
+ if y>2000:continue
+ parts.append(line((max(0,y),y),(min(2125,math.ceil(max(y,1)/500)*500),y),'stroke="#95aab2" stroke-width=".5" stroke-dasharray="1 1"'))
+roof_svg='''<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="210mm" viewBox="0 0 420 210"><rect width="420" height="210" fill="white"/><style>text{font-family:Arial,sans-serif;fill:#182b36;font-size:3px}.title{font-size:5px;font-weight:bold}.small{font-size:2.6px}.warn{fill:#a04430}</style><text x="10" y="10" class="title">SW roof: finite outer-face construction trial</text><text x="10" y="16" class="small">One south triangular facet and its mirrored west facet · not a completed corner or construction detail</text><text x="12" y="24">A  PLAN · one 25° outer triangular face</text><path d="M 16 158.4 L 126.5 158.4 L 126.5 37.5 Z" fill="#edf4f4" stroke="#a7b8bb" stroke-width=".4"/>''' + ''.join(parts) + '''<text x="12" y="165">Green: SHS80 jacks, dashed 200 secondary edge; rust: SHS120 hip.</text><text x="12" y="171">Blue: 120-square eave ring; grey: purlin cantilever example.</text><text x="12" y="177">First x500 jack is hip-rooted, not two-seat.</text><text x="155" y="24">B  ACTUAL JOIN ENVELOPES · schematic, not to scale</text><rect x="160" y="37" width="34" height="18" fill="#becbd0" stroke="#37546a"/><text x="199" y="42">SHS80 jack underside</text><text x="199" y="48">10 seat + 8.120 nominal clearance</text><rect x="160" y="59" width="34" height="22" fill="#d7c5ae" stroke="#795a40"/><text x="199" y="65">SHS120 hip top at face</text><text x="199" y="71">centre 165 below parent primary line</text><rect x="160" y="92" width="34" height="16" fill="#becbd0" stroke="#37546a"/><text x="199" y="97">SHS120 eave ring +6540..+6660</text><text x="199" y="103">25 above trial window-ring extrados</text><rect x="160" y="119" width="34" height="14" fill="#becbd0" stroke="#37546a"/><text x="199" y="124">20 cap +6460..+6480; 70 × 120 wings</text><text x="199" y="130">60 saddle to ring; hip bearing gap 38.544</text><text x="155" y="148">Local finished ceiling box +6425 = 2975 above upper FFL.</text><text x="155" y="155" class="warn">Roof edge, counterrail ventilation, welds, anchored</text><text x="155" y="161" class="warn">steel, wall/subfloor and inner valley remain unqualified.</text><text x="10" y="190">C  FORCE ROUTE</text><text x="10" y="196">Five source-face strips: signed resultants, eave-ring seats, hip seats and their relocation couples are conserved.</text><text x="10" y="202">This excludes the outer tip, central roof and inner valley: do not add the partial node to the old collapsed-corner envelope.</text></svg>'''
+roofsvgpath=R/'project/str/studies/sw-corner-roof.svg'
 svgpath=R/'project/str/studies/sw-corner-station.svg'
 if '--check' in sys.argv:
- assert out.read_text()==txt and svgpath.read_text()==svg;print('SW station source, geometry and signed action sensitivities verified')
-else:out.write_text(txt);svgpath.write_text(svg);print(json.dumps(result,indent=2))
+ assert out.read_text()==txt and svgpath.read_text()==svg and roofsvgpath.read_text()==roof_svg;print('SW station source, geometry and signed action sensitivities verified')
+else:out.write_text(txt);svgpath.write_text(svg);roofsvgpath.write_text(roof_svg);print(json.dumps(result,indent=2))
