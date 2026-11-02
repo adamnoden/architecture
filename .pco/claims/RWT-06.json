@@ -9,12 +9,12 @@
     "label": "zerg-rwt06-high-eave-continuation"
   },
   "claimedAt": "2026-11-02T09:11:24.186Z",
-  "heartbeatAt": "2026-11-02T09:27:08.317Z",
-  "expiresAt": "2026-11-02T10:12:08.317Z",
+  "heartbeatAt": "2026-11-02T09:48:48.292Z",
+  "expiresAt": "2026-11-02T10:33:48.292Z",
   "checkpoint": {
-    "evidence": "PR #1258 remote head896e22ae/treece012d07 matches validated local source; high-eave A3, RWT source generators, repository integrity and tsc pass; RWT-06 still planned",
-    "next": "Independent review, exact-head CI, current-main integration if needed, canonical merge preflight and root merge",
-    "blocker": "Roof interceptor actual first harm, receiver geometry, pad/support and physical/site admission remain unqualified"
+    "evidence": "PR #1258 corrected remote head b616da75/tree dd823289; outboard cup rejected against primary/secondary/gutter sweep; source-pinned A3 and generator, integrity, tsc pass",
+    "next": "Review corrected negative disposition and exact-head CI; integrate changed main and fresh canonical publication preflight before root merge",
+    "blocker": "Roofward dual-layer interception and complete high-eave receiver renewal remain new ROF/MAT/RWT source work; RWT-06 stays planned"
   },
   "branch": "work/rwt06-high-eave-20261102",
   "predecessor": {
