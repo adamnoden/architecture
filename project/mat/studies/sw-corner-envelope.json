@@ -101,15 +101,15 @@
     ],
     "continuousPier": [
       -80,
-      6460
+      6410
     ],
     "roofCapPlate": [
-      6460,
-      6480
+      6410,
+      6430
     ],
     "continuousBarTrial": [
       -990,
-      6460
+      6410
     ],
     "note": "Cold RC and local warm pad dimensions are coordinated provisional STR station inputs, not selected structural source. Warm-grid material/thermal values came from a 519.5 loggia sidewall and cannot transfer to this 429.5 SW corner."
   },
@@ -173,7 +173,7 @@
       "groundFurniture": [],
       "upperFurniture": []
     },
-    "roofCapNominalGapToTrialHip_mm": 38.54358438968029,
+    "roofCapNominalGapToTrialHip_mm": 58.54358438968029,
     "roofPointBilinearFractionsThoughtExperiment": [
       0.8919753086419753,
       0.05246913580246913,
@@ -226,13 +226,13 @@
     "plateThickness_mm": 3,
     "upperRodZ": [
       -571,
-      6460
+      6410
     ],
     "lowerRodZ": [
       -990,
       -574
     ],
-    "upperRodLength_mm": 7031,
+    "upperRodLength_mm": 6981,
     "lowerRodLength_mm": 416,
     "weldNote": "Four upper and four lower rod ends join opposite faces of one unperforated plate. Weld size, alloy, fatigue, anchorage, contact and construction access not designed.",
     "plateMass_kg_at_7850": 2.1195,
@@ -298,7 +298,7 @@
   "pathSchedule": [
     {
       "path": "signed force",
-      "sequence": "assumed roof cap at +6460..+6480 \u2192 four continuous pier bars and tied RC 300 square from +6460 to \u221280 \u2192 four \u00d860 band crossings \u2192 cold grid",
+      "sequence": "assumed roof cap at +6410..+6430 \u2192 four continuous pier bars and tied RC 300 square from +6410 to \u221280 \u2192 four \u00d860 band crossings \u2192 cold grid",
       "hold": "STR actual roof hip/seat, cap welded bar ends, cage ties, anchorage, signed N/M/V, stiffness/contact and cold grid; no equal sharing or AAC/DPC tension/shear credit"
     },
     {
