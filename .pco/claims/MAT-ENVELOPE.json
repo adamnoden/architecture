@@ -9,12 +9,12 @@
     "label": "zerg9-envelope-join"
   },
   "claimedAt": "2026-11-02T14:04:32.556Z",
-  "heartbeatAt": "2026-11-02T14:27:04.323Z",
-  "expiresAt": "2026-11-02T15:12:04.323Z",
+  "heartbeatAt": "2026-11-02T14:31:14.870Z",
+  "expiresAt": "2026-11-02T15:16:14.870Z",
   "checkpoint": {
-    "evidence": "Draft PR #1280 head 9551e2f505b1471e472ca1e3f2d19cd6b4ee07ea tree f277111bf945e31afcf80031393608220f45ac58; peer-reviewed conditional network and junction controls",
-    "next": "Root independent bounded QA, exact-head CI and fresh preflight",
-    "blocker": "Historical receivers, collar, threshold, services, bearing, movement, perimeter and physical acceptance remain unresolved"
+    "evidence": "Draft PR #1280 head 8b4b5d4db4f3ea928fe31564c776ca3eb9808a2a tree 65fe04fa76da4d371e2671f7b7afdd35e6bfabc0; current-main rebind and peer-reviewed geometry controls",
+    "next": "Root exact-head CI and fresh preflight after narrow reviewer rebind",
+    "blocker": "Receiver, collar, threshold, services, bearing, movement and physical acceptance remain unresolved"
   },
   "branch": "work/zerg9-envelope-join",
   "predecessor": {
