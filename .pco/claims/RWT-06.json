@@ -9,8 +9,8 @@
     "label": "zerg-rwt27-integrated-method"
   },
   "claimedAt": "2026-11-02T12:57:48.300Z",
-  "heartbeatAt": "2026-11-02T13:02:09.838Z",
-  "expiresAt": "2026-11-02T13:47:09.838Z",
+  "heartbeatAt": "2026-11-02T13:28:19.180Z",
+  "expiresAt": "2026-11-02T14:13:19.180Z",
   "branch": "work/rwt27-integrated-method-20261102",
   "note": "Develop integrated conventional access, lifting and protected ground wet route; preserve RWT06 planned and physical gates",
   "predecessor": {
@@ -36,8 +36,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Public head 868d6bfd7df2245fcbc3b64574f63edab3549a58 tree bf029d050cc9f6f5247f0ddce31d08924e032e51; corrected tower outer dimensions and east gate ledger clash",
-    "next": "Develop integrated actual scaffold, lifting, wet capture and controlled worker route",
-    "blocker": "Joined support, access, weather and water failure paths unproved"
+    "evidence": "Public head 2c7b5c82ca381d5a64b2a9472fd906da2fcbf105 tree 2d3b6072e724fbade288850704d9c253b2c6c7c1; finite transfer field, pipe sleeve and common wet failure",
+    "next": "Resolve common overflow and joined accessible structural, handling and water states",
+    "blocker": "All-outlet blockage wets working deck; supported assembly and escape unproved"
   }
 }
