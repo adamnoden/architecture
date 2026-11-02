@@ -9,8 +9,8 @@
     "label": "zerg4-whole-house-services"
   },
   "claimedAt": "2026-11-01T21:02:38.591Z",
-  "heartbeatAt": "2026-11-02T00:55:52.644Z",
-  "expiresAt": "2026-11-02T01:40:52.644Z",
+  "heartbeatAt": "2026-11-02T01:12:27.955Z",
+  "expiresAt": "2026-11-02T01:57:27.955Z",
   "branch": "work/zerg4-whole-house-services",
   "predecessor": {
     "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Frozen9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2 tree1df93a838670cae55ecd1ed6cac9a61f95a0e27c preserves latestmain6a3c15d6; five bounded review fixes reproduce. Bath25b4/kitchend2db objects unchanged; architecture949065 corrects sofa actor and derived handling text.",
-    "next": "MAT focused delta review then HAD strict keyed equality/relevant geometry equivalence; root final sequencing. Keep new remotehead frozen.",
-    "blocker": "Head-first handling continuation and later site/product/material/physical admissions remain explicit; no whole-services PASS or node completion."
+    "evidence": "Frozen reviewed source9476f39e/tree1df93a83; independent HADa510 exact service projection949065/907544f8 confirmed, explicit bedroom rewind ledger retained.",
+    "next": "Await root exact-head CI and verified merge; preserve frozen source and bounded continuation holds.",
+    "blocker": "No source blocker in reviewed five-fix delta; root is sole CI observer. Whole-house physical/product/material admission remains unearned."
   },
   "pr": 1234
 }
