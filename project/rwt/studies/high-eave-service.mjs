@@ -30,6 +30,7 @@ const inlet = { y0: 7000, y1: 7350 }
 const machine = {
   identity: 'Genie AWP-25S standard-base CE, AWPT-6454 onward, outdoor outriggers, manual 1337927GT, sixth edition second printing August 2026',
   footprint: [3000, 2800], stowed: [1308, 736, 1980],
+  platform: { option: 'standard gated', length: 690, width: 660, railHeight: 1100 }, power: 'DC 12V battery',
   maxPlatformHeight: 7500, maxOccupants: 1, capacityKg: 159, maxWheelKg: 231,
   wallAccessFromTopRail: 434, maxManualForceN: 200
 }
@@ -58,6 +59,10 @@ const section = {
   nominalJambMarginAtSouthMouth: mat.portal.finishedSpringAtVerticalJamb - (mat.outdoor.courtWalking[2] + machine.stowed[2]),
   minPlatformHeightFromSouthMouthToEaveDatum: had.roofDevelopment.eavesDatum - mat.outdoor.courtWalking[2],
   platformHeightHeadroomToDatum: machine.maxPlatformHeight - (had.roofDevelopment.eavesDatum - mat.outdoor.courtWalking[2]),
+  trialBasket: { floor: 6000, topRail: 6000 + machine.platform.railHeight,
+    raiseFromSouthMouth: 6000 - mat.outdoor.courtWalking[2],
+    hemBelowTopRail: 6000 + machine.platform.railHeight - 7006.74,
+    nominalTopRailToHem: machine.wallAccessFromTopRail - had.roofDevelopment.overhang },
   floorAtInletSouth: -94,
   floorAtCourtSouth: -110,
   southCourtDoorPanJoin: -30
@@ -83,6 +88,7 @@ const result = {
 if (plan.unavoidableInletEnvelopeOverlap.join() !== '50,250' || section.nominalJambMarginAtSouthMouth < 250
   || temporary.transferAtCourt.toInvert < temporary.transferAtCourt.floor
   || temporary.westBranch.transfer.toInvert < temporary.westBranch.transfer.floor
+  || section.trialBasket.raiseFromSouthMouth > machine.maxPlatformHeight
   || temporary.roofIntercept.trialInvert >= section.physicalOuterEdge) {
   throw new Error('Geometric adverse controls changed')
 }
@@ -112,8 +118,9 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1123" height="794" v
 <text x="720" y="176" class="small">eave datum +7100 / hem +7006.74</text>
 <line x1="765" y1="370" x2="1070" y2="370" stroke="#65909b" stroke-width="5"/><text x="735" y="400" class="small">proposed raised capture, independent support</text>
 <line x1="765" y1="490" x2="1070" y2="510" stroke="#445960" stroke-width="7"/><text x="748" y="542" class="small">court 0 →−30 →−110</text>
-<text x="715" y="583" class="small">lowered height 1980; jamb spring +2126.54</text>
-<text x="715" y="608" class="small">south-mouth nominal head margin ${section.nominalJambMarginAtSouthMouth.toFixed(2)} mm</text>
+<text x="715" y="583" class="small">lowered 1980; jamb spring +2126.54</text>
+<text x="715" y="608" class="small">nominal head margin ${section.nominalJambMarginAtSouthMouth.toFixed(2)} mm</text>
+<text x="715" y="625" class="tiny">DC gated 690×660; trial floor +6000 / rail +7100</text>
 <text x="715" y="650" class="small">receiver renewal: separate scaffold/hoist</text>
 <text x="715" y="675" class="small">roof capture → west / east branches</text>
 <text x="715" y="700" class="small">→ normal N/W / broad E; each full duty</text>

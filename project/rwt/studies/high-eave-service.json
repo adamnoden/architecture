@@ -32,6 +32,13 @@
       736,
       1980
     ],
+    "platform": {
+      "option": "standard gated",
+      "length": 690,
+      "width": 660,
+      "railHeight": 1100
+    },
+    "power": "DC 12V battery",
     "maxPlatformHeight": 7500,
     "maxOccupants": 1,
     "capacityKg": 159,
@@ -91,6 +98,13 @@
     "nominalJambMarginAtSouthMouth": 256.5422357208927,
     "minPlatformHeightFromSouthMouthToEaveDatum": 7210,
     "platformHeightHeadroomToDatum": 290,
+    "trialBasket": {
+      "floor": 6000,
+      "topRail": 7100,
+      "raiseFromSouthMouth": 6110,
+      "hemBelowTopRail": 93.26000000000022,
+      "nominalTopRailToHem": 234
+    },
     "floorAtInletSouth": -94,
     "floorAtCourtSouth": -110,
     "southCourtDoorPanJoin": -30

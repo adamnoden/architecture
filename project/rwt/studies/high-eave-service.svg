@@ -21,8 +21,9 @@
 <text x="720" y="176" class="small">eave datum +7100 / hem +7006.74</text>
 <line x1="765" y1="370" x2="1070" y2="370" stroke="#65909b" stroke-width="5"/><text x="735" y="400" class="small">proposed raised capture, independent support</text>
 <line x1="765" y1="490" x2="1070" y2="510" stroke="#445960" stroke-width="7"/><text x="748" y="542" class="small">court 0 →−30 →−110</text>
-<text x="715" y="583" class="small">lowered height 1980; jamb spring +2126.54</text>
-<text x="715" y="608" class="small">south-mouth nominal head margin 256.54 mm</text>
+<text x="715" y="583" class="small">lowered 1980; jamb spring +2126.54</text>
+<text x="715" y="608" class="small">nominal head margin 256.54 mm</text>
+<text x="715" y="625" class="tiny">DC gated 690×660; trial floor +6000 / rail +7100</text>
 <text x="715" y="650" class="small">receiver renewal: separate scaffold/hoist</text>
 <text x="715" y="675" class="small">roof capture → west / east branches</text>
 <text x="715" y="700" class="small">→ normal N/W / broad E; each full duty</text>
