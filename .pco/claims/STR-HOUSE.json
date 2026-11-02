@@ -9,8 +9,8 @@
     "label": "zerg-structure-corner"
   },
   "claimedAt": "2026-11-02T10:56:48.149Z",
-  "heartbeatAt": "2026-11-02T12:07:57.000Z",
-  "expiresAt": "2026-11-02T12:52:57.000Z",
+  "heartbeatAt": "2026-11-02T12:29:09.000Z",
+  "expiresAt": "2026-11-02T13:14:09.000Z",
   "branch": "work/zerg-str-sw-corner-20261102",
   "predecessor": {
     "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
@@ -36,7 +36,8 @@
   },
   "pr": 1269,
   "checkpoint": {
-    "evidence": "Draft PR #1269, source head 9be6961187; shared integration snapshot e3ce0058; cold-node alternatives under investigation",
-    "next": "Resolve concrete cover, pile cutoff and cold-arm continuation; coordinate envelope and independent review"
+    "evidence": "Draft PR #1269 remote head 1d713a2bd304251e09e6e2de1892dcf4f13d06b0 tree 5b91f9fae31320edcd031c444668daf92ad14f62; continuous-return candidate, catalogue dimensions and local reproducers",
+    "next": "Independent geometric and load-path review; reconcile MAT envelope and source pin before any integration",
+    "blocker": "Node group interaction, signed whole-house demand, pile/arm transfer, envelope and site remain unqualified"
   }
 }
