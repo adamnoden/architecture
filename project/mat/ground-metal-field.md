@@ -31,6 +31,22 @@ The warm-grid comparison places its 200 mm floor RC at **−80..−280**, follow
 
 The selected HAD scene instead records ground RC **−180..−380**. At this datum the same field has only **2 mm** clearance under the slab: a 40 mm top-side rail overlaps it by **38 mm**. The candidate therefore **fails on the unchanged selected HAD section**. It cannot claim the MAT 102 mm reservation until HAD/STR deliberately reconcile the slab and ground-floor construction. Even under the MAT comparison, the warm girder itself ends at −380, so every rail that meets it hits the same 2 mm constraint. Stop or turn rails in actual clear bays and design independent end support, welded field transitions and access at each girder; simply continuing the grid through RC or trimming the field is invalid.
 
+## Flush-soffit support challenge
+
+One adjustment of the **same field direction** moves the 1 mm field up to **−381..−380**, while the 3 mm plate remains **−383..−380**. Their upper faces align; their undersides have a real **2 mm step** requiring a continuous welded transition. In the 10 mm upper bed this leaves **9 mm below the 1 mm field**, but only **7 mm below the 3 mm patch**. Unlike the earlier field at −383..−382, there is no 2 mm mortar layer above the sheet. No associated bearing, lateral restraint, bond, seal or masonry joint is qualified.
+
+The two source slab alternatives lead to different load paths. Under the unchanged selected **HAD slab soffit −380**, the sheet is directly against RC. It might serve as permanent formwork only if the temporary support, pour, concrete-to-metal contact, structural action, movement, seal, inspection and repair are designed together. At an assumed concrete unit weight 25 kN/m³, 200 mm of wet RC gives **5 kPa dead load**, before placement workers, wet-concrete concentration or other loads. An intentionally simple 1 m wide, 1 mm thick, simply supported elastic steel beam-strip screen at E200 GPa gives the following; it ignores plate action and is a warning about the stated idealization, not a sheet design:
+
+| Unbraced span | Gross elastic bending stress | Gross elastic deflection |
+|---:|---:|---:|
+| 100 mm | 37.5 MPa | 0.391 mm |
+| 250 mm | 234.4 MPa | 15.3 mm |
+| 1,000 mm | 3,750 MPa | 3,906 mm |
+
+The 1,000 mm estimate is far outside small-deflection elastic validity; it is not a physical prediction. It exposes why a bare 1 m unsupported sheet cannot be accepted from its self-weight. Temporary backing with a demonstrable actual load path, substrate, achievable support spacing and removal sequence is required. No steel grade, allowable stress, design factors or capacity is inferred.
+
+Under the **MAT warm-grid comparison**, the ordinary slab soffit is −280, **100 mm above** this same field. Only the receiving girder reaches −380. The sheet cannot be treated as a slab form or credited with the 5 kPa slab load there unless a real bridging substrate changes that construction. Conversely, hanger/rail support must avoid the −380 girder and preserve the 320 mm glass. These are competing source arrangements to reconcile, not two views of the same installed section. Casting onto metal may also change shrinkage, friction, condensation, concrete restraint, fixing and inspection. A fully welded sheet makes a plausible field hypothesis, but does not itself prove structural transfer, gas tightness or a repairable installation.
+
 ## Movement across actual support lines
 
 A metal field cannot be locked to a whole 11,475 mm span and treated as movement-free. At illustrative uniform Δ20 K, free strain gives **3.672 mm** for α16×10⁻⁶/K steel and **2.295 mm** for α10×10⁻⁶/K concrete: **1.377 mm** difference. These are assumed coefficients and temperatures, not actual relative movement or a required joint rating. Creep, shrinkage, temperature gradients, restraint and differential settlement need their own load and movement analysis.
