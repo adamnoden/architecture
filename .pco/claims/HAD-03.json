@@ -9,8 +9,8 @@
     "label": "zerg2-had-open-loggia"
   },
   "claimedAt": "2026-11-01T20:03:03.859Z",
-  "heartbeatAt": "2026-11-02T01:08:34.206Z",
-  "expiresAt": "2026-11-02T02:38:34.206Z",
+  "heartbeatAt": "2026-11-02T01:30:09.441Z",
+  "expiresAt": "2026-11-02T03:00:09.441Z",
   "branch": "work/zerg2-had-open-loggia",
   "predecessor": {
     "leaseId": "6880ac9f-d9b0-4763-998c-f7820e975912",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "DraftPR1240 frozena510f30c tree2489c95d JSON54f5ff68; allHADfitchecksPASS,5actualrenders,writecheck+tsc+4tests+repository+VitePressPASS; true6a3c15mainparentsretained,WorkLeasebodyverified.",
-    "next": "FREEZE forrootHighreview; combinecanonicalMAT9476+IASdcthenDEFAULTpathreproduction; synchronizestaleJSONtopstatuswithactualSELECTdecision,rootownsfinalpreflight/merge/lifecycle.",
-    "blocker": "Two priorCLIrenewalsfailedbeforewriteatgitrefresh60stimeout; independentread-onlyruntimefetchcompleted,noreplayedmailbox. Actualcombinedreview/defaultdependencychecksremainpending; physicaltechnicalsiteadmissionsseparate."
+    "evidence": "PR1240 correctedcfacc96c tree d053dc99 JSON25faad2c: MAT9476 kitchen10750 bound; generic36fixedsolids audit catchesold29.5x79.5overlap,selected20.5gapPASS. Selectedsillelevationsandstatus/family/principal664synchronized. RequiredfitwritecheckPASS;2changedactualrendersinspected;source/PRfooterreadbackverified.",
+    "next": "FREEZE forrootfocuseddeltareview; combineddefaultcanonicalpathproof/exactheadCI/freshpernodepreflight/expectedheadmerge. NoHADlifecyclepatchuntilcombinedverificationandmerge.",
+    "blocker": "Noownspatialblocker. CanonicalGitdeadline30sversusnative32.3s isunderdelegateddiagnosis; thisonefreshmeaningfulattemptonly,noblindretryorgateweakening. Technicalphysicalsiteadmissionsremainnamedlaterowners."
   },
   "pr": 1240
 }
