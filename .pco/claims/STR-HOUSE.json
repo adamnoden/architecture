@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 12,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "55aa5d86-6d9f-4bed-820a-5f08388eb0f1",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg4-structure-roof"
   },
   "claimedAt": "2026-11-02T00:02:13.027Z",
-  "heartbeatAt": "2026-11-02T00:37:27.944Z",
-  "expiresAt": "2026-11-02T01:22:27.944Z",
+  "heartbeatAt": "2026-11-02T00:43:56.434Z",
+  "expiresAt": "2026-11-02T00:43:56.434Z",
   "checkpoint": {
     "evidence": "PR1238 correctedhead9867b1994533f0d0f3114919225aa89b50eb2f1a treef1bbb8d46de9c01dbf80788f8c9221670786dd87 exactnative85ada463; collectorownweight true1300bearing reactions conserveN/M; coherentbothpieractions; Python--check/diffcheck and actualupdatedrenderPASS; latestmainf462ancestryverified",
     "next": "Focused independent delta review and root exactheadCI/preflight; freeze source while reviewing",
@@ -39,5 +39,7 @@
       "blocker": "STR-HOUSE bounded output remains incomplete; no changes to accepted geometry or frozen engineering scope; full exact-head CI pending"
     }
   },
-  "pr": 1238
+  "pr": 1238,
+  "releasedAt": "2026-11-02T00:43:56.434Z",
+  "releaseReason": "completed"
 }
