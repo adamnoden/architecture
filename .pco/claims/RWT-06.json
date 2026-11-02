@@ -9,8 +9,8 @@
     "label": "zerg-rwt06-recovery"
   },
   "claimedAt": "2026-11-02T07:14:47.403Z",
-  "heartbeatAt": "2026-11-02T07:28:42.118Z",
-  "expiresAt": "2026-11-02T08:13:42.118Z",
+  "heartbeatAt": "2026-11-02T07:36:07.782Z",
+  "expiresAt": "2026-11-02T08:21:07.782Z",
   "branch": "work/rwt06-open-loggia-recovery-20261102",
   "predecessor": {
     "leaseId": "5ded4cf2-206c-4922-9ab1-aba902031d2a",
@@ -36,8 +36,8 @@
   },
   "pr": 1245,
   "checkpoint": {
-    "evidence": "PR #1245 head c2ec1676f153ca4feef864e840fbe434b86d8f34; owning result project/rwt/rwt-06-open-loggia-event.md; independent bounded PASS and five adverse tests",
-    "next": "Root observes exact-head CI and reviews immutable packet; worker performs fresh publication preflight before root merge",
-    "blocker": "RWT-06 remains planned: inlet/event/receiver, actual first-harm, temporary-rain and high-level access admission unearned"
+    "evidence": "PR #1245 head f2d1ffffa6a154c5e69bf222bc86001b6b706931; truthful merge parents c2ec1676 and main483a26c7; five RWT tests/generator, merged envelope generator, repository integrity and typecheck PASS",
+    "next": "Root observes CI on frozen merged head; worker performs fresh canonical publication preflight immediately before root merge",
+    "blocker": "RWT-06 remains planned; no event/inlet/first-harm/temporary-rain/high-level access admission"
   }
 }
