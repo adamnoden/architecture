@@ -1,0 +1,139 @@
+{
+  "status": "Finite near-SW panel and split-rod patch; whole barrier and structure fail admission",
+  "sources": {
+    "project/mat/studies/warm-receiving-grid.json": "a5bff9f37b8d78dfb32359427314b4013fe8a45e",
+    "project/had/studies/open-north-loggia.json": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+    "project/str/studies/sw-corner-station.json": "d5e2c7650a1ea278ed22cded58a81e046374c131"
+  },
+  "datum_mm": {
+    "field": [
+      -605,
+      -604
+    ],
+    "patch": [
+      -605,
+      -602
+    ],
+    "slab": [
+      -280,
+      -80
+    ],
+    "insulation": [
+      -600,
+      -280
+    ],
+    "warmGridBottom": -380,
+    "AAC": [
+      -605,
+      -390
+    ],
+    "mortar": [
+      -615,
+      -605
+    ],
+    "mineralDPC": [
+      -765,
+      -615
+    ],
+    "coldRC": [
+      -1215,
+      -765
+    ]
+  },
+  "patch": {
+    "xy_mm": [
+      262.5,
+      262.5,
+      562.5,
+      562.5
+    ],
+    "fourRodCentres_mm": [
+      [
+        322.5,
+        322.5
+      ],
+      [
+        322.5,
+        502.5
+      ],
+      [
+        502.5,
+        322.5
+      ],
+      [
+        502.5,
+        502.5
+      ]
+    ],
+    "upperSplitRod_z_mm": [
+      -602,
+      6410
+    ],
+    "lowerSplitRod_z_mm": [
+      -990,
+      -605
+    ],
+    "fieldPatchJoin": "Hypothesised continuous butt weld around full 300-square plate. Upper/lower rods terminate on opposite patch faces; weld procedure must retain plate integrity."
+  },
+  "fieldBay": {
+    "xy_mm": [
+      600,
+      600,
+      1600,
+      1600
+    ],
+    "nominalPanel_mm": [
+      1000,
+      1000,
+      1
+    ],
+    "hangerAnchorsXY_mm": [
+      [
+        600,
+        600
+      ],
+      [
+        600,
+        1600
+      ],
+      [
+        1600,
+        600
+      ],
+      [
+        1600,
+        1600
+      ]
+    ],
+    "hanger_mm": {
+      "diameter": 8,
+      "slabSoffitZ": -280,
+      "sheetTopZ": -604,
+      "nominalLength": 324
+    },
+    "frame_mm": {
+      "equalAngleLeg": 40,
+      "thickness": 4,
+      "topZ": -564,
+      "bottomZ": -604,
+      "layout": "four perimeter rails, no shared-edge mass credit"
+    },
+    "grossMetalMass_kg": {
+      "sheet": 7.8500000000000005,
+      "fourRails": 9.5456,
+      "fourHangers": 0.511380912328978,
+      "total": 17.90698091232898
+    },
+    "gravity_kN_at_9p81": 0.17566748274994728,
+    "fourEqualReactions_kN_ideal": 0.04391687068748682,
+    "massScope": "Local gross self-weight only; excludes fixings, welds, returns, sheet overlap, insulation support, water, construction and pressure loads. Shared edges double-counted."
+  },
+  "collision_and_installation": {
+    "warmConcrete": "Field is below \u2212380 warm girder soffit and does not cut warm RC; split rods and bearing patch still change its structural route.",
+    "glass": "40 mm rail depth occupies \u2212604..\u2212564: glass from \u2212280..\u2212600 is intercepted over 36 mm of rail depth; hangers traverse the glass. No uncut 320 glass claim.",
+    "flange": "Panel near edge 600 is 37.5 from patch edge 562.5 in each axis. An actual welded L-shaped bridging strip and corner must connect them.",
+    "supports": "Four anchors into nominal slab underside; 324 mm vertical hangers through cut/retained glass fixed to upper angles; sheet welded to angle top faces without through-field fixings. Anchor, reinforcement clash, bearing, fixity and void access unproved.",
+    "scope": "One square tests a layout, not evidence exact slab underside, access, services and anchors exist at every point."
+  },
+  "decision": "FAIL as complete barrier: wall, court, doorway, grid, service and drainage perimeter, movement, supports, corrosion, 3D thermal route and repair are unresolved. Retain local geometry as a challenger, not approved waterproof/gas or structural design."
+}
