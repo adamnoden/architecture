@@ -1106,9 +1106,33 @@ def north_arch_controls(n=1600):
                     loads.append((x,20*.14*base*dx))
                 if mode!='gross-upper':
                     for h in heads:loads.extend([(h['c']-h['a'],h['W']/2),(h['c']+h['a'],h['W']/2)])
-            # Roof collector selfweight follows the upper wall down to this
-            # arch. Its roofpoint action bypasses the opening into endpiers.
-            loads.extend((x,.26*.14*25*dx) for x in xs)
+            # The collector itself spans FIRST windows. Its own UDL therefore
+            # reaches this lower arch through its actual1300 bearing-axis span,
+            # not through the window void. Preserve force AND first moment when
+            # replacing each span's UDL by its two bearing reactions.
+            cw=.26*.14*25
+            collector_transfers=[dict(c=(o['centre']-6000)/1000,
+                                     lo=(o['centre']-6000)/1000-.65,
+                                     hi=(o['centre']-6000)/1000+.65,
+                                     RA=cw*.65,RB=cw*.65) for o in wins]
+            collector_loads=[]
+            for x in xs:
+                segments=[(x-dx/2,x+dx/2)]
+                for t in collector_transfers:
+                    pieces=[]
+                    for lo,hi in segments:
+                        if hi<=t['lo'] or lo>=t['hi']:pieces.append((lo,hi))
+                        else:
+                            if lo<t['lo']:pieces.append((lo,t['lo']))
+                            if hi>t['hi']:pieces.append((t['hi'],hi))
+                    segments=pieces
+                collector_loads.extend(((lo+hi)/2,cw*(hi-lo)) for lo,hi in segments)
+            for t in collector_transfers:
+                assert -a<t['lo']<t['hi']<a
+                collector_loads.extend([(t['lo'],t['RA']),(t['hi'],t['RB'])])
+            assert math.isclose(sum(p for x,p in collector_loads),cw*L,rel_tol=1e-12)
+            assert abs(sum(x*p for x,p in collector_loads))<1e-10
+            loads.extend(collector_loads)
             loads=[(x,1.35*p) for x,p in loads]
             if mode=='rejected-central-roofpoint':loads.append((0,collector_P))
             W=sum(p for x,p in loads);RB=sum(p*(x+a)/L for x,p in loads);RA=W-RB
@@ -1129,7 +1153,10 @@ def north_arch_controls(n=1600):
                     ULS_required_compression_MPa=(None if any(c['ULS_peak_MPa'] is None for c in cuts)
                          else max(c['ULS_peak_MPa'] for c in cuts)),
                     pier_vertical_eccentricity=1.58625-a,pier_tie_vertical_offset=ys-2.2,
-                    pier_M_absolute_sum=abs(H*(ys-2.2))+abs(RA*(1.58625-a)),upperwindow_heads=heads)
+                    pier_moments_absolute_sum=dict(west=abs(H*(ys-2.2))+abs(RA*(1.58625-a)),
+                                                   east=abs(H*(ys-2.2))+abs(RB*(1.58625-a))),
+                    pier_M_absolute_sum=max(abs(H*(ys-2.2))+abs(R*(1.58625-a)) for R in [RA,RB]),
+                    upperwindow_heads=heads,collector_weight_transfer=collector_transfers)
     return dict(Ri=Ri,Rm=Rm,Ro=Ro,hinge_span=L,hinge_z=ys,rise=f,tie_z=2200,tie_visible=[2175,2225],
                 raw_jambs=[4520,7480],RC_pier=[212.5,215],axial_wrap=775,
                 cases=answer,limit='Sampled unilateral compression equilibrium only; brick/mortar directional strength, shear/slip, actual windowhead joints/steel bypass, asymmetry, pier/plate/bore/cage and robustness remain internal/adoption work. No masonry ring pass.')
@@ -1143,14 +1170,17 @@ lower_pier_section=rc(215,212.5,173.5,2*area(12),25)
 lower_pier_actions=[]
 for side in ['outer-north','court-north']:
     a=arches['cases'][side+'/actual-window-arch-transfer']
-    N=max(a['RA'],a['RB'])+collector_P+1.35*.2125*.215*3.17*25
-    M=a['pier_M_absolute_sum']+collector_P*.03625+N*.020
-    I=215*212.5**3/12;Pcr=math.pi**2*.25*E*I/3200**2/1000
-    M/=1-N/Pcr
-    lower_pier_actions.append(dict(side=side,N=N,M=M,Pcr=Pcr,
-        note='Planar action budget: ringreaction, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity.'))
+    for pier,reaction in [('west',a['RA']),('east',a['RB'])]:
+        N=reaction+collector_P+1.35*.2125*.215*3.17*25
+        ring_M=a['pier_moments_absolute_sum'][pier]
+        M=ring_M+collector_P*.03625+N*.020
+        I=215*212.5**3/12;Pcr=math.pi**2*.25*E*I/3200**2/1000
+        M/=1-N/Pcr
+        lower_pier_actions.append(dict(side=side,pier=pier,ring_reaction=reaction,ring_M=ring_M,N=N,M=M,Pcr=Pcr,
+            note='Coherent same-pier planar action budget: ringreaction/moment, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity.'))
 arches['lower_pier_section_only']=lower_pier_section
 arches['lower_pier_actions']=lower_pier_actions
+arches['lower_pier_governing_M_case']=max(lower_pier_actions,key=lambda p:p['M'])
 arches['tie_and_bore']=dict(rod_dia=30,thread='M30 reference stressarea561',fy_trial=200,gamma=1.1,
     tie_tension_max=max(arches['cases'][s+'/actual-window-arch-transfer']['H'] for s in ['outer-north','court-north']),
     rod_thread_yield_screen=561*200/1.1/1000,bore_dia=40,bore_axis_z=2200,bore_axis_NS=107.5,

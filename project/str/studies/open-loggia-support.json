@@ -15702,113 +15702,137 @@
     "axial_wrap": 775,
     "cases": {
       "outer-north/self": {
-        "W": 14.319128256500804,
-        "RA": 7.159564128250401,
-        "RB": 7.159564128250403,
-        "H": 7.5081631772962,
-        "max_abs_e": 0.0017372454334118445,
+        "W": 14.319128256500932,
+        "RA": 7.159564128250465,
+        "RB": 7.159564128250467,
+        "H": 7.50816317729625,
+        "max_abs_e": 0.0017372454334125518,
         "worst_cut": {
           "x": -0.7929780112923462,
-          "N": 8.03074673069991,
-          "M": 0.013951378084795518,
-          "e": 0.0017372454334118445,
-          "ULS_peak_MPa": 0.18215440810084685
+          "N": 8.030746730699963,
+          "M": 0.013951378084801291,
+          "e": 0.0017372454334125518,
+          "ULS_peak_MPa": 0.1821544081008515
         },
         "kern": 0.035833333333333335,
         "half_ring": 0.1075,
         "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
-        "ULS_required_compression_MPa": 0.22411557782624647,
+        "ULS_required_compression_MPa": 0.22411557782624686,
         "pier_vertical_eccentricity": 0.03139115432873285,
         "pier_tie_vertical_offset": 0.12715181932245878,
-        "pier_M_absolute_sum": 1.1794235902394725,
-        "upperwindow_heads": []
+        "pier_moments_absolute_sum": {
+          "west": 1.179423590239481,
+          "east": 1.179423590239481
+        },
+        "pier_M_absolute_sum": 1.179423590239481,
+        "upperwindow_heads": [],
+        "collector_weight_transfer": []
       },
       "outer-north/gross-upper": {
-        "W": 50.75880016365263,
-        "RA": 25.379400081826315,
-        "RB": 25.379400081826315,
-        "H": 29.979294186706483,
-        "max_abs_e": 0.01653676093130105,
+        "W": 50.75880016365276,
+        "RA": 25.379400081826375,
+        "RB": 25.379400081826383,
+        "H": 29.97929418670652,
+        "max_abs_e": 0.01653676093130098,
         "worst_cut": {
-          "x": -1.1194983688833124,
-          "N": 34.72110326386556,
-          "M": -0.5741745839455614,
-          "e": -0.01653676093130105,
+          "x": 1.1194983688833124,
+          "N": 34.72110326386561,
+          "M": -0.5741745839455596,
+          "e": -0.01653676093130098,
           "ULS_peak_MPa": 1.0977734997325483
         },
         "kern": 0.035833333333333335,
         "half_ring": 0.1075,
         "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
-        "ULS_required_compression_MPa": 1.1131762126634717,
+        "ULS_required_compression_MPa": 1.1131762126634686,
         "pier_vertical_eccentricity": 0.03139115432873285,
         "pier_tie_vertical_offset": 0.12715181932245878,
-        "pier_M_absolute_sum": 4.608610462582206,
-        "upperwindow_heads": []
+        "pier_moments_absolute_sum": {
+          "west": 4.608610462582214,
+          "east": 4.608610462582214
+        },
+        "pier_M_absolute_sum": 4.608610462582214,
+        "upperwindow_heads": [],
+        "collector_weight_transfer": []
       },
       "outer-north/actual-window-arch-transfer": {
-        "W": 50.75880016365263,
-        "RA": 25.379400081826315,
-        "RB": 25.379400081826315,
-        "H": 29.979294186706483,
-        "max_abs_e": 0.01653676093130105,
+        "W": 50.75880016365276,
+        "RA": 25.379400081826375,
+        "RB": 25.379400081826383,
+        "H": 29.97929418670652,
+        "max_abs_e": 0.01653676093130098,
         "worst_cut": {
-          "x": -1.1194983688833124,
-          "N": 34.72110326386556,
-          "M": -0.5741745839455614,
-          "e": -0.01653676093130105,
+          "x": 1.1194983688833124,
+          "N": 34.72110326386561,
+          "M": -0.5741745839455596,
+          "e": -0.01653676093130098,
           "ULS_peak_MPa": 1.0977734997325483
         },
         "kern": 0.035833333333333335,
         "half_ring": 0.1075,
         "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
-        "ULS_required_compression_MPa": 1.1131762126634717,
+        "ULS_required_compression_MPa": 1.1131762126634686,
         "pier_vertical_eccentricity": 0.03139115432873285,
         "pier_tie_vertical_offset": 0.12715181932245878,
-        "pier_M_absolute_sum": 4.608610462582206,
-        "upperwindow_heads": []
+        "pier_moments_absolute_sum": {
+          "west": 4.608610462582214,
+          "east": 4.608610462582214
+        },
+        "pier_M_absolute_sum": 4.608610462582214,
+        "upperwindow_heads": [],
+        "collector_weight_transfer": []
       },
       "outer-north/rejected-central-roofpoint": {
-        "W": 73.46242516365264,
-        "RA": 36.73121258182632,
-        "RB": 36.73121258182632,
-        "H": 57.980431686706474,
-        "max_abs_e": 0.08556944318853524,
+        "W": 73.46242516365277,
+        "RA": 36.731212581826384,
+        "RB": 36.731212581826384,
+        "H": 57.98043168670653,
+        "max_abs_e": 0.08556944318853517,
         "worst_cut": {
           "x": -0.8473980708908406,
-          "N": 62.89012305585763,
+          "N": 62.890123055857686,
           "M": -5.3814728119482,
-          "e": -0.08556944318853524,
-          "ULS_peak_MPa": 8.892073976187863
+          "e": -0.08556944318853517,
+          "ULS_peak_MPa": 8.892073976187843
         },
         "kern": 0.035833333333333335,
         "half_ring": 0.1075,
         "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
-        "ULS_required_compression_MPa": 8.897666565462307,
+        "ULS_required_compression_MPa": 8.897666565462286,
         "pier_vertical_eccentricity": 0.03139115432873285,
         "pier_tie_vertical_offset": 0.12715181932245878,
-        "pier_M_absolute_sum": 8.52535253690387,
-        "upperwindow_heads": []
+        "pier_moments_absolute_sum": {
+          "west": 8.52535253690388,
+          "east": 8.52535253690388
+        },
+        "pier_M_absolute_sum": 8.52535253690388,
+        "upperwindow_heads": [],
+        "collector_weight_transfer": []
       },
       "court-north/self": {
-        "W": 14.319128256500804,
-        "RA": 7.159564128250401,
-        "RB": 7.159564128250403,
+        "W": 14.31912825650082,
+        "RA": 7.159564128250405,
+        "RB": 7.159564128250415,
         "H": 7.5081631772962,
-        "max_abs_e": 0.0017372454334118445,
+        "max_abs_e": 0.03126644041983079,
         "worst_cut": {
-          "x": -0.7929780112923462,
-          "N": 8.03074673069991,
-          "M": 0.013951378084795518,
-          "e": 0.0017372454334118445,
-          "ULS_peak_MPa": 0.18215440810084685
+          "x": 0.6685893036386448,
+          "N": 7.875732873260394,
+          "M": -0.24624613264429884,
+          "e": -0.03126644041983079,
+          "ULS_peak_MPa": 0.3190420328893585
         },
         "kern": 0.035833333333333335,
         "half_ring": 0.1075,
         "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
-        "ULS_required_compression_MPa": 0.22411557782624647,
+        "ULS_required_compression_MPa": 0.32471085313335724,
         "pier_vertical_eccentricity": 0.03139115432873285,
         "pier_tie_vertical_offset": 0.12715181932245878,
-        "pier_M_absolute_sum": 1.1794235902394725,
+        "pier_moments_absolute_sum": {
+          "west": 1.1794235902394725,
+          "east": 1.179423590239473
+        },
+        "pier_M_absolute_sum": 1.179423590239473,
         "upperwindow_heads": [
           {
             "c": -0.85,
@@ -15825,28 +15849,48 @@
             "zc": 2.283333333333333,
             "a": 0.5948529411764706,
             "W": 0
+          }
+        ],
+        "collector_weight_transfer": [
+          {
+            "c": -0.85,
+            "lo": -1.5,
+            "hi": -0.19999999999999996,
+            "RA": 0.5915,
+            "RB": 0.5915
+          },
+          {
+            "c": 0.7,
+            "lo": 0.04999999999999993,
+            "hi": 1.35,
+            "RA": 0.5915,
+            "RB": 0.5915
           }
         ]
       },
       "court-north/gross-upper": {
-        "W": 50.75880016365263,
+        "W": 50.758800163652644,
         "RA": 25.379400081826315,
-        "RB": 25.379400081826315,
-        "H": 29.979294186706483,
-        "max_abs_e": 0.01653676093130105,
+        "RB": 25.37940008182633,
+        "H": 29.979294186706472,
+        "max_abs_e": 0.023253242030455396,
         "worst_cut": {
-          "x": -1.1194983688833124,
-          "N": 34.72110326386556,
-          "M": -0.5741745839455614,
-          "e": -0.01653676093130105,
-          "ULS_peak_MPa": 1.0977734997325483
+          "x": -1.041755426599749,
+          "N": 33.966654527678294,
+          "M": -0.7898348386969669,
+          "e": -0.023253242030455396,
+          "ULS_peak_MPa": 1.211650773454678
         },
         "kern": 0.035833333333333335,
         "half_ring": 0.1075,
         "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
-        "ULS_required_compression_MPa": 1.1131762126634717,
+        "ULS_required_compression_MPa": 1.224456056238881,
         "pier_vertical_eccentricity": 0.03139115432873285,
         "pier_tie_vertical_offset": 0.12715181932245878,
+        "pier_moments_absolute_sum": {
+          "west": 4.608610462582205,
+          "east": 4.608610462582206
+        },
         "pier_M_absolute_sum": 4.608610462582206,
         "upperwindow_heads": [
           {
@@ -15865,28 +15909,48 @@
             "a": 0.5948529411764706,
             "W": 0
           }
+        ],
+        "collector_weight_transfer": [
+          {
+            "c": -0.85,
+            "lo": -1.5,
+            "hi": -0.19999999999999996,
+            "RA": 0.5915,
+            "RB": 0.5915
+          },
+          {
+            "c": 0.7,
+            "lo": 0.04999999999999993,
+            "hi": 1.35,
+            "RA": 0.5915,
+            "RB": 0.5915
+          }
         ]
       },
       "court-north/actual-window-arch-transfer": {
-        "W": 35.53538304436083,
-        "RA": 17.39614075040856,
-        "RB": 18.139242293952268,
-        "H": 20.5610672054205,
-        "max_abs_e": 0.044619943854646744,
+        "W": 35.53538304436084,
+        "RA": 17.396140750408563,
+        "RB": 18.13924229395228,
+        "H": 20.561067205420503,
+        "max_abs_e": 0.0561092165160875,
         "worst_cut": {
-          "x": -0.9095924247176912,
-          "N": 22.574273666169763,
-          "M": -1.0072628235439254,
-          "e": -0.044619943854646744,
-          "ULS_peak_MPa": 1.113194740797787
+          "x": -0.901818130489335,
+          "N": 22.524645909192724,
+          "M": -1.2638402342670991,
+          "e": -0.0561092165160875,
+          "ULS_peak_MPa": 1.3590737200218523
         },
         "kern": 0.035833333333333335,
         "half_ring": 0.1075,
         "load_basis": "ULS1.35G; adverse centralpoint uses actual roof ULSP separately",
-        "ULS_required_compression_MPa": 1.1166746399241263,
+        "ULS_required_compression_MPa": 1.360224861450498,
         "pier_vertical_eccentricity": 0.03139115432873285,
         "pier_tie_vertical_offset": 0.12715181932245878,
-        "pier_M_absolute_sum": 3.160462041400993,
+        "pier_moments_absolute_sum": {
+          "west": 3.1604620414009936,
+          "east": 3.183788856636294
+        },
+        "pier_M_absolute_sum": 3.183788856636294,
         "upperwindow_heads": [
           {
             "c": -0.85,
@@ -15904,19 +15968,35 @@
             "a": 0.5948529411764706,
             "W": 1.2333183721525736
           }
+        ],
+        "collector_weight_transfer": [
+          {
+            "c": -0.85,
+            "lo": -1.5,
+            "hi": -0.19999999999999996,
+            "RA": 0.5915,
+            "RB": 0.5915
+          },
+          {
+            "c": 0.7,
+            "lo": 0.04999999999999993,
+            "hi": 1.35,
+            "RA": 0.5915,
+            "RB": 0.5915
+          }
         ]
       },
       "court-north/rejected-central-roofpoint": {
-        "W": 58.23900804436083,
-        "RA": 28.74795325040856,
-        "RB": 29.49105479395227,
-        "H": 48.56220470542049,
-        "max_abs_e": 0.11275544685408481,
+        "W": 58.239008044360844,
+        "RA": 28.747953250408564,
+        "RB": 29.49105479395228,
+        "H": 48.562204705420484,
+        "max_abs_e": 0.11768637049750585,
         "worst_cut": {
           "x": -0.8473980708908406,
-          "N": 52.60144310133468,
-          "M": -5.931099222060709,
-          "e": -0.11275544685408481,
+          "N": 52.60265621580921,
+          "M": -6.190615688566652,
+          "e": -0.11768637049750585,
           "ULS_peak_MPa": null
         },
         "kern": 0.035833333333333335,
@@ -15925,7 +16005,11 @@
         "ULS_required_compression_MPa": null,
         "pier_vertical_eccentricity": 0.03139115432873285,
         "pier_tie_vertical_offset": 0.12715181932245878,
-        "pier_M_absolute_sum": 7.077204115722656,
+        "pier_moments_absolute_sum": {
+          "west": 7.0772041157226555,
+          "east": 7.100530930957956
+        },
+        "pier_M_absolute_sum": 7.100530930957956,
         "upperwindow_heads": [
           {
             "c": -0.85,
@@ -15942,6 +16026,22 @@
             "zc": 2.283333333333333,
             "a": 0.5948529411764706,
             "W": 1.2333183721525736
+          }
+        ],
+        "collector_weight_transfer": [
+          {
+            "c": -0.85,
+            "lo": -1.5,
+            "hi": -0.19999999999999996,
+            "RA": 0.5915,
+            "RB": 0.5915
+          },
+          {
+            "c": 0.7,
+            "lo": 0.04999999999999993,
+            "hi": 1.35,
+            "RA": 0.5915,
+            "RB": 0.5915
           }
         ]
       }
@@ -15964,25 +16064,61 @@
     "lower_pier_actions": [
       {
         "side": "outer-north",
-        "N": 52.97101648807632,
-        "M": 6.7540462928499085,
+        "pier": "west",
+        "ring_reaction": 25.379400081826375,
+        "ring_M": 4.608610462582214,
+        "N": 52.97101648807638,
+        "M": 6.754046292849918,
         "Pcr": 1360.2902156353198,
-        "note": "Planar action budget: ringreaction, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity."
+        "note": "Coherent same-pier planar action budget: ringreaction/moment, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity."
+      },
+      {
+        "side": "outer-north",
+        "pier": "east",
+        "ring_reaction": 25.379400081826383,
+        "ring_M": 4.608610462582214,
+        "N": 52.97101648807639,
+        "M": 6.754046292849918,
+        "Pcr": 1360.2902156353198,
+        "note": "Coherent same-pier planar action budget: ringreaction/moment, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity."
       },
       {
         "side": "court-north",
-        "N": 45.73085870020227,
-        "M": 5.068480104250057,
+        "pier": "west",
+        "ring_reaction": 17.396140750408563,
+        "ring_M": 3.1604620414009936,
+        "N": 44.98775715665857,
+        "M": 5.050246221683801,
         "Pcr": 1360.2902156353198,
-        "note": "Planar action budget: ringreaction, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity."
+        "note": "Coherent same-pier planar action budget: ringreaction/moment, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity."
+      },
+      {
+        "side": "court-north",
+        "pier": "east",
+        "ring_reaction": 18.13924229395228,
+        "ring_M": 3.183788856636294,
+        "N": 45.73085870020228,
+        "M": 5.092618412162219,
+        "Pcr": 1360.2902156353198,
+        "note": "Coherent same-pier planar action budget: ringreaction/moment, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity."
       }
     ],
+    "lower_pier_governing_M_case": {
+      "side": "outer-north",
+      "pier": "west",
+      "ring_reaction": 25.379400081826375,
+      "ring_M": 4.608610462582214,
+      "N": 52.97101648807638,
+      "M": 6.754046292849918,
+      "Pcr": 1360.2902156353198,
+      "note": "Coherent same-pier planar action budget: ringreaction/moment, roofpoint, RCself, absolute roofseat36.25ecc andminimum20ecc. Adjacent floor/wall tributaries and lateral effects remain to join. Not an all-house pier capacity."
+    },
     "tie_and_bore": {
       "rod_dia": 30,
       "thread": "M30 reference stressarea561",
       "fy_trial": 200,
       "gamma": 1.1,
-      "tie_tension_max": 29.979294186706483,
+      "tie_tension_max": 29.97929418670652,
       "rod_thread_yield_screen": 101.99999999999999,
       "bore_dia": 40,
       "bore_axis_z": 2200,

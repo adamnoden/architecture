@@ -74,10 +74,10 @@
 <text x="12" y="282" class="">outer-north/gross-upper: H29.98kN / e16.5mm / requiredp1.113MPa</text>
 <text x="12" y="288" class="">outer-north/actual-window-arch-transfer: H29.98kN / e16.5mm / requiredp1.113MPa</text>
 <text x="12" y="294" class="">outer-north/rejected-central-roofpoint: H57.98kN / e85.6mm / requiredp8.898MPa</text>
-<text x="12" y="300" class="">court-north/self: H7.51kN / e1.7mm / requiredp0.224MPa</text>
-<text x="12" y="306" class="">court-north/gross-upper: H29.98kN / e16.5mm / requiredp1.113MPa</text>
-<text x="12" y="312" class="">court-north/actual-window-arch-transfer: H20.56kN / e44.6mm / requiredp1.117MPa</text>
-<text x="12" y="318" class="">court-north/rejected-central-roofpoint: H48.56kN / e112.8mm / OUTSIDE RING</text>
+<text x="12" y="300" class="">court-north/self: H7.51kN / e31.3mm / requiredp0.325MPa</text>
+<text x="12" y="306" class="">court-north/gross-upper: H29.98kN / e23.3mm / requiredp1.224MPa</text>
+<text x="12" y="312" class="">court-north/actual-window-arch-transfer: H20.56kN / e56.1mm / requiredp1.360MPa</text>
+<text x="12" y="318" class="">court-north/rejected-central-roofpoint: H48.56kN / e117.7mm / OUTSIDE RING</text>
 <text x="12" y="338" class="">The central-roofpoint case is rejected; actual roofpoints use the collector/endpier proposal.</text>
 <text x="12" y="355" class="">Corner square collapse is a support-action ceiling, not a proof of actual jack/cantilever members or loadsharing.</text>
 <text x="12" y="362" class="">Uppercollector: gravity section screen only; continuous loops, pier reactions, hold-down and lateral closures still to earn.</text>
