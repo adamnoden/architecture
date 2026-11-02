@@ -1,0 +1,115 @@
+{
+  "status": "Conditional reach target for one integrated apparatus trial; not manufacturer reach, complete supported lift or operating pass",
+  "source": {
+    "path": "project/rwt/studies/live-receiver-renewal.json",
+    "blob": "cf3caf0d9ec0dffb06b712ef099e68dec804d47c",
+    "manufacturer": "https://www.layher.co.uk/wp-content/uploads/2017/11/Layher-System-Free-Accessories-Catalogue.pdf"
+  },
+  "A": {
+    "x": [
+      4350,
+      7650
+    ],
+    "modules": 7,
+    "installedCentreY": 4525,
+    "withdrawal": 400,
+    "loweredZ": [
+      6360,
+      6540
+    ]
+  },
+  "axes": [
+    4720,
+    6000,
+    7290
+  ],
+  "pivotY": 5425,
+  "modules": [
+    {
+      "module": 1,
+      "centreX": 4585.714285714285,
+      "axis": 4720,
+      "reachAtInstalled": 909.9629954351027,
+      "reachAfter400": 517.7187007064982
+    },
+    {
+      "module": 2,
+      "centreX": 5057.142857142857,
+      "axis": 4720,
+      "reachAtInstalled": 961.075078296409,
+      "reachAfter400": 603.0466865197493
+    },
+    {
+      "module": 3,
+      "centreX": 5528.571428571428,
+      "axis": 6000,
+      "reachAtInstalled": 1015.9945363825457,
+      "reachAfter400": 687.2007697603254
+    },
+    {
+      "module": 4,
+      "centreX": 6000,
+      "axis": 6000,
+      "reachAtInstalled": 900,
+      "reachAfter400": 500
+    },
+    {
+      "module": 5,
+      "centreX": 6471.428571428572,
+      "axis": 6000,
+      "reachAtInstalled": 1015.9945363825457,
+      "reachAfter400": 687.2007697603254
+    },
+    {
+      "module": 6,
+      "centreX": 6942.857142857143,
+      "axis": 7290,
+      "reachAtInstalled": 964.6285104978527,
+      "reachAfter400": 608.6938173378352
+    },
+    {
+      "module": 7,
+      "centreX": 7414.285714285714,
+      "axis": 7290,
+      "reachAtInstalled": 908.5411046152562,
+      "reachAfter400": 515.2154294812124
+    }
+  ],
+  "bays": [
+    {
+      "centre": 5540,
+      "axis": 4720,
+      "radius": 960.4165762834375,
+      "landingY": 5900,
+      "landingX": 5554.730495429512,
+      "extremeX": 5680.416576283437
+    },
+    {
+      "centre": 6460,
+      "axis": 7290,
+      "radius": 968.9685237405806,
+      "landingY": 5900,
+      "landingX": 6445.4439035801115,
+      "extremeX": 6321.031476259419
+    }
+  ],
+  "checks": {
+    "maxInstalledReach": 1015.9945363825457,
+    "maxAfter400": 687.2007697603254,
+    "westRouteGross": 751,
+    "eastRouteGross": 751,
+    "centreFootBeforeInlet": 1500,
+    "centreModuleFixedArmStart": 900,
+    "centreModuleFixedArmAfterWithdrawal": 500,
+    "carrierToUpperRail": 76,
+    "carrierToLowerRail": 146
+  },
+  "limitations": [
+    "Swing arm 4416.015 and holder 4416.003 are manufacturer-listed with a 150 kg permissible hoist-arm load, but the published catalogue gives no arm radius or confirmed attachment to these specific standards. The 1015.995 target is not an actual reach or rated capacity.",
+    "The central added standard and its 150 foot are an authored proposal, not a manufacturer-complete four-standard tower. Its couplings, load path, ties, soleboard, guard gate and use with this winch require a qualified design.",
+    "The 751-wide routes are plan strips between open door-leaf and centre-foot reservations, not tested routes around actual stairs, plates, tools, workers, shutter, braces or loaded movements.",
+    "Receiver mass, slings, hook/arm height, roof/corner and existing weather-layer clearance, supported lowering, travel and release are not established. The actual hoist may not lift the receiver assembly.",
+    "A fixed-radius arm directly above the centre module requires 900 at installed y4525 and 500 after 400 outward at y4925; one fixed radius cannot occupy both. The module must be positively supported for a qualified release/reposition/re-engagement, or an actually permitted variable reach/load path must be supplied.",
+    "The arc is a point-centre stress, not a complete carrier, rope, module, personnel or dropped-load sweep. Workers must be outside the suspended-load exclusion zone; no rescue is inferred."
+  ]
+}
