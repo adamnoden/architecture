@@ -9,8 +9,8 @@
     "label": "zerg4_interiors_whole_house"
   },
   "claimedAt": "2026-11-01T21:01:08.006Z",
-  "heartbeatAt": "2026-11-02T00:08:40.860Z",
-  "expiresAt": "2026-11-02T00:53:40.860Z",
+  "heartbeatAt": "2026-11-02T00:18:57.013Z",
+  "expiresAt": "2026-11-02T01:03:57.013Z",
   "branch": "work/zerg4-interiors-whole-house",
   "note": "Owner-directed whole-house interior assembly finish joinery schedule; protected-route duties retained",
   "predecessor": {
@@ -36,9 +36,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1233 head3b1e9b365af186481ba6c90ae60e865bc0046b51 tree780536103ffb66987738c1c45e0644f6e9216ced: exact family600 delta review on IAS30cf1109, held-transfer611.422 negative/fixed565.139, candidate acceptance table; source repro pass, latestmain eab4 ancestry retained.",
-    "next": "Bind single final coherent HAD family/emitter source and final IAS/services renewal records; exact combined-source independent review and owning development-exit assessment.",
-    "blocker": "Final numeric authority held for emitter/family/renewal composition. Current geometry and service imports remain explicit older controls. No product/material/physical acceptance implied."
+    "evidence": "PR1233 head2043b6d8ebd0130fb7e19118f702233beeea13e4 tree42bb6309193e16289db86e5e8054738f8ddbe6f3: 16-family/18-occurrence acceptance table, no undecided MAT material-family choice, enamelled-steel1700 bath body/control and supported front-release condition, proposed lifecycle patch only in owning result; git apply --check, source repro and integrity pass.",
+    "next": "Bind final common HAD/services/IAS authority and independent exact-source review; apply proposed development lifecycle projection only after earned review through root integration.",
+    "blocker": "Final selected-house emitter/family and ordinary first-interface source composition pending. Complete IAS guarded-stair/export remains separate internal IAS duty; no product/material/physical admission or owner exception."
   },
   "pr": 1233
 }
