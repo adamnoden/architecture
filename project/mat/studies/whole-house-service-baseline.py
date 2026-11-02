@@ -205,6 +205,12 @@ for e in extract:
  e['ceilingFixingCentreMinimumToWall']=200
  e['actualFamilyBody']=[195,116]
 air['fanChoice']=fan_choice
+air['transfer']['utilityNorthBoundaryRequirement']={'role':'OPENARCH, notaclosedutilitytransferdoor','rough':[10250,11150],'axisY':2550,'zone':'Sharedexcludedplant/utilityservicezone;protectedPlantE20doorremains.','architecturalCost':'Lossutility/plantacousticprivacy;explicitHADauthoredfunctionalcondition, notdeletedfire/privateclosure.','failure':'Ifutilitygetsaclosedleaf, three-doorcontrolappliesandreplan/rebalancefanperformance; noautomatictwo-doorPASS.'}
+air['transfer']['normalFlowNetworkLps']['hallViaPlantDoorAndUtilityOpenArch']=air['transfer']['normalFlowNetworkLps'].pop('hallViaPlantAndUtilityDoors')
+utility_screen=next(e for e in extract if e['id']=='utility')['normalResistanceScreen']
+air['transfer']['failedThreeClosedDoorControl']={'extraDoorFlow':13,'extraDoorPa':pressure(13),'totalPaWithoutSecondaryFront':utility_screen['totalPa']+pressure(13),'withMetalFrontPa':utility_screen['totalPa']+pressure(13)+2,'comparisonLimitPa':20,'status':'FAILEDclosedleafcontrol;selectedutilityOPENARCHremovesthisthirdresistance, actual20Patestremainsdistinctfromnominalpower/noise.'}
+assert air['transfer']['failedThreeClosedDoorControl']['totalPaWithoutSecondaryFront']>20
+
 fan_choice['separateMetalServiceFrontTrial']={'status':'Geometricallycredible boundedsecondaryfront; manufacturer-permissibleconfiguration NOTestablishedbycurrentmanual. NoOEMfascia/gasket/control removed ormodified.',
  'metalPanel':[400,450],'minimumNetFreeAreaAfterBaffles':18000,'centralOpaqueDiscMinimumDiameter':200,'OEMFaceMinimumGap':15,'OEMFasciaBottomLocal':2815,'OEMMountPlaneLocal':2860,'OEMTailTopLocal':2931,'separateFrontInnerPlaneLocal':2800,
  'minimumPeripheralApproachArea':math.pi*195*15,'additionalLossMaximumPa':2,
@@ -280,7 +286,7 @@ for name,room,level,L,r,z,branch,notes in [
  assert factor<=(((45+40)/2-room_target)/50)**n_coeff
  output=nominal*factor
  item={'id':name,'room':room,'level':level,'family':'StelradCompactK3H'+str(body_height),'length':L,'bodyHeight':body_height,'completePlanWithValvesAndBrackets':r,'bottomLocal':z,'topLocal':z+body_height,'nominalDelta50W':nominal,'roomTargetC':room_target,'conservativeCorrectionFactor':factor,'screenOutputW':output,'nCoefficient':n_coeff,'dryMassKg':dry_per_m*L/1000,'filledMassKg':(dry_per_m+water_per_m)*L/1000,'pressurePairBranchPlan':branch,'upperBranchAxisLocal':2945,'notes':notes}
- item['renewal']={'isolate':'Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.','requiredLift':50,'requiredFrontPull':150 if room=='plant' else 200,'cillUndersideMinimumIfUnderWindow':900 if name=='bed4-N' else 800,'cillReserveAfterLift':50,'requiredDrawnSillTopIfUnderWindow':950 if name=='bed4-N' else 850,'maximumCompleteCillThickness':50,'handling':'600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting.'}
+ item['renewal']={'isolate':'Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.','requiredLift':50,'requiredFrontPull':150 if room=='plant' else 200,'cillUndersideMinimumIfUnderWindow':900 if name=='bed4-N' else 800,'cillReserveAfterLift':50,'requiredDrawnSillTopIfUnderWindow':950 if name=='bed4-N' else 850,'maximumCompleteCillThickness':50,'handling':f'{body_height}high×{L}longselectedbody;drainfirst;drybody{dry_per_m*L/1000:.3f}kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting.'}
  emitters.append(item)
 heat['emitterSchedule']=emitters
 heat['emitterEvidence']={'technical':'https://www.stelradprofessional.com/wp-content/uploads/2019/12/28968_Compact_K3_Web.pdf','correction':'https://www.stelrad.ie/wp-content/uploads/2021/10/Stelrad-Correction-Factor-Oct-21.pdf','actualMountedDepth':180,'completeDepthAllowance':200,'valveEndAllowanceEachSide':75,'dryKgPerM':52.5,'waterLPerM':9.8,'nCoefficient':1.32,'scope':'ActualK3lowtemperature/mass/profilecomparison; exactpaint/coating/plasticbracketclips/valves andhumiditycompatibility remainunadmitted. No strippingfactoryfinish. Capacityscreen isagainstauthored8kWroomallocation, notsiteheatloss.'}
@@ -753,6 +759,37 @@ bath_drop={'status':'Selectedconditionalordinary-rimconfigured-kitrequirement; n
  'waterIsolationTargets':{'hot':[10800,4450,350],'cold':[10900,4450,350],'actualKitRequirement':'Accessiblefrontisolationandtrueunion, independentsupportedretainedsupply; actualtap/overflow/WCsystemcompatibilitynotassumed.'}},
  'lower':{'A':[10950,4150,3000],'T':[10950,4150,2737.5],'B':[10950,4250,2735],'route':[[10950,4150,2737.5],[10950,5200,2711.25],[10800,5200,2707.5]],'planLength':1200,'gradient':40,'maximumCompleteFittingOD':100,'supportDepth':25,'airReserve':25,'innerPanelTop':2607.5,'panelThickness':20,'finishedPanelUnderside':2587.5,'clearHatch':[10750,3950,400,400],'outerHatch':[10730,3930,440,440],'qualifiedEquipmentField':[10535,3900,1000,800],'fieldToMain320PipeBand':25,'fieldToEastDryFace':35.5,'fixedUpperTail':'Plainstemindependentlysupported. AllupperAhalves/nuts/clampswiderthan75muststripBEFORE75stemwithdrawalthrough97sleeve; sleeve/flangealoneisnotclosedboundary.','spoolRelease':{'requiredSeats':'Actualzero-captureflatfacesatorthogonalA/B; isolate/drain/releasenutsandadhesion/renewseals. Capturedspigotdiagonalreleaseisrejected.','phases':[[0,-20,0],[0,0,-20],[0,0,-450]],'movingTopBefore':3000,'movingTopAfter':2530,'finishedPanelClearance':57.5,'completeSpoolPlanBefore':[10900,4100,100,200],'completeSpoolPlanAfterSouth20':[10900,4080,100,200],'fixedParts':'UpperAhalf/retainedbranch/trap/sleeveandactualsupportsremainindependent; nofloororsupportremovedtopermitmotion.'}},
  'renewalSplit':{'ordinaryKit':'Openfrontpanel,isolatewater,disengageactualfront/topwaste/overflowandupperunionwithindependentsupport; noautomatic900trayproof.','wholeBath':'Removefulloverflowandrequiredfeet/kitonlypermanufacturer, supportdrained41kgBODYplusactualaccessories; actualstair/roomcarryandforcesareIASduty. Nohumanliftingcapacityinvented.','plainTail':'Afterseparatebody/kitreleaseandlowerAupperpartsstrip,550UPmoves−450tailendto+100; temporaryqualifiedclosureofopenedwater/air/fire/acousticannulusuntilcompatiblesealsreinstated/tested.','restore':'Ordinaryuseonlyafterreassembly,boundaryreinstatementandtests,panelclosure/equipmentremoval.'}}
+for fixture in schedule:
+ if fixture['id']=='family-bath':
+  fixture['waterBranchPlan']=[[11200,5000],[11000,5000],[11000,4550],[11000,4450],[10800,4450]]
+  fixture['valveAxisZ']=3450+350
+  fixture['waterBranchLengthIncludingDropMM']=length(fixture['waterBranchPlan'])+6395-fixture['valveAxisZ']
+  fixture['terminalDeadLegLitresAt13mmID']=math.pi*.013**2/4*(fixture['waterBranchLengthIncludingDropMM']/1000)*1000
+  fixture['idealFlushSecondsAt6Lmin']=fixture['terminalDeadLegLitresAt13mmID']/.1
+  fixture['actualFrontIsolationTargets']=bath_drop['upperConfiguredKit']['waterIsolationTargets']
+  fixture['requiredValveWorkTerritory']=[500,200,400]
+  fixture['endpointStatus']='Singlebathinterfacefrontisolationtargets, nottheobsolete11200/4100/600sidevalve. Actualupperbody/insulatedtails/facecontrolsandsupportsmustfitselectedbathprofileandfrontpanel; nohiddenrearconnectionorclaimedpartfit.'
+  assert fixture['terminalDeadLegLitresAt13mmID']<3
+
+for fixture in schedule:
+ if fixture['id']=='kitchen-sink':
+  old_keys=['waterBranchPlan','valveAxisZ','waterBranchLengthIncludingDropMM','terminalDeadLegLitresAt13mmID','idealFlushSecondsAt6Lmin']
+  fixture['obsoleteDirectWaterControl']={'status':'RETIREDnotselected;doesnotfollowactualretainedfeed','record':{k:fixture[k] for k in old_keys}}
+  feed=sink['retainedFeed'];hp=feed['hotPath'];cp=feed['coldPath']
+  fixture['selectedWaterBranchXYZ']={'hot':hp,'cold':cp}
+  fixture['waterBranchPlan']=[point[:2] for point in hp]
+  fixture['waterBranchLengthIncludingDropMM']=length(hp)
+  fixture['coldBranchLengthIncludingDropMM']=length(cp)
+  fixture['valveAxisZ']=475;fixture['selectedFixedReceivingPipeEndpointZ']=hp[-1][2]
+  fixture['terminalDeadLegLitresAt13mmID']=math.pi*.013**2/4*length(hp)
+  fixture['coldBranchLitresAt13mmID']=math.pi*.013**2/4*length(cp)
+  fixture['idealFlushSecondsAt6Lmin']=fixture['terminalDeadLegLitresAt13mmID']*10
+  fixture['remaining3LVolumeBudgetForActualJointsHeadTapLitres']=3-fixture['terminalDeadLegLitresAt13mmID']
+  fixture['endpointStatus']='ONEselectedretainedfeedfromactualXYZobjectviaeastcorner/lowZ242tofrontAreceivingpipe425/unionplane475. Volumesare13-IDpipecomparisonTO425only; actualjoint/spool/head/tapvolumeisnotzeroandmustfitremaining3Lbudget. OlddirectZ600routeisretired.'
+  assert abs(length(hp)-7179.5)<1e-8 and abs(length(cp)-7084.5)<1e-8
+hot['maximumTerminalDeadLegLitresAt13mmID']=max(f.get('terminalDeadLegLitresAt13mmID',0) for f in schedule)
+hot['maximumIdealFlushSecondsAt6Lmin']=max(f.get('idealFlushSecondsAt6Lmin',0) for f in schedule)
+
 assert bath_drop['primarySource']['selectedRim']-410==150
 assert length([x[:2] for x in bath_drop['lower']['route']])==1200
 for a,c in zip(bath_drop['lower']['route'],bath_drop['lower']['route'][1:]):assert abs(a[2]-c[2]-math.dist(a[:2],c[:2])/40)<1e-8
@@ -763,7 +800,7 @@ architecture_contract={'schemaVersion':1,'authority':'MAT-SERVICES numeric inter
  'plant':{k:plant[k] for k in ['controlsHydraulics','controlsMaximumHeight','primaryBuffer','riserGross','formedOpeningProposal','emitterJoin']},
  'fanAccess':[{k:e[k] for k in ['id','level','podPlan','podZ','path','formedWallTerritory','ceilingTrapDrainPort','maintenancePlatformPlan','maintenancePlatformWorkingHeightRange','workerEquipmentRequirement']} for e in extract],
  'studyRewind':{'desk':[655,600,1600,700],'South1800Body':[2580,765],'West1800Body':[754.5,2724],'West1800Handle':[429.5,2220]},
- 'livingWestRenewal':{'sofaBefore':[800,9000,850,1900],'sofaPark':[1450,9000,850,1900],'eastMove':650,'sweptRectangle':[800,9000,1500,1900],'pullingBodyCentrePath':[[1975,9300],[2625,9300]],'bodyRadius':300,'headRadius':150,'ordinaryWallGap':170.5,'parkedSofaBGap':37.5,'radiatorWorkingBody':[954.5,10200]},
+ 'livingWestRenewal':{'sofaBefore':[800,9000,850,1900],'sofaPark':[1450,9000,850,1900],'eastMove':650,'sweptRectangle':[800,9000,1500,1900],'pullingBodyCentrePath':[[1975,9450],[2625,9450]],'bodyRadius':300,'headRadius':150,'ordinaryWallGap':170.5,'parkedSofaBGap':37.5,'radiatorWorkingBody':[954.5,10200]},
  'familyBathDrop':bath_drop,'utility':rewinds['utility'],'kitchenStationPlan':sink['station'],'kitchenStationTopZ':900,'supply':supplies,'eastFoulExit':east_exit,'otherServiceDuties':other,
  'livingSupplyHostCorrection':{'oldNorth2675':'REJECTED:360holecrossesactualNorthRCreceiver','selectedPoint':[0,9200,2850],'formedHole':360,'face':400,'maintenanceField':[654.5,9000,750,1100],'sofaAEastMove':650,'radiatorToPlatformReserve':25,'parkedSofaToPlatformReserve':45.5},
  'sourceOrder':'Servicesownsvalues; HADimportsimmutableobject. Finalsourceequivalence comparesrelevantgeometryonly, excludingcommit-pinmetadata. NoHADcommitaddedasfakeparent.'}
@@ -772,12 +809,22 @@ for name,r in rwhouse['fixedObstacles']['GROUND']:
  expanded=[r[0]-18,r[1]-18,r[2]+36,r[3]+36]
  assert not overlap(architecture_contract['livingWestRenewal']['sweptRectangle'],expanded)
 assert architecture_contract['livingWestRenewal']['sofaPark'][0]+850+25<=rwhouse['groundFurniture']['family-sofa1900x750'][0]
+def horizontal_body_reserve(path,radius,rect):
+ a,c=path;assert a[1]==c[1]
+ dx=max(rect[0]-max(a[0],c[0]),min(a[0],c[0])-rect[0]-rect[2],0)
+ dy=max(rect[1]-a[1],a[1]-rect[1]-rect[3],0)
+ return math.hypot(dx,dy)-radius
+receiver=dict(rwhouse['fixedObstacles']['GROUND'])['wetBeamSouthReceiver'];receiver18=[receiver[0]-18,receiver[1]-18,receiver[2]+36,receiver[3]+36]
+living_pull_witness={'selected9450Reserve':horizontal_body_reserve(architecture_contract['livingWestRenewal']['pullingBodyCentrePath'],300,receiver18),'failed9300Reserve':horizontal_body_reserve([[1975,9300],[2625,9300]],300,receiver18),'fixedReceiverFull18':receiver18,'SofaBReserve':horizontal_body_reserve(architecture_contract['livingWestRenewal']['pullingBodyCentrePath'],300,rwhouse['groundFurniture']['family-sofa1900x750'])}
+assert living_pull_witness['selected9450Reserve']>=25 and living_pull_witness['SofaBReserve']>=25
+assert living_pull_witness['failed9300Reserve']<0
+
 
 result={'status':'Constructive provisional whole-house service baseline; no accepted apparatus, materials, fire route, site loading or commissioning.',
  'basis':{'HADHead':HEAD,'HADPath':PATH,'HADBlob':BLOB,'HADStatus':b['status'],
   'narrowObstacleFurnitureRewind':{'head':REWIND_HEAD,'blob':REWIND_BLOB,'scope':'Onlyactualgroundreceivers/table/reading+familysofas/side-tables used bynamed renewalchecks anddrawnplan; Room source is068e33 plus declaredservicesrewinds; no livegeometrysubstitution.'},'mergedInterfaceMain':'546c98f93a3dccbfe48119bd2e92117b6e2d766f','units':'mm, local proposed groundFFL0; first3450; all z use one datum'},
  'selection':'Local continuousMEV + background vents + separate cooker capture +8kW compatibility monobloc/radiators +300L hotwater.',
- 'air':air,'extract':extract,'supply':supplies,
+ 'livingWestPullWitness':living_pull_witness,'air':air,'extract':extract,'supply':supplies,
  'cooker':{'extractPoint':[11200,12000,2400],'duct':160,'exhaustRadialInsulation':50,'metalJacketEachSide':1,'fullInsulatedOD':262,'formedWallTerritory':320,'minimumCaptureLps':30,'makeupPoint':[12000,8600,2400],
    'makeupFormedTerritory':280,'makeupRequirement':'Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from65L/s background; no open-window chore or recirculation-onlyhood credit.',
    'hood':'600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required.'},

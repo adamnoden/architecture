@@ -14,6 +14,17 @@
     "units": "mm, local proposed groundFFL0; first3450; all z use one datum"
   },
   "selection": "Local continuousMEV + background vents + separate cooker capture +8kW compatibility monobloc/radiators +300L hotwater.",
+  "livingWestPullWitness": {
+    "selected9450Reserve": 43.16541201001013,
+    "failed9300Reserve": -95.03049007230368,
+    "fixedReceiverFull18": [
+      2727.5,
+      8582.5,
+      350,
+      540
+    ],
+    "SofaBReserve": 50.0
+  },
   "air": {
     "basis": "Conservative geometric floor-area upper bound, not regulatory measured area",
     "groundM2": 93.458775,
@@ -259,12 +270,31 @@
         "studyToProtectedHall": 13,
         "livingViaWestCrossToHall": 13,
         "hallToGuestWC": 13,
-        "hallViaPlantAndUtilityDoors": 13,
-        "hallViaEastCrossToKitchen": 13
+        "hallViaEastCrossToKitchen": 13,
+        "hallViaPlantDoorAndUtilityOpenArch": 13
       },
       "worstIndividualNormalDoorScreenPa": 4.7179257355683575,
       "normalDoorScreenLimitPa": 5,
-      "worstTwoDoorAndBackgroundScreenPa": 10.646995428854174
+      "worstTwoDoorAndBackgroundScreenPa": 10.646995428854174,
+      "utilityNorthBoundaryRequirement": {
+        "role": "OPENARCH, notaclosedutilitytransferdoor",
+        "rough": [
+          10250,
+          11150
+        ],
+        "axisY": 2550,
+        "zone": "Sharedexcludedplant/utilityservicezone;protectedPlantE20doorremains.",
+        "architecturalCost": "Lossutility/plantacousticprivacy;explicitHADauthoredfunctionalcondition, notdeletedfire/privateclosure.",
+        "failure": "Ifutilitygetsaclosedleaf, three-doorcontrolappliesandreplan/rebalancefanperformance; noautomatictwo-doorPASS."
+      },
+      "failedThreeClosedDoorControl": {
+        "extraDoorFlow": 13,
+        "extraDoorPa": 4.7179257355683575,
+        "totalPaWithoutSecondaryFront": 20.375568899673404,
+        "withMetalFrontPa": 22.375568899673404,
+        "comparisonLimitPa": 20,
+        "status": "FAILEDclosedleafcontrol;selectedutilityOPENARCHremovesthisthirdresistance, actual20Patestremainsdistinctfromnominalpower/noise."
+      }
     },
     "fanChoice": {
       "selectedDevelopmentFamily": "Titon Ultimate TP640Hi, continuous13L/s each, CF1 explicitly enabled (defaultCF0 is not sufficient). Six normal targets78L/s; boost16L/s moisture response separately commissioned.",
@@ -1531,7 +1561,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×1000longselectedbody;drainfirst;drybody52.500kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -1584,7 +1614,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×800longselectedbody;drainfirst;drybody42.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -1641,7 +1671,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×800longselectedbody;drainfirst;drybody42.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -1694,7 +1724,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×1200longselectedbody;drainfirst;drybody63.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -1747,7 +1777,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×800longselectedbody;drainfirst;drybody42.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -1800,7 +1830,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×800longselectedbody;drainfirst;drybody42.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -1857,7 +1887,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 950,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "700high×900longselectedbody;drainfirst;drybody54.693kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -1918,7 +1948,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×1000longselectedbody;drainfirst;drybody52.500kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -1967,7 +1997,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×500longselectedbody;drainfirst;drybody26.250kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -2016,7 +2046,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×500longselectedbody;drainfirst;drybody26.250kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -2061,7 +2091,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×500longselectedbody;drainfirst;drybody26.250kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -2110,7 +2140,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×500longselectedbody;drainfirst;drybody26.250kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -2163,7 +2193,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×400longselectedbody;drainfirst;drybody21.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -2212,7 +2242,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×400longselectedbody;drainfirst;drybody21.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -2261,7 +2291,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×400longselectedbody;drainfirst;drybody21.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       },
       {
@@ -2310,7 +2340,7 @@
           "cillReserveAfterLift": 50,
           "requiredDrawnSillTopIfUnderWindow": 850,
           "maximumCompleteCillThickness": 50,
-          "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+          "handling": "600high×400longselectedbody;drainfirst;drybody21.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
         }
       }
     ],
@@ -2842,7 +2872,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×1000longselectedbody;drainfirst;drybody52.500kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -2886,7 +2916,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×800longselectedbody;drainfirst;drybody42.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -2934,7 +2964,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×800longselectedbody;drainfirst;drybody42.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -2978,7 +3008,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×1200longselectedbody;drainfirst;drybody63.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3022,7 +3052,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×800longselectedbody;drainfirst;drybody42.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3066,7 +3096,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×800longselectedbody;drainfirst;drybody42.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3114,7 +3144,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 950,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "700high×900longselectedbody;drainfirst;drybody54.693kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3166,7 +3196,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×1000longselectedbody;drainfirst;drybody52.500kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3206,7 +3236,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×500longselectedbody;drainfirst;drybody26.250kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3246,7 +3276,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×500longselectedbody;drainfirst;drybody26.250kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3282,7 +3312,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×500longselectedbody;drainfirst;drybody26.250kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3322,7 +3352,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×500longselectedbody;drainfirst;drybody26.250kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3366,7 +3396,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×400longselectedbody;drainfirst;drybody21.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3406,7 +3436,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×400longselectedbody;drainfirst;drybody21.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3446,7 +3476,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×400longselectedbody;drainfirst;drybody21.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         },
         {
@@ -3486,7 +3516,7 @@
             "cillReserveAfterLift": 50,
             "requiredDrawnSillTopIfUnderWindow": 850,
             "maximumCompleteCillThickness": 50,
-            "handling": "600high×≤1200longbody removesuprightafterlocalfurniture/bodyclearance; drainfirst, maximum63kgdryrequiresactualtrolley/mechanicalliftingcapacity—notinventedhumanlifting."
+            "handling": "600high×400longselectedbody;drainfirst;drybody21.000kgplusactualvalves/clipsrequiresqualifiedmechanicalhandlingandfixings—notinventedhumanlifting."
           }
         }
       ],
@@ -4049,11 +4079,11 @@
         "pullingBodyCentrePath": [
           [
             1975,
-            9300
+            9450
           ],
           [
             2625,
-            9300
+            9450
           ]
         ],
         "bodyRadius": 300,
@@ -7531,7 +7561,8 @@
         "independentlySupported": true
       }
     ],
-    "maximumTerminalDeadLegLitresAt13mmID": 0.6072502249848221
+    "maximumTerminalDeadLegLitresAt13mmID": 0.9529514732849247,
+    "maximumIdealFlushSecondsAt6Lmin": 9.529514732849247
   },
   "plant": {
     "cylinder": {
@@ -9607,25 +9638,144 @@
           10800
         ],
         [
-          9150,
+          11487,
           10800
         ],
         [
-          9150,
-          11282.5
+          11487,
+          11350
+        ],
+        [
+          11487,
+          11350
+        ],
+        [
+          9130,
+          11350
+        ],
+        [
+          9130,
+          10950.5
+        ],
+        [
+          9130,
+          10950.5
         ]
       ],
-      "valveAxisZ": 600,
-      "waterBranchLengthIncludingDropMM": 4177.5,
+      "valveAxisZ": 475,
+      "waterBranchLengthIncludingDropMM": 7179.5,
       "requiredValveWorkTerritory": [
         200,
         200,
         300
       ],
-      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "endpointStatus": "ONEselectedretainedfeedfromactualXYZobjectviaeastcorner/lowZ242tofrontAreceivingpipe425/unionplane475. Volumesare13-IDpipecomparisonTO425only; actualjoint/spool/head/tapvolumeisnotzeroandmustfitremaining3Lbudget. OlddirectZ600routeisretired.",
       "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
-      "terminalDeadLegLitresAt13mmID": 0.55448913986319,
-      "idealFlushSecondsAt6Lmin": 5.544891398631901
+      "terminalDeadLegLitresAt13mmID": 0.9529514732849247,
+      "idealFlushSecondsAt6Lmin": 9.529514732849247,
+      "obsoleteDirectWaterControl": {
+        "status": "RETIREDnotselected;doesnotfollowactualretainedfeed",
+        "record": {
+          "waterBranchPlan": [
+            [
+              10500,
+              10800
+            ],
+            [
+              9150,
+              10800
+            ],
+            [
+              9150,
+              11282.5
+            ]
+          ],
+          "valveAxisZ": 600,
+          "waterBranchLengthIncludingDropMM": 4177.5,
+          "terminalDeadLegLitresAt13mmID": 0.55448913986319,
+          "idealFlushSecondsAt6Lmin": 5.544891398631901
+        }
+      },
+      "selectedWaterBranchXYZ": {
+        "hot": [
+          [
+            10500,
+            10800,
+            2945
+          ],
+          [
+            11487,
+            10800,
+            2945
+          ],
+          [
+            11487,
+            11350,
+            2945
+          ],
+          [
+            11487,
+            11350,
+            242
+          ],
+          [
+            9130,
+            11350,
+            242
+          ],
+          [
+            9130,
+            10950.5,
+            242
+          ],
+          [
+            9130,
+            10950.5,
+            425
+          ]
+        ],
+        "cold": [
+          [
+            10500,
+            10800,
+            2945
+          ],
+          [
+            11487,
+            10800,
+            2945
+          ],
+          [
+            11487,
+            11250,
+            2945
+          ],
+          [
+            11487,
+            11250,
+            242
+          ],
+          [
+            9025,
+            11250,
+            242
+          ],
+          [
+            9025,
+            10950.5,
+            242
+          ],
+          [
+            9025,
+            10950.5,
+            425
+          ]
+        ]
+      },
+      "coldBranchLengthIncludingDropMM": 7084.5,
+      "selectedFixedReceivingPipeEndpointZ": 425,
+      "coldBranchLitresAt13mmID": 0.9403419057715786,
+      "remaining3LVolumeBudgetForActualJointsHeadTapLitres": 2.0470485267150753
     },
     {
       "id": "principal-WC",
@@ -9843,21 +9993,46 @@
           5000
         ],
         [
-          11200,
-          4100
+          11000,
+          5000
+        ],
+        [
+          11000,
+          4550
+        ],
+        [
+          11000,
+          4450
+        ],
+        [
+          10800,
+          4450
         ]
       ],
-      "valveAxisZ": 4050,
-      "waterBranchLengthIncludingDropMM": 3245.0,
+      "valveAxisZ": 3800,
+      "waterBranchLengthIncludingDropMM": 3545.0,
       "requiredValveWorkTerritory": [
+        500,
         200,
-        200,
-        300
+        400
       ],
-      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "endpointStatus": "Singlebathinterfacefrontisolationtargets, nottheobsolete11200/4100/600sidevalve. Actualupperbody/insulatedtails/facecontrolsandsupportsmustfitselectedbathprofileandfrontpanel; nohiddenrearconnectionorclaimedpartfit.",
       "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
-      "terminalDeadLegLitresAt13mmID": 0.43071627979797766,
-      "idealFlushSecondsAt6Lmin": 4.307162797979776
+      "terminalDeadLegLitresAt13mmID": 0.47053596668222825,
+      "idealFlushSecondsAt6Lmin": 4.705359666822282,
+      "actualFrontIsolationTargets": {
+        "hot": [
+          10800,
+          4450,
+          350
+        ],
+        "cold": [
+          10900,
+          4450,
+          350
+        ],
+        "actualKitRequirement": "Accessiblefrontisolationandtrueunion, independentsupportedretainedsupply; actualtap/overflow/WCsystemcompatibilitynotassumed."
+      }
     },
     {
       "id": "rear-WC",
