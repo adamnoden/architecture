@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 21,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "74850e01-5d79-4ab4-b419-3b9628e34c8c",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg8-envelope-field"
   },
   "claimedAt": "2026-11-02T12:57:38.664Z",
-  "heartbeatAt": "2026-11-02T13:57:54.016Z",
-  "expiresAt": "2026-11-02T14:42:54.016Z",
+  "heartbeatAt": "2026-11-02T14:03:42.401Z",
+  "expiresAt": "2026-11-02T14:03:42.401Z",
   "checkpoint": {
     "evidence": "Draft PR #1277 head 31ea790915822cce2e75484f86dd01ce98226767 tree 6e8180ee820b175829c61903ae54d00a8f9e2f77; source-bound field, falsework, local turns and negative controls checked",
     "next": "Root QA, exact-head CI and fresh preflight; continue constructive work only after reviewable packet",
@@ -39,5 +39,7 @@
       "blocker": "Complete carrier/field, structural/site and physical admission remain open; no adoption asserted"
     }
   },
-  "pr": 1277
+  "pr": 1277,
+  "releasedAt": "2026-11-02T14:03:42.401Z",
+  "releaseReason": "completed"
 }
