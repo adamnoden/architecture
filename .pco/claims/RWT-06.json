@@ -9,8 +9,8 @@
     "label": "zerg-rwt26-live-receiver"
   },
   "claimedAt": "2026-11-02T10:48:55.897Z",
-  "heartbeatAt": "2026-11-02T12:38:38.908Z",
-  "expiresAt": "2026-11-02T13:23:38.908Z",
+  "heartbeatAt": "2026-11-02T12:39:30.812Z",
+  "expiresAt": "2026-11-02T13:24:30.812Z",
   "checkpoint": {
     "evidence": "Draft PR #1272 head 477a1416c0860503faf203b79018da67497916a1 tree c0dfea16c7da56096353ad49f4dd7f44f9e98c07; bounded failure and access evidence",
     "next": "Integration owner coordinates matching MAT projection, review, exact-head validation and merge",
@@ -37,5 +37,6 @@
       "evidence": "Root verified PR1263 merged as maindf410b141fb77257dcbe825de5d20287144d75ee tree10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; PR1258 provider merged true; CI41430725270 attempt2 all success; exact-head RWT25 publication preflight10:44:55.637Z.",
       "next": "Release completed frozen packet25 canonically; acquire fresh directed RWT06 generation from verified main before implementing constructive live temporary receiver/reversal. RWT06 remains planned, actual method rejected and downstream holds unchanged."
     }
-  }
+  },
+  "pr": 1272
 }
