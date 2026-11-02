@@ -26,7 +26,8 @@ Issue #942 records the authorised parallel topology, superseding OAS-01…06.
   interfaces reconciled against actual core candidates.
 - **OAS-03:** selected family, replacement/reinstatement and canonical drawings.
 - **OAS-DETAIL:** representative nominal scaled head/jamb/sill, threshold and internal-door interfaces; explicitly required before triad.
-- **TRIAD-GATE:** one coordinated house before selected BCR input.
+- **OAS-NORTH-EXPORT:** actual FIRST outer-north window-0 assembly/profile, upper guard and supported removal/reinstatement candidate; [owning scope](oas-north-export-brief.md).
+- **TRIAD-GATE:** one coordinated house before selected BCR input, including that actual occurrence.
 
 OAS-00 records 44 nominal window and 19 door occurrences across the two current
 occupied levels. Five doors have external threshold duties. The conventional
@@ -78,3 +79,11 @@ Closure does not establish regulatory approval, certification or physical perfor
 Reconcile actual finished opening, withdrawal and threshold meanings with early BCR occupation/water findings. Existing OAS selection remains evidence at its bounded scope; product performance or house occurrence is not earned by a nominal interface study.
 
 The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.
+
+## Actual north export occurrence — 2 November2026
+
+The [IAS NW/bootstrap enquiry](../ias/ias-03-nw-export-bootstrap.md) proves a missing predecessor: the bounded E0 family and nominal1000/head2850 study do not establish the actual FIRST outer-north window-0 at centre1800/sill850, its complete upper guard or protected first release. OAS-NORTH-EXPORT is one planned self-service follow-on depending on completed OAS-03, OAS-DETAIL and HAD-03. IAS-03 and TRIAD-GATE now explicitly require it; IAS remains planned and becomes structurally blocked until the occurrence is developed. The completed bounded OAS outputs retain their lifecycle and claim ceilings.
+
+Develop one coherent occurrence candidate, including actual profile/operation, complete sash/glazing/hardware/upper guard, independent supports, reached first release, controlled removal/parking and replacement with weather/air/water reinstatement. Record OS-01 mounting/profile/support, OS-02 primary/failed-seal/drained boundary and temporary protection, and OS-04 practical clearance, complete moving components, worker/apparatus geometry and handover. Retained-frame75 intrusion is an IAS compatibility requirement, not admitted OAS sizing. A nominal750 sill, a700 neighbour or the GROUND west7400 grille cannot replace this occurrence.
+
+The [brief](oas-north-export-brief.md) owns the evidence and rejection conditions. Candidate development is the packet's exit; actual product adoption, engineering/anchors, weather/air/fire/material/site/physical acceptance stay explicitly separate where the architectural proposition does not depend on an unresolved clash. No window pass, whole OAS closure, HAD geometry change or new queue is created by the graph amendment. STR retains finite NW roof/hip/seat geometry; MAT's SW station is not mirrored into this occurrence.
