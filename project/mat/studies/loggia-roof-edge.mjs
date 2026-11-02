@@ -15,8 +15,9 @@ const r=JSON.parse(cb),s=Math.sin(25*Math.PI/180),c=Math.cos(25*Math.PI/180),t=M
 assert.equal(h.roofDevelopment.pitch,r.pitch);assert.deepEqual(h.roofDevelopment.normalLayers.map(x=>x[1]).reverse(),r.layersWeatherToRoom.map(x=>x[1]));assert.equal(h.roofDevelopment.protectedCeiling.top,6620);assert.equal(h.roofDevelopment.protectedCeiling.bottom,6444);assert.equal(h.roofDevelopment.eavesDatum,r.eave);assert.equal(h.roofDevelopment.totalNormal,r.totalNormal)
 assert.equal(h.roofDevelopment.overhang,200);assert.equal(h.envelope,429.5)
 const strCommit='6a3c15d6ffb8dac628c42533ba7ea64ac0de2cce',sp='project/str/studies/open-loggia-support.json'
-const sb=execFileSync('git',['show',`${strCommit}:${sp}`]),collector=JSON.parse(sb).actual_roof.collector
+const sb=execFileSync('git',['show',`${strCommit}:${sp}`]),strRoof=JSON.parse(sb).actual_roof,collector=strRoof.collector
 assert.equal(collector.top,6680);assert.equal(collector.bottom,6540);assert.equal(collector.section.b,260)
+assert.deepEqual(strRoof.north_frames_x,[4377.5,7622.5]);assert.deepEqual(strRoof.seat_y,[8082.5,11667.5])
 const roof=(q,d=0)=>r.eave+q*t-d/c
 const endQ=450,topD=420.7,topZ=roof(endQ,topD)
 const P=(a,d)=>[endQ+a*c+d*s,topZ+a*s-d*c]
@@ -28,13 +29,17 @@ const gutterN=gutterKgPerM*9.81*(3245/6/1000)
 const gutterLever=(postHead[0]+270)/c
 const coverQ=2.5*(3245/6/1000),coverM=coverQ*coldL**2/2
 const totalM=coverM+1.35*gutterN*c*gutterLever
+// The vertical q550 return intersects the actual 80-normal primary at its
+// discrete frame planes. An uninterrupted red line in the transverse section
+// would conceal that steel/air junction.
+const airQ=550,airAtRoof=roof(airQ,396.7),frameAtReturn=[roof(airQ,500.7),roof(airQ,420.7)]
 const v={status:'ONE unadopted ordinary-eave join. Physical allocation and authored load screens, not whole-roof, fire, water, material or site admission.',
  inputs:{had:{path,commit:hadCommit,blob:blob(hb)},roofControl:{path:controlPath,commit:controlCommit,blob:blob(cb)},str:{commit:strCommit,path:sp,blob:blob(sb)},coordination:'STR/MAT 2 November2026: q450 end rows; normal346 posts; RHS120x60x5. This delta awaits owning STR source/readback.'},
  ordinaryWall:{total:429.5,roomToWeather:[27,140,110,50,102.5],core:[262.5,402.5],glass:[152.5,262.5],scope:'Ordinary shell spatial reservation. Not the519.5/200glass loggia sidewall and not full constituent/thermal admission.'},
  collector:{bounds:[202.5,462.5,6540,6680],plate:{planNS:[212.5,452.5],top:6702},remainingGlassAtCollector:50,scope:'Actual260collector replaces60 of110glass. Do not draw glass through RC; complete2D/3D heat path remains unproved.'},
  geometry:{wallLineWeather:7100,edgeQ:-200,edgeWeather:roof(-200),normalStack:500.7,endPurlinQ:endQ,endRows:[8200,11550],purlin:[120,60,5],purlinCorners:corners,purlinLowest:Math.min(...corners.map(p=>p[1])),postBottom,postHead,postNormal:346,postAvclCrossingQ:endQ-25*s,railCantileverPlan:postHead[0]+200,railCantileverNormal:coldL,endTributaryPlan:700,lowerBoardEndQ:262.5,lowerBoardPlanExtension:endQ-262.5,roofGlassEndQ:152.5},
- clearances:{plateVertical:Math.min(...corners.map(p=>p[1]))-6702,airReturnQ:550,bodyMaxQ:Math.max(...corners.map(p=>p[0])),airReturnHorizontal:6640,carrierTopReserve:6628,authoredFabricationAllowance:10},
- air:{roof:'1mm supported stainless control; boundary turns atq550, inside the complete endpurlin body.',return:'Down to6640, then at6640 (12above carrier reserve6628) to actual collector finishq489.5 (462.5RC+27finish). Below6540 step to ordinary wallfinish429.5. Never run the line through the260collector.',joints:'Welded sheet corners; mechanically clamped plaster transition, actual bedding/compression/movement and source constituents unqualified. No gas/airtightness pass from metal by name.'},
+ clearances:{plateVertical:Math.min(...corners.map(p=>p[1]))-6702,airReturnQ:airQ,bodyMaxQ:Math.max(...corners.map(p=>p[0])),airReturnHorizontal:6640,carrierTopReserve:6628,authoredFabricationAllowance:10},
+ air:{roof:'1mm supported stainless control; q550 turn is between endpurlins and across actual primary-frame planes, not a universally free vertical passage.',return:'In bays descend atq550 to6640, then at6640 (12above carrier reserve6628) to actual collector finishq489.5 (462.5RC+27finish). Below6540 step to ordinary wallfinish429.5. Never run the line through the260collector.',primaryFrame:{planes:'Discrete primary SHS80 frame planes in the north eave; other faces/corners require their own setting out.',axesX:strRoof.north_frames_x,seatsY:strRoof.seat_y,normalDepth:80,atQ:airQ,upper:frameAtReturn[1],lower:frameAtReturn[0],verticalIntersection:frameAtReturn[1]-frameAtReturn[0],roofSheet:airAtRoof,topDrop:airAtRoof-frameAtReturn[1],bottomToTurn:frameAtReturn[0]-6640,proposal:'At each primary plane, terminate the downward sheet to an all-around welded local saddle/collar on the SHS skin above and below the occupied steel, using the closed frame skin as the local air/vapour bridge. Preserve the through-field roof sheet above the steel. No sheet passes through the member and no unsealed cavity inside its hollow section is credited.',hold:'Verify continuous weld/access around the full member perimeter, sealed frame ends/structural joints, steel corrosion/coating compatibility, differential thermal movement and restraint, buckling/connection effects, maintenance repair and vapour/condensation performance. A line contact or nominal metal overlap is not an air test or an approved fabrication detail.'},joints:'Welded sheet corners and separate post collars; mechanically clamped plaster transition, actual bedding/compression/movement and source constituents unqualified. Roof-post penetrations occur at the finite 540.833×≤550 grid and require their own welded AVCL collars plus distinct breather/weather collars. No gas/airtightness pass from metal by name.'},
  thermal:{roof320:true,wall110:true,collectorNeck:50,roofWallJoint:'Raked wallglass meets roofglass at its lower face; roofglass ends atq152.5, lowerboards atq262.5. No phantom500.7 stack projects into overhang.',retention:'Glass ownweight requires actual toe/support and movement-compatible retainers; cover/gutter loads bypass glass. Roof toe is supported by joined wallglass below, not treated as a structural cantilever.',limit:'No isolatedR or previous optimistic.1553 probe closes this edge. Collector, post/collar, wallhead and ceiling effects require joined thermal/moisture calculation.'},
  ceiling:{finished:6444,top:6620,completeDepth:176,perimeterAtCollectorFinish:489.5,carrierReserve:[6468,6628],requiredClosedReturn:96,scope:'Protected family terminates at actual projecting collector face. Its web may not overlap RC. Close the96 between finished6444 and RCsoffit6540 with the complete applicable classified return, not an unsupported60 board overhang or cut wool; exact classified perimeter and independent end support remain MAT-interiors/STR work. Ordinary ceilings remain separate.'},
  weather:{upperBoard:24,edgeCleat:{material:'Authored1.5 uncoated stainless, not a substituted G3 kit',lengthNormal:150,boardRebate:1.5,remainingBoard:22.5,hem:30,movementGapControl:6},secondary:{material:'Retained1mm breather duty on authored1.5 stainless eave support/drip; exact sheet/collars remain unqualified.',outerDripQ:-220,dripZ:roof(-220,75.7),lapSupport:'Falls outward below clear vent; no reverse lap. Support is cold-side, clipped to NS rails, not an AVCL bypass.'},vent:{grossNormal:30,meshMinimumOpen:.5,equivalentNet:15,continuousChannels:[490.8333333333,50],scope:'30throat within50zone; metal mesh/baffle below moving edge, no EW blockage. Wind-driven-rain and exact corner continuation remain unproved.'},
@@ -45,6 +50,7 @@ v.clearances.plateAfterAllowance=v.clearances.plateVertical-10
 v.clearances.airAfterAllowance=550-v.clearances.bodyMaxQ-10
 v.weather.secondary.clearOverBackCrest=v.weather.secondary.dripZ-v.weather.gutter.backCrest
 assert(v.clearances.plateAfterAllowance>0&&v.clearances.airAfterAllowance>0)
+assert(v.air.primaryFrame.upper>v.air.primaryFrame.lower&&v.air.primaryFrame.lower>6640&&v.air.primaryFrame.roofSheet>v.air.primaryFrame.upper)
 assert(v.weather.secondary.clearOverBackCrest>20)
 const X=q=>30+(q+400)/10,Y=z=>50+(7400-z)/10
 const pts=a=>a.map(([q,z])=>`${X(q)},${Y(z)}`).join(' ')
@@ -85,11 +91,18 @@ for(const [i,a]of [
  `Rail authored stress${v.screens.stressMpa.toFixed(1)}MPa incl wetgutter.`,
  'Point/worker/weld/hold-down capacity NOT earned.'
  ].entries())svg+=text(190,55+i*7,a,3.2)
-svg+=text(15,185,'Rail/post plane shown; warm rafter is projected/dashed.50air channels lie alongside NSrails, not through them.',3.1)+text(15,196,'Red: proposed joined air line. It does not cut through collector or purlin. Actual clamped plaster/movement joint remains unqualified.',3.1)
+svg+=text(15,185,'Rail/post plane shown; warm rafter is projected/dashed.50air channels lie alongside NSrails, not through them.',3.1)+text(15,196,'Red: bay air line atq550. It crosses primary-frame PLANES: see local saddle duty below; not a continuous unpierced drop.',3.1)
 svg+=text(15,205,'Yellow: real glass profile.50neck and roof toe/retaining detail remain thermal/mechanical work; no isolatedR or wholeU pass.',3.1)
 svg+=text(15,214,'Gutter150lowering +400outward renewal uses external platform. Roofedge, vents and secondary drip remain fixed.',3.1)
 svg+=text(15,223,'Primary and secondary drain to SAME receiver: common blockage remains. Capture, outlets, ridge/hip/valley and wallhead fire joins are open.',3.1)
 svg+=text(15,232,'Breather chemistry/collars and metalAVCL/plaster closure are actual duty holds; no synthetic exception or stripped manufacturer system.',3.1)
-svg+=text(15,245,'This is a source-bound edge development, not a second roof model or approval of the protected ceiling/perimeter/material package.',3.3)+'</g></svg>\n'
+svg+=text(15,245,'This is a source-bound edge development, not a second roof model or approval of the protected ceiling/perimeter/material package.',3.3)
+svg+=`<rect x="14" y="252" width="392" height="34" fill="#f4f1e8" stroke="#677e87" stroke-width=".3"/>`
+svg+=text(18,259,'LOCAL PRIMARY PLANE / q550 return · section not to scale',3.3)
+svg+=text(18,266,`Roof sheet ${airAtRoof.toFixed(1)} → SHS ${frameAtReturn[1].toFixed(1)}–${frameAtReturn[0].toFixed(1)} → turn6640.`,3.1)
+svg+=text(18,273,'Weld saddle to closed skin; sealed ends/joints and movement remain proof duties.',3.1)
+svg+=text(18,280,'Post collars separate; protected176 keeps100 wool and classified96 return.',3.1)
+svg+=`<path d="M298 259H345V265 M345 276V282H392" fill="none" stroke="#ae4741" stroke-width=".7"/><rect x="340" y="265" width="10" height="11" fill="#748592" stroke="#34495a" stroke-width=".35"/><path d="M345 265H340V276H345 M345 265H350V276H345" fill="none" stroke="#ae4741" stroke-width=".65"/>`
+svg+=text(354,268,'SHS skin',2.8)+text(354,275,'local collar',2.8)+'</g></svg>\n'
 for(const[p,b]of Object.entries({'project/mat/studies/loggia-roof-edge.json':JSON.stringify(v,null,2)+'\n','project/mat/studies/loggia-roof-edge.svg':svg}))if(process.argv.includes('--check'))assert.equal(fs.readFileSync(p,'utf8'),b,p+' stale');else fs.writeFileSync(p,b)
 console.log(JSON.stringify({endRow:endQ,edge:v.geometry.edgeWeather,postHead,cantilever:coldL,clear:v.clearances,stress:v.screens.stressMpa}))
