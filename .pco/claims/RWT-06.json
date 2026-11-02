@@ -1,46 +1,38 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 27,
-  "state": "released",
-  "leaseId": "f15699e9-f59a-4e64-b2fd-99e97cd805a2",
+  "generation": 28,
+  "state": "claimed",
+  "leaseId": "c1f3c5f8-4641-4fab-aaf9-4f9507171b6d",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-rwt27-integrated-method"
+    "label": "zerg-rwt28-supported-method"
   },
-  "claimedAt": "2026-11-02T12:57:48.300Z",
-  "heartbeatAt": "2026-11-02T14:08:26.656Z",
-  "expiresAt": "2026-11-02T14:08:26.656Z",
-  "branch": "work/rwt27-integrated-method-20261102",
-  "note": "Develop integrated conventional access, lifting and protected ground wet route; preserve RWT06 planned and physical gates",
+  "claimedAt": "2026-11-02T14:09:42.576Z",
+  "heartbeatAt": "2026-11-02T14:09:42.576Z",
+  "expiresAt": "2026-11-02T14:54:42.576Z",
+  "branch": "work/rwt28-supported-method-20261102",
+  "note": "Develop one supported conventional renewal method with common blocked-water and escape states; preserve no operational acceptance",
   "predecessor": {
-    "leaseId": "4ae96a3f-b6f6-499e-b394-3c4f932f9c67",
-    "generation": 26,
-    "branch": "work/zerg-corner-convergence",
-    "pr": 1273,
+    "leaseId": "f15699e9-f59a-4e64-b2fd-99e97cd805a2",
+    "generation": 27,
+    "branch": "work/rwt27-integrated-method-20261102",
+    "pr": 1276,
     "checkpoint": {
-      "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; frozen RWT26 evidence and coordinated MAT projection",
-      "next": "Integration owner reviews and validates shared exact head, preflights and merges",
-      "blocker": "Exact-head CI and integration review pending"
+      "evidence": "Draft PR #1276 head a9d60b09ddcbcb255782515b1dbef9b7a97060c6 tree 16dda7cede9c5f16af784100a3850d5ed967d387; verified MAT main integrated with RWT reviewed bytes unchanged",
+      "next": "Integration owner checks exact-head CI and preflights before merge",
+      "blocker": "Exact-head CI pending; RWT06 and operation unaccepted"
     }
   },
   "recoverySource": {
-    "leaseId": "4ae96a3f-b6f6-499e-b394-3c4f932f9c67",
-    "generation": 26,
-    "branch": "work/zerg-corner-convergence",
-    "pr": 1273,
+    "leaseId": "f15699e9-f59a-4e64-b2fd-99e97cd805a2",
+    "generation": 27,
+    "branch": "work/rwt27-integrated-method-20261102",
+    "pr": 1276,
     "checkpoint": {
-      "evidence": "Shared draft PR #1273 head 903f1d925bb0584658ca7cc43f7c887d9c26c4c5 tree 2e6a539d7b865bab1abf3803cf615c421377d84b; frozen RWT26 evidence and coordinated MAT projection",
-      "next": "Integration owner reviews and validates shared exact head, preflights and merges",
-      "blocker": "Exact-head CI and integration review pending"
+      "evidence": "Draft PR #1276 head a9d60b09ddcbcb255782515b1dbef9b7a97060c6 tree 16dda7cede9c5f16af784100a3850d5ed967d387; verified MAT main integrated with RWT reviewed bytes unchanged",
+      "next": "Integration owner checks exact-head CI and preflights before merge",
+      "blocker": "Exact-head CI pending; RWT06 and operation unaccepted"
     }
-  },
-  "checkpoint": {
-    "evidence": "Draft PR #1276 head a9d60b09ddcbcb255782515b1dbef9b7a97060c6 tree 16dda7cede9c5f16af784100a3850d5ed967d387; verified MAT main integrated with RWT reviewed bytes unchanged",
-    "next": "Integration owner checks exact-head CI and preflights before merge",
-    "blocker": "Exact-head CI pending; RWT06 and operation unaccepted"
-  },
-  "pr": 1276,
-  "releasedAt": "2026-11-02T14:08:26.656Z",
-  "releaseReason": "completed"
+  }
 }
