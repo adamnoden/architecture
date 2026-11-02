@@ -33,6 +33,8 @@ Deep supports with a connected grillage and suspended mineral floor remain the c
 
 **Disposition:** this study earns named reaction territories, a finite bridge action, source-bound gross heavy-wall and slab-gap challenges, and an explicit lateral/thermal-bearing transfer sequence. It exposes where a complete whole-house reaction model is still absent. It cannot close STR-HOUSE or unlock STR-RECONCILE until the remaining physical mass, corner members, arch/jamb and diaphragm/connection paths, warm/cold force transfer and inhabited section are resolved or the arrangement is redesigned. Competent/site acceptance remains separately required at the existing EPR/DPL/DEL gates.
 
+The subsequent [physical slab and support transfer](physical-slab-foundation-join.md) partitions this study's 23.152 m² remainder under the declared continuous RC200 rectangle, corrects the side-beam mass overlap and traces loggia ends, southwest return and gross opening challenges. It remains a conditional design study with unqualified member and warm/cold connections.
+
 ## Reproduction
 
 Run `python project/str/studies/whole-house-reaction-join.py --check`. It checks source fingerprints, 32 floor-edge force conservation, bridge force/first-moment equilibrium, roof conservation and representative opening collisions. It does not test section capacity, pile response, diaphragm stiffness, masonry assembly or site adequacy. The parent STR reproducer and exact-head repository CI remain required before integration.
