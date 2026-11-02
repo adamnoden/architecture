@@ -434,7 +434,8 @@
   "failure_and_holds": [
     "Ridge intersections lie above ground door openings: direct uninterrupted pier route fails. Jamb axes are proposed outside rough openings; wall/arch, reinforcement and load transfer must be designed.",
     "Ridge-post, cap, valley/apex node, diagonal continuity and west-ring extension have no finite 3D joint or steel clearance proof. The hip rises to the ridge and the valley falls to court; an A\u2013B straight member is geometrically wrong. The kinked two-member node and its signed horizontal thrust/tie remain undesigned.",
-    "Original ring-axis reach is 532.5 mm; the q295 jack seat reduces this to 495 mm with only 5 mm comparator reserve. The small tapered shoe, 7.5 mm ring-edge margin, roughly 8.1 mm vertical assembly gap, signed eave torsion, roof edge and thermal interfaces require actual design and tolerances.",
+    "Original ring-axis reach is 532.5 mm; the q295 jack seat reduces this to 495 mm with only 5 mm comparator reserve. The small tapered shoe, 7.5 mm ring-edge margin, roughly 8.1 mm vertical gap must be closed by the shown variable steel shim stack rather than being treated as bearing; actual survey, shimming and signed eave torsion, roof edge and thermal interfaces require actual design and tolerances. A nominal 80 mm seat band spans q255..335, intruding 7.5 mm into glass; this is a proxy, not the full 3D sloped jack footprint. The trial belongs to longitudinal 2125..4450 and does not directly meet the separately scoped SW sheet 262.5..562.5.",
+    "The west ring extension overlaps y4100..4450 of the FIRST west-window-1 rough opening in plan. The 25 mm crown-extrados clearance is a conservative elevation comparator only; actual radial ring, frame, fire, weather and member tolerances require a section.",
     "Wall head/first slab transfer, jamb footings, wind/diaphragm and signed tie/hold-down paths remain unproved.",
     "Static force and first-moment balance does not establish stiffness, load distribution, capacities or constructibility. Adjacent roof areas and their endpoint actions are excluded.",
     "No physical roof, water, thermal, fire, service, ground or site qualification is implied."
@@ -450,9 +451,16 @@
         3917.5
       ]
     ],
+    "SW_local_sheet_longitudinal_extent_mm": [
+      262.5,
+      562.5
+    ],
     "illustrative_upper_wall_top_z_mm": 6550,
     "jack_support_first_moments": "Force plus explicit signed offset couple retained at the two ring end reactions.",
     "jack_under_at_support_mm": 6685.099435131205,
+    "nominal_glass_intrusion_mm": 7.5,
+    "nominal_longitudinal_gap_to_SW_sheet_mm": 1562.5,
+    "nominal_pack_shim_thickness_mm": 8.10482025887935,
     "nominal_post_core_edge_each_mm": 10,
     "original_eave_axis_to_weather_edge_mm": 532.5,
     "outer_eave_axes_mm": 332.5,
@@ -463,6 +471,10 @@
     ],
     "ridge_centre_z_mm": 7582.577566313353,
     "scope": "Ridge post and extended eave ring are unqualified geometric candidates. z6550 is a local 3100 wall-height comparator; actual seat, head and continuity through floors must be authored. A 120 post is not a sized member.",
+    "shim_adjustment_margin_low_high_mm": [
+      3.10482025887935,
+      3.89517974112065
+    ],
     "shoe_taper_thickness_end_mm": [
       10,
       23.989229744649958
@@ -483,8 +495,20 @@
     ],
     "trial_cantilever_reserve_to_500mm_mm": 5,
     "trial_clear_post_length_mm": 972.5775663133527,
+    "trial_jack_longitudinal_region_mm": [
+      2125,
+      4450
+    ],
+    "trial_jack_seat_80mm_q_band_proxy_mm": [
+      255,
+      335
+    ],
     "trial_jack_seat_to_weather_edge_mm": 495,
     "trial_jack_support_q_mm": 295,
+    "trial_pack_shim_range_mm": [
+      5,
+      12
+    ],
     "trial_post_top_z_mm": 7522.577566313353,
     "trial_shoe_ring_outer_edge_nominal_margin_mm": 7.5,
     "trial_shoe_z_on_ring_top_mm": 6660,
@@ -499,8 +523,14 @@
       2125,
       3247.5
     ],
+    "west_ring_extension_window_raw_overlap_mm": [
+      4100,
+      4450
+    ],
     "west_ring_required_extension_to_boundary_mm": 1202.5,
-    "west_ring_source_ends_y_mm": 3247.5
+    "west_ring_source_ends_y_mm": 3247.5,
+    "west_ring_to_upper_arch_crown_extrados_conservative_nominal_mm": 25,
+    "west_ring_trial_extrados_z_mm": 6515
   },
   "partition_m2": {
     "inner_two_valley_triangles": 5.405625,

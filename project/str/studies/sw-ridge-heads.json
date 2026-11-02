@@ -181,6 +181,15 @@
           10.370526620285121
         ]
       },
+      "gross_steel_flexural_comparator": {
+        "assumed_fyk_MPa": 500,
+        "assumed_steel_factor": 1.15,
+        "effective_depth_mm": 211,
+        "lever_arm_sensitivity_mm": 189.9,
+        "nominal_steel_moment_kNm": 18.67581218869675,
+        "scope": "Gross two-bar steel force times assumed lever arm only. Concrete compression, minimum/maximum steel, shear, anchorage, connection, material, local substitutions and extra self-weight are not checked; this is not member resistance or a pass.",
+        "two_H12_area_mm2": 226.1946710584651
+      },
       "id": "south",
       "jamb_crossing_trial": {
         "RC_jamb_section_mm": [
@@ -338,6 +347,15 @@
           36.67036039890817
         ]
       },
+      "gross_steel_flexural_comparator": {
+        "assumed_fyk_MPa": 500,
+        "assumed_steel_factor": 1.15,
+        "effective_depth_mm": 211,
+        "lever_arm_sensitivity_mm": 189.9,
+        "nominal_steel_moment_kNm": 18.67581218869675,
+        "scope": "Gross two-bar steel force times assumed lever arm only. Concrete compression, minimum/maximum steel, shear, anchorage, connection, material, local substitutions and extra self-weight are not checked; this is not member resistance or a pass.",
+        "two_H12_area_mm2": 226.1946710584651
+      },
       "id": "west",
       "jamb_crossing_trial": {
         "RC_jamb_section_mm": [
@@ -473,10 +491,11 @@
     "The selected-source court core corner is not an earned bearing; core SHS and hypothetical 15 mm casing have only geometric body-path screens, and post-to-first-floor, fire and protected-route acceptance are unresolved.",
     "The 300-wide cloak jamb projects 53 mm each side; the 260-wide study jamb projects 33 mm. Body-path proxy, door leaf and circulation require explicit screening.",
     "The west ridge carries an overhang beyond its support; adjacent roof region forces are omitted.",
-    "Saddle, bearing, mitres, baseplates and finite bracing are not sized or checked. A 60-square horizontal tie at +6500 crosses the bed2-L-return core and demands an actual framed wall opening; the pin-control force is not a whole-roof thrust or tie capacity.",
+    "Saddle, bearing, mitres, baseplates and finite bracing are not sized or checked. An RHS80-horizontal \u00d740-vertical tie at +6459.27 crosses the bed2-L-return core and demands an actual framed wall opening; the pin-control force is not a whole-roof thrust or tie capacity.",
     "Candidate lintel bars are geometry sketches, not reinforcement design, anchorage or construction release."
   ],
   "ridge_node": {
+    "RHS80x40x4_gross_area_mm2": 896,
     "concept": "Separate opposed mitred hip and valley meet at their crown; a shaped welded saddle within the 120-square node supports two orthogonal ridge members. The listed gap is a bounding dimension, not a continuous level bearing surface. Exact plate facets, weld access, local load transfer, uplift and horizontal thrust tie remain to resolve.",
     "court_centre_z_mm": 6551.721089070517,
     "diagonal_top_at_peak_z_mm": 7450.75507099419,
@@ -516,6 +535,15 @@
       2185
     ],
     "pedestal_vertical_bounding_gap_mm": 71.82249531916295,
+    "pin_control_end_connection_couple_kNm": {
+      "down": 0.9699792403485977,
+      "uplift": -0.34642115726735634
+    },
+    "prior_SHS50_axis_6459_cap_hip_gaps_mm": [
+      4,
+      4.543584389680291
+    ],
+    "rejected_SHS60_axis_6500_hip_end_overlap_mm": 41.45641561031971,
     "ridge_SHS_mm": [
       120,
       120,
@@ -550,12 +578,19 @@
         4450
       ]
     ],
-    "trial_straight_biaxial_tie_SHS_mm": [
-      60,
-      60
+    "self_weight_scope": "Additional tie self-weight is a separate inventory; it is not included in the regional q or pin-control loads.",
+    "trial_saddle_centreline_height_at_plan_corner_mm": 99.80095480846288,
+    "trial_saddle_contact_form": "Two sloped underside facets follow the opposed diagonal top surfaces; +Z top is level. This centreline profile does not establish the complete 3D contact polygon, mitred member end, fabrication or weld.",
+    "trial_saddle_minimum_height_at_apex_mm": 71.82249531916295,
+    "trial_shaped_saddle_flat_top_z_mm": 7522.577566313353,
+    "trial_straight_biaxial_tie_RHS_horizontal_vertical_mm": [
+      80,
+      40,
+      4
     ],
-    "trial_tie_axis_z_mm": 6500,
-    "trial_tie_crossing_upper_wall": "bed2-L-return at (2817.5,2817.5), inside core below trial +6550 wall top; a finite reinforced opening/replacement, air/fire seal and actual occupancy must be designed.",
+    "trial_tie_G_kN_at_78p5": 0.35660039856622033,
+    "trial_tie_axis_z_mm": 6459.271792194841,
+    "trial_tie_crossing_upper_wall": "bed2-L-return at (2817.5,2817.5), z6439.27..6479.27 inside core below trial +6550 wall top; a finite reinforced opening/replacement, air/fire seal and actual occupancy must be designed.",
     "trial_tie_plan_endpoints_mm": [
       [
         332.5,
@@ -566,18 +601,33 @@
         3917.5
       ]
     ],
+    "trial_tie_plan_length_mm": 5069.955621107546,
+    "trial_tie_to_cap_z_gap_mm": 9.2717921948406,
+    "trial_tie_to_diagonal_centre_vertical_offset_mm": 92.44929687567674,
+    "trial_tie_to_hip_end_underside_gap_mm": 9.27179219483969,
+    "trial_tie_z_mm": [
+      6439.271792194841,
+      6479.271792194841
+    ],
     "two_force_control_scope": "Only the combined ridge-apex vertical point action, stipulated pinned two-force diagonal members and no other loads. Uplift reverses axial signs; real distributed roof actions, stiffness and all other lateral cases are excluded.",
     "two_force_pin_control_horizontal_each_kN": {
       "down": 10.49201316969451,
       "uplift": -3.747147560605182
-    }
+    },
+    "wall_140_thickness_overall_along_wall_envelope_mm": 253.1370849898476,
+    "wall_core_envelope_y_mm": [
+      2690.931457505076,
+      2944.068542494924
+    ],
+    "wall_envelope_nominal_distance_to_end_2650_mm": 40.931457505076196,
+    "wall_face_cut_width_mm": 113.13708498984761
   },
   "source_sha256": {
     "project/had/studies/open-north-loggia.json": "542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd",
     "project/str/studies/disjoint-house-actions.json": "8eb7f71f0c59362438e2a992c97ce03bce2eaeac9b6411233654501d7b887abe",
     "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
     "project/str/studies/sw-corner-station.json": "d3f65aa4866b0137f94a03fd3ff61089a782106c181fcfc1b16caec6c0f82d47",
-    "project/str/studies/sw-roof-region-route.json": "dd6e5359f4f266d5c398d29f776f2dd345173fd0951a9af499339c4e36c98e49"
+    "project/str/studies/sw-roof-region-route.json": "da5ced444a50a6eb1156f9da694228c1590e437d197a011fd4e4ceb0ffb2ee50"
   },
   "status": "finite roof junction and door-head development geometry; no node, opening, structure or site pass",
   "study_260mm_jamb_body_witness_screen": [
