@@ -273,7 +273,7 @@
   "leafRemoval": [
     {
       "side": -1,
-      "phase": "supported lift260; full low-hardware allocation",
+      "phase": "supported lift260; complete folded stay to887",
       "solidLower": 28.455767409633836,
       "operatorLower": 519.599949603651,
       "governor": "barrierwestreturn",
@@ -283,19 +283,19 @@
     {
       "side": -1,
       "phase": "centreX1800/200S over retained low struts",
-      "solidLower": 56.60680491040944,
+      "solidLower": 25,
       "operatorLower": 420.7024771661248,
-      "governor": "rear-WC",
+      "governor": "retainedstrut0",
       "frameLower": null,
       "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": -1,
       "phase": "captured45 tilt; upper edge moves SOUTH",
-      "solidLower": 91.47427417634026,
+      "solidLower": 41.730335442499836,
       "operatorLower": 334.94319209833134,
       "governor": "barriercross",
-      "frameLower": 339.94319209833134,
+      "frameLower": 285.13436179149335,
       "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
@@ -304,7 +304,7 @@
       "solidLower": 160.855910110992,
       "operatorLower": 333.94319209833134,
       "governor": "retainedstrut0",
-      "frameLower": 24.517870049433895,
+      "frameLower": 8.25361973462941,
       "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
@@ -313,12 +313,12 @@
       "solidLower": 160.855910110992,
       "operatorLower": 333.94319209833134,
       "governor": "retainedstrut0",
-      "frameLower": 24.517870049433895,
+      "frameLower": 8.25361973462941,
       "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
       "side": 1,
-      "phase": "supported lift260; full low-hardware allocation",
+      "phase": "supported lift260; complete folded stay to887",
       "solidLower": 29.430616787029066,
       "operatorLower": 296.09800387131634,
       "governor": "retainedstrut1",
@@ -328,7 +328,7 @@
     {
       "side": 1,
       "phase": "centreX1800/200S over retained low struts",
-      "solidLower": 88,
+      "solidLower": 25,
       "operatorLower": 294.50727332912777,
       "governor": "retainedstrut1",
       "frameLower": null,
@@ -337,10 +337,10 @@
     {
       "side": 1,
       "phase": "captured45 tilt; upper edge moves SOUTH",
-      "solidLower": 91.47427417634026,
+      "solidLower": 41.730335442499836,
       "operatorLower": 334.9431920983311,
       "governor": "barriercross",
-      "frameLower": 339.9431920983311,
+      "frameLower": 285.13436179149335,
       "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
@@ -349,7 +349,7 @@
       "solidLower": 163.94319209833156,
       "operatorLower": 333.9431920983311,
       "governor": "retainedstrut0",
-      "frameLower": 24.517870049433895,
+      "frameLower": 8.25361973462941,
       "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     },
     {
@@ -358,7 +358,7 @@
       "solidLower": 163.94319209833156,
       "operatorLower": 333.9431920983311,
       "governor": "retainedstrut0",
-      "frameLower": 24.517870049433895,
+      "frameLower": 8.25361973462941,
       "method": "1001 full conservative leaf+handle box poses; SAT separation + clipped-wall aperture. Half-step<=2 translations (total<=4000),<=1 tilt(radius<=1250,anglepi/4). Complete positive independent support/capture required; no manualcarry or actualappliance acceptance."
     }
   ],
