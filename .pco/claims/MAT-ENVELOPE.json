@@ -9,12 +9,12 @@
     "label": "zerg7-envelope-corner-junction"
   },
   "claimedAt": "2026-11-02T10:51:13.775Z",
-  "heartbeatAt": "2026-11-02T11:11:51.572Z",
-  "expiresAt": "2026-11-02T11:56:51.572Z",
+  "heartbeatAt": "2026-11-02T11:19:53.394Z",
+  "expiresAt": "2026-11-02T12:04:53.394Z",
   "checkpoint": {
-    "evidence": "Draft PR #1267 head b6e76fbe9a2a8da1186de8ace9233433919cc3db tree 34a5aec0fd384f1868ebdae1a098c57334a4f54a; source-checked SW plan, two sections, unsealed crossing failure and schedule; HAD generator SHA256 2c60c151",
-    "next": "Bind corrected STR station after disjoint rebind; coordinate shared integration and peer review final source identities",
-    "blocker": "No continuous capillary air/gas seal, physical admission or complete structural capacity; do not integrate without affected STR pin rebind"
+    "evidence": "Draft PR #1267 head ec009216d228f14d38127b6b0ec94b1a508ba8e5: SW plan, orthogonal sections, split rod diaphragm and whole-field welded-metal above/below slab comparison; generator check passes",
+    "next": "Reconcile replacement STR station/hip and actual source pin; coordinate shared integration and independent review",
+    "blocker": "No evidenced complete gas/capillary/movement field-to-wall assembly, actual STR geometry pending; no material or site admission"
   },
   "branch": "work/zerg7-envelope-corner-junction",
   "predecessor": {
