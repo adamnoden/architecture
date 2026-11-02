@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 16,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a007262b-2785-40fb-9a7a-008c44be278d",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-recovery-ias"
   },
   "claimedAt": "2026-11-02T07:17:00.962Z",
-  "heartbeatAt": "2026-11-02T08:34:24.207Z",
-  "expiresAt": "2026-11-02T09:19:24.207Z",
+  "heartbeatAt": "2026-11-02T08:45:51.271Z",
+  "expiresAt": "2026-11-02T08:45:51.271Z",
   "checkpoint": {
     "evidence": "Deliberate shared association PR1254 work/zerg-recovery-engineering-integration headfb2f1271d609dceb1554255a9cf621337a3fa9aa treeaaed5e9f4fd8a9ed9f4c757326a54214996be114 based3f254c0. Root verified all seven IAS files exactly match independently reviewed250e17; full source histories true parents. Combined IAS/thermal/reaction/defaultHAD generators, authregression/typecheck/repo/diff passed per root; worker does not claim independent CI observation.",
     "next": "Hold frozen shared head for root sole exact-head CI observation, canonical publication preflight and expected-head merge. Source unchanged; release only after verified merged notice.",
@@ -39,5 +39,7 @@
       "blocker": "IAS stays planned/incomplete: no transfer of full guarded export, connected handling/support or physical/material/classified-kit acceptance. No source changes, new claims or independent CI polling."
     }
   },
-  "pr": 1254
+  "pr": 1254,
+  "releasedAt": "2026-11-02T08:45:51.271Z",
+  "releaseReason": "completed"
 }
