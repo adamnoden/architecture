@@ -9,8 +9,8 @@
     "label": "zerg-structure-disjoint"
   },
   "claimedAt": "2026-11-02T10:36:39.194Z",
-  "heartbeatAt": "2026-11-02T10:41:48.574Z",
-  "expiresAt": "2026-11-02T11:26:48.574Z",
+  "heartbeatAt": "2026-11-02T10:48:05.138Z",
+  "expiresAt": "2026-11-02T11:33:05.138Z",
   "branch": "work/zerg-str-disjoint-20261102",
   "predecessor": {
     "leaseId": "86aa03de-9616-4922-b6f2-e0d8d14f323c",
@@ -36,8 +36,8 @@
   },
   "pr": 1264,
   "checkpoint": {
-    "evidence": "Draft PR #1264 head e9c1c747430877cea5afa409db8c99f89f272286 tree 841362c85cf35b89bf1c55837969f93634ab892c; trial nonwall floor and disjoint upper core allocation; local reproducers pass",
-    "next": "Independent challenge of source geometry, allocation, reaction model and scope; reconcile main and CI before publication",
-    "blocker": "Actual layers, core geometry, lower/weather walls, heads, diaphragm and warm/cold/site supports remain unqualified; STR-HOUSE open"
+    "evidence": "Draft PR #1264 head 7119962d5d1e994f51350e19d13bc55274b5ebcf tree 9830b60127fa8f352b535b65c406c46e2a58b866; reviewed e9c1 with current main df410 parent; unchanged consumed enclosure, rebound generator hash",
+    "next": "Obtain narrow independent re-review, exact-head CI and fresh publication preflight",
+    "blocker": "Actual layers, arches, lower and weather walls, diaphragm and warm/cold support transfer remain unqualified; STR-HOUSE open"
   }
 }
