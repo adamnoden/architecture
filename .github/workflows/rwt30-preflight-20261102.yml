@@ -1,0 +1,35 @@
+# Temporary read-only RWT-06 generation-30 native merge preflight.
+# Only on this disposal-bound helper branch, never on main.
+name: RWT-06 generation-30 publication preflight
+on:
+  push:
+    branches:
+      - work/rwt30-preflight-20261102
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact source candidate
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6585907015
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Native exact-head canonical RWT-06 lease publication preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node --import tsx scripts/project-claims.ts merge-check RWT-06 \
+            --lease-id d42d0ec2-7634-4b34-a4f8-527c54b2c4c3 \
+            --generation 30 \
+            --branch work/mvb-chat-6585907015 \
+            --head 4df0fab35addbc873abe3c5e611ee76497959915 \
+            --format json
