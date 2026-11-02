@@ -106,6 +106,22 @@ const renderSvg=function renderSvg(o){
   return chunks.join('');
 }
 const result=calculate(source)
+const westGutter=result.primitives.find(p=>p.id==='west-eave-gutter')
+const eastGutter=result.primitives.find(p=>p.id==='east-eave-gutter')
+const equipment=result.screening.drawnEquipmentAabb
+if(!westGutter||!eastGutter||equipment.x[0]!==westGutter.x[0]||equipment.x[1]!==eastGutter.x[1])throw Error('Outward overflow boundary assumptions changed')
+result.conditionalOutwardOverflow={
+ conditionalClaim:'A candidate that relies on direct free spill outwards from the authored eave-gutter exterior lips needs an outboard receiving route; no actual lip, water trajectory, plot boundary or site right is verified',
+ gutterOutsideLipXmm:{west:westGutter.x[0],east:eastGutter.x[1]},
+ equipmentAabbXmm:equipment.x,
+ outwardContinuousStripInsideEquipmentAabbMm:{west:equipment.x[0]-westGutter.x[0],east:eastGutter.x[1]-equipment.x[1]},
+ anyPositiveOutwardTravelLeavesEquipmentAabb:true,
+ equipmentOnlyRectangleCannotProveSafeFreeSpill:true,
+ exteriorReception:'NOT IDENTIFIED: may require lawful occupation/rights and separated receiver outside the source equipment rectangle, or an independent internally routed overflow subject to its own real hydraulic, blocked-tailwater and first-harm proof',
+ boundary:'Conditional 2-D topological negative control only; actual permitted strip, plinth, height/fall, wind, splash, entrance, downpipe, footing and affected fabric are unknown',
+ designDisposition:"Complete temporary over-roof is site-conditional optional major-repair equipment, not the house's assumed default serviceability proof. Repairability must instead be earned from its permanent assemblies and specified local work states."
+}
+if(result.conditionalOutwardOverflow.outwardContinuousStripInsideEquipmentAabbMm.west!==0||result.conditionalOutwardOverflow.outwardContinuousStripInsideEquipmentAabbMm.east!==0)throw Error('Free-spill negative control changed')
 if(result.primitives.filter(x=>x.kind==='scaffold-sole-board').length!==32||result.screening.drawnEquipmentAabb.sizeMm.join(',')!=='15800,18390'||result.screening.equipmentPlusConditionalFrontGateAabb.sizeMm.join(',')!=='15800,19190')throw Error('Site reservation geometric contract changed')
 const outputs=[['project/rwt/studies/over-roof-site-envelope.json',JSON.stringify(result,null,2)+'\n'],['project/rwt/studies/over-roof-site-envelope.svg',renderSvg(result)]]
 for(const [p,value] of outputs){const url=new URL(p,root);if(process.argv.includes('--check')){if(readFileSync(url,'utf8')!==value)throw Error('Stale generated site reservation: '+p)}else writeFileSync(url,value)}

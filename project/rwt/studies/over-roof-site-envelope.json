@@ -549,5 +549,25 @@
       "Ground bearing, sole-board sizing, settlement and weather-protected live occupation"
     ],
     "decision": "DPL compares rotated source rectangles and verified site evidence; RWT/STR/MAT/OAS/DEL must re-author temporary works if any real contact, access, weather or receiving boundary conflicts."
+  },
+  "conditionalOutwardOverflow": {
+    "conditionalClaim": "A candidate that relies on direct free spill outwards from the authored eave-gutter exterior lips needs an outboard receiving route; no actual lip, water trajectory, plot boundary or site right is verified",
+    "gutterOutsideLipXmm": {
+      "west": -1900,
+      "east": 13900
+    },
+    "equipmentAabbXmm": [
+      -1900,
+      13900
+    ],
+    "outwardContinuousStripInsideEquipmentAabbMm": {
+      "west": 0,
+      "east": 0
+    },
+    "anyPositiveOutwardTravelLeavesEquipmentAabb": true,
+    "equipmentOnlyRectangleCannotProveSafeFreeSpill": true,
+    "exteriorReception": "NOT IDENTIFIED: may require lawful occupation/rights and separated receiver outside the source equipment rectangle, or an independent internally routed overflow subject to its own real hydraulic, blocked-tailwater and first-harm proof",
+    "boundary": "Conditional 2-D topological negative control only; actual permitted strip, plinth, height/fall, wind, splash, entrance, downpipe, footing and affected fabric are unknown",
+    "designDisposition": "Complete temporary over-roof is site-conditional optional major-repair equipment, not the house's assumed default serviceability proof. Repairability must instead be earned from its permanent assemblies and specified local work states."
   }
 }
