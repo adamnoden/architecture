@@ -12,6 +12,10 @@ Completed/cancelled history is omitted here so the current dependency frontier r
 %%{init: {"theme":"base","themeVariables":{"background":"#f7f6f2","primaryColor":"#f0eee9","primaryBorderColor":"#c9c6bd","primaryTextColor":"#20221f","clusterBkg":"#f8f7f4","clusterBorder":"#ccc9c1","lineColor":"#9eaaa1","fontFamily":"ui-sans-serif, system-ui, sans-serif","fontSize":"15px"},"flowchart":{"htmlLabels":true,"useMaxWidth":false,"nodeSpacing":42,"rankSpacing":68,"curve":"basis"}}}%%
 flowchart LR
   %% Generated from project/control. Do not hand-edit graph topology.
+  subgraph g_PCO["PCO"]
+    direction TB
+    n_PCO_GIT_DEADLINE["PCO-GIT-DEADLINE<br/>Bound configurable Git command deadlines across canonical lease operations<br/><b>ACTIVE</b>"]
+  end
   subgraph g_IAS["IAS"]
     direction TB
     n_IAS_03["IAS-03<br/>Selected interior family, drawings and disassembly set<br/><b>READY</b>"]
@@ -164,6 +168,7 @@ flowchart LR
   n_BCR_CONVERGENCE --> n_DEL_CURRENT
 
   linkStyle default stroke:#aab1a9,stroke-width:1.5px;
+  style g_PCO fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_IAS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HAD fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -193,6 +198,7 @@ flowchart LR
   classDef claimGrace fill:#eee5d8,stroke:#957044,color:#634a2d,stroke-width:3px,stroke-dasharray:4 3;
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
+  class n_PCO_GIT_DEADLINE active;
   class n_IAS_03 ready;
   class n_HAD_03 ready;
   class n_TRIAD_GATE blocked;
@@ -263,6 +269,7 @@ flowchart LR
   end
   subgraph g_PCO["PCO"]
     direction TB
+    n_PCO_GIT_DEADLINE["PCO-GIT-DEADLINE<br/>Bound configurable Git command deadlines across canonical lease operations<br/><b>ACTIVE</b>"]
     n_PCO_REVIEW_POLICY["PCO-REVIEW-POLICY<br/>Separate internal development from external assurance and remove unnecessary review waits<br/><b>DONE</b>"]
     n_PCO_MODES["PCO-MODES<br/>Close regular-chat PR association and confirm shared worker topologies<br/><b>DONE</b>"]
     n_PCO_GATEWAY["PCO-GATEWAY<br/>Expose canonical self-service leases to connector-only chats through a minimal issue gateway<br/><b>DONE</b>"]
@@ -477,6 +484,7 @@ flowchart LR
   n_CCR_PLAN --> n_CCR_IDENTITY
   n_CCR_STAIR --> n_CCR_IDENTITY
   n_CCR_DRAINAGE --> n_CCR_IDENTITY
+  n_PCO_SNAPSHOT --> n_PCO_GIT_DEADLINE
   n_PCO_HOUSE_PLAN --> n_PCO_REVIEW_POLICY
   n_PCO_GATEWAY --> n_PCO_MODES
   n_PCO_CRASH --> n_PCO_GATEWAY
@@ -774,6 +782,7 @@ flowchart LR
   class n_CCR_STAIR done;
   class n_CCR_DRAINAGE done;
   class n_CCR_IDENTITY done;
+  class n_PCO_GIT_DEADLINE active;
   class n_PCO_REVIEW_POLICY done;
   class n_PCO_MODES done;
   class n_PCO_GATEWAY done;

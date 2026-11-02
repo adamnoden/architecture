@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 9 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 110 · **Cancelled:** 0
+**Structurally ready:** 9 · **Active:** 1 · **Blocked:** 31 · **Held:** 2 · **Done:** 110 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -37,7 +37,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner |
 |---|---|---|
-| — | No node is currently active | — |
+| `PCO-GIT-DEADLINE` | Bound configurable Git command deadlines across canonical lease operations | PCO |
 
 ### Blocked
 
