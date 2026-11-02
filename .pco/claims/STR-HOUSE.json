@@ -9,12 +9,12 @@
     "label": "zerg4-structure-roof"
   },
   "claimedAt": "2026-11-02T00:02:13.027Z",
-  "heartbeatAt": "2026-11-02T00:02:13.027Z",
-  "expiresAt": "2026-11-02T00:47:13.027Z",
+  "heartbeatAt": "2026-11-02T00:28:50.675Z",
+  "expiresAt": "2026-11-02T01:13:50.675Z",
   "checkpoint": {
-    "evidence": "PR1235 merged main eab4ec03 exact tree c02680a6; gen11 released/readback ae9e29d7; old remote branch absent; fresh source continuation",
-    "next": "Bind actual HAD068e and MAT roof; calculate roof/arch/lateral/heavy-wall/service topology and foundation concept",
-    "blocker": "STR-HOUSE incomplete; known foundation joint rejected; stair comparator reserve0.5336mm"
+    "evidence": "PR1238 head5ffcc6b28251cdd0732fa634b090568ea456f4b7 treefc8d6385c748a382e7347fb92a5d9a2de81b26c4 exact native387812a9; parentcurrentmainf462415c; HAD068e and MATf376 roof bound; fullroof/circulararch/staircomparison sourcechecks and actualrenders PASS",
+    "next": "Independent bounded roof/arch review, then finite cornerjacks/collector/lateral and actual170stair joint continuation; no source edits during review if frozen by root",
+    "blocker": "STR-HOUSE incomplete: corner member topology, arch material/pierhead joins, collector/bearing/lateral, actual service and entrance routes remain; known400node rejected"
   },
   "branch": "work/zerg4-structure-roof",
   "predecessor": {
@@ -38,5 +38,6 @@
       "next": "Commander fresh exact-head CI and integration-only delta review then canonical merge preflight; source frozen while root sequences merge",
       "blocker": "STR-HOUSE bounded output remains incomplete; no changes to accepted geometry or frozen engineering scope; full exact-head CI pending"
     }
-  }
+  },
+  "pr": 1238
 }
