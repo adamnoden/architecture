@@ -1,45 +1,36 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 14,
-  "state": "released",
-  "leaseId": "842350f9-bdfb-4597-88f3-3f4d142fc0f8",
+  "generation": 15,
+  "state": "claimed",
+  "leaseId": "70b74776-c5e1-42ce-8c67-138ea615f337",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-services-connected-system"
+    "label": "zerg-services-constructive-cooker"
   },
-  "claimedAt": "2026-11-02T08:48:16.792Z",
-  "heartbeatAt": "2026-11-02T10:11:17.134Z",
-  "expiresAt": "2026-11-02T10:11:17.134Z",
-  "branch": "work/zerg-recovery-slab-network",
+  "claimedAt": "2026-11-02T10:13:45.252Z",
+  "heartbeatAt": "2026-11-02T10:13:45.252Z",
+  "expiresAt": "2026-11-02T10:58:45.252Z",
   "predecessor": {
-    "leaseId": "afdc5e64-edf7-4580-9f16-ca67c7f082f8",
-    "generation": 13,
-    "branch": "work/zerg-recovery-engineering-integration",
-    "pr": 1254,
+    "leaseId": "842350f9-bdfb-4597-88f3-3f4d142fc0f8",
+    "generation": 14,
+    "branch": "work/zerg-recovery-slab-network",
+    "pr": 1260,
     "checkpoint": {
-      "evidence": "Shared draft PR1254 remote fb2f1271/treeaaed5e9f on main d3f254c0 contains exact three reviewed Services13 auth-repair blobs from81d5e383; true source parents. Root reports default HAD/require-fit, auth regression, IAS/thermal/reaction/typecheck/repo/diff pass; HAD outputs unchanged.",
-      "next": "Root observes exact-head CI and preflight/merge; then close Services13 and resume connected-network investigation from new main",
-      "blocker": "Default HAD regression repaired on shared draft but not yet merged; connected-network probe remains local unpublished and broader material/physical duties open"
+      "evidence": "Shared draft PR #1260 exact remote head 158ec3f23e23472065872fd9eda8c402dd3eeedf tree 6ee1c5a36e2b350d644b1e447d9ea5fd729aa94f on main 02ab; Services three files exact reviewed 108e7827; source histories preserved and combined source checks passed per root",
+      "next": "Root observes exact-head CI and preflight/merge; then Services14 canonical closeout and bounded continuation",
+      "blocker": "No selected makeup/plant or site/material admission; actual fan, product, release, thermal and physical interfaces remain open"
     }
   },
   "recoverySource": {
-    "leaseId": "afdc5e64-edf7-4580-9f16-ca67c7f082f8",
-    "generation": 13,
-    "branch": "work/zerg-recovery-engineering-integration",
-    "pr": 1254,
+    "leaseId": "842350f9-bdfb-4597-88f3-3f4d142fc0f8",
+    "generation": 14,
+    "branch": "work/zerg-recovery-slab-network",
+    "pr": 1260,
     "checkpoint": {
-      "evidence": "Shared draft PR1254 remote fb2f1271/treeaaed5e9f on main d3f254c0 contains exact three reviewed Services13 auth-repair blobs from81d5e383; true source parents. Root reports default HAD/require-fit, auth regression, IAS/thermal/reaction/typecheck/repo/diff pass; HAD outputs unchanged.",
-      "next": "Root observes exact-head CI and preflight/merge; then close Services13 and resume connected-network investigation from new main",
-      "blocker": "Default HAD regression repaired on shared draft but not yet merged; connected-network probe remains local unpublished and broader material/physical duties open"
+      "evidence": "Shared draft PR #1260 exact remote head 158ec3f23e23472065872fd9eda8c402dd3eeedf tree 6ee1c5a36e2b350d644b1e447d9ea5fd729aa94f on main 02ab; Services three files exact reviewed 108e7827; source histories preserved and combined source checks passed per root",
+      "next": "Root observes exact-head CI and preflight/merge; then Services14 canonical closeout and bounded continuation",
+      "blocker": "No selected makeup/plant or site/material admission; actual fan, product, release, thermal and physical interfaces remain open"
     }
-  },
-  "checkpoint": {
-    "evidence": "Shared draft PR #1260 exact remote head 158ec3f23e23472065872fd9eda8c402dd3eeedf tree 6ee1c5a36e2b350d644b1e447d9ea5fd729aa94f on main 02ab; Services three files exact reviewed 108e7827; source histories preserved and combined source checks passed per root",
-    "next": "Root observes exact-head CI and preflight/merge; then Services14 canonical closeout and bounded continuation",
-    "blocker": "No selected makeup/plant or site/material admission; actual fan, product, release, thermal and physical interfaces remain open"
-  },
-  "pr": 1260,
-  "releasedAt": "2026-11-02T10:11:17.134Z",
-  "releaseReason": "handoff"
+  }
 }
