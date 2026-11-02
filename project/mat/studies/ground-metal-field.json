@@ -6,6 +6,27 @@
     "project/str/studies/sw-corner-station.json": "2c215912f4b55ca4587e32763bf66160d4b433d0",
     "project/mat/studies/joined-ground-boundary.json": "2a74ab4e2e88bf80405a5ca36a7eaabcd1e93fc6"
   },
+  "southWindow0Reveal": {
+    "openingX_mm": [
+      1300,
+      2300
+    ],
+    "sill_mm": 750,
+    "spring_mm": 2550,
+    "crown_mm": 2850,
+    "segmentalRadius_mm": 566.6666666666666,
+    "openingPerimeter_mm": 5824.950867279991,
+    "trialRevealReturnQ_mm": [
+      262.5,
+      302.5
+    ],
+    "trialReturnDepth_mm": 40,
+    "sheetThickness_mm": 1,
+    "nominalRoughWidthAfterTwoJambSheets_mm": 998,
+    "grossReturnArea_m2": 0.23299803469119967,
+    "grossReturnMass_kg_at_7900": 1.8406844740604773,
+    "scope": "Local formed metal reveal return, not an accepted window frame or airtight joint. The 40mm depth is an authored reservation, not a product dimension. Real frame position, assembly, arch fabrication, nominal 1mm clear intrusion each jamb, sill, water drainage, movement, support, corrosion, welds, fire and replacement are unresolved; no seam/hole is credited as sealed."
+  },
   "SWverticalTurn": {
     "warmPierFaces_mm": {
       "x_face": [
