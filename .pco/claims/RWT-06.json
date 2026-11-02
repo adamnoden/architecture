@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 22,
-  "state": "released",
-  "leaseId": "afeca720-3fcd-457c-a26c-386f7d058324",
+  "generation": 23,
+  "state": "claimed",
+  "leaseId": "71356323-b777-4f9d-8ac2-4e8f09fb942b",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-rwt06-recovery"
+    "label": "zerg-rwt06-temporary-rain"
   },
-  "claimedAt": "2026-11-02T07:14:47.403Z",
-  "heartbeatAt": "2026-11-02T07:43:43.934Z",
-  "expiresAt": "2026-11-02T07:43:43.934Z",
-  "branch": "work/rwt06-open-loggia-recovery-20261102",
+  "claimedAt": "2026-11-02T07:44:45.811Z",
+  "heartbeatAt": "2026-11-02T07:44:45.811Z",
+  "expiresAt": "2026-11-02T08:29:45.811Z",
+  "branch": "work/rwt06-temporary-rain-20261102",
   "predecessor": {
-    "leaseId": "5ded4cf2-206c-4922-9ab1-aba902031d2a",
-    "generation": 21,
-    "branch": "work/mvb-chat-6556544021",
-    "pr": 1207,
+    "leaseId": "afeca720-3fcd-457c-a26c-386f7d058324",
+    "generation": 22,
+    "branch": "work/rwt06-open-loggia-recovery-20261102",
+    "pr": 1245,
     "checkpoint": {
-      "evidence": "PR1207 head 0fd395af: four source/control files add N/E court escape screen and HAD-03 dependency; exact-head full CI 41297209760 PASS.",
-      "next": "Verify native preflight job for exact head/live lease, merge PR1207 with expected SHA, release and dispose helper branch.",
-      "blocker": "Actual HAD-03 plan and section plus site flood, structural/assembly and flow acceptance not yet earned."
+      "evidence": "PR #1245 head f2d1ffffa6a154c5e69bf222bc86001b6b706931; truthful merge parents c2ec1676 and main483a26c7; five RWT tests/generator, merged envelope generator, repository integrity and typecheck PASS",
+      "next": "Root observes CI on frozen merged head; worker performs fresh canonical publication preflight immediately before root merge",
+      "blocker": "RWT-06 remains planned; no event/inlet/first-harm/temporary-rain/high-level access admission"
     }
   },
   "recoverySource": {
-    "leaseId": "5ded4cf2-206c-4922-9ab1-aba902031d2a",
-    "generation": 21,
-    "branch": "work/mvb-chat-6556544021",
-    "pr": 1207,
+    "leaseId": "afeca720-3fcd-457c-a26c-386f7d058324",
+    "generation": 22,
+    "branch": "work/rwt06-open-loggia-recovery-20261102",
+    "pr": 1245,
     "checkpoint": {
-      "evidence": "PR1207 head 0fd395af: four source/control files add N/E court escape screen and HAD-03 dependency; exact-head full CI 41297209760 PASS.",
-      "next": "Verify native preflight job for exact head/live lease, merge PR1207 with expected SHA, release and dispose helper branch.",
-      "blocker": "Actual HAD-03 plan and section plus site flood, structural/assembly and flow acceptance not yet earned."
+      "evidence": "PR #1245 head f2d1ffffa6a154c5e69bf222bc86001b6b706931; truthful merge parents c2ec1676 and main483a26c7; five RWT tests/generator, merged envelope generator, repository integrity and typecheck PASS",
+      "next": "Root observes CI on frozen merged head; worker performs fresh canonical publication preflight immediately before root merge",
+      "blocker": "RWT-06 remains planned; no event/inlet/first-harm/temporary-rain/high-level access admission"
     }
-  },
-  "pr": 1245,
-  "checkpoint": {
-    "evidence": "PR #1245 head f2d1ffffa6a154c5e69bf222bc86001b6b706931; truthful merge parents c2ec1676 and main483a26c7; five RWT tests/generator, merged envelope generator, repository integrity and typecheck PASS",
-    "next": "Root observes CI on frozen merged head; worker performs fresh canonical publication preflight immediately before root merge",
-    "blocker": "RWT-06 remains planned; no event/inlet/first-harm/temporary-rain/high-level access admission"
-  },
-  "releasedAt": "2026-11-02T07:43:43.934Z",
-  "releaseReason": "handoff"
+  }
 }
