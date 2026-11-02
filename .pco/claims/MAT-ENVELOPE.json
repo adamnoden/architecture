@@ -9,9 +9,9 @@
     "label": "zerg7-envelope-joined-edge"
   },
   "claimedAt": "2026-11-02T08:48:53.526Z",
-  "heartbeatAt": "2026-11-02T10:16:19.083Z",
-  "expiresAt": "2026-11-02T11:01:19.083Z",
-  "branch": "work/zerg7-envelope-joined-edge",
+  "heartbeatAt": "2026-11-02T10:41:31.144Z",
+  "expiresAt": "2026-11-02T11:26:31.144Z",
+  "branch": "work/zerg-recovery-roof-export",
   "predecessor": {
     "leaseId": "bee7ee4e-aa19-4928-b324-020bd3cadf06",
     "generation": 18,
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Draft PR #1259 immutable head 2c1c55024544f9d4ac153a2a3d2efc02a3d2bd8e tree 498675139d5514ad10d61e1fd6058b4913ab9b56; HAD scene projection and MAT joined sections checks pass; independent review in progress",
-    "next": "Receive independent MAT topology and SVG QA; root controls shared CI, fresh preflight and merge",
-    "blocker": "Seat bearing/tolerance, exact components, 3D movement/fire/site and physical verification remain open"
+    "evidence": "Shared draft PR #1263 head 247608959f4557c1974a941a5a48708939cd1788 tree 10cdb1905a43ef0cb19fb1b6185f5f62e4123c0b; all nine MAT19 blobs exact to bounded-PASS reviewed PR #1259 head 2c1c5502; six old HAD outputs unchanged; root generator/repository checks pass",
+    "next": "Root observes exact-head CI, performs fresh canonical preflight, and expected-head merge if earned; then MAT gen19 release and bounded issue progress",
+    "blocker": "Seat tolerance/bearing and STR adoption, exact components, 3D movement/fire/site/physical verification, ridge/hip/valley and six MAT rows remain open"
   },
-  "pr": 1259
+  "pr": 1263
 }
