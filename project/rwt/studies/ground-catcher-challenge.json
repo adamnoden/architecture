@@ -98,10 +98,10 @@
       ],
       [
         5075,
-        5800
+        6000
       ],
       [
-        6200,
+        6400,
         6925
       ],
       [
@@ -110,7 +110,56 @@
       ]
     ],
     "bodyProxy": 600,
-    "scope": "Plan widths only; usable stairs, bridge, wet escape, receiving water and rescue not proven."
+    "escape": {
+      "x": [
+        5125,
+        5950
+      ],
+      "rampY": [
+        5000,
+        6900
+      ],
+      "rampTop": [
+        5,
+        40
+      ],
+      "rampBottom": [
+        -15,
+        20
+      ],
+      "bridgeY": [
+        6900,
+        13650
+      ],
+      "bridgeBottom": 20,
+      "bridgeTop": 40,
+      "guardHeight": 1100,
+      "railWidth": 48,
+      "bodyProxy": 600,
+      "bridgeFootCentres": [
+        [
+          4450,
+          6800
+        ],
+        [
+          7550,
+          6800
+        ],
+        [
+          4450,
+          7550
+        ],
+        [
+          7550,
+          7550
+        ]
+      ],
+      "footSide": 200,
+      "northGuardY": 13200,
+      "firstHarmComparator": -30,
+      "portalSpring": 2126.5422357208927
+    },
+    "scope": "Trial grating, bridge and route are geometric reservations only; supports, water passage, guard gate, wet escape, receiving water and rescue not proven."
   },
   "wallImpact": [
     {
@@ -155,7 +204,7 @@
     "padLeadingY": 5700,
     "padCentres": [
       4600,
-      6000,
+      6200,
       7400
     ],
     "padHalf": 200,
@@ -190,7 +239,14 @@
     "screenPrimaryUninterceptedAlgebra": true,
     "secondaryStartsBelowScreenTop": true,
     "screenBreatherGap": true,
-    "northPassageStrips": true,
+    "northPassageStrip": true,
+    "escapeFitsStrip": true,
+    "escapeClearWidth": true,
+    "escapeHead": true,
+    "escapeAboveComparison": true,
+    "escapeFeetAvoidInlet": true,
+    "escapeFeetClearFrames": true,
+    "escapeFeetOutsideBothLoggiaLanes": true,
     "closedScreenStopsBuildingLeaf": true,
     "screenGatePadGap": true,
     "screenPadFrameGap": true,
