@@ -9,8 +9,8 @@
     "label": "zerg4-ias-convergence"
   },
   "claimedAt": "2026-11-01T21:28:29.086Z",
-  "heartbeatAt": "2026-11-01T23:53:04.634Z",
-  "expiresAt": "2026-11-02T00:38:04.634Z",
+  "heartbeatAt": "2026-11-02T00:08:33.761Z",
+  "expiresAt": "2026-11-02T00:53:33.761Z",
   "branch": "work/zerg4-ias-convergence",
   "predecessor": {
     "leaseId": "10049375-f6a2-4aa4-87a5-3da538b5d0dd",
@@ -35,8 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published736a736b7608abc831c40d4d1eb708622e338d51 tree3263c292743b4c97755ff310d4453396dec436f0 remains recovery checkpoint; local600reach assertions/imported services24a and wetrenewalSVG are passing sourcecheck. Root-directed simpler head-first method is current working design; wholeframe rig remains explicitly INCOMPLETE, no frozen new contract.",
-    "next": "Publish current600 family immutable proof immediately; complete head-first composite/operator check and new service7a/HAD068e pins; source peer review and root integration.",
-    "blocker": "Head-first support transfer and actual guarded-stair carry are internal geometry joins; no IAS completion or safe wholemodule renewal claim."
-  }
+    "evidence": "PR1237 frozen30cf11096e98ec8c18e6269330b986751b9e63f5 tree1b9070244b877b0528808cd16f9f5952172f5902; corrected family600 north-first held-transfer/ordinary focused independent PASS; generator/render/typecheck/control/workflow checks; actual eab4 main ancestry.",
+    "next": "Hold frozen merge head; root sole exact-head CI observation and fresh canonical preflight/expected-head merge. Release after verified merge then reclaim authorized continuation.",
+    "blocker": "Partial IAS progress only: head-first sink and full guarded wet export/IS reconciliation remain internal work; no node completion or physical/material admission."
+  },
+  "pr": 1237
 }
