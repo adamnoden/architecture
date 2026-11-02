@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 19,
-  "state": "released",
-  "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
+  "generation": 20,
+  "state": "claimed",
+  "leaseId": "c2ab380b-1e6d-41f7-bb7b-6a49a91f41fb",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-structure-disjoint"
+    "label": "zerg-structure-corner"
   },
-  "claimedAt": "2026-11-02T10:36:39.194Z",
-  "heartbeatAt": "2026-11-02T10:55:45.056Z",
-  "expiresAt": "2026-11-02T10:55:45.056Z",
-  "branch": "work/zerg-recovery-constructive-actions",
+  "claimedAt": "2026-11-02T10:56:48.149Z",
+  "heartbeatAt": "2026-11-02T10:56:48.149Z",
+  "expiresAt": "2026-11-02T11:41:48.149Z",
+  "branch": "work/zerg-str-sw-corner-20261102",
   "predecessor": {
-    "leaseId": "86aa03de-9616-4922-b6f2-e0d8d14f323c",
-    "generation": 18,
-    "branch": "work/zerg-str-whole-house-20261102",
-    "pr": 1261,
+    "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
+    "generation": 19,
+    "branch": "work/zerg-recovery-constructive-actions",
+    "pr": 1266,
     "checkpoint": {
-      "evidence": "Draft PR #1261 head 125d7097282434445c2c4cc3b16d7d033e191d1e tree e312b7d61b7c49cc4aed195f03fb223101413b28; independent bounded PASS; local reproducers pass; overlap qualification explicit",
-      "next": "Root observes exact-head CI and fresh publication preflight, then expected-head merge if earned",
-      "blocker": "Actual heads and piers, floor sharing, lateral and warm/cold transfer, and site support remain unqualified; STR-HOUSE remains open"
+      "evidence": "Shared PR #1266 head d941e01d8f4194112020360c0af536d8ffafdcd4 tree 611be873bf9db3f600966297bcae0f2e05d8c87f; reviewed STR7119962 true parent, owned blobs unchanged, independent narrow PASS",
+      "next": "Root observes exact-head CI and fresh per-owner publication preflights, then expected-head merge if earned",
+      "blocker": "Actual layers, arches, lower and weather walls, diaphragm and warm/cold support transfer remain unqualified; STR-HOUSE open"
     }
   },
   "recoverySource": {
-    "leaseId": "86aa03de-9616-4922-b6f2-e0d8d14f323c",
-    "generation": 18,
-    "branch": "work/zerg-str-whole-house-20261102",
-    "pr": 1261,
+    "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
+    "generation": 19,
+    "branch": "work/zerg-recovery-constructive-actions",
+    "pr": 1266,
     "checkpoint": {
-      "evidence": "Draft PR #1261 head 125d7097282434445c2c4cc3b16d7d033e191d1e tree e312b7d61b7c49cc4aed195f03fb223101413b28; independent bounded PASS; local reproducers pass; overlap qualification explicit",
-      "next": "Root observes exact-head CI and fresh publication preflight, then expected-head merge if earned",
-      "blocker": "Actual heads and piers, floor sharing, lateral and warm/cold transfer, and site support remain unqualified; STR-HOUSE remains open"
+      "evidence": "Shared PR #1266 head d941e01d8f4194112020360c0af536d8ffafdcd4 tree 611be873bf9db3f600966297bcae0f2e05d8c87f; reviewed STR7119962 true parent, owned blobs unchanged, independent narrow PASS",
+      "next": "Root observes exact-head CI and fresh per-owner publication preflights, then expected-head merge if earned",
+      "blocker": "Actual layers, arches, lower and weather walls, diaphragm and warm/cold support transfer remain unqualified; STR-HOUSE open"
     }
-  },
-  "pr": 1266,
-  "checkpoint": {
-    "evidence": "Shared PR #1266 head d941e01d8f4194112020360c0af536d8ffafdcd4 tree 611be873bf9db3f600966297bcae0f2e05d8c87f; reviewed STR7119962 true parent, owned blobs unchanged, independent narrow PASS",
-    "next": "Root observes exact-head CI and fresh per-owner publication preflights, then expected-head merge if earned",
-    "blocker": "Actual layers, arches, lower and weather walls, diaphragm and warm/cold support transfer remain unqualified; STR-HOUSE open"
-  },
-  "releasedAt": "2026-11-02T10:55:45.056Z",
-  "releaseReason": "handoff"
+  }
 }
