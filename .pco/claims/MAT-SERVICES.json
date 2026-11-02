@@ -9,11 +9,11 @@
     "label": "zerg-services-joined-system"
   },
   "claimedAt": "2026-11-02T11:27:42.220Z",
-  "heartbeatAt": "2026-11-02T14:05:23.194Z",
-  "expiresAt": "2026-11-02T14:50:23.194Z",
+  "heartbeatAt": "2026-11-02T14:18:33.675Z",
+  "expiresAt": "2026-11-02T15:03:33.675Z",
   "checkpoint": {
-    "evidence": "Durable c1ad7c075d2328304ce5446c41509f8e51d57a59/tree6a46e29cf178102294a45d9b16c257df6238b852 remains clean. ActualSalsaPSV6/TwistTTEC matched OEM sources recovered incl factory2/5/8V+full10V, compactbody/control/curves and completeexhaust route. Root directs bounded draftPR atnextcoherentmilestone, no integrationclaim.",
-    "next": "Implement reviewableSwegon256-mode curve/thermal/route packet with inspected drawing and source-scoped controller/lowflow/firstrelease/netplant/material holds; publish and open bounded draftPR. Root owns CI/merge."
+    "evidence": "Draft PR1279 remote0860c405067b77a5b344cfb7aeed87ffddb3da67 treeb2bf1e7a08d57baac5a075934499f426300e650b realmainfcf79a6;256modes and inspected two-sheet drawing;generator check passed;full local check running",
+    "next": "Bounded source review by root; qualify specific safety controller dynamics, first release and net plant/material duties; root owns CI and merge"
   },
   "branch": "work/zerg11-services-joined-system",
   "predecessor": {
@@ -37,5 +37,6 @@
       "next": "Root sole CI/preflight/merge; Services16 handoff after verified merge then fresh coherent selected-system development",
       "blocker": "Connected cooker makeup/control and full-mode heat/emitter/plant fit remain real development defects; no polymer exception or physical/site/product admission"
     }
-  }
+  },
+  "pr": 1279
 }
