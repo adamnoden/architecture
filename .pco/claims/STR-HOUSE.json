@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 23,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "be3558cb-28fd-4bb9-a73b-747bcc93cb56",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-str-ground-assembly"
   },
   "claimedAt": "2026-11-02T14:46:48.187Z",
-  "heartbeatAt": "2026-11-02T14:46:48.187Z",
-  "expiresAt": "2026-11-02T15:31:48.187Z",
+  "heartbeatAt": "2026-11-02T18:18:37.000Z",
+  "expiresAt": "2026-11-02T18:18:37.000Z",
   "branch": "work/zerg-str-ground-assembly-20261102",
   "predecessor": {
     "leaseId": "18a5f416-818a-4a0d-ae20-11ef585cdfda",
@@ -33,5 +33,7 @@
       "next": "Root observes exact-head CI, runs structural publication preflight and expected-head merge if earned",
       "blocker": "Physical crown/contact, lateral, field, cold-cage and site remain open"
     }
-  }
+  },
+  "releasedAt": "2026-11-02T18:18:37.000Z",
+  "releaseReason": "handoff"
 }
