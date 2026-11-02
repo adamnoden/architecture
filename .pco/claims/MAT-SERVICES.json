@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 9,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9edad0b3-e4cf-4f4c-9d9b-3b13e264c6eb",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg4-whole-house-services"
   },
   "claimedAt": "2026-11-01T21:02:38.591Z",
-  "heartbeatAt": "2026-11-02T01:12:27.955Z",
-  "expiresAt": "2026-11-02T01:57:27.955Z",
+  "heartbeatAt": "2026-11-02T01:22:52.472Z",
+  "expiresAt": "2026-11-02T01:22:52.472Z",
   "branch": "work/zerg4-whole-house-services",
   "predecessor": {
     "leaseId": "3af48ff6-6510-4b31-9213-b01c49264930",
@@ -39,5 +39,7 @@
     "next": "Await root exact-head CI and verified merge; preserve frozen source and bounded continuation holds.",
     "blocker": "No source blocker in reviewed five-fix delta; root is sole CI observer. Whole-house physical/product/material admission remains unearned."
   },
-  "pr": 1234
+  "pr": 1234,
+  "releasedAt": "2026-11-02T01:22:52.472Z",
+  "releaseReason": "handoff"
 }
