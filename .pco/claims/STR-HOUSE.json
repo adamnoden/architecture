@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 17,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e9da7d6c-2886-4470-b019-871466f746dd",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-structure-physical-join"
   },
   "claimedAt": "2026-11-02T08:48:47.553Z",
-  "heartbeatAt": "2026-11-02T09:42:56.829Z",
-  "expiresAt": "2026-11-02T10:27:56.829Z",
+  "heartbeatAt": "2026-11-02T10:08:36.921Z",
+  "expiresAt": "2026-11-02T10:08:36.921Z",
   "checkpoint": {
     "evidence": "Shared draft PR #1260 head 158ec3f23e23472065872fd9eda8c402dd3eeedf tree 6ee1c5a36e2b350d644b1e447d9ea5fd729aa94f includes reviewed STR source606a/treeb924 exactly with true parentage; bounded independent PASS and source checks",
     "next": "Root observes exact-head CI and fresh canonical publication preflights, then expected-head merge if earned; STR releases only after provider-verified merged result",
@@ -39,5 +39,7 @@
       "blocker": "STR-HOUSE remains planned: physical slab, corner members, lateral distribution and warm/cold/node capacities still open"
     }
   },
-  "pr": 1260
+  "pr": 1260,
+  "releasedAt": "2026-11-02T10:08:36.921Z",
+  "releaseReason": "handoff"
 }
