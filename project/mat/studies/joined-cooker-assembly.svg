@@ -4,7 +4,7 @@
 <text x="12.000" y="10.000" class="n b">COMPACT COOKER + TEMPERED MAKEUP — ASSEMBLY / TASK SCREEN</text>
 <text x="12.000" y="15.000" class="s" style="fill:#a12d2d">Unaccepted development candidate • actual sources + explicit maxima • no physical fit, operation or material approval</text>
 <text x="12.000" y="20.000" class="s">Pinned HAD selected port Y8600; successor Y8700 requires owning rewind. Dimensions mm. Drawn on A3 landscape.</text>
-<text x="12.000" y="27.000" class="s b">A  PLAN • north up • furniture stays selected</text>
+<text x="12.000" y="27.000" class="s b">A  PLAN • north up • selected + conditional replan</text>
 <rect x="12.000" y="30.000" width="169.444" height="138.424" fill="#fafbfc" stroke="#263743" stroke-width="0.35" opacity="1"/>
 <rect x="46.342" y="85.902" width="35.200" height="52.800" fill="#e4e8eb" stroke="#7f8a94" stroke-width="0.35" opacity="1"/>
 <text x="47.342" y="88.902" class="xs">TABLE</text>
@@ -64,11 +64,15 @@
 <rect x="142.944" y="143.102" width="22.000" height="24.200" fill="none" stroke="#9e4fa5" stroke-width="0.35" opacity="1" class="dash"/>
 <rect x="104.994" y="143.102" width="22.000" height="24.200" fill="none" stroke="#9e4fa5" stroke-width="0.35" opacity="1" class="dash"/>
 <rect x="70.894" y="143.102" width="22.000" height="24.200" fill="none" stroke="#9e4fa5" stroke-width="0.35" opacity="1" class="dash"/>
-<rect x="154.142" y="145.302" width="22.000" height="22.000" fill="none" stroke="#9e4fa5" stroke-width="0.35" opacity="1" class="dash"/>
-<rect x="154.142" y="121.102" width="22.000" height="22.000" fill="none" stroke="#9e4fa5" stroke-width="0.35" opacity="1" class="dash"/>
-<path d="M172.622,156.302 L172.622,132.102" stroke="#9e4fa5" stroke-width="0.4" fill="none" class="dash"/>
-<text x="12.000" y="181.000" class="xs">Solid grey: selected furniture. Red dashed: actual podium base at three tasks.</text>
-<text x="12.000" y="185.000" class="xs" style="fill:#a12d2d">P1 cold-store clash; P2 chairs; P3 table/chairs. Furniture park/carry route UNPROVED.</text>
+<rect x="83.742" y="79.302" width="36.080" height="63.800" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="103.542" y="79.302" width="36.080" height="63.800" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="115.642" y="79.302" width="36.080" height="63.800" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="13.342" y="59.502" width="22.000" height="22.000" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="116.742" y="55.102" width="22.000" height="22.000" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="172.644" y="40.802" width="8.800" height="59.400" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="159.444" y="131.662" width="10.516" height="17.996" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<text x="12.000" y="181.000" class="xs">Grey selected; red centred task failures; green conditional parks/offset tasks/filter.</text>
+<text x="12.000" y="185.000" class="xs" style="fill:#a12d2d">Green base-only screen clears furniture; whole chair/operator/door/release proof OPEN.</text>
 <text x="223.000" y="27.000" class="s b">B  AXIAL SECTION • X / Z • axis2400</text>
 <rect x="223.000" y="32.520" width="169.444" height="8.800" fill="#c4cbd0" stroke="#536471" stroke-width="0.35" opacity="1"/>
 <text x="223.000" y="30.520" class="xs">RC underside3170 / anchors and support loads unqualified</text>
@@ -93,7 +97,7 @@
 <text x="274.844" y="65.400" class="xs">9</text>
 <rect x="260.444" y="60.900" width="6.600" height="11.000" fill="#d6eaf1" stroke="#156b9a" stroke-width="0.35" opacity="1" class="dash"/>
 <text x="262.744" y="65.400" class="xs">10</text>
-<rect x="238.444" y="56.808" width="22.000" height="19.184" fill="#d6eaf1" stroke="#156b9a" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="238.444" y="56.236" width="22.000" height="20.328" fill="#d6eaf1" stroke="#156b9a" stroke-width="0.35" opacity="1" class="dash"/>
 <text x="248.444" y="65.400" class="xs">11</text>
 <rect x="225.244" y="60.900" width="13.200" height="11.000" fill="#d6eaf1" stroke="#156b9a" stroke-width="0.35" opacity="1" class="dash"/>
 <text x="230.844" y="65.400" class="xs">12</text>
@@ -105,6 +109,7 @@
 <text x="318.744" y="57.600" class="xs">side box82</text>
 <rect x="284.644" y="62.000" width="16.500" height="8.800" fill="#ebce9f" stroke="#ae782a" stroke-width="0.35" opacity="1"/>
 <text x="284.644" y="57.600" class="xs">side box82</text>
+<rect x="240.248" y="58.436" width="18.392" height="15.928" fill="#a6cbda" stroke="#156b9a" stroke-width="0.35" opacity="1"/>
 <path d="M237.542,46.600 L237.542,32.520" stroke="#a37122" stroke-width="0.4" fill="none" class="dash"/>
 <path d="M292.542,46.600 L292.542,32.520" stroke="#a37122" stroke-width="0.4" fill="none" class="dash"/>
 <path d="M327.742,46.600 L327.742,32.520" stroke="#a37122" stroke-width="0.4" fill="none" class="dash"/>
@@ -114,36 +119,38 @@
 <text x="223.000" y="177.000" class="xs">Dashed blue: complete procurement envelope. Gold: unqualified support demand.</text>
 <text x="223.000" y="181.000" class="xs">Motor230 retained; actual fan202/336 + box40; filters239 overall; two heaters375.</text>
 <text x="223.000" y="185.000" class="xs" style="fill:#a12d2d">Carrier3800 ×500 ×750. West plan reserve51; no clamp/tool/anchor PASS.</text>
-<text x="12.000" y="195.000" class="s b">C  FILTER / ROOF / HUMAN • Y / Z</text>
+<text x="12.000" y="195.000" class="s b">C  NORTH HATCH • Y / Z PROJECTION</text>
 <rect x="15.000" y="200.240" width="64.400" height="5.600" fill="#c4cbd0" stroke="#536471" stroke-width="0.35" opacity="1"/>
 <rect x="16.400" y="209.200" width="14.000" height="21.000" fill="none" stroke="#156b9a" stroke-width="0.35" opacity="1" class="dash"/>
-<rect x="19.242" y="217.642" width="8.316" height="8.316" fill="#b8d5bf" stroke="#42794e" stroke-width="0.35" opacity="1"/>
-<rect x="19.242" y="209.802" width="8.316" height="7.840" fill="none" stroke="#9e4fa5" stroke-width="0.35" opacity="1" class="dash"/>
-<rect x="17.842" y="207.002" width="11.116" height="2.800" fill="none" stroke="#9e4fa5" stroke-width="0.35" opacity="1" class="dash"/>
-<rect x="16.400" y="209.200" width="14.000" height="1.400" fill="#d9bedb" stroke="#9e4fa5" stroke-width="0.35" opacity="1"/>
-<rect x="31.800" y="205.000" width="14.000" height="1.400" fill="none" stroke="#9e4fa5" stroke-width="0.35" opacity="1" class="dash"/>
-<path d="M23.400,209.200 L38.800,206.400" stroke="#9e4fa5" stroke-width="0.4" fill="none" class="dash"/>
-<rect x="31.800" y="262.120" width="40.600" height="26.880" fill="none" stroke="#c03648" stroke-width="0.35" opacity="1" class="dash"/>
-<path d="M31.800,234.120 L54.200,234.120" stroke="#c03648" stroke-width="0.4" fill="none"/>
-<rect x="37.400" y="213.120" width="9.800" height="49.000" fill="#f5dddd" stroke="#a12d2d" stroke-width="0.35" opacity="1"/>
-<rect x="37.400" y="210.320" width="9.800" height="2.800" fill="none" stroke="#a12d2d" stroke-width="0.35" opacity="1" class="dash"/>
-<path d="M41.600,220.120 L27.558,209.802" stroke="#9e4fa5" stroke-width="0.4" fill="none"/>
+<rect x="19.172" y="217.642" width="8.456" height="8.316" fill="#b8d5bf" stroke="#42794e" stroke-width="0.35" opacity="1"/>
+<rect x="27.628" y="217.754" width="8.652" height="8.092" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="27.628" y="214.954" width="11.452" height="13.692" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="32.500" y="237.928" width="18.200" height="51.072" fill="#e4e8eb" stroke="#7f8a94" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="32.500" y="236.528" width="18.200" height="1.400" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<rect x="31.800" y="262.120" width="40.600" height="26.880" fill="none" stroke="#26794b" stroke-width="0.35" opacity="1" class="dash"/>
+<path d="M31.800,234.120 L54.200,234.120" stroke="#26794b" stroke-width="0.4" fill="none"/>
+<rect x="39.500" y="213.120" width="9.800" height="49.000" fill="#f5dddd" stroke="#a12d2d" stroke-width="0.35" opacity="1"/>
+<rect x="39.500" y="210.320" width="9.800" height="2.800" fill="none" stroke="#a12d2d" stroke-width="0.35" opacity="1" class="dash"/>
+<path d="M44.400,220.120 L36.280,221.800" stroke="#26794b" stroke-width="0.4" fill="none"/>
 <rect x="30.400" y="220.120" width="8.680" height="1.120" fill="none" stroke="#a37122" stroke-width="0.35" opacity="1" class="dash"/>
 <path d="M15.000,289.000 L79.400,289.000" stroke="#263743" stroke-width="0.4" fill="none"/>
-<text x="82.000" y="204.000" class="xs">Filter:2548.5 +280 =2828.5</text>
-<text x="82.000" y="208.000" class="xs">+100 grip/tool reaches2928.5</text>
-<text x="82.000" y="212.000" class="xs" style="fill:#a12d2d">Fixed roof2850: FAIL78.5</text>
-<text x="82.000" y="218.000" class="xs">Proposed roof: support, lift100,</text>
-<text x="82.000" y="222.000" class="xs">slide550 north; panel50 +100grip</text>
-<text x="82.000" y="226.000" class="xs">top3100 &lt;RC3170: only70 reserve</text>
-<text x="82.000" y="232.000" class="xs">Podium:820×1450 / deck960</text>
-<text x="82.000" y="236.000" class="xs">Operator1750 +helmet100</text>
-<text x="82.000" y="240.000" class="xs">head2810; RC reserve360</text>
-<text x="82.000" y="246.000" class="xs" style="fill:#a12d2d">Under carrier: collision710.</text>
-<text x="82.000" y="250.000" class="xs" style="fill:#a12d2d">Side base: furniture conflicts.</text>
-<text x="82.000" y="256.000" class="xs">Roof panel/support/hoist/load,</text>
-<text x="82.000" y="260.000" class="xs">grip, tool/bit, platform full rails,</text>
-<text x="82.000" y="264.000" class="xs" style="fill:#a12d2d">transport and human proof OPEN.</text>
+<text x="82.000" y="204.000" class="xs">Whole replacement panel309×289</text>
+<text x="82.000" y="208.000" class="xs">HatchY8851 +309 +100grip</text>
+<text x="82.000" y="212.000" class="xs">reachesY9260, lowestZ2155.5</text>
+<text x="82.000" y="218.000" class="xs">Actual fridge comparatorH1824</text>
+<text x="82.000" y="222.000" class="xs">+50vent →1874; reserve281.5</text>
+<text x="82.000" y="226.000" class="xs" style="fill:#a12d2d">Not selected; plug/door/heat OPEN</text>
+<text x="82.000" y="232.000" class="xs">Podium820×1450 /600×800deck</text>
+<text x="82.000" y="236.000" class="xs">Full1750body+100helmet retained</text>
+<text x="82.000" y="240.000" class="xs">Head2810 / RC reserve360</text>
+<text x="82.000" y="246.000" class="xs">Green requires both chair parks</text>
+<text x="82.000" y="250.000" class="xs">and east radiator shift275 north</text>
+<text x="82.000" y="256.000" class="xs">Centre grip reach only; two hands,</text>
+<text x="82.000" y="260.000" class="xs">hatch/locks, bagging, full support,</text>
+<text x="82.000" y="264.000" class="xs" style="fill:#a12d2d">transport and HAD proof OPEN</text>
+<text x="82.000" y="269.000" class="xs">Body/podium X ends10895;</text>
+<text x="82.000" y="273.000" class="xs">cold-store starts10920.5 (25.5gap)</text>
+<text x="82.000" y="277.000" class="xs">Projected overlap is differentX.</text>
 <text x="223.000" y="195.000" class="s b">TRAIN KEY / PROOF BOUNDARY</text>
 <text x="223.000" y="204.000" class="xs">01 DTBCU250-LF24-shutter-and-actuator</text>
 <text x="223.000" y="208.000" class="xs">02 Systemair-FGR250-filter</text>
@@ -155,7 +162,7 @@
 <text x="223.000" y="232.000" class="xs">08 CV20 heater-2</text>
 <text x="223.000" y="236.000" class="xs">09 straight-after-heater2</text>
 <text x="223.000" y="240.000" class="xs">10 RCU200-250-reducer</text>
-<text x="223.000" y="244.000" class="xs">11 silencer</text>
+<text x="223.000" y="244.000" class="xs">11 SLU250-300-50-silencer</text>
 <text x="223.000" y="248.000" class="xs">12 contact-protective-supply-diffuser</text>
 <text x="223.000" y="255.000" class="xs">Actual bodies: OEM drawings. Maxima: assembly design demands.</text>
 <text x="223.000" y="260.000" class="xs">P1/P2/P3 are alternative task positions, never simultaneous platforms.</text>

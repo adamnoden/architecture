@@ -324,7 +324,12 @@
       "NovyWindowManualMirror": "https://device.report/m/726fcc763197b25f7705aecc6be2129d42933a4da143f5e7c9290f39f1dc1400.pdf",
       "filterChange": "https://www.systemair.com/en-hk/products/fans/accessories/mechanical-accessories/filter-cassettes/fgr",
       "fanCard": "https://docs.planning.org.uk/20251224/54/T7BK5SKBJGP00/9quyf95v263jppq1.pdf",
-      "pressureSensor": "https://www.halstrup-walcher.de/assets/products/measurement-technology/P26/data-sheet-P26.pdf"
+      "pressureSensor": "https://www.halstrup-walcher.de/assets/products/measurement-technology/P26/data-sheet-P26.pdf",
+      "silencer": "https://itsolution.lindab.com/LindabWebProductsDoc/PDF/Documentation/ADS/Lindab/Technical/slu.pdf",
+      "filterReplacement": "https://www.systemair.com/en-rs/p/PFR-200-250-Coarse-50percent-5-pcs-57218",
+      "fanClamps": "https://www.systemair.com/en-gb/products/fans/accessories/mechanical-accessories/mounting-equipment/brackets-and-clamps/fk",
+      "fridgeComparator": "https://bekoplc.blob.core.windows.net/bekoupload/manuals/CNG4582V.pdf",
+      "fridgeBody": "https://www.beko.co.uk/appliances/refrigerators/fridge-freezers/product/freestanding-frost-free-fridge-freezer-harvestfresh-cng4582vw-anthracite-stainless-steel-effect-white"
     },
     "hood": "Novy810 version35; all205/333/399/534m3h modes retained; EN61591 loads not installed curves",
     "hoodBodyMM": [
@@ -4344,12 +4349,12 @@
           "kind": "same actual250/200body used in expansion direction; loss distinct from contraction"
         },
         {
-          "id": "silencer",
+          "id": "Lindab-SLU250-300-50-silencer",
           "x": [
             8070.5,
             8570.5
           ],
-          "kind": "complete500axial procurement constraint; no performance credited"
+          "kind": "OEM2023-12-04:418overall/300body/362maxOD/4.9kg inclpreinstalledSafeconnectors;500allocation incl82connection reserve, retainedfactory50insulation/nonwoven;50additionalthermaljacket gives462OD. No installed acoustic/pressure credit"
         },
         {
           "id": "contact-protective-supply-diffuser",
@@ -4505,6 +4510,125 @@
       "proposedRaisedPanelTopWith100GripMM": 3100,
       "proposedRoofTaskToRCReserveMM": 70,
       "scope": "Current selected furniture fails side-platform access; furniture removal/park/carrying route not earned. Arm700/standing/platform/body/driver are explicit task screens, not human or lifting qualification. No complete firstrelease PASS.",
+      "conditionalNorthFilterSuccessor": {
+        "status": "Constructive conditional replan; no complete first-release pass",
+        "actualReplacementPanelMM": [
+          309,
+          289
+        ],
+        "replacementSetMassKg": 0.9,
+        "setCount": 5,
+        "massScope": "0.9kg source is five-filter set; no per-filter/dirty mass inferred",
+        "filterFaceY": 8851.0,
+        "wholePanelMaximumWithdrawalMM": 309,
+        "wholePanelEndY": 9160.0,
+        "with100GripMaximumY": 9260.0,
+        "with100GripMinimumZ": 2155.5,
+        "fridgeComparator": "BekoCNG4582VW1824Hx540Wx575D;57kg;50side/top and55rear; freestanding, accessible plug,300mm to central heater required. Door/plug/transport and material admission unresolved.",
+        "fridgeVentilationEnvelopeMM": [
+          640,
+          630,
+          1874
+        ],
+        "fridgeUpperReserveMM": 281.5,
+        "selectedColdStoreHeight": "unknown; comparator not selected appliance",
+        "eastRadiatorProposedMM": [
+          11370.5,
+          9975,
+          200,
+          1350
+        ],
+        "radiatorShiftNorthMM": 275,
+        "minimumColdStationToRadiatorMM": 300,
+        "chairParksMM": {
+          "dining-chair-east-south": [
+            7750,
+            10400,
+            500,
+            500
+          ],
+          "dining-chair-east-north": [
+            10100,
+            10500,
+            500,
+            500
+          ]
+        },
+        "eastNorthChairMoveHullMM": [
+          [
+            9300,
+            9750,
+            1300,
+            500
+          ],
+          [
+            10100,
+            9750,
+            500,
+            1250
+          ]
+        ],
+        "chairScope": "EN two-leg translation and ES retained park are proposed; whole handler/body/door and ES route not yet demonstrated. No table/cold-store removal.",
+        "platformTasks": [
+          {
+            "component": "heater2",
+            "baseMM": [
+              9350,
+              9000,
+              820,
+              1450
+            ],
+            "fixedFurniturePlanConflicts": [],
+            "deckWidthMM": 600,
+            "scope": "Base-only geometric countercheck after explicit chair parks; actual deck/stair/rail orientation, body/reach, transport and first-release not admitted."
+          },
+          {
+            "component": "heater1",
+            "baseMM": [
+              9800,
+              9000,
+              820,
+              1450
+            ],
+            "fixedFurniturePlanConflicts": [],
+            "deckWidthMM": 600,
+            "scope": "Base-only geometric countercheck after explicit chair parks; actual deck/stair/rail orientation, body/reach, transport and first-release not admitted."
+          },
+          {
+            "component": "fan/filter",
+            "baseMM": [
+              10075,
+              9000,
+              820,
+              1450
+            ],
+            "fixedFurniturePlanConflicts": [],
+            "deckWidthMM": 600,
+            "scope": "Base-only geometric countercheck after explicit chair parks; actual deck/stair/rail orientation, body/reach, transport and first-release not admitted."
+          }
+        ],
+        "authoredShoulderMM": [
+          10610,
+          9450,
+          2460
+        ],
+        "filterGripCentreMM": [
+          11190.0,
+          9160.0,
+          2400
+        ],
+        "centreReachMM": 651.2296062065975,
+        "reachScope": "700mm authored reach, one centre grip only; far-edge/dual-hand/tool and dirty panel bagging unqualified. Platform actual600wide deck retained.",
+        "roofTask": "Eliminated only for this north-facing conditional hatch, not for historical upward countercheck",
+        "firstReleaseStillOpen": [
+          "Hatch cover/locks/50mm jacket complete release and rated support",
+          "Actual filter border thickness/rotation/dual-hand strokes and disposal bag",
+          "Fridge exact installed ventilation/plug/door/carry geometry and no overheating",
+          "Full podium transport/erection/rails/operator and two-chair handling routes",
+          "Independent supports, coupling withdrawal, actuator accessory and full task loads",
+          "Owning HAD/STR/MAT reconciliation; no selected occurrence changed"
+        ]
+      },
       "northCill": {
         "selectedSillZ": 1050,
         "actualUnderside": "unknown",
@@ -4514,6 +4638,37 @@
         "requiredCillUndersideMinimumZ": 900,
         "scope": "Existing constructive trial requirement, no selected cill/valve/support/body admission."
       }
+    },
+    "silencerActual": {
+      "family": "LindabSLU250/300/50",
+      "sourceRevision": "2023-12-04",
+      "overallAxialMM": 418,
+      "bodyAxialMM": 300,
+      "maximumDiameterMM": 362,
+      "massKg": 4.9,
+      "factoryInsulationMM": 50,
+      "additionalThermalJacketMM": 50,
+      "assemblyDiameterMM": 462,
+      "connectionReserveWithin500MM": 82,
+      "preinstalledSafeConnectors": true,
+      "insertionLossOctaves63to8kDb": [
+        0,
+        1,
+        3,
+        7,
+        15,
+        8,
+        5,
+        5
+      ],
+      "limits": "Source-specific family, current supply revision must bind; no complete installed noise/pressure claim. Retain nonwoven, mineralwool and seals, chemistry unapproved."
+    },
+    "fanClampActual": {
+      "family": "SystemairFK",
+      "steel": "galvanised",
+      "requiredSeal": "8mm neoprene lining",
+      "fasteners": "two screws and hanging tabs",
+      "limits": "Actual250 clamp screw/tabs/mating/60mm axial engagement and support/release stroke must bind full OEM drawing; do not strip required neoprene or equate202fan length to full service envelope."
     }
   },
   "layoutMaximumProcurementEnvelopes": {
