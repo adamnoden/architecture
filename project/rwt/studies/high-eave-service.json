@@ -1,0 +1,156 @@
+{
+  "identity": "RWT-06 high-eave service section, bounded geometric comparison 2026-11-02",
+  "sourceBlobs": {
+    "had": {
+      "path": "project/had/studies/open-north-loggia.json",
+      "sha": "25faad2c4d40df2b7da7212f73808843a88d2f52"
+    },
+    "mat": {
+      "path": "project/mat/studies/loggia-envelope-section.json",
+      "sha": "0ec54ba2420b9337ce81b1867eef4c83d661e69b"
+    },
+    "renewal": {
+      "path": "project/rwt/studies/temporary-renewal-route.json",
+      "sha": "c51b98904ec9b85608857ddc88d21768bfe75504"
+    }
+  },
+  "manufacturerSource": "https://manuals.genielift.com/operators/english/1337927.pdf",
+  "court": {
+    "x0": 4250,
+    "y0": 4250,
+    "x1": 7750,
+    "y1": 7750
+  },
+  "machine": {
+    "identity": "Genie AWP-25S standard-base CE, AWPT-6454 onward, outdoor outriggers, manual 1337927GT, sixth edition second printing August 2026",
+    "footprint": [
+      3000,
+      2800
+    ],
+    "stowed": [
+      1308,
+      736,
+      1980
+    ],
+    "maxPlatformHeight": 7500,
+    "maxOccupants": 1,
+    "capacityKg": 159,
+    "maxWheelKg": 231,
+    "wallAccessFromTopRail": 434,
+    "maxManualForceN": 200
+  },
+  "plan": {
+    "preInletDepth": 2750,
+    "unavoidableInletEnvelopeOverlap": [
+      50,
+      250
+    ],
+    "historicalEmptyCourtStageOverlap": 350,
+    "sourceStage": {
+      "x0": 4500,
+      "x1": 7500,
+      "y0": 4600,
+      "y1": 7400
+    },
+    "door": {
+      "x0": 4800,
+      "x1": 7200
+    },
+    "proposedIndependentServiceLanes": [
+      {
+        "x": 4550,
+        "downrouteY": 7000,
+        "normal": true
+      },
+      {
+        "x": 7450,
+        "downrouteY": 7500,
+        "normal": false
+      }
+    ],
+    "courtInlet": {
+      "y0": 7000,
+      "y1": 7350
+    },
+    "relief": {
+      "x0": 5300,
+      "x1": 7100,
+      "y0": 7750,
+      "y1": 12000
+    }
+  },
+  "section": {
+    "eaveDatum": 7100,
+    "physicalOuterEdge": 7006.74,
+    "overhang": 200,
+    "portalJambSpring": 2126.5422357208927,
+    "portalTieUnderside": 2175,
+    "southMouthFloor": -110,
+    "terraceFloor": -152.5,
+    "machineTopAtSouthMouth": 1870,
+    "nominalJambMarginAtSouthMouth": 256.5422357208927,
+    "minPlatformHeightFromSouthMouthToEaveDatum": 7210,
+    "platformHeightHeadroomToDatum": 290,
+    "floorAtInletSouth": -94,
+    "floorAtCourtSouth": -110,
+    "southCourtDoorPanJoin": -30
+  },
+  "event": {
+    "intensityMmH": 216,
+    "roofAreaM2": 47.8125,
+    "courtAreaM2": 12.25,
+    "roofLps": 2.86875,
+    "courtLps": 0.735,
+    "combinedLps": 3.60375
+  },
+  "temporary": {
+    "roofIntercept": {
+      "x": 5900,
+      "y": 4250,
+      "trialInvert": 6990,
+      "physicalHem": 7006.74
+    },
+    "westBranch": {
+      "fromX": 5900,
+      "toX": 4550,
+      "slope": 0.01,
+      "atSouthEdgeInvert": 6976.5,
+      "atY7000Invert": 6949,
+      "dropOutletInvert": -70,
+      "transfer": {
+        "toX": 5000,
+        "toInvert": -74.5,
+        "floor": -80,
+        "intakeBottomApprox": -206.25
+      },
+      "destination": "existing normal inlet, Cu250 and N/W receiver"
+    },
+    "highCrossfall": {
+      "fromX": 5900,
+      "toX": 7450,
+      "slope": 0.01,
+      "endInvert": 6974.5
+    },
+    "highEastRun": {
+      "fromY": 4250,
+      "toY": 7500,
+      "slope": 0.01,
+      "endInvert": 6942
+    },
+    "dropAt": {
+      "x": 7450,
+      "y": 7500,
+      "outletInvert": -96
+    },
+    "transferAtCourt": {
+      "fromX": 7450,
+      "toX": 7100,
+      "fromInvert": -96,
+      "toInvert": -99.5,
+      "floor": -100
+    },
+    "destination": "east branch to existing x5300–7100 broad surface, separate E chute and E receiver; west branch to live normal/N-W; neither feeds the receiver under repair",
+    "source": "trial coordinates and inverts added for adverse comparison; not present in HAD/MAT"
+  },
+  "consequence": "AWP envelope cannot avoid the y7000–7350 inlet; zero allowance for four actual pads, jacks, transfer, levelling or receiver load. Proposed upper diversion is a source change needing an independently supported/watertight capture and complete event demonstration."
+}
