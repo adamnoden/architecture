@@ -1,0 +1,161 @@
+{
+  "status": "Manufacturer comparison and unadopted symmetric geometry stress; no selected equipment, support, site or source revision",
+  "sources": {
+    "had": [
+      "project/had/studies/open-north-loggia.json",
+      "25faad2c4d40df2b7da7212f73808843a88d2f52"
+    ],
+    "edge": [
+      "project/mat/studies/loggia-roof-edge.json",
+      "731c85d24e775259f1cf84d264d4ceaf75d89774"
+    ]
+  },
+  "manufacturerSources": [
+    {
+      "publisher": "BoSS Access Towers",
+      "url": "https://www.bossaccesstowers.com/products/staircase-tower",
+      "scope": "Published 1450 frame and 1.8/2.5 platform lengths."
+    },
+    {
+      "publisher": "BoSS/Werner",
+      "url": "https://wernerco.widen.net/view/pdf/cowf3dw4mg/BoSS_Staircase_AGR_IM_PN126639-01.pdf?t.download=true&u=sdv0ai",
+      "scope": "PN126639-01 schedule pp8–9; 6400 platform has four SP10; 1800 layout X/Y4832; outdoor sheet prohibition p25."
+    },
+    {
+      "publisher": "Layher UK",
+      "url": "https://www.layher.co.uk/wp-content/uploads/2017/11/Layher-Temporary-Access.pdf",
+      "scope": "Modular scaffolding stair tower 1400×2570 with 640 comfort stair; not a complete designed installation."
+    },
+    {
+      "publisher": "Layher UK",
+      "url": "https://www.layher.co.uk/protect-system/",
+      "scope": "Protect panel family connects to Allround/SpeedyScaf; system, joints and wind design remain site-specific."
+    },
+    {
+      "publisher": "REID Lifting",
+      "url": "https://uk.reidlifting.com/s/REID-Safety-Brochure-Portrait-EN-V5-Lo-Res.pdf",
+      "scope": "PGRS20 2000 beam minimum1450 to lifting eye; setup and full kit untested."
+    }
+  ],
+  "observed": "2026-11-02",
+  "boss": {
+    "frame": [
+      1450,
+      1800
+    ],
+    "alternativeLength": 2500,
+    "platforms": [
+      4400,
+      6400
+    ],
+    "workingHeights": [
+      6400,
+      8400
+    ],
+    "stabilisers": "4 x SP10 fully extended at 6400 platform",
+    "footprint": [
+      4832,
+      4832
+    ],
+    "externalSheeting": "Outdoor sheets, tarpaulins and signage must not attach to tower",
+    "manual": "BoSS Staircase AGR PN126639-01 pp8–9,25"
+  },
+  "layher": {
+    "module": [
+      1400,
+      2570
+    ],
+    "stairWidth": 640,
+    "plan": {
+      "x": [
+        6200,
+        7600
+      ],
+      "y": [
+        5125,
+        7695
+      ]
+    },
+    "scope": "Nominal module bounding plan only: exact standards, jacks, braces, ties, stair and rescue movement not authored. No independent stability or safe use inferred."
+  },
+  "selected": {
+    "court": 3500,
+    "edge": 7006.738468369001,
+    "screen": {
+      "nominalY": 4300,
+      "frames": 48
+    },
+    "inlet": {
+      "x": [
+        4250,
+        7750
+      ],
+      "y": [
+        7000,
+        7350
+      ]
+    },
+    "relief": {
+      "x": [
+        5300,
+        7100
+      ]
+    },
+    "AWithdrawalY": [
+      4350,
+      5100
+    ]
+  },
+  "screens": {
+    "bossShortfallEach": 1332,
+    "bossSmallWorkingHeightGap0": 606.7384683690007,
+    "bossSmallWorkingHeightGapMinus110": 716.7384683690007,
+    "layherToAWithdrawal": 25,
+    "layherInletOverlapY": 350,
+    "layherReliefOverlapX": 900,
+    "layherPlanToEastScreen": 76,
+    "gantryMinimumEyeAt5540": 6990,
+    "gantryEyeAboveSecondary": 76.11339325956033
+  },
+  "replan": {
+    "width": 5080,
+    "wall": 3460,
+    "lossOfEachBand": 790,
+    "nominalNorthLoggiaLength": 3460,
+    "screenSetback": 50,
+    "frameHalf": 24,
+    "clearance": 50,
+    "source": "Hypothetical centred symmetric court only; HAD/STR/MAT/RWT must redraw; no accepted symmetric extrapolation."
+  },
+  "baseline": {
+    "roofWallLine": 47.8125,
+    "courtWallLine": 12.25,
+    "roofPhysical": 50.4525,
+    "courtExposed": 9.61,
+    "total": 60.0625,
+    "wallRoofLps": 2.86875,
+    "wallCourtLps": 0.735,
+    "physicalRoofLps": 3.02715,
+    "physicalCourtLps": 0.5765999999999999,
+    "totalLps": 3.60375
+  },
+  "replanLedger": {
+    "roofWallLine": 34.2561,
+    "courtWallLine": 25.8064,
+    "roofPhysical": 38.1601,
+    "courtExposed": 21.9024,
+    "total": 60.0625,
+    "wallRoofLps": 2.0553660000000002,
+    "wallCourtLps": 1.548384,
+    "physicalRoofLps": 2.289606,
+    "physicalCourtLps": 1.3141440000000002,
+    "totalLps": 3.60375
+  },
+  "limits": [
+    "Axis-aligned BoSS footprint comparison does not prove all rotations or engineered, tied or different scaffolds impossible.",
+    "Layher box is not a solid obstacle or proven support layout. Full members, bracing, ties, heights, platform, rescue, lifting and live inlet/relief must be joined.",
+    "No sheeting attaches to the BoSS outdoor tower; a separate engineered enclosure is not dimensionally or structurally proved here.",
+    "Gantry eye placement directly at a drip is a one-section adverse control, not proof that every offset gantry arrangement collides.",
+    "Court growth is an algebraic stress with held roof/ridge assumptions, not a proposed source change, selected house, revised ventilation, plot or water-system acceptance."
+  ]
+}
