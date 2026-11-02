@@ -1,6 +1,6 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { composeDPLT10LennardNoCostExecution } from './dplT10Lennard.js'
 
 export const DPL_T11_SCHEMA_VERSION = 'DPL-T11-LENNARD-NO-SPEND-EVIDENCE-1' as const
@@ -125,7 +125,7 @@ const readEvidence = (): { record: T11EvidenceRecord; fingerprint: string } => {
   if (record.geometryPackAudit.additionalFullTopoScopeEarned || record.geometryPackAudit.legalBoundaryOpinionEarned) {
     throw new Error('DPL-T11 expanded the geometry package without earned authority.')
   }
-  return { record, fingerprint: sha256DplSemanticFingerprint(record) }
+  return { record, fingerprint: sha256SemanticFingerprint(record) }
 }
 
 const assertAcquisitionPacks = (): void => {
@@ -162,9 +162,9 @@ export const composeDPLT11LennardNoSpendEvidence = (): DPLT11Result => {
     'COMPETENT_STRUCTURAL_CONCEPT_REVIEW',
     'EA_POSTCODE_AUTHORITATIVE_ROW_RECOVERY',
     'MEASURED_SIDE_BOUNDARY_AND_MAINTENANCE_GEOMETRY'
-  ].sort((a, b) => compareDplIdentityStrings(a, b)) as DPLT11DependencyClass[]
+  ].sort((a, b) => a.localeCompare(b)) as DPLT11DependencyClass[]
 
-  const actual = [...t10.activeDependencyClasses].sort((a, b) => compareDplIdentityStrings(a, b))
+  const actual = [...t10.activeDependencyClasses].sort((a, b) => a.localeCompare(b))
   if (JSON.stringify(actual) !== JSON.stringify(expected)) {
     throw new Error('DPL-T11 parent dependency universe drifted.')
   }
@@ -212,8 +212,8 @@ export const composeDPLT11LennardNoSpendEvidence = (): DPLT11Result => {
   ]
 
   const records = rawRecords
-    .map((record) => ({ ...record, fingerprint: sha256DplSemanticFingerprint(record) }))
-    .sort((a, b) => compareDplIdentityStrings(a.dependencyClass, b.dependencyClass))
+    .map((record) => ({ ...record, fingerprint: sha256SemanticFingerprint(record) }))
+    .sort((a, b) => a.dependencyClass.localeCompare(b.dependencyClass))
 
   const activeDependencyClasses = records.map((record) => record.dependencyClass)
   const externalAcquisitionReady = records
@@ -261,5 +261,5 @@ export const composeDPLT11LennardNoSpendEvidence = (): DPLT11Result => {
     proofBoundary
   }
 
-  return { ...resultPayload, resultFingerprint: sha256DplSemanticFingerprint(resultPayload) }
+  return { ...resultPayload, resultFingerprint: sha256SemanticFingerprint(resultPayload) }
 }
