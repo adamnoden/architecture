@@ -15,13 +15,21 @@ from html import escape
 OUT=Path(__file__).resolve().parent
 ROOT=OUT.parents[2]
 HAD_PATH='project/had/studies/open-north-loggia.json'
-HAD_COMMIT='068e33ae52bbaa5ab0c3e3551350400e958e4033'
-HAD_SHA='588ee0da0545af391649c8e7d37f5d5c6f01159f93997602048649393f2f5a6e'
+HAD_COMMIT='cfacc96c61ce1be5befa3bc0a10086c7cb6b4202'
+HAD_SHA='542781c6bb1d277b20492e8433cea498e98eaea5db2e737a5ec7e9655f9d18fd'
 local=ROOT/HAD_PATH
 raw=local.read_bytes() if local.exists() else subprocess.check_output(['git','show',HAD_COMMIT+':'+HAD_PATH],cwd=ROOT)
 if hashlib.sha256(raw).hexdigest()!=HAD_SHA:
     raise SystemExit('HAD geometry changed: re-evaluate actual axes/finished faces before rebinding')
 had=json.loads(raw)
+# Rebinding the architectural selection changes identity and kitchen/service
+# collision evidence, not any STR geometry. Preserve that exact comparison.
+prior_had_raw=subprocess.check_output(['git','show','a510f30cc82cf9d0142664b72bc272406aed3076:'+HAD_PATH],cwd=ROOT)
+prior_had=json.loads(prior_had_raw)
+structural_rebind={}
+for key in ['groundWalls','upperWalls','openings','stairGuard','structuralChanges','roofDevelopment']:
+    assert prior_had[key]==had[key], 'HAD structural rebind changed '+key
+    structural_rebind[key]=hashlib.sha256(json.dumps(had[key],sort_keys=True,separators=(',',':')).encode()).hexdigest()
 uw={w['id']:w for w in had['upperWalls']}
 gw={w['id']:w for w in had['groundWalls']}
 assert gw['loggia-west-weather']['structuralCore']==[4307.5,4447.5]
@@ -459,10 +467,11 @@ assert return_M<return_sec['MR'] and max(return_RL,return_reaction)<return_links
 sg=had['stairGuard'];tg=sg['treadGeometry']
 assert tg['bearingAxesY']==[4332.5,7257.5]
 stair_angle=math.radians(tg['pitchDegrees']);stair_span=tg['bearingSpan']/1000
-stair_G=.15/math.cos(stair_angle)*25+.1725/2*25+.9
+stair_waist=170;stair_d=139
+stair_G=stair_waist/1000/math.cos(stair_angle)*25+.1725/2*25+.9
 stair_flight=udl(1.35*stair_G+1.5*3,stair_span)
 stair_flight_reaction=stair_flight['V']*sg['bodyTerritoryEach']/1000
-stair_sec=rc(1000,150,119,area(12)*1000/125,25)
+stair_sec=rc(1000,stair_waist,stair_d,area(12)*1000/125,25)
 stair_axial=stair_flight['V']*math.sin(stair_angle)
 assert stair_flight['M']/stair_sec['MR']+stair_axial*1000/(stair_sec['As']*(500/1.15))<1
 assert stair_flight['V']<stair_sec['VRdc']
@@ -470,8 +479,8 @@ assert stair_flight['V']<stair_sec['VRdc']
 # horizontal coordinates. Vertical unit-load work integrates along ds=dx/cosθ:
 # both the EI deflection and imposed-normal-curvature displacement need secθ.
 stair_secant=1/math.cos(stair_angle)
-stair_vertical_phi3=cracked(1000,150,119,stair_sec['As'],stair_G,3,stair_span,3)*stair_secant
-stair_vertical_shrink=300e-6/150*(stair_span*1000)**2/8*stair_secant
+stair_vertical_phi3=cracked(1000,stair_waist,stair_d,stair_sec['As'],stair_G,3,stair_span,3)*stair_secant
+stair_vertical_shrink=300e-6/stair_waist*(stair_span*1000)**2/8*stair_secant
 # Independent dimensionless virtual-work quadrature: M=q*x*(L-x)/2 and
 # m=min(x,L-x)/2. This also checks the horizontal limit, without hardcoding
 # this stair's numerical deflection or duplicating the cracked-EI calculation.
@@ -524,14 +533,17 @@ long_spans=[dict(M=max(max(abs(e['Mpositive']),abs(e['Mnegative'])) for e in c['
 long_reaction_max=[max(c['reactions'][i] for c in long_cases) for i in range(3)]
 landing_L=1.595;landing_G=5.5;landing_Q=3
 landing_action=udl(1.35*landing_G+1.5*landing_Q,landing_L)
-landing_sec=rc(1000,200,169,area(12)*1000/150,25)
+landing_sec=rc(1000,200,170,area(10)*1000/125,25)
 assert landing_action['M']<landing_sec['MR'] and landing_action['V']<landing_sec['VRdc']
-mid_L=2.610;mid_w=(1.35*landing_G+1.5*landing_Q)*landing_L/2+1.35*.25*.17*25
+landing_patch_G=.05*25;patch_on_span=.325;patch_overhang=.125
+patch_mid_G=landing_patch_G*(patch_overhang+patch_on_span-patch_on_span**2/(2*landing_L))
+patch_north_G=landing_patch_G*patch_on_span**2/(2*landing_L)
+mid_L=2.610;mid_w=(1.35*landing_G+1.5*landing_Q)*landing_L/2+1.35*(.25*.19*25+patch_mid_G)
 mid_points=[(stair_flight_reaction,(sum(sg[k])/2-332.5)/1000) for k in ['lowerFlightX','upperFlightX']]
 mid_RL=mid_w*mid_L/2+sum(P*(mid_L-a)/mid_L for P,a in mid_points)
 mid_RR=mid_w*mid_L/2+sum(P*a/mid_L for P,a in mid_points)
 mid_M=max(mid_RL*x-mid_w*x*x/2-sum(P*max(0,x-a) for P,a in mid_points) for x in [mid_L*i/1000 for i in range(1001)])
-mid_sec=rc(250,370,327,2*area(20),25);mid_links=links(250,327,8,125)
+mid_sec=rc(250,390,347,2*area(20),25);mid_links=links(250,347,8,125)
 assert mid_M<mid_sec['MR'] and max(mid_RL,mid_RR)<min(mid_links['VRs'],mid_links['VRmax'])
 mid_post_N=mid_RR+long_reaction_max[1]+1.35*.25*.25*3.55*25
 mid_post_Pcr=math.pi**2*.25*E*(250**4/12)/3550**2/1000
@@ -548,8 +560,8 @@ header_RL=header_w*header_L/2+sum(P*(header_L-a)/header_L for P,a in header_poin
 header_RR=header_w*header_L/2+sum(P*a/header_L for P,a in header_points)
 header_M=max(header_RL*x-header_w*x*x/2-sum(P*max(0,x-a) for P,a in header_points)
              for x in [header_L*i/1000 for i in range(1001)])
-header_sec=rc(200,300,259,3*area(16),25)
-header_link=links(200,259,8,100)
+header_sec=rc(200,300,258,3*area(16),25)
+header_link=links(200,258,8,100)
 assert header_M<header_sec['MR']
 assert max(header_RL,header_RR)<min(header_link['VRs'],header_link['VRmax'])
 frame=dict(corner_collectors=collectors,
@@ -565,13 +577,13 @@ frame=dict(corner_collectors=collectors,
            stair=dict(risers=20,rise=172.5,going=300,pitch_degrees=tg['pitchDegrees'],
                       bearing_axes_y=tg['bearingAxesY'],bearing_span=stair_span*1000,
                       landing_depth=sg['midlandingDepth'],flight_body_width=sg['bodyTerritoryEach'],
-                      between_rails=sg['handrail']['betweenRails'],after20_position_loss=sg['handrail']['after20Loss'],
-                      waist=150,waist_normal=True,waist_section=stair_sec,
+                      between_rails=sg['handrail']['betweenRailsMinimum'],after20_position_loss=sg['handrail']['lowerAfter20Loss'],
+                      waist=stair_waist,waist_normal=True,waist_section=stair_sec,
                       steel='H12/125 main eachface;H10/150 distribution',
                       G=stair_G,Q=3,flight_action=stair_flight,flight_end_reaction=stair_flight_reaction,
                       axial_sensitivity=stair_axial,main_nose_levels=[0,1725,3450],
                       upper_floor80_not_added_to_final_riser=True,
-                      vertical_displacement_basis='Normal150waist;verticalunit-loadwork ds=dx/cos(pitch), bothtermsinclude sec(pitch).',
+                      vertical_displacement_basis='Normal170waist;verticalunit-loadwork ds=dx/cos(pitch), bothtermsinclude sec(pitch).',
                       vertical_projection_factor=stair_secant,
                       fully_cracked_phi3_mm=stair_vertical_phi3,
                       differential_shrinkage_300microstrain_mm=stair_vertical_shrink,
@@ -581,10 +593,10 @@ frame=dict(corner_collectors=collectors,
                                           full_north_seat=[8782.5,8922.5],section=landing_sec,action=landing_action,
                                           actual_northwall_bearing_admission=False),
                       midlanding_beam=dict(footprint=[262.5,7132.5,2805,250],support_axes_x=[332.5,2942.5],
-                                          top=1725,bottom=1355,normal_waist_soffit_last_lower=1552.5-150/math.cos(stair_angle),
+                                          top=1725,bottom=1335,normal_waist_soffit_last_lower=1552.5-stair_waist/math.cos(stair_angle),
                                           section=mid_sec,links=mid_links,point_loads=mid_points,udl=mid_w,M=mid_M,reactions=[mid_RL,mid_RR],
                                           steel='2H20bottom/2H10top;H8/125',
-                                          west_RC_sill_receiver=[262.5,6200,140,2100],receiver_top=1725,receiver_bottom=1355,
+                                          west_RC_sill_receiver=[262.5,6200,140,2100],receiver_top=1725,receiver_bottom=1335,
                                           west_RC_pier=[262.5,7007.5,140,500],
                                           window_sill=1750,frame_bearing_joint_height=25,
                                           actual_joint_cage_anchorage_qualified=False),
@@ -626,24 +638,24 @@ frame['frozen_node_submodel']=dict(review_input='bee433780a6a72e2a352ec6b913a9c5
 # A finite conventional westreceiver: RC140window-sill beam, not a wider
 #column obstructing the stair. Its two deliberate masonry bearing patches and
 #two-strut/continuous-H12tie transfer are explicit and material-strength bounded.
-sill_G=.14*.37*25+1.0 # includes authored1kN/m window/frame dead-loadbudget.
+sill_G=.14*.39*25+1.0 # includes authored1kN/m window/frame dead-loadbudget.
 sill_N=mid_RL+1.35*sill_G*2.1+1.35*.14*.7*1.535*20
 sill_e=20;sill_bearing_area=2*140*275
 sill_max_bearing=sill_N*1000/sill_bearing_area*(1+6*sill_e/140)
-sill_H=mid_RL/2*200/(1680-1436)
+sill_H=mid_RL/2*200/(1680-1416)
 sill_strut=math.hypot(mid_RL/2,sill_H)
 assert sill_H<area(12)*(500/1.15)/1000
 assert sill_strut*1000/(140*150)<.528*17
-sill=dict(concrete=[262.5,6200,140,2100],top=1725,bottom=1355,
+sill=dict(concrete=[262.5,6200,140,2100],top=1725,bottom=1335,
           two_NS_bearing_patches=[[6920,7195],[7320,7595]],masonry_territory=[262.5,6907.5,140,700],
           vertical_load=mid_RL,total_with_sill_window_wall=sill_N,window_G_budget_per_m=1,
           minimum_eccentricity=sill_e,required_simple_bearing_fd=sill_max_bearing,
           masonry_modulus_second_order_admission=False,
-          strut_nodes_relative_to_7257p5=[[-200,1436],[0,1680],[200,1436]],
+          strut_nodes_relative_to_7257p5=[[-200,1416],[0,1680],[200,1416]],
           strut_force=sill_strut,strut_area=140*150,strut_stress=sill_strut*1000/(140*150),
-          continuous_bottom_tie=dict(bar='H12',x=350,z=1436,y=[6557.5,7957.5],demand=sill_H,
+          continuous_bottom_tie=dict(bar='H12',x=350,z=1416,y=[6557.5,7957.5],demand=sill_H,
                                      capacity=area(12)*(500/1.15)/1000,straight_beyond_each_node=500,full_fyd_lbrqd=12/4*(500/1.15)/3),
-          cantilever_top='2H10continuousNSx310.5/354.5,z1650,y6225..8275;fullpoorbonddevelopmentbeyond700masonrysupport',
+          cantilever_top='2H10continuousNSx310.5/354.5,z1688,y6225..8275;fullpoorbonddevelopmentbeyond700masonrysupport',
           full_ground_moment_from_32p5axis_offset=sill_N*(.020+.0325),
           geometry_and_force_path_only=True)
 # ALL enumerated barpaths, including corner-column bars andlinkplanes. East
@@ -651,45 +663,45 @@ sill=dict(concrete=[262.5,6200,140,2100],top=1725,bottom=1355,
 mid_e=[];mid_w=[]
 for i,y in enumerate([85,165]):
     R=220;start=185-R
-    points=[(-200,y,1398),(start,y,1398)]
-    points += [(start+R*math.sin(math.radians(t)),y,1398-R*(1-math.cos(math.radians(t)))) for t in range(2,91,2)]
-    points.append((185,y,428));mid_e.append(dict(id='EB'+str(i+1),dia=20,points=points))
+    points=[(-200,y,1378),(start,y,1378)]
+    points += [(start+R*math.sin(math.radians(t)),y,1378-R*(1-math.cos(math.radians(t)))) for t in range(2,91,2)]
+    points.append((185,y,408));mid_e.append(dict(id='EB'+str(i+1),dia=20,points=points))
     direction=-1 if i==0 else 1
     start=310.5+R;global_y=7132.5+y
-    points=[(700,global_y,1398),(start,global_y,1398)]
-    points += [(start-R*math.sin(math.radians(t)),global_y+direction*R*(1-math.cos(math.radians(t))),1398) for t in range(2,91,2)]
-    points.append((310.5,global_y+direction*(R+750),1398));mid_w.append(dict(id='WB'+str(i+1),dia=20,points=points))
+    points=[(700,global_y,1378),(start,global_y,1378)]
+    points += [(start-R*math.sin(math.radians(t)),global_y+direction*R*(1-math.cos(math.radians(t))),1378) for t in range(2,91,2)]
+    points.append((310.5,global_y+direction*(R+750),1378));mid_w.append(dict(id='WB'+str(i+1),dia=20,points=points))
 for i,y in enumerate([85,165]):
     R=95;start=185-R
-    points=[(-200,y,1687),(start,y,1687)]
-    points += [(start+R*math.sin(math.radians(t)),y,1687-R*(1-math.cos(math.radians(t)))) for t in range(2,91,2)]
-    points.append((185,y,1482));mid_e.append(dict(id='ET'+str(i+1),dia=10,points=points))
+    points=[(-200,y,1650),(start,y,1650)]
+    points += [(start+R*math.sin(math.radians(t)),y,1650-R*(1-math.cos(math.radians(t)))) for t in range(2,91,2)]
+    points.append((185,y,1445));mid_e.append(dict(id='ET'+str(i+1),dia=10,points=points))
     direction=-1 if i==0 else 1;start=310.5+R;global_y=7132.5+y
-    points=[(700,global_y,1687),(start,global_y,1687)]
-    points += [(start-R*math.sin(math.radians(t)),global_y+direction*R*(1-math.cos(math.radians(t))),1687) for t in range(2,91,2)]
-    points.append((310.5,global_y+direction*(R+550),1687));mid_w.append(dict(id='WT'+str(i+1),dia=10,points=points))
+    points=[(700,global_y,1650),(start,global_y,1650)]
+    points += [(start-R*math.sin(math.radians(t)),global_y+direction*R*(1-math.cos(math.radians(t))),1650) for t in range(2,91,2)]
+    points.append((310.5,global_y+direction*(R+550),1650));mid_w.append(dict(id='WT'+str(i+1),dia=10,points=points))
 mid_column=[dict(id='PC'+str(i),dia=16,points=[(x,y,-180),(x,y,3345)]) for i,(x,y) in enumerate([(39,39),(39,211),(211,39),(211,211)])]
-post_link_z=[z for z in range(-150,3251,100) if z!=3050]+[3010,3110,3290]
+post_link_z=[z for z in range(-150,3251,100) if z not in [1350,1550,1650,3050]]+[1310,1410,1520,1620,1720,3010,3110,3290]
 mid_column += [dict(id='PL'+str(z),dia=6,points=[(28,28,z),(222,28,z),(222,222,z),(28,222,z),(28,28,z)]) for z in post_link_z]
 mid_e_clear=[dict(a=a['id'],b=b['id'],clear=path_clear(a,b)) for i,a in enumerate(mid_e) for b in mid_e[:i]+mid_column]
-assert min(c['clear'] for c in mid_e_clear)>=21
-sill_fixed=[dict(id='SILLtie',dia=12,points=[(350,6557.5,1436),(350,7957.5,1436)])]
-sill_fixed += [dict(id='SILLtop'+str(x),dia=10,points=[(x,6225,1650),(x,8275,1650)]) for x in [310.5,354.5]]
+assert min(c['clear'] for c in mid_e_clear)>=21,sorted(mid_e_clear,key=lambda c:c['clear'])[:4]
+sill_fixed=[dict(id='SILLtie',dia=12,points=[(350,6557.5,1416),(350,7957.5,1416)])]
+sill_fixed += [dict(id='SILLtop'+str(x),dia=10,points=[(x,6225,1688),(x,8275,1688)]) for x in [310.5,354.5]]
 mid_w_clear=[dict(a=a['id'],b=b['id'],clear=path_clear(a,b)) for i,a in enumerate(mid_w) for b in mid_w[:i]+sill_fixed]
-assert min(c['clear'] for c in mid_w_clear)>=21
+assert min(c['clear'] for c in mid_w_clear)>=21,sorted(mid_w_clear,key=lambda c:c['clear'])[:4]
 mid_bend20=area(20)*(500/1.15)*(1/40+1/40)/17
 assert mid_bend20<420 and 20/4*(500/1.15)/3<750
 assert 10/4*(500/1.15)/2.1<550
-sill_hoops=[dict(id='SH'+str(y),dia=6,points=[(290.5,y,1383),(374.5,y,1383),(374.5,y,1697),(290.5,y,1697),(290.5,y,1383)])
+sill_hoops=[dict(id='SH'+str(y),dia=6,points=[(290.5,y,1363),(374.5,y,1363),(374.5,y,1697),(290.5,y,1697),(290.5,y,1363)])
              for y in [6250,6450,6650,6850,7050,7100,7257.5,7415,7500,7700,7900,8100,8250]]
 sill_hoop_clear=[dict(a=a['id'],b=b['id'],clear=path_clear(a,b)) for a in mid_w+sill_fixed for b in sill_hoops]
 # Ownlongitudinalbarsinsideownstirrupsdonotneedaggregateclearspacing; nointerpenetration.
 assert min(c['clear'] for c in sill_hoop_clear)>=0
 assert max(b-a for a,b in zip([h['points'][0][1] for h in sill_hoops],[h['points'][0][1] for h in sill_hoops][1:]))<=200
 sill['actual_H6_hoops']=sill_hoops;sill['own_hoop_physical_min']=min(c['clear'] for c in sill_hoop_clear)
-sill['stirrup_capacity']=links(140,289,6,200)
+sill['stirrup_capacity']=links(140,309,6,200)
 sill['top_cantilever_M']=1.35*sill_G*.8075**2/2
-sill['top_cantilever_capacity']=rc(140,370,295,2*area(10),25)['MR']
+sill['top_cantilever_capacity']=rc(140,390,353,2*area(10),25)['MR']
 assert sill['top_cantilever_M']<sill['top_cantilever_capacity']
 # Central-pointplacementmaximisespositive simple-span deflection: this is a
 #declaredupperboundforthetwoactualflightpointloads, notanUDLsubstitution.
@@ -701,12 +713,12 @@ def beam_SLS_bound(Gw,Qw,GP,QP,L,section,phi=3):
         I=b*x**3/3+n*As*(d-x)**2
         answer+=5*q*(L*1000)**4/(384*Ec*I)+P*1000*(L*1000)**3/(48*Ec*I)
     return answer
-mid_delta=beam_SLS_bound(landing_G*landing_L/2+.25*.17*25,landing_Q*landing_L/2,
+mid_delta=beam_SLS_bound(landing_G*landing_L/2+.25*.19*25+patch_mid_G,landing_Q*landing_L/2,
                          2*stair_G*stair_span/2*1.094,2*3*stair_span/2*1.094,mid_L,mid_sec)
 frame['stair']['midlanding_beam']['fully_cracked_phi3_central_point_bound_mm']=mid_delta
-frame['stair']['midlanding_beam']['shrinkage300microstrain_mm']=300e-6/370*(mid_L*1000)**2/8
+frame['stair']['midlanding_beam']['shrinkage300microstrain_mm']=300e-6/390*(mid_L*1000)**2/8
 frame['stair']['midlanding_beam']['L250_comparator_mm']=mid_L*1000/250
-assert mid_delta+300e-6/370*(mid_L*1000)**2/8<mid_L*1000/250
+assert mid_delta+300e-6/390*(mid_L*1000)**2/8<mid_L*1000/250
 frame['stair']['west_receiver']=sill
 frame['stair']['midlanding_beam']['west_RC_pier']=None
 frame['stair']['midlanding_beam']['joint_paths']=dict(east=mid_e,west=mid_w,column_cage=mid_column,sill_fixed=sill_fixed,sill_hoops=sill_hoops,midbeam_stirrup_stations_x=list(range(600,2726,125)),
@@ -728,14 +740,14 @@ for case,h,d,phi,shrink,added_G in [('control',150,119,3,300,0),('creep3p5',150,
     stair_sens.append(dict(case=case,normal_h=h,d=d,phi=phi,differential_microstrain=shrink,added_G=added_G,
                            deflection=defl,imposed=imposed,total=defl+imposed,
                            reserve=stair_span*1000/250-defl-imposed))
-frame['stair']['qualification_sensitivities']=stair_sens
-frame['stair']['reserve_warning']='Controlreserve0.534mm is narrow. These separate authored perturbations are not actual tolerances/creep forecasts and do not combine safely by a binaryPASS; actual as-built section, servicecriteria, creep/finishes and movement budget must earn the proposition.'
+frame['stair']['merged150_sensitivities']=stair_sens
+frame['stair']['reserve_warning']='Historical150control reserve0.534mm is narrow. These separate authored perturbations are not actual tolerances/creep forecasts and do not combine safely by a binaryPASS; actual as-built section, servicecriteria, creep/finishes and movement budget must earn the proposition.'
 # One constructive continuation, kept distinct from the merged150 control until
 # its actual receiving hooks/sill/window guard are regenerated and reconciled.
 new_h=170;new_d=139
 new_G=new_h/1000/math.cos(stair_angle)*25+.1725/2*25+.9
 new_end=udl(1.35*new_G+1.5*3,stair_span)['V']*1.094
-new_mid_w=frame['stair']['midlanding_beam']['udl']+1.35*.25*.02*25
+new_mid_w=frame['stair']['midlanding_beam']['udl']
 new_mid_points=[(new_end,a) for P,a in mid_points]
 new_mid_RL=new_mid_w*mid_L/2+sum(P*(mid_L-a)/mid_L for P,a in new_mid_points)
 new_mid_RR=new_mid_w*mid_L/2+sum(P*a/mid_L for P,a in new_mid_points)
@@ -748,15 +760,208 @@ for case,h,d,phi,shrink,added in [('nominal170',170,139,3,300,0),('adverse165',1
     imposed=shrink*1e-6/h*(stair_span*1000)**2/8*stair_secant
     new_stair_cases.append(dict(case=case,h=h,d=d,phi=phi,microstrain=shrink,added_G=added,
                                total=delta+imposed,reserve=11.7-delta-imposed))
-frame['stair']['constructive170_comparison']=dict(status='Preferred next geometric comparison, not selected or qualified until actual joints close',
+frame['stair']['stair170_development']=dict(status='Active170waist390beam technical trial; nominal incoming waist/lap/header paths now enumerated; guard, groundtoe and construction admission remain',
     normal_waist=170,steel='H12/125 eachface retained',G=new_G,ULS_flight_end=new_end,
     sensitivities=new_stair_cases,last_lower_waist_soffit=1552.5-170/math.cos(stair_angle),
     existing_beam_bottom=1355,existing_contact_reserve=1552.5-170/math.cos(stair_angle)-1355,
-    proposed_midbeam=[250,390],top=1725,bottom=1335,mid_actions=dict(M=new_mid_M,RW=new_mid_RL,RE=new_mid_RR),
+    current_midbeam=[250,390],top=1725,bottom=1335,mid_actions=dict(M=new_mid_M,RW=new_mid_RL,RE=new_mid_RR),
     mid_section_screen=rc(250,390,347,2*area(20),25),
-    changed_joint='Midbeam bottom hooks/sill lower20, post reaction/upperheader/stairwaist join and guard anchors must update as one actual model; old3D joint PASS does not transfer.',
-    HAD_readback='2026-11-02:20lower beam is inside stairaperture, outside credited gallery/bodyroute. Window sill1750 stays; West7400 requires FIXEDglazing with actual fallguard, not an unguarded leaf25above landing.',
+    changed_joint='ActualEWmidbeam/sillcages and incoming waist/lap/header paths enumerated below. Nominal clearance is not a placement-tolerance proof; guard, header ends and groundtoe remain unearned. No fulljoint PASS transfers.',
+    HAD_readback='2026-11-02:390beam and250localpatch are inside stair/landingaperture, outside credited occupied/head/windowroute. Nose/landingTOP1725 and sill1750held; fixedWest7400guard remains conditional.',
     no_second_stair_authority=True)
+
+frame['stair']['current_sensitivities']=new_stair_cases
+frame['stair']['midlanding_slab']['local_patch']=dict(x=[429.5,2817.5],y=[7132.5,7582.5],top=1725,bottom=1475,G_extra=landing_patch_G,mid_G_per_m=patch_mid_G,north_G_per_m=patch_north_G,reason='Receives the enumerated170waist barfillets with25nominal cover; line reaction is conservatively applied across2610beam span, wider than2388physicalpatch.')
+
+# Actual170 waist/landing/header bar paths. The flight steel is continuous through
+# the upper flight; the lower ground-toe anchorage remains a separate named join.
+# H12 turns only through the pitch angle, with a240 INTERNAL mandrel. The local
+#250 landing patch is concrete that receives the approach, not missing cover.
+def waist_fillet(x,yref,zref,slope,target_z,direction,start_y,end_y,name):
+    angle=math.atan(slope);R=126;tangent=R*math.tan(abs(angle)/2)
+    u=(target_z-zref)/slope
+    start=u-tangent*math.cos(angle)
+    cy=u+tangent;cz=target_z-(R if angle>0 else -R)
+    a0=math.pi/2+angle if angle>0 else -math.pi/2+angle
+    a1=math.pi/2 if angle>0 else -math.pi/2
+    count=math.ceil(abs(math.degrees(angle))/2)
+    points=[(x,start_y,zref+slope*direction*(start_y-yref)),
+            (x,yref+direction*start,target_z-tangent*math.sin(angle))]
+    points += [(x,yref+direction*(cy+R*math.cos(a0+(a1-a0)*i/count)),
+                cz+R*math.sin(a0+(a1-a0)*i/count)) for i in range(1,count+1)]
+    points.append((x,end_y,target_z))
+    return dict(id=name,dia=12,points=points,internal_mandrel=240,
+                tangent_end_y=yref+direction*cy,target_z=target_z)
+
+lower_x=[460.5+125*i for i in range(8)]+[1458.5]
+upper_x=[1754.5+125*i for i in range(8)]+[2752.5]
+waist_paths=[];mid_waist=[];header_waist=[]
+for side,positions in [('L',lower_x),('U',upper_x)]:
+    for i,x in enumerate(positions):
+        for face,depth,target in [('B',139,1556),('T',31,1683)]:
+            is_lower=side=='L';refz=(1552.5 if is_lower else 1725)-depth/math.cos(stair_angle)
+            mid=waist_fillet(x,7132.5,refz,math.tan(stair_angle)*(1 if is_lower else -1),
+                             target,1,6500,8300,f'{side}{face}{i+1}')
+            mid_waist.append(mid)
+            if not is_lower:
+                head=waist_fillet(x,4432.5,3277.5-depth/math.cos(stair_angle),math.tan(stair_angle),
+                                  3201 if face=='B' else 3339,-1,5000,3450,f'H{face}{i+1}')
+                header_waist.append(head)
+                full={**mid,'points':list(reversed(head['points']))+mid['points']}
+                waist_paths.append(full)
+            else:waist_paths.append(mid)
+
+# The finite receiving EW bars were previously checked at each end separately.
+# Join their real straight middle before checking incoming waist crossings.
+mid_complete=[]
+for i,w in enumerate(mid_w):
+    e=mid_e[i]
+    pts=list(reversed(w['points']))+[(2817.5+x,7132.5+y,z) for x,y,z in e['points']]
+    mid_complete.append(dict(id='MID'+w['id'],dia=w['dia'],points=pts))
+mid_hoop_x=list(range(548,1549,125))+[1648]+list(range(1692,2693,125))
+mid_hoops=[dict(id='MH'+str(x),dia=8,points=[(x,7161.5,1364),(x,7353.5,1364),
+              (x,7353.5,1696),(x,7161.5,1696),(x,7161.5,1364)]) for x in mid_hoop_x]
+assert max(b-a for a,b in zip(mid_hoop_x,mid_hoop_x[1:]))<=170
+frame['stair']['midlanding_beam']['links']=links(250,347,8,170)
+frame['stair']['midlanding_beam']['steel']='2H20bottom1378;2H10top1650;H8actual125/transitionmax169'
+frame['stair']['midlanding_beam']['joint_paths']['midbeam_stirrup_stations_x']=mid_hoop_x
+
+# Ordinary H10 landing steel is lapped to the H12 flight bars only in the actual
+# landing, after the pitch-angle bend. There is no duplicate NSbar on the same
+# line. Max203 spacing across the well governs the conservative landing section.
+# Transverse rows stop with side cover; their end development is NOT yet earned.
+# Do not extend outside-slab NS extras or the west-sill bar beyond its concrete.
+lap_positions=[x+34 for x in lower_x+upper_x]
+landing_NS=[]
+for face,z in [('B',1555),('T',1683)]:
+    for i,x in enumerate(lap_positions):
+        landing_NS.append(dict(id=f'LP{face}{i}',dia=10,points=[(x,7525,z),(x,8892.5,z)]))
+    for i,x in enumerate([1585.5]):
+        landing_NS.append(dict(id=f'EX{face}{i}',dia=10,points=[(x,7162.5,z),(x,8892.5,z)]))
+all_landing_x=sorted(lap_positions+[1585.5])
+assert max(b-a for a,b in zip(all_landing_x,all_landing_x[1:]))<=205
+landing_EW=[]
+for y in [7395,7520]+list(range(7645,8771,125))+[8890]:
+    for face,z in [('B',1505 if y<7582.5 else 1589),('T',1650)]:
+        if face=='T' and y<7520:continue
+        landing_EW.append(dict(id=f'LE{face}{y}',dia=10,points=[(460.5,y,z),(2786.5,y,z)]))
+landing_sec=rc(1000,200,170,area(10)*1000/205,25)
+assert landing_action['M']<landing_sec['MR'] and landing_action['V']<landing_sec['VRdc']
+frame['stair']['midlanding_slab']['section']=landing_sec
+frame['stair']['midlanding_slab']['steel']='ActualH10NSmax203 after flightlaps;transverseH10max225local/125ordinary;explicitplanes/rows'
+
+# Actual header rows avoid the waist entry. Its H8 planes are phased between
+# the upperflight mainbars; the ordinary topEWmesh locally becomes H16/200.
+header_main=[dict(id=f'HB{i}',dia=16,points=[(290,y,3112),(3960,y,3112)])
+             for i,y in enumerate([4274.5,4321.75,4370])]
+header_main += [dict(id='HT0',dia=10,points=[(290,4271.5,3294),(3960,4271.5,3294)]),
+                dict(id='HT1',dia=16,points=[(290,4390,3310),(3960,4390,3310)])]
+header_hoops=[dict(id='HH'+str(x),dia=8,points=[(x,4261.5,3099),(x,4403.5,3099),
+                    (x,4403.5,3341),(x,4261.5,3341),(x,4261.5,3099)]) for x in range(317,3943,125)]
+header_topmesh=[dict(id='HE4195',dia=16,points=[(300,4195,3303),(3950,4195,3303)])] # HT1 is the same northmeshbar, not a duplicate
+header_laps=[dict(id=f'HL{face}{i}',dia=12,points=[(x+34,3450,z),(x+34,4200,z)])
+             for i,x in enumerate(upper_x) for face,z in [('B',3201),('T',3339)]]
+header_link=links(200,258,8,125)
+assert max(header_RL,header_RR)<min(header_link['VRs'],header_link['VRmax'])
+frame['stair_header']['links']=header_link
+
+def clear_matrix(bars,receivers):
+    return [dict(a=a['id'],b=b['id'],clear=path_clear(a,b)) for a in bars for b in receivers]
+mid_incoming_clear=clear_matrix(mid_waist,mid_complete+mid_hoops+landing_EW)
+header_incoming_clear=clear_matrix(header_waist,header_main+header_hoops+header_topmesh)
+landing_lap_clear=clear_matrix(mid_waist,landing_NS)
+header_lap_clear=clear_matrix(header_waist,header_laps)
+landing_cross_clear=clear_matrix(landing_NS,landing_EW)
+global_mid_column=[{**b,'points':[(2817.5+x,7132.5+y,z) for x,y,z in b['points']]} for b in mid_column]
+landing_receiver_clear=clear_matrix(landing_NS,mid_complete+mid_hoops+global_mid_column)
+landing_sill_clear=clear_matrix(landing_NS,sill_fixed)
+receiving_own=[*clear_matrix(mid_complete,mid_hoops),*clear_matrix(header_main,header_hoops)]
+# H20 to H8 at1378/1364 is an exact intended straight-layer contact; all
+# independent incoming bars still require21clear. Curves meet no such exception.
+for v in receiving_own:
+    raw=v['clear']+.1
+    if raw<.1:
+        assert v['a'].startswith('MIDWB') and math.isclose(raw,0,abs_tol=1e-7),v
+    else:assert raw>=.1,v
+for label,values in [('MIDincoming',mid_incoming_clear),('HEADERincoming',header_incoming_clear),
+                     ('landinglaps',landing_lap_clear),('headerlaps',header_lap_clear),
+                     ('landingcross',landing_cross_clear),('landingreceiver',landing_receiver_clear),
+                     ('landingsill',landing_sill_clear)]:
+    assert min(v['clear'] for v in values)>=21,(label,sorted(values,key=lambda v:v['clear'])[:4])
+
+# A displacement is not proof of concrete cover: check the actual receiving
+# solid at every curved MID point. Concrete steps add material above the waist;
+# at/after the landing nose its exposed top is the actual1725 plane.
+cover_checks=[];header_cover=[]
+def boundary_points(points,boundaries):
+    probes=list(points)
+    for p,q in zip(points,points[1:]):
+        if p[1]==q[1]:continue
+        for boundary in boundaries:
+            for y in [boundary-.001,boundary,boundary+.001]:
+                t=(y-p[1])/(q[1]-p[1])
+                if 0<t<1:probes.append(tuple(p[i]+t*(q[i]-p[i]) for i in range(3)))
+    return probes
+for bar in mid_waist:
+    for x,y,z in boundary_points(bar['points'],[7132.5,7382.5,7582.5]):
+        if y<7132.5:continue
+        bottom=1335 if y<=7382.5 else (1475 if y<=7582.5 else 1525)
+        cover_checks.append(min(z-bar['dia']/2-bottom,1725-z-bar['dia']/2))
+assert min(cover_checks)>=25
+for bar in header_waist:
+    for x,y,z in boundary_points(bar['points'],[4232.5,4432.5]):
+        if y>4432.5:continue
+        bottom=3070 if y>=4232.5 else 3170
+        header_cover.append(min(z-bar['dia']/2-bottom,3370-z-bar['dia']/2))
+assert min(header_cover)>=25
+top_patch_section=rc(1000,200,133,area(16)*1000/200,25)
+assert top_patch_section['MR']>=rc(1000,200,157,area(12)*1000/150,25)['MR']
+landing_bound=udl(1.35*(landing_G+landing_patch_G)+1.5*landing_Q,landing_L)
+assert landing_bound['M']<landing_sec['MR'] and landing_bound['V']<landing_sec['VRdc']
+landing_delta=cracked(1000,200,170,landing_sec['As'],landing_G+landing_patch_G,landing_Q,landing_L,3)
+landing_shrink=300e-6/200*(landing_L*1000)**2/8
+assert landing_delta+landing_shrink<landing_L*1000/250
+frame['stair']['midlanding_slab'].update(fully_cracked_phi3_mm=landing_delta,
+    shrinkage300_mm=landing_shrink,L250_mm=landing_L*1000/250,
+    full_span_G_upper_bound=landing_G+landing_patch_G,
+    transverse_local_minimum=rc(1000,200,137,area(10)*1000/225,25))
+lap_lbr=1.5*12/4*(500/1.15)/3
+assert lap_lbr<750
+mandrel12=area(12)*(500/1.15)*(1/31+1/(2*12))/17
+assert mandrel12<240
+end_tension_per_bar=landing_bound['V']*.205 # fullV, exceeds shiftedV/2 endtie control
+end_sigma=end_tension_per_bar*1000/area(10)
+end_lbd=max(.3*10/4*end_sigma/3,100,10*10)
+assert 8892.5-8782.5>=end_lbd
+landing_all_cover=[]
+for bar in landing_NS+landing_EW:
+    for x,y,z in boundary_points(bar['points'],[7382.5,7582.5]):
+        bottom=1335 if y<=7382.5 else (1475 if y<=7582.5 else 1525)
+        landing_all_cover.append(min(x-429.5,2817.5-x,y-7132.5,8922.5-y,z-bottom,1725-z)-bar['dia']/2)
+assert min(landing_all_cover)>=25
+lap_transfer=landing_bound['M']/(landing_sec['z']/1000)*.205+end_tension_per_bar+stair_axial*.125
+assert lap_transfer<area(10)*(500/1.15)/1000
+frame['stair']['waist_joints']=dict(waist_paths=waist_paths,mid_complete_bars=mid_complete,
+    mid_hoops=mid_hoops,landing_NS=landing_NS,landing_EW=landing_EW,
+    header_main=header_main,header_hoops=header_hoops,header_topmesh=header_topmesh,header_laps=header_laps,
+    min_clear=dict(mid=min(v['clear'] for v in mid_incoming_clear),header=min(v['clear'] for v in header_incoming_clear),
+                   landing_lap=min(v['clear'] for v in landing_lap_clear),header_lap=min(v['clear'] for v in header_lap_clear)),
+    additional_clear=dict(landing_cross=min(v['clear'] for v in landing_cross_clear),
+                          landing_receiver=min(v['clear'] for v in landing_receiver_clear),
+                          landing_sill=min(v['clear'] for v in landing_sill_clear)),
+    mid_min_cover=min(cover_checks),header_min_cover=min(header_cover),
+    own_receiving_physical_min=min(v['clear']+.1 for v in receiving_own),
+    intentional_contact='MIDH20/H8straightbottom layers1378/1364 only;no independentbar orcurve exception',
+    landing_NS_scope='Only in-slab flight lap rows plus1585.5 well-fill; sill bar terminates8275 inside actual sill',
+    landing_transverse_end_anchorage_qualified=False,landing_transverse_scope='Finite straight distribution-row envelopes with26side end cover; end anchorage/confinement NOT detailed or qualified. No complete landing reinforcement claim.',
+    landing_nominal_exposed_cover_min=min(landing_all_cover),
+    local_top_EW_patch=top_patch_section,landing_patch_full_span_bound=landing_bound,
+    H12_internal_mandrel=240,H12_demand_mandrel=mandrel12,
+    straight_lap=750,fullfy_H12_lap_comparator=lap_lbr,landing_H10_end_straight=110,
+    end_tie_force_per_bar=end_tension_per_bar,end_sigma=end_sigma,end_required_lbd=end_lbd,
+    lap_ULS_force_bound=lap_transfer,H10_yield_transfer=area(10)*(500/1.15)/1000,
+    placement_allowance_qualified=False,
+    limit='Enumerated nominal paths/cover/bond only; smallest21.527clear has only0.527 above21. No Cartesian tolerance or fabrication qualification follows. Header end/masonry anchorage, lowergroundtoe, actualguard/lateralmesh,exposure/fire and complete construction acceptance still separate. No blanket joint release.')
 
 # Wet-beam RC piers: conditional second-order screen with no favourable masonry
 # stiffness. Pinned3200,0.25EcIg, minimum20 eccentricity, no primary lateral role.
@@ -1074,6 +1279,102 @@ roof=dict(source=dict(commit=MAT_ROOF_COMMIT,path=MAT_ROOF_PATH,sha256=MAT_ROOF_
                      'Roof collector pier bearing and continuous lateral/hold-down connections','Actual normal/tangential site wind, snow and load patterns',
                      'Mechanical/thermal/fire/weather support admission; no roof storage'])
 
+# The q450 eave is a separate MAT delta, not a replacement for the parent
+# whole-roof reaction model. Its finite first rail needs TWO actual supports;
+# area/tributary alone misses the uplift caused by the long eave cantilever.
+EDGE_PATH='project/mat/studies/loggia-roof-edge.json'
+EDGE_COMMIT='96005b88ef4f3aff98a660261aa2e99ac47f9101'
+edge_raw=subprocess.check_output(['git','show',EDGE_COMMIT+':'+EDGE_PATH],cwd=ROOT)
+assert hashlib.sha256(edge_raw).hexdigest()=='30c356c0eace30c888fd32c29f10d87cdc2e7b9f843de2871b7e964fcba7ffa6'
+edge=json.loads(edge_raw)
+assert edge['geometry']['endPurlinQ']==450 and edge['geometry']['postNormal']==346
+rail_pitch=3245/6/1000
+# Explicit STR constructive phase: next purlin atq900, not an invisible use of
+# the old q550 row or an assumption that the whole new roof is already designed.
+next_purlin_q=900
+rail_a=edge['geometry']['railCantileverNormal']/1000
+rail_b=(next_purlin_q-450)/1000/cosroof
+rail_gutter_x=-(edge['geometry']['postHead'][0]+270)/1000/cosroof
+
+def overhang_actions(w,a,b,P=0,xP=0):
+    # Supports0,b; UDL on [-a,b]; signed point at xP. Positive down/normal.
+    RB=(w*(b*b-a*a)/2+P*xP)/b
+    RA=w*(a+b)+P-RB
+    def cut(x):
+        return (RA*x if x>=0 else 0)-w*(x+a)**2/2-(P*(x-xP) if x>=xP else 0)
+    samples=[-a+(a+b)*i/2000 for i in range(2001)]+[0,b,xP]
+    assert abs(RA+RB-w*(a+b)-P)<1e-10
+    assert abs(RB*b-w*(b*b-a*a)/2-P*xP)<1e-10
+    assert abs(cut(b))<1e-10
+    return dict(first=RA,second=RB,Mfirst=cut(0),max_abs_M=max(abs(cut(x)) for x in samples if -a<=x<=b))
+
+edge_cases={}
+gutter_force=edge['screens']['gutterPerRailN']/1000
+for label,normal,tangent,gutter_factor in [('cover-and-wet-gutter',2.5,.75,1.35),('uplift-no-favourable-G',-2.25,-.75,0)]:
+    normal_action=overhang_actions(normal*rail_pitch,rail_a,rail_b,gutter_factor*gutter_force*cosroof,rail_gutter_x)
+    # Tangential action is ALONG the NS rail, so it is axial, not a second
+    # transverse-beam reaction problem. Deliberately assign its whole module
+    # resultant to the firstpost; an actual sliding/locating arrangement must
+    # earn that force path, rather than inventing stiffness sharing.
+    tangent_total=tangent*rail_pitch*(rail_a+rail_b)+gutter_factor*gutter_force*math.sin(pitch)
+    tangent_action=dict(first=tangent_total,second=0,axial_rail_bound=abs(tangent_total),
+        assignment='Whole eave-module tangential resultant to firstpost; second support is sliding in railaxis. Actual locator/sliding/thermal joint not yet detailed.')
+    edge_cases[label]=dict(normal_pressure=normal,tangent_pressure=tangent,gutter_factor=gutter_factor,
+       normal=normal_action,tangent=tangent_action,
+       first_post_base_moment_from_tangent=abs(tangent_action['first'])*.346,
+       second_post_base_moment_from_tangent=abs(tangent_action['second'])*.346,
+       first_vertical=normal_action['first']*cosroof+tangent_action['first']*math.sin(pitch),
+       first_horizontal=-normal_action['first']*math.sin(pitch)+tangent_action['first']*cosroof)
+assert edge_cases['cover-and-wet-gutter']['normal']['second']<0
+assert edge_cases['uplift-no-favourable-G']['normal']['first']<0
+assert math.isclose(abs(edge_cases['cover-and-wet-gutter']['normal']['Mfirst']),edge['screens']['totalAuthoredMomentNmm']/1e6)
+# Failed700-area control at the SAME2.5 normal pressure before adding gutter.
+area700=2.5*rail_pitch*.7/cosroof
+assert edge_cases['cover-and-wet-gutter']['normal']['first']>area700
+# A same-height roll/seat cannot be inferred: all seven actual point reactions
+# reach the purlin/primary; five interior points cause its bending, endpoints
+# are direct primary-node actions. Post cantilever moments produce RHS torsion.
+purlin_points=[i*3.245/6 for i in range(7)]
+def purlin_point_actions(P):
+    R=7*P/2
+    cuts=[i*3.245/2000 for i in range(2001)]
+    M=max(abs(R*x-sum(P*max(0,x-a) for a in purlin_points)) for x in cuts)
+    assert math.isclose(2*R,7*P)
+    return dict(each_primary_reaction=R,max_abs_M=M,points=purlin_points)
+purlin_edge_cases={}
+for label,c in edge_cases.items():
+    pn=purlin_point_actions(c['normal']['first']);pt=purlin_point_actions(c['tangent']['first'])
+    torque_each_end=7*c['first_post_base_moment_from_tangent']/2
+    # Producer rounded RHS120x60x5 elastic section properties, no sharp-corner
+    # replacement. This is a force/demand screen, not a connection/fixity pass.
+    stress=pn['max_abs_M']*1e6/47800+pt['max_abs_M']*1e6/32000
+    purlin_edge_cases[label]=dict(normal=pn,tangent=pt,elastic_biaxial_MPa=stress,
+        each_primary_torsion_kNm=torque_each_end,
+        excludes='Lowerboard/glass loads, actual postbase/railjoint stiffness, purlin localwall/cleats and continuous roof sharing. No member or wholejoint acceptance.')
+# Lower boards stop atq262.5, not at the roof edge. Their actual187.5plan
+# cantilever and450plan next support must carry glass/board/AVCL ownweight.
+board_a=(450-262.5)/1000/cosroof
+lower_normal_G=(35.2+13.2+8)*9.81/1000*cosroof
+board_line=overhang_actions(1.35*lower_normal_G*.1,board_a,rail_b)
+board_sigma=abs(board_line['Mfirst'])*1e6/(100*24**2/6)
+roof['ordinary_edge_development']=dict(status='Separate q450 constructive receiving trial; parent q550 whole-roof control retained; no fullroof selection',
+    source=dict(commit=EDGE_COMMIT,path=EDGE_PATH,sha256=hashlib.sha256(edge_raw).hexdigest()),
+    first_purlin_q=450,next_purlin_q=next_purlin_q,post_normal=346,
+    rail_head_q=edge['geometry']['postHead'][0],rail_cantilever_normal_mm=1000*rail_a,
+    next_support_span_normal_mm=1000*rail_b,gutter_x_relative_to_first_support=rail_gutter_x,
+    rail_connection_model='Rail continuous across firstpost and ends at secondpost; translational supports with zero applied nodal couple. Tangential reactions require actual postbase moment. No unanalysed fully welded fixity is credited.',
+    cases=edge_cases,failed700_area_control_kN=area700,area700_not_reaction_envelope=True,
+    end_purlin=dict(section=[120,60,5],I=[2870000,960000],W=[47800,32000],span=3245,
+        property_source='Tata Hybox355 Technical Guide sectionalproperties RHS120x60x5: Iy287/Iz96cm4,Wy47.8/Wz32cm3; not a currentstandard or suppliedsection certificate',
+        property_url='https://www.tatasteeluk.com/sites/default/files/pimcore_doc/tata-steel-uk-hybox-technical-guide-en.pdf',cases=purlin_edge_cases),
+    lowerboard=dict(stop_q=262.5,cantilever_plan=187.5,next_support_q=900,normal_G_kPa=lower_normal_G,
+        action_per_100strip=board_line,bending_at_first_support_MPa=board_sigma,
+        material='100x24 C24 parent comparator only; joints, grade, pointload and attachment remain'),
+    retained_seat_clearance=edge['clearances'],
+    unearned=['Actual rail/post rotational joint and signed uplift attachment','Post buckling/bending with local thinwall/weld/collars',
+      'Purlin lowerboard/glass load combination and transmitted torsion/cleats','New primary full-row reaction and tie/seat reconciliation',
+      'Ridge/hip/corner modules and actual vent/air/thermal receiving closure'])
+
 # Lower north circular arches, actual repaired HAD geometry and upperwindows.
 # The mean-line hinge radius gives true circular equilibrium, not an ideal
 # parabolic H=qL^2/8f used as a ring-capacity assertion.
@@ -1221,7 +1522,7 @@ for a in [wet_links,grid_links]:
     assert a['pitch']<=a['maximum_pitch'] and a['provided_ratio']>=a['minimum_ratio']
 
 result=dict(identity='OPEN-N / first whole-floor support calculation checkpoint, unadopted',
-            source=dict(path=HAD_PATH,commit=HAD_COMMIT,sha256=HAD_SHA),
+            source=dict(path=HAD_PATH,commit=HAD_COMMIT,sha256=HAD_SHA,structural_rebind_from='a510f30cc82cf9d0142664b72bc272406aed3076',unchanged_structural_fields=structural_rebind),
             units='mm / kN / kPa / MPa',floor_fields=floor,wet_wall_beam=wet,
             lower_grid=grid,cap=cap,special_ground_nodes=special_nodes,finite_floor_frame=frame,E02_service_port=port,
             actual_roof=roof,north_arches=arches,
@@ -1234,7 +1535,7 @@ result=dict(identity='OPEN-N / first whole-floor support calculation checkpoint,
                 'HAD finishedFaces/t corrected at owning source; actual cabinet/lining fit remains to reconcile.',
                 'Roof/arch controls now calculated; finite corner jacks, collectors/lateral and actual joint/reaction destinations remain.',
                 'Rear/east/transient WC ports must bind the complete services inventory, not the three-bore witness.',
-                'HAD068e repairs wet-receiver door/window geography; new roofcollector projection still needs owning reconciliation.',
+                'HADcfacc repairs wet-receiver door/window geography; new roofcollector projection still needs owning reconciliation.',
                 'Wetjoint3H16downhooks/4H16pier: finite3Dclearance/development calculated; lowercolumnjoint remains.',
                 'Frozen bee43378 and specialist adverse controls preserve actual failed node/cage duties; no joint PASS.',
                 'Actual775 wrapped portal and2890loggia soffit are bound; pierhead, anchor and thermal/fire joins remain.',
@@ -1250,7 +1551,7 @@ def box(x,y,w,h,fill,stroke='#345460'):
 def ln(x1,y1,x2,y2,c='#345460'):
     parts.append(f'<path d="M{x1},{y1} L{x2},{y2}" fill="none" stroke="{c}" stroke-width=".65"/>')
 txt(16,15,'OPEN N / actual whole-floor support checkpoint','title')
-txt(16,24,'HAD068e33ae · RC200 whole upper floor · unadopted / incomplete support design, not for construction')
+txt(16,24,'HADcfaccf30c · RC200 whole upper floor · unadopted / incomplete support design, not for construction')
 txt(16,36,'A / UPPER STRUCTURAL FIELDS · 1:50','title')
 xx=lambda x:20+x/50
 yy=lambda y:286-y/50
@@ -1394,7 +1695,7 @@ parts=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" vie
        '<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:2.9px}.title{font-size:4.4px;font-weight:bold}</style>',
        '<rect width="420" height="297" fill="#faf8f1"/>']
 txt(12,13,'OPEN N / actual stair, midlanding and receiving frame','title')
-txt(12,22,'HAD068e33ae / 27finish / 1094body +200well;1004betweenrails / unadopted; no body,guard or whole-house PASS')
+txt(12,22,'HADcfaccf30c / 27finish / 1094body +200well;1004betweenrails / unadopted; no body,guard or whole-house PASS')
 txt(12,34,'A / FINITE PLAN · 1:20','title')
 sx=lambda x:12+(x-262.5)/20
 sy=lambda y:274-(y-4332.5)/20
@@ -1414,23 +1715,24 @@ for i in range(10):
 txt(sx(550),sy(8150),'Landingdepth1623; RCtop1725.')
 txt(sx(550),sy(7700),'Full140northseat8782.5..8922.5.')
 txt(215,34,'B / MEMBER ACTIONS AND REAL LIMITS','title')
-for i,line in enumerate([f'Flightbearing2925, pitch{tg["pitchDegrees"]:.3f}°,150normalwaist.',
+for i,line in enumerate([f'Flightbearing2925, pitch{tg["pitchDegrees"]:.3f}°,170normalwaist.',
  f'Per1mM{stair_flight["M"]:.2f}/MR{stair_sec["MR"]:.2f}; eachend{stair_flight_reaction:.2f}kN.',
  f'Verticalwaistphi3+shrink{stair_vertical_phi3+stair_vertical_shrink:.3f} <{stair_span*1000/250:.3f}L/250;sec(pitch)bothterms.',
- f'Midbeam250×370/top1725/bottom1355,M{mid_M:.2f}.',
+ f'Midbeam250×390/top1725/bottom1335,M{mid_M:.2f}.',
  f'WestR{mid_RL:.2f}/EastR{mid_RR:.2f};postN{mid_post_N:.2f}/M{mid_post_M:.2f}.',
  f'Continuoustrimmerpostreaction{long_reaction_max[1]:.2f}, nottwoindependentbays.',
  'WestH20horizN/Shooks→actualRC140sill;H12tie+2struts.',
  f'Actualmasonrypadsneedfd≥{sill_max_bearing:.3f}MPa beforesecondorder/bedadmission.',
- 'EastH20downhooks/postcageenumerated; upperwaist/trimmerjointstillopen.',
+ 'EastH20/postcage and nominal waist/landing/headerpaths enumerated.',
  'Guardposts/anchors,fullphysicalslabedge/portmass andwindow25jointunearned.']):txt(215,45+i*8,line)
-txt(215,125,'Reserve0.534mm only;145waist or400microstrain challenges exceed11.7.')
+txt(215,125,'170control8.624 / adverse165+creep+shrink10.312; nominaljointdetail on companion sheet.')
 txt(215,134,'C / PROJECTED FLIGHT SECTIONS · 1:30','title')
 fx=lambda y:220+(y-4332.5)/30
 fz=lambda z:264-z/30
 box(fx(4232.5),fz(3370),200/30,300/30,'#c5cfca')
-box(fx(7132.5),fz(1725),250/30,370/30,'#c5cfca')
+box(fx(7132.5),fz(1725),250/30,390/30,'#c5cfca')
 box(fx(7132.5),fz(1725),(8922.5-7132.5)/30,200/30,'#d9e2de')
+box(fx(7382.5),fz(1525),200/30,50/30,'#c5cfca')
 for direction,first_y,base,colour in [(1,4432.5,0,'#4b716c'),(-1,7132.5,1725,'#b4753c')]:
     pts=[]
     for i in range(10):
@@ -1438,16 +1740,84 @@ for direction,first_y,base,colour in [(1,4432.5,0,'#4b716c'),(-1,7132.5,1725,'#b
         if i:pts.append((fx(y),fz(z-172.5)))
         pts.append((fx(y),fz(z)))
     parts.append('<path d="M'+' L'.join(f'{x:.3f},{y:.3f}' for x,y in pts)+f'" fill="none" stroke="{colour}" stroke-width=".7"/>')
-    y0=first_y;y1=first_y+direction*2700;drop=150/math.cos(stair_angle)
+    y0=first_y;y1=first_y+direction*2700;drop=stair_waist/math.cos(stair_angle)
     ln(fx(y0),fz(base-drop),fx(y1),fz(base+1552.5-drop),colour)
 txt(215,277,'Greenlower/ochreupperprojected; differentxterritories, notoverlappingflights.')
 txt(12,289,'ONEcurrentcandidate: actualwaist/beamgeometry, tributaryloadsandcontinuouscompatibility. Frozen rejected node evidence preserved; no foundation release.')
 parts.append('</svg>\n');stair_svg='\n'.join(parts)
+parts=['<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">',
+       '<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:2.9px}.title{font-size:4.3px;font-weight:bold}</style>',
+       '<rect width="420" height="297" fill="#faf8f1"/>']
+txt(12,13,'STAIR / actual nominal flight–landing–header bar paths','title')
+txt(12,23,'170normal waist / 390midbeam / 250local landing patch / c25 and21independentbar clear / not construction release')
+def stair_profile(x0,y0,which,title):
+    txt(x0,y0,title,'title')
+    fy=lambda y:x0+(y-(3400 if which=='H' else 6900))/8
+    top=3370 if which=='H' else 1725
+    fz=lambda z:y0+13+(top-z)/8
+    clip='profile'+which
+    parts.append(f'<defs><clipPath id="{clip}"><rect x="{x0}" y="{y0+8}" width="190" height="54"/></clipPath></defs>')
+    if which=='H':
+        y1,y2=4432.5,4920
+        z1,z2=3277.5,3277.5-math.tan(stair_angle)*(y2-y1)
+    else:
+        y1,y2=6900,7132.5
+        z2=1552.5 if which=='L' else 1725
+        z1=z2-math.tan(stair_angle)*(y2-y1)*(1 if which=='L' else -1)
+    drop=170/math.cos(stair_angle)
+    polygon=[(fy(y1),fz(z1)),(fy(y2),fz(z2)),(fy(y2),fz(z2-drop)),(fy(y1),fz(z1-drop))]
+    parts.append(f'<polygon clip-path="url(#{clip})" points="'+ ' '.join(f'{x:.3f},{y:.3f}' for x,y in polygon)+'" fill="#e2e8e2" stroke="#345460" stroke-width=".35"/>')
+    if which=='H':
+        box(fy(3400),fz(3370),(4432.5-3400)/8,200/8,'#e2e8e2')
+        box(fy(4232.5),fz(3170),200/8,100/8,'#bccbc2')
+        bars=[b for b in header_waist if b['id'] in ['HB1','HT1']]
+        for b in header_main:
+            xx,yy,zz=b['points'][0]
+            parts.append(f'<circle cx="{fy(yy):.3f}" cy="{fz(zz):.3f}" r="{b["dia"]/16}" fill="#5b7671"/>')
+        for z in [3201,3339]:ln(fy(3450),fz(z)+1.6,fy(4200),fz(z)+1.6,'#b4753c')
+        txt(x0,y0+63,'HeaderRC3070..3370; receiving slab3170..3370.')
+        txt(x0,y0+71,'H12floor laps750 at+34EWoffset; localEWtopH16/200.')
+    else:
+        box(fy(7132.5),fz(1725),250/8,390/8,'#bccbc2')
+        box(fy(7382.5),fz(1725),200/8,250/8,'#cdd8cf')
+        box(fy(7582.5),fz(1725),(8400-7582.5)/8,200/8,'#e2e8e2')
+        bars=[b for b in mid_waist if b['id'] in [which+'B1',which+'T1']]
+        for z in [1378,1650]:
+            for yy in [7217.5,7297.5]:
+                parts.append(f'<circle cx="{fy(yy):.3f}" cy="{fz(z):.3f}" r="{(20 if z==1378 else 10)/16}" fill="#5b7671"/>')
+        for z in [1555,1683]:ln(fy(7525),fz(z)+1.6,fy(8300),fz(z)+1.6,'#b4753c')
+        txt(x0,y0+72,'Top1725; beam1335 / patch1475 / ordinary landing1525.')
+        txt(x0,y0+80,'H12fillets:240internal mandrel; landingH10laps750.')
+    parts.append(f'<g clip-path="url(#{clip})">')
+    for b in bars:
+        pts=b['points'];d='M'+' L'.join(f'{fy(y):.3f},{fz(z):.3f}' for x,y,z in pts)
+        parts.append(f'<path d="{d}" fill="none" stroke="{"#9d4e48" if "B" in b["id"] else "#b4753c"}" stroke-width="1.5"/>')
+    parts.append('</g>')
+    txt(x0,y0+88,'Profile1:8. Orthogonal bars are circles; lap offset is EW, not vertical.')
+stair_profile(12,37,'L','A / LOWER FLIGHT → MIDLANDING')
+stair_profile(220,37,'U','B / UPPER FLIGHT → MIDLANDING')
+stair_profile(12,151,'H','C / UPPER FLIGHT → FIRST FLOOR')
+txt(220,151,'D / NOMINAL CHECKS AND BOUNDARIES','title')
+for i,t in enumerate([
+    f'MIDminclear{min(v["clear"] for v in mid_incoming_clear):.3f}; HEADER{min(v["clear"] for v in header_incoming_clear):.3f}mm.',
+    'Incoming lap/cover checked; transverse enddevelopment OPEN.',
+    'Smallest21.527 leaves0.527 over21: placement NOT qualified.',
+    f'H12benddemand{mandrel12:.1f}<240; fullfy lap{lap_lbr:.1f}<750.',
+    f'LandingH10forcebound{lap_transfer:.2f}<34.15kN/bar.',
+    f'NorthH10end110≥{end_lbd:.0f}required at declared demand.',
+    f'LandingSLS{landing_delta+landing_shrink:.3f}<6.380mm, phi3+300micro.',
+    'FirstEWmidstirrup548 is beyond curved westH20 hook.',
+    'OwnH20/H8straightbottom contact intentional; no curved contact.',
+    'Open: landingEWends, header ends, groundtoe, guard, tolerances.'
+]):txt(220,164+8*i,t)
+txt(12,280,'Paths are the actual calculation polylines, not generic reinforcing symbols. All elevations absolute; steps/finished noses held.')
+txt(12,289,'ONE developing stair proposition; no blanket joint, stair, foundation or whole-house PASS follows from nominal path checks.')
+parts.append('</svg>\n');stair_joint_svg='\n'.join(parts)
 parts=['<svg xmlns="http://www.w3.org/2000/svg" width="594mm" height="420mm" viewBox="0 0 594 420">',
        '<style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:3.1px}.title{font-size:4.5px;font-weight:bold}</style>',
        '<rect width="594" height="420" fill="#faf8f1"/>']
 txt(12,16,'ROOF / NORTH ARCH · SOURCE-BOUND DEVELOPMENT · NO WHOLE-HOUSE OR COMPONENT RELEASE','title')
-txt(12,24,'HAD068e33ae + MATf376a8a7 · 7100 wallline eave / 200 overhang / 500.7 NORMAL recipe · STR-HOUSE incomplete')
+txt(12,24,'HADcfaccf30c + MATf376a8a7 · 7100 wallline eave / 200 overhang / 500.7 NORMAL recipe · STR-HOUSE incomplete')
 txt(12,37,'A / DISJOINT ROOF LOAD REGIONS · PLAN1:100','title')
 px=lambda x:24+x/100;py=lambda y:177-y/100
 box(px(-200),py(12200),124,124,'#dfd5be')
@@ -1509,10 +1879,10 @@ for i,t in enumerate(['Corner square collapse is a support-action ceiling, not a
                       'Uppercollector: gravity section screen only; continuous loops, pier reactions, hold-down and lateral closures still to earn.',
                       'Lowerarches: actual courtwindows create point reactions; gross uniform masonry cannot replace that transfer.',
                       'Known400pilejoint remains rejected; D1300 is only the earlier conditional connected-foundation concept.',
-                      'Stair11.166/11.700mm sensitivity leaves0.534mm; actual tolerances, creep and finishes require qualification.']):txt(12,355+7*i,t)
+                      'Stair170control8.624/adverse10.312; nominal joints only; landingEWenddevelopment remains open.']):txt(12,355+7*i,t)
 txt(12,407,'Reproduce: python project/str/studies/open-loggia-support.py --check · No construction, geometry adoption or STR-HOUSE completion.')
 parts.append('</svg>\n');roof_arch_svg='\n'.join(parts)
-for name,content in [('open-loggia-support.json',json.dumps(result,indent=2,allow_nan=False)+'\n'),('open-loggia-support.svg',main_svg),('open-loggia-node.svg',node_svg),('open-loggia-wet-joint.svg',joint_svg),('open-loggia-stair.svg',stair_svg),('open-loggia-roof-arch.svg',roof_arch_svg)]:
+for name,content in [('open-loggia-support.json',json.dumps(result,indent=2,allow_nan=False)+'\n'),('open-loggia-support.svg',main_svg),('open-loggia-node.svg',node_svg),('open-loggia-wet-joint.svg',joint_svg),('open-loggia-stair.svg',stair_svg),('open-loggia-stair-joint.svg',stair_joint_svg),('open-loggia-roof-arch.svg',roof_arch_svg)]:
     p=OUT/name
     if '--check' in sys.argv:
         if not p.exists() or p.read_text()!=content: raise SystemExit('STALE '+str(p))

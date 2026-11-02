@@ -2,7 +2,7 @@
 <style>text{font-family:DejaVu Sans,sans-serif;fill:#243a44;font-size:3.1px}.title{font-size:4.5px;font-weight:bold}</style>
 <rect width="594" height="420" fill="#faf8f1"/>
 <text x="12" y="16" class="title">ROOF / NORTH ARCH · SOURCE-BOUND DEVELOPMENT · NO WHOLE-HOUSE OR COMPONENT RELEASE</text>
-<text x="12" y="24" class="">HAD068e33ae + MATf376a8a7 · 7100 wallline eave / 200 overhang / 500.7 NORMAL recipe · STR-HOUSE incomplete</text>
+<text x="12" y="24" class="">HADcfaccf30c + MATf376a8a7 · 7100 wallline eave / 200 overhang / 500.7 NORMAL recipe · STR-HOUSE incomplete</text>
 <text x="12" y="37" class="title">A / DISJOINT ROOF LOAD REGIONS · PLAN1:100</text>
 <rect x="22.000" y="55.000" width="124.000" height="124.000" fill="#dfd5be" stroke="#345460" stroke-width=".35"/>
 <rect x="68.500" y="101.500" width="31.000" height="31.000" fill="#faf8f1" stroke="#345460" stroke-width=".35"/>
@@ -83,6 +83,6 @@
 <text x="12" y="362" class="">Uppercollector: gravity section screen only; continuous loops, pier reactions, hold-down and lateral closures still to earn.</text>
 <text x="12" y="369" class="">Lowerarches: actual courtwindows create point reactions; gross uniform masonry cannot replace that transfer.</text>
 <text x="12" y="376" class="">Known400pilejoint remains rejected; D1300 is only the earlier conditional connected-foundation concept.</text>
-<text x="12" y="383" class="">Stair11.166/11.700mm sensitivity leaves0.534mm; actual tolerances, creep and finishes require qualification.</text>
+<text x="12" y="383" class="">Stair170control8.624/adverse10.312; nominal joints only; landingEWenddevelopment remains open.</text>
 <text x="12" y="407" class="">Reproduce: python project/str/studies/open-loggia-support.py --check · No construction, geometry adoption or STR-HOUSE completion.</text>
 </svg>
