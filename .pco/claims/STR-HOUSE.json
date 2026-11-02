@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 19,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "fa5b279d-e5c3-4447-a285-512a2531736f",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-structure-disjoint"
   },
   "claimedAt": "2026-11-02T10:36:39.194Z",
-  "heartbeatAt": "2026-11-02T10:49:18.710Z",
-  "expiresAt": "2026-11-02T11:34:18.710Z",
+  "heartbeatAt": "2026-11-02T10:55:45.056Z",
+  "expiresAt": "2026-11-02T10:55:45.056Z",
   "branch": "work/zerg-recovery-constructive-actions",
   "predecessor": {
     "leaseId": "86aa03de-9616-4922-b6f2-e0d8d14f323c",
@@ -39,5 +39,7 @@
     "evidence": "Shared PR #1266 head d941e01d8f4194112020360c0af536d8ffafdcd4 tree 611be873bf9db3f600966297bcae0f2e05d8c87f; reviewed STR7119962 true parent, owned blobs unchanged, independent narrow PASS",
     "next": "Root observes exact-head CI and fresh per-owner publication preflights, then expected-head merge if earned",
     "blocker": "Actual layers, arches, lower and weather walls, diaphragm and warm/cold support transfer remain unqualified; STR-HOUSE open"
-  }
+  },
+  "releasedAt": "2026-11-02T10:55:45.056Z",
+  "releaseReason": "handoff"
 }
