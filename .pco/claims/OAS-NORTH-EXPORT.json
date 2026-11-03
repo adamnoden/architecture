@@ -9,8 +9,8 @@
     "label": "issue-comment-6600126599"
   },
   "claimedAt": "2026-11-03T09:35:32.000Z",
-  "heartbeatAt": "2026-11-03T09:35:32.000Z",
-  "expiresAt": "2026-11-03T10:20:32.000Z",
+  "heartbeatAt": "2026-11-03T09:44:53.000Z",
+  "expiresAt": "2026-11-03T10:29:53.000Z",
   "branch": "work/mvb-chat-6600126599",
   "predecessor": {
     "leaseId": "8ecc576a-9b42-4a60-a258-9e8819ea7223",
@@ -25,5 +25,11 @@
       "evidence": "Draft PR #1278 frozen head 48b7e9f82580daaa6ca5e6d7b3d0672f8bb585d0",
       "next": "Cold review, exact-head CI, coordinator publication preflight"
     }
+  },
+  "pr": 1303,
+  "checkpoint": {
+    "evidence": "PR1303 head 1b29965f: actual FIRST north-window-0 source-pinned AXA 20 IN 80-degree authored-pivot travel counterexample, 70-degree sensitivity, mirrored regression, OAS CI and owning outcome; no product or first-release admission.",
+    "next": "Inspect exact-head PR health, native canonical merge preflight on disposable branch, merge with expected head if checks pass, dispose helper, release and return to dispatcher.",
+    "blocker": "Actual matched frame/leaf pivots, supports, guard first release, full weather/air/water interfaces and IAS export integration still unqualified. OAS-NORTH-EXPORT planned."
   }
 }
