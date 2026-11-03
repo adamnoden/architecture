@@ -80,6 +80,10 @@ Reconcile actual finished opening, withdrawal and threshold meanings with early 
 
 The [refurbishment plan](../refurbishment-plan.md) owns finding allocation; PCO owns readiness and ACO live leases. Relevant early BCR findings must be reconciled at selection/integration. A material fit, layer-budget, route, topology or safety dependency cannot be relabelled as a later technical detail to pass. Remaining performance questions may stay explicitly bounded only where the intended architectural claim does not depend on their unresolved outcome.
 
+## North-window stay travel counterexample — 3 November 2026
+
+The [OAS-NORTH-EXPORT generation-3 result](north-export-occurrence-result.md#recorded-20-in-travel-incompatibility--generation-3-3-november-2026) separates source-bound ordinary sash motion from a **matched actual stay**. Under the previously authored pivot centres, the named AXA 20 IN range reaches **294.837 mm at 80°**, beyond its recorded **286 mm** maximum. A 70° alternative fits this ideal length test with only **4.697 mm nominal reserve**, not installation tolerance or first-release acceptance. Rather than import eight experimental, repetitive 70° scripts as a product claim, a compact pinned kinematic regression is now in canonical CI. OAS must select/verify real pivot, fittings, stops, support, guard and release before considering this occurrence complete. The finished frame's 95 mm intrusion still exceeds IAS's 75 mm requirement; IAS-03 remains structurally blocked.
+
 ## Actual north export occurrence — 2 November2026
 
 The [IAS NW/bootstrap enquiry](../ias/ias-03-nw-export-bootstrap.md) proves a missing predecessor: the bounded E0 family and nominal1000/head2850 study do not establish the actual FIRST outer-north window-0 at centre1800/sill850, its complete upper guard or protected first release. OAS-NORTH-EXPORT is one planned self-service follow-on depending on completed OAS-03, OAS-DETAIL and HAD-03. IAS-03 and TRIAD-GATE now explicitly require it; IAS remains planned and becomes structurally blocked until the occurrence is developed. The completed bounded OAS outputs retain their lifecycle and claim ceilings.
