@@ -9,8 +9,8 @@
     "label": "issue-comment-6601488674"
   },
   "claimedAt": "2026-11-03T10:42:42.000Z",
-  "heartbeatAt": "2026-11-03T10:42:42.000Z",
-  "expiresAt": "2026-11-03T11:27:42.000Z",
+  "heartbeatAt": "2026-11-03T10:52:08.000Z",
+  "expiresAt": "2026-11-03T11:37:08.000Z",
   "branch": "work/mvb-chat-6601488674",
   "predecessor": {
     "leaseId": "e3dc7461-95ee-4ecd-83ff-f592aa263470",
@@ -33,5 +33,11 @@
       "next": "Observe exact-head CI, create fresh canonical generation-39 publication preflight, expected-head merge if passes, archive helper only to delete-me, release and dispatch.",
       "blocker": "No positive supported N/W/E outlet landing, site flood/first-harm, whole-mouth fail-safe or high-level roof maintenance acceptance."
     }
+  },
+  "pr": 1310,
+  "checkpoint": {
+    "evidence": "PR1310 head 49224ed5bfb189b5129bdb0657d6b823b4398fa2: source-pinned HAD/MAT north daylight apron vs selected steep chute, 100mm max gross dry side strip, 750mm apron, -160/-800 discontinuity, four tests; RWT-06 stays planned.",
+    "next": "Observe exact-head full CI; perform fresh canonical RWT-06 generation-40 merge preflight on isolated helper; expected-head merge only if both pass, dispose helper and release lease.",
+    "blocker": "No selected supported terminal/access/independent site flood escape; whole mouth, first harm and high-level collector renewal remain unqualified."
   }
 }
