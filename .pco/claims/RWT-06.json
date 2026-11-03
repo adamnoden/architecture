@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 32,
-  "state": "released",
-  "leaseId": "639837a1-d489-4c4f-8279-e0bd6126442c",
+  "generation": 33,
+  "state": "claimed",
+  "leaseId": "9f731aa0-163c-4555-bb62-53ae4bead40c",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6589670238"
+    "label": "issue-comment-6598526150"
   },
-  "claimedAt": "2026-11-02T22:07:39.000Z",
-  "heartbeatAt": "2026-11-02T22:17:06.000Z",
-  "expiresAt": "2026-11-02T22:17:06.000Z",
-  "branch": "work/mvb-chat-6589670238",
+  "claimedAt": "2026-11-03T08:06:19.000Z",
+  "heartbeatAt": "2026-11-03T08:06:19.000Z",
+  "expiresAt": "2026-11-03T08:51:19.000Z",
+  "branch": "work/mvb-chat-6598526150",
   "predecessor": {
-    "leaseId": "1fc916bc-d206-468d-94ad-b208b59ddd02",
-    "generation": 31,
-    "branch": "work/mvb-chat-6589332389",
-    "pr": 1288,
+    "leaseId": "639837a1-d489-4c4f-8279-e0bd6126442c",
+    "generation": 32,
+    "branch": "work/mvb-chat-6589670238",
+    "pr": 1290,
     "checkpoint": {
-      "evidence": "PR1288 head d88a560: source-pinned 32-board, gutter and conditional-gate plot envelope generator, JSON, A3 drawing, tests and explicit unresolved plant-door collision.",
-      "next": "Verify full exact-head CI, run fresh canonical generation31 merge-check, expected-head merge, release and dispose temporary preflight helper.",
-      "blocker": "No measured plot/rights, true scaffold ties/bearing, door/egress, site outfall, material or rainwater operational approval; RWT-06 remains planned."
+      "evidence": "PR1290 head 2279baf: source-derived zero outboard spill-strip at both gutter lips, test/JSON, RWT programme and study dispositions, optional full overroof.",
+      "next": "Observe complete head CI, fresh canonical preflight, expected-head merge, handoff release and disposal proof cleanup.",
+      "blocker": "Actual independent receiving, rainwater/first-harm, installed roof, scaffold/access/egress and real plot/rights remain unearned; node stays planned."
     }
   },
   "recoverySource": {
-    "leaseId": "1fc916bc-d206-468d-94ad-b208b59ddd02",
-    "generation": 31,
-    "branch": "work/mvb-chat-6589332389",
-    "pr": 1288,
+    "leaseId": "639837a1-d489-4c4f-8279-e0bd6126442c",
+    "generation": 32,
+    "branch": "work/mvb-chat-6589670238",
+    "pr": 1290,
     "checkpoint": {
-      "evidence": "PR1288 head d88a560: source-pinned 32-board, gutter and conditional-gate plot envelope generator, JSON, A3 drawing, tests and explicit unresolved plant-door collision.",
-      "next": "Verify full exact-head CI, run fresh canonical generation31 merge-check, expected-head merge, release and dispose temporary preflight helper.",
-      "blocker": "No measured plot/rights, true scaffold ties/bearing, door/egress, site outfall, material or rainwater operational approval; RWT-06 remains planned."
+      "evidence": "PR1290 head 2279baf: source-derived zero outboard spill-strip at both gutter lips, test/JSON, RWT programme and study dispositions, optional full overroof.",
+      "next": "Observe complete head CI, fresh canonical preflight, expected-head merge, handoff release and disposal proof cleanup.",
+      "blocker": "Actual independent receiving, rainwater/first-harm, installed roof, scaffold/access/egress and real plot/rights remain unearned; node stays planned."
     }
-  },
-  "pr": 1290,
-  "checkpoint": {
-    "evidence": "PR1290 head 2279baf: source-derived zero outboard spill-strip at both gutter lips, test/JSON, RWT programme and study dispositions, optional full overroof.",
-    "next": "Observe complete head CI, fresh canonical preflight, expected-head merge, handoff release and disposal proof cleanup.",
-    "blocker": "Actual independent receiving, rainwater/first-harm, installed roof, scaffold/access/egress and real plot/rights remain unearned; node stays planned."
-  },
-  "releasedAt": "2026-11-02T22:17:06.000Z",
-  "releaseReason": "handoff"
+  }
 }
