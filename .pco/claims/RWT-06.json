@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 41,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9a85a071-d730-4daf-856f-c9d07ae59237",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6611092280"
   },
   "claimedAt": "2026-11-03T17:37:29.000Z",
-  "heartbeatAt": "2026-11-03T17:46:09.000Z",
-  "expiresAt": "2026-11-03T18:31:09.000Z",
+  "heartbeatAt": "2026-11-03T17:50:02.000Z",
+  "expiresAt": "2026-11-03T17:50:02.000Z",
   "branch": "work/mvb-chat-6611092280",
   "predecessor": {
     "leaseId": "38370b96-0d62-47ff-ac38-3b5b0faf080c",
@@ -39,5 +39,7 @@
     "evidence": "PR #1312 head 41cba789: source-bound full-width gravity court-route study and five adverse tests.",
     "next": "Verify exact-head CI and preflight; merge, release, dispatch.",
     "blocker": "Site receiving levels, first harm and full-mouth failure unproved."
-  }
+  },
+  "releasedAt": "2026-11-03T17:50:02.000Z",
+  "releaseReason": "handoff"
 }
