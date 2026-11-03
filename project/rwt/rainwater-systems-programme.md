@@ -171,6 +171,8 @@ RWT designs the physical route. MRA later tests whether the whole-house conseque
 
 ### RWT-06 — access, courtyard/ground transition and site handoff
 
+**3 November correlated obstruction rejection:** The [selected open-loggia event](rwt-06-open-loggia-event.md#coupled-mouth-obstruction-a-bounded-rejection-envelope-3-november-2026) now cross-checks dam height *and* remaining relief width together under the conserved full roof-plus-court event. Even an ideal low-approach broad-crest model requires a stage above the unqualified −30 pan/DPC comparison with a 60 mm dam and 600 mm opening (or a 70 mm dam at the original 1800 mm width). A favourable single-dimension flow probe is no safety proof. The source-bound negative control is included in repository CI. Reconfigure a genuinely passive separated route/first-harm boundary or develop and test a complete alternative; RWT-06 remains planned.
+
 **2 November site-envelope / outward-failure disposition:** [Temporary over-roof site reservation](rwt-06-over-roof-site-envelope.md) derives a wider real equipment reservation than the roof sheet and proves that an outward-spill path at either authored gutter exterior lip has zero reserved outboard width within the same equipment rectangle. This is a conditional no-site-fit/no-overflow proof; it does not accept a real plot or an alternative drain. A full over-roof is therefore an **optional site-dependent major-repair challenger**, never assumed essential to permanent-house ordinary maintenance. RWT must still establish a genuinely safe local repair and full blocked-water condition; RWT-06 remains planned.
 
 
