@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   basis,readSelectedOccurrence,authoredLengthMm,
-  authoredAngleAtMaximumMm,boundedDecision
+  authoredAngleAtMaximumMm,authoredMinimumTravel,boundedDecision
 } from './north-export-stay-range.mjs';
 const near=(a,b,eps=1e-8)=>
   assert(Math.abs(a-b)<eps,`${a} != ${b}`);
@@ -35,7 +35,17 @@ test('old 80 degrees and even 75 exceed this 20 IN hypothetical 286 maximum',()=
   assert.match(d.disposition,/70 degrees is a conditional hypothesis/);
 });
 test('model monotonicity and boundary violations cannot be reinterpreted as product proof',()=>{
-  for(let deg=1;deg<=90;deg++)
+  // The declared pivots first shorten the stay; rejecting that as a failed
+  // monotonicity assertion would lose the most restrictive minimum-travel test.
+  const minimum=authoredMinimumTravel();
+  near(minimum.angleDeg,4.8204471596036935,1e-6);
+  near(minimum.lengthMm,223.57847562111695,1e-6);
+  near(boundedDecision().nominalContractionMarginAboveMinimumMm,
+    1.5784756211169508,1e-6);
+  assert(authoredLengthMm(1)<authoredLengthMm(0));
+  assert(authoredLengthMm(5)<authoredLengthMm(4));
+  assert(authoredLengthMm(6)>authoredLengthMm(5));
+  for(let deg=6;deg<=90;deg++)
     assert(authoredLengthMm(deg)>authoredLengthMm(deg-1));
   assert.equal(basis.documentedFrameHolePitchMm===40,false);
   for(const bad of [-1,91,NaN,Infinity])
