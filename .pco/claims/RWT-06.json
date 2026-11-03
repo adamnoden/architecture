@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 43,
-  "state": "released",
-  "leaseId": "abeb9739-7989-4026-bcec-7b08ce567bb8",
+  "generation": 44,
+  "state": "claimed",
+  "leaseId": "c5d8ffb3-24a2-41d3-a07f-55ff2f5a1171",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6613954125"
+    "label": "issue-comment-6614274127"
   },
-  "claimedAt": "2026-11-03T19:53:37.000Z",
-  "heartbeatAt": "2026-11-03T20:05:58.000Z",
-  "expiresAt": "2026-11-03T20:05:58.000Z",
-  "branch": "work/mvb-chat-6613954125",
+  "claimedAt": "2026-11-03T20:09:33.000Z",
+  "heartbeatAt": "2026-11-03T20:09:33.000Z",
+  "expiresAt": "2026-11-03T20:54:33.000Z",
+  "branch": "work/mvb-chat-6614274127",
   "predecessor": {
-    "leaseId": "256bbb04-3558-4739-afe3-37f41e45be35",
-    "generation": 42,
-    "branch": "work/mvb-chat-6613543285",
-    "pr": 1314,
+    "leaseId": "abeb9739-7989-4026-bcec-7b08ce567bb8",
+    "generation": 43,
+    "branch": "work/mvb-chat-6613954125",
+    "pr": 1316,
     "checkpoint": {
-      "evidence": "PR #1314, current head c82b4943: pinned HAD/MAT garden-grade counterexample, four source-drift and arithmetic tests; RWT-06 planned.",
-      "next": "Verify exact-head CI; run canonical preflight on helper, expected-head merge; release and dispatch.",
-      "blocker": "No measured site receiving head, first-harm level, flood escape or safe walking/maintenance acceptance."
+      "evidence": "PR #1316 head ff7ed068: pinned HAD/MAT water+dry corridor no-fit, joined outward-roof counterfactual and 5 tests; RWT-06 stays planned.",
+      "next": "Verify exact-head full CI; run fresh lease-bound merge preflight; merge and archive helper outside main, then release and dispatch.",
+      "blocker": "Neither a selected outward roof nor full-duty wet/dry clearance, first-harm and site receiving evidence exist."
     }
   },
   "recoverySource": {
-    "leaseId": "256bbb04-3558-4739-afe3-37f41e45be35",
-    "generation": 42,
-    "branch": "work/mvb-chat-6613543285",
-    "pr": 1314,
+    "leaseId": "abeb9739-7989-4026-bcec-7b08ce567bb8",
+    "generation": 43,
+    "branch": "work/mvb-chat-6613954125",
+    "pr": 1316,
     "checkpoint": {
-      "evidence": "PR #1314, current head c82b4943: pinned HAD/MAT garden-grade counterexample, four source-drift and arithmetic tests; RWT-06 planned.",
-      "next": "Verify exact-head CI; run canonical preflight on helper, expected-head merge; release and dispatch.",
-      "blocker": "No measured site receiving head, first-harm level, flood escape or safe walking/maintenance acceptance."
+      "evidence": "PR #1316 head ff7ed068: pinned HAD/MAT water+dry corridor no-fit, joined outward-roof counterfactual and 5 tests; RWT-06 stays planned.",
+      "next": "Verify exact-head full CI; run fresh lease-bound merge preflight; merge and archive helper outside main, then release and dispatch.",
+      "blocker": "Neither a selected outward roof nor full-duty wet/dry clearance, first-harm and site receiving evidence exist."
     }
-  },
-  "pr": 1316,
-  "checkpoint": {
-    "evidence": "PR #1316 head ff7ed068: pinned HAD/MAT water+dry corridor no-fit, joined outward-roof counterfactual and 5 tests; RWT-06 stays planned.",
-    "next": "Verify exact-head full CI; run fresh lease-bound merge preflight; merge and archive helper outside main, then release and dispatch.",
-    "blocker": "Neither a selected outward roof nor full-duty wet/dry clearance, first-harm and site receiving evidence exist."
-  },
-  "releasedAt": "2026-11-03T20:05:58.000Z",
-  "releaseReason": "handoff"
+  }
 }
