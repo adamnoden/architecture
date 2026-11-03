@@ -1,0 +1,34 @@
+# One-shot read-only canonical RWT-06 generation-35 preflight. Temporary branch only.
+name: RWT-06 generation-35 publication preflight
+on:
+  push:
+    branches:
+      - work/rwt35-preflight-20261103
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6599038808
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Fresh canonical RWT-06 generation-35 merge preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node --import tsx scripts/project-claims.ts merge-check RWT-06 \
+            --lease-id 75f44ee6-1b01-463a-bb08-3046a6730743 \
+            --generation 35 \
+            --branch work/mvb-chat-6599038808 \
+            --head c4f1b5a21b083dc8cea0b5224aef2f901996d932 \
+            --format json
