@@ -1,0 +1,35 @@
+# One-shot read-only STR-HOUSE generation-24 canonical publication preflight.
+# This workflow exists only on the temporary proof branch, never on main.
+name: STR-HOUSE generation-24 publication preflight
+on:
+  push:
+    branches:
+      - work/str24-preflight-20261103
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact STR candidate
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6600110658
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Fresh native canonical STR-HOUSE merge preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node --import tsx scripts/project-claims.ts merge-check STR-HOUSE \
+            --lease-id ec84febe-c609-44f8-b067-31ceb1eab986 \
+            --generation 24 \
+            --branch work/mvb-chat-6600110658 \
+            --head 5d6f0ff74fd820b8ce0b840bb64c9d38a9b562a7 \
+            --format json
