@@ -45,8 +45,8 @@ test('south route traverses the selected protected entrance; two existing door o
 test('changed selected source geometry refuses stale feasibility conclusion',()=>{
  const b=structuredClone(readInputs());
  b.house.model.court=[4200,4200,3600,3600];
- assert.throws(()=>investigateSecondOpenPassages(b),/deepEqual/);
+ assert.throws(()=>investigateSecondOpenPassages(b),/deep-equal/);
  b.house.model.court=[4250,4250,3500,3500];
  b.house.model.loggia.clear[2]=2200;
- assert.throws(()=>investigateSecondOpenPassages(b),/deepEqual/);
+ assert.throws(()=>investigateSecondOpenPassages(b),/deep-equal/);
 });
