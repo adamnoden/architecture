@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readInputs} from './open-loggia-event.mjs';
 import {compareOutwardOnlyRoof} from './outward-court-load.mjs';
+import {build as buildCurrentOpenLoggia} from './open-loggia-event.mjs';
 const near=(actual,expected,epsilon=1e-8)=>assert(Math.abs(actual-expected)<epsilon,
   `${actual} differs from ${expected}`);
 
@@ -48,6 +49,22 @@ test('reduced court loading changes ideal blockage comparison but cannot certify
  assert.match(v.rejects.join(' '),/common tailwater/);
  assert.equal(v.safeOverflowApproved,undefined);
 });
+test('collector deletion reduces exposure but blocked direct-court rain remains at the unqualified join',()=>{
+ const currentEvent=buildCurrentOpenLoggia();
+ const storage=currentEvent.storage.find(s=>s.levelMm===-30);
+ near(storage.courtOnlyLitres,280);
+ const v=compareOutwardOnlyRoof();
+ const e=v.events.find(e=>e.intensityMmPerHour===216);
+ const currentVolumeTime=storage.courtOnlyLitres/e.currentCourtLitresPerSecond;
+ const outwardVolumeTime=storage.courtOnlyLitres/e.outwardCourtLitresPerSecond;
+ near(currentVolumeTime,77.69677051613353,1e-8);
+ near(outwardVolumeTime,380.952380952381,1e-8);
+ near(outwardVolumeTime/currentVolumeTime,e.currentCourtLitresPerSecond/e.outwardCourtLitresPerSecond);
+ assert(outwardVolumeTime>currentVolumeTime);
+ assert(outwardVolumeTime<400); // Not a safe detention/response allowance.
+ assert.equal(v.safeOverflowApproved,undefined);
+});
+
 test('changed selected house datum fails closed rather than reusing a stale roof option',()=>{
  const h=structuredClone(readInputs());
  h.house.model.exterior.eaves=6800;
