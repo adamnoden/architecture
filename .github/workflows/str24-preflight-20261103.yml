@@ -33,3 +33,4 @@ jobs:
             --branch work/mvb-chat-6600110658 \
             --head 86d45890372972acdeff46ac8cdaf04ef143f386 \
             --format json
+# Verified exact-head CI 41614171528 succeeded; final pre-merge live read.
