@@ -9,8 +9,8 @@
     "label": "issue-comment-6611092280"
   },
   "claimedAt": "2026-11-03T17:37:29.000Z",
-  "heartbeatAt": "2026-11-03T17:37:29.000Z",
-  "expiresAt": "2026-11-03T18:22:29.000Z",
+  "heartbeatAt": "2026-11-03T17:46:09.000Z",
+  "expiresAt": "2026-11-03T18:31:09.000Z",
   "branch": "work/mvb-chat-6611092280",
   "predecessor": {
     "leaseId": "38370b96-0d62-47ff-ac38-3b5b0faf080c",
@@ -33,5 +33,11 @@
       "next": "Observe exact-head full CI; perform fresh canonical RWT-06 generation-40 merge preflight on isolated helper; expected-head merge only if both pass, dispose helper and release lease.",
       "blocker": "No selected supported terminal/access/independent site flood escape; whole mouth, first harm and high-level collector renewal remain unqualified."
     }
+  },
+  "pr": 1312,
+  "checkpoint": {
+    "evidence": "PR #1312 head 41cba789: source-bound full-width gravity court-route study and five adverse tests.",
+    "next": "Verify exact-head CI and preflight; merge, release, dispatch.",
+    "blocker": "Site receiving levels, first harm and full-mouth failure unproved."
   }
 }
