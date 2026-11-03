@@ -9,8 +9,8 @@
     "label": "issue-comment-6600126599"
   },
   "claimedAt": "2026-11-03T09:35:32.000Z",
-  "heartbeatAt": "2026-11-03T09:44:53.000Z",
-  "expiresAt": "2026-11-03T10:29:53.000Z",
+  "heartbeatAt": "2026-11-03T09:53:36.000Z",
+  "expiresAt": "2026-11-03T10:38:36.000Z",
   "branch": "work/mvb-chat-6600126599",
   "predecessor": {
     "leaseId": "8ecc576a-9b42-4a60-a258-9e8819ea7223",
@@ -28,8 +28,8 @@
   },
   "pr": 1303,
   "checkpoint": {
-    "evidence": "PR1303 head 1b29965f: actual FIRST north-window-0 source-pinned AXA 20 IN 80-degree authored-pivot travel counterexample, 70-degree sensitivity, mirrored regression, OAS CI and owning outcome; no product or first-release admission.",
-    "next": "Inspect exact-head PR health, native canonical merge preflight on disposable branch, merge with expected head if checks pass, dispose helper, release and return to dispatcher.",
-    "blocker": "Actual matched frame/leaf pivots, supports, guard first release, full weather/air/water interfaces and IAS export integration still unqualified. OAS-NORTH-EXPORT planned."
+    "evidence": "PR1303 latest head a2cf173c: source-pinned FIRST north0 AXA 20 IN travel bound; CI-driven early 4.820-degree contraction/223.578mm minimum; corrected tests; explicit 80-degree upper failure; concurrent RWT main 684e7a1 reconciled by dual-parent commit, only five OAS paths in final diff.",
+    "next": "Observe exact-head CI 41614488865 and canonical preflight 41614558326. If green and base/head stable, expected-head merge; then remove one-shot helper into delete-me, release and issue result.",
+    "blocker": "No matched OEM pivot centres, first-release/guard/roof/IAS geometry or physical/water/weather acceptance; node remains planned."
   }
 }
