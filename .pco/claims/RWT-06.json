@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 37,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "c07d62dc-f7b0-45a7-a0a2-0c96db2b8896",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6599536144"
   },
   "claimedAt": "2026-11-03T09:04:09.000Z",
-  "heartbeatAt": "2026-11-03T09:09:36.000Z",
-  "expiresAt": "2026-11-03T09:54:36.000Z",
+  "heartbeatAt": "2026-11-03T09:15:39.000Z",
+  "expiresAt": "2026-11-03T09:15:39.000Z",
   "branch": "work/mvb-chat-6599536144",
   "predecessor": {
     "leaseId": "2b038960-c07a-4aa8-8581-b8315f0d390b",
@@ -39,5 +39,7 @@
     "evidence": "PR1300 head b0a5071c301bd27be3f4d01af884eae5968b396c: selected HAD-B PLANT actually GROUND; pinned no-free-attic programme, 1190.904mm maximum raw head below current ridge, source-bound GROUND/loft regression.",
     "next": "Observe exact-head full CI, run native RWT-06 canonical merge-check, expected-head merge if earned, archive helper in disposal, release and dispatch.",
     "blocker": "Outer roof assembly, structure, ceiling, high-rim access and independent courtyard/exterior flood paths unqualified; no new owner loft brief."
-  }
+  },
+  "releasedAt": "2026-11-03T09:15:39.000Z",
+  "releaseReason": "handoff"
 }
