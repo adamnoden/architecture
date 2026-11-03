@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 36,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "2b038960-c07a-4aa8-8581-b8315f0d390b",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6599304915"
   },
   "claimedAt": "2026-11-03T08:51:04.000Z",
-  "heartbeatAt": "2026-11-03T08:57:55.000Z",
-  "expiresAt": "2026-11-03T09:42:55.000Z",
+  "heartbeatAt": "2026-11-03T09:02:28.000Z",
+  "expiresAt": "2026-11-03T09:02:28.000Z",
   "branch": "work/mvb-chat-6599304915",
   "predecessor": {
     "leaseId": "75f44ee6-1b01-463a-bb08-3046a6730743",
@@ -39,5 +39,7 @@
     "evidence": "PR1298 head 5e011753fcdd628c67683f8106af6eeb2a070b68: conditional court-gutter deletion, retained direct-rain failure and source-bound 280L/216mmh regression. No roof or packet adoption.",
     "next": "Observe exact-head full CI for PR1298, establish fresh canonical RWT-06 publication preflight on capable runner, merge with expected head if earned; then release and dispatch again.",
     "blocker": "Selected inward ring retained; safe independent court overflow and exterior receiving/site, roof/weathering access, actual ROF/HAD adoption unresolved."
-  }
+  },
+  "releasedAt": "2026-11-03T09:02:28.000Z",
+  "releaseReason": "handoff"
 }
