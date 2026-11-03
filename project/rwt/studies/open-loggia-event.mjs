@@ -47,8 +47,9 @@ export function idealCrestSpecificEnergyMm(flowLitresPerSecond,clearWidthMm) {
 }
 export function idealCrestJoinSeparationMm({flowLitresPerSecond,clearWidthMm,crestMm,vulnerableJoinMm}) {
   assert(Number.isFinite(crestMm)&&Number.isFinite(vulnerableJoinMm));
-  // A nonpositive result falsifies a below-joint claim even without contraction,
-  // approach, splash, roughness, backwater, wind or inlet losses.
+  // Under the declared ideal broad-crest / negligible-upstream-approach model,
+  // a nonpositive result rejects a below-join *hydrostatic stage* claim.
+  // It is not a general hydraulic impossibility or actual first-leak verdict.
   return vulnerableJoinMm-crestMm-idealCrestSpecificEnergyMm(flowLitresPerSecond,clearWidthMm);
 }
 export function build(source=readInputs()) {
