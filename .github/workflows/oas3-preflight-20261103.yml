@@ -31,5 +31,5 @@ jobs:
             --lease-id f68a00a1-145f-4b9e-9b4b-269a02e1008e \
             --generation 3 \
             --branch work/mvb-chat-6600126599 \
-            --head a2cf173c4b183c80f702c30c3d0c9801aa8a8e58 \
+            --head f8b8f2ad005a9abbba16bf77e4869bc6ed24be7d \
             --format json
