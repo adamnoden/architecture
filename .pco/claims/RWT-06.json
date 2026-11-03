@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 38,
-  "state": "released",
-  "leaseId": "e2491cbb-6b56-4b1b-95d6-3c5b7ed7cae2",
+  "generation": 39,
+  "state": "claimed",
+  "leaseId": "e3dc7461-95ee-4ecd-83ff-f592aa263470",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6600109825"
+    "label": "issue-comment-6601017602"
   },
-  "claimedAt": "2026-11-03T09:34:33.000Z",
-  "heartbeatAt": "2026-11-03T09:47:20.000Z",
-  "expiresAt": "2026-11-03T09:47:20.000Z",
-  "branch": "work/mvb-chat-6600109825",
+  "claimedAt": "2026-11-03T10:20:52.000Z",
+  "heartbeatAt": "2026-11-03T10:20:52.000Z",
+  "expiresAt": "2026-11-03T11:05:52.000Z",
+  "branch": "work/mvb-chat-6601017602",
   "predecessor": {
-    "leaseId": "c07d62dc-f7b0-45a7-a0a2-0c96db2b8896",
-    "generation": 37,
-    "branch": "work/mvb-chat-6599536144",
-    "pr": 1300,
+    "leaseId": "e2491cbb-6b56-4b1b-95d6-3c5b7ed7cae2",
+    "generation": 38,
+    "branch": "work/mvb-chat-6600109825",
+    "pr": 1302,
     "checkpoint": {
-      "evidence": "PR1300 head b0a5071c301bd27be3f4d01af884eae5968b396c: selected HAD-B PLANT actually GROUND; pinned no-free-attic programme, 1190.904mm maximum raw head below current ridge, source-bound GROUND/loft regression.",
-      "next": "Observe exact-head full CI, run native RWT-06 canonical merge-check, expected-head merge if earned, archive helper in disposal, release and dispatch.",
-      "blocker": "Outer roof assembly, structure, ceiling, high-rim access and independent courtyard/exterior flood paths unqualified; no new owner loft brief."
+      "evidence": "PR1302 head fc552d8: pinned selected HAD/MAT three orthogonal 1200mm second daylight-exit envelopes; west stair, east plant, south protected entry conflicts; new RWT regression plus owning decision.",
+      "next": "Observe exact-head full CI, run fresh canonical RWT-06 merge-check, expected-head merge if earned; dispose helper, release and re-dispatch.",
+      "blocker": "No approved second courtyard exit or whole-mouth/high-tailwater safety proof; actual head/first harm, plot receiving and HAD/STR/OAS redesign still open."
     }
   },
   "recoverySource": {
-    "leaseId": "c07d62dc-f7b0-45a7-a0a2-0c96db2b8896",
-    "generation": 37,
-    "branch": "work/mvb-chat-6599536144",
-    "pr": 1300,
+    "leaseId": "e2491cbb-6b56-4b1b-95d6-3c5b7ed7cae2",
+    "generation": 38,
+    "branch": "work/mvb-chat-6600109825",
+    "pr": 1302,
     "checkpoint": {
-      "evidence": "PR1300 head b0a5071c301bd27be3f4d01af884eae5968b396c: selected HAD-B PLANT actually GROUND; pinned no-free-attic programme, 1190.904mm maximum raw head below current ridge, source-bound GROUND/loft regression.",
-      "next": "Observe exact-head full CI, run native RWT-06 canonical merge-check, expected-head merge if earned, archive helper in disposal, release and dispatch.",
-      "blocker": "Outer roof assembly, structure, ceiling, high-rim access and independent courtyard/exterior flood paths unqualified; no new owner loft brief."
+      "evidence": "PR1302 head fc552d8: pinned selected HAD/MAT three orthogonal 1200mm second daylight-exit envelopes; west stair, east plant, south protected entry conflicts; new RWT regression plus owning decision.",
+      "next": "Observe exact-head full CI, run fresh canonical RWT-06 merge-check, expected-head merge if earned; dispose helper, release and re-dispatch.",
+      "blocker": "No approved second courtyard exit or whole-mouth/high-tailwater safety proof; actual head/first harm, plot receiving and HAD/STR/OAS redesign still open."
     }
-  },
-  "pr": 1302,
-  "checkpoint": {
-    "evidence": "PR1302 head fc552d8: pinned selected HAD/MAT three orthogonal 1200mm second daylight-exit envelopes; west stair, east plant, south protected entry conflicts; new RWT regression plus owning decision.",
-    "next": "Observe exact-head full CI, run fresh canonical RWT-06 merge-check, expected-head merge if earned; dispose helper, release and re-dispatch.",
-    "blocker": "No approved second courtyard exit or whole-mouth/high-tailwater safety proof; actual head/first harm, plot receiving and HAD/STR/OAS redesign still open."
-  },
-  "releasedAt": "2026-11-03T09:47:20.000Z",
-  "releaseReason": "handoff"
+  }
 }
