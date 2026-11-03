@@ -9,8 +9,8 @@
     "label": "issue-comment-6599038808"
   },
   "claimedAt": "2026-11-03T08:36:11.000Z",
-  "heartbeatAt": "2026-11-03T08:36:11.000Z",
-  "expiresAt": "2026-11-03T09:21:11.000Z",
+  "heartbeatAt": "2026-11-03T08:42:18.000Z",
+  "expiresAt": "2026-11-03T09:27:18.000Z",
   "branch": "work/mvb-chat-6599038808",
   "predecessor": {
     "leaseId": "c336dc3f-8659-4122-bd72-e67268b68de4",
@@ -33,5 +33,11 @@
       "next": "Observe exact-head full CI, run native canonical RWT-06 merge-check on separate one-shot helper, expected-head merge, clean proof helper and release.",
       "blocker": "Outward roof source/assembly, court first-harm/safe spill, exterior independent receiving/site and service access remain unproved; RWT-06 planned."
     }
+  },
+  "pr": 1296,
+  "checkpoint": {
+    "evidence": "PR1296 head c4f1b5a: exact four-plane outward pitched roof geometry, 4 hips/32.9375m2 each, tested exterior descent plus selected attic datum adverse feasibility; RWT-06 remains planned.",
+    "next": "Exact-head PR CI, native canonical merge preflight, expected-head merge, dispose helper, release. Then ROF/HAD/STR must reconcile actual roof/loft/access before further RWT selection.",
+    "blocker": "No adopted roof/loft section, matched pitched covering, high inner rim/weathering, safe independent exterior outfall or first-harm proof."
   }
 }
