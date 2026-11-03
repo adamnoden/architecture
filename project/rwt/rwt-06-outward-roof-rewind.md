@@ -39,6 +39,32 @@ The selected HAD source gives exterior eaves **+7100 mm**, present 25° roof rid
 
 The precise geometric ceiling to stay no higher than the current selected roof ridge is **13.124°**. This **does not preserve the current +7100 courtyard eave**: every positive outward pitch raises that rim if the exterior eave remains +7100. The 25° version worsens the enclosed-court height substantially; do not inherit ROF-07's old +6800 historical datum as the current house. Shallower **5–12° roof-plane challengers** deserve a real ROF assembly, fixing, movement, wind, snow, watertightness, access, daylight, elevation and construction comparison. A shallow pitched *metal roof system* is not the same as an arbitrary near-flat membrane, and no product or minimum pitch is selected by this study.
 
+## Four actual roof faces, not four unexplained drainage arrows
+
+The [finite annular four-face model](studies/outward-four-face-topology.mjs) takes the selected 12,000 mm house, 3,500 mm central court (x/y4250–7750), +7100 exterior eave and a **hypothetical 5°** outward pitch. For every point on the roof annulus, define height `z = 7100 + tan(5°) × min(x, y, 12000−x, 12000−y)`. The open 3500 ×3500 court **has no roof surface**. This is a compact exact height-field for four planar surfaces: the minimum distance to an outer house side identifies the face and direction of downhill flow. There is no flat *area* or inward valley in this ideal topology; linear hips and a high closed rim remain.
+
+| Planar face | Exterior low edge | Interior high edge | Wall-line projected area |
+|---|---|---|---:|
+| South | (0,0) to (12000,0) | (4250,4250) to (7750,4250) | 32.9375 m² |
+| East | (12000,0) to (12000,12000) | (7750,4250) to (7750,7750) | 32.9375 m² |
+| North | (0,12000) to (12000,12000) | (4250,7750) to (7750,7750) | 32.9375 m² |
+| West | (0,0) to (0,12000) | (4250,4250) to (4250,7750) | 32.9375 m² |
+
+Each face is a trapezoid: outer width 12,000, inner width 3,500, perpendicular run 4,250. Four diagonal **hips** connect the four exterior corners to their corresponding court corners. The entire outer edge is at +7100, and the high inner roof line is +7471.83 for 5°. The source-bound [tests](studies/outward-four-face-topology.test.mjs) probe both perimeters, every hip and strictly outward descending sample lines, reject invented roof points in the open court, and conserve all **131.75 m²** of roof area. At the existing 216 mm/h vertical-rain sensitivity, each face conveys an *unallocated* **1.97625 L/s** toward its own outer edge. This is not gutter sizing: corner/hip water delivery, real eaves, outlet count, wind, overflow and shared site flood remain unknown.
+
+**Unexpected cost: the loft/attic envelope.** HAD's selected section has an **attic datum +6900**. A vertical distance between a roof plane and that datum is merely a *raw geometric upper bound* before joists, roof build-up, insulation, support, floor, ventilation and working clearance:
+
+| Topology | Maximum raw roof elevation above +6900 attic datum | Raw width of a zone at least 2000 mm high |
+|---|---:|---:|
+| Existing inward/outward 25° ridge at +8090.9 | **1191 mm** | **0 mm** |
+| Outward 5°, high court rim +7471.8 | **572 mm** | **0 mm** |
+| Outward 12°, high court rim +8003.4 | **1103 mm** | **0 mm** |
+| Outward 25°, high court rim +9081.8 | **2182 mm** | **390 mm** adjacent to the high inner edge |
+
+For this unchanged +6900 datum, achieving even **2000 mm of raw height at the high court edge** needs at least **22.954°** outward pitch, which elevates that edge to +8900. It provides zero allowance for structure/insulation and says nothing about useful continuous floor width, loft equipment transport or access. Even the **existing** selected 25° ring peaks at only 1191 mm above this datum; that is a pre-existing architectural programme conflict if an occupied, maintainable loft is required, not a defect unique to outward shedding. Verify exactly what `atticDatum` denotes and reconcile it with the intended plant/attic/roof-maintenance function before choosing any roof family. Moving all water outside cannot be purchased by silently deleting the loft or turning access into inaccessible interstitial voids.
+
+This geometric field proves **a viable continuous surface topology to develop**, not a buildable roof. ROF/STR/MAT must author the hip joint, continuous inner high-line cap/weathering, thermal and structural assembly, real member depths and maintenance/roof-opening routes. HAD must accept both the changed court silhouette and the genuinely usable attic volume. Every exterior edge still needs an accessible collector and harmless blocked-state receiving route. No permanent roof source has been changed.
+
 ## Specific design decision and tests before selection
 
 **Prefer studying removal of the inward roof-water load before further refining temporary court-water bypass hardware.** The transfer is large enough to change the task; it is a more promising architectural simplification than an inaccessible second gutter. It also trades the problem for exterior collector capacity, site access, the higher court rim and roof system requirements, so it is a *challenger*, not a preapproved solution. ROF owns the new coupled roof/edge/corner section, HAD the courtyard/elevations/daylight, STR the span and supports, MAT the complete roof-material assembly, OAS its thresholds, RWT the outer gutters/receivers and court outfall, and DPL the lawful independent exterior receiving territory.
