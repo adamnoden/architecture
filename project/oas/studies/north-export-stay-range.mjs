@@ -83,13 +83,41 @@ export function authoredAngleAtMaximumMm(maxLengthMm=basis.documentedTravelMm[1]
   }
   return (lo+hi)/2;
 }
+// The first few degrees can CONTRACT the chosen stay, even if 70° extends it.
+// Solve the stationary pivot-distance derivative within the 0–90° trial.
+export function authoredMinimumTravel() {
+  const m=basis.leafPivotOffsetMm;
+  const d=basis.horizontalPivotOffsetMm;
+  const n=basis.normalPivotOffsetMm;
+  const derivative=a=>{
+    const dx=-(m+d)+m*Math.cos(a)-n*Math.sin(a);
+    const dy=m*Math.sin(a)+n*(Math.cos(a)-1);
+    const dxPrime=-m*Math.sin(a)-n*Math.cos(a);
+    const dyPrime=m*Math.cos(a)-n*Math.sin(a);
+    return dx*dxPrime+dy*dyPrime;
+  };
+  assert(derivative(0)<0&&derivative(Math.PI/2)>0,
+    'no longer one interior minimum: re-evaluate pivot geometry');
+  let lo=0,hi=Math.PI/2;
+  for(let k=0;k<70;k++) {
+    const a=(lo+hi)/2;
+    if(derivative(a)>0) hi=a;
+    else lo=a;
+  }
+  const angleDeg=(lo+hi)/2*180/Math.PI;
+  return {angleDeg,lengthMm:authoredLengthMm(angleDeg)};
+}
 export function boundedDecision() {
   readSelectedOccurrence();
+  const minimum=authoredMinimumTravel();
   const within70=authoredLengthMm(70);
   const old80=authoredLengthMm(80);
   const limit=authoredAngleAtMaximumMm();
   return {
     basis,
+    minimumStayLengthMm:minimum.lengthMm,
+    minimumStayAngleDeg:minimum.angleDeg,
+    nominalContractionMarginAboveMinimumMm:minimum.lengthMm-basis.documentedTravelMm[0],
     trial70LengthMm:within70,
     trial70NominalExtensionRemainingMm:basis.documentedTravelMm[1]-within70,
     old80LengthMm:old80,
