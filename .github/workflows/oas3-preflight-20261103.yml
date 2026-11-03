@@ -1,0 +1,35 @@
+# One-shot read-only canonical OAS-NORTH-EXPORT generation-3 merge preflight.
+# Temporary helper branch only; archive under delete-me and never merge to main.
+name: OAS-NORTH-EXPORT generation-3 publication preflight
+on:
+  push:
+    branches:
+      - work/oas3-preflight-20261103
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact OAS candidate
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6600126599
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Canonical OAS-NORTH-EXPORT generation-3 merge preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node --import tsx scripts/project-claims.ts merge-check OAS-NORTH-EXPORT \
+            --lease-id f68a00a1-145f-4b9e-9b4b-269a02e1008e \
+            --generation 3 \
+            --branch work/mvb-chat-6600126599 \
+            --head 1b29965f219497a9c8194919e15855d352bae37a \
+            --format json
