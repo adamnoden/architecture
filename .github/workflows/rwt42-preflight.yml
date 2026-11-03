@@ -1,0 +1,36 @@
+# One-shot read-only RWT-06 generation-42 canonical publication preflight.
+name: RWT-06 generation-42 publication preflight
+on:
+  push:
+    branches:
+      - work/rwt42-preflight-20261103
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6613543285
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Fresh RWT-06 generation-42 canonical merge preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node --import tsx scripts/project-claims.ts merge-check RWT-06 \
+            --lease-id 256bbb04-3558-4739-afe3-37f41e45be35 \
+            --generation 42 \
+            --branch work/mvb-chat-6613543285 \
+            --head c82b494388e1298d888a19fb2135effcf205cff7 \
+            --format json
+
+# Run only after exact-head PR validation; merge-check remains read-only.
