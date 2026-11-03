@@ -9,8 +9,8 @@
     "label": "issue-comment-6613954125"
   },
   "claimedAt": "2026-11-03T19:53:37.000Z",
-  "heartbeatAt": "2026-11-03T19:53:37.000Z",
-  "expiresAt": "2026-11-03T20:38:37.000Z",
+  "heartbeatAt": "2026-11-03T20:00:22.000Z",
+  "expiresAt": "2026-11-03T20:45:22.000Z",
   "branch": "work/mvb-chat-6613954125",
   "predecessor": {
     "leaseId": "256bbb04-3558-4739-afe3-37f41e45be35",
@@ -33,5 +33,11 @@
       "next": "Verify exact-head CI; run canonical preflight on helper, expected-head merge; release and dispatch.",
       "blocker": "No measured site receiving head, first-harm level, flood escape or safe walking/maintenance acceptance."
     }
+  },
+  "pr": 1316,
+  "checkpoint": {
+    "evidence": "PR #1316 head ff7ed068: pinned HAD/MAT water+dry corridor no-fit, joined outward-roof counterfactual and 5 tests; RWT-06 stays planned.",
+    "next": "Verify exact-head full CI; run fresh lease-bound merge preflight; merge and archive helper outside main, then release and dispatch.",
+    "blocker": "Neither a selected outward roof nor full-duty wet/dry clearance, first-harm and site receiving evidence exist."
   }
 }
