@@ -21,7 +21,7 @@ test('the joined section uses pinned HAD/MAT geometry and never chooses a real s
   near(s.nominalLoggiaSlope, 0.01);
   assert.equal(typeof v.source.had, 'string');
   assert.equal(typeof v.source.mat, 'string');
-  assert.match(v.authority, /not a particular London plot is selected/);
+  assert.match(v.authority, /nor a particular London plot is selected/);
   assert(!Object.hasOwn(v, 'selectedSiteGrade'));
 });
 
