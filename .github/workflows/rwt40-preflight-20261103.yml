@@ -32,3 +32,5 @@ jobs:
             --branch work/mvb-chat-6601488674 \
             --head 49224ed5bfb189b5129bdb0657d6b823b4398fa2 \
             --format json
+
+# Fresh post-CI canonical publication preflight; exact PR head remains fixed.
