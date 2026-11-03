@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 43,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "abeb9739-7989-4026-bcec-7b08ce567bb8",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6613954125"
   },
   "claimedAt": "2026-11-03T19:53:37.000Z",
-  "heartbeatAt": "2026-11-03T20:00:22.000Z",
-  "expiresAt": "2026-11-03T20:45:22.000Z",
+  "heartbeatAt": "2026-11-03T20:05:58.000Z",
+  "expiresAt": "2026-11-03T20:05:58.000Z",
   "branch": "work/mvb-chat-6613954125",
   "predecessor": {
     "leaseId": "256bbb04-3558-4739-afe3-37f41e45be35",
@@ -39,5 +39,7 @@
     "evidence": "PR #1316 head ff7ed068: pinned HAD/MAT water+dry corridor no-fit, joined outward-roof counterfactual and 5 tests; RWT-06 stays planned.",
     "next": "Verify exact-head full CI; run fresh lease-bound merge preflight; merge and archive helper outside main, then release and dispatch.",
     "blocker": "Neither a selected outward roof nor full-duty wet/dry clearance, first-harm and site receiving evidence exist."
-  }
+  },
+  "releasedAt": "2026-11-03T20:05:58.000Z",
+  "releaseReason": "handoff"
 }
