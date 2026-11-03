@@ -4,6 +4,7 @@ These are bounded, unadopted RWT comparisons, not selected construction informat
 
 | Study | Owning interpretation | Retained evidence |
 |---|---|---|
+| North full-width daylight apron versus steep relief chute | [Source-bound spatial/grade rejection](../rwt-06-surface-apron.md) | [Source](court-surface-apron.mjs), [tests](court-surface-apron.test.mjs) | 
 | Selected open-loggia event and service attack | [Source reconciliation and adverse result](../rwt-06-open-loggia-event.md) | [Source](open-loggia-event.mjs), [tests](open-loggia-event.test.mjs), [values](open-loggia-event.json), [sheet](open-loggia-event.svg) |
 | East court crossing | [Access and court transition](../rwt-06-access-court-transition.md) | [Source](court-crossing-trial.ts), [values](court-crossing-trial.json), [sheet](court-crossing-trial.svg) |
 | North sleeved crossing | [North carrier comparison](../north-court-carrier.md) | [Source](north-court-carrier.ts), [values](north-court-carrier.json), [sheet](north-court-carrier.svg) |
