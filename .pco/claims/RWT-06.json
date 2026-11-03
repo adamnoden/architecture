@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 38,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e2491cbb-6b56-4b1b-95d6-3c5b7ed7cae2",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6600109825"
   },
   "claimedAt": "2026-11-03T09:34:33.000Z",
-  "heartbeatAt": "2026-11-03T09:42:41.000Z",
-  "expiresAt": "2026-11-03T10:27:41.000Z",
+  "heartbeatAt": "2026-11-03T09:47:20.000Z",
+  "expiresAt": "2026-11-03T09:47:20.000Z",
   "branch": "work/mvb-chat-6600109825",
   "predecessor": {
     "leaseId": "c07d62dc-f7b0-45a7-a0a2-0c96db2b8896",
@@ -39,5 +39,7 @@
     "evidence": "PR1302 head fc552d8: pinned selected HAD/MAT three orthogonal 1200mm second daylight-exit envelopes; west stair, east plant, south protected entry conflicts; new RWT regression plus owning decision.",
     "next": "Observe exact-head full CI, run fresh canonical RWT-06 merge-check, expected-head merge if earned; dispose helper, release and re-dispatch.",
     "blocker": "No approved second courtyard exit or whole-mouth/high-tailwater safety proof; actual head/first harm, plot receiving and HAD/STR/OAS redesign still open."
-  }
+  },
+  "releasedAt": "2026-11-03T09:47:20.000Z",
+  "releaseReason": "handoff"
 }
