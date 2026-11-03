@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 39,
-  "state": "released",
-  "leaseId": "e3dc7461-95ee-4ecd-83ff-f592aa263470",
+  "generation": 40,
+  "state": "claimed",
+  "leaseId": "38370b96-0d62-47ff-ac38-3b5b0faf080c",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6601017602"
+    "label": "issue-comment-6601488674"
   },
-  "claimedAt": "2026-11-03T10:20:52.000Z",
-  "heartbeatAt": "2026-11-03T10:38:17.000Z",
-  "expiresAt": "2026-11-03T10:38:17.000Z",
-  "branch": "work/mvb-chat-6601017602",
+  "claimedAt": "2026-11-03T10:42:42.000Z",
+  "heartbeatAt": "2026-11-03T10:42:42.000Z",
+  "expiresAt": "2026-11-03T11:27:42.000Z",
+  "branch": "work/mvb-chat-6601488674",
   "predecessor": {
-    "leaseId": "e2491cbb-6b56-4b1b-95d6-3c5b7ed7cae2",
-    "generation": 38,
-    "branch": "work/mvb-chat-6600109825",
-    "pr": 1302,
+    "leaseId": "e3dc7461-95ee-4ecd-83ff-f592aa263470",
+    "generation": 39,
+    "branch": "work/mvb-chat-6601017602",
+    "pr": 1308,
     "checkpoint": {
-      "evidence": "PR1302 head fc552d8: pinned selected HAD/MAT three orthogonal 1200mm second daylight-exit envelopes; west stair, east plant, south protected entry conflicts; new RWT regression plus owning decision.",
-      "next": "Observe exact-head full CI, run fresh canonical RWT-06 merge-check, expected-head merge if earned; dispose helper, release and re-dispatch.",
-      "blocker": "No approved second courtyard exit or whole-mouth/high-tailwater safety proof; actual head/first harm, plot receiving and HAD/STR/OAS redesign still open."
+      "evidence": "PR1308 head 5388a77: HAD/MAT source-linked both-terminal 100mm plan miss, selected -600 outlet/-800 receiver 200mm air gap, 447.5/350 rapid relief chute, 216mm/h uniform-flow first-harm comparisons; tested and owning RWT result, lifecycle planned.",
+      "next": "Observe exact-head CI, create fresh canonical generation-39 publication preflight, expected-head merge if passes, archive helper only to delete-me, release and dispatch.",
+      "blocker": "No positive supported N/W/E outlet landing, site flood/first-harm, whole-mouth fail-safe or high-level roof maintenance acceptance."
     }
   },
   "recoverySource": {
-    "leaseId": "e2491cbb-6b56-4b1b-95d6-3c5b7ed7cae2",
-    "generation": 38,
-    "branch": "work/mvb-chat-6600109825",
-    "pr": 1302,
+    "leaseId": "e3dc7461-95ee-4ecd-83ff-f592aa263470",
+    "generation": 39,
+    "branch": "work/mvb-chat-6601017602",
+    "pr": 1308,
     "checkpoint": {
-      "evidence": "PR1302 head fc552d8: pinned selected HAD/MAT three orthogonal 1200mm second daylight-exit envelopes; west stair, east plant, south protected entry conflicts; new RWT regression plus owning decision.",
-      "next": "Observe exact-head full CI, run fresh canonical RWT-06 merge-check, expected-head merge if earned; dispose helper, release and re-dispatch.",
-      "blocker": "No approved second courtyard exit or whole-mouth/high-tailwater safety proof; actual head/first harm, plot receiving and HAD/STR/OAS redesign still open."
+      "evidence": "PR1308 head 5388a77: HAD/MAT source-linked both-terminal 100mm plan miss, selected -600 outlet/-800 receiver 200mm air gap, 447.5/350 rapid relief chute, 216mm/h uniform-flow first-harm comparisons; tested and owning RWT result, lifecycle planned.",
+      "next": "Observe exact-head CI, create fresh canonical generation-39 publication preflight, expected-head merge if passes, archive helper only to delete-me, release and dispatch.",
+      "blocker": "No positive supported N/W/E outlet landing, site flood/first-harm, whole-mouth fail-safe or high-level roof maintenance acceptance."
     }
-  },
-  "pr": 1308,
-  "checkpoint": {
-    "evidence": "PR1308 head 5388a77: HAD/MAT source-linked both-terminal 100mm plan miss, selected -600 outlet/-800 receiver 200mm air gap, 447.5/350 rapid relief chute, 216mm/h uniform-flow first-harm comparisons; tested and owning RWT result, lifecycle planned.",
-    "next": "Observe exact-head CI, create fresh canonical generation-39 publication preflight, expected-head merge if passes, archive helper only to delete-me, release and dispatch.",
-    "blocker": "No positive supported N/W/E outlet landing, site flood/first-harm, whole-mouth fail-safe or high-level roof maintenance acceptance."
-  },
-  "releasedAt": "2026-11-03T10:38:17.000Z",
-  "releaseReason": "handoff"
+  }
 }
