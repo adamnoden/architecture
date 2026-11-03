@@ -43,6 +43,22 @@ For a hypothetical unobstructed 1800-wide broad crest and negligible approach ve
 
 A high tailwater at −30 independently reaches that same wetting comparison; it does not need a debris dam. The normal cover/metal joint is not a qualified pressure envelope. Do not use the depressed invert or deep solum to infer that backed-up water remains safely contained. A check valve closing the normal route cannot discharge the incoming court rain.
 
+## Coupled mouth obstruction: a bounded rejection envelope (3 November 2026)
+
+The earlier 1800 mm / unobstructed-crest probe says nothing about *simultaneous* debris height and loss of clear width. Use the same source-bound full inner-roof-plus-court **216 mm/h sensitivity, Q = 3.60375 L/s** and the actual −110 mouth / **unqualified −30 pan/DPC join** as a deliberately adverse comparison. For an ideal unobstructed rectangular crest of remaining width `b`, negligible upstream approach velocity, and a stated obstruction rising `h` above the mouth, minimum upstream specific energy above that crest is `Emin = 1.5 × ((Q/b)² / g)^(1/3)`. Use SI units; numerically `Q` in L/s divided by `b` in mm gives unit discharge in m²/s. The *modelled* head separation to the join is `80 − h − Emin` mm.
+
+| Remaining ideal clear width | Minimum specific energy | Separation to −30 with a 60 mm mouth dam |
+|---:|---:|---:|
+| 1800 mm | 11.13 mm | **+8.87 mm** |
+| 1200 mm | 14.59 mm | **+5.41 mm** |
+| 900 mm | 17.67 mm | **+2.33 mm** |
+| 600 mm | 23.15 mm | **−3.15 mm** |
+| 300 mm | 36.75 mm | **−16.75 mm** |
+
+**Negative result:** even this generous ideal, low-approach-flow control cannot maintain an upstream hydrostatic stage below the −30 comparison when a 60 mm obstruction coincides with only 600 mm remaining width; its minimum required stage is **−26.85 mm**. Separately, a **70 mm dam with the full 1800 mm opening** already has a negative **−1.13 mm** comparison. No allowance for tolerances, inlets, splash, contraction, losses or common downstream tailwater was included. These are independently useful reject controls, not forecasts that those debris arrangements will occur. Their actual likelihood and geometry need evidence.
+
+Positive entries are **not design passes**. This ideal broad-crest, negligible-approach model cannot predict the actual inlet jet, water-surface profile, fast approach, local ponding, debris mat, dynamic head, first leaking joint or external receiving head; it is not a universal hydraulic impossibility theorem. More importantly, the −30 join is still an *unqualified comparator*, not a proven watertight level or permitted contact. The useful design instruction is to **remove the compound vulnerability by passive topology/first-harm separation**, or to produce complete event/head/obstruction and test evidence for a replacement arrangement—not to specify a nominal debris clearance from the positive numbers. [Source-bound formula and adverse regression](studies/open-loggia-event.test.mjs) now run in repository health.
+
 ## Finite accumulation exposes the consequence; it does not give response time
 
 The executable study integrates positive depth above the selected linear floor strips. At a hydrostatic comparison level −30:
