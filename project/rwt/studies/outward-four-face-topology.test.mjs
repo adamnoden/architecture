@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {buildOutwardRoofFourFace,roofHeightAt} from './outward-four-face-topology.mjs';
+import {readInputs} from './open-loggia-event.mjs';
+import {compareOutwardOnlyRoof} from './outward-court-load.mjs';
 const near=(a,b,eps=1e-8)=>assert(Math.abs(a-b)<eps,`${a} != ${b}`);
 
 test('annular four-face mesh conserves exterior catchment with no invented fifth roof face',()=>{
@@ -48,6 +50,28 @@ test('four open planar faces fall strictly outward without a valley in their int
  }
  assert(d.warning.includes('Zero valleys'));
 });
+test('selected GROUND plant is not an invented attic-height requirement',()=>{
+ const selected=readInputs().house.model;
+ const plantDoors=selected.protectedRoute.doors.filter(d=>d.id==='PLANT');
+ assert.equal(plantDoors.length,1);
+ assert.equal(plantDoors[0].level,'GROUND');
+ for(const occurrence of [
+  'plant-water-reserve','plant-riser','plant-primary-buffer-round-bounding600','plant-controls'
+ ])assert(Object.hasOwn(selected.groundFurniture,occurrence),`ground plant occurrence missing: ${occurrence}`);
+ assert(selected.servicesInterface.plant.buffer.station.length===4);
+ assert(selected.servicesInterface.plant.cylinder.station.length===4);
+ assert.match(selected.roofDevelopment.scope,/No freeatticstorage/);
+ const currentRidgeMm=selected.exterior.ridge;
+ const envelopeMaxPitchDeg=compareOutwardOnlyRoof().geometry.maxOutwardPitchToNotExceedCurrentRidgeDeg;
+ const roof=buildOutwardRoofFourFace(undefined,envelopeMaxPitchDeg);
+ near(roof.innerHighMm,currentRidgeMm,1e-6);
+ near(roof.rawAtticMaxMm,currentRidgeMm-selected.sections.atticDatum,1e-6);
+ assert(roof.rawAtticMaxMm<2000);
+ assert(roof.minPitchFor2000MmRawAtInnerEdgeDeg>envelopeMaxPitchDeg);
+ // This is a conflict only if a new owner brief REQUIRES usable attic height.
+ assert.match(roof.authority,/No ROF\/HAD roof adoption/);
+});
+
 test('high-court roof ridge trades against the selected attic datum, not free service space',()=>{
  const shallow=buildOutwardRoofFourFace(undefined,5);
  const medium=buildOutwardRoofFourFace(undefined,12);
