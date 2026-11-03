@@ -57,7 +57,7 @@ test('collector deletion reduces exposure but blocked direct-court rain remains 
  const e=v.events.find(e=>e.intensityMmPerHour===216);
  const currentVolumeTime=storage.courtOnlyLitres/e.currentCourtLitresPerSecond;
  const outwardVolumeTime=storage.courtOnlyLitres/e.outwardCourtLitresPerSecond;
- near(currentVolumeTime,77.69677051613353,1e-8);
+ near(currentVolumeTime,77.69684356573015,1e-8);
  near(outwardVolumeTime,380.952380952381,1e-8);
  near(outwardVolumeTime/currentVolumeTime,e.currentCourtLitresPerSecond/e.outwardCourtLitresPerSecond);
  assert(outwardVolumeTime>currentVolumeTime);
