@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 41,
-  "state": "released",
-  "leaseId": "9a85a071-d730-4daf-856f-c9d07ae59237",
+  "generation": 42,
+  "state": "claimed",
+  "leaseId": "256bbb04-3558-4739-afe3-37f41e45be35",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6611092280"
+    "label": "issue-comment-6613543285"
   },
-  "claimedAt": "2026-11-03T17:37:29.000Z",
-  "heartbeatAt": "2026-11-03T17:50:02.000Z",
-  "expiresAt": "2026-11-03T17:50:02.000Z",
-  "branch": "work/mvb-chat-6611092280",
+  "claimedAt": "2026-11-03T19:33:28.000Z",
+  "heartbeatAt": "2026-11-03T19:33:28.000Z",
+  "expiresAt": "2026-11-03T20:18:28.000Z",
+  "branch": "work/mvb-chat-6613543285",
   "predecessor": {
-    "leaseId": "38370b96-0d62-47ff-ac38-3b5b0faf080c",
-    "generation": 40,
-    "branch": "work/mvb-chat-6601488674",
-    "pr": 1310,
+    "leaseId": "9a85a071-d730-4daf-856f-c9d07ae59237",
+    "generation": 41,
+    "branch": "work/mvb-chat-6611092280",
+    "pr": 1312,
     "checkpoint": {
-      "evidence": "PR1310 head 49224ed5bfb189b5129bdb0657d6b823b4398fa2: source-pinned HAD/MAT north daylight apron vs selected steep chute, 100mm max gross dry side strip, 750mm apron, -160/-800 discontinuity, four tests; RWT-06 stays planned.",
-      "next": "Observe exact-head full CI; perform fresh canonical RWT-06 generation-40 merge preflight on isolated helper; expected-head merge only if both pass, dispose helper and release lease.",
-      "blocker": "No selected supported terminal/access/independent site flood escape; whole mouth, first harm and high-level collector renewal remain unqualified."
+      "evidence": "PR #1312 head 41cba789: source-bound full-width gravity court-route study and five adverse tests.",
+      "next": "Verify exact-head CI and preflight; merge, release, dispatch.",
+      "blocker": "Site receiving levels, first harm and full-mouth failure unproved."
     }
   },
   "recoverySource": {
-    "leaseId": "38370b96-0d62-47ff-ac38-3b5b0faf080c",
-    "generation": 40,
-    "branch": "work/mvb-chat-6601488674",
-    "pr": 1310,
+    "leaseId": "9a85a071-d730-4daf-856f-c9d07ae59237",
+    "generation": 41,
+    "branch": "work/mvb-chat-6611092280",
+    "pr": 1312,
     "checkpoint": {
-      "evidence": "PR1310 head 49224ed5bfb189b5129bdb0657d6b823b4398fa2: source-pinned HAD/MAT north daylight apron vs selected steep chute, 100mm max gross dry side strip, 750mm apron, -160/-800 discontinuity, four tests; RWT-06 stays planned.",
-      "next": "Observe exact-head full CI; perform fresh canonical RWT-06 generation-40 merge preflight on isolated helper; expected-head merge only if both pass, dispose helper and release lease.",
-      "blocker": "No selected supported terminal/access/independent site flood escape; whole mouth, first harm and high-level collector renewal remain unqualified."
+      "evidence": "PR #1312 head 41cba789: source-bound full-width gravity court-route study and five adverse tests.",
+      "next": "Verify exact-head CI and preflight; merge, release, dispatch.",
+      "blocker": "Site receiving levels, first harm and full-mouth failure unproved."
     }
-  },
-  "pr": 1312,
-  "checkpoint": {
-    "evidence": "PR #1312 head 41cba789: source-bound full-width gravity court-route study and five adverse tests.",
-    "next": "Verify exact-head CI and preflight; merge, release, dispatch.",
-    "blocker": "Site receiving levels, first harm and full-mouth failure unproved."
-  },
-  "releasedAt": "2026-11-03T17:50:02.000Z",
-  "releaseReason": "handoff"
+  }
 }
