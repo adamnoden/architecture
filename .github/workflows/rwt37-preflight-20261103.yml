@@ -32,3 +32,5 @@ jobs:
             --branch work/mvb-chat-6599536144 \
             --head b0a5071c301bd27be3f4d01af884eae5968b396c \
             --format json
+
+# Re-run only after successful exact-head full validation; native merge-check remains read-only.
