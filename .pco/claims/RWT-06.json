@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 36,
-  "state": "released",
-  "leaseId": "2b038960-c07a-4aa8-8581-b8315f0d390b",
+  "generation": 37,
+  "state": "claimed",
+  "leaseId": "c07d62dc-f7b0-45a7-a0a2-0c96db2b8896",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6599304915"
+    "label": "issue-comment-6599536144"
   },
-  "claimedAt": "2026-11-03T08:51:04.000Z",
-  "heartbeatAt": "2026-11-03T09:02:28.000Z",
-  "expiresAt": "2026-11-03T09:02:28.000Z",
-  "branch": "work/mvb-chat-6599304915",
+  "claimedAt": "2026-11-03T09:04:09.000Z",
+  "heartbeatAt": "2026-11-03T09:04:09.000Z",
+  "expiresAt": "2026-11-03T09:49:09.000Z",
+  "branch": "work/mvb-chat-6599536144",
   "predecessor": {
-    "leaseId": "75f44ee6-1b01-463a-bb08-3046a6730743",
-    "generation": 35,
-    "branch": "work/mvb-chat-6599038808",
-    "pr": 1296,
+    "leaseId": "2b038960-c07a-4aa8-8581-b8315f0d390b",
+    "generation": 36,
+    "branch": "work/mvb-chat-6599304915",
+    "pr": 1298,
     "checkpoint": {
-      "evidence": "PR1296 head c4f1b5a: exact four-plane outward pitched roof geometry, 4 hips/32.9375m2 each, tested exterior descent plus selected attic datum adverse feasibility; RWT-06 remains planned.",
-      "next": "Exact-head PR CI, native canonical merge preflight, expected-head merge, dispose helper, release. Then ROF/HAD/STR must reconcile actual roof/loft/access before further RWT selection.",
-      "blocker": "No adopted roof/loft section, matched pitched covering, high inner rim/weathering, safe independent exterior outfall or first-harm proof."
+      "evidence": "PR1298 head 5e011753fcdd628c67683f8106af6eeb2a070b68: conditional court-gutter deletion, retained direct-rain failure and source-bound 280L/216mmh regression. No roof or packet adoption.",
+      "next": "Observe exact-head full CI for PR1298, establish fresh canonical RWT-06 publication preflight on capable runner, merge with expected head if earned; then release and dispatch again.",
+      "blocker": "Selected inward ring retained; safe independent court overflow and exterior receiving/site, roof/weathering access, actual ROF/HAD adoption unresolved."
     }
   },
   "recoverySource": {
-    "leaseId": "75f44ee6-1b01-463a-bb08-3046a6730743",
-    "generation": 35,
-    "branch": "work/mvb-chat-6599038808",
-    "pr": 1296,
+    "leaseId": "2b038960-c07a-4aa8-8581-b8315f0d390b",
+    "generation": 36,
+    "branch": "work/mvb-chat-6599304915",
+    "pr": 1298,
     "checkpoint": {
-      "evidence": "PR1296 head c4f1b5a: exact four-plane outward pitched roof geometry, 4 hips/32.9375m2 each, tested exterior descent plus selected attic datum adverse feasibility; RWT-06 remains planned.",
-      "next": "Exact-head PR CI, native canonical merge preflight, expected-head merge, dispose helper, release. Then ROF/HAD/STR must reconcile actual roof/loft/access before further RWT selection.",
-      "blocker": "No adopted roof/loft section, matched pitched covering, high inner rim/weathering, safe independent exterior outfall or first-harm proof."
+      "evidence": "PR1298 head 5e011753fcdd628c67683f8106af6eeb2a070b68: conditional court-gutter deletion, retained direct-rain failure and source-bound 280L/216mmh regression. No roof or packet adoption.",
+      "next": "Observe exact-head full CI for PR1298, establish fresh canonical RWT-06 publication preflight on capable runner, merge with expected head if earned; then release and dispatch again.",
+      "blocker": "Selected inward ring retained; safe independent court overflow and exterior receiving/site, roof/weathering access, actual ROF/HAD adoption unresolved."
     }
-  },
-  "pr": 1298,
-  "checkpoint": {
-    "evidence": "PR1298 head 5e011753fcdd628c67683f8106af6eeb2a070b68: conditional court-gutter deletion, retained direct-rain failure and source-bound 280L/216mmh regression. No roof or packet adoption.",
-    "next": "Observe exact-head full CI for PR1298, establish fresh canonical RWT-06 publication preflight on capable runner, merge with expected head if earned; then release and dispatch again.",
-    "blocker": "Selected inward ring retained; safe independent court overflow and exterior receiving/site, roof/weathering access, actual ROF/HAD adoption unresolved."
-  },
-  "releasedAt": "2026-11-03T09:02:28.000Z",
-  "releaseReason": "handoff"
+  }
 }
