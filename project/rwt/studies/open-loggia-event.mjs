@@ -37,6 +37,20 @@ export function uniformDepth(q,b,n,slope) {
   }
   return 1000*(low+high)/2;
 }
+// Necessary (not sufficient) ideal broad-crest screen for the selected court mouth.
+// Q [L/s] / width [mm] numerically equals unit discharge [m²/s].
+export function idealCrestSpecificEnergyMm(flowLitresPerSecond,clearWidthMm) {
+  assert(Number.isFinite(flowLitresPerSecond)&&flowLitresPerSecond>=0);
+  assert(Number.isFinite(clearWidthMm)&&clearWidthMm>0);
+  const unitDischarge=flowLitresPerSecond/clearWidthMm;
+  return 1500*Math.cbrt(unitDischarge**2/9.81);
+}
+export function idealCrestJoinSeparationMm({flowLitresPerSecond,clearWidthMm,crestMm,vulnerableJoinMm}) {
+  assert(Number.isFinite(crestMm)&&Number.isFinite(vulnerableJoinMm));
+  // A nonpositive result falsifies a below-joint claim even without contraction,
+  // approach, splash, roughness, backwater, wind or inlet losses.
+  return vulnerableJoinMm-crestMm-idealCrestSpecificEnergyMm(flowLitresPerSecond,clearWidthMm);
+}
 export function build(source=readInputs()) {
   const h=source.house.model,m=source.envelope.model,w=m.protectedWater;
   assert.equal(h.selection.identity,'HAD-B-OPEN-LOGGIA-2026-11-02');
