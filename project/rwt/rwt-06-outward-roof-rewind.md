@@ -65,6 +65,27 @@ For this unchanged +6900 datum, achieving even **2000 mm of raw height at the hi
 
 This geometric field proves **a viable continuous surface topology to develop**, not a buildable roof. ROF/STR/MAT must author the hip joint, continuous inner high-line cap/weathering, thermal and structural assembly, real member depths and maintenance/roof-opening routes. HAD must accept both the changed court silhouette and the genuinely usable attic volume. Every exterior edge still needs an accessible collector and harmless blocked-state receiving route. No permanent roof source has been changed.
 
+## Service deletion is conditional; the court's water risk survives
+
+The outward four-face surface has **no ordinary roof-facing inward low edge**. If ROF/HAD eventually adopt that exact drainage topology, the court would have a **high weathered rim, not a court-side rainwater collector**. That would retire the current selected-ring *court gutter* clearing, full receiver withdrawal and live roof-to-court temporary bypass duties **because the component and its flow no longer exist**. It would **not** retire inspection and repair of the high rim, hips, weathering or the roof itself. Nor would it allow a high-level access route to be deleted without ROF/STR/HAD proving how those remaining tasks are done. This is a **conditional change in design obligations**, not a declaration that the selected +7100 inner receiver has already been removed.
+
+| Distinct state at 216 mm/h wall-line sensitivity | Current selected inward/outward ring | Outward-only four-face challenger |
+|---|---:|---:|
+| Court inflow with all selected inner roof water discharged into it / challenger roof shedding intact | 3.60375 L/s | 0.735 L/s |
+| Exterior roof-water burden | 5.03625 L/s | 7.905 L/s |
+| Court-only ideal empty geometric pool to the **unqualified** −30 join under a completely blocked outlet | 280 L | 280 L |
+| Constant-inflow volume÷rate equivalent for that 280 L | **77.7 s** | **381.0 s** |
+
+The pool is computed from the pinned HAD/MAT sloping-court strips, not from a fictitious 80 mm deep square basin. These two inflow columns are **different defined failure/operation cases**, not simultaneous design capacities or forecasts. They deliberately illustrate that removing roof-to-court transfer increases the *ideal* blockage-volume timescale by 4.9× without creating a passive exit. They assume an initially empty, completely isolated court-only pool and constant vertical rain, with no incoming terrace/side water, ponding dynamics, capture losses, surface jetting, wind, existing water or leakage. The −30 join is **not a proven allowable level or first leak**. In particular, **381 seconds is not safe detention or an evacuation/maintenance response window**. The exact arithmetic is regression-checked against the source-bound [open-loggia event](studies/open-loggia-event.mjs) and [roof-load comparison](studies/outward-court-load.mjs).
+
+A more forgiving roof changes the *burden* of proof, not the minimum safety topology:
+
+1. **No court-side roof collector** is earned only after the adopted ROF/HAD/STR/MAT sections demonstrate continuous outward falls, all hips and high-edge weathering, actual exterior interception and safe external overflow. Do not spend more design effort on detachable inner gutters for a roof family that may delete them.
+2. **Court escape remains indispensable.** Direct rain still enters the sloping court. A blanket across the intake and loggia mouth, or common high receiving water, still offers no established harmless outlet. Reduction of inflow is not a second independent path; re-test operating water level against an *established* first-susceptible boundary with head, debris, splash and safe exterior relief.
+3. **Exterior eaves inherit every displaced litre.** Each of the four ideal 32.9375 m² faces contributes 1.97625 L/s to its own edge at this sensitivity; a gutter blocked over one face must shed away from vulnerable fabric and foundations into a physically available receiving territory, independent of the court's failed-state receiver. Outer roof access and actual plot clearance still need proof.
+
+**Decision:** develop the outward-only collector-deletion alternative as an architectural scope reduction, not a qualified drainage system. Keep the present inner-court gutter maintenance obligation on the **selected** roof until that architectural adoption and joined rainwater/source evidence occur. RWT-06 stays planned.
+
 ## Specific design decision and tests before selection
 
 **Prefer studying removal of the inward roof-water load before further refining temporary court-water bypass hardware.** The transfer is large enough to change the task; it is a more promising architectural simplification than an inaccessible second gutter. It also trades the problem for exterior collector capacity, site access, the higher court rim and roof system requirements, so it is a *challenger*, not a preapproved solution. ROF owns the new coupled roof/edge/corner section, HAD the courtyard/elevations/daylight, STR the span and supports, MAT the complete roof-material assembly, OAS its thresholds, RWT the outer gutters/receivers and court outfall, and DPL the lawful independent exterior receiving territory.
