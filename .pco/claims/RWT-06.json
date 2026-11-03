@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 35,
-  "state": "released",
-  "leaseId": "75f44ee6-1b01-463a-bb08-3046a6730743",
+  "generation": 36,
+  "state": "claimed",
+  "leaseId": "2b038960-c07a-4aa8-8581-b8315f0d390b",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6599038808"
+    "label": "issue-comment-6599304915"
   },
-  "claimedAt": "2026-11-03T08:36:11.000Z",
-  "heartbeatAt": "2026-11-03T08:47:12.000Z",
-  "expiresAt": "2026-11-03T08:47:12.000Z",
-  "branch": "work/mvb-chat-6599038808",
+  "claimedAt": "2026-11-03T08:51:04.000Z",
+  "heartbeatAt": "2026-11-03T08:51:04.000Z",
+  "expiresAt": "2026-11-03T09:36:04.000Z",
+  "branch": "work/mvb-chat-6599304915",
   "predecessor": {
-    "leaseId": "c336dc3f-8659-4122-bd72-e67268b68de4",
-    "generation": 34,
-    "branch": "work/mvb-chat-6598789898",
-    "pr": 1294,
+    "leaseId": "75f44ee6-1b01-463a-bb08-3046a6730743",
+    "generation": 35,
+    "branch": "work/mvb-chat-6599038808",
+    "pr": 1296,
     "checkpoint": {
-      "evidence": "PR1294 head b7b76996: selected HAD-B roof water diversion comparator, source-bound geometry/load tests, outward pitch elevation trade, current RWT programme; no selection.",
-      "next": "Observe exact-head full CI, run native canonical RWT-06 merge-check on separate one-shot helper, expected-head merge, clean proof helper and release.",
-      "blocker": "Outward roof source/assembly, court first-harm/safe spill, exterior independent receiving/site and service access remain unproved; RWT-06 planned."
+      "evidence": "PR1296 head c4f1b5a: exact four-plane outward pitched roof geometry, 4 hips/32.9375m2 each, tested exterior descent plus selected attic datum adverse feasibility; RWT-06 remains planned.",
+      "next": "Exact-head PR CI, native canonical merge preflight, expected-head merge, dispose helper, release. Then ROF/HAD/STR must reconcile actual roof/loft/access before further RWT selection.",
+      "blocker": "No adopted roof/loft section, matched pitched covering, high inner rim/weathering, safe independent exterior outfall or first-harm proof."
     }
   },
   "recoverySource": {
-    "leaseId": "c336dc3f-8659-4122-bd72-e67268b68de4",
-    "generation": 34,
-    "branch": "work/mvb-chat-6598789898",
-    "pr": 1294,
+    "leaseId": "75f44ee6-1b01-463a-bb08-3046a6730743",
+    "generation": 35,
+    "branch": "work/mvb-chat-6599038808",
+    "pr": 1296,
     "checkpoint": {
-      "evidence": "PR1294 head b7b76996: selected HAD-B roof water diversion comparator, source-bound geometry/load tests, outward pitch elevation trade, current RWT programme; no selection.",
-      "next": "Observe exact-head full CI, run native canonical RWT-06 merge-check on separate one-shot helper, expected-head merge, clean proof helper and release.",
-      "blocker": "Outward roof source/assembly, court first-harm/safe spill, exterior independent receiving/site and service access remain unproved; RWT-06 planned."
+      "evidence": "PR1296 head c4f1b5a: exact four-plane outward pitched roof geometry, 4 hips/32.9375m2 each, tested exterior descent plus selected attic datum adverse feasibility; RWT-06 remains planned.",
+      "next": "Exact-head PR CI, native canonical merge preflight, expected-head merge, dispose helper, release. Then ROF/HAD/STR must reconcile actual roof/loft/access before further RWT selection.",
+      "blocker": "No adopted roof/loft section, matched pitched covering, high inner rim/weathering, safe independent exterior outfall or first-harm proof."
     }
-  },
-  "pr": 1296,
-  "checkpoint": {
-    "evidence": "PR1296 head c4f1b5a: exact four-plane outward pitched roof geometry, 4 hips/32.9375m2 each, tested exterior descent plus selected attic datum adverse feasibility; RWT-06 remains planned.",
-    "next": "Exact-head PR CI, native canonical merge preflight, expected-head merge, dispose helper, release. Then ROF/HAD/STR must reconcile actual roof/loft/access before further RWT selection.",
-    "blocker": "No adopted roof/loft section, matched pitched covering, high inner rim/weathering, safe independent exterior outfall or first-harm proof."
-  },
-  "releasedAt": "2026-11-03T08:47:12.000Z",
-  "releaseReason": "handoff"
+  }
 }
