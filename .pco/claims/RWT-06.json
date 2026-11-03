@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 34,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "c336dc3f-8659-4122-bd72-e67268b68de4",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6598789898"
   },
   "claimedAt": "2026-11-03T08:21:42.000Z",
-  "heartbeatAt": "2026-11-03T08:28:56.000Z",
-  "expiresAt": "2026-11-03T09:13:56.000Z",
+  "heartbeatAt": "2026-11-03T08:35:09.000Z",
+  "expiresAt": "2026-11-03T08:35:09.000Z",
   "branch": "work/mvb-chat-6598789898",
   "predecessor": {
     "leaseId": "9f731aa0-163c-4555-bb62-53ae4bead40c",
@@ -39,5 +39,7 @@
     "evidence": "PR1294 head b7b76996: selected HAD-B roof water diversion comparator, source-bound geometry/load tests, outward pitch elevation trade, current RWT programme; no selection.",
     "next": "Observe exact-head full CI, run native canonical RWT-06 merge-check on separate one-shot helper, expected-head merge, clean proof helper and release.",
     "blocker": "Outward roof source/assembly, court first-harm/safe spill, exterior independent receiving/site and service access remain unproved; RWT-06 planned."
-  }
+  },
+  "releasedAt": "2026-11-03T08:35:09.000Z",
+  "releaseReason": "handoff"
 }
