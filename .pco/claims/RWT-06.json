@@ -9,8 +9,8 @@
     "label": "issue-comment-6598526150"
   },
   "claimedAt": "2026-11-03T08:06:19.000Z",
-  "heartbeatAt": "2026-11-03T08:06:19.000Z",
-  "expiresAt": "2026-11-03T08:51:19.000Z",
+  "heartbeatAt": "2026-11-03T08:16:48.000Z",
+  "expiresAt": "2026-11-03T09:01:48.000Z",
   "branch": "work/mvb-chat-6598526150",
   "predecessor": {
     "leaseId": "639837a1-d489-4c4f-8279-e0bd6126442c",
@@ -33,5 +33,11 @@
       "next": "Observe complete head CI, fresh canonical preflight, expected-head merge, handoff release and disposal proof cleanup.",
       "blocker": "Actual independent receiving, rainwater/first-harm, installed roof, scaffold/access/egress and real plot/rights remain unearned; node stays planned."
     }
+  },
+  "pr": 1292,
+  "checkpoint": {
+    "evidence": "PR1292 head 716c787f: source-bound combined mouth-dam and reduced-clear-width failure control with new RWT test suite in canonical CI; RWT-06 planned.",
+    "next": "Observe exact-head CI, run fresh RWT-06 canonical merge-check, expected-head merge, release and dispatch again.",
+    "blocker": "Actual roof/court full-duty intake, receiver levels, first-harm and high-level maintenance work not accepted."
   }
 }
