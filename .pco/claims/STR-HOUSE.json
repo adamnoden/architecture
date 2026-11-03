@@ -9,8 +9,8 @@
     "label": "issue-comment-6600110658"
   },
   "claimedAt": "2026-11-03T09:34:43.000Z",
-  "heartbeatAt": "2026-11-03T09:34:43.000Z",
-  "expiresAt": "2026-11-03T10:19:43.000Z",
+  "heartbeatAt": "2026-11-03T09:45:53.000Z",
+  "expiresAt": "2026-11-03T10:30:53.000Z",
   "branch": "work/mvb-chat-6600110658",
   "predecessor": {
     "leaseId": "be3558cb-28fd-4bb9-a73b-747bcc93cb56",
@@ -27,5 +27,11 @@
       "next": "Root observes exact-head CI, runs structural publication preflight and expected-head merge if earned",
       "blocker": "Physical crown/contact, lateral, field, cold-cage and site remain open"
     }
+  },
+  "pr": 1304,
+  "checkpoint": {
+    "evidence": "PR #1304 head 5d6f0ff7: source-bound outward roof high-court reactions and MAT/STR protected-ceiling clash, owning STR study, tests integrated into npm test. HOUSE remains planned.",
+    "next": "Observe full exact-head CI, run fresh native STR-HOUSE canonical publication preflight, expected-head merge, clean helper and release. Then dispatch again if safe.",
+    "blocker": "Actual adopted roof and complete 3D hips/diaphragm/ceiling/fire/structural reactions and independently evidenced first-harm remain unproved; no preferred complete STR-HOUSE selection."
   }
 }
