@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 42,
-  "state": "released",
-  "leaseId": "256bbb04-3558-4739-afe3-37f41e45be35",
+  "generation": 43,
+  "state": "claimed",
+  "leaseId": "abeb9739-7989-4026-bcec-7b08ce567bb8",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6613543285"
+    "label": "issue-comment-6613954125"
   },
-  "claimedAt": "2026-11-03T19:33:28.000Z",
-  "heartbeatAt": "2026-11-03T19:52:27.000Z",
-  "expiresAt": "2026-11-03T19:52:27.000Z",
-  "branch": "work/mvb-chat-6613543285",
+  "claimedAt": "2026-11-03T19:53:37.000Z",
+  "heartbeatAt": "2026-11-03T19:53:37.000Z",
+  "expiresAt": "2026-11-03T20:38:37.000Z",
+  "branch": "work/mvb-chat-6613954125",
   "predecessor": {
-    "leaseId": "9a85a071-d730-4daf-856f-c9d07ae59237",
-    "generation": 41,
-    "branch": "work/mvb-chat-6611092280",
-    "pr": 1312,
+    "leaseId": "256bbb04-3558-4739-afe3-37f41e45be35",
+    "generation": 42,
+    "branch": "work/mvb-chat-6613543285",
+    "pr": 1314,
     "checkpoint": {
-      "evidence": "PR #1312 head 41cba789: source-bound full-width gravity court-route study and five adverse tests.",
-      "next": "Verify exact-head CI and preflight; merge, release, dispatch.",
-      "blocker": "Site receiving levels, first harm and full-mouth failure unproved."
+      "evidence": "PR #1314, current head c82b4943: pinned HAD/MAT garden-grade counterexample, four source-drift and arithmetic tests; RWT-06 planned.",
+      "next": "Verify exact-head CI; run canonical preflight on helper, expected-head merge; release and dispatch.",
+      "blocker": "No measured site receiving head, first-harm level, flood escape or safe walking/maintenance acceptance."
     }
   },
   "recoverySource": {
-    "leaseId": "9a85a071-d730-4daf-856f-c9d07ae59237",
-    "generation": 41,
-    "branch": "work/mvb-chat-6611092280",
-    "pr": 1312,
+    "leaseId": "256bbb04-3558-4739-afe3-37f41e45be35",
+    "generation": 42,
+    "branch": "work/mvb-chat-6613543285",
+    "pr": 1314,
     "checkpoint": {
-      "evidence": "PR #1312 head 41cba789: source-bound full-width gravity court-route study and five adverse tests.",
-      "next": "Verify exact-head CI and preflight; merge, release, dispatch.",
-      "blocker": "Site receiving levels, first harm and full-mouth failure unproved."
+      "evidence": "PR #1314, current head c82b4943: pinned HAD/MAT garden-grade counterexample, four source-drift and arithmetic tests; RWT-06 planned.",
+      "next": "Verify exact-head CI; run canonical preflight on helper, expected-head merge; release and dispatch.",
+      "blocker": "No measured site receiving head, first-harm level, flood escape or safe walking/maintenance acceptance."
     }
-  },
-  "pr": 1314,
-  "checkpoint": {
-    "evidence": "PR #1314, current head c82b4943: pinned HAD/MAT garden-grade counterexample, four source-drift and arithmetic tests; RWT-06 planned.",
-    "next": "Verify exact-head CI; run canonical preflight on helper, expected-head merge; release and dispatch.",
-    "blocker": "No measured site receiving head, first-harm level, flood escape or safe walking/maintenance acceptance."
-  },
-  "releasedAt": "2026-11-03T19:52:27.000Z",
-  "releaseReason": "handoff"
+  }
 }
