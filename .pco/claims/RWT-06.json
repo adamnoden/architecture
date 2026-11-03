@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 42,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "256bbb04-3558-4739-afe3-37f41e45be35",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6613543285"
   },
   "claimedAt": "2026-11-03T19:33:28.000Z",
-  "heartbeatAt": "2026-11-03T19:45:59.000Z",
-  "expiresAt": "2026-11-03T20:30:59.000Z",
+  "heartbeatAt": "2026-11-03T19:52:27.000Z",
+  "expiresAt": "2026-11-03T19:52:27.000Z",
   "branch": "work/mvb-chat-6613543285",
   "predecessor": {
     "leaseId": "9a85a071-d730-4daf-856f-c9d07ae59237",
@@ -39,5 +39,7 @@
     "evidence": "PR #1314, current head c82b4943: pinned HAD/MAT garden-grade counterexample, four source-drift and arithmetic tests; RWT-06 planned.",
     "next": "Verify exact-head CI; run canonical preflight on helper, expected-head merge; release and dispatch.",
     "blocker": "No measured site receiving head, first-harm level, flood escape or safe walking/maintenance acceptance."
-  }
+  },
+  "releasedAt": "2026-11-03T19:52:27.000Z",
+  "releaseReason": "handoff"
 }
