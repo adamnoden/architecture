@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 48,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9340597e-2192-42be-9598-922ca03ba418",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6640237998"
   },
   "claimedAt": "2026-11-04T19:38:04.000Z",
-  "heartbeatAt": "2026-11-04T19:47:29.000Z",
-  "expiresAt": "2026-11-04T20:32:29.000Z",
+  "heartbeatAt": "2026-11-04T19:58:26.000Z",
+  "expiresAt": "2026-11-04T19:58:26.000Z",
   "branch": "work/mvb-chat-6640237998",
   "predecessor": {
     "leaseId": "171cde1a-60af-4589-97de-076d7c15b3b1",
@@ -39,5 +39,7 @@
     "evidence": "PR #1323 head ed79162d: pinned northeast 1200 gross passage, corner-pier / plant-wall clearance screen; five tests.",
     "next": "Verify exact-head full CI and canonical gen48 preflight, merge if safe, release RWT-06 and report remaining architecture gates.",
     "blocker": "True structural corner bearing, two weather openings, plant relocation, first harm and independent site receiver remain unproved."
-  }
+  },
+  "releasedAt": "2026-11-04T19:58:26.000Z",
+  "releaseReason": "handoff"
 }
