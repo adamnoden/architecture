@@ -54,10 +54,10 @@ test('earlier event rates bracket the join without pretending every rain event f
   assert(w(high).idealNoOutletHydrostaticLevelMm>w(mid).idealNoOutletHydrostaticLevelMm);
 });
 
-test('finite volume/rate ratios are NOT safe detention or evacuation clocks',()=>{
-  const v=compareCourtOutletClosure(),rates=v.comparison.syntheticVolumeDivideRateAt216ToUnqualifiedJoinSeconds;
-  near(rates.wallLineCourtM2,280/.735);
-  near(rates.internallyConsistent200MmOverhangExposedCourtM2,280/.5766);
+test('no synthetic detention, leakage or evacuation clock is exported',()=>{
+  const v=compareCourtOutletClosure();
+  assert(!Object.hasOwn(v.comparison,'syntheticVolumeDivideRateAt216ToUnqualifiedJoinSeconds'));
+  assert(!Object.hasOwn(v.comparison,'timeToFirstHarmSeconds'));
   assert.match(v.authority,/NOT a verified first leak/);
   assert(v.failureStates.noSafeDetentionTimeCredited);
   assert(!v.failureStates.realSillFirstLeakQualified);
