@@ -4,6 +4,7 @@ These are bounded, unadopted RWT comparisons, not selected construction informat
 
 | Study | Owning interpretation | Retained evidence |
 |---|---|---|
+| Northeast east-passage corner-pier and plant-wall conflict | [Source-bound architectural negative gate](../rwt-06-east-corner-pier-trap.md) | [Source](court-east-corner-clearance.mjs), [tests](court-east-corner-clearance.test.mjs) |
 | Single open court-to-garden gravity surface (no divided drains) | [Source-bound architectural challenger](../rwt-06-full-width-surface.md) | [Source](court-full-width-surface.mjs), [tests](court-full-width-surface.test.mjs) |
 | North full-width daylight apron versus steep relief chute | [Source-bound spatial/grade rejection](../rwt-06-surface-apron.md) | [Source](court-surface-apron.mjs), [tests](court-surface-apron.test.mjs) | 
 | Selected open-loggia event and service attack | [Source reconciliation and adverse result](../rwt-06-open-loggia-event.md) | [Source](open-loggia-event.mjs), [tests](open-loggia-event.test.mjs), [values](open-loggia-event.json), [sheet](open-loggia-event.svg) |
