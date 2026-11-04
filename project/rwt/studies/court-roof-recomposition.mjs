@@ -153,7 +153,7 @@ export function renderRecompositionSvg(v=recomposeRoofAndCourt()){
   s+='<line x1="14" y1="31" x2="406" y2="31" stroke="#252f35" stroke-width=".6"/>';
   // Panel 1, 4250 mm wing: roof/wall section on y0..4250.
   const xr=x=>24+x/21;
-  const yr=z=>117-(z-6400)/19;
+  const yr=z=>130-(z-6300)/24;
   const a=v.candidate.roofTrial;const b=v.selected;
   s+=t(18,39,'A  /  SOUTH WING ROOF  -  outer eave to high court rim',4.6);
   s+=`<line x1="${xr(0)}" y1="${yr(a.outerEaveMm)}" x2="${xr(4250)}" y2="${yr(a.highCourtRimMm)}" stroke="#2d6975" stroke-width="1.7"/>`;
@@ -171,7 +171,7 @@ export function renderRecompositionSvg(v=recomposeRoofAndCourt()){
   // vertical scale (real fall 164.5 over 8950).
   s+=t(18,142,'B  /  COURT FLOOR -> OPEN NORTH LOGGIA -> CONDITIONAL GARDEN',4.6);
   const X=y=>24+(y-4250)/26;
-  const Y=z=>220-z/1.85;
+  const Y=z=>202-z/3.2;
   let d='';
   for(const [i,p]of v.candidate.floorPath.entries())d+=(i?' L ':'M ')+X(p.yMm)+' '+Y(p.zMm);
   s+=`<path d="${d}" fill="none" stroke="#2d6975" stroke-width="1.6"/>`;
@@ -185,9 +185,9 @@ export function renderRecompositionSvg(v=recomposeRoofAndCourt()){
   s+=t(X(12000)-18,174,'House edge',3.1);
   s+=t(350,174,'Trial garden',3.1);
   s+=t(24,201,'+0',3.4);
-  s+=t(X(7750)-10,273,'-110',3.4);
-  s+=t(X(12000)-10,281,'-152.5',3.4);
-  s+=t(365,292,'-164.5',3.4);
+  s+=t(X(7750)-10,258,'-110',3.4);
+  s+=t(X(12000)-10,270,'-152.5',3.4);
+  s+=t(365,279,'-164.5',3.4);
   s+=t(26,151,'1% loggia; garden continuation hypothetical. No -800 receiving water or dry escape claimed.',3.4);
   s+=t(26,160,'Direct court rain @216 mm/h: 0.735 L/s vs current combined roof/court 3.604 L/s.',3.4);
   s+=t(26,291,'UNRESOLVED: first leak / full blockage / outer outfall / high tailwater / physical wettable floor.',3.5,'#914836');
