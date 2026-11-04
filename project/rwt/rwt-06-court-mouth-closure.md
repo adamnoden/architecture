@@ -30,7 +30,7 @@ With *zero* route out of the court (full-width leaf/debris dam, collapsed path o
 
 At the **216 mm/h** comparison, **both** area conventions exceed the ideal **−30 mm** wetting comparator—by **18.65 mm** and **8.52 mm** respectively. This happens **before** the courtyard water has to reach the 0 mm occupied south surface or the +15 geometric door crest in the wall-line model. A roof that sends *no ordinary roof-face runoff* to the court does not therefore protect a lower, weak wall-base junction if the one escape mouth is disabled. It cannot inherit a supposed **full-width N+1** from the same opening.
 
-Dividing the ideal **280 L** geometrical capacity at −30 by either assumed constant inflow produces synthetic volume/rate numbers, but **none is an evacuation allowance, safe detention period, time to real leakage or maintenance response window**. Actual wind, pond connectivity, fabric weaknesses, splash, storage outside the court, court entry/exit blockage and backed-up site water are unknown. These omissions could move a real first-harm point **earlier**, not simply later.
+Dividing the ideal **280 L** geometrical capacity at −30 by either assumed constant inflow would produce a synthetic volume/rate number. The executable model deliberately **does not export that number as a time**: it is **not an evacuation allowance, safe detention period, time to real leakage or maintenance response window**. Actual wind, pond connectivity, fabric weaknesses, splash, storage outside the court, court entry/exit blockage and backed-up site water are unknown. These omissions could move a real first-harm point **earlier**, not simply later.
 
 ## Design consequence: a roof reversal helps, but is insufficient
 
