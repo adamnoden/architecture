@@ -27,6 +27,7 @@ export function recomposeRoofAndCourt({roofSources=readSources(), rainSources=re
   assert.equal(had.selection.identity,roofSources.had.selection.identity);
   assert.equal(had.exterior.eaves,matRoof.eave);
   assert.equal(had.exterior.ridge,str.section.currentRidgeMm);
+  assert.equal(matRoof.ceilingTop,6620,'protected ceiling revision requires a fresh joined design');
   assert.deepEqual(had.loggia.clear,[4800,7750,2400,4250]);
   assert.deepEqual(matWater.outdoor.courtWalking,[0,-30,-110]);
   assert.equal(matWater.threshold.mineralDpc.inner[1],-30);
