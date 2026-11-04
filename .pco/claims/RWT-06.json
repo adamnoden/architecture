@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 44,
-  "state": "released",
-  "leaseId": "c5d8ffb3-24a2-41d3-a07f-55ff2f5a1171",
+  "generation": 45,
+  "state": "claimed",
+  "leaseId": "51759d3f-f8cd-476b-adb3-2e46745ed988",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6614274127"
+    "label": "issue-comment-6624728195"
   },
-  "claimedAt": "2026-11-03T20:09:33.000Z",
-  "heartbeatAt": "2026-11-03T20:12:37.000Z",
-  "expiresAt": "2026-11-03T20:12:37.000Z",
-  "branch": "work/mvb-chat-6614274127",
+  "claimedAt": "2026-11-04T06:59:16.000Z",
+  "heartbeatAt": "2026-11-04T06:59:16.000Z",
+  "expiresAt": "2026-11-04T07:44:16.000Z",
+  "branch": "work/mvb-chat-6624728195",
   "predecessor": {
-    "leaseId": "abeb9739-7989-4026-bcec-7b08ce567bb8",
-    "generation": 43,
-    "branch": "work/mvb-chat-6613954125",
-    "pr": 1316,
+    "leaseId": "c5d8ffb3-24a2-41d3-a07f-55ff2f5a1171",
+    "generation": 44,
+    "branch": "work/mvb-chat-6614274127",
     "checkpoint": {
-      "evidence": "PR #1316 head ff7ed068: pinned HAD/MAT water+dry corridor no-fit, joined outward-roof counterfactual and 5 tests; RWT-06 stays planned.",
-      "next": "Verify exact-head full CI; run fresh lease-bound merge preflight; merge and archive helper outside main, then release and dispatch.",
-      "blocker": "Neither a selected outward roof nor full-duty wet/dry clearance, first-harm and site receiving evidence exist."
+      "evidence": "PR #1314 merged: old -800 receiving water assumes 64.75m extra at 1%. PR #1316 merged: water plus 1200 gross separate dry route needs 3550mm versus 2400mm throat.",
+      "next": "Coordinate a joined HAD/ROF/STR/MAT roof, court aperture, wet/dry passage redesign before resuming RWT-06 physical first-harm and real-site receiving proof.",
+      "blocker": "Current selected roof and 2400mm loggia fail the tested simultaneous route. No alternative selected, independent blocked-state path, first-harm or real receiving head."
     }
   },
   "recoverySource": {
-    "leaseId": "abeb9739-7989-4026-bcec-7b08ce567bb8",
-    "generation": 43,
-    "branch": "work/mvb-chat-6613954125",
-    "pr": 1316,
+    "leaseId": "c5d8ffb3-24a2-41d3-a07f-55ff2f5a1171",
+    "generation": 44,
+    "branch": "work/mvb-chat-6614274127",
     "checkpoint": {
-      "evidence": "PR #1316 head ff7ed068: pinned HAD/MAT water+dry corridor no-fit, joined outward-roof counterfactual and 5 tests; RWT-06 stays planned.",
-      "next": "Verify exact-head full CI; run fresh lease-bound merge preflight; merge and archive helper outside main, then release and dispatch.",
-      "blocker": "Neither a selected outward roof nor full-duty wet/dry clearance, first-harm and site receiving evidence exist."
+      "evidence": "PR #1314 merged: old -800 receiving water assumes 64.75m extra at 1%. PR #1316 merged: water plus 1200 gross separate dry route needs 3550mm versus 2400mm throat.",
+      "next": "Coordinate a joined HAD/ROF/STR/MAT roof, court aperture, wet/dry passage redesign before resuming RWT-06 physical first-harm and real-site receiving proof.",
+      "blocker": "Current selected roof and 2400mm loggia fail the tested simultaneous route. No alternative selected, independent blocked-state path, first-harm or real receiving head."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR #1314 merged: old -800 receiving water assumes 64.75m extra at 1%. PR #1316 merged: water plus 1200 gross separate dry route needs 3550mm versus 2400mm throat.",
-    "next": "Coordinate a joined HAD/ROF/STR/MAT roof, court aperture, wet/dry passage redesign before resuming RWT-06 physical first-harm and real-site receiving proof.",
-    "blocker": "Current selected roof and 2400mm loggia fail the tested simultaneous route. No alternative selected, independent blocked-state path, first-harm or real receiving head."
-  },
-  "releasedAt": "2026-11-03T20:12:37.000Z",
-  "releaseReason": "handoff"
+  }
 }
