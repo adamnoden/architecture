@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 45,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "51759d3f-f8cd-476b-adb3-2e46745ed988",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6624728195"
   },
   "claimedAt": "2026-11-04T06:59:16.000Z",
-  "heartbeatAt": "2026-11-04T07:10:42.000Z",
-  "expiresAt": "2026-11-04T07:55:42.000Z",
+  "heartbeatAt": "2026-11-04T07:15:47.000Z",
+  "expiresAt": "2026-11-04T07:15:47.000Z",
   "branch": "work/mvb-chat-6624728195",
   "predecessor": {
     "leaseId": "c5d8ffb3-24a2-41d3-a07f-55ff2f5a1171",
@@ -37,5 +37,7 @@
     "evidence": "PR #1319 head e5e86cfc: pinned joined 8deg/+175 eave roof, wettable 2400 court path, unchanged HAD/MAT/STR and 7 regressions.",
     "next": "Verify exact-head full CI, run read-only canonical RWT-06 gen-45 publication preflight, expected-head merge if safe; archive/dispose helper and release.",
     "blocker": "Roof assembly, 772mm court-rim daylight cost, common blockage, true first harm and real site receiving head not admitted."
-  }
+  },
+  "releasedAt": "2026-11-04T07:15:47.000Z",
+  "releaseReason": "handoff"
 }
