@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 47,
-  "state": "released",
-  "leaseId": "171cde1a-60af-4589-97de-076d7c15b3b1",
+  "generation": 48,
+  "state": "claimed",
+  "leaseId": "9340597e-2192-42be-9598-922ca03ba418",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6639932423"
+    "label": "issue-comment-6640237998"
   },
-  "claimedAt": "2026-11-04T19:23:50.000Z",
-  "heartbeatAt": "2026-11-04T19:37:10.000Z",
-  "expiresAt": "2026-11-04T19:37:10.000Z",
-  "branch": "work/mvb-chat-6639932423",
+  "claimedAt": "2026-11-04T19:38:04.000Z",
+  "heartbeatAt": "2026-11-04T19:38:04.000Z",
+  "expiresAt": "2026-11-04T20:23:04.000Z",
+  "branch": "work/mvb-chat-6640237998",
   "predecessor": {
-    "leaseId": "ebe4447a-520d-45f1-930b-9a07dac946e8",
-    "generation": 46,
-    "branch": "work/mvb-chat-6625049400",
-    "pr": 1321,
+    "leaseId": "171cde1a-60af-4589-97de-076d7c15b3b1",
+    "generation": 47,
+    "branch": "work/mvb-chat-6639932423",
+    "pr": 1322,
     "checkpoint": {
-      "evidence": "PR #1321 head b06559c5: 280 L court-to-join storage; 216mm/h ten-minute blocked mouth 346-441 L even without inward roof; 5 regressions.",
-      "next": "Verify full exact-head CI, canonical gen46 merge preflight; expected-head merge, archive helper only on delete-me, release and dispatch.",
-      "blocker": "Actual first leaking joint, genuine passive independent route, safe human garden exit and site receiving water not established."
+      "evidence": "PR #1322 head 52d55fa: recovered PR #1321, removed synthetic first-harm clock, added absence regression.",
+      "next": "Verify new exact-head CI; require canonical merge-check on capable runner before merge. Then reconcile predecessor and release.",
+      "blocker": "Connector-only transport cannot run Git checkout or canonical publication preflight. Physical first harm and safe outlet remain open."
     }
   },
   "recoverySource": {
-    "leaseId": "ebe4447a-520d-45f1-930b-9a07dac946e8",
-    "generation": 46,
-    "branch": "work/mvb-chat-6625049400",
-    "pr": 1321,
+    "leaseId": "171cde1a-60af-4589-97de-076d7c15b3b1",
+    "generation": 47,
+    "branch": "work/mvb-chat-6639932423",
+    "pr": 1322,
     "checkpoint": {
-      "evidence": "PR #1321 head b06559c5: 280 L court-to-join storage; 216mm/h ten-minute blocked mouth 346-441 L even without inward roof; 5 regressions.",
-      "next": "Verify full exact-head CI, canonical gen46 merge preflight; expected-head merge, archive helper only on delete-me, release and dispatch.",
-      "blocker": "Actual first leaking joint, genuine passive independent route, safe human garden exit and site receiving water not established."
+      "evidence": "PR #1322 head 52d55fa: recovered PR #1321, removed synthetic first-harm clock, added absence regression.",
+      "next": "Verify new exact-head CI; require canonical merge-check on capable runner before merge. Then reconcile predecessor and release.",
+      "blocker": "Connector-only transport cannot run Git checkout or canonical publication preflight. Physical first harm and safe outlet remain open."
     }
-  },
-  "pr": 1322,
-  "checkpoint": {
-    "evidence": "PR #1322 head 52d55fa: recovered PR #1321, removed synthetic first-harm clock, added absence regression.",
-    "next": "Verify new exact-head CI; require canonical merge-check on capable runner before merge. Then reconcile predecessor and release.",
-    "blocker": "Connector-only transport cannot run Git checkout or canonical publication preflight. Physical first harm and safe outlet remain open."
-  },
-  "releasedAt": "2026-11-04T19:37:10.000Z",
-  "releaseReason": "handoff"
+  }
 }
