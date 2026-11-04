@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 45,
-  "state": "released",
-  "leaseId": "51759d3f-f8cd-476b-adb3-2e46745ed988",
+  "generation": 46,
+  "state": "claimed",
+  "leaseId": "ebe4447a-520d-45f1-930b-9a07dac946e8",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6624728195"
+    "label": "issue-comment-6625049400"
   },
-  "claimedAt": "2026-11-04T06:59:16.000Z",
-  "heartbeatAt": "2026-11-04T07:15:47.000Z",
-  "expiresAt": "2026-11-04T07:15:47.000Z",
-  "branch": "work/mvb-chat-6624728195",
+  "claimedAt": "2026-11-04T07:18:11.000Z",
+  "heartbeatAt": "2026-11-04T07:18:11.000Z",
+  "expiresAt": "2026-11-04T08:03:11.000Z",
+  "branch": "work/mvb-chat-6625049400",
   "predecessor": {
-    "leaseId": "c5d8ffb3-24a2-41d3-a07f-55ff2f5a1171",
-    "generation": 44,
-    "branch": "work/mvb-chat-6614274127",
+    "leaseId": "51759d3f-f8cd-476b-adb3-2e46745ed988",
+    "generation": 45,
+    "branch": "work/mvb-chat-6624728195",
+    "pr": 1319,
     "checkpoint": {
-      "evidence": "PR #1314 merged: old -800 receiving water assumes 64.75m extra at 1%. PR #1316 merged: water plus 1200 gross separate dry route needs 3550mm versus 2400mm throat.",
-      "next": "Coordinate a joined HAD/ROF/STR/MAT roof, court aperture, wet/dry passage redesign before resuming RWT-06 physical first-harm and real-site receiving proof.",
-      "blocker": "Current selected roof and 2400mm loggia fail the tested simultaneous route. No alternative selected, independent blocked-state path, first-harm or real receiving head."
+      "evidence": "PR #1319 head e5e86cfc: pinned joined 8deg/+175 eave roof, wettable 2400 court path, unchanged HAD/MAT/STR and 7 regressions.",
+      "next": "Verify exact-head full CI, run read-only canonical RWT-06 gen-45 publication preflight, expected-head merge if safe; archive/dispose helper and release.",
+      "blocker": "Roof assembly, 772mm court-rim daylight cost, common blockage, true first harm and real site receiving head not admitted."
     }
   },
   "recoverySource": {
-    "leaseId": "c5d8ffb3-24a2-41d3-a07f-55ff2f5a1171",
-    "generation": 44,
-    "branch": "work/mvb-chat-6614274127",
+    "leaseId": "51759d3f-f8cd-476b-adb3-2e46745ed988",
+    "generation": 45,
+    "branch": "work/mvb-chat-6624728195",
+    "pr": 1319,
     "checkpoint": {
-      "evidence": "PR #1314 merged: old -800 receiving water assumes 64.75m extra at 1%. PR #1316 merged: water plus 1200 gross separate dry route needs 3550mm versus 2400mm throat.",
-      "next": "Coordinate a joined HAD/ROF/STR/MAT roof, court aperture, wet/dry passage redesign before resuming RWT-06 physical first-harm and real-site receiving proof.",
-      "blocker": "Current selected roof and 2400mm loggia fail the tested simultaneous route. No alternative selected, independent blocked-state path, first-harm or real receiving head."
+      "evidence": "PR #1319 head e5e86cfc: pinned joined 8deg/+175 eave roof, wettable 2400 court path, unchanged HAD/MAT/STR and 7 regressions.",
+      "next": "Verify exact-head full CI, run read-only canonical RWT-06 gen-45 publication preflight, expected-head merge if safe; archive/dispose helper and release.",
+      "blocker": "Roof assembly, 772mm court-rim daylight cost, common blockage, true first harm and real site receiving head not admitted."
     }
-  },
-  "pr": 1319,
-  "checkpoint": {
-    "evidence": "PR #1319 head e5e86cfc: pinned joined 8deg/+175 eave roof, wettable 2400 court path, unchanged HAD/MAT/STR and 7 regressions.",
-    "next": "Verify exact-head full CI, run read-only canonical RWT-06 gen-45 publication preflight, expected-head merge if safe; archive/dispose helper and release.",
-    "blocker": "Roof assembly, 772mm court-rim daylight cost, common blockage, true first harm and real site receiving head not admitted."
-  },
-  "releasedAt": "2026-11-04T07:15:47.000Z",
-  "releaseReason": "handoff"
+  }
 }
