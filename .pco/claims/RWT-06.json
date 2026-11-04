@@ -9,8 +9,8 @@
     "label": "issue-comment-6625049400"
   },
   "claimedAt": "2026-11-04T07:18:11.000Z",
-  "heartbeatAt": "2026-11-04T07:18:11.000Z",
-  "expiresAt": "2026-11-04T08:03:11.000Z",
+  "heartbeatAt": "2026-11-04T07:23:15.000Z",
+  "expiresAt": "2026-11-04T08:08:15.000Z",
   "branch": "work/mvb-chat-6625049400",
   "predecessor": {
     "leaseId": "51759d3f-f8cd-476b-adb3-2e46745ed988",
@@ -33,5 +33,11 @@
       "next": "Verify exact-head full CI, run read-only canonical RWT-06 gen-45 publication preflight, expected-head merge if safe; archive/dispose helper and release.",
       "blocker": "Roof assembly, 772mm court-rim daylight cost, common blockage, true first harm and real site receiving head not admitted."
     }
+  },
+  "pr": 1321,
+  "checkpoint": {
+    "evidence": "PR #1321 head b06559c5: 280 L court-to-join storage; 216mm/h ten-minute blocked mouth 346-441 L even without inward roof; 5 regressions.",
+    "next": "Verify full exact-head CI, canonical gen46 merge preflight; expected-head merge, archive helper only on delete-me, release and dispatch.",
+    "blocker": "Actual first leaking joint, genuine passive independent route, safe human garden exit and site receiving water not established."
   }
 }
