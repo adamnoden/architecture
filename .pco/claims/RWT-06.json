@@ -9,8 +9,8 @@
     "label": "issue-comment-6640237998"
   },
   "claimedAt": "2026-11-04T19:38:04.000Z",
-  "heartbeatAt": "2026-11-04T19:38:04.000Z",
-  "expiresAt": "2026-11-04T20:23:04.000Z",
+  "heartbeatAt": "2026-11-04T19:47:29.000Z",
+  "expiresAt": "2026-11-04T20:32:29.000Z",
   "branch": "work/mvb-chat-6640237998",
   "predecessor": {
     "leaseId": "171cde1a-60af-4589-97de-076d7c15b3b1",
@@ -33,5 +33,11 @@
       "next": "Verify new exact-head CI; require canonical merge-check on capable runner before merge. Then reconcile predecessor and release.",
       "blocker": "Connector-only transport cannot run Git checkout or canonical publication preflight. Physical first harm and safe outlet remain open."
     }
+  },
+  "pr": 1323,
+  "checkpoint": {
+    "evidence": "PR #1323 head ed79162d: pinned northeast 1200 gross passage, corner-pier / plant-wall clearance screen; five tests.",
+    "next": "Verify exact-head full CI and canonical gen48 preflight, merge if safe, release RWT-06 and report remaining architecture gates.",
+    "blocker": "True structural corner bearing, two weather openings, plant relocation, first harm and independent site receiver remain unproved."
   }
 }
