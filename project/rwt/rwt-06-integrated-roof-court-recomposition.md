@@ -53,6 +53,8 @@ An outward-only roof reallocates **47.8125 m²** of projected ordinary inner-roo
 The current court has an **80 mm elevation difference** between −110 mouth and the *unqualified* −30 pan-end/masonry/DPC wetting comparison. If the north mouth is completely cut, the previous ideal geometric storage probe finds only **280 litres** below that comparison in the court. The +15 geometric door crest is not an alternate first-harm proof. Complete blockage, debris-mat common cause, external water arriving back up the open surface, leaky floor boundaries and occupation during flood remain **unresolved** even with the roof moved. Do not credit storage as an evacuation time; do not call a visible surface N+1 drainage.
 
 ## Rejection controls and selection order
+**Adverse full-mouth check added 4 November:** The [complete blockage/direct-court-rain calculation](rwt-06-court-mouth-closure.md) confirms that even the outward-roof family reaches an ideal geometric pool **above the −30 unqualified wall-base comparison** in the 216 mm/h ten-minute case, whether using 12.25 m² wall-line or 9.61 m² hypothetical exposed court. Neither this 8° roof nor a single open pedestrian/water passage is a fault-safe rainwater solution without a physically independent passive relief or a separately proven wetting-tolerant house. This is a decisive admission failure for any claim made from the roof-transfer figures alone, not a forecast of failure time.
+
 
 **No automatic adoption.** A joined HAD/ROF/STR/MAT replan should falsify or earn this candidate in the following order, rather than independently polishing gutter catalogues:
 
