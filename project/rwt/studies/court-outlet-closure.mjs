@@ -67,11 +67,6 @@ export function compareCourtOutletClosure(source=readInputs()){
   assert(high.internallyConsistent200MmOverhangExposedCourtM2.reachesOrPassesUnqualifiedJoinInIdealModel);
   assert(high.wallLineCourtM2.idealNoOutletHydrostaticLevelMm>
     high.internallyConsistent200MmOverhangExposedCourtM2.idealNoOutletHydrostaticLevelMm);
-  const physicalEventEquivalenceSecondsAtJoin=Object.fromEntries(
-    Object.entries(areaIdentities).map(([id,areaM2])=>
-      [id,atComparatorLitres/(216*areaM2/3600)]
-    )
-  );
   return {
     authority:'Unadopted 10-minute constant-rain, zero-outlet, court-only volumetric sensitivity. The -30 pan/DPC join is an UNQUALIFIED FIRST-WETTING COMPARATOR, NOT a verified first leak or acceptable ponding stage. No residence time, evacuation clock, actual site, safe backup or acceptance.',
     sources:joined.sources,
@@ -88,8 +83,7 @@ export function compareCourtOutletClosure(source=readInputs()){
     comparison:{
       durationSeconds:comparisonDurationSeconds,
       stormIntensitiesMmPerHour:intensitiesMmPerHour,
-      areaIdentities,cases,
-      syntheticVolumeDivideRateAt216ToUnqualifiedJoinSeconds:physicalEventEquivalenceSecondsAtJoin
+      areaIdentities,cases
     },
     failureStates:{
       northMouthFullyBlocked:true,
