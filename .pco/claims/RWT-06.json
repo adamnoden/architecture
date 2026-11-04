@@ -9,8 +9,8 @@
     "label": "issue-comment-6639932423"
   },
   "claimedAt": "2026-11-04T19:23:50.000Z",
-  "heartbeatAt": "2026-11-04T19:23:50.000Z",
-  "expiresAt": "2026-11-04T20:08:50.000Z",
+  "heartbeatAt": "2026-11-04T19:32:07.000Z",
+  "expiresAt": "2026-11-04T20:17:07.000Z",
   "branch": "work/mvb-chat-6639932423",
   "predecessor": {
     "leaseId": "ebe4447a-520d-45f1-930b-9a07dac946e8",
@@ -33,5 +33,11 @@
       "next": "Verify full exact-head CI, canonical gen46 merge preflight; expected-head merge, archive helper only on delete-me, release and dispatch.",
       "blocker": "Actual first leaking joint, genuine passive independent route, safe human garden exit and site receiving water not established."
     }
+  },
+  "pr": 1322,
+  "checkpoint": {
+    "evidence": "PR #1322 head 52d55fa: recovered PR #1321, removed synthetic first-harm clock, added absence regression.",
+    "next": "Verify new exact-head CI; require canonical merge-check on capable runner before merge. Then reconcile predecessor and release.",
+    "blocker": "Connector-only transport cannot run Git checkout or canonical publication preflight. Physical first harm and safe outlet remain open."
   }
 }
