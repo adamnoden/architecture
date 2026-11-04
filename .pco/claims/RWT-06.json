@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 46,
+  "generation": 47,
   "state": "claimed",
-  "leaseId": "ebe4447a-520d-45f1-930b-9a07dac946e8",
+  "leaseId": "171cde1a-60af-4589-97de-076d7c15b3b1",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6625049400"
+    "label": "issue-comment-6639932423"
   },
-  "claimedAt": "2026-11-04T07:18:11.000Z",
-  "heartbeatAt": "2026-11-04T07:23:15.000Z",
-  "expiresAt": "2026-11-04T08:08:15.000Z",
-  "branch": "work/mvb-chat-6625049400",
+  "claimedAt": "2026-11-04T19:23:50.000Z",
+  "heartbeatAt": "2026-11-04T19:23:50.000Z",
+  "expiresAt": "2026-11-04T20:08:50.000Z",
+  "branch": "work/mvb-chat-6639932423",
   "predecessor": {
-    "leaseId": "51759d3f-f8cd-476b-adb3-2e46745ed988",
-    "generation": 45,
-    "branch": "work/mvb-chat-6624728195",
-    "pr": 1319,
+    "leaseId": "ebe4447a-520d-45f1-930b-9a07dac946e8",
+    "generation": 46,
+    "branch": "work/mvb-chat-6625049400",
+    "pr": 1321,
     "checkpoint": {
-      "evidence": "PR #1319 head e5e86cfc: pinned joined 8deg/+175 eave roof, wettable 2400 court path, unchanged HAD/MAT/STR and 7 regressions.",
-      "next": "Verify exact-head full CI, run read-only canonical RWT-06 gen-45 publication preflight, expected-head merge if safe; archive/dispose helper and release.",
-      "blocker": "Roof assembly, 772mm court-rim daylight cost, common blockage, true first harm and real site receiving head not admitted."
+      "evidence": "PR #1321 head b06559c5: 280 L court-to-join storage; 216mm/h ten-minute blocked mouth 346-441 L even without inward roof; 5 regressions.",
+      "next": "Verify full exact-head CI, canonical gen46 merge preflight; expected-head merge, archive helper only on delete-me, release and dispatch.",
+      "blocker": "Actual first leaking joint, genuine passive independent route, safe human garden exit and site receiving water not established."
     }
   },
   "recoverySource": {
-    "leaseId": "51759d3f-f8cd-476b-adb3-2e46745ed988",
-    "generation": 45,
-    "branch": "work/mvb-chat-6624728195",
-    "pr": 1319,
+    "leaseId": "ebe4447a-520d-45f1-930b-9a07dac946e8",
+    "generation": 46,
+    "branch": "work/mvb-chat-6625049400",
+    "pr": 1321,
     "checkpoint": {
-      "evidence": "PR #1319 head e5e86cfc: pinned joined 8deg/+175 eave roof, wettable 2400 court path, unchanged HAD/MAT/STR and 7 regressions.",
-      "next": "Verify exact-head full CI, run read-only canonical RWT-06 gen-45 publication preflight, expected-head merge if safe; archive/dispose helper and release.",
-      "blocker": "Roof assembly, 772mm court-rim daylight cost, common blockage, true first harm and real site receiving head not admitted."
+      "evidence": "PR #1321 head b06559c5: 280 L court-to-join storage; 216mm/h ten-minute blocked mouth 346-441 L even without inward roof; 5 regressions.",
+      "next": "Verify full exact-head CI, canonical gen46 merge preflight; expected-head merge, archive helper only on delete-me, release and dispatch.",
+      "blocker": "Actual first leaking joint, genuine passive independent route, safe human garden exit and site receiving water not established."
     }
-  },
-  "pr": 1321,
-  "checkpoint": {
-    "evidence": "PR #1321 head b06559c5: 280 L court-to-join storage; 216mm/h ten-minute blocked mouth 346-441 L even without inward roof; 5 regressions.",
-    "next": "Verify full exact-head CI, canonical gen46 merge preflight; expected-head merge, archive helper only on delete-me, release and dispatch.",
-    "blocker": "Actual first leaking joint, genuine passive independent route, safe human garden exit and site receiving water not established."
   }
 }
