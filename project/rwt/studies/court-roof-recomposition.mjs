@@ -197,7 +197,9 @@ export function renderRecompositionSvg(v=recomposeRoofAndCourt()){
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
   const v=recomposeRoofAndCourt();
-  console.log(JSON.stringify({
+  if(process.argv.includes('--svg')){
+    process.stdout.write(renderRecompositionSvg(v));
+  }else console.log(JSON.stringify({
     sources:v.sources, selected:v.selected, roofTrial:v.candidate.roofTrial,
     pitchSensitivities:v.candidate.pitchSensitivities,
     floor:v.candidate.floorPath, water:v.candidate.courtComparators,
