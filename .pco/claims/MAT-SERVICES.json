@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w3"
   },
   "claimedAt": "2026-11-05T18:09:59.473Z",
-  "heartbeatAt": "2026-11-05T18:40:55.371Z",
-  "expiresAt": "2026-11-05T19:25:55.371Z",
+  "heartbeatAt": "2026-11-05T18:53:44.042Z",
+  "expiresAt": "2026-11-05T19:38:44.042Z",
   "branch": "work/zerg-20261105-w3-next",
   "predecessor": {
     "leaseId": "b3a8f164-f58c-467b-905a-c8283b0e5337",
@@ -28,8 +28,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published6b758aa0526281e335ebfbd14fcd3d3beec9ce5d treea464598e exactlocal91df87de. ExistingcanonicalServicesnumericowner nowexports checkednewpacking,1250rawarch andfronttrunkY3000. BothPythonreproducers,25continuousplanchecks,renderedSVGs,repo integrity pass. Fullbaselineblob2d1878e9/JSprojectiondd7677f2 authenticated.",
-    "next": "JoinHADactualmodel andMATbridge inonePR; require exactServicesfield equality,newHADnumeric-tamper guard,affectedsource/renderchecks,exactcombinedCI andfreshpublicationpreflight.",
-    "blocker": "HistoricalHAD9476prose-onlyadapter intentionallyrejectsnewnumericowner untiljointsourceauthupdated; actualdeepwaterbridge/firstwet/supportjoin andknowncookerheatmaterialholds remain."
+    "evidence": "FinalServices49458723b92f173b903e8d0fa31933e32bd878ef tree8e324f4b exactlocalc5c6ce68; canonicalbaselineblobffe115aa/JSprojectionce005201. Continuouslow2500L retains3200turn; actual27finishedarch proof fixes rejectedY3000,25fullplanchecks/Pythonreproduction/repointegrity/renderinspection pass. Upperwet/port/kit/FIRSTfields unchanged; B568direct110failure evidenceonly.",
+    "next": "JoinHADandMATinsharedPR1329; rederiveHADactualServicesaux/emitters andexactauthguard; verify fullcombinedsource/render/CI, bindlease andfreshpreflight beforeexpected-headmerge.",
+    "blocker": "Joinedwaterbridge/firstwet/linerandnewHADaffectedhouseproof remain pending; no wholehouse/support/material/kit admission or packetcompletion."
   }
 }
