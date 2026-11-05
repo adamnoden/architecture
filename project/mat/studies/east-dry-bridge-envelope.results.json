@@ -88,8 +88,6 @@
     1100
   ],
   "shield_release": "Upward in isolated guarded well, outside beam; does not travel through the portal",
-<<<<<<< HEAD
-=======
   "intake_access_check": {
     "stair_run_mm": 600,
     "stair_rises": 4,
@@ -102,7 +100,6 @@
     "gate_and_hardware_status": "West guard gate and actual posts/handholds/capture/adapter still need complete coordinates; no physical release acceptance",
     "boundary_status": "Well end shares x7650 beam/node face; zero gross reserve requires actual lining/support/joint resolution"
   },
->>>>>>> 2214c27b (Join the corrected well and separate service stair without hiding contacts)
   "intake_support_collisions": [],
   "surface_activation_probe": {
     "scope": "Effective-crest lower-bound screen only; stage uses declared 600-wide ideal head, not an earned inlet stage or universal hydraulic bound; actual cut/cover/lip and first harm remain open",

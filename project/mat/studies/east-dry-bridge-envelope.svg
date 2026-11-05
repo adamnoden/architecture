@@ -28,11 +28,8 @@
 <rect x="587.25" y="687.25" width="66.6" height="57.0" fill="none" stroke="#654331"/>
 <rect x="587.25" y="839.25" width="66.6" height="57.0" fill="none" stroke="#654331"/>
 <rect x="268.125" y="734.75" width="169.275" height="104.5" fill="none" stroke="#a12b23"/>
-<<<<<<< HEAD
-=======
 <rect x="268.125" y="763.25" width="66.6" height="57.0" fill="#d2b58c" stroke="#334c60"/>
 <rect x="334.725" y="749.0" width="66.6" height="85.5" fill="#c6e0cc" stroke="#334c60"/>
->>>>>>> 2214c27b (Join the corrected well and separate service stair without hiding contacts)
 <rect x="404.1" y="749.0" width="22.2" height="85.5" fill="#b0a4a1" stroke="#334c60"/>
 <text x="30" y="920" font-size="14" fill="#17242e">600 water / 663 U / 763 carriage / 900 portal; 100 actual beam-to-hoist park clearance</text>
 <text x="30" y="945" font-size="14" fill="#a12b23">Intake splash and bulk first wetting differ. Complete joint/rail/guard/lift and air/thermal admission remain open.</text>
