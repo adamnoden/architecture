@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 24,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "308c60ef-01ca-45d0-9706-c99145d3f12d",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261105-w5"
   },
   "claimedAt": "2026-11-05T17:55:51.334Z",
-  "heartbeatAt": "2026-11-05T18:09:22.967Z",
-  "expiresAt": "2026-11-05T18:54:22.967Z",
+  "heartbeatAt": "2026-11-05T18:14:47.055Z",
+  "expiresAt": "2026-11-05T18:14:47.055Z",
   "branch": "work/zerg-20261105-w5",
   "predecessor": {
     "leaseId": "90a3e479-9ddc-4fc8-acae-ca4e64a3c67d",
@@ -39,5 +39,7 @@
     "evidence": "PR #1328 final head231f21dfaa4a905464a15869f1c81d88cce9252e treecd1a23bebb965f6b08128f8282f6e1403d588273; true mainc1986524 parent; repository integrity/diff check pass",
     "next": "Inspect exact-head CI42081393633, then fresh canonical preflight and merge",
     "blocker": "Final CI pending; bare-slab complete installation remains unqualified"
-  }
+  },
+  "releasedAt": "2026-11-05T18:14:47.055Z",
+  "releaseReason": "handoff"
 }
