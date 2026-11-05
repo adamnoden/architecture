@@ -9,8 +9,8 @@
     "label": "issue-comment-6653552713"
   },
   "claimedAt": "2026-11-05T08:39:19.000Z",
-  "heartbeatAt": "2026-11-05T08:39:19.000Z",
-  "expiresAt": "2026-11-05T09:24:19.000Z",
+  "heartbeatAt": "2026-11-05T08:40:45.000Z",
+  "expiresAt": "2026-11-05T09:25:45.000Z",
   "branch": "work/mvb-chat-6653552713",
   "predecessor": {
     "leaseId": "6fdbe43f-6b1c-4f83-9f01-af6bfa335869",
@@ -33,5 +33,11 @@
       "next": "Recover PR #1324; reacquire fresh generation, run canonical merge-check on capable runner against same validated head/main, then expected-head merge and closeout.",
       "blocker": "Current connector-only chat has no Git CLI; cannot run canonical publication preflight. First harm, independent receiver and structural exit remain unproved."
     }
+  },
+  "pr": 1325,
+  "checkpoint": {
+    "evidence": "PR #1325 head 037a28ac reuses CI-green #1324 5-file RWT-06 weather-wall study; fresh generation-50 branch and packet validation in progress.",
+    "next": "Verify exact-head PR #1325 CI run 41996241392; execute canonical generation-50 merge-check on capable Actions runner, then expected-head merge and release.",
+    "blocker": "No current independent second court outlet, real first-wetting joint or lawful site receiver. Earlier gen49 PR #1324 must be superseded."
   }
 }
