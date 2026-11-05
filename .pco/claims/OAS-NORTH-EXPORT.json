@@ -1,37 +1,36 @@
 {
   "schemaVersion": 1,
   "node": "OAS-NORTH-EXPORT",
-  "generation": 3,
-  "state": "released",
-  "leaseId": "f68a00a1-145f-4b9e-9b4b-269a02e1008e",
+  "generation": 4,
+  "state": "claimed",
+  "leaseId": "56c051c9-a085-4bbd-ad77-486bc5b0a269",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6600126599"
+    "label": "zerg-20261105-w1"
   },
-  "claimedAt": "2026-11-03T09:35:32.000Z",
-  "heartbeatAt": "2026-11-03T10:02:49.000Z",
-  "expiresAt": "2026-11-03T10:02:49.000Z",
-  "branch": "work/mvb-chat-6600126599",
+  "claimedAt": "2026-11-05T17:49:30.492Z",
+  "heartbeatAt": "2026-11-05T17:49:30.492Z",
+  "expiresAt": "2026-11-05T18:34:30.492Z",
   "predecessor": {
-    "leaseId": "8ecc576a-9b42-4a60-a258-9e8819ea7223",
-    "generation": 2,
-    "branch": "work/oas-north-release-successor-20261102"
-  },
-  "recoverySource": {
-    "leaseId": "34303b32-cbe8-4bf6-b0be-29a1a2f5d18d",
-    "generation": 1,
-    "branch": "work/zerg-oas-north-export-20261102",
+    "leaseId": "f68a00a1-145f-4b9e-9b4b-269a02e1008e",
+    "generation": 3,
+    "branch": "work/mvb-chat-6600126599",
+    "pr": 1303,
     "checkpoint": {
-      "evidence": "Draft PR #1278 frozen head 48b7e9f82580daaa6ca5e6d7b3d0672f8bb585d0",
-      "next": "Cold review, exact-head CI, coordinator publication preflight"
+      "evidence": "PR1303 latest head a2cf173c: source-pinned FIRST north0 AXA 20 IN travel bound; CI-driven early 4.820-degree contraction/223.578mm minimum; corrected tests; explicit 80-degree upper failure; concurrent RWT main 684e7a1 reconciled by dual-parent commit, only five OAS paths in final diff.",
+      "next": "Observe exact-head CI 41614488865 and canonical preflight 41614558326. If green and base/head stable, expected-head merge; then remove one-shot helper into delete-me, release and issue result.",
+      "blocker": "No matched OEM pivot centres, first-release/guard/roof/IAS geometry or physical/water/weather acceptance; node remains planned."
     }
   },
-  "pr": 1303,
-  "checkpoint": {
-    "evidence": "PR1303 latest head a2cf173c: source-pinned FIRST north0 AXA 20 IN travel bound; CI-driven early 4.820-degree contraction/223.578mm minimum; corrected tests; explicit 80-degree upper failure; concurrent RWT main 684e7a1 reconciled by dual-parent commit, only five OAS paths in final diff.",
-    "next": "Observe exact-head CI 41614488865 and canonical preflight 41614558326. If green and base/head stable, expected-head merge; then remove one-shot helper into delete-me, release and issue result.",
-    "blocker": "No matched OEM pivot centres, first-release/guard/roof/IAS geometry or physical/water/weather acceptance; node remains planned."
-  },
-  "releasedAt": "2026-11-03T10:02:49.000Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "f68a00a1-145f-4b9e-9b4b-269a02e1008e",
+    "generation": 3,
+    "branch": "work/mvb-chat-6600126599",
+    "pr": 1303,
+    "checkpoint": {
+      "evidence": "PR1303 latest head a2cf173c: source-pinned FIRST north0 AXA 20 IN travel bound; CI-driven early 4.820-degree contraction/223.578mm minimum; corrected tests; explicit 80-degree upper failure; concurrent RWT main 684e7a1 reconciled by dual-parent commit, only five OAS paths in final diff.",
+      "next": "Observe exact-head CI 41614488865 and canonical preflight 41614558326. If green and base/head stable, expected-head merge; then remove one-shot helper into delete-me, release and issue result.",
+      "blocker": "No matched OEM pivot centres, first-release/guard/roof/IAS geometry or physical/water/weather acceptance; node remains planned."
+    }
+  }
 }
