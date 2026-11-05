@@ -18,9 +18,10 @@ flowchart LR
   end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
+    n_HAD_WATER_REPLAN["HAD-WATER-REPLAN<br/>Recompose the selected court and roof with independent passive water exits<br/><b>READY</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
-    n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>READY</b>"]
+    n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -34,7 +35,7 @@ flowchart LR
   end
   subgraph g_RWT["RWT"]
     direction TB
-    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>READY</b>"]
+    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
@@ -114,11 +115,13 @@ flowchart LR
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
+  n_HAD_WATER_REPLAN --> n_RWT_06
   n_RWT_06 --> n_RWT_07
   n_RWT_07 --> n_ROF_RWT_GATE
   n_STR_RECONCILE --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
+  n_HAD_WATER_REPLAN --> n_STR_HOUSE
   n_STR_HOUSE --> n_STR_RECONCILE
   n_MAT_ENVELOPE --> n_MAT_COORDINATION
   n_MAT_SERVICES --> n_MAT_COORDINATION
@@ -183,16 +186,17 @@ flowchart LR
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_IAS_03 ready;
+  class n_HAD_WATER_REPLAN ready;
   class n_TRIAD_GATE blocked;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_TECHNICAL blocked;
-  class n_RWT_06 ready;
+  class n_RWT_06 blocked;
   class n_RWT_07 blocked;
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
-  class n_STR_HOUSE ready;
+  class n_STR_HOUSE blocked;
   class n_STR_RECONCILE blocked;
   class n_MAT_ENVELOPE ready;
   class n_MAT_SERVICES ready;
@@ -315,10 +319,11 @@ flowchart LR
     n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>DONE</b>"]
     n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>DONE</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>DONE</b>"]
+    n_HAD_WATER_REPLAN["HAD-WATER-REPLAN<br/>Recompose the selected court and roof with independent passive water exits<br/><b>READY</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>DONE</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
-    n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>READY</b>"]
+    n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>BLOCKED</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -360,7 +365,7 @@ flowchart LR
     n_RWT_03["RWT-03<br/>Rainwater conveyance topology<br/><b>DONE</b>"]
     n_RWT_04["RWT-04<br/>Rainwater materials, joints and compatibility<br/><b>DONE</b>"]
     n_RWT_05["RWT-05<br/>Rainwater blockage, failure and exceedance<br/><b>DONE</b>"]
-    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>READY</b>"]
+    n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>BLOCKED</b>"]
     n_RWT_METALS["RWT-METALS<br/>Develop copper collection, brass channels and non-plastic concealed routes<br/><b>DONE</b>"]
     n_RWT_ROBUSTNESS["RWT-ROBUSTNESS<br/>Test full-duty independent paths, reserve and common-cause rainwater failures<br/><b>DONE</b>"]
     n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>BLOCKED</b>"]
@@ -543,6 +548,10 @@ flowchart LR
   n_IAS_HAD_JUNCTION --> n_HAD_03
   n_OAS_HAD_JUNCTION --> n_HAD_03
   n_HAD_02M --> n_HAD_03
+  n_HAD_03 --> n_HAD_WATER_REPLAN
+  n_RWT_ROBUSTNESS --> n_HAD_WATER_REPLAN
+  n_STR_MASONRY --> n_HAD_WATER_REPLAN
+  n_STR_SPANS --> n_HAD_WATER_REPLAN
   n_OAS_03 --> n_OAS_DETAIL
   n_OAS_03 --> n_OAS_NORTH_EXPORT
   n_OAS_DETAIL --> n_OAS_NORTH_EXPORT
@@ -610,7 +619,7 @@ flowchart LR
   n_RWT_04 --> n_RWT_05
   n_RWT_03 --> n_RWT_06
   n_RWT_05 --> n_RWT_06
-  n_HAD_03 --> n_RWT_06
+  n_HAD_WATER_REPLAN --> n_RWT_06
   n_MAT_00 --> n_RWT_SHED
   n_RWT_01 --> n_RWT_SHED
   n_ROF_02 --> n_RWT_SHED
@@ -643,6 +652,7 @@ flowchart LR
   n_STR_MASONRY --> n_STR_HOUSE
   n_STR_SPANS --> n_STR_HOUSE
   n_BCR_PREFLIGHT --> n_STR_HOUSE
+  n_HAD_WATER_REPLAN --> n_STR_HOUSE
   n_STR_HOUSE --> n_STR_RECONCILE
   n_STR_GROUND --> n_STR_RECONCILE
   n_HRS_BASELINE --> n_MAT_00
@@ -817,6 +827,7 @@ flowchart LR
   class n_OAS_03 done;
   class n_HAD_BOUNDARY done;
   class n_HAD_03 done;
+  class n_HAD_WATER_REPLAN ready;
   class n_OAS_DETAIL done;
   class n_OAS_NORTH_EXPORT done;
   class n_TRIAD_GATE blocked;
@@ -846,7 +857,7 @@ flowchart LR
   class n_RWT_03 done;
   class n_RWT_04 done;
   class n_RWT_05 done;
-  class n_RWT_06 ready;
+  class n_RWT_06 blocked;
   class n_RWT_SHED done;
   class n_RWT_METALS done;
   class n_RWT_ROBUSTNESS done;
@@ -858,7 +869,7 @@ flowchart LR
   class n_STR_MASONRY done;
   class n_STR_SPANS done;
   class n_STR_GROUND done;
-  class n_STR_HOUSE ready;
+  class n_STR_HOUSE blocked;
   class n_STR_RECONCILE blocked;
   class n_MAT_00 done;
   class n_MAT_AUDIT done;

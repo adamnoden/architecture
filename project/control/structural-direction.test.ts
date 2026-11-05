@@ -48,8 +48,10 @@ test('STR admits both options studies independently and requires both plus exist
     assert.ok(directBlockers(get('STR-HOUSE'), nodes).includes(second))
 
     completeBranch(second)
-    assert.deepEqual(directBlockers(get('STR-HOUSE'), nodes), ['BCR-PREFLIGHT'])
+    assert.deepEqual(directBlockers(get('STR-HOUSE'), nodes), ['BCR-PREFLIGHT', 'HAD-WATER-REPLAN'])
     completeBranch('BCR-PREFLIGHT')
+    assert.deepEqual(directBlockers(get('STR-HOUSE'), nodes), ['HAD-WATER-REPLAN'])
+    completeBranch('HAD-WATER-REPLAN')
     assert.equal(derivedState(get('STR-HOUSE'), nodes), 'ready')
 
     completeBranch('STR-HOUSE')
