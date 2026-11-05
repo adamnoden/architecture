@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w5"
   },
   "claimedAt": "2026-11-05T17:55:51.334Z",
-  "heartbeatAt": "2026-11-05T18:02:25.906Z",
-  "expiresAt": "2026-11-05T18:47:25.906Z",
+  "heartbeatAt": "2026-11-05T18:09:22.967Z",
+  "expiresAt": "2026-11-05T18:54:22.967Z",
   "branch": "work/zerg-20261105-w5",
   "predecessor": {
     "leaseId": "90a3e479-9ddc-4fc8-acae-ca4e64a3c67d",
@@ -36,8 +36,8 @@
   },
   "pr": 1328,
   "checkpoint": {
-    "evidence": "PR #1328 head e223859735654c10813cfbd3961506f8b2fc595d tree67b933dcab8953cd060b0c37d95d6fa538a4edff; direct Node repository integrity and diff check pass",
-    "next": "Inspect exact-head CI; reconcile shared PR1327 then current-main publication preflight",
-    "blocker": "CI pending; no bare-slab complete assembly or material acceptance"
+    "evidence": "PR #1328 final head231f21dfaa4a905464a15869f1c81d88cce9252e treecd1a23bebb965f6b08128f8282f6e1403d588273; true mainc1986524 parent; repository integrity/diff check pass",
+    "next": "Inspect exact-head CI42081393633, then fresh canonical preflight and merge",
+    "blocker": "Final CI pending; bare-slab complete installation remains unqualified"
   }
 }
