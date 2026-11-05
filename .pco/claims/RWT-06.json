@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w2"
   },
   "claimedAt": "2026-11-05T17:48:36.510Z",
-  "heartbeatAt": "2026-11-05T17:56:25.423Z",
-  "expiresAt": "2026-11-05T18:41:25.423Z",
+  "heartbeatAt": "2026-11-05T18:01:31.146Z",
+  "expiresAt": "2026-11-05T18:46:31.146Z",
   "predecessor": {
     "leaseId": "9c0618c5-f679-43d8-a416-0c87f143e782",
     "generation": 50,
@@ -35,8 +35,9 @@
   },
   "branch": "work/zerg-20261105-w2",
   "checkpoint": {
-    "evidence": "Published exact-tree source head 469e4be2; joined RWT/STR rejection and HAD prerequisite registration; typecheck and focused regressions pass.",
-    "next": "Open shared PR; reconcile OAS merge; verify exact-head CI and both leases before merge.",
-    "blocker": "Awaiting OAS integration and final exact-head CI; architectural replacement remains HAD-WATER-REPLAN."
-  }
+    "evidence": "PR #1327 final candidate d34d89e7 merges OAS #1326 main5b0a5e4f; local typecheck,160 control tests,repo integrity and10 water adverse checks passed; both source prerequisites and projections reconciled.",
+    "next": "Verify exact-head CI; each worker run own canonical merge-check; merge immediately and release both blocked-node leases.",
+    "blocker": "Exact-head CI pending; no replacement architecture adopted. HAD-WATER-REPLAN is ready only after main registration."
+  },
+  "pr": 1327
 }
