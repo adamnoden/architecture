@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 25,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "76ac4987-5c36-4425-875c-341f99336d34",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261105-w3"
   },
   "claimedAt": "2026-11-05T17:49:04.985Z",
-  "heartbeatAt": "2026-11-05T17:57:06.843Z",
-  "expiresAt": "2026-11-05T18:42:06.843Z",
+  "heartbeatAt": "2026-11-05T18:07:48.241Z",
+  "expiresAt": "2026-11-05T18:07:48.241Z",
   "branch": "work/zerg-20261105-w2",
   "predecessor": {
     "leaseId": "ec84febe-c609-44f8-b067-31ceb1eab986",
@@ -39,5 +39,7 @@
     "evidence": "Shared PR1327 head469e4be2a540d29e046722844dff5a16772561e7 tree49a8e107 preserves reviewed STR803711c4 with RWT root topology rejection and HAD-WATER-REPLAN registration; four source-bound STR tests and integrated graph/type checks pass.",
     "next": "Reconcile OAS main, verify final shared-head full CI, execute own canonical STR preflight immediately before commander expected-head merge; release blocked STR lease after verified integration.",
     "blocker": "Exact final shared-head CI and publication preflight pending; no source geometry, structural adequacy or lifecycle completion adopted."
-  }
+  },
+  "releasedAt": "2026-11-05T18:07:48.241Z",
+  "releaseReason": "handoff"
 }
