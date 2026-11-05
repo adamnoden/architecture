@@ -1,6 +1,6 @@
 # OAS-NORTH-EXPORT — actual north-window occurrence brief
 
-**Authorised planned follow-on,2 November2026.** This is the bounded question and expected evidence, not a result or a window pass. The [canonical graph](../control/nodes/architecture.ts) owns lifecycle/dependencies; [OAS programme](opening-assembly-system-programme.md) owns scope. Completed OAS-03 and OAS-DETAIL remain valid at their stated architectural-family and nominal-study limits.
+**Authorised follow-on, 2 November 2026; completed by the [explicit rejection/redesign result](north-export-occurrence-result.md#final-disposition--5-november-2026), 5 November 2026.** This is the bounded question and expected evidence, not a result or a window pass. The [canonical graph](../control/nodes/architecture.ts) owns lifecycle/dependencies; [OAS programme](opening-assembly-system-programme.md) owns scope. Completed OAS-03 and OAS-DETAIL remain valid at their stated architectural-family and nominal-study limits.
 
 ## Missing actual occurrence
 
