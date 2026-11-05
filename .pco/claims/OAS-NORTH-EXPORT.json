@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w1"
   },
   "claimedAt": "2026-11-05T17:49:30.492Z",
-  "heartbeatAt": "2026-11-05T17:49:30.492Z",
-  "expiresAt": "2026-11-05T18:34:30.492Z",
+  "heartbeatAt": "2026-11-05T17:51:28.327Z",
+  "expiresAt": "2026-11-05T18:36:28.327Z",
   "predecessor": {
     "leaseId": "f68a00a1-145f-4b9e-9b4b-269a02e1008e",
     "generation": 3,
@@ -32,5 +32,10 @@
       "next": "Observe exact-head CI 41614488865 and canonical preflight 41614558326. If green and base/head stable, expected-head merge; then remove one-shot helper into delete-me, release and issue result.",
       "blocker": "No matched OEM pivot centres, first-release/guard/roof/IAS geometry or physical/water/weather acceptance; node remains planned."
     }
+  },
+  "branch": "work/zerg-20261105-w1",
+  "checkpoint": {
+    "evidence": "Current main3c0a4257; prior PR1303 already integrated. Reviewing bounded rejection of 95mm/80degree AXA candidate against IAS75 and material policy; no selected window pass.",
+    "next": "Complete primary-source alternative comparison, record explicit candidate disposition and route-design handoff; validate exact-head CI and publication preflight."
   }
 }
