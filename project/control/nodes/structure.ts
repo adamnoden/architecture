@@ -66,7 +66,9 @@ export const structureNodes = defineNodes([
     id: 'STR-HOUSE',
     owners: ['STR', 'HAD'],
     title: 'Coordinate whole-house structure with the inhabited plan and section',
-    dependencies: ['STR-MASONRY', 'STR-SPANS', 'BCR-PREFLIGHT'],
+    // Whole-house selection needs the actual water-safe architecture, not a
+    // further support calculation on the rejected north-only topology.
+    dependencies: ['STR-MASONRY', 'STR-SPANS', 'BCR-PREFLIGHT', 'HAD-WATER-REPLAN'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
