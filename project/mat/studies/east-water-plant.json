@@ -1,5 +1,6 @@
 {
   "status": "Proposed full Services plant reservation for the joined HAD east-water hypothesis. No source adoption or MAT-SERVICES completion.",
+  "immutableStartingMain": "c1986524454a0a9f518c45184e1d8808e9eebb1e",
   "sourceBlobs": {
     "whole-house-service-baseline.json": "2d8f7243fb87d350763f2bca3d103b89b9d14b7d",
     "open-north-loggia.json": "25faad2c4d40df2b7da7212f73808843a88d2f52"
@@ -25,16 +26,18 @@
   "intermediateArch": {
     "axisY": 3300,
     "finishedNorthFaceY": 3397,
-    "openingX": [
+    "rawOpeningX": [
       9650,
-      10950
+      10900
     ],
-    "oldOpeningX": [
+    "oldRawOpeningX": [
       9650,
       11050
     ],
-    "radiatorJambReserveEast": 25,
-    "scope": "HAD must author this explicit 100 narrowing; no radiator hung in the former arch opening."
+    "jambFinishEachSide": 27,
+    "finishedClearWidth": 1196,
+    "radiatorFinishedJambReserve": 48,
+    "scope": "HAD must author this explicit 150 raw-opening narrowing; no radiator hung in the former arch opening."
   },
   "replacementDoor": {
     "rawY": [
@@ -112,7 +115,7 @@
     "controlsMaximumHeight": 2300,
     "primaryBuffer": {
       "requiredUsableAlwaysConnectedLitres": 100,
-      "stationRewind": "Relocatedfrom9800/5550afterfiniteemittercoordination; oldQ350isretireduninstalledcomparison, notsilentlyremovedsupport.",
+      "stationRewind": "New proposed east-water room:100east/525south, full650station retained.",
       "station": [
         10125,
         5000,
@@ -221,9 +224,9 @@
     "supportTaskEnvelope": 230,
     "openingStatus": "New trimmed-opening structural proposal, not permission to drill, not inherited three-bore acceptance. Complete230 clamp/tool envelopes are above/below slab and used one at a time, not six floor circles. Old south100plinths overlap the opening40: real rim/frame feet MUST be redesigned before fit acceptance; no support removed for service. Exact seals/fire/weather/vapour boundaries remain independent.",
     "architecturalRewinds": [
-      "Delete unselected Q350 comparison body, not an installed accepted MVHR; put bufferinthisrealplantterritory.",
-      "Hydrauliccontrols mountedEwall, not a floorblock over buffer trolley path.",
-      "No floor-level eastsoil crossbar: highlevelbranch exitsEaty5700 beforedownstack."
+      "Plant dry north face5780.5 and intermediatearch3300/raw1250 require actual HAD source join.",
+      "Hydraulic controls rotate onto dry north wall; actual ports/supports may not breach its wet/air/thermal boundary.",
+      "Retain all baseline duties, including actual high-level east soil exit; do not create a floor-level crossbar."
     ],
     "emitterJoin": {
       "radComplete": [

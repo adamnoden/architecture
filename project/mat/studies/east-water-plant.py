@@ -9,12 +9,13 @@ import json
 import math
 from pathlib import Path
 import sys
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[3]
 HERE = Path(__file__).resolve().parent
 
 def source(path, expected):
-    raw = (ROOT / path).read_bytes()
+    raw = subprocess.check_output(['git','show','c1986524454a0a9f518c45184e1d8808e9eebb1e:'+path], cwd=ROOT)
     actual = hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest()
     assert actual == expected, (path, 'changed; review the complete interface')
     return json.loads(raw)
@@ -58,6 +59,8 @@ plant['cylinder']['replacementCentrePath'] = [[9860,4250],[10500,4250],[10500,45
 plant['primaryBuffer']['station'] = [10125,5000,650,650]
 plant['primaryBuffer']['replacementCentrePath'] = [[10450,5325],[10700,4575],[12500,4575]]
 plant['controlsHydraulics'] = [10895.5,5480.5,650,300]
+plant['architecturalRewinds']=['Plant dry north face5780.5 and intermediatearch3300/raw1250 require actual HAD source join.','Hydraulic controls rotate onto dry north wall; actual ports/supports may not breach its wet/air/thermal boundary.','Retain all baseline duties, including actual high-level east soil exit; do not create a floor-level crossbar.']
+plant['primaryBuffer']['stationRewind']='New proposed east-water room:100east/525south, full650station retained.'
 plant['emitterJoin'] = {
     'radComplete':[10975,3397,550,200],
     'radRoutineBody':[11225,3922,300],
@@ -70,9 +73,9 @@ plant['emitterJoin'] = {
 room = [9397,3397,2173.5,2383.5]
 water = {'finishedPassageY':[6300,7500], 'plantWeatherWallY':[5780.5,6300],
          'dryGallery':'Retained warm full-height gallery west of the outdoor cut. HAD/MAT must prove its actual deep water bridge; this record gives it no structural or water pass.'}
-arch = {'axisY':3300, 'finishedNorthFaceY':3397, 'openingX':[9650,10950],
-        'oldOpeningX':[9650,11050], 'radiatorJambReserveEast':25,
-        'scope':'HAD must author this explicit 100 narrowing; no radiator hung in the former arch opening.'}
+arch = {'axisY':3300, 'finishedNorthFaceY':3397, 'rawOpeningX':[9650,10900],
+        'oldRawOpeningX':[9650,11050], 'jambFinishEachSide':27, 'finishedClearWidth':1196, 'radiatorFinishedJambReserve':48,
+        'scope':'HAD must author this explicit 150 raw-opening narrowing; no radiator hung in the former arch opening.'}
 door = {'rawY':old['cylinder']['doorRaw'], 'finishedClearY':[4100,5100],
         'requiredClearHeight':2300, 'renewal':'Open outward or remove the complete leaf before trolley work under a qualified supported task. An inward leaf at y5300 blocks the northern buffer turn. Exterior swept/standing territory remains HAD/site-owned.'}
 
@@ -113,6 +116,7 @@ for task in ['radRoutineBody','radAfter150PullBody','controlsBody','bufferFrontS
         checks.append({'task':task,'fixed':name,'minimumPlanReserve':reserve})
     assert min(x-r-room[0],room[0]+room[2]-x-r,y-r-room[1],room[1]+room[3]-y-r) >= 25-1e-7
 
+assert 10975-10900-27==48 and 11570.5-11525==45.5
 assert plant['cylinder']['height'] + plant['cylinder']['requiredTopService'] == 2245
 assert plant['controlsMaximumHeight'] == 2300
 assert plant['primaryBuffer']['maximumBodyHeight'] == 1600
@@ -124,6 +128,7 @@ assert segment_rect([0,0],[10,10],[4,4,2,2])==0
 assert abs(segment_rect([0,0],[10,10],[0,10,1,1])-9/math.sqrt(2))<1e-9
 result = {
     'status':'Proposed full Services plant reservation for the joined HAD east-water hypothesis. No source adoption or MAT-SERVICES completion.',
+    'immutableStartingMain':'c1986524454a0a9f518c45184e1d8808e9eebb1e',
     'sourceBlobs':{'whole-house-service-baseline.json':'2d8f7243fb87d350763f2bca3d103b89b9d14b7d','open-north-loggia.json':'25faad2c4d40df2b7da7212f73808843a88d2f52'},
     'coordinates':'mm; ground FFL0, same existing selected HAD source. Proposed plant dry bounds and water cut belong to the unadopted joined hypothesis.',
     'plantDryRoom':room,'eastWaterHypothesis':water,'intermediateArch':arch,'replacementDoor':door,
@@ -164,7 +169,7 @@ def svg():
         out.append(f'<polyline points="{points}" fill="none" stroke="{ "#3465a4" if name=="cylinder" else "#a65a2b"}" stroke-width="2"/>')
         for p in path[:-1]:out.append(f'<circle cx="{ox+(p[0]-9300)*s}" cy="{oy+(6000-p[1])*s}" r="{425*s}" fill="none" stroke="#999" stroke-dasharray="3 3"/>')
         out.append(f'<text x="{ox+(path[0][0]-9300)*s}" y="{oy+(6000-path[0][1])*s}">{name}</text>')
-    lines=['FFL0 / ceiling3100 retained as a candidate condition.','300L cylinder:595 body /700 station /1745 high +500 top task.','100L usable buffer:600 complete round /650 station /1600 high.','850 circle is a retained maximum cart+apparatus requirement.','Separate replacement/task states; no qualified human/tool claim.','Controls650×300 rotate onto dry north wall; height2300.','Intermediate arch3300: opening9650–10950 (100 narrower).','Plant external raw opening3900–5300; finished1000×2300.','Open outward or remove supported leaf before replacement.','Warm rear trunk stays HIGH: fullZ2815–3075; local panels2350.','No underfloor service route, bridge capacity or water pass.','Cooker/heat/control/material/actual-kit holds remain open.']
+    lines=['FFL0 / ceiling3100 retained as a candidate condition.','300L cylinder:595 body /700 station /1745 high +500 top task.','100L usable buffer:600 complete round /650 station /1600 high.','850 circle is a retained maximum cart+apparatus requirement.','Separate replacement/task states; no qualified human/tool claim.','Controls650×300 rotate onto dry north wall; height2300.','Arch3300: raw9650–10900;27jambs leave1196clear.','Plant external raw opening3900–5300; finished1000×2300.','Open outward or remove supported leaf before replacement.','Warm rear trunk stays HIGH: fullZ2815–3075; local panels2350.','No underfloor service route, bridge capacity or water pass.','Cooker/heat/control/material/actual-kit holds remain open.']
     for i,line in enumerate(lines):out.append(f'<text x="420" y="{65+i*25}">{line}</text>')
     out.append('<text x="25" y="450">Blue: cylinder exit. Brown: buffer exit. Dashed: complete850 circles at source checkpoints.</text>')
     out.append('<text x="25" y="478">Numeric source checks the whole swept circle continuously; drawn checkpoints alone are not the proof.</text>')
