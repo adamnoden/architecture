@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 23,
-  "state": "released",
-  "leaseId": "90a3e479-9ddc-4fc8-acae-ca4e64a3c67d",
+  "generation": 24,
+  "state": "claimed",
+  "leaseId": "308c60ef-01ca-45d0-9706-c99145d3f12d",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg10-ground-contract"
+    "label": "zerg-20261105-w5"
   },
-  "claimedAt": "2026-11-02T14:39:28.962Z",
-  "heartbeatAt": "2026-11-02T14:54:01.867Z",
-  "expiresAt": "2026-11-02T14:54:01.867Z",
-  "checkpoint": {
-    "evidence": "Draft PR #1281 head cff040719a74550da0e220c4b972df51fd55c944 tree 33b18d812c67964a009c35e8d60dfca4dfd7dc63; source-bound slab and SW contract checked with STR",
-    "next": "Root independent bounded QA, exact-head CI and fresh preflight",
-    "blocker": "Other receiver geometry, structural and material acceptance remain unassigned"
-  },
-  "branch": "work/zerg10-ground-contract",
+  "claimedAt": "2026-11-05T17:55:51.334Z",
+  "heartbeatAt": "2026-11-05T17:55:51.334Z",
+  "expiresAt": "2026-11-05T18:40:51.334Z",
+  "branch": "work/zerg-20261105-w5",
   "predecessor": {
-    "leaseId": "64caa2f5-3cb4-40a5-8f62-b69f3b9964d4",
-    "generation": 22,
-    "branch": "work/zerg9-envelope-join",
-    "pr": 1280,
+    "leaseId": "90a3e479-9ddc-4fc8-acae-ca4e64a3c67d",
+    "generation": 23,
+    "branch": "work/zerg10-ground-contract",
+    "pr": 1281,
     "checkpoint": {
-      "evidence": "Draft PR #1280 head 8b4b5d4db4f3ea928fe31564c776ca3eb9808a2a tree 65fe04fa76da4d371e2671f7b7afdd35e6bfabc0; current-main rebind and peer-reviewed geometry controls",
-      "next": "Root exact-head CI and fresh preflight after narrow reviewer rebind",
-      "blocker": "Receiver, collar, threshold, services, bearing, movement and physical acceptance remain unresolved"
+      "evidence": "Draft PR #1281 head cff040719a74550da0e220c4b972df51fd55c944 tree 33b18d812c67964a009c35e8d60dfca4dfd7dc63; source-bound slab and SW contract checked with STR",
+      "next": "Root independent bounded QA, exact-head CI and fresh preflight",
+      "blocker": "Other receiver geometry, structural and material acceptance remain unassigned"
     }
   },
   "recoverySource": {
-    "leaseId": "64caa2f5-3cb4-40a5-8f62-b69f3b9964d4",
-    "generation": 22,
-    "branch": "work/zerg9-envelope-join",
-    "pr": 1280,
+    "leaseId": "90a3e479-9ddc-4fc8-acae-ca4e64a3c67d",
+    "generation": 23,
+    "branch": "work/zerg10-ground-contract",
+    "pr": 1281,
     "checkpoint": {
-      "evidence": "Draft PR #1280 head 8b4b5d4db4f3ea928fe31564c776ca3eb9808a2a tree 65fe04fa76da4d371e2671f7b7afdd35e6bfabc0; current-main rebind and peer-reviewed geometry controls",
-      "next": "Root exact-head CI and fresh preflight after narrow reviewer rebind",
-      "blocker": "Receiver, collar, threshold, services, bearing, movement and physical acceptance remain unresolved"
+      "evidence": "Draft PR #1281 head cff040719a74550da0e220c4b972df51fd55c944 tree 33b18d812c67964a009c35e8d60dfca4dfd7dc63; source-bound slab and SW contract checked with STR",
+      "next": "Root independent bounded QA, exact-head CI and fresh preflight",
+      "blocker": "Other receiver geometry, structural and material acceptance remain unassigned"
     }
-  },
-  "pr": 1281,
-  "releasedAt": "2026-11-02T14:54:01.867Z",
-  "releaseReason": "completed"
+  }
 }
