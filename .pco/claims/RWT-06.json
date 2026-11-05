@@ -9,8 +9,8 @@
     "label": "issue-comment-6653005307"
   },
   "claimedAt": "2026-11-05T08:08:35.000Z",
-  "heartbeatAt": "2026-11-05T08:27:52.000Z",
-  "expiresAt": "2026-11-05T09:12:52.000Z",
+  "heartbeatAt": "2026-11-05T08:30:52.000Z",
+  "expiresAt": "2026-11-05T09:15:52.000Z",
   "branch": "work/mvb-chat-6653005307",
   "predecessor": {
     "leaseId": "9340597e-2192-42be-9598-922ca03ba418",
@@ -36,8 +36,8 @@
   },
   "pr": 1324,
   "checkpoint": {
-    "evidence": "PR #1324 head 037a28ac: weathered east court/plant passage space exchange, 247/572.5/766.5 mm; 5 regressions, no selection.",
-    "next": "Verify exact-head CI, then obtain fresh canonical generation-49 merge preflight on capable runner; expected-head merge only if passed, else handoff.",
-    "blocker": "Connector-only runtime cannot run control:merge-check. Real structural, wetting, garden safety and independent site-receiver requirements remain open."
+    "evidence": "PR #1324 exact head 037a28ac; full validate CI run 41994177080 SUCCESS, five new rainwater regressions, 5 files; no selected-house change.",
+    "next": "Recover PR #1324; reacquire fresh generation, run canonical merge-check on capable runner against same validated head/main, then expected-head merge and closeout.",
+    "blocker": "Current connector-only chat has no Git CLI; cannot run canonical publication preflight. First harm, independent receiver and structural exit remain unproved."
   }
 }
