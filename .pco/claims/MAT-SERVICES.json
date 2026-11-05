@@ -1,27 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 18,
-  "state": "released",
-  "leaseId": "b3a8f164-f58c-467b-905a-c8283b0e5337",
+  "generation": 19,
+  "state": "claimed",
+  "leaseId": "6ca4e7fa-dc1b-46db-8e76-7570a4e6fb54",
   "holder": {
     "kind": "chatgpt",
-    "label": "services18-factory-control"
+    "label": "zerg-20261105-w3"
   },
-  "claimedAt": "2026-11-02T14:32:24.599Z",
-  "heartbeatAt": "2026-11-02T18:18:19.000Z",
-  "expiresAt": "2026-11-02T18:18:19.000Z",
-  "branch": "work/services18-factory-control-20261102",
-  "note": "Factory-compatible full-mode safety/control and complete first-release successor; retain known failures and plant/material holds",
+  "claimedAt": "2026-11-05T18:09:59.473Z",
+  "heartbeatAt": "2026-11-05T18:09:59.473Z",
+  "expiresAt": "2026-11-05T18:54:59.473Z",
+  "branch": "work/zerg-20261105-w3-next",
   "predecessor": {
-    "leaseId": "628762b1-3992-4657-b353-448910a8fb2f",
-    "generation": 17,
-    "branch": "work/zerg11-services-joined-system",
-    "pr": 1279,
-    "checkpoint": {
-      "evidence": "Draft PR1279 refrozen remotee1ac7f922edfafeff90e8fb7e1e64d9dbe470f4c treeef9307362f1af769cb381aa36c4072bf9096df6c realmainceb2684;256modes;corrected inspected two-sheet legend;generator and repo validation pass;full suite local IPC limitation recorded",
-      "next": "Root exact-head CI/preflight and bounded reviewer final drawing check; operating/controller/firstrelease/netplant/material qualifications remain unresolved"
-    }
+    "leaseId": "b3a8f164-f58c-467b-905a-c8283b0e5337",
+    "generation": 18,
+    "branch": "work/services18-factory-control-20261102"
   },
   "recoverySource": {
     "leaseId": "628762b1-3992-4657-b353-448910a8fb2f",
@@ -32,7 +26,5 @@
       "evidence": "Draft PR1279 refrozen remotee1ac7f922edfafeff90e8fb7e1e64d9dbe470f4c treeef9307362f1af769cb381aa36c4072bf9096df6c realmainceb2684;256modes;corrected inspected two-sheet legend;generator and repo validation pass;full suite local IPC limitation recorded",
       "next": "Root exact-head CI/preflight and bounded reviewer final drawing check; operating/controller/firstrelease/netplant/material qualifications remain unresolved"
     }
-  },
-  "releasedAt": "2026-11-02T18:18:19.000Z",
-  "releaseReason": "handoff"
+  }
 }
