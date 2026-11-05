@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 50,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9c0618c5-f679-43d8-a416-0c87f143e782",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6653552713"
   },
   "claimedAt": "2026-11-05T08:39:19.000Z",
-  "heartbeatAt": "2026-11-05T08:40:45.000Z",
-  "expiresAt": "2026-11-05T09:25:45.000Z",
+  "heartbeatAt": "2026-11-05T08:46:46.000Z",
+  "expiresAt": "2026-11-05T08:46:46.000Z",
   "branch": "work/mvb-chat-6653552713",
   "predecessor": {
     "leaseId": "6fdbe43f-6b1c-4f83-9f01-af6bfa335869",
@@ -39,5 +39,7 @@
     "evidence": "PR #1325 head 037a28ac reuses CI-green #1324 5-file RWT-06 weather-wall study; fresh generation-50 branch and packet validation in progress.",
     "next": "Verify exact-head PR #1325 CI run 41996241392; execute canonical generation-50 merge-check on capable Actions runner, then expected-head merge and release.",
     "blocker": "No current independent second court outlet, real first-wetting joint or lawful site receiver. Earlier gen49 PR #1324 must be superseded."
-  }
+  },
+  "releasedAt": "2026-11-05T08:46:46.000Z",
+  "releaseReason": "handoff"
 }
