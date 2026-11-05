@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w1"
   },
   "claimedAt": "2026-11-05T19:02:39.632Z",
-  "heartbeatAt": "2026-11-05T19:02:39.632Z",
-  "expiresAt": "2026-11-05T19:47:39.632Z",
+  "heartbeatAt": "2026-11-05T19:06:16.051Z",
+  "expiresAt": "2026-11-05T19:51:16.051Z",
   "predecessor": {
     "leaseId": "324c4de5-1082-4ea5-b89e-b3ef1bc290df",
     "generation": 19,
@@ -30,5 +30,10 @@
       "evidence": "PR1330 exacthead fd0a77276e0562f3feb2c6368c8a0990a376d794 merged currentmain7fe3a282, only2IASdocs. NativeRev2p5 counterexample independently verified, focused integrity passed.",
       "next": "Await exact-headCI42089086697, commander reviewed2docs. Fresh canonical preflight and expected-head coordinated merge; IAS remains planned, then handoff matched first-release/setout decision."
     }
+  },
+  "branch": "work/zerg-20261105-w1c",
+  "checkpoint": {
+    "evidence": "Freshmain ee710e9a PR1330 accepted source correction. Native B594 dimensions982f052a and installationc057d269 downloaded/visually inspected; actual vertical flange120/body89/drop81/full137, no dropin110port claim.",
+    "next": "Compare complete native B568 lateral fitting/port move with B594 aligned-port arrangement and reachable supported first-release. Own IAS proposed evidence only; canonical Services frozen for1329."
   }
 }
