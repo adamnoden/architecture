@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w5"
   },
   "claimedAt": "2026-11-05T18:15:49.054Z",
-  "heartbeatAt": "2026-11-05T18:15:49.054Z",
-  "expiresAt": "2026-11-05T19:00:49.054Z",
+  "heartbeatAt": "2026-11-05T18:29:44.272Z",
+  "expiresAt": "2026-11-05T19:14:44.272Z",
   "branch": "work/zerg-20261105-w5-2",
   "predecessor": {
     "leaseId": "308c60ef-01ca-45d0-9706-c99145d3f12d",
@@ -33,5 +33,11 @@
       "next": "Inspect exact-head CI42081393633, then fresh canonical preflight and merge",
       "blocker": "Final CI pending; bare-slab complete installation remains unqualified"
     }
+  },
+  "pr": 1329,
+  "checkpoint": {
+    "evidence": "Draft PR #1329 head13e864baad51d94c6dee785d69e7fd57df6d6503 tree4d4da535d6de7db505d2e6ec05081f8855a44def; finite B source/section/plan/checks rendered and inspected",
+    "next": "Join actual HAD successor source; resolve intake/pit/whole-carriage renewal and actual bridge/support limits before final CI",
+    "blocker": "200-deep U clashes with beam; east stage only5mm; first harm and real air/gas boundary remain unqualified"
   }
 }
