@@ -9,9 +9,9 @@
     "label": "zerg-20261105-w3"
   },
   "claimedAt": "2026-11-05T18:09:59.473Z",
-  "heartbeatAt": "2026-11-05T18:53:44.042Z",
-  "expiresAt": "2026-11-05T19:38:44.042Z",
-  "branch": "work/zerg-20261105-w3-next",
+  "heartbeatAt": "2026-11-05T19:05:40.067Z",
+  "expiresAt": "2026-11-05T19:50:40.067Z",
+  "branch": "work/zerg-20261105-w5-2",
   "predecessor": {
     "leaseId": "b3a8f164-f58c-467b-905a-c8283b0e5337",
     "generation": 18,
@@ -28,8 +28,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "FinalServices49458723b92f173b903e8d0fa31933e32bd878ef tree8e324f4b exactlocalc5c6ce68; canonicalbaselineblobffe115aa/JSprojectionce005201. Continuouslow2500L retains3200turn; actual27finishedarch proof fixes rejectedY3000,25fullplanchecks/Pythonreproduction/repointegrity/renderinspection pass. Upperwet/port/kit/FIRSTfields unchanged; B568direct110failure evidenceonly.",
-    "next": "JoinHADandMATinsharedPR1329; rederiveHADactualServicesaux/emitters andexactauthguard; verify fullcombinedsource/render/CI, bindlease andfreshpreflight beforeexpected-headmerge.",
-    "blocker": "Joinedwaterbridge/firstwet/linerandnewHADaffectedhouseproof remain pending; no wholehouse/support/material/kit admission or packetcompletion."
-  }
+    "evidence": "SharedDRAFT1329 f6e1fe85ed969658b906a517b2c98f77a64fd63f preserves Services49458723 and canonicalbaselineffe115aa exactreadback, plusHAD/MAT sources. Review found3300westpierbisectsPLANTentry andcuts3200packet; hypothesisexplicitlyunadopted.",
+    "next": "Retainoriginal3700wall if fullapparatus/servicefield/frame/route checks pass; movefullcylinderservicebay125N, rebindnumericowner+HADexactfields. Keepall3sourcesonePR, exactcombinedCI thenfresh3leasespreflight.",
+    "blocker": "Actual3700packing/topologicalentryregression andmatchedspinedoorreference pending. No sourceadoption orwholeServices/house/material completion."
+  },
+  "pr": 1329
 }
