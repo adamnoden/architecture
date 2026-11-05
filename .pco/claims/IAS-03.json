@@ -1,44 +1,34 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 19,
-  "state": "released",
-  "leaseId": "324c4de5-1082-4ea5-b89e-b3ef1bc290df",
+  "generation": 20,
+  "state": "claimed",
+  "leaseId": "66c9d5b6-ecdb-4582-9e68-bde074daa069",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261105-w1"
   },
-  "claimedAt": "2026-11-05T18:01:12.525Z",
-  "heartbeatAt": "2026-11-05T19:01:07.680Z",
-  "expiresAt": "2026-11-05T19:01:07.680Z",
-  "branch": "work/zerg-20261105-w1b",
+  "claimedAt": "2026-11-05T19:02:39.632Z",
+  "heartbeatAt": "2026-11-05T19:02:39.632Z",
+  "expiresAt": "2026-11-05T19:47:39.632Z",
   "predecessor": {
-    "leaseId": "f832c78d-f649-4cc1-9bc1-a1c0f39c9078",
-    "generation": 18,
-    "branch": "work/zerg-recovery-opening-services",
-    "pr": 1271,
+    "leaseId": "324c4de5-1082-4ea5-b89e-b3ef1bc290df",
+    "generation": 19,
+    "branch": "work/zerg-20261105-w1b",
+    "pr": 1330,
     "checkpoint": {
-      "evidence": "Deliberate sharedassociation PR1271/work/zerg-recovery-opening-services headd4b5c091217231fda9771da5701759d0ae293b0c tree98f37b73662b80d95794cdb9021b92e945c16cc8; trueparents main86bd+Servicesaee19ca+IASc91d9ebd. Root verifies all7ownedblobs exact,repo/diff/derivedcounts pass; IAS156tests accepted. IASsource frozen; no independentCI claim. Renewal from clean86bd maincontrol whereIASready.",
-      "next": "Holdsharedhead for root soleCI/preflight/expectedheadmerge. After verifiedmerge immediately release nowblocked IAS18 handoff before freshmain canonical acquisition of ready OAS-NORTH-EXPORT. No sourcechanges until newOASlease.",
-      "blocker": "One newplanned actualwindow predecessor; IAS remainsplanned and becomesblocked, no completion/maturity gain. ActualFIRST1000window/guard/removal and full NW/apparatus/bootstrap/export proof unearned; structuralroof solids remainSTRscope."
+      "evidence": "PR1330 exacthead fd0a77276e0562f3feb2c6368c8a0990a376d794 merged currentmain7fe3a282, only2IASdocs. NativeRev2p5 counterexample independently verified, focused integrity passed.",
+      "next": "Await exact-headCI42089086697, commander reviewed2docs. Fresh canonical preflight and expected-head coordinated merge; IAS remains planned, then handoff matched first-release/setout decision."
     }
   },
   "recoverySource": {
-    "leaseId": "f832c78d-f649-4cc1-9bc1-a1c0f39c9078",
-    "generation": 18,
-    "branch": "work/zerg-recovery-opening-services",
-    "pr": 1271,
+    "leaseId": "324c4de5-1082-4ea5-b89e-b3ef1bc290df",
+    "generation": 19,
+    "branch": "work/zerg-20261105-w1b",
+    "pr": 1330,
     "checkpoint": {
-      "evidence": "Deliberate sharedassociation PR1271/work/zerg-recovery-opening-services headd4b5c091217231fda9771da5701759d0ae293b0c tree98f37b73662b80d95794cdb9021b92e945c16cc8; trueparents main86bd+Servicesaee19ca+IASc91d9ebd. Root verifies all7ownedblobs exact,repo/diff/derivedcounts pass; IAS156tests accepted. IASsource frozen; no independentCI claim. Renewal from clean86bd maincontrol whereIASready.",
-      "next": "Holdsharedhead for root soleCI/preflight/expectedheadmerge. After verifiedmerge immediately release nowblocked IAS18 handoff before freshmain canonical acquisition of ready OAS-NORTH-EXPORT. No sourcechanges until newOASlease.",
-      "blocker": "One newplanned actualwindow predecessor; IAS remainsplanned and becomesblocked, no completion/maturity gain. ActualFIRST1000window/guard/removal and full NW/apparatus/bootstrap/export proof unearned; structuralroof solids remainSTRscope."
+      "evidence": "PR1330 exacthead fd0a77276e0562f3feb2c6368c8a0990a376d794 merged currentmain7fe3a282, only2IASdocs. NativeRev2p5 counterexample independently verified, focused integrity passed.",
+      "next": "Await exact-headCI42089086697, commander reviewed2docs. Fresh canonical preflight and expected-head coordinated merge; IAS remains planned, then handoff matched first-release/setout decision."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1330 exacthead fd0a77276e0562f3feb2c6368c8a0990a376d794 merged currentmain7fe3a282, only2IASdocs. NativeRev2p5 counterexample independently verified, focused integrity passed.",
-    "next": "Await exact-headCI42089086697, commander reviewed2docs. Fresh canonical preflight and expected-head coordinated merge; IAS remains planned, then handoff matched first-release/setout decision."
-  },
-  "pr": 1330,
-  "releasedAt": "2026-11-05T19:01:07.680Z",
-  "releaseReason": "handoff"
+  }
 }
