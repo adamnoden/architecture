@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 19,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "324c4de5-1082-4ea5-b89e-b3ef1bc290df",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261105-w1"
   },
   "claimedAt": "2026-11-05T18:01:12.525Z",
-  "heartbeatAt": "2026-11-05T18:57:24.390Z",
-  "expiresAt": "2026-11-05T19:42:24.390Z",
+  "heartbeatAt": "2026-11-05T19:01:07.680Z",
+  "expiresAt": "2026-11-05T19:01:07.680Z",
   "branch": "work/zerg-20261105-w1b",
   "predecessor": {
     "leaseId": "f832c78d-f649-4cc1-9bc1-a1c0f39c9078",
@@ -38,5 +38,7 @@
     "evidence": "PR1330 exacthead fd0a77276e0562f3feb2c6368c8a0990a376d794 merged currentmain7fe3a282, only2IASdocs. NativeRev2p5 counterexample independently verified, focused integrity passed.",
     "next": "Await exact-headCI42089086697, commander reviewed2docs. Fresh canonical preflight and expected-head coordinated merge; IAS remains planned, then handoff matched first-release/setout decision."
   },
-  "pr": 1330
+  "pr": 1330,
+  "releasedAt": "2026-11-05T19:01:07.680Z",
+  "releaseReason": "handoff"
 }
