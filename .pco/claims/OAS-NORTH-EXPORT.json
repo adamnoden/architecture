@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w1"
   },
   "claimedAt": "2026-11-05T17:49:30.492Z",
-  "heartbeatAt": "2026-11-05T17:51:28.327Z",
-  "expiresAt": "2026-11-05T18:36:28.327Z",
+  "heartbeatAt": "2026-11-05T17:55:10.484Z",
+  "expiresAt": "2026-11-05T18:40:10.484Z",
   "predecessor": {
     "leaseId": "f68a00a1-145f-4b9e-9b4b-269a02e1008e",
     "generation": 3,
@@ -35,7 +35,8 @@
   },
   "branch": "work/zerg-20261105-w1",
   "checkpoint": {
-    "evidence": "Current main3c0a4257; prior PR1303 already integrated. Reviewing bounded rejection of 95mm/80degree AXA candidate against IAS75 and material policy; no selected window pass.",
-    "next": "Complete primary-source alternative comparison, record explicit candidate disposition and route-design handoff; validate exact-head CI and publication preflight."
-  }
+    "evidence": "PR1326 head b7aac61b7202039613b884ff21d8e887b14affc1; explicit negative closeout of95mm/80deg AXA export config; 4 stay tests,158 control tests,occurrence+repo checks passed.",
+    "next": "Observe full exact-head CI; reconcile moved main projections if required; commander coordinates fresh canonical preflight and expected-head merge."
+  },
+  "pr": 1326
 }
