@@ -38,6 +38,9 @@ export function deriveWaterReplan({servicesText} = {}) {
   assert.deepEqual(s.eastWaterHypothesis.finishedPassageY, [6300, 7500]);
   assert.deepEqual(s.plantDryRoom, [9397, 3797, 2173.5, 1983.5]);
   const floorZ = x => -800 - (x - 7750) * 50 / 4250;
+  const groundSourcePath='project/str/studies/ground-interfaces.json';
+  const outerRoute=load(groundSourcePath).foundation_routes.find(r=>r.id==='outer-east');
+  assert.equal(outerRoute.a[0],11667.5);
   const passage = { outdoor: [9722.5, 6300, 2277.5, 1200],
     waterClear: [7750, 6600, 4250, 600],
     structuralClearY: [6450, 7350],
@@ -57,21 +60,27 @@ export function deriveWaterReplan({servicesText} = {}) {
     localSupportBeamWidths: [600, 900],
     supportAxesX: [7950, 9300], supportAxesY: [6100, 7700],
     supportNodes: { plan: [600, 600], z: [-750, -180] },
+    outerSupportReservation:{ source:{path:groundSourcePath,blob:blob(groundSourcePath),route:outerRoute},
+      axisX:11667.5,fullX:[11217.5,12117.5],beamZ:[-630,-180],
+      nodeAxesY:[6000,7800],nodePlan:[900,600],nodeZ:[-750,-180],
+      authority:'NEW bounded feasibility envelope around the actual STR common-support line, not an adopted footing size or qualified capacity. It preserves support rather than deleting it.',
+      reentry:'If actual common support needs a wider/deeper body or nodes in the water opening, STR must reopen this source before admission.' },
     structuralStatus: 'Authored feasibility reservations, not a selected STR member capacity or permission to cut existing structure.' };
   const renewal = { bodyX: [7550, 9850], length: 2300,
     waterClearWidth: 600, waterDepth: 100, wetBodyGrossWidth: 663,
     carriageWidthBudget: 763, carriageBelowBedBudget: 150,
-    selectedWithdrawal: 'EAST', selectedParkX: [9850, 12150],
-    withdrawalTranslation: 2300,
-    servicePlatform: [9722.5, 6000, 3777.5, 2100],
+    selectedWithdrawal: 'EAST', selectedParkX: [12250, 14550],
+    withdrawalTranslation: 4700,
+    servicePlatform: [9722.5, 6000, 6077.5, 2100],
     operatorDeckZ: -900,
     withdrawalTrackClearY: [6450, 7350],
     fixedTrackBelowCarriageBudget: 50,
-    withdrawalTrackEndX: 12150,
-    withdrawalTrackEndLowestZ: floorZ(12150) - 150 - 50,
-    operatorField: [12300, 6450, 1100, 900],
-    northOperatorStrip: [9850, 7350, 3650, 750],
-    hoistWorkingBox: [9850, 6300, -900, 2300, 1500, 3000],
+    withdrawalTrackEndX: 14550,
+    withdrawalTrackEndLowestZ: floorZ(14550) - 150 - 50,
+    operatorField: [14700, 6450, 1100, 900],
+    northOperatorStrip: [12250, 7350, 3550, 750],
+    northStripMode:'Horizontal setup only; vacate and guard the hoist box during lifting. End operator field is independent of that box.',
+    hoistWorkingBox: [12250, 6300, -900, 2300, 1500, 3000],
     hoistLiftTranslation: 1200,
     courtIntakeWell: [6125, 6300, 1525, 1100],
     courtIntakeWellFloorZ: -950,
@@ -81,6 +90,16 @@ export function deriveWaterReplan({servicesText} = {}) {
       topLandingZ:-80,lowerLandingZ:-800,rises:4,going:200,riseMaximum:180,
       method: 'Four180 rises/three200 goings run EAST from west guard gate to a separate flat600x900 working platform. Level adapter must fit local sloping court; no stairs overlap the standing footprint. Guard before covers; isolate court water before entry.' },
     guardOuterPlan: [6075, 6250, 1625, 1200], guardTopAboveLocalCourt: 1100,
+    guardGate:{planeX:6075,rawY:[6550,7250],frameEach:25,clearY:[6575,7225],
+      hinge:[6075,7222.5],completeLeaf:[645,40,1100],opening:'WEST into court, latched before covers are released',
+      fullOpenPlan:[5430,7202.5,645,40],
+      sequence:'Install full guard while rated walking covers remain intact; open/latch gate with all covers still present; then capture/remove covers. Descent occurs through the650-clear gate into the separate600-wide steps, never across an unguarded side.',
+      topAdapterZ:[-16,8],topAdapterStatus:'Explicit levelling adapter required between the local court slope and -80 maintenance stair landing; no ordinary walking or generic step compliance pass.' },
+    temporaryTrackDeck:{x:[9850,14550],clearY:[6450,7350],topZ:-900,thicknessBudget:50,
+      panelCount:8,panelLength:587.5,hingeY:6450,openPanelY:[6425,6475],
+      sequence:'After joint release, retreat EAST on retained closed panels. Open/latch each panel behind the worker from the next retained panel; the final panel is operated from the fixed end deck. All eight are vertically parked before drawing the carriage; no worker stands alongside the moving body in the narrow passage.',
+      bodyCentreOffsetBeyondPanel:325,bodyRadius:300,
+      installedQualification:'Reference first-motion geometry only. Actual hinge/lock/cover loads, capture/force and guard hardware require matched qualification.' },
     courtCollector: { plan: [7300, 6300, 350, 1450], surfaceReachable: true,
       northSurfaceLipZ: -110, northChannelBedZ: -180,
       lowChannelAtIntakeZ: -200,
@@ -101,7 +120,7 @@ export function deriveWaterReplan({servicesText} = {}) {
       'Remove and mechanically park all open E receiving/liner/guard segments over the selected draw track, with their independent supports retained outside the swept body.',
       'Enter the guarded court intake service well, capture/remove splash shield, release upstream joint outside court beam; release outer joint/keeper outside widened spine beam.',
       'Capture the full carriage on a positively retained sloping transfer track. Draw 2300 east along the actual fall; no preliminary vertical lift through the beam.',
-      'Only after body west end reaches x9850, hoist 1200 vertically in the open E work box and move to the explicit outside storage/operator area.',
+      'Only after body west end reaches x12250, wholly beyond the reserved outer support ending12117.5, hoist1200 vertically in the open E work box.',
       'Reverse with captured body, reinstate both joints/shield/receivers and covers, inspect/test then reopen E. N never dismantled by this sequence.'],
     courtCost: 'One guarded intake/service well, not a court-length staging pocket; outdoor E track requires a depressed opening below the raised operator deck.' };
   const hydraulicProbe = { assignedFullRoofCourtLps: 3.60375,
@@ -211,6 +230,11 @@ export function deriveWaterReplan({servicesText} = {}) {
     points:[...larder.approach,larder.windowBody],state:'All table/chairs retained; low-larder drawers CLOSED during window task.',
     pass:larderProof.pass,scope:'Affected body/reach reference only; no historical whole-house or actual-hardware pass transferred.'});
   model.wholeHouseFit = { pass: false, scope: 'New joined affected geometry still being challenged; historical whole-house pass does not apply automatically.' };
+  model.currentAdoptionBlockers=[
+    'The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.',
+    'Temporary walking deck at-900 has only270 headroom below the retained outer support at-630. Walking retreat through that support and900-high hinged cover opening are NOT feasible as currently described. No maintenance first-motion pass.',
+    'Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health still needs explicit active HAD/MAT reproducer coverage before adoption.'
+  ];
   model.knownRejectedGeometry = { intermediateDividerAt3300: {
     westPier: [9300,3203,350,194], protectedPlantDoorRawY: [2750,3650],
     remainingRawDoorPiecesY: [[2750,3203],[3397,3650]],
@@ -222,7 +246,7 @@ export function deriveWaterReplan({servicesText} = {}) {
     sources: { had: { path: hadPath, blob: blob(hadPath) }, services: { path: canonicalServicesPath, blob: blob(canonicalServicesPath), projectionSha256: servicesProjection } },
     model, passage, bridge, renewal, hydraulicProbe,
     groundEnvelope: { routeLocalLowestTrial: -1000, heaveStress: 300, constructionLoss: 50,
-      ventilationReserve: 150, routeLocalDMinimum: 1500, routeLocalDTrial: 1600,
+      ventilationReserve: 150, routeLocalDMinimum: 1500, routeLocalDTrial: 1700,
       fullSelectedTrackLowest: renewal.withdrawalTrackEndLowestZ,
       fullSelectedTrackMinimumD: -renewal.withdrawalTrackEndLowestZ + 500,
       uniformSolumOrRealExteriorGradeAdopted: false,
@@ -232,15 +256,12 @@ export function deriveWaterReplan({servicesText} = {}) {
       eastMaintenance: 'North remains assembled and unobstructed during eastward E withdrawal; fence intake well/track and keep the protected house entry available.',
       failure: 'N mouth blockage/high north receiving head requires E intake and distinct receiving envelope. Whole-site flooding beyond both declared bounds rejects site applicability.' },
     retainedProofBoundary: 'Only exact untouched fields may retain historical fit evidence. Plant, new wall/portal, support, deep pocket and first-wetting joins require actual new checks; no blanket wholeHouseFit pass is inherited.',
-    unclosed: ['Court intake well/cover/pan first release and guarding must be fully drawn and challenged.',
-      'Intermediate3300 divider pier blocks the actual protected Plant door. This WIP is positively rejected for adoption until the wall/body topology is corrected.',
-      'MAT source must bind whole carriage/aperture, release, first wetting and dry enclosure.',
-      'Intermediate arch y3300 and full service trunk crossing need actual intrados/tool test.',
-      'Actual support continuity, exterior portal, groundwater/receiving head and public approach must be reconciled.'] };
+    unclosed: [...model.currentAdoptionBlockers,
+      'Actual support continuity, groundwater/receiving head and public approach remain unearned. Retained3700 door/arch and low-larder component checks do not establish whole-house or hydraulic acceptance.'] };
 }
 
 function render(v) {
-  const scale=.047, px=x=>70+x*scale, py=y=>680-y*scale;
+  const scale=Math.min(.047,640/(v.renewal.servicePlatform[0]+v.renewal.servicePlatform[2])), px=x=>70+x*scale, py=y=>680-y*scale;
   const rect=(r,color,opacity=1)=>`<rect x="${px(r[0])}" y="${py(r[1]+r[3])}" width="${r[2]*scale}" height="${r[3]*scale}" fill="${color}" opacity="${opacity}"/>`;
   const label=(x,y,t)=>`<text x="${x}" y="${y}" font-size="12" font-family="Arial">${t}</text>`;
   let svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880"><rect width="1400" height="880" fill="#fbfaf5"/>`;
@@ -253,20 +274,21 @@ function render(v) {
   svg+=rect([v.renewal.selectedParkX[0],6450,v.renewal.length,900],'#227b99',.25);
   svg+=rect(v.renewal.operatorField,'#e8c56a',.8);
   for(const [id,r]of Object.entries(v.model.groundFurniture))if(Array.isArray(r)&&r.length===4)svg+=rect(r,'#b2b39d');
-  svg+=label(70,735,'North remains intact. East module withdraws to a real outboard service platform at x13500.');
+  svg+=label(70,735,`East proposal work field ends at x${v.renewal.servicePlatform[0]+v.renewal.servicePlatform[2]}; first-motion sequence remains UNPROVED.`);
   svg+=label(70,758,'Brown: guarded intake well only. No court-length staging pocket. Yellow: operator field.');
-  const sx=x=>740+(x-4250)*.065, sz=z=>420-z*.19;
+  const sx=x=>740+(x-4250)*.052, sz=z=>420-z*.19;
   svg+=label(740,75,'E longitudinal section · FFL 0');
   svg+=`<line x1="740" y1="${sz(0)}" x2="1310" y2="${sz(0)}" stroke="#6d6a62"/>`;
-  svg+=`<rect x="${sx(7750)}" y="${sz(-180)}" width="${(9722.5-7750)*.065}" height="${450*.19}" fill="#777268"/>`;
+  svg+=`<rect x="${sx(7750)}" y="${sz(-180)}" width="${(9722.5-7750)*.052}" height="${450*.19}" fill="#777268"/>`;
+  svg+=`<rect x="${sx(11217.5)}" y="${sz(-180)}" width="${900*.052}" height="${450*.19}" fill="#b57663"/>`;
   svg+=`<path d="M${sx(7750)},${sz(-800)} L${sx(12000)},${sz(-850)}" stroke="#227b99" stroke-width="5" fill="none"/>`;
   svg+=`<path d="M${sx(7650)},${sz(-698.82)} L${sx(9822.5)},${sz(-724.38)}" stroke="#227b99" stroke-width="2" fill="none"/>`;
-  svg+=`<rect x="${sx(6650)}" y="${sz(-80)}" width="${1100*.065}" height="${870*.19}" fill="#cb8e5f" opacity=".3"/>`;
-  svg+=`<rect x="${sx(9850)}" y="${sz(-700)}" width="${2300*.065}" height="${250*.19}" fill="#227b99" opacity=".25"/>`;
+  svg+=`<rect x="${sx(6125)}" y="${sz(-80)}" width="${1525*.052}" height="${870*.19}" fill="#cb8e5f" opacity=".3"/>`;
+  svg+=`<rect x="${sx(v.renewal.selectedParkX[0])}" y="${sz(-750)}" width="${2300*.052}" height="${250*.19}" fill="#227b99" opacity=".25"/>`;
   svg+=label(740,665,'Beam trial −180..−630; liner bed −800..−850; no hidden level return.');
-  svg+=label(740,690,'EAST release: parked x9850..12150; depressed track under a separate operator deck.');
-  svg+=label(740,715,'Track/local D1551.8 minimum / D1600 trial; actual site/support unaccepted.');
-  svg+=label(740,760,'New site cost: 1500 mm beyond east face, independent receiving/head and garden access.');
+  svg+=label(740,690,`EAST park ${v.renewal.selectedParkX.join('..')}; beyond proposed outer support. Cover/worker path FAILS.`);
+  svg+=label(740,715,`Track-local D${v.groundEnvelope.fullSelectedTrackMinimumD.toFixed(1)} minimum / D${v.groundEnvelope.routeLocalDTrial} trial; site unaccepted.`);
+  svg+=label(740,760,'WIP HANDOFF: no adoption. Whole temporary-deck/cover motion must be redesigned.');
   return svg+'</svg>\n';
 }
 

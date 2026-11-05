@@ -34,7 +34,8 @@ test('east withdrawal clears the real supports and has a depressed track instead
   assert.deepEqual(b.localSupportBeamWidths, [600, 900]);
   assert.equal(b.supportAxesX[1] + b.localSupportBeamWidths[1] / 2, 9750);
   assert(b.supportAxesX[1] + b.localSupportBeamWidths[1] / 2 >= b.newEastWeatherWallX[1]);
-  assert.equal(r.selectedParkX[0] - 9750, 100);
+  assert.equal(r.selectedParkX[0] - b.outerSupportReservation.fullX[1], 132.5);
+  assert(r.hoistWorkingBox[0]>b.outerSupportReservation.fullX[1]);
   assert.equal(r.bodyX[1] - r.bodyX[0], r.length);
   assert.deepEqual(r.selectedParkX, r.bodyX.map(x => x + r.withdrawalTranslation));
   assert(r.withdrawalTrackEndLowestZ < r.operatorDeckZ);

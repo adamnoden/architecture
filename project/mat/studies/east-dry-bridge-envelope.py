@@ -12,6 +12,8 @@ p,b,n,d=h['passage'],h['bridge'],h['renewal'],h['groundEnvelope'];a=s['assembly_
 assert [q[1] for q in b['floorLayers']]==a['supported_floor_layer_depths']
 assert b['slabZ']==[-380,-180] and n['selectedWithdrawal']=='EAST'
 bed=lambda x:p['bedEnds'][0][1]+(x-p['bedEnds'][0][0])*(p['bedEnds'][1][1]-p['bedEnds'][0][1])/(p['bedEnds'][1][0]-p['bedEnds'][0][0])
+support_raw=(R/s['retained_outer_support_reference_path']).read_bytes();support_ref=json.loads(support_raw)
+outer=next(q for q in support_ref['foundation_routes'] if q['id']=='outer-east')
 body=n['bodyX'];L=body[1]-body[0];park=n['selectedParkX'];beam=b['localSupportBeamZ'][0]
 assert L==n['length']==park[1]-park[0] and park[0]-body[0]==n['withdrawalTranslation']
 width=n['waterClearWidth'];depth=n['waterDepth']
@@ -105,7 +107,8 @@ out={'identity':s['identity'],'status':s['status'],'HAD_source':{'path':s['joine
  'gross_liner_width_mm':ugross,'whole_carriage_width_mm':carriage,'gross_portal_width_mm':portal[1]-portal[0],
  'lateral_remainder_each_mm':((portal[1]-portal[0])-carriage)/2,'body_rim_ends_mm':rim,
  'minimum_gross_rim_to_beam_mm':beam-max(rim),'rejected_200_deep_body_overlap_mm':max(bed(x)+200 for x in body)-beam,
- 'body_carriage_bottom_mm':[bottom(x) for x in body],'selected_park_x_mm':park,'actual_beam_to_hoist_park_mm':clearance,
+ 'body_carriage_bottom_mm':[bottom(x) for x in body],'outer_support_reference':{'path':s['retained_outer_support_reference_path'],'blob':blob(support_raw),'reserved_axis_x_mm':outer['a'][0],'role':outer['role'],'park_straddles_reserved_line':park[0]<outer['a'][0]<park[1],'clear_profile_bound':False,'scope':'Historical continuous common-support reservation, not an adopted member size. Actual outer support/threshold and complete hoist sweep must join before acceptance.'},
+ 'selected_park_x_mm':park,'new_bridge_beam_to_hoist_park_mm':clearance,
  'translation_mm':n['withdrawalTranslation'],'translation_z_mm':bed(park[0])-bed(body[0]),
  'park_carriage_bottom_mm':[bottom(x) for x in park],'operator_deck_z_mm':n['operatorDeckZ'],
  'rejected_solid_deck_overlap_mm':n['operatorDeckZ']-min(bottom(x) for x in park),
@@ -117,46 +120,50 @@ out={'identity':s['identity'],'status':s['status'],'HAD_source':{'path':s['joine
  'intake_flow_void':{'representation':shield['representation'],'shaft':shaft,'outlet':outlet,'result':'Connected geometric clear void only; no loss/splash/capacity rating'},
  'historical_rejected_west_park':oldwest,'historical_west_actual_beam_clearance_mm':min(q[0] for q in beams)-oldwest[1],
  'historical_rejected_east_shell_park':oldeast,'historical_east_shell_remaining_mm':12000-oldeast[1],
- 'envelope_result':('FAIL: intake well intersects fixed support nodes' if node_clashes else 'Listed material/whole-carriage/support envelope checks pass only'),
+ 'envelope_result':('FAIL: intake well intersects fixed support nodes' if node_clashes else 'Listed local bridge/carriage checks pass; retained outer support/hoist join UNBOUND'),
  'first_wetting':'U rim is overtop geometry, not safe stage. Inlet drop/splash can wet a beam/air joint before bulk overtop; actual shield/end transfer needs water testing.',
  'limits':['No structural capacity, complete material, air/gas, hydraulic, first-harm, lifting or real-site acceptance','Rail/keeper/joint/rigging/guard/step hardware must fit actual territories','D1600 is route-local; other real supports or site conditions can govern deeper']}
 svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="1920" viewBox="0 0 1180 1920"><rect width="100%" height="100%" fill="white"/><g font-family="sans-serif" font-size="14" fill="#17242e">']
 def text(x,y,t,size=14,c='#17242e'):svg.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{c}">{t}</text>')
 def rect(x,y,w,ht,fill,stroke='#334c60'):svg.append(f'<rect x="{x}" y="{y}" width="{w}" height="{ht}" fill="{fill}" stroke="{stroke}"/>')
-X=lambda x:60+(x-4250)*.111;Z=lambda z:100-z*.20;Y=lambda y:540+(y-4250)*.095
+XMIN=min(court[0],well[0],plat[0]);XMAX=max(court[0]+court[2],plat[0]+plat[2],park[1]);SX=1050/(XMAX-XMIN)
+YMIN=min(court[1],plat[1],well[1]);YMAX=max(court[1]+court[3],plat[1]+plat[3],max(b['supportAxesY'])+nodehalf);SY=360/(YMAX-YMIN)
+X=lambda x:60+(x-XMIN)*SX;Z=lambda z:100-z*.20;Y=lambda y:540+(y-YMIN)*SY
 text(30,30,'East dry bridge: actual HAD floor, supports and whole-carriage renewal',22)
 text(30,55,'Unadopted development envelope; no qualified products, technical acceptance or actual plot',14,'#a12b23')
 z=0
 for (_,th),c in zip(b['floorLayers'],['#e9d6b5','#cecabd','#b3dfd8','#c4c8cc']):
  rect(X(b['permanentDryGalleryClearX'][0]),Z(z),.111*(b['permanentDryGalleryClearX'][1]-b['permanentDryGalleryClearX'][0]),th*.2,c);z-=th
-for lo,hi in beams:rect(X(lo),Z(b['localSupportBeamZ'][1]),(hi-lo)*.111,(b['localSupportBeamZ'][1]-beam)*.2,'none')
+for lo,hi in beams:rect(X(lo),Z(b['localSupportBeamZ'][1]),(hi-lo)*SX,(b['localSupportBeamZ'][1]-beam)*.2,'none')
 text(30,205,'RC200 field ends at -380; actual 600 / 900 crossing beams reach -630',14)
 for (lo,hi),c in [(body,'#67a8d5'),(park,'#c6e0cc')]:
  pts=[(X(lo),Z(bed(lo)+depth)),(X(hi),Z(bed(hi)+depth)),(X(hi),Z(bottom(hi))),(X(lo),Z(bottom(lo)))]
  svg.append('<polygon points="'+' '.join(f'{x},{y}' for x,y in pts)+f'" fill="{c}" stroke="#145c83"/>')
-svg.append(f'<path d="M{X(plat[0])} {Z(n["operatorDeckZ"])} H{X(13500)}" stroke="#8f6354" stroke-dasharray="5 4"/>')
+svg.append(f'<path d="M{X(plat[0])} {Z(n["operatorDeckZ"])} H{X(plat[0]+plat[2])}" stroke="#8f6354" stroke-dasharray="5 4"/>')
 svg.append(f'<path d="M{X(park[0])} {Z(track(park[0]))} L{X(park[1])} {Z(track(park[1]))}" stroke="#a12b23" stroke-width="2"/>')
+svg.append(f'<path d="M{X(outer["a"][0])} 130 V320" stroke="#a12b23" stroke-dasharray="4 4"/>')
+text(30,385,f'Retained support reservation x{outer["a"][0]:g} crosses the park: actual profile / full hoist clearance UNBOUND.',13,'#a12b23')
 text(30,350,'Blue: installed body/backing. Green: separate east park. Brown: operator deck outside the depressed track.',13)
 svg.append(f'<path d="M60 {Z(-d["routeLocalDTrial"])} H1110" stroke="#a12b23" stroke-dasharray="8 5"/>')
 text(30,455,f'Lowest fixed track {low:.3f}; local D{d["routeLocalDTrial"]} trial has {d["routeLocalDTrial"]-D:.3f} over the stated stresses',14,'#a12b23')
 text(30,495,'Plan: actual beam faces, guarded intake and new outboard site work field',18)
-rect(X(4250),Y(4250),3500*.111,3500*.095,'#f6f0e2')
-rect(X(b['coveredX'][0]),Y(portal[0]),(b['coveredX'][1]-b['coveredX'][0])*.111,(portal[1]-portal[0])*.095,'#d2d7dc')
-rect(X(plat[0]),Y(plat[1]),plat[2]*.111,plat[3]*.095,'#f1e9dd')
-rect(X(trackplan[0]),Y(trackplan[1]),trackplan[2]*.111,trackplan[3]*.095,'#dae7df')
-rect(X(body[0]),Y(p['waterClear'][1]),L*.111,width*.095,'#67a8d5')
-rect(X(park[0]),Y(portal[0]),L*.111,(portal[1]-portal[0])*.095,'none','#a12b23')
-rect(X(op[0]),Y(op[1]),op[2]*.111,op[3]*.095,'#f3dca8')
+rect(X(court[0]),Y(court[1]),court[2]*SX,court[3]*SY,'#f6f0e2')
+rect(X(b['coveredX'][0]),Y(portal[0]),(b['coveredX'][1]-b['coveredX'][0])*SX,(portal[1]-portal[0])*SY,'#d2d7dc')
+rect(X(plat[0]),Y(plat[1]),plat[2]*SX,plat[3]*SY,'#f1e9dd')
+rect(X(trackplan[0]),Y(trackplan[1]),trackplan[2]*SX,trackplan[3]*SY,'#dae7df')
+rect(X(body[0]),Y(p['waterClear'][1]),L*SX,width*SY,'#67a8d5')
+rect(X(park[0]),Y(portal[0]),L*SX,(portal[1]-portal[0])*SY,'none','#a12b23')
+rect(X(op[0]),Y(op[1]),op[2]*SX,op[3]*SY,'#f3dca8')
 for nx in b['supportAxesX']:
  for ny in b['supportAxesY']:
-  nw,nh=b['supportNodes']['plan'];rect(X(nx-nw/2),Y(ny-nh/2),nw*.111,nh*.095,'none','#654331')
+  nw,nh=b['supportNodes']['plan'];rect(X(nx-nw/2),Y(ny-nh/2),nw*SX,nh*SY,'none','#654331')
 for clash in node_clashes:
- q,t=clash['intersection_x'],clash['intersection_y'];rect(X(q[0]),Y(t[0]),(q[1]-q[0])*.111,(t[1]-t[0])*.095,'#bd342c')
-rect(X(well[0]),Y(well[1]),well[2]*.111,well[3]*.095,'none','#a12b23')
-rect(X(stepplan[0]),Y(stepplan[1]),stepplan[2]*.111,stepplan[3]*.095,'#d2b58c')
-rect(X(stand[0]),Y(stand[1]),stand[2]*.111,stand[3]*.095,'#c6e0cc')
-q=shield['plan'];rect(X(q[0]),Y(q[1]),q[2]*.111,q[3]*.095,'#b0a4a1')
-text(30,920,f'600 water / 663 U / 763 carriage / 900 portal; {clearance:g} actual beam-to-hoist park clearance',14)
+ q,t=clash['intersection_x'],clash['intersection_y'];rect(X(q[0]),Y(t[0]),(q[1]-q[0])*SX,(t[1]-t[0])*SY,'#bd342c')
+rect(X(well[0]),Y(well[1]),well[2]*SX,well[3]*SY,'none','#a12b23')
+rect(X(stepplan[0]),Y(stepplan[1]),stepplan[2]*SX,stepplan[3]*SY,'#d2b58c')
+rect(X(stand[0]),Y(stand[1]),stand[2]*SX,stand[3]*SY,'#c6e0cc')
+q=shield['plan'];rect(X(q[0]),Y(q[1]),q[2]*SX,q[3]*SY,'#b0a4a1')
+text(30,920,f'600 water / 663 U / 763 carriage / 900 portal; {clearance:g} new bridge beam-to-park clearance',14)
 text(30,945,'Intake splash and bulk first wetting differ. Complete joint/rail/guard/lift and air/thermal admission remain open.',14,'#a12b23')
 text(30,970,'The old west park, 5 mm east-only park, solid -900 deck and free D1300 are rejected, not hidden.',14)
 text(30,1020,'Intake section: HAD clear shaft and outlet, not a solid shield box',18)

@@ -3,7 +3,7 @@
   "status": "MAT assembly and envelope proof of the actual HAD successor; no technical/material acceptance",
   "HAD_source": {
     "path": "project/had/studies/water-replan.json",
-    "blob": "6c53da42a81c45777d0a18dbf803144364665598",
+    "blob": "1a0f26b850f8bbb00315d4ce79b2bb423f9b560e",
     "declaredStatus": "WIP JOINED HYPOTHESIS \u2014 NOT A SELECTED HOUSE OR COMPLETED HAD PACKET"
   },
   "east_weather_layer_faces_mm": [
@@ -58,27 +58,36 @@
     -947.6470588235294,
     -974.7058823529412
   ],
+  "outer_support_reference": {
+    "path": "project/str/studies/ground-interfaces.json",
+    "blob": "4110aab34d263fbc9f8ae44f8006aed85b797406",
+    "reserved_axis_x_mm": 11667.5,
+    "role": "both leaves require continuous common support; line is inner-leaf axis",
+    "park_straddles_reserved_line": false,
+    "clear_profile_bound": false,
+    "scope": "Historical continuous common-support reservation, not an adopted member size. Actual outer support/threshold and complete hoist sweep must join before acceptance."
+  },
   "selected_park_x_mm": [
-    9850,
-    12150
+    12250,
+    14550
   ],
-  "actual_beam_to_hoist_park_mm": 100.0,
-  "translation_mm": 2300,
-  "translation_z_mm": -27.058823529411825,
+  "new_bridge_beam_to_hoist_park_mm": 2500.0,
+  "translation_mm": 4700,
+  "translation_z_mm": -55.2941176470589,
   "park_carriage_bottom_mm": [
-    -974.7058823529412,
-    -1001.7647058823529
+    -1002.9411764705883,
+    -1030.0
   ],
   "operator_deck_z_mm": -900,
-  "rejected_solid_deck_overlap_mm": 101.76470588235293,
+  "rejected_solid_deck_overlap_mm": 130.0,
   "fixed_track_bottom_mm": [
-    -1024.7058823529412,
-    -1051.764705882353
+    -1052.9411764705883,
+    -1080.0
   ],
-  "complete_local_lowest_surface_mm": -1051.764705882353,
-  "complete_local_D_lower_bound_mm": 1551.764705882353,
-  "HAD_D_trial_mm": 1600,
-  "trial_residual_over_lower_bound_mm": 48.23529411764707,
+  "complete_local_lowest_surface_mm": -1080.0,
+  "complete_local_D_lower_bound_mm": 1580.0,
+  "HAD_D_trial_mm": 1700,
+  "trial_residual_over_lower_bound_mm": 120.0,
   "sheet_only_mass_screen_kg": 23.736,
   "full_depth_prismatic_water_litres": 138.0,
   "court_intake_well": [
@@ -154,7 +163,7 @@
     11995
   ],
   "historical_east_shell_remaining_mm": 5,
-  "envelope_result": "Listed material/whole-carriage/support envelope checks pass only",
+  "envelope_result": "Listed local bridge/carriage checks pass; retained outer support/hoist join UNBOUND",
   "first_wetting": "U rim is overtop geometry, not safe stage. Inlet drop/splash can wet a beam/air joint before bulk overtop; actual shield/end transfer needs water testing.",
   "limits": [
     "No structural capacity, complete material, air/gas, hydraulic, first-harm, lifting or real-site acceptance",

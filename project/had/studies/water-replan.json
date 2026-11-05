@@ -13154,6 +13154,11 @@
         "pass": true
       }
     },
+    "currentAdoptionBlockers": [
+      "The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.",
+      "Temporary walking deck at-900 has only270 headroom below the retained outer support at-630. Walking retreat through that support and900-high hinged cover opening are NOT feasible as currently described. No maintenance first-motion pass.",
+      "Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health still needs explicit active HAD/MAT reproducer coverage before adoption."
+    ],
     "knownRejectedGeometry": {
       "intermediateDividerAt3300": {
         "westPier": [
@@ -13281,6 +13286,47 @@
         -180
       ]
     },
+    "outerSupportReservation": {
+      "source": {
+        "path": "project/str/studies/ground-interfaces.json",
+        "blob": "4110aab34d263fbc9f8ae44f8006aed85b797406",
+        "route": {
+          "id": "outer-east",
+          "a": [
+            11667.5,
+            332.5
+          ],
+          "b": [
+            11667.5,
+            11667.5
+          ],
+          "role": "both leaves require continuous common support; line is inner-leaf axis"
+        }
+      },
+      "axisX": 11667.5,
+      "fullX": [
+        11217.5,
+        12117.5
+      ],
+      "beamZ": [
+        -630,
+        -180
+      ],
+      "nodeAxesY": [
+        6000,
+        7800
+      ],
+      "nodePlan": [
+        900,
+        600
+      ],
+      "nodeZ": [
+        -750,
+        -180
+      ],
+      "authority": "NEW bounded feasibility envelope around the actual STR common-support line, not an adopted footing size or qualified capacity. It preserves support rather than deleting it.",
+      "reentry": "If actual common support needs a wider/deeper body or nodes in the water opening, STR must reopen this source before admission."
+    },
     "structuralStatus": "Authored feasibility reservations, not a selected STR member capacity or permission to cut existing structure."
   },
   "renewal": {
@@ -13296,14 +13342,14 @@
     "carriageBelowBedBudget": 150,
     "selectedWithdrawal": "EAST",
     "selectedParkX": [
-      9850,
-      12150
+      12250,
+      14550
     ],
-    "withdrawalTranslation": 2300,
+    "withdrawalTranslation": 4700,
     "servicePlatform": [
       9722.5,
       6000,
-      3777.5,
+      6077.5,
       2100
     ],
     "operatorDeckZ": -900,
@@ -13312,22 +13358,23 @@
       7350
     ],
     "fixedTrackBelowCarriageBudget": 50,
-    "withdrawalTrackEndX": 12150,
-    "withdrawalTrackEndLowestZ": -1051.764705882353,
+    "withdrawalTrackEndX": 14550,
+    "withdrawalTrackEndLowestZ": -1080,
     "operatorField": [
-      12300,
+      14700,
       6450,
       1100,
       900
     ],
     "northOperatorStrip": [
-      9850,
+      12250,
       7350,
-      3650,
+      3550,
       750
     ],
+    "northStripMode": "Horizontal setup only; vacate and guard the hoist box during lifting. End operator field is independent of that box.",
     "hoistWorkingBox": [
-      9850,
+      12250,
       6300,
       -900,
       2300,
@@ -13370,6 +13417,63 @@
       1200
     ],
     "guardTopAboveLocalCourt": 1100,
+    "guardGate": {
+      "planeX": 6075,
+      "rawY": [
+        6550,
+        7250
+      ],
+      "frameEach": 25,
+      "clearY": [
+        6575,
+        7225
+      ],
+      "hinge": [
+        6075,
+        7222.5
+      ],
+      "completeLeaf": [
+        645,
+        40,
+        1100
+      ],
+      "opening": "WEST into court, latched before covers are released",
+      "fullOpenPlan": [
+        5430,
+        7202.5,
+        645,
+        40
+      ],
+      "sequence": "Install full guard while rated walking covers remain intact; open/latch gate with all covers still present; then capture/remove covers. Descent occurs through the650-clear gate into the separate600-wide steps, never across an unguarded side.",
+      "topAdapterZ": [
+        -16,
+        8
+      ],
+      "topAdapterStatus": "Explicit levelling adapter required between the local court slope and -80 maintenance stair landing; no ordinary walking or generic step compliance pass."
+    },
+    "temporaryTrackDeck": {
+      "x": [
+        9850,
+        14550
+      ],
+      "clearY": [
+        6450,
+        7350
+      ],
+      "topZ": -900,
+      "thicknessBudget": 50,
+      "panelCount": 8,
+      "panelLength": 587.5,
+      "hingeY": 6450,
+      "openPanelY": [
+        6425,
+        6475
+      ],
+      "sequence": "After joint release, retreat EAST on retained closed panels. Open/latch each panel behind the worker from the next retained panel; the final panel is operated from the fixed end deck. All eight are vertically parked before drawing the carriage; no worker stands alongside the moving body in the narrow passage.",
+      "bodyCentreOffsetBeyondPanel": 325,
+      "bodyRadius": 300,
+      "installedQualification": "Reference first-motion geometry only. Actual hinge/lock/cover loads, capture/force and guard hardware require matched qualification."
+    },
     "courtCollector": {
       "plan": [
         7300,
@@ -13438,7 +13542,7 @@
       "Remove and mechanically park all open E receiving/liner/guard segments over the selected draw track, with their independent supports retained outside the swept body.",
       "Enter the guarded court intake service well, capture/remove splash shield, release upstream joint outside court beam; release outer joint/keeper outside widened spine beam.",
       "Capture the full carriage on a positively retained sloping transfer track. Draw 2300 east along the actual fall; no preliminary vertical lift through the beam.",
-      "Only after body west end reaches x9850, hoist 1200 vertically in the open E work box and move to the explicit outside storage/operator area.",
+      "Only after body west end reaches x12250, wholly beyond the reserved outer support ending12117.5, hoist1200 vertically in the open E work box.",
       "Reverse with captured body, reinstate both joints/shield/receivers and covers, inspect/test then reopen E. N never dismantled by this sequence."
     ],
     "courtCost": "One guarded intake/service well, not a court-length staging pocket; outdoor E track requires a depressed opening below the raised operator deck."
@@ -13457,9 +13561,9 @@
     "constructionLoss": 50,
     "ventilationReserve": 150,
     "routeLocalDMinimum": 1500,
-    "routeLocalDTrial": 1600,
-    "fullSelectedTrackLowest": -1051.764705882353,
-    "fullSelectedTrackMinimumD": 1551.764705882353,
+    "routeLocalDTrial": 1700,
+    "fullSelectedTrackLowest": -1080,
+    "fullSelectedTrackMinimumD": 1580,
     "uniformSolumOrRealExteriorGradeAdopted": false,
     "note": "D1300 was not spare depth. Every actual support/liner low point needs its own ground relation; deeper STR alternatives and real groundwater/terrain remain explicit."
   },
@@ -13471,10 +13575,9 @@
   },
   "retainedProofBoundary": "Only exact untouched fields may retain historical fit evidence. Plant, new wall/portal, support, deep pocket and first-wetting joins require actual new checks; no blanket wholeHouseFit pass is inherited.",
   "unclosed": [
-    "Court intake well/cover/pan first release and guarding must be fully drawn and challenged.",
-    "Intermediate3300 divider pier blocks the actual protected Plant door. This WIP is positively rejected for adoption until the wall/body topology is corrected.",
-    "MAT source must bind whole carriage/aperture, release, first wetting and dry enclosure.",
-    "Intermediate arch y3300 and full service trunk crossing need actual intrados/tool test.",
-    "Actual support continuity, exterior portal, groundwater/receiving head and public approach must be reconciled."
+    "The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.",
+    "Temporary walking deck at-900 has only270 headroom below the retained outer support at-630. Walking retreat through that support and900-high hinged cover opening are NOT feasible as currently described. No maintenance first-motion pass.",
+    "Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health still needs explicit active HAD/MAT reproducer coverage before adoption.",
+    "Actual support continuity, groundwater/receiving head and public approach remain unearned. Retained3700 door/arch and low-larder component checks do not establish whole-house or hydraulic acceptance."
   ]
 }
