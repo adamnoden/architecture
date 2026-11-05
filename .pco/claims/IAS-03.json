@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w1"
   },
   "claimedAt": "2026-11-05T18:01:12.525Z",
-  "heartbeatAt": "2026-11-05T18:21:27.412Z",
-  "expiresAt": "2026-11-05T19:06:27.412Z",
+  "heartbeatAt": "2026-11-05T18:53:22.543Z",
+  "expiresAt": "2026-11-05T19:38:22.543Z",
   "branch": "work/zerg-20261105-w1b",
   "predecessor": {
     "leaseId": "f832c78d-f649-4cc1-9bc1-a1c0f39c9078",
@@ -35,7 +35,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "Pushed WIP279041f73280e0bf12fdda4d73c25dcfa03ad37c; MAT owner confirms unmatched rear first release. Comparing complete crated1000 tray on actual compact SANO stairclimber and operator with actual landing.",
-    "next": "Complete joined carrier landing/inbound proof and actual complete-profile boundaries. No IAS closure or product adoption."
+    "evidence": "Remote WIP279041f7; actual B568Rev2 SHA72b5 confirms direct110E port counterexample independently reviewed by MAT owner.",
+    "next": "Publish IAS-only bounded source correction PR, no IAS completion or new geometry suite; exact-head CI and coordinated merge."
   }
 }
