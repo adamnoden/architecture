@@ -6,6 +6,8 @@
 
 **2 November source reconciliation:** the [selected open-loggia event and service challenge](rwt-06-open-loggia-event.md) now controls current-source RWT-06 continuation. The studies below remain dated enclosed-crossing comparisons; their levels, carriers and renewal witnesses are not selected-source proof. HAD-03 is complete, but RWT-06 remains open: event/inlet/receiving-head, actual first harm, temporary rain control and high-level access are not admitted.
 
+**5 November weather-boundary correction:** the [court/plant space exchange](rwt-06-court-plant-space-exchange.md) explicitly prices a complete outdoor weather-wall reservation for the northeast second-passage trial. The older 247 mm bare-strip shift is an invalid complete-assembly cost. A source-bound 572.5 mm joined plant/court move is still only a plan lower bound, not a selected route or site-safe escape. RWT-06 stays open.
+
 **Purpose:** replace an unspecified court crossing with a located architectural trial and a complete clearance/renewal task, while retaining real-site and competent technical authority.
 
 ## Later connected comparison
