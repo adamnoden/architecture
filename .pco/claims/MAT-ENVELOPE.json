@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w5"
   },
   "claimedAt": "2026-11-05T18:15:49.054Z",
-  "heartbeatAt": "2026-11-05T19:42:54.224Z",
-  "expiresAt": "2026-11-05T20:27:54.224Z",
+  "heartbeatAt": "2026-11-05T19:47:43.039Z",
+  "expiresAt": "2026-11-05T20:32:43.039Z",
   "branch": "work/zerg-20261105-w5-2",
   "predecessor": {
     "leaseId": "308c60ef-01ca-45d0-9706-c99145d3f12d",
@@ -36,8 +36,8 @@
   },
   "pr": 1329,
   "checkpoint": {
-    "evidence": "Published draft1329 remains head f6e1fe85ed969658b906a517b2c98f77a64fd63f tree 1ac084de28490befe16fd608f90314f1fe95c1fa. Remote-source QA: STR ground-interfaces outer-east continuous support reservation x11667.5 crosses park9850..12150; actual outer support profile/full hoist sweep UNBOUND. Published f6 well also has two100x100 node corner overlaps; its direct-well floor crest is at least-100, not declared-110.",
-    "next": "Integration owner publishes corrected HAD well/stair and latest MAT source. Local MAT c27fe31d snapshot and corrected HAD are pending/unpublished; do not treat them as remote evidence. Reproduce next actual shared head, resolve remaining gate/lip/outer-support joins, then fresh event fullCI and final preflight.",
-    "blocker": "Shared source remains draft/unselected. Current f6 CI event has stale initial lease declaration and never reached health; local corrections are not yet remotely recoverable. No full hoist, activation, first-harm, material or physical-renewal acceptance."
+    "evidence": "Published1329 head3affca61dd76cf1d80967b15b01157be8f0f0234 tree2cff758b3b857503593fcbe741a2663d44f8fef1: exact detached reproduction passes MAT zero well/node overlaps, three HAD tests and repository integrity; tracked proof clean. Prior9b committed conflict markers repaired by this exact two-file regeneration. FullCI42096996252 running, not yet accepted.",
+    "next": "Join actual whole park beyond retained outer support; integrate pending MAT outer-reservation scope and scaled complete drawing, regenerate after all cherry-picks, inspect new-head fullCI then fresh canonical preflight only after adopted source review.",
+    "blocker": "Current3aff remains draft/unselected: park9850..12150 straddles continuous outer support reservation11667.5. New outer-clear park and pending local MAT c27 are not yet published. Gate/adapter, actual lip/activation and first-harm/material/physical renewal remain unqualified."
   }
 }
