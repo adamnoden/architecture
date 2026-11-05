@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w2"
   },
   "claimedAt": "2026-11-05T17:48:36.510Z",
-  "heartbeatAt": "2026-11-05T17:48:36.510Z",
-  "expiresAt": "2026-11-05T18:33:36.510Z",
+  "heartbeatAt": "2026-11-05T17:56:25.423Z",
+  "expiresAt": "2026-11-05T18:41:25.423Z",
   "predecessor": {
     "leaseId": "9c0618c5-f679-43d8-a416-0c87f143e782",
     "generation": 50,
@@ -32,5 +32,11 @@
       "next": "Verify exact-head PR #1325 CI run 41996241392; execute canonical generation-50 merge-check on capable Actions runner, then expected-head merge and release.",
       "blocker": "No current independent second court outlet, real first-wetting joint or lawful site receiver. Earlier gen49 PR #1324 must be superseded."
     }
+  },
+  "branch": "work/zerg-20261105-w2",
+  "checkpoint": {
+    "evidence": "Published exact-tree source head 469e4be2; joined RWT/STR rejection and HAD prerequisite registration; typecheck and focused regressions pass.",
+    "next": "Open shared PR; reconcile OAS merge; verify exact-head CI and both leases before merge.",
+    "blocker": "Awaiting OAS integration and final exact-head CI; architectural replacement remains HAD-WATER-REPLAN."
   }
 }
