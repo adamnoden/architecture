@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w5"
   },
   "claimedAt": "2026-11-05T18:15:49.054Z",
-  "heartbeatAt": "2026-11-05T18:29:44.272Z",
-  "expiresAt": "2026-11-05T19:14:44.272Z",
+  "heartbeatAt": "2026-11-05T19:04:35.612Z",
+  "expiresAt": "2026-11-05T19:49:35.612Z",
   "branch": "work/zerg-20261105-w5-2",
   "predecessor": {
     "leaseId": "308c60ef-01ca-45d0-9706-c99145d3f12d",
@@ -36,8 +36,8 @@
   },
   "pr": 1329,
   "checkpoint": {
-    "evidence": "Draft PR #1329 head13e864baad51d94c6dee785d69e7fd57df6d6503 tree4d4da535d6de7db505d2e6ec05081f8855a44def; finite B source/section/plan/checks rendered and inspected",
-    "next": "Join actual HAD successor source; resolve intake/pit/whole-carriage renewal and actual bridge/support limits before final CI",
-    "blocker": "200-deep U clashes with beam; east stage only5mm; first harm and real air/gas boundary remain unqualified"
+    "evidence": "Shared PR1329 head f6e1fe85ed969658b906a517b2c98f77a64fd63f tree 1ac084de28490befe16fd608f90314f1fe95c1fa; actual HAD EAST renewal and source-driven MAT inlet/whole-carriage/support/ground section joined; local reproduction, repository integrity and rendered review pass",
+    "next": "Resolve actual HAD pantry and Plant doorway falsifiers; reproduce final coherent shared source and run exact-head CI plus fresh canonical preflight before merge",
+    "blocker": "Draft shared source remains unselected: wholeHouseFit false; hydraulic first-wet, material and physical-renewal acceptance remain unearned"
   }
 }
