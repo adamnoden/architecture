@@ -22,6 +22,9 @@ test('rebuilding the plant wall is a bounded source trade-off, not a free 247 mm
   assert.equal(shared.plantSouthShiftMm,286.25);
   assert.equal(shared.courtNorthExtensionMm,286.25);
   assert.equal(shared.controlsCollisionDepthMm,83.25);
+  assert.equal(shared.centreSquareSideMm,4072.5);
+  assert.equal(shared.centreSquareAdditionalCourtM2,4.33525625);
+  assert.equal(shared.rearWallFinishedBandEncroachmentMm,0);
   assert.equal(court.proposedCourtNorthMm,8322.5);
   assert.deepEqual(court.routeYBandMm,[6922.5,8122.5]);
   assert.equal(court.centreSquareSideMm,4645);
@@ -51,7 +54,7 @@ test('full wall added north of plant consumes even more house or plant space',()
   assert.equal(court.proposedCourtNorthMm,8516.5);
   assert.equal(court.centreSquareSideMm,5033);
   assert.equal(court.centreSquareAdditionalCourtM2,13.081089);
-  assert.equal(court.rearWallFinishedBandEncroachmentMm,361);
+  assert.equal(court.rearWallFinishedBandEncroachmentMm,269);
   assert.equal(court.currentCourtWindowOverlapMm,233.5);
   assert.equal(court.currentOuterWindowOverlapMm,783.5);
 });
