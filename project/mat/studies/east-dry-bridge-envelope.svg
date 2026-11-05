@@ -1,37 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="1920" viewBox="0 0 1180 1920"><rect width="100%" height="100%" fill="white"/><g font-family="sans-serif" font-size="14" fill="#17242e">
 <text x="30" y="30" font-size="22" fill="#17242e">East dry bridge: actual HAD floor, supports and whole-carriage renewal</text>
 <text x="30" y="55" font-size="14" fill="#a12b23">Unadopted development envelope; no qualified products, technical acceptance or actual plot</text>
-<rect x="496.1745" y="100.0" width="113.6085" height="3.0" fill="#e9d6b5" stroke="#334c60"/>
-<rect x="496.1745" y="103.0" width="113.6085" height="13.0" fill="#cecabd" stroke="#334c60"/>
-<rect x="496.1745" y="116.0" width="113.6085" height="20.0" fill="#b3dfd8" stroke="#334c60"/>
-<rect x="496.1745" y="136.0" width="113.6085" height="40.0" fill="#c4c8cc" stroke="#334c60"/>
-<rect x="437.4" y="136.0" width="66.6" height="90.0" fill="none" stroke="#334c60"/>
-<rect x="570.6" y="136.0" width="99.9" height="90.0" fill="none" stroke="#334c60"/>
+<rect x="506.0513513513514" y="100.0" width="113.6085" height="3.0" fill="#e9d6b5" stroke="#334c60"/>
+<rect x="506.0513513513514" y="103.0" width="113.6085" height="13.0" fill="#cecabd" stroke="#334c60"/>
+<rect x="506.0513513513514" y="116.0" width="113.6085" height="20.0" fill="#b3dfd8" stroke="#334c60"/>
+<rect x="506.0513513513514" y="136.0" width="113.6085" height="40.0" fill="#c4c8cc" stroke="#334c60"/>
+<rect x="445.945945945946" y="136.0" width="68.10810810810811" height="90.0" fill="none" stroke="#334c60"/>
+<rect x="582.1621621621622" y="136.0" width="102.16216216216216" height="90.0" fill="none" stroke="#334c60"/>
 <text x="30" y="205" font-size="14" fill="#17242e">RC200 field ends at -380; actual 600 / 900 crossing beams reach -630</text>
-<polygon points="426.3,239.52941176470588 681.6,244.94117647058826 681.6,294.9411764705883 426.3,289.52941176470586" fill="#67a8d5" stroke="#145c83"/>
-<polygon points="681.6,244.94117647058826 936.9,250.35294117647058 936.9,300.3529411764706 681.6,294.9411764705883" fill="#c6e0cc" stroke="#145c83"/>
-<path d="M667.4475 280.0 H1086.75" stroke="#8f6354" stroke-dasharray="5 4"/>
-<path d="M681.6 304.9411764705883 L936.9 310.3529411764706" stroke="#a12b23" stroke-width="2"/>
+<polygon points="434.59459459459464,239.52941176470588 695.6756756756757,244.94117647058826 695.6756756756757,294.9411764705883 434.59459459459464,289.52941176470586" fill="#67a8d5" stroke="#145c83"/>
+<polygon points="695.6756756756757,244.94117647058826 956.7567567567568,250.35294117647058 956.7567567567568,300.3529411764706 695.6756756756757,294.9411764705883" fill="#c6e0cc" stroke="#145c83"/>
+<path d="M681.2027027027027 280.0 H1110.0" stroke="#8f6354" stroke-dasharray="5 4"/>
+<path d="M695.6756756756757 304.9411764705883 L956.7567567567568 310.3529411764706" stroke="#a12b23" stroke-width="2"/>
+<path d="M901.9864864864866 130 V320" stroke="#a12b23" stroke-dasharray="4 4"/>
+<text x="30" y="385" font-size="13" fill="#a12b23">Retained support reservation x11667.5 crosses the park: actual profile / full hoist clearance UNBOUND.</text>
 <text x="30" y="350" font-size="13" fill="#17242e">Blue: installed body/backing. Green: separate east park. Brown: operator deck outside the depressed track.</text>
 <path d="M60 420.0 H1110" stroke="#a12b23" stroke-dasharray="8 5"/>
 <text x="30" y="455" font-size="14" fill="#a12b23">Lowest fixed track -1051.765; local D1600 trial has 48.235 over the stated stresses</text>
 <text x="30" y="495" font-size="18" fill="#17242e">Plan: actual beam faces, guarded intake and new outboard site work field</text>
-<rect x="60.0" y="540.0" width="388.5" height="332.5" fill="#f6f0e2" stroke="#334c60"/>
-<rect x="448.5" y="749.0" width="218.9475" height="85.5" fill="#d2d7dc" stroke="#334c60"/>
-<rect x="667.4475" y="706.25" width="419.3025" height="199.5" fill="#f1e9dd" stroke="#334c60"/>
-<rect x="667.4475" y="749.0" width="269.4525" height="85.5" fill="#dae7df" stroke="#334c60"/>
-<rect x="426.3" y="763.25" width="255.3" height="57.0" fill="#67a8d5" stroke="#334c60"/>
-<rect x="681.6" y="749.0" width="255.3" height="85.5" fill="none" stroke="#a12b23"/>
-<rect x="953.5500000000001" y="749.0" width="122.10000000000001" height="85.5" fill="#f3dca8" stroke="#334c60"/>
-<rect x="437.4" y="687.25" width="66.6" height="57.0" fill="none" stroke="#654331"/>
-<rect x="437.4" y="839.25" width="66.6" height="57.0" fill="none" stroke="#654331"/>
-<rect x="587.25" y="687.25" width="66.6" height="57.0" fill="none" stroke="#654331"/>
-<rect x="587.25" y="839.25" width="66.6" height="57.0" fill="none" stroke="#654331"/>
-<rect x="268.125" y="734.75" width="169.275" height="104.5" fill="none" stroke="#a12b23"/>
-<rect x="268.125" y="763.25" width="66.6" height="57.0" fill="#d2b58c" stroke="#334c60"/>
-<rect x="334.725" y="749.0" width="66.6" height="85.5" fill="#c6e0cc" stroke="#334c60"/>
-<rect x="404.1" y="749.0" width="22.2" height="85.5" fill="#b0a4a1" stroke="#334c60"/>
-<text x="30" y="920" font-size="14" fill="#17242e">600 water / 663 U / 763 carriage / 900 portal; 100 actual beam-to-hoist park clearance</text>
+<rect x="60.0" y="540.0" width="397.2972972972973" height="327.2727272727273" fill="#f6f0e2" stroke="#334c60"/>
+<rect x="457.2972972972973" y="745.7142857142858" width="223.90540540540542" height="84.15584415584416" fill="#d2d7dc" stroke="#334c60"/>
+<rect x="681.2027027027027" y="703.6363636363636" width="428.79729729729735" height="196.36363636363637" fill="#f1e9dd" stroke="#334c60"/>
+<rect x="681.2027027027027" y="745.7142857142858" width="275.55405405405406" height="84.15584415584416" fill="#dae7df" stroke="#334c60"/>
+<rect x="434.59459459459464" y="759.7402597402597" width="261.0810810810811" height="56.103896103896105" fill="#67a8d5" stroke="#334c60"/>
+<rect x="695.6756756756757" y="745.7142857142858" width="261.0810810810811" height="84.15584415584416" fill="none" stroke="#a12b23"/>
+<rect x="973.7837837837839" y="745.7142857142858" width="124.86486486486487" height="84.15584415584416" fill="#f3dca8" stroke="#334c60"/>
+<rect x="445.945945945946" y="684.9350649350649" width="68.10810810810811" height="56.103896103896105" fill="none" stroke="#654331"/>
+<rect x="445.945945945946" y="834.5454545454545" width="68.10810810810811" height="56.103896103896105" fill="none" stroke="#654331"/>
+<rect x="599.1891891891892" y="684.9350649350649" width="68.10810810810811" height="56.103896103896105" fill="none" stroke="#654331"/>
+<rect x="599.1891891891892" y="834.5454545454545" width="68.10810810810811" height="56.103896103896105" fill="none" stroke="#654331"/>
+<rect x="272.8378378378378" y="731.6883116883117" width="173.10810810810813" height="102.85714285714286" fill="none" stroke="#a12b23"/>
+<rect x="272.8378378378378" y="759.7402597402597" width="68.10810810810811" height="56.103896103896105" fill="#d2b58c" stroke="#334c60"/>
+<rect x="340.94594594594594" y="745.7142857142858" width="68.10810810810811" height="84.15584415584416" fill="#c6e0cc" stroke="#334c60"/>
+<rect x="411.89189189189193" y="745.7142857142858" width="22.702702702702705" height="84.15584415584416" fill="#b0a4a1" stroke="#334c60"/>
+<text x="30" y="920" font-size="14" fill="#17242e">600 water / 663 U / 763 carriage / 900 portal; 100 new bridge beam-to-park clearance</text>
 <text x="30" y="945" font-size="14" fill="#a12b23">Intake splash and bulk first wetting differ. Complete joint/rail/guard/lift and air/thermal admission remain open.</text>
 <text x="30" y="970" font-size="14" fill="#17242e">The old west park, 5 mm east-only park, solid -900 deck and free D1300 are rejected, not hidden.</text>
 <text x="30" y="1020" font-size="18" fill="#17242e">Intake section: HAD clear shaft and outlet, not a solid shield box</text>

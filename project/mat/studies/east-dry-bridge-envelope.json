@@ -7,7 +7,7 @@
     "floor": "Permanent occupied floor; no removable room cover, custom gas lid or liner-supported floor",
     "air_gas": "Concrete/mineral junction is a provisional boundary only; cracking, joints and site gas remain unqualified. No zero-thickness metal membrane is silently added.",
     "liner": "One joint-free underbridge open U body, supported on a removable backing carriage; complete rails, anti-galling contact, keepers and restraints remain design duties",
-    "renewal": "Selected direction, platform, track and park come from HAD. Entire body/carriage follows the bed gradient; final hoist must clear actual fixed support faces, not only wall faces.",
+    "renewal": "HAD owns withdrawal/platform/track/park. Whole carriage follows grade. New bridge beams are checked; retained outer-east support/threshold and full hoist sweep remain unbound until an actual clear profile or a changed complete park is authored.",
     "ground": "Route-local clearance lower bound only. Actual bridge seats/nodes and whole-house foundation network can control a deeper solum. No groundwater tanking, pump or actual site grade is assumed.",
     "water": "No event, inlet, debris, pressure, free-transfer capture, receiving-head or first-harm acceptance. An open U rim is not a qualified emergency operating water level."
   },
@@ -23,5 +23,6 @@
       100,
       200
     ]
-  }
+  },
+  "retained_outer_support_reference_path": "project/str/studies/ground-interfaces.json"
 }

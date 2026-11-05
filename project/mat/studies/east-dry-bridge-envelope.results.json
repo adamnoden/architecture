@@ -58,11 +58,20 @@
     -947.6470588235294,
     -974.7058823529412
   ],
+  "outer_support_reference": {
+    "path": "project/str/studies/ground-interfaces.json",
+    "blob": "4110aab34d263fbc9f8ae44f8006aed85b797406",
+    "reserved_axis_x_mm": 11667.5,
+    "role": "both leaves require continuous common support; line is inner-leaf axis",
+    "park_straddles_reserved_line": true,
+    "clear_profile_bound": false,
+    "scope": "Historical continuous common-support reservation, not an adopted member size. Actual outer support/threshold and complete hoist sweep must join before acceptance."
+  },
   "selected_park_x_mm": [
     9850,
     12150
   ],
-  "actual_beam_to_hoist_park_mm": 100.0,
+  "new_bridge_beam_to_hoist_park_mm": 100.0,
   "translation_mm": 2300,
   "translation_z_mm": -27.058823529411825,
   "park_carriage_bottom_mm": [
@@ -154,7 +163,7 @@
     11995
   ],
   "historical_east_shell_remaining_mm": 5,
-  "envelope_result": "Listed material/whole-carriage/support envelope checks pass only",
+  "envelope_result": "Listed local bridge/carriage checks pass; retained outer support/hoist join UNBOUND",
   "first_wetting": "U rim is overtop geometry, not safe stage. Inlet drop/splash can wet a beam/air joint before bulk overtop; actual shield/end transfer needs water testing.",
   "limits": [
     "No structural capacity, complete material, air/gas, hydraulic, first-harm, lifting or real-site acceptance",
