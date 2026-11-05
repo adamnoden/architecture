@@ -2,20 +2,22 @@
   "schemaVersion": 1,
   "node": "HAD-WATER-REPLAN",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "665c809b-2f61-44bd-8274-60a3eb7f0f12",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261105-w2"
   },
   "claimedAt": "2026-11-05T18:09:05.119Z",
-  "heartbeatAt": "2026-11-05T19:43:32.297Z",
-  "expiresAt": "2026-11-05T20:28:32.297Z",
+  "heartbeatAt": "2026-11-05T19:55:53.061Z",
+  "expiresAt": "2026-11-05T19:55:53.061Z",
   "branch": "work/zerg-20261105-w5-2",
   "checkpoint": {
     "evidence": "SharedWIP #1329 9b57d22a exacttree0027a2f5/currentmain e1284c5; corrected3700plant/25Sdoor/fooddrawer+manualwindow/zeronodewell+MATsourceproofs committed andremote.",
     "next": "Resolve fullouter-support/hoistpark usingexplicitconservativereservation+outboardfield; finishguard/actualsection; challengeandadoptonlyonecoherentsource.",
     "blocker": "UNSELECTED. Existingouterground-support line isnotclearedbycurrentstraddlinghoistpark; firstwet/guard/sourcequalificationholds explicit. No mixedmain/no completion."
   },
-  "pr": 1329
+  "pr": 1329,
+  "releasedAt": "2026-11-05T19:55:53.061Z",
+  "releaseReason": "handoff"
 }
