@@ -1,0 +1,63 @@
+{
+  "identity": "MAT-EAST-DRY-BRIDGE-B-2026-11-05",
+  "status": "Unadopted joined HAD feasibility hypothesis B; not a selected or qualified assembly",
+  "base_had_blob": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+  "bridge_x_mm": [
+    7750,
+    9722.5
+  ],
+  "liner_body_x_mm": [
+    7650,
+    9822.5
+  ],
+  "liner_length_mm": 2172.5,
+  "bed_body_ends_mm": [
+    -798.8235294117648,
+    -824.3823529411765
+  ],
+  "liner_rim_ends_mm": [
+    -698.8235294117648,
+    -724.3823529411765
+  ],
+  "carriage_bottom_ends_mm": [
+    -948.8235294117648,
+    -974.3823529411765
+  ],
+  "water_clear_width_mm": 600,
+  "liner_gross_width_mm": 663.0,
+  "carriage_budget_width_mm": 763.0,
+  "portal_clear_width_mm": 900,
+  "lateral_portal_remainder_each_mm": 68.5,
+  "floor_depth_mm": 380,
+  "field_soffit_mm": -380,
+  "local_trial_beam_soffit_mm": -630,
+  "minimum_gross_rim_to_beam_mm": 68.82352941176475,
+  "rejected_200_deep_body_overlap_mm": 31.176470588235247,
+  "west_park_x_mm": [
+    5477.5,
+    7650
+  ],
+  "east_park_x_mm": [
+    9822.5,
+    11995.0
+  ],
+  "east_remaining_to_12000_mm": 5.0,
+  "west_park_area_m2": 1.95525,
+  "translation_rise_west_mm": 25.558823529411825,
+  "empty_liner_sheet_mass_screen_kg": 22.4202,
+  "full_100mm_prismatic_water_volume_litres": 130.35,
+  "underbridge_local_D_lower_bound_mm": 1474.3823529411766,
+  "whole_route_local_D_lower_bound_mm": 1500,
+  "hypothetical_uniform_solum_D_if_prior_SW_node_retained_mm": 1757,
+  "first_wetting": {
+    "liner_overtop": "Geometric rim only, not an operating/admitted water level",
+    "beam": "Trial underside -630 can wet if surrounding water reaches it; wet-tolerant concrete is not necessarily first vulnerable fabric",
+    "first_harm": "Unknown: actual threshold, wall/air joints, cracks, penetrations and support interfaces must be located"
+  },
+  "rejections": [
+    "200-deep body clashes with the 450-deep beam trial",
+    "East-only park has 5 mm residual and no standing/hoist territory",
+    "30 mm prelift cannot be credited with clearing a 150 mm-deep backing carriage",
+    "No actual foundation/soil, qualified complete air/gas barrier, hydraulic capacity or lifting pass"
+  ]
+}

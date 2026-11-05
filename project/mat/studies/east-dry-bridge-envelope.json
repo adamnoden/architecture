@@ -1,0 +1,36 @@
+{
+  "identity": "MAT-EAST-DRY-BRIDGE-B-2026-11-05",
+  "status": "Unadopted joined HAD feasibility hypothesis B; not a selected or qualified assembly",
+  "base_had_path": "project/had/studies/open-north-loggia.json",
+  "base_had_blob": "25faad2c4d40df2b7da7212f73808843a88d2f52",
+  "geometry_mm": {
+    "court_east": 7750,
+    "dry_gallery_east_warm_face": 9203,
+    "new_weather_wall_depth": 519.5,
+    "bed_control_x": [7750, 12000],
+    "bed_control_z": [-800, -850],
+    "water_y": [6600, 7200],
+    "outdoor_passage_y": [6300, 7500],
+    "joint_setback": 100,
+    "water_body_depth": 100,
+    "liner_sheet": 1.5,
+    "outward_flange_each": 30,
+    "carriage_extra_width_each": 50,
+    "carriage_total_below_bed": 150,
+    "portal_y": [6450, 7350],
+    "floor_layers": [["stone finish",15],["mineral screed territory",65],["bare T4+ thermal core",100],["RC structure",200]],
+    "local_beam_top": -180,
+    "local_beam_depth": 450,
+    "soil_heave_stress": 300,
+    "construction_loss": 50,
+    "residual_ventilation_comparison": 150
+  },
+  "boundaries": {
+    "floor": "Permanent occupied floor; no removable room cover, custom gas lid or liner-supported floor",
+    "air_gas": "Concrete/mineral junction is a provisional boundary only; cracking, joints and site gas remain unqualified. No zero-thickness metal membrane is silently added.",
+    "liner": "One joint-free underbridge open U body, supported on a removable backing carriage; complete rails, anti-galling contact, keepers and restraints remain design duties",
+    "renewal": "West withdrawal only into opened exterior court; temporary support and actual inlet/terminal disconnection required before translation. Whole carriage follows the bed gradient. Hoist only after clearing the dry enclosure.",
+    "ground": "Route-local clearance lower bound only. Actual bridge seats/nodes and whole-house foundation network can control a deeper solum. No groundwater tanking, pump or actual site grade is assumed.",
+    "water": "No event, inlet, debris, pressure, free-transfer capture, receiving-head or first-harm acceptance. An open U rim is not a qualified emergency operating water level."
+  }
+}
