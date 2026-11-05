@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w1"
   },
   "claimedAt": "2026-11-05T19:02:39.632Z",
-  "heartbeatAt": "2026-11-05T19:28:03.562Z",
-  "expiresAt": "2026-11-05T20:13:03.562Z",
+  "heartbeatAt": "2026-11-05T19:31:07.795Z",
+  "expiresAt": "2026-11-05T20:16:07.795Z",
   "predecessor": {
     "leaseId": "324c4de5-1082-4ea5-b89e-b3ef1bc290df",
     "generation": 19,
@@ -33,7 +33,8 @@
   },
   "branch": "work/zerg-20261105-w1c",
   "checkpoint": {
-    "evidence": "RemoteWIP d7c0cbca80ef38816a8edbf949fe6d2667e87d4f oneIASdoc. NativeB594alignedport plusrealSilverplatDreno/Matilde dividedwearmodules retainedpan comparison; sourcePDFhashes/rendered, adverseSanela/Portinox/RBcontrols, tradecostboundary. NoPR orServiceadoption.",
-    "next": "Commanderreview coherent source-choice direction beforePR. Bind actual support/waste/material/incoming packages; native documentedSilverplat PUrecommendation/elasticjoint/rubber andwholetraprenewal remainunadmitted. No transport sampling."
-  }
+    "evidence": "PR1331 exact1fda156d60e90ef766168e1e57657afbb5ace373 atmain ee710e9a, coherent1file43lines actualB594alignedport versusDrenoMatilde retainedpan/smallwearmodules. NativePDFhash/render/integrity/diffchecks passed, sourcegeometry/material/lifecycle unchanged.",
+    "next": "Commanderreview and exact-headfullCI, then freshcanonicalpreflight expected-head coordinatedmerge. NoIAScompletion; independentfirstrelease/wholewaste/basinincoming andmaterialduties explicit."
+  },
+  "pr": 1331
 }
