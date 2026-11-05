@@ -122,6 +122,26 @@ assert plant['controlsMaximumHeight'] == 2300
 assert plant['primaryBuffer']['maximumBodyHeight'] == 1600
 trunk = copy.deepcopy(next(t for t in baseline['trunks'] if t['id']=='ground-rear-east'))
 assert trunk['axisZ']==2945 and trunk['ordinaryBand']==[320,260]
+# HAD explicitly authors these new internal segmental arches, not the old
+# STR900/2250/450 semicircle. Bound the full packet AND larger corner territory.
+def finished_intrados(width, centre, endpoint, finish=27):
+    radius=width*width/(8*300)+150
+    return 2850-radius+math.sqrt((radius-finish)**2-(endpoint-centre)**2)
+arch_controls={
+    'status':'Explicit joined HAD reference geometry; no masonry capacity or classified closure acceptance.',
+    'head':2850,'spring':2550,'rise':300,'radialRing':215,'actualRadialFinish':27,
+    'upperRCUnderside':3170,'ringCrown':3065,'ringToSlabReserve':105,
+    'plant':{'rawSpan':1250,'centre':10275,'fullElbowPlan':[10050,2900,600,600],
+             'minimumFinishedIntrados':finished_intrados(1250,10275,10650)},
+    'spine':{'rawSpan':900,'centre':3200,'fullPacketPlanY':[3040,3360],
+             'minimumFinishedIntrados':finished_intrados(900,3200,3040)},
+    'requiredFinishedIntrados':2680,
+    'rejectedTurnY3000':{'fullPacketPlanY':[2840,3160],
+                        'minimumFinishedIntrados':finished_intrados(900,3200,2840)},
+    'lowProfile':'ContinuousZ2500 across3300arch,600square corner and9300spine atY3200. No normal2945 reset at the corner; rise only west atX9000.'}
+assert arch_controls['plant']['minimumFinishedIntrados']>=2680
+assert arch_controls['spine']['minimumFinishedIntrados']>=2680
+assert arch_controls['rejectedTurnY3000']['minimumFinishedIntrados']<2680
 adverse = {'unchangedBufferBeyondNewDryWall':old['primaryBuffer']['station'][1]+650-5780.5,'unchangedControlsBeyondNewDryWall':old['controlsHydraulics'][1]+650-5780.5,'unchangedRadiatorBeyondNewDryWall':old['emitterJoin']['radComplete'][1]+200-5780.5,'oldArchOpeningOverlapsNewRadiator':11050-10975}
 assert all(v>0 for v in adverse.values())
 assert segment_rect([0,0],[10,10],[4,4,2,2])==0
@@ -134,7 +154,7 @@ result = {
     'plantDryRoom':room,'eastWaterHypothesis':water,'intermediateArch':arch,'replacementDoor':door,
     'plant':plant,'unchangedUtility':copy.deepcopy(baseline['rewinds']['utility']),
     'unchangedUpperRiser':{'gross':old['riserGross'],'formedOpening':old['formedOpeningProposal'],'services':old['proposedServices'],'scope':old['openingStatus']},
-    'frontPlantArchCrossing':{'oldAxisY':3700,'newAxisY':3300,'trunkX':10350,'newLowCentreProfile':[[10350,3550,2945],[10350,3550,2500],[10350,3300,2500],[10350,3050,2500],[10350,3050,2945]],'completeBand':[320,260],'lowestFinishedPanel':2350,'scope':'Replace the old3700 local crossing in the front-west trunk. Actual new1300 arch intrados, full160half-width, continuous pipe bends/supports and exposed-panel access must be joined to HAD/STR; this proposed shoulder cannot be treated as a free core bore.'},
+    'frontPlantArchCrossing':{'oldAxisY':3700,'newAxisY':3300,'trunkX':10350,'turnY':3200,'elbowPlan':[10050,2900,600,600],'elbowFullZ':[2370,2630],'requiredFinishedIntrados':2680,'newLowCentreProfile':[[10350,3600,2945],[10350,3600,2500],[10350,3300,2500],[10350,3200,2500],[9300,3200,2500],[9000,3200,2500],[9000,3200,2945]],'completeBand':[320,260],'lowestFinishedPanel':2350,'scope':'Replace the old3700 local crossing in the front-west trunk. Actual new1300 arch intrados, full160half-width, continuous pipe bends/supports and exposed-panel access must be joined to HAD/STR; this proposed shoulder cannot be treated as a free core bore.'},
     'rearWarmTrunk':{'source':trunk,'normalFullZ':[2815,3075],'normalFullXAtGallery':[8540,8860],
                      'loweredCrossingAxisZ':2500,'lowestFinishedLocalPanelZ':2350,
                      'condition':'Keep the complete original high-level route within actual enclosed dry gallery, including every lowered aperture. It is NOT routed in 65 screed, in bridge concrete or outdoors. Prove actual wall/ceiling/air/weather boundaries on the same HAD source.'},
@@ -143,7 +163,7 @@ result = {
                'controls':'Unchanged650×300 plan dimensions rotated from east to north wall; all hydraulic/electrical/support/lead access still required.',
                'radiator':'Unchanged550×200 complete plan/400 body length, now on actual intermediate-arch east jamb facing north; unchanged150 front-pull requirement.',
                'utility':'All original washer/sink/chase/valve/electrical/PV bodies and working fields retained.'},
-    'checks':checks,'adverseUnchangedLayout':adverse,
+    'archControls':arch_controls,'checks':checks,'adverseUnchangedLayout':adverse,
     'retainedHolds':['Actual bridge/deep passive water/foundation/first-wetting and dry/wet wall support must be proved by HAD/MAT/STR before source selection.',
                     '850 circle is the inherited maximum whole apparatus+trolley plan requirement, not a qualified trolley, handler, force or 3D carrying proof. Complete handling height must remain below the actual2300 door; supports, routes and outdoor position need qualification.',
                     'R300 task fields are inherited spatial reservations only. Real workers/tools/valves/brackets and all access/door states require matched apparatus.',

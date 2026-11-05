@@ -386,15 +386,27 @@
     "oldAxisY": 3700,
     "newAxisY": 3300,
     "trunkX": 10350,
+    "turnY": 3200,
+    "elbowPlan": [
+      10050,
+      2900,
+      600,
+      600
+    ],
+    "elbowFullZ": [
+      2370,
+      2630
+    ],
+    "requiredFinishedIntrados": 2680,
     "newLowCentreProfile": [
       [
         10350,
-        3550,
+        3600,
         2945
       ],
       [
         10350,
-        3550,
+        3600,
         2500
       ],
       [
@@ -404,12 +416,22 @@
       ],
       [
         10350,
-        3050,
+        3200,
         2500
       ],
       [
-        10350,
-        3050,
+        9300,
+        3200,
+        2500
+      ],
+      [
+        9000,
+        3200,
+        2500
+      ],
+      [
+        9000,
+        3200,
         2945
       ]
     ],
@@ -595,6 +617,46 @@
     "controls": "Unchanged650\u00d7300 plan dimensions rotated from east to north wall; all hydraulic/electrical/support/lead access still required.",
     "radiator": "Unchanged550\u00d7200 complete plan/400 body length, now on actual intermediate-arch east jamb facing north; unchanged150 front-pull requirement.",
     "utility": "All original washer/sink/chase/valve/electrical/PV bodies and working fields retained."
+  },
+  "archControls": {
+    "status": "Explicit joined HAD reference geometry; no masonry capacity or classified closure acceptance.",
+    "head": 2850,
+    "spring": 2550,
+    "rise": 300,
+    "radialRing": 215,
+    "actualRadialFinish": 27,
+    "upperRCUnderside": 3170,
+    "ringCrown": 3065,
+    "ringToSlabReserve": 105,
+    "plant": {
+      "rawSpan": 1250,
+      "centre": 10275,
+      "fullElbowPlan": [
+        10050,
+        2900,
+        600,
+        600
+      ],
+      "minimumFinishedIntrados": 2726.096060635624
+    },
+    "spine": {
+      "rawSpan": 900,
+      "centre": 3200,
+      "fullPacketPlanY": [
+        3040,
+        3360
+      ],
+      "minimumFinishedIntrados": 2794.3104329448283
+    },
+    "requiredFinishedIntrados": 2680,
+    "rejectedTurnY3000": {
+      "fullPacketPlanY": [
+        2840,
+        3160
+      ],
+      "minimumFinishedIntrados": 2649.658928121694
+    },
+    "lowProfile": "ContinuousZ2500 across3300arch,600square corner and9300spine atY3200. No normal2945 reset at the corner; rise only west atX9000."
   },
   "checks": [
     {

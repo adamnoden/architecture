@@ -2427,7 +2427,7 @@
       "level": 0,
       "xy": [
         9300,
-        3000
+        3200
       ],
       "orientation": "x",
       "rough": [
@@ -2447,8 +2447,8 @@
       "clearAboveAssemblyAndTrim": 30,
       "ceilingLossFrom3100": 750,
       "roughSideReserves": [
-        90,
-        490
+        290,
+        290
       ],
       "requiredIntradosMinimum": 2680,
       "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
@@ -5021,6 +5021,46 @@
           "lowestFinishedLocalPanelZ": 2350,
           "condition": "Keep the complete original high-level route within actual enclosed dry gallery, including every lowered aperture. It is NOT routed in 65 screed, in bridge concrete or outdoors. Prove actual wall/ceiling/air/weather boundaries on the same HAD source."
         },
+        "archControls": {
+          "status": "Explicit joined HAD reference geometry; no masonry capacity or classified closure acceptance.",
+          "head": 2850,
+          "spring": 2550,
+          "rise": 300,
+          "radialRing": 215,
+          "actualRadialFinish": 27,
+          "upperRCUnderside": 3170,
+          "ringCrown": 3065,
+          "ringToSlabReserve": 105,
+          "plant": {
+            "rawSpan": 1250,
+            "centre": 10275,
+            "fullElbowPlan": [
+              10050,
+              2900,
+              600,
+              600
+            ],
+            "minimumFinishedIntrados": 2726.096060635624
+          },
+          "spine": {
+            "rawSpan": 900,
+            "centre": 3200,
+            "fullPacketPlanY": [
+              3040,
+              3360
+            ],
+            "minimumFinishedIntrados": 2794.3104329448283
+          },
+          "requiredFinishedIntrados": 2680,
+          "rejectedTurnY3000": {
+            "fullPacketPlanY": [
+              2840,
+              3160
+            ],
+            "minimumFinishedIntrados": 2649.658928121694
+          },
+          "lowProfile": "ContinuousZ2500 across3300arch,600square corner and9300spine atY3200. No normal2945 reset at the corner; rise only west atX9000."
+        },
         "updatedFrontTrunk": {
           "id": "ground-front-west",
           "level": 0,
@@ -5035,11 +5075,11 @@
             ],
             [
               10350,
-              3000
+              3200
             ],
             [
               8500,
-              3000
+              3200
             ],
             [
               8500,
@@ -5077,7 +5117,7 @@
             "hot-return"
           ],
           "axisZ": 2945,
-          "lengthMM": 15820.0,
+          "lengthMM": 15420.0,
           "ordinaryBand": [
             320,
             260
@@ -5096,17 +5136,12 @@
             ],
             [
               10350,
-              5000,
+              3600,
               2945
             ],
             [
-              10350.0,
-              3550.0,
-              2945
-            ],
-            [
-              10350.0,
-              3550.0,
+              10350,
+              3600,
               2500
             ],
             [
@@ -5115,58 +5150,33 @@
               2500
             ],
             [
-              10350.0,
-              3050.0,
-              2500
-            ],
-            [
-              10350.0,
-              3050.0,
-              2945
-            ],
-            [
               10350,
-              3000,
-              2945
-            ],
-            [
-              10350,
-              3000,
-              2945
-            ],
-            [
-              9550.0,
-              3000.0,
-              2945
-            ],
-            [
-              9550.0,
-              3000.0,
+              3200,
               2500
             ],
             [
               9300,
-              3000,
+              3200,
               2500
             ],
             [
-              9050.0,
-              3000.0,
+              9000,
+              3200,
               2500
             ],
             [
-              9050.0,
-              3000.0,
+              9000,
+              3200,
               2945
             ],
             [
               8500,
-              3000,
+              3200,
               2945
             ],
             [
               8500,
-              3000,
+              3200,
               2945
             ],
             [
@@ -5260,8 +5270,8 @@
               2945
             ]
           ],
-          "profileLengthMM": 18490.0,
-          "profileRule": "Real local drop/rise at each listed aperture; when segment ends within250 ofwall, low profile remains at endpoint. No imaginary2925corethrougharch. Connections at all shoulders must preserve one continuous supported pipe."
+          "profileLengthMM": 17200.0,
+          "profileRule": "Actual continuous low L atZ2500 from3300arch through600square elbow/3200turn and9300spine; rise only westatX9000. Full packet and finished27radial arch checked, no corner normal-height reset."
         },
         "checks": {
           "count": 25,
@@ -7787,11 +7797,11 @@
           ],
           [
             8500,
-            3000
+            3200
           ],
           [
             10350,
-            3000
+            3200
           ],
           [
             10350,
@@ -8149,11 +8159,11 @@
         ],
         [
           10350,
-          3000
+          3200
         ],
         [
           8500,
-          3000
+          3200
         ],
         [
           8500,
@@ -8191,7 +8201,7 @@
         "hot-return"
       ],
       "axisZ": 2945,
-      "lengthMM": 15820.0,
+      "lengthMM": 15420.0,
       "ordinaryBand": [
         320,
         260
@@ -8210,17 +8220,12 @@
         ],
         [
           10350,
-          5000,
+          3600,
           2945
         ],
         [
-          10350.0,
-          3550.0,
-          2945
-        ],
-        [
-          10350.0,
-          3550.0,
+          10350,
+          3600,
           2500
         ],
         [
@@ -8229,58 +8234,33 @@
           2500
         ],
         [
-          10350.0,
-          3050.0,
-          2500
-        ],
-        [
-          10350.0,
-          3050.0,
-          2945
-        ],
-        [
           10350,
-          3000,
-          2945
-        ],
-        [
-          10350,
-          3000,
-          2945
-        ],
-        [
-          9550.0,
-          3000.0,
-          2945
-        ],
-        [
-          9550.0,
-          3000.0,
+          3200,
           2500
         ],
         [
           9300,
-          3000,
+          3200,
           2500
         ],
         [
-          9050.0,
-          3000.0,
+          9000,
+          3200,
           2500
         ],
         [
-          9050.0,
-          3000.0,
+          9000,
+          3200,
           2945
         ],
         [
           8500,
-          3000,
+          3200,
           2945
         ],
         [
           8500,
-          3000,
+          3200,
           2945
         ],
         [
@@ -8374,8 +8354,8 @@
           2945
         ]
       ],
-      "profileLengthMM": 18490.0,
-      "profileRule": "Real local drop/rise at each listed aperture; when segment ends within250 ofwall, low profile remains at endpoint. No imaginary2925corethrougharch. Connections at all shoulders must preserve one continuous supported pipe."
+      "profileLengthMM": 17200.0,
+      "profileRule": "Actual continuous low L atZ2500 from3300arch through600square elbow/3200turn and9300spine; rise only westatX9000. Full packet and finished27radial arch checked, no corner normal-height reset."
     },
     {
       "id": "ground-rear-east",
@@ -9539,7 +9519,7 @@
       "wall": "service-spine",
       "point": [
         9300,
-        3000,
+        3200,
         2500
       ],
       "planInsideExistingAperture": true,
