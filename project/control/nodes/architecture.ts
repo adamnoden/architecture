@@ -216,6 +216,19 @@ export const architectureNodes = defineNodes([
     closeoutEvidence: ['project/had/had-03-open-north-loggia.md', 'project/had/studies/open-north-loggia.json'],
   },
 
+  // RWT-06 rejects the selected common north-mouth failure, not merely a fitting.
+  // Registry-only bootstrap under the RWT-06 lease: no HAD geometry is adopted;
+  // the successor can be acquired only after this identity exists on main.
+  {
+    id: 'HAD-WATER-REPLAN',
+    owners: ['HAD', 'RWT', 'ROF', 'STR'],
+    title: 'Recompose the selected court and roof with independent passive water exits',
+    dependencies: ['HAD-03', 'RWT-ROBUSTNESS', 'STR-MASONRY', 'STR-SPANS'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: ['project/had/water-replan-result.md']
+  },
+
   // Final audit found the bounded OAS topology did not supply its dimensioned studies.
   {
     id: 'OAS-DETAIL',

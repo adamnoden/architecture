@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 8 · **Active:** 0 · **Blocked:** 31 · **Held:** 2 · **Done:** 113 · **Cancelled:** 0
+**Structurally ready:** 7 · **Active:** 0 · **Blocked:** 33 · **Held:** 2 · **Done:** 113 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,9 +21,8 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
+| `HAD-WATER-REPLAN` | Recompose the selected court and roof with independent passive water exits | HAD / RWT / ROF / STR | RWT-06, STR-HOUSE |
 | `OAS-NORTH-EXPORT` | FIRST north-window-0 assembly, upper guard and supported removal | OAS | IAS-03 |
-| `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | RWT-07 |
-| `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | STR / HAD | STR-RECONCILE |
 | `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT | — |
 | `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT | — |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
@@ -47,10 +46,12 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, DEL-CURRENT |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE |
+| `RWT-06` | Rainwater access, courtyard transition and site handoff | HAD-WATER-REPLAN |
 | `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-06 |
 | `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | RWT-07, STR-RECONCILE |
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
 | `RWT-08` | Rainwater formalisation and regression admission | ROF-RWT-GATE |
+| `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | HAD-WATER-REPLAN |
 | `STR-RECONCILE` | Reconcile structural interfaces and affected evidence for house selection | STR-HOUSE |
 | `MAT-COORDINATION` | Reconcile selected-house material compliance and explicit owner exceptions | MAT-ENVELOPE, MAT-SERVICES, IAS-03, ROF-RWT-GATE |
 | `MRA-01` | External water and ground-envelope assault | TRIAD-GATE |
@@ -76,7 +77,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`RWT-06` → `RWT-07` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`HAD-WATER-REPLAN` → `RWT-06` → `RWT-07` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->

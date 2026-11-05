@@ -4,6 +4,24 @@
 
 No accepted house geometry, structural system, product or foundation is adopted. STR-RECONCILE and the final roof/house gates remain unpassed. The [programme](structural-architecture-programme.md), [structural brief](../../docs/reference-house/structural-brief.md), [owner-house charter](../owner-house-charter.md) and existing [shared rewind](../triad-interface-contract.md) control any later selection.
 
+## 5 November — return the whole-house topology to architectural design
+
+**Decision: do not select a whole-house structural proposition on the present north-only court-water arrangement. Complete HAD-WATER-REPLAN before the STR-HOUSE selection exit.** This is a source-design prerequisite, not a request for an external engineer or a claim that all structural research must stop. STR-HOUSE remains planned; its earlier finite calculations retain their stated domains.
+
+The current authority for this decision is main `3c0a42576bfedb5fab6d7de07dfeaac87836cbda`. HAD-03 completed its bounded architectural development; that did not complete RWT-06 or establish an independent second water passage. The [closed-mouth court screen](../rwt/rwt-06-court-mouth-closure.md) retains direct courtyard rain even when roof water is shed outward. The [second-passage study](../rwt/rwt-06-second-daylight-exit.md) rejects treating another north inlet as an independent route. The [court/plant space exchange](../rwt/rwt-06-court-plant-space-exchange.md) shows that a real second weather boundary changes the plan and crosses the service spine: an opening cannot be inserted into a structural line for free.
+
+| Structural choice | Why the current evidence cannot select it | Architectural input needed |
+|---|---|---|
+| Retain the inward/outward ring and north-only loggia | Its local members do not provide an independent passive water route or establish the first susceptible wetted joint | Source-selected normal and independent passive paths, or an explicitly rejected/recomposed court arrangement |
+| Reverse all roof drainage outward | Direct court rain remains; the conditional high rim still carries 339.15 kN downward / −121.125 kN uplift. The inherited stack collides with the protected ceiling at 5–12° | Actual roof extents, slopes, levels, complete section and named bearing/hip/collector territories |
+| Cut the eastern wall/service spine for relief | Whole weather-wall, equipment and support costs are unselected; existing floor, wall, arch and roof reactions cannot be transferred across a drawing gap | Located plan/section with actual wall openings, piers, floor edges, service relocation and credible support reservations |
+
+HAD-WATER-REPLAN must select or reject the architectural arrangement with STR feasibility input. It does **not** require STR-HOUSE to be complete: a credible support reservation is its output, while detailed reaction allocation and joined structural interfaces remain STR's work. This order avoids a circular gate. Independent option investigation remains possible, but another isolated roof seat or foundation calculation cannot substitute for that missing source decision.
+
+**Finite re-entry and closure:** consume the selected HAD source and old/new geometry register; rebuild the gravity and signed lateral/uplift route over the actual roof and court/passage extents; join the changed openings and floor edges to named piers/collectors; then test the occupied floor/roof/ceiling and warm/cold first-wetting section together. Reuse unchanged evidence only after checking its consumed geometry. STR-HOUSE can then earn its existing preferred-proposition exit, or record a specific failed arrangement and return that failure for redesign. STR-RECONCILE remains downstream; neither an architectural reservation nor this dependency earns structural adequacy, material admission or construction acceptance.
+
+**Verification:** reran the existing source-pinned outward-roof calculation and all four adverse regression tests. They reproduce the high-rim action and shallow-ceiling failure above; they establish no new structural design. The canonical graph must validate the new prerequisite and absence of a cycle in the integrated change. No selected geometry, member, assumed load, previous result or completion marker changes here.
+
 ## 1. What is now available to judge
 
 The following studies join their evidence without confusing their claims:
