@@ -1,91 +1,132 @@
 #!/usr/bin/env python3
-"""One joined geometry/renewal screen; no hydraulic or structural certification."""
+"""MAT layer/renewal envelope proof, consuming the actual HAD successor."""
 import hashlib,json,sys
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[3]
-HERE=Path(__file__).resolve().parent
-src=json.loads((HERE/'east-dry-bridge-envelope.json').read_text())
-raw=(ROOT/src['base_had_path']).read_bytes()
-assert hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()==src['base_had_blob']
-had=json.loads(raw);g=src['geometry_mm']
-assert had['court']==[4250,4250,3500,3500]
-spine=next(w for w in had['groundWalls'] if w['id']=='service-spine')
-assert spine['finishedFaces'][0]==g['dry_gallery_east_warm_face']
-assert had['sections']['groundFloorRC']=={'top':-180,'bottom':-380}
-assert [x[1] for x in g['floor_layers']]==[15,65,100,200]
-bridge=[g['court_east'],g['dry_gallery_east_warm_face']+g['new_weather_wall_depth']]
-body=[bridge[0]-g['joint_setback'],bridge[1]+g['joint_setback']]
-length=body[1]-body[0]
-bed=lambda x:g['bed_control_z'][0]+(x-g['bed_control_x'][0])*(g['bed_control_z'][1]-g['bed_control_z'][0])/(g['bed_control_x'][1]-g['bed_control_x'][0])
-width=g['water_y'][1]-g['water_y'][0]
-ugross=width+2*g['liner_sheet']+2*g['outward_flange_each']
-carriage=ugross+2*g['carriage_extra_width_each']
-portal=g['portal_y'][1]-g['portal_y'][0]
-assert (width,ugross,carriage,portal)==(600,663,763,900)
-west=[body[0]-length,body[0]];east=[body[1],body[1]+length]
-beam=g['local_beam_top']-g['local_beam_depth']
-rim=[bed(x)+g['water_body_depth'] for x in body]
-lowest=[bed(x)-g['carriage_total_below_bed'] for x in body]
-soilallow=g['soil_heave_stress']+g['construction_loss']+g['residual_ventilation_comparison']
-out={'identity':src['identity'],'status':src['status'],'base_had_blob':src['base_had_blob'],
- 'bridge_x_mm':bridge,'liner_body_x_mm':body,'liner_length_mm':length,'bed_body_ends_mm':[bed(x) for x in body],
- 'liner_rim_ends_mm':rim,'carriage_bottom_ends_mm':lowest,'water_clear_width_mm':width,'liner_gross_width_mm':ugross,
- 'carriage_budget_width_mm':carriage,'portal_clear_width_mm':portal,'lateral_portal_remainder_each_mm':(portal-carriage)/2,
- 'floor_depth_mm':sum(x[1] for x in g['floor_layers']),'field_soffit_mm':-sum(x[1] for x in g['floor_layers']),
- 'local_trial_beam_soffit_mm':beam,'minimum_gross_rim_to_beam_mm':beam-max(rim),
- 'rejected_200_deep_body_overlap_mm':max(bed(x)+200 for x in body)-beam,
- 'west_park_x_mm':west,'east_park_x_mm':east,'east_remaining_to_12000_mm':12000-east[1],
- 'west_park_area_m2':length*portal/1e6,'translation_rise_west_mm':bed(west[0])-bed(body[0]),
- 'empty_liner_sheet_mass_screen_kg':(width+2*g['water_body_depth']+2*g['outward_flange_each'])*length*g['liner_sheet']*8000/1e9,
- 'full_100mm_prismatic_water_volume_litres':width*g['water_body_depth']*length/1e6,
- 'underbridge_local_D_lower_bound_mm':-min(lowest)+soilallow,
- 'whole_route_local_D_lower_bound_mm':-g['bed_control_z'][1]+g['carriage_total_below_bed']+soilallow,
- 'hypothetical_uniform_solum_D_if_prior_SW_node_retained_mm':1257+soilallow,
- 'first_wetting':{'liner_overtop':'Geometric rim only, not an operating/admitted water level','beam':'Trial underside -630 can wet if surrounding water reaches it; wet-tolerant concrete is not necessarily first vulnerable fabric','first_harm':'Unknown: actual threshold, wall/air joints, cracks, penetrations and support interfaces must be located'},
- 'rejections':['200-deep body clashes with the 450-deep beam trial','East-only park has 5 mm residual and no standing/hoist territory','30 mm prelift cannot be credited with clearing a 150 mm-deep backing carriage','No actual foundation/soil, qualified complete air/gas barrier, hydraulic capacity or lifting pass']}
-assert west[0]>=4250 and west[1]<=7750
-assert out['east_remaining_to_12000_mm']==5
-assert out['minimum_gross_rim_to_beam_mm']>0 and out['rejected_200_deep_body_overlap_mm']>0
-# One section and plan use the same source numbers. Deliberately no physical scale claim.
-svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="980" viewBox="0 0 1120 980"><rect width="100%" height="100%" fill="white"/><g font-family="sans-serif" font-size="14" fill="#17242e">']
-def text(x,y,t,size=14,color='#17242e'):
- svg.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}">{t}</text>')
-def rect(x,y,w,h,fill,stroke='#334c60'):
- svg.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}"/>')
-X=lambda x:70+(x-4250)*.12
-Z=lambda z:100-z*.22
-text(30,30,'East dry bridge B: permanent floor, exterior renewable water body',22)
-text(30,54,'Unadopted feasibility hypothesis; gross territories are not qualified products or capacities',14,'#a12b23')
-colors=['#e9d6b5','#cecabd','#b3dfd8','#c4c8cc'];z=0
-for (name,d),c in zip(g['floor_layers'],colors):
- rect(X(bridge[0]),Z(z),.12*(bridge[1]-bridge[0]),d*.22,c);z-=d
-rect(X(bridge[0]),Z(-180),.12*(bridge[1]-bridge[0]),450*.22,'none')
-text(X(bridge[0])+4,90,'15 / 65 / 100 / RC200; FFL 0',13)
-text(30,208,'Field soffit -380; separate local beam trial reaches -630',14)
-for a,b,fill in [(body[0],body[1],'#67a8d5'),(west[0],west[1],'#bfe3ee')]:
- pts=[(X(a),Z(bed(a)+100)),(X(b),Z(bed(b)+100)),(X(b),Z(bed(b)-150)),(X(a),Z(bed(a)-150))]
- svg.append('<polygon points="'+' '.join(f'{x},{y}' for x,y in pts)+f'" fill="{fill}" fill-opacity=".55" stroke="#145c83"/>')
-svg.append(f'<path d="M{X(7750)} {Z(-800)} L{X(12000)} {Z(-850)}" fill="none" stroke="#145c83" stroke-width="3"/>')
-text(30,348,'Blue includes 100-high U and full 150-below-bed backing budget; west park is a separate state',13)
-svg.append(f'<path d="M{X(4250)} {Z(-1500)} H{X(12000)}" stroke="#a12b23" stroke-dasharray="8 5"/>')
-text(30,455,'-1500 route-local solum comparison only: actual supports / other nodes can govern deeper',14,'#a12b23')
-text(30,490,'Plan: chosen west withdrawal, not an east-only handling claim',18)
-Y=lambda y:520+(y-4250)*.1
-rect(X(4250),Y(4250),3500*.12,3500*.1,'#f6f0e2')
-rect(X(bridge[0]),Y(6450),(bridge[1]-bridge[0])*.12,900*.1,'#d2d7dc')
-rect(X(9722.5),Y(6300),(12000-9722.5)*.12,1200*.1,'#e1edd6')
-rect(X(body[0]),Y(6600),length*.12,600*.1,'#67a8d5')
-rect(X(west[0]),Y(6450),length*.12,900*.1,'none','#a12b23')
-text(X(west[0])+4,Y(6450)-12,'2172.5 x 900 opened outdoor court park',13,'#a12b23')
-text(X(bridge[0])+4,Y(6450)-12,'Dry floor above / 900 gross portal below',13)
-text(30,906,'First wetting: U rim about -699 upstream; beam underside -630 is a different boundary.',14)
-text(30,931,'First vulnerable fabric, inlet/receiver capture, rail release, operator/hoist and temporary bypass remain open.',14,'#a12b23')
-text(30,956,'No room hatch, custom gas lid, 200-deep hidden U, free D1300 or east-stage clearance is credited.',14)
+R=Path(__file__).resolve().parents[3];O=Path(__file__).resolve().parent
+s=json.loads((O/'east-dry-bridge-envelope.json').read_text())
+blob=lambda b:hashlib.sha1(f'blob {len(b)}\0'.encode()+b).hexdigest()
+base=(R/s['base_had_path']).read_bytes();assert blob(base)==s['base_had_blob']
+raw=(R/s['joined_had_path']).read_bytes();h=json.loads(raw)
+assert h['sources']['had']['blob']==s['base_had_blob']
+p,b,n,d=h['passage'],h['bridge'],h['renewal'],h['groundEnvelope'];a=s['assembly_mm']
+assert [q[1] for q in b['floorLayers']]==a['supported_floor_layer_depths']
+assert b['slabZ']==[-380,-180] and n['selectedWithdrawal']=='EAST'
+bed=lambda x:p['bedEnds'][0][1]+(x-p['bedEnds'][0][0])*(p['bedEnds'][1][1]-p['bedEnds'][0][1])/(p['bedEnds'][1][0]-p['bedEnds'][0][0])
+body=n['bodyX'];L=body[1]-body[0];park=n['selectedParkX'];beam=b['localSupportBeamZ'][0]
+assert L==n['length']==park[1]-park[0] and park[0]-body[0]==n['withdrawalTranslation']
+width=n['waterClearWidth'];depth=n['waterDepth']
+ugross=width+2*a['liner_sheet']+2*a['outward_flange_each'];carriage=ugross+2*a['carriage_extra_width_each']
+assert (ugross,carriage,a['carriage_total_below_bed'])==(n['wetBodyGrossWidth'],n['carriageWidthBudget'],n['carriageBelowBedBudget'])
+beams=[[x-w/2,x+w/2] for x,w in zip(b['supportAxesX'],b['localSupportBeamWidths'])]
+walls=[[b['coveredX'][0],b['permanentDryGalleryClearX'][0]],b['newEastWeatherWallX']]
+bearing=[[wall[0]-q[0],q[1]-wall[1]] for wall,q in zip(walls,beams)]
+assert min(v for q in bearing for v in q)>=0,'Unsupported complete wall/outer weather leaf'
+portal=p['structuralClearY'];assert portal[1]-portal[0]>=carriage
+assert n['withdrawalTrackClearY']==portal
+bottom=lambda x:bed(x)-a['carriage_total_below_bed']
+track=lambda x:bottom(x)-n['fixedTrackBelowCarriageBudget']
+clearance=park[0]-max(q[1] for q in beams);assert clearance>0,'Hoist park still under a fixed support'
+rim=[bed(x)+depth for x in body];assert beam>max(rim)
+plat=n['servicePlatform'];op=n['operatorField'];box=n['hoistWorkingBox'];cy=sum(p['waterClear'][1:2])+width/2
+contains=lambda outer,inner:outer[0]<=inner[0] and outer[1]<=inner[1] and inner[0]+inner[2]<=outer[0]+outer[2] and inner[1]+inner[3]<=outer[1]+outer[3]
+overlap=lambda q,t:q[0]<t[0]+t[2] and q[0]+q[2]>t[0] and q[1]<t[1]+t[3] and q[1]+q[3]>t[1]
+parkplan=[park[0],cy-carriage/2,L,carriage]
+trackplan=[plat[0],portal[0],n['withdrawalTrackEndX']-plat[0],portal[1]-portal[0]]
+assert contains(plat,trackplan) and contains(plat,op) and contains(trackplan,parkplan)
+assert not overlap(op,trackplan),'Operator deck intersects the low withdrawal solid'
+assert n['fixedTrackBelowCarriageBudget']>0
+assert abs(track(park[1])-n['withdrawalTrackEndLowestZ'])<1e-8
+assert contains([box[0],box[1],box[3],box[4]],parkplan)
+assert min(bottom(x)+n['hoistLiftTranslation'] for x in park)>n['operatorDeckZ']
+# Below-deck lift is contained by the open track, above-deck lift by the hoist box.
+assert cy-carriage/2>=portal[0] and cy+carriage/2<=portal[1]
+assert max(bed(x)+depth+n['hoistLiftTranslation'] for x in park)<box[2]+box[5]
+well=n['courtIntakeWell'];shield=n['shield'];stand=n['courtIntakeOperatorPlatform']
+assert contains(well,shield['plan']) and contains(well,stand)
+assert stand[0]+stand[2]<=shield['plan'][0] and shield['plan'][0]+shield['plan'][2]<=body[0]
+shaft=shield['clearGravityShaft'];outlet=shield['clearOutlet'];collector=n['courtCollector']
+assert 'ENVELOPE' in shield['representation']
+assert contains(shield['plan'],shaft['plan']) and contains(collector['plan'],shaft['plan'])
+assert shaft['plan'][0]+shaft['plan'][2]==outlet['planeX']==body[0]
+assert [shaft['plan'][1],shaft['plan'][1]+shaft['plan'][3]]==outlet['y']==[p['waterClear'][1],p['waterClear'][1]+width]
+assert abs(shaft['z'][0]-bed(body[0]))<1e-8
+assert all(abs(z-v)<1e-8 for z,v in zip(outlet['z'],[bed(body[0]),bed(body[0])+depth]))
+assert shaft['z'][1]>=collector['lowChannelAtIntakeZ']>shaft['z'][0]
+assert body[0]<=min(q[0] for q in beams)-100 and body[1]>=max(q[1] for q in beams)+100
+# Existing support nodes are outside the entire 900-wide gross portal.
+nodehalf=b['supportNodes']['plan'][1]/2
+assert b['supportAxesY'][0]+nodehalf<portal[0] and b['supportAxesY'][1]-nodehalf>portal[1]
+low=min(track(park[1]),min(bottom(x) for x in body),b['supportNodes']['z'][0],n['courtIntakeWellFloorZ'])
+allow=d['heaveStress']+d['constructionLoss']+d['ventilationReserve'];D=-low+allow
+assert d['routeLocalDTrial']>=D
+oldwest=[7650-2172.5,7650];oldeast=[9822.5,11995]
+out={'identity':s['identity'],'status':s['status'],'HAD_source':{'path':s['joined_had_path'],'blob':blob(raw),'declaredStatus':h['status']},
+ 'body_x_mm':body,'length_mm':L,'bridge_beam_ranges_mm':beams,'complete_wall_bearing_margins_mm':bearing,
+ 'gross_liner_width_mm':ugross,'whole_carriage_width_mm':carriage,'gross_portal_width_mm':portal[1]-portal[0],
+ 'lateral_remainder_each_mm':((portal[1]-portal[0])-carriage)/2,'body_rim_ends_mm':rim,
+ 'minimum_gross_rim_to_beam_mm':beam-max(rim),'rejected_200_deep_body_overlap_mm':max(bed(x)+200 for x in body)-beam,
+ 'body_carriage_bottom_mm':[bottom(x) for x in body],'selected_park_x_mm':park,'actual_beam_to_hoist_park_mm':clearance,
+ 'translation_mm':n['withdrawalTranslation'],'translation_z_mm':bed(park[0])-bed(body[0]),
+ 'park_carriage_bottom_mm':[bottom(x) for x in park],'operator_deck_z_mm':n['operatorDeckZ'],
+ 'rejected_solid_deck_overlap_mm':n['operatorDeckZ']-min(bottom(x) for x in park),
+ 'fixed_track_bottom_mm':[track(x) for x in park],'complete_local_lowest_surface_mm':low,
+ 'complete_local_D_lower_bound_mm':D,'HAD_D_trial_mm':d['routeLocalDTrial'],'trial_residual_over_lower_bound_mm':d['routeLocalDTrial']-D,
+ 'sheet_only_mass_screen_kg':(width+2*depth+2*a['outward_flange_each'])*L*a['liner_sheet']*8000/1e9,
+ 'full_depth_prismatic_water_litres':width*depth*L/1e6,'court_intake_well':well,'shield_release':'Upward in isolated guarded well, outside beam; does not travel through the portal',
+ 'intake_flow_void':{'representation':shield['representation'],'shaft':shaft,'outlet':outlet,'result':'Connected geometric clear void only; no loss/splash/capacity rating'},
+ 'historical_rejected_west_park':oldwest,'historical_west_actual_beam_clearance_mm':min(q[0] for q in beams)-oldwest[1],
+ 'historical_rejected_east_shell_park':oldeast,'historical_east_shell_remaining_mm':12000-oldeast[1],
+ 'envelope_result':'Listed material/whole-carriage/support envelope checks pass only',
+ 'first_wetting':'U rim is overtop geometry, not safe stage. Inlet drop/splash can wet a beam/air joint before bulk overtop; actual shield/end transfer needs water testing.',
+ 'limits':['No structural capacity, complete material, air/gas, hydraulic, first-harm, lifting or real-site acceptance','Rail/keeper/joint/rigging/guard/step hardware must fit actual territories','D1600 is route-local; other real supports or site conditions can govern deeper']}
+svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="1240" viewBox="0 0 1180 1240"><rect width="100%" height="100%" fill="white"/><g font-family="sans-serif" font-size="14" fill="#17242e">']
+def text(x,y,t,size=14,c='#17242e'):svg.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{c}">{t}</text>')
+def rect(x,y,w,ht,fill,stroke='#334c60'):svg.append(f'<rect x="{x}" y="{y}" width="{w}" height="{ht}" fill="{fill}" stroke="{stroke}"/>')
+X=lambda x:60+(x-4250)*.111;Z=lambda z:100-z*.20;Y=lambda y:540+(y-4250)*.10
+text(30,30,'East dry bridge: actual HAD floor, supports and whole-carriage renewal',22)
+text(30,55,'Unadopted development envelope; no qualified products, technical acceptance or actual plot',14,'#a12b23')
+z=0
+for (_,th),c in zip(b['floorLayers'],['#e9d6b5','#cecabd','#b3dfd8','#c4c8cc']):
+ rect(X(b['coveredX'][0]),Z(z),.111*(b['coveredX'][1]-b['coveredX'][0]),th*.2,c);z-=th
+for lo,hi in beams:rect(X(lo),Z(b['localSupportBeamZ'][1]),(hi-lo)*.111,(b['localSupportBeamZ'][1]-beam)*.2,'none')
+text(30,205,'RC200 field ends at -380; actual 600 / 900 crossing beams reach -630',14)
+for (lo,hi),c in [(body,'#67a8d5'),(park,'#c6e0cc')]:
+ pts=[(X(lo),Z(bed(lo)+depth)),(X(hi),Z(bed(hi)+depth)),(X(hi),Z(bottom(hi))),(X(lo),Z(bottom(lo)))]
+ svg.append('<polygon points="'+' '.join(f'{x},{y}' for x,y in pts)+f'" fill="{c}" stroke="#145c83"/>')
+svg.append(f'<path d="M{X(plat[0])} {Z(n["operatorDeckZ"])} H{X(13500)}" stroke="#8f6354" stroke-dasharray="5 4"/>')
+svg.append(f'<path d="M{X(park[0])} {Z(track(park[0]))} L{X(park[1])} {Z(track(park[1]))}" stroke="#a12b23" stroke-width="2"/>')
+text(30,350,'Blue: installed body/backing. Green: separate east park. Brown: operator deck outside the depressed track.',13)
+svg.append(f'<path d="M60 {Z(-d["routeLocalDTrial"])} H1110" stroke="#a12b23" stroke-dasharray="8 5"/>')
+text(30,455,f'Lowest fixed track {low:.3f}; local D{d["routeLocalDTrial"]} trial has {d["routeLocalDTrial"]-D:.3f} over the stated stresses',14,'#a12b23')
+text(30,495,'Plan: actual beam faces, guarded intake and new outboard site work field',18)
+rect(X(4250),Y(4250),3500*.111,3500*.1,'#f6f0e2')
+rect(X(b['coveredX'][0]),Y(portal[0]),(b['coveredX'][1]-b['coveredX'][0])*.111,(portal[1]-portal[0])*.1,'#d2d7dc')
+rect(X(plat[0]),Y(plat[1]),plat[2]*.111,plat[3]*.1,'#f1e9dd')
+rect(X(trackplan[0]),Y(trackplan[1]),trackplan[2]*.111,trackplan[3]*.1,'#dae7df')
+rect(X(body[0]),Y(p['waterClear'][1]),L*.111,width*.1,'#67a8d5')
+rect(X(park[0]),Y(portal[0]),L*.111,(portal[1]-portal[0])*.1,'none','#a12b23')
+rect(X(op[0]),Y(op[1]),op[2]*.111,op[3]*.1,'#f3dca8')
+rect(X(well[0]),Y(well[1]),well[2]*.111,well[3]*.1,'none','#a12b23')
+q=shield['plan'];rect(X(q[0]),Y(q[1]),q[2]*.111,q[3]*.1,'#b0a4a1')
+text(30,920,f'600 water / 663 U / 763 carriage / 900 portal; {clearance:g} actual beam-to-hoist park clearance',14)
+text(30,945,'Intake splash and bulk first wetting differ. Complete joint/rail/guard/lift and air/thermal admission remain open.',14,'#a12b23')
+text(30,970,'The old west park, 5 mm east-only park, solid -900 deck and free D1300 are rejected, not hidden.',14)
+text(30,1020,'Intake section: HAD clear shaft and outlet, not a solid shield box',18)
+IX=lambda x:160+(x-shield['plan'][0])*.9
+IZ=lambda z:1060+(-110-z)*.16
+q=shield['plan'];rect(IX(q[0]),IZ(shield['z'][1]),q[2]*.9,(shield['z'][1]-shield['z'][0])*.16,'none','#8f6354')
+q=shaft['plan'];rect(IX(q[0]),IZ(shaft['z'][1]),q[2]*.9,(shaft['z'][1]-shaft['z'][0])*.16,'#dceff5')
+svg.append(f'<path d="M{IX(outlet["planeX"])} {IZ(outlet["z"][1])} V{IZ(outlet["z"][0])}" stroke="#145c83" stroke-width="5"/>')
+text(380,1080,'Open gravity shaft: 200 run x 600 clear width',14)
+text(380,1105,f'Outlet x{outlet["planeX"]}: 600 wide x 100 high',14)
+text(380,1130,f'Outlet bed {outlet["z"][0]:.3f}; rim {outlet["z"][1]:.3f}',14)
+text(380,1155,'Hood sheet / deflector / capture remain a material and first-wetting hold.',14,'#a12b23')
+text(30,1220,'The clear void proves continuity only; it does not qualify an inlet or an installed assembly.',14,'#a12b23')
 svg.append('</g></svg>\n')
-outputs={HERE/'east-dry-bridge-envelope.results.json':json.dumps(out,indent=2)+'\n',HERE/'east-dry-bridge-envelope.svg':'\n'.join(svg)}
+outputs={O/'east-dry-bridge-envelope.results.json':json.dumps(out,indent=2)+'\n',O/'east-dry-bridge-envelope.svg':'\n'.join(svg)}
 if '--check' in sys.argv:
- for p,v in outputs.items():assert p.read_text()==v,p
- print('East dry bridge B: source-bound outputs and envelope checks reproduce')
+ for q,v in outputs.items():assert q.read_text()==v,q
+ print('Actual HAD/MAT envelope join reproduces; listed checks pass, technical acceptance remains open')
 else:
- for p,v in outputs.items():p.write_text(v)
- print('Wrote east dry bridge B section, plan and explicit limits')
+ for q,v in outputs.items():q.write_text(v)
+ print('Wrote actual HAD/MAT material, support, renewal and ground envelope proof')

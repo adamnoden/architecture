@@ -93,3 +93,12 @@ The Tecom sheet and Bette p9 were visually inspected, and the geometry/movement 
 | Bette content-host Z0009038 Rev.15 /12.2025, pp9–10 | `4a2ec361f14c01c510d270e7a240161e24f7aba1ac9fbcee325e04f5ccbc4b59` |
 
 The content-host Bette PDF differs in bytes from the shop-hosted copy recorded in the tray study. The revision and retrieved file are identified separately; a fingerprint is a change detector, not product approval. No supplier was contacted and no hardware was altered or tested.
+
+
+## Rear1000 direct-offset correction — 5 November
+
+The native [B568 Z0020405 Rev.2 /09.2026 manual](https://shop.my-bette.com/out/media/Z0020405-REV2.pdf), printed p5, was downloaded and rendered again: SHA-256 `72b5e6f3a822058dd28da087b48ed7ee605e6f2b62c4e7b76a76c6395ab2f7b1`. Its diameter115 body and full50 outlet give225 overall /167.5 from drain centre; the permitted shorter40 outlet gives173 overall, hence115.5 from that centre.
+
+The retained rear5940 WEST drain-to-tail target is only110 east. A direct east-facing native spigot followed by a downturn at that target is therefore **not a matched installation**: even the shorter end projects5.5 beyond the target before the actual elbow/socket allowance. This rejects that direct orientation, not every rotated or multi-bend arrangement. A matched alternative must locate the actual complete waste, permitted joint/engagement and downward bend, supports, reach and first release against the source floor port; a bare110 offset is not that proof. B568's polymer constituents and absent owner exception remain a separate rejection.
+
+This correction changes no upper bath/shower port, fixture or service geometry in the east-water ground replan. Existing upper compatibility remains unaccepted. IAS retains its actual frame/stem/export question; a bounded matched-kit/setout study must coordinate any later source rewind with HAD/IAS/STR rather than silently moving the port.
