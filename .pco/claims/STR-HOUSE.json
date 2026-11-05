@@ -1,39 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 24,
-  "state": "released",
-  "leaseId": "ec84febe-c609-44f8-b067-31ceb1eab986",
+  "generation": 25,
+  "state": "claimed",
+  "leaseId": "76ac4987-5c36-4425-875c-341f99336d34",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6600110658"
+    "label": "zerg-20261105-w3"
   },
-  "claimedAt": "2026-11-03T09:34:43.000Z",
-  "heartbeatAt": "2026-11-03T09:56:22.000Z",
-  "expiresAt": "2026-11-03T09:56:22.000Z",
-  "branch": "work/mvb-chat-6600110658",
+  "claimedAt": "2026-11-05T17:49:04.985Z",
+  "heartbeatAt": "2026-11-05T17:49:04.985Z",
+  "expiresAt": "2026-11-05T18:34:04.985Z",
+  "branch": "work/zerg-20261105-w3",
   "predecessor": {
-    "leaseId": "be3558cb-28fd-4bb9-a73b-747bcc93cb56",
-    "generation": 23,
-    "branch": "work/zerg-str-ground-assembly-20261102"
-  },
-  "recoverySource": {
-    "leaseId": "18a5f416-818a-4a0d-ae20-11ef585cdfda",
-    "generation": 22,
-    "branch": "work/zerg-str-roof-route-20261102",
-    "pr": 1275,
+    "leaseId": "ec84febe-c609-44f8-b067-31ceb1eab986",
+    "generation": 24,
+    "branch": "work/mvb-chat-6600110658",
+    "pr": 1304,
     "checkpoint": {
-      "evidence": "Draft PR 1275 head 6486367259fa8e15d0d414a28dad7a45890aa867 tree cd7e8ddeea4426fb0444e9a7f16131b56ee07cc4; review passed prior exact STR blobs, merged main 6f658950",
-      "next": "Root observes exact-head CI, runs structural publication preflight and expected-head merge if earned",
-      "blocker": "Physical crown/contact, lateral, field, cold-cage and site remain open"
+      "evidence": "PR #1304 head 5d6f0ff7: source-bound outward roof high-court reactions and MAT/STR protected-ceiling clash, owning STR study, tests integrated into npm test. HOUSE remains planned.",
+      "next": "Observe full exact-head CI, run fresh native STR-HOUSE canonical publication preflight, expected-head merge, clean helper and release. Then dispatch again if safe.",
+      "blocker": "Actual adopted roof and complete 3D hips/diaphragm/ceiling/fire/structural reactions and independently evidenced first-harm remain unproved; no preferred complete STR-HOUSE selection."
     }
   },
-  "pr": 1304,
-  "checkpoint": {
-    "evidence": "PR #1304 head 5d6f0ff7: source-bound outward roof high-court reactions and MAT/STR protected-ceiling clash, owning STR study, tests integrated into npm test. HOUSE remains planned.",
-    "next": "Observe full exact-head CI, run fresh native STR-HOUSE canonical publication preflight, expected-head merge, clean helper and release. Then dispatch again if safe.",
-    "blocker": "Actual adopted roof and complete 3D hips/diaphragm/ceiling/fire/structural reactions and independently evidenced first-harm remain unproved; no preferred complete STR-HOUSE selection."
-  },
-  "releasedAt": "2026-11-03T09:56:22.000Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "ec84febe-c609-44f8-b067-31ceb1eab986",
+    "generation": 24,
+    "branch": "work/mvb-chat-6600110658",
+    "pr": 1304,
+    "checkpoint": {
+      "evidence": "PR #1304 head 5d6f0ff7: source-bound outward roof high-court reactions and MAT/STR protected-ceiling clash, owning STR study, tests integrated into npm test. HOUSE remains planned.",
+      "next": "Observe full exact-head CI, run fresh native STR-HOUSE canonical publication preflight, expected-head merge, clean helper and release. Then dispatch again if safe.",
+      "blocker": "Actual adopted roof and complete 3D hips/diaphragm/ceiling/fire/structural reactions and independently evidenced first-harm remain unproved; no preferred complete STR-HOUSE selection."
+    }
+  }
 }
