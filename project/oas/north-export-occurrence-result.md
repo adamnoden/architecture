@@ -1,5 +1,40 @@
 # OAS-NORTH-EXPORT — actual occurrence development
 
+## Final disposition — 5 November 2026
+
+**Bounded development complete by rejection. The tested north-window export configuration is rejected; no opening, export route or construction assembly is accepted.** This disposition controls the historical WIP checkpoints below. Starting main is `3c0a42576bfedb5fab6d7de07dfeaac87836cbda`. The actual HAD and services blobs remain those identified below; no house geometry is changed.
+
+The [brief](oas-north-export-brief.md) permits an explicit rejection/redesign where the actual frame, hardware, guard or first-release arrangement defeats the proposition. Apply that exit rather than extending the same unselected mechanism through another nominal clearance study. The owner's [material policy](../../docs/reference-house/material-policy.md) also requires challenging the component and assembly before accepting a synthetic-dependent fitting or elaborate bespoke substitute.
+
+### What has failed, and what remains unknown
+
+| Joined requirement | Evidence | Disposition |
+| --- | --- | --- |
+| Retain the IAS perimeter requirement of at most 75 mm intrusion | The current complete-frame allocation is 35 + 60 = **95 mm**, exceeding the requirement by **20 mm**. Its 810 mm clear width is not the IAS 850 mm requirement. The represented rail top at 2650 has **−2.703 mm** arch reserve. | This frame does not implement the current IAS interface. Lowering the rail or changing frame/aperture is a new owning design decision, not verification of this one. |
+| Ordinary 80° operation with the named AXA 20 IN | The pinned [travel counterexample](studies/north-export-stay-range.mjs) requires **294.837 mm** against recorded 286 mm maximum. Its early contraction reaches 223.578 mm against 222 mm minimum. | Reject this product/pivot/80° combination. A 70° scalar length fit does not repair the complete event. |
+| Installed constituents satisfy the owner constraint | [AXA 2816-00-81 primary product page](https://axahomesecurity.com/en/producten/telescopic-stay-20in-3/), checked 5 November 2026, lists stainless steel **and synthetic** material; screws are supplied separately. No owner exception is recorded. | Reject this named fitting as the selected material solution. Its synthetic constituent must not disappear from a stainless-steel label or be removed from the product. |
+| Actual supported first release, full guard/frame renewal and weather reinstatement | The historical checkpoints require an unsupplied flange/pivot, clips and captures, full rig and rack, actual guard supports and a complete joint. The modeled interfaces include nominal 1.5–3.5 mm reserves and omit required components. | Unresolved architecture, not an external-certification-only hold. Positive local samples cannot establish the missing joined assembly. |
+| Coexistence with the actual NW roof and exterior equipment | The IAS bootstrap identifies absent finite NW hip/seat/eave/collector solids and unselected complete access/rig geometry. | Unknown obstruction and support remain unknown. Neither an ordinary-bay extrusion nor a SW mirror supplies a clear volume. |
+
+These findings reject the **developed 95 mm frame / twin inward leaves / AXA 20 IN / removable guard / retained-frame tray-export configuration**. They do not prove that no window or lifting system could ever fit the raw opening. Missing products are not a proof of universal impossibility, and the unqualified 95 mm allocation is not a minimum possible frame size. The decision is to stop relying on this configuration for the house's maintenance strategy.
+
+### Alternatives actually challenged
+
+1. **Continue the 70° AXA trial:** reject as a route to selection. It retains the recorded synthetic constituent, unverified mounting centres and supported-release assembly, only 4.697 mm ideal extension reserve and 1.578 mm minimum-travel reserve. Substituting 70° for 80° does not resolve the frame/rail, guard, weather or apparatus joins.
+2. **Use a conventional inward sliding stay:** retain as a normal-window hardware lead, without adopting it as an export solution. The [Croft 6394 primary sheet](https://croft.co.uk/product_pdf/352), checked 5 November 2026, offers 254 or 305 mm lengths and 38 mm width, including an unlacquered-brass finish. It does not provide the complete constituent declaration, installed pivot travel, opening angle, load or supported-release geometry needed to replace the AXA model. Its finish is not a polymer-free bill of materials. Catalogue length cannot be substituted into the telescopic model, and changing the stay leaves the independent frame/rail and first-protection requirements intact.
+3. **Fixed glazing to erase moving hardware:** reject as the present shortcut. The existing 13/16 L/s extract does not establish the conditional 19.428–21.509 L/s four-air-change purge comparison recorded below. Guard, fire-strategy applicability, weather joints and whole-frame renewal still require design. This result selects no fan increase or fixed window.
+4. **Change the maintenance route or house interface:** preferred next architectural decision, within existing IAS/HAD work. Compare a serviceable tray/connection and supported internal stair route against an explicitly redesigned dedicated exterior maintenance opening. The retained stair's 984 mm effective width and 1623 mm landing remain real constraints; the rear tray cannot simply be declared to pass. A dedicated opening needs a location, full frame/guard/structure and ordinary-use purpose before another full apparatus study. Do not let an unselected hoist dictate a chain of tiny window alterations by default.
+
+### Consequence and next decision
+
+OAS-NORTH-EXPORT closes the tested occurrence-development question with an **explicit redesign requirement**, not a positive predecessor. IAS-03 may now execute its existing comparative/rejection scope using this negative result. Its existing export model remains a requirement model, and the failed window route must not be presented as an admitted aperture merely because the prerequisite is complete. IAS must recommend a coherent maintenance route or seek an owning HAD redesign before selecting a dependent assembly. No IAS node, house dimension, selected opening family, material exception or maturity claim changes here; TRIAD-GATE still requires IAS-03 and the other unfinished joins.
+
+Reopen this OAS occurrence only with a materially changed input: an owning route/interface decision and a complete matched window/hardware/guard/joint candidate that addresses the recorded failure. An additional angle sample, tiny pad movement or renamed synthetic fitting is not that input. Actual wind/anchors, product constituents, safe forces, weather testing and site access remain acceptance obligations for any future candidate; none is represented as the reason the rejected architecture has passed.
+
+**Validation boundary:** existing mirrored stay-range negative controls and source-bound occurrence checks preserve the arithmetic and historical model. The closeout adds no fictitious positive trajectory or product test. The canonical graph records completion of the bounded rejection, while the ordinary OAS family and IAS export authorities retain their prior limits.
+
+## Historical development record
+
 **2 November2026 · OAS1 WIP research checkpoint. No occurrence, operation, first-release or export PASS.** The [brief](oas-north-export-brief.md) remains the bounded target. Starting main is `e93c643d36dfb0ee72a2bd2035899dfc5cc94f74`, containing verified shared1271. IAS18 was released before canonical OAS generation1 acquisition. No completed OAS result, HAD geometry, IAS numeric proof, material or structural authority changes here.
 
 ## Actual input and ordinary duties

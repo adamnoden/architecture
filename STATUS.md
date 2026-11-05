@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 7 · **Active:** 0 · **Blocked:** 33 · **Held:** 2 · **Done:** 113 · **Cancelled:** 0
+**Structurally ready:** 7 · **Active:** 0 · **Blocked:** 32 · **Held:** 2 · **Done:** 114 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -21,8 +21,8 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
+| `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
 | `HAD-WATER-REPLAN` | Recompose the selected court and roof with independent passive water exits | HAD / RWT / ROF / STR | RWT-06, STR-HOUSE |
-| `OAS-NORTH-EXPORT` | FIRST north-window-0 assembly, upper guard and supported removal | OAS | IAS-03 |
 | `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT | — |
 | `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT | — |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
@@ -41,8 +41,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Direct blockers |
 |---|---|---|
-| `IAS-03` | Selected interior family, drawings and disassembly set | OAS-NORTH-EXPORT |
-| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, OAS-NORTH-EXPORT, ROF-RWT-GATE, MAT-COORDINATION, STR-RECONCILE |
+| `TRIAD-GATE` | Shared selected-house integration gate | IAS-03, ROF-RWT-GATE, MAT-COORDINATION, STR-RECONCILE |
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, DEL-CURRENT |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE |

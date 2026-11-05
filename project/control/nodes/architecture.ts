@@ -246,7 +246,7 @@ export const architectureNodes = defineNodes([
     owners: ['OAS'],
     title: 'FIRST north-window-0 assembly, upper guard and supported removal',
     dependencies: ['OAS-03', 'OAS-DETAIL', 'HAD-03'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: ['project/oas/north-export-occurrence-result.md'],
   },
