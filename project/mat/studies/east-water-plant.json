@@ -8,9 +8,9 @@
   "coordinates": "mm; ground FFL0, same existing selected HAD source. Proposed plant dry bounds and water cut belong to the unadopted joined hypothesis.",
   "plantDryRoom": [
     9397,
-    3397,
+    3797,
     2173.5,
-    2383.5
+    1983.5
   ],
   "eastWaterHypothesis": {
     "finishedPassageY": [
@@ -24,20 +24,20 @@
     "dryGallery": "Retained warm full-height gallery west of the outdoor cut. HAD/MAT must prove its actual deep water bridge; this record gives it no structural or water pass."
   },
   "intermediateArch": {
-    "axisY": 3300,
-    "finishedNorthFaceY": 3397,
+    "axisY": 3700,
+    "finishedNorthFaceY": 3797,
     "rawOpeningX": [
       9650,
-      10900
+      10925
     ],
     "oldRawOpeningX": [
       9650,
       11050
     ],
     "jambFinishEachSide": 27,
-    "finishedClearWidth": 1196,
-    "radiatorFinishedJambReserve": 48,
-    "scope": "HAD must author this explicit 150 raw-opening narrowing; no radiator hung in the former arch opening."
+    "finishedClearWidth": 1221,
+    "radiatorFinishedJambReserve": 28,
+    "scope": "HAD must author this explicit 125 raw-opening narrowing; no radiator hung in the former arch opening."
   },
   "replacementDoor": {
     "rawY": [
@@ -69,7 +69,7 @@
       ],
       "workingEast": [
         10210,
-        3900,
+        4025,
         900,
         700
       ],
@@ -224,25 +224,25 @@
     "supportTaskEnvelope": 230,
     "openingStatus": "New trimmed-opening structural proposal, not permission to drill, not inherited three-bore acceptance. Complete230 clamp/tool envelopes are above/below slab and used one at a time, not six floor circles. Old south100plinths overlap the opening40: real rim/frame feet MUST be redesigned before fit acceptance; no support removed for service. Exact seals/fire/weather/vapour boundaries remain independent.",
     "architecturalRewinds": [
-      "Plant dry north face5780.5 and intermediatearch3300/raw1250 require actual HAD source join.",
+      "Plant dry north face5780.5 and retained intermediatearch3700/raw1275 require actual HAD source join.",
       "Hydraulic controls rotate onto dry north wall; actual ports/supports may not breach its wet/air/thermal boundary.",
       "Retain all baseline duties, including actual high-level east soil exit; do not create a floor-level crossbar."
     ],
     "emitterJoin": {
       "radComplete": [
-        10975,
-        3397,
+        10980,
+        3797,
         550,
         200
       ],
       "radRoutineBody": [
         11225,
-        3922,
+        4322,
         300
       ],
       "radAfter150PullBody": [
         11225,
-        4072,
+        4472,
         300
       ],
       "controlsBody": [
@@ -384,7 +384,7 @@
   },
   "frontPlantArchCrossing": {
     "oldAxisY": 3700,
-    "newAxisY": 3300,
+    "newAxisY": 3700,
     "trunkX": 10350,
     "turnY": 3200,
     "elbowPlan": [
@@ -394,28 +394,48 @@
       600
     ],
     "elbowFullZ": [
-      2370,
-      2630
+      2815,
+      3075
     ],
     "requiredFinishedIntrados": 2680,
     "newLowCentreProfile": [
       [
         10350,
-        3600,
+        4000,
         2945
       ],
       [
         10350,
-        3600,
+        4000,
         2500
       ],
       [
         10350,
-        3300,
+        3700,
         2500
       ],
       [
         10350,
+        3400,
+        2500
+      ],
+      [
+        10350,
+        3400,
+        2945
+      ],
+      [
+        10350,
+        3200,
+        2945
+      ],
+      [
+        9600,
+        3200,
+        2945
+      ],
+      [
+        9600,
         3200,
         2500
       ],
@@ -440,7 +460,7 @@
       260
     ],
     "lowestFinishedPanel": 2350,
-    "scope": "Replace the old3700 local crossing in the front-west trunk. Actual new1300 arch intrados, full160half-width, continuous pipe bends/supports and exposed-panel access must be joined to HAD/STR; this proposed shoulder cannot be treated as a free core bore."
+    "scope": "Refine the retained3700 local crossing in the front-west trunk. Actual retained3700/raw1275 arch intrados, full160half-width, continuous pipe bends/supports and exposed-panel access must be joined to HAD/STR; this proposed shoulder cannot be treated as a free core bore."
   },
   "rearWarmTrunk": {
     "source": {
@@ -612,11 +632,69 @@
     "condition": "Keep the complete original high-level route within actual enclosed dry gallery, including every lowered aperture. It is NOT routed in 65 screed, in bridge concrete or outdoors. Prove actual wall/ceiling/air/weather boundaries on the same HAD source."
   },
   "changes": {
-    "cylinder": "25 east; unchanged 595 complete comparison body/700 station, 300L duty and 1745 height; exit turn25 south.",
+    "cylinder": "25 east; full900x700 Eastservicebay125north; unchanged 595 complete comparison body/700 station, 300L duty and 1745 height; exit turn25 south.",
     "buffer": "Station +100 east /525 south; unchanged650 station,600 complete-round body and100 usable L duty.",
     "controls": "Unchanged650\u00d7300 plan dimensions rotated from east to north wall; all hydraulic/electrical/support/lead access still required.",
-    "radiator": "Unchanged550\u00d7200 complete plan/400 body length, now on actual intermediate-arch east jamb facing north; unchanged150 front-pull requirement.",
+    "radiator": "Unchanged550\u00d7200 complete plan/400 body length, retained3700arch east jamb facing north; unchanged150 front-pull requirement.",
     "utility": "All original washer/sink/chase/valve/electrical/PV bodies and working fields retained."
+  },
+  "operatorEntry": {
+    "status": "Explicit geometric reference only, not a classified/installed doorset or universal person proof.",
+    "rawY": [
+      2750,
+      3650
+    ],
+    "completeFrameWidthReference": 825,
+    "leafReference": [
+      762,
+      44
+    ],
+    "clearReferenceY": [
+      2816.5,
+      3583.5
+    ],
+    "clearReferenceWidth": 767,
+    "northHingeReference": [
+      9397,
+      3581
+    ],
+    "fullyOpenEastLeaf": [
+      9397,
+      3559,
+      762,
+      44
+    ],
+    "operatorCentrePath": [
+      [
+        8800,
+        3200
+      ],
+      [
+        10545,
+        3200
+      ],
+      [
+        10545,
+        4250
+      ]
+    ],
+    "retainedBodyRadius": 300,
+    "wallChecks": [
+      {
+        "fixed": "westPier",
+        "reserve": 85.0
+      },
+      {
+        "fixed": "eastPier",
+        "reserve": 35.0
+      },
+      {
+        "fixed": "complete700cylinderstation",
+        "reserve": 35.0
+      }
+    ],
+    "apparatusRoute": "850 complete cart reservation does NOT fit767 reference door; cylinder/buffer use only the east1000clear route.",
+    "actualKitHold": "HAD/OAS must bind actual full frame/leaf/trim/closer/operation and required protection. No raw900 equals clear900 inference."
   },
   "archControls": {
     "status": "Explicit joined HAD reference geometry; no masonry capacity or classified closure acceptance.",
@@ -625,19 +703,32 @@
     "rise": 300,
     "radialRing": 215,
     "actualRadialFinish": 27,
+    "plantAxisY": 3700,
     "upperRCUnderside": 3170,
     "ringCrown": 3065,
     "ringToSlabReserve": 105,
     "plant": {
-      "rawSpan": 1250,
-      "centre": 10275,
-      "fullElbowPlan": [
+      "rawSpan": 1275,
+      "centre": 10287.5,
+      "fullPacketPlanX": [
+        10190,
+        10510
+      ],
+      "minimumFinishedIntrados": 2791.4500247953365
+    },
+    "elbowOutsideArch": {
+      "plan": [
         10050,
         2900,
         600,
         600
       ],
-      "minimumFinishedIntrados": 2726.096060635624
+      "fullZ": [
+        2815,
+        3075
+      ],
+      "planReserveToWallSouthFace": 103,
+      "topReserveTo3100Ceiling": 25
     },
     "spine": {
       "rawSpan": 900,
@@ -656,7 +747,11 @@
       ],
       "minimumFinishedIntrados": 2649.658928121694
     },
-    "lowProfile": "ContinuousZ2500 across3300arch,600square corner and9300spine atY3200. No normal2945 reset at the corner; rise only west atX9000."
+    "lowProfile": "SeparateZ2500 crossings through retained3700arch and9300spine atY3200; normal2945corner lies wholly south of the wall.300shoulders keep completeband43fromfinishedwall."
+  },
+  "rejected3300Pier": {
+    "operatorReserve": -297.0,
+    "pipeHalfWidthReserve": -157.0
   },
   "checks": [
     {
@@ -672,7 +767,7 @@
     {
       "task": "cylinder replacement",
       "fixed": "radiator",
-      "minimumPlanReserve": 382.48622279268636
+      "minimumPlanReserve": 117.59469219667085
     },
     {
       "task": "cylinder replacement",
@@ -692,7 +787,7 @@
     {
       "task": "primaryBuffer replacement",
       "fixed": "radiator",
-      "minimumPlanReserve": 553.0
+      "minimumPlanReserve": 153.0
     },
     {
       "task": "primaryBuffer replacement",
@@ -702,42 +797,42 @@
     {
       "task": "radRoutineBody",
       "fixed": "riser",
-      "minimumPlanReserve": 1193.6227770089743
+      "minimumPlanReserve": 1029.852999395046
     },
     {
       "task": "radRoutineBody",
       "fixed": "controls",
-      "minimumPlanReserve": 1258.5
+      "minimumPlanReserve": 858.5
     },
     {
       "task": "radRoutineBody",
       "fixed": "cylinder",
-      "minimumPlanReserve": 806.3550494976325
+      "minimumPlanReserve": 769.3975821179874
     },
     {
       "task": "radRoutineBody",
       "fixed": "buffer",
-      "minimumPlanReserve": 1002.8206387490773
+      "minimumPlanReserve": 667.5306702403693
     },
     {
       "task": "radAfter150PullBody",
       "fixed": "riser",
-      "minimumPlanReserve": 1121.2702065406143
+      "minimumPlanReserve": 995.2254629986239
     },
     {
       "task": "radAfter150PullBody",
       "fixed": "controls",
-      "minimumPlanReserve": 1108.5
+      "minimumPlanReserve": 708.5
     },
     {
       "task": "radAfter150PullBody",
       "fixed": "cylinder",
-      "minimumPlanReserve": 779.0569367083949
+      "minimumPlanReserve": 785.4349225469723
     },
     {
       "task": "radAfter150PullBody",
       "fixed": "buffer",
-      "minimumPlanReserve": 873.3071641718166
+      "minimumPlanReserve": 552.4903470311585
     },
     {
       "task": "controlsBody",
@@ -747,7 +842,7 @@
     {
       "task": "controlsBody",
       "fixed": "radiator",
-      "minimumPlanReserve": 1258.5
+      "minimumPlanReserve": 858.5
     },
     {
       "task": "controlsBody",
@@ -772,7 +867,7 @@
     {
       "task": "bufferFrontServiceBody",
       "fixed": "radiator",
-      "minimumPlanReserve": 899.045036685445
+      "minimumPlanReserve": 560.5719028646008
     },
     {
       "task": "bufferFrontServiceBody",
@@ -789,7 +884,7 @@
     "unchangedBufferBeyondNewDryWall": 394.5,
     "unchangedControlsBeyondNewDryWall": 419.5,
     "unchangedRadiatorBeyondNewDryWall": 622.5,
-    "oldArchOpeningOverlapsNewRadiator": 75
+    "oldArchOpeningOverlapsNewRadiator": 70
   },
   "retainedHolds": [
     "Actual bridge/deep passive water/foundation/first-wetting and dry/wet wall support must be proved by HAD/MAT/STR before source selection.",

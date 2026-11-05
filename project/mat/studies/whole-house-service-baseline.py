@@ -804,30 +804,30 @@ assert 2707.5-50-25-25-20==bath_drop['lower']['finishedPanelUnderside']
 # continuous diagonal replacement checks are reproduced separately.
 east_path=ROOT/'project/mat/studies/east-water-plant.json'
 east_raw=east_path.read_bytes()
-assert hashlib.sha1(b'blob '+str(len(east_raw)).encode()+b'\0'+east_raw).hexdigest()=='294e2469871420c4b5bfc21a3d2c48bbcc893fcc'
+assert hashlib.sha1(b'blob '+str(len(east_raw)).encode()+b'\0'+east_raw).hexdigest()=='8783a746843680e55c89b91befec4d0c61edd8a8'
 east_join=json.loads(east_raw)
 assert east_join['immutableStartingMain']=='c1986524454a0a9f518c45184e1d8808e9eebb1e'
 plant=east_join['plant']
 for e in emitters:
  if e['id']=='plant-N':
   e['completePlanWithValvesAndBrackets']=plant['emitterJoin']['radComplete']
-  e['pressurePairBranchPlan']=[[9800,5000],[10500,5000],[10500,3500],[11225,3500]]
-  e['notes']='Proposed3300arch east jamb; raw9650-10900 plus27jamb finish. Full550x200 retained; actual support/valves/pull and source join remain conditions.'
+  e['pressurePairBranchPlan']=[[9800,5000],[10500,5000],[10500,3900],[11225,3900]]
+  e['notes']='Retained3700arch east jamb; raw9650-10925 plus27jamb finish. Full550x200 retained; actual support/valves/pull and source join remain conditions.'
 for g in gates:
- if g['id']=='plant-intermediate':g['xy']=[10350,3300];g['rough']=[9650,10900];g['roughSideReserves']=[540,390]
+ if g['id']=='plant-intermediate':g['xy']=[10350,3700];g['rough']=[9650,10925];g['roughSideReserves']=[540,415]
  if g['id']=='PLANT':g['xy']=[9300,3200];g['roughSideReserves']=[290,290]
 profile_trunks()
 front=next(t for t in trunks if t['id']=='ground-front-west')
 tail=front['selected3DProfile'].index([8500,3200,2945])
 front['selected3DProfile']=[[9800,5000,2945],[10350,5000,2945]]+east_join['frontPlantArchCrossing']['newLowCentreProfile']+front['selected3DProfile'][tail:]
 front['profileLengthMM']=length(front['selected3DProfile'])
-front['profileRule']='Actual continuous low L atZ2500 from3300arch through600square elbow/3200turn and9300spine; rise only westatX9000. Full packet and finished27radial arch checked, no corner normal-height reset.'
+front['profileRule']='Separate low2500 crossings at retained3700arch and9300spine; full300shoulders, normal2945corner whollysouthofwall. Actual1275/900arches with27radialfinish checked. No packet through a solid westpier.'
 for x in crossings:
- if x['route']=='ground-front-west' and x['wall']=='plant-intermediate-arch':x['point']=[10350,3300,2500]
+ if x['route']=='ground-front-west' and x['wall']=='plant-intermediate-arch':x['point']=[10350,3700,2500]
  if x['route']=='ground-front-west' and x['wall']=='service-spine':x['point']=[9300,3200,2500]
 # Diagram the explicit hypothetical wall rewind, never claim it is accepted HAD.
 for w in b['groundWalls']:
- if w['id']=='plant-intermediate-arch':w['a'][1]=3300;w['b'][1]=3300;w['holes']=[[9650,10900]]
+ if w['id']=='plant-intermediate-arch':w['a'][1]=3700;w['b'][1]=3700;w['holes']=[[9650,10925]]
  if w['id']=='plant-north':
   w['a'][1]=6040.25;w['b'][1]=6040.25;w['t']=519.5;w['holes']=[]
 
@@ -840,7 +840,7 @@ architecture_contract={'schemaVersion':1,'authority':'MAT-SERVICES numeric inter
  'familyBathDrop':bath_drop,'utility':rewinds['utility'],'kitchenStationPlan':sink['station'],'kitchenStationTopZ':900,'supply':supplies,'eastFoulExit':east_exit,'otherServiceDuties':other,
  'livingSupplyHostCorrection':{'oldNorth2675':'REJECTED:360holecrossesactualNorthRCreceiver','selectedPoint':[0,9200,2850],'formedHole':360,'face':400,'maintenanceField':[654.5,9000,750,1100],'sofaAEastMove':650,'radiatorToPlatformReserve':25,'parkedSofaToPlatformReserve':45.5},
  'sourceOrder':'Servicesownsvalues; HADimportsimmutableobject. Finalsourceequivalence comparesrelevantgeometryonly, excludingcommit-pinmetadata. NoHADcommitaddedasfakeparent.'}
-architecture_contract['eastWaterJoin']={'status':east_join['status'],'source':'project/mat/studies/east-water-plant.json','plantDryRoom':east_join['plantDryRoom'],'intermediateArch':east_join['intermediateArch'],'replacementDoor':east_join['replacementDoor'],'waterHypothesis':east_join['eastWaterHypothesis'],'rearWarmTrunk':{k:v for k,v in east_join['rearWarmTrunk'].items() if k!='source'},'archControls':east_join['archControls'],'updatedFrontTrunk':next(t for t in trunks if t['id']=='ground-front-west'),'checks':{'count':len(east_join['checks']),'minimumFixedPlanReserve':min(c['minimumPlanReserve'] for c in east_join['checks'])},'retainedHolds':east_join['retainedHolds']}
+architecture_contract['eastWaterJoin']={'status':east_join['status'],'source':'project/mat/studies/east-water-plant.json','plantDryRoom':east_join['plantDryRoom'],'intermediateArch':east_join['intermediateArch'],'replacementDoor':east_join['replacementDoor'],'waterHypothesis':east_join['eastWaterHypothesis'],'rearWarmTrunk':{k:v for k,v in east_join['rearWarmTrunk'].items() if k!='source'},'operatorEntry':east_join['operatorEntry'],'rejected3300Pier':east_join['rejected3300Pier'],'archControls':east_join['archControls'],'updatedFrontTrunk':next(t for t in trunks if t['id']=='ground-front-west'),'checks':{'count':len(east_join['checks']),'minimumFixedPlanReserve':min(c['minimumPlanReserve'] for c in east_join['checks'])},'retainedHolds':east_join['retainedHolds']}
 assert architecture_contract['plant']=={k:plant[k] for k in architecture_contract['plant']}
 assert len(architecture_contract['emitters'])==16
 for name,r in rwhouse['fixedObstacles']['GROUND']:

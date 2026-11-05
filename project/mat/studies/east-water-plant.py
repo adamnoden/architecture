@@ -55,27 +55,28 @@ old = copy.deepcopy(plant)
 # changes; the cylinder's 25 east movement earns a real cart/west-wall reserve.
 for key in ['body', 'station', 'workingEast']:
     plant['cylinder'][key][0] += 25
+plant['cylinder']['workingEast'][1] = 4025
 plant['cylinder']['replacementCentrePath'] = [[9860,4250],[10500,4250],[10500,4575],[12500,4575]]
 plant['primaryBuffer']['station'] = [10125,5000,650,650]
 plant['primaryBuffer']['replacementCentrePath'] = [[10450,5325],[10700,4575],[12500,4575]]
 plant['controlsHydraulics'] = [10895.5,5480.5,650,300]
-plant['architecturalRewinds']=['Plant dry north face5780.5 and intermediatearch3300/raw1250 require actual HAD source join.','Hydraulic controls rotate onto dry north wall; actual ports/supports may not breach its wet/air/thermal boundary.','Retain all baseline duties, including actual high-level east soil exit; do not create a floor-level crossbar.']
+plant['architecturalRewinds']=['Plant dry north face5780.5 and retained intermediatearch3700/raw1275 require actual HAD source join.','Hydraulic controls rotate onto dry north wall; actual ports/supports may not breach its wet/air/thermal boundary.','Retain all baseline duties, including actual high-level east soil exit; do not create a floor-level crossbar.']
 plant['primaryBuffer']['stationRewind']='New proposed east-water room:100east/525south, full650station retained.'
 plant['emitterJoin'] = {
-    'radComplete':[10975,3397,550,200],
-    'radRoutineBody':[11225,3922,300],
-    'radAfter150PullBody':[11225,4072,300],
+    'radComplete':[10980,3797,550,200],
+    'radRoutineBody':[11225,4322,300],
+    'radAfter150PullBody':[11225,4472,300],
     'controlsBody':[11220.5,5155.5,300],
     'bufferFrontServiceBody':[10450,4675,300],
     'scope':'Inherited full R300 spatial task reservations, not qualified people or tools. Separate task modes; no simultaneous work-space claim.',
     'bufferPortFaceRequirement':old['emitterJoin']['bufferPortFaceRequirement'],
 }
-room = [9397,3397,2173.5,2383.5]
+room = [9397,3797,2173.5,1983.5]
 water = {'finishedPassageY':[6300,7500], 'plantWeatherWallY':[5780.5,6300],
          'dryGallery':'Retained warm full-height gallery west of the outdoor cut. HAD/MAT must prove its actual deep water bridge; this record gives it no structural or water pass.'}
-arch = {'axisY':3300, 'finishedNorthFaceY':3397, 'rawOpeningX':[9650,10900],
-        'oldRawOpeningX':[9650,11050], 'jambFinishEachSide':27, 'finishedClearWidth':1196, 'radiatorFinishedJambReserve':48,
-        'scope':'HAD must author this explicit 150 raw-opening narrowing; no radiator hung in the former arch opening.'}
+arch = {'axisY':3700, 'finishedNorthFaceY':3797, 'rawOpeningX':[9650,10925],
+        'oldRawOpeningX':[9650,11050], 'jambFinishEachSide':27, 'finishedClearWidth':1221, 'radiatorFinishedJambReserve':28,
+        'scope':'HAD must author this explicit 125 raw-opening narrowing; no radiator hung in the former arch opening.'}
 door = {'rawY':old['cylinder']['doorRaw'], 'finishedClearY':[4100,5100],
         'requiredClearHeight':2300, 'renewal':'Open outward or remove the complete leaf before trolley work under a qualified supported task. An inward leaf at y5300 blocks the northern buffer turn. Exterior swept/standing territory remains HAD/site-owned.'}
 
@@ -116,7 +117,45 @@ for task in ['radRoutineBody','radAfter150PullBody','controlsBody','bufferFrontS
         checks.append({'task':task,'fixed':name,'minimumPlanReserve':reserve})
     assert min(x-r-room[0],room[0]+room[2]-x-r,y-r-room[1],room[1]+room[3]-y-r) >= 25-1e-7
 
-assert 10975-10900-27==48 and 11570.5-11525==45.5
+assert 10980-10925-27==28 and 11570.5-11530==40.5
+# The full900x700 cylinder service bay is relocated, not reduced, to clear
+# the retained wall-mounted radiator. Its exact apparatus/port reach is a hold.
+work=plant['cylinder']['workingEast']
+assert work[2:]==[900,700]
+assert work[1]-(plant['emitterJoin']['radComplete'][1]+200)==28
+for name,rect in rectangles.items():
+    assert not (min(work[0]+900,rect[0]+rect[2])>max(work[0],rect[0]) and min(work[1]+700,rect[1]+rect[3])>max(work[1],rect[1])), ('cylinder full service bay',name)
+assert point_rect(buffer_centre,work)-300>=25
+# New3300 pier split the existing spine doorway. Retaining3700 removes that
+# collision; include45 jamb-finish/trim on the actual internal opening solids.
+operator_path=[[8800,3200],[10545,3200],[10545,4250]]
+wall_solids={'westPier':[9300,3585,395,230],'eastPier':[10880,3585,1120,230]}
+entry_checks=[]
+for name,rect in wall_solids.items():
+    reserve=min(segment_rect(a,b,rect)-300 for a,b in zip(operator_path,operator_path[1:]))
+    assert reserve>=25, (name,reserve)
+    entry_checks.append({'fixed':name,'reserve':reserve})
+for name,rect in rectangles.items():
+    reserve=min(segment_rect(a,b,rect)-300 for a,b in zip(operator_path,operator_path[1:]))
+    assert reserve>=25,(name,reserve)
+for name,(centre,radius) in circles.items():
+    reserve=min(point_segment(centre,a,b)-300-radius for a,b in zip(operator_path,operator_path[1:]))
+    assert reserve>=25,(name,reserve)
+full_station_reserve=min(segment_rect(a,b,plant['cylinder']['station'])-300 for a,b in zip(operator_path,operator_path[1:]))
+assert full_station_reserve>=25
+entry_checks.append({'fixed':'complete700cylinderstation','reserve':full_station_reserve})
+old_pier=[9300,3203,350,194]
+assert segment_rect([8800,3200],[10525,3200],old_pier)-300<0
+operator_entry={'status':'Explicit geometric reference only, not a classified/installed doorset or universal person proof.',
+ 'rawY':[2750,3650],'completeFrameWidthReference':825,'leafReference':[762,44],
+ 'clearReferenceY':[2816.5,3583.5],'clearReferenceWidth':767,
+ 'northHingeReference':[9397,3581],'fullyOpenEastLeaf':[9397,3559,762,44],
+ 'operatorCentrePath':operator_path,'retainedBodyRadius':300,'wallChecks':entry_checks,
+ 'apparatusRoute':'850 complete cart reservation does NOT fit767 reference door; cylinder/buffer use only the east1000clear route.',
+ 'actualKitHold':'HAD/OAS must bind actual full frame/leaf/trim/closer/operation and required protection. No raw900 equals clear900 inference.'}
+assert 767-850<0
+assert min(3200-300-2816.5,3583.5-3200-300)==83.5
+assert min(segment_rect(a,b,operator_entry['fullyOpenEastLeaf'])-300 for a,b in zip(operator_path,operator_path[1:]))>=25
 assert plant['cylinder']['height'] + plant['cylinder']['requiredTopService'] == 2245
 assert plant['controlsMaximumHeight'] == 2300
 assert plant['primaryBuffer']['maximumBodyHeight'] == 1600
@@ -129,20 +168,21 @@ def finished_intrados(width, centre, endpoint, finish=27):
     return 2850-radius+math.sqrt((radius-finish)**2-(endpoint-centre)**2)
 arch_controls={
     'status':'Explicit joined HAD reference geometry; no masonry capacity or classified closure acceptance.',
-    'head':2850,'spring':2550,'rise':300,'radialRing':215,'actualRadialFinish':27,
+    'head':2850,'spring':2550,'rise':300,'radialRing':215,'actualRadialFinish':27,'plantAxisY':3700,
     'upperRCUnderside':3170,'ringCrown':3065,'ringToSlabReserve':105,
-    'plant':{'rawSpan':1250,'centre':10275,'fullElbowPlan':[10050,2900,600,600],
-             'minimumFinishedIntrados':finished_intrados(1250,10275,10650)},
+    'plant':{'rawSpan':1275,'centre':10287.5,'fullPacketPlanX':[10190,10510],
+             'minimumFinishedIntrados':finished_intrados(1275,10287.5,10510)},
+    'elbowOutsideArch':{'plan':[10050,2900,600,600],'fullZ':[2815,3075],'planReserveToWallSouthFace':103,'topReserveTo3100Ceiling':25},
     'spine':{'rawSpan':900,'centre':3200,'fullPacketPlanY':[3040,3360],
              'minimumFinishedIntrados':finished_intrados(900,3200,3040)},
     'requiredFinishedIntrados':2680,
     'rejectedTurnY3000':{'fullPacketPlanY':[2840,3160],
                         'minimumFinishedIntrados':finished_intrados(900,3200,2840)},
-    'lowProfile':'ContinuousZ2500 across3300arch,600square corner and9300spine atY3200. No normal2945 reset at the corner; rise only west atX9000.'}
+    'lowProfile':'SeparateZ2500 crossings through retained3700arch and9300spine atY3200; normal2945corner lies wholly south of the wall.300shoulders keep completeband43fromfinishedwall.'}
 assert arch_controls['plant']['minimumFinishedIntrados']>=2680
 assert arch_controls['spine']['minimumFinishedIntrados']>=2680
 assert arch_controls['rejectedTurnY3000']['minimumFinishedIntrados']<2680
-adverse = {'unchangedBufferBeyondNewDryWall':old['primaryBuffer']['station'][1]+650-5780.5,'unchangedControlsBeyondNewDryWall':old['controlsHydraulics'][1]+650-5780.5,'unchangedRadiatorBeyondNewDryWall':old['emitterJoin']['radComplete'][1]+200-5780.5,'oldArchOpeningOverlapsNewRadiator':11050-10975}
+adverse = {'unchangedBufferBeyondNewDryWall':old['primaryBuffer']['station'][1]+650-5780.5,'unchangedControlsBeyondNewDryWall':old['controlsHydraulics'][1]+650-5780.5,'unchangedRadiatorBeyondNewDryWall':old['emitterJoin']['radComplete'][1]+200-5780.5,'oldArchOpeningOverlapsNewRadiator':11050-plant['emitterJoin']['radComplete'][0]}
 assert all(v>0 for v in adverse.values())
 assert segment_rect([0,0],[10,10],[4,4,2,2])==0
 assert abs(segment_rect([0,0],[10,10],[0,10,1,1])-9/math.sqrt(2))<1e-9
@@ -154,16 +194,16 @@ result = {
     'plantDryRoom':room,'eastWaterHypothesis':water,'intermediateArch':arch,'replacementDoor':door,
     'plant':plant,'unchangedUtility':copy.deepcopy(baseline['rewinds']['utility']),
     'unchangedUpperRiser':{'gross':old['riserGross'],'formedOpening':old['formedOpeningProposal'],'services':old['proposedServices'],'scope':old['openingStatus']},
-    'frontPlantArchCrossing':{'oldAxisY':3700,'newAxisY':3300,'trunkX':10350,'turnY':3200,'elbowPlan':[10050,2900,600,600],'elbowFullZ':[2370,2630],'requiredFinishedIntrados':2680,'newLowCentreProfile':[[10350,3600,2945],[10350,3600,2500],[10350,3300,2500],[10350,3200,2500],[9300,3200,2500],[9000,3200,2500],[9000,3200,2945]],'completeBand':[320,260],'lowestFinishedPanel':2350,'scope':'Replace the old3700 local crossing in the front-west trunk. Actual new1300 arch intrados, full160half-width, continuous pipe bends/supports and exposed-panel access must be joined to HAD/STR; this proposed shoulder cannot be treated as a free core bore.'},
+    'frontPlantArchCrossing':{'oldAxisY':3700,'newAxisY':3700,'trunkX':10350,'turnY':3200,'elbowPlan':[10050,2900,600,600],'elbowFullZ':[2815,3075],'requiredFinishedIntrados':2680,'newLowCentreProfile':[[10350,4000,2945],[10350,4000,2500],[10350,3700,2500],[10350,3400,2500],[10350,3400,2945],[10350,3200,2945],[9600,3200,2945],[9600,3200,2500],[9300,3200,2500],[9000,3200,2500],[9000,3200,2945]],'completeBand':[320,260],'lowestFinishedPanel':2350,'scope':'Refine the retained3700 local crossing in the front-west trunk. Actual retained3700/raw1275 arch intrados, full160half-width, continuous pipe bends/supports and exposed-panel access must be joined to HAD/STR; this proposed shoulder cannot be treated as a free core bore.'},
     'rearWarmTrunk':{'source':trunk,'normalFullZ':[2815,3075],'normalFullXAtGallery':[8540,8860],
                      'loweredCrossingAxisZ':2500,'lowestFinishedLocalPanelZ':2350,
                      'condition':'Keep the complete original high-level route within actual enclosed dry gallery, including every lowered aperture. It is NOT routed in 65 screed, in bridge concrete or outdoors. Prove actual wall/ceiling/air/weather boundaries on the same HAD source.'},
-    'changes':{'cylinder':'25 east; unchanged 595 complete comparison body/700 station, 300L duty and 1745 height; exit turn25 south.',
+    'changes':{'cylinder':'25 east; full900x700 Eastservicebay125north; unchanged 595 complete comparison body/700 station, 300L duty and 1745 height; exit turn25 south.',
                'buffer':'Station +100 east /525 south; unchanged650 station,600 complete-round body and100 usable L duty.',
                'controls':'Unchanged650×300 plan dimensions rotated from east to north wall; all hydraulic/electrical/support/lead access still required.',
-               'radiator':'Unchanged550×200 complete plan/400 body length, now on actual intermediate-arch east jamb facing north; unchanged150 front-pull requirement.',
+               'radiator':'Unchanged550×200 complete plan/400 body length, retained3700arch east jamb facing north; unchanged150 front-pull requirement.',
                'utility':'All original washer/sink/chase/valve/electrical/PV bodies and working fields retained.'},
-    'archControls':arch_controls,'checks':checks,'adverseUnchangedLayout':adverse,
+    'operatorEntry':operator_entry,'archControls':arch_controls,'rejected3300Pier':{'operatorReserve':segment_rect([8800,3200],[10545,3200],old_pier)-300,'pipeHalfWidthReserve':segment_rect([10350,3200],[9300,3200],old_pier)-160},'checks':checks,'adverseUnchangedLayout':adverse,
     'retainedHolds':['Actual bridge/deep passive water/foundation/first-wetting and dry/wet wall support must be proved by HAD/MAT/STR before source selection.',
                     '850 circle is the inherited maximum whole apparatus+trolley plan requirement, not a qualified trolley, handler, force or 3D carrying proof. Complete handling height must remain below the actual2300 door; supports, routes and outdoor position need qualification.',
                     'R300 task fields are inherited spatial reservations only. Real workers/tools/valves/brackets and all access/door states require matched apparatus.',
@@ -179,6 +219,7 @@ def svg():
     def rect(r,fill,stroke='#222'):
         out.append(f'<rect x="{ox+(r[0]-9300)*s}" y="{oy+(6000-r[1]-r[3])*s}" width="{r[2]*s}" height="{r[3]*s}" fill="{fill}" stroke="{stroke}"/>')
     rect(room,'#faf6e9')
+    rect(plant['cylinder']['workingEast'],'#edf1de','#859268')
     rect([9300,5780.5,2700,519.5],'#c8def0')
     for name,r in rectangles.items():
         rect(r,'#c4d0b5');out.append(f'<text x="{ox+(r[0]-9300)*s}" y="{oy+(6000-r[1])*s+13}">{name}</text>')
@@ -189,7 +230,7 @@ def svg():
         out.append(f'<polyline points="{points}" fill="none" stroke="{ "#3465a4" if name=="cylinder" else "#a65a2b"}" stroke-width="2"/>')
         for p in path[:-1]:out.append(f'<circle cx="{ox+(p[0]-9300)*s}" cy="{oy+(6000-p[1])*s}" r="{425*s}" fill="none" stroke="#999" stroke-dasharray="3 3"/>')
         out.append(f'<text x="{ox+(path[0][0]-9300)*s}" y="{oy+(6000-path[0][1])*s}">{name}</text>')
-    lines=['FFL0 / ceiling3100 retained as a candidate condition.','300L cylinder:595 body /700 station /1745 high +500 top task.','100L usable buffer:600 complete round /650 station /1600 high.','850 circle is a retained maximum cart+apparatus requirement.','Separate replacement/task states; no qualified human/tool claim.','Controls650×300 rotate onto dry north wall; height2300.','Arch3300: raw9650–10900;27jambs leave1196clear.','Plant external raw opening3900–5300; finished1000×2300.','Open outward or remove supported leaf before replacement.','Warm rear trunk stays HIGH: fullZ2815–3075; local panels2350.','No underfloor service route, bridge capacity or water pass.','Cooker/heat/control/material/actual-kit holds remain open.']
+    lines=['FFL0 / ceiling3100 retained as a candidate condition.','300L cylinder:595 body /700 station /1745 high +500 top task.','100L usable buffer:600 complete round /650 station /1600 high.','850 circle is a retained maximum cart+apparatus requirement.','Separate replacement/task states; no qualified human/tool claim.','Controls650×300 rotate onto dry north wall; height2300.','Retain arch3700: raw9650–10925;1221finishedclear.','Plant external raw opening3900–5300; finished1000×2300.','Open outward or remove supported leaf before replacement.','Warm rear trunk stays HIGH: fullZ2815–3075; local panels2350.','No underfloor service route, bridge capacity or water pass.','Cooker/heat/control/material/actual-kit holds remain open.']
     for i,line in enumerate(lines):out.append(f'<text x="420" y="{65+i*25}">{line}</text>')
     out.append('<text x="25" y="450">Blue: cylinder exit. Brown: buffer exit. Dashed: complete850 circles at source checkpoints.</text>')
     out.append('<text x="25" y="478">Numeric source checks the whole swept circle continuously; drawn checkpoints alone are not the proof.</text>')
