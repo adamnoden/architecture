@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w1"
   },
   "claimedAt": "2026-11-05T19:41:01.250Z",
-  "heartbeatAt": "2026-11-05T19:41:01.250Z",
-  "expiresAt": "2026-11-05T20:26:01.250Z",
+  "heartbeatAt": "2026-11-05T19:53:50.348Z",
+  "expiresAt": "2026-11-05T20:38:50.348Z",
   "predecessor": {
     "leaseId": "66c9d5b6-ecdb-4582-9e68-bde074daa069",
     "generation": 20,
@@ -30,5 +30,10 @@
       "evidence": "PR1331 exact1fda156d60e90ef766168e1e57657afbb5ace373 atmain ee710e9a, coherent1file43lines actualB594alignedport versusDrenoMatilde retainedpan/smallwearmodules. NativePDFhash/render/integrity/diffchecks passed, sourcegeometry/material/lifecycle unchanged.",
       "next": "Commanderreview and exact-headfullCI, then freshcanonicalpreflight expected-head coordinatedmerge. NoIAScompletion; independentfirstrelease/wholewaste/basinincoming andmaterialduties explicit."
     }
+  },
+  "branch": "work/zerg-20261105-w1d",
+  "checkpoint": {
+    "evidence": "Safe-park meaningfulWIP remote842a4271f41f276fe372a57a1e199a2898b71970 pathproject/ias/ias-03-renewable-shower-reference-handoff.md exactblobf7b05488 verified. Actualstocksources/cut-seamproposal/floorcost/unprovedpackage preserved; integrity/diffpassed. NoPR/adoption/calculation.",
+    "next": "Resume explicitPROJECT-DESIGNED completeboundpackage or falsifycandidate: actualcutlist/mass/load/deflection/support/keepers/waterseams/firstrelease/incoming/replacement. Rootexecutionlimit reached, notfrontierempty; immediatecanonicalHANDOFFrelease now."
   }
 }
