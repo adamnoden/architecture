@@ -9,9 +9,9 @@
     "label": "zerg-20261105-w3"
   },
   "claimedAt": "2026-11-05T17:49:04.985Z",
-  "heartbeatAt": "2026-11-05T17:49:04.985Z",
-  "expiresAt": "2026-11-05T18:34:04.985Z",
-  "branch": "work/zerg-20261105-w3",
+  "heartbeatAt": "2026-11-05T17:57:06.843Z",
+  "expiresAt": "2026-11-05T18:42:06.843Z",
+  "branch": "work/zerg-20261105-w2",
   "predecessor": {
     "leaseId": "ec84febe-c609-44f8-b067-31ceb1eab986",
     "generation": 24,
@@ -33,5 +33,11 @@
       "next": "Observe full exact-head CI, run fresh native STR-HOUSE canonical publication preflight, expected-head merge, clean helper and release. Then dispatch again if safe.",
       "blocker": "Actual adopted roof and complete 3D hips/diaphragm/ceiling/fire/structural reactions and independently evidenced first-harm remain unproved; no preferred complete STR-HOUSE selection."
     }
+  },
+  "pr": 1327,
+  "checkpoint": {
+    "evidence": "Shared PR1327 head469e4be2a540d29e046722844dff5a16772561e7 tree49a8e107 preserves reviewed STR803711c4 with RWT root topology rejection and HAD-WATER-REPLAN registration; four source-bound STR tests and integrated graph/type checks pass.",
+    "next": "Reconcile OAS main, verify final shared-head full CI, execute own canonical STR preflight immediately before commander expected-head merge; release blocked STR lease after verified integration.",
+    "blocker": "Exact final shared-head CI and publication preflight pending; no source geometry, structural adequacy or lifecycle completion adopted."
   }
 }
