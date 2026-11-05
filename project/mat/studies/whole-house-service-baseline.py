@@ -804,7 +804,7 @@ assert 2707.5-50-25-25-20==bath_drop['lower']['finishedPanelUnderside']
 # continuous diagonal replacement checks are reproduced separately.
 east_path=ROOT/'project/mat/studies/east-water-plant.json'
 east_raw=east_path.read_bytes()
-assert hashlib.sha1(b'blob '+str(len(east_raw)).encode()+b'\0'+east_raw).hexdigest()=='8783a746843680e55c89b91befec4d0c61edd8a8'
+assert hashlib.sha1(b'blob '+str(len(east_raw)).encode()+b'\0'+east_raw).hexdigest()=='83acf8afddbf9aed510697820fb11cbeb11a1c25'
 east_join=json.loads(east_raw)
 assert east_join['immutableStartingMain']=='c1986524454a0a9f518c45184e1d8808e9eebb1e'
 plant=east_join['plant']

@@ -5032,21 +5032,42 @@
             762,
             44
           ],
+          "frameOuterReferenceY": [
+            2762.5,
+            3587.5
+          ],
+          "framePackingToRaw": [
+            12.5,
+            62.5
+          ],
           "clearReferenceY": [
-            2816.5,
-            3583.5
+            2791.5,
+            3558.5
           ],
           "clearReferenceWidth": 767,
+          "clearReferenceKind": "Frame aperture before the open leaf.",
+          "effectiveOpenClearY": [
+            2791.5,
+            3534
+          ],
+          "effectiveOpenClearWidth": 742.5,
           "northHingeReference": [
             9397,
-            3581
+            3556
           ],
           "fullyOpenEastLeaf": [
             9397,
-            3559,
+            3534,
             762,
             44
           ],
+          "baseboardTermination": {
+            "wallSouthFace": 3603,
+            "leafNorthFace": 3578,
+            "clearReserve": 25,
+            "ordinaryProjection": 18,
+            "condition": "Explicitly terminate the local18baseboard behind the parked leaf; retain full wall/air/fire finish. Without termination the reserve is7, not25."
+          },
           "operatorCentrePath": [
             [
               8800,
@@ -5076,7 +5097,7 @@
               "reserve": 35.0
             }
           ],
-          "apparatusRoute": "850 complete cart reservation does NOT fit767 reference door; cylinder/buffer use only the east1000clear route.",
+          "apparatusRoute": "850 complete cart reservation does NOT fit742.5 open reference passage (767 frame aperture); cylinder/buffer use only the east1000clear route.",
           "actualKitHold": "HAD/OAS must bind actual full frame/leaf/trim/closer/operation and required protection. No raw900 equals clear900 inference."
         },
         "rejected3300Pier": {

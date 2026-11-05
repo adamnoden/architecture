@@ -148,13 +148,18 @@ old_pier=[9300,3203,350,194]
 assert segment_rect([8800,3200],[10525,3200],old_pier)-300<0
 operator_entry={'status':'Explicit geometric reference only, not a classified/installed doorset or universal person proof.',
  'rawY':[2750,3650],'completeFrameWidthReference':825,'leafReference':[762,44],
- 'clearReferenceY':[2816.5,3583.5],'clearReferenceWidth':767,
- 'northHingeReference':[9397,3581],'fullyOpenEastLeaf':[9397,3559,762,44],
+ 'frameOuterReferenceY':[2762.5,3587.5],'framePackingToRaw':[12.5,62.5],
+ 'clearReferenceY':[2791.5,3558.5],'clearReferenceWidth':767,'clearReferenceKind':'Frame aperture before the open leaf.',
+ 'effectiveOpenClearY':[2791.5,3534],'effectiveOpenClearWidth':742.5,
+ 'northHingeReference':[9397,3556],'fullyOpenEastLeaf':[9397,3534,762,44],
+ 'baseboardTermination':{'wallSouthFace':3603,'leafNorthFace':3578,'clearReserve':25,'ordinaryProjection':18,'condition':'Explicitly terminate the local18baseboard behind the parked leaf; retain full wall/air/fire finish. Without termination the reserve is7, not25.'},
  'operatorCentrePath':operator_path,'retainedBodyRadius':300,'wallChecks':entry_checks,
- 'apparatusRoute':'850 complete cart reservation does NOT fit767 reference door; cylinder/buffer use only the east1000clear route.',
+ 'apparatusRoute':'850 complete cart reservation does NOT fit742.5 open reference passage (767 frame aperture); cylinder/buffer use only the east1000clear route.',
  'actualKitHold':'HAD/OAS must bind actual full frame/leaf/trim/closer/operation and required protection. No raw900 equals clear900 inference.'}
 assert 767-850<0
-assert min(3200-300-2816.5,3583.5-3200-300)==83.5
+assert min(3200-300-2791.5,3558.5-3200-300)==58.5
+assert 3603-(3534+44)==25 and 3534-3500==34
+assert 3534-2791.5==742.5
 assert min(segment_rect(a,b,operator_entry['fullyOpenEastLeaf'])-300 for a,b in zip(operator_path,operator_path[1:]))>=25
 assert plant['cylinder']['height'] + plant['cylinder']['requiredTopService'] == 2245
 assert plant['controlsMaximumHeight'] == 2300
