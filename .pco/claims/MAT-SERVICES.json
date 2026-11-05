@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w3"
   },
   "claimedAt": "2026-11-05T18:09:59.473Z",
-  "heartbeatAt": "2026-11-05T19:12:50.609Z",
-  "expiresAt": "2026-11-05T19:57:50.609Z",
+  "heartbeatAt": "2026-11-05T19:35:18.953Z",
+  "expiresAt": "2026-11-05T20:20:18.953Z",
   "branch": "work/zerg-20261105-w5-2",
   "predecessor": {
     "leaseId": "b3a8f164-f58c-467b-905a-c8283b0e5337",
@@ -28,9 +28,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Reviewedminimalfixpublishedonwork/zerg-20261105-w3-next head8fbcd7f2ffb01cefa3d33240c462ad03bf0f55ca tree088c3022 exactlocal9ad2cd7a. Retainoriginal3700wall/upperbearing, full1275rawarch, cylinder900x700servicebay125N, full700station/operatorcorridor35 and825frame/767clearreference.850cartexplicitlyrequiresE1000route. CanonicalServicesblob05c96336/JSa8a0c536; upper/utilityfieldsunchanged.",
-    "next": "Worker2integratesfinalServicesheadintoexisting3scopePR1329, importsactualsamefields/arches/doorreference; verifyexactcombinedsource/render/CI, thenfreshownpreflightbeforeexpected-headmerge.",
-    "blocker": "Currentpublishedsharedf6e1haspreceding3300failure; notamergecandidateuntilnew3700source+HAD/MATproofintegrated. No wholehouse/Services/materialpass."
+    "evidence": "Final owned Services source: work/zerg-20261105-w3-next at7197e64dbf03b02a26c6f9a8e0e767830b1dc9f4, exact local78c0dac0. Canonical blob3e934b29, JS projectiona2bf80bf. Retain3700 wall; full frame/leaf translated25S and explicit baseboard termination. Current HAD output independently matches full canonical object,16 emitter projections,4 plant projections and affected furniture; extra complete700station/cart reserve31.949mm passed.",
+    "next": "Worker2 must publish the integrated latest3scope candidate on sharedPR1329; verify final owned blobs and actual HAD/MAT source relationships, then exact combined CI and fresh per-node publication checks before merge.",
+    "blocker": "Remote shared head remains f6e1fe85 at19:35Z and is not the final validated candidate. Material/water/bridge and actual-kit limits remain explicit. No asynchronous heartbeat or packet completion claim."
   },
   "pr": 1329
 }
