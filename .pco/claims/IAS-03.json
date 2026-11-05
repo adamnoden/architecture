@@ -1,42 +1,34 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 20,
-  "state": "released",
-  "leaseId": "66c9d5b6-ecdb-4582-9e68-bde074daa069",
+  "generation": 21,
+  "state": "claimed",
+  "leaseId": "c07019d5-45b2-40cb-95ac-92932149eff1",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261105-w1"
   },
-  "claimedAt": "2026-11-05T19:02:39.632Z",
-  "heartbeatAt": "2026-11-05T19:39:23.356Z",
-  "expiresAt": "2026-11-05T19:39:23.356Z",
+  "claimedAt": "2026-11-05T19:41:01.250Z",
+  "heartbeatAt": "2026-11-05T19:41:01.250Z",
+  "expiresAt": "2026-11-05T20:26:01.250Z",
   "predecessor": {
-    "leaseId": "324c4de5-1082-4ea5-b89e-b3ef1bc290df",
-    "generation": 19,
-    "branch": "work/zerg-20261105-w1b",
-    "pr": 1330,
+    "leaseId": "66c9d5b6-ecdb-4582-9e68-bde074daa069",
+    "generation": 20,
+    "branch": "work/zerg-20261105-w1c",
+    "pr": 1331,
     "checkpoint": {
-      "evidence": "PR1330 exacthead fd0a77276e0562f3feb2c6368c8a0990a376d794 merged currentmain7fe3a282, only2IASdocs. NativeRev2p5 counterexample independently verified, focused integrity passed.",
-      "next": "Await exact-headCI42089086697, commander reviewed2docs. Fresh canonical preflight and expected-head coordinated merge; IAS remains planned, then handoff matched first-release/setout decision."
+      "evidence": "PR1331 exact1fda156d60e90ef766168e1e57657afbb5ace373 atmain ee710e9a, coherent1file43lines actualB594alignedport versusDrenoMatilde retainedpan/smallwearmodules. NativePDFhash/render/integrity/diffchecks passed, sourcegeometry/material/lifecycle unchanged.",
+      "next": "Commanderreview and exact-headfullCI, then freshcanonicalpreflight expected-head coordinatedmerge. NoIAScompletion; independentfirstrelease/wholewaste/basinincoming andmaterialduties explicit."
     }
   },
   "recoverySource": {
-    "leaseId": "324c4de5-1082-4ea5-b89e-b3ef1bc290df",
-    "generation": 19,
-    "branch": "work/zerg-20261105-w1b",
-    "pr": 1330,
+    "leaseId": "66c9d5b6-ecdb-4582-9e68-bde074daa069",
+    "generation": 20,
+    "branch": "work/zerg-20261105-w1c",
+    "pr": 1331,
     "checkpoint": {
-      "evidence": "PR1330 exacthead fd0a77276e0562f3feb2c6368c8a0990a376d794 merged currentmain7fe3a282, only2IASdocs. NativeRev2p5 counterexample independently verified, focused integrity passed.",
-      "next": "Await exact-headCI42089086697, commander reviewed2docs. Fresh canonical preflight and expected-head coordinated merge; IAS remains planned, then handoff matched first-release/setout decision."
+      "evidence": "PR1331 exact1fda156d60e90ef766168e1e57657afbb5ace373 atmain ee710e9a, coherent1file43lines actualB594alignedport versusDrenoMatilde retainedpan/smallwearmodules. NativePDFhash/render/integrity/diffchecks passed, sourcegeometry/material/lifecycle unchanged.",
+      "next": "Commanderreview and exact-headfullCI, then freshcanonicalpreflight expected-head coordinatedmerge. NoIAScompletion; independentfirstrelease/wholewaste/basinincoming andmaterialduties explicit."
     }
-  },
-  "branch": "work/zerg-20261105-w1c",
-  "checkpoint": {
-    "evidence": "PR1331 exact1fda156d60e90ef766168e1e57657afbb5ace373 atmain ee710e9a, coherent1file43lines actualB594alignedport versusDrenoMatilde retainedpan/smallwearmodules. NativePDFhash/render/integrity/diffchecks passed, sourcegeometry/material/lifecycle unchanged.",
-    "next": "Commanderreview and exact-headfullCI, then freshcanonicalpreflight expected-head coordinatedmerge. NoIAScompletion; independentfirstrelease/wholewaste/basinincoming andmaterialduties explicit."
-  },
-  "pr": 1331,
-  "releasedAt": "2026-11-05T19:39:23.356Z",
-  "releaseReason": "handoff"
+  }
 }
