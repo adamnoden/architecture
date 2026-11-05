@@ -1,45 +1,36 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 50,
-  "state": "released",
-  "leaseId": "9c0618c5-f679-43d8-a416-0c87f143e782",
+  "generation": 51,
+  "state": "claimed",
+  "leaseId": "043efc30-2eff-4e39-8c55-1293a1133063",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6653552713"
+    "label": "zerg-20261105-w2"
   },
-  "claimedAt": "2026-11-05T08:39:19.000Z",
-  "heartbeatAt": "2026-11-05T08:46:46.000Z",
-  "expiresAt": "2026-11-05T08:46:46.000Z",
-  "branch": "work/mvb-chat-6653552713",
+  "claimedAt": "2026-11-05T17:48:36.510Z",
+  "heartbeatAt": "2026-11-05T17:48:36.510Z",
+  "expiresAt": "2026-11-05T18:33:36.510Z",
   "predecessor": {
-    "leaseId": "6fdbe43f-6b1c-4f83-9f01-af6bfa335869",
-    "generation": 49,
-    "branch": "work/mvb-chat-6653005307",
-    "pr": 1324,
+    "leaseId": "9c0618c5-f679-43d8-a416-0c87f143e782",
+    "generation": 50,
+    "branch": "work/mvb-chat-6653552713",
+    "pr": 1325,
     "checkpoint": {
-      "evidence": "PR #1324 exact head 037a28ac; full validate CI run 41994177080 SUCCESS, five new rainwater regressions, 5 files; no selected-house change.",
-      "next": "Recover PR #1324; reacquire fresh generation, run canonical merge-check on capable runner against same validated head/main, then expected-head merge and closeout.",
-      "blocker": "Current connector-only chat has no Git CLI; cannot run canonical publication preflight. First harm, independent receiver and structural exit remain unproved."
+      "evidence": "PR #1325 head 037a28ac reuses CI-green #1324 5-file RWT-06 weather-wall study; fresh generation-50 branch and packet validation in progress.",
+      "next": "Verify exact-head PR #1325 CI run 41996241392; execute canonical generation-50 merge-check on capable Actions runner, then expected-head merge and release.",
+      "blocker": "No current independent second court outlet, real first-wetting joint or lawful site receiver. Earlier gen49 PR #1324 must be superseded."
     }
   },
   "recoverySource": {
-    "leaseId": "6fdbe43f-6b1c-4f83-9f01-af6bfa335869",
-    "generation": 49,
-    "branch": "work/mvb-chat-6653005307",
-    "pr": 1324,
+    "leaseId": "9c0618c5-f679-43d8-a416-0c87f143e782",
+    "generation": 50,
+    "branch": "work/mvb-chat-6653552713",
+    "pr": 1325,
     "checkpoint": {
-      "evidence": "PR #1324 exact head 037a28ac; full validate CI run 41994177080 SUCCESS, five new rainwater regressions, 5 files; no selected-house change.",
-      "next": "Recover PR #1324; reacquire fresh generation, run canonical merge-check on capable runner against same validated head/main, then expected-head merge and closeout.",
-      "blocker": "Current connector-only chat has no Git CLI; cannot run canonical publication preflight. First harm, independent receiver and structural exit remain unproved."
+      "evidence": "PR #1325 head 037a28ac reuses CI-green #1324 5-file RWT-06 weather-wall study; fresh generation-50 branch and packet validation in progress.",
+      "next": "Verify exact-head PR #1325 CI run 41996241392; execute canonical generation-50 merge-check on capable Actions runner, then expected-head merge and release.",
+      "blocker": "No current independent second court outlet, real first-wetting joint or lawful site receiver. Earlier gen49 PR #1324 must be superseded."
     }
-  },
-  "pr": 1325,
-  "checkpoint": {
-    "evidence": "PR #1325 head 037a28ac reuses CI-green #1324 5-file RWT-06 weather-wall study; fresh generation-50 branch and packet validation in progress.",
-    "next": "Verify exact-head PR #1325 CI run 41996241392; execute canonical generation-50 merge-check on capable Actions runner, then expected-head merge and release.",
-    "blocker": "No current independent second court outlet, real first-wetting joint or lawful site receiver. Earlier gen49 PR #1324 must be superseded."
-  },
-  "releasedAt": "2026-11-05T08:46:46.000Z",
-  "releaseReason": "handoff"
+  }
 }
