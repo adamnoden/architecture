@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 19,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "6ca4e7fa-dc1b-46db-8e76-7570a4e6fb54",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261105-w3"
   },
   "claimedAt": "2026-11-05T18:09:59.473Z",
-  "heartbeatAt": "2026-11-05T19:53:19.808Z",
-  "expiresAt": "2026-11-05T20:38:19.808Z",
+  "heartbeatAt": "2026-11-05T19:54:09.310Z",
+  "expiresAt": "2026-11-05T19:54:09.310Z",
   "branch": "work/zerg-20261105-w5-2",
   "predecessor": {
     "leaseId": "b3a8f164-f58c-467b-905a-c8283b0e5337",
@@ -32,5 +32,7 @@
     "next": "Resume through fresh canonical acquisition. Inspect current shared draft1329 and latest HAD/MAT revisions, resolve actual hoist/guard/water and source report holds, validate exact final head with full CI and fresh per-node publication preflights before any merge. Preserve all three source histories.",
     "blocker": "Actual root turn budget reached. PR1329 remains draft/unmerged and is not a selected house or completed packet. Known cooker/heat/control/material/kit limits remain. No hidden local source changes or unattended heartbeat."
   },
-  "pr": 1329
+  "pr": 1329,
+  "releasedAt": "2026-11-05T19:54:09.310Z",
+  "releaseReason": "handoff"
 }
