@@ -9,13 +9,13 @@
     "label": "zerg-20261105-w2"
   },
   "claimedAt": "2026-11-05T18:09:05.119Z",
-  "heartbeatAt": "2026-11-05T19:09:47.718Z",
-  "expiresAt": "2026-11-05T19:54:47.718Z",
+  "heartbeatAt": "2026-11-05T19:43:32.297Z",
+  "expiresAt": "2026-11-05T20:28:32.297Z",
   "branch": "work/zerg-20261105-w5-2",
   "checkpoint": {
-    "evidence": "Shared draft #1329 f6e1fe85 tree1ac084de; actual EASTall3sources/currentmain ee710; prior binding request875ddf timedoutUNSERVICED andfreshruntimeconfirmedoldbranch/expiry.",
-    "next": "Retain3700divider/1275arch afterfulloperatorcheck; earnreachablefoodstorage+windowstates; source/matsectionproofthenoneadoptedsource.",
-    "blocker": "UNSELECTED; previous3300pier+pantryfailures explicit. No mixedmain/no completion. Need new exactheadCI after allleasebindings."
+    "evidence": "SharedWIP #1329 9b57d22a exacttree0027a2f5/currentmain e1284c5; corrected3700plant/25Sdoor/fooddrawer+manualwindow/zeronodewell+MATsourceproofs committed andremote.",
+    "next": "Resolve fullouter-support/hoistpark usingexplicitconservativereservation+outboardfield; finishguard/actualsection; challengeandadoptonlyonecoherentsource.",
+    "blocker": "UNSELECTED. Existingouterground-support line isnotclearedbycurrentstraddlinghoistpark; firstwet/guard/sourcequalificationholds explicit. No mixedmain/no completion."
   },
   "pr": 1329
 }
