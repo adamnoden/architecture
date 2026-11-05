@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w3"
   },
   "claimedAt": "2026-11-05T18:09:59.473Z",
-  "heartbeatAt": "2026-11-05T19:45:37.324Z",
-  "expiresAt": "2026-11-05T20:30:37.324Z",
+  "heartbeatAt": "2026-11-05T19:53:19.808Z",
+  "expiresAt": "2026-11-05T20:38:19.808Z",
   "branch": "work/zerg-20261105-w5-2",
   "predecessor": {
     "leaseId": "b3a8f164-f58c-467b-905a-c8283b0e5337",
@@ -28,9 +28,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Shared PR1329 head 9b57d22a8c2b3b05fecb8bcc47d322d38f69a420 preserves Services7197e64d as an ancestor and all owned files exactly. Published full Services object,16 emitter projections,3700/raw1275 arch and translated complete frame/leaf independently verified. Canonical baseline3e934b29, JS projectiona2bf80bf; both own reproducers and fixed-envelope checks pass.",
-    "next": "Reconcile stale3300 active-blocker text with the corrected model; finish actual shared hoist/guard/water checks, then validate the final shared head, observe full CI and run all3 fresh publication preflights before expected-head merge.",
-    "blocker": "Published shared source remains WIP/unselected. Real outer hoist,guarding,first-wetting and physical-kit acceptance are not inferred from Services packing. No packet completion or construction admission."
+    "evidence": "Safe park at commander execution limit. Owned source is fully published on work/zerg-20261105-w3-next at7197e64dbf03b02a26c6f9a8e0e767830b1dc9f4, exact local78c0dac0. Shared draft1329 head9b57d22a8c2b3b05fecb8bcc47d322d38f69a420 preserves that ancestry and all owned files exactly. Canonical Services3e934b29/JSa2bf80bf; both Python reproducers, packing/entry/finished-arch controls, source equality and repository integrity passed.",
+    "next": "Resume through fresh canonical acquisition. Inspect current shared draft1329 and latest HAD/MAT revisions, resolve actual hoist/guard/water and source report holds, validate exact final head with full CI and fresh per-node publication preflights before any merge. Preserve all three source histories.",
+    "blocker": "Actual root turn budget reached. PR1329 remains draft/unmerged and is not a selected house or completed packet. Known cooker/heat/control/material/kit limits remain. No hidden local source changes or unattended heartbeat."
   },
   "pr": 1329
 }
