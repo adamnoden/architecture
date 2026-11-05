@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w1"
   },
   "claimedAt": "2026-11-05T18:01:12.525Z",
-  "heartbeatAt": "2026-11-05T18:53:22.543Z",
-  "expiresAt": "2026-11-05T19:38:22.543Z",
+  "heartbeatAt": "2026-11-05T18:57:24.390Z",
+  "expiresAt": "2026-11-05T19:42:24.390Z",
   "branch": "work/zerg-20261105-w1b",
   "predecessor": {
     "leaseId": "f832c78d-f649-4cc1-9bc1-a1c0f39c9078",
@@ -35,7 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote WIP279041f7; actual B568Rev2 SHA72b5 confirms direct110E port counterexample independently reviewed by MAT owner.",
-    "next": "Publish IAS-only bounded source correction PR, no IAS completion or new geometry suite; exact-head CI and coordinated merge."
-  }
+    "evidence": "PR1330 exacthead fd0a77276e0562f3feb2c6368c8a0990a376d794 merged currentmain7fe3a282, only2IASdocs. NativeRev2p5 counterexample independently verified, focused integrity passed.",
+    "next": "Await exact-headCI42089086697, commander reviewed2docs. Fresh canonical preflight and expected-head coordinated merge; IAS remains planned, then handoff matched first-release/setout decision."
+  },
+  "pr": 1330
 }
