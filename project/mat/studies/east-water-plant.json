@@ -1,0 +1,736 @@
+{
+  "status": "Proposed full Services plant reservation for the joined HAD east-water hypothesis. No source adoption or MAT-SERVICES completion.",
+  "sourceBlobs": {
+    "whole-house-service-baseline.json": "2d8f7243fb87d350763f2bca3d103b89b9d14b7d",
+    "open-north-loggia.json": "25faad2c4d40df2b7da7212f73808843a88d2f52"
+  },
+  "coordinates": "mm; ground FFL0, same existing selected HAD source. Proposed plant dry bounds and water cut belong to the unadopted joined hypothesis.",
+  "plantDryRoom": [
+    9397,
+    3397,
+    2173.5,
+    2383.5
+  ],
+  "eastWaterHypothesis": {
+    "finishedPassageY": [
+      6300,
+      7500
+    ],
+    "plantWeatherWallY": [
+      5780.5,
+      6300
+    ],
+    "dryGallery": "Retained warm full-height gallery west of the outdoor cut. HAD/MAT must prove its actual deep water bridge; this record gives it no structural or water pass."
+  },
+  "intermediateArch": {
+    "axisY": 3300,
+    "finishedNorthFaceY": 3397,
+    "openingX": [
+      9650,
+      10950
+    ],
+    "oldOpeningX": [
+      9650,
+      11050
+    ],
+    "radiatorJambReserveEast": 25,
+    "scope": "HAD must author this explicit 100 narrowing; no radiator hung in the former arch opening."
+  },
+  "replacementDoor": {
+    "rawY": [
+      3900,
+      5300
+    ],
+    "finishedClearY": [
+      4100,
+      5100
+    ],
+    "requiredClearHeight": 2300,
+    "renewal": "Open outward or remove the complete leaf before trolley work under a qualified supported task. An inward leaf at y5300 blocks the northern buffer turn. Exterior swept/standing territory remains HAD/site-owned."
+  },
+  "plant": {
+    "cylinder": {
+      "selectedNominalLitres": 300,
+      "comparison": "Vaillant2024 non-plumbed heat-pump cylinder300L:595diam x1745h, empty67.6kg/filled356.8kg. Insulation50 composition still needs declaration.",
+      "body": [
+        9562.5,
+        3952.5,
+        595,
+        595
+      ],
+      "station": [
+        9510,
+        3900,
+        700,
+        700
+      ],
+      "workingEast": [
+        10210,
+        3900,
+        900,
+        700
+      ],
+      "height": 1745,
+      "requiredTopService": 500,
+      "replacementCentrePath": [
+        [
+          9860,
+          4250
+        ],
+        [
+          10500,
+          4250
+        ],
+        [
+          10500,
+          4575
+        ],
+        [
+          12500,
+          4575
+        ]
+      ],
+      "handlingRadius": 425,
+      "removedDryMassComparator": 67.6,
+      "filledSupportLoadBeforeAccessoriesKN": 3.500208,
+      "doorRaw": [
+        3900,
+        5300
+      ],
+      "requiredFinishedClearWidth": 1000,
+      "requiredFinishedClearHeight": 2300,
+      "trolleyRequirement": "Matched rated trolley/handling method, drained cylinder and removable connections; filled apparatus is never lifted. No human lifting capacity invented.",
+      "materialAlternative": "Factory-engineered copper/unvented heat-pump cylinder with demountable mineral insulation is a supplier design requirement, not authorised modification of a certified foam cylinder; bespoke copper capability alone proves no insulation approval.",
+      "initialReplacementMarginToRiser": 25
+    },
+    "controlsHydraulics": [
+      10895.5,
+      5480.5,
+      650,
+      300
+    ],
+    "controlsMaximumHeight": 2300,
+    "primaryBuffer": {
+      "requiredUsableAlwaysConnectedLitres": 100,
+      "stationRewind": "Relocatedfrom9800/5550afterfiniteemittercoordination; oldQ350isretireduninstalledcomparison, notsilentlyremovedsupport.",
+      "station": [
+        10125,
+        5000,
+        650,
+        650
+      ],
+      "completeRoundBodyMaximumDiameter": 600,
+      "completeRoundBodyIncludes": "Allinsulation/feet/supports/collarsandretainedfittingsfit600round;650stationincludes25edgeclear. No barevesselnominalsubstitution.",
+      "maximumBodyHeight": 1600,
+      "nominalVolumeNotUsableProof": true,
+      "reason": "Separated primary cannot borrow unproved radiator volume across plateHX fordefrost.100usable is an authorselected compatibility target, not a claimed universal supplierminimum.",
+      "control": "Always-connected usable volume, guaranteed minimum flow and both HX pumps during defrost; valve/check/bypass states must preserve it. Exact chosen unit determines actual minimum and usable port arrangement.",
+      "replacementCentrePath": [
+        [
+          10450,
+          5325
+        ],
+        [
+          10700,
+          4575
+        ],
+        [
+          12500,
+          4575
+        ]
+      ],
+      "handlingRadius": 425,
+      "mass": "Unknown matched vessel/primaryfluid mass; no handlifting assumption. Drain/isolatelocaldevice only aftersafe shutdown.",
+      "material": "Second pressure vessel, insulation, expansion/safety/valves and primaryfluid add real residuals; none omitted as partofheatpump."
+    },
+    "riserGross": [
+      9400,
+      4700,
+      550,
+      700
+    ],
+    "formedOpeningProposal": [
+      9440,
+      4760,
+      465,
+      545
+    ],
+    "failedBodyOnlyOpening": [
+      9460,
+      4760,
+      450,
+      540
+    ],
+    "cabinetBasis": "Westface corrected to actualwetfinish9400; new550\u00d7700 territory ends5400 before bathroomdoor5450. No800\u00d71200 growth over door. Actual frame thickness/clear aperture still must match.",
+    "proposedServices": [
+      {
+        "id": "H-flow",
+        "centre": [
+          9540,
+          4855
+        ],
+        "outerEnvelope": 84,
+        "openingEdgeReserve": 53.0
+      },
+      {
+        "id": "H-return",
+        "centre": [
+          9740,
+          4855
+        ],
+        "outerEnvelope": 84,
+        "openingEdgeReserve": 53.0
+      },
+      {
+        "id": "cold",
+        "centre": [
+          9830,
+          5050
+        ],
+        "outerEnvelope": 74,
+        "openingEdgeReserve": 38.0
+      },
+      {
+        "id": "hot",
+        "centre": [
+          9540,
+          5075
+        ],
+        "outerEnvelope": 74,
+        "openingEdgeReserve": 63.0
+      },
+      {
+        "id": "hot-return",
+        "centre": [
+          9700,
+          5050
+        ],
+        "outerEnvelope": 67,
+        "openingEdgeReserve": 171.5
+      },
+      {
+        "id": "soil-comparator",
+        "centre": [
+          9800,
+          5200
+        ],
+        "outerEnvelope": 160,
+        "openingEdgeReserve": 25.0
+      }
+    ],
+    "supportTaskEnvelope": 230,
+    "openingStatus": "New trimmed-opening structural proposal, not permission to drill, not inherited three-bore acceptance. Complete230 clamp/tool envelopes are above/below slab and used one at a time, not six floor circles. Old south100plinths overlap the opening40: real rim/frame feet MUST be redesigned before fit acceptance; no support removed for service. Exact seals/fire/weather/vapour boundaries remain independent.",
+    "architecturalRewinds": [
+      "Delete unselected Q350 comparison body, not an installed accepted MVHR; put bufferinthisrealplantterritory.",
+      "Hydrauliccontrols mountedEwall, not a floorblock over buffer trolley path.",
+      "No floor-level eastsoil crossbar: highlevelbranch exitsEaty5700 beforedownstack."
+    ],
+    "emitterJoin": {
+      "radComplete": [
+        10975,
+        3397,
+        550,
+        200
+      ],
+      "radRoutineBody": [
+        11225,
+        3922,
+        300
+      ],
+      "radAfter150PullBody": [
+        11225,
+        4072,
+        300
+      ],
+      "controlsBody": [
+        11220.5,
+        5155.5,
+        300
+      ],
+      "bufferFrontServiceBody": [
+        10450,
+        4675,
+        300
+      ],
+      "scope": "Inherited full R300 spatial task reservations, not qualified people or tools. Separate task modes; no simultaneous work-space claim.",
+      "bufferPortFaceRequirement": "Southfaceaccessiblevalves/instrumentation600..1600, drainlowerwithqualifiedkneelingtask; nohiddenrearserviceassumed."
+    }
+  },
+  "unchangedUtility": {
+    "status": "New functional proposal, not recovered existing HAD fixtures or admitted final appliance/door operation.",
+    "washer": [
+      10050,
+      700,
+      650,
+      700
+    ],
+    "sink": [
+      10950,
+      700,
+      600,
+      700
+    ],
+    "rearServiceChase": [
+      10050,
+      450,
+      1500,
+      250
+    ],
+    "valveBay": [
+      10700,
+      700,
+      250,
+      700
+    ],
+    "electricalStation": [
+      9397,
+      1750,
+      300,
+      650
+    ],
+    "electricalWorkingField": [
+      9697,
+      1750,
+      1000,
+      650
+    ],
+    "PVinverter": [
+      9400,
+      429.5,
+      500,
+      250
+    ],
+    "PVworkingField": [
+      9400,
+      679.5,
+      600,
+      1000
+    ],
+    "working": "Washer/sink front at1400, floor task field to2000. Washer valve10800/1250 is450 from front bodycentre10800/1700, not inaccessible behind appliance. Utility door must be checked in actual open/closed modes; no sink-use pass under an untested inward900leaf. Cu/inverter work fields do not intersect proposed fixed appliance bodies."
+  },
+  "unchangedUpperRiser": {
+    "gross": [
+      9400,
+      4700,
+      550,
+      700
+    ],
+    "formedOpening": [
+      9440,
+      4760,
+      465,
+      545
+    ],
+    "services": [
+      {
+        "id": "H-flow",
+        "centre": [
+          9540,
+          4855
+        ],
+        "outerEnvelope": 84,
+        "openingEdgeReserve": 53.0
+      },
+      {
+        "id": "H-return",
+        "centre": [
+          9740,
+          4855
+        ],
+        "outerEnvelope": 84,
+        "openingEdgeReserve": 53.0
+      },
+      {
+        "id": "cold",
+        "centre": [
+          9830,
+          5050
+        ],
+        "outerEnvelope": 74,
+        "openingEdgeReserve": 38.0
+      },
+      {
+        "id": "hot",
+        "centre": [
+          9540,
+          5075
+        ],
+        "outerEnvelope": 74,
+        "openingEdgeReserve": 63.0
+      },
+      {
+        "id": "hot-return",
+        "centre": [
+          9700,
+          5050
+        ],
+        "outerEnvelope": 67,
+        "openingEdgeReserve": 171.5
+      },
+      {
+        "id": "soil-comparator",
+        "centre": [
+          9800,
+          5200
+        ],
+        "outerEnvelope": 160,
+        "openingEdgeReserve": 25.0
+      }
+    ],
+    "scope": "New trimmed-opening structural proposal, not permission to drill, not inherited three-bore acceptance. Complete230 clamp/tool envelopes are above/below slab and used one at a time, not six floor circles. Old south100plinths overlap the opening40: real rim/frame feet MUST be redesigned before fit acceptance; no support removed for service. Exact seals/fire/weather/vapour boundaries remain independent."
+  },
+  "frontPlantArchCrossing": {
+    "oldAxisY": 3700,
+    "newAxisY": 3300,
+    "trunkX": 10350,
+    "newLowCentreProfile": [
+      [
+        10350,
+        3550,
+        2945
+      ],
+      [
+        10350,
+        3550,
+        2500
+      ],
+      [
+        10350,
+        3300,
+        2500
+      ],
+      [
+        10350,
+        3050,
+        2500
+      ],
+      [
+        10350,
+        3050,
+        2945
+      ]
+    ],
+    "completeBand": [
+      320,
+      260
+    ],
+    "lowestFinishedPanel": 2350,
+    "scope": "Replace the old3700 local crossing in the front-west trunk. Actual new1300 arch intrados, full160half-width, continuous pipe bends/supports and exposed-panel access must be joined to HAD/STR; this proposed shoulder cannot be treated as a free core bore."
+  },
+  "rearWarmTrunk": {
+    "source": {
+      "id": "ground-rear-east",
+      "level": 0,
+      "path": [
+        [
+          8500,
+          3500
+        ],
+        [
+          8691.25,
+          3500
+        ],
+        [
+          8691.25,
+          5000
+        ],
+        [
+          8700,
+          5000
+        ],
+        [
+          8700,
+          8500
+        ],
+        [
+          10500,
+          8500
+        ],
+        [
+          10500,
+          10800
+        ]
+      ],
+      "duties": [
+        "heat",
+        "cold",
+        "hot",
+        "hot-return"
+      ],
+      "axisZ": 2945,
+      "lengthMM": 9300.0,
+      "ordinaryBand": [
+        320,
+        260
+      ],
+      "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate.",
+      "selected3DProfile": [
+        [
+          8500,
+          3500,
+          2945
+        ],
+        [
+          8691.25,
+          3500,
+          2945
+        ],
+        [
+          8691.25,
+          3500,
+          2945
+        ],
+        [
+          8691.25,
+          4000.0,
+          2945
+        ],
+        [
+          8691.25,
+          4000.0,
+          2500
+        ],
+        [
+          8691.25,
+          4250,
+          2500
+        ],
+        [
+          8691.25,
+          4500.0,
+          2500
+        ],
+        [
+          8691.25,
+          4500.0,
+          2945
+        ],
+        [
+          8691.25,
+          5000,
+          2945
+        ],
+        [
+          8691.25,
+          5000,
+          2945
+        ],
+        [
+          8700,
+          5000,
+          2945
+        ],
+        [
+          8700,
+          5000,
+          2945
+        ],
+        [
+          8700.0,
+          8040.0,
+          2945
+        ],
+        [
+          8700.0,
+          8040.0,
+          2500
+        ],
+        [
+          8700,
+          8290,
+          2500
+        ],
+        [
+          8700.0,
+          8500.0,
+          2500
+        ],
+        [
+          8700,
+          8500,
+          2500
+        ],
+        [
+          8700,
+          8500,
+          2945
+        ],
+        [
+          10500,
+          8500,
+          2945
+        ],
+        [
+          10500,
+          8500,
+          2945
+        ],
+        [
+          10500,
+          10800,
+          2945
+        ]
+      ],
+      "profileLengthMM": 11080.0,
+      "profileRule": "Real local drop/rise at each listed aperture; when segment ends within250 ofwall, low profile remains at endpoint. No imaginary2925corethrougharch. Connections at all shoulders must preserve one continuous supported pipe."
+    },
+    "normalFullZ": [
+      2815,
+      3075
+    ],
+    "normalFullXAtGallery": [
+      8540,
+      8860
+    ],
+    "loweredCrossingAxisZ": 2500,
+    "lowestFinishedLocalPanelZ": 2350,
+    "condition": "Keep the complete original high-level route within actual enclosed dry gallery, including every lowered aperture. It is NOT routed in 65 screed, in bridge concrete or outdoors. Prove actual wall/ceiling/air/weather boundaries on the same HAD source."
+  },
+  "changes": {
+    "cylinder": "25 east; unchanged 595 complete comparison body/700 station, 300L duty and 1745 height; exit turn25 south.",
+    "buffer": "Station +100 east /525 south; unchanged650 station,600 complete-round body and100 usable L duty.",
+    "controls": "Unchanged650\u00d7300 plan dimensions rotated from east to north wall; all hydraulic/electrical/support/lead access still required.",
+    "radiator": "Unchanged550\u00d7200 complete plan/400 body length, now on actual intermediate-arch east jamb facing north; unchanged150 front-pull requirement.",
+    "utility": "All original washer/sink/chase/valve/electrical/PV bodies and working fields retained."
+  },
+  "checks": [
+    {
+      "task": "cylinder replacement",
+      "fixed": "riser",
+      "minimumPlanReserve": 25.0
+    },
+    {
+      "task": "cylinder replacement",
+      "fixed": "controls",
+      "minimumPlanReserve": 480.5
+    },
+    {
+      "task": "cylinder replacement",
+      "fixed": "radiator",
+      "minimumPlanReserve": 382.48622279268636
+    },
+    {
+      "task": "cylinder replacement",
+      "fixed": "buffer complete round body",
+      "minimumPlanReserve": 26.664818918645437
+    },
+    {
+      "task": "primaryBuffer replacement",
+      "fixed": "riser",
+      "minimumPlanReserve": 75.0
+    },
+    {
+      "task": "primaryBuffer replacement",
+      "fixed": "controls",
+      "minimumPlanReserve": 46.85855931624258
+    },
+    {
+      "task": "primaryBuffer replacement",
+      "fixed": "radiator",
+      "minimumPlanReserve": 553.0
+    },
+    {
+      "task": "primaryBuffer replacement",
+      "fixed": "cylinder complete round body",
+      "minimumPlanReserve": 178.18029844112834
+    },
+    {
+      "task": "radRoutineBody",
+      "fixed": "riser",
+      "minimumPlanReserve": 1193.6227770089743
+    },
+    {
+      "task": "radRoutineBody",
+      "fixed": "controls",
+      "minimumPlanReserve": 1258.5
+    },
+    {
+      "task": "radRoutineBody",
+      "fixed": "cylinder",
+      "minimumPlanReserve": 806.3550494976325
+    },
+    {
+      "task": "radRoutineBody",
+      "fixed": "buffer",
+      "minimumPlanReserve": 1002.8206387490773
+    },
+    {
+      "task": "radAfter150PullBody",
+      "fixed": "riser",
+      "minimumPlanReserve": 1121.2702065406143
+    },
+    {
+      "task": "radAfter150PullBody",
+      "fixed": "controls",
+      "minimumPlanReserve": 1108.5
+    },
+    {
+      "task": "radAfter150PullBody",
+      "fixed": "cylinder",
+      "minimumPlanReserve": 779.0569367083949
+    },
+    {
+      "task": "radAfter150PullBody",
+      "fixed": "buffer",
+      "minimumPlanReserve": 873.3071641718166
+    },
+    {
+      "task": "controlsBody",
+      "fixed": "riser",
+      "minimumPlanReserve": 970.5
+    },
+    {
+      "task": "controlsBody",
+      "fixed": "radiator",
+      "minimumPlanReserve": 1258.5
+    },
+    {
+      "task": "controlsBody",
+      "fixed": "cylinder",
+      "minimumPlanReserve": 1036.7859296952904
+    },
+    {
+      "task": "controlsBody",
+      "fixed": "buffer",
+      "minimumPlanReserve": 188.92363382015628
+    },
+    {
+      "task": "bufferFrontServiceBody",
+      "fixed": "riser",
+      "minimumPlanReserve": 200.62460986251966
+    },
+    {
+      "task": "bufferFrontServiceBody",
+      "fixed": "controls",
+      "minimumPlanReserve": 620.4892720721953
+    },
+    {
+      "task": "bufferFrontServiceBody",
+      "fixed": "radiator",
+      "minimumPlanReserve": 899.045036685445
+    },
+    {
+      "task": "bufferFrontServiceBody",
+      "fixed": "cylinder",
+      "minimumPlanReserve": 129.63478805514455
+    },
+    {
+      "task": "bufferFrontServiceBody",
+      "fixed": "buffer",
+      "minimumPlanReserve": 50.0
+    }
+  ],
+  "adverseUnchangedLayout": {
+    "unchangedBufferBeyondNewDryWall": 394.5,
+    "unchangedControlsBeyondNewDryWall": 419.5,
+    "unchangedRadiatorBeyondNewDryWall": 622.5,
+    "oldArchOpeningOverlapsNewRadiator": 75
+  },
+  "retainedHolds": [
+    "Actual bridge/deep passive water/foundation/first-wetting and dry/wet wall support must be proved by HAD/MAT/STR before source selection.",
+    "850 circle is the inherited maximum whole apparatus+trolley plan requirement, not a qualified trolley, handler, force or 3D carrying proof. Complete handling height must remain below the actual2300 door; supports, routes and outdoor position need qualification.",
+    "R300 task fields are inherited spatial reservations only. Real workers/tools/valves/brackets and all access/door states require matched apparatus.",
+    "No actual plant product, safety circuit, constituent or polymer exception is accepted. Known cooker/boost/heat/hydraulic and first-release defects remain open; moving them does not cure them.",
+    "New north-wall control supports and pipe entries must terminate on dry supports without piercing the wet/air/thermal boundary or obstructing liner renewal. No unnamed service port is permitted."
+  ]
+}
