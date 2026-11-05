@@ -9,8 +9,8 @@
     "label": "zerg-20261105-w3"
   },
   "claimedAt": "2026-11-05T18:09:59.473Z",
-  "heartbeatAt": "2026-11-05T18:09:59.473Z",
-  "expiresAt": "2026-11-05T18:54:59.473Z",
+  "heartbeatAt": "2026-11-05T18:26:26.021Z",
+  "expiresAt": "2026-11-05T19:11:26.021Z",
   "branch": "work/zerg-20261105-w3-next",
   "predecessor": {
     "leaseId": "b3a8f164-f58c-467b-905a-c8283b0e5337",
@@ -26,5 +26,10 @@
       "evidence": "Draft PR1279 refrozen remotee1ac7f922edfafeff90e8fb7e1e64d9dbe470f4c treeef9307362f1af769cb381aa36c4072bf9096df6c realmainceb2684;256modes;corrected inspected two-sheet legend;generator and repo validation pass;full suite local IPC limitation recorded",
       "next": "Root exact-head CI/preflight and bounded reviewer final drawing check; operating/controller/firstrelease/netplant/material qualifications remain unresolved"
     }
+  },
+  "checkpoint": {
+    "evidence": "Published WIP8d06eff2df7198b61fa69b78f1ef883f797dc2be treee9dcd0b7 exactlocal849bc500: source-pinned full retained plant/utility interface and continuous850cart sweeps,25 numerical checks, renderedSVG reviewed; no source adoption.",
+    "next": "Join fixed numeric Services interface to HAD hypothesis; verify actual3300arch high/low trunk profile and retained drygallery Z2815-3075; reconcile full kit and boundary limits before shared PR.",
+    "blocker": "Unadopted deepEwater bridge/firstwet/support section and actual3300arch crossing; known cooker/heat/control/material holds retained."
   }
 }
