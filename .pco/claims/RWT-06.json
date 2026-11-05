@@ -9,8 +9,8 @@
     "label": "issue-comment-6653005307"
   },
   "claimedAt": "2026-11-05T08:08:35.000Z",
-  "heartbeatAt": "2026-11-05T08:08:35.000Z",
-  "expiresAt": "2026-11-05T08:53:35.000Z",
+  "heartbeatAt": "2026-11-05T08:27:52.000Z",
+  "expiresAt": "2026-11-05T09:12:52.000Z",
   "branch": "work/mvb-chat-6653005307",
   "predecessor": {
     "leaseId": "9340597e-2192-42be-9598-922ca03ba418",
@@ -33,5 +33,11 @@
       "next": "Verify exact-head full CI and canonical gen48 preflight, merge if safe, release RWT-06 and report remaining architecture gates.",
       "blocker": "True structural corner bearing, two weather openings, plant relocation, first harm and independent site receiver remain unproved."
     }
+  },
+  "pr": 1324,
+  "checkpoint": {
+    "evidence": "PR #1324 head 037a28ac: weathered east court/plant passage space exchange, 247/572.5/766.5 mm; 5 regressions, no selection.",
+    "next": "Verify exact-head CI, then obtain fresh canonical generation-49 merge preflight on capable runner; expected-head merge only if passed, else handoff.",
+    "blocker": "Connector-only runtime cannot run control:merge-check. Real structural, wetting, garden safety and independent site-receiver requirements remain open."
   }
 }
