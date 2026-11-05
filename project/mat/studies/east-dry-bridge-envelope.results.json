@@ -3,9 +3,22 @@
   "status": "MAT assembly and envelope proof of the actual HAD successor; no technical/material acceptance",
   "HAD_source": {
     "path": "project/had/studies/water-replan.json",
-    "blob": "751bcfe237d2a917f8b331a3a42ad4a3bcf43e40",
+    "blob": "6c53da42a81c45777d0a18dbf803144364665598",
     "declaredStatus": "WIP JOINED HYPOTHESIS \u2014 NOT A SELECTED HOUSE OR COMPLETED HAD PACKET"
   },
+  "east_weather_layer_faces_mm": [
+    9203,
+    9230,
+    9370,
+    9570,
+    9620,
+    9722.5
+  ],
+  "occupied_floor_clear_x_mm": [
+    8179.5,
+    9203
+  ],
+  "floor_glass_to_wall_glass_horizontal_gap_mm": 167,
   "body_x_mm": [
     7550,
     9850
@@ -69,12 +82,44 @@
   "sheet_only_mass_screen_kg": 23.736,
   "full_depth_prismatic_water_litres": 138.0,
   "court_intake_well": [
-    6650,
+    6125,
     6300,
-    1100,
-    1200
+    1525,
+    1100
   ],
   "shield_release": "Upward in isolated guarded well, outside beam; does not travel through the portal",
+<<<<<<< HEAD
+=======
+  "intake_access_check": {
+    "stair_run_mm": 600,
+    "stair_rises": 4,
+    "stair_rise_mm": 180,
+    "platform_to_hood_gap_mm": 25,
+    "top_adapter_to_local_court_mm": [
+      -16.0,
+      8.0
+    ],
+    "gate_and_hardware_status": "West guard gate and actual posts/handholds/capture/adapter still need complete coordinates; no physical release acceptance",
+    "boundary_status": "Well end shares x7650 beam/node face; zero gross reserve requires actual lining/support/joint resolution"
+  },
+>>>>>>> 2214c27b (Join the corrected well and separate service stair without hiding contacts)
+  "intake_support_collisions": [],
+  "surface_activation_probe": {
+    "scope": "Effective-crest lower-bound screen only; stage uses declared 600-wide ideal head, not an earned inlet stage or universal hydraulic bound; actual cut/cover/lip and first harm remain open",
+    "court_floor_at_well_north_mm": -96.0,
+    "court_floor_at_collector_north_mm": -110.0,
+    "declared_crest_mm": -110,
+    "direct_well_effective_crest_lower_bound_mm": -96.0,
+    "collector_effective_crest_conditional_lower_bound_mm": -110.0,
+    "collector_north_plan_width_mm": 350,
+    "declared_ideal_width_assumption_mm": 600.0,
+    "ideal_head_screen_mm": 23.19724035643746,
+    "qualified_first_harm_margin_mm": null,
+    "direct_well_stage_at_declared_ideal_head_mm": -72.80275964356254,
+    "direct_well_margin_to_north_loggia_floor_mm": -37.19724035643746,
+    "collector_conditional_stage_at_declared_ideal_head_mm": -86.80275964356254,
+    "collector_conditional_margin_to_north_loggia_floor_mm": -23.19724035643746
+  },
   "intake_flow_void": {
     "representation": "OUTER REMOVABLE HOOD ENVELOPE, NOT A SOLID WATER BARRIER",
     "shaft": {

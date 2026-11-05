@@ -12,6 +12,16 @@ const blob = path => {
 };
 const sorted = x => Array.isArray(x) ? x.map(sorted) : x && typeof x === 'object'
   ? Object.fromEntries(Object.keys(x).sort().map(k => [k, sorted(x[k])])) : x;
+const pointRectDistance=(p,r)=>Math.hypot(Math.max(r[0]-p[0],0,p[0]-r[0]-r[2]),Math.max(r[1]-p[1],0,p[1]-r[1]-r[3]));
+const pointSegmentDistance=(p,a,b)=>{const dx=b[0]-a[0],dy=b[1]-a[1],d=dx*dx+dy*dy,t=d?Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/d)):0;return Math.hypot(p[0]-a[0]-t*dx,p[1]-a[1]-t*dy);};
+function segmentRectDistance(a,b,r){
+  let lo=0,hi=1;const dx=b[0]-a[0],dy=b[1]-a[1];
+  for(const[p,q]of[[-dx,a[0]-r[0]],[dx,r[0]+r[2]-a[0]],[-dy,a[1]-r[1]],[dy,r[1]+r[3]-a[1]]]){
+    if(!p){if(q<0){lo=2;break;}}else{const t=q/p;if(p<0)lo=Math.max(lo,t);else hi=Math.min(hi,t);}
+  }
+  if(lo<=hi)return 0;
+  return Math.min(pointRectDistance(a,r),pointRectDistance(b,r),...[[r[0],r[1]],[r[0]+r[2],r[1]],[r[0],r[1]+r[3]],[r[0]+r[2],r[1]+r[3]]].map(p=>pointSegmentDistance(p,a,b)));
+}
 export function deriveWaterReplan({servicesText} = {}) {
   const hadPath = 'project/had/studies/open-north-loggia.json';
   assert.equal(blob(hadPath), '25faad2c4d40df2b7da7212f73808843a88d2f52');
@@ -21,12 +31,12 @@ export function deriveWaterReplan({servicesText} = {}) {
   const canonicalServicesPath = 'project/mat/studies/whole-house-service-baseline.json';
   const canonicalBytes = Buffer.from(servicesText ?? readFileSync(new URL(canonicalServicesPath, root), 'utf8'));
   assert.equal(createHash('sha1').update(`blob ${canonicalBytes.length}\0`).update(canonicalBytes).digest('hex'),
-    'ffe115aa2cd255aaa4d1748e82eb02fae79db075', 'Authenticate complete current Services source');
+    '3e934b29d9f328b41cb9bd2498184154090492c0', 'Authenticate complete current Services source');
   const services = JSON.parse(canonicalBytes).interfaces.architecturalServices;
   const servicesProjection = createHash('sha256').update(JSON.stringify(sorted(services))).digest('hex');
-  assert.equal(servicesProjection, 'ce0052012cd188bf2f357b4ec1da9b595bd99d779ca9fbd86164876e1e74fc22');
+  assert.equal(servicesProjection, 'a2bf80bfb19d973a01ef22948942909e386400b4a93a273d362b362a2349c4a2');
   assert.deepEqual(s.eastWaterHypothesis.finishedPassageY, [6300, 7500]);
-  assert.deepEqual(s.plantDryRoom, [9397, 3397, 2173.5, 2383.5]);
+  assert.deepEqual(s.plantDryRoom, [9397, 3797, 2173.5, 1983.5]);
   const floorZ = x => -800 - (x - 7750) * 50 / 4250;
   const passage = { outdoor: [9722.5, 6300, 2277.5, 1200],
     waterClear: [7750, 6600, 4250, 600],
@@ -41,6 +51,7 @@ export function deriveWaterReplan({servicesText} = {}) {
     newEastWeatherWallX: [9203, 9722.5],
     walkingFFL: 0,
     floorLayers: [['stone', 15], ['screed', 65], ['bareCellularGlass', 100], ['RC', 200]],
+    floorLayerExtent: 'Occupied layers apply only to permanentDryGalleryClearX; walls bear on their actual RC members, never on screed or floor glass.',
     slabZ: [-380, -180],
     localSupportBeamZ: [-630, -180],
     localSupportBeamWidths: [600, 900],
@@ -62,14 +73,15 @@ export function deriveWaterReplan({servicesText} = {}) {
     northOperatorStrip: [9850, 7350, 3650, 750],
     hoistWorkingBox: [9850, 6300, -900, 2300, 1500, 3000],
     hoistLiftTranslation: 1200,
-    courtIntakeWell: [6650, 6300, 1100, 1200],
+    courtIntakeWell: [6125, 6300, 1525, 1100],
     courtIntakeWellFloorZ: -950,
-    courtIntakeOperatorPlatform: [6750, 6450, 600, 900],
+    courtIntakeOperatorPlatform: [6725, 6450, 600, 900],
     courtIntakeOperatorPlatformZ: -800,
-    courtIntakeAccess: { fixedSteps: [6750, 6300, 600, 600],
-      riseMaximum: 180, method: 'Four controlled rises from the local court surface to the standing platform; guard installed and incoming court water isolated before entry. Not ordinary court access.' },
-    guardOuterPlan: [6600, 6250, 1150, 1300], guardTopAboveLocalCourt: 1100,
-    courtCollector: { plan: [7300, 6300, 450, 1450], surfaceReachable: true,
+    courtIntakeAccess: { fixedSteps: [6125, 6600, 600, 600],
+      topLandingZ:-80,lowerLandingZ:-800,rises:4,going:200,riseMaximum:180,
+      method: 'Four180 rises/three200 goings run EAST from west guard gate to a separate flat600x900 working platform. Level adapter must fit local sloping court; no stairs overlap the standing footprint. Guard before covers; isolate court water before entry.' },
+    guardOuterPlan: [6075, 6250, 1625, 1200], guardTopAboveLocalCourt: 1100,
+    courtCollector: { plan: [7300, 6300, 350, 1450], surfaceReachable: true,
       northSurfaceLipZ: -110, northChannelBedZ: -180,
       lowChannelAtIntakeZ: -200,
       commonFaultBoundary: 'Entire N mouth x4800..7200 disabled; E collector starts x7300, with its own through-ring route and separate east head condition. No immunity to whole-court debris blanket or whole-site flood is claimed.' },
@@ -103,8 +115,7 @@ export function deriveWaterReplan({servicesText} = {}) {
     t: 519.5, finishedFaces: [5780.5, 6300],
     structuralCore: [5807.5, 5947.5],
     scope: 'New complete weather-wall comparator from protected south face; owning MAT recipe/support admission required.' });
-  Object.assign(wall('plant-intermediate-arch'), { a: [9300, 3300], b: [12000, 3300],
-    finishedFaces: [3203, 3397], structuralCore: [3230, 3370], holes: [services.eastWaterJoin.intermediateArch.rawOpeningX] });
+  Object.assign(wall('plant-intermediate-arch'), { holes: [services.eastWaterJoin.intermediateArch.rawOpeningX] });
   model.groundWalls.push({ id: 'east-passage-north-weather', a: [9397, 7922.5], b: [12000, 7922.5],
     t: 519.5, finishedFaces: [7500, 8019.5], structuralCore: [7852.5, 7992.5],
     scope: 'Outdoor-to-dry northern separator; the 136 mm strip to existing rear wall is not usable room area.' });
@@ -140,19 +151,72 @@ export function deriveWaterReplan({servicesText} = {}) {
     method:'Derived from exact current object; the historical MAT9476 auxiliary stamp is not reused.' };
   model.status = 'UNADOPTED JOINED WATER REPLAN; historical selected geometry is its input, not its current pass.';
   model.internalArchControls = services.eastWaterJoin.archControls;
+  model.plantReferenceDoor={...services.eastWaterJoin.operatorEntry,
+    frameApertureWidth:services.eastWaterJoin.operatorEntry.clearReferenceY[1]-services.eastWaterJoin.operatorEntry.clearReferenceY[0],
+    effectiveOpenWidth:services.eastWaterJoin.operatorEntry.fullyOpenEastLeaf[1]-services.eastWaterJoin.operatorEntry.clearReferenceY[0],
+    baseboardTermination:'No18mm projection behind the fully parked reference leaf; this is an actual local finish termination, not a collision exception.'};
   model.pantrystandardDoor = { operation: 'REMOVED with the former pantry; retaining its inward swing intersects the new weather wall.', inheritedDoor: h.pantrystandardDoor };
   model.pantryReplacement = { oldShelfComparisonDeleted: true,
-    cost: 'Dedicated adjacent pantry lost; the brief requires useful reachable food storage and a clear approach. No untested upper cupboard or standing on the sink is credited as replacement.',
+    cost: 'Dedicated adjacent pantry lost. The owning brief ledger does not fix a dedicated pantry; retain useful reachable food storage and a real approach. Household bulk capacity remains open.',
     rejectedUpperCabinet: { plan:[8700,11220.5,900,350],z:[1800,2600],
       reason:'Original R300 task overlapped the sink by250; moving back defeats600 reach and upper daily-storage claim. Retained only as a rejected comparison.' },
-    disposition: 'Architectural programme/food-storage trade must be resolved before source adoption.' };
+    selectedLowLarder: { completeBody:[9650,11370.5,1000,200], z:[0,900],
+      drawers:{ columns:2,rows:3,maximumTravel:200,handleProjection:0,
+        handle:'Recessed front pull; no projecting handle omitted from the complete closed footprint.',
+        internalBudgetEach:[440,150,200], geometricInternalLitres:79.2,
+        scope:'Six explicit small drawer territories; geometric volume, not a supplier or household-capacity acceptance.' },
+      operator:{ bodyRadius:300,closedCentre:[10200,11045.5],openCentre:[10200,10845.5],
+        maximumReferenceReach:600,shoulderToGripHeightDifference:200 },
+      approach:[[8700,8771.25],[10200,8771.25],[10200,11045.5]],
+      windowBody:[10425,11045.5],windowHandle:[10620,11570.5],
+      scope:'Low 200-deep larder between sink and cooker, with50/100 side territories, below the1050cill. Whole counter/cabinet remains fixed during window tasks. No chair or table is moved.' },
+    disposition:'Test the low larder as the functional replacement before considering an annex or a long hidden wet body.' };
+  const larder=model.pantryReplacement.selectedLowLarder;
+  model.groundFurniture['low-food-larder']=larder.completeBody;
+  const kitchenBounds=model.rooms.kitchenDining.bounds;
+  const inKitchen=r=>r[0]<kitchenBounds[0]+kitchenBounds[2]&&r[0]+r[2]>kitchenBounds[0]&&r[1]<kitchenBounds[1]+kitchenBounds[3]&&r[1]+r[3]>kitchenBounds[1];
+  const kitchenSolids=Object.entries(model.groundFurniture).filter(([,r])=>Array.isArray(r)&&r.length===4&&inKitchen(r));
+  const bodyPath=(points,excluded=[])=>{
+    let minimum=Infinity,controlling=null;
+    for(let i=1;i<points.length;i++)for(const[id,r]of kitchenSolids){
+      if(excluded.includes(id))continue;
+      const reserve=segmentRectDistance(points[i-1],points[i],r)-300;
+      if(reserve<minimum){minimum=reserve;controlling={id,segment:i-1};}
+    }
+    return {minimumReserve:minimum,controlling,pass:minimum>=0};
+  };
+  const drawerMotion=Array.from({length:201},(_,i)=>{
+    const displacement=i;
+    const body=[10200,11045.5-displacement];
+    const front=11370.5-displacement;
+    return {displacement,body,front,bodyToFront:front-body[1]-300,
+      maximumGripReach:Math.max(...[9900,10400].map(x=>Math.hypot(x-body[0],front-body[1],200)))};
+  });
+  const larderProof={approach:bodyPath(larder.approach),
+    drawerBodyPath:bodyPath([larder.operator.closedCentre,larder.operator.openCentre]),
+    drawerToBodyMinimum:Math.min(...drawerMotion.map(p=>p.bodyToFront)),
+    maximumReferenceGripReach:Math.max(...drawerMotion.map(p=>p.maximumGripReach)),
+    windowApproach:bodyPath([[10200,11045.5],larder.windowBody]),
+    windowPlanReach:Math.hypot(larder.windowHandle[0]-larder.windowBody[0],larder.windowHandle[1]-larder.windowBody[1]),
+    drawerClosedWindowState:true,unchangedChairsAndTable:true,
+    actualHardwareOrAllPeopleQualified:false};
+  larderProof.pass=larderProof.approach.pass&&larderProof.drawerBodyPath.pass&&larderProof.drawerToBodyMinimum>=25&&
+    larderProof.maximumReferenceGripReach<=600&&larderProof.windowApproach.pass&&larderProof.windowPlanReach<=600;
+  assert(larderProof.pass,'Actual low-larder approach/drawer/body/window geometry fails');
+  model.pantryReplacement.proof=larderProof;
+  model.windowRequirements=model.windowRequirements.map(w=>w.id==='kitchen10200'?{...w,body:larder.windowBody,
+    planReach:larderProof.windowPlanReach,requirement:'Actual low200deep foodbase retained; drawer CLOSED during window task. Existing supplier/vertical/leaf qualification limits remain.'}:w);
+  model.actions.witnesses=model.actions.witnesses.filter(w=>!['kitchen-pantry-open-door-approach','kitchen-north-window10200'].includes(w.id));
+  model.actions.witnesses.push({id:'low-larder-and-revised-kitchen-window',level:'GROUND',bodyRadius:300,
+    points:[...larder.approach,larder.windowBody],state:'All table/chairs retained; low-larder drawers CLOSED during window task.',
+    pass:larderProof.pass,scope:'Affected body/reach reference only; no historical whole-house or actual-hardware pass transferred.'});
   model.wholeHouseFit = { pass: false, scope: 'New joined affected geometry still being challenged; historical whole-house pass does not apply automatically.' };
   model.knownRejectedGeometry = { intermediateDividerAt3300: {
     westPier: [9300,3203,350,194], protectedPlantDoorRawY: [2750,3650],
     remainingRawDoorPiecesY: [[2750,3203],[3397,3650]],
     bodyDiameter: 600, pass: false,
     reason: 'Moved divider west pier splits the actual spine door into453/253 raw pieces; neither admits600 body. Intrados-only checks do not prove whole-house connectivity.' },
-    requiredCorrection: 'Remove the unnecessary internal open divider and reserve independent support for the actual upper wall at3700; Services must recompose radiator/controls and retain a clear body/trunk entry.' };
+    selectedCorrection: 'Retain original3700 wall and upper bearing alignment; narrow only its raw opening to1275, move full radiator5east, and reprove the full700 station/body entry and900x700 cylinder task.' };
   model.selection = { decision: 'UNADOPTED JOINED WATER REPLAN', source: 'project/had/water-replan-result.md' };
   return { status: 'WIP JOINED HYPOTHESIS — NOT A SELECTED HOUSE OR COMPLETED HAD PACKET',
     sources: { had: { path: hadPath, blob: blob(hadPath) }, services: { path: canonicalServicesPath, blob: blob(canonicalServicesPath), projectionSha256: servicesProjection } },

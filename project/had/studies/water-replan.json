@@ -7,8 +7,8 @@
     },
     "services": {
       "path": "project/mat/studies/whole-house-service-baseline.json",
-      "blob": "ffe115aa2cd255aaa4d1748e82eb02fae79db075",
-      "projectionSha256": "ce0052012cd188bf2f357b4ec1da9b595bd99d779ca9fbd86164876e1e74fc22"
+      "blob": "3e934b29d9f328b41cb9bd2498184154090492c0",
+      "projectionSha256": "a2bf80bfb19d973a01ef22948942909e386400b4a93a273d362b362a2349c4a2"
     }
   },
   "model": {
@@ -471,26 +471,26 @@
         "id": "plant-intermediate-arch",
         "a": [
           9300,
-          3300
+          3700
         ],
         "b": [
           12000,
-          3300
+          3700
         ],
         "t": 194,
         "holes": [
           [
             9650,
-            10900
+            10925
           ]
         ],
         "structuralCore": [
-          3230,
-          3370
+          3630,
+          3770
         ],
         "finishedFaces": [
-          3203,
-          3397
+          3603,
+          3797
         ],
         "faceFinish": [
           27,
@@ -2089,8 +2089,8 @@
         650
       ],
       "service-emitter-plant-N": [
-        10975,
-        3397,
+        10980,
+        3797,
         550,
         200
       ],
@@ -2153,6 +2153,12 @@
         429.5,
         500,
         250
+      ],
+      "low-food-larder": [
+        9650,
+        11370.5,
+        1000,
+        200
       ]
     },
     "upperFurniture": {
@@ -4429,15 +4435,15 @@
     "servicesProjection": {
       "source": {
         "path": "project/mat/studies/whole-house-service-baseline.json",
-        "blob": "ffe115aa2cd255aaa4d1748e82eb02fae79db075",
-        "projectionSha256": "ce0052012cd188bf2f357b4ec1da9b595bd99d779ca9fbd86164876e1e74fc22"
+        "blob": "3e934b29d9f328b41cb9bd2498184154090492c0",
+        "projectionSha256": "a2bf80bfb19d973a01ef22948942909e386400b4a93a273d362b362a2349c4a2"
       },
       "keyedFieldsEqual": true,
       "method": "Exact full canonical object import, no numeric whitelist or local copied service inventory."
     },
     "servicesAuxiliaryProjection": {
       "keyedFieldsEqual": true,
-      "sourceBlob": "ffe115aa2cd255aaa4d1748e82eb02fae79db075",
+      "sourceBlob": "3e934b29d9f328b41cb9bd2498184154090492c0",
       "fields": [
         "interfaces.architecturalServices.plant.cylinder",
         "interfaces.architecturalServices.emitters"
@@ -4487,8 +4493,8 @@
     "servicesInterface": {
       "source": {
         "path": "project/mat/studies/whole-house-service-baseline.json",
-        "blob": "ffe115aa2cd255aaa4d1748e82eb02fae79db075",
-        "projectionSha256": "ce0052012cd188bf2f357b4ec1da9b595bd99d779ca9fbd86164876e1e74fc22"
+        "blob": "3e934b29d9f328b41cb9bd2498184154090492c0",
+        "projectionSha256": "a2bf80bfb19d973a01ef22948942909e386400b4a93a273d362b362a2349c4a2"
       },
       "emitters": [
         {
@@ -4711,8 +4717,8 @@
           "id": "plant-N",
           "level": 0,
           "plan": [
-            10975,
-            3397,
+            10980,
+            3797,
             550,
             200
           ],
@@ -4843,7 +4849,7 @@
           ],
           "workingEast": [
             10210,
-            3900,
+            4025,
             900,
             700
           ],
@@ -5868,58 +5874,6 @@
           "pass": true
         },
         {
-          "id": "kitchen-north-window10200",
-          "level": "GROUND",
-          "bodyRadius": 300,
-          "points": [
-            [
-              10200,
-              8771.25
-            ],
-            [
-              10200,
-              11235
-            ]
-          ],
-          "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-          "minimumReserve": 17.5,
-          "controlling": {
-            "obstacle": "outer-north+18trim",
-            "segment": 0
-          },
-          "pass": true
-        },
-        {
-          "id": "kitchen-pantry-open-door-approach",
-          "level": "GROUND",
-          "bodyRadius": 300,
-          "points": [
-            [
-              10200,
-              8771.25
-            ],
-            [
-              10600,
-              8771.25
-            ],
-            [
-              10750,
-              8700
-            ],
-            [
-              10925,
-              8635
-            ]
-          ],
-          "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
-          "minimumReserve": 28.75,
-          "controlling": {
-            "obstacle": "rear-east+18trim",
-            "segment": 0
-          },
-          "pass": true
-        },
-        {
           "id": "principal-to-protected-stair",
           "level": "FIRST",
           "bodyRadius": 300,
@@ -6262,6 +6216,32 @@
             "segment": 1
           },
           "pass": true
+        },
+        {
+          "id": "low-larder-and-revised-kitchen-window",
+          "level": "GROUND",
+          "bodyRadius": 300,
+          "points": [
+            [
+              8700,
+              8771.25
+            ],
+            [
+              10200,
+              8771.25
+            ],
+            [
+              10200,
+              11045.5
+            ],
+            [
+              10425,
+              11045.5
+            ]
+          ],
+          "state": "All table/chairs retained; low-larder drawers CLOSED during window task.",
+          "pass": true,
+          "scope": "Affected body/reach reference only; no historical whole-house or actual-hardware pass transferred."
         }
       ],
       "pass": true,
@@ -9428,16 +9408,16 @@
         "level": "GROUND",
         "id": "kitchen10200",
         "body": [
-          10200,
-          11235
+          10425,
+          11045.5
         ],
         "handle": [
           10620,
           11570.5
         ],
-        "planReach": 537.5502302110939,
+        "planReach": 560.0446410778342,
         "maximumPlanReach": 600,
-        "requirement": "Raised1050cill; separate sink/cook piers",
+        "requirement": "Actual low200deep foodbase retained; drawer CLOSED during window task. Existing supplier/vertical/leaf qualification limits remain.",
         "scope": "Required hinge/handle geometry only; actual supplier leaf sweep, vertical reach, grip, force and cleaning not physically admitted."
       },
       {
@@ -10873,8 +10853,8 @@
           "length": 400,
           "bodyHeight": 600,
           "completePlanWithValvesAndBrackets": [
-            10975,
-            3397,
+            10980,
+            3797,
             550,
             200
           ],
@@ -10891,11 +10871,11 @@
             ],
             [
               10500,
-              3500
+              3900
             ],
             [
               11225,
-              3500
+              3900
             ]
           ],
           "renewal": {
@@ -11048,7 +11028,7 @@
           ],
           "workingEast": [
             10210,
-            3900,
+            4025,
             900,
             700
           ],
@@ -11139,19 +11119,19 @@
         ],
         "emitterJoin": {
           "radComplete": [
-            10975,
-            3397,
+            10980,
+            3797,
             550,
             200
           ],
           "radRoutineBody": [
             11225,
-            3922,
+            4322,
             300
           ],
           "radAfter150PullBody": [
             11225,
-            4072,
+            4472,
             300
           ],
           "controlsBody": [
@@ -12475,25 +12455,25 @@
         "source": "project/mat/studies/east-water-plant.json",
         "plantDryRoom": [
           9397,
-          3397,
+          3797,
           2173.5,
-          2383.5
+          1983.5
         ],
         "intermediateArch": {
-          "axisY": 3300,
-          "finishedNorthFaceY": 3397,
+          "axisY": 3700,
+          "finishedNorthFaceY": 3797,
           "rawOpeningX": [
             9650,
-            10900
+            10925
           ],
           "oldRawOpeningX": [
             9650,
             11050
           ],
           "jambFinishEachSide": 27,
-          "finishedClearWidth": 1196,
-          "radiatorFinishedJambReserve": 48,
-          "scope": "HAD must author this explicit 150 raw-opening narrowing; no radiator hung in the former arch opening."
+          "finishedClearWidth": 1221,
+          "radiatorFinishedJambReserve": 28,
+          "scope": "HAD must author this explicit 125 raw-opening narrowing; no radiator hung in the former arch opening."
         },
         "replacementDoor": {
           "rawY": [
@@ -12531,6 +12511,89 @@
           "lowestFinishedLocalPanelZ": 2350,
           "condition": "Keep the complete original high-level route within actual enclosed dry gallery, including every lowered aperture. It is NOT routed in 65 screed, in bridge concrete or outdoors. Prove actual wall/ceiling/air/weather boundaries on the same HAD source."
         },
+        "operatorEntry": {
+          "status": "Explicit geometric reference only, not a classified/installed doorset or universal person proof.",
+          "rawY": [
+            2750,
+            3650
+          ],
+          "completeFrameWidthReference": 825,
+          "leafReference": [
+            762,
+            44
+          ],
+          "frameOuterReferenceY": [
+            2762.5,
+            3587.5
+          ],
+          "framePackingToRaw": [
+            12.5,
+            62.5
+          ],
+          "clearReferenceY": [
+            2791.5,
+            3558.5
+          ],
+          "clearReferenceWidth": 767,
+          "clearReferenceKind": "Frame aperture before the open leaf.",
+          "effectiveOpenClearY": [
+            2791.5,
+            3534
+          ],
+          "effectiveOpenClearWidth": 742.5,
+          "northHingeReference": [
+            9397,
+            3556
+          ],
+          "fullyOpenEastLeaf": [
+            9397,
+            3534,
+            762,
+            44
+          ],
+          "baseboardTermination": {
+            "wallSouthFace": 3603,
+            "leafNorthFace": 3578,
+            "clearReserve": 25,
+            "ordinaryProjection": 18,
+            "condition": "Explicitly terminate the local18baseboard behind the parked leaf; retain full wall/air/fire finish. Without termination the reserve is7, not25."
+          },
+          "operatorCentrePath": [
+            [
+              8800,
+              3200
+            ],
+            [
+              10545,
+              3200
+            ],
+            [
+              10545,
+              4250
+            ]
+          ],
+          "retainedBodyRadius": 300,
+          "wallChecks": [
+            {
+              "fixed": "westPier",
+              "reserve": 85
+            },
+            {
+              "fixed": "eastPier",
+              "reserve": 35
+            },
+            {
+              "fixed": "complete700cylinderstation",
+              "reserve": 35
+            }
+          ],
+          "apparatusRoute": "850 complete cart reservation does NOT fit742.5 open reference passage (767 frame aperture); cylinder/buffer use only the east1000clear route.",
+          "actualKitHold": "HAD/OAS must bind actual full frame/leaf/trim/closer/operation and required protection. No raw900 equals clear900 inference."
+        },
+        "rejected3300Pier": {
+          "operatorReserve": -297,
+          "pipeHalfWidthReserve": -157
+        },
         "archControls": {
           "status": "Explicit joined HAD reference geometry; no masonry capacity or classified closure acceptance.",
           "head": 2850,
@@ -12538,19 +12601,32 @@
           "rise": 300,
           "radialRing": 215,
           "actualRadialFinish": 27,
+          "plantAxisY": 3700,
           "upperRCUnderside": 3170,
           "ringCrown": 3065,
           "ringToSlabReserve": 105,
           "plant": {
-            "rawSpan": 1250,
-            "centre": 10275,
-            "fullElbowPlan": [
+            "rawSpan": 1275,
+            "centre": 10287.5,
+            "fullPacketPlanX": [
+              10190,
+              10510
+            ],
+            "minimumFinishedIntrados": 2791.4500247953365
+          },
+          "elbowOutsideArch": {
+            "plan": [
               10050,
               2900,
               600,
               600
             ],
-            "minimumFinishedIntrados": 2726.096060635624
+            "fullZ": [
+              2815,
+              3075
+            ],
+            "planReserveToWallSouthFace": 103,
+            "topReserveTo3100Ceiling": 25
           },
           "spine": {
             "rawSpan": 900,
@@ -12569,7 +12645,7 @@
             ],
             "minimumFinishedIntrados": 2649.658928121694
           },
-          "lowProfile": "ContinuousZ2500 across3300arch,600square corner and9300spine atY3200. No normal2945 reset at the corner; rise only west atX9000."
+          "lowProfile": "SeparateZ2500 crossings through retained3700arch and9300spine atY3200; normal2945corner lies wholly south of the wall.300shoulders keep completeband43fromfinishedwall."
         },
         "updatedFrontTrunk": {
           "id": "ground-front-west",
@@ -12646,21 +12722,41 @@
             ],
             [
               10350,
-              3600,
+              4000,
               2945
             ],
             [
               10350,
-              3600,
+              4000,
               2500
             ],
             [
               10350,
-              3300,
+              3700,
               2500
             ],
             [
               10350,
+              3400,
+              2500
+            ],
+            [
+              10350,
+              3400,
+              2945
+            ],
+            [
+              10350,
+              3200,
+              2945
+            ],
+            [
+              9600,
+              3200,
+              2945
+            ],
+            [
+              9600,
               3200,
               2500
             ],
@@ -12780,8 +12876,8 @@
               2945
             ]
           ],
-          "profileLengthMM": 17200,
-          "profileRule": "Actual continuous low L atZ2500 from3300arch through600square elbow/3200turn and9300spine; rise only westatX9000. Full packet and finished27radial arch checked, no corner normal-height reset."
+          "profileLengthMM": 18090,
+          "profileRule": "Separate low2500 crossings at retained3700arch and9300spine; full300shoulders, normal2945corner whollysouthofwall. Actual1275/900arches with27radialfinish checked. No packet through a solid westpier."
         },
         "checks": {
           "count": 25,
@@ -12824,19 +12920,32 @@
       "rise": 300,
       "radialRing": 215,
       "actualRadialFinish": 27,
+      "plantAxisY": 3700,
       "upperRCUnderside": 3170,
       "ringCrown": 3065,
       "ringToSlabReserve": 105,
       "plant": {
-        "rawSpan": 1250,
-        "centre": 10275,
-        "fullElbowPlan": [
+        "rawSpan": 1275,
+        "centre": 10287.5,
+        "fullPacketPlanX": [
+          10190,
+          10510
+        ],
+        "minimumFinishedIntrados": 2791.4500247953365
+      },
+      "elbowOutsideArch": {
+        "plan": [
           10050,
           2900,
           600,
           600
         ],
-        "minimumFinishedIntrados": 2726.096060635624
+        "fullZ": [
+          2815,
+          3075
+        ],
+        "planReserveToWallSouthFace": 103,
+        "topReserveTo3100Ceiling": 25
       },
       "spine": {
         "rawSpan": 900,
@@ -12855,11 +12964,86 @@
         ],
         "minimumFinishedIntrados": 2649.658928121694
       },
-      "lowProfile": "ContinuousZ2500 across3300arch,600square corner and9300spine atY3200. No normal2945 reset at the corner; rise only west atX9000."
+      "lowProfile": "SeparateZ2500 crossings through retained3700arch and9300spine atY3200; normal2945corner lies wholly south of the wall.300shoulders keep completeband43fromfinishedwall."
+    },
+    "plantReferenceDoor": {
+      "status": "Explicit geometric reference only, not a classified/installed doorset or universal person proof.",
+      "rawY": [
+        2750,
+        3650
+      ],
+      "completeFrameWidthReference": 825,
+      "leafReference": [
+        762,
+        44
+      ],
+      "frameOuterReferenceY": [
+        2762.5,
+        3587.5
+      ],
+      "framePackingToRaw": [
+        12.5,
+        62.5
+      ],
+      "clearReferenceY": [
+        2791.5,
+        3558.5
+      ],
+      "clearReferenceWidth": 767,
+      "clearReferenceKind": "Frame aperture before the open leaf.",
+      "effectiveOpenClearY": [
+        2791.5,
+        3534
+      ],
+      "effectiveOpenClearWidth": 742.5,
+      "northHingeReference": [
+        9397,
+        3556
+      ],
+      "fullyOpenEastLeaf": [
+        9397,
+        3534,
+        762,
+        44
+      ],
+      "baseboardTermination": "No18mm projection behind the fully parked reference leaf; this is an actual local finish termination, not a collision exception.",
+      "operatorCentrePath": [
+        [
+          8800,
+          3200
+        ],
+        [
+          10545,
+          3200
+        ],
+        [
+          10545,
+          4250
+        ]
+      ],
+      "retainedBodyRadius": 300,
+      "wallChecks": [
+        {
+          "fixed": "westPier",
+          "reserve": 85
+        },
+        {
+          "fixed": "eastPier",
+          "reserve": 35
+        },
+        {
+          "fixed": "complete700cylinderstation",
+          "reserve": 35
+        }
+      ],
+      "apparatusRoute": "850 complete cart reservation does NOT fit742.5 open reference passage (767 frame aperture); cylinder/buffer use only the east1000clear route.",
+      "actualKitHold": "HAD/OAS must bind actual full frame/leaf/trim/closer/operation and required protection. No raw900 equals clear900 inference.",
+      "frameApertureWidth": 767,
+      "effectiveOpenWidth": 742.5
     },
     "pantryReplacement": {
       "oldShelfComparisonDeleted": true,
-      "cost": "Dedicated adjacent pantry lost; the brief requires useful reachable food storage and a clear approach. No untested upper cupboard or standing on the sink is credited as replacement.",
+      "cost": "Dedicated adjacent pantry lost. The owning brief ledger does not fix a dedicated pantry; retain useful reachable food storage and a real approach. Household bulk capacity remains open.",
       "rejectedUpperCabinet": {
         "plan": [
           8700,
@@ -12873,7 +13057,102 @@
         ],
         "reason": "Original R300 task overlapped the sink by250; moving back defeats600 reach and upper daily-storage claim. Retained only as a rejected comparison."
       },
-      "disposition": "Architectural programme/food-storage trade must be resolved before source adoption."
+      "selectedLowLarder": {
+        "completeBody": [
+          9650,
+          11370.5,
+          1000,
+          200
+        ],
+        "z": [
+          0,
+          900
+        ],
+        "drawers": {
+          "columns": 2,
+          "rows": 3,
+          "maximumTravel": 200,
+          "handleProjection": 0,
+          "handle": "Recessed front pull; no projecting handle omitted from the complete closed footprint.",
+          "internalBudgetEach": [
+            440,
+            150,
+            200
+          ],
+          "geometricInternalLitres": 79.2,
+          "scope": "Six explicit small drawer territories; geometric volume, not a supplier or household-capacity acceptance."
+        },
+        "operator": {
+          "bodyRadius": 300,
+          "closedCentre": [
+            10200,
+            11045.5
+          ],
+          "openCentre": [
+            10200,
+            10845.5
+          ],
+          "maximumReferenceReach": 600,
+          "shoulderToGripHeightDifference": 200
+        },
+        "approach": [
+          [
+            8700,
+            8771.25
+          ],
+          [
+            10200,
+            8771.25
+          ],
+          [
+            10200,
+            11045.5
+          ]
+        ],
+        "windowBody": [
+          10425,
+          11045.5
+        ],
+        "windowHandle": [
+          10620,
+          11570.5
+        ],
+        "scope": "Low 200-deep larder between sink and cooker, with50/100 side territories, below the1050cill. Whole counter/cabinet remains fixed during window tasks. No chair or table is moved."
+      },
+      "disposition": "Test the low larder as the functional replacement before considering an annex or a long hidden wet body.",
+      "proof": {
+        "approach": {
+          "minimumReserve": 25,
+          "controlling": {
+            "id": "low-food-larder",
+            "segment": 1
+          },
+          "pass": true
+        },
+        "drawerBodyPath": {
+          "minimumReserve": 25,
+          "controlling": {
+            "id": "low-food-larder",
+            "segment": 0
+          },
+          "pass": true
+        },
+        "drawerToBodyMinimum": 25,
+        "maximumReferenceGripReach": 485.41219597368996,
+        "windowApproach": {
+          "minimumReserve": 25,
+          "controlling": {
+            "id": "north-cooking-station",
+            "segment": 0
+          },
+          "pass": true
+        },
+        "windowPlanReach": 560.0446410778342,
+        "drawerClosedWindowState": true,
+        "unchangedChairsAndTable": true,
+        "actualHardwareOrAllPeopleQualified": false,
+        "pass": true
+      }
     },
     "knownRejectedGeometry": {
       "intermediateDividerAt3300": {
@@ -12901,7 +13180,7 @@
         "pass": false,
         "reason": "Moved divider west pier splits the actual spine door into453/253 raw pieces; neither admits600 body. Intrados-only checks do not prove whole-house connectivity."
       },
-      "requiredCorrection": "Remove the unnecessary internal open divider and reserve independent support for the actual upper wall at3700; Services must recompose radiator/controls and retain a clear body/trunk entry."
+      "selectedCorrection": "Retain original3700 wall and upper bearing alignment; narrow only its raw opening to1275, move full radiator5east, and reprove the full700 station/body entry and900x700 cylinder task."
     }
   },
   "passage": {
@@ -12971,6 +13250,7 @@
         200
       ]
     ],
+    "floorLayerExtent": "Occupied layers apply only to permanentDryGalleryClearX; walls bear on their actual RC members, never on screed or floor glass.",
     "slabZ": [
       -380,
       -180
@@ -13056,14 +13336,14 @@
     ],
     "hoistLiftTranslation": 1200,
     "courtIntakeWell": [
-      6650,
+      6125,
       6300,
-      1100,
-      1200
+      1525,
+      1100
     ],
     "courtIntakeWellFloorZ": -950,
     "courtIntakeOperatorPlatform": [
-      6750,
+      6725,
       6450,
       600,
       900
@@ -13071,26 +13351,30 @@
     "courtIntakeOperatorPlatformZ": -800,
     "courtIntakeAccess": {
       "fixedSteps": [
-        6750,
-        6300,
+        6125,
+        6600,
         600,
         600
       ],
+      "topLandingZ": -80,
+      "lowerLandingZ": -800,
+      "rises": 4,
+      "going": 200,
       "riseMaximum": 180,
-      "method": "Four controlled rises from the local court surface to the standing platform; guard installed and incoming court water isolated before entry. Not ordinary court access."
+      "method": "Four180 rises/three200 goings run EAST from west guard gate to a separate flat600x900 working platform. Level adapter must fit local sloping court; no stairs overlap the standing footprint. Guard before covers; isolate court water before entry."
     },
     "guardOuterPlan": [
-      6600,
+      6075,
       6250,
-      1150,
-      1300
+      1625,
+      1200
     ],
     "guardTopAboveLocalCourt": 1100,
     "courtCollector": {
       "plan": [
         7300,
         6300,
-        450,
+        350,
         1450
       ],
       "surfaceReachable": true,
