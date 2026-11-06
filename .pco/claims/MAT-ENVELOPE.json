@@ -9,12 +9,12 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-06T22:31:49.963Z",
-  "expiresAt": "2026-11-07T00:01:49.963Z",
+  "heartbeatAt": "2026-11-06T22:45:54.608Z",
+  "expiresAt": "2026-11-07T00:15:54.608Z",
   "checkpoint": {
-    "evidence": "PR1355 merged at1273d9f3 after exact-head CI and canonical preflight; predecessor branch deletion verified; successor starts exact merged main; new draft pending substantive section",
-    "next": "Locate one actual apron support and two end releases, compare ordinary compliance without inherited water head or force",
-    "blocker": "Support, end geometry, actual water/capillary and thermal/material properties unqualified; predecessor PR1355 remains historical until successor draft exists"
+    "evidence": "Draft1361 published568faab05c8d0309544b60821f948a3d7b8cdc8c; nominal travelling channels preserve pan profile/body; full MAT initial checkpoint, final producer/mutation/render checks pass",
+    "next": "Continue actual ordinary air section and two end releases on same draft; separate walking support from air compliance and independent water/thermal duties",
+    "blocker": "Working geometry only; bearing, formed section edges/web/weld/capture, actual ends, friction and all physical/material duties unqualified"
   },
   "branch": "work/zerg-20261106-w5-apron-section",
   "predecessor": {
@@ -39,5 +39,5 @@
       "blocker": "STR confirms complete support/headlist and signed domains are not yet allocated; do not extrapolate12 cornerpoints. Sharedgrid bulk-water/weather enclosure and actual capillary-floor ownership remain unresolved. No assembly admission or selection."
     }
   },
-  "pr": 1355
+  "pr": 1361
 }
