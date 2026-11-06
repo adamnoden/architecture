@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w5"
   },
   "claimedAt": "2026-11-06T09:41:13.275Z",
-  "heartbeatAt": "2026-11-06T11:10:53.127Z",
-  "expiresAt": "2026-11-06T11:55:53.127Z",
+  "heartbeatAt": "2026-11-06T11:32:59.422Z",
+  "expiresAt": "2026-11-06T12:17:59.422Z",
   "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
@@ -36,8 +36,8 @@
   },
   "pr": 1332,
   "checkpoint": {
-    "evidence": "Authenticated published af5fdf4306735742ac13af6844e977c3d837adce on main78f1: all16HAD and6MAT tests plus canonical JSON/SVG reproduce; rain SVG inspected. Bounded QA found actual1950 header cantilever, E post inside masonry and enclosure L gaps; corrections sent to W2. Own work preserved remote09bb97a310ba680ea66ce25c87e0637d4220a6dd.",
-    "next": "Authenticate single corrected rain/intake source after root decision, verify changed support/enclosure/entry boundaries and owned reproduction, inspect final exact CI, then fresh preflight after selection approval.",
-    "blocker": "Corrected L canopy/header/threshold and actual lower E-entry pending publication. Green reproduction does not waive source defects or temporary wind/anchor/weather and seal/site/firstharm holds."
+    "evidence": "Exact published ff6e7783feaf926ffd2b72194176b30d0c69417a authenticated; all16HAD and6MAT plus canonical outputs reproduce, tracked tree clean; owned preferred JSON/producer/MD byte-identical including bounded HT800 comparison. Earlier canopy support/header/enclosure defects corrected. Subsequent apron-over-well-cover source clarification and effective upstream activation crest sent to W2/root; corrected successor pending.",
+    "next": "Authenticate the one final source event after actual apron support and upstream incoming surface are located, verify changed boundaries and regeneration, inspect exact full CI, then fresh canonical preflight only with root selection approval.",
+    "blocker": "Actual incoming crest must account for raised well covers or explicitly permitted top of disabled N mouth;450 lowered lip metadata alone does not prove flow access. No new variant or material qualification loop. Temporary works, RWT full-flow/firstwet and physical seal/site qualifications remain held."
   }
 }
