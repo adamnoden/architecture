@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """A located conventional junction comparison; geometric fit is not a seal."""
 from pathlib import Path
-import argparse, hashlib, html, json, subprocess
+import argparse, hashlib, html, json, math, subprocess
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[2]
@@ -69,6 +69,50 @@ def produce():
           'guidanceDimensionalScreens':{'thickness':min(structural['depthRange'])>=guidance['thicknessMinimum_mm'],
             'cover':min(structural['faceCoverRange'])>=guidance['coverMinimum_mm']},
           'scope':'Only candidate thickness/cover comparisons. Actual mix, curing, crack/joint moisture/air/gas performance, floor/wall and renewable threshold construction remain unearned.'}
+    pan=m['southCourtThresholdReference']['pan'];cl=c['thresholdClamp']
+    assert pan['dryFold']['profileYZ']==[[4030,0],[4060,0],[4060,15],[4090,15]]
+    assert cl['panStartY']==pan['dryFold']['profileYZ'][0][0]
+    assert cl['apronEndY']==pan['dryFold']['profileYZ'][1][0]
+    assert cl['heelY']<cl['boltY']<cl['panStartY']<cl['sealReferenceY']<cl['backingEndY']<cl['apronEndY']
+    assert cl['boltY']+cl['referenceHoleDiameter']/2<cl['panStartY']
+    length=cl['clampX'][1]-cl['clampX'][0]
+    bolt_span=length-2*cl['boltEndInset']
+    bolt_count=math.ceil(bolt_span/cl['boltPitchMaximum'])+1
+    load=length*cl['lineForceSensitivity_N_per_mm']
+    # The heel and pan push the bar up; bolt tension must balance BOTH.
+    heel=load*(cl['sealReferenceY']-cl['boltY'])/(cl['boltY']-cl['heelY'])
+    tension=load+heel
+    threshold={'control':cl,'panProfileYZ':pan['dryFold']['profileYZ'],
+      'installedPanEnvelope':pan['bodyEnvelope'],
+      'boltCountReference':bolt_count,'boltPitchReference_mm':bolt_span/(bolt_count-1),
+      'holeEdgeToPanStart_mm':cl['panStartY']-cl['boltY']-cl['referenceHoleDiameter']/2,
+      'centralRiserToBackingGap_mm':cl['apronEndY']-cl['backingEndY'],
+      'upperClampMassOnly_kg':length*(cl['clampY'][1]-cl['clampY'][0])*cl['clampThickness']*cl['density']/1e9,
+      'lineForceSensitivityOnly':{'sealCompression_N':load,'heelReaction_N':heel,
+        'totalBoltTension_N':tension,'equalBoltShare_N':tension/bolt_count,
+        'momentResidual_Nmm':load*(cl['sealReferenceY']-cl['boltY'])-heel*(cl['boltY']-cl['heelY']),
+        'role':'Rigid-bar equilibrium sensitivity before pretension, bending, prying, unequal sharing and anchor design. No bolt, pan or support capacity pass.'},
+      'renewal':['Remove/capture door leaves, frame and sill under the owning weather-screen sequence',
+        'Release dry-side bolts and lift the ENTIRE upper clamp, not merely loosen it',
+        'Release the still-unresolved end captures before moving the pan',
+        'Translate whole integral pan NORTH500: the central riser moves away from backing ending before4060',
+        'Retain owning whole-body draw/rotation/storage controls; actual ends, tool/operator and support remain unqualified'],
+      'centralReleaseOnly':True,'completeEndClosureProved':False,'supportLocated':False,
+      'walkingAdmitted':False,'materialAdmitted':False,'airWaterPass':False,
+      'routeFairness':'Both concrete and separate-field routes owe this same renewable door assembly; no threshold duty is erased or credited exclusively to either floor route.'}
+    air=immutable(c['ServicesAir'])
+    assert air['sources']['HAD']['blob']==c['HAD']['blob'], 'Services uses a different HAD case'
+    assert not any(air['admission'].values())
+    assert air['proposedDevelopment']['q50_m3_per_h_m2']==1
+    allocation=air['floorWallAllocation'];budgets=air['aggregateFamilyBudgets']
+    assert abs(sum(q['fraction'] for q in budgets.values())-1)<1e-12
+    assert allocation['ordinaryEdge_m']==118.761
+    assert allocation['threeDoorAssemblyFamily']=='completeOpeningsIncludingThreeDoorThresholds'
+    assert budgets['floorWallField']['fraction']==.1 and budgets[allocation['threeDoorAssemblyFamily']]['fraction']==.25
+    assert allocation['aggregate_m3_per_h_at50Pa']==budgets['floorWallField']['aggregate_m3_per_h_at50Pa']
+    air_duty={'source':c['ServicesAir'],'status':air['status'],'floorWallAllocation':allocation,
+      'allFamilyBudgets':budgets,'physicalTestBoundaryRegisterComplete':False,
+      'allocationRule':'This is one aggregate for the whole family, not a per-detail budget or a demonstrated line rating. The three complete door/threshold assemblies stop this family and belong to openings.'}
     return {'status':c['status'],'sources':{'HAD':c['HAD'],'STRfloor':source,'STRgrid':c['STRgrid']},
       'section':{'wall':w,'y':y,'floor':f,'candidateDpcFaces':faces,'candidateDpcCourses':courses,
         'underlyingSpine':beam,'supportRole':'900 mm common RC spine is integral beneath this section; do not draw a freestanding RC200 coupon here',
@@ -81,6 +125,8 @@ def produce():
       'airRouteControl':c['airRouteControl'],'plasterBypassNegativeControl':bypass,
       'structuralFloorInputBound':structural is not None,
       'structuralFloorComparison':floor_comparison,
+      'thresholdClampComparison':threshold,
+      'airDutyComparison':air_duty,
       'moistureControl':c['moistureControl'],'airEvidence':c['airEvidence'],'admission':c['admission']}
 
 def figure(r):
@@ -124,9 +170,43 @@ def figure(r):
     text(30,822,'This internal-wall control is not an external shell, pressure-water / gas route, threshold renewal or whole-envelope exit.',16)
     out.append('</g></svg>\n');return ''.join(out)
 
+def threshold_figure(r):
+    t=r['thresholdClampComparison'];c=t['control'];f=t['lineForceSensitivityOnly']
+    X=lambda y:90+(y-3950)*5
+    Z=lambda z:280-z*5
+    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840"><rect width="1200" height="840" fill="#faf9f4"/><g font-family="Arial" fill="#243842">']
+    def txt(x,y,s,n=17):out.append(f'<text x="{x}" y="{y}" font-size="{n}">{html.escape(s)}</text>')
+    def rect(a,b,z0,z1,color):out.append(f'<rect x="{X(a)}" y="{Z(z1)}" width="{X(b)-X(a)}" height="{Z(z0)-Z(z1)}" fill="{color}" stroke="#67737a"/>')
+    txt(30,35,'Ordinary removable over-clamp: same threshold duty for both floor routes',25)
+    txt(30,66,'UNADOPTED central section only. Bolts outside pan; ends, fixed support, seal and walking transition remain open.')
+    rect(*c['clampY'],0,c['clampThickness'],'#a9b7bd')
+    rect(c['panStartY'],c['backingEndY'],-1.5-c['backingThickness'],-1.5,'#d5bc94')
+    points=t['panProfileYZ']+[[4090,-12]]
+    out.append('<path d="'+' '.join(('M' if i==0 else 'L')+f'{X(y)} {Z(z)}' for i,(y,z) in enumerate(points))+'" fill="none" stroke="#27617c" stroke-width="5"/>')
+    out.append(f'<path d="M{X(c["boltY"])} {Z(16)}V{Z(-20)}" stroke="#803e35" stroke-width="5"/>')
+    for y,z,label in [(c['heelY'],0,'Heel 3980'),(c['boltY'],0,'Bolt 4010'),(c['sealReferenceY'],-1.5,'Seal 4045')]:
+        out.append(f'<circle cx="{X(y)}" cy="{Z(z)}" r="5" fill="#803e35"/>')
+        txt(X(y)-45,370,label,15)
+    txt(70,130,'Upper clamp lifts completely before NORTH withdrawal.',18)
+    txt(70,160,'10 mm new top level: actual walking/finish transition is not admitted.',17)
+    txt(830,235,'15 mm crest',16);txt(830,270,'0 apron',16)
+    txt(820,320,'NORTH →',21)
+    txt(30,420,'Fixed lower backing ends at 4058; integral riser starts at 4060: only 2 mm nominal central separation.',18)
+    txt(30,451,'Pan moves NORTH; riser moves away from fixed backing. This does not prove end-dam/capture release.',17)
+    txt(30,490,f'1780 mm clamp / {t["boltCountReference"]} reference bolts / {t["boltPitchReference_mm"]:.3f} mm pitch. Upper bar alone {t["upperClampMassOnly_kg"]:.3f} kg.',17)
+    txt(30,521,f'15 N/mm catalogue-only sensitivity → seal {f["sealCompression_N"]/1000:.2f} kN; heel {f["heelReaction_N"]/1000:.2f} kN;',17)
+    txt(30,552,f'bolt tension {f["totalBoltTension_N"]/1000:.2f} kN, equal share {f["equalBoltShare_N"]:.1f} N before prying/pretension.',17)
+    txt(30,594,'Bolts are above the selected glass/distribution stack. No unsupported anchor through those layers is assumed.',17)
+    txt(30,625,'Fixed flange / heel / support back to RC −180 needs actual geometry, movement, capacity and thermal pricing.',17)
+    txt(30,666,'Actual formed pan underside is not a machined seal housing. Finish, custom seal and constituent duties persist.',17)
+    txt(30,697,'End X5102 / 6898 and crest 75 are authored; full apron/end intersection and closed end seals are not.',17)
+    txt(30,738,'No wet-floor hole, permanent weld to renewable pan, detached apron or 37 sealed bosses is required by this sketch.',17)
+    txt(30,779,'No complete threshold, air/water, walking, support, material or renewal pass follows.',18)
+    out.append('</g></svg>\n');return ''.join(out)
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--check',action='store_true');a=ap.parse_args();r=produce()
-    outputs={'conventional-ground-junction.results.json':json.dumps(r,indent=2,ensure_ascii=False)+'\n','conventional-ground-junction.svg':figure(r)}
+    outputs={'conventional-ground-junction.results.json':json.dumps(r,indent=2,ensure_ascii=False)+'\n','conventional-ground-junction.svg':figure(r),'conventional-ground-threshold-clamp.svg':threshold_figure(r)}
     for name,content in outputs.items():
         p=HERE/name
         if a.check:assert p.read_text()==content,f'Stale {name}'

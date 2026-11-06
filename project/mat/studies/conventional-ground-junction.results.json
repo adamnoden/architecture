@@ -258,6 +258,152 @@
     },
     "scope": "Only candidate thickness/cover comparisons. Actual mix, curing, crack/joint moisture/air/gas performance, floor/wall and renewable threshold construction remain unearned."
   },
+  "thresholdClampComparison": {
+    "control": {
+      "role": "Unadopted ordinary over-clamp comparison shared by both floor routes; central 2D release and equilibrium only, not complete threshold seal/support/walking admission",
+      "panStartY": 4030,
+      "apronEndY": 4060,
+      "backingEndY": 4058,
+      "clampY": [
+        3975,
+        4058
+      ],
+      "clampX": [
+        5110,
+        6890
+      ],
+      "clampThickness": 10,
+      "backingThickness": 6,
+      "boltY": 4010,
+      "heelY": 3980,
+      "sealReferenceY": 4045,
+      "boltEndInset": 15,
+      "boltPitchMaximum": 100,
+      "referenceHoleDiameter": 6.5,
+      "density": 7900,
+      "lineForceSensitivity_N_per_mm": 15,
+      "lineForceRole": "Same earlier Wills Rings catalogue sensitivity only. No supplied straight/U seal, formed-pan finish or assembly force rating is established.",
+      "endClosure": "HAD gives end X/crest and jamb apron, but not a complete 3D apron/end intersection or clamp-end seal/release. Unknown; do not extrude a passing central section into an end closure.",
+      "support": "The bolts are over the 15/65/100 build-up, not exposed concrete. A real supported fixed flange/heel/anchor route back to RC at -180 is unlocated; no anchor or free fastener through glass/services is assumed.",
+      "walking": "The 10 mm upper clamp introduces a new local walking level below the existing 15 mm crest. Actual finish transition, load, slip and accessibility remain unqualified; no selected floor change.",
+      "material": "Alloy, seal constituents, surface finish, bearing, welds, fasteners, corrosion and renewal replacements remain unqualified."
+    },
+    "panProfileYZ": [
+      [
+        4030,
+        0
+      ],
+      [
+        4060,
+        0
+      ],
+      [
+        4060,
+        15
+      ],
+      [
+        4090,
+        15
+      ]
+    ],
+    "installedPanEnvelope": {
+      "plan": [
+        5102,
+        4030,
+        1796,
+        420
+      ],
+      "z": [
+        -56.5,
+        75
+      ],
+      "dimensions": [
+        1796,
+        420,
+        131.5
+      ],
+      "scope": "Nominal integral metal reference including stepped dry apron and floor underside. Fabrication bends, clamps, carrier and handling apparatus remain unqualified."
+    },
+    "boltCountReference": 19,
+    "boltPitchReference_mm": 97.22222222222223,
+    "holeEdgeToPanStart_mm": 16.75,
+    "centralRiserToBackingGap_mm": 2,
+    "upperClampMassOnly_kg": 11.67146,
+    "lineForceSensitivityOnly": {
+      "sealCompression_N": 26700,
+      "heelReaction_N": 31150.0,
+      "totalBoltTension_N": 57850.0,
+      "equalBoltShare_N": 3044.7368421052633,
+      "momentResidual_Nmm": 0.0,
+      "role": "Rigid-bar equilibrium sensitivity before pretension, bending, prying, unequal sharing and anchor design. No bolt, pan or support capacity pass."
+    },
+    "renewal": [
+      "Remove/capture door leaves, frame and sill under the owning weather-screen sequence",
+      "Release dry-side bolts and lift the ENTIRE upper clamp, not merely loosen it",
+      "Release the still-unresolved end captures before moving the pan",
+      "Translate whole integral pan NORTH500: the central riser moves away from backing ending before4060",
+      "Retain owning whole-body draw/rotation/storage controls; actual ends, tool/operator and support remain unqualified"
+    ],
+    "centralReleaseOnly": true,
+    "completeEndClosureProved": false,
+    "supportLocated": false,
+    "walkingAdmitted": false,
+    "materialAdmitted": false,
+    "airWaterPass": false,
+    "routeFairness": "Both concrete and separate-field routes owe this same renewable door assembly; no threshold duty is erased or credited exclusively to either floor route."
+  },
+  "airDutyComparison": {
+    "source": {
+      "commit": "e85cc19fc858069cb874a3b0622303c2edc56ac5",
+      "path": "project/mat/studies/whole-house-leakage-duty.json",
+      "blob": "c4e6e9fd168078c83d092d13f1913b5d0128b7af",
+      "role": "Immutable unadopted Services1356 whole-house reference and single aggregate family allocation; not final test envelope or owner target."
+    },
+    "status": "Provisional design comparison and allocation; no adopted owner invariant, tested envelope or compliance result",
+    "floorWallAllocation": {
+      "aggregate_m3_per_h_at50Pa": 63.234655000000004,
+      "ordinaryEdge_m": 118.761,
+      "bookkeepingEquivalent_m3_per_h_m_at50Pa": 0.5324530359293035,
+      "bookkeepingEquivalent_Lps_m_at50Pa": 0.14790362109147318,
+      "role": "Authored finite accounting proposal, not a product or normative joint limit. Floor/wall10% is ONE aggregate covering field body, ordinary edge, associated joints/internal cores and wall-base routes. Three complete external door/threshold assemblies, including fixed/renewable air joints, belong to openings25%; floor/wall ends at their assigned assembly boundaries. Every physical path must receive one owner; no duplicated budget.",
+      "threeDoorWidths_m": 5,
+      "threeDoorAssemblyFamily": "completeOpeningsIncludingThreeDoorThresholds",
+      "notAdmitted": [
+        "A uniform line rating or tested length",
+        "63.2 budget plus additional field/core budgets",
+        "Arbitrary zero-leak junction",
+        "A mineral/concrete/DPC/clamp alone establishes the allocated performance"
+      ]
+    },
+    "allFamilyBudgets": {
+      "floorWallField": {
+        "fraction": 0.1,
+        "aggregate_m3_per_h_at50Pa": 63.234655000000004
+      },
+      "wallBodiesAndPermanentJunctions": {
+        "fraction": 0.15,
+        "aggregate_m3_per_h_at50Pa": 94.85198249999999
+      },
+      "roofCeilingAndHeadTransitions": {
+        "fraction": 0.2,
+        "aggregate_m3_per_h_at50Pa": 126.46931000000001
+      },
+      "completeOpeningsIncludingThreeDoorThresholds": {
+        "fraction": 0.25,
+        "aggregate_m3_per_h_at50Pa": 158.0866375
+      },
+      "servicePenetrations": {
+        "fraction": 0.1,
+        "aggregate_m3_per_h_at50Pa": 63.234655000000004
+      },
+      "unassignedReserve": {
+        "fraction": 0.2,
+        "aggregate_m3_per_h_at50Pa": 126.46931000000001
+      }
+    },
+    "physicalTestBoundaryRegisterComplete": false,
+    "allocationRule": "This is one aggregate for the whole family, not a per-detail budget or a demonstrated line rating. The three complete door/threshold assemblies stop this family and belong to openings."
+  },
   "moistureControl": {
     "source": "https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf",
     "edition": "England AD C 2004 with2010/2013 amendments, sections4.17–4.22 and5.5; accessed6November2026",
@@ -280,7 +426,7 @@
       "access": "Public publisher abstract inspected6November2026; complete paid paper not inspected",
       "role": "Four clay-brick/mortar panel groups had low measured air permeance. Relevant against blanket rejection of an unplastered bonded masonry control, not evidence for WCBL65/M12, this DPC/floor joint, movement, moisture, gas or site performance. No measured value is transferred to the house."
     },
-    "servicesTarget": "Unselected; Services confirms neither whole-house airtightness target nor junction leakage allocation exists. No0.6ACH or3m3/(h.m2) inherited."
+    "servicesTarget": "Proposed q50<=1.0 comparison and single10% floor/wall aggregate pinned under ServicesAir. No owner invariant or assembly performance is adopted."
   },
   "admission": {
     "selected": false,
