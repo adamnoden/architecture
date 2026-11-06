@@ -1,5 +1,7 @@
 # RWT-06 — selected water event and receiving limits
 
+**Current continuation:** [One current closed copper control and corrected north canopy](rwt-06-closed-control-and-canopy.md) tests the ordinary alternative before more open-jet apparatus. The65critical-header slow-turn premise fails reduced-flow cases; all successors remain unadopted. Accepted788 failures remain preserved.
+
 **6 November 2026. Investigation in progress, not hydraulic admission or packet completion.** Starting main `8ab19d48ef16abaff39e7f49a3801d5dc5f65521`, original HAD blob `f7324121f59cc5f1707ea47640dd2b20c26b9bbb`. The current [HAD consumer](../had/studies/water-replan.json) is blob `4e6f9a338cb8c5e87f6afb82fe2a6f9fc6eeb702`, incorporating the source-owned [RWT receiving interface](studies/selected-receiving-interface.json). The [architectural selection](../had/water-replan-result.md), house topology, protection and quiet-stage budget remain unchanged. No historical north-mouth capacity becomes current proof.
 
 [Calculation](studies/selected-water-event.mjs) · [regressions](studies/selected-water-event.test.mjs) · [complete values/state ledger](studies/selected-water-event.json) · [source-derived plan/section](studies/selected-water-event.svg).

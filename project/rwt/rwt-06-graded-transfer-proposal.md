@@ -1,5 +1,7 @@
 # RWT-06 — graded transfer and temporary canopy drain proposal
 
+**Current continuation:** [One current closed copper control and corrected north canopy](rwt-06-closed-control-and-canopy.md) tests the ordinary alternative before more open-jet apparatus. The65critical-header slow-turn premise fails reduced-flow cases; all successors remain unadopted. Accepted788 failures remain preserved.
+
 **6 November 2026. Unadopted construction proposal.** The selected HAD source is unchanged. [Energy comparison](studies/graded-transfer-comparison.json) · [finite construction source](studies/graded-transfer-geometry.mjs) · [complete values](studies/graded-transfer-geometry.json) · [chute/tool sheet](studies/graded-transfer-geometry.svg) · [canopy/chase sheet](studies/graded-transfer-canopy.svg). Both inspection sheets were rendered and inspected.
 
 ## Confirmed defects at the handoff
