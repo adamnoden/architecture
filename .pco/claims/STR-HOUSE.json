@@ -9,9 +9,9 @@
     "label": "zerg-str-1917"
   },
   "claimedAt": "2026-11-06T19:17:42.359Z",
-  "heartbeatAt": "2026-11-06T20:22:51.546Z",
-  "expiresAt": "2026-11-06T21:52:51.546Z",
-  "branch": "work/zerg-20261106-str-g27",
+  "heartbeatAt": "2026-11-06T20:57:54.208Z",
+  "expiresAt": "2026-11-06T22:27:54.208Z",
+  "branch": "work/zerg-20261106-str-interfaces2",
   "predecessor": {
     "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
     "generation": 26,
@@ -34,9 +34,9 @@
       "blocker": "Coordinatoractualexecutionlimit; sourcefullydurable; STR-HOUSE remainsopen. No externaladmission/completionclaimed."
     }
   },
-  "pr": 1343,
+  "pr": 1354,
   "checkpoint": {
-    "evidence": "dc7951a5 published; 22 upper-only stations and residual eight lower stops quantified in worktree; arch renewal obstruction located",
-    "next": "Freeze joined structural research milestone on current HAD, full CI, root review and preflight"
+    "evidence": "PR1343 merged at 8c2159a8; separate draft1354 marker97060126, no source yet",
+    "next": "Reproduce three actual structural interfaces on independent water-court house: bridge top recess, rear wet-floor aperture and ground RC200 slab. Then join shifted roof to all eight corner restraints and 52 actual heads."
   }
 }
