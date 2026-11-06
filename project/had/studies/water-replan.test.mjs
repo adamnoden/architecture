@@ -113,9 +113,9 @@ test('the actual inlet credits separate source-drawn edges and rejects a guard b
   assert.equal(s.combinedNominalPass,true);
   assert(s.totalLps>v.hydraulicProbe.assignedInwardRoofAndCourtLps);
   for(const [mutate,message]of [
-    [x=>x.guardExtension.westPostCentres[0][1]=7550,/occludes actual west inlet/],
-    [x=>x.guardExtension.northPostCentres[0][0]=7400,/occludes actual north inlet/],
-    [x=>x.guardExtension.lowestHorizontalRailAboveLocalWalk=20,/rail\/plinth occludes/]
+    [x=>x.guardExtension.lowestSolidZ=-100,/occludes water-level west approach/],
+    [x=>x.north.creditedWidth=350,/Wall-edge north entry/],
+    [x=>x.guardExtension.floorFeet=2,/floor feet/]
   ]){const copy=JSON.parse(JSON.stringify(e));mutate(copy);assert.throws(()=>verifyCollectorOpenEntries(copy,30),message);}
 });
 
@@ -152,6 +152,8 @@ test('each maintenance state locates rain interception and preserves the intact 
   [x=>x.eastMaintenance.weatherEnclosure.northPlate[1]=7400,/bund blocks intact N/],
   [x=>x.northMaintenance.courtRoof.pipe.route[0][2]=2240,/pipe penetrates/],
   [x=>x.northMaintenance.loggiaRoof.pipe.axisX=7050,/clashes with roof post/],
-  [x=>x.northMaintenance.storage.shortModuleStack=x.northMaintenance.storage.coverStack,/same storage/]
+  [x=>x.northMaintenance.storage.shortModuleStack=x.northMaintenance.storage.coverStack,/same storage/],
+  [x=>x.eastMaintenance.roof.temporaryPosts[3]=[7625,7850],/inside finished wall/],
+  [x=>x.northMaintenance.thresholdBypass.grossBodyPlan[0]=5000,/pan endfold/]
  ]){const bad=JSON.parse(JSON.stringify(m));change(bad);assert.throws(()=>verifyMaintenanceRain(bad,v.model,v.renewal),message);}
 });
