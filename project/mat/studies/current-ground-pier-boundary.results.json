@@ -1,6 +1,6 @@
 {
-  "status": "Local geometry and explicit thermal/mass sensitivity only; no whole-junction or physical pass",
-  "sourceControlSHA256": "2df6ca3ad1dff7f4b4895a011b2497e8c89bfb226dd1a72f473f90f7dd76e5bd",
+  "status": "FALSIFIED as complete floor boundary: upper-pier splice leaves ground-to-grid-to-RC-field capillary bypass. Local geometry/sensitivity retained; no selected rewind.",
+  "sourceControlSHA256": "eb1338f0fc7f1ac3d6c5cff149e3beb699bc6ff5b72782a1fb1d7c50e3aa8cff",
   "sources": {
     "STR": {
       "commit": "18e802fbbf23730db69d922707e3576576cd8c19",
@@ -50,7 +50,9 @@
     "actualSurfaceTemperature_C": null,
     "wholeHouseEnergyResult": null
   },
+  "falsifiedCapillaryPath": "Ground -> piles -> lower RC grid/pedestal -> RC200 field -> bare-glass joints, all below the upper plate at-50..-30. Drainage/ventilation alone does not break this capillary connection.",
   "activeInternalHolds": [
+    "Upper-plate-only floor route withdrawn; resolve every ground-support capillary source or a real separate field boundary",
     "STR opposed anchor/plate force path and local weld/cover schedule",
     "Actual mineral-DPC/plate edge and keyed plaster/metal air termination with movement allowance",
     "Concrete floor construction-joint/crack and repair design plus explicit whole-house leakage budget",

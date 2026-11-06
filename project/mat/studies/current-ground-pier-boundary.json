@@ -1,5 +1,5 @@
 {
-  "status": "PROPOSED local ground/pier comparison; not selected geometry, gas safety, supplied assembly or physical admission",
+  "status": "FALSIFIED as complete floor boundary: upper-pier splice leaves ground-to-grid-to-RC-field capillary bypass. Local geometry/sensitivity retained; no selected rewind.",
   "sources": {
     "STR": {
       "commit": "18e802fbbf23730db69d922707e3576576cd8c19",
@@ -28,14 +28,17 @@
     ]
   },
   "preferredConditionalRoute": {
-    "name": "Suspended concrete field, solid pier splice and local cast-in air-line return",
+    "name": "WITHDRAWN upper-plate-only complete floor route",
     "floorRewind": false,
     "conditions": [
       "Ground/void remains effectively drained and ventilated; no hydrostatic exposure is assigned to this concrete hypothesis",
       "Actual site gas assessment permits this tested concrete/joint route; no universal gas membrane waiver or arbitrary contaminated-site suitability",
       "Actual concrete mix, curing, reinforcement, construction joints and crack/air/moisture performance are specified and verified",
       "Whole-house ventilation/airtightness target and junction leakage allocation must be set; neither is currently selected by Services"
-    ]
+    ],
+    "withdrawn": true,
+    "falsifiedPath": "Ground -> piles -> lower RC grid/pedestal -> RC200 field -> bare-glass joints, all below the upper plate at-50..-30. Drainage/ventilation alone does not break this capillary connection.",
+    "nextComparison": "Actual lower-source cuts at every support connection, including whole-house signed wind/uplift envelopes and bulk-water exclusion, versus a real separate field boundary. Delete redundant upper plates if lower cuts earn the source break."
   },
   "plate": {
     "z": [
