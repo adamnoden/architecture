@@ -9,9 +9,9 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-06T21:35:19.250Z",
-  "expiresAt": "2026-11-06T23:05:19.250Z",
-  "branch": "work/zerg-20261106-rwt06-successor",
+  "heartbeatAt": "2026-11-06T22:03:13.141Z",
+  "expiresAt": "2026-11-06T23:33:13.141Z",
+  "branch": "work/zerg-20261106-rwt06-native-release",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
     "generation": 52,
@@ -36,7 +36,7 @@
   },
   "pr": 1344,
   "checkpoint": {
-    "evidence": "Final reviewed milestone source c420dfbdea4fd78fbef42c4ad77e48b90ca9a40d tree1e0c2bd3522cfd13d2ce6243c61bb011828a7c67; main4fef04ad;154RWT/14STR+18producer/HAD/MAT/repo checks pass; exactCI42297727786 running",
-    "next": "Await exact-head CI/root review then fresh own-node publication preflight; lower-bay/tool/ladder research held separately for successor"
+    "evidence": "MERGED milestone1344 main2a31084013cebca2094692263f0c7a2b2f8d2166 from validatedc6dfc2d2/tree3ee84c55; exactCI42300389683 SUCCESS/root signoff/freshpreflight; prior1344 source branch deletion verified; owningHAD6f089df1 and interface847eecc7 integrated",
+    "next": "Fresh successor native-release branch starts exactmergedmain;1344 is merged provenance only, new draft pending first concrete source candidate. Continue ONE conventional closed-E native first-release/support/service-access design; preserve flange/raisedroute/bay structural failures and physical/site holds"
   }
 }
