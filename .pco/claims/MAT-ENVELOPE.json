@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 25,
-  "state": "released",
-  "leaseId": "767feb82-bf3e-4f16-9e2a-3d97d0081350",
+  "generation": 26,
+  "state": "claimed",
+  "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-20261105-w5"
+    "label": "zerg-20261106-w5"
   },
-  "claimedAt": "2026-11-05T18:15:49.054Z",
-  "heartbeatAt": "2026-11-05T19:55:47.896Z",
-  "expiresAt": "2026-11-05T19:55:47.896Z",
-  "branch": "work/zerg-20261105-w5-2",
+  "claimedAt": "2026-11-06T07:36:49.474Z",
+  "heartbeatAt": "2026-11-06T07:36:49.474Z",
+  "expiresAt": "2026-11-06T08:21:49.474Z",
+  "branch": "work/zerg-20261106-w5",
   "predecessor": {
-    "leaseId": "308c60ef-01ca-45d0-9706-c99145d3f12d",
-    "generation": 24,
-    "branch": "work/zerg-20261105-w5",
-    "pr": 1328,
+    "leaseId": "767feb82-bf3e-4f16-9e2a-3d97d0081350",
+    "generation": 25,
+    "branch": "work/zerg-20261105-w5-2",
+    "pr": 1329,
     "checkpoint": {
-      "evidence": "PR #1328 final head231f21dfaa4a905464a15869f1c81d88cce9252e treecd1a23bebb965f6b08128f8282f6e1403d588273; true mainc1986524 parent; repository integrity/diff check pass",
-      "next": "Inspect exact-head CI42081393633, then fresh canonical preflight and merge",
-      "blocker": "Final CI pending; bare-slab complete installation remains unqualified"
+      "evidence": "Execution-limit remote recovery: owned handoff ref work/zerg-20261105-w5-handoff-g25 head79a91857ece299afbaf13306f9e7ae1c22f48484 tree589eef34245de527663a39c759dd8dd9d2dc5830 preserves exact local MAT a58d9e50/c27 five-file snapshot on shared3aff parent, same HAD input blob6c53da42a81c45777d0a18dbf803144364665598. Shared3aff exact MAT reproduction, three HAD tests and repository integrity passed; no newer-head or construction acceptance.",
+      "next": "Canonical HANDOFF release now for execution limit. W2 owns final draft1329 WIP publication. Recover five MAT files from owned handoff ref; integrate actual newer outerSupportReservation/whole park, then regenerate and validate. Shared branch was not moved by MAT holder.",
+      "blocker": "1329 must remain unselected/unmerged. Newer HAD numeric freeze not yet consumed by this MAT snapshot. Retained outer support/full hoist, walking retreat headroom, gate/activation/first-harm/material/physical acceptance remain explicit pending joins."
     }
   },
   "recoverySource": {
-    "leaseId": "308c60ef-01ca-45d0-9706-c99145d3f12d",
-    "generation": 24,
-    "branch": "work/zerg-20261105-w5",
-    "pr": 1328,
+    "leaseId": "767feb82-bf3e-4f16-9e2a-3d97d0081350",
+    "generation": 25,
+    "branch": "work/zerg-20261105-w5-2",
+    "pr": 1329,
     "checkpoint": {
-      "evidence": "PR #1328 final head231f21dfaa4a905464a15869f1c81d88cce9252e treecd1a23bebb965f6b08128f8282f6e1403d588273; true mainc1986524 parent; repository integrity/diff check pass",
-      "next": "Inspect exact-head CI42081393633, then fresh canonical preflight and merge",
-      "blocker": "Final CI pending; bare-slab complete installation remains unqualified"
+      "evidence": "Execution-limit remote recovery: owned handoff ref work/zerg-20261105-w5-handoff-g25 head79a91857ece299afbaf13306f9e7ae1c22f48484 tree589eef34245de527663a39c759dd8dd9d2dc5830 preserves exact local MAT a58d9e50/c27 five-file snapshot on shared3aff parent, same HAD input blob6c53da42a81c45777d0a18dbf803144364665598. Shared3aff exact MAT reproduction, three HAD tests and repository integrity passed; no newer-head or construction acceptance.",
+      "next": "Canonical HANDOFF release now for execution limit. W2 owns final draft1329 WIP publication. Recover five MAT files from owned handoff ref; integrate actual newer outerSupportReservation/whole park, then regenerate and validate. Shared branch was not moved by MAT holder.",
+      "blocker": "1329 must remain unselected/unmerged. Newer HAD numeric freeze not yet consumed by this MAT snapshot. Retained outer support/full hoist, walking retreat headroom, gate/activation/first-harm/material/physical acceptance remain explicit pending joins."
     }
-  },
-  "pr": 1329,
-  "checkpoint": {
-    "evidence": "Execution-limit remote recovery: owned handoff ref work/zerg-20261105-w5-handoff-g25 head79a91857ece299afbaf13306f9e7ae1c22f48484 tree589eef34245de527663a39c759dd8dd9d2dc5830 preserves exact local MAT a58d9e50/c27 five-file snapshot on shared3aff parent, same HAD input blob6c53da42a81c45777d0a18dbf803144364665598. Shared3aff exact MAT reproduction, three HAD tests and repository integrity passed; no newer-head or construction acceptance.",
-    "next": "Canonical HANDOFF release now for execution limit. W2 owns final draft1329 WIP publication. Recover five MAT files from owned handoff ref; integrate actual newer outerSupportReservation/whole park, then regenerate and validate. Shared branch was not moved by MAT holder.",
-    "blocker": "1329 must remain unselected/unmerged. Newer HAD numeric freeze not yet consumed by this MAT snapshot. Retained outer support/full hoist, walking retreat headroom, gate/activation/first-harm/material/physical acceptance remain explicit pending joins."
-  },
-  "releasedAt": "2026-11-05T19:55:47.896Z",
-  "releaseReason": "handoff"
+  }
 }
