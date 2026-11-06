@@ -29,6 +29,19 @@ def point_seg(p,a,b):
     t=max(0,min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/(dx*dx+dy*dy))) if dx or dy else 0
     return math.hypot(p[0]-a[0]-t*dx,p[1]-a[1]-t*dy)
 
+def point_box(p,r):
+    """Signed Euclidean distance; negative inside, zero on boundary."""
+    x,y,w,h=r
+    dx=max(x-p[0],p[0]-x-w,0);dy=max(y-p[1],p[1]-y-h,0)
+    if dx or dy:return math.hypot(dx,dy)
+    return -min(p[0]-x,x+w-p[0],p[1]-y,y+h-p[1])
+
+# Negative control: edge distance alone can falsely pass a deep interior centre.
+inside_A=(1225,9950)
+assert point_box(inside_A,STATE['A'])==-425
+assert point_box(inside_A,STATE['A'])-300<0
+assert point_box(inside_A,STATE['A'])-975<0
+
 def overlap(a,b):
     for ps in (a,b):
         for p,q in zip(ps,ps[1:]+ps[:1]):
@@ -86,7 +99,7 @@ C=(3212.5,10150); radius=math.hypot(900,375)
 others={**FIXED,**{k:v for k,v in STATE.items() if k!='B'}}
 print('sofa turn radius',radius)
 for k,r in others.items():
-    d=min(point_seg(C,a,b) for a,b in zip(rect(r),rect(r)[1:]+rect(r)[:1]))-radius
+    d=point_box(C,r)-radius
     assert d>=25,(k,d)
     print('sofa circle gap',k,round(d,3))
 assert inside(C,radius)>=25
@@ -100,7 +113,7 @@ for i in range(9001):
         p=(C[0]+x*co-700*si,C[1]+x*si+700*co)
         minimum=min(minimum,inside(p,300)-arc_bound)
         for r in others.values():
-            d=min(point_seg(p,q,t) for q,t in zip(rect(r),rect(r)[1:]+rect(r)[:1]))-300-arc_bound
+            d=point_box(p,r)-300-arc_bound
             minimum=min(minimum,d)
 assert minimum>=25
 print('paired handler continuous-turn lower clearance',round(minimum,3),'arc allowance',arc_bound)
