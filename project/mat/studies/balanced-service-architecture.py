@@ -460,6 +460,11 @@ assert abs(warm['totalPhysicalHeatW']-cold['totalPhysicalHeatW']-403.2)<1e-8
 systemair['unequalStreamHeatComparison']=vtc_heat
 
 result={'status':'Unselected whole-system challenger; no canonical numeric owner migration or material exception',
+ 'developmentDecision':{'leadingInvestigation':'W9directcapture96/128withdedicated16/48kitchensupply and fixed80elsewhere',
+  'reason':'Native cooking/paired-pressure direction retains cooking heat recovery and meets labelled16C/70percentcoldpoint with native900postheat; materials, supported renewal and true operating points remain unearned.',
+  'challenger':'VTCseparatecapture96/96normal,144/96plus48hoodcooking; smaller/mineralcabinet remains promising but extra motor/64kitchensupply/unequalcore/preheatpostheat must be carried.',
+  'decisiveChecks':['actualdirtyfilterpressureandnoiseatbothmodes','nativebranch/fault/visiblelostdutystates','actualwinterrecovery/defrost/source/emitterheat','supportedpanelcorefanwholebodyandupperrenewal','exactinstalledandreplacementconstituents'],
+  'scope':'Prioritises whole-system development only; no selected apparatus, polymer exception, canonicalServices/HAD change or MAT-SERVICES completion.'},
  'basis':{'main':HEAD,'hadBlob':'f7324121f59cc5f1707ea47640dd2b20c26b9bbb','servicesBlob':'69c7b1b1e733b9ade2d8ae21c1552accf52a6261'},
  'modes':modes,'dedicatedKitchenSupplyModes':kitchen_supply,'twoPositionKitchenControl':control,'nativePressureControlComparison':pressure_control,'failureResponseComparison':failure,'protectedStairRule':fire_rule,'hoodBranchPressureScreen':hood_branch,'spineCrossings':air_crossings,
  'W9VestibuleHost':host,'upperOnlyRiserComparison':riser,'plantRenewalComparison':renewal,'nativeCarrierAndOperatorComparison':carrier,'visibleKitchenControlComparison':visibility,'fireSmokeTransferComparison':transfer,'heatSensitivity':energy,'nativeW9HeatContract':w9_heating,'retainedEmitterCapacityComparison':emitter,'wholeSystemConstituentBoundary':materials,'conventionalLowerMassAlternative':systemair,
