@@ -1,0 +1,28 @@
+{
+  "status": "Provisional design comparison and allocation; no adopted owner invariant, tested envelope or compliance result",
+  "sources": {
+    "HAD": {"commit": "1cedc7d7e159f7cb4e3ba15fb9882d2fd5529e51", "path": "project/had/studies/water-replan.json", "blob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b"},
+    "floorField": {"commit": "1cedc7d7e159f7cb4e3ba15fb9882d2fd5529e51", "path": "project/mat/studies/ground-field-assembly.results.json", "blob": "5dd70178c0e5bb192f1d24f6e5383c3d330fe1bc"}
+  },
+  "primaryEvidence": [
+    {"name": "England ADL Volume1,2021 incorporating2023 amendments", "url": "https://assets.publishing.service.gov.uk/media/662a2e3e55e1582b6ca7e592/Approved_Document_L__Conservation_of_fuel_and_power__Volume_1_Dwellings__2021_edition_incorporating_2023_amendments.pdf", "retrieved": "2026-11-06", "sha256": "1ab93e597d9ba43531f26b3a94323383f011548ac536d6a036e20d107ecceaa3", "pages": "printed26 Table4.1; printed74 envelope-area definition; section7", "role": "New-dwelling limiting q50=8m3/(h m2) is a ceiling, not a design target or whole-energy pass; actual project applicability is not established. Envelope area uses overall internal dimensions without deducting internal-wall/floor junctions."},
+    {"name": "England ADL Volume1,2026", "url": "https://assets.publishing.service.gov.uk/media/6a9a8da39a177a1decf97e0d/Approved_Document_L__Volume_1_Dwellings.pdf", "retrieved": "2026-11-06", "sha256": "438bbd1958b18605a89500598a07b6f0c0144e09812b72efbed3be8a0da927eb", "pages": "opening commencement note; printed25 Table3.1; printed61 section6", "role": "Same8 limit; published future regime, ordinarily effective24March2027, higher-risk24September2027, with transitions. Publication is not project applicability. TM23 pressure testing and whole-energy results remain separate duties."},
+    {"name": "ATTMA comparison of TSL1:2021,ISO9972:2015,TM23:2022", "url": "https://www.bcta.group/attma/air-tightness-testing-technical-standard-compare/", "retrieved": "2026-11-06", "role": "Primary testing-body comparison gives measured exponent0.5..1, preferred both test directions, pressure/zero-flow conditions and multi-point testing. It does not prescribe our target, allocation or operating pressure."},
+    {"name": "Government commissioned infiltration-method evidence review", "url": "https://assets.publishing.service.gov.uk/media/68db99fbc487360cc70c9ef3/airtightness-in-uk-housing-stock-methodology-evidence.pdf", "retrieved": "2026-11-06", "sha256": "cd8030bd6e505ead701247ddba0f4a072cb480dd3e0d1541d59209bcf126b9c6", "pages": "printed10-14,RQ1/RQ2", "role": "Divide-by20 is a coarse heating-season method, not site or instantaneous infiltration. Actual wind, stack, shelter and leakage distribution remain necessary; no universal weather divisor used here."},
+    {"name": "Passivhaus Trust airtightness guide", "url": "https://www.passivhaustrust.org.uk/UserFiles/File/Technical%20Papers/BRE_Passivhaus_Airtightness_Guide.pdf", "retrieved": "2026-11-06", "role": "n50 uses finished conditioned air volume, excluding hidden/internal solid volumes. It is not q50. This study has no agreed finished net Vn50 and makes no Passivhaus target or certification claim."}
+  ],
+  "comparison": {
+    "clearHeight_m": 3.1,
+    "q50Cases_m3_per_h_m2": [0.6, 1, 3, 8],
+    "proposedDevelopmentQ50_m3_per_h_m2": 1,
+    "operatingPressureChallenges_Pa": [1, 2, 4],
+    "authoredExponents": [0.5, 0.65, 1],
+    "airHeatCapacity_J_per_m3_K": 1200,
+    "temperatureDifference_K": 30,
+    "ventilationNormal_Lps": 96,
+    "ventilationCooking_Lps": 128,
+    "idealRecoveryComparison": 0.7,
+    "familyBudgetFractions": {"floorWallField": 0.1, "wallBodiesAndPermanentJunctions": 0.15, "roofCeilingAndHeadTransitions": 0.2, "completeOpeningsIncludingThreeDoorThresholds": 0.25, "servicePenetrations": 0.1, "unassignedReserve": 0.2},
+    "allocationRole": "Authored finite accounting proposal, not a product or normative joint limit. Floor/wall10% is ONE aggregate covering field body, ordinary edge, associated joints/internal cores and wall-base routes. Three complete external door/threshold assemblies, including fixed/renewable air joints, belong to openings25%; floor/wall ends at their assigned assembly boundaries. Every physical path must receive one owner; no duplicated budget."
+  }
+}
