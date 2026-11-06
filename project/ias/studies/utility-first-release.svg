@@ -44,7 +44,7 @@
 <text x="14" y="237" font-size="3.3">B: Valve-bay reserve 26 mm; north-wall reserve 353 mm. Static worker proxies are separate states, each with 25 mm minimum.</text>
 <text x="14" y="246" font-size="3.3">B occupies 209300 mm² of electrical working field: no concurrent electrical task; isolate first and restore afterwards.</text>
 <text x="14" y="255" font-size="3.3">All 37 other ground fixtures checked against native body sweep. Native hoses, tools, drain container, grip/force/aid remain open.</text>
-<text x="14" y="264" font-size="3.3">Rear transit-bolt access/order and initial drawout permission unearned. No export through arch/W9/Plant door.</text>
+<text x="14" y="264" font-size="3.3">Rear transit-bolt access/order and actual initial supported handling remain open. No export through arch/W9/Plant door.</text>
 <text x="14" y="273" font-size="3.3">Polymer/functional residues explicit and unapproved. No installation or IAS completion. Source blobs in companion JSON.</text>
 <text x="14" y="285" font-size="2.8">Native manual pp. 14–16, 33–34, 45, 47–48. Shaded fields: electrical/PV working territory, retained fixed bodies, actual washer body.</text>
 </svg>

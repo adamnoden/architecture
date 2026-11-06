@@ -29,7 +29,7 @@ const native={model:'Bosch WAN282X2GB',document:'9001906867_B, 5 February 2024',
   drainHeight:[600,1000],siphonClampDiameter:[24,40],
   sources:{connection:'pp. 14–16',drain:'pp. 33–34',removalAndTransit:'p. 45',dimensions:'pp. 47–48'},
   limits:['No lifting alone or gripping protruding parts; upright transport; four feet on an even solid surface.',
-    'Native transport sequence drains and detaches hoses and reinstalls rear transit bolts. No express allowance for an unbolted first in-room drawout is established here.',
+    'Native transport sequence drains and detaches hoses and reinstalls rear transit bolts. The short in-room extraction and rear bolt-refit order must join the actual handling method; absence of a separate short-extraction statement is not a universal prohibition.',
     'Do not combine masses or depths from a different model edition. Actual purchased E-Nr./FD and manual must match.']}
 const fixedTapComparator={model:'Pegler 809B / 524009',url:'https://aalberts-ips.co.uk/products/item/524009/',
   pageSnapshotSHA256:'96d769785ec92265f7072b404ec9582dbbdddb303b0376c4e43e6bd0dfdab1b5',
@@ -81,7 +81,7 @@ const result={status:'Conditional utility first-release comparator; no connected
     'Before any movement: turn off actual local tap; empty inlet, switch off and unplug at accessible fixed socket; drain cooled residual water through native front service hose into a supported sufficiently large container.',
     'Detach the actual tap-side inlet, supported fixed waste terminal and accessible electrical plug in the independently supported service front. Retain all fixed pipes/supports; cap and make safe. Keep appliance-side captive hoses/cord with the machine.',
     'Only after the complete fixed ends are disconnected and actual handling is qualified, test the 700 mm north in-room drawout. This body-only sweep does not supply hands, sliders, wheels, grips or safe pulling force.',
-    'Use newly available rear territory for actual transit-bolt access; qualify its sequence before any transport. Do not infer permission for unbolted initial motion from this geometry.',
+    'Use newly available rear territory for actual transit-bolt access; qualify the initial supported extraction and bolt-refit order before whole-body transport. Body clearance alone establishes no safe handling method.',
     'Electrical-station work is unavailable during the first rest; carry out independent isolation beforehand and preserve required emergency isolation/access. Restore the utility and all electrical work space after reconnection, leak/electrical checks and native levelling.'],
   open:['Actual tap/standpipe or siphon/socket, independent supports/anchors and water/electrical segregation remain to be joined with Services; no product fit or height adoption follows from the authored points.',
     'Native hose lengths are not routed usable lengths: actual rear outlets, bends, connectors, clamps and slack/coiling must fit the reserved 100 mm gross depth and 26 mm side allowances; no fitted hose route is proved.',
@@ -124,7 +124,7 @@ label(14,228,'A: Accessible tap/drain/plug, independent supports; detach fixed e
 label(14,237,'B: Valve-bay reserve 26 mm; north-wall reserve 353 mm. Static worker proxies are separate states, each with 25 mm minimum.',3.3)
 label(14,246,'B occupies 209300 mm² of electrical working field: no concurrent electrical task; isolate first and restore afterwards.',3.3)
 label(14,255,'All 37 other ground fixtures checked against native body sweep. Native hoses, tools, drain container, grip/force/aid remain open.',3.3)
-label(14,264,'Rear transit-bolt access/order and initial drawout permission unearned. No export through arch/W9/Plant door.',3.3)
+label(14,264,'Rear transit-bolt access/order and actual initial supported handling remain open. No export through arch/W9/Plant door.',3.3)
 label(14,273,'Polymer/functional residues explicit and unapproved. No installation or IAS completion. Source blobs in companion JSON.',3.3)
 label(14,285,'Native manual pp. 14–16, 33–34, 45, 47–48. Shaded fields: electrical/PV working territory, retained fixed bodies, actual washer body.',2.8)
 draw.push('</svg>')

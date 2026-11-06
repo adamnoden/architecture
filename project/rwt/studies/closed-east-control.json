@@ -1,6 +1,6 @@
 {
   "identity": "RWT-UNADOPTED-CURRENT-E-CLOSED-CONTROL-2026-11-06",
-  "selectedSource": "6f089df104fe85c028978892e7f6b63f862e3237",
+  "selectedSource": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
   "sourceAuthority": "Composed HAD consumer for this result; canonicalMain metadata records INTEGRATION BASELINE4fef04ad/HAD265ac194. Only conditional receiver/garden/maintenance refinements are integrated; separate construction comparisons and hydraulic/physical/site acceptance remain unadopted/unaccepted",
   "canonicalMain": "4fef04ad7a82a149903aa077af04f95b3a392294",
   "canonicalMainHadBlob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
@@ -691,7 +691,7 @@
     "identity": "REJECTED finite600north/500south cover-boundary rewind",
     "selectedGeometryChanged": false,
     "accepted": false,
-    "source": "6f089df104fe85c028978892e7f6b63f862e3237",
+    "source": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
     "assignedLps": 3.60375,
     "quiet": -35,
     "catchmentUnchangedM2": 60.0625,

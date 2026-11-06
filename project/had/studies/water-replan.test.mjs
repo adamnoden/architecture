@@ -7,7 +7,7 @@ import { deriveWaterReplan, verifyServicesOccurrences, verifyCollectorOpenEntrie
 
 test('current replan authenticates the entire new Services source without weakening the historical selection', () => {
   const v = deriveWaterReplan();
-  assert.equal(v.sources.services.blob, '69c7b1b1e733b9ade2d8ae21c1552accf52a6261');
+  assert.equal(v.sources.services.blob, '049161ebac29b24e0acc7d8085302fca906fe9d2');
   assert.equal(v.model.architecturalServices.eastWaterJoin.intermediateArch.finishedClearWidth, 1221);
   assert.deepEqual(v.model.groundFurniture['plant-primary-buffer-round-bounding600'], [10150, 5025, 600, 600]);
   assert.deepEqual(v.model.servicesInterface.emitters.find(e=>e.id==='plant-N').plan, [10980,3797,550,200]);

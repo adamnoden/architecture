@@ -844,7 +844,7 @@
   "next": "Draw/resolve the900EWnode cage/bearing and actual tie endshoe; then join all wholehouse gravity/signed destinations. No HADdepth/grade is changed by this comparison.",
   "source": {
     "path": "project/had/studies/water-replan.json",
-    "sha256": "7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8"
+    "sha256": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc"
   },
   "status": "Calculated preliminary short-bridge envelope; whole-house/node/connection selection still in progress"
 }

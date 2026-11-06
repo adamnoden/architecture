@@ -118,7 +118,7 @@
   "jointPass": false,
   "parentRoofSource": {
     "path": "project/str/studies/current-house-roof.json",
-    "sha256": "0297494f54f655ee64b3b816c6f427d9b7b6e0191cb43c43d4dc502b93c8b209"
+    "sha256": "01a9060fe6a5b2b7a2ec9e4597222d8f7e7d4e80f60781b7851567670c5c41e0"
   },
   "physicalAdmission": false,
   "rainCatchment": {
@@ -204,7 +204,7 @@
   },
   "source": {
     "path": "project/had/studies/water-replan.json",
-    "sha256": "7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8"
+    "sha256": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc"
   },
   "status": "Coplanar height proposal; original8M24 joint REJECTED by actualgroupmoment, conventional weldedcommon-node replacement in progress",
   "structuralRoofLoadDomainM2": 144.15,

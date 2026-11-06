@@ -4,7 +4,7 @@ from pathlib import Path
 import hashlib,json,math,sys
 R=Path(__file__).resolve().parents[3]
 P=R/'project/had/studies/water-replan.json';raw=P.read_bytes()
-assert hashlib.sha256(raw).hexdigest()=='7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8','Rejoin actual HAD source before structural credit'
+assert hashlib.sha256(raw).hexdigest()=='735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc','Rejoin actual HAD source before structural credit'
 v=json.loads(raw);h=v['model'];b=v['bridge'];base=json.loads((R/'project/had/studies/open-north-loggia.json').read_text())
 assert h['selection']['decision'].startswith('SELECT') and h['architecturalDevelopmentProof']['pass']
 retained={}
