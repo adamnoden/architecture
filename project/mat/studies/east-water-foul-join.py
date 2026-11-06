@@ -54,10 +54,10 @@ assert dry-(5700+hole_radius)==-19.5
 assert e['externalDownstackBodyTerritory']==[12000,5475,450,300]
 assert e['externalDownstackBodyTerritory'][0]>=wall['b'][0]
 assert e['path'][-2][2]-carrier_radius-s['plant']['controlsMaximumHeight']>250
-grade=e['grade'];assert grade['trialExterior']==-2000
-assert grade['requiredReceiverEnvelopeCrownAtOrBelow']==grade['trialExterior']-grade['crownCoverControl']==-2600
+grade=e['grade'];assert grade['trialExterior']==-1800
+assert grade['requiredReceiverEnvelopeCrownAtOrBelow']==grade['trialExterior']-grade['crownCoverControl']==-2400
 axis=grade['requiredReceiverEnvelopeCrownAtOrBelow']-80
-assert grade['axisOf160OuterEnvelope']==axis==-2680
+assert grade['axisOf160OuterEnvelope']==axis==-2480
 tails={d['id']:d['path'][-1] for d in s['otherServiceDuties'] if d['id'] in grade['affectedExternalTails']}
 assert len(tails)==5 and all(p[2]==axis for p in tails.values())
 assert tails['east-soil']==[12450,5625,axis]
