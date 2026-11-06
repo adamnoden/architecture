@@ -9,8 +9,8 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T20:30:00.424Z",
-  "expiresAt": "2026-11-06T22:00:00.424Z",
+  "heartbeatAt": "2026-11-06T20:36:14.538Z",
+  "expiresAt": "2026-11-06T22:06:14.538Z",
   "branch": "work/zerg-20261106-services-g21-renewal",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
@@ -36,8 +36,9 @@
   },
   "pr": 1350,
   "checkpoint": {
-    "evidence": "Stable1350 head ff168e156e3437c3bc8f86305be844833d7bc65e tree e0ed9c8872d3f4b6732a6f639951addacec11de5 reconciles main ede8302b. Actual three folded turns, derived22.21495mm continuous comparison reserve and native maxWLL anchors; proportionate U-monitor SUPPLYBOOST230g/3.432WDC plus complete duties. Both rendered sheets inspected; full test:mat includes both studies and PASS. No handling/apparatus/material admission.",
-    "next": "Exact-headCI and rootreview then fresh canonical preflight before bounded finding merge. Continue actual supported W9withdrawal/loading, complete hoist/anchor/transfer and true operating/noise/winter/constituent duties separately from frozen review head."
+    "evidence": "PR1350 frozen0732d7fc7d1a038c30930a4746b8432b1e121d5d tree80ff8ba4d00eeb2715b3602eb91f1fa422867d02; mainede8302b8eb21c571166214227f643928b02edfc; full test:mat and generator/diff checks PASS; rendered sheets inspected; native0Ai/Nom108 U mapping and2Ai negative control bound",
+    "next": "Await exact-head CI42289670658/root review then fresh canonical merge-check; after bounded integration continue whole-system renewal development",
+    "blocker": "Exact new-head CI pending; actual apparatus/renewal/admission tests remain open"
   },
   "note": "Active samegeneration operation, stable coherent successor; no release or packet completion."
 }
