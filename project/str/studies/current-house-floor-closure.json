@@ -1,0 +1,641 @@
+{
+  "status": "Bounded upper-roof-to-first-floor and remanent ground-tie comparison. Conservative static equilibrium with passive contact and validated geometry; not merged structural selection.",
+  "roles": {
+    "strippedLocal": "No dead-weight credit to the heel, upper rod, ring, or its cracked/removed-state control. Never erect roof on absent floor; any stripped/temporary support must be positively held before dismantling.",
+    "retainedShell": "Roof may rely only on installed minimum shell after RC and walls cured. 0.90 subset factor is an explicitly authored comparison, not a UK National Annex certification. Reopen for reduced thickness, permanent removal, material density below the specified lower bound, incomplete ties, site or assembly stage."
+  },
+  "source": "British Steel Universal beams sizes 190724, 254x146x37 256.0 high x146.4 wide, 37kg/m, I=5537cm4, elastic modulus433cm3. https://www.britishsteel.co.uk/wp-content/uploads/2026/02/british-steel-universal-beams-datasheet-190724.pdf",
+  "minComponentTotals": {
+    "roof pressure": -324.3375,
+    "retained roof steel": 114.401044,
+    "uncredited roof allowance": 0.0,
+    "signed local heel moment": -0.0,
+    "retained roof ring steel": 48.98124,
+    "retained RC floor edge share": 118.953143,
+    "retained upper solid core": 100.46268,
+    "remaining upper edge load": 0.0
+  },
+  "retainedGlobalUniformSuctionBalance": 58.460606,
+  "floorRing": {
+    "section": "254x146x37 UB, assumed actual S355 grade required",
+    "z": [
+      3114,
+      3370
+    ],
+    "lengthM": 62.0,
+    "steelMassKg": 2294.0,
+    "rawRingClearanceAboveGround3065Extrados": 49,
+    "memberElasticMR": 139.740909,
+    "maximumIncludingSelfweight": 118.448817,
+    "maxAdditionalSelfweightMoment": 0.644977,
+    "qualification": "The two parallel beams assumption is not required: first compute the short spans on all physical pads, replace negative passive reactions by upward point loads in the continuous rolled member to its eight captive stops, then combine signed member moment ranges. Static admissibility is not a measured contact distribution. Elastic stability/restraint, local shear, splice, service movement and actual temporary sequence still require matching details. No new concrete mass is invented."
+  },
+  "upperTie": {
+    "count": 22,
+    "worstUp": 107.271873,
+    "M24TensileArea": 353,
+    "minMaterialStress": 322.727273,
+    "axialResistance": 113.922727,
+    "20mmPlateCantileverStress": 229.8683,
+    "25mmPlateStress": 147.115712,
+    "role": "mechanical end fitting from actual roof steel through upper core into actual floor steel, positive upper rod termination at the floor; no adhesive/masonry bond or lower-DPC penetration for each rod. Penetration/clip/splitting, local compression and thermal/fire finish still require joint evidence."
+  },
+  "stationControls": [
+    {
+      "count": 8,
+      "minTieForce": -110.324428,
+      "maxHogging": -117.408072,
+      "maxSagging": 117.803841
+    },
+    {
+      "count": 10,
+      "minTieForce": -110.324428,
+      "maxHogging": -117.408072,
+      "maxSagging": 117.803841
+    },
+    {
+      "count": 12,
+      "minTieForce": -110.324428,
+      "maxHogging": -103.598741,
+      "maxSagging": 117.803841
+    }
+  ],
+  "candidateRetainedCaptiveStations": [
+    {
+      "xy": [
+        332.5,
+        332.5
+      ],
+      "minimumIncludingAdverseRedistribution": -64.705491,
+      "role": "existing outer stability group"
+    },
+    {
+      "xy": [
+        332.5,
+        11667.5
+      ],
+      "minimumIncludingAdverseRedistribution": -56.456882,
+      "role": "existing outer stability group"
+    },
+    {
+      "xy": [
+        3917.5,
+        3917.5
+      ],
+      "minimumIncludingAdverseRedistribution": -108.65293,
+      "role": "new court corner hold-down; DPC/jamb detail not admitted"
+    },
+    {
+      "xy": [
+        3917.5,
+        8082.5
+      ],
+      "minimumIncludingAdverseRedistribution": -110.324428,
+      "role": "new court corner hold-down; DPC/jamb detail not admitted"
+    },
+    {
+      "xy": [
+        8082.5,
+        3917.5
+      ],
+      "minimumIncludingAdverseRedistribution": -107.08875,
+      "role": "new court corner hold-down; DPC/jamb detail not admitted"
+    },
+    {
+      "xy": [
+        8082.5,
+        8082.5
+      ],
+      "minimumIncludingAdverseRedistribution": -105.032624,
+      "role": "new court corner hold-down; DPC/jamb detail not admitted"
+    },
+    {
+      "xy": [
+        11667.5,
+        332.5
+      ],
+      "minimumIncludingAdverseRedistribution": -49.248682,
+      "role": "existing outer stability group"
+    },
+    {
+      "xy": [
+        11667.5,
+        11667.5
+      ],
+      "minimumIncludingAdverseRedistribution": -43.153826,
+      "role": "existing outer stability group"
+    }
+  ],
+  "lowerPads": [
+    {
+      "xy": [
+        332.5,
+        332.5
+      ],
+      "strippedAdverse": [
+        -35.520046,
+        106.47834
+      ],
+      "accountedRetainedState": [
+        -15.32878,
+        162.725349
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        3200.0
+      ],
+      "strippedAdverse": [
+        -28.689287,
+        77.980059
+      ],
+      "accountedRetainedState": [
+        -19.079078,
+        105.99189
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        6000.0
+      ],
+      "strippedAdverse": [
+        -35.025731,
+        109.993098
+      ],
+      "accountedRetainedState": [
+        -21.095787,
+        144.225215
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        8800.0
+      ],
+      "strippedAdverse": [
+        -28.689287,
+        77.980059
+      ],
+      "accountedRetainedState": [
+        -12.53069,
+        129.29564
+      ]
+    },
+    {
+      "xy": [
+        332.5,
+        11667.5
+      ],
+      "strippedAdverse": [
+        -35.520046,
+        106.287683
+      ],
+      "accountedRetainedState": [
+        -15.370685,
+        162.571417
+      ]
+    },
+    {
+      "xy": [
+        2825.0,
+        11667.5
+      ],
+      "strippedAdverse": [
+        0.0,
+        31.073685
+      ],
+      "accountedRetainedState": [
+        2.731,
+        41.354783
+      ]
+    },
+    {
+      "xy": [
+        2850.0,
+        332.5
+      ],
+      "strippedAdverse": [
+        -0.980995,
+        35.309117
+      ],
+      "accountedRetainedState": [
+        12.964425,
+        85.047817
+      ]
+    },
+    {
+      "xy": [
+        3917.5,
+        3917.5
+      ],
+      "strippedAdverse": [
+        -69.236386,
+        127.362302
+      ],
+      "accountedRetainedState": [
+        -57.301816,
+        155.863347
+      ]
+    },
+    {
+      "xy": [
+        3917.5,
+        6000.0
+      ],
+      "strippedAdverse": [
+        -61.195964,
+        122.435104
+      ],
+      "accountedRetainedState": [
+        -50.044552,
+        151.706289
+      ]
+    },
+    {
+      "xy": [
+        3917.5,
+        8082.5
+      ],
+      "strippedAdverse": [
+        -70.271954,
+        125.546369
+      ],
+      "accountedRetainedState": [
+        -58.254921,
+        154.890676
+      ]
+    },
+    {
+      "xy": [
+        4377.5,
+        8082.5
+      ],
+      "strippedAdverse": [
+        -32.053099,
+        77.356506
+      ],
+      "accountedRetainedState": [
+        -27.385834,
+        87.906951
+      ]
+    },
+    {
+      "xy": [
+        4377.5,
+        11667.5
+      ],
+      "strippedAdverse": [
+        -33.207486,
+        87.663492
+      ],
+      "accountedRetainedState": [
+        -18.10324,
+        127.12844
+      ]
+    },
+    {
+      "xy": [
+        4750.0,
+        332.5
+      ],
+      "strippedAdverse": [
+        -36.296808,
+        100.711284
+      ],
+      "accountedRetainedState": [
+        -21.405801,
+        139.067493
+      ]
+    },
+    {
+      "xy": [
+        4785,
+        3917.5
+      ],
+      "strippedAdverse": [
+        -30.597572,
+        72.380229
+      ],
+      "accountedRetainedState": [
+        -26.328838,
+        81.748275
+      ]
+    },
+    {
+      "xy": [
+        7215,
+        3917.5
+      ],
+      "strippedAdverse": [
+        -30.597572,
+        72.380229
+      ],
+      "accountedRetainedState": [
+        -26.328838,
+        81.748275
+      ]
+    },
+    {
+      "xy": [
+        7250.0,
+        332.5
+      ],
+      "strippedAdverse": [
+        -36.296808,
+        100.711284
+      ],
+      "accountedRetainedState": [
+        -21.407169,
+        139.062589
+      ]
+    },
+    {
+      "xy": [
+        7622.5,
+        8082.5
+      ],
+      "strippedAdverse": [
+        -29.22072,
+        70.763027
+      ],
+      "accountedRetainedState": [
+        -24.320006,
+        82.812621
+      ]
+    },
+    {
+      "xy": [
+        7622.5,
+        11667.5
+      ],
+      "strippedAdverse": [
+        -33.207486,
+        87.663492
+      ],
+      "accountedRetainedState": [
+        -13.193122,
+        144.329061
+      ]
+    },
+    {
+      "xy": [
+        8082.5,
+        3917.5
+      ],
+      "strippedAdverse": [
+        -69.342421,
+        127.42159
+      ],
+      "accountedRetainedState": [
+        -56.23554,
+        160.356441
+      ]
+    },
+    {
+      "xy": [
+        8082.5,
+        6000.0
+      ],
+      "strippedAdverse": [
+        -61.195964,
+        122.435104
+      ],
+      "accountedRetainedState": [
+        -49.048743,
+        155.096256
+      ]
+    },
+    {
+      "xy": [
+        8082.5,
+        8082.5
+      ],
+      "strippedAdverse": [
+        -68.587949,
+        124.752874
+      ],
+      "accountedRetainedState": [
+        -55.849643,
+        155.943429
+      ]
+    },
+    {
+      "xy": [
+        9150.0,
+        332.5
+      ],
+      "strippedAdverse": [
+        -0.980995,
+        35.309117
+      ],
+      "accountedRetainedState": [
+        6.803007,
+        63.318054
+      ]
+    },
+    {
+      "xy": [
+        9175.0,
+        11667.5
+      ],
+      "strippedAdverse": [
+        0.0,
+        31.073685
+      ],
+      "accountedRetainedState": [
+        15.530032,
+        86.191033
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        332.5
+      ],
+      "strippedAdverse": [
+        -35.520046,
+        105.815527
+      ],
+      "accountedRetainedState": [
+        -16.217124,
+        159.19363
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        3100.0
+      ],
+      "strippedAdverse": [
+        -26.999569,
+        74.1364
+      ],
+      "accountedRetainedState": [
+        -5.990919,
+        143.342895
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        5786.5
+      ],
+      "strippedAdverse": [
+        -32.246212,
+        103.959561
+      ],
+      "accountedRetainedState": [
+        -7.111961,
+        179.414232
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        8613.5
+      ],
+      "strippedAdverse": [
+        -28.203986,
+        82.398625
+      ],
+      "accountedRetainedState": [
+        -12.644349,
+        129.640779
+      ]
+    },
+    {
+      "xy": [
+        11667.5,
+        11667.5
+      ],
+      "strippedAdverse": [
+        -35.520046,
+        107.454588
+      ],
+      "accountedRetainedState": [
+        -14.086175,
+        167.910785
+      ]
+    }
+  ],
+  "remaining": [
+    "True site/foundation and group stiffness remain unproved; signed rolled-beam reactions are not permission to borrow gravity from maximum roof layer allowances.",
+    "Need shifted roof/corner ties joined to every final shaft, floor bracing and arch/movement case before selection. Earlier 52-head schedule is a named different roof reference.",
+    "Upper slot/bolt/crown, eight full lower force crossings, lateral restraint/manufacture, plate/thermal/capillary and external acceptance not admitted."
+  ],
+  "rcEdgeAlternative": {
+    "role": "Preferred next floor-collector development. Same eight lower ties and signed source loads; no structural geometry selected.",
+    "axisEdgeToStairAndEntryVoidMM": 85.0,
+    "RC200ActualNarrowField": {
+      "b": 85.0,
+      "h": 200,
+      "As": 64.08849,
+      "d": 169.0,
+      "neutralAxis": 24.104291,
+      "MR": 4.440449,
+      "xOverD": 0.142629,
+      "clearAcross": 11.0
+    },
+    "275Downstand": {
+      "b": 140,
+      "h": 275,
+      "As": 804.247719,
+      "d": 203.5,
+      "neutralAxis": 183.651744,
+      "MR": 45.471223,
+      "xOverD": 0.902466,
+      "clearAcross": 22
+    },
+    "downstandSoffit": 3095,
+    "downstandMarginOverTypical3065Extrados": 30,
+    "650Upstand": {
+      "b": 140,
+      "h": 650,
+      "As": 804.247719,
+      "d": 578.5,
+      "neutralAxis": 183.651744,
+      "MR": 176.598568,
+      "xOverD": 0.317462,
+      "clearAcross": 22
+    },
+    "floorTopBottom": [
+      3370,
+      3170
+    ],
+    "upstandBottomTop": [
+      3170,
+      3820
+    ],
+    "upperFFL": 3450,
+    "heightAboveUpperFinishedFloor": 370,
+    "minimumSill": 750,
+    "minimumRawSillReserve": 380,
+    "all25UpperFacadeOpeningsAreWindows": true,
+    "roofSourceForceKept": true,
+    "maximumMomentInclFullNewConcrete": 121.846383,
+    "maximumShearInclFullNewConcrete": 136.784032,
+    "VRs": 341.357262,
+    "VRstrut": 301.970592,
+    "loads": "Use full 140x650 concrete as adverse additional G on each actual short span, give none as counterweight. No upper wall/slab displacement reduction or steel UB weight included in this alternative.",
+    "cage": "4H16 per face in two rows of two, 25mm clear vertical. Closed H8/100, 35mm nominal cover, 16mm aggregate comparator. 22mm across vs21mm required. Compare actual placement, cover tolerance and bar congestion; no fabricated cage, torsion or development admission.",
+    "concreteGrossM3": 5.642,
+    "concreteAboveFormerSlabM3": 3.906,
+    "grossConcreteKN": 141.05,
+    "nominalLongitudinalSteelKgNoLaps": 782.85473,
+    "nominalLinksKgNoCornersSplices": 349.348923,
+    "straightCentered32SleevePlanDeficit": 10,
+    "geometry": "Beam stays in the actual 140 wide upper wall core and starts at existing RC200 soffit: no stair/entry clipping, drop below ceiling or change to E02 plant port extrados3115. Replaces masonry below all first-floor sills. Thermal material and finishes at 62m remain costs, including void/cavity edges. Do not use an upper doorway here without reanalysis.",
+    "failure": "The straight 32mm through-sleeve for M24 fails the two top/bottom bar planes by 10mm, before clearance. Need a positive developed standard reinforced anchor beyond the upper-only rod (or locally relocate/rearrange cage with checked cover/room footprint). Also verify one-sided slab transfer/chord eccentricity, roll/torsion, cage corners/splices, penetrations, real bearings and all eight ground stops. No pull-out bond or slab flange credit.",
+    "ordinaryPositiveRodDetail": {
+      "appliesTo": "14 intermediate stations, not the eight corners. At corners both axes and actual continuous ground-tie/RC jamb cage must meet; no hollow flange or unpriced return assumed.",
+      "upperAndLowerCage": "6H12 per face, three rows of two, 25 clear vertically /35 cover/H8 closed links at100; entire section rechecked with reduced lever arm. Through both cages a plain 16mm stud crosses orthogonally to the longitudinal bars inside the central gap, not a 32mm tube.",
+      "section": {
+        "b": 140,
+        "h": 650,
+        "As": 678.584013,
+        "d": 564.0,
+        "neutralAxis": 154.956159,
+        "MR": 148.113511,
+        "xOverD": 0.274745,
+        "clearAcross": 30
+      },
+      "MR": 148.113511,
+      "VRstrut": 294.401753,
+      "VRlinks": 332.801203,
+      "studPair": "Two permanent M16 grade8.8 through bolts at \u00b150mm along the wall, rolled thread tensile area157. Position between H8 hoops (hoop centres at \u2212100,0,+100). M24 upper roof rod nuts beneath 220x100x30 crossbar, two stud nuts above. Crossbar underside45 above RC upstand for central nut. Body within 140mm core; local warm-side access/lining needs pricing. Facing may not grip/carry load.",
+      "studPairPitch": 100,
+      "singleStudDesignUltimate": 90.432,
+      "oneStudMaxAt10mmEccentricity": 64.363124,
+      "crossbarCentreNetElasticStress": 248.314522,
+      "bottomBearing": "Common 220x100x25 bar under actual RC soffit, two 100x100 compression patches less18mm hole; captive bolt heads/washer below, up to 45mm projection to Z3125. Leave local formed pocket in solid jamb/pad. No concrete tensile cone or friction capacity. Permanent cast-in rods/foot are not renewable independently of support; local bedding/plate splitting/placement, fire and thermal detailing still qualify.",
+      "bottomPatchPressure": 6.604373,
+      "bottomPlateCantileverStress": 79.252479,
+      "nominalHorizontalEachSideClear": 7.0,
+      "combinedSetoutBudgetEachSide": 4,
+      "residualEachSide": 3.0,
+      "grossLongitudinalSteelKgNoLaps": 660.533678,
+      "platesMassPerOrdinaryStationKg": 9.4985,
+      "upperFittingNominalNutTopRelativeFFL": 470,
+      "bottomAssemblyAboveTypicalArchExtrados": 60,
+      "unresolved": "Locate special portal/ground arch extrados and real bedding at all stations. Full direct corner detail, shear-torsion, local transverse splitting, through-bolt fit/nuts and actual welded-ring roof connection remain open."
+    },
+    "materialDisplacement": {
+      "basis": "Gross 25kN/m3 RC versus mapped historical RC200 footprint and the four proposed L-piers. New concrete partly replaces continuous below-sill upper core (16..25kN/m3); 80mm from structural top to FFL not assumed guaranteed masonry. Below-soffit bearings/interfaces not claimed. Net excludes any further old material outside the slab/pier mask, construction rebates, double-count relief for displaced bar volume and bar mass. Do not use these net figures as retained wind counterweight.",
+      "grossPlan": 8.68,
+      "existingLCoresArea": 1.0416,
+      "existingSlabOrLAreaAtBase200": 6.027,
+      "reusedExistingRCVolume": 1.67412,
+      "upperMaterialReplacedM3Range": [
+        2.826208,
+        3.43728
+      ],
+      "additionalConcreteLessDisplacedMaterialKNRange": [
+        13.265,
+        53.977672
+      ],
+      "steelSeparate": "About1.01t nominal longitudinal/link steel before laps/corners, plus14 ordinary plate pairs at9.50kg per pair. Rolled comparator has2.294t of section alone; its support plates, local steel, any displaced old material and eight corner details are not a like-for-like installed quantity."
+    }
+  }
+}
