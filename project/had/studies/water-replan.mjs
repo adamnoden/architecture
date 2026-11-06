@@ -113,7 +113,10 @@ export function verifyArchitecturalDevelopment(model,renewal,bridge,passage,curr
  for(const[key,value]of Object.entries(base.groundFurniture))if(!changed.has(key))assert.deepEqual(model.groundFurniture[key],value,'Retained furnished occurrence drift: '+key);
  verifyServicesOccurrences(model,current);verifyNorthIntakeJoin(model,renewal);verifyClearWorkingDomains(model,renewal.servicePlatformRegions);
  verifyNorthProtectiveReturn(model.northProtectiveReturn,model);verifyThresholdMaintainedState(model.southCourtThresholdReference,renewal);
- const rain=model.maintenanceRainReference;assert(rain.northMaintenance.physicalWeatherAccepted===false&&rain.eastMaintenance.physicalWeatherAccepted===false);
+ const rain=model.maintenanceRainReference;
+ assert.deepEqual(model.northNormalRoute.normal.renewal.coverStage,rain.northMaintenance.storage.coverStack,'Current coverStage drifts from actual rain-control storage');
+ assert.deepEqual(model.northNormalRoute.normal.crossIntake.renewal.storage,rain.northMaintenance.storage.shortModuleStack,'Current module storage drifts from rain-control storage');
+ assert(rain.northMaintenance.physicalWeatherAccepted===false&&rain.eastMaintenance.physicalWeatherAccepted===false);
  assert(model.gardenFailureBypass.checks.continuousAtOneGrade&&model.gardenFailureBypass.checks.clearOfNReceiver&&model.gardenFailureBypass.checks.clearOfEWork);
  assert(model.courtEastWindow6850.proof.minimumConservativeBodyReserve>=25);
  const entry=renewal.courtCollector.actualOpenEntries,c=entry.catchCover;
@@ -311,7 +314,7 @@ export function deriveWaterReplan({servicesText} = {}) {
       unbackedOpeningsBelowCourt:0,
       blockedPath:'Blocked N fills the same fullheight outdoor wetlined trough. Water returns UP through its open perforated grate and over the court-level folded perimeter onto the exposed court, reaching the independent E edges. The40trial-depth dashed line is not a spill into a protected void.',
       permittedWetSurfaces:'Exterior metal wet faces, grating, adjacent court stone and exterior RC/paver support at/above the folded return are permitted to wet. No below-return aperture into occupied floor/insulation/air-gas/solum void is part of this reference. Concrete/metal moisture and actual joint qualification remain MAT/RWT.',
-      protectedBoundary:'Nfloor/DPC located−30 remains the lower protected join. Quiet−80 +25splash +25tolerance reaches−30; fullheight return−110 is an exterior overflow datum, not certified first harm.'},
+      protectedBoundary:'HISTORICAL prior reference: N−30 DPC/quiet−80. CURRENT assembly protects it behind model.northProtectiveReturn; actual15crest/quiet−35 is in model.firstWetReference. Fullheight exterior Nreturn remains distinct from certifiedfirstharm, which isNULL.'},
     receivingOpening:{plan:[4900,7452,250,250],bottomZ:-212.02,role:'Open continuous junction into retained longitudinal N liner, no raised lip or pressure joint.'},
     hydraulicScope:'Current40×250 crossbody and2950 inlet require new full-duty/loss/fouling proof. No old3500-width or80-void capacity admission is carried forward.'};
   nr.inletVoid=68;nr.crossCourtBottom=[-192,-213.75,-206];
@@ -350,6 +353,10 @@ export function deriveWaterReplan({servicesText} = {}) {
   assert(nr.inletRegions.every(r=>r[0]+r[2]<=5250||r[1]>=7400));
   model.northNormalRoute.geometryProof=verifyNorthIntakeJoin(model,renewal);
   model.maintenanceRainReference=deriveMaintenanceRain(model,renewal);
+  nr.renewal.historicalCoverStage=nr.renewal.coverStage;
+  nr.renewal.coverStage=structuredClone(model.maintenanceRainReference.northMaintenance.storage.coverStack);
+  nr.crossIntake.renewal.storage=structuredClone(model.maintenanceRainReference.northMaintenance.storage.shortModuleStack);
+  nr.renewal.rainState='CURRENT staged maintenanceRainReference controls: courtcatch/Edrain first forshortmodules; thenloggiaroof/separatepipe forlongliner. E remains assembled/full-duty; no inherited broad-relief dependence.';
   const normalAtMouth=northEnvelope.protectedWater.normal.carrierBottom.find(p=>p[0]===7750)[1];
   assert.equal(normalAtMouth,model.southCourtThresholdReference.primaryTray.normalJoin.receivingCarrierBottom);
   model.northProtectiveReturn=deriveNorthProtectiveReturn(model);

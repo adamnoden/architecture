@@ -83,7 +83,7 @@ export function verifyMaintenanceRain(v,model,renewal){
  const c=pipe.temporaryPipeCover;assert(c.clearHole[0]<=pipe.route.at(-1)[0]-r&&c.clearHole[0]+c.clearHole[2]>=pipe.route.at(-1)[0]+r&&c.clearHole[1]<=pipe.route.at(-1)[1]-r&&c.clearHole[1]+c.clearHole[3]>=pipe.route.at(-1)[1]+r,'Court pipe blocked by walking cover');
  assert(pipe.route.at(-1)[2]<c.coverZ[0]&&pipe.route.at(-1)[2]>-110,'Court pipe has no open drop below cover into hood');
  assert(pipe.route[0][2]>pipe.route[1][2]&&pipe.route[1][2]>pipe.route[2][2],'Court rain pipe rises before E');
- for(const[x,y]of n.courtRoof.posts){const f=[x-125,y-125,250,250];assert(!overlaps(f,well)&&!model.northNormalRoute.normal.inletRegions.some(r=>overlaps(f,r)),'N canopy foot occupies live intake/work opening');}
+ for(const[x,y]of n.courtRoof.posts){const f=[x-125,y-125,250,250];assert(!overlaps(f,well)&&!model.northNormalRoute.normal.inletRegions.some(r=>overlaps(f,r)),'N canopy foot occupies live intake/work opening');assert(!overlaps(f,n.storage.coverStack)&&!overlaps(f,n.storage.shortModuleStack),'Current Nstorage collides with canopy post');}
  assert.equal(n.loggiaRoof.pipe.headerNorthExtension,n.loggiaRoof.pipe.invertEnd[1]-n.loggiaRoof.postAxesY.at(-1),'Loggia drain header has phantom support');
  assert(!n.phaseControls.shortModules.loggiaPipePresent&&n.phaseControls.shortModules.longLinerIntact&&n.phaseControls.shortModules.courtRoofAndEDrainTested,'Short-module crew conflicts with installed loggia pipe');
  assert(n.loggiaRoof.pipe.axisX+64<n.loggiaRoof.postAxisX-50,'Loggia pipe clashes with roof post');

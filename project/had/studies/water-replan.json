@@ -11658,9 +11658,9 @@
           "lift": 600,
           "riggingHeightAboveBody": 150,
           "coverStage": [
-            4300,
-            5750,
-            1250,
+            4550,
+            4600,
+            600,
             1700
           ],
           "bodyStage": [
@@ -11675,7 +11675,7 @@
             400,
             4250
           ],
-          "rainState": "Incomingrain isolated and separatelydemonstratedtemporaryroute: cover/body staging occupiesbroadrelief; bothroutesNOTlive.",
+          "rainState": "CURRENT staged maintenanceRainReference controls: courtcatch/Edrain first forshortmodules; thenloggiaroof/separatepipe forlongliner. E remains assembled/full-duty; no inherited broad-relief dependence.",
           "endWorkBodyCentres": [
             [
               5025,
@@ -11706,7 +11706,13 @@
               10750
             ]
           ],
-          "joint": "100long removableCuUsaddle over20buttgap/40overlap eachside; separate2Cu gasket and adjustableclamps, no elastomer assumed. Toprelease, bodyliftsclear ofopenUsaddle. Sealing/forming/clampstroke/retainedresidues unqualified; exactlowestwaterweakjoint."
+          "joint": "100long removableCuUsaddle over20buttgap/40overlap eachside; separate2Cu gasket and adjustableclamps, no elastomer assumed. Toprelease, bodyliftsclear ofopenUsaddle. Sealing/forming/clampstroke/retainedresidues unqualified; exactlowestwaterweakjoint.",
+          "historicalCoverStage": [
+            4300,
+            5750,
+            1250,
+            1700
+          ]
         },
         "material": "1.5uncoatedcopper liner; seams/filler/flux/supports/retained treatments unqualified",
         "frame": {
@@ -11781,7 +11787,7 @@
             "unbackedOpeningsBelowCourt": 0,
             "blockedPath": "Blocked N fills the same fullheight outdoor wetlined trough. Water returns UP through its open perforated grate and over the court-level folded perimeter onto the exposed court, reaching the independent E edges. The40trial-depth dashed line is not a spill into a protected void.",
             "permittedWetSurfaces": "Exterior metal wet faces, grating, adjacent court stone and exterior RC/paver support at/above the folded return are permitted to wet. No below-return aperture into occupied floor/insulation/air-gas/solum void is part of this reference. Concrete/metal moisture and actual joint qualification remain MAT/RWT.",
-            "protectedBoundary": "Nfloor/DPC located−30 remains the lower protected join. Quiet−80 +25splash +25tolerance reaches−30; fullheight return−110 is an exterior overflow datum, not certified first harm."
+            "protectedBoundary": "HISTORICAL prior reference: N−30 DPC/quiet−80. CURRENT assembly protects it behind model.northProtectiveReturn; actual15crest/quiet−35 is in model.firstWetReference. Fullheight exterior Nreturn remains distinct from certifiedfirstharm, which isNULL."
           },
           "receivingOpening": {
             "plan": [
@@ -11856,9 +11862,9 @@
               "qualification": "Project10kg/positivecapture reference; actual bail/clamp/tool force and physical operation remain MAT/IAS."
             },
             "storage": [
-              4550,
+              5200,
               4600,
-              1250,
+              600,
               1700
             ],
             "westernModules": {

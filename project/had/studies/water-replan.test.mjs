@@ -184,6 +184,8 @@ test('each maintenance state locates rain interception and preserves the intact 
  const current=JSON.parse(readFileSync(new URL('../../mat/studies/whole-house-service-baseline.json',import.meta.url)));
  const bad=JSON.parse(JSON.stringify(v.model));bad.stair.undeclaredSelectionDrift=true;
  assert.throws(()=>verifyArchitecturalDevelopment(bad,v.renewal,v.bridge,v.passage,current,base),/Retained whole-house geometry drift/);
+ const storage=JSON.parse(JSON.stringify(v.model));storage.northNormalRoute.normal.renewal.coverStage=storage.northNormalRoute.normal.renewal.historicalCoverStage;
+ assert.throws(()=>verifyArchitecturalDevelopment(storage,v.renewal,v.bridge,v.passage,current,base),/Current coverStage/);
  const cassette=JSON.parse(JSON.stringify(v.renewal));cassette.courtCollector.actualOpenEntries.catchCover.moduleLength=1100;
  assert.throws(()=>verifyArchitecturalDevelopment(v.model,cassette,v.bridge,v.passage,current,base),/cannot pass real gate/);
  });
