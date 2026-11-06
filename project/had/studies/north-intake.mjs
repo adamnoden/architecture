@@ -13,7 +13,7 @@ export function renderNorthIntake(model,renewal){
  s+=rect([7200,7750,519.5,500],'#777268');
  s+=text(65,337,`N inlet x${i[0]}..${i[0]+i[2]}, y${i[1]}..${i[1]+i[3]}`);
  s+=text(65,361,'E well and fixed north guard endY7400; N endsX7200 / E starts7300:100 separation.');
- s+=text(65,385,'E:450 west lip−110 +100 feeder; north wall edge ZERO credit. Guard minimum−50 stays30 above quiet−80.');
+ s+=text(65,385,'E:TRUE west mouth at court edge6125,325 effective lip; no disabled-N or wall-edge approach credit.');
  const sx=x=>60+(x-4250)*.32,z=z=>415+(-z-90)*1.7;
  s+=text(35,425,'Cross section at the conservative north edgeY7750',18);
  s+=`<path d="M${sx(4250)},${z(-110)} H${sx(7200)}" stroke="#757268" stroke-width="14" fill="none"/>`;
@@ -27,7 +27,7 @@ export function renderNorthIntake(model,renewal){
  s+=text(65,750,'Carrier bottom−213.75@7750 → −256.25@12000 → −268.25@13200.');
  s+=text(65,777,`Covered terminal toY${term.endY}, invert${term.invert}; closed downroute outlet${term.closedDownroute.outlet}.`);
  s+=text(65,804,`Separate N/W receiver ${term.receiver.bounds.join('/')} max trial plane${term.receiver.nominalWaterPlane};200 air-gap reference.`);
- s+=text(65,840,'N−30 floor/DPC boundary remains controlling: quiet−80 +25splash +25tolerance; certified first harm NULL.');
+ s+=text(65,840,'New protective shoe/collar crest15 shields historical−30 DPC: quiet−35 +25splash +25tolerance; first harm NULL.');
  s+=text(65,870,'New intake, short saddles/supports and Nfull-duty proof remain current MAT/RWT/STR obligations.');
  s+=text(65,900,'No shared E catch, pressure trap, buried inaccessible water chamber or invented simultaneous double fault.');
  return s+'</svg>\n';

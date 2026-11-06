@@ -17,7 +17,7 @@ export function verifyCourtEastWindow(v){
   assert(c.eastGuardState==='RETAINED; ALL COVERS LOCKED CLOSED','Cleaning requires retained guard and closed covers');
   assert(c.glassZ[0]>c.guardTopZ,'Fixed-head cleaning pole crosses retained guard');
   assert(c.closedWalkingCoverReference.bottomZ-c.closedWalkingCoverReference.hoodTopZ>=25,'Walking cover underside hits retained hood');
-  assert(c.body[1]+300<=c.closedWalkingCoverReference.permanentIntakeNotch[1]-100,'Cleaning operator enters permanent intake notch');
+  assert(c.body[0]-300>=c.closedWalkingCoverReference.permanentIntakeNotch[0]+c.closedWalkingCoverReference.permanentIntakeNotch[2]+25,'Cleaning operator enters permanent intake notch');
   const maxPole=Math.max(...c.glassZ.map(z=>Math.hypot(c.glassX-c.body[0],z-c.shoulderWorldZ)));
   assert(maxPole<=c.poleWorkingLength,'Cleaning head cannot reach complete glass height');
   return {minimumConservativeBodyReserve:bodyMargin-4,maximumConservativeHandleReach:reach+4,maximumCleaningPoleReach:maxPole,
@@ -35,12 +35,13 @@ export function deriveCourtEastWindow(model,renewal){
       glassX:7750,glassZ:[2500,2850],poleWorkingLength:1800,
       eastGuardState:'RETAINED; ALL COVERS LOCKED CLOSED',guardTopZ:1100,
       closedWalkingCoverReference:{topZ:0,bottomZ:-60,modules:5,modulePlan:[305,1100],
-        eastWestLedges:{width:60,x:[6125,7590],y:[6300,7400],z:[-120,-60]},
+        eastWestLedges:{width:60,eastX:7590,westSegments:[{x:6125,y:[6300,6950]},{x:6225,y:[6950,7400]}],z:[-120,-60],role:'Original west ledge is removed across directmouth; offsetledge6225 lies beyond100 freefall slot. No−60 sill remains in water approach.'},
         hoodTopZ:-110,grossUndersideToHood:50,
         permanentIntakeNotch:renewal.courtCollector.actualOpenEntries.coverNotch.plan,
         notchScope:'NEcorner7200..7650/Y7300..7400 is permanently open/guarded, not walking cover. Actual cleaning body maxY7150 remains150 south. Reprofile modularcovers/edgecapture around this source notch; no plate spans inlet.',
-        accessAdapter:{plan:[5125,6600,1000,600],courtEndZ:-74,coverEndZ:0},
-        scope:'Explicit mineral/metal load-bearing closed-cover territory, no credited insulation or hood bearing. Actual1525 span/ledge/capture loads require STR/MAT proof. The74rise is crossed by the1000 ramp reference; no accessibility-category acceptance.'},
+        accessAdapter:{plan:[5125,6600,1100,600],courtEndZ:-74,coverEndZ:0,deckThickness:15,lipUndersideZ:-15,solidFill:false,edgeBeamShadowY:[7175,7275],
+          role:'Open-sided framed ramp, not a filled dam. At wet lip its−15 underside is20 above quiet−35; sidebeam/postshadow is excluded from credited inlet. Complete support/load admission remains STR.'},
+        scope:'Explicit mineral/metal load-bearing closed-cover territory, no credited insulation or hood bearing. Actual1525 span/ledge/capture loads require STR/MAT proof. The74rise is crossed by the1100 open-framed ramp reference; no accessibility-category acceptance.'},
       leafCleaning:{innerFace:'Clean with leaf CLOSED from gallery body[8508.5,6850]; ordinary handled wiper reaches750..2500.',
         exteriorFace:'Open ONE leaf90 using the proved lateral path; clean exposed exterior face from its end-side gallery body[8870,6800] (north leaf mirrored). Fixed arched head stays closed and is cleaned externally above the guard.',
         poleWorkingLength:1800,physicalAccessQualified:false},

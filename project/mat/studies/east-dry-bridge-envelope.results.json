@@ -3,7 +3,7 @@
   "status": "MAT assembly and envelope proof of the actual HAD successor; no technical/material acceptance",
   "HAD_source": {
     "path": "project/had/studies/water-replan.json",
-    "blob": "ce09ea0d5fc51268b1d2ff79ea68dde5793a2906",
+    "blob": "966563c97a9d3be1da6367410b365b2f34105535",
     "declaredStatus": "WIP JOINED HYPOTHESIS \u2014 NOT A SELECTED HOUSE OR COMPLETED HAD PACKET"
   },
   "east_weather_layer_faces_mm": [
@@ -111,20 +111,30 @@
   },
   "intake_support_collisions": [],
   "surface_activation_probe": {
-    "scope": "Effective-crest lower-bound screen only; stage uses declared 600-wide ideal head, not an earned inlet stage or universal hydraulic bound; actual cut/cover/lip and first harm remain open",
-    "court_floor_at_well_north_mm": -96.0,
-    "court_floor_at_collector_north_mm": -110.0,
-    "declared_crest_mm": -110,
-    "direct_well_effective_crest_lower_bound_mm": -96.0,
-    "collector_effective_crest_conditional_lower_bound_mm": -110.0,
-    "collector_north_plan_width_mm": 350,
-    "declared_ideal_width_assumption_mm": 600.0,
-    "ideal_head_screen_mm": 23.19724035643746,
-    "qualified_first_harm_margin_mm": null,
-    "direct_well_stage_at_declared_ideal_head_mm": -72.80275964356254,
-    "direct_well_margin_to_north_loggia_floor_mm": -37.19724035643746,
-    "collector_conditional_stage_at_declared_ideal_head_mm": -86.80275964356254,
-    "collector_conditional_margin_to_north_loggia_floor_mm": -23.19724035643746
+    "scope": "Actual direct-west intake/approach and constructed protective-return budget. Ideal crest screen is NOT approach/loss/capture/debris qualification.",
+    "actual_mouth_plane_x_mm": 6125,
+    "actual_unobstructed_intervals_mm": [
+      [
+        6950,
+        7175
+      ],
+      [
+        7275,
+        7375
+      ]
+    ],
+    "actual_gross_court_crest_ends_mm": [
+      -78,
+      -96
+    ],
+    "actual_activation_reference_mm": -95,
+    "constructed_protective_crest_mm": 15,
+    "permitted_quiet_stage_mm": -35,
+    "splash_budget_mm": 25,
+    "tolerance_budget_mm": 25,
+    "ideal_crest_screen_lps": 6.861237247721429,
+    "assigned_lps": 3.60375,
+    "qualified_first_harm_margin_mm": null
   },
   "intake_flow_void": {
     "representation": "OUTER REMOVABLE HOOD ENVELOPE, NOT A SOLID WATER BARRIER",

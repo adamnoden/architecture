@@ -101,15 +101,14 @@ access={'stair_run_mm':stepplan[2],'stair_rises':steps['rises'],'stair_rise_mm':
  'gate_and_hardware_status':'West guard gate and actual posts/handholds/capture/adapter still need complete coordinates; no physical release acceptance',
  'boundary_status':'Well end shares x7650 beam/node face; zero gross reserve requires actual lining/support/joint resolution'}
 well_north_z=court_z(well[1]+well[3]);collector_north_z=court_z(collector['plan'][1]+collector['plan'][3])
-activation={'scope':'Effective-crest lower-bound screen only; stage uses declared 600-wide ideal head, not an earned inlet stage or universal hydraulic bound; actual cut/cover/lip and first harm remain open',
- 'court_floor_at_well_north_mm':well_north_z,'court_floor_at_collector_north_mm':collector_north_z,
- 'declared_crest_mm':h['hydraulicProbe']['independentCourtCrestTrialZ'],
- 'direct_well_effective_crest_lower_bound_mm':max(well_north_z,h['hydraulicProbe']['independentCourtCrestTrialZ']),
- 'collector_effective_crest_conditional_lower_bound_mm':max(collector_north_z,collector['northSurfaceLipZ']),
- 'collector_north_plan_width_mm':collector['plan'][2],'declared_ideal_width_assumption_mm':h['hydraulicProbe']['effectiveWidthM']*1000,'ideal_head_screen_mm':h['hydraulicProbe']['idealBroadCrestHeadMm'],'qualified_first_harm_margin_mm':None}
-for label,key in [('direct_well','direct_well_effective_crest_lower_bound_mm'),('collector_conditional','collector_effective_crest_conditional_lower_bound_mm')]:
- stage=activation[key]+activation['ideal_head_screen_mm'];activation[label+'_stage_at_declared_ideal_head_mm']=stage
- activation[label+'_margin_to_north_loggia_floor_mm']=wl['courtNorth']-stage
+entry=n['courtCollector']['actualOpenEntries'];fw=h['model']['firstWetReference'];screen=h['hydraulicProbe']['actualEntryIdealScreen']
+activation={'scope':'Actual direct-west intake/approach and constructed protective-return budget. Ideal crest screen is NOT approach/loss/capture/debris qualification.',
+ 'actual_mouth_plane_x_mm':entry['west']['planeX'],'actual_unobstructed_intervals_mm':entry['west']['creditedIntervals'],
+ 'actual_gross_court_crest_ends_mm':entry['west']['crestEnds'],'actual_activation_reference_mm':fw['activationReferenceZ'],
+ 'constructed_protective_crest_mm':fw['limitingLocatedJoin']['z'],'permitted_quiet_stage_mm':fw['permittedQuietStage'],
+ 'splash_budget_mm':fw['splashBudget'],'tolerance_budget_mm':fw['toleranceBudget'],
+ 'ideal_crest_screen_lps':screen['totalLps'],'assigned_lps':h['hydraulicProbe']['assignedInwardRoofAndCourtLps'],
+ 'qualified_first_harm_margin_mm':None}
 
 assert 'ENVELOPE' in shield['representation']
 assert contains(shield['plan'],shaft['plan']) and contains(collector['plan'],shaft['plan'])
@@ -218,10 +217,10 @@ svg.append(f'<circle cx="{WX(faces[glass_i])}" cy="{WZ(-130)}" r="15" fill="none
 text(30,1610,f'Floor glass ends at {b["permanentDryGalleryClearX"][1]}; vertical glass starts {faces[glass_i]:g}: {thermal_gap:g} horizontal separation.',14,'#a12b23')
 text(30,1640,'RC / masonry thermal bridge, air line, DPC / cavity tray and first-wet closure remain unqualified.',14,'#a12b23')
 text(30,1710,'Court activation and first-wet screen: actual surface before declared crest',18)
-text(30,1745,f'Well north edge floor {well_north_z:g}; direct-well effective crest is at least {activation["direct_well_effective_crest_lower_bound_mm"]:g}.',14)
-text(30,1775,f'Collector reaches real north floor {collector_north_z:g}; -110 crest remains conditional on actual open lip / cover / cut.',14)
-text(30,1805,f'Declared 600-wide ideal head {activation["ideal_head_screen_mm"]:.3f}: direct-well probe {activation["direct_well_stage_at_declared_ideal_head_mm"]:.3f}; collector conditional {activation["collector_conditional_stage_at_declared_ideal_head_mm"]:.3f}.',14)
-text(30,1835,f'Margins to -110 north approach floor: {activation["direct_well_margin_to_north_loggia_floor_mm"]:.3f} / {activation["collector_conditional_margin_to_north_loggia_floor_mm"]:.3f}; NOT qualified first-harm margins.',14,'#a12b23')
+text(30,1745,f"Actual mouth x{entry['west']['planeX']}; court crest ends {entry['west']['crestEnds']}; effective325 of450 gross.",14)
+text(30,1775,f"Constructed crest {fw['limitingLocatedJoin']['z']}; quiet {fw['permittedQuietStage']} +25splash +25tolerance. Historical DPC-30 remains protected behind new shoe.",14)
+text(30,1805,f"Ideal downstream-crest screen {screen['totalLps']:.3f}L/s vs {h['hydraulicProbe']['assignedInwardRoofAndCourtLps']:.3f}; approach/capture/losses NOT qualified.",14)
+text(30,1835,'Certified first-harm margin NULL. No old600-wide/NEcollector screen is credited to the current direct-west intake.',14,'#a12b23')
 text(30,1870,f'Actual intake/support clashes: {len(node_clashes)} (red plan corners). A selected whole-house pass must have none.',14,'#a12b23')
 text(30,1900,'Water loss / debris / splash and actual first vulnerable material remain RWT / MAT proof.',14,'#a12b23')
 svg.append('</g></svg>\n')

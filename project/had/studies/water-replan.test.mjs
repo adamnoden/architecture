@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {verifyNorthProtectiveReturn} from './north-protective-return.mjs';
 import { verifyMaintenanceRain } from './maintenance-rain.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -106,17 +107,17 @@ test('the roof comparison assigns actual inward catchment and prices a full-pitc
 
 test('the actual inlet credits separate source-drawn edges and rejects a guard blocking either edge',()=>{
   const v=deriveWaterReplan(),e=v.renewal.courtCollector.actualOpenEntries,s=v.hydraulicProbe.actualEntryIdealScreen;
-  assert.equal(v.model.firstWetReference.limitingLocatedJoin.z,-30);
-  assert.equal(v.model.firstWetReference.permittedQuietStage,-80);
+  assert.equal(v.model.firstWetReference.limitingLocatedJoin.z,15);
+  assert.equal(v.model.firstWetReference.permittedQuietStage,-35);
   assert.equal(v.model.firstWetReference.qualifiedFirstSusceptibleZ,null);
   assert.equal(s.north350AlonePass,false);
   assert.equal(s.combinedNominalPass,true);
   assert(s.totalLps>v.hydraulicProbe.assignedInwardRoofAndCourtLps);
   for(const [mutate,message]of [
-    [x=>x.guardExtension.lowestSolidZ=-100,/occludes water-level west approach/],
+    [x=>x.guardExtension.lowestSolidZ=-50,/occludes water-level west approach/],
     [x=>x.north.creditedWidth=350,/Wall-edge north entry/],
     [x=>x.guardExtension.floorFeet=2,/floor feet/]
-  ]){const copy=JSON.parse(JSON.stringify(e));mutate(copy);assert.throws(()=>verifyCollectorOpenEntries(copy,30),message);}
+  ]){const copy=JSON.parse(JSON.stringify(e));mutate(copy);assert.throws(()=>verifyCollectorOpenEntries(copy,75),message);}
 });
 
  test('current N intake and renewal remain physically separate from the complete E well',()=>{
@@ -158,3 +159,11 @@ test('each maintenance state locates rain interception and preserves the intact 
   [x=>x.northMaintenance.courtRoof.pipe.route.at(-1)[2]=150,/drop below cover/]
  ]){const bad=JSON.parse(JSON.stringify(m));change(bad);assert.throws(()=>verifyMaintenanceRain(bad,v.model,v.renewal),message);}
 });
+
+ test('new north protection shields the historical lower DPC with actual shoe/weep/collar crests',()=>{
+ const v=deriveWaterReplan(),p=v.model.northProtectiveReturn;assert.deepEqual(p.historicalInnerDpc,[-180,-30]);
+ assert.equal(v.model.firstWetReference.limitingLocatedJoin.z,15);assert.equal(v.model.firstWetReference.qualifiedFirstSusceptibleZ,null);
+ for(const mutate of [x=>x.sideShoes[0].weepBottom=-30,x=>x.portalCollars.crest=-30,x=>x.joints.wetFloorPenetrations=1]){const bad=JSON.parse(JSON.stringify(p));mutate(bad);assert.throws(()=>verifyNorthProtectiveReturn(bad,v.model));}
+ const rain=JSON.parse(JSON.stringify(v.model.maintenanceRainReference));rain.eastMaintenance.roof.portalJoin.geometricReserve=-1;
+ assert.throws(()=>verifyMaintenanceRain(rain,v.model,v.renewal),/wrapped intrados/);
+ });

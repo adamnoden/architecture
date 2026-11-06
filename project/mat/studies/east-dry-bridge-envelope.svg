@@ -65,10 +65,10 @@
 <text x="30" y="1610" font-size="14" fill="#a12b23">Floor glass ends at 9203; vertical glass starts 9370: 167 horizontal separation.</text>
 <text x="30" y="1640" font-size="14" fill="#a12b23">RC / masonry thermal bridge, air line, DPC / cavity tray and first-wet closure remain unqualified.</text>
 <text x="30" y="1710" font-size="18" fill="#17242e">Court activation and first-wet screen: actual surface before declared crest</text>
-<text x="30" y="1745" font-size="14" fill="#17242e">Well north edge floor -96; direct-well effective crest is at least -96.</text>
-<text x="30" y="1775" font-size="14" fill="#17242e">Collector reaches real north floor -110; -110 crest remains conditional on actual open lip / cover / cut.</text>
-<text x="30" y="1805" font-size="14" fill="#17242e">Declared 600-wide ideal head 23.197: direct-well probe -72.803; collector conditional -86.803.</text>
-<text x="30" y="1835" font-size="14" fill="#a12b23">Margins to -110 north approach floor: -37.197 / -23.197; NOT qualified first-harm margins.</text>
+<text x="30" y="1745" font-size="14" fill="#17242e">Actual mouth x6125; court crest ends [-78, -96]; effective325 of450 gross.</text>
+<text x="30" y="1775" font-size="14" fill="#17242e">Constructed crest 15; quiet -35 +25splash +25tolerance. Historical DPC-30 remains protected behind new shoe.</text>
+<text x="30" y="1805" font-size="14" fill="#17242e">Ideal downstream-crest screen 6.861L/s vs 3.604; approach/capture/losses NOT qualified.</text>
+<text x="30" y="1835" font-size="14" fill="#a12b23">Certified first-harm margin NULL. No old600-wide/NEcollector screen is credited to the current direct-west intake.</text>
 <text x="30" y="1870" font-size="14" fill="#a12b23">Actual intake/support clashes: 0 (red plan corners). A selected whole-house pass must have none.</text>
 <text x="30" y="1900" font-size="14" fill="#a12b23">Water loss / debris / splash and actual first vulnerable material remain RWT / MAT proof.</text>
 </g></svg>
