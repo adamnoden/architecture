@@ -9,14 +9,14 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-06T19:40:28.527Z",
-  "expiresAt": "2026-11-06T21:10:28.527Z",
+  "heartbeatAt": "2026-11-06T19:48:51.789Z",
+  "expiresAt": "2026-11-06T21:18:51.789Z",
   "checkpoint": {
-    "evidence": "Reviewed comparison1346 head3f023b7992bdb9f339e62aa269fb9abdd34ed63b/tree47f269057449f28a926fb8abf09e7ae22a62e93c includes currentmain80c0f941. Correct actualsteppedpanprofile pinned toowningmodule;80mmrise toapron/95tocrest and integral420/131.5 owningrenewalunderbound explicit. MATsuite/check/diffpass; figuresrendered. Rootapprovedboundedcomparison, awaitingexactheadCI.",
-    "next": "WaitexactheadCI then freshmerge-check and rootintegration. Aftermerge rebindsuccessor for root-authorised owningHAD panbody/storage correction and affectedconsumerregeneration.",
-    "blocker": "No envelopecompletion/admission. CurrentHAD360/130 body/400storage underbounds integral420/131.5; actualseal/movement/material/thermal/air-water dutiesremain open."
+    "evidence": "Verified1346 merged at e32625d46c4fd9520d4be9812c2ca20a1a135137 from exact3f023b79 with14CIpasses and freshpreflight. Rootauthorised narrowowningHAD integralpanbody/sweep/storage correction. Successor starts exactmergedmain; no newsource publication yet.",
+    "next": "Correct one owning fold/body derivation to1796x420x131.5, reprove draw/turn/storage and affected consumers; publish successor draft then bind itsPR before further source event.",
+    "blocker": "WholeMAT/physical/material/weather/force admission remain open; no broader replan authorised."
   },
-  "branch": "work/zerg-20261106-w5-envelope-join-b",
+  "branch": "work/zerg-20261106-w5-pan-envelope",
   "predecessor": {
     "leaseId": "6002020d-6ea1-4562-986b-9448eba5705a",
     "generation": 27,
