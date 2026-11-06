@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w2"
   },
   "claimedAt": "2026-11-06T07:38:16.280Z",
-  "heartbeatAt": "2026-11-06T11:36:52.550Z",
-  "expiresAt": "2026-11-06T13:06:52.550Z",
+  "heartbeatAt": "2026-11-06T12:03:29.197Z",
+  "expiresAt": "2026-11-06T13:33:29.197Z",
   "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "665c809b-2f61-44bd-8274-60a3eb7f0f12",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published e7af651d complete rain controls; local actual directwest mouth and constructed northshoe/collar return preserve historical minus30DPC behind new15crest; portal-profile-aware roof correction in progress.",
-    "next": "Publish bounded westmouth/protective return/canopy profile source, independent review, then architectural selection and exact CI.",
-    "blocker": "No selection until corrected actual approach/capture and wrapped-portal temporaryworks fit reproduce."
+    "evidence": "Final selected architectural-development source d397f0f58a531aed47d7dd7049617f26e215ede6 tree5c9d589f2d16b56d1087e1971c4321c67cf3f062, main19f1956 ancestry;19HAD+6MAT+sourceauth/repository checks pass; independent architectural/MAT/Services review passed.",
+    "next": "Await exact fullCI42214404744; fresh all3 lease preflights then commander expected-head integration, verify main and release completed.",
+    "blocker": "CI/integration pending only; no technical hydraulic/material/structural/physical/site admission is claimed. MAT packets remain open."
   },
   "pr": 1332
 }
