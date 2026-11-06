@@ -31,3 +31,26 @@ test('threshold reference cannot silently inherit a different rough opening, fra
     assert.throws(()=>deriveSouthCourtThreshold(changed));
   }
 });
+
+test('integral apron and floor underside are included in the pan draw, rotation and edge-on storage',()=>{
+  const v=deriveWaterReplan(),t=v.model.southCourtThresholdReference,p=t.maintainedState.panTask;
+  assert.deepEqual(t.pan.bodyEnvelope.plan,[5102,4030,1796,420]);
+  assert.deepEqual(t.pan.bodyEnvelope.z,[-56.5,75]);
+  assert.deepEqual(p.wholeBodyMaximum,[1796,420,131.5]);
+  assert.equal(p.clearDrawPlan[1],4030);
+  assert.equal(p.storage.height,450);
+  assert(verifyThresholdMaintainedState(t,v.renewal).bodyReserve>=25);
+  for(const [mutate,message]of [
+    [x=>x.maintainedState.panTask.wholeBodyMaximum[1]=360,/envelope omits integral apron/],
+    [x=>x.maintainedState.panTask.wholeBodyMaximum[2]=130,/envelope omits integral apron or floor thickness/],
+    [x=>x.maintainedState.panTask.planRotationRadius=Math.hypot(1796,360)/2,/rotation radius omits complete/],
+    [x=>x.maintainedState.panTask.clearDrawPlan[1]=4090,/draw reservation omits installed integral apron/],
+    [x=>x.maintainedState.panTask.storage.height=400,/storage omits complete integral body/],
+  ]){
+    const bad=structuredClone(t);mutate(bad);
+    assert.throws(()=>verifyThresholdMaintainedState(bad,v.renewal),message);
+  }
+  assert.equal(t.admission.material,false);
+  assert.equal(t.admission.weatherPhysical,false);
+  assert.equal(t.admission.geometricReference,false);
+});

@@ -10886,7 +10886,25 @@
             4090
           ],
           "crestZ": 15,
-          "role": "Rear leg folds to a dry-side floor apron behind the15 crest; clamp fixings stay on this dry side, never through the wet pan floor."
+          "profileYZ": [
+            [
+              4030,
+              0
+            ],
+            [
+              4060,
+              0
+            ],
+            [
+              4060,
+              15
+            ],
+            [
+              4090,
+              15
+            ]
+          ],
+          "role": "Integral rear leg folds through the authored stepped profile to the dry-side floor apron behind the15 crest. The apron travels with the whole pan; only its clamps/end captures release. Fixings never pass through the wet pan floor."
         },
         "bearingPads": [
           {
@@ -10944,7 +10962,25 @@
           ],
           "lipZ": -55
         },
-        "renewal": "Remove door leaves/frame/sill after erecting temporary weather screen and diverting rain; lift separately retained front grates/trays, release dry-side clamps/end captures, withdraw pan NORTH. No demolition of masonry or wet-floor fastener release is assumed."
+        "renewal": "Remove door leaves/frame/sill after erecting temporary weather screen and diverting rain; lift separately retained front grates/trays, release dry-side clamps/end captures, withdraw pan NORTH. No demolition of masonry or wet-floor fastener release is assumed.",
+        "bodyEnvelope": {
+          "plan": [
+            5102,
+            4030,
+            1796,
+            420
+          ],
+          "z": [
+            -56.5,
+            75
+          ],
+          "dimensions": [
+            1796,
+            420,
+            131.5
+          ],
+          "scope": "Nominal integral metal reference including stepped dry apron and floor underside. Fabrication bends, clamps, carrier and handling apparatus remain unqualified."
+        }
       },
       "primaryTray": {
         "plan": [
@@ -11264,25 +11300,13 @@
           }
         },
         "panTask": {
-          "wholeBodyMaximum": [
-            1796,
-            360,
-            130
-          ],
           "pullNorth": 500,
-          "clearDrawPlan": [
-            5050,
-            4090,
-            1900,
-            1360
-          ],
           "raisedEmptyHandlingField": [
             5050,
             4500,
             1900,
             1600
           ],
-          "planRotationRadius": 915.8624350850951,
           "turnCentre": [
             5700,
             5200
@@ -11308,10 +11332,27 @@
               150,
               1900
             ],
-            "height": 400,
-            "orientation": "Upright on long edge in captured rack after90degree plan turn"
+            "height": 450,
+            "orientation": "Upright on long edge in captured rack after90degree plan turn",
+            "storedBodyMaximum": [
+              131.5,
+              1796,
+              420
+            ]
           },
-          "role": "Frame/sill removed before pan. Capture entire pan, release dry-side floor clamps and accessible end laps, pull NORTH500 then lift in the clear exterior field; rear/end returns do not pass through retained frame. No wet-floor fastener cut."
+          "role": "Frame/sill removed before pan. Capture entire pan, release dry-side floor clamps and accessible end laps, pull NORTH500 then lift in the clear exterior field; rear/end returns do not pass through retained frame. No wet-floor fastener cut.",
+          "wholeBodyMaximum": [
+            1796,
+            420,
+            131.5
+          ],
+          "planRotationRadius": 922.2277376006429,
+          "clearDrawPlan": [
+            5050,
+            4030,
+            1900,
+            1420
+          ]
         },
         "incoming": {
           "transportEnvelope": [
@@ -11421,9 +11462,9 @@
         "ordinaryUseRestriction": "No simultaneous court-west window cleaning, normal court passage or second component storage in the same handling field. E well/guard and N inlet remain outside the turn/storage envelopes; rain diversion and temporary-screen weather duty must be verified before work.",
         "geometryProof": {
           "pass": true,
-          "reserveToStoredLeaves": 234.13756491490494,
-          "reserveToEGuard": 199.09272096379277,
-          "bodyReserve": 35.13716523458538,
+          "reserveToStoredLeaves": 227.77226239935715,
+          "reserveToEGuard": 192.72741844824498,
+          "bodyReserve": 28.771862719037586,
           "incomingConservativeGuardReserve": 42.28369883287962,
           "scope": "Exact reserved rotation/body/storage and release-reach screen; no clamp/force/kit/material/weather qualification."
         }
