@@ -46,7 +46,15 @@ if 'joint' in n:
  j=n['joint'];source=json.loads((R/'project/mat/studies/upper-access-renewal.json').read_text())['preferredJoint']
  assert j==source,'Actual HAD preferred joint drifts from MAT-owned assembly'
  assert n['assemblyContract']=={'preferredJoint':source},'Retired comparison remains an active assembly contract'
- assert n['selectedSequence']==j['sequence']
+ if 'rwtReceivingInterface' in h['model']:
+  interface=h['model']['rwtReceivingInterface']
+  assert interface['source']['path']=='project/rwt/studies/selected-receiving-interface.json'
+  m=interface['east']['maintenance']['sequence'];assert len(m)==4
+  assert j['sequence'][-1].count('Reopen E only after tests.')==1
+  final=j['sequence'][-1].replace('Reopen E only after tests.','Reopen E only after tests AND reinstatement/testing of the RWT outlet cartridge.')
+  expected=m[:1]+j['sequence'][:4]+m[1:2]+j['sequence'][4:-1]+m[3:]+[final]
+  assert n['selectedSequence']==expected,'RWT cartridge release/refit must stay inside open-cover MAT states'
+ else:assert n['selectedSequence']==j['sequence']
  assert portal[1]-portal[0]==900 and outboard[1]-outboard[0]==1000
  assert j['completeCouplingY'][0]>=outboard[0] and j['completeCouplingY'][1]<=outboard[1]
  assert j['reinforcingUFrame']['innerFrameX'][0]>max(q[1] for q in beams),'Wide joint crosses the900 gallery portal'

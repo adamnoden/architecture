@@ -4,6 +4,7 @@ These are bounded, unadopted RWT comparisons, not selected construction informat
 
 | Study | Owning interpretation | Retained evidence |
 |---|---|---|
+| Current selected N/E event, loss and receiving limits | [Selected-water investigation](../rwt-06-selected-water-event.md) | [Calculation](selected-water-event.mjs), [regressions](selected-water-event.test.mjs), [values](selected-water-event.json) |
 | Weathered east passage: court/plant space exchange | [Source-bound plan lower bound and architectural handoff](../rwt-06-court-plant-space-exchange.md) | [Source](court-plant-space-exchange.mjs), [tests](court-plant-space-exchange.test.mjs) |
 | Northeast east-passage corner-pier and plant-wall conflict | [Source-bound architectural negative gate](../rwt-06-east-corner-pier-trap.md) | [Source](court-east-corner-clearance.mjs), [tests](court-east-corner-clearance.test.mjs) |
 | Single open court-to-garden gravity surface (no divided drains) | [Source-bound architectural challenger](../rwt-06-full-width-surface.md) | [Source](court-full-width-surface.mjs), [tests](court-full-width-surface.test.mjs) |
@@ -39,3 +40,7 @@ node project/rwt/studies/copper-access-geometry.mjs
 ```
 
 Regenerate with the relevant command without `--check` only after reviewing changed inputs. The PE generator refuses a changed north-comparison input blob; the conventional comparison refuses a changed reviewed support-model blob until applicability is reassessed. Copper fixture dimensions live in their generators and must remain labelled as authored assumptions. The access-first calculation prints its bounded result and creates no generated files.
+
+- `graded-transfer-comparison.mjs` / `.json` / `.test.mjs`: unadopted finite-length replacement of the selected hood plunge within the same well; variable-width energy/roughness comparisons, zero-loss conservation and exact selected-source pin. No plan-turn, canopy-terminal, handler or first-wetting admission.
+
+- `graded-transfer-geometry.mjs` / `.json` / `.test.mjs` and geometry/canopy SVG sheets: one unadopted joined chute, light-panel captured retrieval and temporary north canopy-drain construction. This failed construction is unadopted; the PR separately proposes a conditional receiving/maintenance interface in HAD. The figures expose real support, access and hydraulic boundaries.
