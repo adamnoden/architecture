@@ -1,5 +1,7 @@
 # HAD-03 — selected compact B house with open north loggia
 
+**6November2026 current-source notice:** the [joined independent-water replan](water-replan-result.md) and [current model](studies/water-replan.json) supersede this disposition for architectural development. This historical model/proof remains unchanged; its common-mouth water limitation is not admitted by the successor.
+
 **Select the compact B/open north loggia as the HAD architectural development source.** The [exact model](studies/open-north-loggia.json) and its [generator](studies/open-north-loggia.mjs) own this selection: a 12 × 12 m structural shell, 9300 mm east spine, four bedrooms, an outdoor north loggia, west living room and east kitchen/dining room. This is one architectural disposition, with explicit room and maintenance costs. It does not adopt a site, technical system or construction issue.
 
 The accepted compiler baseline remains RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02, with its 9500 mm spine. Its drawings do **not** depict this B/9300 selection. Earlier A/B studies retain their dated source and proof identities. The existing TRIAD, HRS-TECHNICAL, ADE-MODEL and PLT-FINAL-PREP duties must migrate and reconcile the actual shared house; this result does not create a competing task graph.

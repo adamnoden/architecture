@@ -29,7 +29,7 @@ export function verifyNorthProtectiveReturn(v,model){
 }
 export function renderNorthProtectiveReturn(v){
  const x=z=>80+z*.7,y=z=>540-z*1.5;
- let s='<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="#fbfaf5"/><g font-family="sans-serif" fill="#222">';
+ let s='<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="980" viewBox="0 0 1200 980"><rect width="1200" height="800" fill="#fbfaf5"/><g font-family="sans-serif" fill="#222">';
  const t=(a,b,q,n=17)=>`<text x="${a}" y="${b}" font-size="${n}">${q}</text>`;
  s+=t(35,35,'N FLOOR PROTECTIVE RETURN · CONSTRUCTED REFERENCE',24);
  s+=t(35,75,'Old innerDPC−180..−30 stays behind this shoe/tray; geometric crest15, certified first harm NULL.');
@@ -43,7 +43,7 @@ export function renderNorthProtectiveReturn(v){
  s+=t(520,365,'100 accessible laps,75 end dams, no clear-path upstand.');
  s+=t(520,410,'Quiet−35 +25 splash +25 tolerance = geometric15.');
  s+=t(520,450,'Outdoor Nfloor may wet; occupants use west bypass.');
- s+=t(35,690,'Actual metal/mineral seals, movement, cavities, retained residues and physical first-wetting remain MAT/RWT/OAS duties.');
- s+=t(35,730,'This new protective assembly changes the reference; it does not turn the historical−30 DPC into a qualified higher datum.');
+ s+=t(35,900,'Actual metal/mineral seals, movement, cavities, retained residues and physical first-wetting remain MAT/RWT/OAS duties.');
+ s+=t(35,940,'This new protective assembly changes the reference; it does not turn the historical−30 DPC into a qualified higher datum.');
  return s+'</g></svg>\n';
 }

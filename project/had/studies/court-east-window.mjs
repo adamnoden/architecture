@@ -34,7 +34,7 @@ export function deriveCourtEastWindow(model,renewal){
     cleaning:{closedCoverPlan:[6125,6300,1525,1100],coverTopAtBody:0,body:[7325,6850],shoulderWorldZ:1450,
       glassX:7750,glassZ:[2500,2850],poleWorkingLength:1800,
       eastGuardState:'RETAINED; ALL COVERS LOCKED CLOSED',guardTopZ:1100,
-      closedWalkingCoverReference:{topZ:0,bottomZ:-60,modules:5,modulePlan:[305,1100],
+      closedWalkingCoverReference:{topZ:0,bottomZ:-60,modules:10,modulePlan:[305,550],
         eastWestLedges:{width:60,eastX:7590,westSegments:[{x:6125,y:[6300,6950]},{x:6225,y:[6950,7400]}],z:[-120,-60],role:'Original west ledge is removed across directmouth; offsetledge6225 lies beyond100 freefall slot. No−60 sill remains in water approach.'},
         hoodTopZ:-110,grossUndersideToHood:50,
         permanentIntakeNotch:renewal.courtCollector.actualOpenEntries.coverNotch.plan,

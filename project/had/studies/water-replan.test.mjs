@@ -3,7 +3,7 @@ import {verifyNorthProtectiveReturn} from './north-protective-return.mjs';
 import { verifyMaintenanceRain } from './maintenance-rain.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { deriveWaterReplan, verifyServicesOccurrences, verifyCollectorOpenEntries, verifyNorthIntakeJoin, verifyClearWorkingDomains } from './water-replan.mjs';
+import { deriveWaterReplan, verifyServicesOccurrences, verifyCollectorOpenEntries, verifyNorthIntakeJoin, verifyClearWorkingDomains, verifyArchitecturalDevelopment } from './water-replan.mjs';
 
 test('current replan authenticates the entire new Services source without weakening the historical selection', () => {
   const v = deriveWaterReplan();
@@ -122,9 +122,9 @@ test('the actual inlet credits separate source-drawn edges and rejects a guard b
 
  test('current N intake and renewal remain physically separate from the complete E well',()=>{
  const v=deriveWaterReplan(),n=v.model.northNormalRoute;
- assert.deepEqual(n.normal.inlet,[4250,7400,2950,350]);assert.deepEqual(n.historicalNormal.inlet,[4250,7000,3500,350]);
+ assert.deepEqual(n.normal.inletRegions,[[4250,7300,1000,395],[5250,7400,1950,350]]);assert.deepEqual(n.historicalNormal.inlet,[4250,7000,3500,350]);
  assert.equal(n.geometryProof.westToIndependentEastGap,100);
- const bad=JSON.parse(JSON.stringify(v.model));bad.northNormalRoute.normal.inlet=n.historicalNormal.inlet;
+ const bad=JSON.parse(JSON.stringify(v.model));bad.northNormalRoute.normal.inletRegions=[n.historicalNormal.inlet];
  assert.throws(()=>verifyNorthIntakeJoin(bad,v.renewal),/physical intake intersects E well/);
  const stage=JSON.parse(JSON.stringify(v.model));stage.northNormalRoute.normal.renewal.bodyStage=[6300,7000,350,4250];
  assert.throws(()=>verifyNorthIntakeJoin(stage,v.renewal),/N renewal consumes intact E/);
@@ -166,4 +166,24 @@ test('each maintenance state locates rain interception and preserves the intact 
  for(const mutate of [x=>x.sideShoes[0].weepBottom=-30,x=>x.portalCollars.crest=-30,x=>x.joints.wetFloorPenetrations=1]){const bad=JSON.parse(JSON.stringify(p));mutate(bad);assert.throws(()=>verifyNorthProtectiveReturn(bad,v.model));}
  const rain=JSON.parse(JSON.stringify(v.model.maintenanceRainReference));rain.eastMaintenance.roof.portalJoin.geometricReserve=-1;
  assert.throws(()=>verifyMaintenanceRain(rain,v.model,v.renewal),/wrapped intrados/);
+ });
+
+ test('western normal modules avoid actual finished pier and short crews precede the low loggia pipe',()=>{
+ const v=deriveWaterReplan(),bad=JSON.parse(JSON.stringify(v.model));
+ bad.northNormalRoute.normal.crossIntake.renewal.westernModules.moduleCentreY=7577;
+ assert.throws(()=>verifyNorthIntakeJoin(bad,v.renewal),/finished pier/);
+ const rain=JSON.parse(JSON.stringify(v.model.maintenanceRainReference));rain.northMaintenance.phaseControls.shortModules.loggiaPipePresent=true;
+ assert.throws(()=>verifyMaintenanceRain(rain,v.model,v.renewal),/Short-module crew/);
+ assert.deepEqual(v.renewal.courtCollector.actualOpenEntries.catchCover.handlingEnvelope.maximumPlan,[305,550]);
+ });
+
+ test('selected architectural development rechecks actual domains and leaves technical admission open',()=>{
+ const v=deriveWaterReplan();assert.equal(v.model.wholeHouseFit.pass,true);assert.equal(v.model.architecturalDevelopmentProof.pass,true);
+ assert.equal(v.model.technicalAdmission.hydraulic,false);assert.equal(v.model.technicalAdmission.materials,false);assert.equal(v.model.technicalAdmission.qualifiedFirstHarm,null);
+ const base=JSON.parse(readFileSync(new URL('open-north-loggia.json',import.meta.url)));
+ const current=JSON.parse(readFileSync(new URL('../../mat/studies/whole-house-service-baseline.json',import.meta.url)));
+ const bad=JSON.parse(JSON.stringify(v.model));bad.stair.undeclaredSelectionDrift=true;
+ assert.throws(()=>verifyArchitecturalDevelopment(bad,v.renewal,v.bridge,v.passage,current,base),/Retained whole-house geometry drift/);
+ const cassette=JSON.parse(JSON.stringify(v.renewal));cassette.courtCollector.actualOpenEntries.catchCover.moduleLength=1100;
+ assert.throws(()=>verifyArchitecturalDevelopment(v.model,cassette,v.bridge,v.passage,current,base),/cannot pass real gate/);
  });

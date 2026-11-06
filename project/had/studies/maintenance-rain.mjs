@@ -32,8 +32,8 @@ export function deriveMaintenanceRain(model,renewal){
    rails:{section:[100,50,5],maximumSpacing:1000,northCantilever:1650,supportAxisY:6100},
    posts:[[4400,4400],[7550,4400],[4400,6100],[7550,6100]],postPlan:100,feetPlan:250,
    gutter:[7600,4250,150,3445],gutterInvert:2000,
-   pipe:{insideDiameter:125,outsideDiameter:128,gutterDrop:[7675,6900,2000,1700],route:[[7675,6900,1700],[7450,6900,1690],[7450,6900,-80]],outletShaft:[7350,6600,200,600],airGapAboveHood:30,
-    temporaryPipeCover:{panel:[7345,6300,305,1000],clearHole:[7370,6820,160,160],pipeCentre:[7450,6900],coverZ:[-60,0],
+   pipe:{insideDiameter:125,outsideDiameter:128,gutterDrop:[7675,7000,2000,1700],route:[[7675,7000,1700],[7450,7000,1690],[7450,7000,-80]],outletShaft:[7350,6600,200,600],airGapAboveHood:30,
+    temporaryPipeCover:{panel:[7345,6850,305,550],clearHole:[7370,6920,160,160],pipeCentre:[7450,7000],coverZ:[-60,0],
      operation:'Before Nrelease, replace this one source-notched cover panel by its locked same-support pipe cartridge while N remains intact.125ID/128OD tube passes through160 hole and ends−80,20below coverunderside and30above hood. No person stands on cartridge; courtclosed. Restore ordinarypanel before reopening court. Actual aperture/flashing/rainseal/support admission remains MAT/RWT/STR.'}},
    assignedInput:'All courtyard and assigned inward-roof input is intercepted on this temporary plane before N is isolated. Any roof discharge not actually captured forbids the state. No extra catchment beyond the existing60.0625m2 is silently added to E.'},
   loggiaRoof:{plan:[4800,7750,2400,5800],underside:1900,weatherMaximum:2051.5,postAxisX:7000,postAxesY:[8800,10300,11750],postPlan:100,feetPlan:250,
@@ -46,14 +46,15 @@ export function deriveMaintenanceRain(model,renewal){
    operation:'Fit50 branch/100-clear clip-on west gutter and close ordinary primary N branch before opening N. Existing secondary tray/route feeds E. Court door remains closed; front exit and west garden route remain available.'},
   storage:{region:[4550,4600,1250,1700],coverStack:[4550,4600,600,1700],shortModuleStack:[5200,4600,600,1700],
    supports:'Separate retained timber-free/mineral frame packers; no simultaneous volume credited twice.'},
-  sequence:['Both paths/covers intact: erect and anchor full court and loggia roofs, complete closed drainage pipes and temporary threshold bypass.',
+  sequence:['Both paths/covers intact: erect/test COURT roof/E drain and threshold bypass first. Do NOT erect loggia roof/lowpipe until shortmodule crews have finished and returned north.',
    'Water-test every assigned roof/court/threshold entry into E or the separate N/W canopy receiver. Close court access/windows, keep front/garden escape open.',
-   'Only then cap N primary threshold branch, lift covers and remove N short/long modules under the continuous roofs. Keep E hood/collector/body intact.',
+   'First erect/test COURT roof/E drain only; renew/reinstate Nshort modules while Nlong liner remainsintact and LOGGIA roof/pipe isABSENT. Western crew returns overretainedcentralcovers. Then erect/testloggia roof+closedpipe and renewNlong liner using lane maxX6650, clear of pipeX6736..6864. KeepEcomplete.',
    'Incoming replacement and joint restoration occur under same roofs. Test N, restore normal threshold branch/covers, then remove temporary roofs.'],
   temporaryWorks:{metalWeatherPlaneKg:308,apparatusOrderOfMagnitudeKg:1000,
    erection:'Not one-person erection.38.5kg rails and roof panels require restrained lifting, engineered temporary supports and crew/tool territory before anyone enters below. Wind/anchors/cantilevers, assembly loads and permanent-support bearing must be qualified before this state is used; no permanent-fabric damage credited.',
    successor:'Reusable lighter weather fabric may be compared explicitly later; this conservative metal weather plane is not an owner material invariant.'},
   physicalWeatherAccepted:false};
+ n.phaseControls={shortModules:{loggiaPipePresent:false,longLinerIntact:true,courtRoofAndEDrainTested:true},longLiner:{loggiaPipePresent:true,maximumOperatorX:6650},rule:'Shortcrew includinglast6875/8100 may occupyfuturepipeband onlyBEFOREpipeinstallation. Complete/reinstateshortmodules,returncrew,thenerectloggiaroofpipeforlonglinerphase.'};
  const portal=model.northNormalRoute.portal;
  const height=x=>portal.centreZ+Math.sqrt(portal.finishedRadius**2-(x-6000)**2);
  e.roof.portalJoin={source:'model.northNormalRoute.portal',finishedAxialBands:portal.finishedAxialBands,clearJambX:[4800,7200],finishedJambHeight:height(7200),maximumWeatherTop:e.roof.weatherTopEast,geometricReserve:height(7200)-e.roof.weatherTopEast,
@@ -68,12 +69,12 @@ export function verifyMaintenanceRain(v,model,renewal){
  assert(e.roof.plan[0]+e.roof.plan[2]>=well[0]+well[2],'E rain roof leaves well exposed');
  assert(e.roof.plan[1]<=well[1]&&e.roof.plan[1]+e.roof.plan[3]>=well[1]+well[3],'E rain roof misses well in Y');
  assert(e.downpipe.outletZ>e.downpipe.localCourtZ,'E canopy drain has no free drop into N');
- assert(e.weatherEnclosure.northPlate[1]+e.weatherEnclosure.northPlate[3]<=inlet[1],'E weather bund blocks intact N');
+ assert(!model.northNormalRoute.normal.inletRegions.some(r=>overlaps(e.weatherEnclosure.northPlate,r)),'E weather bund blocks intact N');
  assert(e.roof.portalJoin.geometricReserve>=25&&n.portalJoin.reserve>=25,'Temporary roof enters actual wrapped intrados');
  for(const q of e.roof.regions)if(q[1]+q[3]>7695)assert(q[0]>=4800&&q[0]+q[2]<=7200,'Temporary E roof overlaps actual wrapped jamb footprint');
  const wallRects=model.groundWalls.filter(w=>w.finishedFaces).map(w=>{const f=w.finishedFaces;return w.a[0]===w.b[0]?[f[0],Math.min(w.a[1],w.b[1]),f[1]-f[0],Math.abs(w.b[1]-w.a[1])]:[Math.min(w.a[0],w.b[0]),f[0],Math.abs(w.b[0]-w.a[0]),f[1]-f[0]];});
  for(const q of e.roof.regions)for(const w of wallRects)assert(!overlaps(q,w),'Temporary E roof intersects full finished wall');
- for(const [x,y]of e.roof.temporaryPosts){const f=[x-e.roof.feetPlan/2,y-e.roof.feetPlan/2,e.roof.feetPlan,e.roof.feetPlan];assert(!overlaps(f,well)&&!overlaps(f,inlet),'E roof support blocks live water territory');for(const w of wallRects)assert(!overlaps(f,w),'Temporary E support inside finished wall');}
+ for(const [x,y]of e.roof.temporaryPosts){const f=[x-e.roof.feetPlan/2,y-e.roof.feetPlan/2,e.roof.feetPlan,e.roof.feetPlan];assert(!overlaps(f,well)&&!model.northNormalRoute.normal.inletRegions.some(r=>overlaps(f,r)),'E roof support blocks live water territory');for(const w of wallRects)assert(!overlaps(f,w),'Temporary E support inside finished wall');}
  assert.equal(n.courtRoof.plan[2]*n.courtRoof.plan[3],12250000,'N work must cover full court');
  assert(n.courtRoof.underside>=1800&&n.loggiaRoof.underside>=1800,'Rain roof blocks bail/person');
  const pipe=n.courtRoof.pipe,shaft=pipe.outletShaft,r=pipe.outsideDiameter/2;
@@ -82,8 +83,9 @@ export function verifyMaintenanceRain(v,model,renewal){
  const c=pipe.temporaryPipeCover;assert(c.clearHole[0]<=pipe.route.at(-1)[0]-r&&c.clearHole[0]+c.clearHole[2]>=pipe.route.at(-1)[0]+r&&c.clearHole[1]<=pipe.route.at(-1)[1]-r&&c.clearHole[1]+c.clearHole[3]>=pipe.route.at(-1)[1]+r,'Court pipe blocked by walking cover');
  assert(pipe.route.at(-1)[2]<c.coverZ[0]&&pipe.route.at(-1)[2]>-110,'Court pipe has no open drop below cover into hood');
  assert(pipe.route[0][2]>pipe.route[1][2]&&pipe.route[1][2]>pipe.route[2][2],'Court rain pipe rises before E');
- for(const[x,y]of n.courtRoof.posts){const f=[x-125,y-125,250,250];assert(!overlaps(f,well)&&!overlaps(f,inlet),'N canopy foot occupies live intake/work opening');}
+ for(const[x,y]of n.courtRoof.posts){const f=[x-125,y-125,250,250];assert(!overlaps(f,well)&&!model.northNormalRoute.normal.inletRegions.some(r=>overlaps(f,r)),'N canopy foot occupies live intake/work opening');}
  assert.equal(n.loggiaRoof.pipe.headerNorthExtension,n.loggiaRoof.pipe.invertEnd[1]-n.loggiaRoof.postAxesY.at(-1),'Loggia drain header has phantom support');
+ assert(!n.phaseControls.shortModules.loggiaPipePresent&&n.phaseControls.shortModules.longLinerIntact&&n.phaseControls.shortModules.courtRoofAndEDrainTested,'Short-module crew conflicts with installed loggia pipe');
  assert(n.loggiaRoof.pipe.axisX+64<n.loggiaRoof.postAxisX-50,'Loggia pipe clashes with roof post');
  assert(n.loggiaRoof.pipe.outlet[2]>n.loggiaRoof.pipe.receivingMaximum,'Loggia canopy tail submerged in reference');
  assert(n.thresholdBypass.grossBodyPlan[0]+n.thresholdBypass.grossBodyPlan[2]<=n.thresholdBypass.panWestOuterX-25,'Temporary threshold gutter cuts pan endfold');

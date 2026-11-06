@@ -7,15 +7,15 @@ export function renderNorthIntake(model,renewal){
  let s='<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="950" viewBox="0 0 1200 950"><rect width="100%" height="100%" fill="#fbfaf5"/>';
  s+=text(35,30,'CURRENT N INTAKE / SEPARATE E WELL — PROJECT REFERENCE',23);
  s+=text(35,55,'Historical3500 trough atY7000 rejected; no hydraulic/material/site qualification transferred.');
- s+=rect(renewal.courtIntakeWell,'#e5c4a9')+rect(i,'#84b7cc')+rect(renewal.courtCollector.plan,'#78aaa9');
+ s+=rect(renewal.courtIntakeWell,'#e5c4a9')+model.northNormalRoute.normal.inletRegions.map(r=>rect(r,'#84b7cc')).join('')+rect(renewal.courtCollector.plan,'#78aaa9');
  s+=rect(renewal.courtCollector.actualOpenEntries.approach.plan,'#267c98');
  s+=rect(renewal.courtCollector.actualOpenEntries.coverNotch.plan,'#267c98');
  s+=rect([7200,7750,519.5,500],'#777268');
- s+=text(65,337,`N inlet x${i[0]}..${i[0]+i[2]}, y${i[1]}..${i[1]+i[3]}`);
+ s+=text(65,337,`N actual Lpan: west1000 shifts100south below finishedpier; east1950 stays7400..7750`);
  s+=text(65,361,'E well and fixed north guard endY7400; N endsX7200 / E starts7300:100 separation.');
  s+=text(65,385,'E:TRUE west mouth at court edge6125,325 effective lip; no disabled-N or wall-edge approach credit.');
  const sx=x=>60+(x-4250)*.32,z=z=>415+(-z-90)*1.7;
- s+=text(35,425,'Cross section at the conservative north edgeY7750',18);
+ s+=text(35,425,'V-body reference floors atY7750; western bay/body shifts100south clear of finished7695 pier',18);
  s+=`<path d="M${sx(4250)},${z(-110)} H${sx(7200)}" stroke="#757268" stroke-width="14" fill="none"/>`;
  const pts=[[4250,c.westBottomAtNorth],[5025,c.trunkBottomAtNorth],[7200,c.eastBottomAtNorth]];
  s+=`<polyline points="${pts.map(p=>sx(p[0])+','+z(p[1])).join(' ')}" stroke="#237a97" stroke-width="3" fill="none"/>`;

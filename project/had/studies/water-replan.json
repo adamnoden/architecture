@@ -1,5 +1,5 @@
 {
-  "status": "WIP JOINED HYPOTHESIS — NOT A SELECTED HOUSE OR COMPLETED HAD PACKET",
+  "status": "SELECTED architectural-development source; HAD-WATER-REPLAN bounded exit, technical admission unearned",
   "sources": {
     "had": {
       "path": "project/had/studies/open-north-loggia.json",
@@ -12,7 +12,7 @@
     }
   },
   "model": {
-    "status": "UNADOPTED JOINED WATER REPLAN; historical selected geometry is its input, not its current pass.",
+    "status": "SELECTED joined architectural-development source; technical and real-site admission remains downstream",
     "startingMain": "6a953ef6d3131364aca740eaff2a06f301adbc2e",
     "base": {
       "path": "project/str/studies/house-plan.json",
@@ -2560,9 +2560,9 @@
       }
     },
     "water": {
-      "normal": "Outdoor west-edge copper channel; exact width/fall/inlet/receiver awaitingjoinedMATspatialselection.",
-      "relief": "Independent E or separately visible passive overland route must be drawn with blockedN/high-tailwater/common-obstruction states. No independentpair acceptance from two loggia strips.",
-      "oldD1300": "Retained cost benchmark only; deleting waterboxes does not adopt grade150 or prove a shallower ground-support section."
+      "normal": "Current2950 north intake with fullheight folded returns and accessible250trunk to N/W receiver; wholemouth failure sends courtwater to independentE.",
+      "relief": "Direct325effective westwell mouth, actualcourt/ramp approach and removablecatchcovers→hood→two-piece falling E route; separate east receiving bound. No sharedNgrate/NEwall-edge credit.",
+      "technicalScope": "RWT06 must prove actual fullQ/stage/debris/splash/backwater/maintenance. MAT/STR qualify constructed barriers and supports; physical firstharm/site admissibility unearned."
     },
     "furnitureRequirements": {
       "principalBed": {
@@ -10714,12 +10714,13 @@
       "scope": "Actualcompleteenvelopes/fullprofile/fixedframebudget; NOTdeflection/anchor/impact/glass/fireadmission."
     },
     "wholeHouseFit": {
-      "pass": false,
-      "scope": "New joined affected geometry still being challenged; historical whole-house pass does not apply automatically."
+      "pass": true,
+      "scope": "Bounded ARCHITECTURAL DEVELOPMENT selection: affected spatial/reference interfaces and exact retained geometry only. No hydraulic, structural, material, weather, physical or site admission."
     },
     "selection": {
-      "decision": "UNADOPTED JOINED WATER REPLAN",
-      "source": "project/had/water-replan-result.md"
+      "decision": "SELECT joined architectural-development reference",
+      "source": "project/had/studies/water-replan.json",
+      "result": "project/had/water-replan-result.md"
     },
     "southCourtThresholdReference": {
       "status": "PROJECT-DESIGNED CONSTRUCTIVE REFERENCE; NOT QUALIFIED WEATHER OR FIRST-HARM PERFORMANCE",
@@ -11554,9 +11555,9 @@
       "normal": {
         "inlet": [
           4250,
-          7400,
+          7300,
           2950,
-          350
+          450
         ],
         "channelGross": 400,
         "channelClear": 250,
@@ -11723,6 +11724,21 @@
           "supportPitch": 500,
           "loadpath": "Cover→SSedgeframes→110mineralpedestals→RC200recess. No floorload throughCu, gasket or carrier."
         },
+        "inletRegions": [
+          [
+            4250,
+            7300,
+            1000,
+            395
+          ],
+          [
+            5250,
+            7400,
+            1950,
+            350
+          ]
+        ],
+        "inletRole": "Boundingbox ONLY; actualcollection is two listed Lregions. Western1000pan extends100south and stopsactualfinishedpierface7695. East1950 remains insideclearportal.",
         "crossIntake": {
           "clearWidth": 250,
           "hydraulicTrialDepth": 40,
@@ -11738,6 +11754,17 @@
             "materialRole": "Continuous project-authored1.5Cu U wet face, with fullheight side/end folds, matching fullheight100U saddles/20butt/40laps and top-access clamps. Seam/material/residue acceptance remains MAT; no physical watertightness is certified.",
             "foldCrestAtNorth": -110,
             "foldCrestAtSouth": -96,
+            "westBay": {
+              "plan": [
+                4250,
+                7300,
+                1000,
+                395
+              ],
+              "crestSouth": -92,
+              "crestNorth": -107.8,
+              "role": "Same fullheightwet boundary follows actual widenedbaycourt levels; no lower unbacked western return."
+            },
             "completeSideHeightsAtNorth": [
               96,
               103.75,
@@ -11789,6 +11816,24 @@
             "moduleCentreY": 7577,
             "bodyRouteY": 8100,
             "operatorRadius": 300,
+            "northOperatorCentres": [
+              [
+                5500,
+                8100
+              ],
+              [
+                6000,
+                8100
+              ],
+              [
+                6500,
+                8100
+              ],
+              [
+                6875,
+                8100
+              ]
+            ],
             "firstRelease": {
               "bodyY": 8100,
               "clampY": 7728.5,
@@ -11818,11 +11863,12 @@
             ],
             "westernModules": {
               "count": 2,
+              "moduleCentreY": 7477,
               "bodyCentre": [
                 4600,
-                7050
+                6950
               ],
-              "clampY": 7425.5,
+              "clampY": 7325.5,
               "bailGripAtSouthEdge": true,
               "maximumReach": 529.717141501009,
               "manualExtensionReach": 584.034459599774,
@@ -11832,13 +11878,28 @@
                 650,
                 350
               ],
+              "routeToRetainedCrossing": [
+                [
+                  4600,
+                  6950
+                ],
+                [
+                  5650,
+                  6950
+                ],
+                [
+                  5650,
+                  8100
+                ]
+              ],
+              "sourceJoin": "Two western303 bodies shift100south into the widened westpan; their north7628.5 is66.5 south of actual wrappedpierface7695. Open250trunkX5025 joins western crossbody at7477 to eastern crossbody7577, then fallsnorth to7750; no buried pipe or entrythroughpier finish.",
               "sequence": "Western two modules FIRST, one at a time, with central bays5250..6250 and their load-qualified covers intact. Southern operators return north over crossing5300..5950 before any central bay is opened. Then remaining modules transfer north. No crew is stranded behind removed N covers or uses Ewell as exit."
             },
-            "sequence": "Verify E independent/full-duty and keep its collector/hood/guard intact. Isolate N; capture/remove short perforated covers into west storage. Renew WESTERN TWO first with south operator4600/7050 and600 captured lift, then return crew north across retained central covers5300..5950. Renew remaining modules one600-max/303-wide body at a time, captured lift600 then transfer NORTH onto closed loggia covers, operatorY8100. Carry WEST, then south on westcourt side to storage. No full2950 body crosses Eguard; no extraction through the Ewell. Reverse modules/joints/covers and test before reopening N.",
+            "sequence": "Verify E independent/full-duty and keep its collector/hood/guard intact. Isolate N; capture/remove short perforated covers into west storage. Renew WESTERN TWO first with south operator4600/6950 and600 captured lift, then return crew north across retained central covers5300..5950. Renew remaining modules one600-max/303-wide body at a time, captured lift600 then transfer NORTH onto closed loggia covers, operatorY8100. Carry WEST, then south on westcourt side to storage. No full2950 body crosses Eguard; no extraction through the Ewell. Reverse modules/joints/covers and test before reopening N.",
             "bounds": "Body lowerY7425.5 leaves25.5 from Eguard north7400. Eastbound7200 leaves50 toEslotguard7250. Actual load/force/saddles/gaskets and temporary waterisolation remain MAT/RWT physical duties."
           }
         },
-        "currentCollectionBoundary": "Entire CURRENT N inlet4250..7200/Y7400..7750 may be disabled. Separate Ecollector starts7300,100 away; no shared below-cover trough. Northfall court reaches this exposed intake strip without crossing Ewell, which ends7400.",
+        "currentCollectionBoundary": "Entire CURRENT N Lcollection may be disabled: west4250..5250/Y7300..7695; east5250..7200/Y7400..7750. Separate Ecollector starts7300,100 away; no shared below-cover trough. Northfall court reaches this exposed intake strip without crossing Ewell, which ends7400.",
         "preliminaryManningScreen": {
           "n": 0.02,
           "slope": 0.01,
@@ -12072,9 +12133,9 @@
         "pass": true,
         "currentInlet": [
           4250,
-          7400,
+          7300,
           2950,
-          350
+          450
         ],
         "westToIndependentEastGap": 100,
         "scope": "Actual physical collection/maintenance nonoverlap only; new40×250 crossbody and inlet require RWT full-duty proof."
@@ -12379,24 +12440,24 @@
             "outsideDiameter": 128,
             "gutterDrop": [
               7675,
-              6900,
+              7000,
               2000,
               1700
             ],
             "route": [
               [
                 7675,
-                6900,
+                7000,
                 1700
               ],
               [
                 7450,
-                6900,
+                7000,
                 1690
               ],
               [
                 7450,
-                6900,
+                7000,
                 -80
               ]
             ],
@@ -12410,19 +12471,19 @@
             "temporaryPipeCover": {
               "panel": [
                 7345,
-                6300,
+                6850,
                 305,
-                1000
+                550
               ],
               "clearHole": [
                 7370,
-                6820,
+                6920,
                 160,
                 160
               ],
               "pipeCentre": [
                 7450,
-                6900
+                7000
               ],
               "coverZ": [
                 -60,
@@ -12565,9 +12626,9 @@
           "supports": "Separate retained timber-free/mineral frame packers; no simultaneous volume credited twice."
         },
         "sequence": [
-          "Both paths/covers intact: erect and anchor full court and loggia roofs, complete closed drainage pipes and temporary threshold bypass.",
+          "Both paths/covers intact: erect/test COURT roof/E drain and threshold bypass first. Do NOT erect loggia roof/lowpipe until shortmodule crews have finished and returned north.",
           "Water-test every assigned roof/court/threshold entry into E or the separate N/W canopy receiver. Close court access/windows, keep front/garden escape open.",
-          "Only then cap N primary threshold branch, lift covers and remove N short/long modules under the continuous roofs. Keep E hood/collector/body intact.",
+          "First erect/test COURT roof/E drain only; renew/reinstate Nshort modules while Nlong liner remainsintact and LOGGIA roof/pipe isABSENT. Western crew returns overretainedcentralcovers. Then erect/testloggia roof+closedpipe and renewNlong liner using lane maxX6650, clear of pipeX6736..6864. KeepEcomplete.",
           "Incoming replacement and joint restoration occur under same roofs. Test N, restore normal threshold branch/covers, then remove temporary roofs."
         ],
         "temporaryWorks": {
@@ -12577,6 +12638,18 @@
           "successor": "Reusable lighter weather fabric may be compared explicitly later; this conservative metal weather plane is not an owner material invariant."
         },
         "physicalWeatherAccepted": false,
+        "phaseControls": {
+          "shortModules": {
+            "loggiaPipePresent": false,
+            "longLinerIntact": true,
+            "courtRoofAndEDrainTested": true
+          },
+          "longLiner": {
+            "loggiaPipePresent": true,
+            "maximumOperatorX": 6650
+          },
+          "rule": "Shortcrew includinglast6875/8100 may occupyfuturepipeband onlyBEFOREpipeinstallation. Complete/reinstateshortmodules,returncrew,thenerectloggiaroofpipeforlonglinerphase."
+        },
         "portalJoin": {
           "maximumWeatherTop": 2051.5,
           "minimumIntrados": 2126.5422357208927,
@@ -16059,10 +16132,10 @@
         "closedWalkingCoverReference": {
           "topZ": 0,
           "bottomZ": -60,
-          "modules": 5,
+          "modules": 10,
           "modulePlan": [
             305,
-            1100
+            550
           ],
           "eastWestLedges": {
             "width": 60,
@@ -16135,9 +16208,31 @@
         "scope": "Constructive spatial reference; no force, glass, hardware, walking-cover load or occupational/access-category qualification."
       }
     },
-    "currentAdoptionBlockers": [
-      "Pending final joined architectural-source review and selection-link reconciliation. Actual preferred geometry is present; technical hydraulic/material/structural/site/physical admission stays downstream."
-    ],
+    "architecturalDevelopmentProof": {
+      "pass": true,
+      "scope": "Source-exact architectural disposition, preliminary support/level relationships and complete reserved ordinary/maintenance states. Physical qualification is explicitly excluded.",
+      "domains": [
+        "retainedupper/stair/front/furniture",
+        "currentServicesactualoccurrences",
+        "normalN/independentEapproach",
+        "constructedthreshold/Nprotection",
+        "guard/window/foodtasks",
+        "wholecassette/liner/rackrenewalreference",
+        "bothrainstates",
+        "safeoccupiedgardenbypass",
+        "preliminarysupport/grade/receivingconditions"
+      ]
+    },
+    "currentAdoptionBlockers": [],
+    "technicalAdmission": {
+      "hydraulic": false,
+      "structural": false,
+      "materials": false,
+      "weather": false,
+      "physicalRenewal": false,
+      "site": false,
+      "qualifiedFirstHarm": null
+    },
     "knownRejectedGeometry": {
       "intermediateDividerAt3300": {
         "westPier": [
@@ -16428,7 +16523,15 @@
         -16,
         8
       ],
-      "topAdapterStatus": "Explicit levelling adapter required between the local court slope and -80 maintenance stair landing; no ordinary walking or generic step compliance pass."
+      "topAdapterStatus": "Explicit levelling adapter required between the local court slope and -80 maintenance stair landing; no ordinary walking or generic step compliance pass.",
+      "lowestInfillZ": 0,
+      "noKickplate": true,
+      "excludedHingeFootPlan": [
+        6050,
+        7197.5,
+        50,
+        50
+      ]
     },
     "courtCollector": {
       "plan": [
@@ -16519,7 +16622,9 @@
         },
         "catchCover": {
           "moduleWidth": 305,
+          "moduleLength": 550,
           "count": 5,
+          "plainSouthHalves": 5,
           "coverTop": 0,
           "minimumBottom": -200,
           "individualMassBudgetKg": 30,
@@ -16534,6 +16639,29 @@
             -180
           ],
           "sideHeight": 100,
+          "closedReturns": {
+            "northY": 7400,
+            "eastX": 7375,
+            "exceptHoodOpeningY": [
+              6950,
+              7200
+            ]
+          },
+          "floorCrossfall": {
+            "northAtEast": [
+              7400,
+              -175
+            ],
+            "receivingHeader": [
+              7100,
+              -180
+            ],
+            "southAtEast": [
+              6950,
+              -177.5
+            ],
+            "role": "Closednorth/east returns collect north interval7275..7375 and fall SOUTH to actual250widehood notch; no assumed450wide outlet through250hole."
+          },
           "receivingHoodNotch": {
             "planeX": 7350,
             "y": [
@@ -16545,13 +16673,13 @@
             "openUpward": true
           },
           "spoutEndX": 7375,
-          "role": "Formed accessible catch below the freefall slot slopes EAST into the actual hoodside opening. Integrated underside gutters move with captured305-wide walking-cover cassettes; top-access100U saddle/20butt/40laps separate at covermodule boundaries. Endspout overlaps hood25; OPEN-TOP receiving notch permits vertical gutter release. No fall onto wellfloor/down-and-up trap is credited.",
-          "renewal": "With Nintact and Eweathercontrols tested, capture and remove cover/gutter cassettes FROM ABOVE, one at a time using positively restrained lifting and top-access clamps. Their305width and1100length fit the existing650gate only in end-leading state; complete deeper200body/mass is part of matched coverhandler qualification. Keep neighbouring rated covers/guards until capture. All catchcovers leave before hood/stair descent; reinstall/test gutters and hood before Eadmission.",
+          "role": "Formed accessible catch below the freefall slot slopes EAST into the actual hoodside opening. Integrated underside gutters move with five captured305×550 north walking-cover cassettes; five separate305×550 south halves complete the well cover; top-access100U saddle/20butt/40laps separate at covermodule boundaries. Endspout overlaps hood25; OPEN-TOP receiving notch permits vertical gutter release. No fall onto wellfloor/down-and-up trap is credited.",
+          "renewal": "With Nintact and Eweathercontrols tested, capture and remove cover/gutter cassettes FROM ABOVE, one at a time using positively restrained lifting and top-access clamps. Their305×550 footprint fits650gate with50 eachside, without tilt or an unproved1100 rotation; complete deeper200body/mass is part of matched coverhandler qualification. Keep neighbouring rated covers/guards until capture. All catchcovers leave before hood/stair descent; reinstall/test gutters and hood before Eadmission.",
           "handlingEnvelope": {
             "maximumLiftedTop": 1700,
             "maximumPlan": [
               305,
-              1100
+              550
             ],
             "gateClear": 650,
             "stage": [
@@ -16578,6 +16706,7 @@
           "lowestSolidZ": 0,
           "topZ": 1100,
           "floorFeet": 0,
+          "floorFeetScope": "Within credited325 intervals ONLY; actual excluded hinge/ramp/northcorner feet are not denied.",
           "support": {
             "type": "Retained well guard/gate, open low-level infill",
             "northWallAnchorCentres": [],
@@ -17645,7 +17774,9 @@
         },
         "catchCover": {
           "moduleWidth": 305,
+          "moduleLength": 550,
           "count": 5,
+          "plainSouthHalves": 5,
           "coverTop": 0,
           "minimumBottom": -200,
           "individualMassBudgetKg": 30,
@@ -17660,6 +17791,29 @@
             -180
           ],
           "sideHeight": 100,
+          "closedReturns": {
+            "northY": 7400,
+            "eastX": 7375,
+            "exceptHoodOpeningY": [
+              6950,
+              7200
+            ]
+          },
+          "floorCrossfall": {
+            "northAtEast": [
+              7400,
+              -175
+            ],
+            "receivingHeader": [
+              7100,
+              -180
+            ],
+            "southAtEast": [
+              6950,
+              -177.5
+            ],
+            "role": "Closednorth/east returns collect north interval7275..7375 and fall SOUTH to actual250widehood notch; no assumed450wide outlet through250hole."
+          },
           "receivingHoodNotch": {
             "planeX": 7350,
             "y": [
@@ -17671,13 +17825,13 @@
             "openUpward": true
           },
           "spoutEndX": 7375,
-          "role": "Formed accessible catch below the freefall slot slopes EAST into the actual hoodside opening. Integrated underside gutters move with captured305-wide walking-cover cassettes; top-access100U saddle/20butt/40laps separate at covermodule boundaries. Endspout overlaps hood25; OPEN-TOP receiving notch permits vertical gutter release. No fall onto wellfloor/down-and-up trap is credited.",
-          "renewal": "With Nintact and Eweathercontrols tested, capture and remove cover/gutter cassettes FROM ABOVE, one at a time using positively restrained lifting and top-access clamps. Their305width and1100length fit the existing650gate only in end-leading state; complete deeper200body/mass is part of matched coverhandler qualification. Keep neighbouring rated covers/guards until capture. All catchcovers leave before hood/stair descent; reinstall/test gutters and hood before Eadmission.",
+          "role": "Formed accessible catch below the freefall slot slopes EAST into the actual hoodside opening. Integrated underside gutters move with five captured305×550 north walking-cover cassettes; five separate305×550 south halves complete the well cover; top-access100U saddle/20butt/40laps separate at covermodule boundaries. Endspout overlaps hood25; OPEN-TOP receiving notch permits vertical gutter release. No fall onto wellfloor/down-and-up trap is credited.",
+          "renewal": "With Nintact and Eweathercontrols tested, capture and remove cover/gutter cassettes FROM ABOVE, one at a time using positively restrained lifting and top-access clamps. Their305×550 footprint fits650gate with50 eachside, without tilt or an unproved1100 rotation; complete deeper200body/mass is part of matched coverhandler qualification. Keep neighbouring rated covers/guards until capture. All catchcovers leave before hood/stair descent; reinstall/test gutters and hood before Eadmission.",
           "handlingEnvelope": {
             "maximumLiftedTop": 1700,
             "maximumPlan": [
               305,
-              1100
+              550
             ],
             "gateClear": 650,
             "stage": [
@@ -17704,6 +17858,7 @@
           "lowestSolidZ": 0,
           "topZ": 1100,
           "floorFeet": 0,
+          "floorFeetScope": "Within credited325 intervals ONLY; actual excluded hinge/ramp/northcorner feet are not denied.",
           "support": {
             "type": "Retained well guard/gate, open low-level infill",
             "northWallAnchorCentres": [],
@@ -17751,7 +17906,6 @@
   },
   "retainedProofBoundary": "Only exact untouched fields may retain historical fit evidence. Plant, new wall/portal, support, deep pocket and first-wetting joins require actual new checks; no blanket wholeHouseFit pass is inherited.",
   "unclosed": [
-    "Pending final joined architectural-source review and selection-link reconciliation. Actual preferred geometry is present; technical hydraulic/material/structural/site/physical admission stays downstream.",
     "Actual support continuity, groundwater/receiving head and public approach remain unearned. Retained3700 door/arch and low-larder component checks do not establish whole-house or hydraulic acceptance."
   ]
 }
