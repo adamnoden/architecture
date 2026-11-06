@@ -9,8 +9,8 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-06T21:31:54.770Z",
-  "expiresAt": "2026-11-06T23:01:54.770Z",
+  "heartbeatAt": "2026-11-06T22:03:48.695Z",
+  "expiresAt": "2026-11-06T23:33:48.695Z",
   "branch": "work/zerg-20261106-ias-g9",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
@@ -34,7 +34,7 @@
   },
   "pr": 1352,
   "checkpoint": {
-    "evidence": "Recoverable draft 1352 exact e3b1431e5139c6f31e69ef809f9a676209870041 tree 1e9c6e1f19f69749a8efe4027275c7ff7ff80a41; source-derived whole-occurrence/exit ledger with guarded Bed4/principal/family joins and owner links. Generator/integrity/whitespace/adverse regeneration checks pass. Prior joint head e16c full CI succeeded; new checkpoint CI pending. No installation/material/house adoption.",
-    "next": "Wait for queued RWT1344 integration, reconcile final main once and refresh legitimate dependent source maps; exact-head full CI, independent root review and fresh canonical merge-check before ready integration. Native rear joint remains one specific hold."
+    "evidence": "Recoverable PR 1352 witness checkpoint a7b0d4dea83b11762a941ea97cb30e08848c6c56 tree a9b87976ae667917e9baec105bc56f871d3bd083 exact readback and local tree match. Current occurrence map preserves Study, principal, Bed4 and family witnesses with runtime relationship assertions; adverse generation/check cases reject broken joins. Prior e3b all 14 workflows succeeded; new exact-head CI pending. No installation, exception or IAS completion.",
+    "next": "RWT1344 merged at 2a310840. Wait for queued service PR 1356, then reconcile actual main and legitimate dependent maps once; full exact-head CI, accepted bounded root review and fresh canonical merge-check before integration. Continue IAS after bounded-result merge."
   }
 }
