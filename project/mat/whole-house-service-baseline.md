@@ -1,5 +1,7 @@
 # Whole-house services: provisional loggia baseline
 
+**6 November joined correction.** [Actual east foul/return/portal join](east-water-foul-join.md) owns downstream port y5625 and conditional D2000 receiver outer-axis−2680. Upper wet interfaces and internal endpoints stay fixed; the prior D1300 grade is historical evidence.
+
 This is a bounded development baseline, not adoption of the house or acceptance of apparatus, materials, site performance or physical handling. The numeric authority is [the generated JSON](studies/whole-house-service-baseline.json), reproduced by [the generator](studies/whole-house-service-baseline.py). The [whole-house plan](studies/whole-house-service-baseline.svg) and [terminal renewal sheet](studies/whole-house-service-baseline-interfaces.svg) have been rendered and visually inspected.
 
 The current geometric input is HAD `068e33ae52bbaa5ab0c3e3551350400e958e4033`, JSON blob `5f5dd336be7cdadfd83cb869fb8257fad6b5b273`, with the explicit services rewinds below. The merged sanitary interface remains source-bound to main `546c98f93a3dccbfe48119bd2e92117b6e2d766f`. Units are millimetres, ground FFL0 and first FFL3450. None of these are surveyed site datums. The outer 417.5 reservation is not an admitted material recipe; the wider loggia walls are distinct.

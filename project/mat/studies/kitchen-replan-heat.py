@@ -11,7 +11,13 @@ c=load('project/mat/studies/joined-cooker-system.json')['SwegonExternalMotorCand
 # This study owns no selected geometry. Reject drift in the actual affected
 # source projection, rather than pinning unrelated water-mechanism prose.
 old=json.loads(subprocess.check_output(['git','show','bc1231479ccbcae3c15b3f5cc7f86055dbeb7a0e:project/had/studies/water-replan.json'],cwd=ROOT))['model']
-def subject(m):return {k:m[k] for k in ['rooms','groundFurniture','kitchenOccurrence','windowRequirements','groundWalls','architecturalServices','pantryReplacement']}
+def subject(m):
+ x=json.loads(json.dumps({k:m[k] for k in ['rooms','groundFurniture','kitchenOccurrence','windowRequirements','groundWalls','architecturalServices','pantryReplacement']}))
+ # Explicitly exclude downstream foul/receiver route corrections;
+ # this is a kitchen applicability projection, not whole-Services admission.
+ x['architecturalServices'].pop('eastFoulExit')
+ x['architecturalServices'].pop('otherServiceDuties')
+ return x
 assert digest(subject(h))==digest(subject(old)), 'Affected HAD source changed: review heat applicability'
 f=h['groundFurniture'];room=h['rooms']['kitchenDining']['bounds']
 def intersection(a,b):
@@ -95,7 +101,8 @@ for seg,(a,z) in enumerate(zip(poses,poses[1:])):
 assert minimum>24,minimum
 result={'status':'UNSELECTED heat/room-release challenger; no canonical Services change or whole-system/handling/material admission.',
  'source':{'HADReviewCommit':'bc1231479ccbcae3c15b3f5cc7f86055dbeb7a0e','affectedProjectionSha256':digest(subject(h)),
- 'servicesBlob':'3e934b29d9f328b41cb9bd2498184154090492c0','heatSource':'joined-cooker-system.json / SwegonExternalMotorCandidate'},
+ 'servicesBlob':'3e934b29d9f328b41cb9bd2498184154090492c0','heatSource':'joined-cooker-system.json / SwegonExternalMotorCandidate',
+ 'projectionScope':'Kitchen/HAD/Services fields, excluding independent eastFoulExit and otherServiceDuties downstream foul/receiver route correction. Whole Services equality remains HAD authentication duty.'},
  'rejectedOldJoin':{'northH700L900LarderOverlap':intersection(north,f['low-food-larder']),
  'eastH600L1400FeedColumnOverlap':intersection(east,column),'east200PullCookingOverlap':intersection(pull,f['north-cooking-station']),
  'actualFeed':'Cold/hot complete74OD atx11487/y11250,11350 descend2945to242, crossing proposed radiator100to700. No through-radiator nesting or omitted column permitted.'},

@@ -2,6 +2,12 @@
 
 **5 November 2026 — UNSELECTED WORK IN PROGRESS. No packet completion or source adoption.** Historical selected HAD source remains `25faad2c4d40df2b7da7212f73808843a88d2f52`. This draft must not merge relocated canonical Services into main while the historical house remains selected. The [replan contract](house-architectural-design-programme.md#court-and-roof-water-replan) and [single-north rejection](../rwt/rwt-06-selected-topology-rejection.md) control its purpose.
 
+## 6 November continuation
+
+Fresh canonical acquisition resumed this unselected proposal on a new branch and [successor draft #1332](https://github.com/adamnoden/architecture/pull/1332). The previous draft remains preserved. The first-motion failure below remains active while an upper-deck, end-operated method is developed; no worker passage below the outer support is credited.
+
+The canonical health coverage gap is now closed at source: `test:had` runs the four HAD regressions and read-only exact JSON/SVG reproduction; `test:mat` runs the canonical Services, full plant packing and bridge-envelope reproducers. Both are included in `npm test`. Actual scene assertions independently compare all 16 emitter furniture occurrences/heights and six fan port/platform/task states to the authenticated Services source. Negative controls reject stale furniture, platforms and door modes. These component checks do not adopt the house. Local canonical `npm run check` still encounters the environment's `tsx` IPC `EPERM`; direct owning checks pass, and exact-head hosted full health remains required.
+
 ## Durable current source
 
 [Generator](studies/water-replan.mjs) · [whole numeric hypothesis](studies/water-replan.json) · [plan/section](studies/water-replan.svg) · [MAT section/prover](../mat/east-dry-bridge-envelope.md).
@@ -26,6 +32,6 @@ RWT must verify assigned rainfall/roof duties, inlet/receiving head, debris/spla
 
 Passed local bounded checks: both Services Python reproducers; frozen historical HAD authentication with numerical/prose negative controls; three new HAD source/larder/renewal tests; MAT envelope reproduction with zero well/node volume clashes; repository integrity and conflict-marker/diff checks as recorded in the shared draft. These are **not** whole-house, material, hydraulic, lifting, physical or construction acceptance.
 
-Before adoption, add the actual new HAD/MAT reproducers to canonical health (currently an explicit coverage gap), replace the failing deck/worker/cover sequence, bind/prove the outer support and complete hoist path, finish the actual floor/weather/intake/guard/first-wetting section, and revalidate current Services occurrences and affected operations on one head. Preserve the frozen historical Services fixture: it reproduces old evidence, not the new selected house.
+Before adoption, replace the failing deck/worker/cover sequence, bind/prove the outer support and complete hoist path, finish the actual floor/weather/intake/guard/first-wetting section, and revalidate current Services occurrences and affected operations on one head. Preserve the frozen historical Services fixture: it reproduces old evidence, not the new selected house.
 
-Stopped because the commander's actual execution budget was reached. All three packets remain incomplete; the shared PR stays draft/unmerged. Canonical leases are released as HANDOFF after publication. Resume by fresh canonical acquisition; do not reuse a released generation for publication. Current main is reconciled through `e1284c500ca4f3cfea38c9fae56b84b3a21b1272`. No frontier-exhaustion claim is made.
+The 5 November run stopped because the commander's actual execution budget was reached. All three packets remain incomplete; the shared PR stays draft/unmerged. Canonical leases are released as HANDOFF after publication. Resume by fresh canonical acquisition; do not reuse a released generation for publication. Current main is reconciled through `e1284c500ca4f3cfea38c9fae56b84b3a21b1272`. No frontier-exhaustion claim is made.

@@ -128,7 +128,7 @@ Publication records, architectural publication drawings, compiler proof artefact
 
 ## Build and verification
 
-Install the locked dependencies with `npm ci`. The canonical repository-health entry point is:
+Use the repository's declared Node.js runtime and Python 3. The material studies checked by canonical health use the Python standard library; no extra Python packages are required. Install the locked Node dependencies with `npm ci`. The canonical repository-health entry point is:
 
 ```sh
 npm run check

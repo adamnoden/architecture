@@ -4443,10 +4443,58 @@
     },
     "servicesAuxiliaryProjection": {
       "keyedFieldsEqual": true,
+      "fanMaintenance": [
+        {
+          "id": "ground-WC",
+          "maintenanceFurniture": null,
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        },
+        {
+          "id": "utility",
+          "maintenanceFurniture": null,
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        },
+        {
+          "id": "kitchen",
+          "maintenanceFurniture": {
+            "eastNorthChairPark": [
+              10800,
+              8475,
+              500,
+              500
+            ],
+            "eastSouthChairPark": [
+              7750,
+              10400,
+              500,
+              500
+            ],
+            "state": "Parktworigidchairsbeforeplatformerection; restoreaftercompletefanreassembly/testing/platformremoval. Actualotherchairs/table retained."
+          },
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        },
+        {
+          "id": "rear-bath",
+          "maintenanceFurniture": null,
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        },
+        {
+          "id": "family-bath",
+          "maintenanceFurniture": null,
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        },
+        {
+          "id": "principal-bath",
+          "maintenanceFurniture": null,
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        }
+      ],
       "sourceBlob": "3e934b29d9f328b41cb9bd2498184154090492c0",
       "fields": [
         "interfaces.architecturalServices.plant.cylinder",
-        "interfaces.architecturalServices.emitters"
+        "interfaces.architecturalServices.emitters",
+        "interfaces.architecturalServices.fanAccess",
+        "extract[].maintenanceFurniture/doorMode"
       ],
       "method": "Derived from exact current object; the historical MAT9476 auxiliary stamp is not reused."
     },
@@ -12913,6 +12961,12 @@
         "hood": "600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required."
       }
     },
+    "servicesOccurrenceProof": {
+      "emitters": 16,
+      "extractTasks": 6,
+      "pass": true,
+      "scope": "Current actual furniture, emitter heights, extract ports/platforms and fan task states; component equality does not establish whole-house acceptance."
+    },
     "internalArchControls": {
       "status": "Explicit joined HAD reference geometry; no masonry capacity or classified closure acceptance.",
       "head": 2850,
@@ -13157,7 +13211,7 @@
     "currentAdoptionBlockers": [
       "The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.",
       "Temporary walking deck at-900 has only270 headroom below the retained outer support at-630. Walking retreat through that support and900-high hinged cover opening are NOT feasible as currently described. No maintenance first-motion pass.",
-      "Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health still needs explicit active HAD/MAT reproducer coverage before adoption."
+      "Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health now checks the actual HAD/MAT producers; physical and architectural admission remain separate."
     ],
     "knownRejectedGeometry": {
       "intermediateDividerAt3300": {
@@ -13577,7 +13631,7 @@
   "unclosed": [
     "The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.",
     "Temporary walking deck at-900 has only270 headroom below the retained outer support at-630. Walking retreat through that support and900-high hinged cover opening are NOT feasible as currently described. No maintenance first-motion pass.",
-    "Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health still needs explicit active HAD/MAT reproducer coverage before adoption.",
+    "Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health now checks the actual HAD/MAT producers; physical and architectural admission remain separate.",
     "Actual support continuity, groundwater/receiving head and public approach remain unearned. Retained3700 door/arch and low-larder component checks do not establish whole-house or hydraulic acceptance."
   ]
 }

@@ -807,6 +807,45 @@ east_raw=east_path.read_bytes()
 assert hashlib.sha1(b'blob '+str(len(east_raw)).encode()+b'\0'+east_raw).hexdigest()=='83acf8afddbf9aed510697820fb11cbeb11a1c25'
 east_join=json.loads(east_raw)
 assert east_join['immutableStartingMain']=='c1986524454a0a9f518c45184e1d8808e9eebb1e'
+# The north weather return is real finished fabric. The old200 hole at5700
+# reaches5800,19.5 into its5780.5 dry face; the160 carrier has only0.5 reserve.
+# Own the downstream setout here, preserving every upper branch/tail endpoint.
+# Actual HAD portal/ring/finish proof is separately source-bound, not copied
+# from the retired7400 window or reduced to an all-height ring rectangle.
+old_east_exit=json.loads(json.dumps(east_exit))
+exit_y=5625
+exit_plan=1000+(exit_y-5200)+1200
+east_exit['path']=[[9800,5200,2682.5],[10800,5200,2657.5],
+ [10800,exit_y,2657.5-(exit_y-5200)/40],[12000,exit_y,2682.5-exit_plan/40]]
+east_exit['lengthMM']=exit_plan;east_exit['fallAt1in40']=exit_plan/40
+east_exit['externalDownstackBodyTerritory']=[12000,exit_y-150,450,300]
+east_exit['doorControl']['holeToRingControlReserve']=exit_y-100-5515
+east_exit['doorControl']['flashingToRingControlReserve']=exit_y-150-5515
+east_exit['doorControl']['allHeightControlStatus']='Conservative flashing rectangle is negative(-40); no all-height PASS. Actual current HAD finite arch-ring and actual new service portal must be checked in east-water-foul-join.py.'
+dry_north=east_join['plantDryRoom'][1]+east_join['plantDryRoom'][3]
+east_exit['northReturnJoin']={'oldRejectedPort':old_east_exit['path'][-1],
+ 'oldFormedHoleToDryFace':dry_north-(5700+100),'oldCarrier160ToDryFace':dry_north-(5700+80),
+ 'northDryFace':dry_north,'formedHoleToDryFace':dry_north-(exit_y+100),
+ 'completeCarrier160ToDryFace':dry_north-(exit_y+80),
+ 'sourceOrder':'Services owns5625 downstream setout; HAD owns the actual portal and arch profiles. Recompute every current hole/carrier/flashing against actual openings, not retired window7400. No material/closure/capacity acceptance.'}
+old_grade=json.loads(json.dumps(east_exit['grade']))
+trial_grade=-2000;cover=old_grade['crownCoverControl'];receiver_crown=trial_grade-cover;receiver_axis=receiver_crown-80
+east_exit['grade']={'trialExterior':trial_grade,'requiredReceiverEnvelopeCrownAtOrBelow':receiver_crown,
+ 'axisOf160OuterEnvelope':receiver_axis,'crownCoverControl':cover,
+ 'actualHydraulicInvert':'Unknown actual carrier/internaldiameter/receiver/site/outfall.160 outer envelope axis is not an adopted hydraulic invert.',
+ 'scope':'Joined D2000 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered700, preserving internal wall/sleeve/tail connections and falls.',
+ 'historicalD1300Control':old_grade,'externalTailLoweringMM':700,
+ 'affectedExternalTails':['foul-ground-WC','foul-utility','foul-kitchen','rear-soil','east-soil','kitchenSinkStation.wasteRequiredRoute']}
+for a,z in zip(east_exit['path'],east_exit['path'][1:]):assert abs(a[2]-z[2]-math.dist(a[:2],z[:2])/40)<1e-9
+assert east_exit['northReturnJoin']['formedHoleToDryFace']==55.5
+for duty in other:
+ if duty['id']=='east-soil':
+  duty['path']=east_exit['path']+[[12450,exit_y,receiver_axis]]
+  duty['decision']='75S exit rewind5625 preserves upper join/start2682.5 and1:40, clears new north-return formed-hole boundary. Actual current portal/ring/weather/support, outside350release and receiving grade/invert remain to qualify. No hidden floor bore.'
+ elif duty['id'] in east_exit['grade']['affectedExternalTails']:
+  assert duty['path'][-1][2]==-1980
+  duty['path'][-1][2]=receiver_axis
+sink['wasteRequiredRoute'][-1][2]=receiver_axis
 plant=east_join['plant']
 for e in emitters:
  if e['id']=='plant-N':
