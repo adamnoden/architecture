@@ -50,14 +50,17 @@ test('current source authentication does not conceal stale actual scene occurren
   const current=JSON.parse(readFileSync(new URL('../../mat/studies/whole-house-service-baseline.json',import.meta.url),'utf8'));
   const v=deriveWaterReplan();
   assert.deepEqual([v.model.servicesOccurrenceProof.emitters,v.model.servicesOccurrenceProof.extractTasks],[16,6]);
-  for (const mutate of [
-    model=>{model.groundFurniture['service-emitter-plant-N'][0]++;},
-    model=>{const e=current.interfaces.architecturalServices.emitters.find(e=>e.level===1);model.upperFurniture['service-emitter-'+e.id][0]++;},
-    model=>{model.servicesInterface.extract[0].platform[0]++;},
-    model=>{model.servicesAuxiliaryProjection.fanMaintenance[0].doorMode+=' changed';},
-    model=>{model.serviceMaintenanceFields[0].platform[0]++;}
+  for (const [mutate, expected] of [
+    [model=>{model.groundFurniture['service-emitter-plant-N'][0]++;}, /Actual emitter furniture drift: plant-N/],
+    [model=>{const e=current.interfaces.architecturalServices.emitters.find(e=>e.level===1);model.upperFurniture['service-emitter-'+e.id][0]++;}, /Actual emitter furniture drift/],
+    [model=>{model.servicesInterface.extract[0].platform[0]++;}, /Actual extract occurrence drift: ground-WC/],
+    [model=>{model.servicesAuxiliaryProjection.fanMaintenance[0].doorMode+=' changed';}, /Actual fan task\/door-mode drift: ground-WC/],
+    [model=>{model.serviceMaintenanceFields[0].platform[0]++;}, /Actual fan maintenance field drift: ground-WC/]
   ]) {
-    const model=structuredClone(v.model);mutate(model);
-    assert.throws(()=>verifyServicesOccurrences(model,current),/drift/);
+    // A committed JSON artifact has separate arrays. Preserve the imported object
+    // while mutating only the actual scene/view, which is the regression class.
+    const model=JSON.parse(JSON.stringify(v.model));mutate(model);
+    assert.deepEqual(model.architecturalServices,current.interfaces.architecturalServices);
+    assert.throws(()=>verifyServicesOccurrences(model,current),expected);
   }
 });
