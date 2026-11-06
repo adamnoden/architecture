@@ -33,3 +33,46 @@ A feet centre at2302.5/9633 uses the front127.5 of the500×555 clear deck after 
 **Reject that placement as a clear-territory witness.** Its full bound overlaps the actual18-finished south receiver by350×148, ordinary reading sofa A by208.5×1900 and ordinary family sofa B by826×750. The wall/receiver cannot be removed as loose furniture. Merely sliding that entire bound west to reserve25 from the receiver forces platform centre x≤1841.5. Even an eastmost100 feet-centre offset then leaves dx≥361 to the port; together with180.5 fore/aft and550 vertical, the old bare-point600 model is exceeded at about682. This is a failure of that **specific full-bound/aligned/bare-point argument**, not all orientations, the actual open shape, room replans or tool-supported methods.
 
 The source-owned loose furniture remains movable. A real larger maintenance state may clear/repark more than the old single sofa, refine the native body/stabiliser union rather than its whole box, or use actual tool-grip coordinates rather than the weld pool. It must include the standing deck, all required feet, fixed receivers, occupied hands/guards and genuine furniture/escape state together. Do not claim success by omitting furniture, parking it in a wall/escape route, assuming a marketed working height is reach, or renaming a cold joint as removal of the room-access duty. A cold joint avoids its own welding/protection burden; the actual worker and support access still need establishing.
+
+## Constructive skew placement and movable-furniture contract — unselected
+
+The next reference does **not** require an unknown bought sofa to be manually movable. Furniture procurement must preserve this rare-repair event: A must move100 west; B must be a two-person movable1900×750 piece capable of the staged lift/turn below, with declared mass, safe paired grips, floor protection and a controlled rest at every state. Select the actual furniture/handling method against that duty; the drawn boxes are not owner-nominated products. No numerical human lifting allowance or purchased-product compliance is invented. If a chosen sofa cannot satisfy it, choose separable/movable furniture or replan the event before house adoption.
+
+Use two conservative native regions rather than giving the rear of the podium the full front-leg width. In platform-local coordinates, **u** is sideways and **v** points towards its working front: charge the whole740×1440 body to `u=−370..370, v=−1145..295`, and charge both overhead stabilisers to a complete rectangular region `u=−861..861, v=295..786`. The native plan shows the front mast at the non-climbing edge of the590 deck; locating that line at v295 remains a **dimensioned supplied-product/CAD verification hold**, not an OEM-certified deck-to-body transform. This deliberately retains the whole space between both legs, not an assumed thin strut/capsule. If the actual supplied mast/body/guard reference differs, recompute before relying on this placement.
+
+Place the deck centre at **2387/9894**, front yaw **172° clockwise from +Y**. Transform each local point by `X=2387+u cos172°+v sin172°; Y=9894−u sin172°+v cos172°`. At the selected finished room/receiver boundaries, exact polygon separation gives:
+
+| Deployed region | Finished south receiver | Reading sofa A parked | Family sofa B parked | South wall |
+| --- | ---: | ---: | ---: | ---: |
+| Entire native body region |516.4|318.8|645.5|600.9|
+| Entire front stabiliser region |**25.4**|**25.4**|145.0|46.3|
+
+All figures are nominal mm, with no construction/placement tolerance already consumed. The narrow25.4 margins are a **measurement/positioning hold**, not spare clearance quietly granted to unmodelled components. The lower room west bound654.5 conservatively includes the inherited service/radiator front; east4262.5, south8949.5 and north11564.5 are the current finished-room bounds used here. Body northmost11079.4 remains below the north receiver11242.5. Both sofas and tables remain inside this actual room.
+
+### Finite two-person movement and reverse restoration
+
+Keep A's reading table `[800,10925,300,300]`. Finish with A `[700,9000,850,1900]`, B `[3440,9630,750,1900]` and family table `[3900,9000,300,300]`. This is a proposed temporary scene, **not a HAD edit/adopted maintenance occurrence**. Source furniture rectangles are only geometry; actual movable-furniture selection must bind the grips, mass, two-person force, rest/stability and surface protection.
+
+For the following plan-only witness, charge each standing handler a300-radius disk. Straight move checks use the complete translated furniture rectangle and the swept handler capsule, not endpoint boxes alone. A handler can change sides only in the cleared room before the next move; the turn has its own coupled paths. No occupied podium is present during furniture movement.
+
+| Order | Furniture movement / rest | Handler centres and bounded method |
+| --- | --- | --- |
+|1|A west100 to `[700,9000,850,1900]`|East-side handler `(1975,9450)→(1875,9450)`,325 from the moving east face. West service-front reserve45.5. Actual controlled push/grip required.|
+|2|B north650 to `[2337.5,10450,1900,750]`|South-side handler `(3000,9475)→(3000,10125)`,325 from the moving south face. This is recomputed in this event, not credit for an earlier proxy's physical qualification.|
+|3|Family table south450 to `[3900,9000,300,300]`|North-side pull at left end, `(3900,10075)→(3900,9625)`. Handler disk stays62.5 inside the east wall and75 below parked B. Select an actual accessible grip.|
+|4|Return B south650 to ordinary position|Reverse order2, after table has cleared.|
+|5|B west75 to `[2262.5,9800,1900,750]`|Two handlers on opposite long faces, x3287.5→3212.5 at y9475 /10875. Body disks reserve52.5 above south receiver and67.5 below north receiver.|
+|6|Turn B90° about `(3212.5,10175)`; rest `[2837.5,9225,750,1900]`|Paired handlers rotate with sofa at radius700 on its minor axis. Their300-radius disks fit a1000-radius circle; sofa corner radius `sqrt(950²+375²)=1021.3` bounds the entire combined turn. This circle clears east wall28.7, south/north receivers39.8/54.7 and family table91.4. This is controlled paired lifting/turning duty, not an assertion that furniture can slide/pivot without grips.|
+|7|B east275 to `[3112.5,9225,750,1900]`|Two west-side handlers x2512.5→2787.5, y9700 /10350. Sofa remains37.5 west of parked family table.|
+|8|B north405 to `[3112.5,9630,750,1900]`|Same west-side paired grips; handlers x2787.5, y9700→10105 and10350→10755. This requires a controlled carried shift, not frictionless sideways pushing. Sofa stays35 east of north receiver; northmost handler disk11055 stays187.5 south of it.|
+|9|B east327.5 to final `[3440,9630,750,1900]`|Same two west-side handlers x2787.5→3115, y10105 /10755. Final sofa east-wall reserve72.5, north-wall reserve34.5. Rest before equipment erection.|
+
+Reverse9→1 restores the ordinary furniture positions with the same swept regions, provided actual grip/rest method is reversible. This is a **bounded geometric movement contract**. Supply actual furniture which satisfies it; do not treat unknown mass/handholds as an eternal catalogue blocker or claim a bought sofa already passes. The finite turn has only28.7 nominal wall reserve and must be measured with finishes/handles/floor protection included.
+
+### Actual standing deck, tool and remaining method duties
+
+A proposed300×300 foot-contact box centred local u0/v100 fits the500×555 toe-board clear deck, leaving100 sideways and27.5 forward. Global foot centre is approximately2400.9/9795.0. An authored480×300 standing torso envelope would leave only10 sideways; it is a crew/PPE/guard fit requirement, **not a physical ergonomic pass** or permission to lean outside the guard. No second worker stands on the one-person platform. The950 deck,1450 shoulder-above-deck reference gives shoulder z2400; a declared1750 standing head reaches2700, below the2950 work, but posture/guard/ladder access remains required.
+
+The weld pool at2302.5/9452.5/2950 is not a hand-grip point. A **required, not yet sourced/qualified** tool grip at2302.5/9502.5/2850 (50 towards the operator,100 below the pool) is545.6 from that shoulder reference. This defines what actual torch/cutting equipment and two-handed process must demonstrate; it does not grant a convenient100 tool offset to an unspecified tool or establish reach/control/protection. The bare pool is beyond the old600 sphere at this pose. Cutting, filler-hand, pipe support and work-light/tool management each still need their real coordinates and forces.
+
+**Current result:** one conditional native-region placement and a complete plan movement/restoration contract replaces the failed aligned whole-box argument. **No supported rare repair is yet admitted.** Product mast/deck transform, measured25mm-scale margins, platform erection/unoccupied inbound route, climb/gate/guard/escape access, actual crew/tool grips, independent pipe/module support, hot-work screen/fire/spark protection and wall/floor reinstatement remain joined method holds. The body region cannot be silently treated as a clear ladder approach: its stairs and access gate occupy real space. No furniture is deleted or parked outside the room, and no bespoke podium has been invented to rescue a proxy layout.
