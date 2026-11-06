@@ -1,8 +1,10 @@
 # RWT-06 — selected water event and receiving limits
 
-**6 November 2026. Investigation in progress, not hydraulic admission or packet completion.** Starting main `8 ab 19 d 48 ef 16 abaff 39 e 7 f 49 a 3801 d 5 dc 5 f 65521`, original HAD blob `f 7324121 f 59 cc 5 f 1707 ea 47640 dd 2 b 20 c 26 b 9 bbb`. The current [HAD consumer](../had/studies/water-replan.json) is blob `4 e 6 f 9 a 338 cb 8 c 5 e 87 f 6 afb 82 fe 2 a 6 f 9 fc 6 eeb 702`, incorporating the source-owned [RWT receiving interface](studies/selected-receiving-interface.json). The [architectural selection](../had/water-replan-result.md), house topology, protection and quiet-stage budget remain unchanged. No historical north-mouth capacity becomes current proof.
+**6 November 2026. Investigation in progress, not hydraulic admission or packet completion.** Starting main `8ab19d48ef16abaff39e7f49a3801d5dc5f65521`, original HAD blob `f7324121f59cc5f1707ea47640dd2b20c26b9bbb`. The current [HAD consumer](../had/studies/water-replan.json) is blob `4e6f9a338cb8c5e87f6afb82fe2a6f9fc6eeb702`, incorporating the source-owned [RWT receiving interface](studies/selected-receiving-interface.json). The [architectural selection](../had/water-replan-result.md), house topology, protection and quiet-stage budget remain unchanged. No historical north-mouth capacity becomes current proof.
 
 [Calculation](studies/selected-water-event.mjs) · [regressions](studies/selected-water-event.test.mjs) · [complete values/state ledger](studies/selected-water-event.json) · [source-derived plan/section](studies/selected-water-event.svg).
+
+**Handoff update:** the [graded-transfer proposal](rwt-06-graded-transfer-proposal.md#confirmed-defects-at-the-handoff) has accepted operator/staff, fast-plan curvature and canopy slot/lap defects. It remains unadopted; passing calculation/reproduction checks do not resolve them.
 
 ## Decision
 

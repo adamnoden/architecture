@@ -2,6 +2,28 @@
 
 **6 November 2026. Unadopted construction proposal.** The selected HAD source is unchanged. [Energy comparison](studies/graded-transfer-comparison.json) · [finite construction source](studies/graded-transfer-geometry.mjs) · [complete values](studies/graded-transfer-geometry.json) · [chute/tool sheet](studies/graded-transfer-geometry.svg) · [canopy/chase sheet](studies/graded-transfer-canopy.svg). Both inspection sheets were rendered and inspected.
 
+## Confirmed defects at the handoff
+
+**Do not adopt this construction from its passing reproduction tests.** The published 788022e6 proposal has three accepted intrinsic defects; its numerical/inspection evidence is preserved so the successor can repair the owning geometry.
+
+| Accepted finding | Source-exact counterexample | Consequence |
+|---|---|---|
+| Operator/staff collision | N5 rear staff endpoint is approximately 5847.1/6869.1/1715.7 mm, only 148.4 mm in plan from the declared operator at 5700/6850 mm. S5 is similarly only 162.4 mm away. Both enter the unchanged R300 body proxy; even an R150 head plus 20 mm tube fails. | Roof clearance alone did not prove the full human/tool sweep. No corrected stance/control path is accepted. |
+| Fast lateral curvature | The south cubic plan has endpoint curvature 0.84949 m⁻¹. Using the source-bound zero-loss speed ceiling, transverse-equilibrium `V² b κ/g` is approximately 437.7 mm across 340 mm, versus the actual 95 mm end bank. | The positive one-dimensional conjugate-depth comparison does not close plan turn/wave containment. This is an adverse demand screen, not a prediction that the actual thin jet necessarily forms that hydrostatic surface. |
+| Fixed slot and short lap | Fixed global slot top 2030 mm lies 34.97 mm above the actual box crown near y13350 mm. The rendered diagonal from 6698.5/2001.5 to 6725/1980 mm is only 34.12 mm long, despite the 50 mm lap claim. | Derive each side-entry and roof-return station from the actual falling box; draw the complete50 mm return/contact. No roof-chase admission is earned. |
+
+Worker 1 identified the operator collision; worker 5 identified the slot/lap errors. Both reviews are bounded geometry findings, not material or installed-use approval. A local south-stance attempt was not published: the full R300 staff sweep still failed, or left less nominal clearance than the modeled elastic deflection while its base/roof/control reach was not composed. No original body proxy is reduced to hide the clash.
+
+## Finite successor direction, not selection
+
+Finish lateral transfer while flow is slow, then use a straight descent. A self-draining upper header with a critical throat can create backwater **without a raised sill or stagnant sump**. For example, a 65 mm throat at 3.60375 L/s has 67.921 mm critical depth and 101.882 mm specific energy. A header near bed −300 mm is a concrete direction for stabilizing the approximately 100 mm adverse entry jump before turning; its actual grade, obstruction budget, roof/cover clearance, support, removable panels and wet mass remain to be composed.
+
+That narrow straight chute must not borrow a600 mm stream downstream. With all quiet-stage head and no friction, the same 65 mm stream has a 209.165 mm horizontal conjugate comparison at bed −900 mm, or 194.532 mm at bed −700 mm. A deliberately 225 mm-deep carrier is therefore a finite component rewind to compare, **not an adopted dimension**. Under the current bridge underside −630 mm, bed −900/rim−675 mm leaves 45 mm, but the selected D1800 ground/catch budget becomes thin. A separately proved 250 mm bridge could instead permit the shallower−700 comparison. Neither structural candidate nor deeper channel is selected here; STR owns anchorage/support proof and MAT owns the changed joint/physical assembly.
+
+A north-drain successor can compare a 200 ×150 mm chase around invert 1845→1825 mm. Its crown stays below the temporary roof valley, permitting an actual 50 mm down-return at every station. This needs a complete source/rendered update and the combined 4.43895 L/s hydraulic/receiver check; it is not a correction already made to the preserved150 mm model.
+
+The next actual exit is one coherent corrected plan/section, complete original-body/tool sweep, true roof slot/lap profile and coupled normal/maintenance event matrix. Physical first-harm, material and real-site admission remain distinct. The [finite exit map](rwt-06-finite-exit-map.md) also retains high-eave cleaning/removal and major repair; those duties are not discharged by this local chute study.
+
 The proposal replaces the final free plunge with a monotone floor inside the existing well: x6125–7550 mm, bed −150 to −792.647 mm, with a tangent 400 mm toe radius occupying the final 173.6 mm. Its last 25 mm nose remains 5 mm above the selected E carrier floor, giving 3.5 mm below the sheet and a real downward landing; the final bank is 95 mm. The two real 225/100 mm inlets remain separate channels, opening to **340/215 mm**, rather than assuming a 600 mm stream. Actual 1.5 mm walls and 10 mm dry flanges leave 12 mm between the outlet channels. The early bank is 85 mm, increasing to 100 mm as the bed falls, leaving 5 mm below the plain cover underside at −60 mm.
 
 | Individual adverse flow | Zero-friction horizontal conjugate comparison | Actual 95 mm chute-end bank reserve |
