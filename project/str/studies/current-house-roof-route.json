@@ -1,0 +1,168 @@
+{
+  "admitted": false,
+  "axialRanges": {
+    "leg": [
+      -11.024040431042454,
+      11.02404043104297
+    ],
+    "radial": [
+      -35.11901867344825,
+      43.269330113212966
+    ],
+    "ridge": [
+      -13.0251891302942,
+      7.744641687875715
+    ],
+    "ring": [
+      -45.97066679471595,
+      32.00100455445851
+    ]
+  },
+  "coherentWindStates": 96,
+  "comparison": {
+    "bracedTubeLengthM": 57.91814132401421,
+    "bracedTubeMassKg": 568.4273256663828,
+    "comparisonRoles": [
+      "12 horizontal CHS and flat elevated couple",
+      "existing lower rings and ties, flat elevated couple",
+      "actual pitched legs/ridge row plus finite vertical rings on 22 springs40kN/mm"
+    ],
+    "roofDeflections": [
+      24.08555669036165,
+      24.26677935724286,
+      24.5034881464233
+    ]
+  },
+  "crown": {
+    "40pinCombined": 194.2038019206187,
+    "45pinCombined": 138.8047206917509,
+    "maximumResultant": 103.21948500397184,
+    "nominalSaddleGrossKgEach": 13.71552,
+    "nominalWeldStress": 31.639210327474245,
+    "outerHalfRidgeSaddleForce": 29.38077293773732,
+    "remaining": "The purlin underside clears the existing clevis only after actual 3D end plate/diaphragm and roof-layer placement. Verify one-sided saddle, restraints and deflection of the 200 mm eccentric connection in both directions. A rigid weld through both opposing rafter halves would defeat the assumed crown hinge.",
+    "remaining8point5kNAllowanceKgAfter12Saddles": 701.8765530682978,
+    "ridgeCornerFlangeForce": 129.20893138048058,
+    "saddleMomentAt200Ecc": 5.876154587547465,
+    "singleHalfPositive240Couple": 24.483977448114437,
+    "twoDeveloped100x7WeldResistance": 140.0
+  },
+  "exactSpaceModel": "At ridge the continuous horizontal purlin carries axial force and finite weak-axis bending, with an unrestrained pin between the two pitched primary rafters. Existing radial twin rails at 6770, pitched legs at 6860, vertical/moment/roll flexibility of both real collector rings at6600. The roof pressure band above the ring is split between the ring and 12 crown nodes preserving its signed force, location and first moment. Each leg returns a vertical and a horizontal component to its own heel. Both N and N*x/y are conserved; independently re-solved 2D ring spring forces must match all 22 reactions to 0.001 kN in every wind programme. Actual cladding/purlin pressure transfer, upper-station stiffness, first-floor membrane and soil flexibility remain qualifications.",
+  "referenceElevations": {
+    "eave": 7297.520687,
+    "rafterCrownCentre": 7695.856477242835,
+    "rafterHeelCentre": 6860,
+    "ridgeCover": 8288.42446,
+    "ringCentre": 6600.0
+  },
+  "ridge": {
+    "displacement": [
+      128.43093357465725,
+      [
+        63,
+        [
+          2125.0,
+          9875.0
+        ]
+      ]
+    ],
+    "legBaseVertical": [
+      3.4521298986808007,
+      [
+        10,
+        [
+          332.5,
+          11667.5
+        ]
+      ]
+    ],
+    "moment": [
+      8.83413625070401,
+      [
+        95,
+        [
+          7300,
+          2125.0
+        ],
+        [
+          9875.0,
+          2125.0
+        ]
+      ]
+    ],
+    "normal": [
+      129.36858598875864,
+      [
+        15,
+        [
+          7300,
+          9875.0
+        ],
+        [
+          4700,
+          9875.0
+        ]
+      ]
+    ],
+    "shear": [
+      6.793519170855798,
+      [
+        95,
+        [
+          4700,
+          2125.0
+        ],
+        [
+          7300,
+          2125.0
+        ]
+      ]
+    ]
+  },
+  "ridgeJointMaterialComplianceMMPerN": 1.1736201298701298e-06,
+  "ridgeJointRotationalSpringNmmPerRad": 1435558199.0455773,
+  "role": "Existing purlin/primary/tie space frame instead of twelve additional plan CHS. Perforated finite first-floor membrane, fixed L bases and project wind hypotheses; no construction or site adoption.",
+  "sources": {
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/str/studies/current-house-roof-bracing.py": "268fcee48d27bbd14d0213b7f47e7701a579dd8455c406c8b101466a49c16bcc",
+    "project/str/studies/current-house-welded-heel.json": "d3ebe9d7f4c6c00f0de37f3d78c36c933ce83f67c2276c836d7d833a44386a3a",
+    "project/str/studies/current-house-welded-network.json": "316c6a076d37c9a26b51dcddaa16e319d6905753d44af4bb71c3dd2d64f791a6"
+  },
+  "tieRailChecks": [
+    {
+      "frame": "ordinary",
+      "individualCompressionVM": 15.583273728570504,
+      "individualEuler": 218.35904991909572,
+      "initialBowL350": 10.242857142857142,
+      "wholeCompressionTension": [
+        49.859512325949424,
+        82.0334700191068
+      ]
+    },
+    {
+      "frame": "hip",
+      "individualCompressionVM": 22.08823832998045,
+      "individualEuler": 109.17952495954785,
+      "initialBowL350": 14.485587488878704,
+      "wholeCompressionTension": [
+        55.80094020977014,
+        98.53954286595943
+      ]
+    }
+  ],
+  "weldedHeel": {
+    "additionalLeverMoment": 17.264434398662022,
+    "componentN_V_T": [
+      114.29337054425594,
+      73.4521298986808,
+      10.0
+    ],
+    "maximumShoeToThroughWebOffset": 6,
+    "remaining": "Actual weld preparation, distortion/tolerance with 6 mm alignment budget, off-plane roof loads, section/fire/corrosion protection. The fitted webs must line up under both normal and 45 degree heels.",
+    "skinStressAt6": 121.53226014537157,
+    "sole160x180Throat10Stress": 85.88958275509312,
+    "two80mmAt7Previous": 112,
+    "two80mmAt9Resistance": 144.0,
+    "two80mmStationSegmentsRequiredAt9": 125.71035728657732
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "admitted": false,
+  "limits": "The first-floor membrane is finite on its actual three voids and optional 400-square well; crack/shear stiffness, reinforcement laps, local corner force transfer and floor penetrations are explicit qualifications. Crown saddles, top covers/roof build-up, actual wind map, floor-arm shear, continuous corner anchorage, base stiffness and soil remain separate. The nominal full-head ledger is one calibrated case, not the full envelope of all stiffness programmes.",
+  "ranges": "10 and 250 kN/mm bracket common rod/occupied floor versus largely compressed RC reference; vary mixed outer/court and half-plan activation, base-ring equivalent stiffness65% and finite ridge connection60%. Endpoint samples do not prove every mixed or cyclic contact. No favourable friction is used.",
+  "samples": [
+    {
+      "baseRoofDriftMM": 24.5034881464233,
+      "legRange": [
+        -11.024040431042454,
+        11.02404043104297
+      ],
+      "maximumUpperSupportWindIncrementKN": 6.858393500173725,
+      "planRingEIRatio": 1.0,
+      "radialRange": [
+        -35.11901867344825,
+        43.269330113212966
+      ],
+      "regionalRidge": {
+        "displacement": [
+          128.43093357465725,
+          [
+            63,
+            [
+              2125.0,
+              9875.0
+            ]
+          ]
+        ],
+        "legBaseVertical": [
+          3.4521298986808007,
+          [
+            10,
+            [
+              332.5,
+              11667.5
+            ]
+          ]
+        ],
+        "moment": [
+          8.83413625070401,
+          [
+            95,
+            [
+              7300,
+              2125.0
+            ],
+            [
+              9875.0,
+              2125.0
+            ]
+          ]
+        ],
+        "normal": [
+          129.36858598875864,
+          [
+            15,
+            [
+              7300,
+              9875.0
+            ],
+            [
+              4700,
+              9875.0
+            ]
+          ]
+        ],
+        "shear": [
+          6.793519170855798,
+          [
+            95,
+            [
+              4700,
+              2125.0
+            ],
+            [
+              7300,
+              2125.0
+            ]
+          ]
+        ]
+      },
+      "relativeInnerOuterAtRafters": 2.9099250707521875,
+      "ridgeEndKRatio": 1.0,
+      "springNPerMM": [
+        40000,
+        40000
+      ],
+      "variant": "nominal"
+    },
+    {
+      "baseRoofDriftMM": 24.89350435627288,
+      "legRange": [
+        -10.535939927121035,
+        10.535939927119491
+      ],
+      "maximumUpperSupportWindIncrementKN": 6.4073884299520065,
+      "planRingEIRatio": 0.65,
+      "radialRange": [
+        -34.293147119450175,
+        44.8976427495347
+      ],
+      "regionalRidge": {
+        "displacement": [
+          163.10876366348543,
+          [
+            63,
+            [
+              2125.0,
+              9875.0
+            ]
+          ]
+        ],
+        "legBaseVertical": [
+          3.299283367167249,
+          [
+            10,
+            [
+              3917.5,
+              8082.5
+            ]
+          ]
+        ],
+        "moment": [
+          8.83696840552503,
+          [
+            95,
+            [
+              4700,
+              2125.0
+            ],
+            [
+              7300,
+              2125.0
+            ]
+          ]
+        ],
+        "normal": [
+          129.4261306164516,
+          [
+            26,
+            [
+              4700,
+              2125.0
+            ],
+            [
+              7300,
+              2125.0
+            ]
+          ]
+        ],
+        "shear": [
+          6.797318281034686,
+          [
+            95,
+            [
+              4700,
+              2125.0
+            ],
+            [
+              7300,
+              2125.0
+            ]
+          ]
+        ]
+      },
+      "relativeInnerOuterAtRafters": 5.512112143209359,
+      "ridgeEndKRatio": 0.6,
+      "springNPerMM": [
+        10000,
+        10000
+      ],
+      "variant": "allUpperRodsAndFloorCompliant"
+    },
+    {
+      "baseRoofDriftMM": 24.47243031264828,
+      "legRange": [
+        -11.301001141727507,
+        11.301001141728067
+      ],
+      "maximumUpperSupportWindIncrementKN": 7.054509138136496,
+      "planRingEIRatio": 1.0,
+      "radialRange": [
+        -35.615799743019366,
+        42.61562458808003
+      ],
+      "regionalRidge": {
+        "displacement": [
+          128.3556648720734,
+          [
+            63,
+            [
+              2125.0,
+              9875.0
+            ]
+          ]
+        ],
+        "legBaseVertical": [
+          3.538858930209348,
+          [
+            31,
+            [
+              11667.5,
+              11667.5
+            ]
+          ]
+        ],
+        "moment": [
+          8.835240889127927,
+          [
+            95,
+            [
+              4700,
+              2125.0
+            ],
+            [
+              7300,
+              2125.0
+            ]
+          ]
+        ],
+        "normal": [
+          129.34673441787155,
+          [
+            15,
+            [
+              7300,
+              9875.0
+            ],
+            [
+              4700,
+              9875.0
+            ]
+          ]
+        ],
+        "shear": [
+          6.793386828954361,
+          [
+            95,
+            [
+              4700,
+              2125.0
+            ],
+            [
+              7300,
+              2125.0
+            ]
+          ]
+        ]
+      },
+      "relativeInnerOuterAtRafters": 2.891775121216654,
+      "ridgeEndKRatio": 1.0,
+      "springNPerMM": [
+        250000,
+        250000
+      ],
+      "variant": "allCompressionBearings"
+    },
+    {
+      "baseRoofDriftMM": 24.842053719510947,
+      "legRange": [
+        -11.274930885704874,
+        11.274930885705157
+      ],
+      "maximumUpperSupportWindIncrementKN": 6.560374897329491,
+      "planRingEIRatio": 0.65,
+      "radialRange": [
+        -35.60363272436676,
+        43.16405169154149
+      ],
+      "regionalRidge": {
+        "displacement": [
+          163.08108068068165,
+          [
+            63,
+            [
+              2125.0,
+              9875.0
+            ]
+          ]
+        ],
+        "legBaseVertical": [
+          3.5306951439055965,
+          [
+            31,
+            [
+              11667.5,
+              11667.5
+            ]
+          ]
+        ],
+        "moment": [
+          8.839507142697213,
+          [
+            95,
+            [
+              7300,
+              2125.0
+            ],
+            [
+              9875.0,
+              2125.0
+            ]
+          ]
+        ],
+        "normal": [
+          129.26601019250057,
+          [
+            63,
+            [
+              7300,
+              9875.0
+            ],
+            [
+              4700,
+              9875.0
+            ]
+          ]
+        ],
+        "shear": [
+          6.798841189470013,
+          [
+            95,
+            [
+              4700,
+              2125.0
+            ],
+            [
+              7300,
+              2125.0
+            ]
+          ]
+        ]
+      },
+      "relativeInnerOuterAtRafters": 5.484677805396491,
+      "ridgeEndKRatio": 0.6,
+      "springNPerMM": [
+        10000,
+        250000
+      ],
+      "variant": "outerRodCourtBearing"
+    },
+    {
+      "baseRoofDriftMM": 24.828363503707685,
+      "legRange": [
+        -10.438580211433026,
+        10.438580211432491
+      ],
+      "maximumUpperSupportWindIncrementKN": 6.853285802563435,
+      "planRingEIRatio": 0.65,
+      "radialRange": [
+        -34.39528214144773,
+        44.75875087759767
+      ],
+      "regionalRidge": {
+        "displacement": [
+          162.83349450667797,
+          [
+            63,
+            [
+              2125.0,
+              9875.0
+            ]
+          ]
+        ],
+        "legBaseVertical": [
+          3.2687955993151636,
+          [
+            10,
+            [
+              3917.5,
+              8082.5
+            ]
+          ]
+        ],
+        "moment": [
+          8.838803329281637,
+          [
+            95,
+            [
+              7300,
+              2125.0
+            ],
+            [
+              9875.0,
+              2125.0
+            ]
+          ]
+        ],
+        "normal": [
+          129.54690906220944,
+          [
+            15,
+            [
+              7300,
+              9875.0
+            ],
+            [
+              4700,
+              9875.0
+            ]
+          ]
+        ],
+        "shear": [
+          6.796097424435101,
+          [
+            47,
+            [
+              4700,
+              2125.0
+            ],
+            [
+              7300,
+              2125.0
+            ]
+          ]
+        ]
+      },
+      "relativeInnerOuterAtRafters": 5.47132647959318,
+      "ridgeEndKRatio": 0.6,
+      "springNPerMM": [
+        250000,
+        10000
+      ],
+      "variant": "outerBearingCourtRod"
+    },
+    {
+      "baseRoofDriftMM": 24.831647246418274,
+      "legRange": [
+        -12.010604652658643,
+        12.010604652659847
+      ],
+      "maximumUpperSupportWindIncrementKN": 7.476220491789088,
+      "planRingEIRatio": 0.65,
+      "radialRange": [
+        -35.225590365090035,
+        44.56409558717398
+      ],
+      "regionalRidge": {
+        "displacement": [
+          162.9763561715036,
+          [
+            74,
+            [
+              2125.0,
+              2125.0
+            ]
+          ]
+        ],
+        "legBaseVertical": [
+          3.7610681566376574,
+          [
+            31,
+            [
+              11667.5,
+              11667.5
+            ]
+          ]
+        ],
+        "moment": [
+          8.840894576683082,
+          [
+            95,
+            [
+              7300,
+              2125.0
+            ],
+            [
+              9875.0,
+              2125.0
+            ]
+          ]
+        ],
+        "normal": [
+          129.69990021938816,
+          [
+            63,
+            [
+              7300,
+              9875.0
+            ],
+            [
+              4700,
+              9875.0
+            ]
+          ]
+        ],
+        "shear": [
+          6.798291889947483,
+          [
+            95,
+            [
+              4700,
+              2125.0
+            ],
+            [
+              7300,
+              2125.0
+            ]
+          ]
+        ]
+      },
+      "relativeInnerOuterAtRafters": 5.476157977512214,
+      "ridgeEndKRatio": 0.6,
+      "springNPerMM": [
+        10000,
+        250000
+      ],
+      "variant": "oppositeHalfLifted"
+    }
+  ],
+  "source": "E=200 GPa. Three metre M20 A4-80 threaded rod: 245 mm\u00b2 at3.23 m gives15.17 kN/mm; M24 353 gives21.86; adding floor/joint flexibility can lower both. Solid bonded 140x140 C30 patch Ec=33 GPa over3.23m gives200.25 kN/mm before cracking. Actual measured/qualified support stiffness is not fixed at40.",
+  "status": "Sensitivity of high-roof wind delivery; not a full nonlinear soil/contact model or a temporary-works pass.",
+  "temporary": "Do not remove the ridge purlin, twin rails, wall-head return, RC floor ring or its two rod anchors while crediting its diaphragm. Develop erection/stripping shores or temporary ties for that isolated element before unlocking it. No unpropped construction stage or roof-cover-only diaphragm admitted."
+}

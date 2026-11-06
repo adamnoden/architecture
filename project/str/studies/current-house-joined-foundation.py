@@ -4,7 +4,7 @@ Legacy family records are replayed before lower-wall collapse, not overwritten
 on old shaft cards. Positive kN down, residual Cx=N*deltaX, Cy=N*deltaY kNm.
 """
 from pathlib import Path
-import math,json,runpy,sys
+import math,json,runpy,sys,hashlib
 from itertools import pairwise
 from collections import defaultdict
 D=Path(__file__).resolve().parent
@@ -17,8 +17,8 @@ old=runpy.run_path(str(D/'current-house-head-actions.py'),init_globals={'originO
 edge=runpy.run_path(str(D/'current-house-floor-closure.py'),init_globals={'retainedObserver':lambda c,r,f:mins.append((c,dict(r),f))})
 sys.argv=args
 plane=runpy.run_path(str(D/'current-house-roof-bracing.py'))
-plane['bracedAlternate']=plane['actual'];plane['actual']=plane['control']
-rings=read('current-house-ring-integral.json')['rings'];w=read('current-house-welded-network.json');h=old['h'];gd=old['gd'];heads=old['heads'];W=edge['walls'];caps=edge['caps'];loPads=edge['allLower']
+plane['bracedAlternate']=plane['actual'];plane['actual']=plane['space']
+rings=read('current-house-ring-space.json')['rings'];w=read('current-house-welded-network.json');h=old['h'];gd=old['gd'];heads=old['heads'];W=edge['walls'];caps=edge['caps'];loPads=edge['allLower']
 A,B,C,E=332.5,11667.5,3917.5,8082.5
 # Build reusable unit routes through named lower beams: no stepping sideways
 # to the closest shaft. Preserve the perpendicular force couple on each real head.
@@ -60,7 +60,17 @@ def put(c,k,N,p,ns):
         scale=1.35 if k=='G' else 1.5;addB(per,0,scale);upperEvent(ns,N,0,scale)
     if k=='R':addB(per,-2.25,6.3);upperEvent(ns,N,-2.25,6.3)
     if k=='S':addB(per,0,1.35);upperEvent(ns,N,0,1.35)
+# Include actual reinforcing steel as an adverse additional permanent load,
+# even though each RC volume was already counted at 25 kN/m3. No extra
+# minimum stabilising mass credit. Use original local receiver points:
+# floor fields and residual/bridge area all carry 2 kPa characteristic Q.
 for c,k,n,p,rr in olds:
+    if c in ['first-floor fields','first-floor bridge','first-floor residual RC and finish'] and k=='Q':
+        rate=4*math.pi*12**2/4/150*1000*7850/1e6*.00981
+        put('first-floor full membrane mesh reserve','G',n/2*rate,p,rr)
+    if c=='ground RC200' and k=='G':
+        rate=4*math.pi*12**2/4/100*1000*7850/1e6*.00981
+        put('ground floor full two-face cage reserve','G',n/5*rate,p,rr)
     if c not in ['roof','roof signed rows','steel wall-head ring']:put(c,k,n,p,rr)
 def virtual(p):return '@'+edge['wallat'](p)
 def uput(c,k,N,p):put(c,k,N,p,[(virtual(p),p,1.)])
@@ -81,14 +91,26 @@ for xa,xb in pairwise(sets[0]):
 assert math.isclose(arInc,2.653,abs_tol=1e-6)
 for nm,(i,d,lo,hi,us) in W.items():
     for p,ln in old['parts'](edge['xy'](nm,lo),edge['xy'](nm,hi)):
-        # Reinforcement budget 1.25t includes 239kg beyond nominal 1.01t
-        # for continuity and local steel; gross concrete not reduced.
-        uput('edge reinforcement reserve','G',ln/62*1250*.00981,p)
+        # Reinforcement budget 1.85t includes the separate eight-H12 membrane chord
+        # and fabrication/continuity beyond 1.648t nominal; gross concrete not reduced.
+        uput('edge reinforcement reserve','G',ln/62*1850*.00981,p)
 allupper={tuple(row['xy']) for g in rings.values() for row in g['stations']}
 for p in allupper:
     # Gross added rod/foot/end/nut/splice budget 24kg intermediate /45kg
     # corner, separate from RC cage and roof heel budget. No Gmin credit.
     uput('floor positive ties and plate reserve','G',(.045 if p in caps else .024)*9.81,p)
+# Gross added steel, counted in every maximum G case, never as minimum G.
+# Take substantial physical stock in the four capillary joints and new pier
+# cages beyond the previous nominal concrete-volume allowance. Concentrate
+# the uniformly distributed pier cage at the actual centroid of its L shape.
+for p in plane['corners']:
+    sg=[1 if x==A else -1 for x in p]
+    aa=plane['cc']-70
+    qp=tuple(z+s*aa for z,s in zip(p,sg));ratio=aa/860
+    dest=[(old['coord'][p],p,1-2*ratio)]
+    for j in range(2):
+        q=list(p);q[j]+=sg[j]*860;q=tuple(q);dest.append((old['coord'][q],q,ratio))
+    put('outer pier cage and positive DPC stock reserve','G',(420+120)*.00981,qp,dest)
 def windrows(g,wi):return [{'xy':p,'n':n} for p,n in zip(g['windStationOrder'],g['windAtActualStations'][wi])]
 def vrange(r):return [(virtual(tuple(q['xy'])),tuple(q['xy']),q['n']) for q in r]
 inf={}
@@ -132,6 +154,8 @@ assert math.isclose(sum(v[0] for (c,k),v in orig.items() if k=='retainedMin'),38
 # moment: Rc at A is replaced by tensile T at B and compression P at C.
 shifts={(C,C):((C,4332.5),(C,6000.),'P32'),(C,E):((C,7950.),(C,6000.),'P34'),(E,C):((7950.,C),(7215.,C),'P35'),(E,E):((E,7700.),(E,6000.),'P37')}
 shifted={t:h for p,(t,s0,h) in shifts.items()}
+for t,hh in shifted.items():
+    put('court lower tie, blind block and terminal steel','G',90*.00981,t,[(hh,xy(hh),1.)])
 for p,(t,s0,h0) in shifts.items():
     assert s0 in loPads and all(abs(t[edge['walls'][edge['wallat'](t)][0]]-q['centre'])>=q['width']/2+125 for q in h['openings']['GROUND'] if q['wall']==edge['wallat'](t))
 def splitStop(p):
@@ -141,7 +165,16 @@ def splitStop(p):
 def groundFromPad(p):
     if p in shifted:
         hh=shifted[p];pp=xy(hh);return [(hh,1.,(p[0]-pp[0])/1000,(p[1]-pp[1])/1000)]
-    name=edge['wallat'](p);ns=old['wallbase'](name,p);dst=routes(ns)
+    name=edge['wallat'](p);ns=old['wallbase'](name,p)
+    if p==(C,C):
+        # Same 600x450 concrete at a real common SW elbow. A single
+        # alphabetical wall choice previously sent all load via the 835 mm
+        # south cantilever, giving P39 -23.03 kN even under full G+Q.
+        # Two compatible cantilevers on two real shaft pairs: tip
+        # compliance a²(a+L)/(3EI), including backspan rotations.
+        aa,bb=4785-p[0],4332.5-p[1];cs=aa*aa*(aa+1215);cw=bb*bb*(bb+1867.5)
+        sw=cw/(cs+cw);ns=[(k,pp,f*t) for nm,f in [('court-south',sw),('court-west',1-sw)] for k,pp,t in old['wallbase'](nm,p)]
+    dst=routes(ns)
     dx=p[0]/1000-sum(t*xy(h)[0]/1000+x for h,t,x,y in dst);dy=p[1]/1000-sum(t*xy(h)[1]/1000+y for h,t,x,y in dst)
     return [(h,t,x+dx*t,y+dy*t) for h,t,x,y in dst]
 padRoutes={p:groundFromPad(p) for p in loPads|set(shifted)}
@@ -334,7 +367,7 @@ def report():
         for j in range(3):
             lo,hi=headB[k][j];actual=ext[k][j];assert lo<=actual[0]+.02 and hi>=actual[1]-.02,(k,j,[lo,hi],actual)
         hh.append({'id':k,'xy':xy(k),'roles':heads[k]['roles'],'named_N_Cx_Cy':{id:rounded(z[0][k]) for id,z in named.items()},'separateComponentBounds_N_Cx_Cy':[rounded(ab) for ab in headB[k]],'coherentExtreme_N_Cx_Cy_Vx_Vy':[[round(l,4),round(h,4),a,b] for l,h,a,b in ext[k]]})
-    return {'status':'Proposed fixed-base 52-shaft load paths; no geotechnical, section, floor-edge or capillary joint acceptance.','units':'kN, kNm, mm. N positive down; Cx=N*deltaX and Cy=N*deltaY are first-moment residuals in x and y (not textbook Mx/My order). Vx/Vy horizontal kN. Positive yaw counterclockwise.','origins':[{ 'family':c,'case':k,'N_Xmoment_Ymoment':rounded(v)} for (c,k),v in sorted(orig.items()) if k not in ['R','S']],'named_source_totals':{id:rounded(val[3]) for id,val in named.items()},'coherentSignedStates':summaries,'approach':'Horizontal CHS omitted: two finite welded rings with the existing twelve twin-rail radial ties carry roof plan shear. The original 8.5 kN interface/bracing allowance remains an adverse distributed G budget, without favourable mass credit. 96 simultaneous full/partial, signed and biaxial wind patterns each repeated for three gravity/suction states. Ring eccentricities, elevated facade/roof projections and signed opposite vertical couples at actual outer corners included. Lower passive pads release in tension; each adjacent floor strip routes residual to the two captive corners. Ground-floor plinth wind tributary and L-corner spring shears are distributed to three reference shafts with conserved yaw. Fixed roof/plan/soil stiffness, vertical-plane path to corner couple, local floor/arch joints and head/soil capacity remain design questions. Independent component extrema are not one simultaneous house load.','courtTies':[{'oldCorner':p,'newHold':t,'passiveBalance':s,'head':h,'threePointCoefficient':splitStop(p)[0][1],'signedRange':rounded(bounds[t][0])} for p,(t,s,h) in shifts.items()],'outerTies':[{'point':p,'signedRange':rounded(cornerRaw[p])} for p in sorted(plane['corners'])],'heads':hh,'localOptionalBay':'Separate unadopted reference in current-house-service-bay.json. Do not add the entire wet sled load to the bay floor. Apply its declared P36/P37 loads only if adopting that control, including moments and hydrostatic action.'}
+    return {'sources':{str(f.relative_to(D.parents[2])):hashlib.sha256(f.read_bytes()).hexdigest() for f in [D.parents[1]/'had/studies/water-replan.json',D/'current-house-ring-space.json',D/'current-house-welded-network.json',D/'current-house-grid.json',D/'current-house-head-actions.json',D/'current-house-floor-closure.json',D/'current-house-membrane.py']},'admitted':False,'status':'Proposed fixed-base 52-shaft load paths; no geotechnical, section, floor-edge or capillary joint acceptance.','units':'kN, kNm, mm. N positive down; Cx=N*deltaX and Cy=N*deltaY are first-moment residuals in x and y (not textbook Mx/My order). Vx/Vy horizontal kN. Positive yaw counterclockwise.','origins':[{ 'family':c,'case':k,'N_Xmoment_Ymoment':rounded(v)} for (c,k),v in sorted(orig.items()) if k not in ['R','S']],'named_source_totals':{id:rounded(val[3]) for id,val in named.items()},'coherentSignedStates':summaries,'approach':'Horizontal CHS omitted: two finite welded rings with the existing twelve twin-rail radial ties carry roof plan shear. The original 8.5 kN interface/bracing allowance remains an adverse distributed G budget, without favourable mass credit. 96 simultaneous full/partial, signed and biaxial wind patterns each repeated for three gravity/suction states. Ring eccentricities, elevated facade/roof projections applied at the actual ridge purlin, 24 inclined primary legs and their 260 mm eccentric connection to the ring included. Lower passive pads release in tension; each adjacent floor strip routes residual to the two captive corners. Ground-floor plinth wind tributary and L-corner spring shears are distributed to three reference shafts with conserved yaw. First-floor cracked membrane/roof joint/soil stiffness, roof pin/purlin and local floor/arch joints and head/soil capacity remain design questions. Independent component extrema are not one simultaneous house load.','courtTies':[{'oldCorner':p,'newHold':t,'passiveBalance':s,'head':h,'threePointCoefficient':splitStop(p)[0][1],'signedRange':rounded(bounds[t][0])} for p,(t,s,h) in shifts.items()],'outerTies':[{'point':p,'signedRange':rounded(cornerRaw[p])} for p in sorted(plane['corners'])],'heads':hh,'courtSWGroundElbow':'Two actual 600x450 beam returns share the corner compression by equal tip displacement on their real backspans; old first-wall-only control gave P39 -23.0332 kN in gravity. This redistribution demands reinforcement around the real SW node and compatible shaft/soil stiffness. No pile count changed.','localOptionalBay':'Separate unadopted reference in current-house-service-bay.json. Do not add the entire wet sled load to the bay floor. Apply its declared P36/P37 loads only if adopting that control, including moments and hydrostatic action.'}
 if __name__=='__main__':
     out=Path(__file__).with_suffix('.json');s=json.dumps(report(),indent=2,sort_keys=True)+'\n'
     if '--check' in sys.argv:assert out.read_text()==s

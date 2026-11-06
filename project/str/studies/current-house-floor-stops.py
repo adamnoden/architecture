@@ -89,13 +89,14 @@ for loop,h,nrow,length in [('outer',750,4,4*(j['B']-j['A'])/1000),('court',650,3
     vv=max(abs(v) for r in rows if r['face'].startswith(loop) for v in r['MminMax_VminMax'][2:])
     # 5 mm adverse cover/depth each side; no compression steel or slab flange.
     rr=edge['rectRC'](140,h-5,40,12,nrow,2);zlo=.9*rr['d']
+    assert .8*rr['neutralAxis']<(h-5-250)/2
     assert mm<rr['MR'] and rr['xOverD']<.45 and vv<min(vlinks,vstrut)*zlo/z
     ln=2*(140-2*(35+4)+h-2*(35+4))*.001+.16
     kg=4*nrow*math.pi*.012**2/4*7850*length+math.ceil(length/.1)*ln*math.pi*.008**2/4*7850
     msteel+=kg;grossVol+=.14*h/1000*length
     cages[loop]={'coreWidthDepth':[140,h],'topBottomZ':[3170+h,3170],'heightAboveFFL':3170+h-3450,'minimumRawSillReserve':min(e['sill'] for e in edge['H']['openings']['FIRST'] if e['wall'].startswith(loop))-(3170+h-3450),'reinforcement':f'{nrow*2} H12 each face, pairs in {nrow} levels 25 clear; H8 closed at100','nominalSection':ss,'adverseSection':rr,'shearResistanceAtAdverseD':min(vlinks,vstrut)*zlo/z,'momentShearDemand':[mm,vv],'unlappedCageSteelKg':kg,'abovePrevious650ConcreteM3':.14*(h-650)/1000*length}
-assert msteel<1250
-o.update({'old650SixH12OuterMR':edge['actual']['MR'],'old650OuterRejected':M>edge['actual']['MR'],'newLoops':cages,'nominalGrossReinforcementBothKg':msteel,'includedWholeLedgerSteelBudgetKg':1250,'grossConcreteM3':grossVol,'interpretation':'The physically retained pressure/floor state is much lighter than the earlier maximum G budget. No partial removal global dead-weight exemption is needed for these components: these sections include even the broader independent 0-G residual release. The floor footprint/soffit and jamb width stay put. Upper opposing 25 mm clear row gaps and the old 30 mm centre lane use nominal cover; a 5 mm inward shift each side erodes that lane to 20 mm, so rod installation still needs separately controlled cage/rod positioning. Section bending is not a fitting clearance proof.'})
+planKg=8*math.pi*.012**2/4*7850*62;assert msteel+planKg<1850
+o.update({'old650SixH12OuterMR':edge['actual']['MR'],'old650OuterRejected':M>edge['actual']['MR'],'newLoops':cages,'nominalGrossReinforcementBothKg':msteel,'separateMidheightPlanChordBarsKg':planKg,'includedWholeLedgerSteelBudgetKg':1850,'grossConcreteM3':grossVol,'interpretation':'The physically retained pressure/floor state is much lighter than the earlier maximum G budget. No partial removal global dead-weight exemption is needed for these components: these sections include even the broader independent 0-G residual release. The floor footprint/soffit and jamb width stay put. Upper opposing 25 mm clear row gaps and the old 30 mm centre lane use nominal cover; a 5 mm inward shift each side erodes that lane to 20 mm, so rod installation still needs separately controlled cage/rod positioning. Section bending is not a fitting clearance proof.'})
 out=Path(__file__).with_suffix('.json');s=json.dumps(o,sort_keys=True,indent=2)+'\n'
 if '--check' in sys.argv:assert out.read_text()==s
 else:out.write_text(s)

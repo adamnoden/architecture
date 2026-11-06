@@ -7,7 +7,8 @@ J=4*((a-t)*(b-t))**2/(2*(a-t+b-t)/t)
 anchors={tuple(r['xy']) for r in heel['ring']['stations']};H=json.loads((D.parents[1]/'had/studies/water-replan.json').read_text())['model'];results={}
 def mvec(m,x):return [sum(p*q for p,q in zip(row,x)) for row in m]
 upperOnly='--floor-clips' in sys.argv
-integral='--integral-plan' in sys.argv
+spaceRoof='--space-roof' in sys.argv
+integral='--integral-plan' in sys.argv or spaceRoof
 braced='--plan-braced' in sys.argv or integral
 if braced:
  assert upperOnly
@@ -41,7 +42,7 @@ for which in ['outer','court']:
     for xx in [lo,hi]:
         for yy in [lo,hi]:frames[N((xx,yy))]=((1 if xx==lo else -1)/math.sqrt(2),(1 if yy==lo else -1)/math.sqrt(2))
     n=3*len(nodes);K=[[0.]*n for _ in range(n)];local=[];fixed={3*i for i,p in enumerate(nodes) if p in anchors}
-    free=[i for i in range(n) if i not in fixed]
+    unsupported=[i for i in range(n) if i not in fixed];free=list(range(n)) if spaceRoof else unsupported
     unitG=[0.]*n
     for e,(i,j,L,axis) in enumerate(edges):
         # dofs: vertical force positive DOWN; thetaX,thetaY are local altitude
@@ -57,7 +58,7 @@ for which in ['outer','court']:
             unitG[x]+=g[ii]
             for jj,y in enumerate(do):K[x][y]+=k[ii][jj]
         local.append((do,k,g))
-    solve=factor([[K[i][j] for j in free] for i in free])
+    solve=factor([[K[i][j]+(40000 if spaceRoof and i==j and i in fixed else 0) for j in free] for i in free])
     # Unit cases use actual force/moment directions (a hip is NOT two full
     # ordinary heels). ± axes are conservatively independent local duties.
     cases=[('ringG',unitG,0,1.35)]
@@ -79,7 +80,7 @@ for which in ['outer','court']:
         sol=solve([loads[i] for i in free]);u=[0.]*n
         for i,dof in enumerate(free):u[dof]=sol[i]
         residual=[p-q for p,q in zip(mvec(K,u),loads)]
-        assert max(abs(residual[i]) for i in free)<.002
+        assert max(abs(residual[i]) for i in unsupported)<.002
         assert abs(sum(residual[0::3])+sum(loads[0::3]))<1e-4
         for q in fixed:env(('head',q//3),-residual[q]/1000,low,high)
         if label=='ringG':key='ringMass'
@@ -95,7 +96,7 @@ for which in ['outer','court']:
     if braced:
         # One coherent directional state at a time; never sum 96 alternatives.
         # Preserve head increments for the final origin -> lower support join.
-        for wi,state in enumerate(planar['control' if integral else 'actual']):
+        for wi,state in enumerate(planar['space' if spaceRoof else 'control' if integral else 'actual']):
             vertical,couples=planar['caseLoads'](state);y=[0.]*n
             for ni,p in enumerate(nodes):
                 y[3*ni]=vertical.get(p,0)*1000
@@ -103,7 +104,7 @@ for which in ['outer','court']:
             sol=solve([y[k] for k in free]);u=[0.]*n
             for m,dof in enumerate(free):u[dof]=sol[m]
             residual=[a0-b0 for a0,b0 in zip(mvec(K,u),y)]
-            assert max(abs(residual[k]) for k in free)<.005
+            assert max(abs(residual[k]) for k in unsupported)<.005
             rr={nodes[k//3]:-residual[k]/1000 for k in fixed}
             for j in [0,1]:
                 # Moment about a plan axis. A pure +slope moment is the same
@@ -111,6 +112,10 @@ for which in ['outer','court']:
                 recovered=sum(q*p[j]/1000 for p,q in rr.items())
                 given=sum(y[3*ni]/1000*p[j]/1000+y[3*ni+j+1]/1e6 for ni,p in enumerate(nodes))
                 assert abs(recovered-given)<.001,(recovered,given)
+            if spaceRoof:
+                # Independent 2D vertical re-solve of the 3D primary/collector
+                # model: each support spring reaction, not just global balance.
+                assert max(abs(v-40*state[1][planar['vDO'](p,0)]) for p,v in rr.items())<.001
             windHeads.append([v for p,v in sorted(rr.items())])
             for ei,(DO,k,_) in enumerate(local):
                 Z=mvec(k,[u[k] for k in DO]);nn,mm,L0,ax=edges[ei];p,q=nodes[nn],nodes[mm];mid=(p[ax]+q[ax])/2
@@ -162,7 +167,7 @@ def norm(v):
  if isinstance(v,dict):return {k:norm(z) for k,z in v.items()}
  if isinstance(v,(tuple,list)):return [norm(z) for z in v]
  return round(v,9) if isinstance(v,float) else v
-target=D/('current-house-ring-integral.json' if integral else 'current-house-ring-braced.json' if braced else 'current-house-ring-floor-stations.json' if upperOnly else 'current-house-ring-fullheight-control.json')
+target=D/('current-house-ring-space.json' if spaceRoof else 'current-house-ring-integral.json' if integral else 'current-house-ring-braced.json' if braced else 'current-house-ring-floor-stations.json' if upperOnly else 'current-house-ring-fullheight-control.json')
 txt=json.dumps(norm(out),indent=2)+'\n'
 if '--check' in sys.argv:assert target.read_text()==txt
 else:target.write_text(txt)
