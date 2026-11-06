@@ -4,6 +4,7 @@ These are bounded, unadopted RWT comparisons, not selected construction informat
 
 | Study | Owning interpretation | Retained evidence |
 |---|---|---|
+| Current selected N/E event, loss and receiving limits | [Selected-water investigation](../rwt-06-selected-water-event.md) | [Calculation](selected-water-event.mjs), [regressions](selected-water-event.test.mjs), [values](selected-water-event.json) |
 | Weathered east passage: court/plant space exchange | [Source-bound plan lower bound and architectural handoff](../rwt-06-court-plant-space-exchange.md) | [Source](court-plant-space-exchange.mjs), [tests](court-plant-space-exchange.test.mjs) |
 | Northeast east-passage corner-pier and plant-wall conflict | [Source-bound architectural negative gate](../rwt-06-east-corner-pier-trap.md) | [Source](court-east-corner-clearance.mjs), [tests](court-east-corner-clearance.test.mjs) |
 | Single open court-to-garden gravity surface (no divided drains) | [Source-bound architectural challenger](../rwt-06-full-width-surface.md) | [Source](court-full-width-surface.mjs), [tests](court-full-width-surface.test.mjs) |

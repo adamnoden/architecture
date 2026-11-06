@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 8 · **Active:** 0 · **Blocked:** 30 · **Held:** 2 · **Done:** 115 · **Cancelled:** 0
+**Structurally ready:** 7 · **Active:** 1 · **Blocked:** 30 · **Held:** 2 · **Done:** 115 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -22,7 +22,6 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
-| `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | RWT-07 |
 | `STR-HOUSE` | Coordinate whole-house structure with the inhabited plan and section | STR / HAD | STR-RECONCILE |
 | `MAT-ENVELOPE` | Resolve non-plastic envelope and structural assembly alternatives | MAT | — |
 | `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT | — |
@@ -36,7 +35,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 | Node | Work | Owner |
 |---|---|---|
-| — | No node is currently active | — |
+| `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT |
 
 ### Blocked
 
