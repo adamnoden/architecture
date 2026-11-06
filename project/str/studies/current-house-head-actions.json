@@ -1,0 +1,6721 @@
+{
+  "status": "52-head force-and-two-first-moment comparison; gravity budgets and signed wind/uplift are not soil reactions under verified stiffness or accepted junction capacities",
+  "adverseMethod": "Per origin and every quadrature station take positive and negative influence separately: G=0..1.35, Q=0..1.5, roof independent row pressures=-2.25..+6.3 kPa, structural metal=0..1.35G. Combine with both axis winds independently at full envelope (including diagonals). Each head lists independentAdverseNCxCy as [min,max] in N, Cx, Cy order; bounds are not simultaneous and MUST NOT be summed. Zero favourable dead load is credited.",
+  "sources": {
+    "current-house-grid.json": "870c915cd8d5c9c9a7dd3f28cf7ea4f260132fc73be709329db986cea0cbae2d",
+    "current-house-roof-network.json": "edd4b5429ce362a40c65e7b93a68167bf3d7fc8b61311bc005ccc4d918663148",
+    "current-house-lateral.json": "fead94f496134401449dcaf6a5b1e4337af23e59a54c70bc7230b5e23fe60471",
+    "current-house-roof-connection.json": "c3c0b1d7cf19973d3c19e9838546965a177d087d2328d34f59e710161603838d",
+    "physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+  },
+  "HAD": "1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb",
+  "interpretation": "Units kN,kNm,mm. G/Q/U each conserved in every named origin family. Positive compression; U is -2.25kPa roof with no favourable G. Eccentric Cx=N*deltaX, Cy=N*deltaY. Each head gives [N,Cx,Cy], not an unsigned resultant. U+direction and 1.35G+1.5Q+direction are separate conservative envelopes, not a prescribed code combination. Each span treated as end-supported, signed cantilever reactions allowed: stiffness, alternate load patterns, positive ties and shaft moment resistance are not credited. Gross filled wall openings are a one-sided maximum; never stabilise adverse uplift with fictitious masonry.",
+  "surfaceComparators": {
+    "upperRCarea": 100.6602,
+    "groundFields": {
+      "dry slab": 104.895225,
+      "exterior court": 11.851,
+      "exterior loggia": 9.402,
+      "exterior east": 2.334
+    },
+    "maximumGroundRCSpanMM": [
+      4000,
+      [
+        4075.0,
+        3975.0
+      ]
+    ],
+    "maximumCeilingSpanMM": 6202.5,
+    "nearestFallbackMaxDistancesMM": {
+      "court-W": [
+        133.75,
+        [
+          4083.75,
+          4083.75
+        ]
+      ],
+      "court-S": [
+        133.75,
+        [
+          4313.75,
+          4083.75
+        ]
+      ],
+      "outer-W": [
+        42.5,
+        [
+          375.0,
+          6091.25
+        ]
+      ],
+      "outer-S": [
+        42.5,
+        [
+          6000.0,
+          375.0
+        ]
+      ],
+      "court-E": [
+        33.75,
+        [
+          7916.25,
+          4083.75
+        ]
+      ]
+    }
+  },
+  "globalGQUpFirstMoments": {
+    "G": [
+      6991.71321,
+      43242.85413,
+      41979.31957
+    ],
+    "Q": [
+      762.31013,
+      4597.76969,
+      4710.89901
+    ],
+    "U": [
+      -324.3375,
+      -1946.025,
+      -1946.025
+    ]
+  },
+  "originVerticalGQUp": {
+    "common grid and heads": [
+      615.51918,
+      0.0,
+      0.0
+    ],
+    "concentrated plant budget": [
+      2.335,
+      0.0,
+      0.0
+    ],
+    "exterior court deck reserved": [
+      88.8825,
+      47.404,
+      0.0
+    ],
+    "exterior loggia deck reserved": [
+      70.515,
+      37.608,
+      0.0
+    ],
+    "exterior passage deck reserved": [
+      7.002,
+      9.336,
+      0.0
+    ],
+    "first-floor bridge": [
+      18.35569,
+      4.89485,
+      0.0
+    ],
+    "first-floor fields": [
+      690.97245,
+      181.1571,
+      0.0
+    ],
+    "first-floor residual RC and finish": [
+      64.89091,
+      15.26845,
+      0.0
+    ],
+    "ground RC200": [
+      524.47613,
+      0.0,
+      0.0
+    ],
+    "ground core and finish budget": [
+      1496.35916,
+      0.0,
+      0.0
+    ],
+    "ground finishes and use": [
+      262.23806,
+      209.79045,
+      0.0
+    ],
+    "ground leaf and finish budget": [
+      626.02954,
+      0.0,
+      0.0
+    ],
+    "independent ceiling envelope": [
+      174.34834,
+      0.0,
+      0.0
+    ],
+    "landing beam and post": [
+      5.46656,
+      0.0,
+      0.0
+    ],
+    "roof": [
+      407.70643,
+      216.225,
+      -324.3375
+    ],
+    "stair midlanding": [
+      25.7098,
+      11.42658,
+      0.0
+    ],
+    "steel wall-head ring": [
+      55.75635,
+      0.0,
+      0.0
+    ],
+    "two stair flights": [
+      50.93514,
+      19.1997,
+      0.0
+    ],
+    "upper core and finish budget": [
+      1235.36208,
+      0.0,
+      0.0
+    ],
+    "upper frame downstands": [
+      10.17,
+      0.0,
+      0.0
+    ],
+    "upper leaf and finish budget": [
+      558.68289,
+      0.0,
+      0.0
+    ],
+    "wet equipment variable reserve": [
+      0.0,
+      10.0,
+      0.0
+    ]
+  },
+  "lateral": {
+    "zBaseFloorRoofRidge": [
+      -0.75,
+      3.37,
+      6.74,
+      8.220892
+    ],
+    "facadeWidth": 12.4,
+    "loadPerHeight": 27.9,
+    "exposedLowerPlinthShear": 15.903,
+    "groundFloorRoofCollectors": [
+      49.5225,
+      96.534,
+      88.328388
+    ],
+    "roofLocalOverturning": 30.592926,
+    "globalShear": 250.287888,
+    "globalMomentAtShaft": 1122.652813,
+    "IxyOverI": -0.583968,
+    "groupCondition": "Rigid symmetric restrained diaphragms; signs transformed by each mirrored L. Vertical group couple conserved about head at -750; no pile bending credited for that couple. Whole group lateral shear separately assigned as adverse per-head demand; do not sum per-head adverse group shares. Foundation stiffness, settlement and soil capacity unknown."
+  },
+  "ranges": {
+    "gravityPlusWindMaximum": [
+      [
+        15.4923,
+        "P39"
+      ],
+      [
+        691.438,
+        "P12"
+      ]
+    ],
+    "noFavourableDeadMinimum": [
+      [
+        -517.7078,
+        "P12"
+      ],
+      [
+        0.0,
+        "P52"
+      ]
+    ]
+  },
+  "heads": [
+    {
+      "id": "P01",
+      "independentAdverseNCxCy": [
+        [
+          -288.6566,
+          420.92
+        ],
+        [
+          -5.2811,
+          0.3322
+        ],
+        [
+          -6.1227,
+          0.1605
+        ]
+      ],
+      "xy": [
+        332.5,
+        332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          85.21355,
+          -3.6658,
+          -4.41647
+        ],
+        "Q": [
+          13.67868,
+          0.0,
+          0.0
+        ],
+        "U": [
+          -17.0584,
+          -0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          135.55631,
+          -4.94883,
+          -5.96223
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 135.773,
+        "WX+": -135.773,
+        "WY-": 135.773,
+        "WY+": -135.773,
+        "WX-WY-": 271.5459,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": -271.5459
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 118.7146,
+        "WX+": -152.8314,
+        "WY-": 118.7146,
+        "WY+": -152.8314,
+        "WX-WY-": 254.4875,
+        "WX-WY+": -17.0584,
+        "WX+WY-": -17.0584,
+        "WX+WY+": -288.6043
+      },
+      "gravityPlusWindMaximum": 407.1022,
+      "noFavourableDeadMinimum": -288.6043,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          6.4295,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          4.6941,
+          1.2518,
+          0.0
+        ],
+        "ground RC200": [
+          2.6367,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          11.2913,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          1.3183,
+          1.0547,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          12.6479,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          20.9923,
+          11.3723,
+          -17.0584
+        ],
+        "steel wall-head ring": [
+          0.7716,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          10.6817,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          13.7502,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P02",
+      "independentAdverseNCxCy": [
+        [
+          -518.6229,
+          688.3902
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -11.9461,
+          1.3617
+        ]
+      ],
+      "xy": [
+        1192.5,
+        332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          115.78071,
+          0.0,
+          -7.84031
+        ],
+        "Q": [
+          8.98567,
+          0.0,
+          0.0
+        ],
+        "U": [
+          -0.07869,
+          0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          169.78247,
+          0.0,
+          -10.58442
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": -326.3526,
+        "WX+": 326.3526,
+        "WY-": 190.5796,
+        "WY+": -190.5796,
+        "WX-WY-": -135.773,
+        "WX-WY+": -516.9322,
+        "WX+WY-": 516.9322,
+        "WX+WY+": 135.773
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -326.4313,
+        "WX+": 326.2739,
+        "WY-": 190.5009,
+        "WY+": -190.6583,
+        "WX-WY-": -135.8516,
+        "WX-WY+": -517.0109,
+        "WX+WY-": 516.8535,
+        "WX+WY+": 135.6943
+      },
+      "gravityPlusWindMaximum": 686.7146,
+      "noFavourableDeadMinimum": -517.0109,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          10.7638,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          16.8136,
+          4.4836,
+          0.0
+        ],
+        "ground RC200": [
+          11.1239,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          20.3217,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          5.562,
+          4.4496,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          12.4637,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.4221,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          0.0933,
+          0.0525,
+          -0.0787
+        ],
+        "steel wall-head ring": [
+          1.4001,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          19.2497,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          13.5667,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P03",
+      "independentAdverseNCxCy": [
+        [
+          -517.6552,
+          617.9284
+        ],
+        [
+          -11.1763,
+          1.1412
+        ],
+        [
+          -0.1093,
+          0.1093
+        ]
+      ],
+      "xy": [
+        332.5,
+        1192.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          74.0512,
+          -7.43338,
+          0.0
+        ],
+        "Q": [
+          0.2027,
+          0.0,
+          0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          100.27317,
+          -10.03506,
+          0.0
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 190.5796,
+        "WX+": -190.5796,
+        "WY-": -326.3526,
+        "WY+": 326.3526,
+        "WX-WY-": -135.773,
+        "WX-WY+": 516.9322,
+        "WX+WY-": -516.9322,
+        "WX+WY+": 135.773
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 190.5796,
+        "WX+": -190.5796,
+        "WY-": -326.3526,
+        "WY+": 326.3526,
+        "WX-WY-": -135.773,
+        "WX-WY+": 516.9322,
+        "WX+WY-": -516.9322,
+        "WX+WY+": 135.773
+      },
+      "gravityPlusWindMaximum": 617.2053,
+      "noFavourableDeadMinimum": -516.9322,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          9.975,
+          0.0,
+          0.0
+        ],
+        "ground RC200": [
+          0.5067,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          19.0056,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          0.2534,
+          0.2027,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          11.903,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          0.1619,
+          0.0,
+          0.0
+        ],
+        "steel wall-head ring": [
+          1.3115,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          17.9886,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          12.9454,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P04",
+      "independentAdverseNCxCy": [
+        [
+          -288.6566,
+          420.233
+        ],
+        [
+          -0.614,
+          5.9353
+        ],
+        [
+          -6.2818,
+          0.1875
+        ]
+      ],
+      "xy": [
+        11667.5,
+        332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          85.20833,
+          3.94164,
+          -4.51432
+        ],
+        "Q": [
+          13.22539,
+          0.0,
+          0.0
+        ],
+        "U": [
+          -17.0584,
+          -0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          134.86933,
+          5.32121,
+          -6.09433
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": -135.773,
+        "WX+": 135.773,
+        "WY-": 135.773,
+        "WY+": -135.773,
+        "WX-WY-": 0.0,
+        "WX-WY+": -271.5459,
+        "WX+WY-": 271.5459,
+        "WX+WY+": 0.0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -152.8314,
+        "WX+": 118.7146,
+        "WY-": 118.7146,
+        "WY+": -152.8314,
+        "WX-WY-": -17.0584,
+        "WX-WY+": -288.6043,
+        "WX+WY-": 254.4875,
+        "WX+WY+": -17.0584
+      },
+      "gravityPlusWindMaximum": 406.4152,
+      "noFavourableDeadMinimum": -288.6043,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          8.1112,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          3.815,
+          1.0173,
+          0.0
+        ],
+        "ground RC200": [
+          2.0895,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          11.2978,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          1.0447,
+          0.8358,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          12.652,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          20.9923,
+          11.3723,
+          -17.0584
+        ],
+        "steel wall-head ring": [
+          0.7716,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          10.6831,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          13.7512,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P05",
+      "independentAdverseNCxCy": [
+        [
+          -518.541,
+          622.6205
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -9.1345,
+          1.1369
+        ]
+      ],
+      "xy": [
+        10807.5,
+        332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          73.9832,
+          -0.0,
+          -5.92412
+        ],
+        "Q": [
+          2.80148,
+          -0.0,
+          0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          104.07954,
+          -0.0,
+          -7.99756
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 326.3526,
+        "WX+": -326.3526,
+        "WY-": 190.5796,
+        "WY+": -190.5796,
+        "WX-WY-": 516.9322,
+        "WX-WY+": 135.773,
+        "WX+WY-": -135.773,
+        "WX+WY+": -516.9322
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 326.3526,
+        "WX+": -326.3526,
+        "WY-": 190.5796,
+        "WY+": -190.5796,
+        "WX-WY-": 516.9322,
+        "WX-WY+": 135.773,
+        "WX+WY-": -135.773,
+        "WX+WY+": -516.9322
+      },
+      "gravityPlusWindMaximum": 621.0117,
+      "noFavourableDeadMinimum": -516.9322,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          8.5763,
+          0.0,
+          0.0
+        ],
+        "ground RC200": [
+          7.0037,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          15.4476,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          3.5019,
+          2.8015,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          9.3514,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.2388,
+          0.0,
+          0.0
+        ],
+        "steel wall-head ring": [
+          1.0653,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          14.625,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          10.1734,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P06",
+      "independentAdverseNCxCy": [
+        [
+          -517.6552,
+          669.1382
+        ],
+        [
+          -1.8484,
+          12.8347
+        ],
+        [
+          -0.3673,
+          0.3673
+        ]
+      ],
+      "xy": [
+        11667.5,
+        1192.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          106.46183,
+          8.138,
+          0.0
+        ],
+        "Q": [
+          5.17304,
+          0.0,
+          0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          151.48303,
+          10.98631,
+          0.0
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": -190.5796,
+        "WX+": 190.5796,
+        "WY-": -326.3526,
+        "WY+": 326.3526,
+        "WX-WY-": -516.9322,
+        "WX-WY+": 135.773,
+        "WX+WY-": -135.773,
+        "WX+WY+": 516.9322
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -190.5796,
+        "WX+": 190.5796,
+        "WY-": -326.3526,
+        "WY+": 326.3526,
+        "WX-WY-": -516.9322,
+        "WX-WY+": 135.773,
+        "WX+WY-": -135.773,
+        "WX+WY+": 516.9322
+      },
+      "gravityPlusWindMaximum": 668.4152,
+      "noFavourableDeadMinimum": -516.9322,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          14.7581,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          13.6204,
+          3.6321,
+          0.0
+        ],
+        "ground RC200": [
+          3.8523,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          25.6034,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          1.9262,
+          1.5409,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          12.5382,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          0.2169,
+          0.0,
+          0.0
+        ],
+        "steel wall-head ring": [
+          1.3804,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          18.9298,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          13.6361,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P07",
+      "independentAdverseNCxCy": [
+        [
+          -288.6566,
+          418.9205
+        ],
+        [
+          -5.2294,
+          0.3045
+        ],
+        [
+          -0.1605,
+          6.1227
+        ]
+      ],
+      "xy": [
+        332.5,
+        11667.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          83.99418,
+          -3.64804,
+          4.41647
+        ],
+        "Q": [
+          13.44311,
+          0.0,
+          0.0
+        ],
+        "U": [
+          -17.0584,
+          -0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          133.55681,
+          -4.92486,
+          5.96223
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 135.773,
+        "WX+": -135.773,
+        "WY-": -135.773,
+        "WY+": 135.773,
+        "WX-WY-": 0.0,
+        "WX-WY+": 271.5459,
+        "WX+WY-": -271.5459,
+        "WX+WY+": 0.0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 118.7146,
+        "WX+": -152.8314,
+        "WY-": -152.8314,
+        "WY+": 118.7146,
+        "WX-WY-": -17.0584,
+        "WX-WY+": 254.4875,
+        "WX+WY-": -288.6043,
+        "WX+WY+": -17.0584
+      },
+      "gravityPlusWindMaximum": 405.1027,
+      "noFavourableDeadMinimum": -288.6043,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          6.1092,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          4.1267,
+          1.1005,
+          0.0
+        ],
+        "ground RC200": [
+          2.426,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          11.2833,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          1.213,
+          0.9704,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          12.6427,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          20.9923,
+          11.3723,
+          -17.0584
+        ],
+        "steel wall-head ring": [
+          0.7716,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          10.6803,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          13.7491,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P08",
+      "independentAdverseNCxCy": [
+        [
+          -518.541,
+          605.4546
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -1.2062,
+          9.8916
+        ]
+      ],
+      "xy": [
+        1192.5,
+        11667.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          64.38041,
+          0.0,
+          6.43361
+        ],
+        "Q": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          86.91355,
+          0.0,
+          8.68537
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": -326.3526,
+        "WX+": 326.3526,
+        "WY-": -190.5796,
+        "WY+": 190.5796,
+        "WX-WY-": -516.9322,
+        "WX-WY+": -135.773,
+        "WX+WY-": 135.773,
+        "WX+WY+": 516.9322
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -326.3526,
+        "WX+": 326.3526,
+        "WY-": -190.5796,
+        "WY+": 190.5796,
+        "WX-WY-": -516.9322,
+        "WX-WY+": -135.773,
+        "WX+WY-": 135.773,
+        "WX+WY+": 516.9322
+      },
+      "gravityPlusWindMaximum": 603.8457,
+      "noFavourableDeadMinimum": -516.9322,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          9.2736,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          16.7784,
+          0.0,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          10.2012,
+          0.0,
+          0.0
+        ],
+        "steel wall-head ring": [
+          1.1569,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          15.8777,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          11.0926,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P09",
+      "independentAdverseNCxCy": [
+        [
+          -517.6552,
+          667.7481
+        ],
+        [
+          -10.8003,
+          1.0797
+        ],
+        [
+          -0.0,
+          0.0
+        ]
+      ],
+      "xy": [
+        332.5,
+        10807.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          102.91997,
+          -7.2004,
+          -0.0
+        ],
+        "Q": [
+          7.43394,
+          0.0,
+          -0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          150.09287,
+          -9.72054,
+          -0.0
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 190.5796,
+        "WX+": -190.5796,
+        "WY-": 326.3526,
+        "WY+": -326.3526,
+        "WX-WY-": 516.9322,
+        "WX-WY+": -135.773,
+        "WX+WY-": 135.773,
+        "WX+WY+": -516.9322
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 190.5796,
+        "WX+": -190.5796,
+        "WY-": 326.3526,
+        "WY+": -326.3526,
+        "WX-WY-": 516.9322,
+        "WX-WY+": -135.773,
+        "WX+WY-": 135.773,
+        "WX+WY+": -516.9322
+      },
+      "gravityPlusWindMaximum": 667.025,
+      "noFavourableDeadMinimum": -516.9322,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          10.1624,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          13.5898,
+          3.624,
+          0.0
+        ],
+        "ground RC200": [
+          9.525,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          18.3476,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          4.7625,
+          3.81,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          11.4933,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          3.9064,
+          0.0,
+          0.0
+        ],
+        "steel wall-head ring": [
+          1.267,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          17.3725,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          12.4935,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P10",
+      "independentAdverseNCxCy": [
+        [
+          -288.6566,
+          425.3898
+        ],
+        [
+          -0.5687,
+          5.8518
+        ],
+        [
+          -0.1875,
+          6.2818
+        ]
+      ],
+      "xy": [
+        11667.5,
+        11667.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          88.05737,
+          3.91342,
+          4.51432
+        ],
+        "Q": [
+          14.09914,
+          0.0,
+          0.0
+        ],
+        "U": [
+          -17.0584,
+          -0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          140.02615,
+          5.28312,
+          6.09433
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": -135.773,
+        "WX+": 135.773,
+        "WY-": -135.773,
+        "WY+": 135.773,
+        "WX-WY-": -271.5459,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 271.5459
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -152.8314,
+        "WX+": 118.7146,
+        "WY-": -152.8314,
+        "WY+": 118.7146,
+        "WX-WY-": -288.6043,
+        "WX-WY+": -17.0584,
+        "WX+WY-": -17.0584,
+        "WX+WY+": 254.4875
+      },
+      "gravityPlusWindMaximum": 411.5721,
+      "noFavourableDeadMinimum": -288.6043,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          7.6994,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          5.4423,
+          1.4513,
+          0.0
+        ],
+        "ground RC200": [
+          3.189,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          11.2897,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          1.5945,
+          1.2756,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          12.6468,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          20.9923,
+          11.3723,
+          -17.0584
+        ],
+        "steel wall-head ring": [
+          0.7716,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          10.6817,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          13.7502,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P11",
+      "independentAdverseNCxCy": [
+        [
+          -518.541,
+          659.1783
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -1.1369,
+          9.1345
+        ]
+      ],
+      "xy": [
+        10807.5,
+        11667.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          94.98086,
+          -0.0,
+          5.92412
+        ],
+        "Q": [
+          8.27541,
+          0.0,
+          0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          140.63728,
+          -0.0,
+          7.99756
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 326.3526,
+        "WX+": -326.3526,
+        "WY-": -190.5796,
+        "WY+": 190.5796,
+        "WX-WY-": 135.773,
+        "WX-WY+": 516.9322,
+        "WX+WY-": -516.9322,
+        "WX+WY+": -135.773
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 326.3526,
+        "WX+": -326.3526,
+        "WY-": -190.5796,
+        "WY+": 190.5796,
+        "WX-WY-": 135.773,
+        "WX-WY+": 516.9322,
+        "WX+WY-": -516.9322,
+        "WX+WY+": -135.773
+      },
+      "gravityPlusWindMaximum": 657.5694,
+      "noFavourableDeadMinimum": -516.9322,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          8.5763,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          14.999,
+          3.9997,
+          0.0
+        ],
+        "ground RC200": [
+          10.6892,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          15.4476,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          5.3446,
+          4.2757,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          9.3514,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.7092,
+          0.0,
+          0.0
+        ],
+        "steel wall-head ring": [
+          1.0653,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          14.625,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          10.1734,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P12",
+      "independentAdverseNCxCy": [
+        [
+          -518.4624,
+          692.8185
+        ],
+        [
+          -2.2244,
+          16.1753
+        ],
+        [
+          -0.5119,
+          0.5502
+        ]
+      ],
+      "xy": [
+        11667.5,
+        10807.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          125.92847,
+          10.334,
+          0.0284
+        ],
+        "Q": [
+          3.00159,
+          0.0,
+          -4e-05
+        ],
+        "U": [
+          -0.77564,
+          -0.0,
+          0.0
+        ],
+        "ULSdown": [
+          174.50583,
+          13.95091,
+          0.03827
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": -190.5796,
+        "WX+": 190.5796,
+        "WY-": 326.3526,
+        "WY+": -326.3526,
+        "WX-WY-": 135.773,
+        "WX-WY+": -516.9322,
+        "WX+WY-": 516.9322,
+        "WX+WY+": -135.773
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -191.3552,
+        "WX+": 189.804,
+        "WY-": 325.5769,
+        "WY+": -327.1282,
+        "WX-WY-": 134.9973,
+        "WX-WY+": -517.7078,
+        "WX+WY-": 516.1565,
+        "WX+WY+": -136.5486
+      },
+      "gravityPlusWindMaximum": 691.438,
+      "noFavourableDeadMinimum": -517.7078,
+      "groupShearPerAxisWholeToOneHeadAdverse": 62.572,
+      "originGQUp": {
+        "common grid and heads": [
+          18.2593,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          4.4078,
+          1.1751,
+          0.0
+        ],
+        "ground RC200": [
+          3.2734,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          31.4856,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          1.6367,
+          1.3094,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          15.8792,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          1.2453,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          0.9195,
+          0.5171,
+          -0.7756
+        ],
+        "steel wall-head ring": [
+          1.7692,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          29.7896,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          17.2628,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P13",
+      "independentAdverseNCxCy": [
+        [
+          -3.7197,
+          242.6024
+        ],
+        [
+          -13.1082,
+          1.2139
+        ],
+        [
+          -1.0513,
+          1.0519
+        ]
+      ],
+      "xy": [
+        332.5,
+        3247.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          163.81466,
+          -8.81059,
+          0.00044
+        ],
+        "Q": [
+          12.28195,
+          0.0,
+          0.0
+        ],
+        "U": [
+          -3.57435,
+          -0.0,
+          0.0
+        ],
+        "ULSdown": [
+          239.57271,
+          -11.8943,
+          0.00059
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -3.5743,
+        "WX+": -3.5743,
+        "WY-": -3.5743,
+        "WY+": -3.5743,
+        "WX-WY-": -3.5743,
+        "WX-WY+": -3.5743,
+        "WX+WY-": -3.5743,
+        "WX+WY+": -3.5743
+      },
+      "gravityPlusWindMaximum": 239.5727,
+      "noFavourableDeadMinimum": -3.5743,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          14.2293,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          18.58,
+          4.9547,
+          0.0
+        ],
+        "ground RC200": [
+          12.361,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          37.5182,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          6.1805,
+          4.9444,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          14.1711,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.0477,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          4.2374,
+          2.3829,
+          -3.5743
+        ],
+        "steel wall-head ring": [
+          1.5299,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          35.5305,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          15.4293,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P14",
+      "independentAdverseNCxCy": [
+        [
+          -11.7595,
+          216.5107
+        ],
+        [
+          -11.2697,
+          1.1957
+        ],
+        [
+          -0.5029,
+          0.5907
+        ]
+      ],
+      "xy": [
+        332.5,
+        4332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          132.59714,
+          -7.47037,
+          0.0506
+        ],
+        "Q": [
+          18.61761,
+          0.0073,
+          0.01299
+        ],
+        "U": [
+          -11.30002,
+          -0.0,
+          0.0
+        ],
+        "ULSdown": [
+          206.93255,
+          -10.07405,
+          0.0878
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -11.3,
+        "WX+": -11.3,
+        "WY-": -11.3,
+        "WY+": -11.3,
+        "WX-WY-": -11.3,
+        "WX-WY+": -11.3,
+        "WX+WY-": -11.3,
+        "WX+WY+": -11.3
+      },
+      "gravityPlusWindMaximum": 206.9326,
+      "noFavourableDeadMinimum": -11.3,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          14.7635,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          5.729,
+          1.5277,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          1.5898,
+          0.3741,
+          0.0
+        ],
+        "ground RC200": [
+          10.8276,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          19.2596,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          5.4138,
+          4.331,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          11.9531,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          3.8877,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          13.3961,
+          7.5333,
+          -11.3
+        ],
+        "steel wall-head ring": [
+          1.286,
+          0.0,
+          0.0
+        ],
+        "two stair flights": [
+          12.8704,
+          4.8514,
+          0.0
+        ],
+        "upper core and finish budget": [
+          17.9902,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.6626,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          12.9678,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P15",
+      "independentAdverseNCxCy": [
+        [
+          -11.4887,
+          273.1075
+        ],
+        [
+          -17.8191,
+          1.6643
+        ],
+        [
+          -0.1094,
+          0.1094
+        ]
+      ],
+      "xy": [
+        332.5,
+        6500
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          174.25191,
+          -11.9902,
+          -0.0
+        ],
+        "Q": [
+          19.00659,
+          0.0213,
+          0.0
+        ],
+        "U": [
+          -11.03978,
+          -0.0,
+          0.0
+        ],
+        "ULSdown": [
+          263.74997,
+          -16.15481,
+          -0.0
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -11.0398,
+        "WX+": -11.0398,
+        "WY-": -11.0398,
+        "WY+": -11.0398,
+        "WX-WY-": -11.0398,
+        "WX-WY+": -11.0398,
+        "WX+WY-": -11.0398,
+        "WX+WY+": -11.0398
+      },
+      "gravityPlusWindMaximum": 263.75,
+      "noFavourableDeadMinimum": -11.0398,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          14.9225,
+          0.0,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          2.1304,
+          0.5013,
+          0.0
+        ],
+        "ground RC200": [
+          14.7465,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          30.3641,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          7.3732,
+          5.8986,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          19.3973,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          6.1109,
+          0.0,
+          0.0
+        ],
+        "landing beam and post": [
+          1.0507,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          13.0875,
+          7.3599,
+          -11.0398
+        ],
+        "stair midlanding": [
+          4.4046,
+          1.9576,
+          0.0
+        ],
+        "steel wall-head ring": [
+          2.091,
+          0.0,
+          0.0
+        ],
+        "two stair flights": [
+          8.7262,
+          3.2893,
+          0.0
+        ],
+        "upper core and finish budget": [
+          28.7514,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          21.0955,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P16",
+      "independentAdverseNCxCy": [
+        [
+          -8.4498,
+          309.5384
+        ],
+        [
+          -16.6664,
+          1.5879
+        ],
+        [
+          -0.9066,
+          0.8471
+        ]
+      ],
+      "xy": [
+        332.5,
+        8852.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          202.87177,
+          -11.17537,
+          -0.03403
+        ],
+        "Q": [
+          19.18606,
+          0.0055,
+          -0.00899
+        ],
+        "U": [
+          -8.11965,
+          -0.0,
+          0.0
+        ],
+        "ULSdown": [
+          302.65598,
+          -15.07851,
+          -0.05943
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -8.1196,
+        "WX+": -8.1196,
+        "WY-": -8.1196,
+        "WY+": -8.1196,
+        "WX-WY-": -8.1196,
+        "WX-WY+": -8.1196,
+        "WX+WY-": -8.1196,
+        "WX+WY+": -8.1196
+      },
+      "gravityPlusWindMaximum": 302.656,
+      "noFavourableDeadMinimum": -8.1196,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          17.7572,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          9.4509,
+          2.5202,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          1.4924,
+          0.3511,
+          0.0
+        ],
+        "ground RC200": [
+          13.8061,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          44.3081,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          6.903,
+          5.5224,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          17.9624,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.9578,
+          0.0,
+          0.0
+        ],
+        "landing beam and post": [
+          0.499,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          9.6258,
+          5.4131,
+          -8.1196
+        ],
+        "stair midlanding": [
+          8.5882,
+          3.817,
+          0.0
+        ],
+        "steel wall-head ring": [
+          1.9366,
+          0.0,
+          0.0
+        ],
+        "two stair flights": [
+          4.1442,
+          1.5621,
+          0.0
+        ],
+        "upper core and finish budget": [
+          41.9025,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.0024,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          19.5351,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P17",
+      "independentAdverseNCxCy": [
+        [
+          -11.051,
+          342.4932
+        ],
+        [
+          -2.6868,
+          20.219
+        ],
+        [
+          -0.74,
+          0.74
+        ]
+      ],
+      "xy": [
+        11667.5,
+        3400
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          226.11049,
+          12.98681,
+          0.0
+        ],
+        "Q": [
+          18.82867,
+          -0.0,
+          0.0
+        ],
+        "U": [
+          -10.6192,
+          -0.0,
+          0.0
+        ],
+        "ULSdown": [
+          333.49217,
+          17.5322,
+          0.0
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -10.6192,
+        "WX+": -10.6192,
+        "WY-": -10.6192,
+        "WY+": -10.6192,
+        "WX-WY-": -10.6192,
+        "WX-WY+": -10.6192,
+        "WX+WY-": -10.6192,
+        "WX+WY+": -10.6192
+      },
+      "gravityPlusWindMaximum": 333.4922,
+      "noFavourableDeadMinimum": -10.6192,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          24.6604,
+          0.0,
+          0.0
+        ],
+        "concentrated plant budget": [
+          1.0745,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          21.3344,
+          5.6892,
+          0.0
+        ],
+        "ground RC200": [
+          15.1501,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          53.2208,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          7.575,
+          6.06,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          20.0504,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.5983,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          12.589,
+          7.0795,
+          -10.6192
+        ],
+        "steel wall-head ring": [
+          2.1615,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          41.8944,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          21.8017,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P18",
+      "independentAdverseNCxCy": [
+        [
+          -9.7528,
+          324.812
+        ],
+        [
+          -2.6992,
+          18.3434
+        ],
+        [
+          -4.7323,
+          2.8981
+        ]
+      ],
+      "xy": [
+        11667.5,
+        6000
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          211.72019,
+          11.58829,
+          -1.35862
+        ],
+        "Q": [
+          20.69742,
+          0.0,
+          0.0
+        ],
+        "U": [
+          -9.37172,
+          -0.0,
+          0.0
+        ],
+        "ULSdown": [
+          316.86838,
+          15.64419,
+          -1.83414
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -9.3717,
+        "WX+": -9.3717,
+        "WY-": -9.3717,
+        "WY+": -9.3717,
+        "WX-WY-": -9.3717,
+        "WX-WY+": -9.3717,
+        "WX+WY-": -9.3717,
+        "WX+WY+": -9.3717
+      },
+      "gravityPlusWindMaximum": 316.8684,
+      "noFavourableDeadMinimum": -9.3717,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          24.0746,
+          0.0,
+          0.0
+        ],
+        "concentrated plant budget": [
+          0.6328,
+          0.0,
+          0.0
+        ],
+        "exterior passage deck reserved": [
+          2.0629,
+          2.7505,
+          0.0
+        ],
+        "first-floor fields": [
+          19.5335,
+          5.2089,
+          0.0
+        ],
+        "ground RC200": [
+          9.9753,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          44.9791,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          4.9877,
+          3.9901,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          29.0606,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.5847,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          11.1101,
+          6.2478,
+          -9.3717
+        ],
+        "steel wall-head ring": [
+          2.0269,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          38.7341,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          19.9578,
+          0.0,
+          0.0
+        ],
+        "wet equipment variable reserve": [
+          0.0,
+          2.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P19",
+      "independentAdverseNCxCy": [
+        [
+          -13.8067,
+          480.5244
+        ],
+        [
+          -3.1072,
+          20.2234
+        ],
+        [
+          -5.5336,
+          7.494
+        ]
+      ],
+      "xy": [
+        11667.5,
+        7800
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          313.42738,
+          12.67868,
+          1.45239
+        ],
+        "Q": [
+          30.76792,
+          0.0,
+          -0.00023
+        ],
+        "U": [
+          -13.26724,
+          -0.0,
+          0.0
+        ],
+        "ULSdown": [
+          469.27884,
+          17.11621,
+          1.96039
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -13.2672,
+        "WX+": -13.2672,
+        "WY-": -13.2672,
+        "WY+": -13.2672,
+        "WX-WY-": -13.2672,
+        "WX-WY+": -13.2672,
+        "WX+WY-": -13.2672,
+        "WX+WY+": -13.2672
+      },
+      "gravityPlusWindMaximum": 469.2788,
+      "noFavourableDeadMinimum": -13.2672,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          29.6001,
+          0.0,
+          0.0
+        ],
+        "exterior passage deck reserved": [
+          2.0629,
+          2.7505,
+          0.0
+        ],
+        "first-floor fields": [
+          32.8579,
+          8.7606,
+          0.0
+        ],
+        "ground RC200": [
+          19.7799,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          78.0722,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          9.8899,
+          7.9119,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          30.7575,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          6.8395,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          15.7282,
+          8.8448,
+          -13.2672
+        ],
+        "steel wall-head ring": [
+          2.0838,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          63.9472,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          21.8083,
+          0.0,
+          0.0
+        ],
+        "wet equipment variable reserve": [
+          0.0,
+          2.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P20",
+      "independentAdverseNCxCy": [
+        [
+          -5.1332,
+          191.3209
+        ],
+        [
+          -0.1094,
+          0.1094
+        ],
+        [
+          -13.4956,
+          1.2346
+        ]
+      ],
+      "xy": [
+        3400,
+        332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          126.3192,
+          0.0,
+          -9.08217
+        ],
+        "Q": [
+          11.07264,
+          0.0,
+          0.0
+        ],
+        "U": [
+          -4.93268,
+          0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          187.13988,
+          0.0,
+          -12.26093
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -4.9327,
+        "WX+": -4.9327,
+        "WY-": -4.9327,
+        "WY+": -4.9327,
+        "WX-WY-": -4.9327,
+        "WX-WY+": -4.9327,
+        "WX+WY-": -4.9327,
+        "WX+WY+": -4.9327
+      },
+      "gravityPlusWindMaximum": 187.1399,
+      "noFavourableDeadMinimum": -4.9327,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          12.0031,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          16.4693,
+          4.3918,
+          0.0
+        ],
+        "ground RC200": [
+          8.481,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          22.7994,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          4.2405,
+          3.3924,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          14.5583,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          3.034,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          5.8476,
+          3.2885,
+          -4.9327
+        ],
+        "steel wall-head ring": [
+          1.571,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          21.5231,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          15.792,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P21",
+      "independentAdverseNCxCy": [
+        [
+          -12.4937,
+          215.6412
+        ],
+        [
+          -0.388,
+          0.3923
+        ],
+        [
+          -14.8977,
+          1.3643
+        ]
+      ],
+      "xy": [
+        4800,
+        332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          138.72203,
+          0.00248,
+          -10.03363
+        ],
+        "Q": [
+          12.12687,
+          0.00058,
+          0.00806
+        ],
+        "U": [
+          -12.00553,
+          0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          205.46505,
+          0.00423,
+          -13.53331
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -12.0055,
+        "WX+": -12.0055,
+        "WY-": -12.0055,
+        "WY+": -12.0055,
+        "WX-WY-": -12.0055,
+        "WX-WY+": -12.0055,
+        "WX+WY-": -12.0055,
+        "WX+WY+": -12.0055
+      },
+      "gravityPlusWindMaximum": 205.465,
+      "noFavourableDeadMinimum": -12.0055,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          13.2963,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          6.4164,
+          1.711,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          0.864,
+          0.2033,
+          0.0
+        ],
+        "ground RC200": [
+          5.5221,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          30.0775,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          2.7611,
+          2.2089,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          16.1475,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          1.5976,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          14.2324,
+          8.0037,
+          -12.0055
+        ],
+        "steel wall-head ring": [
+          1.74,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          28.4867,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          17.5805,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P22",
+      "independentAdverseNCxCy": [
+        [
+          -14.146,
+          303.9229
+        ],
+        [
+          -1.1417,
+          1.0811
+        ],
+        [
+          -17.2423,
+          1.4941
+        ]
+      ],
+      "xy": [
+        7200,
+        332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          196.97432,
+          -0.03558,
+          -11.67431
+        ],
+        "Q": [
+          17.65707,
+          -0.00837,
+          0.00806
+        ],
+        "U": [
+          -13.59326,
+          0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          292.40094,
+          -0.06059,
+          -15.74823
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -13.5933,
+        "WX+": -13.5933,
+        "WY-": -13.5933,
+        "WY+": -13.5933,
+        "WX-WY-": -13.5933,
+        "WX-WY+": -13.5933,
+        "WX+WY-": -13.5933,
+        "WX+WY+": -13.5933
+      },
+      "gravityPlusWindMaximum": 292.4009,
+      "noFavourableDeadMinimum": -13.5933,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          17.9932,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          9.1252,
+          2.4334,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          1.6428,
+          0.3865,
+          0.0
+        ],
+        "ground RC200": [
+          14.4375,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          43.6346,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          7.2187,
+          5.775,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          18.7706,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.3141,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          16.1147,
+          9.0622,
+          -13.5933
+        ],
+        "steel wall-head ring": [
+          2.0233,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          41.29,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          20.4097,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P23",
+      "independentAdverseNCxCy": [
+        [
+          -3.5628,
+          227.29
+        ],
+        [
+          -1.2956,
+          1.2959
+        ],
+        [
+          -13.9,
+          1.245
+        ]
+      ],
+      "xy": [
+        9300,
+        332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          153.25385,
+          0.00024,
+          -9.37405
+        ],
+        "Q": [
+          11.66359,
+          -0.0,
+          -0.0
+        ],
+        "U": [
+          -3.42364,
+          0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          224.38809,
+          0.00033,
+          -12.65497
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -3.4236,
+        "WX+": -3.4236,
+        "WY-": -3.4236,
+        "WY+": -3.4236,
+        "WX-WY-": -3.4236,
+        "WX-WY+": -3.4236,
+        "WX+WY-": -3.4236,
+        "WX+WY+": -3.4236
+      },
+      "gravityPlusWindMaximum": 224.3881,
+      "noFavourableDeadMinimum": -3.4236,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          17.3017,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          19.3992,
+          5.1731,
+          0.0
+        ],
+        "ground RC200": [
+          10.5201,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          38.4184,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          5.26,
+          4.208,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          15.0434,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          2.9843,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          4.0587,
+          2.2824,
+          -3.4236
+        ],
+        "steel wall-head ring": [
+          1.6225,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          22.2905,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          16.355,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P24",
+      "independentAdverseNCxCy": [
+        [
+          -1.358,
+          232.3988
+        ],
+        [
+          -1.5826,
+          0.8356
+        ],
+        [
+          -1.1334,
+          13.2098
+        ]
+      ],
+      "xy": [
+        2902.5,
+        11667.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          157.53254,
+          -0.45148,
+          8.94547
+        ],
+        "Q": [
+          12.41586,
+          -0.09169,
+          -0.0
+        ],
+        "U": [
+          -1.3049,
+          0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          231.29272,
+          -0.74702,
+          12.07638
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -1.3049,
+        "WX+": -1.3049,
+        "WY-": -1.3049,
+        "WY+": -1.3049,
+        "WX-WY-": -1.3049,
+        "WX-WY+": -1.3049,
+        "WX+WY-": -1.3049,
+        "WX+WY+": -1.3049
+      },
+      "gravityPlusWindMaximum": 231.2927,
+      "noFavourableDeadMinimum": -1.3049,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          15.0645,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          21.3016,
+          5.6804,
+          0.0
+        ],
+        "ground RC200": [
+          14.6638,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          22.5214,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          7.3319,
+          5.8655,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          14.3808,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.5979,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          1.5469,
+          0.8699,
+          -1.3049
+        ],
+        "steel wall-head ring": [
+          1.55,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          37.8681,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          1.0534,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          15.6522,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P25",
+      "independentAdverseNCxCy": [
+        [
+          -16.5916,
+          314.2192
+        ],
+        [
+          -5.7477,
+          3.3022
+        ],
+        [
+          -1.1521,
+          16.0162
+        ]
+      ],
+      "xy": [
+        4500,
+        11667.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          194.66751,
+          -1.23579,
+          11.01048
+        ],
+        "Q": [
+          25.23971,
+          -0.51809,
+          -0.0
+        ],
+        "U": [
+          -15.71201,
+          0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          300.66071,
+          -2.44544,
+          14.86415
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -15.712,
+        "WX+": -15.712,
+        "WY-": -15.712,
+        "WY+": -15.712,
+        "WX-WY-": -15.712,
+        "WX-WY+": -15.712,
+        "WX+WY-": -15.712,
+        "WX+WY+": -15.712
+      },
+      "gravityPlusWindMaximum": 300.6607,
+      "noFavourableDeadMinimum": -15.712,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          13.2564,
+          0.0,
+          0.0
+        ],
+        "exterior loggia deck reserved": [
+          16.1668,
+          8.6223,
+          0.0
+        ],
+        "first-floor fields": [
+          17.314,
+          4.2293,
+          0.0
+        ],
+        "ground RC200": [
+          4.7837,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          39.9157,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          2.3918,
+          1.9135,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          27.0978,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          5.3932,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          18.6264,
+          10.4747,
+          -15.712
+        ],
+        "steel wall-head ring": [
+          2.004,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          27.5233,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          20.1944,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P26",
+      "independentAdverseNCxCy": [
+        [
+          -16.7443,
+          356.0484
+        ],
+        [
+          -3.3022,
+          6.3757
+        ],
+        [
+          -1.1113,
+          16.7404
+        ]
+      ],
+      "xy": [
+        7500,
+        11667.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          222.15328,
+          1.88081,
+          11.57713
+        ],
+        "Q": [
+          28.30567,
+          0.35627,
+          0.0
+        ],
+        "U": [
+          -15.85881,
+          -0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          342.36543,
+          3.0735,
+          15.62913
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -15.8588,
+        "WX+": -15.8588,
+        "WY-": -15.8588,
+        "WY+": -15.8588,
+        "WX-WY-": -15.8588,
+        "WX-WY+": -15.8588,
+        "WX+WY-": -15.8588,
+        "WX+WY+": -15.8588
+      },
+      "gravityPlusWindMaximum": 342.3654,
+      "noFavourableDeadMinimum": -15.8588,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          13.8796,
+          0.0,
+          0.0
+        ],
+        "exterior loggia deck reserved": [
+          16.1668,
+          8.6223,
+          0.0
+        ],
+        "first-floor fields": [
+          22.2607,
+          5.5484,
+          0.0
+        ],
+        "ground RC200": [
+          8.9061,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          41.3432,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          4.453,
+          3.5624,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          28.0093,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          5.9507,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          18.8004,
+          10.5725,
+          -15.8588
+        ],
+        "steel wall-head ring": [
+          2.1016,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          39.0949,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          21.1868,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P27",
+      "independentAdverseNCxCy": [
+        [
+          -1.2052,
+          198.5796
+        ],
+        [
+          -0.246,
+          0.246
+        ],
+        [
+          -1.136,
+          13.1573
+        ]
+      ],
+      "xy": [
+        9300,
+        11667.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          133.22702,
+          -0.0,
+          8.90467
+        ],
+        "Q": [
+          11.82768,
+          0.0,
+          0.0
+        ],
+        "U": [
+          -1.15809,
+          -0.0,
+          -0.0
+        ],
+        "ULSdown": [
+          197.59799,
+          -0.0,
+          12.02131
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -1.1581,
+        "WX+": -1.1581,
+        "WY-": -1.1581,
+        "WY+": -1.1581,
+        "WX-WY-": -1.1581,
+        "WX-WY+": -1.1581,
+        "WX+WY-": -1.1581,
+        "WX+WY+": -1.1581
+      },
+      "gravityPlusWindMaximum": 197.598,
+      "noFavourableDeadMinimum": -1.1581,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          11.5664,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          20.8908,
+          5.5709,
+          0.0
+        ],
+        "ground RC200": [
+          13.7118,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          22.4182,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          6.8559,
+          5.4847,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          14.3149,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          3.7426,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          1.3729,
+          0.7721,
+          -1.1581
+        ],
+        "steel wall-head ring": [
+          1.5441,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          21.2314,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          15.5779,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P28",
+      "independentAdverseNCxCy": [
+        [
+          -12.2241,
+          286.2801
+        ],
+        [
+          -8.2833,
+          3.1675
+        ],
+        [
+          -9.7209,
+          3.759
+        ]
+      ],
+      "xy": [
+        4500,
+        8050
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          178.53679,
+          -3.11259,
+          -4.58372
+        ],
+        "Q": [
+          23.14594,
+          -0.60917,
+          0.18736
+        ],
+        "U": [
+          -8.74207,
+          -0.0,
+          -0.28412
+        ],
+        "ULSdown": [
+          275.74357,
+          -5.11575,
+          -5.90698
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -8.7421,
+        "WX+": -8.7421,
+        "WY-": -8.7421,
+        "WY+": -8.7421,
+        "WX-WY-": -8.7421,
+        "WX-WY+": -8.7421,
+        "WX+WY-": -8.7421,
+        "WX+WY+": -8.7421
+      },
+      "gravityPlusWindMaximum": 275.7436,
+      "noFavourableDeadMinimum": -8.7421,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          10.0516,
+          0.0,
+          0.0
+        ],
+        "exterior loggia deck reserved": [
+          19.0907,
+          10.1817,
+          0.0
+        ],
+        "first-floor fields": [
+          16.8152,
+          4.1062,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          5.3084,
+          1.249,
+          0.0
+        ],
+        "ground RC200": [
+          4.4524,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          37.5217,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          2.2262,
+          1.781,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          20.7542,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          6.3978,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          11.0041,
+          5.828,
+          -8.7421
+        ],
+        "steel wall-head ring": [
+          1.4075,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          30.0579,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          13.449,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P29",
+      "independentAdverseNCxCy": [
+        [
+          -1.479,
+          164.7991
+        ],
+        [
+          -12.1774,
+          5.974
+        ],
+        [
+          -0.2462,
+          0.2352
+        ]
+      ],
+      "xy": [
+        4500,
+        9875
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          107.09231,
+          -3.49496,
+          -0.0063
+        ],
+        "Q": [
+          12.49699,
+          -0.99015,
+          -0.00161
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          163.32011,
+          -6.20342,
+          -0.01092
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 163.3201,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          8.7788,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          34.8356,
+          8.5087,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          -0.3625,
+          -0.0853,
+          0.0
+        ],
+        "ground RC200": [
+          10.1839,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          26.8793,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          5.092,
+          4.0736,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          14.5591,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          1.5701,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          5.556,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P30",
+      "independentAdverseNCxCy": [
+        [
+          -19.4054,
+          429.1138
+        ],
+        [
+          -3.1675,
+          7.048
+        ],
+        [
+          -12.0417,
+          6.2972
+        ]
+      ],
+      "xy": [
+        7500,
+        8050
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          269.26075,
+          2.33945,
+          -4.37522
+        ],
+        "Q": [
+          31.65743,
+          0.48145,
+          0.13577
+        ],
+        "U": [
+          -6.62913,
+          -0.0,
+          -0.21545
+        ],
+        "ULSdown": [
+          410.98815,
+          3.88043,
+          -5.7029
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -6.6291,
+        "WX+": -6.6291,
+        "WY-": -6.6291,
+        "WY+": -6.6291,
+        "WX-WY-": -6.6291,
+        "WX-WY+": -6.6291,
+        "WX+WY-": -6.6291,
+        "WX+WY+": -6.6291
+      },
+      "gravityPlusWindMaximum": 410.9881,
+      "noFavourableDeadMinimum": -6.6291,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          13.6122,
+          0.0,
+          0.0
+        ],
+        "exterior loggia deck reserved": [
+          19.0907,
+          10.1817,
+          0.0
+        ],
+        "first-floor fields": [
+          33.1113,
+          8.4503,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          5.3084,
+          1.249,
+          0.0
+        ],
+        "ground RC200": [
+          18.3923,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          62.493,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          9.1961,
+          7.3569,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          20.2686,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          9.0231,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          7.7561,
+          4.4194,
+          -6.6291
+        ],
+        "steel wall-head ring": [
+          1.3041,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          56.7949,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          12.9101,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P31",
+      "independentAdverseNCxCy": [
+        [
+          -1.4786,
+          170.0139
+        ],
+        [
+          -5.9739,
+          13.5643
+        ],
+        [
+          -0.4207,
+          0.4533
+        ]
+      ],
+      "xy": [
+        7500,
+        9875
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          115.13528,
+          4.84267,
+          0.02542
+        ],
+        "Q": [
+          8.73513,
+          0.70184,
+          -0.00119
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          168.53533,
+          7.59036,
+          0.03253
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 168.5353,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          8.7202,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          28.0531,
+          6.6986,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          -0.3625,
+          -0.0853,
+          0.0
+        ],
+        "ground RC200": [
+          5.3046,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          28.1802,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          2.6523,
+          2.1219,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          14.5591,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          1.2608,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          26.7675,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P32",
+      "independentAdverseNCxCy": [
+        [
+          -12.9189,
+          206.5925
+        ],
+        [
+          -4.1291,
+          7.4869
+        ],
+        [
+          -0.3238,
+          0.296
+        ]
+      ],
+      "xy": [
+        3950,
+        4332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          122.05246,
+          2.69962,
+          -0.02588
+        ],
+        "Q": [
+          20.74324,
+          -0.23912,
+          0.00476
+        ],
+        "U": [
+          -11.45896,
+          0.37242,
+          0.0
+        ],
+        "ULSdown": [
+          195.88567,
+          3.28581,
+          -0.0278
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -11.459,
+        "WX+": -11.459,
+        "WY-": -11.459,
+        "WY+": -11.459,
+        "WX-WY-": -11.459,
+        "WX-WY+": -11.459,
+        "WX+WY-": -11.459,
+        "WX+WY+": -11.459
+      },
+      "gravityPlusWindMaximum": 195.8857,
+      "noFavourableDeadMinimum": -11.459,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          7.1095,
+          0.0,
+          0.0
+        ],
+        "exterior court deck reserved": [
+          11.5869,
+          6.1797,
+          0.0
+        ],
+        "first-floor fields": [
+          7.3947,
+          1.9719,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          2.5206,
+          0.5931,
+          0.0
+        ],
+        "ground RC200": [
+          10.8982,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          21.5598,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          5.4491,
+          4.3593,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          8.4933,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          5.3584,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          14.6066,
+          7.6393,
+          -11.459
+        ],
+        "steel wall-head ring": [
+          1.2544,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          16.2008,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.3871,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          9.2332,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P33",
+      "independentAdverseNCxCy": [
+        [
+          -8.2252,
+          236.6929
+        ],
+        [
+          -4.0441,
+          13.7887
+        ],
+        [
+          -0.1126,
+          0.1146
+        ]
+      ],
+      "xy": [
+        3950,
+        6200
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          146.30776,
+          7.03047,
+          0.00154
+        ],
+        "Q": [
+          21.02043,
+          0.15648,
+          -1e-05
+        ],
+        "U": [
+          -2.99627,
+          0.09738,
+          0.0
+        ],
+        "ULSdown": [
+          229.04611,
+          9.72585,
+          0.00206
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -2.9963,
+        "WX+": -2.9963,
+        "WY-": -2.9963,
+        "WY+": -2.9963,
+        "WX-WY-": -2.9963,
+        "WX-WY+": -2.9963,
+        "WX+WY-": -2.9963,
+        "WX+WY+": -2.9963
+      },
+      "gravityPlusWindMaximum": 229.0461,
+      "noFavourableDeadMinimum": -2.9963,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          7.8974,
+          0.0,
+          0.0
+        ],
+        "exterior court deck reserved": [
+          23.434,
+          12.4981,
+          0.0
+        ],
+        "first-floor fields": [
+          6.3186,
+          1.685,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          8.7761,
+          2.065,
+          0.0
+        ],
+        "ground RC200": [
+          6.9371,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          23.6756,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          3.4686,
+          2.7749,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          15.2885,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          5.8778,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          3.8193,
+          1.9975,
+          -2.9963
+        ],
+        "steel wall-head ring": [
+          1.6299,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          22.5857,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          -0.0278,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          16.627,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P34",
+      "independentAdverseNCxCy": [
+        [
+          -21.8231,
+          197.9847
+        ],
+        [
+          -3.0462,
+          4.7621
+        ],
+        [
+          -2.0544,
+          2.2725
+        ]
+      ],
+      "xy": [
+        3950,
+        8050
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          110.98061,
+          1.45054,
+          -0.02322
+        ],
+        "Q": [
+          19.9441,
+          -0.19931,
+          0.20601
+        ],
+        "U": [
+          -18.53678,
+          0.29343,
+          -0.30902
+        ],
+        "ULSdown": [
+          179.73998,
+          1.65926,
+          0.27767
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -18.5368,
+        "WX+": -18.5368,
+        "WY-": -18.5368,
+        "WY+": -18.5368,
+        "WX-WY-": -18.5368,
+        "WX-WY+": -18.5368,
+        "WX+WY-": -18.5368,
+        "WX+WY+": -18.5368
+      },
+      "gravityPlusWindMaximum": 179.74,
+      "noFavourableDeadMinimum": -18.5368,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          5.49,
+          0.0,
+          0.0
+        ],
+        "exterior court deck reserved": [
+          8.3093,
+          4.4316,
+          0.0
+        ],
+        "first-floor fields": [
+          3.5916,
+          0.9578,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          0.8718,
+          0.2051,
+          0.0
+        ],
+        "ground RC200": [
+          4.9793,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          19.337,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          2.4897,
+          1.9917,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          7.6023,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.1821,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          26.1248,
+          12.3579,
+          -18.5368
+        ],
+        "steel wall-head ring": [
+          1.3266,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          18.3626,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          8.3135,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P35",
+      "independentAdverseNCxCy": [
+        [
+          -27.6339,
+          263.296
+        ],
+        [
+          -4.9138,
+          12.4067
+        ],
+        [
+          -2.9412,
+          2.2627
+        ]
+      ],
+      "xy": [
+        7950,
+        3950
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          146.44966,
+          4.4966,
+          -0.26807
+        ],
+        "Q": [
+          28.34042,
+          1.10874,
+          -0.26407
+        ],
+        "U": [
+          -23.5988,
+          -1.24645,
+          0.41196
+        ],
+        "ULSdown": [
+          240.21767,
+          7.73352,
+          -0.758
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -23.5988,
+        "WX+": -23.5988,
+        "WY-": -23.5988,
+        "WY+": -23.5988,
+        "WX-WY-": -23.5988,
+        "WX-WY+": -23.5988,
+        "WX+WY-": -23.5988,
+        "WX+WY+": -23.5988
+      },
+      "gravityPlusWindMaximum": 240.2177,
+      "noFavourableDeadMinimum": -23.5988,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          8.08,
+          0.0,
+          0.0
+        ],
+        "exterior court deck reserved": [
+          9.4317,
+          5.0302,
+          0.0
+        ],
+        "first-floor fields": [
+          10.363,
+          2.7635,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          1.8912,
+          0.445,
+          0.0
+        ],
+        "ground RC200": [
+          10.923,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          25.428,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          5.4615,
+          4.3692,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          8.2617,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          2.8165,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          32.8629,
+          15.7325,
+          -23.5988
+        ],
+        "steel wall-head ring": [
+          1.5869,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          20.2119,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.1529,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          8.9784,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P36",
+      "independentAdverseNCxCy": [
+        [
+          -24.151,
+          248.8438
+        ],
+        [
+          -8.859,
+          13.5818
+        ],
+        [
+          -0.6736,
+          0.6633
+        ]
+      ],
+      "xy": [
+        7950,
+        6100
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          142.85519,
+          3.02486,
+          0.04172
+        ],
+        "Q": [
+          21.27205,
+          0.47567,
+          -0.05508
+        ],
+        "U": [
+          -0.36135,
+          -0.38471,
+          0.08262
+        ],
+        "ULSdown": [
+          224.76257,
+          4.79707,
+          -0.0263
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -0.3613,
+        "WX+": -0.3613,
+        "WY-": -0.3613,
+        "WY+": -0.3613,
+        "WX-WY-": -0.3613,
+        "WX-WY+": -0.3613,
+        "WX+WY-": -0.3613,
+        "WX+WY+": -0.3613
+      },
+      "gravityPlusWindMaximum": 224.7626,
+      "noFavourableDeadMinimum": -0.3613,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          9.1737,
+          0.0,
+          0.0
+        ],
+        "exterior court deck reserved": [
+          24.717,
+          13.1824,
+          0.0
+        ],
+        "first-floor fields": [
+          8.3082,
+          2.2155,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          9.3632,
+          2.2031,
+          0.0
+        ],
+        "ground RC200": [
+          8.5754,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          22.6894,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          4.2877,
+          3.4301,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          14.8802,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          2.5267,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          -0.2068,
+          0.2409,
+          -0.3613
+        ],
+        "steel wall-head ring": [
+          1.5211,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          20.8442,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          -0.0023,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          16.1776,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P37",
+      "independentAdverseNCxCy": [
+        [
+          -29.9432,
+          265.6013
+        ],
+        [
+          -5.3763,
+          13.1419
+        ],
+        [
+          -3.0132,
+          3.0395
+        ]
+      ],
+      "xy": [
+        7950,
+        7700
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          147.90245,
+          4.65674,
+          -0.25565
+        ],
+        "Q": [
+          27.25384,
+          1.17655,
+          0.30687
+        ],
+        "U": [
+          -25.33642,
+          -1.48044,
+          -0.46031
+        ],
+        "ULSdown": [
+          240.54907,
+          8.05142,
+          0.11518
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -25.3364,
+        "WX+": -25.3364,
+        "WY-": -25.3364,
+        "WY+": -25.3364,
+        "WX-WY-": -25.3364,
+        "WX-WY+": -25.3364,
+        "WX+WY-": -25.3364,
+        "WX+WY+": -25.3364
+      },
+      "gravityPlusWindMaximum": 240.5491,
+      "noFavourableDeadMinimum": -25.3364,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          5.9601,
+          0.0,
+          0.0
+        ],
+        "exterior court deck reserved": [
+          11.4036,
+          6.0819,
+          0.0
+        ],
+        "first-floor fields": [
+          5.6054,
+          1.4948,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          1.0667,
+          0.251,
+          0.0
+        ],
+        "ground RC200": [
+          6.338,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          26.4551,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          3.169,
+          2.5352,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          10.3509,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          3.2958,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          36.0143,
+          16.8909,
+          -25.3364
+        ],
+        "steel wall-head ring": [
+          1.7973,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          25.1247,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          11.3215,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P38",
+      "independentAdverseNCxCy": [
+        [
+          -31.7527,
+          280.3156
+        ],
+        [
+          -0.1214,
+          0.1662
+        ],
+        [
+          -1.6093,
+          15.6699
+        ]
+      ],
+      "xy": [
+        4785,
+        3917.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          161.266,
+          0.02633,
+          9.93721
+        ],
+        "Q": [
+          24.02275,
+          0.00619,
+          0.48558
+        ],
+        "U": [
+          -26.83534,
+          -0.0,
+          -0.42977
+        ],
+        "ULSdown": [
+          253.74322,
+          0.04484,
+          14.14361
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -26.8353,
+        "WX+": -26.8353,
+        "WY-": -26.8353,
+        "WY+": -26.8353,
+        "WX-WY-": -26.8353,
+        "WX-WY+": -26.8353,
+        "WX+WY-": -26.8353,
+        "WX+WY+": -26.8353
+      },
+      "gravityPlusWindMaximum": 253.7432,
+      "noFavourableDeadMinimum": -26.8353,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          6.6687,
+          0.0,
+          0.0
+        ],
+        "first-floor bridge": [
+          4.5889,
+          1.2237,
+          0.0
+        ],
+        "first-floor fields": [
+          6.1516,
+          1.6404,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          2.5738,
+          0.6056,
+          0.0
+        ],
+        "ground RC200": [
+          6.657,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          30.2086,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          3.3285,
+          2.6628,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          13.8967,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          2.6791,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          38.2464,
+          17.8902,
+          -26.8353
+        ],
+        "steel wall-head ring": [
+          2.0958,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          28.5854,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.4753,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          15.1102,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P39",
+      "independentAdverseNCxCy": [
+        [
+          -57.3108,
+          74.4604
+        ],
+        [
+          -0.0,
+          0.0
+        ],
+        [
+          -2.872,
+          5.1626
+        ]
+      ],
+      "xy": [
+        6000,
+        3950
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          13.70417,
+          -0.0,
+          1.61149
+        ],
+        "Q": [
+          -2.00553,
+          -0.0,
+          0.05732
+        ],
+        "U": [
+          8.58506,
+          0.0,
+          0.15076
+        ],
+        "ULSdown": [
+          15.49233,
+          -0.0,
+          2.26149
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 8.5851,
+        "WX+": 8.5851,
+        "WY-": 8.5851,
+        "WY+": 8.5851,
+        "WX-WY-": 8.5851,
+        "WX-WY+": 8.5851,
+        "WX+WY-": 8.5851,
+        "WX+WY+": 8.5851
+      },
+      "gravityPlusWindMaximum": 15.4923,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          5.1548,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          -1.6777,
+          -0.4474,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          7.6038,
+          1.7891,
+          0.0
+        ],
+        "ground RC200": [
+          5.9402,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          0.5519,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          2.9701,
+          2.3761,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          2.3872,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          0.3704,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          -12.6261,
+          -5.7234,
+          8.5851
+        ],
+        "steel wall-head ring": [
+          -0.0885,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          0.5223,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          2.5956,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P40",
+      "independentAdverseNCxCy": [
+        [
+          -12.0012,
+          135.9159
+        ],
+        [
+          -0.1662,
+          0.1214
+        ],
+        [
+          -1.3413,
+          10.2406
+        ]
+      ],
+      "xy": [
+        7215,
+        3917.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          85.17242,
+          -0.02633,
+          6.53557
+        ],
+        "Q": [
+          6.47693,
+          -0.00619,
+          0.04452
+        ],
+        "U": [
+          -4.05865,
+          0.0,
+          0.04927
+        ],
+        "ULSdown": [
+          124.69817,
+          -0.04484,
+          8.8898
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": -4.0587,
+        "WX+": -4.0587,
+        "WY-": -4.0587,
+        "WY+": -4.0587,
+        "WX-WY-": -4.0587,
+        "WX-WY+": -4.0587,
+        "WX+WY-": -4.0587,
+        "WX+WY+": -4.0587
+      },
+      "gravityPlusWindMaximum": 124.6982,
+      "noFavourableDeadMinimum": -4.0587,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          4.5926,
+          0.0,
+          0.0
+        ],
+        "first-floor bridge": [
+          4.5889,
+          1.2237,
+          0.0
+        ],
+        "first-floor fields": [
+          1.7926,
+          0.478,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          1.6913,
+          0.398,
+          0.0
+        ],
+        "ground RC200": [
+          4.1787,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          17.6748,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          2.0893,
+          1.6715,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          11.2918,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          1.8982,
+          0.0,
+          0.0
+        ],
+        "roof": [
+          4.7486,
+          2.7058,
+          -4.0587
+        ],
+        "steel wall-head ring": [
+          1.1473,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          16.7251,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.4753,
+          0.0,
+          0.0
+        ],
+        "upper leaf and finish budget": [
+          12.2778,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P41",
+      "independentAdverseNCxCy": [
+        [
+          0.0,
+          249.3739
+        ],
+        [
+          -2.5732,
+          2.6249
+        ],
+        [
+          -1.6544,
+          1.6328
+        ]
+      ],
+      "xy": [
+        9300,
+        2650
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          166.19008,
+          0.04006,
+          -0.01082
+        ],
+        "Q": [
+          16.67818,
+          -0.00156,
+          -0.00463
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          249.37388,
+          0.05174,
+          -0.02156
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 249.3739,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          17.8468,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          31.2183,
+          8.3249,
+          0.0
+        ],
+        "ground RC200": [
+          20.8832,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          55.344,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          10.4416,
+          8.3533,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          5.1279,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          25.3088,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.0193,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P42",
+      "independentAdverseNCxCy": [
+        [
+          0.0,
+          203.355
+        ],
+        [
+          -2.8272,
+          2.7547
+        ],
+        [
+          -0.5714,
+          0.5714
+        ]
+      ],
+      "xy": [
+        9300,
+        4100
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          136.69695,
+          -0.04159,
+          -0.0
+        ],
+        "Q": [
+          12.54273,
+          -0.01086,
+          -0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          203.35497,
+          -0.07243,
+          -0.0
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 203.355,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          14.2319,
+          0.0,
+          0.0
+        ],
+        "concentrated plant budget": [
+          0.5388,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          23.2105,
+          6.1895,
+          0.0
+        ],
+        "ground RC200": [
+          15.8831,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          38.3854,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          7.9416,
+          6.3532,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          5.086,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          31.2851,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.1344,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P43",
+      "independentAdverseNCxCy": [
+        [
+          -10.9443,
+          232.3986
+        ],
+        [
+          -3.1222,
+          5.6875
+        ],
+        [
+          -4.8729,
+          2.4699
+        ]
+      ],
+      "xy": [
+        9300,
+        6100
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          146.5514,
+          1.89883,
+          -1.78005
+        ],
+        "Q": [
+          15.73995,
+          0.00129,
+          -0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          221.45432,
+          2.56536,
+          -2.40306
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 221.4543,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          14.8944,
+          0.0,
+          0.0
+        ],
+        "concentrated plant budget": [
+          0.0889,
+          0.0,
+          0.0
+        ],
+        "exterior passage deck reserved": [
+          1.4381,
+          1.9175,
+          0.0
+        ],
+        "first-floor fields": [
+          21.3359,
+          5.6896,
+          0.0
+        ],
+        "ground RC200": [
+          14.0823,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          37.0801,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          7.0411,
+          5.6329,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          13.9951,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          5.3345,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          31.261,
+          0.0,
+          0.0
+        ],
+        "wet equipment variable reserve": [
+          0.0,
+          2.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P44",
+      "independentAdverseNCxCy": [
+        [
+          -0.1142,
+          192.7202
+        ],
+        [
+          -2.7536,
+          5.281
+        ],
+        [
+          -2.4919,
+          4.7261
+        ]
+      ],
+      "xy": [
+        9300,
+        7700
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          126.04913,
+          1.87747,
+          1.65497
+        ],
+        "Q": [
+          14.9598,
+          -0.00478,
+          -0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          192.60602,
+          2.52741,
+          2.23421
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 192.606,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          13.5295,
+          0.0,
+          0.0
+        ],
+        "exterior passage deck reserved": [
+          1.4381,
+          1.9175,
+          0.0
+        ],
+        "first-floor fields": [
+          25.4447,
+          6.7852,
+          0.0
+        ],
+        "ground RC200": [
+          9.3927,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          33.7893,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          4.6963,
+          3.7571,
+          0.0
+        ],
+        "ground leaf and finish budget": [
+          13.9951,
+          0.0,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          1.835,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          21.9284,
+          0.0,
+          0.0
+        ],
+        "wet equipment variable reserve": [
+          0.0,
+          2.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P45",
+      "independentAdverseNCxCy": [
+        [
+          0.0,
+          192.421
+        ],
+        [
+          -2.4584,
+          1.47
+        ],
+        [
+          -1.1869,
+          1.1297
+        ]
+      ],
+      "xy": [
+        2942.5,
+        4332.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          120.67332,
+          -0.73052,
+          -0.06079
+        ],
+        "Q": [
+          19.67467,
+          -0.00147,
+          0.01657
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          192.42098,
+          -0.9884,
+          -0.05721
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 192.421,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          15.4202,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          19.3295,
+          5.1545,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          3.3521,
+          0.7887,
+          0.0
+        ],
+        "ground RC200": [
+          22.4575,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          26.5385,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          11.2287,
+          8.983,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          1.1658,
+          0.0,
+          0.0
+        ],
+        "two stair flights": [
+          12.5972,
+          4.7484,
+          0.0
+        ],
+        "upper core and finish budget": [
+          6.2857,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          2.2981,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P46",
+      "independentAdverseNCxCy": [
+        [
+          -0.1666,
+          160.1272
+        ],
+        [
+          -3.0927,
+          0.9764
+        ],
+        [
+          -0.0926,
+          0.0926
+        ]
+      ],
+      "xy": [
+        2942.5,
+        7257.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          97.76827,
+          -1.46314,
+          0.0
+        ],
+        "Q": [
+          18.64896,
+          -0.09402,
+          0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          159.9606,
+          -2.11627,
+          0.0
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 159.9606,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          9.5527,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          8.7613,
+          2.3363,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          2.018,
+          0.4748,
+          0.0
+        ],
+        "ground RC200": [
+          20.6584,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          21.885,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          10.3292,
+          8.2634,
+          0.0
+        ],
+        "landing beam and post": [
+          3.9169,
+          0.0,
+          0.0
+        ],
+        "stair midlanding": [
+          6.3585,
+          2.826,
+          0.0
+        ],
+        "two stair flights": [
+          12.5972,
+          4.7484,
+          0.0
+        ],
+        "upper frame downstands": [
+          1.6911,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P47",
+      "independentAdverseNCxCy": [
+        [
+          -0.1392,
+          251.8611
+        ],
+        [
+          -4.958,
+          0.8832
+        ],
+        [
+          -1.5435,
+          1.738
+        ]
+      ],
+      "xy": [
+        2942.5,
+        8852.5
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          165.29787,
+          -2.60112,
+          0.12818
+        ],
+        "Q": [
+          19.04654,
+          -0.37554,
+          0.01432
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          251.72194,
+          -4.07483,
+          0.19452
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 251.7219,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          14.8084,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          25.65,
+          6.8353,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          1.4678,
+          0.3454,
+          0.0
+        ],
+        "ground RC200": [
+          22.5997,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          34.5076,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          11.2998,
+          9.0399,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          4.7176,
+          0.0,
+          0.0
+        ],
+        "stair midlanding": [
+          6.3585,
+          2.826,
+          0.0
+        ],
+        "upper core and finish budget": [
+          42.2315,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          1.657,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P48",
+      "independentAdverseNCxCy": [
+        [
+          0.0,
+          95.41
+        ],
+        [
+          -1.2171,
+          1.3072
+        ],
+        [
+          -0.4684,
+          0.4557
+        ]
+      ],
+      "xy": [
+        4800,
+        1200
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          65.45615,
+          0.0529,
+          -0.00944
+        ],
+        "Q": [
+          4.69613,
+          0.01245,
+          0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          95.40999,
+          0.09009,
+          -0.01274
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 95.41,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          6.7208,
+          0.0,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          1.2447,
+          0.2929,
+          0.0
+        ],
+        "ground RC200": [
+          11.0081,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          23.3446,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          5.5041,
+          4.4032,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          3.3336,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          14.3003,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P49",
+      "independentAdverseNCxCy": [
+        [
+          -52.3098,
+          110.5819
+        ],
+        [
+          -1.441,
+          1.2515
+        ],
+        [
+          -1.0569,
+          1.3014
+        ]
+      ],
+      "xy": [
+        4800,
+        2650
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          38.9651,
+          -0.09217,
+          0.18133
+        ],
+        "Q": [
+          3.77944,
+          -0.04338,
+          -0.0002
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          58.27205,
+          -0.18951,
+          0.24449
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 58.2721,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          4.0456,
+          0.0,
+          0.0
+        ],
+        "first-floor bridge": [
+          4.5889,
+          1.2237,
+          0.0
+        ],
+        "first-floor fields": [
+          2.7035,
+          0.7209,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          0.5346,
+          0.1258,
+          0.0
+        ],
+        "ground RC200": [
+          4.2725,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          9.7801,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          2.1363,
+          1.709,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          1.1931,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          9.3328,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.3776,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P50",
+      "independentAdverseNCxCy": [
+        [
+          0.0,
+          43.7629
+        ],
+        [
+          -0.7223,
+          0.6087
+        ],
+        [
+          -0.6924,
+          0.4557
+        ]
+      ],
+      "xy": [
+        3400,
+        1200
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          30.61449,
+          -0.08419,
+          -0.17531
+        ],
+        "Q": [
+          1.62225,
+          -0.0,
+          0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          43.76293,
+          -0.11365,
+          -0.23667
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 43.7629,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          6.3635,
+          0.0,
+          0.0
+        ],
+        "ground RC200": [
+          4.0556,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          18.1489,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          2.0278,
+          1.6222,
+          0.0
+        ],
+        "upper core and finish budget": [
+          0.0187,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P51",
+      "independentAdverseNCxCy": [
+        [
+          0.0,
+          282.2198
+        ],
+        [
+          -1.498,
+          1.6529
+        ],
+        [
+          -2.1396,
+          2.5031
+        ]
+      ],
+      "xy": [
+        3400,
+        2650
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          187.02637,
+          0.10668,
+          0.26851
+        ],
+        "Q": [
+          19.82283,
+          0.00723,
+          0.00073
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          282.21984,
+          0.15486,
+          0.36358
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 282.2198,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          14.6297,
+          0.0,
+          0.0
+        ],
+        "first-floor fields": [
+          36.3054,
+          9.6814,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          1.0088,
+          0.2374,
+          0.0
+        ],
+        "ground RC200": [
+          24.76,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          50.0573,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          12.38,
+          9.904,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          8.5874,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          38.9595,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.3381,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "P52",
+      "independentAdverseNCxCy": [
+        [
+          0.0,
+          173.3608
+        ],
+        [
+          -1.4424,
+          1.5954
+        ],
+        [
+          -0.9734,
+          1.2344
+        ]
+      ],
+      "xy": [
+        7200,
+        2650
+      ],
+      "headZ": -750,
+      "caseVerticalAndEccentricCouples": {
+        "G": [
+          115.10489,
+          0.0683,
+          0.19335
+        ],
+        "Q": [
+          11.97947,
+          0.04054,
+          -0.0
+        ],
+        "U": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ULSdown": [
+          173.36081,
+          0.15301,
+          0.26103
+        ]
+      },
+      "overturningIncrementByDirection": {
+        "WX-": 0,
+        "WX+": 0,
+        "WY-": 0,
+        "WY+": 0,
+        "WX-WY-": 0,
+        "WX-WY+": 0,
+        "WX+WY-": 0,
+        "WX+WY+": 0
+      },
+      "upliftRoofPlusWind": {
+        "WX-": 0.0,
+        "WX+": 0.0,
+        "WY-": 0.0,
+        "WY+": 0.0,
+        "WX-WY-": 0.0,
+        "WX-WY+": 0.0,
+        "WX+WY-": 0.0,
+        "WX+WY+": 0.0
+      },
+      "gravityPlusWindMaximum": 173.3608,
+      "noFavourableDeadMinimum": 0.0,
+      "groupShearPerAxisWholeToOneHeadAdverse": 0,
+      "originGQUp": {
+        "common grid and heads": [
+          9.1231,
+          0.0,
+          0.0
+        ],
+        "first-floor bridge": [
+          4.5889,
+          1.2237,
+          0.0
+        ],
+        "first-floor fields": [
+          14.1787,
+          3.781,
+          0.0
+        ],
+        "first-floor residual RC and finish": [
+          1.2951,
+          0.3047,
+          0.0
+        ],
+        "ground RC200": [
+          16.6751,
+          0.0,
+          0.0
+        ],
+        "ground core and finish budget": [
+          28.3939,
+          0.0,
+          0.0
+        ],
+        "ground finishes and use": [
+          8.3376,
+          6.6701,
+          0.0
+        ],
+        "independent ceiling envelope": [
+          5.169,
+          0.0,
+          0.0
+        ],
+        "upper core and finish budget": [
+          26.8682,
+          0.0,
+          0.0
+        ],
+        "upper frame downstands": [
+          0.4753,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "admission": false
+}
