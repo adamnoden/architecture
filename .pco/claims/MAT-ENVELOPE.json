@@ -9,14 +9,14 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-06T22:25:31.753Z",
-  "expiresAt": "2026-11-06T23:55:31.753Z",
+  "heartbeatAt": "2026-11-06T22:31:49.963Z",
+  "expiresAt": "2026-11-07T00:01:49.963Z",
   "checkpoint": {
-    "evidence": "Published frozen b04518638e7cb9dd46fdcadacdf2adb735ae5be2 reconciled main969c4bf6; full MAT/STR, IAS occurrence guard, render and mutation checks pass",
-    "next": "Verify exact-head CI then fresh canonical merge-check for root merge",
-    "blocker": "Actual support, ends, water, material and thermal performance remain unqualified; MAT stays open"
+    "evidence": "PR1355 merged at1273d9f3 after exact-head CI and canonical preflight; predecessor branch deletion verified; successor starts exact merged main; new draft pending substantive section",
+    "next": "Locate one actual apron support and two end releases, compare ordinary compliance without inherited water head or force",
+    "blocker": "Support, end geometry, actual water/capillary and thermal/material properties unqualified; predecessor PR1355 remains historical until successor draft exists"
   },
-  "branch": "work/zerg-20261106-w5-concrete-boundary",
+  "branch": "work/zerg-20261106-w5-apron-section",
   "predecessor": {
     "leaseId": "6002020d-6ea1-4562-986b-9448eba5705a",
     "generation": 27,
