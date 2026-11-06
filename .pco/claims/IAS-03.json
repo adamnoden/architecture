@@ -9,8 +9,8 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-06T20:20:42.543Z",
-  "expiresAt": "2026-11-06T21:50:42.543Z",
+  "heartbeatAt": "2026-11-06T20:30:38.562Z",
+  "expiresAt": "2026-11-06T22:00:38.562Z",
   "branch": "work/zerg-20261106-ias-g8",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
@@ -34,7 +34,7 @@
   },
   "pr": 1349,
   "checkpoint": {
-    "evidence": "Frozen draft #1349 head34be11f86956ee0fb14d9fe64ae8c637c643443a tree92f0c3f5726ae074b10c854916eb7a99341056aa exact remote source/tree readback. Cold lower versus whole tray renewal, conditional restricted-core datum equations, native mass limits and owning MAT B6/B9 provenance reconciled. Both actual downloaded frame PDFs show optional brackets; no substantive revision contrast claimed. Integrity/whitespace pass; exact-head CI42287246980 running.",
-    "next": "Await exact-head CI and root architectural review of frozen source; then fresh canonical merge-check only if approved. No complete first-release, material exception or geometry adoption. Continue section/support research separately from frozen head."
+    "evidence": "Root approved bounded 34be two-file result. Reconciled main ede8302b at exact remote head 0e7da573abd96a28e8f7432fe09a362c3e25ecb7 tree 740d81eb76fc845fd3b025067206eddc35259bab; source readbacks exact; integrity whitespace and five affected HAD threshold tests passed; CI 42288870036 pending.",
+    "next": "Observe exact-head CI; mark ready and run fresh canonical merge-check for root independent integration. Keep connected-method research off frozen head; no installation or material admission."
   }
 }
