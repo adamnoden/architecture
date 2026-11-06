@@ -16,7 +16,11 @@ def subject(m):
  # Explicitly exclude downstream foul/receiver route corrections;
  # this is a kitchen applicability projection, not whole-Services admission.
  x['architecturalServices'].pop('eastFoulExit')
- x['architecturalServices'].pop('otherServiceDuties')
+ for d in x['architecturalServices']['otherServiceDuties']:
+  if d['id']=='east-soil':
+   d.pop('path');d.pop('decision')
+  elif d['id'] in ['foul-ground-WC','foul-utility','foul-kitchen','rear-soil']:
+   d['path'][-1][2]=None
  return x
 assert digest(subject(h))==digest(subject(old)), 'Affected HAD source changed: review heat applicability'
 f=h['groundFurniture'];room=h['rooms']['kitchenDining']['bounds']

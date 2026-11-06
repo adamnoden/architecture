@@ -2,7 +2,7 @@
   "status": "UNSELECTED heat/room-release challenger; no canonical Services change or whole-system/handling/material admission.",
   "source": {
     "HADReviewCommit": "bc1231479ccbcae3c15b3f5cc7f86055dbeb7a0e",
-    "affectedProjectionSha256": "31437ae71b11e8781bf402909940acbed84987275944bf343c290659d72f703e",
+    "affectedProjectionSha256": "77727aec9abcefc050d0b755ce34f211dd7e8aac6b136a7f40669b1b4ed0227c",
     "servicesBlob": "3e934b29d9f328b41cb9bd2498184154090492c0",
     "heatSource": "joined-cooker-system.json / SwegonExternalMotorCandidate",
     "projectionScope": "Kitchen/HAD/Services fields, excluding independent eastFoulExit and otherServiceDuties downstream foul/receiver route correction. Whole Services equality remains HAD authentication duty."
