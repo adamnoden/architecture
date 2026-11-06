@@ -152,7 +152,7 @@ for lo,hi,col in [(7550,10050.5,'#79b2d4'),(10050.5,12250,'#8dc6b1')]:
  lo=max(lo,9700)
  pts=[(SX(lo),SZ(bed(lo)+100)),(SX(hi),SZ(bed(hi)+100)),(SX(hi),SZ(bed(hi)-150)),(SX(lo),SZ(bed(lo)-150))]
  svg.append('<polygon points="'+' '.join(f'{x},{y}' for x,y in pts)+f'" fill="{col}" stroke="#41535b"/>')
-B(SX(9938),SZ(zj+150),224*.28,250*.13,'none','#a12b23')
+B(SX(9938),SZ(zj+f['sideHeight']-j['frameBelowBed']),224*.28,f['sideHeight']*.13,'none','#a12b23')
 for dz in j['boltZRelativeBed']:
  z=zj+dz;svg.append(f'<path d="M{SX(9925)} {SZ(z)} H{SX(10200)}" stroke="#a12b23" stroke-width="2"/>')
  z=zj+j['boltZRelativeBed'][0]
