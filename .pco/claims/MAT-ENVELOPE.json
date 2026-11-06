@@ -9,14 +9,14 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-06T23:18:16.732Z",
-  "expiresAt": "2026-11-07T00:48:16.732Z",
+  "heartbeatAt": "2026-11-06T23:35:34.613Z",
+  "expiresAt": "2026-11-07T01:05:34.613Z",
   "checkpoint": {
-    "evidence": "Draft1361 published68d3b61567eb79e70c544d48777467a163093211 reconciled main50093457; both cavity-only end releases and ordinary compliance bounded; full MAT/STR, IAS guard, mutation/render checks pass",
-    "next": "Review coherent support and both mechanical releases, then continue actual air corners/fixed wall join and carrier retention on same draft",
-    "blocker": "Air/water/capillary/thermal/material admission and actual bearing/web/weld/capture/friction remain unearned; no owning HAD change or MAT completion"
+    "evidence": "PR1361 merged8576cf800822d3276cd8a7aed9d167f1bd68b90e after exact CI and root canonical preflight; predecessor branch deletion verified; successor starts exact merged head, draft pending",
+    "next": "Compare one closed court air path: ordinary215 header band, supported fixed base/top retainer and both end-cap corners; price actual service/seat/walking/renewal and separate thermal/capillary duties",
+    "blocker": "No floor or airassembly admission; exact material/joint/retention/thermal/water performance unearned; predecessor PR1361 historical until fresh draft exists"
   },
-  "branch": "work/zerg-20261106-w5-apron-section",
+  "branch": "work/zerg-20261106-w5-court-air-path",
   "predecessor": {
     "leaseId": "6002020d-6ea1-4562-986b-9448eba5705a",
     "generation": 27,
