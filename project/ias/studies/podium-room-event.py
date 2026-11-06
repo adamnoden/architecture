@@ -64,7 +64,7 @@ def stage(n,key,target,paths):
         # Diagonal step5 is charged as horizontal then vertical, both clear.
         segments=[(a,b)] if a[0]==b[0] or a[1]==b[1] else [(a,(b[0],a[1])),((b[0],a[1]),b)]
         for p,q in segments:
-            assert inside(p,300)>=0 and inside(q,300)>=0,(n,'wall')
+            assert inside(p,300)>=25 and inside(q,300)>=25,(n,'wall')
             for r in others.values():minimum=min(minimum,capsule_gap(p,q,r))
     assert minimum>=25,(n,minimum)
     STATE[key]=target
@@ -78,8 +78,8 @@ stage(4,'B',(2387.5,9800,1800,750),[[(3000,10125),(3000,9475)]])
 for end in (3612.5,2962.5):
     route=[(3000,9475),(2012.5,9475),(2012.5,10875),(end,10875)]
     for a,b in zip(route,route[1:]):
-        assert inside(a,300)>=0 and inside(b,300)>=0
-        assert all(capsule_gap(a,b,r)>=0 for r in {**FIXED,**STATE}.values())
+        assert inside(a,300)>=25 and inside(b,300)>=25
+        assert all(capsule_gap(a,b,r)>=25 for r in {**FIXED,**STATE}.values())
 assert 3612.5-2962.5>=600
 stage(5,'B',(2312.5,9775,1800,750),[[(3287.5+x,10875),(3212.5+x,10850)] for x in (-325,325)])
 C=(3212.5,10150); radius=math.hypot(900,375)
@@ -113,18 +113,18 @@ def region(U,V):
     return [(2387+u*c+v*s,9894-u*s+v*c) for u,v in ((U[0],V[0]),(U[1],V[0]),(U[1],V[1]),(U[0],V[1]))]
 for label,U,V in [('body',(-370,370),(-1145,295)),('front stabilisers',(-861,861),(295,786))]:
     p=region(U,V)
-    assert all(inside(q)>=0 for q in p)
+    assert all(inside(q)>=25 for q in p)
     for k,r in {**FIXED,**STATE}.items():
         d=gap(p,rect(r));assert d>=25,(label,k)
         print('installed',label,k,round(d,3))
 feet=(2387+100*s,9894+100*c)
 print('authored feet',feet,'required grip distance',math.dist((*feet,2400),(2302.5,9502.5,2850)))
-# Negative controls retain the actual failed arguments, not a universal impossibility.
+# Provenance guard and geometric negative retain different failures.
 # Old opposite-side turn ended one handler east; next move requires both west.
 old_turn_end={(2512.5,10175),(3912.5,10175)}
 old_next_start={(2512.5,9700),(2512.5,10350)}
 assert old_turn_end != old_next_start
-print('NEGATIVE: old opposite-side handler exchange has no supplied joining path')
+print('SEQUENCE MISMATCH: old opposite-side handler exchange has no supplied joining path; no geometric impossibility asserted')
 old_circle_clearance=math.hypot(3212.5-3077.5,10155-9122.5)-math.hypot(950,375)
 assert old_circle_clearance < 25
 print('NEGATIVE: 1900-sofa revised turn fails25 criterion:',old_circle_clearance)
