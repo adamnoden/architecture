@@ -9,8 +9,8 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-06T20:38:43.955Z",
-  "expiresAt": "2026-11-06T22:08:43.955Z",
+  "heartbeatAt": "2026-11-06T20:47:39.278Z",
+  "expiresAt": "2026-11-06T22:17:39.278Z",
   "branch": "work/zerg-20261106-ias-g9",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
@@ -32,9 +32,9 @@
       "next": "Resume project/ias/ias-03-modular-furnishing-handoff.md: earn supported furnishing first release and low/rest/storage/door choreography or reject/simplify48-package burden; then SAME actual Pecolift rolling/repair/incoming event. Keep ALL source fixtures/court enclosure,25clearance,west755,physical/material/version holds. Coordinator execution limit, not frontier empty. Release HANDOFF now; keep w1f."
     }
   },
-  "pr": 1349,
+  "pr": 1352,
   "checkpoint": {
-    "evidence": "PR 1349 merged at d104cc850b70f341086b9732887639fb872a663f after exact-head CI 42288870036 and canonical preflight 20:36:29Z plus root independent check. Remote g8 deletion verified. Fresh g9 created at exact merged main d104cc85. Retained pr field 1349 is merged predecessor evidence, not a successor PR.",
-    "next": "Develop one actual connected section and supported first-release state on g9; compare tray-lift versus retained-tray lower task. Bind an actual new PR with Work and Lease before its source event when a bounded source change warrants. No selected installation or material exception."
+    "evidence": "Merged 1349 at d104cc85; g8 deletion verified. Continuing draft PR 1352 opened with Work/Lease body at creation, exact remote 0a6c1464a998d2e51ec0fedf2e64e6e72e7842aa tree 9b7a85666ed6d37fd386770e9e27405e5dc23fd4; all four readbacks exact. Native sheet same hash, generated first-rest bounds/render inspection/integrity/whitespace passed. No actual socket/crib/grip admission.",
+    "next": "Continue same draft to join permitted socket/pipe, fixed-side axial restraint and floor closure with actual supported first lift and ordinary crib; inspect CI and root architectural review. Avoid integrating an isolated first-rest calculation."
   }
 }
