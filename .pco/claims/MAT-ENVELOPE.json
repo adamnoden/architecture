@@ -9,12 +9,12 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-06T20:13:03.722Z",
-  "expiresAt": "2026-11-06T21:43:03.722Z",
+  "heartbeatAt": "2026-11-06T20:45:43.699Z",
+  "expiresAt": "2026-11-06T22:15:43.699Z",
   "checkpoint": {
-    "evidence": "1348 verified merged at ede8302b; old head absent; whole-field source/topology and reversible threshold assembly next",
-    "next": "Audit every real wall/support/door boundary and compare complete sheet field against path-qualified concrete route before assembly admission",
-    "blocker": "Field closure, actual constituents, movement, air/moisture and thermal performance remain unresolved"
+    "evidence": "Draft1351 head899c147: source-located field, three RC cores, wall-width/stock/seam comparison; bespoke rail preference withdrawn; test:mat and21HADtests pass",
+    "next": "Review actual conventional floor/wall/core/threshold route and reconcile moved main before final exact CI/root review",
+    "blocker": "No complete floor joint/mix/air-moisture/thermal/site admission; not packet completion"
   },
   "branch": "work/zerg-20261106-w5-field-assembly",
   "predecessor": {
@@ -39,5 +39,5 @@
       "blocker": "STR confirms complete support/headlist and signed domains are not yet allocated; do not extrapolate12 cornerpoints. Sharedgrid bulk-water/weather enclosure and actual capillary-floor ownership remain unresolved. No assembly admission or selection."
     }
   },
-  "pr": 1348
+  "pr": 1351
 }
