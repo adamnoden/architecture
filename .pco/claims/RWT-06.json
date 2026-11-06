@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 52,
-  "state": "released",
-  "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
+  "generation": 53,
+  "state": "claimed",
+  "leaseId": "5af3c2b0-5818-45f0-b3cb-45f3de0596ac",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-20261106-rwt06"
+    "label": "zerg-20261106-rwt06-successor"
   },
-  "claimedAt": "2026-11-06T12:11:10.492Z",
-  "heartbeatAt": "2026-11-06T14:32:09.065Z",
-  "expiresAt": "2026-11-06T14:32:09.065Z",
-  "branch": "work/zerg-20261106-rwt06",
+  "claimedAt": "2026-11-06T19:18:23.804Z",
+  "heartbeatAt": "2026-11-06T19:18:23.804Z",
+  "expiresAt": "2026-11-06T20:48:23.804Z",
+  "branch": "work/zerg-20261106-rwt06-successor",
   "predecessor": {
-    "leaseId": "043efc30-2eff-4e39-8c55-1293a1133063",
-    "generation": 51,
-    "branch": "work/zerg-20261105-w2",
-    "pr": 1327,
+    "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
+    "generation": 52,
+    "branch": "work/zerg-20261106-rwt06",
+    "pr": 1338,
     "checkpoint": {
-      "evidence": "PR #1327 final candidate d34d89e7 merges OAS #1326 main5b0a5e4f; local typecheck,160 control tests,repo integrity and10 water adverse checks passed; both source prerequisites and projections reconciled.",
-      "next": "Verify exact-head CI; each worker run own canonical merge-check; merge immediately and release both blocked-node leases.",
-      "blocker": "Exact-head CI pending; no replacement architecture adopted. HAD-WATER-REPLAN is ready only after main registration."
+      "evidence": "FINAL HANDOFF DraftPR1338 exact2c6e6a76/treeda7aa9c4. Currentmain0a40215 ancestor.135RWT and directrepo pass; HAD/MAT inputs unchanged. Accepted788 operator collision, fast-plan curvature and slot/lap defects durably recorded; no adoption.",
+      "next": "Successor: compose slow self-draining header and deliberate carrier-depth/bridge comparison; earn original-body manual-tool sweep, actual station-derived50lap/slot, normal/maintenance matrix and high-eave duties from finite exit map.",
+      "blocker": "Coordinator execution limit; stop new design. RWT06 incomplete, no hydraulic/physical/site admission. Preserve draft and branch; canonical HANDOFF release immediately after this checkpoint."
     }
   },
   "recoverySource": {
-    "leaseId": "043efc30-2eff-4e39-8c55-1293a1133063",
-    "generation": 51,
-    "branch": "work/zerg-20261105-w2",
-    "pr": 1327,
+    "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
+    "generation": 52,
+    "branch": "work/zerg-20261106-rwt06",
+    "pr": 1338,
     "checkpoint": {
-      "evidence": "PR #1327 final candidate d34d89e7 merges OAS #1326 main5b0a5e4f; local typecheck,160 control tests,repo integrity and10 water adverse checks passed; both source prerequisites and projections reconciled.",
-      "next": "Verify exact-head CI; each worker run own canonical merge-check; merge immediately and release both blocked-node leases.",
-      "blocker": "Exact-head CI pending; no replacement architecture adopted. HAD-WATER-REPLAN is ready only after main registration."
+      "evidence": "FINAL HANDOFF DraftPR1338 exact2c6e6a76/treeda7aa9c4. Currentmain0a40215 ancestor.135RWT and directrepo pass; HAD/MAT inputs unchanged. Accepted788 operator collision, fast-plan curvature and slot/lap defects durably recorded; no adoption.",
+      "next": "Successor: compose slow self-draining header and deliberate carrier-depth/bridge comparison; earn original-body manual-tool sweep, actual station-derived50lap/slot, normal/maintenance matrix and high-eave duties from finite exit map.",
+      "blocker": "Coordinator execution limit; stop new design. RWT06 incomplete, no hydraulic/physical/site admission. Preserve draft and branch; canonical HANDOFF release immediately after this checkpoint."
     }
-  },
-  "pr": 1338,
-  "checkpoint": {
-    "evidence": "FINAL HANDOFF DraftPR1338 exact2c6e6a76/treeda7aa9c4. Currentmain0a40215 ancestor.135RWT and directrepo pass; HAD/MAT inputs unchanged. Accepted788 operator collision, fast-plan curvature and slot/lap defects durably recorded; no adoption.",
-    "next": "Successor: compose slow self-draining header and deliberate carrier-depth/bridge comparison; earn original-body manual-tool sweep, actual station-derived50lap/slot, normal/maintenance matrix and high-eave duties from finite exit map.",
-    "blocker": "Coordinator execution limit; stop new design. RWT06 incomplete, no hydraulic/physical/site admission. Preserve draft and branch; canonical HANDOFF release immediately after this checkpoint."
-  },
-  "releasedAt": "2026-11-06T14:32:09.065Z",
-  "releaseReason": "handoff"
+  }
 }
