@@ -168,6 +168,11 @@
     "rearToUtilityNorthFinishedFace": 25,
     "eastOrdinaryPassage": 887.5,
     "frontToCylinderBody": 31,
+    "openProtectedLeafIntrudesTrialFrontFieldMM": [
+      482,
+      44
+    ],
+    "doorStateHold": "Fully open native protected leaf occupies482x44mm of trial front field. Closed-door component service and reopened-door body withdrawal must be proved as separate supported states; full front access with door open is not earned.",
     "frontFitsIntermediateArchX": true,
     "850CartWith25EdgesPassesEast": false,
     "scope": "Static challenger only. Native panel/component withdrawal, operator, supports, condensation, lifting and continuous renewal must be bound before fit selection."
@@ -715,7 +720,7 @@
     ],
     "nativeFrontServiceMM": 750,
     "nativeMaximumAt100PaLps": 167.22222222222223,
-    "nativeOperatingPointNotProved": "602m3/h at100Pa is not144L/s at the actual dirty-filter/duct/terminal pressure and does not prove sound. No plot digitised or peak-range selection.",
+    "nativeOperatingPointNotProved": "602m3/h at100Pa is not144L/s at the actual dirty-filter/duct/terminal pressure and does not prove sound. The later manufacturer chart below is a digitised maximum envelope, not a commissioned selection.",
     "sameNorthFrontHostRejected": {
       "body": [
         9677,
@@ -810,6 +815,252 @@
       "cost": "One extra hood motor and64kitchen supply,144main flow, unrecovered cooking heat, actual capture/fan/terminal match and full fault response. Two modes do not make it automatically simpler than W9.",
       "synthetic30K70percentCorePhysicalCookingW": 9364.8,
       "sameAssumptionW9_128DifferenceW": 1382.4000000000003
+    },
+    "native2024PressureEnvelope": {
+      "source": "https://www.puravent.co.uk/pub/media/resources/brand-pdfs/Systemair_SAVE_VTC_500_L_%281%29.pdf",
+      "sha256": "0b343c023292e8f93227a47977253bd41fcc164c8c24e9fe09994760008409de",
+      "sourceIdentity": "Systemair Online Catalogue,488843,pleated standard kit,2024-11-11,p5; manufacturer content recovered from mirror",
+      "sampledMaximumExternalPressurePa": [
+        {
+          "flowLps": 96,
+          "supply": 740,
+          "extract": 780
+        },
+        {
+          "flowLps": 144,
+          "supply": 310,
+          "extract": 370
+        }
+      ],
+      "readingUncertaintyPa": 25,
+      "method": "Linear interpolation of native PDF maximum-envelope boundary, quantised10Pa; supply144 gives310.9Pa before quantisation. Not an OEM selected speed or sound point.",
+      "supply144ConservativeAvailablePa": 285,
+      "incrementalDirtyFilterSensitivity": [
+        {
+          "additionalFilterLossPa": 50,
+          "maximumRemainingExternalNetworkPa": 235
+        },
+        {
+          "additionalFilterLossPa": 100,
+          "maximumRemainingExternalNetworkPa": 185
+        },
+        {
+          "additionalFilterLossPa": 150,
+          "maximumRemainingExternalNetworkPa": 135
+        }
+      ],
+      "pressureBoundary": "Maximum chart envelope with the listed standard kit. Incremental dirty-filter loss must be charged once beyond the chart condition; exact clean-filter/rating condition still needs OEM confirmation.",
+      "noiseBoundary": "No fan speed, octave sound power or144L/s sound-pressure result appears in the operating table.44dBA ErP sound power at reference conditions is not the actual plant/terminal sound or a limit.",
+      "selection": "No pass: actual complete duct/terminal/silencer/hood pressure, dirty-filter condition and occupied-room noise targets remain unbound. Positive maximum margin alone is insufficient.",
+      "massRevision": "2024card lists79kg versus82kg2023card. Retain82kg conservative handling until actual supplied revision/kit is matched; neither is an exact EPD assembly match."
+    },
+    "unequalStreamHeatComparison": {
+      "status": "Unequal-stream sensitivity, not an installed efficiency or frost-safe setting",
+      "nativeOptionalPostheaterW": 1670,
+      "nativeFansNameplateW": 340,
+      "nativeListedPreheaterComparatorsW": [
+        2100,
+        3000
+      ],
+      "nativePostheaterSource": "Manufacturer2024card p10:1581091670W; preheater53703000W or53842100W listed, not yet selected with full connection/duct envelope.",
+      "nativeFrostSource": "Manufacturer2023card p9:preheater required at-5C when unbalanced flow is not desired; supply fan can stop periodically in defrost. That statement does not define a guaranteed safe preheat leaving-air setpoint.",
+      "scope": "16C supply/220WperK/30K and recovery60..80% of smaller-stream maximum are authored sensitivities. No credit for fan heat or assumption that balanced84%ErP ratio applies to144/96.",
+      "cases": [
+        {
+          "centralSupplyLps": 96,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -10,
+          "smallerStreamRecoveryFraction": 0.6,
+          "recoveredHeatW": 2073.6,
+          "beforePostheatSupplyC": 8.0,
+          "preheatW": 0.0,
+          "postheatTo16W": 921.5999999999999,
+          "native1670PostheatReserveW": 748.4000000000001,
+          "maximumSupplyWith1670PostheatC": 22.49652777777778,
+          "spaceEmitterDemandIf16SupplyW": 7060.8,
+          "totalPhysicalHeatW": 7982.4
+        },
+        {
+          "centralSupplyLps": 96,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -5,
+          "smallerStreamRecoveryFraction": 0.6,
+          "recoveredHeatW": 1727.9999999999998,
+          "beforePostheatSupplyC": 10.0,
+          "preheatW": 576.0,
+          "postheatTo16W": 691.1999999999999,
+          "native1670PostheatReserveW": 978.8000000000001,
+          "maximumSupplyWith1670PostheatC": 24.49652777777778,
+          "spaceEmitterDemandIf16SupplyW": 7060.8,
+          "totalPhysicalHeatW": 8328.0
+        },
+        {
+          "centralSupplyLps": 96,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -10,
+          "smallerStreamRecoveryFraction": 0.7,
+          "recoveredHeatW": 2419.2,
+          "beforePostheatSupplyC": 11.0,
+          "preheatW": 0.0,
+          "postheatTo16W": 576.0,
+          "native1670PostheatReserveW": 1094.0,
+          "maximumSupplyWith1670PostheatC": 25.49652777777778,
+          "spaceEmitterDemandIf16SupplyW": 7060.8,
+          "totalPhysicalHeatW": 7636.8
+        },
+        {
+          "centralSupplyLps": 96,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -5,
+          "smallerStreamRecoveryFraction": 0.7,
+          "recoveredHeatW": 2015.9999999999995,
+          "beforePostheatSupplyC": 12.499999999999996,
+          "preheatW": 576.0,
+          "postheatTo16W": 403.2000000000004,
+          "native1670PostheatReserveW": 1266.7999999999997,
+          "maximumSupplyWith1670PostheatC": 26.996527777777775,
+          "spaceEmitterDemandIf16SupplyW": 7060.8,
+          "totalPhysicalHeatW": 8040.0
+        },
+        {
+          "centralSupplyLps": 96,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -10,
+          "smallerStreamRecoveryFraction": 0.8,
+          "recoveredHeatW": 2764.7999999999997,
+          "beforePostheatSupplyC": 14.0,
+          "preheatW": 0.0,
+          "postheatTo16W": 230.39999999999998,
+          "native1670PostheatReserveW": 1439.6,
+          "maximumSupplyWith1670PostheatC": 28.49652777777778,
+          "spaceEmitterDemandIf16SupplyW": 7060.8,
+          "totalPhysicalHeatW": 7291.200000000001
+        },
+        {
+          "centralSupplyLps": 96,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -5,
+          "smallerStreamRecoveryFraction": 0.8,
+          "recoveredHeatW": 2304.0,
+          "beforePostheatSupplyC": 15.000000000000004,
+          "preheatW": 576.0,
+          "postheatTo16W": 115.19999999999958,
+          "native1670PostheatReserveW": 1554.8000000000004,
+          "maximumSupplyWith1670PostheatC": 29.496527777777782,
+          "spaceEmitterDemandIf16SupplyW": 7060.8,
+          "totalPhysicalHeatW": 7752.0
+        },
+        {
+          "centralSupplyLps": 144,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -10,
+          "smallerStreamRecoveryFraction": 0.6,
+          "recoveredHeatW": 2073.6,
+          "beforePostheatSupplyC": 2.0,
+          "preheatW": 0.0,
+          "postheatTo16W": 2419.2,
+          "native1670PostheatReserveW": -749.1999999999998,
+          "maximumSupplyWith1670PostheatC": 11.664351851851853,
+          "spaceEmitterDemandIf16SupplyW": 7291.2,
+          "totalPhysicalHeatW": 9710.4
+        },
+        {
+          "centralSupplyLps": 144,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -5,
+          "smallerStreamRecoveryFraction": 0.6,
+          "recoveredHeatW": 1727.9999999999998,
+          "beforePostheatSupplyC": 5.0,
+          "preheatW": 863.9999999999999,
+          "postheatTo16W": 1900.7999999999997,
+          "native1670PostheatReserveW": -230.79999999999973,
+          "maximumSupplyWith1670PostheatC": 14.664351851851853,
+          "spaceEmitterDemandIf16SupplyW": 7291.2,
+          "totalPhysicalHeatW": 10056.0
+        },
+        {
+          "centralSupplyLps": 144,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -10,
+          "smallerStreamRecoveryFraction": 0.7,
+          "recoveredHeatW": 2419.2,
+          "beforePostheatSupplyC": 4.0,
+          "preheatW": 0.0,
+          "postheatTo16W": 2073.6,
+          "native1670PostheatReserveW": -403.5999999999999,
+          "maximumSupplyWith1670PostheatC": 13.664351851851853,
+          "spaceEmitterDemandIf16SupplyW": 7291.2,
+          "totalPhysicalHeatW": 9364.8
+        },
+        {
+          "centralSupplyLps": 144,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -5,
+          "smallerStreamRecoveryFraction": 0.7,
+          "recoveredHeatW": 2015.9999999999995,
+          "beforePostheatSupplyC": 6.666666666666664,
+          "preheatW": 863.9999999999999,
+          "postheatTo16W": 1612.8000000000002,
+          "native1670PostheatReserveW": 57.19999999999982,
+          "maximumSupplyWith1670PostheatC": 16.33101851851852,
+          "spaceEmitterDemandIf16SupplyW": 7291.2,
+          "totalPhysicalHeatW": 9768.0
+        },
+        {
+          "centralSupplyLps": 144,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -10,
+          "smallerStreamRecoveryFraction": 0.8,
+          "recoveredHeatW": 2764.7999999999997,
+          "beforePostheatSupplyC": 6.0,
+          "preheatW": 0.0,
+          "postheatTo16W": 1727.9999999999998,
+          "native1670PostheatReserveW": -57.99999999999977,
+          "maximumSupplyWith1670PostheatC": 15.664351851851853,
+          "spaceEmitterDemandIf16SupplyW": 7291.2,
+          "totalPhysicalHeatW": 9019.2
+        },
+        {
+          "centralSupplyLps": 144,
+          "coreExtractLps": 96,
+          "outsideC": -10,
+          "insideC": 20,
+          "preheaterLeavingC": -5,
+          "smallerStreamRecoveryFraction": 0.8,
+          "recoveredHeatW": 2304.0,
+          "beforePostheatSupplyC": 8.333333333333334,
+          "preheatW": 863.9999999999999,
+          "postheatTo16W": 1324.7999999999997,
+          "native1670PostheatReserveW": 345.2000000000003,
+          "maximumSupplyWith1670PostheatC": 17.997685185185187,
+          "spaceEmitterDemandIf16SupplyW": 7291.2,
+          "totalPhysicalHeatW": 9480.0
+        }
+      ],
+      "wholeSystemPrice": "Separate capture, extra hood fan,64kitchen supply, nativeCAV/branch control, preheater/relay/sensors and optional postheater have own power/space/renewal/material duties. No smaller-body simplicity claim.",
+      "admission": "Complete144/96 OEM selection must bind recovered heat, frost and retained flow, selected heaters/connection, ducts/noise and failure response before a layout is adopted."
     }
   },
   "historical8kWSensitivityRequiredEffectiveRecoveryAt128And30K": 0.6961805555555556,

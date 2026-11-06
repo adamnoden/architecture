@@ -118,11 +118,14 @@ host={'unitAndBasePlan':unit,'unitNativeWeightKg':156,
  'rearToUtilityNorthFinishedFace':2672-2647,
  'eastOrdinaryPassage':11570.5-(9677+1006),
  'frontToCylinderBody':3900-(3269+600),
+ 'openProtectedLeafIntrudesTrialFrontFieldMM':[10159-9677,44],
+ 'doorStateHold':'Fully open native protected leaf occupies482x44mm of trial front field. Closed-door component service and reopened-door body withdrawal must be proved as separate supported states; full front access with door open is not earned.',
  'frontFitsIntermediateArchX':9677>=9650+27 and 9677+1006<=10925-27,
  '850CartWith25EdgesPassesEast':11570.5-(9677+1006)>=850+50,
  'scope':'Static challenger only. Native panel/component withdrawal, operator, supports, condensation, lifting and continuous renewal must be bound before fit selection.'}
 assert host['rearToUtilityNorthFinishedFace']==25
 assert host['frontToCylinderBody']==31
+assert host['openProtectedLeafIntrudesTrialFrontFieldMM']==[482,44]
 assert host['frontFitsIntermediateArchX']
 assert not host['850CartWith25EdgesPassesEast']
 
@@ -317,7 +320,7 @@ systemair={'status':'Unselected actual alternative; current144 L/s pressure/nois
  'primaryDocumentProvenance':'Printed Systemair Online Catalogue generated primary product card, retrieved from distributor mirror because legacy shop asset returned400; no distributor performance claim substituted.',
  'nativeBodyMM':[880,615,880],'nativeHandlingKg':82,'nativePortsMM':[200,200,200,200],
  'nativeFrontServiceMM':750,'nativeMaximumAt100PaLps':602/3.6,
- 'nativeOperatingPointNotProved':'602m3/h at100Pa is not144L/s at the actual dirty-filter/duct/terminal pressure and does not prove sound. No plot digitised or peak-range selection.',
+ 'nativeOperatingPointNotProved':'602m3/h at100Pa is not144L/s at the actual dirty-filter/duct/terminal pressure and does not prove sound. The later manufacturer chart below is a digitised maximum envelope, not a commissioned selection.',
  'sameNorthFrontHostRejected':{'body':[9677,2672,880,615],'frontField':[9677,3287,880,750],'cylinderStation':[9510,3900,700,700],'overlapDepthMM':4037-3900},
  'rotatedEastFrontTrial':{'body':[9677,2672,615,880],'frontField':[10292,2672,750,880],
  'actualProtectedDoorLeaf':[9397,3534,762,44],'northLeafOverlapMM':3552-3534,
@@ -347,6 +350,68 @@ for x in systemair['separateCaptureTopology'].values():
   assert x['centralSupplyLps']==x['centralExtractLps']+x['separateCaptureLps']
   assert x['kitchenSupplyLps']==x['kitchenBackgroundExtractLps']+x['separateCaptureLps']
 
+# Manufacturer-generated 11 November2024 card p5, not distributor opinion.
+# Read its plotted maximum envelope, never interpolate from602m3/h headline.
+# Quantise graph-derived data to10Pa and carry25Pa reading uncertainty; that
+# uncertainty is not extra dirty-filter reserve. Native sound table is blank.
+systemair['native2024PressureEnvelope']={
+ 'source':'https://www.puravent.co.uk/pub/media/resources/brand-pdfs/Systemair_SAVE_VTC_500_L_%281%29.pdf',
+ 'sha256':'0b343c023292e8f93227a47977253bd41fcc164c8c24e9fe09994760008409de',
+ 'sourceIdentity':'Systemair Online Catalogue,488843,pleated standard kit,2024-11-11,p5; manufacturer content recovered from mirror',
+ 'sampledMaximumExternalPressurePa':[
+  {'flowLps':96,'supply':740,'extract':780},
+  {'flowLps':144,'supply':310,'extract':370}],
+ 'readingUncertaintyPa':25,
+ 'method':'Linear interpolation of native PDF maximum-envelope boundary, quantised10Pa; supply144 gives310.9Pa before quantisation. Not an OEM selected speed or sound point.',
+ 'supply144ConservativeAvailablePa':310-25,
+ 'incrementalDirtyFilterSensitivity':[
+  {'additionalFilterLossPa':dp,'maximumRemainingExternalNetworkPa':310-25-dp}
+  for dp in [50,100,150]],
+ 'pressureBoundary':'Maximum chart envelope with the listed standard kit. Incremental dirty-filter loss must be charged once beyond the chart condition; exact clean-filter/rating condition still needs OEM confirmation.',
+ 'noiseBoundary':'No fan speed, octave sound power or144L/s sound-pressure result appears in the operating table.44dBA ErP sound power at reference conditions is not the actual plant/terminal sound or a limit.',
+ 'selection':'No pass: actual complete duct/terminal/silencer/hood pressure, dirty-filter condition and occupied-room noise targets remain unbound. Positive maximum margin alone is insufficient.',
+ 'massRevision':'2024card lists79kg versus82kg2023card. Retain82kg conservative handling until actual supplied revision/kit is matched; neither is an exact EPD assembly match.'}
+
+# Separate capture produces unequal heat-capacity rates through the core.
+# eta here is a fraction of min(streams)*temperature difference, not borrowed
+# balanced supply-temperature effectiveness. It is a comparison, not an OEM
+# VTC effectiveness prediction under unbalanced/defrost operation.
+def separate_heat(qs, qe, eta, preheated_outside):
+ outside, inside, target, loss = -10, 20, 16, 220
+ recovered=1.2*min(qs,qe)*eta*(inside-preheated_outside)
+ raw=preheated_outside+recovered/(1.2*qs)
+ pre=1.2*qs*(preheated_outside-outside)
+ post=max(0,1.2*qs*(target-raw))
+ room=loss*(inside-outside)+1.2*qs*(inside-target)
+ total=loss*(inside-outside)+1.2*qs*(inside-outside)-recovered
+ assert abs(pre+post+room-total)<1e-8 # all cases here need reheat to16
+ return {'centralSupplyLps':qs,'coreExtractLps':qe,'outsideC':outside,
+  'insideC':inside,'preheaterLeavingC':preheated_outside,
+  'smallerStreamRecoveryFraction':eta,'recoveredHeatW':recovered,
+  'beforePostheatSupplyC':raw,'preheatW':pre,'postheatTo16W':post,
+  'native1670PostheatReserveW':1670-post,
+  'maximumSupplyWith1670PostheatC':raw+1670/(1.2*qs),
+  'spaceEmitterDemandIf16SupplyW':room,'totalPhysicalHeatW':total}
+vtc_heat={'status':'Unequal-stream sensitivity, not an installed efficiency or frost-safe setting',
+ 'nativeOptionalPostheaterW':1670,'nativeFansNameplateW':340,
+ 'nativeListedPreheaterComparatorsW':[2100,3000],
+ 'nativePostheaterSource':'Manufacturer2024card p10:1581091670W; preheater53703000W or53842100W listed, not yet selected with full connection/duct envelope.',
+ 'nativeFrostSource':'Manufacturer2023card p9:preheater required at-5C when unbalanced flow is not desired; supply fan can stop periodically in defrost. That statement does not define a guaranteed safe preheat leaving-air setpoint.',
+ 'scope':'16C supply/220WperK/30K and recovery60..80% of smaller-stream maximum are authored sensitivities. No credit for fan heat or assumption that balanced84%ErP ratio applies to144/96.',
+ 'cases':[separate_heat(qs,96,eta,pre) for qs in [96,144] for eta in [.6,.7,.8] for pre in [-10,-5]],
+ 'wholeSystemPrice':'Separate capture, extra hood fan,64kitchen supply, nativeCAV/branch control, preheater/relay/sensors and optional postheater have own power/space/renewal/material duties. No smaller-body simplicity claim.',
+ 'admission':'Complete144/96 OEM selection must bind recovered heat, frost and retained flow, selected heaters/connection, ducts/noise and failure response before a layout is adopted.'}
+cold=next(x for x in vtc_heat['cases'] if x['centralSupplyLps']==144 and x['smallerStreamRecoveryFraction']==.7 and x['preheaterLeavingC']==-10)
+warm=next(x for x in vtc_heat['cases'] if x['centralSupplyLps']==144 and x['smallerStreamRecoveryFraction']==.7 and x['preheaterLeavingC']==-5)
+assert abs(cold['beforePostheatSupplyC']-4)<1e-8
+assert abs(cold['postheatTo16W']-2073.6)<1e-8
+assert abs(cold['totalPhysicalHeatW']-9364.8)<1e-8
+assert cold['native1670PostheatReserveW']<0
+assert abs(warm['preheatW']-864)<1e-8
+assert abs(warm['postheatTo16W']-1612.8)<1e-8
+assert abs(warm['totalPhysicalHeatW']-cold['totalPhysicalHeatW']-403.2)<1e-8
+systemair['unequalStreamHeatComparison']=vtc_heat
+
 result={'status':'Unselected whole-system challenger; no canonical numeric owner migration or material exception',
  'basis':{'main':HEAD,'hadBlob':'f7324121f59cc5f1707ea47640dd2b20c26b9bbb','servicesBlob':'69c7b1b1e733b9ade2d8ae21c1552accf52a6261'},
  'modes':modes,'dedicatedKitchenSupplyModes':kitchen_supply,'twoPositionKitchenControl':control,'nativePressureControlComparison':pressure_control,'failureResponseComparison':failure,'protectedStairRule':fire_rule,'hoodBranchPressureScreen':hood_branch,'spineCrossings':air_crossings,
@@ -361,7 +426,59 @@ result={'status':'Unselected whole-system challenger; no canonical numeric owner
  'OEM cooking-mode and simultaneous humidity-control mapping, frost/dirty/wind/power/fan failure state proof',
  'Actual heating source/HX/emitter/DHW/defrost margin and constituent decision; no assumed8kW or polymer admission']}
 out=BASE.with_suffix('.json');data=json.dumps(result,indent=2,ensure_ascii=False)+'\n'
+# Deterministic inspection sheet: exact source geometry plus labelled thermal
+# comparisons. This is an inspection output, not a selected plant drawing.
+from html import escape
+svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1040" viewBox="0 0 1200 1040">',
+ '<rect width="1200" height="1040" fill="#fbfaf5"/>',
+ '<style>text{font-family:Arial,sans-serif;fill:#202a31;font-size:16px}.h{font-size:24px;font-weight:700}.s{font-size:13px}.b{font-weight:700}</style>']
+def label(x,y,value,cls=''):
+ svg.append(f'<text x="{x}" y="{y}" class="{cls}">{escape(str(value))}</text>')
+label(38,42,'Two whole cooker / ventilation / heat alternatives','h')
+label(38,70,'UNSELECTED · current HAD / Services unchanged · source-bound comparison, not construction release','s')
+for x,title,normal,cooking in [
+ (38,'W9 + direct Salsa capture','96 supply / 96 extract','128 supply / 128 extract'),
+ (628,'VTC 500 + separate capture','96 supply / 96 core extract','144 supply / 96 core + 48 hood extract')]:
+ label(x,120,title,'h');label(x,155,'Normal: '+normal);label(x,184,'Cooking: '+cooking)
+ label(x,217,'Other supplies fixed: 80 L/s; five wet extracts: 80 L/s','s')
+ label(x,244,'Kitchen supply / extract: '+('16/16 → 48/48 L/s' if x==38 else '16/16 → 64/(16+48) L/s'))
+label(38,294,'Cooking heat sensitivity: −10°C outside / 20°C inside / 16°C supply','b')
+label(38,319,'220 W/K fabric + infiltration; recovery = 70% of smaller-stream maximum. No fan-heat credit.','s')
+for y,name,pre,post,space,total in [
+ (360,'W9 128/128',0,768,7214.4,7982.4),
+ (397,'VTC 144/96',cold['preheatW'],cold['postheatTo16W'],cold['spaceEmitterDemandIf16SupplyW'],cold['totalPhysicalHeatW']),
+ (434,'VTC with −5°C preheat trial',warm['preheatW'],warm['postheatTo16W'],warm['spaceEmitterDemandIf16SupplyW'],warm['totalPhysicalHeatW'])]:
+ label(38,y,name);label(350,y,f'pre {pre:.0f} W');label(515,y,f'post {post:.1f} W');label(730,y,f'rooms {space:.1f} W');label(955,y,f'total {total:.1f} W','b')
+label(38,469,'VTC native 1670 W postheater fails unpreheated 16°C trial. −5°C preheat trial is not frost qualification.','s')
+label(38,493,'VTC 144 L/s maximum supply envelope ≈310 Pa ±25; actual dirty-filter network and sound remain unknown.','s')
+def plan(px,title,body,field,field_note):
+ label(px,548,title,'h')
+ scale=.16;ox=px+15;oy=580
+ def rect(box,fill,stroke,dash=''):
+  x,y,w,d=box
+  svg.append(f'<rect x="{ox+(x-9397)*scale:.2f}" y="{oy+(4700-y-d)*scale:.2f}" width="{w*scale:.2f}" height="{d*scale:.2f}" fill="{fill}" stroke="{stroke}" stroke-width="1.5"'+(f' stroke-dasharray="{dash}"' if dash else '')+'/>')
+ rect([9397,2647,2173.5,2053],'#ffffff','#68747b')
+ rect([9510,3900,700,700],'#d8dde0','#68747b')
+ rect([9397,3534,762,44],'#202a31','#202a31')
+ rect(field,'#eef4ec','#66865a','7 4')
+ rect(body,'#dbe9ec','#326b7c')
+ label(ox+25,oy+38,'Retained cylinder','s')
+ label(ox+12,oy+174,'Open protected leaf','s')
+ label(ox+360,oy+48,'N ↑','b')
+ label(ox+360,oy+83,'Same scale','s')
+ label(ox+360,oy+107,'1 m = 160 px','s')
+ label(ox+360,oy+158,'Body: blue','s')
+ label(ox+360,oy+182,'Front: dashed','s')
+ label(px,946,field_note,'s')
+plan(38,'W9 north-front trial',host['unitAndBasePlan'],host['frontTrialField'],'600 mm front trial: 31 mm to cylinder; open leaf intrudes 482 × 44 mm.')
+plan(628,'VTC east-front offset trial',systemair['minimalEastShiftTrial']['body'],systemair['minimalEastShiftTrial']['frontField'],'750 mm native front field; 25 mm leaf gap; 21.5 mm east-wall reserve.')
+label(38,985,'No cart, supported loading, hinged-door swing, complete ports, frost, sound or constituent admission is implied.','s')
+label(38,1011,'Source: balanced-service-architecture.json; pinned HAD/Services geometry; Systemair native cards 2023/2024.','s')
+svg.append('</svg>');svg_data='\n'.join(svg)+'\n'
 if '--check' in sys.argv:
     assert out.read_text()==data,'Stale balanced-service-architecture.json'
-else:out.write_text(data)
+    assert BASE.with_suffix('.svg').read_text()==svg_data,'Stale balanced-service-architecture.svg'
+else:
+    out.write_text(data)
+    BASE.with_suffix('.svg').write_text(svg_data)
 print('PASS: pinned actual geometry,96/128 conservation, pressure/heat sensitivities and explicit host negative controls; architecture not adopted')
