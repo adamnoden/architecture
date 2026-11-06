@@ -3,7 +3,7 @@
 from pathlib import Path
 import json,math,hashlib,sys
 from html import escape
-R=Path(__file__).resolve().parents[3];P=R/'project/had/studies/water-replan.json';raw=P.read_bytes();assert hashlib.sha256(raw).hexdigest()=='1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb'
+R=Path(__file__).resolve().parents[3];P=R/'project/had/studies/water-replan.json';raw=P.read_bytes();assert hashlib.sha256(raw).hexdigest()=='7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8'
 whole=json.loads(raw);h=whole['model'];catchment=whole['hydraulicProbe']['catchment'];prior=json.loads(Path(__file__).with_name('current-house-roof.json').read_text());fy=200/1.1;E=200000
 H=200;B=140;t=12;area=B*H-(B-2*t)*(H-2*t);I=(B*H**3-(B-2*t)*(H-2*t)**3)/12;MR=I/(H/2)*fy/1e6
 Rdown=200;Ruplift=65;chord=100;span=1.3;G=area/1e6*78.5

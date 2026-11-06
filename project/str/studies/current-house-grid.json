@@ -1,9 +1,9 @@
 {
   "status": "Located trial; gravity action/soil and constructive qualification separate",
   "sources": {
-    "project/had/studies/water-replan.json": "1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb",
+    "project/had/studies/water-replan.json": "7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8",
     "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
-    "project/str/studies/current-house-lateral.json": "fead94f496134401449dcaf6a5b1e4337af23e59a54c70bc7230b5e23fe60471"
+    "project/str/studies/current-house-lateral.json": "b2d8ee91bd24882c08171e92a622ce1a48a82c44c985c7bc09da13937b4b1047"
   },
   "girders": {
     "outer-W": {
