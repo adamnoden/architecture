@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-06T23:12:39.012Z",
-  "expiresAt": "2026-11-07T00:42:39.012Z",
+  "heartbeatAt": "2026-11-06T23:58:45.685Z",
+  "expiresAt": "2026-11-07T01:28:45.685Z",
   "branch": "work/zerg-20261106-rwt06-native-release",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -36,7 +36,7 @@
   },
   "pr": 1359,
   "checkpoint": {
-    "evidence": "Draft1359 exact0c123 preserves merged1344;159RWTtests/rendered; local322ed preserves intermediate native-access rewind; no adoption",
-    "next": "One complete bent-spool90roll with sole vertical inlet flange/free native outlet; full supported states/crew/export and100mmwell-rim consequences; reconcile currentmain500934 before finalCI"
+    "evidence": "Draft1359 a41e6655 exact analytic full native-spool0..90 proof;75.942adversecontrol; actualbridge/13500poststategating; wholewet351.38kg/CG/19250temporaryfield;163RWTtests/renderedSVG; noadoption",
+    "next": "Finish ONE verticaljoint, coupledcapturedsupport/locks/drive, actualR300crew/platform/rim and full outgoing/incoming lifting; preserve held joins and two-ended comparison; reconcile newer main only at coherentfinalcheckpoint"
   }
 }
