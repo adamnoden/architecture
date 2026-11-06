@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {control,renderControl,renderMouth} from './closed-east-control.mjs';
-test('one ordinary closed control fits actual450beam and950clear faces without borrowing250bridge',()=>{
+test('one ordinary fixed tube fits450beam; moving native flange separately rejects original draw',()=>{
  const o=control();assert.equal(o.retained.fieldBeamUnderside,-630);
  assert(o.carrier.fieldMinimumCrownGap>60);
  assert(o.carrier.movingSideReserves.every(v=>v>=o.retained.minimumMovingClearanceEach));
@@ -60,4 +60,18 @@ test('finite inlet rewind pays walls, flanges, ramp shadows and preserves advers
  assert(low(candidate).quietCapacityLps>o.assignedLps);
  assert(high(candidate).quietCapacityLps<o.assignedLps);
  assert(o.geometry.stairs.firstTreadVerticalGap>100);
+});
+
+test('native moving flange failure cannot inherit tube clearance or tune nominal millimetres',()=>{
+ const o=control(),f=o.carrier.movingFlangeClearance;
+ assert.equal(f.installedTopGap,2.5);assert.equal(f.firstEntryTranslation,75);
+ assert(f.sameLevelFirstEntryTopGap<4&&f.sameLevelFirstEntryTopGap<f.minimumAuthoredMovingClearance);
+ assert(f.rotatedDisc.installedTopGap<3&&f.rotatedDisc.firstEntryTopGap<4);
+ assert(f.rotatedDisc.firstLeadingPointEntryTranslation<75);
+ assert.equal(f.accepted,false);assert(o.renewal.ordered.some(x=>x.startsWith('HOLD:')));
+ assert(Math.abs(o.intakeTurn.factoryPortBinding.topPort[2]+467.60920197580214)<1e-8);
+ assert(Math.abs(o.intakeTurn.horizontalAxisAt[2]-o.intakeTurn.factoryPortBinding.pipeAxisAtHorizontalPort)<1e-8);
+ assert(o.collectingChange.outletShiftEW>6&&o.collectingChange.outletShiftEW<7);
+ assert(o.intakeTurn.factoryPortBinding.aboveBridgeTopPortZ>0);
+ assert.equal(o.renewal.aboveBridgeWholeControl.accepted,false);
 });

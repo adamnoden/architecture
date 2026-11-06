@@ -1,12 +1,12 @@
 {
   "identity": "RWT-UNADOPTED-CURRENT-E-CLOSED-CONTROL-2026-11-06",
   "selectedSource": "90fd241d4f1f69802a349112cf32f2bd241ac6f8",
-  "sourceAuthority": "UNMERGED receiver-refined HAD proposal reconciled with canonicalmain ede8302b /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry",
-  "canonicalMain": "ede8302b8eb21c571166214227f643928b02edfc",
+  "sourceAuthority": "UNMERGED receiver-refined HAD proposal reconciled with canonical main4fef04ad /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry",
+  "canonicalMain": "4fef04ad7a82a149903aa077af04f95b3a392294",
   "canonicalMainHadBlob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
   "startingMain": "80c0f94148ad11e3b2eaa83c52e28d06238993ed",
   "selectedGeometryChanged": false,
-  "recommendation": "Develop this ONE closed159copper control before further65throat/tenpanel/open-transfer machinery. It is not falsified by the current900passage. Keep its real2200longer exterior renewal cost and unresolved actual end connections visible.",
+  "recommendation": "Retain ONE closed159copper control for development, but REJECT its original same-level first flange draw. Test one lowered local service bay and supported initial drop; keep real2200longer exterior renewal cost and unresolved actual end connections visible.",
   "tube": {
     "product": "Lawton TX1593/TX1596 TableX hard copper",
     "OD": 159,
@@ -73,7 +73,7 @@
         -171.96
       ],
       [
-        7175,
+        7181.7128027681665,
         -200
       ],
       [
@@ -82,10 +82,12 @@
       ]
     ],
     "outletAxis": [
-      7175,
+      7181.7128027681665,
       7000
     ],
     "verticalOutletID": 155,
+    "outletShiftEW": 6.712802768166512,
+    "fittingAlignment": "Collector throat/closed closure moves6.713east to meet the native N18 inlet axis rotated with50/4250carrier fall; regenerate actual gutter fall/closure/cover supports before adoption. No vertical-to-tilted socket mismatch is concealed.",
     "coverTop": 0,
     "changedGutterCassetteBottom": -215,
     "oldMinimumBottom": -200,
@@ -94,16 +96,55 @@
   },
   "intakeTurn": {
     "verticalAxis": [
-      7175,
+      7181.7128027681665,
       7000
     ],
     "fromZ": -200,
-    "toZ": -475,
+    "toZ": -467.60920197580214,
     "horizontalAxisAt": [
-      7475,
+      7477.9790333183155,
       7000,
-      -775
+      -774.1526945096273
     ],
+    "factoryPortBinding": {
+      "carrierFall": 0.011764705882352941,
+      "rotationAboutYDegrees": 0.6740368979845054,
+      "theoreticalPortAxisIntersection": [
+        7175,
+        7000,
+        -770.5882352941177
+      ],
+      "verticalLeg": 303,
+      "horizontalLeg": 303,
+      "horizontalPort": [
+        7477.9790333183155,
+        7000,
+        -774.1526945096273
+      ],
+      "topPort": [
+        7178.5644592155095,
+        7000,
+        -467.60920197580214
+      ],
+      "collectorPort": [
+        7181.7128027681665,
+        7000,
+        -200
+      ],
+      "pipeAxisAtHorizontalPort": -774.1526945096273,
+      "nativePortToFlangeFaceLength": 72.02595065917788,
+      "flangeFaceNormal": [
+        0.9999308030307444,
+        0,
+        -0.011763891800361699
+      ],
+      "role": "Rigid90degree native port-vector binding.303is catalogue l, not a factory bend radius; actual socket engagement/centreline/body drawing remains a named hold.",
+      "aboveBridgeTrialAxisZ": -149.95,
+      "aboveBridgeTopPortZ": 153.05,
+      "quietStage": -35,
+      "aboveBridgeAccepted": false,
+      "reason": "Unrotated raised comparator already puts303topport153.05above walk0 and quiet−35; full warm floor/movingflange separately rejects retained raised route."
+    },
     "reservedBox": [
       7090,
       6905,
@@ -201,7 +242,25 @@
         "simplySupportedDeflectionMm": 7.839260415354812,
         "boundary": "Isolated simply supported copper tube under full uniform water/metal load; no skid point load, fitting, crush, fixation or support-movement acceptance."
       }
-    ]
+    ],
+    "movingFlangeClearance": {
+      "catalogOD": 285,
+      "axialScreen": 25,
+      "firstBeamStart": 7650,
+      "boxScreen": "The installed2.5/first-entry3.382/translation75 are conservative AXIS-ALIGNED285×25 bounding-box comparisons, not exact tilted-disc kinematics.",
+      "rotatedDisc": {
+        "angleDegrees": 0.6740368979845054,
+        "installedTopGap": 2.5098605681189383,
+        "firstLeadingPointEntryTranslation": 73.32537534267985,
+        "firstEntryTopGap": 3.6666093377476727
+      },
+      "installedTopGap": 2.5,
+      "firstEntryTranslation": 75,
+      "sameLevelFirstEntryTopGap": 3.382352941176464,
+      "minimumAuthoredMovingClearance": 20,
+      "accepted": false,
+      "failure": "REJECTED same-level initial draw. The tube crown gap cannot be transferred to the285flange. Only2.51installed/3.67at exact rotated-disc first entry remains before tolerances, rail movement or tool/retention. No earned renewal method follows."
+    }
   },
   "terminal": {
     "closedRoute": [
@@ -298,11 +357,19 @@
       "Capture/remove the SAME five north catch covers and five plain covers before using existing stairs/platform. No new ten deep chute panels or55kg telescopic-staff apparatus is added.",
       "From isolated well/platform, expose and support inlet/drop connection; drain pipe, capture and separate the actual end connectors. A solved top first-release/retention path is still required; a pressure seal is not a support.",
       "Open all outboard covers. Capture/remove changed terminal cartridge and land on its1100×800pad BEFORE carrier draw.",
-      "Draw one captured4700pipe+850sled EAST to12250..16950 at the same falling track level; retain end connection until parked capture established. No person stands below or beside the moving carrier in the portal.",
+      "HOLD: original same-level initial draw is REJECTED by moving285flange clearance. Earn the separate lowered-bay/supported-drop comparison before drawing one captured4700pipe+850sled EAST to12250..16950. No person stands below or beside moving carrier in the portal.",
       "Lift1700 and transferN1800 into4900×1200 lower cradle territory; support at12900/16300, restrain, then detach rigging. Outgoing piece leaves before incoming occupies samepad.",
       "Reverse pipe motion; restore/test end connections and first-leak witness. Refit/test terminal while covers OPEN, then close covers. Restore catch covers/hood/entry and prove full E path before removing weather control."
     ],
-    "completeHandlerSweepProved": false
+    "completeHandlerSweepProved": false,
+    "aboveBridgeWholeControl": {
+      "accepted": false,
+      "sourceCommit": "5f56d58f5c2d4b7d65b712be10c39d274884b154",
+      "sourcePath": "project/str/studies/current-house-occupied-interfaces.json",
+      "sourceBlob": "c4b2261a7c62481b64617cca57b6b2baabec330e",
+      "requiredRecessForMovingFlangeBelowWarmFloor": 352.89,
+      "finding": "REJECTED retained complete factory/fixed-floor control: all3spans checked by STR; tube-only recess omits285movingflange, native303port and real180warm buildup/RC200 floor.450bridge remains. No top-cage/floor replan accepted."
+    }
   },
   "loads": {
     "nominalTubeSheetKg": 41.54180744598364,

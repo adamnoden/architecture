@@ -1,0 +1,183 @@
+{
+  "network": {
+    "cornerMethod": "For each of four corner squares, secondary rows at <=550 plan spacing terminate on the actual diagonal hip and adjacent ordinary primary. Both ends have bearing cleats. Mirror/rotate this plan about the house centre. No free cantilever jack or assumed moment-fixed purlin is used.",
+    "diagonalHipFrames": 4,
+    "localEnvelopeAccounting": "Each ordinary frame receives the WHOLE central strip plus BOTH adjacent corner squares as an adverse bound. These overlapping local envelopes are not independent building mass. Global roof G/Q/uplift remain exact original144.15m2 once.",
+    "longestSecondaryPlanSpan": 4577.5,
+    "massBudget": {
+      "G3PlanLimit": 432.45000000000005,
+      "margin": 5.504297031864951,
+      "nonsteelG": 238.5778905276648,
+      "nonsteelMaximumNormalAreaBudget": 1.5,
+      "primaryLengthM": 68.74306861192886,
+      "scope": "Actual member list and constituent mass must remain inside these maxima; this is a mass budget, not a supplier takeoff.",
+      "secondaryLengthUpperBoundM": 350,
+      "steelIncluding30kNConnectionAllowance": 188.3678124404703,
+      "tieLengthM": 63.504372260139576,
+      "totalG": 426.9457029681351
+    },
+    "ordinaryCentralSpan": 3245,
+    "ordinaryFrames": 8,
+    "primary": {
+      "A": 9024,
+      "Ak": 32844,
+      "B": 150,
+      "H": 250,
+      "Imajor": 74109152.0,
+      "Iminor": 32638752.0,
+      "MRmajor": 107.79513018181818,
+      "MRminor": 79.12424727272726,
+      "TR": 82.7454206891523,
+      "Wmajor": 592873.216,
+      "Wminor": 435183.36,
+      "kgPerM": 70.83840000000001,
+      "t": 12
+    },
+    "primaryActions": [
+      {
+        "M": 25.283459008368204,
+        "N": 187.6679440501075,
+        "NbDeclared": 492.2181818181818,
+        "Ncr": 2476.982471243861,
+        "T": 27.24435,
+        "combinedLinearScreen": 0.945075943637877,
+        "endDownBound": 181.62900000000002,
+        "endUpliftBound": 64.8675,
+        "id": "ordinary",
+        "localAreaBound": 57.660000000000004
+      },
+      {
+        "M": 20.26850131867306,
+        "N": 131.5586617290891,
+        "NbDeclared": 492.2181818181818,
+        "Ncr": 2476.982471243861,
+        "T": 10.216631250000002,
+        "combinedLinearScreen": 0.578775768820929,
+        "endDownBound": 68.11087500000002,
+        "endUpliftBound": 24.325312500000003,
+        "id": "hip",
+        "localAreaBound": 21.622500000000002
+      }
+    ],
+    "secondary": {
+      "A": 3424,
+      "Ak": 10224,
+      "B": 80,
+      "H": 150,
+      "Imajor": 9667445.333333334,
+      "Iminor": 3472725.3333333335,
+      "MRmajor": 23.436231111111113,
+      "MRminor": 15.78511515151515,
+      "TR": 17.171866624566498,
+      "Wmajor": 128899.27111111111,
+      "Wminor": 86818.13333333333,
+      "kgPerM": 26.8784,
+      "t": 8
+    },
+    "secondaryActions": {
+      "L250": 18.31,
+      "Mmajor": 8.22518489681663,
+      "Mminor": 3.8354667071264266,
+      "biaxialScreen": 0.5939401867293829,
+      "serviceDeflection": 7.317886587772357
+    },
+    "secondaryEndCleat": {
+      "bearingCantilever": 40,
+      "boltShearScreen": 31.4,
+      "bolts": "2M16 per end, declared100MPa shear stress budget",
+      "seat": [
+        100,
+        100,
+        12
+      ],
+      "seatBendingStress": 132.17531250000002,
+      "verticalEndReaction": 7.930518750000001
+    },
+    "temporaryStability": "Erect tied complete frames with positive lateral shores before adding secondary rows. Completed roof has continuous perimeter/court rings and diagonal roof-plane straps; no compression-only arch tie is used for wind reversal.",
+    "ties": {
+      "compressionEulerHalf": 134.2300888798331,
+      "fullLength": 63.504372260139576,
+      "maxCompression": 49.559375476329855,
+      "maxTension": 138.76625133372355,
+      "scope": "Positive two-way box ties replace a tension-only flat tie for roof wind reversal; actual endplates/bolts/anchors must meet these forces.",
+      "section": {
+        "A": 3744,
+        "Ak": 13064,
+        "B": 100,
+        "H": 150,
+        "Imajor": 11282272.0,
+        "Iminor": 5881472.0,
+        "MRmajor": 27.35096242424242,
+        "MRminor": 21.38717090909091,
+        "TR": 21.94182957583497,
+        "Wmajor": 150430.29333333333,
+        "Wminor": 117629.44,
+        "kgPerM": 29.3904,
+        "t": 8
+      }
+    }
+  },
+  "openInternalDuties": [
+    "Actual local primary-end collector/pier coordinates and lateral bracing anchorage; full whole-house load allocation. These are finite design duties before selection, not delegated physical certification."
+  ],
+  "physicalAdmission": false,
+  "roofCollector": {
+    "M": 65.3992625,
+    "MR": 81.84773033317981,
+    "V": 101.2285,
+    "VRs": 187.24984943274677,
+    "axisSpan": 1300,
+    "bearingLengthEach": 300,
+    "destination": "Each end bears on a core-width RC pier/solid wall strip. Selected pier coordinates, axial/lateral load and base/DPC transfer must be joined before whole-house selection.",
+    "holdDown": "4M20 threaded rods per seat; tensile-area245 each, declared200/1.1 MPa gives178.18kN. Continue into RC collector/pier vertical steel. Actual anchor heads/development and corrosion/fire detail require matched evidence.",
+    "pointBudget": 200,
+    "ringExtradosReserve": 25,
+    "section": [
+      140,
+      400
+    ],
+    "steel": "2H20 TOP +2H20 BOTTOM; closedH8/75;25cover",
+    "windowClear": 1000,
+    "xOverD": 0.40189895057636776,
+    "z": [
+      6540,
+      6940
+    ]
+  },
+  "sourceRewind": {
+    "collectorBottomAboveUpperRing": 25,
+    "consequences": "Approximately0.45m added exterior eave/ridge height is a visible proportion and site/fire-height cost. Court, hips, overhang and pitch retain plan geometry; gutter/outfall positions retain plan only and need updated vertical falls. Roof constituent loadG3 must include actual new steel; quantity ledger is not yet complete.",
+    "eavesNew": 7546.9882739116065,
+    "eavesOld": 7100,
+    "newPrimaryNormal": 250,
+    "newPrimarySupportBottom": 6962,
+    "newRing": [
+      140,
+      400
+    ],
+    "oldPrimaryNormal": 80,
+    "oldPrimarySupportBottom": 6702.5859723120175,
+    "oldRing": [
+      260,
+      140
+    ],
+    "planStructuralLoadAreaUnchanged": 144.15,
+    "primaryBottomReserve": 342,
+    "protectedCeilingTop": 6620,
+    "ridgeNew": 8537.892047490977,
+    "ridgeOld": 8090.903773579372,
+    "weatherHeightIncrease": 446.98827391160614
+  },
+  "sources": [
+    {
+      "path": "project/had/studies/water-replan.json",
+      "sha256": "547a0a5515878fd522ceb108c57c37b8aad29f5d2efe33848d93cedd89d65ad4"
+    },
+    {
+      "path": "project/str/studies/open-loggia-support.json",
+      "sha256": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+    }
+  ],
+  "status": "Calculated conventional end-supported roof candidate; explicit structural/architectural rewind NOT selected",
+  "units": "mm, kN, kNm, MPa unless stated"
+}

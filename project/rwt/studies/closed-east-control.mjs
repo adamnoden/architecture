@@ -65,6 +65,10 @@ export function control(){
   maximumOutsideScreen:159.9,minimumInscribedBoreScreen:153.5,
   interpretation:'Conservative simultaneous tolerance envelope, not a delivered inspection certificate. Product is not declared an assembled rainwater system.'};
  const axis=x=>-775-(x-7550)*50/4250,slope=50/4250,D=tube.minimumInscribedBoreScreen/1000;
+ const fittingAngle=Math.atan(slope),fittingCornerZ=axis(7175);
+ const fittingHorizontal=[7175+303*Math.cos(fittingAngle),7000,fittingCornerZ-303*Math.sin(fittingAngle)];
+ const fittingTop=[7175+303*Math.sin(fittingAngle),7000,fittingCornerZ+303*Math.cos(fittingAngle)];
+ const collectorAxisX=7175+(-200-fittingCornerZ)*Math.tan(fittingAngle);
  const circle=(d,y)=>{const a=2*Math.acos(1-2*y/d),A=d*d*(a-Math.sin(a))/8,P=d*a/2;return{A,P,R:A/P,T:2*Math.sqrt(y*(d-y))};};
  const full=(d,n)=>Math.PI*d*d/4*(d/4)**(2/3)*Math.sqrt(slope)/n;
  const normal=(Q,n)=>{
@@ -110,6 +114,19 @@ export function control(){
  });
  const length=4700,parkEnd=12250+length,trackBottom=axis(parkEnd)-150-100,firstBeamStart=7650;
  const pipeSheet=massPerM*length/1000,blockedWater=waterPerM*length/1000;
+ // A translating upstream flange, not the straight tube, governs first entry.
+ const nativeMovingFlangeAxial=25,firstFlangeEntryTranslation=firstBeamStart-7550-nativeMovingFlangeAxial;
+ const rotatedEntryTranslation=firstBeamStart-7550-nativeMovingFlangeAxial*Math.cos(fittingAngle)-285/2*Math.sin(fittingAngle);
+ const movingFlangeClearance={catalogOD:285,axialScreen:nativeMovingFlangeAxial,firstBeamStart,
+  boxScreen:'The installed2.5/first-entry3.382/translation75 are conservative AXIS-ALIGNED285×25 bounding-box comparisons, not exact tilted-disc kinematics.',
+  rotatedDisc:{angleDegrees:fittingAngle*180/Math.PI,
+   installedTopGap:-630-(-775+285/2*Math.cos(fittingAngle)),
+   firstLeadingPointEntryTranslation:rotatedEntryTranslation,
+   firstEntryTopGap:-630-(-775-nativeMovingFlangeAxial*Math.sin(fittingAngle)+285/2*Math.cos(fittingAngle)-rotatedEntryTranslation*slope)},
+  installedTopGap:-630-(-775+285/2),firstEntryTranslation:firstFlangeEntryTranslation,
+  sameLevelFirstEntryTopGap:-630-(-775-firstFlangeEntryTranslation*slope+285/2),
+  minimumAuthoredMovingClearance:20,accepted:false,
+  failure:'REJECTED same-level initial draw. The tube crown gap cannot be transferred to the285flange. Only2.51installed/3.67at exact rotated-disc first entry remains before tolerances, rail movement or tool/retention. No earned renewal method follows.'};
  const flange={product:'Endex N1FMGI159 item89719',catalogOutside:285,catalogAxial:20,catalogMassEachKg:7,
   brochureAxialA:25,brochureZa:2,brochureHoles:8,outsideEnvelope:320,axialEach:60,locationX:[7550,12250],
   source:'https://aalberts-ips.co.uk/products/item/89719/',
@@ -118,7 +135,7 @@ export function control(){
   massMovingPairKg:14,massFixedPairKg:14,
   status:'Actual285catalogue envelope replaces too-small260projectreservation.320×120 is a conservative PROJECT tool/bolt reservation, NOT a solved8bolt/retention first release. Both flange halves stay within joint-face-to-face4700 body length, with tube cut/engagement to suit; tool reservation is not extra movingbody length. Gasket/bolt/socket/braze and actual top release remain unqualified. No centre flange hidden below gallery.'};
  return {identity:'RWT-UNADOPTED-CURRENT-E-CLOSED-CONTROL-2026-11-06',selectedSource:s.blob,sourceAuthority:s.authority,canonicalMain:s.canonicalMain,canonicalMainHadBlob:s.canonicalMainHadBlob,startingMain:'80c0f94148ad11e3b2eaa83c52e28d06238993ed',selectedGeometryChanged:false,
-  recommendation:'Develop this ONE closed159copper control before further65throat/tenpanel/open-transfer machinery. It is not falsified by the current900passage. Keep its real2200longer exterior renewal cost and unresolved actual end connections visible.',
+  recommendation:'Retain ONE closed159copper control for development, but REJECT its original same-level first flange draw. Test one lowered local service bay and supported initial drop; keep real2200longer exterior renewal cost and unresolved actual end connections visible.',
   tube,
   retained:{quiet:-35,geometricCrest:15,houseBounds:[0,0,12000,12000],roofCourtAreaM2:60.0625,
    inwardRoofM2:47.8125,courtM2:12.25,structuralRoofDomainM2:144.15,
@@ -126,11 +143,22 @@ export function control(){
    courtMouth:{planeX:6125,creditedIntervals:[[6950,7175],[7275,7375]],creditedWidth:325},
    catchCoverCount:5,plainCoverCount:5,coverPlanEach:[305,550]},
   collectingChange:{plan:[7040,6950,335,450],
-   floorControl:[[7040,-171.96],[7175,-200],[7375,-180]],outletAxis:[7175,7000],verticalOutletID:155,
+   floorControl:[[7040,-171.96],[collectorAxisX,-200],[7375,-180]],outletAxis:[collectorAxisX,7000],verticalOutletID:155,
+   outletShiftEW:collectorAxisX-7175,
+   fittingAlignment:'Collector throat/closed closure moves6.713east to meet the native N18 inlet axis rotated with50/4250carrier fall; regenerate actual gutter fall/closure/cover supports before adoption. No vertical-to-tilted socket mismatch is concealed.',
    coverTop:0,changedGutterCassetteBottom:-215,oldMinimumBottom:-200,
    changed:'Re-form ONLY the actual fourth/fifth north catch-cover gutter ends to drain to7175/7000/−200; the east tail falls WEST to this lower outlet. Captured top cover/gutter footprints stay305×550. No65throat, raised sill or un-drained depression; all points descend to the vertical outlet.',
    construction:'Small closed transition below the existing250wide receiving return replaces the free617.6mm hood plunge; continuous vent/rod access opens from the existing removed catch covers. Top connection/clip/braze and first release require actual source, not an assumed sealed overlap.'},
-  intakeTurn:{verticalAxis:[7175,7000],fromZ:-200,toZ:-475,horizontalAxisAt:[7475,7000,-775],
+  intakeTurn:{verticalAxis:[collectorAxisX,7000],fromZ:-200,toZ:fittingTop[2],horizontalAxisAt:fittingHorizontal,
+   factoryPortBinding:{carrierFall:50/4250,rotationAboutYDegrees:fittingAngle*180/Math.PI,
+    theoreticalPortAxisIntersection:[7175,7000,fittingCornerZ],verticalLeg:303,horizontalLeg:303,
+    horizontalPort:fittingHorizontal,topPort:fittingTop,collectorPort:[collectorAxisX,7000,-200],
+    pipeAxisAtHorizontalPort:axis(fittingHorizontal[0]),
+    nativePortToFlangeFaceLength:(7550-fittingHorizontal[0])/Math.cos(fittingAngle),
+    flangeFaceNormal:[Math.cos(fittingAngle),0,-Math.sin(fittingAngle)],
+    role:'Rigid90degree native port-vector binding.303is catalogue l, not a factory bend radius; actual socket engagement/centreline/body drawing remains a named hold.',
+    aboveBridgeTrialAxisZ:-149.95,aboveBridgeTopPortZ:153.05,quietStage:-35,
+    aboveBridgeAccepted:false,reason:'Unrotated raised comparator already puts303topport153.05above walk0 and quiet−35; full warm floor/movingflange separately rejects retained raised route.'},
    reservedBox:[7090,6905,-855,460,190,460],productComparator:{item:'Endex N18/89710,159',overall:[380,170,380],massKg:6.15,l1:303,z1:272,
     role:'Real factory size/braze-only comparator. Conservative460×190×460 reservation contains the listed380×170×380 box; the authoredR300 axis is NOT falsely identified as the factory centreline drawing.'},
    sourceJoin:'Factory l/z, sockets, exact braze engagement and rotation must bind before fixing the actual axis. No fitting or helper is allowed beyond X7550 into the first beam starting7650.'},
@@ -139,7 +167,7 @@ export function control(){
    supportBelowAxis:150,retainedRailBelowSled:100,flangeIsStructuralSupport:false,
    fieldMinimumCrownGap:-630-(axis(firstBeamStart)+159.9/2),movingSideReserves:[6475-6425,7375-7325],
    flangeWestToFirstBeamEW:7650-(7550+flange.axialEach),flangeEastBeyondOuterBeamEW:12250-flange.axialEach-12117.5,
-   supportCases},
+   supportCases,movingFlangeClearance},
   terminal:{closedRoute:[[12250,7000,axis(12250)],[12650,7000,axis(12650)],[12950,7000,axis(12650)-300],[12950,7000,-1200]],
    reservedCartridge:[12190,6840,-1285,910,320,615],bendProductComparator:'Second N18-sized380×170×380 envelope inside changed910long cartridge; exact socket/axis binding remains required.',
    orientation:'VERTICALLY DOWN at12950/7000/−1200',receiverBounds:[12500,6100,2000,1600],ordinaryMaximum:-1400,faultedMaximum:-1250,
@@ -154,10 +182,14 @@ export function control(){
     'Capture/remove the SAME five north catch covers and five plain covers before using existing stairs/platform. No new ten deep chute panels or55kg telescopic-staff apparatus is added.',
     'From isolated well/platform, expose and support inlet/drop connection; drain pipe, capture and separate the actual end connectors. A solved top first-release/retention path is still required; a pressure seal is not a support.',
     'Open all outboard covers. Capture/remove changed terminal cartridge and land on its1100×800pad BEFORE carrier draw.',
-    'Draw one captured4700pipe+850sled EAST to12250..16950 at the same falling track level; retain end connection until parked capture established. No person stands below or beside the moving carrier in the portal.',
+    'HOLD: original same-level initial draw is REJECTED by moving285flange clearance. Earn the separate lowered-bay/supported-drop comparison before drawing one captured4700pipe+850sled EAST to12250..16950. No person stands below or beside moving carrier in the portal.',
     'Lift1700 and transferN1800 into4900×1200 lower cradle territory; support at12900/16300, restrain, then detach rigging. Outgoing piece leaves before incoming occupies samepad.',
     'Reverse pipe motion; restore/test end connections and first-leak witness. Refit/test terminal while covers OPEN, then close covers. Restore catch covers/hood/entry and prove full E path before removing weather control.'],
-   completeHandlerSweepProved:false},
+   completeHandlerSweepProved:false,
+   aboveBridgeWholeControl:{accepted:false,sourceCommit:'5f56d58f5c2d4b7d65b712be10c39d274884b154',
+    sourcePath:'project/str/studies/current-house-occupied-interfaces.json',sourceBlob:'c4b2261a7c62481b64617cca57b6b2baabec330e',
+    requiredRecessForMovingFlangeBelowWarmFloor:352.89,
+    finding:'REJECTED retained complete factory/fixed-floor control: all3spans checked by STR; tube-only recess omits285movingflange, native303port and real180warm buildup/RC200 floor.450bridge remains. No top-cage/floor replan accepted.'}},
   loads:{nominalTubeSheetKg:pipeSheet,fullBlockedTubeWaterKg:blockedWater,
    tubeOnlyWetKg:pipeSheet+blockedWater,movingTubeAndTwoCatalogFlangesDryKg:pipeSheet+14,movingTubeAndTwoCatalogFlangesWetKg:pipeSheet+blockedWater+14,
    fixedFlangePairKg:14,listedTwoBendsKg:12.3,
@@ -183,7 +215,7 @@ export function renderControl(o){
  const X=x=>55+(x-6125)*.12,Z=z=>230-z*.25;
  s+=text(35,110,'Longitudinal section · installed tube + one-piece parked position',22);
  s+=`<rect x="${X(7650)}" y="${Z(-180)}" width="${(12117.5-7650)*.12}" height="${450*.25}" fill="#d8d3c8" stroke="#726e62"/>`;
- s+=`<path d="M${X(7175)} ${Z(-200)} V${Z(-475)} Q${X(7175)} ${Z(-775)} ${X(7475)} ${Z(-775)} L${X(12250)} ${Z(o.carrier.axis[1][2])}" stroke="#377f93" stroke-width="20" fill="none"/>`;
+ s+=`<path d="M${X(7175)} ${Z(-200)} V${Z(o.intakeTurn.toZ)} Q${X(7175)} ${Z(o.intakeTurn.factoryPortBinding.theoreticalPortAxisIntersection[2])} ${X(o.intakeTurn.horizontalAxisAt[0])} ${Z(o.intakeTurn.horizontalAxisAt[2])} L${X(12250)} ${Z(o.carrier.axis[1][2])}" stroke="#377f93" stroke-width="20" fill="none"/>`;
  s+=`<path d="M${X(12250)} ${Z(o.carrier.axis[1][2])} L${X(12650)} ${Z(o.terminal.closedRoute[1][2])} Q${X(12950)} ${Z(o.terminal.closedRoute[1][2])} ${X(12950)} ${Z(-1200)}" stroke="#377f93" stroke-width="18" fill="none"/>`;
  for(const joint of o.carrier.flange.locationX){
   const axis=o.carrier.axis[0][2]-(joint-7550)*50/4250;
@@ -191,7 +223,7 @@ export function renderControl(o){
  }
  s+=`<path d="M${X(12250)} ${Z(o.carrier.axis[1][2])} L${X(16950)} ${Z(-775-(16950-7550)*50/4250)}" stroke="#ae7048" stroke-width="12" stroke-dasharray="8 5"/>`;
  s+=`<path d="M${X(6125)} ${Z(-950)} H${X(7650)} M${X(6125)} ${Z(-1800)} H${X(17150)}" stroke="#8c8a80" stroke-dasharray="5 4"/>`;
- s+=text(35,545,'Grey:real285OD flanges; dashed320toolreserve atupstream ends−935, only15 abovefloor−950. Actual8bolt release unproved.')+text(35,575,'Field underside−630; body crown gap66.2mm.159.9OD envelope;155nominal bore /153.5 conservative screen.')+text(35,605,'Vertical takeoff/bend remain inside well; terminal extends to12950/7000/−1200 inside E receiver.')+text(35,635,'Brown:4700draw→park12250..16950. New deck to17150; no cost-free reuse of old2500body park.')+text(35,665,'Uniform D1800 is a comparison. Actual local track/ground/catch clearance and real receiving water remain separate.');
+ s+=text(35,545,'Grey:real285OD flanges; dashed320toolreserve atupstream ends−935, only15 abovefloor−950. Actual8bolt release unproved.')+text(35,575,'FAIL initial draw:rotated285flange gives2.51installed /3.67first-entry gap, NOT tube’s66.2mm gap.')+text(35,605,'Vertical takeoff/bend remain inside well; terminal extends to12950/7000/−1200 inside E receiver.')+text(35,635,'Brown:REJECTED same-level initial draw. A changed bay/support/release requires separate successor proof.')+text(35,665,'Uniform D1800 is a comparison. Actual local track/ground/catch clearance and real receiving water remain separate.');
  const px=x=>55+(x-6125)*.12,py=y=>980-(y-6300)*.08;
  s+=text(35,715,'Plan · actual900service passage and longer north receiving/handover field',22);
  s+=`<rect x="${px(6125)}" y="${py(7400)}" width="183" height="88" fill="#e7e1ce" stroke="#717d7a"/><rect x="${px(7550)}" y="${py(7375)}" width="${4700*.12}" height="${950*.08}" fill="#ded8ce" stroke="#717d7a"/>`;

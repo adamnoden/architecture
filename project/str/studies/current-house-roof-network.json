@@ -1,0 +1,299 @@
+{
+  "frames": [
+    {
+      "G": 35.140601605810325,
+      "Q": 19.17253125,
+      "actualUniformULS": {
+        "H": 27.499907083501448,
+        "RA": 31.94767353719438,
+        "RB": 44.25093550564956
+      },
+      "axisSpanM": 3.585,
+      "backgroundG": 21.154547631868343,
+      "bracingG": 0.7083333333333334,
+      "count": 8,
+      "crownG": 0.5,
+      "curvatureAndTieStretchBound": 3.292829310212117,
+      "id": "ordinary",
+      "independentAdverse": {
+        "H": [
+          -15.661892298507151,
+          41.04097836100247
+        ],
+        "M": [
+          -5.368134665837057,
+          10.646844197147432
+        ],
+        "N": [
+          -19.418744326639295,
+          56.21301821822429
+        ],
+        "RA": [
+          -13.23019006693933,
+          42.91120666877485
+        ],
+        "RB": [
+          -17.708812669371337,
+          58.674803307357486
+        ]
+      },
+      "nodeG": 2.0,
+      "oneSeatAbsoluteTorque": 7.348753667311625,
+      "planArea": 12.7816875,
+      "primaryCombined": 0.40121720664383065,
+      "primaryG": 3.0545358206086464,
+      "primaryLengthM": 5.130707323175587,
+      "purlinG": 6.6695389800000004,
+      "rows": [
+        {
+          "area": 0.80096875,
+          "rowWidth": 0.475,
+          "x": -0.3325
+        },
+        {
+          "area": 1.0786875,
+          "rowWidth": 0.55,
+          "x": 0.2175
+        },
+        {
+          "area": 1.2299375000000001,
+          "rowWidth": 0.55,
+          "x": 0.7675
+        },
+        {
+          "area": 1.2870156249999998,
+          "rowWidth": 0.5125,
+          "x": 1.3175
+        },
+        {
+          "area": 1.374375,
+          "rowWidth": 0.5,
+          "x": 1.7925
+        },
+        {
+          "area": 1.6185468749999998,
+          "rowWidth": 0.5375,
+          "x": 2.3175
+        },
+        {
+          "area": 1.8074375,
+          "rowWidth": 0.55,
+          "x": 2.8675
+        },
+        {
+          "area": 1.86965625,
+          "rowWidth": 0.525,
+          "x": 3.4175
+        },
+        {
+          "area": 1.7150625,
+          "rowWidth": 0.45,
+          "x": 3.9175
+        }
+      ],
+      "serviceM": 7.611937761697181,
+      "strutL250": 10.261414646351174,
+      "tieG": 1.05364584,
+      "tieLengthM": 3.585
+    },
+    {
+      "G": 31.64540389708659,
+      "Q": 15.711187500000001,
+      "actualUniformULS": {
+        "H": 33.2124789517442,
+        "RA": 20.89004304473518,
+        "RB": 45.39803346633173
+      },
+      "axisSpanM": 5.069955621107546,
+      "backgroundG": 17.335377368179515,
+      "bracingG": 0.7083333333333334,
+      "count": 4,
+      "crownG": 0.5,
+      "curvatureAndTieStretchBound": 8.730632928615133,
+      "id": "hip",
+      "independentAdverse": {
+        "H": [
+          -18.075812613254165,
+          48.830341107651975
+        ],
+        "M": [
+          -8.102459450468093,
+          15.604268631289983
+        ],
+        "N": [
+          -20.601610880790908,
+          59.998686581926115
+        ],
+        "RA": [
+          -8.217799874071131,
+          27.851463627589684
+        ],
+        "RB": [
+          -17.11071363280544,
+          59.215791943311444
+        ]
+      },
+      "nodeG": 2.0,
+      "oneSeatAbsoluteTorque": 6.24704362456916,
+      "planArea": 10.474125,
+      "primaryCombined": 0.45929916106835833,
+      "primaryG": 4.122371718707752,
+      "primaryLengthM": 6.924352506631044,
+      "purlinG": 5.48924124,
+      "rows": [
+        {
+          "area": 0.0605625,
+          "rowWidth": 0.475,
+          "x": -0.47022600948905413
+        },
+        {
+          "area": 0.37262500000000004,
+          "rowWidth": 0.55,
+          "x": 0.3075914498161482
+        },
+        {
+          "area": 0.6751250000000001,
+          "rowWidth": 0.55,
+          "x": 1.0854089091213504
+        },
+        {
+          "area": 0.91096875,
+          "rowWidth": 0.5125,
+          "x": 1.8632263684265529
+        },
+        {
+          "area": 1.12625,
+          "rowWidth": 0.5,
+          "x": 2.534977810553773
+        },
+        {
+          "area": 1.4929062499999999,
+          "rowWidth": 0.5375,
+          "x": 3.2774399307996482
+        },
+        {
+          "area": 1.8301250000000002,
+          "rowWidth": 0.55,
+          "x": 4.055257390104851
+        },
+        {
+          "area": 2.0356875,
+          "rowWidth": 0.525,
+          "x": 4.833074849410052
+        },
+        {
+          "area": 1.9698750000000003,
+          "rowWidth": 0.45,
+          "x": 5.5401816305966
+        }
+      ],
+      "serviceM": 11.158370070293142,
+      "strutL250": 13.848705013262087,
+      "tieG": 1.4900802368659922,
+      "tieLengthM": 5.069955621107546
+    }
+  ],
+  "globalOrigins": {
+    "G": 407.706428434829,
+    "G3Budget": 432.45,
+    "Q": 216.225,
+    "ULSdown": 874.7411783870192,
+    "collectorSeparateWallHeadOrigin": "New250x140x16 steelcollector is NOT inthisroofG; deleteoldRC260x140collector andaddactualsteelringONCE inwhole-houseledger. Noarbitraryloadlabelmove.",
+    "margin": 24.74357156517101,
+    "planArea": 144.15,
+    "purlinPhysicalLengthM": 280.2,
+    "upliftNoFavourableG": -324.33750000000003
+  },
+  "method": "Exactrowinfluencecoefficients ofexistingtwo-strut/tieframe; rowsindependentlyrange[-2.25,+6.3]equivalentplanpressure. Actualuniformmassledgerusesthedeclared1.5kPanormalnonsteelbudget andeverymetaloriginonce. Primary full4.65planextent explicitlyincludes200overhangbeyondoldprimaryends. Sitewind/snow/material/actualjointsremainseparate.",
+  "nodeBudget": {
+    "down": 70,
+    "rafterAxisTorque": 10,
+    "role": "BoundsactualindependentrowsanddiscreteGabove, notownerinvariants. Commonclosedhaunch mustjoinrafter/tiebranchsolids andtransfertorsionwithoutasingleplanarknife.",
+    "tieEitherSign": 60,
+    "up": 25
+  },
+  "rainCatchment": {
+    "combinedM2": 60.0625,
+    "offsetExposedCourtM2": 9.61,
+    "offsetInnerRoofM2": 50.4525,
+    "source": {
+      "blob": "f096160f98e175c7d5f3ec117a9ae41da2162b30",
+      "path": "project/rwt/studies/open-loggia-event.json"
+    },
+    "wallLineCourtM2": 12.25,
+    "wallLineInnerRoofM2": 47.8125
+  },
+  "secondary": {
+    "L250": 18.31,
+    "biaxialULS": 0.6561382201643973,
+    "endBearing": "Positivewelded/boltedcleatsforbothsigns; actualinner127.5mm axisgap uses commonterminaldiaphragm, NOT a shortRHS+twocleats. Atrow7750 ordinary/hipsolidsmerge inonejoint; rowweight/reactionsremaininthisledger.",
+    "maxPlanSpan": 4577.5,
+    "serviceVerticalBothAxes": 10.697294285375468
+  },
+  "sections": {
+    "collector": {
+      "A": 11456,
+      "B": 140,
+      "H": 250,
+      "I": 89049578.66666667,
+      "Iminor": 34281898.666666664,
+      "MR": 129.52665987878788,
+      "TR": 97.46848239014504,
+      "W": 712396.6293333333,
+      "Wminor": 489741.4095238095,
+      "lineG": 0.899296,
+      "t": 16
+    },
+    "primary": {
+      "A": 7584,
+      "B": 140,
+      "H": 200,
+      "I": 40632832.0,
+      "Iminor": 22840192.0,
+      "MR": 73.87787636363636,
+      "TR": 60.625557284854494,
+      "W": 406328.32,
+      "Wminor": 326288.45714285714,
+      "lineG": 0.595344,
+      "t": 12
+    },
+    "secondary": {
+      "A": 3424,
+      "B": 80,
+      "H": 150,
+      "I": 9667445.333333334,
+      "Iminor": 3472725.3333333335,
+      "MR": 23.436231111111113,
+      "TR": 17.171866624566498,
+      "W": 128899.27111111111,
+      "Wminor": 86818.13333333333,
+      "lineG": 0.268784,
+      "t": 8
+    },
+    "tie": {
+      "A": 3744,
+      "B": 100,
+      "H": 150,
+      "I": 11282272.0,
+      "Iminor": 5881472.0,
+      "MR": 27.35096242424242,
+      "TR": 21.94182957583497,
+      "W": 150430.29333333333,
+      "Wminor": 117629.44,
+      "lineG": 0.293904,
+      "t": 8
+    }
+  },
+  "sources": [
+    {
+      "path": "project/had/studies/water-replan.json",
+      "sha256": "547a0a5515878fd522ceb108c57c37b8aad29f5d2efe33848d93cedd89d65ad4"
+    },
+    {
+      "path": "project/str/studies/open-loggia-support.json",
+      "sha256": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+    }
+  ],
+  "status": "Conserved finite roof network and actual signed action candidate; common welded seat/hip and whole-house adoption still active",
+  "units": "mm,kN,kNm,MPa unless stated"
+}

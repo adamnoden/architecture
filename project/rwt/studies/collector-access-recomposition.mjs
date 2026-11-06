@@ -3,12 +3,14 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 import {readSelected} from './selected-water-event.mjs';
+import {control as closedControl} from './closed-east-control.mjs';
 const copper=8960;
 export function proposal(){
  const s=readSelected(),v=s.model,r=v.renewal;
  const review=JSON.parse(fs.readFileSync('project/rwt/studies/short-inlet-review.json','utf8'));
  assert.equal(review.source.blob,s.blob,'Reproduce finite inlet review against the reconciled actual HAD proposal first');
- const base=x=>x<=7175?-187-(x-6125)*13/1050:-200+(x-7175)*20/200;
+ const closed=closedControl(),outletX=closed.collectingChange.outletAxis[0];
+ const base=x=>x<=outletX?-187-(x-6125)*13/(outletX-6125):-200+(x-outletX)*20/(7375-outletX);
  const northFloor=(x,y)=>base(x)+Math.abs(y-7000)*.025;
  const bridgeX=[6111.5,6418.5],bridgeEndY=6870,bridgeEndTop=-176,bridgeSheet=1.5;
  const bridgeGap=bridgeX.map(x=>bridgeEndTop+.005*Math.abs(x-6241.5)-bridgeSheet-northFloor(x,bridgeEndY));
@@ -32,8 +34,9 @@ export function proposal(){
    feed:'Ordinaryramp moves SOUTH, removing the contradictory rising west under-ramp feed.100mm remains a finite bought approach; lateral court feed, free brink and real loss placement remain uncalibrated.'},
   collector:{northGross:[6100,6850,1275,550],southWestGross:[6100,6300,330,550],
    northWetY:[6861.5,7388.5],southWestWetY:[6311.5,6838.5],westWetX:6111.5,
-   northFloorRule:'Westbase−187at6125→−200at7175; easttail−180at7375 fallsWEST to7175. Add .025*abs(y−7000) crossfall. Every branch descends to ONE7175/7000/−200closedoutlet; no65throat/raised sill or additionalcatchment.',
-   controls:[[6125,7000,northFloor(6125,7000)],[7175,7000,-200],[7375,7000,-180]],
+   northFloorRule:'Westbase−187at6125→−200at the generated closed-control outletX7181.713; easttail−180at7375 fallsWEST to that outlet. Add .025*abs(y−7000) crossfall. One outlet follows the rigid native N18 rotated with50/4250fall; no65throat/raised sill or additionalcatchment.',
+   closedOutletBinding:{axis:[outletX,7000,-200],source:'closed-east-control.mjs factoryPortBinding',shiftEW:outletX-7175},
+   controls:[[6125,7000,northFloor(6125,7000)],[outletX,7000,-200],[7375,7000,-180]],
    southWestFloor:'Wetsurface−135atY6311.5 fallsN to−173.5at6830, then the captured flush/recessed seam bridge falls to−176at6870; receivingNfloor is lower. Crossfall .005 toX6241.5. No connectingtube below the well or down-and-up trap.',
    bridge:{plan:[bridgeX[0],6830,bridgeX[1]-bridgeX[0],40],sheet:bridgeSheet,wetEnds:[-173.5,bridgeEndTop],
     dryBodySeamY:6850,endsOverNorthFloorGapMm:bridgeGap,minimumSheetUndersideGap:Math.min(...bridgeGap),
@@ -107,9 +110,9 @@ export function render(o){
  for(const[a,b]of[[6525,6625],[7197.5,7247.5],[7350,7400]])s+=`<path d="M${x(6125)} ${y(a)} V${y(b)}" stroke="#aa4f3b" stroke-width="9"/>`;
  s+=`<polyline points="${o.ordinaryAccess.centreline.map(p=>`${x(p[0])},${y(p[1])}`).join(' ')}" fill="none" stroke="#826a9a" stroke-width="4"/>`;
  for(const p of[o.ordinaryAccess.centreline[1],o.ordinaryAccess.centreline[2]])s+=`<circle cx="${x(p[0])}" cy="${y(p[1])}" r="90" fill="none" stroke="#826a9a" stroke-dasharray="6 4"/>`;
- s+=`<path d="M${x(6241.5)} ${y(6425)} V${y(7000)} H${x(7175)}" fill="none" stroke="#317e91" stroke-width="6"/>`;
+ s+=`<path d="M${x(6241.5)} ${y(6425)} V${y(7000)} H${x(o.collector.closedOutletBinding.axis[0])}" fill="none" stroke="#317e91" stroke-width="6"/>`;
  s+=t(30,715,'Green:priced clear lip. Red:100southfoot /50originalhinge /50northsupport reservations; actualanchors still unqualified.');
- s+=t(30,746,'Blue:ONE self-draining collector to7175/7000/−200closedoutlet. Brown:captured40seambridge, not a raisedbutt dam.');
+ s+=t(30,746,'Blue:ONE self-draining collector to7181.713/7000/−200closedoutlet. Brown:captured40seambridge, not a raisedbutt dam.');
  s+=t(980,150,'Ordinary access',22)+t(980,185,'650ramp:5750..6300,30rise.')+t(980,217,'700clear inwardgate; ALLcoverslocked.')+t(980,249,'R300:25each ramp /25eastwell /27.5leaf.')+t(980,281,'No west under-ramp feed assumed.')+t(980,333,'Ework:closeSgate,remove100tip,')+t(980,365,'then erect continuous6250bund/skirt.')+t(980,397,'West650gate/stairs remain for renewal.')+t(980,449,'SWpan:oneextra wetbody, same10covers.')+t(980,481,'Two westernbodyplans330×550 pay')+t(980,513,'25underlap; E35release precedeslift.')+t(980,565,'Raisedlatch option removes50hinge,')+t(980,597,'but parentpost/foot/anchor UNKNOWN.')+t(980,629,'No RCpost or bracket capacity borrowed.');
  s+=t(30,800,'Actual short-inlet reference · K1 /n.04 /deepest TOTAL25% blocked',23);
  const rows=[['Retainedhinge100',o.hydraulicReference.retainedHinge.find(v=>v.lengthMm===100&&v.block==='deepestTotalQuarter'&&v.lipK===0)],['Retainedhinge200',o.hydraulicReference.retainedHinge.find(v=>v.lengthMm===200)],['Raisedlatch100',o.hydraulicReference.hungLatch.find(v=>v.lengthMm===100&&v.block==='deepestTotalQuarter'&&v.lipK===0)],['Raisedlatch200',o.hydraulicReference.hungLatch.find(v=>v.lengthMm===200)]];

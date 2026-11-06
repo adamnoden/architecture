@@ -3,8 +3,8 @@
   "source": {
     "path": "project/had/studies/water-replan.json",
     "blob": "90fd241d4f1f69802a349112cf32f2bd241ac6f8",
-    "authority": "UNMERGED receiver-refined HAD proposal reconciled with canonicalmain ede8302b /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry",
-    "canonicalMain": "ede8302b8eb21c571166214227f643928b02edfc",
+    "authority": "UNMERGED receiver-refined HAD proposal reconciled with canonical main4fef04ad /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry",
+    "canonicalMain": "4fef04ad7a82a149903aa077af04f95b3a392294",
     "canonicalMainHadBlob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
     "startingMain": "80c0f94148ad11e3b2eaa83c52e28d06238993ed"
   },
