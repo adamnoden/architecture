@@ -9,8 +9,8 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T21:15:26.800Z",
-  "expiresAt": "2026-11-06T22:45:26.800Z",
+  "heartbeatAt": "2026-11-06T21:23:00.476Z",
+  "expiresAt": "2026-11-06T22:53:00.476Z",
   "branch": "work/zerg-20261106-services-g21-air-duty",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
@@ -34,10 +34,10 @@
       "blocker": "Coordinator execution limit safe park. Productive design frontier remains; draft1342 preserved. Neither W9 nor VTC complete operating/renewal/material admission. No unattended heartbeat."
     }
   },
-  "pr": 1353,
+  "pr": 1356,
   "checkpoint": {
-    "evidence": "PR1353 verified merged1cedc7d7e159f7cb4e3ba15fb9882d2fd5529e51 after exact3f3381cd CI14green and21:13:48Z preflight. Old remote source deletion verified; new remote branch/worktree starts exact merged head. PR-body STR1343 metadata corrected.",
-    "next": "Develop one current-HAD geometric airtightness comparison and whole-house pressure/heat consequences with nonduplicated provisional floor/wall allocation, coordinated with MAT envelope. Keep actual W9 bottom-supported lift/base-to-deck and full folded capture open and visible; new draft before source updates thereafter."
+    "evidence": "Draft1356 exact e85cc19fc858069cb874a3b0622303c2edc56ac5 tree d803a759ea282fa63b80e6b7de17698d2ab00936 published from merged1cedc7d7. Current-HAD footprint/reference envelope and explicit net-volume/closure limitations, finite floor-wall family allocation and primary-source roles reproduce; full MAT suite passed, final SVG rendered/inspected.",
+    "next": "Root and envelope review provisional q50<=1.0 comparison and one aggregate floor-family budget; reconcile actual current main, preserve all MAT/STR checks, exact-head CI and fresh canonical preflight before root merge. Keep actual W9 bottom lifting/base-to-deck and full exterior capture work open."
   },
-  "note": "Same-g21 fresh air-duty successor starts exact merged1cedc7d7. PR1353 is historical merged evidence until a new draft can bind the successor; no apparatus/material/handling admission or packet completion."
+  "note": "Active same-g21 air-duty successor Draft1356 after merged1353; provisional comparison only, no apparatus/air-boundary/handling/material admission or packet completion."
 }
