@@ -9,13 +9,13 @@
     "label": "zerg-20261106-w3"
   },
   "claimedAt": "2026-11-06T07:38:05.136Z",
-  "heartbeatAt": "2026-11-06T11:43:53.437Z",
-  "expiresAt": "2026-11-06T12:28:53.437Z",
+  "heartbeatAt": "2026-11-06T12:10:53.708Z",
+  "expiresAt": "2026-11-06T12:55:53.708Z",
   "checkpoint": {
-    "evidence": "Exactpublished b9ae5fc69dcb39b145425c805ca31dbb234572fe independentServices review PASS: owncanonical/producers/heat/proof files byteequalfinal0e68bc37; entirecurrentHADServices/actualfoulport/current4arches/5tails+sink-2480 authenticated by fullownchecker. Repository integrity/diffcheck pass, cleantrackedtree. FinalD1800 source69c7b1b1/JSa8193ca9 unchanged; allupperinternalfields retained.",
-    "next": "Await one boundedarchitecturalselection/graph event and rootobserved fullCI on exactfinalsharedhead; run freshg20publicationpreflight immediatelybefore expected-headmerge, then canonicalrelease. No Servicespinchange indicated."
+    "evidence": "PR1332 merged at8ab19d48; exact Services69c7/a819 source and D1800 foul/plant join retained. Shared branch auto-deleted. Successor starts exact current merged main; no new source edits.",
+    "next": "Bounded next services decision from current programme: prioritize real coupled heat/ventilation and matched renewal or constituent admission; no duplicate RWT hydraulic work."
   },
-  "branch": "work/zerg-20261106-w2",
+  "branch": "work/zerg-20261106-w3-services-next",
   "predecessor": {
     "leaseId": "6ca4e7fa-dc1b-46db-8e76-7570a4e6fb54",
     "generation": 19,
