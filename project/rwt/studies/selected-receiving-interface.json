@@ -34,7 +34,6 @@
     ],
     "maximumWater": -800,
     "bedMaximum": -1000,
-    "receiverEdgeMaximum": -700,
     "blockedOutletSpill": {
       "edge": [
         [
@@ -66,6 +65,67 @@
       "upstream": 100,
       "downstream": 1600,
       "qualified": false
+    },
+    "nominatedSpillEdgeMaximum": -700,
+    "directedSpillBoundary": {
+      "status": "CONDITIONAL BUILDING-SIDE HANDOFF REQUIREMENT; retaining/terrain levels and capacity are NOT verified",
+      "nominatedLowSpillEdge": [
+        [
+          4250,
+          15150,
+          -700
+        ],
+        [
+          5750,
+          15150,
+          -700
+        ]
+      ],
+      "nonSpillBoundaries": [
+        {
+          "id": "south",
+          "fromXY": [
+            4250,
+            13450
+          ],
+          "toXY": [
+            5750,
+            13450
+          ],
+          "crestMustBeStrictlyAboveFaultedWaterZ": -650
+        },
+        {
+          "id": "west",
+          "fromXY": [
+            4250,
+            13450
+          ],
+          "toXY": [
+            4250,
+            15150
+          ],
+          "crestMustBeStrictlyAboveFaultedWaterZ": -650
+        },
+        {
+          "id": "east",
+          "fromXY": [
+            5750,
+            13450
+          ],
+          "toXY": [
+            5750,
+            15150
+          ],
+          "crestMustBeStrictlyAboveFaultedWaterZ": -650
+        }
+      ],
+      "additionalWaveSplashMovementToleranceMm": null,
+      "requirement": "Each non-spill boundary must be continuous, water-retaining and strictly above the declared faulted water PLUS a separately qualified wave/splash/movement/construction allowance. Real terrain or designed retention must earn those levels/support/erosion and all joins; rectangles do not direct water.",
+      "allRimsAtNominatedLowSpillLevelRejected": true,
+      "reason": "Declared faulted water is50above nominated low spill edge; applying that edge level to every rim overtops the other sides and invalidates the nominated direction and protected garden/access claim.",
+      "physicalContainmentAccepted": false,
+      "siteAccepted": false,
+      "directionProved": false
     }
   },
   "east": {
@@ -122,7 +182,6 @@
     ],
     "maximumWater": -1400,
     "bedMaximum": -1650,
-    "receiverEdgeMaximum": -1300,
     "blockedOutletSpill": {
       "edge": [
         [
@@ -242,6 +301,67 @@
       "minimumClearFromIdeal600Stream": 225,
       "footingBounds": null,
       "role": "Existing rail support stations remain in the receiver wet/splash territory; NOT an empty excavation or permission to remove footings. Source defines50square posts only. Actual post Z/footing territory, wet lining collars/islands, erosion and receiving-floor/support continuity require the STR-owned detail. No bare post size is a footing envelope."
+    },
+    "nominatedSpillEdgeMaximum": -1300,
+    "directedSpillBoundary": {
+      "status": "CONDITIONAL BUILDING-SIDE HANDOFF REQUIREMENT; retaining/terrain levels and capacity are NOT verified",
+      "nominatedLowSpillEdge": [
+        [
+          14500,
+          6100,
+          -1300
+        ],
+        [
+          14500,
+          7700,
+          -1300
+        ]
+      ],
+      "nonSpillBoundaries": [
+        {
+          "id": "west",
+          "fromXY": [
+            12500,
+            6100
+          ],
+          "toXY": [
+            12500,
+            7700
+          ],
+          "crestMustBeStrictlyAboveFaultedWaterZ": -1250
+        },
+        {
+          "id": "south",
+          "fromXY": [
+            12500,
+            6100
+          ],
+          "toXY": [
+            14500,
+            6100
+          ],
+          "crestMustBeStrictlyAboveFaultedWaterZ": -1250
+        },
+        {
+          "id": "north",
+          "fromXY": [
+            12500,
+            7700
+          ],
+          "toXY": [
+            14500,
+            7700
+          ],
+          "crestMustBeStrictlyAboveFaultedWaterZ": -1250
+        }
+      ],
+      "additionalWaveSplashMovementToleranceMm": null,
+      "requirement": "Each non-spill boundary must be continuous, water-retaining and strictly above the declared faulted water PLUS a separately qualified wave/splash/movement/construction allowance. Real terrain or designed retention must earn those levels/support/erosion and all joins; rectangles do not direct water.",
+      "allRimsAtNominatedLowSpillLevelRejected": true,
+      "reason": "Declared faulted water is50above nominated low spill edge; applying that edge level to every rim overtops the other sides and invalidates the nominated direction and protected garden/access claim.",
+      "physicalContainmentAccepted": false,
+      "siteAccepted": false,
+      "directionProved": false
     }
   },
   "commonCause": "N and E have no shared pipe or receiving basin. A real site with common flood/backwater above either required limit, insufficient receiver footprint or no harmless passive final disposal is rejected or redesigned. Distinct rectangles do not establish hydrological independence on an unknown site.",

@@ -4,7 +4,7 @@ from pathlib import Path
 import json,hashlib,math,sys
 R=Path(__file__).resolve().parents[3]
 P=R/'project/had/studies/water-replan.json'; raw=P.read_bytes()
-assert hashlib.sha256(raw).hexdigest()=='547a0a5515878fd522ceb108c57c37b8aad29f5d2efe33848d93cedd89d65ad4'
+assert hashlib.sha256(raw).hexdigest()=='7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8'
 h=json.loads(raw); b=h['bridge']; model=h['model']
 L=R/'project/str/studies/open-loggia-support.json'; lr=L.read_bytes(); old=json.loads(lr)
 bridge=json.loads(Path(__file__).with_name('current-house-bridge.json').read_text())

@@ -3,7 +3,7 @@
 from pathlib import Path
 import hashlib,json,math,sys
 R=Path(__file__).resolve().parents[3];P=R/'project/had/studies/water-replan.json';raw=P.read_bytes()
-assert hashlib.sha256(raw).hexdigest()=='547a0a5515878fd522ceb108c57c37b8aad29f5d2efe33848d93cedd89d65ad4'
+assert hashlib.sha256(raw).hexdigest()=='7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8'
 h=json.loads(raw)['model'];S=json.loads((R/'project/str/studies/open-loggia-support.json').read_text())
 # Source structural core lines at the enclosure, not weather-wall axes.
 outer=[{'id':'outer-W','a':[332.5,332.5],'b':[332.5,11667.5],'structuralCore':[262.5,402.5],'holes':[]},

@@ -2,7 +2,7 @@
   "identity": "RWT-06-SELECTED-WATER-EVENT-2026-11-06",
   "source": {
     "path": "project/had/studies/water-replan.json",
-    "blob": "90fd241d4f1f69802a349112cf32f2bd241ac6f8",
+    "blob": "6f089df104fe85c028978892e7f6b63f862e3237",
     "startingMain": "8ab19d48ef16abaff39e7f49a3801d5dc5f65521",
     "authority": "UNMERGED receiver-refined HAD proposal reconciled with canonical main4fef04ad /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry",
     "canonicalMain": "4fef04ad7a82a149903aa077af04f95b3a392294",
@@ -388,7 +388,7 @@
     "interface": {
       "source": {
         "path": "project/rwt/studies/selected-receiving-interface.json",
-        "blob": "04446780ff60861d1cc10ee61aa820b68a9f325b"
+        "blob": "847eecc74b95fc189dab3f45e02f54cdb41c6d29"
       },
       "identity": "RWT-SELECTED-RECEIVING-INTERFACE-2026-11-06",
       "siteAccepted": false
@@ -502,7 +502,7 @@
         },
         "receivingInterfaceSource": {
           "path": "project/rwt/studies/selected-receiving-interface.json",
-          "blob": "04446780ff60861d1cc10ee61aa820b68a9f325b"
+          "blob": "847eecc74b95fc189dab3f45e02f54cdb41c6d29"
         }
       },
       "verticalDischargeMarginsMm": {
@@ -702,6 +702,67 @@
         "maximumFaultedReceiverWater": -650,
         "role": "Open NORTH edge to reserved unoccupied downhill receiving territory. Must remain physically separate from garden path and E receiver. Actual capacity, surface/support/erosion and lawful disposal remain site-specific; if this edge is blocked too, N is unavailable and E must take the full assigned source."
       },
+      "directedSpillBoundary": {
+        "status": "CONDITIONAL BUILDING-SIDE HANDOFF REQUIREMENT; retaining/terrain levels and capacity are NOT verified",
+        "nominatedLowSpillEdge": [
+          [
+            4250,
+            15150,
+            -700
+          ],
+          [
+            5750,
+            15150,
+            -700
+          ]
+        ],
+        "nonSpillBoundaries": [
+          {
+            "id": "south",
+            "fromXY": [
+              4250,
+              13450
+            ],
+            "toXY": [
+              5750,
+              13450
+            ],
+            "crestMustBeStrictlyAboveFaultedWaterZ": -650
+          },
+          {
+            "id": "west",
+            "fromXY": [
+              4250,
+              13450
+            ],
+            "toXY": [
+              4250,
+              15150
+            ],
+            "crestMustBeStrictlyAboveFaultedWaterZ": -650
+          },
+          {
+            "id": "east",
+            "fromXY": [
+              5750,
+              13450
+            ],
+            "toXY": [
+              5750,
+              15150
+            ],
+            "crestMustBeStrictlyAboveFaultedWaterZ": -650
+          }
+        ],
+        "additionalWaveSplashMovementToleranceMm": null,
+        "requirement": "Each non-spill boundary must be continuous, water-retaining and strictly above the declared faulted water PLUS a separately qualified wave/splash/movement/construction allowance. Real terrain or designed retention must earn those levels/support/erosion and all joins; rectangles do not direct water.",
+        "allRimsAtNominatedLowSpillLevelRejected": true,
+        "reason": "Declared faulted water is50above nominated low spill edge; applying that edge level to every rim overtops the other sides and invalidates the nominated direction and protected garden/access claim.",
+        "physicalContainmentAccepted": false,
+        "siteAccepted": false,
+        "directionProved": false
+      },
+      "directionProved": false,
       "fullDutyLps": 3.60375,
       "cases": [
         {
@@ -719,7 +780,7 @@
           "airGapBelowActiveExitMm": 80.04750619678134
         }
       ],
-      "boundary": "Necessary ideal overflow-edge screen only. Actual continuing terrain, roughness, obstructions, erosion and impact are site/RWT conditions, not an assumed disposal solution."
+      "boundary": "Necessary ideal nominated-edge screen ONLY; direction is CONDITIONAL. Other three retaining/terrain boundaries must exceed faulted water plus unqualified wave/splash/movement/tolerance allowance. A50lower all-rim crest is REJECTED because it spills sideways too. Actual continuing terrain, roughness, obstructions, erosion, retaining works and impact remain site/RWT conditions."
     },
     {
       "receiver": "east",
@@ -747,6 +808,67 @@
         "maximumFaultedReceiverWater": -1250,
         "role": "Open EAST edge, entirely BELOW the0 upper service deck, to reserved unoccupied exterior downhill territory. It is not a pedestrian route or a house floor void. Actual receiving terrain/capacity/support/erosion/disposal remains conditional. With this edge blocked too, E is unavailable; do not begin E-maintenance or N-maintenance relying on it."
       },
+      "directedSpillBoundary": {
+        "status": "CONDITIONAL BUILDING-SIDE HANDOFF REQUIREMENT; retaining/terrain levels and capacity are NOT verified",
+        "nominatedLowSpillEdge": [
+          [
+            14500,
+            6100,
+            -1300
+          ],
+          [
+            14500,
+            7700,
+            -1300
+          ]
+        ],
+        "nonSpillBoundaries": [
+          {
+            "id": "west",
+            "fromXY": [
+              12500,
+              6100
+            ],
+            "toXY": [
+              12500,
+              7700
+            ],
+            "crestMustBeStrictlyAboveFaultedWaterZ": -1250
+          },
+          {
+            "id": "south",
+            "fromXY": [
+              12500,
+              6100
+            ],
+            "toXY": [
+              14500,
+              6100
+            ],
+            "crestMustBeStrictlyAboveFaultedWaterZ": -1250
+          },
+          {
+            "id": "north",
+            "fromXY": [
+              12500,
+              7700
+            ],
+            "toXY": [
+              14500,
+              7700
+            ],
+            "crestMustBeStrictlyAboveFaultedWaterZ": -1250
+          }
+        ],
+        "additionalWaveSplashMovementToleranceMm": null,
+        "requirement": "Each non-spill boundary must be continuous, water-retaining and strictly above the declared faulted water PLUS a separately qualified wave/splash/movement/construction allowance. Real terrain or designed retention must earn those levels/support/erosion and all joins; rectangles do not direct water.",
+        "allRimsAtNominatedLowSpillLevelRejected": true,
+        "reason": "Declared faulted water is50above nominated low spill edge; applying that edge level to every rim overtops the other sides and invalidates the nominated direction and protected garden/access claim.",
+        "physicalContainmentAccepted": false,
+        "siteAccepted": false,
+        "directionProved": false
+      },
+      "directionProved": false,
       "fullDutyLps": 3.60375,
       "cases": [
         {
@@ -764,7 +886,7 @@
           "airGapBelowActiveExitMm": 80.88776974852453
         }
       ],
-      "boundary": "Necessary ideal overflow-edge screen only. Actual continuing terrain, roughness, obstructions, erosion and impact are site/RWT conditions, not an assumed disposal solution."
+      "boundary": "Necessary ideal nominated-edge screen ONLY; direction is CONDITIONAL. Other three retaining/terrain boundaries must exceed faulted water plus unqualified wave/splash/movement/tolerance allowance. A50lower all-rim crest is REJECTED because it spills sideways too. Actual continuing terrain, roughness, obstructions, erosion, retaining works and impact remain site/RWT conditions."
     }
   ],
   "maintenance": {

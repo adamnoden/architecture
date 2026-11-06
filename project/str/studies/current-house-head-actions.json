@@ -2,14 +2,14 @@
   "status": "52-head force-and-two-first-moment comparison; gravity budgets and signed wind/uplift are not soil reactions under verified stiffness or accepted junction capacities",
   "adverseMethod": "Per origin and every quadrature station take positive and negative influence separately: G=0..1.35, Q=0..1.5, roof independent row pressures=-2.25..+6.3 kPa, structural metal=0..1.35G. Combine with both axis winds independently at full envelope (including diagonals). Each head lists independentAdverseNCxCy as [min,max] in N, Cx, Cy order; bounds are not simultaneous and MUST NOT be summed. Zero favourable dead load is credited.",
   "sources": {
-    "current-house-grid.json": "b26df1c597a81b7f797dd5c033b7406d37ca9d54af82cc2fb2122c6a57cbba13",
-    "current-house-roof-network.json": "8f94fedc572b07a4a1424e805364b10a0189fb0d5792f5ea342511ed134efd1d",
-    "current-house-lateral.json": "3cfd1e8f945efec13eb34212400a43271bf1f69a972e92b8d0f7276b60533db4",
-    "current-house-roof-connection.json": "3217bf8a45e696a53eaea8213325bdd752097aa4a83cb92a9adb7285eea9932b",
+    "current-house-grid.json": "407c43307e744d7da5f2765b680f8e379be20e08be092aa0db586a4907e09a9d",
+    "current-house-roof-network.json": "4c224cae766cd7cb1ed3ebe86116cab220dfd9f020fcc5024754e6f3cb9c2f7e",
+    "current-house-lateral.json": "b2d8ee91bd24882c08171e92a622ce1a48a82c44c985c7bc09da13937b4b1047",
+    "current-house-roof-connection.json": "468ad626f884d6850c253d9580638c168413289b2bdf0e33bbbebd085d812a18",
     "physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
     "open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
   },
-  "HAD": "547a0a5515878fd522ceb108c57c37b8aad29f5d2efe33848d93cedd89d65ad4",
+  "HAD": "7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8",
   "interpretation": "Units kN,kNm,mm. G/Q/U each conserved in every named origin family. Positive compression; U is -2.25kPa roof with no favourable G. Eccentric Cx=N*deltaX, Cy=N*deltaY. Each head gives [N,Cx,Cy], not an unsigned resultant. U+direction and 1.35G+1.5Q+direction are separate conservative envelopes, not a prescribed code combination. Each span treated as end-supported, signed cantilever reactions allowed: stiffness, alternate load patterns, positive ties and shaft moment resistance are not credited. Gross filled wall openings are a one-sided maximum; never stabilise adverse uplift with fictitious masonry.",
   "surfaceComparators": {
     "upperRCarea": 100.6602,

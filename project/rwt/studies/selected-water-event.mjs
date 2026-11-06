@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 
 const path='project/had/studies/water-replan.json';
-const expectedBlob='90fd241d4f1f69802a349112cf32f2bd241ac6f8';
+const expectedBlob='6f089df104fe85c028978892e7f6b63f862e3237';
 const g=9.81;
 export function readSelected(){
  const raw=fs.readFileSync(path,'utf8');
@@ -191,12 +191,12 @@ export function build(source=readSelected()){
     finding:'Local catch is not a full-duty path; capacity and actual exterior reception require their own evidence.'}},
   receiverBlockedOutletScreens:[['north',iface.north],['east',iface.east]].map(([name,r])=>{
    const s=r.blockedOutletSpill,crest=s.edge[0][2];
-   return {receiver:name,spill:s,fullDutyLps:q,cases:[1,.5].map(f=>{
+   return {receiver:name,spill:s,directedSpillBoundary:r.directedSpillBoundary,directionProved:false,fullDutyLps:q,cases:[1,.5].map(f=>{
     const idealHead=1000*(q/1000/(Math.sqrt(g)/(1.5**1.5)*(s.clearWidth/1000)*f))**(2/3);
     const stage=crest+idealHead,exit=name==='north'?r.outlet[2]:r.terminal.farLip[2];
     return {remainingWidthFraction:f,idealHeadMm:idealHead,idealStageMm:stage,belowDeclaredFaultMaximum:stage<=s.maximumFaultedReceiverWater,
      airGapBelowActiveExitMm:exit-stage};
-   }),boundary:'Necessary ideal overflow-edge screen only. Actual continuing terrain, roughness, obstructions, erosion and impact are site/RWT conditions, not an assumed disposal solution.'};
+   }),boundary:'Necessary ideal nominated-edge screen ONLY; direction is CONDITIONAL. Other three retaining/terrain boundaries must exceed faulted water plus unqualified wave/splash/movement/tolerance allowance. A50lower all-rim crest is REJECTED because it spills sideways too. Actual continuing terrain, roughness, obstructions, erosion, retaining works and impact remain site/RWT conditions.'};
   }),
   maintenance,
   eventDisposition:[
@@ -229,7 +229,7 @@ export function render(out){
  s+=t(60,745,'Plan: blue actual carriers; green receiver; pale green required passive continuation.');
  s+=t(60,772,'N original receiver started100 past exit; current full jet has50 near-edge setback.');
  s+=t(60,799,'E removable cartridge descends BETWEEN rails. It leaves before module withdrawal.');
- s+=t(60,826,'N/E share no pipe or basin. Real terrain/disposal/common flood remains conditional.');
+ s+=t(60,826,'No shared pipe/basin; spill direction needs higher OTHER boundaries. All-rim low crests FAIL.');
  const px=a=>770+(a-12000)*.14,pz=a=>325-a*.19;
  s+=t(760,115,'E longitudinal section / receiver projection',20);
  s+=`<path d="M${px(12000)} ${pz(0)} H${px(16000)}" stroke="#59666e" stroke-width="3"/>`;

@@ -81,3 +81,17 @@ test('actual250 entry cannot borrow unearned uniform600 spread',()=>{
  assert(c(250).idealConjugateDepthMm>c(600).idealConjugateDepthMm);
  assert.equal(d.qualifiedSplashEnvelope,null);
 });
+
+test('nominated spill edges do not imply that all receiver rims are below faulted water',()=>{
+ const o=build();
+ for(const r of o.receiverBlockedOutletScreens){
+  const d=r.directedSpillBoundary;
+  assert.equal(r.directionProved,false);assert.equal(d.directionProved,false);
+  assert.equal(d.allRimsAtNominatedLowSpillLevelRejected,true);
+  assert.equal(d.nonSpillBoundaries.length,3);
+  assert(d.nonSpillBoundaries.every(e=>e.crestMustBeStrictlyAboveFaultedWaterZ===r.spill.maximumFaultedReceiverWater));
+  assert.equal(d.additionalWaveSplashMovementToleranceMm,null);
+  assert(d.nonSpillBoundaries.every(e=>e.crestMustBeStrictlyAboveFaultedWaterZ>d.nominatedLowSpillEdge[0][2]));
+  assert.equal(d.physicalContainmentAccepted,false);assert.equal(d.siteAccepted,false);
+ }
+});

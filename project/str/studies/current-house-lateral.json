@@ -278,7 +278,7 @@
   },
   "source": {
     "path": "project/had/studies/water-replan.json",
-    "sha256": "547a0a5515878fd522ceb108c57c37b8aad29f5d2efe33848d93cedd89d65ad4"
+    "sha256": "7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8"
   },
   "status": "Preferred stability candidate calculated; current-source joint/mass/reaction integration and architectural adoption remain active",
   "units": "mm, kN, kNm, MPa unless stated",
