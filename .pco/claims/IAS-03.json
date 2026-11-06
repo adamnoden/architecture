@@ -9,11 +9,11 @@
     "label": "zerg-20261106-w1"
   },
   "claimedAt": "2026-11-06T07:38:01.585Z",
-  "heartbeatAt": "2026-11-06T07:58:58.933Z",
-  "expiresAt": "2026-11-06T08:43:58.933Z",
+  "heartbeatAt": "2026-11-06T08:03:55.758Z",
+  "expiresAt": "2026-11-06T08:48:55.758Z",
   "checkpoint": {
-    "evidence": "Remote WIP 7461f7bd86ed1fa20631a097c3d63920bea5c62f exact readback; deck deletion and pan point-load comparison; integrity and diff checks passed.",
-    "next": "Review source-bound pan-only comparison and explicit new outlet setout. No assembly adoption. Prior renewal requests timed out without CAS writes; runtime blob reconciled unchanged."
+    "evidence": "PR1333 remote head1a7bebd02fe2206b0c7cff51ce505aa17116dd6f; actual deck rejection and simpler pan comparison; source-bound fall and floor-seam corrections reviewed. Integrity/diff passed. Runtime prior renew readback c2d04d87 and CLI verified.",
+    "next": "Exact-head CI42184903468 running; await final root review then fresh publication preflight/merge. No IAS completion or accepted wet assembly. Actual matched supported lower waste and slip/material/water/physical duties remain."
   },
   "branch": "work/zerg-20261106-w1",
   "predecessor": {
@@ -33,5 +33,6 @@
       "evidence": "Safe-park meaningfulWIP remote842a4271f41f276fe372a57a1e199a2898b71970 pathproject/ias/ias-03-renewable-shower-reference-handoff.md exactblobf7b05488 verified. Actualstocksources/cut-seamproposal/floorcost/unprovedpackage preserved; integrity/diffpassed. NoPR/adoption/calculation.",
       "next": "Resume explicitPROJECT-DESIGNED completeboundpackage or falsifycandidate: actualcutlist/mass/load/deflection/support/keepers/waterseams/firstrelease/incoming/replacement. Rootexecutionlimit reached, notfrontierempty; immediatecanonicalHANDOFFrelease now."
     }
-  }
+  },
+  "pr": 1333
 }
