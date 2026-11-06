@@ -46,8 +46,9 @@ for m in modes:
     kitchen_supply.append({'mode':m['id'],'kitchenSupplyLps':qs,
       'sixOtherHabitableTotalSupplyLps':other,'sixOtherHabitableEachLps':other/6,
       'kitchenTransferLps':residual,'ideal7600TransferDropPa':pressure(residual,7600),
-      'worstResidualWith2LpsDamperError':abs(residual)+2,
-      'ideal7600DropWith2LpsErrorPa':pressure(abs(residual)+2,7600),
+      'actuatorRatedToleranceLps':max(2,.05*qs),
+      'residualWithActuatorRatedToleranceLps':abs(residual)+max(2,.05*qs),
+      'ideal7600DropWithActuatorTolerancePa':pressure(abs(residual)+max(2,.05*qs),7600),
       'massBalanceLps':qs+other-m['totalExtractLps']})
 assert all(m['massBalanceLps']==0 for m in kitchen_supply)
 assert [m['kitchenTransferLps'] for m in kitchen_supply]==[0,0]
@@ -73,6 +74,18 @@ failure={'baseline':'Electric/no-combustion programme; no gas-appliance interloc
  'visibleManualComparison':'Native GC10/app displays unit alarms, including E181 pressure-sensor and E191 pressure-control failures; serious faults also flash hood LEDs. Stop cooking on alarm or lost capture, retain ventilation if available, and repair/recommission before cooking resumes.',
  'unearnedDetectability':'An open hood contact wire can silently leave the kitchen supply at16 while mechanical extract is48. Unit RPM and upstream duct pressure do not measure that branch loss. Hood LEDs alone are not a proven warning for every loss.',
  'decision':'Conventional visible warning plus manual stop remains preferable to an automatic hob interlock if every relevant failure is actually detected. A local branch-flow indication/comparison or native qualified equivalent is still required before this manual contract is admitted; no universal automated inhibit requirement is invented.'}
+ready={'status':'Proportional ordinary indication comparison; no selected relay, fault alarm or hob safety interlock',
+ 'source':'REACT V GMB IOM,2025-05-16,p11:U actual-flow feedback in selected0..10V mode maps0..Vnom108L/s; it does not indicate damper position.',
+ 'native0to10FeedbackVolts':{'normal16':10*16/108,'cooking48':10*48/108,'brokenContact16':10*16/108},
+ 'normalUpperWithRatedToleranceLps':16+max(2,.05*16),
+ 'cookingLowerWithRatedToleranceLps':48-max(2,.05*48),
+ 'authoredIndicationThresholdLps':40,'thresholdVoltsIn0to10Mode':10*40/108,
+ 'manualDisplayPrice':'Expose actual/setpoint LCD at ordinary height; user must recognise16versus48 and act. A steady16is normal to regulator; numerical premeal checks are not selected.',
+ 'singleReadyIndicationPrice':'Reuse nativeU through one matched voltage threshold/visible indicator, independently powered and labelled Kitchen supply flow. No new room pressure loop, sensor or BMS is inherently required. Compatible electrical loading, mode, hysteresis/startup response, enclosure/access and full constituents still need binding.',
+ 'ordinaryUse':'After selecting cooking, an absent supply-flow indication would make16fallback visible without interpreting numbers; stop cooking if required duty is absent. Normal16need not show ready. No universal appliance checklist is imposed.',
+ 'limits':'A green supply indication cannot prove capture, extract flow, tube integrity/calibration, heat/frost provision or fire state. Stale-highU/relay contact or lamp failure and hood restriction remain detection/admission work; no cooking-safe light or automatic enable is claimed.'}
+assert ready['normalUpperWithRatedToleranceLps']<ready['authoredIndicationThresholdLps']<ready['cookingLowerWithRatedToleranceLps']
+failure['proportionalSupplyFlowReadyComparison']=ready
 fire_rule={'primary':'https://assets.publishing.service.gov.uk/media/6aa3bb335f6e942efe37f150/AD_B1_2026.pdf',
  'paragraphs':['2.8','2.9a','2.9b','2.9c'],
  'actualFirstFloorAboveAuthoredGroundMM':3450+1800,
@@ -128,6 +141,26 @@ assert host['frontToCylinderBody']==31
 assert host['openProtectedLeafIntrudesTrialFrontFieldMM']==[482,44]
 assert host['frontFitsIntermediateArchX']
 assert not host['850CartWith25EdgesPassesEast']
+
+# Actual intermediate wall has194mm finished thickness, not only27mm finish.
+# A rotated W9 base clears the opening itself but its east front field crosses
+# the solid east pier. Keep this plausible-looking geometric escape falsified.
+plant_wall=next(w for w in h['groundWalls'] if w['a']==[9300,3700] and w['b']==[12000,3700])
+assert plant_wall['finishedFaces']==[3603,3797]
+arch_lo=10287.5-1275/2+27
+arch_hi=10287.5+1275/2-27
+rotated_w9=[10184,2672,597,1006]
+rotated_w9_front=[10781,2672,600,1006]
+host['rejectedEastFrontRotation']={
+ 'bodyBase':rotated_w9,'trial600FrontField':rotated_w9_front,
+ 'protectedLeafGapMM':10184-10159,
+ 'trialFrontFieldToEastWallMM':11570.5-11381,
+ 'intermediateFinishedWallFacesY':plant_wall['finishedFaces'],
+ 'finishedArchJambsX':[arch_lo,arch_hi],
+ 'frontFieldSolidEastPierOverlapMM':[11381-arch_hi,3678-plant_wall['finishedFaces'][0]],
+ 'decision':'Rejected complete front field despite body/leaf/cylinder clearance. Moving75mm south to clear finished wall would put body50mm inside2647south boundary; do not silently remove pier or shrink service field.'}
+assert host['rejectedEastFrontRotation']['frontFieldSolidEastPierOverlapMM']==[483,75]
+assert 3603-1006<2647
 
 # Prefer upper-only branch sizing and an east/north riser over a permanent
 # bed shift. These are proposed actual component/tool states, not HAD adoption.
@@ -225,6 +258,20 @@ carrier={'status':'Indoor loaded-carrier/operator geometric comparison only; loa
  'constituents':'Trolley timber deck, TPE wheels and any restraints are temporary-tool constituents, not hidden permanent-service material admission.'}
 assert min(carrier['actualProtectedDoorEachSideReserveMM'],carrier['operatorEachSideDoorReserveMM'],carrier['initialOperatorToEastWallMM'],carrier['turnCarrierWestReserveMM'],carrier['turnOperatorEastReserveMM'],carrier['turnOperatorNorthReserveMM'],carrier['operatorToWCWallDuringWestRunMM'])>25
 assert cy+rear_offset+operator_r>4110
+renewal['nativeReplaceableAssemblyEvidence']={
+ 'manufacturerModelPage':'https://www.casastore.fi/swegon-casa-w9-genius?lang=en&region_selected=1',
+ 'accessed':'2026-11-06','modelBoundary':'Manufacturer page says Genius manufactured from2026; actual device typeplate/QR revision must match.',
+ 'fanPackage':{'part':'F230W','url':'https://www.casastore.fi/puhallinpakkaus-w9-r-l-mallin-tulo-poisto?id=61',
+  'declared':'Complete fan,connector and fan seal; explicitly compatible with Genius and Smart. No exact seal formulation or handling mass/dimensions supplied.'},
+ 'core':{'part':'61030','url':'https://www.casastore.fi/lto-kenno3',
+  'declared':'Manufacturer explicitly lists Genius and Smart compatibility; full core first-release/withdrawal envelope and supported mass remain unknown.'},
+ 'doors':{'part':'DW9RL','url':'https://www.casastore.fi/ovi-w9-r-ja-l-malli-32018-gt',
+  'declared':'Both doors included; Genius and SmartA/B compatibility explicit. Not a measured hinge sweep, panel mass or support procedure.'},
+ 'linkedServiceManual':{'url':'https://serviceportal.swegon.com/fi//docs/TM_W9_EN',
+  'identity':'Manufacturer Genius-page maintenance link resolves to2024-09-03 W9Smart manual,not current Genius instructions.',
+  'boundedComparison':'Same-part compatibility supports examining core bracket/fan collar/connector release as a real predecessor method; actual current fasteners, seals, removal fields and safe supported handling still need confirmation.',
+  'notTransferred':['155kgSmart mass','Smart firmware/control behaviour','unmeasured nativeGenius front clearance','unpublished component dimensions/masses']},
+ 'materialBoundary':'Replacement is a complete package including fan seal/connector, not bare metal impeller. No certified internals modified or hidden polymer assumption.'}
 # A native LCD placed behind a ceiling hatch is not ordinary visible feedback.
 # This eye-level service cabinet is a physical alternative, not adopted HAD.
 visibility={'status':'Unselected visible manual-operation comparison; no automatic alarm or hob interlock credit',
@@ -458,6 +505,8 @@ def plan(px,title,body,field,field_note):
   x,y,w,d=box
   svg.append(f'<rect x="{ox+(x-9397)*scale:.2f}" y="{oy+(4700-y-d)*scale:.2f}" width="{w*scale:.2f}" height="{d*scale:.2f}" fill="{fill}" stroke="{stroke}" stroke-width="1.5"'+(f' stroke-dasharray="{dash}"' if dash else '')+'/>')
  rect([9397,2647,2173.5,2053],'#ffffff','#68747b')
+ rect([9397,3603,arch_lo-9397,194],'#a7a7a1','#777770')
+ rect([arch_hi,3603,11570.5-arch_hi,194],'#a7a7a1','#777770')
  rect([9510,3900,700,700],'#d8dde0','#68747b')
  rect([9397,3534,762,44],'#202a31','#202a31')
  rect(field,'#eef4ec','#66865a','7 4')
@@ -469,6 +518,7 @@ def plan(px,title,body,field,field_note):
  label(ox+360,oy+107,'1 m = 160 px','s')
  label(ox+360,oy+158,'Body: blue','s')
  label(ox+360,oy+182,'Front: dashed','s')
+ label(ox+360,oy+206,'Wall: grey','s')
  label(px,946,field_note,'s')
 plan(38,'W9 north-front trial',host['unitAndBasePlan'],host['frontTrialField'],'600 mm front trial: 31 mm to cylinder; open leaf intrudes 482 × 44 mm.')
 plan(628,'VTC east-front offset trial',systemair['minimalEastShiftTrial']['body'],systemair['minimalEastShiftTrial']['frontField'],'750 mm native front field; 25 mm leaf gap; 21.5 mm east-wall reserve.')

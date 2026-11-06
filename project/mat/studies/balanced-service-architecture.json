@@ -39,8 +39,9 @@
       "sixOtherHabitableEachLps": 13.333333333333334,
       "kitchenTransferLps": 0,
       "ideal7600TransferDropPa": 0.0,
-      "worstResidualWith2LpsDamperError": 2,
-      "ideal7600DropWith2LpsErrorPa": 0.1116668813152274,
+      "actuatorRatedToleranceLps": 2,
+      "residualWithActuatorRatedToleranceLps": 2,
+      "ideal7600DropWithActuatorTolerancePa": 0.1116668813152274,
       "massBalanceLps": 0
     },
     {
@@ -50,8 +51,9 @@
       "sixOtherHabitableEachLps": 13.333333333333334,
       "kitchenTransferLps": 0,
       "ideal7600TransferDropPa": 0.0,
-      "worstResidualWith2LpsDamperError": 2,
-      "ideal7600DropWith2LpsErrorPa": 0.1116668813152274,
+      "actuatorRatedToleranceLps": 2.4000000000000004,
+      "residualWithActuatorRatedToleranceLps": 2.4000000000000004,
+      "ideal7600DropWithActuatorTolerancePa": 0.16080030909392748,
       "massBalanceLps": 0
     }
   ],
@@ -89,7 +91,24 @@
     "baseline": "Electric/no-combustion programme; no gas-appliance interlock is inferred.",
     "visibleManualComparison": "Native GC10/app displays unit alarms, including E181 pressure-sensor and E191 pressure-control failures; serious faults also flash hood LEDs. Stop cooking on alarm or lost capture, retain ventilation if available, and repair/recommission before cooking resumes.",
     "unearnedDetectability": "An open hood contact wire can silently leave the kitchen supply at16 while mechanical extract is48. Unit RPM and upstream duct pressure do not measure that branch loss. Hood LEDs alone are not a proven warning for every loss.",
-    "decision": "Conventional visible warning plus manual stop remains preferable to an automatic hob interlock if every relevant failure is actually detected. A local branch-flow indication/comparison or native qualified equivalent is still required before this manual contract is admitted; no universal automated inhibit requirement is invented."
+    "decision": "Conventional visible warning plus manual stop remains preferable to an automatic hob interlock if every relevant failure is actually detected. A local branch-flow indication/comparison or native qualified equivalent is still required before this manual contract is admitted; no universal automated inhibit requirement is invented.",
+    "proportionalSupplyFlowReadyComparison": {
+      "status": "Proportional ordinary indication comparison; no selected relay, fault alarm or hob safety interlock",
+      "source": "REACT V GMB IOM,2025-05-16,p11:U actual-flow feedback in selected0..10V mode maps0..Vnom108L/s; it does not indicate damper position.",
+      "native0to10FeedbackVolts": {
+        "normal16": 1.4814814814814814,
+        "cooking48": 4.444444444444445,
+        "brokenContact16": 1.4814814814814814
+      },
+      "normalUpperWithRatedToleranceLps": 18,
+      "cookingLowerWithRatedToleranceLps": 45.6,
+      "authoredIndicationThresholdLps": 40,
+      "thresholdVoltsIn0to10Mode": 3.7037037037037037,
+      "manualDisplayPrice": "Expose actual/setpoint LCD at ordinary height; user must recognise16versus48 and act. A steady16is normal to regulator; numerical premeal checks are not selected.",
+      "singleReadyIndicationPrice": "Reuse nativeU through one matched voltage threshold/visible indicator, independently powered and labelled Kitchen supply flow. No new room pressure loop, sensor or BMS is inherently required. Compatible electrical loading, mode, hysteresis/startup response, enclosure/access and full constituents still need binding.",
+      "ordinaryUse": "After selecting cooking, an absent supply-flow indication would make16fallback visible without interpreting numbers; stop cooking if required duty is absent. Normal16need not show ready. No universal appliance checklist is imposed.",
+      "limits": "A green supply indication cannot prove capture, extract flow, tube integrity/calibration, heat/frost provision or fire state. Stale-highU/relay contact or lamp failure and hood restriction remain detection/admission work; no cooking-safe light or automatic enable is claimed."
+    }
   },
   "protectedStairRule": {
     "primary": "https://assets.publishing.service.gov.uk/media/6aa3bb335f6e942efe37f150/AD_B1_2026.pdf",
@@ -175,7 +194,36 @@
     "doorStateHold": "Fully open native protected leaf occupies482x44mm of trial front field. Closed-door component service and reopened-door body withdrawal must be proved as separate supported states; full front access with door open is not earned.",
     "frontFitsIntermediateArchX": true,
     "850CartWith25EdgesPassesEast": false,
-    "scope": "Static challenger only. Native panel/component withdrawal, operator, supports, condensation, lifting and continuous renewal must be bound before fit selection."
+    "scope": "Static challenger only. Native panel/component withdrawal, operator, supports, condensation, lifting and continuous renewal must be bound before fit selection.",
+    "rejectedEastFrontRotation": {
+      "bodyBase": [
+        10184,
+        2672,
+        597,
+        1006
+      ],
+      "trial600FrontField": [
+        10781,
+        2672,
+        600,
+        1006
+      ],
+      "protectedLeafGapMM": 25,
+      "trialFrontFieldToEastWallMM": 189.5,
+      "intermediateFinishedWallFacesY": [
+        3603,
+        3797
+      ],
+      "finishedArchJambsX": [
+        9677.0,
+        10898.0
+      ],
+      "frontFieldSolidEastPierOverlapMM": [
+        483.0,
+        75
+      ],
+      "decision": "Rejected complete front field despite body/leaf/cylinder clearance. Moving75mm south to clear finished wall would put body50mm inside2647south boundary; do not silently remove pier or shrink service field."
+    }
   },
   "upperOnlyRiserComparison": {
     "status": "Proposed smaller coherent geometry; actual matched components, access and structural admission remain open",
@@ -329,7 +377,39 @@
     "gradeMM": -1800,
     "handling": "156kg is not hand-carried. Uniform native bottom lifting, captured rated carrier, actual handles/wheels/driver, safe threshold and1:20slope braking remain to be earned.",
     "negativeControl": "850cart remains rejected through742.5. Rotated597body is a different object; neither body geometry nor nominal trolley deck qualifies handling.",
-    "externalEastAlternative": "A dense sampled1006x597body-only two-turn plant path exists, but no added east landing/1800lift/hoist is admitted. Prefer real front route if complete carrier and approach can be proved."
+    "externalEastAlternative": "A dense sampled1006x597body-only two-turn plant path exists, but no added east landing/1800lift/hoist is admitted. Prefer real front route if complete carrier and approach can be proved.",
+    "nativeReplaceableAssemblyEvidence": {
+      "manufacturerModelPage": "https://www.casastore.fi/swegon-casa-w9-genius?lang=en&region_selected=1",
+      "accessed": "2026-11-06",
+      "modelBoundary": "Manufacturer page says Genius manufactured from2026; actual device typeplate/QR revision must match.",
+      "fanPackage": {
+        "part": "F230W",
+        "url": "https://www.casastore.fi/puhallinpakkaus-w9-r-l-mallin-tulo-poisto?id=61",
+        "declared": "Complete fan,connector and fan seal; explicitly compatible with Genius and Smart. No exact seal formulation or handling mass/dimensions supplied."
+      },
+      "core": {
+        "part": "61030",
+        "url": "https://www.casastore.fi/lto-kenno3",
+        "declared": "Manufacturer explicitly lists Genius and Smart compatibility; full core first-release/withdrawal envelope and supported mass remain unknown."
+      },
+      "doors": {
+        "part": "DW9RL",
+        "url": "https://www.casastore.fi/ovi-w9-r-ja-l-malli-32018-gt",
+        "declared": "Both doors included; Genius and SmartA/B compatibility explicit. Not a measured hinge sweep, panel mass or support procedure."
+      },
+      "linkedServiceManual": {
+        "url": "https://serviceportal.swegon.com/fi//docs/TM_W9_EN",
+        "identity": "Manufacturer Genius-page maintenance link resolves to2024-09-03 W9Smart manual,not current Genius instructions.",
+        "boundedComparison": "Same-part compatibility supports examining core bracket/fan collar/connector release as a real predecessor method; actual current fasteners, seals, removal fields and safe supported handling still need confirmation.",
+        "notTransferred": [
+          "155kgSmart mass",
+          "Smart firmware/control behaviour",
+          "unmeasured nativeGenius front clearance",
+          "unpublished component dimensions/masses"
+        ]
+      },
+      "materialBoundary": "Replacement is a complete package including fan seal/connector, not bare metal impeller. No certified internals modified or hidden polymer assumption."
+    }
   },
   "nativeCarrierAndOperatorComparison": {
     "status": "Indoor loaded-carrier/operator geometric comparison only; loading/capture and slope operation not admitted",

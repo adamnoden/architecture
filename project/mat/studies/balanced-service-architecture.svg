@@ -34,6 +34,8 @@
 <text x="38" y="493" class="s">VTC 144 L/s maximum supply envelope ≈310 Pa ±25; actual dirty-filter network and sound remain unknown.</text>
 <text x="38" y="548" class="h">W9 north-front trial</text>
 <rect x="53.00" y="580.00" width="347.76" height="328.48" fill="#ffffff" stroke="#68747b" stroke-width="1.5"/>
+<rect x="53.00" y="724.48" width="44.80" height="31.04" fill="#a7a7a1" stroke="#777770" stroke-width="1.5"/>
+<rect x="293.16" y="724.48" width="107.60" height="31.04" fill="#a7a7a1" stroke="#777770" stroke-width="1.5"/>
 <rect x="71.08" y="596.00" width="112.00" height="112.00" fill="#d8dde0" stroke="#68747b" stroke-width="1.5"/>
 <rect x="53.00" y="759.52" width="121.92" height="7.04" fill="#202a31" stroke="#202a31" stroke-width="1.5"/>
 <rect x="97.80" y="712.96" width="160.96" height="96.00" fill="#eef4ec" stroke="#66865a" stroke-width="1.5" stroke-dasharray="7 4"/>
@@ -45,9 +47,12 @@
 <text x="413" y="687" class="s">1 m = 160 px</text>
 <text x="413" y="738" class="s">Body: blue</text>
 <text x="413" y="762" class="s">Front: dashed</text>
+<text x="413" y="786" class="s">Wall: grey</text>
 <text x="38" y="946" class="s">600 mm front trial: 31 mm to cylinder; open leaf intrudes 482 × 44 mm.</text>
 <text x="628" y="548" class="h">VTC east-front offset trial</text>
 <rect x="643.00" y="580.00" width="347.76" height="328.48" fill="#ffffff" stroke="#68747b" stroke-width="1.5"/>
+<rect x="643.00" y="724.48" width="44.80" height="31.04" fill="#a7a7a1" stroke="#777770" stroke-width="1.5"/>
+<rect x="883.16" y="724.48" width="107.60" height="31.04" fill="#a7a7a1" stroke="#777770" stroke-width="1.5"/>
 <rect x="661.08" y="596.00" width="112.00" height="112.00" fill="#d8dde0" stroke="#68747b" stroke-width="1.5"/>
 <rect x="643.00" y="759.52" width="121.92" height="7.04" fill="#202a31" stroke="#202a31" stroke-width="1.5"/>
 <rect x="867.32" y="763.68" width="120.00" height="140.80" fill="#eef4ec" stroke="#66865a" stroke-width="1.5" stroke-dasharray="7 4"/>
@@ -59,6 +64,7 @@
 <text x="1003" y="687" class="s">1 m = 160 px</text>
 <text x="1003" y="738" class="s">Body: blue</text>
 <text x="1003" y="762" class="s">Front: dashed</text>
+<text x="1003" y="786" class="s">Wall: grey</text>
 <text x="628" y="946" class="s">750 mm native front field; 25 mm leaf gap; 21.5 mm east-wall reserve.</text>
 <text x="38" y="985" class="s">No cart, supported loading, hinged-door swing, complete ports, frost, sound or constituent admission is implied.</text>
 <text x="38" y="1011" class="s">Source: balanced-service-architecture.json; pinned HAD/Services geometry; Systemair native cards 2023/2024.</text>
