@@ -1,6 +1,6 @@
 {
   "status": "FALSIFIED as complete floor boundary: upper-pier splice leaves ground-to-grid-to-RC-field capillary bypass. Local geometry/sensitivity retained; no selected rewind.",
-  "sourceControlSHA256": "399baab6517baa354aed75848ed87f51543a74cea23c90a3b406d631bcff0627",
+  "sourceControlSHA256": "8d8e99158624e0b233940464525cfd455004eaf870d53afac3266b8a7660c452",
   "sources": {
     "STR": {
       "commit": "18e802fbbf23730db69d922707e3576576cd8c19",
@@ -8,9 +8,9 @@
       "blob": "f37fca49400c3b61a518cf25e20db6ab18234bf4"
     },
     "HAD": {
-      "commit": "8dc93940aa0fcd5d15fc533d907da35a1e5ac591",
+      "commit": "c2d5c3805cfa70739130d1cf4a593c8f17a9c414",
       "path": "project/had/studies/water-replan.json",
-      "blob": "34b58a0a08a07d57b90a483fa64e5119a42fe7c5"
+      "blob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b"
     },
     "STRground": {
       "commit": "0a40215a8a562bc0d9e554edcf89778023598262",

@@ -103,7 +103,8 @@ def produce():
       assert segment in threshold_code.replace(' ',''), 'Actual HAD renderer step mismatch'
     wet_length=tp['fallY'][-1][0]-tp['fallY'][0][0]
     whole_length=tp['fallY'][-1][0]-profile[0][0]
-    whole_height=tp['ends']['crestZ']-(min(z for y,z in tp['fallY'])-tp['thickness'])
+    all_z=[z for y,z in profile+tp['fallY']]
+    whole_height=max(tp['ends']['crestZ'],*all_z)-(min(all_z)-tp['thickness'])
     renewal=threshold['maintainedState']['panTask']
     assert renewal['wholeBodyMaximum']==tp['bodyEnvelope']['dimensions']==[tp['outerX'][1]-tp['outerX'][0],whole_length,whole_height]
     assert math.isclose(renewal['planRotationRadius'],math.hypot(tp['outerX'][1]-tp['outerX'][0],whole_length)/2,abs_tol=1e-9)
