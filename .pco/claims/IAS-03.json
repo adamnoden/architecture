@@ -9,13 +9,13 @@
     "label": "zerg-20261106-w1"
   },
   "claimedAt": "2026-11-06T07:38:01.585Z",
-  "heartbeatAt": "2026-11-06T11:44:21.454Z",
-  "expiresAt": "2026-11-06T12:29:21.454Z",
+  "heartbeatAt": "2026-11-06T12:03:51.514Z",
+  "expiresAt": "2026-11-06T12:48:51.514Z",
   "checkpoint": {
-    "evidence": "PR1336 exact0821237baf9e06f273f5e39a57d2035ca1b79484 conservative static lift/ceiling reference; nativehistorical audit/sourceversion/doorcorrection preserved; directarithmetic/integrity/diff passed",
-    "next": "Exact-head fullCI and freshpreflight; actual rolling/door/level/floor/wholepipe/tool/emergency remain held. No wholeevent or IAS completion"
+    "evidence": "PR1336 merged19f1956fc11b0b1aca8693f2f88779ce3fe1d5fd; fullCI42212446397attempt2success; issue941 open reconciled; oldhead404; priorrebind timeout confirmedremoteoldblob7f27unchanged, no write occurred",
+    "next": "One actual-axle conservative rolling/access method with native gate-end contacts and uphill limits; no free-box yaw or catalogue expansion. Staticcontract remains unselected; IAS incomplete"
   },
-  "branch": "work/zerg-20261106-w1d",
+  "branch": "work/zerg-20261106-w1e",
   "predecessor": {
     "leaseId": "c07019d5-45b2-40cb-95ac-92932149eff1",
     "generation": 21,
