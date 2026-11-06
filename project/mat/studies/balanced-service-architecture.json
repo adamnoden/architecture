@@ -1,7 +1,7 @@
 {
   "status": "Unselected whole-system challenger; no canonical numeric owner migration or material exception",
   "developmentDecision": {
-    "leadingInvestigation": "W9directcapture96/128withdedicated16/48kitchensupply and fixed80elsewhere",
+    "leadingInvestigation": "W9directcapture96/128withdedicated16/48kitchensupply,fixed80elsewhere and limitedUboostindication",
     "reason": "Native cooking/paired-pressure direction retains cooking heat recovery and meets labelled16C/70percentcoldpoint with native900postheat; materials, supported renewal and true operating points remain unearned.",
     "challenger": "VTCseparatecapture96/96normal,144/96plus48hoodcooking; smaller/mineralcabinet remains promising but extra motor/64kitchensupply/unequalcore/preheatpostheat must be carried.",
     "decisiveChecks": [
@@ -104,23 +104,129 @@
     "baseline": "Electric/no-combustion programme; no gas-appliance interlock is inferred.",
     "visibleManualComparison": "Native GC10/app displays unit alarms, including E181 pressure-sensor and E191 pressure-control failures; serious faults also flash hood LEDs. Stop cooking on alarm or lost capture, retain ventilation if available, and repair/recommission before cooking resumes.",
     "unearnedDetectability": "An open hood contact wire can silently leave the kitchen supply at16 while mechanical extract is48. Unit RPM and upstream duct pressure do not measure that branch loss. Hood LEDs alone are not a proven warning for every loss.",
-    "decision": "Conventional visible warning plus manual stop remains preferable to an automatic hob interlock if every relevant failure is actually detected. A local branch-flow indication/comparison or native qualified equivalent is still required before this manual contract is admitted; no universal automated inhibit requirement is invented.",
+    "decision": "Develop native unit/hood alarms plus one proportional visible local supply-boost indication and manual stop/repair response for this all-electric cooking strategy. Resolve the known silent16fallback meaningfully without demanding universal fault detection or an automatic hob interlock.",
     "proportionalSupplyFlowReadyComparison": {
-      "status": "Proportional ordinary indication comparison; no selected relay, fault alarm or hob safety interlock",
+      "status": "Preferred proportional diagnostic development comparison; actual apparatus/constituents not admitted and no hob safety interlock",
       "source": "REACT V GMB IOM,2025-05-16,p11:U actual-flow feedback in selected0..10V mode maps0..Vnom108L/s; it does not indicate damper position.",
+      "proposedNativeConfiguration": {
+        "IOMPage": 8,
+        "Mode": "0Ai:0..10Vanalogue",
+        "Diag": "oFF:normaloperation",
+        "MinLps": 16,
+        "MaxLps": 48,
+        "NomLps": 108,
+        "unitMatrix": "L/s:no square",
+        "status": "Authored commissioning settings,not observed installed settings or assumed factory defaults"
+      },
+      "nativeFeedbackFormulas": {
+        "IOMPage": 11,
+        "0to10": "U=10*Vact/Vnom",
+        "2to10": "U=2+8*Vact/Vnom",
+        "reference": "U always refers to0..Vnom,not Y input Min..Max span;not damper position"
+      },
       "native0to10FeedbackVolts": {
         "normal16": 1.4814814814814814,
         "cooking48": 4.444444444444445,
-        "brokenContact16": 1.4814814814814814
+        "brokenContact16": 1.4814814814814814,
+        "normalRatedRange": [
+          1.2962962962962963,
+          1.6666666666666667
+        ],
+        "cookingRatedRange": [
+          4.222222222222222,
+          4.666666666666667
+        ]
+      },
+      "alternate2to10NegativeControl": {
+        "Mode": "2Ai:not selected",
+        "normal16V": 3.185185185185185,
+        "cooking48V": 5.555555555555555,
+        "correct40LpsThresholdV": 4.962962962962963,
+        "flowAtUnchanged0to10ThresholdLps": 23.0,
+        "result": "Unchanged threshold would mean23L/s,not40;reject mode mismatch and remap/recommission switching,return,tolerance/drift before use"
       },
       "normalUpperWithRatedToleranceLps": 18,
       "cookingLowerWithRatedToleranceLps": 45.6,
       "authoredIndicationThresholdLps": 40,
       "thresholdVoltsIn0to10Mode": 3.7037037037037037,
       "manualDisplayPrice": "Expose actual/setpoint LCD at ordinary height; user must recognise16versus48 and act. A steady16is normal to regulator; numerical premeal checks are not selected.",
-      "singleReadyIndicationPrice": "Reuse nativeU through one matched voltage threshold/visible indicator, independently powered and labelled Kitchen supply flow. No new room pressure loop, sensor or BMS is inherently required. Compatible electrical loading, mode, hysteresis/startup response, enclosure/access and full constituents still need binding.",
-      "ordinaryUse": "After selecting cooking, an absent supply-flow indication would make16fallback visible without interpreting numbers; stop cooking if required duty is absent. Normal16need not show ready. No universal appliance checklist is imposed.",
-      "limits": "A green supply indication cannot prove capture, extract flow, tube integrity/calibration, heat/frost provision or fire state. Stale-highU/relay contact or lamp failure and hood restriction remain detection/admission work; no cooking-safe light or automatic enable is claimed."
+      "singleReadyIndicationPrice": "Reuse nativeU through DUB01CD4810V and one XB4BVB3 visible indicator labelled SUPPLY BOOST. No new room pressure loop,sensor or BMS. Real power,materials,calibration and electrical enclosure/access are charged below.",
+      "ordinaryUse": "During cooking, missing expected SUPPLY BOOST makes the silent16fallback meaningfully visible without reading flow numbers. Stop cooking on observed lost capture/makeup or native alarm; investigate/repair and recommission before resuming. Native full-stroke100s is not actual16to48settling time: commission the real transient and explain ordinary starting indication without a numerical premeal checklist.",
+      "limits": "SUPPLY BOOST means reusedU is above its commissioned threshold only. It is not green-safe or proof of capture/extract, tube/calibration integrity, heat/frost or fire state. Stale-highU, shared measurement faults and welded relay contact can mislead; lamp/power loss can remove indication. Retain native protections and explicit response/maintenance; do not make infallible detection of every hood/sensor failure an admission condition for this limited diagnostic.",
+      "matchedNativeMonitorComparison": {
+        "part": "CarloGavazziDUB01CD4810V",
+        "source": "https://www.gavazziautomation.com/fileadmin/images/PIM/DATASHEET/ENG/DUB01CB%20DS%20ENG.pdf",
+        "nativeIdentity": "Manufacturer03.03.2025datasheet,pp1..4;D48is24..48VAC/DC,notB23mains variant.",
+        "nativeCaseMM": [
+          22.5,
+          80,
+          99.5
+        ],
+        "nativeMassG": 150,
+        "nativePowerDCW": 3,
+        "nativePowerACVA": 4,
+        "nativeInputResistanceMinimumOhm": 200000,
+        "selectedNativeRangeV": [
+          1,
+          10
+        ],
+        "maximumLoadAt10VmA": 0.05,
+        "GMBNativeMaximumOutputLoadmA": 0.5,
+        "nativeHousing": "PolyamideNylon or phenyleneether+polystyrene; exact supplied revision/BOM still required. Electronics,contacts and enclosure/wire insulation are retained,not stripped or excepted.",
+        "nativeContact": "SPDT,5Aat24VDC;ordinary contact,not force-guided safety output.",
+        "nativeSettings": "Overvoltage,normallydeenergized,nonlatching:energize output only whenU exceeds commissioned setpoint.5percent relative hysteresis and1sdelay are authored commissioning trials within native0..30percent/0.1..30s ranges.",
+        "trialThresholdV": 3.7037037037037037,
+        "trialEquivalentThresholdLps": 40,
+        "trialHysteresisV": 0.1851851851851852,
+        "trialDropoutEquivalentLps": 38,
+        "nativeRepeatabilityFullScalePercent": 0.5,
+        "nativeDriftPPMperC": 1000,
+        "nativeAccuracyWarmupMinutes": 15,
+        "electronicsOnly30CDifferenceSensitivityV": 0.35,
+        "electronicsOnlyEquivalentTripBandLps": [
+          36.22,
+          43.78
+        ],
+        "calibration": "Record actual0Ai,Nom108,Min16,Max48,L/s unit matrix and Diag oFF;verify terminal1..4 U against independently measured branch flow in both contact states and broken-contact trial. Verify actual switching and return after monitor native warm-up; set knob against meter,not printedscale alone. Native repeatability/drift sensitivity is not total absolute accuracy or a GMBU accuracy guarantee. Preserve0..10mode/Vnom108 and recommission after replacement.",
+        "GMBFullStrokeSeconds": 100,
+        "transientBoundary": "100sfor90degree fullstroke is native5Nm data,not the actual16to48flow settling time. Exercise hood opening/closing and known broken-contact16fallback with real pressure network and observe actualU/indication.",
+        "placement": "Accessible dry control enclosure with DINrail,terminal/wire space,IP20module protection and required electrical clearances; no enclosure or support dimensions are adopted from bare22.5mm module size."
+      },
+      "matchedNativeIndicatorComparison": {
+        "part": "SchneiderHarmonyXB4BVB3",
+        "source": "https://www.proface.com/en/product/spec/XB4BVB3",
+        "nativePlanHeightDepthMM": [
+          30,
+          47,
+          54
+        ],
+        "nativeMountDiameterMM": 22.5,
+        "nativeMassG": 80,
+        "nativeVoltageV": 24,
+        "nativeCurrentmA": 18,
+        "derivedNominalPowerDCW": 0.43199999999999994,
+        "nativeVoltageLimitsACV": [
+          21.6,
+          26.4
+        ],
+        "nativeVoltageLimitsDCV": [
+          19.2,
+          30
+        ],
+        "nativeFront": "Green integralLED,chromiumplatedmetal bezel,Zamak collar; metal front does not make the complete lamp metal. Native product page declares recycled plastic content; exact plastic/LED/electronic/seal constituents remain to bind.",
+        "label": "SUPPLY BOOST",
+        "meaning": "Reused nativeU above commissioned threshold;no cooking-safe/capture/hob-enable meaning.",
+        "mounting": "Ordinarily visible kitchen position with full54mm rear body,terminals and replaceable access; do not drill or modify a certified hood as an assumed mounting detail."
+      },
+      "realBurden": {
+        "monitorAndIndicatorMassG": 230,
+        "additionalNominalDCWWhenLit": 3.432,
+        "monitorContinuousDCkWhPerYear": 26.28,
+        "GMBPlusMonitorPlusLampNominalACVA": 7.932,
+        "massRole": "Approximate150g monitor plus nominal80g indicator only; not installed enclosure/supply/wire/support mass.",
+        "powerBoundary": "Use requiredIEC61558-1isolated24Vsupply rated for full connectedVA/inrush,including indicator voltage window and wiring drop;7.932VA is nominal connected sum,not chosen transformer rating. No borrowed unrated W9accessory output. Transformer loss/fusing/enclosure,wire/terminals,fixings and complete mandatory constituents are additional real scope.",
+        "choice": "Prefer this limited diagnostic over requiring routine16versus48LCD interpretation. Actual residues and installation still need their proper disposition; no blanket material exception or certified-internal modification."
+      }
     }
   },
   "protectedStairRule": {
@@ -870,6 +976,7 @@
     "nativePostheaterW": 900,
     "nativeFanNameplateW": 960,
     "nativePCBW": 20,
+    "nativeWinterBoundary": "CurrentGeniusIOM2026-09-17p6 balancing-functions note calls for external duct battery especially belowminus10C. Actual coil power/envelope/control/renewal/constituents are not selected; labelledminus10C16C70percent point is not a complete winter guarantee.",
     "nativeConnectionW": 2630,
     "proposedMinimumSupplyC": 16,
     "sensitivities": [
