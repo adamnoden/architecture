@@ -9,8 +9,8 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-06T22:32:31.521Z",
-  "expiresAt": "2026-11-07T00:02:31.521Z",
+  "heartbeatAt": "2026-11-06T23:13:12.551Z",
+  "expiresAt": "2026-11-07T00:43:12.551Z",
   "branch": "work/zerg-20261106-ias-g10",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
@@ -34,7 +34,7 @@
   },
   "pr": 1360,
   "checkpoint": {
-    "evidence": "Recoverable draft PR1360 head909c302755e1e8e6692e3fa693ccea20db967417 tree80bb83144fb586b86208033a42b98c98c6eab127 exact connector file readback and local tree match. One current utility native-body first-release comparator, source/native limitations explicit, rendered native and two-state sheet inspected. Prior1352 merged. No installation, material exception or IAS completion.",
-    "next": "Root review utility comparator and join Services current OPENARCH wording correction after actual source integration. Qualify real fixed endpoints/supports, hoses/container, native transit-bolt/initial drawout order and complete ordinary handling before first-release admission. Preserve specific wet-joint and all other family exits."
+    "evidence": "Frozen PR 1360 final head 2e6643c18ec23c9310f05a7ccaa9d6a2bbe158c8 tree 8220d1a433555714b666e2538b681363e9d73693 merges actual main 50093457642f65eca288e5cc233a77d8aac6bc29. Exact readback and local tree match; affected generators, source guards, workflow/integrity and diff checks pass. Root bounded research review approved. Utility physical source, native facts and specific open handling/connection holds unchanged. No installation, material exception or IAS completion.",
+    "next": "Wait for complete exact-head CI. Keep published worktree frozen for root canonical preflight and expected-head integration. After merge verify deletion and rebind fresh successor; continue actual utility drain/container, fixed-end support and initial supported extraction, coordinated with Services. Keep wet-joint and whole-family exit holds explicit."
   }
 }
