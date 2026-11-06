@@ -9,9 +9,9 @@
     "label": "zerg-str-1917"
   },
   "claimedAt": "2026-11-06T19:17:42.359Z",
-  "heartbeatAt": "2026-11-06T22:24:44.301Z",
-  "expiresAt": "2026-11-06T23:54:44.301Z",
-  "branch": "work/zerg-20261106-str-frame3",
+  "heartbeatAt": "2026-11-06T23:12:33.181Z",
+  "expiresAt": "2026-11-07T00:42:33.181Z",
+  "branch": "work/zerg-20261106-str-arch4",
   "predecessor": {
     "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
     "generation": 26,
@@ -34,9 +34,10 @@
       "blocker": "Coordinatoractualexecutionlimit; sourcefullydurable; STR-HOUSE remainsopen. No externaladmission/completionclaimed."
     }
   },
-  "pr": 1357,
+  "pr": 1362,
   "checkpoint": {
-    "evidence": "1357 ff440ad conserved high roof, finite cut floor, 52 heads, four pier splices, bounded staff bay and inspected massing",
-    "next": "Reconcile main HAD receiver; freeze after source checks and root review; complete eight joint and curved arch details"
+    "evidence": "PR #1362 on merged 1357. Coupled arch, floor and pier tests in progress.",
+    "next": "Bind eight arch/jamb/window intersections and buildable cage and outer leaf.",
+    "blocker": "Physical development under way."
   }
 }
