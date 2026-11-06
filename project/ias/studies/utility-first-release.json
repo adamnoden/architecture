@@ -26,7 +26,7 @@
     "inletHose": 1500,
     "outletHose": 1500,
     "cord": 2100,
-    "inletThread": "3/4 inch; native minimum clear bore 17 mm and thread engagement length 10 mm",
+    "inletThread": "3/4 inch; native minimum clear bore 17 mm and tap threaded-outlet length 10 mm",
     "drainHeight": [
       600,
       1000
@@ -60,7 +60,44 @@
       "protectedBoundary": "E20referencePlantdoorx9300/y2750..3650 remains; no newprotectedvolumeconnection",
       "trade": "No separateutilityacoustic/privacyclosure; actualclassifiedPlantboundaryandservicepenetrations mustqualify."
     },
-    "baselineWorking": "Washer/sink front at1400, floor task field to2000. Washer valve10800/1250 is450 from front bodycentre10800/1700, not inaccessible behind appliance. Utility door must be checked in actual open/closed modes; no sink-use pass under an untested inward900leaf. Cu/inverter work fields do not intersect proposed fixed appliance bodies."
+    "baselineWorking": "Washer/sink front at1400, floor task field to2000. Washer valve10800/1250 is450 from front bodycentre10800/1700, not inaccessible behind appliance. Utility door must be checked in actual open/closed modes; no sink-use pass under an untested inward900leaf. Cu/inverter work fields do not intersect proposed fixed appliance bodies.",
+    "washerFixture": {
+      "id": "washer-PROPOSED",
+      "level": 0,
+      "count": 1,
+      "sourceOrProposedXY": [
+        10050,
+        700
+      ],
+      "duties": [
+        "cold",
+        "waste",
+        "power"
+      ],
+      "waterBranchPlan": [
+        [
+          11200,
+          1800
+        ],
+        [
+          10800,
+          1800
+        ],
+        [
+          10800,
+          1250
+        ]
+      ],
+      "valveAxisZ": 750,
+      "waterBranchLengthIncludingDropMM": 3145,
+      "requiredValveWorkTerritory": [
+        200,
+        200,
+        300
+      ],
+      "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall."
+    }
   },
   "geometry": {
     "reservation": [
@@ -132,14 +169,14 @@
         "point": [
           10800,
           1250,
-          1050
+          750
         ],
         "shoulder": [
           10800,
           1725,
-          1450
+          1050
         ],
-        "straightReach": 620.987117418711
+        "straightReach": 561.8051263561058
       },
       "drain": {
         "point": [
@@ -155,6 +192,7 @@
         "straightReach": 561.8051263561058
       }
     },
+    "standingTapReach": 845.9462157844316,
     "electricalWorkingField": [
       9697,
       1750,

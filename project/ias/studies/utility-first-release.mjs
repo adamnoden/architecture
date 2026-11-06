@@ -9,18 +9,23 @@ function source(id,path){const b=readFileSync(new URL(path,root));sources[id]={p
 const H=source('had','project/had/studies/water-replan.json').model
 const S=source('services','project/mat/studies/whole-house-service-baseline.json')
 const U=S.interfaces.architecturalServices.utility
+assert(equal(S.rewinds.utility,U),'Services utility duplicate projections disagree')
+assert(equal(H.architecturalServices.utility,U),'HAD architectural-services utility projection disagrees')
 for(const key of ['washer','sink','rearServiceChase','valveBay','electricalStation','PVinverter']){
   assert(equal(H.groundFurniture[`service-utility-${key}`],U[key]),`Current HAD/Services utility mismatch: ${key}`)
 }
 assert(equal(H.servicesInterface.utility.washer,U.washer),'Current HAD service-interface washer mismatch')
 assert(H.utilityDisposition.operation.startsWith('OPENARCH'),'Current utility entrance is no longer the claimed open arch')
 assert(!('Q350-body' in H.groundFurniture),'Retired Q350 comparison has returned to current occurrence map')
+const valve=S.fixtures.find(f=>f.id==='washer-PROPOSED')
+assert(valve&&equal(valve.sourceOrProposedXY,U.washer.slice(0,2)),'Washer fixture and utility occurrence no longer agree')
+assert(equal(valve.waterBranchPlan.at(-1),[10800,1250])&&valve.valveAxisZ===750&&equal(valve.requiredValveWorkTerritory,[200,200,300]),'Reconcile the actual washer valve/working territory before regenerating this task')
 const native={model:'Bosch WAN282X2GB',document:'9001906867_B, 5 February 2024',
   url:'https://media3.bosch-home.com/Documents/9001906867_B.pdf',
   sha256:'cb9df5dba938f70c225d7090f7f3ffed0da286ef5910e9f7f0b7026e136c0e97',
   role:'Retired product used as one native first-release comparator; not a procurement or material selection.',
   width:598,bodyDepth:550,closedDepth:600,height:848,doorOpenDepth:1017,massKg:68.9,
-  inletHose:1500,outletHose:1500,cord:2100,inletThread:'3/4 inch; native minimum clear bore 17 mm and thread engagement length 10 mm',
+  inletHose:1500,outletHose:1500,cord:2100,inletThread:'3/4 inch; native minimum clear bore 17 mm and tap threaded-outlet length 10 mm',
   drainHeight:[600,1000],siphonClampDiameter:[24,40],
   sources:{connection:'pp. 14–16',drain:'pp. 33–34',removalAndTransit:'p. 45',dimensions:'pp. 47–48'},
   limits:['No lifting alone or gripping protruding parts; upright transport; four feet on an even solid surface.',
@@ -46,17 +51,18 @@ function circleClearance(c,box){return Math.hypot(Math.max(box[0]-c[0],c[0]-box[
 const frontClear=Math.min(...Object.values(H.groundFurniture).map(b=>circleClearance(frontWorker,b)))
 const rearClear=Math.min(circleClearance(rearWorker,rest),...retained.map(([,b])=>circleClearance(rearWorker,b)))
 assert(frontClear>=25&&rearClear>=25,'Authored static worker proxy lost its stated clearance')
-const tasks={tap:{point:[10800,1250,1050],shoulder:[10800,1725,1450]},drain:{point:[10800,1250,800],shoulder:[10800,1725,1100]}}
+const tasks={tap:{point:[...valve.waterBranchPlan.at(-1),valve.valveAxisZ],shoulder:[10800,1725,1050]},drain:{point:[10800,1250,800],shoulder:[10800,1725,1100]}}
+const standingTapReach=Math.hypot(475,1450-valve.valveAxisZ)
 for(const t of Object.values(tasks))t.straightReach=Math.hypot(...t.point.map((v,i)=>v-t.shoulder[i]))
 const electricalWorkOverlap=overlap(rest,U.electricalWorkingField)
 assert(electricalWorkOverlap>0,'Review changed electrical-task coexistence before removing the documented temporary occupation')
 const result={status:'Conditional utility first-release comparator; no connected, worker, support, handling or installation pass',units:'mm unless named otherwise',sources,native,
   sourceDisposition:{legacyX9500:'Historical I00-C1 upper small-en-suite front remains unadopted. Current utility washer is a different owning occurrence; this task neither relocates nor discharges the accepted-source reservation.',
     Q350:'Explicitly retired uninstalled plant comparison in current Services; absent from current HAD. Ventilation function now has its separate W9 source/method; no installed device is silently removed.',
-    entrance:H.utilityDisposition,baselineWorking:U.working},
+    entrance:H.utilityDisposition,baselineWorking:U.working,washerFixture:valve},
   geometry:{reservation:R,body,rest,pull,sweep,retainedFixtureCount:retained.length,collisions,nearestFixtureClearances:nearest.slice(0,5),
     northWallFace:northFace,northRestReserve:northFace-rest[1]-rest[3],rearBodyClearToOldReservation:rest[1]-(R[1]+R[3]),
-    frontWorker,rearWorker,frontWorkerClearance:frontClear,rearWorkerClearance:rearClear,tasks,
+    frontWorker,rearWorker,frontWorkerClearance:frontClear,rearWorkerClearance:rearClear,tasks,standingTapReach,
     electricalWorkingField:U.electricalWorkingField,temporaryElectricalWorkingOverlapMM2:electricalWorkOverlap},
   sequence:['Keep washer upright on its native feet; do not attach its mass, retained pipe support or electrical protection to a decorative face.',
     'Before any movement: turn off actual local tap; empty inlet, switch off and unplug at accessible fixed socket; drain cooled residual water through native front service hose into a supported sufficiently large container.',
