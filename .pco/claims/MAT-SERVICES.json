@@ -9,11 +9,11 @@
     "label": "zerg-20261106-w3"
   },
   "claimedAt": "2026-11-06T07:38:05.136Z",
-  "heartbeatAt": "2026-11-06T12:10:53.708Z",
-  "expiresAt": "2026-11-06T12:55:53.708Z",
+  "heartbeatAt": "2026-11-06T12:21:38.784Z",
+  "expiresAt": "2026-11-06T13:06:38.784Z",
   "checkpoint": {
-    "evidence": "PR1332 merged at8ab19d48; exact Services69c7/a819 source and D1800 foul/plant join retained. Shared branch auto-deleted. Successor starts exact current merged main; no new source edits.",
-    "next": "Bounded next services decision from current programme: prioritize real coupled heat/ventilation and matched renewal or constituent admission; no duplicate RWT hydraulic work."
+    "evidence": "PR1332 merged8ab19d48 after exactCI42214404744 and freshg20preflight12:06:21.862Z atd397. Services69c7/a819 retained. Fresh successor remote at8ab19d48 has no edits/WIP. Bounded follow-on earns no source change: actual kitchen has no Nloggia opening, native Virax263605 loaded geometry remains unbound; current Salsa/Twist manuals do not supply a qualified pressure-fault stop. Existing source accurately retains both holds.",
+    "next": "MAT-SERVICES remains OPEN. Highest useful next decision is a coherent full cooker/makeup/heat/control and actual renewal successor, or exact constituent assembly; do not revive narrow200mm handler witness or assume AOoff is protective qualification. Source/current house authoritative at merged8ab19d48. Follow-on bounded no-change; releasing handoff, no unattended heartbeat."
   },
   "branch": "work/zerg-20261106-w3-services-next",
   "predecessor": {
