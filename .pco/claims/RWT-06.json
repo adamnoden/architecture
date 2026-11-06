@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06"
   },
   "claimedAt": "2026-11-06T12:11:10.492Z",
-  "heartbeatAt": "2026-11-06T12:54:51.175Z",
-  "expiresAt": "2026-11-06T14:24:51.175Z",
+  "heartbeatAt": "2026-11-06T13:23:17.412Z",
+  "expiresAt": "2026-11-06T14:53:17.412Z",
   "branch": "work/zerg-20261106-rwt06",
   "predecessor": {
     "leaseId": "043efc30-2eff-4e39-8c55-1293a1133063",
@@ -36,8 +36,8 @@
   },
   "pr": 1338,
   "checkpoint": {
-    "evidence": "Draft PR1338 d5a16a3f/tree8a81d75b preserved. RWT-owned N/E receiver refinement and strict MAT sequence adapter developed; current127RWT,19HAD,6MAT checks pass locally; successor publication next.",
-    "next": "Publish source-bound receiver refinement and actual250-entry momentum bound; complete event and maintenance investigation with root.",
-    "blocker": "Actual250 side-entry has no earned600 spread; downstream capture/first-wet bounds remain under investigation, not arbitrary K failure."
+    "evidence": "PR1338 exact0f331fb4/tree53dfe642:source-owned receiver/strict MAT adapter authenticated W5;131RWT,19HAD,6MAT pass. Finite unadopted graded transfer comparison and owning full RWT06 exit map durable.",
+    "next": "Earn small captured panel retrieval and canopy terminal joins; resolve finite high-eave/current access duties before packet completion. Root coordinates exact-head CI/integration.",
+    "blocker": "No full hydraulic/firstwet/site admission. Graded transfer unselected until actual plan/handling/canopy joins; historical high-eave AWP/cup/reversal not inherited."
   }
 }
