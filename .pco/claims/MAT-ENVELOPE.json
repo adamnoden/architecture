@@ -9,12 +9,12 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-06T19:55:44.964Z",
-  "expiresAt": "2026-11-06T21:25:44.964Z",
+  "heartbeatAt": "2026-11-06T20:06:00.728Z",
+  "expiresAt": "2026-11-06T21:36:00.728Z",
   "checkpoint": {
-    "evidence": "Owning pan checkpoint 8dc93940 and draft 1348 published; HAD and MAT checks pass",
-    "next": "Rebind immutable MAT consumer to corrected owning source",
-    "blocker": "Physical and constituent qualification remain open"
+    "evidence": "Final 1348 cb921167 / tree badbde39 corrects integral pan envelope and all-point extrema; HAD21 and affected MAT checks pass; exact CI in progress",
+    "next": "Freeze head, obtain exact CI and fresh canonical merge preflight for root integration",
+    "blocker": "Nominal pan body only; constituent, apparatus, physical renewal, weather and whole MAT qualification remain open"
   },
   "branch": "work/zerg-20261106-w5-pan-envelope",
   "predecessor": {
