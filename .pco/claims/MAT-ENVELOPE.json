@@ -9,11 +9,11 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-06T19:18:54.040Z",
-  "expiresAt": "2026-11-06T20:48:54.040Z",
+  "heartbeatAt": "2026-11-06T19:21:52.167Z",
+  "expiresAt": "2026-11-06T20:51:52.167Z",
   "checkpoint": {
-    "evidence": "Predecessor draft PR #1341 at 07c6fac2e94d2f220fe0c996390e8740403e9152 preserved; fresh recovery reinspection pending",
-    "next": "Recreate independently from exact predecessor head, create successor draft, inspect full envelope exits and actual ground contact paths"
+    "evidence": "Successor draft1346 preserves exact07c6fac2/tree7ff5cba2 with fresh Work/Lease declaration; predecessor1341 closed as superseded with branch retained. Reproducer --check passes unchanged. STR confirms actual common court-S beam supports apron bridge territory; immutable join pending.",
+    "next": "Source-bind actual support/head register and threshold support; compare complete source-cut/enclosure versus separate field without adopting unsupported force or seal claims"
   },
   "branch": "work/zerg-20261106-w5-envelope-join-b",
   "predecessor": {
@@ -37,5 +37,6 @@
       "next": "Compare every actual lower-source cut against separate field boundary once STR supplies literal all-head signed ledger; continue actual bulk-water/plinth and reversible threshold interface, then reconcile consumer after structural merge.",
       "blocker": "STR confirms complete support/headlist and signed domains are not yet allocated; do not extrapolate12 cornerpoints. Sharedgrid bulk-water/weather enclosure and actual capillary-floor ownership remain unresolved. No assembly admission or selection."
     }
-  }
+  },
+  "pr": 1346
 }
