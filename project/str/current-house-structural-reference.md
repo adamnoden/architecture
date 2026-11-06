@@ -62,3 +62,14 @@ The section and tie figures have been rendered and inspected. The roof drawing i
 ### Subsequent adverse joint control
 
 The initial eight-bolt witness is **rejected**. It checked direct resultant without distributing moment through the actual sloping bolt group. Explicit down/up and horizontal-reversal combinations now preserve that failure. A hollow primary also cannot imply a solid clevis. The +130 mm massing remains a useful proposal, but that bolted connection is not an accepted force path. The next revision will use the actual conserved row/hip ledger and a conventional common welded node, including positive reverse loading and box-force introduction. The coloured front elevation also now distinguishes the 144.15 m² structural roof domain from the 60.0625 m² inward-roof-plus-court rain assignment.
+
+
+## Conserved actual roof network — replaces the loose local pressure envelopes
+
+The [current finite row network](studies/current-house-roof-network.json) now assigns each actual secondary-member row to the adjacent ordinary primary and diagonal hip. Eight ordinary frames at 12.7816875 m² each plus four hips at 10.474125 m² each conserve **144.15 m² exactly**. Physical secondary length is **280.2 m**. The short 127.5 mm inner-eave axis gap is a common terminal diaphragm, not an imaginary short hollow member with two full cleats.
+
+Every primary, tie, common seat, crown and wind-bracing weight is a separate located origin. With a 1.5 kPa normal-area nonsteel budget, total roof G is **407.706 kN**, Q is **216.225 kN**, the actual uniform ULS downward total is **874.741 kN**, and the no-favourable-G uplift challenge is **−324.338 kN**. The separate collector replaces the old wall-head collector in the forthcoming whole-house ledger; its mass is not quietly moved into this roof allowance.
+
+Each row also ranges independently from −2.25 to +6.3 kPa, with discrete metal adverse weights included. Maximum ordinary-frame court/outer reactions are **42.911 / 58.675 kN**; hip reactions are **27.851 / 59.216 kN**. Maximum tie force is **48.830 kN**. An unsigned 75 mm torque bound to one seat is **7.349 kNm** for ordinary frames and **6.247 kNm** for hips. Thus the new provisional node card is **70 kN down / 25 kN up / 60 kN either-sign tie / 10 kNm torsion**, rather than invented owner requirements of 200/65/139.
+
+A computed 200 × 140 × 12 mm primary, 150 × 80 × 8 mm secondary and 150 × 100 × 8 mm tie pass the declared member screens. Secondary vertical deflection now resolves both local section axes. The actual metal origins and member-length limits must remain in this ledger. The conventional shared welded seat and 45° hip geometry are the active next join; the earlier single-knife/eight-bolt witness remains rejected. No new roof or house geometry is selected by these calculations.
