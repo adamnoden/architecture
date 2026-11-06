@@ -9,8 +9,8 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T20:47:41.781Z",
-  "expiresAt": "2026-11-06T22:17:41.781Z",
+  "heartbeatAt": "2026-11-06T20:57:18.605Z",
+  "expiresAt": "2026-11-06T22:27:18.605Z",
   "branch": "work/zerg-20261106-services-g21-network",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
@@ -34,11 +34,11 @@
       "blocker": "Coordinator execution limit safe park. Productive design frontier remains; draft1342 preserved. Neither W9 nor VTC complete operating/renewal/material admission. No unattended heartbeat."
     }
   },
-  "pr": 1350,
+  "pr": 1353,
   "checkpoint": {
-    "evidence": "PR1350 verified merged caba17d4e10b60256c8c33296c720d1fe310f2bc after exact003b all14 CI SUCCESS and20:46:10 canonical preflight. Old source branch deletion verified. Fresh successor branch starts exact merged main; no successor source edits yet.",
-    "next": "Bind native W9 operating-point power/octave sources to actual whole-port/network/renewal comparison; publish coherent successor draft then update PR binding",
-    "blocker": "Actual site pressure/dirtyfilter/acoustic attenuation, full ports and supported renewal not yet admitted"
+    "evidence": "Draft1353 published086045e83f2a96700f27c42dfd540701fbc52261 tree9ab6cefd38bef2ffd0e976bfbcf32690fcacd60e after liveg21 rebind; native model42 input/date/hash and octave/power source, real attenuation/package/material burden and complete-port/crossing falsifiers; full MAT checks and rendered SVG PASS",
+    "next": "Reconcile newly advanced main8c2159a8 then exact-head CI/root review/fresh canonical preflight; continue actual network/ports/renewal development",
+    "blocker": "Initial draft CI and current-main reconciliation pending; actual network/room/thermal/handling admissions remain open"
   },
-  "note": "Active samegeneration successor operation; PR1350 is merged predecessor until initial successor source permits a fresh draft. No packet completion/release."
+  "note": "Active samegeneration successor Draft1353; no apparatus/handling/material adoption, packet completion or release."
 }
