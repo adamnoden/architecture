@@ -48,11 +48,13 @@
     },
     {
       "name": "Swegon UVLL metal trap IOM",
-      "url": "https://www.swegon.com/globalassets/digizuite/10112-en-uvll_installation_en.pdf",
+      "url": "https://serviceportal.swegon.com/fi/docs/UVLL",
       "edition": "UVLL_a-m/030220;2pages",
       "retrieved": "2026-11-06",
-      "sha256": null,
-      "scope": "Official PDF text observed; local download403, no exact-byte or drawing inspection claimed. Annual underside cover removal, setter/float withdrawal and checking movement require actual below-trap access. Metal label is not constituent proof; actual connector/seal/discharge remains to bind."
+      "sha256": "d11c0efbd019d363553371f53918ffc68352a7784cbfe83449a2513e7fc20bda",
+      "scope": "Exact PDF recovered through the actual UVLL QR route printed in current W9 IOM page10; local native file and both pages inspected. Lowest cleaning cover is72mm below unit bottom; inlet/body axes98mm apart; body56mm high. This is not the required extraction stroke or hand/tool allowance. Old globalasset URL returned403; recovered bytes supersede that retrieval limitation. Native12mm Cu connection is not a minimum12mm-ID downstream line qualification. Native approval, seals, float/setter constituents and actual supported discharge/receptor remain to bind.",
+      "bytes": 480140,
+      "pages": "1 native12mm Cu compression connections and float/setter/cover;2 dimensioned assembly, annual underside service and discharge limits"
     }
   ],
   "authoredReceiver": {
@@ -88,7 +90,48 @@
     "density_kg_per_m3": 8000,
     "elasticModulus_N_per_mm2": 193000,
     "staticPointChallenge_N": 3000,
-    "challengeRole": "Authored preliminary3kN static load case, not a normative factor, weld/local-bearing/fatigue/impact proof or installed support rating. Sharp-corner RHS idealisation; actual sections/welds/tolerances/capture hardware must be weighed and designed."
+    "challengeRole": "Authored preliminary3kN static load case, not a normative factor, weld/local-bearing/fatigue/impact proof or installed support rating. Sharp-corner RHS idealisation; actual sections/welds/tolerances/capture hardware must be weighed and designed.",
+    "accessOpening": {
+      "clear_mm": [
+        200,
+        220
+      ],
+      "plateRect_mm": [
+        503,
+        72,
+        200,
+        220
+      ],
+      "trialInletAxis_mm": [
+        603,
+        122
+      ],
+      "trialBodyAxis_mm": [
+        603,
+        220
+      ],
+      "positionRole": "Authored receiver-local right-hand projection, not a certified native foot/clocking/view-origin placement. Native drawing gives R600/L400 and122 from its illustrated edge; actual handed unit, cabinet/base centring, viewing datum and coupling clocking must join before machining. Only98mm axis separation is transferred directly.",
+      "rimFlatBar_mm": [
+        40,
+        6
+      ],
+      "rimOuter_mm": [
+        212,
+        232
+      ],
+      "rimLength_mm": 864,
+      "rimRole": "Proposed vertical40high x6thick continuous welded rim OUTSIDE clear opening; no loose hatch. Plate underside220, rim bottom180; adds fabrication and a local load-path review, not a plate/foot/weld rating."
+    },
+    "transverseBeamY_mm": [
+      [
+        0,
+        40
+      ],
+      [
+        557,
+        597
+      ]
+    ]
   },
   "nativeNumbers": {
     "W9ListedUnit_kg": 156,
@@ -117,7 +160,10 @@
     ],
     "cart_kg": 30,
     "cartCapacity_kg": 600,
-    "g_m_per_s2": 9.80665
+    "g_m_per_s2": 9.80665,
+    "UVLLCoverBelowUnitBottom_mm": 72,
+    "UVLLInletToBodyAxis_mm": 98,
+    "UVLLBodyHeight_mm": 56
   },
   "systemDuties": [
     "Retain96/128 direct capture,80fixed other supplies,kitchen16/48,native pressure/control/frost/heat duties and unapproved residues",
@@ -126,6 +172,7 @@
     "Transport fixture must keep fork withdrawal space above cart deck; flat plate alone fails that handover",
     "Actual complete stationary/moving GL, cart wheels/legs/operator, protected leaf and cylinder remain to prove",
     "Native condensate first release and annual underside withdrawal, actual ports/ducts/attenuator and ceiling renewal remain to prove",
-    "Reversible positively supported transfer, actual combined CG/rated capacity, load restraint/dock and actual cart support polygon/slope capture must bind before handling adoption"
+    "Reversible positively supported transfer, actual combined CG/rated capacity, load restraint/dock and actual cart support polygon/slope capture must bind before handling adoption",
+    "A permanent support-plate access opening is the development direction; raising a full plate does not increase trap-cover-to-support clearance. Exact native foot/contact/capture and local rim/plate path must qualify before cutting. No existing floor drain, sanitary connection or heat-pump/RWT receptor is borrowed."
   ]
 }

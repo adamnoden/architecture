@@ -22,7 +22,7 @@ def produce():
     current_raw=(ROOT/'project/had/studies/water-replan.json').read_bytes();current=json.loads(current_raw)['model']
     # Current utility working-prose/source-identity correction does not silently
     # widen this immutable geometric case. Check every actual domain used here.
-    for key in ['plantReferenceDoor','sections']:
+    for key in ['plantReferenceDoor','sections','groundWalls','utilityDisposition']:
       assert current[key]==m[key],f'Current HAD {key} changed: replan receiver'
     assert current['servicesInterface']['plant']==m['servicesInterface']['plant']
     assert current['gardenFailureBypass']['frontApproach']==m['gardenFailureBypass']['frontApproach']
@@ -30,7 +30,19 @@ def produce():
     rail_h,rail_w,_=a['bottomRailRHS_mm'];beam_h,beam_b,_=a['crossbeamRHS_mm']
     assert lane==rail_h+a['postLength_mm']
     height=lane+beam_h+plate
-    volume={'plate':w*d*plate,
+    opening=a['accessOpening'];ow,od=opening['clear_mm'];rh,rt=opening['rimFlatBar_mm']
+    ox,oy,_,_=opening['plateRect_mm'];inlet=opening['trialInletAxis_mm'];body=opening['trialBodyAxis_mm']
+    assert opening['rimOuter_mm']==[ow+2*rt,od+2*rt]
+    assert opening['rimLength_mm']==2*od+2*(ow+2*rt)
+    assert body[1]-inlet[1]==n['UVLLInletToBodyAxis_mm'] and inlet[0]==body[0]
+    assert 100<ox-rt<ox+ow+rt<w-100
+    assert a['transverseBeamY_mm']==[[0,40],[d-40,d]]
+    assert oy-rt>40 and oy+od+rt<d-40
+    rim_bottom=height-plate-rh
+    assert rim_bottom>lane # new rim stays above nominal fork-top plane
+    for px,py in [inlet,body]:assert ox<px<ox+ow and oy<py<oy+od
+    volume={'plate':(w*d-ow*od)*plate,
+      'openingRim':opening['rimLength_mm']*rh*rt,
       'topCrossbeams':rhs(a['crossbeamRHS_mm'])[0]*a['crossbeamCount']*a['crossbeamLength_mm'],
       'bottomRails':rhs(a['bottomRailRHS_mm'])[0]*a['bottomRailCount']*a['bottomRailLength_mm'],
       'posts':rhs(a['postSHS_mm'])[0]*a['postCount']*a['postLength_mm']}
@@ -50,6 +62,14 @@ def produce():
     assert n['GL4MinimumLift_mm']>max(n['nativeBaseFootRange_mm'])
     assert fw<600<toolw # fitting only forks does not fit complete tool
     h=arch['W9VestibuleHost'];assert h['unitAndBasePlan']==[9677,2672,1006,597]
+    wall=next(v for v in current['groundWalls'] if v['id']=='utility-north')
+    opening_x=current['utilityDisposition']['opening'];assert wall['holes']==[opening_x]
+    north_face=wall['finishedFaces'][1];host_x,host_y,host_w,_=h['unitAndBasePlan']
+    trial_radius=300+25;corner_dy=host_y-north_face
+    assert 0<corner_dy<trial_radius
+    corner_min_x=host_x+host_w+math.sqrt(trial_radius**2-corner_dy**2)
+    jamb_max_x=opening_x[1]-trial_radius
+    assert corner_min_x>jamb_max_x # a real shared-interface negative, not a route pass
     assert m['plantReferenceDoor']['effectiveOpenClearWidth']==742.5
     conservative_native=h['conservativeTotalHeight']
     # Retain the deliberately conservative existing height sum. Do not silently
@@ -89,21 +109,21 @@ def produce():
     # Do not infer an actual wheel polygon or slope result from this same-envelope
     # comparison: the fixture adds substantial mass and changes the loaded CG.
     sequence=[
-      {'state':'Installed','duty':'Native base/adjustable feet on full top plate; actual base capture, independent frame/floor stability, condensate cover withdrawal and port connections must work. Receiver is real additional installed assembly.'},
-      {'state':'Prepare and engage','duty':'Isolate power, release actual ducts and condensate with supported parts; optional core removal has unknown mass credit. Bind combined mass/CG, frame capture and configured GL geometry, then engage the140mm fork lane. No native thin-base lifting assumption.'},
+      {'state':'Installed','duty':'Native base/adjustable feet on proposed apertured plate. Actual foot/contact/capture patches must avoid the opening and qualify local plate/rim/weld bearing. Exact cover/setter/float access, independent frame/floor stability and ports remain to prove; no loose hatch or assumed base-seat datum.'},
+      {'state':'Prepare and engage','duty':'Isolate power and support/release actual ducts. Support the fixed condensate tail independently before loosening the accessible native outlet connection, counterhold without loading unit/trap and collect finite drips. Keep native trap/captive parts with appliance only if captured and weighed. Verify fixed tail cannot enter fork/receiver travel. Bind combined mass/CG, capture and configured GL geometry, then engage140mm lane. No native thin-base lifting assumption.'},
       {'state':'Lift and dock','duty':'Lift only enough for the270mm deck plus a trial20mm approach clearance. Positively secure actual cart/dock; complete wheel/leg/cylinder/leaf/operator entry is still unproved. Native raised travel is limited to minor loading/unloading positioning.'},
       {'state':'Set down and withdraw','duty':'Lower receiver bottom to270mm deck. Fork top at410mm supports the beam; lower20mm to390mm and withdraw through the retained lane. Actual tine thickness, vertical geometry, clearances and support handover must be measured; no unsupported slide.'},
       {'state':'Cart route and reverse','duty':'Actual cart restraint/wheel polygon, protected head/closer, all folded flights/turns and positive capture remain required. Incoming installation repeats the supported sequence in reverse; no unattended raised load.'}]
     return {'status':c['status'],'sources':c['sources'],'nativeEvidence':c['nativeEvidence'],
       'sourceExtractSHA256':hashlib.sha256(raw).hexdigest(),
       'currentHADReview':{'path':'project/had/studies/water-replan.json','blob':hashlib.sha1(b'blob '+str(len(current_raw)).encode()+b'\0'+current_raw).hexdigest(),
-        'unchangedGeometricDomains':['plantReferenceDoor','sections','servicesInterface.plant','gardenFailureBypass.frontApproach'],
+        'unchangedGeometricDomains':['plantReferenceDoor','sections','groundWalls','utilityDisposition','servicesInterface.plant','gardenFailureBypass.frontApproach'],
         'role':'Retain the immutable2eb8 geometric case and prove the actual current consumed domains equal. Utility working-prose/source-identity correction changes no geometry or numerical duty.'},
-      'decision':'Develop one forkable raised metal receiver which stays with native base during cart handover. Delete a separate stool and avoid trying to pull forks out of a flat plate sitting directly on a solid cart deck. This is a constructive reference design with explicit missing admission evidence, not a handling pass.',
+      'decision':'Develop the forkable receiver with a bounded permanently open, rimmed service aperture beneath native UVLL. A full plate raises support and trap together and does not improve their clearance. Retain native base/feet and reversible supported cart handover; qualify actual contacts, clocking, withdrawal and fixed discharge before machining or installation.',
       'receiver':{'authored':a,'height_mm':height,'coarseIdealMemberMass_kg':mass,
         'coarseTotal_kg':fixture,'unpricedResidues':'Weld metal, actual radiused sections, capture/dock parts, fixings and any surface treatment are additional. Native feet/seals/electronics/filter residues remain unapproved; no blanket metal or material exception.',
         'nativeBase_mm':n['nativeBase_mm'],'nativeCabinetPlan_mm':[1000,597],
-        'actualBearingHold':'Full plate preserves native-foot support concept; exact foot contacts, base/cabinet attachment and capture/release must bind. It does not qualify lifting directly under the native base skin.'},
+        'actualBearingHold':'Native feet/base retained, but exact foot/contact/capture patches must be outside aperture and satisfy actual local plate/rim/weld bearing. Continuous-plate predecessor is a comparison, not automatic load-path credit for this opening. No lifting directly under native base skin.'},
       'lift':{'nativeGL4StandardMass_kg':n['GL4Standard_kg'],'nativeCapacity_kg':capacity,
         'listedUnitPlusIdealFixture_kg':payload,'remainingForUnscopedBaseAndAllCaptureHardware_kg':capacity-payload,
         'capacityRole':'Listed156kg unit scope must be reconciled with actual supplied native base and captured fixture.227kg rating is not a whole floor, cart or handling rating.',
@@ -133,63 +153,102 @@ def produce():
         'coarseMassIncrease_fraction':new_loaded/old_loaded-1,
         'uniformSlopeCGShiftExamples_mm':{str(h):h/20 for h in [800,1000,1200]},
         'role':'Gravity-force and authored CG-height challenges only, no rolling resistance/braking/tipping pass. Actual wheel support polygon and complete CG/dynamics unknown. Native TU8 WLL anchor/redirect duties and independent capture remain unchanged; no downrated anchor credit.'},
-      'condensate':{'nativeUnitConnection':'Rear under heat exchanger,3/8inch male;minimum12mmID discharge,no horizontal run,second trap or direct drain; supplied looped hose and UVLL option retained',
-        'annualDuty':'Actual underside cover opening plus setter/float withdrawal and movement check, and complete supported pipe first release. Raising alone is not a clear access path or qualified metal/seal assembly.'},
+      'condensate':{'nativeUnitConnection':'Rear under heat exchanger,3/8inch male;minimum12mmID downstream discharge,no horizontal run/second trap/direct drain. Current W9 IOM also states minimum100mm damming height; supplied looped hose and expressly offered mechanical UVLL are distinct assemblies.72mm external UVLL depth is not a water-seal height or permission to waive native pressure/discharge duty.',
+        'nativeCoverBelowUnitBottom_mm':n['UVLLCoverBelowUnitBottom_mm'],
+        'nativeInletToBodyAxis_mm':n['UVLLInletToBodyAxis_mm'],
+        'nativeBodyHeight_mm':n['UVLLBodyHeight_mm'],
+        'datum':'Let d be ACTUAL unit-bottom height above receiver top after native base seating and foot adjustment. Native base123/feet15..50 and illustrated assembled1417 do not establish d by addition. No installed d selected.',
+        'fullPlateNegativeControl':{'coverAbovePlateExpression':'d -72','afterRaisingReceiverExpression':'(receiverHeight+d-72)-receiverHeight = d-72',
+          'raisingChangesClearance_mm':0,'role':'Exact translation cancellation; no assumed actual base seat. Raising a continuous plate cannot earn annual downward access.'},
+        'aperture':{'clear_mm':[ow,od],'trialPlateRect_mm':opening['plateRect_mm'],
+          'nativeAxisSeparationOnly_mm':n['UVLLInletToBodyAxis_mm'],
+          'axisMargins_mm':[inlet[0]-ox,ox+ow-inlet[0],inlet[1]-oy,oy+od-inlet[1],body[1]-oy,oy+od-body[1]],
+          'authoredRimBottomAboveReceiverBottom_mm':rim_bottom,'rimAboveNominalForkTop_mm':rim_bottom-lane,
+          'nearestAuthoredRearBeamGap_mm':oy-rt-40,
+          'role':'200x220 opening reserves axis space, not actual whole trap/cover/hand fit. Clocking,12Cu bends/couplings, body width, extraction stroke, front-edge access, tools and full lateral hand route remain to bind. No scaled drawing dimensions.',
+          'bearingHold':'Actual native foot/contact/capture polygons must avoid aperture; local plate/rim/weld bearing and bracing must be recalculated. Polygons are not supplied here, so opening/support admission remains false.'},
+        'annualDuty':'At least annually twist open underside cover, withdraw setter and float, remove dirt and check movement. Required extraction stroke/hand envelope are not stated in native drawing. A projected aperture and72mm installed depth are not that proof. Native front-edge screw loosening for connection does not prove complete annual removal access.',
+        'fixedRelease':{'moving':'Native unit/base/receiver and attached UVLL/captive inlet stay captured together only after actual mass/retention proved.',
+          'fixed':'Downstream tail, actual minimum-ID line, receptor and support remain independent of moving appliance; no existing plant floor drain or sanitary/RWT/heat-pump receptor assumed.',
+          'firstRelease':'Before lifting: power isolated, actual fixed tail independently held/supported, finite drain inventory captured, native outlet coupling accessible and counterheld; separate tail without loading trap/unit, then prove tail clear of all fork/cart motion. No generic hose pull.',
+          'restoration':'Reconnect actual matched coupling/seal and independent support, restore specified trap orientation/discharge, inspect and water-test native outlet before ordinary operation.',
+          'holds':['Actual native12mm Cu output-to-minimum12mm-ID downstream connection, pressure/100mm damming duty and all seals/float/setter constituents',
+            'Fixed bracket/substrate, actual union/tool space and independent tail restraint; connection cannot serve as structural pipe support',
+            'Actual frost-safe receiving/outfall, indirect connection and floor/air/water closure; no borrowed floor drain',
+            'Finite drain-down volume/catch capacity, actual cover/setter/float withdrawal and reassembly without moving native feet/base support']},
+        'admitted':False},
+      'utilityApproachNegative':{'role':'IAS-coordinated concrete joint negative for an authored600mm body plus25mm reserve. It rejects this utility-arch approach at proposed W9 host, not every actual person or another qualified route.',
+        'currentUtilityOpeningX_mm':opening_x,'northFinishedFaceY_mm':north_face,
+        'proposedW9SouthEastCorner_mm':[host_x+host_w,host_y],
+        'authoredBodyDiameter_mm':600,'reserve_mm':25,'inflatedRadius_mm':trial_radius,
+        'eastJambMaximumCentreX_mm':jamb_max_x,'W9CornerMinimumCentreX_mm':corner_min_x,
+        'incompatibleCentreInterval_mm':corner_min_x-jamb_max_x,
+        'eastOfW9ToEastJamb_mm':opening_x[1]-(host_x+host_w),
+        'approachPass':False,'adoptedRelocation':False,
+        'next':'Resolve actual complete operator/device entry through protected Plant door or a coherent new host arrangement, preserving600 host-front trial, cylinder/leaf/ports and ordinary maintenance duties. Do not shrink a person or borrow unproved arch access.'},
       'sequence':sequence,'systemDuties':c['systemDuties'],
       'admission':{'nativeBearingAndCGVerified':False,'frameAndFloorAdmitted':False,'completeToolCartOperatorGeometryProved':False,
         'portsCondensateAndHeadProved':False,'cartOrExteriorHandlingAdmitted':False,'materialException':False,'HADorServicesGeometryChanged':False,'packetComplete':False}}
 
 def figure(r):
-    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1120" viewBox="0 0 1200 1120">','<rect width="1200" height="1120" fill="#f4f1e9"/>']
-    def text(x,y,s,size=18,color='#21363b'):
-      out.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-family="Arial,sans-serif">{html.escape(s)}</text>')
+    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="1250" viewBox="0 0 1250 1250">','<rect width="1250" height="1250" fill="#f4f1e9"/>']
+    def text(x,y,t,size=18,color='#21363b'):
+      out.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-family="Arial,sans-serif">{html.escape(t)}</text>')
     def rect(x,y,w,h,fill='#b4cec4',stroke='#21363b'):
       out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}"/>')
-    text(35,43,'A raised receiver with a retained fork-release lane',29)
-    text(35,74,'Authored reference design — native CG/support and complete transfer remain OPEN',19)
-    text(35,117,'Front section: a retained fork lane, not a flat lifting plate',22)
-    scale=.57;ox=40;ground=337
-    rect(ox,ground-226*scale,1006*scale,6*scale,'#7e969c')
-    rect(ox,ground-220*scale,1006*scale,80*scale)
-    for x in [0,906]:
-      rect(ox+x*scale,ground-30*scale,100*scale,30*scale,'#7e969c')
-      rect(ox+(x+30)*scale,ground-140*scale,40*scale,110*scale)
-    text(ox,376,'1006 outside / 806 inner rail lane / 629 complete GL width',17)
-    text(ox,402,'140 mm to beam underside; top plate height 226 mm',17)
-    text(660,155,'Receiver stays under native base.',19)
-    text(660,186,'6 plate + 80×40×3 crossbeams',18)
-    text(660,215,'110 posts + 30-high outboard rails',18)
-    text(660,245,'Frame bracing/weld rigidity remain unproved.',18)
-    text(660,275,'Actual legs/wheels/handle/operator still bind.',18)
-    text(660,305,'Native base 1006×593 ≠ cabinet 1000×597.',17)
-    text(35,458,'Deposit on cart: preserve the space needed to withdraw',23)
-    # Interface elevation only: no false whole-machine or wheel approach proof.
-    x=45;y=801;s=.6
-    rect(x,y-270*s,510,18,'#8c795f')
-    rect(x,y-(270+226)*s,510,6*s,'#7e969c')
-    rect(x,y-(270+220)*s,510,80*s)
-    for xx in [0,450]:
-      rect(x+xx,y-(270+30)*s,60,30*s,'#7e969c')
-      rect(x+xx+18,y-(270+140)*s,24,110*s)
-    rect(x+180,y-410*s,150,20*s,'#d4a766')
-    text(620,496,'Cart deck 270 → fork support 410 mm',19)
-    text(620,530,'Release fork top to390; then withdraw.',19)
-    text(620,564,'Tine thickness + tolerance must fit120 mm.',18)
-    text(620,598,'Flat plate on solid deck fails this handover.',18,'#8c402e')
-    text(620,632,'Wheel/leg entry, dock and capture NOT proved.',18,'#8c402e')
-    text(35,718,'Interface only — complete native machine and cart approach remain separate obligations.',18)
-    a=r['receiver'];l=r['lift'];h=r['height'];e=r['externalConsequences']
-    text(35,763,'The receiver has a real whole-system price',24)
-    rows=[f"Coarse ideal316L frame {a['coarseTotal_kg']:.2f} kg; unit+frame {l['listedUnitPlusIdealFixture_kg']:.2f} kg vs227 kg GL4.",
-      f"Only {l['remainingForUnscopedBaseAndAllCaptureHardware_kg']:.2f} kg remains for unscoped native base and all capture hardware.",
-      f"Conservative installed top {h['installedPortTopBound_mm']} mm / on cart {h['cartPortTopBound_mm']} mm; no door-head pass.",
-      f"Cart+listed unit+frame {e['newListedUnitFixtureCart_kg']:.2f} kg; gravity-only1:20 force {e['oneIn20GravityOnlyForceAfter_N']:.1f} N.",
-      '3kN ideal beam/rail calculation is not local bearing, weld, floor, impact or stability admission.',
-      'Actual combined CG ≤350 from load face; nominal298.5 depth midpoint is NOT measured CG.',
-      'Native condensate first release and annual cover/float withdrawal must remain accessible.',
-      'Keep96/128 capture/control/heat, all residues, port renewal and folded-route capture duties.']
-    for i,row in enumerate(rows):text(35,802+i*31,row,18)
-    text(35,1084,'No apparatus, material exception, cart/handling pass, selected air target or MAT completion.',19,'#8c402e')
+    def line(x,y,xx,yy,color='#21363b'):
+      out.append(f'<path d="M{x},{y} L{xx},{yy}" stroke="{color}" fill="none"/>')
+    text(35,43,'A retained condensate service opening in the forkable receiver',28)
+    text(35,76,'Native UVLL dimensions joined to a priced, unadopted support proposal',19)
+    text(35,119,'Plan: authored receiver coordinates / native foot contacts still unknown',21)
+    q=r['receiver']['authored']['accessOpening'];scale=.55;px=40;py=157
+    rect(px,py,1006*scale,597*scale,'#c6d2ce')
+    for x in [0,906]:rect(px+x*scale,py,100*scale,597*scale,'#91aaa9')
+    for y in [0,557]:rect(px,py+y*scale,1006*scale,40*scale,'#7e969c')
+    x,y,w,d=q['plateRect_mm']
+    rect(px+(x-6)*scale,py+(y-6)*scale,(w+12)*scale,(d+12)*scale,'#d4a766')
+    rect(px+x*scale,py+y*scale,w*scale,d*scale,'#f4f1e9')
+    for label,(xx,yy) in [('inlet axis',q['trialInletAxis_mm']),('cover axis',q['trialBodyAxis_mm'])]:
+      out.append(f'<circle cx="{px+xx*scale}" cy="{py+yy*scale}" r="4" fill="#8c402e"/>')
+      text(px+xx*scale+12,py+yy*scale+5,label,15)
+    line(px+603*scale,py+122*scale,px+603*scale,py+220*scale,'#8c402e')
+    text(40,516,'1006 × 597 plate; clear opening200 × 220; rim40 high × 6 thick',17)
+    text(40,545,'98 mm native axis separation; trial position/clocking is NOT certified.',17,'#8c402e')
+    text(650,158,'Full plate: raising both does not buy access',21)
+    text(650,201,'Let d = actual unit bottom above receiver top.',18)
+    text(650,237,'Cover-to-plate clearance = d −72.',21)
+    text(650,274,'Raise by R: (R+d−72) −R = d−72.',20)
+    text(650,312,'Base123 + feet15…50 does not establish d.',18)
+    text(650,350,'Native assembled1417 is not an added seat datum.',18)
+    text(650,389,'No actual d or extraction stroke is selected.',18,'#8c402e')
+    text(650,429,'Opening axes ≠ whole body / hand / tool clearance.',18)
+    text(650,468,'Actual feet, capture and local plate/rim welds',18)
+    text(650,495,'must retain their load path before machining.',18)
+    text(35,601,'Section obligations: preserve support and fork withdrawal',23)
+    # Schematic datum diagram: d variable; no invented native base-seat dimension.
+    line(55,647,520,647);text(65,639,'Actual unit bottom',17)
+    line(90,647,90,719);line(80,719,100,719);text(104,691,'native72 below unit bottom',17)
+    text(65,744,'Cleaning cover → setter / float downward',17)
+    rect(55,783,178,6,'#7e969c');rect(355,783,165,6,'#7e969c')
+    rect(227,789,6,40,'#d4a766');rect(355,789,6,40,'#d4a766')
+    text(65,859,'Schematic d varies; plate opening keeps no loose hatch.',17)
+    text(650,629,'Rim bottom180 / nominal fork top140 →40 mm.',18)
+    text(650,665,'Authored rear-beam gap26 mm; no beam cut.',18)
+    text(650,701,'This does not locate actual fork/leg/caster geometry.',18)
+    text(650,737,'Before lift: support fixed tail, counterhold coupling,',18)
+    text(650,768,'capture finite drain-down; release and clear travel.',18)
+    text(650,806,'Receptor / bracket / seals / minimum-ID line remain open.',18,'#8c402e')
+    a=r['receiver'];l=r['lift']
+    text(35,914,'Whole-system price and decision',24)
+    rows=[f"Ideal plate + rim receiver {a['coarseTotal_kg']:.3f} kg; listed unit+frame {l['listedUnitPlusIdealFixture_kg']:.3f} kg.",
+      f"Only {l['remainingForUnscopedBaseAndAllCaptureHardware_kg']:.3f} kg remains below227 kg for native base/capture and all unscoped parts.",
+      'Keep native base/feet; no foot/capture patch may cross the aperture. Local plate/rim/weld bearing is NOT proved.',
+      'Keep96/128 capture/control/heat, actual unit CG, complete tool/cart/door/ports and folded-route capture duties.',
+      'UVLL72 external depth is not100mm water-seal height; actual native accessory/pressure/discharge scope must join.',
+      '12mm Cu connection is not a12mm-ID downstream line; actual transition, seals and float/setter constituents remain.',
+      'No existing floor drain, sanitary/RWT/heat-pump receptor, floor/air/water closure or material exception is borrowed.']
+    for i,row in enumerate(rows):text(35,954+i*34,row,17)
+    text(35,1220,'No apparatus, support, cleaning/handling pass, selected air target or MAT completion.',19,'#8c402e')
     out.append('</svg>');return '\n'.join(out)+'\n'
 
 def main():

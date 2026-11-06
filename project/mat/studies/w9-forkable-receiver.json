@@ -48,26 +48,30 @@
     },
     {
       "name": "Swegon UVLL metal trap IOM",
-      "url": "https://www.swegon.com/globalassets/digizuite/10112-en-uvll_installation_en.pdf",
+      "url": "https://serviceportal.swegon.com/fi/docs/UVLL",
       "edition": "UVLL_a-m/030220;2pages",
       "retrieved": "2026-11-06",
-      "sha256": null,
-      "scope": "Official PDF text observed; local download403, no exact-byte or drawing inspection claimed. Annual underside cover removal, setter/float withdrawal and checking movement require actual below-trap access. Metal label is not constituent proof; actual connector/seal/discharge remains to bind."
+      "sha256": "d11c0efbd019d363553371f53918ffc68352a7784cbfe83449a2513e7fc20bda",
+      "scope": "Exact PDF recovered through the actual UVLL QR route printed in current W9 IOM page10; local native file and both pages inspected. Lowest cleaning cover is72mm below unit bottom; inlet/body axes98mm apart; body56mm high. This is not the required extraction stroke or hand/tool allowance. Old globalasset URL returned403; recovered bytes supersede that retrieval limitation. Native12mm Cu connection is not a minimum12mm-ID downstream line qualification. Native approval, seals, float/setter constituents and actual supported discharge/receptor remain to bind.",
+      "bytes": 480140,
+      "pages": "1 native12mm Cu compression connections and float/setter/cover;2 dimensioned assembly, annual underside service and discharge limits"
     }
   ],
-  "sourceExtractSHA256": "098c97a33b73e5761da512eeb32a153c804ef9b424e7fb8f10e58cac0155dbe7",
+  "sourceExtractSHA256": "e2bfd949490ca51716b75eaef269c08541f9b8c1f3f67d48ed19e8872cde2eec",
   "currentHADReview": {
     "path": "project/had/studies/water-replan.json",
     "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
     "unchangedGeometricDomains": [
       "plantReferenceDoor",
       "sections",
+      "groundWalls",
+      "utilityDisposition",
       "servicesInterface.plant",
       "gardenFailureBypass.frontApproach"
     ],
     "role": "Retain the immutable2eb8 geometric case and prove the actual current consumed domains equal. Utility working-prose/source-identity correction changes no geometry or numerical duty."
   },
-  "decision": "Develop one forkable raised metal receiver which stays with native base during cart handover. Delete a separate stool and avoid trying to pull forks out of a flat plate sitting directly on a solid cart deck. This is a constructive reference design with explicit missing admission evidence, not a handling pass.",
+  "decision": "Develop the forkable receiver with a bounded permanently open, rimmed service aperture beneath native UVLL. A full plate raises support and trap together and does not improve their clearance. Retain native base/feet and reversible supported cart handover; qualify actual contacts, clocking, withdrawal and fixed discharge before machining or installation.",
   "receiver": {
     "authored": {
       "outside_mm": [
@@ -102,16 +106,58 @@
       "density_kg_per_m3": 8000,
       "elasticModulus_N_per_mm2": 193000,
       "staticPointChallenge_N": 3000,
-      "challengeRole": "Authored preliminary3kN static load case, not a normative factor, weld/local-bearing/fatigue/impact proof or installed support rating. Sharp-corner RHS idealisation; actual sections/welds/tolerances/capture hardware must be weighed and designed."
+      "challengeRole": "Authored preliminary3kN static load case, not a normative factor, weld/local-bearing/fatigue/impact proof or installed support rating. Sharp-corner RHS idealisation; actual sections/welds/tolerances/capture hardware must be weighed and designed.",
+      "accessOpening": {
+        "clear_mm": [
+          200,
+          220
+        ],
+        "plateRect_mm": [
+          503,
+          72,
+          200,
+          220
+        ],
+        "trialInletAxis_mm": [
+          603,
+          122
+        ],
+        "trialBodyAxis_mm": [
+          603,
+          220
+        ],
+        "positionRole": "Authored receiver-local right-hand projection, not a certified native foot/clocking/view-origin placement. Native drawing gives R600/L400 and122 from its illustrated edge; actual handed unit, cabinet/base centring, viewing datum and coupling clocking must join before machining. Only98mm axis separation is transferred directly.",
+        "rimFlatBar_mm": [
+          40,
+          6
+        ],
+        "rimOuter_mm": [
+          212,
+          232
+        ],
+        "rimLength_mm": 864,
+        "rimRole": "Proposed vertical40high x6thick continuous welded rim OUTSIDE clear opening; no loose hatch. Plate underside220, rim bottom180; adds fabrication and a local load-path review, not a plate/foot/weld rating."
+      },
+      "transverseBeamY_mm": [
+        [
+          0,
+          40
+        ],
+        [
+          557,
+          597
+        ]
+      ]
     },
     "height_mm": 226,
     "coarseIdealMemberMass_kg": {
-      "plate": 28.827935999999998,
+      "plate": 26.715936,
+      "openingRim": 1.65888,
       "topCrossbeams": 11.009664,
       "bottomRails": 7.106688,
       "posts": 1.56288
     },
-    "coarseTotal_kg": 48.507168,
+    "coarseTotal_kg": 48.054048,
     "unpricedResidues": "Weld metal, actual radiused sections, capture/dock parts, fixings and any surface treatment are additional. Native feet/seals/electronics/filter residues remain unapproved; no blanket metal or material exception.",
     "nativeBase_mm": [
       1006,
@@ -122,13 +168,13 @@
       1000,
       597
     ],
-    "actualBearingHold": "Full plate preserves native-foot support concept; exact foot contacts, base/cabinet attachment and capture/release must bind. It does not qualify lifting directly under the native base skin."
+    "actualBearingHold": "Native feet/base retained, but exact foot/contact/capture patches must be outside aperture and satisfy actual local plate/rim/weld bearing. Continuous-plate predecessor is a comparison, not automatic load-path credit for this opening. No lifting directly under native base skin."
   },
   "lift": {
     "nativeGL4StandardMass_kg": 51,
     "nativeCapacity_kg": 227,
-    "listedUnitPlusIdealFixture_kg": 204.507168,
-    "remainingForUnscopedBaseAndAllCaptureHardware_kg": 22.492831999999993,
+    "listedUnitPlusIdealFixture_kg": 204.054048,
+    "remainingForUnscopedBaseAndAllCaptureHardware_kg": 22.945952000000005,
     "capacityRole": "Listed156kg unit scope must be reconciled with actual supplied native base and captured fixture.227kg rating is not a whole floor, cart or handling rating.",
     "nativeMaximumCombinedLoadCentre_mm": 350,
     "geometricDepthMidpointOnly_mm": 298.5,
@@ -216,7 +262,7 @@
     "forkSupportRole": "Restrained component models only; unilateral fork bearing cannot provide the isolated end-case negative reaction.400mm bearing-line span and0..521mm sensitivity are authored centred-support models. Native521 is outside fork width, not measured bearing-line spacing. Actual section/contact/local stability must bind.",
     "onePostAxialStress_N_per_mm2": 6.756756756756757,
     "grossTwoRailArea_m2": 0.1194,
-    "grossDeadLoadPressure_kPa": 16.796735503075375,
+    "grossDeadLoadPressure_kPa": 16.759519512723614,
     "grossChallengePressure_kPa": 25.125628140703515,
     "notProved": [
       "actual RHS corner radii/grade/section properties and tolerances",
@@ -227,10 +273,10 @@
   },
   "externalConsequences": {
     "oldListedUnitPlusCart_kg": 186,
-    "newListedUnitFixtureCart_kg": 234.507168,
+    "newListedUnitFixtureCart_kg": 234.054048,
     "oneIn20GravityOnlyForceBefore_N": 91.08805600372466,
-    "oneIn20GravityOnlyForceAfter_N": 114.84302178526272,
-    "coarseMassIncrease_fraction": 0.26079122580645175,
+    "oneIn20GravityOnlyForceAfter_N": 114.62111952754009,
+    "coarseMassIncrease_fraction": 0.25835509677419344,
     "uniformSlopeCGShiftExamples_mm": {
       "800": 40.0,
       "1000": 50.0,
@@ -239,17 +285,88 @@
     "role": "Gravity-force and authored CG-height challenges only, no rolling resistance/braking/tipping pass. Actual wheel support polygon and complete CG/dynamics unknown. Native TU8 WLL anchor/redirect duties and independent capture remain unchanged; no downrated anchor credit."
   },
   "condensate": {
-    "nativeUnitConnection": "Rear under heat exchanger,3/8inch male;minimum12mmID discharge,no horizontal run,second trap or direct drain; supplied looped hose and UVLL option retained",
-    "annualDuty": "Actual underside cover opening plus setter/float withdrawal and movement check, and complete supported pipe first release. Raising alone is not a clear access path or qualified metal/seal assembly."
+    "nativeUnitConnection": "Rear under heat exchanger,3/8inch male;minimum12mmID downstream discharge,no horizontal run/second trap/direct drain. Current W9 IOM also states minimum100mm damming height; supplied looped hose and expressly offered mechanical UVLL are distinct assemblies.72mm external UVLL depth is not a water-seal height or permission to waive native pressure/discharge duty.",
+    "nativeCoverBelowUnitBottom_mm": 72,
+    "nativeInletToBodyAxis_mm": 98,
+    "nativeBodyHeight_mm": 56,
+    "datum": "Let d be ACTUAL unit-bottom height above receiver top after native base seating and foot adjustment. Native base123/feet15..50 and illustrated assembled1417 do not establish d by addition. No installed d selected.",
+    "fullPlateNegativeControl": {
+      "coverAbovePlateExpression": "d -72",
+      "afterRaisingReceiverExpression": "(receiverHeight+d-72)-receiverHeight = d-72",
+      "raisingChangesClearance_mm": 0,
+      "role": "Exact translation cancellation; no assumed actual base seat. Raising a continuous plate cannot earn annual downward access."
+    },
+    "aperture": {
+      "clear_mm": [
+        200,
+        220
+      ],
+      "trialPlateRect_mm": [
+        503,
+        72,
+        200,
+        220
+      ],
+      "nativeAxisSeparationOnly_mm": 98,
+      "axisMargins_mm": [
+        100,
+        100,
+        50,
+        170,
+        148,
+        72
+      ],
+      "authoredRimBottomAboveReceiverBottom_mm": 180,
+      "rimAboveNominalForkTop_mm": 40,
+      "nearestAuthoredRearBeamGap_mm": 26,
+      "role": "200x220 opening reserves axis space, not actual whole trap/cover/hand fit. Clocking,12Cu bends/couplings, body width, extraction stroke, front-edge access, tools and full lateral hand route remain to bind. No scaled drawing dimensions.",
+      "bearingHold": "Actual native foot/contact/capture polygons must avoid aperture; local plate/rim/weld bearing and bracing must be recalculated. Polygons are not supplied here, so opening/support admission remains false."
+    },
+    "annualDuty": "At least annually twist open underside cover, withdraw setter and float, remove dirt and check movement. Required extraction stroke/hand envelope are not stated in native drawing. A projected aperture and72mm installed depth are not that proof. Native front-edge screw loosening for connection does not prove complete annual removal access.",
+    "fixedRelease": {
+      "moving": "Native unit/base/receiver and attached UVLL/captive inlet stay captured together only after actual mass/retention proved.",
+      "fixed": "Downstream tail, actual minimum-ID line, receptor and support remain independent of moving appliance; no existing plant floor drain or sanitary/RWT/heat-pump receptor assumed.",
+      "firstRelease": "Before lifting: power isolated, actual fixed tail independently held/supported, finite drain inventory captured, native outlet coupling accessible and counterheld; separate tail without loading trap/unit, then prove tail clear of all fork/cart motion. No generic hose pull.",
+      "restoration": "Reconnect actual matched coupling/seal and independent support, restore specified trap orientation/discharge, inspect and water-test native outlet before ordinary operation.",
+      "holds": [
+        "Actual native12mm Cu output-to-minimum12mm-ID downstream connection, pressure/100mm damming duty and all seals/float/setter constituents",
+        "Fixed bracket/substrate, actual union/tool space and independent tail restraint; connection cannot serve as structural pipe support",
+        "Actual frost-safe receiving/outfall, indirect connection and floor/air/water closure; no borrowed floor drain",
+        "Finite drain-down volume/catch capacity, actual cover/setter/float withdrawal and reassembly without moving native feet/base support"
+      ]
+    },
+    "admitted": false
+  },
+  "utilityApproachNegative": {
+    "role": "IAS-coordinated concrete joint negative for an authored600mm body plus25mm reserve. It rejects this utility-arch approach at proposed W9 host, not every actual person or another qualified route.",
+    "currentUtilityOpeningX_mm": [
+      10250,
+      11150
+    ],
+    "northFinishedFaceY_mm": 2647,
+    "proposedW9SouthEastCorner_mm": [
+      10683,
+      2672
+    ],
+    "authoredBodyDiameter_mm": 600,
+    "reserve_mm": 25,
+    "inflatedRadius_mm": 325,
+    "eastJambMaximumCentreX_mm": 10825,
+    "W9CornerMinimumCentreX_mm": 11007.037034920393,
+    "incompatibleCentreInterval_mm": 182.03703492039313,
+    "eastOfW9ToEastJamb_mm": 467,
+    "approachPass": false,
+    "adoptedRelocation": false,
+    "next": "Resolve actual complete operator/device entry through protected Plant door or a coherent new host arrangement, preserving600 host-front trial, cylinder/leaf/ports and ordinary maintenance duties. Do not shrink a person or borrow unproved arch access."
   },
   "sequence": [
     {
       "state": "Installed",
-      "duty": "Native base/adjustable feet on full top plate; actual base capture, independent frame/floor stability, condensate cover withdrawal and port connections must work. Receiver is real additional installed assembly."
+      "duty": "Native base/adjustable feet on proposed apertured plate. Actual foot/contact/capture patches must avoid the opening and qualify local plate/rim/weld bearing. Exact cover/setter/float access, independent frame/floor stability and ports remain to prove; no loose hatch or assumed base-seat datum."
     },
     {
       "state": "Prepare and engage",
-      "duty": "Isolate power, release actual ducts and condensate with supported parts; optional core removal has unknown mass credit. Bind combined mass/CG, frame capture and configured GL geometry, then engage the140mm fork lane. No native thin-base lifting assumption."
+      "duty": "Isolate power and support/release actual ducts. Support the fixed condensate tail independently before loosening the accessible native outlet connection, counterhold without loading unit/trap and collect finite drips. Keep native trap/captive parts with appliance only if captured and weighed. Verify fixed tail cannot enter fork/receiver travel. Bind combined mass/CG, capture and configured GL geometry, then engage140mm lane. No native thin-base lifting assumption."
     },
     {
       "state": "Lift and dock",
@@ -271,7 +388,8 @@
     "Transport fixture must keep fork withdrawal space above cart deck; flat plate alone fails that handover",
     "Actual complete stationary/moving GL, cart wheels/legs/operator, protected leaf and cylinder remain to prove",
     "Native condensate first release and annual underside withdrawal, actual ports/ducts/attenuator and ceiling renewal remain to prove",
-    "Reversible positively supported transfer, actual combined CG/rated capacity, load restraint/dock and actual cart support polygon/slope capture must bind before handling adoption"
+    "Reversible positively supported transfer, actual combined CG/rated capacity, load restraint/dock and actual cart support polygon/slope capture must bind before handling adoption",
+    "A permanent support-plate access opening is the development direction; raising a full plate does not increase trap-cover-to-support clearance. Exact native foot/contact/capture and local rim/plate path must qualify before cutting. No existing floor drain, sanitary connection or heat-pump/RWT receptor is borrowed."
   ],
   "admission": {
     "nativeBearingAndCGVerified": false,

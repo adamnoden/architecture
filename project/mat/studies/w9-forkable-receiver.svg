@@ -1,45 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1120" viewBox="0 0 1200 1120">
-<rect width="1200" height="1120" fill="#f4f1e9"/>
-<text x="35" y="43" font-size="29" fill="#21363b" font-family="Arial,sans-serif">A raised receiver with a retained fork-release lane</text>
-<text x="35" y="74" font-size="19" fill="#21363b" font-family="Arial,sans-serif">Authored reference design — native CG/support and complete transfer remain OPEN</text>
-<text x="35" y="117" font-size="22" fill="#21363b" font-family="Arial,sans-serif">Front section: a retained fork lane, not a flat lifting plate</text>
-<rect x="40" y="208.18" width="573.42" height="3.42" fill="#7e969c" stroke="#21363b"/>
-<rect x="40" y="211.60000000000002" width="573.42" height="45.599999999999994" fill="#b4cec4" stroke="#21363b"/>
-<rect x="40.0" y="319.9" width="56.99999999999999" height="17.099999999999998" fill="#7e969c" stroke="#21363b"/>
-<rect x="57.099999999999994" y="257.2" width="22.799999999999997" height="62.699999999999996" fill="#b4cec4" stroke="#21363b"/>
-<rect x="556.42" y="319.9" width="56.99999999999999" height="17.099999999999998" fill="#7e969c" stroke="#21363b"/>
-<rect x="573.52" y="257.2" width="22.799999999999997" height="62.699999999999996" fill="#b4cec4" stroke="#21363b"/>
-<text x="40" y="376" font-size="17" fill="#21363b" font-family="Arial,sans-serif">1006 outside / 806 inner rail lane / 629 complete GL width</text>
-<text x="40" y="402" font-size="17" fill="#21363b" font-family="Arial,sans-serif">140 mm to beam underside; top plate height 226 mm</text>
-<text x="660" y="155" font-size="19" fill="#21363b" font-family="Arial,sans-serif">Receiver stays under native base.</text>
-<text x="660" y="186" font-size="18" fill="#21363b" font-family="Arial,sans-serif">6 plate + 80×40×3 crossbeams</text>
-<text x="660" y="215" font-size="18" fill="#21363b" font-family="Arial,sans-serif">110 posts + 30-high outboard rails</text>
-<text x="660" y="245" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Frame bracing/weld rigidity remain unproved.</text>
-<text x="660" y="275" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Actual legs/wheels/handle/operator still bind.</text>
-<text x="660" y="305" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Native base 1006×593 ≠ cabinet 1000×597.</text>
-<text x="35" y="458" font-size="23" fill="#21363b" font-family="Arial,sans-serif">Deposit on cart: preserve the space needed to withdraw</text>
-<rect x="45" y="639.0" width="510" height="18" fill="#8c795f" stroke="#21363b"/>
-<rect x="45" y="503.40000000000003" width="510" height="3.5999999999999996" fill="#7e969c" stroke="#21363b"/>
-<rect x="45" y="507.0" width="510" height="48.0" fill="#b4cec4" stroke="#21363b"/>
-<rect x="45" y="621.0" width="60" height="18.0" fill="#7e969c" stroke="#21363b"/>
-<rect x="63" y="555.0" width="24" height="66.0" fill="#b4cec4" stroke="#21363b"/>
-<rect x="495" y="621.0" width="60" height="18.0" fill="#7e969c" stroke="#21363b"/>
-<rect x="513" y="555.0" width="24" height="66.0" fill="#b4cec4" stroke="#21363b"/>
-<rect x="225" y="555.0" width="150" height="12.0" fill="#d4a766" stroke="#21363b"/>
-<text x="620" y="496" font-size="19" fill="#21363b" font-family="Arial,sans-serif">Cart deck 270 → fork support 410 mm</text>
-<text x="620" y="530" font-size="19" fill="#21363b" font-family="Arial,sans-serif">Release fork top to390; then withdraw.</text>
-<text x="620" y="564" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Tine thickness + tolerance must fit120 mm.</text>
-<text x="620" y="598" font-size="18" fill="#8c402e" font-family="Arial,sans-serif">Flat plate on solid deck fails this handover.</text>
-<text x="620" y="632" font-size="18" fill="#8c402e" font-family="Arial,sans-serif">Wheel/leg entry, dock and capture NOT proved.</text>
-<text x="35" y="718" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Interface only — complete native machine and cart approach remain separate obligations.</text>
-<text x="35" y="763" font-size="24" fill="#21363b" font-family="Arial,sans-serif">The receiver has a real whole-system price</text>
-<text x="35" y="802" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Coarse ideal316L frame 48.51 kg; unit+frame 204.51 kg vs227 kg GL4.</text>
-<text x="35" y="833" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Only 22.49 kg remains for unscoped native base and all capture hardware.</text>
-<text x="35" y="864" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Conservative installed top 1741 mm / on cart 2011 mm; no door-head pass.</text>
-<text x="35" y="895" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Cart+listed unit+frame 234.51 kg; gravity-only1:20 force 114.8 N.</text>
-<text x="35" y="926" font-size="18" fill="#21363b" font-family="Arial,sans-serif">3kN ideal beam/rail calculation is not local bearing, weld, floor, impact or stability admission.</text>
-<text x="35" y="957" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Actual combined CG ≤350 from load face; nominal298.5 depth midpoint is NOT measured CG.</text>
-<text x="35" y="988" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Native condensate first release and annual cover/float withdrawal must remain accessible.</text>
-<text x="35" y="1019" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Keep96/128 capture/control/heat, all residues, port renewal and folded-route capture duties.</text>
-<text x="35" y="1084" font-size="19" fill="#8c402e" font-family="Arial,sans-serif">No apparatus, material exception, cart/handling pass, selected air target or MAT completion.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="1250" viewBox="0 0 1250 1250">
+<rect width="1250" height="1250" fill="#f4f1e9"/>
+<text x="35" y="43" font-size="28" fill="#21363b" font-family="Arial,sans-serif">A retained condensate service opening in the forkable receiver</text>
+<text x="35" y="76" font-size="19" fill="#21363b" font-family="Arial,sans-serif">Native UVLL dimensions joined to a priced, unadopted support proposal</text>
+<text x="35" y="119" font-size="21" fill="#21363b" font-family="Arial,sans-serif">Plan: authored receiver coordinates / native foot contacts still unknown</text>
+<rect x="40" y="157" width="553.3000000000001" height="328.35" fill="#c6d2ce" stroke="#21363b"/>
+<rect x="40.0" y="157" width="55.00000000000001" height="328.35" fill="#91aaa9" stroke="#21363b"/>
+<rect x="538.3000000000001" y="157" width="55.00000000000001" height="328.35" fill="#91aaa9" stroke="#21363b"/>
+<rect x="40" y="157.0" width="553.3000000000001" height="22.0" fill="#7e969c" stroke="#21363b"/>
+<rect x="40" y="463.35" width="553.3000000000001" height="22.0" fill="#7e969c" stroke="#21363b"/>
+<rect x="313.35" y="193.3" width="116.60000000000001" height="127.60000000000001" fill="#d4a766" stroke="#21363b"/>
+<rect x="316.65000000000003" y="196.6" width="110.00000000000001" height="121.00000000000001" fill="#f4f1e9" stroke="#21363b"/>
+<circle cx="371.65000000000003" cy="224.10000000000002" r="4" fill="#8c402e"/>
+<text x="383.65000000000003" y="229.10000000000002" font-size="15" fill="#21363b" font-family="Arial,sans-serif">inlet axis</text>
+<circle cx="371.65000000000003" cy="278.0" r="4" fill="#8c402e"/>
+<text x="383.65000000000003" y="283.0" font-size="15" fill="#21363b" font-family="Arial,sans-serif">cover axis</text>
+<path d="M371.65000000000003,224.10000000000002 L371.65000000000003,278.0" stroke="#8c402e" fill="none"/>
+<text x="40" y="516" font-size="17" fill="#21363b" font-family="Arial,sans-serif">1006 × 597 plate; clear opening200 × 220; rim40 high × 6 thick</text>
+<text x="40" y="545" font-size="17" fill="#8c402e" font-family="Arial,sans-serif">98 mm native axis separation; trial position/clocking is NOT certified.</text>
+<text x="650" y="158" font-size="21" fill="#21363b" font-family="Arial,sans-serif">Full plate: raising both does not buy access</text>
+<text x="650" y="201" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Let d = actual unit bottom above receiver top.</text>
+<text x="650" y="237" font-size="21" fill="#21363b" font-family="Arial,sans-serif">Cover-to-plate clearance = d −72.</text>
+<text x="650" y="274" font-size="20" fill="#21363b" font-family="Arial,sans-serif">Raise by R: (R+d−72) −R = d−72.</text>
+<text x="650" y="312" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Base123 + feet15…50 does not establish d.</text>
+<text x="650" y="350" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Native assembled1417 is not an added seat datum.</text>
+<text x="650" y="389" font-size="18" fill="#8c402e" font-family="Arial,sans-serif">No actual d or extraction stroke is selected.</text>
+<text x="650" y="429" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Opening axes ≠ whole body / hand / tool clearance.</text>
+<text x="650" y="468" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Actual feet, capture and local plate/rim welds</text>
+<text x="650" y="495" font-size="18" fill="#21363b" font-family="Arial,sans-serif">must retain their load path before machining.</text>
+<text x="35" y="601" font-size="23" fill="#21363b" font-family="Arial,sans-serif">Section obligations: preserve support and fork withdrawal</text>
+<path d="M55,647 L520,647" stroke="#21363b" fill="none"/>
+<text x="65" y="639" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Actual unit bottom</text>
+<path d="M90,647 L90,719" stroke="#21363b" fill="none"/>
+<path d="M80,719 L100,719" stroke="#21363b" fill="none"/>
+<text x="104" y="691" font-size="17" fill="#21363b" font-family="Arial,sans-serif">native72 below unit bottom</text>
+<text x="65" y="744" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Cleaning cover → setter / float downward</text>
+<rect x="55" y="783" width="178" height="6" fill="#7e969c" stroke="#21363b"/>
+<rect x="355" y="783" width="165" height="6" fill="#7e969c" stroke="#21363b"/>
+<rect x="227" y="789" width="6" height="40" fill="#d4a766" stroke="#21363b"/>
+<rect x="355" y="789" width="6" height="40" fill="#d4a766" stroke="#21363b"/>
+<text x="65" y="859" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Schematic d varies; plate opening keeps no loose hatch.</text>
+<text x="650" y="629" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Rim bottom180 / nominal fork top140 →40 mm.</text>
+<text x="650" y="665" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Authored rear-beam gap26 mm; no beam cut.</text>
+<text x="650" y="701" font-size="18" fill="#21363b" font-family="Arial,sans-serif">This does not locate actual fork/leg/caster geometry.</text>
+<text x="650" y="737" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Before lift: support fixed tail, counterhold coupling,</text>
+<text x="650" y="768" font-size="18" fill="#21363b" font-family="Arial,sans-serif">capture finite drain-down; release and clear travel.</text>
+<text x="650" y="806" font-size="18" fill="#8c402e" font-family="Arial,sans-serif">Receptor / bracket / seals / minimum-ID line remain open.</text>
+<text x="35" y="914" font-size="24" fill="#21363b" font-family="Arial,sans-serif">Whole-system price and decision</text>
+<text x="35" y="954" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Ideal plate + rim receiver 48.054 kg; listed unit+frame 204.054 kg.</text>
+<text x="35" y="988" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Only 22.946 kg remains below227 kg for native base/capture and all unscoped parts.</text>
+<text x="35" y="1022" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Keep native base/feet; no foot/capture patch may cross the aperture. Local plate/rim/weld bearing is NOT proved.</text>
+<text x="35" y="1056" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Keep96/128 capture/control/heat, actual unit CG, complete tool/cart/door/ports and folded-route capture duties.</text>
+<text x="35" y="1090" font-size="17" fill="#21363b" font-family="Arial,sans-serif">UVLL72 external depth is not100mm water-seal height; actual native accessory/pressure/discharge scope must join.</text>
+<text x="35" y="1124" font-size="17" fill="#21363b" font-family="Arial,sans-serif">12mm Cu connection is not a12mm-ID downstream line; actual transition, seals and float/setter constituents remain.</text>
+<text x="35" y="1158" font-size="17" fill="#21363b" font-family="Arial,sans-serif">No existing floor drain, sanitary/RWT/heat-pump receptor, floor/air/water closure or material exception is borrowed.</text>
+<text x="35" y="1220" font-size="19" fill="#8c402e" font-family="Arial,sans-serif">No apparatus, support, cleaning/handling pass, selected air target or MAT completion.</text>
 </svg>

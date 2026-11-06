@@ -1,0 +1,734 @@
+{
+  "status": "Whole-room comparison in development; current HAD/Services unchanged; no geometry/apparatus/handling adoption",
+  "sourceCommit": "50093457642f65eca288e5cc233a77d8aac6bc29",
+  "sources": {
+    "HAD": {
+      "path": "project/had/studies/water-replan.json",
+      "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
+    },
+    "Services": {
+      "path": "project/mat/studies/whole-house-service-baseline.json",
+      "blob": "049161ebac29b24e0acc7d8085302fca906fe9d2"
+    }
+  },
+  "sourceRoles": {
+    "utilityRawX": [
+      10250,
+      11150
+    ],
+    "utilityFinishedX": [
+      10277,
+      11123
+    ],
+    "intermediateFinishedX": [
+      9677,
+      10898
+    ],
+    "eastArchitecturalFinishedMouthY": [
+      3927,
+      5273
+    ],
+    "eastDoorsetMinimumRequiredClear_mm": 1000,
+    "note": "Architectural finished mouth is not actual installed doorset clear. Retain1000 minimum and full native frame/leaf/threshold/closer/source qualification.425 is the retained complete cart/apparatus circle including its25mm allowance, not a mandatory shape for every possible actual handling method."
+  },
+  "rejectedLocalControls": [
+    {
+      "id": "existing-south-host",
+      "rawUtilityX": [
+        10250,
+        11150
+      ],
+      "finishedUtilityX": [
+        10277,
+        11123
+      ],
+      "maximumCentreX_mm": 10798,
+      "minimumCentreX_mm": 11007.037034920393,
+      "planPass": false
+    },
+    {
+      "id": "W9-west200",
+      "body": [
+        9477,
+        2672,
+        1006,
+        597
+      ],
+      "frontField": [
+        9477,
+        3269,
+        1006,
+        600
+      ],
+      "westPierOverlap_mm": [
+        200,
+        194
+      ],
+      "openLeafFrontOverlap_mm": [
+        682,
+        44
+      ],
+      "planPass": false
+    },
+    {
+      "id": "utility-east200-only",
+      "rawUtilityX": [
+        10450,
+        11350
+      ],
+      "finishedUtilityX": [
+        10477,
+        11323
+      ],
+      "maximumCentreX_mm": 10998,
+      "minimumCentreX_mm": 11007.037034920393,
+      "stillShort_mm": 9.037034920393126,
+      "planPass": false
+    },
+    {
+      "id": "north-emitter-only",
+      "body": [
+        10540,
+        4397,
+        1006,
+        597
+      ],
+      "cylinderWorkingOverlap_mm": [
+        570,
+        328
+      ],
+      "cylinderBuffer425ExitBlocked": true,
+      "planPass": false
+    }
+  ],
+  "proposal": {
+    "W9": [
+      10400,
+      5147,
+      1006,
+      597
+    ],
+    "W9FrontSouth600": [
+      10400,
+      4547,
+      1006,
+      600
+    ],
+    "bufferStation": [
+      10920.5,
+      2772,
+      650,
+      650
+    ],
+    "bufferMaximumRoundBody_mm": 600,
+    "bufferUsableAlwaysConnectedLitres": 100,
+    "bufferPortFace": "WEST proposed; actual native ports/isolation/drain/support and usable volume unqualified",
+    "controls": [
+      10920.5,
+      3797,
+      650,
+      300
+    ],
+    "controlsFront": "NORTH",
+    "emitter": [
+      9727,
+      2647,
+      550,
+      200
+    ],
+    "cylinderBodyUnchanged": [
+      9562.5,
+      3952.5,
+      595,
+      595
+    ],
+    "cylinderWorkingEast": [
+      10210,
+      4097,
+      900,
+      700
+    ],
+    "riserUnchanged": [
+      9400,
+      4700,
+      550,
+      700
+    ],
+    "permanentBodies": {
+      "cylinder": {
+        "circle": [
+          9860,
+          4250,
+          297.5
+        ]
+      },
+      "riser": {
+        "rect": [
+          9400,
+          4700,
+          550,
+          700
+        ]
+      },
+      "controls": {
+        "rect": [
+          10920.5,
+          3797,
+          650,
+          300
+        ]
+      },
+      "emitter": {
+        "rect": [
+          9727,
+          2647,
+          550,
+          200
+        ]
+      },
+      "buffer": {
+        "circle": [
+          11245.5,
+          3097,
+          300
+        ]
+      },
+      "W9": {
+        "rect": [
+          10400,
+          5147,
+          1006,
+          597
+        ]
+      }
+    },
+    "emitterToFullReferenceLeafSweep_mm": 19.7189250155443,
+    "emitterSweepRole": "Exact reference quarter-disc outer radius; ~20mm remains, not25 and not classified-kit/trim/closer or fixing approval."
+  },
+  "taskComparisons": {
+    "plant-entry": {
+      "radius_mm": 325,
+      "polyline_mm": [
+        [
+          8800,
+          3200
+        ],
+        [
+          10545,
+          3200
+        ],
+        [
+          10545,
+          4250
+        ]
+      ],
+      "minimumInflatedMargin_mm": 9.0,
+      "limiting": "west-north",
+      "allMargins_mm": {
+        "utility-west-pier": 228.0,
+        "utility-east-pier": 474.9331222046003,
+        "intermediate-west-pier": 78.0,
+        "intermediate-east-pier": 28.0,
+        "north-wall": 1205.5,
+        "east-south": 700.5,
+        "east-north": 1123.5093199562093,
+        "west-south": 83.5,
+        "west-north": 9.0,
+        "service-emitter-utility-E": 805.2363690839186,
+        "service-utility-washer": 1475.0,
+        "service-utility-sink": 1520.0,
+        "service-utility-rearServiceChase": 2175.0,
+        "service-utility-valveBay": 1481.6612853548393,
+        "service-utility-electricalStation": 475.0,
+        "service-utility-PVinverter": 2195.5,
+        "cylinder": 62.5,
+        "riser": 421.0060321471939,
+        "controls": 50.5,
+        "emitter": 28.0,
+        "buffer": 83.03195549353563,
+        "W9": 572.0,
+        "parked-leaf": 9.0
+      },
+      "planPass": true
+    },
+    "utility-curved-entry": {
+      "radius_mm": 325,
+      "polyline_mm": [
+        [
+          10800,
+          1725
+        ],
+        [
+          10610,
+          2000
+        ],
+        [
+          10610,
+          2900
+        ],
+        [
+          10550,
+          3400
+        ],
+        [
+          10550,
+          4250
+        ]
+      ],
+      "minimumInflatedMargin_mm": 0.0,
+      "limiting": "service-utility-valveBay",
+      "allMargins_mm": {
+        "utility-west-pier": 8.0,
+        "utility-east-pier": 188.0,
+        "intermediate-west-pier": 548.0,
+        "intermediate-east-pier": 23.0,
+        "north-wall": 1205.5,
+        "east-south": 445.5,
+        "east-north": 1119.973788689608,
+        "west-south": 888.0,
+        "west-north": 828.0,
+        "service-emitter-utility-E": 247.95658648801657,
+        "service-utility-washer": 15.036762718386058,
+        "service-utility-sink": 32.94552658190884,
+        "service-utility-rearServiceChase": 700.0,
+        "service-utility-valveBay": 0.0,
+        "service-utility-electricalStation": 588.0,
+        "service-utility-PVinverter": 1054.5181223891188,
+        "cylinder": 67.5,
+        "riser": 425.0,
+        "controls": 45.5,
+        "emitter": 8.0,
+        "buffer": 29.444839320269807,
+        "W9": 572.0,
+        "parked-leaf": 66.0
+      },
+      "planPass": true
+    },
+    "buffer-west-service": {
+      "radius_mm": 300,
+      "polyline_mm": [
+        [
+          10620.5,
+          3097
+        ],
+        [
+          10620.5,
+          3097
+        ]
+      ],
+      "minimumInflatedMargin_mm": 25.0,
+      "limiting": "buffer",
+      "allMargins_mm": {
+        "utility-west-pier": 266.12034939577995,
+        "utility-east-pier": 374.54151095392194,
+        "intermediate-west-pier": 770.6204976554484,
+        "intermediate-east-pier": 277.0981285708697,
+        "north-wall": 2383.5,
+        "east-south": 650.0,
+        "east-north": 2074.3369600795922,
+        "west-south": 961.0640348531076,
+        "west-north": 999.2002347598311,
+        "service-emitter-utility-E": 705.0179102881699,
+        "service-utility-washer": 1397.0,
+        "service-utility-sink": 1428.6929310898452,
+        "service-utility-rearServiceChase": 2097.0,
+        "service-utility-valveBay": 1398.8611626616225,
+        "service-utility-electricalStation": 857.0052938513288,
+        "service-utility-PVinverter": 2222.5832989219602,
+        "cylinder": 783.7202032985183,
+        "riser": 1437.5785593750861,
+        "controls": 461.5773105863908,
+        "emitter": 124.84379482346213,
+        "buffer": 25.0,
+        "W9": 1750.0,
+        "parked-leaf": 335.5715931348726
+      },
+      "planPass": true
+    },
+    "controls-north-service": {
+      "radius_mm": 300,
+      "polyline_mm": [
+        [
+          11245.5,
+          4422
+        ],
+        [
+          11245.5,
+          4422
+        ]
+      ],
+      "minimumInflatedMargin_mm": 25.0,
+      "limiting": "controls",
+      "allMargins_mm": {
+        "utility-west-pier": 1722.032949780987,
+        "utility-east-pier": 1475.0,
+        "intermediate-west-pier": 1388.4363328239533,
+        "intermediate-east-pier": 325.0,
+        "north-wall": 1058.5,
+        "east-south": 292.15707375661736,
+        "east-north": 610.9478580028607,
+        "west-south": 2164.84938687945,
+        "west-north": 1548.5,
+        "service-emitter-utility-E": 1697.9141623202934,
+        "service-utility-washer": 2770.839339659436,
+        "service-utility-sink": 2722.0,
+        "service-utility-rearServiceChase": 3422.0,
+        "service-utility-valveBay": 2736.413056552089,
+        "service-utility-electricalStation": 2246.828665222692,
+        "service-utility-PVinverter": 3677.018544085506,
+        "cylinder": 798.6354697879428,
+        "riser": 1024.9921697881841,
+        "controls": 25.0,
+        "emitter": 1548.9503103112318,
+        "buffer": 725.0,
+        "W9": 425.0,
+        "parked-leaf": 1075.7973142872463
+      },
+      "planPass": true
+    },
+    "emitter-routine": {
+      "radius_mm": 300,
+      "polyline_mm": [
+        [
+          10002,
+          3172
+        ],
+        [
+          10002,
+          3172
+        ]
+      ],
+      "minimumInflatedMargin_mm": 25.0,
+      "limiting": "emitter",
+      "allMargins_mm": {
+        "utility-west-pier": 225.0,
+        "utility-east-pier": 937.8473249960998,
+        "intermediate-west-pier": 239.80181548416454,
+        "intermediate-east-pier": 694.2720955553364,
+        "north-wall": 2308.5,
+        "east-south": 1268.5,
+        "east-north": 2321.9064151872394,
+        "west-south": 414.7064082544664,
+        "west-north": 405.03120498315536,
+        "service-emitter-utility-E": 1257.6675672299273,
+        "service-utility-washer": 1472.6499936535695,
+        "service-utility-sink": 1709.6487255239408,
+        "service-utility-rearServiceChase": 2172.4659754989552,
+        "service-utility-valveBay": 1604.5177867376299,
+        "service-utility-electricalStation": 530.0656600534683,
+        "service-utility-PVinverter": 2194.5861881282035,
+        "cylinder": 489.81228264928563,
+        "riser": 1228.8845607173878,
+        "controls": 810.9758098176576,
+        "emitter": 25.0,
+        "buffer": 645.759707969398,
+        "W9": 1714.703203948413,
+        "parked-leaf": 62.0
+      },
+      "planPass": true
+    },
+    "emitter-pulled-closed-door": {
+      "radius_mm": 300,
+      "polyline_mm": [
+        [
+          10002,
+          3322
+        ],
+        [
+          10002,
+          3322
+        ]
+      ],
+      "minimumInflatedMargin_mm": 129.6347285776605,
+      "limiting": "intermediate-west-pier",
+      "allMargins_mm": {
+        "utility-west-pier": 375.0,
+        "utility-east-pier": 1008.5358229716144,
+        "intermediate-west-pier": 129.6347285776605,
+        "intermediate-east-pier": 639.029818482885,
+        "north-wall": 2158.5,
+        "east-south": 1268.5,
+        "east-north": 2203.316450231572,
+        "west-south": 504.64604019407193,
+        "west-north": 341.0686390707316,
+        "service-emitter-utility-E": 1334.633980437211,
+        "service-utility-washer": 1622.599282221857,
+        "service-utility-sink": 1843.0790932674417,
+        "service-utility-rearServiceChase": 2322.439322462962,
+        "service-utility-valveBay": 1744.819796461292,
+        "service-utility-electricalStation": 671.1379922544478,
+        "service-utility-PVinverter": 2344.467857622777,
+        "cylinder": 341.30136344170273,
+        "riser": 1078.9807830423163,
+        "controls": 734.0537945387562,
+        "emitter": 175.0,
+        "buffer": 663.6919126116143,
+        "W9": 1567.8942689563562,
+        "closed-leaf": 283.0
+      },
+      "planPass": true
+    }
+  },
+  "buffer425RenewalClosedDoor": {
+    "radius_mm": 425,
+    "polyline_mm": [
+      [
+        11245.5,
+        3097
+      ],
+      [
+        10800,
+        3097
+      ],
+      [
+        10580,
+        3250
+      ],
+      [
+        10425,
+        3400
+      ],
+      [
+        10425,
+        4250
+      ],
+      [
+        10500,
+        4575
+      ],
+      [
+        12500,
+        4575
+      ]
+    ],
+    "minimumInflatedMargin_mm": -157.5,
+    "limiting": "cylinder",
+    "allMargins_mm": {
+      "utility-west-pier": 243.05110610548059,
+      "utility-east-pier": 25.0,
+      "intermediate-west-pier": 323.0,
+      "intermediate-east-pier": 46.37011946557442,
+      "north-wall": 780.5,
+      "east-south": -100.0,
+      "east-north": 273.0,
+      "west-south": 769.594596505442,
+      "west-north": 603.0,
+      "service-emitter-utility-E": 255.57769578498528,
+      "service-utility-washer": 1274.9438226012057,
+      "service-utility-sink": 1272.0,
+      "service-utility-rearServiceChase": 1972.0,
+      "service-utility-valveBay": 1272.0,
+      "service-utility-electricalStation": 799.8689409982792,
+      "service-utility-PVinverter": 2154.594202583034,
+      "cylinder": -157.5,
+      "riser": 139.02259596938563,
+      "controls": 53.0,
+      "emitter": 79.2003570010636,
+      "W9": 147.0,
+      "closed-leaf": 581.0
+    },
+    "planPass": false
+  },
+  "unchangedCylinderPierPhysicalThroat_mm": 835.0427144262594,
+  "cylinder425Renewal": {
+    "radius_mm": 425,
+    "polyline_mm": [
+      [
+        9860,
+        4250
+      ],
+      [
+        10500,
+        4250
+      ],
+      [
+        10500,
+        4575
+      ],
+      [
+        12500,
+        4575
+      ]
+    ],
+    "minimumInflatedMargin_mm": 22.46983138531249,
+    "limiting": "controls",
+    "allMargins_mm": {
+      "utility-west-pier": 1178.0,
+      "utility-east-pier": 1294.8075473726703,
+      "intermediate-west-pier": 63.567293215581515,
+      "intermediate-east-pier": 178.00331674046367,
+      "north-wall": 780.5,
+      "east-south": 223.0,
+      "east-north": 273.0,
+      "west-south": 1105.2258820187299,
+      "west-north": 38.0,
+      "service-emitter-utility-E": 1594.2707223153611,
+      "service-utility-washer": 2425.0,
+      "service-utility-sink": 2460.3076092507017,
+      "service-utility-rearServiceChase": 3125.0,
+      "service-utility-valveBay": 2432.0089254323307,
+      "service-utility-electricalStation": 1432.1669284154293,
+      "service-utility-PVinverter": 3145.5,
+      "riser": 25.0,
+      "controls": 22.46983138531249,
+      "emitter": 978.0,
+      "buffer": 648.0182992225559,
+      "W9": 147.0,
+      "parked-leaf": 247.0
+    },
+    "planPass": true
+  },
+  "W9CarrierBodyOnly": {
+    "completeCarrier_mm": [
+      1250,
+      609
+    ],
+    "reserve_mm": 25,
+    "polyline_mm": [
+      [
+        10903,
+        5445.5
+      ],
+      [
+        10903,
+        4575
+      ],
+      [
+        12500,
+        4575
+      ]
+    ],
+    "minimumMargin_mm": 5.5,
+    "limiting": "north-wall",
+    "allMargins_mm": {
+      "utility-west-pier": 1598.5003079765645,
+      "utility-east-pier": 1598.5,
+      "intermediate-west-pier": 740.1164943980754,
+      "intermediate-east-pier": 448.5,
+      "north-wall": 5.5,
+      "east-south": 318.5,
+      "east-north": 17.5,
+      "west-south": 1696.5115451253878,
+      "west-north": 856.0,
+      "service-emitter-utility-E": 1817.5,
+      "service-utility-washer": 2845.5,
+      "service-utility-sink": 2845.5,
+      "service-utility-rearServiceChase": 3545.5,
+      "service-utility-valveBay": 2845.5,
+      "service-utility-electricalStation": 1933.6554699589205,
+      "service-utility-PVinverter": 3585.839929988589,
+      "cylinder": 96.00238947943893,
+      "riser": 303.0,
+      "controls": 148.5,
+      "emitter": 1398.5003512468832,
+      "buffer": 848.5,
+      "parked-leaf": 677.6501618871229
+    },
+    "planPass": true,
+    "scope": "Exact fixed-heading body sweep only; no wheel/support/CG/force/hand-grip or complete operator turn admission."
+  },
+  "W9AuthoredCrewFirstAttempt": {
+    "radius_mm": 325,
+    "polyline_mm": [
+      [
+        10500,
+        4816.0
+      ],
+      [
+        10500,
+        3945.5
+      ],
+      [
+        12097,
+        3945.5
+      ]
+    ],
+    "minimumInflatedMargin_mm": -325,
+    "limiting": "controls",
+    "allMargins_mm": {
+      "utility-west-pier": 992.5094876318728,
+      "utility-east-pier": 973.5,
+      "intermediate-west-pier": 511.29017093351035,
+      "intermediate-east-pier": -176.5,
+      "north-wall": 639.5,
+      "east-south": -306.5,
+      "east-north": 838.9670313200456,
+      "west-south": 1271.3473932700238,
+      "west-north": 778.0,
+      "service-emitter-utility-E": 1192.5,
+      "service-utility-washer": 2220.5,
+      "service-utility-sink": 2220.5,
+      "service-utility-rearServiceChase": 2920.5,
+      "service-utility-valveBay": 2220.5,
+      "service-utility-electricalStation": 1416.6599122676046,
+      "service-utility-PVinverter": 2995.6559592947897,
+      "cylinder": 17.5,
+      "riser": 225.0,
+      "controls": -325,
+      "emitter": 795.9064412340576,
+      "buffer": 223.5,
+      "parked-leaf": 176.33546652914953
+    },
+    "planPass": false
+  },
+  "W9Crew300Complete700StationControl": {
+    "radius_mm": 300,
+    "polyline_mm": [
+      [
+        10500,
+        4816.0
+      ],
+      [
+        10500,
+        3945.5
+      ],
+      [
+        12097,
+        3945.5
+      ]
+    ],
+    "minimumInflatedMargin_mm": -300,
+    "limiting": "controls",
+    "allMargins_mm": {
+      "utility-west-pier": 1017.5094876318728,
+      "utility-east-pier": 998.5,
+      "intermediate-west-pier": 536.2901709335104,
+      "intermediate-east-pier": -151.5,
+      "north-wall": 664.5,
+      "east-south": -281.5,
+      "east-north": 863.9670313200456,
+      "west-south": 1296.3473932700238,
+      "west-north": 803.0,
+      "service-emitter-utility-E": 1217.5,
+      "service-utility-washer": 2245.5,
+      "service-utility-sink": 2245.5,
+      "service-utility-rearServiceChase": 2945.5,
+      "service-utility-valveBay": 2245.5,
+      "service-utility-electricalStation": 1441.6599122676046,
+      "service-utility-PVinverter": 3020.6559592947897,
+      "cylinder": 42.5,
+      "riser": 250.0,
+      "controls": -300,
+      "emitter": 820.9064412340576,
+      "buffer": 248.5,
+      "parked-leaf": 201.33546652914953,
+      "complete-cylinder-station": -10.0
+    },
+    "planPass": false
+  },
+  "decision": "Retain this one whole-room candidate for joined development. Local south-host/arch-only and emitter-only north controls fail. No layout adopted: finish full buffer/crew supported method and W9 operator regrip/exit, native GL/cart datum/CG/support, ports/duct/condensate and moved hydraulic thermal/support consequences before source adoption.",
+  "unearned": [
+    "Actual W9 cart operator regrip/exit and whole-tool lift/setdown; a cart-body sweep is not whole handling",
+    "Buffer supported first lift/complete425-carrier/crew through intermediate arch and closed protected leaf; no relabelled old export route",
+    "Actual riser service/230mm clamp tasks: only450mm remains between riser east9950 and W9 west10400 at overlappingY5147..5400; no600body+25 parallel stance or whole access pass supplied",
+    "Moved controls/buffer/emitter supports, finite filled loads and actual pipe/port/air/heat loss consequences",
+    "W9 native72mm UVLL cover access through rimmed receiver, actual base seat/feet and independently supported discharge/receptor",
+    "No source-qualified floor drain/outfall, safety/material exception, site works or selected air target"
+  ],
+  "admission": {
+    "owningGeometryAdopted": false,
+    "wholeRoomHandlingPass": false,
+    "apparatusAccepted": false,
+    "packetComplete": false
+  }
+}
