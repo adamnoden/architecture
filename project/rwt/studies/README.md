@@ -42,3 +42,5 @@ node project/rwt/studies/copper-access-geometry.mjs
 Regenerate with the relevant command without `--check` only after reviewing changed inputs. The PE generator refuses a changed north-comparison input blob; the conventional comparison refuses a changed reviewed support-model blob until applicability is reassessed. Copper fixture dimensions live in their generators and must remain labelled as authored assumptions. The access-first calculation prints its bounded result and creates no generated files.
 
 - `graded-transfer-comparison.mjs` / `.json` / `.test.mjs`: unadopted finite-length replacement of the selected hood plunge within the same well; variable-width energy/roughness comparisons, zero-loss conservation and exact selected-source pin. No plan-turn, canopy-terminal, handler or first-wetting admission.
+
+- `graded-transfer-geometry.mjs` / `.json` / `.test.mjs` and geometry/canopy SVG sheets: one unadopted joined chute, light-panel captured retrieval and temporary north canopy-drain construction. Selected HAD stays unchanged; the figures expose real support, access and hydraulic boundaries.

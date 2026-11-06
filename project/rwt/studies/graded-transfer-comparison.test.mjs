@@ -18,10 +18,10 @@ test('zero-friction path conserves energy and rejects a nominal-only narrow spli
  for(const a of o.cases.filter(a=>a.roughness===0))
   assert(Math.abs(a.finalSpecificEnergyMm-a.initialSpecificEnergyMm-drop)<.001);
  assert(c('N100-unwidened').horizontalConjugateComparisonMm>130);
- assert(c('S225').horizontalConjugateComparisonMm>110);
- assert(c('N100-to225').horizontalConjugateComparisonMm<90);
- assert(c('S225-to350').horizontalConjugateComparisonMm<90);
- assert(o.branches.find(b=>b.id==='N100-to225').maximumFlowLps>2.38);
+ assert(c('S225').horizontalConjugateComparisonMm>100);
+ assert(c('N100-to215').horizontalConjugateComparisonMm<93);
+ assert(c('S225-to340').horizontalConjugateComparisonMm<91);
+ assert(o.branches.find(b=>b.id==='N100-to215').maximumFlowLps>2.38);
 });
 
 test('sectional energy comparison converges without hiding curved-toe acceleration',()=>{

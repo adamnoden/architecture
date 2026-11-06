@@ -6,7 +6,7 @@ import {readSelected,mouthFlow} from './selected-water-event.mjs';
 const g=9.81;
 export function compare(steps=6000,roughnesses=[0,.009,.012,.02,.03]){
  const s=readSelected(),r=s.model.renewal,e=r.courtCollector.actualOpenEntries;
- const x0=e.west.planeX,x1=r.shield.clearOutlet.planeX,z0=-150,z1=r.shield.clearOutlet.z[0];
+ const x0=e.west.planeX,x1=r.shield.clearOutlet.planeX,z0=e.catchCover.gutterBedEnds[0],z1=r.shield.clearOutlet.z[0]+5;
  const dx=(x1-x0)/1000,drop=(z0-z1)/1000,R=.4;
  // Straight inclined floor plus a tangent circular toe ending horizontally.
  let lo=0,hi=1;
@@ -18,9 +18,9 @@ export function compare(steps=6000,roughnesses=[0,.009,.012,.02,.03]){
  const q=s.model.hydraulicProbe.assignedInwardRoofAndCourtLps;
  const branches=[
   {id:'S225',inlet:[6950,7175],startWidthMm:225,endWidthMm:225,maximumFlowLps:q,reason:'Entire assigned duty may use the larger actual inlet; no nominal split assumption.'},
-  {id:'S225-to350',inlet:[6950,7175],startWidthMm:225,endWidthMm:350,maximumFlowLps:q,reason:'Explicit splay candidate, allowing a zero-friction energy bound without600 spread; actual plan turn and transition remain unadopted.'},
+  {id:'S225-to340',inlet:[6950,7175],startWidthMm:225,endWidthMm:340,maximumFlowLps:q,reason:'Explicit splay candidate, allowing a zero-friction energy bound without600 spread; actual plan turn and transition remain unadopted.'},
   {id:'N100-unwidened',inlet:[7275,7375],startWidthMm:100,endWidthMm:100,maximumFlowLps:mouthFlow(-35,[[7275,7375]]),reason:'Clean actual100 entry at quiet stage bounds its individual inflow; the other branch supplies any remainder.'},
-  {id:'N100-to225',inlet:[7275,7375],startWidthMm:100,endWidthMm:225,maximumFlowLps:mouthFlow(-35,[[7275,7375]]),reason:'Authored gradual splay, not uniform600 spreading credit. Needs complete plan-turn and release construction before selection.'}
+  {id:'N100-to215',inlet:[7275,7375],startWidthMm:100,endWidthMm:215,maximumFlowLps:mouthFlow(-35,[[7275,7375]]),reason:'Authored gradual splay, not uniform600 spreading credit. Needs complete plan-turn and release construction before selection.'}
  ];
  const cases=branches.flatMap(b=>roughnesses.map(n=>{
   const Q=b.maximumFlowLps/1000,w0=b.startWidthMm/1000,w1=b.endWidthMm/1000;
@@ -45,19 +45,19 @@ export function compare(steps=6000,roughnesses=[0,.009,.012,.02,.03]){
   }
   const v=Q/(w1*y),Fr=v/Math.sqrt(g*y),conjugate=y/2*(Math.sqrt(1+8*Fr*Fr)-1)*1000;
   return {branch:b.id,flowLps:b.maximumFlowLps,roughness:n,initialDepthMm:initial*1000,toeDepthMm:y*1000,toeVelocityMps:v,
-   horizontalConjugateComparisonMm:conjugate,nominal100DepthReserveMm:100-conjugate,
+   horizontalConjugateComparisonMm:conjugate,nominalChuteDepthReserveMm:95-conjugate,
    toeNormalAccelerationOverGravity:v*v/(g*R),
    finalSpecificEnergyMm:1000*(y+v*v/(2*g)),initialSpecificEnergyMm:H*1000};
  }));
  return {identity:'RWT-UNADOPTED-GRADED-TRANSFER-COMPARISON-2026-11-06',selectedSource:s.blob,
-  selectedGeometryChanged:false,sourceRun:{x:[x0,x1],floor:[z0,z1],horizontalRunMm:dx*1000},
+  selectedGeometryChanged:false,terminalLanding:{receivingBed:r.shield.clearOutlet.z[0],downwardOpenDrop:5,chuteEndBank:95},sourceRun:{x:[x0,x1],floor:[z0,z1],horizontalRunMm:dx*1000},
   candidateProfile:{straightAngleDegrees:angle*180/Math.PI,straightLengthMm:straight*1000,toeRadiusMm:R*1000,toeHorizontalRunMm:R*Math.sin(angle)*1000,totalArcLengthMm:L*1000,endingAngleDegrees:0},
   branches,cases,
   interpretation:'Finite-length inclined-flow comparison, not a selected construction or hydraulic admission. The narrow branch must be widened or otherwise controlled; nominal flow partition is not sufficient.',
   bounds:[
    'n=0 is the zero-friction energy counterexample; n=.009..03 are authored sensitivity bounds, not calibrated roughness of a selected alloy or assembled surface.',
    'Integration uses inclined hydrostatic normal depth and Manning friction. Circular-toe nonhydrostatic pressure, waves and a located hydraulic jump are not solved; acceleration ratio is exposed, not silently ignored.',
-   'No600-width distribution is assumed. Gradual100-to225 expansion is an explicit candidate wall profile, not evidence of full-width mixing.',
+   'No600-width distribution is assumed. Gradual100-to215 expansion is an explicit candidate wall profile, not evidence of full-width mixing.',
    'The required lateral shifts/plan turns, 100depth carrier entry, actual cover/chute panel extraction before stairs and temporary canopy-pipe energy/landing still need a joined construction. This section-only comparison cannot adopt those missing joins.',
    'The2m-high canopy drain does not inherit the ordinary court quiet-stage energy boundary. Its terminal needs its own contained transition.',
    'Quiet−35, protected crest15, house and well bounds remain unchanged. No deeper stagnant sump or structural250bridge alternative is adopted.'
