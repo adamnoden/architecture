@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w5"
   },
   "claimedAt": "2026-11-06T09:41:13.275Z",
-  "heartbeatAt": "2026-11-06T13:25:47.395Z",
-  "expiresAt": "2026-11-06T14:10:47.395Z",
+  "heartbeatAt": "2026-11-06T13:29:17.743Z",
+  "expiresAt": "2026-11-06T14:14:17.743Z",
   "branch": "work/zerg-20261106-w5-envelope-join",
   "predecessor": {
     "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
@@ -34,10 +34,10 @@
       "blocker": "Project reference remains INCOMPLETE and unselected: complete clamp/seal preload, tool/hatch/guard sequence and local leak gravity/firstharm need proof. No product rating, physical seal or construction acceptance. Existing twolevel numeric outputs are explicitly a withdrawn comparison."
     }
   },
-  "pr": 1337,
+  "pr": 1341,
   "checkpoint": {
-    "evidence": "PR1337 merged 0a40215a8a562bc0d9e554edcf89778023598262 after exact b83e full CI42224330826 and fresh canonical preflight13:23:47; successor branch created at that main. Old branch ls-remote returned empty. Scratch stop/frame sensitivity derives working-gap0.420-0.555mm for hypothetical measured0.74-0.84mm lot, with actual force and frame contact still unearned.",
-    "next": "Bound actual two-face stopped frame and force/geometry compatibility without changing selected controls; reconcile owning exit table, then source-bound ground/wall/floor join with STR selected RC200/glass100.",
-    "blocker": "No measured thin-stock force/water/aging evidence or owner polymer exception. Ground thermal/moisture/air/gas load-bearing continuity remains internal design. PR1337 is merged predecessor; successor has no PR yet."
+    "evidence": "Draft1341 published1180a75e895ba4168717dd32793791912daa4a83/treeca51e9bf810c8c92cfd0adada3c04b3f1658cec7: bounded local working-gap0.420-0.555mm and two-face sensitivity; actual seal evidence withheld. Existing six-interface owning exit table reconciled current selectedRC200/glass100 and incomplete packet.",
+    "next": "Keep one draft; develop robust direct mineral/RC bearing versus load-bearing thermal insert on actual STR force/movement source, with continuous air/damp/gas/capillary paths and quantified thermal price.",
+    "blocker": "No measured thin-stock force/water/aging or owner polymer exception. Ground continuity remains actual internal design; no selected geometry rewind."
   }
 }
