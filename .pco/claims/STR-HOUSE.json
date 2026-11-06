@@ -9,8 +9,8 @@
     "label": "zerg-str-1917"
   },
   "claimedAt": "2026-11-06T19:17:42.359Z",
-  "heartbeatAt": "2026-11-06T19:17:42.359Z",
-  "expiresAt": "2026-11-06T20:47:42.359Z",
+  "heartbeatAt": "2026-11-06T19:26:34.192Z",
+  "expiresAt": "2026-11-06T20:56:34.192Z",
   "branch": "work/zerg-20261106-str-g27",
   "predecessor": {
     "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
@@ -33,5 +33,10 @@
       "next": "Freshcanonicalacquisition/currentmainreconcile; resolvecommonweldedordinary/45hipnode usingactual70/25/60/T10card, genuinearchslidingbearing/movement, completeorigin/headledger andMATfloorcapillarypath. Do not adopt250field or mergeWIP.",
       "blocker": "Coordinatoractualexecutionlimit; sourcefullydurable; STR-HOUSE remainsopen. No externaladmission/completionclaimed."
     }
+  },
+  "pr": 1343,
+  "checkpoint": {
+    "evidence": "PR1343 at 732901d4 joins current main and the 52-head register, including explicit dry-apron beam and 210mm seat cantilever. Pinned 7b74 source failures remain.",
+    "next": "Route disjoint roof, slab, wall, stair and grid loads to the 52 actual heads; resolve welded hip, L-pier arch and floor capillary interfaces with MAT and RWT."
   }
 }
