@@ -1,6 +1,8 @@
 {
   "identity": "RWT-UNADOPTED-NORTH-CANOPY-CORRECTION-2026-11-06",
   "selectedSource": "4e6f9a338cb8c5e87f6afb82fe2a6f9fc6eeb702",
+  "sourceAuthority": "Pinned UNMERGED HAD receiver-refined proposal; selected architectural decision within that proposal, not canonicalmain.",
+  "startingMain": "80c0f94148ad11e3b2eaa83c52e28d06238993ed",
   "selectedGeometryChanged": false,
   "correction": "Only the actual falling chase and side-entry/lap geometry is corrected here. No correction/adoption of the accepted old manual-staff or fast-chute failures.",
   "straight": {

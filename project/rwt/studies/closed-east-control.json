@@ -1,6 +1,8 @@
 {
   "identity": "RWT-UNADOPTED-CURRENT-E-CLOSED-CONTROL-2026-11-06",
   "selectedSource": "4e6f9a338cb8c5e87f6afb82fe2a6f9fc6eeb702",
+  "sourceAuthority": "Pinned UNMERGED HAD receiver-refined proposal; selected architectural decision within that proposal, not canonicalmain.",
+  "startingMain": "80c0f94148ad11e3b2eaa83c52e28d06238993ed",
   "selectedGeometryChanged": false,
   "recommendation": "Develop this ONE closed159copper control before further65throat/tenpanel/open-transfer machinery. It is not falsified by the current900passage. Keep its real2200longer exterior renewal cost and unresolved actual end connections visible.",
   "tube": {
@@ -137,13 +139,26 @@
     ],
     "length": 4700,
     "flange": {
-      "outsideEnvelope": 260,
-      "axialEach": 30,
+      "product": "Endex N1FMGI159 item89719",
+      "catalogOutside": 285,
+      "catalogAxial": 20,
+      "catalogMassEachKg": 7,
+      "brochureAxialA": 25,
+      "brochureZa": 2,
+      "brochureHoles": 8,
+      "outsideEnvelope": 320,
+      "axialEach": 60,
       "locationX": [
         7550,
         12250
       ],
-      "status": "PROJECT connection reservation only; actual metal seal, compression, captive fasteners and top-access first release NOT solved. No centre flange or seal hidden below the gallery."
+      "source": "https://aalberts-ips.co.uk/products/item/89719/",
+      "catalogConflict": "Current item page20axial/CW617N/clamp metadata versus brochure25/Za2/steelouter+gunmetalinsert/brazed installation. Preserve both; no invented delivered drawing/material agreement.",
+      "wellGrossBottom": -935,
+      "wellFloorReserve": 15,
+      "massMovingPairKg": 14,
+      "massFixedPairKg": 14,
+      "status": "Actual285catalogue envelope replaces too-small260projectreservation.320×120 is a conservative PROJECT tool/bolt reservation, NOT a solved8bolt/retention first release. Both flange halves stay within joint-face-to-face4700 body length, with tube cut/engagement to suit; tool reservation is not extra movingbody length. Gasket/bolt/socket/braze and actual top release remain unqualified. No centre flange hidden below gallery."
     },
     "fullTubeMaximumOD": 159.9,
     "movingSledY": [
@@ -163,8 +178,8 @@
       50,
       50
     ],
-    "flangeWestToFirstBeamEW": 70,
-    "flangeEastBeyondOuterBeamEW": 102.5,
+    "flangeWestToFirstBeamEW": 40,
+    "flangeEastBeyondOuterBeamEW": 72.5,
     "supportCases": [
       {
         "spanMm": 2100,
@@ -210,14 +225,14 @@
       ]
     ],
     "reservedCartridge": [
-      12225,
-      6870,
+      12190,
+      6840,
       -1285,
-      850,
-      260,
-      585
+      910,
+      320,
+      615
     ],
-    "bendProductComparator": "Second N18-sized380×170×380 envelope inside an850long cartridge; exact socket/axis binding remains required.",
+    "bendProductComparator": "Second N18-sized380×170×380 envelope inside changed910long cartridge; exact socket/axis binding remains required.",
     "orientation": "VERTICALLY DOWN at12950/7000/−1200",
     "receiverBounds": [
       12500,
@@ -234,11 +249,11 @@
     "pad": [
       15300,
       8200,
-      1000,
+      1100,
       800
     ],
-    "padChange": "Old800square cartridge pad is too short for850 cartridge; allocate1000×800 on the explicitly extended deck.",
-    "status": "Changed terminal requires its actual support release, captured850 envelope, return/refit and receiver impact screen. Old550cartridge handling is NOT transferred."
+    "padChange": "Real285flange and320toolreservation enlarge cartridge to910; allocate1100×800 on explicitly extended deck. Neither old800square nor early850/1000pad comparison is transferred.",
+    "status": "Changed terminal requires actual support release, captured910 envelope, return/refit and receiver impact screen. Old550cartridge handling is NOT transferred."
   },
   "renewal": {
     "onePiece": true,
@@ -280,7 +295,7 @@
       "N intact/full-duty and all E weather controls tested; guard intact covers.",
       "Capture/remove the SAME five north catch covers and five plain covers before using existing stairs/platform. No new ten deep chute panels or55kg telescopic-staff apparatus is added.",
       "From isolated well/platform, expose and support inlet/drop connection; drain pipe, capture and separate the actual end connectors. A solved top first-release/retention path is still required; a pressure seal is not a support.",
-      "Open all outboard covers. Capture/remove changed terminal cartridge and land on its1000×800pad BEFORE carrier draw.",
+      "Open all outboard covers. Capture/remove changed terminal cartridge and land on its1100×800pad BEFORE carrier draw.",
       "Draw one captured4700pipe+850sled EAST to12250..16950 at the same falling track level; retain end connection until parked capture established. No person stands below or beside the moving carrier in the portal.",
       "Lift1700 and transferN1800 into4900×1200 lower cradle territory; support at12900/16300, restrain, then detach rigging. Outgoing piece leaves before incoming occupies samepad.",
       "Reverse pipe motion; restore/test end connections and first-leak witness. Refit/test terminal while covers OPEN, then close covers. Restore catch covers/hood/entry and prove full E path before removing weather control."
@@ -291,7 +306,11 @@
     "nominalTubeSheetKg": 41.54180744598364,
     "fullBlockedTubeWaterKg": 88.68519711543136,
     "tubeOnlyWetKg": 130.22700456141501,
-    "excluded": "Flanges, solder/braze constituents,850sled/clamps/eyes, hopper/bends and rigging need their own actual signed masses; no50kg whole-handler claim follows from42kg bare pipe.",
+    "movingTubeAndTwoCatalogFlangesDryKg": 55.54180744598364,
+    "movingTubeAndTwoCatalogFlangesWetKg": 144.22700456141501,
+    "fixedFlangePairKg": 14,
+    "listedTwoBendsKg": 12.3,
+    "excluded": "Solder/braze constituents, gasket/bolts,850sled/clamps/eyes, hopper and rigging need actual signed masses beyond tube+two7kg movingflanges. Fixedother14kg flange pair and12.3kg listedbends are separate. No50kg whole-handler claim follows from42kg bare pipe.",
     "maximumTrackBottom": -1135.5882352941176,
     "localGroundRequirementAtHeave300Construction50Ventilation150": 1635.5882352941176,
     "uniformD1800ProxyReserve": 164.41176470588243,
@@ -598,6 +617,288 @@
       "maximumRoofHeadAtLowestInvertMm": 8007.044117647059,
       "limitation": "This closed route moves turns/jet impacts into a pressure/leakage boundary. Actual roof-to-court energy loss is not calibrated. Do not claim only25/75mm cover pressure or transfer a PN16 fitting label to the hopper, braze, flange or gasket."
     }
+  },
+  "mouthRewind": {
+    "identity": "REJECTED finite600north/500south cover-boundary rewind",
+    "selectedGeometryChanged": false,
+    "accepted": false,
+    "source": "4e6f9a338cb8c5e87f6afb82fe2a6f9fc6eeb702",
+    "assignedLps": 3.60375,
+    "quiet": -35,
+    "catchmentUnchangedM2": 60.0625,
+    "approachLengthMm": 100,
+    "candidates": [
+      {
+        "northCoverLength": 550,
+        "southCoverLength": 550,
+        "grossGutterY": [
+          6850,
+          7400
+        ],
+        "wallMm": 1.5,
+        "dryFlangeEachMm": 10,
+        "wetGutterY": [
+          6861.5,
+          7388.5
+        ],
+        "creditedIntervals": [
+          [
+            6861.5,
+            7175
+          ],
+          [
+            7275,
+            7375
+          ]
+        ],
+        "creditedWidth": 413.5,
+        "unchangedShadows": [
+          [
+            7175,
+            7275
+          ],
+          [
+            7375,
+            7400
+          ]
+        ],
+        "idealK1Remaining75CapacityLps": 3.712438717345428,
+        "idealK1Remaining75RequiredStageMm": -35.96281682096679,
+        "cases": [
+          {
+            "n": 0.02,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.681972311555248,
+            "requiredStageMm": -35.694598243638296,
+            "quietReserveMm": 0.6945982436382963
+          },
+          {
+            "n": 0.02,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 3.4866316646988875,
+            "requiredStageMm": -33.95245893797325,
+            "quietReserveMm": -1.0475410620267525
+          },
+          {
+            "n": 0.03,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.6454355432897523,
+            "requiredStageMm": -35.371297953961175,
+            "quietReserveMm": 0.37129795396117515
+          },
+          {
+            "n": 0.03,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 3.211456563017976,
+            "requiredStageMm": -31.450207650210835,
+            "quietReserveMm": -3.549792349789165
+          },
+          {
+            "n": 0.04,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.596906967217047,
+            "requiredStageMm": -34.93878020851875,
+            "quietReserveMm": -0.061219791481249786
+          },
+          {
+            "n": 0.04,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 2.8382804807437623,
+            "requiredStageMm": -27.966052891290666,
+            "quietReserveMm": -7.033947108709334
+          }
+        ]
+      },
+      {
+        "northCoverLength": 600,
+        "southCoverLength": 500,
+        "grossGutterY": [
+          6800,
+          7400
+        ],
+        "wallMm": 1.5,
+        "dryFlangeEachMm": 10,
+        "wetGutterY": [
+          6811.5,
+          7388.5
+        ],
+        "creditedIntervals": [
+          [
+            6811.5,
+            7175
+          ],
+          [
+            7275,
+            7375
+          ]
+        ],
+        "creditedWidth": 463.5,
+        "unchangedShadows": [
+          [
+            7175,
+            7275
+          ],
+          [
+            7375,
+            7400
+          ]
+        ],
+        "idealK1Remaining75CapacityLps": 4.025674521562783,
+        "idealK1Remaining75RequiredStageMm": -38.42025966688904,
+        "cases": [
+          {
+            "n": 0.02,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.9936200932003634,
+            "requiredStageMm": -38.16706927189888,
+            "quietReserveMm": 3.1670692718988818
+          },
+          {
+            "n": 0.02,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 3.782863506686178,
+            "requiredStageMm": -36.46391288551966,
+            "quietReserveMm": 1.4639128855196617
+          },
+          {
+            "n": 0.03,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.95514128015731,
+            "requiredStageMm": -37.862261255505544,
+            "quietReserveMm": 2.862261255505544
+          },
+          {
+            "n": 0.03,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 3.4861511649813792,
+            "requiredStageMm": -34.02939528903255,
+            "quietReserveMm": -0.97060471096745
+          },
+          {
+            "n": 0.04,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.903971065034303,
+            "requiredStageMm": -37.45508619105753,
+            "quietReserveMm": 2.455086191057532
+          },
+          {
+            "n": 0.04,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 3.0822342069768918,
+            "requiredStageMm": -30.640444233584503,
+            "quietReserveMm": -4.359555766415497
+          }
+        ]
+      }
+    ],
+    "interpretation": "550 is the existing footprint with its dry strip used;600 is ONE further50mm boundary shift, not a selected enlargement. Constant upstream-depth and constant critical-depth friction are contrasting authored sensitivities, NOT rigorous installed bounds or actual hydraulic predictions. The latter retains an adverse failure; no physical pass follows from the former.",
+    "geometry": {
+      "well": [
+        6125,
+        6300,
+        1525,
+        1100
+      ],
+      "northCover": [
+        305,
+        600
+      ],
+      "southCover": [
+        305,
+        500
+      ],
+      "countEach": 5,
+      "gateClearY": [
+        6575,
+        7225
+      ],
+      "capturedCrossingCentreY": 6900,
+      "capturedCrossingY": [
+        6600,
+        7200
+      ],
+      "gateFrameReserves": [
+        25,
+        25
+      ],
+      "actualParkedWestLeafY": [
+        7202.5,
+        7242.5
+      ],
+      "parkedLeafReserve": 2.5,
+      "weatherEntryY": [
+        6550,
+        7200
+      ],
+      "weatherEntryNorthReserve": 0,
+      "disposition": "REJECTED as next control:600body at6900 has2.5 to real parked leaf and ZERO to weatherentry north, in addition to hydraulic uncertainty. Do not propagate600plans to HAD. Prefer a genuine collector/access recomposition using retained550covers.",
+      "change": "Keep ten covers and overallwell. Move north/south boundary6850→6800; widen wetpan/notch/offsetwestledge and low open guard extension to6800..7400. Wall/flange consumes11.5each; do not credit gross600 or hidden ramp/hinge/northfoot.",
+      "unchangedRamp": [
+        5125,
+        6600,
+        1100,
+        600
+      ],
+      "declaredRampLipUnderside": -15,
+      "declaredRampQuietGap": 20,
+      "hingeFoot": [
+        6050,
+        7197.5,
+        50,
+        50
+      ],
+      "rampProfileConflict": {
+        "uniformRampUndersideAtApproachStart": -28.454545454545453,
+        "uniformRampUndersideAtMouth": -21.727272727272734,
+        "uniformRampQuietCrossingX": 5927.7027027027025,
+        "status": "Source also declares lipunderside−15. That requires a different longitudinal profile/landing. The under-ramp feed from beyond the purchased100mm strip and sidebeam is not proved by either mouth capacity screen. Preserve the contradiction; do not assume a calm reservoir across the whole west face."
+      },
+      "lowGuardInfillBottom": 0,
+      "guardQuietGap": 35,
+      "extraFloorFootCredited": false,
+      "windowBody": [
+        7325,
+        6850
+      ],
+      "windowRadius": 300,
+      "windowBodyWest": 7025,
+      "notchEast": 6225,
+      "windowNotchEWGap": 800,
+      "stairs": {
+        "plan": [
+          6125,
+          6600,
+          600,
+          600
+        ],
+        "candidateExplicitTreads": [
+          [
+            6125,
+            6325,
+            -260
+          ],
+          [
+            6325,
+            6525,
+            -440
+          ],
+          [
+            6525,
+            6725,
+            -620
+          ]
+        ],
+        "interpretation": "Explicit candidate reading of retained4×180rises/3×200goings; these solids were not already proved by the selected plan alone.",
+        "westPanMinimumUnderside": -151.5,
+        "firstTreadVerticalGap": 108.5
+      },
+      "coverMaximumLiftedTop": 1700,
+      "rainRoofUnderside": 1970,
+      "roofReserve": 270,
+      "handling": "600grosscapturedplan leaves25each atgate, including ALL clips/retention within that envelope; no extra protrusion credit. More gutter/cover mass and actual strength, capture/release/transfer, neighbouringcovercrew and weather erection remain unproved. No handlift or old30kg budget pass is inherited."
+    },
+    "downstream": "The larger wetpan must be reprofiled to the one closed7175/7000outlet; neither extra rain area nor a second pipe is introduced. Shape, actual drawdown and localK/friction placement remain the finite inlet exit.",
+    "reconciliation": "Root review before any HAD adoption: water-replan owning westlip/approach/notch/gutter/guard, court-east-window ledges/covers/ramp, actual cover/handler masses, selected-water-event binding, dependent RWT drawings/values and applicable Services/STR/MAT references must regenerate together."
   },
   "ordinaryAccess": {
     "inspection": "From existing opened court catch covers and downstream accessible terminal, inspect/rod the straight4700 bore in both directions; upstream drop bend has openable hopper access. No buried middle chamber or internal-room access hatch is added.",

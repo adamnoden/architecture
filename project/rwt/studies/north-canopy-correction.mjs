@@ -48,7 +48,7 @@ export function canopy(){
  const crewLast=stations.find(s=>s.y===12650);
  const volume=clear*height*(end-start+arcLength+1600)/1e6;
  const metalArea=(2*(clear+height)*(end-start+arcLength+1600)+2*flange*(end-start))/1e6;
- return {identity:'RWT-UNADOPTED-NORTH-CANOPY-CORRECTION-2026-11-06',selectedSource:selected.blob,selectedGeometryChanged:false,
+ return {identity:'RWT-UNADOPTED-NORTH-CANOPY-CORRECTION-2026-11-06',selectedSource:selected.blob,sourceAuthority:'Pinned UNMERGED HAD receiver-refined proposal; selected architectural decision within that proposal, not canonicalmain.',startingMain:'80c0f94148ad11e3b2eaa83c52e28d06238993ed',selectedGeometryChanged:false,
   correction:'Only the actual falling chase and side-entry/lap geometry is corrected here. No correction/adoption of the accepted old manual-staff or fast-chute failures.',
   straight:{axisX:axis,y:[start,end],invert:[1845,1825],clear:[clear,height],sheet,flangeEach:flange,
    grossX:[axis-clear/2-sheet-flange,axis+clear/2+sheet+flange],slope:20/5800},

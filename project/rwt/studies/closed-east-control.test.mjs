@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {control,renderControl} from './closed-east-control.mjs';
+import {control,renderControl,renderMouth} from './closed-east-control.mjs';
 test('one ordinary closed control fits actual450beam and950clear faces without borrowing250bridge',()=>{
  const o=control();assert.equal(o.retained.fieldBeamUnderside,-630);
  assert(o.carrier.fieldMinimumCrownGap>60);
@@ -31,7 +31,11 @@ test('one-piece renewal pays exterior land and full blocked water; old short rac
  assert(n.temporaryCradleX[0]<n.pipeParkCentreX&&n.pipeParkCentreX<n.temporaryCradleX[1]);
  assert(o.loads.fullBlockedTubeWaterKg>88&&o.loads.tubeOnlyWetKg>130);
  assert.equal(n.completeHandlerSweepProved,false);
- assert.equal(o.terminal.pad[2],1000);
+ assert.equal(o.terminal.pad[2],1100);
+ assert.equal(o.carrier.flange.catalogOutside,285);
+ assert.equal(o.carrier.flange.catalogMassEachKg,7);
+ assert(o.carrier.flange.wellFloorReserve===15);
+ assert(o.loads.movingTubeAndTwoCatalogFlangesWetKg>144);
  assert(o.terminal.nearReceiverReserve>0&&o.terminal.farReceiverReserve>0&&o.terminal.airGapAtDeclaredFaultedMaximum>0);
  assert(o.carrier.supportCases.every(c=>c.residualDownhillMmPerM>0));
  assert.equal(o.siteAccepted,false);
@@ -39,4 +43,21 @@ test('one-piece renewal pays exterior land and full blocked water; old short rac
 test('closed-control source values and inspection sheet reproduce',()=>{
  const o=control();assert.equal(fs.readFileSync('project/rwt/studies/closed-east-control.json','utf8'),JSON.stringify(o,null,2)+'\n');
  assert.equal(fs.readFileSync('project/rwt/studies/closed-east-control.svg','utf8'),renderControl(o));
+ assert.equal(fs.readFileSync('project/rwt/studies/closed-mouth-rewind.svg','utf8'),renderMouth(o));
+});
+test('finite inlet rewind pays walls, flanges, ramp shadows and preserves adverse approach failure',()=>{
+ const o=control().mouthRewind,[same,candidate]=o.candidates;
+ assert.equal(o.selectedGeometryChanged,false);assert.equal(o.accepted,false);
+ assert.equal(same.creditedWidth,413.5);assert.equal(candidate.creditedWidth,463.5);
+ assert.equal(candidate.northCoverLength+candidate.southCoverLength,1100);
+ assert.deepEqual(candidate.unchangedShadows,[[7175,7275],[7375,7400]]);
+ assert.equal(o.geometry.countEach,5);assert.equal(o.geometry.gateFrameReserves[0],25);
+ assert.equal(o.geometry.parkedLeafReserve,2.5);assert.equal(o.geometry.weatherEntryNorthReserve,0);
+ const low=c=>c.cases.find(x=>x.n===.04&&x.depthRule==='upstream-depth');
+ const high=c=>c.cases.find(x=>x.n===.04&&x.depthRule==='critical-depth');
+ assert(same.idealK1Remaining75CapacityLps>o.assignedLps);
+ assert(low(same).quietCapacityLps<o.assignedLps);
+ assert(low(candidate).quietCapacityLps>o.assignedLps);
+ assert(high(candidate).quietCapacityLps<o.assignedLps);
+ assert(o.geometry.stairs.firstTreadVerticalGap>100);
 });
