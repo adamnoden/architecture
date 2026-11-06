@@ -9,8 +9,8 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T22:39:15.204Z",
-  "expiresAt": "2026-11-07T00:09:15.204Z",
+  "heartbeatAt": "2026-11-06T22:47:50.235Z",
+  "expiresAt": "2026-11-07T00:17:50.235Z",
   "branch": "work/zerg-20261106-services-g21-fork-receiver",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
@@ -36,8 +36,8 @@
   },
   "pr": 1358,
   "checkpoint": {
-    "evidence": "Published coherent exact head 69881327fa87380818a5b3d086612becca1c6eb1 tree 2ba825106a0bc70cdb1a48ad852844a0602f3a30 reconciled main1273. Full MAT/HAD22 and render pass; utility source chain string-only identities/prose, zero numeric/geometry change; receiver CG/support/handling admissions remain false.",
-    "next": "Root exact source review; exact-head full CI; fresh canonical connector preflight. Continue actual receiver/native CG/full tool/support/condensate geometry after bounded integration."
+    "evidence": "Coherent final PR1358 headfb7573474d23f3c1c12d314bb475fed562769b85 treee9811311d460cf18d99f6bb8e5038ab653fcdf47 preserves main1273. Full current-source chain audited: strict9string-only HAD delta, IAS2hash, STR14JSON26hash-only, RWT9JSONsource-only; all geometry/engineering/SVG unchanged. Full repo/HAD22/RWT155/STR14+18producers/MAT/render/diff pass. Actual receiver CG/bearing/full-tool/capture/ports/condensate remain unadmitted.",
+    "next": "Root exact source review and full exact-head CI; fresh connector merge-check before integration. Keep candidate frozen; after merge verify deletion and rebind fresh same-generation successor for actual whole receiver/renewal design."
   },
   "note": "Active same-g21 air-duty successor Draft1356 after merged1353; provisional comparison only, no apparatus/air-boundary/handling/material admission or packet completion."
 }
