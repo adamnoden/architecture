@@ -9,8 +9,8 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T21:52:02.476Z",
-  "expiresAt": "2026-11-06T23:22:02.476Z",
+  "heartbeatAt": "2026-11-06T22:04:33.645Z",
+  "expiresAt": "2026-11-06T23:34:33.645Z",
   "branch": "work/zerg-20261106-services-g21-air-duty",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
@@ -36,8 +36,8 @@
   },
   "pr": 1356,
   "checkpoint": {
-    "evidence": "Draft1356 exact e85cc19fc858069cb874a3b0622303c2edc56ac5/tree d803a759ea282fa63b80e6b7de17698d2ab00936; fullMAT/render pass; all14 exact CI success42296231303; root source/math and envelope scope review passed, agreed final wording/core-family clarifications pending actual RWT1344 source refresh. W9 bottom-lift/ports/folded exterior handling remain open.",
-    "next": "After RWT1344 integrates, reconcile currentmain once, correct pre-site wording and structural-core/service-penetration scope, bind exact final HAD commit/blob, regenerate/render/fullMAT, exactnewhead CI and root review, fresh connector preflight. Continue actual cabinet-off-base/cart transfer research separately."
+    "evidence": "Draft1356 final exact90a18dae76c338a389dfb401a23f1decf6fc43e2/tree663c9a57d42754ebdf0ca4caf2fd271591019970 published after main2a310840 RWT1344; HAD6f089, floorfield5dd701. Exact reviewed numeric geometry/cases/budgets/renewal/admission unchanged. FullMAT/diffcheck/finalSVG render passed; currentmain fullMAT plusnewcheck and STR chain retained. Exact14CI running, validation42301643166. Root/envelope initial source review passed; final agreed scope clarifications included.",
+    "next": "Freeze90a18 pending all14 exacthead CI, root final review and fresh canonical connector merge-check; root expected-head merge. Then verify deletion/rebind fresh successor under sameg21 and develop actual raised-supported W9 bottom-lift/cart/condensate/ports renewal. No apparatus/target/material/handling adoption or MAT completion."
   },
   "note": "Active same-g21 air-duty successor Draft1356 after merged1353; provisional comparison only, no apparatus/air-boundary/handling/material admission or packet completion."
 }
