@@ -51,7 +51,7 @@ def sag_for(z,width,depth):
 oldThinSag=sag_for(2225,100,12);oldThinHead=2225-6-oldThinSag-rows[0]['completeIncomingTop']
 assert oldThinHead<25
 result={'status':'Preferred constructive Nportal tie challenger; not adopted until whole-house/current-source reconciliation',
- 'source':{'path':str(P.relative_to(R)),'sha256':hashlib.sha256(raw).hexdigest()},
+ 'source':{'path':str(P.relative_to(R)),'sha256':hashlib.sha256(raw).hexdigest(),'legacyActions':{'path':'project/str/studies/open-loggia-support.json','sha256':hashlib.sha256((R/'project/str/studies/open-loggia-support.json').read_bytes()).hexdigest()}},
  'oldControl':{'tie':portal['tie'],'courtHeadReserve':2175-rows[0]['completeIncomingTop'],'rejectedThinStrap':{'centre':2225,'section':[100,12],'zeroTensionSag':oldThinSag,'courtReserveAfterSag':oldThinHead}},
  'selectedCentralTie':{'centreZ':strapZ,'sectionNSxZ':strap,'freeSpanUsed':span,'stressBasis':'Conservative200MPa/1.1 steel reference, no supplier/certification credit','zeroTensionSelfWeightSag':sag,'axialTensionOnly':True,
   'noCredit':'No beneficial arch tension/fixedends reduces sag; no handling anchor or compression resistance credited. Actual thermal/creep/corrosion/fire and installation acceptance remain owning duties.'},

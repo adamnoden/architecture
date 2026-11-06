@@ -1,0 +1,202 @@
+{
+  "anchorageBoundary": {
+    "250field": "Positive member section screen only. Its bottom main bars are200 higher; an explicit force-turn/development detail is required before changing the field soffit or waterbed. No reduction of the selected450 member is adopted here.",
+    "450field": "Its lower main steel can continue into the deep node without a200 vertical offset. Actual continuous longitudinal routes reserve750 into connected arms, as in the archived grillage proposition; corners/terminations and orthogonal cage fabrication require matched STR-RECONCILE evidence.",
+    "knownFailureControl": "A600-wide spine node leaves122.5 of the actual weatherleaf beyond the node. Widening only the field member does not fix that bearing route."
+  },
+  "nodes": [
+    {
+      "barAcrossWidthOffsets": [
+        -240,
+        -190,
+        0,
+        190,
+        240
+      ],
+      "bottomBars": {
+        "EW": {
+          "count": 5,
+          "diameter": 20,
+          "z": -680
+        },
+        "NS": {
+          "count": 5,
+          "diameter": 20,
+          "z": -640
+        }
+      },
+      "clearCoverToOuterLink": 50,
+      "id": "court",
+      "incrementalConcreteWeightFrom600Node": 0.0,
+      "minimumStraightDevelopmentIntoActualGridArms": 750,
+      "nodes": [
+        {
+          "axis": [
+            7950,
+            6100
+          ],
+          "plan": [
+            7650.0,
+            5800,
+            600,
+            600
+          ],
+          "waterPortalReserve": 50,
+          "z": [
+            -750,
+            -180
+          ]
+        },
+        {
+          "axis": [
+            7950,
+            7700
+          ],
+          "plan": [
+            7650.0,
+            7400,
+            600,
+            600
+          ],
+          "waterPortalReserve": 50,
+          "z": [
+            -750,
+            -180
+          ]
+        }
+      ],
+      "topBars": {
+        "EW": {
+          "count": 5,
+          "diameter": 20,
+          "z": -250
+        },
+        "NS": {
+          "count": 5,
+          "diameter": 20,
+          "z": -290
+        }
+      },
+      "wallBearing": null
+    },
+    {
+      "barAcrossWidthOffsets": [
+        -390,
+        -340,
+        0,
+        340,
+        390
+      ],
+      "bottomBars": {
+        "EW": {
+          "count": 5,
+          "diameter": 20,
+          "z": -680
+        },
+        "NS": {
+          "count": 5,
+          "diameter": 20,
+          "z": -640
+        }
+      },
+      "clearCoverToOuterLink": 50,
+      "id": "spine",
+      "incrementalConcreteWeightFrom600Node": 2.565,
+      "minimumStraightDevelopmentIntoActualGridArms": 750,
+      "nodes": [
+        {
+          "axis": [
+            9300,
+            6100
+          ],
+          "plan": [
+            8850.0,
+            5800,
+            900,
+            600
+          ],
+          "waterPortalReserve": 50,
+          "z": [
+            -750,
+            -180
+          ]
+        },
+        {
+          "axis": [
+            9300,
+            7700
+          ],
+          "plan": [
+            8850.0,
+            7400,
+            900,
+            600
+          ],
+          "waterPortalReserve": 50,
+          "z": [
+            -750,
+            -180
+          ]
+        }
+      ],
+      "topBars": {
+        "EW": {
+          "count": 5,
+          "diameter": 20,
+          "z": -250
+        },
+        "NS": {
+          "count": 5,
+          "diameter": 20,
+          "z": -290
+        }
+      },
+      "wallBearing": {
+        "fullFinishedWall": [
+          9203,
+          9722.5
+        ],
+        "nodeEastReserve": 27.5
+      }
+    }
+  ],
+  "qualification": "N850 and M100 each are declared node design limits, not allocated whole-house reactions. A pile section capacity is not pile/soil or wet-ground admission; the whole-house ledger must remain inside the force domain.",
+  "reference": {
+    "Mx": 100,
+    "My": 100,
+    "N": 850,
+    "actualReservedStraightLength": 750,
+    "declaredBondStressMPa": 3,
+    "effectiveTieLever": 370,
+    "fourCurrentLocalShearsPlusOneHip": 419.28517500000004,
+    "fullYieldStraightBond": 724.6376811594204,
+    "headAverageStressMPa": 6.764085081405552,
+    "pileHeadDiameter": 400,
+    "pileSectionHistoricalDomain": {
+      "demandResultant": 141.4213562373095,
+      "minimumResultantMomentResistance": 152.5712231713078,
+      "sourceNrange": [
+        0,
+        850
+      ]
+    },
+    "pileSoilCapacity": null,
+    "reinforcement": "5H20 each direction TOP and BOTTOM, orthogonal layers separated40; H10 closed confinement at75 in node. Layer coordinates are a spatial reservation, not a completed intersection/shop cage.",
+    "steelEachDirection": 1570.7963267948967,
+    "tieEachDirection": 385.1351351351351,
+    "tieResistance": 682.9549246934333,
+    "upliftSoilCapacity": null
+  },
+  "sources": [
+    {
+      "path": "project/had/studies/water-replan.json",
+      "sha256": "dbfff5eb4fa36dbdf6635702e853792e6412d73df1c58f9e1c1ede1bcff205b8"
+    },
+    {
+      "path": "project/str/studies/open-loggia-support.json",
+      "sha256": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5"
+    }
+  ],
+  "status": "Representative integral node force/space reference; actual arm allocation and whole-house signed ledger remain active",
+  "units": "mm, kN, kNm, MPa unless stated"
+}
