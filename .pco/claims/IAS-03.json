@@ -9,9 +9,9 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-06T19:24:09.469Z",
-  "expiresAt": "2026-11-06T20:54:09.469Z",
-  "branch": "work/zerg-20261106-ias-g7",
+  "heartbeatAt": "2026-11-06T19:39:20.703Z",
+  "expiresAt": "2026-11-06T21:09:20.703Z",
+  "branch": "work/zerg-20261106-ias-g8",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
     "generation": 22,
@@ -34,7 +34,7 @@
   },
   "pr": 1347,
   "checkpoint": {
-    "evidence": "PR #1347 draft recovery cb9c89dc7f1a9506b8bdefd24d03528a67db0435; inherited conditional source preserved, no successor geometry or adoption claimed",
-    "next": "Publish finite proportionality finding after root review, exact-head CI and fresh publication check"
+    "evidence": "PR #1347 verified merged at80c0f94148ad11e3b2eaa83c52e28d06238993ed; 48-package direction rejected and B594120/90 retained-tray aperture negative integrated. No active successor PR or selected installation.",
+    "next": "Develop one task-matched cold lower-access versus supported whole tray/frame first-release boundary; bind actual successor PR only when source warrants."
   }
 }
