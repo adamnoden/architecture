@@ -16238,20 +16238,6 @@
       "scope": "Permanent deck/member reference. Moving body stays below it; accessible joint hatch and outboard openings have explicitly guarded states."
     },
     "servicePlatformRole": "BOUNDING ENVELOPE ONLY; actual built/clear service platform is the following L-shaped union, excluding retained northeast house.",
-    "servicePlatformRegions": [
-      [
-        9722.5,
-        6000,
-        2277.5,
-        1825.5
-      ],
-      [
-        12000,
-        6000,
-        4200,
-        4800
-      ]
-    ],
     "storagePad": [
       12250,
       8100,
@@ -16662,6 +16648,24 @@
       "supportBelow": 10,
       "lowestReservedSurface": -1188,
       "scope": "Local flange leak capture, separate falling80OD pipe BETWEEN actual rails, to distinct declared receiver. No full-flow backup route or foul connection; actual losses, drainage, groundwater, materials and site acceptance remain RWT/MAT/DPL."
+    },
+    "servicePlatformRegions": [
+      [
+        9722.5,
+        6300,
+        2277.5,
+        1200
+      ],
+      [
+        12000,
+        6000,
+        4200,
+        4800
+      ]
+    ],
+    "clearWorkingDomainProof": {
+      "pass": true,
+      "scope": "Clear domains derived from complete finished weather faces; structural deck/bearing reservations are distinct."
     }
   },
   "hydraulicProbe": {

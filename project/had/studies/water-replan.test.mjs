@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { deriveWaterReplan, verifyServicesOccurrences, verifyCollectorOpenEntries, verifyNorthIntakeJoin } from './water-replan.mjs';
+import { deriveWaterReplan, verifyServicesOccurrences, verifyCollectorOpenEntries, verifyNorthIntakeJoin, verifyClearWorkingDomains } from './water-replan.mjs';
 
 test('current replan authenticates the entire new Services source without weakening the historical selection', () => {
   const v = deriveWaterReplan();
@@ -126,4 +126,12 @@ test('the actual inlet credits separate source-drawn edges and rejects a guard b
  assert.throws(()=>verifyNorthIntakeJoin(bad,v.renewal),/physical intake intersects E well/);
  const stage=JSON.parse(JSON.stringify(v.model));stage.northNormalRoute.normal.renewal.bodyStage=[6300,7000,350,4250];
  assert.throws(()=>verifyNorthIntakeJoin(stage,v.renewal),/N renewal consumes intact E/);
+ const cover=JSON.parse(JSON.stringify(v.model));cover.northNormalRoute.normal.intakeCover.thickness=20;
+ assert.throws(()=>verifyNorthIntakeJoin(cover,v.renewal),/cover\/body clearance drifts/);
  });
+
+test('clear service workfields use the full finished weatherwalls rather than structural core guesses',()=>{
+ const v=deriveWaterReplan();assert.deepEqual(v.renewal.servicePlatformRegions[0],[9722.5,6300,2277.5,1200]);
+ for(const bad of [[9722.5,6000,2277.5,1500],[9722.5,6300,2277.5,1519.5]])
+ assert.throws(()=>verifyClearWorkingDomains(v.model,[bad]),/complete finished wall/);
+});

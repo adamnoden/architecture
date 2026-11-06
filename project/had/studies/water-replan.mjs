@@ -6,6 +6,7 @@ import assert from 'node:assert/strict';
 import { deriveSouthCourtThreshold, renderSouthCourtThreshold, verifyThresholdMaintainedState } from './south-court-threshold.mjs';
 import { deriveGardenFailureBypass, renderGardenFailureBypass } from './garden-failure-bypass.mjs';
 import { deriveCourtEastWindow } from './court-east-window.mjs';
+import { renderNorthIntake } from './north-intake.mjs';
 
 const root = new URL('../../../', import.meta.url);
 const load = path => JSON.parse(readFileSync(new URL(path, root), 'utf8'));
@@ -58,6 +59,21 @@ export function verifyServicesOccurrences(model, current) {
   return { emitters:services.emitters.length, extractTasks:services.fanAccess.length, pass:true,
     scope:'Current actual furniture, emitter heights, extract ports/platforms and fan task states; component equality does not establish whole-house acceptance.' };
 }
+export function deriveClearWorkingDomains(model,bounds){
+ const get=id=>model.groundWalls.find(w=>w.id===id);
+ const west=get('gallery-east-water-weather').finishedFaces[1],south=get('plant-north').finishedFaces[1],north=get('east-passage-north-weather').finishedFaces[0],outside=model.shell;
+ assert(north>south&&outside>west);
+ return [[west,south,outside-west,north-south],[outside,bounds[1],bounds[0]+bounds[2]-outside,bounds[3]]];
+}
+export function verifyClearWorkingDomains(model,regions){
+ const overlap=(a,b)=>a[0]<b[0]+b[2]&&a[0]+a[2]>b[0]&&a[1]<b[1]+b[3]&&a[1]+a[3]>b[1];
+ for(const w of model.groundWalls){
+  if(!w.finishedFaces)continue;
+  const f=w.finishedFaces,vertical=w.a[0]===w.b[0],solid=vertical?[f[0],Math.min(w.a[1],w.b[1]),f[1]-f[0],Math.abs(w.b[1]-w.a[1])]:[Math.min(w.a[0],w.b[0]),f[0],Math.abs(w.b[0]-w.a[0]),f[1]-f[0]];
+  for(const r of regions)assert(!overlap(r,solid),'Clear working domain intersects complete finished wall: '+w.id);
+ }
+ return {pass:true,scope:'Clear domains derived from complete finished weather faces; structural deck/bearing reservations are distinct.'};
+}
 export function verifyNorthIntakeJoin(model,renewal){
   const n=model.northNormalRoute.normal,inlet=n.inlet,well=renewal.courtIntakeWell,guard=renewal.guardOuterPlan;
   const overlap=(a,b)=>a[0]<b[0]+b[2]&&a[0]+a[2]>b[0]&&a[1]<b[1]+b[3]&&a[1]+a[3]>b[1];
@@ -67,6 +83,7 @@ export function verifyNorthIntakeJoin(model,renewal){
   for(const q of [n.renewal.bodyStage,n.renewal.riggingStage,n.renewal.operatorLongEnvelope])
     assert(!overlap(q,guard)&&!overlap(q,renewal.courtCollector.plan),'N renewal consumes intact E territory');
   assert(n.crossIntake.renewal.moduleCentreY-n.crossIntake.renewal.clearBodyWidth/2-(guard[1]+guard[3])>=25,'Current N module renewal hits E guard');
+  assert.equal(n.crossIntake.grossDepthBelowCoverMinimum,model.sections.waterLevels.courtNorth-n.intakeCover.thickness-Math.max(n.crossIntake.eastBottomAtNorth,n.crossIntake.westBottomAtNorth),'Current N cover/body clearance drifts');
   assert(n.crossIntake.wallHeight+28<=n.crossIntake.grossDepthBelowCoverMinimum);
   return {pass:true,currentInlet:inlet,westToIndependentEastGap:renewal.courtCollector.plan[0]-inlet[0]-inlet[2],
     scope:'Actual physical collection/maintenance nonoverlap only; new40×250 crossbody and inlet require RWT full-duty proof.'};
@@ -206,7 +223,7 @@ export function deriveWaterReplan({servicesText} = {}) {
     scope:'Permanent deck/member reference. Moving body stays below it; accessible joint hatch and outboard openings have explicitly guarded states.'};
   renewal.operatorDeckZ=joint.deckTop;renewal.servicePlatform=joint.handling.platform;
   renewal.servicePlatformRole='BOUNDING ENVELOPE ONLY; actual built/clear service platform is the following L-shaped union, excluding retained northeast house.';
-  renewal.servicePlatformRegions=[[9722.5,6000,2277.5,1825.5],[12000,6000,4200,4800]];
+
   renewal.operatorField=joint.handling.endOperator;renewal.storagePad=joint.handling.stage;
   renewal.handoverPad=joint.handling.handover;renewal.joint=joint;
   renewal.northOperatorStrip=[12250,7450,3950,3350];
@@ -336,6 +353,8 @@ export function deriveWaterReplan({servicesText} = {}) {
     t: 519.5, finishedFaces: [9203, 9722.5], structuralCore: [9230, 9370],
     replacesLocalSegmentOf: 'service-spine',
     scope: 'Same retained spine core, new local outside layers; not a second added core. Permanent warm gallery above deep water passage; exterior wall displaces pantry, not indoor gallery.' });
+  renewal.servicePlatformRegions=deriveClearWorkingDomains(model,renewal.servicePlatform);
+  renewal.clearWorkingDomainProof=verifyClearWorkingDomains(model,renewal.servicePlatformRegions);
   const cylinder = services.plant.cylinder, buffer = services.plant.primaryBuffer;
   Object.assign(model.groundFurniture, {
     'plant-water-reserve': cylinder.station,
@@ -585,6 +604,7 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
   const v=deriveWaterReplan();
   const outputs = new Map([
     ['water-replan.json', JSON.stringify(v,null,2)+'\n'],
+    ['north-intake.svg',renderNorthIntake(v.model,v.renewal)],
     ['water-replan.svg', render(v)],
     ['south-court-threshold.svg', renderSouthCourtThreshold(v.model.southCourtThresholdReference)],
     ['garden-failure-bypass.svg',renderGardenFailureBypass(v.model.gardenFailureBypass)]

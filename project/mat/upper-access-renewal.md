@@ -34,6 +34,14 @@ The frozen stiffness case is **8kN TOTAL across four bolts**, not8kN per bolt. E
 
 The same source explains that convex/narrow profiles reduce required force, but no disclosed formed profile has been shown to fit this exact0.5 slot, open U shape and reversible motion. No coating, polymer filler, paste, preload increase or narrower land is silently admitted. This is a separate source screen, not a change to frozen HAD geometry or a physical seal pass.
 
+## One cold, replaceable functional-residue comparator
+
+**Comparison only; no owner exception or frozen-geometry change.** [Rogers BISCO HT-800](https://www.rogerscorp.com/-/media/project/rogerscorp/documents/elastomeric-material-solutions/bisco/english/data-sheets/180-070-ht-800---medium-cellular-silicone.pdf) is cellular silicone, with0.79mm stock,352kg/m³ typical density (300–473 specification) and41–97kPa CFD. The actual downloaded manufacturer sheet is0826-PDF, publication180-070, SHA256 `94bf07b55f09b265b579c6d8814c48070ca3f072d424cc675da173adc8c4033f`; the web text cache still shows1123. Its0.79 thickness tolerance is+0.381/−0.102. [UK converter Parafix HT-800-0.8](https://parafix.com/product/rogers-ht-800-0-8/) identifies adhesive NONE and25% compression deflection62kPa. The silicone formulation/additives remain incompletely disclosed; flame/FDA statements do not clear MAT policy.
+
+At the existing0.5 closed gap, nominal0.79 stock compresses36.7%; published thickness extremes imply27.3–57.3%. A stated illustrative20mm×1100mm U strip has0.022m² area:6.12g at nominal thickness/density,12.19g at maximum thickness/density. These are comparator quantities, not an installed-house schedule. At the converter's25% test point, area×62kPa gives1.364kN; that does not predict force at36.7% or permit applying the entire8kN directly to foam without compression control.
+
+[Rogers sealing guide](https://rogerscorp.com/-/media/project/rogerscorp/documents/elastomeric-material-solutions/bisco/english/technical-information/sealing-design-guide.pdf), printed p19, reports water tests using3.175mm silicone and6.35mm width, including10.3kPa. It does not qualify this thin0.79mm open-U joint. This is a credible, small, cold-replaceable residue challenger to flat copper, but requires an explicit successor compression-stop/load-bypass and retention detail, measured thickness/face tolerance and exact thin-stock seal test. No increased gap/preload, adhesive or automatic polymer exception is adopted. The reversible first-release path survives only if that new retention detail stays within its checked envelopes.
+
 ## Both modules, storage and reversal
 
 OUTER must remain removed while INNER is drawn. Reinstating it first would block the inner path. Full profiles and the30 draw connector are checked against the outboard operator field, with the complete920 coupling, not the763 carrier proxy.
