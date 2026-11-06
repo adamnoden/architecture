@@ -1,40 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 22,
-  "state": "released",
-  "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
+  "generation": 23,
+  "state": "claimed",
+  "leaseId": "243df4cc-2336-4946-b926-bfa82a32cfc7",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-20261106-w1"
+    "label": "zerg-ias-interiors-successor"
   },
-  "claimedAt": "2026-11-06T07:38:01.585Z",
-  "heartbeatAt": "2026-11-06T14:32:19.160Z",
-  "expiresAt": "2026-11-06T14:32:19.160Z",
-  "checkpoint": {
-    "evidence": "HANDOFF remote cb9c89dc7f1a9506b8bdefd24d03528a67db0435 tree45b8225e00479ce73daa8cfb45af0a1b3cdb3de0 verified. Native access/cold-boundary rejection plus modular furnishing handoff and reproducible full-current conditional carry source; Shapely2.1.2 direct check, current static/direct-turn and integrity/diff pass. No fresh PR, selection or IAS completion.",
-    "next": "Resume project/ias/ias-03-modular-furnishing-handoff.md: earn supported furnishing first release and low/rest/storage/door choreography or reject/simplify48-package burden; then SAME actual Pecolift rolling/repair/incoming event. Keep ALL source fixtures/court enclosure,25clearance,west755,physical/material/version holds. Coordinator execution limit, not frontier empty. Release HANDOFF now; keep w1f."
-  },
-  "branch": "work/zerg-20261106-w1f",
+  "claimedAt": "2026-11-06T19:18:37.462Z",
+  "heartbeatAt": "2026-11-06T19:18:37.462Z",
+  "expiresAt": "2026-11-06T20:48:37.462Z",
+  "branch": "work/zerg-20261106-ias-g7",
   "predecessor": {
-    "leaseId": "c07019d5-45b2-40cb-95ac-92932149eff1",
-    "generation": 21,
-    "branch": "work/zerg-20261105-w1d",
+    "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
+    "generation": 22,
+    "branch": "work/zerg-20261106-w1f",
+    "pr": 1339,
     "checkpoint": {
-      "evidence": "Safe-park meaningfulWIP remote842a4271f41f276fe372a57a1e199a2898b71970 pathproject/ias/ias-03-renewable-shower-reference-handoff.md exactblobf7b05488 verified. Actualstocksources/cut-seamproposal/floorcost/unprovedpackage preserved; integrity/diffpassed. NoPR/adoption/calculation.",
-      "next": "Resume explicitPROJECT-DESIGNED completeboundpackage or falsifycandidate: actualcutlist/mass/load/deflection/support/keepers/waterseams/firstrelease/incoming/replacement. Rootexecutionlimit reached, notfrontierempty; immediatecanonicalHANDOFFrelease now."
+      "evidence": "HANDOFF remote cb9c89dc7f1a9506b8bdefd24d03528a67db0435 tree45b8225e00479ce73daa8cfb45af0a1b3cdb3de0 verified. Native access/cold-boundary rejection plus modular furnishing handoff and reproducible full-current conditional carry source; Shapely2.1.2 direct check, current static/direct-turn and integrity/diff pass. No fresh PR, selection or IAS completion.",
+      "next": "Resume project/ias/ias-03-modular-furnishing-handoff.md: earn supported furnishing first release and low/rest/storage/door choreography or reject/simplify48-package burden; then SAME actual Pecolift rolling/repair/incoming event. Keep ALL source fixtures/court enclosure,25clearance,west755,physical/material/version holds. Coordinator execution limit, not frontier empty. Release HANDOFF now; keep w1f."
     }
   },
   "recoverySource": {
-    "leaseId": "c07019d5-45b2-40cb-95ac-92932149eff1",
-    "generation": 21,
-    "branch": "work/zerg-20261105-w1d",
+    "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
+    "generation": 22,
+    "branch": "work/zerg-20261106-w1f",
+    "pr": 1339,
     "checkpoint": {
-      "evidence": "Safe-park meaningfulWIP remote842a4271f41f276fe372a57a1e199a2898b71970 pathproject/ias/ias-03-renewable-shower-reference-handoff.md exactblobf7b05488 verified. Actualstocksources/cut-seamproposal/floorcost/unprovedpackage preserved; integrity/diffpassed. NoPR/adoption/calculation.",
-      "next": "Resume explicitPROJECT-DESIGNED completeboundpackage or falsifycandidate: actualcutlist/mass/load/deflection/support/keepers/waterseams/firstrelease/incoming/replacement. Rootexecutionlimit reached, notfrontierempty; immediatecanonicalHANDOFFrelease now."
+      "evidence": "HANDOFF remote cb9c89dc7f1a9506b8bdefd24d03528a67db0435 tree45b8225e00479ce73daa8cfb45af0a1b3cdb3de0 verified. Native access/cold-boundary rejection plus modular furnishing handoff and reproducible full-current conditional carry source; Shapely2.1.2 direct check, current static/direct-turn and integrity/diff pass. No fresh PR, selection or IAS completion.",
+      "next": "Resume project/ias/ias-03-modular-furnishing-handoff.md: earn supported furnishing first release and low/rest/storage/door choreography or reject/simplify48-package burden; then SAME actual Pecolift rolling/repair/incoming event. Keep ALL source fixtures/court enclosure,25clearance,west755,physical/material/version holds. Coordinator execution limit, not frontier empty. Release HANDOFF now; keep w1f."
     }
-  },
-  "pr": 1339,
-  "releasedAt": "2026-11-06T14:32:19.160Z",
-  "releaseReason": "handoff"
+  }
 }
