@@ -6,7 +6,7 @@ No accepted house geometry, structural system, product or foundation is adopted.
 
 ## 6 November — conserved gravity and restraint comparison
 
-The [current structural comparison](current-house-structural-reference.md) now separates a full signed support ledger for the predecessor roof from newer welded-roof, first-floor restraint and arch options. The new roof can end 22 upper ties at the floor in the comparison, but moving the uplift to eight corner stops costs a 2.294 t floor collector. A permanent tied masonry arch obstructs the existing window/guard renewal. Keep STR-HOUSE open: the actual final roof diaphragm, first-floor member and contact behaviour, curved corner openings, eight DPC crossings and coherent final shaft actions remain unresolved. No geometry or construction system is adopted.
+The [current structural comparison](current-house-structural-reference.md) now separates a full signed support ledger for the predecessor roof from newer welded-roof, first-floor restraint and arch options. The new roof can end 22 upper ties at the floor in the comparison, and move residual uplift to eight corner stops. A separate rolled steel floor ring costs 2.294 t; a conventional 650 mm RC edge rises within the existing upper wall below every sill and is the preferred next comparison. A permanent tied masonry arch obstructs the existing window/guard renewal. Keep STR-HOUSE open: the actual final roof diaphragm, first-floor member and contact behaviour, curved corner openings, eight DPC crossings and coherent final shaft actions remain unresolved. No geometry or construction system is adopted.
 
 ## 6 November — current architectural source acquired
 

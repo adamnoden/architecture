@@ -74,7 +74,7 @@
 <text x="525" y="387" font-size="18">Minimum retained shell vs global roof suction</text>
 <text x="525" y="417" font-size="16">+382.80 kN retained vs −324.34 kN suction.</text>
 <text x="525" y="444" font-size="16">Local uplift remains: up to 110.33 kN at a captive stop.</text>
-<text x="525" y="497" font-size="18">62 m rolled collector • 2.294 t</text>
-<text x="525" y="526" font-size="16">This is the material cost of fewer full-height ties.</text>
+<text x="525" y="497" font-size="18">62 m floor collector: compare steel and RC</text>
+<text x="525" y="526" font-size="16">Rolled steel 2.294 t, or a 650 mm RC upstand inside the wall.</text>
 <text x="28" y="592" font-size="14">Development comparison only. Actual final shaft forces, capillary details, beam restraint and site acceptance remain open.</text>
 </g></svg>

@@ -71,21 +71,23 @@ def uppercombine(q,p):
     for tab,f in [q,p]:
         for r in tab:d[tuple(r['xy'])]+=f*r['n']
     return d
-spanLoadAbs=defaultdict(float);spanCases=defaultdict(list);padCases=defaultdict(list);caseN=defaultdict(lambda:[0.,0.]);fixedN=defaultdict(lambda:[0.,0.]);components=defaultdict(float)
+spanShearTerms=defaultdict(list);spanLoadAbs=defaultdict(float);spanCases=defaultdict(list);padCases=defaultdict(list);caseN=defaultdict(lambda:[0.,0.]);fixedN=defaultdict(lambda:[0.,0.]);components=defaultdict(float)
 def feed(label,upper,l,h,role):
     # A ring corner is a lower anchored or compression bearing in this scheme;
     # intermediate contributions end in their real span.
-    nc=defaultdict(float);ms=defaultdict(float)
+    nc=defaultdict(float);ms=defaultdict(float);qs=defaultdict(list)
     for p,k in upper.items():
         w=wallat(p);i,d,lo,hi,us=walls[w];u=p[i]
         for v,t in lower(w,p):nc[v]+=k*t
         for a,b in pairwise(us):
             if a<u<b:
                 spanLoadAbs[w,a,b]+=abs(k)*max(abs(l),abs(h))
+                qs[w,a,b].append((u,k))
                 for j in range(1,20):
                     z=(b-a)*j/20;s=u-a
                     ms[w,a,b,j]+=k*(min(z,s)-z*s/(b-a))/1000
                 break
+    for key,items in qs.items():spanShearTerms[key].append((items,l,h))
     for v,k in nc.items():
         padCases[v].append((label,k,l,h))
         row=(fixedN if role=='guaranteed' else caseN)[v]
@@ -227,6 +229,109 @@ plate25=plateStress*(20/25)**2
 assert plate25<fy
 out={'status':'Bounded upper-roof-to-first-floor and remanent ground-tie comparison. Conservative static equilibrium with passive contact and validated geometry; not merged structural selection.','roles':{'strippedLocal':'No dead-weight credit to the heel, upper rod, ring, or its cracked/removed-state control. Never erect roof on absent floor; any stripped/temporary support must be positively held before dismantling.','retainedShell':'Roof may rely only on installed minimum shell after RC and walls cured. 0.90 subset factor is an explicitly authored comparison, not a UK National Annex certification. Reopen for reduced thickness, permanent removal, material density below the specified lower bound, incomplete ties, site or assembly stage.'},'source':'British Steel Universal beams sizes 190724, 254x146x37 256.0 high x146.4 wide, 37kg/m, I=5537cm4, elastic modulus433cm3. https://www.britishsteel.co.uk/wp-content/uploads/2026/02/british-steel-universal-beams-datasheet-190724.pdf','minComponentTotals':dict(components),'retainedGlobalUniformSuctionBalance':minstate,'floorRing':{'section':'254x146x37 UB, assumed actual S355 grade required','z':[3114,3370],'lengthM':totalLength,'steelMassKg':totalLength*beamKgM,'rawRingClearanceAboveGround3065Extrados':3114-3065,'memberElasticMR':MR,'maximumIncludingSelfweight':largest,'maxAdditionalSelfweightMoment':addM,'qualification':'The two parallel beams assumption is not required: first compute the short spans on all physical pads, replace negative passive reactions by upward point loads in the continuous rolled member to its eight captive stops, then combine signed member moment ranges. Static admissibility is not a measured contact distribution. Elastic stability/restraint, local shear, splice, service movement and actual temporary sequence still require matching details. No new concrete mass is invented.'},'upperTie':{'count':22,'worstUp':absBolt,'M24TensileArea':353,'minMaterialStress':rodFy,'axialResistance':rodCap,'20mmPlateCantileverStress':plateStress,'25mmPlateStress':plate25,'role':'mechanical end fitting from actual roof steel through upper core into actual floor steel, positive upper rod termination at the floor; no adhesive/masonry bond or lower-DPC penetration for each rod. Penetration/clip/splitting, local compression and thermal/fire finish still require joint evidence.'},'stationControls':[{'count':len(caps),'minTieForce':min(v.values()),'maxHogging':min(m[0] for m in sm.values()),'maxSagging':max(m[1] for m in sm.values())} for caps,v,sm in variations],'candidateRetainedCaptiveStations':[{'xy':p,'minimumIncludingAdverseRedistribution':n,'role':'existing outer stability group' if p[0] in [A,B] else 'new court corner hold-down; DPC/jamb detail not admitted'} for p,n in sorted(anchorBounds.items())],'lowerPads':rows,'remaining':['True site/foundation and group stiffness remain unproved; signed rolled-beam reactions are not permission to borrow gravity from maximum roof layer allowances.','Need shifted roof/corner ties joined to every final shaft, floor bracing and arch/movement case before selection. Earlier 52-head schedule is a named different roof reference.','Upper slot/bolt/crown, eight full lower force crossings, lateral restraint/manufacture, plate/thermal/capillary and external acceptance not admitted.']}
 
+# Same floor-ring forces, physical voids, openings and positive anchor burden,
+# now compared with slab/edge reinforcement. No slab flange is credited.
+def rectRC(b,h,cover,bar,nrows=2,nper=2,links=8,gap=25,areaOverride=None):
+    As=nrows*nper*math.pi*bar**2/4 if areaOverride is None else areaOverride
+    d=h-cover-links-bar/2-(nrows-1)*(bar+gap)/2
+    fyd=500/1.15;fcd=.85*30/1.5;x=As*fyd/(.8*b*fcd)
+    return dict(b=b,h=h,As=As,d=d,neutralAxis=x,MR=As*fyd*(d-.4*x)/1e6,xOverD=x/d,clearAcross=b-2*(cover+links+bar))
+# Actual selected slabs stop on the structural perimeter axes: at both
+# 4335-long stair and 2230-wide entrance only 85mm of inward RC exists.
+# The 70mm halfcore outside the axis is included ONLY for the new formed beam.
+assert H['stair']==[417.5,4432.5,2400,4335] and H['void']==[4885,417.5,2230,2317.5]
+inward=min(H['void'][1]-A,H['stair'][0]-A);assert inward==85
+slab=rectRC(inward,200,25,12,1,1,0,0,math.pi*12**2/4*inward/150)
+down=rectRC(140,275,35,16)
+up=rectRC(140,650,35,16)
+assert slab['MR']<15 and down['xOverD']>.45 and up['xOverD']<.45
+assert up['clearAcross']>=max(16,16+5,20)
+# Exact signed local shear on each side of every discrete source; same-signed
+# rows are kept correlated, including local heel torque. Superpose bounded
+# residual redistribution over the actual longer span (any passive pad 0..uplift).
+shears={};rcspan={}
+for (w,a,b),mm in moments.items():
+    terms=spanShearTerms[w,a,b];us=sorted({a,b,*(u for items,l,h in terms for u,k in items)})
+    v0=v1=0.
+    for x,y in pairwise(us):
+        z=(x+y)/2;lo=hi=0.
+        for items,l,h in terms:
+            k=sum(t*((b-u)/(b-a)-(u<z)) for u,t in items)
+            lo+=min(k*l,k*h);hi+=max(k*l,k*h)
+        v0=min(lo,v0);v1=max(hi,v1)
+    i,d,_,_,pads=walls[w];st=sorted(p[i] for p in caps if p[1-i]==d and walls[w][2]<=p[i]<=walls[w][3])
+    ca,cb=next((p,q) for p,q in pairwise(st) if p<=a and b<=q)
+    slo=shi=0
+    for u in pads:
+        if not ca<u<cb:continue
+        n=min(0,caseN[xy(w,u)][0]+fixedN[xy(w,u)][0]);k=(cb-u)/(cb-ca)-(u<=a)
+        slo+=min(k*n,0);shi+=max(k*n,0)
+    # Charge the entire new RC area as adverse load. No stabilising credit;
+    # former RC200 or replaced masonry mass is NOT silently deducted.
+    qg=1.35*.14*.65*25;le=(b-a)/1000
+    shears[w,a,b]=max(abs(v0+slo),abs(v1+shi))+qg*le/2
+    rcspan[w,a,b]=max(map(abs,mm))+qg*le**2/8
+z=.9*up['d'];cot=1.5;fyd=500/1.15;fcd=.85*30/1.5
+VRs=2*math.pi*8**2/4/100*z*fyd*cot/1000
+Vmax=140*z*(.6*(1-30/250))*fcd/(cot+1/cot)/1000
+VM=max(shears.values());MM=max(rcspan.values())
+assert MM<up['MR'] and VM<min(VRs,Vmax)
+# Actual first-floor raw sill elevations are relative to FFL +3450. No upper
+# door on either ring. Intrados/void footprints, plenum and port remain intact.
+ops=[q for q in H['openings']['FIRST'] if q['wall'] in walls]
+assert len(ops)==25 and all(q['kind']=='window' for q in ops)
+zlo=3170;zhi=zlo+650; FF=3450
+rodHole=32;rodMargin=up['clearAcross']-rodHole
+assert rodMargin<0 # A centered sleeve through the unaltered cage fails.
+barsMass=8*math.pi*(.016**2)/4*7850*totalLength
+tieCL=2*((140-2*(35+4))+(650-2*(35+4)))*.001+.16
+linkMass=math.ceil(totalLength/.1)*tieCL*math.pi*.008**2/4*7850
+out['rcEdgeAlternative']={'role':'Preferred next floor-collector development. Same eight lower ties and signed source loads; no structural geometry selected.', 'axisEdgeToStairAndEntryVoidMM':inward,'RC200ActualNarrowField':slab,'275Downstand':down,'downstandSoffit':3370-275,'downstandMarginOverTypical3065Extrados':3370-275-3065,'650Upstand':up,'floorTopBottom':[3370,3170],'upstandBottomTop':[zlo,zhi],'upperFFL':FF,'heightAboveUpperFinishedFloor':zhi-FF,'minimumSill':min(q['sill'] for q in ops),'minimumRawSillReserve':min(q['sill'] for q in ops)-(zhi-FF),'all25UpperFacadeOpeningsAreWindows':True,'roofSourceForceKept':True,'maximumMomentInclFullNewConcrete':MM,'maximumShearInclFullNewConcrete':VM,'VRs':VRs,'VRstrut':Vmax,'loads':'Use full 140x650 concrete as adverse additional G on each actual short span, give none as counterweight. No upper wall/slab displacement reduction or steel UB weight included in this alternative.', 'cage':'4H16 per face in two rows of two, 25mm clear vertical. Closed H8/100, 35mm nominal cover, 16mm aggregate comparator. 22mm across vs21mm required. Compare actual placement, cover tolerance and bar congestion; no fabricated cage, torsion or development admission.', 'concreteGrossM3':.14*.65*totalLength,'concreteAboveFormerSlabM3':.14*.45*totalLength,'grossConcreteKN':.14*.65*totalLength*25,'nominalLongitudinalSteelKgNoLaps':barsMass,'nominalLinksKgNoCornersSplices':linkMass,'straightCentered32SleevePlanDeficit':-rodMargin,'geometry':'Beam stays in the actual 140 wide upper wall core and starts at existing RC200 soffit: no stair/entry clipping, drop below ceiling or change to E02 plant port extrados3115. Replaces masonry below all first-floor sills. Thermal material and finishes at 62m remain costs, including void/cavity edges. Do not use an upper doorway here without reanalysis.','failure':'The straight 32mm through-sleeve for M24 fails the two top/bottom bar planes by 10mm, before clearance. Need a positive developed standard reinforced anchor beyond the upper-only rod (or locally relocate/rearrange cage with checked cover/room footprint). Also verify one-sided slab transfer/chord eccentricity, roll/torsion, cage corners/splices, penetrations, real bearings and all eight ground stops. No pull-out bond or slab flange credit.'}
+# Conventional through-studs, rather than assuming bond or a large M24 sleeve
+# in a 140 wide edge. Both continuous upper/lower flexural cages use standard
+# H12 in three rows each. No reduction in the counted concrete/self load.
+actual=rectRC(140,650,35,12,3,2)
+n=absBolt;dist=100;Pmax=.60*n # 10mm eccentricity of the rod across a 100mm stud pair
+studDesign=.9*800*157/1.25/1000
+assert Pmax<studDesign
+headM=n*dist/4/1000;headW=(100-28)*30**2/6;headStress=headM*1e6/headW
+plateBearing=Pmax*1000/(100*100-math.pi*18**2/4)
+footStress=plateBearing*50**2/2/(25**2/6)
+tol=4 # each-side combined rod/cage positioning envelope, not per item
+remaining=(actual['clearAcross']-16)/2-tol
+assert remaining>=3 and headStress<355/1.1 and plateBearing<.6*fcd and footStress<355/1.1
+actualVRstrut=Vmax*actual['d']/up['d'];actualVRlinks=VRs*actual['d']/up['d']
+assert MM<actual['MR'] and VM<min(actualVRstrut,actualVRlinks)
+out['rcEdgeAlternative']['ordinaryPositiveRodDetail']={'appliesTo':'14 intermediate stations, not the eight corners. At corners both axes and actual continuous ground-tie/RC jamb cage must meet; no hollow flange or unpriced return assumed.', 'upperAndLowerCage':'6H12 per face, three rows of two, 25 clear vertically /35 cover/H8 closed links at100; entire section rechecked with reduced lever arm. Through both cages a plain 16mm stud crosses orthogonally to the longitudinal bars inside the central gap, not a 32mm tube.', 'section':actual,'MR':actual['MR'],'VRstrut':actualVRstrut,'VRlinks':actualVRlinks,'studPair':'Two permanent M16 grade8.8 through bolts at ±50mm along the wall, rolled thread tensile area157. Position between H8 hoops (hoop centres at −100,0,+100). M24 upper roof rod nuts beneath 220x100x30 crossbar, two stud nuts above. Crossbar underside45 above RC upstand for central nut. Body within 140mm core; local warm-side access/lining needs pricing. Facing may not grip/carry load.', 'studPairPitch':dist,'singleStudDesignUltimate':studDesign,'oneStudMaxAt10mmEccentricity':Pmax,'crossbarCentreNetElasticStress':headStress,'bottomBearing':'Common 220x100x25 bar under actual RC soffit, two 100x100 compression patches less18mm hole; captive bolt heads/washer below, up to 45mm projection to Z3125. Leave local formed pocket in solid jamb/pad. No concrete tensile cone or friction capacity. Permanent cast-in rods/foot are not renewable independently of support; local bedding/plate splitting/placement, fire and thermal detailing still qualify.', 'bottomPatchPressure':plateBearing,'bottomPlateCantileverStress':footStress,'nominalHorizontalEachSideClear':(actual['clearAcross']-16)/2,'combinedSetoutBudgetEachSide':tol,'residualEachSide':remaining,'grossLongitudinalSteelKgNoLaps':12*math.pi*.012**2/4*7850*totalLength,'platesMassPerOrdinaryStationKg':.220*.100*(.030+.025)*7850,'upperFittingNominalNutTopRelativeFFL':zhi-FF+45+30+25,'bottomAssemblyAboveTypicalArchExtrados':3125-3065,'unresolved':'Locate special portal/ground arch extrados and real bedding at all stations. Full direct corner detail, shear-torsion, local transverse splitting, through-bolt fit/nuts and actual welded-ring roof connection remain open.'}
+# Exact gross RC edge plan and intersections with the historical physical
+# RC200 slab reference and four proposed RC L cores, each counted once.
+outerRect=[A-70,A-70,B+70,B+70];outerHole=[A+70,A+70,B-70,B-70]
+courtRect=[C-70,C-70,E+70,E+70];courtHole=[C+70,C+70,E-70,E-70]
+Lrect=[]
+for sx in [1,-1]:
+ for sy in [1,-1]:
+  for r in [[262.5,262.5,1262.5,402.5],[262.5,402.5,402.5,1262.5]]:
+   X=sorted(z if sx==1 else 12000-z for z in [r[0],r[2]]);Y=sorted(z if sy==1 else 12000-z for z in [r[1],r[3]]);Lrect.append([X[0],Y[0],X[1],Y[1]])
+holes=[[r[0],r[1],r[0]+r[2],r[1]+r[3]] for r in [H['stair'],H['void'],H['court']]]
+inner=[A,A,B,B];rects=[outerRect,outerHole,courtRect,courtHole,inner,*holes,*Lrect]
+sets=[sorted({v for r in rects for v in [r[j],r[j+2]]}) for j in [0,1]]
+ar0=arL=arBase=0
+for xa,xb in pairwise(sets[0]):
+ for ya,yb in pairwise(sets[1]):
+  x=(xa+xb)/2;y=(ya+yb)/2;inside=lambda r:r[0]<x<r[2] and r[1]<y<r[3]
+  if not ((inside(outerRect) and not inside(outerHole)) or (inside(courtRect) and not inside(courtHole))):continue
+  ar=(xb-xa)*(yb-ya)/1e6;ar0+=ar;inL=any(inside(r) for r in Lrect)
+  if inL:arL+=ar
+  if inL or inside(inner) and not any(inside(r) for r in holes):arBase+=ar
+assert math.isclose(ar0,totalLength*.14)
+# No favourable roof stability credit. For material comparison, assign only
+# confirmed below-sill solid above FFL to replaced upper core; bound 80mm floor
+# build-up thickness as either solid or empty, never pretend it is guaranteed brick.
+wallArea=ar0-arL;replacedUpper=[wallArea*.370,wallArea*.450]
+gross=.650*ar0*25;existingRC=.2*arBase+.45*arL
+netMax=gross-existingRC*25-replacedUpper[0]*16;netMin=gross-existingRC*25-replacedUpper[1]*25
+out['rcEdgeAlternative']['materialDisplacement']={'basis':'Gross 25kN/m3 RC versus mapped historical RC200 footprint and the four proposed L-piers. New concrete partly replaces continuous below-sill upper core (16..25kN/m3); 80mm from structural top to FFL not assumed guaranteed masonry. Below-soffit bearings/interfaces not claimed. Net excludes any further old material outside the slab/pier mask, construction rebates, double-count relief for displaced bar volume and bar mass. Do not use these net figures as retained wind counterweight.', 'grossPlan':ar0,'existingLCoresArea':arL,'existingSlabOrLAreaAtBase200':arBase,'reusedExistingRCVolume':existingRC,'upperMaterialReplacedM3Range':replacedUpper,'additionalConcreteLessDisplacedMaterialKNRange':[netMin,netMax], 'steelSeparate':'About1.01t nominal longitudinal/link steel before laps/corners, plus14 ordinary plate pairs at9.50kg per pair. Rolled comparator has2.294t of section alone; its support plates, local steel, any displaced old material and eight corner details are not a like-for-like installed quantity.'}
+print('RC edge: M/V',MM,VM,'compared to',up['MR'],min(VRs,Vmax),'; minimum sill reserve',out['rcEdgeAlternative']['minimumRawSillReserve'])
 def norm(v):
  if isinstance(v,dict):return {k:norm(z) for k,z in v.items()}
  if isinstance(v,(list,tuple)):return [norm(z) for z in v]
@@ -251,7 +356,7 @@ text(525,142,'22 green squares: upper ties',20);text(525,170,'Each ends in the f
 text(525,221,'Open circles: actual lower pads',20);text(525,249,'Only compressive contact is credited at a passive pad.')
 text(525,300,'8 orange rings: captive lower locations',20);text(525,328,'Four existing outer stability corners and four court corners.')
 text(525,387,'Minimum retained shell vs global roof suction',18);text(525,417,'+382.80 kN retained vs −324.34 kN suction.');text(525,444,'Local uplift remains: up to 110.33 kN at a captive stop.')
-text(525,497,'62 m rolled collector • 2.294 t',18);text(525,526,'This is the material cost of fewer full-height ties.')
+text(525,497,'62 m floor collector: compare steel and RC',18);text(525,526,'Rolled steel 2.294 t, or a 650 mm RC upstand inside the wall.')
 text(28,592,'Development comparison only. Actual final shaft forces, capillary details, beam restraint and site acceptance remain open.',14)
 fig.append('</g></svg>');f=D/'current-house-floor-closure.svg';svg='\n'.join(fig)+'\n'
 if '--check' in sys.argv:assert f.read_text()==svg
