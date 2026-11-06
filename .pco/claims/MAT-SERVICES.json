@@ -9,11 +9,11 @@
     "label": "zerg-20261106-w3"
   },
   "claimedAt": "2026-11-06T07:38:05.136Z",
-  "heartbeatAt": "2026-11-06T14:22:02.457Z",
-  "expiresAt": "2026-11-06T15:07:02.457Z",
+  "heartbeatAt": "2026-11-06T14:23:33.508Z",
+  "expiresAt": "2026-11-06T15:08:33.508Z",
   "checkpoint": {
-    "evidence": "Published 01c1a850c2d30ce3a4ba10269607b8d3b00f0541 tree88c8e02f, main0a402 ancestry. Actual full carrier/operator path, native W9 750/900 W heater and retained-emitter sensitivity, manufacturer EPD residue, exact VTC500 alternative and18mm door-leaf negative control; reproducer/diff checks pass.",
-    "next": "Earn actual144 L/s VTC pressure/noise first before plant detail; compare native96/128 W9 with96/144 separate-capture architecture. Complete proportional fault indication, matched riser/renewal and actual constituent alternatives; no current HAD/source migration."
+    "evidence": "Successor DraftPR1342 published head01c1a850c2d30ce3a4ba10269607b8d3b00f0541/tree88c8e02f, currentmain0a402 ancestry. Complete meaningful whole-system challenger/negative controls/native primary heat and constituent evidence durable; reproducer/diff checks pass. No canonical Services/HAD adoption.",
+    "next": "Actual144 L/s operating-point proof before VTC host work; finish coherent control/thermal/material/renewal direction. Preserve current source and upper/foul fields until deliberate root-coordinated adoption."
   },
   "branch": "work/zerg-20261106-w3-services-next",
   "predecessor": {
@@ -38,5 +38,5 @@
       "blocker": "Actual root turn budget reached. PR1329 remains draft/unmerged and is not a selected house or completed packet. Known cooker/heat/control/material/kit limits remain. No hidden local source changes or unattended heartbeat."
     }
   },
-  "pr": 1332
+  "pr": 1342
 }
