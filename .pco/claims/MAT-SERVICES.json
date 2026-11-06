@@ -9,9 +9,9 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T20:41:08.562Z",
-  "expiresAt": "2026-11-06T22:11:08.562Z",
-  "branch": "work/zerg-20261106-services-g21-renewal",
+  "heartbeatAt": "2026-11-06T20:47:41.781Z",
+  "expiresAt": "2026-11-06T22:17:41.781Z",
+  "branch": "work/zerg-20261106-services-g21-network",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
     "generation": 20,
@@ -36,9 +36,9 @@
   },
   "pr": 1350,
   "checkpoint": {
-    "evidence": "PR1350 final reviewed003b14aae85c7f3a6ccf10fd2745e5fbdfa4ee46 treec094d04d91ebadbc5ff3021470f2f6d9d2370bf8; current main d104cc850b70f341086b9732887639fb872a663f; source bytes unchanged from root-approved0732; full MAT tests and exact generators/render checks passed",
-    "next": "Await exact-head CI42290293655 then fresh canonical own-node merge-check for immediate root merge; continue whole-system renewal under same live generation after successor rebind",
-    "blocker": "Exact new-head CI pending; canonical preflight must independently succeed despite observed root full-claim403"
+    "evidence": "PR1350 verified merged caba17d4e10b60256c8c33296c720d1fe310f2bc after exact003b all14 CI SUCCESS and20:46:10 canonical preflight. Old source branch deletion verified. Fresh successor branch starts exact merged main; no successor source edits yet.",
+    "next": "Bind native W9 operating-point power/octave sources to actual whole-port/network/renewal comparison; publish coherent successor draft then update PR binding",
+    "blocker": "Actual site pressure/dirtyfilter/acoustic attenuation, full ports and supported renewal not yet admitted"
   },
-  "note": "Active samegeneration operation, stable coherent successor; no release or packet completion."
+  "note": "Active samegeneration successor operation; PR1350 is merged predecessor until initial successor source permits a fresh draft. No packet completion/release."
 }
