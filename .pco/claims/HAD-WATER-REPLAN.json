@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w2"
   },
   "claimedAt": "2026-11-06T07:38:16.280Z",
-  "heartbeatAt": "2026-11-06T07:43:12.937Z",
-  "expiresAt": "2026-11-06T08:28:12.937Z",
+  "heartbeatAt": "2026-11-06T08:01:43.352Z",
+  "expiresAt": "2026-11-06T08:46:43.352Z",
   "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "665c809b-2f61-44bd-8274-60a3eb7f0f12",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Draft1332 head4ab18b32 treebbc205c4 preservesbc1329 plus read-only canonicalproducers and all16emitter/sixfan scene assertions; boundedchecks pass.",
-    "next": "Join above-access firstrelease and validate one coherent house source before admission.",
-    "blocker": "UNSELECTED: temporary270headroom lowdeck/hingedcovers fail. No mixedmain adoption."
+    "evidence": "PR1332 head9782e3d8 treeb4ddecc2: exactbc recovered, actualCIproducers/read-onlychecks; scene-onlynegativecontrols; unchangedServicespin plus actualkitchenheatjoinrejections. Prior61766553 FULLCI42183657970SUCCESS.",
+    "next": "Finish upperdeck/endoperated two-drawer renewal and constructive threshold reference; reprove current source before selection.",
+    "blocker": "UNSELECTED maintenance firstmotion still failing inheritedlowdeck; newmethod under constructive checking; no mixedcanonical admission."
   },
   "pr": 1332
 }
