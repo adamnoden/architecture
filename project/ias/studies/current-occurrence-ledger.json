@@ -1,5 +1,6 @@
 {
   "status": "IAS current-source occurrence/disassembly ledger; IAS-03 open; no route, joint, installation, material or performance admission",
+  "geometryUnits": "mm; furniture rectangles are [x,y,width,depth] plan records, not complete XYZ envelopes. Other copied source fields retain their owning definitions and units.",
   "sources": {
     "had": {
       "path": "project/had/studies/water-replan.json",
@@ -39,12 +40,20 @@
             4800,
             1200
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            4730,
+            4870
+          ],
+          "finishedFaces": [
+            4703,
+            4897
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "cloak-east",
@@ -56,12 +65,25 @@
             4800,
             2650
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              1700,
+              2500
+            ]
+          ],
+          "structuralCore": [
+            4730,
+            4870
+          ],
+          "finishedFaces": [
+            4703,
+            4897
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "cloak-west",
@@ -73,12 +95,20 @@
             3400,
             2650
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            3330,
+            3470
+          ],
+          "finishedFaces": [
+            3303,
+            3497
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "cloak-south",
@@ -90,12 +120,20 @@
             4800,
             1200
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            1130,
+            1270
+          ],
+          "finishedFaces": [
+            1103,
+            1297
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "study-cloak-north",
@@ -107,12 +145,20 @@
             4800,
             2650
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            2580,
+            2720
+          ],
+          "finishedFaces": [
+            2553,
+            2747
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "study-L-return",
@@ -124,12 +170,20 @@
             2817.5,
             3247.5
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            2747.5,
+            2887.5
+          ],
+          "finishedFaces": [
+            2720.5,
+            2914.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "study-L-north",
@@ -141,12 +195,25 @@
             2817.5,
             3247.5
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              1350,
+              2250
+            ]
+          ],
+          "structuralCore": [
+            3177.5,
+            3317.5
+          ],
+          "finishedFaces": [
+            3150.5,
+            3344.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "wc-west",
@@ -158,12 +225,20 @@
             7200,
             2650
           ],
-          "total": 197,
+          "t": 197,
+          "holes": [],
+          "structuralCore": [
+            7130,
+            7270
+          ],
+          "finishedFaces": [
+            7103,
+            7300
+          ],
           "faceFinish": [
             27,
             30
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "wc-north",
@@ -175,12 +250,25 @@
             9300,
             2650
           ],
-          "total": 197,
+          "t": 197,
+          "holes": [
+            [
+              7650,
+              8550
+            ]
+          ],
+          "structuralCore": [
+            2580,
+            2720
+          ],
+          "finishedFaces": [
+            2550,
+            2747
+          ],
           "faceFinish": [
             30,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "service-spine",
@@ -192,12 +280,25 @@
             9300,
             8290
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              2750,
+              3650
+            ]
+          ],
+          "structuralCore": [
+            9230,
+            9370
+          ],
+          "finishedFaces": [
+            9203,
+            9397
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "utility-north",
@@ -209,12 +310,25 @@
             12000,
             2550
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              10250,
+              11150
+            ]
+          ],
+          "structuralCore": [
+            2480,
+            2620
+          ],
+          "finishedFaces": [
+            2453,
+            2647
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "plant-intermediate-arch",
@@ -226,12 +340,25 @@
             12000,
             3700
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              9650,
+              10925
+            ]
+          ],
+          "structuralCore": [
+            3630,
+            3770
+          ],
+          "finishedFaces": [
+            3603,
+            3797
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "plant-north",
@@ -243,12 +370,21 @@
             12000,
             5877.5
           ],
-          "total": 519.5,
+          "t": 519.5,
+          "holes": [],
+          "structuralCore": [
+            5807.5,
+            5947.5
+          ],
+          "finishedFaces": [
+            5780.5,
+            6300
+          ],
           "faceFinish": [
             27,
             27
           ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          "scope": "New complete weather-wall comparator from protected south face; owning MAT recipe/support admission required."
         },
         {
           "id": "rear-west",
@@ -260,12 +396,25 @@
             4377.5,
             8852.5
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              3100,
+              4000
+            ]
+          ],
+          "structuralCore": [
+            8782.5,
+            8922.5
+          ],
+          "finishedFaces": [
+            8755.5,
+            8949.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "rear-east",
@@ -277,12 +426,29 @@
             12000,
             8290
           ],
-          "total": 269,
+          "t": 269,
+          "holes": [
+            [
+              8250,
+              9150
+            ],
+            [
+              10450,
+              11350
+            ]
+          ],
+          "structuralCore": [
+            8182.5,
+            8397.5
+          ],
+          "finishedFaces": [
+            8155.5,
+            8424.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "loggia-west-weather",
@@ -294,9 +460,17 @@
             4377.5,
             12000
           ],
-          "total": 519.5,
-          "faceFinish": null,
-          "scope": "Envelope/weather territory; room-side finish joins owning envelope assembly, not a generic dry-wall recipe."
+          "t": 519.5,
+          "holes": [],
+          "finishedFaces": [
+            4280.5,
+            4800
+          ],
+          "structuralCore": [
+            4307.5,
+            4447.5
+          ],
+          "roomSide": "west"
         },
         {
           "id": "loggia-east-weather",
@@ -308,9 +482,17 @@
             7622.5,
             12000
           ],
-          "total": 519.5,
-          "faceFinish": null,
-          "scope": "Envelope/weather territory; room-side finish joins owning envelope assembly, not a generic dry-wall recipe."
+          "t": 519.5,
+          "holes": [],
+          "finishedFaces": [
+            7200,
+            7719.5
+          ],
+          "structuralCore": [
+            7552.5,
+            7692.5
+          ],
+          "roomSide": "east"
         },
         {
           "id": "protected-stair-east",
@@ -322,12 +504,20 @@
             2894.5,
             8949.5
           ],
-          "total": 154,
+          "t": 154,
+          "holes": [],
+          "finishedFaces": [
+            2817.5,
+            2971.5
+          ],
+          "structuralCore": [
+            2844.5,
+            2944.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "protected-west-cross",
@@ -339,12 +529,25 @@
             3820.5,
             4250
           ],
-          "total": 154,
+          "t": 154,
+          "holes": [
+            [
+              2971.5,
+              3820.5
+            ]
+          ],
+          "structuralCore": [
+            4200,
+            4300
+          ],
+          "finishedFaces": [
+            4173,
+            4327
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "protected-east-cross",
@@ -356,12 +559,25 @@
             9370,
             4250
           ],
-          "total": 154,
+          "t": 154,
+          "holes": [
+            [
+              8241.25,
+              9141.25
+            ]
+          ],
+          "structuralCore": [
+            4200,
+            4300
+          ],
+          "finishedFaces": [
+            4173,
+            4327
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "east-passage-north-weather",
@@ -373,9 +589,16 @@
             12000,
             7922.5
           ],
-          "total": 519.5,
-          "faceFinish": null,
-          "scope": "Envelope/weather territory; room-side finish joins owning envelope assembly, not a generic dry-wall recipe."
+          "t": 519.5,
+          "finishedFaces": [
+            7500,
+            8019.5
+          ],
+          "structuralCore": [
+            7852.5,
+            7992.5
+          ],
+          "scope": "Outdoor-to-dry northern separator; the 136 mm strip to existing rear wall is not usable room area."
         },
         {
           "id": "gallery-east-water-weather",
@@ -387,9 +610,17 @@
             9300,
             7500
           ],
-          "total": 519.5,
-          "faceFinish": null,
-          "scope": "Envelope/weather territory; room-side finish joins owning envelope assembly, not a generic dry-wall recipe."
+          "t": 519.5,
+          "finishedFaces": [
+            9203,
+            9722.5
+          ],
+          "structuralCore": [
+            9230,
+            9370
+          ],
+          "replacesLocalSegmentOf": "service-spine",
+          "scope": "Same retained spine core, new local outside layers; not a second added core. Permanent warm gallery above deep water passage; exterior wall displaces pantry, not indoor gallery."
         }
       ],
       "upperWalls": [
@@ -403,12 +634,20 @@
             4800,
             2650
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            4730,
+            4870
+          ],
+          "finishedFaces": [
+            4703,
+            4897
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "bed2-north-main",
@@ -420,12 +659,25 @@
             4800,
             2650
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              3450,
+              4350
+            ]
+          ],
+          "structuralCore": [
+            2580,
+            2720
+          ],
+          "finishedFaces": [
+            2553,
+            2747
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "bed2-L-return",
@@ -437,12 +689,20 @@
             2817.5,
             3247.5
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            2747.5,
+            2887.5
+          ],
+          "finishedFaces": [
+            2720.5,
+            2914.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "bed2-L-north",
@@ -454,12 +714,20 @@
             2817.5,
             3247.5
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            3177.5,
+            3317.5
+          ],
+          "finishedFaces": [
+            3150.5,
+            3344.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "bed3-west",
@@ -471,12 +739,20 @@
             7200,
             2650
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            7130,
+            7270
+          ],
+          "finishedFaces": [
+            7103,
+            7297
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "bed3-north-main",
@@ -488,12 +764,25 @@
             9300,
             2650
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              8250,
+              9150
+            ]
+          ],
+          "structuralCore": [
+            2580,
+            2720
+          ],
+          "finishedFaces": [
+            2553,
+            2747
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "wet-spine",
@@ -505,12 +794,25 @@
             9300,
             6500
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              5450,
+              6350
+            ]
+          ],
+          "finishedFaces": [
+            9203,
+            9397
+          ],
+          "structuralCore": [
+            9230,
+            9370
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "bed3-L-north",
@@ -522,12 +824,20 @@
             12000,
             3700
           ],
-          "total": 197,
+          "t": 197,
+          "holes": [],
+          "structuralCore": [
+            3630,
+            3770
+          ],
+          "finishedFaces": [
+            3603,
+            3800
+          ],
           "faceFinish": [
             27,
             30
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "bath-north",
@@ -539,12 +849,20 @@
             12000,
             6500
           ],
-          "total": 200,
+          "t": 200,
+          "holes": [],
+          "finishedFaces": [
+            6400,
+            6600
+          ],
+          "structuralCore": [
+            6430,
+            6570
+          ],
           "faceFinish": [
             30,
             30
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "rear-west",
@@ -556,12 +874,25 @@
             4377.5,
             8852.5
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              3100,
+              4000
+            ]
+          ],
+          "structuralCore": [
+            8782.5,
+            8922.5
+          ],
+          "finishedFaces": [
+            8755.5,
+            8949.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "rear-west-return",
@@ -573,12 +904,20 @@
             4377.5,
             8852.5
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            4307.5,
+            4447.5
+          ],
+          "finishedFaces": [
+            4280.5,
+            4474.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "rear-east",
@@ -590,12 +929,25 @@
             9300,
             8290
           ],
-          "total": 269,
+          "t": 269,
+          "holes": [
+            [
+              8250,
+              9150
+            ]
+          ],
+          "finishedFaces": [
+            8155.5,
+            8424.5
+          ],
+          "structuralCore": [
+            8182.5,
+            8397.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "rear-divider",
@@ -607,12 +959,20 @@
             7622.5,
             12000
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [],
+          "structuralCore": [
+            7552.5,
+            7692.5
+          ],
+          "finishedFaces": [
+            7525.5,
+            7719.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "rear-wet-east",
@@ -624,12 +984,25 @@
             2902.5,
             12000
           ],
-          "total": 194,
+          "t": 194,
+          "holes": [
+            [
+              10350,
+              11250
+            ]
+          ],
+          "structuralCore": [
+            2832.5,
+            2972.5
+          ],
+          "finishedFaces": [
+            2805.5,
+            2999.5
+          ],
           "faceFinish": [
             27,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "wet-spine-principal",
@@ -641,12 +1014,20 @@
             9300,
             8290
           ],
-          "total": 197,
+          "t": 197,
+          "holes": [],
+          "finishedFaces": [
+            9203,
+            9400
+          ],
+          "structuralCore": [
+            9230,
+            9370
+          ],
           "faceFinish": [
             27,
             30
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "rear-east-principal",
@@ -658,12 +1039,25 @@
             12000,
             8290
           ],
-          "total": 272,
+          "t": 272,
+          "holes": [
+            [
+              9900,
+              10800
+            ]
+          ],
+          "finishedFaces": [
+            8152.5,
+            8424.5
+          ],
+          "structuralCore": [
+            8182.5,
+            8397.5
+          ],
           "faceFinish": [
             30,
             27
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         },
         {
           "id": "rear-wet-south",
@@ -675,12 +1069,20 @@
             2902.5,
             8852.5
           ],
-          "total": 197,
+          "t": 197,
+          "holes": [],
+          "structuralCore": [
+            8782.5,
+            8922.5
+          ],
+          "finishedFaces": [
+            8755.5,
+            8952.5
+          ],
           "faceFinish": [
             27,
             30
-          ],
-          "scope": "Located face dimensions only; protected/wet applicability and actual release remain independent."
+          ]
         }
       ]
     },
@@ -1615,445 +2017,596 @@
         {
           "id": "south-window-0",
           "wall": "outer-south",
-          "kind": "window",
           "centre": 1800,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "south-window-1",
           "wall": "outer-south",
-          "kind": "window",
           "centre": 3900,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "front-door",
           "wall": "outer-south",
-          "kind": "door",
           "centre": 6000,
           "width": 1800,
-          "sill": null,
-          "head": null
+          "kind": "door",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 2
         },
         {
           "id": "south-window-3",
           "wall": "outer-south",
-          "kind": "window",
           "centre": 8100,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "south-window-4",
           "wall": "outer-south",
-          "kind": "window",
           "centre": 10200,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "east-window-0",
           "wall": "outer-east",
-          "kind": "window",
           "centre": 1800,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 850,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
         },
         {
           "id": "plant-replacement",
           "wall": "outer-east",
-          "kind": "door",
           "centre": 4600,
           "width": 1400,
-          "sill": null,
-          "head": null
+          "kind": "door",
+          "swing": "right",
+          "hinge": "low",
+          "leaves": 1
         },
         {
           "id": "east-window-3",
           "wall": "outer-east",
-          "kind": "window",
           "centre": 10200,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 850,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
         },
         {
           "id": "west-window-0",
           "wall": "outer-west",
-          "kind": "window",
           "centre": 1800,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 850,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
         },
         {
           "id": "west-window-1",
           "wall": "outer-west",
-          "kind": "window",
           "centre": 4600,
           "width": 1000,
-          "sill": 750,
-          "head": 2750
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "head": 2750,
+          "spring": 2450,
+          "sill": 750
         },
         {
           "id": "west-window-2",
           "wall": "outer-west",
-          "kind": "window",
           "centre": 7400,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 1750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "operation": "FIXED +independentrevealgrille"
         },
         {
           "id": "west-window-3",
           "wall": "outer-west",
-          "kind": "window",
           "centre": 10200,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 850,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
         },
         {
           "id": "north-window-0",
           "wall": "outer-north",
-          "kind": "window",
           "centre": 1800,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "north-window-1",
           "wall": "outer-north",
-          "kind": "window",
           "centre": 3700,
           "width": 700,
+          "kind": "window",
+          "operation": "FIXED; ordinary operation not credited",
           "sill": 850,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
         },
         {
           "id": "garden-entry",
           "wall": "outer-north",
-          "kind": "open-loggia",
           "centre": 6000,
           "width": 2960,
-          "sill": null,
-          "head": null
+          "kind": "open-loggia",
+          "swing": "right",
+          "hinge": "low",
+          "leaves": 2,
+          "finishedWidth": 2400
         },
         {
           "id": "north-window-3",
           "wall": "outer-north",
-          "kind": "window",
           "centre": 8300,
           "width": 700,
+          "kind": "window",
           "sill": 1050,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "north-window-4",
           "wall": "outer-north",
-          "kind": "window",
           "centre": 10200,
           "width": 1000,
+          "kind": "window",
           "sill": 1050,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "grand-court-entry-south",
           "wall": "court-south",
-          "kind": "door",
           "centre": 6000,
           "width": 1800,
-          "sill": null,
-          "head": null
+          "kind": "door",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 2
         },
         {
           "id": "grand-court-entry-north",
           "wall": "court-north",
-          "kind": "open-loggia",
           "centre": 6000,
           "width": 2960,
-          "sill": null,
-          "head": null
+          "kind": "open-loggia",
+          "swing": "right",
+          "hinge": "low",
+          "leaves": 2,
+          "finishedWidth": 2400
         },
         {
           "id": "court-east-0",
           "wall": "court-east",
-          "kind": "window",
           "centre": 5150,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "court-east-1",
           "wall": "court-east",
-          "kind": "window",
           "centre": 6850,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "court-west-0",
           "wall": "court-west",
-          "kind": "window",
           "centre": 5150,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "court-west-1",
           "wall": "court-west",
-          "kind": "window",
           "centre": 6850,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "east-outdoor-water-portal",
           "wall": "outer-east",
-          "kind": "open-service-portal",
           "centre": 6900,
           "width": 1254,
-          "sill": null,
-          "head": 2850
+          "finishedWidth": 1200,
+          "jambFinishEach": 27,
+          "kind": "open-service-portal",
+          "head": 2850,
+          "spring": 2550,
+          "radialRingTrial": 215,
+          "leaves": 0,
+          "rejectedPriorRawWidth": 1760,
+          "scope": "Project-designed open service arch: raw6273..7527, finished6300..7500, 27 jamb returns; ringtop3065 leaves105 to RC3170. Replaces unallocated1760 raw width. Outer support/node reservations remain; no qualified thrust/capacity or ordinary accessible route acceptance."
         }
       ],
       "FIRST": [
         {
           "id": "south-window-0",
           "wall": "outer-south",
-          "kind": "window",
           "centre": 1800,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "south-window-1",
           "wall": "outer-south",
-          "kind": "window",
           "centre": 3900,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 850,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
         },
         {
           "id": "south-window-2",
           "wall": "outer-south",
-          "kind": "window",
           "centre": 6000,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "south-window-3",
           "wall": "outer-south",
-          "kind": "window",
           "centre": 8100,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 850,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
         },
         {
           "id": "south-window-4",
           "wall": "outer-south",
-          "kind": "window",
           "centre": 10200,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "east-window-0",
           "wall": "outer-east",
-          "kind": "window",
           "centre": 1800,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "east-window-1",
           "wall": "outer-east",
-          "kind": "window",
           "centre": 4600,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 850,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
         },
         {
           "id": "east-window-2",
           "wall": "outer-east",
-          "kind": "window",
           "centre": 7400,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
+          "fixedTransomTopBand": 480,
+          "openingLeafHeadMaximum": 2370,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "east-window-3",
           "wall": "outer-east",
-          "kind": "window",
           "centre": 10200,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "west-window-0",
           "wall": "outer-west",
-          "kind": "window",
           "centre": 1800,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "west-window-1",
           "wall": "outer-west",
-          "kind": "window",
           "centre": 4600,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "west-window-2",
           "wall": "outer-west",
-          "kind": "window",
           "centre": 7400,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "west-window-3",
           "wall": "outer-west",
-          "kind": "window",
           "centre": 10200,
           "width": 1000,
+          "kind": "window",
+          "swing": "left",
+          "hinge": "low",
+          "leaves": 1,
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "north-window-0",
           "wall": "outer-north",
-          "kind": "window",
           "centre": 1800,
           "width": 1000,
+          "kind": "window",
           "sill": 850,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
         },
         {
           "id": "north-window-1",
           "wall": "outer-north",
-          "kind": "window",
           "centre": 3700,
           "width": 700,
+          "kind": "window",
           "sill": 950,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 900,
+          "cillDepthMaximum": 50
         },
         {
           "id": "north-window-3",
           "wall": "outer-north",
-          "kind": "window",
           "centre": 8300,
           "width": 700,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "north-window-4",
           "wall": "outer-north",
-          "kind": "window",
           "centre": 10200,
           "width": 1000,
+          "kind": "window",
           "sill": 850,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550,
+          "cillUndersideMinimum": 800,
+          "cillDepthMaximum": 50
         },
         {
           "id": "court-south-0",
           "wall": "court-south",
-          "kind": "window",
           "centre": 5150,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "court-south-1",
           "wall": "court-south",
-          "kind": "window",
           "centre": 6850,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "court-north-0",
           "wall": "court-north",
-          "kind": "window",
           "centre": 5150,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "court-north-1",
           "wall": "court-north",
-          "kind": "window",
           "centre": 6700,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "court-east-0",
           "wall": "court-east",
-          "kind": "window",
           "centre": 5150,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "court-east-1",
           "wall": "court-east",
-          "kind": "window",
           "centre": 6850,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "court-west-0",
           "wall": "court-west",
-          "kind": "window",
           "centre": 5150,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         },
         {
           "id": "court-west-1",
           "wall": "court-west",
-          "kind": "window",
           "centre": 6850,
           "width": 1000,
+          "kind": "window",
           "sill": 750,
-          "head": 2850
+          "head": 2850,
+          "spring": 2550
         }
       ]
     },
@@ -2800,6 +3353,7 @@
         "key": "rearEmitterRepair",
         "geometryEquivalent": true
       },
+      "currentHADPass": true,
       "scope": "Preserve the explicitly joined newer emitter-aware repair at its existing limits; the old furniture snapshot is not its actual input."
     },
     "principal": {
@@ -2853,7 +3407,161 @@
         ],
         "stageToTemporaryBedGap": 110
       },
+      "currentApproach": {
+        "id": "principal-wardrobe-foot-north-windows",
+        "level": "FIRST",
+        "bodyRadius": 300,
+        "points": [
+          [
+            8730,
+            8824.5
+          ],
+          [
+            8730,
+            10000
+          ],
+          [
+            9000,
+            10000
+          ],
+          [
+            9000,
+            11060.25
+          ],
+          [
+            10200,
+            11060.25
+          ],
+          [
+            11235,
+            11060.25
+          ],
+          [
+            11235,
+            11100
+          ]
+        ],
+        "state": "cross fire doors OPEN; private entry leaves OPEN; principal bath slider CLOSED",
+        "minimumReserve": 10.25,
+        "controlling": {
+          "obstacle": "principal",
+          "segment": 3
+        },
+        "pass": true
+      },
       "scope": "Current HAD records the 25 mm south correction and 500 mm north maintenance translation. This is not a rerun of the old IAS wardrobe route or a whole-export/handling pass."
+    },
+    "studyDoor": {
+      "currentDepth": 230,
+      "door": {
+        "id": "STUDY",
+        "level": "GROUND",
+        "host": "study-L-north",
+        "rough": [
+          1350,
+          2250
+        ],
+        "axis": 3247.5,
+        "frameEach": 25,
+        "leaf": [
+          830,
+          44
+        ],
+        "hinge": [
+          1385,
+          3247.5
+        ],
+        "opening": "SOUTHINTOSTUDY",
+        "performance": "ProtectedhallboundaryE20reference, notordinaryratedclaim",
+        "frameDepth": 230
+      },
+      "operation": {
+        "completeFrameEnvelopeDepth": 230,
+        "checkedFramePieces": [
+          [
+            1350,
+            3132.5,
+            25,
+            230
+          ],
+          [
+            2225,
+            3132.5,
+            25,
+            230
+          ]
+        ],
+        "rough": [
+          1350,
+          2250
+        ],
+        "frameEach": 25,
+        "leafEdgeGapEach": 10,
+        "hinge": [
+          1385,
+          3247.5
+        ],
+        "leaf": [
+          830,
+          44
+        ],
+        "minimumClearBudget": 786,
+        "bodyRadius": 300,
+        "forearmRadius": 40,
+        "handleAlong": 780,
+        "handleFaceOffset": 84,
+        "bodyKnots": [
+          [
+            0,
+            2275,
+            2800
+          ],
+          [
+            15,
+            2400,
+            2600
+          ],
+          [
+            30,
+            2400,
+            2400
+          ],
+          [
+            45,
+            2350,
+            2350
+          ],
+          [
+            60,
+            2150,
+            2625
+          ],
+          [
+            90,
+            1780,
+            2625
+          ]
+        ],
+        "handleState": "Southface0–45deg; explicit two-hand handover at45; oppositeface45–90.",
+        "stepDegrees": 0.1,
+        "sampledBodyReserve": 4.187853143415339,
+        "sampledArmReserve": 7.668699193285377,
+        "sampledReach": 552.9078478020924,
+        "continuousBodyLowerBound": 1.9348531434153386,
+        "continuousArmLowerBound": 4.595699193285377,
+        "continuousReachUpperBound": 555.1953478020924,
+        "bodyAt": {
+          "angle": 15,
+          "obstacle": "study-L-return+18trim"
+        },
+        "armAt": {
+          "angle": 45,
+          "obstacle": "moving-study-leaf"
+        },
+        "pass": true,
+        "scope": "One geometric inside close/reopen sequence from leaf-open entry, not actual operator strength, hardware, classified frame or outside first-opening admission. Both hands have reachable collision-free paths at45; no teleporting hand throughleaf."
+      },
+      "scope": "Preserve the actual 230 mm-frame inside close/reopen witness. Actual assembly, outside first opening, support and room-side renewal remain unearned."
     },
     "familyDoor": {
       "source": {
