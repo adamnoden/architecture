@@ -20,7 +20,7 @@
 <text x="770" y="282" font-size="16" fill="#21363b" font-family="Arial,sans-serif">Floor field 83.057 ≠ pressure footprint 88.554.</text>
 <text x="770" y="311" font-size="16" fill="#21363b" font-family="Arial,sans-serif">Real closure/solids/test boundaries still bind.</text>
 <text x="770" y="340" font-size="16" fill="#21363b" font-family="Arial,sans-serif">Gross proxy is NOT net n50 volume.</text>
-<text x="35" y="492" font-size="22" fill="#21363b" font-family="Arial,sans-serif">50 Pa design cases and one imposed 2 Pa / exponent0.65 sensitivity</text>
+<text x="35" y="492" font-size="22" fill="#21363b" font-family="Arial,sans-serif">50 Pa design cases; one authored 2 Pa / exponent0.65 extrapolation</text>
 <text x="45" y="526" font-size="17" fill="#21363b" font-family="Arial,sans-serif">q50 m³/(h·m²)</text>
 <text x="310" y="526" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Total Q50 m³/h</text>
 <text x="590" y="526" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Challenge flow L/s</text>
@@ -42,12 +42,12 @@
 <text x="310" y="668" font-size="19" fill="#21363b" font-family="Arial,sans-serif">5058.8</text>
 <text x="590" y="668" font-size="19" fill="#21363b" font-family="Arial,sans-serif">173.41</text>
 <text x="875" y="668" font-size="19" fill="#21363b" font-family="Arial,sans-serif">208.10</text>
-<text x="35" y="708" font-size="17" fill="#21363b" font-family="Arial,sans-serif">2 Pa is not site weather. Full 1/2/4 Pa × 0.5/0.65/1 exponent cases remain in JSON.</text>
+<text x="35" y="708" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Below test pressures: full 1/2/4 Pa × 0.5/0.65/1 authored challenges remain in JSON.</text>
 <text x="35" y="738" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Ideal 70% recovery at 96 L/s leaves 34.56 W/K; leakage bypasses recovery and is charged once.</text>
 <text x="35" y="788" font-size="23" fill="#21363b" font-family="Arial,sans-serif">One finite floor/wall allocation</text>
-<text x="35" y="821" font-size="18" fill="#21363b" font-family="Arial,sans-serif">10% = 63.235 m³/h@50Pa for the WHOLE field + ordinary joints/cores.</text>
+<text x="35" y="821" font-size="18" fill="#21363b" font-family="Arial,sans-serif">10% = 63.235 m³/h@50Pa for field + ordinary joints + 3 structural RC crossings.</text>
 <text x="35" y="850" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Over 118.761 m: 0.5325 m³/(h·m) bookkeeping average, not a joint rating.</text>
-<text x="35" y="879" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Complete 3 door/threshold assemblies → openings 25%; one physical path gets one budget.</text>
+<text x="35" y="879" font-size="18" fill="#21363b" font-family="Arial,sans-serif">3 complete doors → openings 25%; complete service air joints → penetrations 10%.</text>
 <text x="35" y="908" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Walls 15% / roof 20% / openings 25% / penetrations 10% / floor 10% / reserve 20%.</text>
 <text x="35" y="953" font-size="19" fill="#21363b" font-family="Arial,sans-serif">Next: agree real pressure boundary; test representative full junction, then whole house.</text>
 <text x="35" y="986" font-size="19" fill="#8c402e" font-family="Arial,sans-serif">W9 bottom lift/base-to-deck, complete ports and folded exterior capture remain OPEN.</text>

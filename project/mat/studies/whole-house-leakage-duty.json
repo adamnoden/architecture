@@ -2,12 +2,12 @@
   "status": "Provisional design comparison and allocation; no adopted owner invariant, tested envelope or compliance result",
   "sources": {
     "HAD": {
-      "commit": "1cedc7d7e159f7cb4e3ba15fb9882d2fd5529e51",
+      "commit": "2a31084013cebca2094692263f0c7a2b2f8d2166",
       "path": "project/had/studies/water-replan.json",
-      "blob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b"
+      "blob": "6f089df104fe85c028978892e7f6b63f862e3237"
     },
     "floorField": {
-      "commit": "1cedc7d7e159f7cb4e3ba15fb9882d2fd5529e51",
+      "commit": "2a31084013cebca2094692263f0c7a2b2f8d2166",
       "path": "project/mat/studies/ground-field-assembly.results.json",
       "blob": "5dd70178c0e5bb192f1d24f6e5383c3d330fe1bc"
     }
@@ -33,7 +33,7 @@
       "name": "ATTMA comparison of TSL1:2021,ISO9972:2015,TM23:2022",
       "url": "https://www.bcta.group/attma/air-tightness-testing-technical-standard-compare/",
       "retrieved": "2026-11-06",
-      "role": "Primary testing-body comparison gives measured exponent0.5..1, preferred both test directions, pressure/zero-flow conditions and multi-point testing. It does not prescribe our target, allocation or operating pressure."
+      "role": "Primary testing-body comparison gives measured exponent0.5..1, preferred both test directions, minimum10Pa or5xzero-flow pressure conditions and multi-point testing. It does not prescribe our target, allocation or operating pressure."
     },
     {
       "name": "Government commissioned infiltration-method evidence review",
@@ -50,7 +50,7 @@
       "role": "n50 uses finished conditioned air volume, excluding hidden/internal solid volumes. It is not q50. This study has no agreed finished net Vn50 and makes no Passivhaus target or certification claim."
     }
   ],
-  "sourceExtractSHA256": "7318a48bcb4e4321afce689934fac9fb4eaa19f3871b6d986403e943a2eeb173",
+  "sourceExtractSHA256": "06e2d1a048caa105253f7c1893519c9b504b844a69c7200b66daba9704300b62",
   "decision": "Develop q50<=1.0 as an authored whole-system comparison, with one10% aggregate floor/wall allocation and20% unassigned reserve. Not an owner invariant, method-certified envelope/volume, local joint rating or compliance pass.",
   "geometry": {
     "groundPressureFootprint": {
@@ -399,6 +399,7 @@
       ]
     }
   ],
+  "pressureChallengeRole": "Authored uniform1/2/4Pa power-law extrapolation challenges below the cited10Pa multipoint minimum, not measured low-pressure behaviour, site weather or annual infiltration.",
   "proposedDevelopment": {
     "q50_m3_per_h_m2": 1,
     "totalQ50_m3_per_h": 632.34655,
@@ -499,7 +500,7 @@
     "ordinaryEdge_m": 118.761,
     "bookkeepingEquivalent_m3_per_h_m_at50Pa": 0.5324530359293035,
     "bookkeepingEquivalent_Lps_m_at50Pa": 0.14790362109147318,
-    "role": "Authored finite accounting proposal, not a product or normative joint limit. Floor/wall10% is ONE aggregate covering field body, ordinary edge, associated joints/internal cores and wall-base routes. Three complete external door/threshold assemblies, including fixed/renewable air joints, belong to openings25%; floor/wall ends at their assigned assembly boundaries. Every physical path must receive one owner; no duplicated budget.",
+    "role": "Authored finite accounting proposal, not a product or normative joint limit. Floor/wall10% is ONE aggregate covering field body, ordinary edge, associated joints, three structural RC core crossings in the pinned floor study, and wall-base routes. Complete service sleeves/collars and fixed/renewable air joints belong to the separate servicePenetrations10% family. Three complete external door/threshold assemblies, including fixed/renewable air joints, belong to openings25%; floor/wall ends at their assigned assembly boundaries. Every physical path must receive one owner; no duplicated budget.",
     "threeDoorWidths_m": 5,
     "threeDoorAssemblyFamily": "completeOpeningsIncludingThreeDoorThresholds",
     "notAdmitted": [

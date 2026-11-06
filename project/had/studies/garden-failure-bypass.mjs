@@ -27,9 +27,21 @@ export function deriveGardenFailureBypass(model,renewal){
   const bypassSolids=bypass.slice(1).map((b,i)=>{
     const a=bypass[i];return [Math.min(a[0],b[0])-600,Math.min(a[1],b[1])-600,Math.abs(a[0]-b[0])+1200,Math.abs(a[1]-b[1])+1200];
   });
-  const receivingN=[4800,12000,2400,2500],usableGarden=[-800,12500,4800,4500];
-  assert(!overlap(usableGarden,receivingN));
-  assert(bypassSolids.every(r=>!overlap(r,receivingN)&&!overlap(r,renewal.servicePlatform)));
+  const interfaceSource=model.rwtReceivingInterface;
+  assert(interfaceSource?.source?.blob,'Garden bypass requires the actual source-bound RWT receiving interface');
+  const receivingN=structuredClone(interfaceSource.north.receiverBounds);
+  const continuationN=structuredClone(interfaceSource.north.blockedOutletSpill.requiredContinuation);
+  const reservations=[receivingN,continuationN],usableGarden=[-800,12500,4800,4500];
+  for(const p of reservations){
+    assert(p.length===4&&p.every(Number.isFinite)&&p[2]>0&&p[3]>0,'Invalid receiving/disposal reservation');
+    assert(!overlap(usableGarden,p),'Usable garden overlaps current N receiver or required spill continuation');
+    assert(bypassSolids.every(r=>!overlap(r,p)),'Garden bypass overlaps current N receiver or required spill continuation');
+  }
+  assert(bypassSolids.every(r=>!overlap(r,renewal.servicePlatform)));
+  const northExtent=[Math.min(...reservations.map(p=>p[0])),Math.min(...reservations.map(p=>p[1])),
+    Math.max(...reservations.map(p=>p[0]+p[2])),Math.max(...reservations.map(p=>p[1]+p[3]))];
+  const gardenEastReserve=Math.min(...reservations.map(p=>p[0]))-(usableGarden[0]+usableGarden[2]);
+  const westBypassEastReserve=Math.min(...reservations.map(p=>p[0]))-Math.max(...bypassSolids.map(p=>p[0]+p[2]));
   const minX=Math.min(...ramps.map(r=>r.plan[0]),...landings.map(r=>r.plan[0]));
   const maxX=Math.max(...ramps.map(r=>r.plan[0]+r.plan[2]),...landings.map(r=>r.plan[0]+r.plan[2]));
   const minY=Math.min(...ramps.map(r=>r.plan[1]),...landings.map(r=>r.plan[1]));
@@ -43,18 +55,23 @@ export function deriveGardenFailureBypass(model,renewal){
     grade,body:{radius:300,height:1800},clearWidth:width,flightSpacing:spacing,
     usableGarden:{plan:usableGarden,z:grade,
       scope:'Usable garden is at declared exterior grade WEST of the N receiving territory. Low loggia terrace is not the safe faulted occupant state.'},
-    receivingN:{plan:receivingN,role:'Reserved north water/disposal territory, not an occupied escape path. Actual containment/head/outfall remains RWT/DPL.'},
+    receivingN:{source:structuredClone(interfaceSource.source),plan:receivingN,
+      requiredSpillContinuation:continuationN,combinedExtent:northExtent,
+      directedSpillBoundary:structuredClone(interfaceSource.north.directedSpillBoundary),
+      historicalBypassReservation:{plan:[4800,12000,2400,2500],role:'Superseded standalone bypass reservation ONLY; not current receiver/disposal authority.'},
+      role:'BOTH actual RWT receiver and required blocked-outlet spill continuation are unoccupied water/disposal reservations. Actual containment/head/outfall remains RWT/DPL.'},
     bypass,groundPathEnvelope:bypassSolids,frontApproach:{route,ramps,landings,foot,
       footprint:[minX-100,minY-100,maxX-minX+200,-minY+200],
       guardTerritoryEach:100,guardHeight:1100,
       support:'Project mineral ramp/landing reference:200 structural depth with discrete supports at≤2000 spacing. Actual ground/bearing/reinforcement/edge/guard capacity and drainage remain STR/MAT/BCR.'},
     actualTravel:{groundBypass:length(bypass),frontFolded:length(route),total:length(bypass)+length(route)},
     operation:'When N mouth/route is unavailable, close the low garden/loggia approach. An occupant in the usable garden takes the west ground path, then the actual folded front approach to the protected occupied front exit. The reverse route reaches the usable garden without crossing N or E work. No escape through ponded court/loggia is credited.',
-    conditions:['The actual plot must contain the entire1200 clear west path, folded front ramp/landings/guards, usable garden and separate N/E receivers.',
+    conditions:['The N nominated low spill must be directed NORTH by continuous non-spill south/west/east boundaries above faulted−650 PLUS qualified wave/splash/movement/tolerance allowance. Plan separation alone is insufficient; if containment/disposal fails, the garden bypass safety claim fails.',
+      'The actual plot must contain the entire1200 clear west path, folded front ramp/landings/guards, usable garden and separate N/E receivers.',
       'West surface drainage and outer roof collection must discharge clear of this route at the nominated event; no claim of immunity to whole-site flood.',
       'No E handling, stored modules, parked vehicle or service apparatus may occupy this protected route.',
       '1200 width/landings are prototype controls. The600 actor proof is not wheelchair, assisted evacuation, building-regulation or physical slip/lighting/weather qualification.'],
-    checks:{continuousAtOneGrade:true,frontSlopes:true,clearOfNReceiver:true,clearOfEWork:true,
+    checks:{gardenEastReserve,westBypassEastReserve,receiverAndContinuationChecked:true,receivingContainmentAccepted:false,continuousAtOneGrade:true,frontSlopes:true,clearOfNReceiver:true,clearOfEWork:true,
       ordinaryActorLandingSideReserve:300,siteAccepted:false,accessClassAccepted:false}};
 }
 
@@ -64,7 +81,7 @@ export function renderGardenFailureBypass(v){
   const t=(px,py,s,size=13)=>`<text x="${px}" y="${py}" font-family="Arial" font-size="${size}">${s}</text>`;
   let s='<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1080" viewBox="0 0 1400 1080"><rect width="1400" height="1080" fill="#fbfaf5"/>';
   s+=t(30,35,'N-UNAVAILABLE GARDEN STATE · ONE SOURCE-DRAWN WEST BYPASS / NOT SITE OR ACCESS APPROVAL',17);
-  s+=r([0,0,12000,12000],'#dedbd2')+r(v.usableGarden.plan,'#c4d5a8')+r(v.receivingN.plan,'#a2ccdf');
+  s+=r([0,0,12000,12000],'#dedbd2')+r(v.usableGarden.plan,'#c4d5a8')+r(v.receivingN.plan,'#a2ccdf')+r(v.receivingN.requiredSpillContinuation,'#c6e0eb');
   for(const p of v.groundPathEnvelope)s+=r(p,'#8cbda0');
   for(const p of v.frontApproach.ramps)s+=r(p.plan,'#ba9d70');
   for(const p of v.frontApproach.landings)s+=r(p.plan,'#dec9a4');
@@ -73,15 +90,17 @@ export function renderGardenFailureBypass(v){
   s+=t(x(1000),y(7500),'HOUSE 12×12m');
   s+=t(x(-2000)-35,y(6000),'WEST');
   s+=t(x(500),y(15500),'Usable garden');
-  s+=t(x(4800)-10,y(15100),'N water zone');
+  s+=t(x(v.receivingN.plan[0]),y(14500),'N receiver',11);
+  s+=t(x(v.receivingN.requiredSpillContinuation[0]),y(15950),'Required spill',11);
   s+=t(690,140,`One exterior grade ${v.grade}; front exit0. No low-loggia escape credited.`);
   s+=t(690,180,'1200 clear route /600 actor;1500 flight centres leave300 between clear lanes.');
   s+=t(690,220,'Folded front flights retain1:20 and≤9000 runs;1200 long turn/terminal landings.');
   s+=t(690,260,'Turning landings2700 wide;100 outside guard territory /1100 guard height.');
   s+=t(690,300,`Actual ground bypass ${(v.actualTravel.groundBypass/1000).toFixed(2)}m; folded front ${(v.actualTravel.frontFolded/1000).toFixed(2)}m.`);
   s+=t(690,340,`Total garden-to-front reference ${(v.actualTravel.total/1000).toFixed(2)}m: a real convenience/site cost.`);
-  s+=t(690,380,'N receiver is east of usable garden; E module/hoist work is east of house.');
-  s+=t(690,420,'No person crosses either water/maintenance territory on this route.');
+  s+=t(690,380,`Actual N receiver +spill X${v.receivingN.combinedExtent[0]}..${v.receivingN.combinedExtent[2]} /Y${v.receivingN.combinedExtent[1]}..${v.receivingN.combinedExtent[3]}.`);
+  s+=t(690,400,`Garden east reserve ${v.checks.gardenEastReserve}; west bypass reserve ${v.checks.westBypassEastReserve}. E work remains east.`);
+  s+=t(690,420,'No plan crossing. Directed spill/retaining boundaries remain UNPROVED.');
   s+=t(690,460,'West roof/surface drainage, whole plot fit, ground/supports and actual weather');
   s+=t(690,485,'must be qualified. Keep this route free of parked vehicles/stored components.');
   s+=t(690,540,'Ordinary operator geometry only: wheelchair/assisted escape/regulatory');

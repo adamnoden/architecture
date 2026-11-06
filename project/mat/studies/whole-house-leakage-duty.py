@@ -89,7 +89,7 @@ def produce():
           'Protected roof closure bottom6444 differs from ordinary upperFFL+3100=6550; actual complete private-room/roof/step boundary must bind',
           'Internal walls/floors/hidden risers excluded from net Vn50, while conditioned entrance/stair void air must be included with actual stair/landing solids',
           'Method-specific final test preparation: normal ventilation openings sealed as prescribed; ordinary ventilation and actual building operation remain separate']},
-      'comparisonCases':cases,'proposedDevelopment':proposed,'aggregateFamilyBudgets':budgets,
+      'comparisonCases':cases,'pressureChallengeRole':p['pressureChallengeRole'],'proposedDevelopment':proposed,'aggregateFamilyBudgets':budgets,
       'floorWallAllocation':{'aggregate_m3_per_h_at50Pa':floor,'ordinaryEdge_m':L,
         'bookkeepingEquivalent_m3_per_h_m_at50Pa':floor/L,'bookkeepingEquivalent_Lps_m_at50Pa':floor/L/3.6,
         'role':p['allocationRole'],'threeDoorWidths_m':5,'threeDoorAssemblyFamily':'completeOpeningsIncludingThreeDoorThresholds',
@@ -116,19 +116,19 @@ def figure(r):
       text(ox,415,name,16);text(ox,441,f"{q['area_m2']:.3f} m² / {q['perimeter_m']:.3f} m",16)
     g=r['geometry'];text(770,130,'Source-located geometry',22)
     for i,s in enumerate([f"Reference envelope {g['referenceEnvelope_m2']:.3f} m²",f"Two-clear-layer proxy {g['grossTwoClearLayerVolume_m3']:.3f} m³",'Upper void is inside the air domain.','Includes exposed upper-floor soffits.','Floor field 83.057 ≠ pressure footprint 88.554.','Real closure/solids/test boundaries still bind.','Gross proxy is NOT net n50 volume.']):text(770,166+29*i,s,16)
-    text(35,492,'50 Pa design cases and one imposed 2 Pa / exponent0.65 sensitivity',22)
+    text(35,492,'50 Pa design cases; one authored 2 Pa / exponent0.65 extrapolation',22)
     headings=['q50 m³/(h·m²)','Total Q50 m³/h','Challenge flow L/s','Challenge loss W/K']
     for x,s in zip([45,310,590,875],headings):text(x,526,s,17)
     for i,row in enumerate(r['comparisonCases']):
       t=next(v for v in row['pressureChallenges'] if v['uniformPressure_Pa']==2 and v['exponent']==.65)
       if row['q50_m3_per_h_m2']==1:out.append(f'<rect x="35" y="{540+i*35}" width="1120" height="33" fill="#d4e4bd"/>')
       for x,s in zip([45,310,590,875],[str(row['q50_m3_per_h_m2']),f"{row['totalQ50_m3_per_h']:.1f}",f"{t['flow_Lps']:.2f}",f"{t['heatLoss_W_per_K']:.2f}"]):text(x,563+i*35,s,19)
-    text(35,708,'2 Pa is not site weather. Full 1/2/4 Pa × 0.5/0.65/1 exponent cases remain in JSON.',17)
+    text(35,708,'Below test pressures: full 1/2/4 Pa × 0.5/0.65/1 authored challenges remain in JSON.',17)
     text(35,738,'Ideal 70% recovery at 96 L/s leaves 34.56 W/K; leakage bypasses recovery and is charged once.',17)
     text(35,788,'One finite floor/wall allocation',23)
-    f=r['floorWallAllocation'];text(35,821,f"10% = {f['aggregate_m3_per_h_at50Pa']:.3f} m³/h@50Pa for the WHOLE field + ordinary joints/cores.",18)
+    f=r['floorWallAllocation'];text(35,821,f"10% = {f['aggregate_m3_per_h_at50Pa']:.3f} m³/h@50Pa for field + ordinary joints + 3 structural RC crossings.",18)
     text(35,850,f"Over 118.761 m: {f['bookkeepingEquivalent_m3_per_h_m_at50Pa']:.4f} m³/(h·m) bookkeeping average, not a joint rating.",18)
-    text(35,879,'Complete 3 door/threshold assemblies → openings 25%; one physical path gets one budget.',18)
+    text(35,879,'3 complete doors → openings 25%; complete service air joints → penetrations 10%.',18)
     text(35,908,'Walls 15% / roof 20% / openings 25% / penetrations 10% / floor 10% / reserve 20%.',18)
     text(35,953,'Next: agree real pressure boundary; test representative full junction, then whole house.',19)
     text(35,986,'W9 bottom lift/base-to-deck, complete ports and folded exterior capture remain OPEN.',19,'#8c402e')
