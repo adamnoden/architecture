@@ -9,13 +9,13 @@
     "label": "zerg-20261106-w1"
   },
   "claimedAt": "2026-11-06T07:38:01.585Z",
-  "heartbeatAt": "2026-11-06T12:38:09.064Z",
-  "expiresAt": "2026-11-06T13:23:09.064Z",
+  "heartbeatAt": "2026-11-06T12:48:04.777Z",
+  "expiresAt": "2026-11-06T13:33:04.777Z",
   "checkpoint": {
-    "evidence": "CorrectivePR1339 currenta15efe8e69777a217921b4c99b8dda95e6833547 rebased8ab;25fa historicalnegative, currentf732NWauthenticated ALLfixedinventory; static/integrity/diffpassed; newCI42219071814 running",
-    "next": "Finish correction exactheadCI and freshpreflight before any new rollingwork; fixed-inventory errors withdrawn, no housechange or IAS completion"
+    "evidence": "Corrective1339 merged6594f48dc4ab9a55d37d43c07f3943c506ab4012; exactCI42219071814success; issue941 withdrawalreconciled/open; oldhead404; successor exactmain",
+    "next": "Continue one actual rolling/access method using full current inventory and actual axle/gate-end mechanics; never reuse rejectedA100W or omittednorth-emitter scene. No new product list, IAS incomplete"
   },
-  "branch": "work/zerg-20261106-w1e",
+  "branch": "work/zerg-20261106-w1f",
   "predecessor": {
     "leaseId": "c07019d5-45b2-40cb-95ac-92932149eff1",
     "generation": 21,
