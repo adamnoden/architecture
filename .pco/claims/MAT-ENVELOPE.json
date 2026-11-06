@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w5"
   },
   "claimedAt": "2026-11-06T09:41:13.275Z",
-  "heartbeatAt": "2026-11-06T12:35:38.823Z",
-  "expiresAt": "2026-11-06T13:20:38.823Z",
+  "heartbeatAt": "2026-11-06T13:09:37.779Z",
+  "expiresAt": "2026-11-06T13:54:37.779Z",
   "branch": "work/zerg-20261106-w5-mat-seal",
   "predecessor": {
     "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
@@ -36,8 +36,8 @@
   },
   "pr": 1337,
   "checkpoint": {
-    "evidence": "Draft1337 actualhead9fef8275062bb0b165e78bdd8212fa96d7511e6b/treeff2dd060 on main8ab19 publishes source-backed seal bounds and highercompression countercase, layered6.35mm manufacturer CFD method, exact Cu-DHP1.5 R240+CuSi3Mn1/TWI shoe-process comparator, and exact lighter Layher sheet vs incompatible780deep/2570wide fullkit. Direct arithmetic+diffcheck pass. No selected geometry/material changes; source review and exacthead CI pending.",
-    "next": "Obtain coordinator source review, reconcile any actual corrections/current main, inspect exacthead fullCI, then canonical preflight before bounded evidence merge. Keep material/owner exception and physical kit qualification distinct from this source result.",
-    "blocker": "Single-layer thin gasket/aging/water behavior and final gap/window still unqualified; HAZ/seam/movement/residues of copper shoe unqualified; lighter fabric wholekit does not fit selected envelope. No installed polymer approval or MAT-ENVELOPE completion."
+    "evidence": "Root reviewed and approved bounded two-MD material development evidence. PR1337 reconciled exact385d29a6d725f87be9108f5260b45f534681aaa9/treeb8123dac to main6594; diff remains only approved2MDs. Exact fullCI42221460272/job127904268138 success including repositoryhealth. Prior freshpreflight13:03passed; repeating after coordinator resume before expected-head merge.",
+    "next": "Run immediate fresh canonical publication preflight on385d/currentmain and send observation to root for expected-head merge; then develop measured-lot/matched-stop and actual frame-gap comparison in a fresh successor, no implicit0.5/70percent invariant.",
+    "blocker": "No source merge blocker; development evidence only, no physical material selection or owner polymer approval. Exact thin-layer/aging/water, shoe seam/HAZ/movement/residues and whole temporary-tool fit remain unqualified."
   }
 }
