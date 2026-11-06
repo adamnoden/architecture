@@ -1,0 +1,275 @@
+{
+  "status": "Authored forkable receiver development; no apparatus, structural, material or handling admission",
+  "sources": {
+    "HAD": {
+      "commit": "2eb8c064ddcd7d947af03c1d3e76ab165b665e76",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "6f089df104fe85c028978892e7f6b63f862e3237"
+    },
+    "balancedArchitecture": {
+      "commit": "2eb8c064ddcd7d947af03c1d3e76ab165b665e76",
+      "path": "project/mat/studies/balanced-service-architecture.json",
+      "blob": "152b5d972ea0f3d836c24af46555d6d90f2d0546"
+    },
+    "foldedRenewal": {
+      "commit": "2eb8c064ddcd7d947af03c1d3e76ab165b665e76",
+      "path": "project/mat/studies/folded-service-renewal.json",
+      "blob": "4e896260ce9b95a7fe03143257fda09fb2525b28"
+    }
+  },
+  "nativeEvidence": [
+    {
+      "name": "Swegon W9 Genius current IOM",
+      "url": "https://www.swegon.com/globalassets/digizuite/17204-en-w9_installation.pdf",
+      "edition": "2026-09-17",
+      "sha256": "216897d3bae9e4dc7e1b8e11e55dfab9911e1c146fa38cad281d1f08037eefe7",
+      "pages": "8 bottom lifting;9 native base/feet/assembly;10 condensate;26 body/base/ports/mass",
+      "scope": "Suitable lifting device lifting evenly from unit bottom; native floor/base support retained. Actual base depth593 differs from cabinet597. Heat exchanger can be removed before lifting onto base, but removable mass and exact underside bearing/CG are not stated. Front-edge screws may be loosened for condensate connection; not a qualified fork opening."
+    },
+    {
+      "name": "Genie Lift current operator manual",
+      "url": "https://manuals.genielift.com/operators/english/1314200.pdf",
+      "edition": "1314200GT SecondEdition ThirdPrinting August2026,GLP-103003 onward",
+      "sha256": "4e8bcb789fad758eacbf93fd11c3cb384373623630078d3485bbae453836062e",
+      "pages": "12\u201313 actual configurations;29\u201330 CG/loadcentre;31 dimensions;32\u201333 options/masses;operating rules",
+      "scope": "GL4 standard51kg,629wide/883operatinglength,minimum forks-down lift89,572long/521outsidewide forks,227kg at load centre up to350 from load face nearest carriage. Firm level surface, centred secured load, no side forces; raised travel only minor loading/unloading positioning. Manual lowering then quarter-turn lift sets winch brake. No unattended load. Actual fork section/origin and leg vertical shape are not dimensioned here."
+    },
+    {
+      "name": "Fetra25011401 current native data sheet",
+      "url": "https://www.fetra.com/medien/pdfdata/EN/25011401.pdf",
+      "sha256": "c31cc5ea04a79c65a9844cf6d3080a5e576e3daf12d5ef90bd0381a05e338e53",
+      "scope": "600kg rated load,30kg cart,1000x600 deck270high,full1125x609x990,200x40 wheels. No dimensioned wheel/contact centres.1288four-swivel option and full operator/route duties retained;1280deadman is not a driving brake and is incompatible with1288."
+    },
+    {
+      "name": "Fetra linked safety notice",
+      "url": "https://www.fetra.com/medien/pdfdata/sdb/EN/Instructions_for_use_and_safety_transport-trolley.pdf",
+      "sha256": "0df84acece90e264ee9ceb9f72ed3d8b4c16c00f44d736050ebdab3ff5629945",
+      "scope": "Pictogram notice defers to complete instructions supplied with cart. Not a slope or loading permission."
+    },
+    {
+      "name": "Swegon UVLL metal trap IOM",
+      "url": "https://www.swegon.com/globalassets/digizuite/10112-en-uvll_installation_en.pdf",
+      "edition": "UVLL_a-m/030220;2pages",
+      "retrieved": "2026-11-06",
+      "sha256": null,
+      "scope": "Official PDF text observed; local download403, no exact-byte or drawing inspection claimed. Annual underside cover removal, setter/float withdrawal and checking movement require actual below-trap access. Metal label is not constituent proof; actual connector/seal/discharge remains to bind."
+    }
+  ],
+  "sourceExtractSHA256": "098c97a33b73e5761da512eeb32a153c804ef9b424e7fb8f10e58cac0155dbe7",
+  "decision": "Develop one forkable raised metal receiver which stays with native base during cart handover. Delete a separate stool and avoid trying to pull forks out of a flat plate sitting directly on a solid cart deck. This is a constructive reference design with explicit missing admission evidence, not a handling pass.",
+  "receiver": {
+    "authored": {
+      "outside_mm": [
+        1006,
+        597
+      ],
+      "topPlateThickness_mm": 6,
+      "crossbeamRHS_mm": [
+        80,
+        40,
+        3
+      ],
+      "crossbeamCount": 2,
+      "crossbeamLength_mm": 1006,
+      "bottomRailRHS_mm": [
+        30,
+        100,
+        3
+      ],
+      "bottomRailCount": 2,
+      "bottomRailLength_mm": 597,
+      "postSHS_mm": [
+        40,
+        40,
+        3
+      ],
+      "postCount": 4,
+      "postLength_mm": 110,
+      "nominalForkLaneUnderside_mm": 140,
+      "nominalForkReleaseDrop_mm": 20,
+      "trialMaterial": "316L stainless as a proposed uncoated welded assembly, not selected grade/procurement or exact BOM",
+      "density_kg_per_m3": 8000,
+      "elasticModulus_N_per_mm2": 193000,
+      "staticPointChallenge_N": 3000,
+      "challengeRole": "Authored preliminary3kN static load case, not a normative factor, weld/local-bearing/fatigue/impact proof or installed support rating. Sharp-corner RHS idealisation; actual sections/welds/tolerances/capture hardware must be weighed and designed."
+    },
+    "height_mm": 226,
+    "coarseIdealMemberMass_kg": {
+      "plate": 28.827935999999998,
+      "topCrossbeams": 11.009664,
+      "bottomRails": 7.106688,
+      "posts": 1.56288
+    },
+    "coarseTotal_kg": 48.507168,
+    "unpricedResidues": "Weld metal, actual radiused sections, capture/dock parts, fixings and any surface treatment are additional. Native feet/seals/electronics/filter residues remain unapproved; no blanket metal or material exception.",
+    "nativeBase_mm": [
+      1006,
+      593,
+      123
+    ],
+    "nativeCabinetPlan_mm": [
+      1000,
+      597
+    ],
+    "actualBearingHold": "Full plate preserves native-foot support concept; exact foot contacts, base/cabinet attachment and capture/release must bind. It does not qualify lifting directly under the native base skin."
+  },
+  "lift": {
+    "nativeGL4StandardMass_kg": 51,
+    "nativeCapacity_kg": 227,
+    "listedUnitPlusIdealFixture_kg": 204.507168,
+    "remainingForUnscopedBaseAndAllCaptureHardware_kg": 22.492831999999993,
+    "capacityRole": "Listed156kg unit scope must be reconciled with actual supplied native base and captured fixture.227kg rating is not a whole floor, cart or handling rating.",
+    "nativeMaximumCombinedLoadCentre_mm": 350,
+    "geometricDepthMidpointOnly_mm": 298.5,
+    "midpointToLimit_mm": 51.5,
+    "CGHold": "Actual combined CG measured/bound from load face nearest carriage, load centred laterally, native chart and lifting configuration verified. Geometric midpoint is not actual CG; no core-removal mass credit.",
+    "directNativeFloorBaseEntryShortfallAtMaximumFoot_mm": 39,
+    "nativeForkMinLift_mm": 89,
+    "nominalEngageTop_mm": 140,
+    "nominalHeightAboveMinimum_mm": 51,
+    "innerRailLaneWidth_mm": 806,
+    "forkOutsideWidth_mm": 521,
+    "nominalEachForkSideGap_mm": 142.5,
+    "completeGLWidth_mm": 629,
+    "nominalEachFullToolSideGap_mm": 88.5,
+    "wholeToolHold": "629x883 operating outline alone does not locate forks, legs, wheels, winch/handle or operator. Actual complete vertical and plan geometry and safe minor positioning remain to prove."
+  },
+  "handover": {
+    "cartDeck_mm": [
+      1000,
+      600,
+      270
+    ],
+    "palletLengthOverhangEach_mm": 3.0,
+    "palletTransverseDeckReserveEach_mm": 1.5,
+    "forkTopAtDeposit_mm": 410,
+    "forkTopAfterRelease_mm": 390,
+    "maximumTineThicknessBeforeTolerance_mm": 120,
+    "flatPlateNegativeControl": "With zero underside lane, fork release below the support face intersects the solid cart deck. A flat lifting plate alone does not solve setdown/withdrawal.",
+    "nativeCartPayloadCapacity_kg": 600,
+    "planComparison": "1006x597 receiver fits within the retained1250x609 conservative complete-carrier rectangle only before any added projecting capture hardware.3mm end overhang and1.5mm deck side reserve are nominal dimensions, not a support/tolerance pass.",
+    "actualCartWheelAndCaptureHold": "Native200x40 wheels have no dimensioned contact centres here. Complete four-swivel entry, caster sweep, wheel/GL-leg contact, positive restraint/dock and independent support handover remain open."
+  },
+  "height": {
+    "existingConservativeNative_mm": 1515,
+    "installedPortTopBound_mm": 1741,
+    "to3100Ceiling_mm": 1359,
+    "cartPortTopBound_mm": 2011,
+    "trialLifted20ClearanceTopBound_mm": 2031,
+    "hold": "Actual protected door/closer/head clearance, ports/diverging fittings/insulation/attenuator withdrawal and condensate disconnection/annual access must bind. No complete door-head or duct geometry pass."
+  },
+  "structuralComparison": {
+    "challenge_N": 3000,
+    "role": "Authored preliminary3kN static load case, not a normative factor, weld/local-bearing/fatigue/impact proof or installed support rating. Sharp-corner RHS idealisation; actual sections/welds/tolerances/capture hardware must be weighed and designed.",
+    "idealCrossbeamArea_mm2": 684,
+    "idealCrossbeamI_mm4": 558532.0,
+    "idealCrossbeamZ_mm3": 13963.3,
+    "parkedWorstPoint": {
+      "supportSpan_mm": 906.0,
+      "moment_Nmm": 679500.0,
+      "elasticBendingStress_N_per_mm2": 48.66328160248652,
+      "elasticDeflection_mm": 0.4311806284267986
+    },
+    "restrainedEndPointNegativeControl": {
+      "authoredSupportLineSpan_mm": 400,
+      "endOverhang_mm": 303.0,
+      "moment_Nmm": 909000.0,
+      "elasticBendingStress_N_per_mm2": 65.09922439537932,
+      "elasticDeflection_mm": 0.5987357810550671,
+      "nearReaction_N": 5272.499999999999,
+      "farReaction_N": -2272.5,
+      "role": "This isolated end point requires a negative far reaction: free forks cannot supply that hold-down. Elastic component arithmetic is not a stable load case for an unrestrained receiver; actual distributed loads/CG/capture must be proved."
+    },
+    "centredSupportEndMomentSensitivity": [
+      {
+        "authoredSupportLineSpan_mm": 0,
+        "endOverhang_mm": 503.0,
+        "elasticBendingStress_N_per_mm2": 108.06900947483761
+      },
+      {
+        "authoredSupportLineSpan_mm": 300,
+        "endOverhang_mm": 353.0,
+        "elasticBendingStress_N_per_mm2": 75.8416706652439
+      },
+      {
+        "authoredSupportLineSpan_mm": 400,
+        "endOverhang_mm": 303.0,
+        "elasticBendingStress_N_per_mm2": 65.09922439537932
+      },
+      {
+        "authoredSupportLineSpan_mm": 521,
+        "endOverhang_mm": 242.5,
+        "elasticBendingStress_N_per_mm2": 52.10086440884319
+      }
+    ],
+    "forkSupportRole": "Restrained component models only; unilateral fork bearing cannot provide the isolated end-case negative reaction.400mm bearing-line span and0..521mm sensitivity are authored centred-support models. Native521 is outside fork width, not measured bearing-line spacing. Actual section/contact/local stability must bind.",
+    "onePostAxialStress_N_per_mm2": 6.756756756756757,
+    "grossTwoRailArea_m2": 0.1194,
+    "grossDeadLoadPressure_kPa": 16.796735503075375,
+    "grossChallengePressure_kPa": 25.125628140703515,
+    "notProved": [
+      "actual RHS corner radii/grade/section properties and tolerances",
+      "plate/native-foot load spreading, local bearing, torsion, welds, capture and sliding/overturning",
+      "actual uneven tile/screed/insulation/RC contact and movement; gross rail area is not proven effective bearing area",
+      "handling impact, fatigue, appliance approval or an installed support rating"
+    ]
+  },
+  "externalConsequences": {
+    "oldListedUnitPlusCart_kg": 186,
+    "newListedUnitFixtureCart_kg": 234.507168,
+    "oneIn20GravityOnlyForceBefore_N": 91.08805600372466,
+    "oneIn20GravityOnlyForceAfter_N": 114.84302178526272,
+    "coarseMassIncrease_fraction": 0.26079122580645175,
+    "uniformSlopeCGShiftExamples_mm": {
+      "800": 40.0,
+      "1000": 50.0,
+      "1200": 60.0
+    },
+    "role": "Gravity-force and authored CG-height challenges only, no rolling resistance/braking/tipping pass. Actual wheel support polygon and complete CG/dynamics unknown. Native TU8 WLL anchor/redirect duties and independent capture remain unchanged; no downrated anchor credit."
+  },
+  "condensate": {
+    "nativeUnitConnection": "Rear under heat exchanger,3/8inch male;minimum12mmID discharge,no horizontal run,second trap or direct drain; supplied looped hose and UVLL option retained",
+    "annualDuty": "Actual underside cover opening plus setter/float withdrawal and movement check, and complete supported pipe first release. Raising alone is not a clear access path or qualified metal/seal assembly."
+  },
+  "sequence": [
+    {
+      "state": "Installed",
+      "duty": "Native base/adjustable feet on full top plate; actual base capture, independent frame/floor stability, condensate cover withdrawal and port connections must work. Receiver is real additional installed assembly."
+    },
+    {
+      "state": "Prepare and engage",
+      "duty": "Isolate power, release actual ducts and condensate with supported parts; optional core removal has unknown mass credit. Bind combined mass/CG, frame capture and configured GL geometry, then engage the140mm fork lane. No native thin-base lifting assumption."
+    },
+    {
+      "state": "Lift and dock",
+      "duty": "Lift only enough for the270mm deck plus a trial20mm approach clearance. Positively secure actual cart/dock; complete wheel/leg/cylinder/leaf/operator entry is still unproved. Native raised travel is limited to minor loading/unloading positioning."
+    },
+    {
+      "state": "Set down and withdraw",
+      "duty": "Lower receiver bottom to270mm deck. Fork top at410mm supports the beam; lower20mm to390mm and withdraw through the retained lane. Actual tine thickness, vertical geometry, clearances and support handover must be measured; no unsupported slide."
+    },
+    {
+      "state": "Cart route and reverse",
+      "duty": "Actual cart restraint/wheel polygon, protected head/closer, all folded flights/turns and positive capture remain required. Incoming installation repeats the supported sequence in reverse; no unattended raised load."
+    }
+  ],
+  "systemDuties": [
+    "Retain96/128 direct capture,80fixed other supplies,kitchen16/48,native pressure/control/frost/heat duties and unapproved residues",
+    "No replacement of native base/feet, no retrofit appliance internals, no invented underside bearing or installed CG",
+    "Raised receiver is additional permanent mass/height/support/capture and repair work; floor finish/screed/insulation/RC and air/thermal interfaces remain to qualify",
+    "Transport fixture must keep fork withdrawal space above cart deck; flat plate alone fails that handover",
+    "Actual complete stationary/moving GL, cart wheels/legs/operator, protected leaf and cylinder remain to prove",
+    "Native condensate first release and annual underside withdrawal, actual ports/ducts/attenuator and ceiling renewal remain to prove",
+    "Reversible positively supported transfer, actual combined CG/rated capacity, load restraint/dock and actual cart support polygon/slope capture must bind before handling adoption"
+  ],
+  "admission": {
+    "nativeBearingAndCGVerified": false,
+    "frameAndFloorAdmitted": false,
+    "completeToolCartOperatorGeometryProved": false,
+    "portsCondensateAndHeadProved": false,
+    "cartOrExteriorHandlingAdmitted": false,
+    "materialException": false,
+    "HADorServicesChanged": false,
+    "packetComplete": false
+  }
+}
