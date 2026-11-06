@@ -5,7 +5,7 @@ import { deriveWaterReplan, verifyServicesOccurrences, verifyCollectorOpenEntrie
 
 test('current replan authenticates the entire new Services source without weakening the historical selection', () => {
   const v = deriveWaterReplan();
-  assert.equal(v.sources.services.blob, 'c677a252278d1c63581ba4aebc12820d9cf85854');
+  assert.equal(v.sources.services.blob, '69c7b1b1e733b9ade2d8ae21c1552accf52a6261');
   assert.equal(v.model.architecturalServices.eastWaterJoin.intermediateArch.finishedClearWidth, 1221);
   assert.deepEqual(v.model.groundFurniture['plant-primary-buffer-round-bounding600'], [10150, 5025, 600, 600]);
   assert.deepEqual(v.model.servicesInterface.emitters.find(e=>e.id==='plant-N').plan, [10980,3797,550,200]);
@@ -71,17 +71,17 @@ test('current source authentication does not conceal stale actual scene occurren
 
 test('joined ground comparator pays actual approach costs and replaces the retired outer opening profile', () => {
   const {model:m,bridge:b}=deriveWaterReplan();
-  assert.equal(m.approaches.authoredExteriorGrade,-2000);
+  assert.equal(m.approaches.authoredExteriorGrade,-1800);
   for(const [key,max]of [['front',9000],['garden',8000]]){
     const a=m.approaches[key],old=m.approaches.supersededD1300Comparison[key];
     assert(a.flights.every(x=>x<=max));
     assert.equal(a.landings,a.flights.length+1);
-    assert.equal(a.totalStraightReservation-old.totalStraightReservation,16400);
+    assert.equal(a.totalStraightReservation-old.totalStraightReservation,key==='front'?11200:12400);
   }
-  assert.equal(m.approaches.front.totalStraightReservation,47200);
-  assert.equal(m.approaches.garden.totalStraightReservation,44150);
-  assert.equal(m.exterior.eavesAboveAuthoredGrade,m.exterior.eaves+2000);
-  assert.equal(m.sections.fireHeight.firstAboveAuthoredExterior,5450);
+  assert.equal(m.approaches.front.totalStraightReservation,42000);
+  assert.equal(m.approaches.garden.totalStraightReservation,40150);
+  assert.equal(m.exterior.eavesAboveAuthoredGrade,m.exterior.eaves+1800);
+  assert.equal(m.sections.fireHeight.firstAboveAuthoredExterior,5250);
   assert(!m.archOpeningRegister.GROUND.some(o=>o.id==='east-window-2'));
   const arch=m.archOpeningRegister.GROUND.find(o=>o.id==='east-outdoor-water-portal');
   assert.deepEqual([arch.centre-arch.width/2,arch.centre+arch.width/2],[6273,7527]);

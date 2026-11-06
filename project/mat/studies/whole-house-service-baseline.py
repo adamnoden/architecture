@@ -829,12 +829,12 @@ east_exit['northReturnJoin']={'oldRejectedPort':old_east_exit['path'][-1],
  'completeCarrier160ToDryFace':dry_north-(exit_y+80),
  'sourceOrder':'Services owns5625 downstream setout; HAD owns the actual portal and arch profiles. Recompute every current hole/carrier/flashing against actual openings, not retired window7400. No material/closure/capacity acceptance.'}
 old_grade=json.loads(json.dumps(east_exit['grade']))
-trial_grade=-2000;cover=old_grade['crownCoverControl'];receiver_crown=trial_grade-cover;receiver_axis=receiver_crown-80
+trial_grade=-1800;cover=old_grade['crownCoverControl'];receiver_crown=trial_grade-cover;receiver_axis=receiver_crown-80
 east_exit['grade']={'trialExterior':trial_grade,'requiredReceiverEnvelopeCrownAtOrBelow':receiver_crown,
  'axisOf160OuterEnvelope':receiver_axis,'crownCoverControl':cover,
  'actualHydraulicInvert':'Unknown actual carrier/internaldiameter/receiver/site/outfall.160 outer envelope axis is not an adopted hydraulic invert.',
- 'scope':'Joined D2000 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered700, preserving internal wall/sleeve/tail connections and falls.',
- 'historicalD1300Control':old_grade,'externalTailLoweringMM':700,
+ 'scope':'Joined D1800 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered500, preserving internal wall/sleeve/tail connections and falls.',
+ 'historicalD1300Control':old_grade,'externalTailLoweringMM':500,
  'affectedExternalTails':['foul-ground-WC','foul-utility','foul-kitchen','rear-soil','east-soil','kitchenSinkStation.wasteRequiredRoute']}
 for a,z in zip(east_exit['path'],east_exit['path'][1:]):assert abs(a[2]-z[2]-math.dist(a[:2],z[:2])/40)<1e-9
 assert east_exit['northReturnJoin']['formedHoleToDryFace']==55.5

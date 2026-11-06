@@ -40,7 +40,32 @@ plat=n['servicePlatform'];op=n['operatorField'];box=n['hoistWorkingBox'];cy=sum(
 contains=lambda outer,inner:outer[0]<=inner[0] and outer[1]<=inner[1] and inner[0]+inner[2]<=outer[0]+outer[2] and inner[1]+inner[3]<=outer[1]+outer[3]
 overlap=lambda q,t:q[0]<t[0]+t[2] and q[0]+q[2]>t[0] and q[1]<t[1]+t[3] and q[1]+q[3]>t[1]
 parkplan=[park[0],cy-carriage/2,L,carriage]
-trackplan=[plat[0],portal[0],n['withdrawalTrackEndX']-plat[0],portal[1]-portal[0]]
+outboard=n.get('outboardTrackClearY',portal)
+trackplan=[plat[0],outboard[0],n['withdrawalTrackEndX']-plat[0],outboard[1]-outboard[0]]
+if 'joint' in n:
+ j=n['joint'];source=json.loads((R/'project/mat/studies/upper-access-renewal.json').read_text())['preferredJoint']
+ assert j==source,'Actual HAD preferred joint drifts from MAT-owned assembly'
+ assert n['assemblyContract']=={'preferredJoint':source},'Retired comparison remains an active assembly contract'
+ assert n['selectedSequence']==j['sequence']
+ assert portal[1]-portal[0]==900 and outboard[1]-outboard[0]==1000
+ assert j['completeCouplingY'][0]>=outboard[0] and j['completeCouplingY'][1]<=outboard[1]
+ assert j['reinforcingUFrame']['innerFrameX'][0]>max(q[1] for q in beams),'Wide joint crosses the900 gallery portal'
+ for piece in n['pieces']:
+  assert piece['parkX'][0]>b['outerSupportReservation']['fullX'][1]
+  assert piece['parkX'][1]<=n['withdrawalTrackEndX']
+  assert piece['bodyX'][0]+piece['translation']==piece['parkX'][0]
+  assert piece['bodyX'][1]+piece['translation']==piece['parkX'][1]
+ def union_contains(rect,regions):
+  xs=sorted({rect[0],rect[0]+rect[2],*[max(rect[0],min(rect[0]+rect[2],q[0])) for q in regions],*[max(rect[0],min(rect[0]+rect[2],q[0]+q[2])) for q in regions]})
+  ys=sorted({rect[1],rect[1]+rect[3],*[max(rect[1],min(rect[1]+rect[3],q[1])) for q in regions],*[max(rect[1],min(rect[1]+rect[3],q[1]+q[3])) for q in regions]})
+  return all(any(q[0]<=((x+xx)/2)<=q[0]+q[2] and q[1]<=((y+yy)/2)<=q[1]+q[3] for q in regions) for x,xx in zip(xs,xs[1:]) for y,yy in zip(ys,ys[1:]))
+ regions=n['servicePlatformRegions']
+ for field in [trackplan,op,n['storagePad'],n['handoverPad'],j['hatchClear'],*[ [q[0]-300,q[1]-300,600,600] for q in j['operatorCentres']]]:
+  assert union_contains(field,regions),'Actual service task enters retained house outside L-shaped platform'
+ assert not any(overlap(q,[9722.5,8019.5,2277.5,3980.5]) for q in regions),'Platform consumes northeast house'
+ couplingPark=[park[0],j['completeCouplingY'][0],L,j['completeCouplingY'][1]-j['completeCouplingY'][0]]
+ assert contains(trackplan,couplingPark),'Actual920 coupling leaves outboard track'
+ assert n['maintenanceCatchDrain']['lowestReservedSurface']==j['capture']['pipeEnd'][1]-j['capture']['pipeWall']-j['capture']['pipeSupportBelow']
 assert contains(plat,trackplan) and contains(plat,op) and contains(trackplan,parkplan)
 assert not overlap(op,trackplan),'Operator deck intersects the low withdrawal solid'
 assert n['fixedTrackBelowCarriageBudget']>0

@@ -3,7 +3,7 @@
   "status": "MAT assembly and envelope proof of the actual HAD successor; no technical/material acceptance",
   "HAD_source": {
     "path": "project/had/studies/water-replan.json",
-    "blob": "dedf8c7e382624a8468aafde095f8ed6bd97af32",
+    "blob": "48c471a4919c8360ed79333a1e8de75484f14e67",
     "declaredStatus": "WIP JOINED HYPOTHESIS \u2014 NOT A SELECTED HOUSE OR COMPLETED HAD PACKET"
   },
   "east_weather_layer_faces_mm": [
@@ -21,9 +21,9 @@
   "floor_glass_to_wall_glass_horizontal_gap_mm": 167,
   "body_x_mm": [
     7550,
-    9850
+    10050.5
   ],
-  "length_mm": 2300,
+  "length_mm": 2500.5,
   "bridge_beam_ranges_mm": [
     [
       7650.0,
@@ -50,13 +50,13 @@
   "lateral_remainder_each_mm": 68.5,
   "body_rim_ends_mm": [
     -697.6470588235294,
-    -724.7058823529412
+    -727.064705882353
   ],
   "minimum_gross_rim_to_beam_mm": 67.64705882352939,
   "rejected_200_deep_body_overlap_mm": 32.35294117647061,
   "body_carriage_bottom_mm": [
     -947.6470588235294,
-    -974.7058823529412
+    -977.064705882353
   ],
   "outer_support_reference": {
     "path": "project/str/studies/ground-interfaces.json",
@@ -69,27 +69,27 @@
   },
   "selected_park_x_mm": [
     12250,
-    14550
+    14750.5
   ],
   "new_bridge_beam_to_hoist_park_mm": 2500.0,
   "translation_mm": 4700,
   "translation_z_mm": -55.2941176470589,
   "park_carriage_bottom_mm": [
     -1002.9411764705883,
-    -1030.0
+    -1032.358823529412
   ],
   "operator_deck_z_mm": 0,
-  "rejected_solid_deck_overlap_mm": 1030.0,
+  "rejected_solid_deck_overlap_mm": 1032.358823529412,
   "fixed_track_bottom_mm": [
-    -1052.9411764705883,
-    -1080.0
+    -1102.9411764705883,
+    -1132.358823529412
   ],
-  "complete_local_lowest_surface_mm": -1080.0,
-  "complete_local_D_lower_bound_mm": 1580.0,
-  "HAD_D_trial_mm": 2000,
-  "trial_residual_over_lower_bound_mm": 420.0,
-  "sheet_only_mass_screen_kg": 23.736,
-  "full_depth_prismatic_water_litres": 138.0,
+  "complete_local_lowest_surface_mm": -1132.358823529412,
+  "complete_local_D_lower_bound_mm": 1632.358823529412,
+  "HAD_D_trial_mm": 1800,
+  "trial_residual_over_lower_bound_mm": 167.6411764705881,
+  "sheet_only_mass_screen_kg": 25.80516,
+  "full_depth_prismatic_water_litres": 150.03,
   "court_intake_well": [
     6125,
     6300,

@@ -7,8 +7,8 @@
     },
     "services": {
       "path": "project/mat/studies/whole-house-service-baseline.json",
-      "blob": "c677a252278d1c63581ba4aebc12820d9cf85854",
-      "projectionSha256": "ddc5bb72c7480cb2c1cca0e45a3d5b1b278703d21aae62cfeba80e78463d3846"
+      "blob": "69c7b1b1e733b9ade2d8ae21c1552accf52a6261",
+      "projectionSha256": "a8193ca99f7167371a2716a4ea814c29c21d864fde861db5d345774e5b560fc9"
     }
   },
   "model": {
@@ -2690,10 +2690,10 @@
         "heaveStress": 300,
         "constructionLoss": 50,
         "ventilationReserve": 150,
-        "Drequired": 1950,
-        "Dtrial": 2000,
-        "Dsurplus": 50,
-        "scope": "D2000 is the joined pre-site comparator. Retained grid/member capacities and actual ground/heave/ventilation remain unqualified; actual site and any deeper structural member reopen this reference."
+        "Drequired": 1688,
+        "Dtrial": 1800,
+        "Dsurplus": 112,
+        "scope": "D1800 is the joined pre-site comparator. Retained grid/member capacities and actual ground/heave/ventilation remain unqualified; actual site and any deeper structural member reopen this reference."
       },
       "waterLevels": {
         "southLandingStart": 0,
@@ -2706,9 +2706,9 @@
         "scope": "MAT constructiveONEproposal; structure/slopes/receivers/firstharm need joined check."
       },
       "fireHeight": {
-        "firstAboveAuthoredExterior": 5450,
+        "firstAboveAuthoredExterior": 5250,
         "lowRiseComparison": 4500,
-        "scope": "D2000 comparator gives5450 above authored lowest exterior; actual adjacent-ground interpretation and strategy remain required."
+        "scope": "D1800 comparator gives5250 above authored lowest exterior; actual adjacent-ground interpretation and strategy remain required."
       }
     },
     "knownInterfaces": [
@@ -2773,7 +2773,7 @@
       "basis": "One conventional reference topology under currentADB2.5a; no regulatory approval or classified assembly claimed.",
       "official": "https://assets.publishing.service.gov.uk/media/6aa3bb335f6e942efe37f150/AD_B1_2026.pdf",
       "edition": "2019+2020/2022/2025/2026;2029futureprovisionsnotclaimedcurrent",
-      "measurement": "D6 lowest SIDE outsideground, not merely solum; comparator5450onlyif actual exterior−2000. No automatic fire-strategy acceptance.",
+      "measurement": "D6 lowest SIDE outsideground, not merely solum; comparator5250onlyif actual exterior−1800. No automatic fire-strategy acceptance.",
       "geometry": {
         "groundStairEastWall": {
           "finished": [
@@ -4443,8 +4443,8 @@
     "servicesProjection": {
       "source": {
         "path": "project/mat/studies/whole-house-service-baseline.json",
-        "blob": "c677a252278d1c63581ba4aebc12820d9cf85854",
-        "projectionSha256": "ddc5bb72c7480cb2c1cca0e45a3d5b1b278703d21aae62cfeba80e78463d3846"
+        "blob": "69c7b1b1e733b9ade2d8ae21c1552accf52a6261",
+        "projectionSha256": "a8193ca99f7167371a2716a4ea814c29c21d864fde861db5d345774e5b560fc9"
       },
       "keyedFieldsEqual": true,
       "method": "Exact full canonical object import, no numeric whitelist or local copied service inventory."
@@ -4497,7 +4497,7 @@
           "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
         }
       ],
-      "sourceBlob": "c677a252278d1c63581ba4aebc12820d9cf85854",
+      "sourceBlob": "69c7b1b1e733b9ade2d8ae21c1552accf52a6261",
       "fields": [
         "interfaces.architecturalServices.plant.cylinder",
         "interfaces.architecturalServices.emitters",
@@ -4549,8 +4549,8 @@
     "servicesInterface": {
       "source": {
         "path": "project/mat/studies/whole-house-service-baseline.json",
-        "blob": "c677a252278d1c63581ba4aebc12820d9cf85854",
-        "projectionSha256": "ddc5bb72c7480cb2c1cca0e45a3d5b1b278703d21aae62cfeba80e78463d3846"
+        "blob": "69c7b1b1e733b9ade2d8ae21c1552accf52a6261",
+        "projectionSha256": "a8193ca99f7167371a2716a4ea814c29c21d864fde861db5d345774e5b560fc9"
       },
       "emitters": [
         {
@@ -5486,12 +5486,12 @@
         },
         "source": "Current HAD Eopeningrecord checked for ALLwindows/door.215ring is an explicit profile-control awaiting STR/HAD actual inner/weather ring, NOT asserted whole exterior recipe.",
         "grade": {
-          "trialExterior": -2000,
-          "requiredReceiverEnvelopeCrownAtOrBelow": -2600,
-          "axisOf160OuterEnvelope": -2680,
+          "trialExterior": -1800,
+          "requiredReceiverEnvelopeCrownAtOrBelow": -2400,
+          "axisOf160OuterEnvelope": -2480,
           "crownCoverControl": 600,
           "actualHydraulicInvert": "Unknown actual carrier/internaldiameter/receiver/site/outfall.160 outer envelope axis is not an adopted hydraulic invert.",
-          "scope": "Joined D2000 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered700, preserving internal wall/sleeve/tail connections and falls.",
+          "scope": "Joined D1800 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered500, preserving internal wall/sleeve/tail connections and falls.",
           "historicalD1300Control": {
             "trialExterior": -1300,
             "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
@@ -5499,7 +5499,7 @@
             "crownCoverControl": 600,
             "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
           },
-          "externalTailLoweringMM": 700,
+          "externalTailLoweringMM": 500,
           "affectedExternalTails": [
             "foul-ground-WC",
             "foul-utility",
@@ -5569,7 +5569,7 @@
             [
               8900,
               -450,
-              -2680
+              -2480
             ]
           ],
           "decision": "Required compatible horizontalpan outlet abovefloor to own southwall sleeve; no new groundfloor bore.650planat1:40. Actual pan firstrelease and complete connector≤182.5rear axialterritory required; no guessed outlet. Outside receiving invert/site connection unproved."
@@ -5596,7 +5596,7 @@
             [
               12450,
               600,
-              -2680
+              -2480
             ]
           ],
           "decision": "Washerstandpipe andsink trapped branch join accessible rear250chase andeastwall exit ABOVEfloor; no routingthroughappliance chassis.32.5fall on1300plan. Exact trap/hose/branch/outside carrier and workplate required."
@@ -5618,7 +5618,7 @@
             [
               9150,
               12450,
-              -2680
+              -2480
             ]
           ],
           "decision": "Accessible sinktrap/cleanout to northwall abovefloor,17.9375fall on717.5plan. No branch through groundloggia/hiddenwaterbox. Actual site receiving crown/diameter/invert mustmatch."
@@ -5645,7 +5645,7 @@
             [
               -450,
               11177.5,
-              -2680
+              -2480
             ]
           ],
           "decision": "Merged R01 upper sanitaryport remains conditional; abovefloor westexit avoidsanothergroundbore. Actual roof intersection/termination must be raised above nearbyopenings/roof;7800 is a reservation, not roofheight fact."
@@ -5677,7 +5677,7 @@
             [
               12450,
               5625,
-              -2680
+              -2480
             ]
           ],
           "decision": "75S exit rewind5625 preserves upper join/start2682.5 and1:40, clears new north-return formed-hole boundary. Actual current portal/ring/weather/support, outside350release and receiving grade/invert remain to qualify. No hidden floor bore."
@@ -9951,37 +9951,36 @@
       }
     ],
     "approaches": {
-      "authoredExteriorGrade": -2000,
+      "authoredExteriorGrade": -1800,
       "front": {
-        "rise": 2000,
+        "rise": 1800,
         "slope": 20,
-        "slopingRun": 40000,
+        "slopingRun": 36000,
         "flights": [
           9000,
           9000,
           9000,
-          9000,
-          4000
+          9000
         ],
         "landingLength": 1200,
-        "landings": 6,
-        "totalStraightReservation": 47200
+        "landings": 5,
+        "totalStraightReservation": 42000
       },
       "garden": {
         "terrace": -152.5,
-        "rise": 1847.5,
+        "rise": 1647.5,
         "slope": 20,
-        "slopingRun": 36950,
+        "slopingRun": 32950,
         "flights": [
           8000,
           8000,
           8000,
           8000,
-          4950
+          950
         ],
         "landingLength": 1200,
         "landings": 6,
-        "totalStraightReservation": 44150
+        "totalStraightReservation": 40150
       },
       "clearWidthReservation": 1200,
       "supersededD1300Comparison": {
@@ -10016,13 +10015,13 @@
         "clearWidthReservation": 1200,
         "scope": "Finite authored plot reservation, not a compliant access design or available site. Guards, edge protection, turning/door/approach geometry and actual access category remain to qualify. Court/loggia not credited as protected final exit."
       },
-      "scope": "D2000 is ONE pre-site comparator exterior/solum basis, not a surveyed plot or adopted foundation. Actual derived flights/landings preserve prior flight-length controls; no access-category, turning/guard/door or compliance acceptance."
+      "scope": "D1800 is ONE pre-site comparator exterior/solum basis, not a surveyed plot or adopted foundation. Actual derived flights/landings preserve prior flight-length controls; no access-category, turning/guard/door or compliance acceptance."
     },
     "exterior": {
       "eaves": 7100,
       "ridge": 8090.903773579372,
-      "eavesAboveAuthoredGrade": 9100,
-      "ridgeAboveAuthoredGrade": 10090.903773579372,
+      "eavesAboveAuthoredGrade": 8900,
+      "ridgeAboveAuthoredGrade": 9890.903773579372,
       "overhang": 200,
       "physicalOuterEdge": 7006.738468369001,
       "source": "Explicit+300eavesdatum rewind from6800;25degree/2125inset/200overhang retained. Material/support/ROFRWTadoption not claimed.",
@@ -10034,7 +10033,7 @@
       "dining": "Four places, no end seats; separate prep table removed. Actual chair/support/table leg fit is not earned from500plan boxes.",
       "private": "Four bedrooms retained, two compact singles, two rear doubles rotatedEW; principal lowbed/window compatibility and660wardrobe are explicit choices.",
       "loggia": "Deletes occupied-floor renewable watercaps/gas lids. Costs new weatherwalls, displaced room territory, long daily indoor connection and exposed floor/arch insulation.",
-      "height": "One D2000 comparator: eaves/ridge700higher above grade; front47.2m/garden44.15m straight approach reservations, each16.4m longer than D1300 after the added flights/landings. No actual plot fit claimed.",
+      "height": "One D1800 uniform-grade comparator: eaves/ridge500higher above grade than D1300. Actual folded front/garden bypass travel and footprint below govern; nominal straight ramp budgets are comparisons only. Local solum clearance need not prescribe all real site terrain; DPL must earn any different coherent site.",
       "groundClearFloor": {
         "baseB": 89.7864,
         "loggia": 76.7663815,
@@ -13560,12 +13559,12 @@
         },
         "source": "Current HAD Eopeningrecord checked for ALLwindows/door.215ring is an explicit profile-control awaiting STR/HAD actual inner/weather ring, NOT asserted whole exterior recipe.",
         "grade": {
-          "trialExterior": -2000,
-          "requiredReceiverEnvelopeCrownAtOrBelow": -2600,
-          "axisOf160OuterEnvelope": -2680,
+          "trialExterior": -1800,
+          "requiredReceiverEnvelopeCrownAtOrBelow": -2400,
+          "axisOf160OuterEnvelope": -2480,
           "crownCoverControl": 600,
           "actualHydraulicInvert": "Unknown actual carrier/internaldiameter/receiver/site/outfall.160 outer envelope axis is not an adopted hydraulic invert.",
-          "scope": "Joined D2000 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered700, preserving internal wall/sleeve/tail connections and falls.",
+          "scope": "Joined D1800 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered500, preserving internal wall/sleeve/tail connections and falls.",
           "historicalD1300Control": {
             "trialExterior": -1300,
             "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
@@ -13573,7 +13572,7 @@
             "crownCoverControl": 600,
             "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
           },
-          "externalTailLoweringMM": 700,
+          "externalTailLoweringMM": 500,
           "affectedExternalTails": [
             "foul-ground-WC",
             "foul-utility",
@@ -13643,7 +13642,7 @@
             [
               8900,
               -450,
-              -2680
+              -2480
             ]
           ],
           "decision": "Required compatible horizontalpan outlet abovefloor to own southwall sleeve; no new groundfloor bore.650planat1:40. Actual pan firstrelease and complete connector≤182.5rear axialterritory required; no guessed outlet. Outside receiving invert/site connection unproved."
@@ -13670,7 +13669,7 @@
             [
               12450,
               600,
-              -2680
+              -2480
             ]
           ],
           "decision": "Washerstandpipe andsink trapped branch join accessible rear250chase andeastwall exit ABOVEfloor; no routingthroughappliance chassis.32.5fall on1300plan. Exact trap/hose/branch/outside carrier and workplate required."
@@ -13692,7 +13691,7 @@
             [
               9150,
               12450,
-              -2680
+              -2480
             ]
           ],
           "decision": "Accessible sinktrap/cleanout to northwall abovefloor,17.9375fall on717.5plan. No branch through groundloggia/hiddenwaterbox. Actual site receiving crown/diameter/invert mustmatch."
@@ -13719,7 +13718,7 @@
             [
               -450,
               11177.5,
-              -2680
+              -2480
             ]
           ],
           "decision": "Merged R01 upper sanitaryport remains conditional; abovefloor westexit avoidsanothergroundbore. Actual roof intersection/termination must be raised above nearbyopenings/roof;7800 is a reservation, not roofheight fact."
@@ -13751,7 +13750,7 @@
             [
               12450,
               5625,
-              -2680
+              -2480
             ]
           ],
           "decision": "75S exit rewind5625 preserves upper join/start2682.5 and1:40, clears new north-return formed-hole boundary. Actual current portal/ring/weather/support, outside350release and receiving grade/invert remain to qualify. No hidden floor bore."
@@ -14371,7 +14370,7 @@
     },
     "gardenFailureBypass": {
       "status": "SOURCE-DRAWN ORDINARY OPERATOR REFERENCE; SITE AND ACCESS QUALIFICATION UNEARNED",
-      "grade": -2000,
+      "grade": -1800,
       "body": {
         "radius": 300,
         "height": 1800
@@ -14385,7 +14384,7 @@
           4800,
           4500
         ],
-        "z": -2000,
+        "z": -1800,
         "scope": "Usable garden is at declared exterior grade WEST of the N receiving territory. Low loggia terrace is not the safe faulted occupant state."
       },
       "receivingN": {
@@ -14401,22 +14400,22 @@
         [
           1000,
           13500,
-          -2000
+          -1800
         ],
         [
           -2000,
           13500,
-          -2000
+          -1800
         ],
         [
           -2000,
-          -5800,
-          -2000
+          -600,
+          -1800
         ],
         [
-          0,
-          -5800,
-          -2000
+          1500,
+          -600,
+          -1800
         ]
       ],
       "groundPathEnvelope": [
@@ -14428,14 +14427,14 @@
         ],
         [
           -2600,
-          -6400,
+          -1200,
           1200,
-          20500
+          15300
         ],
         [
           -2600,
-          -6400,
-          3200,
+          -1200,
+          4700,
           1200
         ]
       ],
@@ -14525,26 +14524,6 @@
             1500,
             -600,
             -1800
-          ],
-          [
-            0,
-            -600,
-            -1800
-          ],
-          [
-            0,
-            -1200,
-            -1800
-          ],
-          [
-            0,
-            -5200,
-            -2000
-          ],
-          [
-            0,
-            -5800,
-            -2000
           ]
         ],
         "ramps": [
@@ -14623,25 +14602,6 @@
               -1800
             ],
             "slope": 20
-          },
-          {
-            "plan": [
-              -600,
-              -5200,
-              1200,
-              4000
-            ],
-            "from": [
-              0,
-              -1200,
-              -1800
-            ],
-            "to": [
-              0,
-              -5200,
-              -2000
-            ],
-            "slope": 20
           }
         ],
         "landings": [
@@ -14683,32 +14643,23 @@
           },
           {
             "plan": [
-              -600,
+              900,
               -1200,
-              2700,
-              1200
-            ],
-            "z": -1800
-          },
-          {
-            "plan": [
-              -600,
-              -6400,
               1200,
               1200
             ],
-            "z": -2000
+            "z": -1800
           }
         ],
         "foot": [
-          0,
-          -5800,
-          -2000
+          1500,
+          -600,
+          -1800
         ],
         "footprint": [
-          -700,
+          800,
           -11500,
-          7400,
+          5900,
           11600
         ],
         "guardTerritoryEach": 100,
@@ -14716,9 +14667,9 @@
         "support": "Project mineral ramp/landing reference:200 structural depth with discrete supports at≤2000 spacing. Actual ground/bearing/reinforcement/edge/guard capacity and drainage remain STR/MAT/BCR."
       },
       "actualTravel": {
-        "groundBypass": 24300,
-        "frontFolded": 52649.96878900157,
-        "total": 76949.96878900158
+        "groundBypass": 20600,
+        "frontFolded": 45944.97191010141,
+        "total": 66544.97191010142
       },
       "operation": "When N mouth/route is unavailable, close the low garden/loggia approach. An occupant in the usable garden takes the west ground path, then the actual folded front approach to the protected occupied front exit. The reverse route reaches the usable garden without crossing N or E work. No escape through ponded court/loggia is credited.",
       "conditions": [
@@ -15010,10 +14961,123 @@
       "failureAndMaintenance": "The entire inward roof plus direct court rain is assigned to E when N is disabled. Outer collection failure still sheds to designed external receivers and requires ROF/RWT proof. High-level access, mineral/metal roof/ceiling assembly, ordinary edge supports and gutter renewal remain their source-bound obligations; low gutters are not inaccessible permanent joints.",
       "materialAndPerformance": "The inherited full500.7normal roof stack is retained as a geometric candidate, not admitted constituent, fire, thermal, support or hydraulic performance."
     },
+    "courtEastWindow6850": {
+      "openingId": "court-east-1",
+      "retainedRoughOpening": {
+        "id": "court-east-1",
+        "wall": "court-east",
+        "centre": 6850,
+        "width": 1000,
+        "kind": "window",
+        "sill": 750,
+        "head": 2850,
+        "spring": 2550
+      },
+      "galleryClearX": [
+        8179.5,
+        9203
+      ],
+      "interior": {
+        "family": "Two inward side-hung rectangular leaves below fixed arched head; project maximum450-wide leaf envelope, not selected supplier kit",
+        "maximumLeafEnvelope": 450,
+        "frameJambEach": 50,
+        "gapsEach": 3,
+        "leafWidth": 445.5,
+        "leafThickness": 44,
+        "hinge": [
+          8179.5,
+          6403
+        ],
+        "leafZ": [
+          803,
+          2497
+        ],
+        "handleZ": 1200,
+        "bodyStart": [
+          8508.5,
+          7200
+        ],
+        "bodyEnd": [
+          8870,
+          6800
+        ],
+        "radius": 300,
+        "oppositeLeafState": "CLOSED. Repeat north leaf by mirroring every hinge/leaf/body point aboutY6850; never open both during the proved task.",
+        "path": "Body moves continuously beside the rotating leaf, keeping the complete450 sweep and600 reach; no450+600 scalar width rejection."
+      },
+      "cleaning": {
+        "closedCoverPlan": [
+          6125,
+          6300,
+          1525,
+          1100
+        ],
+        "coverTopAtBody": 0,
+        "body": [
+          7325,
+          6850
+        ],
+        "shoulderWorldZ": 1450,
+        "glassX": 7750,
+        "glassZ": [
+          2500,
+          2850
+        ],
+        "poleWorkingLength": 1800,
+        "eastGuardState": "RETAINED; ALL COVERS LOCKED CLOSED",
+        "guardTopZ": 1100,
+        "closedWalkingCoverReference": {
+          "topZ": 0,
+          "bottomZ": -60,
+          "modules": 5,
+          "modulePlan": [
+            305,
+            1100
+          ],
+          "northSouthLedges": {
+            "width": 60,
+            "y": [
+              6240,
+              7400
+            ],
+            "z": [
+              -120,
+              -60
+            ]
+          },
+          "hoodTopZ": -110,
+          "grossUndersideToHood": 50,
+          "accessAdapter": {
+            "plan": [
+              5125,
+              6600,
+              1000,
+              600
+            ],
+            "courtEndZ": -74,
+            "coverEndZ": 0
+          },
+          "scope": "Explicit mineral/metal load-bearing closed-cover territory, no credited insulation or hood bearing. Actual1100 span/ledge/capture loads require STR/MAT proof. The74rise is crossed by the1000 ramp reference; no accessibility-category acceptance."
+        },
+        "leafCleaning": {
+          "innerFace": "Clean with leaf CLOSED from gallery body[8508.5,6850]; ordinary handled wiper reaches750..2500.",
+          "exteriorFace": "Open ONE leaf90 using the proved lateral path; clean exposed exterior face from its end-side gallery body[8870,6800] (north leaf mirrored). Fixed arched head stays closed and is cleaned externally above the guard.",
+          "poleWorkingLength": 1800,
+          "physicalAccessQualified": false
+        },
+        "role": "All structural walking covers remain locked/supported over well and hood. Guard remains intact. Only fixed arched-head exterior2500..2850 is reached from these covers, wholly above1100 guard. No low-glass pole through a guard, loose panel, descent or live renewal is credited.",
+        "scope": "Upper pane reach includes fixed arched head. Ordinary pole geometry only; pressure, glass/edge impact, cover bearing/supports, guard capture/weight and safe surface remain downstream qualification."
+      },
+      "costs": "Retains both court windows and visible symmetry. New operating/cleaning reference replaces an absent E6850 task proof; supplier leaf/frame geometry must fit these envelopes or reopen it.",
+      "proof": {
+        "minimumConservativeBodyReserve": 25,
+        "maximumConservativeHandleReach": 485.4491146528364,
+        "maximumCleaningPoleReach": 1463.087488839953,
+        "scope": "Constructive spatial reference; no force, glass, hardware, walking-cover load or occupational/access-category qualification."
+      }
+    },
     "currentAdoptionBlockers": [
-      "The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.",
-      "Two-level/D2000 is a COMPARISON ONLY, withdrawn as preferred: the maintenance policy does not require E removed plus concurrent N failure. Its hatch/guard/staff/handover remains incomplete; simpler one-piece and accessible-transfer alternatives are being compared.",
-      "Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health now checks the actual HAD/MAT producers; physical and architectural admission remain separate."
+      "Pending final joined architectural-source review and selection-link reconciliation. Actual preferred geometry is present; technical hydraulic/material/structural/site/physical admission stays downstream."
     ],
     "knownRejectedGeometry": {
       "intermediateDividerAt3300": {
@@ -15071,11 +15135,11 @@
         -850
       ]
     ],
-    "outerReceivingWaterMaximumTrial": -1500,
-    "maintenanceTrackReceivingWaterMaximumTrial": -1600,
+    "outerReceivingWaterMaximumTrial": -1000,
+    "maintenanceTrackReceivingWaterMaximumTrial": -1300,
     "maintenanceTrackDrainLipTrial": [
-      15900,
-      -1415
+      13500,
+      -1175
     ],
     "receivingStatus": "Pre-site admissibility condition only; full flow/head/independence and lawful actual outfall remain unproved."
   },
@@ -15188,9 +15252,9 @@
   "renewal": {
     "bodyX": [
       7550,
-      9850
+      10050.5
     ],
-    "length": 2300,
+    "length": 2500.5,
     "waterClearWidth": 600,
     "waterDepth": 100,
     "wetBodyGrossWidth": 663,
@@ -15199,25 +15263,25 @@
     "selectedWithdrawal": "EAST",
     "selectedParkX": [
       12250,
-      14550
+      14750.5
     ],
     "withdrawalTranslation": 4700,
     "servicePlatform": [
       9722.5,
       6000,
-      6277.5,
-      3500
+      6477.5,
+      4800
     ],
     "operatorDeckZ": 0,
     "withdrawalTrackClearY": [
       6450,
       7350
     ],
-    "fixedTrackBelowCarriageBudget": 50,
-    "withdrawalTrackEndX": 14550,
-    "withdrawalTrackEndLowestZ": -1080,
+    "fixedTrackBelowCarriageBudget": 100,
+    "withdrawalTrackEndX": 14750.5,
+    "withdrawalTrackEndLowestZ": -1132.358823529412,
     "operatorField": [
-      14900,
+      15000,
       6450,
       1100,
       900
@@ -15225,19 +15289,19 @@
     "northOperatorStrip": [
       12250,
       7450,
-      3750,
-      2050
+      3950,
+      3350
     ],
     "northStripMode": "Horizontal setup only; vacate and guard the hoist box during lifting. End operator field is independent of that box.",
     "hoistWorkingBox": [
       12250,
-      6300,
+      6400,
       0,
-      2475,
-      1500,
+      2700,
+      1000,
       3000
     ],
-    "hoistLiftTranslation": 1300,
+    "hoistLiftTranslation": 1700,
     "courtIntakeWell": [
       6125,
       6300,
@@ -15432,203 +15496,50 @@
     "rejectedOldEastReason": "Only 5 mm to original exterior face before operator/hoist. The NEW explicit 1500 mm outboard platform is a real architectural/site cost.",
     "rejectedWestReason": "Requires deep staging through permanent court pan, further travel to clear the actual beam, and restricts the normal north approach. Not selected.",
     "selectedSequence": [
-      "Retain N, isolate and drain E; install actual upper guards before opening covers.",
-      "Operate pins from fixed upper deck; upstream court end retains its separate open-air guarded well. No person walks through270 headroom.",
-      "Open outboard covers from empty upper workfield; capture/latch pins above moving rims.",
-      "Draw only the module being renewed east on its own fixed rail level; other module may remain installed.",
-      "When the whole module clears the outer support, vacate the swept hoist/storage field and lift/translate north onto independent sloping cradles.",
-      "Receive replacement through a still-unbound actual delivery/handover route; reinstate and test one module completely before renewing the other."
+      "Retain N intact and independently verified for assigned full duty; isolate/drain E. Install guards while joint and outboard covers closed.",
+      "Open both short joint-hatch leaves with captured hook through the guard guide. Outboard covers stay CLOSED/load-bearing during this operation.",
+      "From fixed upperdeck use removable manual right-angle socket driver. Four SIDE-ONLY bolts: unscrew35 to clear captive nuts, then pull140 to175total; collars retain every screw in outer guides. Retain/capture gasket during controlled initial OUTER separation; remove it only once the faces separate and the exposed inner face is accessible.",
+      "Open ALL outboard cover panels from empty upper workfield. Assemble empty temporary rack; upper bearers absent. No one stands below suspended modules.",
+      "Draw outer along captured samelevel rails, disconnect drawline only after park restraint; lift1700 and translateN1800. Lower/restrain on independent lower cradle, then remove rigging.",
+      "With no load suspended, two people insert unloaded upper bearers from fixed south/north working fields. Draw/lift/translate inner and land/restrain on independent550 uppertier; never load the outer wet pan.",
+      "Outgoing inner transfers to the empty2700×1200 handoverpad; required actual transport removes it BEFORE incoming replacement occupies that pad. Fit incoming INNER first; reverse drawing path to original position.",
+      "Remove unloaded upperbearers. Transfer outgoing outer to empty handoverpad, clear it, receive incoming outer. Fit/capture the replacement copper U gasket on the EXPOSED INNER face BEFORE OUTER approaches. Return outer with bolts captive/retracted, then advance bolts175 and qualified cross-tighten.",
+      "Verify local catch/drain and seal, then reinstate covers/guards; rack removed before cover-closing hook path. Reopen E only after tests. Actual site, kit, load and seal acceptance remain unearned."
     ],
     "courtCost": "One guarded intake/service well, not a court-length staging pocket; outdoor E track requires a depressed opening below the raised operator deck.",
-    "rejectedLowTrackDeck": {
-      "x": [
-        9850,
-        14550
-      ],
-      "clearY": [
-        6450,
-        7350
-      ],
-      "topZ": -900,
-      "thicknessBudget": 50,
-      "panelCount": 8,
-      "panelLength": 587.5,
-      "hingeY": 6450,
-      "openPanelY": [
-        6425,
-        6475
-      ],
-      "sequence": "After joint release, retreat EAST on retained closed panels. Open/latch each panel behind the worker from the next retained panel; the final panel is operated from the fixed end deck. All eight are vertically parked before drawing the carriage; no worker stands alongside the moving body in the narrow passage.",
-      "bodyCentreOffsetBeyondPanel": 325,
-      "bodyRadius": 300,
-      "installedQualification": "Reference first-motion geometry only. Actual hinge/lock/cover loads, capture/force and guard hardware require matched qualification."
-    },
-    "assemblySource": {
-      "path": "project/mat/studies/upper-access-renewal.json",
-      "blob": "558eb87111cd4ce4bd36a01ebbe9f638a56447ac",
-      "authority": "MAT assembly/control source imported exactly once; HAD owns the resulting world geometry. Results are not an input."
-    },
-    "assemblyContract": {
-      "identity": "MAT-UPPER-ACCESS-RENEWAL-2026-11-06",
-      "status": "Two-level comparison WITHDRAWN AS PREFERRED; accessible same-level two-piece joint is current project reference WIP",
-      "hadSource": "project/had/studies/water-replan.json",
-      "deck": {
-        "top": 0,
-        "structuralTerritory": 180,
-        "walkingGratingDepthBudget": 30,
-        "scope": "Outdoor bare metal/mineral deck territory, not occupied floor layers. Bearing/capacity and all constituents remain unqualified."
-      },
-      "upperDrawer": {
-        "waterClear": 600,
-        "wetDepth": 100,
-        "carriageWidth": 763,
-        "belowBed": 150,
-        "railY": [
-          6525,
-          7275
-        ],
-        "railDepth": 25,
-        "designChange": "Retain the existing150 below-bed territory; no new50-frame slimming. Actual member/rail capacity remains unqualified."
-      },
-      "lowerReceiver": {
-        "westBeyondSpineBeam": 25,
-        "east": 12250,
-        "waterClear": 800,
-        "wetDepth": 100,
-        "sheet": 1.5,
-        "flangeEach": 30,
-        "carriageExtraEach": 50,
-        "bedOffset": -300,
-        "belowBed": 150,
-        "railDepth": 50,
-        "scope": "Open-topped receiver with closed west dam; upper frame passes above its complete rim, no gasket or custom underlap seal. Full capture/splash/debris performance unearned."
-      },
-      "upperRailSupports": {
-        "stationX": [
-          10000,
-          10500,
-          11000,
-          11500,
-          12000,
-          12500,
-          13000,
-          13500,
-          14000,
+    "rejectedComparisons": {
+      "lowDeck": {
+        "x": [
+          9850,
           14550
         ],
-        "postY": [
-          6350,
-          7450
-        ],
-        "postHalfWidth": 20,
-        "bracketDepth": 25,
-        "scope": "Fixed outside posts and inward brackets above lower rim; no assumed support drilled through beams."
-      },
-      "workfield": {
-        "east": 16000,
-        "south": 6000,
-        "north": 9500,
-        "operator": [
-          14900,
-          6450,
-          1100,
-          900
-        ],
-        "storage": [
-          12250,
-          8400,
-          2475,
-          1100
-        ],
-        "hoistTop": 3000,
-        "northShift": 2050,
-        "upperLift": 1300,
-        "lowerLift": 1600,
-        "scope": "One module removed at a time; replace/reinstate before renewing the other. Raised approach, loading route/new-module handover and rated temporary handling still require HAD/site resolution."
-      },
-      "parkCovers": {
-        "count": 4,
         "clearY": [
-          6350,
-          7450
-        ],
-        "hingeY": 6350,
-        "thicknessBudget": 30,
-        "massBudgetEachKg": 30,
-        "handleInset": 50,
-        "openingToolLength": 1250,
-        "handHeight": 1100,
-        "bodyBehindHand": 350,
-        "bodyRadius": 300,
-        "bodyHeight": 1800,
-        "scope": "Hinges only wholly outboard of all support envelopes. Mass is a design maximum, not a known supplied cover or manual-force approval. Empty storage/workfield is used while opening; vacate before load transfer."
-      },
-      "firstRelease": {
-        "pinDiameter": 12,
-        "pinLength": 200,
-        "pinBottomRelativeBed": -175,
-        "pinHeadRelativeBed": 25,
-        "lift": 325,
-        "completeToolDiameter": 24,
-        "upperToolLength": 2050,
-        "lowerToolLength": 2400,
-        "upperPinX": 9825,
-        "upperPinY": [
-          6550,
-          7250
-        ],
-        "lowerWestPinX": 9800,
-        "lowerEastPinX": 12225,
-        "lowerPinY": [
           6450,
           7350
         ],
-        "upperBody": [
-          10800,
-          6900,
-          0
+        "topZ": -900,
+        "thicknessBudget": 50,
+        "panelCount": 8,
+        "panelLength": 587.5,
+        "hingeY": 6450,
+        "openPanelY": [
+          6425,
+          6475
         ],
-        "upperHandX": 10450,
-        "lowerWestBody": [
-          11000,
-          6900,
-          0
-        ],
-        "lowerWestHandX": 10650,
-        "lowerEastBody": [
-          12900,
-          6900,
-          0
-        ],
-        "lowerEastHandX": 12550,
-        "handY": [
-          6800,
-          7000
-        ],
-        "handZ": 1050,
-        "shoulderHeight": 1450,
-        "reachBudget": 600,
-        "scope": "Temporary capture staffs lift straight pins225 and latch above-floor; pin lower ends then clear their moving rim50. No rod remains through a beam and no person descends under it. Attachment/retention, force, guards and complete hatch motion are NOT YET proved."
+        "sequence": "After joint release, retreat EAST on retained closed panels. Open/latch each panel behind the worker from the next retained panel; the final panel is operated from the fixed end deck. All eight are vertically parked before drawing the carriage; no worker stands alongside the moving body in the narrow passage.",
+        "bodyCentreOffsetBeyondPanel": 325,
+        "bodyRadius": 300,
+        "installedQualification": "Reference first-motion geometry only. Actual hinge/lock/cover loads, capture/force and guard hardware require matched qualification."
       },
-      "ground": {
-        "Dtrial": 2000,
-        "scope": "New lower receiver/rail costs real depth; actual catch/drain/support can govern deeper. No actual exterior grade or plot is adopted."
-      },
-      "sequence": [
-        "Retain N, isolate and drain E; install actual upper guards before opening covers.",
-        "Operate pins from fixed upper deck; upstream court end retains its separate open-air guarded well. No person walks through270 headroom.",
-        "Open outboard covers from empty upper workfield; capture/latch pins above moving rims.",
-        "Draw only the module being renewed east on its own fixed rail level; other module may remain installed.",
-        "When the whole module clears the outer support, vacate the swept hoist/storage field and lift/translate north onto independent sloping cradles.",
-        "Receive replacement through a still-unbound actual delivery/handover route; reinstate and test one module completely before renewing the other."
-      ],
-      "activeHolds": [
-        "Actual hatch/guard and complete captive-staff attachment/first motion remain to be proved",
-        "Actual150-deep carriage and continuous rail member/retention/strength evidence remains unearned; no new slimming claim",
-        "Withdrawn300-drop comparison is not preferred; same-level flange sealing/capture must now be earned",
-        "Storage/hoist geometry is not a selected kit or load capacity; actual new-module delivery route remains open",
-        "All material chemistry, corrosion, bearing, air/thermal and site/drainage acceptance remain unearned"
-      ],
+      "twoLevel": "Withdrawn: not required by single-path maintenance policy; D2000/lower receiver evidence retained in MAT withdrawn comparison.",
+      "onePiece": "4700 body/~180kg handling and18.2m site field disproportionate to this house; not universally impossible."
+    },
+    "assemblySource": {
+      "path": "project/mat/studies/upper-access-renewal.json",
+      "blob": "213e122e6c9244d82178feee836cf04ed27fef0d",
+      "authority": "MAT preferredJoint assembly/control imported exactly once; HAD owns world geometry. Generated results are not an input."
+    },
+    "assemblyContract": {
       "preferredJoint": {
         "status": "PROJECT-AUTHORED WIP; no OEM rating or seal admission",
         "splitX": 10050,
@@ -15657,7 +15568,23 @@
           "wall": 5,
           "bottomSpan": 850,
           "sideHeight": 250,
-          "scope": "Project welded hollow box geometry; not a proprietary section/rating"
+          "scope": "Project welded hollow box geometry; not a proprietary section/rating",
+          "innerFrameX": [
+            9938,
+            10038
+          ],
+          "outerFrameX": [
+            10062.5,
+            10162.5
+          ],
+          "sideY": [
+            6450,
+            6500,
+            7300,
+            7350
+          ],
+          "crushSleeveOD": 20,
+          "crushSleeveID": 14
         },
         "completeCouplingY": [
           6440,
@@ -15673,27 +15600,36 @@
         ],
         "boltDiameter": 12,
         "boltHeadX": 10200,
-        "captiveRetreatEast": 75,
+        "captiveRetreatEast": 175,
         "tool": {
-          "type": "project reference long manual ratcheting ring/socket spanner, head axis EW; no powered gearbox",
-          "headRadius": 25,
+          "type": "Removable project reference MANUAL right-angle socket driver, not installed powered machinery or an assumed OEM kit",
+          "headCube": 60,
           "shaftRadius": 12,
-          "verticalLever": 2050,
-          "upperCrankEast": 250,
-          "inwardArcDegrees": [
-            0,
-            6
-          ]
+          "verticalShaft": 2100,
+          "topLeverRadius": 250,
+          "topLeverArcDegrees": [
+            -15,
+            15
+          ],
+          "operatorFollowsWithdraw": true,
+          "scope": "Complete head/shaft/lever bounds are required design envelopes. Actual torque/indexing/attachment/material kit must qualify before use.",
+          "indexingDegreesMaximum": 15,
+          "preloadTorqueAssumption": {
+            "frictionFactorAssumed": 0.2,
+            "perBoltPreloadN": 2000,
+            "torqueNm": 4.8,
+            "scope": "Assumed torque screen; actual qualified seal/preload/thread/tool setting may differ."
+          }
         },
         "operatorCentres": [
           [
-            10850,
-            6600,
+            11175,
+            6650,
             0
           ],
           [
-            10850,
-            7200,
+            11175,
+            7150,
             0
           ]
         ],
@@ -15702,32 +15638,44 @@
         "shoulderHeight": 1450,
         "handReach": 600,
         "hatchClear": [
-          9980,
+          10000,
           6400,
-          500,
+          700,
           1000
         ],
         "coverOuter": [
-          9955,
+          9975,
           6375,
-          550,
+          750,
           1050
         ],
         "coverMassBudgetKg": 30,
-        "guardEastX": 10550,
+        "guardEastX": 10800,
         "guardTop": 1100,
         "capture": {
           "trayX": [
             9950,
-            10200
+            10250
           ],
           "trayY": [
             6425,
             7375
           ],
           "rimRelativeBed": -175,
-          "floorRelativeBed": -250,
-          "scope": "Local external leak capture25 below150 carriage, not another full E receiver. Actual independent fall/receiver and first-harm path still to bind."
+          "floorRelativeBed": -275,
+          "scope": "Local joint leak catch and separate downhill pipe, NOT a second full E receiver. Capacity, outlet/site admissibility and actual first harm remain unearned.",
+          "pipeCentreY": 6900,
+          "pipeOD": 80,
+          "pipeWall": 3,
+          "pipeInvertStart": -1125,
+          "pipeEnd": [
+            13500,
+            -1175
+          ],
+          "receivingWaterMaximum": -1300,
+          "pipeStartX": 10250,
+          "pipeSupportBelow": 10,
+          "outletReference": "Tray floor follows bed-275 to terminal x10250; open end-drop into the integral80OD/3wall spigot at invert-1125. No intervening unsupported50mm gap; weld/transition/capacity qualification remains open."
         },
         "preliminaryFrameCase": {
           "EassumedMPa": 190000,
@@ -15736,78 +15684,687 @@
           "scope": "Screen component stiffness only; not uniform gasket compression, working bolt torque or certified capacity"
         },
         "sequence": [
-          "Retain verified full-duty N, isolate/drain E; install guards while covers closed. No concurrent N fault imposed.",
-          "Open the short above-floor joint hatch outside both supports.",
-          "From fixed upper deck operate FOUR SIDE-ONLY EW bolts with long manual ratchet arcs. No bottom-row bolt or shaft through wet pan/frame.",
-          "Withdraw each captive bolt75 east; retain nuts/washers/seal and separately capture local leakage.",
-          "Draw exterior2200 module first and park/replace/reinstate it, OR provide actual empty staging before inner2500 draw; complete sequencing/handling still to prove."
+          "Retain N intact and independently verified for assigned full duty; isolate/drain E. Install guards while joint and outboard covers closed.",
+          "Open both short joint-hatch leaves with captured hook through the guard guide. Outboard covers stay CLOSED/load-bearing during this operation.",
+          "From fixed upperdeck use removable manual right-angle socket driver. Four SIDE-ONLY bolts: unscrew35 to clear captive nuts, then pull140 to175total; collars retain every screw in outer guides. Retain/capture gasket during controlled initial OUTER separation; remove it only once the faces separate and the exposed inner face is accessible.",
+          "Open ALL outboard cover panels from empty upper workfield. Assemble empty temporary rack; upper bearers absent. No one stands below suspended modules.",
+          "Draw outer along captured samelevel rails, disconnect drawline only after park restraint; lift1700 and translateN1800. Lower/restrain on independent lower cradle, then remove rigging.",
+          "With no load suspended, two people insert unloaded upper bearers from fixed south/north working fields. Draw/lift/translate inner and land/restrain on independent550 uppertier; never load the outer wet pan.",
+          "Outgoing inner transfers to the empty2700×1200 handoverpad; required actual transport removes it BEFORE incoming replacement occupies that pad. Fit incoming INNER first; reverse drawing path to original position.",
+          "Remove unloaded upperbearers. Transfer outgoing outer to empty handoverpad, clear it, receive incoming outer. Fit/capture the replacement copper U gasket on the EXPOSED INNER face BEFORE OUTER approaches. Return outer with bolts captive/retracted, then advance bolts175 and qualified cross-tighten.",
+          "Verify local catch/drain and seal, then reinstate covers/guards; rack removed before cover-closing hook path. Reopen E only after tests. Actual site, kit, load and seal acceptance remain unearned."
         ],
-        "firstFalsifier": "Complete hatch cover/guard, ratchet swept capsule and captivity/release sequence still unproved; no overall method pass"
+        "firstFalsifier": "Actual incoming/outgoing module handover route and qualified seal/preload/rigging are still unearned; no whole-house or construction acceptance.",
+        "boltLength": 275,
+        "nutIntervalX": [
+          9938,
+          9954
+        ],
+        "innerFaceEastX": 10050,
+        "threadPitch": 1.75,
+        "threadedRelease": 35,
+        "toolHeadX": 10450,
+        "toolSocketExtension": 250,
+        "captiveGuideX": [
+          10162,
+          10400
+        ],
+        "captiveGuideOuterDiameter": 38,
+        "captiveGuideInnerDiameter": 32,
+        "captiveStopBore": 26,
+        "captiveCollarDiameter": 30,
+        "coverLeaves": 2,
+        "coverMassBudgetEachKg": 20,
+        "guardThickness": 20,
+        "hook": {
+          "length": 1500,
+          "handHeight": 1200,
+          "bodyBehindHand": 350,
+          "headRadius": 12,
+          "guideY": [
+            6875,
+            6925
+          ],
+          "guideZ": [
+            300,
+            1050
+          ],
+          "leafHandleRadius": 350
+        },
+        "handling": {
+          "innerGrossX": [
+            7550,
+            10050.5
+          ],
+          "outerGrossX": [
+            10050.5,
+            12250
+          ],
+          "parkStart": 12250,
+          "apertureY": [
+            6400,
+            7400
+          ],
+          "platform": [
+            9722.5,
+            6000,
+            6477.5,
+            4800
+          ],
+          "endOperator": [
+            15000,
+            6450,
+            1100,
+            900
+          ],
+          "stage": [
+            12250,
+            8100,
+            2700,
+            1200
+          ],
+          "rackPostX": [
+            12600,
+            14100
+          ],
+          "rackPostY": [
+            8150,
+            9250
+          ],
+          "postSection": [
+            50,
+            50,
+            3
+          ],
+          "postTop": 600,
+          "upperBearerSection": [
+            100,
+            50,
+            5
+          ],
+          "upperBearerY": [
+            8100,
+            9300
+          ],
+          "upperBearerTop": 550,
+          "lift": 1700,
+          "northTranslation": 1800,
+          "referenceVerticalLoadN": 5000,
+          "scope": "Outer goes to lower cradle first. Upper bearers ABSENT during first placement; insert unloaded bearers only after outer is landed/restraint applied. Inner then lands on independent upper tier. No load on wet pan; no operator below suspended module.",
+          "temporaryDrawConnectorEW": 30,
+          "handover": [
+            12250,
+            9600,
+            2700,
+            1200
+          ],
+          "rackBasePlate": [
+            200,
+            200,
+            10
+          ],
+          "rackSideBraces": [
+            25,
+            5
+          ],
+          "bodyRestraint": "After landing, chocks and captive outer-post operated caps restrain150RHS atX12600/14100, not wet pan. No restraint installed below suspended load; actual strength/force/kit and basefixity qualify before use.",
+          "rackInstallState": "Temporary rack assembled AFTER all outboard covers open; dismantled before covers close. Cover-hook workspace is empty in those states.",
+          "incomingState": "Outgoing inner goes to empty handoverpad, is removed by the required actual site transport; only then incoming inner occupies samepad and enters park. Repeat outer after inner reinstated and unloaded upperbearers removed. No incoming/outgoing double occupancy.",
+          "lowerBearerTop": 100,
+          "forkSeatZ": 450,
+          "forkTopZ": 600,
+          "bearerInstallOperators": {
+            "xOffset": 300,
+            "y": [
+              7750,
+              9650
+            ],
+            "crouchedShoulder": 800,
+            "handZ": [
+              700,
+              600
+            ]
+          },
+          "rackFork": "Post tube ends450, fork cheeks outside50-wide bearer rise600; beam100deep seats450..550, captive pin575. No solid post through bearing slot."
+        },
+        "jointCoverOpeningState": "Outboard bay covers remain CLOSED/load-bearing while joint hatch is operated; nobody stands on open bay. Only then open outboard covers from fixed working fields.",
+        "pieceMembership": {
+          "inner": "pan7550..10050,inner box9938..10038,face10038..10050,captured0.5gasket on exposed face",
+          "outer": "face10050.5..10062.5,outer box10062.5..10162.5,pan to12250; captive guides/screws remain within this gross interval once released",
+          "correction": "Opposite box frames were mistakenly included in prior2612/2312 estimates. Each reinforcingbox lies inside its OWN wet-body length. Captive bolts retract clear before outer moves. Include additional30temporary drawconnector during translation."
+        },
+        "horizontalDraw": {
+          "lineDiameter": 6,
+          "fixedFairleadX": 15000,
+          "fairleadHeightRelativeBed": -75,
+          "scope": "Temporary retained braked pulling line follows the bed fall to fixed outboard fairlead; removable abovefloor drive, no person underbeam. Recessed endeye/retention/capture forces and actual kit qualify before use."
+        },
+        "preferredLocalDtrial": 1800,
+        "railReference": {
+          "sectionVertical": 100,
+          "sectionNS": 50,
+          "wall": 5,
+          "axesY": [
+            6525,
+            7275
+          ],
+          "topRelativeBed": -150,
+          "supportX": [
+            7950,
+            9300,
+            11667.5,
+            12250,
+            13500,
+            14950
+          ],
+          "sidePostY": [
+            6350,
+            7450
+          ],
+          "postSection": [
+            50,
+            50,
+            5
+          ],
+          "loadpath": "Side posts/drop brackets OUTSIDE complete920movingprofile; cantilevers remain at/below railtop. No hanging part through movingframe. Primary supports/platform reaction/capacity require STR admission."
+        },
+        "toolInstall": {
+          "headInitialZ": 80,
+          "guideX": [
+            10450,
+            10625
+          ],
+          "guideY": [
+            6475,
+            7325
+          ],
+          "guideOuterDiameter": 60,
+          "guideTopZ": 1150,
+          "guideSlotEW": 225,
+          "movingCollarHandleXOffset": 325,
+          "setupBodyXOffset": 675,
+          "collarZStates": [
+            [
+              1700,
+              1150
+            ],
+            [
+              1550,
+              1150
+            ]
+          ],
+          "initialDescentMax": 550,
+          "secondDescentMax": 400,
+          "finalHandOffToTopLeverMax": 20,
+          "toolMassBudgetKg": 20,
+          "scope": "Temporary guard-mounted positive guide/catch and splitcollar carry tool between hand-over-hand strokes; removable manual tool, not installed motor. Positive retention/collar/guard reaction and actual kit qualification before use."
+        }
       }
     },
+    "method": "SAME-LEVEL TWO-PIECE ACCESSIBLE SIDE-BOLTED FLANGE",
+    "pieces": [
+      {
+        "id": "inner",
+        "bodyX": [
+          7550,
+          10050.5
+        ],
+        "length": 2500.5,
+        "bedEnds": [
+          [
+            7550,
+            -797.6470588235294
+          ],
+          [
+            10050.5,
+            -827.064705882353
+          ]
+        ],
+        "parkX": [
+          12250,
+          14750.5
+        ],
+        "translation": 4700
+      },
+      {
+        "id": "outer",
+        "bodyX": [
+          10050.5,
+          12250
+        ],
+        "length": 2199.5,
+        "bedEnds": [
+          [
+            10050.5,
+            -827.064705882353
+          ],
+          [
+            12250,
+            -852.9411764705883
+          ]
+        ],
+        "parkX": [
+          12250,
+          14449.5
+        ],
+        "translation": 2199.5
+      }
+    ],
+    "outboardTrackClearY": [
+      6400,
+      7400
+    ],
     "upperDeck": {
       "topZ": 0,
       "bottomZ": -180,
-      "walkingGratingDepthBudget": 30,
       "fixedThroughOuterSupport": true,
-      "personBelowDeck": false
+      "personBelowDeck": false,
+      "scope": "Permanent deck/member reference. Moving body stays below it; accessible joint hatch and outboard openings have explicitly guarded states."
     },
+    "servicePlatformRole": "BOUNDING ENVELOPE ONLY; actual built/clear service platform is the following L-shaped union, excluding retained northeast house.",
+    "servicePlatformRegions": [
+      [
+        9722.5,
+        6000,
+        2277.5,
+        2019.5
+      ],
+      [
+        12000,
+        6000,
+        4200,
+        4800
+      ]
+    ],
     "storagePad": [
       12250,
-      8400,
-      2475,
-      1100
+      8100,
+      2700,
+      1200
     ],
-    "lowerReceiver": {
-      "bodyX": [
-        9775,
-        12250
-      ],
-      "length": 2475,
-      "bedOffset": -300,
-      "bedEnds": [
+    "handoverPad": [
+      12250,
+      9600,
+      2700,
+      1200
+    ],
+    "joint": {
+      "status": "PROJECT-AUTHORED WIP; no OEM rating or seal admission",
+      "splitX": 10050,
+      "pieces": [
         [
-          9775,
-          -1123.8235294117649
+          7550,
+          10050
         ],
         [
-          12250,
-          -1152.9411764705883
+          10050,
+          12250
         ]
       ],
-      "waterClear": 800,
-      "wetBodyGrossWidth": 863,
-      "carriageWidth": 963,
-      "belowBed": 150,
-      "railDepth": 50,
-      "parkX": [
-        12250,
-        14725
+      "frameBelowBed": 150,
+      "deckTop": 0,
+      "facePlate": 12,
+      "gasket": {
+        "materialHypothesis": "0.5 annealed copper U gasket, no synthetic substitution inferred",
+        "thickness": 0.5,
+        "sealLand": 20,
+        "acceptance": "Compression/contact/corrosion/retightening and complete material evidence remain unearned"
+      },
+      "reinforcingUFrame": {
+        "sectionEW": 100,
+        "sectionTransverse": 50,
+        "wall": 5,
+        "bottomSpan": 850,
+        "sideHeight": 250,
+        "scope": "Project welded hollow box geometry; not a proprietary section/rating",
+        "innerFrameX": [
+          9938,
+          10038
+        ],
+        "outerFrameX": [
+          10062.5,
+          10162.5
+        ],
+        "sideY": [
+          6450,
+          6500,
+          7300,
+          7350
+        ],
+        "crushSleeveOD": 20,
+        "crushSleeveID": 14
+      },
+      "completeCouplingY": [
+        6440,
+        7360
       ],
-      "translation": 2475,
-      "lift": 1600,
-      "outboardTrackClearY": [
-        6350,
-        7450
+      "sideBoltsY": [
+        6475,
+        7325
       ],
-      "fixedTrackLowest": -1382.0588235294117
+      "boltZRelativeBed": [
+        -50,
+        50
+      ],
+      "boltDiameter": 12,
+      "boltHeadX": 10200,
+      "captiveRetreatEast": 175,
+      "tool": {
+        "type": "Removable project reference MANUAL right-angle socket driver, not installed powered machinery or an assumed OEM kit",
+        "headCube": 60,
+        "shaftRadius": 12,
+        "verticalShaft": 2100,
+        "topLeverRadius": 250,
+        "topLeverArcDegrees": [
+          -15,
+          15
+        ],
+        "operatorFollowsWithdraw": true,
+        "scope": "Complete head/shaft/lever bounds are required design envelopes. Actual torque/indexing/attachment/material kit must qualify before use.",
+        "indexingDegreesMaximum": 15,
+        "preloadTorqueAssumption": {
+          "frictionFactorAssumed": 0.2,
+          "perBoltPreloadN": 2000,
+          "torqueNm": 4.8,
+          "scope": "Assumed torque screen; actual qualified seal/preload/thread/tool setting may differ."
+        }
+      },
+      "operatorCentres": [
+        [
+          11175,
+          6650,
+          0
+        ],
+        [
+          11175,
+          7150,
+          0
+        ]
+      ],
+      "bodyRadius": 300,
+      "bodyHeight": 1800,
+      "shoulderHeight": 1450,
+      "handReach": 600,
+      "hatchClear": [
+        10000,
+        6400,
+        700,
+        1000
+      ],
+      "coverOuter": [
+        9975,
+        6375,
+        750,
+        1050
+      ],
+      "coverMassBudgetKg": 30,
+      "guardEastX": 10800,
+      "guardTop": 1100,
+      "capture": {
+        "trayX": [
+          9950,
+          10250
+        ],
+        "trayY": [
+          6425,
+          7375
+        ],
+        "rimRelativeBed": -175,
+        "floorRelativeBed": -275,
+        "scope": "Local joint leak catch and separate downhill pipe, NOT a second full E receiver. Capacity, outlet/site admissibility and actual first harm remain unearned.",
+        "pipeCentreY": 6900,
+        "pipeOD": 80,
+        "pipeWall": 3,
+        "pipeInvertStart": -1125,
+        "pipeEnd": [
+          13500,
+          -1175
+        ],
+        "receivingWaterMaximum": -1300,
+        "pipeStartX": 10250,
+        "pipeSupportBelow": 10,
+        "outletReference": "Tray floor follows bed-275 to terminal x10250; open end-drop into the integral80OD/3wall spigot at invert-1125. No intervening unsupported50mm gap; weld/transition/capacity qualification remains open."
+      },
+      "preliminaryFrameCase": {
+        "EassumedMPa": 190000,
+        "totalBoltPreloadAssumedN": 8000,
+        "bottomDistributedReactionAssumedN": 4000,
+        "scope": "Screen component stiffness only; not uniform gasket compression, working bolt torque or certified capacity"
+      },
+      "sequence": [
+        "Retain N intact and independently verified for assigned full duty; isolate/drain E. Install guards while joint and outboard covers closed.",
+        "Open both short joint-hatch leaves with captured hook through the guard guide. Outboard covers stay CLOSED/load-bearing during this operation.",
+        "From fixed upperdeck use removable manual right-angle socket driver. Four SIDE-ONLY bolts: unscrew35 to clear captive nuts, then pull140 to175total; collars retain every screw in outer guides. Retain/capture gasket during controlled initial OUTER separation; remove it only once the faces separate and the exposed inner face is accessible.",
+        "Open ALL outboard cover panels from empty upper workfield. Assemble empty temporary rack; upper bearers absent. No one stands below suspended modules.",
+        "Draw outer along captured samelevel rails, disconnect drawline only after park restraint; lift1700 and translateN1800. Lower/restrain on independent lower cradle, then remove rigging.",
+        "With no load suspended, two people insert unloaded upper bearers from fixed south/north working fields. Draw/lift/translate inner and land/restrain on independent550 uppertier; never load the outer wet pan.",
+        "Outgoing inner transfers to the empty2700×1200 handoverpad; required actual transport removes it BEFORE incoming replacement occupies that pad. Fit incoming INNER first; reverse drawing path to original position.",
+        "Remove unloaded upperbearers. Transfer outgoing outer to empty handoverpad, clear it, receive incoming outer. Fit/capture the replacement copper U gasket on the EXPOSED INNER face BEFORE OUTER approaches. Return outer with bolts captive/retracted, then advance bolts175 and qualified cross-tighten.",
+        "Verify local catch/drain and seal, then reinstate covers/guards; rack removed before cover-closing hook path. Reopen E only after tests. Actual site, kit, load and seal acceptance remain unearned."
+      ],
+      "firstFalsifier": "Actual incoming/outgoing module handover route and qualified seal/preload/rigging are still unearned; no whole-house or construction acceptance.",
+      "boltLength": 275,
+      "nutIntervalX": [
+        9938,
+        9954
+      ],
+      "innerFaceEastX": 10050,
+      "threadPitch": 1.75,
+      "threadedRelease": 35,
+      "toolHeadX": 10450,
+      "toolSocketExtension": 250,
+      "captiveGuideX": [
+        10162,
+        10400
+      ],
+      "captiveGuideOuterDiameter": 38,
+      "captiveGuideInnerDiameter": 32,
+      "captiveStopBore": 26,
+      "captiveCollarDiameter": 30,
+      "coverLeaves": 2,
+      "coverMassBudgetEachKg": 20,
+      "guardThickness": 20,
+      "hook": {
+        "length": 1500,
+        "handHeight": 1200,
+        "bodyBehindHand": 350,
+        "headRadius": 12,
+        "guideY": [
+          6875,
+          6925
+        ],
+        "guideZ": [
+          300,
+          1050
+        ],
+        "leafHandleRadius": 350
+      },
+      "handling": {
+        "innerGrossX": [
+          7550,
+          10050.5
+        ],
+        "outerGrossX": [
+          10050.5,
+          12250
+        ],
+        "parkStart": 12250,
+        "apertureY": [
+          6400,
+          7400
+        ],
+        "platform": [
+          9722.5,
+          6000,
+          6477.5,
+          4800
+        ],
+        "endOperator": [
+          15000,
+          6450,
+          1100,
+          900
+        ],
+        "stage": [
+          12250,
+          8100,
+          2700,
+          1200
+        ],
+        "rackPostX": [
+          12600,
+          14100
+        ],
+        "rackPostY": [
+          8150,
+          9250
+        ],
+        "postSection": [
+          50,
+          50,
+          3
+        ],
+        "postTop": 600,
+        "upperBearerSection": [
+          100,
+          50,
+          5
+        ],
+        "upperBearerY": [
+          8100,
+          9300
+        ],
+        "upperBearerTop": 550,
+        "lift": 1700,
+        "northTranslation": 1800,
+        "referenceVerticalLoadN": 5000,
+        "scope": "Outer goes to lower cradle first. Upper bearers ABSENT during first placement; insert unloaded bearers only after outer is landed/restraint applied. Inner then lands on independent upper tier. No load on wet pan; no operator below suspended module.",
+        "temporaryDrawConnectorEW": 30,
+        "handover": [
+          12250,
+          9600,
+          2700,
+          1200
+        ],
+        "rackBasePlate": [
+          200,
+          200,
+          10
+        ],
+        "rackSideBraces": [
+          25,
+          5
+        ],
+        "bodyRestraint": "After landing, chocks and captive outer-post operated caps restrain150RHS atX12600/14100, not wet pan. No restraint installed below suspended load; actual strength/force/kit and basefixity qualify before use.",
+        "rackInstallState": "Temporary rack assembled AFTER all outboard covers open; dismantled before covers close. Cover-hook workspace is empty in those states.",
+        "incomingState": "Outgoing inner goes to empty handoverpad, is removed by the required actual site transport; only then incoming inner occupies samepad and enters park. Repeat outer after inner reinstated and unloaded upperbearers removed. No incoming/outgoing double occupancy.",
+        "lowerBearerTop": 100,
+        "forkSeatZ": 450,
+        "forkTopZ": 600,
+        "bearerInstallOperators": {
+          "xOffset": 300,
+          "y": [
+            7750,
+            9650
+          ],
+          "crouchedShoulder": 800,
+          "handZ": [
+            700,
+            600
+          ]
+        },
+        "rackFork": "Post tube ends450, fork cheeks outside50-wide bearer rise600; beam100deep seats450..550, captive pin575. No solid post through bearing slot."
+      },
+      "jointCoverOpeningState": "Outboard bay covers remain CLOSED/load-bearing while joint hatch is operated; nobody stands on open bay. Only then open outboard covers from fixed working fields.",
+      "pieceMembership": {
+        "inner": "pan7550..10050,inner box9938..10038,face10038..10050,captured0.5gasket on exposed face",
+        "outer": "face10050.5..10062.5,outer box10062.5..10162.5,pan to12250; captive guides/screws remain within this gross interval once released",
+        "correction": "Opposite box frames were mistakenly included in prior2612/2312 estimates. Each reinforcingbox lies inside its OWN wet-body length. Captive bolts retract clear before outer moves. Include additional30temporary drawconnector during translation."
+      },
+      "horizontalDraw": {
+        "lineDiameter": 6,
+        "fixedFairleadX": 15000,
+        "fairleadHeightRelativeBed": -75,
+        "scope": "Temporary retained braked pulling line follows the bed fall to fixed outboard fairlead; removable abovefloor drive, no person underbeam. Recessed endeye/retention/capture forces and actual kit qualify before use."
+      },
+      "preferredLocalDtrial": 1800,
+      "railReference": {
+        "sectionVertical": 100,
+        "sectionNS": 50,
+        "wall": 5,
+        "axesY": [
+          6525,
+          7275
+        ],
+        "topRelativeBed": -150,
+        "supportX": [
+          7950,
+          9300,
+          11667.5,
+          12250,
+          13500,
+          14950
+        ],
+        "sidePostY": [
+          6350,
+          7450
+        ],
+        "postSection": [
+          50,
+          50,
+          5
+        ],
+        "loadpath": "Side posts/drop brackets OUTSIDE complete920movingprofile; cantilevers remain at/below railtop. No hanging part through movingframe. Primary supports/platform reaction/capacity require STR admission."
+      },
+      "toolInstall": {
+        "headInitialZ": 80,
+        "guideX": [
+          10450,
+          10625
+        ],
+        "guideY": [
+          6475,
+          7325
+        ],
+        "guideOuterDiameter": 60,
+        "guideTopZ": 1150,
+        "guideSlotEW": 225,
+        "movingCollarHandleXOffset": 325,
+        "setupBodyXOffset": 675,
+        "collarZStates": [
+          [
+            1700,
+            1150
+          ],
+          [
+            1550,
+            1150
+          ]
+        ],
+        "initialDescentMax": 550,
+        "secondDescentMax": 400,
+        "finalHandOffToTopLeverMax": 20,
+        "toolMassBudgetKg": 20,
+        "scope": "Temporary guard-mounted positive guide/catch and splitcollar carry tool between hand-over-hand strokes; removable manual tool, not installed motor. Positive retention/collar/guard reaction and actual kit qualification before use."
+      }
     },
-    "methodStatus": "TWO-LEVEL COMPARISON ONLY; NOT PREFERRED OR ADOPTED. UPPER ACCESS REFERENCE COMPOSED; complete hatch/guard/captive-staff and delivery/handover first motion still INCOMPLETE. No physical or water acceptance.",
+    "methodStatus": "PROJECT-DESIGNED SPATIAL REFERENCE: preferred two-piece flange, captured upper tools, staged independent rack and reverse incoming order. Physical seal, torque, rigging and site acceptance remain downstream.",
     "maintenanceCatchDrain": {
       "inlet": [
-        14725,
+        10250,
         6900,
-        -1385.0588235294117
+        -1125
       ],
       "outlet": [
-        15900,
+        13500,
         6900,
-        -1415
+        -1175
       ],
-      "clearWidth": 150,
-      "belowWetFloorBudget": 35,
-      "lowestReservedSurface": -1450,
-      "scope": "Project-designed descending exterior catch/drain territory below the rails, never a pump or an essential below-water room. Actual construction, cleanout, head, splash and groundwater remain unqualified; a deeper body reopens D2000."
+      "pipeOD": 80,
+      "pipeWall": 3,
+      "supportBelow": 10,
+      "lowestReservedSurface": -1188,
+      "scope": "Local flange leak capture, separate falling80OD pipe BETWEEN actual rails, to distinct declared receiver. No full-flow backup route or foul connection; actual losses, drainage, groundwater, materials and site acceptance remain RWT/MAT/DPL."
     }
   },
   "hydraulicProbe": {
@@ -15910,9 +16467,9 @@
     "constructionLoss": 50,
     "ventilationReserve": 150,
     "routeLocalDMinimum": 1500,
-    "routeLocalDTrial": 2000,
-    "fullSelectedTrackLowest": -1450,
-    "fullSelectedTrackMinimumD": 1950,
+    "routeLocalDTrial": 1800,
+    "fullSelectedTrackLowest": -1188,
+    "fullSelectedTrackMinimumD": 1688,
     "uniformSolumOrRealExteriorGradeAdopted": false,
     "note": "D1300 was not spare depth. Every actual support/liner low point needs its own ground relation; deeper STR alternatives and real groundwater/terrain remain explicit."
   },
@@ -15924,9 +16481,7 @@
   },
   "retainedProofBoundary": "Only exact untouched fields may retain historical fit evidence. Plant, new wall/portal, support, deep pocket and first-wetting joins require actual new checks; no blanket wholeHouseFit pass is inherited.",
   "unclosed": [
-    "The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.",
-    "Two-level/D2000 is a COMPARISON ONLY, withdrawn as preferred: the maintenance policy does not require E removed plus concurrent N failure. Its hatch/guard/staff/handover remains incomplete; simpler one-piece and accessible-transfer alternatives are being compared.",
-    "Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health now checks the actual HAD/MAT producers; physical and architectural admission remain separate.",
+    "Pending final joined architectural-source review and selection-link reconciliation. Actual preferred geometry is present; technical hydraulic/material/structural/site/physical admission stays downstream.",
     "Actual support continuity, groundwater/receiving head and public approach remain unearned. Retained3700 door/arch and low-larder component checks do not establish whole-house or hydraulic acceptance."
   ]
 }
