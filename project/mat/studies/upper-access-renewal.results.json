@@ -1,0 +1,60 @@
+{
+  "identity": "MAT-UPPER-ACCESS-RENEWAL-2026-11-06",
+  "status": "PROPOSED mechanism WIP; no HAD adoption, product rating or physical/water acceptance",
+  "hadBlob": "9790362e9d0b8f69af6a386c68598a0fa0fa5fba",
+  "modules": [
+    {
+      "module": "upper",
+      "installedX": [
+        7550,
+        9850
+      ],
+      "parkX": [
+        12250,
+        14550
+      ],
+      "translation": 4700,
+      "bedOffset": 0,
+      "width": 763,
+      "lift": 1200,
+      "lowestAfterLift": 270.0
+    },
+    {
+      "module": "lower",
+      "installedX": [
+        9775.0,
+        12250
+      ],
+      "parkX": [
+        12250,
+        14725.0
+      ],
+      "translation": 2475.0,
+      "bedOffset": -200,
+      "width": 963.0,
+      "lift": 1500,
+      "lowestAfterLift": 267.9411764705883
+    }
+  ],
+  "innerFrameToReceiverRim": 50,
+  "fixedUpperBracketToReceiverRim": 25,
+  "lowerCarriageToStaticPosts": 48.5,
+  "parkToOuterSupport": 132.5,
+  "nodeCollisions": [],
+  "coverOperatorCentreY": [
+    7948.99959967968,
+    8719.900722749131
+  ],
+  "lowestKnownRail": -1282.0588235294117,
+  "DminimumBeforeUnboundCatchDrain": 1782.0588235294117,
+  "Dtrial": 1900,
+  "qualifiedFirstHarmMargin": null,
+  "methodAcceptance": "INCOMPLETE: hatch/guard/captive staff and handover not yet proven; no capacity, material or water pass",
+  "activeHolds": [
+    "Actual hatch/guard and complete captive-staff attachment/first motion remain to be proved",
+    "50-deep upper frame/rails need a real constructive member and strength/deflection/retention evidence",
+    "200 drop and800 receiver require actual splash, capture, blocked/full-flow/first-harm testing",
+    "Storage/hoist geometry is not a selected kit or load capacity; actual new-module delivery route remains open",
+    "All material chemistry, corrosion, bearing, air/thermal and site/drainage acceptance remain unearned"
+  ]
+}

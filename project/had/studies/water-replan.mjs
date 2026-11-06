@@ -153,10 +153,18 @@ export function deriveWaterReplan({servicesText} = {}) {
       'Only after body west end reaches x12250, wholly beyond the reserved outer support ending12117.5, hoist1200 vertically in the open E work box.',
       'Reverse with captured body, reinstate both joints/shield/receivers and covers, inspect/test then reopen E. N never dismantled by this sequence.'],
     courtCost: 'One guarded intake/service well, not a court-length staging pocket; outdoor E track requires a depressed opening below the raised operator deck.' };
-  const hydraulicProbe = { assignedFullRoofCourtLps: 3.60375,
+  const eventPath='project/rwt/studies/open-loggia-event.json',event=load(eventPath);
+  assert.equal(event.inputs.house.blob,blob(hadPath));
+  const inwardArea=event.catchment.combinedM2,probeRainfall=216;
+  const inwardDuty=inwardArea*probeRainfall/3600;
+  const hydraulicProbe = { assignedInwardRoofAndCourtLps: inwardDuty,
+    catchment:{source:{path:eventPath,blob:blob(eventPath)},...event.catchment},
+    rainfallMmPerHour:probeRainfall,
+    rainfallAuthority:'Existing216mm/h synthetic adverse sensitivity, not a site design rainfall or adopted standard.',
+    outerRoofFailure:'Outward roof fields continue shedding outward; their collection failure is not silently assigned to the inner court or claimed safe at actual exterior receivers.',
     independentCourtCrestTrialZ: -110,
     effectiveWidthM: .6, coefficientTrial: 1.7,
-    idealBroadCrestHeadMm: 1000 * (3.60375 / 1000 / (1.7 * .6)) ** (2 / 3),
+    idealBroadCrestHeadMm: 1000 * (inwardDuty / 1000 / (1.7 * .6)) ** (2 / 3),
     status: 'Preliminary ideal sizing sensitivity only. Actual inlet, stage, debris, splash, first harm, pressure and downstream receiving state remain RWT-06 proof.' };
   const model = structuredClone(h);
   const wall = id => model.groundWalls.find(w => w.id === id);
@@ -183,8 +191,20 @@ export function deriveWaterReplan({servicesText} = {}) {
   assert(model.openings.GROUND.some(o => o.id === 'east-window-2'));
   model.openings.GROUND = model.openings.GROUND.filter(o => o.id !== 'east-window-2');
   model.openings.GROUND.push({ id: 'east-outdoor-water-portal', wall: 'outer-east', centre: 6900,
-    width: 1760, finishedWidth: 1200, kind: 'open-service-portal',
-    scope: 'Replaces ground east window; no occupied garden access or physical arch capacity acceptance.' });
+    width: 1254, finishedWidth: 1200, jambFinishEach:27, kind: 'open-service-portal',
+    head:2850, spring:2550, radialRingTrial:215, leaves:0,
+    rejectedPriorRawWidth:1760,
+    scope: 'Project-designed open service arch: raw6273..7527, finished6300..7500, 27 jamb returns; ringtop3065 leaves105 to RC3170. Replaces unallocated1760 raw width. Outer support/node reservations remain; no qualified thrust/capacity or ordinary accessible route acceptance.' });
+  const portal = model.openings.GROUND.find(o=>o.id==='east-outdoor-water-portal');
+  model.archOpeningRegister.GROUND = model.archOpeningRegister.GROUND.filter(o=>o.id!=='east-window-2');
+  model.archOpeningRegister.GROUND.push(structuredClone(portal));
+  model.outerServiceArch = { sourceOpening:portal.id, rawY:[portal.centre-portal.width/2,portal.centre+portal.width/2],
+    finishedY:[6300,7500], spring:portal.spring, crown:portal.head, ring:portal.radialRingTrial,
+    ringTop:portal.head+portal.radialRingTrial, overheadRCUnderside:model.sections.firstFloorRC.bottom,
+    fullDepth:429.5, supports:bridge.outerSupportReservation,
+    scope:'Full exterior-wall and upper-wall support is reserved through this genuine arch and aligned side piers/nodes; no lintel hidden inside a decorative arch, no structural capacity acceptance.' };
+  assert.equal(portal.width-2*portal.jambFinishEach,portal.finishedWidth);
+  assert.equal(model.outerServiceArch.overheadRCUnderside-model.outerServiceArch.ringTop,105);
   model.architecturalServices = services;
   model.servicesProjection = { source: { path: canonicalServicesPath, blob: blob(canonicalServicesPath), projectionSha256: servicesProjection },
     keyedFieldsEqual: true, method: 'Exact full canonical object import, no numeric whitelist or local copied service inventory.' };
@@ -207,6 +227,29 @@ export function deriveWaterReplan({servicesText} = {}) {
     sourceBlob:blob(canonicalServicesPath), fields:['interfaces.architecturalServices.plant.cylinder','interfaces.architecturalServices.emitters','interfaces.architecturalServices.fanAccess','extract[].maintenanceFurniture/doorMode'],
     method:'Derived from exact current object; the historical MAT9476 auxiliary stamp is not reused.' };
   model.servicesOccurrenceProof = verifyServicesOccurrences(model, currentServices);
+  // One explicit trial ground basis, with its complete approach/height price.
+  const oldApproaches=structuredClone(model.approaches),grade=-1700;
+  const approach=(rise,maximumFlight)=>{
+    const slopingRun=rise*20,flights=[];let remaining=slopingRun;
+    while(remaining>0){const length=Math.min(maximumFlight,remaining);flights.push(length);remaining-=length;}
+    const landings=flights.length+1;
+    return {rise,slope:20,slopingRun,flights,landingLength:1200,landings,totalStraightReservation:slopingRun+landings*1200};
+  };
+  model.approaches={authoredExteriorGrade:grade,front:approach(-grade,9000),
+    garden:{terrace:model.sections.waterLevels.loggiaNorth,...approach(model.sections.waterLevels.loggiaNorth-grade,8000)},
+    clearWidthReservation:1200,
+    supersededD1300Comparison:oldApproaches,
+    scope:'D1700 is ONE pre-site comparator exterior/solum basis, not a surveyed plot or adopted foundation. Four flights/five landings preserve prior flight-length controls; no access-category, turning/guard/door or compliance acceptance.'};
+  model.exterior.eavesAboveAuthoredGrade=model.exterior.eaves-grade;
+  model.exterior.ridgeAboveAuthoredGrade=model.exterior.ridge-grade;
+  model.sections.fireHeight.firstAboveAuthoredExterior=model.sections.firstFFL-grade;
+  model.sections.fireHeight.scope='D1700 comparator gives5150 above authored lowest exterior; actual adjacent-ground interpretation and strategy remain required.';
+  model.sections.groundSupport.Drequired=Math.max(1250,-renewal.withdrawalTrackEndLowestZ+500);
+  model.sections.groundSupport.Dtrial=1700;
+  model.sections.groundSupport.Dsurplus=1700-model.sections.groundSupport.Drequired;
+  model.sections.groundSupport.scope='D1700 is the joined pre-site comparator. Retained grid/member capacities and actual ground/heave/ventilation remain unqualified; actual site and any deeper structural member reopen this reference.';
+  model.protectedRoute.measurement='D6 lowest SIDE outsideground, not merely solum; comparator5150onlyif actual exterior−1700. No automatic fire-strategy acceptance.';
+  model.qualityCosts.height='One D1700 comparator: eaves/ridge400higher above grade; front40m/garden36.95m straight approach reservations, each9.2m longer than D1300 after the added flight/landing. No actual plot fit claimed.';
   model.status = 'UNADOPTED JOINED WATER REPLAN; historical selected geometry is its input, not its current pass.';
   model.internalArchControls = services.eastWaterJoin.archControls;
   model.plantReferenceDoor={...services.eastWaterJoin.operatorEntry,
@@ -268,6 +311,18 @@ export function deriveWaterReplan({servicesText} = {}) {
   model.actions.witnesses.push({id:'low-larder-and-revised-kitchen-window',level:'GROUND',bodyRadius:300,
     points:[...larder.approach,larder.windowBody],state:'All table/chairs retained; low-larder drawers CLOSED during window task.',
     pass:larderProof.pass,scope:'Affected body/reach reference only; no historical whole-house or actual-hardware pass transferred.'});
+  const roof=model.roofDevelopment,rad=roof.pitch*Math.PI/180;
+  const fullRadialRun=2*roof.ridgeInset,outwardRise=fullRadialRun*Math.tan(rad);
+  model.roofSelectionComparison={
+    decision:'Retain the inherited25degree ring as this joined architectural candidate; outward roof remains a genuine alternative, not universally falsified.',
+    retained:{outerEave:roof.eavesDatum,courtEave:roof.eavesDatum,ridge:model.exterior.ridge,pitch:roof.pitch,stackNormal:roof.totalNormal},
+    outwardAtSameOuterEave:{pitch:roof.pitch,radialRun:fullRadialRun,outerEave:roof.eavesDatum,
+      courtHighEdge:roof.eavesDatum+outwardRise,peakIncrease:roof.eavesDatum+outwardRise-model.exterior.ridge,
+      courtRimIncrease:outwardRise},
+    architecturalTrade:'The conventional25degree outward family reduces ordinary court roof runoff, but at the retained outer eave raises the court rim about1.982m and maximum roof about0.991m in a3.5m court. Lowering the outer eave instead changes upper-room/ceiling/support sections and is not an already-proved equivalent. A larger or recomposed house remains possible; no low-pitch slate compromise is silently selected.',
+    retainedDuty:hydraulicProbe.catchment,
+    failureAndMaintenance:'The entire inward roof plus direct court rain is assigned to E when N is disabled. Outer collection failure still sheds to designed external receivers and requires ROF/RWT proof. High-level access, mineral/metal roof/ceiling assembly, ordinary edge supports and gutter renewal remain their source-bound obligations; low gutters are not inaccessible permanent joints.',
+    materialAndPerformance:'The inherited full500.7normal roof stack is retained as a geometric candidate, not admitted constituent, fire, thermal, support or hydraulic performance.'};
   model.wholeHouseFit = { pass: false, scope: 'New joined affected geometry still being challenged; historical whole-house pass does not apply automatically.' };
   model.currentAdoptionBlockers=[
     'The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.',

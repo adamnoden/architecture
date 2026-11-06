@@ -64,3 +64,37 @@ test('current source authentication does not conceal stale actual scene occurren
     assert.throws(()=>verifyServicesOccurrences(model,current),expected);
   }
 });
+
+test('joined ground comparator pays actual approach costs and replaces the retired outer opening profile', () => {
+  const {model:m,bridge:b}=deriveWaterReplan();
+  assert.equal(m.approaches.authoredExteriorGrade,-1700);
+  for(const [key,max]of [['front',9000],['garden',8000]]){
+    const a=m.approaches[key],old=m.approaches.supersededD1300Comparison[key];
+    assert(a.flights.every(x=>x<=max));
+    assert.equal(a.landings,a.flights.length+1);
+    assert.equal(a.totalStraightReservation-old.totalStraightReservation,9200);
+  }
+  assert.equal(m.approaches.front.totalStraightReservation,40000);
+  assert.equal(m.approaches.garden.totalStraightReservation,36950);
+  assert.equal(m.exterior.eavesAboveAuthoredGrade,m.exterior.eaves+1700);
+  assert.equal(m.sections.fireHeight.firstAboveAuthoredExterior,5150);
+  assert(!m.archOpeningRegister.GROUND.some(o=>o.id==='east-window-2'));
+  const arch=m.archOpeningRegister.GROUND.find(o=>o.id==='east-outdoor-water-portal');
+  assert.deepEqual([arch.centre-arch.width/2,arch.centre+arch.width/2],[6273,7527]);
+  assert.equal(arch.width-2*arch.jambFinishEach,1200);
+  assert.equal(arch.head+arch.radialRingTrial,3065);
+  assert.equal(m.outerServiceArch.overheadRCUnderside-3065,105);
+  assert(b.outerSupportReservation.nodeAxesY[0]+b.outerSupportReservation.nodePlan[1]/2<=6300);
+  assert(b.outerSupportReservation.nodeAxesY[1]-b.outerSupportReservation.nodePlan[1]/2>=7500);
+});
+
+test('the roof comparison assigns actual inward catchment and prices a full-pitch outward challenger',()=>{
+  const {model:m,hydraulicProbe:p}=deriveWaterReplan(),r=m.roofSelectionComparison;
+  assert.equal(p.catchment.combinedM2,60.0625);
+  assert.equal(p.assignedInwardRoofAndCourtLps,3.60375);
+  assert.equal(p.rainfallMmPerHour,216);
+  assert(!('assignedFullRoofCourtLps' in p));
+  assert(r.outwardAtSameOuterEave.courtRimIncrease>1980);
+  assert(r.outwardAtSameOuterEave.peakIncrease>990);
+  assert.equal(r.retained.stackNormal,500.7);
+});

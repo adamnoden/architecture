@@ -1619,10 +1619,16 @@
           "id": "east-outdoor-water-portal",
           "wall": "outer-east",
           "centre": 6900,
-          "width": 1760,
+          "width": 1254,
           "finishedWidth": 1200,
+          "jambFinishEach": 27,
           "kind": "open-service-portal",
-          "scope": "Replaces ground east window; no occupied garden access or physical arch capacity acceptance."
+          "head": 2850,
+          "spring": 2550,
+          "radialRingTrial": 215,
+          "leaves": 0,
+          "rejectedPriorRawWidth": 1760,
+          "scope": "Project-designed open service arch: raw6273..7527, finished6300..7500, 27 jamb returns; ringtop3065 leaves105 to RC3170. Replaces unallocated1760 raw width. Outer support/node reservations remain; no qualified thrust/capacity or ordinary accessible route acceptance."
         }
       ],
       "FIRST": [
@@ -2684,10 +2690,10 @@
         "heaveStress": 300,
         "constructionLoss": 50,
         "ventilationReserve": 150,
-        "Drequired": 1250,
-        "Dtrial": 1300,
-        "Dsurplus": 50,
-        "scope": "STR reference capacity/actualventilation/site condition unqualified. D1300 is solum/grade trial, not sitefact."
+        "Drequired": 1580,
+        "Dtrial": 1700,
+        "Dsurplus": 120,
+        "scope": "D1700 is the joined pre-site comparator. Retained grid/member capacities and actual ground/heave/ventilation remain unqualified; actual site and any deeper structural member reopen this reference."
       },
       "waterLevels": {
         "southLandingStart": 0,
@@ -2700,9 +2706,9 @@
         "scope": "MAT constructiveONEproposal; structure/slopes/receivers/firstharm need joined check."
       },
       "fireHeight": {
-        "firstAboveAuthoredExterior": 4750,
+        "firstAboveAuthoredExterior": 5150,
         "lowRiseComparison": 4500,
-        "scope": "D1300 crossesADBupperfloor4.5m groundheight boundary; actualadjacentground/storey interpretation/strategy required. Solum andexternalground notinterchangeable."
+        "scope": "D1700 comparator gives5150 above authored lowest exterior; actual adjacent-ground interpretation and strategy remain required."
       }
     },
     "knownInterfaces": [
@@ -2765,7 +2771,7 @@
       "basis": "One conventional reference topology under currentADB2.5a; no regulatory approval or classified assembly claimed.",
       "official": "https://assets.publishing.service.gov.uk/media/6aa3bb335f6e942efe37f150/AD_B1_2026.pdf",
       "edition": "2019+2020/2022/2025/2026;2029futureprovisionsnotclaimedcurrent",
-      "measurement": "D6 lowest SIDE outsideground, notsolum;4750onlyifactualoutside−1300.",
+      "measurement": "D6 lowest SIDE outsideground, not merely solum; comparator5150onlyif actual exterior−1700. No automatic fire-strategy acceptance.",
       "geometry": {
         "groundStairEastWall": {
           "finished": [
@@ -3402,21 +3408,6 @@
           "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
         },
         {
-          "id": "east-window-2",
-          "wall": "outer-east",
-          "centre": 7400,
-          "width": 1000,
-          "kind": "window",
-          "swing": "left",
-          "hinge": "low",
-          "leaves": 1,
-          "sill": 750,
-          "head": 2850,
-          "spring": 2550,
-          "radialRingTrial": 215,
-          "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
-        },
-        {
           "id": "east-window-3",
           "wall": "outer-east",
           "centre": 10200,
@@ -3610,6 +3601,21 @@
           "spring": 2550,
           "radialRingTrial": 215,
           "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+        },
+        {
+          "id": "east-outdoor-water-portal",
+          "wall": "outer-east",
+          "centre": 6900,
+          "width": 1254,
+          "finishedWidth": 1200,
+          "jambFinishEach": 27,
+          "kind": "open-service-portal",
+          "head": 2850,
+          "spring": 2550,
+          "radialRingTrial": 215,
+          "leaves": 0,
+          "rejectedPriorRawWidth": 1760,
+          "scope": "Project-designed open service arch: raw6273..7527, finished6300..7500, 27 jamb returns; ringtop3065 leaves105 to RC3170. Replaces unallocated1760 raw width. Outer support/node reservations remain; no qualified thrust/capacity or ordinary accessible route acceptance."
         }
       ],
       "FIRST": [
@@ -9630,42 +9636,76 @@
       }
     ],
     "approaches": {
-      "authoredExteriorGrade": -1300,
+      "authoredExteriorGrade": -1700,
       "front": {
-        "rise": 1300,
+        "rise": 1700,
         "slope": 20,
-        "slopingRun": 26000,
+        "slopingRun": 34000,
         "flights": [
           9000,
           9000,
-          8000
+          9000,
+          7000
         ],
         "landingLength": 1200,
-        "landings": 4,
-        "totalStraightReservation": 30800
+        "landings": 5,
+        "totalStraightReservation": 40000
       },
       "garden": {
         "terrace": -152.5,
-        "rise": 1147.5,
+        "rise": 1547.5,
         "slope": 20,
-        "slopingRun": 22950,
+        "slopingRun": 30950,
         "flights": [
+          8000,
           8000,
           8000,
           6950
         ],
         "landingLength": 1200,
-        "landings": 4,
-        "totalStraightReservation": 27750
+        "landings": 5,
+        "totalStraightReservation": 36950
       },
       "clearWidthReservation": 1200,
-      "scope": "Finite authored plot reservation, not a compliant access design or available site. Guards, edge protection, turning/door/approach geometry and actual access category remain to qualify. Court/loggia not credited as protected final exit."
+      "supersededD1300Comparison": {
+        "authoredExteriorGrade": -1300,
+        "front": {
+          "rise": 1300,
+          "slope": 20,
+          "slopingRun": 26000,
+          "flights": [
+            9000,
+            9000,
+            8000
+          ],
+          "landingLength": 1200,
+          "landings": 4,
+          "totalStraightReservation": 30800
+        },
+        "garden": {
+          "terrace": -152.5,
+          "rise": 1147.5,
+          "slope": 20,
+          "slopingRun": 22950,
+          "flights": [
+            8000,
+            8000,
+            6950
+          ],
+          "landingLength": 1200,
+          "landings": 4,
+          "totalStraightReservation": 27750
+        },
+        "clearWidthReservation": 1200,
+        "scope": "Finite authored plot reservation, not a compliant access design or available site. Guards, edge protection, turning/door/approach geometry and actual access category remain to qualify. Court/loggia not credited as protected final exit."
+      },
+      "scope": "D1700 is ONE pre-site comparator exterior/solum basis, not a surveyed plot or adopted foundation. Four flights/five landings preserve prior flight-length controls; no access-category, turning/guard/door or compliance acceptance."
     },
     "exterior": {
       "eaves": 7100,
       "ridge": 8090.903773579372,
-      "eavesAboveAuthoredGrade": 8400,
-      "ridgeAboveAuthoredGrade": 9390.903773579372,
+      "eavesAboveAuthoredGrade": 8800,
+      "ridgeAboveAuthoredGrade": 9790.903773579372,
       "overhang": 200,
       "physicalOuterEdge": 7006.738468369001,
       "source": "Explicit+300eavesdatum rewind from6800;25degree/2125inset/200overhang retained. Material/support/ROFRWTadoption not claimed.",
@@ -9677,7 +9717,7 @@
       "dining": "Four places, no end seats; separate prep table removed. Actual chair/support/table leg fit is not earned from500plan boxes.",
       "private": "Four bedrooms retained, two compact singles, two rear doubles rotatedEW; principal lowbed/window compatibility and660wardrobe are explicit choices.",
       "loggia": "Deletes occupied-floor renewable watercaps/gas lids. Costs new weatherwalls, displaced room territory, long daily indoor connection and exposed floor/arch insulation.",
-      "height": "Current support trial stillD1300: no approach/eaves reduction credited against prior buried-box comparator.",
+      "height": "One D1700 comparator: eaves/ridge400higher above grade; front40m/garden36.95m straight approach reservations, each9.2m longer than D1300 after the added flight/landing. No actual plot fit claimed.",
       "groundClearFloor": {
         "baseB": 89.7864,
         "loggia": 76.7663815,
@@ -10364,6 +10404,65 @@
     "selection": {
       "decision": "UNADOPTED JOINED WATER REPLAN",
       "source": "project/had/water-replan-result.md"
+    },
+    "outerServiceArch": {
+      "sourceOpening": "east-outdoor-water-portal",
+      "rawY": [
+        6273,
+        7527
+      ],
+      "finishedY": [
+        6300,
+        7500
+      ],
+      "spring": 2550,
+      "crown": 2850,
+      "ring": 215,
+      "ringTop": 3065,
+      "overheadRCUnderside": 3170,
+      "fullDepth": 429.5,
+      "supports": {
+        "source": {
+          "path": "project/str/studies/ground-interfaces.json",
+          "blob": "4110aab34d263fbc9f8ae44f8006aed85b797406",
+          "route": {
+            "id": "outer-east",
+            "a": [
+              11667.5,
+              332.5
+            ],
+            "b": [
+              11667.5,
+              11667.5
+            ],
+            "role": "both leaves require continuous common support; line is inner-leaf axis"
+          }
+        },
+        "axisX": 11667.5,
+        "fullX": [
+          11217.5,
+          12117.5
+        ],
+        "beamZ": [
+          -630,
+          -180
+        ],
+        "nodeAxesY": [
+          6000,
+          7800
+        ],
+        "nodePlan": [
+          900,
+          600
+        ],
+        "nodeZ": [
+          -750,
+          -180
+        ],
+        "authority": "NEW bounded feasibility envelope around the actual STR common-support line, not an adopted footing size or qualified capacity. It preserves support rather than deleting it.",
+        "reentry": "If actual common support needs a wider/deeper body or nodes in the water opening, STR must reopen this source before admission."
+      },
+      "scope": "Full exterior-wall and upper-wall support is reserved through this genuine arch and aligned side piers/nodes; no lintel hidden inside a decorative arch, no structural capacity acceptance."
     },
     "architecturalServices": {
       "schemaVersion": 1,
@@ -13208,6 +13307,38 @@
         "pass": true
       }
     },
+    "roofSelectionComparison": {
+      "decision": "Retain the inherited25degree ring as this joined architectural candidate; outward roof remains a genuine alternative, not universally falsified.",
+      "retained": {
+        "outerEave": 7100,
+        "courtEave": 7100,
+        "ridge": 8090.903773579372,
+        "pitch": 25,
+        "stackNormal": 500.7
+      },
+      "outwardAtSameOuterEave": {
+        "pitch": 25,
+        "radialRun": 4250,
+        "outerEave": 7100,
+        "courtHighEdge": 9081.807547158744,
+        "peakIncrease": 990.9037735793718,
+        "courtRimIncrease": 1981.807547158744
+      },
+      "architecturalTrade": "The conventional25degree outward family reduces ordinary court roof runoff, but at the retained outer eave raises the court rim about1.982m and maximum roof about0.991m in a3.5m court. Lowering the outer eave instead changes upper-room/ceiling/support sections and is not an already-proved equivalent. A larger or recomposed house remains possible; no low-pitch slate compromise is silently selected.",
+      "retainedDuty": {
+        "source": {
+          "path": "project/rwt/studies/open-loggia-event.json",
+          "blob": "f096160f98e175c7d5f3ec117a9ae41da2162b30"
+        },
+        "wallLineInnerRoofM2": 47.8125,
+        "wallLineCourtM2": 12.25,
+        "offsetInnerRoofM2": 50.4525,
+        "offsetExposedCourtM2": 9.61,
+        "combinedM2": 60.0625
+      },
+      "failureAndMaintenance": "The entire inward roof plus direct court rain is assigned to E when N is disabled. Outer collection failure still sheds to designed external receivers and requires ROF/RWT proof. High-level access, mineral/metal roof/ceiling assembly, ordinary edge supports and gutter renewal remain their source-bound obligations; low gutters are not inaccessible permanent joints.",
+      "materialAndPerformance": "The inherited full500.7normal roof stack is retained as a geometric candidate, not admitted constituent, fire, thermal, support or hydraulic performance."
+    },
     "currentAdoptionBlockers": [
       "The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.",
       "Temporary walking deck at-900 has only270 headroom below the retained outer support at-630. Walking retreat through that support and900-high hinged cover opening are NOT feasible as currently described. No maintenance first-motion pass.",
@@ -13602,7 +13733,21 @@
     "courtCost": "One guarded intake/service well, not a court-length staging pocket; outdoor E track requires a depressed opening below the raised operator deck."
   },
   "hydraulicProbe": {
-    "assignedFullRoofCourtLps": 3.60375,
+    "assignedInwardRoofAndCourtLps": 3.60375,
+    "catchment": {
+      "source": {
+        "path": "project/rwt/studies/open-loggia-event.json",
+        "blob": "f096160f98e175c7d5f3ec117a9ae41da2162b30"
+      },
+      "wallLineInnerRoofM2": 47.8125,
+      "wallLineCourtM2": 12.25,
+      "offsetInnerRoofM2": 50.4525,
+      "offsetExposedCourtM2": 9.61,
+      "combinedM2": 60.0625
+    },
+    "rainfallMmPerHour": 216,
+    "rainfallAuthority": "Existing216mm/h synthetic adverse sensitivity, not a site design rainfall or adopted standard.",
+    "outerRoofFailure": "Outward roof fields continue shedding outward; their collection failure is not silently assigned to the inner court or claimed safe at actual exterior receivers.",
     "independentCourtCrestTrialZ": -110,
     "effectiveWidthM": 0.6,
     "coefficientTrial": 1.7,
