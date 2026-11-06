@@ -1,7 +1,7 @@
 {
   "adoptionConditions": [
     "Actualcollector/pierloadallocation andcontinuousuplift/lateralrestraint, glass/cavity/metal/fireclosure and \u00b110mm infillmovement transition mustbejoined.",
-    "RWTroofarea andplan remain144.15m2; actualgutter/downstackverticallevels requireupdatedhead/renewalreference afterheightadoption. Noheightchangeisfree.Georgianeave/ridgeproportion needsrenderedreview."
+    "Structuralroofloadarea144.15m2 is NOT theRWTcourtcatchment. Currentassignedinwardroof47.8125+court12.25=60.0625m2 remains unchanged inplan; outwardfieldsretainseparatehandoffs. Actualgutter/downstackverticallevels requireupdatedhead/renewalreference afterheightadoption; noheightchangeisfree."
   ],
   "collector": {
     "A": 7584,
@@ -110,16 +110,103 @@
     "heightSavedAgainstStacked": 317.0,
     "historicalEave": 7100,
     "historicalRidge": 8090.903773579372,
-    "recommendation": "Prefercoplanarsteel200collector/250primary: realendbearing/clevisforcepath eliminatesstackedheight, retainingfinitehip/secondaryroute. RejectstackedRC400onwhole-designheight/mass merit, not an oldheightinvariant. This is a proposedsource rewind, not an alreadychangedHADselection.",
+    "recommendation": "PrefercoplanarmassingoverstackedRC400; original8M24forcewitnessisREJECTED. Actualconservedframeactions andweldedcommonnode mustreplaceit beforestructuralselection. Oldheightisnotanownerinvariant.",
     "selectedCandidateEave": 7229.9882739116065,
     "selectedCandidateRidge": 8220.892047490977,
     "stackedRC400Rise": 446.98827391160614
   },
+  "jointPass": false,
+  "parentRoofSource": {
+    "path": "project/str/studies/current-house-roof.json",
+    "sha256": "38b1f48ad6577cc0f3d9c42344902f449a9b9a746073cda07cc513362b4023e1"
+  },
   "physicalAdmission": false,
+  "rainCatchment": {
+    "combinedM2": 60.0625,
+    "offsetExposedCourtM2": 9.61,
+    "offsetInnerRoofM2": 50.4525,
+    "source": {
+      "blob": "f096160f98e175c7d5f3ec117a9ae41da2162b30",
+      "path": "project/rwt/studies/open-loggia-event.json"
+    },
+    "wallLineCourtM2": 12.25,
+    "wallLineInnerRoofM2": 47.8125
+  },
+  "rejectedBoltGroup": {
+    "cases": [
+      {
+        "horizontal": -138.76625133372355,
+        "maxBoltShear": 72.41788641705253,
+        "moment": -21.101300106697884,
+        "oldPerBoltCapacity": 35.300000000000004,
+        "passesOldBudget": false,
+        "vertical": 200
+      },
+      {
+        "horizontal": -138.76625133372355,
+        "maxBoltShear": 72.41788641705283,
+        "moment": 21.101300106697884,
+        "oldPerBoltCapacity": 35.300000000000004,
+        "passesOldBudget": false,
+        "vertical": 200
+      },
+      {
+        "horizontal": 138.76625133372355,
+        "maxBoltShear": 60.30962142843397,
+        "moment": -21.101300106697884,
+        "oldPerBoltCapacity": 35.300000000000004,
+        "passesOldBudget": false,
+        "vertical": 200
+      },
+      {
+        "horizontal": 138.76625133372355,
+        "maxBoltShear": 60.30962142843373,
+        "moment": 21.101300106697884,
+        "oldPerBoltCapacity": 35.300000000000004,
+        "passesOldBudget": false,
+        "vertical": 200
+      },
+      {
+        "horizontal": -138.76625133372355,
+        "maxBoltShear": 45.89074186871421,
+        "moment": -14.351300106697883,
+        "oldPerBoltCapacity": 35.300000000000004,
+        "passesOldBudget": false,
+        "vertical": -65
+      },
+      {
+        "horizontal": -138.76625133372355,
+        "maxBoltShear": 45.89074186871444,
+        "moment": 14.351300106697883,
+        "oldPerBoltCapacity": 35.300000000000004,
+        "passesOldBudget": false,
+        "vertical": -65
+      },
+      {
+        "horizontal": 138.76625133372355,
+        "maxBoltShear": 49.770604390610465,
+        "moment": -14.351300106697883,
+        "oldPerBoltCapacity": 35.300000000000004,
+        "passesOldBudget": false,
+        "vertical": -65
+      },
+      {
+        "horizontal": 138.76625133372355,
+        "maxBoltShear": 49.770604390610245,
+        "moment": 14.351300106697883,
+        "oldPerBoltCapacity": 35.300000000000004,
+        "passesOldBudget": false,
+        "vertical": -65
+      }
+    ],
+    "polarGroup": 56550.219548908215,
+    "reason": "Directresultantcapacityaloneomittedactualmoment; hollowboxalso needspositiveclosedloadintroduction. No8M24jointadoption."
+  },
   "source": {
     "path": "project/had/studies/water-replan.json",
     "sha256": "dbfff5eb4fa36dbdf6635702e853792e6412d73df1c58f9e1c1ede1bcff205b8"
   },
-  "status": "Preferred coplanar roof connection candidate; whole-house/architectural source adoption remains pending",
+  "status": "Coplanar height proposal; original8M24 joint REJECTED by actualgroupmoment, conventional weldedcommon-node replacement in progress",
+  "structuralRoofLoadDomainM2": 144.15,
   "units": "mm, kN, kNm, MPa unless stated"
 }
