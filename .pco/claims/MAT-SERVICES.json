@@ -9,13 +9,13 @@
     "label": "zerg-20261106-w3"
   },
   "claimedAt": "2026-11-06T07:38:05.136Z",
-  "heartbeatAt": "2026-11-06T07:38:05.136Z",
-  "expiresAt": "2026-11-06T08:23:05.136Z",
+  "heartbeatAt": "2026-11-06T07:43:55.285Z",
+  "expiresAt": "2026-11-06T08:28:55.285Z",
   "checkpoint": {
-    "evidence": "Resuming preserved Services source7197e64d and draft PR1329 under explicit coordinator assignment; no new achievement yet",
-    "next": "Verify exact draft Services bytes and resolve coupled heat or ventilation decision"
+    "evidence": "Fresh verified draft1332 head4ab18b32aa109dad877de1dc415baf785cc8263d preserves bc1329 and Services7197 source; canonical Services3e934b29/a2bf80bf unchanged. No new source edits yet; reviewing full west-kitchen emitter and retained furniture renewal states.",
+    "next": "Resolve full kitchen emitter placement, actual chair parking and rigid body removal before source selection; coordinate HAD and MAT owners"
   },
-  "branch": "work/zerg-20261106-w3",
+  "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "6ca4e7fa-dc1b-46db-8e76-7570a4e6fb54",
     "generation": 19,
@@ -37,5 +37,6 @@
       "next": "Resume through fresh canonical acquisition. Inspect current shared draft1329 and latest HAD/MAT revisions, resolve actual hoist/guard/water and source report holds, validate exact final head with full CI and fresh per-node publication preflights before any merge. Preserve all three source histories.",
       "blocker": "Actual root turn budget reached. PR1329 remains draft/unmerged and is not a selected house or completed packet. Known cooker/heat/control/material/kit limits remain. No hidden local source changes or unattended heartbeat."
     }
-  }
+  },
+  "pr": 1332
 }
