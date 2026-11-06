@@ -1,0 +1,180 @@
+{
+  "admitted": false,
+  "axialRanges": {
+    "leg": [
+      -12.993957413673948,
+      13.582204590046201
+    ],
+    "radial": [
+      -39.73072156215067,
+      44.858245780056684
+    ],
+    "ridge": [
+      -12.689697028321094,
+      5.983672463815131
+    ],
+    "ring": [
+      -43.62276572914917,
+      31.818706116368386
+    ]
+  },
+  "coherentWindStates": 96,
+  "comparison": {
+    "bracedTubeLengthM": 57.91814132401421,
+    "bracedTubeMassKg": 568.4273256663828,
+    "comparisonRoles": [
+      "12 horizontal CHS and flat elevated couple",
+      "existing lower rings and ties, flat elevated couple",
+      "actual pitched legs/ridge row plus finite vertical rings on 22 springs40kN/mm"
+    ],
+    "roofDeflections": [
+      24.08555669036165,
+      24.26677935724286,
+      24.319784453650563
+    ]
+  },
+  "crown": {
+    "40pinCombined": 199.01689709927004,
+    "45pinCombined": 142.24481983156377,
+    "maximumResultant": 105.77764916297508,
+    "nominalSaddleGrossKgEach": 13.71552,
+    "nominalWeldStress": 27.33316725585834,
+    "outerHalfRidgeSaddleForce": 25.382099379269793,
+    "remaining": "The purlin underside clears the existing clevis only after actual 3D end plate/diaphragm and roof-layer placement. Verify one-sided saddle, restraints and deflection of the 200 mm eccentric connection in both directions. A rigid weld through both opposing rafter halves would defeat the assumed crown hinge.",
+    "remaining8point5kNAllowanceKgAfter12Saddles": 701.8765530682978,
+    "ridgeCornerFlangeForce": 10.135619194452762,
+    "saddleMomentAt200Ecc": 5.076419875853959,
+    "singleHalfPositive240Couple": 21.151749482724828,
+    "twoDeveloped100x7WeldResistance": 140.0
+  },
+  "exactSpaceModel": "At ridge the continuous horizontal purlin carries axial force and finite weak-axis bending, with an unrestrained pin between the two pitched primary rafters. Existing radial twin rails at 6770, pitched legs at 6860, vertical/moment/roll flexibility of both real collector rings at6600. The roof pressure band above the ring is split between the ring and the actual 12 ridge-purlin stations 200 mm above the rafter pins. The single outer rafter uses 3D bending in both axes and closed-box torsion to return the eccentric saddle couple to its own heel. The inner half is pinned. These two force levels preserve its signed force, location and first moment. Each leg returns a vertical and a horizontal component to its own heel. Both N and N*x/y are conserved; independently re-solved 2D ring spring forces must match all 22 reactions to 0.001 kN in every wind programme. Actual cladding/purlin pressure transfer, upper-station stiffness, first-floor membrane and soil flexibility remain qualifications.",
+  "outerRafterExistingPlusWindUpperBound": 0.7799463448685454,
+  "outerRafterWindMoments": {
+    "strong": 5.155593213951647,
+    "torsion": 0.5669319432644087,
+    "weak": 6.450347010956895
+  },
+  "physicalSaddleForceKN": 16.1729328774539,
+  "purlinCentreAbovePin": 200.0,
+  "referenceElevations": {
+    "eave": 7297.520687,
+    "rafterCrownCentre": 7695.856477242835,
+    "rafterHeelCentre": 6860,
+    "ridgeCover": 8288.42446,
+    "ridgePurlinCentre": 7895.856477242835,
+    "ringCentre": 6600.0
+  },
+  "ridge": {
+    "displacement": [
+      24.24052558790204,
+      [
+        28,
+        [
+          9875.0,
+          7300
+        ]
+      ]
+    ],
+    "legBaseVertical": [
+      4.253207782445543,
+      [
+        7,
+        [
+          11667.5,
+          11667.5
+        ]
+      ]
+    ],
+    "moment": [
+      0.2729354889810395,
+      [
+        25,
+        [
+          2125.0,
+          4700
+        ],
+        [
+          2125.0,
+          2125.0
+        ]
+      ]
+    ],
+    "normal": [
+      29.629159629462308,
+      [
+        9,
+        [
+          9875.0,
+          4700
+        ],
+        [
+          9875.0,
+          7300
+        ]
+      ]
+    ],
+    "shear": [
+      0.18528776052614154,
+      [
+        16,
+        [
+          2125.0,
+          7300
+        ],
+        [
+          2125.0,
+          4700
+        ]
+      ]
+    ]
+  },
+  "ridgeJointMaterialComplianceMMPerN": 1.1736201298701298e-06,
+  "ridgeJointRotationalSpringNmmPerRad": 1435558199.0455773,
+  "role": "Existing purlin/primary/tie space frame instead of twelve additional plan CHS. Perforated finite first-floor membrane, fixed L bases and project wind hypotheses; no construction or site adoption.",
+  "sources": {
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/str/studies/current-house-roof-bracing.py": "721728758c48c2843b5074802c21942c80047db619e7cac8f3a2b78c5d0ebd70",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b"
+  },
+  "tieRailChecks": [
+    {
+      "frame": "ordinary",
+      "individualCompressionVM": 17.104804761888783,
+      "individualEuler": 218.35904991909572,
+      "initialBowL350": 10.242857142857142,
+      "wholeCompressionTension": [
+        54.47121521465184,
+        83.62238568595052
+      ]
+    },
+    {
+      "frame": "hip",
+      "individualCompressionVM": 24.275851856925698,
+      "individualEuler": 109.17952495954785,
+      "initialBowL350": 14.485587488878704,
+      "wholeCompressionTension": [
+        60.41264309847256,
+        100.12845853280315
+      ]
+    }
+  ],
+  "weldedHeel": {
+    "additionalLeverMoment": 17.950847953815476,
+    "componentN_V_T": [
+      118.44045037010288,
+      74.25320778244554,
+      10.0
+    ],
+    "maximumShoeToThroughWebOffset": 6,
+    "remaining": "Actual weld preparation, distortion/tolerance with 6 mm alignment budget, off-plane roof loads, section/fire/corrosion protection. The fitted webs must line up under both normal and 45 degree heels.",
+    "skinStressAt6": 124.17073595501678,
+    "sole160x180Throat10Stress": 87.93870429008847,
+    "two80mmAt7Previous": 112,
+    "two80mmAt9Resistance": 144.0,
+    "two80mmStationSegmentsRequiredAt9": 128.2563609893648,
+    "windAndBaselineExactMaxStationDemand": 124.07747818543511,
+    "windAndBaselineMaxSkinStress": 112.81672098965204,
+    "windAndBaselineMaxSoleWeldStress": 79.08469766073209
+  }
+}
