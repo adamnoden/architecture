@@ -3,7 +3,7 @@
 from pathlib import Path
 import hashlib,json,math,sys
 R=Path(__file__).resolve().parents[3];P=R/'project/had/studies/water-replan.json';raw=P.read_bytes()
-assert hashlib.sha256(raw).hexdigest()=='1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb'
+assert hashlib.sha256(raw).hexdigest()=='735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc'
 v=json.loads(raw);h=v['model'];old=json.loads((R/'project/had/studies/open-north-loggia.json').read_text());legacy=json.loads((R/'project/str/studies/open-loggia-support.json').read_text())
 for key in ['upperWalls','roofDevelopment','stair']:assert h[key]==old[key],key
 assert h['openings']['FIRST']==old['openings']['FIRST']

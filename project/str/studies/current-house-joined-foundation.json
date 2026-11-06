@@ -16,8 +16,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -209.943,
-            445.3806
+            -209.9101,
+            445.3617
           ],
           "releasedLowerPadCount": 0
         },
@@ -28,8 +28,8 @@
             1506.7909
           ],
           "minMaxN": [
-            -315.6366,
-            329.3529
+            -315.3479,
+            329.334
           ],
           "releasedLowerPadCount": 8
         },
@@ -40,8 +40,8 @@
             -806.406
           ],
           "minMaxN": [
-            -317.1773,
-            327.3281
+            -317.177,
+            327.3693
           ],
           "releasedLowerPadCount": 18
         }
@@ -67,8 +67,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -95.6529,
-            444.3906
+            -95.8174,
+            444.0213
           ],
           "releasedLowerPadCount": 0
         },
@@ -79,10 +79,10 @@
             936.9815
           ],
           "minMaxN": [
-            -194.3449,
-            208.4792
+            -194.5095,
+            208.7052
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -91,8 +91,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -194.3449,
-            208.3958
+            -194.5095,
+            208.6501
           ],
           "releasedLowerPadCount": 18
         }
@@ -118,8 +118,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -43.1602,
-            443.2042
+            -42.963,
+            444.3513
           ],
           "releasedLowerPadCount": 0
         },
@@ -130,10 +130,10 @@
             936.9815
           ],
           "minMaxN": [
-            -198.2568,
-            210.156
+            -198.0364,
+            210.2584
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -142,8 +142,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -199.7271,
-            208.071
+            -199.932,
+            208.3258
           ],
           "releasedLowerPadCount": 18
         }
@@ -169,8 +169,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -231.5627,
-            494.055
+            -231.4927,
+            493.9492
           ],
           "releasedLowerPadCount": 0
         },
@@ -181,8 +181,8 @@
             -772.447
           ],
           "minMaxN": [
-            -314.3069,
-            330.0447
+            -314.1916,
+            329.9389
           ],
           "releasedLowerPadCount": 8
         },
@@ -193,8 +193,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -316.1502,
-            328.085
+            -316.1618,
+            328.1234
           ],
           "releasedLowerPadCount": 18
         }
@@ -220,8 +220,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -79.1469,
-            444.8942
+            -79.2108,
+            443.9344
           ],
           "releasedLowerPadCount": 0
         },
@@ -232,10 +232,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -195.1746,
-            211.9267
+            -195.2385,
+            211.7778
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -244,8 +244,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -196.9876,
-            209.8298
+            -197.2378,
+            210.0367
           ],
           "releasedLowerPadCount": 18
         }
@@ -271,8 +271,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -114.1911,
-            443.8308
+            -114.397,
+            444.4016
           ],
           "releasedLowerPadCount": 0
         },
@@ -283,10 +283,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -191.857,
-            210.1399
+            -192.0629,
+            210.3067
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -295,8 +295,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -191.8904,
-            210.1399
+            -192.1306,
+            210.3067
           ],
           "releasedLowerPadCount": 18
         }
@@ -322,8 +322,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -234.8085,
-            454.8882
+            -234.7811,
+            454.9034
           ],
           "releasedLowerPadCount": 0
         },
@@ -334,8 +334,8 @@
             367.172
           ],
           "minMaxN": [
-            -315.4896,
-            327.7947
+            -315.4638,
+            327.8098
           ],
           "releasedLowerPadCount": 8
         },
@@ -346,8 +346,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -315.4896,
-            324.4209
+            -315.4638,
+            324.4524
           ],
           "releasedLowerPadCount": 18
         }
@@ -363,7 +363,7 @@
       "Vx_Vy_yaw": [
         252.172,
         252.172,
-        0.0
+        -0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -373,8 +373,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -398.4643,
-            611.5074
+            -398.3887,
+            611.5882
           ],
           "releasedLowerPadCount": 0
         },
@@ -385,10 +385,10 @@
             1506.7909
           ],
           "minMaxN": [
-            -478.221,
-            495.4797
+            -478.1453,
+            495.5605
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -397,8 +397,8 @@
             -806.406
           ],
           "minMaxN": [
-            -478.221,
-            493.5674
+            -478.1453,
+            493.6202
           ],
           "releasedLowerPadCount": 18
         }
@@ -424,8 +424,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -275.5476,
-            517.5303
+            -275.669,
+            517.2985
           ],
           "releasedLowerPadCount": 0
         },
@@ -436,10 +436,10 @@
             936.9815
           ],
           "minMaxN": [
-            -360.2508,
-            450.1187
+            -360.3791,
+            449.887
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -448,8 +448,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -360.2508,
-            449.9949
+            -360.3791,
+            449.7632
           ],
           "releasedLowerPadCount": 18
         }
@@ -475,8 +475,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -357.7253,
-            492.3105
+            -357.5008,
+            492.5126
           ],
           "releasedLowerPadCount": 0
         },
@@ -487,10 +487,10 @@
             936.9815
           ],
           "minMaxN": [
-            -437.4819,
-            376.2828
+            -437.2574,
+            376.4849
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -499,8 +499,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -437.4819,
-            374.3103
+            -437.2574,
+            374.5767
           ],
           "releasedLowerPadCount": 18
         }
@@ -526,8 +526,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -397.9108,
-            659.5878
+            -397.8222,
+            659.6804
           ],
           "releasedLowerPadCount": 0
         },
@@ -538,10 +538,10 @@
             -772.447
           ],
           "minMaxN": [
-            -482.2104,
-            495.5775
+            -482.1265,
+            495.6701
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -550,8 +550,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -482.2104,
-            493.8618
+            -482.1265,
+            493.9061
           ],
           "releasedLowerPadCount": 18
         }
@@ -577,8 +577,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -350.2826,
-            541.4698
+            -350.0668,
+            541.5193
           ],
           "releasedLowerPadCount": 0
         },
@@ -589,10 +589,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -440.0602,
-            377.4595
+            -439.8444,
+            377.509
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -601,8 +601,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -440.0602,
-            375.6066
+            -439.8444,
+            375.8194
           ],
           "releasedLowerPadCount": 18
         }
@@ -628,8 +628,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -280.5392,
-            579.6082
+            -280.7265,
+            579.3666
           ],
           "releasedLowerPadCount": 0
         },
@@ -640,10 +640,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -358.2051,
-            452.5146
+            -358.3924,
+            452.273
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -652,8 +652,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -358.2587,
-            449.1341
+            -358.4684,
+            448.9093
           ],
           "releasedLowerPadCount": 18
         }
@@ -679,8 +679,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -110.7547,
-            444.4799
+            -110.9137,
+            443.7589
           ],
           "releasedLowerPadCount": 0
         },
@@ -691,10 +691,10 @@
             367.172
           ],
           "minMaxN": [
-            -200.5323,
-            205.8213
+            -200.6913,
+            206.1092
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -703,8 +703,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -200.5323,
-            205.6975
+            -200.6913,
+            205.9854
           ],
           "releasedLowerPadCount": 18
         }
@@ -730,8 +730,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -333.6317,
-            486.7004
+            -333.4021,
+            487.1339
           ],
           "releasedLowerPadCount": 0
         },
@@ -742,8 +742,8 @@
             1506.7909
           ],
           "minMaxN": [
-            -432.3238,
-            371.7981
+            -432.0942,
+            372.1136
           ],
           "releasedLowerPadCount": 7
         },
@@ -754,8 +754,8 @@
             -806.406
           ],
           "minMaxN": [
-            -432.3238,
-            371.6744
+            -432.0942,
+            371.9898
           ],
           "releasedLowerPadCount": 18
         }
@@ -781,8 +781,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -219.3416,
-            444.6697
+            -219.3095,
+            443.5793
           ],
           "releasedLowerPadCount": 0
         },
@@ -793,10 +793,10 @@
             936.9815
           ],
           "minMaxN": [
-            -318.0337,
-            331.3953
+            -318.0015,
+            331.4199
           ],
-          "releasedLowerPadCount": 6
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -805,8 +805,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -318.0337,
-            331.2715
+            -318.0015,
+            331.2962
           ],
           "releasedLowerPadCount": 18
         }
@@ -822,7 +822,7 @@
       "Vx_Vy_yaw": [
         126.086,
         126.086,
-        0.0
+        -0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -832,8 +832,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -158.6181,
-            443.4832
+            -158.227,
+            443.9093
           ],
           "releasedLowerPadCount": 0
         },
@@ -844,10 +844,10 @@
             936.9815
           ],
           "minMaxN": [
-            -238.3747,
-            251.4758
+            -237.9836,
+            252.0306
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -856,8 +856,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -238.3747,
-            249.5451
+            -237.9836,
+            250.0501
           ],
           "releasedLowerPadCount": 18
         }
@@ -883,8 +883,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -277.4754,
-            618.8
+            -277.5765,
+            618.2301
           ],
           "releasedLowerPadCount": 0
         },
@@ -895,10 +895,10 @@
             -772.447
           ],
           "minMaxN": [
-            -367.253,
-            454.7897
+            -367.3541,
+            454.2198
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -907,8 +907,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -367.253,
-            452.7264
+            -367.3541,
+            452.5681
           ],
           "releasedLowerPadCount": 18
         }
@@ -934,8 +934,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -235.3252,
-            500.682
+            -235.2944,
+            500.0689
           ],
           "releasedLowerPadCount": 0
         },
@@ -946,10 +946,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -325.1028,
-            336.6717
+            -325.072,
+            336.0586
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -958,8 +958,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -325.1028,
-            334.4713
+            -325.072,
+            334.4814
           ],
           "releasedLowerPadCount": 18
         }
@@ -985,8 +985,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -154.6811,
-            444.1099
+            -155.1799,
+            443.9597
           ],
           "releasedLowerPadCount": 0
         },
@@ -997,10 +997,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -242.6824,
-            245.844
+            -242.9734,
+            245.341
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1009,8 +1009,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -242.6824,
-            242.8967
+            -242.9734,
+            242.5314
           ],
           "releasedLowerPadCount": 18
         }
@@ -1036,8 +1036,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -119.3505,
-            443.2634
+            -119.5172,
+            444.5037
           ],
           "releasedLowerPadCount": 0
         },
@@ -1048,10 +1048,10 @@
             367.172
           ],
           "minMaxN": [
-            -199.1071,
-            210.0392
+            -199.2738,
+            210.3006
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1060,8 +1060,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -199.1071,
-            206.6601
+            -199.2738,
+            206.9348
           ],
           "releasedLowerPadCount": 18
         }
@@ -1087,8 +1087,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -283.0064,
-            570.1876
+            -283.1247,
+            569.816
           ],
           "releasedLowerPadCount": 0
         },
@@ -1099,10 +1099,10 @@
             1506.7909
           ],
           "minMaxN": [
-            -362.763,
-            454.1599
+            -362.8814,
+            453.7883
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1111,8 +1111,8 @@
             -806.406
           ],
           "minMaxN": [
-            -362.763,
-            452.0933
+            -362.8814,
+            451.8959
           ],
           "releasedLowerPadCount": 18
         }
@@ -1128,7 +1128,7 @@
       "Vx_Vy_yaw": [
         126.086,
         126.086,
-        0.0
+        -0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -1138,8 +1138,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -160.0896,
-            443.4532
+            -160.4051,
+            444.3242
           ],
           "releasedLowerPadCount": 0
         },
@@ -1150,10 +1150,10 @@
             936.9815
           ],
           "minMaxN": [
-            -239.8462,
-            245.9793
+            -240.1617,
+            245.5053
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1162,8 +1162,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -239.8462,
-            244.2974
+            -240.1617,
+            243.7778
           ],
           "releasedLowerPadCount": 18
         }
@@ -1189,8 +1189,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -242.2673,
-            450.9907
+            -242.2368,
+            450.7404
           ],
           "releasedLowerPadCount": 0
         },
@@ -1201,10 +1201,10 @@
             936.9815
           ],
           "minMaxN": [
-            -322.0239,
-            334.963
+            -321.9934,
+            334.7127
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1213,8 +1213,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -322.0239,
-            332.8362
+            -321.9934,
+            332.8524
           ],
           "releasedLowerPadCount": 18
         }
@@ -1240,8 +1240,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -357.4208,
-            534.8428
+            -357.0393,
+            535.3996
           ],
           "releasedLowerPadCount": 0
         },
@@ -1252,10 +1252,10 @@
             -772.447
           ],
           "minMaxN": [
-            -435.0867,
-            373.5616
+            -434.7052,
+            373.8588
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1264,8 +1264,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -435.1139,
-            370.1867
+            -434.7874,
+            370.4937
           ],
           "releasedLowerPadCount": 18
         }
@@ -1291,8 +1291,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -165.5007,
-            443.9567
+            -164.9132,
+            444.2373
           ],
           "releasedLowerPadCount": 0
         },
@@ -1303,8 +1303,8 @@
             -202.6375
           ],
           "minMaxN": [
-            -243.1666,
-            252.7145
+            -242.5791,
+            253.2281
           ],
           "releasedLowerPadCount": 9
         },
@@ -1315,8 +1315,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -243.2236,
-            250.9651
+            -242.6569,
+            251.3747
           ],
           "releasedLowerPadCount": 18
         }
@@ -1342,8 +1342,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -240.0493,
-            461.8527
+            -239.9436,
+            461.8573
           ],
           "releasedLowerPadCount": 0
         },
@@ -1354,10 +1354,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -317.7152,
-            334.7591
+            -317.6095,
+            334.7638
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1366,8 +1366,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -317.7373,
-            331.3738
+            -317.6967,
+            331.4019
           ],
           "releasedLowerPadCount": 18
         }
@@ -1393,8 +1393,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -247.2821,
-            444.7763
+            -247.2687,
+            444.4401
           ],
           "releasedLowerPadCount": 0
         },
@@ -1405,10 +1405,10 @@
             367.172
           ],
           "minMaxN": [
-            -314.6937,
-            326.7883
+            -314.6803,
+            326.8187
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1417,8 +1417,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -314.8174,
-            326.7883
+            -314.804,
+            326.8187
           ],
           "releasedLowerPadCount": 18
         }
@@ -1444,8 +1444,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -348.774,
-            577.4854
+            -348.7255,
+            577.5024
           ],
           "releasedLowerPadCount": 0
         },
@@ -1456,8 +1456,8 @@
             1506.7909
           ],
           "minMaxN": [
-            -484.2923,
-            488.3152
+            -484.0739,
+            488.3298
           ],
           "releasedLowerPadCount": 7
         },
@@ -1468,8 +1468,8 @@
             -806.406
           ],
           "minMaxN": [
-            -486.0464,
-            488.2627
+            -485.9917,
+            488.2732
           ],
           "releasedLowerPadCount": 18
         }
@@ -1495,8 +1495,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -307.4659,
-            455.4836
+            -307.1408,
+            455.6695
           ],
           "releasedLowerPadCount": 0
         },
@@ -1507,10 +1507,10 @@
             936.9815
           ],
           "minMaxN": [
-            -434.5594,
-            370.9659
+            -434.2343,
+            371.2266
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1519,8 +1519,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -437.9088,
-            370.9029
+            -437.6064,
+            371.1757
           ],
           "releasedLowerPadCount": 18
         }
@@ -1546,8 +1546,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -221.3679,
-            538.5677
+            -221.6037,
+            538.4292
           ],
           "releasedLowerPadCount": 0
         },
@@ -1558,8 +1558,8 @@
             936.9815
           ],
           "minMaxN": [
-            -366.9125,
-            448.7901
+            -366.7623,
+            448.6515
           ],
           "releasedLowerPadCount": 7
         },
@@ -1570,8 +1570,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -368.5962,
-            448.7901
+            -368.7467,
+            448.6515
           ],
           "releasedLowerPadCount": 18
         }
@@ -1587,7 +1587,7 @@
       "Vx_Vy_yaw": [
         -252.172,
         -252.172,
-        -0.0
+        0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -1597,8 +1597,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -418.7899,
-            584.4354
+            -418.7685,
+            584.4326
           ],
           "releasedLowerPadCount": 0
         },
@@ -1609,8 +1609,8 @@
             -772.447
           ],
           "minMaxN": [
-            -486.2015,
-            485.7433
+            -486.1801,
+            485.7405
           ],
           "releasedLowerPadCount": 8
         },
@@ -1621,8 +1621,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -487.177,
-            485.7433
+            -487.1511,
+            485.7405
           ],
           "releasedLowerPadCount": 18
         }
@@ -1648,8 +1648,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -289.2729,
-            527.9262
+            -289.5267,
+            527.7635
           ],
           "releasedLowerPadCount": 0
         },
@@ -1660,10 +1660,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -366.0886,
-            448.1696
+            -366.1815,
+            448.0069
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1672,8 +1672,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -368.0144,
-            448.1696
+            -368.2271,
+            448.0069
           ],
           "releasedLowerPadCount": 18
         }
@@ -1699,8 +1699,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -376.7991,
-            469.1814
+            -376.5105,
+            469.3497
           ],
           "releasedLowerPadCount": 0
         },
@@ -1711,8 +1711,8 @@
             -202.6375
           ],
           "minMaxN": [
-            -444.2107,
-            370.4893
+            -443.9221,
+            370.6576
           ],
           "releasedLowerPadCount": 9
         },
@@ -1723,8 +1723,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -444.3344,
-            370.4893
+            -444.0459,
+            370.6576
           ],
           "releasedLowerPadCount": 18
         }
@@ -1750,8 +1750,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -62.5577,
-            445.2159
+            -62.7967,
+            443.7933
           ],
           "releasedLowerPadCount": 0
         },
@@ -1762,10 +1762,10 @@
             367.172
           ],
           "minMaxN": [
-            -189.6512,
-            210.7577
+            -189.8903,
+            210.9304
           ],
-          "releasedLowerPadCount": 9
+          "releasedLowerPadCount": 10
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1774,8 +1774,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -193.0073,
-            210.7577
+            -193.2607,
+            210.9304
           ],
           "releasedLowerPadCount": 18
         }
@@ -1801,8 +1801,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -231.2719,
-            527.7385
+            -231.5033,
+            527.4472
           ],
           "releasedLowerPadCount": 0
         },
@@ -1813,10 +1813,10 @@
             1506.7909
           ],
           "minMaxN": [
-            -358.3654,
-            450.0726
+            -358.5969,
+            449.7813
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1825,8 +1825,8 @@
             -806.406
           ],
           "minMaxN": [
-            -361.7205,
-            449.9923
+            -361.9666,
+            449.7334
           ],
           "releasedLowerPadCount": 18
         }
@@ -1852,8 +1852,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -189.9638,
-            445.4057
+            -189.9186,
+            443.6138
           ],
           "releasedLowerPadCount": 0
         },
@@ -1864,10 +1864,10 @@
             936.9815
           ],
           "minMaxN": [
-            -317.0573,
-            332.7233
+            -317.0121,
+            332.6781
           ],
-          "releasedLowerPadCount": 6
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1876,8 +1876,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -320.4028,
-            332.6325
+            -320.3862,
+            332.6359
           ],
           "releasedLowerPadCount": 18
         }
@@ -1903,8 +1903,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -103.8658,
-            444.2192
+            -104.3815,
+            443.9438
           ],
           "releasedLowerPadCount": 0
         },
@@ -1915,8 +1915,8 @@
             936.9815
           ],
           "minMaxN": [
-            -240.6076,
-            241.6565
+            -241.0836,
+            241.1392
           ],
           "releasedLowerPadCount": 9
         },
@@ -1927,8 +1927,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -242.4543,
-            241.5964
+            -242.8281,
+            241.0833
           ],
           "releasedLowerPadCount": 18
         }
@@ -1954,8 +1954,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -326.6995,
-            462.6906
+            -326.1569,
+            462.8615
           ],
           "releasedLowerPadCount": 0
         },
@@ -1966,10 +1966,10 @@
             -772.447
           ],
           "minMaxN": [
-            -442.7272,
-            369.4971
+            -442.1846,
+            369.6522
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -1978,8 +1978,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -444.5094,
-            369.4971
+            -444.2638,
+            369.6522
           ],
           "releasedLowerPadCount": 18
         }
@@ -2005,8 +2005,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -207.5672,
-            445.9092
+            -207.2038,
+            443.5269
           ],
           "releasedLowerPadCount": 0
         },
@@ -2017,10 +2017,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -323.5949,
-            332.1503
+            -323.2315,
+            332.1449
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2029,8 +2029,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -325.3468,
-            332.1503
+            -325.3398,
+            332.1449
           ],
           "releasedLowerPadCount": 18
         }
@@ -2046,7 +2046,7 @@
       "Vx_Vy_yaw": [
         -126.086,
         -126.086,
-        -0.0
+        0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -2056,8 +2056,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -180.9775,
-            444.8459
+            -180.4148,
+            443.9941
           ],
           "releasedLowerPadCount": 0
         },
@@ -2068,8 +2068,8 @@
             -202.6375
           ],
           "minMaxN": [
-            -248.389,
-            248.7445
+            -247.8263,
+            249.0866
           ],
           "releasedLowerPadCount": 8
         },
@@ -2080,8 +2080,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -248.5128,
-            248.7445
+            -247.9501,
+            249.0866
           ],
           "releasedLowerPadCount": 18
         }
@@ -2107,8 +2107,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -128.2863,
-            443.7613
+            -128.5604,
+            444.8476
           ],
           "releasedLowerPadCount": 0
         },
@@ -2119,8 +2119,8 @@
             367.172
           ],
           "minMaxN": [
-            -195.6978,
-            210.1011
+            -195.972,
+            210.27
           ],
           "releasedLowerPadCount": 10
         },
@@ -2131,8 +2131,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -195.8216,
-            210.1011
+            -196.0958,
+            210.27
           ],
           "releasedLowerPadCount": 18
         }
@@ -2158,8 +2158,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -277.9312,
-            460.7982
+            -277.0164,
+            460.9538
           ],
           "releasedLowerPadCount": 0
         },
@@ -2170,8 +2170,8 @@
             1506.7909
           ],
           "minMaxN": [
-            -441.9415,
-            371.0206
+            -441.0267,
+            371.1762
           ],
           "releasedLowerPadCount": 7
         },
@@ -2182,8 +2182,8 @@
             -806.406
           ],
           "minMaxN": [
-            -443.3193,
-            371.0206
+            -443.0956,
+            371.1762
           ],
           "releasedLowerPadCount": 18
         }
@@ -2209,8 +2209,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -114.4461,
-            443.9511
+            -113.8819,
+            444.6681
           ],
           "releasedLowerPadCount": 0
         },
@@ -2221,8 +2221,8 @@
             936.9815
           ],
           "minMaxN": [
-            -241.8449,
-            249.0188
+            -241.1504,
+            249.3433
           ],
           "releasedLowerPadCount": 8
         },
@@ -2233,8 +2233,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -244.9014,
-            249.0188
+            -244.3457,
+            249.3433
           ],
           "releasedLowerPadCount": 18
         }
@@ -2260,8 +2260,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -160.5514,
-            442.7647
+            -159.7048,
+            444.9981
           ],
           "releasedLowerPadCount": 0
         },
@@ -2272,10 +2272,10 @@
             936.9815
           ],
           "minMaxN": [
-            -324.5617,
+            -323.7151,
             332.1029
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2284,7 +2284,7 @@
             -1376.2155
           ],
           "minMaxN": [
-            -325.8691,
+            -325.8506,
             332.1029
           ],
           "releasedLowerPadCount": 18
@@ -2311,8 +2311,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -299.7941,
-            545.8308
+            -300.0603,
+            545.6528
           ],
           "releasedLowerPadCount": 0
         },
@@ -2323,8 +2323,8 @@
             -772.447
           ],
           "minMaxN": [
-            -367.2056,
-            447.1388
+            -367.4719,
+            446.9607
           ],
           "releasedLowerPadCount": 8
         },
@@ -2335,8 +2335,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -367.3294,
-            447.1388
+            -367.5957,
+            446.9607
           ],
           "releasedLowerPadCount": 18
         }
@@ -2352,7 +2352,7 @@
       "Vx_Vy_yaw": [
         -126.086,
         -126.086,
-        -0.0
+        0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -2362,8 +2362,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -170.2771,
-            444.4546
+            -170.8184,
+            444.5812
           ],
           "releasedLowerPadCount": 0
         },
@@ -2374,8 +2374,8 @@
             -202.6375
           ],
           "minMaxN": [
-            -237.6886,
-            237.4119
+            -238.23,
+            237.0764
           ],
           "releasedLowerPadCount": 9
         },
@@ -2386,8 +2386,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -239.6552,
-            237.4119
+            -240.1251,
+            237.0764
           ],
           "releasedLowerPadCount": 18
         }
@@ -2413,8 +2413,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -257.8032,
-            443.3913
+            -257.8023,
+            445.0484
           ],
           "releasedLowerPadCount": 0
         },
@@ -2425,10 +2425,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -325.2148,
-            331.8847
+            -325.2139,
+            331.8778
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2437,8 +2437,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -325.3386,
-            331.8847
+            -325.3377,
+            331.8778
           ],
           "releasedLowerPadCount": 18
         }
@@ -2464,8 +2464,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -209.9134,
-            445.4766
+            -209.8897,
+            445.388
           ],
           "releasedLowerPadCount": 0
         },
@@ -2476,8 +2476,8 @@
             1506.7909
           ],
           "minMaxN": [
-            -315.6452,
-            329.4489
+            -315.3545,
+            329.3603
           ],
           "releasedLowerPadCount": 8
         },
@@ -2488,8 +2488,8 @@
             -806.406
           ],
           "minMaxN": [
-            -317.1652,
-            327.3656
+            -317.182,
+            327.3953
           ],
           "releasedLowerPadCount": 18
         }
@@ -2515,8 +2515,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -95.6211,
-            444.365
+            -95.7918,
+            444.0151
           ],
           "releasedLowerPadCount": 0
         },
@@ -2527,10 +2527,10 @@
             936.9815
           ],
           "minMaxN": [
-            -194.3132,
-            208.464
+            -194.4839,
+            208.6789
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2539,8 +2539,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -194.3132,
-            208.3745
+            -194.4839,
+            208.6236
           ],
           "releasedLowerPadCount": 18
         }
@@ -2566,8 +2566,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -43.1607,
-            443.174
+            -42.9672,
+            444.3532
           ],
           "releasedLowerPadCount": 0
         },
@@ -2578,10 +2578,10 @@
             936.9815
           ],
           "minMaxN": [
-            -198.2427,
-            210.1873
+            -198.0206,
+            210.253
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2590,8 +2590,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -199.7019,
-            208.0686
+            -199.917,
+            208.3197
           ],
           "releasedLowerPadCount": 18
         }
@@ -2617,8 +2617,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -231.5582,
-            494.2004
+            -231.5024,
+            493.947
           ],
           "releasedLowerPadCount": 0
         },
@@ -2629,8 +2629,8 @@
             -772.447
           ],
           "minMaxN": [
-            -314.2785,
-            330.1901
+            -314.1665,
+            329.9367
           ],
           "releasedLowerPadCount": 8
         },
@@ -2641,8 +2641,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -316.1139,
-            328.099
+            -316.1364,
+            328.1205
           ],
           "releasedLowerPadCount": 18
         }
@@ -2668,8 +2668,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -79.1094,
-            445.0977
+            -79.1759,
+            443.9407
           ],
           "releasedLowerPadCount": 0
         },
@@ -2680,10 +2680,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -195.1371,
-            211.9919
+            -195.2036,
+            211.763
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2692,8 +2692,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -196.9458,
-            209.8195
+            -197.2035,
+            210.0196
           ],
           "releasedLowerPadCount": 18
         }
@@ -2719,8 +2719,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -114.1637,
-            443.9816
+            -114.3788,
+            444.3971
           ],
           "releasedLowerPadCount": 0
         },
@@ -2731,10 +2731,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -191.8296,
-            210.1382
+            -192.0447,
+            210.3018
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2743,8 +2743,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -191.8622,
-            210.1382
+            -192.1124,
+            210.3018
           ],
           "releasedLowerPadCount": 18
         }
@@ -2770,8 +2770,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -234.791,
-            454.9272
+            -234.7814,
+            454.9237
           ],
           "releasedLowerPadCount": 0
         },
@@ -2782,10 +2782,10 @@
             367.172
           ],
           "minMaxN": [
-            -315.4548,
-            327.8336
+            -315.4471,
+            327.8301
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2794,8 +2794,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -315.4548,
-            324.4561
+            -315.4471,
+            324.4625
           ],
           "releasedLowerPadCount": 18
         }
@@ -2811,7 +2811,7 @@
       "Vx_Vy_yaw": [
         252.172,
         252.172,
-        0.0
+        -0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -2821,8 +2821,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -398.4162,
-            611.6081
+            -398.3686,
+            611.6093
           ],
           "releasedLowerPadCount": 0
         },
@@ -2833,10 +2833,10 @@
             1506.7909
           ],
           "minMaxN": [
-            -478.1728,
-            495.5804
+            -478.1253,
+            495.5816
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2845,8 +2845,8 @@
             -806.406
           ],
           "minMaxN": [
-            -478.1728,
-            493.6213
+            -478.1253,
+            493.642
           ],
           "releasedLowerPadCount": 18
         }
@@ -2872,8 +2872,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -275.4989,
-            517.593
+            -275.6448,
+            517.3325
           ],
           "releasedLowerPadCount": 0
         },
@@ -2884,10 +2884,10 @@
             936.9815
           ],
           "minMaxN": [
-            -360.2032,
-            450.1814
+            -360.3536,
+            449.9209
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2896,8 +2896,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -360.2032,
-            450.0577
+            -360.3536,
+            449.7972
           ],
           "releasedLowerPadCount": 18
         }
@@ -2923,8 +2923,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -357.7083,
-            492.3465
+            -357.5053,
+            492.5019
           ],
           "releasedLowerPadCount": 0
         },
@@ -2935,10 +2935,10 @@
             936.9815
           ],
           "minMaxN": [
-            -437.4649,
-            376.3188
+            -437.2619,
+            376.4742
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -2947,8 +2947,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -437.4649,
-            374.3243
+            -437.2619,
+            374.5664
           ],
           "releasedLowerPadCount": 18
         }
@@ -2974,8 +2974,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -397.8747,
-            659.7419
+            -397.8135,
+            659.6914
           ],
           "releasedLowerPadCount": 0
         },
@@ -2986,8 +2986,8 @@
             -772.447
           ],
           "minMaxN": [
-            -482.1604,
-            495.7316
+            -482.1112,
+            495.6811
           ],
           "releasedLowerPadCount": 9
         },
@@ -2998,8 +2998,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -482.1604,
-            493.9103
+            -482.1112,
+            493.9197
           ],
           "releasedLowerPadCount": 18
         }
@@ -3025,8 +3025,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -350.2556,
-            541.5437
+            -350.0649,
+            541.5177
           ],
           "releasedLowerPadCount": 0
         },
@@ -3037,10 +3037,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -440.0332,
-            377.5334
+            -439.8425,
+            377.5074
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3049,8 +3049,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -440.0332,
-            375.6308
+            -439.8425,
+            375.8188
           ],
           "releasedLowerPadCount": 18
         }
@@ -3076,8 +3076,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -280.4802,
-            579.6759
+            -280.6898,
+            579.405
           ],
           "releasedLowerPadCount": 0
         },
@@ -3088,10 +3088,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -358.1461,
-            452.5824
+            -358.3557,
+            452.3115
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3100,8 +3100,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -358.1965,
-            449.1987
+            -358.4297,
+            448.9478
           ],
           "releasedLowerPadCount": 18
         }
@@ -3127,8 +3127,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -110.7267,
-            444.4441
+            -110.8954,
+            443.7489
           ],
           "releasedLowerPadCount": 0
         },
@@ -3139,10 +3139,10 @@
             367.172
           ],
           "minMaxN": [
-            -200.5043,
-            205.8139
+            -200.673,
+            206.0925
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3151,8 +3151,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -200.5043,
-            205.6901
+            -200.673,
+            205.9687
           ],
           "releasedLowerPadCount": 18
         }
@@ -3178,8 +3178,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -333.6048,
-            486.7844
+            -333.3918,
+            487.145
           ],
           "releasedLowerPadCount": 0
         },
@@ -3190,10 +3190,10 @@
             1506.7909
           ],
           "minMaxN": [
-            -432.2969,
-            371.8315
+            -432.0839,
+            372.1262
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3202,8 +3202,8 @@
             -806.406
           ],
           "minMaxN": [
-            -432.2969,
-            371.7078
+            -432.0839,
+            372.0024
           ],
           "releasedLowerPadCount": 18
         }
@@ -3229,8 +3229,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -219.3125,
-            444.6083
+            -219.2939,
+            443.5631
           ],
           "releasedLowerPadCount": 0
         },
@@ -3241,10 +3241,10 @@
             936.9815
           ],
           "minMaxN": [
-            -318.0046,
-            331.4339
+            -317.986,
+            331.4412
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3253,8 +3253,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -318.0046,
-            331.3102
+            -317.986,
+            331.3175
           ],
           "releasedLowerPadCount": 18
         }
@@ -3270,7 +3270,7 @@
       "Vx_Vy_yaw": [
         126.086,
         126.086,
-        0.0
+        -0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -3280,8 +3280,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -158.6208,
-            443.4174
+            -158.2417,
+            443.9013
           ],
           "releasedLowerPadCount": 0
         },
@@ -3292,10 +3292,10 @@
             936.9815
           ],
           "minMaxN": [
-            -238.3774,
-            251.4951
+            -237.9983,
+            252.0099
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3304,8 +3304,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -238.3774,
-            249.5365
+            -237.9983,
+            250.0284
           ],
           "releasedLowerPadCount": 18
         }
@@ -3331,8 +3331,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -277.4323,
-            618.9613
+            -277.5595,
+            618.2435
           ],
           "releasedLowerPadCount": 0
         },
@@ -3343,10 +3343,10 @@
             -772.447
           ],
           "minMaxN": [
-            -367.2099,
-            454.951
+            -367.3371,
+            454.2332
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3355,8 +3355,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -367.2099,
-            452.7696
+            -367.3371,
+            452.5846
           ],
           "releasedLowerPadCount": 18
         }
@@ -3382,8 +3382,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -235.3051,
-            500.763
+            -235.2908,
+            500.0698
           ],
           "releasedLowerPadCount": 0
         },
@@ -3394,10 +3394,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -325.0828,
-            336.7527
+            -325.0684,
+            336.0595
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3406,8 +3406,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -325.0828,
-            334.49
+            -325.0684,
+            334.4837
           ],
           "releasedLowerPadCount": 18
         }
@@ -3433,8 +3433,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -154.6222,
-            444.2249
+            -155.1364,
+            443.9451
           ],
           "releasedLowerPadCount": 0
         },
@@ -3445,8 +3445,8 @@
             -202.6375
           ],
           "minMaxN": [
-            -242.6315,
-            245.9074
+            -242.9417,
+            245.3836
           ],
           "releasedLowerPadCount": 9
         },
@@ -3457,8 +3457,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -242.6315,
-            242.9501
+            -242.9417,
+            242.565
           ],
           "releasedLowerPadCount": 18
         }
@@ -3484,8 +3484,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -119.3308,
-            443.2297
+            -119.507,
+            444.505
           ],
           "releasedLowerPadCount": 0
         },
@@ -3496,10 +3496,10 @@
             367.172
           ],
           "minMaxN": [
-            -199.0875,
-            210.0436
+            -199.2636,
+            210.2964
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3508,8 +3508,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -199.0875,
-            206.6626
+            -199.2636,
+            206.9306
           ],
           "releasedLowerPadCount": 18
         }
@@ -3535,8 +3535,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -282.956,
-            570.3003
+            -283.0942,
+            569.8523
           ],
           "releasedLowerPadCount": 0
         },
@@ -3547,10 +3547,10 @@
             1506.7909
           ],
           "minMaxN": [
-            -362.7126,
-            454.2726
+            -362.8508,
+            453.8246
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3559,8 +3559,8 @@
             -806.406
           ],
           "minMaxN": [
-            -362.7126,
-            452.1534
+            -362.8508,
+            451.9333
           ],
           "releasedLowerPadCount": 18
         }
@@ -3576,7 +3576,7 @@
       "Vx_Vy_yaw": [
         126.086,
         126.086,
-        0.0
+        -0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -3586,8 +3586,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -160.0387,
-            443.3938
+            -160.3704,
+            444.3193
           ],
           "releasedLowerPadCount": 0
         },
@@ -3598,8 +3598,8 @@
             936.9815
           ],
           "minMaxN": [
-            -239.7954,
-            246.0606
+            -240.127,
+            245.547
           ],
           "releasedLowerPadCount": 9
         },
@@ -3610,8 +3610,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -239.7954,
-            244.3676
+            -240.127,
+            243.8285
           ],
           "releasedLowerPadCount": 18
         }
@@ -3637,8 +3637,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -242.2481,
-            451.0387
+            -242.2308,
+            450.745
           ],
           "releasedLowerPadCount": 0
         },
@@ -3649,10 +3649,10 @@
             936.9815
           ],
           "minMaxN": [
-            -322.0047,
-            335.011
+            -321.9875,
+            334.7173
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3661,8 +3661,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -322.0047,
-            332.8564
+            -321.9875,
+            332.8577
           ],
           "releasedLowerPadCount": 18
         }
@@ -3688,8 +3688,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -357.4162,
-            534.9811
+            -357.0558,
+            535.3949
           ],
           "releasedLowerPadCount": 0
         },
@@ -3700,10 +3700,10 @@
             -772.447
           ],
           "minMaxN": [
-            -435.0821,
-            373.5739
+            -434.7217,
+            373.846
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3712,8 +3712,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -435.1067,
-            370.1975
+            -434.8015,
+            370.4809
           ],
           "releasedLowerPadCount": 18
         }
@@ -3739,8 +3739,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -165.5234,
-            444.1266
+            -164.948,
+            444.2449
           ],
           "releasedLowerPadCount": 0
         },
@@ -3751,8 +3751,8 @@
             -202.6375
           ],
           "minMaxN": [
-            -243.1893,
-            252.7726
+            -242.6139,
+            253.2109
           ],
           "releasedLowerPadCount": 9
         },
@@ -3763,8 +3763,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -243.2445,
-            250.9602
+            -242.6891,
+            251.3547
           ],
           "releasedLowerPadCount": 18
         }
@@ -3790,8 +3790,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -240.0217,
-            461.8859
+            -239.9322,
+            461.8713
           ],
           "releasedLowerPadCount": 0
         },
@@ -3802,10 +3802,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -317.6876,
-            334.7923
+            -317.5981,
+            334.7777
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3814,8 +3814,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -317.7078,
-            331.4053
+            -317.683,
+            331.4159
           ],
           "releasedLowerPadCount": 18
         }
@@ -3841,8 +3841,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -247.2655,
-            444.6994
+            -247.2731,
+            444.3342
           ],
           "releasedLowerPadCount": 0
         },
@@ -3853,10 +3853,10 @@
             367.172
           ],
           "minMaxN": [
-            -314.6771,
-            326.8228
+            -314.6846,
+            326.8347
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 10
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3865,8 +3865,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -314.8009,
-            326.8228
+            -314.8084,
+            326.8347
           ],
           "releasedLowerPadCount": 18
         }
@@ -3892,8 +3892,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -348.7351,
-            577.5354
+            -348.7185,
+            577.5167
           ],
           "releasedLowerPadCount": 0
         },
@@ -3904,10 +3904,10 @@
             1506.7909
           ],
           "minMaxN": [
-            -484.2925,
-            488.3604
+            -484.0996,
+            488.337
           ],
-          "releasedLowerPadCount": 6
+          "releasedLowerPadCount": 7
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3916,8 +3916,8 @@
             -806.406
           ],
           "minMaxN": [
-            -485.9974,
-            488.2994
+            -485.9766,
+            488.2806
           ],
           "releasedLowerPadCount": 18
         }
@@ -3943,8 +3943,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -307.454,
-            455.5112
+            -307.1499,
+            455.6714
           ],
           "releasedLowerPadCount": 0
         },
@@ -3955,10 +3955,10 @@
             936.9815
           ],
           "minMaxN": [
-            -434.5475,
-            370.981
+            -434.2435,
+            371.2181
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -3967,8 +3967,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -437.8951,
-            370.9141
+            -437.6137,
+            371.1672
           ],
           "releasedLowerPadCount": 18
         }
@@ -3994,8 +3994,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -221.307,
-            538.6247
+            -221.5673,
+            538.4576
           ],
           "releasedLowerPadCount": 0
         },
@@ -4006,8 +4006,8 @@
             936.9815
           ],
           "minMaxN": [
-            -366.8901,
-            448.8471
+            -366.7658,
+            448.68
           ],
           "releasedLowerPadCount": 8
         },
@@ -4018,8 +4018,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -368.5341,
-            448.8471
+            -368.7116,
+            448.68
           ],
           "releasedLowerPadCount": 18
         }
@@ -4035,7 +4035,7 @@
       "Vx_Vy_yaw": [
         -252.172,
         -252.172,
-        -0.0
+        0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -4045,8 +4045,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -418.736,
-            584.478
+            -418.746,
+            584.449
           ],
           "releasedLowerPadCount": 0
         },
@@ -4057,8 +4057,8 @@
             -772.447
           ],
           "minMaxN": [
-            -486.1475,
-            485.786
+            -486.1576,
+            485.7569
           ],
           "releasedLowerPadCount": 8
         },
@@ -4069,8 +4069,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -487.1218,
-            485.786
+            -487.126,
+            485.7569
           ],
           "releasedLowerPadCount": 18
         }
@@ -4096,8 +4096,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -289.2121,
-            527.9752
+            -289.4944,
+            527.7879
           ],
           "releasedLowerPadCount": 0
         },
@@ -4108,10 +4108,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -366.0452,
-            448.2186
+            -366.1591,
+            448.0313
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4120,8 +4120,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -367.9537,
-            448.2186
+            -368.1931,
+            448.0313
           ],
           "releasedLowerPadCount": 18
         }
@@ -4147,8 +4147,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -376.7894,
-            469.1942
+            -376.5246,
+            469.3425
           ],
           "releasedLowerPadCount": 0
         },
@@ -4159,10 +4159,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -444.201,
-            370.5021
+            -443.9362,
+            370.6504
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4171,8 +4171,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -444.3247,
-            370.5021
+            -444.06,
+            370.6504
           ],
           "releasedLowerPadCount": 18
         }
@@ -4198,8 +4198,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -62.5242,
-            445.1775
+            -62.7709,
+            443.7863
           ],
           "releasedLowerPadCount": 0
         },
@@ -4210,10 +4210,10 @@
             367.172
           ],
           "minMaxN": [
-            -189.6177,
-            210.7567
+            -189.8644,
+            210.9213
           ],
-          "releasedLowerPadCount": 9
+          "releasedLowerPadCount": 10
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4222,8 +4222,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -192.9729,
-            210.7567
+            -193.2349,
+            210.9213
           ],
           "releasedLowerPadCount": 18
         }
@@ -4249,8 +4249,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -231.2334,
-            527.7844
+            -231.4907,
+            527.4602
           ],
           "releasedLowerPadCount": 0
         },
@@ -4261,10 +4261,10 @@
             1506.7909
           ],
           "minMaxN": [
-            -358.327,
-            450.1185
+            -358.5843,
+            449.7943
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4273,8 +4273,8 @@
             -806.406
           ],
           "minMaxN": [
-            -361.6808,
-            450.0286
+            -361.9514,
+            449.7467
           ],
           "releasedLowerPadCount": 18
         }
@@ -4300,8 +4300,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -189.9523,
-            445.3416
+            -189.9221,
+            443.6005
           ],
           "releasedLowerPadCount": 0
         },
@@ -4312,10 +4312,10 @@
             936.9815
           ],
           "minMaxN": [
-            -317.0458,
-            332.7391
+            -317.0157,
+            332.6754
           ],
-          "releasedLowerPadCount": 6
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4324,8 +4324,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -320.3902,
-            332.6433
+            -320.3879,
+            332.6333
           ],
           "releasedLowerPadCount": 18
         }
@@ -4351,8 +4351,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -103.8053,
-            444.1507
+            -104.3395,
+            443.9387
           ],
           "releasedLowerPadCount": 0
         },
@@ -4363,8 +4363,8 @@
             936.9815
           ],
           "minMaxN": [
-            -240.5774,
-            241.7176
+            -241.0493,
+            241.1786
           ],
           "releasedLowerPadCount": 9
         },
@@ -4375,8 +4375,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -242.3987,
-            241.6541
+            -242.7919,
+            241.1231
           ],
           "releasedLowerPadCount": 18
         }
@@ -4402,8 +4402,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -326.6827,
-            462.7154
+            -326.1599,
+            462.8692
           ],
           "releasedLowerPadCount": 0
         },
@@ -4414,10 +4414,10 @@
             -772.447
           ],
           "minMaxN": [
-            -442.7104,
-            369.5267
+            -442.1876,
+            369.6627
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4426,8 +4426,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -444.4782,
-            369.5267
+            -444.2522,
+            369.6627
           ],
           "releasedLowerPadCount": 18
         }
@@ -4453,8 +4453,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -207.5413,
-            446.0744
+            -207.1971,
+            443.5262
           ],
           "releasedLowerPadCount": 0
         },
@@ -4465,10 +4465,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -323.569,
-            332.1808
+            -323.2248,
+            332.1603
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4477,8 +4477,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -325.3101,
-            332.1808
+            -325.3193,
+            332.1603
           ],
           "releasedLowerPadCount": 18
         }
@@ -4494,7 +4494,7 @@
       "Vx_Vy_yaw": [
         -126.086,
         -126.086,
-        -0.0
+        0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -4504,8 +4504,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -180.9934,
-            444.9582
+            -180.443,
+            443.9826
           ],
           "releasedLowerPadCount": 0
         },
@@ -4516,8 +4516,8 @@
             -202.6375
           ],
           "minMaxN": [
-            -248.405,
-            248.7395
+            -247.8546,
+            249.0706
           ],
           "releasedLowerPadCount": 8
         },
@@ -4528,8 +4528,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -248.5288,
-            248.7395
+            -247.9784,
+            249.0706
           ],
           "releasedLowerPadCount": 18
         }
@@ -4555,8 +4555,8 @@
             64789.4548
           ],
           "minMaxN": [
-            -128.2606,
-            443.7227
+            -128.5462,
+            444.7488
           ],
           "releasedLowerPadCount": 0
         },
@@ -4567,8 +4567,8 @@
             367.172
           ],
           "minMaxN": [
-            -195.6722,
-            210.1094
+            -195.9578,
+            210.2697
           ],
           "releasedLowerPadCount": 10
         },
@@ -4579,8 +4579,8 @@
             -1946.025
           ],
           "minMaxN": [
-            -195.796,
-            210.1094
+            -196.0816,
+            210.2697
           ],
           "releasedLowerPadCount": 18
         }
@@ -4606,8 +4606,8 @@
             65929.0738
           ],
           "minMaxN": [
-            -277.9475,
-            460.8219
+            -277.0607,
+            460.9517
           ],
           "releasedLowerPadCount": 0
         },
@@ -4618,10 +4618,10 @@
             1506.7909
           ],
           "minMaxN": [
-            -441.9578,
-            371.0443
+            -441.071,
+            371.1741
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4630,8 +4630,8 @@
             -806.406
           ],
           "minMaxN": [
-            -443.3006,
-            371.0443
+            -443.1017,
+            371.1741
           ],
           "releasedLowerPadCount": 18
         }
@@ -4657,8 +4657,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -114.4677,
-            443.8869
+            -113.9169,
+            444.5631
           ],
           "releasedLowerPadCount": 0
         },
@@ -4669,10 +4669,10 @@
             936.9815
           ],
           "minMaxN": [
-            -241.8752,
-            249.0201
+            -241.2105,
+            249.3288
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4681,8 +4681,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -244.9221,
-            249.0201
+            -244.3788,
+            249.3288
           ],
           "releasedLowerPadCount": 18
         }
@@ -4708,8 +4708,8 @@
             65359.2643
           ],
           "minMaxN": [
-            -160.5451,
-            442.696
+            -159.7269,
+            444.9012
           ],
           "releasedLowerPadCount": 0
         },
@@ -4720,10 +4720,10 @@
             936.9815
           ],
           "minMaxN": [
-            -324.5554,
-            332.1336
+            -323.7372,
+            332.115
           ],
-          "releasedLowerPadCount": 8
+          "releasedLowerPadCount": 9
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4732,8 +4732,8 @@
             -1376.2155
           ],
           "minMaxN": [
-            -325.8373,
-            332.1336
+            -325.8367,
+            332.115
           ],
           "releasedLowerPadCount": 18
         }
@@ -4759,8 +4759,8 @@
             63649.8358
           ],
           "minMaxN": [
-            -299.7311,
-            545.8768
+            -300.0192,
+            545.6802
           ],
           "releasedLowerPadCount": 0
         },
@@ -4771,8 +4771,8 @@
             -772.447
           ],
           "minMaxN": [
-            -367.1426,
-            447.1847
+            -367.4308,
+            446.9881
           ],
           "releasedLowerPadCount": 8
         },
@@ -4783,8 +4783,8 @@
             -3085.644
           ],
           "minMaxN": [
-            -367.2664,
-            447.1847
+            -367.5545,
+            446.9881
           ],
           "releasedLowerPadCount": 18
         }
@@ -4800,7 +4800,7 @@
       "Vx_Vy_yaw": [
         -126.086,
         -126.086,
-        -0.0
+        0.0
       ],
       "conservedStates": {
         "GQ+wind": {
@@ -4810,8 +4810,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -170.2072,
-            444.6197
+            -170.7676,
+            444.4887
           ],
           "releasedLowerPadCount": 0
         },
@@ -4822,8 +4822,8 @@
             -202.6375
           ],
           "minMaxN": [
-            -237.6188,
-            237.4619
+            -238.1792,
+            237.1099
           ],
           "releasedLowerPadCount": 9
         },
@@ -4834,8 +4834,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -239.5894,
-            237.4619
+            -240.0773,
+            237.1099
           ],
           "releasedLowerPadCount": 18
         }
@@ -4861,8 +4861,8 @@
             64219.6453
           ],
           "minMaxN": [
-            -257.7845,
-            443.5035
+            -257.7978,
+            444.9451
           ],
           "releasedLowerPadCount": 0
         },
@@ -4873,10 +4873,10 @@
             -202.6375
           ],
           "minMaxN": [
-            -325.196,
-            331.9008
+            -325.2094,
+            331.8816
           ],
-          "releasedLowerPadCount": 7
+          "releasedLowerPadCount": 8
         },
         "stripped suction+wind": {
           "N_Xmoment_Ymoment": [
@@ -4885,8 +4885,8 @@
             -2515.8345
           ],
           "minMaxN": [
-            -325.3198,
-            331.9008
+            -325.3332,
+            331.8816
           ],
           "releasedLowerPadCount": 18
         }
@@ -4916,7 +4916,7 @@
         6000.0
       ],
       "signedRange": [
-        -162.4305,
+        -164.2051,
         0.0
       ],
       "threePointCoefficient": 1.2488755622188905
@@ -4936,7 +4936,7 @@
         6000.0
       ],
       "signedRange": [
-        -141.0415,
+        -142.5761,
         0.0
       ],
       "threePointCoefficient": 1.067948717948718
@@ -4956,7 +4956,7 @@
         3917.5
       ],
       "signedRange": [
-        -153.5892,
+        -155.3003,
         0.0
       ],
       "threePointCoefficient": 1.1802721088435375
@@ -4976,7 +4976,7 @@
         6000.0
       ],
       "signedRange": [
-        -157.2964,
+        -159.0825,
         0.0
       ],
       "threePointCoefficient": 1.225
@@ -4986,10 +4986,10 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -372.6959,
-          498.2769,
+          -372.4963,
+          496.9064,
           "stripped suction+wind:55",
-          "GQ+wind:79"
+          "GQ+wind:31"
         ],
         [
           -4.9999,
@@ -5004,14 +5004,14 @@
           "Q characteristic"
         ],
         [
-          -41.7281,
-          42.6051,
+          -41.7184,
+          42.6073,
           "GQ+wind:28",
           "GQ+wind:58"
         ],
         [
-          -41.2415,
-          42.7911,
+          -41.2245,
+          42.7844,
           "GQ+wind:10",
           "GQ+wind:76"
         ]
@@ -5051,8 +5051,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -442.8765,
-          530.226
+          -436.9139,
+          528.7733
         ],
         [
           -5.34,
@@ -5071,16 +5071,16 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -479.2266,
-          618.4575,
+          -479.1868,
+          618.4733,
           "stripped suction+wind:28",
           "GQ+wind:58"
         ],
         [
           -0.0,
           0.0,
-          "retained suction+wind:71",
-          "GQ+wind:84"
+          "retained suction+wind:36",
+          "GQ+wind:71"
         ],
         [
           -10.5928,
@@ -5089,14 +5089,14 @@
           "Q characteristic"
         ],
         [
-          -41.7281,
-          42.6051,
+          -41.7184,
+          42.6073,
           "GQ+wind:28",
           "GQ+wind:58"
         ],
         [
-          -12.8832,
-          14.0964,
+          -12.871,
+          14.0956,
           "GQ+wind:31",
           "GQ+wind:55"
         ]
@@ -5135,8 +5135,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -480.7878,
-          620.2567
+          -480.7481,
+          620.2621
         ],
         [
           -0.0,
@@ -5155,8 +5155,8 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -475.6353,
-          566.0263,
+          -475.5591,
+          566.0029,
           "stripped suction+wind:10",
           "GQ+wind:76"
         ],
@@ -5164,23 +5164,23 @@
           -10.0359,
           0.0,
           "max factored gravity",
-          "retained suction+wind:63"
+          "retained suction+wind:23"
         ],
         [
           -0.0,
           0.0,
-          "GQ+wind:95",
-          "retained suction+wind:63"
+          "GQ+wind:84",
+          "retained suction+wind:23"
         ],
         [
-          -12.8832,
-          14.0964,
+          -12.871,
+          14.0956,
           "GQ+wind:31",
           "GQ+wind:55"
         ],
         [
-          -41.2415,
-          42.7911,
+          -41.2245,
+          42.7844,
           "GQ+wind:10",
           "GQ+wind:76"
         ]
@@ -5219,8 +5219,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -476.3583,
-          567.3747
+          -476.2821,
+          567.3245
         ],
         [
           -11.169,
@@ -5239,10 +5239,10 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -377.0195,
-          507.7029,
+          -376.9095,
+          506.5118,
           "stripped suction+wind:76",
-          "GQ+wind:58"
+          "GQ+wind:10"
         ],
         [
           -0.0,
@@ -5257,14 +5257,14 @@
           "Q characteristic"
         ],
         [
-          -42.6464,
-          41.7806,
+          -42.6365,
+          41.7627,
           "GQ+wind:79",
           "GQ+wind:7"
         ],
         [
-          -42.784,
-          43.4862,
+          -42.7791,
+          43.4886,
           "GQ+wind:31",
           "GQ+wind:55"
         ]
@@ -5304,8 +5304,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -445.9238,
-          539.6534
+          -440.0469,
+          538.3616
         ],
         [
           -0.6207,
@@ -5324,8 +5324,8 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -478.221,
-          565.3212,
+          -478.1453,
+          565.2903,
           "stripped suction+wind:7",
           "GQ+wind:79"
         ],
@@ -5342,14 +5342,14 @@
           "Q characteristic"
         ],
         [
-          -42.6464,
-          41.7806,
+          -42.6365,
+          41.7627,
           "GQ+wind:79",
           "GQ+wind:7"
         ],
         [
-          -13.5187,
-          14.303,
+          -13.5198,
+          14.312,
           "GQ+wind:10",
           "GQ+wind:76"
         ]
@@ -5388,8 +5388,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -479.7822,
-          566.8825
+          -479.7066,
+          566.8516
         ],
         [
           -0.0,
@@ -5408,8 +5408,8 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -487.177,
-          611.6081,
+          -487.1511,
+          611.6093,
           "stripped suction+wind:31",
           "GQ+wind:55"
         ],
@@ -5426,14 +5426,14 @@
           "retained shell plus uniform suction"
         ],
         [
-          -14.303,
-          13.5187,
+          -14.312,
+          13.5198,
           "GQ+wind:76",
           "GQ+wind:10"
         ],
         [
-          -42.784,
-          43.4862,
+          -42.7791,
+          43.4886,
           "GQ+wind:31",
           "GQ+wind:55"
         ]
@@ -5472,8 +5472,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -487.9,
-          615.7965
+          -487.8741,
+          615.6476
         ],
         [
           -1.8544,
@@ -5492,10 +5492,10 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -370.0196,
-          500.5504,
+          -369.8465,
+          499.2694,
           "stripped suction+wind:58",
-          "GQ+wind:76"
+          "GQ+wind:28"
         ],
         [
           -4.9766,
@@ -5510,14 +5510,14 @@
           "max factored gravity"
         ],
         [
-          -42.6637,
-          42.9235,
+          -42.6588,
+          42.9272,
           "GQ+wind:31",
           "GQ+wind:55"
         ],
         [
-          -42.6527,
-          41.16,
+          -42.6428,
+          41.1439,
           "GQ+wind:79",
           "GQ+wind:7"
         ]
@@ -5557,8 +5557,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -435.5079,
-          532.5017
+          -430.099,
+          531.1192
         ],
         [
           -5.2818,
@@ -5577,8 +5577,8 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -486.3252,
-          557.9906,
+          -486.3039,
+          558.0175,
           "stripped suction+wind:31",
           "GQ+wind:55"
         ],
@@ -5595,14 +5595,14 @@
           "max factored gravity"
         ],
         [
-          -42.6637,
-          42.9235,
+          -42.6588,
+          42.9272,
           "GQ+wind:31",
           "GQ+wind:55"
         ],
         [
-          -13.9342,
-          13.0581,
+          -13.9353,
+          13.0515,
           "GQ+wind:58",
           "GQ+wind:28"
         ]
@@ -5641,8 +5641,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -487.8865,
-          559.5519
+          -487.8652,
+          559.5788
         ],
         [
           -0.0,
@@ -5661,8 +5661,8 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -474.5409,
-          584.478,
+          -474.4718,
+          584.449,
           "stripped suction+wind:7",
           "GQ+wind:79"
         ],
@@ -5679,14 +5679,14 @@
           "uniform roof suction only"
         ],
         [
-          -13.0581,
-          13.9342,
+          -13.0515,
+          13.9353,
           "GQ+wind:28",
           "GQ+wind:58"
         ],
         [
-          -42.6527,
-          41.16,
+          -42.6428,
+          41.1439,
           "GQ+wind:79",
           "GQ+wind:7"
         ]
@@ -5725,8 +5725,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -475.2639,
-          585.201
+          -475.1948,
+          585.172
         ],
         [
           -10.7999,
@@ -5745,10 +5745,10 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -376.8642,
-          519.1346,
+          -376.7854,
+          517.9375,
           "stripped suction+wind:79",
-          "GQ+wind:55"
+          "GQ+wind:7"
         ],
         [
           -0.0,
@@ -5763,14 +5763,14 @@
           "max factored gravity"
         ],
         [
-          -42.9095,
-          42.3603,
+          -42.9027,
+          42.3414,
           "GQ+wind:76",
           "GQ+wind:10"
         ],
         [
           -43.6495,
-          42.7035,
+          42.6924,
           "GQ+wind:58",
           "GQ+wind:28"
         ]
@@ -5810,8 +5810,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -439.3011,
-          551.0984
+          -433.9804,
+          549.8044
         ],
         [
           -0.5719,
@@ -5830,8 +5830,8 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -482.2104,
-          577.5354,
+          -482.1265,
+          577.5167,
           "stripped suction+wind:10",
           "GQ+wind:76"
         ],
@@ -5848,14 +5848,14 @@
           "max factored gravity"
         ],
         [
-          -42.9095,
-          42.3603,
+          -42.9027,
+          42.3414,
           "GQ+wind:76",
           "GQ+wind:10"
         ],
         [
-          -14.2726,
-          13.5247,
+          -14.2853,
+          13.5255,
           "GQ+wind:79",
           "GQ+wind:7"
         ]
@@ -5894,8 +5894,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -483.7716,
-          579.0967
+          -483.6878,
+          579.078
         ],
         [
           -0.0,
@@ -5914,8 +5914,8 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -486.0464,
-          659.7419,
+          -485.9917,
+          659.6914,
           "stripped suction+wind:28",
           "GQ+wind:58"
         ],
@@ -5932,14 +5932,14 @@
           "max factored gravity"
         ],
         [
-          -14.2726,
-          13.5247,
+          -14.2853,
+          13.5255,
           "GQ+wind:79",
           "GQ+wind:7"
         ],
         [
           -43.6495,
-          42.7035,
+          42.6924,
           "GQ+wind:58",
           "GQ+wind:28"
         ]
@@ -5978,8 +5978,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -486.7694,
-          667.6427
+          -486.7147,
+          667.2716
         ],
         [
           -2.2398,
@@ -5999,21 +5999,21 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          276.9513,
+          275.6266,
           "uniform roof suction only",
-          "GQ+wind:63"
+          "GQ+wind:23"
         ],
         [
           -11.9318,
           0.0,
           "max factored gravity",
-          "retained suction+wind:63"
+          "retained suction+wind:23"
         ],
         [
           -0.0,
           0.0006,
           "Q characteristic",
-          "GQ+wind:63"
+          "GQ+wind:23"
         ],
         [
           0,
@@ -6062,7 +6062,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          300.8972
+          299.5725
         ],
         [
           -13.1889,
@@ -6082,9 +6082,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          174.5729,
+          174.5329,
           "uniform roof suction only",
-          "GQ+wind:28"
+          "GQ+wind:75"
         ],
         [
           -10.0868,
@@ -6146,7 +6146,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          181.0036
+          180.9637
         ],
         [
           -11.232,
@@ -6166,9 +6166,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          277.2369,
+          277.1126,
           "uniform roof suction only",
-          "GQ+wind:31"
+          "GQ+wind:77"
         ],
         [
           -16.1986,
@@ -6229,7 +6229,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          299.2957
+          299.1324
         ],
         [
           -17.8615,
@@ -6249,9 +6249,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          326.047,
+          324.7282,
           "uniform roof suction only",
-          "GQ+wind:74"
+          "GQ+wind:18"
         ],
         [
           -15.1139,
@@ -6313,7 +6313,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          350.038
+          348.7192
         ],
         [
           -16.7159,
@@ -6333,9 +6333,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          336.8939,
+          335.8262,
           "uniform roof suction only",
-          "GQ+wind:92"
+          "GQ+wind:36"
         ],
         [
           -0.0,
@@ -6346,8 +6346,8 @@
         [
           -0.0,
           0.0,
-          "GQ+wind:80",
-          "retained suction+wind:71"
+          "GQ+wind:81",
+          "retained suction+wind:18"
         ],
         [
           0,
@@ -6396,7 +6396,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          359.0166
+          357.9179
         ],
         [
           -2.6657,
@@ -6416,9 +6416,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          351.8636,
+          351.6351,
           "uniform roof suction only",
-          "GQ+wind:71"
+          "GQ+wind:18"
         ],
         [
           -0.0,
@@ -6429,8 +6429,8 @@
         [
           -1.8341,
           0.0,
-          "GQ+wind:27",
-          "retained suction+wind:71"
+          "GQ+wind:75",
+          "retained suction+wind:18"
         ],
         [
           0,
@@ -6479,7 +6479,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          375.4028
+          375.1743
         ],
         [
           -2.7335,
@@ -6499,9 +6499,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          446.0744,
+          445.0484,
           "uniform roof suction only",
-          "GQ+wind:87"
+          "GQ+wind:47"
         ],
         [
           -0.0,
@@ -6562,7 +6562,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          463.5089
+          462.4829
         ],
         [
           -3.0628,
@@ -6582,15 +6582,15 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          178.7353,
+          178.5986,
           "uniform roof suction only",
-          "GQ+wind:71"
+          "GQ+wind:36"
         ],
         [
           -0.0,
           0.0,
-          "retained suction+wind:6",
-          "GQ+wind:71"
+          "retained suction+wind:36",
+          "GQ+wind:36"
         ],
         [
           -12.2875,
@@ -6645,7 +6645,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          180.5686
+          180.4319
         ],
         [
           -0.1094,
@@ -6665,15 +6665,15 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          229.4404,
+          227.0871,
           "uniform roof suction only",
-          "GQ+wind:71"
+          "GQ+wind:36"
         ],
         [
           -0.0,
           0.0043,
           "retained shell plus uniform suction",
-          "GQ+wind:71"
+          "GQ+wind:36"
         ],
         [
           -13.5672,
@@ -6729,7 +6729,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          261.0052
+          258.6518
         ],
         [
           -0.388,
@@ -6749,9 +6749,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          307.9091,
+          305.5504,
           "uniform roof suction only",
-          "GQ+wind:84"
+          "GQ+wind:44"
         ],
         [
           -0.0619,
@@ -6813,7 +6813,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          339.9269
+          337.5682
         ],
         [
           -1.143,
@@ -6833,9 +6833,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          225.9804,
+          225.8625,
           "uniform roof suction only",
-          "GQ+wind:84"
+          "GQ+wind:44"
         ],
         [
           -0.0,
@@ -6897,7 +6897,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          227.5813
+          227.4634
         ],
         [
           -1.2956,
@@ -6917,9 +6917,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          240.1535,
+          240.0018,
           "uniform roof suction only",
-          "GQ+wind:66"
+          "GQ+wind:26"
         ],
         [
           -0.7676,
@@ -6981,7 +6981,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          242.4257
+          242.274
         ],
         [
           -1.6032,
@@ -7001,9 +7001,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          306.4021,
+          304.5755,
           "uniform roof suction only",
-          "GQ+wind:66"
+          "GQ+wind:26"
         ],
         [
           -2.5267,
@@ -7014,8 +7014,8 @@
         [
           -0.0,
           14.9009,
-          "retained suction+wind:66",
-          "GQ+wind:44"
+          "uniform roof suction only",
+          "GQ+wind:1"
         ],
         [
           0,
@@ -7065,7 +7065,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           -0.2407,
-          334.0018
+          332.1752
         ],
         [
           -5.8289,
@@ -7085,9 +7085,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          351.251,
+          349.4352,
           "uniform roof suction only",
-          "GQ+wind:95"
+          "GQ+wind:39"
         ],
         [
           -0.0,
@@ -7098,8 +7098,8 @@
         [
           -0.0,
           15.6637,
-          "retained suction+wind:95",
-          "GQ+wind:8"
+          "retained suction+wind:39",
+          "GQ+wind:2"
         ],
         [
           0,
@@ -7149,7 +7149,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           -0.2407,
-          379.106
+          377.2903
         ],
         [
           -3.3022,
@@ -7169,9 +7169,9 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          213.9486,
+          213.816,
           "uniform roof suction only",
-          "GQ+wind:95"
+          "GQ+wind:39"
         ],
         [
           -0.0,
@@ -7232,7 +7232,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          215.9652
+          215.8326
         ],
         [
           -0.246,
@@ -7252,7 +7252,7 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          261.4071,
+          261.445,
           "uniform roof suction only",
           "GQ+wind:28"
         ],
@@ -7263,7 +7263,7 @@
           "uniform roof suction only"
         ],
         [
-          -6.4711,
+          -6.4766,
           0.0806,
           "GQ+wind:3",
           "Q characteristic"
@@ -7315,16 +7315,16 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -9.2854,
-          289.5544
+          -9.3099,
+          289.5196
         ],
         [
           -8.3809,
           3.1721
         ],
         [
-          -9.708,
-          3.9068
+          -9.7088,
+          3.9057
         ]
       ],
       "xy": [
@@ -7419,7 +7419,7 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          408.3574,
+          408.3277,
           "uniform roof suction only",
           "GQ+wind:7"
         ],
@@ -7430,7 +7430,7 @@
           "max factored gravity"
         ],
         [
-          -5.9324,
+          -5.9374,
           0.0837,
           "GQ+wind:3",
           "Q characteristic"
@@ -7482,7 +7482,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           -0.7976,
-          428.8896
+          428.8598
         ],
         [
           -3.1675,
@@ -7490,7 +7490,7 @@
         ],
         [
           -11.4873,
-          6.2334
+          6.2324
         ]
       ],
       "xy": [
@@ -7584,14 +7584,14 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -40.4739,
-          237.5156,
+          -41.8887,
+          237.8917,
           "stripped suction+wind:79",
           "GQ+wind:55"
         ],
         [
           -0.4154,
-          2.2649,
+          2.296,
           "Q characteristic",
           "GQ+wind:79"
         ],
@@ -7648,12 +7648,12 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -162.4382,
-          308.0999
+          -164.2128,
+          308.5323
         ],
         [
-          -7.458,
-          12.3839
+          -7.472,
+          12.4416
         ],
         [
           -0.3724,
@@ -7668,14 +7668,14 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          0.7484,
-          241.8011,
+          0.7197,
+          241.933,
           "retained suction+wind:55",
           "GQ+wind:31"
         ],
         [
-          -0.297,
-          9.5332,
+          -0.3063,
+          9.5452,
           "stripped suction+wind:79",
           "GQ+wind:6"
         ],
@@ -7731,12 +7731,12 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -32.3825,
-          349.1574
+          -32.4543,
+          349.4709
         ],
         [
-          -7.7029,
-          14.6598
+          -7.7131,
+          14.6622
         ],
         [
           -0.1214,
@@ -7751,8 +7751,8 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -35.5013,
-          199.4092,
+          -36.7558,
+          199.8331,
           "stripped suction+wind:76",
           "GQ+wind:58"
         ],
@@ -7763,8 +7763,8 @@
           "GQ+wind:28"
         ],
         [
-          0.1322,
-          3.5501,
+          0.1048,
+          3.6756,
           "retained suction+wind:58",
           "stripped suction+wind:76"
         ],
@@ -7815,16 +7815,16 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -141.0415,
-          272.1121
+          -142.5761,
+          272.5419
         ],
         [
           -1.2103,
-          9.0551
+          9.105
         ],
         [
           -1.8349,
-          20.7241
+          20.8915
         ]
       ],
       "xy": [
@@ -7835,20 +7835,20 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -38.8712,
-          250.7649,
+          -40.2765,
+          251.2668,
           "stripped suction+wind:58",
           "GQ+wind:76"
         ],
         [
           0.0023,
-          0.945,
+          0.9444,
           "retained suction+wind:81",
           "GQ+wind:7"
         ],
         [
-          -3.6354,
-          1.2731,
+          -3.655,
+          1.3189,
           "GQ+wind:76",
           "stripped suction+wind:58"
         ],
@@ -7899,16 +7899,16 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -153.5892,
-          327.341
+          -155.3003,
+          327.8616
         ],
         [
           -3.5434,
-          5.0165
+          5.0179
         ],
         [
-          -8.2047,
-          6.7796
+          -8.2243,
+          6.8352
         ]
       ],
       "xy": [
@@ -7919,20 +7919,20 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          0.355,
-          247.3018,
+          0.3513,
+          247.5173,
           "retained suction+wind:81",
           "GQ+wind:7"
         ],
         [
-          0.047,
-          6.6082,
+          0.0465,
+          6.6364,
           "retained suction+wind:81",
           "GQ+wind:7"
         ],
         [
           -0.0075,
-          0.2223,
+          0.2227,
           "Q characteristic",
           "GQ+wind:3"
         ],
@@ -7982,15 +7982,15 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -47.9475,
-          358.4398
+          -48.0516,
+          358.6569
         ],
         [
-          -13.2101,
-          28.405
+          -13.2242,
+          28.4338
         ],
         [
-          -0.4027,
+          -0.4026,
           0.5695
         ]
       ],
@@ -8002,19 +8002,19 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          -40.6712,
-          250.9042,
+          -42.1455,
+          251.4343,
           "stripped suction+wind:55",
           "GQ+wind:79"
         ],
         [
-          -5.3889,
-          15.0025,
+          -5.5843,
+          15.0757,
           "stripped suction+wind:55",
           "GQ+wind:79"
         ],
         [
-          -1.27,
+          -1.2723,
           0.0417,
           "GQ+wind:3",
           "Q characteristic"
@@ -8065,16 +8065,16 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -157.2964,
-          335.4477
+          -159.0825,
+          335.9864
         ],
         [
-          -24.5955,
-          28.7307
+          -24.8322,
+          28.8039
         ],
         [
           -2.4891,
-          1.5284
+          1.5279
         ]
       ],
       "xy": [
@@ -8086,7 +8086,7 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          208.6444,
+          208.7143,
           "uniform roof suction only",
           "GQ+wind:55"
         ],
@@ -8098,7 +8098,7 @@
         ],
         [
           -0.0,
-          13.2932,
+          13.2964,
           "uniform roof suction only",
           "GQ+wind:55"
         ],
@@ -8149,7 +8149,7 @@
       "separateComponentBounds_N_Cx_Cy": [
         [
           0.0,
-          258.9443
+          259.0394
         ],
         [
           -0.1443,
@@ -8157,7 +8157,7 @@
         ],
         [
           -0.9628,
-          14.7447
+          14.748
         ]
       ],
       "xy": [
@@ -8169,21 +8169,21 @@
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
           0.0,
-          31.2007,
+          31.3403,
           "uniform roof suction only",
-          "GQ+wind:79"
+          "GQ+wind:31"
         ],
         [
           -0.0,
           0.0059,
           "Q characteristic",
-          "GQ+wind:79"
+          "GQ+wind:31"
         ],
         [
           0.0,
-          2.6657,
+          2.669,
           "uniform roof suction only",
-          "GQ+wind:79"
+          "GQ+wind:31"
         ],
         [
           0,
@@ -8231,7 +8231,7 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -36.1495,
+          -36.2074,
           57.0941
         ],
         [
@@ -8239,7 +8239,7 @@
           0.0096
         ],
         [
-          -2.5711,
+          -2.5724,
           4.9988
         ]
       ],
@@ -8251,8 +8251,8 @@
     {
       "coherentExtreme_N_Cx_Cy_Vx_Vy": [
         [
-          0.11,
-          124.1488,
+          0.0446,
+          124.335,
           "retained suction+wind:76",
           "GQ+wind:10"
         ],
@@ -8264,7 +8264,7 @@
         ],
         [
           -0.0,
-          9.9078,
+          9.9108,
           "uniform roof suction only",
           "GQ+wind:76"
         ],
@@ -8314,8 +8314,8 @@
       ],
       "separateComponentBounds_N_Cx_Cy": [
         [
-          -29.6125,
-          192.7576
+          -29.6904,
+          192.9751
         ],
         [
           -0.1792,
@@ -8323,7 +8323,7 @@
         ],
         [
           -0.7402,
-          11.0729
+          11.0758
         ]
       ],
       "xy": [
@@ -9777,8 +9777,8 @@
         332.5
       ],
       "signedRange": [
-        -127.7028,
-        166.4429
+        -121.7481,
+        165.1191
       ]
     },
     {
@@ -9787,8 +9787,8 @@
         11667.5
       ],
       "signedRange": [
-        -123.0086,
-        166.3637
+        -117.585,
+        165.0566
       ]
     },
     {
@@ -9797,8 +9797,8 @@
         332.5
       ],
       "signedRange": [
-        -126.3967,
-        163.0825
+        -120.4362,
+        161.8004
       ]
     },
     {
@@ -9807,19 +9807,19 @@
         11667.5
       ],
       "signedRange": [
-        -119.9171,
-        171.879
+        -114.4839,
+        170.6037
       ]
     }
   ],
   "sources": {
-    "project/had/studies/water-replan.json": "1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
     "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
-    "project/str/studies/current-house-grid.json": "870c915cd8d5c9c9a7dd3f28cf7ea4f260132fc73be709329db986cea0cbae2d",
-    "project/str/studies/current-house-head-actions.json": "c5dd3d26a0fa85e21cb582817ae52d7b3879b03e91e2cb5311471df299b8a43f",
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
     "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
-    "project/str/studies/current-house-ring-space.json": "4ee92bdee4d51533f9ef73f39225297937453342e6730180d8f2659a959f8bc8",
-    "project/str/studies/current-house-welded-network.json": "316c6a076d37c9a26b51dcddaa16e319d6905753d44af4bb71c3dd2d64f791a6"
+    "project/str/studies/current-house-ring-space.json": "28dd034381847b786a31a4f38ffe95d83b948f08bda5f9fe8a6337118584a574",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b"
   },
   "status": "Proposed fixed-base 52-shaft load paths; no geotechnical, section, floor-edge or capillary joint acceptance.",
   "units": "kN, kNm, mm. N positive down; Cx=N*deltaX and Cy=N*deltaY are first-moment residuals in x and y (not textbook Mx/My order). Vx/Vy horizontal kN. Positive yaw counterclockwise."

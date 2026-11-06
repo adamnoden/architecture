@@ -1,8 +1,8 @@
 {
   "status": "Calculated shop fabrication and ring force route; roof-anchor/grid/capillary and global stability interfaces remain explicit",
   "sources": {
-    "current-house-welded-network.json": "316c6a076d37c9a26b51dcddaa16e319d6905753d44af4bb71c3dd2d64f791a6",
-    "current-house-roof-connection.json": "c3c0b1d7cf19973d3c19e9838546965a177d087d2328d34f59e710161603838d"
+    "current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "current-house-roof-connection.json": "9de2bb56a68d3a234cdf4fb8cdc657434340329bbfb93e4febeef464ac0ddfff"
   },
   "method": "Project stress budget fy=200/1.1 MPa; 100 MPa allowable effective weld throat stress. SCI P398 section 2.5 and BCSA Guide to Site Welding 35/03 describe weld group and site execution methods; declared screens do not constitute a weld procedure or code acceptance. All RC/soil/material/fire incl cross-wall anchors remain pre-site research.",
   "claimedScope": "24 factory-built heels across twelve tied frames; 8 ordinary, 4 hip. Through-web diaphragms built before closing lid; shop weld rail end diaphragm and exterior cheeks to continuous sloping primary, then erect prefabricated frame onto indexed collector cassette before roofing/insulation. External all-around 8mm throat shoe weld accessible before closure. 300 square cassette has rotated matched internal webs for the hip, two orthogonal shop CJP ring arms, all torque allowed into either arm. Crown pin remains accessible before roof closes. No interior overhead field weld into a sealed box.",

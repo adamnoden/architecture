@@ -1,14 +1,14 @@
 {
   "status": "Source-bound proposed structural comparisons for three interfaces; no HAD, structure, waterproofing, service appliance, site or product adoption.",
   "sources": {
-    "current-house-grid.json": "870c915cd8d5c9c9a7dd3f28cf7ea4f260132fc73be709329db986cea0cbae2d",
-    "current-house-head-actions.json": "c5dd3d26a0fa85e21cb582817ae52d7b3879b03e91e2cb5311471df299b8a43f",
+    "current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
     "open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
-    "current-house-bridge.json": "f8294625787bd3b438ac3972b4dca590998b910c0fa72ad5c5ba73cf071b7589",
-    "current-house-nodes.json": "31798fa22bb6523860e94ed6a342ebf0d938ee192fe73cfd4b02bdf701d1f0c8",
+    "current-house-bridge.json": "12d48c5d049d004258599827717105717d5fe97202fa6c77ced23e24c1017cb9",
+    "current-house-nodes.json": "d618128c0f6921df1d056875aac6e4578b99f14969b76c8d7cf0eed38a908733",
     "current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09"
   },
-  "HAD": "1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb",
+  "HAD": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
   "groundFloor": {
     "basis": "warm domestic RC slab + threshold seat only. Geometry in current proposed support layout; not imported NW-W upstairs 25cover or site certification. Four independent H12 layers: EW and NS at BOTH faces, 100 centres, nominal45 outer cover, prescribed 40..50. Both faces and layers count in mass.",
     "physicalAreaM2": {

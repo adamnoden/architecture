@@ -3,7 +3,7 @@
   "status": "MAT assembly and envelope proof of the actual HAD successor; no technical/material acceptance",
   "HAD_source": {
     "path": "project/had/studies/water-replan.json",
-    "blob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
+    "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
     "declaredStatus": "SELECTED architectural-development source; HAD-WATER-REPLAN bounded exit, technical admission unearned"
   },
   "east_weather_layer_faces_mm": [

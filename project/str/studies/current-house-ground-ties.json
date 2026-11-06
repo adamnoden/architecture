@@ -39,12 +39,12 @@
           60.0
         ]
       ],
-      "jointUpliftKN": 162.4305449171367,
-      "lower1200StraightBondRequired": 671.4707566927907,
+      "jointUpliftKN": 164.20513071019138,
+      "lower1200StraightBondRequired": 678.8067073656557,
       "lowerBarContinuity": "Two H22 continue from the original 400 mm pile section; through the six other starters and named beam cage, actual non-vertical starter ends and closed hoops still need their 3D lanes. Offset geometry here compares all eight at equal elevations; the bar lengths descend 1.2m below head. No new shaft, adhesive or friction. Reserve the corresponding two starter capacities before adding pile bending or other head actions.",
       "maximumPlanSet": 73.47050191936204,
       "maximumSlope": 0.12448431930597315,
-      "oneBarTransverseForce": 12.132033491104835,
+      "oneBarTransverseForce": 12.26457835380391,
       "originalBarXYLocal": [
         [
           -53.95836396347762,
@@ -59,8 +59,8 @@
         5,
         2
       ],
-      "patchStress": 7.602132280616261,
-      "plateBendingStress": 76.6548338295473,
+      "patchStress": 7.685187077661891,
+      "plateBendingStress": 77.49230303309074,
       "sweptBarClearEachOtherSixStillVertical": 73.26870781821054,
       "threadStripTopLowerKN": [
         128.36752773239442,
@@ -68,7 +68,7 @@
       ],
       "twoBlindFullThreadsMM": 45,
       "twoH12TieResistance": 98.3455091558544,
-      "worstRodAt60Percent": 97.45832695028201
+      "worstRodAt60Percent": 98.52307842611482
     },
     {
       "DPCBlockPlanThickness": [
@@ -107,12 +107,12 @@
           -40.0
         ]
       ],
-      "jointUpliftKN": 141.04149501456988,
-      "lower1200StraightBondRequired": 583.0506782503821,
+      "jointUpliftKN": 142.57607201190322,
+      "lower1200StraightBondRequired": 589.3944578524788,
       "lowerBarContinuity": "Two H22 continue from the original 400 mm pile section; through the six other starters and named beam cage, actual non-vertical starter ends and closed hoops still need their 3D lanes. Offset geometry here compares all eight at equal elevations; the bar lengths descend 1.2m below head. No new shaft, adhesive or friction. Reserve the corresponding two starter capacities before adding pile bending or other head actions.",
       "maximumPlanSet": 92.78251567858375,
       "maximumSlope": 0.15904012614206595,
-      "oneBarTransverseForce": 13.458754295029655,
+      "oneBarTransverseForce": 13.60518988656802,
       "originalBarXYLocal": [
         [
           53.95836396347769,
@@ -127,8 +127,8 @@
         6,
         5
       ],
-      "patchStress": 6.601074340442716,
-      "plateBendingStress": 66.56083293279738,
+      "patchStress": 6.672896160251733,
+      "plateBendingStress": 67.28503628253831,
       "sweptBarClearEachOtherSixStillVertical": 58.24155360117423,
       "threadStripTopLowerKN": [
         128.36752773239442,
@@ -136,7 +136,7 @@
       ],
       "twoBlindFullThreadsMM": 45,
       "twoH12TieResistance": 98.3455091558544,
-      "worstRodAt60Percent": 84.62489700874193
+      "worstRodAt60Percent": 85.54564320714194
     },
     {
       "DPCBlockPlanThickness": [
@@ -175,12 +175,12 @@
           -32.5
         ]
       ],
-      "jointUpliftKN": 153.58916253921626,
-      "lower1200StraightBondRequired": 634.921413596385,
+      "jointUpliftKN": 155.30032113349856,
+      "lower1200StraightBondRequired": 641.9951629131177,
       "lowerBarContinuity": "Two H22 continue from the original 400 mm pile section; through the six other starters and named beam cage, actual non-vertical starter ends and closed hoops still need their 3D lanes. Offset geometry here compares all eight at equal elevations; the bar lengths descend 1.2m below head. No new shaft, adhesive or friction. Reserve the corresponding two starter capacities before adding pile bending or other head actions.",
       "maximumPlanSet": 73.47050191936204,
       "maximumSlope": 0.12448431930597315,
-      "oneBarTransverseForce": 11.471665410881283,
+      "oneBarTransverseForce": 11.599472858581562,
       "originalBarXYLocal": [
         [
           -130.26701408409144,
@@ -195,8 +195,8 @@
         4,
         7
       ],
-      "patchStress": 7.188334750017878,
-      "plateBendingStress": 72.48237539601361,
+      "patchStress": 7.268421004690505,
+      "plateBendingStress": 73.28991179729593,
       "sweptBarClearEachOtherSixStillVertical": 73.2687078182105,
       "threadStripTopLowerKN": [
         128.36752773239442,
@@ -204,7 +204,7 @@
       ],
       "twoBlindFullThreadsMM": 45,
       "twoH12TieResistance": 98.3455091558544,
-      "worstRodAt60Percent": 92.15349752352975
+      "worstRodAt60Percent": 93.18019268009913
     },
     {
       "DPCBlockPlanThickness": [
@@ -243,12 +243,12 @@
           60.0
         ]
       ],
-      "jointUpliftKN": 157.29643199091856,
-      "lower1200StraightBondRequired": 650.2468748590345,
+      "jointUpliftKN": 159.08247192810464,
+      "lower1200StraightBondRequired": 657.6301757567671,
       "lowerBarContinuity": "Two H22 continue from the original 400 mm pile section; through the six other starters and named beam cage, actual non-vertical starter ends and closed hoops still need their 3D lanes. Offset geometry here compares all eight at equal elevations; the bar lengths descend 1.2m below head. No new shaft, adhesive or friction. Reserve the corresponding two starter capacities before adding pile bending or other head actions.",
       "maximumPlanSet": 6.441086251437075,
       "maximumSlope": 0.0105092266842028,
-      "oneBarTransverseForce": 0.9918383162453114,
+      "oneBarTransverseForce": 1.0031002553854682,
       "originalBarXYLocal": [
         [
           130.26701408409144,
@@ -263,8 +263,8 @@
         7,
         0
       ],
-      "patchStress": 7.361843696787134,
-      "plateBendingStress": 74.2319239426036,
+      "patchStress": 7.445434574770575,
+      "plateBendingStress": 75.07479862893662,
       "sweptBarClearEachOtherSixStillVertical": 83.38615591996627,
       "threadStripTopLowerKN": [
         128.36752773239442,
@@ -272,26 +272,26 @@
       ],
       "twoBlindFullThreadsMM": 45,
       "twoH12TieResistance": 98.3455091558544,
-      "worstRodAt60Percent": 94.37785919455114
+      "worstRodAt60Percent": 95.44948315686278
     }
   ],
   "outer": {
     "DPC": {
       "blindDrillDepthMax": 57,
       "blindM24FullEngagement": 45,
-      "combinedSteelVM": 400.31359462972677,
+      "combinedSteelVM": 400.31348413849673,
       "comparisonStudArea": 353,
       "connectingContinuousWebZ": [
         -50,
         -30
       ],
-      "dowelShearLargestWith160Ecc": 2.8734500417755653,
-      "maxKeyPressure": 8.522785565934996,
+      "dowelShearLargestWith160Ecc": 2.8729435863806487,
+      "maxKeyPressure": 8.523555905523432,
       "netUnboredStockKgPerPier": 114.24000000000004,
-      "nominalDowelBearing50mm": 2.8734500417755653,
+      "nominalDowelBearing50mm": 2.8729435863806487,
       "onePositiveShearKeyFaceMM2": 8400.0,
-      "opposedOneMMSeamStress": 79.42423075934431,
-      "opposedThreeMMSeamStress": 187.13597888242293,
+      "opposedOneMMSeamStress": 79.42654177810961,
+      "opposedThreeMMSeamStress": 187.13828990118824,
       "remainingUncutCore": 26,
       "requiredMaleMinProof": 600,
       "route": "Studs with full-strength forged/rolled M24 transitions to twelve H20s enter separate blind bores above and below the four-bar blocks. A 26mm-or-greater imperforate middle remains. Vertical bar forces go through thick stock to their aligned opposite bars; gross concrete bears across plate/block faces. A shop-butt-welded 20mm web makes one L moisture plane. Positive key faces carry in-plane horizontal load; residual sensitivity tested through twelve embedded/captive studs. No friction or field welding below grade. Demand actual certified compatible threaded bar/plate material, tensile pullout/fatigue/thread-root/bearing/splitting, fabrication/air-edge/thermal details before adoption.",
@@ -324,15 +324,15 @@
     },
     "additionalNoncreditedH12": "two per face at each350/600 station in each leg, H8 horizontal confinement at50 through first150 either side of plate, H10/150 general. Actual lap/development/hoop topology and physical load translation remain to qualify.",
     "axialDomain": [
-      -130,
-      215
+      -125,
+      210
     ],
     "barMaxAxialInBiaxialModel": 125.66370614359174,
     "counterweightClaim": false,
-    "criticalHorizontalResultantKN": 98.5317064361434,
+    "criticalHorizontalResultantKN": 98.51433988597917,
     "lowerCoreGrossCharacteristicKN": 21.808500000000002,
-    "maxPerAxisKN": 71.59139875385397,
-    "maximumCoupledMomentResultant": 512.0746580158775,
+    "maxPerAxisKN": 71.59786960639683,
+    "maximumCoupledMomentResultant": 512.0638019941396,
     "primaryBarXY": [
       [
         43,
@@ -391,11 +391,11 @@
       "count": 12,
       "diameter": 20,
       "governingFirstMoments": [
-        319.36862928188066,
-        -419.8943646909701
+        320.32939250760586,
+        -418.5232440128651
       ],
-      "governingN": 215,
-      "interaction": 0.8076710072182182,
+      "governingN": 210,
+      "interaction": 0.8070053796342506,
       "stations": [
         850,
         950

@@ -30,6 +30,46 @@ def maxRidge(cases):
             hi('displacement',math.hypot(u[gd(a,0)],u[gd(a,1)]),[idx,a])
     return peak
 peak=maxRidge(cases);assert peak['normal'][0]<fy
+# Reconstruct the incremental forces/couples at each actual shoe now that
+# the crown saddle is 200 ABOVE the hinge. Its weak/strong bending and closed
+# torsion run through the outer rafter. The inner opposing half stays pinned.
+from collections import defaultdict
+heelCo=[];extraM={'weak':0,'strong':0,'torsion':0};saddleForce=0.;saddlePostMoment=0.
+for wi,case in enumerate(cases):
+    vv,gg=p['caseLoads'](case);ff=defaultdict(lambda:[0.,0.,0.]);highForce=defaultdict(lambda:[0.,0.])
+    for (tag,a0,b0),n0 in case[2].items():
+        if tag=='radial':
+            for a,b in [(a0,b0),(b0,a0)]:
+                for j in range(2):ff[a][j]+=n0*(b[j]-a[j])/math.dist(a,b)
+        if tag=='leg':
+            d=math.sqrt(math.dist(a0,b0)**2+(p['zhigh']-p['zheel'])**2)
+            for j in range(2):
+                hh=n0*(b0[j]-a0[j])/d;ff[a0][j]+=hh;highForce[b0][j]-=hh
+            for mode,terms,values in p['localForces'](case[1],p['outerTerms'].get((a0,b0),[])):
+                pick=[0,1] if mode=='torsion' else [1,3];extraM[mode]=max(extraM[mode],max(abs(values[k])/1e6 for k in pick))
+                for term,val in zip(terms,values):
+                    for k,coef in term:
+                        for j in range(3):
+                            if k==p['dof'](a0,j):ff[a0][j]-=coef*val/(1000 if j<2 else 1e6)
+                        for j in range(2):
+                            if k==p['highD'](b0,j):highForce[b0][j]-=coef*val/1000
+    saddleForce=max(saddleForce,max(math.hypot(*F) for F in highForce.values()))
+    for ax0,inner in p['radials']:
+        for a,b in [(ax0,inner),(inner,ax0)]:
+            hx,hy=[(y-x)/math.dist(a,b) for x,y in zip(a,b)];f=ff[a]
+            g=[gg[a][j]-.06*f[j] for j in range(2)] # actual sole at 6660, ring centroid6600
+            bend=10.3+abs(g[0]*hx+g[1]*hy);roll=10+abs(-g[0]*hy+g[1]*hx)
+            direct=60+math.hypot(*f[:2]);dv=70+abs(vv[a]);yaw=abs(f[2]);hip=(a[0]!=b[0] and a[1]!=b[1])
+            ang=math.atan(math.tan(math.radians(25))/(math.sqrt(2) if hip else 1))
+            hDemand=math.hypot((dv/2+roll/.14)/2+bend/2/.16,(direct/2+(10+yaw)/.14)/2)
+            ca,cb,ct=160,180,10;cw=2*ct*(ca+cb);ix=ct*(ca*cb**2/2+cb**3/6);iy=ct*(cb*ca**2/2+ca**3/6)
+            sg=dv*1000/cw+roll*1e6*cb/2/ix+bend*1e6*ca/2/iy;sh=direct*1000/cw+(10*math.sin(ang)+yaw)*1e6*math.hypot(ca,cb)/2/(ix+iy)
+            heelCo.append((hDemand,math.hypot(sg,sh),dv/2+roll/.14+bend/.16,wi,a))
+coDemand=max(z[0] for z in heelCo);coFoot=max(z[1] for z in heelCo);coSkin=max(z[2] for z in heelCo)*1000*6/(160*20**2/6)
+assert coDemand<144 and coFoot<100 and coSkin<fy,(coDemand,coFoot,coSkin)
+sec=S['primary'];extraPrimary=extraM['strong']*1e6/(sec['W']*fy)+extraM['weak']*1e6/(sec['Wminor']*fy)+extraM['torsion']/sec['TR']+max(map(abs,signed(cases,'leg')))*1000/(sec['A']*fy)
+combinedPrimary=max(v['primaryRevisedInteraction'] for v in heel['node'].values())+extraPrimary
+assert combinedPrimary<1
 # Each side of the crown pin sees its real signed incremental upper-leg
 # force; it is not assumed to pass a bending moment across the pin.
 leg=max(map(abs,signed(cases,'leg')));radial=max(map(abs,signed(cases,'radial')))
@@ -67,7 +107,7 @@ for f in w['frames']:
 # axis: the 200 mm eccentricity is an explicit collector fitting load, not
 # a proof that the input plane passes through a pair of intersecting tubes.
 # Two longitudinal neighbours can contribute at each end of the corner.
-ridgeN=max(map(abs,signed(cases,'ridge')));localF=2*math.hypot(ridgeN,peak['shear'][0])
+ridgeN=max(map(abs,signed(cases,'ridge')));localF=max(saddleForce,2*math.hypot(ridgeN,peak['shear'][0]))
 seatM=localF*.200;couple=seatM/.240
 # 160x240x16 plate plus two 180x200x12 webs. Positive four-lane saddle
 # secured to ONE closed rafter half only, on the outer side of the actual
@@ -84,7 +124,7 @@ wr=2*100*7*.1;assert rdF<wr
 saddleKg=(160*240*16+2*180*200*12+2*140*80*12)*7850/1e9
 reserve=8.5/0.00981-12*saddleKg
 assert reserve>0
-out={'sources':{str(f.relative_to(D.parents[2])):hashlib.sha256(f.read_bytes()).hexdigest() for f in [D/'current-house-welded-network.json',D/'current-house-welded-heel.json',D/'current-house-membrane.py',D/'current-house-roof-bracing.py']},'role':'Existing purlin/primary/tie space frame instead of twelve additional plan CHS. Perforated finite first-floor membrane, fixed L bases and project wind hypotheses; no construction or site adoption.','coherentWindStates':len(cases),'referenceElevations':{'ringCentre':p['rr'],'rafterHeelCentre':p['zheel'],'rafterCrownCentre':p['zhigh'],'eave':heel['height']['eave'],'ridgeCover':heel['height']['ridge']},'comparison':{'bracedTubeLengthM':sum(math.dist(a,b) for a,b in p['braces'])/1000,'bracedTubeMassKg':p['tubeG']/0.00981,'roofDeflections':[max(math.hypot(u[p['dof'](loc,0)],u[p['dof'](loc,1)]) for _,u,*_ in ss for loc in p['nodes']) for ss in [p['actual'],p['control'],cases]],'comparisonRoles':['12 horizontal CHS and flat elevated couple','existing lower rings and ties, flat elevated couple','actual pitched legs/ridge row plus finite vertical rings on 22 springs40kN/mm']},'exactSpaceModel':'At ridge the continuous horizontal purlin carries axial force and finite weak-axis bending, with an unrestrained pin between the two pitched primary rafters. Existing radial twin rails at 6770, pitched legs at 6860, vertical/moment/roll flexibility of both real collector rings at6600. The roof pressure band above the ring is split between the ring and 12 crown nodes preserving its signed force, location and first moment. Each leg returns a vertical and a horizontal component to its own heel. Both N and N*x/y are conserved; independently re-solved 2D ring spring forces must match all 22 reactions to 0.001 kN in every wind programme. Actual cladding/purlin pressure transfer, upper-station stiffness, first-floor membrane and soil flexibility remain qualifications.','ridgeJointRotationalSpringNmmPerRad':p['jointSpring'],'ridgeJointMaterialComplianceMMPerN':p['sideCompliance'],'axialRanges':{k:signed(cases,k) for k in ['radial','leg','ridge','ring']},'ridge':peak,'weldedHeel':{'componentN_V_T':[N,V,T],'additionalLeverMoment':leverM,'two80mmStationSegmentsRequiredAt9':cheekDemand,'two80mmAt7Previous':112,'two80mmAt9Resistance':cheekR,'sole160x180Throat10Stress':foot,'maximumShoeToThroughWebOffset':6,'skinStressAt6':skin,'remaining':'Actual weld preparation, distortion/tolerance with 6 mm alignment budget, off-plane roof loads, section/fire/corrosion protection. The fitted webs must line up under both normal and 45 degree heels.'},'crown':{'maximumResultant':pinDemand,'40pinCombined':pin(40),'45pinCombined':pin(45),'outerHalfRidgeSaddleForce':localF,'saddleMomentAt200Ecc':seatM,'singleHalfPositive240Couple':couple,'nominalWeldStress':ws,'ridgeCornerFlangeForce':rdF,'twoDeveloped100x7WeldResistance':wr,'nominalSaddleGrossKgEach':saddleKg,'remaining8point5kNAllowanceKgAfter12Saddles':reserve,'remaining':'The purlin underside clears the existing clevis only after actual 3D end plate/diaphragm and roof-layer placement. Verify one-sided saddle, restraints and deflection of the 200 mm eccentric connection in both directions. A rigid weld through both opposing rafter halves would defeat the assumed crown hinge.'},'tieRailChecks':rails,'admitted':False}
+out={'sources':{str(f.relative_to(D.parents[2])):hashlib.sha256(f.read_bytes()).hexdigest() for f in [D/'current-house-welded-network.json',D/'current-house-welded-heel.json',D/'current-house-membrane.py',D/'current-house-roof-bracing.py']},'role':'Existing purlin/primary/tie space frame instead of twelve additional plan CHS. Perforated finite first-floor membrane, fixed L bases and project wind hypotheses; no construction or site adoption.','coherentWindStates':len(cases),'referenceElevations':{'ringCentre':p['rr'],'rafterHeelCentre':p['zheel'],'rafterCrownCentre':p['zhigh'],'ridgePurlinCentre':p['zhigh']+p['seatZ'],'eave':heel['height']['eave'],'ridgeCover':heel['height']['ridge']},'comparison':{'bracedTubeLengthM':sum(math.dist(a,b) for a,b in p['braces'])/1000,'bracedTubeMassKg':p['tubeG']/0.00981,'roofDeflections':[max(math.hypot(u[p['dof'](loc,0)],u[p['dof'](loc,1)]) for _,u,*_ in ss for loc in p['nodes']) for ss in [p['actual'],p['control'],cases]],'comparisonRoles':['12 horizontal CHS and flat elevated couple','existing lower rings and ties, flat elevated couple','actual pitched legs/ridge row plus finite vertical rings on 22 springs40kN/mm']},'exactSpaceModel':'At ridge the continuous horizontal purlin carries axial force and finite weak-axis bending, with an unrestrained pin between the two pitched primary rafters. Existing radial twin rails at 6770, pitched legs at 6860, vertical/moment/roll flexibility of both real collector rings at6600. The roof pressure band above the ring is split between the ring and the actual 12 ridge-purlin stations 200 mm above the rafter pins. The single outer rafter uses 3D bending in both axes and closed-box torsion to return the eccentric saddle couple to its own heel. The inner half is pinned. These two force levels preserve its signed force, location and first moment. Each leg returns a vertical and a horizontal component to its own heel. Both N and N*x/y are conserved; independently re-solved 2D ring spring forces must match all 22 reactions to 0.001 kN in every wind programme. Actual cladding/purlin pressure transfer, upper-station stiffness, first-floor membrane and soil flexibility remain qualifications.','ridgeJointRotationalSpringNmmPerRad':p['jointSpring'],'ridgeJointMaterialComplianceMMPerN':p['sideCompliance'],'axialRanges':{k:signed(cases,k) for k in ['radial','leg','ridge','ring']},'ridge':peak,'outerRafterWindMoments':extraM,'outerRafterExistingPlusWindUpperBound':combinedPrimary,'physicalSaddleForceKN':saddleForce,'purlinCentreAbovePin':p['seatZ'],'weldedHeel':{'windAndBaselineExactMaxStationDemand':coDemand,'windAndBaselineMaxSoleWeldStress':coFoot,'windAndBaselineMaxSkinStress':coSkin,'componentN_V_T':[N,V,T],'additionalLeverMoment':leverM,'two80mmStationSegmentsRequiredAt9':cheekDemand,'two80mmAt7Previous':112,'two80mmAt9Resistance':cheekR,'sole160x180Throat10Stress':foot,'maximumShoeToThroughWebOffset':6,'skinStressAt6':skin,'remaining':'Actual weld preparation, distortion/tolerance with 6 mm alignment budget, off-plane roof loads, section/fire/corrosion protection. The fitted webs must line up under both normal and 45 degree heels.'},'crown':{'maximumResultant':pinDemand,'40pinCombined':pin(40),'45pinCombined':pin(45),'outerHalfRidgeSaddleForce':localF,'saddleMomentAt200Ecc':seatM,'singleHalfPositive240Couple':couple,'nominalWeldStress':ws,'ridgeCornerFlangeForce':rdF,'twoDeveloped100x7WeldResistance':wr,'nominalSaddleGrossKgEach':saddleKg,'remaining8point5kNAllowanceKgAfter12Saddles':reserve,'remaining':'The purlin underside clears the existing clevis only after actual 3D end plate/diaphragm and roof-layer placement. Verify one-sided saddle, restraints and deflection of the 200 mm eccentric connection in both directions. A rigid weld through both opposing rafter halves would defeat the assumed crown hinge.'},'tieRailChecks':rails,'admitted':False}
 dest=Path(__file__).with_suffix('.json');ss=json.dumps(out,indent=2,sort_keys=True)+'\n'
 if __name__=='__main__':
     if '--check' in sys.argv:assert dest.read_text()==ss

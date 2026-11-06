@@ -16,6 +16,13 @@ def subject(m):
  # Explicitly exclude downstream foul/receiver route corrections;
  # this is a kitchen applicability projection, not whole-Services admission.
  x['architecturalServices'].pop('eastFoulExit')
+ # Exact utility working-prose correction: OPENARCH was already selected in
+ # both source domains. Preserve the historical kitchen projection and every
+ # numeric/body/field guard; permit only this authenticated prose replacement.
+ working=x['architecturalServices']['utility']['working']
+ if digest(working)=='f0a49848f7a7e1128e888135f89915d8af8b7a339e31565fb08762d5c72db842':
+  assert working==b['rewinds']['utility']['working']
+  x['architecturalServices']['utility']['working']=old['architecturalServices']['utility']['working']
  for d in x['architecturalServices']['otherServiceDuties']:
   if d['id']=='east-soil':
    d.pop('path');d.pop('decision')

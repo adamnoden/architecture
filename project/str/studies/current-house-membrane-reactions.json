@@ -5,13 +5,13 @@
   "cases": [
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        21.656126282360873,
-        15.841363715738131,
-        19.131792510369365
+        21.606059039368716,
+        15.78188979104848,
+        19.132057123128764
       ],
       "cornerRangeDisplacementXY": [
-        0.5453089064849737,
-        0.2746933013186412
+        0.5434763261828532,
+        0.27348983296204477
       ],
       "criticalElementPoints": [
         [
@@ -57,9 +57,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 18.51559671128565,
-      "maximumWeakAxisBeamMomentKNm": 0.4116226143188508,
-      "recoveredErrN": 1.1245265341131017e-07,
+      "maximumDedicatedEdgeChordKN": 18.485606083512,
+      "maximumWeakAxisBeamMomentKNm": 0.4107484411487511,
+      "recoveredErrN": 1.5304613043554127e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         94.581
@@ -68,13 +68,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        22.275433926914488,
-        14.085115937179147,
-        25.198646098855722
+        22.1093211310987,
+        13.75560869158118,
+        25.06910114833668
       ],
       "cornerRangeDisplacementXY": [
-        1.0303845794040543,
-        1.2980357563002127
+        1.0418806360228197,
+        1.2876440880778826
       ],
       "criticalElementPoints": [
         [
@@ -120,9 +120,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 8.817495585465442,
-      "maximumWeakAxisBeamMomentKNm": 0.9115288320368765,
-      "recoveredErrN": 3.510192527755862e-07,
+      "maximumDedicatedEdgeChordKN": 8.843893403020209,
+      "maximumWeakAxisBeamMomentKNm": 0.9041357726938084,
+      "recoveredErrN": 3.939403541153297e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         47.29050000000001
@@ -131,13 +131,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        21.038283635532952,
-        19.521803039325782,
-        24.49611096468988
+        20.51624095817183,
+        18.94681890096882,
+        24.29454172461806
       ],
       "cornerRangeDisplacementXY": [
-        0.9464278425811395,
-        1.3976947971793487
+        0.9565568234064545,
+        1.3857272774443752
       ],
       "criticalElementPoints": [
         [
@@ -183,9 +183,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 9.793040447910558,
-      "maximumWeakAxisBeamMomentKNm": 0.9322081856356719,
-      "recoveredErrN": 8.932875061873347e-08,
+      "maximumDedicatedEdgeChordKN": 9.734073532120773,
+      "maximumWeakAxisBeamMomentKNm": 0.9231210793896589,
+      "recoveredErrN": 3.063451003981754e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         47.2905
@@ -194,13 +194,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        27.73910835705022,
-        12.452833160574023,
-        12.162702938607346
+        27.69152033315889,
+        12.414857493712923,
+        12.130122836348999
       ],
       "cornerRangeDisplacementXY": [
-        0.5299063229061871,
-        0.23473694837339387
+        0.527911852104932,
+        0.23337547978759243
       ],
       "criticalElementPoints": [
         [
@@ -246,9 +246,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 11.796643088048434,
-      "maximumWeakAxisBeamMomentKNm": 0.4954821221263958,
-      "recoveredErrN": 1.5882869774941355e-07,
+      "maximumDedicatedEdgeChordKN": 11.787826069696033,
+      "maximumWeakAxisBeamMomentKNm": 0.4955038721576299,
+      "recoveredErrN": 2.019569365074858e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         -94.581
@@ -257,13 +257,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        18.532797631789382,
-        21.28379431345595,
-        9.328827866360829
+        18.12019624308061,
+        20.467555966663017,
+        9.089063581498113
       ],
       "cornerRangeDisplacementXY": [
-        0.9695923708238703,
-        1.4004932591351489
+        0.9796562012362526,
+        1.388256023312214
       ],
       "criticalElementPoints": [
         [
@@ -309,9 +309,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 7.246910248045898,
-      "maximumWeakAxisBeamMomentKNm": 0.34063901838623284,
-      "recoveredErrN": 8.045335562201217e-07,
+      "maximumDedicatedEdgeChordKN": 7.160012815583656,
+      "maximumWeakAxisBeamMomentKNm": 0.339864251366195,
+      "recoveredErrN": 3.045824996661395e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         -47.29050000000001
@@ -320,13 +320,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        14.0910203851416,
-        11.921871602611965,
-        7.903498232474338
+        14.006860504168074,
+        11.267028255631,
+        7.647607200608414
       ],
       "cornerRangeDisplacementXY": [
-        1.0397199607111218,
-        1.3136111964934996
+        1.0508802374899102,
+        1.3028213386607725
       ],
       "criticalElementPoints": [
         [
@@ -372,9 +372,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 7.460778831740691,
-      "maximumWeakAxisBeamMomentKNm": 0.40649463077190223,
-      "recoveredErrN": 1.5784462448209524e-07,
+      "maximumDedicatedEdgeChordKN": 7.436676443849564,
+      "maximumWeakAxisBeamMomentKNm": 0.40625857285530476,
+      "recoveredErrN": 5.145420800545253e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         -47.2905
@@ -383,13 +383,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        128.11316426385707,
-        160.7888828014194,
-        125.57029063435007
+        128.1130701825462,
+        160.82203954612595,
+        125.57253760782407
       ],
       "cornerRangeDisplacementXY": [
-        0.13203286171015183,
-        0.4623522889428188
+        0.131658409181866,
+        0.4612412674426112
       ],
       "criticalElementPoints": [
         [
@@ -435,9 +435,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 20.181649935270805,
-      "maximumWeakAxisBeamMomentKNm": 8.89135279555408,
-      "recoveredErrN": 3.4981276257894933e-06,
+      "maximumDedicatedEdgeChordKN": 20.155504932033008,
+      "maximumWeakAxisBeamMomentKNm": 8.891767316069632,
+      "recoveredErrN": 3.0297160265035927e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         0.0
@@ -446,13 +446,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        132.1609506387109,
-        161.88584706118777,
-        124.64188434281486
+        132.15067845156514,
+        161.90405306477516,
+        124.64528487632137
       ],
       "cornerRangeDisplacementXY": [
-        0.6172269069877849,
-        0.6590332542607111
+        0.6159159533313945,
+        0.6577799834812899
       ],
       "criticalElementPoints": [
         [
@@ -498,9 +498,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 26.09383269727894,
-      "maximumWeakAxisBeamMomentKNm": 8.479730181235215,
-      "recoveredErrN": 5.747697287006304e-06,
+      "maximumDedicatedEdgeChordKN": 26.062475475182456,
+      "maximumWeakAxisBeamMomentKNm": 8.481018874920919,
+      "recoveredErrN": 2.5703120627440512e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         94.581
@@ -509,13 +509,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        128.7135759818445,
-        156.49635795516997,
-        124.90494282551919
+        128.79140532853302,
+        156.6395098869412,
+        124.90196610871114
       ],
       "cornerRangeDisplacementXY": [
-        1.0464628426874922,
-        1.6723634910296301
+        1.0576710981244508,
+        1.6623483643576837
       ],
       "criticalElementPoints": [
         [
@@ -561,9 +561,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 24.618293688058813,
-      "maximumWeakAxisBeamMomentKNm": 8.763065804674874,
-      "recoveredErrN": 4.722096491605043e-06,
+      "maximumDedicatedEdgeChordKN": 24.634366936746506,
+      "maximumWeakAxisBeamMomentKNm": 8.756980030958525,
+      "recoveredErrN": 4.158613592153415e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         47.29050000000001
@@ -572,13 +572,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        131.56053892071532,
-        166.17837190743322,
-        125.30723215164404
+        131.4723433055779,
+        166.08658272395854,
+        125.31585637543394
       ],
       "cornerRangeDisplacementXY": [
-        0.9415240669461316,
-        1.7012409714955266
+        0.9518284252853864,
+        1.6876765874322923
       ],
       "criticalElementPoints": [
         [
@@ -624,9 +624,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 21.657188944491235,
-      "maximumWeakAxisBeamMomentKNm": 8.608017172114396,
-      "recoveredErrN": 4.539062501862645e-06,
+      "maximumDedicatedEdgeChordKN": 21.583613470469466,
+      "maximumWeakAxisBeamMomentKNm": 8.615806160032006,
+      "recoveredErrN": 4.9893933464773e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         47.2905
@@ -635,13 +635,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        124.96631564600189,
-        146.02008821765716,
-        127.43400610335487
+        124.96814103336075,
+        146.07436803787039,
+        127.4119120137813
       ],
       "cornerRangeDisplacementXY": [
-        0.5379309011325129,
-        0.6102071746745628
+        0.5368769125620441,
+        0.6091820625787605
       ],
       "criticalElementPoints": [
         [
@@ -687,9 +687,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 22.906557995182844,
-      "maximumWeakAxisBeamMomentKNm": 9.230191542325864,
-      "recoveredErrN": 2.6984780561178923e-06,
+      "maximumDedicatedEdgeChordKN": 22.884940369124365,
+      "maximumWeakAxisBeamMomentKNm": 9.229611042304617,
+      "recoveredErrN": 2.2645726858172566e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         -94.581
@@ -698,13 +698,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        125.48496996337069,
-        155.27563889773114,
-        125.69178478093681
+        125.47960351788147,
+        155.4477201493351,
+        125.68890738654633
       ],
       "cornerRangeDisplacementXY": [
-        0.9744961464588764,
-        1.5976466808023426
+        0.9843845993573179,
+        1.58630537198739
       ],
       "criticalElementPoints": [
         [
@@ -750,9 +750,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 18.34436728986023,
-      "maximumWeakAxisBeamMomentKNm": 9.191735360186104,
-      "recoveredErrN": 5.875263013876975e-06,
+      "maximumDedicatedEdgeChordKN": 18.355069739927313,
+      "maximumWeakAxisBeamMomentKNm": 9.184944141872249,
+      "recoveredErrN": 2.71043973043561e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         -47.29050000000001
@@ -761,13 +761,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        126.44076111920847,
-        151.5333321213427,
-        125.03228653925349
+        126.36516139178087,
+        151.44868743466031,
+        125.03948504483206
       ],
       "cornerRangeDisplacementXY": [
-        1.023641697427684,
-        1.7191855619470604
+        1.03508977538828,
+        1.7075725586937902
       ],
       "criticalElementPoints": [
         [
@@ -813,9 +813,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 24.743840640592996,
-      "maximumWeakAxisBeamMomentKNm": 8.929808977693819,
-      "recoveredErrN": 4.626526788342744e-06,
+      "maximumDedicatedEdgeChordKN": 24.685375561229847,
+      "maximumWeakAxisBeamMomentKNm": 8.936434216501967,
+      "recoveredErrN": 2.6334746507927775e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         -47.2905
@@ -824,13 +824,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        121.84549888303994,
-        171.01869897116484,
-        114.66718442552018
+        121.76023592964239,
+        170.9080378115084,
+        114.58949354124898
       ],
       "cornerRangeDisplacementXY": [
-        1.358322906355712,
-        0.9529605536285033
+        1.346791590141744,
+        0.9632790518409078
       ],
       "criticalElementPoints": [
         [
@@ -876,9 +876,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 13.20302987920669,
-      "maximumWeakAxisBeamMomentKNm": 7.188264198057125,
-      "recoveredErrN": 1.6708127077436075e-06,
+      "maximumDedicatedEdgeChordKN": 13.149140526264102,
+      "maximumWeakAxisBeamMomentKNm": 7.195513697557396,
+      "recoveredErrN": 2.29170655074995e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         0.0
@@ -887,13 +887,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        125.89328525790782,
-        172.1156632309345,
-        118.35238601427855
+        125.79784419866088,
+        171.99005133015737,
+        118.26541645707943
       ],
       "cornerRangeDisplacementXY": [
-        1.8270897742919758,
-        0.874948217627753
+        1.8123448233571842,
+        0.8863279349175421
       ],
       "criticalElementPoints": [
         [
@@ -939,9 +939,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 19.907925729892007,
-      "maximumWeakAxisBeamMomentKNm": 6.776641583738292,
-      "recoveredErrN": 2.1206506062299013e-06,
+      "maximumDedicatedEdgeChordKN": 19.825093700508514,
+      "maximumWeakAxisBeamMomentKNm": 6.78476525640866,
+      "recoveredErrN": 1.3039043551543728e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         94.581
@@ -950,13 +950,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        122.44591060103755,
-        166.7261741249164,
-        115.20928001275368
+        122.43857107563282,
+        166.72550815232495,
+        115.20260232652602
       ],
       "cornerRangeDisplacementXY": [
-        2.3121654472110564,
-        2.2407317177746466
+        2.3107491331971506,
+        2.2413950559902505
       ],
       "criticalElementPoints": [
         [
@@ -1002,9 +1002,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 17.639673631994725,
-      "maximumWeakAxisBeamMomentKNm": 7.059977207177913,
-      "recoveredErrN": 1.081143636838533e-06,
+      "maximumDedicatedEdgeChordKN": 17.62800253097751,
+      "maximumWeakAxisBeamMomentKNm": 7.060726412446282,
+      "recoveredErrN": 6.949176167836413e-07,
       "sumFloorEdgeLoadKN": [
         47.2905,
         47.29050000000001
@@ -1013,13 +1013,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        125.29287353990632,
-        176.40818807718142,
-        117.81029042704466
+        125.11950905266737,
+        176.17258098933985,
+        117.65230767180284
       ],
       "cornerRangeDisplacementXY": [
-        0.796705194887922,
-        0.7598049284708503
+        0.7704641873343645,
+        0.7345598364417167
       ],
       "criticalElementPoints": [
         [
@@ -1065,9 +1065,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 14.678568888427389,
-      "maximumWeakAxisBeamMomentKNm": 6.904928574617465,
-      "recoveredErrN": 7.894395821494982e-07,
+      "maximumDedicatedEdgeChordKN": 14.577249064700473,
+      "maximumWeakAxisBeamMomentKNm": 6.919552541519773,
+      "recoveredErrN": 2.1943924366496503e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         47.2905
@@ -1076,13 +1076,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        116.41237077208551,
-        156.24990438740295,
-        109.70585161737128
+        116.34000084038122,
+        156.1603663032519,
+        109.63991475444514
       ],
       "cornerRangeDisplacementXY": [
-        1.6277721062403785,
-        1.0905632304752073
+        1.618611030725865,
+        1.0995857305267647
       ],
       "criticalElementPoints": [
         [
@@ -1128,9 +1128,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 15.927937939118276,
-      "maximumWeakAxisBeamMomentKNm": 7.5271029448289255,
-      "recoveredErrN": 1.6549311112612486e-06,
+      "maximumDedicatedEdgeChordKN": 15.878575963355612,
+      "maximumWeakAxisBeamMomentKNm": 7.533357423792333,
+      "recoveredErrN": 2.354634489165619e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -94.581
@@ -1139,13 +1139,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        118.08477391671357,
-        165.5054550674765,
-        111.23948526541038
+        118.08790963113682,
+        165.53371841471716,
+        111.24237441877214
       ],
       "cornerRangeDisplacementXY": [
-        2.2919428936694493,
-        2.1660149075473587
+        2.292096743144312,
+        2.1653520636199577
       ],
       "criticalElementPoints": [
         [
@@ -1191,9 +1191,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 12.322262306040777,
-      "maximumWeakAxisBeamMomentKNm": 7.488646762689169,
-      "recoveredErrN": 2.5306853785878047e-06,
+      "maximumDedicatedEdgeChordKN": 12.335724061727694,
+      "maximumWeakAxisBeamMomentKNm": 7.488690523360017,
+      "recoveredErrN": 9.310688255936839e-07,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -47.29050000000001
@@ -1202,13 +1202,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        120.17309573840839,
-        161.76314829109057,
-        113.13355077748102
+        120.01232713888055,
+        161.53468570004318,
+        112.98703387692247
       ],
       "cornerRangeDisplacementXY": [
-        0.6581797354165082,
-        0.777749518922382
+        0.6389548294896135,
+        0.7544558077032142
       ],
       "criticalElementPoints": [
         [
@@ -1254,9 +1254,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 17.76522058452867,
-      "maximumWeakAxisBeamMomentKNm": 7.226720380196894,
-      "recoveredErrN": 1.8025784811470658e-06,
+      "maximumDedicatedEdgeChordKN": 17.67901115546061,
+      "maximumWeakAxisBeamMomentKNm": 7.240180597989732,
+      "recoveredErrN": 4.507681296672672e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -47.2905
@@ -1265,13 +1265,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.84051369612253,
-        36.803322775125665,
-        35.769375082715776
+        34.833597613162446,
+        36.6641965686937,
+        35.679772851244756
       ],
       "cornerRangeDisplacementXY": [
-        1.356859307088576,
-        0.9414360430246775
+        1.345656997899817,
+        0.9531167509905755
       ],
       "criticalElementPoints": [
         [
@@ -1317,9 +1317,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 7.5549640267218745,
-      "maximumWeakAxisBeamMomentKNm": 1.7568545680204992,
-      "recoveredErrN": 7.4844883783953264e-06,
+      "maximumDedicatedEdgeChordKN": 7.578881813310191,
+      "maximumWeakAxisBeamMomentKNm": 1.7637881421965496,
+      "recoveredErrN": 2.7396436053095385e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         0.0
@@ -1328,13 +1328,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        33.759396185110084,
-        22.225014239150514,
-        33.405328276611975
+        33.75396267872858,
+        22.19579262224491,
+        33.40203858405739
       ],
       "cornerRangeDisplacementXY": [
-        1.6223427996504771,
-        1.1038365610518674
+        1.6130775141124984,
+        1.1142765899789797
       ],
       "criticalElementPoints": [
         [
@@ -1354,15 +1354,15 @@
         [
           [
             332.5,
-            5538.333333333333
-          ],
-          [
-            402.5,
-            5538.333333333333
+            6644.166666666666
           ],
           [
             402.5,
             6644.166666666666
+          ],
+          [
+            402.5,
+            7750.0
           ]
         ],
         [
@@ -1380,9 +1380,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 21.286564816702867,
-      "maximumWeakAxisBeamMomentKNm": 2.1408684527321684,
-      "recoveredErrN": 2.1990263121551834e-06,
+      "maximumDedicatedEdgeChordKN": 21.30409973953875,
+      "maximumWeakAxisBeamMomentKNm": 2.146901030176032,
+      "recoveredErrN": 1.4549950719811022e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         94.581
@@ -1391,13 +1391,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.12686515631496,
-        28.549878419997388,
-        33.83044891167551
+        34.11241958113131,
+        28.258591055890307,
+        33.65871981644826
       ],
       "cornerRangeDisplacementXY": [
-        0.6759149570693372,
-        0.7194029374011275
+        0.6565206907060444,
+        0.6990693125167762
       ],
       "criticalElementPoints": [
         [
@@ -1431,21 +1431,21 @@
         [
           [
             332.5,
-            4432.5
+            6644.166666666666
           ],
           [
             402.5,
-            5538.333333333333
+            6644.166666666666
           ],
           [
-            332.5,
-            5538.333333333333
+            402.5,
+            7750.0
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 11.943127168215561,
-      "maximumWeakAxisBeamMomentKNm": 1.8519018357499815,
-      "recoveredErrN": 1.1061074474127963e-06,
+      "maximumDedicatedEdgeChordKN": 12.005718628966289,
+      "maximumWeakAxisBeamMomentKNm": 1.8651531485155937,
+      "recoveredErrN": 2.882026819861494e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         47.29050000000001
@@ -1454,13 +1454,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.47304472491957,
-        30.478458594278248,
-        34.07067608544081
+        34.47514071076055,
+        30.512367203043198,
+        34.072610083171135
       ],
       "cornerRangeDisplacementXY": [
-        2.263874589791712,
-        2.2371026490666432
+        2.264268967193447,
+        2.2360421183898507
       ],
       "criticalElementPoints": [
         [
@@ -1506,9 +1506,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 12.579908331485958,
-      "maximumWeakAxisBeamMomentKNm": 2.0458211850026937,
-      "recoveredErrN": 1.7465463315602392e-06,
+      "maximumDedicatedEdgeChordKN": 12.568688893241744,
+      "maximumWeakAxisBeamMomentKNm": 2.0455360238569416,
+      "recoveredErrN": 4.2658903112169355e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         47.2905
@@ -1517,13 +1517,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        40.53881953661102,
-        37.88325286510673,
-        40.02601861236049
+        40.10157311465237,
+        37.72412464893676,
+        39.92406284726591
       ],
       "cornerRangeDisplacementXY": [
-        1.7956089274297513,
-        0.8545539803830282
+        1.7809898871776335,
+        0.8676820663391345
       ],
       "criticalElementPoints": [
         [
@@ -1569,9 +1569,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 11.329769710483282,
-      "maximumWeakAxisBeamMomentKNm": 2.0419273442687422,
-      "recoveredErrN": 1.1845022527268156e-06,
+      "maximumDedicatedEdgeChordKN": 11.225903374572148,
+      "maximumWeakAxisBeamMomentKNm": 2.034097344747231,
+      "recoveredErrN": 3.821305654128082e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -94.581
@@ -1580,13 +1580,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        38.03248164894797,
-        44.27055768239064,
-        39.51687757788403
+        37.84331770572427,
+        43.20975607217967,
+        39.33343706653235
       ],
       "cornerRangeDisplacementXY": [
-        0.7558889667186297,
-        0.6446861271738396
+        0.7301096496877237,
+        0.6230263201464821
       ],
       "criticalElementPoints": [
         [
@@ -1605,16 +1605,16 @@
         ],
         [
           [
-            3917.5,
-            4250.0
+            332.5,
+            5538.333333333333
           ],
           [
-            4250.0,
-            4250.0
+            402.5,
+            5538.333333333333
           ],
           [
-            4250.0,
-            4432.5
+            402.5,
+            6644.166666666666
           ]
         ],
         [
@@ -1632,9 +1632,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 9.722965693537967,
-      "maximumWeakAxisBeamMomentKNm": 2.003471162129002,
-      "recoveredErrN": 1.0421563274576329e-06,
+      "maximumDedicatedEdgeChordKN": 9.555014565662173,
+      "maximumWeakAxisBeamMomentKNm": 1.9894304443148838,
+      "recoveredErrN": 2.3670208975090645e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -47.29050000000001
@@ -1643,13 +1643,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.62772619860696,
-        31.18152109218857,
-        36.27851611719117
+        34.619443753102665,
+        31.178565145452602,
+        36.27039863197767
       ],
       "cornerRangeDisplacementXY": [
-        2.3054225652346862,
-        2.255047239518177
+        2.3039582725626113,
+        2.2559380896513477
       ],
       "criticalElementPoints": [
         [
@@ -1695,9 +1695,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 12.170187828025183,
-      "maximumWeakAxisBeamMomentKNm": 1.7415447796367016,
-      "recoveredErrN": 3.2911248126765713e-06,
+      "maximumDedicatedEdgeChordKN": 12.165213509641543,
+      "maximumWeakAxisBeamMomentKNm": 1.7409205189445778,
+      "recoveredErrN": 1.5112636901903898e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -47.2905
@@ -1706,13 +1706,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        12.48923966836465,
-        20.03608312900532,
-        11.243783094227595
+        12.487902524764177,
+        20.01460413403739,
+        11.22621466617487
       ],
       "cornerRangeDisplacementXY": [
-        0.17125245858554905,
-        0.4557738984983569
+        0.1706547609659177,
+        0.4548439433041078
       ],
       "criticalElementPoints": [
         [
@@ -1758,9 +1758,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 9.851589911843522,
-      "maximumWeakAxisBeamMomentKNm": 0.47925980288100445,
-      "recoveredErrN": 5.486534064402804e-06,
+      "maximumDedicatedEdgeChordKN": 9.84920117915519,
+      "maximumWeakAxisBeamMomentKNm": 0.4792410211951955,
+      "recoveredErrN": 1.5234763850457966e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         0.0
@@ -1769,13 +1769,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        24.806441275278317,
-        21.302252160726574,
-        29.04928758062676
+        24.776675921026566,
+        21.266677919504474,
+        29.038990134554368
       ],
       "cornerRangeDisplacementXY": [
-        0.6359540884725865,
-        0.5155680148643702
+        0.6347481522197072,
+        0.514757970289117
       ],
       "criticalElementPoints": [
         [
@@ -1821,9 +1821,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 23.18229679395085,
-      "maximumWeakAxisBeamMomentKNm": 0.7660218117232775,
-      "recoveredErrN": 2.1691230358555913e-06,
+      "maximumDedicatedEdgeChordKN": 23.1500583001553,
+      "maximumWeakAxisBeamMomentKNm": 0.7661360815011706,
+      "recoveredErrN": 3.889937943313271e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         94.581
@@ -1832,13 +1832,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        29.363772023607446,
-        34.121199066184424,
-        35.116141169112474
+        29.187834745117232,
+        33.77021282561841,
+        34.97603415977179
       ],
       "cornerRangeDisplacementXY": [
-        1.0049883883784494,
-        1.5890399865131344
+        1.0169880850060142,
+        1.5766094717149786
       ],
       "criticalElementPoints": [
         [
@@ -1884,9 +1884,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 13.854475576822487,
-      "maximumWeakAxisBeamMomentKNm": 1.344261979334268,
-      "recoveredErrN": 8.022587280720472e-06,
+      "maximumDedicatedEdgeChordKN": 13.759869191350527,
+      "maximumWeakAxisBeamMomentKNm": 1.3363506558956173,
+      "recoveredErrN": 1.8302016542293131e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         47.29050000000001
@@ -1895,13 +1895,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        20.507649759129453,
-        24.98269148431536,
-        18.255989555756997
+        20.05856519232271,
+        24.43160702942355,
+        18.061723463848903
       ],
       "cornerRangeDisplacementXY": [
-        1.023796676173128,
-        1.71879237437569
+        1.0334812520851182,
+        1.708094085079181
       ],
       "criticalElementPoints": [
         [
@@ -1947,9 +1947,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 14.364801208485488,
-      "maximumWeakAxisBeamMomentKNm": 0.5100891629894749,
-      "recoveredErrN": 4.4617627281695604e-06,
+      "maximumDedicatedEdgeChordKN": 14.306164897135156,
+      "maximumWeakAxisBeamMomentKNm": 0.5015663095764273,
+      "recoveredErrN": 4.282726877136156e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         47.2905
@@ -1958,13 +1958,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        20.725825002997997,
-        17.570949894388534,
-        12.608566637651364
+        20.67417506874539,
+        17.538937569869013,
+        12.558572373775363
       ],
       "cornerRangeDisplacementXY": [
-        0.5553025139317906,
-        0.5426559611400075
+        0.5528044031217352,
+        0.5402786279555505
       ],
       "criticalElementPoints": [
         [
@@ -2010,9 +2010,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 17.6803531605967,
-      "maximumWeakAxisBeamMomentKNm": 0.49649113430378217,
-      "recoveredErrN": 1.7306610970990732e-06,
+      "maximumDedicatedEdgeChordKN": 17.66687306721492,
+      "maximumWeakAxisBeamMomentKNm": 0.4965313592871552,
+      "recoveredErrN": 2.129307176801376e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         -94.581
@@ -2021,13 +2021,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        20.98495134807361,
-        28.267297643795523,
-        17.643803076038385
+        20.7792308865648,
+        27.890421297267196,
+        17.356186464133767
       ],
       "cornerRangeDisplacementXY": [
-        0.8922235372318825,
-        1.856267157633507
+        0.9027317725575905,
+        1.8430999666163226
       ],
       "criticalElementPoints": [
         [
@@ -2073,9 +2073,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 11.931168094213465,
-      "maximumWeakAxisBeamMomentKNm": 0.6598336344301974,
-      "recoveredErrN": 8.837450877763331e-07,
+      "maximumDedicatedEdgeChordKN": 12.018050838892089,
+      "maximumWeakAxisBeamMomentKNm": 0.6504381534724107,
+      "recoveredErrN": 3.7998761399649084e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         -47.29050000000001
@@ -2084,13 +2084,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        11.499650667548432,
-        13.635694640389445,
-        12.642921303218113
+        11.679317133699126,
+        13.465428658347772,
+        12.394863175341776
       ],
       "cornerRangeDisplacementXY": [
-        1.065116151736726,
-        1.4284605513009492
+        1.0757727885067139,
+        1.4187932970996653
       ],
       "criticalElementPoints": [
         [
@@ -2136,9 +2136,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 15.998851773564153,
-      "maximumWeakAxisBeamMomentKNm": 0.46187477883173833,
-      "recoveredErrN": 4.239736881572753e-07,
+      "maximumDedicatedEdgeChordKN": 15.901566747502521,
+      "maximumWeakAxisBeamMomentKNm": 0.4624819514290792,
+      "recoveredErrN": 1.8118553271051496e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         -47.2905
@@ -2147,13 +2147,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        13.058070704393554,
-        16.703260893015887,
-        8.66012939101817
+        12.631322073235417,
+        16.177930644639765,
+        8.391536128259757
       ],
       "cornerRangeDisplacementXY": [
-        1.3682385898399372,
-        0.989348205713884
+        1.3564791862452013,
+        1.0006268404351981
       ],
       "criticalElementPoints": [
         [
@@ -2199,9 +2199,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 7.780213333404688,
-      "maximumWeakAxisBeamMomentKNm": 0.3707191019261139,
-      "recoveredErrN": 1.9789495127042755e-06,
+      "maximumDedicatedEdgeChordKN": 7.71063488419824,
+      "maximumWeakAxisBeamMomentKNm": 0.3698218061670704,
+      "recoveredErrN": 4.386907676234841e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         0.0
@@ -2210,13 +2210,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.7141969867548,
-        32.54462460875329,
-        23.318582056986408
+        34.23738111260484,
+        31.959820435689082,
+        23.44295435904907
       ],
       "cornerRangeDisplacementXY": [
-        1.9135474963249104,
-        0.8426230704474378
+        1.899955512428054,
+        0.8540711811756694
       ],
       "criticalElementPoints": [
         [
@@ -2262,9 +2262,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 24.535038553779504,
-      "maximumWeakAxisBeamMomentKNm": 0.6311079377000613,
-      "recoveredErrN": 1.429994881618768e-06,
+      "maximumDedicatedEdgeChordKN": 24.468759705158185,
+      "maximumWeakAxisBeamMomentKNm": 0.6236898756255843,
+      "recoveredErrN": 2.952509021270089e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         94.581
@@ -2273,13 +2273,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        21.86592758662341,
-        18.877374977044905,
-        29.385435645477
+        21.868207909560205,
+        18.87738532779159,
+        29.37999838426153
       ],
       "cornerRangeDisplacementXY": [
-        2.398623169243992,
-        2.1226142937286627
+        2.39835982226802,
+        2.122392368846068
       ],
       "criticalElementPoints": [
         [
@@ -2325,9 +2325,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 14.836937427959226,
-      "maximumWeakAxisBeamMomentKNm": 1.0112679475332993,
-      "recoveredErrN": 4.376925062388182e-06,
+      "maximumDedicatedEdgeChordKN": 14.827047024666438,
+      "maximumWeakAxisBeamMomentKNm": 1.0111801263917801,
+      "recoveredErrN": 2.85503119812347e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         47.29050000000001
@@ -2336,13 +2336,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        30.41540547060666,
-        36.225063932343346,
-        26.078723710603914
+        29.519270383901485,
+        35.12474954560939,
+        25.696972533972886
       ],
       "cornerRangeDisplacementXY": [
-        0.8831629169208575,
-        0.7499366414200015
+        0.8580748764052348,
+        0.7290339247773483
       ],
       "criticalElementPoints": [
         [
@@ -2388,9 +2388,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 15.784545418678963,
-      "maximumWeakAxisBeamMomentKNm": 0.878256954342133,
-      "recoveredErrN": 8.026545401662588e-07,
+      "maximumDedicatedEdgeChordKN": 15.686957767837654,
+      "maximumWeakAxisBeamMomentKNm": 0.8610388496676171,
+      "recoveredErrN": 2.0704273993032984e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         47.2905
@@ -2399,13 +2399,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        14.471792605107648,
-        9.464552795079102,
-        12.443672199047976
+        14.812367665168065,
+        9.32917036935752,
+        12.205736438087298
       ],
       "cornerRangeDisplacementXY": [
-        1.4249415506167504,
-        1.0762302683555331
+        1.4159848873240901,
+        1.08606152508664
       ],
       "criticalElementPoints": [
         [
@@ -2451,9 +2451,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 14.977236698645237,
-      "maximumWeakAxisBeamMomentKNm": 0.4994365707265669,
-      "recoveredErrN": 1.8872883629228454e-06,
+      "maximumDedicatedEdgeChordKN": 14.879743740217863,
+      "maximumWeakAxisBeamMomentKNm": 0.4992185167812462,
+      "recoveredErrN": 4.220659320708364e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -94.581
@@ -2462,13 +2462,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        11.60858853957711,
-        13.02347355465549,
-        8.25390823805067
+        11.59116444651017,
+        12.99759379944047,
+        8.255892387830144
       ],
       "cornerRangeDisplacementXY": [
-        2.089112338045823,
-        2.389841464849033
+        2.089470599742537,
+        2.388882863747413
       ],
       "criticalElementPoints": [
         [
@@ -2514,9 +2514,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 10.995921704374974,
-      "maximumWeakAxisBeamMomentKNm": 0.36065095943932574,
-      "recoveredErrN": 2.3834909370634705e-06,
+      "maximumDedicatedEdgeChordKN": 10.993963969753361,
+      "maximumWeakAxisBeamMomentKNm": 0.3607126585252626,
+      "recoveredErrN": 2.6503421395318583e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -47.29050000000001
@@ -2525,13 +2525,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        12.508317046549088,
-        24.677629689686313,
-        16.563627623492547
+        11.77129496687737,
+        23.33785912055806,
+        16.039143328868242
       ],
       "cornerRangeDisplacementXY": [
-        0.46477597023820616,
-        0.4732486802635405
+        0.44352231056758207,
+        0.45173222144324665
       ],
       "criticalElementPoints": [
         [
@@ -2577,9 +2577,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 10.62993277594916,
-      "maximumWeakAxisBeamMomentKNm": 0.4373558722175568,
-      "recoveredErrN": 2.5440971853640804e-06,
+      "maximumDedicatedEdgeChordKN": 10.440600859453124,
+      "maximumWeakAxisBeamMomentKNm": 0.424903441112831,
+      "recoveredErrN": 2.998085619765334e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -47.2905
@@ -2588,13 +2588,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        12.903079074457185,
-        21.32683700556852,
-        10.601113124655482
+        12.454004898639877,
+        20.542928709991234,
+        10.335917791951196
       ],
       "cornerRangeDisplacementXY": [
-        1.3936347808655412,
-        0.9688557329556893
+        1.3813717372620062,
+        0.9790601603018327
       ],
       "criticalElementPoints": [
         [
@@ -2640,9 +2640,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 8.097499550616194,
-      "maximumWeakAxisBeamMomentKNm": 0.5060859120952153,
-      "recoveredErrN": 1.684740709606558e-06,
+      "maximumDedicatedEdgeChordKN": 7.999765599181711,
+      "maximumWeakAxisBeamMomentKNm": 0.5054124157552917,
+      "recoveredErrN": 9.873238013824448e-07,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         0.0
@@ -2651,13 +2651,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        15.015227912518794,
-        9.612156558599171,
-        24.86249803401304
+        14.86249752252097,
+        9.445185568457774,
+        24.72809289864135
       ],
       "cornerRangeDisplacementXY": [
-        1.5017848532538434,
-        1.0468680689564405
+        1.4921041975104532,
+        1.0560112772251964
       ],
       "criticalElementPoints": [
         [
@@ -2703,9 +2703,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 17.16285495145713,
-      "maximumWeakAxisBeamMomentKNm": 0.66628269622687,
-      "recoveredErrN": 2.3090442482498474e-06,
+      "maximumDedicatedEdgeChordKN": 17.16690467850923,
+      "maximumWeakAxisBeamMomentKNm": 0.6590917278032015,
+      "recoveredErrN": 1.425993104930967e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         94.581
@@ -2714,13 +2714,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        29.773278363906666,
-        29.328940026319017,
-        30.929351622498825
+        29.42894796665397,
+        28.648436189407658,
+        30.66513692384633
       ],
       "cornerRangeDisplacementXY": [
-        0.555357010672703,
-        0.5996917807992506
+        0.5355473741039991,
+        0.5759826312797807
       ],
       "criticalElementPoints": [
         [
@@ -2766,9 +2766,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 10.619057422205916,
-      "maximumWeakAxisBeamMomentKNm": 1.2445228638378567,
-      "recoveredErrN": 6.746940925950184e-07,
+      "maximumDedicatedEdgeChordKN": 10.432684959468714,
+      "maximumWeakAxisBeamMomentKNm": 1.229306302197646,
+      "recoveredErrN": 2.392536771367304e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         47.29050000000001
@@ -2777,13 +2777,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        11.275781593308928,
-        9.750857935607417,
-        16.75761554358067
+        11.265538046500478,
+        9.747813304286243,
+        16.741442596024203
       ],
       "cornerRangeDisplacementXY": [
-        2.14331664339508,
-        2.334639233102582
+        2.1432956505914014,
+        2.334127281374541
       ],
       "criticalElementPoints": [
         [
@@ -2829,9 +2829,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 10.188154082712288,
-      "maximumWeakAxisBeamMomentKNm": 0.5640403942830136,
-      "recoveredErrN": 2.5177341740345582e-06,
+      "maximumDedicatedEdgeChordKN": 10.183572890542429,
+      "maximumWeakAxisBeamMomentKNm": 0.5636485392984727,
+      "recoveredErrN": 8.355050340469461e-07,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         47.2905
@@ -2840,13 +2840,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        33.993140754939574,
-        26.279339092766264,
-        16.910131149516214
+        33.55332773673596,
+        25.40287897152333,
+        16.650983887260313
       ],
       "cornerRangeDisplacementXY": [
-        1.9235411037717283,
-        0.8312530561089853
+        1.9092835893669382,
+        0.8427534816159765
       ],
       "criticalElementPoints": [
         [
@@ -2892,9 +2892,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 14.205751621415889,
-      "maximumWeakAxisBeamMomentKNm": 0.5672636994387934,
-      "recoveredErrN": 1.6794765542726964e-06,
+      "maximumDedicatedEdgeChordKN": 14.214115405365067,
+      "maximumWeakAxisBeamMomentKNm": 0.5594153629997941,
+      "recoveredErrN": 1.8342543626204133e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -94.581
@@ -2903,27 +2903,27 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        24.786830029679095,
-        42.61063131902494,
-        17.001133106465726
+        24.157686286332208,
+        41.01048467665341,
+        16.465889589910297
       ],
       "cornerRangeDisplacementXY": [
-        0.8838211430606062,
-        0.8669189519196228
+        0.858403351877028,
+        0.8424731261811247
       ],
       "criticalElementPoints": [
         [
           [
-            2212.5,
-            8767.5
+            4885.0,
+            402.5
           ],
           [
-            2817.5,
-            8767.5
+            6000.0,
+            417.5
           ],
           [
-            2817.5,
-            9252.5
+            4885.0,
+            417.5
           ]
         ],
         [
@@ -2955,9 +2955,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 10.932582071198846,
-      "maximumWeakAxisBeamMomentKNm": 0.6058824031366636,
-      "recoveredErrN": 1.0014664439950138e-06,
+      "maximumDedicatedEdgeChordKN": 10.745490890415775,
+      "maximumWeakAxisBeamMomentKNm": 0.588355923750375,
+      "recoveredErrN": 2.4020391720114276e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -47.29050000000001
@@ -2966,13 +2966,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        15.460343123150164,
-        8.541517201428253,
-        8.13052803939758
+        15.433131493654862,
+        8.528374280395251,
+        8.13336496205353
       ],
       "cornerRangeDisplacementXY": [
-        2.4333547415766628,
-        2.0443074100278418
+        2.4322519747519165,
+        2.0448264933950253
       ],
       "criticalElementPoints": [
         [
@@ -3018,9 +3018,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 12.251128116850762,
-      "maximumWeakAxisBeamMomentKNm": 0.4887008880459335,
-      "recoveredErrN": 4.3585168896242976e-07,
+      "maximumDedicatedEdgeChordKN": 12.248762612984638,
+      "maximumWeakAxisBeamMomentKNm": 0.4886533459892341,
+      "recoveredErrN": 1.4582074072677642e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -47.2905
@@ -3029,13 +3029,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        21.636901891366698,
-        15.81793422018934,
-        19.13666887281572
+        21.57722346871793,
+        15.746569921366833,
+        19.1401971551387
       ],
       "cornerRangeDisplacementXY": [
-        0.5445663265262259,
-        0.2737337919561016
+        0.5425896163462709,
+        0.2725666077294786
       ],
       "criticalElementPoints": [
         [
@@ -3081,9 +3081,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 18.507017782406162,
-      "maximumWeakAxisBeamMomentKNm": 0.4111269113306663,
-      "recoveredErrN": 1.442831489839591e-07,
+      "maximumDedicatedEdgeChordKN": 18.480272266596707,
+      "maximumWeakAxisBeamMomentKNm": 0.4102206978948088,
+      "recoveredErrN": 2.3983466235222295e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         94.581
@@ -3092,13 +3092,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        22.298227508399357,
-        14.12848787234485,
-        25.213166362944747
+        22.131050754204782,
+        13.797628515633654,
+        25.084175230733425
       ],
       "cornerRangeDisplacementXY": [
-        1.0288763332135438,
-        1.2992115554193107
+        1.0404053954903554,
+        1.2888819315133206
       ],
       "criticalElementPoints": [
         [
@@ -3144,9 +3144,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 8.809584382621404,
-      "maximumWeakAxisBeamMomentKNm": 0.9124574492602524,
-      "recoveredErrN": 6.228583515621722e-08,
+      "maximumDedicatedEdgeChordKN": 8.837971355890925,
+      "maximumWeakAxisBeamMomentKNm": 0.9050539493506226,
+      "recoveredErrN": 2.2354288375936449e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         47.29050000000001
@@ -3155,13 +3155,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        21.07186851733441,
-        19.55986538312723,
-        24.506680947016466
+        20.541135522915198,
+        18.9742936777919,
+        24.303059919446632
       ],
       "cornerRangeDisplacementXY": [
-        0.9457984870315476,
-        1.398264481346705
+        0.9560756432671973,
+        1.386219809412597
       ],
       "criticalElementPoints": [
         [
@@ -3207,9 +3207,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 9.7925323874434,
-      "maximumWeakAxisBeamMomentKNm": 0.9327528464365263,
-      "recoveredErrN": 2.6833095034817234e-07,
+      "maximumDedicatedEdgeChordKN": 9.734783170463519,
+      "maximumWeakAxisBeamMomentKNm": 0.9235389907900614,
+      "recoveredErrN": 4.480441475607222e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         47.2905
@@ -3218,13 +3218,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        27.776465392321903,
-        12.482818417904653,
-        12.171604665405658
+        27.723781845179754,
+        12.441185660900622,
+        12.143715731472529
       ],
       "cornerRangeDisplacementXY": [
-        0.5306059179283492,
-        0.2350162932335751
+        0.5287358179124291,
+        0.23396986223395633
       ],
       "criticalElementPoints": [
         [
@@ -3270,9 +3270,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 11.806054636076928,
-      "maximumWeakAxisBeamMomentKNm": 0.4954826685600437,
-      "recoveredErrN": 2.7901751309400424e-07,
+      "maximumDedicatedEdgeChordKN": 11.793336170603434,
+      "maximumWeakAxisBeamMomentKNm": 0.49549295176420755,
+      "recoveredErrN": 2.0466359273996204e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         -94.581
@@ -3281,13 +3281,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        18.588316734567037,
-        21.383870235976353,
-        9.354548026202837
+        18.169798958204105,
+        20.56188313698221,
+        9.115206280777837
       ],
       "cornerRangeDisplacementXY": [
-        0.9684451644461665,
-        1.4019102627142908
+        0.9785151052424186,
+        1.3896282305954206
       ],
       "criticalElementPoints": [
         [
@@ -3333,9 +3333,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 7.254879592569448,
-      "maximumWeakAxisBeamMomentKNm": 0.3407320948869949,
-      "recoveredErrN": 1.2340751709416509e-07,
+      "maximumDedicatedEdgeChordKN": 7.16864156803028,
+      "maximumWeakAxisBeamMomentKNm": 0.33995275972483346,
+      "recoveredErrN": 2.7761279852711596e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         -47.29050000000001
@@ -3344,13 +3344,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        14.10375290702681,
-        11.976496483649875,
-        7.920669330132033
+        14.014010383265838,
+        11.306899782877164,
+        7.661497272996858
       ],
       "cornerRangeDisplacementXY": [
-        1.0389137755133568,
-        1.3143573184071
+        1.050241109800894,
+        1.303410622702529
       ],
       "criticalElementPoints": [
         [
@@ -3396,9 +3396,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 7.460783927021537,
-      "maximumWeakAxisBeamMomentKNm": 0.4065183154232837,
-      "recoveredErrN": 5.628257895295974e-07,
+      "maximumDedicatedEdgeChordKN": 7.437097732218739,
+      "maximumWeakAxisBeamMomentKNm": 0.40627439479078664,
+      "recoveredErrN": 7.001081030466594e-07,
       "sumFloorEdgeLoadKN": [
         0.0,
         -47.2905
@@ -3407,13 +3407,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        128.11726437706307,
-        160.80770024688348,
-        125.5712444832231
+        128.1172327384058,
+        160.83466651251402,
+        125.57276017652819
       ],
       "cornerRangeDisplacementXY": [
-        0.1321940302658815,
-        0.4619667553876189
+        0.1321129817921891,
+        0.46107379771169316
       ],
       "criticalElementPoints": [
         [
@@ -3459,9 +3459,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 20.173545619681615,
-      "maximumWeakAxisBeamMomentKNm": 8.891196829628235,
-      "recoveredErrN": 4.358531441539526e-06,
+      "maximumDedicatedEdgeChordKN": 20.152453002563284,
+      "maximumWeakAxisBeamMomentKNm": 8.891506327236982,
+      "recoveredErrN": 4.359309969004244e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         0.0
@@ -3470,13 +3470,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        132.16090950137723,
-        161.90903014334728,
-        124.64413833519257
+        132.14923529437752,
+        161.9128110403362,
+        124.64629843330361
       ],
       "cornerRangeDisplacementXY": [
-        0.6166423324871522,
-        0.6582389197491239
+        0.6157244417089816,
+        0.6573938043248546
       ],
       "criticalElementPoints": [
         [
@@ -3522,9 +3522,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 26.075373633810848,
-      "maximumWeakAxisBeamMomentKNm": 8.480069918297596,
-      "recoveredErrN": 5.109439371153712e-06,
+      "maximumDedicatedEdgeChordKN": 26.05317117161968,
+      "maximumWeakAxisBeamMomentKNm": 8.4812856293422,
+      "recoveredErrN": 4.727040504803881e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         94.581
@@ -3533,13 +3533,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        128.708012182403,
-        156.50712713540878,
-        124.9071044158438
+        128.7858762241068,
+        156.64103177648013,
+        124.9030959648126
       ],
       "cornerRangeDisplacementXY": [
-        1.045404525414943,
-        1.6730663229536193
+        1.0567585026222304,
+        1.6629929628807378
       ],
       "criticalElementPoints": [
         [
@@ -3585,9 +3585,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 24.600511172710227,
-      "maximumWeakAxisBeamMomentKNm": 8.763798019867375,
-      "recoveredErrN": 1.9453655113466084e-06,
+      "maximumDedicatedEdgeChordKN": 24.624018842872246,
+      "maximumWeakAxisBeamMomentKNm": 8.757565078653768,
+      "recoveredErrN": 2.3215034161694348e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         47.29050000000001
@@ -3596,13 +3596,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        131.57016169604358,
-        166.20960325482307,
-        125.3082784025715
+        131.48059180867762,
+        166.10644577637055,
+        125.31596264501943
       ],
       "cornerRangeDisplacementXY": [
-        0.9404695492763118,
-        1.7023646666966652
+        0.9508883363446916,
+        1.6887379449944748
       ],
       "criticalElementPoints": [
         [
@@ -3648,9 +3648,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 21.64840808078213,
-      "maximumWeakAxisBeamMomentKNm": 8.60746872805845,
-      "recoveredErrN": 4.961151716997847e-06,
+      "maximumDedicatedEdgeChordKN": 21.58160533131116,
+      "maximumWeakAxisBeamMomentKNm": 8.615226877925483,
+      "recoveredErrN": 6.681209924863651e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         47.2905
@@ -3659,13 +3659,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        124.96861285231026,
-        146.04341236703533,
-        127.42774423884542
+        124.96915206578477,
+        146.08297698250806,
+        127.4102208661057
       ],
       "cornerRangeDisplacementXY": [
-        0.537524217772015,
-        0.6094301043140016
+        0.5367775950334117,
+        0.60882605205276
       ],
       "criticalElementPoints": [
         [
@@ -3711,9 +3711,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 22.88859690788877,
-      "maximumWeakAxisBeamMomentKNm": 9.230495374018671,
-      "recoveredErrN": 2.9540606192313135e-06,
+      "maximumDedicatedEdgeChordKN": 22.876443755495885,
+      "maximumWeakAxisBeamMomentKNm": 9.229833946246716,
+      "recoveredErrN": 2.807639248203486e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         -94.581
@@ -3722,13 +3722,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        125.48725647058602,
-        155.28425878383598,
-        125.69382754016797
+        125.4807966126832,
+        155.44696119766203,
+        125.68990821161356
       ],
       "cornerRangeDisplacementXY": [
-        0.9737741022014035,
-        1.598385516771173
+        0.9837024121649245,
+        1.5869924420004304
       ],
       "criticalElementPoints": [
         [
@@ -3774,9 +3774,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 18.32822285955034,
-      "maximumWeakAxisBeamMomentKNm": 9.19244506371627,
-      "recoveredErrN": 2.8456925065256655e-06,
+      "maximumDedicatedEdgeChordKN": 18.346505522274178,
+      "maximumWeakAxisBeamMomentKNm": 9.185502759614694,
+      "recoveredErrN": 6.261967428144999e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         -47.29050000000001
@@ -3785,13 +3785,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        126.45077700945133,
-        151.56685383008625,
-        125.03340088508422
+        126.37382782238056,
+        151.47068229736112,
+        125.03964810351783
       ],
       "cornerRangeDisplacementXY": [
-        1.022385583311956,
-        1.7203096278486427
+        1.033888002669018,
+        1.708638484372981
       ],
       "criticalElementPoints": [
         [
@@ -3837,9 +3837,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 24.733919668020903,
-      "maximumWeakAxisBeamMomentKNm": 8.929247139930611,
-      "recoveredErrN": 1.267086190637201e-06,
+      "maximumDedicatedEdgeChordKN": 24.682391235784703,
+      "maximumWeakAxisBeamMomentKNm": 8.935837513868986,
+      "recoveredErrN": 1.7131242202594876e-06,
       "sumFloorEdgeLoadKN": [
         94.581,
         -47.2905
@@ -3848,13 +3848,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        121.85264302675444,
-        171.0356219358585,
-        114.67370387945171
+        121.7671179698534,
+        170.92142492214617,
+        114.59577025187549
       ],
       "cornerRangeDisplacementXY": [
-        1.3590761358681163,
-        0.9520905420562986
+        1.3476510336615024,
+        0.9624224157571567
       ],
       "criticalElementPoints": [
         [
@@ -3900,9 +3900,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 13.201488587977051,
-      "maximumWeakAxisBeamMomentKNm": 7.187764482975343,
-      "recoveredErrN": 6.853006198070943e-07,
+      "maximumDedicatedEdgeChordKN": 13.149986737722308,
+      "maximumWeakAxisBeamMomentKNm": 7.194985760039635,
+      "recoveredErrN": 1.5851237549213693e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         0.0
@@ -3911,13 +3911,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        125.89628815106147,
-        172.13695183232124,
-        118.35514431243364
+        125.7991205258266,
+        171.99956944996998,
+        118.26658960298577
       ],
       "cornerRangeDisplacementXY": [
-        1.8273392459808817,
-        0.8746289144617032
+        1.8124632649860906,
+        0.8861758146408389
       ],
       "criticalElementPoints": [
         [
@@ -3963,9 +3963,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 19.899311761926487,
-      "maximumWeakAxisBeamMomentKNm": 6.77663757164468,
-      "recoveredErrN": 1.981507011805661e-06,
+      "maximumDedicatedEdgeChordKN": 19.822891337566066,
+      "maximumWeakAxisBeamMomentKNm": 6.784765062144832,
+      "recoveredErrN": 1.1935298971366137e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         94.581
@@ -3974,13 +3974,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        122.4433908320896,
-        166.73504882438147,
-        115.20699953511411
+        122.43576145555018,
+        166.72779018611038,
+        115.20005001164941
       ],
       "cornerRangeDisplacementXY": [
-        2.3116492526681984,
-        2.241061685176577
+        2.3102790441301773,
+        2.241727930623817
       ],
       "criticalElementPoints": [
         [
@@ -4026,9 +4026,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 17.628454141005797,
-      "maximumWeakAxisBeamMomentKNm": 7.060365673214488,
-      "recoveredErrN": 5.437268555397168e-07,
+      "maximumDedicatedEdgeChordKN": 17.621552578031196,
+      "maximumWeakAxisBeamMomentKNm": 7.061044511456357,
+      "recoveredErrN": 2.234550265711732e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         47.29050000000001
@@ -4037,13 +4037,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        125.30554034573215,
-        176.43752494379842,
-        117.82184865677026
+        125.13047704012853,
+        176.1932041860031,
+        117.6623098432108
       ],
       "cornerRangeDisplacementXY": [
-        0.7984629127673375,
-        0.7614593082696186
+        0.7720578694957361,
+        0.7360596948404066
       ],
       "criticalElementPoints": [
         [
@@ -4089,9 +4089,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 14.676351049077942,
-      "maximumWeakAxisBeamMomentKNm": 6.904036381405525,
-      "recoveredErrN": 1.3818062143400311e-06,
+      "maximumDedicatedEdgeChordKN": 14.579139066470349,
+      "maximumWeakAxisBeamMomentKNm": 6.918706310728083,
+      "recoveredErrN": 7.648886821698397e-07,
       "sumFloorEdgeLoadKN": [
         47.2905,
         47.2905
@@ -4100,13 +4100,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        116.41574244488872,
-        156.2713340560092,
-        109.70894539226316
+        116.34169732252744,
+        156.16973539214226,
+        109.64146976083185
       ],
       "cornerRangeDisplacementXY": [
-        1.6280942210066152,
-        1.0901864060044986
+        1.618757214189034,
+        1.099390580638408
       ],
       "criticalElementPoints": [
         [
@@ -4152,9 +4152,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 15.916539876184343,
-      "maximumWeakAxisBeamMomentKNm": 7.527063027365749,
-      "recoveredErrN": 1.6857447917573154e-06,
+      "maximumDedicatedEdgeChordKN": 15.87397749065459,
+      "maximumWeakAxisBeamMomentKNm": 7.533313379049268,
+      "recoveredErrN": 1.912399966386147e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -94.581
@@ -4163,13 +4163,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        118.08222981251552,
-        165.5121804728094,
-        111.23717968045709
+        118.08510223854515,
+        165.53371960729336,
+        111.23982100138151
       ],
       "cornerRangeDisplacementXY": [
-        2.2915822758019484,
-        2.166380878994129
+        2.2917222742427104,
+        2.1657274097435124
       ],
       "criticalElementPoints": [
         [
@@ -4215,9 +4215,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 12.327798036162482,
-      "maximumWeakAxisBeamMomentKNm": 7.489012717063352,
-      "recoveredErrN": 1.5856821846682578e-06,
+      "maximumDedicatedEdgeChordKN": 12.337806844939626,
+      "maximumWeakAxisBeamMomentKNm": 7.488982192417302,
+      "recoveredErrN": 1.1551878742466215e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -47.29050000000001
@@ -4226,13 +4226,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        120.18615565913497,
-        161.79477551905958,
-        113.14546959125833
+        120.02371305383244,
+        161.55744070699478,
+        112.99741901132599
       ],
       "cornerRangeDisplacementXY": [
-        0.65964905656045,
-        0.7794042694215948
+        0.6402421089466159,
+        0.7559602342189122
       ],
       "criticalElementPoints": [
         [
@@ -4278,9 +4278,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 17.761862636315993,
-      "maximumWeakAxisBeamMomentKNm": 7.225814793277729,
-      "recoveredErrN": 1.495902324677445e-06,
+      "maximumDedicatedEdgeChordKN": 17.67992497094389,
+      "maximumWeakAxisBeamMomentKNm": 7.239316946671575,
+      "recoveredErrN": 1.0395215213065967e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -47.2905
@@ -4289,13 +4289,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.84144476442734,
-        36.81732159489567,
-        35.77387023064426
+        34.834116104691624,
+        36.67331842306599,
+        35.68317047685034
       ],
       "cornerRangeDisplacementXY": [
-        1.357170795251565,
-        0.9409053584270467
+        1.3460023517164181,
+        0.9526782501540682
       ],
       "criticalElementPoints": [
         [
@@ -4341,9 +4341,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 7.548560715752029,
-      "maximumWeakAxisBeamMomentKNm": 1.7565737145451787,
-      "recoveredErrN": 2.119257260346785e-06,
+      "maximumDedicatedEdgeChordKN": 7.575116075490038,
+      "maximumWeakAxisBeamMomentKNm": 1.763559477441058,
+      "recoveredErrN": 2.7850110200233757e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         0.0
@@ -4352,13 +4352,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        33.761797894143974,
-        22.260448992081166,
-        33.40744100854764
+        33.75545761791439,
+        22.20978678721844,
+        33.4032568129924
       ],
       "cornerRangeDisplacementXY": [
-        1.6232716169490042,
-        1.1025466139925335
+        1.6140824123677362,
+        1.1129587151483147
       ],
       "criticalElementPoints": [
         [
@@ -4378,15 +4378,15 @@
         [
           [
             332.5,
-            5538.333333333333
-          ],
-          [
-            402.5,
-            5538.333333333333
+            6644.166666666666
           ],
           [
             402.5,
             6644.166666666666
+          ],
+          [
+            402.5,
+            7750.0
           ]
         ],
         [
@@ -4404,9 +4404,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 21.271547828188833,
-      "maximumWeakAxisBeamMomentKNm": 2.1401927155494893,
-      "recoveredErrN": 5.749394404119812e-06,
+      "maximumDedicatedEdgeChordKN": 21.295756032524036,
+      "maximumWeakAxisBeamMomentKNm": 2.14619293164034,
+      "recoveredErrN": 3.303282937849872e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         94.581
@@ -4415,13 +4415,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.12931617978872,
-        28.590058784799137,
-        33.846477206784314
+        34.11414421437372,
+        28.2900031033438,
+        33.67125739293263
       ],
       "cornerRangeDisplacementXY": [
-        0.6774731299174559,
-        0.7209757808973212
+        0.6580067691005391,
+        0.7005705471235801
       ],
       "criticalElementPoints": [
         [
@@ -4467,9 +4467,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 11.927504777364918,
-      "maximumWeakAxisBeamMomentKNm": 1.8508051456960029,
-      "recoveredErrN": 5.179064828553237e-06,
+      "maximumDedicatedEdgeChordKN": 11.99510655396774,
+      "maximumWeakAxisBeamMomentKNm": 1.8641238987385933,
+      "recoveredErrN": 8.937331585912034e-07,
       "sumFloorEdgeLoadKN": [
         47.2905,
         47.29050000000001
@@ -4478,13 +4478,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.47392647878631,
-        30.487711802178076,
-        34.071581075927384
+        34.47542950822638,
+        30.515465820181124,
+        34.072921024708336
       ],
       "cornerRangeDisplacementXY": [
-        2.2636066606320924,
-        2.2373177156821686
+        2.264095505344983,
+        2.2361883334780908
       ],
       "criticalElementPoints": [
         [
@@ -4530,9 +4530,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 12.573099091735621,
-      "maximumWeakAxisBeamMomentKNm": 2.045961284398749,
-      "recoveredErrN": 4.911809810437262e-06,
+      "maximumDedicatedEdgeChordKN": 12.566560663310891,
+      "maximumWeakAxisBeamMomentKNm": 2.0456285103426253,
+      "recoveredErrN": 1.3090466381981969e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         47.2905
@@ -4541,13 +4541,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        40.60228999807542,
-        37.917510545450384,
-        40.03658013053922
+        40.15122775269414,
+        37.74782379796981,
+        39.933805330405804
       ],
       "cornerRangeDisplacementXY": [
-        1.7968506451816042,
-        0.8533524141198559
+        1.7822563594203742,
+        0.8664606422611767
       ],
       "criticalElementPoints": [
         [
@@ -4593,9 +4593,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 11.332755992404211,
-      "maximumWeakAxisBeamMomentKNm": 2.0427308910433193,
-      "recoveredErrN": 4.39491486758925e-07,
+      "maximumDedicatedEdgeChordKN": 11.232402686120139,
+      "maximumWeakAxisBeamMomentKNm": 2.034848186207036,
+      "recoveredErrN": 1.7982656572712585e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -94.581
@@ -4604,13 +4604,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        38.04893117651428,
-        44.41047901688111,
-        39.53272328096047
+        37.85794257103732,
+        43.238511986460736,
+        39.34756645979154
       ],
       "cornerRangeDisplacementXY": [
-        0.7579368696682476,
-        0.646294974714873
+        0.7320152496194785,
+        0.6245700262432745
       ],
       "criticalElementPoints": [
         [
@@ -4629,16 +4629,16 @@
         ],
         [
           [
-            3917.5,
-            4250.0
+            332.5,
+            5538.333333333333
           ],
           [
-            4250.0,
-            4250.0
+            402.5,
+            5538.333333333333
           ],
           [
-            4250.0,
-            4432.5
+            402.5,
+            6644.166666666666
           ]
         ],
         [
@@ -4656,9 +4656,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 9.732559538544484,
-      "maximumWeakAxisBeamMomentKNm": 2.004680580740908,
-      "recoveredErrN": 1.531898305984214e-06,
+      "maximumDedicatedEdgeChordKN": 9.566181893979202,
+      "maximumWeakAxisBeamMomentKNm": 1.9905169995750835,
+      "recoveredErrN": 2.0372099243104458e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -47.29050000000001
@@ -4667,13 +4667,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.627017872686686,
-        31.192009313539785,
-        36.2777270802221
+        34.618475469522394,
+        31.182630234576738,
+        36.269409347462854
       ],
       "cornerRangeDisplacementXY": [
-        2.3051585027666115,
-        2.255262676834146
+        2.3037616513088413,
+        2.256088872856598
       ],
       "criticalElementPoints": [
         [
@@ -4719,9 +4719,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 12.161718436027547,
-      "maximumWeakAxisBeamMomentKNm": 1.7414826569553081,
-      "recoveredErrN": 1.3337703421711922e-06,
+      "maximumDedicatedEdgeChordKN": 12.161319140397785,
+      "maximumWeakAxisBeamMomentKNm": 1.7408517538293735,
+      "recoveredErrN": 3.750206815311685e-06,
       "sumFloorEdgeLoadKN": [
         47.2905,
         -47.2905
@@ -4730,13 +4730,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        12.498474719982406,
-        20.024248866728627,
-        11.228293810964733
+        12.482812363399821,
+        19.998382645559975,
+        11.21235674878629
       ],
       "cornerRangeDisplacementXY": [
-        0.17053469563040657,
-        0.45533251615715475
+        0.17008250355378074,
+        0.4542692908332013
       ],
       "criticalElementPoints": [
         [
@@ -4782,9 +4782,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 9.8582882685208,
-      "maximumWeakAxisBeamMomentKNm": 0.4792474958447776,
-      "recoveredErrN": 5.53820063942112e-06,
+      "maximumDedicatedEdgeChordKN": 9.850013651746998,
+      "maximumWeakAxisBeamMomentKNm": 0.4792139528680855,
+      "recoveredErrN": 9.592113201506436e-07,
       "sumFloorEdgeLoadKN": [
         -94.581,
         0.0
@@ -4793,13 +4793,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        24.812091610602828,
-        21.309574025215078,
-        29.045266130257144
+        24.770531939830633,
+        21.259210790731526,
+        29.040047657776782
       ],
       "cornerRangeDisplacementXY": [
-        0.6353659942172181,
-        0.5150468626991342
+        0.6345482961627633,
+        0.5145308119064271
       ],
       "criticalElementPoints": [
         [
@@ -4845,9 +4845,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 23.167282895141987,
-      "maximumWeakAxisBeamMomentKNm": 0.766109636278966,
-      "recoveredErrN": 4.8090514610521495e-06,
+      "maximumDedicatedEdgeChordKN": 23.14479479310563,
+      "maximumWeakAxisBeamMomentKNm": 0.7662970582728131,
+      "recoveredErrN": 2.278913598274812e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         94.581
@@ -4856,13 +4856,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        29.38211574182102,
-        34.15273673907379,
-        35.12176362038739
+        29.201645915992565,
+        33.796011161193746,
+        34.984025733372114
       ],
       "cornerRangeDisplacementXY": [
-        1.0039303918238502,
-        1.590103617846791
+        1.0160724212600396,
+        1.5774989091629776
       ],
       "criticalElementPoints": [
         [
@@ -4908,9 +4908,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 13.849642065233368,
-      "maximumWeakAxisBeamMomentKNm": 1.3448480170251573,
-      "recoveredErrN": 5.190930096432567e-06,
+      "maximumDedicatedEdgeChordKN": 13.762341609390038,
+      "maximumWeakAxisBeamMomentKNm": 1.3368911769558822,
+      "recoveredErrN": 9.321483958046883e-07,
       "sumFloorEdgeLoadKN": [
         -94.581,
         47.29050000000001
@@ -4919,13 +4919,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        20.563491842733303,
-        25.051505188152593,
-        18.270971161688202
+        20.10363734742945,
+        24.48693454715788,
+        18.078672415030958
       ],
       "cornerRangeDisplacementXY": [
-        1.0227359908486733,
-        1.7198818420133017
+        1.032528671656097,
+        1.7090354045947689
       ],
       "criticalElementPoints": [
         [
@@ -4971,9 +4971,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 14.357698512520422,
-      "maximumWeakAxisBeamMomentKNm": 0.5109835800246961,
-      "recoveredErrN": 4.949841240886599e-06,
+      "maximumDedicatedEdgeChordKN": 14.306823437214618,
+      "maximumWeakAxisBeamMomentKNm": 0.5024024008492929,
+      "recoveredErrN": 4.215213266434148e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         47.2905
@@ -4982,13 +4982,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        20.765726906197667,
-        17.603578495781285,
-        12.602082635643052
+        20.693915341563436,
+        17.552607165838364,
+        12.559712472515416
       ],
       "cornerRangeDisplacementXY": [
-        0.555551859318042,
-        0.5428854604643476
+        0.5530687921427413,
+        0.540486898726094
       ],
       "criticalElementPoints": [
         [
@@ -5034,9 +5034,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 17.665036213482747,
-      "maximumWeakAxisBeamMomentKNm": 0.4965158707325608,
-      "recoveredErrN": 5.49057949683629e-06,
+      "maximumDedicatedEdgeChordKN": 17.660785435622703,
+      "maximumWeakAxisBeamMomentKNm": 0.49653681841136865,
+      "recoveredErrN": 1.8061073205899447e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         -94.581
@@ -5045,13 +5045,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        21.025163434540037,
-        28.297053970548614,
-        17.656818452791406
+        20.80002066203928,
+        27.914400099427304,
+        17.371627491333168
       ],
       "cornerRangeDisplacementXY": [
-        0.891507660629042,
-        1.8572427788714463
+        0.9020620768535172,
+        1.8438975214286217
       ],
       "criticalElementPoints": [
         [
@@ -5097,9 +5097,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 11.910777818809148,
-      "maximumWeakAxisBeamMomentKNm": 0.6604897314849044,
-      "recoveredErrN": 3.227472916478291e-06,
+      "maximumDedicatedEdgeChordKN": 12.004895910669838,
+      "maximumWeakAxisBeamMomentKNm": 0.6510066436574454,
+      "recoveredErrN": 5.906571459490806e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         -47.29050000000001
@@ -5108,13 +5108,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        11.503445548125502,
-        13.664425915182246,
-        12.6678270375319
+        11.667043319912908,
+        13.486939521214042,
+        12.42045396061081
       ],
       "cornerRangeDisplacementXY": [
-        1.0638597169030497,
-        1.4296435442880595
+        1.0745740840312088,
+        1.4198201177168945
       ],
       "criticalElementPoints": [
         [
@@ -5160,9 +5160,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 15.99732664235687,
-      "maximumWeakAxisBeamMomentKNm": 0.46182384914592034,
-      "recoveredErrN": 1.4102570276008919e-06,
+      "maximumDedicatedEdgeChordKN": 15.9071880356856,
+      "maximumWeakAxisBeamMomentKNm": 0.46242251328940387,
+      "recoveredErrN": 2.2070089471526444e-06,
       "sumFloorEdgeLoadKN": [
         -94.581,
         -47.2905
@@ -5171,13 +5171,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        13.09683015810771,
-        16.75104375728607,
-        8.680509716220108
+        12.667330190639209,
+        16.222230883469205,
+        8.412885176331192
       ],
       "cornerRangeDisplacementXY": [
-        1.369181326814879,
-        0.9884183682907601
+        1.3574296071356087,
+        0.9996742475363329
       ],
       "criticalElementPoints": [
         [
@@ -5223,9 +5223,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 7.783064888531435,
-      "maximumWeakAxisBeamMomentKNm": 0.3707971728903637,
-      "recoveredErrN": 5.9306566981831565e-06,
+      "maximumDedicatedEdgeChordKN": 7.714509979820532,
+      "maximumWeakAxisBeamMomentKNm": 0.369894062023407,
+      "recoveredErrN": 3.3264459489146248e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         0.0
@@ -5234,13 +5234,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.73373204947454,
-        32.5689779774745,
-        23.31103026994262
+        34.24455365935719,
+        31.968800804835034,
+        23.44001953997128
       ],
       "cornerRangeDisplacementXY": [
-        1.9137476533411046,
-        0.8419415935835337
+        1.9000192234818778,
+        0.853801016700098
       ],
       "criticalElementPoints": [
         [
@@ -5286,9 +5286,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 24.52506730265606,
-      "maximumWeakAxisBeamMomentKNm": 0.6312403944861551,
-      "recoveredErrN": 1.3805874914396554e-06,
+      "maximumDedicatedEdgeChordKN": 24.465083413191802,
+      "maximumWeakAxisBeamMomentKNm": 0.6237371399964903,
+      "recoveredErrN": 4.15856993640773e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         94.581
@@ -5297,13 +5297,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        21.876096889758127,
-        18.894274552204035,
-        29.387527760072945
+        21.876244423379845,
+        18.89201278764057,
+        29.383997615571584
       ],
       "cornerRangeDisplacementXY": [
-        2.3980576600284222,
-        2.1231894699803955
+        2.397835002625964,
+        2.1229038658661095
       ],
       "criticalElementPoints": [
         [
@@ -5349,9 +5349,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 14.827633902871487,
-      "maximumWeakAxisBeamMomentKNm": 1.0115659207790637,
-      "recoveredErrN": 3.3090873330365866e-06,
+      "maximumDedicatedEdgeChordKN": 14.822782502486048,
+      "maximumWeakAxisBeamMomentKNm": 1.0114778676390073,
+      "recoveredErrN": 2.3834436433389783e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         47.29050000000001
@@ -5360,13 +5360,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        30.485132281605928,
-        36.31090914041383,
-        26.102412302904312
+        29.57765906695628,
+        35.1965245612613,
+        25.719920186639367
       ],
       "cornerRangeDisplacementXY": [
-        0.8848713201275613,
-        0.7514243827401961
+        0.8596138279915233,
+        0.7303273908700958
       ],
       "criticalElementPoints": [
         [
@@ -5412,9 +5412,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 15.78284636907978,
-      "maximumWeakAxisBeamMomentKNm": 0.8794845027600195,
-      "recoveredErrN": 4.049377821502276e-06,
+      "maximumDedicatedEdgeChordKN": 15.689523295460106,
+      "maximumWeakAxisBeamMomentKNm": 0.8621423220642677,
+      "recoveredErrN": 2.926193701568991e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         47.2905
@@ -5423,13 +5423,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        14.486952795815643,
-        9.490902825252949,
-        12.446947808842603
+        14.81639215782685,
+        9.341169785553905,
+        12.208106528180245
       ],
       "cornerRangeDisplacementXY": [
-        1.4253026480731723,
-        1.075971312597952
+        1.4161750868859957,
+        1.0858918554292245
       ],
       "criticalElementPoints": [
         [
@@ -5475,9 +5475,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 14.968861593755639,
-      "maximumWeakAxisBeamMomentKNm": 0.4994645025399189,
-      "recoveredErrN": 8.850256563164294e-07,
+      "maximumDedicatedEdgeChordKN": 14.876294752210933,
+      "maximumWeakAxisBeamMomentKNm": 0.4992301970169363,
+      "recoveredErrN": 5.617439455818385e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -94.581
@@ -5486,13 +5486,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        11.633241623142188,
-        13.038591783679081,
-        8.25373827094696
+        11.604355437708321,
+        13.010401725873873,
+        8.255241752394118
       ],
       "cornerRangeDisplacementXY": [
-        2.0887907028685033,
-        2.3903286310050507
+        2.0891401469396715,
+        2.389302478131753
       ],
       "criticalElementPoints": [
         [
@@ -5538,9 +5538,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 10.983848694825467,
-      "maximumWeakAxisBeamMomentKNm": 0.3606241117384924,
-      "recoveredErrN": 4.135370545554906e-06,
+      "maximumDedicatedEdgeChordKN": 10.986263741167681,
+      "maximumWeakAxisBeamMomentKNm": 0.36067863971735337,
+      "recoveredErrN": 2.178732756874524e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -47.29050000000001
@@ -5549,13 +5549,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        12.572543015086694,
-        24.797246425809398,
-        16.601179046351888
+        11.825271593187916,
+        23.43706057207174,
+        16.074382449327803
       ],
       "cornerRangeDisplacementXY": [
-        0.4661472905611088,
-        0.4745968673556007
+        0.44490558047698414,
+        0.45309594174600853
       ],
       "criticalElementPoints": [
         [
@@ -5601,9 +5601,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 10.636455990947654,
-      "maximumWeakAxisBeamMomentKNm": 0.4382259567526908,
-      "recoveredErrN": 1.9165236153639853e-07,
+      "maximumDedicatedEdgeChordKN": 10.450649986795783,
+      "maximumWeakAxisBeamMomentKNm": 0.4257308624686631,
+      "recoveredErrN": 2.2718444370184443e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -47.2905
@@ -5612,13 +5612,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        12.926270139357767,
-        21.365219057724598,
-        10.608924698651728
+        12.470189034814407,
+        20.57043101210092,
+        10.343599810418498
       ],
       "cornerRangeDisplacementXY": [
-        1.394127268204572,
-        0.9684574592731073
+        1.3817625813659244,
+        0.9787080137246738
       ],
       "criticalElementPoints": [
         [
@@ -5664,9 +5664,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 8.098774684987156,
-      "maximumWeakAxisBeamMomentKNm": 0.5061200621878241,
-      "recoveredErrN": 2.7733694878406823e-06,
+      "maximumDedicatedEdgeChordKN": 8.001442246675156,
+      "maximumWeakAxisBeamMomentKNm": 0.5054367285661973,
+      "recoveredErrN": 1.816591975511983e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         0.0
@@ -5675,13 +5675,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        15.036054854194326,
-        9.622844577432371,
-        24.870904733135273
+        14.881808159375721,
+        9.460390002588396,
+        24.740225272947473
       ],
       "cornerRangeDisplacementXY": [
-        1.5027464855879207,
-        1.0459190868677037
+        1.4931406203761033,
+        1.054954614840991
       ],
       "criticalElementPoints": [
         [
@@ -5727,9 +5727,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 17.149233374892063,
-      "maximumWeakAxisBeamMomentKNm": 0.667001164760149,
-      "recoveredErrN": 5.738329491578043e-07,
+      "maximumDedicatedEdgeChordKN": 17.159983646510383,
+      "maximumWeakAxisBeamMomentKNm": 0.6598731399844356,
+      "recoveredErrN": 2.821161615429446e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         94.581
@@ -5738,13 +5738,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        29.80424636046277,
-        29.386950059214442,
-        30.947402223260486
+        29.456452246828427,
+        28.70162688918741,
+        30.68420334854533
       ],
       "cornerRangeDisplacementXY": [
-        0.5569479985563737,
-        0.6016852495560308
+        0.5370649771089053,
+        0.5778246616266465
       ],
       "criticalElementPoints": [
         [
@@ -5790,9 +5790,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 10.629809135420441,
-      "maximumWeakAxisBeamMomentKNm": 1.2457395455063414,
-      "recoveredErrN": 1.1912052286788821e-06,
+      "maximumDedicatedEdgeChordKN": 10.444756448411493,
+      "maximumWeakAxisBeamMomentKNm": 1.2304672586675034,
+      "recoveredErrN": 1.4745528460480273e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         47.29050000000001
@@ -5801,13 +5801,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        11.291713565990513,
-        9.763173235521538,
-        16.759682698309895
+        11.27173423573154,
+        9.752409159244536,
+        16.744045672417524
       ],
       "cornerRangeDisplacementXY": [
-        2.1430815292710106,
-        2.334890229987982
+        2.1431537133533505,
+        2.334260129707653
       ],
       "criticalElementPoints": [
         [
@@ -5853,9 +5853,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 10.177796752854137,
-      "maximumWeakAxisBeamMomentKNm": 0.5642519237012074,
-      "recoveredErrN": 1.5122332115424797e-06,
+      "maximumDedicatedEdgeChordKN": 10.178287907696134,
+      "maximumWeakAxisBeamMomentKNm": 0.5637990695750954,
+      "recoveredErrN": 1.5407090359076392e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         47.2905
@@ -5864,13 +5864,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        34.0552395027039,
-        26.37198224338853,
-        16.92626610865565
+        33.60130502891606,
+        25.48647863604667,
+        16.671405468325144
       ],
       "cornerRangeDisplacementXY": [
-        1.9247331861329209,
-        0.8303615953249075
+        1.9104983992783513,
+        0.8417398488434218
       ],
       "criticalElementPoints": [
         [
@@ -5916,9 +5916,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 14.199836504686816,
-      "maximumWeakAxisBeamMomentKNm": 0.5680417999914132,
-      "recoveredErrN": 9.384275472257286e-07,
+      "maximumDedicatedEdgeChordKN": 14.21080523757861,
+      "maximumWeakAxisBeamMomentKNm": 0.5601356755129044,
+      "recoveredErrN": 1.7432903405278921e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -94.581
@@ -5927,27 +5927,27 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        24.867090844949622,
-        42.74908929370076,
-        17.037449340477696
+        24.19551411507181,
+        41.13231414908386,
+        16.502870552965774
       ],
       "cornerRangeDisplacementXY": [
-        0.8858194106195643,
-        0.8688244105806859
+        0.8602572894774569,
+        0.8442232738922897
       ],
       "criticalElementPoints": [
         [
           [
-            2212.5,
-            8767.5
+            4885.0,
+            402.5
           ],
           [
-            2817.5,
-            8767.5
+            6000.0,
+            417.5
           ],
           [
-            2817.5,
-            9252.5
+            4885.0,
+            417.5
           ]
         ],
         [
@@ -5979,9 +5979,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 10.94209369449909,
-      "maximumWeakAxisBeamMomentKNm": 0.6072213878083901,
-      "recoveredErrN": 1.5052610251586884e-06,
+      "maximumDedicatedEdgeChordKN": 10.756293227465973,
+      "maximumWeakAxisBeamMomentKNm": 0.5896099749316465,
+      "recoveredErrN": 2.084836523863487e-06,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -47.29050000000001
@@ -5990,13 +5990,13 @@
     },
     {
       "chain_NxPlusAbsNxy_NyPlusAbsNxy_absNxy": [
-        15.466922768137263,
-        8.549701094274685,
-        8.13210092967389
+        15.431506070712414,
+        8.53032367649504,
+        8.134358300890144
       ],
       "cornerRangeDisplacementXY": [
-        2.4330410437179286,
-        2.044651932262738
+        2.432003691166819,
+        2.0450448428297783
       ],
       "criticalElementPoints": [
         [
@@ -6042,9 +6042,9 @@
           ]
         ]
       ],
-      "maximumDedicatedEdgeChordKN": 12.245961198768645,
-      "maximumWeakAxisBeamMomentKNm": 0.4886964154889911,
-      "recoveredErrN": 3.1794966162124183e-06,
+      "maximumDedicatedEdgeChordKN": 12.247740644402588,
+      "maximumWeakAxisBeamMomentKNm": 0.4886452889874919,
+      "recoveredErrN": 3.295563146821223e-07,
       "sumFloorEdgeLoadKN": [
         -47.2905,
         -47.2905
@@ -6052,7 +6052,7 @@
       "wind": 95
     }
   ],
-  "dedicatedEdgeChordDemandKN": 26.09383269727894,
+  "dedicatedEdgeChordDemandKN": 26.062475475182456,
   "dedicatedEightH12EdgeChordResistanceKN": 393.3820366234176,
   "fullFieldHalfSteelPass": true,
   "geometry": {
@@ -6112,11 +6112,11 @@
   "grossFullMeshKg": 2377.807010250952,
   "limits": "The finite model spreads each pier reaction over BOTH actual L legs and leaves local yaw unrestrained. The earlier one-point corner is a mesh singularity, not a building detail. Actual 1m L arms and 140mm edge beam must develop the forces, with sufficient bars developed into both arms and actual shear transfer across masonry/RC and any construction joint. Mesh density and crack response are development assumptions, not a guaranteed post-damage stiffness.",
   "maximumMembraneDemands_kN_per_m": [
-    132.1609506387109,
-    176.43752494379842,
-    127.43400610335487
+    132.15067845156514,
+    176.1932041860031,
+    127.4119120137813
   ],
-  "maximumWeakAxisMoment": 9.230495374018671,
+  "maximumWeakAxisMoment": 9.229833946246716,
   "meshExtent": "Radius corners/overlaps and 400-square wet well included; exact local trimmer steel, laps, fire/screed/ports and cage sequencing not included. Complete floor frame and local L-node forces remain separate.",
   "midheightIndependentlyReservedCompressionBandMM": 250,
   "newMesh": "H12/150 top and bottom each direction. Compare at most HALF the net steel resistance in each direction for membrane tension, leaving the original one-face 754 mm\u00b2/m available for the one-way bending reference. Recheck combined local bending/edge transfer at each hole, stair and bearing.",
@@ -6129,5 +6129,5 @@
     "shearMPa": 440,
     "source": "E_s=200 GPa and two H12/150 layers per direction gives a 1508 MPa axial stiffness comparator. 1200/440 MPa is an authored cracked membrane, not a tested shear law. Actual continuity and concrete diagonal compression must exist. No stiffness from glazing, floor finish, roof deck or disappearing wall."
   },
-  "weakAxisMRAfterChord": 10.8299272585593
+  "weakAxisMRAfterChord": 10.831866884512898
 }

@@ -1,7 +1,8 @@
-"""Horizontal roof diaphragm: twelve reversible CHS diagonals, two real rings,
-eight radial and four hip twin ties. Compare with a mechanism/open deck, not
-an infinitely rigid cap. Flat comparison retains rigid floor; pitched-roof model uses the finite
-perforated RC floor. Fixed pier bases are a site-dependent comparison. Units N, mm unless named.
+"""Compare two flat roof controls with the current three-dimensional frame.
+The pitched frame uses the actual ridge purlin, a single-sided 200 mm saddle,
+finite primary bending/torsion, two collectors and the perforated floor.
+Twelve additional horizontal CHS are a comparator, not the chosen load path.
+Fixed pier bases remain a site-dependent assumption. Units N and mm.
 """
 from pathlib import Path
 import json,math,sys,runpy
@@ -72,7 +73,41 @@ highD=lambda p,j:size+4*highNodes.index(p)+j
 vDO=lambda p,j:size+4*len(crowns)+3*ind[p]+j
 ridgePairs=[(pt(face,(A+C)/2,l),pt(face,(A+C)/2,r)) for face in range(4) for l,r in pairwise([(A+C)/2,4700,7300,12000-(A+C)/2])]
 phiD=lambda p,q,ei:size+4*len(crowns)+3*len(nodes)+2*ridgePairs.index((p,q))+ei
-spaceSize=size+4*len(crowns)+3*len(nodes)+2*len(ridgePairs)+8
+rRot=lambda q,j:size+4*len(crowns)+3*len(nodes)+2*len(ridgePairs)+3*highNodes.index(q)+j
+spaceSize=size+4*len(crowns)+3*len(nodes)+2*len(ridgePairs)+3*len(crowns)+8
+seatZ=200.;outerTerms={}
+def scalar(axis,dirs):
+    return [(i,k*v) for k,terms in zip(axis,dirs) for i,v in terms if k*v]
+def insert(K,terms,mat):
+    for m,rr in enumerate(terms):
+        for n,ss in enumerate(terms):
+            for i,v in rr:
+                for j,f in ss:K[i][j]+=v*mat[m][n]*f
+def nonAxial(p,q):
+    # Outer half is the physical ridge-seat receiver. Its flexural/torsional
+    # element can transmit eccentric moment; the opposing half remains a
+    # pin-ended axial strut and is NEVER locked by this saddle.
+    dz=zhigh-zheel;L=math.sqrt(math.dist(p,q)**2+dz**2);hh=math.dist(p,q)
+    h=[(q[j]-p[j])/hh for j in range(2)];X=[h[0]*hh/L,h[1]*hh/L,dz/L]
+    Y=[-h[1],h[0],0];Z=[-h[0]*dz/L,-h[1]*dz/L,hh/L]
+    o=zheel-6600
+    bp=[[(dof(p,0),1),(vDO(p,1),o)],[(dof(p,1),1),(vDO(p,2),o)],[(vDO(p,0),-1)]]
+    rp=[[(vDO(p,2),-1)],[(vDO(p,1),1)],[(dof(p,2),1)]]
+    bq=[[(highD(q,0),1),(rRot(q,1),-seatZ)],[(highD(q,1),1),(rRot(q,0),seatZ)],[(highD(q,2),1)]]
+    rq=[[(rRot(q,i),1)] for i in range(3)]
+    sec=w['sections']['primary'];A,H,t=sec['B'],sec['H'],sec['t']
+    tor=4*((A-t)*(H-t))**2/(2*(A-t+H-t)/t)
+    k=77000*tor/L;z1=[scalar(X,rp),scalar(X,rq)];terms=[('torsion',z1,[[k,-k],[-k,k]])]
+    m=[[12,6*L,-12,6*L],[6*L,4*L**2,-6*L,2*L**2],[-12,-6*L,12,-6*L],[6*L,2*L**2,-6*L,4*L**2]]
+    for tag,vv,rr,ii in [('weak',Y,Z,sec['Iminor']),('strong',Z,[-v for v in Y],sec['I'])]:
+        z0=[scalar(vv,bp),scalar(rr,rp),scalar(vv,bq),scalar(rr,rq)]
+        terms.append((tag,z0,[[z*Es*ii/L**3 for z in row] for row in m]))
+    return terms
+def localForces(u,terms):
+    for name,rr,mat in terms:
+        uu=[sum(u[i]*f for i,f in r) for r in rr]
+        vals=[sum(z*vv for z,vv in zip(row,uu)) for row in mat]
+        yield name,rr,vals
 # Two 100x8 mm working flange/side strips separated by 72 mm. Each side
 # develops through 140 mm stock, two 12 mm cantilevers of 100x16, and a
 # conservative 14 mm nominal shear path through joined 2x100x7 throats.
@@ -134,8 +169,12 @@ def build(active=True,high=False,springsAt=None,ringPlanEI=1.,ridgeStiff=1.):
             for p in [a,b]:
                 dist=math.sqrt(math.dist(p,peakXY)**2+(zhigh-zheel)**2);cx,cy=[(z1-z0)/dist for z0,z1 in zip(p,peakXY)];cz=(zhigh-zheel)/dist
                 terms=[(dof(p,0),-cx),(dof(p,1),-cy),(highD(peakXY,0),cx),(highD(peakXY,1),cy),(highD(peakXY,2),cz)]
+                terms.extend([(rRot(peakXY,1),-seatZ*cx),(rRot(peakXY,0),seatZ*cy)])
                 terms.extend([(vDO(p,0),cz),(vDO(p,1),-(zheel-rr)*cx),(vDO(p,2),-(zheel-rr)*cy)])
                 co=Es*w['sections']['primary']['A']/dist;add(K,terms,co);props['leg',p,peakXY]=(terms,co)
+                if p==a:
+                    et=nonAxial(p,peakXY);outerTerms[p,peakXY]=et
+                    for tag,r0,k0 in et:insert(K,r0,k0)
         sec=w['sections']['secondary'];cc=(A+C)/2
         for face in range(4):
             ls=[pt(face,cc,at) for at in [cc,4700,7300,12000-cc]]
@@ -195,7 +234,7 @@ def state(active,inside,roofspace=False,springsAt=None,ringPlanEI=1.,ridgeStiff=
                 # of the projected band at the ring. Integrating linear
                 # purlin influences, including signed outer tails, preserves
                 # yaw as well as overturning (no invented opposite supports).
-                Pupper=Mr*1e6/(zhigh-rr) if roofspace else 0.
+                Pupper=Mr*1e6/(zhigh+seatZ-rr) if roofspace else 0.
                 if roofspace:
                     cc=(A+C)/2;cs0=[cc,4700,7300,12000-cc]
                     idx=0 if u<=cs0[0] else next((j for j in range(3) if u<=cs0[j+1]),2);ll,hh=cs0[idx:idx+2];frac=(u-ll)/(hh-ll)
@@ -250,6 +289,15 @@ def caseLoads(case):
             L=math.sqrt(math.dist(p,q)**2+(zhigh-zheel)**2);nz=(zhigh-zheel)/L
             v[p]=v.get(p,0)-N*nz;z=g.setdefault(p,[0.,0.])
             for j in range(2):z[j]+=N*(q[j]-p[j])/L*(zheel-rr)/1000
+            # Add the actual outer rafter's weak-/strong-axis moments, shear
+            # and torque at the receiving heel. These internal actions were
+            # absent in the earlier local-only saddle price.
+            for tag,terms,vals in localForces(u,outerTerms.get((p,q),[])):
+                for rr0,vv in zip(terms,vals):
+                    for k,cf in rr0:
+                        if k==vDO(p,0):v[p]-=cf*vv/1000
+                        if k==vDO(p,1):z[0]-=cf*vv/1e6
+                        if k==vDO(p,2):z[1]-=cf*vv/1e6
             continue
         e=(6785-6600)/1000 if kind=='brace' else (6770-6600)/1000
         for a,b in [(p,q),(q,p)]:

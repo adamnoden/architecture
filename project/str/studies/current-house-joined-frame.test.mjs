@@ -27,5 +27,5 @@ test('The larger roof and unselected pit retain separate failure controls', () =
   assert.ok(r.crown['40pinCombined']>200/1.1 && r.crown['45pinCombined']<200/1.1);
   assert.ok(b.floor.M_V.every((v,i)=>v<b.floor.MR_VR[i]));
   assert.ok(b.cheeks.nominalMinimumClearToVerticalPileBars<25 && !b.admitted);
-  assert.ok(!j.admitted); // explicit comparison, never soil capacity
+  assert.equal(j.admitted,false); // explicit comparison, never soil capacity
 });

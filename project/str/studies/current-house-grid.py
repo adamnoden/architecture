@@ -10,7 +10,7 @@ ROOT=D.parents[2]
 def read(path,sha):
     raw=(ROOT/path).read_bytes(); assert hashlib.sha256(raw).hexdigest()==sha,path
     return json.loads(raw)
-src={'project/had/studies/water-replan.json':'1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb','project/str/studies/open-loggia-support.json':'b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5'}
+src={'project/had/studies/water-replan.json':'735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc','project/str/studies/open-loggia-support.json':'b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5'}
 H,O=(read(p,s) for p,s in src.items())
 B=H['bridge'];grid=O['lower_grid'];lat=json.loads((D/'current-house-lateral.json').read_text());src['project/str/studies/current-house-lateral.json']=hashlib.sha256((D/'current-house-lateral.json').read_bytes()).hexdigest()
 hd={}; beams={}

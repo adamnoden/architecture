@@ -1,0 +1,162 @@
+{
+  "identity": "RWT-UNADOPTED-GROUND-HIGH-EAVE-CONTROL-2026-11-06",
+  "source": {
+    "path": "project/had/studies/water-replan.json",
+    "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "authority": "Composed HAD consumer for this result; canonicalMain metadata records INTEGRATION BASELINE4fef04ad/HAD265ac194. Only conditional receiver/garden/maintenance refinements are integrated; separate construction comparisons and hydraulic/physical/site acceptance remain unadopted/unaccepted",
+    "canonicalMain": "4fef04ad7a82a149903aa077af04f95b3a392294",
+    "canonicalMainHadBlob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
+    "ordinaryEavePath": "project/mat/studies/loggia-roof-edge.json",
+    "ordinaryEaveBlob": "731c85d24e775259f1cf84d264d4ceaf75d89774",
+    "ordinaryEaveRole": "Unadopted MAT ordinaryface edge transferred adversely to SOUTHcourt wallY4250. Not an approved courtgutter, assignedcatchment or actual operational toolfit."
+  },
+  "accepted": false,
+  "selectedGeometryChanged": false,
+  "quietAccepted": false,
+  "physicalHandlingAccepted": false,
+  "qualifiedFirstHarm": null,
+  "recommendation": "Use one electric ground vacuum/camera control for ordinaryvisiblegutter inspection/clearing if actual neck/tool and handling earn it. Do not default everycleaningtask to a personlift. Receiver release/deeprepair remains separate and prohibited without live two-layer weather and actual supported access/lifting.",
+  "machine": {
+    "identity": "skyVac Commercial75Plus / CommercialPlus with Elite6pole9m package; no petrolgenerator selected",
+    "source": "https://skyvac.com/product/skyvac-commercial-75-plus/",
+    "reviewed": "2026-11-06",
+    "powerW": 3300,
+    "voltage": 240,
+    "nominalPowerDivVoltageA": 13.75,
+    "listedDryKg": 24,
+    "listedDrumLitres": 72,
+    "listedBody": [
+      590,
+      640,
+      1050
+    ],
+    "listedNoiseDb": 76,
+    "noiseMeasurementDistanceAndMetric": null,
+    "poles": {
+      "packageLength": 9000,
+      "assembledStraightNominalLength": 6000,
+      "assembledPoles": 4,
+      "eachLength": 1500,
+      "OD": 50,
+      "currentListedKgEach": 0.316,
+      "straightPoleSubtotalKg": 1.264,
+      "source": "https://skyvac.com/product/elite-pole-set/",
+      "historical280gBrochure": "Preserve difference: older primaryInterceptor brochure says280g. Current machine/pole pages say316g. Do not use280g or hybrid350g for this delivered kit. Vacrelease/clamps/neck/end tool/camera/hose and joint overlap are additional/unverified."
+    },
+    "neck": {
+      "identity": "Elite135hairpin",
+      "source": "https://skyvac.com/product/skyvac-elite-hairpin-neck-135-tool-holder/",
+      "listedEnvelope": [
+        300,
+        240,
+        60
+      ],
+      "angle": 135,
+      "actualCentrelineAndToolTip": null,
+      "limitation": "300×240×60 is a full productbox, not centreline radius, hookreach, insertionstroke or automatic200gutterfit. Bind its CAD/actual end tool in the roofsection before operational admission."
+    },
+    "hoseLength": 7500,
+    "camera": "Manufacturer optional VacCam/SurveyCam; actual model/mass/view/light/mount and droppedpartretention still unbound.",
+    "massAndPower": "72Lwater alone adds72kg to24dry=96kg before wet debris/poles/hoses. Actual filllimit/float/filter/tipping/support and motorstarting/circuit/lead/RCD/wetconnection need actual instructions.3300/240=13.75A is a nominal arithmetic warning, not a13Aextension approval.",
+    "material": "Removable maintenanceequipment contains carbonfibre/resin/plastic/rubber/electricalcomponents. No permanent installedmaterial exception or residue admission is implied."
+  },
+  "geometry": {
+    "court": [
+      4250,
+      4250,
+      3500,
+      3500
+    ],
+    "ordinaryEaveDatum": 7100,
+    "primaryHem": {
+      "y": 4450,
+      "z": 7006.738468369001
+    },
+    "secondaryDrip": {
+      "y": 4470,
+      "z": 6913.88660674044
+    },
+    "sharedReceiver": {
+      "y": [
+        4420,
+        4620
+      ],
+      "bottom": 6730,
+      "front": 6840,
+      "back": 6880
+    },
+    "protectedPrimarySecondary": "Bothdistinctroofexits discharge into the SAMEvisiblegutter. Groundvacuum can target that sharedgutter without opening either rooflayer. Clearing concealed secondarychannels/mesh or roof water above this receiver is NOT inferred.",
+    "trialHand": [
+      5900,
+      5500,
+      1175
+    ],
+    "trialNeckTop": [
+      5900,
+      4750,
+      7090
+    ],
+    "handHeightAboveTrialFloor": 1200,
+    "trialFloor": -25,
+    "requiredStraightLine": 5962.35901300819,
+    "nominalSixMetreReserve": 37.64098699180977,
+    "upperTrialIsNotTip": "7090 is a trial topneck reservation above the7006.738hem; end tool must still descend inside6730gutter past6840frontcrest without touching either drip or roof. No endpoint chosen here proves that compound motion.",
+    "nominalPoleSubtotalKg": 1.264,
+    "minimumPoleOnlyHorizontalGravityMomentNm": 4.649940000000001,
+    "forceLimit": "Poleonly rigidstraight/uniformgravity moment about lowerhand; excludes neck/camera/hose/debris, two hand spacing, flex, insertion, suctionrelease/drag, wind and wholecrew. It is NOT an allowable force or humanhandling pass.",
+    "nominalNeckTopReserveAbovePrimary": 83.26153163099934,
+    "machineSetup": [
+      4750,
+      5950,
+      640,
+      590
+    ],
+    "operatorCentre": [
+      5900,
+      5500
+    ],
+    "operatorRadius": 300,
+    "machineToOperatorWestGap": 210,
+    "northClearStripFromSetUp": 460,
+    "ordinaryBodySouthOfWell": 500,
+    "positionRule": "Trialfloor−25at5500 linearly interpolates the historicalMATcourt0at4250→−30at5750; actualfloor/handheight must be bound before deployment. No4%northinletgrade is extrapolated south through this different landing. BodyR300 at5900/5500 is south of actual eastwellY6300; apparatus stayssouthof7000. Hose/power route and approach retain controlleddryaccess and both livewaterdestinations.",
+    "delivery": "590×640 body can enter finished2400portal in plan; full1050height, actualcastors/handles/lead/hose route, threshold/ramp/cover loading and wheeled delivery remain unproved. Do not borrow an AWP jack/bridgepass.",
+    "independentSupport": false
+  },
+  "tasks": [
+    {
+      "task": "Ordinaryinspection / looseleaf/siltclearing",
+      "candidate": "Groundvacuum + camera; keep roof layers/receiver and both groundroutes intact",
+      "status": "CONDITIONAL / actual neck, view, force, noise/power and debris route unqualified"
+    },
+    {
+      "task": "Stubborn adheredblockage / guard or concealedsecondary repair",
+      "candidate": "Stopgroundtool before damagingdrips; actual protectedaccess intervention needed",
+      "status": "NOT earned by nominalreach; no force scraping or blindpuncture"
+    },
+    {
+      "task": "Rare receiver release/renewal",
+      "candidate": "Actual supportedworkdeck plus independentcradle/hoist and upstream primary + secondary interception",
+      "status": "FAIL / no joined liveweather/access/lifting route earned",
+      "retainedFailure": "Old6990cup misses secondary6913.887, overlapsgutter/down150/out400sweep. Groundvacuum does NOT fix it; receiver bolts remain closed."
+    },
+    {
+      "task": "Major rooflayer/supportrepair",
+      "candidate": "Conventional scaffold/protecteddeck and independently drainingtemporaryweather only if actual wholeassembly fits",
+      "status": "UNADOPTED / no inherited overroof, AWP or q250pass",
+      "finiteExit": "One supported access/hoist section against primary7006.738, secondary6913.887, guttersweepY4420..5020/Z6580..6880 and actualcourt/door/egress; choose permanentcomponent/accessrevision if this cannot be earned. Do not expand another equipmentcatalogue."
+    }
+  ],
+  "sequence": [
+    "Inspect bothroofexits/sharedgutter and downstreamN/E routes fromgroundcamera; keep doors/dropzone controlled and no canopy blocking pole approach.",
+    "Bring/park actualvacuum on supportedclosedcourt southofinlet; locate power/hose outside accessibleexit and waterpaths. Assemble only requiredpoles and verify neck/camera retention fromground.",
+    "Raise tool under controlledfull sweep, view actual tip/gutter, clear accessible debris while receiver stays live; use actual suctionrelease before overload rather than pulling fixed parts.",
+    "Lower/capture waste and inspect both layerdrips/gutter/outlet; retain both passivegroundroutes. Clear apparatus/power/hoses and restore access.",
+    "If actualtip/guard/power/noise/handling fails, stopgroundoperation. No receiverdisconnection or roofopening is authorised by this trial."
+  ],
+  "remains": [
+    "Actual southcollector/profile, concentrated jets and assignedlocalroofsource; currentMATedge remains only an adverse reference.",
+    "Actual toolpath/centreline, clearance to both drips/guard/mesh and loaded full sweep; power/quiet/material/debris disposal and wet court/occupant separation.",
+    "Rare receiver and major repair must have their own constructive liveweather/lift/crew/reversal exit. An ordinaryclearingcontrol cannot substitute for them."
+  ]
+}

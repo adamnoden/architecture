@@ -162,7 +162,7 @@ for which in ['outer','court']:
           stationsIncludingWind=[{'xy':p,'range':[rs[p][0]+min(0,*[v[k] for v in windHeads]),rs[p][1]+max(0,*[v[k] for v in windHeads])]} for k,p in enumerate(order)])
 print([(k,v['worstInteraction'],v['minAnchor'],v['maxAnchor']) for k,v in results.items()])
 
-out={'role':'Closed steel ring, rotation-free vertical supports. Explicit force/torque and true hip axes. Half-scale hinge or full-height captive masonry is not implied.','stations':len(anchors),'upperFloorOnly':upperOnly,'rings':results}
+out={'role':('Current pitched roof and independently solved closed rings with finite 40 kN/mm vertical support springs; actual 3D saddle bending, torsion and 260mm heel lever included.' if spaceRoof else 'Closed steel ring, rotation-free vertical supports. Explicit force/torque and true hip axes. Half-scale hinge or full-height captive masonry is not implied.'),'stations':len(anchors),'upperFloorOnly':upperOnly,'rings':results}
 def norm(v):
  if isinstance(v,dict):return {k:norm(z) for k,z in v.items()}
  if isinstance(v,(tuple,list)):return [norm(z) for z in v]
