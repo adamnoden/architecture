@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w2"
   },
   "claimedAt": "2026-11-06T07:38:16.280Z",
-  "heartbeatAt": "2026-11-06T07:38:16.280Z",
-  "expiresAt": "2026-11-06T08:23:16.280Z",
+  "heartbeatAt": "2026-11-06T07:42:19.898Z",
+  "expiresAt": "2026-11-06T08:27:19.898Z",
   "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "665c809b-2f61-44bd-8274-60a3eb7f0f12",
@@ -33,5 +33,10 @@
       "next": "Resolve fullouter-support/hoistpark usingexplicitconservativereservation+outboardfield; finishguard/actualsection; challengeandadoptonlyonecoherentsource.",
       "blocker": "UNSELECTED. Existingouterground-support line isnotclearedbycurrentstraddlinghoistpark; firstwet/guard/sourcequalificationholds explicit. No mixedmain/no completion."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote4ab18b32 treebbc205c4 preservesbc1329; fourHADtests/all3MATreproducers pass; canonicalhealth now invokes exactowning reproducers.",
+    "next": "Replace impossible lowdeck with explicit topaccess release/cover/body method, validate joined section and adoptonly coherent source.",
+    "blocker": "UNSELECTED; deck270headroom andhingedcover strike remain active architectural falsifiers; no current-house admission."
   }
 }
