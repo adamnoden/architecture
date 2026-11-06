@@ -19,3 +19,18 @@ test('E staging cannot silently consume the west garden escape',()=>{
   const v=deriveWaterReplan();
   assert.throws(()=>deriveGardenFailureBypass(v.model,{servicePlatform:[-3000,-20000,3000,40000]}));
 });
+
+test('garden bypass consumes BOTH current receiver and blocked-outlet continuation, preserving history only as history',()=>{
+ const v=deriveWaterReplan(),b=v.model.gardenFailureBypass,n=v.model.rwtReceivingInterface.north;
+ assert.deepEqual(b.receivingN.plan,n.receiverBounds);
+ assert.deepEqual(b.receivingN.requiredSpillContinuation,n.blockedOutletSpill.requiredContinuation);
+ assert.deepEqual(b.receivingN.combinedExtent,[4250,13450,5750,16650]);
+ assert.equal(b.receivingN.source.blob,v.model.rwtReceivingInterface.source.blob);
+ assert.equal(b.receivingN.directedSpillBoundary.directionProved,false);
+ assert.equal(b.checks.receivingContainmentAccepted,false);
+ assert.equal(b.checks.gardenEastReserve,250);assert.equal(b.checks.westBypassEastReserve,2150);
+ const gardenHit=structuredClone(v.model);gardenHit.rwtReceivingInterface.north.blockedOutletSpill.requiredContinuation=[-100,15150,1500,1500];
+ assert.throws(()=>deriveGardenFailureBypass(gardenHit,v.renewal),/Usable garden overlaps/);
+ const routeHit=structuredClone(v.model);routeHit.rwtReceivingInterface.north.blockedOutletSpill.requiredContinuation=[-2500,13250,1000,1000];
+ assert.throws(()=>deriveGardenFailureBypass(routeHit,v.renewal),/Garden bypass overlaps/);
+});

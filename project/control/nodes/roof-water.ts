@@ -139,9 +139,9 @@ export const roofWaterNodes = defineNodes([
     // HAD-03's single north loggia retains a common-mode closure. A complete
     // architectural replan must precede further source-bound water detailing.
     dependencies: ['RWT-03', 'RWT-05', 'HAD-WATER-REPLAN'],
-    lifecycle: 'planned',
+    lifecycle: 'started',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-06-selected-water-event.md']
   },
 
   // Owner-directed successor questions; original research remains historical evidence.

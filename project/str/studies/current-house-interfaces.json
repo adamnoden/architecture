@@ -135,9 +135,9 @@
     }
   ],
   "source": {
-    "gitBlob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
+    "gitBlob": "6f089df104fe85c028978892e7f6b63f862e3237",
     "path": "project/had/studies/water-replan.json",
-    "sha256": "1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb"
+    "sha256": "7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8"
   },
   "status": "Current-house structural coordination WIP; no STR-HOUSE selection or physical approval"
 }

@@ -2,7 +2,7 @@
 """Conserved finite row/hip roof; actual discrete steel origins and adverse independent rows."""
 from pathlib import Path
 import json,math,hashlib,sys
-R=Path(__file__).resolve().parents[3];P=R/'project/had/studies/water-replan.json';raw=P.read_bytes();assert hashlib.sha256(raw).hexdigest()=='1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb'
+R=Path(__file__).resolve().parents[3];P=R/'project/had/studies/water-replan.json';raw=P.read_bytes();assert hashlib.sha256(raw).hexdigest()=='7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8'
 v=json.loads(raw);h=v['model'];LP=R/'project/str/studies/open-loggia-support.json';lr=LP.read_bytes();a=json.loads(lr)['actual_roof'];E=200000;fy=200/1.1
 
 def box(H,B,t):

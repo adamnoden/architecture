@@ -71,7 +71,7 @@
       "access": "Public publisher abstract inspected6November2026; complete paid paper not inspected",
       "role": "Four clay-brick/mortar panel groups had low measured air permeance. Relevant against blanket rejection of an unplastered bonded masonry control, not evidence for WCBL65/M12, this DPC/floor joint, movement, moisture, gas or site performance. No measured value is transferred to the house."
     },
-    "servicesTarget": "Proposed q50<=1.0 comparison and single10% floor/wall aggregate pinned under ServicesAir. No owner invariant or assembly performance is adopted. Structural cores belong here; complete service sleeves/collars belong to the separate penetrations10%, not another floor allowance."
+    "servicesTarget": "Proposed q50 ≤1.0 comparison and one 10% floor/wall aggregate pinned under ServicesAir. No owner invariant or assembly performance is adopted. Only three structural RC core crossings belong here; complete service sleeves/collars belong to the separate penetrations 10% family."
   },
   "admission": {
     "selected": false,
@@ -82,10 +82,16 @@
     "site": false
   },
   "ServicesAir": {
-    "commit": "e85cc19fc858069cb874a3b0622303c2edc56ac5",
+    "commit": "90a18dae76c338a389dfb401a23f1decf6fc43e2",
     "path": "project/mat/studies/whole-house-leakage-duty.json",
-    "blob": "c4e6e9fd168078c83d092d13f1913b5d0128b7af",
-    "role": "Immutable unadopted Services1356 whole-house reference and single aggregate family allocation; not final test envelope or owner target."
+    "blob": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+    "role": "Immutable, unadopted Services1356 comparison refreshed against merged RWT 2a310840 / HAD 6f089df1; not a final test envelope, owner target or assembly performance.",
+    "previousReviewedSource": {
+      "commit": "e85cc19fc858069cb874a3b0622303c2edc56ac5",
+      "path": "project/mat/studies/whole-house-leakage-duty.json",
+      "blob": "c4e6e9fd168078c83d092d13f1913b5d0128b7af",
+      "role": "Immutable unadopted Services1356 whole-house reference and single aggregate family allocation; not final test envelope or owner target."
+    }
   },
   "thresholdAirOverlap": {
     "role": "Ordinary dry-side air-control development control, not an actual seal/product or pressure-water closure",
@@ -104,14 +110,34 @@
       1.0
     ],
     "width_mm": 1780,
-    "rule": "Steady laminar parallel-plate calculation derived from pressure-driven momentum balance; uniform connected gap, no slip, constant properties. Ideal straight-channel sensitivity only, not a measured joint rating or an adopted allocation. Entrance, roughness, variable gap and end bypass remain actual assembly matters.",
-    "waterDuty": "No source-qualified head assigned to this dry apron behind crest15. Quiet water -35 and geometric crest15 are not a first-leak rating; firstSusceptible remains null. No closed E roof/pipe pressure duty is transferred. Water/capillary/end qualification remains independent.",
-    "toleranceRole": "The2mm movement and1mm edge tolerances are authored challenge bounds, not actual fabrication/installation tolerances. Gap control is an unproven requirement on formed faces and supports, not an achieved fit.",
+    "rule": "Ideal no-slip, steady laminar, fully developed central-slot sensitivity derived from pressure-driven momentum balance; uniform connected gap and constant properties. Not measured leakage, an installed rating, an adopted allocation or a strict assembly bound. Entry/end effects, variable-gap paths, deformation and achieved tolerances remain unqualified; especially the largest gaps must not be treated as a supplied joint performance.",
+    "waterDuty": "No source-qualified head is assigned to this dry apron behind the +15 mm crest. Quiet water −35 mm and geometric crest +15 mm are not a first-leak rating; firstSusceptible remains null. No closed E roof/pipe pressure duty is transferred. Water/capillary/end qualification remains independent.",
+    "toleranceRole": "The 2 mm movement and 1 mm edge tolerances are authored challenge bounds, not actual fabrication/installation tolerances. Gap control is an unproven requirement on formed faces and supports, not an achieved fit.",
     "ends": "No actual end gap or end closure is authored. Every gap result is central only and cannot be credited as total assembly leakage.",
-    "renewal": "Ordinary retention/cover must be independently supported and entirely released before NORTH500 withdrawal; no permanent field-to-pan weld or through-pan fixing. No high preload is inferred from air duty alone.",
+    "renewal": "Ordinary retention/cover must be independently supported and entirely released before NORTH 500 mm withdrawal; no permanent field-to-pan weld or through-pan fixing. No high preload is inferred from air duty alone.",
     "backingEndY": 4054,
     "panStartY": 4030,
     "referenceRetainerY": 4010,
     "referenceHoleDiameter_mm": 6.5
-  }
+  },
+  "currentHADReconciliation": {
+    "commit": "2a31084013cebca2094692263f0c7a2b2f8d2166",
+    "path": "project/had/studies/water-replan.json",
+    "blob": "6f089df104fe85c028978892e7f6b63f862e3237",
+    "role": "Actual merged RWT checkpoint; compare the named relevant projections with the intentionally pinned floor/pan case. Changed receiver/maintenance and other source roles are not relabelled as unchanged."
+  },
+  "currentHADProjectionPaths": [
+    "shell",
+    "envelope",
+    "court",
+    "sections",
+    "void",
+    "groundWalls",
+    "northNormalRoute.floorJoin",
+    "southCourtThresholdReference",
+    "structuralChanges.stairMidPost.concrete",
+    "structuralChanges.newWetWallBeam.southReceiverCore",
+    "structuralChanges.newWetWallBeam.northReceiverCore",
+    "structuralChanges.newWetWallBeam.beamBottom"
+  ]
 }

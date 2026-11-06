@@ -1,0 +1,988 @@
+{
+  "identity": "RWT-UNADOPTED-CURRENT-E-CLOSED-CONTROL-2026-11-06",
+  "selectedSource": "6f089df104fe85c028978892e7f6b63f862e3237",
+  "sourceAuthority": "Composed HAD consumer for this result; canonicalMain metadata records INTEGRATION BASELINE4fef04ad/HAD265ac194. Only conditional receiver/garden/maintenance refinements are integrated; separate construction comparisons and hydraulic/physical/site acceptance remain unadopted/unaccepted",
+  "canonicalMain": "4fef04ad7a82a149903aa077af04f95b3a392294",
+  "canonicalMainHadBlob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
+  "startingMain": "80c0f94148ad11e3b2eaa83c52e28d06238993ed",
+  "selectedGeometryChanged": false,
+  "recommendation": "Retain ONE closed159copper control for development, but REJECT its original same-level first flange draw. Test one lowered local service bay and supported initial drop; keep real2200longer exterior renewal cost and unresolved actual end connections visible.",
+  "tube": {
+    "product": "Lawton TX1593/TX1596 TableX hard copper",
+    "OD": 159,
+    "wall": 2,
+    "nominalID": 155,
+    "declaredODTolerance": 0.2,
+    "declaredOutOfRound": 0.7,
+    "declaredWallToleranceFraction": 0.15,
+    "maximumOutsideScreen": 159.9,
+    "minimumInscribedBoreScreen": 153.5,
+    "interpretation": "Conservative simultaneous tolerance envelope, not a delivered inspection certificate. Product is not declared an assembled rainwater system."
+  },
+  "retained": {
+    "quiet": -35,
+    "geometricCrest": 15,
+    "houseBounds": [
+      0,
+      0,
+      12000,
+      12000
+    ],
+    "roofCourtAreaM2": 60.0625,
+    "inwardRoofM2": 47.8125,
+    "courtM2": 12.25,
+    "structuralRoofDomainM2": 144.15,
+    "fieldBeamUnderside": -630,
+    "nodeUnderside": -750,
+    "actualOpeningY": [
+      6425,
+      7375
+    ],
+    "minimumMovingClearanceEach": 25,
+    "courtMouth": {
+      "planeX": 6125,
+      "creditedIntervals": [
+        [
+          6950,
+          7175
+        ],
+        [
+          7275,
+          7375
+        ]
+      ],
+      "creditedWidth": 325
+    },
+    "catchCoverCount": 5,
+    "plainCoverCount": 5,
+    "coverPlanEach": [
+      305,
+      550
+    ]
+  },
+  "collectingChange": {
+    "plan": [
+      7040,
+      6950,
+      335,
+      450
+    ],
+    "floorControl": [
+      [
+        7040,
+        -171.96
+      ],
+      [
+        7181.7128027681665,
+        -200
+      ],
+      [
+        7375,
+        -180
+      ]
+    ],
+    "outletAxis": [
+      7181.7128027681665,
+      7000
+    ],
+    "verticalOutletID": 155,
+    "outletShiftEW": 6.712802768166512,
+    "fittingAlignment": "Collector throat/closed closure moves6.713east to meet the native N18 inlet axis rotated with50/4250carrier fall; regenerate actual gutter fall/closure/cover supports before adoption. No vertical-to-tilted socket mismatch is concealed.",
+    "coverTop": 0,
+    "changedGutterCassetteBottom": -215,
+    "oldMinimumBottom": -200,
+    "changed": "Re-form ONLY the actual fourth/fifth north catch-cover gutter ends to drain to the generated7181.713/7000/−200closed outlet; the east tail falls WEST to this lower outlet. Captured top cover/gutter footprints stay305×550. No65throat, raised sill or un-drained depression; all points descend to the aligned closed outlet.",
+    "construction": "Small closed transition below the existing250wide receiving return replaces the free617.6mm hood plunge; continuous vent/rod access opens from the existing removed catch covers. Top connection/clip/braze and first release require actual source, not an assumed sealed overlap."
+  },
+  "intakeTurn": {
+    "verticalAxis": [
+      7181.7128027681665,
+      7000
+    ],
+    "fromZ": -200,
+    "toZ": -467.60920197580214,
+    "horizontalAxisAt": [
+      7477.9790333183155,
+      7000,
+      -774.1526945096273
+    ],
+    "factoryPortBinding": {
+      "carrierFall": 0.011764705882352941,
+      "rotationAboutYDegrees": 0.6740368979845054,
+      "theoreticalPortAxisIntersection": [
+        7175,
+        7000,
+        -770.5882352941177
+      ],
+      "verticalLeg": 303,
+      "horizontalLeg": 303,
+      "horizontalPort": [
+        7477.9790333183155,
+        7000,
+        -774.1526945096273
+      ],
+      "topPort": [
+        7178.5644592155095,
+        7000,
+        -467.60920197580214
+      ],
+      "collectorPort": [
+        7181.7128027681665,
+        7000,
+        -200
+      ],
+      "pipeAxisAtHorizontalPort": -774.1526945096273,
+      "nativePortToFlangeFaceLength": 72.02595065917788,
+      "flangeFaceNormal": [
+        0.9999308030307444,
+        0,
+        -0.011763891800361699
+      ],
+      "role": "Rigid90degree native port-vector binding.303is catalogue l, not a factory bend radius; actual socket engagement/centreline/body drawing remains a named hold.",
+      "aboveBridgeTrialAxisZ": -149.95,
+      "aboveBridgeTopPortZ": 153.05,
+      "quietStage": -35,
+      "aboveBridgeAccepted": false,
+      "reason": "Unrotated raised comparator already puts303topport153.05above walk0 and quiet−35; full warm floor/movingflange separately rejects retained raised route."
+    },
+    "reservedBox": [
+      7090,
+      6905,
+      -855,
+      460,
+      190,
+      460
+    ],
+    "productComparator": {
+      "item": "Endex N18/89710,159",
+      "overall": [
+        380,
+        170,
+        380
+      ],
+      "massKg": 6.15,
+      "l1": 303,
+      "z1": 272,
+      "role": "Real factory size/braze-only comparator. Conservative460×190×460 reservation contains the listed380×170×380 box; the authoredR300 axis is NOT falsely identified as the factory centreline drawing."
+    },
+    "sourceJoin": "Factory l/z, sockets, exact braze engagement and rotation must bind before fixing the actual axis. No fitting or helper is allowed beyond X7550 into the first beam starting7650."
+  },
+  "carrier": {
+    "axis": [
+      [
+        7550,
+        7000,
+        -775
+      ],
+      [
+        12250,
+        7000,
+        -830.2941176470588
+      ]
+    ],
+    "length": 4700,
+    "flange": {
+      "product": "Endex N1FMGI159 item89719",
+      "catalogOutside": 285,
+      "catalogAxial": 20,
+      "catalogMassEachKg": 7,
+      "brochureAxialA": 25,
+      "brochureZa": 2,
+      "brochureHoles": 8,
+      "outsideEnvelope": 320,
+      "axialEach": 60,
+      "locationX": [
+        7550,
+        12250
+      ],
+      "source": "https://aalberts-ips.co.uk/products/item/89719/",
+      "catalogConflict": "Current item page20axial/CW617N/clamp metadata versus brochure25/Za2/steelouter+gunmetalinsert/brazed installation. Preserve both; no invented delivered drawing/material agreement.",
+      "wellGrossBottom": -935,
+      "wellFloorReserve": 15,
+      "massMovingPairKg": 14,
+      "massFixedPairKg": 14,
+      "status": "Actual285catalogue envelope replaces too-small260projectreservation.320×120 is a conservative PROJECT tool/bolt reservation, NOT a solved8bolt/retention first release. Both flange halves stay within joint-face-to-face4700 body length, with tube cut/engagement to suit; tool reservation is not extra movingbody length. Gasket/bolt/socket/braze and actual top release remain unqualified. No centre flange hidden below gallery."
+    },
+    "fullTubeMaximumOD": 159.9,
+    "movingSledY": [
+      6475,
+      7325
+    ],
+    "supportSaddlesRelativeX": [
+      250,
+      2350,
+      4450
+    ],
+    "supportBelowAxis": 150,
+    "retainedRailBelowSled": 100,
+    "flangeIsStructuralSupport": false,
+    "fieldMinimumCrownGap": 66.2264705882352,
+    "movingSideReserves": [
+      50,
+      50
+    ],
+    "flangeWestToFirstBeamEW": 40,
+    "flangeEastBeyondOuterBeamEW": 72.5,
+    "supportCases": [
+      {
+        "spanMm": 2100,
+        "elasticModulusHypothesisGPa": 55,
+        "endpointDifferenceMm": 3,
+        "rotationMmPerM": 0.7465962300337917,
+        "residualDownhillMmPerM": 9.589538223747722,
+        "simplySupportedDeflectionMm": 0.48995377595967576,
+        "boundary": "Isolated simply supported copper tube under full uniform water/metal load; no skid point load, fitting, crush, fixation or support-movement acceptance."
+      },
+      {
+        "spanMm": 4200,
+        "elasticModulusHypothesisGPa": 55,
+        "endpointDifferenceMm": 3,
+        "rotationMmPerM": 5.972769840270334,
+        "residualDownhillMmPerM": 5.077650327796893,
+        "simplySupportedDeflectionMm": 7.839260415354812,
+        "boundary": "Isolated simply supported copper tube under full uniform water/metal load; no skid point load, fitting, crush, fixation or support-movement acceptance."
+      }
+    ],
+    "movingFlangeClearance": {
+      "catalogOD": 285,
+      "axialScreen": 25,
+      "firstBeamStart": 7650,
+      "boxScreen": "The installed2.5/first-entry3.382/translation75 are conservative AXIS-ALIGNED285×25 bounding-box comparisons, not exact tilted-disc kinematics.",
+      "rotatedDisc": {
+        "angleDegrees": 0.6740368979845054,
+        "installedTopGap": 2.5098605681189383,
+        "firstLeadingPointEntryTranslation": 73.32537534267985,
+        "firstEntryTopGap": 3.6666093377476727
+      },
+      "installedTopGap": 2.5,
+      "firstEntryTranslation": 75,
+      "sameLevelFirstEntryTopGap": 3.382352941176464,
+      "minimumAuthoredMovingClearance": 20,
+      "accepted": false,
+      "failure": "REJECTED same-level initial draw. The tube crown gap cannot be transferred to the285flange. Only2.51installed/3.67at exact rotated-disc first entry remains before tolerances, rail movement or tool/retention. No earned renewal method follows."
+    }
+  },
+  "terminal": {
+    "closedRoute": [
+      [
+        12250,
+        7000,
+        -830.2941176470588
+      ],
+      [
+        12650,
+        7000,
+        -835
+      ],
+      [
+        12950,
+        7000,
+        -1135
+      ],
+      [
+        12950,
+        7000,
+        -1200
+      ]
+    ],
+    "reservedCartridge": [
+      12190,
+      6840,
+      -1285,
+      910,
+      320,
+      615
+    ],
+    "bendProductComparator": "Second N18-sized380×170×380 envelope inside changed910long cartridge; exact socket/axis binding remains required.",
+    "orientation": "VERTICALLY DOWN at12950/7000/−1200",
+    "receiverBounds": [
+      12500,
+      6100,
+      2000,
+      1600
+    ],
+    "ordinaryMaximum": -1400,
+    "faultedMaximum": -1250,
+    "nearReceiverReserve": 370.0499999999993,
+    "farReceiverReserve": 1470.0499999999993,
+    "airGapOrdinary": 200,
+    "airGapAtDeclaredFaultedMaximum": 50,
+    "pad": [
+      15300,
+      8200,
+      1100,
+      800
+    ],
+    "padChange": "Real285flange and320toolreservation enlarge cartridge to910; allocate1100×800 on explicitly extended deck. Neither old800square nor early850/1000pad comparison is transferred.",
+    "status": "Changed terminal requires actual support release, captured910 envelope, return/refit and receiver impact screen. Old550cartridge handling is NOT transferred."
+  },
+  "renewal": {
+    "onePiece": true,
+    "hiddenMiddleJoint": false,
+    "drawTranslation": 4700,
+    "parkX": [
+      12250,
+      16950
+    ],
+    "stage": [
+      12250,
+      8100,
+      4900,
+      1200
+    ],
+    "oldStage": [
+      12250,
+      8100,
+      2700,
+      1200
+    ],
+    "stageExtensionEW": 2200,
+    "oldDeckEndX": 16200,
+    "requiredDeckEndX": 17150,
+    "deckExtensionEW": 950,
+    "temporaryCradleX": [
+      12900,
+      16300
+    ],
+    "pipeParkCentreX": 14600,
+    "handOver": [
+      12250,
+      9600,
+      4900,
+      1200
+    ],
+    "supportRule": "Use ONE independent temporary lower cradle pair; no stacked outer/inner body and no loaded upper bearer insertion. Proposed far cradle16300 lies beyond old16200 deck and requires the real950extension/support. Existing rack/gantry is not rated by this drawing.",
+    "ordered": [
+      "N intact/full-duty and all E weather controls tested; guard intact covers.",
+      "Capture/remove the SAME five north catch covers and five plain covers before using existing stairs/platform. No new ten deep chute panels or55kg telescopic-staff apparatus is added.",
+      "From isolated well/platform, expose and support inlet/drop connection; drain pipe, capture and separate the actual end connectors. A solved top first-release/retention path is still required; a pressure seal is not a support.",
+      "Open all outboard covers. Capture/remove changed terminal cartridge and land on its1100×800pad BEFORE carrier draw.",
+      "HOLD: original same-level initial draw is REJECTED by moving285flange clearance. Earn the separate lowered-bay/supported-drop comparison before drawing one captured4700pipe+850sled EAST to12250..16950. No person stands below or beside moving carrier in the portal.",
+      "Lift1700 and transferN1800 into4900×1200 lower cradle territory; support at12900/16300, restrain, then detach rigging. Outgoing piece leaves before incoming occupies samepad.",
+      "Reverse pipe motion; restore/test end connections and first-leak witness. Refit/test terminal while covers OPEN, then close covers. Restore catch covers/hood/entry and prove full E path before removing weather control."
+    ],
+    "completeHandlerSweepProved": false,
+    "aboveBridgeWholeControl": {
+      "accepted": false,
+      "sourceCommit": "5f56d58f5c2d4b7d65b712be10c39d274884b154",
+      "sourcePath": "project/str/studies/current-house-occupied-interfaces.json",
+      "sourceBlob": "c4b2261a7c62481b64617cca57b6b2baabec330e",
+      "requiredRecessForMovingFlangeBelowWarmFloor": 352.89,
+      "finding": "REJECTED retained complete factory/fixed-floor control: all3spans checked by STR; tube-only recess omits285movingflange, native303port and real180warm buildup/RC200 floor.450bridge remains. No top-cage/floor replan accepted."
+    }
+  },
+  "loads": {
+    "nominalTubeSheetKg": 41.54180744598364,
+    "fullBlockedTubeWaterKg": 88.68519711543136,
+    "tubeOnlyWetKg": 130.22700456141501,
+    "movingTubeAndTwoCatalogFlangesDryKg": 55.54180744598364,
+    "movingTubeAndTwoCatalogFlangesWetKg": 144.22700456141501,
+    "fixedFlangePairKg": 14,
+    "listedTwoBendsKg": 12.3,
+    "excluded": "Solder/braze constituents, gasket/bolts,850sled/clamps/eyes, hopper and rigging need actual signed masses beyond tube+two7kg movingflanges. Fixedother14kg flange pair and12.3kg listedbends are separate. No50kg whole-handler claim follows from42kg bare pipe.",
+    "maximumTrackBottom": -1135.5882352941176,
+    "localGroundRequirementAtHeave300Construction50Ventilation150": 1635.5882352941176,
+    "uniformD1800ProxyReserve": 164.41176470588243,
+    "retainedLocalCatchLow": -1188,
+    "groundDecision": "Local track clearance and retained flange-catch clearance remain separate. Neither a uniform exterior−1800 grade nor a new whole-house/front-approach replan is adopted; real groundwater/backwater/site access can reject the exterior extension."
+  },
+  "hydraulics": {
+    "assignedLps": 3.60375,
+    "slowHeaderCounterexample": [
+      {
+        "rainfall": 72,
+        "totalLps": 1.20125,
+        "actualNorth100MaximumLps": 1.20125,
+        "zeroLossInletDepthMm": 5.321894143093901,
+        "conjugateMm": 71.73662144998418,
+        "clean65CriticalSpecificEnergyMm": 48.97956825846867,
+        "optimisticTailwaterReserveMm": -22.757053191515524,
+        "boundary": "Header bed−300 with quiet−35; control specific energy is an UPPER depth bound before upstream grade/velocity/turn loss. Negative reserve falsifies this slow-turn premise; positive reserve does not locate a jump."
+      },
+      {
+        "rainfall": 144,
+        "totalLps": 2.4025,
+        "actualNorth100MaximumLps": 2.38179376391469,
+        "zeroLossInletDepthMm": 10.662259492112366,
+        "conjugateMm": 98.9554029228356,
+        "clean65CriticalSpecificEnergyMm": 77.75021817844139,
+        "optimisticTailwaterReserveMm": -21.205184744394217,
+        "boundary": "Header bed−300 with quiet−35; control specific energy is an UPPER depth bound before upstream grade/velocity/turn loss. Negative reserve falsifies this slow-turn premise; positive reserve does not locate a jump."
+      },
+      {
+        "rainfall": 216,
+        "totalLps": 3.60375,
+        "actualNorth100MaximumLps": 2.38179376391469,
+        "zeroLossInletDepthMm": 10.662259492112366,
+        "conjugateMm": 98.9554029228356,
+        "clean65CriticalSpecificEnergyMm": 101.88160759450719,
+        "optimisticTailwaterReserveMm": 2.926204671671595,
+        "boundary": "Header bed−300 with quiet−35; control specific energy is an UPPER depth bound before upstream grade/velocity/turn loss. Negative reserve falsifies this slow-turn premise; positive reserve does not locate a jump."
+      }
+    ],
+    "uniformCases": [
+      {
+        "n": 0.015,
+        "boreFraction": 1,
+        "fullBoreGravityCapacityLps": 15.22432961422506,
+        "passesAssignedFullBoreScreen": true,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.015,
+        "boreFraction": 0.9,
+        "fullBoreGravityCapacityLps": 11.495244241658288,
+        "passesAssignedFullBoreScreen": true,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.015,
+        "boreFraction": 0.75,
+        "fullBoreGravityCapacityLps": 7.0691665499104435,
+        "passesAssignedFullBoreScreen": true,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.015,
+        "boreFraction": 0.5,
+        "fullBoreGravityCapacityLps": 2.397681668937506,
+        "passesAssignedFullBoreScreen": false,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.02,
+        "boreFraction": 1,
+        "fullBoreGravityCapacityLps": 11.418247210668794,
+        "passesAssignedFullBoreScreen": true,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.02,
+        "boreFraction": 0.9,
+        "fullBoreGravityCapacityLps": 8.621433181243715,
+        "passesAssignedFullBoreScreen": true,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.02,
+        "boreFraction": 0.75,
+        "fullBoreGravityCapacityLps": 5.301874912432832,
+        "passesAssignedFullBoreScreen": true,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.02,
+        "boreFraction": 0.5,
+        "fullBoreGravityCapacityLps": 1.7982612517031293,
+        "passesAssignedFullBoreScreen": false,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.025,
+        "boreFraction": 1,
+        "fullBoreGravityCapacityLps": 9.134597768535036,
+        "passesAssignedFullBoreScreen": true,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.025,
+        "boreFraction": 0.9,
+        "fullBoreGravityCapacityLps": 6.897146544994971,
+        "passesAssignedFullBoreScreen": true,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.025,
+        "boreFraction": 0.75,
+        "fullBoreGravityCapacityLps": 4.241499929946266,
+        "passesAssignedFullBoreScreen": true,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      },
+      {
+        "n": 0.025,
+        "boreFraction": 0.5,
+        "fullBoreGravityCapacityLps": 1.4386090013625032,
+        "passesAssignedFullBoreScreen": false,
+        "boundary": "Equivalent clear DIAMETER sensitivity, not measured debris distribution or a justified blockage allowance."
+      }
+    ],
+    "cleanPartialCases": [
+      {
+        "n": 0.015,
+        "depthMm": 50.82689981631762,
+        "velocityMps": 0.6735115507570244,
+        "froude": 1.117399089066664,
+        "boundary": "Uniform ventilated partial circular branch below half full only; not a fitting, entry or surcharge rating."
+      },
+      {
+        "n": 0.02,
+        "depthMm": 59.248667716735895,
+        "velocityMps": 0.5468607392936045,
+        "froude": 0.8314953140256187,
+        "boundary": "Uniform ventilated partial circular branch below half full only; not a fitting, entry or surcharge rating."
+      },
+      {
+        "n": 0.025,
+        "depthMm": 66.99493464149087,
+        "velocityMps": 0.4644299223419273,
+        "froude": 0.6568320442489453,
+        "boundary": "Uniform ventilated partial circular branch below half full only; not a fitting, entry or surcharge rating."
+      }
+    ],
+    "lossCases": [
+      {
+        "darcyF": 0.02,
+        "totalK": 0,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 1.5110188840615761,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 53.783098762997206,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.02,
+        "totalK": 5,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 11.17524383003874,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 44.118873817020045,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.02,
+        "totalK": 10,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 20.839468776015906,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 34.45464887104288,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.02,
+        "totalK": 20,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 40.167918667970234,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 15.12619897908855,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.04,
+        "totalK": 0,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 3.0220377681231523,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 52.27207987893563,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.04,
+        "totalK": 5,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 12.686262714100316,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 42.60785493295847,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.04,
+        "totalK": 10,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 22.35048766007748,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 32.94362998698131,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.04,
+        "totalK": 20,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 41.67893755203181,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 13.615180095026972,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.08,
+        "totalK": 0,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 6.044075536246305,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 49.25004211081248,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.08,
+        "totalK": 5,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 15.708300482223468,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 39.58581716483532,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.08,
+        "totalK": 10,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 25.372525428200632,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 29.92159221885815,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      },
+      {
+        "darcyF": 0.08,
+        "totalK": 20,
+        "fullBoreVelocityMps": 0.19473679335968946,
+        "fullBoreVelocityHeadMm": 1.9328449891954327,
+        "frictionAndLocalLossMm": 44.70097532015496,
+        "sameLevelCarrierFallMm": 55.29411764705878,
+        "fallOnlyReserveMm": 10.593142326903823,
+        "boundary": "6m full-bore Darcy/K sensitivity; no actual coefficient or priming/air/surcharge prediction."
+      }
+    ],
+    "unchangedMouthCases": [
+      {
+        "lossK": 0,
+        "remainingFraction": 1,
+        "requiredCourtStage": -51.09211785754309,
+        "quietCapacityLps": 6.35743939409847
+      },
+      {
+        "lossK": 0,
+        "remainingFraction": 0.75,
+        "requiredCourtStage": -43.69008247497844,
+        "quietCapacityLps": 4.768079545573852
+      },
+      {
+        "lossK": 1,
+        "remainingFraction": 1,
+        "requiredCourtStage": -39.42660576728862,
+        "quietCapacityLps": 4.129278013731918
+      },
+      {
+        "lossK": 1,
+        "remainingFraction": 0.75,
+        "requiredCourtStage": -29.578154839205347,
+        "quietCapacityLps": 3.0969585102989385
+      }
+    ],
+    "pressureBoundaries": {
+      "quietCourtHead": -35,
+      "geometricJoin": 15,
+      "qualifiedFirstSusceptible": null,
+      "staticHeadAtLowestInstalledInvertMm": 922.0441176470588,
+      "roofHeadNotDissipatedByAssumption": 7100,
+      "maximumRoofHeadAtLowestInvertMm": 8007.044117647059,
+      "limitation": "This closed route moves turns/jet impacts into a pressure/leakage boundary. Actual roof-to-court energy loss is not calibrated. Do not claim only25/75mm cover pressure or transfer a PN16 fitting label to the hopper, braze, flange or gasket."
+    }
+  },
+  "mouthRewind": {
+    "identity": "REJECTED finite600north/500south cover-boundary rewind",
+    "selectedGeometryChanged": false,
+    "accepted": false,
+    "source": "6f089df104fe85c028978892e7f6b63f862e3237",
+    "assignedLps": 3.60375,
+    "quiet": -35,
+    "catchmentUnchangedM2": 60.0625,
+    "approachLengthMm": 100,
+    "candidates": [
+      {
+        "northCoverLength": 550,
+        "southCoverLength": 550,
+        "grossGutterY": [
+          6850,
+          7400
+        ],
+        "wallMm": 1.5,
+        "dryFlangeEachMm": 10,
+        "wetGutterY": [
+          6861.5,
+          7388.5
+        ],
+        "creditedIntervals": [
+          [
+            6861.5,
+            7175
+          ],
+          [
+            7275,
+            7375
+          ]
+        ],
+        "creditedWidth": 413.5,
+        "unchangedShadows": [
+          [
+            7175,
+            7275
+          ],
+          [
+            7375,
+            7400
+          ]
+        ],
+        "idealK1Remaining75CapacityLps": 3.712438717345428,
+        "idealK1Remaining75RequiredStageMm": -35.96281682096679,
+        "cases": [
+          {
+            "n": 0.02,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.681972311555248,
+            "requiredStageMm": -35.694598243638296,
+            "quietReserveMm": 0.6945982436382963
+          },
+          {
+            "n": 0.02,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 3.4866316646988875,
+            "requiredStageMm": -33.95245893797325,
+            "quietReserveMm": -1.0475410620267525
+          },
+          {
+            "n": 0.03,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.6454355432897523,
+            "requiredStageMm": -35.371297953961175,
+            "quietReserveMm": 0.37129795396117515
+          },
+          {
+            "n": 0.03,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 3.211456563017976,
+            "requiredStageMm": -31.450207650210835,
+            "quietReserveMm": -3.549792349789165
+          },
+          {
+            "n": 0.04,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.596906967217047,
+            "requiredStageMm": -34.93878020851875,
+            "quietReserveMm": -0.061219791481249786
+          },
+          {
+            "n": 0.04,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 2.8382804807437623,
+            "requiredStageMm": -27.966052891290666,
+            "quietReserveMm": -7.033947108709334
+          }
+        ]
+      },
+      {
+        "northCoverLength": 600,
+        "southCoverLength": 500,
+        "grossGutterY": [
+          6800,
+          7400
+        ],
+        "wallMm": 1.5,
+        "dryFlangeEachMm": 10,
+        "wetGutterY": [
+          6811.5,
+          7388.5
+        ],
+        "creditedIntervals": [
+          [
+            6811.5,
+            7175
+          ],
+          [
+            7275,
+            7375
+          ]
+        ],
+        "creditedWidth": 463.5,
+        "unchangedShadows": [
+          [
+            7175,
+            7275
+          ],
+          [
+            7375,
+            7400
+          ]
+        ],
+        "idealK1Remaining75CapacityLps": 4.025674521562783,
+        "idealK1Remaining75RequiredStageMm": -38.42025966688904,
+        "cases": [
+          {
+            "n": 0.02,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.9936200932003634,
+            "requiredStageMm": -38.16706927189888,
+            "quietReserveMm": 3.1670692718988818
+          },
+          {
+            "n": 0.02,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 3.782863506686178,
+            "requiredStageMm": -36.46391288551966,
+            "quietReserveMm": 1.4639128855196617
+          },
+          {
+            "n": 0.03,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.95514128015731,
+            "requiredStageMm": -37.862261255505544,
+            "quietReserveMm": 2.862261255505544
+          },
+          {
+            "n": 0.03,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 3.4861511649813792,
+            "requiredStageMm": -34.02939528903255,
+            "quietReserveMm": -0.97060471096745
+          },
+          {
+            "n": 0.04,
+            "depthRule": "upstream-depth",
+            "quietCapacityLps": 3.903971065034303,
+            "requiredStageMm": -37.45508619105753,
+            "quietReserveMm": 2.455086191057532
+          },
+          {
+            "n": 0.04,
+            "depthRule": "critical-depth",
+            "quietCapacityLps": 3.0822342069768918,
+            "requiredStageMm": -30.640444233584503,
+            "quietReserveMm": -4.359555766415497
+          }
+        ]
+      }
+    ],
+    "interpretation": "550 is the existing footprint with its dry strip used;600 is ONE further50mm boundary shift, not a selected enlargement. Constant upstream-depth and constant critical-depth friction are contrasting authored sensitivities, NOT rigorous installed bounds or actual hydraulic predictions. The latter retains an adverse failure; no physical pass follows from the former.",
+    "geometry": {
+      "well": [
+        6125,
+        6300,
+        1525,
+        1100
+      ],
+      "northCover": [
+        305,
+        600
+      ],
+      "southCover": [
+        305,
+        500
+      ],
+      "countEach": 5,
+      "gateClearY": [
+        6575,
+        7225
+      ],
+      "capturedCrossingCentreY": 6900,
+      "capturedCrossingY": [
+        6600,
+        7200
+      ],
+      "gateFrameReserves": [
+        25,
+        25
+      ],
+      "actualParkedWestLeafY": [
+        7202.5,
+        7242.5
+      ],
+      "parkedLeafReserve": 2.5,
+      "weatherEntryY": [
+        6550,
+        7200
+      ],
+      "weatherEntryNorthReserve": 0,
+      "disposition": "REJECTED as next control:600body at6900 has2.5 to real parked leaf and ZERO to weatherentry north, in addition to hydraulic uncertainty. Do not propagate600plans to HAD. Prefer a genuine collector/access recomposition using retained550covers.",
+      "change": "Keep ten covers and overallwell. Move north/south boundary6850→6800; widen wetpan/notch/offsetwestledge and low open guard extension to6800..7400. Wall/flange consumes11.5each; do not credit gross600 or hidden ramp/hinge/northfoot.",
+      "unchangedRamp": [
+        5125,
+        6600,
+        1100,
+        600
+      ],
+      "declaredRampLipUnderside": -15,
+      "declaredRampQuietGap": 20,
+      "hingeFoot": [
+        6050,
+        7197.5,
+        50,
+        50
+      ],
+      "rampProfileConflict": {
+        "uniformRampUndersideAtApproachStart": -28.454545454545453,
+        "uniformRampUndersideAtMouth": -21.727272727272734,
+        "uniformRampQuietCrossingX": 5927.7027027027025,
+        "status": "Source also declares lipunderside−15. That requires a different longitudinal profile/landing. The under-ramp feed from beyond the purchased100mm strip and sidebeam is not proved by either mouth capacity screen. Preserve the contradiction; do not assume a calm reservoir across the whole west face."
+      },
+      "lowGuardInfillBottom": 0,
+      "guardQuietGap": 35,
+      "extraFloorFootCredited": false,
+      "windowBody": [
+        7325,
+        6850
+      ],
+      "windowRadius": 300,
+      "windowBodyWest": 7025,
+      "notchEast": 6225,
+      "windowNotchEWGap": 800,
+      "stairs": {
+        "plan": [
+          6125,
+          6600,
+          600,
+          600
+        ],
+        "candidateExplicitTreads": [
+          [
+            6125,
+            6325,
+            -260
+          ],
+          [
+            6325,
+            6525,
+            -440
+          ],
+          [
+            6525,
+            6725,
+            -620
+          ]
+        ],
+        "interpretation": "Explicit candidate reading of retained4×180rises/3×200goings; these solids were not already proved by the selected plan alone.",
+        "westPanMinimumUnderside": -151.5,
+        "firstTreadVerticalGap": 108.5
+      },
+      "coverMaximumLiftedTop": 1700,
+      "rainRoofUnderside": 1970,
+      "roofReserve": 270,
+      "handling": "600grosscapturedplan leaves25each atgate, including ALL clips/retention within that envelope; no extra protrusion credit. More gutter/cover mass and actual strength, capture/release/transfer, neighbouringcovercrew and weather erection remain unproved. No handlift or old30kg budget pass is inherited."
+    },
+    "downstream": "The larger wetpan must be reprofiled to the one closed7175/7000outlet; neither extra rain area nor a second pipe is introduced. Shape, actual drawdown and localK/friction placement remain the finite inlet exit.",
+    "reconciliation": "Root review before any HAD adoption: water-replan owning westlip/approach/notch/gutter/guard, court-east-window ledges/covers/ramp, actual cover/handler masses, selected-water-event binding, dependent RWT drawings/values and applicable Services/STR/MAT references must regenerate together."
+  },
+  "ordinaryAccess": {
+    "inspection": "From existing opened court catch covers and downstream accessible terminal, inspect/rod the straight4700 bore in both directions; upstream drop bend has openable hopper access. No buried middle chamber or internal-room access hatch is added.",
+    "cleaning": "Actual rod section/head bend sweep, retained cleanout closure and safe isolated-state operation need source. Small bore carries a specific rodding/debris burden; the unchanged325mouth25%loss/K1 quiet-stage failure is retained.",
+    "leakage": "Continuous accessible/recoverable closed body and visible separate catch are required. The selected80 local leak drain is NOT full-duty backup and no invisible persistent leakage is accepted."
+  },
+  "accepted": false,
+  "qualifiedMaterial": false,
+  "qualifiedFirstHarm": null,
+  "physicalEventPerformed": false,
+  "siteAccepted": false,
+  "boundedExit": [
+    "Bind one actual end connector, vent/rod closure, retained supports and first release to the real source; rate metal/braze/seal/leak under the stated pressure/jet demands.",
+    "Earn changed upstream two cover-gutter cassettes, vertical fitting axis and850terminal support/refit; do not borrow the old openpan cartridge pass.",
+    "Complete real4700 lifting/export/incoming swept envelope and actual apparatus/forces on the2200longer pad; DPL/site can reject that land cost.",
+    "Retain ordinary/high-eave inspection and renewal duties from finite-exit-map. This ground-carrier comparison does not close them."
+  ]
+}

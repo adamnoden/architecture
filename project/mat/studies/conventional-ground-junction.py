@@ -20,6 +20,14 @@ def produce():
     c=json.loads((HERE/'conventional-ground-junction.json').read_text())
     assert not any(c['admission'].values()) and not c['airRouteControl']['selected']
     m=immutable(c['HAD'])['model'];f=m['northNormalRoute']['floorJoin']
+    current=immutable(c['currentHADReconciliation'])['model']
+    projections={}
+    for path in c['currentHADProjectionPaths']:
+        old,new=m,current
+        for key in path.split('.'):
+            old,new=old[key],new[key]
+        assert old==new, f'Current HAD relevant projection changed: {path}; reconcile the actual case, not just its hash'
+        projections[path]=hashlib.sha256(json.dumps(new,sort_keys=True,separators=(',',':')).encode()).hexdigest()
     w=next(q for q in m['groundWalls'] if q['id']==c['section']['wall'])
     assert w['a'][0]==w['b'][0]
     y=c['section']['atY'];assert min(w['a'][1],w['b'][1])<y<max(w['a'][1],w['b'][1])
@@ -65,12 +73,13 @@ def produce():
           'crackMethod':structural['crackMethod'],'wkIf500Microstrain_mm':structural['wkIf500Microstrain'],
           'pour':structural['pour'],'materials':structural['materials'],
           'nominalUpperLiftVolume_m3':area*f['layers'][3]/1000,
-          'cementMassAtGuidanceMinimumOnly_kg':area*f['layers'][3]/1000*guidance['cementMinimum_kg_per_m3'],
+          'volumeRole':'Gross nominal RC layer before reinforcement/cast-in displacement and actual volume reconciliation; not measured net supplied concrete',
+          'cementDoseScreenOnGrossRcVolumeOnly_kg':area*f['layers'][3]/1000*guidance['cementMinimum_kg_per_m3'],
           'guidanceDimensionalScreens':{'thickness':min(structural['depthRange'])>=guidance['thicknessMinimum_mm'],
             'cover':min(structural['faceCoverRange'])>=guidance['coverMinimum_mm']},
           'scope':'Only candidate thickness/cover comparisons. Actual mix, curing, crack/joint moisture/air/gas performance, floor/wall and renewable threshold construction remain unearned.'}
     air=immutable(c['ServicesAir'])
-    assert air['sources']['HAD']['blob']==c['HAD']['blob'], 'Services uses a different HAD case'
+    assert air['sources']['HAD']['blob'] in {c['HAD']['blob'],c['currentHADReconciliation']['blob']}, 'Services uses an unproved HAD case'
     assert not any(air['admission'].values())
     assert air['proposedDevelopment']['q50_m3_per_h_m2']==1
     allocation=air['floorWallAllocation'];budgets=air['aggregateFamilyBudgets']
@@ -79,8 +88,18 @@ def produce():
     assert allocation['threeDoorAssemblyFamily']=='completeOpeningsIncludingThreeDoorThresholds'
     assert budgets['floorWallField']['fraction']==.1 and budgets[allocation['threeDoorAssemblyFamily']]['fraction']==.25
     assert allocation['aggregate_m3_per_h_at50Pa']==budgets['floorWallField']['aggregate_m3_per_h_at50Pa']
+    previous_air=immutable(c['ServicesAir']['previousReviewedSource'])
+    for key in ['comparisonCases','proposedDevelopment','aggregateFamilyBudgets']:
+        assert previous_air[key]==air[key],f'Services refreshed comparison changed: {key}'
+    for key in ['aggregate_m3_per_h_at50Pa','ordinaryEdge_m','bookkeepingEquivalent_m3_per_h_m_at50Pa',
+      'bookkeepingEquivalent_Lps_m_at50Pa','threeDoorWidths_m','threeDoorAssemblyFamily']:
+        assert previous_air['floorWallAllocation'][key]==allocation[key],f'Services allocation changed: {key}'
+    for key in ['groundPressureFootprint','upperPressureFootprint','referenceSurfaceAreas_m2','referenceEnvelope_m2',
+      'grossTwoClearLayerVolume_m3','entranceVoidInsideAirDomain_m2','occupiedRoomField_m2','ordinaryFloorEdge_m']:
+        assert previous_air['geometry'][key]==air['geometry'][key],f'Services geometry changed: {key}'
     air_duty={'source':c['ServicesAir'],'status':air['status'],'floorWallAllocation':allocation,
       'allFamilyBudgets':budgets,'physicalTestBoundaryRegisterComplete':False,
+      'previousReviewedNumericGeometryCasesBudgetsEqual':True,
       'allocationRule':'This is one aggregate for the whole family, not a per-detail budget or a demonstrated line rating. The three complete door/threshold assemblies stop this family and belong to openings.'}
     overlap=c['thresholdAirOverlap'];pan=m['southCourtThresholdReference']['pan']
     assert pan['dryFold']['profileYZ']==[[4030,0],[4060,0],[4060,15],[4090,15]]
@@ -110,7 +129,9 @@ def produce():
       'entireOpeningsBudgetForComparisonOnly_m3_per_h_at50Pa':openings,
       'centralGapChallenges':trials,'jointBudgetAllocated':False,'completeAssemblyTested':False,
       'recommendation':'Do not specify a high-force vacuum-style seal from a circular catalogue. First test an ordinary supported overlap or replaceable compression interface against actual air duty, with independent water/capillary/end/movement and walking qualification.'}
-    return {'status':c['status'],'sources':{'HAD':c['HAD'],'STRfloor':source,'STRgrid':c['STRgrid']},
+    return {'status':c['status'],'sources':{'HAD':c['HAD'],'STRfloor':source,'STRgrid':c['STRgrid'],'currentHAD':c['currentHADReconciliation']},
+      'currentHADProjectionReconciliation':{'allNamedProjectionsEqual':True,'projectionSha256':projections,
+        'scope':'Only the named floor/wall/core/threshold and reference-air inputs are proved unchanged. Other current HAD changes retain their owning source; no physical or material admission.'},
       'section':{'wall':w,'y':y,'floor':f,'candidateDpcFaces':faces,'candidateDpcCourses':courses,
         'underlyingSpine':beam,'supportRole':'900 mm common RC spine is integral beneath this section; do not draw a freestanding RC200 coupon here',
         'headerProjectionFromCoreEach_mm':(width-(hi-lo))/2,
@@ -186,12 +207,13 @@ def air_figure(r):
     txt(800,257,'Riser clearance ≥2 mm',16)
     txt(30,318,'Nominal overlap 24 − movement 2 − two edge tolerances 1 = minimum 20 mm, authored challenge only.',17)
     txt(30,349,'1780 mm uniform connected gap / 50 Pa / viscosity 1.81×10⁻⁵ Pa·s; Q = b h³ Δp / (12 μ L).',17)
+    txt(30,375,'Ideal no-slip, laminar, fully developed central slot. Entry/end effects and achieved tolerances unqualified.',15)
     txt(45,397,'Gap, mm',17);txt(255,397,'Central m³/h',17);txt(515,397,'% of ALL openings budget',17)
     for i,row in enumerate(t['centralGapChallenges']):
         y=432+i*31
         txt(45,y,f'{row["uniformConnectedGap_mm"]:.2f}');txt(255,y,f'{row["centralFlow_m3_per_h_at50Pa"]:.3f}')
         txt(515,y,f'{100*row["fractionOfEntireOpeningsBudgetOnly"]:.3f}%')
-    txt(30,645,'This is an ideal straight-channel sensitivity, not measured leakage or an allocated joint allowance.',17)
+    txt(30,645,'This is a central-slot sensitivity, not measured leakage, an installed rating, a strict bound or a joint allowance.',17)
     txt(30,676,'Old backing 4058 would clash by 2 mm under the SAME challenge; neither nominal clearance nor overlap alone suffices.',17)
     txt(30,707,'No water head is assigned to this dry apron; quiet −35 / crest +15 do not establish first-leak or capillary performance.',17)
     txt(30,748,'Both floor routes owe the same complete opening. Air leakage alone does not justify a vacuum-style metal seal.',17)

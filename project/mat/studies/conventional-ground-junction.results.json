@@ -19,7 +19,31 @@
       "path": "project/str/studies/current-house-grid.json",
       "blob": "1409f0b80739e2dc46ff078e31df6685f12b7371",
       "role": "Merged structural development candidate, not selected capacity or geometry; actual spine at the chosen section is 900 mm wide and -630..-180"
+    },
+    "currentHAD": {
+      "commit": "2a31084013cebca2094692263f0c7a2b2f8d2166",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "6f089df104fe85c028978892e7f6b63f862e3237",
+      "role": "Actual merged RWT checkpoint; compare the named relevant projections with the intentionally pinned floor/pan case. Changed receiver/maintenance and other source roles are not relabelled as unchanged."
     }
+  },
+  "currentHADProjectionReconciliation": {
+    "allNamedProjectionsEqual": true,
+    "projectionSha256": {
+      "shell": "c5d1866aabc15dda07995e73b08c4ccb514947dcd3a621cea851af5fe366f11b",
+      "envelope": "2f7f958d859cc4b069e390c5a40fbdb8dd39ab876ebf40eb4435dab181aa21a4",
+      "court": "a6088e3803b949f0b9b98aa48256d25e52966c9334c57b061f5ba9d654282323",
+      "sections": "0ef1e8fb8cc07dadf5252fd9c899e57f90eda1a5e8ce81e4484704f06916afad",
+      "void": "d6bc9235a01317d6ca3afe241b51a825f47b3b8bf37ca7e6970c52e23406d3b5",
+      "groundWalls": "6b37b1132c369b266a1156b22fb70fb42f554edba5c537c9684ec98b68962661",
+      "northNormalRoute.floorJoin": "34360a1c8035a431e3c7320d93ea12609de5de35e145f59218deadc12b7a1f4e",
+      "southCourtThresholdReference": "1affa6f450554ea40d12d077b22f8d70246fe9a3cb6dfcd9bc431c4d0eda2dd2",
+      "structuralChanges.stairMidPost.concrete": "25b7b8cc3739fecc88db5b3c94a139b6dd6ffa692a3ac7d6b1a715bc18a0827c",
+      "structuralChanges.newWetWallBeam.southReceiverCore": "eb209bf27e95c0117a953fae660675de6410987e5be0a74865ca195680f2565b",
+      "structuralChanges.newWetWallBeam.northReceiverCore": "3315f25f58157ed61e241af0c54e1669b53b9cce65cbf083cd2517d008e5e1c9",
+      "structuralChanges.newWetWallBeam.beamBottom": "ecd6512bdf3b727d065dec7da7b0523023594a474c7fb63bf0efce1e8d080da6"
+    },
+    "scope": "Only the named floor/wall/core/threshold and reference-air inputs are proved unchanged. Other current HAD changes retain their owning source; no physical or material admission."
   },
   "section": {
     "wall": {
@@ -251,7 +275,8 @@
     "pour": "Preferred finite construction control: form a continuous upper200mm dry-floor lift (20.98m3 nominal), including the head/beam overlap once and the formed threshold seat. No planned full-depth intermediate joint in occupied field; if the lower grillage is cast first, structural horizontal construction interface is at underside -380 with prepared rough concrete and continuing reinforcement. Starter/interlock, real pour length, temperature/early-age restraint, interruption detail and any service penetrations still need coordinated design. Do not declare the construction joint airtight.",
     "materials": "C30/S500 only structural comparison. Composite RC density at or below25kN/m3 including the actual bars must be delivered for this load bound. Cement dose, constituent mix, permeability, curing, floor surface/air-wall seal and actual site/water exposure remain the material/source owners’ duties. 300kg/m3 or 40mm exposure hypothesis alone gives no admission.",
     "nominalUpperLiftVolume_m3": 20.979045,
-    "cementMassAtGuidanceMinimumOnly_kg": 6293.7135,
+    "volumeRole": "Gross nominal RC layer before reinforcement/cast-in displacement and actual volume reconciliation; not measured net supplied concrete",
+    "cementDoseScreenOnGrossRcVolumeOnly_kg": 6293.7135,
     "guidanceDimensionalScreens": {
       "thickness": true,
       "cover": true
@@ -260,10 +285,16 @@
   },
   "airDutyComparison": {
     "source": {
-      "commit": "e85cc19fc858069cb874a3b0622303c2edc56ac5",
+      "commit": "90a18dae76c338a389dfb401a23f1decf6fc43e2",
       "path": "project/mat/studies/whole-house-leakage-duty.json",
-      "blob": "c4e6e9fd168078c83d092d13f1913b5d0128b7af",
-      "role": "Immutable unadopted Services1356 whole-house reference and single aggregate family allocation; not final test envelope or owner target."
+      "blob": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+      "role": "Immutable, unadopted Services1356 comparison refreshed against merged RWT 2a310840 / HAD 6f089df1; not a final test envelope, owner target or assembly performance.",
+      "previousReviewedSource": {
+        "commit": "e85cc19fc858069cb874a3b0622303c2edc56ac5",
+        "path": "project/mat/studies/whole-house-leakage-duty.json",
+        "blob": "c4e6e9fd168078c83d092d13f1913b5d0128b7af",
+        "role": "Immutable unadopted Services1356 whole-house reference and single aggregate family allocation; not final test envelope or owner target."
+      }
     },
     "status": "Provisional design comparison and allocation; no adopted owner invariant, tested envelope or compliance result",
     "floorWallAllocation": {
@@ -271,7 +302,7 @@
       "ordinaryEdge_m": 118.761,
       "bookkeepingEquivalent_m3_per_h_m_at50Pa": 0.5324530359293035,
       "bookkeepingEquivalent_Lps_m_at50Pa": 0.14790362109147318,
-      "role": "Authored finite accounting proposal, not a product or normative joint limit. Floor/wall10% is ONE aggregate covering field body, ordinary edge, associated joints/internal cores and wall-base routes. Three complete external door/threshold assemblies, including fixed/renewable air joints, belong to openings25%; floor/wall ends at their assigned assembly boundaries. Every physical path must receive one owner; no duplicated budget.",
+      "role": "Authored finite accounting proposal, not a product or normative joint limit. Floor/wall10% is ONE aggregate covering field body, ordinary edge, associated joints, three structural RC core crossings in the pinned floor study, and wall-base routes. Complete service sleeves/collars and fixed/renewable air joints belong to the separate servicePenetrations10% family. Three complete external door/threshold assemblies, including fixed/renewable air joints, belong to openings25%; floor/wall ends at their assigned assembly boundaries. Every physical path must receive one owner; no duplicated budget.",
       "threeDoorWidths_m": 5,
       "threeDoorAssemblyFamily": "completeOpeningsIncludingThreeDoorThresholds",
       "notAdmitted": [
@@ -308,6 +339,7 @@
       }
     },
     "physicalTestBoundaryRegisterComplete": false,
+    "previousReviewedNumericGeometryCasesBudgetsEqual": true,
     "allocationRule": "This is one aggregate for the whole family, not a per-detail budget or a demonstrated line rating. The three complete door/threshold assemblies stop this family and belong to openings."
   },
   "ordinaryThresholdAirComparison": {
@@ -328,11 +360,11 @@
         1.0
       ],
       "width_mm": 1780,
-      "rule": "Steady laminar parallel-plate calculation derived from pressure-driven momentum balance; uniform connected gap, no slip, constant properties. Ideal straight-channel sensitivity only, not a measured joint rating or an adopted allocation. Entrance, roughness, variable gap and end bypass remain actual assembly matters.",
-      "waterDuty": "No source-qualified head assigned to this dry apron behind crest15. Quiet water -35 and geometric crest15 are not a first-leak rating; firstSusceptible remains null. No closed E roof/pipe pressure duty is transferred. Water/capillary/end qualification remains independent.",
-      "toleranceRole": "The2mm movement and1mm edge tolerances are authored challenge bounds, not actual fabrication/installation tolerances. Gap control is an unproven requirement on formed faces and supports, not an achieved fit.",
+      "rule": "Ideal no-slip, steady laminar, fully developed central-slot sensitivity derived from pressure-driven momentum balance; uniform connected gap and constant properties. Not measured leakage, an installed rating, an adopted allocation or a strict assembly bound. Entry/end effects, variable-gap paths, deformation and achieved tolerances remain unqualified; especially the largest gaps must not be treated as a supplied joint performance.",
+      "waterDuty": "No source-qualified head is assigned to this dry apron behind the +15 mm crest. Quiet water −35 mm and geometric crest +15 mm are not a first-leak rating; firstSusceptible remains null. No closed E roof/pipe pressure duty is transferred. Water/capillary/end qualification remains independent.",
+      "toleranceRole": "The 2 mm movement and 1 mm edge tolerances are authored challenge bounds, not actual fabrication/installation tolerances. Gap control is an unproven requirement on formed faces and supports, not an achieved fit.",
       "ends": "No actual end gap or end closure is authored. Every gap result is central only and cannot be credited as total assembly leakage.",
-      "renewal": "Ordinary retention/cover must be independently supported and entirely released before NORTH500 withdrawal; no permanent field-to-pan weld or through-pan fixing. No high preload is inferred from air duty alone.",
+      "renewal": "Ordinary retention/cover must be independently supported and entirely released before NORTH 500 mm withdrawal; no permanent field-to-pan weld or through-pan fixing. No high preload is inferred from air duty alone.",
       "backingEndY": 4054,
       "panStartY": 4030,
       "referenceRetainerY": 4010,
@@ -406,7 +438,7 @@
       "access": "Public publisher abstract inspected6November2026; complete paid paper not inspected",
       "role": "Four clay-brick/mortar panel groups had low measured air permeance. Relevant against blanket rejection of an unplastered bonded masonry control, not evidence for WCBL65/M12, this DPC/floor joint, movement, moisture, gas or site performance. No measured value is transferred to the house."
     },
-    "servicesTarget": "Proposed q50<=1.0 comparison and single10% floor/wall aggregate pinned under ServicesAir. No owner invariant or assembly performance is adopted. Structural cores belong here; complete service sleeves/collars belong to the separate penetrations10%, not another floor allowance."
+    "servicesTarget": "Proposed q50 ≤1.0 comparison and one 10% floor/wall aggregate pinned under ServicesAir. No owner invariant or assembly performance is adopted. Only three structural RC core crossings belong here; complete service sleeves/collars belong to the separate penetrations 10% family."
   },
   "admission": {
     "selected": false,

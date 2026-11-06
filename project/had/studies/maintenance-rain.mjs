@@ -39,7 +39,7 @@ export function deriveMaintenanceRain(model,renewal){
   loggiaRoof:{plan:[4800,7750,2400,5800],underside:1900,weatherMaximum:2051.5,postAxisX:7000,postAxesY:[8800,10300,11750],postPlan:100,feetPlan:250,
    westCantilever:2200,northOverhang:1800,
    pipe:{insideDiameter:125,outsideDiameter:128,axisX:6800,invertStart:[6800,7750,1700],invertEnd:[6800,13700,1640],
-    headerNorthExtension:1950,headerWestCantilever:1800,outlet:[5000,13700,-600],receiver:[4250,13650,1500,1500],receivingMaximum:-800,airGap:200},
+    headerNorthExtension:1950,headerWestCantilever:1800,outlet:[5000,13700,-600],receiver:structuredClone(model.northNormalRoute.terminal.receiver.bounds),receivingMaximum:model.northNormalRoute.terminal.receiver.nominalWaterPlane,airGap:200},
    pipeExclusion:{plan:[6700,7750,200,5950],operatorMaximumX:6650,clearReserveToPipe:86,rule:'Closedpipe is lower than arbitrary standing heads but lies wholly east of the controlled operator lane. No person enters this temporary pipeband. Header at13700 is1050 beyond northmostendworkactor12650.'},
    rule:'Separate canopy rain goes directly to available N/W receiving territory through the independent closed overhead pipe. It does not enter removed N liner or increase E catchment. No work with this receiver unavailable.'},
   thresholdBypass:{route:[[5050,4300,-25],[5025,4300,-40],[5025,4500,-70],[5100,4500,-75]],clearWidth:100,initialBranchClear:50,grossBodyPlan:[4975,4250,100,275],eastTurn:{plan:[5025,4475,125,50],clearWidth:50,panEndY:4450,reserve:25},panWestOuterX:5102,panReserve:27,receivingTrayBed:-80,drop:5,
