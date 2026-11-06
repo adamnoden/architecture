@@ -1,0 +1,67 @@
+{
+  "status": "Local geometry and explicit thermal/mass sensitivity only; no whole-junction or physical pass",
+  "sourceControlSHA256": "2df6ca3ad1dff7f4b4895a011b2497e8c89bfb226dd1a72f473f90f7dd76e5bd",
+  "sources": {
+    "STR": {
+      "commit": "18e802fbbf23730db69d922707e3576576cd8c19",
+      "path": "project/str/studies/current-house-lateral.json",
+      "blob": "f37fca49400c3b61a518cf25e20db6ab18234bf4"
+    },
+    "HAD": {
+      "commit": "0a40215a8a562bc0d9e554edcf89778023598262",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "f7324121f59cc5f1707ea47640dd2b20c26b9bbb"
+    }
+  },
+  "LfootprintEach_m2": [
+    0.2604,
+    0.2604,
+    0.2604,
+    0.2604
+  ],
+  "solidPlateMassEach_kg": [
+    41.14320000000001,
+    41.14320000000001,
+    41.14320000000001,
+    41.14320000000001
+  ],
+  "solidPlateTotal_kg": 164.57280000000003,
+  "massExcludes": "Opposed anchors, edge returns, welds, whole-floor air system and fabrication waste",
+  "windowReserveAfterEndFlange_mm": 27.5,
+  "floorTopSteelSeparationScreen_mm": 25,
+  "mineralPlasterRemainingAfterSheetAndKey_mm": 23,
+  "actualSTRLegActions": {
+    "V_kN": 60.80729703124957,
+    "M_kNm": 265.05572560907615
+  },
+  "spliceDomain": {
+    "M": 300,
+    "Ncompression": 500,
+    "Nuplift": 100,
+    "V": 75
+  },
+  "thermalSensitivity": {
+    "allFourDirectRoutes_W_per_K": 12.806557377049181,
+    "sameArea100GlassThoughtComparator_W_per_K": 0.42705600000000005,
+    "difference_W_per_K": 12.37950137704918,
+    "scenario20KDifference_W": 247.5900275409836,
+    "scenario2500KdaysDifference_kWh": 742.7700826229508,
+    "boundary": "One-dimensional equal-temperature-face sensitivity through actual L footprint over180mm. No surface resistance, lateral spreading, floor/beam geometry or 3D junction; not actual heat loss, condensation or regulatoryU.",
+    "actualSurfaceTemperature_C": null,
+    "wholeHouseEnergyResult": null
+  },
+  "activeInternalHolds": [
+    "STR opposed anchor/plate force path and local weld/cover schedule",
+    "Actual mineral-DPC/plate edge and keyed plaster/metal air termination with movement allowance",
+    "Concrete floor construction-joint/crack and repair design plus explicit whole-house leakage budget",
+    "Source-bound 3D thermal surface/condensation and actual whole-floor energy model",
+    "Full-pan support/seam/expansion/penetration design only if its conditional need is established"
+  ],
+  "admission": {
+    "structural": false,
+    "material": false,
+    "airMoistureGas": false,
+    "thermalCondensation": false,
+    "site": false
+  }
+}
