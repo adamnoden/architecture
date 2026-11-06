@@ -11636,7 +11636,7 @@
         },
         "crossIntake": {
           "clearWidth": 250,
-          "wallHeight": 40,
+          "hydraulicTrialDepth": 40,
           "grossDepthBelowCoverMinimum": 68,
           "centreY": 7577,
           "centreX": 5025,
@@ -11644,7 +11644,29 @@
           "westBottomAtNorth": -206,
           "eastBottomAtNorth": -192,
           "trunkBottomAtNorth": -213.75,
-          "section": "Current V crossfall1:100 to retained250 NtrunkX5025; Yfall1:100 follows trunk−210.25 at7400 to−213.75 at7750.14perforatedcover over minimum68free depth leaves28 above40wetbody; historical80void/75crossbody is not retained.",
+          "section": "Current V crossfall1:100 to retained250 NtrunkX5025; Yfall1:100 follows trunk−210.25 at7400 to−213.75 at7750.40 is hydraulic trial depth ONLY. Actual complete Uside/end returns reach court plane;14cover is inset INSIDE them. Historical80void/75crossbody is not retained.",
+          "containment": {
+            "materialRole": "Continuous project-authored1.5Cu U wet face, with fullheight side/end folds, matching fullheight100U saddles/20butt/40laps and top-access clamps. Seam/material/residue acceptance remains MAT; no physical watertightness is certified.",
+            "foldCrestAtNorth": -110,
+            "foldCrestAtSouth": -96,
+            "completeSideHeightsAtNorth": [
+              96,
+              103.75,
+              82
+            ],
+            "completeSideHeightsAtSouth": [
+              106.5,
+              114.25,
+              92.5
+            ],
+            "coversInsetInsideWetBoundary": true,
+            "coverDepth": 14,
+            "topFlangeEach": 25,
+            "unbackedOpeningsBelowCourt": 0,
+            "blockedPath": "Blocked N fills the same fullheight outdoor wetlined trough. Water returns UP through its open perforated grate and over the court-level folded perimeter onto the exposed court, reaching the independent E edges. The40trial-depth dashed line is not a spill into a protected void.",
+            "permittedWetSurfaces": "Exterior metal wet faces, grating, adjacent court stone and exterior RC/paver support at/above the folded return are permitted to wet. No below-return aperture into occupied floor/insulation/air-gas/solum void is part of this reference. Concrete/metal moisture and actual joint qualification remain MAT/RWT.",
+            "protectedBoundary": "Nfloor/DPC located−30 remains the lower protected join. Quiet−80 +25splash +25tolerance reaches−30; fullheight return−110 is an exterior overflow datum, not certified first harm."
+          },
           "receivingOpening": {
             "plan": [
               4900,
@@ -11667,7 +11689,7 @@
             ],
             "clearBodyWidth": 303,
             "sourceJoint": {
-              "reference": "Retained MAT top-release100U saddle/20butt/40lap geometry; current shallow40 crossbody needs matching fabrication/retained-residue and seal qualification.",
+              "reference": "Retained MAT top-release100U saddle/20butt/40lap geometry; current full-height folded profile needs matching fabrication/retained-residue and seal qualification.",
               "saddleLength": 100,
               "buttGap": 20,
               "overlapEach": 40
@@ -11678,13 +11700,52 @@
             "moduleCentreY": 7577,
             "bodyRouteY": 8100,
             "operatorRadius": 300,
+            "firstRelease": {
+              "bodyY": 8100,
+              "clampY": 7728.5,
+              "clampZMinimum": -110,
+              "shoulderCrouchedWorldZ": 640,
+              "manualTopTool": {
+                "extension": 300,
+                "handZMinimum": 190
+              },
+              "capturedBail": {
+                "legHeight": 600,
+                "barDiameter": 12,
+                "maximumPlan": [
+                  600,
+                  303
+                ],
+                "completeLiftedTopMaximum": 1100
+              },
+              "motion": "Attach the two-leg captured bail before top saddle release. Use300 manual vertical extension from the retained north covers. Bail grip rises from490 to1090 during600lift; operator rises from crouch to ordinary standing without putting body over the inlet. Western two modules use the source-drawn south-edge bail and south operator; remaining modules transfer north before carrying west.",
+              "qualification": "Project10kg/positivecapture reference; actual bail/clamp/tool force and physical operation remain MAT/IAS."
+            },
             "storage": [
-              4300,
-              5750,
+              4550,
+              4600,
               1250,
               1700
             ],
-            "sequence": "Verify E independent/full-duty and keep its collector/hood/guard intact. Isolate N; capture/remove short perforated covers into west storage. Release accessible top saddles one600-max/303-wide body at a time, lift600 then hand/capture transfer NORTH onto closed loggia covers, operatorstaysY8100. Carry WEST, then south on westcourt side to storage. No full2950 body crosses Eguard; no extraction through the Ewell. Reverse modules/joints/covers and test before reopening N.",
+            "westernModules": {
+              "count": 2,
+              "bodyCentre": [
+                4600,
+                7050
+              ],
+              "clampY": 7425.5,
+              "bailGripAtSouthEdge": true,
+              "maximumReach": 529.717141501009,
+              "manualExtensionReach": 584.034459599774,
+              "retainedCrossing": [
+                5300,
+                7400,
+                650,
+                350
+              ],
+              "sequence": "Western two modules FIRST, one at a time, with central bays5250..6250 and their load-qualified covers intact. Southern operators return north over crossing5300..5950 before any central bay is opened. Then remaining modules transfer north. No crew is stranded behind removed N covers or uses Ewell as exit."
+            },
+            "sequence": "Verify E independent/full-duty and keep its collector/hood/guard intact. Isolate N; capture/remove short perforated covers into west storage. Renew WESTERN TWO first with south operator4600/7050 and600 captured lift, then return crew north across retained central covers5300..5950. Renew remaining modules one600-max/303-wide body at a time, captured lift600 then transfer NORTH onto closed loggia covers, operatorY8100. Carry WEST, then south on westcourt side to storage. No full2950 body crosses Eguard; no extraction through the Ewell. Reverse modules/joints/covers and test before reopening N.",
             "bounds": "Body lowerY7425.5 leaves25.5 from Eguard north7400. Eastbound7200 leaves50 toEslotguard7250. Actual load/force/saddles/gaskets and temporary waterisolation remain MAT/RWT physical duties."
           }
         },
@@ -11929,6 +11990,337 @@
         "westToIndependentEastGap": 100,
         "scope": "Actual physical collection/maintenance nonoverlap only; new40×250 crossbody and inlet require RWT full-duty proof."
       }
+    },
+    "maintenanceRainReference": {
+      "eastMaintenance": {
+        "state": "E unavailable; N intact and full-duty verified before work",
+        "roof": {
+          "plan": [
+            6025,
+            6200,
+            1675,
+            1600
+          ],
+          "underside": 2200,
+          "weatherTopWest": 2301.5,
+          "weatherTopEast": 2401.5,
+          "fallDirection": "WEST",
+          "glassPlane": 7750,
+          "glassGap": 50,
+          "temporaryPosts": [
+            [
+              6100,
+              6150
+            ],
+            [
+              7625,
+              6150
+            ],
+            [
+              6100,
+              7850
+            ],
+            [
+              7625,
+              7850
+            ]
+          ],
+          "postPlan": 50,
+          "feetPlan": 100,
+          "support": "Four project moment posts outside the well/collector; north feet beyond7750 and south feet below6250. No foot occupies N intake. Wind/anchors/roof capacity/erection remain temporary-works qualification."
+        },
+        "gutter": {
+          "plan": [
+            5950,
+            6200,
+            100,
+            1600
+          ],
+          "receiveRim": 2190,
+          "floor": [
+            [
+              6200,
+              2080
+            ],
+            [
+              7575,
+              2050
+            ],
+            [
+              7800,
+              2055
+            ]
+          ],
+          "eaveJoin": "West sheet folds down into gutter inside its2190rim. No uphill open eave junction."
+        },
+        "downpipe": {
+          "outsideDiameter": 100,
+          "axis": [
+            6000,
+            7575
+          ],
+          "inletZ": 2050,
+          "outletZ": 100,
+          "destination": "Free downward discharge over intact N grate; no inserted fitting or penetration of N liner.",
+          "localCourtZ": -103,
+          "airGap": 203
+        },
+        "weatherEnclosure": {
+          "boundaryPlan": [
+            6075,
+            6250,
+            1625,
+            1150
+          ],
+          "top": 2200,
+          "northPlate": [
+            6125,
+            7395,
+            1075,
+            5
+          ],
+          "plateCrest": 50,
+          "plateBottom": -120,
+          "westPlate": [
+            6075,
+            6250,
+            5,
+            1150
+          ],
+          "southPlate": [
+            6075,
+            6250,
+            1625,
+            5
+          ],
+          "collectorSeparationPlate": [
+            7225,
+            7400,
+            50,
+            400
+          ],
+          "curtains": "Continuous reusable temporary weather skirts from roof underside to50-high well-side plates with100 vertical overlap, closed corner laps and mechanically restrained ends. East skirt is outside well atx7700; above permanent bridge it returns to the wall, below bridge the existing covered900 portal remains the controlled module passage. No curtain crosses the swept module. The retained dry floor and fixed passage deck shield that continuation from direct vertical rain; wind-driven weather performance remains unqualified.",
+          "entry": {
+            "clear": 650,
+            "plan": [
+              5430,
+              6550,
+              650,
+              650
+            ],
+            "coveredVestibule": [
+              5375,
+              6500,
+              750,
+              750
+            ],
+            "innerPlaneX": 6075,
+            "outerPlaneX": 5425,
+            "overlapEach": 100,
+            "crest": 50,
+            "walkingZ": -80,
+            "method": "Covered two-flap weather entry. Only one flap opens at a time; close both and test weather state before any hood/body release. Crew remains inside enclosure during first release; restore intact E body/hood before dismantling enclosure. Front and west garden route remain available."
+          },
+          "forbiddenCredit": "No600x100 blank is claimed to seal the whole900 bridge socket; no unearned below-socket storage volume is counted."
+        },
+        "operations": [
+          "Keep both complete paths and walking covers intact. Close affected court window; prohibit cleaning.",
+          "Erect/anchor roof, gutter, closed downpipe, skirts, well-side plates and covered entry; prove runoff reaches N and all enclosure laps remain controlled.",
+          "Verify N is intact/receiving/full-duty and forecast/temporary-weather operating envelope is admitted. Close entry weather flaps, then lift well covers/hood and withdraw E.",
+          "N carries full assigned rain. No work starts or continues with N failed; restore E and test before dismantling weather controls."
+        ],
+        "physicalWeatherAccepted": false
+      },
+      "northMaintenance": {
+        "state": "N unavailable; E assembled, receiving and full-duty verified before work",
+        "courtRoof": {
+          "plan": [
+            4250,
+            4250,
+            3500,
+            3500
+          ],
+          "underside": 2200,
+          "beamTop": 2300,
+          "weatherTopEast": 2301.5,
+          "weatherTopWest": 2351.5,
+          "rails": {
+            "section": [
+              100,
+              50,
+              5
+            ],
+            "maximumSpacing": 1000,
+            "northCantilever": 1650,
+            "supportAxisY": 6100
+          },
+          "posts": [
+            [
+              4400,
+              4400
+            ],
+            [
+              7550,
+              4400
+            ],
+            [
+              4400,
+              6100
+            ],
+            [
+              7550,
+              6100
+            ]
+          ],
+          "postPlan": 100,
+          "feetPlan": 250,
+          "gutter": [
+            7600,
+            4250,
+            150,
+            3500
+          ],
+          "gutterInvert": 2250,
+          "pipe": {
+            "insideDiameter": 125,
+            "outsideDiameter": 128,
+            "gutterDrop": [
+              7675,
+              6900,
+              2250,
+              2060
+            ],
+            "route": [
+              [
+                7675,
+                6900,
+                2060
+              ],
+              [
+                7450,
+                6900,
+                2050
+              ],
+              [
+                7450,
+                6900,
+                150
+              ]
+            ],
+            "outletShaft": [
+              7350,
+              6600,
+              200,
+              600
+            ],
+            "airGapAboveHood": 260
+          },
+          "assignedInput": "All courtyard and assigned inward-roof input is intercepted on this temporary plane before N is isolated. Any roof discharge not actually captured forbids the state. No extra catchment beyond the existing60.0625m2 is silently added to E."
+        },
+        "loggiaRoof": {
+          "plan": [
+            4800,
+            7750,
+            2400,
+            5800
+          ],
+          "underside": 2200,
+          "postAxisX": 7000,
+          "postAxesY": [
+            8800,
+            10300,
+            11750
+          ],
+          "postPlan": 100,
+          "feetPlan": 250,
+          "westCantilever": 2200,
+          "northOverhang": 1800,
+          "pipe": {
+            "insideDiameter": 125,
+            "outsideDiameter": 128,
+            "axisX": 6800,
+            "invertStart": [
+              6800,
+              7750,
+              2050
+            ],
+            "invertEnd": [
+              6800,
+              13700,
+              1990
+            ],
+            "headerNorthExtension": 450,
+            "headerWestCantilever": 1800,
+            "outlet": [
+              5000,
+              13700,
+              -600
+            ],
+            "receiver": [
+              4250,
+              13650,
+              1500,
+              1500
+            ],
+            "receivingMaximum": -800,
+            "airGap": 200
+          },
+          "rule": "Separate canopy rain goes directly to available N/W receiving territory through the independent closed overhead pipe. It does not enter removed N liner or increase E catchment. No work with this receiver unavailable."
+        },
+        "thresholdBypass": {
+          "route": [
+            [
+              5050,
+              4300,
+              -25
+            ],
+            [
+              5050,
+              4500,
+              -70
+            ]
+          ],
+          "clearWidth": 200,
+          "receivingTrayBed": -80,
+          "drop": 10,
+          "operation": "Fit clip-on200 gutter and close ordinary primary N branch before opening N. Existing secondary tray/route feeds E. Court door remains closed; front exit and west garden route remain available."
+        },
+        "storage": {
+          "region": [
+            4550,
+            4600,
+            1250,
+            1700
+          ],
+          "coverStack": [
+            4550,
+            4600,
+            600,
+            1700
+          ],
+          "shortModuleStack": [
+            5200,
+            4600,
+            600,
+            1700
+          ],
+          "supports": "Separate retained timber-free/mineral frame packers; no simultaneous volume credited twice."
+        },
+        "sequence": [
+          "Both paths/covers intact: erect and anchor full court and loggia roofs, complete closed drainage pipes and temporary threshold bypass.",
+          "Water-test every assigned roof/court/threshold entry into E or the separate N/W canopy receiver. Close court access/windows, keep front/garden escape open.",
+          "Only then cap N primary threshold branch, lift covers and remove N short/long modules under the continuous roofs. Keep E hood/collector/body intact.",
+          "Incoming replacement and joint restoration occur under same roofs. Test N, restore normal threshold branch/covers, then remove temporary roofs."
+        ],
+        "temporaryWorks": {
+          "metalWeatherPlaneKg": 308,
+          "apparatusOrderOfMagnitudeKg": 1000,
+          "erection": "Not one-person erection.38.5kg rails and roof panels require restrained lifting, engineered temporary supports and crew/tool territory before anyone enters below. Wind/anchors/cantilevers, assembly loads and permanent-support bearing must be qualified before this state is used; no permanent-fabric damage credited.",
+          "successor": "Reusable lighter weather fabric may be compared explicitly later; this conservative metal weather plane is not an owner material invariant."
+        },
+        "physicalWeatherAccepted": false
+      },
+      "scope": "Located constructive reference for one path unavailable plus rain. No concurrent failure of the intact route is promised. Temporary weather, hydraulic capacity/splash, material joints, wind/anchors and erection qualification remain mandatory technical duties."
     },
     "firstWetReference": {
       "source": {

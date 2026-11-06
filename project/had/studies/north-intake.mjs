@@ -16,9 +16,10 @@ export function renderNorthIntake(model,renewal){
  s+=`<path d="M${sx(4250)},${z(-110)} H${sx(7200)}" stroke="#757268" stroke-width="14" fill="none"/>`;
  const pts=[[4250,c.westBottomAtNorth],[5025,c.trunkBottomAtNorth],[7200,c.eastBottomAtNorth]];
  s+=`<polyline points="${pts.map(p=>sx(p[0])+','+z(p[1])).join(' ')}" stroke="#237a97" stroke-width="3" fill="none"/>`;
- s+=`<polyline points="${pts.map(p=>sx(p[0])+','+z(p[1]+c.wallHeight)).join(' ')}" stroke="#237a97" stroke-width="2" stroke-dasharray="5 4" fill="none"/>`;
- s+=text(65,655,'V1:100 toX5025; floor−206 / −213.75 / −192. Current250clear×40wet;14cover.');
- s+=text(65,679,'Minimum68 below cover;28 over rim. Clean uniform-flow screen only; RWT owns full event/loss/fouling.');
+ s+=`<polyline points="${pts.map(p=>sx(p[0])+','+z(p[1]+c.hydraulicTrialDepth)).join(' ')}" stroke="#237a97" stroke-width="2" stroke-dasharray="5 4" fill="none"/>`;
+ for(const p of [pts[0],pts[2]])s+=`<path d="M${sx(p[0])},${z(p[1])} V${z(c.containment.foldCrestAtNorth)}" stroke="#237a97" stroke-width="4" fill="none"/>`;
+ s+=text(65,655,'V1:100 toX5025; floor−206 / −213.75 / −192. 250clear; dashed40 is hydraulic trial depth;14cover INSIDE full-height folds.');
+ s+=text(65,679,'Solid side/end folds reach court−110, not dashed40. Blocked water returns through grate to court/E.');
  s+=text(35,723,'Ordinary outlet — existing longitudinal N body retained',18);
  s+=text(65,750,'Carrier bottom−213.75@7750 → −256.25@12000 → −268.25@13200.');
  s+=text(65,777,`Covered terminal toY${term.endY}, invert${term.invert}; closed downroute outlet${term.closedDownroute.outlet}.`);

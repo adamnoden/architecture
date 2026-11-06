@@ -7,6 +7,7 @@ import { deriveSouthCourtThreshold, renderSouthCourtThreshold, verifyThresholdMa
 import { deriveGardenFailureBypass, renderGardenFailureBypass } from './garden-failure-bypass.mjs';
 import { deriveCourtEastWindow } from './court-east-window.mjs';
 import { renderNorthIntake } from './north-intake.mjs';
+import { deriveMaintenanceRain, renderMaintenanceRain } from './maintenance-rain.mjs';
 
 const root = new URL('../../../', import.meta.url);
 const load = path => JSON.parse(readFileSync(new URL(path, root), 'utf8'));
@@ -82,9 +83,15 @@ export function verifyNorthIntakeJoin(model,renewal){
   assert(inlet[0]+inlet[2]+100<=renewal.courtCollector.plan[0],'Current N collection shares E intake');
   for(const q of [n.renewal.bodyStage,n.renewal.riggingStage,n.renewal.operatorLongEnvelope])
     assert(!overlap(q,guard)&&!overlap(q,renewal.courtCollector.plan),'N renewal consumes intact E territory');
+  const release=n.crossIntake.renewal.firstRelease;
+  assert(Math.hypot(release.bodyY-release.clampY,release.shoulderCrouchedWorldZ-release.manualTopTool.handZMinimum)<=600,'N top release tool unreachable');
   assert(n.crossIntake.renewal.moduleCentreY-n.crossIntake.renewal.clearBodyWidth/2-(guard[1]+guard[3])>=25,'Current N module renewal hits E guard');
   assert.equal(n.crossIntake.grossDepthBelowCoverMinimum,model.sections.waterLevels.courtNorth-n.intakeCover.thickness-Math.max(n.crossIntake.eastBottomAtNorth,n.crossIntake.westBottomAtNorth),'Current N cover/body clearance drifts');
-  assert(n.crossIntake.wallHeight+28<=n.crossIntake.grossDepthBelowCoverMinimum);
+  assert(n.crossIntake.hydraulicTrialDepth+28<=n.crossIntake.grossDepthBelowCoverMinimum);
+  const containment=n.crossIntake.containment;
+  assert(containment.foldCrestAtNorth>=model.sections.waterLevels.courtNorth,'Blocked N escapes below court into uncontained void');
+  assert(containment.foldCrestAtSouth>=-96,'Blocked N south return opens below actual court');
+  assert(containment.coversInsetInsideWetBoundary&&containment.unbackedOpeningsBelowCourt===0,'Current N full-height wet boundary is interrupted');
   return {pass:true,currentInlet:inlet,westToIndependentEastGap:renewal.courtCollector.plan[0]-inlet[0]-inlet[2],
     scope:'Actual physical collection/maintenance nonoverlap only; new40×250 crossbody and inlet require RWT full-duty proof.'};
 }
@@ -270,19 +277,36 @@ export function deriveWaterReplan({servicesText} = {}) {
   const nr=model.northNormalRoute.normal;
   model.northNormalRoute.historicalNormal=structuredClone(nr);
   nr.inlet=[4250,7400,2950,350];
-  nr.crossIntake={clearWidth:250,wallHeight:40,grossDepthBelowCoverMinimum:68,
+  nr.crossIntake={clearWidth:250,hydraulicTrialDepth:40,grossDepthBelowCoverMinimum:68,
     centreY:7577,centreX:5025,flowSlope:.01,
     westBottomAtNorth:-206,eastBottomAtNorth:-192,trunkBottomAtNorth:-213.75,
-    section:'Current V crossfall1:100 to retained250 NtrunkX5025; Yfall1:100 follows trunk−210.25 at7400 to−213.75 at7750.14perforatedcover over minimum68free depth leaves28 above40wetbody; historical80void/75crossbody is not retained.',
+    section:'Current V crossfall1:100 to retained250 NtrunkX5025; Yfall1:100 follows trunk−210.25 at7400 to−213.75 at7750.40 is hydraulic trial depth ONLY. Actual complete Uside/end returns reach court plane;14cover is inset INSIDE them. Historical80void/75crossbody is not retained.',
+    containment:{materialRole:'Continuous project-authored1.5Cu U wet face, with fullheight side/end folds, matching fullheight100U saddles/20butt/40laps and top-access clamps. Seam/material/residue acceptance remains MAT; no physical watertightness is certified.',
+      foldCrestAtNorth:-110,foldCrestAtSouth:-96,
+      completeSideHeightsAtNorth:[96,103.75,82],completeSideHeightsAtSouth:[106.5,114.25,92.5],
+      coversInsetInsideWetBoundary:true,coverDepth:14,topFlangeEach:25,
+      unbackedOpeningsBelowCourt:0,
+      blockedPath:'Blocked N fills the same fullheight outdoor wetlined trough. Water returns UP through its open perforated grate and over the court-level folded perimeter onto the exposed court, reaching the independent E edges. The40trial-depth dashed line is not a spill into a protected void.',
+      permittedWetSurfaces:'Exterior metal wet faces, grating, adjacent court stone and exterior RC/paver support at/above the folded return are permitted to wet. No below-return aperture into occupied floor/insulation/air-gas/solum void is part of this reference. Concrete/metal moisture and actual joint qualification remain MAT/RWT.',
+      protectedBoundary:'Nfloor/DPC located−30 remains the lower protected join. Quiet−80 +25splash +25tolerance reaches−30; fullheight return−110 is an exterior overflow datum, not certified first harm.'},
     receivingOpening:{plan:[4900,7452,250,250],bottomZ:-212.02,role:'Open continuous junction into retained longitudinal N liner, no raised lip or pressure joint.'},
     hydraulicScope:'Current40×250 crossbody and2950 inlet require new full-duty/loss/fouling proof. No old3500-width or80-void capacity admission is carried forward.'};
   nr.inletVoid=68;nr.crossCourtBottom=[-192,-213.75,-206];
   nr.crossIntake.renewal={modules:[500,500,500,500,500,450],clearBodyWidth:303,
-    sourceJoint:{reference:'Retained MAT top-release100U saddle/20butt/40lap geometry; current shallow40 crossbody needs matching fabrication/retained-residue and seal qualification.',saddleLength:100,buttGap:20,overlapEach:40},
+    sourceJoint:{reference:'Retained MAT top-release100U saddle/20butt/40lap geometry; current full-height folded profile needs matching fabrication/retained-residue and seal qualification.',saddleLength:100,buttGap:20,overlapEach:40},
     moduleGrossLengthMaximum:600,moduleMassBudgetKg:10,lift:600,
     moduleCentreY:7577,bodyRouteY:8100,operatorRadius:300,
-    storage:[4300,5750,1250,1700],
-    sequence:'Verify E independent/full-duty and keep its collector/hood/guard intact. Isolate N; capture/remove short perforated covers into west storage. Release accessible top saddles one600-max/303-wide body at a time, lift600 then hand/capture transfer NORTH onto closed loggia covers, operatorstaysY8100. Carry WEST, then south on westcourt side to storage. No full2950 body crosses Eguard; no extraction through the Ewell. Reverse modules/joints/covers and test before reopening N.',
+    firstRelease:{bodyY:8100,clampY:7728.5,clampZMinimum:-110,shoulderCrouchedWorldZ:640,
+      manualTopTool:{extension:300,handZMinimum:190},
+      capturedBail:{legHeight:600,barDiameter:12,maximumPlan:[600,303],completeLiftedTopMaximum:1100},
+      motion:'Attach the two-leg captured bail before top saddle release. Use300 manual vertical extension from the retained north covers. Bail grip rises from490 to1090 during600lift; operator rises from crouch to ordinary standing without putting body over the inlet. Western two modules use the source-drawn south-edge bail and south operator; remaining modules transfer north before carrying west.',
+      qualification:'Project10kg/positivecapture reference; actual bail/clamp/tool force and physical operation remain MAT/IAS.'},
+    storage:[4550,4600,1250,1700],
+    westernModules:{count:2,bodyCentre:[4600,7050],clampY:7425.5,bailGripAtSouthEdge:true,
+      maximumReach:Math.hypot(100,375.5,360),manualExtensionReach:Math.hypot(100,375.5,436),
+      retainedCrossing:[5300,7400,650,350],
+      sequence:'Western two modules FIRST, one at a time, with central bays5250..6250 and their load-qualified covers intact. Southern operators return north over crossing5300..5950 before any central bay is opened. Then remaining modules transfer north. No crew is stranded behind removed N covers or uses Ewell as exit.'},
+    sequence:'Verify E independent/full-duty and keep its collector/hood/guard intact. Isolate N; capture/remove short perforated covers into west storage. Renew WESTERN TWO first with south operator4600/7050 and600 captured lift, then return crew north across retained central covers5300..5950. Renew remaining modules one600-max/303-wide body at a time, captured lift600 then transfer NORTH onto closed loggia covers, operatorY8100. Carry WEST, then south on westcourt side to storage. No full2950 body crosses Eguard; no extraction through the Ewell. Reverse modules/joints/covers and test before reopening N.',
     bounds:'Body lowerY7425.5 leaves25.5 from Eguard north7400. Eastbound7200 leaves50 toEslotguard7250. Actual load/force/saddles/gaskets and temporary waterisolation remain MAT/RWT physical duties.'};
   nr.renewal.bodyStage=[5650,7100,350,4250];nr.renewal.stage=nr.renewal.bodyStage;
   nr.renewal.riggingStage=[5625,7100,400,4250];
@@ -300,6 +324,7 @@ export function deriveWaterReplan({servicesText} = {}) {
   assert(nr.inlet[0]+nr.inlet[2]+100<=renewal.courtCollector.plan[0]);
   assert(renewal.guardOuterPlan[1]+renewal.guardOuterPlan[3]<=nr.inlet[1]);
   model.northNormalRoute.geometryProof=verifyNorthIntakeJoin(model,renewal);
+  model.maintenanceRainReference=deriveMaintenanceRain(model,renewal);
   const normalAtMouth=northEnvelope.protectedWater.normal.carrierBottom.find(p=>p[0]===7750)[1];
   assert.equal(normalAtMouth,model.southCourtThresholdReference.primaryTray.normalJoin.receivingCarrierBottom);
   const limitingJoin=northEnvelope.floorJoin.innerDpc[1];
@@ -605,6 +630,7 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
   const outputs = new Map([
     ['water-replan.json', JSON.stringify(v,null,2)+'\n'],
     ['north-intake.svg',renderNorthIntake(v.model,v.renewal)],
+    ['maintenance-rain.svg',renderMaintenanceRain(v.model.maintenanceRainReference)],
     ['water-replan.svg', render(v)],
     ['south-court-threshold.svg', renderSouthCourtThreshold(v.model.southCourtThresholdReference)],
     ['garden-failure-bypass.svg',renderGardenFailureBypass(v.model.gardenFailureBypass)]

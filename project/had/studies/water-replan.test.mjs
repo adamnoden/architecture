@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { verifyMaintenanceRain } from './maintenance-rain.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { deriveWaterReplan, verifyServicesOccurrences, verifyCollectorOpenEntries, verifyNorthIntakeJoin, verifyClearWorkingDomains } from './water-replan.mjs';
@@ -128,10 +129,29 @@ test('the actual inlet credits separate source-drawn edges and rejects a guard b
  assert.throws(()=>verifyNorthIntakeJoin(stage,v.renewal),/N renewal consumes intact E/);
  const cover=JSON.parse(JSON.stringify(v.model));cover.northNormalRoute.normal.intakeCover.thickness=20;
  assert.throws(()=>verifyNorthIntakeJoin(cover,v.renewal),/cover\/body clearance drifts/);
+ const spill=JSON.parse(JSON.stringify(v.model));spill.northNormalRoute.normal.crossIntake.containment.foldCrestAtNorth=-124;
+ assert.throws(()=>verifyNorthIntakeJoin(spill,v.renewal),/escapes below court/);
  });
 
 test('clear service workfields use the full finished weatherwalls rather than structural core guesses',()=>{
  const v=deriveWaterReplan();assert.deepEqual(v.renewal.servicePlatformRegions[0],[9722.5,6300,2277.5,1200]);
  for(const bad of [[9722.5,6000,2277.5,1500],[9722.5,6300,2277.5,1519.5]])
  assert.throws(()=>verifyClearWorkingDomains(v.model,[bad]),/complete finished wall/);
+});
+
+test('each maintenance state locates rain interception and preserves the intact path',()=>{
+ const v=deriveWaterReplan(),m=v.model.maintenanceRainReference;
+ assert.equal(m.northMaintenance.courtRoof.pipe.route.at(-1)[2],150);
+ assert.equal(m.northMaintenance.loggiaRoof.pipe.outlet[2],-600);
+ assert.equal(m.northMaintenance.physicalWeatherAccepted,false);
+ assert.equal(m.eastMaintenance.physicalWeatherAccepted,false);
+ const western=v.model.northNormalRoute.normal.crossIntake.renewal.westernModules;
+ assert(western.maximumReach<600&&western.manualExtensionReach<600);
+ assert(western.retainedCrossing[0]+western.retainedCrossing[2]<v.renewal.guardOuterPlan[0]);
+ for(const[change,message]of[
+  [x=>x.eastMaintenance.weatherEnclosure.northPlate[1]=7400,/bund blocks intact N/],
+  [x=>x.northMaintenance.courtRoof.pipe.route[0][2]=2240,/pipe penetrates/],
+  [x=>x.northMaintenance.loggiaRoof.pipe.axisX=7050,/clashes with roof post/],
+  [x=>x.northMaintenance.storage.shortModuleStack=x.northMaintenance.storage.coverStack,/same storage/]
+ ]){const bad=JSON.parse(JSON.stringify(m));change(bad);assert.throws(()=>verifyMaintenanceRain(bad,v.model,v.renewal),message);}
 });
