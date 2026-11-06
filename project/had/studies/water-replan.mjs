@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import assert from 'node:assert/strict';
+import { deriveSouthCourtThreshold, renderSouthCourtThreshold } from './south-court-threshold.mjs';
 
 const root = new URL('../../../', import.meta.url);
 const load = path => JSON.parse(readFileSync(new URL(path, root), 'utf8'));
@@ -48,6 +49,10 @@ export function verifyServicesOccurrences(model, current) {
       {id:e.id, maintenanceFurniture:published.maintenanceFurniture ?? null, doorMode:published.doorMode},
       'Actual fan task/door-mode drift: ' + e.id);
   }
+  assert.deepEqual(model.servicesInterface.eastFoulExit,services.eastFoulExit,'Actual foul route/grade occurrence drift');
+  assert.deepEqual(model.servicesInterface.otherServiceDuties,services.otherServiceDuties,'Actual external tail/service duty occurrence drift');
+  assert.deepEqual(model.exteriorPortGeometry.find(p=>p.id==='east-foul-flashing').p,
+    services.eastFoulExit.path.at(-1),'Actual exterior foul port occurrence drift');
   return { emitters:services.emitters.length, extractTasks:services.fanAccess.length, pass:true,
     scope:'Current actual furniture, emitter heights, extract ports/platforms and fan task states; component equality does not establish whole-house acceptance.' };
 }
@@ -204,6 +209,10 @@ export function deriveWaterReplan({servicesText} = {}) {
     idealBroadCrestHeadMm: 1000 * (inwardDuty / 1000 / (1.7 * .6)) ** (2 / 3),
     status: 'Preliminary ideal sizing sensitivity only. Actual inlet, stage, debris, splash, first harm, pressure and downstream receiving state remain RWT-06 proof.' };
   const model = structuredClone(h);
+  model.southCourtThresholdReference=deriveSouthCourtThreshold(model.southCourtWeatherDoor);
+  model.southCourtWeatherDoor.jambEach=40;
+  model.southCourtWeatherDoor.installationGapEach=10;
+  model.southCourtWeatherDoor.thresholdReference='southCourtThresholdReference';
   const wall = id => model.groundWalls.find(w => w.id === id);
   Object.assign(wall('plant-north'), { a: [9300, 5877.5], b: [12000, 5877.5],
     t: 519.5, finishedFaces: [5780.5, 6300],
@@ -463,7 +472,8 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
   const v=deriveWaterReplan();
   const outputs = new Map([
     ['water-replan.json', JSON.stringify(v,null,2)+'\n'],
-    ['water-replan.svg', render(v)]
+    ['water-replan.svg', render(v)],
+    ['south-court-threshold.svg', renderSouthCourtThreshold(v.model.southCourtThresholdReference)]
   ]);
   for (const [name, content] of outputs) {
     const url = new URL(name, import.meta.url);

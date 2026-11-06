@@ -55,7 +55,11 @@ test('current source authentication does not conceal stale actual scene occurren
     [model=>{const e=current.interfaces.architecturalServices.emitters.find(e=>e.level===1);model.upperFurniture['service-emitter-'+e.id][0]++;}, /Actual emitter furniture drift/],
     [model=>{model.servicesInterface.extract[0].platform[0]++;}, /Actual extract occurrence drift: ground-WC/],
     [model=>{model.servicesAuxiliaryProjection.fanMaintenance[0].doorMode+=' changed';}, /Actual fan task\/door-mode drift: ground-WC/],
-    [model=>{model.serviceMaintenanceFields[0].platform[0]++;}, /Actual fan maintenance field drift: ground-WC/]
+    [model=>{model.serviceMaintenanceFields[0].platform[0]++;}, /Actual fan maintenance field drift: ground-WC/],
+    [model=>{model.servicesInterface.eastFoulExit.path.at(-1)[1]++;}, /Actual foul route\/grade occurrence drift/],
+    [model=>{model.servicesInterface.otherServiceDuties.find(e=>e.id==='east-soil').path.at(-1)[2]++;}, /Actual external tail\/service duty occurrence drift/],
+    [model=>{model.exteriorPortGeometry.find(e=>e.id==='east-foul-flashing').p[1]++;}, /Actual exterior foul port occurrence drift/]
+
   ]) {
     // A committed JSON artifact has separate arrays. Preserve the imported object
     // while mutating only the actual scene/view, which is the regression class.

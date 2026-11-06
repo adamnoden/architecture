@@ -2727,7 +2727,7 @@
         4110,
         4250
       ],
-      "jambEach": 50,
+      "jambEach": 40,
       "hinges": [
         [
           5150,
@@ -2765,7 +2765,9 @@
       "openLeafNorthTip": 5100,
       "landingNorthEnd": 5750,
       "clearBeyondOpenTip": 650,
-      "scope": "Outward NORTH;1500full exterior landing. Actual timber/hinge/bracket/weather/leak/firstharm remains with joined MAT/OAS."
+      "scope": "Outward NORTH;1500full exterior landing. Actual timber/hinge/bracket/weather/leak/firstharm remains with joined MAT/OAS.",
+      "installationGapEach": 10,
+      "thresholdReference": "southCourtThresholdReference"
     },
     "protectedRoute": {
       "basis": "One conventional reference topology under currentADB2.5a; no regulatory approval or classified assembly claimed.",
@@ -10719,6 +10721,411 @@
     "selection": {
       "decision": "UNADOPTED JOINED WATER REPLAN",
       "source": "project/had/water-replan-result.md"
+    },
+    "southCourtThresholdReference": {
+      "status": "PROJECT-DESIGNED CONSTRUCTIVE REFERENCE; NOT QUALIFIED WEATHER OR FIRST-HARM PERFORMANCE",
+      "retained": {
+        "roughX": [
+          5100,
+          6900
+        ],
+        "frameDepthY": [
+          4110,
+          4250
+        ],
+        "hinges": [
+          [
+            5150,
+            4250
+          ],
+          [
+            6850,
+            4250
+          ]
+        ],
+        "leafEach": [
+          845.5,
+          44,
+          2100
+        ],
+        "leafBottom": 19,
+        "leafTop": 2119,
+        "gaps": {
+          "left": 3,
+          "meeting": 3,
+          "right": 3
+        }
+      },
+      "frame": {
+        "outerX": [
+          5110,
+          6890
+        ],
+        "jambEach": 40,
+        "installationGapEach": 10,
+        "timberFootZ": 30,
+        "depthY": [
+          4110,
+          4250
+        ],
+        "materialAuthority": "E0 conventional replaceable family retained. OAS material/product is still open. Any timber is a protected dry core, never a weather-exposed or water-contact material credited by this reference.",
+        "wetFace": {
+          "materialRole": "Continuous metal/mineral wet-face reference, not an admitted alloy or complete doorset",
+          "jambMetalReturnTopZ": 150,
+          "leafOuterFaceZ": [
+            19,
+            2119
+          ],
+          "leafShoeZ": [
+            19,
+            100
+          ],
+          "leafDryCoreBottomZ": 25,
+          "shoeOuterDrainZ": 22,
+          "shoeInnerReturnTopZ": 100,
+          "role": "Whole outside faces and bottom/end-grain territories are protected. Leaf shoe bottom19 preserves existing leaf clearance; dry core starts25 behind it. No fastener below100 through the shoe wet pocket; outward22 drain discharges above the primary tray. Actual continuous cap/meeting/jamb joints must qualify before any dry-timber claim."
+        },
+        "explicitRewind": "50mm jamb becomes40 with10 installation gap each. Hinges, clear opening, leaves,1800 rough and140 depth stay unchanged. Member strength/fixing/weather qualification required."
+      },
+      "primarySill": {
+        "materialRole": "Project-designed metal/mineral sill reference; no supplier/weather claim",
+        "bodyPlan": [
+          5150,
+          4110,
+          1700,
+          140
+        ],
+        "bodyZ": [
+          -35,
+          15
+        ],
+        "crest": {
+          "y": 4220,
+          "z": 15
+        },
+        "leafClearance": 4,
+        "forwardWeeps": [
+          {
+            "x": 5350,
+            "y": 4250,
+            "z": -5,
+            "width": 40,
+            "height": 10
+          },
+          {
+            "x": 6000,
+            "y": 4250,
+            "z": -5,
+            "width": 40,
+            "height": 10
+          },
+          {
+            "x": 6650,
+            "y": 4250,
+            "z": -5,
+            "width": 40,
+            "height": 10
+          }
+        ],
+        "wetVoid": {
+          "plan": [
+            5150,
+            4230,
+            1700,
+            20
+          ],
+          "z": [
+            -15,
+            -5
+          ]
+        },
+        "meeting": {
+          "centreX": 6000,
+          "leafGap": 3,
+          "metalCapPlan": [
+            5975,
+            4206,
+            50,
+            44
+          ],
+          "bottomZ": 19,
+          "jointRole": "Meeting-stile weather joint drains forward into the sill wet void; no pressure or gasket rating."
+        }
+      },
+      "pan": {
+        "materialRole": "1.5mm formed metal reference, actual alloy/seams/corrosion/bedding unqualified",
+        "outerX": [
+          5102,
+          6898
+        ],
+        "thickness": 1.5,
+        "fallY": [
+          [
+            4090,
+            -45
+          ],
+          [
+            4450,
+            -55
+          ]
+        ],
+        "rear": {
+          "planeY": 4090,
+          "crestZ": 15
+        },
+        "ends": {
+          "x": [
+            5102,
+            6898
+          ],
+          "crestZ": 75
+        },
+        "dryFold": {
+          "y": [
+            4030,
+            4090
+          ],
+          "crestZ": 15,
+          "role": "Rear leg folds to a dry-side floor apron behind the15 crest; clamp fixings stay on this dry side, never through the wet pan floor."
+        },
+        "bearingPads": [
+          {
+            "x": [
+              5110,
+              5150
+            ],
+            "y": [
+              4110,
+              4250
+            ]
+          },
+          {
+            "x": [
+              5980,
+              6020
+            ],
+            "y": [
+              4110,
+              4250
+            ]
+          },
+          {
+            "x": [
+              6850,
+              6890
+            ],
+            "y": [
+              4110,
+              4250
+            ]
+          }
+        ],
+        "bearingRole": "Explicit forty-wide mineral bearing strips on supported pan. Water passes between strips; no concealed full-width dam or sill fixing through pan. Pan compression/slip, sill span/load and thermal bridge require STR/MAT.",
+        "secondaryOutlet": {
+          "planeY": 4450,
+          "x": [
+            5150,
+            6850
+          ],
+          "lipZ": -55
+        },
+        "renewal": "Remove door leaves/frame/sill after erecting temporary weather screen and diverting rain; lift separately retained front grates/trays, release dry-side clamps/end captures, withdraw pan NORTH. No demolition of masonry or wet-floor fastener release is assumed."
+      },
+      "primaryTray": {
+        "plan": [
+          5050,
+          4250,
+          1900,
+          100
+        ],
+        "topZ": 0,
+        "bedZ": -25,
+        "metalThickness": 1.5,
+        "removableModules": 10,
+        "moduleLength": 190,
+        "outlet": {
+          "point": [
+            5050,
+            4300,
+            -25
+          ],
+          "clear": [
+            75,
+            25
+          ]
+        },
+        "route": [
+          [
+            5050,
+            4300,
+            -25
+          ],
+          [
+            5000,
+            4300,
+            -30
+          ],
+          [
+            5000,
+            7750,
+            -100
+          ]
+        ],
+        "formedChannelClear": [
+          100,
+          50
+        ],
+        "destination": "Ordinary N court route; distinct from the E secondary channel. Actual N head and losses remain RWT proof."
+      },
+      "secondaryTray": {
+        "plan": [
+          5050,
+          4450,
+          1900,
+          100
+        ],
+        "topZ": 0,
+        "bedZ": -80,
+        "outlet": {
+          "point": [
+            6950,
+            4500,
+            -80
+          ],
+          "clear": [
+            100,
+            40
+          ]
+        },
+        "route": [
+          [
+            6950,
+            4500,
+            -80
+          ],
+          [
+            7350,
+            4500,
+            -95
+          ],
+          [
+            7350,
+            6300,
+            -125
+          ]
+        ],
+        "formedChannelClear": [
+          100,
+          50
+        ],
+        "destination": "Separate E collector upstream of its accessible intake; bypasses primary sill weeps/tray/N mouth. Do not join the primary drain before this distinct route.",
+        "walkingCover": "Separately lift-out metal grates in190mm modules; support/heel/access/load/handling qualification remains open."
+      },
+      "jambs": {
+        "left": {
+          "frameX": [
+            5110,
+            5150
+          ],
+          "panEndX": 5102
+        },
+        "right": {
+          "frameX": [
+            6850,
+            6890
+          ],
+          "panEndX": 6898
+        },
+        "cavityTray": {
+          "bottomZ": 75,
+          "wallDpcZ": 150,
+          "returnHeight": 75,
+          "leftApron": {
+            "x": [
+              5050,
+              5110
+            ],
+            "y": [
+              4090,
+              4250
+            ],
+            "z": [
+              75,
+              150
+            ]
+          },
+          "rightApron": {
+            "x": [
+              6890,
+              6950
+            ],
+            "y": [
+              4090,
+              4250
+            ],
+            "z": [
+              75,
+              150
+            ]
+          },
+          "role": "Formed jamb aprons bridge pan end return75 to wall cavity/DPC150, with accessible mechanical laps outside the clear door path. No reliance on an invisible sealant bead."
+        },
+        "wallBase": {
+          "exposedMetalUpstandZ": 150,
+          "protectedInnerFloorPlaneZ": -180
+        },
+        "airGas": {
+          "planeY": 4090,
+          "floorPlaneZ": -180,
+          "foldCrestZ": 15,
+          "role": "Mineral inner-floor/wall closure rises on the protected side to the rear metal fold; dry-side mechanically clamped metal/mineral transition. Actual gasket/mineral compound, continuity, movement and air/gas/water qualification remain open."
+        }
+      },
+      "fixings": {
+        "jambAnchorX": [
+          5128,
+          6872
+        ],
+        "y": 4140,
+        "z": [
+          400,
+          1100,
+          1900
+        ],
+        "diameterBudget": 8,
+        "masonryEmbedmentBudget": 60,
+        "panFloorPenetrations": 0,
+        "sillRestraint": "Captured at jamb ends and mineral bearing strips; no under-sill fixing through wet pan. Actual anchor/member capacities are not selected."
+      },
+      "limitingLevels": {
+        "lowestIntentionallyWetWeepZ": -5,
+        "secondaryPanFloorLowZ": -55,
+        "lowestUnbackedInteriorOverflowZ": 15,
+        "timberLeafBottomZ": 19,
+        "timberJambFootZ": 30,
+        "status": "15 is a geometric rear-crest entry limit, not first-leak or flood-resistance certification. Every pan/cap/jamb/meeting/air joint remains explicitly unqualified."
+      },
+      "levelBudget": {
+        "referencePassiveActivationZ": -110,
+        "headBudget": 75,
+        "splashBudget": 25,
+        "toleranceBudget": 25,
+        "maximumQuietOperatingStageZ": -35,
+        "authority": "Project allocation only. RWT must bind actual activation (including the higher well lip), flow, debris, losses, receiver/backwater, wind/splash and maintenance; no ideal-flow probe is an acceptance."
+      },
+      "admission": {
+        "geometricReference": false,
+        "material": false,
+        "weatherPhysical": false,
+        "hydraulic": false,
+        "firstSusceptibleQualifiedZ": null,
+        "site": false
+      },
+      "remaining": [
+        "Full pan/primary-sill support cross section and thermal junction require MAT/STR.",
+        "Actual exterior channels must be joined to court paving/support/guard/window/occupied operation before architectural selection.",
+        "Material/seam/gasket/meeting/fixing/movement/weather and physical qualification remain downstream."
+      ]
     },
     "outerServiceArch": {
       "sourceOpening": "east-outdoor-water-portal",
