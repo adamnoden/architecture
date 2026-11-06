@@ -1,0 +1,1103 @@
+{
+  "status": "Calculated shop fabrication and ring force route; roof-anchor/grid/capillary and global stability interfaces remain explicit",
+  "sources": {
+    "current-house-welded-network.json": "9b509b3eae740229af32d08a3b1e750cc2c937d8224b01d97f230d5b180cbd7e",
+    "current-house-roof-connection.json": "2324522032a9fa145b64132bf5cc839268b2df730c629c28b896bed626cff501"
+  },
+  "method": "Project stress budget fy=200/1.1 MPa; 100 MPa allowable effective weld throat stress. SCI P398 section 2.5 and BCSA Guide to Site Welding 35/03 describe weld group and site execution methods; declared screens do not constitute a weld procedure or code acceptance. All RC/soil/material/fire incl cross-wall anchors remain pre-site research.",
+  "claimedScope": "24 factory-built heels across twelve tied frames; 8 ordinary, 4 hip. Through-web diaphragms built before closing lid; shop weld rail end diaphragm and exterior cheeks to continuous sloping primary, then erect prefabricated frame onto indexed collector cassette before roofing/insulation. External all-around 8mm throat shoe weld accessible before closure. 300 square cassette has rotated matched internal webs for the hip, two orthogonal shop CJP ring arms, all torque allowed into either arm. Crown pin remains accessible before roof closes. No interior overhead field weld into a sealed box.",
+  "node": {
+    "ordinary": {
+      "planAngle": 0,
+      "rafterPitch": 25.0,
+      "ringZ": [
+        6540,
+        6660
+      ],
+      "roofCentreAtHeel": 6860,
+      "tieCentre": 6770,
+      "railBoundsY": [
+        [
+          86,
+          146
+        ],
+        [
+          -146,
+          -86
+        ]
+      ],
+      "clearAboveFullCassette": 19.716059,
+      "planShoeMaxProjection": 90,
+      "purlinToOuterTieClear": 76.25302,
+      "diaphragmStationDemand": 99.324739,
+      "diaphragmWeldResistance": 112.0,
+      "railEulerHalf": 109.179525,
+      "railPerSideAxial": 30.0,
+      "railAxialWeldStress": 20.833333,
+      "baseWeld7Util": 0.932568,
+      "baseWeld8Util": 0.815997,
+      "skinWithoutDiaphragmStress": 1601.283482,
+      "installedWebOffsetBound": 10,
+      "skinStress": 160.128348,
+      "internalWebStress": 66.720145,
+      "internalWebWeldStress": 66.720145,
+      "primaryRevisedInteraction": 0.454398,
+      "deflectionWithTieOffset": 5.270611,
+      "L250": 10.261415,
+      "roofStructuralTopNeed": 6970.337792
+    },
+    "hip": {
+      "planAngle": 45,
+      "rafterPitch": 18.248902,
+      "ringZ": [
+        6540,
+        6660
+      ],
+      "roofCentreAtHeel": 6860,
+      "tieCentre": 6770,
+      "railBoundsY": [
+        [
+          86,
+          146
+        ],
+        [
+          -146,
+          -86
+        ]
+      ],
+      "clearAboveFullCassette": 24.75801,
+      "planShoeMaxProjection": 120.208153,
+      "purlinToOuterTieClear": 23.07059,
+      "diaphragmStationDemand": 99.324739,
+      "diaphragmWeldResistance": 112.0,
+      "railEulerHalf": 54.589762,
+      "railPerSideAxial": 30.0,
+      "railAxialWeldStress": 20.833333,
+      "baseWeld7Util": 0.925679,
+      "baseWeld8Util": 0.809969,
+      "skinWithoutDiaphragmStress": 1601.283482,
+      "installedWebOffsetBound": 10,
+      "skinStress": 160.128348,
+      "internalWebStress": 66.720145,
+      "internalWebWeldStress": 66.720145,
+      "primaryRevisedInteraction": 0.582231,
+      "deflectionWithTieOffset": 13.337892,
+      "L250": 13.848705,
+      "roofStructuralTopNeed": 6988.376893
+    }
+  },
+  "componentsMM3": {
+    "cassetteTopBottom": 3600000,
+    "cassetteSides": 1331200,
+    "cassetteTwoThroughPlusTwoCrossWebs": 1254400,
+    "sole": 576000,
+    "twoFullCheekEnvelopes": 3168000,
+    "twoRafterDiaphragms": 653312,
+    "twoTieEndDiaphragms": 109824
+  },
+  "nodeGkN": 0.89438,
+  "nodeGMaximum": 1,
+  "ring": {
+    "section": {
+      "A": 12000,
+      "B": 220,
+      "H": 120,
+      "I": 24000000.0,
+      "Iminor": 67600000.0,
+      "MR": 72.727273,
+      "TR": 83.978221,
+      "W": 400000.0,
+      "Wminor": 614545.454545,
+      "lineG": 0.942,
+      "t": 20
+    },
+    "z": [
+      6540,
+      6660
+    ],
+    "fullHeightSupportStations": 36,
+    "stations": [
+      {
+        "xy": [
+          332.5,
+          332.5
+        ],
+        "walls": [
+          "outer-south",
+          "outer-west"
+        ]
+      },
+      {
+        "xy": [
+          2600,
+          332.5
+        ],
+        "walls": [
+          "outer-south"
+        ]
+      },
+      {
+        "xy": [
+          4700,
+          332.5
+        ],
+        "walls": [
+          "outer-south"
+        ]
+      },
+      {
+        "xy": [
+          7300,
+          332.5
+        ],
+        "walls": [
+          "outer-south"
+        ]
+      },
+      {
+        "xy": [
+          9400,
+          332.5
+        ],
+        "walls": [
+          "outer-south"
+        ]
+      },
+      {
+        "xy": [
+          11667.5,
+          332.5
+        ],
+        "walls": [
+          "outer-south",
+          "outer-east"
+        ]
+      },
+      {
+        "xy": [
+          332.5,
+          11667.5
+        ],
+        "walls": [
+          "outer-north",
+          "outer-west"
+        ]
+      },
+      {
+        "xy": [
+          2600,
+          11667.5
+        ],
+        "walls": [
+          "outer-north"
+        ]
+      },
+      {
+        "xy": [
+          4377.5,
+          11667.5
+        ],
+        "walls": [
+          "outer-north"
+        ]
+      },
+      {
+        "xy": [
+          7622.5,
+          11667.5
+        ],
+        "walls": [
+          "outer-north"
+        ]
+      },
+      {
+        "xy": [
+          9400,
+          11667.5
+        ],
+        "walls": [
+          "outer-north"
+        ]
+      },
+      {
+        "xy": [
+          11667.5,
+          11667.5
+        ],
+        "walls": [
+          "outer-north",
+          "outer-east"
+        ]
+      },
+      {
+        "xy": [
+          11667.5,
+          3600
+        ],
+        "walls": [
+          "outer-east"
+        ]
+      },
+      {
+        "xy": [
+          11667.5,
+          5600
+        ],
+        "walls": [
+          "outer-east"
+        ]
+      },
+      {
+        "xy": [
+          11667.5,
+          5975
+        ],
+        "walls": [
+          "outer-east"
+        ]
+      },
+      {
+        "xy": [
+          11667.5,
+          8200
+        ],
+        "walls": [
+          "outer-east"
+        ]
+      },
+      {
+        "xy": [
+          332.5,
+          3800
+        ],
+        "walls": [
+          "outer-west"
+        ]
+      },
+      {
+        "xy": [
+          332.5,
+          5400
+        ],
+        "walls": [
+          "outer-west"
+        ]
+      },
+      {
+        "xy": [
+          332.5,
+          6600
+        ],
+        "walls": [
+          "outer-west"
+        ]
+      },
+      {
+        "xy": [
+          332.5,
+          8200
+        ],
+        "walls": [
+          "outer-west"
+        ]
+      },
+      {
+        "xy": [
+          3917.5,
+          3917.5
+        ],
+        "walls": [
+          "court-south",
+          "court-west"
+        ]
+      },
+      {
+        "xy": [
+          4350,
+          3917.5
+        ],
+        "walls": [
+          "court-south"
+        ]
+      },
+      {
+        "xy": [
+          7650,
+          3917.5
+        ],
+        "walls": [
+          "court-south"
+        ]
+      },
+      {
+        "xy": [
+          8082.5,
+          3917.5
+        ],
+        "walls": [
+          "court-south",
+          "court-east"
+        ]
+      },
+      {
+        "xy": [
+          3917.5,
+          8082.5
+        ],
+        "walls": [
+          "court-north",
+          "court-west"
+        ]
+      },
+      {
+        "xy": [
+          4377.5,
+          8082.5
+        ],
+        "walls": [
+          "court-north"
+        ]
+      },
+      {
+        "xy": [
+          7622.5,
+          8082.5
+        ],
+        "walls": [
+          "court-north"
+        ]
+      },
+      {
+        "xy": [
+          8082.5,
+          8082.5
+        ],
+        "walls": [
+          "court-north",
+          "court-east"
+        ]
+      },
+      {
+        "xy": [
+          8082.5,
+          4350
+        ],
+        "walls": [
+          "court-east"
+        ]
+      },
+      {
+        "xy": [
+          8082.5,
+          5950
+        ],
+        "walls": [
+          "court-east"
+        ]
+      },
+      {
+        "xy": [
+          8082.5,
+          6050
+        ],
+        "walls": [
+          "court-east"
+        ]
+      },
+      {
+        "xy": [
+          8082.5,
+          7650
+        ],
+        "walls": [
+          "court-east"
+        ]
+      },
+      {
+        "xy": [
+          3917.5,
+          4350
+        ],
+        "walls": [
+          "court-west"
+        ]
+      },
+      {
+        "xy": [
+          3917.5,
+          5950
+        ],
+        "walls": [
+          "court-west"
+        ]
+      },
+      {
+        "xy": [
+          3917.5,
+          6050
+        ],
+        "walls": [
+          "court-west"
+        ]
+      },
+      {
+        "xy": [
+          3917.5,
+          7650
+        ],
+        "walls": [
+          "court-west"
+        ]
+      }
+    ],
+    "faces": {
+      "outer-south": {
+        "supports": [
+          {
+            "u": 332.5,
+            "upperLowerType": "corner"
+          },
+          {
+            "u": 2600,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 4700,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 7300,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 9400,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 11667.5,
+            "upperLowerType": "corner"
+          }
+        ],
+        "segments": [
+          {
+            "start": 332.5,
+            "end": 2600,
+            "originHeels": [
+              332.5
+            ],
+            "maxVerticalM": 0.817315,
+            "localMomentsEachArm": 10,
+            "shear": 1.44179,
+            "interaction": 0.263111
+          },
+          {
+            "start": 2600,
+            "end": 4700,
+            "originHeels": [
+              4700
+            ],
+            "maxVerticalM": 0.701025,
+            "localMomentsEachArm": 10,
+            "shear": 1.335285,
+            "interaction": 0.261551
+          },
+          {
+            "start": 4700,
+            "end": 7300,
+            "originHeels": [
+              4700,
+              7300
+            ],
+            "maxVerticalM": 1.074587,
+            "localMomentsEachArm": 20,
+            "shear": 1.65321,
+            "interaction": 0.477722
+          },
+          {
+            "start": 7300,
+            "end": 9400,
+            "originHeels": [
+              7300
+            ],
+            "maxVerticalM": 0.701025,
+            "localMomentsEachArm": 10,
+            "shear": 1.335285,
+            "interaction": 0.261551
+          },
+          {
+            "start": 9400,
+            "end": 11667.5,
+            "originHeels": [
+              11667.5
+            ],
+            "maxVerticalM": 0.817315,
+            "localMomentsEachArm": 10,
+            "shear": 1.44179,
+            "interaction": 0.263111
+          }
+        ]
+      },
+      "outer-north": {
+        "supports": [
+          {
+            "u": 332.5,
+            "upperLowerType": "corner"
+          },
+          {
+            "u": 2600,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 4377.5,
+            "upperLowerType": "existing north pier"
+          },
+          {
+            "u": 7622.5,
+            "upperLowerType": "existing north pier"
+          },
+          {
+            "u": 9400,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 11667.5,
+            "upperLowerType": "corner"
+          }
+        ],
+        "segments": [
+          {
+            "start": 332.5,
+            "end": 2600,
+            "originHeels": [
+              332.5
+            ],
+            "maxVerticalM": 0.817315,
+            "localMomentsEachArm": 10,
+            "shear": 1.44179,
+            "interaction": 0.263111
+          },
+          {
+            "start": 2600,
+            "end": 4377.5,
+            "originHeels": [],
+            "maxVerticalM": 0.502243,
+            "localMomentsEachArm": 0,
+            "shear": 1.130223,
+            "interaction": 0.052846
+          },
+          {
+            "start": 4377.5,
+            "end": 7622.5,
+            "originHeels": [
+              4700,
+              7300
+            ],
+            "maxVerticalM": 24.248879,
+            "localMomentsEachArm": 20,
+            "shear": 72.063333,
+            "interaction": 0.858884
+          },
+          {
+            "start": 7622.5,
+            "end": 9400,
+            "originHeels": [],
+            "maxVerticalM": 0.502243,
+            "localMomentsEachArm": 0,
+            "shear": 1.130223,
+            "interaction": 0.052846
+          },
+          {
+            "start": 9400,
+            "end": 11667.5,
+            "originHeels": [
+              11667.5
+            ],
+            "maxVerticalM": 0.817315,
+            "localMomentsEachArm": 10,
+            "shear": 1.44179,
+            "interaction": 0.263111
+          }
+        ]
+      },
+      "outer-east": {
+        "supports": [
+          {
+            "u": 332.5,
+            "upperLowerType": "corner"
+          },
+          {
+            "u": 3600,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 5600,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 5975,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 8200,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 11667.5,
+            "upperLowerType": "corner"
+          }
+        ],
+        "segments": [
+          {
+            "start": 332.5,
+            "end": 3600,
+            "originHeels": [
+              332.5
+            ],
+            "maxVerticalM": 1.697172,
+            "localMomentsEachArm": 10,
+            "shear": 2.07764,
+            "interaction": 0.274714
+          },
+          {
+            "start": 3600,
+            "end": 5600,
+            "originHeels": [
+              4700
+            ],
+            "maxVerticalM": 35.279491,
+            "localMomentsEachArm": 10,
+            "shear": 39.7717,
+            "interaction": 0.745107
+          },
+          {
+            "start": 5600,
+            "end": 5975,
+            "originHeels": [],
+            "maxVerticalM": 0.022354,
+            "localMomentsEachArm": 0,
+            "shear": 0.238444,
+            "interaction": 0.046146
+          },
+          {
+            "start": 5975,
+            "end": 8200,
+            "originHeels": [
+              7300
+            ],
+            "maxVerticalM": 38.243554,
+            "localMomentsEachArm": 10,
+            "shear": 43.10016,
+            "interaction": 0.786903
+          },
+          {
+            "start": 8200,
+            "end": 11667.5,
+            "originHeels": [
+              11667.5
+            ],
+            "maxVerticalM": 1.911295,
+            "localMomentsEachArm": 10,
+            "shear": 2.20481,
+            "interaction": 0.277508
+          }
+        ]
+      },
+      "outer-west": {
+        "supports": [
+          {
+            "u": 332.5,
+            "upperLowerType": "corner"
+          },
+          {
+            "u": 3800,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 5400,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 6600,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 8200,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 11667.5,
+            "upperLowerType": "corner"
+          }
+        ],
+        "segments": [
+          {
+            "start": 332.5,
+            "end": 3800,
+            "originHeels": [
+              332.5
+            ],
+            "maxVerticalM": 1.911295,
+            "localMomentsEachArm": 10,
+            "shear": 2.20481,
+            "interaction": 0.277508
+          },
+          {
+            "start": 3800,
+            "end": 5400,
+            "originHeels": [
+              4700
+            ],
+            "maxVerticalM": 27.841084,
+            "localMomentsEachArm": 10,
+            "shear": 40.39236,
+            "interaction": 0.64966
+          },
+          {
+            "start": 5400,
+            "end": 6600,
+            "originHeels": [],
+            "maxVerticalM": 0.228906,
+            "localMomentsEachArm": 0,
+            "shear": 0.76302,
+            "interaction": 0.049033
+          },
+          {
+            "start": 6600,
+            "end": 8200,
+            "originHeels": [
+              7300
+            ],
+            "maxVerticalM": 27.841084,
+            "localMomentsEachArm": 10,
+            "shear": 40.39236,
+            "interaction": 0.64966
+          },
+          {
+            "start": 8200,
+            "end": 11667.5,
+            "originHeels": [
+              11667.5
+            ],
+            "maxVerticalM": 1.911295,
+            "localMomentsEachArm": 10,
+            "shear": 2.20481,
+            "interaction": 0.277508
+          }
+        ]
+      },
+      "court-south": {
+        "supports": [
+          {
+            "u": 3917.5,
+            "upperLowerType": "corner"
+          },
+          {
+            "u": 4350,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 7650,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 8082.5,
+            "upperLowerType": "corner"
+          }
+        ],
+        "segments": [
+          {
+            "start": 3917.5,
+            "end": 4350,
+            "originHeels": [
+              3917.5
+            ],
+            "maxVerticalM": 0.029735,
+            "localMomentsEachArm": 10,
+            "shear": 0.275005,
+            "interaction": 0.251926
+          },
+          {
+            "start": 4350,
+            "end": 7650,
+            "originHeels": [
+              4700,
+              7300
+            ],
+            "maxVerticalM": 26.231102,
+            "localMomentsEachArm": 20,
+            "shear": 72.098305,
+            "interaction": 0.882217
+          },
+          {
+            "start": 7650,
+            "end": 8082.5,
+            "originHeels": [
+              8082.5
+            ],
+            "maxVerticalM": 0.029735,
+            "localMomentsEachArm": 10,
+            "shear": 0.275005,
+            "interaction": 0.251926
+          }
+        ]
+      },
+      "court-north": {
+        "supports": [
+          {
+            "u": 3917.5,
+            "upperLowerType": "corner"
+          },
+          {
+            "u": 4377.5,
+            "upperLowerType": "existing north pier"
+          },
+          {
+            "u": 7622.5,
+            "upperLowerType": "existing north pier"
+          },
+          {
+            "u": 8082.5,
+            "upperLowerType": "corner"
+          }
+        ],
+        "segments": [
+          {
+            "start": 3917.5,
+            "end": 4377.5,
+            "originHeels": [
+              3917.5
+            ],
+            "maxVerticalM": 0.033636,
+            "localMomentsEachArm": 10,
+            "shear": 0.292491,
+            "interaction": 0.251998
+          },
+          {
+            "start": 4377.5,
+            "end": 7622.5,
+            "originHeels": [
+              4700,
+              7300
+            ],
+            "maxVerticalM": 24.248879,
+            "localMomentsEachArm": 20,
+            "shear": 72.063333,
+            "interaction": 0.858884
+          },
+          {
+            "start": 7622.5,
+            "end": 8082.5,
+            "originHeels": [
+              8082.5
+            ],
+            "maxVerticalM": 0.033636,
+            "localMomentsEachArm": 10,
+            "shear": 0.292491,
+            "interaction": 0.251998
+          }
+        ]
+      },
+      "court-east": {
+        "supports": [
+          {
+            "u": 3917.5,
+            "upperLowerType": "corner"
+          },
+          {
+            "u": 4350,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 5950,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 6050,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 7650,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 8082.5,
+            "upperLowerType": "corner"
+          }
+        ],
+        "segments": [
+          {
+            "start": 3917.5,
+            "end": 4350,
+            "originHeels": [
+              3917.5
+            ],
+            "maxVerticalM": 0.029735,
+            "localMomentsEachArm": 10,
+            "shear": 0.275005,
+            "interaction": 0.251926
+          },
+          {
+            "start": 4350,
+            "end": 5950,
+            "originHeels": [
+              4700
+            ],
+            "maxVerticalM": 19.389326,
+            "localMomentsEachArm": 10,
+            "shear": 55.70486,
+            "interaction": 0.564874
+          },
+          {
+            "start": 5950,
+            "end": 6050,
+            "originHeels": [],
+            "maxVerticalM": 0.00159,
+            "localMomentsEachArm": 0,
+            "shear": 0.063585,
+            "interaction": 0.045856
+          },
+          {
+            "start": 6050,
+            "end": 7650,
+            "originHeels": [
+              7300
+            ],
+            "maxVerticalM": 19.389326,
+            "localMomentsEachArm": 10,
+            "shear": 55.70486,
+            "interaction": 0.564874
+          },
+          {
+            "start": 7650,
+            "end": 8082.5,
+            "originHeels": [
+              8082.5
+            ],
+            "maxVerticalM": 0.029735,
+            "localMomentsEachArm": 10,
+            "shear": 0.275005,
+            "interaction": 0.251926
+          }
+        ]
+      },
+      "court-west": {
+        "supports": [
+          {
+            "u": 3917.5,
+            "upperLowerType": "corner"
+          },
+          {
+            "u": 4350,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 5950,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 6050,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 7650,
+            "upperLowerType": "clear full height strip"
+          },
+          {
+            "u": 8082.5,
+            "upperLowerType": "corner"
+          }
+        ],
+        "segments": [
+          {
+            "start": 3917.5,
+            "end": 4350,
+            "originHeels": [
+              3917.5
+            ],
+            "maxVerticalM": 0.029735,
+            "localMomentsEachArm": 10,
+            "shear": 0.275005,
+            "interaction": 0.251926
+          },
+          {
+            "start": 4350,
+            "end": 5950,
+            "originHeels": [
+              4700
+            ],
+            "maxVerticalM": 19.389326,
+            "localMomentsEachArm": 10,
+            "shear": 55.70486,
+            "interaction": 0.564874
+          },
+          {
+            "start": 5950,
+            "end": 6050,
+            "originHeels": [],
+            "maxVerticalM": 0.00159,
+            "localMomentsEachArm": 0,
+            "shear": 0.063585,
+            "interaction": 0.045856
+          },
+          {
+            "start": 6050,
+            "end": 7650,
+            "originHeels": [
+              7300
+            ],
+            "maxVerticalM": 19.389326,
+            "localMomentsEachArm": 10,
+            "shear": 55.70486,
+            "interaction": 0.564874
+          },
+          {
+            "start": 7650,
+            "end": 8082.5,
+            "originHeels": [
+              8082.5
+            ],
+            "maxVerticalM": 0.029735,
+            "localMomentsEachArm": 10,
+            "shear": 0.275005,
+            "interaction": 0.251926
+          }
+        ]
+      }
+    },
+    "highestMemberUtilisation": 0.882217,
+    "connection": "One closed 300 square cassette per heel, 120 deep with 20mm top/bottom and interlocked 16mm full-depth web pairs; ordinary arm is straight, hip has two orthogonal arms. Slot from open side before closure; ring skins and webs continue to end diaphragms via full-penetration seams. Choose all-arm20mm, not16mm which failed actual south court double-heel combination."
+  },
+  "tail": {
+    "purlinEndULS": 9.378253,
+    "tenMMTabStress": 17.964732,
+    "twoWeldStress": 10.420281,
+    "outermostEaveRafterSolidGap": 81.005051,
+    "innerRowSolidGapAfterTwo60Cleats": 161.005051
+  },
+  "crown": {
+    "pin": 40,
+    "centralLug": 24,
+    "eachOuterLug": 16,
+    "forceResultant": 92.195445,
+    "pinShear": 36.683402,
+    "pinBending": 161.406968,
+    "combined": 173.462461,
+    "centralLugBearing": 96.036921,
+    "terminal": "Positive 40 pin with metal retainers; 100mm lug width, 50mm minimum longitudinal end distance, 16mm welded end diaphragm aligned to both primary webs. Single clevis is not a torsion-through-ridge assumption; each half routes purlin torque to its own heel."
+  },
+  "height": {
+    "eave": 7297.520687,
+    "ridge": 8288.42446,
+    "rise": 197.520687,
+    "ceiling": 6620,
+    "minimumTieUnderside": 6710,
+    "lowestProtectedReturn": 6515,
+    "widthDisplacement": "Continuous 220 wide ring on 140 core; 40 each side, or explicit offset subject to recalculation. Local 300 square cassette, 292 twin-rail width. Roofing closure and fire material qualification remain distinct."
+  },
+  "openInterfaces": [
+    "Complete captive roof-ring to floor/grillage ties at every actual anchor, including narrow core, north arch bore and air/DPC crossing; topology is not permission for a new metal penetration.",
+    "Roof bracing, L-pier diaphragm flexibility/arch movement and independent ceiling remain separate joins.",
+    "Qualified weld preparations, execution/inspection/protection and fire/thermal/geometric tolerance; crown lug out-of-plane and bracing connectors must match signed wind design."
+  ],
+  "physicalAdmission": false
+}

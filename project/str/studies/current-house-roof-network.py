@@ -9,6 +9,14 @@ def box(H,B,t):
  A=B*H-(B-2*t)*(H-2*t);I=(B*H**3-(B-2*t)*(H-2*t)**3)/12;J=(H*B**3-(H-2*t)*(B-2*t)**3)/12;Ak=(H-t)*(B-t)
  return dict(H=H,B=B,t=t,A=A,I=I,Iminor=J,W=2*I/H,Wminor=2*J/B,MR=2*I/H*fy/1e6,TR=2*Ak*t*fy/math.sqrt(3)/1e6,lineG=A/1e6*78.5)
 primary=box(200,140,12);secondary=box(150,80,8);tie=box(150,100,8);collector=box(250,140,16)
+welded='--welded-geometry' in sys.argv
+station=4700 if welded else 4377.5
+if welded:
+ # Two physically separate ties flank the uncut primary box. Use twice the
+ # area/mass for axial response; weak-axis buckling is checked per free rail.
+ rail=box(120,60,8);tie=rail.copy()
+ for key in ['A','I','Iminor','W','Wminor','MR','TR','lineG']:tie[key]*=2
+ collector=box(120,220,20)
 pitch=math.radians(25);qG=1.5/math.cos(pitch);qQ=1.5
 
 def coeff(x,L,tanA,z):
@@ -23,7 +31,7 @@ def bound(items,index,lo,hi):
 rows=[];globalG=globalQ=globalRA=globalRB=globalUp=0.;purlinLength=0
 for name,mult,d in [('ordinary',8,1),('hip',4,math.sqrt(2))]:
  L=3.585*d;tanA=math.tan(pitch)/d
- fields=[((y-8082.5)*d/1000,w*((y-7622.5)/1000 if name=='hip'else(3245+y-7622.5)/2000),w)for y,w in zip(a['purlin_rows'],a['tributaries'])]
+ fields=[((y-8082.5)*d/1000,w*((y-(12000-station))/1000 if name=='hip'else((12000-2*station)+y-(12000-station))/2000),w)for y,w in zip(a['purlin_rows'],a['tributaries'])]
  area=sum(A for x,A,w in fields)
  primaryLength=4.65*d/math.cos(math.atan(tanA));primaryG=primaryLength*primary['lineG'];tieG=L*tie['lineG']
  # Two 1kN commonhaunches,0.5kN crown and one twelfth of8.5kN bracing.
@@ -67,7 +75,7 @@ assert math.isclose(sum(r['count']*r['planArea']for r in rows),144.15)
 assert math.isclose(globalRA+globalRB,1.35*globalG+1.5*globalQ)
 assert globalG<=3*144.15
 # Rotatedsecondaryservice uses BOTH inertias, not strongaxis alone.
-L=4.5775;w=4.5*.55+secondary['lineG'];M=(6.3*.55+1.35*secondary['lineG'])*L**2/8
+L=(station+200)/1000;w=4.5*.55+secondary['lineG'];M=(6.3*.55+1.35*secondary['lineG'])*L**2/8
 biaxial=M*math.cos(pitch)/secondary['MR']+M*math.sin(pitch)/(secondary['Wminor']*fy/1e6)
 deflection=5*w*(L*1000)**4/(384*E)*(math.cos(pitch)**2/secondary['I']+math.sin(pitch)**2/secondary['Iminor'])
 assert biaxial<1 and deflection<L*1000/250
@@ -76,6 +84,12 @@ result={'status':'Conserved finite roof network and actual signed action candida
  'secondary':{'maxPlanSpan':L*1000,'biaxialULS':biaxial,'serviceVerticalBothAxes':deflection,'L250':L*1000/250,'endBearing':'Positivewelded/boltedcleatsforbothsigns; actualinner127.5mm axisgap uses commonterminaldiaphragm, NOT a shortRHS+twocleats. Atrow7750 ordinary/hipsolidsmerge inonejoint; rowweight/reactionsremaininthisledger.'},
  'nodeBudget':{'down':70,'up':25,'tieEitherSign':60,'rafterAxisTorque':10,'role':'BoundsactualindependentrowsanddiscreteGabove, notownerinvariants. Commonclosedhaunch mustjoinrafter/tiebranchsolids andtransfertorsionwithoutasingleplanarknife.'},
  'rainCatchment':v['hydraulicProbe']['catchment'],'method':'Exactrowinfluencecoefficients ofexistingtwo-strut/tieframe; rowsindependentlyrange[-2.25,+6.3]equivalentplanpressure. Actualuniformmassledgerusesthedeclared1.5kPanormalnonsteelbudget andeverymetaloriginonce. Primary full4.65planextent explicitlyincludes200overhangbeyondoldprimaryends. Sitewind/snow/material/actualjointsremainseparate.'}
-out=Path(__file__).with_suffix('.json');text=json.dumps(result,indent=2,sort_keys=True)+'\n'
+if welded:
+ result.update(status='Separated inner eaves and twin exterior tie rails; signed row actions for common welded saddle candidate',
+  ordinaryStations=[station,12000-station],innerEaveOrdinaryHipAxisSeparation=station-4450,individualTieRail=rail,
+  actualCombinedTieMass=2*rail['lineG'],ringSeparateOrigin=collector['lineG']*62)
+ result['secondary']['endBearing']='New ordinary axes 4700/7300. Shortest row at7750 has450mm ordinary-to-hip axis separation; at the actual eave there is250mm. Opposed positive web cleats remain inside the measured clear zone. No crossed primary noses.'
+ result['globalOrigins']['collectorSeparateWallHeadOrigin']='120x220x20 continuous ring is counted separately in the whole-house wall-head mass; this roof G contains every twin tie rail and 1kN allowance per heel.'
+out=Path(__file__).with_name('current-house-welded-network.json') if welded else Path(__file__).with_suffix('.json');text=json.dumps(result,indent=2,sort_keys=True)+'\n'
 if '--check'in sys.argv:assert out.read_text()==text;print('Conserved finite roof rows, signed metal origins and adverse cases reproduce')
 else:out.write_text(text);print(json.dumps({'global':result['globalOrigins'],'frames':[{'id':r['id'],'actions':r['independentAdverse'],'torsion':r['oneSeatAbsoluteTorque'],'util':r['primaryCombined'],'defl':r['curvatureAndTieStretchBound'],'limit':r['strutL250']}for r in rows]},indent=2))
