@@ -9,8 +9,8 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-06T19:18:37.462Z",
-  "expiresAt": "2026-11-06T20:48:37.462Z",
+  "heartbeatAt": "2026-11-06T19:24:09.469Z",
+  "expiresAt": "2026-11-06T20:54:09.469Z",
   "branch": "work/zerg-20261106-ias-g7",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
@@ -31,5 +31,10 @@
       "evidence": "HANDOFF remote cb9c89dc7f1a9506b8bdefd24d03528a67db0435 tree45b8225e00479ce73daa8cfb45af0a1b3cdb3de0 verified. Native access/cold-boundary rejection plus modular furnishing handoff and reproducible full-current conditional carry source; Shapely2.1.2 direct check, current static/direct-turn and integrity/diff pass. No fresh PR, selection or IAS completion.",
       "next": "Resume project/ias/ias-03-modular-furnishing-handoff.md: earn supported furnishing first release and low/rest/storage/door choreography or reject/simplify48-package burden; then SAME actual Pecolift rolling/repair/incoming event. Keep ALL source fixtures/court enclosure,25clearance,west755,physical/material/version holds. Coordinator execution limit, not frontier empty. Release HANDOFF now; keep w1f."
     }
+  },
+  "pr": 1347,
+  "checkpoint": {
+    "evidence": "PR #1347 draft recovery cb9c89dc7f1a9506b8bdefd24d03528a67db0435; inherited conditional source preserved, no successor geometry or adoption claimed",
+    "next": "Publish finite proportionality finding after root review, exact-head CI and fresh publication check"
   }
 }
