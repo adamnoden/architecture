@@ -9,9 +9,9 @@
     "label": "zerg-20261106-w5"
   },
   "claimedAt": "2026-11-06T09:41:13.275Z",
-  "heartbeatAt": "2026-11-06T11:55:08.418Z",
-  "expiresAt": "2026-11-06T12:40:08.418Z",
-  "branch": "work/zerg-20261106-w2",
+  "heartbeatAt": "2026-11-06T12:16:03.025Z",
+  "expiresAt": "2026-11-06T13:01:03.025Z",
+  "branch": "work/zerg-20261106-w5-mat-seal",
   "predecessor": {
     "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
     "generation": 26,
@@ -34,10 +34,10 @@
       "blocker": "Project reference remains INCOMPLETE and unselected: complete clamp/seal preload, tool/hatch/guard sequence and local leak gravity/firstharm need proof. No product rating, physical seal or construction acceptance. Existing twolevel numeric outputs are explicitly a withdrawn comparison."
     }
   },
-  "pr": 1332,
+  "pr": 1337,
   "checkpoint": {
-    "evidence": "Exact published b9ae5fc69dcb39b145425c805ca31dbb234572fe authenticated:17HAD+6MAT and canonical outputs reproduce, clean proof tree. Direct real-west mouth replaces invalid NE approach; constructed Nshoe/collar geometry retains qualifiedfirstharmnull. Requested stale MAT bridge MD reconciliation now remote90189b7a2b729a28258a4a887a270f589f6a2fed/local14f0218f, oneMD/no geometry, delivered to W2.",
-    "next": "W2 reconcile final source/status with reviewer and MD, resolve lowered loggia-pipe vs short-module sequence and locate western wrapped-base interface. Authenticate final head and exact CI, then fresh canonical preflight after root selection approval.",
-    "blocker": "Final selection/publication pending. Source queries: lowered pipe crosses northern short-module crew band unless phased; western module plan reaches wrapped-base band whose local vertical cut must be located. Protective-return figure sole/apron clipped below canvas; trivial render fix sent. Material/physical/site/firstwet/temporaryworks qualification remain open."
+    "evidence": "Shared1332 merged8ab19d48ef16abaff39e7f49a3801d5dc5f65521 after exactCI and freshpreflight. Fresh successor branch from thatmain, Draft1337/e64e8864d1cc1d7c9e7dbdefd846a31d4c029af2 tree74f1525f publishes concrete four-stop controlled-compression comparator, thin-stock tolerance limits, protective-shoe seam head and temporary weather bounding mass; no selectedgeometry changes. Direct arithmetic and diffcheck pass.",
+    "next": "Resolve actual thin-stock CFD/working-compression and cold retained seal detail; compare one disclosed lighter temporary weather-tool stock and complete attachment/residue scope, coupled to current protective-return seam/movement duty. Publish substantive source evidence before selecting any material.",
+    "blocker": "DraftWIP only: foam proprietary formulation and exact thin water/compression qualification unresolved; stop/loadpath/contact not qualified, shoe lower seam/movement unselected. Installed polymer exception remains owner decision. Temporary tool is separate from permanent material selection."
   }
 }
