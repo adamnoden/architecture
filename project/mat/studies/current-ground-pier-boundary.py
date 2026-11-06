@@ -93,18 +93,23 @@ def produce():
     assert beam_y[0]<=field_y<apron['y'][0]<apron['y'][1]<=beam_y[1]
     assert ba[0]<=seat['plan'][0] and seat['plan'][0]+seat['plan'][2]<=bb[0]
     assert seat['rcZ']==sorted(floor['z'][3:]) and c['thresholdTransition']['fieldPlaneZ']==pan['z']
-    profile=c['thresholdTransition']['actualApronProfileYZ']
+    profile=tp['dryFold']['profileYZ']
+    assert profile==c['thresholdTransition']['actualApronProfileYZ']
     assert profile[0]==[apron['y'][0],0] and profile[-1]==[apron['y'][1],apron['crestZ']]
     for a,b in zip(profile,profile[1:]):
-      # Actual renderer owns the detailed step missing from its JSON dryFold.
-      # Pin/verify it rather than relabelling an authored flat apron as actual.
+      # Preserve the historical renderer provenance; the corrected owning JSON
+      # now supplies the same integral step to all current consumers.
       segment='line('+json.dumps(b,separators=(',',':'))+','+json.dumps(a,separators=(',',':'))+')'
       assert segment in threshold_code.replace(' ',''), 'Actual HAD renderer step mismatch'
     wet_length=tp['fallY'][-1][0]-tp['fallY'][0][0]
     whole_length=tp['fallY'][-1][0]-profile[0][0]
-    whole_height=tp['ends']['crestZ']-(min(z for y,z in tp['fallY'])-tp['thickness'])
+    all_z=[z for y,z in profile+tp['fallY']]
+    whole_height=max(tp['ends']['crestZ'],*all_z)-(min(all_z)-tp['thickness'])
     renewal=threshold['maintainedState']['panTask']
-    assert renewal['wholeBodyMaximum']==[tp['outerX'][1]-tp['outerX'][0],wet_length,130]
+    assert renewal['wholeBodyMaximum']==tp['bodyEnvelope']['dimensions']==[tp['outerX'][1]-tp['outerX'][0],whole_length,whole_height]
+    assert math.isclose(renewal['planRotationRadius'],math.hypot(tp['outerX'][1]-tp['outerX'][0],whole_length)/2,abs_tol=1e-9)
+    assert renewal['clearDrawPlan'][1]==profile[0][0]
+    assert renewal['storage']['height']>=whole_length
     transition={
       'status':c['thresholdTransition']['status'],'sourceRoute':route,
       'fieldFinishedFaceY_mm':field_y,'dryApronY_mm':apron['y'],'dryApronCrestZ_mm':apron['crestZ'],
@@ -117,11 +122,12 @@ def produce():
       'renewal':c['thresholdTransition']['renewal'],
       'sourceContact':'Permanent seat is explicitly continuous with actual ground slab/court-south support. Plan coverage is not force, thermal or dryness performance.',
       'unqualified':c['thresholdTransition']['unqualified'],
-      'owningRenewalUnderbound':{'declaredWholeBody_mm':renewal['wholeBodyMaximum'],
+      'owningRenewalCorrection':{'declaredWholeBody_mm':renewal['wholeBodyMaximum'],
         'actualIntegralEnvelope_mm':[tp['outerX'][1]-tp['outerX'][0],whole_length,whole_height],
         'wholeBodyPlanRadius_mm':math.hypot(tp['outerX'][1]-tp['outerX'][0],whole_length)/2,
         'declaredPlanRadius_mm':renewal['planRotationRadius'],'declaredStorageHeight_mm':renewal['storage']['height'],
-        'status':'Known360/130 underbound and400 storage omission; owning HAD correction pending. No complete renewal pass.'}}
+        'nominalOperatorReserve_mm':threshold['maintainedState']['geometryProof']['bodyReserve'],
+        'status':'Owning nominal body, draw, rotation and storage corrected; actual fabrication, apparatus, tolerances and physical renewal remain unqualified.'}}
     heads=grid['heads'];assert len(heads)==grid['headCount']
     assert len({q['id'] for q in heads})==len(heads)==len({tuple(q['xy']) for q in heads})
     assert all(q['shaftDiameter']==400 and q['capZ']==[-750,-180] for q in heads)
@@ -212,7 +218,7 @@ def produce():
     join_svg+=f'<path d="{pan_path}" fill="none" stroke="#4e6c9b" stroke-width="3"/>'
     join_svg+=f'<path d="M{X(4030)} 109 H{X(4400)} M{X(4380)} 101 L{X(4400)} 109 L{X(4380)} 117" fill="none" stroke="#4e6c9b" stroke-width="3"/>'
     join_svg+=f'<path d="M{X(field_y)} 302 V319 H{X(4030)} V302" fill="none" stroke="#bb6b2f" stroke-width="2"/>'
-    labels=[(70,95,'SOUTH / interior'),(700,95,'NORTH / court; pan withdraws NORTH 500 mm'),(70,160,'Retained ordinary 15 / 65 / 100 / RC 200 mm'),(70,286,'Field at −80..−79 mm below distribution'),(260,344,f"{transition['horizontalJoinFromField_mm']:.1f} mm formed join territory"),(70,570,'Common court-S beam: Y3650..4250; top −180; historical 450 mm depth'),(70,599,'Actual seat: Y4060..4460 /RC 200; outer 210 mm beyond beam is a real structural/thermal duty'),(70,640,'Blue: actual apron 4030/0 → 4060/0 → 4060/+15 → 4090/+15; rise 80 mm to apron / 95 mm to crest'),(70,668,'Dashed: proposed field transition. Actual integral pan 1796×420×131.5 exceeds owning 360/130 mm body'),(70,696,'Owning 400 mm edge-on storage also omits 420 mm height. No complete pan renewal pass; HAD correction pending.'),(70,724,'Clamp/recess must retain 15 mm crest, ordinary access and full north withdrawal. No permanent field-to-pan weld.')]
+    labels=[(70,95,'SOUTH / interior'),(700,95,'NORTH / court; pan withdraws NORTH 500 mm'),(70,160,'Retained ordinary 15 / 65 / 100 / RC 200 mm'),(70,286,'Field at −80..−79 mm below distribution'),(260,344,f"{transition['horizontalJoinFromField_mm']:.1f} mm formed join territory"),(70,570,'Common court-S beam: Y3650..4250; top −180; historical 450 mm depth'),(70,599,'Actual seat: Y4060..4460 /RC 200; outer 210 mm beyond beam is a real structural/thermal duty'),(70,640,'Blue: actual apron 4030/0 → 4060/0 → 4060/+15 → 4090/+15; rise 80 mm to apron / 95 mm to crest'),(70,668,'Dashed: proposed field transition. Owning integral pan corrected to 1796 × 420 × 131.5 mm'),(70,696,'Owning storage reserves 450 mm for 420 mm height. Nominal geometry only; physical pan renewal remains unproved.'),(70,724,'Clamp/recess must retain 15 mm crest, ordinary access and full north withdrawal. No permanent field-to-pan weld.')]
     for x,y,label in labels:join_svg+=f'<text x="{x}" y="{y}" font-size="17">{label}</text>'
     join_svg+='</g></svg>\n'
     cuts_svg='<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760"><rect width="1200" height="760" fill="#faf9f4"/><g font-family="sans-serif" fill="#20343c"><text x="35" y="33" font-size="25">Lower-source cuts — the actual proposed 52-head register</text><text x="35" y="60" font-size="15">STR 732901d spatial candidate only; no adopted shaft count, force card, cut elevation or all-grid dry enclosure.</text>'

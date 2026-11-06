@@ -29,8 +29,8 @@ export function deriveSouthCourtThreshold(door) {
     pan:{materialRole:'1.5mm formed metal reference, actual alloy/seams/corrosion/bedding unqualified',
       outerX:[5102,6898],thickness:1.5,fallY:[[4090,-45],[4450,-55]],
       rear:{planeY:4090,crestZ:15},ends:{x:[5102,6898],crestZ:75},
-      dryFold:{y:[4030,4090],crestZ:15,
-        role:'Rear leg folds to a dry-side floor apron behind the15 crest; clamp fixings stay on this dry side, never through the wet pan floor.'},
+      dryFold:{y:[4030,4090],crestZ:15,profileYZ:[[4030,0],[4060,0],[4060,15],[4090,15]],
+        role:'Integral rear leg folds through the authored stepped profile to the dry-side floor apron behind the 15 mm crest. The apron travels with the whole pan; only its clamps/end captures release. Fixings never pass through the wet pan floor.'},
       bearingPads:[{x:[5110,5150],y:[4110,4250]},
         {x:[5980,6020],y:[4110,4250]},{x:[6850,6890],y:[4110,4250]}],
       bearingRole:'Explicit forty-wide mineral bearing strips on supported pan. Water passes between strips; no concealed full-width dam or sill fixing through pan. Pan compression/slip, sill span/load and thermal bridge require STR/MAT.',
@@ -84,12 +84,11 @@ export function deriveSouthCourtThreshold(door) {
           role:'Capture and unload leaf first. Independently accessible leaf-side hinge screws are released outward; no upward hinge-pin motion through the transom.'},
         uprightStorage:{plan:[4350,5000,200,1000],height:2200,
           role:'Two845.5-wide leaves park edge-on side by side in separate captured slots; no leaf lies across N inlet or E collector.'}},
-      panTask:{wholeBodyMaximum:[1796,360,130],
-        pullNorth:500,clearDrawPlan:[5050,4090,1900,1360],
+      panTask:{pullNorth:500,
         raisedEmptyHandlingField:[5050,4500,1900,1600],
-        planRotationRadius:Math.hypot(1796,360)/2,turnCentre:[5700,5200],
+        turnCentre:[5700,5200],
         operator:{centre:[6950,5150],radius:300,handle:[6500,5150,1100],shoulderZ:1450,reach:600},
-        storage:{plan:[4600,4350,150,1900],height:400,orientation:'Upright on long edge in captured rack after90degree plan turn'},
+        storage:{plan:[4600,4350,150,1900],height:450,orientation:'Upright on long edge in captured rack after90degree plan turn'},
         role:'Frame/sill removed before pan. Capture entire pan, release dry-side floor clamps and accessible end laps, pull NORTH500 then lift in the clear exterior field; rear/end returns do not pass through retained frame. No wet-floor fastener cut.'},
       incoming:{transportEnvelope:[600,850,2300],turnRadius:Math.hypot(600,850)/2,
         headLanding:[6350,12000,2400,2400],
@@ -121,6 +120,14 @@ export function deriveSouthCourtThreshold(door) {
       'Actual exterior channels must be joined to court paving/support/guard/window/occupied operation before architectural selection.',
       'Material/seam/gasket/meeting/fixing/movement/weather and physical qualification remain downstream.']
   };
+  const envelope=derivePanBodyEnvelope(v.pan);
+  v.pan.bodyEnvelope=envelope;
+  const task=v.maintainedState.panTask;
+  task.wholeBodyMaximum=envelope.dimensions;
+  task.planRotationRadius=Math.hypot(...envelope.dimensions.slice(0,2))/2;
+  // Retain the existing north end 5450 mm; include the integral apron at 4030 mm.
+  task.clearDrawPlan=[5050,envelope.plan[1],1900,5450-envelope.plan[1]];
+  task.storage.storedBodyMaximum=[envelope.dimensions[2],envelope.dimensions[0],envelope.dimensions[1]];
   assert.equal(v.frame.outerX[0]-v.retained.roughX[0],v.frame.installationGapEach);
   assert.equal(v.retained.roughX[1]-v.frame.outerX[1],v.frame.installationGapEach);
   assert.equal(v.frame.outerX[0]+v.frame.jambEach,door.hinges[0][0]);
@@ -141,10 +148,34 @@ export function deriveSouthCourtThreshold(door) {
   return v;
 }
 
+export function derivePanBodyEnvelope(pan){
+  const profile=pan.dryFold.profileYZ;
+  assert.deepEqual(profile[0],[pan.dryFold.y[0],0]);
+  assert.deepEqual(profile.at(-1),[pan.rear.planeY,pan.rear.crestZ]);
+  const ys=[...profile.map(p=>p[0]),...pan.fallY.map(p=>p[0])];
+  const minY=Math.min(...ys),maxY=Math.max(...ys);
+  const allZ=[...profile,...pan.fallY].map(p=>p[1]);
+  const minZ=Math.min(...allZ)-pan.thickness;
+  const maxZ=Math.max(pan.ends.crestZ,...allZ);
+  return {plan:[pan.outerX[0],minY,pan.outerX[1]-pan.outerX[0],maxY-minY],
+    z:[minZ,maxZ],dimensions:[pan.outerX[1]-pan.outerX[0],maxY-minY,maxZ-minZ],
+    scope:'Nominal integral metal reference including stepped dry apron and floor underside. Fabrication bends, clamps, carrier and handling apparatus remain unqualified.'};
+}
+
 const overlap=(a,b)=>a[0]<b[0]+b[2]&&a[0]+a[2]>b[0]&&a[1]<b[1]+b[3]&&a[1]+a[3]>b[1];
 const pointRect=(p,r)=>Math.hypot(Math.max(r[0]-p[0],0,p[0]-r[0]-r[2]),Math.max(r[1]-p[1],0,p[1]-r[1]-r[3]));
 export function verifyThresholdMaintainedState(v,renewal){
   const m=v.maintainedState,p=m.panTask,l=m.leafTask,handler=m.handlingReference;
+  const body=derivePanBodyEnvelope(v.pan);
+  assert.deepEqual(p.wholeBodyMaximum,body.dimensions,'Pan handling envelope omits integral apron or floor thickness');
+  assert.equal(p.planRotationRadius,Math.hypot(...body.dimensions.slice(0,2))/2,'Pan rotation radius omits complete integral body');
+  const contained=(a,b)=>a[0]>=b[0]&&a[1]>=b[1]&&a[0]+a[2]<=b[0]+b[2]&&a[1]+a[3]<=b[1]+b[3];
+  assert(contained(body.plan,p.clearDrawPlan),'Pan draw reservation omits installed integral apron');
+  const translated=[body.plan[0],body.plan[1]+p.pullNorth,...body.plan.slice(2)];
+  assert(contained(translated,p.clearDrawPlan),'Pan draw reservation omits translated body');
+  assert(contained(translated,p.raisedEmptyHandlingField),'Pan cannot lift into reserved empty handling field');
+  assert(p.storage.plan[2]>=body.dimensions[2]&&p.storage.plan[3]>=body.dimensions[0]&&p.storage.height>=body.dimensions[1],'Edge-on pan storage omits complete integral body');
+
   assert(!overlap(l.uprightStorage.plan,p.storage.plan),'Stored leaves/pan collide');
   for(const [name,store]of [['leaf',l.uprightStorage.plan],['pan',p.storage.plan]]){
     assert(!overlap(store,renewal.courtIntakeWell),name+' storage blocks E well');
@@ -188,10 +219,12 @@ export function renderSouthCourtThreshold(v){
   const rect=(y0,y1,z0,z1,c)=>`<rect x="${X(y0)}" y="${Z(z1)}" width="${(y1-y0)*1.55}" height="${(z1-z0)*1.1}" fill="${c}"/>`;
   s+=text(30,32,'SOUTH COURT THRESHOLD · ONE PROJECT REFERENCE / NOT WEATHER OR FIRST-HARM QUALIFIED',17);
   s+=text(30,57,'Centre section (north/right is outside): retained rough1800 / frame140 / leafbottom19; jamb50→40 +10 installation each.');
+  s+=text(30,80,`Integral pan ${v.pan.bodyEnvelope.dimensions.join(' × ')} mm including dry apron/underside; edge-on storage height ${v.maintainedState.panTask.storage.height} mm. Nominal geometry, not physical qualification.`);
   s+=rect(4000,4090,-180,-15,'#d7d3c5')+rect(4000,4090,-15,0,'#a4a097');
   s+=rect(4110,4250,-35,15,'#c5b26f')+rect(4230,4250,-15,-5,'#fbfaf5');
   s+=rect(4206,4250,19,200,'#8b9caa');
-  s+=line([4090,15],[4090,-45])+line([4090,-45],[4450,-55])+line([4090,15],[4060,15])+line([4060,15],[4060,0])+line([4060,0],[4030,0]);
+  const panSection=[...v.pan.dryFold.profileYZ,...v.pan.fallY];
+  for(let i=1;i<panSection.length;i++)s+=line(panSection[i-1],panSection[i]);
   s+=line([4250,0],[4350,0],'#555')+line([4250,-25],[4350,-25],'#555')+line([4350,-25],[4350,0],'#555');
   s+=line([4450,0],[4550,0],'#555')+line([4450,-80],[4550,-80],'#555')+line([4550,-80],[4550,0],'#555');
   for(const z of [15,-35,-55,-80])s+=text(12,Z(z)+4,String(z));
