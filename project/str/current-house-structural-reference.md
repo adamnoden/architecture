@@ -1,0 +1,7 @@
+# Current selected house — structural re-entry
+
+STR-HOUSE now consumes the selected HAD independent-water source merged in PR1332/main8ab19d48. The [exact interface record](studies/current-house-interfaces.json) and [read-only reproducer](studies/current-house-interfaces.py) preserve historical calculations rather than weakening their input guards. This is a recoverable WIP, not another structural selection or packet closeout.
+
+Three actual joins control the next design. The1600-axis/1000-clear bridge needs its own wall/floor/roof action and torsion model: the real court core is132.5east of axis7950, and the new weather leaf is371.25east of spineaxis9300. The600-wide spine nodes do not directly support the whole519.5wall carried by its900-wide member; an explicit900EW×600NS node candidate preserves the water opening but changes concrete/cage/reaction quantities. The2300 complete incoming threshold component also conflicts with the real courtportal tie, although it clears the garden tie. A nominal2400 opening is not this section.
+
+The next result must resolve these joins within a source-bound whole-house gravity/signed-action and inhabited-section proposition. It must test actual load, reinforcement/service, bearing and handling boundaries rather than blindly adopt450depth. Any smaller member's effect on waterbed/grade remains a coordinated HAD/MAT/RWT successor, not automatic reclaimed depth. Actual engineering/material/fire/physical/site acceptance stays downstream; an internal reaction or fit failure cannot be referred away.

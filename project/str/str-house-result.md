@@ -4,6 +4,10 @@
 
 No accepted house geometry, structural system, product or foundation is adopted. STR-RECONCILE and the final roof/house gates remain unpassed. The [programme](structural-architecture-programme.md), [structural brief](../../docs/reference-house/structural-brief.md), [owner-house charter](../owner-house-charter.md) and existing [shared rewind](../triad-interface-contract.md) control any later selection.
 
+## 6 November — current architectural source acquired
+
+HAD-WATER-REPLAN is now complete at its architectural-development scope in merged8ab19d48. The [current source-bound structural re-entry](current-house-structural-reference.md) replaces the missing architectural input as the active STR question. It identifies actual torsion/node-bearing and incoming/tie conflicts; old component checks remain historical until their consumed geometry and load paths are matched. STR-HOUSE remains planned while these intrinsic joins and the preferred whole-house proposition are resolved.
+
 ## 5 November — return the whole-house topology to architectural design
 
 **Decision: do not select a whole-house structural proposition on the present north-only court-water arrangement. Complete HAD-WATER-REPLAN before the STR-HOUSE selection exit.** This is a source-design prerequisite, not a request for an external engineer or a claim that all structural research must stop. STR-HOUSE remains planned; its earlier finite calculations retain their stated domains.
