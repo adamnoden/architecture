@@ -1,10 +1,10 @@
-/** Focused regression: HAD's selected services object and current compatible prose. */
+/** Frozen HAD-B evidence: exact Services selection and its prose-only successor. */
 import {mkdtempSync,readFileSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
-const root=new URL('../../../',import.meta.url),path='project/mat/studies/whole-house-service-baseline.json';
+const root=new URL('../../../',import.meta.url),path='project/had/studies/fixtures/services-9476-prose-successor.json';
 const current=readFileSync(new URL(path,root),'utf8');
 // Reconstruct the exact MAT9476 selected blob from the authenticated successor.
  // The generator already proves these are the only four narrative changes.

@@ -2151,8 +2151,8 @@
         "length": 400,
         "bodyHeight": 600,
         "completePlanWithValvesAndBrackets": [
-          9422,
-          6203,
+          10980,
+          3797,
           550,
           200
         ],
@@ -2176,15 +2176,15 @@
           ],
           [
             10500,
-            6300
+            3900
           ],
           [
-            9697,
-            6300
+            11225,
+            3900
           ]
         ],
         "upperBranchAxisLocal": 2945,
-        "notes": "Nwall6403/Wdry9397; fullradiator25fromWcorner. Roundbufferrelocationand150maxfrontunhangrequired; noerasedQ350/riser/cylinder/controls.",
+        "notes": "Retained3700arch east jamb; raw9650-10925 plus27jamb finish. Full550x200 retained; actual support/valves/pull and source join remain conditions.",
         "renewal": {
           "isolate": "Bothlocalaccessiblevalves isolate/drainbeforeunionrelease. Retainedwallpair capped/supported; nofloorseal touched. Exactvalve/connector match isrequired.",
           "requiredLift": 50,
@@ -2463,7 +2463,7 @@
       "orientation": "y",
       "rough": [
         9650,
-        11050
+        10925
       ],
       "bandWidth": 320,
       "bandHeight": 260,
@@ -2479,7 +2479,7 @@
       "ceilingLossFrom3100": 750,
       "roughSideReserves": [
         540,
-        540
+        415
       ],
       "requiredIntradosMinimum": 2680,
       "scope": "Explicit lower crossover through independent classified upperclosure, not archcore. Actual intrados≥2680 across320 on BOTHfaces; support/fire/weather/thermal details unearned. Door2250+70trim stays below2350 finishedcover by30.750 local ceiling cost is real."
@@ -3363,8 +3363,8 @@
           "length": 400,
           "bodyHeight": 600,
           "completePlanWithValvesAndBrackets": [
-            9422,
-            6203,
+            10980,
+            3797,
             550,
             200
           ],
@@ -3381,11 +3381,11 @@
             ],
             [
               10500,
-              6300
+              3900
             ],
             [
-              9697,
-              6300
+              11225,
+              3900
             ]
           ],
           "renewal": {
@@ -3521,19 +3521,73 @@
         }
       ],
       "plant": {
+        "cylinder": {
+          "selectedNominalLitres": 300,
+          "comparison": "Vaillant2024 non-plumbed heat-pump cylinder300L:595diam x1745h, empty67.6kg/filled356.8kg. Insulation50 composition still needs declaration.",
+          "body": [
+            9562.5,
+            3952.5,
+            595,
+            595
+          ],
+          "station": [
+            9510,
+            3900,
+            700,
+            700
+          ],
+          "workingEast": [
+            10210,
+            4025,
+            900,
+            700
+          ],
+          "height": 1745,
+          "requiredTopService": 500,
+          "replacementCentrePath": [
+            [
+              9860,
+              4250
+            ],
+            [
+              10500,
+              4250
+            ],
+            [
+              10500,
+              4575
+            ],
+            [
+              12500,
+              4575
+            ]
+          ],
+          "handlingRadius": 425,
+          "removedDryMassComparator": 67.6,
+          "filledSupportLoadBeforeAccessoriesKN": 3.500208,
+          "doorRaw": [
+            3900,
+            5300
+          ],
+          "requiredFinishedClearWidth": 1000,
+          "requiredFinishedClearHeight": 2300,
+          "trolleyRequirement": "Matched rated trolley/handling method, drained cylinder and removable connections; filled apparatus is never lifted. No human lifting capacity invented.",
+          "materialAlternative": "Factory-engineered copper/unvented heat-pump cylinder with demountable mineral insulation is a supplier design requirement, not authorised modification of a certified foam cylinder; bespoke copper capability alone proves no insulation approval.",
+          "initialReplacementMarginToRiser": 25
+        },
         "controlsHydraulics": [
-          11270.5,
-          5550,
-          300,
-          650
+          10895.5,
+          5480.5,
+          650,
+          300
         ],
         "controlsMaximumHeight": 2300,
         "primaryBuffer": {
           "requiredUsableAlwaysConnectedLitres": 100,
-          "stationRewind": "Relocatedfrom9800/5550afterfiniteemittercoordination; oldQ350isretireduninstalledcomparison, notsilentlyremovedsupport.",
+          "stationRewind": "New proposed east-water room:100east/525south, full650station retained.",
           "station": [
-            10025,
-            5525,
+            10125,
+            5000,
             650,
             650
           ],
@@ -3545,20 +3599,16 @@
           "control": "Always-connected usable volume, guaranteed minimum flow and both HX pumps during defrost; valve/check/bypass states must preserve it. Exact chosen unit determines actual minimum and usable port arrangement.",
           "replacementCentrePath": [
             [
-              10350,
-              5850
+              10450,
+              5325
             ],
             [
               10700,
-              5850
-            ],
-            [
-              10700,
-              4600
+              4575
             ],
             [
               12500,
-              4600
+              4575
             ]
           ],
           "handlingRadius": 425,
@@ -3579,36 +3629,33 @@
         ],
         "emitterJoin": {
           "radComplete": [
-            9422,
-            6203,
+            10980,
+            3797,
             550,
             200
           ],
           "radRoutineBody": [
-            9725,
-            5878,
+            11225,
+            4322,
             300
           ],
           "radAfter150PullBody": [
-            9725,
-            5728,
+            11225,
+            4472,
             300
           ],
           "controlsBody": [
-            10945.5,
-            6078,
+            11220.5,
+            5155.5,
             300
           ],
           "bufferFrontServiceBody": [
-            10350,
-            5200,
+            10450,
+            4675,
             300
           ],
-          "bufferPortFaceRequirement": "Southfaceaccessiblevalves/instrumentation600..1600, drainlowerwithqualifiedkneelingtask; nohiddenrearserviceassumed.",
-          "failed200Pull": "Operatorneeded5678wouldintersectretainedriser; chosen≤150requiresactualunhang/socketmatch. Nofixedsupportdeleted.",
-          "radToBufferBodyReserve": 25.626885611544026,
-          "controlsToBufferBodyReserve": 37.655275207537215,
-          "frontServiceToBufferReserve": 50
+          "scope": "Inherited full R300 spatial task reservations, not qualified people or tools. Separate task modes; no simultaneous work-space claim.",
+          "bufferPortFaceRequirement": "Southfaceaccessiblevalves/instrumentation600..1600, drainlowerwithqualifiedkneelingtask; nohiddenrearserviceassumed."
         }
       },
       "fanAccess": [
@@ -4562,22 +4609,22 @@
           ],
           [
             10800,
-            5700,
-            2645
+            5625,
+            2646.875
           ],
           [
             12000,
-            5700,
-            2615
+            5625,
+            2616.875
           ]
         ],
-        "lengthMM": 2700,
-        "fallAt1in40": 67.5,
+        "lengthMM": 2625,
+        "fallAt1in40": 65.625,
         "formedWallTerritory": 200,
         "faceFlashingTerritory": 300,
         "externalDownstackBodyTerritory": [
           12000,
-          5550,
+          5475,
           450,
           300
         ],
@@ -4589,8 +4636,9 @@
             3685,
             5515
           ],
-          "holeToRingControlReserve": 85,
-          "flashingToRingControlReserve": 35
+          "holeToRingControlReserve": 10,
+          "flashingToRingControlReserve": -40,
+          "allHeightControlStatus": "Conservative flashing rectangle is negative(-40); no all-height PASS. Actual current HAD finite arch-ring and actual new service portal must be checked in east-water-foul-join.py."
         },
         "nextWindowControl": {
           "axis": 7400,
@@ -4603,13 +4651,43 @@
         },
         "source": "Current HAD Eopeningrecord checked for ALLwindows/door.215ring is an explicit profile-control awaiting STR/HAD actual inner/weather ring, NOT asserted whole exterior recipe.",
         "grade": {
-          "trialExterior": -1300,
-          "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
-          "axisOf160OuterEnvelope": -1980,
+          "trialExterior": -1800,
+          "requiredReceiverEnvelopeCrownAtOrBelow": -2400,
+          "axisOf160OuterEnvelope": -2480,
           "crownCoverControl": 600,
-          "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
+          "actualHydraulicInvert": "Unknown actual carrier/internaldiameter/receiver/site/outfall.160 outer envelope axis is not an adopted hydraulic invert.",
+          "scope": "Joined D1800 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered500, preserving internal wall/sleeve/tail connections and falls.",
+          "historicalD1300Control": {
+            "trialExterior": -1300,
+            "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
+            "axisOf160OuterEnvelope": -1980,
+            "crownCoverControl": 600,
+            "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
+          },
+          "externalTailLoweringMM": 500,
+          "affectedExternalTails": [
+            "foul-ground-WC",
+            "foul-utility",
+            "foul-kitchen",
+            "rear-soil",
+            "east-soil",
+            "kitchenSinkStation.wasteRequiredRoute"
+          ]
         },
-        "renewal": "Outside fixed brackets and boundary sleeve retained; separately isolated supported removable cleanout/straight lengths,350jointrelease territory. External scaffold/lift required, not attic access. Exact part length/mass/connector/fastener and facade work field unproved."
+        "renewal": "Outside fixed brackets and boundary sleeve retained; separately isolated supported removable cleanout/straight lengths,350jointrelease territory. External scaffold/lift required, not attic access. Exact part length/mass/connector/fastener and facade work field unproved.",
+        "northReturnJoin": {
+          "oldRejectedPort": [
+            12000,
+            5700,
+            2615
+          ],
+          "oldFormedHoleToDryFace": -19.5,
+          "oldCarrier160ToDryFace": 0.5,
+          "northDryFace": 5780.5,
+          "formedHoleToDryFace": 55.5,
+          "completeCarrier160ToDryFace": 75.5,
+          "sourceOrder": "Services owns5625 downstream setout; HAD owns the actual portal and arch profiles. Recompute every current hole/carrier/flashing against actual openings, not retired window7400. No material/closure/capacity acceptance."
+        }
       },
       "otherServiceDuties": [
         {
@@ -4656,7 +4734,7 @@
             [
               8900,
               -450,
-              -1980
+              -2480
             ]
           ],
           "decision": "Required compatible horizontalpan outlet abovefloor to own southwall sleeve; no new groundfloor bore.650planat1:40. Actual pan firstrelease and complete connector≤182.5rear axialterritory required; no guessed outlet. Outside receiving invert/site connection unproved."
@@ -4683,7 +4761,7 @@
             [
               12450,
               600,
-              -1980
+              -2480
             ]
           ],
           "decision": "Washerstandpipe andsink trapped branch join accessible rear250chase andeastwall exit ABOVEfloor; no routingthroughappliance chassis.32.5fall on1300plan. Exact trap/hose/branch/outside carrier and workplate required."
@@ -4705,7 +4783,7 @@
             [
               9150,
               12450,
-              -1980
+              -2480
             ]
           ],
           "decision": "Accessible sinktrap/cleanout to northwall abovefloor,17.9375fall on717.5plan. No branch through groundloggia/hiddenwaterbox. Actual site receiving crown/diameter/invert mustmatch."
@@ -4732,7 +4810,7 @@
             [
               -450,
               11177.5,
-              -1980
+              -2480
             ]
           ],
           "decision": "Merged R01 upper sanitaryport remains conditional; abovefloor westexit avoidsanothergroundbore. Actual roof intersection/termination must be raised above nearbyopenings/roof;7800 is a reservation, not roofheight fact."
@@ -4753,21 +4831,21 @@
             ],
             [
               10800,
-              5700,
-              2645
+              5625,
+              2646.875
             ],
             [
               12000,
-              5700,
-              2615
+              5625,
+              2616.875
             ],
             [
               12450,
-              5700,
-              -1980
+              5625,
+              -2480
             ]
           ],
-          "decision": "Highlevel eastwall exit at5700 avoidsplantdoor/foot-levelcrossbar; ALLouterarches/flashing andvisibleexternalstack mustqualify. No hidden groundfloor stack or additionalfloorbore assumed."
+          "decision": "75S exit rewind5625 preserves upper join/start2682.5 and1:40, clears new north-return formed-hole boundary. Actual current portal/ring/weather/support, outside350release and receiving grade/invert remain to qualify. No hidden floor bore."
         },
         {
           "id": "rainwater-interface",
@@ -4913,6 +4991,447 @@
         "parkedSofaToPlatformReserve": 45.5
       },
       "sourceOrder": "Servicesownsvalues; HADimportsimmutableobject. Finalsourceequivalence comparesrelevantgeometryonly, excludingcommit-pinmetadata. NoHADcommitaddedasfakeparent.",
+      "eastWaterJoin": {
+        "status": "Proposed full Services plant reservation for the joined HAD east-water hypothesis. No source adoption or MAT-SERVICES completion.",
+        "source": "project/mat/studies/east-water-plant.json",
+        "plantDryRoom": [
+          9397,
+          3797,
+          2173.5,
+          1983.5
+        ],
+        "intermediateArch": {
+          "axisY": 3700,
+          "finishedNorthFaceY": 3797,
+          "rawOpeningX": [
+            9650,
+            10925
+          ],
+          "oldRawOpeningX": [
+            9650,
+            11050
+          ],
+          "jambFinishEachSide": 27,
+          "finishedClearWidth": 1221,
+          "radiatorFinishedJambReserve": 28,
+          "scope": "HAD must author this explicit 125 raw-opening narrowing; no radiator hung in the former arch opening."
+        },
+        "replacementDoor": {
+          "rawY": [
+            3900,
+            5300
+          ],
+          "finishedClearY": [
+            4100,
+            5100
+          ],
+          "requiredClearHeight": 2300,
+          "renewal": "Open outward or remove the complete leaf before trolley work under a qualified supported task. An inward leaf at y5300 blocks the northern buffer turn. Exterior swept/standing territory remains HAD/site-owned."
+        },
+        "waterHypothesis": {
+          "finishedPassageY": [
+            6300,
+            7500
+          ],
+          "plantWeatherWallY": [
+            5780.5,
+            6300
+          ],
+          "dryGallery": "Retained warm full-height gallery west of the outdoor cut. HAD/MAT must prove its actual deep water bridge; this record gives it no structural or water pass."
+        },
+        "rearWarmTrunk": {
+          "normalFullZ": [
+            2815,
+            3075
+          ],
+          "normalFullXAtGallery": [
+            8540,
+            8860
+          ],
+          "loweredCrossingAxisZ": 2500,
+          "lowestFinishedLocalPanelZ": 2350,
+          "condition": "Keep the complete original high-level route within actual enclosed dry gallery, including every lowered aperture. It is NOT routed in 65 screed, in bridge concrete or outdoors. Prove actual wall/ceiling/air/weather boundaries on the same HAD source."
+        },
+        "operatorEntry": {
+          "status": "Explicit geometric reference only, not a classified/installed doorset or universal person proof.",
+          "rawY": [
+            2750,
+            3650
+          ],
+          "completeFrameWidthReference": 825,
+          "leafReference": [
+            762,
+            44
+          ],
+          "frameOuterReferenceY": [
+            2762.5,
+            3587.5
+          ],
+          "framePackingToRaw": [
+            12.5,
+            62.5
+          ],
+          "clearReferenceY": [
+            2791.5,
+            3558.5
+          ],
+          "clearReferenceWidth": 767,
+          "clearReferenceKind": "Frame aperture before the open leaf.",
+          "effectiveOpenClearY": [
+            2791.5,
+            3534
+          ],
+          "effectiveOpenClearWidth": 742.5,
+          "northHingeReference": [
+            9397,
+            3556
+          ],
+          "fullyOpenEastLeaf": [
+            9397,
+            3534,
+            762,
+            44
+          ],
+          "baseboardTermination": {
+            "wallSouthFace": 3603,
+            "leafNorthFace": 3578,
+            "clearReserve": 25,
+            "ordinaryProjection": 18,
+            "condition": "Explicitly terminate the local18baseboard behind the parked leaf; retain full wall/air/fire finish. Without termination the reserve is7, not25."
+          },
+          "operatorCentrePath": [
+            [
+              8800,
+              3200
+            ],
+            [
+              10545,
+              3200
+            ],
+            [
+              10545,
+              4250
+            ]
+          ],
+          "retainedBodyRadius": 300,
+          "wallChecks": [
+            {
+              "fixed": "westPier",
+              "reserve": 85.0
+            },
+            {
+              "fixed": "eastPier",
+              "reserve": 35.0
+            },
+            {
+              "fixed": "complete700cylinderstation",
+              "reserve": 35.0
+            }
+          ],
+          "apparatusRoute": "850 complete cart reservation does NOT fit742.5 open reference passage (767 frame aperture); cylinder/buffer use only the east1000clear route.",
+          "actualKitHold": "HAD/OAS must bind actual full frame/leaf/trim/closer/operation and required protection. No raw900 equals clear900 inference."
+        },
+        "rejected3300Pier": {
+          "operatorReserve": -297.0,
+          "pipeHalfWidthReserve": -157.0
+        },
+        "archControls": {
+          "status": "Explicit joined HAD reference geometry; no masonry capacity or classified closure acceptance.",
+          "head": 2850,
+          "spring": 2550,
+          "rise": 300,
+          "radialRing": 215,
+          "actualRadialFinish": 27,
+          "plantAxisY": 3700,
+          "upperRCUnderside": 3170,
+          "ringCrown": 3065,
+          "ringToSlabReserve": 105,
+          "plant": {
+            "rawSpan": 1275,
+            "centre": 10287.5,
+            "fullPacketPlanX": [
+              10190,
+              10510
+            ],
+            "minimumFinishedIntrados": 2791.4500247953365
+          },
+          "elbowOutsideArch": {
+            "plan": [
+              10050,
+              2900,
+              600,
+              600
+            ],
+            "fullZ": [
+              2815,
+              3075
+            ],
+            "planReserveToWallSouthFace": 103,
+            "topReserveTo3100Ceiling": 25
+          },
+          "spine": {
+            "rawSpan": 900,
+            "centre": 3200,
+            "fullPacketPlanY": [
+              3040,
+              3360
+            ],
+            "minimumFinishedIntrados": 2794.3104329448283
+          },
+          "requiredFinishedIntrados": 2680,
+          "rejectedTurnY3000": {
+            "fullPacketPlanY": [
+              2840,
+              3160
+            ],
+            "minimumFinishedIntrados": 2649.658928121694
+          },
+          "lowProfile": "SeparateZ2500 crossings through retained3700arch and9300spine atY3200; normal2945corner lies wholly south of the wall.300shoulders keep completeband43fromfinishedwall."
+        },
+        "updatedFrontTrunk": {
+          "id": "ground-front-west",
+          "level": 0,
+          "path": [
+            [
+              9800,
+              5000
+            ],
+            [
+              10350,
+              5000
+            ],
+            [
+              10350,
+              3200
+            ],
+            [
+              8500,
+              3200
+            ],
+            [
+              8500,
+              3500
+            ],
+            [
+              3500,
+              3500
+            ],
+            [
+              3390,
+              3500
+            ],
+            [
+              3390,
+              5000
+            ],
+            [
+              3500,
+              5000
+            ],
+            [
+              3500,
+              8500
+            ],
+            [
+              3500,
+              9200
+            ]
+          ],
+          "duties": [
+            "heat",
+            "cold",
+            "hot",
+            "hot-return"
+          ],
+          "axisZ": 2945,
+          "lengthMM": 15420.0,
+          "ordinaryBand": [
+            320,
+            260
+          ],
+          "section": "Metal demountable cover, pipe independently fixed; heat/hot insulation and cold vapour jacket kept separate; electrical tray separate.",
+          "selected3DProfile": [
+            [
+              9800,
+              5000,
+              2945
+            ],
+            [
+              10350,
+              5000,
+              2945
+            ],
+            [
+              10350,
+              4000,
+              2945
+            ],
+            [
+              10350,
+              4000,
+              2500
+            ],
+            [
+              10350,
+              3700,
+              2500
+            ],
+            [
+              10350,
+              3400,
+              2500
+            ],
+            [
+              10350,
+              3400,
+              2945
+            ],
+            [
+              10350,
+              3200,
+              2945
+            ],
+            [
+              9600,
+              3200,
+              2945
+            ],
+            [
+              9600,
+              3200,
+              2500
+            ],
+            [
+              9300,
+              3200,
+              2500
+            ],
+            [
+              9000,
+              3200,
+              2500
+            ],
+            [
+              9000,
+              3200,
+              2945
+            ],
+            [
+              8500,
+              3200,
+              2945
+            ],
+            [
+              8500,
+              3200,
+              2945
+            ],
+            [
+              8500,
+              3500,
+              2945
+            ],
+            [
+              8500,
+              3500,
+              2945
+            ],
+            [
+              3500,
+              3500,
+              2945
+            ],
+            [
+              3500,
+              3500,
+              2945
+            ],
+            [
+              3390,
+              3500,
+              2945
+            ],
+            [
+              3390,
+              3500,
+              2945
+            ],
+            [
+              3390.0,
+              4000.0,
+              2945
+            ],
+            [
+              3390.0,
+              4000.0,
+              2500
+            ],
+            [
+              3390,
+              4250,
+              2500
+            ],
+            [
+              3390.0,
+              4500.0,
+              2500
+            ],
+            [
+              3390.0,
+              4500.0,
+              2945
+            ],
+            [
+              3390,
+              5000,
+              2945
+            ],
+            [
+              3390,
+              5000,
+              2945
+            ],
+            [
+              3500,
+              5000,
+              2945
+            ],
+            [
+              3500,
+              5000,
+              2945
+            ],
+            [
+              3500,
+              8500,
+              2945
+            ],
+            [
+              3500,
+              8500,
+              2945
+            ],
+            [
+              3500,
+              9200,
+              2945
+            ]
+          ],
+          "profileLengthMM": 18090.0,
+          "profileRule": "Separate low2500 crossings at retained3700arch and9300spine; full300shoulders, normal2945corner whollysouthofwall. Actual1275/900arches with27radialfinish checked. No packet through a solid westpier."
+        },
+        "checks": {
+          "count": 25,
+          "minimumFixedPlanReserve": 25.0
+        },
+        "retainedHolds": [
+          "Actual bridge/deep passive water/foundation/first-wetting and dry/wet wall support must be proved by HAD/MAT/STR before source selection.",
+          "850 circle is the inherited maximum whole apparatus+trolley plan requirement, not a qualified trolley, handler, force or 3D carrying proof. Complete handling height must remain below the actual2300 door; supports, routes and outdoor position need qualification.",
+          "R300 task fields are inherited spatial reservations only. Real workers/tools/valves/brackets and all access/door states require matched apparatus.",
+          "No actual plant product, safety circuit, constituent or polymer exception is accepted. Known cooker/boost/heat/hydraulic and first-release defects remain open; moving them does not cure them.",
+          "New north-wall control supports and pipe entries must terminate on dry supports without piercing the wet/air/thermal boundary or obstructing liner renewal. No unnamed service port is permitted."
+        ]
+      },
       "cooker": {
         "extractPoint": [
           11200,
@@ -5387,7 +5906,7 @@
         [
           9275,
           12450,
-          -1980
+          -2480
         ]
       ],
       "actualSupplierRequired": "Bothpressureunions andwastetrap/union mustbe compatiblewithsame release sequence, material, hygiene andgravity duty; nominalmetal/diameter isnot a completepartpass.",
@@ -6506,7 +7025,7 @@
         [
           9275,
           12450,
-          -1980
+          -2480
         ]
       ],
       "actualSupplierRequired": "Bothpressureunions andwastetrap/union mustbe compatiblewithsame release sequence, material, hygiene andgravity duty; nominalmetal/diameter isnot a completepartpass.",
@@ -7112,22 +7631,22 @@
       ],
       [
         10800,
-        5700,
-        2645
+        5625,
+        2646.875
       ],
       [
         12000,
-        5700,
-        2615
+        5625,
+        2616.875
       ]
     ],
-    "lengthMM": 2700,
-    "fallAt1in40": 67.5,
+    "lengthMM": 2625,
+    "fallAt1in40": 65.625,
     "formedWallTerritory": 200,
     "faceFlashingTerritory": 300,
     "externalDownstackBodyTerritory": [
       12000,
-      5550,
+      5475,
       450,
       300
     ],
@@ -7139,8 +7658,9 @@
         3685,
         5515
       ],
-      "holeToRingControlReserve": 85,
-      "flashingToRingControlReserve": 35
+      "holeToRingControlReserve": 10,
+      "flashingToRingControlReserve": -40,
+      "allHeightControlStatus": "Conservative flashing rectangle is negative(-40); no all-height PASS. Actual current HAD finite arch-ring and actual new service portal must be checked in east-water-foul-join.py."
     },
     "nextWindowControl": {
       "axis": 7400,
@@ -7153,13 +7673,43 @@
     },
     "source": "Current HAD Eopeningrecord checked for ALLwindows/door.215ring is an explicit profile-control awaiting STR/HAD actual inner/weather ring, NOT asserted whole exterior recipe.",
     "grade": {
-      "trialExterior": -1300,
-      "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
-      "axisOf160OuterEnvelope": -1980,
+      "trialExterior": -1800,
+      "requiredReceiverEnvelopeCrownAtOrBelow": -2400,
+      "axisOf160OuterEnvelope": -2480,
       "crownCoverControl": 600,
-      "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
+      "actualHydraulicInvert": "Unknown actual carrier/internaldiameter/receiver/site/outfall.160 outer envelope axis is not an adopted hydraulic invert.",
+      "scope": "Joined D1800 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered500, preserving internal wall/sleeve/tail connections and falls.",
+      "historicalD1300Control": {
+        "trialExterior": -1300,
+        "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
+        "axisOf160OuterEnvelope": -1980,
+        "crownCoverControl": 600,
+        "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
+      },
+      "externalTailLoweringMM": 500,
+      "affectedExternalTails": [
+        "foul-ground-WC",
+        "foul-utility",
+        "foul-kitchen",
+        "rear-soil",
+        "east-soil",
+        "kitchenSinkStation.wasteRequiredRoute"
+      ]
     },
-    "renewal": "Outside fixed brackets and boundary sleeve retained; separately isolated supported removable cleanout/straight lengths,350jointrelease territory. External scaffold/lift required, not attic access. Exact part length/mass/connector/fastener and facade work field unproved."
+    "renewal": "Outside fixed brackets and boundary sleeve retained; separately isolated supported removable cleanout/straight lengths,350jointrelease territory. External scaffold/lift required, not attic access. Exact part length/mass/connector/fastener and facade work field unproved.",
+    "northReturnJoin": {
+      "oldRejectedPort": [
+        12000,
+        5700,
+        2615
+      ],
+      "oldFormedHoleToDryFace": -19.5,
+      "oldCarrier160ToDryFace": 0.5,
+      "northDryFace": 5780.5,
+      "formedHoleToDryFace": 55.5,
+      "completeCarrier160ToDryFace": 75.5,
+      "sourceOrder": "Services owns5625 downstream setout; HAD owns the actual portal and arch profiles. Recompute every current hole/carrier/flashing against actual openings, not retired window7400. No material/closure/capacity acceptance."
+    }
   },
   "PV": {
     "selection": "4kWp grid-connected roofPV, no battery; proposed8×500W modules. A declared compatibility package, not an actual roof/yield design.",
@@ -7569,20 +8119,20 @@
       "selectedNominalLitres": 300,
       "comparison": "Vaillant2024 non-plumbed heat-pump cylinder300L:595diam x1745h, empty67.6kg/filled356.8kg. Insulation50 composition still needs declaration.",
       "body": [
-        9537.5,
+        9562.5,
         3952.5,
         595,
         595
       ],
       "station": [
-        9485,
+        9510,
         3900,
         700,
         700
       ],
       "workingEast": [
-        10185,
-        3900,
+        10210,
+        4025,
         900,
         700
       ],
@@ -7590,7 +8140,7 @@
       "requiredTopService": 500,
       "replacementCentrePath": [
         [
-          9835,
+          9860,
           4250
         ],
         [
@@ -7599,11 +8149,11 @@
         ],
         [
           10500,
-          4600
+          4575
         ],
         [
           12500,
-          4600
+          4575
         ]
       ],
       "handlingRadius": 425,
@@ -7620,18 +8170,18 @@
       "initialReplacementMarginToRiser": 25
     },
     "controlsHydraulics": [
-      11270.5,
-      5550,
-      300,
-      650
+      10895.5,
+      5480.5,
+      650,
+      300
     ],
     "controlsMaximumHeight": 2300,
     "primaryBuffer": {
       "requiredUsableAlwaysConnectedLitres": 100,
-      "stationRewind": "Relocatedfrom9800/5550afterfiniteemittercoordination; oldQ350isretireduninstalledcomparison, notsilentlyremovedsupport.",
+      "stationRewind": "New proposed east-water room:100east/525south, full650station retained.",
       "station": [
-        10025,
-        5525,
+        10125,
+        5000,
         650,
         650
       ],
@@ -7643,20 +8193,16 @@
       "control": "Always-connected usable volume, guaranteed minimum flow and both HX pumps during defrost; valve/check/bypass states must preserve it. Exact chosen unit determines actual minimum and usable port arrangement.",
       "replacementCentrePath": [
         [
-          10350,
-          5850
+          10450,
+          5325
         ],
         [
           10700,
-          5850
-        ],
-        [
-          10700,
-          4600
+          4575
         ],
         [
           12500,
-          4600
+          4575
         ]
       ],
       "handlingRadius": 425,
@@ -7741,42 +8287,39 @@
     "supportTaskEnvelope": 230,
     "openingStatus": "New trimmed-opening structural proposal, not permission to drill, not inherited three-bore acceptance. Complete230 clamp/tool envelopes are above/below slab and used one at a time, not six floor circles. Old south100plinths overlap the opening40: real rim/frame feet MUST be redesigned before fit acceptance; no support removed for service. Exact seals/fire/weather/vapour boundaries remain independent.",
     "architecturalRewinds": [
-      "Delete unselected Q350 comparison body, not an installed accepted MVHR; put bufferinthisrealplantterritory.",
-      "Hydrauliccontrols mountedEwall, not a floorblock over buffer trolley path.",
-      "No floor-level eastsoil crossbar: highlevelbranch exitsEaty5700 beforedownstack."
+      "Plant dry north face5780.5 and retained intermediatearch3700/raw1275 require actual HAD source join.",
+      "Hydraulic controls rotate onto dry north wall; actual ports/supports may not breach its wet/air/thermal boundary.",
+      "Retain all baseline duties, including actual high-level east soil exit; do not create a floor-level crossbar."
     ],
     "emitterJoin": {
       "radComplete": [
-        9422,
-        6203,
+        10980,
+        3797,
         550,
         200
       ],
       "radRoutineBody": [
-        9725,
-        5878,
+        11225,
+        4322,
         300
       ],
       "radAfter150PullBody": [
-        9725,
-        5728,
+        11225,
+        4472,
         300
       ],
       "controlsBody": [
-        10945.5,
-        6078,
+        11220.5,
+        5155.5,
         300
       ],
       "bufferFrontServiceBody": [
-        10350,
-        5200,
+        10450,
+        4675,
         300
       ],
-      "bufferPortFaceRequirement": "Southfaceaccessiblevalves/instrumentation600..1600, drainlowerwithqualifiedkneelingtask; nohiddenrearserviceassumed.",
-      "failed200Pull": "Operatorneeded5678wouldintersectretainedriser; chosen≤150requiresactualunhang/socketmatch. Nofixedsupportdeleted.",
-      "radToBufferBodyReserve": 25.626885611544026,
-      "controlsToBufferBodyReserve": 37.655275207537215,
-      "frontServiceToBufferReserve": 50
+      "scope": "Inherited full R300 spatial task reservations, not qualified people or tools. Separate task modes; no simultaneous work-space claim.",
+      "bufferPortFaceRequirement": "Southfaceaccessiblevalves/instrumentation600..1600, drainlowerwithqualifiedkneelingtask; nohiddenrearserviceassumed."
     }
   },
   "trunks": [
@@ -7855,17 +8398,12 @@
         ],
         [
           10350,
-          5000,
+          4000,
           2945
         ],
         [
-          10350.0,
-          3950.0,
-          2945
-        ],
-        [
-          10350.0,
-          3950.0,
+          10350,
+          4000,
           2500
         ],
         [
@@ -7874,13 +8412,13 @@
           2500
         ],
         [
-          10350.0,
-          3450.0,
+          10350,
+          3400,
           2500
         ],
         [
-          10350.0,
-          3450.0,
+          10350,
+          3400,
           2945
         ],
         [
@@ -7889,18 +8427,13 @@
           2945
         ],
         [
-          10350,
+          9600,
           3200,
           2945
         ],
         [
-          9550.0,
-          3200.0,
-          2945
-        ],
-        [
-          9550.0,
-          3200.0,
+          9600,
+          3200,
           2500
         ],
         [
@@ -7909,13 +8442,13 @@
           2500
         ],
         [
-          9050.0,
-          3200.0,
+          9000,
+          3200,
           2500
         ],
         [
-          9050.0,
-          3200.0,
+          9000,
+          3200,
           2945
         ],
         [
@@ -8020,7 +8553,7 @@
         ]
       ],
       "profileLengthMM": 18090.0,
-      "profileRule": "Real local drop/rise at each listed aperture; when segment ends within250 ofwall, low profile remains at endpoint. No imaginary2925corethrougharch. Connections at all shoulders must preserve one continuous supported pipe."
+      "profileRule": "Separate low2500 crossings at retained3700arch and9300spine; full300shoulders, normal2945corner whollysouthofwall. Actual1275/900arches with27radialfinish checked. No packet through a solid westpier."
     },
     {
       "id": "ground-rear-east",
@@ -10198,7 +10731,7 @@
         [
           8900,
           -450,
-          -1980
+          -2480
         ]
       ],
       "decision": "Required compatible horizontalpan outlet abovefloor to own southwall sleeve; no new groundfloor bore.650planat1:40. Actual pan firstrelease and complete connector≤182.5rear axialterritory required; no guessed outlet. Outside receiving invert/site connection unproved."
@@ -10225,7 +10758,7 @@
         [
           12450,
           600,
-          -1980
+          -2480
         ]
       ],
       "decision": "Washerstandpipe andsink trapped branch join accessible rear250chase andeastwall exit ABOVEfloor; no routingthroughappliance chassis.32.5fall on1300plan. Exact trap/hose/branch/outside carrier and workplate required."
@@ -10247,7 +10780,7 @@
         [
           9150,
           12450,
-          -1980
+          -2480
         ]
       ],
       "decision": "Accessible sinktrap/cleanout to northwall abovefloor,17.9375fall on717.5plan. No branch through groundloggia/hiddenwaterbox. Actual site receiving crown/diameter/invert mustmatch."
@@ -10274,7 +10807,7 @@
         [
           -450,
           11177.5,
-          -1980
+          -2480
         ]
       ],
       "decision": "Merged R01 upper sanitaryport remains conditional; abovefloor westexit avoidsanothergroundbore. Actual roof intersection/termination must be raised above nearbyopenings/roof;7800 is a reservation, not roofheight fact."
@@ -10295,21 +10828,21 @@
         ],
         [
           10800,
-          5700,
-          2645
+          5625,
+          2646.875
         ],
         [
           12000,
-          5700,
-          2615
+          5625,
+          2616.875
         ],
         [
           12450,
-          5700,
-          -1980
+          5625,
+          -2480
         ]
       ],
-      "decision": "Highlevel eastwall exit at5700 avoidsplantdoor/foot-levelcrossbar; ALLouterarches/flashing andvisibleexternalstack mustqualify. No hidden groundfloor stack or additionalfloorbore assumed."
+      "decision": "75S exit rewind5625 preserves upper join/start2682.5 and1:40, clears new north-return formed-hole boundary. Actual current portal/ring/weather/support, outside350release and receiving grade/invert remain to qualify. No hidden floor bore."
     },
     {
       "id": "rainwater-interface",

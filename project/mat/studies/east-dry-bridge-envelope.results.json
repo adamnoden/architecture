@@ -1,0 +1,183 @@
+{
+  "identity": "MAT-EAST-DRY-BRIDGE-JOIN-2026-11-05",
+  "status": "MAT assembly and envelope proof of the actual HAD successor; no technical/material acceptance",
+  "HAD_source": {
+    "path": "project/had/studies/water-replan.json",
+    "blob": "f7324121f59cc5f1707ea47640dd2b20c26b9bbb",
+    "declaredStatus": "SELECTED architectural-development source; HAD-WATER-REPLAN bounded exit, technical admission unearned"
+  },
+  "east_weather_layer_faces_mm": [
+    9203,
+    9230,
+    9370,
+    9570,
+    9620,
+    9722.5
+  ],
+  "occupied_floor_clear_x_mm": [
+    8179.5,
+    9203
+  ],
+  "floor_glass_to_wall_glass_horizontal_gap_mm": 167,
+  "body_x_mm": [
+    7550,
+    10050.5
+  ],
+  "length_mm": 2500.5,
+  "bridge_beam_ranges_mm": [
+    [
+      7650.0,
+      8250.0
+    ],
+    [
+      8850.0,
+      9750.0
+    ]
+  ],
+  "complete_wall_bearing_margins_mm": [
+    [
+      100.0,
+      70.5
+    ],
+    [
+      353.0,
+      27.5
+    ]
+  ],
+  "gross_liner_width_mm": 663.0,
+  "whole_carriage_width_mm": 763.0,
+  "gross_portal_width_mm": 900,
+  "lateral_remainder_each_mm": 68.5,
+  "body_rim_ends_mm": [
+    -697.6470588235294,
+    -727.064705882353
+  ],
+  "minimum_gross_rim_to_beam_mm": 67.64705882352939,
+  "rejected_200_deep_body_overlap_mm": 32.35294117647061,
+  "body_carriage_bottom_mm": [
+    -947.6470588235294,
+    -977.064705882353
+  ],
+  "outer_support_reference": {
+    "path": "project/str/studies/ground-interfaces.json",
+    "blob": "4110aab34d263fbc9f8ae44f8006aed85b797406",
+    "reserved_axis_x_mm": 11667.5,
+    "role": "both leaves require continuous common support; line is inner-leaf axis",
+    "park_straddles_reserved_line": false,
+    "clear_profile_bound": false,
+    "scope": "Historical continuous common-support reservation, not an adopted member size. Actual outer support/threshold and complete hoist sweep must join before acceptance."
+  },
+  "selected_park_x_mm": [
+    12250,
+    14750.5
+  ],
+  "new_bridge_beam_to_hoist_park_mm": 2500.0,
+  "translation_mm": 4700,
+  "translation_z_mm": -55.2941176470589,
+  "park_carriage_bottom_mm": [
+    -1002.9411764705883,
+    -1032.358823529412
+  ],
+  "operator_deck_z_mm": 0,
+  "rejected_solid_deck_overlap_mm": 1032.358823529412,
+  "fixed_track_bottom_mm": [
+    -1102.9411764705883,
+    -1132.358823529412
+  ],
+  "complete_local_lowest_surface_mm": -1132.358823529412,
+  "complete_local_D_lower_bound_mm": 1632.358823529412,
+  "HAD_D_trial_mm": 1800,
+  "trial_residual_over_lower_bound_mm": 167.6411764705881,
+  "sheet_only_mass_screen_kg": 25.80516,
+  "full_depth_prismatic_water_litres": 150.03,
+  "court_intake_well": [
+    6125,
+    6300,
+    1525,
+    1100
+  ],
+  "shield_release": "Upward in isolated guarded well, outside beam; does not travel through the portal",
+  "intake_access_check": {
+    "stair_run_mm": 600,
+    "stair_rises": 4,
+    "stair_rise_mm": 180,
+    "platform_to_hood_gap_mm": 25,
+    "top_adapter_to_local_court_mm": [
+      -16.0,
+      8.0
+    ],
+    "gate_and_hardware_status": "West guard gate and actual posts/handholds/capture/adapter still need complete coordinates; no physical release acceptance",
+    "boundary_status": "Well end shares x7650 beam/node face; zero gross reserve requires actual lining/support/joint resolution"
+  },
+  "intake_support_collisions": [],
+  "surface_activation_probe": {
+    "scope": "Actual direct-west intake/approach and constructed protective-return budget. Ideal crest screen is NOT approach/loss/capture/debris qualification.",
+    "actual_mouth_plane_x_mm": 6125,
+    "actual_unobstructed_intervals_mm": [
+      [
+        6950,
+        7175
+      ],
+      [
+        7275,
+        7375
+      ]
+    ],
+    "actual_gross_court_crest_ends_mm": [
+      -78,
+      -96
+    ],
+    "actual_activation_reference_mm": -95,
+    "constructed_protective_crest_mm": 15,
+    "permitted_quiet_stage_mm": -35,
+    "splash_budget_mm": 25,
+    "tolerance_budget_mm": 25,
+    "ideal_crest_screen_lps": 6.861237247721429,
+    "assigned_lps": 3.60375,
+    "qualified_first_harm_margin_mm": null
+  },
+  "intake_flow_void": {
+    "representation": "OUTER REMOVABLE HOOD ENVELOPE, NOT A SOLID WATER BARRIER",
+    "shaft": {
+      "plan": [
+        7350,
+        6600,
+        200,
+        600
+      ],
+      "z": [
+        -797.6470588235294,
+        -110
+      ]
+    },
+    "outlet": {
+      "planeX": 7550,
+      "y": [
+        6600,
+        7200
+      ],
+      "z": [
+        -797.6470588235294,
+        -697.6470588235294
+      ]
+    },
+    "result": "Connected geometric clear void only; no loss/splash/capacity rating"
+  },
+  "historical_rejected_west_park": [
+    5477.5,
+    7650
+  ],
+  "historical_west_actual_beam_clearance_mm": 0.0,
+  "historical_rejected_east_shell_park": [
+    9822.5,
+    11995
+  ],
+  "historical_east_shell_remaining_mm": 5,
+  "envelope_result": "Listed local bridge/carriage checks pass; retained outer support/hoist join UNBOUND",
+  "first_wetting": "U rim is overtop geometry, not safe stage. Inlet drop/splash can wet a beam/air joint before bulk overtop; actual shield/end transfer needs water testing.",
+  "limits": [
+    "No structural capacity, complete material, air/gas, hydraulic, first-harm, lifting or real-site acceptance",
+    "Rail/keeper/joint/rigging/guard/step hardware must fit actual territories",
+    "D1600 is route-local; other real supports or site conditions can govern deeper"
+  ]
+}

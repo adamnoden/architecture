@@ -209,12 +209,13 @@ function readPinnedContract(flag,path,blob){const override=process.argv.find(a=>
 const servicesSource={commit:'9476f39edfeb1f2b03e59cbbc1c5a15fc3ab5de2',path:'project/mat/studies/whole-house-service-baseline.json',blob:'e827caa8c6c0cfc23bef0f08b3452f57984875d6',key:'interfaces.architecturalServices',projectionSha256:'94906589235797bdcf3ecd921f954bf00fbbfa84cbcaa2a5b0af7e5fd6e91fad'};
 // HAD selected the immutable MAT9476 object. MAT later corrected two duplicated
 // 65→78 L/s narrative strings without changing a numeric or spatial value.
-// Authenticate the ENTIRE current file, then reconstruct and verify the exact
-// selected Git blob in memory. Any new source revision must be deliberately
-// reconciled rather than flowing through the default path unobserved.
+// This is now the historical HAD-B reproducer. The exact prose-only successor
+// is frozen locally so a genuine later Services geometry does not rewrite old
+// evidence. The active water-replan source separately authenticates/imports
+// the full current canonical Services object, without widening this whitelist.
 const currentServicesBlob='2d8f7243fb87d350763f2bca3d103b89b9d14b7d';
 const currentServicesOverride=process.argv.find(a=>a.startsWith('--services-current='))?.split('=').slice(1).join('=');
-const currentServicesBytes=readFileSync(currentServicesOverride??new URL(servicesSource.path,ROOT));
+const currentServicesBytes=readFileSync(currentServicesOverride??new URL('project/had/studies/fixtures/services-9476-prose-successor.json',ROOT));
 const gitBlob=bytes=>createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');
 if(gitBlob(currentServicesBytes)!==currentServicesBlob)throw Error('Current canonical services successor blob mismatch');
 let selectedServicesText=currentServicesBytes.toString('utf8');

@@ -485,19 +485,21 @@ def gate_on_segment(g,a,c):
  x,y=g['xy']
  return ((a[0]==c[0]==x and min(a[1],c[1])<y<max(a[1],c[1])) or
   (a[1]==c[1]==y and min(a[0],c[0])<x<max(a[0],c[0])))
-for t in trunks:
- profiles=[]
- for a,c in zip(t['path'],t['path'][1:]):
-  normal=t['axisZ'];low=t['level']*3450+2500
-  profiles.append(a+[normal]);distance=math.dist(a,c)
-  for g in sorted([g for g in gates if g['level']==t['level'] and gate_on_segment(g,a,c)],key=lambda g:math.dist(a,g['xy'])):
-   at=math.dist(a,g['xy']);before=max(0,at-250);after=min(distance,at+250)
-   def atdistance(v,z):return [a[0]+(c[0]-a[0])*v/distance,a[1]+(c[1]-a[1])*v/distance,z]
-   profiles.extend([atdistance(before,normal),atdistance(before,low),g['xy']+[low],atdistance(after,low)])
-   if after<distance:profiles.append(atdistance(after,normal))
-  profiles.append(c+[normal if not any(gate_on_segment(g,a,c) and distance-math.dist(a,g['xy'])<250 for g in gates if g['level']==t['level']) else low])
- t['selected3DProfile']=profiles;t['profileLengthMM']=length(profiles)
- t['profileRule']='Real local drop/rise at each listed aperture; when segment ends within250 ofwall, low profile remains at endpoint. No imaginary2925corethrougharch. Connections at all shoulders must preserve one continuous supported pipe.'
+def profile_trunks():
+ for t in trunks:
+  profiles=[]
+  for a,c in zip(t['path'],t['path'][1:]):
+   normal=t['axisZ'];low=t['level']*3450+2500
+   profiles.append(a+[normal]);distance=math.dist(a,c)
+   for g in sorted([g for g in gates if g['level']==t['level'] and gate_on_segment(g,a,c)],key=lambda g:math.dist(a,g['xy'])):
+    at=math.dist(a,g['xy']);before=max(0,at-250);after=min(distance,at+250)
+    def atdistance(v,z):return [a[0]+(c[0]-a[0])*v/distance,a[1]+(c[1]-a[1])*v/distance,z]
+    profiles.extend([atdistance(before,normal),atdistance(before,low),g['xy']+[low],atdistance(after,low)])
+    if after<distance:profiles.append(atdistance(after,normal))
+   profiles.append(c+[normal if not any(gate_on_segment(g,a,c) and distance-math.dist(a,g['xy'])<250 for g in gates if g['level']==t['level']) else low])
+  t['selected3DProfile']=profiles;t['profileLengthMM']=length(profiles)
+  t['profileRule']='Real local drop/rise at each listed aperture; when segment ends within250 ofwall, low profile remains at endpoint. No imaginary2925corethrougharch. Connections at all shoulders must preserve one continuous supported pipe.'
+profile_trunks()
 for x in crossings:
  matches=[g for g in gates if g['level']==x['level'] and math.dist(g['xy'],x['point'][:2])<1e-6]
  if matches:x['selectedCrossover']=matches[0]['id'];x['point'][2]=x['level']*3450+2500
@@ -796,15 +798,89 @@ assert length([x[:2] for x in bath_drop['lower']['route']])==1200
 for a,c in zip(bath_drop['lower']['route'],bath_drop['lower']['route'][1:]):assert abs(a[2]-c[2]-math.dist(a[:2],c[:2])/40)<1e-8
 assert 2707.5-50-25-25-20==bath_drop['lower']['finishedPanelUnderside']
 
+# Proposed east-water/HAD join. The new local packing consumes immutable main
+# c198, so current Services can consume its checked record without a hash cycle.
+# Historical checks above retain their old scope; the candidate's full-body and
+# continuous diagonal replacement checks are reproduced separately.
+east_path=ROOT/'project/mat/studies/east-water-plant.json'
+east_raw=east_path.read_bytes()
+assert hashlib.sha1(b'blob '+str(len(east_raw)).encode()+b'\0'+east_raw).hexdigest()=='83acf8afddbf9aed510697820fb11cbeb11a1c25'
+east_join=json.loads(east_raw)
+assert east_join['immutableStartingMain']=='c1986524454a0a9f518c45184e1d8808e9eebb1e'
+# The north weather return is real finished fabric. The old200 hole at5700
+# reaches5800,19.5 into its5780.5 dry face; the160 carrier has only0.5 reserve.
+# Own the downstream setout here, preserving every upper branch/tail endpoint.
+# Actual HAD portal/ring/finish proof is separately source-bound, not copied
+# from the retired7400 window or reduced to an all-height ring rectangle.
+old_east_exit=json.loads(json.dumps(east_exit))
+exit_y=5625
+exit_plan=1000+(exit_y-5200)+1200
+east_exit['path']=[[9800,5200,2682.5],[10800,5200,2657.5],
+ [10800,exit_y,2657.5-(exit_y-5200)/40],[12000,exit_y,2682.5-exit_plan/40]]
+east_exit['lengthMM']=exit_plan;east_exit['fallAt1in40']=exit_plan/40
+east_exit['externalDownstackBodyTerritory']=[12000,exit_y-150,450,300]
+east_exit['doorControl']['holeToRingControlReserve']=exit_y-100-5515
+east_exit['doorControl']['flashingToRingControlReserve']=exit_y-150-5515
+east_exit['doorControl']['allHeightControlStatus']='Conservative flashing rectangle is negative(-40); no all-height PASS. Actual current HAD finite arch-ring and actual new service portal must be checked in east-water-foul-join.py.'
+dry_north=east_join['plantDryRoom'][1]+east_join['plantDryRoom'][3]
+east_exit['northReturnJoin']={'oldRejectedPort':old_east_exit['path'][-1],
+ 'oldFormedHoleToDryFace':dry_north-(5700+100),'oldCarrier160ToDryFace':dry_north-(5700+80),
+ 'northDryFace':dry_north,'formedHoleToDryFace':dry_north-(exit_y+100),
+ 'completeCarrier160ToDryFace':dry_north-(exit_y+80),
+ 'sourceOrder':'Services owns5625 downstream setout; HAD owns the actual portal and arch profiles. Recompute every current hole/carrier/flashing against actual openings, not retired window7400. No material/closure/capacity acceptance.'}
+old_grade=json.loads(json.dumps(east_exit['grade']))
+trial_grade=-1800;cover=old_grade['crownCoverControl'];receiver_crown=trial_grade-cover;receiver_axis=receiver_crown-80
+east_exit['grade']={'trialExterior':trial_grade,'requiredReceiverEnvelopeCrownAtOrBelow':receiver_crown,
+ 'axisOf160OuterEnvelope':receiver_axis,'crownCoverControl':cover,
+ 'actualHydraulicInvert':'Unknown actual carrier/internaldiameter/receiver/site/outfall.160 outer envelope axis is not an adopted hydraulic invert.',
+ 'scope':'Joined D1800 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered500, preserving internal wall/sleeve/tail connections and falls.',
+ 'historicalD1300Control':old_grade,'externalTailLoweringMM':500,
+ 'affectedExternalTails':['foul-ground-WC','foul-utility','foul-kitchen','rear-soil','east-soil','kitchenSinkStation.wasteRequiredRoute']}
+for a,z in zip(east_exit['path'],east_exit['path'][1:]):assert abs(a[2]-z[2]-math.dist(a[:2],z[:2])/40)<1e-9
+assert east_exit['northReturnJoin']['formedHoleToDryFace']==55.5
+for duty in other:
+ if duty['id']=='east-soil':
+  duty['path']=east_exit['path']+[[12450,exit_y,receiver_axis]]
+  duty['decision']='75S exit rewind5625 preserves upper join/start2682.5 and1:40, clears new north-return formed-hole boundary. Actual current portal/ring/weather/support, outside350release and receiving grade/invert remain to qualify. No hidden floor bore.'
+ elif duty['id'] in east_exit['grade']['affectedExternalTails']:
+  assert duty['path'][-1][2]==-1980
+  duty['path'][-1][2]=receiver_axis
+sink['wasteRequiredRoute'][-1][2]=receiver_axis
+plant=east_join['plant']
+for e in emitters:
+ if e['id']=='plant-N':
+  e['completePlanWithValvesAndBrackets']=plant['emitterJoin']['radComplete']
+  e['pressurePairBranchPlan']=[[9800,5000],[10500,5000],[10500,3900],[11225,3900]]
+  e['notes']='Retained3700arch east jamb; raw9650-10925 plus27jamb finish. Full550x200 retained; actual support/valves/pull and source join remain conditions.'
+for g in gates:
+ if g['id']=='plant-intermediate':g['xy']=[10350,3700];g['rough']=[9650,10925];g['roughSideReserves']=[540,415]
+ if g['id']=='PLANT':g['xy']=[9300,3200];g['roughSideReserves']=[290,290]
+profile_trunks()
+front=next(t for t in trunks if t['id']=='ground-front-west')
+tail=front['selected3DProfile'].index([8500,3200,2945])
+front['selected3DProfile']=[[9800,5000,2945],[10350,5000,2945]]+east_join['frontPlantArchCrossing']['newLowCentreProfile']+front['selected3DProfile'][tail:]
+front['profileLengthMM']=length(front['selected3DProfile'])
+front['profileRule']='Separate low2500 crossings at retained3700arch and9300spine; full300shoulders, normal2945corner whollysouthofwall. Actual1275/900arches with27radialfinish checked. No packet through a solid westpier.'
+for x in crossings:
+ if x['route']=='ground-front-west' and x['wall']=='plant-intermediate-arch':x['point']=[10350,3700,2500]
+ if x['route']=='ground-front-west' and x['wall']=='service-spine':x['point']=[9300,3200,2500]
+# Diagram the explicit hypothetical wall rewind, never claim it is accepted HAD.
+for w in b['groundWalls']:
+ if w['id']=='plant-intermediate-arch':w['a'][1]=3700;w['b'][1]=3700;w['holes']=[[9650,10925]]
+ if w['id']=='plant-north':
+  w['a'][1]=6040.25;w['b'][1]=6040.25;w['t']=519.5;w['holes']=[]
+
 architecture_contract={'schemaVersion':1,'authority':'MAT-SERVICES numeric interface. HADconsumesonefixedcheckpoint; roomgeometrybasis is068e33+explicitrewinds, notreciprocalHADmetadatahash.',
  'emitters':[{k:e[k] for k in ['id','room','level','family','length','bodyHeight','completePlanWithValvesAndBrackets','bottomLocal','topLocal','pressurePairBranchPlan','renewal']} for e in emitters],
- 'plant':{k:plant[k] for k in ['controlsHydraulics','controlsMaximumHeight','primaryBuffer','riserGross','formedOpeningProposal','emitterJoin']},
+ 'plant':{k:plant[k] for k in ['cylinder','controlsHydraulics','controlsMaximumHeight','primaryBuffer','riserGross','formedOpeningProposal','emitterJoin']},
  'fanAccess':[{k:e[k] for k in ['id','level','podPlan','podZ','path','formedWallTerritory','ceilingTrapDrainPort','maintenancePlatformPlan','maintenancePlatformWorkingHeightRange','workerEquipmentRequirement']} for e in extract],
  'studyRewind':{'desk':[655,600,1600,700],'South1800Body':[2580,765],'West1800Body':[754.5,2724],'West1800Handle':[429.5,2220]},
  'livingWestRenewal':{'sofaBefore':[800,9000,850,1900],'sofaPark':[1450,9000,850,1900],'eastMove':650,'sweptRectangle':[800,9000,1500,1900],'pullingBodyCentrePath':[[1975,9450],[2625,9450]],'bodyRadius':300,'headRadius':150,'ordinaryWallGap':170.5,'parkedSofaBGap':37.5,'radiatorWorkingBody':[954.5,10200]},
  'familyBathDrop':bath_drop,'utility':rewinds['utility'],'kitchenStationPlan':sink['station'],'kitchenStationTopZ':900,'supply':supplies,'eastFoulExit':east_exit,'otherServiceDuties':other,
  'livingSupplyHostCorrection':{'oldNorth2675':'REJECTED:360holecrossesactualNorthRCreceiver','selectedPoint':[0,9200,2850],'formedHole':360,'face':400,'maintenanceField':[654.5,9000,750,1100],'sofaAEastMove':650,'radiatorToPlatformReserve':25,'parkedSofaToPlatformReserve':45.5},
  'sourceOrder':'Servicesownsvalues; HADimportsimmutableobject. Finalsourceequivalence comparesrelevantgeometryonly, excludingcommit-pinmetadata. NoHADcommitaddedasfakeparent.'}
+architecture_contract['eastWaterJoin']={'status':east_join['status'],'source':'project/mat/studies/east-water-plant.json','plantDryRoom':east_join['plantDryRoom'],'intermediateArch':east_join['intermediateArch'],'replacementDoor':east_join['replacementDoor'],'waterHypothesis':east_join['eastWaterHypothesis'],'rearWarmTrunk':{k:v for k,v in east_join['rearWarmTrunk'].items() if k!='source'},'operatorEntry':east_join['operatorEntry'],'rejected3300Pier':east_join['rejected3300Pier'],'archControls':east_join['archControls'],'updatedFrontTrunk':next(t for t in trunks if t['id']=='ground-front-west'),'checks':{'count':len(east_join['checks']),'minimumFixedPlanReserve':min(c['minimumPlanReserve'] for c in east_join['checks'])},'retainedHolds':east_join['retainedHolds']}
+assert architecture_contract['plant']=={k:plant[k] for k in architecture_contract['plant']}
 assert len(architecture_contract['emitters'])==16
 for name,r in rwhouse['fixedObstacles']['GROUND']:
  expanded=[r[0]-18,r[1]-18,r[2]+36,r[3]+36]
@@ -856,9 +932,11 @@ def plan(level,ox,oy):
   for k in ['Q350-body','north-sink-station','north-cooking-station']:furniture.pop(k,None)
   for fk in ['dining-table1200x800','reading-side-table300','reading-sofa1900x850','family-sofa1900x750','family-side-table300']:furniture[fk]=rwhouse['groundFurniture'][fk]
   furniture['rear-stack']=rewinds['rearSource27']['groundStackCabinet']
+  furniture['plant-water-reserve']=plant['cylinder']['station']
+  furniture['plant-riser']=plant['riserGross']
   furniture.update({'sink':sink['station'],'cooker':sink['cookingStationRewind']['footprint'],'washer':rewinds['utility']['washer'],'utilitysink':rewinds['utility']['sink'],'primarybuffer':plant['primaryBuffer']['station'],'hydraulics':plant['controlsHydraulics'],'CU':rewinds['utility']['electricalStation'],'PVinverter':rewinds['utility']['PVinverter']})
  for n,r in furniture.items():s.append(box(r,'#b8b1a4'))
- if not level:s.append(f'<circle cx="{ox+10350*sc}" cy="{oy+5850*sc}" r="{300*sc}" stroke="#777" fill="none" stroke-width=".3"/>')
+ if not level:s.append(f'<circle cx="{ox+10450*sc}" cy="{oy+5325*sc}" r="{300*sc}" stroke="#777" fill="none" stroke-width=".3"/>')
  for rad in emitters:
   if rad['level']==level:s.append(box(rad['completePlanWithValvesAndBrackets'],'#1a7c83','#d7eeee'))
  if level:
@@ -890,7 +968,7 @@ def plan(level,ox,oy):
  s.append(text(ox,oy-5,'FIRST / ordinary pipe axes6395' if level else 'GROUND / ordinary pipe axes2945',3.4))
  return ''.join(s)
 svg='<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect width="420" height="297" fill="#fffdf7"/>'
-svg+=text(15,17,'ONE WHOLE-HOUSE SERVICE BASELINE / PROVISIONAL LOGGIA',5)
+svg+=text(15,17,'SERVICES / PROPOSED EAST-WATER PLANT JOIN',5)
 svg+=text(15,26,'Local continuous extract / actual outer-wall territories / high-level water and heating tree / no free attic',3)
 svg+=plan(0,20,45)+plan(1,205,45)
 notes=[
@@ -902,10 +980,10 @@ notes=[
  'TEAL:16 complete emitter territories/14 duties. Thermal allocations and actual apparatus/body/renewal remain conditional.',
  'Outdoor8kW compatibility plant and300L store are pre-site requirements; current product labels do not prove cold-weather duty.',
  'No apparatus or synthetic-polymer exception approved. Metal cases do not remove impellers, seals, insulation or electronics.',
- 'HAD068e33 geometry/protected interface + explicit services rewinds. Unqualified, incomplete development checkpoint.'
+ 'HAD068e33 base + explicit proposed east-water plant/arch rewinds. Other room dispositions remain HAD-owned.'
 ]
 for i,n in enumerate(notes):svg+=text(15,190+i*9,n,2.85)
-svg+=text(15,285,'All dimensions mm / groundFFL0 / first3450. Reservations are not construction permissions. 1 November2026',2.7)+'</svg>\n'
+svg+=text(15,285,'All dimensions mm / groundFFL0 / first3450. Reservations are not construction permissions. 5 November2026',2.7)+'</svg>\n'
 def detail_sheet():
  out='<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">'+rect(0,0,420,297,'none','white')
  out+=text(12,13,'WHOLE-HOUSE SERVICES — TERMINAL RENEWAL INTERFACES',5)
