@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 27,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "6002020d-6ea1-4562-986b-9448eba5705a",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261106-w5"
   },
   "claimedAt": "2026-11-06T09:41:13.275Z",
-  "heartbeatAt": "2026-11-06T14:16:29.981Z",
-  "expiresAt": "2026-11-06T15:01:29.981Z",
+  "heartbeatAt": "2026-11-06T14:27:27.088Z",
+  "expiresAt": "2026-11-06T14:27:27.088Z",
   "branch": "work/zerg-20261106-w5-envelope-join",
   "predecessor": {
     "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
@@ -39,5 +39,7 @@
     "evidence": "Draft1341 head224531b53761d314de3a12f2d5ad42cafa77492d/treefc139f5b72fe513d796ff42db93aa630082ffa65 now traces ground capillary, void vapour, permitted outdoorRC contact, actual shared thresholdseat and upperpier separately. Upperplate-only floor preference withdrawn. Twelve lateralgroup points explicitly not totalheadcount; exact renewable thresholddryapron4030..4090 cannot be left disconnected or permanentlywelded. Changedproducer/check/diffcheck pass; predecessor1922 exactCIgreen.",
     "next": "Compare every actual lower-source cut against separate field boundary once STR supplies literal all-head signed ledger; continue actual bulk-water/plinth and reversible threshold interface, then reconcile consumer after structural merge.",
     "blocker": "STR confirms complete support/headlist and signed domains are not yet allocated; do not extrapolate12 cornerpoints. Sharedgrid bulk-water/weather enclosure and actual capillary-floor ownership remain unresolved. No assembly admission or selection."
-  }
+  },
+  "releasedAt": "2026-11-06T14:27:27.088Z",
+  "releaseReason": "handoff"
 }
