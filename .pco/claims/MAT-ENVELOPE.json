@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w5"
   },
   "claimedAt": "2026-11-06T09:41:13.275Z",
-  "heartbeatAt": "2026-11-06T10:00:13.849Z",
-  "expiresAt": "2026-11-06T10:45:13.849Z",
+  "heartbeatAt": "2026-11-06T10:21:41.081Z",
+  "expiresAt": "2026-11-06T11:06:41.081Z",
   "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
@@ -36,8 +36,8 @@
   },
   "pr": 1332,
   "checkpoint": {
-    "evidence": "Published own remote4db68ec9783568c54c85d5b774ac9316857351d1 treee2e9689bfc5973be23e0b02753163963f9c4be1a: active same-level two-piece preferred producer+source+SVG; retired comparison isolated; gasket order corrected; tray-spigot gap closed. Direct Python --check and diffcheck pass; figure visually inspected. Shared publisher W2 consuming exact5files.",
-    "next": "Reproduce source against W2 actual shared HAD world and inspect joined section/firstrelease; fresh exacthead CI and canonical preflight if candidate closes.",
-    "blocker": "Internal project geometry only. Seal/material/preload/physical/load/rigging/site/handover/receiving qualification and actual firstharm remain open; no whole-envelope or construction acceptance."
+    "evidence": "Exact shared1332 f49e3740eb19c8571c893ef0a94af5dd38bc4559 authenticated in clean detached proof: all6 MAT and13 HAD tests plus canonical regeneration pass; rendered actual L-platform and section inspected. Full health CI42200247314/job127833458419 success exacthead. Own latest09bb97a310ba680ea66ce25c87e0637d4220a6dd preserves bounded disclosed-metal and one thin silicone residue comparison; no geometry adoption.",
+    "next": "Await W2 corrected physical north intake/overflow/renewal source and final selection links; authenticate new sharedhead, rebind MAT reproduction, inspect exact CI and only then fresh preflight.",
+    "blocker": "Old physical N intake overlaps E access well; W2 source correction pending. Existing exacthead tests prove reproduction only. Seal/material/load/rigging/site/firstharm remain unearned; no preflight or final selection claimed."
   }
 }
