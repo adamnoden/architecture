@@ -106,7 +106,8 @@ for a,b in zip(path,path[1:]):
 # translation or<=0.125degrees away. Even a1277mm maximum point radius moves
 # <2.8mm.25mm inflation therefore retains>22mm uninflated plan reserve between
 # samples; this does not assert wheel support or a safe handling manoeuvre.
-interpolation_bound=max(2.5,2*1277*math.sin(math.radians(.125)/2))
+maximum_point_radius=max(math.hypot(650,329.5),950+325/math.cos(math.pi/32))
+interpolation_bound=max(2.5,2*maximum_point_radius*math.sin(math.radians(.125)/2))
 assert interpolation_bound<2.8
 assert not all(all(covered(p,local_rects) for p in shapes(1350,600,k*5)) for k in range(72))
 assert not all(covered(p,local_rects) for p in shapes(2100,600,180))
@@ -126,7 +127,7 @@ result={
   'wheelSource':'https://www.fetra.com/castors/tpe_castors/swivel_castor-71614'},
  'constructiveFoldedTurn':{'localClearRectanglesMM':local_rects,'localDeckPoseXYDegrees':path,'actualLandingTransforms':transforms,
   'inflationMM':25,'densePoseCountPerTurn':dense_count,'maximumTranslationSampleMM':5,'maximumRotationSampleDegrees':.25,
-  'betweenSampleMovementBoundMM':interpolation_bound,'uninflatedPlanReserveLowerBoundMM':25-interpolation_bound,
+  'maximumInflatedPointRadiusMM':maximum_point_radius,'betweenSampleMovementBoundMM':interpolation_bound,'uninflatedPlanReserveLowerBoundMM':25-interpolation_bound,
   'coverageMethod':'Convex clipping against disjoint-interior actual ramp/landing rectangles; circumscribed32side operator polygon. Every inflated polygon has full covered area at each checked pose. Nearest-sample bound covers continuous uninflated comparison shapes.',
   'negativeControls':'Fixed-centre180turn with full operator and the old right-wing sideways turn fail; complete constructive translation/rotation is necessary.',
   'scope':'Only three intermediate Uturns and their adjacent ramp portions. Entry/foot transitions and any continuation on actual grade remain unearned. Deck and operator bodies are plan envelopes; no wheel-contact, hand-force or three-dimensional support inference.'},

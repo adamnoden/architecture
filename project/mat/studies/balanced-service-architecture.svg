@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1040" viewBox="0 0 1200 1040">
-<rect width="1200" height="1040" fill="#fbfaf5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1360" viewBox="0 0 1200 1360">
+<rect width="1200" height="1360" fill="#fbfaf5"/>
 <style>text{font-family:Arial,sans-serif;fill:#202a31;font-size:16px}.h{font-size:24px;font-weight:700}.s{font-size:13px}.b{font-weight:700}</style>
 <text x="38" y="42" class="h">Two whole cooker / ventilation / heat alternatives</text>
 <text x="38" y="70" class="s">UNSELECTED · current HAD / Services unchanged · source-bound comparison, not construction release</text>
@@ -68,4 +68,24 @@
 <text x="628" y="946" class="s">750 mm native front field; 25 mm leaf gap; 21.5 mm east-wall reserve.</text>
 <text x="38" y="985" class="s">No cart, supported loading, hinged-door swing, complete ports, frost, sound or constituent admission is implied.</text>
 <text x="38" y="1011" class="s">Source: balanced-service-architecture.json; pinned HAD/Services geometry; Systemair native cards 2023/2024.</text>
+<text x="38" y="1061" class="h">W9 limited visible-loss diagnostic: preferred development comparison</text>
+<rect x="38" y="1080" width="330" height="100" fill="#eef4ec" stroke="#66865a"/>
+<text x="50" y="1108" class="b">Native GMB125 actual-flow U</text>
+<text x="50" y="1135" class="s">0–10 V; Vnom108 L/s</text>
+<text x="50" y="1162" class="s">&lt;0.05 mA load vs0.5 mA native max</text>
+<rect x="430" y="1080" width="350" height="100" fill="#eef4ec" stroke="#66865a"/>
+<text x="442" y="1108" class="b">DUB01CD4810V voltage monitor</text>
+<text x="442" y="1135" class="s">3.70 V trial; overvoltage / N.D.</text>
+<text x="442" y="1162" class="s">24 V; ≈150 g;3 W DC /4 VA AC</text>
+<rect x="820" y="1080" width="340" height="100" fill="#eef4ec" stroke="#66865a"/>
+<text x="832" y="1108" class="b">SUPPLY BOOST indicator</text>
+<text x="832" y="1135" class="s">XB4BVB3;80 g;24 V /18 mA</text>
+<text x="832" y="1162" class="s">Reused U above threshold only</text>
+<path d="M368 1130 H424 l-7 -5 m7 5 l-7 5" fill="none" stroke="#326b7c" stroke-width="2"/>
+<path d="M780 1130 H814 l-7 -5 m7 5 l-7 5" fill="none" stroke="#326b7c" stroke-width="2"/>
+<text x="38" y="1212" class="s">Normal16: OFF · Cooking48: ON above threshold · Broken-contact16: OFF. Actual starting transient must be commissioned.</text>
+<text x="38" y="1240" class="s">Native alarms + stop/repair response retained. Stale-high U / common measurement faults / welded contact can still mislead.</text>
+<text x="38" y="1267" class="s">Real price: ≈230 g modules,3.432 W DC when lit; enclosure/wire/supply and known polymer/electronic residues remain.</text>
+<text x="38" y="1294" class="s">Calibration: actual flow/U, warm-up, switch/return and drift. 7.932 VA is nominal connected AC sum, not transformer selection.</text>
+<text x="38" y="1324" class="s">No green-safe, capture proof, BMS, room-pressure loop, hob interlock, material exception or installed diagnostic adoption.</text>
 </svg>

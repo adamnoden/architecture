@@ -824,8 +824,9 @@
     "densePoseCountPerTurn": 1966,
     "maximumTranslationSampleMM": 5,
     "maximumRotationSampleDegrees": 0.25,
-    "betweenSampleMovementBoundMM": 2.7859812659838763,
-    "uninflatedPlanReserveLowerBoundMM": 22.214018734016122,
+    "maximumInflatedPointRadiusMM": 1276.5725360223012,
+    "betweenSampleMovementBoundMM": 2.78504868443826,
+    "uninflatedPlanReserveLowerBoundMM": 22.21495131556174,
     "coverageMethod": "Convex clipping against disjoint-interior actual ramp/landing rectangles; circumscribed32side operator polygon. Every inflated polygon has full covered area at each checked pose. Nearest-sample bound covers continuous uninflated comparison shapes.",
     "negativeControls": "Fixed-centre180turn with full operator and the old right-wing sideways turn fail; complete constructive translation/rotation is necessary.",
     "scope": "Only three intermediate Uturns and their adjacent ramp portions. Entry/foot transitions and any continuation on actual grade remain unearned. Deck and operator bodies are plan envelopes; no wheel-contact, hand-force or three-dimensional support inference."
