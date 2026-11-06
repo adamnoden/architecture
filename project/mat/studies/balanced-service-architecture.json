@@ -7,19 +7,7 @@
   },
   "modes": [
     {
-      "id": "background",
-      "fiveOtherWetRoomsEachLps": 13,
-      "kitchenTotalExtractLps": 13,
-      "totalExtractLps": 78,
-      "totalBalancedSupplyLps": 78,
-      "sixHabitableSupplyEachLpsIfEqual": 13.0,
-      "existingKitchenTransferIdealDropPa": 4.7179257355683575,
-      "round160VelocityMps": 3.879401737864949,
-      "round200VelocityMps": 2.482817112233567,
-      "rect160By180VelocityMps": 2.7083333333333335
-    },
-    {
-      "id": "wet-boost",
+      "id": "continuous",
       "fiveOtherWetRoomsEachLps": 16,
       "kitchenTotalExtractLps": 16,
       "totalExtractLps": 96,
@@ -31,7 +19,7 @@
       "rect160By180VelocityMps": 3.3333333333333335
     },
     {
-      "id": "cooking-plus-all-wet-boost",
+      "id": "cooking",
       "fiveOtherWetRoomsEachLps": 16,
       "kitchenTotalExtractLps": 48,
       "totalExtractLps": 128,
@@ -45,10 +33,10 @@
   ],
   "dedicatedKitchenSupplyModes": [
     {
-      "mode": "background",
-      "kitchenSupplyLps": 13,
-      "sixOtherHabitableTotalSupplyLps": 65,
-      "sixOtherHabitableEachLps": 10.833333333333334,
+      "mode": "continuous",
+      "kitchenSupplyLps": 16,
+      "sixOtherHabitableTotalSupplyLps": 80,
+      "sixOtherHabitableEachLps": 13.333333333333334,
       "kitchenTransferLps": 0,
       "ideal7600TransferDropPa": 0.0,
       "worstResidualWith2LpsDamperError": 2,
@@ -56,18 +44,7 @@
       "massBalanceLps": 0
     },
     {
-      "mode": "wet-boost",
-      "kitchenSupplyLps": 13,
-      "sixOtherHabitableTotalSupplyLps": 83,
-      "sixOtherHabitableEachLps": 13.833333333333334,
-      "kitchenTransferLps": 3,
-      "ideal7600TransferDropPa": 0.25125048295926167,
-      "worstResidualWith2LpsDamperError": 5,
-      "ideal7600DropWith2LpsErrorPa": 0.6979180082201714,
-      "massBalanceLps": 0
-    },
-    {
-      "mode": "cooking-plus-all-wet-boost",
+      "mode": "cooking",
       "kitchenSupplyLps": 48,
       "sixOtherHabitableTotalSupplyLps": 80,
       "sixOtherHabitableEachLps": 13.333333333333334,
@@ -84,7 +61,7 @@
       9,
       108
     ],
-    "VminLps": 13,
+    "VminLps": 16,
     "VmaxLps": 48,
     "minimumRecommendedSpanLps": 21.6,
     "normal": "Terminal3 Y floating selects Vmin in either native0..10 or2..10 mode.",
@@ -92,8 +69,27 @@
     "supply": "IEC61558-1 isolation transformer; independent support/access/cleaning and native controls retained.",
     "noRoomPressureController": true,
     "factoryQualifiedFaultInterlock": false,
-    "fault": "Loss of hood contact/cable leaves Vmin13 even if hood mechanically open: capture/makeup failure is NOT automatically safe. U actual-flow feedback is available, but no qualified fault inhibit is claimed.",
-    "remaining": "Actual native fan mode presets/commissioned fixed branch network, startup/damper travel, fan/filter/frost/power failure and cooking inhibit remain to be bound."
+    "fault": "Loss of hood contact/cable leaves Vmin16 even if hood mechanically open: capture/makeup failure is NOT automatically safe. U actual-flow feedback is available, but no qualified fault inhibit is claimed.",
+    "remaining": "Actual commissioned fixed branch network, startup/damper travel and detectable duty-loss cooking-stop response remain to be bound; an automated hob inhibit is not assumed."
+  },
+  "nativePressureControlComparison": {
+    "candidate": "Native paired duct-pressure control, not a new room-pressure loop",
+    "hardware": "Two CASA PTH kits, one sensor/tube/tap for each duct; native 300 Pa range and stable ambient reference.",
+    "nativeAuthority": "Genius/SCB register manual 4.2 defines fixed duct-pressure control, Home/Away/Boost and Cooking supply/extract pressure targets; commission through the native wizard, no BMS required.",
+    "nativeCookingRegisters": [
+      5325,
+      5326
+    ],
+    "strategy": "Maintain each commissioned manifold pressure in both 96 and128 states, with fixed other-room branches and kitchen two-position regulator/hood. Equal target pressures do not guarantee equal downstream branch flows when shared losses change.",
+    "networkHold": "Actual manifold/tap location, branch resistances, open/closed hood curves and attenuator/filter losses must demonstrate80 L/s retained outside kitchen. No native open-hood curve is invented.",
+    "fault": "PTH pressure-control fault alarms and falls back to normal fan regulation; this is not an automatic safe capture state.",
+    "compatibility": "W9 lists PTH; older PTH Smart menu screenshots are not claimed as exact current Genius menus. Current Genius register mapping is separate primary authority."
+  },
+  "failureResponseComparison": {
+    "baseline": "Electric/no-combustion programme; no gas-appliance interlock is inferred.",
+    "visibleManualComparison": "Native GC10/app displays unit alarms, including E181 pressure-sensor and E191 pressure-control failures; serious faults also flash hood LEDs. Stop cooking on alarm or lost capture, retain ventilation if available, and repair/recommission before cooking resumes.",
+    "unearnedDetectability": "An open hood contact wire can silently leave the kitchen supply at16 while mechanical extract is48. Unit RPM and upstream duct pressure do not measure that branch loss. Hood LEDs alone are not a proven warning for every loss.",
+    "decision": "Conventional visible warning plus manual stop remains preferable to an automatic hob interlock if every relevant failure is actually detected. A local branch-flow indication/comparison or native qualified equivalent is still required before this manual contract is admitted; no universal automated inhibit requirement is invented."
   },
   "protectedStairRule": {
     "primary": "https://assets.publishing.service.gov.uk/media/6aa3bb335f6e942efe37f150/AD_B1_2026.pdf",
@@ -176,6 +172,160 @@
     "850CartWith25EdgesPassesEast": false,
     "scope": "Static challenger only. Native panel/component withdrawal, operator, supports, condensation, lifting and continuous renewal must be bound before fit selection."
   },
+  "upperOnlyRiserComparison": {
+    "status": "Proposed smaller coherent geometry; actual matched components, access and structural admission remain open",
+    "upperSupplyMaximumLps": 53.333333333333336,
+    "upperExtractMaximumLps": 48,
+    "eachClearDiameterMM": 160,
+    "eachFullJacketDiameterMM": 214,
+    "upperSupplyVelocityMps": 2.6525823848649224,
+    "upperExtractVelocityMps": 2.3873241463784303,
+    "cabinetPlan": [
+      11032.5,
+      3304,
+      513,
+      274
+    ],
+    "twoDuctCentresXY": [
+      [
+        11169.5,
+        3441
+      ],
+      [
+        11408.5,
+        3441
+      ]
+    ],
+    "betweenFullJacketsMM": 25,
+    "cabinetEdgeAllowanceMM": 30,
+    "northWallReserveMM": 25,
+    "eastWallReserveMM": 25.0,
+    "existingBedOrdinaryPlan": [
+      9942.5,
+      1518,
+      950,
+      2055
+    ],
+    "ordinaryBedChanged": false,
+    "lowerGroundSpace": "Only overhead pipe/bend territory at or above2250; no full-height floor cabinet steals existing887.5ordinary passage.",
+    "upperHorizontalAxisLocalMM": 2382,
+    "fullDuctLowestMM": 2275,
+    "reserveOver2250AssemblyMM": 25,
+    "topElbowScope": "90degree upper elbow with160centreline radius is an authored long-radius requirement, not a matched native part. Full374x374side envelope extends south of cabinet; no cabinet-only component fit claimed.",
+    "topElbowFullYZ": [
+      3174,
+      2115,
+      374,
+      374
+    ],
+    "nativeTool": {
+      "part": "Werner31290026 adjustable OddJob600",
+      "source": "https://www.wernerco.com/uk/featured-products/adjustable-odd-job-600-work-platform",
+      "maximumOpenedPlanMM": [
+        1020,
+        720
+      ],
+      "deckMM": [
+        600,
+        600
+      ],
+      "deckHeightRangeMM": [
+        500,
+        700
+      ],
+      "foldedMM": [
+        620,
+        690,
+        180
+      ],
+      "massKg": 7.35,
+      "capacityKg": 150,
+      "nativeWorkingHeightMaximumMM": 2450,
+      "field": [
+        10475,
+        2558,
+        1020,
+        720
+      ],
+      "scope": "Actual full maximum opened dimensions from manufacturer. Native mounting/leg-swing procedure, operator/tool reach and full incoming path remain unqualified."
+    },
+    "temporaryBedPlan": [
+      9942.5,
+      478,
+      950,
+      2055
+    ],
+    "temporarySouthTranslationMM": 1040,
+    "parkedBedSouthReserveMM": 48.5,
+    "toolToParkedBedMM": 25,
+    "toolToCabinetMM": 26,
+    "toolToEastWallMM": 75.5,
+    "westMountingApronCentre": [
+      10150,
+      2918
+    ],
+    "apronBodyRadiusTrial": 300,
+    "negativeControl": "QuickPod1440x740 alone is rejected: native overhead duty also requires491stabiliser deployment. No bare-platform pass or196kgPecolift upstairs credit.",
+    "remaining": [
+      "actual platform erection/entry/full person and independent component support",
+      "complete214jacketed elbow/coupling firstrelease and withdrawal into actual field, no unsupported hand-held module",
+      "actual slab formed opening/trimmers and protected-boundary steel/firestop/air separation; no borrowed wet-shaft capacity",
+      "route both lower unit spigots to overhead riser and upper ring without occupied warm packet, walls, bed or protected door intrusion"
+    ]
+  },
+  "plantRenewalComparison": {
+    "status": "Component/body route development; no handling or incoming acceptance",
+    "fullW9BodyIncludingBasePlanMM": [
+      1006,
+      597
+    ],
+    "protectedDoorClearY": [
+      2791.5,
+      3534
+    ],
+    "referenceBodyCrossingCentreY": 3162.75,
+    "eachTransverseBodyReserveMM": 72.75,
+    "centreLineXY": [
+      [
+        10180,
+        2970.5
+      ],
+      [
+        10180,
+        3162.75
+      ],
+      [
+        6000,
+        3162.75
+      ],
+      [
+        6000,
+        0
+      ]
+    ],
+    "centralHallTurn": "Rotate in central front hall between finished4897..7103; do not turn1006body inside1023.5eastgallery.",
+    "bodyTurningRadiusMM": 584.9027696976652,
+    "centralHallSideReserveForFullRotationMM": 518.0972303023348,
+    "frontRamp": {
+      "rise": 1800,
+      "slope": 20,
+      "slopingRun": 36000,
+      "flights": [
+        9000,
+        9000,
+        9000,
+        9000
+      ],
+      "landingLength": 1200,
+      "landings": 5,
+      "totalStraightReservation": 42000
+    },
+    "frontRampClearMM": 1200,
+    "gradeMM": -1800,
+    "handling": "156kg is not hand-carried. Uniform native bottom lifting, captured rated carrier, actual handles/wheels/driver, safe threshold and1:20slope braking remain to be earned.",
+    "negativeControl": "850cart remains rejected through742.5. Rotated597body is a different object; neither body geometry nor nominal trolley deck qualifies handling.",
+    "externalEastAlternative": "A dense sampled1006x597body-only two-turn plant path exists, but no added east landing/1800lift/hoist is admitted. Prefer real front route if complete carrier and approach can be proved."
+  },
   "fireSmokeTransferComparison": [
     {
       "family": "Lorient LVN20S",
@@ -210,18 +360,7 @@
   ],
   "heatSensitivity": [
     {
-      "mode": "background",
-      "effectiveRecoverySensitivity": 0,
-      "fabricPlusInfiltrationWK": 220,
-      "insideC": 20,
-      "outsideC": -10,
-      "physicalHeatBeforeFanAndReheatW": 9408.0,
-      "supplyBeforeReheatC": -10,
-      "postheatTo18CW": 2620.7999999999997,
-      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
-    },
-    {
-      "mode": "wet-boost",
+      "mode": "continuous",
       "effectiveRecoverySensitivity": 0,
       "fabricPlusInfiltrationWK": 220,
       "insideC": 20,
@@ -232,7 +371,7 @@
       "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
     },
     {
-      "mode": "cooking-plus-all-wet-boost",
+      "mode": "cooking",
       "effectiveRecoverySensitivity": 0,
       "fabricPlusInfiltrationWK": 220,
       "insideC": 20,
@@ -243,18 +382,7 @@
       "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
     },
     {
-      "mode": "background",
-      "effectiveRecoverySensitivity": 0.6,
-      "fabricPlusInfiltrationWK": 220,
-      "insideC": 20,
-      "outsideC": -10,
-      "physicalHeatBeforeFanAndReheatW": 7723.2,
-      "supplyBeforeReheatC": 8.0,
-      "postheatTo18CW": 936.0,
-      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
-    },
-    {
-      "mode": "wet-boost",
+      "mode": "continuous",
       "effectiveRecoverySensitivity": 0.6,
       "fabricPlusInfiltrationWK": 220,
       "insideC": 20,
@@ -265,7 +393,7 @@
       "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
     },
     {
-      "mode": "cooking-plus-all-wet-boost",
+      "mode": "cooking",
       "effectiveRecoverySensitivity": 0.6,
       "fabricPlusInfiltrationWK": 220,
       "insideC": 20,
@@ -276,18 +404,7 @@
       "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
     },
     {
-      "mode": "background",
-      "effectiveRecoverySensitivity": 0.7,
-      "fabricPlusInfiltrationWK": 220,
-      "insideC": 20,
-      "outsideC": -10,
-      "physicalHeatBeforeFanAndReheatW": 7442.4,
-      "supplyBeforeReheatC": 11.0,
-      "postheatTo18CW": 655.1999999999999,
-      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
-    },
-    {
-      "mode": "wet-boost",
+      "mode": "continuous",
       "effectiveRecoverySensitivity": 0.7,
       "fabricPlusInfiltrationWK": 220,
       "insideC": 20,
@@ -298,7 +415,7 @@
       "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
     },
     {
-      "mode": "cooking-plus-all-wet-boost",
+      "mode": "cooking",
       "effectiveRecoverySensitivity": 0.7,
       "fabricPlusInfiltrationWK": 220,
       "insideC": 20,
@@ -309,18 +426,7 @@
       "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
     },
     {
-      "mode": "background",
-      "effectiveRecoverySensitivity": 0.8,
-      "fabricPlusInfiltrationWK": 220,
-      "insideC": 20,
-      "outsideC": -10,
-      "physicalHeatBeforeFanAndReheatW": 7161.6,
-      "supplyBeforeReheatC": 14.0,
-      "postheatTo18CW": 374.4,
-      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
-    },
-    {
-      "mode": "wet-boost",
+      "mode": "continuous",
       "effectiveRecoverySensitivity": 0.8,
       "fabricPlusInfiltrationWK": 220,
       "insideC": 20,
@@ -331,7 +437,7 @@
       "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
     },
     {
-      "mode": "cooking-plus-all-wet-boost",
+      "mode": "cooking",
       "effectiveRecoverySensitivity": 0.8,
       "fabricPlusInfiltrationWK": 220,
       "insideC": 20,
@@ -342,7 +448,14 @@
       "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
     }
   ],
-  "requiredEffectiveRecoveryFor8kWAt128And30K": 0.6961805555555556,
+  "historical8kWSensitivityRequiredEffectiveRecoveryAt128And30K": 0.6961805555555556,
+  "continuous96VersusHistorical78": {
+    "additionalLps": 18,
+    "additionalHeatWAt30K70PercentRecovery": 194.39999999999995,
+    "fanElectricity": "Native operating-point curve/commissioned measurement required; nameplate power is not annual demand.",
+    "comfort": "Continuous higher dry-air exchange can reduce winter humidity and adds terminal noise; no humidity comfort target or annual weather is invented."
+  },
+  "heatDemandScalability": "Each additional1 W/K fabric/infiltration loss adds30 W at the30 K sensitivity; actual ground bridge, measured leakage and design climate remain inputs, not an8kW invariant.",
   "liveHADunchanged": true,
   "upperWetFieldsUnchanged": true,
   "remainingDesignTasks": [
