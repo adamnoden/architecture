@@ -160,11 +160,13 @@ rm,rv,xh=trim(240,200,140,2*oldAs);assert mh<rm and vh<rv
 # fbd 2.1MPa comparator, not universal product bond. Use d/4sigma/fbd,
 # no hook/lap credit for a short projection.
 fbd=2.1;fy=500/1.15;lbF=12*fy/(4*fbd);lbHeader=12*(mh*1e6/(2*oldAs*.85*140))/(4*fbd)
-southMargin=well[1]-r[1];northMargin=r[3]-well[3];assert lbHeader<southMargin
+southMargin=well[1]-r[1];northMargin=r[3]-well[3];headerDev=155
+headerY=[well[1]-240-headerDev,well[3]+240+headerDev]
+assert lbHeader<headerDev and headerY[0]>=r[1] and headerY[1]<=r[3]
 # Force in the straight EW strip need not be fully yielded at its line
 # support, but the whole global anchor cannot be silently hidden in a 140mm
 # thick exterior wall or the 200mm wet beam. Keep direct restraint negative.
-wellOut={'status':'formed 400x400 structural opening candidate, conditional local trimmer/header section; actual drain, concentrated tray foot/bracket, reinstatement and support anchorage remain open','xyz':[well,zz],'oldField':[s['id'],r,s['axis_span'],s['direction']],'toWetBeamFace':beamFace-well[2],'toSouthWetBeamSupportAxis':well[1]-wet['support_axes_y'][0],'trayFootprint':tray,'edgeFromTrayWest':well[0]-tray[0],'concreteRemovedM3':.4*.4*.2,'cutBarsEachFaceEachDirectionMax':math.ceil(400/150),'oneMetreFieldGQ':[g,q],'entireCutCorridorULS':ps,'extraPointChallengeCharacteristicKN':maxPoint,'knownTrayFrameKgOnly':26.6,'trimStations':{'EWstripCentreY':[well[1]-120,well[3]+120],'NSheaderCentreX':[well[0]-120,well[2]+120],'stripWidth':240,'EWmainBarsAdditionalEachFacePerSide':round(Abar/oldAs),'NScrossBarsAdditionalEachFacePerSide':2,'effectiveDepth':140,'EWspan':Lx,'NSspan':Lh,'M_V_EW':[M,V,mr,vr],'M_V_NS':[mh,vh,rm,rv],'xOverD':[xd,xh]},'poorBondStraightLengthAtFullSteelStress':lbF,'NSheaderStraightLengthAtActualBendingStress':lbHeader,'availableNSMarginsToFieldAxes':[southMargin,northMargin],'detail':'New bars continuous around the cast-out in prefixed mats, not cut by a saw. Before fabricating, establish support-end detailing within the 140mm exterior core and 200mm wet beam, edge opening transfer/crack service, actual crossing bar elevations, fire/acoustic/air floor classification and complete removable cover/tray support. The 2kN characteristic footprint challenge does not certify an unknown foot bearing or lifting operation.'}
+wellOut={'status':'formed 400x400 structural opening candidate, conditional local trimmer/header section; actual drain, concentrated tray foot/bracket, reinstatement and support anchorage remain open','xyz':[well,zz],'oldField':[s['id'],r,s['axis_span'],s['direction']],'toWetBeamFace':beamFace-well[2],'toSouthWetBeamSupportAxis':well[1]-wet['support_axes_y'][0],'trayFootprint':tray,'edgeFromTrayWest':well[0]-tray[0],'concreteRemovedM3':.4*.4*.2,'cutBarsEachFaceEachDirectionMax':math.ceil(400/150),'oneMetreFieldGQ':[g,q],'entireCutCorridorULS':ps,'extraPointChallengeCharacteristicKN':maxPoint,'knownTrayFrameKgOnly':26.6,'trimStations':{'EWstripCentreY':[well[1]-120,well[3]+120],'NSheaderCentreX':[well[0]-120,well[2]+120],'stripWidth':240,'EWmainBarsAdditionalEachFacePerSide':round(Abar/oldAs),'NScrossBarsAdditionalEachFacePerSide':2,'effectiveDepth':140,'EWspan':Lx,'NSspan':Lh,'M_V_EW':[M,V,mr,vr],'M_V_NS':[mh,vh,rm,rv],'xOverD':[xd,xh]},'poorBondStraightLengthAtFullSteelStress':lbF,'NSheaderStraightLengthAtActualBendingStress':lbHeader,'availableNSMarginsToFieldAxes':[southMargin,northMargin],'actualNSHeaderAxisEndY':headerY,'actualNSHeaderEndBeyondSideFaces':headerDev,'sensitiveSouthEndToNWFieldAxis':headerY[0]-r[1],'NSLayersZ':[3223.5,3321],'detail':'New bars continuous around the cast-out in prefixed mats, not cut by a saw. Before fabricating, establish support-end detailing within the 140mm exterior core and 200mm wet beam, edge opening transfer/crack service, actual crossing bar elevations, fire/acoustic/air floor classification and complete removable cover/tray support. The 2kN characteristic footprint challenge does not certify an unknown foot bearing or lifting operation.'}
 print('ground span',clear,'H12/100',choice['crackWidthFullRestraint'],'ground mass',groundOut['steelTonnesBeforeLapsEdges'],'wet opening',wellOut['trimStations'])
 # EW bottom bars cross the two longitudinal rows of the proposed 650 edge.
 # A flat rebar hook turns along the west collector; do not demand 621mm of
@@ -330,5 +332,34 @@ tx(542,621,'Rust: 285 mm flange draw. Blue: 159.9 mm tube; vertical scale enlarg
 tx(542,648,'Body below full warm build-up: travelling flange needs 290.3 mm recess at the outlet.')
 tx(542,674,'Fixed gallery slab still intersects the draw. No three-beam notch is admitted.')
 t.append('</g></svg>');pic=D/'current-house-occupied-interfaces.svg';svg='\n'.join(t)+'\n'
+if '--check' in sys.argv:assert pic.read_text()==svg
+else:pic.write_text(svg)
+# Enlarged west turn: plot the actual six authored bar paths and the wet
+# opening, not merely the widths reserved for reinforcement.
+t=['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 690"><rect width="1180" height="690" fill="#fbfaf6"/><g font-family="sans-serif" fill="#263b40">']
+tx(32,40,'The formed wet opening and its receiving reinforcement',26);tx(32,69,'North up • all dimensions mm • plan repeated at both faces; bar fit at the complete installed joint is not admitted.',16)
+tx(32,113,'Plan • full EW trimmers, north and south headers',18)
+def pl(p):return (42+(p[0]-260)*.245,464-(p[1]-8832.5)*.245)
+def pr(r,color):
+ x,y=pl((r[0],r[3]));rect(x,y,(r[2]-r[0])*.245,(r[3]-r[1])*.245,color)
+pr([262.5,8830,402.5,10075],'#c2d0cc');pr([2802.5,8830,3002.5,10075],'#c2d0cc')
+pr(well,'#e4bcaf')
+for P in paths:
+ points=[pl(q) for q in P];t.append('<polyline points="'+' '.join(f'{x:.2f},{y:.2f}' for x,y in points)+'" fill="none" stroke="#196c65" stroke-width="2"/>')
+for x in [well[0]-160,well[0]-80,well[2]+80,well[2]+160]:
+ a0,b0=pl((x,headerY[0])),pl((x,headerY[1]));t.append(f'<path d="M{a0[0]} {a0[1]}L{b0[0]} {b0[1]}" stroke="#b77441" stroke-width="2.5"/>')
+tx(43,525,'EW bars continue through the strips to both real supports. NS lines show header positions;')
+tx(43,549,'headers develop beyond both side strips. No post-drilled opening or masonry anchor.')
+tx(763,113,'West hook detail • equal scale',18)
+# One upper strip; showing 180mm of the east straight leg makes the bend
+# and two separated tail lanes legible.
+def hk(p):return (776+(p[0]-262.5)*.55,478-(p[1]-9472.5)*.55)
+xx,yy=hk((262.5,10075));rect(xx,yy,140*.55,(10075-9470)*.55,'#e9ece7')
+for P in paths[3:]:
+ points=[hk((min(520,p[0]),p[1])) for p in P];t.append('<polyline points="'+' '.join(f'{x:.2f},{y:.2f}' for x,y in points)+'" fill="none" stroke="#196c65" stroke-width="5" stroke-linejoin="round"/>')
+tx(943,172,'Tails at X313.5 / 347.5',14);tx(943,270,'48 mm internal mandrel',14);tx(943,299,'200 mm straight tails',14)
+tx(35,601,'Blue-green: three additional EW H12 per side / face. Ochre: two NS H12 per side / face. Salmon: 400 × 400 opening.',16)
+tx(35,632,'Lower EW centres Z3237.5; nearest active west collector bar has 6.5 nominal surface clearance. Complete cage tolerance remains open.',15)
+t.append('</g></svg>');pic=D/'current-house-formed-well-bars.svg';svg='\n'.join(t)+'\n'
 if '--check' in sys.argv:assert pic.read_text()==svg
 else:pic.write_text(svg)

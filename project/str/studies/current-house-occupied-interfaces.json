@@ -321,6 +321,16 @@
       400.0,
       2015.0
     ],
+    "actualNSHeaderAxisEndY": [
+      8857.5,
+      10047.5
+    ],
+    "actualNSHeaderEndBeyondSideFaces": 155,
+    "sensitiveSouthEndToNWFieldAxis": 5.0,
+    "NSLayersZ": [
+      3223.5,
+      3321
+    ],
     "detail": "New bars continuous around the cast-out in prefixed mats, not cut by a saw. Before fabricating, establish support-end detailing within the 140mm exterior core and 200mm wet beam, edge opening transfer/crack service, actual crossing bar elevations, fire/acoustic/air floor classification and complete removable cover/tray support. The 2kN characteristic footprint challenge does not certify an unknown foot bearing or lifting operation.",
     "receiverEndComparison": {
       "method": "3 EW bars per face per side. Bottoms at Z3237.5; ring bars at indicated centres, top EW at Z3335 (inside the upper edge, not its top bars). West bends selected in plan; east straight projection in actual 200-wide RC wet beam. Indicative 200 straight tails after 48mm internal mandrel, nominal 34mm between two parallel tails. No reduced development credit for hooks. New headers use two bars each face with at least actual calculated bending-stress development outside 240mm side strips, not an assumed full-yield anchorage.",
