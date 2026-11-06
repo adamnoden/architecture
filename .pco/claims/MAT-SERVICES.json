@@ -9,9 +9,9 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T19:37:46.365Z",
-  "expiresAt": "2026-11-06T21:07:46.365Z",
-  "branch": "work/zerg-20261106-services-g21",
+  "heartbeatAt": "2026-11-06T19:57:40.186Z",
+  "expiresAt": "2026-11-06T21:27:40.186Z",
+  "branch": "work/zerg-20261106-services-g21-renewal",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
     "generation": 20,
@@ -36,7 +36,8 @@
   },
   "pr": 1345,
   "checkpoint": {
-    "evidence": "FROZEN review PR1345 exacthead18d15f51b0c9f551be73fc86be34ef28eb534a31/tree3820006a1cca32fe4f72a1a40ecdb5eca8f793b6. W9leadingdirection/5decisivechecks; VTCpressure/asymmetricheat and actualpier/leaf/actuatortolerance negatives; Python+JSON/SVG+diff+renderPASS",
-    "next": "Await exactheadCI/rootarchitecturalreview; fresh canonicalpreflight before anymerge. No canonicalHAD/Services/materialadoption or completeMATpacket claim."
-  }
+    "evidence": "PR1345 merged at8871604771ff018896a1da62e9d8510a3616212e; exact02fc8402 CI42282968242 success; current folded front route corrected and derived45.945m; no apparatus adoption.",
+    "next": "Continue actual whole-system renewal/control design: qualify folded ramp/landing carrier support and control, native component withdrawal, matched airflow/heat and constituent duties."
+  },
+  "note": "Same live generation successor after bounded comparison merge; previous source branch deleted; MAT remains open."
 }
