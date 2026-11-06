@@ -9,13 +9,13 @@
     "label": "zerg-20261106-w1"
   },
   "claimedAt": "2026-11-06T07:38:01.585Z",
-  "heartbeatAt": "2026-11-06T08:03:55.758Z",
-  "expiresAt": "2026-11-06T08:48:55.758Z",
+  "heartbeatAt": "2026-11-06T08:09:40.006Z",
+  "expiresAt": "2026-11-06T08:54:40.006Z",
   "checkpoint": {
-    "evidence": "PR1333 remote head1a7bebd02fe2206b0c7cff51ce505aa17116dd6f; actual deck rejection and simpler pan comparison; source-bound fall and floor-seam corrections reviewed. Integrity/diff passed. Runtime prior renew readback c2d04d87 and CLI verified.",
-    "next": "Exact-head CI42184903468 running; await final root review then fresh publication preflight/merge. No IAS completion or accepted wet assembly. Actual matched supported lower waste and slip/material/water/physical duties remain."
+    "evidence": "PR1333 merged3170188cad2ae3392c875e1197eb7b0fac0f3cd4 after exact-head CI42184903468 success and fresh preflight; old branch404 auto-deletion; issue941 reconciled open. Successor remote branch starts exact merged main.",
+    "next": "Same lease continues IAS: bound actual weld-union retained-stub lower first-release candidate, cone sealing medium and full supported trap/access. No wet-kit or lifecycle adoption. PR metadata1333 is prior merged output until a successor PR exists."
   },
-  "branch": "work/zerg-20261106-w1",
+  "branch": "work/zerg-20261106-w1b",
   "predecessor": {
     "leaseId": "c07019d5-45b2-40cb-95ac-92932149eff1",
     "generation": 21,
