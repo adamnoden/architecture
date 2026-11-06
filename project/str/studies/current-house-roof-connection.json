@@ -1,0 +1,125 @@
+{
+  "adoptionConditions": [
+    "Actualcollector/pierloadallocation andcontinuousuplift/lateralrestraint, glass/cavity/metal/fireclosure and \u00b110mm infillmovement transition mustbejoined.",
+    "RWTroofarea andplan remain144.15m2; actualgutter/downstackverticallevels requireupdatedhead/renewalreference afterheightadoption. Noheightchangeisfree.Georgianeave/ridgeproportion needsrenderedreview."
+  ],
+  "collector": {
+    "A": 7584,
+    "I": 40632832.0,
+    "M": 65.169784667,
+    "MR": 73.87787636363636,
+    "V": 100.52241436,
+    "VR": 443.4050067376326,
+    "chordBudget": 100,
+    "combinedBendingAxial": 0.954649656701079,
+    "lengthM": 62.0,
+    "material": "Project fabricated closed steelbox; declared200/1.1MPa stress, not commercialroundedRHS properties",
+    "piers": "ActualRC/masonrywindowpiers andcornerL-piers; sourcecontinuousring is above allupperwindowheads, bottom25above6515extrados. Endbearing140x300plate fitsactualcore; solidpiers mustcarry assignedreaction, not just openingwidth.",
+    "section": [
+      200,
+      140,
+      12
+    ],
+    "selfG": 36.911328,
+    "serviceDeflection": 0.8344070378273,
+    "z": [
+      6540,
+      6740
+    ]
+  },
+  "coplanarConnection": {
+    "bearingStress": 63.39210995735821,
+    "boltCapacity": 282.4,
+    "boltCentreGridXZ": [
+      [
+        110,
+        6697.607456908338
+      ],
+      [
+        110,
+        6758.293242451275
+      ],
+      [
+        110,
+        6818.979027994212
+      ],
+      [
+        110,
+        6879.664813537149
+      ],
+      [
+        200,
+        6739.575146142287
+      ],
+      [
+        200,
+        6800.260931685224
+      ],
+      [
+        200,
+        6860.946717228161
+      ],
+      [
+        200,
+        6921.632502771098
+      ]
+    ],
+    "boltResultant": 243.42570223625552,
+    "bolts": "8M24 atdeclared100MPa shear stress; two columns90pitch/fourrows55pitch;35edge.220grip/length territory through150widebox plushead/washers/nut.",
+    "combinedKnifeStress": 146.46224831155777,
+    "completeHardwareWidthBudget": 220,
+    "installation": "Assemblebeforeceiling/roofclosure; positivebolt/head andknifeaccess reserved fromroofside. Locate removablemetalinspectioncollar atjoint without making thewhole attic accessible storage. Actualfire/thermal/weld/fastener andrenewalqualification remain downstream.",
+    "knife": [
+      250,
+      400,
+      20
+    ],
+    "knifeProjectionFromCore": 110,
+    "knifeRole": "Vertical20plate inprimarycentreplane,250long alongrafter/400high; closedboxprimary has localfabricatedslot+stiffenedclevis web. This is a conventional project end-bearing/boltednode, not an inferred proprietary rating.",
+    "knifeZ": [
+      6540,
+      6940
+    ],
+    "localForceRole": "Rafter/tiehorizontalforces selfequilibrate withinthecompleteframe; fulltieforce/80offset retained asadverse localconnectionmoment, not additionalglobalhorizontalwind.",
+    "localTieForce": 138.76625133372355,
+    "moment": 21.101300106697884,
+    "occupiedSection": "Tieandmainprimarybottom6645are25aboveprotectedceilingtop6620. Knifelowerstem/ringbottom6540occupies80of176ceilingclosuredepth atwallreturn;25mineralprotectionbottom6515stays71abovefinishedceiling6444. Thislocallyreplacesinsulationandrequiresmatchedfire/thermalclosure, notunchanged176recipe. Localroofwallclosure spans220ratherthan140core; steelbridging/protection/airseal is a disclosed localMAT/ROF junction, not hidden insulation.",
+    "primaryCentreAtSupport": 6782.922239870311,
+    "primaryNormalDepth": 250,
+    "primarySupportBottom": 6645,
+    "protectedClosureReference": {
+      "finishedCeilingBottom": 6444,
+      "mineralProtection": 25,
+      "protectionBottom": 6515,
+      "reserve": 71
+    },
+    "steelStressBudget": 181.8181818181818,
+    "tieBottom": 6645,
+    "tieCentre": 6720,
+    "tieSectionVerticalDepth": 150,
+    "verticalDown": 200,
+    "verticalReactionEccentricityBudget": 50,
+    "verticalUplift": 65,
+    "weld": "Twoopposedgroups,each2x200long10leg/7throat,180couple; declared100MPa",
+    "weldEachGroupCapacity": 280.0,
+    "weldEachGroupDemand": 238.94229615533823
+  },
+  "heightComparison": {
+    "coplanarSteel200Rise": 129.98827391160614,
+    "courtPlanOverhangPitchUnchanged": true,
+    "heightSavedAgainstStacked": 317.0,
+    "historicalEave": 7100,
+    "historicalRidge": 8090.903773579372,
+    "recommendation": "Prefercoplanarsteel200collector/250primary: realendbearing/clevisforcepath eliminatesstackedheight, retainingfinitehip/secondaryroute. RejectstackedRC400onwhole-designheight/mass merit, not an oldheightinvariant. This is a proposedsource rewind, not an alreadychangedHADselection.",
+    "selectedCandidateEave": 7229.9882739116065,
+    "selectedCandidateRidge": 8220.892047490977,
+    "stackedRC400Rise": 446.98827391160614
+  },
+  "physicalAdmission": false,
+  "source": {
+    "path": "project/had/studies/water-replan.json",
+    "sha256": "dbfff5eb4fa36dbdf6635702e853792e6412d73df1c58f9e1c1ede1bcff205b8"
+  },
+  "status": "Preferred coplanar roof connection candidate; whole-house/architectural source adoption remains pending",
+  "units": "mm, kN, kNm, MPa unless stated"
+}
