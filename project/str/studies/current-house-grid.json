@@ -1,0 +1,2197 @@
+{
+  "status": "Located trial; gravity action/soil and constructive qualification separate",
+  "sources": {
+    "project/had/studies/water-replan.json": "dbfff5eb4fa36dbdf6635702e853792e6412d73df1c58f9e1c1ede1bcff205b8",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/current-house-lateral.json": "daf460b0d1be53e34a14cad7b52f5b655ebc6bf0b901e6b5db4e09573d015e4d"
+  },
+  "girders": {
+    "outer-W": {
+      "axis": "y",
+      "datum": 332.5,
+      "extent": [
+        332.5,
+        11667.5
+      ],
+      "width": 700,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P01",
+          "u": 332.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P03",
+          "u": 1192.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P13",
+          "u": 3247.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P14",
+          "u": 4332.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P15",
+          "u": 6500,
+          "offset": 0.0
+        },
+        {
+          "id": "P16",
+          "u": 8852.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P09",
+          "u": 10807.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P07",
+          "u": 11667.5,
+          "offset": 0.0
+        }
+      ],
+      "maximumPitch": 2352.5,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "outer-E": {
+      "axis": "y",
+      "datum": 11667.5,
+      "extent": [
+        332.5,
+        11667.5
+      ],
+      "width": 900,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P04",
+          "u": 332.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P06",
+          "u": 1192.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P17",
+          "u": 3400,
+          "offset": 0.0
+        },
+        {
+          "id": "P18",
+          "u": 6000,
+          "offset": 0.0
+        },
+        {
+          "id": "P19",
+          "u": 7800,
+          "offset": 0.0
+        },
+        {
+          "id": "P12",
+          "u": 10807.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P10",
+          "u": 11667.5,
+          "offset": 0.0
+        }
+      ],
+      "maximumPitch": 3007.5,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "outer-S": {
+      "axis": "x",
+      "datum": 332.5,
+      "extent": [
+        332.5,
+        11667.5
+      ],
+      "width": 700,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P01",
+          "u": 332.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P02",
+          "u": 1192.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P20",
+          "u": 3400,
+          "offset": 0.0
+        },
+        {
+          "id": "P21",
+          "u": 4800,
+          "offset": 0.0
+        },
+        {
+          "id": "P22",
+          "u": 7200,
+          "offset": 0.0
+        },
+        {
+          "id": "P23",
+          "u": 9300,
+          "offset": 0.0
+        },
+        {
+          "id": "P05",
+          "u": 10807.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P04",
+          "u": 11667.5,
+          "offset": 0.0
+        }
+      ],
+      "maximumPitch": 2400,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "outer-NW": {
+      "axis": "x",
+      "datum": 11667.5,
+      "extent": [
+        332.5,
+        4500
+      ],
+      "width": 700,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P07",
+          "u": 332.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P08",
+          "u": 1192.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P24",
+          "u": 2902.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P25",
+          "u": 4500,
+          "offset": 0.0
+        }
+      ],
+      "maximumPitch": 1710.0,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "outer-NE": {
+      "axis": "x",
+      "datum": 11667.5,
+      "extent": [
+        7500,
+        11667.5
+      ],
+      "width": 700,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P26",
+          "u": 7500,
+          "offset": 0.0
+        },
+        {
+          "id": "P27",
+          "u": 9300,
+          "offset": 0.0
+        },
+        {
+          "id": "P11",
+          "u": 10807.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P10",
+          "u": 11667.5,
+          "offset": 0.0
+        }
+      ],
+      "maximumPitch": 1800,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "loggia-W": {
+      "axis": "y",
+      "datum": 4500,
+      "extent": [
+        8050,
+        11667.5
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P28",
+          "u": 8050,
+          "offset": 0
+        },
+        {
+          "id": "P29",
+          "u": 9875,
+          "offset": 0
+        },
+        {
+          "id": "P25",
+          "u": 11667.5,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 1825,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "loggia-E": {
+      "axis": "y",
+      "datum": 7500,
+      "extent": [
+        8050,
+        11667.5
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P30",
+          "u": 8050,
+          "offset": 0
+        },
+        {
+          "id": "P31",
+          "u": 9875,
+          "offset": 0
+        },
+        {
+          "id": "P26",
+          "u": 11667.5,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 1825,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "court-W": {
+      "axis": "y",
+      "datum": 3950,
+      "extent": [
+        3950,
+        8050
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P32",
+          "u": 4332.5,
+          "offset": 0
+        },
+        {
+          "id": "P33",
+          "u": 6200,
+          "offset": 0
+        },
+        {
+          "id": "P34",
+          "u": 8050,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 1867.5,
+      "endCantilevers": [
+        382.5,
+        0
+      ]
+    },
+    "court-E": {
+      "axis": "y",
+      "datum": 7950,
+      "extent": [
+        3950,
+        8050
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P35",
+          "u": 3950,
+          "offset": 0
+        },
+        {
+          "id": "P36",
+          "u": 6100,
+          "offset": 0
+        },
+        {
+          "id": "P37",
+          "u": 7700,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 2150,
+      "endCantilevers": [
+        0,
+        350
+      ]
+    },
+    "court-S": {
+      "axis": "x",
+      "datum": 3950,
+      "extent": [
+        3950,
+        8050
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P38",
+          "u": 4785,
+          "offset": -32.5
+        },
+        {
+          "id": "P39",
+          "u": 6000,
+          "offset": 0
+        },
+        {
+          "id": "P40",
+          "u": 7215,
+          "offset": -32.5
+        },
+        {
+          "id": "P35",
+          "u": 7950,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 1215,
+      "endCantilevers": [
+        835,
+        100
+      ]
+    },
+    "court-NW": {
+      "axis": "x",
+      "datum": 8050,
+      "extent": [
+        3950,
+        4500
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P34",
+          "u": 3950,
+          "offset": 0
+        },
+        {
+          "id": "P28",
+          "u": 4500,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 550,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "spine": {
+      "axis": "y",
+      "datum": 9300,
+      "extent": [
+        332.5,
+        8290
+      ],
+      "width": 900,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P23",
+          "u": 332.5,
+          "offset": 0
+        },
+        {
+          "id": "P41",
+          "u": 2650,
+          "offset": 0
+        },
+        {
+          "id": "P42",
+          "u": 4100,
+          "offset": 0
+        },
+        {
+          "id": "P43",
+          "u": 6100,
+          "offset": 0
+        },
+        {
+          "id": "P44",
+          "u": 7700,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 2317.5,
+      "endCantilevers": [
+        0,
+        590
+      ]
+    },
+    "stair-post": {
+      "axis": "y",
+      "datum": 2942.5,
+      "extent": [
+        4173,
+        8949.5
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P45",
+          "u": 4332.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P46",
+          "u": 7257.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P47",
+          "u": 8852.5,
+          "offset": 0.0
+        }
+      ],
+      "maximumPitch": 2925.0,
+      "endCantilevers": [
+        159.5,
+        97.0
+      ]
+    },
+    "stair-header": {
+      "axis": "x",
+      "datum": 4332.5,
+      "extent": [
+        332.5,
+        3950
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P14",
+          "u": 332.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P45",
+          "u": 2942.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P32",
+          "u": 3950,
+          "offset": 0.0
+        }
+      ],
+      "maximumPitch": 2610.0,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "rear-W": {
+      "axis": "x",
+      "datum": 8852.5,
+      "extent": [
+        332.5,
+        2942.5
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P16",
+          "u": 332.5,
+          "offset": 0.0
+        },
+        {
+          "id": "P47",
+          "u": 2942.5,
+          "offset": 0.0
+        }
+      ],
+      "maximumPitch": 2610.0,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "wet": {
+      "axis": "y",
+      "datum": 2902.5,
+      "extent": [
+        8852.5,
+        11667.5
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P47",
+          "u": 8852.5,
+          "offset": 40.0
+        },
+        {
+          "id": "P24",
+          "u": 11667.5,
+          "offset": 0.0
+        }
+      ],
+      "maximumPitch": 2815.0,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "study-east": {
+      "axis": "y",
+      "datum": 4800,
+      "extent": [
+        332.5,
+        2650
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P21",
+          "u": 332.5,
+          "offset": 0
+        },
+        {
+          "id": "P48",
+          "u": 1200,
+          "offset": 0
+        },
+        {
+          "id": "P49",
+          "u": 2650,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 1450,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "cloak-west": {
+      "axis": "y",
+      "datum": 3400,
+      "extent": [
+        1200,
+        2650
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P50",
+          "u": 1200,
+          "offset": 0
+        },
+        {
+          "id": "P51",
+          "u": 2650,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 1450,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "study-north": {
+      "axis": "x",
+      "datum": 2650,
+      "extent": [
+        2817.5,
+        4800
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P51",
+          "u": 3400,
+          "offset": 0
+        },
+        {
+          "id": "P49",
+          "u": 4800,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 1400,
+      "endCantilevers": [
+        582.5,
+        0
+      ]
+    },
+    "wc-west": {
+      "axis": "y",
+      "datum": 7200,
+      "extent": [
+        332.5,
+        2650
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P22",
+          "u": 332.5,
+          "offset": 0
+        },
+        {
+          "id": "P52",
+          "u": 2650,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 2317.5,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    },
+    "wc-north": {
+      "axis": "x",
+      "datum": 2650,
+      "extent": [
+        7200,
+        9300
+      ],
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P52",
+          "u": 7200,
+          "offset": 0
+        },
+        {
+          "id": "P41",
+          "u": 9300,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 2100,
+      "endCantilevers": [
+        0,
+        0
+      ]
+    }
+  },
+  "crossBeams": {
+    "rear-W-end": {
+      "a": [
+        2942.5,
+        8852.5
+      ],
+      "b": [
+        4500,
+        8852.5
+      ],
+      "start": "stair-post",
+      "end": "loggia-W",
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "rear-E": {
+      "a": [
+        7500,
+        8290
+      ],
+      "b": [
+        11667.5,
+        8290
+      ],
+      "start": "loggia-E",
+      "end": "outer-E",
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "court-NE": {
+      "a": [
+        7500,
+        8050
+      ],
+      "b": [
+        7950,
+        8050
+      ],
+      "start": "loggia-E",
+      "end": "court-E",
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "cloak-south": {
+      "a": [
+        3400,
+        1200
+      ],
+      "b": [
+        4800,
+        1200
+      ],
+      "start": "cloak-west",
+      "end": "study-east",
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "study-L-north": {
+      "a": [
+        332.5,
+        3247.5
+      ],
+      "b": [
+        2817.5,
+        3247.5
+      ],
+      "start": "outer-W",
+      "end": "study-L-return",
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "study-L-return": {
+      "a": [
+        2817.5,
+        2650
+      ],
+      "b": [
+        2817.5,
+        4332.5
+      ],
+      "start": "study-north",
+      "end": "stair-header",
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "utility-north": {
+      "a": [
+        9300,
+        2550
+      ],
+      "b": [
+        11667.5,
+        2550
+      ],
+      "start": "spine",
+      "end": "outer-E",
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "plant-intermediate": {
+      "a": [
+        9300,
+        3700
+      ],
+      "b": [
+        11667.5,
+        3700
+      ],
+      "start": "spine",
+      "end": "outer-E",
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "passage-S": {
+      "a": [
+        9300,
+        6100
+      ],
+      "b": [
+        11667.5,
+        6100
+      ],
+      "start": "spine",
+      "end": "outer-E",
+      "width": 650,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "passage-N": {
+      "a": [
+        9300,
+        7700
+      ],
+      "b": [
+        11667.5,
+        7700
+      ],
+      "start": "spine",
+      "end": "outer-E",
+      "width": 650,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "protected-W": {
+      "a": [
+        2817.5,
+        4250
+      ],
+      "b": [
+        3950,
+        4250
+      ],
+      "start": "study-L-return",
+      "end": "court-W",
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "protected-E": {
+      "a": [
+        7950,
+        4250
+      ],
+      "b": [
+        9300,
+        4250
+      ],
+      "start": "court-E",
+      "end": "spine",
+      "width": 600,
+      "z": [
+        -630,
+        -180
+      ]
+    },
+    "low-tie-8050": {
+      "a": [
+        4500,
+        8050
+      ],
+      "b": [
+        7500,
+        8050
+      ],
+      "start": "loggia-W",
+      "end": "loggia-E",
+      "width": 600,
+      "z": [
+        -750,
+        -550
+      ]
+    },
+    "low-tie-11667": {
+      "a": [
+        4500,
+        11667.5
+      ],
+      "b": [
+        7500,
+        11667.5
+      ],
+      "start": "loggia-W",
+      "end": "loggia-E",
+      "width": 600,
+      "z": [
+        -750,
+        -550
+      ]
+    }
+  },
+  "heads": [
+    {
+      "id": "P01",
+      "xy": [
+        332.5,
+        332.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-W",
+        "outer-S"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P02",
+      "xy": [
+        1192.5,
+        332.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-S"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P03",
+      "xy": [
+        332.5,
+        1192.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-W"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P04",
+      "xy": [
+        11667.5,
+        332.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-E",
+        "outer-S"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P05",
+      "xy": [
+        10807.5,
+        332.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-S"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P06",
+      "xy": [
+        11667.5,
+        1192.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-E"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P07",
+      "xy": [
+        332.5,
+        11667.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-W",
+        "outer-NW"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P08",
+      "xy": [
+        1192.5,
+        11667.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-NW"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P09",
+      "xy": [
+        332.5,
+        10807.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-W"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P10",
+      "xy": [
+        11667.5,
+        11667.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-E",
+        "outer-NE"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P11",
+      "xy": [
+        10807.5,
+        11667.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-NE"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P12",
+      "xy": [
+        11667.5,
+        10807.5
+      ],
+      "roles": [
+        "stability corner group",
+        "outer-E"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P13",
+      "xy": [
+        332.5,
+        3247.5
+      ],
+      "roles": [
+        "outer-W"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P14",
+      "xy": [
+        332.5,
+        4332.5
+      ],
+      "roles": [
+        "outer-W",
+        "stair-header"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P15",
+      "xy": [
+        332.5,
+        6500
+      ],
+      "roles": [
+        "outer-W"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P16",
+      "xy": [
+        332.5,
+        8852.5
+      ],
+      "roles": [
+        "outer-W",
+        "rear-W"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P17",
+      "xy": [
+        11667.5,
+        3400
+      ],
+      "roles": [
+        "outer-E"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P18",
+      "xy": [
+        11667.5,
+        6000
+      ],
+      "roles": [
+        "outer-E"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P19",
+      "xy": [
+        11667.5,
+        7800
+      ],
+      "roles": [
+        "outer-E"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P20",
+      "xy": [
+        3400,
+        332.5
+      ],
+      "roles": [
+        "outer-S"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P21",
+      "xy": [
+        4800,
+        332.5
+      ],
+      "roles": [
+        "outer-S",
+        "study-east"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P22",
+      "xy": [
+        7200,
+        332.5
+      ],
+      "roles": [
+        "outer-S",
+        "wc-west"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P23",
+      "xy": [
+        9300,
+        332.5
+      ],
+      "roles": [
+        "outer-S",
+        "spine"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P24",
+      "xy": [
+        2902.5,
+        11667.5
+      ],
+      "roles": [
+        "outer-NW",
+        "wet"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P25",
+      "xy": [
+        4500,
+        11667.5
+      ],
+      "roles": [
+        "outer-NW",
+        "loggia-W"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P26",
+      "xy": [
+        7500,
+        11667.5
+      ],
+      "roles": [
+        "outer-NE",
+        "loggia-E"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P27",
+      "xy": [
+        9300,
+        11667.5
+      ],
+      "roles": [
+        "outer-NE"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P28",
+      "xy": [
+        4500,
+        8050
+      ],
+      "roles": [
+        "loggia-W",
+        "court-NW"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P29",
+      "xy": [
+        4500,
+        9875
+      ],
+      "roles": [
+        "loggia-W"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P30",
+      "xy": [
+        7500,
+        8050
+      ],
+      "roles": [
+        "loggia-E"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P31",
+      "xy": [
+        7500,
+        9875
+      ],
+      "roles": [
+        "loggia-E"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P32",
+      "xy": [
+        3950,
+        4332.5
+      ],
+      "roles": [
+        "court-W",
+        "stair-header"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P33",
+      "xy": [
+        3950,
+        6200
+      ],
+      "roles": [
+        "court-W"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P34",
+      "xy": [
+        3950,
+        8050
+      ],
+      "roles": [
+        "court-W",
+        "court-NW"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P35",
+      "xy": [
+        7950,
+        3950
+      ],
+      "roles": [
+        "court-E",
+        "court-S"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P36",
+      "xy": [
+        7950,
+        6100
+      ],
+      "roles": [
+        "court-E"
+      ],
+      "capXY": [
+        600,
+        650
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P37",
+      "xy": [
+        7950,
+        7700
+      ],
+      "roles": [
+        "court-E"
+      ],
+      "capXY": [
+        600,
+        650
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P38",
+      "xy": [
+        4785,
+        3917.5
+      ],
+      "roles": [
+        "court-S"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P39",
+      "xy": [
+        6000,
+        3950
+      ],
+      "roles": [
+        "court-S"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P40",
+      "xy": [
+        7215,
+        3917.5
+      ],
+      "roles": [
+        "court-S"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P41",
+      "xy": [
+        9300,
+        2650
+      ],
+      "roles": [
+        "spine",
+        "wc-north"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P42",
+      "xy": [
+        9300,
+        4100
+      ],
+      "roles": [
+        "spine"
+      ],
+      "capXY": [
+        900,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P43",
+      "xy": [
+        9300,
+        6100
+      ],
+      "roles": [
+        "spine"
+      ],
+      "capXY": [
+        900,
+        650
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P44",
+      "xy": [
+        9300,
+        7700
+      ],
+      "roles": [
+        "spine"
+      ],
+      "capXY": [
+        900,
+        650
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P45",
+      "xy": [
+        2942.5,
+        4332.5
+      ],
+      "roles": [
+        "stair-post",
+        "stair-header"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P46",
+      "xy": [
+        2942.5,
+        7257.5
+      ],
+      "roles": [
+        "stair-post"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P47",
+      "xy": [
+        2942.5,
+        8852.5
+      ],
+      "roles": [
+        "stair-post",
+        "rear-W",
+        "wet"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P48",
+      "xy": [
+        4800,
+        1200
+      ],
+      "roles": [
+        "study-east"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P49",
+      "xy": [
+        4800,
+        2650
+      ],
+      "roles": [
+        "study-east",
+        "study-north"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P50",
+      "xy": [
+        3400,
+        1200
+      ],
+      "roles": [
+        "cloak-west"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P51",
+      "xy": [
+        3400,
+        2650
+      ],
+      "roles": [
+        "cloak-west",
+        "study-north"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    },
+    {
+      "id": "P52",
+      "xy": [
+        7200,
+        2650
+      ],
+      "roles": [
+        "wc-west",
+        "wc-north"
+      ],
+      "capXY": [
+        600,
+        600
+      ],
+      "capZ": [
+        -750,
+        -180
+      ],
+      "shaftDiameter": 400,
+      "siteResistance": null
+    }
+  ],
+  "headCount": 52,
+  "tightestHeadPairs": [
+    [
+      550.0,
+      "P28",
+      "P34"
+    ],
+    [
+      570.087712549569,
+      "P30",
+      "P37"
+    ],
+    [
+      735.718186536122,
+      "P35",
+      "P40"
+    ],
+    [
+      860.0,
+      "P01",
+      "P02"
+    ],
+    [
+      860.0,
+      "P01",
+      "P03"
+    ],
+    [
+      860.0,
+      "P04",
+      "P05"
+    ],
+    [
+      860.0,
+      "P04",
+      "P06"
+    ],
+    [
+      860.0,
+      "P07",
+      "P08"
+    ]
+  ],
+  "minimumClearBetween400Heads": 150.0,
+  "comparison": "One reworked continuous grid; original 58 historical records and twelve corner points are not additive. Ordinary 400 diameter heads are not admitted tension bearings. All cuts, if pursued, need common grid exposure control, every actual shaft and a separate vertical/lateral force card.",
+  "seat": {
+    "source": {
+      "plan": [
+        5050,
+        4060,
+        1900,
+        400
+      ],
+      "rcZ": [
+        -380,
+        -180
+      ],
+      "mineralBearingBottomZ": -180,
+      "mineralBearingTop": "Follows pan underside: wet-floor level minus1.5; no timber or insulation carries the sill.",
+      "role": "Local RC200 support reservation continuous with the actual ground slab and court-south support. Actual bearings/cage/thermal/capillary/sliding capacity remain STR/MAT."
+    },
+    "commonBeam": "court-S",
+    "beamFacesY": [
+      3650,
+      4250
+    ],
+    "transitionY": [
+      3987.5,
+      4060
+    ],
+    "projection": 210.0,
+    "cantileverULSkNmPerM": 1.79825625,
+    "topH12at150Resistance": 45.7306617574723,
+    "detail": "RC200 integral to 600wide court beam; H12/150 top normal to edge, continuous at least650mm south past support face into slab. Local pads/bearing and concentrated heel remain distinct from distributed strip budget. No new wall, pile or capillary cut."
+  }
+}
