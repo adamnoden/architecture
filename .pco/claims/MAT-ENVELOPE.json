@@ -9,9 +9,9 @@
     "label": "zerg-20261106-w5"
   },
   "claimedAt": "2026-11-06T07:36:49.474Z",
-  "heartbeatAt": "2026-11-06T07:36:49.474Z",
-  "expiresAt": "2026-11-06T08:21:49.474Z",
-  "branch": "work/zerg-20261106-w5",
+  "heartbeatAt": "2026-11-06T07:44:08.461Z",
+  "expiresAt": "2026-11-06T08:29:08.461Z",
+  "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "767feb82-bf3e-4f16-9e2a-3d97d0081350",
     "generation": 25,
@@ -33,5 +33,11 @@
       "next": "Canonical HANDOFF release now for execution limit. W2 owns final draft1329 WIP publication. Recover five MAT files from owned handoff ref; integrate actual newer outerSupportReservation/whole park, then regenerate and validate. Shared branch was not moved by MAT holder.",
       "blocker": "1329 must remain unselected/unmerged. Newer HAD numeric freeze not yet consumed by this MAT snapshot. Retained outer support/full hoist, walking retreat headroom, gate/activation/first-harm/material/physical acceptance remain explicit pending joins."
     }
+  },
+  "pr": 1332,
+  "checkpoint": {
+    "evidence": "Fresh shared recovery draft1332 head4ab18b32aa109dad877de1dc415baf785cc8263d preserves priorbc123147 and main e128. Geometry remains unselected; new Services occurrence source binding is explicit. MAT26 owns actual first-release/cover/outer-support mechanism, not inherited25 acceptance.",
+    "next": "Replace failed below-beam walking/hinge sequence with actual above-floor end-operated renewal; prove whole person, tool, cover, keeper and module motion before source adoption. Coordinate MAT-only patch with HAD owner on shared1332.",
+    "blocker": "Current retained−900 deck has270 headroom and hinged-cover collision beneath−630 outer support. Actual simple replacement mechanism and material/first-wet interfaces are being developed; no capacity/physical/adoption claim."
   }
 }
