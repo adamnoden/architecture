@@ -522,7 +522,7 @@ rewinds={'familyWetRoom':{'status':'Shared MAT/IAS/HAD trial only; no selected p
  'valveBay':[10700,700,250,700],'electricalStation':[9397,1750,300,650],
  'electricalWorkingField':[9697,1750,1000,650],'PVinverter':[9400,429.5,500,250],
  'PVworkingField':[9400,679.5,600,1000],
- 'working':'Washer/sink front at1400, floor task field to2000. Washer valve10800/1250 is450 from front bodycentre10800/1700, not inaccessible behind appliance. Utility door must be checked in actual open/closed modes; no sink-use pass under an untested inward900leaf. Cu/inverter work fields do not intersect proposed fixed appliance bodies.'}}
+ 'working':'Washer/sink front at1400, floor task field to2000. Authored valve10800/1250 is450mm in plan from worker10800/1700; washer front centre10375/1400 is a different datum. Actual native hose/isolator/support and first release remain unqualified. Utility north boundary is OPENARCH10250..11150 atY2550 in the shared excluded service zone; the protected Plant door remains. A future closed utility leaf is a counterfactual requiring the three-door ventilation check/replan, not the current arrangement. Cu/inverter work fields do not intersect proposed fixed appliance bodies.'}}
 for work in ['electricalWorkingField','PVworkingField']:
  for fixed in ['washer','sink']:assert not overlap(rewinds['utility'][work],rewinds['utility'][fixed])
 rewinds['rearSource27']={'groundStackCabinet':[429.5,10800,300,750],'upperCabinet':[429.5,10800,300,750],'lowBox':[429.5,9937.5,150,862.5],'panBack':729.5,'retainedFloorPort':[567.5,11177.5,160],'portEdgeReserves':[58,82],'requiredBackProjection':162,'status':'Explicit12east finish correction from417.5 to429.5; floorport unchanged. Old merged pan withdrawal witness must be repeated against shifted cabinet/pan; no automatic pass.'}
@@ -804,7 +804,7 @@ assert 2707.5-50-25-25-20==bath_drop['lower']['finishedPanelUnderside']
 # continuous diagonal replacement checks are reproduced separately.
 east_path=ROOT/'project/mat/studies/east-water-plant.json'
 east_raw=east_path.read_bytes()
-assert hashlib.sha1(b'blob '+str(len(east_raw)).encode()+b'\0'+east_raw).hexdigest()=='83acf8afddbf9aed510697820fb11cbeb11a1c25'
+assert hashlib.sha1(b'blob '+str(len(east_raw)).encode()+b'\0'+east_raw).hexdigest()=='a79242dbe0118d393d906a7d01df9061fb2cdb5b'
 east_join=json.loads(east_raw)
 assert east_join['immutableStartingMain']=='c1986524454a0a9f518c45184e1d8808e9eebb1e'
 # The north weather return is real finished fabric. The old200 hole at5700
