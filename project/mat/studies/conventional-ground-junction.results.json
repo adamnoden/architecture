@@ -1,0 +1,293 @@
+{
+  "status": "Unselected ordinary mineral wall / suspended concrete comparison. Complete material, air, moisture, structural, thermal and site admission remain open.",
+  "sources": {
+    "HAD": {
+      "commit": "c2d5c3805cfa70739130d1cf4a593c8f17a9c414",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
+      "role": "Immutable corrected integral-pan / selected floor checkpoint; later water proposals are not silently imported"
+    },
+    "STRfloor": {
+      "commit": "5f56d58f5c2d4b7d65b712be10c39d274884b154",
+      "path": "project/str/studies/current-house-occupied-interfaces.json",
+      "blob": "c4b2261a7c62481b64617cca57b6b2baabec330e",
+      "key": "groundFloor",
+      "role": "Immutable unadopted STR1354 ground-floor structural/pour comparison. Not a selected cage, moisture/air/gas proof or concrete constituent recipe."
+    },
+    "STRgrid": {
+      "commit": "8c2159a8cb67782cfc854fcf230025f04f1b81af",
+      "path": "project/str/studies/current-house-grid.json",
+      "blob": "1409f0b80739e2dc46ff078e31df6685f12b7371",
+      "role": "Merged structural development candidate, not selected capacity or geometry; actual spine at the chosen section is 900 mm wide and -630..-180"
+    }
+  },
+  "section": {
+    "wall": {
+      "id": "service-spine",
+      "a": [
+        9300,
+        0
+      ],
+      "b": [
+        9300,
+        8290
+      ],
+      "t": 194,
+      "holes": [
+        [
+          2750,
+          3650
+        ]
+      ],
+      "structuralCore": [
+        9230,
+        9370
+      ],
+      "finishedFaces": [
+        9203,
+        9397
+      ],
+      "faceFinish": [
+        27,
+        27
+      ]
+    },
+    "y": 4500,
+    "floor": {
+      "layers": [
+        15,
+        65,
+        100,
+        200
+      ],
+      "z": [
+        0,
+        -15,
+        -80,
+        -180,
+        -380
+      ],
+      "innerDpc": [
+        -180,
+        -30
+      ],
+      "plasterStops": 0,
+      "airLine": "Wallmineralplaster meets floorfinish at0; movement/airtightness unqualified",
+      "moisture": "40cover suspendedRC is a deliberate moisture hypothesis. NoDPM or site-required gas barrier is waived; exact floor/end/DPC transition not qualified."
+    },
+    "candidateDpcFaces": [
+      9192.5,
+      9407.5
+    ],
+    "candidateDpcCourses": [
+      {
+        "id": "bed-1",
+        "z": [
+          -180,
+          -170
+        ]
+      },
+      {
+        "id": "course-1",
+        "z": [
+          -170,
+          -105
+        ]
+      },
+      {
+        "id": "bed-2",
+        "z": [
+          -105,
+          -95
+        ]
+      },
+      {
+        "id": "course-2",
+        "z": [
+          -95,
+          -30
+        ]
+      }
+    ],
+    "underlyingSpine": {
+      "axis": "y",
+      "datum": 9300,
+      "extent": [
+        332.5,
+        8290
+      ],
+      "width": 900,
+      "z": [
+        -630,
+        -180
+      ],
+      "heads": [
+        {
+          "id": "P23",
+          "u": 332.5,
+          "offset": 0
+        },
+        {
+          "id": "P41",
+          "u": 2650,
+          "offset": 0
+        },
+        {
+          "id": "P42",
+          "u": 4100,
+          "offset": 0
+        },
+        {
+          "id": "P43",
+          "u": 6100,
+          "offset": 0
+        },
+        {
+          "id": "P44",
+          "u": 7700,
+          "offset": 0
+        }
+      ],
+      "maximumPitch": 2317.5,
+      "endCantilevers": [
+        0,
+        590
+      ]
+    },
+    "supportRole": "900 mm common RC spine is integral beneath this section; do not draw a freestanding RC200 coupon here",
+    "headerProjectionFromCoreEach_mm": 37.5,
+    "headerProjectionBeyondFinishedFaceEach_mm": [
+      10.5,
+      10.5
+    ],
+    "unplasteredWallCoreAboveDpc_mm": 30,
+    "concreteToPlasterOffset_mm": 180,
+    "belowFflFaceTerritory": {
+      "normalDepthEach_mm": [
+        27,
+        27
+      ],
+      "z": [
+        -30,
+        0
+      ],
+      "status": "Unassigned 3D finish/base territory. No solid plaster, open void or selected glass filler is inferred from a finished-plan mask."
+    }
+  },
+  "airRouteControl": {
+    "name": "Concrete body -> complete bottom bed -> bonded DPC body/perpends/upper bed -> wall core below plaster stop -> plaster",
+    "selected": false,
+    "rules": [
+      "First compare the actual bonded mineral assembly as a complete air transition; neither brick absorption nor mortar designation demonstrates its leakage",
+      "Include the 30 mm wall-core height above DPC and below plaster stop; do not jump from DPC top -30 to plaster at0",
+      "Do not plaster continuously down to wet RC and around the DPC; do not close an air drawing by creating a damp bypass",
+      "Concrete moisture resistance, air permeability, crack/joint leakage and gas suitability remain separate duties",
+      "Do not assume a new metal return is needed or qualified; if used it needs actual cast-in depth, cage/compaction, weld, movement and plaster-interface evidence"
+    ]
+  },
+  "plasterBypassNegativeControl": {
+    "continuousPlasterDownToRC": [
+      -180,
+      150
+    ],
+    "overlapsWholeDpc": true,
+    "status": "Reject an ordinary capillary finish bridging this territory; this is a contact test, not a moisture transport result"
+  },
+  "structuralFloorInputBound": true,
+  "structuralFloorComparison": {
+    "sourceRole": "Immutable unadopted STR1354 ground-floor structural/pour comparison. Not a selected cage, moisture/air/gas proof or concrete constituent recipe.",
+    "matchedInputSha256": {
+      "HAD": "1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb",
+      "STRgrid": "870c915cd8d5c9c9a7dd3f28cf7ea4f260132fc73be709329db986cea0cbae2d"
+    },
+    "physicalRcPlan_m2": 104.895225,
+    "physicalAreaParts_m2": {
+      "direct": 53.862194,
+      "simple": 50.634031,
+      "cant": 0.399
+    },
+    "maximumClearSpan_mm": 2967.5,
+    "effectiveSpanCompared_mm": 3167.5,
+    "depthRange_mm": [
+      195,
+      205
+    ],
+    "faceCoverRange_mm": [
+      40,
+      50
+    ],
+    "preferredField": {
+      "effectiveDepth": 127.0,
+      "MR": 55.337752,
+      "Vr": 91.118158,
+      "M": 16.672118,
+      "V": 21.053977,
+      "steelStressFullService": 100.687803,
+      "flexCrackSpacing": 290.169181,
+      "pureRestraintCrackSpacing": 369.538363,
+      "crackWidthFlexOnly": 0.146082,
+      "crackWidthFullRestraint": 0.293898,
+      "deflection": 10.18456,
+      "comparatorL250": 12.67,
+      "coverToControllingDirectionCompared": 62,
+      "bar": 12,
+      "pitch": 100,
+      "steelKgM2": 35.512563,
+      "actualFreeVerticalClear": 47
+    },
+    "steelTonnesBeforeLapsEdges": 3.725098,
+    "H12at150ControlSteelTonnes": 2.483399,
+    "localStripEconomy": {
+      "base": "H12/150 each face/two axes; add offset H12/150 each face only in the actual span direction at governing >0.30mm regions, resulting local75 rather than pretending to make 100 from 150. Includes650 beyond both receiving faces and 150 side extension clipped to real slab; boundary bars still require hook/anchorage. Plant point, lap extensions, threshold and re-entrant edge extras not included in this quantity.",
+      "actualDirectionAreasEWNS": [
+        14.3722,
+        30.039756
+      ],
+      "tonnesBeforeLapsExtras": 3.009126,
+      "decision": "Simpler uniform100 is the bounded reproducible control. Compare this lower-mass reinforcement layout for actual cover/joint/scheduling rather than declaring dense steel a whole-house invariant."
+    },
+    "crackMethod": "JRC Eurocode 2 worked examples, 2014, 7.3.4 form sr=3.4c+0.8*k2*0.425*bar/rhoeff. Deliberately neglect favourable tension-stiffening, full G+Q elastic cracked stress plus a separate 400microstrain upper restraint comparison using pure-tension k2=1.0. The 0.30mm is an authored structural comparison only, not acceptable gas transmission, liquid permeability or proof of lifetime crack width. Full restraint, unmodeled settlement and thermal exposure remain bounded hypotheses. https://eurocodes.jrc.ec.europa.eu/publications/eurocode-2-background-appications-design-concrete-buildings-worked-examples",
+    "wkIf500Microstrain_mm": 0.330852,
+    "pour": "Preferred finite construction control: form a continuous upper200mm dry-floor lift (20.98m3 nominal), including the head/beam overlap once and the formed threshold seat. No planned full-depth intermediate joint in occupied field; if the lower grillage is cast first, structural horizontal construction interface is at underside -380 with prepared rough concrete and continuing reinforcement. Starter/interlock, real pour length, temperature/early-age restraint, interruption detail and any service penetrations still need coordinated design. Do not declare the construction joint airtight.",
+    "materials": "C30/S500 only structural comparison. Composite RC density at or below25kN/m3 including the actual bars must be delivered for this load bound. Cement dose, constituent mix, permeability, curing, floor surface/air-wall seal and actual site/water exposure remain the material/source owners’ duties. 300kg/m3 or 40mm exposure hypothesis alone gives no admission.",
+    "nominalUpperLiftVolume_m3": 20.979045,
+    "cementMassAtGuidanceMinimumOnly_kg": 6293.7135,
+    "guidanceDimensionalScreens": {
+      "thickness": true,
+      "cover": true
+    },
+    "scope": "Only candidate thickness/cover comparisons. Actual mix, curing, crack/joint moisture/air/gas performance, floor/wall and renewable threshold construction remain unearned."
+  },
+  "moistureControl": {
+    "source": "https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf",
+    "edition": "England AD C 2004 with2010/2013 amendments, sections4.17–4.22 and5.5; accessed6November2026",
+    "inSituControl": {
+      "thicknessMinimum_mm": 100,
+      "cementMinimum_kg_per_m3": 300,
+      "coverMinimum_mm": 40
+    },
+    "actualMix": null,
+    "actualAirMoisturePerformance": null,
+    "actualSiteGasAndPressureWater": null,
+    "rule": "Guidance control, not adoption of a concrete recipe or automatic membrane waiver; preserve the common ground/pile/grid/seat sources and assigned drainage/ventilation duties"
+  },
+  "airEvidence": {
+    "source": "https://passipedia.org/planning/airtight_construction/general_principles/principles_for_improving_airtightness",
+    "role": "PHI method guidance, accessed6November2026: identify actual air layers and continuous joined ends. Do not assume a masonry wall supplies its intended plaster air layer. No house target or assembly acceptance transferred.",
+    "bondedMasonryResearch": {
+      "source": "https://store.astm.org/stp157720130132.html",
+      "citation": "Sanders, Stroble and Clark, Air Permeability of Masonry Materials, 30 September 2014, DOI10.1520/STP157720130132",
+      "access": "Public publisher abstract inspected6November2026; complete paid paper not inspected",
+      "role": "Four clay-brick/mortar panel groups had low measured air permeance. Relevant against blanket rejection of an unplastered bonded masonry control, not evidence for WCBL65/M12, this DPC/floor joint, movement, moisture, gas or site performance. No measured value is transferred to the house."
+    },
+    "servicesTarget": "Unselected; Services confirms neither whole-house airtightness target nor junction leakage allocation exists. No0.6ACH or3m3/(h.m2) inherited."
+  },
+  "admission": {
+    "selected": false,
+    "material": false,
+    "structural": false,
+    "airMoisture": false,
+    "thermal": false,
+    "site": false
+  }
+}

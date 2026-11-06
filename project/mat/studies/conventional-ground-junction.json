@@ -1,0 +1,63 @@
+{
+  "status": "Unselected ordinary mineral wall / suspended concrete comparison. Complete material, air, moisture, structural, thermal and site admission remain open.",
+  "HAD": {
+    "commit": "c2d5c3805cfa70739130d1cf4a593c8f17a9c414",
+    "path": "project/had/studies/water-replan.json",
+    "blob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
+    "role": "Immutable corrected integral-pan / selected floor checkpoint; later water proposals are not silently imported"
+  },
+  "STRfloor": {
+    "commit": "5f56d58f5c2d4b7d65b712be10c39d274884b154",
+    "path": "project/str/studies/current-house-occupied-interfaces.json",
+    "blob": "c4b2261a7c62481b64617cca57b6b2baabec330e",
+    "key": "groundFloor",
+    "role": "Immutable unadopted STR1354 ground-floor structural/pour comparison. Not a selected cage, moisture/air/gas proof or concrete constituent recipe."
+  },
+  "STRgrid": {
+    "commit": "8c2159a8cb67782cfc854fcf230025f04f1b81af",
+    "path": "project/str/studies/current-house-grid.json",
+    "blob": "1409f0b80739e2dc46ff078e31df6685f12b7371",
+    "role": "Merged structural development candidate, not selected capacity or geometry; actual spine at the chosen section is 900 mm wide and -630..-180"
+  },
+  "section": {"wall": "service-spine", "atY": 4500, "drawingHalfWidth": 650},
+  "bondedMineralBase": {
+    "headerWidth": 215,
+    "fromZ": -180,
+    "beds": [10, 10],
+    "courses": [65, 65],
+    "unitReference": "Ketley WCBL65 candidate only; 102/102.5 longitudinal identity remains unresolved, and exact mortar retained constituents/bond/exposure are unqualified",
+    "role": "Full wall-width capillary control. Not an impermeable air/gas sheet and not proof of joint performance. Existing top bed belongs to the wall above."
+  },
+  "airRouteControl": {
+    "name": "Concrete body -> complete bottom bed -> bonded DPC body/perpends/upper bed -> wall core below plaster stop -> plaster",
+    "selected": false,
+    "rules": [
+      "First compare the actual bonded mineral assembly as a complete air transition; neither brick absorption nor mortar designation demonstrates its leakage",
+      "Include the 30 mm wall-core height above DPC and below plaster stop; do not jump from DPC top -30 to plaster at0",
+      "Do not plaster continuously down to wet RC and around the DPC; do not close an air drawing by creating a damp bypass",
+      "Concrete moisture resistance, air permeability, crack/joint leakage and gas suitability remain separate duties",
+      "Do not assume a new metal return is needed or qualified; if used it needs actual cast-in depth, cage/compaction, weld, movement and plaster-interface evidence"
+    ]
+  },
+  "moistureControl": {
+    "source": "https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf",
+    "edition": "England AD C 2004 with2010/2013 amendments, sections4.17–4.22 and5.5; accessed6November2026",
+    "inSituControl": {"thicknessMinimum_mm": 100, "cementMinimum_kg_per_m3": 300, "coverMinimum_mm": 40},
+    "actualMix": null,
+    "actualAirMoisturePerformance": null,
+    "actualSiteGasAndPressureWater": null,
+    "rule": "Guidance control, not adoption of a concrete recipe or automatic membrane waiver; preserve the common ground/pile/grid/seat sources and assigned drainage/ventilation duties"
+  },
+  "airEvidence": {
+    "source": "https://passipedia.org/planning/airtight_construction/general_principles/principles_for_improving_airtightness",
+    "role": "PHI method guidance, accessed6November2026: identify actual air layers and continuous joined ends. Do not assume a masonry wall supplies its intended plaster air layer. No house target or assembly acceptance transferred.",
+    "bondedMasonryResearch": {
+      "source": "https://store.astm.org/stp157720130132.html",
+      "citation": "Sanders, Stroble and Clark, Air Permeability of Masonry Materials, 30 September 2014, DOI10.1520/STP157720130132",
+      "access": "Public publisher abstract inspected6November2026; complete paid paper not inspected",
+      "role": "Four clay-brick/mortar panel groups had low measured air permeance. Relevant against blanket rejection of an unplastered bonded masonry control, not evidence for WCBL65/M12, this DPC/floor joint, movement, moisture, gas or site performance. No measured value is transferred to the house."
+    },
+    "servicesTarget": "Unselected; Services confirms neither whole-house airtightness target nor junction leakage allocation exists. No0.6ACH or3m3/(h.m2) inherited."
+  },
+  "admission": {"selected": false, "material": false, "structural": false, "airMoisture": false, "thermal": false, "site": false}
+}
