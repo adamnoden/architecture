@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w2"
   },
   "claimedAt": "2026-11-06T07:38:16.280Z",
-  "heartbeatAt": "2026-11-06T10:10:08.863Z",
-  "expiresAt": "2026-11-06T10:55:08.863Z",
+  "heartbeatAt": "2026-11-06T10:56:13.618Z",
+  "expiresAt": "2026-11-06T11:41:13.618Z",
   "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "665c809b-2f61-44bd-8274-60a3eb7f0f12",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published f49e3740/tree20b87c92 actualpreferred two-piece, D1800 Services, threshold/garden/window; all13HAD and6MATproducers pass. Latestlocal narrows actual platformclearface and preserves specific copper-seal nonqualification.",
-    "next": "Finish source-exact architectural selection and links after joined review; exact-head fullCI and fresh liveowner preflights.",
-    "blocker": "No acquisition block; physical seal/hydraulics/material/structural/site acceptance remain downstream, no construction admission."
+    "evidence": "Remote3a0 plus local680b8 full height north containment; remaining maintenance rain geometry coordinated and pending composition.",
+    "next": "Compose both maintenance rain controls; publish combined bounded architectural reference and review.",
+    "blocker": "No selection until both rain controls and source coherence pass."
   },
   "pr": 1332
 }
