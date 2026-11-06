@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-06T22:03:13.141Z",
-  "expiresAt": "2026-11-06T23:33:13.141Z",
+  "heartbeatAt": "2026-11-06T22:25:23.970Z",
+  "expiresAt": "2026-11-06T23:55:23.970Z",
   "branch": "work/zerg-20261106-rwt06-native-release",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -34,9 +34,9 @@
       "blocker": "Coordinator execution limit; stop new design. RWT06 incomplete, no hydraulic/physical/site admission. Preserve draft and branch; canonical HANDOFF release immediately after this checkpoint."
     }
   },
-  "pr": 1344,
+  "pr": 1359,
   "checkpoint": {
-    "evidence": "MERGED milestone1344 main2a31084013cebca2094692263f0c7a2b2f8d2166 from validatedc6dfc2d2/tree3ee84c55; exactCI42300389683 SUCCESS/root signoff/freshpreflight; prior1344 source branch deletion verified; owningHAD6f089df1 and interface847eecc7 integrated",
-    "next": "Fresh successor native-release branch starts exactmergedmain;1344 is merged provenance only, new draft pending first concrete source candidate. Continue ONE conventional closed-E native first-release/support/service-access design; preserve flange/raisedroute/bay structural failures and physical/site holds"
+    "evidence": "Draft1359 head0c123ea13d35c12795efbb71db3ad5e6571b8cfc preserves merged1344; open platform/native-release reference;159RWTtests and renderedSVG; no adoption",
+    "next": "Complete native bolt counterhold and actual captured support/crew/platform/catch joins; reconcile currentmain before finalCI; root review/preflight before merge"
   }
 }
