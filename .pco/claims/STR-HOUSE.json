@@ -9,9 +9,9 @@
     "label": "zerg-str-1917"
   },
   "claimedAt": "2026-11-06T19:17:42.359Z",
-  "heartbeatAt": "2026-11-06T20:57:54.208Z",
-  "expiresAt": "2026-11-06T22:27:54.208Z",
-  "branch": "work/zerg-20261106-str-interfaces2",
+  "heartbeatAt": "2026-11-06T21:25:46.748Z",
+  "expiresAt": "2026-11-06T22:55:46.748Z",
+  "branch": "work/zerg-20261106-str-frame3",
   "predecessor": {
     "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
     "generation": 26,
@@ -34,9 +34,9 @@
       "blocker": "Coordinatoractualexecutionlimit; sourcefullydurable; STR-HOUSE remainsopen. No externaladmission/completionclaimed."
     }
   },
-  "pr": 1354,
+  "pr": 1357,
   "checkpoint": {
-    "evidence": "PR1343 merged at 8c2159a8; separate draft1354 marker97060126, no source yet",
-    "next": "Reproduce three actual structural interfaces on independent water-court house: bridge top recess, rear wet-floor aperture and ground RC200 slab. Then join shifted roof to all eight corner restraints and 52 actual heads."
+    "evidence": "Merged1343 and1354; verified1354merge4fef04ad and new metadata-only successor1357",
+    "next": "Join actual roof bracing, floor reactions, four court and four outer ground restraints to all52 heads; price 140RC staff-only lower bay separately from moving rails."
   }
 }
