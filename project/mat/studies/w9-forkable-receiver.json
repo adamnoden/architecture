@@ -56,6 +56,17 @@
     }
   ],
   "sourceExtractSHA256": "098c97a33b73e5761da512eeb32a153c804ef9b424e7fb8f10e58cac0155dbe7",
+  "currentHADReview": {
+    "path": "project/had/studies/water-replan.json",
+    "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "unchangedGeometricDomains": [
+      "plantReferenceDoor",
+      "sections",
+      "servicesInterface.plant",
+      "gardenFailureBypass.frontApproach"
+    ],
+    "role": "Retain the immutable2eb8 geometric case and prove the actual current consumed domains equal. Utility working-prose/source-identity correction changes no geometry or numerical duty."
+  },
   "decision": "Develop one forkable raised metal receiver which stays with native base during cart handover. Delete a separate stool and avoid trying to pull forks out of a flat plate sitting directly on a solid cart deck. This is a constructive reference design with explicit missing admission evidence, not a handling pass.",
   "receiver": {
     "authored": {
@@ -269,7 +280,7 @@
     "portsCondensateAndHeadProved": false,
     "cartOrExteriorHandlingAdmitted": false,
     "materialException": false,
-    "HADorServicesChanged": false,
+    "HADorServicesGeometryChanged": false,
     "packetComplete": false
   }
 }

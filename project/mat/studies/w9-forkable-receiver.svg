@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1120" viewBox="0 0 1200 1120">
 <rect width="1200" height="1120" fill="#f4f1e9"/>
-<text x="35" y="43" font-size="29" fill="#21363b" font-family="Arial,sans-serif">A raised receiver that can actually release the forks</text>
+<text x="35" y="43" font-size="29" fill="#21363b" font-family="Arial,sans-serif">A raised receiver with a retained fork-release lane</text>
 <text x="35" y="74" font-size="19" fill="#21363b" font-family="Arial,sans-serif">Authored reference design — native CG/support and complete transfer remain OPEN</text>
 <text x="35" y="117" font-size="22" fill="#21363b" font-family="Arial,sans-serif">Front section: a retained fork lane, not a flat lifting plate</text>
 <rect x="40" y="208.18" width="573.42" height="3.42" fill="#7e969c" stroke="#21363b"/>

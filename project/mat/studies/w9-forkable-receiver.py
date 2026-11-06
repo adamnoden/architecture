@@ -19,6 +19,13 @@ def produce():
     raw=BASE.with_name(BASE.name+'-sources').with_suffix('.json').read_bytes();c=json.loads(raw)
     m=immutable(c['sources']['HAD'])['model'];arch=immutable(c['sources']['balancedArchitecture'])
     folded=immutable(c['sources']['foldedRenewal']);a=c['authoredReceiver'];n=c['nativeNumbers']
+    current_raw=(ROOT/'project/had/studies/water-replan.json').read_bytes();current=json.loads(current_raw)['model']
+    # Current utility working-prose/source-identity correction does not silently
+    # widen this immutable geometric case. Check every actual domain used here.
+    for key in ['plantReferenceDoor','sections']:
+      assert current[key]==m[key],f'Current HAD {key} changed: replan receiver'
+    assert current['servicesInterface']['plant']==m['servicesInterface']['plant']
+    assert current['gardenFailureBypass']['frontApproach']==m['gardenFailureBypass']['frontApproach']
     w,d=a['outside_mm'];plate=a['topPlateThickness_mm'];lane=a['nominalForkLaneUnderside_mm']
     rail_h,rail_w,_=a['bottomRailRHS_mm'];beam_h,beam_b,_=a['crossbeamRHS_mm']
     assert lane==rail_h+a['postLength_mm']
@@ -89,6 +96,9 @@ def produce():
       {'state':'Cart route and reverse','duty':'Actual cart restraint/wheel polygon, protected head/closer, all folded flights/turns and positive capture remain required. Incoming installation repeats the supported sequence in reverse; no unattended raised load.'}]
     return {'status':c['status'],'sources':c['sources'],'nativeEvidence':c['nativeEvidence'],
       'sourceExtractSHA256':hashlib.sha256(raw).hexdigest(),
+      'currentHADReview':{'path':'project/had/studies/water-replan.json','blob':hashlib.sha1(b'blob '+str(len(current_raw)).encode()+b'\0'+current_raw).hexdigest(),
+        'unchangedGeometricDomains':['plantReferenceDoor','sections','servicesInterface.plant','gardenFailureBypass.frontApproach'],
+        'role':'Retain the immutable2eb8 geometric case and prove the actual current consumed domains equal. Utility working-prose/source-identity correction changes no geometry or numerical duty.'},
       'decision':'Develop one forkable raised metal receiver which stays with native base during cart handover. Delete a separate stool and avoid trying to pull forks out of a flat plate sitting directly on a solid cart deck. This is a constructive reference design with explicit missing admission evidence, not a handling pass.',
       'receiver':{'authored':a,'height_mm':height,'coarseIdealMemberMass_kg':mass,
         'coarseTotal_kg':fixture,'unpricedResidues':'Weld metal, actual radiused sections, capture/dock parts, fixings and any surface treatment are additional. Native feet/seals/electronics/filter residues remain unapproved; no blanket metal or material exception.',
@@ -127,7 +137,7 @@ def produce():
         'annualDuty':'Actual underside cover opening plus setter/float withdrawal and movement check, and complete supported pipe first release. Raising alone is not a clear access path or qualified metal/seal assembly.'},
       'sequence':sequence,'systemDuties':c['systemDuties'],
       'admission':{'nativeBearingAndCGVerified':False,'frameAndFloorAdmitted':False,'completeToolCartOperatorGeometryProved':False,
-        'portsCondensateAndHeadProved':False,'cartOrExteriorHandlingAdmitted':False,'materialException':False,'HADorServicesChanged':False,'packetComplete':False}}
+        'portsCondensateAndHeadProved':False,'cartOrExteriorHandlingAdmitted':False,'materialException':False,'HADorServicesGeometryChanged':False,'packetComplete':False}}
 
 def figure(r):
     out=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1120" viewBox="0 0 1200 1120">','<rect width="1200" height="1120" fill="#f4f1e9"/>']
@@ -135,7 +145,7 @@ def figure(r):
       out.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-family="Arial,sans-serif">{html.escape(s)}</text>')
     def rect(x,y,w,h,fill='#b4cec4',stroke='#21363b'):
       out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}"/>')
-    text(35,43,'A raised receiver that can actually release the forks',29)
+    text(35,43,'A raised receiver with a retained fork-release lane',29)
     text(35,74,'Authored reference design — native CG/support and complete transfer remain OPEN',19)
     text(35,117,'Front section: a retained fork lane, not a flat lifting plate',22)
     scale=.57;ox=40;ground=337

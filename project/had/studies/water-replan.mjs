@@ -143,11 +143,11 @@ export function deriveWaterReplan({servicesText} = {}) {
   const canonicalServicesPath = 'project/mat/studies/whole-house-service-baseline.json';
   const canonicalBytes = Buffer.from(servicesText ?? readFileSync(new URL(canonicalServicesPath, root), 'utf8'));
   assert.equal(createHash('sha1').update(`blob ${canonicalBytes.length}\0`).update(canonicalBytes).digest('hex'),
-    '69c7b1b1e733b9ade2d8ae21c1552accf52a6261', 'Authenticate complete current Services source');
+    '049161ebac29b24e0acc7d8085302fca906fe9d2', 'Authenticate complete current Services source');
   const currentServices = JSON.parse(canonicalBytes);
   const services = currentServices.interfaces.architecturalServices;
   const servicesProjection = createHash('sha256').update(JSON.stringify(sorted(services))).digest('hex');
-  assert.equal(servicesProjection, 'a8193ca99f7167371a2716a4ea814c29c21d864fde861db5d345774e5b560fc9');
+  assert.equal(servicesProjection, '3854b83ddfe3b34cca23073af6aa3bb9897764d517440128988adf95b0138a7d');
   assert.deepEqual(s.eastWaterHypothesis.finishedPassageY, [6300, 7500]);
   assert.deepEqual(s.plantDryRoom, [9397, 3797, 2173.5, 1983.5]);
   const floorZ = x => -800 - (x - 7750) * 50 / 4250;

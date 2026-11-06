@@ -309,7 +309,7 @@
       600,
       1000
     ],
-    "working": "Washer/sink front at1400, floor task field to2000. Washer valve10800/1250 is450 from front bodycentre10800/1700, not inaccessible behind appliance. Utility door must be checked in actual open/closed modes; no sink-use pass under an untested inward900leaf. Cu/inverter work fields do not intersect proposed fixed appliance bodies."
+    "working": "Washer/sink front at1400, floor task field to2000. Authored valve10800/1250 is450mm in plan from worker10800/1700; washer front centre10375/1400 is a different datum. Actual native hose/isolator/support and first release remain unqualified. Utility north boundary is OPENARCH10250..11150 atY2550 in the shared excluded service zone; the protected Plant door remains. A future closed utility leaf is a counterfactual requiring the three-door ventilation check/replan, not the current arrangement. Cu/inverter work fields do not intersect proposed fixed appliance bodies."
   },
   "unchangedUpperRiser": {
     "gross": [
