@@ -24,6 +24,49 @@
     "componentMassSubtotalKg": 26.6,
     "fullTailClearSameLevelFloor": "137 + d + L, before placement clearance and actual socket stroke"
   },
+  "opening": {
+    "status": "Authored formed accessible-well candidate; no structural, contact, hand/tool or closure admission",
+    "box": [
+      1812.5,
+      9252.5,
+      400,
+      400
+    ],
+    "z": [
+      3170,
+      3370
+    ],
+    "tray": [
+      1802.5,
+      8952.5,
+      1000,
+      1000
+    ],
+    "drain": [
+      2012.5,
+      9452.5
+    ],
+    "currentPort": [
+      2122.5,
+      9452.5,
+      110
+    ],
+    "fieldId": "NW-W",
+    "fieldRectangle": [
+      332.5,
+      8852.5,
+      2902.5,
+      11667.5
+    ],
+    "eastToBeamFace": 590,
+    "southToSupportAxis": 400,
+    "currentPortRetained": false,
+    "noAfterthoughtDrilling": true
+  },
+  "relatedSources": {
+    "project/mat/studies/whole-house-service-baseline.json": "69c7b1b1e733b9ade2d8ae21c1552accf52a6261",
+    "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b"
+  },
   "nativeSources": {
     "b594": "https://shop.my-bette.com/out/media/B594.pdf",
     "b594Sha256": "c057d26962f2623f7aa6ef2e03ded404dbce3da24f3fddd5ef8370b51fdce0a5",
