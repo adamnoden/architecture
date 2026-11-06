@@ -59,7 +59,7 @@ def field_topology(m):
 
 def produce():
     c=json.loads((HERE/'current-ground-pier-boundary.json').read_text())
-    s=immutable(c['sources']['STR']);h=immutable(c['sources']['HAD']);ground=immutable(c['sources']['STRground'])
+    s=immutable(c['sources']['STR']);h=immutable(c['sources']['HAD']);ground=immutable(c['sources']['STRground']);grid=immutable(c['sources']['STRgrid'])
     floor=h['model']['northNormalRoute']['floorJoin']
     assert floor['layers']==c['selectedFloorGuard']['layers'] and floor['z']==c['selectedFloorGuard']['z']
     sp=s['capillarySplice'];p=c['plate'];assert sp['plateZ']==p['z'] and sp['plateThickness']==p['thickness']
@@ -104,6 +104,25 @@ def produce():
       'renewal':c['thresholdTransition']['renewal'],
       'sourceContact':'Permanent seat is explicitly continuous with actual ground slab/court-south support. Plan coverage is not force, thermal or dryness performance.',
       'unqualified':c['thresholdTransition']['unqualified']}
+    heads=grid['heads'];assert len(heads)==grid['headCount']
+    assert len({q['id'] for q in heads})==len(heads)==len({tuple(q['xy']) for q in heads})
+    assert all(q['shaftDiameter']==400 and q['capZ']==[-750,-180] for q in heads)
+    named={q['id'] for q in heads}
+    assert all(q['id'] in named for beam in grid['girders'].values() for q in beam['heads'])
+    corner=[q['id'] for q in heads if 'stability corner group' in q['roles']];assert len(corner)==12
+    cut_area=sum(math.pi*(q['shaftDiameter']/2000)**2 for q in heads)
+    mass_per_mm=cut_area/1000*density
+    source_cuts={
+      'status':c['lowerSourceCutComparison']['status'],'candidateHeads':len(heads),
+      'cornerGroupIncludedNotAdditional':corner,'shaftDiameter_mm':400,
+      'shaftCutPlaneArea_m2':cut_area,'shaftFootprintMetalMassPer1mm_kg':mass_per_mm,
+      'fieldAndReturnOnlyEqualMassThickness_mm':topology['flatAndEdgeQuantityScreen_kg']/mass_per_mm,
+      'fieldPlusUpperPlatesEqualMassThickness_mm':(topology['flatAndEdgeQuantityScreen_kg']+sum(areas)*.020*density)/mass_per_mm,
+      'headRegister':[{'id':q['id'],'xy':q['xy'],'capXY':q['capXY'],'capZ':q['capZ']} for q in heads],
+      'quantityMethod':c['lowerSourceCutComparison']['quantityMethod'],
+      'deleteUpperPlatesOnlyIf':c['lowerSourceCutComparison']['deleteUpperPlatesOnlyIf'],
+      'excluded':c['lowerSourceCutComparison']['excluded'],'signedPerHeadForceAdmission':False,
+      'bulkWaterEnclosureAdmission':False,'selected':False}
     t=c['thermalScreen'];a=sum(areas)
     rc_depth=(t['height']-t['metalDepth'])/1000
     resistance=rc_depth/t['lambdaRC']+t['metalDepth']/1000/t['lambdaMetal']
@@ -124,7 +143,7 @@ def produce():
         'boundary':t['method'],'actualSurfaceTemperature_C':None,'wholeHouseEnergyResult':None},
       'falsifiedCapillaryPath':c['preferredConditionalRoute']['falsifiedPath'],
       'moisturePaths':c['moisturePaths'],
-      'separateFieldChallenger':topology,'thresholdTransition':transition,
+      'separateFieldChallenger':topology,'thresholdTransition':transition,'lowerSourceCutComparison':source_cuts,
       'activeInternalHolds':['Upper-plate-only floor route withdrawn; resolve every ground-support capillary source or a real separate field boundary','STR opposed anchor/plate force path and local weld/cover schedule','Actual mineral-DPC/plate edge and keyed plaster/metal air termination with movement allowance','Concrete floor construction-joint/crack and repair design plus explicit whole-house leakage budget','Source-bound 3D thermal surface/condensation and actual whole-floor energy model','Full-pan support/seam/expansion/penetration design only if its conditional need is established'],
       'admission':c['admission']}
     # Finite source-derived plan and section; no hand-edited result graphics.
@@ -173,10 +192,21 @@ def produce():
     join_svg+=f'<path d="M{X(4030)} {Z(15)} H{X(4090)} V{Z(-45)} L{X(4450)} {Z(-55)}" fill="none" stroke="#4e6c9b" stroke-width="3"/>'
     join_svg+=f'<path d="M{X(4030)} 109 H{X(4400)} M{X(4380)} 101 L{X(4400)} 109 L{X(4380)} 117" fill="none" stroke="#4e6c9b" stroke-width="3"/>'
     join_svg+=f'<path d="M{X(field_y)} 302 V319 H{X(4030)} V302" fill="none" stroke="#bb6b2f" stroke-width="2"/>'
-    labels=[(70,95,'SOUTH / interior'),(700,95,'NORTH / court; pan withdraws NORTH500'),(70,160,'Retained ordinary15 /65 /100 /RC200'),(70,286,'Field at−80..−79 below distribution'),(260,344,f"{transition['horizontalJoinFromField_mm']:.1f} mm formed join territory"),(70,570,'Common court-S beam: Y3650..4250; top−180; historical450 depth'),(70,599,'Actual seat: Y4060..4460 /RC200; outer210 beyond beam is a real structural/thermal duty'),(70,640,'Blue: actual pan rearcrest+15, dryapron4030..4090 and wet floor4090..4450/−45..−55'),(70,668,'Dashed orange: proposed fixed transition, reversible dry-side clamp and ends remain unqualified'),(70,696,'No new bearing pad. Plan overlap does not prove the mineral support, RC cantilever, seal or dryness.'),(70,724,'Clamp/recess must retain15 crest, ordinary access and full north withdrawal. No permanent field-to-pan weld.')]
+    labels=[(70,95,'SOUTH / interior'),(700,95,'NORTH / court; pan withdraws NORTH 500 mm'),(70,160,'Retained ordinary 15 / 65 / 100 / RC 200 mm'),(70,286,'Field at−80..−79 below distribution'),(260,344,f"{transition['horizontalJoinFromField_mm']:.1f} mm formed join territory"),(70,570,'Common court-S beam: Y3650..4250; top−180; historical450 depth'),(70,599,'Actual seat: Y4060..4460 /RC200; outer210 beyond beam is a real structural/thermal duty'),(70,640,'Blue: actual pan rear crest +15, dry apron 4030..4090 and wet floor4090..4450/−45..−55'),(70,668,'Dashed orange: proposed fixed transition, reversible dry-side clamp and ends remain unqualified'),(70,696,'No new bearing pad. Plan overlap does not prove the mineral support, RC cantilever, seal or dryness.'),(70,724,'Clamp/recess must retain 15 mm crest, ordinary access and full north withdrawal. No permanent field-to-pan weld.')]
     for x,y,label in labels:join_svg+=f'<text x="{x}" y="{y}" font-size="17">{label}</text>'
     join_svg+='</g></svg>\n'
-    return {'current-ground-threshold-join.svg':join_svg,'current-ground-field-challenger.svg':plan,'current-ground-pier-boundary.results.json':json.dumps(result,indent=2)+'\n','current-ground-pier-boundary.svg':svg+'\n'}
+    cuts_svg='<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760"><rect width="1200" height="760" fill="#faf9f4"/><g font-family="sans-serif" fill="#20343c"><text x="35" y="33" font-size="25">Lower-source cuts — the actual proposed 52-head register</text><text x="35" y="60" font-size="15">STR 732901d spatial candidate only; no adopted shaft count, force card, cut elevation or all-grid dry enclosure.</text>'
+    for q in grid['girders'].values():
+      if q['axis']=='x':a=(q['extent'][0],q['datum']);b=(q['extent'][1],q['datum'])
+      else:a=(q['datum'],q['extent'][0]);b=(q['datum'],q['extent'][1])
+      cuts_svg+=f'<path d="M{xp(a[0])} {yp(a[1])} L{xp(b[0])} {yp(b[1])}" stroke="#c5ced0" stroke-width="{q["width"]*.044}"/>'
+    for q in heads:
+      color='#b55f32' if q['id'] in corner else '#326f87'
+      cuts_svg+=f'<circle cx="{xp(q["xy"][0])}" cy="{yp(q["xy"][1])}" r="{q["shaftDiameter"]*.022}" fill="{color}"/><text x="{xp(q["xy"][0])+10}" y="{yp(q["xy"][1])-5}" font-size="11">{q["id"]}</text>'
+    lines=['52 distinct proposed 400 mm shaft positions','12 corner-group shafts are INCLUDED',f'Shaft footprints: {cut_area:.5f} m² total',f'At 7900 kg/m³: {mass_per_mm:.3f} kg per 1 mm',f'880.33 kg field/returns equals {source_cuts["fieldAndReturnOnlyEqualMassThickness_mm"]:.2f} mm',f'With 164.57 kg upper plates: {source_cuts["fieldPlusUpperPlatesEqualMassThickness_mm"]:.2f} mm','These are equal-MASS arithmetic only.','No structural thickness is selected.','','52 force-transfer/inspection locations;','opposed anchorage, welds, enlargement,','bulk-water enclosure and costs excluded.','','Carry separate field as development reference;','retain lower cuts as a conditional challenger.','Neither route is admitted or complete.']
+    for i,line in enumerate(lines):cuts_svg+=f'<text x="640" y="{112+i*29}" font-size="17">{line}</text>'
+    cuts_svg+='<text x="35" y="686" font-size="16">Orange: stability corner group; blue: other shafts. Grey: proposed common-grid routes; not a moisture enclosure.</text><text x="35" y="718" font-size="16">Exact sources and exclusions in numeric result. No whole-house cost, thermal, gas, capillary or construction acceptance.</text></g></svg>\n'
+    return {'current-ground-source-cut-comparison.svg':cuts_svg,'current-ground-threshold-join.svg':join_svg,'current-ground-field-challenger.svg':plan,'current-ground-pier-boundary.results.json':json.dumps(result,indent=2)+'\n','current-ground-pier-boundary.svg':svg+'\n'}
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--check',action='store_true');args=ap.parse_args()

@@ -15,6 +15,11 @@
       "commit": "0a40215a8a562bc0d9e554edcf89778023598262",
       "path": "project/str/studies/open-loggia-support.json",
       "blob": "20dec4384d09a0d02075fdd34a247e775532763b"
+    },
+    "STRgrid": {
+      "commit": "732901d46c697f039f1bb55574d69b005a34ed64",
+      "path": "project/str/studies/current-house-grid.json",
+      "blob": "ce5905adafc8132182b7a4022e2476c78af0d978"
     }
   },
   "selectedFloorGuard": {
@@ -187,6 +192,18 @@
       "Matched non-plastic air/moisture joint with movement, preload, release and replacement evidence",
       "Exposed RC seat and complete outdoor contact/enclosure paths; no pan-failure or normally-wet assumption",
       "Actual warm RC cantilever reinforcement, bearing, thermal surface and capillary path remain STR/MAT duties"
+    ]
+  },
+  "lowerSourceCutComparison": {
+    "status": "Proposed spatial candidate only; no complete signed force card or common-grid bulk-water enclosure admission",
+    "shaftPlane": "Illustrative unperforated metal cut across each actual400mm shaft below common RC cap; exact elevation, enlargement, opposing anchors and splice are unselected",
+    "quantityMethod": "Actual shaft footprints give a lower geometric area and mass per1mm only. Actual structural plates may be larger/thicker and need52 distinct force-transfer/inspection locations. No20mm design is inherited from the upper Lpier.",
+    "deleteUpperPlatesOnlyIf": "Every actual ground source, bulk-water/exposure path and upper-pier capillary transfer is owned by the complete lower-cut construction. Current upper plates are not deleted by this quantity comparison.",
+    "excluded": [
+      "Anchors, welds, collars/returns, expanded bearing plates, caps, shims and corrosion treatment",
+      "All52 actual signed compression/uplift/moment/shear cards, installation and inspection",
+      "Complete common-grid bulk-water enclosure, independent wet deck/contact and failed-pan paths",
+      "Actual thermal surfaces, undercroft exposure, movement and whole-floor heat loss"
     ]
   }
 }
