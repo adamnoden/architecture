@@ -47,6 +47,28 @@
       "Do not combine masses or depths from a different model edition. Actual purchased E-Nr./FD and manual must match."
     ]
   },
+  "fixedTapComparator": {
+    "model": "Pegler 809B / 524009",
+    "url": "https://aalberts-ips.co.uk/products/item/524009/",
+    "pageSnapshotSHA256": "96d769785ec92265f7072b404ec9582dbbdddb303b0376c4e43e6bd0dfdab1b5",
+    "drawingURL": "https://aalberts.compano.com/Data/Environments/000001/Attachment/Bijlage/Images/PRD/ProductGroupDrawing/PY/809B_d.jpg",
+    "drawingSHA256": "16be2f20f46988e2aae3425907ed3a2378ca62cdc2882231691747a052c72a98",
+    "connection": "15 mm copper compression × G3/4 BSPP (ISO 228-1)",
+    "reportedOverall": [
+      60,
+      25,
+      40
+    ],
+    "massKg": 0.09,
+    "material": "CW617N brass, chromium plating, NBR spindle/sealing constituents; complete product/material admission unearned",
+    "nativeDrawing": {
+      "L2": 20,
+      "Z2": 12,
+      "grossDifference": 8
+    },
+    "status": "One actual fixed-end component checked because this method requires that connection. Not a fitted or selected tap.",
+    "hold": "Nominal threaded interface corresponds, but actual 17 mm outlet clear bore, 10 mm threaded-outlet length, washer seat and nut/hand/lever sweep are not established. L2 minus Z2 is 8 mm gross drawing difference, not proof of 10 mm usable thread or assembled engagement; do not treat total L2 as available thread. No universal cross-brand or washing-machine-tap prohibition follows."
+  },
   "sourceDisposition": {
     "legacyX9500": "Historical I00-C1 upper small-en-suite front remains unadopted. Current utility washer is a different owning occurrence; this task neither relocates nor discharges the accepted-source reservation.",
     "Q350": "Explicitly retired uninstalled plant comparison in current Services; absent from current HAD. Ventilation function now has its separate W9 source/method; no installed device is silently removed.",
@@ -193,6 +215,30 @@
       }
     },
     "standingTapReach": 845.9462157844316,
+    "armPlan": {
+      "centrelineBounds": [
+        10800,
+        1250,
+        0,
+        475
+      ],
+      "radius": 40,
+      "nearest": [
+        {
+          "id": "service-utility-washer",
+          "clearance": 60
+        },
+        {
+          "id": "service-utility-sink",
+          "clearance": 110
+        },
+        {
+          "id": "service-utility-rearServiceChase",
+          "clearance": 510
+        }
+      ],
+      "scope": "Straight plan projection to the intentionally open task bay only; actual tap, supports, hand/nut/lever/tool and lower worker posture are not qualified."
+    },
     "electricalWorkingField": [
       9697,
       1750,

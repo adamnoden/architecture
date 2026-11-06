@@ -31,6 +31,15 @@ const native={model:'Bosch WAN282X2GB',document:'9001906867_B, 5 February 2024',
   limits:['No lifting alone or gripping protruding parts; upright transport; four feet on an even solid surface.',
     'Native transport sequence drains and detaches hoses and reinstalls rear transit bolts. No express allowance for an unbolted first in-room drawout is established here.',
     'Do not combine masses or depths from a different model edition. Actual purchased E-Nr./FD and manual must match.']}
+const fixedTapComparator={model:'Pegler 809B / 524009',url:'https://aalberts-ips.co.uk/products/item/524009/',
+  pageSnapshotSHA256:'96d769785ec92265f7072b404ec9582dbbdddb303b0376c4e43e6bd0dfdab1b5',
+  drawingURL:'https://aalberts.compano.com/Data/Environments/000001/Attachment/Bijlage/Images/PRD/ProductGroupDrawing/PY/809B_d.jpg',
+  drawingSHA256:'16be2f20f46988e2aae3425907ed3a2378ca62cdc2882231691747a052c72a98',
+  connection:'15 mm copper compression × G3/4 BSPP (ISO 228-1)',reportedOverall:[60,25,40],massKg:.09,
+  material:'CW617N brass, chromium plating, NBR spindle/sealing constituents; complete product/material admission unearned',
+  nativeDrawing:{L2:20,Z2:12,grossDifference:8},
+  status:'One actual fixed-end component checked because this method requires that connection. Not a fitted or selected tap.',
+  hold:'Nominal threaded interface corresponds, but actual 17 mm outlet clear bore, 10 mm threaded-outlet length, washer seat and nut/hand/lever sweep are not established. L2 minus Z2 is 8 mm gross drawing difference, not proof of 10 mm usable thread or assembled engagement; do not treat total L2 as available thread. No universal cross-brand or washing-machine-tap prohibition follows.'}
 const R=U.washer
 assert(native.width<=600&&native.width<=R[2]&&native.closedDepth<=R[3],'Native comparator no longer fits the claimed reservation')
 const body=[R[0]+(R[2]-native.width)/2,R[1]+R[3]-native.closedDepth,native.width,native.closedDepth]
@@ -54,15 +63,19 @@ assert(frontClear>=25&&rearClear>=25,'Authored static worker proxy lost its stat
 const tasks={tap:{point:[...valve.waterBranchPlan.at(-1),valve.valveAxisZ],shoulder:[10800,1725,1050]},drain:{point:[10800,1250,800],shoulder:[10800,1725,1100]}}
 const standingTapReach=Math.hypot(475,1450-valve.valveAxisZ)
 for(const t of Object.values(tasks))t.straightReach=Math.hypot(...t.point.map((v,i)=>v-t.shoulder[i]))
+const armPlan=[10800,1250,0,475],armRadius=40
+const armPlanClearances=Object.entries(H.groundFurniture).filter(([id])=>id!=='service-utility-valveBay').map(([id,b])=>({id,clearance:distance(armPlan,b)-armRadius})).sort((a,b)=>a.clearance-b.clearance)
+assert(armPlanClearances[0].clearance>=25,'Straight valve-task arm plan now meets a retained fixture')
 const electricalWorkOverlap=overlap(rest,U.electricalWorkingField)
 assert(electricalWorkOverlap>0,'Review changed electrical-task coexistence before removing the documented temporary occupation')
-const result={status:'Conditional utility first-release comparator; no connected, worker, support, handling or installation pass',units:'mm unless named otherwise',sources,native,
+const result={status:'Conditional utility first-release comparator; no connected, worker, support, handling or installation pass',units:'mm unless named otherwise',sources,native,fixedTapComparator,
   sourceDisposition:{legacyX9500:'Historical I00-C1 upper small-en-suite front remains unadopted. Current utility washer is a different owning occurrence; this task neither relocates nor discharges the accepted-source reservation.',
     Q350:'Explicitly retired uninstalled plant comparison in current Services; absent from current HAD. Ventilation function now has its separate W9 source/method; no installed device is silently removed.',
     entrance:H.utilityDisposition,baselineWorking:U.working,washerFixture:valve},
   geometry:{reservation:R,body,rest,pull,sweep,retainedFixtureCount:retained.length,collisions,nearestFixtureClearances:nearest.slice(0,5),
     northWallFace:northFace,northRestReserve:northFace-rest[1]-rest[3],rearBodyClearToOldReservation:rest[1]-(R[1]+R[3]),
     frontWorker,rearWorker,frontWorkerClearance:frontClear,rearWorkerClearance:rearClear,tasks,standingTapReach,
+    armPlan:{centrelineBounds:armPlan,radius:armRadius,nearest:armPlanClearances.slice(0,3),scope:'Straight plan projection to the intentionally open task bay only; actual tap, supports, hand/nut/lever/tool and lower worker posture are not qualified.'},
     electricalWorkingField:U.electricalWorkingField,temporaryElectricalWorkingOverlapMM2:electricalWorkOverlap},
   sequence:['Keep washer upright on its native feet; do not attach its mass, retained pipe support or electrical protection to a decorative face.',
     'Before any movement: turn off actual local tap; empty inlet, switch off and unplug at accessible fixed socket; drain cooled residual water through native front service hose into a supported sufficiently large container.',
