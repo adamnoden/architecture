@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w5"
   },
   "claimedAt": "2026-11-06T09:41:13.275Z",
-  "heartbeatAt": "2026-11-06T10:53:47.829Z",
-  "expiresAt": "2026-11-06T11:38:47.829Z",
+  "heartbeatAt": "2026-11-06T11:10:53.127Z",
+  "expiresAt": "2026-11-06T11:55:53.127Z",
   "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
@@ -36,8 +36,8 @@
   },
   "pr": 1332,
   "checkpoint": {
-    "evidence": "Exact shared d269df5465da5ff4adef11ce6ce17be67eeb9aee authenticated clean; preferredMAT JSON213e122e/producer19308b0e match ownedsource; all6MAT and14HAD tests/regen pass. Own remote09bb97a310ba680ea66ce25c87e0637d4220a6dd preserves bounded residuecomparison. Subsequent reviewer identified N/E maintenance rain-control gaps; numeric temporary roof/support/pipe/operator proposal delivered to W2, NOT YET PUBLISHED or adopted.",
-    "next": "W2 compose actual rain controls and selection links, retaining1650cantilever and wind/anchor cost. Authenticate corrected remotehead, reproduce owned MAT/HAD outputs, inspect exacthead CI, then fresh canonical preflight if final selection approved.",
-    "blocker": "Pending unpublished rain-control successor and independent review. Canopy support/wind/anchor capacities are unqualified project references; no structural, seal, material, lifting, site or actual firstharm acceptance. Preflight onhold until final corrected head."
+    "evidence": "Authenticated published af5fdf4306735742ac13af6844e977c3d837adce on main78f1: all16HAD and6MAT tests plus canonical JSON/SVG reproduce; rain SVG inspected. Bounded QA found actual1950 header cantilever, E post inside masonry and enclosure L gaps; corrections sent to W2. Own work preserved remote09bb97a310ba680ea66ce25c87e0637d4220a6dd.",
+    "next": "Authenticate single corrected rain/intake source after root decision, verify changed support/enclosure/entry boundaries and owned reproduction, inspect final exact CI, then fresh preflight after selection approval.",
+    "blocker": "Corrected L canopy/header/threshold and actual lower E-entry pending publication. Green reproduction does not waive source defects or temporary wind/anchor/weather and seal/site/firstharm holds."
   }
 }
