@@ -25,6 +25,7 @@
     }
   },
   "currentNamedInputProjectionsEqual": true,
+  "reconciledMain": "b2007a2a7250e163a222129d97faaf371da22eb6",
   "panProfileYZ": [
     [
       4030,
@@ -198,7 +199,7 @@
         0,
         75
       ],
-      "capFaceY": 4026,
+      "capFaceY": 4025,
       "capThickness_mm": 1.5,
       "capZ": [
         0,
@@ -260,9 +261,15 @@
     "separationFromExistingCavityTrayY_mm": 30,
     "firstRelease": {
       "capSheetSweptY_mm": [
-        4009.5,
-        4026
+        4008.5,
+        4025
       ],
+      "nominalCapToPanNormalGap_mm": 5,
+      "minimumHardCapToPanGap_mm": 1,
+      "worstLeafThickness_mm": 0.21335999999999997,
+      "minimumHardSpaceBeyondLeafThickness_mm": 0.78664,
+      "rejected4026FaceHardGap_mm": 0,
+      "rejected4026SpaceBeyondWorstLeaf_mm": -0.21335999999999997,
       "maximumFreeLeafYAfterSouthRelease_mm": 4019.5,
       "minimumLeafToPanClearanceBeforeLift_mm": 6.5,
       "minimumCapBottomAbovePanEndAfterLift_mm": 21,
@@ -280,7 +287,7 @@
         "leafWidth_mm": 75,
         "rootX_left": 5098,
         "preloadDeflection_mm": 4.5,
-        "freeRiseFromCapFace_mm": 8.5,
+        "freeRiseFromCapFace_mm": 9.5,
         "stock73CoverageInch": [
           0.125,
           0.1875
@@ -319,12 +326,12 @@
       ],
       "simpleTipProjectionX_mm": {
         "west": [
-          5131.95217224273,
+          5131.686050525403,
           5133
         ],
         "east": [
           6867.0,
-          6868.04782775727
+          6868.313949474597
         ]
       },
       "commonPanFlangeContactTerritoryX_mm": {

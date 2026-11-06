@@ -113,7 +113,7 @@
       0,
       75
     ],
-    "capFaceY": 4026,
+    "capFaceY": 4025,
     "capThickness_mm": 1.5,
     "capZ": [
       0,
@@ -134,7 +134,7 @@
     "leafWidth_mm": 75,
     "rootX_left": 5098,
     "preloadDeflection_mm": 4.5,
-    "freeRiseFromCapFace_mm": 8.5,
+    "freeRiseFromCapFace_mm": 9.5,
     "stock73CoverageInch": [
       0.125,
       0.1875
@@ -171,5 +171,6 @@
     "observedPriceGBPWithoutVAT": 509.58,
     "supplierNominalMass_kg": 48,
     "role": "One full-sheet purchase control, not landed/formed/installed cost or least-cost nesting. No certificate, supplied finish/residue or material admission."
-  }
+  },
+  "reconciledMain": "b2007a2a7250e163a222129d97faaf371da22eb6"
 }

@@ -56,6 +56,12 @@ def end_comparison(c,h):
     m=c['ordinaryLeafMechanism'];E=m['modulus_ksi']*6.894757293168361
     tmin=(m['thicknessInch']-m['thicknessToleranceInch'])*25.4
     tmax=(m['thicknessInch']+m['thicknessToleranceInch'])*25.4
+    normal_gap=p['dryFold']['y'][0]-e['capFaceY']
+    hard_gap=normal_gap-challenge
+    assert hard_gap>tmax, 'Cap/pan hard gap must exceed worst leaf thickness through the SAME challenge'
+    assert abs(m['freeRiseFromCapFace_mm']-normal_gap-m['preloadDeflection_mm'])<1e-9
+    rejected_old_hard_gap=p['dryFold']['y'][0]-4026-challenge
+    assert rejected_old_hard_gap-tmax<0
     L=m['freeLength_mm'];delta=[m['preloadDeflection_mm']-challenge,m['preloadDeflection_mm']+challenge]
     assert delta[0]>0
     leaf=[]
@@ -74,6 +80,10 @@ def end_comparison(c,h):
     east_common=[rows[1]['proposedFlangeX_mm'][0]+challenge,rows[1]['proposedFlangeX_mm'][1]-challenge]
     assert east_common[0]<east_tip[0]<east_tip[1]<east_common[1]
     release={'capSheetSweptY_mm':[e['capFaceY']-e['capThickness_mm']-e['firstReleaseSouth_mm'],e['capFaceY']],
+      'nominalCapToPanNormalGap_mm':normal_gap,'minimumHardCapToPanGap_mm':hard_gap,
+      'worstLeafThickness_mm':tmax,'minimumHardSpaceBeyondLeafThickness_mm':hard_gap-tmax,
+      'rejected4026FaceHardGap_mm':rejected_old_hard_gap,
+      'rejected4026SpaceBeyondWorstLeaf_mm':rejected_old_hard_gap-tmax,
       'maximumFreeLeafYAfterSouthRelease_mm':e['capFaceY']+m['freeRiseFromCapFace_mm']-e['firstReleaseSouth_mm'],
       'minimumLeafToPanClearanceBeforeLift_mm':p['dryFold']['y'][0]-(e['capFaceY']+m['freeRiseFromCapFace_mm']-e['firstReleaseSouth_mm'])-challenge,
       'minimumCapBottomAbovePanEndAfterLift_mm':e['capZ'][0]+e['thenLift_mm']-p['ends']['crestZ']-challenge,
@@ -97,6 +107,9 @@ def end_comparison(c,h):
 
 def produce():
     c=json.loads((HERE/'court-apron-support.json').read_text())
+    for field in ['currentHADReconciliation','currentSTRReconciliation','currentSTRwallReconciliation']:
+        source=c[field]
+        assert subprocess.check_output(['git','rev-parse',c['reconciledMain']+':'+source['path']],cwd=ROOT).decode().strip()==source['blob'], 'Integration main source identity changed: '+field
     h=read(c['HAD'])['model'];p=h['southCourtThresholdReference']['pan'];g=read(c['STR'])['girders']['court-S']
     current=read(c['currentHADReconciliation'])['model']
     for key in ['southCourtThresholdReference','court']:
@@ -139,7 +152,7 @@ def produce():
       'travellingSupportBottom_mm':b['top'],'fixedBearingBelowRiserSweep':b['top']<0}
     assert collision['stationarySupportIntersectsRiserSweep'] and collision['fixedBearingBelowRiserSweep']
     return {'status':c['status'],'sources':{'HAD':c['HAD'],'STR':c['STR'],'currentHAD':c['currentHADReconciliation'],'currentSTR':c['currentSTRReconciliation']},
-      'currentNamedInputProjectionsEqual':True,'panProfileYZ':p['dryFold']['profileYZ'],
+      'currentNamedInputProjectionsEqual':True,'reconciledMain':c['reconciledMain'],'panProfileYZ':p['dryFold']['profileYZ'],
       'channels':channels,'metalComparison':metal,'authoredLoad':c['localLoad'],
       'channelMassBeforeBendsWeldsRetention_kg':sum(q['idealSharpCornerMass_kg'] for q in channels),
       'channelStockControl':{**c['channelStockControl'],
@@ -202,13 +215,14 @@ def end_figure(r):
     plan(5110,5150,4110,4250,'#cbb793')
     plan(5102,5103.5,4030,4250,'#b66550')
     plan(5102,5142,4030,4031.5,'#b66550')
-    plan(5094,5142,4024.5,4026,'#829da7')
-    plan(5094,5142,4009.5,4011,'none','#829da7','5 4')
+    cap_a,cap_b=left['capX_mm'];cap_y=c['capFaceY'];cap_t=c['capThickness_mm'];south=c['firstReleaseSouth_mm']
+    plan(cap_a,cap_b,cap_y-cap_t,cap_y,'#829da7')
+    plan(cap_a,cap_b,cap_y-cap_t-south,cap_y-south,'none','#829da7','5 4')
     out.append('</g>')
     text(350,140,'Weather leaf starts 4147.5',14)
     text(350,190,'Frame 5110..5150',14)
     text(350,345,'New flange Y4030',14)
-    text(350,385,'Cap 4026 → 4011',14)
+    text(350,385,f'Cap {cap_y:g} → {cap_y-south:g}',14)
     text(350,460,'Core ends 3987.5',14)
     text(80,540,'Green pocket is wholly in the 160 mm cavity band.',16)
     text(80,565,'Red return is a NEW inward flange, not existing pan detail.',16)
@@ -221,16 +235,19 @@ def end_figure(r):
     text(600,425,'Pocket Y4000..4060 / Z0..225; no core or weather-leaf cut.',16)
     text(600,453,'Existing cavity tray begins Y4090; 30 mm nominal separation.',16)
     text(600,481,'Full-leaf extension would remove 615 mm² per jamb: rejected.',16)
+    text(600,511,f'Hard normal gap ≥{release["minimumHardCapToPanGap_mm"]:g} mm; old 4026 face rejected.',16)
+    text(600,538,f'Beyond worst leaf: {release["minimumHardSpaceBeyondLeafThickness_mm"]:.3f} mm. Curve fit unproved.',16)
     text(80,625,'C  RELEASE SECTION / Y–Z',19)
     U=lambda y:550+(y-3980)*5
     V=lambda z:1000-z*2
     # End-face plane is shown edge-on. The free spring projection, force and
     # fixed floor/wall joins are not a fabricated or certified assembly.
     box(U(4030),V(75),7.5,150,'#b66550')
-    box(U(4024.5),V(100),7.5,200,'#829da7')
-    box(U(4009.5),V(100),7.5,200,'none','#829da7','5 4')
-    box(U(4009.5),V(200),7.5,200,'none','#829da7','5 4')
-    out.append(f'<path d="M{U(4024)} 905H{U(4011)}m8 -5l-8 5 8 5 M{U(4011)} 790V610m-5 8l5-8 5 8" fill="none" stroke="#267b83" stroke-width="2"/>')
+    cap_z0,cap_z1=c['capZ'];height=(cap_z1-cap_z0)*2
+    box(U(cap_y-cap_t),V(cap_z1),cap_t*5,height,'#829da7')
+    box(U(cap_y-cap_t-south),V(cap_z1),cap_t*5,height,'none','#829da7','5 4')
+    box(U(cap_y-cap_t-south),V(cap_z1+c['thenLift_mm']),cap_t*5,height,'none','#829da7','5 4')
+    out.append(f'<path d="M{U(cap_y-cap_t)-2} 905H{U(cap_y-south)}m8 -5l-8 5 8 5 M{U(cap_y-south)} 790V610m-5 8l5-8 5 8" fill="none" stroke="#267b83" stroke-width="2"/>')
     text(80,680,'1. Remove complete frame/sill as source sequence requires.',16)
     text(80,711,'2. Release actual cornercap/retainer fixings and captures.',16)
     text(80,742,'3. Move cap south 15; then lift 100 inside its reserved pocket.',16)
