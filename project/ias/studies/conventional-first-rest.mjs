@@ -31,7 +31,7 @@ const release={status:'Authored centred slip-coupling trial, not actual B594 mat
   boardTop:v.rcUnderside+60,
   closedCouplingToBoardGap:`${v.rim-v.fullTail-(103+10)/2-(v.rcUnderside+60)} - d`,
   necessarySeatOffsetMaximumForNonIntersection:v.rim-v.fullTail-(103+10)/2-(v.rcUnderside+60),
-  unbound:['actual d and usable native spigot land','coupling seal locations, maximum OD and B594 permission',
+  unbound:['actual d and usable native spigot land','coupling seal locations, maximum OD and joined B594 dimensional interface',
     'extraction force, actual hands/tools and fixed-side axial restraint','qualified temporary boundary and complete restoration']}
 if(opening.box[0]<field.rectangle[0]||opening.box[1]<field.rectangle[1]||opening.box[0]+400>field.rectangle[2]||opening.box[1]+400>field.rectangle[3])throw Error('Proposed well left the source-owned NW-W field; rejoin STR')
 const bounds={
@@ -52,7 +52,7 @@ const record={status:'Unadopted first-lift/first-rest bounds; no connected insta
     b594Sha256:'c057d26962f2623f7aa6ef2e03ded404dbce3da24f3fddd5ef8370b51fdce0a5',
     footSystem:'https://content.my-bette.com/produkt_downloads/Fuss-System-fur-Duschwannen-133586/Fuss-System-fur-Duschwanne-1000-1000-mm-133662/Z0009038_REV15.pdf',
     footSystemSha256:'4a2ec361f14c01c510d270e7a240161e24f7aba1ac9fbcee325e04f5ccbc4b59',
-    hiltiEta:{url:'https://productdata.hilti.com/APQ_HC_RAW/ASSET_DOC_19675548.pdf',sha256:'02f5af0e0d0f390c8e3e653e757f0c86361737a7685e9854d0ffeae50c5c7ff9',pages:[12,23,99,108,113],domain:'ETA 23/0267; listed multilayer PP 50 x 2 mm; EI 60 U/U only'},
+    hiltiEta:{url:'https://productdata.hilti.com/APQ_HC_RAW/ASSET_DOC_19675548.pdf',sha256:'02f5af0e0d0f390c8e3e653e757f0c86361737a7685e9854d0ffeae50c5c7ff9',pages:[12,23,99,108,113],domain:'ETA 23/0267; listed multilayer PP 50 x 2 mm; EI 60 U/U only',rigidFloorMinimumThickness:150,rigidFloorMinimumDensityKgM3:550,maximumFloorSeal:[1000,800],pipeOrientation:'perpendicular',collarPosition:'below floor',firstPipeSupportNativeText:'>= 250 mm; measurement datum and actual support unbound'},
     hiltiTechnical:{url:'https://productdata.hilti.com/APQ_HC_RAW/ASSET_DOC_19962464.pdf',sha256:'19e37446ad31ec112eeab9a59f73efdee3ef501253115a35b185b76744bad95d',pages:[2],boardThickness:60},
     geberit:{url:'https://www.geberit.co.uk/_assets/local-media/geberit-drainage-systems-product-guide-and-price-list-2026-gbp.pdf',sha256:'e91fbf7fe1de603fb35dc10cfbe7914b59a83db8b6e978980a415be7f880245e',printedPages:[102,114],pdfPages:[101,113]}},
   holds:['actual native flange seat and d','configured support/contact layers and installed H',

@@ -82,7 +82,7 @@
     "necessarySeatOffsetMaximumForNonIntersection": 26.5,
     "unbound": [
       "actual d and usable native spigot land",
-      "coupling seal locations, maximum OD and B594 permission",
+      "coupling seal locations, maximum OD and joined B594 dimensional interface",
       "extraction force, actual hands/tools and fixed-side axial restraint",
       "qualified temporary boundary and complete restoration"
     ]
@@ -106,7 +106,16 @@
         108,
         113
       ],
-      "domain": "ETA 23/0267; listed multilayer PP 50 x 2 mm; EI 60 U/U only"
+      "domain": "ETA 23/0267; listed multilayer PP 50 x 2 mm; EI 60 U/U only",
+      "rigidFloorMinimumThickness": 150,
+      "rigidFloorMinimumDensityKgM3": 550,
+      "maximumFloorSeal": [
+        1000,
+        800
+      ],
+      "pipeOrientation": "perpendicular",
+      "collarPosition": "below floor",
+      "firstPipeSupportNativeText": ">= 250 mm; measurement datum and actual support unbound"
     },
     "hiltiTechnical": {
       "url": "https://productdata.hilti.com/APQ_HC_RAW/ASSET_DOC_19962464.pdf",
