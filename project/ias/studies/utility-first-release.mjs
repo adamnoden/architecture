@@ -16,6 +16,8 @@ for(const key of ['washer','sink','rearServiceChase','valveBay','electricalStati
 }
 assert(equal(H.servicesInterface.utility.washer,U.washer),'Current HAD service-interface washer mismatch')
 assert(H.utilityDisposition.operation.startsWith('OPENARCH'),'Current utility entrance is no longer the claimed open arch')
+const boundary=S.air.transfer.utilityNorthBoundaryRequirement
+assert(boundary.role.startsWith('OPENARCH')&&equal(boundary.rough,H.utilityDisposition.opening)&&boundary.axisY===H.utilityDisposition.axis,'Current utility opening and owning Services air-boundary requirement disagree')
 assert(!('Q350-body' in H.groundFurniture),'Retired Q350 comparison has returned to current occurrence map')
 const valve=S.fixtures.find(f=>f.id==='washer-PROPOSED')
 assert(valve&&equal(valve.sourceOrProposedXY,U.washer.slice(0,2)),'Washer fixture and utility occurrence no longer agree')
@@ -53,6 +55,8 @@ assert.equal(collisions.length,0,'Trial washer-body pull meets a retained curren
 const nearest=retained.map(([id,box])=>({id,distance:distance(sweep,box)})).sort((a,b)=>a.distance-b.distance)
 const northWall=H.groundWalls.find(w=>w.id==='utility-north')
 assert(northWall&&equal(northWall.holes,[H.utilityDisposition.opening]),'Utility north wall and current open arch no longer agree')
+assert(northWall.a[1]===northWall.b[1]&&northWall.a[1]===H.utilityDisposition.axis,'Utility north wall and open-arch axis no longer agree')
+const archRaw=H.utilityDisposition.opening,archAxis=H.utilityDisposition.axis
 const northFace=Math.min(...northWall.finishedFaces)
 assert(rest[1]+rest[3]<northFace,'Trial first rest reaches the utility north wall')
 const frontWorker=[10800,1725,300],rearWorker=[10375,1175,300]
@@ -109,8 +113,8 @@ function plan(offset,moving,worker,color){
   label(px(10125),py(moving[1]+moving[3]/2),'WASHER',2.7)
   label(px(11020),py(1000),'SINK',2.7);label(px(10695),py(900),'BAY',2.7)
   label(px(9420),py(2000),'ELEC.',2.5);label(px(9420),py(550),'PV',2.5)
-  draw.push(`<path d="M${px(10250)} ${py(2550)}H${px(11150)}" stroke="#2c7885" stroke-width="1.4"/>`)
-  label(px(10250),py(2550)-3,'CURRENT OPEN ARCH 900',2.8)
+  draw.push(`<path d="M${px(archRaw[0])} ${py(archAxis)}H${px(archRaw[1])}" stroke="#2c7885" stroke-width="1.4"/>`)
+  label(px(archRaw[0]),py(archAxis)-3,`RAW OPEN ARCH ${archRaw[1]-archRaw[0]}`,2.8)
 }
 draw.push('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Arial,sans-serif"><rect width="420" height="297" fill="white"/>')
 label(14,17,'IAS / Utility first release: fixed ends before body movement',5.1)
