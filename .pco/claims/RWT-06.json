@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-06T20:24:11.686Z",
-  "expiresAt": "2026-11-06T21:54:11.686Z",
+  "heartbeatAt": "2026-11-06T20:49:12.564Z",
+  "expiresAt": "2026-11-06T22:19:12.564Z",
   "branch": "work/zerg-20261106-rwt06-successor",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -36,7 +36,7 @@
   },
   "pr": 1344,
   "checkpoint": {
-    "evidence": "Remote73828cb9/2c227afb preserves realflange and rejected600. Ownmergec737 reconcilesede8302b pan; combinedHAD90fd produced/checked, MATdynamic consumers reproved. New6wet/southaccess source/render and independent1D integration complete, noadoption.",
-    "next": "Publish reviewed6wet collector/access checkpoint; compare existing125 temporarydrop to closedE passivebackup; one source-matched groundhigh-eave cleaning control. Full CI/rootreview/freshpreflight before integration."
+    "evidence": "Published312db77c/tree49907704: finite existing-two-pipe topology/levels, onegroundeavecontrol,153RWT/integrityPASS, sourceauthority/adoptionscopecorrected; predecessor1338closedwithancestrypreserved.",
+    "next": "Finish onecoherentconventional Econnection/firstrelease design, preserve temporaryentry and receiverrepair blockers; reconcile afterSTR/MATcurrentmain then exactheadCI/rootreview/freshpreflight."
   }
 }
