@@ -17,7 +17,8 @@ old=runpy.run_path(str(D/'current-house-head-actions.py'),init_globals={'originO
 edge=runpy.run_path(str(D/'current-house-floor-closure.py'),init_globals={'retainedObserver':lambda c,r,f:mins.append((c,dict(r),f))})
 sys.argv=args
 plane=runpy.run_path(str(D/'current-house-roof-bracing.py'))
-rings=read('current-house-ring-braced.json')['rings'];w=read('current-house-welded-network.json');h=old['h'];gd=old['gd'];heads=old['heads'];W=edge['walls'];caps=edge['caps'];loPads=edge['allLower']
+plane['bracedAlternate']=plane['actual'];plane['actual']=plane['control']
+rings=read('current-house-ring-integral.json')['rings'];w=read('current-house-welded-network.json');h=old['h'];gd=old['gd'];heads=old['heads'];W=edge['walls'];caps=edge['caps'];loPads=edge['allLower']
 A,B,C,E=332.5,11667.5,3917.5,8082.5
 # Build reusable unit routes through named lower beams: no stepping sideways
 # to the closest shaft. Preserve the perpendicular force couple on each real head.
@@ -42,6 +43,10 @@ def addB(rows,lo,hi):
     for h,vec in rows.items():
         for j,x in enumerate(vec):
             bounds[h][j][0]+=min(lo*x,hi*x);bounds[h][j][1]+=max(lo*x,hi*x)
+edgeEvents=[]
+def upperEvent(ns,N,lo,hi):
+    ev=[(name[1:],q,t*N) for name,q,t in ns if name.startswith('@') and abs(t*N)>1e-10]
+    if ev:edgeEvents.append((ev,lo,hi))
 def put(c,k,N,p,ns):
     if abs(N)<1e-12:return
     dest=routes(ns);assert abs(sum(t for h,t,x,y in dest)-1)<1e-6,(c,p,ns)
@@ -51,9 +56,10 @@ def put(c,k,N,p,ns):
     for h,t,x,y in dest:
         e=per[h];e[0]+=N*t;e[1]+=N*(x+t*dx);e[2]+=N*(y+t*dy)
         v=book[c,k][h];v[0]+=N*t;v[1]+=N*(x+t*dx);v[2]+=N*(y+t*dy)
-    if k in ['G','Q'] and c!='shifted roof excluding global braces':addB(per,0,1.35 if k=='G' else 1.5)
-    if k=='R':addB(per,-2.25,6.3)
-    if k=='S':addB(per,0,1.35)
+    if k in ['G','Q'] and c!='shifted roof excluding global braces':
+        scale=1.35 if k=='G' else 1.5;addB(per,0,scale);upperEvent(ns,N,0,scale)
+    if k=='R':addB(per,-2.25,6.3);upperEvent(ns,N,-2.25,6.3)
+    if k=='S':addB(per,0,1.35);upperEvent(ns,N,0,1.35)
 for c,k,n,p,rr in olds:
     if c not in ['roof','roof signed rows','steel wall-head ring']:put(c,k,n,p,rr)
 def virtual(p):return '@'+edge['wallat'](p)
@@ -92,7 +98,7 @@ for label,r in rings.items():
             for nm,p,t in vrange(rows):uput('steel wall-head ring','G',t,p)
         else:
             kind,pos=k.split(':');p=tuple(float(x) for x in pos.split(','));inf[kind,p]=vrange(rows)
-for p,n in plane['braceG'].items():put('roof brace and fittings provision','G',n,p,inf['bracemass',p])
+for p,n in plane['braceG'].items():put('roof plane reserve at distributed interface stations','G',n,p,inf['bracemass',p])
 for f in w['frames']:
     ordinary=f['id']=='ordinary';L=f['axisSpanM'];ds=1 if ordinary else math.sqrt(2)
     radial=[(p,q) for p,q in plane['radials'] if ((p[0]==q[0] or p[1]==q[1])==ordinary)]
@@ -114,8 +120,8 @@ for (kind,p),rr in inf.items():
     for k,t,x,y in dest:
         rows[k][0]+=t;rows[k][1]+=x;rows[k][2]+=y
     assert abs(sum(z[0] for z in rows.values()))<1e-5
-    addB(rows,-mag,mag)
-assert math.isclose(orig['shifted roof excluding global braces','G'][0]+orig['roof brace and fittings provision','G'][0],w['globalOrigins']['G'],rel_tol=1e-8)
+    addB(rows,-mag,mag);upperEvent(rr,1.,-mag,mag)
+assert math.isclose(orig['shifted roof excluding global braces','G'][0]+orig['roof plane reserve at distributed interface stations','G'][0],w['globalOrigins']['G'],rel_tol=1e-8)
 for c,rs,n in mins:
     for p,t in rs.items():uput(c,'retainedMin',n*t,p)
 assert math.isclose(sum(v[0] for (c,k),v in orig.items() if k=='retainedMin'),382.798106,abs_tol=.002)
@@ -244,6 +250,7 @@ for p,bo in windPad.items():
 # Route lower residuals to the two captive stations. Use the tighter retained-
 # shell card below when selecting a ground rod. This broad stripped/repair
 # state cannot rely on incidental weight and is retained as a component control.
+rawAll={p:bounds[p][0][:] for p in loPads}
 rawCorner={p:bounds[p][0][:] for p in caps}
 for p in loPads-caps:
     lo,hi=bounds[p][0]
@@ -268,3 +275,67 @@ if __name__=='__main__':
     print('new held sites',[(p,shifted[p],[round(x,1) for x in bounds[p][0]]) for p in shifted]);print('independent head',min(v[0][0] for v in headB.values()),max(v[0][1] for v in headB.values()),'eight lower corners',[(p,[round(x,1) for x in bounds[p][0]]) for p in sorted(caps)])
     yy=realState({'G':1.35,'Q':1.5});print('static',yy[3],min(q[0] for q in yy[0].values()),max(q[0] for q in yy[0].values()))
     cases=[realState({'U':1,'retainedMin':1},i) for i in range(len(plane['actual']))];print('uplift',min(n[0] for g,*_ in cases for n in g.values()),max(n[0] for g,*_ in cases for n in g.values()),'support',min(p[0] for _,pp,*_ in cases for p in pp.values()))
+# Ground-plane horizontal force follows the four named pier groups. Spread
+# shear equally in each three-shaft group, adding a tangential couple to
+# recover the actual pier-axis location rather than shifting yaw to its centroid.
+def horizontal(wi):
+    V={k:[0.,0.] for k in heads};g={p:[0.,0.] for p in plane['corners']}
+    ax,_,_,cs,_=plane['actual'][wi]
+    for p,rs in cs.items():
+        for j in [0,1]:g[p][j]+=(rs[j]+rs[j+2])/1000
+    for j,cc in enumerate(ax):
+        if not cc:continue
+        mode=(cc-1)%3;s=1 if cc<4 else -1
+        h=2.25*12.4*(1 if mode==0 else .5)*s*((3.370+.180)/2+.570)
+        station=[6000,2900,9100][mode]
+        # The plan cut parameter follows each windward facade's local sense.
+        face=(3 if s==1 else 1) if j==0 else (0 if s==1 else 2)
+        coord=plane['pt'](face,A,station)[1-j]
+        for p in g:
+            t=(coord-A)/(B-A) if p[1-j]==B else (B-coord)/(B-A)
+            g[p][j]+=h*t/2
+    for p,v in g.items():
+        sx=1 if p[0]==A else -1;sy=1 if p[1]==A else -1
+        points=[p,(p[0]+860*sx,p[1]),(p[0],p[1]+860*sy)]
+        cen=[sum(q[j] for q in points)/3 for j in [0,1]]
+        moment=(p[0]-cen[0])*v[1]-(p[1]-cen[1])*v[0]
+        pol=sum(math.dist(q,cen)**2 for q in points)
+        for q in points:
+            vv=V[old['coord'][q]];vv[0]+=v[0]/3-moment*(q[1]-cen[1])/pol
+            vv[1]+=v[1]/3+moment*(q[0]-cen[0])/pol
+    resultant=[sum(v[j] for v in V.values()) for j in [0,1]]
+    assert max(abs(sum(v[j] for v in g.values())-resultant[j]) for j in [0,1])<1e-7
+    yaw=sum(v[1]*xy(k)[0]-v[0]*xy(k)[1] for k,v in V.items())/1000
+    assert abs(yaw-sum(v[1]*p[0]-v[0]*p[1] for p,v in g.items())/1000)<1e-7
+    return V,[*resultant,yaw]
+def rounded(v):return [round(x,4) for x in v]
+def report():
+    case0={'G characteristic':{'G':1},'Q characteristic':{'Q':1},'uniform roof suction only':{'U':1},'max factored gravity':{'G':1.35,'Q':1.5},'retained shell plus uniform suction':{'retainedMin':1,'U':1}}
+    named={nm:realState(cf) for nm,cf in case0.items()}
+    orientations=[horizontal(i) for i in range(len(plane['actual']))]
+    ext={k:[[1e15,-1e15,None,None] for _ in range(5)] for k in heads}
+    def see(head,vec,state):
+        for j,n in enumerate(vec):
+            v=ext[head][j]
+            if n<v[0]:v[0]=n;v[2]=state
+            if n>v[1]:v[1]=n;v[3]=state
+    for id,(gr,_,__,___) in named.items():
+        for k in heads:see(k,[*gr[k],0,0],id)
+    summaries=[]
+    for wi,(v,hor) in enumerate(orientations):
+        tx={}
+        for id,cf in [('GQ+wind',{'G':1.35,'Q':1.5}),('stripped suction+wind',{'U':1}),('retained suction+wind',{'U':1,'retainedMin':1})]:
+            gr,ps,fall,eq=realState(cf,wi);state=id+':'+str(wi)
+            for k in heads:see(k,[*gr[k],*v[k]],state)
+            tx[id]={'N_Xmoment_Ymoment':rounded(eq),'releasedLowerPadCount':len(fall),'minMaxN':rounded([min(z[0] for z in gr.values()),max(z[0] for z in gr.values())])}
+        summaries.append({'wind':wi,'programme':plane['actual'][wi][0],'courtProjection':wi>=48,'Vx_Vy_yaw':rounded(hor),'conservedStates':tx})
+    hh=[]
+    for k in sorted(heads):
+        for j in range(3):
+            lo,hi=headB[k][j];actual=ext[k][j];assert lo<=actual[0]+.02 and hi>=actual[1]-.02,(k,j,[lo,hi],actual)
+        hh.append({'id':k,'xy':xy(k),'roles':heads[k]['roles'],'named_N_Cx_Cy':{id:rounded(z[0][k]) for id,z in named.items()},'separateComponentBounds_N_Cx_Cy':[rounded(ab) for ab in headB[k]],'coherentExtreme_N_Cx_Cy_Vx_Vy':[[round(l,4),round(h,4),a,b] for l,h,a,b in ext[k]]})
+    return {'status':'Proposed fixed-base 52-shaft load paths; no geotechnical, section, floor-edge or capillary joint acceptance.','units':'kN, kNm, mm. N positive down; Cx=N*deltaX and Cy=N*deltaY are first-moment residuals in x and y (not textbook Mx/My order). Vx/Vy horizontal kN. Positive yaw counterclockwise.','origins':[{ 'family':c,'case':k,'N_Xmoment_Ymoment':rounded(v)} for (c,k),v in sorted(orig.items()) if k not in ['R','S']],'named_source_totals':{id:rounded(val[3]) for id,val in named.items()},'coherentSignedStates':summaries,'approach':'Horizontal CHS omitted: two finite welded rings with the existing twelve twin-rail radial ties carry roof plan shear. The original 8.5 kN interface/bracing allowance remains an adverse distributed G budget, without favourable mass credit. 96 simultaneous full/partial, signed and biaxial wind patterns each repeated for three gravity/suction states. Ring eccentricities, elevated facade/roof projections and signed opposite vertical couples at actual outer corners included. Lower passive pads release in tension; each adjacent floor strip routes residual to the two captive corners. Ground-floor plinth wind tributary and L-corner spring shears are distributed to three reference shafts with conserved yaw. Fixed roof/plan/soil stiffness, vertical-plane path to corner couple, local floor/arch joints and head/soil capacity remain design questions. Independent component extrema are not one simultaneous house load.','courtTies':[{'oldCorner':p,'newHold':t,'passiveBalance':s,'head':h,'threePointCoefficient':splitStop(p)[0][1],'signedRange':rounded(bounds[t][0])} for p,(t,s,h) in shifts.items()],'outerTies':[{'point':p,'signedRange':rounded(cornerRaw[p])} for p in sorted(plane['corners'])],'heads':hh,'localOptionalBay':'Separate unadopted reference in current-house-service-bay.json. Do not add the entire wet sled load to the bay floor. Apply its declared P36/P37 loads only if adopting that control, including moments and hydrostatic action.'}
+if __name__=='__main__':
+    out=Path(__file__).with_suffix('.json');s=json.dumps(report(),indent=2,sort_keys=True)+'\n'
+    if '--check' in sys.argv:assert out.read_text()==s
+    else:out.write_text(s)

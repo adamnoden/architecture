@@ -1,0 +1,629 @@
+{
+  "extremeMomentShear": [
+    190.57781784872378,
+    171.30661073732216
+  ],
+  "grossConcreteM3": 6.276760000000001,
+  "includedWholeLedgerSteelBudgetKg": 1250,
+  "interpretation": "The physically retained pressure/floor state is much lighter than the earlier maximum G budget. No partial removal global dead-weight exemption is needed for these components: these sections include even the broader independent 0-G residual release. The floor footprint/soffit and jamb width stay put. Upper opposing 25 mm clear row gaps and the old 30 mm centre lane use nominal cover; a 5 mm inward shift each side erodes that lane to 20 mm, so rod installation still needs separately controlled cage/rod positioning. Section bending is not a fitting clearance proof.",
+  "newLoops": {
+    "court": {
+      "abovePrevious650ConcreteM3": 0.0,
+      "adverseSection": {
+        "As": 678.5840131753953,
+        "MR": 145.16314534725728,
+        "b": 140,
+        "clearAcross": 20,
+        "d": 554.0,
+        "h": 645,
+        "neutralAxis": 154.95615938422435,
+        "xOverD": 0.27970425881628946
+      },
+      "coreWidthDepth": [
+        140,
+        650
+      ],
+      "heightAboveFFL": 370,
+      "minimumRawSillReserve": 380,
+      "momentShearDemand": [
+        109.1326653488407,
+        171.30661073732216
+      ],
+      "nominalSection": {
+        "As": 678.5840131753953,
+        "MR": 148.1135106219329,
+        "b": 140,
+        "clearAcross": 30,
+        "d": 564.0,
+        "h": 650,
+        "neutralAxis": 154.95615938422435,
+        "xOverD": 0.2747449634472063
+      },
+      "reinforcement": "6 H12 each face, pairs in 3 levels 25 clear; H8 closed at100",
+      "shearResistanceAtAdverseD": 289.18186338461544,
+      "topBottomZ": [
+        3820,
+        3170
+      ],
+      "unlappedCageSteelKg": 271.5906145311622
+    },
+    "outer": {
+      "abovePrevious650ConcreteM3": 0.6347600000000001,
+      "adverseSection": {
+        "As": 904.7786842338604,
+        "MR": 217.48390050569702,
+        "b": 140,
+        "clearAcross": 20,
+        "d": 635.5,
+        "h": 745,
+        "neutralAxis": 206.60821251229913,
+        "xOverD": 0.3251112706723826
+      },
+      "coreWidthDepth": [
+        140,
+        750
+      ],
+      "heightAboveFFL": 470,
+      "minimumRawSillReserve": 280,
+      "momentShearDemand": [
+        190.57781784872378,
+        152.49403403118038
+      ],
+      "nominalSection": {
+        "As": 904.7786842338604,
+        "MR": 221.4177208719312,
+        "b": 140,
+        "clearAcross": 30,
+        "d": 645.5,
+        "h": 750,
+        "neutralAxis": 206.60821251229913,
+        "xOverD": 0.32007469018171825
+      },
+      "reinforcement": "8 H12 each face, pairs in 4 levels 25 clear; H8 closed at100",
+      "shearResistanceAtAdverseD": 331.7239606153846,
+      "topBottomZ": [
+        3920,
+        3170
+      ],
+      "unlappedCageSteelKg": 935.6976459977982
+    }
+  },
+  "nominalGrossReinforcementBothKg": 1207.2882605289603,
+  "old650OuterRejected": true,
+  "old650SixH12OuterMR": 148.1135106219329,
+  "role": "Actual shifted roof, retained upper wall and floor loads. Every point-load or bearing position is a section: signed maxima exact for the declared piecewise-linear moment / piecewise-constant shear fields. Independent component envelopes can overestimate simultaneous demand. Route compatibility and local rods/curved arches remain separate.",
+  "spans": [
+    {
+      "MminMax_VminMax": [
+        -98.00675685406638,
+        33.324755450601884,
+        -87.42752794708655,
+        49.21381804442516
+      ],
+      "criticalStations": [
+        2850.0,
+        1575.0,
+        2844.2329545454545,
+        332.5
+      ],
+      "face": "outer-south",
+      "span": [
+        332.5,
+        2850.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -170.02761358740804,
+        17.904779141999573,
+        -152.26877978088294,
+        52.905871269986385
+      ],
+      "criticalStations": [
+        4750.0,
+        3808.75,
+        4733.916666666667,
+        4750.0
+      ],
+      "face": "outer-south",
+      "span": [
+        2850.0,
+        4750.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -170.02774558670987,
+        14.583317190656176,
+        -38.13325016919956,
+        38.13327879602371
+      ],
+      "criticalStations": [
+        7250.0,
+        6000.0,
+        4750.0,
+        7250.0
+      ],
+      "face": "outer-south",
+      "span": [
+        4750.0,
+        7250.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -170.02774822669596,
+        17.81847494484325,
+        -52.90605749506109,
+        152.49403403118038
+      ],
+      "criticalStations": [
+        7300,
+        8117.5,
+        7250.0,
+        7250.0
+      ],
+      "face": "outer-south",
+      "span": [
+        7250.0,
+        9150.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -98.0068359841344,
+        18.199552041670916,
+        -25.410879496516888,
+        67.52538829295706
+      ],
+      "criticalStations": [
+        9150.0,
+        10483.75,
+        11632.5,
+        9150.0
+      ],
+      "face": "outer-south",
+      "span": [
+        9150.0,
+        11667.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -131.6206972969662,
+        31.604190456793503,
+        -94.0369177159301,
+        44.15887759929204
+      ],
+      "criticalStations": [
+        3100.0,
+        1747.4264705882354,
+        3054.8026315789475,
+        332.5
+      ],
+      "face": "outer-east",
+      "span": [
+        332.5,
+        3100.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -179.94382464668294,
+        57.79485926814368,
+        -90.65698615628231,
+        101.6370157128009
+      ],
+      "criticalStations": [
+        5786.5,
+        3917.5,
+        5724.705882352941,
+        3100.0
+      ],
+      "face": "outer-east",
+      "span": [
+        3100.0,
+        5786.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -184.55315773442942,
+        49.666742773652835,
+        -105.25414445548472,
+        149.62364183690104
+      ],
+      "criticalStations": [
+        6000,
+        7242.960526315789,
+        8590.0,
+        5786.5
+      ],
+      "face": "outer-east",
+      "span": [
+        5786.5,
+        8613.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -138.4936022053401,
+        20.308441311999275,
+        -25.08108477444692,
+        71.14779880739576
+      ],
+      "criticalStations": [
+        8613.5,
+        10132.619047619048,
+        11603.09659090909,
+        8613.5
+      ],
+      "face": "outer-east",
+      "span": [
+        8613.5,
+        11667.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -86.52056191527295,
+        13.487417410571073,
+        -56.21149012618269,
+        21.3638352665143
+      ],
+      "criticalStations": [
+        2825.0,
+        1575.0,
+        2782.5,
+        332.5
+      ],
+      "face": "outer-north",
+      "span": [
+        332.5,
+        2825.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -140.4115036899816,
+        6.3226524864278515,
+        -50.377094231815974,
+        15.414984076684718
+      ],
+      "criticalStations": [
+        4377.5,
+        3535.0,
+        4342.5,
+        2825.0
+      ],
+      "face": "outer-north",
+      "span": [
+        2825.0,
+        4377.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -151.60624038714326,
+        52.89030453893962,
+        -124.65481542165341,
+        124.96286502709351
+      ],
+      "criticalStations": [
+        4700,
+        6000.0,
+        7610.085227272728,
+        4377.5
+      ],
+      "face": "outer-north",
+      "span": [
+        4377.5,
+        7622.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -140.41122816858268,
+        13.034794996410724,
+        -34.05328443183602,
+        67.83547958533526
+      ],
+      "criticalStations": [
+        7622.5,
+        8389.655172413793,
+        9170.138888888889,
+        7622.5
+      ],
+      "face": "outer-north",
+      "span": [
+        7622.5,
+        9175.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -86.52039214096224,
+        35.53105972883928,
+        -53.127374545848056,
+        87.88700841004535
+      ],
+      "criticalStations": [
+        9175.0,
+        10481.896551724138,
+        11632.5,
+        9175.0
+      ],
+      "face": "outer-north",
+      "span": [
+        9175.0,
+        11667.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -140.88381068711146,
+        18.03592544501273,
+        -74.82205587774139,
+        23.579797876414204
+      ],
+      "criticalStations": [
+        3200.0,
+        1747.4264705882354,
+        3120.3125,
+        332.5
+      ],
+      "face": "outer-west",
+      "span": [
+        332.5,
+        3200.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -190.57781784872378,
+        43.35459919518516,
+        -80.51460634100148,
+        85.72940880704024
+      ],
+      "criticalStations": [
+        6000.0,
+        3917.5,
+        3200.0,
+        3200.0
+      ],
+      "face": "outer-west",
+      "span": [
+        3200.0,
+        6000.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -190.57781784872378,
+        44.06837493231907,
+        -87.39373049718091,
+        80.57342210761674
+      ],
+      "criticalStations": [
+        6000.0,
+        8082.5,
+        8769.34659090909,
+        8800.0
+      ],
+      "face": "outer-west",
+      "span": [
+        6000.0,
+        8800.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -140.93958060623208,
+        40.47467201029049,
+        -51.368914642611365,
+        101.25342773697318
+      ],
+      "criticalStations": [
+        8800.0,
+        10260.0,
+        11603.09659090909,
+        8800.0
+      ],
+      "face": "outer-west",
+      "span": [
+        8800.0,
+        11667.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -27.626309438363883,
+        2.5119999882699204,
+        -43.75112200995045,
+        12.021471701060252
+      ],
+      "criticalStations": [
+        4785,
+        4342.5,
+        4765.0,
+        3917.5
+      ],
+      "face": "court-south",
+      "span": [
+        3917.5,
+        4785
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -66.31906559699458,
+        77.17328595402206,
+        -80.19800385272777,
+        89.04783481588501
+      ],
+      "criticalStations": [
+        6000.0,
+        6000.0,
+        7165.0,
+        7215
+      ],
+      "face": "court-south",
+      "span": [
+        4785,
+        7215
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -27.626309438363883,
+        19.947329085917325,
+        -151.82573293411866,
+        69.11506512814292
+      ],
+      "criticalStations": [
+        7215,
+        7950.0,
+        8047.5,
+        7215
+      ],
+      "face": "court-south",
+      "span": [
+        7215,
+        8082.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -66.31987743978999,
+        15.035359226405156,
+        -61.69633548110191,
+        63.03851321059901
+      ],
+      "criticalStations": [
+        6000.0,
+        4958.75,
+        5981.176470588235,
+        6000.0
+      ],
+      "face": "court-east",
+      "span": [
+        3917.5,
+        6000.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -66.31987743978999,
+        61.86381842971501,
+        -166.37338795135054,
+        89.47006764108149
+      ],
+      "criticalStations": [
+        6000.0,
+        7700.0,
+        8047.5,
+        6000.0
+      ],
+      "face": "court-east",
+      "span": [
+        6000.0,
+        8082.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -15.196208261152213,
+        0.47662285869776133,
+        -37.127230560768986,
+        4.078852888535521
+      ],
+      "criticalStations": [
+        4377.5,
+        4107.5,
+        4359.242424242424,
+        3917.5
+      ],
+      "face": "court-north",
+      "span": [
+        3917.5,
+        4377.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -66.31823496578927,
+        109.1326653488407,
+        -83.0125325886645,
+        88.1798828399404
+      ],
+      "criticalStations": [
+        5925,
+        5925,
+        7587.5,
+        4377.5
+      ],
+      "face": "court-north",
+      "span": [
+        4377.5,
+        7622.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -14.139693202439434,
+        0.45623186016260486,
+        -3.9478607010355207,
+        34.69946650650206
+      ],
+      "criticalStations": [
+        7622.5,
+        7892.5,
+        8047.5,
+        7622.5
+      ],
+      "face": "court-north",
+      "span": [
+        7622.5,
+        8082.5
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -66.31987743979,
+        67.32666524142887,
+        -98.96905759891365,
+        166.20313870529606
+      ],
+      "criticalStations": [
+        6000.0,
+        4332.5,
+        5987.12962962963,
+        3917.5
+      ],
+      "face": "court-west",
+      "span": [
+        3917.5,
+        6000.0
+      ]
+    },
+    {
+      "MminMax_VminMax": [
+        -66.31987743979,
+        27.152157507701396,
+        -171.30661073732216,
+        67.58659461450512
+      ],
+      "criticalStations": [
+        6000.0,
+        7337.0,
+        8047.5,
+        6000.0
+      ],
+      "face": "court-west",
+      "span": [
+        6000.0,
+        8082.5
+      ]
+    }
+  ]
+}

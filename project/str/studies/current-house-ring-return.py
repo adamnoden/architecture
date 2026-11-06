@@ -7,7 +7,8 @@ J=4*((a-t)*(b-t))**2/(2*(a-t+b-t)/t)
 anchors={tuple(r['xy']) for r in heel['ring']['stations']};H=json.loads((D.parents[1]/'had/studies/water-replan.json').read_text())['model'];results={}
 def mvec(m,x):return [sum(p*q for p,q in zip(row,x)) for row in m]
 upperOnly='--floor-clips' in sys.argv
-braced='--plan-braced' in sys.argv
+integral='--integral-plan' in sys.argv
+braced='--plan-braced' in sys.argv or integral
 if braced:
  assert upperOnly
  planar=runpy.run_path(str(D/'current-house-roof-bracing.py'))
@@ -90,11 +91,11 @@ for which in ['outer','court']:
             if label=='ringG':Y=[y-g for y,g in zip(Y,selfG)]
             for p in [0,1]:
                 env(('V',ei,p),Y[2*p]/1000,low,high);env(('M',ei,p),Y[2*p+1]/1e6,low,high);env(('T',ei,p),Y[4+p]/1e6,low,high)
-    windHeads=[];additional={};mh={};hna={};vh={}
+    windHeads=[];additional={};mh={};hna={};vh={};concurrent={}
     if braced:
         # One coherent directional state at a time; never sum 96 alternatives.
         # Preserve head increments for the final origin -> lower support join.
-        for wi,state in enumerate(planar['actual']):
+        for wi,state in enumerate(planar['control' if integral else 'actual']):
             vertical,couples=planar['caseLoads'](state);y=[0.]*n
             for ni,p in enumerate(nodes):
                 y[3*ni]=vertical.get(p,0)*1000
@@ -118,6 +119,20 @@ for which in ['outer','court']:
                 yaws=[planarMom[0]+(planarMom[1]-planarMom[0])*(r[ax]-pq[0][ax])/lens for r in [p,q]]
                 for nm,v0 in [('M',max(abs(Z[1]),abs(Z[3]))/1e6),('V',max(abs(Z[0]),abs(Z[2]))/1000),('T',max(abs(Z[4]),abs(Z[5]))/1e6)]:
                     additional[nm,ei]=max(v0,additional.get((nm,ei),0.))
+                # At each physical end, combine one wind programme throughout.
+                # Gravity/heel intervals remain adverse and independent. Do not
+                # simultaneously apply maxima of six different wind cases and
+                # opposite ends of a beam as one stress state.
+                for end in [0,1]:
+                    ww=[]
+                    for tag,idx,unit in [('M',1+2*end,1e6),('T',4+end,1e6),('V',2*end,1000)]:
+                        vl,vh0=bounds[tag,ei,end];zz=Z[idx]/unit
+                        ww.append(max(abs(vl+zz),abs(vh0+zz)))
+                    m0,t0,v0=ww;m0+=1.35*c['lineG']*(L0/1000)**2/8
+                    sig=m0*1e6/c['W']+abs(yaws[end])*1e6/c['Wminor']+abs(state[2]['ring',*pq])*1000/c['A']
+                    sh=t0*1e6/(2*(a-t)*(b-t)*t)+v0*1000/(2*t*(b-2*t))+abs((planarMom[1]-planarMom[0])*1000/lens)*1000/(2*t*(a-2*t))
+                    value=math.hypot(sig,math.sqrt(3)*sh)/(200/1.1)
+                    if value>concurrent.get(ei,[0])[0]:concurrent[ei]=[value,wi,end]
                 mh[ei]=max(max(map(abs,yaws)),mh.get(ei,0));hna[ei]=max(abs(state[2]['ring',*pq]),hna.get(ei,0))
                 vh[ei]=max(abs((planarMom[1]-planarMom[0])*1000/lens),vh.get(ei,0))
     rowout=[]
@@ -132,9 +147,14 @@ for which in ['outer','court']:
             sigma=M*1e6/c['W']+mh[i]*1e6/c['Wminor']+hna[i]*1000/c['A']
             tau=T*1e6/(2*(a-t)*(b-t)*t)+V*1000/(2*t*(b-2*t))+vh[i]*1000/(2*t*(a-2*t))
         rowout.append(dict(endpoints=[nodes[edges[i][0]],nodes[edges[i][1]]],M=M,T=T,V=V,interaction=math.hypot(sigma,math.sqrt(3)*tau)/(200/1.1)))
+    if braced:
+        for ei,r in enumerate(rowout):r.update(oneWindInteraction=concurrent[ei][0],windIndex=concurrent[ei][1],physicalEnd=concurrent[ei][2])
     reactions=[{'xy':nodes[i//3],'range':bounds['head',i//3]} for i in sorted(fixed)]
     results[which]=dict(influence=influence,segments=rowout,stations=reactions,worstInteraction=max(q['interaction'] for q in rowout),minAnchor=min(q['range'][0] for q in reactions),maxAnchor=max(q['range'][1] for q in reactions))
-    if braced:results[which].update(windStationOrder=sorted(rr),windAtActualStations=windHeads)
+    if braced:
+        order=sorted(rr);rs={tuple(r['xy']):r['range'] for r in reactions}
+        results[which].update(windStationOrder=order,windAtActualStations=windHeads,
+          stationsIncludingWind=[{'xy':p,'range':[rs[p][0]+min(0,*[v[k] for v in windHeads]),rs[p][1]+max(0,*[v[k] for v in windHeads])]} for k,p in enumerate(order)])
 print([(k,v['worstInteraction'],v['minAnchor'],v['maxAnchor']) for k,v in results.items()])
 
 out={'role':'Closed steel ring, rotation-free vertical supports. Explicit force/torque and true hip axes. Half-scale hinge or full-height captive masonry is not implied.','stations':len(anchors),'upperFloorOnly':upperOnly,'rings':results}
@@ -142,7 +162,7 @@ def norm(v):
  if isinstance(v,dict):return {k:norm(z) for k,z in v.items()}
  if isinstance(v,(tuple,list)):return [norm(z) for z in v]
  return round(v,9) if isinstance(v,float) else v
-target=D/('current-house-ring-braced.json' if braced else 'current-house-ring-floor-stations.json' if upperOnly else 'current-house-ring-fullheight-control.json')
+target=D/('current-house-ring-integral.json' if integral else 'current-house-ring-braced.json' if braced else 'current-house-ring-floor-stations.json' if upperOnly else 'current-house-ring-fullheight-control.json')
 txt=json.dumps(norm(out),indent=2)+'\n'
 if '--check' in sys.argv:assert target.read_text()==txt
 else:target.write_text(txt)

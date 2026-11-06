@@ -3101,7 +3101,10 @@
           "M": 29.348125836,
           "T": 16.51004729,
           "V": 13.059401156,
-          "interaction": 0.551764001
+          "interaction": 0.551764001,
+          "oneWindInteraction": 0.517418165,
+          "windIndex": 7,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3117,7 +3120,10 @@
           "M": 29.347380916,
           "T": 17.293101305,
           "V": 13.57088477,
-          "interaction": 0.519754372
+          "interaction": 0.519754372,
+          "oneWindInteraction": 0.482850417,
+          "windIndex": 0,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3133,7 +3139,10 @@
           "M": 21.677526277,
           "T": 12.67915585,
           "V": 15.587094872,
-          "interaction": 0.391398555
+          "interaction": 0.391398555,
+          "oneWindInteraction": 0.351651265,
+          "windIndex": 35,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3149,7 +3158,10 @@
           "M": 20.557641594,
           "T": 12.520601878,
           "V": 15.955898643,
-          "interaction": 0.3891127
+          "interaction": 0.3891127,
+          "oneWindInteraction": 0.365687275,
+          "windIndex": 91,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3165,7 +3177,10 @@
           "M": 29.188981383,
           "T": 17.212039073,
           "V": 13.452622229,
-          "interaction": 0.515301115
+          "interaction": 0.515301115,
+          "oneWindInteraction": 0.480150458,
+          "windIndex": 0,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3181,7 +3196,10 @@
           "M": 29.167740484,
           "T": 16.531758519,
           "V": 12.936554513,
-          "interaction": 0.549288848
+          "interaction": 0.549288848,
+          "oneWindInteraction": 0.517546889,
+          "windIndex": 28,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3197,7 +3215,10 @@
           "M": 29.526578788,
           "T": 16.704567835,
           "V": 15.333692831,
-          "interaction": 0.558257474
+          "interaction": 0.558257474,
+          "oneWindInteraction": 0.522787005,
+          "windIndex": 28,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3213,7 +3234,10 @@
           "M": 27.360761763,
           "T": 17.587627256,
           "V": 17.142215302,
-          "interaction": 0.503135133
+          "interaction": 0.503135133,
+          "oneWindInteraction": 0.467059563,
+          "windIndex": 27,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3229,7 +3253,10 @@
           "M": 39.251776584,
           "T": 17.587627256,
           "V": 57.414780771,
-          "interaction": 0.683167803
+          "interaction": 0.683167803,
+          "oneWindInteraction": 0.656651872,
+          "windIndex": 32,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3245,7 +3272,10 @@
           "M": 39.581979378,
           "T": 13.081769799,
           "V": 49.126881956,
-          "interaction": 0.64885026
+          "interaction": 0.64885026,
+          "oneWindInteraction": 0.626203228,
+          "windIndex": 37,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3261,7 +3291,10 @@
           "M": 31.460194629,
           "T": 13.081769799,
           "V": 49.681419458,
-          "interaction": 0.561747903
+          "interaction": 0.561747903,
+          "oneWindInteraction": 0.555248601,
+          "windIndex": 38,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3277,7 +3310,10 @@
           "M": 39.759092943,
           "T": 12.824213656,
           "V": 48.690492426,
-          "interaction": 0.6673179
+          "interaction": 0.6673179,
+          "oneWindInteraction": 0.646627595,
+          "windIndex": 90,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3293,7 +3329,10 @@
           "M": 39.372960122,
           "T": 17.560293334,
           "V": 57.972858751,
-          "interaction": 0.694193412
+          "interaction": 0.694193412,
+          "oneWindInteraction": 0.660827077,
+          "windIndex": 30,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3309,7 +3348,10 @@
           "M": 27.198193781,
           "T": 17.560293334,
           "V": 17.104675638,
-          "interaction": 0.49914992
+          "interaction": 0.49914992,
+          "oneWindInteraction": 0.464518307,
+          "windIndex": 27,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3325,7 +3367,10 @@
           "M": 29.371819289,
           "T": 16.751904917,
           "V": 15.274361683,
-          "interaction": 0.556349857
+          "interaction": 0.556349857,
+          "oneWindInteraction": 0.523438426,
+          "windIndex": 31,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3341,7 +3386,10 @@
           "M": 29.167740484,
           "T": 16.531758519,
           "V": 12.936554513,
-          "interaction": 0.549288848
+          "interaction": 0.549288848,
+          "oneWindInteraction": 0.517546889,
+          "windIndex": 10,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3357,7 +3405,10 @@
           "M": 29.188981383,
           "T": 17.212039073,
           "V": 13.452622229,
-          "interaction": 0.515301115
+          "interaction": 0.515301115,
+          "oneWindInteraction": 0.480150458,
+          "windIndex": 3,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3373,7 +3424,10 @@
           "M": 20.557641594,
           "T": 12.520601878,
           "V": 15.955898643,
-          "interaction": 0.3891127
+          "interaction": 0.3891127,
+          "oneWindInteraction": 0.365687275,
+          "windIndex": 73,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3389,7 +3443,10 @@
           "M": 21.677526277,
           "T": 12.67915585,
           "V": 15.587094872,
-          "interaction": 0.391398555
+          "interaction": 0.391398555,
+          "oneWindInteraction": 0.351651265,
+          "windIndex": 17,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3405,7 +3462,10 @@
           "M": 29.347380916,
           "T": 17.293101305,
           "V": 13.57088477,
-          "interaction": 0.519754372
+          "interaction": 0.519754372,
+          "oneWindInteraction": 0.482850417,
+          "windIndex": 3,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3421,7 +3481,10 @@
           "M": 29.348125836,
           "T": 16.51004729,
           "V": 13.059401156,
-          "interaction": 0.551764001
+          "interaction": 0.551764001,
+          "oneWindInteraction": 0.517418165,
+          "windIndex": 31,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3437,7 +3500,10 @@
           "M": 29.371819289,
           "T": 16.751904917,
           "V": 15.274361683,
-          "interaction": 0.556349857
+          "interaction": 0.556349857,
+          "oneWindInteraction": 0.523438426,
+          "windIndex": 7,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3453,7 +3519,10 @@
           "M": 27.19819378,
           "T": 17.560293334,
           "V": 17.104675638,
-          "interaction": 0.49914992
+          "interaction": 0.49914992,
+          "oneWindInteraction": 0.464518307,
+          "windIndex": 6,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3469,7 +3538,10 @@
           "M": 39.372960122,
           "T": 17.560293334,
           "V": 57.972858751,
-          "interaction": 0.694193412
+          "interaction": 0.694193412,
+          "oneWindInteraction": 0.660827077,
+          "windIndex": 12,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3485,7 +3557,10 @@
           "M": 39.759092943,
           "T": 12.824213656,
           "V": 48.690492426,
-          "interaction": 0.6673179
+          "interaction": 0.6673179,
+          "oneWindInteraction": 0.646627595,
+          "windIndex": 72,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3501,7 +3576,10 @@
           "M": 31.460194629,
           "T": 13.081769799,
           "V": 49.681419458,
-          "interaction": 0.561747903
+          "interaction": 0.561747903,
+          "oneWindInteraction": 0.555248601,
+          "windIndex": 14,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3517,7 +3595,10 @@
           "M": 39.581979378,
           "T": 13.081769799,
           "V": 49.126881956,
-          "interaction": 0.64885026
+          "interaction": 0.64885026,
+          "oneWindInteraction": 0.626203228,
+          "windIndex": 19,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3533,7 +3614,10 @@
           "M": 39.251776584,
           "T": 17.587627257,
           "V": 57.414780771,
-          "interaction": 0.683167803
+          "interaction": 0.683167803,
+          "oneWindInteraction": 0.656651872,
+          "windIndex": 8,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -3549,7 +3633,10 @@
           "M": 27.360761763,
           "T": 17.587627257,
           "V": 17.142215302,
-          "interaction": 0.503135133
+          "interaction": 0.503135133,
+          "oneWindInteraction": 0.467059563,
+          "windIndex": 6,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -3565,7 +3652,10 @@
           "M": 29.526578788,
           "T": 16.704567835,
           "V": 15.333692831,
-          "interaction": 0.558257474
+          "interaction": 0.558257474,
+          "oneWindInteraction": 0.522787005,
+          "windIndex": 10,
+          "physicalEnd": 1
         }
       ],
       "stations": [
@@ -5308,6 +5398,148 @@
           0.579921884,
           -2.174314643
         ]
+      ],
+      "stationsIncludingWind": [
+        {
+          "xy": [
+            332.5,
+            332.5
+          ],
+          "range": [
+            -47.043008786,
+            97.241777543
+          ]
+        },
+        {
+          "xy": [
+            332.5,
+            3800
+          ],
+          "range": [
+            -46.675519579,
+            73.206288601
+          ]
+        },
+        {
+          "xy": [
+            332.5,
+            6000
+          ],
+          "range": [
+            -49.96576069,
+            98.739969753
+          ]
+        },
+        {
+          "xy": [
+            332.5,
+            8200
+          ],
+          "range": [
+            -46.456079711,
+            73.130741605
+          ]
+        },
+        {
+          "xy": [
+            332.5,
+            11667.5
+          ],
+          "range": [
+            -47.121958146,
+            97.335656312
+          ]
+        },
+        {
+          "xy": [
+            4700,
+            332.5
+          ],
+          "range": [
+            -47.160604099,
+            96.209855576
+          ]
+        },
+        {
+          "xy": [
+            4700,
+            11667.5
+          ],
+          "range": [
+            -46.965598273,
+            96.386530886
+          ]
+        },
+        {
+          "xy": [
+            7300,
+            332.5
+          ],
+          "range": [
+            -46.965598273,
+            96.386530886
+          ]
+        },
+        {
+          "xy": [
+            7300,
+            11667.5
+          ],
+          "range": [
+            -47.160604099,
+            96.209855576
+          ]
+        },
+        {
+          "xy": [
+            11667.5,
+            332.5
+          ],
+          "range": [
+            -47.121958146,
+            97.335656312
+          ]
+        },
+        {
+          "xy": [
+            11667.5,
+            3800
+          ],
+          "range": [
+            -46.456079711,
+            73.130741605
+          ]
+        },
+        {
+          "xy": [
+            11667.5,
+            6000
+          ],
+          "range": [
+            -49.96576069,
+            98.739969753
+          ]
+        },
+        {
+          "xy": [
+            11667.5,
+            8200
+          ],
+          "range": [
+            -46.675519579,
+            73.206288601
+          ]
+        },
+        {
+          "xy": [
+            11667.5,
+            11667.5
+          ],
+          "range": [
+            -47.043008786,
+            97.241777543
+          ]
+        }
       ]
     },
     "court": {
@@ -7470,7 +7702,10 @@
           "M": 47.509004294,
           "T": 22.129583112,
           "V": 70.242355229,
-          "interaction": 0.970544694
+          "interaction": 0.970544694,
+          "oneWindInteraction": 0.851185231,
+          "windIndex": 9,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7486,7 +7721,10 @@
           "M": 54.699224927,
           "T": 23.046385865,
           "V": 69.203940908,
-          "interaction": 0.984803393
+          "interaction": 0.984803393,
+          "oneWindInteraction": 0.92623894,
+          "windIndex": 14,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7502,7 +7740,10 @@
           "M": 55.536395383,
           "T": 15.593111786,
           "V": 64.753946918,
-          "interaction": 0.936870594
+          "interaction": 0.936870594,
+          "oneWindInteraction": 0.892766571,
+          "windIndex": 9,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7518,7 +7759,10 @@
           "M": 44.229007437,
           "T": 13.740794142,
           "V": 66.347893173,
-          "interaction": 0.779356864
+          "interaction": 0.779356864,
+          "oneWindInteraction": 0.739273566,
+          "windIndex": 83,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7534,7 +7778,10 @@
           "M": 55.605848734,
           "T": 13.740794142,
           "V": 66.279716945,
-          "interaction": 0.918941093
+          "interaction": 0.918941093,
+          "oneWindInteraction": 0.875865307,
+          "windIndex": 33,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7550,7 +7797,10 @@
           "M": 54.469976234,
           "T": 23.016373279,
           "V": 69.017647123,
-          "interaction": 0.97892854
+          "interaction": 0.97892854,
+          "oneWindInteraction": 0.93073217,
+          "windIndex": 42,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7566,7 +7816,10 @@
           "M": 47.586988871,
           "T": 22.063815309,
           "V": 70.055998444,
-          "interaction": 0.970944706
+          "interaction": 0.970944706,
+          "oneWindInteraction": 0.83663545,
+          "windIndex": 28,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7582,7 +7835,10 @@
           "M": 47.675867788,
           "T": 22.369548609,
           "V": 70.303492061,
-          "interaction": 0.974088764
+          "interaction": 0.974088764,
+          "oneWindInteraction": 0.854751646,
+          "windIndex": 42,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7598,7 +7854,10 @@
           "M": 54.826888595,
           "T": 23.286351362,
           "V": 69.265109496,
-          "interaction": 0.987902562
+          "interaction": 0.987902562,
+          "oneWindInteraction": 0.92938702,
+          "windIndex": 29,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7614,7 +7873,10 @@
           "M": 55.663437054,
           "T": 15.815212409,
           "V": 64.876635416,
-          "interaction": 0.939745417
+          "interaction": 0.939745417,
+          "oneWindInteraction": 0.895699129,
+          "windIndex": 42,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7630,7 +7892,10 @@
           "M": 44.311685311,
           "T": 13.948916895,
           "V": 66.470610884,
-          "interaction": 0.781693093
+          "interaction": 0.781693093,
+          "oneWindInteraction": 0.741062565,
+          "windIndex": 80,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7646,7 +7911,10 @@
           "M": 55.484277901,
           "T": 13.948916895,
           "V": 66.137362654,
-          "interaction": 0.918223361
+          "interaction": 0.918223361,
+          "oneWindInteraction": 0.874631311,
+          "windIndex": 24,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7662,7 +7930,10 @@
           "M": 54.346287749,
           "T": 23.178893601,
           "V": 68.938144943,
-          "interaction": 0.978398141
+          "interaction": 0.978398141,
+          "oneWindInteraction": 0.929504701,
+          "windIndex": 33,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7678,7 +7949,10 @@
           "M": 47.421654485,
           "T": 22.2273124,
           "V": 69.976527508,
-          "interaction": 0.969902562
+          "interaction": 0.969902562,
+          "oneWindInteraction": 0.835004477,
+          "windIndex": 31,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7694,7 +7968,10 @@
           "M": 47.134753989,
           "T": 22.063815309,
           "V": 70.165876911,
-          "interaction": 0.965818752
+          "interaction": 0.965818752,
+          "oneWindInteraction": 0.831201924,
+          "windIndex": 10,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7710,7 +7987,10 @@
           "M": 53.776427999,
           "T": 23.016373279,
           "V": 69.13239021,
-          "interaction": 0.971057697
+          "interaction": 0.971057697,
+          "oneWindInteraction": 0.923358398,
+          "windIndex": 24,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7726,7 +8006,10 @@
           "M": 54.739468964,
           "T": 13.740794142,
           "V": 68.633335971,
-          "interaction": 0.910845523
+          "interaction": 0.910845523,
+          "oneWindInteraction": 0.867084834,
+          "windIndex": 9,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7742,7 +8025,10 @@
           "M": 45.291964199,
           "T": 13.740794142,
           "V": 64.14130383,
-          "interaction": 0.789311142
+          "interaction": 0.789311142,
+          "oneWindInteraction": 0.749143578,
+          "windIndex": 65,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7758,7 +8044,10 @@
           "M": 56.384984998,
           "T": 15.593111786,
           "V": 62.458924835,
-          "interaction": 0.944525406
+          "interaction": 0.944525406,
+          "oneWindInteraction": 0.900036407,
+          "windIndex": 33,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7774,7 +8063,10 @@
           "M": 55.344749709,
           "T": 23.046385865,
           "V": 69.092355897,
-          "interaction": 0.992171867
+          "interaction": 0.992171867,
+          "oneWindInteraction": 0.933088699,
+          "windIndex": 38,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7790,7 +8082,10 @@
           "M": 47.934958247,
           "T": 22.129583112,
           "V": 70.135300657,
-          "interaction": 0.975380816
+          "interaction": 0.975380816,
+          "oneWindInteraction": 0.856442832,
+          "windIndex": 33,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7806,7 +8101,10 @@
           "M": 47.421654485,
           "T": 21.954327173,
           "V": 69.976527508,
-          "interaction": 0.968201586
+          "interaction": 0.968201586,
+          "oneWindInteraction": 0.83309867,
+          "windIndex": 7,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7822,7 +8120,10 @@
           "M": 54.346287749,
           "T": 22.909082339,
           "V": 68.938144943,
-          "interaction": 0.976682427
+          "interaction": 0.976682427,
+          "oneWindInteraction": 0.927744428,
+          "windIndex": 9,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7838,7 +8139,10 @@
           "M": 55.484277901,
           "T": 13.654731655,
           "V": 66.137362654,
-          "interaction": 0.91683272
+          "interaction": 0.91683272,
+          "oneWindInteraction": 0.873201409,
+          "windIndex": 42,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7854,7 +8158,10 @@
           "M": 44.311685311,
           "T": 13.654731655,
           "V": 66.470610884,
-          "interaction": 0.780054637
+          "interaction": 0.780054637,
+          "oneWindInteraction": 0.739426929,
+          "windIndex": 56,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7870,7 +8177,10 @@
           "M": 55.663437054,
           "T": 15.511792784,
           "V": 64.876635416,
-          "interaction": 0.93818832
+          "interaction": 0.93818832,
+          "oneWindInteraction": 0.894103669,
+          "windIndex": 24,
+          "physicalEnd": 1
         },
         {
           "endpoints": [
@@ -7886,7 +8196,10 @@
           "M": 54.826888595,
           "T": 23.01725256,
           "V": 69.265109496,
-          "interaction": 0.986206298
+          "interaction": 0.986206298,
+          "oneWindInteraction": 0.927635719,
+          "windIndex": 11,
+          "physicalEnd": 0
         },
         {
           "endpoints": [
@@ -7902,7 +8215,10 @@
           "M": 47.675867788,
           "T": 22.100449807,
           "V": 70.303492061,
-          "interaction": 0.972416995
+          "interaction": 0.972416995,
+          "oneWindInteraction": 0.853015631,
+          "windIndex": 24,
+          "physicalEnd": 0
         }
       ],
       "stations": [
@@ -8985,6 +9301,88 @@
           -0.168643184,
           0.770486802
         ]
+      ],
+      "stationsIncludingWind": [
+        {
+          "xy": [
+            3917.5,
+            3917.5
+          ],
+          "range": [
+            -111.177854807,
+            196.771048768
+          ]
+        },
+        {
+          "xy": [
+            3917.5,
+            6000
+          ],
+          "range": [
+            -76.509099718,
+            132.437484119
+          ]
+        },
+        {
+          "xy": [
+            3917.5,
+            8082.5
+          ],
+          "range": [
+            -112.43622305,
+            196.873670181
+          ]
+        },
+        {
+          "xy": [
+            5925,
+            8082.5
+          ],
+          "range": [
+            -76.604594251,
+            132.604835361
+          ]
+        },
+        {
+          "xy": [
+            6000,
+            3917.5
+          ],
+          "range": [
+            -76.508242753,
+            132.438682041
+          ]
+        },
+        {
+          "xy": [
+            8082.5,
+            3917.5
+          ],
+          "range": [
+            -111.377681174,
+            196.862382299
+          ]
+        },
+        {
+          "xy": [
+            8082.5,
+            6000
+          ],
+          "range": [
+            -76.509099718,
+            132.437484119
+          ]
+        },
+        {
+          "xy": [
+            8082.5,
+            8082.5
+          ],
+          "range": [
+            -110.40095995,
+            196.994110381
+          ]
+        }
       ]
     }
   }
