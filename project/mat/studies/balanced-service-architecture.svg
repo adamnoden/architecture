@@ -71,7 +71,7 @@
 <text x="38" y="1061" class="h">W9 limited visible-loss diagnostic: preferred development comparison</text>
 <rect x="38" y="1080" width="330" height="100" fill="#eef4ec" stroke="#66865a"/>
 <text x="50" y="1108" class="b">Native GMB125 actual-flow U</text>
-<text x="50" y="1135" class="s">0–10 V; Vnom108 L/s</text>
+<text x="50" y="1135" class="s">Proposed Mode0Ai; Nom108 L/s</text>
 <text x="50" y="1162" class="s">&lt;0.05 mA load vs0.5 mA native max</text>
 <rect x="430" y="1080" width="350" height="100" fill="#eef4ec" stroke="#66865a"/>
 <text x="442" y="1108" class="b">DUB01CD4810V voltage monitor</text>

@@ -108,10 +108,42 @@
     "proportionalSupplyFlowReadyComparison": {
       "status": "Preferred proportional diagnostic development comparison; actual apparatus/constituents not admitted and no hob safety interlock",
       "source": "REACT V GMB IOM,2025-05-16,p11:U actual-flow feedback in selected0..10V mode maps0..Vnom108L/s; it does not indicate damper position.",
+      "proposedNativeConfiguration": {
+        "IOMPage": 8,
+        "Mode": "0Ai:0..10Vanalogue",
+        "Diag": "oFF:normaloperation",
+        "MinLps": 16,
+        "MaxLps": 48,
+        "NomLps": 108,
+        "unitMatrix": "L/s:no square",
+        "status": "Authored commissioning settings,not observed installed settings or assumed factory defaults"
+      },
+      "nativeFeedbackFormulas": {
+        "IOMPage": 11,
+        "0to10": "U=10*Vact/Vnom",
+        "2to10": "U=2+8*Vact/Vnom",
+        "reference": "U always refers to0..Vnom,not Y input Min..Max span;not damper position"
+      },
       "native0to10FeedbackVolts": {
         "normal16": 1.4814814814814814,
         "cooking48": 4.444444444444445,
-        "brokenContact16": 1.4814814814814814
+        "brokenContact16": 1.4814814814814814,
+        "normalRatedRange": [
+          1.2962962962962963,
+          1.6666666666666667
+        ],
+        "cookingRatedRange": [
+          4.222222222222222,
+          4.666666666666667
+        ]
+      },
+      "alternate2to10NegativeControl": {
+        "Mode": "2Ai:not selected",
+        "normal16V": 3.185185185185185,
+        "cooking48V": 5.555555555555555,
+        "correct40LpsThresholdV": 4.962962962962963,
+        "flowAtUnchanged0to10ThresholdLps": 23.0,
+        "result": "Unchanged threshold would mean23L/s,not40;reject mode mismatch and remap/recommission switching,return,tolerance/drift before use"
       },
       "normalUpperWithRatedToleranceLps": 18,
       "cookingLowerWithRatedToleranceLps": 45.6,
@@ -155,7 +187,7 @@
           36.22,
           43.78
         ],
-        "calibration": "Verify actual switching and return with measured branch flow/U in both modes after native warm-up; set knob against meter,not printedscale alone. Native repeatability/drift sensitivity is not total absolute accuracy or a GMBU accuracy guarantee. Preserve0..10mode/Vnom108 and recommission after replacement.",
+        "calibration": "Record actual0Ai,Nom108,Min16,Max48,L/s unit matrix and Diag oFF;verify terminal1..4 U against independently measured branch flow in both contact states and broken-contact trial. Verify actual switching and return after monitor native warm-up; set knob against meter,not printedscale alone. Native repeatability/drift sensitivity is not total absolute accuracy or a GMBU accuracy guarantee. Preserve0..10mode/Vnom108 and recommission after replacement.",
         "GMBFullStrokeSeconds": 100,
         "transientBoundary": "100sfor90degree fullstroke is native5Nm data,not the actual16to48flow settling time. Exercise hood opening/closing and known broken-contact16fallback with real pressure network and observe actualU/indication.",
         "placement": "Accessible dry control enclosure with DINrail,terminal/wire space,IP20module protection and required electrical clearances; no enclosure or support dimensions are adopted from bare22.5mm module size."

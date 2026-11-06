@@ -76,7 +76,10 @@ failure={'baseline':'Electric/no-combustion programme; no gas-appliance interloc
  'decision':'Develop native unit/hood alarms plus one proportional visible local supply-boost indication and manual stop/repair response for this all-electric cooking strategy. Resolve the known silent16fallback meaningfully without demanding universal fault detection or an automatic hob interlock.'}
 ready={'status':'Preferred proportional diagnostic development comparison; actual apparatus/constituents not admitted and no hob safety interlock',
  'source':'REACT V GMB IOM,2025-05-16,p11:U actual-flow feedback in selected0..10V mode maps0..Vnom108L/s; it does not indicate damper position.',
- 'native0to10FeedbackVolts':{'normal16':10*16/108,'cooking48':10*48/108,'brokenContact16':10*16/108},
+ 'proposedNativeConfiguration':{'IOMPage':8,'Mode':'0Ai:0..10Vanalogue','Diag':'oFF:normaloperation','MinLps':16,'MaxLps':48,'NomLps':108,'unitMatrix':'L/s:no square','status':'Authored commissioning settings,not observed installed settings or assumed factory defaults'},
+ 'nativeFeedbackFormulas':{'IOMPage':11,'0to10':'U=10*Vact/Vnom','2to10':'U=2+8*Vact/Vnom','reference':'U always refers to0..Vnom,not Y input Min..Max span;not damper position'},
+ 'native0to10FeedbackVolts':{'normal16':10*16/108,'cooking48':10*48/108,'brokenContact16':10*16/108,'normalRatedRange':[10*14/108,10*18/108],'cookingRatedRange':[10*45.6/108,10*50.4/108]},
+ 'alternate2to10NegativeControl':{'Mode':'2Ai:not selected','normal16V':2+8*16/108,'cooking48V':2+8*48/108,'correct40LpsThresholdV':2+8*40/108,'flowAtUnchanged0to10ThresholdLps':(10*40/108-2)*108/8,'result':'Unchanged threshold would mean23L/s,not40;reject mode mismatch and remap/recommission switching,return,tolerance/drift before use'},
  'normalUpperWithRatedToleranceLps':16+max(2,.05*16),
  'cookingLowerWithRatedToleranceLps':48-max(2,.05*48),
  'authoredIndicationThresholdLps':40,'thresholdVoltsIn0to10Mode':10*40/108,
@@ -84,6 +87,8 @@ ready={'status':'Preferred proportional diagnostic development comparison; actua
  'singleReadyIndicationPrice':'Reuse nativeU through DUB01CD4810V and one XB4BVB3 visible indicator labelled SUPPLY BOOST. No new room pressure loop,sensor or BMS. Real power,materials,calibration and electrical enclosure/access are charged below.',
  'ordinaryUse':'During cooking, missing expected SUPPLY BOOST makes the silent16fallback meaningfully visible without reading flow numbers. Stop cooking on observed lost capture/makeup or native alarm; investigate/repair and recommission before resuming. Native full-stroke100s is not actual16to48settling time: commission the real transient and explain ordinary starting indication without a numerical premeal checklist.',
  'limits':'SUPPLY BOOST means reusedU is above its commissioned threshold only. It is not green-safe or proof of capture/extract, tube/calibration integrity, heat/frost or fire state. Stale-highU, shared measurement faults and welded relay contact can mislead; lamp/power loss can remove indication. Retain native protections and explicit response/maintenance; do not make infallible detection of every hood/sensor failure an admission condition for this limited diagnostic.'}
+assert math.isclose(ready['alternate2to10NegativeControl']['flowAtUnchanged0to10ThresholdLps'],23)
+assert ready['native0to10FeedbackVolts']['normalRatedRange'][1]<ready['thresholdVoltsIn0to10Mode']<ready['native0to10FeedbackVolts']['cookingRatedRange'][0]
 assert ready['normalUpperWithRatedToleranceLps']<ready['authoredIndicationThresholdLps']<ready['cookingLowerWithRatedToleranceLps']
 monitor_threshold=ready['thresholdVoltsIn0to10Mode']
 monitor_error=.005*10+.001*10*30 # repeatability + conservative30C drift sensitivity
@@ -101,7 +106,7 @@ monitor={'part':'CarloGavazziDUB01CD4810V',
  'nativeRepeatabilityFullScalePercent':.5,'nativeDriftPPMperC':1000,'nativeAccuracyWarmupMinutes':15,
  'electronicsOnly30CDifferenceSensitivityV':monitor_error,
  'electronicsOnlyEquivalentTripBandLps':[(monitor_threshold-monitor_error)*108/10,(monitor_threshold+monitor_error)*108/10],
- 'calibration':'Verify actual switching and return with measured branch flow/U in both modes after native warm-up; set knob against meter,not printedscale alone. Native repeatability/drift sensitivity is not total absolute accuracy or a GMBU accuracy guarantee. Preserve0..10mode/Vnom108 and recommission after replacement.',
+ 'calibration':'Record actual0Ai,Nom108,Min16,Max48,L/s unit matrix and Diag oFF;verify terminal1..4 U against independently measured branch flow in both contact states and broken-contact trial. Verify actual switching and return after monitor native warm-up; set knob against meter,not printedscale alone. Native repeatability/drift sensitivity is not total absolute accuracy or a GMBU accuracy guarantee. Preserve0..10mode/Vnom108 and recommission after replacement.',
  'GMBFullStrokeSeconds':100,'transientBoundary':'100sfor90degree fullstroke is native5Nm data,not the actual16to48flow settling time. Exercise hood opening/closing and known broken-contact16fallback with real pressure network and observe actualU/indication.',
  'placement':'Accessible dry control enclosure with DINrail,terminal/wire space,IP20module protection and required electrical clearances; no enclosure or support dimensions are adopted from bare22.5mm module size.'}
 indicator={'part':'SchneiderHarmonyXB4BVB3','source':'https://www.proface.com/en/product/spec/XB4BVB3',
@@ -113,6 +118,8 @@ indicator={'part':'SchneiderHarmonyXB4BVB3','source':'https://www.proface.com/en
  'mounting':'Ordinarily visible kitchen position with full54mm rear body,terminals and replaceable access; do not drill or modify a certified hood as an assumed mounting detail.'}
 assert monitor['maximumLoadAt10VmA']<monitor['GMBNativeMaximumOutputLoadmA']
 assert 1<ready['native0to10FeedbackVolts']['normal16']<monitor_threshold<ready['native0to10FeedbackVolts']['cooking48']<10
+assert math.isclose(ready['alternate2to10NegativeControl']['flowAtUnchanged0to10ThresholdLps'],23)
+assert ready['native0to10FeedbackVolts']['normalRatedRange'][1]<ready['thresholdVoltsIn0to10Mode']<ready['native0to10FeedbackVolts']['cookingRatedRange'][0]
 assert ready['normalUpperWithRatedToleranceLps']<monitor['electronicsOnlyEquivalentTripBandLps'][0]<monitor['electronicsOnlyEquivalentTripBandLps'][1]<ready['cookingLowerWithRatedToleranceLps']
 ready['matchedNativeMonitorComparison']=monitor
 ready['matchedNativeIndicatorComparison']=indicator
@@ -581,7 +588,7 @@ label(38,985,'No cart, supported loading, hinged-door swing, complete ports, fro
 label(38,1011,'Source: balanced-service-architecture.json; pinned HAD/Services geometry; Systemair native cards 2023/2024.','s')
 label(38,1061,'W9 limited visible-loss diagnostic: preferred development comparison','h')
 for x,w,title,line2,line3 in [
- (38,330,'Native GMB125 actual-flow U','0–10 V; Vnom108 L/s','<0.05 mA load vs0.5 mA native max'),
+ (38,330,'Native GMB125 actual-flow U','Proposed Mode0Ai; Nom108 L/s','<0.05 mA load vs0.5 mA native max'),
  (430,350,'DUB01CD4810V voltage monitor','3.70 V trial; overvoltage / N.D.','24 V; ≈150 g;3 W DC /4 VA AC'),
  (820,340,'SUPPLY BOOST indicator','XB4BVB3;80 g;24 V /18 mA','Reused U above threshold only')]:
  svg.append(f'<rect x="{x}" y="1080" width="{w}" height="100" fill="#eef4ec" stroke="#66865a"/>')
