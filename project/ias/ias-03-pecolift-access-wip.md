@@ -82,3 +82,5 @@ Private finite local rolling trials retained all current furniture/fixed walls (
 The [bounded dismantlable-platform and cold-joint comparison](ias-03-access-and-cold-joint-comparison-wip.md) records one actual modular kit and the independent-renewal/hot-work limits of one functional-polymer pipe coupling. Neither control supplies a whole wet-module method; the next decision remains the complete renewable boundary.
 
 The [modular furnishing handoff](ias-03-modular-furnishing-handoff.md) retains a conditional current-source small-part carrying path and one storage territory. Its actual furnishing first release, storage handling and subsequent lift/repair event remain unearned; no house or furnishing selection is made.
+
+The later [renewal proportionality result](ias-03-renewal-proportionality-result.md) rejects that particular 48-package furniture workaround as the preferred development direction. This static lift reference and the direct-turn negative remain limited controls; neither becomes a complete rolling/crew/repair method or a universal equipment rejection.

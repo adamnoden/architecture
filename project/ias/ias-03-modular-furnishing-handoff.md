@@ -2,6 +2,8 @@
 
 **6 November2026 · recoverable PROJECT WIP, UNSELECTED.** Coordinator execution limit caused this handoff; it is not a claim that useful IAS work is exhausted. The wet-module and actual renewal event remain incomplete. This document develops the next duty after the [access/cold-boundary comparison](ias-03-access-and-cold-joint-comparison-wip.md); it neither restores the rejected podium event nor admits the Pecolift route.
 
+**Later development disposition:** the [renewal proportionality result](ias-03-renewal-proportionality-result.md) rejects this particular 48-package furnishing contract as the preferred access direction. Retain the route and package arithmetic below only as conditional research evidence. Its first-release/storage/lift/repair sequence is unearned; no further mechanism design is selected merely to preserve this prototype.
+
 ## Concrete question and actual source
 
 Can deliberately dismantlable furnishings clear the ordinary living room for the **same** conventional lift/repair event, more simply than special rolling choreography around inseparable sofas? Neither the reference1900 sofa footprint nor its assumed one-piece construction is an owner-nominated invariant. A different furnishing must nevertheless earn actual parts, function, materials, release, transport, storage and restoration. No bought sofa is claimed to have the construction below.
