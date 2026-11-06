@@ -9,12 +9,12 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-06T21:03:49.061Z",
-  "expiresAt": "2026-11-06T22:33:49.061Z",
+  "heartbeatAt": "2026-11-06T21:15:49.765Z",
+  "expiresAt": "2026-11-06T22:45:49.765Z",
   "checkpoint": {
-    "evidence": "Verified1351 merged40d5c9b0/exact9419fab/all14CI pass; old source branch deleted; new distinct successor starts exact merge; wholefield/conventional comparator and rail withdrawal preserved",
-    "next": "Develop one source-located conventional wall/floor air-moisture section with actual STR ground-floor cover/cage input, complete mineral beds and threshold relation",
-    "blocker": "No actual concrete mix, complete air/moisture joint, site or material admission; MAT remains open"
+    "evidence": "Draft1355 head97f4e645/tree6502748d pins STRfloor5f56/c4b2261a and validates same HAD/grid inputs; actual900spine/DPC/180mm offset and cover/crack/pour limits rendered; source check passes",
+    "next": "Join source-bound conventional wall/floor control to actual court threshold and stable Services leakage allocation; reconcile moved main before final review",
+    "blocker": "Bonded mineral air transition, concrete mix/performance, actual reversible threshold closure and thermal/material result remain unqualified; no MAT completion"
   },
   "branch": "work/zerg-20261106-w5-concrete-boundary",
   "predecessor": {
@@ -39,5 +39,5 @@
       "blocker": "STR confirms complete support/headlist and signed domains are not yet allocated; do not extrapolate12 cornerpoints. Sharedgrid bulk-water/weather enclosure and actual capillary-floor ownership remain unresolved. No assembly admission or selection."
     }
   },
-  "pr": 1351
+  "pr": 1355
 }
