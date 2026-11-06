@@ -9,8 +9,8 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T19:18:26.610Z",
-  "expiresAt": "2026-11-06T20:48:26.610Z",
+  "heartbeatAt": "2026-11-06T19:22:04.665Z",
+  "expiresAt": "2026-11-06T20:52:04.665Z",
   "branch": "work/zerg-20261106-services-g21",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
@@ -33,5 +33,10 @@
       "next": "Fresh canonical acquisition before changes. Read all three balanced-service-architecture files on1342. Complete actual144 L/s VTC curve/noise screen; otherwise develop W9 native96/128 control/fault, winter16C heat and whole156kg renewal/constituent admission. Native steady16 fallback is not fault warning. No adopted candidate, policy exception or merge permission.",
       "blocker": "Coordinator execution limit safe park. Productive design frontier remains; draft1342 preserved. Neither W9 nor VTC complete operating/renewal/material admission. No unattended heartbeat."
     }
+  },
+  "pr": 1345,
+  "checkpoint": {
+    "evidence": "Successor draft PR1345 preserves exact predecessor01c1a850/tree88c8e02f; native VTC2024 graph rendered, fresh inherited Python check PASS",
+    "next": "Publish asymmetric VTC pressure/heat/frost analysis and rendered matched-system comparison; complete whole-system proof before adoption"
   }
 }
