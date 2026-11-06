@@ -9,8 +9,8 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T22:21:29.173Z",
-  "expiresAt": "2026-11-06T23:51:29.173Z",
+  "heartbeatAt": "2026-11-06T22:39:15.204Z",
+  "expiresAt": "2026-11-07T00:09:15.204Z",
   "branch": "work/zerg-20261106-services-g21-fork-receiver",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
@@ -36,8 +36,8 @@
   },
   "pr": 1358,
   "checkpoint": {
-    "evidence": "Draft1358 exactfe008b79a17ce40dbf7a62cccf1a2523f86bf929/treedd80387b1ab099e91067c7b4e5b7806d60d8e98d published; six-file coherent raised forkable receiver/GL/cart/condensate method. FullMAT/diffcheck/render pass, existing completeMATandSTR chains retained. Native227kg/350CG scope,48.507kg ideal fixture and22.493kg remaining, negative fork reaction, fullgeometry/support/material/exterior holds explicit. Starts merged1356 2eb8c064; currentmain969c4 needs final reconciliation after review.",
-    "next": "Root source review1358 and STR floor/model coordination; reconcile queued currentmain preserving IAS/envelope sources/fullchecks, then exactCI/freshpreflight before merge. Continue actual native footprint/CG/capture and complete GL/cart/operator/condensate/ports renewal without lowering duties. No apparatus/support/cart/material/airtarget adoption or MAT completion."
+    "evidence": "Published coherent exact head 69881327fa87380818a5b3d086612becca1c6eb1 tree 2ba825106a0bc70cdb1a48ad852844a0602f3a30 reconciled main1273. Full MAT/HAD22 and render pass; utility source chain string-only identities/prose, zero numeric/geometry change; receiver CG/support/handling admissions remain false.",
+    "next": "Root exact source review; exact-head full CI; fresh canonical connector preflight. Continue actual receiver/native CG/full tool/support/condensate geometry after bounded integration."
   },
   "note": "Active same-g21 air-duty successor Draft1356 after merged1353; provisional comparison only, no apparatus/air-boundary/handling/material admission or packet completion."
 }
