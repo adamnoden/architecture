@@ -1,0 +1,536 @@
+{
+  "status": "Provisional design comparison and allocation; no adopted owner invariant, tested envelope or compliance result",
+  "sources": {
+    "HAD": {
+      "commit": "2a31084013cebca2094692263f0c7a2b2f8d2166",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "6f089df104fe85c028978892e7f6b63f862e3237"
+    },
+    "floorField": {
+      "commit": "2a31084013cebca2094692263f0c7a2b2f8d2166",
+      "path": "project/mat/studies/ground-field-assembly.results.json",
+      "blob": "5dd70178c0e5bb192f1d24f6e5383c3d330fe1bc"
+    }
+  },
+  "primaryEvidence": [
+    {
+      "name": "England ADL Volume1,2021 incorporating2023 amendments",
+      "url": "https://assets.publishing.service.gov.uk/media/662a2e3e55e1582b6ca7e592/Approved_Document_L__Conservation_of_fuel_and_power__Volume_1_Dwellings__2021_edition_incorporating_2023_amendments.pdf",
+      "retrieved": "2026-11-06",
+      "sha256": "1ab93e597d9ba43531f26b3a94323383f011548ac536d6a036e20d107ecceaa3",
+      "pages": "printed26 Table4.1; printed74 envelope-area definition; section7",
+      "role": "New-dwelling limiting q50=8m3/(h m2) is a ceiling, not a design target or whole-energy pass; actual project applicability is not established. Envelope area uses overall internal dimensions without deducting internal-wall/floor junctions."
+    },
+    {
+      "name": "England ADL Volume1,2026",
+      "url": "https://assets.publishing.service.gov.uk/media/6a9a8da39a177a1decf97e0d/Approved_Document_L__Volume_1_Dwellings.pdf",
+      "retrieved": "2026-11-06",
+      "sha256": "438bbd1958b18605a89500598a07b6f0c0144e09812b72efbed3be8a0da927eb",
+      "pages": "opening commencement note; printed25 Table3.1; printed61 section6",
+      "role": "Same8 limit; published future regime, ordinarily effective24March2027, higher-risk24September2027, with transitions. Publication is not project applicability. TM23 pressure testing and whole-energy results remain separate duties."
+    },
+    {
+      "name": "ATTMA comparison of TSL1:2021,ISO9972:2015,TM23:2022",
+      "url": "https://www.bcta.group/attma/air-tightness-testing-technical-standard-compare/",
+      "retrieved": "2026-11-06",
+      "role": "Primary testing-body comparison gives measured exponent0.5..1, preferred both test directions, minimum10Pa or5xzero-flow pressure conditions and multi-point testing. It does not prescribe our target, allocation or operating pressure."
+    },
+    {
+      "name": "Government commissioned infiltration-method evidence review",
+      "url": "https://assets.publishing.service.gov.uk/media/68db99fbc487360cc70c9ef3/airtightness-in-uk-housing-stock-methodology-evidence.pdf",
+      "retrieved": "2026-11-06",
+      "sha256": "cd8030bd6e505ead701247ddba0f4a072cb480dd3e0d1541d59209bcf126b9c6",
+      "pages": "printed10-14,RQ1/RQ2",
+      "role": "Divide-by20 is a coarse heating-season method, not site or instantaneous infiltration. Actual wind, stack, shelter and leakage distribution remain necessary; no universal weather divisor used here."
+    },
+    {
+      "name": "Passivhaus Trust airtightness guide",
+      "url": "https://www.passivhaustrust.org.uk/UserFiles/File/Technical%20Papers/BRE_Passivhaus_Airtightness_Guide.pdf",
+      "retrieved": "2026-11-06",
+      "role": "n50 uses finished conditioned air volume, excluding hidden/internal solid volumes. It is not q50. This study has no agreed finished net Vn50 and makes no Passivhaus target or certification claim."
+    }
+  ],
+  "sourceExtractSHA256": "06e2d1a048caa105253f7c1893519c9b504b844a69c7200b66daba9704300b62",
+  "decision": "Develop q50<=1.0 as an authored whole-system comparison, with one10% aggregate floor/wall allocation and20% unassigned reserve. Not an owner invariant, method-certified envelope/volume, local joint rating or compliance pass.",
+  "geometry": {
+    "groundPressureFootprint": {
+      "area_m2": 88.5536585,
+      "perimeter_m": 66.639,
+      "outer_mm": [
+        429.5,
+        429.5,
+        11141.0,
+        11141.0
+      ],
+      "cuts_mm": [
+        [
+          3820.5,
+          3820.5,
+          4359.0,
+          3929.5
+        ],
+        [
+          4280.5,
+          7750,
+          3439.0,
+          3820.5
+        ],
+        [
+          9203,
+          5780.5,
+          2367.5,
+          2239.0
+        ]
+      ]
+    },
+    "upperPressureFootprint": {
+      "area_m2": 105.121,
+      "perimeter_m": 62.0,
+      "outer_mm": [
+        429.5,
+        429.5,
+        11141.0,
+        11141.0
+      ],
+      "cuts_mm": [
+        [
+          3820.5,
+          3820.5,
+          4359.0,
+          4359.0
+        ]
+      ]
+    },
+    "referenceSurfaceAreas_m2": {
+      "groundFloor": 88.5536585,
+      "upperCeiling": 105.121,
+      "upperFloorOverOutdoor": 16.567341499999998,
+      "groundStoreyWalls": 229.90455,
+      "upperWalls": 192.20000000000002
+    },
+    "referenceEnvelope_m2": 632.34655,
+    "grossTwoClearLayerVolume_m3": 600.39144135,
+    "entranceVoidInsideAirDomain_m2": 5.141265,
+    "occupiedRoomField_m2": 83.057362,
+    "ordinaryFloorEdge_m": 118.761,
+    "referenceRole": "Current HAD finished-face plan, with explicit prismatic step at3450 and two3100 clear layers. Not final TM23 envelope or finished net Vn50. No n50 is calculated from this gross proxy.",
+    "requiredCorrections": [
+      "Actual loggia soffit2890 rather than stepFFL3450; pressure-layer location through upper floor/beam/insulation must bind",
+      "Protected roof closure bottom6444 differs from ordinary upperFFL+3100=6550; actual complete private-room/roof/step boundary must bind",
+      "Internal walls/floors/hidden risers excluded from net Vn50, while conditioned entrance/stair void air must be included with actual stair/landing solids",
+      "Method-specific final test preparation: normal ventilation openings sealed as prescribed; ordinary ventilation and actual building operation remain separate"
+    ]
+  },
+  "comparisonCases": [
+    {
+      "q50_m3_per_h_m2": 0.6,
+      "totalQ50_m3_per_h": 379.40792999999996,
+      "pressureChallenges": [
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 0.5,
+          "flow_Lps": 14.904551118830605,
+          "heatLoss_W_per_K": 17.885461342596724,
+          "heatAt30K_W": 536.5638402779017
+        },
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 0.65,
+          "flow_Lps": 8.28845149445276,
+          "heatLoss_W_per_K": 9.946141793343312,
+          "heatAt30K_W": 298.38425380029935
+        },
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 1,
+          "flow_Lps": 2.1078218333333334,
+          "heatLoss_W_per_K": 2.5293862,
+          "heatAt30K_W": 75.881586
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 0.5,
+          "flow_Lps": 21.078218333333332,
+          "heatLoss_W_per_K": 25.293861999999997,
+          "heatAt30K_W": 758.8158599999999
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 0.65,
+          "flow_Lps": 13.005974477472389,
+          "heatLoss_W_per_K": 15.607169372966865,
+          "heatAt30K_W": 468.21508118900596
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 1,
+          "flow_Lps": 4.215643666666667,
+          "heatLoss_W_per_K": 5.0587724,
+          "heatAt30K_W": 151.763172
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 0.5,
+          "flow_Lps": 29.80910223766121,
+          "heatLoss_W_per_K": 35.77092268519345,
+          "heatAt30K_W": 1073.1276805558034
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 0.65,
+          "flow_Lps": 20.408561505351674,
+          "heatLoss_W_per_K": 24.49027380642201,
+          "heatAt30K_W": 734.7082141926603
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 1,
+          "flow_Lps": 8.431287333333334,
+          "heatLoss_W_per_K": 10.1175448,
+          "heatAt30K_W": 303.526344
+        }
+      ]
+    },
+    {
+      "q50_m3_per_h_m2": 1,
+      "totalQ50_m3_per_h": 632.34655,
+      "pressureChallenges": [
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 0.5,
+          "flow_Lps": 24.840918531384343,
+          "heatLoss_W_per_K": 29.809102237661214,
+          "heatAt30K_W": 894.2730671298365
+        },
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 0.65,
+          "flow_Lps": 13.814085824087934,
+          "heatLoss_W_per_K": 16.57690298890552,
+          "heatAt30K_W": 497.3070896671656
+        },
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 1,
+          "flow_Lps": 3.5130363888888887,
+          "heatLoss_W_per_K": 4.215643666666667,
+          "heatAt30K_W": 126.46931000000001
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 0.5,
+          "flow_Lps": 35.13036388888889,
+          "heatLoss_W_per_K": 42.156436666666664,
+          "heatAt30K_W": 1264.6931
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 0.65,
+          "flow_Lps": 21.67662412912065,
+          "heatLoss_W_per_K": 26.011948954944778,
+          "heatAt30K_W": 780.3584686483433
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 1,
+          "flow_Lps": 7.026072777777777,
+          "heatLoss_W_per_K": 8.431287333333334,
+          "heatAt30K_W": 252.93862000000001
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 0.5,
+          "flow_Lps": 49.681837062768686,
+          "heatLoss_W_per_K": 59.61820447532243,
+          "heatAt30K_W": 1788.546134259673
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 0.65,
+          "flow_Lps": 34.01426917558613,
+          "heatLoss_W_per_K": 40.817123010703355,
+          "heatAt30K_W": 1224.5136903211007
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 1,
+          "flow_Lps": 14.052145555555555,
+          "heatLoss_W_per_K": 16.862574666666667,
+          "heatAt30K_W": 505.87724000000003
+        }
+      ]
+    },
+    {
+      "q50_m3_per_h_m2": 3,
+      "totalQ50_m3_per_h": 1897.03965,
+      "pressureChallenges": [
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 0.5,
+          "flow_Lps": 74.52275559415303,
+          "heatLoss_W_per_K": 89.42730671298362,
+          "heatAt30K_W": 2682.8192013895086
+        },
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 0.65,
+          "flow_Lps": 41.442257472263805,
+          "heatLoss_W_per_K": 49.73070896671656,
+          "heatAt30K_W": 1491.921269001497
+        },
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 1,
+          "flow_Lps": 10.539109166666666,
+          "heatLoss_W_per_K": 12.646930999999999,
+          "heatAt30K_W": 379.40792999999996
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 0.5,
+          "flow_Lps": 105.39109166666667,
+          "heatLoss_W_per_K": 126.46931,
+          "heatAt30K_W": 3794.0793
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 0.65,
+          "flow_Lps": 65.02987238736195,
+          "heatLoss_W_per_K": 78.03584686483434,
+          "heatAt30K_W": 2341.07540594503
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 1,
+          "flow_Lps": 21.078218333333332,
+          "heatLoss_W_per_K": 25.293861999999997,
+          "heatAt30K_W": 758.8158599999999
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 0.5,
+          "flow_Lps": 149.04551118830605,
+          "heatLoss_W_per_K": 178.85461342596724,
+          "heatAt30K_W": 5365.638402779017
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 0.65,
+          "flow_Lps": 102.0428075267584,
+          "heatLoss_W_per_K": 122.45136903211008,
+          "heatAt30K_W": 3673.5410709633024
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 1,
+          "flow_Lps": 42.156436666666664,
+          "heatLoss_W_per_K": 50.587723999999994,
+          "heatAt30K_W": 1517.6317199999999
+        }
+      ]
+    },
+    {
+      "q50_m3_per_h_m2": 8,
+      "totalQ50_m3_per_h": 5058.7724,
+      "pressureChallenges": [
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 0.5,
+          "flow_Lps": 198.72734825107474,
+          "heatLoss_W_per_K": 238.47281790128972,
+          "heatAt30K_W": 7154.184537038692
+        },
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 0.65,
+          "flow_Lps": 110.51268659270347,
+          "heatLoss_W_per_K": 132.61522391124416,
+          "heatAt30K_W": 3978.456717337325
+        },
+        {
+          "uniformPressure_Pa": 1,
+          "exponent": 1,
+          "flow_Lps": 28.10429111111111,
+          "heatLoss_W_per_K": 33.725149333333334,
+          "heatAt30K_W": 1011.7544800000001
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 0.5,
+          "flow_Lps": 281.0429111111111,
+          "heatLoss_W_per_K": 337.2514933333333,
+          "heatAt30K_W": 10117.5448
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 0.65,
+          "flow_Lps": 173.4129930329652,
+          "heatLoss_W_per_K": 208.09559163955822,
+          "heatAt30K_W": 6242.867749186747
+        },
+        {
+          "uniformPressure_Pa": 2,
+          "exponent": 1,
+          "flow_Lps": 56.20858222222222,
+          "heatLoss_W_per_K": 67.45029866666667,
+          "heatAt30K_W": 2023.5089600000001
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 0.5,
+          "flow_Lps": 397.4546965021495,
+          "heatLoss_W_per_K": 476.94563580257943,
+          "heatAt30K_W": 14308.369074077384
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 0.65,
+          "flow_Lps": 272.11415340468903,
+          "heatLoss_W_per_K": 326.53698408562684,
+          "heatAt30K_W": 9796.109522568806
+        },
+        {
+          "uniformPressure_Pa": 4,
+          "exponent": 1,
+          "flow_Lps": 112.41716444444444,
+          "heatLoss_W_per_K": 134.90059733333334,
+          "heatAt30K_W": 4047.0179200000002
+        }
+      ]
+    }
+  ],
+  "pressureChallengeRole": "Authored uniform1/2/4Pa power-law extrapolation challenges below the cited10Pa multipoint minimum, not measured low-pressure behaviour, site weather or annual infiltration.",
+  "proposedDevelopment": {
+    "q50_m3_per_h_m2": 1,
+    "totalQ50_m3_per_h": 632.34655,
+    "pressureChallenges": [
+      {
+        "uniformPressure_Pa": 1,
+        "exponent": 0.5,
+        "flow_Lps": 24.840918531384343,
+        "heatLoss_W_per_K": 29.809102237661214,
+        "heatAt30K_W": 894.2730671298365
+      },
+      {
+        "uniformPressure_Pa": 1,
+        "exponent": 0.65,
+        "flow_Lps": 13.814085824087934,
+        "heatLoss_W_per_K": 16.57690298890552,
+        "heatAt30K_W": 497.3070896671656
+      },
+      {
+        "uniformPressure_Pa": 1,
+        "exponent": 1,
+        "flow_Lps": 3.5130363888888887,
+        "heatLoss_W_per_K": 4.215643666666667,
+        "heatAt30K_W": 126.46931000000001
+      },
+      {
+        "uniformPressure_Pa": 2,
+        "exponent": 0.5,
+        "flow_Lps": 35.13036388888889,
+        "heatLoss_W_per_K": 42.156436666666664,
+        "heatAt30K_W": 1264.6931
+      },
+      {
+        "uniformPressure_Pa": 2,
+        "exponent": 0.65,
+        "flow_Lps": 21.67662412912065,
+        "heatLoss_W_per_K": 26.011948954944778,
+        "heatAt30K_W": 780.3584686483433
+      },
+      {
+        "uniformPressure_Pa": 2,
+        "exponent": 1,
+        "flow_Lps": 7.026072777777777,
+        "heatLoss_W_per_K": 8.431287333333334,
+        "heatAt30K_W": 252.93862000000001
+      },
+      {
+        "uniformPressure_Pa": 4,
+        "exponent": 0.5,
+        "flow_Lps": 49.681837062768686,
+        "heatLoss_W_per_K": 59.61820447532243,
+        "heatAt30K_W": 1788.546134259673
+      },
+      {
+        "uniformPressure_Pa": 4,
+        "exponent": 0.65,
+        "flow_Lps": 34.01426917558613,
+        "heatLoss_W_per_K": 40.817123010703355,
+        "heatAt30K_W": 1224.5136903211007
+      },
+      {
+        "uniformPressure_Pa": 4,
+        "exponent": 1,
+        "flow_Lps": 14.052145555555555,
+        "heatLoss_W_per_K": 16.862574666666667,
+        "heatAt30K_W": 505.87724000000003
+      }
+    ]
+  },
+  "aggregateFamilyBudgets": {
+    "floorWallField": {
+      "fraction": 0.1,
+      "aggregate_m3_per_h_at50Pa": 63.234655000000004
+    },
+    "wallBodiesAndPermanentJunctions": {
+      "fraction": 0.15,
+      "aggregate_m3_per_h_at50Pa": 94.85198249999999
+    },
+    "roofCeilingAndHeadTransitions": {
+      "fraction": 0.2,
+      "aggregate_m3_per_h_at50Pa": 126.46931000000001
+    },
+    "completeOpeningsIncludingThreeDoorThresholds": {
+      "fraction": 0.25,
+      "aggregate_m3_per_h_at50Pa": 158.0866375
+    },
+    "servicePenetrations": {
+      "fraction": 0.1,
+      "aggregate_m3_per_h_at50Pa": 63.234655000000004
+    },
+    "unassignedReserve": {
+      "fraction": 0.2,
+      "aggregate_m3_per_h_at50Pa": 126.46931000000001
+    }
+  },
+  "floorWallAllocation": {
+    "aggregate_m3_per_h_at50Pa": 63.234655000000004,
+    "ordinaryEdge_m": 118.761,
+    "bookkeepingEquivalent_m3_per_h_m_at50Pa": 0.5324530359293035,
+    "bookkeepingEquivalent_Lps_m_at50Pa": 0.14790362109147318,
+    "role": "Authored finite accounting proposal, not a product or normative joint limit. Floor/wall10% is ONE aggregate covering field body, ordinary edge, associated joints, three structural RC core crossings in the pinned floor study, and wall-base routes. Complete service sleeves/collars and fixed/renewable air joints belong to the separate servicePenetrations10% family. Three complete external door/threshold assemblies, including fixed/renewable air joints, belong to openings25%; floor/wall ends at their assigned assembly boundaries. Every physical path must receive one owner; no duplicated budget.",
+    "threeDoorWidths_m": 5,
+    "threeDoorAssemblyFamily": "completeOpeningsIncludingThreeDoorThresholds",
+    "notAdmitted": [
+      "A uniform line rating or tested length",
+      "63.2 budget plus additional field/core budgets",
+      "Arbitrary zero-leak junction",
+      "A mineral/concrete/DPC/clamp alone establishes the allocated performance"
+    ]
+  },
+  "ventilationComparison": {
+    "normal_Lps": 96,
+    "cooking_Lps": 128,
+    "idealRecovery": 0.7,
+    "normalUnrecovered_W_per_K": 34.56,
+    "cookingUnrecovered_W_per_K": 46.080000000000005,
+    "role": "Pressure challenges are uniform imposed comparisons, not actual site infiltration, annual energy or room airflow. Leakage bypasses heat recovery. Add sensitivity loss once; neither subtract it from required delivered ventilation nor use it as certified hob makeup. Actual wind/stack/leak paths/network and native frost controls still govern."
+  },
+  "renewalRemainsOpen": [
+    "W9 native156kg evenly bottom-supported lifting; actual base/frame bearing paths, initial support and base-to270deck transfer",
+    "Complete machine/fixture/operator and lowest-load travel fields; no ordinary hand-lift or free adapter",
+    "Full folded exterior slope/loading/turn capture and rated anchors remain unearned; no cart or handling pass",
+    "Actual complete diverging port connections, insulation/jacket sealing and pre-crossing attenuator hosts remain unearned"
+  ],
+  "admission": {
+    "ownerTargetAdopted": false,
+    "actualEnvelopeTested": false,
+    "netN50VolumeAgreed": false,
+    "wholeHouseHeatSelected": false,
+    "materialException": false,
+    "handlingPass": false,
+    "packetComplete": false
+  }
+}

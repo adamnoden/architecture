@@ -1,0 +1,824 @@
+{
+  "identity": "RWT-ONE-ENDED-FULL-NATIVE-BENT-SPOOL-2026-11-06",
+  "source": {
+    "hadBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "hadPath": "project/had/studies/water-replan.json"
+  },
+  "recommendation": "Develop ONE vertical inlet disconnect and free native down-port, carrying both real bends with the tube. Price complete supported90roll and long export. No downstream joint/platform or trapped upturn is added.",
+  "selectedGeometryChanged": false,
+  "accepted": false,
+  "siteAccepted": false,
+  "physicalEventPerformed": false,
+  "geometry": {
+    "axisAnchor": [
+      7350,
+      6950,
+      -775
+    ],
+    "fall": 0.011764705882352941,
+    "inletCorner": [
+      6575,
+      6950,
+      -765.8823529411765
+    ],
+    "inletPort": [
+      6578.5644592155095,
+      6950,
+      -462.9033196228609
+    ],
+    "horizontalIn": [
+      6877.9790333183155,
+      6950,
+      -769.4468121566861
+    ],
+    "horizontalOut": [
+      12647.020966681685,
+      6950,
+      -837.3178937256669
+    ],
+    "outletCorner": [
+      12950,
+      6950,
+      -840.8823529411765
+    ],
+    "freeOutlet": [
+      12946.43554078449,
+      6950,
+      -1143.861386259492
+    ],
+    "flange": [
+      6579.5397923875435,
+      6950,
+      -380
+    ],
+    "flangeNormal": [
+      0.011763891800361699,
+      0,
+      0.9999308030307444
+    ],
+    "collector": [
+      6581.657439446367,
+      6950,
+      -200
+    ],
+    "flangeFaceZ": -380,
+    "portDistance": 5769.441161206023,
+    "straightCut": 5831.441161206023,
+    "stockLength": 6000,
+    "stockReserve": 168.55883879397697,
+    "upperStubMaximumCut": 138.9090566783069,
+    "inletBox": [
+      6490,
+      6855,
+      -850.8823529411765,
+      460,
+      190,
+      460
+    ],
+    "outletBox": [
+      12575,
+      6855,
+      -1215.8823529411766,
+      460,
+      190,
+      460
+    ],
+    "flangeOD": 285,
+    "movingFlangeAxial": 25,
+    "fixedFlangeAxial": 25,
+    "freeOutletRole": "Native N18 open port is the terminal; no extra lower joint, no appended vertical pipe inherited from the old−1200 terminal. Exact delivered socket/open-edge geometry and splash/erosion remain required.",
+    "receiver": [
+      12500,
+      6100,
+      2000,
+      1600
+    ],
+    "ordinaryWater": -1400,
+    "faultWater": -1250,
+    "nativeOutletAirGapOrdinary": 256.13861374050794,
+    "nativeOutletAirGapFault": 106.13861374050794,
+    "duringLoweredMaintenanceNativeGapFault": 66.13861374050794
+  },
+  "completeAngularProof": {
+    "method": "For each vertex of each full enclosing solid, each coordinate is A+Bcos(phi)+Csin(phi). Enumerate0/90and every interior stationary angle atan2(C,B)+k*pi. A linear coordinate reaches its extrema at a prism vertex. This proves the WHOLE CONTINUOUS0..90solid hull, not sparse angle samples.",
+    "angleDegrees": [
+      0,
+      90
+    ],
+    "rollDirection": "Inlet leg SOUTH, outlet leg NORTH",
+    "dropBeforeRoll": 40,
+    "toleranceEachFace": 5,
+    "toleranceRole": "Explicit5mm rigid-position/construction envelope. It is not a measured fabrication tolerance or an allowance for arbitrary support deflection.",
+    "sweeps": [
+      {
+        "id": "native-inlet460box",
+        "angular": [
+          {
+            "axis": "X",
+            "minimum": 6479.483039191226,
+            "maximum": 6957.065535400526,
+            "minimumAtDegrees": 90,
+            "maximumAtDegrees": 90,
+            "minimumVertex": 1,
+            "maximumVertex": 6
+          },
+          {
+            "axis": "Y",
+            "minimum": 6553.901079489939,
+            "maximum": 7083.140456038849,
+            "minimumAtDegrees": 75.94192289999114,
+            "maximumAtDegrees": 42.15141045389835,
+            "minimumVertex": 5,
+            "maximumVertex": 2
+          },
+          {
+            "axis": "Z",
+            "minimum": -939.8701821922231,
+            "maximum": -414.0054548557553,
+            "minimumAtDegrees": 49.69410695754244,
+            "maximumAtDegrees": 14.253263133057649,
+            "minimumVertex": 4,
+            "maximumVertex": 3
+          }
+        ],
+        "start": [
+          [
+            6490,
+            6950
+          ],
+          [
+            6855,
+            7045
+          ],
+          [
+            -890.8823529411765,
+            -430.8823529411765
+          ]
+        ],
+        "rolled": [
+          [
+            6484.483039191226,
+            6952.065535400526
+          ],
+          [
+            6570.614489438335,
+            7035.994049060644
+          ],
+          [
+            -905.2986964723852,
+            -709.8371691110472
+          ]
+        ]
+      },
+      {
+        "id": "native-outlet460box",
+        "angular": [
+          {
+            "axis": "X",
+            "minimum": 12567.934464599475,
+            "maximum": 13045.516960808774,
+            "minimumAtDegrees": 90,
+            "maximumAtDegrees": 90,
+            "minimumVertex": 1,
+            "maximumVertex": 6
+          },
+          {
+            "axis": "Y",
+            "minimum": 6816.85954396115,
+            "maximum": 7346.098920510061,
+            "minimumAtDegrees": 42.15141045389831,
+            "maximumAtDegrees": 75.94192289999117,
+            "minimumVertex": 5,
+            "maximumVertex": 2
+          },
+          {
+            "axis": "Z",
+            "minimum": -1272.7592510265977,
+            "maximum": -746.89452369013,
+            "minimumAtDegrees": 14.253263133057645,
+            "maximumAtDegrees": 49.69410695754248,
+            "minimumVertex": 4,
+            "maximumVertex": 3
+          }
+        ],
+        "start": [
+          [
+            12575,
+            13035
+          ],
+          [
+            6855,
+            7045
+          ],
+          [
+            -1255.8823529411766,
+            -795.8823529411766
+          ]
+        ],
+        "rolled": [
+          [
+            12572.934464599475,
+            13040.516960808774
+          ],
+          [
+            6864.005950939356,
+            7329.385510561665
+          ],
+          [
+            -976.927536771306,
+            -781.4660094099677
+          ]
+        ]
+      },
+      {
+        "id": "complete-moving285flange-prism",
+        "angular": [
+          {
+            "axis": "X",
+            "minimum": 6425.833505986568,
+            "maximum": 6727.329548445913,
+            "minimumAtDegrees": 90,
+            "maximumAtDegrees": 20.26706963812496,
+            "minimumVertex": 1,
+            "maximumVertex": 7
+          },
+          {
+            "axis": "Y",
+            "minimum": 6533.62176768047,
+            "maximum": 7097.5,
+            "minimumAtDegrees": 69.73293036187512,
+            "maximumAtDegrees": 0,
+            "minimumVertex": 5,
+            "maximumVertex": 7
+          },
+          {
+            "axis": "Z",
+            "minimum": -955.0488469546091,
+            "maximum": -387.85623216698974,
+            "minimumAtDegrees": 90,
+            "maximumAtDegrees": 20.267069638124866,
+            "minimumVertex": 5,
+            "maximumVertex": 3
+          }
+        ],
+        "start": [
+          [
+            6436.755555660653,
+            6722.029931819425
+          ],
+          [
+            6807.5,
+            7092.5
+          ],
+          [
+            -446.6746246573202,
+            -418.32364541844845
+          ]
+        ],
+        "rolled": [
+          [
+            6430.833505986568,
+            6719.166494013432
+          ],
+          [
+            6564.090943321693,
+            6589.090943321693
+          ],
+          [
+            -950.0488469546091,
+            -661.7158589277439
+          ]
+        ]
+      },
+      {
+        "id": "straight-tube-conservative160square",
+        "angular": [
+          {
+            "axis": "X",
+            "minimum": 6871.648932724653,
+            "maximum": 12653.351067275347,
+            "minimumAtDegrees": 45.00000000000082,
+            "maximumAtDegrees": 45.000000000016406,
+            "minimumVertex": 0,
+            "maximumVertex": 7
+          },
+          {
+            "axis": "Y",
+            "minimum": 6831.933625688271,
+            "maximum": 7068.066374311729,
+            "minimumAtDegrees": 45.00000000000005,
+            "maximumAtDegrees": 45.00000000000005,
+            "minimumVertex": 5,
+            "maximumVertex": 6
+          },
+          {
+            "axis": "Z",
+            "minimum": -995.3764441869686,
+            "maximum": -691.3882616953844,
+            "minimumAtDegrees": 44.99999999999995,
+            "maximumAtDegrees": 44.99999999999995,
+            "minimumVertex": 4,
+            "maximumVertex": 3
+          }
+        ],
+        "start": [
+          [
+            6877.038510168876,
+            12647.961489831123
+          ],
+          [
+            6870.05,
+            7029.95
+          ],
+          [
+            -957.2623614279748,
+            -729.5023444543781
+          ]
+        ],
+        "rolled": [
+          [
+            6877.038510168876,
+            12647.961489831123
+          ],
+          [
+            6870.05,
+            7029.95
+          ],
+          [
+            -957.2623614279747,
+            -729.5023444543782
+          ]
+        ]
+      }
+    ],
+    "downstreamNorthReserve": 28.90107948993864,
+    "downstreamSouthReserve": 391.85954396114994,
+    "inletFlangeSouthReserve": 108.62176768046993,
+    "rootWarning": "Intermediate angles govern. The nominal native-outlet box peaks north at about76degrees; endpoint-only clearance is invalid.",
+    "bridgeCases": [
+      {
+        "id": "court",
+        "x": [
+          7650,
+          8250
+        ],
+        "underside": -630,
+        "minimumClearance": 41.01955051421828,
+        "governing": {
+          "draw": 930.8335059865676,
+          "x": 7650,
+          "z": -676.0195505142183,
+          "clearance": 41.01955051421828
+        }
+      },
+      {
+        "id": "spine",
+        "x": [
+          8850,
+          9750
+        ],
+        "underside": -630,
+        "minimumClearance": 55.13719757304182,
+        "governing": {
+          "draw": 2130.8335059865676,
+          "x": 8850,
+          "z": -690.1371975730418,
+          "clearance": 55.13719757304182
+        }
+      },
+      {
+        "id": "outer",
+        "x": [
+          11217.5,
+          12117.5
+        ],
+        "underside": -630,
+        "minimumClearance": 82.99013874951243,
+        "governing": {
+          "draw": 4498.333505986568,
+          "x": 11217.5,
+          "z": -717.9901387495124,
+          "clearance": 82.99013874951243
+        }
+      }
+    ]
+  },
+  "spatialStateProof": {
+    "gated": [
+      {
+        "id": "native-inlet460box",
+        "completeX": [
+          6479.483039191226,
+          6957.065535400526
+        ],
+        "outsideEveryBridgeWhileRolling": true,
+        "locked90Y": [
+          6560.614489438335,
+          7045.994049060644
+        ]
+      },
+      {
+        "id": "native-outlet460box",
+        "completeX": [
+          12567.934464599475,
+          13045.516960808774
+        ],
+        "outsideEveryBridgeWhileRolling": true,
+        "locked90Y": [
+          6854.005950939356,
+          7339.385510561665
+        ]
+      },
+      {
+        "id": "complete-moving285flange-prism",
+        "completeX": [
+          6425.833505986568,
+          6727.329548445913
+        ],
+        "outsideEveryBridgeWhileRolling": true,
+        "locked90Y": [
+          6554.090943321693,
+          6599.090943321693
+        ]
+      },
+      {
+        "id": "straight-tube-conservative160square",
+        "completeX": [
+          6871.648932724653,
+          12653.351067275347
+        ],
+        "outsideEveryBridgeWhileRolling": false,
+        "locked90Y": [
+          6860.05,
+          7039.95
+        ]
+      }
+    ],
+    "fieldY": [
+      6425,
+      7375
+    ],
+    "rigidEnvelope": 5,
+    "deformationEnvelope": 5,
+    "role": "Bends/flange roll outside all actual bridge X for the ENTIRE angular interval. Only round tube and fixed carrier frame occupy the bridge during roll. Both ends enter supports only after positive90lock; constant950strip comparison above remains visible.",
+    "lockedTranslationMinimumSouthReserve": 40,
+    "lockedTranslationMinimumNorthReserve": 35.61448943833511,
+    "frameY": [
+      6465,
+      7335
+    ],
+    "bridgeCasesAfterDeformation": [
+      {
+        "id": "court",
+        "x": [
+          7650,
+          8250
+        ],
+        "underside": -630,
+        "minimumClearance": 36.01955051421828,
+        "governing": {
+          "draw": 930.8335059865676,
+          "x": 7650,
+          "z": -676.0195505142183,
+          "clearance": 41.01955051421828
+        }
+      },
+      {
+        "id": "spine",
+        "x": [
+          8850,
+          9750
+        ],
+        "underside": -630,
+        "minimumClearance": 50.13719757304182,
+        "governing": {
+          "draw": 2130.8335059865676,
+          "x": 8850,
+          "z": -690.1371975730418,
+          "clearance": 55.13719757304182
+        }
+      },
+      {
+        "id": "outer",
+        "x": [
+          11217.5,
+          12117.5
+        ],
+        "underside": -630,
+        "minimumClearance": 77.99013874951243,
+        "governing": {
+          "draw": 4498.333505986568,
+          "x": 11217.5,
+          "z": -717.9901387495124,
+          "clearance": 82.99013874951243
+        }
+      }
+    ],
+    "controls": {
+      "misplacedDraw": 1400,
+      "misplacedFlangeAllX": [
+        7825.833505986568,
+        8127.329548445913
+      ],
+      "misplacedWholeFlangeInsideCourtBeam": true,
+      "unlockedFullRotationInPortalMaximumZ": -399.32682040228383,
+      "portalUnderside": -630,
+      "unlockedWouldHitBridge": true,
+      "fullAngularConstantStripAfterDeformation": 23.90107948993864,
+      "latterSatisfies25": false
+    },
+    "locks": "Independent positive0/90locks at inlet-side and driven collars. Capture/verify BOTH90locks before draw; a drive brake alone cannot be treated as a rigid lock along the copper tube. Actual metal interlock prevents draw with unlocked/misplaced roll; it is not an operator reminder."
+  },
+  "renewal": {
+    "translation": 5855,
+    "rolledMinimumX": 6425.833505986568,
+    "rolledMaximumX": 13045.516960808774,
+    "wholePackageMinimumX": 6395,
+    "wholePackageMaximumX": 13105,
+    "park": [
+      12250,
+      18960
+    ],
+    "stage": [
+      12250,
+      8100,
+      7000,
+      1200
+    ],
+    "requiredDeckEnd": 19250,
+    "originalSelectedDeckEnd": 16200,
+    "extensionBeyondSelected": 3050,
+    "stageGrowthBeyondOld4700Control": 2100,
+    "terminalReceiverOrdinaryDuringDraw": false,
+    "handling": "No worker occupies the receiving basin. Once captured, open native outlet moves WITH full spool; moving projection/residual discharge can leave the basin during renewal, so drain/isolate, positively cap/capture residual liquid BEFORE roll. Full wet mass remains charged despite this operation. Existing80catch is no full-event backup.",
+    "framing": "7000long reference includes full6700carrier, complete bends/flange and5mm envelope; the frame rather than the bare pipe governs park. Support as rare temporary work is permitted in principle, not automatically permanent-deck enlargement.",
+    "lowerCradleX": [
+      12900,
+      17800
+    ],
+    "liftingPointLocalX": [
+      7900,
+      11600
+    ],
+    "cgBound": {
+      "packageMassKg": 458.7155963302752,
+      "unallocatedHardwareKg": 107.33868887119696,
+      "hardwareX": [
+        6400,
+        13100
+      ],
+      "localX": [
+        8881.650077883996,
+        10511.006876336698
+      ],
+      "parkedX": [
+        14736.650077883996,
+        16366.006876336698
+      ],
+      "liftingPointWorldX": [
+        13755,
+        17455
+      ],
+      "basis": "Uniform straight/stub tubes, native bend wet gross-box masses anywhere within their FULL X bounds, native flange, actual rails/crossmembers; ALL remaining hardware anywhere in6400..13100. No convenient centred hardware assumption.",
+      "liftMinimumCgReserve": 981.6500778839963,
+      "lowerCradleMinimumCgReserve": 1433.993123663302,
+      "lowerCradleReactionRangesKn": [
+        [
+          2.813280540718779,
+          1.316932460507114
+        ],
+        [
+          1.6867194592812214,
+          3.183067539492886
+        ]
+      ]
+    },
+    "hoist": "Actual rated hoist/spreader/rigging must carry full package and complete3D incoming/outgoing envelope. Use explicit at-least7.5kN support-action screen for a5kN suspended load including rigging; no old5kN/1700lift pass is inherited. Outgoing leaves before incoming enters; no loaded upperbearers.",
+    "actualSupportsAndSiteAccepted": false,
+    "fullExportSweepAccepted": false
+  },
+  "actualPostTranslation": {
+    "source": "HAD renewal.joint.railReference",
+    "supportX": [
+      7950,
+      9300,
+      11667.5,
+      12250,
+      13500,
+      14950
+    ],
+    "sidePostY": [
+      6350,
+      7450
+    ],
+    "actualPostSection": [
+      50,
+      50,
+      5
+    ],
+    "wholeLockedY": [
+      6465,
+      7339.385510561665
+    ],
+    "minimumToSouthColumn": 90,
+    "minimumToNorthColumn": 85.61448943833511,
+    "includes13500": true,
+    "role": "Full translation invariant Y bound checks every actual50column including13500, separately from narrower RC node/bridge faces. Wheel is REMOVED before draw; otherwise its200radius can hit a post. Shaft25radius included. Real larger footings/connection plates are not silently reduced to50column.",
+    "anchorsAndFootingsAccepted": false
+  },
+  "loads": {
+    "tubeMetalKg": 52.7700296034973,
+    "tubeWaterKg": 112.65567785558093,
+    "twoActualBendsMetalKg": 12.3,
+    "bendWaterGrossBoxBoundKg": 49.096000000000004,
+    "movingFlangeKg": 7,
+    "fixedUpperFlangeKg": 7,
+    "spoolWetBoundKg": 233.82170745907825,
+    "bendWaterBoundary": "Gross380×170×380 outer boxes bound water in the two real bends; deliberately loose, not a measured bore volume. No dry-only lifting assumption.",
+    "frame": {
+      "section": [
+        80,
+        40,
+        4
+      ],
+      "length": 6700,
+      "start": 6400,
+      "end": 13100,
+      "grossY": [
+        6475,
+        7325
+      ],
+      "bareKg": 117.5552,
+      "wheelStations": [
+        7750,
+        9300,
+        10850,
+        12400
+      ],
+      "maxInternalSpan": 1550,
+      "westOverhang": 1350,
+      "pipeAxisAboveFrameTop": 130,
+      "depth": 80,
+      "boundary": "Four captured rolling supports plus fixed lower rails are separate real solids/load paths; these bare rails/crossmembers do not prove clamps, rotation bearings, wheels or guides."
+    },
+    "knownWetIncludingBareFrameKg": 351.37690745907827,
+    "designMovingKn": 4.5,
+    "remainingHardwareKg": 107.33868887119696,
+    "supportReactionRequirement": {
+      "compressionEachKn": 8.5,
+      "upliftEachKn": 4,
+      "totalCorrelatedGravityKn": 4.5,
+      "basis": "Adjacent1550support pair with1350overhang:4.5*(1+1350/1550)=8.419compression and4.5*1350/1550=3.919uplift bound even the whole design load at the adverse tip. These are correlated requirements, not34kN simultaneous gravity. Actual multi-contact/frame/rail elasticity still must be checked."
+    },
+    "capture": "Broad150long metal-lined split saddles isolate thin copper from point roller contact.220OD/170ID/40axial steel races; two50rollers per station; 0/90positive pins. Do not put loaded hard rollers or chain jaws directly on159×2copper and invent a denting pass.",
+    "rollTorqueRequirement": {
+      "workingNm": 500,
+      "holdingNm": 1000,
+      "manualRatio": 60,
+      "handwheelRadiusMm": 200,
+      "efficiencies": [
+        {
+          "efficiency": 0.15,
+          "handForceN": 277.77777777777777
+        },
+        {
+          "efficiency": 0.25,
+          "handForceN": 166.66666666666666
+        },
+        {
+          "efficiency": 0.4,
+          "handForceN": 104.16666666666666
+        }
+      ],
+      "actualGearRated": false,
+      "actualHandAndRestraintAccepted": false
+    },
+    "driveState": "Driven collar12400 is outside bridge and before outletbox12568. Vertical input atY7300 to+1250 stays clear of pipe/bend; removable200radius handwheel operates ABOVE1100guard from fixedNfield. Remove wheel before draw; shaft/collar stay outside all bridgeX throughout east translation. Operator does not follow into posts/rack.",
+    "upstreamLock": "Second independent collar lock near7000 must be positively operated/witnessed through a small retained low-force link from fixedcourt; do not substitute copper torsional stiffness or a downstream brake. Actual link/lock/interlock solids and operator sweep remain an internal exit.",
+    "supportHold": "Do not borrow the previous3kN/4700frame result. Actual initial1350west overhang, bends/gross blocked water, four moving support reactions, fixed rail/post/drop-bracket/head reactions, deformation and all translated states must be priced against current STR. No imaginary post through RC."
+  },
+  "wellAndCrew": {
+    "oldWell": [
+      6125,
+      6300,
+      1525,
+      1100
+    ],
+    "proposedClearWell": [
+      6125,
+      6200,
+      1525,
+      1200
+    ],
+    "southWidening": 100,
+    "existingFloor": -950,
+    "proposedCatchFloor": -1100,
+    "localLowering": 150,
+    "crewPlatformLevel": -800,
+    "operatorCentre": [
+      7000,
+      6525
+    ],
+    "radius": 300,
+    "bodyPlan": [
+      6700,
+      6225,
+      600,
+      600
+    ],
+    "minimumSouthOpeningReserve": 25,
+    "retainedPanDuringFirstRelease": {
+      "module": 2,
+      "plan": [
+        6430,
+        6850,
+        305,
+        550
+      ],
+      "status": "Fully seated and positively captured on qualified fixed seats; never suspended over the worker.",
+      "bodyPlanGap": 25,
+      "localBottomThicknessProposal": 3,
+      "undersideClearanceControl": -205,
+      "reason": "Bottom/walking frame must leave actual upper bolt/socket/withdrawal toolspace, not use an unlocated stiffener. Extra metal and pressure/blocked-water/cover loads require actual pan design."
+    },
+    "platformPlan": [
+      6700,
+      6225,
+      600,
+      600
+    ],
+    "platform": "Retain−800 working level on a temporary600square platform, wholly SOUTH of pipe and retained pan2. Two independently supported/joined300×600 captured halves pass actual west gate/weather/parked leaf. Both bridles attach BY HAND while supported/occupied; remove joining/foot restraints only with positive capture, exit, THEN lift halves. Full5kN/200square and5kPa/feet/joints remain real. Remove before roll.",
+    "entry": "New near-vertical south service ladder uses the same finite south gate/ramp control, not the old west4-rise stair under retained north module2. Upper south opening/edge/guard must move with the100well widening; a deeper floor alone makes no head aperture.",
+    "head": "Full R300 head/body domain must clear retained pan2 and fixed upperfloor. Other nine covers/gutters and small seam piece are captured/removed before entry; pan2 remains until inlet joint released and crew/platform have exited. No inherited all-ten-removed sequence pass.",
+    "catchFloor": "Catch floor/tray is not a soil-retaining RC box or staff-load platform. Price separate support, local80gravity drain/head, corrosion/leak witness and bounded remaining pipe-water spill. Ordinary/fault receiving and groundwater remain real site conditions."
+  },
+  "rimAndWeather": {
+    "roofSouth": 6100,
+    "oldRoofSouth": 6200,
+    "roofAddedM2": 0.23250000000000004,
+    "roofGrossM2": 3.99125,
+    "newSouthPosts": [
+      [
+        5450,
+        6050
+      ],
+      [
+        7625,
+        6050
+      ]
+    ],
+    "oldSouthPosts": [
+      [
+        5450,
+        6150
+      ],
+      [
+        7625,
+        6150
+      ]
+    ],
+    "postFoot": 100,
+    "southBund": 6150,
+    "oldSouthBund": 6250,
+    "roofUnderside": 1970,
+    "southGateClear": [
+      6650,
+      7350
+    ],
+    "gateY": 6150,
+    "southRamp": [
+      6675,
+      5750,
+      650,
+      450
+    ],
+    "rise": 30,
+    "slope": 0.06666666666666667,
+    "consequence": "Deliberate100south well/rim replan: upper opening, guard/gate, rim support, one captured100strip closure, shortened ordinary ramp/removable tip, sealed bund and BOTH south temporary posts shift. The existing south feet otherwise lie on the moved bund; no collision is hidden.",
+    "rainAccounting": {
+      "addedGrossLps": 0.013950000000000002,
+      "addedNetAssignedCatchmentM2": 0,
+      "boundary": "Added100roof strip is wholly within current court4250..7750square; it redirects already assigned court rain to N, not a new catchment credit. Existing outside-court roof strips and actual N full-event/temporary-pipe duty still need the complete overlap ledger."
+    },
+    "ordinaryAndWeatherAccepted": false
+  },
+  "sequence": [
+    "Verify intact N full-duty and actual receiving/weather conditions before E isolation. All selected/admitted passive states remain required.",
+    "Erect the source-owned enlarged roof/bund/entry, moved south feet and guarded south service opening while all walking covers intact; prove real drainage/laps/escape.",
+    "Capture/remove nine covers/gutters and seam piece; keep ONLY north module2 fully seated/captured. Install/capture actual temporary lower work platform and south ladder; supported pipe frame/rotation restraints already engaged.",
+    "Enter clear R300 staff zone. Operate ONE vertical inlet joint with actual top tool/lower counter-spanner. Retain gasket/nuts/bolts; retract every bolt clear. No downstream connector exists.",
+    "Use captured support to separate gasket/drop pipe initially; staff exits. From above remove the retained pan2/upper flange, then capture/remove platform halves and ladder. Keep pipe locked on real supports; no overhead pan/platform manipulation with crew below.",
+    "With all personnel outside sweep, lower total40 and roll complete spool90SOUTH on captured positively controlled bearings. Stop/lock at every state; full blocked mass and independent anti-roll/axial retention remain.",
+    "Draw complete rolled spool east along actual falling captured rails through ALL three actual bridges; land/restrain before any hoist transfer. Pay full derived long stage, outgoing removal and incoming delivery.",
+    "Reverse complete incoming spool: lower locked orientation, draw WEST, rotate back only in actual well/receiver clearances, install supported staff platform/ladder then pan2/upper flange, align/raise and restore inlet joint with crew outside load path. Test joint/catch/free outlet while covers open, then all cover/weather/ordinary access states in order."
+  ],
+  "technicalHolds": [
+    "Actual vertical-joint whole tool/nut/bolt withdrawal and head/torso/hand solids/torque; catalogue flange/fastener/gasket/braze/clock still require exact source. No native hardware pass is assumed.",
+    "Captured roll bearings/positive stops/brake, full wet/obstruction masses, initial/translated support reactions, wheels/rail/sidepost/drop brackets and entire export/incoming/hoist states. Bare frame is not proof.",
+    "Actual100upperfloor/rim/guard-weather reconstruction and600×900 staff-platform support/half-module joints/entry/exit. No fixed floor aperture or old stair pass is inherited.",
+    "Native open-end splash/pressure/vent/rod/first-wet and full receiving/site handoff; retained inlet/debris/hydraulic failures and high-eave duties remain."
+  ],
+  "firstSusceptible": null,
+  "hydraulicAccepted": false,
+  "constructionAccepted": false
+}

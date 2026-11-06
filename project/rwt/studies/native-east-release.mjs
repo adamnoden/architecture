@@ -9,6 +9,91 @@ const dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0);
 const add=(a,b,k=1)=>a.map((v,i)=>v+k*b[i]);
 const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
 
+/** One derived whole-assembly rewind, retaining both old controls rather than tuning their clearances. */
+export function recomposedAccess(){
+ const slope=50/4250,theta=Math.atan(slope),normal=[Math.cos(theta),0,-Math.sin(theta)],u=[0,1,0],v=cross(normal,u),
+  face=[7350,7000,-775],corner=[6575,7000,-775+(7350-6575)*slope],
+  horizontal=add(corner,normal,303),top=add(corner,v,303),outletX=corner[0]+(-200-corner[2])*Math.tan(theta),
+  box=[6490,6905,-855+(corner[2]-(-770.5882352941177)),460,190,460],body=[7100,6575],
+  toolLength=511,working=450,gripFlexWest=150,headOffset=100,shaftRadius=12,clearance=5,
+  pairs=[],outsideBox=p=>!(p[0]>box[0]-17&&p[0]<box[0]+box[3]+17&&p[1]>box[1]-17&&p[1]<box[1]+box[4]+17&&p[2]>box[2]-17&&p[2]<box[2]+box[5]+17);
+ function bestPose(clock,bolt,z,side){
+  const a=rad(clock+bolt*45),head=add(add(add(face,normal,side*headOffset),u,120*Math.cos(a)),v,120*Math.sin(a)),
+   shoulder=[body[0]+side*150,body[1]+75,z],flex=side===-1?gripFlexWest:0,projection=Math.sqrt(working**2-flex**2)/working;
+  let best=null;
+  for(let angle=0;angle<360;angle+=.5){
+   let reach=0,valid=true,minNeck=Infinity,minFloor=Infinity;
+   // The west nut rotates11.25°; the east bolt head is positively counterheld, hence no countertool stroke.
+   for(let step=0;step<=(side===-1?16:0)&&valid;step++){
+    const t=rad(angle+(side===-1?-5.625+11.25*step/16:0)),direction=u.map((x,j)=>projection*(x*Math.cos(t)+v[j]*Math.sin(t))-normal[j]*flex/working),
+     grip=add(head,direction,working),tail=add(head,direction,toolLength);
+    reach=Math.max(reach,distance(grip,shoulder));minFloor=Math.min(minFloor,tail[2]+1200-50,grip[2]+1200-50);
+    if(minFloor<0||tail[1]<6320||tail[1]>7380){valid=false;break;}
+    for(let k=0;k<=32;k++){
+     const p=add(head,direction,toolLength*k/32),r=p.map((x,j)=>x-face[j]),along=dot(r,normal),neck=Math.hypot(...r.map((x,j)=>x-along*normal[j]))-85-shaftRadius-clearance;
+     minNeck=Math.min(minNeck,neck);
+     if(neck<0||!outsideBox(p)){valid=false;break;}
+    }
+   }
+   if(valid&&(!best||reach<best.maximumReach))best={shoulder,head,handleAngle:angle,maximumReach:reach,minStraightNeckReserve:minNeck,minFloorHandReserve:minFloor};
+  }
+  return best;
+ }
+ for(let clock=20.5;clock<=24.5;clock++)for(let bolt=0;bolt<8;bolt++){
+  let best=null;
+  for(const z of [-550,-350]){
+   const west=bestPose(clock,bolt,z,-1),east=bestPose(clock,bolt,z,1);
+   if(west&&east){const reach=Math.max(west.maximumReach,east.maximumReach);if(!best||reach<best.maximumReach)best={clock,bolt,shoulderZ:z,maximumReach:reach,west,east};}
+  }
+  pairs.push(best??{clock,bolt,maximumReach:null,geometryFailed:true});
+ }
+ const finite=pairs.filter(x=>x.maximumReach!==null),worst=finite.reduce((a,b)=>!a||b.maximumReach>a.maximumReach?b:a,null),
+  base=x=>x<=outletX?-187-(x-6125)*13/(outletX-6125):-200+(x-outletX)*20/(7375-outletX),
+  headMinimumX=7350-headOffset*Math.cos(theta)-120*Math.sin(theta),
+  directionMinimumX=-(gripFlexWest/working)*Math.cos(theta)-Math.sqrt(working**2-gripFlexWest**2)/working*Math.sin(theta),
+  tailMinimumX=headMinimumX+511*directionMinimumX,handMinimumX=tailMinimumX-50,
+  eastHeadMaximumX=7350+headOffset*Math.cos(theta)+120*Math.sin(theta)+25,
+  flangeMinimumX=7350-25*Math.cos(theta)-142.5*Math.sin(theta);
+ return {identity:'ONE600west-native-bend /200west-flange access recomposition',accepted:false,selectedGeometryChanged:false,
+  geometry:{nativeCorner:corner,nativeHorizontalPort:horizontal,nativeTopPort:top,nativePortToJointAxialMm:(face[0]-horizontal[0])/normal[0],
+   collectorOutlet:[outletX,7000,-200],joint:face,downstreamJoint:[12250,7000,-775-(12250-7350)*slope],pipeLength:4900,
+   fallMm:4900*slope,unchangedFall:slope,wholeFactoryReservation:box,
+   collectorControls:[[6125,7000,base(6125)],[outletX,7000,-200],[7375,7000,base(7375)]],
+   collectorFloor:'Piecewise linear west−187 to low−200 to east−180, plus .025*abs(y−7000). Same one outlet, cover count/footprints and water assignment; second north cassette now carries low point. Actual new walls/seams/closure/force/firstwet require coherent consumer regeneration before adoption.',
+   southWestBridgeUndersideReserves:[6111.5,6418.5].map(x=>-176+.005*Math.abs(x-6241.5)-1.5-(base(x)+.025*130)),
+   exportCost:{draw:4900,park:[12250,17150],stage:[12250,8100,5100,1200],requiredDeckEnd:17350,extraBeyondRetainedClosedControl:200}},
+  control400:{factoryBoxMaximumX:7150,conservativeHandXMinimum:handMinimumX,unconditionalFactoryBoxSeparation:false,
+   overlapMm:7150-handMinimumX,
+   boundary:'400setback does not earn unconditional X separation of full hand/tool and conservative factory box. It needs an actual curved-body/pose proof; do not promote the earlier optimistic straight-neck reference.600buys whole-box separation.'},
+  clearanceDerivation:{activeFullTailMinimumX:tailMinimumX,
+   conservativeHandXMinimum:handMinimumX,
+   formerFactoryMaximumX:7550,requiredWestSetbackFor25Reserve:7550-handMinimumX+25,
+   chosenWestSetback:600,actualWholeBoxToHandXReserve:handMinimumX-(box[0]+box[3]),
+   role:'Derived whole-body clearance then rounded600 shift; no iteration of50mm cover or shallow beam passes.'},
+  operator:{centre:body,radius:300,bodyPlan:[6800,6275,600,600],shoulderBreadth:300,forwardShoulderOffset:75,
+   shoulderHeightsAboveFloor:[650,850],floor:-1200,
+   posture:'Explicit seated reference: shoulders150each side and75north of body centre; both tools share ONE shoulder height per bolt. All shoulder points remain within R300. Actual knees/torso/head/seat, both hand placement/removal and loaded trial remain physical requirements.',
+   bodyToFactorySouthGap:box[1]-(body[1]+300),bodyToFlangePlanGap:Math.hypot(flangeMinimumX-body[0],7000-142.5-body[1])-300},
+  tools:{count:2,ratchet:'HAZET916GL',socket:'HAZET900-30',socketSource:'https://www.hazet.de/en/products/hand-tools/nut-driver/socket/product/ean-4000896042937',
+   nativeSocket:{length:50,outputDiameter:40.1,driveDiameter:28,depth:23.3,wrenchSize:30},
+   fullHandleLength:511,workingGrip:450,activeFlexWest:gripFlexWest,activeStrokeDegrees:11.25,counterStrokeDegrees:0,
+   headPlaneOffset:headOffset,headDiameterReservation:50,headAxialThicknessReservation:50,
+   stack:'Project M20/30AF reference,25flange+3washer+50native socket+22head-centre reserve =100each side. Native PCD/fastener/gasket/engagement and actual ratchet head must be confirmed; no complete native joint pass.',
+   fullBodyMaximumEastX:eastHeadMaximumX,firstBridgeStart:7650,minimumHeadToFirstBridgeReserve:7650-eastHeadMaximumX,
+   headToStraight170NeckReserve:120-25-85,minimumBetweenTwoToolPlanes:2*headOffset,
+   at200NmActiveHandN:200/(Math.sqrt(450**2-150**2)/1000),at200NmCounterHandN:200/.45,
+   torqueAccepted:false,bodyBoxScreened:true,
+   sampling:'Five actual clock samples,720handle angles,17active stroke positions and33shaft positions. Counterhead fixed; no convenient shortening of active return stroke. Sampling is a necessary reference, not continuous contact proof.'},
+  pairedPoses:pairs,maximumReferenceReach:worst?.maximumReach??null,worstPose:worst,geometryFailures:pairs.length-finite.length,
+  referenceWithin600:finite.length===pairs.length&&worst.maximumReach<=600,
+  supportInterface:{movingFrameAndPipeReference:'Reprice full4900body/850gross frame and unchanged blocked masses. No previous4700/251.5kg handling result transfers.',
+   initialSupportX:[7750,12000],railY:[6525,7275],padPlanEach:[200,150],
+   firstPadReservations:[[7650,6450,200,150],[7650,7200,200,150]],staffPadMaximumX:7625,planReserveFromStaffPads:25,
+   crewToWestSupportXReserve:7750-(body[0]+300),
+   hold:'Actual separate carrier pedestals, coupled screw supports, guide/stops and lower rails still require full bodies/load paths. No staff-platform or pile load is borrowed. The worker leaves before any pipe motion.'},
+  status:'One complete-access geometric rewind for root review; no HAD adoption or actual pressure/firstwet/material/site/physical release. Native final torque may reject manual actuation. Actual supports and downstream work position remain finite exits.'};
+}
+
 // The whole native fitting/flange is rotated with the actual 50/4250 fall.
 // This optimistic straight-neck screen intentionally does NOT invent an N18 outer bend curve.
 export function boltReference({floor=-1200,clockMin=20.5,clockMax=24.5,clockStep=1,flexWest=250,standing=false}={}){
@@ -98,6 +183,7 @@ export function nativeRelease(){
    productHolds:'Endex catalogue conflicts retained. Actual PCD/bolts, backing-ring rotation/retention, bolt tightening/loosening torque, gasket, head/socket dimensions and complete delivered N18 body are not sourced by the reference dimensions.'},
   manualReference:boltReference(),standingControl:boltReference({standing:true}),originalFloorControl:boltReference({floor:-950}),
   uncontrolledStraightToolControl:boltReference({clockMin:0,clockMax:44,clockStep:2,flexWest:0}),
+  nextWholeAccess:recomposedAccess(),
   platform:{...deck,material:'316L stainless reference; density/E/170MPa proof stress are explicit calculation hypotheses, not a supplied section/weld/material acceptance',
    materialSource:'https://www.outokumpu.com/-/media/files/products/supra/outokumpu-supra-range-datasheet.pdf',
    materialSourceBoundary:'Supra316L/4404 ASTM A240 sheet/plate table gives170MPa; density8.0 and ambient E200GPa.193GPa is a lower calculation hypothesis. No actual RHS/bar/weld product certificate, corrosion/water exposure or whole assembly is accepted.',
