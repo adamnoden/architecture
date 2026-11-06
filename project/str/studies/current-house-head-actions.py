@@ -41,6 +41,7 @@ def member(name,p,trail=()):
     g=links[name];_,f,s=pair_weights([a[i],b[i]],p[i])
     return [(g['start'],a,f),(g['end'],b,s)]
 def carry(name,p,unit,cat,case,trail=(),cx=0.,cy=0.):
+    if 'beamObserver' in globals() and name in gs:beamObserver(name,p,unit,cat,case,cx,cy)
     if name in heads:
         vals=(unit,unit*cx/1000,unit*cy/1000)
         accumulate(sums,(name,cat,case),vals)
