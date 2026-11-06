@@ -14,7 +14,7 @@ export function readSelected(){
  const model=JSON.parse(raw),pan=model.model.southCourtThresholdReference.pan;
  assert.deepEqual(pan.bodyEnvelope.dimensions,[1796,420,131.5],'Merged integral pan body was lost during RWT proposal reconciliation');
  assert.deepEqual(pan.fallY,[[4090,-45],[4450,-55]]);assert.equal(pan.rear.crestZ,15);
- return {path,blob,model,authority:'UNMERGED receiver-refined HAD proposal reconciled with canonical main4fef04ad /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry',canonicalMain:'4fef04ad7a82a149903aa077af04f95b3a392294',canonicalMainHadBlob:'265ac19420f1b1fa6bba41dd859d7ee758187d6b'};
+ return {path,blob,model,authority:'Composed HAD consumer for this result; canonicalMain metadata records INTEGRATION BASELINE4fef04ad/HAD265ac194. Only conditional receiver/garden/maintenance refinements are integrated; separate construction comparisons and hydraulic/physical/site acceptance remain unadopted/unaccepted',canonicalMain:'4fef04ad7a82a149903aa077af04f95b3a392294',canonicalMainHadBlob:'265ac19420f1b1fa6bba41dd859d7ee758187d6b'};
 }
 const floor=y=>-30-(y-5750)*.04;
 export function mouthFlow(stageMm,intervals,{lossK=0,remainingFraction=1}={}){

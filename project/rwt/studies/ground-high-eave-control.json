@@ -3,7 +3,7 @@
   "source": {
     "path": "project/had/studies/water-replan.json",
     "blob": "6f089df104fe85c028978892e7f6b63f862e3237",
-    "authority": "UNMERGED receiver-refined HAD proposal reconciled with canonical main4fef04ad /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry",
+    "authority": "Composed HAD consumer for this result; canonicalMain metadata records INTEGRATION BASELINE4fef04ad/HAD265ac194. Only conditional receiver/garden/maintenance refinements are integrated; separate construction comparisons and hydraulic/physical/site acceptance remain unadopted/unaccepted",
     "canonicalMain": "4fef04ad7a82a149903aa077af04f95b3a392294",
     "canonicalMainHadBlob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
     "ordinaryEavePath": "project/mat/studies/loggia-roof-edge.json",
