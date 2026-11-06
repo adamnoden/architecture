@@ -4,6 +4,10 @@
 
 No accepted house geometry, structural system, product or foundation is adopted. STR-RECONCILE and the final roof/house gates remain unpassed. The [programme](structural-architecture-programme.md), [structural brief](../../docs/reference-house/structural-brief.md), [owner-house charter](../owner-house-charter.md) and existing [shared rewind](../triad-interface-contract.md) control any later selection.
 
+## 6 November — conserved gravity and restraint comparison
+
+The [current structural comparison](current-house-structural-reference.md) now separates a full signed support ledger for the predecessor roof from newer welded-roof, first-floor restraint and arch options. The new roof can end 22 upper ties at the floor in the comparison, but moving the uplift to eight corner stops costs a 2.294 t floor collector. A permanent tied masonry arch obstructs the existing window/guard renewal. Keep STR-HOUSE open: the actual final roof diaphragm, first-floor member and contact behaviour, curved corner openings, eight DPC crossings and coherent final shaft actions remain unresolved. No geometry or construction system is adopted.
+
 ## 6 November — current architectural source acquired
 
 HAD-WATER-REPLAN is now complete at its architectural-development scope in merged8ab19d48. The [current source-bound structural re-entry](current-house-structural-reference.md) replaces the missing architectural input as the active STR question. It identifies actual torsion/node-bearing and incoming/tie conflicts; old component checks remain historical until their consumed geometry and load paths are matched. STR-HOUSE remains planned while these intrinsic joins and the preferred whole-house proposition are resolved.

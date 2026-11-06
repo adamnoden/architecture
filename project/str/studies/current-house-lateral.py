@@ -2,7 +2,7 @@
 """Source-bound four-corner RC stability candidate: explicit force, geometry and ground conditions."""
 from pathlib import Path
 import hashlib,json,math,sys
-R=Path(__file__).resolve().parents[3];P=R/'project/had/studies/water-replan.json';raw=P.read_bytes();assert hashlib.sha256(raw).hexdigest()=='dbfff5eb4fa36dbdf6635702e853792e6412d73df1c58f9e1c1ede1bcff205b8'
+R=Path(__file__).resolve().parents[3];P=R/'project/had/studies/water-replan.json';raw=P.read_bytes();assert hashlib.sha256(raw).hexdigest()=='1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb'
 h=json.loads(raw)['model'];roof=json.loads(Path(__file__).with_name('current-house-roof.json').read_text());top=roof['sourceRewind']['ridgeNew'];base=-180
 # Entire facade rectangle up to ridge is loaded, including portions that are
 # actually open or triangular. No favourable dead weight stabilises uplift.

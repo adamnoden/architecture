@@ -3,7 +3,7 @@
 from pathlib import Path
 import hashlib,json,math,sys
 R=Path(__file__).resolve().parents[3]
-P=R/'project/had/studies/water-replan.json';raw=P.read_bytes();assert hashlib.sha256(raw).hexdigest()=='dbfff5eb4fa36dbdf6635702e853792e6412d73df1c58f9e1c1ede1bcff205b8'
+P=R/'project/had/studies/water-replan.json';raw=P.read_bytes();assert hashlib.sha256(raw).hexdigest()=='1a6bdba15b88f81adb57c978b365033ace174f06ca9e4022366c8639016b2fdb'
 h=json.loads(raw)['model'];LP=R/'project/str/studies/open-loggia-support.json';lr=LP.read_bytes();a=json.loads(lr)['actual_roof']
 # Fabricated, sharp-corner closed boxes: computed section properties are a
 # PROJECT fabrication reference, not rounded commercial RHS properties.
