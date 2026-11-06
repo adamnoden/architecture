@@ -9,14 +9,14 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-06T20:45:43.699Z",
-  "expiresAt": "2026-11-06T22:15:43.699Z",
+  "heartbeatAt": "2026-11-06T21:03:49.061Z",
+  "expiresAt": "2026-11-06T22:33:49.061Z",
   "checkpoint": {
-    "evidence": "Draft1351 head899c147: source-located field, three RC cores, wall-width/stock/seam comparison; bespoke rail preference withdrawn; test:mat and21HADtests pass",
-    "next": "Review actual conventional floor/wall/core/threshold route and reconcile moved main before final exact CI/root review",
-    "blocker": "No complete floor joint/mix/air-moisture/thermal/site admission; not packet completion"
+    "evidence": "Verified1351 merged40d5c9b0/exact9419fab/all14CI pass; old source branch deleted; new distinct successor starts exact merge; wholefield/conventional comparator and rail withdrawal preserved",
+    "next": "Develop one source-located conventional wall/floor air-moisture section with actual STR ground-floor cover/cage input, complete mineral beds and threshold relation",
+    "blocker": "No actual concrete mix, complete air/moisture joint, site or material admission; MAT remains open"
   },
-  "branch": "work/zerg-20261106-w5-field-assembly",
+  "branch": "work/zerg-20261106-w5-concrete-boundary",
   "predecessor": {
     "leaseId": "6002020d-6ea1-4562-986b-9448eba5705a",
     "generation": 27,
