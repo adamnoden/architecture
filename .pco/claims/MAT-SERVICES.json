@@ -9,9 +9,9 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T21:08:27.230Z",
-  "expiresAt": "2026-11-06T22:38:27.230Z",
-  "branch": "work/zerg-20261106-services-g21-network",
+  "heartbeatAt": "2026-11-06T21:15:26.800Z",
+  "expiresAt": "2026-11-06T22:45:26.800Z",
+  "branch": "work/zerg-20261106-services-g21-air-duty",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
     "generation": 20,
@@ -36,8 +36,8 @@
   },
   "pr": 1353,
   "checkpoint": {
-    "evidence": "Frozen PR1353 head3f3381cd95919f4f05f7dced762c7893f76f07dc tree580c921a50aded41cfed6781c4dcb97d4b66e32c reconciles main40d5c9b05b29f2ec35291167bca3fd94553aa85b. Five MAT files unchanged from root-reviewed9c5b; full MAT suite passed, current MAT ground-field and STR chains preserved; rendered native source/port/acoustic limits inspected.",
-    "next": "Await exact-head CI42294155384 then fresh canonical connector merge-check and root integration. Continue actual network/ports/bottom-lift renewal on fresh successor under this live lease; no apparatus adoption or MAT completion."
+    "evidence": "PR1353 verified merged1cedc7d7e159f7cb4e3ba15fb9882d2fd5529e51 after exact3f3381cd CI14green and21:13:48Z preflight. Old remote source deletion verified; new remote branch/worktree starts exact merged head. PR-body STR1343 metadata corrected.",
+    "next": "Develop one current-HAD geometric airtightness comparison and whole-house pressure/heat consequences with nonduplicated provisional floor/wall allocation, coordinated with MAT envelope. Keep actual W9 bottom-supported lift/base-to-deck and full folded capture open and visible; new draft before source updates thereafter."
   },
-  "note": "Active samegeneration successor Draft1353; no apparatus/handling/material adoption, packet completion or release."
+  "note": "Same-g21 fresh air-duty successor starts exact merged1cedc7d7. PR1353 is historical merged evidence until a new draft can bind the successor; no apparatus/material/handling admission or packet completion."
 }
