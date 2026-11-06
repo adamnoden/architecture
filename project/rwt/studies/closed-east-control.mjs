@@ -147,7 +147,7 @@ export function control(){
    outletShiftEW:collectorAxisX-7175,
    fittingAlignment:'Collector throat/closed closure moves6.713east to meet the native N18 inlet axis rotated with50/4250carrier fall; regenerate actual gutter fall/closure/cover supports before adoption. No vertical-to-tilted socket mismatch is concealed.',
    coverTop:0,changedGutterCassetteBottom:-215,oldMinimumBottom:-200,
-   changed:'Re-form ONLY the actual fourth/fifth north catch-cover gutter ends to drain to7175/7000/−200; the east tail falls WEST to this lower outlet. Captured top cover/gutter footprints stay305×550. No65throat, raised sill or un-drained depression; all points descend to the vertical outlet.',
+   changed:'Re-form ONLY the actual fourth/fifth north catch-cover gutter ends to drain to the generated7181.713/7000/−200closed outlet; the east tail falls WEST to this lower outlet. Captured top cover/gutter footprints stay305×550. No65throat, raised sill or un-drained depression; all points descend to the aligned closed outlet.',
    construction:'Small closed transition below the existing250wide receiving return replaces the free617.6mm hood plunge; continuous vent/rod access opens from the existing removed catch covers. Top connection/clip/braze and first release require actual source, not an assumed sealed overlap.'},
   intakeTurn:{verticalAxis:[collectorAxisX,7000],fromZ:-200,toZ:fittingTop[2],horizontalAxisAt:fittingHorizontal,
    factoryPortBinding:{carrierFall:50/4250,rotationAboutYDegrees:fittingAngle*180/Math.PI,
