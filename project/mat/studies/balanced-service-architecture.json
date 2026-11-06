@@ -326,6 +326,119 @@
     "negativeControl": "850cart remains rejected through742.5. Rotated597body is a different object; neither body geometry nor nominal trolley deck qualifies handling.",
     "externalEastAlternative": "A dense sampled1006x597body-only two-turn plant path exists, but no added east landing/1800lift/hoist is admitted. Prefer real front route if complete carrier and approach can be proved."
   },
+  "nativeCarrierAndOperatorComparison": {
+    "status": "Indoor loaded-carrier/operator geometric comparison only; loading/capture and slope operation not admitted",
+    "nativePart": "Fetra25011401",
+    "source": "https://www.fetra.com/carts/open_cart-25011401",
+    "nativeDeckMM": [
+      1000,
+      600
+    ],
+    "nativeCompletePlanMM": [
+      1125,
+      609
+    ],
+    "nativeDeckHeightMM": 270,
+    "conservativeDeckCentredEnvelopeMM": [
+      1250,
+      609
+    ],
+    "reasonFor1250Bound": "Do not assume1125overall is centred on1000deck. Charge the whole125extra at either end:625maximum fromdeckcentre.",
+    "nativeCapacityKg": 600,
+    "W9MassKg": 156,
+    "unitBaseSeparated": "Native W9 base removal retained;1000x597body, not1006widebase, compared with1000x600deck. Exact bottom support/capture remains unearned.",
+    "initialPlanCentre": [
+      10180,
+      2970.5
+    ],
+    "firstNorthTranslationMM": 192.25,
+    "nativeSwivelOption": 1288,
+    "incompatibleDeadManOption": 1280,
+    "nativeSwivelLimitation": "Higher manoeuvrability but reduced directional stability;4swivels do not qualify external incline operation.",
+    "actualProtectedDoorEachSideReserveMM": 66.75,
+    "authoredOperatorDiameterMM": 600,
+    "operatorEachSideDoorReserveMM": 71.25,
+    "initialOperatorCentreX": 11130.0,
+    "initialOperatorToEastWallMM": 140.5,
+    "indoorLoadDeckCentreLineXY": [
+      [
+        10180,
+        2970.5
+      ],
+      [
+        10180,
+        3162.75
+      ],
+      [
+        5700,
+        3162.75
+      ],
+      [
+        5700,
+        2700
+      ],
+      [
+        6000,
+        2700
+      ],
+      [
+        6000,
+        0
+      ]
+    ],
+    "turn": "At5700/2700 rotate carrier and rear operator90degrees from west-going to south-going, then translate300east. Do not rotate at the original3162.75Y or in eastgallery.",
+    "fullCarrierTurningRadiusMM": 695.2303575074955,
+    "turnCarrierWestReserveMM": 107.76964249250432,
+    "turnOperatorEastReserveMM": 153.0,
+    "turnOperatorNorthReserveMM": 160.0,
+    "operatorToWCWallDuringWestRunMM": 115.75,
+    "negativeControl": "Rotating atY3162.75 would take the full rear operator beyond4110north boundary; the lower2700turn is necessary.",
+    "loadingHold": "Actual156kg uniform bottom lifting, capture to deck, core/panel removal, hose/duct release, loadbearing and fully reversible transfer to/from native base are not solved by rated cart capacity.",
+    "externalHold": "1280 native dead-man wheel lock explicitly is not a driving brake. Native2200 electric-drive PDF states5%/2degrees uphill at500kg, adds55kg and batteries; contradictory angle/percent and downhill braking/full modified envelope are not resolved. No1:20 loaded-slope qualification or silent ramp change.",
+    "constituents": "Trolley timber deck, TPE wheels and any restraints are temporary-tool constituents, not hidden permanent-service material admission."
+  },
+  "visibleKitchenControlComparison": {
+    "status": "Unselected visible manual-operation comparison; no automatic alarm or hob interlock credit",
+    "proposedCabinetXYZWHH": [
+      7719.5,
+      10300,
+      1250,
+      300,
+      550,
+      550
+    ],
+    "regulatorNativeMountingLengthMM": 485,
+    "nativeActuatorEnvelopeMM": 215,
+    "displayHeightTrialMM": 1500,
+    "frontOperatorPlan": [
+      8019.5,
+      10325,
+      600,
+      600
+    ],
+    "southwardBodyWithdrawalPlan": [
+      7750,
+      9800,
+      215,
+      500
+    ],
+    "cabinetToNorthWallMM": 720.5,
+    "operatorToSinkMM": 80.5,
+    "operatorToTableNorthMM": 25,
+    "bodyWithdrawalToWestChairMM": 35,
+    "actualNorthWindowOperatingBody": [
+      8250,
+      11235,
+      300
+    ],
+    "cabinetToActualWindowOperatorMM": 148.72625285356327,
+    "rejectedNorthCornerCabinet": "PreviousY11000..11550 intersects the actual kitchen8300 window operator centred8250/11235: nearest230.5<300. Moving proposed cabinet south avoids that real body, not an invented leaf.",
+    "mountingWall": "Actual loggia-east-weather east finished face7719.5; no wall penetration/thermal bridge/support qualification inferred.",
+    "nativeIndication": "GMB IOMp7: LED off=no power,on=setpoint achieved,flashing=not achieved. IOMp8 display alternates actual/setpoint. A correctly regulating16fallback may be steady; no automatic fault alarm is claimed.",
+    "manualBurden": "Reading16versus48 before/while cooking is attention-intensive and is a comparison, not a selected numerical pre-meal checklist. Compare a simple flow-ready indication with conventional hood operation before adding automated hob enable.",
+    "routeHold": "Complete riser-to-cabinet branch, independent supports, acoustic treatment and actual component withdrawal remain open; no cabinetry is source-selected.",
+    "selectedKitchenBodiesUnchanged": true
+  },
   "fireSmokeTransferComparison": [
     {
       "family": "Lorient LVN20S",
@@ -448,6 +561,257 @@
       "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
     }
   ],
+  "nativeW9HeatContract": {
+    "nativePreheaterW": 750,
+    "nativePostheaterW": 900,
+    "nativeFanNameplateW": 960,
+    "nativePCBW": 20,
+    "nativeConnectionW": 2630,
+    "proposedMinimumSupplyC": 16,
+    "sensitivities": [
+      {
+        "totalLps": 96,
+        "effectiveRecovery": 0.6,
+        "outsideC": -10,
+        "insideC": 20,
+        "unheatedSupplyC": 8.0,
+        "postheatTo16W": 921.5999999999999,
+        "native900PostheatReserveW": -21.59999999999991,
+        "postheatTo18W": 1152.0,
+        "maximumSupplyWith900PostheatC": 15.8125,
+        "roomHeatIf16SupplyAnd220WK_W": 7060.8,
+        "totalPhysicalHeatBeforeFanW": 7982.4,
+        "scope": "No preheater or fan-heat credit; ifpostheat reserve is negative this16C comparator fails at fixed flow."
+      },
+      {
+        "totalLps": 96,
+        "effectiveRecovery": 0.7,
+        "outsideC": -10,
+        "insideC": 20,
+        "unheatedSupplyC": 11.0,
+        "postheatTo16W": 576.0,
+        "native900PostheatReserveW": 324.0,
+        "postheatTo18W": 806.3999999999999,
+        "maximumSupplyWith900PostheatC": 18.8125,
+        "roomHeatIf16SupplyAnd220WK_W": 7060.8,
+        "totalPhysicalHeatBeforeFanW": 7636.8,
+        "scope": "No preheater or fan-heat credit; ifpostheat reserve is negative this16C comparator fails at fixed flow."
+      },
+      {
+        "totalLps": 96,
+        "effectiveRecovery": 0.8,
+        "outsideC": -10,
+        "insideC": 20,
+        "unheatedSupplyC": 14.0,
+        "postheatTo16W": 230.39999999999998,
+        "native900PostheatReserveW": 669.6,
+        "postheatTo18W": 460.79999999999995,
+        "maximumSupplyWith900PostheatC": 21.8125,
+        "roomHeatIf16SupplyAnd220WK_W": 7060.8,
+        "totalPhysicalHeatBeforeFanW": 7291.2,
+        "scope": "No preheater or fan-heat credit; ifpostheat reserve is negative this16C comparator fails at fixed flow."
+      },
+      {
+        "totalLps": 128,
+        "effectiveRecovery": 0.6,
+        "outsideC": -10,
+        "insideC": 20,
+        "unheatedSupplyC": 8.0,
+        "postheatTo16W": 1228.8,
+        "native900PostheatReserveW": -328.79999999999995,
+        "postheatTo18W": 1536.0,
+        "maximumSupplyWith900PostheatC": 13.859375,
+        "roomHeatIf16SupplyAnd220WK_W": 7214.4,
+        "totalPhysicalHeatBeforeFanW": 8443.2,
+        "scope": "No preheater or fan-heat credit; ifpostheat reserve is negative this16C comparator fails at fixed flow."
+      },
+      {
+        "totalLps": 128,
+        "effectiveRecovery": 0.7,
+        "outsideC": -10,
+        "insideC": 20,
+        "unheatedSupplyC": 11.0,
+        "postheatTo16W": 768.0,
+        "native900PostheatReserveW": 132.0,
+        "postheatTo18W": 1075.2,
+        "maximumSupplyWith900PostheatC": 16.859375,
+        "roomHeatIf16SupplyAnd220WK_W": 7214.4,
+        "totalPhysicalHeatBeforeFanW": 7982.4,
+        "scope": "No preheater or fan-heat credit; ifpostheat reserve is negative this16C comparator fails at fixed flow."
+      },
+      {
+        "totalLps": 128,
+        "effectiveRecovery": 0.8,
+        "outsideC": -10,
+        "insideC": 20,
+        "unheatedSupplyC": 14.0,
+        "postheatTo16W": 307.2,
+        "native900PostheatReserveW": 592.8,
+        "postheatTo18W": 614.4,
+        "maximumSupplyWith900PostheatC": 19.859375,
+        "roomHeatIf16SupplyAnd220WK_W": 7214.4,
+        "totalPhysicalHeatBeforeFanW": 7521.599999999999,
+        "scope": "No preheater or fan-heat credit; ifpostheat reserve is negative this16C comparator fails at fixed flow."
+      }
+    ],
+    "frostHold": "No published operating-point frost/recovery curve has yet earned continuous128 L/s through the chosen cold point. OEM reductions/stops remain intact; cooking must cease on loss of duty, not override protection."
+  },
+  "retainedEmitterCapacityComparison": {
+    "selectedBodiesUnchanged": true,
+    "selectedBodyCount": 16,
+    "selectedConservativeTotalAt45_40_20_W": 8823.638,
+    "kitchenExisting45_40_20_W": 980.4456,
+    "kitchenMaximumNonVentilationLossAt16SupplyAnd16Lps_W": 903.6456000000001,
+    "kitchenMaximumNonVentilationLossAt16SupplyAnd48Lps_W": 750.0456,
+    "declared950NonVentilationLossTrialOnly": 950,
+    "cookingRoomHeatUnder950TrialW": 1180.4,
+    "sameSelectedBodyRequiredWaterAt5KTrialC": [
+      48.02844737565934,
+      43.02844737565934
+    ],
+    "meaning": "The old950 room allocation is not an actual fabric loss and is not automatically added to ventilation. This deliberately labelled trial shows a modest water-regime change can be compared before adding a west radiator or16kW plant.",
+    "remaining": "Actual room losses, heatpump output/COP at actual climate/water regime, HX/glycol and defrost margin, minimum flow and DHW recovery still determine selection; no8kW invariant."
+  },
+  "wholeSystemConstituentBoundary": {
+    "nativeW9EPD": {
+      "url": "https://www.swegon.com/globalassets/digizuite/19956-en-epd-swegon-casa-w9-en.pdf",
+      "sha256": "d905af103c6c0f35196eb8f4bd0790d3a35c9981b02e7cc7bc899ec7f9cdabf3",
+      "id": "HUB-7279",
+      "published": "2026-08-20",
+      "productionDataYear": 2025,
+      "declaredMassKg": 147.3,
+      "metalMassPercent": 90,
+      "fossilMaterialMassPercent": 10,
+      "fossilCategoryIndicativeKg": 14.730000000000002,
+      "scope": "Same native1000x597x1314 geometry but no exact current-Genius GTIN/BOM match;147.3kgEPD does not replace156kghandling. Fossil category is not a polymer-specific component schedule."
+    },
+    "policy": "No approved polymer exceptions and no hidden-parts exemption. Safety-certified internals remain intact; no material pass inferred from metal case or aluminium core.",
+    "notAssumedSmallResidue": "Approximately14.73kg fossil-category material for the declared EPD unit prevents a few-gaskets-only narrative. Exact insulation, seals, fan/PCB/cable/filter constituents and replacements remain to be source-bound.",
+    "alternatives": "Compare the full local-fan/heated-makeup train and a maintainable modular metal/mineral central arrangement at the same actual duties; no generic central-MVHR material advantage is claimed.",
+    "serviceParts": [
+      "Original102W23S filter set, native interval and grease-cleaning duties retained; media/binder exact composition unresolved.",
+      "Prefer nativeUVLL metal condensate trap toUVLM plastic comparator, but exact retained seal/tube/outfall still unqualified.",
+      "Duct seals, native VAV electronics/cables/transformer, hood/control housings and mandatory safety parts stay declared, not concealed by removable cabinets."
+    ]
+  },
+  "conventionalLowerMassAlternative": {
+    "status": "Unselected actual alternative; current144 L/s pressure/noise point and complete host remain unearned",
+    "nativeModel": "Systemair SAVE VTC500 L,488843,pleated standard filter kit",
+    "manufacturerGeneratedCardDate": "2023-07-13",
+    "manufacturerCardRecoveredFrom": "https://www.watson-heatrecovery.co.uk/sites/watson/files/product-pdfs/Systemair_SAVE_VTC_500_L.pdf",
+    "manufacturerCardSha256": "42f89d052b05bd31825ce90f62270ff07bd448d5abc65feeb2118668b386debe",
+    "primaryDocumentProvenance": "Printed Systemair Online Catalogue generated primary product card, retrieved from distributor mirror because legacy shop asset returned400; no distributor performance claim substituted.",
+    "nativeBodyMM": [
+      880,
+      615,
+      880
+    ],
+    "nativeHandlingKg": 82,
+    "nativePortsMM": [
+      200,
+      200,
+      200,
+      200
+    ],
+    "nativeFrontServiceMM": 750,
+    "nativeMaximumAt100PaLps": 167.22222222222223,
+    "nativeOperatingPointNotProved": "602m3/h at100Pa is not144L/s at the actual dirty-filter/duct/terminal pressure and does not prove sound. No plot digitised or peak-range selection.",
+    "sameNorthFrontHostRejected": {
+      "body": [
+        9677,
+        2672,
+        880,
+        615
+      ],
+      "frontField": [
+        9677,
+        3287,
+        880,
+        750
+      ],
+      "cylinderStation": [
+        9510,
+        3900,
+        700,
+        700
+      ],
+      "overlapDepthMM": 137
+    },
+    "rotatedEastFrontTrial": {
+      "body": [
+        9677,
+        2672,
+        615,
+        880
+      ],
+      "frontField": [
+        10292,
+        2672,
+        750,
+        880
+      ],
+      "actualProtectedDoorLeaf": [
+        9397,
+        3534,
+        762,
+        44
+      ],
+      "northLeafOverlapMM": 18,
+      "rejected": "Cylinder avoided but actual open protected leaf intersects18mm; not adopted."
+    },
+    "minimalEastShiftTrial": {
+      "body": [
+        10184,
+        2672,
+        615,
+        880
+      ],
+      "frontField": [
+        10799,
+        2672,
+        750,
+        880
+      ],
+      "toOpenLeafMM": 25,
+      "nativeFrontFieldToOuterEastMM": 21.5,
+      "hold": "Independent frame for native wall-hung bracket, complete hinged door removal/swing, ports, actual overhead four-duct routing and reversible handling remain unearned; no extra25mm invented outside native750field."
+    },
+    "nativeConstituents": {
+      "primary": "https://stepimassets.blob.core.windows.net/dsassetsprod/EPD_405011_SYSTEMAIR_SAVE_VTC_500.PDF",
+      "sha256": "b8d9cf5b8f5b55b58a8afbfdd6bf5374f7e06d990a806de9ad06f3d48953035f",
+      "id": "NEPD-7298-6566",
+      "issued": "2024-08-21",
+      "studyYear": 2022,
+      "declaredMassKg": 79.29,
+      "mineralInsulationKg": 1.62,
+      "mineralFilterKg": 0.64,
+      "namedPlasticsAndSyntheticRubberKg": 2.618,
+      "limit": "BOM categories do not resolve binders, electronics/motor polymers or exact currently supplied kit. No owner exception or direct mass ranking against W9 fossil category."
+    },
+    "nativeControlEvidence": "Factory CAV kit measures both airflows. Service manual permits separate fan settings on configurable digital inputs. Default Cooker Hood maximum-fan function is not itself a144/96 configuration or permission to send grease through the core.",
+    "separateCaptureTopology": {
+      "normal": {
+        "centralSupplyLps": 96,
+        "centralExtractLps": 96,
+        "kitchenSupplyLps": 16,
+        "kitchenBackgroundExtractLps": 16,
+        "separateCaptureLps": 0
+      },
+      "cooking": {
+        "centralSupplyLps": 144,
+        "centralExtractLps": 96,
+        "kitchenSupplyLps": 64,
+        "kitchenBackgroundExtractLps": 16,
+        "separateCaptureLps": 48
+      },
+      "fixedOtherSuppliesLps": 80,
+      "fixedFiveWetExtractsLps": 80,
+      "meaning": "Keep background extraction active;48capture is deliberately a separate path, not accidentally added to the same hood background. No greasy cooking air assumed through Systemair core.",
+      "cost": "One extra hood motor and64kitchen supply,144main flow, unrecovered cooking heat, actual capture/fan/terminal match and full fault response. Two modes do not make it automatically simpler than W9.",
+      "synthetic30K70percentCorePhysicalCookingW": 9364.8,
+      "sameAssumptionW9_128DifferenceW": 1382.4000000000003
+    }
+  },
   "historical8kWSensitivityRequiredEffectiveRecoveryAt128And30K": 0.6961805555555556,
   "continuous96VersusHistorical78": {
     "additionalLps": 18,
