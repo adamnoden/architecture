@@ -59,7 +59,7 @@ def field_topology(m):
 
 def produce():
     c=json.loads((HERE/'current-ground-pier-boundary.json').read_text())
-    s=immutable(c['sources']['STR']);h=immutable(c['sources']['HAD'])
+    s=immutable(c['sources']['STR']);h=immutable(c['sources']['HAD']);ground=immutable(c['sources']['STRground'])
     floor=h['model']['northNormalRoute']['floorJoin']
     assert floor['layers']==c['selectedFloorGuard']['layers'] and floor['z']==c['selectedFloorGuard']['z']
     sp=s['capillarySplice'];p=c['plate'];assert sp['plateZ']==p['z'] and sp['plateThickness']==p['thickness']
@@ -81,6 +81,29 @@ def produce():
     topology['edge230mmMass_kg']=topology['edgeLength_m']*edge_height/1000*pan['sheet']/1000*density
     topology['flatAndEdgeQuantityScreen_kg']=topology['flat1mmMass_kg']+topology['edge230mmMass_kg']
     topology['scope']='Proposed source-located net field/edge lower bound, not a sealed system or installed cut list. Frame/reveal consumption and developed edges are unqualified. Excludes seam overlaps, corner development, supports, three renewable door transitions, stair/support boots, waste and fabrication.'
+    # Join the real renewable pan apron to the finite field and support territory.
+    # This proves plan coverage, never a new pad, structural bearing or a seal.
+    threshold=h['model']['southCourtThresholdReference'];tp=threshold['pan'];seat=tp['permanentSeat']
+    route=next(q for q in ground['lower_grid']['actual_routes'] if q[0]=='court-S')
+    _,ba,bb,bw=route
+    assert ba[1]==bb[1] and ground['lower_grid']['top']==floor['z'][3]
+    field_y=h['model']['court'][1]-h['model']['envelope']
+    apron=tp['dryFold'];assert apron['y'][1]==tp['rear']['planeY'] and apron['crestZ']==tp['rear']['crestZ']
+    beam_y=[ba[1]-bw/2,ba[1]+bw/2]
+    assert beam_y[0]<=field_y<apron['y'][0]<apron['y'][1]<=beam_y[1]
+    assert ba[0]<=seat['plan'][0] and seat['plan'][0]+seat['plan'][2]<=bb[0]
+    assert seat['rcZ']==sorted(floor['z'][3:]) and c['thresholdTransition']['fieldPlaneZ']==pan['z']
+    transition={
+      'status':c['thresholdTransition']['status'],'sourceRoute':route,
+      'fieldFinishedFaceY_mm':field_y,'dryApronY_mm':apron['y'],'dryApronCrestZ_mm':apron['crestZ'],
+      'horizontalJoinFromField_mm':apron['y'][0]-field_y,
+      'riseFromFieldBottomToApronCrest_mm':apron['crestZ']-pan['z'][0],
+      'commonBeamPlanY_mm':beam_y,'commonBeamTopZ_mm':ground['lower_grid']['top'],
+      'seatPlan':seat['plan'],'seatProjectionBeyondBeam_mm':max(0,seat['plan'][1]+seat['plan'][3]-beam_y[1]),
+      'ordinaryFloorAccess':'Retained15/65/100/RC200 stack; field below distribution only.95mm return belongs dedicated threshold territory, not a welded lid over ordinary services.',
+      'renewal':c['thresholdTransition']['renewal'],
+      'sourceContact':'Permanent seat is explicitly continuous with actual ground slab/court-south support. Plan coverage is not force, thermal or dryness performance.',
+      'unqualified':c['thresholdTransition']['unqualified']}
     t=c['thermalScreen'];a=sum(areas)
     rc_depth=(t['height']-t['metalDepth'])/1000
     resistance=rc_depth/t['lambdaRC']+t['metalDepth']/1000/t['lambdaMetal']
@@ -101,7 +124,7 @@ def produce():
         'boundary':t['method'],'actualSurfaceTemperature_C':None,'wholeHouseEnergyResult':None},
       'falsifiedCapillaryPath':c['preferredConditionalRoute']['falsifiedPath'],
       'moisturePaths':c['moisturePaths'],
-      'separateFieldChallenger':topology,
+      'separateFieldChallenger':topology,'thresholdTransition':transition,
       'activeInternalHolds':['Upper-plate-only floor route withdrawn; resolve every ground-support capillary source or a real separate field boundary','STR opposed anchor/plate force path and local weld/cover schedule','Actual mineral-DPC/plate edge and keyed plaster/metal air termination with movement allowance','Concrete floor construction-joint/crack and repair design plus explicit whole-house leakage budget','Source-bound 3D thermal surface/condensation and actual whole-floor energy model','Full-pan support/seam/expansion/penetration design only if its conditional need is established'],
       'admission':c['admission']}
     # Finite source-derived plan and section; no hand-edited result graphics.
@@ -138,7 +161,22 @@ def produce():
     lines=[f"Net source-located field: {topology['netField_m2']:.5f} m²",f"Exposed edge: {topology['edgeLength_m']:.3f} m",f"Flat 1 mm sheet: {topology['flat1mmMass_kg']:.2f} kg",f"230 mm return allowance: {topology['edge230mmMass_kg']:.2f} kg",f"Flat + edge quantity screen: {topology['flatAndEdgeQuantityScreen_kg']:.2f} kg",'Before seams, support, fixings and waste.','Upper-pier capillary cuts remain required','unless another actual source cut owns that path.','','Orange: three renewable external door joins.','Dashed stair footprint: actual supports/boots','remain to locate; area is not called a void.','','Pan BELOW accessible distribution only.','No welded lid immediately under finish.','Complete expansion and seam design still open.']
     for i,line in enumerate(lines):plan+=f'<text x="650" y="{115+i*28}" font-size="17">{line}</text>'
     plan+='<text x="35" y="674" font-size="14">Actual floor access survives; no supplied pan, gas/air/moisture performance, capillary closure or MAT completion is earned.</text></g></svg>\n'
-    return {'current-ground-field-challenger.svg':plan,'current-ground-pier-boundary.results.json':json.dumps(result,indent=2)+'\n','current-ground-pier-boundary.svg':svg+'\n'}
+    # Coordinate section distinguishes inherited support from proposed closure.
+    X=lambda y:70+(y-3650)*1.1
+    Z=lambda z:190-z*.65
+    rect=lambda y,z,w,d,fill:f'<rect x="{X(y):.3f}" y="{Z(z):.3f}" width="{w*1.1:.3f}" height="{d*.65:.3f}" fill="{fill}" stroke="#52636b"/>'
+    join_svg='<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760"><rect width="1200" height="760" fill="#faf9f4"/><g font-family="sans-serif" fill="#20343c"><text x="35" y="34" font-size="25">Court-south field / renewable pan / common RC — source join</text><text x="35" y="61" font-size="15">Proposed MAT interface only; selected HAD pan + historical STR support territory. No adopted rebind or qualified seal.</text>'
+    join_svg+=rect(3650,-180,600,450,'#bac6cb')+rect(4060,-180,400,200,'#cdd5d8')
+    join_svg+=rect(3650,-80,field_y-3650,100,'#d1dab5')+rect(3650,-15,field_y-3650,65,'#dfd4be')+rect(3650,0,field_y-3650,15,'#bda98d')
+    join_svg+=f'<path d="M{X(3650)} {Z(-80)} H{X(field_y)}" fill="none" stroke="#427d88" stroke-width="4"/>'
+    join_svg+=f'<path d="M{X(field_y)} {Z(-80)} H{X(4030)} V{Z(15)} H{X(4090)}" fill="none" stroke="#bb6b2f" stroke-width="4" stroke-dasharray="8 5"/>'
+    join_svg+=f'<path d="M{X(4030)} {Z(15)} H{X(4090)} V{Z(-45)} L{X(4450)} {Z(-55)}" fill="none" stroke="#4e6c9b" stroke-width="3"/>'
+    join_svg+=f'<path d="M{X(4030)} 109 H{X(4400)} M{X(4380)} 101 L{X(4400)} 109 L{X(4380)} 117" fill="none" stroke="#4e6c9b" stroke-width="3"/>'
+    join_svg+=f'<path d="M{X(field_y)} 302 V319 H{X(4030)} V302" fill="none" stroke="#bb6b2f" stroke-width="2"/>'
+    labels=[(70,95,'SOUTH / interior'),(700,95,'NORTH / court; pan withdraws NORTH500'),(70,160,'Retained ordinary15 /65 /100 /RC200'),(70,286,'Field at−80..−79 below distribution'),(260,344,f"{transition['horizontalJoinFromField_mm']:.1f} mm formed join territory"),(70,570,'Common court-S beam: Y3650..4250; top−180; historical450 depth'),(70,599,'Actual seat: Y4060..4460 /RC200; outer210 beyond beam is a real structural/thermal duty'),(70,640,'Blue: actual pan rearcrest+15, dryapron4030..4090 and wet floor4090..4450/−45..−55'),(70,668,'Dashed orange: proposed fixed transition, reversible dry-side clamp and ends remain unqualified'),(70,696,'No new bearing pad. Plan overlap does not prove the mineral support, RC cantilever, seal or dryness.'),(70,724,'Clamp/recess must retain15 crest, ordinary access and full north withdrawal. No permanent field-to-pan weld.')]
+    for x,y,label in labels:join_svg+=f'<text x="{x}" y="{y}" font-size="17">{label}</text>'
+    join_svg+='</g></svg>\n'
+    return {'current-ground-threshold-join.svg':join_svg,'current-ground-field-challenger.svg':plan,'current-ground-pier-boundary.results.json':json.dumps(result,indent=2)+'\n','current-ground-pier-boundary.svg':svg+'\n'}
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--check',action='store_true');args=ap.parse_args()
