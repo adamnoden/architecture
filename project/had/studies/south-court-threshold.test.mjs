@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {deriveSouthCourtThreshold,verifyThresholdMaintainedState} from './south-court-threshold.mjs';
+import {deriveSouthCourtThreshold,derivePanBodyEnvelope,verifyThresholdMaintainedState} from './south-court-threshold.mjs';
 import {deriveWaterReplan} from './water-replan.mjs';
 const door=JSON.parse(readFileSync(new URL('./open-north-loggia.json',import.meta.url))).southCourtWeatherDoor;
 test('one threshold reference allocates installation, actual pan/weep/fixing levels and separate gravity paths',()=>{
@@ -53,4 +53,13 @@ test('integral apron and floor underside are included in the pan draw, rotation 
   assert.equal(t.admission.material,false);
   assert.equal(t.admission.weatherPhysical,false);
   assert.equal(t.admission.geometricReference,false);
+});
+
+test('pan envelope includes every integral-profile and wet-floor vertical extremum',()=>{
+  const pan=structuredClone(deriveSouthCourtThreshold(door).pan);
+  // Falsifiers only: these features are not changes to the selected reference.
+  pan.dryFold.profileYZ.splice(1,0,[4040,-90],[4050,100]);
+  assert.deepEqual(derivePanBodyEnvelope(pan).z,[-91.5,100]);
+  pan.fallY.splice(1,0,[4300,120]);
+  assert.deepEqual(derivePanBodyEnvelope(pan).z,[-91.5,120]);
 });

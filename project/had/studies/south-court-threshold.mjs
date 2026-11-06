@@ -30,7 +30,7 @@ export function deriveSouthCourtThreshold(door) {
       outerX:[5102,6898],thickness:1.5,fallY:[[4090,-45],[4450,-55]],
       rear:{planeY:4090,crestZ:15},ends:{x:[5102,6898],crestZ:75},
       dryFold:{y:[4030,4090],crestZ:15,profileYZ:[[4030,0],[4060,0],[4060,15],[4090,15]],
-        role:'Integral rear leg folds through the authored stepped profile to the dry-side floor apron behind the15 crest. The apron travels with the whole pan; only its clamps/end captures release. Fixings never pass through the wet pan floor.'},
+        role:'Integral rear leg folds through the authored stepped profile to the dry-side floor apron behind the 15 mm crest. The apron travels with the whole pan; only its clamps/end captures release. Fixings never pass through the wet pan floor.'},
       bearingPads:[{x:[5110,5150],y:[4110,4250]},
         {x:[5980,6020],y:[4110,4250]},{x:[6850,6890],y:[4110,4250]}],
       bearingRole:'Explicit forty-wide mineral bearing strips on supported pan. Water passes between strips; no concealed full-width dam or sill fixing through pan. Pan compression/slip, sill span/load and thermal bridge require STR/MAT.',
@@ -125,7 +125,7 @@ export function deriveSouthCourtThreshold(door) {
   const task=v.maintainedState.panTask;
   task.wholeBodyMaximum=envelope.dimensions;
   task.planRotationRadius=Math.hypot(...envelope.dimensions.slice(0,2))/2;
-  // Retain the existing north end5450; include the integral apron at4030.
+  // Retain the existing north end 5450 mm; include the integral apron at 4030 mm.
   task.clearDrawPlan=[5050,envelope.plan[1],1900,5450-envelope.plan[1]];
   task.storage.storedBodyMaximum=[envelope.dimensions[2],envelope.dimensions[0],envelope.dimensions[1]];
   assert.equal(v.frame.outerX[0]-v.retained.roughX[0],v.frame.installationGapEach);
@@ -154,8 +154,9 @@ export function derivePanBodyEnvelope(pan){
   assert.deepEqual(profile.at(-1),[pan.rear.planeY,pan.rear.crestZ]);
   const ys=[...profile.map(p=>p[0]),...pan.fallY.map(p=>p[0])];
   const minY=Math.min(...ys),maxY=Math.max(...ys);
-  const minZ=Math.min(...pan.fallY.map(p=>p[1]))-pan.thickness;
-  const maxZ=Math.max(pan.ends.crestZ,...profile.map(p=>p[1]));
+  const allZ=[...profile,...pan.fallY].map(p=>p[1]);
+  const minZ=Math.min(...allZ)-pan.thickness;
+  const maxZ=Math.max(pan.ends.crestZ,...allZ);
   return {plan:[pan.outerX[0],minY,pan.outerX[1]-pan.outerX[0],maxY-minY],
     z:[minZ,maxZ],dimensions:[pan.outerX[1]-pan.outerX[0],maxY-minY,maxZ-minZ],
     scope:'Nominal integral metal reference including stepped dry apron and floor underside. Fabrication bends, clamps, carrier and handling apparatus remain unqualified.'};
