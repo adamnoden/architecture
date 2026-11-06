@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 51,
-  "state": "released",
-  "leaseId": "043efc30-2eff-4e39-8c55-1293a1133063",
+  "generation": 52,
+  "state": "claimed",
+  "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-20261105-w2"
+    "label": "zerg-20261106-rwt06"
   },
-  "claimedAt": "2026-11-05T17:48:36.510Z",
-  "heartbeatAt": "2026-11-05T18:07:49.737Z",
-  "expiresAt": "2026-11-05T18:07:49.737Z",
+  "claimedAt": "2026-11-06T12:11:10.492Z",
+  "heartbeatAt": "2026-11-06T12:11:10.492Z",
+  "expiresAt": "2026-11-06T13:41:10.492Z",
+  "branch": "work/zerg-20261106-rwt06",
   "predecessor": {
-    "leaseId": "9c0618c5-f679-43d8-a416-0c87f143e782",
-    "generation": 50,
-    "branch": "work/mvb-chat-6653552713",
-    "pr": 1325,
+    "leaseId": "043efc30-2eff-4e39-8c55-1293a1133063",
+    "generation": 51,
+    "branch": "work/zerg-20261105-w2",
+    "pr": 1327,
     "checkpoint": {
-      "evidence": "PR #1325 head 037a28ac reuses CI-green #1324 5-file RWT-06 weather-wall study; fresh generation-50 branch and packet validation in progress.",
-      "next": "Verify exact-head PR #1325 CI run 41996241392; execute canonical generation-50 merge-check on capable Actions runner, then expected-head merge and release.",
-      "blocker": "No current independent second court outlet, real first-wetting joint or lawful site receiver. Earlier gen49 PR #1324 must be superseded."
+      "evidence": "PR #1327 final candidate d34d89e7 merges OAS #1326 main5b0a5e4f; local typecheck,160 control tests,repo integrity and10 water adverse checks passed; both source prerequisites and projections reconciled.",
+      "next": "Verify exact-head CI; each worker run own canonical merge-check; merge immediately and release both blocked-node leases.",
+      "blocker": "Exact-head CI pending; no replacement architecture adopted. HAD-WATER-REPLAN is ready only after main registration."
     }
   },
   "recoverySource": {
-    "leaseId": "9c0618c5-f679-43d8-a416-0c87f143e782",
-    "generation": 50,
-    "branch": "work/mvb-chat-6653552713",
-    "pr": 1325,
+    "leaseId": "043efc30-2eff-4e39-8c55-1293a1133063",
+    "generation": 51,
+    "branch": "work/zerg-20261105-w2",
+    "pr": 1327,
     "checkpoint": {
-      "evidence": "PR #1325 head 037a28ac reuses CI-green #1324 5-file RWT-06 weather-wall study; fresh generation-50 branch and packet validation in progress.",
-      "next": "Verify exact-head PR #1325 CI run 41996241392; execute canonical generation-50 merge-check on capable Actions runner, then expected-head merge and release.",
-      "blocker": "No current independent second court outlet, real first-wetting joint or lawful site receiver. Earlier gen49 PR #1324 must be superseded."
+      "evidence": "PR #1327 final candidate d34d89e7 merges OAS #1326 main5b0a5e4f; local typecheck,160 control tests,repo integrity and10 water adverse checks passed; both source prerequisites and projections reconciled.",
+      "next": "Verify exact-head CI; each worker run own canonical merge-check; merge immediately and release both blocked-node leases.",
+      "blocker": "Exact-head CI pending; no replacement architecture adopted. HAD-WATER-REPLAN is ready only after main registration."
     }
-  },
-  "branch": "work/zerg-20261105-w2",
-  "checkpoint": {
-    "evidence": "PR #1327 final candidate d34d89e7 merges OAS #1326 main5b0a5e4f; local typecheck,160 control tests,repo integrity and10 water adverse checks passed; both source prerequisites and projections reconciled.",
-    "next": "Verify exact-head CI; each worker run own canonical merge-check; merge immediately and release both blocked-node leases.",
-    "blocker": "Exact-head CI pending; no replacement architecture adopted. HAD-WATER-REPLAN is ready only after main registration."
-  },
-  "pr": 1327,
-  "releasedAt": "2026-11-05T18:07:49.737Z",
-  "releaseReason": "handoff"
+  }
 }
