@@ -1,6 +1,6 @@
 {
   "status": "FALSIFIED as complete floor boundary: upper-pier splice leaves ground-to-grid-to-RC-field capillary bypass. Local geometry/sensitivity retained; no selected rewind.",
-  "sourceControlSHA256": "60078d97659705bfe73122993544c3769537e666a7faa867804015bfb12ca32a",
+  "sourceControlSHA256": "059c0e7b4d61df8e36a02023a664d2898a5072bf519f3e7d832a6a8a72bdcad7",
   "sources": {
     "STR": {
       "commit": "18e802fbbf23730db69d922707e3576576cd8c19",
@@ -83,6 +83,44 @@
       "status": "Local unperforated upper plate can interrupt this path if its actual edges are not bridged; it does not protect the RC field below"
     }
   ],
+  "separateFieldChallenger": {
+    "outer": [
+      429.5,
+      429.5,
+      11141.0,
+      11141.0
+    ],
+    "outdoorAndWallCuts": [
+      [
+        3820.5,
+        3820.5,
+        4359.0,
+        3929.5
+      ],
+      [
+        4280.5,
+        7750,
+        3439.0,
+        3820.5
+      ],
+      [
+        9203,
+        5780.5,
+        2367.5,
+        2239.0
+      ]
+    ],
+    "netField_m2": 83.20179,
+    "edgeLength_m": 122.747,
+    "connectedComponents_m2": [
+      83.20179
+    ],
+    "edgeReturnHeight_mm": 230,
+    "flat1mmMass_kg": 657.294141,
+    "edge230mmMass_kg": 223.03129900000002,
+    "flatAndEdgeQuantityScreen_kg": 880.32544,
+    "scope": "Proposed source-located net field/edge lower bound, not a sealed system or installed cut list. Frame/reveal consumption and developed edges are unqualified. Excludes seam overlaps, corner development, supports, three renewable door transitions, stair/support boots, waste and fabrication."
+  },
   "activeInternalHolds": [
     "Upper-plate-only floor route withdrawn; resolve every ground-support capillary source or a real separate field boundary",
     "STR opposed anchor/plate force path and local weld/cover schedule",
