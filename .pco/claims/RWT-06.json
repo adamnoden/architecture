@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06"
   },
   "claimedAt": "2026-11-06T12:11:10.492Z",
-  "heartbeatAt": "2026-11-06T12:11:10.492Z",
-  "expiresAt": "2026-11-06T13:41:10.492Z",
+  "heartbeatAt": "2026-11-06T12:25:44.038Z",
+  "expiresAt": "2026-11-06T13:55:44.038Z",
   "branch": "work/zerg-20261106-rwt06",
   "predecessor": {
     "leaseId": "043efc30-2eff-4e39-8c55-1293a1133063",
@@ -33,5 +33,11 @@
       "next": "Verify exact-head CI; each worker run own canonical merge-check; merge immediately and release both blocked-node leases.",
       "blocker": "Exact-head CI pending; no replacement architecture adopted. HAD-WATER-REPLAN is ready only after main registration."
     }
+  },
+  "pr": 1338,
+  "checkpoint": {
+    "evidence": "Draft PR1338 d5a16a3f/tree8a81d75b exact selected8ab19d source;125RWTtests/reproduction/repo/control pass;actual graded-mouth loss budget,N100receivergap,Elanding absent recorded.",
+    "next": "Author RWT-owned aligned N/E receiving interface and HAD consumer; bind actual terminal/landing/maintenance matrix; root coordinates exact-head CI and integration.",
+    "blocker": "WIP no hydraulic pass; active loss/capture/firstwet and receiver geometry being developed."
   }
 }
