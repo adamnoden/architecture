@@ -8,9 +8,12 @@ export function renderNorthIntake(model,renewal){
  s+=text(35,30,'CURRENT N INTAKE / SEPARATE E WELL — PROJECT REFERENCE',23);
  s+=text(35,55,'Historical3500 trough atY7000 rejected; no hydraulic/material/site qualification transferred.');
  s+=rect(renewal.courtIntakeWell,'#e5c4a9')+rect(i,'#84b7cc')+rect(renewal.courtCollector.plan,'#78aaa9');
+ s+=rect(renewal.courtCollector.actualOpenEntries.approach.plan,'#267c98');
+ s+=rect(renewal.courtCollector.actualOpenEntries.coverNotch.plan,'#267c98');
+ s+=rect([7200,7750,519.5,500],'#777268');
  s+=text(65,337,`N inlet x${i[0]}..${i[0]+i[2]}, y${i[1]}..${i[1]+i[3]}`);
  s+=text(65,361,'E well and fixed north guard endY7400; N endsX7200 / E starts7300:100 separation.');
- s+=text(65,385,'N module transfers north onto retained loggia covers; E well/collector stay intact.');
+ s+=text(65,385,'E:450 west lip−110 +100 feeder; north wall edge ZERO credit. Guard minimum−50 stays30 above quiet−80.');
  const sx=x=>60+(x-4250)*.32,z=z=>415+(-z-90)*1.7;
  s+=text(35,425,'Cross section at the conservative north edgeY7750',18);
  s+=`<path d="M${sx(4250)},${z(-110)} H${sx(7200)}" stroke="#757268" stroke-width="14" fill="none"/>`;

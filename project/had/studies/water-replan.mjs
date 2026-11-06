@@ -342,8 +342,9 @@ export function deriveWaterReplan({servicesText} = {}) {
     west:{planeX:7300,y:[7300,7750],crestEnds:[-110,-110]},
     approach:{plan:[7200,7300,100,450],northEndY:7750,
       westExistingCourtEnds:[floorAtY(7300),floorAtY(7750)],eastLipEnds:[-110,-110],
+      support:{formedApronThickness:10,frameDepthBelowFloor:50,role:'Cut the retained0/−60 walking-cover solids out of the full450×100 NEcorner. The100-wide apron portion is a separate formed mineral/metal wet piece, with50-deep frame suspended from the actual well-cover frame; no natural-soil or insulation bearing. Preliminary member/attachment territory only; STR/MAT owns actual load/material sizing.'},
       role:'Open100-wide mineral wet approach apron falls0..18 from actual court onto constant−110 west lip. It touches but does not consume N trough ending7200; no shared below-cover body. Guard hangs above the entire approach.'},
-    coverNotch:{plan:[7300,7300,350,100],openingBelow:'Remove only this NEcorner of well walking-cover territory; continuous collector opening extends north to7750. No cover/ledge/grating crosses the credited lip.',cleaningBodyNorthMaximum:7150,reserve:150},
+    coverNotch:{plan:[7200,7300,450,100],openingBelow:'Remove this NEcorner including the below-walking-level apron of well walking-cover territory; continuous collector opening extends north to7750. No cover/ledge/grating crosses the credited lip.',cleaningBodyNorthMaximum:7150,reserve:150},
     guardExtension:{outerPlan:[7250,7250,450,500],topAboveLocalWalk:1100,
       westPostCentres:[[7275,7275],[7275,7725]],northPostCentres:[[7275,7725],[7675,7725]],postPlan:50,
       lowestHorizontalRailAboveLocalWalk:50,lowestSolidZ:-50,topZ:1100,floorFeet:0,
@@ -352,7 +353,7 @@ export function deriveWaterReplan({servicesText} = {}) {
         northWallAnchorCentres:[[7592.5,7750,150],[7592.5,7750,850],[7652.5,7750,150],[7652.5,7750,850]],anchorPlate:{x:[7572.5,7672.5],z:[100,1000],thickness:10},structuralCoreX:[7552.5,7692.5],
         role:'Clamp/anchor at actual solid north-wall SOUTH face only; no bracket into E6850 window. Top/bottom cantilever rails and posts stay entirelyZ≥−50,30 above quiet−80. Actual wall/anchor/impact capacity and corrosion remain STR/OAS.'},
       role:'Retained1100-high guarded opening; no post/foot/rail intersects the water-level approach. Physical guard classification/anchorage remains unqualified.'},
-    scope:'Only the actual lowered450 west lip counts. North wall edge and all hidden paving gaps have zero credit. The NE100-deep cover notch is protected by the wall-cantilever guard.'};
+    scope:'Only the actual lowered450 west lip counts. North wall edge and all hidden paving gaps have zero credit. The NE100-long cover notch is protected by the wall-cantilever guard.'};
   const entry=renewal.courtCollector.actualOpenEntries,coefficient=1.84;
   entry.guardClearanceProof=verifyCollectorOpenEntries(entry,model.firstWetReference.headBudget);
   const quiet=model.firstWetReference.permittedQuietStage,head=(quiet-entry.west.crestEnds[0])/1000,
@@ -586,7 +587,9 @@ function render(v) {
   svg+=rect([4825,7750,400,5450],'#4d94b3');
   svg+=rect([4800,7750,2400,4250],'#b8dbe5',.35);svg+=rect(v.passage.outdoor,'#a6d8e0');
   for(const field of v.renewal.servicePlatformRegions)svg+=rect(field,'#d9c9a7',.7);
-  svg+=rect(v.passage.waterClear,'#227b99',.8);svg+=rect(v.renewal.courtIntakeWell,'#cb8e5f',.65);
+  svg+=rect(v.passage.waterClear,'#227b99',.8);
+  svg+=rect(v.renewal.courtCollector.actualOpenEntries.approach.plan,'#227b99',.9);
+  svg+=rect(v.renewal.courtCollector.actualOpenEntries.coverNotch.plan,'#227b99',.9);svg+=rect(v.renewal.courtIntakeWell,'#cb8e5f',.65);
   svg+=rect([v.renewal.selectedParkX[0],6450,v.renewal.length,900],'#227b99',.25);
   svg+=rect(v.renewal.operatorField,'#e8c56a',.8);
   for(const [id,r]of Object.entries(v.model.groundFurniture))if(Array.isArray(r)&&r.length===4)svg+=rect(r,'#b2b39d');

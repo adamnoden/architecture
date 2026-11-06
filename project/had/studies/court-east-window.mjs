@@ -38,7 +38,7 @@ export function deriveCourtEastWindow(model,renewal){
         eastWestLedges:{width:60,x:[6125,7590],y:[6300,7400],z:[-120,-60]},
         hoodTopZ:-110,grossUndersideToHood:50,
         permanentIntakeNotch:renewal.courtCollector.actualOpenEntries.coverNotch.plan,
-        notchScope:'NEcorner7300..7650/Y7300..7400 is permanently open/guarded, not walking cover. Actual cleaning body maxY7150 remains150 south. Reprofile modularcovers/edgecapture around this source notch; no plate spans inlet.',
+        notchScope:'NEcorner7200..7650/Y7300..7400 is permanently open/guarded, not walking cover. Actual cleaning body maxY7150 remains150 south. Reprofile modularcovers/edgecapture around this source notch; no plate spans inlet.',
         accessAdapter:{plan:[5125,6600,1000,600],courtEndZ:-74,coverEndZ:0},
         scope:'Explicit mineral/metal load-bearing closed-cover territory, no credited insulation or hood bearing. Actual1525 span/ledge/capture loads require STR/MAT proof. The74rise is crossed by the1000 ramp reference; no accessibility-category acceptance.'},
       leafCleaning:{innerFace:'Clean with leaf CLOSED from gallery body[8508.5,6850]; ordinary handled wiper reaches750..2500.',

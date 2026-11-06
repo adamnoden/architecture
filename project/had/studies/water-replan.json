@@ -12273,7 +12273,7 @@
               [
                 7450,
                 6900,
-                150
+                -80
               ]
             ],
             "outletShaft": [
@@ -12282,7 +12282,30 @@
               200,
               600
             ],
-            "airGapAboveHood": 260
+            "airGapAboveHood": 30,
+            "temporaryPipeCover": {
+              "panel": [
+                7345,
+                6300,
+                305,
+                1000
+              ],
+              "clearHole": [
+                7370,
+                6820,
+                160,
+                160
+              ],
+              "pipeCentre": [
+                7450,
+                6900
+              ],
+              "coverZ": [
+                -60,
+                0
+              ],
+              "operation": "Before Nrelease, replace this one source-notched cover panel by its locked same-support pipe cartridge while N remains intact.125ID/128OD tube passes through160 hole and ends−80,20below coverunderside and30above hood. No person stands on cartridge; courtclosed. Restore ordinarypanel before reopening court. Actual aperture/flashing/rainseal/support admission remains MAT/RWT/STR."
+            }
           },
           "assignedInput": "All courtyard and assigned inward-roof input is intercepted on this temporary plane before N is isolated. Any roof discharge not actually captured forbids the state. No extra catchment beyond the existing60.0625m2 is silently added to E."
         },
@@ -12352,6 +12375,11 @@
               5025,
               4500,
               -70
+            ],
+            [
+              5100,
+              4500,
+              -75
             ]
           ],
           "clearWidth": 100,
@@ -12360,12 +12388,23 @@
             4975,
             4250,
             100,
-            250
+            275
           ],
+          "eastTurn": {
+            "plan": [
+              5025,
+              4475,
+              125,
+              50
+            ],
+            "clearWidth": 50,
+            "panEndY": 4450,
+            "reserve": 25
+          },
           "panWestOuterX": 5102,
           "panReserve": 27,
           "receivingTrayBed": -80,
-          "drop": 10,
+          "drop": 5,
           "operation": "Fit50 branch/100-clear clip-on west gutter and close ordinary primary N branch before opening N. Existing secondary tray/route feeds E. Court door remains closed; front exit and west garden route remain available."
         },
         "storage": {
@@ -15799,12 +15838,12 @@
           "hoodTopZ": -110,
           "grossUndersideToHood": 50,
           "permanentIntakeNotch": [
+            7200,
             7300,
-            7300,
-            350,
+            450,
             100
           ],
-          "notchScope": "NEcorner7300..7650/Y7300..7400 is permanently open/guarded, not walking cover. Actual cleaning body maxY7150 remains150 south. Reprofile modularcovers/edgecapture around this source notch; no plate spans inlet.",
+          "notchScope": "NEcorner7200..7650/Y7300..7400 is permanently open/guarded, not walking cover. Actual cleaning body maxY7150 remains150 south. Reprofile modularcovers/edgecapture around this source notch; no plate spans inlet.",
           "accessAdapter": {
             "plan": [
               5125,
@@ -16183,16 +16222,21 @@
             -110,
             -110
           ],
+          "support": {
+            "formedApronThickness": 10,
+            "frameDepthBelowFloor": 50,
+            "role": "Cut the retained0/−60 walking-cover solids out of the full450×100 NEcorner. The100-wide apron portion is a separate formed mineral/metal wet piece, with50-deep frame suspended from the actual well-cover frame; no natural-soil or insulation bearing. Preliminary member/attachment territory only; STR/MAT owns actual load/material sizing."
+          },
           "role": "Open100-wide mineral wet approach apron falls0..18 from actual court onto constant−110 west lip. It touches but does not consume N trough ending7200; no shared below-cover body. Guard hangs above the entire approach."
         },
         "coverNotch": {
           "plan": [
+            7200,
             7300,
-            7300,
-            350,
+            450,
             100
           ],
-          "openingBelow": "Remove only this NEcorner of well walking-cover territory; continuous collector opening extends north to7750. No cover/ledge/grating crosses the credited lip.",
+          "openingBelow": "Remove this NEcorner including the below-walking-level apron of well walking-cover territory; continuous collector opening extends north to7750. No cover/ledge/grating crosses the credited lip.",
           "cleaningBodyNorthMaximum": 7150,
           "reserve": 150
         },
@@ -16280,7 +16324,7 @@
           },
           "role": "Retained1100-high guarded opening; no post/foot/rail intersects the water-level approach. Physical guard classification/anchorage remains unqualified."
         },
-        "scope": "Only the actual lowered450 west lip counts. North wall edge and all hidden paving gaps have zero credit. The NE100-deep cover notch is protected by the wall-cantilever guard.",
+        "scope": "Only the actual lowered450 west lip counts. North wall edge and all hidden paving gaps have zero credit. The NE100-long cover notch is protected by the wall-cantilever guard.",
         "guardClearanceProof": {
           "pass": true,
           "creditedWestLength": 450,
@@ -17299,16 +17343,21 @@
             -110,
             -110
           ],
+          "support": {
+            "formedApronThickness": 10,
+            "frameDepthBelowFloor": 50,
+            "role": "Cut the retained0/−60 walking-cover solids out of the full450×100 NEcorner. The100-wide apron portion is a separate formed mineral/metal wet piece, with50-deep frame suspended from the actual well-cover frame; no natural-soil or insulation bearing. Preliminary member/attachment territory only; STR/MAT owns actual load/material sizing."
+          },
           "role": "Open100-wide mineral wet approach apron falls0..18 from actual court onto constant−110 west lip. It touches but does not consume N trough ending7200; no shared below-cover body. Guard hangs above the entire approach."
         },
         "coverNotch": {
           "plan": [
+            7200,
             7300,
-            7300,
-            350,
+            450,
             100
           ],
-          "openingBelow": "Remove only this NEcorner of well walking-cover territory; continuous collector opening extends north to7750. No cover/ledge/grating crosses the credited lip.",
+          "openingBelow": "Remove this NEcorner including the below-walking-level apron of well walking-cover territory; continuous collector opening extends north to7750. No cover/ledge/grating crosses the credited lip.",
           "cleaningBodyNorthMaximum": 7150,
           "reserve": 150
         },
@@ -17396,7 +17445,7 @@
           },
           "role": "Retained1100-high guarded opening; no post/foot/rail intersects the water-level approach. Physical guard classification/anchorage remains unqualified."
         },
-        "scope": "Only the actual lowered450 west lip counts. North wall edge and all hidden paving gaps have zero credit. The NE100-deep cover notch is protected by the wall-cantilever guard.",
+        "scope": "Only the actual lowered450 west lip counts. North wall edge and all hidden paving gaps have zero credit. The NE100-long cover notch is protected by the wall-cantilever guard.",
         "guardClearanceProof": {
           "pass": true,
           "creditedWestLength": 450,

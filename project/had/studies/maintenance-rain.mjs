@@ -32,14 +32,16 @@ export function deriveMaintenanceRain(model,renewal){
    rails:{section:[100,50,5],maximumSpacing:1000,northCantilever:1650,supportAxisY:6100},
    posts:[[4400,4400],[7550,4400],[4400,6100],[7550,6100]],postPlan:100,feetPlan:250,
    gutter:[7600,4250,150,3500],gutterInvert:2250,
-   pipe:{insideDiameter:125,outsideDiameter:128,gutterDrop:[7675,6900,2250,2060],route:[[7675,6900,2060],[7450,6900,2050],[7450,6900,150]],outletShaft:[7350,6600,200,600],airGapAboveHood:260},
+   pipe:{insideDiameter:125,outsideDiameter:128,gutterDrop:[7675,6900,2250,2060],route:[[7675,6900,2060],[7450,6900,2050],[7450,6900,-80]],outletShaft:[7350,6600,200,600],airGapAboveHood:30,
+    temporaryPipeCover:{panel:[7345,6300,305,1000],clearHole:[7370,6820,160,160],pipeCentre:[7450,6900],coverZ:[-60,0],
+     operation:'Before Nrelease, replace this one source-notched cover panel by its locked same-support pipe cartridge while N remains intact.125ID/128OD tube passes through160 hole and ends−80,20below coverunderside and30above hood. No person stands on cartridge; courtclosed. Restore ordinarypanel before reopening court. Actual aperture/flashing/rainseal/support admission remains MAT/RWT/STR.'}},
    assignedInput:'All courtyard and assigned inward-roof input is intercepted on this temporary plane before N is isolated. Any roof discharge not actually captured forbids the state. No extra catchment beyond the existing60.0625m2 is silently added to E.'},
   loggiaRoof:{plan:[4800,7750,2400,5800],underside:2200,postAxisX:7000,postAxesY:[8800,10300,11750],postPlan:100,feetPlan:250,
    westCantilever:2200,northOverhang:1800,
    pipe:{insideDiameter:125,outsideDiameter:128,axisX:6800,invertStart:[6800,7750,2050],invertEnd:[6800,13700,1990],
     headerNorthExtension:1950,headerWestCantilever:1800,outlet:[5000,13700,-600],receiver:[4250,13650,1500,1500],receivingMaximum:-800,airGap:200},
    rule:'Separate canopy rain goes directly to available N/W receiving territory through the independent closed overhead pipe. It does not enter removed N liner or increase E catchment. No work with this receiver unavailable.'},
-  thresholdBypass:{route:[[5050,4300,-25],[5025,4300,-40],[5025,4500,-70]],clearWidth:100,initialBranchClear:50,grossBodyPlan:[4975,4250,100,250],panWestOuterX:5102,panReserve:27,receivingTrayBed:-80,drop:10,
+  thresholdBypass:{route:[[5050,4300,-25],[5025,4300,-40],[5025,4500,-70],[5100,4500,-75]],clearWidth:100,initialBranchClear:50,grossBodyPlan:[4975,4250,100,275],eastTurn:{plan:[5025,4475,125,50],clearWidth:50,panEndY:4450,reserve:25},panWestOuterX:5102,panReserve:27,receivingTrayBed:-80,drop:5,
    operation:'Fit50 branch/100-clear clip-on west gutter and close ordinary primary N branch before opening N. Existing secondary tray/route feeds E. Court door remains closed; front exit and west garden route remain available.'},
   storage:{region:[4550,4600,1250,1700],coverStack:[4550,4600,600,1700],shortModuleStack:[5200,4600,600,1700],
    supports:'Separate retained timber-free/mineral frame packers; no simultaneous volume credited twice.'},
@@ -68,12 +70,17 @@ export function verifyMaintenanceRain(v,model,renewal){
  const pipe=n.courtRoof.pipe,shaft=pipe.outletShaft,r=pipe.outsideDiameter/2;
  assert(pipe.route.at(-1)[0]-r>=shaft[0]&&pipe.route.at(-1)[0]+r<=shaft[0]+shaft[2],'Court roof pipe misses actual E shaft');
  assert(pipe.route[0][2]+pipe.insideDiameter+(pipe.outsideDiameter-pipe.insideDiameter)/2<=n.courtRoof.underside,'Court roof pipe penetrates weather plane');
+ const c=pipe.temporaryPipeCover;assert(c.clearHole[0]<=pipe.route.at(-1)[0]-r&&c.clearHole[0]+c.clearHole[2]>=pipe.route.at(-1)[0]+r&&c.clearHole[1]<=pipe.route.at(-1)[1]-r&&c.clearHole[1]+c.clearHole[3]>=pipe.route.at(-1)[1]+r,'Court pipe blocked by walking cover');
+ assert(pipe.route.at(-1)[2]<c.coverZ[0]&&pipe.route.at(-1)[2]>-110,'Court pipe has no open drop below cover into hood');
  assert(pipe.route[0][2]>pipe.route[1][2]&&pipe.route[1][2]>pipe.route[2][2],'Court rain pipe rises before E');
  for(const[x,y]of n.courtRoof.posts){const f=[x-125,y-125,250,250];assert(!overlaps(f,well)&&!overlaps(f,inlet),'N canopy foot occupies live intake/work opening');}
  assert.equal(n.loggiaRoof.pipe.headerNorthExtension,n.loggiaRoof.pipe.invertEnd[1]-n.loggiaRoof.postAxesY.at(-1),'Loggia drain header has phantom support');
  assert(n.loggiaRoof.pipe.axisX+64<n.loggiaRoof.postAxisX-50,'Loggia pipe clashes with roof post');
  assert(n.loggiaRoof.pipe.outlet[2]>n.loggiaRoof.pipe.receivingMaximum,'Loggia canopy tail submerged in reference');
  assert(n.thresholdBypass.grossBodyPlan[0]+n.thresholdBypass.grossBodyPlan[2]<=n.thresholdBypass.panWestOuterX-25,'Temporary threshold gutter cuts pan endfold');
+ const ep=n.thresholdBypass.route.at(-1),tray=model.southCourtThresholdReference.secondaryTray.plan;
+ assert(ep[0]>=tray[0]&&ep[0]<=tray[0]+tray[2]&&ep[1]>=tray[1]&&ep[1]<=tray[1]+tray[3],'Threshold bypass misses actual secondary tray');
+ assert(n.thresholdBypass.eastTurn.plan[1]>=n.thresholdBypass.eastTurn.panEndY+25,'Threshold east turn cuts pan end');
  assert.equal(n.thresholdBypass.route.at(-1)[2]-n.thresholdBypass.receivingTrayBed,n.thresholdBypass.drop,'Threshold bypass has no drop');
  assert(!overlaps(n.storage.coverStack,n.storage.shortModuleStack),'N covers and modules use same storage');
  return {pass:true,scope:'Complete source-drawn rain interception/destinations and support nonoverlap; physical weather/hydraulic/temporary-works admission remains false.'};
@@ -92,7 +99,7 @@ export function renderMaintenanceRain(v){
  s+=text(70,665,'E work: enclosed well roof, gutter to intact N; no bare socket storage credit.',16);
  s+=text(600,115,'Sections / operating limits',20);
  for(const[t,i]of ['Court roof underside2200; bails max1100; people1800.',
- 'Court gutter2250 → drop2060 → pipe2050 → E outlet150.',
+ 'Court gutter2250 → pipe2060/2050 → covercartridge → outlet−80.',
  '125ID /128OD pipe crown2176.5:23.5 below roof.',
  'Loggia pipe axis6800 clears east posts; outlet−600,',
  'separate receiver max−800 gives200 free drop.',

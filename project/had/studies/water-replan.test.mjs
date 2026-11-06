@@ -141,7 +141,7 @@ test('clear service workfields use the full finished weatherwalls rather than st
 
 test('each maintenance state locates rain interception and preserves the intact path',()=>{
  const v=deriveWaterReplan(),m=v.model.maintenanceRainReference;
- assert.equal(m.northMaintenance.courtRoof.pipe.route.at(-1)[2],150);
+ assert.equal(m.northMaintenance.courtRoof.pipe.route.at(-1)[2],-80);
  assert.equal(m.northMaintenance.loggiaRoof.pipe.outlet[2],-600);
  assert.equal(m.northMaintenance.physicalWeatherAccepted,false);
  assert.equal(m.eastMaintenance.physicalWeatherAccepted,false);
@@ -154,6 +154,7 @@ test('each maintenance state locates rain interception and preserves the intact 
   [x=>x.northMaintenance.loggiaRoof.pipe.axisX=7050,/clashes with roof post/],
   [x=>x.northMaintenance.storage.shortModuleStack=x.northMaintenance.storage.coverStack,/same storage/],
   [x=>x.eastMaintenance.roof.temporaryPosts[3]=[7625,7850],/inside finished wall/],
-  [x=>x.northMaintenance.thresholdBypass.grossBodyPlan[0]=5000,/pan endfold/]
+  [x=>x.northMaintenance.thresholdBypass.grossBodyPlan[0]=5000,/pan endfold/],
+  [x=>x.northMaintenance.courtRoof.pipe.route.at(-1)[2]=150,/drop below cover/]
  ]){const bad=JSON.parse(JSON.stringify(m));change(bad);assert.throws(()=>verifyMaintenanceRain(bad,v.model,v.renewal),message);}
 });
