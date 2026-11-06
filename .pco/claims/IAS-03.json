@@ -9,11 +9,11 @@
     "label": "zerg-20261106-w1"
   },
   "claimedAt": "2026-11-06T07:38:01.585Z",
-  "heartbeatAt": "2026-11-06T10:33:13.258Z",
-  "expiresAt": "2026-11-06T11:18:13.258Z",
+  "heartbeatAt": "2026-11-06T10:44:48.359Z",
+  "expiresAt": "2026-11-06T11:29:48.359Z",
   "checkpoint": {
-    "evidence": "Remote188b43d26cdb4b92d04acf76bfd5b0fbc7c3139a native podium union plus reversible paired furniture geometry; exact local tree and remote blob verified, no admitted repair method",
-    "next": "Bind product deck transform, erection and gate route, actual tool grips and independent support; furniture mass/grips are selection contract"
+    "evidence": "PR1335 exact1d172a7be215884f9f8ba8330af476cc3464c46a; source-bound podium union and paired-turn witness verified independently;1900 trial rejected,1800 furniture explicit unadopted; integrity/direct witness passed",
+    "next": "Exact-head CI and fresh merge-check; product transform, erection/gate/escape and real tool/support still held; IAS incomplete"
   },
   "branch": "work/zerg-20261106-w1c",
   "predecessor": {
@@ -34,5 +34,5 @@
       "next": "Resume explicitPROJECT-DESIGNED completeboundpackage or falsifycandidate: actualcutlist/mass/load/deflection/support/keepers/waterseams/firstrelease/incoming/replacement. Rootexecutionlimit reached, notfrontierempty; immediatecanonicalHANDOFFrelease now."
     }
   },
-  "pr": 1334
+  "pr": 1335
 }
