@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w5"
   },
   "claimedAt": "2026-11-06T09:41:13.275Z",
-  "heartbeatAt": "2026-11-06T09:50:17.044Z",
-  "expiresAt": "2026-11-06T10:35:17.044Z",
+  "heartbeatAt": "2026-11-06T09:52:24.139Z",
+  "expiresAt": "2026-11-06T10:37:24.139Z",
   "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
@@ -36,8 +36,8 @@
   },
   "pr": 1332,
   "checkpoint": {
-    "evidence": "Freshg27 live aftercurrentmain0509 acquisition; recovery/source pointer ownswork/zerg-20261106-w5 headbc78fbcd2e1b14ee6e89e795cf55fec96695768b. Preferredjoint producer/component proof local1498189 plus newer current4file updates are PRESERVED BUT UNPUBLISHED; do not infer remotegreen. SharedpublisherW2 preparing independent currentmain checkpoint.",
-    "next": "Publish actual preferredproducer/control/results immediately onfreshownedg27ref, then W2consume one exact assembly. Diagram follows separately. Fresh shared1332Lease identitymustbe gen27 before nextsourceevent.",
-    "blocker": "Current joint physicalseal/material/rigging/site/handover acceptance remain unearned; no expiredg26 publication permitted. Sourceproofis ahead of lastremote snapshot and must be published, not treated as accepted from chat."
+    "evidence": "Preferredjoint source/proof PUBLISHED ownedg27reffce8b839a6c412ad7247eb233dbcbf66064040fc treeb18186aa9fea304613e081cb78b282ada242c071. Fourfileslocal3b6d7817: actualpreferred producer now computes Uframe, fullboltengagement/release, manualtool/guide install, guardedhatch continuoushalfstepbounds, component-owned rack/reversal and explicitcapturepipe+supports. Reproduction/diff pass; W3independent stiffness arithmetic confirms limited component cases. No physical/adoption/fullhealth claim.",
+    "next": "W2imports one exactpreferred assembly into actualHAD; source diagram/render follows separately, then reconcile against newHAD and run domain/full exacthead health. Preserve single sharedpublisher and correctg27 declaration before sourceevent.",
+    "blocker": "Actual copperseal/preload/contact, matched tool/rigging/cover/guard load qualification, localwatercapacity/site receiving/transport admission remain open. Current proposal still consumes recoveredHADinput until W2numericjoin; no wholehouse or construction pass."
   }
 }
