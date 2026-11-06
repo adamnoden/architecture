@@ -43,4 +43,4 @@ Regenerate with the relevant command without `--check` only after reviewing chan
 
 - `graded-transfer-comparison.mjs` / `.json` / `.test.mjs`: unadopted finite-length replacement of the selected hood plunge within the same well; variable-width energy/roughness comparisons, zero-loss conservation and exact selected-source pin. No plan-turn, canopy-terminal, handler or first-wetting admission.
 
-- `graded-transfer-geometry.mjs` / `.json` / `.test.mjs` and geometry/canopy SVG sheets: one unadopted joined chute, light-panel captured retrieval and temporary north canopy-drain construction. Selected HAD stays unchanged; the figures expose real support, access and hydraulic boundaries.
+- `graded-transfer-geometry.mjs` / `.json` / `.test.mjs` and geometry/canopy SVG sheets: one unadopted joined chute, light-panel captured retrieval and temporary north canopy-drain construction. This failed construction is unadopted; the PR separately proposes a conditional receiving/maintenance interface in HAD. The figures expose real support, access and hydraulic boundaries.
