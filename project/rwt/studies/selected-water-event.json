@@ -2,7 +2,7 @@
   "identity": "RWT-06-SELECTED-WATER-EVENT-2026-11-06",
   "source": {
     "path": "project/had/studies/water-replan.json",
-    "blob": "f7324121f59cc5f1707ea47640dd2b20c26b9bbb",
+    "blob": "4e6f9a338cb8c5e87f6afb82fe2a6f9fc6eeb702",
     "startingMain": "8ab19d48ef16abaff39e7f49a3801d5dc5f65521"
   },
   "status": "NOT ADMITTED: bounded calculations and adverse cases, not a full installed event proof",
@@ -169,6 +169,78 @@
         "satisfiesAllocatedQuietStage": false
       }
     ],
+    "actualApproachFriction": [
+      {
+        "interval": [
+          6950,
+          7175
+        ],
+        "lengthMm": 100,
+        "meanAvailableDepthMm": 47.5,
+        "idealApproachVelocityMps": 0.3719902344031606,
+        "frictionSensitivity": [
+          {
+            "roughness": 0.02,
+            "headMm": 0.514621827903701
+          },
+          {
+            "roughness": 0.03,
+            "headMm": 1.1578991127833271
+          },
+          {
+            "roughness": 0.04,
+            "headMm": 2.058487311614804
+          }
+        ],
+        "boundary": "Actual100 approach length, quasi-uniform equivalent rectangle; roughness authored, not calibrated. Separation/lateral turn are not floor friction."
+      },
+      {
+        "interval": [
+          7275,
+          7375
+        ],
+        "lengthMm": 100,
+        "meanAvailableDepthMm": 58,
+        "idealApproachVelocityMps": 0.41065409722667073,
+        "frictionSensitivity": [
+          {
+            "roughness": 0.02,
+            "headMm": 0.8389060414287581
+          },
+          {
+            "roughness": 0.03,
+            "headMm": 1.8875385932147055
+          },
+          {
+            "roughness": 0.04,
+            "headMm": 3.3556241657150325
+          }
+        ],
+        "boundary": "Actual100 approach length, quasi-uniform equivalent rectangle; roughness authored, not calibrated. Separation/lateral turn are not floor friction."
+      }
+    ],
+    "lossPlacement": [
+      {
+        "location": "100mm court approach / under-ramp passage to x6125",
+        "method": "Source-length quasi-uniform friction sensitivity above",
+        "unbound": "Lateral convergence, detailed roughness and local contraction; do not attach all remote downstream losses to this crest."
+      },
+      {
+        "location": "Freefall edge to catch floor−150..−180",
+        "method": "Source drop and contained gutter profile; no pressure connection if nappe remains free",
+        "unbound": "Capture efficiency, wind, side contraction and gutter backwater to the lip."
+      },
+      {
+        "location": "Catch north return /250 hood side opening /617.6mm shaft drop",
+        "method": "Separate momentum and section screen",
+        "unbound": "Turn/plunge loss, air, actual jump, jet distribution and first-wet splash. Not the same velocity reference as inlet K."
+      },
+      {
+        "location": "600wide E carrier / removable terminal chute",
+        "method": "Uniform-depth comparison plus full receiver projection",
+        "unbound": "Actual nonuniform profile, carried sediment, flange/capture details and terminal impact."
+      }
+    ],
     "boundary": "Extra K and width losses are explicit sensitivities, not inferred actual values, manufacturer ratings or an empirical lower bound. Critical-flow reduction requires a free, connected approach and no downstream submergence."
   },
   "events": [
@@ -278,14 +350,47 @@
   "eastDrop": {
     "dropMm": 617.6470588235294,
     "idealImpactVelocityMps": 3.481125578619313,
-    "idealIncomingDepthMm": 1.725375848802962,
-    "idealConjugateDepthMm": 64.43231574332266,
+    "entryWidthMm": 250,
+    "widthCases": [
+      {
+        "widthMm": 250,
+        "idealIncomingDepthMm": 4.140902037127109,
+        "froude": 17.2718042986073,
+        "idealConjugateDepthMm": 99.09649330541981,
+        "nominalDepthReserveMm": 0.9035066945801873,
+        "role": "Actual entry width, no earned spread"
+      },
+      {
+        "widthMm": 200,
+        "idealIncomingDepthMm": 5.176127546408886,
+        "froude": 15.4483714023036,
+        "idealConjugateDepthMm": 110.52594019904372,
+        "nominalDepthReserveMm": -10.525940199043717,
+        "role": "Explicit narrowed-stream sensitivity"
+      },
+      {
+        "widthMm": 600,
+        "idealIncomingDepthMm": 1.725375848802962,
+        "froude": 26.7573641629839,
+        "idealConjugateDepthMm": 64.43231574332266,
+        "nominalDepthReserveMm": 35.56768425667734,
+        "role": "Unproven full600 spread comparison only"
+      }
+    ],
     "depthBudgetMm": 100,
     "qualifiedSplashEnvelope": null,
-    "boundary": "Ideal full-width free-fall and rectangular momentum jump only. Actual250-side-notch turn/width, deflector, jet distribution, jump location, air entrainment, waves and vulnerable material wetting are NOT established."
+    "boundary": "Ideal same-width free-fall/rectangular momentum scenarios only; actual250 entry has no defined250-to600 spreader. No actual jump location, turn, air, waves or first-wetting envelope is established. Positive nominal reserve is not capture admission."
   },
   "receivers": {
-    "north": {
+    "interface": {
+      "source": {
+        "path": "project/rwt/studies/selected-receiving-interface.json",
+        "blob": "04446780ff60861d1cc10ee61aa820b68a9f325b"
+      },
+      "identity": "RWT-SELECTED-RECEIVING-INTERFACE-2026-11-06",
+      "siteAccepted": false
+    },
+    "historicalNorth": {
       "terminal": {
         "centreX": 5000,
         "coveredExtension": 350,
@@ -353,14 +458,213 @@
           "assumption": "Horizontal jet at named terminal end; neglect air resistance and losses. Actual orientation/depth not bound. Vertical discharge has zero horizontal throw."
         }
       ],
-      "finding": "Named terminal is100mm short of receiver near edge. No actual supported nozzle/chute or required jet envelope binds the landing. Do not claim the200mm vertical gap establishes reception."
+      "finding": "Preserved negative: former terminal is100mm short of receiver near edge; vertical air gap alone did not establish reception."
+    },
+    "north": {
+      "terminal": {
+        "centreX": 5000,
+        "coveredExtension": 350,
+        "endY": 13550,
+        "invert": -271.75,
+        "closedDownroute": {
+          "clear": [
+            250,
+            100
+          ],
+          "outlet": -600,
+          "material": "Custom1.5Cu closedtransition/downbody, exactseam/filler/pressure/corrosion qualification unknown"
+        },
+        "receiver": {
+          "bounds": [
+            4250,
+            13450,
+            1500,
+            1700
+          ],
+          "nominalWaterPlane": -800,
+          "airgap": 200,
+          "identity": "N/W independentreceiving territory; no sharedbasinwithE assumed"
+        },
+        "currentVerticalExit": {
+          "clearPlan": [
+            4875,
+            13500,
+            250,
+            100
+          ],
+          "outletZ": -600,
+          "direction": "VERTICALLY DOWN; no horizontal throw needed",
+          "sheetBudget": 1.5,
+          "role": "Explicit last vertical250×100 throat of the retained closed downroute. Complete jet projection starts50 inside current receiver near edge; actual turning, joints, support and impact qualification remain open."
+        },
+        "receivingInterfaceSource": {
+          "path": "project/rwt/studies/selected-receiving-interface.json",
+          "blob": "04446780ff60861d1cc10ee61aa820b68a9f325b"
+        }
+      },
+      "verticalDischargeMarginsMm": {
+        "south": 50,
+        "north": 1550,
+        "west": 625,
+        "east": 625
+      },
+      "finding": "Current RWT footprint starts13450: unchanged13550 exit centre is100 inside; entire250×100 vertical jet is50 inside. Reserved impact/splash/terrain limits are not physical qualification."
     },
     "east": {
-      "activeReceiverMaximumMm": -1000,
+      "activeReceiverMaximumMm": -1400,
       "carrierEndX": 12250,
-      "receivingFootprint": null,
-      "landingVelocityEnvelope": null,
-      "finding": "A receiving-water level is authored, but the selected active E source has no located receiving footprint/nozzle/landing-splash envelope. Distinct compass direction/low level is not complete harmless reception."
+      "receivingFootprint": [
+        12500,
+        6100,
+        2000,
+        1600
+      ],
+      "retainedStructuralPenetrations": {
+        "posts": [
+          {
+            "centre": [
+              13500,
+              6350
+            ],
+            "plan": [
+              13475,
+              6325,
+              50,
+              50
+            ]
+          },
+          {
+            "centre": [
+              13500,
+              7450
+            ],
+            "plan": [
+              13475,
+              7425,
+              50,
+              50
+            ]
+          }
+        ],
+        "minimumClearFromIdeal600Stream": 225,
+        "footingBounds": null,
+        "role": "Existing rail support stations remain in the receiver wet/splash territory; NOT an empty excavation or permission to remove footings. Source defines50square posts only. Actual post Z/footing territory, wet lining collars/islands, erosion and receiving-floor/support continuity require the STR-owned detail. No bare post size is a footing envelope."
+      },
+      "terminal": {
+        "identity": "REMOVABLE E OUTLET CHUTE CARTRIDGE",
+        "bed": [
+          [
+            12250,
+            -852.9411764705883
+          ],
+          [
+            12750,
+            -1200
+          ]
+        ],
+        "waterClear": 600,
+        "sheetBudget": 1.5,
+        "outwardFlangeEach": 30,
+        "sideHeight": 150,
+        "grossPlan": [
+          12225,
+          6568.5,
+          550,
+          663
+        ],
+        "connection": "Upstream25 open underlap beneath the installed E outlet, with open side returns capturing the600clear stream. No pressure seal or hidden upward return. Entire cartridge is removed before E body drawing.",
+        "support": {
+          "railInnerFacesY": [
+            6550,
+            7250
+          ],
+          "inwardBearingEach": 50,
+          "footprintOutsideRails": false,
+          "role": "Independent captured edge shoes bridge from actual rail edges to cartridge flanges; cartridge body stays BETWEEN rails while descending below their level. No transverse support passes through the water or moving body. Member/fixing/corrosion and actual loads remain STR/MAT."
+        },
+        "farLip": [
+          12750,
+          6900,
+          -1200
+        ],
+        "nozzleOrientation": "EAST and downward along the source bed; vertical/no-horizontal case also checked. No upturned discharge lip.",
+        "physicalAcceptance": false
+      },
+      "landingVelocityEnvelope": {
+        "point": [
+          12750,
+          6900,
+          -1200
+        ],
+        "bounds": [
+          12500,
+          6100,
+          2000,
+          1600
+        ],
+        "maximumSpeedMps": 4.882448156406784,
+        "maximumIdealHorizontalThrowMm": 985.900603509299,
+        "margins": {
+          "upstream": 250,
+          "downstream": 764.099396490701,
+          "south": 500,
+          "north": 500
+        },
+        "containedGeometricEnvelope": true,
+        "boundary": "Still-air vertical-to-downward-E jet envelope under declared upstream energy head; NOT impact splash, roof-jet energy, wind or upward/ejected jets."
+      },
+      "removal": {
+        "sequence": [
+          "With both routes intact, verify N independently full-duty and receiving; erect/test E weather enclosure and isolate/drain E.",
+          "AFTER MAT opens ALL outboard bay covers, capture the complete outlet cartridge. From the fixed NORTH strip operate both captured shoe releases with the source-drawn tilted manual tool, then lift2000. Its lowest point800 clears empty rack forks600; transfer above the empty rack to the separate800square pad. No person stands on the open bay or below the load.",
+          "Only after cartridge has left the full draw/hoist sweep may E outer/inner modules be removed in the existing ordered method. N remains assembled and full-duty.",
+          "After inner/outer modules and flange are restored, while outboard covers remain OPEN, reinstall/test the captured cartridge and its open receiving overlap. Verify receiver/head/capture; then hand back to MAT's final rack removal/cover closure/admission state. Never refit below closed covers."
+        ],
+        "releaseToolCases": [
+          {
+            "head": [
+              12500,
+              6540,
+              -802.9411764705883
+            ],
+            "upperEnd": [
+              12500,
+              7500,
+              1250
+            ],
+            "actualShaftLengthMm": 2266.3114247711947,
+            "referenceGripReachMm": 502.4937810560445,
+            "headToPanRimMm": 43.529411764705856,
+            "operatorNorthOfOpenBayMm": 100
+          },
+          {
+            "head": [
+              12500,
+              7260,
+              -802.9411764705883
+            ],
+            "upperEnd": [
+              12500,
+              7500,
+              1250
+            ],
+            "actualShaftLengthMm": 2066.9222225445355,
+            "referenceGripReachMm": 502.4937810560445,
+            "headToPanRimMm": 43.529411764705856,
+            "operatorNorthOfOpenBayMm": 100
+          }
+        ],
+        "stage": [
+          15300,
+          8200,
+          800,
+          800
+        ],
+        "lift": 2000,
+        "lowestLiftedPointMm": 800,
+        "clearanceAboveEmptyRackForkMm": 200
+      },
+      "finding": "Actual removable600clear descending cartridge and2000×1600 receiver now have contained ideal projection. The new required maximum water−1400 is a stricter conditional site limit, not a surveyed fact or admitted splash envelope."
     },
     "maintenance": {
       "maximumMm": -1300,
@@ -368,6 +672,98 @@
       "finding": "Local catch is not a full-duty path; capacity and actual exterior reception require their own evidence."
     }
   },
+  "receiverBlockedOutletScreens": [
+    {
+      "receiver": "north",
+      "spill": {
+        "edge": [
+          [
+            4250,
+            15150,
+            -700
+          ],
+          [
+            5750,
+            15150,
+            -700
+          ]
+        ],
+        "clearWidth": 1500,
+        "requiredContinuation": [
+          4250,
+          15150,
+          1500,
+          1500
+        ],
+        "farEndMaximumWater": -1000,
+        "maximumFaultedReceiverWater": -650,
+        "role": "Open NORTH edge to reserved unoccupied downhill receiving territory. Must remain physically separate from garden path and E receiver. Actual capacity, surface/support/erosion and lawful disposal remain site-specific; if this edge is blocked too, N is unavailable and E must take the full assigned source."
+      },
+      "fullDutyLps": 3.60375,
+      "cases": [
+        {
+          "remainingWidthFraction": 1,
+          "idealHeadMm": 12.569283470286079,
+          "idealStageMm": -687.4307165297139,
+          "belowDeclaredFaultMaximum": true,
+          "airGapBelowActiveExitMm": 87.43071652971389
+        },
+        {
+          "remainingWidthFraction": 0.5,
+          "idealHeadMm": 19.952493803218626,
+          "idealStageMm": -680.0475061967813,
+          "belowDeclaredFaultMaximum": true,
+          "airGapBelowActiveExitMm": 80.04750619678134
+        }
+      ],
+      "boundary": "Necessary ideal overflow-edge screen only. Actual continuing terrain, roughness, obstructions, erosion and impact are site/RWT conditions, not an assumed disposal solution."
+    },
+    {
+      "receiver": "east",
+      "spill": {
+        "edge": [
+          [
+            14500,
+            6100,
+            -1300
+          ],
+          [
+            14500,
+            7700,
+            -1300
+          ]
+        ],
+        "clearWidth": 1600,
+        "requiredContinuation": [
+          14500,
+          6100,
+          1500,
+          1600
+        ],
+        "farEndMaximumWater": -1600,
+        "maximumFaultedReceiverWater": -1250,
+        "role": "Open EAST edge, entirely BELOW the0 upper service deck, to reserved unoccupied exterior downhill territory. It is not a pedestrian route or a house floor void. Actual receiving terrain/capacity/support/erosion/disposal remains conditional. With this edge blocked too, E is unavailable; do not begin E-maintenance or N-maintenance relying on it."
+      },
+      "fullDutyLps": 3.60375,
+      "cases": [
+        {
+          "remainingWidthFraction": 1,
+          "idealHeadMm": 12.039950602135745,
+          "idealStageMm": -1287.9600493978642,
+          "belowDeclaredFaultMaximum": true,
+          "airGapBelowActiveExitMm": 87.96004939786417
+        },
+        {
+          "remainingWidthFraction": 0.5,
+          "idealHeadMm": 19.112230251475435,
+          "idealStageMm": -1280.8877697485245,
+          "belowDeclaredFaultMaximum": true,
+          "airGapBelowActiveExitMm": 80.88776974852453
+        }
+      ],
+      "boundary": "Necessary ideal overflow-edge screen only. Actual continuing terrain, roughness, obstructions, erosion and impact are site/RWT conditions, not an assumed disposal solution."
+    }
+  ],
   "maintenance": {
     "eastUnavailable": {
       "intact": "N full duty",
@@ -568,9 +964,9 @@
         ],
         "receiver": [
           4250,
-          13650,
+          13450,
           1500,
-          1500
+          1700
         ],
         "receivingMaximum": -800,
         "airGap": 200
@@ -587,7 +983,7 @@
     {
       "state": "E route disabled, N receiver available",
       "result": "UNPROVEN full event",
-      "reason": "N clean uniform section is not actual intake/terminal acceptance; reception gap remains."
+      "reason": "Current N landing corrected; clean uniform section is not actual graded intake/loss/first-wetting acceptance."
     },
     {
       "state": "N unavailable and E K=1 plus25% effective width loss",
@@ -605,7 +1001,7 @@
     "firstHarmQualified": false,
     "physicalEventPerformed": false,
     "siteAccepted": false,
-    "action": "Bind/calibrate actual entry and capture losses, terminal/receiver landings and first-wetting envelope on this source. Return any geometric correction to HAD/MAT owners; never silently edit selected geometry."
+    "action": "Bind actual placed entry/capture losses and first-wetting envelope. Current receiver interface is consumed by HAD; verify temporary cartridge handling and stricter head/terrain/impact conditions before use."
   },
   "sources": [
     {
@@ -617,6 +1013,11 @@
       "url": "https://www.usbr.gov/tsc/techreferences/mands/wmm/chap07_03.html",
       "accessed": "2026-11-06",
       "scope": "Crest classification, approach, contraction and submergence; no calibration for this house."
+    },
+    {
+      "url": "https://www.hec.usace.army.mil/confluence/rasdocs/ras1dtechref/6.2/theoretical-basis-for-one-dimensional-and-two-dimensional-hydrodynamic-calculations/1d-steady-flow-water-surface-profiles/applications-of-the-momentum-equation",
+      "accessed": "2026-11-06",
+      "scope": "Hydrostatic momentum balance for rapidly varying flow; rectangular sequent-depth scenario is not actual jump location or splash qualification."
     },
     {
       "url": "https://www.hec.usace.army.mil/confluence/rasdocs/ras1dtechref/7.0/modeling-pipe-networks/pipe-minor-losses",

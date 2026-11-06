@@ -11931,13 +11931,29 @@
         "receiver": {
           "bounds": [
             4250,
-            13650,
+            13450,
             1500,
-            1500
+            1700
           ],
           "nominalWaterPlane": -800,
           "airgap": 200,
           "identity": "N/W independentreceiving territory; no sharedbasinwithE assumed"
+        },
+        "currentVerticalExit": {
+          "clearPlan": [
+            4875,
+            13500,
+            250,
+            100
+          ],
+          "outletZ": -600,
+          "direction": "VERTICALLY DOWN; no horizontal throw needed",
+          "sheetBudget": 1.5,
+          "role": "Explicit last vertical250×100 throat of the retained closed downroute. Complete jet projection starts50 inside current receiver near edge; actual turning, joints, support and impact qualification remain open."
+        },
+        "receivingInterfaceSource": {
+          "path": "project/rwt/studies/selected-receiving-interface.json",
+          "blob": "04446780ff60861d1cc10ee61aa820b68a9f325b"
         }
       },
       "floorJoin": {
@@ -11963,6 +11979,31 @@
         "moisture": "40cover suspendedRC is a deliberate moisture hypothesis. NoDPM or site-required gas barrier is waived; exact floor/end/DPC transition not qualified."
       },
       "scope": "Historical input preserved below; CURRENT N inlet rejoined around E well. E is the separate route. Actual full-duty/loss/material/structural acceptance remains RWT/MAT/STR.",
+      "historicalTerminal": {
+        "centreX": 5000,
+        "coveredExtension": 350,
+        "endY": 13550,
+        "invert": -271.75,
+        "closedDownroute": {
+          "clear": [
+            250,
+            100
+          ],
+          "outlet": -600,
+          "material": "Custom1.5Cu closedtransition/downbody, exactseam/filler/pressure/corrosion qualification unknown"
+        },
+        "receiver": {
+          "bounds": [
+            4250,
+            13650,
+            1500,
+            1500
+          ],
+          "nominalWaterPlane": -800,
+          "airgap": 200,
+          "identity": "N/W independentreceiving territory; no sharedbasinwithE assumed"
+        }
+      },
       "historicalNormal": {
         "inlet": [
           4250,
@@ -12146,6 +12187,261 @@
         "westToIndependentEastGap": 100,
         "scope": "Actual physical collection/maintenance nonoverlap only; new40×250 crossbody and inlet require RWT full-duty proof."
       }
+    },
+    "rwtReceivingInterface": {
+      "source": {
+        "path": "project/rwt/studies/selected-receiving-interface.json",
+        "blob": "04446780ff60861d1cc10ee61aa820b68a9f325b"
+      },
+      "identity": "RWT-SELECTED-RECEIVING-INTERFACE-2026-11-06",
+      "authority": "RWT-owned conditional building-side interface refinement; HAD consumes these exact coordinates. No surveyed plot, disposal, material or physical acceptance.",
+      "startingHouseBlob": "f7324121f59cc5f1707ea47640dd2b20c26b9bbb",
+      "north": {
+        "outlet": [
+          5000,
+          13550,
+          -600
+        ],
+        "verticalTerminalExit": {
+          "clearPlan": [
+            4875,
+            13500,
+            250,
+            100
+          ],
+          "outletZ": -600,
+          "direction": "VERTICALLY DOWN; no horizontal throw needed",
+          "sheetBudget": 1.5,
+          "role": "Explicit last vertical250×100 throat of the retained closed downroute. Complete jet projection starts50 inside current receiver near edge; actual turning, joints, support and impact qualification remain open."
+        },
+        "historicalReceiverBounds": [
+          4250,
+          13650,
+          1500,
+          1500
+        ],
+        "receiverBounds": [
+          4250,
+          13450,
+          1500,
+          1700
+        ],
+        "maximumWater": -800,
+        "bedMaximum": -1000,
+        "receiverEdgeMaximum": -700,
+        "blockedOutletSpill": {
+          "edge": [
+            [
+              4250,
+              15150,
+              -700
+            ],
+            [
+              5750,
+              15150,
+              -700
+            ]
+          ],
+          "clearWidth": 1500,
+          "requiredContinuation": [
+            4250,
+            15150,
+            1500,
+            1500
+          ],
+          "farEndMaximumWater": -1000,
+          "maximumFaultedReceiverWater": -650,
+          "role": "Open NORTH edge to reserved unoccupied downhill receiving territory. Must remain physically separate from garden path and E receiver. Actual capacity, surface/support/erosion and lawful disposal remain site-specific; if this edge is blocked too, N is unavailable and E must take the full assigned source."
+        },
+        "role": "Extend the required receiver territory south, leaving terminal unchanged. A vertical jet lands100 inside near edge; canopy outlet at5000/13700 also remains inside. Required wet/impact footprint is1500wide by1700long. No jet throw across an unbuilt gap is relied upon.",
+        "support": "Separate exterior mineral receiving apron/basin territory with an actual harmless downhill disposal boundary; not a tank, house footing or assumed soil infiltration. Retaining/perimeter/support/erosion and disposal require DPL/STR/RWT evidence.",
+        "splashReservation": {
+          "lateralOutside250StreamEach": 625,
+          "upstream": 100,
+          "downstream": 1600,
+          "qualified": false
+        }
+      },
+      "east": {
+        "bodyOutlet": [
+          12250,
+          6900,
+          -852.9411764705883
+        ],
+        "terminal": {
+          "identity": "REMOVABLE E OUTLET CHUTE CARTRIDGE",
+          "bed": [
+            [
+              12250,
+              -852.9411764705883
+            ],
+            [
+              12750,
+              -1200
+            ]
+          ],
+          "waterClear": 600,
+          "sheetBudget": 1.5,
+          "outwardFlangeEach": 30,
+          "sideHeight": 150,
+          "grossPlan": [
+            12225,
+            6568.5,
+            550,
+            663
+          ],
+          "connection": "Upstream25 open underlap beneath the installed E outlet, with open side returns capturing the600clear stream. No pressure seal or hidden upward return. Entire cartridge is removed before E body drawing.",
+          "support": {
+            "railInnerFacesY": [
+              6550,
+              7250
+            ],
+            "inwardBearingEach": 50,
+            "footprintOutsideRails": false,
+            "role": "Independent captured edge shoes bridge from actual rail edges to cartridge flanges; cartridge body stays BETWEEN rails while descending below their level. No transverse support passes through the water or moving body. Member/fixing/corrosion and actual loads remain STR/MAT."
+          },
+          "farLip": [
+            12750,
+            6900,
+            -1200
+          ],
+          "nozzleOrientation": "EAST and downward along the source bed; vertical/no-horizontal case also checked. No upturned discharge lip.",
+          "physicalAcceptance": false
+        },
+        "receiverBounds": [
+          12500,
+          6100,
+          2000,
+          1600
+        ],
+        "maximumWater": -1400,
+        "bedMaximum": -1650,
+        "receiverEdgeMaximum": -1300,
+        "blockedOutletSpill": {
+          "edge": [
+            [
+              14500,
+              6100,
+              -1300
+            ],
+            [
+              14500,
+              7700,
+              -1300
+            ]
+          ],
+          "clearWidth": 1600,
+          "requiredContinuation": [
+            14500,
+            6100,
+            1500,
+            1600
+          ],
+          "farEndMaximumWater": -1600,
+          "maximumFaultedReceiverWater": -1250,
+          "role": "Open EAST edge, entirely BELOW the0 upper service deck, to reserved unoccupied exterior downhill territory. It is not a pedestrian route or a house floor void. Actual receiving terrain/capacity/support/erosion/disposal remains conditional. With this edge blocked too, E is unavailable; do not begin E-maintenance or N-maintenance relying on it."
+        },
+        "splashReservation": {
+          "lateralOutside600StreamEach": 500,
+          "upstreamOfLip": 250,
+          "downstreamOfLip": 1750,
+          "qualified": false
+        },
+        "support": "Separate outdoor wet receiving/impact territory BELOW existing upper deck and outside the house shell. No structural floor void or ordinary pedestrian route is a receiver. Actual passive terrain/disposal, exposure, receiver support/erosion and groundwater applicability require DPL/STR/RWT; no pumping or below-water essential service is credited.",
+        "maintenance": {
+          "stage": [
+            15300,
+            8200,
+            800,
+            800
+          ],
+          "cartridgeMaximumPlan": [
+            550,
+            663
+          ],
+          "capturedLift": 2000,
+          "maximumCartridgeMassBudgetKg": 30,
+          "stageSupport": "Two independent captured mineral/metal cradles bear on side-frame/flanges, not wet pan; their seat heights preserve the347.06fall and chocks restrain both. Actual strength, base fixity and handling qualification remains open.",
+          "supportRelease": {
+            "x": 12250,
+            "y": [
+              6540,
+              7260
+            ],
+            "headZRelativeBodyOutlet": 50,
+            "headX": 12500,
+            "socketExtensionEW": 250,
+            "maximumToolLength": 2300,
+            "headCube": 60,
+            "shaftRadius": 12,
+            "topAccessFromDeck": true,
+            "upperShaftEnds": [
+              [
+                12500,
+                7500,
+                1250
+              ],
+              [
+                12500,
+                7500,
+                1250
+              ]
+            ],
+            "leverRadiusEW": 250,
+            "operator": [
+              13100,
+              7800,
+              0
+            ],
+            "bodyRadius": 300,
+            "shoulderZ": 1450,
+            "reach": 600,
+            "installation": "Removable manual EW-axis socket head with two interchangeable captured NS/upward staff assemblies; each actual head-to-upper-end length is derived from its coordinates, both below2300. No assumed universal telescoping product. Positive temporary guide/catch at fixed NORTH strip carries the tool between collar strokes; no staff stands through cartridge. Install/retrieve through OPEN outboard bay. Torque/index/capture/guide forces and kit/material qualification remain open."
+          },
+          "sequence": [
+            "With both routes intact, verify N independently full-duty and receiving; erect/test E weather enclosure and isolate/drain E.",
+            "AFTER MAT opens ALL outboard bay covers, capture the complete outlet cartridge. From the fixed NORTH strip operate both captured shoe releases with the source-drawn tilted manual tool, then lift2000. Its lowest point800 clears empty rack forks600; transfer above the empty rack to the separate800square pad. No person stands on the open bay or below the load.",
+            "Only after cartridge has left the full draw/hoist sweep may E outer/inner modules be removed in the existing ordered method. N remains assembled and full-duty.",
+            "After inner/outer modules and flange are restored, while outboard covers remain OPEN, reinstall/test the captured cartridge and its open receiving overlap. Verify receiver/head/capture; then hand back to MAT's final rack removal/cover closure/admission state. Never refit below closed covers."
+          ],
+          "qualification": "Reference captured component/access/space only. Actual shoe release/tool sweep, positive restraint, support strength, load/forces and physical handling acceptance remain required before use. No assumed one-person hand lift."
+        },
+        "retainedStructuralPenetrations": {
+          "posts": [
+            {
+              "centre": [
+                13500,
+                6350
+              ],
+              "plan": [
+                13475,
+                6325,
+                50,
+                50
+              ]
+            },
+            {
+              "centre": [
+                13500,
+                7450
+              ],
+              "plan": [
+                13475,
+                7425,
+                50,
+                50
+              ]
+            }
+          ],
+          "minimumClearFromIdeal600Stream": 225,
+          "footingBounds": null,
+          "role": "Existing rail support stations remain in the receiver wet/splash territory; NOT an empty excavation or permission to remove footings. Source defines50square posts only. Actual post Z/footing territory, wet lining collars/islands, erosion and receiving-floor/support continuity require the STR-owned detail. No bare post size is a footing envelope."
+        }
+      },
+      "commonCause": "N and E have no shared pipe or receiving basin. A real site with common flood/backwater above either required limit, insufficient receiver footprint or no harmless passive final disposal is rejected or redesigned. Distinct rectangles do not establish hydrological independence on an unknown site.",
+      "qualifiedFirstHarm": null,
+      "siteAccepted": false,
+      "physicalEventPerformed": false
     },
     "maintenanceRainReference": {
       "eastMaintenance": {
@@ -12542,9 +12838,9 @@
             ],
             "receiver": [
               4250,
-              13650,
+              13450,
               1500,
-              1500
+              1700
             ],
             "receivingMaximum": -800,
             "airGap": 200
@@ -16295,7 +16591,7 @@
         -850
       ]
     ],
-    "outerReceivingWaterMaximumTrial": -1000,
+    "outerReceivingWaterMaximumTrial": -1400,
     "maintenanceTrackReceivingWaterMaximumTrial": -1300,
     "maintenanceTrackDrainLipTrial": [
       13500,
@@ -16784,15 +17080,18 @@
     "rejectedOldEastReason": "Only 5 mm to original exterior face before operator/hoist. The NEW explicit 1500 mm outboard platform is a real architectural/site cost.",
     "rejectedWestReason": "Requires deep staging through permanent court pan, further travel to clear the actual beam, and restricts the normal north approach. Not selected.",
     "selectedSequence": [
+      "With both routes intact, verify N independently full-duty and receiving; erect/test E weather enclosure and isolate/drain E.",
       "Retain N intact and independently verified for assigned full duty; isolate/drain E. Install guards while joint and outboard covers closed.",
       "Open both short joint-hatch leaves with captured hook through the guard guide. Outboard covers stay CLOSED/load-bearing during this operation.",
       "From fixed upperdeck use removable manual right-angle socket driver. Four SIDE-ONLY bolts: unscrew35 to clear captive nuts, then pull140 to175total; collars retain every screw in outer guides. Retain/capture gasket during controlled initial OUTER separation; remove it only once the faces separate and the exposed inner face is accessible.",
       "Open ALL outboard cover panels from empty upper workfield. Assemble empty temporary rack; upper bearers absent. No one stands below suspended modules.",
+      "AFTER MAT opens ALL outboard bay covers, capture the complete outlet cartridge. From the fixed NORTH strip operate both captured shoe releases with the source-drawn tilted manual tool, then lift2000. Its lowest point800 clears empty rack forks600; transfer above the empty rack to the separate800square pad. No person stands on the open bay or below the load.",
       "Draw outer along captured samelevel rails, disconnect drawline only after park restraint; lift1700 and translateN1800. Lower/restrain on independent lower cradle, then remove rigging.",
       "With no load suspended, two people insert unloaded upper bearers from fixed south/north working fields. Draw/lift/translate inner and land/restrain on independent550 uppertier; never load the outer wet pan.",
       "Outgoing inner transfers to the empty2700×1200 handoverpad; required actual transport removes it BEFORE incoming replacement occupies that pad. Fit incoming INNER first; reverse drawing path to original position.",
       "Remove unloaded upperbearers. Transfer outgoing outer to empty handoverpad, clear it, receive incoming outer. Fit/capture the replacement copper U gasket on the EXPOSED INNER face BEFORE OUTER approaches. Return outer with bolts captive/retracted, then advance bolts175 and qualified cross-tighten.",
-      "Verify local catch/drain and seal, then reinstate covers/guards; rack removed before cover-closing hook path. Reopen E only after tests. Actual site, kit, load and seal acceptance remain unearned."
+      "After inner/outer modules and flange are restored, while outboard covers remain OPEN, reinstall/test the captured cartridge and its open receiving overlap. Verify receiver/head/capture; then hand back to MAT's final rack removal/cover closure/admission state. Never refit below closed covers.",
+      "Verify local catch/drain and seal, then reinstate covers/guards; rack removed before cover-closing hook path. Reopen E only after tests AND reinstatement/testing of the RWT outlet cartridge. Actual site, kit, load and seal acceptance remain unearned."
     ],
     "courtCost": "One guarded intake/service well, not a court-length staging pocket; outdoor E track requires a depressed opening below the raised operator deck.",
     "rejectedComparisons": {
@@ -17642,6 +17941,189 @@
       ],
       "radius": 300,
       "rule": "Joint operators leave east through the fullheight outer portal on retained closed covers, then use outboard fixed strips. No route through the north wall or low track; open covers only from captured fixed working fields."
+    },
+    "receivingInterface": {
+      "source": {
+        "path": "project/rwt/studies/selected-receiving-interface.json",
+        "blob": "04446780ff60861d1cc10ee61aa820b68a9f325b"
+      },
+      "authority": "RWT-owned conditional building-side interface refinement; HAD consumes these exact coordinates. No surveyed plot, disposal, material or physical acceptance."
+    },
+    "activeOutlet": {
+      "bodyOutlet": [
+        12250,
+        6900,
+        -852.9411764705883
+      ],
+      "terminal": {
+        "identity": "REMOVABLE E OUTLET CHUTE CARTRIDGE",
+        "bed": [
+          [
+            12250,
+            -852.9411764705883
+          ],
+          [
+            12750,
+            -1200
+          ]
+        ],
+        "waterClear": 600,
+        "sheetBudget": 1.5,
+        "outwardFlangeEach": 30,
+        "sideHeight": 150,
+        "grossPlan": [
+          12225,
+          6568.5,
+          550,
+          663
+        ],
+        "connection": "Upstream25 open underlap beneath the installed E outlet, with open side returns capturing the600clear stream. No pressure seal or hidden upward return. Entire cartridge is removed before E body drawing.",
+        "support": {
+          "railInnerFacesY": [
+            6550,
+            7250
+          ],
+          "inwardBearingEach": 50,
+          "footprintOutsideRails": false,
+          "role": "Independent captured edge shoes bridge from actual rail edges to cartridge flanges; cartridge body stays BETWEEN rails while descending below their level. No transverse support passes through the water or moving body. Member/fixing/corrosion and actual loads remain STR/MAT."
+        },
+        "farLip": [
+          12750,
+          6900,
+          -1200
+        ],
+        "nozzleOrientation": "EAST and downward along the source bed; vertical/no-horizontal case also checked. No upturned discharge lip.",
+        "physicalAcceptance": false
+      },
+      "receiverBounds": [
+        12500,
+        6100,
+        2000,
+        1600
+      ],
+      "maximumWater": -1400,
+      "bedMaximum": -1650,
+      "receiverEdgeMaximum": -1300,
+      "blockedOutletSpill": {
+        "edge": [
+          [
+            14500,
+            6100,
+            -1300
+          ],
+          [
+            14500,
+            7700,
+            -1300
+          ]
+        ],
+        "clearWidth": 1600,
+        "requiredContinuation": [
+          14500,
+          6100,
+          1500,
+          1600
+        ],
+        "farEndMaximumWater": -1600,
+        "maximumFaultedReceiverWater": -1250,
+        "role": "Open EAST edge, entirely BELOW the0 upper service deck, to reserved unoccupied exterior downhill territory. It is not a pedestrian route or a house floor void. Actual receiving terrain/capacity/support/erosion/disposal remains conditional. With this edge blocked too, E is unavailable; do not begin E-maintenance or N-maintenance relying on it."
+      },
+      "splashReservation": {
+        "lateralOutside600StreamEach": 500,
+        "upstreamOfLip": 250,
+        "downstreamOfLip": 1750,
+        "qualified": false
+      },
+      "support": "Separate outdoor wet receiving/impact territory BELOW existing upper deck and outside the house shell. No structural floor void or ordinary pedestrian route is a receiver. Actual passive terrain/disposal, exposure, receiver support/erosion and groundwater applicability require DPL/STR/RWT; no pumping or below-water essential service is credited.",
+      "maintenance": {
+        "stage": [
+          15300,
+          8200,
+          800,
+          800
+        ],
+        "cartridgeMaximumPlan": [
+          550,
+          663
+        ],
+        "capturedLift": 2000,
+        "maximumCartridgeMassBudgetKg": 30,
+        "stageSupport": "Two independent captured mineral/metal cradles bear on side-frame/flanges, not wet pan; their seat heights preserve the347.06fall and chocks restrain both. Actual strength, base fixity and handling qualification remains open.",
+        "supportRelease": {
+          "x": 12250,
+          "y": [
+            6540,
+            7260
+          ],
+          "headZRelativeBodyOutlet": 50,
+          "headX": 12500,
+          "socketExtensionEW": 250,
+          "maximumToolLength": 2300,
+          "headCube": 60,
+          "shaftRadius": 12,
+          "topAccessFromDeck": true,
+          "upperShaftEnds": [
+            [
+              12500,
+              7500,
+              1250
+            ],
+            [
+              12500,
+              7500,
+              1250
+            ]
+          ],
+          "leverRadiusEW": 250,
+          "operator": [
+            13100,
+            7800,
+            0
+          ],
+          "bodyRadius": 300,
+          "shoulderZ": 1450,
+          "reach": 600,
+          "installation": "Removable manual EW-axis socket head with two interchangeable captured NS/upward staff assemblies; each actual head-to-upper-end length is derived from its coordinates, both below2300. No assumed universal telescoping product. Positive temporary guide/catch at fixed NORTH strip carries the tool between collar strokes; no staff stands through cartridge. Install/retrieve through OPEN outboard bay. Torque/index/capture/guide forces and kit/material qualification remain open."
+        },
+        "sequence": [
+          "With both routes intact, verify N independently full-duty and receiving; erect/test E weather enclosure and isolate/drain E.",
+          "AFTER MAT opens ALL outboard bay covers, capture the complete outlet cartridge. From the fixed NORTH strip operate both captured shoe releases with the source-drawn tilted manual tool, then lift2000. Its lowest point800 clears empty rack forks600; transfer above the empty rack to the separate800square pad. No person stands on the open bay or below the load.",
+          "Only after cartridge has left the full draw/hoist sweep may E outer/inner modules be removed in the existing ordered method. N remains assembled and full-duty.",
+          "After inner/outer modules and flange are restored, while outboard covers remain OPEN, reinstall/test the captured cartridge and its open receiving overlap. Verify receiver/head/capture; then hand back to MAT's final rack removal/cover closure/admission state. Never refit below closed covers."
+        ],
+        "qualification": "Reference captured component/access/space only. Actual shoe release/tool sweep, positive restraint, support strength, load/forces and physical handling acceptance remain required before use. No assumed one-person hand lift."
+      },
+      "retainedStructuralPenetrations": {
+        "posts": [
+          {
+            "centre": [
+              13500,
+              6350
+            ],
+            "plan": [
+              13475,
+              6325,
+              50,
+              50
+            ]
+          },
+          {
+            "centre": [
+              13500,
+              7450
+            ],
+            "plan": [
+              13475,
+              7425,
+              50,
+              50
+            ]
+          }
+        ],
+        "minimumClearFromIdeal600Stream": 225,
+        "footingBounds": null,
+        "role": "Existing rail support stations remain in the receiver wet/splash territory; NOT an empty excavation or permission to remove footings. Source defines50square posts only. Actual post Z/footing territory, wet lining collars/islands, erosion and receiving-floor/support continuity require the STR-owned detail. No bare post size is a footing envelope."
+      }
     },
     "methodStatus": "PROJECT-DESIGNED SPATIAL REFERENCE: preferred two-piece flange, captured upper tools, staged independent rack and reverse incoming order. Physical seal, torque, rigging and site acceptance remain downstream.",
     "maintenanceCatchDrain": {

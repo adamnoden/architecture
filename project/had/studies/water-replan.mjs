@@ -264,9 +264,13 @@ export function deriveWaterReplan({servicesText} = {}) {
     rule:'Joint operators leave east through the fullheight outer portal on retained closed covers, then use outboard fixed strips. No route through the north wall or low track; open covers only from captured fixed working fields.'};
   renewal.hoistWorkingBox=[joint.handling.parkStart,joint.handling.apertureY[0],0,2700,joint.handling.apertureY[1]-joint.handling.apertureY[0],3000];
   renewal.hoistLiftTranslation=joint.handling.lift;
-  renewal.selectedSequence=joint.sequence;
+  const receivingPath='project/rwt/studies/selected-receiving-interface.json',receiving=load(receivingPath);
+  renewal.receivingInterface={source:{path:receivingPath,blob:blob(receivingPath)},authority:receiving.authority};
+  renewal.activeOutlet=structuredClone(receiving.east);
+  const terminalSteps=receiving.east.maintenance.sequence;
+  renewal.selectedSequence=[...terminalSteps.slice(0,1),...joint.sequence.slice(0,4),...terminalSteps.slice(1,2),...joint.sequence.slice(4,-1),...terminalSteps.slice(3),joint.sequence.at(-1).replace('Reopen E only after tests.','Reopen E only after tests AND reinstatement/testing of the RWT outlet cartridge.')];
   renewal.methodStatus='PROJECT-DESIGNED SPATIAL REFERENCE: preferred two-piece flange, captured upper tools, staged independent rack and reverse incoming order. Physical seal, torque, rigging and site acceptance remain downstream.';
-  passage.outerReceivingWaterMaximumTrial=-1000;
+  passage.outerReceivingWaterMaximumTrial=receiving.east.maximumWater;
   passage.maintenanceTrackReceivingWaterMaximumTrial=joint.capture.receivingWaterMaximum;
   passage.maintenanceTrackDrainLipTrial=joint.capture.pipeEnd;
   renewal.maintenanceCatchDrain={inlet:[joint.capture.pipeStartX,joint.capture.pipeCentreY,joint.capture.pipeInvertStart],
@@ -298,6 +302,12 @@ export function deriveWaterReplan({servicesText} = {}) {
     terminal:structuredClone(northEnvelope.terminals.normal),
     floorJoin:structuredClone(northEnvelope.floorJoin),
     scope:'Historical input preserved below; CURRENT N inlet rejoined around E well. E is the separate route. Actual full-duty/loss/material/structural acceptance remains RWT/MAT/STR.'};
+  model.rwtReceivingInterface={source:{path:receivingPath,blob:blob(receivingPath)},...structuredClone(receiving)};
+  model.northNormalRoute.historicalTerminal=structuredClone(model.northNormalRoute.terminal);
+  model.northNormalRoute.terminal.receiver.bounds=structuredClone(receiving.north.receiverBounds);
+  model.northNormalRoute.terminal.receiver.nominalWaterPlane=receiving.north.maximumWater;
+  model.northNormalRoute.terminal.currentVerticalExit=structuredClone(receiving.north.verticalTerminalExit);
+  model.northNormalRoute.terminal.receivingInterfaceSource=model.rwtReceivingInterface.source;
   const nr=model.northNormalRoute.normal;
   model.northNormalRoute.historicalNormal=structuredClone(nr);
   nr.inlet=[4250,7300,2950,450];
