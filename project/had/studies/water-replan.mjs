@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import assert from 'node:assert/strict';
-import { deriveSouthCourtThreshold, renderSouthCourtThreshold } from './south-court-threshold.mjs';
+import { deriveSouthCourtThreshold, renderSouthCourtThreshold, verifyThresholdMaintainedState } from './south-court-threshold.mjs';
 import { deriveGardenFailureBypass, renderGardenFailureBypass } from './garden-failure-bypass.mjs';
 
 const root = new URL('../../../', import.meta.url);
@@ -56,6 +56,19 @@ export function verifyServicesOccurrences(model, current) {
     services.eastFoulExit.path.at(-1),'Actual exterior foul port occurrence drift');
   return { emitters:services.emitters.length, extractTasks:services.fanAccess.length, pass:true,
     scope:'Current actual furniture, emitter heights, extract ports/platforms and fan task states; component equality does not establish whole-house acceptance.' };
+}
+export function verifyCollectorOpenEntries(entry,maximumHead){
+  const g=entry.guardExtension,half=g.postPlan/2;
+  const intersects=(a,b,c,d)=>Math.min(b,d)>Math.max(a,c);
+  for(const [x,y]of [...g.westPostCentres,...g.northPostCentres]){
+    assert(!(x-half<=entry.west.planeX&&x+half>=entry.west.planeX&&
+      intersects(y-half,y+half,...entry.west.y)),'Guard post occludes actual west inlet');
+    assert(!(y-half<=entry.north.planeY&&y+half>=entry.north.planeY&&
+      intersects(x-half,x+half,...entry.north.x)),'Guard post occludes actual north inlet');
+  }
+  assert(g.lowestHorizontalRailAboveLocalWalk>maximumHead,'Guard rail/plinth occludes the allocated inlet head');
+  return {pass:true,creditedWestLength:entry.west.y[1]-entry.west.y[0],creditedNorthLength:entry.north.x[1]-entry.north.x[0],
+    scope:'Actual source guard posts/rail clear both explicit openings; debris, corner interaction and hydraulic losses are not qualified.'};
 }
 export function deriveWaterReplan({servicesText} = {}) {
   const hadPath = 'project/had/studies/open-north-loggia.json';
@@ -214,6 +227,47 @@ export function deriveWaterReplan({servicesText} = {}) {
   model.southCourtWeatherDoor.jambEach=40;
   model.southCourtWeatherDoor.installationGapEach=10;
   model.southCourtWeatherDoor.thresholdReference='southCourtThresholdReference';
+  const northEnvelopePath='project/mat/studies/loggia-envelope-section.json',northEnvelope=load(northEnvelopePath);
+  model.northNormalRoute={source:{path:northEnvelopePath,blob:blob(northEnvelopePath)},
+    normal:structuredClone(northEnvelope.protectedWater.normal),
+    terminal:structuredClone(northEnvelope.terminals.normal),
+    floorJoin:structuredClone(northEnvelope.floorJoin),
+    scope:'Retained source-exact N normal geometry, not old Nplusbroadstrip independence. E is the separate route. Material/structure/head and new maintenance interaction remain unqualified.'};
+  const normalAtMouth=northEnvelope.protectedWater.normal.carrierBottom.find(p=>p[0]===7750)[1];
+  assert.equal(normalAtMouth,model.southCourtThresholdReference.primaryTray.normalJoin.receivingCarrierBottom);
+  const limitingJoin=northEnvelope.floorJoin.innerDpc[1];
+  model.firstWetReference={source:model.northNormalRoute.source,
+    limitingLocatedJoin:{id:'north-inner-DPC/floor transition',z:limitingJoin,
+      role:'Actual authored physical band top, with unqualified floor/end/DPC transition; NOT a certified first-harm elevation.'},
+    southDoorGeometricUnbackedEntry:15,qualifiedFirstSusceptibleZ:null,
+    permittedQuietStage:limitingJoin-25-25,headBudget:limitingJoin-25-25-(-110),
+    splashBudget:25,toleranceBudget:25,
+    rule:'The lower N−30 band controls this reference. The new south15 crest does not erase it. Actual material resistance, end/seam/anchor/cavity movement and first wetting remain RWT/MAT/OAS qualification.'};
+  const floorAtY=y=>y<=5750?-(y-4250)*30/1500:-30-(y-5750)*80/2000;
+  renewal.courtCollector.actualOpenEntries={
+    north:{planeY:7750,x:[7300,7650],crestZ:floorAtY(7750)},
+    west:{planeX:7300,y:[7500,7650],crestEnds:[floorAtY(7500),floorAtY(7650)]},
+    cornerExcludedLength:100,
+    guardExtension:{outerPlan:[7250,7425,450,375],topAboveLocalWalk:1100,
+      westPostCentres:[[7275,7475],[7275,7725]],northPostCentres:[[7275,7775],[7675,7775]],postPlan:50,
+      lowestHorizontalRailAboveLocalWalk:50,
+      role:'Open150-long WEST slot and350N mouth are behind this extended guard. No walking grate or solid plinth consumes their inlet area.50-bottom rail stays above30 maximum allocated quiet head; actual impact/anchor/capacity qualification remains STR/OAS.'},
+    scope:'Only these source-drawn unobstructed edges count. Do not credit the entire1450 perimeter, downstream600 width or hidden paving joints. Guard posts and the100 corner exclusion remain outside both credited openings.'};
+  const entry=renewal.courtCollector.actualOpenEntries,coefficient=1.84;
+  entry.guardClearanceProof=verifyCollectorOpenEntries(entry,model.firstWetReference.headBudget);
+  const idealEntryAtStage=stage=>{
+    const h=Math.max(0,(stage-entry.north.crestZ)/1000),qNorth=coefficient*.350*h**1.5;
+    const a=Math.max(0,(stage-entry.west.crestEnds[0])/1000),b=Math.max(0,(stage-entry.west.crestEnds[1])/1000);
+    const qWest=coefficient/(.04*2.5)*(b**2.5-a**2.5);
+    return {northLps:qNorth*1000,westLps:qWest*1000,totalLps:(qNorth+qWest)*1000};
+  };
+  const quiet=model.firstWetReference.permittedQuietStage;
+  hydraulicProbe.actualEntryIdealScreen={sourceFormula:'project/rwt/studies/integrated-transfer-deck.mjs ideal1.84 b h^1.5 comparator; west entry integrates the actual40mm/m court fall',
+    coefficient,stage:quiet,entryGeometry:entry,...idealEntryAtStage(quiet),
+    north350AlonePass:idealEntryAtStage(quiet).northLps>=inwardDuty,
+    combinedNominalPass:idealEntryAtStage(quiet).totalLps>=inwardDuty,
+    status:'Necessary IDEAL preliminary screen only. No contraction/corner interaction, debris, inlet/turn loss, air, splash or tailwater qualification. RWT must establish actual fullQ and first-wetting safety. The350-alone case fails and is not selected.'};
+  model.southCourtThresholdReference.maintainedState.geometryProof=verifyThresholdMaintainedState(model.southCourtThresholdReference,renewal);
   const wall = id => model.groundWalls.find(w => w.id === id);
   Object.assign(wall('plant-north'), { a: [9300, 5877.5], b: [12000, 5877.5],
     t: 519.5, finishedFaces: [5780.5, 6300],

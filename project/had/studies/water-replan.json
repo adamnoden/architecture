@@ -10921,6 +10921,21 @@
           }
         ],
         "bearingRole": "Explicit forty-wide mineral bearing strips on supported pan. Water passes between strips; no concealed full-width dam or sill fixing through pan. Pan compression/slip, sill span/load and thermal bridge require STR/MAT.",
+        "permanentSeat": {
+          "plan": [
+            5050,
+            4060,
+            1900,
+            400
+          ],
+          "rcZ": [
+            -380,
+            -180
+          ],
+          "mineralBearingBottomZ": -180,
+          "mineralBearingTop": "Follows pan underside: wet-floor level minus1.5; no timber or insulation carries the sill.",
+          "role": "Local RC200 support reservation continuous with the actual ground slab and court-south support. Actual bearings/cage/thermal/capillary/sliding capacity remain STR/MAT."
+        },
         "secondaryOutlet": {
           "planeY": 4450,
           "x": [
@@ -10963,19 +10978,30 @@
           [
             5000,
             4300,
-            -30
+            -35
           ],
           [
             5000,
             7750,
-            -100
+            -140
           ]
         ],
         "formedChannelClear": [
           100,
-          50
+          20
         ],
-        "destination": "Ordinary N court route; distinct from the E secondary channel. Actual N head and losses remain RWT proof."
+        "walkingGrateThickness": 6,
+        "normalJoin": {
+          "point": [
+            5000,
+            7750,
+            -140
+          ],
+          "receivingCarrierBottom": -213.75,
+          "freeDrop": 73.75,
+          "role": "Open downward entry inside the actual existing Nnormal250clear liner at centre5025. Not a discharge onto the−110 walking plane."
+        },
+        "destination": "Ordinary N court route; distinct from the E secondary channel. Actual N head, shallow channel debris/cleanout and losses remain RWT proof."
       },
       "secondaryTray": {
         "plan": [
@@ -11109,6 +11135,274 @@
         "panFloorPenetrations": 0,
         "sillRestraint": "Captured at jamb ends and mineral bearing strips; no under-sill fixing through wet pan. Actual anchor/member capacities are not selected."
       },
+      "maintainedState": {
+        "temporaryWeatherLine": {
+          "plan": [
+            5050,
+            3930,
+            1900,
+            40
+          ],
+          "z": [
+            0,
+            2450
+          ],
+          "supports": [
+            {
+              "plan": [
+                4900,
+                3700,
+                150,
+                500
+              ],
+              "z": [
+                0,
+                300
+              ]
+            },
+            {
+              "plan": [
+                6950,
+                3700,
+                150,
+                500
+              ],
+              "z": [
+                0,
+                300
+              ]
+            }
+          ],
+          "materialRole": "Removable metal/mineral weather screen reference, captured at jambs outside pan; no synthetic sheet or floor penetration assumed.",
+          "scope": "Blocks the court door during work. Protected front exit remains available; no claim that the temporary screen is a permanent rated external doorset."
+        },
+        "handlingReference": {
+          "base": [
+            1100,
+            800
+          ],
+          "height": 2400,
+          "massCapacityRequiredKg": 70,
+          "turntableCentre": [
+            5700,
+            5200
+          ],
+          "basePlanAtTurn": [
+            5150,
+            4800,
+            1100,
+            800
+          ],
+          "completePlanTurnRadius": 680.0735254367721,
+          "operator": {
+            "centre": [
+              6950,
+              5150
+            ],
+            "radius": 300,
+            "handle": [
+              6500,
+              5150,
+              1100
+            ],
+            "shoulderZ": 1450,
+            "reach": 600
+          },
+          "role": "Project-dimensioned captured leaf/doorset handling frame with fixed-base turntable.70kg is inherited leaf load requirement, not an admitted kit rating. Base/turntable/clamps/stability/forces and actual procurement remain IAS/OAS/MAT."
+        },
+        "leafTask": {
+          "capturedCentresClosed": [
+            [
+              5572.75,
+              4228
+            ],
+            [
+              6427.25,
+              4228
+            ]
+          ],
+          "firstTranslationNorth": 500,
+          "turnCentre": [
+            5700,
+            5200
+          ],
+          "turnDegrees": 90,
+          "hingeRelease": {
+            "z": [
+              400,
+              1100,
+              1900
+            ],
+            "maximumToolStroke": 60,
+            "bodyCentres": [
+              [
+                5150,
+                4600
+              ],
+              [
+                6850,
+                4600
+              ]
+            ],
+            "toolContactY": 4310,
+            "shoulderByHingeZ": {
+              "400": 750,
+              "1100": 1450,
+              "1900": 1450
+            },
+            "role": "Capture and unload leaf first. Independently accessible leaf-side hinge screws are released outward; no upward hinge-pin motion through the transom."
+          },
+          "uprightStorage": {
+            "plan": [
+              4350,
+              5000,
+              200,
+              1000
+            ],
+            "height": 2200,
+            "role": "Two845.5-wide leaves park edge-on side by side in separate captured slots; no leaf lies across N inlet or E collector."
+          }
+        },
+        "panTask": {
+          "wholeBodyMaximum": [
+            1796,
+            360,
+            130
+          ],
+          "pullNorth": 500,
+          "clearDrawPlan": [
+            5050,
+            4090,
+            1900,
+            1360
+          ],
+          "raisedEmptyHandlingField": [
+            5050,
+            4500,
+            1900,
+            1600
+          ],
+          "planRotationRadius": 915.8624350850951,
+          "turnCentre": [
+            5700,
+            5200
+          ],
+          "operator": {
+            "centre": [
+              6950,
+              5150
+            ],
+            "radius": 300,
+            "handle": [
+              6500,
+              5150,
+              1100
+            ],
+            "shoulderZ": 1450,
+            "reach": 600
+          },
+          "storage": {
+            "plan": [
+              4600,
+              4350,
+              150,
+              1900
+            ],
+            "height": 400,
+            "orientation": "Upright on long edge in captured rack after90degree plan turn"
+          },
+          "role": "Frame/sill removed before pan. Capture entire pan, release dry-side floor clamps and accessible end laps, pull NORTH500 then lift in the clear exterior field; rear/end returns do not pass through retained frame. No wet-floor fastener cut."
+        },
+        "incoming": {
+          "transportEnvelope": [
+            600,
+            850,
+            2300
+          ],
+          "turnRadius": 520.2163011671204,
+          "headLanding": [
+            6350,
+            12000,
+            2400,
+            2400
+          ],
+          "path": [
+            [
+              7600,
+              12600
+            ],
+            [
+              5500,
+              12600
+            ],
+            [
+              5500,
+              5800
+            ],
+            [
+              5700,
+              5200
+            ]
+          ],
+          "operatorRearOffset": 825,
+          "turnControl": {
+            "fixedCartCentre": [
+              5500,
+              12600
+            ],
+            "operatorCentre": [
+              6600,
+              12600
+            ],
+            "fixedSideCrank": [
+              6100,
+              12600,
+              1200
+            ],
+            "cartBrakedBeforeRegrip": true,
+            "role": "Captured/braked turntable rotates the component inside1040diameter before changing travel direction; the operator remains on the existing terrace. No1100-wide assembled handling frame turns here."
+          },
+          "operatorHandover": {
+            "cart": [
+              5500,
+              7800
+            ],
+            "sideBody": [
+              6600,
+              7800
+            ],
+            "rearBody": [
+              5500,
+              8625
+            ],
+            "role": "Brake/capture cart before regrip from east-side control to north-trailing push; body then staysx5500, west of fixed Ewellguard. No uncaptured rolling transfer."
+          },
+          "handlerAssemblyField": [
+            5150,
+            4500,
+            1900,
+            1600
+          ],
+          "role": "Components arrive edge-on on the captured600×850 transport reference;2300 includes150 wheeled-base budget under2100 leaf. Pan1796 fits vertically. The1100×800/2400 handling frame is assembled INSIDE the empty court field from base halves≤550×800 and uprights≤1200, never assumed to turn whole through a1200 landing. Head landing is explicitly enlarged2400 for this task and stops at8750, before the separate kitchen foul route9150. Actual assembly/load/stability and full externalstack envelope qualification remains IAS/OAS/MAT.",
+          "state": "N intact and covers restored; inspect a dry broad walking route before incoming. No delivery through a failed/ponded N mouth. Temporary weather screen remains until replacement verified."
+        },
+        "sequence": [
+          "Verify intact full-duty N and separate E collector; isolate/divert threshold runoff before opening grates or a weather boundary.",
+          "Install and test temporary inner weather screen while doorset intact; close this court access, retain front exit and grade-level garden bypass.",
+          "Capture each leaf before independent hinge release; translate north500, turn in the reserved frame field and store edge-on. Do one leaf at a time.",
+          "Capture/remove frame and separately retained sill; lift primary/secondary trays and short grates to the empty reserved handling field.",
+          "Release only accessible dry-side clamps/end laps; withdraw whole pan north500, lift and park. Permanent masonry and RC seat stay.",
+          "Receive captured edge-on replacement components through the open north loggia in600×850×2300 transport envelope, with the2400 head landing, captured-turn/regrip and intact closed N covers. Assemble the larger handling frame in the court field. Reverse, reinstate all laps/clamps/trays and test water/air/operation before removing screen or reopening access."
+        ],
+        "ordinaryUseRestriction": "No simultaneous court-west window cleaning, normal court passage or second component storage in the same handling field. E well/guard and N inlet remain outside the turn/storage envelopes; rain diversion and temporary-screen weather duty must be verified before work.",
+        "geometryProof": {
+          "pass": true,
+          "reserveToStoredLeaves": 234.13756491490494,
+          "reserveToEGuard": 199.09272096379277,
+          "bodyReserve": 35.13716523458538,
+          "scope": "Exact reserved rotation/body/storage and release-reach screen; no clamp/force/kit/material/weather qualification."
+        }
+      },
       "limitingLevels": {
         "lowestIntentionallyWetWeepZ": -5,
         "secondaryPanFloorLowZ": -55,
@@ -11138,6 +11432,250 @@
         "Actual exterior channels must be joined to court paving/support/guard/window/occupied operation before architectural selection.",
         "Material/seam/gasket/meeting/fixing/movement/weather and physical qualification remain downstream."
       ]
+    },
+    "northNormalRoute": {
+      "source": {
+        "path": "project/mat/studies/loggia-envelope-section.json",
+        "blob": "0ec54ba2420b9337ce81b1867eef4c83d661e69b"
+      },
+      "normal": {
+        "inlet": [
+          4250,
+          7000,
+          3500,
+          350
+        ],
+        "channelGross": 400,
+        "channelClear": 250,
+        "inletVoid": 80,
+        "flowSlope": 0.01,
+        "roughnessStress": 0.02,
+        "cover": {
+          "downstream": "Flush10plates,2buttgap. Separate100long×2SSunderstrips overlap49eachside ofgap; topaccessiblebolts release strip BEFORE plate lift. Recessframe2 atstripseat. No stacked10+10lap or pressureseal claim.",
+          "module": [
+            400,
+            550,
+            12
+          ],
+          "massKg": 17.6,
+          "mainPlate": [
+            400,
+            498,
+            10
+          ],
+          "lastPlate": [
+            400,
+            250,
+            10
+          ],
+          "count": 9,
+          "fullCount": 8,
+          "pitch": 500,
+          "buttGap": 2,
+          "understrip": [
+            400,
+            100,
+            2
+          ],
+          "hardwareBudgetEach": 0.96,
+          "lastBudgetKg": 9.6,
+          "totalBudgetKg": 150.4
+        },
+        "intakeCover": {
+          "thickness": 14,
+          "holeDiameter": 9,
+          "pitch": 12,
+          "openAreaFraction": 0.44178646691106466,
+          "stress": "2kN/100gross strip;25net width and250span gives153.1MPa simple bending, before stressconcentration/support qualification"
+        },
+        "westLoggia": [
+          4825,
+          7750,
+          400,
+          5450
+        ],
+        "centreX": 5025,
+        "carrierBottom": [
+          [
+            7000,
+            -206.25
+          ],
+          [
+            7750,
+            -213.75
+          ],
+          [
+            12000,
+            -256.25
+          ],
+          [
+            13200,
+            -268.25
+          ]
+        ],
+        "crossCourtBottom": [
+          -171.5,
+          -206.25
+        ],
+        "renewal": {
+          "straightLength": 4250,
+          "clearWidth": 250,
+          "wallHeight": 75,
+          "flangesEach": 25,
+          "gauge": 1.5,
+          "density": 8960,
+          "screenMassKg": 25.704,
+          "stage": [
+            5700,
+            7100,
+            350,
+            4250
+          ],
+          "operatorLongEnvelope": [
+            6100,
+            6500,
+            600,
+            5450
+          ],
+          "state": "Covers removed, lift straightliner vertically; stage occupies broadrelief. Incomingrain isolation/temporaryroute mandatory; no bothrouteslive claim.",
+          "bodyCentreX": 5025,
+          "bodyOutsideWidth": 303,
+          "lift": 600,
+          "riggingHeightAboveBody": 150,
+          "coverStage": [
+            4300,
+            5750,
+            1250,
+            1700
+          ],
+          "bodyStage": [
+            5700,
+            7100,
+            350,
+            4250
+          ],
+          "riggingStage": [
+            5675,
+            7100,
+            400,
+            4250
+          ],
+          "rainState": "Incomingrain isolated and separatelydemonstratedtemporaryroute: cover/body staging occupiesbroadrelief; bothroutesNOTlive.",
+          "endWorkBodyCentres": [
+            [
+              5025,
+              7400
+            ],
+            [
+              5025,
+              12350
+            ]
+          ],
+          "liftBodyCentres": [
+            [
+              5550,
+              8450
+            ],
+            [
+              5550,
+              11400
+            ]
+          ],
+          "stageBodyCentres": [
+            [
+              6400,
+              7800
+            ],
+            [
+              6400,
+              10750
+            ]
+          ],
+          "joint": "100long removableCuUsaddle over20buttgap/40overlap eachside; separate2Cu gasket and adjustableclamps, no elastomer assumed. Toprelease, bodyliftsclear ofopenUsaddle. Sealing/forming/clampstroke/retainedresidues unqualified; exactlowestwaterweakjoint."
+        },
+        "material": "1.5uncoatedcopper liner; seams/filler/flux/supports/retained treatments unqualified",
+        "frame": {
+          "section": [
+            20,
+            50,
+            3
+          ],
+          "pedestalHeight": 110,
+          "verticalAperture": 360,
+          "insideFrameX": [
+            4845,
+            5205
+          ],
+          "supportPitch": 500,
+          "loadpath": "Cover→SSedgeframes→110mineralpedestals→RC200recess. No floorload throughCu, gasket or carrier."
+        }
+      },
+      "terminal": {
+        "centreX": 5000,
+        "coveredExtension": 350,
+        "endY": 13550,
+        "invert": -271.75,
+        "closedDownroute": {
+          "clear": [
+            250,
+            100
+          ],
+          "outlet": -600,
+          "material": "Custom1.5Cu closedtransition/downbody, exactseam/filler/pressure/corrosion qualification unknown"
+        },
+        "receiver": {
+          "bounds": [
+            4250,
+            13650,
+            1500,
+            1500
+          ],
+          "nominalWaterPlane": -800,
+          "airgap": 200,
+          "identity": "N/W independentreceiving territory; no sharedbasinwithE assumed"
+        }
+      },
+      "floorJoin": {
+        "layers": [
+          15,
+          65,
+          100,
+          200
+        ],
+        "z": [
+          0,
+          -15,
+          -80,
+          -180,
+          -380
+        ],
+        "innerDpc": [
+          -180,
+          -30
+        ],
+        "plasterStops": 0,
+        "airLine": "Wallmineralplaster meets floorfinish at0; movement/airtightness unqualified",
+        "moisture": "40cover suspendedRC is a deliberate moisture hypothesis. NoDPM or site-required gas barrier is waived; exact floor/end/DPC transition not qualified."
+      },
+      "scope": "Retained source-exact N normal geometry, not old Nplusbroadstrip independence. E is the separate route. Material/structure/head and new maintenance interaction remain unqualified."
+    },
+    "firstWetReference": {
+      "source": {
+        "path": "project/mat/studies/loggia-envelope-section.json",
+        "blob": "0ec54ba2420b9337ce81b1867eef4c83d661e69b"
+      },
+      "limitingLocatedJoin": {
+        "id": "north-inner-DPC/floor transition",
+        "z": -30,
+        "role": "Actual authored physical band top, with unqualified floor/end/DPC transition; NOT a certified first-harm elevation."
+      },
+      "southDoorGeometricUnbackedEntry": 15,
+      "qualifiedFirstSusceptibleZ": null,
+      "permittedQuietStage": -80,
+      "headBudget": 30,
+      "splashBudget": 25,
+      "toleranceBudget": 25,
+      "rule": "The lower N−30 band controls this reference. The new south15 crest does not erase it. Actual material resistance, end/seam/anchor/cavity movement and first wetting remain RWT/MAT/OAS qualification."
     },
     "outerServiceArch": {
       "sourceOpening": "east-outdoor-water-portal",
@@ -14780,7 +15318,68 @@
       "northSurfaceLipZ": -110,
       "northChannelBedZ": -180,
       "lowChannelAtIntakeZ": -200,
-      "commonFaultBoundary": "Entire N mouth x4800..7200 disabled; E collector starts x7300, with its own through-ring route and separate east head condition. No immunity to whole-court debris blanket or whole-site flood is claimed."
+      "commonFaultBoundary": "Entire N mouth x4800..7200 disabled; E collector starts x7300, with its own through-ring route and separate east head condition. No immunity to whole-court debris blanket or whole-site flood is claimed.",
+      "actualOpenEntries": {
+        "north": {
+          "planeY": 7750,
+          "x": [
+            7300,
+            7650
+          ],
+          "crestZ": -110
+        },
+        "west": {
+          "planeX": 7300,
+          "y": [
+            7500,
+            7650
+          ],
+          "crestEnds": [
+            -100,
+            -106
+          ]
+        },
+        "cornerExcludedLength": 100,
+        "guardExtension": {
+          "outerPlan": [
+            7250,
+            7425,
+            450,
+            375
+          ],
+          "topAboveLocalWalk": 1100,
+          "westPostCentres": [
+            [
+              7275,
+              7475
+            ],
+            [
+              7275,
+              7725
+            ]
+          ],
+          "northPostCentres": [
+            [
+              7275,
+              7775
+            ],
+            [
+              7675,
+              7775
+            ]
+          ],
+          "postPlan": 50,
+          "lowestHorizontalRailAboveLocalWalk": 50,
+          "role": "Open150-long WEST slot and350N mouth are behind this extended guard. No walking grate or solid plinth consumes their inlet area.50-bottom rail stays above30 maximum allocated quiet head; actual impact/anchor/capacity qualification remains STR/OAS."
+        },
+        "scope": "Only these source-drawn unobstructed edges count. Do not credit the entire1450 perimeter, downstream600 width or hidden paving joints. Guard posts and the100 corner exclusion remain outside both credited openings.",
+        "guardClearanceProof": {
+          "pass": true,
+          "creditedWestLength": 150,
+          "creditedNorthLength": 350,
+          "scope": "Actual source guard posts/rail clear both explicit openings; debris, corner interaction and hydraulic losses are not qualified."
+        }
+      }
     },
     "shield": {
       "representation": "OUTER REMOVABLE HOOD ENVELOPE, NOT A SOLID WATER BARRIER",
@@ -15231,7 +15830,79 @@
     "effectiveWidthM": 0.6,
     "coefficientTrial": 1.7,
     "idealBroadCrestHeadMm": 23.19724035643746,
-    "status": "Preliminary ideal sizing sensitivity only. Actual inlet, stage, debris, splash, first harm, pressure and downstream receiving state remain RWT-06 proof."
+    "status": "Preliminary ideal sizing sensitivity only. Actual inlet, stage, debris, splash, first harm, pressure and downstream receiving state remain RWT-06 proof.",
+    "actualEntryIdealScreen": {
+      "sourceFormula": "project/rwt/studies/integrated-transfer-deck.mjs ideal1.84 b h^1.5 comparator; west entry integrates the actual40mm/m court fall",
+      "coefficient": 1.84,
+      "stage": -80,
+      "entryGeometry": {
+        "north": {
+          "planeY": 7750,
+          "x": [
+            7300,
+            7650
+          ],
+          "crestZ": -110
+        },
+        "west": {
+          "planeX": 7300,
+          "y": [
+            7500,
+            7650
+          ],
+          "crestEnds": [
+            -100,
+            -106
+          ]
+        },
+        "cornerExcludedLength": 100,
+        "guardExtension": {
+          "outerPlan": [
+            7250,
+            7425,
+            450,
+            375
+          ],
+          "topAboveLocalWalk": 1100,
+          "westPostCentres": [
+            [
+              7275,
+              7475
+            ],
+            [
+              7275,
+              7725
+            ]
+          ],
+          "northPostCentres": [
+            [
+              7275,
+              7775
+            ],
+            [
+              7675,
+              7775
+            ]
+          ],
+          "postPlan": 50,
+          "lowestHorizontalRailAboveLocalWalk": 50,
+          "role": "Open150-long WEST slot and350N mouth are behind this extended guard. No walking grate or solid plinth consumes their inlet area.50-bottom rail stays above30 maximum allocated quiet head; actual impact/anchor/capacity qualification remains STR/OAS."
+        },
+        "scope": "Only these source-drawn unobstructed edges count. Do not credit the entire1450 perimeter, downstream600 width or hidden paving joints. Guard posts and the100 corner exclusion remain outside both credited openings.",
+        "guardClearanceProof": {
+          "pass": true,
+          "creditedWestLength": 150,
+          "creditedNorthLength": 350,
+          "scope": "Actual source guard posts/rail clear both explicit openings; debris, corner interaction and hydraulic losses are not qualified."
+        }
+      },
+      "northLps": 3.346322160223071,
+      "westLps": 0.9647705536221354,
+      "totalLps": 4.3110927138452055,
+      "north350AlonePass": false,
+      "combinedNominalPass": true,
+      "status": "Necessary IDEAL preliminary screen only. No contraction/corner interaction, debris, inlet/turn loss, air, splash or tailwater qualification. RWT must establish actual fullQ and first-wetting safety. The350-alone case fails and is not selected."
+    }
   },
   "groundEnvelope": {
     "routeLocalLowestTrial": -1000,

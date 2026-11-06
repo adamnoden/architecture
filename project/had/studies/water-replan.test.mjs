@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { deriveWaterReplan, verifyServicesOccurrences } from './water-replan.mjs';
+import { deriveWaterReplan, verifyServicesOccurrences, verifyCollectorOpenEntries } from './water-replan.mjs';
 
 test('current replan authenticates the entire new Services source without weakening the historical selection', () => {
   const v = deriveWaterReplan();
@@ -101,4 +101,19 @@ test('the roof comparison assigns actual inward catchment and prices a full-pitc
   assert(r.outwardAtSameOuterEave.courtRimIncrease>1980);
   assert(r.outwardAtSameOuterEave.peakIncrease>990);
   assert.equal(r.retained.stackNormal,500.7);
+});
+
+test('the actual inlet credits separate source-drawn edges and rejects a guard blocking either edge',()=>{
+  const v=deriveWaterReplan(),e=v.renewal.courtCollector.actualOpenEntries,s=v.hydraulicProbe.actualEntryIdealScreen;
+  assert.equal(v.model.firstWetReference.limitingLocatedJoin.z,-30);
+  assert.equal(v.model.firstWetReference.permittedQuietStage,-80);
+  assert.equal(v.model.firstWetReference.qualifiedFirstSusceptibleZ,null);
+  assert.equal(s.north350AlonePass,false);
+  assert.equal(s.combinedNominalPass,true);
+  assert(s.totalLps>v.hydraulicProbe.assignedInwardRoofAndCourtLps);
+  for(const [mutate,message]of [
+    [x=>x.guardExtension.westPostCentres[0][1]=7550,/occludes actual west inlet/],
+    [x=>x.guardExtension.northPostCentres[0][0]=7400,/occludes actual north inlet/],
+    [x=>x.guardExtension.lowestHorizontalRailAboveLocalWalk=20,/rail\/plinth occludes/]
+  ]){const copy=JSON.parse(JSON.stringify(e));mutate(copy);assert.throws(()=>verifyCollectorOpenEntries(copy,30),message);}
 });

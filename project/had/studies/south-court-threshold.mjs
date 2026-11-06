@@ -34,13 +34,19 @@ export function deriveSouthCourtThreshold(door) {
       bearingPads:[{x:[5110,5150],y:[4110,4250]},
         {x:[5980,6020],y:[4110,4250]},{x:[6850,6890],y:[4110,4250]}],
       bearingRole:'Explicit forty-wide mineral bearing strips on supported pan. Water passes between strips; no concealed full-width dam or sill fixing through pan. Pan compression/slip, sill span/load and thermal bridge require STR/MAT.',
+      permanentSeat:{plan:[5050,4060,1900,400],rcZ:[-380,-180],
+        mineralBearingBottomZ:-180,mineralBearingTop:'Follows pan underside: wet-floor level minus1.5; no timber or insulation carries the sill.',
+        role:'Local RC200 support reservation continuous with the actual ground slab and court-south support. Actual bearings/cage/thermal/capillary/sliding capacity remain STR/MAT.'},
       secondaryOutlet:{planeY:4450,x:[5150,6850],lipZ:-55},
       renewal:'Remove door leaves/frame/sill after erecting temporary weather screen and diverting rain; lift separately retained front grates/trays, release dry-side clamps/end captures, withdraw pan NORTH. No demolition of masonry or wet-floor fastener release is assumed.'},
     primaryTray:{plan:[5050,4250,1900,100],topZ:0,bedZ:-25,metalThickness:1.5,
       removableModules:10,moduleLength:190,
       outlet:{point:[5050,4300,-25],clear:[75,25]},
-      route:[[5050,4300,-25],[5000,4300,-30],[5000,7750,-100]],
-      formedChannelClear:[100,50],destination:'Ordinary N court route; distinct from the E secondary channel. Actual N head and losses remain RWT proof.'},
+      route:[[5050,4300,-25],[5000,4300,-35],[5000,7750,-140]],
+      formedChannelClear:[100,20],walkingGrateThickness:6,
+      normalJoin:{point:[5000,7750,-140],receivingCarrierBottom:-213.75,freeDrop:73.75,
+        role:'Open downward entry inside the actual existing Nnormal250clear liner at centre5025. Not a discharge onto the−110 walking plane.'},
+      destination:'Ordinary N court route; distinct from the E secondary channel. Actual N head, shallow channel debris/cleanout and losses remain RWT proof.'},
     secondaryTray:{plan:[5050,4450,1900,100],topZ:0,bedZ:-80,
       outlet:{point:[6950,4500,-80],clear:[100,40]},
       route:[[6950,4500,-80],[7350,4500,-95],[7350,6300,-125]],
@@ -60,6 +66,49 @@ export function deriveSouthCourtThreshold(door) {
     fixings:{jambAnchorX:[5128,6872],y:4140,z:[400,1100,1900],diameterBudget:8,
       masonryEmbedmentBudget:60,panFloorPenetrations:0,
       sillRestraint:'Captured at jamb ends and mineral bearing strips; no under-sill fixing through wet pan. Actual anchor/member capacities are not selected.'},
+    maintainedState:{
+      temporaryWeatherLine:{plan:[5050,3930,1900,40],z:[0,2450],
+        supports:[{plan:[4900,3700,150,500],z:[0,300]},{plan:[6950,3700,150,500],z:[0,300]}],
+        materialRole:'Removable metal/mineral weather screen reference, captured at jambs outside pan; no synthetic sheet or floor penetration assumed.',
+        scope:'Blocks the court door during work. Protected front exit remains available; no claim that the temporary screen is a permanent rated external doorset.'},
+      handlingReference:{base:[1100,800],height:2400,massCapacityRequiredKg:70,
+        turntableCentre:[5700,5200],basePlanAtTurn:[5150,4800,1100,800],
+        completePlanTurnRadius:Math.hypot(1100,800)/2,
+        operator:{centre:[6950,5150],radius:300,handle:[6500,5150,1100],shoulderZ:1450,reach:600},
+        role:'Project-dimensioned captured leaf/doorset handling frame with fixed-base turntable.70kg is inherited leaf load requirement, not an admitted kit rating. Base/turntable/clamps/stability/forces and actual procurement remain IAS/OAS/MAT.'},
+      leafTask:{capturedCentresClosed:[[5572.75,4228],[6427.25,4228]],
+        firstTranslationNorth:500,turnCentre:[5700,5200],turnDegrees:90,
+        hingeRelease:{z:[400,1100,1900],maximumToolStroke:60,
+          bodyCentres:[[5150,4600],[6850,4600]],toolContactY:4310,
+          shoulderByHingeZ:{400:750,1100:1450,1900:1450},
+          role:'Capture and unload leaf first. Independently accessible leaf-side hinge screws are released outward; no upward hinge-pin motion through the transom.'},
+        uprightStorage:{plan:[4350,5000,200,1000],height:2200,
+          role:'Two845.5-wide leaves park edge-on side by side in separate captured slots; no leaf lies across N inlet or E collector.'}},
+      panTask:{wholeBodyMaximum:[1796,360,130],
+        pullNorth:500,clearDrawPlan:[5050,4090,1900,1360],
+        raisedEmptyHandlingField:[5050,4500,1900,1600],
+        planRotationRadius:Math.hypot(1796,360)/2,turnCentre:[5700,5200],
+        operator:{centre:[6950,5150],radius:300,handle:[6500,5150,1100],shoulderZ:1450,reach:600},
+        storage:{plan:[4600,4350,150,1900],height:400,orientation:'Upright on long edge in captured rack after90degree plan turn'},
+        role:'Frame/sill removed before pan. Capture entire pan, release dry-side floor clamps and accessible end laps, pull NORTH500 then lift in the clear exterior field; rear/end returns do not pass through retained frame. No wet-floor fastener cut.'},
+      incoming:{transportEnvelope:[600,850,2300],turnRadius:Math.hypot(600,850)/2,
+        headLanding:[6350,12000,2400,2400],
+        path:[[7600,12600],[5500,12600],[5500,5800],[5700,5200]],
+        operatorRearOffset:825,turnControl:{fixedCartCentre:[5500,12600],operatorCentre:[6600,12600],
+          fixedSideCrank:[6100,12600,1200],cartBrakedBeforeRegrip:true,
+          role:'Captured/braked turntable rotates the component inside1040diameter before changing travel direction; the operator remains on the existing terrace. No1100-wide assembled handling frame turns here.'},
+        operatorHandover:{cart:[5500,7800],sideBody:[6600,7800],rearBody:[5500,8625],
+          role:'Brake/capture cart before regrip from east-side control to north-trailing push; body then staysx5500, west of fixed Ewellguard. No uncaptured rolling transfer.'},
+        handlerAssemblyField:[5150,4500,1900,1600],
+        role:'Components arrive edge-on on the captured600×850 transport reference;2300 includes150 wheeled-base budget under2100 leaf. Pan1796 fits vertically. The1100×800/2400 handling frame is assembled INSIDE the empty court field from base halves≤550×800 and uprights≤1200, never assumed to turn whole through a1200 landing. Head landing is explicitly enlarged2400 for this task and stops at8750, before the separate kitchen foul route9150. Actual assembly/load/stability and full externalstack envelope qualification remains IAS/OAS/MAT.',
+        state:'N intact and covers restored; inspect a dry broad walking route before incoming. No delivery through a failed/ponded N mouth. Temporary weather screen remains until replacement verified.'},
+      sequence:['Verify intact full-duty N and separate E collector; isolate/divert threshold runoff before opening grates or a weather boundary.',
+        'Install and test temporary inner weather screen while doorset intact; close this court access, retain front exit and grade-level garden bypass.',
+        'Capture each leaf before independent hinge release; translate north500, turn in the reserved frame field and store edge-on. Do one leaf at a time.',
+        'Capture/remove frame and separately retained sill; lift primary/secondary trays and short grates to the empty reserved handling field.',
+        'Release only accessible dry-side clamps/end laps; withdraw whole pan north500, lift and park. Permanent masonry and RC seat stay.',
+        'Receive captured edge-on replacement components through the open north loggia in600×850×2300 transport envelope, with the2400 head landing, captured-turn/regrip and intact closed N covers. Assemble the larger handling frame in the court field. Reverse, reinstate all laps/clamps/trays and test water/air/operation before removing screen or reopening access.'],
+      ordinaryUseRestriction:'No simultaneous court-west window cleaning, normal court passage or second component storage in the same handling field. E well/guard and N inlet remain outside the turn/storage envelopes; rain diversion and temporary-screen weather duty must be verified before work.'},
     limitingLevels:{lowestIntentionallyWetWeepZ:-5,secondaryPanFloorLowZ:-55,
       lowestUnbackedInteriorOverflowZ:15,timberLeafBottomZ:19,timberJambFootZ:30,
       status:'15 is a geometric rear-crest entry limit, not first-leak or flood-resistance certification. Every pan/cap/jamb/meeting/air joint remains explicitly unqualified.'},
@@ -90,6 +139,30 @@ export function deriveSouthCourtThreshold(door) {
     v.limitingLevels.lowestUnbackedInteriorOverflowZ);
   assert.equal(b.maximumQuietOperatingStageZ+b.splashBudget+b.toleranceBudget,15);
   return v;
+}
+
+const overlap=(a,b)=>a[0]<b[0]+b[2]&&a[0]+a[2]>b[0]&&a[1]<b[1]+b[3]&&a[1]+a[3]>b[1];
+const pointRect=(p,r)=>Math.hypot(Math.max(r[0]-p[0],0,p[0]-r[0]-r[2]),Math.max(r[1]-p[1],0,p[1]-r[1]-r[3]));
+export function verifyThresholdMaintainedState(v,renewal){
+  const m=v.maintainedState,p=m.panTask,l=m.leafTask,handler=m.handlingReference;
+  assert(!overlap(l.uprightStorage.plan,p.storage.plan),'Stored leaves/pan collide');
+  for(const [name,store]of [['leaf',l.uprightStorage.plan],['pan',p.storage.plan]]){
+    assert(!overlap(store,renewal.courtIntakeWell),name+' storage blocks E well');
+    assert(!overlap(store,renewal.courtCollector.plan),name+' storage blocks E collector');
+    assert(store[1]+store[3]<7000,name+' storage blocks N inlet');
+  }
+  const reserveToStoredLeaves=pointRect(p.turnCentre,l.uprightStorage.plan)-p.planRotationRadius;
+  const reserveToEGuard=pointRect(p.turnCentre,renewal.guardOuterPlan)-p.planRotationRadius;
+  const bodyReserve=Math.hypot(p.operator.centre[0]-p.turnCentre[0],p.operator.centre[1]-p.turnCentre[1])-p.operator.radius-p.planRotationRadius;
+  assert(reserveToStoredLeaves>=25,'Pan rotation hits stored leaf');
+  assert(reserveToEGuard>=25,'Pan rotation hits fixed E guard');
+  assert(bodyReserve>=25,'Pan rotation hits actual operator');
+  for(const a of [handler.operator,p.operator])
+    assert(Math.hypot(a.centre[0]-a.handle[0],a.centre[1]-a.handle[1],a.shoulderZ-a.handle[2])<=a.reach,'Handling grip out of reach');
+  for(const z of l.hingeRelease.z)
+    assert(Math.hypot(4600-l.hingeRelease.toolContactY,z-l.hingeRelease.shoulderByHingeZ[z])<=600,'Hinge release unreachable');
+  return {pass:true,reserveToStoredLeaves,reserveToEGuard,bodyReserve,
+    scope:'Exact reserved rotation/body/storage and release-reach screen; no clamp/force/kit/material/weather qualification.'};
 }
 
 const doorLeafEnd=v=>v.retained.hinges[0][0]+v.retained.gaps.left+v.retained.leafEach[0];
