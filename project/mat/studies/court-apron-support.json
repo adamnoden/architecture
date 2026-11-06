@@ -88,5 +88,88 @@
     "source": "https://www.foamglas.com/-/media/project/foamglas/public/shared/files/foamglas-b/foamglas-t4-plus/pds/pds-foamglas-t4plus-uk.pdf",
     "declaredCompressiveStrengthMinimum_MPa": 0.6,
     "role": "Published material minimum is not an allowable bearing pressure or a configured threshold support. No selected floor-glass product or assembly identity is inferred."
+  },
+  "STRwallProducer": {
+    "commit": "1273d9f3d9d5cd8743652c182e7bbc8f471e4b6c",
+    "path": "project/str/studies/current-house-head-actions.py",
+    "blob": "8009027db02dd492c15b908ee5aeac1a3b743f92",
+    "role": "Literal court-south axis C3917.5/core140/weather-offset281.25/weather-leaf102.5 geometry; no notch or bearing capacity"
+  },
+  "ends": {
+    "relativeMovementBound_mm": 2,
+    "edgeToleranceEach_mm": 1,
+    "outwardRevealReservation_mm": 6,
+    "pocketY": [
+      4000,
+      4060
+    ],
+    "pocketZ": [
+      0,
+      225
+    ],
+    "fixedLinerThickness_mm": 1.5,
+    "panCornerFlangeInward_mm": 40,
+    "panCornerFlangeZ": [
+      0,
+      75
+    ],
+    "capFaceY": 4026,
+    "capThickness_mm": 1.5,
+    "capZ": [
+      0,
+      100
+    ],
+    "firstReleaseSouth_mm": 15,
+    "thenLift_mm": 100,
+    "role": "New proposed cavity/reveal pocket, removable cornercaps and inwardpan flanges; not existing owning HAD geometry or a qualified air/water corner"
+  },
+  "ordinaryLeafMechanism": {
+    "sourceModulus": "https://alloys.copper.org/alloy/C51000",
+    "sourceThickness": "https://www.thyssenkrupp-materials-na.com/materials/bronze/coilstrip",
+    "role": "One unselected C51000 flat-leaf mechanism sensitivity, not identity of Pemko73, supplied properties, seal force/rating or corrosion/finish acceptance. CDA modulus16000ksi; supplier0.008±0.0004inch H08coil. CDA mechanical rows are differentsection size and are not used as a thinstrip allowable.",
+    "modulus_ksi": 16000,
+    "thicknessInch": 0.008,
+    "thicknessToleranceInch": 0.0004,
+    "freeLength_mm": 35,
+    "leafWidth_mm": 75,
+    "rootX_left": 5098,
+    "preloadDeflection_mm": 4.5,
+    "freeRiseFromCapFace_mm": 8.5,
+    "stock73CoverageInch": [
+      0.125,
+      0.1875
+    ],
+    "admission": false
+  },
+  "currentHADReconciliation": {
+    "commit": "50093457642f65eca288e5cc233a77d8aac6bc29",
+    "path": "project/had/studies/water-replan.json",
+    "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "role": "Current merged source identity; only named threshold/floor/court projections are compared to the intentionally retained1273 case"
+  },
+  "currentSTRReconciliation": {
+    "commit": "50093457642f65eca288e5cc233a77d8aac6bc29",
+    "path": "project/str/studies/current-house-grid.json",
+    "blob": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+    "role": "Current merged grid; only actual court-S axis/extent/width/z are compared, not force or capacity equivalence"
+  },
+  "currentSTRwallReconciliation": {
+    "commit": "50093457642f65eca288e5cc233a77d8aac6bc29",
+    "path": "project/str/studies/current-house-head-actions.py",
+    "blob": "aef7fa4cad6e89fc09c47e55e071ad52da22b522",
+    "role": "Current wall rectangle producer; only named wall-band literals are compared; new joined foundation force work retains its own authority"
+  },
+  "channelStockControl": {
+    "source": "https://stainlesseurope.co.uk/en_GB/p/Stainless-steel-sheet-3-X-1000-X-2000-mm-2B-1.4404/41003",
+    "accessed": "2026-11-06",
+    "productCode": "S-BL-MZ3/3.0X1000X2000/1.4404/2B",
+    "sheet_mm": [
+      3,
+      1000,
+      2000
+    ],
+    "observedPriceGBPWithoutVAT": 509.58,
+    "supplierNominalMass_kg": 48,
+    "role": "One full-sheet purchase control, not landed/formed/installed cost or least-cost nesting. No certificate, supplied finish/residue or material admission."
   }
 }

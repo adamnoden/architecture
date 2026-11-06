@@ -4,7 +4,7 @@ from pathlib import Path
 import hashlib,json,math,sys
 from html import escape
 R=Path(__file__).resolve().parents[3];P=R/'project/had/studies/water-replan.json';raw=P.read_bytes()
-assert hashlib.sha256(raw).hexdigest()=='7060e954616e38576f79080d862d0171d8b5f57efffe5e008b3c281292010dc8'
+assert hashlib.sha256(raw).hexdigest()=='735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc'
 h=json.loads(raw)['model'];legacy=json.loads((R/'project/str/studies/open-loggia-support.json').read_text());arch=legacy['north_arches'];portal=h['northNormalRoute']['portal']
 assert math.isclose(portal['rawRadius'],arch['Ri']*1000,abs_tol=1e-9) and portal['centreZ']==724.666666666667
 # Horizontal formed bore, original cage, outer150plate,60washer and50nut stay.

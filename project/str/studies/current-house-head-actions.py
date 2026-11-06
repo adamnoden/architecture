@@ -52,7 +52,19 @@ def carry(name,p,unit,cat,case,trail=(),cx=0.,cy=0.):
     dx=p[0]-sum(q[0]*t for n,q,t in nodes);dy=p[1]-sum(q[1]*t for n,q,t in nodes)
     for n,q,t in nodes:
         if t:carry(n,q,unit*t,cat,case,trail+(name,),cx+dx,cy+dy)
-def source(cat,case,unit,p,nodes):
+# Optional source observer for a joined successor. Default invocation and all
+# earlier output bytes retain their original force paths. Calling alternative()
+# intercepts a *first-floor* receiving edge BEFORE it is projected onto a lower
+# wall/ground support. No coordinate-nearest retrofit of collapsed head cards.
+virtual=False
+def source(cat,case,unit,p,nodes,alternative=None):
+    global virtual
+    if 'originObserver' in globals():
+        try:
+            virtual=True
+            rawNodes=alternative() if alternative else nodes
+            originObserver(cat,case,unit,p,rawNodes)
+        finally:virtual=False
     # Each intermediate split conserves vertical force; retain perpendicular
     # offset as a signed head moment rather than losing it to a plan projection.
     if abs(unit)<1e-14:return
@@ -89,6 +101,8 @@ def opening(w,p,level,tail):
             return [(n,r,t*f) for v,t in sides(a-100,b+100,u) for n,r,f in tail(axis2(axis,v,p[1-axis]))]
     return tail(p)
 def facade(w,p,upper=True):
+    if virtual and upper:
+        i,d=outer[w];lo,hi=(A,B) if w.startswith('outer') else (C,E);return [('@'+w,axis2(i,max(lo,min(hi,p[i])),d),1.)]
     gr=lambda q:opening(w,q,'GROUND',lambda z:wallbase(w,z))
     return opening(w,p,'FIRST',gr) if upper else gr(p)
 def nearestfac(p):
@@ -138,7 +152,7 @@ def lower(p):
     # or floor edge follows its actual finite trimmer; no nearest neighbour
     # transfers across a room.
     w,d=nearestfac(p)
-    if d<=1 and (w.startswith('outer') or C-1<=p[outer[w][0]]<=E+1):return facade(w,p,False)
+    if d<=1 and (w.startswith('outer') or C-1<=p[outer[w][0]]<=E+1):return facade(w,p,virtual)
     for l in h['groundWalls']:
         i=0 if l['a'][0]!=l['b'][0] else 1
         if abs(p[1-i]-l['a'][1-i])<=75 and min(l['a'][i],l['b'][i])-1<=p[i]<=max(l['a'][i],l['b'][i])+1:return core(l,p)
@@ -197,7 +211,7 @@ for level,hh in [('ground',3.350),('upper',3.170)]:
                 # Extra area load is an enforceable combined finish, insulation,
                 # fixtures and connection mass budget per gross m² of wall face.
                 gauge=min(r[2]-r[0],r[3]-r[1])/1000;face=ar/gauge
-                source(level+' '+typ+' and finish budget','G',height*(rho*ar+face*(.4 if typ=='core' else .3))/n,pp,dest(pp))
+                source(level+' '+typ+' and finish budget','G',height*(rho*ar+face*(.4 if typ=='core' else .3))/n,pp,dest(pp),lambda:facade(name,pp) if level=='upper' and typ=='core' and name in outer else lower(pp) if level=='upper' and typ=='core' else dest(pp))
 # First-floor fields: two actual bearing edges per oriented tributary. Outside
 # those fields retain the physical bridge, trimmer and all narrow residual slabs.
 stair=xyrect(h['stair']);void=xyrect(h['void']);court=xyrect(h['court']);inner=[A,A,B,B];bridge=[4885,2735,7115,3832.5]
@@ -206,20 +220,21 @@ def strips(r,axis,a,b,fn):
     for j in range(n):
         v=lo+(hi-lo)*(j+.5)/n;p=axis2(i,(r[i]+r[i+2])/2,v)
         ary=(hi-lo)*(r[i+2]-r[i])/n/1e6
-        yield p,ary,[(n,q,t*f) for u,t in sides(a,b,p[i]) for n,q,f in fn(axis2(i,u,v))]
+        def emit():return [(n,q,t*f) for u,t in sides(a,b,p[i]) for n,q,f in fn(axis2(i,u,v))]
+        yield p,ary,emit(),emit
 firstarea=0
 for f in o['floor_fields']:
     r=f['rectangle'];i=0 if f['direction']=='EW' else 1
-    for p,ar,nodes in strips(r,i,r[i],r[i+2],lower):
+    for p,ar,nodes,emit in strips(r,i,r[i],r[i+2],lower):
         firstarea+=ar
-        for k,rate in [('G',f['G']),('Q',f['Q'])]:source('first-floor fields',k,ar*rate,p,nodes)
+        for k,rate in [('G',f['G']),('Q',f['Q'])]:source('first-floor fields',k,ar*rate,p,nodes,emit)
 # The finite entry bridge spans EW between side beams, which span NS to seats.
 def bridgeend(p):
     x,y=p
     return [(n,q,t*f) for v,t in sides(2650,C,y) for n,q,f in lower((x,v))]
-for p,ar,nodes in strips(bridge,0,4785,7215,bridgeend):
+for p,ar,nodes,emit in strips(bridge,0,4785,7215,bridgeend):
     firstarea+=ar
-    for k,r in [('G',7.5),('Q',2)]:source('first-floor bridge',k,ar*r,p,nodes)
+    for k,r in [('G',7.5),('Q',2)]:source('first-floor bridge',k,ar*r,p,nodes,emit)
 for c in read('physical-slab-join.json')['cells']:
     r=c['rect'];p=((r[0]+r[2])/2,(r[1]+r[3])/2);ar=c['area_m2'];firstarea+=ar
     if c['mode']=='loggia-transverse-end':
@@ -229,7 +244,7 @@ for c in read('physical-slab-join.json')['cells']:
         # nearest ground rib hundreds of millimetres away.
         ns=bridgeend((4785 if p[0]<6000 else 7215,p[1]))
     else:ns=lower(p)
-    for k,v in [('G',8.5),('Q',2)]:source('first-floor residual RC and finish',k,v*ar,p,ns)
+    for k,v in [('G',8.5),('Q',2)]:source('first-floor residual RC and finish',k,v*ar,p,ns,lambda:ns if c['mode']=='loggia-transverse-end' else bridgeend((4785 if p[0]<6000 else 7215,p[1])) if (4800<=p[0]<=4885 or 7115<=p[0]<=7200) and 2650<=p[1]<=C else lower(p))
 assert math.isclose(firstarea,100.6602)
 # Ground floor, all common beams/caps and their intersections taken once by
 # vertical intervals. Low loggia ties lie BELOW the sloping outdoor deck.
@@ -317,7 +332,7 @@ for xa,xb in pairwise(cuts[0]):
         p=((xa+xb)/2,(ya+yb)/2)
         if inside(p,court):continue
         ns,span=ceiling(p);maxceil=max(span,maxceil)
-        source('independent ceiling envelope','G',(xb-xa)*(yb-ya)/1e6*1.5,p,ns)
+        source('independent ceiling envelope','G',(xb-xa)*(yb-ya)/1e6*1.5,p,ns,lambda:ceiling(p)[0])
 # Two actual flights; inside landing and beam sit between real west and post
 # receivers, not half to a point where the stairwell has no slab.
 st=F['stair'];z0,z1=st['bearing_axes_y'];dx0,dx1=st['midlanding_beam']['support_axes_x']
@@ -326,14 +341,14 @@ for i,x in enumerate([A+.644*1000,A+1.938*1000]):
     for k,rate in [('G',st['G']),('Q',st['Q'])]:
         u=st['flight_body_width']*(z1-z0)/1e6*rate
         source('two stair flights',k,u,(x,(z0+z1)/2),[(n,p,f/2) for n,p,f in high]+[('stair-header',(x,z0),.5)])
-for p,ar,ns in strips([429.5,7257.5,2817.5,8852.5],1,7257.5,8852.5,lambda q:([('outer-W',(dx0,z1),(dx1-q[0])/(dx1-dx0)),('stair-post',(dx1,z1),(q[0]-dx0)/(dx1-dx0))] if q[1]==z1 else lower(q))):
+for p,ar,ns,emit in strips([429.5,7257.5,2817.5,8852.5],1,7257.5,8852.5,lambda q:([('outer-W',(dx0,z1),(dx1-q[0])/(dx1-dx0)),('stair-post',(dx1,z1),(q[0]-dx0)/(dx1-dx0))] if q[1]==z1 else lower(q))):
     for k,r in [('G',6.75),('Q',3)]:source('stair midlanding',k,r*ar,p,ns)
 # Downstand only where top 200 is already in the floor. Concrete/overlap budget
 # at abutting beam ends is conservative; these are net extra material maxima.
 for n,co,p,q in [('stair-header',F['stair_header']['section'],(A,4332.5),(C,4332.5)),('long-trimmer',F['long_trimmer']['section'],(2917.5,4332.5),(2917.5,8852.5)),('west-return',F['west_return']['section'],(2917.5,2650),(2917.5,4332.5)),('wet upper beam',o['wet_wall_beam']['section'],(2902.5,8852.5),(2902.5,B))]+[(c['id'],c['section'],(c['x_supports'][0],c['axis_y']),(c['x_supports'][1],c['axis_y'])) for c in F['corner_collectors']]:
     for p0,l in parts(p,q):
-        source('upper frame downstands','G',co['b']*(co['h']-200)/1e6*25*l,p0,lower(p0))
-for x in [4785,7215]:source('upper frame downstands','G',1.90125/2,(x,(2650+C)/2),bridgeend((x,(2650+C)/2)))
+        source('upper frame downstands','G',co['b']*(co['h']-200)/1e6*25*l,p0,lower(p0),lambda:lower(p0))
+for x in [4785,7215]:source('upper frame downstands','G',1.90125/2,(x,(2650+C)/2),bridgeend((x,(2650+C)/2)),lambda:bridgeend((x,(2650+C)/2)))
 for p,l in parts((dx0,z1),(dx1,z1)):
     source('landing beam and post','G',.250*.190*25*l,p,[('outer-W',(dx0,z1),(dx1-p[0])/(dx1-dx0)),('stair-post',(dx1,z1),(p[0]-dx0)/(dx1-dx0))])
 source('landing beam and post','G',.25*.25*(1.335+.18)*25,(2942.5,z1),[('stair-post',(2942.5,z1),1)])

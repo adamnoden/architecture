@@ -191,13 +191,21 @@ adverse = {'unchangedBufferBeyondNewDryWall':old['primaryBuffer']['station'][1]+
 assert all(v>0 for v in adverse.values())
 assert segment_rect([0,0],[10,10],[4,4,2,2])==0
 assert abs(segment_rect([0,0],[10,10],[0,10,1,1])-9/math.sqrt(2))<1e-9
+# Correct the copied working prose from the SAME pinned baseline's explicit
+# OPENARCH requirement; retain its numeric layout and historical source identity.
+utility = copy.deepcopy(baseline['rewinds']['utility'])
+utility_boundary = baseline['air']['transfer']['utilityNorthBoundaryRequirement']
+assert utility_boundary['role'] == 'OPENARCH, notaclosedutilitytransferdoor'
+assert utility_boundary['rough'] == [10250,11150] and utility_boundary['axisY'] == 2550
+utility['working'] = 'Washer/sink front at1400, floor task field to2000. Authored valve10800/1250 is450mm in plan from worker10800/1700; washer front centre10375/1400 is a different datum. Actual native hose/isolator/support and first release remain unqualified. Utility north boundary is OPENARCH10250..11150 atY2550 in the shared excluded service zone; the protected Plant door remains. A future closed utility leaf is a counterfactual requiring the three-door ventilation check/replan, not the current arrangement. Cu/inverter work fields do not intersect proposed fixed appliance bodies.'
+
 result = {
     'status':'Proposed full Services plant reservation for the joined HAD east-water hypothesis. No source adoption or MAT-SERVICES completion.',
     'immutableStartingMain':'c1986524454a0a9f518c45184e1d8808e9eebb1e',
     'sourceBlobs':{'whole-house-service-baseline.json':'2d8f7243fb87d350763f2bca3d103b89b9d14b7d','open-north-loggia.json':'25faad2c4d40df2b7da7212f73808843a88d2f52'},
     'coordinates':'mm; ground FFL0, same existing selected HAD source. Proposed plant dry bounds and water cut belong to the unadopted joined hypothesis.',
     'plantDryRoom':room,'eastWaterHypothesis':water,'intermediateArch':arch,'replacementDoor':door,
-    'plant':plant,'unchangedUtility':copy.deepcopy(baseline['rewinds']['utility']),
+    'plant':plant,'unchangedUtility':utility,
     'unchangedUpperRiser':{'gross':old['riserGross'],'formedOpening':old['formedOpeningProposal'],'services':old['proposedServices'],'scope':old['openingStatus']},
     'frontPlantArchCrossing':{'oldAxisY':3700,'newAxisY':3700,'trunkX':10350,'turnY':3200,'elbowPlan':[10050,2900,600,600],'elbowFullZ':[2815,3075],'requiredFinishedIntrados':2680,'newLowCentreProfile':[[10350,4000,2945],[10350,4000,2500],[10350,3700,2500],[10350,3400,2500],[10350,3400,2945],[10350,3200,2945],[9600,3200,2945],[9600,3200,2500],[9300,3200,2500],[9000,3200,2500],[9000,3200,2945]],'completeBand':[320,260],'lowestFinishedPanel':2350,'scope':'Refine the retained3700 local crossing in the front-west trunk. Actual retained3700/raw1275 arch intrados, full160half-width, continuous pipe bends/supports and exposed-panel access must be joined to HAD/STR; this proposed shoulder cannot be treated as a free core bore.'},
     'rearWarmTrunk':{'source':trunk,'normalFullZ':[2815,3075],'normalFullXAtGallery':[8540,8860],

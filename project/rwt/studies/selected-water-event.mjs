@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 
 const path='project/had/studies/water-replan.json';
-const expectedBlob='6f089df104fe85c028978892e7f6b63f862e3237';
+const expectedBlob='089f0dac2f2e89272dc2ea85a10c2208f2fd797d';
 const g=9.81;
 export function readSelected(){
  const raw=fs.readFileSync(path,'utf8');
