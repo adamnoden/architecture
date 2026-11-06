@@ -63,7 +63,7 @@
     "test:repo": "node scripts/validate-workflows.mjs && tsx scripts/validate-repository.ts",
     "test:rwt": "node --test project/rwt/studies/*.test.mjs",
     "test:had": "node --test project/had/studies/*.test.mjs && node project/had/studies/water-replan.mjs --check",
-    "test:mat": "python3 project/mat/studies/whole-house-service-baseline.py --check && python3 project/mat/studies/east-water-plant.py --check && python3 project/mat/studies/east-dry-bridge-envelope.py --check && python3 project/mat/studies/kitchen-replan-heat.py --check && python3 project/mat/studies/upper-access-renewal.py --check && python3 project/mat/studies/east-water-foul-join.py && python3 project/mat/studies/current-ground-pier-boundary.py --check",
+    "test:mat": "python3 project/mat/studies/whole-house-service-baseline.py --check && python3 project/mat/studies/east-water-plant.py --check && python3 project/mat/studies/east-dry-bridge-envelope.py --check && python3 project/mat/studies/kitchen-replan-heat.py --check && python3 project/mat/studies/upper-access-renewal.py --check && python3 project/mat/studies/east-water-foul-join.py && python3 project/mat/studies/current-ground-pier-boundary.py --check && python3 project/mat/studies/ground-field-assembly.py --check",
     "test:str": "node --test project/str/studies/*.test.mjs",
     "test:oas": "node --test project/oas/studies/north-export-stay-range.test.mjs && node project/oas/studies/north-export-occurrence.mjs --check",
     "test:project-control": "node --import tsx --test project/control/*.test.ts scripts/proof-scope.test.mjs scripts/validate-workflows.test.mjs",
