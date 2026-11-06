@@ -22,6 +22,35 @@ function segmentRectDistance(a,b,r){
   if(lo<=hi)return 0;
   return Math.min(pointRectDistance(a,r),pointRectDistance(b,r),...[[r[0],r[1]],[r[0]+r[2],r[1]],[r[0],r[1]+r[3]],[r[0]+r[2],r[1]+r[3]]].map(p=>pointSegmentDistance(p,a,b)));
 }
+// Scene occurrences are checked independently of the authenticated full-object import.
+export function verifyServicesOccurrences(model, current) {
+  const services = current.interfaces.architecturalServices;
+  assert.deepEqual(model.architecturalServices, services, 'Imported Services object drift');
+  for (const e of services.emitters) {
+    const furniture = e.level === 0 ? model.groundFurniture : model.upperFurniture;
+    assert.deepEqual(furniture['service-emitter-' + e.id], e.completePlanWithValvesAndBrackets,
+      'Actual emitter furniture drift: ' + e.id);
+    const projected = model.servicesInterface.emitters.find(q => q.id === e.id);
+    assert.deepEqual(projected.plan, e.completePlanWithValvesAndBrackets, 'Emitter plan projection drift');
+    assert.deepEqual(projected.z, [e.bottomLocal, e.topLocal], 'Emitter height projection drift');
+  }
+  for (const e of services.fanAccess) {
+    const published = current.extract.find(q => q.id === e.id);
+    const actual = model.servicesInterface.extract.find(q => q.id === e.id);
+    const expected = { id:e.id, level:e.level, podPlan:e.podPlan, podZ:e.podZ,
+      platform:e.maintenancePlatformPlan, workingHeight:e.maintenancePlatformWorkingHeightRange,
+      mainPort:e.path.at(-1), condensatePort:e.ceilingTrapDrainPort,
+      maintenanceFurniture:published.maintenanceFurniture ?? null };
+    assert.deepEqual(actual, expected, 'Actual extract occurrence drift: ' + e.id);
+    assert.deepEqual(model.serviceMaintenanceFields.find(q => q.id === e.id).platform,
+      e.maintenancePlatformPlan, 'Actual fan maintenance field drift: ' + e.id);
+    assert.deepEqual(model.servicesAuxiliaryProjection.fanMaintenance.find(q => q.id === e.id),
+      {id:e.id, maintenanceFurniture:published.maintenanceFurniture ?? null, doorMode:published.doorMode},
+      'Actual fan task/door-mode drift: ' + e.id);
+  }
+  return { emitters:services.emitters.length, extractTasks:services.fanAccess.length, pass:true,
+    scope:'Current actual furniture, emitter heights, extract ports/platforms and fan task states; component equality does not establish whole-house acceptance.' };
+}
 export function deriveWaterReplan({servicesText} = {}) {
   const hadPath = 'project/had/studies/open-north-loggia.json';
   assert.equal(blob(hadPath), '25faad2c4d40df2b7da7212f73808843a88d2f52');
@@ -32,7 +61,8 @@ export function deriveWaterReplan({servicesText} = {}) {
   const canonicalBytes = Buffer.from(servicesText ?? readFileSync(new URL(canonicalServicesPath, root), 'utf8'));
   assert.equal(createHash('sha1').update(`blob ${canonicalBytes.length}\0`).update(canonicalBytes).digest('hex'),
     '3e934b29d9f328b41cb9bd2498184154090492c0', 'Authenticate complete current Services source');
-  const services = JSON.parse(canonicalBytes).interfaces.architecturalServices;
+  const currentServices = JSON.parse(canonicalBytes);
+  const services = currentServices.interfaces.architecturalServices;
   const servicesProjection = createHash('sha256').update(JSON.stringify(sorted(services))).digest('hex');
   assert.equal(servicesProjection, 'a2bf80bfb19d973a01ef22948942909e386400b4a93a273d362b362a2349c4a2');
   assert.deepEqual(s.eastWaterHypothesis.finishedPassageY, [6300, 7500]);
@@ -165,9 +195,18 @@ export function deriveWaterReplan({servicesText} = {}) {
     plan:e.completePlanWithValvesAndBrackets,z:[e.bottomLocal,e.topLocal],
     renewalLift:e.renewal.requiredLift,renewalPull:e.renewal.requiredFrontPull,
     cillUnderside:e.renewal.cillUndersideMinimumIfUnderWindow,cillTop:e.renewal.requiredDrawnSillTopIfUnderWindow}));
+  for (const e of services.emitters)
+    (e.level===0 ? model.groundFurniture : model.upperFurniture)['service-emitter-'+e.id] = e.completePlanWithValvesAndBrackets;
+  model.servicesInterface.extract = services.fanAccess.map(e => ({id:e.id, level:e.level,
+    podPlan:e.podPlan, podZ:e.podZ, platform:e.maintenancePlatformPlan,
+    workingHeight:e.maintenancePlatformWorkingHeightRange, mainPort:e.path.at(-1),
+    condensatePort:e.ceilingTrapDrainPort,
+    maintenanceFurniture:currentServices.extract.find(q=>q.id===e.id).maintenanceFurniture ?? null}));
   model.servicesAuxiliaryProjection = { keyedFieldsEqual:true,
-    sourceBlob:blob(canonicalServicesPath), fields:['interfaces.architecturalServices.plant.cylinder','interfaces.architecturalServices.emitters'],
+    fanMaintenance:currentServices.extract.map(e=>({id:e.id,maintenanceFurniture:e.maintenanceFurniture??null,doorMode:e.doorMode})),
+    sourceBlob:blob(canonicalServicesPath), fields:['interfaces.architecturalServices.plant.cylinder','interfaces.architecturalServices.emitters','interfaces.architecturalServices.fanAccess','extract[].maintenanceFurniture/doorMode'],
     method:'Derived from exact current object; the historical MAT9476 auxiliary stamp is not reused.' };
+  model.servicesOccurrenceProof = verifyServicesOccurrences(model, currentServices);
   model.status = 'UNADOPTED JOINED WATER REPLAN; historical selected geometry is its input, not its current pass.';
   model.internalArchControls = services.eastWaterJoin.archControls;
   model.plantReferenceDoor={...services.eastWaterJoin.operatorEntry,
@@ -294,7 +333,16 @@ function render(v) {
 
 if(process.argv[1]===fileURLToPath(import.meta.url)){
   const v=deriveWaterReplan();
-  writeFileSync(new URL('water-replan.json',import.meta.url),JSON.stringify(v,null,2)+'\n');
-  writeFileSync(new URL('water-replan.svg',import.meta.url),render(v));
-  console.log('Wrote joined unadopted HAD hypothesis and plan/section; unresolved states retained.');
+  const outputs = new Map([
+    ['water-replan.json', JSON.stringify(v,null,2)+'\n'],
+    ['water-replan.svg', render(v)]
+  ]);
+  for (const [name, content] of outputs) {
+    const url = new URL(name, import.meta.url);
+    if (process.argv.includes('--check'))
+      assert.equal(readFileSync(url,'utf8'), content, name + ' is stale; regenerate the owning HAD source');
+    else writeFileSync(url,content);
+  }
+  console.log(process.argv.includes('--check') ? 'HAD generated JSON and SVG reproduce exactly (read-only).' :
+    'Wrote joined unadopted HAD hypothesis and plan/section; unresolved states retained.');
 }

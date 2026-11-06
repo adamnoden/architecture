@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { deriveWaterReplan } from './water-replan.mjs';
+import { deriveWaterReplan, verifyServicesOccurrences } from './water-replan.mjs';
 
 test('current replan authenticates the entire new Services source without weakening the historical selection', () => {
   const v = deriveWaterReplan();
@@ -43,4 +43,21 @@ test('east withdrawal clears the real supports and has a depressed track instead
   assert(g.routeLocalDTrial > g.fullSelectedTrackMinimumD);
   assert.equal(r.courtStagingPocketSelected, false);
   assert.equal(r.selectedWithdrawal, 'EAST');
+});
+
+
+test('current source authentication does not conceal stale actual scene occurrences', () => {
+  const current=JSON.parse(readFileSync(new URL('../../mat/studies/whole-house-service-baseline.json',import.meta.url),'utf8'));
+  const v=deriveWaterReplan();
+  assert.deepEqual([v.model.servicesOccurrenceProof.emitters,v.model.servicesOccurrenceProof.extractTasks],[16,6]);
+  for (const mutate of [
+    model=>{model.groundFurniture['service-emitter-plant-N'][0]++;},
+    model=>{const e=current.interfaces.architecturalServices.emitters.find(e=>e.level===1);model.upperFurniture['service-emitter-'+e.id][0]++;},
+    model=>{model.servicesInterface.extract[0].platform[0]++;},
+    model=>{model.servicesAuxiliaryProjection.fanMaintenance[0].doorMode+=' changed';},
+    model=>{model.serviceMaintenanceFields[0].platform[0]++;}
+  ]) {
+    const model=structuredClone(v.model);mutate(model);
+    assert.throws(()=>verifyServicesOccurrences(model,current),/drift/);
+  }
 });

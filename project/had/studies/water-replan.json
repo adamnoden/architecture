@@ -4443,10 +4443,58 @@
     },
     "servicesAuxiliaryProjection": {
       "keyedFieldsEqual": true,
+      "fanMaintenance": [
+        {
+          "id": "ground-WC",
+          "maintenanceFurniture": null,
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        },
+        {
+          "id": "utility",
+          "maintenanceFurniture": null,
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        },
+        {
+          "id": "kitchen",
+          "maintenanceFurniture": {
+            "eastNorthChairPark": [
+              10800,
+              8475,
+              500,
+              500
+            ],
+            "eastSouthChairPark": [
+              7750,
+              10400,
+              500,
+              500
+            ],
+            "state": "Parktworigidchairsbeforeplatformerection; restoreaftercompletefanreassembly/testing/platformremoval. Actualotherchairs/table retained."
+          },
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        },
+        {
+          "id": "rear-bath",
+          "maintenanceFurniture": null,
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        },
+        {
+          "id": "family-bath",
+          "maintenanceFurniture": null,
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        },
+        {
+          "id": "principal-bath",
+          "maintenanceFurniture": null,
+          "doorMode": "Roomdoor closed before deployingplatform where required; firstopening/closing/carrying and actualframe mustqualify separately. No furnituremoved and no standingonfixtures is credited bythis platformtest."
+        }
+      ],
       "sourceBlob": "3e934b29d9f328b41cb9bd2498184154090492c0",
       "fields": [
         "interfaces.architecturalServices.plant.cylinder",
-        "interfaces.architecturalServices.emitters"
+        "interfaces.architecturalServices.emitters",
+        "interfaces.architecturalServices.fanAccess",
+        "extract[].maintenanceFurniture/doorMode"
       ],
       "method": "Derived from exact current object; the historical MAT9476 auxiliary stamp is not reused."
     },
@@ -12912,6 +12960,12 @@
         "makeupRequirement": "Dedicated measured30L/s at5Pa, pressure-controlled/interlocked opening, normally closed. Separate from78L/s selected background; no open-window chore or recirculation-onlyhood credit.",
         "hood": "600wide spans600hob; actual capture, grease cleanout, motor/controls/residues and classified cooking/fire relationship required."
       }
+    },
+    "servicesOccurrenceProof": {
+      "emitters": 16,
+      "extractTasks": 6,
+      "pass": true,
+      "scope": "Current actual furniture, emitter heights, extract ports/platforms and fan task states; component equality does not establish whole-house acceptance."
     },
     "internalArchControls": {
       "status": "Explicit joined HAD reference geometry; no masonry capacity or classified closure acceptance.",
