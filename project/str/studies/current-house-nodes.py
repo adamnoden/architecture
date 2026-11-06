@@ -11,7 +11,7 @@ bridge=json.loads(Path(__file__).with_name('current-house-bridge.json').read_tex
 fyd=500/1.15;fcd=.85*30/1.5
 # Keep the existing 450-depth field as the initially joined node reference.
 # A passing 250 field is NOT automatically an anchored, integral node.
-nodeTop=-180;nodeBottom=-750;headDiameter=400;N=850;Mx=My=100
+nodeTop=-180;nodeBottom=-750;nodeNS=650;headDiameter=400;N=850;Mx=My=100
 cover=50; bar=20;link=10
 zBottom=[-680,-640];zTop=[-250,-290]
 assert zBottom[0]-bar/2-nodeBottom>=cover+link
@@ -30,12 +30,12 @@ for name,width,axis in [('court',600,7950),('spine',900,9300)]:
  x=[axis-width/2,axis+width/2]
  nodeRows=[]
  for y in b['supportAxesY']:
-  bounds=[x[0],y-300,width,600]
+  bounds=[x[0],y-nodeNS/2,width,nodeNS]
   # Current 900 opening, not simply its 600 water clear.
   aperture=h['renewal']['withdrawalTrackClearY']
   # Pick the positive adjacent edge for each node.
-  gap=aperture[0]-(y+300) if y<aperture[0] else y-300-aperture[1]
-  assert gap>=50
+  gap=aperture[0]-(y+nodeNS/2) if y<aperture[0] else y-nodeNS/2-aperture[1]
+  assert gap>=25
   nodeRows.append({'axis':[axis,y],'plan':bounds,'z':[nodeBottom,nodeTop],'waterPortalReserve':gap})
  positions=[-240,-190,0,190,240] if width==600 else [-390,-340,0,340,390]
  assert min((positions[i+1]-positions[i]-bar)for i in range(4))>=30
@@ -44,7 +44,7 @@ for name,width,axis in [('court',600,7950),('spine',900,9300)]:
   'barAcrossWidthOffsets':positions,'clearCoverToOuterLink':cover,
   'wallBearing':None if wall is None else {'fullFinishedWall':wall['finishedFaces'],'nodeEastReserve':x[1]-wall['finishedFaces'][1]},
   'minimumStraightDevelopmentIntoActualGridArms':straight,
-  'incrementalConcreteWeightFrom600Node':(width-600)*600*570/1e9*25})
+  'incrementalConcreteWeightFrom600Node':(width*nodeNS-600*600)*570/1e9*25})
 assert rows[1]['wallBearing']['nodeEastReserve']==27.5
 # A reaction envelope bounds four local current-bridge end shears plus actual hip.
 local=max(s['V'] for r in bridge['members'] for s in r['capacityComparison'] if s['depth']==450)
@@ -63,6 +63,7 @@ result={'status':'Representative integral node force/space reference; actual arm
  'anchorageBoundary':{'450field':'Its lower main steel can continue into the deep node without a200 vertical offset. Actual continuous longitudinal routes reserve750 into connected arms, as in the archived grillage proposition; corners/terminations and orthogonal cage fabrication require matched STR-RECONCILE evidence.',
  '250field':'Positive member section screen only. Its bottom main bars are200 higher; an explicit force-turn/development detail is required before changing the field soffit or waterbed. No reduction of the selected450 member is adopted here.',
  'knownFailureControl':'A600-wide spine node leaves122.5 of the actual weatherleaf beyond the node. Widening only the field member does not fix that bearing route.'},
+ 'transverseWallBearing':{'southActualCore':[5807.5,5947.5],'northActualCore':[7852.5,7992.5],'southCandidateNodeY':[5775,6425],'northCandidateNodeY':[7375,8025],'actualCoreMinimumReserve':32.5,'old600NodeCoreReserve':7.5,'currentWaterPortalReserve':25,'declaredConstructionSetoutTolerance':25,'role':'650NS candidate is below-floor only. Wall alignment unchanged; no reduction of finished exterior1200clear band is claimed.'},
  'qualification':'N850 and M100 each are declared node design limits, not allocated whole-house reactions. A pile section capacity is not pile/soil or wet-ground admission; the whole-house ledger must remain inside the force domain.'}
 assert result['reference']['headAverageStressMPa']<fcd
 assert result['reference']['pileSectionHistoricalDomain']['demandResultant']<result['reference']['pileSectionHistoricalDomain']['minimumResultantMomentResistance']

@@ -1,0 +1,298 @@
+{
+  "RClegs": {
+    "H500": 17.435784094981955,
+    "Ndomain": [
+      -100,
+      500
+    ],
+    "actualCollectorTopSway": 12.973741593392152,
+    "actualFirstFloorSway": 4.303564691899453,
+    "actualLpolygonLegPhysicalLength": 1000,
+    "architecturalChange": "Replace the inner140core at each outercorner by RC L-pier, including a deliberate formed RC transition where existing inner-leaf arch spring/ring territory overlaps. Rawwindow aperture remains37.5clear ofpier; outerweatherbrickarch unchanged. This is a material/load-path rewind, not an unchanged historic masonryjoint.",
+    "barCentresAlongLeg": [
+      50,
+      100,
+      800,
+      850
+    ],
+    "barsAcrossCore": [
+      43,
+      97
+    ],
+    "conservativeSection": [
+      140,
+      900
+    ],
+    "crackedInertiaFraction": 0.25,
+    "grossLInertia": 23832115698.924732,
+    "longitudinal": "8H20 per leg, four at each end; symmetric N-M section includes displaced concrete. HorizontalH10/150 bothfaces.",
+    "piers": [
+      {
+        "cornerPileGroup": [
+          [
+            332.5,
+            332.5
+          ],
+          [
+            1192.5,
+            332.5
+          ],
+          [
+            332.5,
+            1192.5
+          ]
+        ],
+        "polygon": [
+          [
+            262.5,
+            262.5
+          ],
+          [
+            1262.5,
+            262.5
+          ],
+          [
+            1262.5,
+            402.5
+          ],
+          [
+            402.5,
+            402.5
+          ],
+          [
+            402.5,
+            1262.5
+          ],
+          [
+            262.5,
+            1262.5
+          ]
+        ],
+        "z": [
+          -180,
+          6940
+        ]
+      },
+      {
+        "cornerPileGroup": [
+          [
+            11667.5,
+            332.5
+          ],
+          [
+            10807.5,
+            332.5
+          ],
+          [
+            11667.5,
+            1192.5
+          ]
+        ],
+        "polygon": [
+          [
+            11737.5,
+            262.5
+          ],
+          [
+            10737.5,
+            262.5
+          ],
+          [
+            10737.5,
+            402.5
+          ],
+          [
+            11597.5,
+            402.5
+          ],
+          [
+            11597.5,
+            1262.5
+          ],
+          [
+            11737.5,
+            1262.5
+          ]
+        ],
+        "z": [
+          -180,
+          6940
+        ]
+      },
+      {
+        "cornerPileGroup": [
+          [
+            332.5,
+            11667.5
+          ],
+          [
+            1192.5,
+            11667.5
+          ],
+          [
+            332.5,
+            10807.5
+          ]
+        ],
+        "polygon": [
+          [
+            262.5,
+            11737.5
+          ],
+          [
+            1262.5,
+            11737.5
+          ],
+          [
+            1262.5,
+            11597.5
+          ],
+          [
+            402.5,
+            11597.5
+          ],
+          [
+            402.5,
+            10737.5
+          ],
+          [
+            262.5,
+            10737.5
+          ]
+        ],
+        "z": [
+          -180,
+          6940
+        ]
+      },
+      {
+        "cornerPileGroup": [
+          [
+            11667.5,
+            11667.5
+          ],
+          [
+            10807.5,
+            11667.5
+          ],
+          [
+            11667.5,
+            10807.5
+          ]
+        ],
+        "polygon": [
+          [
+            11737.5,
+            11737.5
+          ],
+          [
+            10737.5,
+            11737.5
+          ],
+          [
+            10737.5,
+            11597.5
+          ],
+          [
+            11597.5,
+            11597.5
+          ],
+          [
+            11597.5,
+            10737.5
+          ],
+          [
+            11737.5,
+            10737.5
+          ]
+        ],
+        "z": [
+          -180,
+          6940
+        ]
+      }
+    ],
+    "requiredMovementInterface": "Reserve \u00b110mm relative wind movement at nonstructural infill/RC returns; current plain bonded masonry/plaster and window/arch junctions do NOT automatically earn compatibility from H/500. Locate final local slip/head/arch-abutment interface before adoption; physicalweather/firefinish acceptance remains downstream.",
+    "sectionNM": [
+      {
+        "MR": 383.57858619632043,
+        "N": -100,
+        "neutralAxis": 105.66880049748602
+      },
+      {
+        "MR": 420.0029634458182,
+        "N": 0,
+        "neutralAxis": 120.20561388662773
+      },
+      {
+        "MR": 505.40117083785094,
+        "N": 250,
+        "neutralAxis": 180.53568187294013
+      },
+      {
+        "MR": 577.6894869831111,
+        "N": 500,
+        "neutralAxis": 270.60413068624666
+      }
+    ],
+    "serviceComparator": "Declared fullheight/500 design screen; not a regulatory/site acceptance",
+    "serviceCrackedDeflection": 17.161235316133574,
+    "shearResistance": 348.30701159365105,
+    "storeyRacking": [
+      4.303564691899453,
+      8.670176901492699
+    ]
+  },
+  "capillarySplice": {
+    "governingCard": {
+      "M": 300,
+      "Ncompression": 500,
+      "Nuplift": 100,
+      "V": 75
+    },
+    "physicalAdmission": false,
+    "plan": "ExacteachLpolygon",
+    "plateThickness": 20,
+    "plateZ": [
+      -50,
+      -30
+    ],
+    "role": "Unperforatedstructuralmetalplate: alignedanchoredlongitudinalsteel terminatesatopposedfaces; no continuousbar/hole bypasses thecapillaryplane. Compression/tension/shear cross thefiniteplatesplice. MATowns edgeDPC/air/gas continuity andthermalcost; plate/anchorforces must matchthiscard."
+  },
+  "foundationRequiredDomain": {
+    "belowGrillageFacade": "Wind on exposedplinth below\u2212180 is a separate ground/node action and must be included in actualfoundation design, not additionalupperpier bending.",
+    "cornerPairLever": 0.86,
+    "lateralCoupleForce": 308.2043321035769,
+    "maxCompressionWithN500": 558.2043321035769,
+    "minUpliftResistanceRequired": 408.2043321035769,
+    "pileSection": "400diameter8H22 historicalsection has tensile steel >1.3MN atdeclaredS500; groundbond, pilegroup, wetground/lateralcapacity remain required siteadmissibility conditions."
+  },
+  "horizontalRoute": {
+    "chordDemand": 93.53532443196335,
+    "chordResistance": 546.3639397547466,
+    "declaredShearBudgetMPa": 0.5,
+    "diaphragmShearMPa": 0.392305142137094,
+    "firstFloor": "RC200 diaphragm withH12/150 bothfaces/twoaxes; chords4H20 inactualperimeter/court/voidedge strips; collectorforces continue toRCcornerlegs. Localvoidreturn/chordanchorfinalfabrication remainsSTR-RECONCILE, not a missing stabilitysystem.",
+    "grillage": "ActualRCcornerbase group at860lever resolvesmomentasaxialcouple. Continuous600x450grillage arms and threepileheads percorner areexplicit; no soil/friction/upliftcapacity inferred.",
+    "roof": "Tied steel primary/hip frames -> positive diagonalroof straps -> continuous140x400RCcourt/outerrings -> fourRCcornerL-piers. No unsupported jack-root moments or compression arch tie credited."
+  },
+  "source": {
+    "path": "project/had/studies/water-replan.json",
+    "sha256": "dbfff5eb4fa36dbdf6635702e853792e6412d73df1c58f9e1c1ede1bcff205b8"
+  },
+  "status": "Preferred stability candidate calculated; current-source joint/mass/reaction integration and architectural adoption remain active",
+  "units": "mm, kN, kNm, MPa unless stated",
+  "wholeHouseStructuralSelection": false,
+  "wind": {
+    "basis": "Authored whole-facade rectangular envelope, not a site wind assessment. Entire ridge-height rectangle; no favourableG. \u00b1X and\u00b1Y separately; oppositecorner symmetry. Site action above this bound reopens design.",
+    "characteristicPressure": 1.5,
+    "designPressure": 2.25,
+    "facadeWidthM": 12.4,
+    "globalBaseM": 1060.2229024363046,
+    "globalV": 243.22918812499827,
+    "heightAboveGrillageM": 8.717892047490977,
+    "loadAboveRoofCollector": "Actual roof steel/bracing routes wind above6940 into closedcollector; no masonryarch/ceiling credited.",
+    "perLegM": 265.05572560907615,
+    "perLegV": 60.80729703124957
+  }
+}

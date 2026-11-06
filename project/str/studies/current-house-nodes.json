@@ -27,7 +27,7 @@
       },
       "clearCoverToOuterLink": 50,
       "id": "court",
-      "incrementalConcreteWeightFrom600Node": 0.0,
+      "incrementalConcreteWeightFrom600Node": 0.4275,
       "minimumStraightDevelopmentIntoActualGridArms": 750,
       "nodes": [
         {
@@ -37,11 +37,11 @@
           ],
           "plan": [
             7650.0,
-            5800,
+            5775.0,
             600,
-            600
+            650
           ],
-          "waterPortalReserve": 50,
+          "waterPortalReserve": 25.0,
           "z": [
             -750,
             -180
@@ -54,11 +54,11 @@
           ],
           "plan": [
             7650.0,
-            7400,
+            7375.0,
             600,
-            600
+            650
           ],
-          "waterPortalReserve": 50,
+          "waterPortalReserve": 25.0,
           "z": [
             -750,
             -180
@@ -101,7 +101,7 @@
       },
       "clearCoverToOuterLink": 50,
       "id": "spine",
-      "incrementalConcreteWeightFrom600Node": 2.565,
+      "incrementalConcreteWeightFrom600Node": 3.2062500000000003,
       "minimumStraightDevelopmentIntoActualGridArms": 750,
       "nodes": [
         {
@@ -111,11 +111,11 @@
           ],
           "plan": [
             8850.0,
-            5800,
+            5775.0,
             900,
-            600
+            650
           ],
-          "waterPortalReserve": 50,
+          "waterPortalReserve": 25.0,
           "z": [
             -750,
             -180
@@ -128,11 +128,11 @@
           ],
           "plan": [
             8850.0,
-            7400,
+            7375.0,
             900,
-            600
+            650
           ],
-          "waterPortalReserve": 50,
+          "waterPortalReserve": 25.0,
           "z": [
             -750,
             -180
@@ -198,5 +198,28 @@
     }
   ],
   "status": "Representative integral node force/space reference; actual arm allocation and whole-house signed ledger remain active",
+  "transverseWallBearing": {
+    "actualCoreMinimumReserve": 32.5,
+    "currentWaterPortalReserve": 25,
+    "declaredConstructionSetoutTolerance": 25,
+    "northActualCore": [
+      7852.5,
+      7992.5
+    ],
+    "northCandidateNodeY": [
+      7375,
+      8025
+    ],
+    "old600NodeCoreReserve": 7.5,
+    "role": "650NS candidate is below-floor only. Wall alignment unchanged; no reduction of finished exterior1200clear band is claimed.",
+    "southActualCore": [
+      5807.5,
+      5947.5
+    ],
+    "southCandidateNodeY": [
+      5775,
+      6425
+    ]
+  },
   "units": "mm, kN, kNm, MPa unless stated"
 }
