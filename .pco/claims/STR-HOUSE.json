@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w2"
   },
   "claimedAt": "2026-11-06T12:10:56.619Z",
-  "heartbeatAt": "2026-11-06T13:17:02.209Z",
-  "expiresAt": "2026-11-06T14:47:02.209Z",
+  "heartbeatAt": "2026-11-06T14:24:34.083Z",
+  "expiresAt": "2026-11-06T15:54:34.083Z",
   "branch": "work/zerg-20261106-w2-str",
   "predecessor": {
     "leaseId": "76ac4987-5c36-4425-875c-341f99336d34",
@@ -36,8 +36,8 @@
   },
   "pr": 1340,
   "checkpoint": {
-    "evidence": "Published 1b29a4ac tree54e33ca5: four current-source reproducers; actual900x600 node domains and orthogonal layers, tie legacy action provenance; test:str14 regressions plus4producers pass. WIP not selected.",
-    "next": "Complete conserved whole-house gravity/signed lateral ledger, actual roof-corner secondary/collector route and current mineral bearing/occupation proposition.",
-    "blocker": "No external blocker; remaining internal roof-corner/loadpath and whole-house allocation work explicit."
+    "evidence": "Published ed876c75 treeb9faa3ee: conserved144.15m2 roofnetwork with actualsteelG407.706 and independent adverse rowcases; rejected old moment-incomplete8bolt witness; actualfront elevation and catchment distinction preserved;14STR regressions+9producers pass.",
+    "next": "Complete commonclosed welded ordinary/45hip node, actualarch/slidingbearing movement join, whole-house origin/support ledger and all-support moisture boundary with MAT; then coherent source selection.",
+    "blocker": "Internal design joins explicit; no external dependency or construction admission claimed."
   }
 }
