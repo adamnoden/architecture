@@ -94,6 +94,7 @@ def feed(label,upper,l,h,role):
         row[0]+=min(k*l,k*h);row[1]+=max(k*l,k*h)
     for key,k in ms.items():spanCases[key].append((label,k,l,h))
     components[label]+=l*sum(upper.values())
+    if 'retainedObserver' in globals() and role=='guaranteed':retainedObserver(label,upper,l)
 # Architectural minimum: mandated formed steel component count, at least 95%
 # of computed nominal area and density 77 vs 78.5. Neither node allowances,
 # maximum nonsteel roof layers, finishes, glazing nor contents stabilise suction.
