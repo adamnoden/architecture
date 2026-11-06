@@ -9,9 +9,9 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-06T22:03:48.695Z",
-  "expiresAt": "2026-11-06T23:33:48.695Z",
-  "branch": "work/zerg-20261106-ias-g9",
+  "heartbeatAt": "2026-11-06T22:21:34.996Z",
+  "expiresAt": "2026-11-06T23:51:34.996Z",
+  "branch": "work/zerg-20261106-ias-g10",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
     "generation": 22,
@@ -34,7 +34,7 @@
   },
   "pr": 1352,
   "checkpoint": {
-    "evidence": "Recoverable PR 1352 witness checkpoint a7b0d4dea83b11762a941ea97cb30e08848c6c56 tree a9b87976ae667917e9baec105bc56f871d3bd083 exact readback and local tree match. Current occurrence map preserves Study, principal, Bed4 and family witnesses with runtime relationship assertions; adverse generation/check cases reject broken joins. Prior e3b all 14 workflows succeeded; new exact-head CI pending. No installation, exception or IAS completion.",
-    "next": "RWT1344 merged at 2a310840. Wait for queued service PR 1356, then reconcile actual main and legitimate dependent maps once; full exact-head CI, accepted bounded root review and fresh canonical merge-check before integration. Continue IAS after bounded-result merge."
+    "evidence": "PR 1352 merged at 969c4bf64b0f7b52c9a82572f5321e8fe6fa0d9a after exact head 6d8640e6 all 14 workflows, root independent review and canonical preflight. Deleted g9 verified; fresh remote g10 starts exact merged main. IAS remains open; no installed joint, material exception or family completion.",
+    "next": "Continue highest-value actual occurrence/disassembly join from current source ledger; preserve specific wet-joint native sealing evidence hold and rejected 48-package access direction. Prior PR1352 is merged history; g10 has no new actual PR until source warrants."
   }
 }
