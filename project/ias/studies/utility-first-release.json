@@ -1,0 +1,183 @@
+{
+  "status": "Conditional utility first-release comparator; no connected, worker, support, handling or installation pass",
+  "units": "mm unless named otherwise",
+  "sources": {
+    "had": {
+      "path": "project/had/studies/water-replan.json",
+      "blob": "6f089df104fe85c028978892e7f6b63f862e3237"
+    },
+    "services": {
+      "path": "project/mat/studies/whole-house-service-baseline.json",
+      "blob": "69c7b1b1e733b9ade2d8ae21c1552accf52a6261"
+    }
+  },
+  "native": {
+    "model": "Bosch WAN282X2GB",
+    "document": "9001906867_B, 5 February 2024",
+    "url": "https://media3.bosch-home.com/Documents/9001906867_B.pdf",
+    "sha256": "cb9df5dba938f70c225d7090f7f3ffed0da286ef5910e9f7f0b7026e136c0e97",
+    "role": "Retired product used as one native first-release comparator; not a procurement or material selection.",
+    "width": 598,
+    "bodyDepth": 550,
+    "closedDepth": 600,
+    "height": 848,
+    "doorOpenDepth": 1017,
+    "massKg": 68.9,
+    "inletHose": 1500,
+    "outletHose": 1500,
+    "cord": 2100,
+    "inletThread": "3/4 inch; native minimum clear bore 17 mm and thread engagement length 10 mm",
+    "drainHeight": [
+      600,
+      1000
+    ],
+    "siphonClampDiameter": [
+      24,
+      40
+    ],
+    "sources": {
+      "connection": "pp. 14–16",
+      "drain": "pp. 33–34",
+      "removalAndTransit": "p. 45",
+      "dimensions": "pp. 47–48"
+    },
+    "limits": [
+      "No lifting alone or gripping protruding parts; upright transport; four feet on an even solid surface.",
+      "Native transport sequence drains and detaches hoses and reinstalls rear transit bolts. No express allowance for an unbolted first in-room drawout is established here.",
+      "Do not combine masses or depths from a different model edition. Actual purchased E-Nr./FD and manual must match."
+    ]
+  },
+  "sourceDisposition": {
+    "legacyX9500": "Historical I00-C1 upper small-en-suite front remains unadopted. Current utility washer is a different owning occurrence; this task neither relocates nor discharges the accepted-source reservation.",
+    "Q350": "Explicitly retired uninstalled plant comparison in current Services; absent from current HAD. Ventilation function now has its separate W9 source/method; no installed device is silently removed.",
+    "entrance": {
+      "opening": [
+        10250,
+        11150
+      ],
+      "axis": 2550,
+      "operation": "OPENARCH within sharedplant/utilityservicezone",
+      "protectedBoundary": "E20referencePlantdoorx9300/y2750..3650 remains; no newprotectedvolumeconnection",
+      "trade": "No separateutilityacoustic/privacyclosure; actualclassifiedPlantboundaryandservicepenetrations mustqualify."
+    },
+    "baselineWorking": "Washer/sink front at1400, floor task field to2000. Washer valve10800/1250 is450 from front bodycentre10800/1700, not inaccessible behind appliance. Utility door must be checked in actual open/closed modes; no sink-use pass under an untested inward900leaf. Cu/inverter work fields do not intersect proposed fixed appliance bodies."
+  },
+  "geometry": {
+    "reservation": [
+      10050,
+      700,
+      650,
+      700
+    ],
+    "body": [
+      10076,
+      800,
+      598,
+      600
+    ],
+    "rest": [
+      10076,
+      1500,
+      598,
+      600
+    ],
+    "pull": 700,
+    "sweep": [
+      10076,
+      800,
+      598,
+      1300
+    ],
+    "retainedFixtureCount": 37,
+    "collisions": [],
+    "nearestFixtureClearances": [
+      {
+        "id": "service-utility-valveBay",
+        "distance": 26
+      },
+      {
+        "id": "service-utility-rearServiceChase",
+        "distance": 100
+      },
+      {
+        "id": "service-utility-PVinverter",
+        "distance": 213.29849976031244
+      },
+      {
+        "id": "service-utility-sink",
+        "distance": 276
+      },
+      {
+        "id": "service-utility-electricalStation",
+        "distance": 379
+      }
+    ],
+    "northWallFace": 2453,
+    "northRestReserve": 353,
+    "rearBodyClearToOldReservation": 100,
+    "frontWorker": [
+      10800,
+      1725,
+      300
+    ],
+    "rearWorker": [
+      10375,
+      1175,
+      300
+    ],
+    "frontWorkerClearance": 25,
+    "rearWorkerClearance": 25,
+    "tasks": {
+      "tap": {
+        "point": [
+          10800,
+          1250,
+          1050
+        ],
+        "shoulder": [
+          10800,
+          1725,
+          1450
+        ],
+        "straightReach": 620.987117418711
+      },
+      "drain": {
+        "point": [
+          10800,
+          1250,
+          800
+        ],
+        "shoulder": [
+          10800,
+          1725,
+          1100
+        ],
+        "straightReach": 561.8051263561058
+      }
+    },
+    "electricalWorkingField": [
+      9697,
+      1750,
+      1000,
+      650
+    ],
+    "temporaryElectricalWorkingOverlapMM2": 209300
+  },
+  "sequence": [
+    "Keep washer upright on its native feet; do not attach its mass, retained pipe support or electrical protection to a decorative face.",
+    "Before any movement: turn off actual local tap; empty inlet, switch off and unplug at accessible fixed socket; drain cooled residual water through native front service hose into a supported sufficiently large container.",
+    "Detach the actual tap-side inlet, supported fixed waste terminal and accessible electrical plug in the independently supported service front. Retain all fixed pipes/supports; cap and make safe. Keep appliance-side captive hoses/cord with the machine.",
+    "Only after the complete fixed ends are disconnected and actual handling is qualified, test the 700 mm north in-room drawout. This body-only sweep does not supply hands, sliders, wheels, grips or safe pulling force.",
+    "Use newly available rear territory for actual transit-bolt access; qualify its sequence before any transport. Do not infer permission for unbolted initial motion from this geometry.",
+    "Electrical-station work is unavailable during the first rest; carry out independent isolation beforehand and preserve required emergency isolation/access. Restore the utility and all electrical work space after reconnection, leak/electrical checks and native levelling."
+  ],
+  "open": [
+    "Actual tap/standpipe or siphon/socket, independent supports/anchors and water/electrical segregation remain to be joined with Services; no product fit or height adoption follows from the authored points.",
+    "Native hose lengths are not routed usable lengths: actual rear outlets, bends, connectors, clamps and slack/coiling must fit the reserved 100 mm gross depth and 26 mm side allowances; no fitted hose route is proved.",
+    "Static 300 mm plan circles and two straight reach values are authored screening proxies, not qualified posture, hand/tool trajectories, sight line or full rear bolt reach.",
+    "Native front drain container, flap, hose and pump-cap task need their complete actual receiving geometry. No tilted machine or top/door lifting is credited.",
+    "Actual full moving package/mass, feet/floor contact, initial force and tilt, grips/crew or ordinary appliance handling aid, rear bolt order and supported first rest remain unearned.",
+    "The 700 mm pull is an in-room first rest only; no export through the open arch, neighbouring W9 bay or protected Plant door is claimed.",
+    "Polymer hoses, seals, drum/door/electrical and other functional residues remain explicit and unapproved; no certified innards are replaced and no material optimum is claimed."
+  ]
+}
