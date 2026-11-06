@@ -1,0 +1,1150 @@
+{
+  "identity": "RWT-NATIVE-E-MANUAL-RELEASE-REFERENCE-2026-11-06",
+  "selectedHadBlob": "6f089df104fe85c028978892e7f6b63f862e3237",
+  "question": "Can ordinary manual access and a supported draw-out carrier replace the unearned remote staff and RC service box?",
+  "selectedGeometryChanged": false,
+  "accepted": false,
+  "physicalEventPerformed": false,
+  "siteAccepted": false,
+  "nativeAssembly": {
+    "flange": "Endex89719/N1FMGI159",
+    "bend": "Endex89710/N18",
+    "tool": "HAZET916GL",
+    "sources": [
+      "https://aalberts-ips.co.uk/products/item/89719/",
+      "https://aalberts-ips.co.uk/products/item/89710/",
+      "https://aalberts-ips.co.uk/wp-content/uploads/2023/12/Endex-09969088_56035915_Brochure_2023.pdf",
+      "https://www.hazet.de/en/products/hand-tools/nut-driver/operating-tool-nut-driver/product/ean-4000896202485"
+    ],
+    "inspectedDate": "2026-11-06",
+    "toolNativeFacts": {
+      "length": 511,
+      "hingeGreaterThanDegrees": 180,
+      "teeth": 32,
+      "returnAngle": 11.25,
+      "manual": true
+    },
+    "productHolds": "Endex catalogue conflicts retained. Actual PCD/bolts, backing-ring rotation/retention, bolt tightening/loosening torque, gasket, head/socket dimensions and complete delivered N18 body are not sourced by the reference dimensions."
+  },
+  "manualReference": {
+    "floor": -1200,
+    "clockRange": [
+      20.5,
+      24.5
+    ],
+    "clockStep": 1,
+    "shoulderHeightsAboveFloor": [
+      650,
+      850
+    ],
+    "shoulderRole": "Explicit low floor-seated reference and 200-high seat reference; actual body/tool trial required",
+    "shoulderXY": [
+      7300,
+      6575
+    ],
+    "bodyRadius": 300,
+    "bodyPlan": [
+      7000,
+      6275,
+      600,
+      600
+    ],
+    "gripWorkingLength": 450,
+    "toolFullLength": 511,
+    "flexWest": 250,
+    "flexAngleDegrees": 33.74898859588859,
+    "torqueSensitivity": [
+      {
+        "torqueNm": 50,
+        "tangentialHandForceN": 133.6306209562122,
+        "rated": false
+      },
+      {
+        "torqueNm": 100,
+        "tangentialHandForceN": 267.2612419124244,
+        "rated": false
+      },
+      {
+        "torqueNm": 150,
+        "tangentialHandForceN": 400.8918628686366,
+        "rated": false
+      },
+      {
+        "torqueNm": 200,
+        "tangentialHandForceN": 534.5224838248488,
+        "rated": false
+      }
+    ],
+    "headPlane": [
+      7470.00553575754,
+      7000,
+      -774.058888655971
+    ],
+    "flangeFaceNormal": [
+      0.9999308030307444,
+      0,
+      -0.011763891800361699
+    ],
+    "assumedPitchCircleDiameter": 240,
+    "assumedEightHolesDiameter": 22,
+    "clockSpecification": "Project installation datum22.5° from +Y towards rotated+Z,±2°. Discrete clock/handle/stroke samples are a necessary reference, not continuous collision certification. Both matching faces must be indexed/witnessed before closing. Actual backing-ring/braze arrangement must permit/retain the datum; not native catalogue evidence.",
+    "sampleCount": 40,
+    "geometryFailures": 0,
+    "maximumReferenceReach": 574.6245874699508,
+    "worstPose": {
+      "clockDegrees": 20.5,
+      "boltIndex": 7,
+      "shoulder": [
+        7300,
+        6575,
+        -350
+      ],
+      "handleAngleDegrees": 91.5,
+      "worstGripReach": 574.6245874699508,
+      "minFloorHandReserve": 700.373045392135,
+      "minStraightNeckReserve": 0.48406445154095934
+    },
+    "reachLimitHypothesis": 600,
+    "referenceWithin600": true,
+    "perBoltWorst": [
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 0,
+        "shoulder": [
+          7300,
+          6575,
+          -350
+        ],
+        "handleAngleDegrees": 136.5,
+        "worstGripReach": 317.2285468481779,
+        "minFloorHandReserve": 650.6037938605689,
+        "minStraightNeckReserve": 0.48406445154151356
+      },
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 1,
+        "shoulder": [
+          7300,
+          6575,
+          -550
+        ],
+        "handleAngleDegrees": 166.5,
+        "worstGripReach": 144.16102437476454,
+        "minFloorHandReserve": 539.3316574401565,
+        "minStraightNeckReserve": 12.988758707488458
+      },
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 2,
+        "shoulder": [
+          7300,
+          6575,
+          -550
+        ],
+        "handleAngleDegrees": 164,
+        "worstGripReach": 89.5506436015632,
+        "minFloorHandReserve": 558.6538009179623,
+        "minStraightNeckReserve": 17.999999999999943
+      },
+      {
+        "clockDegrees": 22.5,
+        "boltIndex": 3,
+        "shoulder": [
+          7300,
+          6575,
+          -550
+        ],
+        "handleAngleDegrees": 150.5,
+        "worstGripReach": 87.09377689904014,
+        "minFloorHandReserve": 576.2312642773237,
+        "minStraightNeckReserve": 18.00000000000017
+      },
+      {
+        "clockDegrees": 24.5,
+        "boltIndex": 4,
+        "shoulder": [
+          7300,
+          6575,
+          -550
+        ],
+        "handleAngleDegrees": 139.5,
+        "worstGripReach": 97.0177820020425,
+        "minFloorHandReserve": 543.0509989033076,
+        "minStraightNeckReserve": 17.999999999999744
+      },
+      {
+        "clockDegrees": 24.5,
+        "boltIndex": 5,
+        "shoulder": [
+          7300,
+          6575,
+          -550
+        ],
+        "handleAngleDegrees": 139,
+        "worstGripReach": 161.04841981145663,
+        "minFloorHandReserve": 483.08827920057513,
+        "minStraightNeckReserve": 5.74060457672833
+      },
+      {
+        "clockDegrees": 24.5,
+        "boltIndex": 6,
+        "shoulder": [
+          7300,
+          6575,
+          -550
+        ],
+        "handleAngleDegrees": 178.5,
+        "worstGripReach": 380.2314355253268,
+        "minFloorHandReserve": 239.53189181312484,
+        "minStraightNeckReserve": 0.48406445154149935
+      },
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 7,
+        "shoulder": [
+          7300,
+          6575,
+          -350
+        ],
+        "handleAngleDegrees": 91.5,
+        "worstGripReach": 574.6245874699508,
+        "minFloorHandReserve": 700.373045392135,
+        "minStraightNeckReserve": 0.48406445154095934
+      }
+    ],
+    "accepted": false,
+    "omitted": "Only straight170OD neck +24diam shaft +5clearance are screened. Actual N18 curved body, 50diam head/socket, both bolt ends/counterholding, reaction/torque, head engagement, flange disc crossing, free511tail hand/body sweep and anthropometry need the actual matched assembly. Numerical reach alone is not a solved eight-bolt release."
+  },
+  "standingControl": {
+    "floor": -1200,
+    "clockRange": [
+      20.5,
+      24.5
+    ],
+    "clockStep": 1,
+    "shoulderHeightsAboveFloor": [
+      1450
+    ],
+    "shoulderRole": "Rejected inherited standing shoulder",
+    "shoulderXY": [
+      7300,
+      6575
+    ],
+    "bodyRadius": 300,
+    "bodyPlan": [
+      7000,
+      6275,
+      600,
+      600
+    ],
+    "gripWorkingLength": 450,
+    "toolFullLength": 511,
+    "flexWest": 250,
+    "flexAngleDegrees": 33.74898859588859,
+    "torqueSensitivity": [
+      {
+        "torqueNm": 50,
+        "tangentialHandForceN": 133.6306209562122,
+        "rated": false
+      },
+      {
+        "torqueNm": 100,
+        "tangentialHandForceN": 267.2612419124244,
+        "rated": false
+      },
+      {
+        "torqueNm": 150,
+        "tangentialHandForceN": 400.8918628686366,
+        "rated": false
+      },
+      {
+        "torqueNm": 200,
+        "tangentialHandForceN": 534.5224838248488,
+        "rated": false
+      }
+    ],
+    "headPlane": [
+      7470.00553575754,
+      7000,
+      -774.058888655971
+    ],
+    "flangeFaceNormal": [
+      0.9999308030307444,
+      0,
+      -0.011763891800361699
+    ],
+    "assumedPitchCircleDiameter": 240,
+    "assumedEightHolesDiameter": 22,
+    "clockSpecification": "Project installation datum22.5° from +Y towards rotated+Z,±2°. Discrete clock/handle/stroke samples are a necessary reference, not continuous collision certification. Both matching faces must be indexed/witnessed before closing. Actual backing-ring/braze arrangement must permit/retain the datum; not native catalogue evidence.",
+    "sampleCount": 40,
+    "geometryFailures": 0,
+    "maximumReferenceReach": 1152.8288355094005,
+    "worstPose": {
+      "clockDegrees": 22.5,
+      "boltIndex": 6,
+      "shoulder": [
+        7300,
+        6575,
+        250
+      ],
+      "handleAngleDegrees": 176.5,
+      "worstGripReach": 1152.8288355094005,
+      "minFloorHandReserve": 252.6693036598698,
+      "minStraightNeckReserve": 0.48406445154138567
+    },
+    "reachLimitHypothesis": 600,
+    "referenceWithin600": false,
+    "perBoltWorst": [
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 0,
+        "shoulder": [
+          7300,
+          6575,
+          250
+        ],
+        "handleAngleDegrees": 118.5,
+        "worstGripReach": 749.5036545991752,
+        "minFloorHandReserve": 730.6228759868864,
+        "minStraightNeckReserve": 14.841310838344612
+      },
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 1,
+        "shoulder": [
+          7300,
+          6575,
+          250
+        ],
+        "handleAngleDegrees": 117.5,
+        "worstGripReach": 661.0605672043393,
+        "minFloorHandReserve": 801.40465313299,
+        "minStraightNeckReserve": 17.9999999999999
+      },
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 2,
+        "shoulder": [
+          7300,
+          6575,
+          250
+        ],
+        "handleAngleDegrees": 113,
+        "worstGripReach": 619.5655883772185,
+        "minFloorHandReserve": 819.6852084096186,
+        "minStraightNeckReserve": 17.999999999999943
+      },
+      {
+        "clockDegrees": 24.5,
+        "boltIndex": 3,
+        "shoulder": [
+          7300,
+          6575,
+          250
+        ],
+        "handleAngleDegrees": 107.5,
+        "worstGripReach": 660.9724729854024,
+        "minFloorHandReserve": 764.9818553051122,
+        "minStraightNeckReserve": 18.000000000000156
+      },
+      {
+        "clockDegrees": 24.5,
+        "boltIndex": 4,
+        "shoulder": [
+          7300,
+          6575,
+          250
+        ],
+        "handleAngleDegrees": 106.5,
+        "worstGripReach": 749.0173213288816,
+        "minFloorHandReserve": 675.7121679888717,
+        "minStraightNeckReserve": 14.841310838344171
+      },
+      {
+        "clockDegrees": 24.5,
+        "boltIndex": 5,
+        "shoulder": [
+          7300,
+          6575,
+          250
+        ],
+        "handleAngleDegrees": 133.5,
+        "worstGripReach": 897.7159499940338,
+        "minFloorHandReserve": 511.33041172486696,
+        "minStraightNeckReserve": 0.48406445154122935
+      },
+      {
+        "clockDegrees": 22.5,
+        "boltIndex": 6,
+        "shoulder": [
+          7300,
+          6575,
+          250
+        ],
+        "handleAngleDegrees": 176.5,
+        "worstGripReach": 1152.8288355094005,
+        "minFloorHandReserve": 252.6693036598698,
+        "minStraightNeckReserve": 0.48406445154138567
+      },
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 7,
+        "shoulder": [
+          7300,
+          6575,
+          250
+        ],
+        "handleAngleDegrees": 91.5,
+        "worstGripReach": 898.5776806314027,
+        "minFloorHandReserve": 700.373045392135,
+        "minStraightNeckReserve": 0.48406445154095934
+      }
+    ],
+    "accepted": false,
+    "omitted": "Only straight170OD neck +24diam shaft +5clearance are screened. Actual N18 curved body, 50diam head/socket, both bolt ends/counterholding, reaction/torque, head engagement, flange disc crossing, free511tail hand/body sweep and anthropometry need the actual matched assembly. Numerical reach alone is not a solved eight-bolt release."
+  },
+  "originalFloorControl": {
+    "floor": -950,
+    "clockRange": [
+      20.5,
+      24.5
+    ],
+    "clockStep": 1,
+    "shoulderHeightsAboveFloor": [
+      650,
+      850
+    ],
+    "shoulderRole": "Explicit low floor-seated reference and 200-high seat reference; actual body/tool trial required",
+    "shoulderXY": [
+      7300,
+      6575
+    ],
+    "bodyRadius": 300,
+    "bodyPlan": [
+      7000,
+      6275,
+      600,
+      600
+    ],
+    "gripWorkingLength": 450,
+    "toolFullLength": 511,
+    "flexWest": 250,
+    "flexAngleDegrees": 33.74898859588859,
+    "torqueSensitivity": [
+      {
+        "torqueNm": 50,
+        "tangentialHandForceN": 133.6306209562122,
+        "rated": false
+      },
+      {
+        "torqueNm": 100,
+        "tangentialHandForceN": 267.2612419124244,
+        "rated": false
+      },
+      {
+        "torqueNm": 150,
+        "tangentialHandForceN": 400.8918628686366,
+        "rated": false
+      },
+      {
+        "torqueNm": 200,
+        "tangentialHandForceN": 534.5224838248488,
+        "rated": false
+      }
+    ],
+    "headPlane": [
+      7470.00553575754,
+      7000,
+      -774.058888655971
+    ],
+    "flangeFaceNormal": [
+      0.9999308030307444,
+      0,
+      -0.011763891800361699
+    ],
+    "assumedPitchCircleDiameter": 240,
+    "assumedEightHolesDiameter": 22,
+    "clockSpecification": "Project installation datum22.5° from +Y towards rotated+Z,±2°. Discrete clock/handle/stroke samples are a necessary reference, not continuous collision certification. Both matching faces must be indexed/witnessed before closing. Actual backing-ring/braze arrangement must permit/retain the datum; not native catalogue evidence.",
+    "sampleCount": 40,
+    "geometryFailures": 0,
+    "maximumReferenceReach": 813.0876052374897,
+    "worstPose": {
+      "clockDegrees": 23.5,
+      "boltIndex": 6,
+      "shoulder": [
+        7300,
+        6575,
+        -300
+      ],
+      "handleAngleDegrees": 49.5,
+      "worstGripReach": 813.0876052374897,
+      "minFloorHandReserve": 278.1540904575413,
+      "minStraightNeckReserve": 0.4840644515414283
+    },
+    "reachLimitHypothesis": 600,
+    "referenceWithin600": false,
+    "perBoltWorst": [
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 0,
+        "shoulder": [
+          7300,
+          6575,
+          -300
+        ],
+        "handleAngleDegrees": 136.5,
+        "worstGripReach": 335.78768389050384,
+        "minFloorHandReserve": 400.6037938605689,
+        "minStraightNeckReserve": 0.48406445154151356
+      },
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 1,
+        "shoulder": [
+          7300,
+          6575,
+          -300
+        ],
+        "handleAngleDegrees": 142.5,
+        "worstGripReach": 240.15062386964408,
+        "minFloorHandReserve": 435.64110594616176,
+        "minStraightNeckReserve": 17.9999999999999
+      },
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 2,
+        "shoulder": [
+          7300,
+          6575,
+          -300
+        ],
+        "handleAngleDegrees": 137,
+        "worstGripReach": 174.43618391214633,
+        "minFloorHandReserve": 468.388764031062,
+        "minStraightNeckReserve": 17.999999999999943
+      },
+      {
+        "clockDegrees": 24.5,
+        "boltIndex": 3,
+        "shoulder": [
+          7300,
+          6575,
+          -300
+        ],
+        "handleAngleDegrees": 126,
+        "worstGripReach": 179.60546796906124,
+        "minFloorHandReserve": 450.5767134994837,
+        "minStraightNeckReserve": 18.000000000000156
+      },
+      {
+        "clockDegrees": 24.5,
+        "boltIndex": 4,
+        "shoulder": [
+          7300,
+          6575,
+          -300
+        ],
+        "handleAngleDegrees": 121,
+        "worstGripReach": 251.91506478755346,
+        "minFloorHandReserve": 379.39098452338374,
+        "minStraightNeckReserve": 17.999999999999744
+      },
+      {
+        "clockDegrees": 24.5,
+        "boltIndex": 5,
+        "shoulder": [
+          7300,
+          6575,
+          -300
+        ],
+        "handleAngleDegrees": 133.5,
+        "worstGripReach": 361.7421454172075,
+        "minFloorHandReserve": 261.33041172486696,
+        "minStraightNeckReserve": 0.48406445154122935
+      },
+      {
+        "clockDegrees": 23.5,
+        "boltIndex": 6,
+        "shoulder": [
+          7300,
+          6575,
+          -300
+        ],
+        "handleAngleDegrees": 49.5,
+        "worstGripReach": 813.0876052374897,
+        "minFloorHandReserve": 278.1540904575413,
+        "minStraightNeckReserve": 0.4840644515414283
+      },
+      {
+        "clockDegrees": 20.5,
+        "boltIndex": 7,
+        "shoulder": [
+          7300,
+          6575,
+          -300
+        ],
+        "handleAngleDegrees": 91.5,
+        "worstGripReach": 585.2043396615147,
+        "minFloorHandReserve": 450.373045392135,
+        "minStraightNeckReserve": 0.48406445154095934
+      }
+    ],
+    "accepted": false,
+    "omitted": "Only straight170OD neck +24diam shaft +5clearance are screened. Actual N18 curved body, 50diam head/socket, both bolt ends/counterholding, reaction/torque, head engagement, flange disc crossing, free511tail hand/body sweep and anthropometry need the actual matched assembly. Numerical reach alone is not a solved eight-bolt release."
+  },
+  "uncontrolledStraightToolControl": {
+    "floor": -1200,
+    "clockRange": [
+      0,
+      44
+    ],
+    "clockStep": 2,
+    "shoulderHeightsAboveFloor": [
+      650,
+      850
+    ],
+    "shoulderRole": "Explicit low floor-seated reference and 200-high seat reference; actual body/tool trial required",
+    "shoulderXY": [
+      7300,
+      6575
+    ],
+    "bodyRadius": 300,
+    "bodyPlan": [
+      7000,
+      6275,
+      600,
+      600
+    ],
+    "gripWorkingLength": 450,
+    "toolFullLength": 511,
+    "flexWest": 0,
+    "flexAngleDegrees": 0,
+    "torqueSensitivity": [
+      {
+        "torqueNm": 50,
+        "tangentialHandForceN": 111.11111111111111,
+        "rated": false
+      },
+      {
+        "torqueNm": 100,
+        "tangentialHandForceN": 222.22222222222223,
+        "rated": false
+      },
+      {
+        "torqueNm": 150,
+        "tangentialHandForceN": 333.3333333333333,
+        "rated": false
+      },
+      {
+        "torqueNm": 200,
+        "tangentialHandForceN": 444.44444444444446,
+        "rated": false
+      }
+    ],
+    "headPlane": [
+      7470.00553575754,
+      7000,
+      -774.058888655971
+    ],
+    "flangeFaceNormal": [
+      0.9999308030307444,
+      0,
+      -0.011763891800361699
+    ],
+    "assumedPitchCircleDiameter": 240,
+    "assumedEightHolesDiameter": 22,
+    "clockSpecification": "Project installation datum22.5° from +Y towards rotated+Z,±2°. Discrete clock/handle/stroke samples are a necessary reference, not continuous collision certification. Both matching faces must be indexed/witnessed before closing. Actual backing-ring/braze arrangement must permit/retain the datum; not native catalogue evidence.",
+    "sampleCount": 184,
+    "geometryFailures": 0,
+    "maximumReferenceReach": 636.7573358345516,
+    "worstPose": {
+      "clockDegrees": 14,
+      "boltIndex": 7,
+      "shoulder": [
+        7300,
+        6575,
+        -350
+      ],
+      "handleAngleDegrees": 85,
+      "worstGripReach": 636.7573358345516,
+      "minFloorHandReserve": 756.3949605290798,
+      "minStraightNeckReserve": 0.1842222248306058
+    },
+    "reachLimitHypothesis": 600,
+    "referenceWithin600": false,
+    "perBoltWorst": [
+      {
+        "clockDegrees": 0,
+        "boltIndex": 0,
+        "shoulder": [
+          7300,
+          6575,
+          -350
+        ],
+        "handleAngleDegrees": 116,
+        "worstGripReach": 425.93007509845523,
+        "minFloorHandReserve": 759.0887963410379,
+        "minStraightNeckReserve": 0.18422222483029316
+      },
+      {
+        "clockDegrees": 0,
+        "boltIndex": 1,
+        "shoulder": [
+          7300,
+          6575,
+          -550
+        ],
+        "handleAngleDegrees": 161,
+        "worstGripReach": 206.12803184434586,
+        "minFloorHandReserve": 564.8763929868647,
+        "minStraightNeckReserve": 0.18422222483016526
+      },
+      {
+        "clockDegrees": 22,
+        "boltIndex": 2,
+        "shoulder": [
+          7300,
+          6575,
+          -350
+        ],
+        "handleAngleDegrees": 140.5,
+        "worstGripReach": 186.00158361005793,
+        "minFloorHandReserve": 738.0004213742839,
+        "minStraightNeckReserve": 17.99999999999997
+      },
+      {
+        "clockDegrees": 42,
+        "boltIndex": 3,
+        "shoulder": [
+          7300,
+          6575,
+          -350
+        ],
+        "handleAngleDegrees": 126.5,
+        "worstGripReach": 193.2680905824766,
+        "minFloorHandReserve": 715.9553552103372,
+        "minStraightNeckReserve": 18.000000000000085
+      },
+      {
+        "clockDegrees": 0,
+        "boltIndex": 4,
+        "shoulder": [
+          7300,
+          6575,
+          -550
+        ],
+        "handleAngleDegrees": 144,
+        "worstGripReach": 191.72521579556502,
+        "minFloorHandReserve": 603.4711838831482,
+        "minStraightNeckReserve": 18
+      },
+      {
+        "clockDegrees": 44,
+        "boltIndex": 5,
+        "shoulder": [
+          7300,
+          6575,
+          -550
+        ],
+        "handleAngleDegrees": 153,
+        "worstGripReach": 248.0013166312547,
+        "minFloorHandReserve": 419.9680661282174,
+        "minStraightNeckReserve": 0.1842222248299521
+      },
+      {
+        "clockDegrees": 44,
+        "boltIndex": 6,
+        "shoulder": [
+          7300,
+          6575,
+          -550
+        ],
+        "handleAngleDegrees": 198,
+        "worstGripReach": 527.1244036337376,
+        "minFloorHandReserve": 84.85782506276496,
+        "minStraightNeckReserve": 0.18422222482999473
+      },
+      {
+        "clockDegrees": 14,
+        "boltIndex": 7,
+        "shoulder": [
+          7300,
+          6575,
+          -350
+        ],
+        "handleAngleDegrees": 85,
+        "worstGripReach": 636.7573358345516,
+        "minFloorHandReserve": 756.3949605290798,
+        "minStraightNeckReserve": 0.1842222248306058
+      }
+    ],
+    "accepted": false,
+    "omitted": "Only straight170OD neck +24diam shaft +5clearance are screened. Actual N18 curved body, 50diam head/socket, both bolt ends/counterholding, reaction/torque, head engagement, flange disc crossing, free511tail hand/body sweep and anthropometry need the actual matched assembly. Numerical reach alone is not a solved eight-bolt release."
+  },
+  "platform": {
+    "plan": [
+      6125,
+      6250,
+      1525,
+      1150
+    ],
+    "top": -1200,
+    "barDepth": 50,
+    "barWidth": 5,
+    "pitch": 30,
+    "barCount": 52,
+    "barSpan": 1150,
+    "crossTieCount": 13,
+    "crossTieSection": [
+      6,
+      5
+    ],
+    "frameSection": [
+      100,
+      50,
+      4
+    ],
+    "frameLength": 5350,
+    "feet": [
+      [
+        6300,
+        6425
+      ],
+      [
+        7475,
+        6425
+      ],
+      [
+        6300,
+        7225
+      ],
+      [
+        7475,
+        7225
+      ]
+    ],
+    "pad": [
+      300,
+      300,
+      8
+    ],
+    "legSection": [
+      50,
+      50,
+      3
+    ],
+    "gradeComparison": -1800,
+    "installed": false,
+    "carrierSupported": false,
+    "material": "316L stainless reference; density/E/170MPa proof stress are explicit calculation hypotheses, not a supplied section/weld/material acceptance",
+    "materialSource": "https://www.outokumpu.com/-/media/files/products/supra/outokumpu-supra-range-datasheet.pdf",
+    "materialSourceBoundary": "Supra316L/4404 ASTM A240 sheet/plate table gives170MPa; density8.0 and ambient E200GPa.193GPa is a lower calculation hypothesis. No actual RHS/bar/weld product certificate, corrosion/water exposure or whole assembly is accepted.",
+    "massesKg": {
+      "bars": 119.6,
+      "crossTies": 4.758,
+      "frame": 48.620799999999996,
+      "legs": 9.024000000000001,
+      "pads": 23.040000000000003,
+      "braces": 10.215674231297708,
+      "connectionsBudget": 15,
+      "total": 230.25847423129767
+    },
+    "deadKn": 2.2588356322090304,
+    "pointLoad": {
+      "kn": 5,
+      "footprint": [
+        200,
+        200
+      ],
+      "boundary": "Uniform pressure over the actual200square print, wholly on deck; not an isolated toe on one bar."
+    },
+    "uniformLiveKpa": 5,
+    "steelScreen": {
+      "E": 193000,
+      "proofStressHypothesis": 170,
+      "barStressMPa": 106.40249999999999,
+      "barDeflectionMm": 2.6696903335492226,
+      "frameStressMPa": 76.41263406828891,
+      "boundary": "Elastic isolated bars/frame; welded grating load transfer, lateral stability, joints, fatigue, slip, corrosion and real contact remain open."
+    },
+    "padReactions": [
+      {
+        "loadCentre": [
+          6225,
+          6350
+        ],
+        "footIndex": 0,
+        "pointAndDeadCompressionKn": 6.382528056988428,
+        "plusUniformCompressionKn": 8.574715556988428,
+        "withAdverseHorizontalKn": 5.820028056988428
+      },
+      {
+        "loadCentre": [
+          6225,
+          6350
+        ],
+        "footIndex": 1,
+        "pointAndDeadCompressionKn": 0.2156397591160874,
+        "plusUniformCompressionKn": 2.407827259116087,
+        "withAdverseHorizontalKn": -0.3468602408839126
+      },
+      {
+        "loadCentre": [
+          6225,
+          6350
+        ],
+        "footIndex": 2,
+        "pointAndDeadCompressionKn": 0.06603869528630013,
+        "plusUniformCompressionKn": 2.2582261952862996,
+        "withAdverseHorizontalKn": -0.49646130471369987
+      },
+      {
+        "loadCentre": [
+          6225,
+          6350
+        ],
+        "footIndex": 3,
+        "pointAndDeadCompressionKn": 0.5946291208182151,
+        "plusUniformCompressionKn": 2.7868166208182146,
+        "withAdverseHorizontalKn": 0.03212912081821506
+      },
+      {
+        "loadCentre": [
+          6225,
+          7300
+        ],
+        "footIndex": 0,
+        "pointAndDeadCompressionKn": 0.06603869528630013,
+        "plusUniformCompressionKn": 2.2582261952862996,
+        "withAdverseHorizontalKn": -0.49646130471369987
+      },
+      {
+        "loadCentre": [
+          6225,
+          7300
+        ],
+        "footIndex": 1,
+        "pointAndDeadCompressionKn": 0.5946291208182151,
+        "plusUniformCompressionKn": 2.7868166208182146,
+        "withAdverseHorizontalKn": 0.03212912081821506
+      },
+      {
+        "loadCentre": [
+          6225,
+          7300
+        ],
+        "footIndex": 2,
+        "pointAndDeadCompressionKn": 6.382528056988428,
+        "plusUniformCompressionKn": 8.574715556988428,
+        "withAdverseHorizontalKn": 5.820028056988428
+      },
+      {
+        "loadCentre": [
+          6225,
+          7300
+        ],
+        "footIndex": 3,
+        "pointAndDeadCompressionKn": 0.2156397591160874,
+        "plusUniformCompressionKn": 2.407827259116087,
+        "withAdverseHorizontalKn": -0.3468602408839126
+      },
+      {
+        "loadCentre": [
+          7550,
+          6350
+        ],
+        "footIndex": 0,
+        "pointAndDeadCompressionKn": 0.21563975911608746,
+        "plusUniformCompressionKn": 2.407827259116087,
+        "withAdverseHorizontalKn": -0.34686024088391254
+      },
+      {
+        "loadCentre": [
+          7550,
+          6350
+        ],
+        "footIndex": 1,
+        "pointAndDeadCompressionKn": 6.382528056988428,
+        "plusUniformCompressionKn": 8.574715556988428,
+        "withAdverseHorizontalKn": 5.820028056988428
+      },
+      {
+        "loadCentre": [
+          7550,
+          6350
+        ],
+        "footIndex": 2,
+        "pointAndDeadCompressionKn": 0.5946291208182151,
+        "plusUniformCompressionKn": 2.7868166208182146,
+        "withAdverseHorizontalKn": 0.03212912081821506
+      },
+      {
+        "loadCentre": [
+          7550,
+          6350
+        ],
+        "footIndex": 3,
+        "pointAndDeadCompressionKn": 0.06603869528630013,
+        "plusUniformCompressionKn": 2.2582261952862996,
+        "withAdverseHorizontalKn": -0.49646130471369987
+      },
+      {
+        "loadCentre": [
+          7550,
+          7300
+        ],
+        "footIndex": 0,
+        "pointAndDeadCompressionKn": 0.5946291208182151,
+        "plusUniformCompressionKn": 2.7868166208182146,
+        "withAdverseHorizontalKn": 0.03212912081821506
+      },
+      {
+        "loadCentre": [
+          7550,
+          7300
+        ],
+        "footIndex": 1,
+        "pointAndDeadCompressionKn": 0.06603869528630013,
+        "plusUniformCompressionKn": 2.2582261952862996,
+        "withAdverseHorizontalKn": -0.49646130471369987
+      },
+      {
+        "loadCentre": [
+          7550,
+          7300
+        ],
+        "footIndex": 2,
+        "pointAndDeadCompressionKn": 0.21563975911608746,
+        "plusUniformCompressionKn": 2.407827259116087,
+        "withAdverseHorizontalKn": -0.34686024088391254
+      },
+      {
+        "loadCentre": [
+          7550,
+          7300
+        ],
+        "footIndex": 3,
+        "pointAndDeadCompressionKn": 6.382528056988428,
+        "plusUniformCompressionKn": 8.574715556988428,
+        "withAdverseHorizontalKn": 5.820028056988428
+      }
+    ],
+    "minimumPointAndDeadKn": 0.06603869528630013,
+    "maximumPlusUniformKn": 8.574715556988428,
+    "minimumWithHorizontalKn": -0.49646130471369987,
+    "horizontalControl": {
+      "forceKn": 0.5,
+      "applicationZ": 0,
+      "heightAboveComparisonGrade": 1800,
+      "role": "Authored maintenance disturbance at upper hand datum; not a claimed guard/ladder standard. Independent existing guard is retained."
+    },
+    "padBoundary": "Four300square pads entirely within well plan with25 reserve. Four actual independently qualified compression/lateral/uplift foundations are required. Freestanding contact is NOT an earned support under the adverse lateral case; no borrowing of P36/P37, waterproof box, piles or unsurveyed bearing.",
+    "geometry": {
+      "frameUnderside": -1300,
+      "comparisonGroundClearance": 500,
+      "clearanceAllowanceBeyond500": 0,
+      "boundary": "D1800 gives only500 below100deep platform, before pads/actual ground variation. Grade and heave/ventilation reserve must be qualified locally; D1800 is a comparison, not a site promise."
+    },
+    "waterBoundary": "Open platform is not the court water skin or a retaining wall. Keep separate metal flange/track leak catch and80outlet with visible accessible drainage. No credit for full duty, common receiver backwater or groundwater. No resident or essential service depends on dewatering.",
+    "rcComparator": {
+      "commit": "23a0f92d12a1dd3c6340ab7906edc945bffb9a5b",
+      "path": "project/str/studies/current-house-service-bay.json",
+      "fixedKn": 36.5298955,
+      "cageClearance": 6.958,
+      "requiredClearance": 25,
+      "accepted": false,
+      "reason": "No retained-earth duty is earned600above D1800grade. Heavy suspended RC box fails actual cage; no reason to inherit it as the ordinary staff floor."
+    }
+  },
+  "access": {
+    "type": "Removable near-vertical service ladder; not ordinary stair",
+    "width": 600,
+    "run": 200,
+    "rise": 1120,
+    "angleDegrees": 79.8753283446022,
+    "plan": [
+      6125,
+      6600,
+      200,
+      600
+    ],
+    "lowerBodyRoute": [
+      [
+        6625,
+        6900
+      ],
+      [
+        6625,
+        6575
+      ],
+      [
+        7300,
+        6575
+      ]
+    ],
+    "sequence": "Both complete passive water/weather routes arranged and tested as source requires; all ten well covers captured/removed before ladder installation. Positively secure head/feet and handholds; separately lower restrained tools. Keep ladder/exit clear of operator, pipe and catch. Evacuate before any carrier motion.",
+    "holds": "Exact loaded ladder body/head/heel interface, hand transitions, recovery, temporary roof/head clearance and protected entry still require source solids and forces. The inherited4×180/3×200 stair cannot silently serve this level."
+  },
+  "carrierSupport": {
+    "section": [
+      100,
+      50,
+      4
+    ],
+    "materialHypothesis": "316L stainless",
+    "length": 4700,
+    "grossWidth": 850,
+    "railCentresY": [
+      6500,
+      7300
+    ],
+    "crossMembersX": [
+      7800,
+      9900,
+      12000
+    ],
+    "frameAxisBelowPipe": 150,
+    "bareFrameKg": 107.2384,
+    "tubeWaterAndMovingFlangesKg": 144.22700456141501,
+    "combinedKnownWetKg": 251.46540456141503,
+    "designMovingKn": 3,
+    "remainingHardwareBudgetKg": 54.344992992101766,
+    "endOnlySpan": 4700,
+    "pointLoadEachRailN": 1500,
+    "conservativeMidpointStressMPa": 61.14447186903299,
+    "conservativeMidpointDeflectionMm": 11.6639152295936,
+    "supportCoordinates": [
+      [
+        7550,
+        6500
+      ],
+      [
+        7550,
+        7300
+      ],
+      [
+        12250,
+        6500
+      ],
+      [
+        12250,
+        7300
+      ]
+    ],
+    "boundary": "Separate retained rail/grid foundations and captured lifting saddles, not the staff platform. Full3kN retained even after drain; includes blocked tube water. Four end-level screw supports/positive mechanical stops and lower running rails require real full bodies, feet, brake/reaction, loaded contact and support ownership before use. No personnel beneath load, no flange carries it.",
+    "initialMotion": {
+      "gasketSeparation": 10,
+      "drop": 40,
+      "firstNativeFlangeEntryTranslation": 73.32537534267985,
+      "remainingAxialBeforeBeamWhenDropStarts": 63.32537534267985,
+      "nativeGapAfterLoweringAtEntry": 43.66660933774767,
+      "larger290MovingEnvelopeGap": 41.16660933774767,
+      "oldFloorWouldIntersectFrame": true,
+      "frameLowAtWestAfterDrop": -1015,
+      "newFloorReserve": 185,
+      "sequence": "Remove/support downstream terminal first, opening east end. Load captured frame supports, separate west gasket10east while still at installed level; stop and positively hold. Lower whole assembly40 on locked/captured supports BEFORE further draw. Prove all initial supports/tolerances, then engage lower rails and draw. Reverse: stop10short, raise40, then close axial10. No sloping cam/free gravity drop."
+    }
+  },
+  "recommendation": "Develop the open independently supported metal staff platform and one rigid draw-out carrier. Reject the RC enclosure preference and inherited standing/reach assumptions. The ordinary manual tool is a necessary finite reference only: native bolt/counterhold and complete support geometry remain genuine internal exits, so release is HOLD.",
+  "hold": "No new route, platform, ladder, seal, clock, frame or sequence is adopted. Resolve actual matched flange/counterhold and first support bodies before claiming eight-bolt release; real grade/foundation/drainage and physical use remain named site/physical admission boundaries."
+}
