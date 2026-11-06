@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w2"
   },
   "claimedAt": "2026-11-06T12:10:56.619Z",
-  "heartbeatAt": "2026-11-06T12:29:32.877Z",
-  "expiresAt": "2026-11-06T13:59:32.877Z",
+  "heartbeatAt": "2026-11-06T13:17:02.209Z",
+  "expiresAt": "2026-11-06T14:47:02.209Z",
   "branch": "work/zerg-20261106-w2-str",
   "predecessor": {
     "leaseId": "76ac4987-5c36-4425-875c-341f99336d34",
@@ -36,8 +36,8 @@
   },
   "pr": 1340,
   "checkpoint": {
-    "evidence": "Published actual current-house STR re-entry PR1340 head51471f2507964f4dafff9939dd1860515898084f tree8079d98ace148526ae647880be64fd01f609a200. Source-auth audit reproduces132.5/371.25torsion,122.5nodeoverhang and court-tie minus12.75headreserve.",
-    "next": "Resolve actual bridge capacity/cage/depth and900node; repair tiedportal/incoming geometry then join whole-house gravity/signed proposition.",
-    "blocker": "Structural design WIP: do not repin old3m torsion/control or adopt current450reservation. No STR-HOUSE closeout yet."
+    "evidence": "Published 1b29a4ac tree54e33ca5: four current-source reproducers; actual900x600 node domains and orthogonal layers, tie legacy action provenance; test:str14 regressions plus4producers pass. WIP not selected.",
+    "next": "Complete conserved whole-house gravity/signed lateral ledger, actual roof-corner secondary/collector route and current mineral bearing/occupation proposition.",
+    "blocker": "No external blocker; remaining internal roof-corner/loadpath and whole-house allocation work explicit."
   }
 }
