@@ -1,6 +1,6 @@
 {
   "identity": "MAT-UPPER-ACCESS-RENEWAL-2026-11-06",
-  "status": "PROPOSED mechanism WIP; no HAD adoption, product rating or physical/water acceptance",
+  "status": "Two-level comparison WITHDRAWN AS PREFERRED; accessible same-level two-piece joint is current project reference WIP",
   "hadBlob": "1a0f26b850f8bbb00315d4ce79b2bb423f9b560e",
   "modules": [
     {
@@ -16,7 +16,7 @@
       "translation": 4700,
       "bedOffset": 0,
       "width": 763,
-      "lift": 1200,
+      "lift": 1300,
       "lowestAfterLift": 270.0
     },
     {
@@ -30,9 +30,9 @@
         14725.0
       ],
       "translation": 2475.0,
-      "bedOffset": -200,
+      "bedOffset": -300,
       "width": 963.0,
-      "lift": 1500,
+      "lift": 1600,
       "lowestAfterLift": 267.9411764705883
     }
   ],
@@ -45,15 +45,15 @@
     7948.99959967968,
     8719.900722749131
   ],
-  "lowestKnownRail": -1282.0588235294117,
-  "DminimumBeforeUnboundCatchDrain": 1782.0588235294117,
-  "Dtrial": 1900,
+  "lowestKnownRail": -1382.0588235294117,
+  "DminimumBeforeUnboundCatchDrain": 1882.0588235294117,
+  "Dtrial": 2000,
   "qualifiedFirstHarmMargin": null,
   "methodAcceptance": "INCOMPLETE: hatch/guard/captive staff and handover not yet proven; no capacity, material or water pass",
   "activeHolds": [
     "Actual hatch/guard and complete captive-staff attachment/first motion remain to be proved",
-    "50-deep upper frame/rails need a real constructive member and strength/deflection/retention evidence",
-    "200 drop and800 receiver require actual splash, capture, blocked/full-flow/first-harm testing",
+    "Actual150-deep carriage and continuous rail member/retention/strength evidence remains unearned; no new slimming claim",
+    "Withdrawn300-drop comparison is not preferred; same-level flange sealing/capture must now be earned",
     "Storage/hoist geometry is not a selected kit or load capacity; actual new-module delivery route remains open",
     "All material chemistry, corrosion, bearing, air/thermal and site/drainage acceptance remain unearned"
   ]
