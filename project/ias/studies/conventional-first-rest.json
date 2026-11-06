@@ -63,6 +63,30 @@
     "currentPortRetained": false,
     "noAfterthoughtDrilling": true
   },
+  "release": {
+    "status": "Authored centred slip-coupling trial, not actual B594 mating or release admission",
+    "coupling": "Geberit Silent-PP 390.217.14.1",
+    "couplingLength": 103,
+    "authoredPipeEndGap": 10,
+    "authoredParkReserve": 25,
+    "boardThickness": 60,
+    "nativeBodyStaysBolted": true,
+    "couplingRemainsOnFixedPipe": true,
+    "sacrificialClosureRemovedBeforeParking": true,
+    "nominalUpperOverlap": 46.5,
+    "downwardParkingStroke": 81.5,
+    "closedCouplingBottom": "3256.5 - d",
+    "parkedCouplingBottom": "3175 - d",
+    "boardTop": 3230,
+    "closedCouplingToBoardGap": "26.5 - d",
+    "necessarySeatOffsetMaximumForNonIntersection": 26.5,
+    "unbound": [
+      "actual d and usable native spigot land",
+      "coupling seal locations, maximum OD and B594 permission",
+      "extraction force, actual hands/tools and fixed-side axial restraint",
+      "qualified temporary boundary and complete restoration"
+    ]
+  },
   "relatedSources": {
     "project/mat/studies/whole-house-service-baseline.json": "69c7b1b1e733b9ade2d8ae21c1552accf52a6261",
     "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b"
@@ -71,7 +95,39 @@
     "b594": "https://shop.my-bette.com/out/media/B594.pdf",
     "b594Sha256": "c057d26962f2623f7aa6ef2e03ded404dbce3da24f3fddd5ef8370b51fdce0a5",
     "footSystem": "https://content.my-bette.com/produkt_downloads/Fuss-System-fur-Duschwannen-133586/Fuss-System-fur-Duschwanne-1000-1000-mm-133662/Z0009038_REV15.pdf",
-    "footSystemSha256": "4a2ec361f14c01c510d270e7a240161e24f7aba1ac9fbcee325e04f5ccbc4b59"
+    "footSystemSha256": "4a2ec361f14c01c510d270e7a240161e24f7aba1ac9fbcee325e04f5ccbc4b59",
+    "hiltiEta": {
+      "url": "https://productdata.hilti.com/APQ_HC_RAW/ASSET_DOC_19675548.pdf",
+      "sha256": "02f5af0e0d0f390c8e3e653e757f0c86361737a7685e9854d0ffeae50c5c7ff9",
+      "pages": [
+        12,
+        23,
+        99,
+        108,
+        113
+      ],
+      "domain": "ETA 23/0267; listed multilayer PP 50 x 2 mm; EI 60 U/U only"
+    },
+    "hiltiTechnical": {
+      "url": "https://productdata.hilti.com/APQ_HC_RAW/ASSET_DOC_19962464.pdf",
+      "sha256": "19e37446ad31ec112eeab9a59f73efdee3ef501253115a35b185b76744bad95d",
+      "pages": [
+        2
+      ],
+      "boardThickness": 60
+    },
+    "geberit": {
+      "url": "https://www.geberit.co.uk/_assets/local-media/geberit-drainage-systems-product-guide-and-price-list-2026-gbp.pdf",
+      "sha256": "e91fbf7fe1de603fb35dc10cfbe7914b59a83db8b6e978980a415be7f880245e",
+      "printedPages": [
+        102,
+        114
+      ],
+      "pdfPages": [
+        101,
+        113
+      ]
+    }
   },
   "holds": [
     "actual native flange seat and d",

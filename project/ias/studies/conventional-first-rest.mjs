@@ -20,6 +20,19 @@ const opening={status:'Authored formed accessible-well candidate; no structural,
   eastToBeamFace:structural.wet_wall_beam.axis_x-structural.wet_wall_beam.section.b/2-(dx+200),
   southToSupportAxis:dy-200-structural.wet_wall_beam.support_axes_y[0],
   currentPortRetained:false,noAfterthoughtDrilling:true}
+const release={status:'Authored centred slip-coupling trial, not actual B594 mating or release admission',
+  coupling:'Geberit Silent-PP 390.217.14.1',couplingLength:103,
+  authoredPipeEndGap:10,authoredParkReserve:25,boardThickness:60,
+  nativeBodyStaysBolted:true,couplingRemainsOnFixedPipe:true,
+  sacrificialClosureRemovedBeforeParking:true,
+  nominalUpperOverlap:(103-10)/2,
+  downwardParkingStroke:(103+10)/2+25,
+  closedCouplingBottom:`${v.rim-v.fullTail-(103+10)/2} - d`,parkedCouplingBottom:`${v.rim-v.fullTail-10-25-103} - d`,
+  boardTop:v.rcUnderside+60,
+  closedCouplingToBoardGap:`${v.rim-v.fullTail-(103+10)/2-(v.rcUnderside+60)} - d`,
+  necessarySeatOffsetMaximumForNonIntersection:v.rim-v.fullTail-(103+10)/2-(v.rcUnderside+60),
+  unbound:['actual d and usable native spigot land','coupling seal locations, maximum OD and B594 permission',
+    'extraction force, actual hands/tools and fixed-side axial restraint','qualified temporary boundary and complete restoration']}
 if(opening.box[0]<field.rectangle[0]||opening.box[1]<field.rectangle[1]||opening.box[0]+400>field.rectangle[2]||opening.box[1]+400>field.rectangle[3])throw Error('Proposed well left the source-owned NW-W field; rejoin STR')
 const bounds={
   flangeOffset:'d >= 0; actual rim-to-native-flange offset unbound',
@@ -32,13 +45,16 @@ const bounds={
   fullTailClearSameLevelFloor:'137 + d + L, before placement clearance and actual socket stroke'
 }
 const record={status:'Unadopted first-lift/first-rest bounds; no connected installation or handling pass',
-  source,sourceBlob,values:v,bounds,opening,
+  source,sourceBlob,values:v,bounds,opening,release,
   relatedSources:Object.fromEntries([serviceSource,structuralSource].map(p=>[p,execFileSync('git',['hash-object',p],{encoding:'utf8'}).trim()])),
   nativeSources:{
     b594:'https://shop.my-bette.com/out/media/B594.pdf',
     b594Sha256:'c057d26962f2623f7aa6ef2e03ded404dbce3da24f3fddd5ef8370b51fdce0a5',
     footSystem:'https://content.my-bette.com/produkt_downloads/Fuss-System-fur-Duschwannen-133586/Fuss-System-fur-Duschwanne-1000-1000-mm-133662/Z0009038_REV15.pdf',
-    footSystemSha256:'4a2ec361f14c01c510d270e7a240161e24f7aba1ac9fbcee325e04f5ccbc4b59'},
+    footSystemSha256:'4a2ec361f14c01c510d270e7a240161e24f7aba1ac9fbcee325e04f5ccbc4b59',
+    hiltiEta:{url:'https://productdata.hilti.com/APQ_HC_RAW/ASSET_DOC_19675548.pdf',sha256:'02f5af0e0d0f390c8e3e653e757f0c86361737a7685e9854d0ffeae50c5c7ff9',pages:[12,23,99,108,113],domain:'ETA 23/0267; listed multilayer PP 50 x 2 mm; EI 60 U/U only'},
+    hiltiTechnical:{url:'https://productdata.hilti.com/APQ_HC_RAW/ASSET_DOC_19962464.pdf',sha256:'19e37446ad31ec112eeab9a59f73efdee3ef501253115a35b185b76744bad95d',pages:[2],boardThickness:60},
+    geberit:{url:'https://www.geberit.co.uk/_assets/local-media/geberit-drainage-systems-product-guide-and-price-list-2026-gbp.pdf',sha256:'e91fbf7fe1de603fb35dc10cfbe7914b59a83db8b6e978980a415be7f880245e',printedPages:[102,114],pdfPages:[101,113]}},
   holds:['actual native flange seat and d','configured support/contact layers and installed H',
     'permitted socket/pipe identity, engagement and extraction force','fixed-side axial restraint and complete floor closure',
     'complete moving package, protected grips and two-person task','actual four native foot contacts and independent crib strength/stability',
@@ -153,4 +169,58 @@ text(232,265,'Accessible territory is a design rewind, not a fitting pass.',3)
 text(14,285,'Owning result: ias-03-renewal-proportionality-result.md. Plan/vertical scales 1:5 at full size; d, native contacts and closure unbound.',2.9)
 add('</svg>')
 emit('./conventional-opening.svg',parts.join('\n')+'\n')
+parts.length=0
+add('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Arial,sans-serif"><rect width="420" height="297" fill="white"/>')
+text(14,17,'IAS / Ordinary slip release through the formed well',5.4)
+text(14,26,'Authored centred 103 mm coupling / 10 mm end gap. No actual socket, support, hand, fire or material admission.',3.3)
+text(14,35,'Both panels show d = 0 as a native-datum upper bound, not the actual tray seat. Vertical/known widths 1:2.5.',3)
+const cz=level=>62+(v.rim-level)/2.5
+const top=v.rim-v.fullTail,closedTop=top+release.nominalUpperOverlap
+const closedBottom=closedTop-release.couplingLength
+const fixedTop=top-release.authoredPipeEndGap
+const parkedTop=fixedTop-release.authoredParkReserve
+for(const [offset,title,parked] of [[0,'A  Closed trial; first release still to qualify',false],[206,'B  Lower access open; coupling parked DOWN',true]]){
+  const axis=100+offset
+  text(14+offset,46,title,3.7)
+  rect(axis-88,cz(v.rcTop),8,(v.rcTop-v.rcUnderside)/2.5,'#e1dfd7')
+  rect(axis+80,cz(v.rcTop),8,(v.rcTop-v.rcUnderside)/2.5,'#e1dfd7')
+  line(axis-80,cz(v.rcTop),axis-80,cz(v.rcUnderside))
+  line(axis+80,cz(v.rcTop),axis+80,cz(v.rcUnderside))
+  line(axis-80,cz(v.rim),axis+80,cz(v.rim),'#23756c')
+  rect(axis-24,cz(v.rim),48,v.bodyDepth/2.5,'#fff','#b36a37','dash')
+  line(axis-10,cz(v.rim-v.bodyDepth),axis-10,cz(top),'#b36a37')
+  line(axis+10,cz(v.rim-v.bodyDepth),axis+10,cz(top),'#b36a37')
+  line(axis-10,cz(top),axis+10,cz(top),'#b36a37')
+  line(axis-10,cz(fixedTop),axis-10,cz(3100),'#23756c')
+  line(axis+10,cz(fixedTop),axis+10,cz(3100),'#23756c')
+  line(axis-10,cz(fixedTop),axis+10,cz(fixedTop),'#23756c')
+  if(!parked){
+    rect(axis-80,cz(release.boardTop),70,release.boardThickness/2.5,'#d8dcae')
+    rect(axis+10,cz(release.boardTop),70,release.boardThickness/2.5,'#d8dcae')
+    text(axis-72,cz(release.boardTop)+8,'HDB 60 mm',2.8)
+    text(axis+15,cz(release.boardTop)+8,'ACR + collar below',2.5)
+  }else{
+    line(axis-80,cz(release.boardTop),axis+80,cz(release.boardTop),'#879092','dash')
+    line(axis-80,cz(v.rcUnderside),axis+80,cz(v.rcUnderside),'#879092','dash')
+    text(axis-73,cz(release.boardTop)+8,'board / seals / collar removed for access',2.7)
+  }
+  const ct=parked?parkedTop:closedTop,cb=ct-release.couplingLength
+  line(axis+56,cz(ct),axis+56,cz(cb),'#925b84')
+  line(axis+52,cz(ct),axis+60,cz(ct),'#925b84')
+  line(axis+52,cz(cb),axis+60,cz(cb),'#925b84')
+  text(axis+60,cz((ct+cb)/2),'103',3,'#925b84')
+  text(14+offset,211,'Purple interval is actual axial length only;',2.8)
+  text(14+offset,217,'coupling maximum OD and seal lands are unbound.',2.8)
+}
+text(14,228,`Closed bottom ${release.closedCouplingBottom}; board top ${release.boardTop} mm.`,3.1)
+text(14,236,`Non-intersection needs d <= ${release.necessarySeatOffsetMaximumForNonIntersection} mm before tolerances.`,3)
+text(220,228,`Downward stroke ${release.downwardParkingStroke} mm; parked bottom ${release.parkedCouplingBottom}.`,3.1)
+text(220,236,'Coupling stays on independently restrained fixed pipe.',3)
+line(14,244,406,244)
+text(14,255,'Native body remains bolted to tray. Open the nonstructural closure for gripping/sliding; renew it after reconnection/testing. Do not pull on the flange.',3)
+text(14,264,'Upper overlap 46.5 mm is a trial, not a permitted insertion. Native 137 - 81 = 56 mm does not establish usable sealing land.',3)
+text(14,273,'Fixed-side restraint must take real release force independently of board/closure. Actual temporary isolation/restoration is mandatory.',3)
+text(14,285,'Source: native Geberit 2026 p114 / Hilti ETA 23/0267 + technical manual; owning result records exact domains and material holds.',2.9)
+add('</svg>')
+emit('./conventional-slip-release.svg',parts.join('\n')+'\n')
 console.log(JSON.stringify({status:record.status,bounds},null,2))
