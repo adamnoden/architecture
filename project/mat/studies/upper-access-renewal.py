@@ -126,7 +126,12 @@ T(35,35,'Upper access: one same-level E route, accessible two-piece joint',24)
 T(35,62,'PROJECT REFERENCE · limited internal checks · no seal, physical, material, lifting or site acceptance',15,'#a12b23')
 PX=lambda x:40+(x-7500)*.12
 PY=lambda y:100+(y-6000)*.075
-plat=hnd['platform'];B(PX(plat[0]),PY(plat[1]),plat[2]*.12,plat[3]*.075,'#f6f2e9')
+plat=hnd['platform'];regions=n.get('servicePlatformRegions',[])
+if regions:
+ for q in regions:B(PX(q[0]),PY(q[1]),q[2]*.12,q[3]*.075,'#f6f2e9')
+else:
+ B(PX(plat[0]),PY(plat[1]),plat[2]*.12,plat[3]*.075,'none')
+ T(40,465,'Platform outline is bounding envelope ONLY: actual HAD L-shaped floor join required.',13,'#a12b23')
 for low,high in [[x-ww/2,x+ww/2] for x,ww in zip(b['supportAxesX'],b['localSupportBeamWidths'])]+[outer['fullX']]:
  low=max(low,7500)
  if high>low:B(PX(low),PY(6300),(high-low)*.12,1200*.075,'#ddd4c8')

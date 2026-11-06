@@ -34,6 +34,12 @@ The low1000×200×900 kitchen larder keeps all furniture and window tasks, suppl
 
 The75S foul-port correction gives[12000,5625,2616.875],200-hole return reserve55.5 and300-flashing finite-arch minimum37.862. D1800 requires foul receiver crown≤−2400/160-envelope axis−2480; all five external tails and separate sink tail match. These are conditional requirements, not surveyed sewer acceptance.
 
+## Current normal-intake join
+
+The historical3500-wide N cross-trough atY7000 is **not retained**: it cut through the new Ewell. Current N collection is[4250,7400,2950,350], ending at7200,100 before Ecollector7300. The well and its shortened north guard end at7400. Covers/ledge/guard solids do not span the new N trough. The courtyard's retained northfall reaches this exposed north strip; old inlet/void/capacity claims remain historical evidence only.
+
+A new V crossfall1:100 drains to retained250 trunkX5025. Current crossbody is250clear×40wet, with68 minimum below14cover and28 above its rim; its clean n.02/1% Manning screen is a necessary4.85L/s sensitivity, not RWT admission. Longitudinal Nbed/receiver remain unchanged. Six short top-release modules are renewed north onto closed loggia covers; no2950 whole body sweeps over the Eguard. The long liner's staging shifts50west and operators stay north of the Ewell. Actual collection/staging/guard nonoverlap and explicit negatives now guard this new source join. E must remain independently full-duty during N work.
+
 ## Threshold, limiting water interface and inlet
 
 [Centre/jamb/meeting reference](studies/south-court-threshold.svg) retains1800 rough/140 frame depth/leafbottom19. It explicitly reallocates jamb50 to40 plus10 installation, preserving hinges/leaves. The1796 pan has1.5 end walls and6.5 to the1780 frame. Sill crest15,4 leaf gap and outward−5 weeps are located; secondary pan falls−45→−55 with15 rear return/75 end dams. Mineral bearing and RC seat, jamb aprons toDPC150, dry-side A/G fold and fixings400/1100/1900 are actual reference solids. No wet-pan-floor fixing or weather-exposed timber is credited. Any timber core is protected by complete metal/mineral wet faces and shoes.

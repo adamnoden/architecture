@@ -161,7 +161,21 @@ export function verifyThresholdMaintainedState(v,renewal){
     assert(Math.hypot(a.centre[0]-a.handle[0],a.centre[1]-a.handle[1],a.shoulderZ-a.handle[2])<=a.reach,'Handling grip out of reach');
   for(const z of l.hingeRelease.z)
     assert(Math.hypot(4600-l.hingeRelease.toolContactY,z-l.hingeRelease.shoulderByHingeZ[z])<=600,'Hinge release unreachable');
-  return {pass:true,reserveToStoredLeaves,reserveToEGuard,bodyReserve,
+  const inc=m.incoming;let incomingReserve=Infinity;
+  for(let i=1;i<inc.path.length;i++){
+    const a=inc.path[i-1],b=inc.path[i],length=Math.hypot(b[0]-a[0],b[1]-a[1]),steps=Math.ceil(length/25);
+    for(let k=0;k<=steps;k++){
+      const point=a.map((x,n)=>x+(b[n]-x)*k/steps);
+      incomingReserve=Math.min(incomingReserve,pointRect(point,renewal.guardOuterPlan)-inc.turnRadius);
+    }
+  }
+  // Distance-to-solid is1-Lipschitz; every unsampled point is≤12.5mm
+  // from a sampled point along these≤25mm intervals.
+  incomingReserve-=12.5;
+  assert(incomingReserve>=25,'Incoming whole component/cart hits actual E guard');
+  assert(inc.transportEnvelope[2]>=v.retained.leafEach[2]+150,'Incoming leaf plus base exceeds declared transport');
+  assert(inc.headLanding[0]+inc.headLanding[2]<=8900,'Incoming landing consumes unbound kitchen external stack territory');
+  return {pass:true,reserveToStoredLeaves,reserveToEGuard,bodyReserve,incomingConservativeGuardReserve:incomingReserve,
     scope:'Exact reserved rotation/body/storage and release-reach screen; no clamp/force/kit/material/weather qualification.'};
 }
 

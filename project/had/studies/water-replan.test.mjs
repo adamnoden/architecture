@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { deriveWaterReplan, verifyServicesOccurrences, verifyCollectorOpenEntries } from './water-replan.mjs';
+import { deriveWaterReplan, verifyServicesOccurrences, verifyCollectorOpenEntries, verifyNorthIntakeJoin } from './water-replan.mjs';
 
 test('current replan authenticates the entire new Services source without weakening the historical selection', () => {
   const v = deriveWaterReplan();
@@ -117,3 +117,13 @@ test('the actual inlet credits separate source-drawn edges and rejects a guard b
     [x=>x.guardExtension.lowestHorizontalRailAboveLocalWalk=20,/rail\/plinth occludes/]
   ]){const copy=JSON.parse(JSON.stringify(e));mutate(copy);assert.throws(()=>verifyCollectorOpenEntries(copy,30),message);}
 });
+
+ test('current N intake and renewal remain physically separate from the complete E well',()=>{
+ const v=deriveWaterReplan(),n=v.model.northNormalRoute;
+ assert.deepEqual(n.normal.inlet,[4250,7400,2950,350]);assert.deepEqual(n.historicalNormal.inlet,[4250,7000,3500,350]);
+ assert.equal(n.geometryProof.westToIndependentEastGap,100);
+ const bad=JSON.parse(JSON.stringify(v.model));bad.northNormalRoute.normal.inlet=n.historicalNormal.inlet;
+ assert.throws(()=>verifyNorthIntakeJoin(bad,v.renewal),/physical intake intersects E well/);
+ const stage=JSON.parse(JSON.stringify(v.model));stage.northNormalRoute.normal.renewal.bodyStage=[6300,7000,350,4250];
+ assert.throws(()=>verifyNorthIntakeJoin(stage,v.renewal),/N renewal consumes intact E/);
+ });

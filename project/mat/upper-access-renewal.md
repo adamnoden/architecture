@@ -26,6 +26,14 @@ A0.5 annealed-copper U gasket is an explicit project material hypothesis, not a 
 
 The local exterior catch tray sits25 below the150 carriage; it is not a second full E receiver. Its floor follows bed−275. The tray now extends to its integral terminal outlet atx10250, with no unexplained50mm gap. Its floor drops openly into the lower spigot invert. A separate80OD/3-wall pipe starts atx10250/invert−1125 and falls to13500/invert−1175, with a receiving-water condition below−1300. It runs between the two longitudinal rails, clear of the finite supports, rather than borrowing the foul route or an unexplained centreline. Pipe/support low point gives a route-local D lower bound1688; proposed localD1800 is not an actual site/global-foundation selection. Capture capacity, outlet/site applicability and actual first harm remain unearned; qualified first-harm margin stays null.
 
+## Bounded metal-gasket feasibility screen
+
+The frozen stiffness case is **8kN TOTAL across four bolts**, not8kN per bolt. Even ignoring both side legs, the600-wide bottom with20 land has12000mm² contact area, so its optimistic average pressure is at most8000/12000=0.667MPa; real U-land average is lower. This does not establish continuous contact.
+
+[KLINGER metal-profile guidance](https://www.klinger-awschultze.de/en/metal-profile-gaskets/) discloses solid-metal0.5–1mm thicknesses where flange finish/evenness permits, special shapes and copper materials. Its A1 table gives copper20°C deformation/upper pressure limits135/300MPa, and warns that even slight flange twist can upset flat-metal sealing. Those are manufacturer profile values, not a water-channel acceptance criterion. They nevertheless provide no basis for claiming this broad flat copper land seals at the authored preload. Thickness fit is plausible; seating feasibility remains **unearned**. Lower hydraulic pressure does not create missing assembly contact.
+
+The same source explains that convex/narrow profiles reduce required force, but no disclosed formed profile has been shown to fit this exact0.5 slot, open U shape and reversible motion. No coating, polymer filler, paste, preload increase or narrower land is silently admitted. This is a separate source screen, not a change to frozen HAD geometry or a physical seal pass.
+
 ## Both modules, storage and reversal
 
 OUTER must remain removed while INNER is drawn. Reinstating it first would block the inner path. Full profiles and the30 draw connector are checked against the outboard operator field, with the complete920 coupling, not the763 carrier proxy.

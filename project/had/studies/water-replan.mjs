@@ -58,6 +58,19 @@ export function verifyServicesOccurrences(model, current) {
   return { emitters:services.emitters.length, extractTasks:services.fanAccess.length, pass:true,
     scope:'Current actual furniture, emitter heights, extract ports/platforms and fan task states; component equality does not establish whole-house acceptance.' };
 }
+export function verifyNorthIntakeJoin(model,renewal){
+  const n=model.northNormalRoute.normal,inlet=n.inlet,well=renewal.courtIntakeWell,guard=renewal.guardOuterPlan;
+  const overlap=(a,b)=>a[0]<b[0]+b[2]&&a[0]+a[2]>b[0]&&a[1]<b[1]+b[3]&&a[1]+a[3]>b[1];
+  assert(inlet[1]>=well[1]+well[3]&&!overlap(inlet,well),'Current N physical intake intersects E well');
+  assert(inlet[1]>=guard[1]+guard[3],'Current N intake intersects fixed E guard');
+  assert(inlet[0]+inlet[2]+100<=renewal.courtCollector.plan[0],'Current N collection shares E intake');
+  for(const q of [n.renewal.bodyStage,n.renewal.riggingStage,n.renewal.operatorLongEnvelope])
+    assert(!overlap(q,guard)&&!overlap(q,renewal.courtCollector.plan),'N renewal consumes intact E territory');
+  assert(n.crossIntake.renewal.moduleCentreY-n.crossIntake.renewal.clearBodyWidth/2-(guard[1]+guard[3])>=25,'Current N module renewal hits E guard');
+  assert(n.crossIntake.wallHeight+28<=n.crossIntake.grossDepthBelowCoverMinimum);
+  return {pass:true,currentInlet:inlet,westToIndependentEastGap:renewal.courtCollector.plan[0]-inlet[0]-inlet[2],
+    scope:'Actual physical collection/maintenance nonoverlap only; new40×250 crossbody and inlet require RWT full-duty proof.'};
+}
 export function verifyCollectorOpenEntries(entry,maximumHead){
   const g=entry.guardExtension,half=g.postPlan/2;
   const intersects=(a,b,c,d)=>Math.min(b,d)>Math.max(a,c);
@@ -139,7 +152,7 @@ export function deriveWaterReplan({servicesText} = {}) {
     courtIntakeAccess: { fixedSteps: [6125, 6600, 600, 600],
       topLandingZ:-80,lowerLandingZ:-800,rises:4,going:200,riseMaximum:180,
       method: 'Four180 rises/three200 goings run EAST from west guard gate to a separate flat600x900 working platform. Level adapter must fit local sloping court; no stairs overlap the standing footprint. Guard before covers; isolate court water before entry.' },
-    guardOuterPlan: [6075, 6250, 1625, 1200], guardTopAboveLocalCourt: 1100,
+    guardOuterPlan: [6075, 6250, 1625, 1150], guardTopAboveLocalCourt: 1100,
     guardGate:{planeX:6075,rawY:[6550,7250],frameEach:25,clearY:[6575,7225],
       hinge:[6075,7222.5],completeLeaf:[645,40,1100],opening:'WEST into court, latched before covers are released',
       fullOpenPlan:[5430,7202.5,645,40],
@@ -153,7 +166,7 @@ export function deriveWaterReplan({servicesText} = {}) {
     courtCollector: { plan: [7300, 6300, 350, 1450], surfaceReachable: true,
       northSurfaceLipZ: -110, northChannelBedZ: -180,
       lowChannelAtIntakeZ: -200,
-      commonFaultBoundary: 'Entire N mouth x4800..7200 disabled; E collector starts x7300, with its own through-ring route and separate east head condition. No immunity to whole-court debris blanket or whole-site flood is claimed.' },
+      commonFaultBoundary: 'Entire current N inlet x4250..7200 disabled; E collector starts x7300, with its own through-ring route and separate east head condition. No immunity to whole-court debris blanket or whole-site flood is claimed.' },
     shield: { representation: 'OUTER REMOVABLE HOOD ENVELOPE, NOT A SOLID WATER BARRIER',
       plan: [7350, 6450, 200, 900], z: [-900, -110],
       clearGravityShaft: { plan: [7350, 6600, 200, 600], z: [-797.6470588235294, -110] },
@@ -193,10 +206,12 @@ export function deriveWaterReplan({servicesText} = {}) {
     scope:'Permanent deck/member reference. Moving body stays below it; accessible joint hatch and outboard openings have explicitly guarded states.'};
   renewal.operatorDeckZ=joint.deckTop;renewal.servicePlatform=joint.handling.platform;
   renewal.servicePlatformRole='BOUNDING ENVELOPE ONLY; actual built/clear service platform is the following L-shaped union, excluding retained northeast house.';
-  renewal.servicePlatformRegions=[[9722.5,6000,2277.5,2019.5],[12000,6000,4200,4800]];
+  renewal.servicePlatformRegions=[[9722.5,6000,2277.5,1825.5],[12000,6000,4200,4800]];
   renewal.operatorField=joint.handling.endOperator;renewal.storagePad=joint.handling.stage;
   renewal.handoverPad=joint.handling.handover;renewal.joint=joint;
   renewal.northOperatorStrip=[12250,7450,3950,3350];
+  renewal.operatorAccess={route:[[11175,7150,0],[12350,7150,0],[15300,7650,0]],radius:300,
+    rule:'Joint operators leave east through the fullheight outer portal on retained closed covers, then use outboard fixed strips. No route through the north wall or low track; open covers only from captured fixed working fields.'};
   renewal.hoistWorkingBox=[joint.handling.parkStart,joint.handling.apertureY[0],0,2700,joint.handling.apertureY[1]-joint.handling.apertureY[0],3000];
   renewal.hoistLiftTranslation=joint.handling.lift;
   renewal.selectedSequence=joint.sequence;
@@ -234,7 +249,40 @@ export function deriveWaterReplan({servicesText} = {}) {
     normal:structuredClone(northEnvelope.protectedWater.normal),
     terminal:structuredClone(northEnvelope.terminals.normal),
     floorJoin:structuredClone(northEnvelope.floorJoin),
-    scope:'Retained source-exact N normal geometry, not old Nplusbroadstrip independence. E is the separate route. Material/structure/head and new maintenance interaction remain unqualified.'};
+    scope:'Historical input preserved below; CURRENT N inlet rejoined around E well. E is the separate route. Actual full-duty/loss/material/structural acceptance remains RWT/MAT/STR.'};
+  const nr=model.northNormalRoute.normal;
+  model.northNormalRoute.historicalNormal=structuredClone(nr);
+  nr.inlet=[4250,7400,2950,350];
+  nr.crossIntake={clearWidth:250,wallHeight:40,grossDepthBelowCoverMinimum:68,
+    centreY:7577,centreX:5025,flowSlope:.01,
+    westBottomAtNorth:-206,eastBottomAtNorth:-192,trunkBottomAtNorth:-213.75,
+    section:'Current V crossfall1:100 to retained250 NtrunkX5025; Yfall1:100 follows trunk−210.25 at7400 to−213.75 at7750.14perforatedcover over minimum68free depth leaves28 above40wetbody; historical80void/75crossbody is not retained.',
+    receivingOpening:{plan:[4900,7452,250,250],bottomZ:-212.02,role:'Open continuous junction into retained longitudinal N liner, no raised lip or pressure joint.'},
+    hydraulicScope:'Current40×250 crossbody and2950 inlet require new full-duty/loss/fouling proof. No old3500-width or80-void capacity admission is carried forward.'};
+  nr.inletVoid=68;nr.crossCourtBottom=[-192,-213.75,-206];
+  nr.crossIntake.renewal={modules:[500,500,500,500,500,450],clearBodyWidth:303,
+    sourceJoint:{reference:'Retained MAT top-release100U saddle/20butt/40lap geometry; current shallow40 crossbody needs matching fabrication/retained-residue and seal qualification.',saddleLength:100,buttGap:20,overlapEach:40},
+    moduleGrossLengthMaximum:600,moduleMassBudgetKg:10,lift:600,
+    moduleCentreY:7577,bodyRouteY:8100,operatorRadius:300,
+    storage:[4300,5750,1250,1700],
+    sequence:'Verify E independent/full-duty and keep its collector/hood/guard intact. Isolate N; capture/remove short perforated covers into west storage. Release accessible top saddles one600-max/303-wide body at a time, lift600 then hand/capture transfer NORTH onto closed loggia covers, operatorstaysY8100. Carry WEST, then south on westcourt side to storage. No full2950 body crosses Eguard; no extraction through the Ewell. Reverse modules/joints/covers and test before reopening N.',
+    bounds:'Body lowerY7425.5 leaves25.5 from Eguard north7400. Eastbound7200 leaves50 toEslotguard7250. Actual load/force/saddles/gaskets and temporary waterisolation remain MAT/RWT physical duties.'};
+  nr.renewal.bodyStage=[5650,7100,350,4250];nr.renewal.stage=nr.renewal.bodyStage;
+  nr.renewal.riggingStage=[5625,7100,400,4250];
+  nr.renewal.stageBodyCentres=[[6350,7800],[6350,10750]];
+  nr.renewal.operatorLongEnvelope=[6050,7500,600,3550];
+  nr.renewal.state='Current long-liner first release/lift retained; staging shifted50west, operators enter northofEwell. Ecollector remains intact and full-duty; old broadstrip independence/staging is historical only.';
+  assert(nr.crossIntake.renewal.modules.reduce((a,b)=>a+b,0)===nr.inlet[2]);
+  assert(nr.crossIntake.renewal.moduleCentreY-nr.crossIntake.renewal.clearBodyWidth/2-(renewal.guardOuterPlan[1]+renewal.guardOuterPlan[3])>=25);
+  nr.currentCollectionBoundary='Entire CURRENT N inlet4250..7200/Y7400..7750 may be disabled. Separate Ecollector starts7300,100 away; no shared below-cover trough. Northfall court reaches this exposed intake strip without crossing Ewell, which ends7400.';
+  nr.preliminaryManningScreen={n:.02,slope:.01,clearWidthM:.25,depthM:.04,
+    dischargeLps:1000*(.25*.04)/.02*((.25*.04)/(.25+2*.04))**(2/3)*Math.sqrt(.01),
+    scope:'Necessary clean uniform-flow sensitivity only, no inlet/turn/debris/tailwater qualification.'};
+  assert(nr.preliminaryManningScreen.dischargeLps>=inwardDuty);
+  assert(nr.inlet[1]>=renewal.courtIntakeWell[1]+renewal.courtIntakeWell[3]);
+  assert(nr.inlet[0]+nr.inlet[2]+100<=renewal.courtCollector.plan[0]);
+  assert(renewal.guardOuterPlan[1]+renewal.guardOuterPlan[3]<=nr.inlet[1]);
+  model.northNormalRoute.geometryProof=verifyNorthIntakeJoin(model,renewal);
   const normalAtMouth=northEnvelope.protectedWater.normal.carrierBottom.find(p=>p[0]===7750)[1];
   assert.equal(normalAtMouth,model.southCourtThresholdReference.primaryTray.normalJoin.receivingCarrierBottom);
   const limitingJoin=northEnvelope.floorJoin.innerDpc[1];
@@ -269,6 +317,11 @@ export function deriveWaterReplan({servicesText} = {}) {
     north350AlonePass:idealEntryAtStage(quiet).northLps>=inwardDuty,
     combinedNominalPass:idealEntryAtStage(quiet).totalLps>=inwardDuty,
     status:'Necessary IDEAL preliminary screen only. No contraction/corner interaction, debris, inlet/turn loss, air, splash or tailwater qualification. RWT must establish actual fullQ and first-wetting safety. The350-alone case fails and is not selected.'};
+  const incoming=model.southCourtThresholdReference.maintainedState.incoming;
+  const incomingZ=y=>y>=12000?model.sections.waterLevels.loggiaNorth:y>=7750?-110-(y-7750)/100:floorAtY(y);
+  incoming.worldRoute=incoming.path.map(([x,y])=>[x,y,incomingZ(y)]);
+  incoming.headLandingZ=model.sections.waterLevels.loggiaNorth;
+  incoming.levelScope='Actual retained court and normal-loggia slopes, closed covers and exterior receiving landing. Captured/braked transport reference; actual cart force/stability and external delivery kit/site approval remain IAS/OAS/DPL.';
   model.southCourtThresholdReference.maintainedState.geometryProof=verifyThresholdMaintainedState(model.southCourtThresholdReference,renewal);
   const wall = id => model.groundWalls.find(w => w.id === id);
   Object.assign(wall('plant-north'), { a: [9300, 5877.5], b: [12000, 5877.5],
@@ -483,7 +536,9 @@ function render(v) {
       cursor=Math.max(cursor,hi);
     }
   }
-  svg+=rect([4800,7750,2400,4250],'#b8dbe5');svg+=rect(v.passage.outdoor,'#a6d8e0');
+  svg+=rect(v.model.northNormalRoute.normal.inlet,'#4d94b3');
+  svg+=rect([4825,7750,400,5450],'#4d94b3');
+  svg+=rect([4800,7750,2400,4250],'#b8dbe5',.35);svg+=rect(v.passage.outdoor,'#a6d8e0');
   for(const field of v.renewal.servicePlatformRegions)svg+=rect(field,'#d9c9a7',.7);
   svg+=rect(v.passage.waterClear,'#227b99',.8);svg+=rect(v.renewal.courtIntakeWell,'#cb8e5f',.65);
   svg+=rect([v.renewal.selectedParkX[0],6450,v.renewal.length,900],'#227b99',.25);
@@ -519,9 +574,10 @@ function render(v) {
   svg+=`<rect x="${sx(6125)}" y="${sz(-80)}" width="${1525*.052}" height="${870*.19}" fill="#cb8e5f" opacity=".3"/>`;
   svg+=`<rect x="${sx(v.renewal.selectedParkX[0])}" y="${sz(-750)}" width="${2300*.052}" height="${250*.19}" fill="#227b99" opacity=".25"/>`;
   svg+=label(740,665,'Beam trial −180..−630; liner bed −800..−850; no hidden level return.');
-  svg+=label(740,690,`EAST park ${v.renewal.selectedParkX.join('..')}; beyond proposed outer support. accessible two-piece flange; captured upper tools and independent staged rack.`);
+  svg+=label(740,690,`EAST park ${v.renewal.selectedParkX.join('..')}; beyond proposed outer support.`);
   svg+=label(740,715,`Track-local D${v.groundEnvelope.fullSelectedTrackMinimumD.toFixed(1)} minimum / D${v.groundEnvelope.routeLocalDTrial} trial; site unaccepted.`);
-  svg+=label(740,760,'WIP HANDOFF: no adoption. Preferred sequence source-bound; physical/site acceptance remains open.');
+  svg+=label(740,740,'Accessible two-piece flange; captured upper tools; independent staged rack.');
+  svg+=label(740,780,'WIP HANDOFF: no adoption. Preferred sequence source-bound; physical/site acceptance remains open.');
   return svg+'</svg>\n';
 }
 

@@ -62,7 +62,7 @@ if 'joint' in n:
  regions=n['servicePlatformRegions']
  for field in [trackplan,op,n['storagePad'],n['handoverPad'],j['hatchClear'],*[ [q[0]-300,q[1]-300,600,600] for q in j['operatorCentres']]]:
   assert union_contains(field,regions),'Actual service task enters retained house outside L-shaped platform'
- assert not any(overlap(q,[9722.5,8019.5,2277.5,3980.5]) for q in regions),'Platform consumes northeast house'
+ assert not any(overlap(q,[9722.5,7825.5,2277.5,4174.5]) for q in regions),'Platform consumes northeast house'
  couplingPark=[park[0],j['completeCouplingY'][0],L,j['completeCouplingY'][1]-j['completeCouplingY'][0]]
  assert contains(trackplan,couplingPark),'Actual920 coupling leaves outboard track'
  assert n['maintenanceCatchDrain']['lowestReservedSurface']==j['capture']['pipeEnd'][1]-j['capture']['pipeWall']-j['capture']['pipeSupportBelow']
