@@ -272,7 +272,7 @@ export function deriveWaterReplan({servicesText} = {}) {
   model.currentAdoptionBlockers=[
     'The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.',
     'Temporary walking deck at-900 has only270 headroom below the retained outer support at-630. Walking retreat through that support and900-high hinged cover opening are NOT feasible as currently described. No maintenance first-motion pass.',
-    'Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health still needs explicit active HAD/MAT reproducer coverage before adoption.'
+    'Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health now checks the actual HAD/MAT producers; physical and architectural admission remain separate.'
   ];
   model.knownRejectedGeometry = { intermediateDividerAt3300: {
     westPier: [9300,3203,350,194], protectedPlantDoorRawY: [2750,3650],
@@ -306,22 +306,49 @@ function render(v) {
   let svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880"><rect width="1400" height="880" fill="#fbfaf5"/>`;
   svg+=label(50,35,'HAD WATER REPLAN · JOINED HYPOTHESIS / NOT ADOPTED');
   svg+=rect([0,0,12000,12000],'#dedbd2');svg+=rect([4250,4250,3500,3500],'#f5efe0');
-  for(const w of v.model.groundWalls){const f=w.finishedFaces;if(w.a[0]===w.b[0])svg+=rect([f?.[0]??w.a[0]-w.t/2,w.a[1],f?f[1]-f[0]:w.t,w.b[1]-w.a[1]],'#6d6a62');else svg+=rect([w.a[0],f?.[0]??w.a[1]-w.t/2,w.b[0]-w.a[0],f?f[1]-f[0]:w.t],'#6d6a62');}
+  // Draw the source's actual open intervals, rather than painting doors solid.
+  for(const w of v.model.groundWalls){
+    const vertical=w.a[0]===w.b[0],axis=vertical?1:0,f=w.finishedFaces;
+    const start=Math.min(w.a[axis],w.b[axis]),end=Math.max(w.a[axis],w.b[axis]);
+    const holes=(w.holes??[]).map(q=>[Math.max(start,q[0]),Math.min(end,q[1])]).filter(q=>q[1]>q[0]).sort((a,b)=>a[0]-b[0]);
+    let cursor=start;for(const [lo,hi]of [...holes,[end,end]]){
+      if(lo>cursor)svg+=rect(vertical?[f?.[0]??w.a[0]-w.t/2,cursor,f?f[1]-f[0]:w.t,lo-cursor]:[cursor,f?.[0]??w.a[1]-w.t/2,lo-cursor,f?f[1]-f[0]:w.t],'#6d6a62');
+      cursor=Math.max(cursor,hi);
+    }
+  }
   svg+=rect([4800,7750,2400,4250],'#b8dbe5');svg+=rect(v.passage.outdoor,'#a6d8e0');
   svg+=rect(v.renewal.servicePlatform,'#d9c9a7',.7);
   svg+=rect(v.passage.waterClear,'#227b99',.8);svg+=rect(v.renewal.courtIntakeWell,'#cb8e5f',.65);
   svg+=rect([v.renewal.selectedParkX[0],6450,v.renewal.length,900],'#227b99',.25);
   svg+=rect(v.renewal.operatorField,'#e8c56a',.8);
   for(const [id,r]of Object.entries(v.model.groundFurniture))if(Array.isArray(r)&&r.length===4)svg+=rect(r,'#b2b39d');
+  for(const [name,x,y]of [['STUDY',1500,1800],['FRONT / STAIR',6000,2600],['UTILITY',10400,1900],['PLANT',10350,4650],['LIVING',2300,10000],['KITCHEN / DINING',9700,9500],['OPEN COURT',5250,6100],['N LOGGIA',5400,10700]])
+    svg+=label(px(x),py(y),name);
+  svg+=label(70,708,'GROUND: retained rooms and furnished fields; dark walls show actual opening intervals.');
   svg+=label(70,735,`East proposal work field ends at x${v.renewal.servicePlatform[0]+v.renewal.servicePlatform[2]}; first-motion sequence remains UNPROVED.`);
   svg+=label(70,758,'Brown: guarded intake well only. No court-length staging pocket. Yellow: operator field.');
   const sx=x=>740+(x-4250)*.052, sz=z=>420-z*.19;
   svg+=label(740,75,'E longitudinal section · FFL 0');
   svg+=`<line x1="740" y1="${sz(0)}" x2="1310" y2="${sz(0)}" stroke="#6d6a62"/>`;
-  svg+=`<rect x="${sx(7750)}" y="${sz(-180)}" width="${(9722.5-7750)*.052}" height="${450*.19}" fill="#777268"/>`;
+  const sectionRect=(x0,x1,top,bottom,color)=>`<rect x="${sx(x0)}" y="${sz(top)}" width="${(x1-x0)*.052}" height="${(top-bottom)*.19}" fill="${color}"/>`;
+  for(let i=0;i<v.bridge.supportAxesX.length;i++){
+    const x=v.bridge.supportAxesX[i],w=v.bridge.localSupportBeamWidths[i];
+    svg+=sectionRect(x-w/2,x+w/2,v.bridge.localSupportBeamZ[1],v.bridge.localSupportBeamZ[0],'#777268');
+  }
+  let top=0;for(const [i,layer]of v.bridge.floorLayers.entries()){
+    svg+=sectionRect(...v.bridge.permanentDryGalleryClearX,top,top-layer[1],['#e9d6b5','#cecabd','#b3dfd8','#c4c8cc'][i]);top-=layer[1];
+  }
+  svg+=sectionRect(7750,8179.5,1000,-180,'#b4ada1');
+  let face=v.bridge.newEastWeatherWallX[0];
+  for(const [i,layer]of v.model.weather.layersRoomToWeather.entries()){
+    svg+=sectionRect(face,face+layer[1],1000,-180,['#ded8ce','#9f998e','#b3dfd8','#fbfaf5','#b9846e'][i]);face+=layer[1];
+  }
+  svg+=label(740,200,'Dry gallery 8179.5..9203; floor layers end at the bearing walls.');
+  svg+=label(740,224,'East 27/140/200/50/102.5 wall bears on 900 member; MAT junction remains open.');
   svg+=`<rect x="${sx(11217.5)}" y="${sz(-180)}" width="${900*.052}" height="${450*.19}" fill="#b57663"/>`;
   svg+=`<path d="M${sx(7750)},${sz(-800)} L${sx(12000)},${sz(-850)}" stroke="#227b99" stroke-width="5" fill="none"/>`;
-  svg+=`<path d="M${sx(7650)},${sz(-698.82)} L${sx(9822.5)},${sz(-724.38)}" stroke="#227b99" stroke-width="2" fill="none"/>`;
+  const bed=x=>v.passage.bedEnds[0][1]+(x-v.passage.bedEnds[0][0])*(v.passage.bedEnds[1][1]-v.passage.bedEnds[0][1])/(v.passage.bedEnds[1][0]-v.passage.bedEnds[0][0]);
+  svg+=`<path d="M${sx(v.renewal.bodyX[0])},${sz(bed(v.renewal.bodyX[0])+v.renewal.waterDepth)} L${sx(v.renewal.bodyX[1])},${sz(bed(v.renewal.bodyX[1])+v.renewal.waterDepth)}" stroke="#227b99" stroke-width="2" fill="none"/>`;
   svg+=`<rect x="${sx(6125)}" y="${sz(-80)}" width="${1525*.052}" height="${870*.19}" fill="#cb8e5f" opacity=".3"/>`;
   svg+=`<rect x="${sx(v.renewal.selectedParkX[0])}" y="${sz(-750)}" width="${2300*.052}" height="${250*.19}" fill="#227b99" opacity=".25"/>`;
   svg+=label(740,665,'Beam trial −180..−630; liner bed −800..−850; no hidden level return.');
