@@ -1,6 +1,6 @@
 {
   "status": "FALSIFIED as complete floor boundary: upper-pier splice leaves ground-to-grid-to-RC-field capillary bypass. Local geometry/sensitivity retained; no selected rewind.",
-  "sourceControlSHA256": "eb1338f0fc7f1ac3d6c5cff149e3beb699bc6ff5b72782a1fb1d7c50e3aa8cff",
+  "sourceControlSHA256": "60078d97659705bfe73122993544c3769537e666a7faa867804015bfb12ca32a",
   "sources": {
     "STR": {
       "commit": "18e802fbbf23730db69d922707e3576576cd8c19",
@@ -51,6 +51,38 @@
     "wholeHouseEnergyResult": null
   },
   "falsifiedCapillaryPath": "Ground -> piles -> lower RC grid/pedestal -> RC200 field -> bare-glass joints, all below the upper plate at-50..-30. Drainage/ventilation alone does not break this capillary connection.",
+  "moisturePaths": [
+    {
+      "id": "SUPPORT-CAPILLARY",
+      "path": "Ground -> pile -> common RC grid/lower pedestal -> RC200 floor -> bare-glass joints",
+      "source": "HAD floorJoin RC[-380,-180] and STR upper splice[-50,-30]",
+      "status": "CONFIRMED bypass beneath upper cut; complete support list/lower-cut or separate-field design required"
+    },
+    {
+      "id": "VOID-VAPOUR",
+      "path": "Ventilated void air -> RC underside/joints -> upper floor",
+      "source": "HAD northNormalRoute.floorJoin.moisture",
+      "status": "Suspended-concrete performance hypothesis, not a gas/DPM waiver. Actual mix, curing, cracks, joints and upper moisture/air result must own this source"
+    },
+    {
+      "id": "OUTDOOR-WET-RC",
+      "path": "Permitted outdoor RC/paver wetting -> any actual common RC connection -> floor",
+      "source": "HAD northNormalRoute.normal.crossIntake.containment.permittedWetSurfaces and northProtectiveReturn.exposure",
+      "status": "CONTACT UNRESOLVED. Independent outdoor deck is not automatically common grid; no whole common-grid weather enclosure is currently drawn. Do not claim either wet continuity or dryness without geometry"
+    },
+    {
+      "id": "THRESHOLD-SEAT",
+      "path": "Shared RC200 sill support -> actual ground slab/court-south support",
+      "source": "HAD southCourtThresholdReference.pan.permanentSeat",
+      "status": "Explicit shared structural contact. It is not proof the seat normally wets; pan/support/end and failed-water paths must be traced"
+    },
+    {
+      "id": "UPPER-PIER",
+      "path": "Lower pedestal -> upper RC pier/plaster",
+      "source": "STR capillarySplice plus MAT edge/DPC return",
+      "status": "Local unperforated upper plate can interrupt this path if its actual edges are not bridged; it does not protect the RC field below"
+    }
+  ],
   "activeInternalHolds": [
     "Upper-plate-only floor route withdrawn; resolve every ground-support capillary source or a real separate field boundary",
     "STR opposed anchor/plate force path and local weld/cover schedule",

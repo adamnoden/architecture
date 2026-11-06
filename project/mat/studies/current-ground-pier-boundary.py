@@ -50,6 +50,7 @@ def produce():
         'scenario2500KdaysDifference_kWh':(direct_g-glass_g)*t['scenarioDegreeDays']*24/1000,
         'boundary':t['method'],'actualSurfaceTemperature_C':None,'wholeHouseEnergyResult':None},
       'falsifiedCapillaryPath':c['preferredConditionalRoute']['falsifiedPath'],
+      'moisturePaths':c['moisturePaths'],
       'activeInternalHolds':['Upper-plate-only floor route withdrawn; resolve every ground-support capillary source or a real separate field boundary','STR opposed anchor/plate force path and local weld/cover schedule','Actual mineral-DPC/plate edge and keyed plaster/metal air termination with movement allowance','Concrete floor construction-joint/crack and repair design plus explicit whole-house leakage budget','Source-bound 3D thermal surface/condensation and actual whole-floor energy model','Full-pan support/seam/expansion/penetration design only if its conditional need is established'],
       'admission':c['admission']}
     # Finite source-derived plan and section; no hand-edited result graphics.

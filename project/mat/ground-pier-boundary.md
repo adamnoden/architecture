@@ -15,6 +15,20 @@ The next real comparison is **lower-source cuts at every actual support connecti
 | Load-bearing mineral/thermal course | Must carry the actual compression, moment, shear and uplift, with its own anchored restraint and water treatment | No existing unadopted AAC/PERINSUL/320 mm glass comparison is silently promoted; thermal insulation alone is not a moment splice |
 | House-wide welded pan | Can provide a separate field boundary only with actual support, seams, movement, penetrations and repair | Conditional challenger if the concrete/site route fails; no universal contaminated-site requirement is invented |
 
+## Trace the actual moisture sources
+
+| Source/path | What the current source earns | What must not be inferred |
+|---|---|---|
+| Ground → piles → common grid → RC field → bare-glass joints | The upper plate lies above this connected route | A drained/ventilated void does not cut the concrete path; glass joints do not supply a membrane |
+| Void air → underside/joints → upper floor | HAD names a 40 mm cover suspended-concrete moisture hypothesis | No supplied mix, crack/joint air-moisture result or site gas class is established by that hypothesis |
+| Permitted outdoor RC/paver wetting → common grid, **if connected** | N containment and protective-return source explicitly permit exterior RC wetting | An independent outdoor deck is not automatically the common grid. The full common-grid weather enclosure and every actual contact remain to locate; do not assume shared wetting or dryness |
+| South sill RC seat → slab/court-south support | The actual 1900 × 400 mm seat at −380..−180 mm is explicitly continuous with the ground slab/support | Shared support does not establish that its normal surface wets. The actual pan/support/end and failed-water paths must be traced |
+| Lower pedestal → upper pier/plaster | An unperforated plate can provide a local cut if its edges work | This does not cut the RC field below; mortar or plaster must not bridge its edge |
+
+The twelve corner-group points in the present lateral proposition are **not the complete house support count**. STR is allocating the actual ground routes and signed head/pile envelopes, including wind uplift. A lower-cut price cannot multiply twelve and call it whole-house protection. It must also address any bulk-water entry to the common grid after the cut. Conversely, identifying a connected capillary path is not proof that every tested suspended-concrete system fails: its actual moisture performance and permissible source conditions must be established, rather than presumed from ventilation alone.
+
+A separate-field barrier also has a real maintenance join: the selected south threshold pan's dry apron is at Y4030..4090 mm and its rear crest is +15 mm. Its pan withdraws NORTH after release of accessible dry-side clamps. The field cannot stop at the inner wall and leave the transition unconnected, or be permanently welded to the renewable pan. A formed, supported transition and accessible reversible closure must join that actual apron without puncturing the wet pan or blocking its renewal. No such seal/interface is selected by this comparison.
+
 ## Exact structural source and finite geometry
 
 The candidate replaces the 140 mm inner-core corner material locally with four RC L-piers. The SW polygon runs from 262.5 mm to 1262.5 mm, has **1000 mm physical legs** and a conservative 900 mm flexural section; the other corners mirror it. It is an explicit material/load-path change at the existing inner arch-abutment territory, not unchanged masonry. The actual source gives 60.807 kN shear and 265.056 kNm moment per leg. The preliminary **splice** card is 500 kN compression, 100 kN uplift, 75 kN shear and 300 kNm moment. It is distinct from the older **grid/pile-head** 850 kN / ±100 kNm domain.

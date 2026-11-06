@@ -132,5 +132,37 @@
     "thermalCondensation": false,
     "site": false
   },
-  "units": "mm, kN, kNm unless stated"
+  "units": "mm, kN, kNm unless stated",
+  "moisturePaths": [
+    {
+      "id": "SUPPORT-CAPILLARY",
+      "path": "Ground -> pile -> common RC grid/lower pedestal -> RC200 floor -> bare-glass joints",
+      "source": "HAD floorJoin RC[-380,-180] and STR upper splice[-50,-30]",
+      "status": "CONFIRMED bypass beneath upper cut; complete support list/lower-cut or separate-field design required"
+    },
+    {
+      "id": "VOID-VAPOUR",
+      "path": "Ventilated void air -> RC underside/joints -> upper floor",
+      "source": "HAD northNormalRoute.floorJoin.moisture",
+      "status": "Suspended-concrete performance hypothesis, not a gas/DPM waiver. Actual mix, curing, cracks, joints and upper moisture/air result must own this source"
+    },
+    {
+      "id": "OUTDOOR-WET-RC",
+      "path": "Permitted outdoor RC/paver wetting -> any actual common RC connection -> floor",
+      "source": "HAD northNormalRoute.normal.crossIntake.containment.permittedWetSurfaces and northProtectiveReturn.exposure",
+      "status": "CONTACT UNRESOLVED. Independent outdoor deck is not automatically common grid; no whole common-grid weather enclosure is currently drawn. Do not claim either wet continuity or dryness without geometry"
+    },
+    {
+      "id": "THRESHOLD-SEAT",
+      "path": "Shared RC200 sill support -> actual ground slab/court-south support",
+      "source": "HAD southCourtThresholdReference.pan.permanentSeat",
+      "status": "Explicit shared structural contact. It is not proof the seat normally wets; pan/support/end and failed-water paths must be traced"
+    },
+    {
+      "id": "UPPER-PIER",
+      "path": "Lower pedestal -> upper RC pier/plaster",
+      "source": "STR capillarySplice plus MAT edge/DPC return",
+      "status": "Local unperforated upper plate can interrupt this path if its actual edges are not bridged; it does not protect the RC field below"
+    }
+  ]
 }
