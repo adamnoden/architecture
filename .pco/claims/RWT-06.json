@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-06T20:49:12.564Z",
-  "expiresAt": "2026-11-06T22:19:12.564Z",
+  "heartbeatAt": "2026-11-06T21:35:19.250Z",
+  "expiresAt": "2026-11-06T23:05:19.250Z",
   "branch": "work/zerg-20261106-rwt06-successor",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -36,7 +36,7 @@
   },
   "pr": 1344,
   "checkpoint": {
-    "evidence": "Published312db77c/tree49907704: finite existing-two-pipe topology/levels, onegroundeavecontrol,153RWT/integrityPASS, sourceauthority/adoptionscopecorrected; predecessor1338closedwithancestrypreserved.",
-    "next": "Finish onecoherentconventional Econnection/firstrelease design, preserve temporaryentry and receiverrepair blockers; reconcile afterSTR/MATcurrentmain then exactheadCI/rootreview/freshpreflight."
+    "evidence": "Final reviewed milestone source c420dfbdea4fd78fbef42c4ad77e48b90ca9a40d tree1e0c2bd3522cfd13d2ce6243c61bb011828a7c67; main4fef04ad;154RWT/14STR+18producer/HAD/MAT/repo checks pass; exactCI42297727786 running",
+    "next": "Await exact-head CI/root review then fresh own-node publication preflight; lower-bay/tool/ladder research held separately for successor"
   }
 }
