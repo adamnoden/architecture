@@ -1,60 +1,91 @@
 {
   "identity": "MAT-UPPER-ACCESS-RENEWAL-2026-11-06",
-  "status": "Two-level comparison WITHDRAWN AS PREFERRED; accessible same-level two-piece joint is current project reference WIP",
+  "status": "Preferred accessible two-piece project reference; internal component/motion checks only",
   "hadBlob": "1a0f26b850f8bbb00315d4ce79b2bb423f9b560e",
+  "method": "SAME-LEVEL TWO-PIECE SIDE-BOLTED U FLANGE",
+  "frameScreen": {
+    "I_mm4": 1736666.6666666667,
+    "crossDeflection_mm": 0.09693608571572886,
+    "sideDeflection_mm": 0.06313769067582584,
+    "crossStress_MPa": 12.236084452975048,
+    "sideStress_MPa": 28.79078694817658,
+    "scope": "Assumed E/preload/reaction; not uniform gasket contact, bolt torque or certified strength"
+  },
+  "boltEngagedX": [
+    9925,
+    10200
+  ],
+  "boltThreadClearanceAfter35": 6,
+  "boltClearOfInnerFaceAfter175": 50,
+  "maxHandReach": 585.4948879018882,
+  "continuousRatchetHalfstepBound": 2.181661564992912,
+  "continuousHookHalfstep": {
+    "body": 0.7126761112310179,
+    "guardCapsule": 1.5111373099250287,
+    "minimumSampledGuard": 80.13947392883688
+  },
+  "minimumToolToBodyX": 163.0,
+  "portalBodyMargin": 50,
+  "toolInstallGuideBodyMargin": 15.0,
+  "coverOperatorX": [
+    11560.920709430828,
+    12310.920709430828
+  ],
   "modules": [
     {
-      "module": "upper",
-      "installedX": [
-        7550,
-        9850
-      ],
-      "parkX": [
-        12250,
-        14550
-      ],
-      "translation": 4700,
-      "bedOffset": 0,
-      "width": 763,
-      "lift": 1300,
-      "lowestAfterLift": 270.0
-    },
-    {
-      "module": "lower",
-      "installedX": [
-        9775.0,
+      "module": "outer",
+      "grossX": [
+        10050.5,
         12250
       ],
+      "grossLength": 2199.5,
       "parkX": [
         12250,
-        14725.0
+        14449.5
       ],
-      "translation": 2475.0,
-      "bedOffset": -300,
-      "width": 963.0,
-      "lift": 1600,
-      "lowestAfterLift": 267.9411764705883
+      "translation": 2199.5,
+      "tier": 100,
+      "minimumLiftedBottom": 671.1823529411765
+    },
+    {
+      "module": "inner",
+      "grossX": [
+        7550,
+        10050.5
+      ],
+      "grossLength": 2500.5,
+      "parkX": [
+        12250,
+        14750.5
+      ],
+      "translation": 4700,
+      "tier": 550,
+      "minimumLiftedBottom": 667.6411764705881
     }
   ],
-  "innerFrameToReceiverRim": 50,
-  "fixedUpperBracketToReceiverRim": 25,
-  "lowerCarriageToStaticPosts": 48.5,
-  "parkToOuterSupport": 132.5,
-  "nodeCollisions": [],
-  "coverOperatorCentreY": [
-    7948.99959967968,
-    8719.900722749131
-  ],
-  "lowestKnownRail": -1382.0588235294117,
-  "DminimumBeforeUnboundCatchDrain": 1882.0588235294117,
-  "Dtrial": 2000,
+  "rackPostClearance": 65.0,
+  "storedOuterToCompleteUpperBearer": 20.58235294117651,
+  "rackComponentScreen": {
+    "deflection_mm": 0.2100906657238105,
+    "stress_MPa": 19.7936660268714,
+    "load_N": 5000
+  },
+  "capture": {
+    "floor": -1102.0588235294117,
+    "rim": -1002.0588235294117,
+    "carrierToRim": 25.0,
+    "pipeInvertStart": -1125,
+    "pipeEnd": [
+      13500,
+      -1175
+    ],
+    "pipeToLongitudinalRailLateralClear": 310.0,
+    "comparison50RailVerticalGap": 20.94117647058829,
+    "receivingMaximum": -1300,
+    "scope": "Geometry only; capacity/site and first-harm admissibility remain unearned"
+  },
+  "minimumLocalD": 1688,
+  "preferredLocalDtrial": 1800,
   "qualifiedFirstHarmMargin": null,
-  "methodAcceptance": "INCOMPLETE: hatch/guard/captive staff and handover not yet proven; no capacity, material or water pass",
-  "activeHolds": [
-    "Actual hatch/guard and complete captive-staff attachment/first motion remain to be proved",
-    "Actual150-deep carriage and continuous rail member/retention/strength evidence remains unearned; no new slimming claim",
-    "Withdrawn300-drop comparison is not preferred; same-level flange sealing/capture must now be earned",
-    "Storage/hoist geometry is not a selected kit or load capacity; actual new-module delivery route remains open",
-    "All material chemistry, corrosion, bearing, air/thermal and site/drainage acceptance remain unearned"
-  ]
+  "methodAcceptance": "Project reference INTERNAL checks pass; actual seal/preload/material/rigging/load/physical and incoming-module handover acceptance remain open"
 }
