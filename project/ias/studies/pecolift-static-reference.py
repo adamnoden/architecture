@@ -31,7 +31,10 @@ ROOM=(654.5,8949.5,4262.5,11564.5)
 assert min(GROSS[0]-ROOM[0],ROOM[2]-GROSS[0]-GROSS[2],GROSS[1]-ROOM[1],ROOM[3]-GROSS[1]-GROSS[3])>=25
 for k,r in OBS.items():
     d=rect_gap(GROSS,r);assert d>=25;print('gross/fixture',k,d)
-# Source platform600X x720Y wholly inside gross: full uncertainty in basket origin.
+# DELIVERED REQUIREMENT, not an OEM fact:600 CLEAR transverse X x720 CLEAR
+# longitudinal Y, aligned/contained inside charged gross incl closed gate/posts.
+# Nominal720x600 does not prove this clear shape;720 across705 would FAIL.
+# Under THIS contract, test full uncertainty in actual basket origin.
 # Stand facing SOUTH: clothed reference480X x300Y includes resting upper arms.
 worst_reach=0;worst_head=1e9;min_hatch=1e9
 for cx,cy in itertools.product((2050-52.5,2050+52.5),(9525-177.5,9525+177.5)):
