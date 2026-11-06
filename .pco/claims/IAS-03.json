@@ -9,9 +9,9 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-06T23:13:12.551Z",
-  "expiresAt": "2026-11-07T00:43:12.551Z",
-  "branch": "work/zerg-20261106-ias-g10",
+  "heartbeatAt": "2026-11-06T23:19:55.397Z",
+  "expiresAt": "2026-11-07T00:49:55.397Z",
+  "branch": "work/zerg-20261106-ias-g11",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
     "generation": 22,
@@ -34,7 +34,7 @@
   },
   "pr": 1360,
   "checkpoint": {
-    "evidence": "Frozen PR 1360 final head 2e6643c18ec23c9310f05a7ccaa9d6a2bbe158c8 tree 8220d1a433555714b666e2538b681363e9d73693 merges actual main 50093457642f65eca288e5cc233a77d8aac6bc29. Exact readback and local tree match; affected generators, source guards, workflow/integrity and diff checks pass. Root bounded research review approved. Utility physical source, native facts and specific open handling/connection holds unchanged. No installation, material exception or IAS completion.",
-    "next": "Wait for complete exact-head CI. Keep published worktree frozen for root canonical preflight and expected-head integration. After merge verify deletion and rebind fresh successor; continue actual utility drain/container, fixed-end support and initial supported extraction, coordinated with Services. Keep wet-joint and whole-family exit holds explicit."
+    "evidence": "PR 1360 merged at b2007a2a7250e163a222129d97faaf371da22eb6 after exact final head 2e6643c1 all checks and root canonical preflight. Source g10 deletion verified; fresh distinct g11 starts exact merged main. Utility first-release remains conditional and IAS remains open; no material exception or installation admitted.",
+    "next": "Coordinate Services-owned shared W9 and utility ordinary-approach correction; independently test body/working fields and actual door/cylinder/pier effects. Fix utility SVG open-arch line to derive current source and test a moved-opening mutation. No source adoption or further fixture catalogue. Prior PR1360 is merged history; create/bind next actual PR when source warrants."
   }
 }
