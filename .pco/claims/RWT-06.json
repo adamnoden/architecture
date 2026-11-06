@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-06T22:25:23.970Z",
-  "expiresAt": "2026-11-06T23:55:23.970Z",
+  "heartbeatAt": "2026-11-06T23:12:39.012Z",
+  "expiresAt": "2026-11-07T00:42:39.012Z",
   "branch": "work/zerg-20261106-rwt06-native-release",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -36,7 +36,7 @@
   },
   "pr": 1359,
   "checkpoint": {
-    "evidence": "Draft1359 head0c123ea13d35c12795efbb71db3ad5e6571b8cfc preserves merged1344; open platform/native-release reference;159RWTtests and renderedSVG; no adoption",
-    "next": "Complete native bolt counterhold and actual captured support/crew/platform/catch joins; reconcile currentmain before finalCI; root review/preflight before merge"
+    "evidence": "Draft1359 exact0c123 preserves merged1344;159RWTtests/rendered; local322ed preserves intermediate native-access rewind; no adoption",
+    "next": "One complete bent-spool90roll with sole vertical inlet flange/free native outlet; full supported states/crew/export and100mmwell-rim consequences; reconcile currentmain500934 before finalCI"
   }
 }
