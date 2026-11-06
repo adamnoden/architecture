@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 20,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261106-w3"
   },
   "claimedAt": "2026-11-06T07:38:05.136Z",
-  "heartbeatAt": "2026-11-06T14:27:54.993Z",
-  "expiresAt": "2026-11-06T15:12:54.993Z",
+  "heartbeatAt": "2026-11-06T14:28:51.045Z",
+  "expiresAt": "2026-11-06T14:28:51.045Z",
   "checkpoint": {
     "evidence": "HANDOFF checkpoint: Draft PR1342 published exact head01c1a850c2d30ce3a4ba10269607b8d3b00f0541/tree88c8e02fcd4095b927e74f28f0fe0f937baaa420. Three owned W9/VTC whole-system files; Python reproducer and diff checks PASS. Rotated VTC needs actual144 L/s dirty-filter pressure/noise proof before detail. Existing canonical Services/HAD unchanged.",
     "next": "Fresh canonical acquisition before changes. Read all three balanced-service-architecture files on1342. Complete actual144 L/s VTC curve/noise screen; otherwise develop W9 native96/128 control/fault, winter16C heat and whole156kg renewal/constituent admission. Native steady16 fallback is not fault warning. No adopted candidate, policy exception or merge permission.",
@@ -39,5 +39,7 @@
       "blocker": "Actual root turn budget reached. PR1329 remains draft/unmerged and is not a selected house or completed packet. Known cooker/heat/control/material/kit limits remain. No hidden local source changes or unattended heartbeat."
     }
   },
-  "pr": 1342
+  "pr": 1342,
+  "releasedAt": "2026-11-06T14:28:51.045Z",
+  "releaseReason": "handoff"
 }
