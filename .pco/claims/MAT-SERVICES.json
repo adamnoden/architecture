@@ -9,8 +9,8 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T19:26:57.615Z",
-  "expiresAt": "2026-11-06T20:56:57.615Z",
+  "heartbeatAt": "2026-11-06T19:34:58.137Z",
+  "expiresAt": "2026-11-06T21:04:58.137Z",
   "branch": "work/zerg-20261106-services-g21",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
@@ -36,7 +36,7 @@
   },
   "pr": 1345,
   "checkpoint": {
-    "evidence": "Draft PR1345 exact headc6d4e62ae0ec3e803e40c6de666773f69e120bd4/treef4760ec09633841181a40b6dd84873bdaf4693bb: native VTC310Pa144L/s maximum envelope, asymmetric heat/postheater failure, defrost preheat burden and W9leaf intrusion; Python/diff/render checks PASS",
-    "next": "Complete actual144/96 dirtyfilter/noise/frost selection and W9 supported component/wholebody renewal; keep current HAD/Services unchanged"
+    "evidence": "Draft1345 latest4file treeeb63113a8b9ac3fff2c950809050fd4375396d9b published; actual194wall and W9rotatedpier483x75negative, nativeF230W/61030/DW9RL linkage and proportionalU indication/tolerance comparison; Python generated JSON/SVG and diff/renderchecksPASS",
+    "next": "Inspect latest exactheadCI and rootreview; complete real144/96dirtyfilter/sound/frost and supported W9renewal without source adoption"
   }
 }
