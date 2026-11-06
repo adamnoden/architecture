@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-06T19:22:07.387Z",
-  "expiresAt": "2026-11-06T20:52:07.387Z",
+  "heartbeatAt": "2026-11-06T19:45:24.556Z",
+  "expiresAt": "2026-11-06T21:15:24.556Z",
   "branch": "work/zerg-20261106-rwt06-successor",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -36,7 +36,7 @@
   },
   "pr": 1344,
   "checkpoint": {
-    "evidence": "Draft1344 preserves predecessor2c6e6a76/da7aa9c4; accepted788 failures remain explicit; own fresh generation53.",
-    "next": "Compose slow self-draining transfer and225depth/450bridge stack; correct actual north canopy slots/laps, render and challenge."
+    "evidence": "Draft1344 remote526be24e7c48f3330ec555f958624bdb81b0a672/tree57837272 preserves predecessor and reconciles80cmain.142RWT/direct integrity pass; closed159control+station50lap source/render complete but unadopted.",
+    "next": "Root review oneclosedcontrol before further apparatus; bind actual ends/factorybend/4700renewal; compare bounded actualmouth geometry if useful. Keep old failures and all physical/site/firstwet holds."
   }
 }
