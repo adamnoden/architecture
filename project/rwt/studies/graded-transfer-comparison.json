@@ -1,0 +1,343 @@
+{
+  "identity": "RWT-UNADOPTED-GRADED-TRANSFER-COMPARISON-2026-11-06",
+  "selectedSource": "4e6f9a338cb8c5e87f6afb82fe2a6f9fc6eeb702",
+  "selectedGeometryChanged": false,
+  "sourceRun": {
+    "x": [
+      6125,
+      7550
+    ],
+    "floor": [
+      -150,
+      -797.6470588235294
+    ],
+    "horizontalRunMm": 1425
+  },
+  "candidateProfile": {
+    "straightAngleDegrees": 25.91361458852463,
+    "straightLengthMm": 1389.947504672009,
+    "toeRadiusMm": 400,
+    "toeHorizontalRunMm": 174.8062113641126,
+    "totalArcLengthMm": 1570.8586629370454,
+    "endingAngleDegrees": 0
+  },
+  "branches": [
+    {
+      "id": "S225",
+      "inlet": [
+        6950,
+        7175
+      ],
+      "startWidthMm": 225,
+      "endWidthMm": 225,
+      "maximumFlowLps": 3.60375,
+      "reason": "Entire assigned duty may use the larger actual inlet; no nominal split assumption."
+    },
+    {
+      "id": "S225-to350",
+      "inlet": [
+        6950,
+        7175
+      ],
+      "startWidthMm": 225,
+      "endWidthMm": 350,
+      "maximumFlowLps": 3.60375,
+      "reason": "Explicit splay candidate, allowing a zero-friction energy bound without600 spread; actual plan turn and transition remain unadopted."
+    },
+    {
+      "id": "N100-unwidened",
+      "inlet": [
+        7275,
+        7375
+      ],
+      "startWidthMm": 100,
+      "endWidthMm": 100,
+      "maximumFlowLps": 2.38179376391469,
+      "reason": "Clean actual100 entry at quiet stage bounds its individual inflow; the other branch supplies any remainder."
+    },
+    {
+      "id": "N100-to225",
+      "inlet": [
+        7275,
+        7375
+      ],
+      "startWidthMm": 100,
+      "endWidthMm": 225,
+      "maximumFlowLps": 2.38179376391469,
+      "reason": "Authored gradual splay, not uniform600 spreading credit. Needs complete plan-turn and release construction before selection."
+    }
+  ],
+  "cases": [
+    {
+      "branch": "S225",
+      "flowLps": 3.60375,
+      "roughness": 0,
+      "initialDepthMm": 11.161138882706908,
+      "toeDepthMm": 4.151894265122152,
+      "toeVelocityMps": 3.857676916585794,
+      "horizontalConjugateComparisonMm": 110.17855442679748,
+      "nominal100DepthReserveMm": -10.178554426797476,
+      "toeNormalAccelerationOverGravity": 3.7924748197652596,
+      "finalSpecificEnergyMm": 762.6468582181741,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "S225",
+      "flowLps": 3.60375,
+      "roughness": 0.009,
+      "initialDepthMm": 11.161138882706908,
+      "toeDepthMm": 6.987555231733131,
+      "toeVelocityMps": 2.292170313578192,
+      "horizontalConjugateComparisonMm": 83.09145894704389,
+      "nominal100DepthReserveMm": 16.90854105295611,
+      "toeNormalAccelerationOverGravity": 1.3389512605629832,
+      "finalSpecificEnergyMm": 274.77780734432974,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "S225",
+      "flowLps": 3.60375,
+      "roughness": 0.012,
+      "initialDepthMm": 11.161138882706908,
+      "toeDepthMm": 8.452389946635313,
+      "toeVelocityMps": 1.8949275610553797,
+      "horizontalConjugateComparisonMm": 74.54886893629421,
+      "nominal100DepthReserveMm": 25.451131063705787,
+      "toeNormalAccelerationOverGravity": 0.9150740218265264,
+      "finalSpecificEnergyMm": 191.4671943119406,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "S225",
+      "flowLps": 3.60375,
+      "roughness": 0.02,
+      "initialDepthMm": 11.161138882706908,
+      "toeDepthMm": 12.378336723394094,
+      "toeVelocityMps": 1.2939272072310337,
+      "horizontalConjugateComparisonMm": 59.10603792373883,
+      "nominal100DepthReserveMm": 40.89396207626117,
+      "toeNormalAccelerationOverGravity": 0.42666860795430744,
+      "finalSpecificEnergyMm": 97.7120583142556,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "S225",
+      "flowLps": 3.60375,
+      "roughness": 0.03,
+      "initialDepthMm": 11.161138882706908,
+      "toeDepthMm": 17.519892307139994,
+      "toeVelocityMps": 0.9141989223380838,
+      "horizontalConjugateComparisonMm": 46.574847509787475,
+      "nominal100DepthReserveMm": 53.425152490212525,
+      "toeNormalAccelerationOverGravity": 0.21298666401735822,
+      "finalSpecificEnergyMm": 60.11722511061164,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "S225-to350",
+      "flowLps": 3.60375,
+      "roughness": 0,
+      "initialDepthMm": 11.161138882706908,
+      "toeDepthMm": 2.6664650558343563,
+      "toeVelocityMps": 3.861452655792162,
+      "horizontalConjugateComparisonMm": 88.70910674160568,
+      "nominal100DepthReserveMm": 11.29089325839432,
+      "toeNormalAccelerationOverGravity": 3.799902296871646,
+      "finalSpecificEnergyMm": 762.6469244301636,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "S225-to350",
+      "flowLps": 3.60375,
+      "roughness": 0.009,
+      "initialDepthMm": 11.161138882706908,
+      "toeDepthMm": 5.18490713218891,
+      "toeVelocityMps": 1.9858462859452857,
+      "horizontalConjugateComparisonMm": 62.02449197280609,
+      "nominal100DepthReserveMm": 37.97550802719391,
+      "toeNormalAccelerationOverGravity": 1.0049912006632735,
+      "finalSpecificEnergyMm": 206.18314726484363,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "S225-to350",
+      "flowLps": 3.60375,
+      "roughness": 0.012,
+      "initialDepthMm": 11.161138882706908,
+      "toeDepthMm": 6.390584409772772,
+      "toeVelocityMps": 1.6111873204714744,
+      "horizontalConjugateComparisonMm": 55.04872798846884,
+      "nominal100DepthReserveMm": 44.95127201153116,
+      "toeNormalAccelerationOverGravity": 0.6615506069439473,
+      "finalSpecificEnergyMm": 138.70070579856224,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "S225-to350",
+      "flowLps": 3.60375,
+      "roughness": 0.02,
+      "initialDepthMm": 11.161138882706908,
+      "toeDepthMm": 9.556582063547383,
+      "toeVelocityMps": 1.0774174807437962,
+      "horizontalConjugateComparisonMm": 43.01830358590932,
+      "nominal100DepthReserveMm": 56.98169641409068,
+      "toeNormalAccelerationOverGravity": 0.2958278358339216,
+      "finalSpecificEnergyMm": 68.72214923033171,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "S225-to350",
+      "flowLps": 3.60375,
+      "roughness": 0.03,
+      "initialDepthMm": 11.161138882706908,
+      "toeDepthMm": 13.694706082618207,
+      "toeVelocityMps": 0.7518546589690709,
+      "horizontalConjugateComparisonMm": 33.46588232178322,
+      "nominal100DepthReserveMm": 66.53411767821677,
+      "toeNormalAccelerationOverGravity": 0.14405846794431648,
+      "finalSpecificEnergyMm": 42.5063996714815,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "N100-unwidened",
+      "flowLps": 2.38179376391469,
+      "roughness": 0,
+      "initialDepthMm": 17.03131604149414,
+      "toeDepthMm": 6.182447400444029,
+      "toeVelocityMps": 3.852509547826687,
+      "horizontalConjugateComparisonMm": 133.7179827131252,
+      "nominal100DepthReserveMm": -33.717982713125195,
+      "toeNormalAccelerationOverGravity": 3.7823215637349095,
+      "finalSpecificEnergyMm": 762.646760147426,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "N100-unwidened",
+      "flowLps": 2.38179376391469,
+      "roughness": 0.009,
+      "initialDepthMm": 17.03131604149414,
+      "toeDepthMm": 9.324187426297387,
+      "toeVelocityMps": 2.554425018524638,
+      "horizontalConjugateComparisonMm": 106.80824494783391,
+      "nominal100DepthReserveMm": -6.808244947833913,
+      "toeNormalAccelerationOverGravity": 1.6628662526158504,
+      "finalSpecificEnergyMm": 341.8974379494675,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "N100-unwidened",
+      "flowLps": 2.38179376391469,
+      "roughness": 0.012,
+      "initialDepthMm": 17.03131604149414,
+      "toeDepthMm": 11.164897058696434,
+      "toeVelocityMps": 2.1332877064544813,
+      "horizontalConjugateComparisonMm": 96.34932260100497,
+      "nominal100DepthReserveMm": 3.650677398995029,
+      "toeNormalAccelerationOverGravity": 1.1597646377446027,
+      "finalSpecificEnergyMm": 243.117824607617,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "N100-unwidened",
+      "flowLps": 2.38179376391469,
+      "roughness": 0.02,
+      "initialDepthMm": 17.03131604149414,
+      "toeDepthMm": 16.462522729710546,
+      "toeVelocityMps": 1.44679755528366,
+      "horizontalConjugateComparisonMm": 75.98977889539212,
+      "nominal100DepthReserveMm": 24.01022110460788,
+      "toeNormalAccelerationOverGravity": 0.5334411737958142,
+      "finalSpecificEnergyMm": 123.1507574888734,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "N100-unwidened",
+      "flowLps": 2.38179376391469,
+      "roughness": 0.03,
+      "initialDepthMm": 17.03131604149414,
+      "toeDepthMm": 23.85033881884436,
+      "toeVelocityMps": 0.9986414792702292,
+      "horizontalConjugateComparisonMm": 58.725106928397864,
+      "nominal100DepthReserveMm": 41.274893071602136,
+      "toeNormalAccelerationOverGravity": 0.2541500520181018,
+      "finalSpecificEnergyMm": 74.68034922246473,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "N100-to225",
+      "flowLps": 2.38179376391469,
+      "roughness": 0,
+      "initialDepthMm": 17.03131604149414,
+      "toeDepthMm": 2.741526015018006,
+      "toeVelocityMps": 3.861261940924366,
+      "horizontalConjugateComparisonMm": 89.9258995138518,
+      "nominal100DepthReserveMm": 10.074100486148197,
+      "toeNormalAccelerationOverGravity": 3.7995269562770133,
+      "finalSpecificEnergyMm": 762.6469172704207,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "N100-to225",
+      "flowLps": 2.38179376391469,
+      "roughness": 0.009,
+      "initialDepthMm": 17.03131604149414,
+      "toeDepthMm": 5.203566310560155,
+      "toeVelocityMps": 2.0343259660898854,
+      "horizontalConjugateComparisonMm": 63.70930145753537,
+      "nominal100DepthReserveMm": 36.29069854246463,
+      "toeNormalAccelerationOverGravity": 1.0546590561436149,
+      "finalSpecificEnergyMm": 216.13537753928316,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "N100-to225",
+      "flowLps": 2.38179376391469,
+      "roughness": 0.012,
+      "initialDepthMm": 17.03131604149414,
+      "toeDepthMm": 6.442122453043753,
+      "toeVelocityMps": 1.6432084517178878,
+      "horizontalConjugateComparisonMm": 56.41679336377332,
+      "nominal100DepthReserveMm": 43.58320663622668,
+      "toeNormalAccelerationOverGravity": 0.6881075473489036,
+      "finalSpecificEnergyMm": 144.06363192282447,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "N100-to225",
+      "flowLps": 2.38179376391469,
+      "roughness": 0.02,
+      "initialDepthMm": 17.03131604149414,
+      "toeDepthMm": 9.731520269059637,
+      "toeVelocityMps": 1.0877796859242401,
+      "horizontalConjugateComparisonMm": 43.82995571903259,
+      "nominal100DepthReserveMm": 56.17004428096741,
+      "toeNormalAccelerationOverGravity": 0.30154552627661524,
+      "finalSpecificEnergyMm": 70.0406255243827,
+      "initialSpecificEnergyMm": 115
+    },
+    {
+      "branch": "N100-to225",
+      "flowLps": 2.38179376391469,
+      "roughness": 0.03,
+      "initialDepthMm": 17.03131604149414,
+      "toeDepthMm": 14.065020983749045,
+      "toeVelocityMps": 0.7526295249807318,
+      "horizontalConjugateComparisonMm": 33.878946871510145,
+      "nominal100DepthReserveMm": 66.12105312848985,
+      "toeNormalAccelerationOverGravity": 0.14435555603280373,
+      "finalSpecificEnergyMm": 42.9361321903098,
+      "initialSpecificEnergyMm": 115
+    }
+  ],
+  "interpretation": "Finite-length inclined-flow comparison, not a selected construction or hydraulic admission. The narrow branch must be widened or otherwise controlled; nominal flow partition is not sufficient.",
+  "bounds": [
+    "n=0 is the zero-friction energy counterexample; n=.009..03 are authored sensitivity bounds, not calibrated roughness of a selected alloy or assembled surface.",
+    "Integration uses inclined hydrostatic normal depth and Manning friction. Circular-toe nonhydrostatic pressure, waves and a located hydraulic jump are not solved; acceleration ratio is exposed, not silently ignored.",
+    "No600-width distribution is assumed. Gradual100-to225 expansion is an explicit candidate wall profile, not evidence of full-width mixing.",
+    "The required lateral shifts/plan turns, 100depth carrier entry, actual cover/chute panel extraction before stairs and temporary canopy-pipe energy/landing still need a joined construction. This section-only comparison cannot adopt those missing joins.",
+    "The2m-high canopy drain does not inherit the ordinary court quiet-stage energy boundary. Its terminal needs its own contained transition.",
+    "Quiet−35, protected crest15, house and well bounds remain unchanged. No deeper stagnant sump or structural250bridge alternative is adopted."
+  ],
+  "basis": "Specific energy E=z+h cos(theta)+Q²/(2gb²h²), dE/ds=−Sf; variable-width derivative integrated on the supercritical branch with RK4. Horizontal conjugate-depth comparison is applied only AFTER the tangent toe, not on the steep slope.",
+  "source": "https://www.hec.usace.army.mil/confluence/rasdocs/ras1dtechref/6.2/theoretical-basis-for-one-dimensional-and-two-dimensional-hydrodynamic-calculations/1d-steady-flow-water-surface-profiles/applications-of-the-momentum-equation"
+}
