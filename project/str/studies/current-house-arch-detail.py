@@ -87,10 +87,10 @@ def weather_arch(spandrel, width=1000):
         th=-ang+2*ang*(i+.5)/360
         x=1800+midR*math.sin(th)
         delta=2*ang/360
-        width=midR*math.cos(th)*delta
+        strip_width=midR*math.cos(th)*delta
         top=centre_z+math.sqrt((R+215)**2-(x-1800)**2)
         weight=((R+215)**2-R**2)*delta/2*102.5*20/1e9
-        weight+=max(roof-top,0)*width*102.5*20/1e9*spandrel[int(x>=1800)]
+        weight+=max(roof-top,0)*strip_width*102.5*20/1e9*spandrel[int(x>=1800)]
         points.append((x,1.35*weight))
     vright=sum(f*(x-x0)/(x1-x0) for x,f in points)
     vleft=sum(f for x,f in points)-vright
@@ -123,30 +123,31 @@ for opening in H['openings']['FIRST']:
         lower=next(q for q in H['openings']['GROUND'] if q['wall']==opening['wall'] and q['centre']==opening['centre'])
         assert lower['width']==1000
 axis_ends=[3600-z['startVertical'][0] for z in legs]
-base_y=[17,123]
+base_y=[-38,14]
 crossing_clear=min(abs(y-b)-8-6 for y in base_y for b in [49,91])
 # The existing 140 wide cage opens to 200 here. Replacement closed H8 rings
 # at 100 centres must enclose the new width and the original longitudinal bars.
 # Reserve X and check nearest ring centre for each vertical H16 leg.
 phase=max(range(100),key=lambda q:min(abs((x-q+50)%100-50) for x in axis_ends))
 ring_clear=min(abs((x-phase+50)%100-50) for x in axis_ends)-8-4
-assert min(crossing_clear,ring_clear)>10
+assert crossing_clear-10>0 and ring_clear-10>25
 jamb_w=frames['geometry']['oppositeJamb'][1]
 ground_ext=2850-R+math.sqrt((R+215)**2-500**2)
 base_low=3920-length
-extra_volume=(jamb_w*.060/1000*(.98+.55/2)+jamb_w*.140/1000*.150)*8
+extra_volume=(jamb_w*.085/1000*(.98+.55/2)+jamb_w*.140/1000*.150)*8
 right_base={'verticalX':axis_ends,'jambWidth':jamb_w,'verticalNormalAtHead':[49,91],
             'verticalNormalAtFloor':base_y,'transitionZ':[4000,4550],
-            'localConcreteNormal':[-30,170],'plinthZ':[base_low,4000],
+            'localConcreteNormal':[-85,140],'plinthZ':[base_low,4000],
             'firstFloorBeamZ':[3170,3920],'lowerArchMaxExtradosInsidePlinthX':ground_ext,
             'verticalReserveAboveLowerExtrados':base_low-ground_ext,
             'straightDevelopmentPastBeamTop':length,'lowerGroundHeadDepthReplaced':3170-base_low,
             'minimumOrthogonalH12Clear':crossing_clear,'clearAfterTwoFiveMMPlacementOffsets':crossing_clear-10,
             'localH8HoopStationPhaseIn100':phase,'minimumVerticalBarToHoopSurface':ring_clear,
-            'jambNormalCoverAtWideBase':17+30-8-6,
+            'jambNormalCoverAtWideBase':-38+85-8-6,
             'additionalGrossConcreteM3AcrossEightApprox':extra_volume,
-            'physicalPrice':'30 mm into room and 30 mm into the 160 mm cavity at eight 205 mm-wide jamb feet, tapering back above. The existing protected frame edge stays 35 mm away in X. Check the local return, floor finish, continuous insulation and guard bracket. Widen and close the local H8 beam hoops around both new H16 lanes and original H12 steel. Hoop transitions, cast access and laps remain to be scheduled.'}
+            'physicalPrice':'85 mm into the 160 mm cavity with the inside face at its existing line at eight 205 mm-wide jamb feet, tapering back above. The existing protected frame edge stays 35 mm away in X. The outermost remaining insulation allowance is 75 mm. Check the local return, floor finish, continuous insulation and guard bracket. Widen and close the local H8 beam hoops around both new H16 lanes and original H12 steel. Hoop transitions, cast access and laps remain to be scheduled.'}
 outer=[weather_arch(pair) for pair in product([0,1],repeat=2)]
+assert abs(outer[-1]['springXOffset']-(x1-2300))<1e-9
 # At the floor line, use only the continuous rectangular outer jamb above
 # FFL and below spring as stabilising weight. Adjacent arches and returns
 # provide zero helpful thrust in this comparison. Keep both footing and bed
@@ -191,6 +192,27 @@ for face in ['outer-south','outer-north','outer-east','outer-west']:
         paired.append({'wall':face,'jamb':[start,end],'spans':[left['width'],right['width']],
                        'minimumEdgeReserve':min(c['edgeReserve'] for c in cases),'maximumHorizontalShear':max(c['horizontalShear'] for c in cases),'maximumBearingMPa':max(c['bearingStress'] for c in cases)})
 assert all(c['minimumEdgeReserve']>0 for c in paired)
+# Ground court south is a different doorway from the upper corner family.
+# Its selected rise is 300. The old 600-rise brick trial cannot set this gap.
+court_door=next(q for q in H['archOpeningRegister']['GROUND'] if q['wall']=='court-south')
+assert (court_door['width'],court_door['head']-court_door['spring'],court_door['radialRingTrial'])==(1800,300,215)
+width=1800;ri=1500;ro=ri+215;mid_r=ri+107.5;theta=math.asin(900/ri)
+centre_h=2850-ri; spring=centre_h+mid_r*math.cos(theta);left=6000-mid_r*math.sin(theta);right=12000-left
+loads=[]
+for i in range(360):
+    t=-theta+2*theta*(i+.5)/360;x=6000+mid_r*math.sin(t);dt=2*theta/360
+    top=centre_h+math.sqrt(ro**2-(x-6000)**2)
+    weight=1.35*20*102.5*(.5*(ro**2-ri**2)*dt+max(0,3170-top)*mid_r*math.cos(t)*dt)/1e9
+    loads.append((x,weight))
+V=sum(f*(x-left)/(right-left) for x,f in loads)
+Hdoor=(V*(6000-left)-sum(f*(6000-x) for x,f in loads if x<6000))/(centre_h+mid_r-spring)
+jamb_weight=.9*17*.85*.1025*2.55
+moment_around_far_toe=jamb_weight*.425+V*.9/1.35*(.85-(5100-left)/1000)-Hdoor*spring/1000
+court={'door':{'width':width,'rise':300,'radial':215,'centrelineSpringXYZ':[left,right,spring],'outerSpringProjection':ro*math.sin(theta)-900,'horizontalGapFromOldPatch':215-(ro*math.sin(theta)-900)},
+       'partialGravityCase':{'topOfSpandrel':3170,'H':Hdoor,'V':V,'normalAtFloor':jamb_weight+V*.9/1.35,'signedOverturningMarginKNmAtFloor':moment_around_far_toe},
+       'lowerPocket':{'normalY':[4147.5,4250],'z':[-65,100],'openingSideRebateEach':6,'remainingWidth':844,'removedBaseMM2Each':615,'solidDepthBelowPocketToRCTop':115,'distanceFromDPCAt120':20},
+       'decision':'The isolated weather-leaf jamb already overturns in the ring-plus-low-spandrel control; greater upper masonry/arch loads and an actual perpendicular return need joining. The pocket is on the opening-side edge, away from the governing far toe. Keep its formed coursing, liner, bearing and shear unresolved. The historic 16.54 mm patch clearance was for a different 600-rise geometry.'}
+assert court['door']['horizontalGapFromOldPatch']==86 and moment_around_far_toe<0
 result={'role':'Curved RC inner arch and independent outer brick arch. The nominal bar placement is a candidate. Confirm the complete simultaneous cage, tolerances, fire, anchorage and temporary works before selection.',
         'archBars':{'diameter':16,'bendCentreRadius':bend_radius,'straightDevelopment':length,'requiredFullYieldAt2p1MPa':need,'legs':legs,
                     'upperLStations':profile,'transitionGlobalZ':[4000,5000], 'minimumTailEndZ':min(z['endVertical'][1] for z in legs),
@@ -198,7 +220,7 @@ result={'role':'Curved RC inner arch and independent outer brick arch. The nomin
                     'localToe':{'oldX':1262.5,'newX':1300,'z':local_z,'newConcreteM3AcrossEight':8*material,
                                 'massPrice':'Within the existing 140 wall footprint. Replaces masonry up to the rough jamb. Actual stirrup outside surface, opening intrados and method of placing concrete around each bar still govern.'},
                     'wideControl':{'normalWidth':240,'outwardIntoCavity':50,'inwardIntoRoom':50,'additionalM3ForEightArchesAndJambs':wide_added,'additionalGrossKN':wide_added*25,'excludes':'Includes the curved ring and ordinary jamb only. The widened pier anchorage region and its new reveal, insulation and frame coordination add further cost.'}},
-        'oppositeJambBase':right_base,
+        'oppositeJambBase':right_base,'groundCourtWeatherJambPocket':court,
         'outerBrick':{'width':102.5,'ringRadial':215,'eave':roof,'centres':[x0,x1],'cases':outer,'jambFloorLine':abutments,'permanentPairedArchAtSharedJamb':paired,'abutmentBasis':'One corner opening loaded at a time. The full gross continuous side territory is conditional on effective bonding and direct support to the floor level. Only 17 kN/m³ and 0.90 of the solid jamb below spring count. The paired vertical arch reaction also receives 0.90/1.35 while the outgoing horizontal component retains 1.35. Half-built and full spandrels checked. No neighbouring beam, return, wall tie or floor friction credit.','remaining':'Verify effective jamb width, return bonding, bed shear, local thrust reactions at the jamb bases, mortar/unit orientation, wind restraint and setting/shoring. The inner RC and the external grille offer no assumed masonry tie.'},'admitted':False}
 output=Path(__file__).with_suffix('.json')
 contents=json.dumps(result,indent=2,sort_keys=True)+'\n'

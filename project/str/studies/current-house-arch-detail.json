@@ -110,9 +110,46 @@
       "outwardIntoCavity": 50
     }
   },
+  "groundCourtWeatherJambPocket": {
+    "decision": "The isolated weather-leaf jamb already overturns in the ring-plus-low-spandrel control; greater upper masonry/arch loads and an actual perpendicular return need joining. The pocket is on the opening-side edge, away from the governing far toe. Keep its formed coursing, liner, bearing and shear unresolved. The historic 16.54 mm patch clearance was for a different 600-rise geometry.",
+    "door": {
+      "centrelineSpringXYZ": [
+        5035.5,
+        6964.5,
+        2636.0
+      ],
+      "horizontalGapFromOldPatch": 86.0,
+      "outerSpringProjection": 129.0,
+      "radial": 215,
+      "rise": 300,
+      "width": 1800
+    },
+    "lowerPocket": {
+      "distanceFromDPCAt120": 20,
+      "normalY": [
+        4147.5,
+        4250
+      ],
+      "openingSideRebateEach": 6,
+      "remainingWidth": 844,
+      "removedBaseMM2Each": 615,
+      "solidDepthBelowPocketToRCTop": 115,
+      "z": [
+        -65,
+        100
+      ]
+    },
+    "partialGravityCase": {
+      "H": 1.497682746329022,
+      "V": 1.1500659175759875,
+      "normalAtFloor": 4.165892486717325,
+      "signedOverturningMarginKNmAtFloor": -1.900988236944344,
+      "topOfSpandrel": 3170
+    }
+  },
   "oppositeJambBase": {
-    "additionalGrossConcreteM3AcrossEightApprox": 0.157932,
-    "clearAfterTwoFiveMMPlacementOffsets": 8,
+    "additionalGrossConcreteM3AcrossEightApprox": 0.209387,
+    "clearAfterTwoFiveMMPlacementOffsets": 11,
     "firstFloorBeamZ": [
       3170,
       3920
@@ -120,15 +157,15 @@
     "jambNormalCoverAtWideBase": 33,
     "jambWidth": 205,
     "localConcreteNormal": [
-      -30,
-      170
+      -85,
+      140
     ],
     "localH8HoopStationPhaseIn100": 4,
     "lowerArchMaxExtradosInsidePlinthX": 2884.1684003673554,
     "lowerGroundHeadDepthReplaced": 150,
-    "minimumOrthogonalH12Clear": 18,
+    "minimumOrthogonalH12Clear": 21,
     "minimumVerticalBarToHoopSurface": 36.11764705882342,
-    "physicalPrice": "30 mm into room and 30 mm into the 160 mm cavity at eight 205 mm-wide jamb feet, tapering back above. The existing protected frame edge stays 35 mm away in X. Check the local return, floor finish, continuous insulation and guard bracket. Widen and close the local H8 beam hoops around both new H16 lanes and original H12 steel. Hoop transitions, cast access and laps remain to be scheduled.",
+    "physicalPrice": "85 mm into the 160 mm cavity with the inside face at its existing line at eight 205 mm-wide jamb feet, tapering back above. The existing protected frame edge stays 35 mm away in X. The outermost remaining insulation allowance is 75 mm. Check the local return, floor finish, continuous insulation and guard bracket. Widen and close the local H8 beam hoops around both new H16 lanes and original H12 steel. Hoop transitions, cast access and laps remain to be scheduled.",
     "plinthZ": [
       3020,
       4000
@@ -139,8 +176,8 @@
       4550
     ],
     "verticalNormalAtFloor": [
-      17,
-      123
+      -38,
+      14
     ],
     "verticalNormalAtHead": [
       49,
@@ -165,7 +202,7 @@
           0,
           0
         ],
-        "springXOffset": 593.895079393186,
+        "springXOffset": 94.85294117647061,
         "springZ": 6050.588235294117
       },
       {
@@ -178,7 +215,7 @@
           0,
           1
         ],
-        "springXOffset": 593.895079393186,
+        "springXOffset": 94.85294117647061,
         "springZ": 6050.588235294117
       },
       {
@@ -191,7 +228,7 @@
           1,
           0
         ],
-        "springXOffset": 593.895079393186,
+        "springXOffset": 94.85294117647061,
         "springZ": 6050.588235294117
       },
       {
@@ -204,7 +241,7 @@
           1,
           1
         ],
-        "springXOffset": 593.895079393186,
+        "springXOffset": 94.85294117647061,
         "springZ": 6050.588235294117
       }
     ],
@@ -381,9 +418,9 @@
           2300.0,
           3400.0
         ],
-        "maximumBearingMPa": 0.12864869012638755,
+        "maximumBearingMPa": 0.11368052529679509,
         "maximumHorizontalShear": 0.4834514029240471,
-        "minimumEdgeReserve": 378.71239005249464,
+        "minimumEdgeReserve": 419.9722328525917,
         "spans": [
           1000,
           1000
@@ -395,9 +432,9 @@
           8600.0,
           9700.0
         ],
-        "maximumBearingMPa": 0.12864869012638755,
+        "maximumBearingMPa": 0.11368052529679509,
         "maximumHorizontalShear": 0.4834514029240471,
-        "minimumEdgeReserve": 378.71239005249464,
+        "minimumEdgeReserve": 419.9722328525917,
         "spans": [
           1000,
           1000
@@ -409,9 +446,9 @@
           2300.0,
           3350.0
         ],
-        "maximumBearingMPa": 0.3034494725632208,
+        "maximumBearingMPa": 0.1953747806349028,
         "maximumHorizontalShear": 0.9302985745467643,
-        "minimumEdgeReserve": 150.7904849356146,
+        "minimumEdgeReserve": 234.20265897455454,
         "spans": [
           1000,
           700
@@ -423,9 +460,9 @@
           8650.0,
           9700.0
         ],
-        "maximumBearingMPa": 0.30344947256322063,
+        "maximumBearingMPa": 0.1953747806349029,
         "maximumHorizontalShear": 0.9302985745467643,
-        "minimumEdgeReserve": 150.7904849356147,
+        "minimumEdgeReserve": 234.20265897455442,
         "spans": [
           700,
           1000
@@ -437,9 +474,9 @@
           2300.0,
           4100.0
         ],
-        "maximumBearingMPa": 0.0751029665471835,
+        "maximumBearingMPa": 0.06951300375588508,
         "maximumHorizontalShear": 0.4834514029240471,
-        "minimumEdgeReserve": 796.3441410086211,
+        "minimumEdgeReserve": 826.3885099062707,
         "spans": [
           1000,
           1000
@@ -451,9 +488,9 @@
           7900.0,
           9700.0
         ],
-        "maximumBearingMPa": 0.0751029665471835,
+        "maximumBearingMPa": 0.06951300375588508,
         "maximumHorizontalShear": 0.4834514029240471,
-        "minimumEdgeReserve": 796.3441410086211,
+        "minimumEdgeReserve": 826.3885099062707,
         "spans": [
           1000,
           1000
@@ -465,9 +502,9 @@
           2300.0,
           4100.0
         ],
-        "maximumBearingMPa": 0.0751029665471835,
+        "maximumBearingMPa": 0.06951300375588508,
         "maximumHorizontalShear": 0.4834514029240471,
-        "minimumEdgeReserve": 796.3441410086211,
+        "minimumEdgeReserve": 826.3885099062707,
         "spans": [
           1000,
           1000
@@ -479,9 +516,9 @@
           7900.0,
           9700.0
         ],
-        "maximumBearingMPa": 0.0751029665471835,
+        "maximumBearingMPa": 0.06951300375588508,
         "maximumHorizontalShear": 0.4834514029240471,
-        "minimumEdgeReserve": 796.3441410086211,
+        "minimumEdgeReserve": 826.3885099062707,
         "spans": [
           1000,
           1000

@@ -21,7 +21,7 @@
   "recomputedMembers": {
     "LWidthAtSkewback": 1037.5,
     "jambNormalWidthAbove4550": 140,
-    "jambNormalWidthAtFoot": 200,
+    "jambNormalWidthAtFoot": 225,
     "localL": [
       270900.0,
       310.60885012919897,
@@ -46,110 +46,110 @@
       "crackedEI": 0.2,
       "datumComparisons": {
         "near 5000": [
-          6.607718821248973,
-          76,
-          0,
+          6.5163511990041725,
+          79,
+          2,
           "opposite jamb"
         ],
         "near 5150": [
-          6.542899494694372,
-          30,
-          3,
+          6.944732000298389,
+          32,
+          1,
           "opposite jamb"
         ],
         "near 5300": [
-          7.444083935540081,
-          30,
-          3,
+          7.813314727041908,
+          32,
+          1,
           "opposite jamb"
         ],
         "near 5450": [
-          8.345998065706624,
-          30,
-          3,
+          8.682596932383168,
+          32,
+          1,
           "opposite jamb"
         ],
         "near 5600": [
-          9.248421270987478,
-          30,
-          3,
+          9.552360790694522,
+          32,
+          1,
           "opposite jamb"
         ],
         "near 5750": [
-          10.151132937176111,
-          30,
-          3,
+          10.422388476348312,
+          32,
+          1,
           "opposite jamb"
         ],
         "opposite 5000": [
-          7.12851486304029,
-          62,
-          5,
+          7.125070681177327,
+          33,
+          2,
           "opposite jamb"
         ],
         "opposite 5150": [
-          6.3785208077620785,
-          28,
-          3,
+          6.720890878116821,
+          31,
+          1,
           "opposite jamb"
         ],
         "opposite 5300": [
-          7.626890942314874,
-          28,
-          3,
+          7.9419945814875454,
+          31,
+          1,
           "opposite jamb"
         ],
         "opposite 5450": [
-          8.82018659865205,
-          28,
-          3,
+          9.110859200813302,
+          31,
+          1,
           "opposite jamb"
         ],
         "opposite 5600": [
-          9.926678218531208,
-          28,
-          3,
+          10.195136955418842,
+          31,
+          1,
           "opposite jamb"
         ],
         "opposite 5750": [
-          10.91463624370995,
-          28,
-          3,
+          11.162480064628914,
+          31,
+          1,
           "opposite jamb"
         ]
       },
-      "maxEndMoment": 11.826536840252105,
+      "maxEndMoment": 11.86136676411754,
       "maxInPlaneInteractionArchJamb": [
-        0.4926973185917597,
-        0.3447072689833379
+        0.49414834439305655,
+        0.35842839465784343
       ],
-      "maxLeftH": 6.279922191522084,
-      "maxLeftV": 17.738781701614975,
+      "maxLeftH": 6.430147622477147,
+      "maxLeftV": 17.79522687330983,
       "maxLowerSpan": {
         "outer-east": 3054.0,
         "outer-north": 3245.0,
         "outer-south": 2517.5,
         "outer-west": 2867.5
       },
-      "maxMemberShear": 17.144993030124347,
+      "maxMemberShear": 17.266489625384803,
       "maxMomentArchJamb": [
-        11.826536840252702,
-        7.0901949030964335
+        11.861366764118015,
+        7.372645999886621
       ],
-      "maxRelativeEndpointX": 6.773485778181135,
-      "maxRelativeEndpointZ": 2.2412139078468885,
-      "maxTotalVerticalReaction": 8.377374845153511,
+      "maxRelativeEndpointX": 6.743283334161264,
+      "maxRelativeEndpointZ": 2.2325880333632804,
+      "maxTotalVerticalReaction": 8.438778751239857,
       "maximumGapClosure": [
-        7.444083935540081,
+        7.813314727041908,
         {
           "ceiling": 1,
           "surface": "opposite jamb",
-          "wind": 30,
-          "window": 3
+          "wind": 32,
+          "window": 1
         }
       ],
-      "maximumRigidWindowRotation": 0.0035540888052011752,
-      "residualFinishGap": 0.555916064459919,
+      "maximumRigidWindowRotation": 0.003516113396965969,
+      "residualFinishGap": 0.18668527295809234,
       "support": "all mapped lower bearings",
       "windowFinishGap": 8
     },
@@ -157,101 +157,101 @@
       "crackedEI": 0.2,
       "datumComparisons": {
         "near 5000": [
-          6.174759098449892,
-          29,
-          0,
+          5.978294539048083,
+          11,
+          3,
           "opposite jamb"
         ],
         "near 5150": [
-          5.304229865004018,
-          29,
-          0,
+          5.131562074122975,
+          11,
+          3,
           "opposite jamb"
         ],
         "near 5300": [
-          5.57660858707932,
+          5.9508226319007305,
           29,
           0,
           "near jamb"
         ],
         "near 5450": [
-          6.4490487011152,
+          6.795365160400485,
           29,
           0,
           "near jamb"
         ],
         "near 5600": [
-          7.32192763486339,
+          7.640332195197204,
           29,
           0,
           "near jamb"
         ],
         "near 5750": [
-          8.19490097460207,
+          8.485380984254164,
           29,
           0,
           "near jamb"
         ],
         "opposite 5000": [
-          6.959278685909075,
+          6.824223605469129,
           29,
           0,
           "opposite jamb"
         ],
         "opposite 5150": [
-          5.740751193569851,
+          5.631820170607661,
           29,
           0,
           "opposite jamb"
         ],
         "opposite 5300": [
-          5.474900325203118,
-          28,
+          5.780872308185663,
+          29,
           0,
           "near jamb"
         ],
         "opposite 5450": [
-          6.6311389661782405,
+          6.919380119165724,
           29,
           0,
           "near jamb"
         ],
         "opposite 5600": [
-          7.715013527202367,
+          7.984588176552216,
           29,
           0,
           "near jamb"
         ],
         "opposite 5750": [
-          8.693697242884959,
+          8.945595185909898,
           29,
           0,
           "near jamb"
         ]
       },
-      "maxEndMoment": 11.457954846173026,
+      "maxEndMoment": 11.496739743187822,
       "maxInPlaneInteractionArchJamb": [
-        0.4777986834982379,
-        0.33973774858026273
+        0.47941602036005415,
+        0.3534246677479393
       ],
-      "maxLeftH": 5.926699543818366,
-      "maxLeftV": 17.268809076225953,
+      "maxLeftH": 6.073726102745044,
+      "maxLeftV": 17.332134654834853,
       "maxLowerSpan": {
         "outer-east": 11335.0,
         "outer-north": 11335.0,
         "outer-south": 11335.0,
         "outer-west": 11335.0
       },
-      "maxMemberShear": 16.827168289907977,
+      "maxMemberShear": 16.956944200015396,
       "maxMomentArchJamb": [
-        11.45795484617231,
-        6.8555269790825655
+        11.49673974318806,
+        7.131713667216697
       ],
-      "maxRelativeEndpointX": 7.053811366720134,
-      "maxRelativeEndpointZ": 1.798640447221185,
-      "maxTotalVerticalReaction": 8.377374845941004,
+      "maxRelativeEndpointX": 7.02878440074054,
+      "maxRelativeEndpointZ": 1.7890293927345717,
+      "maxTotalVerticalReaction": 8.438778751925762,
       "maximumGapClosure": [
-        5.57660858707932,
+        5.9508226319007305,
         {
           "ceiling": 1,
           "surface": "near jamb",
@@ -259,8 +259,8 @@
           "window": 0
         }
       ],
-      "maximumRigidWindowRotation": 0.00305843298841792,
-      "residualFinishGap": 2.4233914129206804,
+      "maximumRigidWindowRotation": 0.0029360824538330324,
+      "residualFinishGap": 2.0491773680992695,
       "support": "two retained corner bearings",
       "windowFinishGap": 8
     },
@@ -268,110 +268,110 @@
       "crackedEI": 0.35,
       "datumComparisons": {
         "near 5000": [
-          5.639383899534515,
-          76,
-          0,
+          5.545180805597748,
+          79,
+          2,
           "opposite jamb"
         ],
         "near 5150": [
-          5.5894165450420426,
-          30,
-          3,
+          5.927525043480235,
+          32,
+          1,
           "opposite jamb"
         ],
         "near 5300": [
-          6.355938084020704,
-          30,
-          3,
+          6.666401275718484,
+          32,
+          1,
           "opposite jamb"
         ],
         "near 5450": [
-          7.122128798311588,
-          30,
-          3,
+          7.404931476927868,
+          32,
+          1,
           "opposite jamb"
         ],
         "near 5600": [
-          7.887809374578821,
-          30,
-          3,
+          8.1429394584999,
+          32,
+          1,
           "opposite jamb"
         ],
         "near 5750": [
-          8.652800499486517,
-          30,
-          3,
+          8.880249031826068,
+          32,
+          1,
           "opposite jamb"
         ],
         "opposite 5000": [
-          6.079488199946826,
-          58,
-          4,
+          6.049436268493176,
+          33,
+          2,
           "opposite jamb"
         ],
         "opposite 5150": [
-          5.407040276791115,
-          28,
-          3,
+          5.701308118592073,
+          31,
+          1,
           "opposite jamb"
         ],
         "opposite 5300": [
-          6.465253178431728,
-          28,
-          3,
+          6.736154493381195,
+          31,
+          1,
           "opposite jamb"
         ],
         "opposite 5450": [
-          7.4782225229047325,
-          28,
-          3,
+          7.728104075401899,
+          31,
+          1,
           "opposite jamb"
         ],
         "opposite 5600": [
-          8.419639177328538,
-          28,
-          3,
+          8.65035628659972,
+          31,
+          1,
           "opposite jamb"
         ],
         "opposite 5750": [
-          9.263194008821547,
-          28,
-          3,
+          9.4761105489202,
+          31,
+          1,
           "opposite jamb"
         ]
       },
-      "maxEndMoment": 17.068744522252036,
+      "maxEndMoment": 17.09051994710584,
       "maxInPlaneInteractionArchJamb": [
-        0.7131342704789506,
-        0.5155674330911767
+        0.7139858948229069,
+        0.5348464118636529
       ],
-      "maxLeftH": 9.077844901699107,
-      "maxLeftV": 24.430567833124297,
+      "maxLeftH": 9.275376331792911,
+      "maxLeftV": 24.4769382323413,
       "maxLowerSpan": {
         "outer-east": 3054.0,
         "outer-north": 3245.0,
         "outer-south": 2517.5,
         "outer-west": 2867.5
       },
-      "maxMemberShear": 24.46993586877976,
+      "maxMemberShear": 24.589111916944482,
       "maxMomentArchJamb": [
-        17.068744522253468,
-        10.28610023203679
+        17.090519947104408,
+        10.671870224051576
       ],
-      "maxRelativeEndpointX": 5.754057162841433,
-      "maxRelativeEndpointZ": 1.8833479709823266,
-      "maxTotalVerticalReaction": 8.377374845064221,
+      "maxRelativeEndpointX": 5.71676772952696,
+      "maxRelativeEndpointZ": 1.873103403756659,
+      "maxTotalVerticalReaction": 8.438778751300903,
       "maximumGapClosure": [
-        6.355938084020704,
+        6.666401275718484,
         {
           "ceiling": 1,
           "surface": "opposite jamb",
-          "wind": 30,
-          "window": 3
+          "wind": 32,
+          "window": 1
         }
       ],
-      "maximumRigidWindowRotation": 0.003060870298110578,
-      "residualFinishGap": 1.6440619159792957,
+      "maximumRigidWindowRotation": 0.003024694024696991,
+      "residualFinishGap": 1.333598724281516,
       "support": "all mapped lower bearings",
       "windowFinishGap": 8
     },
@@ -379,110 +379,110 @@
       "crackedEI": 0.35,
       "datumComparisons": {
         "near 5000": [
-          4.64634771191834,
-          29,
-          0,
+          4.5047760482522,
+          11,
+          3,
           "opposite jamb"
         ],
         "near 5150": [
-          3.9867733048316722,
+          3.928413363624826,
           29,
-          0,
+          1,
           "opposite jamb"
         ],
         "near 5300": [
-          4.2303477008231445,
-          35,
-          4,
-          "opposite jamb"
+          4.500945616103709,
+          29,
+          0,
+          "near jamb"
         ],
         "near 5450": [
-          4.889816695855728,
+          5.137778944240989,
           29,
           0,
           "near jamb"
         ],
         "near 5600": [
-          5.549448173582851,
+          5.774299320743279,
           29,
           0,
           "near jamb"
         ],
         "near 5750": [
-          6.2084607488255905,
+          6.410189948805935,
           29,
           0,
           "near jamb"
         ],
         "opposite 5000": [
-          5.3414357249933,
-          29,
-          0,
-          "opposite jamb"
-        ],
-        "opposite 5150": [
-          4.40989094916287,
-          29,
-          0,
-          "opposite jamb"
-        ],
-        "opposite 5300": [
-          4.072622786417381,
-          30,
+          5.234247521946002,
+          11,
           3,
           "opposite jamb"
         ],
+        "opposite 5150": [
+          4.326520577124876,
+          11,
+          3,
+          "opposite jamb"
+        ],
+        "opposite 5300": [
+          4.289218668432146,
+          29,
+          0,
+          "near jamb"
+        ],
         "opposite 5450": [
-          4.95796758632115,
+          5.160451958193618,
           29,
           0,
           "near jamb"
         ],
         "opposite 5600": [
-          5.7906158939353585,
+          5.976755464932393,
           29,
           0,
           "near jamb"
         ],
         "opposite 5750": [
-          6.5433794499472135,
+          6.714139660940265,
           29,
           0,
           "near jamb"
         ]
       },
-      "maxEndMoment": 14.925876645536304,
+      "maxEndMoment": 14.946489407950216,
       "maxInPlaneInteractionArchJamb": [
-        0.6182764055048202,
-        0.4763554332251887
+        0.6192766754488235,
+        0.49422527735986516
       ],
-      "maxLeftH": 8.069335236367303,
-      "maxLeftV": 21.82132795939034,
+      "maxLeftH": 8.251602101045894,
+      "maxLeftV": 21.86554899534989,
       "maxLowerSpan": {
         "outer-east": 11335.0,
         "outer-north": 11335.0,
         "outer-south": 11335.0,
         "outer-west": 11335.0
       },
-      "maxMemberShear": 21.831195177013523,
+      "maxMemberShear": 21.962701925334642,
       "maxMomentArchJamb": [
-        14.925876645537496,
-        9.525848904934602
+        14.946489407949738,
+        9.885687637243539
       ],
-      "maxRelativeEndpointX": 6.229280758828432,
-      "maxRelativeEndpointZ": 0.8776148677019655,
-      "maxTotalVerticalReaction": 8.377374853149906,
+      "maxRelativeEndpointX": 6.19918349434942,
+      "maxRelativeEndpointZ": 0.86588418704617,
+      "maxTotalVerticalReaction": 8.438778758740831,
       "maximumGapClosure": [
-        4.2303477008231445,
+        4.500945616103709,
         {
-          "ceiling": 0,
-          "surface": "opposite jamb",
-          "wind": 35,
-          "window": 4
+          "ceiling": 1,
+          "surface": "near jamb",
+          "wind": 29,
+          "window": 0
         }
       ],
-      "maximumRigidWindowRotation": 0.0019302194623508865,
-      "residualFinishGap": 3.7696522991768555,
+      "maximumRigidWindowRotation": 0.00185219152335882,
+      "residualFinishGap": 3.499054383896291,
       "support": "two retained corner bearings",
       "windowFinishGap": 8
     }

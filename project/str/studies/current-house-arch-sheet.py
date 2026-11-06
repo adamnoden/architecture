@@ -28,7 +28,7 @@ text(42,58,'Eight corner windows: the arch and its receivers',38,700)
 text(44,92,'First floor  /  Proposed structural research  /  Dimensions in millimetres',18,400)
 line([(42,116),(1436,116)],'#adb9b6',2)
 text(44,154,'Inner elevation',24,700)
-text(44,181,'SW example. The eight occurrences share the section and take different ceiling loads.',16)
+text(44,181,'NW example. The eight occurrences share the section and take different ceiling loads.',16)
 scale=.202
 x=lambda u:55+(u-650)*scale
 y=lambda z:214+(6540-z)*scale
@@ -70,10 +70,10 @@ line([(800,537),(1438,537)],'#b5bdb9',1)
 text(800,579,'Opposite jamb  /  section normal to wall',23,700)
 text(800,608,'The local foot overlaps the solid head of the aligned ground jamb.',16)
 px=lambda n:920+(n+30)*1.3;pz=lambda z:644+(4550-z)*.16
-line([(px(0),pz(4550)),(px(140),pz(4550)),(px(170),pz(4000)),(px(170),pz(3020)),(px(-30),pz(3020)),(px(-30),pz(4000)),(px(0),pz(4550))],boundary,2,rc)
-for hi,lo in [(49,17),(91,123)]:line([(px(hi),pz(4550)),(px(lo),pz(4000)),(px(lo),pz(3020))],steel,4)
-for h in [3920,3170,3020]:line([(px(170),pz(h)),(px(180),pz(h))],boundary,1);text(px(184),pz(h)+4,str(h),14)
-text(800,933,'200 at the foot  /  140 above 4550  /  30 mm each side.',16)
+line([(px(0),pz(4550)),(px(140),pz(4550)),(px(140),pz(4000)),(px(140),pz(3020)),(px(-85),pz(3020)),(px(-85),pz(4000)),(px(0),pz(4550))],boundary,2,rc)
+for hi,lo in [(49,-38),(91,14)]:line([(px(hi),pz(4550)),(px(lo),pz(4000)),(px(lo),pz(3020))],steel,4)
+for h in [3920,3170,3020]:line([(px(140),pz(h)),(px(180),pz(h))],boundary,1);text(px(184),pz(h)+4,str(h),14)
+text(800,933,'225 at foot / 85 outward / inside face retained.',16)
 text(800,958,'150 into the lower wall. Ground arch extrados clears by 135.8.',16)
 parts.append('</svg>')
 output=Path(__file__).with_suffix('.svg');contents='\n'.join(parts)+'\n'

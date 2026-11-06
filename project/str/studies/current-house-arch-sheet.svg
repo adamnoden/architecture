@@ -3,7 +3,7 @@
 <text x="44" y="92" font-family="DejaVu Sans,sans-serif" font-size="18" font-weight="400" fill="#182d36">First floor  /  Proposed structural research  /  Dimensions in millimetres</text>
 <polyline points="42.00,116.00 1436.00,116.00" fill="none" stroke="#adb9b6" stroke-width="2" stroke-linejoin="round"/>
 <text x="44" y="154" font-family="DejaVu Sans,sans-serif" font-size="24" font-weight="700" fill="#182d36">Inner elevation</text>
-<text x="44" y="181" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400" fill="#182d36">SW example. The eight occurrences share the section and take different ceiling loads.</text>
+<text x="44" y="181" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400" fill="#182d36">NW example. The eight occurrences share the section and take different ceiling loads.</text>
 <rect x="55.0" y="743.24" width="438.34000000000003" height="151.5" fill="#bed0cd" stroke="none" stroke-width="0"/>
 <rect x="55.0" y="214.0" width="123.72500000000001" height="529.24" fill="#d7e3de" stroke="none" stroke-width="0"/>
 <rect x="178.72500000000002" y="282.68" width="7.575" height="242.4" fill="#94b4b1" stroke="none" stroke-width="0"/>
@@ -48,15 +48,15 @@
 <polyline points="800.00,537.00 1438.00,537.00" fill="none" stroke="#b5bdb9" stroke-width="1" stroke-linejoin="round"/>
 <text x="800" y="579" font-family="DejaVu Sans,sans-serif" font-size="23" font-weight="700" fill="#182d36">Opposite jamb  /  section normal to wall</text>
 <text x="800" y="608" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400" fill="#182d36">The local foot overlaps the solid head of the aligned ground jamb.</text>
-<polyline points="959.00,644.00 1141.00,644.00 1180.00,732.00 1180.00,888.80 920.00,888.80 920.00,732.00 959.00,644.00" fill="#94b4b1" stroke="#354f52" stroke-width="2" stroke-linejoin="round"/>
-<polyline points="1022.70,644.00 981.10,732.00 981.10,888.80" fill="none" stroke="#255a80" stroke-width="4" stroke-linejoin="round"/>
-<polyline points="1077.30,644.00 1118.90,732.00 1118.90,888.80" fill="none" stroke="#255a80" stroke-width="4" stroke-linejoin="round"/>
-<polyline points="1180.00,744.80 1193.00,744.80" fill="none" stroke="#354f52" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="959.00,644.00 1141.00,644.00 1141.00,732.00 1141.00,888.80 848.50,888.80 848.50,732.00 959.00,644.00" fill="#94b4b1" stroke="#354f52" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="1022.70,644.00 909.60,732.00 909.60,888.80" fill="none" stroke="#255a80" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="1077.30,644.00 977.20,732.00 977.20,888.80" fill="none" stroke="#255a80" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="1141.00,744.80 1193.00,744.80" fill="none" stroke="#354f52" stroke-width="1" stroke-linejoin="round"/>
 <text x="1198.2" y="748.8" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="400" fill="#182d36">3920</text>
-<polyline points="1180.00,864.80 1193.00,864.80" fill="none" stroke="#354f52" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="1141.00,864.80 1193.00,864.80" fill="none" stroke="#354f52" stroke-width="1" stroke-linejoin="round"/>
 <text x="1198.2" y="868.8" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="400" fill="#182d36">3170</text>
-<polyline points="1180.00,888.80 1193.00,888.80" fill="none" stroke="#354f52" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="1141.00,888.80 1193.00,888.80" fill="none" stroke="#354f52" stroke-width="1" stroke-linejoin="round"/>
 <text x="1198.2" y="892.8" font-family="DejaVu Sans,sans-serif" font-size="14" font-weight="400" fill="#182d36">3020</text>
-<text x="800" y="933" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400" fill="#182d36">200 at the foot  /  140 above 4550  /  30 mm each side.</text>
+<text x="800" y="933" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400" fill="#182d36">225 at foot / 85 outward / inside face retained.</text>
 <text x="800" y="958" font-family="DejaVu Sans,sans-serif" font-size="16" font-weight="400" fill="#182d36">150 into the lower wall. Ground arch extrados clears by 135.8.</text>
 </svg>

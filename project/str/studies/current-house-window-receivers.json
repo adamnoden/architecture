@@ -1,0 +1,254 @@
+{
+  "actualRoomOverlapsForSymmetricFeet": [
+    {
+      "planOverlaps": [
+        [
+          "north",
+          1800,
+          "service-emitter-rear-N",
+          5535.0
+        ],
+        [
+          "north",
+          10200,
+          "service-emitter-principal-N",
+          2250.0
+        ]
+      ],
+      "symmetricWidth": 200
+    },
+    {
+      "planOverlaps": [
+        [
+          "east",
+          10200,
+          "principal-head",
+          1025.0
+        ],
+        [
+          "north",
+          1800,
+          "service-emitter-rear-N",
+          6560.0
+        ],
+        [
+          "north",
+          10200,
+          "service-emitter-principal-N",
+          2625.0
+        ]
+      ],
+      "symmetricWidth": 210
+    },
+    {
+      "planOverlaps": [
+        [
+          "east",
+          10200,
+          "principal-head",
+          2562.5
+        ],
+        [
+          "north",
+          1800,
+          "service-emitter-rear-N",
+          8097.5
+        ],
+        [
+          "north",
+          10200,
+          "service-emitter-principal-N",
+          3187.5
+        ]
+      ],
+      "symmetricWidth": 225
+    },
+    {
+      "planOverlaps": [
+        [
+          "east",
+          10200,
+          "principal-head",
+          4100.0
+        ],
+        [
+          "north",
+          1800,
+          "service-emitter-rear-N",
+          9635.0
+        ],
+        [
+          "north",
+          10200,
+          "service-emitter-principal-N",
+          3750.0
+        ]
+      ],
+      "symmetricWidth": 240
+    }
+  ],
+  "admitted": false,
+  "guard": {
+    "additionalM16IdealStraightMetalWPerK": 0.2557607653983362,
+    "alreadyRequiredProjections": 40,
+    "body": {
+      "guardMassULSKN": 0.6621750000000001,
+      "pointLoadComparisonKN": 1.5,
+      "steelProjectedAreaM2": 0.41552,
+      "windULSKN": 0.93492
+    },
+    "bracketWithdrawal": 100,
+    "existingTwoSupportReactions": [
+      {
+        "members": [
+          {
+            "localRootTorque": 0.3589075058823529,
+            "normal": 1.993930588235294,
+            "side": "near",
+            "supportAxisX": 1375,
+            "topBottom": [
+              8.39765268907563,
+              -6.403722100840335
+            ]
+          },
+          {
+            "localRootTorque": 0.08158304117647058,
+            "normal": 0.44098941176470585,
+            "side": "opposite",
+            "supportAxisX": 2225,
+            "topBottom": [
+              -0.5872212605042015,
+              1.0282106722689073
+            ]
+          }
+        ],
+        "pointX": 1360
+      },
+      {
+        "members": [
+          {
+            "localRootTorque": 0.07937809411764707,
+            "normal": 0.44098941176470596,
+            "side": "near",
+            "supportAxisX": 1375,
+            "topBottom": [
+              -0.587221260504201,
+              1.0282106722689068
+            ]
+          },
+          {
+            "localRootTorque": 0.3688771588235294,
+            "normal": 1.993930588235294,
+            "side": "opposite",
+            "supportAxisX": 2225,
+            "topBottom": [
+              8.39765268907563,
+              -6.403722100840335
+            ]
+          }
+        ],
+        "pointX": 2240
+      }
+    ],
+    "guardScrewRole": "The M12x190 screw releases the guard from its exterior stand-off. Its axis never establishes an anchor in the structural inner leaf.",
+    "installedTwoJambTubeStressMPa": 72.13393739614466,
+    "limits": "The 40x40x3 trial fails the one-jamb lost-support comparison. A complete stable two-jamb frame could instead require a positively supported, wind-restricted replacement sequence with independent temporary guard. Confirm real guard frame/bolt reactions, front and rear plate bearing/pullout/prying, formed pocket/water collar, anchor/steel clashes, normal wall pressure and coupled weak-axis jamb, receiver withdrawal and roof access. M16 bolts, plates, welds and collars add weight/heat to the partial tube quantity.",
+    "maximumOneThroughboltAxialKN": 8.39765268907563,
+    "normalStressLimit": 181.8181818181818,
+    "oneJambLoss": [
+      {
+        "horizontalAxisMomentKNm": 0.9230160000000001,
+        "maxTubeAxialKN": 7.8104314285714285,
+        "netNormalKN": 2.43492,
+        "side": "near",
+        "verticalAxisMomentKNm": 2.1331266,
+        "verticalGravityKN": 0.6621750000000001
+      },
+      {
+        "horizontalAxisMomentKNm": 0.9230160000000001,
+        "maxTubeAxialKN": 7.8104314285714285,
+        "netNormalKN": 2.43492,
+        "side": "opposite",
+        "verticalAxisMomentKNm": 2.1453012,
+        "verticalGravityKN": 0.6621750000000001
+      }
+    ],
+    "oneJambLossPass": false,
+    "oneJambWorstTubeNormalStressMPa": 245.01840825352616,
+    "oneM16A4_80TensionArea157SimpleTrialKN": 75.36,
+    "proposedContact": {
+      "centreGlobalZ": [
+        5430.0,
+        5570.0
+      ],
+      "comparisonBolt": "two M16 through the 140 core per jamb. Compression sleeve and rear bearing plate must remain accessible on the room side. Each exterior bracket still disengages from the OAS studs.",
+      "outsideInnerCoreFaces": [
+        262.5,
+        402.5
+      ],
+      "tubeCentreXs": {
+        "near": 1195.0,
+        "opposite": 2410.0
+      },
+      "tubeSection": [
+        40,
+        40,
+        3
+      ]
+    },
+    "rootStudExtentNormalFromWeatherFace": [
+      -40,
+      0
+    ],
+    "rootStudXs": [
+      [
+        1230,
+        1270
+      ],
+      [
+        2330,
+        2370
+      ]
+    ],
+    "scope": "Native OAS north export body is the trial geometry for comparison elsewhere; six other upper corner sills are lower. No transferred individual product or guard rating.",
+    "tubesOnlyKgAcrossEight": 29.8368,
+    "tubesOnlyMetalConductionWPerK": 0.8660114285714285,
+    "twoJambExecution": "Keep both structural jamb receivers active whenever the full guard is loaded. Independently capture the complete guard and establish a separate temporary barrier before either jamb release. The single-jamb calculation is a rejected removal sequence and does not size the installed pair."
+  },
+  "outwardFootThermal": [
+    {
+      "addedEightJambsWPerK": 0.6063449293443145,
+      "grossLocalU": 0.6446761900145533,
+      "insideSurfaceAt20AndMinus5DegC": 17.9048023824527,
+      "remainingGlass": 50,
+      "ventilatedGap": 50,
+      "width": 200
+    },
+    {
+      "addedEightJambsWPerK": 0.825616217235255,
+      "grossLocalU": 0.7616272817043244,
+      "insideSurfaceAt20AndMinus5DegC": 17.524711334460946,
+      "remainingGlass": 40,
+      "ventilatedGap": 50,
+      "width": 210
+    },
+    {
+      "addedEightJambsWPerK": 1.346475973357669,
+      "grossLocalU": 1.0463578954639916,
+      "insideSurfaceAt20AndMinus5DegC": 16.599336839742026,
+      "remainingGlass": 25,
+      "ventilatedGap": 50,
+      "width": 225
+    },
+    {
+      "addedEightJambsWPerK": 2.451801896904669,
+      "grossLocalU": 1.6710846881081165,
+      "insideSurfaceAt20AndMinus5DegC": 14.568974763648622,
+      "remainingGlass": 10,
+      "ventilatedGap": 50,
+      "width": 240
+    }
+  ],
+  "role": "Unadopted architectural and guard-receiver comparison. Full height opening preserved in geometry. Hardware, finishes and removal procedure await a joined OAS/STR/MAT proof.",
+  "thermalBasis": "Existing 50 drained cavity, 110 glass, RC1.75/glass0.041. Local 1D heat-path sensitivity, unaffected finish and no brick resistance outside ventilated cavity. Edge spreading and the 3D junction/condensation remain open."
+}

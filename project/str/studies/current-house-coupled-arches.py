@@ -34,7 +34,7 @@ jamb_width = 205
 xJ = 2300 + jamb_width / 2
 right = [(xJ,z) for z in sorted({base,zs,4000,4550,*range(4100,4550,100),4800,5200,5600})]
 def jamb_normal_width(z):
-    return 200-60*max(0,min(1,(z-4000)/550))
+    return 225-85*max(0,min(1,(z-4000)/550))
 nodes = sorted(set(arch + right))
 ind = {q: i for i, q in enumerate(nodes)}
 n = len(nodes) * 3
@@ -387,6 +387,10 @@ def pier_probe(P,z,axis,derivative):
 
 def window_fit(a,case,reactions,local):
     P,J,L0,ax,sg=corner_windows[a]
+    face=('outer-south' if P[1]==A else 'outer-north') if ax==0 else ('outer-west' if P[0]==A else 'outer-east')
+    opening=next(q for q in H['openings']['FIRST'] if q['wall']==face and q['centre']==(1800 if sg>0 else 10200))
+    # Same trial OAS outside profile but each occurrence has its actual sill.
+    sill=3450+opening['sill']+window_source['gap']
     def near(z,axis,der=0):
         cross,resp=pier_probe(P,z,axis,der)
         return dot(cross,case[3][P])-dot(resp,reactions)
@@ -513,7 +517,7 @@ result = {
     'scope': 'Eight upper corner openings, six coupled terminal coordinates each, 96 directional winds, ceiling present or removed, and two flexural stiffnesses. The floor strong-axis comparison models the added arch loads. Existing floor sag, base settlement and construction variation must be introduced before window clearance can be accepted.',
     'geometry': {'arch': [140, 215], 'oppositeJamb': [140, jamb_width], 'oppositeJambX': [2300, 2300+jamb_width], 'oppositeHeadEccentricity': xJ-xR, 'leftSpringX': xL, 'rightSpringX': xR, 'springZ': zs},
     'rows': rows,
-    'recomputedMembers': {'localLToeGlobalZ':[fill_bottom,fill_top], 'LWidthAtSkewback':1037.5,'originalL':narrow,'localL':wide,'jambNormalWidthAtFoot':200,'jambNormalWidthAbove4550':140,'updatedWholeRoofWindStates':len(updated_wind)},
+    'recomputedMembers': {'localLToeGlobalZ':[fill_bottom,fill_top], 'LWidthAtSkewback':1037.5,'originalL':narrow,'localL':wide,'jambNormalWidthAtFoot':225,'jambNormalWidthAbove4550':140,'updatedWholeRoofWindStates':len(updated_wind)},
     'remaining': 'Develop curved bars into both receivers. Check out-of-plane loads including window and guarding, actual floor deflections and jamb datum, exterior masonry arch and perimeter details. Include these member actions and changed material in the final foundation ledger.',
     'admitted': False,
 }
