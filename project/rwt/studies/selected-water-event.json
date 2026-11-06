@@ -2,8 +2,11 @@
   "identity": "RWT-06-SELECTED-WATER-EVENT-2026-11-06",
   "source": {
     "path": "project/had/studies/water-replan.json",
-    "blob": "4e6f9a338cb8c5e87f6afb82fe2a6f9fc6eeb702",
-    "startingMain": "8ab19d48ef16abaff39e7f49a3801d5dc5f65521"
+    "blob": "90fd241d4f1f69802a349112cf32f2bd241ac6f8",
+    "startingMain": "8ab19d48ef16abaff39e7f49a3801d5dc5f65521",
+    "authority": "UNMERGED receiver-refined HAD proposal reconciled with canonicalmain ede8302b /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry",
+    "canonicalMain": "ede8302b8eb21c571166214227f643928b02edfc",
+    "canonicalMainHadBlob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b"
   },
   "status": "NOT ADMITTED: bounded calculations and adverse cases, not a full installed event proof",
   "duty": {

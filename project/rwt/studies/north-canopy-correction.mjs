@@ -48,7 +48,7 @@ export function canopy(){
  const crewLast=stations.find(s=>s.y===12650);
  const volume=clear*height*(end-start+arcLength+1600)/1e6;
  const metalArea=(2*(clear+height)*(end-start+arcLength+1600)+2*flange*(end-start))/1e6;
- return {identity:'RWT-UNADOPTED-NORTH-CANOPY-CORRECTION-2026-11-06',selectedSource:selected.blob,sourceAuthority:'Pinned UNMERGED HAD receiver-refined proposal; selected architectural decision within that proposal, not canonicalmain.',startingMain:'80c0f94148ad11e3b2eaa83c52e28d06238993ed',selectedGeometryChanged:false,
+ return {identity:'RWT-UNADOPTED-NORTH-CANOPY-CORRECTION-2026-11-06',selectedSource:selected.blob,sourceAuthority:selected.authority,canonicalMain:selected.canonicalMain,canonicalMainHadBlob:selected.canonicalMainHadBlob,startingMain:'80c0f94148ad11e3b2eaa83c52e28d06238993ed',selectedGeometryChanged:false,
   correction:'Only the actual falling chase and side-entry/lap geometry is corrected here. No correction/adoption of the accepted old manual-staff or fast-chute failures.',
   straight:{axisX:axis,y:[start,end],invert:[1845,1825],clear:[clear,height],sheet,flangeEach:flange,
    grossX:[axis-clear/2-sheet-flange,axis+clear/2+sheet+flange],slope:20/5800},
@@ -79,8 +79,15 @@ export function canopy(){
    {state:'N LONG OPEN',courtDestination:'North receiver through new court takeoff plus loggia chase',chase:true,loggiaRoof:true,requiredDutyLps:flow.combinedLps,
     admission:'UNADOPTED: revised combined receiver/entry/turn/impact and actual crew/support/weather checks required; E stays assembled independently.'}
   ],
+  failureMatrix:[
+   {state:'N SHORT/LONG OPEN + temporarycourtchase blocked',result:'FAIL /unresolved passive destination',
+    reason:'Court roof intercepts assigned roof/court input before the ordinary E mouth. E remaining assembled does NOT by itself connect that intercepted water to E. No tested temporary side-spill/closed backup or fullhead/splash path exists.'},
+   {state:'N LONG OPEN + temporaryloggiachase blocked',result:'FAIL /unresolved passive destination',
+    reason:'Additional0.8352L/s is not removed by declaring E intact. Real overflow/head/weather/support/receiving path must be authored before this canopy can be adopted.'}
+  ],
   accepted:false,qualifiedMaterial:false,physicalWeatherAccepted:false,qualifiedFirstHarm:null,
   remaining:['Actual125ID court takeoff, two plan turns, entry slot distribution and terminal impact are not uniform-flow sections.',
+   'The temporarychase blockage cases have no earned passive path; E assembled is NOT backup by association. No forecast, prompt crew response or timely repair substitutes for the missing route.',
    'At n.025 and25%effective width lost, the90mm trial FAILS; do not delete this adverse case or assume a clean temporary drain.',
    'Retain actual roofs/closed laps, guard access, fixed supports and short/long phased erection. Canopy geometry alone does not complete high-eave cleaning or receiver renewal.',
    'The outer roof source domain144.15m2 is not assigned inward47.8125 plus court12.25=60.0625m2; neither source is silently expanded by this proposal.']};

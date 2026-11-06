@@ -25,6 +25,7 @@ test('conserved combined flow and adverse obstruction stay visible with real sup
  assert(o.flow.blockedReceiverCases.every(c=>c.reserveToDeclaredFaultedMaximum>0));
  assert(o.flow.terminalImpact.maximumInputHead>=2051.5&&o.flow.terminalImpact.qualifiedSplash===false);
  assert.equal(o.qualifiedFirstHarm,null);
+ assert.equal(o.failureMatrix.length,2);assert(o.failureMatrix.every(c=>c.result.startsWith('FAIL')));
 });
 test('actual canopy sheet and values reproduce',()=>{
  const o=canopy();

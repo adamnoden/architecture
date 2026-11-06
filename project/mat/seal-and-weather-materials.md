@@ -29,6 +29,25 @@ These bounds are disjoint by 0.0695 mm. **No fixed gap, including the current 0.
 
 The useful successor is therefore a lot-controlled, stopped, retained thin-stock specimen with measured single-layer force and water response. No catalogue range, stacked CFD curve or FDA statement can replace that evidence. The selected gap, preload and gasket remain unchanged.
 
+### Matched-stop and two-face working-gap envelope
+
+**Bounded desk decision: retain a controlled-gap challenger; do not select the foam or change the selected joint.** The source joint has two 12 mm faceplates, each backed by the authored 100 mm EW × 50 mm × 5 mm U frame, and four side-only bolts with 8 kN total preliminary preload. The proposed stops must bypass bolt load without assuming that either wet face remains rigid between the side bolts. Matching a stop at a bolt is not matching the complete U land.
+
+For the hypothetical measured 0.74–0.84 mm lot already used above, the authored 25–50% comparison window permits an **actual local working gap of 0.420–0.555 mm**. The current 0.500 mm nominal reference therefore allows only 0.055 mm opening or 0.080 mm closing, including both faces, initial flatness, stop/shim setting, assembly and subsequent movement. This is a geometric compatibility envelope, not a manufacturer-approved compression range or a measured supplied lot.
+
+| Proposed reference control | Consequence |
+|---|---|
+| Measure the actual cut U thickness over its complete land; retain lot identity and variation | An unrestricted catalogue tolerance still fails the conservative window; the hypothetical measured lot is not procurement evidence |
+| Select matched metallic stops/shims for that assembled pair of faces | Preserve a stated target gap and record the actual stop setting; do not silently substitute a fixed catalogue 0.5 mm washer for a controlled assembled gap |
+| Compare the **local loaded gap**, not only unloaded stop thickness | At the current nominal reference, the combined opening allowance is 0.055 mm; allocate it to both faces and all other errors before claiming fit |
+| Retain captured, replaceable gasket and stops outside the wet U | No adhesive, hidden coating, permanent foam extent or changed release sequence is introduced by this comparator |
+
+The existing independent component screens give 0.09694 mm bottom and 0.06314 mm side deflection **per frame** under their respective simplified 4 kN cases. Pairing the magnitudes gives 0.19388 mm and 0.12628 mm; neither is an actual loaded-gap prediction for the stopped, welded assembly. They establish why the earlier screen cannot demonstrate a 0.05 mm assembled gap budget. They do not establish that a stopped frame must fail.
+
+One transparent sensitivity reuses the original bottom screen without promoting it to a contact model: two identical simply supported bottom members, uniform reaction over the illustrative 600 mm × 20 mm bottom land, and no other allowance consumed. Their paired opening reaches 0.055 mm at approximately 1135 N bottom reaction, or 94.56 kPa uniform pressure. The same pressure over the illustrative 0.022 m² complete U land corresponds to about 2.08 kN. At the converter's 25% / 62 kPa point, that same simplified pair opens about 0.0361 mm. This sensitivity omits welded-frame boundary stiffness, local faceplate bending, contact redistribution and the actual nonlinear single-layer force curve; it is neither a pressure rating nor proof that the actual joint passes or fails.
+
+**Stop this desk comparison here:** the next compatible reference must demonstrate the actual two-face/stop load path and a local loaded-gap envelope against the actual cut-stock force response. Measured-lot selection and matched shims are a constructive route; a generic 0.5 mm stop and the old frame screen are insufficient. Exact single-layer water, aging and repeated-release evidence remain named physical admissions. No new catalogue family, arbitrary 70% compression permission, preload increase or frozen-geometry change follows from this analysis. The next whole-envelope design priority is the source-bound ground/wall/floor continuity join.
+
 ## Keep the protective return a separate functional boundary
 
 The N wet shoe/cavity tray/collars are a new continuous protection reference; their 15 mm crest does not certify first harm. A seam at the −180 mm sole would see 145 mm head at the authored quiet −35 mm stage: 1.422 kPa hydrostatic pressure before the separate splash/tolerance allowances. A 100 mm overlap alone is not a watertight seam, and fasteners above 150 mm do not by themselves establish compression at the lower wet edge.

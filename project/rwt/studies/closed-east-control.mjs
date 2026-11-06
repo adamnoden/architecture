@@ -117,7 +117,7 @@ export function control(){
   wellGrossBottom:-775-160,wellFloorReserve:-775-160-(-950),
   massMovingPairKg:14,massFixedPairKg:14,
   status:'Actual285catalogue envelope replaces too-small260projectreservation.320×120 is a conservative PROJECT tool/bolt reservation, NOT a solved8bolt/retention first release. Both flange halves stay within joint-face-to-face4700 body length, with tube cut/engagement to suit; tool reservation is not extra movingbody length. Gasket/bolt/socket/braze and actual top release remain unqualified. No centre flange hidden below gallery.'};
- return {identity:'RWT-UNADOPTED-CURRENT-E-CLOSED-CONTROL-2026-11-06',selectedSource:s.blob,sourceAuthority:'Pinned UNMERGED HAD receiver-refined proposal; selected architectural decision within that proposal, not canonicalmain.',startingMain:'80c0f94148ad11e3b2eaa83c52e28d06238993ed',selectedGeometryChanged:false,
+ return {identity:'RWT-UNADOPTED-CURRENT-E-CLOSED-CONTROL-2026-11-06',selectedSource:s.blob,sourceAuthority:s.authority,canonicalMain:s.canonicalMain,canonicalMainHadBlob:s.canonicalMainHadBlob,startingMain:'80c0f94148ad11e3b2eaa83c52e28d06238993ed',selectedGeometryChanged:false,
   recommendation:'Develop this ONE closed159copper control before further65throat/tenpanel/open-transfer machinery. It is not falsified by the current900passage. Keep its real2200longer exterior renewal cost and unresolved actual end connections visible.',
   tube,
   retained:{quiet:-35,geometricCrest:15,houseBounds:[0,0,12000,12000],roofCourtAreaM2:60.0625,

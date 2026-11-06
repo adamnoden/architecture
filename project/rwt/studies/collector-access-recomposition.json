@@ -1,0 +1,744 @@
+{
+  "identity": "RWT-UNADOPTED-SIX-WET-SOUTH-ACCESS-2026-11-06",
+  "source": {
+    "path": "project/had/studies/water-replan.json",
+    "blob": "90fd241d4f1f69802a349112cf32f2bd241ac6f8",
+    "authority": "UNMERGED receiver-refined HAD proposal reconciled with canonicalmain ede8302b /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry",
+    "canonicalMain": "ede8302b8eb21c571166214227f643928b02edfc",
+    "canonicalMainHadBlob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b"
+  },
+  "selectedGeometryChanged": false,
+  "accepted": false,
+  "quiet": -35,
+  "crest": 15,
+  "qualifiedFirstHarm": null,
+  "recommendation": "Develop this ONE sixwet/fourplain collector with southordinaryaccess and the closed159control. Keep originalhinge as baseline; compare a priced raisednorthlatch if actual support/guard benefit earns it. Neither variant is adopted.600coverboundary tuning stays rejected.",
+  "retained": {
+    "well": [
+      6125,
+      6300,
+      1525,
+      1100
+    ],
+    "coverCount": 10,
+    "walkingCoverEach": [
+      305,
+      550
+    ],
+    "northWet": 5,
+    "southWet": 1,
+    "southPlain": 4,
+    "housePlan": [
+      0,
+      0,
+      12000,
+      12000
+    ],
+    "catchmentM2": 60.0625,
+    "assignedLps": 3.60375,
+    "bridgeDepth": 450,
+    "westGate": {
+      "planeX": 6075,
+      "rawY": [
+        6550,
+        7250
+      ],
+      "frameEach": 25,
+      "clearY": [
+        6575,
+        7225
+      ],
+      "hinge": [
+        6075,
+        7222.5
+      ],
+      "completeLeaf": [
+        645,
+        40,
+        1100
+      ],
+      "opening": "WEST into court, latched before covers are released",
+      "fullOpenPlan": [
+        5430,
+        7202.5,
+        645,
+        40
+      ],
+      "sequence": "Install full guard while rated walking covers remain intact; open/latch gate with all covers still present; then capture/remove covers. Descent occurs through the650-clear gate into the separate600-wide steps, never across an unguarded side.",
+      "topAdapterZ": [
+        -16,
+        8
+      ],
+      "topAdapterStatus": "Explicit levelling adapter required between the local court slope and -80 maintenance stair landing; no ordinary walking or generic step compliance pass.",
+      "lowestInfillZ": 0,
+      "noKickplate": true,
+      "excludedHingeFootPlan": [
+        6050,
+        7197.5,
+        50,
+        50
+      ]
+    },
+    "steps": {
+      "fixedSteps": [
+        6125,
+        6600,
+        600,
+        600
+      ],
+      "topLandingZ": -80,
+      "lowerLandingZ": -800,
+      "rises": 4,
+      "going": 200,
+      "riseMaximum": 180,
+      "method": "Four180 rises/three200 goings run EAST from west guard gate to a separate flat600x900 working platform. Level adapter must fit local sloping court; no stairs overlap the standing footprint. Guard before covers; isolate court water before entry."
+    },
+    "platform": [
+      6725,
+      6450,
+      600,
+      900
+    ]
+  },
+  "mouth": {
+    "planeX": 6125,
+    "approachX": [
+      6025,
+      6125
+    ],
+    "southIntervals": [
+      [
+        6311.5,
+        6525
+      ],
+      [
+        6625,
+        6838.5
+      ]
+    ],
+    "northRetainedHinge": [
+      [
+        6861.5,
+        7197.5
+      ],
+      [
+        7247.5,
+        7350
+      ]
+    ],
+    "northHungLatch": [
+      [
+        6861.5,
+        7350
+      ]
+    ],
+    "realDryJoint": [
+      6838.5,
+      6861.5
+    ],
+    "newSouthSupportReservation": [
+      6525,
+      6625
+    ],
+    "northSupportReservation": [
+      7350,
+      7400
+    ],
+    "supportQualification": "South100/north50 are BOUGHT obstruction reservations, not authenticated anchor/baseplate sizes. Existing50hingefoot7197.5..7247.5 remains in retainedvariant. Any larger actual foot reduces the lip and must rerun the reference. No post is borrowed from RC or hidden in N collection.",
+    "guard": "Widen actual low open west slot/offsetledge to the sixwet intervals; keep guard bottom0, no kickplate. New supports/latch have real water-level clearances and must be designed; no unlocated foot credit.",
+    "feed": "Ordinaryramp moves SOUTH, removing the contradictory rising west under-ramp feed.100mm remains a finite bought approach; lateral court feed, free brink and real loss placement remain uncalibrated."
+  },
+  "collector": {
+    "northGross": [
+      6100,
+      6850,
+      1275,
+      550
+    ],
+    "southWestGross": [
+      6100,
+      6300,
+      330,
+      550
+    ],
+    "northWetY": [
+      6861.5,
+      7388.5
+    ],
+    "southWestWetY": [
+      6311.5,
+      6838.5
+    ],
+    "westWetX": 6111.5,
+    "northFloorRule": "Westbase−187at6125→−200at7175; easttail−180at7375 fallsWEST to7175. Add .025*abs(y−7000) crossfall. Every branch descends to ONE7175/7000/−200closedoutlet; no65throat/raised sill or additionalcatchment.",
+    "controls": [
+      [
+        6125,
+        7000,
+        -187
+      ],
+      [
+        7175,
+        7000,
+        -200
+      ],
+      [
+        7375,
+        7000,
+        -180
+      ]
+    ],
+    "southWestFloor": "Wetsurface−135atY6311.5 fallsN to−173.5at6830, then the captured flush/recessed seam bridge falls to−176at6870; receivingNfloor is lower. Crossfall .005 toX6241.5. No connectingtube below the well or down-and-up trap.",
+    "bridge": {
+      "plan": [
+        6111.5,
+        6830,
+        307,
+        40
+      ],
+      "sheet": 1.5,
+      "wetEnds": [
+        -173.5,
+        -176
+      ],
+      "dryBodySeamY": 6850,
+      "endsOverNorthFloorGapMm": [
+        6.732857142857142,
+        10.768809523809523
+      ],
+      "minimumSheetUndersideGap": 6.732857142857142,
+      "release": "ONE positively captured307×40seambridge/topcap releases from ABOVE before eitherwesternwetbody. Flush/recessedsouthseat prevents a1.5mm countersill. Actual saddle/lap/seal/clamp/movement and firstrelease remain unqualified; it is not a loose sheet resting over a butt."
+    },
+    "westUnderlap": {
+      "courtLipX": 6125,
+      "wetPanWallInnerX": 6111.5,
+      "zeroHorizontalJetPlanReserve": 13.5,
+      "projectionUnderCourt": 25,
+      "affectedBodies": [
+        "NW firstnorthcatchcassette",
+        "SW newwetpan"
+      ],
+      "capturedCompletePlan": [
+        330,
+        550
+      ],
+      "reason": "A vertical low-momentum drop at6125 must fall INSIDE the receivingpan, not onto an unpriced11.5drywall/flange.25westprojection pays that capture; it is not free verticalwithdrawal beneath fixedcourt."
+    },
+    "cassetteMaximumDepth": 215,
+    "southWestMaximumDepth": 190,
+    "existingFirstTread": -260,
+    "northWestMaximumNominalUnderside": -188.5,
+    "nominalFirstTreadGap": 71.5,
+    "firstWet": "Covered collector and roofjet impact still require real wall/cover/seam pressure/splash, air/vent, obstruction and firstleak evidence. The fullclosedtube/roofhead demand is not reduced to the small nominal quiet reserve."
+  },
+  "ordinaryAccess": {
+    "ramp": [
+      6725,
+      5750,
+      650,
+      550
+    ],
+    "floorEnds": [
+      -30,
+      0
+    ],
+    "slope": 0.05454545454545454,
+    "deckThickness": 15,
+    "gate": {
+      "planeY": 6250,
+      "rawX": [
+        6675,
+        7425
+      ],
+      "clearX": [
+        6700,
+        7400
+      ],
+      "hinge": [
+        6702.5,
+        6250
+      ],
+      "leaf": [
+        695,
+        40,
+        1100
+      ],
+      "opening": "NORTH/INWARD only while ALL ten walkingcovers locked and supported; close/latch/test before any cover release.",
+      "parkedLeafPlan": [
+        6682.5,
+        6250,
+        40,
+        695
+      ],
+      "parkedLeafToR300Path": 27.5
+    },
+    "bodyRadius": 300,
+    "centreline": [
+      [
+        7050,
+        5900
+      ],
+      [
+        7050,
+        6600
+      ],
+      [
+        7325,
+        6850
+      ]
+    ],
+    "rampBodyReserves": [
+      25,
+      25
+    ],
+    "finalBodyEastCoverReserve": 25,
+    "westNotchGap": 525,
+    "turnStartsAfterBodySouthEdge": 6300,
+    "NCanopyFootX": [
+      7425,
+      7675
+    ],
+    "NCanopyFootReserve": 50,
+    "EWorkRoofPostX": [
+      7575,
+      7675
+    ],
+    "EWorkRoofPostReserve": 200,
+    "removableTip": {
+      "plan": [
+        6725,
+        6200,
+        650,
+        100
+      ],
+      "thickness": 15,
+      "bundPlaneY": 6250,
+      "sequence": "With coversLOCKED and southgateCLOSED, capture/remove last100tip; park/restraint on closedramp SOUTH of6200 before erecting continuous Eweatherbund/skirt. No permanent ramp pierces the bund. Keep ordinaryaccessclosed until enclosure removed, tip recaptured/reinstated/locked and gate tested.",
+      "parkedPlan": [
+        6725,
+        6090,
+        650,
+        100
+      ],
+      "actualCaptureForceSealQualified": false
+    },
+    "role": "OrdinaryEwindowcleaning on lockedcovers only. Windowleaf/body/pole source stays. Southgate never grants access to an openwell; Erenewal retains WEST gate/steps. No new interiorroom or footprint change.",
+    "unproved": "Actual toe/endledges independent of removablecovers, gate/latch/forces, tip retention/loadedmotion, surface/step category and full erection/reversal require constructive/physical qualification."
+  },
+  "hingeTradeoff": {
+    "retained": {
+      "footY": [
+        7197.5,
+        7247.5
+      ],
+      "northSupportY": [
+        7350,
+        7400
+      ],
+      "price": "No gate rehang, keeps actual originalparkedleaf and hinge. Sixwet200approach adversarialreference FAILS; bought100/150 retain positive signs, not installed margins."
+    },
+    "raisedLatch": {
+      "southHinge": [
+        6075,
+        6577.5
+      ],
+      "parkedLeaf": [
+        5430,
+        6557.5,
+        645,
+        40
+      ],
+      "northLatchY": 7222.5,
+      "latchZ": 1000,
+      "parentPostCentreY": null,
+      "actualParentAnchorage": null,
+      "leverSensitivityMm": [
+        152.5,
+        177.5
+      ],
+      "price": "Remove oldnorthhingefoot only with actual southhinge and positive raisednorthcatch. Source cornerpost/anchor is NOT authenticated;50post and anchorfoot are not interchangeable. Price parentpost/foot, gate load, bending/torsion/deflection, hand/grip sweep and retained release/renewal. No RC node/support borrowed; short metalcantilever is not categorically rejected.",
+      "qualification": "Two152.5/177.5geometric lever sensitivities only, not fixed actualpostcentres, section or capacity."
+    }
+  },
+  "renewal": {
+    "westGateClearY": [
+      6575,
+      7225
+    ],
+    "originalParkedLeafY": [
+      7202.5,
+      7242.5
+    ],
+    "weatherEntryY": [
+      6550,
+      7200
+    ],
+    "capturedBodyCrossingY": [
+      6625,
+      7175
+    ],
+    "parkedLeafReserve": 27.5,
+    "weatherEntryNorthReserve": 25,
+    "westernPanFirstMotion": {
+      "neighboursRemoved": [
+        "northmodule2",
+        "southmodule2"
+      ],
+      "bridgeRemoved": true,
+      "translationE": 35,
+      "initialUnderlapX": [
+        6100,
+        6125
+      ],
+      "afterTranslationBodyX": [
+        6135,
+        6465
+      ],
+      "clearOfCourtFace": 10,
+      "liftTop": 1700,
+      "lowestLiftedBottom": 1485,
+      "guardTop": 1100,
+      "liftedGuardGap": 385,
+      "rainRoofUnderside": 1970,
+      "roofGap": 270
+    },
+    "sequence": [
+      "Nintact/full-duty, Eweathercontrols erected/tested, southgateclosed; retain guards/closed ratedcovers until eachcapture.",
+      "Capture/remove small topseambridge, northmodule2 and southmodule2 FROMABOVE, with real retained crew/handler onfixedcourt. No person descends while anycatchbody remains.",
+      "Capture/release eachNW/SWbody, translateE35 to free25undercourtprojection with10clear, THEN lift/transfer aboveguard and passactual550gate/weatherenvelope. Do not liftvertically into fixedcourtlip.",
+      "Remove remaining covers/gutters. Only after all free bodies/guards are controlled use retainedWEST gate/stairs/platform; ordinarySOUTHgate staysclosed.",
+      "Reverse: reinstate/test closedEpipe/terminal whileoutboardcoversOPEN, catchpans/seambridge/underlaps/clamps/guards, completewater/leakwitness, closecovers, then removeEweathercontrol and reinstate southtip/access."
+    ],
+    "actualHandlerForceAndFullCrewSweepQualified": false
+  },
+  "loads": {
+    "northBoundingFullWaterKg": 150.76875,
+    "southWestBoundingFullWaterKg": 34.485,
+    "totalBoundingFullWaterKg": 185.25375000000003,
+    "northSheetOnlyKg": 19.97184,
+    "southWestSheetOnlyKg": 6.933696,
+    "scope": "Conservative grossboxes fullto0,215/190deep; actual shaped volume smaller, not a storm-fill prediction. Sheet1.5copper includes fullrectangularbottom/sides but excludes overlaps/coverframes/clamps/eyes/capture/bridge apparatus. Walkingcover/blockedmodule/handling loads remain real; old30kg budget is not a signed mass or handlift pass."
+  },
+  "hydraulicReference": {
+    "path": "project/rwt/studies/short-inlet-review.json",
+    "retainedHinge": [
+      {
+        "block": "uniform",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7197.5
+          ],
+          [
+            7247.5,
+            7350
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 4.89496534,
+        "requiredStageMm": -42.08280559,
+        "quietReserveMm": 7.08280559,
+        "passesThisReference": true
+      },
+      {
+        "block": "uniform",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7197.5
+          ],
+          [
+            7247.5,
+            7350
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 5.37315474,
+        "requiredStageMm": -44.28263742,
+        "quietReserveMm": 9.28263742,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7083.625
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.91079139,
+        "requiredStageMm": -36.72467953,
+        "quietReserveMm": 1.72467953,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7083.625
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 4.31897536,
+        "requiredStageMm": -38.84758857,
+        "quietReserveMm": 3.84758857,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 150,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7083.625
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.73384011,
+        "requiredStageMm": -35.74706668,
+        "quietReserveMm": 0.74706668,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 200,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7083.625
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.58921481,
+        "requiredStageMm": -34.91485341,
+        "quietReserveMm": -0.08514659,
+        "passesThisReference": false
+      }
+    ],
+    "hungLatch": [
+      {
+        "block": "uniform",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7350
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 5.4220033,
+        "requiredStageMm": -44.37575724,
+        "quietReserveMm": 9.37575724,
+        "passesThisReference": true
+      },
+      {
+        "block": "uniform",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7350
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 5.90575885,
+        "requiredStageMm": -46.40687396,
+        "quietReserveMm": 11.40687396,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7121.125
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 4.32122216,
+        "requiredStageMm": -38.82319136,
+        "quietReserveMm": 3.82319136,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7121.125
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 4.75929417,
+        "requiredStageMm": -40.89886714,
+        "quietReserveMm": 5.89886714,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 150,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7121.125
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 4.13115708,
+        "requiredStageMm": -37.87244651,
+        "quietReserveMm": 2.87244651,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 200,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7121.125
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.97536237,
+        "requiredStageMm": -37.06407074,
+        "quietReserveMm": 2.06407074,
+        "passesThisReference": true
+      }
+    ],
+    "boundary": "Hydrostatic/quasi1D stress comparison to a virtual control. At a real free brink pressure is rapidly varying; neither critical-at-edge nor100mm as actual friction length is earned. No feed from behind an obstructed ramp is implied. No chosen Klocation/n/central estimate is a physical pass."
+  },
+  "stateRules": [
+    "Ordinary:both permanentroutes assembled; allten covers locked before southwindowaccess.",
+    "Eopen:Nfullduty; southaccessclosed/tipremoved before continuousEskirts; westgate/steps onlyafterabove-removal.",
+    "Nshort/Nlong:the correctedtemporarychase remainsUNADOPTED; blockedtemporarychase has noearnedpassivefallback toEmerelybecauseEassembled. This collector does not silentlyrepair thatfailure.",
+    "Roofhigh-eaveordinaryclearing/receiverrepair/majorrenewal and realSITE-WATER-HANDOFF remain separatefiniteRWT06duties."
+  ]
+}

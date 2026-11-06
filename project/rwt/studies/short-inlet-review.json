@@ -1,0 +1,641 @@
+{
+  "identity": "RWT-UNADOPTED-SHORT-INLET-REFERENCE-2026-11-06",
+  "source": {
+    "path": "project/had/studies/water-replan.json",
+    "blob": "90fd241d4f1f69802a349112cf32f2bd241ac6f8",
+    "authority": "UNMERGED receiver-refined HAD proposal reconciled with canonicalmain ede8302b /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry",
+    "canonicalMain": "ede8302b8eb21c571166214227f643928b02edfc",
+    "canonicalMainHadBlob": "265ac19420f1b1fa6bba41dd859d7ee758187d6b",
+    "startingMain": "80c0f94148ad11e3b2eaa83c52e28d06238993ed"
+  },
+  "selectedGeometryChanged": false,
+  "accepted": false,
+  "requiredLps": 3.60375,
+  "quietMm": -35,
+  "fixedAssumptions": {
+    "n": 0.04,
+    "totalK": 1,
+    "gravity": 9.81,
+    "transverseSlope": 0.04,
+    "SimpsonPanels": 64,
+    "section": "Common horizontal water surface within EACH finite interval; actual4% transverse bed. A=T(eta−zlow−.02w), T=f*w, w=clamp((eta−zlow)/.04,0,W). Equivalent wetted perimeter hypot(T,.04w)+bothside depths; uniform suppression is an equivalent geometry, not actual debris.",
+    "control": "Critical Q²T/(gA³)=1; E=eta+Q²/(2gA²). Allocate totalK1 between entry and lip, referenced to criticalvelocity headA/(2T). Integrate dx/deta=(1−Fr²)/Sf over actual100mm reference; retain150/200adverse sensitivities.",
+    "boundary": "Hydrostatic/quasi1D stress comparison to a virtual control. At a real free brink pressure is rapidly varying; neither critical-at-edge nor100mm as actual friction length is earned. No feed from behind an obstructed ramp is implied. No chosen Klocation/n/central estimate is a physical pass."
+  },
+  "selected": {
+    "intervals": [
+      [
+        6950,
+        7175
+      ],
+      [
+        7275,
+        7375
+      ]
+    ],
+    "cases": [
+      {
+        "block": "uniform",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6950,
+            7175
+          ],
+          [
+            7275,
+            7375
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 2.72079827,
+        "requiredStageMm": -25.07253352,
+        "quietReserveMm": -9.92746648,
+        "passesThisReference": false
+      },
+      {
+        "block": "uniform",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6950,
+            7175
+          ],
+          [
+            7275,
+            7375
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 2.96491632,
+        "requiredStageMm": -28.06582925,
+        "quietReserveMm": -6.93417075,
+        "passesThisReference": false
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6950,
+            7175
+          ],
+          [
+            7275,
+            7293.75
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 2.50456563,
+        "requiredStageMm": -22.53344081,
+        "quietReserveMm": -12.46655919,
+        "passesThisReference": false
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6950,
+            7175
+          ],
+          [
+            7275,
+            7293.75
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 2.7283164,
+        "requiredStageMm": -25.38090604,
+        "quietReserveMm": -9.61909396,
+        "passesThisReference": false
+      }
+    ]
+  },
+  "rejected600": {
+    "intervals": [
+      [
+        6811.5,
+        7175
+      ],
+      [
+        7275,
+        7375
+      ]
+    ],
+    "cases": [
+      {
+        "block": "uniform",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6811.5,
+            7175
+          ],
+          [
+            7275,
+            7375
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 3.55194337,
+        "requiredStageMm": -34.56207581,
+        "quietReserveMm": -0.43792419,
+        "passesThisReference": false
+      },
+      {
+        "block": "uniform",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6811.5,
+            7175
+          ],
+          [
+            7275,
+            7375
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 3.86434609,
+        "requiredStageMm": -37.13152321,
+        "quietReserveMm": 2.13152321,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6811.5,
+            7159.125
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.22174055,
+        "requiredStageMm": -31.76273642,
+        "quietReserveMm": -3.23726358,
+        "passesThisReference": false
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6811.5,
+            7159.125
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.49273989,
+        "requiredStageMm": -34.08374059,
+        "quietReserveMm": -0.91625941,
+        "passesThisReference": false
+      }
+    ]
+  },
+  "singleNorth": {
+    "intervals": [
+      [
+        6861.5,
+        7350
+      ]
+    ],
+    "cases": [
+      {
+        "block": "uniform",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6861.5,
+            7350
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 4.00294092,
+        "requiredStageMm": -38.14748194,
+        "quietReserveMm": 3.14748194,
+        "passesThisReference": true
+      },
+      {
+        "block": "uniform",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6861.5,
+            7350
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 4.31118841,
+        "requiredStageMm": -40.43941566,
+        "quietReserveMm": 5.43941566,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6861.5,
+            7227.875
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.69212603,
+        "requiredStageMm": -35.7066453,
+        "quietReserveMm": 0.7066453,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6861.5,
+            7227.875
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.98841914,
+        "requiredStageMm": -37.99750238,
+        "quietReserveMm": 2.99750238,
+        "passesThisReference": true
+      }
+    ]
+  },
+  "sixWetRetainedHinge": {
+    "intervals": [
+      [
+        6311.5,
+        6525
+      ],
+      [
+        6625,
+        6838.5
+      ],
+      [
+        6861.5,
+        7197.5
+      ],
+      [
+        7247.5,
+        7350
+      ]
+    ],
+    "cases": [
+      {
+        "block": "uniform",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7197.5
+          ],
+          [
+            7247.5,
+            7350
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 4.89496534,
+        "requiredStageMm": -42.08280559,
+        "quietReserveMm": 7.08280559,
+        "passesThisReference": true
+      },
+      {
+        "block": "uniform",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7197.5
+          ],
+          [
+            7247.5,
+            7350
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 5.37315474,
+        "requiredStageMm": -44.28263742,
+        "quietReserveMm": 9.28263742,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7083.625
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.91079139,
+        "requiredStageMm": -36.72467953,
+        "quietReserveMm": 1.72467953,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7083.625
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 4.31897536,
+        "requiredStageMm": -38.84758857,
+        "quietReserveMm": 3.84758857,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 150,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7083.625
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.73384011,
+        "requiredStageMm": -35.74706668,
+        "quietReserveMm": 0.74706668,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 200,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7083.625
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.58921481,
+        "requiredStageMm": -34.91485341,
+        "quietReserveMm": -0.08514659,
+        "passesThisReference": false
+      }
+    ]
+  },
+  "sixWetHungLatch": {
+    "intervals": [
+      [
+        6311.5,
+        6525
+      ],
+      [
+        6625,
+        6838.5
+      ],
+      [
+        6861.5,
+        7350
+      ]
+    ],
+    "cases": [
+      {
+        "block": "uniform",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7350
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 5.4220033,
+        "requiredStageMm": -44.37575724,
+        "quietReserveMm": 9.37575724,
+        "passesThisReference": true
+      },
+      {
+        "block": "uniform",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7350
+          ]
+        ],
+        "remainingWidthFactor": 0.75,
+        "quietCapacityLps": 5.90575885,
+        "requiredStageMm": -46.40687396,
+        "quietReserveMm": 11.40687396,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7121.125
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 4.32122216,
+        "requiredStageMm": -38.82319136,
+        "quietReserveMm": 3.82319136,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 0,
+        "lipK": 1,
+        "lengthMm": 100,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7121.125
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 4.75929417,
+        "requiredStageMm": -40.89886714,
+        "quietReserveMm": 5.89886714,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 150,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7121.125
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 4.13115708,
+        "requiredStageMm": -37.87244651,
+        "quietReserveMm": 2.87244651,
+        "passesThisReference": true
+      },
+      {
+        "block": "deepestTotalQuarter",
+        "entranceK": 1,
+        "lipK": 0,
+        "lengthMm": 200,
+        "remainingIntervals": [
+          [
+            6311.5,
+            6525
+          ],
+          [
+            6625,
+            6838.5
+          ],
+          [
+            6861.5,
+            7121.125
+          ]
+        ],
+        "remainingWidthFactor": 1,
+        "quietCapacityLps": 3.97536237,
+        "requiredStageMm": -37.06407074,
+        "quietReserveMm": 2.06407074,
+        "passesThisReference": true
+      }
+    ]
+  },
+  "recommendation": "Develop ONE sixwet/fourplain collector +southordinaryaccess control with unchangedten550covers. Compare retainedhinge against priced short hunglatch; keep actual seam/underlap release/guard/ramp/weather/body/blockedmass duties. No sixthpan or latch is already accepted.",
+  "reviewedAgainst": "Independent SciPy brentq/adaptivequad read-only comparison6Nov2026; n.04/L100/K1entry/uniform rejected6003.551943369, northOnly488.5deepest3.692126031. Reproduction/convergence is arithmetic evidence only."
+}

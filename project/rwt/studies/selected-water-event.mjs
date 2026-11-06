@@ -5,13 +5,16 @@ import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
 
 const path='project/had/studies/water-replan.json';
-const expectedBlob='4e6f9a338cb8c5e87f6afb82fe2a6f9fc6eeb702';
+const expectedBlob='90fd241d4f1f69802a349112cf32f2bd241ac6f8';
 const g=9.81;
 export function readSelected(){
  const raw=fs.readFileSync(path,'utf8');
  const blob=crypto.createHash('sha1').update(`blob ${Buffer.byteLength(raw)}\0`).update(raw).digest('hex');
  assert.equal(blob,expectedBlob,'Selected HAD changed: rebind actual event geometry, not only this hash');
- return {path,blob,model:JSON.parse(raw)};
+ const model=JSON.parse(raw),pan=model.model.southCourtThresholdReference.pan;
+ assert.deepEqual(pan.bodyEnvelope.dimensions,[1796,420,131.5],'Merged integral pan body was lost during RWT proposal reconciliation');
+ assert.deepEqual(pan.fallY,[[4090,-45],[4450,-55]]);assert.equal(pan.rear.crestZ,15);
+ return {path,blob,model,authority:'UNMERGED receiver-refined HAD proposal reconciled with canonicalmain ede8302b /pan265ac194; architectural choice inside proposal, not adopted currentmain receiver geometry',canonicalMain:'ede8302b8eb21c571166214227f643928b02edfc',canonicalMainHadBlob:'265ac19420f1b1fa6bba41dd859d7ee758187d6b'};
 }
 const floor=y=>-30-(y-5750)*.04;
 export function mouthFlow(stageMm,intervals,{lossK=0,remainingFraction=1}={}){
@@ -150,7 +153,7 @@ export function build(source=readSelected()){
    canopyPipe:rain.northMaintenance.loggiaRoof.pipe,
    qualification:'Loggia roof installed after short crew exits. Its separate receiver must remain available; actual drainage head/losses/impact and installed weather envelope remain unbound.'}
  };
- return {identity:'RWT-06-SELECTED-WATER-EVENT-2026-11-06',source:{path:source.path,blob:source.blob,startingMain:'8ab19d48ef16abaff39e7f49a3801d5dc5f65521'},
+ return {identity:'RWT-06-SELECTED-WATER-EVENT-2026-11-06',source:{path:source.path,blob:source.blob,startingMain:'8ab19d48ef16abaff39e7f49a3801d5dc5f65521',authority:source.authority,canonicalMain:source.canonicalMain,canonicalMainHadBlob:source.canonicalMainHadBlob},
   status:'NOT ADMITTED: bounded calculations and adverse cases, not a full installed event proof',
   duty:{areaM2:v.hydraulicProbe.catchment.combinedM2,syntheticRainfallMmPerHour:216,flowLps:q,quietStageMm:quiet,
    protectedGeometricCrestMm:15,splashAllocationMm:25,toleranceAllocationMm:25,qualifiedFirstHarmMm:null},
