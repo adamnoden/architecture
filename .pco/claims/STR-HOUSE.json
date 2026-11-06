@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 26,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261106-w2"
   },
   "claimedAt": "2026-11-06T12:10:56.619Z",
-  "heartbeatAt": "2026-11-06T14:29:32.612Z",
-  "expiresAt": "2026-11-06T15:59:32.612Z",
+  "heartbeatAt": "2026-11-06T14:30:17.409Z",
+  "expiresAt": "2026-11-06T14:30:17.409Z",
   "branch": "work/zerg-20261106-w2-str",
   "predecessor": {
     "leaseId": "76ac4987-5c36-4425-875c-341f99336d34",
@@ -39,5 +39,7 @@
     "evidence": "FinalHANDOFF PR1340 draft7b74bd9342e51f85a38865542ce5398aeeb8c852 tree5ab6eb02695d4509a0e5321b48f8c3696636080e. Owningcurrent-house-structural-reference.md records allcurrent sources, exactconservedroof, failedbolt andadverse250anchorage/pileclashes.14tests+9producers/diffpass; noadoption.",
     "next": "Freshcanonicalacquisition/currentmainreconcile; resolvecommonweldedordinary/45hipnode usingactual70/25/60/T10card, genuinearchslidingbearing/movement, completeorigin/headledger andMATfloorcapillarypath. Do not adopt250field or mergeWIP.",
     "blocker": "Coordinatoractualexecutionlimit; sourcefullydurable; STR-HOUSE remainsopen. No externaladmission/completionclaimed."
-  }
+  },
+  "releasedAt": "2026-11-06T14:30:17.409Z",
+  "releaseReason": "handoff"
 }
