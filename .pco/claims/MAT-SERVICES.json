@@ -9,8 +9,8 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T20:07:06.272Z",
-  "expiresAt": "2026-11-06T21:37:06.272Z",
+  "heartbeatAt": "2026-11-06T20:30:00.424Z",
+  "expiresAt": "2026-11-06T22:00:00.424Z",
   "branch": "work/zerg-20261106-services-g21-renewal",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
@@ -36,8 +36,8 @@
   },
   "pr": 1350,
   "checkpoint": {
-    "evidence": "Draft1350 published a68fd52e749143e4a43d76d439ea3de2e8726501/treef2d3a4562eb140086d94b84d96091b2f113241ce. All three actual intermediate folded turns carry complete cart/operator with25mm inflation and continuous plan bound; native controlled-flight direction source-bound. Reproducer/generated artifacts and balanced-system checks PASS; rendered SVG inspected. No cart/handling/apparatus adoption.",
-    "next": "Review1350 bounded route comparison; develop full per-flight positive control, wheel contact/CG, supported loading/withdrawal and actual native operating/heat/constituent evidence. Exact-head CI/rootreview/currentmain preflight before any merge."
+    "evidence": "Stable1350 head ff168e156e3437c3bc8f86305be844833d7bc65e tree e0ed9c8872d3f4b6732a6f639951addacec11de5 reconciles main ede8302b. Actual three folded turns, derived22.21495mm continuous comparison reserve and native maxWLL anchors; proportionate U-monitor SUPPLYBOOST230g/3.432WDC plus complete duties. Both rendered sheets inspected; full test:mat includes both studies and PASS. No handling/apparatus/material admission.",
+    "next": "Exact-headCI and rootreview then fresh canonical preflight before bounded finding merge. Continue actual supported W9withdrawal/loading, complete hoist/anchor/transfer and true operating/noise/winter/constituent duties separately from frozen review head."
   },
-  "note": "Same generation successor after merged1345; productive whole-system design continues."
+  "note": "Active samegeneration operation, stable coherent successor; no release or packet completion."
 }
