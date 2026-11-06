@@ -9,11 +9,11 @@
     "label": "zerg-20261106-w1"
   },
   "claimedAt": "2026-11-06T07:38:01.585Z",
-  "heartbeatAt": "2026-11-06T12:48:04.777Z",
-  "expiresAt": "2026-11-06T13:33:04.777Z",
+  "heartbeatAt": "2026-11-06T13:18:24.570Z",
+  "expiresAt": "2026-11-06T14:03:24.570Z",
   "checkpoint": {
-    "evidence": "Corrective1339 merged6594f48dc4ab9a55d37d43c07f3943c506ab4012; exactCI42219071814success; issue941 withdrawalreconciled/open; oldhead404; successor exactmain",
-    "next": "Continue one actual rolling/access method using full current inventory and actual axle/gate-end mechanics; never reuse rejectedA100W or omittednorth-emitter scene. No new product list, IAS incomplete"
+    "evidence": "Remote957ac78a33d8d4b0aae1eb315b2f1d9a56c1aa12 pins current f732 wall and rejects specified direct axle turn by264.5mm; direct Python and diff checks pass; no complete rolling route claimed.",
+    "next": "Stop unproductive local search; compare one dismantlable guarded podium with actual components and full current inventory, or earn joined gate-end rolling concept."
   },
   "branch": "work/zerg-20261106-w1f",
   "predecessor": {
