@@ -1,38 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="1920" viewBox="0 0 1180 1920"><rect width="100%" height="100%" fill="white"/><g font-family="sans-serif" font-size="14" fill="#17242e">
 <text x="30" y="30" font-size="22" fill="#17242e">East dry bridge: actual HAD floor, supports and whole-carriage renewal</text>
 <text x="30" y="55" font-size="14" fill="#a12b23">Unadopted development envelope; no qualified products, technical acceptance or actual plot</text>
-<rect x="417.22727272727275" y="100.0" width="113.6085" height="3.0" fill="#e9d6b5" stroke="#334c60"/>
-<rect x="417.22727272727275" y="103.0" width="113.6085" height="13.0" fill="#cecabd" stroke="#334c60"/>
-<rect x="417.22727272727275" y="116.0" width="113.6085" height="20.0" fill="#b3dfd8" stroke="#334c60"/>
-<rect x="417.22727272727275" y="136.0" width="113.6085" height="40.0" fill="#c4c8cc" stroke="#334c60"/>
-<rect x="369.0909090909091" y="136.0" width="54.54545454545455" height="90.0" fill="none" stroke="#334c60"/>
-<rect x="478.1818181818182" y="136.0" width="81.81818181818183" height="90.0" fill="none" stroke="#334c60"/>
+<rect x="411.1468085106383" y="100.0" width="113.6085" height="3.0" fill="#e9d6b5" stroke="#334c60"/>
+<rect x="411.1468085106383" y="103.0" width="113.6085" height="13.0" fill="#cecabd" stroke="#334c60"/>
+<rect x="411.1468085106383" y="116.0" width="113.6085" height="20.0" fill="#b3dfd8" stroke="#334c60"/>
+<rect x="411.1468085106383" y="136.0" width="113.6085" height="40.0" fill="#c4c8cc" stroke="#334c60"/>
+<rect x="363.82978723404256" y="136.0" width="53.61702127659575" height="90.0" fill="none" stroke="#334c60"/>
+<rect x="471.06382978723406" y="136.0" width="80.42553191489363" height="90.0" fill="none" stroke="#334c60"/>
 <text x="30" y="205" font-size="14" fill="#17242e">RC200 field ends at -380; actual 600 / 900 crossing beams reach -630</text>
-<polygon points="360.0,239.52941176470588 569.0909090909091,244.94117647058826 569.0909090909091,294.9411764705883 360.0,289.52941176470586" fill="#67a8d5" stroke="#145c83"/>
-<polygon points="787.2727272727273,250.58823529411765 996.3636363636364,256.0 996.3636363636364,306.0 787.2727272727273,300.5882352941177" fill="#c6e0cc" stroke="#145c83"/>
-<path d="M557.5 280.0 H1110.0" stroke="#8f6354" stroke-dasharray="5 4"/>
-<path d="M787.2727272727273 310.5882352941177 L996.3636363636364 316.0" stroke="#a12b23" stroke-width="2"/>
-<path d="M734.3181818181819 130 V320" stroke="#a12b23" stroke-dasharray="4 4"/>
+<polygon points="354.8936170212766,239.52941176470588 560.4255319148937,244.94117647058826 560.4255319148937,294.9411764705883 354.8936170212766,289.52941176470586" fill="#67a8d5" stroke="#145c83"/>
+<polygon points="774.8936170212767,250.58823529411765 980.4255319148937,256.0 980.4255319148937,306.0 774.8936170212767,300.5882352941177" fill="#c6e0cc" stroke="#145c83"/>
+<path d="M549.0319148936171 100.0 H1110.0" stroke="#8f6354" stroke-dasharray="5 4"/>
+<path d="M774.8936170212767 310.5882352941177 L980.4255319148937 316.0" stroke="#a12b23" stroke-width="2"/>
+<path d="M722.8404255319149 130 V320" stroke="#a12b23" stroke-dasharray="4 4"/>
 <text x="30" y="385" font-size="13" fill="#a12b23">Retained support reservation x11667.5 crosses the park: actual profile / full hoist clearance UNBOUND.</text>
 <text x="30" y="350" font-size="13" fill="#17242e">Blue: installed body/backing. Green: separate east park. Brown: operator deck outside the depressed track.</text>
-<path d="M60 440.0 H1110" stroke="#a12b23" stroke-dasharray="8 5"/>
-<text x="30" y="455" font-size="14" fill="#a12b23">Lowest fixed track -1080.000; local D1700 trial has 120.000 over the stated stresses</text>
+<path d="M60 500.0 H1110" stroke="#a12b23" stroke-dasharray="8 5"/>
+<text x="30" y="455" font-size="14" fill="#a12b23">Lowest fixed track -1080.000; local D2000 trial has 420.000 over the stated stresses</text>
 <text x="30" y="495" font-size="18" fill="#17242e">Plan: actual beam faces, guarded intake and new outboard site work field</text>
-<rect x="60.0" y="540.0" width="318.1818181818182" height="327.2727272727273" fill="#f6f0e2" stroke="#334c60"/>
-<rect x="378.1818181818182" y="745.7142857142858" width="179.3181818181818" height="84.15584415584416" fill="#d2d7dc" stroke="#334c60"/>
-<rect x="557.5" y="703.6363636363636" width="552.5" height="196.36363636363637" fill="#f1e9dd" stroke="#334c60"/>
-<rect x="557.5" y="745.7142857142858" width="438.8636363636364" height="84.15584415584416" fill="#dae7df" stroke="#334c60"/>
-<rect x="360.0" y="759.7402597402597" width="209.0909090909091" height="56.103896103896105" fill="#67a8d5" stroke="#334c60"/>
-<rect x="787.2727272727273" y="745.7142857142858" width="209.0909090909091" height="84.15584415584416" fill="none" stroke="#a12b23"/>
-<rect x="1010.0" y="745.7142857142858" width="100.0" height="84.15584415584416" fill="#f3dca8" stroke="#334c60"/>
-<rect x="369.0909090909091" y="684.9350649350649" width="54.54545454545455" height="56.103896103896105" fill="none" stroke="#654331"/>
-<rect x="369.0909090909091" y="834.5454545454545" width="54.54545454545455" height="56.103896103896105" fill="none" stroke="#654331"/>
-<rect x="491.8181818181818" y="684.9350649350649" width="54.54545454545455" height="56.103896103896105" fill="none" stroke="#654331"/>
-<rect x="491.8181818181818" y="834.5454545454545" width="54.54545454545455" height="56.103896103896105" fill="none" stroke="#654331"/>
-<rect x="230.45454545454547" y="731.6883116883117" width="138.63636363636363" height="102.85714285714286" fill="none" stroke="#a12b23"/>
-<rect x="230.45454545454547" y="759.7402597402597" width="54.54545454545455" height="56.103896103896105" fill="#d2b58c" stroke="#334c60"/>
-<rect x="285.0" y="745.7142857142858" width="54.54545454545455" height="84.15584415584416" fill="#c6e0cc" stroke="#334c60"/>
-<rect x="341.8181818181818" y="745.7142857142858" width="18.181818181818183" height="84.15584415584416" fill="#b0a4a1" stroke="#334c60"/>
+<rect x="60.0" y="540.0" width="312.7659574468085" height="240.0" fill="#f6f0e2" stroke="#334c60"/>
+<rect x="372.7659574468085" y="690.8571428571429" width="176.26595744680853" height="61.714285714285715" fill="#d2d7dc" stroke="#334c60"/>
+<rect x="549.0319148936171" y="660.0" width="560.968085106383" height="240.0" fill="#f1e9dd" stroke="#334c60"/>
+<rect x="549.0319148936171" y="690.8571428571429" width="431.3936170212766" height="61.714285714285715" fill="#dae7df" stroke="#334c60"/>
+<rect x="354.8936170212766" y="701.1428571428571" width="205.53191489361703" height="41.142857142857146" fill="#67a8d5" stroke="#334c60"/>
+<rect x="774.8936170212767" y="690.8571428571429" width="205.53191489361703" height="61.714285714285715" fill="none" stroke="#a12b23"/>
+<rect x="1011.7021276595746" y="690.8571428571429" width="98.29787234042554" height="61.714285714285715" fill="#f3dca8" stroke="#334c60"/>
+<rect x="363.82978723404256" y="646.2857142857143" width="53.61702127659575" height="41.142857142857146" fill="none" stroke="#654331"/>
+<rect x="363.82978723404256" y="756.0" width="53.61702127659575" height="41.142857142857146" fill="none" stroke="#654331"/>
+<rect x="484.468085106383" y="646.2857142857143" width="53.61702127659575" height="41.142857142857146" fill="none" stroke="#654331"/>
+<rect x="484.468085106383" y="756.0" width="53.61702127659575" height="41.142857142857146" fill="none" stroke="#654331"/>
+<rect x="227.55319148936172" y="680.5714285714286" width="136.27659574468086" height="75.42857142857143" fill="none" stroke="#a12b23"/>
+<rect x="227.55319148936172" y="701.1428571428571" width="53.61702127659575" height="41.142857142857146" fill="#d2b58c" stroke="#334c60"/>
+<rect x="281.17021276595744" y="690.8571428571429" width="53.61702127659575" height="61.714285714285715" fill="#c6e0cc" stroke="#334c60"/>
+<rect x="337.02127659574467" y="690.8571428571429" width="17.872340425531917" height="61.714285714285715" fill="#b0a4a1" stroke="#334c60"/>
 <text x="30" y="920" font-size="14" fill="#17242e">600 water / 663 U / 763 carriage / 900 portal; 2500 new bridge beam-to-park clearance</text>
 <text x="30" y="945" font-size="14" fill="#a12b23">Intake splash and bulk first wetting differ. Complete joint/rail/guard/lift and air/thermal admission remain open.</text>
 <text x="30" y="970" font-size="14" fill="#17242e">The old west park, 5 mm east-only park, solid -900 deck and free D1300 are rejected, not hidden.</text>

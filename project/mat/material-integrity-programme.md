@@ -51,6 +51,7 @@ Historical holds preserve the old source identities and technical learning. Exis
 
 ## Design comparisons
 
+- [East foul join at the water return](east-water-foul-join.md) — source-owned75mm south port correction clears the actual new return and actual current portal/rings; coordinated D2000 pre-site receiver condition extends all affected exterior tails700mm. Capacity, closure, hydraulics and real site/outfall remain holds.
 - [Kitchen heat after the water replan](kitchen-replan-heat-result.md) — rejects the current cooker's unselected north900/east1400 spatial join against the actual larder and retained sink-feed column. Retained east1200 plus a west1100 challenger meets the same zero-heater-credit band and preserves ordinary paths; matched support/handler/whole-house export and the full cooker/plant/material duties remain unearned. No canonical Services change.
 
 - [Open north loggia: joined envelope and owning exits](loggia-envelope-boundary.md) — actual wall/soffit,775 portal,400 outdoor route, roof and threshold studies replace the indoor-water-box direction at development scope. The source-bound geometry and named common failures are recoverable; ground receiving, thermal/air/gas continuity, maintenance rain state and complete technical/material admission remain open.

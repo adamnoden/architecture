@@ -4609,22 +4609,22 @@
           ],
           [
             10800,
-            5700,
-            2645
+            5625,
+            2646.875
           ],
           [
             12000,
-            5700,
-            2615
+            5625,
+            2616.875
           ]
         ],
-        "lengthMM": 2700,
-        "fallAt1in40": 67.5,
+        "lengthMM": 2625,
+        "fallAt1in40": 65.625,
         "formedWallTerritory": 200,
         "faceFlashingTerritory": 300,
         "externalDownstackBodyTerritory": [
           12000,
-          5550,
+          5475,
           450,
           300
         ],
@@ -4636,8 +4636,9 @@
             3685,
             5515
           ],
-          "holeToRingControlReserve": 85,
-          "flashingToRingControlReserve": 35
+          "holeToRingControlReserve": 10,
+          "flashingToRingControlReserve": -40,
+          "allHeightControlStatus": "Conservative flashing rectangle is negative(-40); no all-height PASS. Actual current HAD finite arch-ring and actual new service portal must be checked in east-water-foul-join.py."
         },
         "nextWindowControl": {
           "axis": 7400,
@@ -4650,13 +4651,43 @@
         },
         "source": "Current HAD Eopeningrecord checked for ALLwindows/door.215ring is an explicit profile-control awaiting STR/HAD actual inner/weather ring, NOT asserted whole exterior recipe.",
         "grade": {
-          "trialExterior": -1300,
-          "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
-          "axisOf160OuterEnvelope": -1980,
+          "trialExterior": -2000,
+          "requiredReceiverEnvelopeCrownAtOrBelow": -2600,
+          "axisOf160OuterEnvelope": -2680,
           "crownCoverControl": 600,
-          "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
+          "actualHydraulicInvert": "Unknown actual carrier/internaldiameter/receiver/site/outfall.160 outer envelope axis is not an adopted hydraulic invert.",
+          "scope": "Joined D2000 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered700, preserving internal wall/sleeve/tail connections and falls.",
+          "historicalD1300Control": {
+            "trialExterior": -1300,
+            "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
+            "axisOf160OuterEnvelope": -1980,
+            "crownCoverControl": 600,
+            "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
+          },
+          "externalTailLoweringMM": 700,
+          "affectedExternalTails": [
+            "foul-ground-WC",
+            "foul-utility",
+            "foul-kitchen",
+            "rear-soil",
+            "east-soil",
+            "kitchenSinkStation.wasteRequiredRoute"
+          ]
         },
-        "renewal": "Outside fixed brackets and boundary sleeve retained; separately isolated supported removable cleanout/straight lengths,350jointrelease territory. External scaffold/lift required, not attic access. Exact part length/mass/connector/fastener and facade work field unproved."
+        "renewal": "Outside fixed brackets and boundary sleeve retained; separately isolated supported removable cleanout/straight lengths,350jointrelease territory. External scaffold/lift required, not attic access. Exact part length/mass/connector/fastener and facade work field unproved.",
+        "northReturnJoin": {
+          "oldRejectedPort": [
+            12000,
+            5700,
+            2615
+          ],
+          "oldFormedHoleToDryFace": -19.5,
+          "oldCarrier160ToDryFace": 0.5,
+          "northDryFace": 5780.5,
+          "formedHoleToDryFace": 55.5,
+          "completeCarrier160ToDryFace": 75.5,
+          "sourceOrder": "Services owns5625 downstream setout; HAD owns the actual portal and arch profiles. Recompute every current hole/carrier/flashing against actual openings, not retired window7400. No material/closure/capacity acceptance."
+        }
       },
       "otherServiceDuties": [
         {
@@ -4703,7 +4734,7 @@
             [
               8900,
               -450,
-              -1980
+              -2680
             ]
           ],
           "decision": "Required compatible horizontalpan outlet abovefloor to own southwall sleeve; no new groundfloor bore.650planat1:40. Actual pan firstrelease and complete connector≤182.5rear axialterritory required; no guessed outlet. Outside receiving invert/site connection unproved."
@@ -4730,7 +4761,7 @@
             [
               12450,
               600,
-              -1980
+              -2680
             ]
           ],
           "decision": "Washerstandpipe andsink trapped branch join accessible rear250chase andeastwall exit ABOVEfloor; no routingthroughappliance chassis.32.5fall on1300plan. Exact trap/hose/branch/outside carrier and workplate required."
@@ -4752,7 +4783,7 @@
             [
               9150,
               12450,
-              -1980
+              -2680
             ]
           ],
           "decision": "Accessible sinktrap/cleanout to northwall abovefloor,17.9375fall on717.5plan. No branch through groundloggia/hiddenwaterbox. Actual site receiving crown/diameter/invert mustmatch."
@@ -4779,7 +4810,7 @@
             [
               -450,
               11177.5,
-              -1980
+              -2680
             ]
           ],
           "decision": "Merged R01 upper sanitaryport remains conditional; abovefloor westexit avoidsanothergroundbore. Actual roof intersection/termination must be raised above nearbyopenings/roof;7800 is a reservation, not roofheight fact."
@@ -4800,21 +4831,21 @@
             ],
             [
               10800,
-              5700,
-              2645
+              5625,
+              2646.875
             ],
             [
               12000,
-              5700,
-              2615
+              5625,
+              2616.875
             ],
             [
               12450,
-              5700,
-              -1980
+              5625,
+              -2680
             ]
           ],
-          "decision": "Highlevel eastwall exit at5700 avoidsplantdoor/foot-levelcrossbar; ALLouterarches/flashing andvisibleexternalstack mustqualify. No hidden groundfloor stack or additionalfloorbore assumed."
+          "decision": "75S exit rewind5625 preserves upper join/start2682.5 and1:40, clears new north-return formed-hole boundary. Actual current portal/ring/weather/support, outside350release and receiving grade/invert remain to qualify. No hidden floor bore."
         },
         {
           "id": "rainwater-interface",
@@ -5875,7 +5906,7 @@
         [
           9275,
           12450,
-          -1980
+          -2680
         ]
       ],
       "actualSupplierRequired": "Bothpressureunions andwastetrap/union mustbe compatiblewithsame release sequence, material, hygiene andgravity duty; nominalmetal/diameter isnot a completepartpass.",
@@ -6994,7 +7025,7 @@
         [
           9275,
           12450,
-          -1980
+          -2680
         ]
       ],
       "actualSupplierRequired": "Bothpressureunions andwastetrap/union mustbe compatiblewithsame release sequence, material, hygiene andgravity duty; nominalmetal/diameter isnot a completepartpass.",
@@ -7600,22 +7631,22 @@
       ],
       [
         10800,
-        5700,
-        2645
+        5625,
+        2646.875
       ],
       [
         12000,
-        5700,
-        2615
+        5625,
+        2616.875
       ]
     ],
-    "lengthMM": 2700,
-    "fallAt1in40": 67.5,
+    "lengthMM": 2625,
+    "fallAt1in40": 65.625,
     "formedWallTerritory": 200,
     "faceFlashingTerritory": 300,
     "externalDownstackBodyTerritory": [
       12000,
-      5550,
+      5475,
       450,
       300
     ],
@@ -7627,8 +7658,9 @@
         3685,
         5515
       ],
-      "holeToRingControlReserve": 85,
-      "flashingToRingControlReserve": 35
+      "holeToRingControlReserve": 10,
+      "flashingToRingControlReserve": -40,
+      "allHeightControlStatus": "Conservative flashing rectangle is negative(-40); no all-height PASS. Actual current HAD finite arch-ring and actual new service portal must be checked in east-water-foul-join.py."
     },
     "nextWindowControl": {
       "axis": 7400,
@@ -7641,13 +7673,43 @@
     },
     "source": "Current HAD Eopeningrecord checked for ALLwindows/door.215ring is an explicit profile-control awaiting STR/HAD actual inner/weather ring, NOT asserted whole exterior recipe.",
     "grade": {
-      "trialExterior": -1300,
-      "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
-      "axisOf160OuterEnvelope": -1980,
+      "trialExterior": -2000,
+      "requiredReceiverEnvelopeCrownAtOrBelow": -2600,
+      "axisOf160OuterEnvelope": -2680,
       "crownCoverControl": 600,
-      "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
+      "actualHydraulicInvert": "Unknown actual carrier/internaldiameter/receiver/site/outfall.160 outer envelope axis is not an adopted hydraulic invert.",
+      "scope": "Joined D2000 pre-site admissibility comparator; no actual plot/sewer depth or ground/foundation acceptance. Every affected external foul tail is lowered700, preserving internal wall/sleeve/tail connections and falls.",
+      "historicalD1300Control": {
+        "trialExterior": -1300,
+        "requiredReceiverEnvelopeCrownAtOrBelow": -1900,
+        "axisOf160OuterEnvelope": -1980,
+        "crownCoverControl": 600,
+        "actualHydraulicInvert": "Unknown until actual carrier/internaldiameter/receiver geometry and site datum; outerenvelope bottom is not hydraulicinvert."
+      },
+      "externalTailLoweringMM": 700,
+      "affectedExternalTails": [
+        "foul-ground-WC",
+        "foul-utility",
+        "foul-kitchen",
+        "rear-soil",
+        "east-soil",
+        "kitchenSinkStation.wasteRequiredRoute"
+      ]
     },
-    "renewal": "Outside fixed brackets and boundary sleeve retained; separately isolated supported removable cleanout/straight lengths,350jointrelease territory. External scaffold/lift required, not attic access. Exact part length/mass/connector/fastener and facade work field unproved."
+    "renewal": "Outside fixed brackets and boundary sleeve retained; separately isolated supported removable cleanout/straight lengths,350jointrelease territory. External scaffold/lift required, not attic access. Exact part length/mass/connector/fastener and facade work field unproved.",
+    "northReturnJoin": {
+      "oldRejectedPort": [
+        12000,
+        5700,
+        2615
+      ],
+      "oldFormedHoleToDryFace": -19.5,
+      "oldCarrier160ToDryFace": 0.5,
+      "northDryFace": 5780.5,
+      "formedHoleToDryFace": 55.5,
+      "completeCarrier160ToDryFace": 75.5,
+      "sourceOrder": "Services owns5625 downstream setout; HAD owns the actual portal and arch profiles. Recompute every current hole/carrier/flashing against actual openings, not retired window7400. No material/closure/capacity acceptance."
+    }
   },
   "PV": {
     "selection": "4kWp grid-connected roofPV, no battery; proposed8×500W modules. A declared compatibility package, not an actual roof/yield design.",
@@ -10669,7 +10731,7 @@
         [
           8900,
           -450,
-          -1980
+          -2680
         ]
       ],
       "decision": "Required compatible horizontalpan outlet abovefloor to own southwall sleeve; no new groundfloor bore.650planat1:40. Actual pan firstrelease and complete connector≤182.5rear axialterritory required; no guessed outlet. Outside receiving invert/site connection unproved."
@@ -10696,7 +10758,7 @@
         [
           12450,
           600,
-          -1980
+          -2680
         ]
       ],
       "decision": "Washerstandpipe andsink trapped branch join accessible rear250chase andeastwall exit ABOVEfloor; no routingthroughappliance chassis.32.5fall on1300plan. Exact trap/hose/branch/outside carrier and workplate required."
@@ -10718,7 +10780,7 @@
         [
           9150,
           12450,
-          -1980
+          -2680
         ]
       ],
       "decision": "Accessible sinktrap/cleanout to northwall abovefloor,17.9375fall on717.5plan. No branch through groundloggia/hiddenwaterbox. Actual site receiving crown/diameter/invert mustmatch."
@@ -10745,7 +10807,7 @@
         [
           -450,
           11177.5,
-          -1980
+          -2680
         ]
       ],
       "decision": "Merged R01 upper sanitaryport remains conditional; abovefloor westexit avoidsanothergroundbore. Actual roof intersection/termination must be raised above nearbyopenings/roof;7800 is a reservation, not roofheight fact."
@@ -10766,21 +10828,21 @@
         ],
         [
           10800,
-          5700,
-          2645
+          5625,
+          2646.875
         ],
         [
           12000,
-          5700,
-          2615
+          5625,
+          2616.875
         ],
         [
           12450,
-          5700,
-          -1980
+          5625,
+          -2680
         ]
       ],
-      "decision": "Highlevel eastwall exit at5700 avoidsplantdoor/foot-levelcrossbar; ALLouterarches/flashing andvisibleexternalstack mustqualify. No hidden groundfloor stack or additionalfloorbore assumed."
+      "decision": "75S exit rewind5625 preserves upper join/start2682.5 and1:40, clears new north-return formed-hole boundary. Actual current portal/ring/weather/support, outside350release and receiving grade/invert remain to qualify. No hidden floor bore."
     },
     {
       "id": "rainwater-interface",

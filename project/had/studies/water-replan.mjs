@@ -60,11 +60,11 @@ export function deriveWaterReplan({servicesText} = {}) {
   const canonicalServicesPath = 'project/mat/studies/whole-house-service-baseline.json';
   const canonicalBytes = Buffer.from(servicesText ?? readFileSync(new URL(canonicalServicesPath, root), 'utf8'));
   assert.equal(createHash('sha1').update(`blob ${canonicalBytes.length}\0`).update(canonicalBytes).digest('hex'),
-    '3e934b29d9f328b41cb9bd2498184154090492c0', 'Authenticate complete current Services source');
+    'c677a252278d1c63581ba4aebc12820d9cf85854', 'Authenticate complete current Services source');
   const currentServices = JSON.parse(canonicalBytes);
   const services = currentServices.interfaces.architecturalServices;
   const servicesProjection = createHash('sha256').update(JSON.stringify(sorted(services))).digest('hex');
-  assert.equal(servicesProjection, 'a2bf80bfb19d973a01ef22948942909e386400b4a93a273d362b362a2349c4a2');
+  assert.equal(servicesProjection, 'ddc5bb72c7480cb2c1cca0e45a3d5b1b278703d21aae62cfeba80e78463d3846');
   assert.deepEqual(s.eastWaterHypothesis.finishedPassageY, [6300, 7500]);
   assert.deepEqual(s.plantDryRoom, [9397, 3797, 2173.5, 1983.5]);
   const floorZ = x => -800 - (x - 7750) * 50 / 4250;
@@ -153,6 +153,43 @@ export function deriveWaterReplan({servicesText} = {}) {
       'Only after body west end reaches x12250, wholly beyond the reserved outer support ending12117.5, hoist1200 vertically in the open E work box.',
       'Reverse with captured body, reinstate both joints/shield/receivers and covers, inspect/test then reopen E. N never dismantled by this sequence.'],
     courtCost: 'One guarded intake/service well, not a court-length staging pocket; outdoor E track requires a depressed opening below the raised operator deck.' };
+  const assemblyPath='project/mat/studies/upper-access-renewal.json',assembly=load(assemblyPath);
+  assert.equal(assembly.upperDrawer.belowBed,150);
+  assert.equal(assembly.lowerReceiver.bedOffset,-300);
+  renewal.rejectedLowTrackDeck=renewal.temporaryTrackDeck;delete renewal.temporaryTrackDeck;
+  renewal.assemblySource={path:assemblyPath,blob:blob(assemblyPath),authority:'MAT assembly/control source imported exactly once; HAD owns the resulting world geometry. Results are not an input.'};
+  renewal.assemblyContract=assembly;
+  renewal.upperDeck={topZ:assembly.deck.top,bottomZ:assembly.deck.top-assembly.deck.structuralTerritory,
+    walkingGratingDepthBudget:assembly.deck.walkingGratingDepthBudget,
+    fixedThroughOuterSupport:true,personBelowDeck:false};
+  renewal.operatorDeckZ=assembly.deck.top;
+  renewal.servicePlatform=[9722.5,assembly.workfield.south,assembly.workfield.east-9722.5,assembly.workfield.north-assembly.workfield.south];
+  renewal.operatorField=assembly.workfield.operator;
+  renewal.northOperatorStrip=[12250,7450,assembly.workfield.east-12250,assembly.workfield.north-7450];
+  renewal.storagePad=assembly.workfield.storage;
+  renewal.hoistWorkingBox=[12250,6300,0,2475,1500,assembly.workfield.hoistTop];
+  renewal.hoistLiftTranslation=assembly.workfield.upperLift;
+  const lowerX=[bridge.supportAxesX[1]+bridge.localSupportBeamWidths[1]/2+assembly.lowerReceiver.westBeyondSpineBeam,assembly.lowerReceiver.east];
+  const lowerLength=lowerX[1]-lowerX[0],lowerPark=[lowerX[1],lowerX[1]+lowerLength];
+  renewal.lowerReceiver={bodyX:lowerX,length:lowerLength,bedOffset:assembly.lowerReceiver.bedOffset,
+    bedEnds:lowerX.map(x=>[x,floorZ(x)+assembly.lowerReceiver.bedOffset]),
+    waterClear:assembly.lowerReceiver.waterClear,
+    wetBodyGrossWidth:assembly.lowerReceiver.waterClear+2*assembly.lowerReceiver.sheet+2*assembly.lowerReceiver.flangeEach,
+    carriageWidth:assembly.lowerReceiver.waterClear+2*assembly.lowerReceiver.sheet+2*assembly.lowerReceiver.flangeEach+2*assembly.lowerReceiver.carriageExtraEach,
+    belowBed:assembly.lowerReceiver.belowBed,railDepth:assembly.lowerReceiver.railDepth,
+    parkX:lowerPark,translation:lowerLength,lift:assembly.workfield.lowerLift,
+    outboardTrackClearY:assembly.parkCovers.clearY,
+    fixedTrackLowest:floorZ(lowerPark[1])+assembly.lowerReceiver.bedOffset-assembly.lowerReceiver.belowBed-assembly.lowerReceiver.railDepth};
+  renewal.selectedSequence=assembly.sequence;
+  renewal.methodStatus='TWO-LEVEL COMPARISON ONLY; NOT PREFERRED OR ADOPTED. UPPER ACCESS REFERENCE COMPOSED; complete hatch/guard/captive-staff and delivery/handover first motion still INCOMPLETE. No physical or water acceptance.';
+  passage.outerReceivingWaterMaximumTrial=-1500;
+  passage.maintenanceTrackReceivingWaterMaximumTrial=-1600;
+  passage.maintenanceTrackDrainLipTrial=[15900,-1415];
+  renewal.maintenanceCatchDrain={inlet:[14725,6900,renewal.lowerReceiver.fixedTrackLowest-3],
+    outlet:[15900,6900,-1415],clearWidth:150,belowWetFloorBudget:35,lowestReservedSurface:-1450,
+    scope:'Project-designed descending exterior catch/drain territory below the rails, never a pump or an essential below-water room. Actual construction, cleanout, head, splash and groundwater remain unqualified; a deeper body reopens D2000.'};
+  assert(renewal.maintenanceCatchDrain.inlet[2]>renewal.maintenanceCatchDrain.outlet[2]);
+  assert(renewal.maintenanceCatchDrain.outlet[2]>passage.maintenanceTrackReceivingWaterMaximumTrial);
   const eventPath='project/rwt/studies/open-loggia-event.json',event=load(eventPath);
   assert.equal(event.inputs.house.blob,blob(hadPath));
   const inwardArea=event.catchment.combinedM2,probeRainfall=216;
@@ -208,6 +245,11 @@ export function deriveWaterReplan({servicesText} = {}) {
   model.architecturalServices = services;
   model.servicesProjection = { source: { path: canonicalServicesPath, blob: blob(canonicalServicesPath), projectionSha256: servicesProjection },
     keyedFieldsEqual: true, method: 'Exact full canonical object import, no numeric whitelist or local copied service inventory.' };
+  model.servicesInterface.eastFoulExit = services.eastFoulExit;
+  model.servicesInterface.supply = services.supply;
+  model.servicesInterface.cooker = services.cooker;
+  model.servicesInterface.utility = services.utility;
+  model.servicesInterface.otherServiceDuties = services.otherServiceDuties;
   model.servicesInterface.plant = { controls: services.plant.controlsHydraulics, buffer,
     riser: services.plant.riserGross, cylinder };
   model.servicesInterface.source = model.servicesProjection.source;
@@ -226,9 +268,13 @@ export function deriveWaterReplan({servicesText} = {}) {
     fanMaintenance:currentServices.extract.map(e=>({id:e.id,maintenanceFurniture:e.maintenanceFurniture??null,doorMode:e.doorMode})),
     sourceBlob:blob(canonicalServicesPath), fields:['interfaces.architecturalServices.plant.cylinder','interfaces.architecturalServices.emitters','interfaces.architecturalServices.fanAccess','extract[].maintenanceFurniture/doorMode'],
     method:'Derived from exact current object; the historical MAT9476 auxiliary stamp is not reused.' };
+  function ringSectorGap(q,R,t,half,r){const a=Math.atan2(Math.sqrt(R*R-half*half),half),th=Math.atan2(q[1],q[0]),rr=Math.hypot(...q);if(th>=a&&th<=Math.PI-a){if(rr<R)return R-rr-r;if(rr>R+t)return rr-R-t-r;return-r}const aa=th<a?a:Math.PI-a,u=[Math.cos(aa),Math.sin(aa)],along=Math.max(R,Math.min(R+t,q[0]*u[0]+q[1]*u[1]));return Math.hypot(q[0]-along*u[0],q[1]-along*u[1])-r}
+  const serviceInterface=model.servicesInterface,serviceNumeric=services;
+  const portInputs=[];for(const e of serviceInterface.extract){portInputs.push({id:e.id+'-exhaust',level:e.level,p:e.mainPort,r:140,cassette:e.id==='principal-bath'});portInputs.push({id:e.id+'-condensate',level:e.level,p:e.condensatePort.centre,r:20,cassette:e.id==='principal-bath'});}for(const e of serviceNumeric.supply)portInputs.push({id:e.id+'-supply',level:e.level,p:e.point,r:e.formedWallTerritory/2});portInputs.push({id:'cooker-exhaust',level:0,p:serviceNumeric.cooker.extractPoint,r:serviceNumeric.cooker.formedWallTerritory/2},{id:'cooker-makeup',level:0,p:serviceNumeric.cooker.makeupPoint,r:serviceNumeric.cooker.makeupFormedTerritory/2},{id:'east-foul-flashing',level:0,p:serviceNumeric.eastFoulExit.path.at(-1),r:serviceNumeric.eastFoulExit.faceFlashingTerritory/2});
+  model.exteriorPortGeometry=portInputs.map(p=>{const level=p.level===0?'GROUND':'FIRST',wall=p.p[0]===0?'outer-west':p.p[0]===12000?'outer-east':p.p[1]===0?'outer-south':'outer-north',along=wall.endsWith('east')||wall.endsWith('west')?p.p[1]:p.p[0],z=p.p[2]-p.level*3450;let min=Infinity,governor;for(const o of model.archOpeningRegister[level].filter(o=>o.wall===wall)){const h=o.width/2,rise=o.head-o.spring,R=(h*h+rise*rise)/(2*rise),q=[along-o.centre,z-(o.head-R)];let gap;if(p.cassette&&o.centre===7400){gap=R-Math.hypot(...q)-p.r-75;}else gap=ringSectorGap(q,R,o.radialRingTrial,h,p.r);if(gap<min){min=gap;governor=o.centre;}}return{...p,wall,localZ:z,minimumRingOrCassetteReserve:min,governingOpening:governor,pass:min>=0,scope:p.cassette?'Actual1000/300rawarch;75maxcompletehead/cassetteintrusion held. Fixed480band2370–2850/openingleaf≤2370; actualOASprofile/weather/fire/structure unqualified.':'Analyticcircle-versusFINITE215radialsegmentalringsector, includingradialendfaces; actualmaterial/support/weather/hosthole capacity unqualified.'}});
   model.servicesOccurrenceProof = verifyServicesOccurrences(model, currentServices);
   // One explicit trial ground basis, with its complete approach/height price.
-  const oldApproaches=structuredClone(model.approaches),grade=-1700;
+  const oldApproaches=structuredClone(model.approaches),grade=-2000;
   const approach=(rise,maximumFlight)=>{
     const slopingRun=rise*20,flights=[];let remaining=slopingRun;
     while(remaining>0){const length=Math.min(maximumFlight,remaining);flights.push(length);remaining-=length;}
@@ -239,17 +285,17 @@ export function deriveWaterReplan({servicesText} = {}) {
     garden:{terrace:model.sections.waterLevels.loggiaNorth,...approach(model.sections.waterLevels.loggiaNorth-grade,8000)},
     clearWidthReservation:1200,
     supersededD1300Comparison:oldApproaches,
-    scope:'D1700 is ONE pre-site comparator exterior/solum basis, not a surveyed plot or adopted foundation. Four flights/five landings preserve prior flight-length controls; no access-category, turning/guard/door or compliance acceptance.'};
+    scope:'D2000 is ONE pre-site comparator exterior/solum basis, not a surveyed plot or adopted foundation. Actual derived flights/landings preserve prior flight-length controls; no access-category, turning/guard/door or compliance acceptance.'};
   model.exterior.eavesAboveAuthoredGrade=model.exterior.eaves-grade;
   model.exterior.ridgeAboveAuthoredGrade=model.exterior.ridge-grade;
   model.sections.fireHeight.firstAboveAuthoredExterior=model.sections.firstFFL-grade;
-  model.sections.fireHeight.scope='D1700 comparator gives5150 above authored lowest exterior; actual adjacent-ground interpretation and strategy remain required.';
-  model.sections.groundSupport.Drequired=Math.max(1250,-renewal.withdrawalTrackEndLowestZ+500);
-  model.sections.groundSupport.Dtrial=1700;
-  model.sections.groundSupport.Dsurplus=1700-model.sections.groundSupport.Drequired;
-  model.sections.groundSupport.scope='D1700 is the joined pre-site comparator. Retained grid/member capacities and actual ground/heave/ventilation remain unqualified; actual site and any deeper structural member reopen this reference.';
-  model.protectedRoute.measurement='D6 lowest SIDE outsideground, not merely solum; comparator5150onlyif actual exterior−1700. No automatic fire-strategy acceptance.';
-  model.qualityCosts.height='One D1700 comparator: eaves/ridge400higher above grade; front40m/garden36.95m straight approach reservations, each9.2m longer than D1300 after the added flight/landing. No actual plot fit claimed.';
+  model.sections.fireHeight.scope='D2000 comparator gives5450 above authored lowest exterior; actual adjacent-ground interpretation and strategy remain required.';
+  model.sections.groundSupport.Drequired=Math.max(1250,-renewal.lowerReceiver.fixedTrackLowest+500,-renewal.maintenanceCatchDrain.lowestReservedSurface+500);
+  model.sections.groundSupport.Dtrial=2000;
+  model.sections.groundSupport.Dsurplus=2000-model.sections.groundSupport.Drequired;
+  model.sections.groundSupport.scope='D2000 is the joined pre-site comparator. Retained grid/member capacities and actual ground/heave/ventilation remain unqualified; actual site and any deeper structural member reopen this reference.';
+  model.protectedRoute.measurement='D6 lowest SIDE outsideground, not merely solum; comparator5450onlyif actual exterior−2000. No automatic fire-strategy acceptance.';
+  model.qualityCosts.height='One D2000 comparator: eaves/ridge700higher above grade; front47.2m/garden44.15m straight approach reservations, each16.4m longer than D1300 after the added flights/landings. No actual plot fit claimed.';
   model.status = 'UNADOPTED JOINED WATER REPLAN; historical selected geometry is its input, not its current pass.';
   model.internalArchControls = services.eastWaterJoin.archControls;
   model.plantReferenceDoor={...services.eastWaterJoin.operatorEntry,
@@ -326,7 +372,7 @@ export function deriveWaterReplan({servicesText} = {}) {
   model.wholeHouseFit = { pass: false, scope: 'New joined affected geometry still being challenged; historical whole-house pass does not apply automatically.' };
   model.currentAdoptionBlockers=[
     'The new outer900 support envelope and12250..14550 whole park are authored feasibility geometry, not yet joined to the MAT outer-hoist acceptance prover.',
-    'Temporary walking deck at-900 has only270 headroom below the retained outer support at-630. Walking retreat through that support and900-high hinged cover opening are NOT feasible as currently described. No maintenance first-motion pass.',
+    'Two-level/D2000 is a COMPARISON ONLY, withdrawn as preferred: the maintenance policy does not require E removed plus concurrent N failure. Its hatch/guard/staff/handover remains incomplete; simpler one-piece and accessible-transfer alternatives are being compared.',
     'Guard gate, covers, actual rigging and intake/first-wetting/air/thermal joints require joined checking. Canonical health now checks the actual HAD/MAT producers; physical and architectural admission remain separate.'
   ];
   model.knownRejectedGeometry = { intermediateDividerAt3300: {
@@ -340,14 +386,14 @@ export function deriveWaterReplan({servicesText} = {}) {
     sources: { had: { path: hadPath, blob: blob(hadPath) }, services: { path: canonicalServicesPath, blob: blob(canonicalServicesPath), projectionSha256: servicesProjection } },
     model, passage, bridge, renewal, hydraulicProbe,
     groundEnvelope: { routeLocalLowestTrial: -1000, heaveStress: 300, constructionLoss: 50,
-      ventilationReserve: 150, routeLocalDMinimum: 1500, routeLocalDTrial: 1700,
-      fullSelectedTrackLowest: renewal.withdrawalTrackEndLowestZ,
-      fullSelectedTrackMinimumD: -renewal.withdrawalTrackEndLowestZ + 500,
+      ventilationReserve: 150, routeLocalDMinimum: 1500, routeLocalDTrial: 2000,
+      fullSelectedTrackLowest: Math.min(renewal.withdrawalTrackEndLowestZ,renewal.lowerReceiver.fixedTrackLowest,renewal.maintenanceCatchDrain.lowestReservedSurface),
+      fullSelectedTrackMinimumD: -Math.min(renewal.withdrawalTrackEndLowestZ,renewal.lowerReceiver.fixedTrackLowest,renewal.maintenanceCatchDrain.lowestReservedSurface) + 500,
       uniformSolumOrRealExteriorGradeAdopted: false,
       note: 'D1300 was not spare depth. Every actual support/liner low point needs its own ground relation; deeper STR alternatives and real groundwater/terrain remain explicit.' },
     serviceStates: { normal: 'North remains the ordinary route; E has its own court inlet, module and east exterior receiving territory.',
       northMaintenance: 'Retain E and its intake during north liner renewal; actual assigned rainfall/roof bypass remains RWT proof.',
-      eastMaintenance: 'North remains assembled and unobstructed during eastward E withdrawal; fence intake well/track and keep the protected house entry available.',
+      eastMaintenance: 'Before E isolation/withdrawal, verify N assembled, unobstructed and independently able to carry the full assigned event (RWT proof required). Prohibit E work if N is unavailable. Isolate/divert E inflow before release, fence intake/track, retain protected entry. No E-removed plus concurrent-N-failed promise is imposed.',
       failure: 'N mouth blockage/high north receiving head requires E intake and distinct receiving envelope. Whole-site flooding beyond both declared bounds rejects site applicability.' },
     retainedProofBoundary: 'Only exact untouched fields may retain historical fit evidence. Plant, new wall/portal, support, deep pocket and first-wetting joins require actual new checks; no blanket wholeHouseFit pass is inherited.',
     unclosed: [...model.currentAdoptionBlockers,
@@ -407,7 +453,7 @@ function render(v) {
   svg+=`<rect x="${sx(6125)}" y="${sz(-80)}" width="${1525*.052}" height="${870*.19}" fill="#cb8e5f" opacity=".3"/>`;
   svg+=`<rect x="${sx(v.renewal.selectedParkX[0])}" y="${sz(-750)}" width="${2300*.052}" height="${250*.19}" fill="#227b99" opacity=".25"/>`;
   svg+=label(740,665,'Beam trial −180..−630; liner bed −800..−850; no hidden level return.');
-  svg+=label(740,690,`EAST park ${v.renewal.selectedParkX.join('..')}; beyond proposed outer support. Cover/worker path FAILS.`);
+  svg+=label(740,690,`EAST park ${v.renewal.selectedParkX.join('..')}; beyond proposed outer support. Two-level comparator only; first motion incomplete.`);
   svg+=label(740,715,`Track-local D${v.groundEnvelope.fullSelectedTrackMinimumD.toFixed(1)} minimum / D${v.groundEnvelope.routeLocalDTrial} trial; site unaccepted.`);
   svg+=label(740,760,'WIP HANDOFF: no adoption. Whole temporary-deck/cover motion must be redesigned.');
   return svg+'</svg>\n';

@@ -2,14 +2,161 @@
   "identity": "MAT-UPPER-ACCESS-RENEWAL-2026-11-06",
   "status": "PROPOSED mechanism WIP; no HAD adoption, product rating or physical/water acceptance",
   "hadSource": "project/had/studies/water-replan.json",
-  "deck": {"top": 0, "structuralTerritory": 180, "walkingGratingDepthBudget": 30, "scope": "Outdoor bare metal/mineral deck territory, not occupied floor layers. Bearing/capacity and all constituents remain unqualified."},
-  "upperDrawer": {"waterClear": 600, "wetDepth": 100, "carriageWidth": 763, "belowBed": 50, "railY": [6525,7275], "railDepth": 25, "designChange": "Replace the unselected150 below-bed budget with an actual continuously supported50-deep frame hypothesis. Not an earned strength/deflection rating."},
-  "lowerReceiver": {"westBeyondSpineBeam": 25, "east": 12250, "waterClear": 800, "wetDepth": 100, "sheet": 1.5, "flangeEach": 30, "carriageExtraEach": 50, "bedOffset": -200, "belowBed": 150, "railDepth": 50, "scope": "Open-topped receiver with closed west dam; upper frame passes above its complete rim, no gasket or custom underlap seal. Full capture/splash/debris performance unearned."},
-  "upperRailSupports": {"stationX": [10000,10500,11000,11500,12000,12500,13000,13500,14000,14550], "postY": [6350,7450], "postHalfWidth": 20, "bracketDepth": 25, "scope": "Fixed outside posts and inward brackets above lower rim; no assumed support drilled through beams."},
-  "workfield": {"east": 16000, "south": 6000, "north": 9500, "operator": [14900,6450,1100,900], "storage": [12250,8400,2475,1100], "hoistTop": 3000, "northShift": 2050, "upperLift": 1200, "lowerLift": 1500, "scope": "One module removed at a time; replace/reinstate before renewing the other. Raised approach, loading route/new-module handover and rated temporary handling still require HAD/site resolution."},
-  "parkCovers": {"count": 4, "clearY": [6350,7450], "hingeY": 6350, "thicknessBudget": 30, "massBudgetEachKg": 30, "handleInset": 50, "openingToolLength": 1250, "handHeight": 1100, "bodyBehindHand": 350, "bodyRadius": 300, "bodyHeight": 1800, "scope": "Hinges only wholly outboard of all support envelopes. Mass is a design maximum, not a known supplied cover or manual-force approval. Empty storage/workfield is used while opening; vacate before load transfer."},
-  "firstRelease": {"pinDiameter": 12, "pinLength": 200, "pinBottomRelativeBed": -75, "pinHeadRelativeBed": 125, "lift": 225, "completeToolDiameter": 24, "upperToolLength": 1950, "lowerToolLength": 2200, "upperPinX": 9825, "upperPinY": [6550,7250], "lowerWestPinX": 9800, "lowerEastPinX": 12225, "lowerPinY": [6450,7350], "upperBody": [10800,6900,0], "upperHandX": 10450, "lowerWestBody": [11000,6900,0], "lowerWestHandX": 10650, "lowerEastBody": [12900,6900,0], "lowerEastHandX": 12550, "handY": [6800,7000], "handZ": 1050, "shoulderHeight": 1450, "reachBudget": 600, "scope": "Temporary capture staffs lift straight pins225 and latch above-floor; pin lower ends then clear their moving rim50. No rod remains through a beam and no person descends under it. Attachment/retention, force, guards and complete hatch motion are NOT YET proved."},
-  "ground": {"Dtrial": 1900, "scope": "New lower receiver/rail costs real depth; actual catch/drain/support can govern deeper. No actual exterior grade or plot is adopted."},
-  "sequence": ["Retain N, isolate and drain E; install actual upper guards before opening covers.", "Operate pins from fixed upper deck; upstream court end retains its separate open-air guarded well. No person walks through270 headroom.", "Open outboard covers from empty upper workfield; capture/latch pins above moving rims.", "Draw only the module being renewed east on its own fixed rail level; other module may remain installed.", "When the whole module clears the outer support, vacate the swept hoist/storage field and lift/translate north onto independent sloping cradles.", "Receive replacement through a still-unbound actual delivery/handover route; reinstate and test one module completely before renewing the other."],
-  "activeHolds": ["Actual hatch/guard and complete captive-staff attachment/first motion remain to be proved", "50-deep upper frame/rails need a real constructive member and strength/deflection/retention evidence", "200 drop and800 receiver require actual splash, capture, blocked/full-flow/first-harm testing", "Storage/hoist geometry is not a selected kit or load capacity; actual new-module delivery route remains open", "All material chemistry, corrosion, bearing, air/thermal and site/drainage acceptance remain unearned"]
+  "deck": {
+    "top": 0,
+    "structuralTerritory": 180,
+    "walkingGratingDepthBudget": 30,
+    "scope": "Outdoor bare metal/mineral deck territory, not occupied floor layers. Bearing/capacity and all constituents remain unqualified."
+  },
+  "upperDrawer": {
+    "waterClear": 600,
+    "wetDepth": 100,
+    "carriageWidth": 763,
+    "belowBed": 150,
+    "railY": [
+      6525,
+      7275
+    ],
+    "railDepth": 25,
+    "designChange": "Retain the existing150 below-bed territory; no new50-frame slimming. Actual member/rail capacity remains unqualified."
+  },
+  "lowerReceiver": {
+    "westBeyondSpineBeam": 25,
+    "east": 12250,
+    "waterClear": 800,
+    "wetDepth": 100,
+    "sheet": 1.5,
+    "flangeEach": 30,
+    "carriageExtraEach": 50,
+    "bedOffset": -300,
+    "belowBed": 150,
+    "railDepth": 50,
+    "scope": "Open-topped receiver with closed west dam; upper frame passes above its complete rim, no gasket or custom underlap seal. Full capture/splash/debris performance unearned."
+  },
+  "upperRailSupports": {
+    "stationX": [
+      10000,
+      10500,
+      11000,
+      11500,
+      12000,
+      12500,
+      13000,
+      13500,
+      14000,
+      14550
+    ],
+    "postY": [
+      6350,
+      7450
+    ],
+    "postHalfWidth": 20,
+    "bracketDepth": 25,
+    "scope": "Fixed outside posts and inward brackets above lower rim; no assumed support drilled through beams."
+  },
+  "workfield": {
+    "east": 16000,
+    "south": 6000,
+    "north": 9500,
+    "operator": [
+      14900,
+      6450,
+      1100,
+      900
+    ],
+    "storage": [
+      12250,
+      8400,
+      2475,
+      1100
+    ],
+    "hoistTop": 3000,
+    "northShift": 2050,
+    "upperLift": 1300,
+    "lowerLift": 1600,
+    "scope": "One module removed at a time; replace/reinstate before renewing the other. Raised approach, loading route/new-module handover and rated temporary handling still require HAD/site resolution."
+  },
+  "parkCovers": {
+    "count": 4,
+    "clearY": [
+      6350,
+      7450
+    ],
+    "hingeY": 6350,
+    "thicknessBudget": 30,
+    "massBudgetEachKg": 30,
+    "handleInset": 50,
+    "openingToolLength": 1250,
+    "handHeight": 1100,
+    "bodyBehindHand": 350,
+    "bodyRadius": 300,
+    "bodyHeight": 1800,
+    "scope": "Hinges only wholly outboard of all support envelopes. Mass is a design maximum, not a known supplied cover or manual-force approval. Empty storage/workfield is used while opening; vacate before load transfer."
+  },
+  "firstRelease": {
+    "pinDiameter": 12,
+    "pinLength": 200,
+    "pinBottomRelativeBed": -175,
+    "pinHeadRelativeBed": 25,
+    "lift": 325,
+    "completeToolDiameter": 24,
+    "upperToolLength": 2050,
+    "lowerToolLength": 2400,
+    "upperPinX": 9825,
+    "upperPinY": [
+      6550,
+      7250
+    ],
+    "lowerWestPinX": 9800,
+    "lowerEastPinX": 12225,
+    "lowerPinY": [
+      6450,
+      7350
+    ],
+    "upperBody": [
+      10800,
+      6900,
+      0
+    ],
+    "upperHandX": 10450,
+    "lowerWestBody": [
+      11000,
+      6900,
+      0
+    ],
+    "lowerWestHandX": 10650,
+    "lowerEastBody": [
+      12900,
+      6900,
+      0
+    ],
+    "lowerEastHandX": 12550,
+    "handY": [
+      6800,
+      7000
+    ],
+    "handZ": 1050,
+    "shoulderHeight": 1450,
+    "reachBudget": 600,
+    "scope": "Temporary capture staffs lift straight pins225 and latch above-floor; pin lower ends then clear their moving rim50. No rod remains through a beam and no person descends under it. Attachment/retention, force, guards and complete hatch motion are NOT YET proved."
+  },
+  "ground": {
+    "Dtrial": 2000,
+    "scope": "New lower receiver/rail costs real depth; actual catch/drain/support can govern deeper. No actual exterior grade or plot is adopted."
+  },
+  "sequence": [
+    "Retain N, isolate and drain E; install actual upper guards before opening covers.",
+    "Operate pins from fixed upper deck; upstream court end retains its separate open-air guarded well. No person walks through270 headroom.",
+    "Open outboard covers from empty upper workfield; capture/latch pins above moving rims.",
+    "Draw only the module being renewed east on its own fixed rail level; other module may remain installed.",
+    "When the whole module clears the outer support, vacate the swept hoist/storage field and lift/translate north onto independent sloping cradles.",
+    "Receive replacement through a still-unbound actual delivery/handover route; reinstate and test one module completely before renewing the other."
+  ],
+  "activeHolds": [
+    "Actual hatch/guard and complete captive-staff attachment/first motion remain to be proved",
+    "Actual150-deep carriage and continuous rail member/retention/strength evidence remains unearned; no new slimming claim",
+    "200 drop and800 receiver require actual splash, capture, blocked/full-flow/first-harm testing",
+    "Storage/hoist geometry is not a selected kit or load capacity; actual new-module delivery route remains open",
+    "All material chemistry, corrosion, bearing, air/thermal and site/drainage acceptance remain unearned"
+  ]
 }
