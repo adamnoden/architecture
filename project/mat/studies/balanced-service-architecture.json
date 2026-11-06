@@ -1,0 +1,290 @@
+{
+  "status": "Unselected whole-system challenger; no canonical numeric owner migration or material exception",
+  "basis": {
+    "main": "8ab19d48ef16abaff39e7f49a3801d5dc5f65521",
+    "hadBlob": "f7324121f59cc5f1707ea47640dd2b20c26b9bbb",
+    "servicesBlob": "69c7b1b1e733b9ade2d8ae21c1552accf52a6261"
+  },
+  "modes": [
+    {
+      "id": "background",
+      "fiveOtherWetRoomsEachLps": 13,
+      "kitchenTotalExtractLps": 13,
+      "totalExtractLps": 78,
+      "totalBalancedSupplyLps": 78,
+      "sixHabitableSupplyEachLpsIfEqual": 13.0,
+      "existingKitchenTransferIdealDropPa": 4.7179257355683575,
+      "round160VelocityMps": 3.879401737864949,
+      "round200VelocityMps": 2.482817112233567,
+      "rect160By180VelocityMps": 2.7083333333333335
+    },
+    {
+      "id": "wet-boost",
+      "fiveOtherWetRoomsEachLps": 16,
+      "kitchenTotalExtractLps": 16,
+      "totalExtractLps": 96,
+      "totalBalancedSupplyLps": 96,
+      "sixHabitableSupplyEachLpsIfEqual": 16.0,
+      "existingKitchenTransferIdealDropPa": 7.146680404174553,
+      "round160VelocityMps": 4.7746482927568605,
+      "round200VelocityMps": 3.0557749073643903,
+      "rect160By180VelocityMps": 3.3333333333333335
+    },
+    {
+      "id": "cooking-plus-all-wet-boost",
+      "fiveOtherWetRoomsEachLps": 16,
+      "kitchenTotalExtractLps": 48,
+      "totalExtractLps": 128,
+      "totalBalancedSupplyLps": 128,
+      "sixHabitableSupplyEachLpsIfEqual": 21.333333333333332,
+      "existingKitchenTransferIdealDropPa": 64.32012363757099,
+      "round160VelocityMps": 6.366197723675814,
+      "round200VelocityMps": 4.074366543152521,
+      "rect160By180VelocityMps": 4.444444444444445
+    }
+  ],
+  "hoodBranchPressureScreen": {
+    "closedEightHoleK": 1.31,
+    "closed13MeasuredPressurePa": 98.47910960899715,
+    "closed16MeasuredPressurePa": 149.17545597575895,
+    "openHoodAuthoredQuadratic": 0.032,
+    "additionalQuadraticForEqualBranchPressure": 0.03683957811316356,
+    "commonBoostCookingBranchPressurePa": 158.60638797272884,
+    "scope": "A useful fixed-network pressure screen, not an OEM damper/duct selection or factory control proof."
+  },
+  "spineCrossings": [
+    {
+      "centreYZ": [
+        2909,
+        2445
+      ],
+      "fullJacketYZ": [
+        2802,
+        2328,
+        214,
+        234
+      ],
+      "minimumFinishedIntrados": 2594.13818769797,
+      "topReserve": 32.1381876979699,
+      "bottomAbove2250DoorAssembly": 78
+    },
+    {
+      "centreYZ": [
+        3491,
+        2445
+      ],
+      "fullJacketYZ": [
+        3384,
+        2328,
+        214,
+        234
+      ],
+      "minimumFinishedIntrados": 2594.13818769797,
+      "topReserve": 32.1381876979699,
+      "bottomAbove2250DoorAssembly": 78
+    }
+  ],
+  "W9VestibuleHost": {
+    "unitAndBasePlan": [
+      9677,
+      2672,
+      1006,
+      597
+    ],
+    "unitNativeWeightKg": 156,
+    "bodyHeight": 1314,
+    "nativeSpigotTop": 1342,
+    "baseHeight": 123,
+    "maximumFootAdjustment": 50,
+    "conservativeTotalHeight": 1515,
+    "frontTrialField": [
+      9677,
+      3269,
+      1006,
+      600
+    ],
+    "frontTrialDepthNotNativeQualification": true,
+    "rearToUtilityNorthFinishedFace": 25,
+    "eastOrdinaryPassage": 887.5,
+    "frontToCylinderBody": 31,
+    "frontFitsIntermediateArchX": true,
+    "850CartWith25EdgesPassesEast": false,
+    "scope": "Static challenger only. Native panel/component withdrawal, operator, supports, condensation, lifting and continuous renewal must be bound before fit selection."
+  },
+  "fireSmokeTransferComparison": [
+    {
+      "family": "Lorient LVN20S",
+      "nominalSquare": 300,
+      "doorApertureSquare": 309,
+      "approxGeometricFreeAreaMM2": 27000.0,
+      "idealOrificeDropAt48Pa": 5.096200742532374,
+      "measuredFlowPressureQualified": false,
+      "PVCSlatsDeclared": true,
+      "mandatorySystem": "Talkback, smoke shutter, lined aperture/intumescent kit, conductor hinge or EA280; actual complete doorset evidence required."
+    },
+    {
+      "family": "Lorient LVN20S",
+      "nominalSquare": 350,
+      "doorApertureSquare": 359,
+      "approxGeometricFreeAreaMM2": 36750.0,
+      "idealOrificeDropAt48Pa": 2.7508022333702447,
+      "measuredFlowPressureQualified": false,
+      "PVCSlatsDeclared": true,
+      "mandatorySystem": "Talkback, smoke shutter, lined aperture/intumescent kit, conductor hinge or EA280; actual complete doorset evidence required."
+    },
+    {
+      "family": "Lorient LVN20S",
+      "nominalSquare": 400,
+      "doorApertureSquare": 409,
+      "approxGeometricFreeAreaMM2": 48000.0,
+      "idealOrificeDropAt48Pa": 1.6124697661918839,
+      "measuredFlowPressureQualified": false,
+      "PVCSlatsDeclared": true,
+      "mandatorySystem": "Talkback, smoke shutter, lined aperture/intumescent kit, conductor hinge or EA280; actual complete doorset evidence required."
+    }
+  ],
+  "heatSensitivity": [
+    {
+      "mode": "background",
+      "effectiveRecoverySensitivity": 0,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 9408.0,
+      "supplyBeforeReheatC": -10,
+      "postheatTo18CW": 2620.7999999999997,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "wet-boost",
+      "effectiveRecoverySensitivity": 0,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 10056.0,
+      "supplyBeforeReheatC": -10,
+      "postheatTo18CW": 3225.5999999999995,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "cooking-plus-all-wet-boost",
+      "effectiveRecoverySensitivity": 0,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 11208.0,
+      "supplyBeforeReheatC": -10,
+      "postheatTo18CW": 4300.8,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "background",
+      "effectiveRecoverySensitivity": 0.6,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 7723.2,
+      "supplyBeforeReheatC": 8.0,
+      "postheatTo18CW": 936.0,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "wet-boost",
+      "effectiveRecoverySensitivity": 0.6,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 7982.4,
+      "supplyBeforeReheatC": 8.0,
+      "postheatTo18CW": 1152.0,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "cooking-plus-all-wet-boost",
+      "effectiveRecoverySensitivity": 0.6,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 8443.2,
+      "supplyBeforeReheatC": 8.0,
+      "postheatTo18CW": 1536.0,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "background",
+      "effectiveRecoverySensitivity": 0.7,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 7442.4,
+      "supplyBeforeReheatC": 11.0,
+      "postheatTo18CW": 655.1999999999999,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "wet-boost",
+      "effectiveRecoverySensitivity": 0.7,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 7636.8,
+      "supplyBeforeReheatC": 11.0,
+      "postheatTo18CW": 806.3999999999999,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "cooking-plus-all-wet-boost",
+      "effectiveRecoverySensitivity": 0.7,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 7982.4,
+      "supplyBeforeReheatC": 11.0,
+      "postheatTo18CW": 1075.2,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "background",
+      "effectiveRecoverySensitivity": 0.8,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 7161.6,
+      "supplyBeforeReheatC": 14.0,
+      "postheatTo18CW": 374.4,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "wet-boost",
+      "effectiveRecoverySensitivity": 0.8,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 7291.2,
+      "supplyBeforeReheatC": 14.0,
+      "postheatTo18CW": 460.79999999999995,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    },
+    {
+      "mode": "cooking-plus-all-wet-boost",
+      "effectiveRecoverySensitivity": 0.8,
+      "fabricPlusInfiltrationWK": 220,
+      "insideC": 20,
+      "outsideC": -10,
+      "physicalHeatBeforeFanAndReheatW": 7521.599999999999,
+      "supplyBeforeReheatC": 14.0,
+      "postheatTo18CW": 614.4,
+      "status": "Sensitivity using inherited220W/K/30K, not climate, installed efficiency, heating loss or a W9 output claim."
+    }
+  ],
+  "requiredEffectiveRecoveryFor8kWAt128And30K": 0.6961805555555556,
+  "liveHADunchanged": true,
+  "upperWetFieldsUnchanged": true,
+  "remainingDesignTasks": [
+    "Complete native W9 front panel/core/fan/whole unit renewal and weight-supported method",
+    "Select transfer route against actual protected doorset and full constituents, or explicit controlled kitchen supply",
+    "Actual entire supply/extract/riser/cold terminal/cleaning/silencer/formed-opening layout and pressure/noise proof",
+    "OEM cooking-mode and simultaneous humidity-control mapping, frost/dirty/wind/power/fan failure state proof",
+    "Actual heating source/HX/emitter/DHW/defrost margin and constituent decision; no assumed8kW or polymer admission"
+  ]
+}
