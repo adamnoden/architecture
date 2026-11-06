@@ -56,7 +56,7 @@
 <text x="32" y="741" class="b">Whole-system development decision</text>
 <text x="32" y="770" class="">Retain W9 direct 96/128 L/s as leading direction; this is one renewal comparison, not an apparatus pass.</text>
 <text x="32" y="800" class="">Investigate grip-hoist control per 9 m flight, with positively held transfers through each landing.</text>
-<text x="32" y="830" class="">Native jaws holding a stopped load do not design the anchors, attachments, redirects or independent capture.</text>
+<text x="32" y="830" class="">TU8: anchor and structure ≥7.85 kN per unit; constant rope tension. No slack catch-rope credit.</text>
 <text x="32" y="860" class="">Still bind: supported W9 loading/withdrawal; caster/wheel contact and CG; exact slope/landing control bodies.</text>
 <text x="32" y="890" class="">Still bind: actual dirty-filter pressure/noise; native mode/lost-duty behaviour; winter/defrost heat; full constituents.</text>
 <text x="32" y="934" class="s">No HAD/Services geometry change. No 1280/1288 combination, driving-brake claim, or hidden tool constituents.</text>

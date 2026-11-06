@@ -6,7 +6,8 @@
     "source": "model.gardenFailureBypass.frontApproach",
     "travelXYZmm": 45944.97191010141,
     "historicalStraightBudgetMM": 42000,
-    "historicalRole": "Nominal42m comparison is not current folded route or a straight winch path."
+    "historicalRole": "Nominal42m comparison is not current folded route or a straight winch path.",
+    "currentSupportComparator": "Project mineral ramp/landing reference:200 structural depth with discrete supports at≤2000 spacing. Actual ground/bearing/reinforcement/edge/guard capacity and drainage remain STR/MAT/BCR."
   },
   "carrier": {
     "part": "Fetra25011401",
@@ -31,7 +32,9 @@
     "nativeCasterOption": 1288,
     "casterSource": "https://www.fetra.com/surcharge_articles/4_swivel_castors-1288",
     "casterBoundary": "All-direction translation assumes native four-swivel option, which reduces directional stability and is incompatible with1280. No hidden fixed-wheel skid manoeuvre.",
-    "temporaryToolConstituents": "Plywood deck,TPEwheels and restraints remain visible temporary-tool constituents, not permanent-service polymer approval."
+    "temporaryToolConstituents": "Plywood deck,TPEtyres, native71614plastic rims and restraints remain visible temporary-tool constituents, not permanent-service polymer approval.",
+    "nativeWheelEvidence": "Manufacturer cart page lists200mm wheels; linked71614caster lists200x40TPE and plastic rims. Exact assembled wheelbase, swivel trail and wheel-contact polygons remain unknown.",
+    "wheelSource": "https://www.fetra.com/castors/tpe_castors/swivel_castor-71614"
   },
   "constructiveFoldedTurn": {
     "localClearRectanglesMM": [
@@ -829,10 +832,36 @@
   },
   "positiveControlDirection": {
     "manual": "https://www.tractel.com/PIM/Manuals/LH/Manual%20LH/Group%201/150425.ind-03.03-23.pdf",
-    "identity": "Tractel150425.ind-03.03-23, native Tirfor/Greifzug installation,operating and maintenance manual,English original;sections1,5,6,8,10.",
+    "identity": "Tractel150425.ind-03.03-23, native Tirfor/Greifzug installation,operating and maintenance manual,English original;general warnings10/23 and sections1,5,6,8,10.",
     "nativeFacts": "TU8WLL0.8t,8.4kg machine+1kg handle;8.3mm originalTirforrope0.25kg/m. Section1 supports lowering;section6 says both jaws hold load when operation stops. Longer-than20m rope available on request.",
     "developmentChoice": "Investigate native grip-hoist controlled lowering/pulling per actual9mflight with positively held landing transfers. Do not use1280wheel lock as a driving brake, or infer2200downhill performance from its uphill sheet.",
-    "hardBoundary": "Manual requires adequate anchors, intended hook/pin, original matching rope and unobstructed straight-line operation. Folded route therefore needs designed per-flight setups or rated redirects; no long straight rope shortcut. Machine,620mm handle arc, operator, rope/sheaves and capture equipment are additional real bodies/costs not yet included in the plan-turn envelope.",
+    "hardBoundary": "General warning10 requires anchor AND structure for machine maximumWLL, not the small actual cart downslope force; combined units require corresponding structure capacity. Warning23 requires constant rope tension: a slack second rope is not native qualified impact capture. Intended hook/pin, original matching rope and unobstructed straight-line operation remain mandatory. Folded route needs designed per-flight setups or rated redirects; no long straight rope shortcut. Machine,620mm handle arc, operator, rope/sheaves and capture equipment are additional real bodies/costs not yet included in the plan-turn envelope.",
+    "minimumSingleTU8AnchorAndStructureReactionN": 7845.32,
+    "simple180degreeRedirectResultantAtTU8WLLN": 15690.64,
+    "reactionRole": "Manufacturer capacity obligation, not a designed anchor or actual reaction analysis. Multiple units, geometry, load distribution and restraint need the complete rigging/structure check.",
+    "upperFlightStationReferencesXYZmm": [
+      [
+        6000,
+        -1200,
+        0
+      ],
+      [
+        4500,
+        -10200,
+        -450
+      ],
+      [
+        3000,
+        -1200,
+        -900
+      ],
+      [
+        1500,
+        -10200,
+        -1350
+      ]
+    ],
+    "stationRole": "Actual ramp upper-end reference coordinates only, not located/sized anchors or hoist/operator fields. Current HAD support note leaves actual ground/bearing/reinforcement/edge/guard capacity unearned beyond its200depth/2000maximumsupport-pitch comparator. New external works required; no guard, house grid or wall friction credit.",
     "transfer": "The next controlled attachment must actually hold the load before the previous line can be unloaded/released; actual anchor locations, attachment load paths, directional restraint and independent failure capture are not designed or qualified here.",
     "noPass": "No native caster/slope compatibility, loaded assembly stability, wheel-contact support, anchorage, redundant capture or whole-body lifting approval."
   },

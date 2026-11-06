@@ -10,6 +10,8 @@ blob = hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
 assert blob == 'f7324121f59cc5f1707ea47640dd2b20c26b9bbb'
 h = json.loads(raw)['model']
 front = h['gardenFailureBypass']['frontApproach']
+current_front = json.loads((ROOT/'project/had/studies/water-replan.json').read_text())['model']['gardenFailureBypass']['frontApproach']
+assert current_front == front, 'Current selected approach changed: rebind and re-prove this comparison'
 route = front['route']
 travel = sum(math.dist(a,b) for a,b in zip(route,route[1:]))
 assert math.isclose(travel,45944.97191010141,abs_tol=.001)
@@ -113,13 +115,15 @@ result={
  'status':'Unselected W9whole-system renewal development; plan containment only, no cart/handling/anchor/material admission',
  'basis':{'main':HEAD,'hadBlob':blob,'source':'model.gardenFailureBypass.frontApproach','travelXYZmm':travel,
           'historicalStraightBudgetMM':h['approaches']['front']['totalStraightReservation'],
-          'historicalRole':'Nominal42m comparison is not current folded route or a straight winch path.'},
+          'historicalRole':'Nominal42m comparison is not current folded route or a straight winch path.','currentSupportComparator':front['support']},
  'carrier':{'part':'Fetra25011401','nativeSource':'https://www.fetra.com/carts/open_cart-25011401',
   'nativeDeckMM':[1000,600],'nativeOverallPlanMM':[1125,609],'conservativeDeckCentredBodyMM':[1250,609],
   'nativeDeckHeightMM':270,'nativeCapacityKG':600,'W9KG':156,'operatorDiameterMM':600,'operatorBehindDeckCentreMM':950,
   'nativeCasterOption':1288,'casterSource':'https://www.fetra.com/surcharge_articles/4_swivel_castors-1288',
   'casterBoundary':'All-direction translation assumes native four-swivel option, which reduces directional stability and is incompatible with1280. No hidden fixed-wheel skid manoeuvre.',
-  'temporaryToolConstituents':'Plywood deck,TPEwheels and restraints remain visible temporary-tool constituents, not permanent-service polymer approval.'},
+  'temporaryToolConstituents':'Plywood deck,TPEtyres, native71614plastic rims and restraints remain visible temporary-tool constituents, not permanent-service polymer approval.',
+  'nativeWheelEvidence':'Manufacturer cart page lists200mm wheels; linked71614caster lists200x40TPE and plastic rims. Exact assembled wheelbase, swivel trail and wheel-contact polygons remain unknown.',
+  'wheelSource':'https://www.fetra.com/castors/tpe_castors/swivel_castor-71614'},
  'constructiveFoldedTurn':{'localClearRectanglesMM':local_rects,'localDeckPoseXYDegrees':path,'actualLandingTransforms':transforms,
   'inflationMM':25,'densePoseCountPerTurn':dense_count,'maximumTranslationSampleMM':5,'maximumRotationSampleDegrees':.25,
   'betweenSampleMovementBoundMM':interpolation_bound,'uninflatedPlanReserveLowerBoundMM':25-interpolation_bound,
@@ -128,10 +132,15 @@ result={
   'scope':'Only three intermediate Uturns and their adjacent ramp portions. Entry/foot transitions and any continuation on actual grade remain unearned. Deck and operator bodies are plan envelopes; no wheel-contact, hand-force or three-dimensional support inference.'},
  'positiveControlDirection':{
   'manual':'https://www.tractel.com/PIM/Manuals/LH/Manual%20LH/Group%201/150425.ind-03.03-23.pdf',
-  'identity':'Tractel150425.ind-03.03-23, native Tirfor/Greifzug installation,operating and maintenance manual,English original;sections1,5,6,8,10.',
+  'identity':'Tractel150425.ind-03.03-23, native Tirfor/Greifzug installation,operating and maintenance manual,English original;general warnings10/23 and sections1,5,6,8,10.',
   'nativeFacts':'TU8WLL0.8t,8.4kg machine+1kg handle;8.3mm originalTirforrope0.25kg/m. Section1 supports lowering;section6 says both jaws hold load when operation stops. Longer-than20m rope available on request.',
   'developmentChoice':'Investigate native grip-hoist controlled lowering/pulling per actual9mflight with positively held landing transfers. Do not use1280wheel lock as a driving brake, or infer2200downhill performance from its uphill sheet.',
-  'hardBoundary':'Manual requires adequate anchors, intended hook/pin, original matching rope and unobstructed straight-line operation. Folded route therefore needs designed per-flight setups or rated redirects; no long straight rope shortcut. Machine,620mm handle arc, operator, rope/sheaves and capture equipment are additional real bodies/costs not yet included in the plan-turn envelope.',
+  'hardBoundary':'General warning10 requires anchor AND structure for machine maximumWLL, not the small actual cart downslope force; combined units require corresponding structure capacity. Warning23 requires constant rope tension: a slack second rope is not native qualified impact capture. Intended hook/pin, original matching rope and unobstructed straight-line operation remain mandatory. Folded route needs designed per-flight setups or rated redirects; no long straight rope shortcut. Machine,620mm handle arc, operator, rope/sheaves and capture equipment are additional real bodies/costs not yet included in the plan-turn envelope.',
+  'minimumSingleTU8AnchorAndStructureReactionN':800*9.80665,
+  'simple180degreeRedirectResultantAtTU8WLLN':2*800*9.80665,
+  'reactionRole':'Manufacturer capacity obligation, not a designed anchor or actual reaction analysis. Multiple units, geometry, load distribution and restraint need the complete rigging/structure check.',
+  'upperFlightStationReferencesXYZmm':[r['from'] for r in front['ramps']],
+  'stationRole':'Actual ramp upper-end reference coordinates only, not located/sized anchors or hoist/operator fields. Current HAD support note leaves actual ground/bearing/reinforcement/edge/guard capacity unearned beyond its200depth/2000maximumsupport-pitch comparator. New external works required; no guard, house grid or wall friction credit.',
   'transfer':'The next controlled attachment must actually hold the load before the previous line can be unloaded/released; actual anchor locations, attachment load paths, directional restraint and independent failure capture are not designed or qualified here.',
   'noPass':'No native caster/slope compatibility, loaded assembly stability, wheel-contact support, anchorage, redundant capture or whole-body lifting approval.'},
  'wholeSystemDecision':'Keep W9direct96/128 as leading development direction; this constructive actual-route plan removes one renewal uncertainty only. Retain VTCchallenger and all five decisive operating/heat/control/renewal/constituent tests. No apparatus adoption or S01–S10 duty reduction.',
@@ -183,7 +192,7 @@ text(620,693,'PLAN RESULT: complete bodies remain in clear territory.','b')
 text(32,741,'Whole-system development decision','b')
 for y,s in [(770,'Retain W9 direct 96/128 L/s as leading direction; this is one renewal comparison, not an apparatus pass.'),
  (800,'Investigate grip-hoist control per 9 m flight, with positively held transfers through each landing.'),
- (830,'Native jaws holding a stopped load do not design the anchors, attachments, redirects or independent capture.'),
+ (830,'TU8: anchor and structure ≥7.85 kN per unit; constant rope tension. No slack catch-rope credit.'),
  (860,'Still bind: supported W9 loading/withdrawal; caster/wheel contact and CG; exact slope/landing control bodies.'),
  (890,'Still bind: actual dirty-filter pressure/noise; native mode/lost-duty behaviour; winter/defrost heat; full constituents.'),
  (934,'No HAD/Services geometry change. No 1280/1288 combination, driving-brake claim, or hidden tool constituents.')]:text(32,y,s,'s' if y==934 else '')
