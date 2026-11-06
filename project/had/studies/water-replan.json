@@ -11019,6 +11019,18 @@
           50
         ],
         "destination": "Separate E collector upstream of its accessible intake; bypasses primary sill weeps/tray/N mouth. Do not join the primary drain before this distinct route.",
+        "intakeJoin": {
+          "openEndPlaneY": 6300,
+          "x": [
+            7300,
+            7400
+          ],
+          "outletFloorZ": -125,
+          "outletRimZ": -75,
+          "receivingCollectorFloorZ": -200,
+          "freeDrop": 75,
+          "role": "Open south-boundary side entry into the existing collector low channel. No north−110 crest or solid guard plinth is inserted across this100-wide opening; actual capture/splash/debris remains RWT."
+        },
         "walkingCover": "Separately lift-out metal grates in190mm modules; support/heel/access/load/handling qualification remains open."
       },
       "jambs": {
@@ -13819,6 +13831,374 @@
       "pass": true,
       "scope": "Current actual furniture, emitter heights, extract ports/platforms and fan task states; component equality does not establish whole-house acceptance."
     },
+    "gardenFailureBypass": {
+      "status": "SOURCE-DRAWN ORDINARY OPERATOR REFERENCE; SITE AND ACCESS QUALIFICATION UNEARNED",
+      "grade": -2000,
+      "body": {
+        "radius": 300,
+        "height": 1800
+      },
+      "clearWidth": 1200,
+      "flightSpacing": 1500,
+      "usableGarden": {
+        "plan": [
+          -800,
+          12500,
+          4800,
+          4500
+        ],
+        "z": -2000,
+        "scope": "Usable garden is at declared exterior grade WEST of the N receiving territory. Low loggia terrace is not the safe faulted occupant state."
+      },
+      "receivingN": {
+        "plan": [
+          4800,
+          12000,
+          2400,
+          2500
+        ],
+        "role": "Reserved north water/disposal territory, not an occupied escape path. Actual containment/head/outfall remains RWT/DPL."
+      },
+      "bypass": [
+        [
+          1000,
+          13500,
+          -2000
+        ],
+        [
+          -2000,
+          13500,
+          -2000
+        ],
+        [
+          -2000,
+          -5800,
+          -2000
+        ],
+        [
+          0,
+          -5800,
+          -2000
+        ]
+      ],
+      "groundPathEnvelope": [
+        [
+          -2600,
+          12900,
+          4200,
+          1200
+        ],
+        [
+          -2600,
+          -6400,
+          1200,
+          20500
+        ],
+        [
+          -2600,
+          -6400,
+          3200,
+          1200
+        ]
+      ],
+      "frontApproach": {
+        "route": [
+          [
+            6000,
+            0,
+            0
+          ],
+          [
+            6000,
+            -600,
+            0
+          ],
+          [
+            6000,
+            -1200,
+            0
+          ],
+          [
+            6000,
+            -10200,
+            -450
+          ],
+          [
+            6000,
+            -10800,
+            -450
+          ],
+          [
+            4500,
+            -10800,
+            -450
+          ],
+          [
+            4500,
+            -10200,
+            -450
+          ],
+          [
+            4500,
+            -1200,
+            -900
+          ],
+          [
+            4500,
+            -600,
+            -900
+          ],
+          [
+            3000,
+            -600,
+            -900
+          ],
+          [
+            3000,
+            -1200,
+            -900
+          ],
+          [
+            3000,
+            -10200,
+            -1350
+          ],
+          [
+            3000,
+            -10800,
+            -1350
+          ],
+          [
+            1500,
+            -10800,
+            -1350
+          ],
+          [
+            1500,
+            -10200,
+            -1350
+          ],
+          [
+            1500,
+            -1200,
+            -1800
+          ],
+          [
+            1500,
+            -600,
+            -1800
+          ],
+          [
+            0,
+            -600,
+            -1800
+          ],
+          [
+            0,
+            -1200,
+            -1800
+          ],
+          [
+            0,
+            -5200,
+            -2000
+          ],
+          [
+            0,
+            -5800,
+            -2000
+          ]
+        ],
+        "ramps": [
+          {
+            "plan": [
+              5400,
+              -10200,
+              1200,
+              9000
+            ],
+            "from": [
+              6000,
+              -1200,
+              0
+            ],
+            "to": [
+              6000,
+              -10200,
+              -450
+            ],
+            "slope": 20
+          },
+          {
+            "plan": [
+              3900,
+              -10200,
+              1200,
+              9000
+            ],
+            "from": [
+              4500,
+              -10200,
+              -450
+            ],
+            "to": [
+              4500,
+              -1200,
+              -900
+            ],
+            "slope": 20
+          },
+          {
+            "plan": [
+              2400,
+              -10200,
+              1200,
+              9000
+            ],
+            "from": [
+              3000,
+              -1200,
+              -900
+            ],
+            "to": [
+              3000,
+              -10200,
+              -1350
+            ],
+            "slope": 20
+          },
+          {
+            "plan": [
+              900,
+              -10200,
+              1200,
+              9000
+            ],
+            "from": [
+              1500,
+              -10200,
+              -1350
+            ],
+            "to": [
+              1500,
+              -1200,
+              -1800
+            ],
+            "slope": 20
+          },
+          {
+            "plan": [
+              -600,
+              -5200,
+              1200,
+              4000
+            ],
+            "from": [
+              0,
+              -1200,
+              -1800
+            ],
+            "to": [
+              0,
+              -5200,
+              -2000
+            ],
+            "slope": 20
+          }
+        ],
+        "landings": [
+          {
+            "plan": [
+              5400,
+              -1200,
+              1200,
+              1200
+            ],
+            "z": 0
+          },
+          {
+            "plan": [
+              3900,
+              -11400,
+              2700,
+              1200
+            ],
+            "z": -450
+          },
+          {
+            "plan": [
+              2400,
+              -1200,
+              2700,
+              1200
+            ],
+            "z": -900
+          },
+          {
+            "plan": [
+              900,
+              -11400,
+              2700,
+              1200
+            ],
+            "z": -1350
+          },
+          {
+            "plan": [
+              -600,
+              -1200,
+              2700,
+              1200
+            ],
+            "z": -1800
+          },
+          {
+            "plan": [
+              -600,
+              -6400,
+              1200,
+              1200
+            ],
+            "z": -2000
+          }
+        ],
+        "foot": [
+          0,
+          -5800,
+          -2000
+        ],
+        "footprint": [
+          -700,
+          -11500,
+          7400,
+          11600
+        ],
+        "guardTerritoryEach": 100,
+        "guardHeight": 1100,
+        "support": "Project mineral ramp/landing reference:200 structural depth with discrete supports at≤2000 spacing. Actual ground/bearing/reinforcement/edge/guard capacity and drainage remain STR/MAT/BCR."
+      },
+      "actualTravel": {
+        "groundBypass": 24300,
+        "frontFolded": 52649.96878900157,
+        "total": 76949.96878900158
+      },
+      "operation": "When N mouth/route is unavailable, close the low garden/loggia approach. An occupant in the usable garden takes the west ground path, then the actual folded front approach to the protected occupied front exit. The reverse route reaches the usable garden without crossing N or E work. No escape through ponded court/loggia is credited.",
+      "conditions": [
+        "The actual plot must contain the entire1200 clear west path, folded front ramp/landings/guards, usable garden and separate N/E receivers.",
+        "West surface drainage and outer roof collection must discharge clear of this route at the nominated event; no claim of immunity to whole-site flood.",
+        "No E handling, stored modules, parked vehicle or service apparatus may occupy this protected route.",
+        "1200 width/landings are prototype controls. The600 actor proof is not wheelchair, assisted evacuation, building-regulation or physical slip/lighting/weather qualification."
+      ],
+      "checks": {
+        "continuousAtOneGrade": true,
+        "frontSlopes": true,
+        "clearOfNReceiver": true,
+        "clearOfEWork": true,
+        "ordinaryActorLandingSideReserve": 300,
+        "siteAccepted": false,
+        "accessClassAccepted": false
+      }
+    },
     "internalArchControls": {
       "status": "Explicit joined HAD reference geometry; no masonry capacity or classified closure acceptance.",
       "head": 2850,
@@ -14486,12 +14866,12 @@
     },
     "assemblySource": {
       "path": "project/mat/studies/upper-access-renewal.json",
-      "blob": "41e11973c289360c4cc4555f5dcf672a797c581d",
+      "blob": "558eb87111cd4ce4bd36a01ebbe9f638a56447ac",
       "authority": "MAT assembly/control source imported exactly once; HAD owns the resulting world geometry. Results are not an input."
     },
     "assemblyContract": {
       "identity": "MAT-UPPER-ACCESS-RENEWAL-2026-11-06",
-      "status": "PROPOSED mechanism WIP; no HAD adoption, product rating or physical/water acceptance",
+      "status": "Two-level comparison WITHDRAWN AS PREFERRED; accessible same-level two-piece joint is current project reference WIP",
       "hadSource": "project/had/studies/water-replan.json",
       "deck": {
         "top": 0,
@@ -14646,10 +15026,125 @@
       "activeHolds": [
         "Actual hatch/guard and complete captive-staff attachment/first motion remain to be proved",
         "Actual150-deep carriage and continuous rail member/retention/strength evidence remains unearned; no new slimming claim",
-        "200 drop and800 receiver require actual splash, capture, blocked/full-flow/first-harm testing",
+        "Withdrawn300-drop comparison is not preferred; same-level flange sealing/capture must now be earned",
         "Storage/hoist geometry is not a selected kit or load capacity; actual new-module delivery route remains open",
         "All material chemistry, corrosion, bearing, air/thermal and site/drainage acceptance remain unearned"
-      ]
+      ],
+      "preferredJoint": {
+        "status": "PROJECT-AUTHORED WIP; no OEM rating or seal admission",
+        "splitX": 10050,
+        "pieces": [
+          [
+            7550,
+            10050
+          ],
+          [
+            10050,
+            12250
+          ]
+        ],
+        "frameBelowBed": 150,
+        "deckTop": 0,
+        "facePlate": 12,
+        "gasket": {
+          "materialHypothesis": "0.5 annealed copper U gasket, no synthetic substitution inferred",
+          "thickness": 0.5,
+          "sealLand": 20,
+          "acceptance": "Compression/contact/corrosion/retightening and complete material evidence remain unearned"
+        },
+        "reinforcingUFrame": {
+          "sectionEW": 100,
+          "sectionTransverse": 50,
+          "wall": 5,
+          "bottomSpan": 850,
+          "sideHeight": 250,
+          "scope": "Project welded hollow box geometry; not a proprietary section/rating"
+        },
+        "completeCouplingY": [
+          6440,
+          7360
+        ],
+        "sideBoltsY": [
+          6475,
+          7325
+        ],
+        "boltZRelativeBed": [
+          -50,
+          50
+        ],
+        "boltDiameter": 12,
+        "boltHeadX": 10200,
+        "captiveRetreatEast": 75,
+        "tool": {
+          "type": "project reference long manual ratcheting ring/socket spanner, head axis EW; no powered gearbox",
+          "headRadius": 25,
+          "shaftRadius": 12,
+          "verticalLever": 2050,
+          "upperCrankEast": 250,
+          "inwardArcDegrees": [
+            0,
+            6
+          ]
+        },
+        "operatorCentres": [
+          [
+            10850,
+            6600,
+            0
+          ],
+          [
+            10850,
+            7200,
+            0
+          ]
+        ],
+        "bodyRadius": 300,
+        "bodyHeight": 1800,
+        "shoulderHeight": 1450,
+        "handReach": 600,
+        "hatchClear": [
+          9980,
+          6400,
+          500,
+          1000
+        ],
+        "coverOuter": [
+          9955,
+          6375,
+          550,
+          1050
+        ],
+        "coverMassBudgetKg": 30,
+        "guardEastX": 10550,
+        "guardTop": 1100,
+        "capture": {
+          "trayX": [
+            9950,
+            10200
+          ],
+          "trayY": [
+            6425,
+            7375
+          ],
+          "rimRelativeBed": -175,
+          "floorRelativeBed": -250,
+          "scope": "Local external leak capture25 below150 carriage, not another full E receiver. Actual independent fall/receiver and first-harm path still to bind."
+        },
+        "preliminaryFrameCase": {
+          "EassumedMPa": 190000,
+          "totalBoltPreloadAssumedN": 8000,
+          "bottomDistributedReactionAssumedN": 4000,
+          "scope": "Screen component stiffness only; not uniform gasket compression, working bolt torque or certified capacity"
+        },
+        "sequence": [
+          "Retain verified full-duty N, isolate/drain E; install guards while covers closed. No concurrent N fault imposed.",
+          "Open the short above-floor joint hatch outside both supports.",
+          "From fixed upper deck operate FOUR SIDE-ONLY EW bolts with long manual ratchet arcs. No bottom-row bolt or shaft through wet pan/frame.",
+          "Withdraw each captive bolt75 east; retain nuts/washers/seal and separately capture local leakage.",
+          "Draw exterior2200 module first and park/replace/reinstate it, OR provide actual empty staging before inner2500 draw; complete sequencing/handling still to prove."
+        ],
+        "firstFalsifier": "Complete hatch cover/guard, ratchet swept capsule and captivity/release sequence still unproved; no overall method pass"
+      }
     },
     "upperDeck": {
       "topZ": 0,

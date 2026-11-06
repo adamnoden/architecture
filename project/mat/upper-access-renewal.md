@@ -1,6 +1,6 @@
 # Upper access for the east water modules
 
-**6 November 2026 — proposed mechanism WIP, not an adopted HAD source or a qualified installation.** This [assembly proposal](studies/upper-access-renewal.json) consumes the actual [HAD source](../had/studies/water-replan.json). Its [screen](studies/upper-access-renewal.py) and [results](studies/upper-access-renewal.results.json) state the limited checks and the remaining first-release gap.
+**6 November 2026 — TWO-LEVEL COMPARISON WITHDRAWN AS PREFERRED. The current reference is the accessible two-piece joint below; neither is adopted or qualified.** This [assembly proposal](studies/upper-access-renewal.json) consumes the actual [HAD source](../had/studies/water-replan.json). Its [screen](studies/upper-access-renewal.py) and [results](studies/upper-access-renewal.results.json) state the limited checks and the remaining first-release gap.
 
 The failed walking deck at−900 is deleted from this proposal. A fixed exterior walking deck is at0, with180 structural territory bearing on the declared−180 beam crowns. Its30 walking-grating budget is an authored metal/mineral reference, not a supplied product, a180-thick solid cover or a capacity claim. People and tools stay above the beam; only the water modules move below it.
 
@@ -16,4 +16,14 @@ Hinged covers occur only outboard, never beneath the cold beam. Four reference p
 
 The lower rail costs depth: the results derive its actual low point and a route-local D lower bound before any unbound catch/drain/support. D2000 is a proposed comparison, not real exterior grade, foundation acceptance or groundwater pumping permission. First-harm margin remains unknown. The actual lower outfall and maintenance receiver must accept the deeper profile without inventing a down-up path.
 
-The bounded decision is to advance this fixed-upper-deck/two-level-drawer challenger for a real first-release proof, replacing the known impossible walking/hinge sequence. The remaining holes are named; no complete method, material, water, air/thermal, structural or site pass is claimed.
+The two-level transfer was an avoidable workaround, not a redundancy requirement. It is withdrawn as preferred. A4700 one-piece comparator costs a4.7m hoist/staging field ending near18200 and an illustrative~160kg sheet/frame before hardware; mechanical handling is possible, but that footprint is not earned merely to avoid an ordinary joint.
+
+## Preferred constructive question: same-level accessible flange
+
+The JSON now carries one exact `preferredJoint` reference atx10050,300 beyond the spine beam and1167.5 before the outer support. Two pieces are2500 and2200; upperdeck0 and150 below-bed carriage remain. Four SIDE-ONLY EW M12 bolt territories atY6475/7325,Zbed±50 avoid the impossible bottom socket path through pan/frame. A reinforced U-flange uses12 face plates and project100×50×5 hollow-box members. A0.5 annealed-copper U gasket is a material hypothesis, not a supplied gasket or a demonstrated seal.
+
+An explicit2050 manual ratchet lever,250 east crank,25 head radius and0..6degree inward stroke is reserved from the upper deck. Bolts retreat75 east into captive parking. Complete coupling width920 remains in the exterior1200 opening; it never has to pass backwards through the900 gallery aperture. This is a project tool/connection geometry, not a claim about an unknown manufacturer's dimensions.
+
+The local catch tray lies25 below the150 carriage, in the exterior service bay. Its real gravity outlet/receiving level and first-harm route remain to bind; it is not a second full water receiver. E maintenance starts only with N intact and verified for the assigned duty. No additional concurrent N fault is imposed.
+
+The preliminary U-frame loadcase is explicitly8kN total assumed preload with4kN distributed bottom reaction and assumedE190GPa. Actual stiffness calculation, complete ratchet/hatch/guard/capture motion and whole-module handover remain the immediate proof, not an OEM referral. No whole-method pass is claimed at this checkpoint.

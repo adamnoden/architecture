@@ -6,7 +6,7 @@
 
 Fresh canonical acquisition resumed this unselected proposal on a new branch and [successor draft #1332](https://github.com/adamnoden/architecture/pull/1332). The previous draft remains preserved. The old low-deck method is rejected and preserved as a comparison. The upper-deck, end-operated alternative is still incomplete; no worker passage below the outer support is credited.
 
-The canonical health coverage gap is now closed at source: `test:had` runs the eight HAD regressions and read-only exact JSON/SVG reproduction; `test:mat` runs the canonical Services, full plant packing and bridge-envelope reproducers. Both are included in `npm test`. Actual scene assertions independently compare all 16 emitter furniture occurrences/heights and six fan port/platform/task states to the authenticated Services source. Negative controls reject stale furniture, platforms and door modes. These component checks do not adopt the house. Local canonical `npm run check` still encounters the environment's `tsx` IPC `EPERM`; direct owning checks pass, and exact-head hosted full health remains required.
+The canonical health coverage gap is now closed at source: `test:had` runs the ten HAD regressions and read-only exact JSON/SVG reproduction; `test:mat` runs the canonical Services, full plant packing and bridge-envelope reproducers. Both are included in `npm test`. Actual scene assertions independently compare all 16 emitter furniture occurrences/heights and six fan port/platform/task states to the authenticated Services source. Negative controls reject stale furniture, platforms and door modes. These component checks do not adopt the house. Local canonical `npm run check` still encounters the environment's `tsx` IPC `EPERM`; direct owning checks pass, and exact-head hosted full health remains required.
 
 ## Durable current source
 
@@ -45,6 +45,14 @@ The [source-derived centre/jamb/meeting figure](studies/south-court-threshold.sv
 The E0 conventional replaceable family remains. OAS has not fixed a material. Any timber is a **protected dry core**, behind the explicit full wet face, leaf shoes and jamb returns; it is not credited as harmlessly weather exposed. Actual metal/mineral layers, complete seals/laps/meeting/air/gas junctions and supports remain unqualified. The primary forward tray has its own descending N path; the pan has a distinct below-walk secondary strip and E path. Neither discharges a−55 lip onto walking0. Full paver/channel/support/operating and renewal solids are still being joined; this reference currently withholds geometric admission.
 
 The lowest **geometric unbacked interior overflow** is15, not a first-harm certificate. A quiet-stage ceiling−35 leaves25 splash plus25 tolerance; relative to trial activation−110 this allocates75 head. The actual higher well lip, real inlet/capture, friction/debris/backwater and wind/splash may consume or defeat that allocation. The qualified first-susceptible elevation remainsnull; MAT/OAS/RWT must qualify the complete actual boundary rather than rename a nominal underside safe.
+
+## N-unavailable usable-garden state
+
+The [source-drawn west bypass](studies/garden-failure-bypass.svg) now continuously joins a usable garden **at the declared exterior grade**, west of the reserved N receiving territory, to the protected occupied front exit through an actual folded1:20 front approach. The1200-clear west route does not cross N water or E work/hoist/storage. Actual flight coordinates,1200 turn/terminal landings,1500 lane centres,100 guard territories and1100 guards are recorded; the600-diameter ordinary actor has300 side reserve at the1200 edges. The low loggia approach is closed in this state, not credited as safe after ponding.
+
+This is a substantial site/convenience cost: the current D2000 comparison has24.3m ground bypass plus52.65m folded front travel (76.95m total). The final single vertical basis will regenerate these lengths; they are not silently retained if the method changes depth. Whole plot fit, west runoff, support/guard loads, slip/lighting and wheelchair/regulatory or assisted-escape classification remain separate. No new rear doorset or occupied service trench is invented.
+
+The preferred two-piece accessible-flange WIP is now preserved in MAT's exact assembly source. The reproducer still screens the withdrawn two-level comparison; its green output does **not** prove the new joint's first motion or permit source adoption. W5 owns the actual joint/head/ratchet/hatch/capture/staging proof, after which HAD will compose one method and vertical basis.
 
 ## Evidence and restart
 

@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import assert from 'node:assert/strict';
 import { deriveSouthCourtThreshold, renderSouthCourtThreshold } from './south-court-threshold.mjs';
+import { deriveGardenFailureBypass, renderGardenFailureBypass } from './garden-failure-bypass.mjs';
 
 const root = new URL('../../../', import.meta.url);
 const load = path => JSON.parse(readFileSync(new URL(path, root), 'utf8'));
@@ -305,6 +306,7 @@ export function deriveWaterReplan({servicesText} = {}) {
   model.sections.groundSupport.scope='D2000 is the joined pre-site comparator. Retained grid/member capacities and actual ground/heave/ventilation remain unqualified; actual site and any deeper structural member reopen this reference.';
   model.protectedRoute.measurement='D6 lowest SIDE outsideground, not merely solum; comparator5450onlyif actual exterior−2000. No automatic fire-strategy acceptance.';
   model.qualityCosts.height='One D2000 comparator: eaves/ridge700higher above grade; front47.2m/garden44.15m straight approach reservations, each16.4m longer than D1300 after the added flights/landings. No actual plot fit claimed.';
+  model.gardenFailureBypass=deriveGardenFailureBypass(model,renewal);
   model.status = 'UNADOPTED JOINED WATER REPLAN; historical selected geometry is its input, not its current pass.';
   model.internalArchControls = services.eastWaterJoin.archControls;
   model.plantReferenceDoor={...services.eastWaterJoin.operatorEntry,
@@ -473,7 +475,8 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
   const outputs = new Map([
     ['water-replan.json', JSON.stringify(v,null,2)+'\n'],
     ['water-replan.svg', render(v)],
-    ['south-court-threshold.svg', renderSouthCourtThreshold(v.model.southCourtThresholdReference)]
+    ['south-court-threshold.svg', renderSouthCourtThreshold(v.model.southCourtThresholdReference)],
+    ['garden-failure-bypass.svg',renderGardenFailureBypass(v.model.gardenFailureBypass)]
   ]);
   for (const [name, content] of outputs) {
     const url = new URL(name, import.meta.url);
