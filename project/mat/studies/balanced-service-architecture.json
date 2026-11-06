@@ -372,23 +372,229 @@
     "centralHallTurn": "Rotate in central front hall between finished4897..7103; do not turn1006body inside1023.5eastgallery.",
     "bodyTurningRadiusMM": 584.9027696976652,
     "centralHallSideReserveForFullRotationMM": 518.0972303023348,
-    "frontRamp": {
-      "rise": 1800,
-      "slope": 20,
-      "slopingRun": 36000,
-      "flights": [
-        9000,
-        9000,
-        9000,
-        9000
+    "currentFrontApproach": {
+      "source": "model.gardenFailureBypass.frontApproach",
+      "routeXYZmm": [
+        [
+          6000,
+          0,
+          0
+        ],
+        [
+          6000,
+          -600,
+          0
+        ],
+        [
+          6000,
+          -1200,
+          0
+        ],
+        [
+          6000,
+          -10200,
+          -450
+        ],
+        [
+          6000,
+          -10800,
+          -450
+        ],
+        [
+          4500,
+          -10800,
+          -450
+        ],
+        [
+          4500,
+          -10200,
+          -450
+        ],
+        [
+          4500,
+          -1200,
+          -900
+        ],
+        [
+          4500,
+          -600,
+          -900
+        ],
+        [
+          3000,
+          -600,
+          -900
+        ],
+        [
+          3000,
+          -1200,
+          -900
+        ],
+        [
+          3000,
+          -10200,
+          -1350
+        ],
+        [
+          3000,
+          -10800,
+          -1350
+        ],
+        [
+          1500,
+          -10800,
+          -1350
+        ],
+        [
+          1500,
+          -10200,
+          -1350
+        ],
+        [
+          1500,
+          -1200,
+          -1800
+        ],
+        [
+          1500,
+          -600,
+          -1800
+        ]
       ],
-      "landingLength": 1200,
-      "landings": 5,
-      "totalStraightReservation": 42000
+      "ramps": [
+        {
+          "plan": [
+            5400,
+            -10200,
+            1200,
+            9000
+          ],
+          "from": [
+            6000,
+            -1200,
+            0
+          ],
+          "to": [
+            6000,
+            -10200,
+            -450
+          ],
+          "slope": 20
+        },
+        {
+          "plan": [
+            3900,
+            -10200,
+            1200,
+            9000
+          ],
+          "from": [
+            4500,
+            -10200,
+            -450
+          ],
+          "to": [
+            4500,
+            -1200,
+            -900
+          ],
+          "slope": 20
+        },
+        {
+          "plan": [
+            2400,
+            -10200,
+            1200,
+            9000
+          ],
+          "from": [
+            3000,
+            -1200,
+            -900
+          ],
+          "to": [
+            3000,
+            -10200,
+            -1350
+          ],
+          "slope": 20
+        },
+        {
+          "plan": [
+            900,
+            -10200,
+            1200,
+            9000
+          ],
+          "from": [
+            1500,
+            -10200,
+            -1350
+          ],
+          "to": [
+            1500,
+            -1200,
+            -1800
+          ],
+          "slope": 20
+        }
+      ],
+      "landings": [
+        {
+          "plan": [
+            5400,
+            -1200,
+            1200,
+            1200
+          ],
+          "z": 0
+        },
+        {
+          "plan": [
+            3900,
+            -11400,
+            2700,
+            1200
+          ],
+          "z": -450
+        },
+        {
+          "plan": [
+            2400,
+            -1200,
+            2700,
+            1200
+          ],
+          "z": -900
+        },
+        {
+          "plan": [
+            900,
+            -11400,
+            2700,
+            1200
+          ],
+          "z": -1350
+        },
+        {
+          "plan": [
+            900,
+            -1200,
+            1200,
+            1200
+          ],
+          "z": -1800
+        }
+      ],
+      "slopedRouteTravelMM": 45944.97191010141,
+      "planRouteTravelMM": 45900.0,
+      "status": "Actual authored folded route:four9m1:20ramps with turns/landings; loaded carrier, operator, rope/anchors and turn/transition control remain unearned."
     },
+    "historicalStraightBudgetMM": 42000,
+    "historicalStraightBudgetRole": "42m nominal straight-budget comparison only; not current folded route or a straight winch path.",
     "frontRampClearMM": 1200,
     "gradeMM": -1800,
-    "handling": "156kg is not hand-carried. Uniform native bottom lifting, captured rated carrier, actual handles/wheels/driver, safe threshold and1:20slope braking remain to be earned.",
+    "handling": "156kg is not hand-carried. Uniform native bottom lifting, captured rated carrier, actual handles/wheels/driver, safe threshold, actual folded exterior turns/landings and1:20slope braking remain to be earned.",
     "negativeControl": "850cart remains rejected through742.5. Rotated597body is a different object; neither body geometry nor nominal trolley deck qualifies handling.",
     "externalEastAlternative": "A dense sampled1006x597body-only two-turn plant path exists, but no added east landing/1800lift/hoist is admitted. Prefer real front route if complete carrier and approach can be proved.",
     "nativeReplaceableAssemblyEvidence": {

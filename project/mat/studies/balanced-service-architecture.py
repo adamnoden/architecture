@@ -206,6 +206,12 @@ assert riser['reserveOver2250AssemblyMM']==25
 assert upper_axis<riser['nativeTool']['nativeWorkingHeightMaximumMM']
 # The narrower transverse body can use the protected plant door rather than
 # assuming that the historical850cart is needed for every apparatus.
+front_approach=h['gardenFailureBypass']['frontApproach']
+front_route=front_approach['route']
+front_travel=sum(math.dist(a,b) for a,b in zip(front_route,front_route[1:]))
+assert len(front_approach['ramps'])==4 and len(front_approach['landings'])==5
+assert all(r['plan'][2]==1200 and r['plan'][3]==9000 and r['slope']==20 for r in front_approach['ramps'])
+assert math.isclose(front_travel,45944.97191010141,abs_tol=.001)
 door=h['plantReferenceDoor']
 lo,hi=door['effectiveOpenClearY'];cy=(lo+hi)/2
 renewal={'status':'Component/body route development; no handling or incoming acceptance',
@@ -215,10 +221,15 @@ renewal={'status':'Component/body route development; no handling or incoming acc
  'centralHallTurn':'Rotate in central front hall between finished4897..7103; do not turn1006body inside1023.5eastgallery.',
  'bodyTurningRadiusMM':math.hypot(1006,597)/2,
  'centralHallSideReserveForFullRotationMM':min(6000-4897,7103-6000)-math.hypot(1006,597)/2,
- 'frontRamp':h['approaches']['front'],
+ 'currentFrontApproach':{'source':'model.gardenFailureBypass.frontApproach',
+   'routeXYZmm':front_route,'ramps':front_approach['ramps'],'landings':front_approach['landings'],
+   'slopedRouteTravelMM':front_travel,'planRouteTravelMM':sum(math.dist(a[:2],b[:2]) for a,b in zip(front_route,front_route[1:])),
+   'status':'Actual authored folded route:four9m1:20ramps with turns/landings; loaded carrier, operator, rope/anchors and turn/transition control remain unearned.'},
+ 'historicalStraightBudgetMM':h['approaches']['front']['totalStraightReservation'],
+ 'historicalStraightBudgetRole':'42m nominal straight-budget comparison only; not current folded route or a straight winch path.',
  'frontRampClearMM':h['approaches']['clearWidthReservation'],
  'gradeMM':h['approaches']['authoredExteriorGrade'],
- 'handling':'156kg is not hand-carried. Uniform native bottom lifting, captured rated carrier, actual handles/wheels/driver, safe threshold and1:20slope braking remain to be earned.',
+ 'handling':'156kg is not hand-carried. Uniform native bottom lifting, captured rated carrier, actual handles/wheels/driver, safe threshold, actual folded exterior turns/landings and1:20slope braking remain to be earned.',
  'negativeControl':'850cart remains rejected through742.5. Rotated597body is a different object; neither body geometry nor nominal trolley deck qualifies handling.',
  'externalEastAlternative':'A dense sampled1006x597body-only two-turn plant path exists, but no added east landing/1800lift/hoist is admitted. Prefer real front route if complete carrier and approach can be proved.'}
 assert renewal['eachTransverseBodyReserveMM']==72.75
