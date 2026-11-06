@@ -51,6 +51,8 @@ Historical holds preserve the old source identities and technical learning. Exis
 
 ## Design comparisons
 
+- [One supported renewable court apron](court-apron-support.md) — working comparison of supports travelling inside the existing pan envelope, separating pedestrian bearing from ordinary air compliance. No pan profile, source geometry or assembly admission is adopted; the actual end sections remain active work.
+
 - [Whole-field assembly and conventional concrete control](ground-field-assembly.md) — three source-proposed RC core crossings, 22 explicit wall bases and three real doors expose the complete field burden. One layout has 80 pieces / 116.94 m seams; its bespoke 37-penetration threshold rail is withdrawn as preferred detail. Qualifying the actual conventional concrete/mineral-break/threshold route takes priority over adding a whole-house sheet without demonstrated benefit. Neither route, site or material is admitted; the earlier field-versus-52-cut comparison remains bounded to those alternatives.
 - [Located conventional wall/floor and ordinary threshold air control](conventional-ground-junction.md) — binds the actual STR floor-cover/pour/crack proposal and one aggregate Services leakage comparison. Test the bonded mineral base and ordinary supported removable overlap before a new metal return or high-force seal. Continuous RC cores, actual end closures, support, concrete/joint performance, thermal surfaces and constituents remain unqualified; no route or MAT-ENVELOPE exit is admitted.
 
