@@ -9,8 +9,8 @@
     "label": "zerg-20261106-w2"
   },
   "claimedAt": "2026-11-06T07:38:16.280Z",
-  "heartbeatAt": "2026-11-06T09:41:02.104Z",
-  "expiresAt": "2026-11-06T10:26:02.104Z",
+  "heartbeatAt": "2026-11-06T10:10:08.863Z",
+  "expiresAt": "2026-11-06T10:55:08.863Z",
   "branch": "work/zerg-20261106-w2",
   "predecessor": {
     "leaseId": "665c809b-2f61-44bd-8274-60a3eb7f0f12",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Shared9ebe durable; localcommitted545ce tree d009d241 preserves Nminus30limitingjoin, exactNnormalreceiver, actualguarded350Nplus150W inlet reference and panrenewal/incominggeography. TwelveHADtests pass includingrealguardocclusion andstoredleaf/bodynegativecontrols. Publication heldforfreshMATidentity.",
-    "next": "AfterMATlivebinding, publishcurrentthreshold/intake and integratefinaltwo-piece method; freezeoneverticalbasis andcurrentServices; finishaffectedcourtwindowcontrol.",
-    "blocker": "Noadoptionorcompletion. MATidentityrefresh and jointmethodproofpending. D2000comparisonwithdrawnpreferred; actualRWTloss/debris/head and material/physicalqualification remain downstream."
+    "evidence": "Published f49e3740/tree20b87c92 actualpreferred two-piece, D1800 Services, threshold/garden/window; all13HAD and6MATproducers pass. Latestlocal narrows actual platformclearface and preserves specific copper-seal nonqualification.",
+    "next": "Finish source-exact architectural selection and links after joined review; exact-head fullCI and fresh liveowner preflights.",
+    "blocker": "No acquisition block; physical seal/hydraulics/material/structural/site acceptance remain downstream, no construction admission."
   },
   "pr": 1332
 }
