@@ -110,6 +110,7 @@ def produce():
     named={q['id'] for q in heads}
     assert all(q['id'] in named for beam in grid['girders'].values() for q in beam['heads'])
     corner=[q['id'] for q in heads if 'stability corner group' in q['roles']];assert len(corner)==12
+    assert {tuple(q['xy']) for q in heads if q['id'] in corner}=={tuple(p) for q in s['RClegs']['piers'] for p in q['cornerPileGroup']}, 'Spatial candidates differ at corner-group shafts; reconcile before comparison'
     cut_area=sum(math.pi*(q['shaftDiameter']/2000)**2 for q in heads)
     mass_per_mm=cut_area/1000*density
     source_cuts={

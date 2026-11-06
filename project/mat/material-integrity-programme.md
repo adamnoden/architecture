@@ -51,6 +51,8 @@ Historical holds preserve the old source identities and technical learning. Exis
 
 ## Design comparisons
 
+- [Actual ground sources, complete candidate support register and separate field](ground-pier-boundary.md) — upper-pier-only floor protection is withdrawn because the common lower RC field bypass remains. The source-bound comparison uses 52 **proposed** shaft positions, including twelve corner-group shafts, and actual renewable threshold support territory. It recommends a separate field as the development reference over 52 buried source cuts plus an unauthored dry-grid enclosure; complete wall/support/threshold, constituent, movement, thermal and air/moisture/gas performance remain open. No adopted shaft count, structural rewind, site or envelope admission.
+
 - [East foul join at the water return](east-water-foul-join.md) — source-owned75mm south port correction clears the actual new return and actual current portal/rings; coordinated D1800 pre-site receiver condition extends all affected exterior tails500mm. Capacity, closure, hydraulics and real site/outfall remain holds.
 - [Kitchen heat after the water replan](kitchen-replan-heat-result.md) — rejects the current cooker's unselected north900/east1400 spatial join against the actual larder and retained sink-feed column. Retained east1200 plus a west1100 challenger meets the same zero-heater-credit band and preserves ordinary paths; matched support/handler/whole-house export and the full cooker/plant/material duties remain unearned. No canonical Services change.
 
