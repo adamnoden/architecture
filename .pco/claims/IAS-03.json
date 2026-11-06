@@ -9,11 +9,11 @@
     "label": "zerg-20261106-w1"
   },
   "claimedAt": "2026-11-06T07:38:01.585Z",
-  "heartbeatAt": "2026-11-06T12:03:51.514Z",
-  "expiresAt": "2026-11-06T12:48:51.514Z",
+  "heartbeatAt": "2026-11-06T12:26:51.706Z",
+  "expiresAt": "2026-11-06T13:11:51.706Z",
   "checkpoint": {
-    "evidence": "PR1336 merged19f1956fc11b0b1aca8693f2f88779ce3fe1d5fd; fullCI42212446397attempt2success; issue941 open reconciled; oldhead404; priorrebind timeout confirmedremoteoldblob7f27unchanged, no write occurred",
-    "next": "One actual-axle conservative rolling/access method with native gate-end contacts and uphill limits; no free-box yaw or catalogue expansion. Staticcontract remains unselected; IAS incomplete"
+    "evidence": "CorrectivePR1339 exactc5ad16d15601e42e0988d91ee7b7aa26cf6b157a withdraws1335 incomplete-inventory positive; ALL38groundFurniture+fixed/stair/void; explicitAstack/Bemitter negatives; Peco staticfullinventory stillpasses",
+    "next": "Prioritise corrective exactheadCI/preflight/integration before further rolling work. No rescuefurniture rewind or IAS completion"
   },
   "branch": "work/zerg-20261106-w1e",
   "predecessor": {
@@ -34,5 +34,5 @@
       "next": "Resume explicitPROJECT-DESIGNED completeboundpackage or falsifycandidate: actualcutlist/mass/load/deflection/support/keepers/waterseams/firstrelease/incoming/replacement. Rootexecutionlimit reached, notfrontierempty; immediatecanonicalHANDOFFrelease now."
     }
   },
-  "pr": 1336
+  "pr": 1339
 }
