@@ -9,8 +9,8 @@
     "label": "zerg-services-successor"
   },
   "claimedAt": "2026-11-06T19:18:26.610Z",
-  "heartbeatAt": "2026-11-06T21:00:34.902Z",
-  "expiresAt": "2026-11-06T22:30:34.902Z",
+  "heartbeatAt": "2026-11-06T21:08:27.230Z",
+  "expiresAt": "2026-11-06T22:38:27.230Z",
   "branch": "work/zerg-20261106-services-g21-network",
   "predecessor": {
     "leaseId": "81e6a789-b5ff-46b9-a822-7036bfcb40e2",
@@ -36,9 +36,8 @@
   },
   "pr": 1353,
   "checkpoint": {
-    "evidence": "Draft1353 frozen9c5bf6b03b1d2bd40825c7a9ac0f49860df1a48f treefdfc6b0b3747a9e0752f8134ffe007e9bae1d5da; reconciled main8c2159a8cb67782cfc854fcf230025f04f1b81af; full test:mat repeat PASS, native source/input/fan-SFP/octave-energy/full-port and arch checks PASS; SVG rendered and inspected; no HAD/Services changes",
-    "next": "Exact-head CI42292893040 and root review then fresh canonical merge-check; continue actual thermal port/network and supported base/deck method after bounded integration",
-    "blocker": "ExactCI/root review pending; real network/room noise/thermal junction/support/renewal admissions remain open"
+    "evidence": "Frozen PR1353 head3f3381cd95919f4f05f7dced762c7893f76f07dc tree580c921a50aded41cfed6781c4dcb97d4b66e32c reconciles main40d5c9b05b29f2ec35291167bca3fd94553aa85b. Five MAT files unchanged from root-reviewed9c5b; full MAT suite passed, current MAT ground-field and STR chains preserved; rendered native source/port/acoustic limits inspected.",
+    "next": "Await exact-head CI42294155384 then fresh canonical connector merge-check and root integration. Continue actual network/ports/bottom-lift renewal on fresh successor under this live lease; no apparatus adoption or MAT completion."
   },
   "note": "Active samegeneration successor Draft1353; no apparatus/handling/material adoption, packet completion or release."
 }
