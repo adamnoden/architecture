@@ -71,7 +71,7 @@
       "access": "Public publisher abstract inspected6November2026; complete paid paper not inspected",
       "role": "Four clay-brick/mortar panel groups had low measured air permeance. Relevant against blanket rejection of an unplastered bonded masonry control, not evidence for WCBL65/M12, this DPC/floor joint, movement, moisture, gas or site performance. No measured value is transferred to the house."
     },
-    "servicesTarget": "Proposed q50<=1.0 comparison and single10% floor/wall aggregate pinned under ServicesAir. No owner invariant or assembly performance is adopted."
+    "servicesTarget": "Proposed q50<=1.0 comparison and single10% floor/wall aggregate pinned under ServicesAir. No owner invariant or assembly performance is adopted. Structural cores belong here; complete service sleeves/collars belong to the separate penetrations10%, not another floor allowance."
   },
   "admission": {
     "selected": false,
@@ -81,39 +81,37 @@
     "thermal": false,
     "site": false
   },
-  "thresholdClamp": {
-    "role": "Unadopted ordinary over-clamp comparison shared by both floor routes; central 2D release and equilibrium only, not complete threshold seal/support/walking admission",
-    "panStartY": 4030,
-    "apronEndY": 4060,
-    "backingEndY": 4058,
-    "clampY": [
-      3975,
-      4058
-    ],
-    "clampX": [
-      5110,
-      6890
-    ],
-    "clampThickness": 10,
-    "backingThickness": 6,
-    "boltY": 4010,
-    "heelY": 3980,
-    "sealReferenceY": 4045,
-    "boltEndInset": 15,
-    "boltPitchMaximum": 100,
-    "referenceHoleDiameter": 6.5,
-    "density": 7900,
-    "lineForceSensitivity_N_per_mm": 15,
-    "lineForceRole": "Same earlier Wills Rings catalogue sensitivity only. No supplied straight/U seal, formed-pan finish or assembly force rating is established.",
-    "endClosure": "HAD gives end X/crest and jamb apron, but not a complete 3D apron/end intersection or clamp-end seal/release. Unknown; do not extrude a passing central section into an end closure.",
-    "support": "The bolts are over the 15/65/100 build-up, not exposed concrete. A real supported fixed flange/heel/anchor route back to RC at -180 is unlocated; no anchor or free fastener through glass/services is assumed.",
-    "walking": "The 10 mm upper clamp introduces a new local walking level below the existing 15 mm crest. Actual finish transition, load, slip and accessibility remain unqualified; no selected floor change.",
-    "material": "Alloy, seal constituents, surface finish, bearing, welds, fasteners, corrosion and renewal replacements remain unqualified."
-  },
   "ServicesAir": {
     "commit": "e85cc19fc858069cb874a3b0622303c2edc56ac5",
     "path": "project/mat/studies/whole-house-leakage-duty.json",
     "blob": "c4e6e9fd168078c83d092d13f1913b5d0128b7af",
     "role": "Immutable unadopted Services1356 whole-house reference and single aggregate family allocation; not final test envelope or owner target."
+  },
+  "thresholdAirOverlap": {
+    "role": "Ordinary dry-side air-control development control, not an actual seal/product or pressure-water closure",
+    "pressure_Pa": 50,
+    "dynamicViscosity_Pa_s": 1.81e-05,
+    "airDensity_kg_per_m3": 1.2,
+    "nominalOverlap_mm": 28,
+    "relativeMovementYBound_mm": 2,
+    "edgePositionToleranceEach_mm": 1,
+    "gapChallenges_mm": [
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "width_mm": 1780,
+    "rule": "Steady laminar parallel-plate calculation derived from pressure-driven momentum balance; uniform connected gap, no slip, constant properties. Ideal straight-channel sensitivity only, not a measured joint rating or an adopted allocation. Entrance, roughness, variable gap and end bypass remain actual assembly matters.",
+    "waterDuty": "No source-qualified head assigned to this dry apron behind crest15. Quiet water -35 and geometric crest15 are not a first-leak rating; firstSusceptible remains null. No closed E roof/pipe pressure duty is transferred. Water/capillary/end qualification remains independent.",
+    "toleranceRole": "The2mm movement and1mm edge tolerances are authored challenge bounds, not actual fabrication/installation tolerances. Gap control is an unproven requirement on formed faces and supports, not an achieved fit.",
+    "ends": "No actual end gap or end closure is authored. Every gap result is central only and cannot be credited as total assembly leakage.",
+    "renewal": "Ordinary retention/cover must be independently supported and entirely released before NORTH500 withdrawal; no permanent field-to-pan weld or through-pan fixing. No high preload is inferred from air duty alone.",
+    "backingEndY": 4058,
+    "panStartY": 4030,
+    "referenceRetainerY": 4010,
+    "referenceHoleDiameter_mm": 6.5
   }
 }
