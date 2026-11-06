@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-06T19:18:23.804Z",
-  "expiresAt": "2026-11-06T20:48:23.804Z",
+  "heartbeatAt": "2026-11-06T19:22:07.387Z",
+  "expiresAt": "2026-11-06T20:52:07.387Z",
   "branch": "work/zerg-20261106-rwt06-successor",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -33,5 +33,10 @@
       "next": "Successor: compose slow self-draining header and deliberate carrier-depth/bridge comparison; earn original-body manual-tool sweep, actual station-derived50lap/slot, normal/maintenance matrix and high-eave duties from finite exit map.",
       "blocker": "Coordinator execution limit; stop new design. RWT06 incomplete, no hydraulic/physical/site admission. Preserve draft and branch; canonical HANDOFF release immediately after this checkpoint."
     }
+  },
+  "pr": 1344,
+  "checkpoint": {
+    "evidence": "Draft1344 preserves predecessor2c6e6a76/da7aa9c4; accepted788 failures remain explicit; own fresh generation53.",
+    "next": "Compose slow self-draining transfer and225depth/450bridge stack; correct actual north canopy slots/laps, render and challenge."
   }
 }
