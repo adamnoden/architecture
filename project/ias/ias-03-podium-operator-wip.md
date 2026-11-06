@@ -1,0 +1,25 @@
+# IAS — actual podium and a proposed rare-repair room state
+
+**6 November2026 · WIP after0509f476e5ce00814e4bf8af1e3b4aafcc5e1a67.** IAS22 continuation, no house-source or method adoption. The [standing-bell reference](ias-03-standing-bell-pan-reference.md) requires actual below-floor repair access. Its routine bell service does not use this podium. The old1000×1250 equipment reservation is a prior comparison field, not an owner invariant or an actual platform product.
+
+## Bound the actual deployed product first
+
+[BoSS QuickPod32051000 primary page](https://www.bossaccesstowers.com/products/podiums/BoSSQuickPod/32051000) lists1440×740 open dimensions,950 platform height and28kg. Those open dimensions **do not by themselves bound overhead-work stabilisers**. The [official manual link](https://embed.widencdn.net/download/wernerco/4yzng47nbo/BoSS-QuickPod-Low-Level-Work-Platform-Instruction-Manual.pdf?u=qlpvmu), PN130689-01 RevC1124, SHA256`2757c93b34603d03b2485d39a816672991289c5515da39bcdee75d98eb1be99b`, printed12 / PDF page14, requires the overhead stabilisers at45° with **B491** forward/outward at each side. The front-working450 dimension is a different state. Both legs, locks, gate and correct working direction matter. The manual permits one worker, with150kg including carried tools/material; a marketing working-height number is not a reachable tool coordinate or permission to lean beyond the guard.
+
+The deck is550×590; optional toe-board kit reduces the stated clear standing dimensions to500×555. Native leaflet Rev0125 and manual disagree3.1/3.2kg for the kit; retain the higher3.2 for a preliminary carried-equipment bill and resolve the supplied revision. No hot-work protection or actual task qualification is inferred from the access-product certification.
+
+A deliberately conservative **overall1722×1931 territory** adds491 to each side and the working front of the entire1440×740 open envelope. This overcharges any stabiliser already included by the open-length field; it does not omit a required leg to fit the room. If that overall territory fails, it is not a global product/room impossibility. A source-bound union of the actual body and front-leg regions, with the standing deck/guard reference located, may be less wasteful than the whole box. Do not scale a photograph to manufacture exact platform positions.
+
+EuroTowers Stepfold1 is not a proved smaller alternative merely because a brochure says1200×600. Its current [standard-gate manual](https://www.eurotowers.co.uk/s/Stepfold-Podium-1-2.pdf), RevMay25, SHA256`5c10665e5cf2b6bbd3701dac22ae821d22102ffb216112c0ddb47e16751a7903`, requires both stabilisers but provides no dimensioned deployed footprint. No inherited body box or advertised working height closes that gap.
+
+## Actual house source and proposed room duty
+
+Use current selected `project/had/studies/open-north-loggia.json` at main0509f476, blob`25faad2c4d40df2b7da7212f73808843a88d2f52`. W2 confirmed the pending1332 scene remains unadopted and the relevant northwest furniture/receiver fields are byte-equal; do not silently substitute either that proposal or the older068e33 Services pin for the selected house.
+
+The actual loose items are reading sofa A `[800,9000,850,1900]`, reading table `[800,10925,300,300]`, family sofa B `[2337.5,9800,1900,750]`, and family table `[3900,9450,300,300]`. Ground south/north wet-beam receiver cores are `[2745.5,8600.5,314,504]` / `[2745.5,11260.5,314,477]`; include their actual18 finish where relevant. Rear-west wall north finished face is8949.5; its900 arch is x3100..4000. Fixed receivers/walls are not disposable platform clearance.
+
+The next constructive event may move **both loose sofas and tables**, not preserve the single650 sofa translation merely because an old proxy fitted it. Every parked item must stay in a real room, and the moves/worker grips need an actual path before calling the state repeatable. In particular, sofa A cannot simply move south200: that crosses the real rear-west wall. Pulling sofa B west needs room for its actual pulling worker and the west radiator; deleting either from a plan would conceal the operation. Clearing furniture is a real rare-repair/downtime cost to compare with the conventional cold-joint route.
+
+A product body fit alone would still leave erection, gate/ladder access, feet on the actual clear deck, guard and head clearance, hand/tool/torch target, pipe support/capture, hot-work protection and escape. Do not put a second person or use the podium as the separate rest/support for the removed module. The upper pan module has its own support/route duty. Current950 deck height changes the old1000-high operator datum; do not retain its old shoulder/hand reach without recomputing.
+
+**Next measurable milestone:** one source-bound deployed podium/standing deck/working-direction placement and actual room/furniture event, or a bounded failure of that candidate. No new suite, dependency, selected occurrence, platform procurement or physical pass is introduced by this WIP.
