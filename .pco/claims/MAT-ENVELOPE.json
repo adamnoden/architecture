@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 26,
+  "generation": 27,
   "state": "claimed",
-  "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
+  "leaseId": "6002020d-6ea1-4562-986b-9448eba5705a",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-20261106-w5"
   },
-  "claimedAt": "2026-11-06T07:36:49.474Z",
-  "heartbeatAt": "2026-11-06T08:51:58.752Z",
-  "expiresAt": "2026-11-06T09:36:58.752Z",
-  "branch": "work/zerg-20261106-w2",
+  "claimedAt": "2026-11-06T09:41:13.275Z",
+  "heartbeatAt": "2026-11-06T09:41:13.275Z",
+  "expiresAt": "2026-11-06T10:26:13.275Z",
+  "branch": "work/zerg-20261106-w5-g27",
   "predecessor": {
-    "leaseId": "767feb82-bf3e-4f16-9e2a-3d97d0081350",
-    "generation": 25,
-    "branch": "work/zerg-20261105-w5-2",
-    "pr": 1329,
+    "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
+    "generation": 26,
+    "branch": "work/zerg-20261106-w2",
+    "pr": 1332,
     "checkpoint": {
-      "evidence": "Execution-limit remote recovery: owned handoff ref work/zerg-20261105-w5-handoff-g25 head79a91857ece299afbaf13306f9e7ae1c22f48484 tree589eef34245de527663a39c759dd8dd9d2dc5830 preserves exact local MAT a58d9e50/c27 five-file snapshot on shared3aff parent, same HAD input blob6c53da42a81c45777d0a18dbf803144364665598. Shared3aff exact MAT reproduction, three HAD tests and repository integrity passed; no newer-head or construction acceptance.",
-      "next": "Canonical HANDOFF release now for execution limit. W2 owns final draft1329 WIP publication. Recover five MAT files from owned handoff ref; integrate actual newer outerSupportReservation/whole park, then regenerate and validate. Shared branch was not moved by MAT holder.",
-      "blocker": "1329 must remain unselected/unmerged. Newer HAD numeric freeze not yet consumed by this MAT snapshot. Retained outer support/full hoist, walking retreat headroom, gate/activation/first-harm/material/physical acceptance remain explicit pending joins."
+      "evidence": "Owned MAT method WIP now headbc78fbcd2e1b14ee6e89e795cf55fec96695768b tree7651174ab53d89b52731948d0f28827e688c7e02 onwork/zerg-20261106-w5. Exact preferredJoint at10050: reinforcedUflange, four SIDE-ONLY bolts, captive75 retreat, explicit manualratchet/hatch/guard/catch territories. Extra lower receiver withdrawn as preferred;4700 piece rejected as default on footprint/cost, not impossibility. Localc0a1405d preserved remotely.",
+      "next": "Compute actual Uframe preliminary deformation and full ratchet/capture/cover/body sweep for this single accessible joint. Send MAT-only patch to W2; integrate once in shared1332, regenerate against actual HAD and run meaningful domain/full checks before any adoption.",
+      "blocker": "Project reference remains INCOMPLETE and unselected: complete clamp/seal preload, tool/hatch/guard sequence and local leak gravity/firstharm need proof. No product rating, physical seal or construction acceptance. Existing twolevel numeric outputs are explicitly a withdrawn comparison."
     }
   },
   "recoverySource": {
-    "leaseId": "767feb82-bf3e-4f16-9e2a-3d97d0081350",
-    "generation": 25,
-    "branch": "work/zerg-20261105-w5-2",
-    "pr": 1329,
+    "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
+    "generation": 26,
+    "branch": "work/zerg-20261106-w2",
+    "pr": 1332,
     "checkpoint": {
-      "evidence": "Execution-limit remote recovery: owned handoff ref work/zerg-20261105-w5-handoff-g25 head79a91857ece299afbaf13306f9e7ae1c22f48484 tree589eef34245de527663a39c759dd8dd9d2dc5830 preserves exact local MAT a58d9e50/c27 five-file snapshot on shared3aff parent, same HAD input blob6c53da42a81c45777d0a18dbf803144364665598. Shared3aff exact MAT reproduction, three HAD tests and repository integrity passed; no newer-head or construction acceptance.",
-      "next": "Canonical HANDOFF release now for execution limit. W2 owns final draft1329 WIP publication. Recover five MAT files from owned handoff ref; integrate actual newer outerSupportReservation/whole park, then regenerate and validate. Shared branch was not moved by MAT holder.",
-      "blocker": "1329 must remain unselected/unmerged. Newer HAD numeric freeze not yet consumed by this MAT snapshot. Retained outer support/full hoist, walking retreat headroom, gate/activation/first-harm/material/physical acceptance remain explicit pending joins."
+      "evidence": "Owned MAT method WIP now headbc78fbcd2e1b14ee6e89e795cf55fec96695768b tree7651174ab53d89b52731948d0f28827e688c7e02 onwork/zerg-20261106-w5. Exact preferredJoint at10050: reinforcedUflange, four SIDE-ONLY bolts, captive75 retreat, explicit manualratchet/hatch/guard/catch territories. Extra lower receiver withdrawn as preferred;4700 piece rejected as default on footprint/cost, not impossibility. Localc0a1405d preserved remotely.",
+      "next": "Compute actual Uframe preliminary deformation and full ratchet/capture/cover/body sweep for this single accessible joint. Send MAT-only patch to W2; integrate once in shared1332, regenerate against actual HAD and run meaningful domain/full checks before any adoption.",
+      "blocker": "Project reference remains INCOMPLETE and unselected: complete clamp/seal preload, tool/hatch/guard sequence and local leak gravity/firstharm need proof. No product rating, physical seal or construction acceptance. Existing twolevel numeric outputs are explicitly a withdrawn comparison."
     }
-  },
-  "pr": 1332,
-  "checkpoint": {
-    "evidence": "Owned MAT method WIP now headbc78fbcd2e1b14ee6e89e795cf55fec96695768b tree7651174ab53d89b52731948d0f28827e688c7e02 onwork/zerg-20261106-w5. Exact preferredJoint at10050: reinforcedUflange, four SIDE-ONLY bolts, captive75 retreat, explicit manualratchet/hatch/guard/catch territories. Extra lower receiver withdrawn as preferred;4700 piece rejected as default on footprint/cost, not impossibility. Localc0a1405d preserved remotely.",
-    "next": "Compute actual Uframe preliminary deformation and full ratchet/capture/cover/body sweep for this single accessible joint. Send MAT-only patch to W2; integrate once in shared1332, regenerate against actual HAD and run meaningful domain/full checks before any adoption.",
-    "blocker": "Project reference remains INCOMPLETE and unselected: complete clamp/seal preload, tool/hatch/guard sequence and local leak gravity/firstharm need proof. No product rating, physical seal or construction acceptance. Existing twolevel numeric outputs are explicitly a withdrawn comparison."
   }
 }
