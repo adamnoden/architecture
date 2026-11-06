@@ -9,9 +9,9 @@
     "label": "zerg-20261106-w5"
   },
   "claimedAt": "2026-11-06T09:41:13.275Z",
-  "heartbeatAt": "2026-11-06T13:09:37.779Z",
-  "expiresAt": "2026-11-06T13:54:37.779Z",
-  "branch": "work/zerg-20261106-w5-mat-seal",
+  "heartbeatAt": "2026-11-06T13:25:47.395Z",
+  "expiresAt": "2026-11-06T14:10:47.395Z",
+  "branch": "work/zerg-20261106-w5-envelope-join",
   "predecessor": {
     "leaseId": "34f43956-711c-4694-8cfc-f5c14079d6fd",
     "generation": 26,
@@ -36,8 +36,8 @@
   },
   "pr": 1337,
   "checkpoint": {
-    "evidence": "Root reviewed and approved bounded two-MD material development evidence. PR1337 reconciled exact385d29a6d725f87be9108f5260b45f534681aaa9/treeb8123dac to main6594; diff remains only approved2MDs. Exact fullCI42221460272/job127904268138 success including repositoryhealth. Prior freshpreflight13:03passed; repeating after coordinator resume before expected-head merge.",
-    "next": "Run immediate fresh canonical publication preflight on385d/currentmain and send observation to root for expected-head merge; then develop measured-lot/matched-stop and actual frame-gap comparison in a fresh successor, no implicit0.5/70percent invariant.",
-    "blocker": "No source merge blocker; development evidence only, no physical material selection or owner polymer approval. Exact thin-layer/aging/water, shoe seam/HAZ/movement/residues and whole temporary-tool fit remain unqualified."
+    "evidence": "PR1337 merged 0a40215a8a562bc0d9e554edcf89778023598262 after exact b83e full CI42224330826 and fresh canonical preflight13:23:47; successor branch created at that main. Old branch ls-remote returned empty. Scratch stop/frame sensitivity derives working-gap0.420-0.555mm for hypothetical measured0.74-0.84mm lot, with actual force and frame contact still unearned.",
+    "next": "Bound actual two-face stopped frame and force/geometry compatibility without changing selected controls; reconcile owning exit table, then source-bound ground/wall/floor join with STR selected RC200/glass100.",
+    "blocker": "No measured thin-stock force/water/aging evidence or owner polymer exception. Ground thermal/moisture/air/gas load-bearing continuity remains internal design. PR1337 is merged predecessor; successor has no PR yet."
   }
 }
