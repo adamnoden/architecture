@@ -107,6 +107,7 @@ if 'preferredJoint' in s:
  rackDef=rp*rSpan**3/(48*E*rI);rackStress=(rp*rSpan/4)*(rb[0]/2)/rI
  # Local joint leakage falls continuously to a separate stated receiver; no borrowed foul route.
  cap=j['capture'];floor=zj+cap['floorRelativeBed'];rim=zj+cap['rimRelativeBed'];assert rim<zj-150 and cap['pipeInvertStart']<floor
+ assert cap['trayX'][1]==cap['pipeStartX'] and bed(cap['trayX'][1])+cap['floorRelativeBed']>cap['pipeInvertStart']
  endX,endInvert=cap['pipeEnd'];assert endX>cap['pipeStartX'] and endInvert<cap['pipeInvertStart'] and cap['receivingWaterMaximum']<endInvert
  pipeCrownStart=cap['pipeInvertStart']+cap['pipeOD']-cap['pipeWall'];pipeCrownEnd=endInvert+cap['pipeOD']-cap['pipeWall']
  pipeRailGap=min(bed(j['splitX'])-200-pipeCrownStart,bed(endX)-200-pipeCrownEnd);# Actual pipe is centred6900, BETWEEN both50-wide rails, not a free route through a solid crossbeam.
@@ -116,6 +117,60 @@ if 'preferredJoint' in s:
   if cap['pipeStartX']<=bridgeX<=endX:assert inv+cap['pipeOD']-cap['pipeWall']<b['localSupportBeamZ'][0]
  out={'identity':s['identity'],'status':'Preferred accessible two-piece project reference; internal component/motion checks only','hadBlob':blob,'method':'SAME-LEVEL TWO-PIECE SIDE-BOLTED U FLANGE','frameScreen':{'I_mm4':I,'crossDeflection_mm':crossDef,'sideDeflection_mm':sideDef,'crossStress_MPa':crossStress,'sideStress_MPa':sideStress,'scope':'Assumed E/preload/reaction; not uniform gasket contact, bolt torque or certified strength'},'boltEngagedX':engaged,'boltThreadClearanceAfter35':afterThread-j['nutIntervalX'][1],'boltClearOfInnerFaceAfter175':released-j['innerFaceEastX'],'maxHandReach':maxReach,'continuousRatchetHalfstepBound':ratchetHalfStepBound,'continuousHookHalfstep':{'body':bodyHalfBound,'guardCapsule':guideHalfBound,'minimumSampledGuard':minGuide},'minimumToolToBodyX':minBody,'portalBodyMargin':minPortal,'toolInstallGuideBodyMargin':setupMargin,'coverOperatorX':[min(hooks),max(hooks)],'modules':mods,'rackPostClearance':postGap,'storedOuterToCompleteUpperBearer':hnd['upperBearerTop']-hnd['upperBearerSection'][0]-maxOuterTop,'rackComponentScreen':{'deflection_mm':rackDef,'stress_MPa':rackStress,'load_N':hnd['referenceVerticalLoadN']},'capture':{'floor':floor,'rim':rim,'carrierToRim':zj-150-rim,'pipeInvertStart':cap['pipeInvertStart'],'pipeEnd':[endX,endInvert],'pipeToLongitudinalRailLateralClear':railLateralGap,'comparison50RailVerticalGap':pipeRailGap,'receivingMaximum':cap['receivingWaterMaximum'],'scope':'Geometry only; capacity/site and first-harm admissibility remain unearned'},'minimumLocalD':-(endInvert-cap['pipeWall']-cap['pipeSupportBelow'])+500,'preferredLocalDtrial':j['preferredLocalDtrial'],'qualifiedFirstHarmMargin':None,'methodAcceptance':'Project reference INTERNAL checks pass; actual seal/preload/material/rigging/load/physical and incoming-module handover acceptance remain open'}
 
-q=O/'upper-access-renewal.results.json';v=json.dumps(out,indent=2)+'\n'
-if '--check' in sys.argv:assert q.read_text()==v;print('Preferred joint outputs reproduce; see actual component/motion domains and explicit acceptance holds')
-else:q.write_text(v);print('Wrote finite upper-access proposal screen; whole method INCOMPLETE')
+# Source-derived inspection figure: geometry/claim boundaries, not a fabrication drawing.
+import html
+svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1120" viewBox="0 0 1400 1120"><rect width="100%" height="100%" fill="white"/><g font-family="sans-serif" fill="#17242e">']
+def T(x,y,msg,size=15,c='#17242e'):svg.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{c}">{html.escape(str(msg))}</text>')
+def B(x,y,ww,hh,fill,stroke='#41535b'):svg.append(f'<rect x="{x}" y="{y}" width="{ww}" height="{hh}" fill="{fill}" stroke="{stroke}"/>')
+T(35,35,'Upper access: one same-level E route, accessible two-piece joint',24)
+T(35,62,'PROJECT REFERENCE · limited internal checks · no seal, physical, material, lifting or site acceptance',15,'#a12b23')
+PX=lambda x:40+(x-7500)*.12
+PY=lambda y:100+(y-6000)*.075
+plat=hnd['platform'];B(PX(plat[0]),PY(plat[1]),plat[2]*.12,plat[3]*.075,'#f6f2e9')
+for low,high in [[x-ww/2,x+ww/2] for x,ww in zip(b['supportAxesX'],b['localSupportBeamWidths'])]+[outer['fullX']]:
+ low=max(low,7500)
+ if high>low:B(PX(low),PY(6300),(high-low)*.12,1200*.075,'#ddd4c8')
+B(PX(7550),PY(6600),(10050-7550)*.12,600*.075,'#79b2d4')
+B(PX(10050.5),PY(6600),(12250-10050.5)*.12,600*.075,'#8dc6b1')
+B(PX(j['splitX']-112),PY(j['completeCouplingY'][0]),224*.12,(j['completeCouplingY'][1]-j['completeCouplingY'][0])*.075,'none','#a12b23')
+B(PX(hnd['parkStart']),PY(hnd['apertureY'][0]),2700*.12,(hnd['apertureY'][1]-hnd['apertureY'][0])*.075,'none','#276a98')
+for name in ['stage','handover','endOperator']:
+ q=hnd[name];B(PX(q[0]),PY(q[1]),q[2]*.12,q[3]*.075,{'stage':'#e0cda7','handover':'#e4ded3','endOperator':'#f0dfa7'}[name])
+ T(PX(q[0])+5,PY(q[1])+22,{'stage':'Two-tier STATIC storage','handover':'Incoming / outgoing: one at a time','endOperator':'Fixed operator'}[name],12)
+q=j['hatchClear'];B(PX(q[0]),PY(q[1]),q[2]*.12,q[3]*.075,'none','#a12b23')
+for body in j['operatorCentres']:svg.append(f'<ellipse cx="{PX(body[0])}" cy="{PY(body[1])}" rx="{rad*.12}" ry="{rad*.075}" fill="none" stroke="#245b93"/>')
+T(40,495,'Plan: brown support envelopes below the upper deck; blue/green are separate same-level modules. Operators shown are alternative positions.',14)
+T(1120,125,'One controlled sequence',17)
+for i,msg in enumerate(['1 N verified / E isolated','2 Guards, then joint hatch','3 Four side bolts captive','4 All park covers opened','5 Rack, then OUTER lands','6 Upper bearers, INNER','7 Old out before new in','8 INNER returns first','9 Then OUTER / seal test']):T(1120,160+i*30,msg,14)
+T(40,545,'EW section through side-bolt lane (not the wet pan centre)',20)
+SX=lambda x:40+(x-9700)*.28
+SZ=lambda z:865-z*.13
+for lo,hi in [[9750,10000],[10700,12250]]:B(SX(lo),SZ(0),(hi-lo)*.28,180*.13,'#c4c8cc')
+B(SX(11217.5),SZ(-180),900*.28,450*.13,'#d7c7b4')
+T(SX(11217.5)+3,SZ(-180)-8,'Retained outer beam BELOW walking level',12)
+for lo,hi,col in [(7550,10050.5,'#79b2d4'),(10050.5,12250,'#8dc6b1')]:
+ lo=max(lo,9700)
+ pts=[(SX(lo),SZ(bed(lo)+100)),(SX(hi),SZ(bed(hi)+100)),(SX(hi),SZ(bed(hi)-150)),(SX(lo),SZ(bed(lo)-150))]
+ svg.append('<polygon points="'+' '.join(f'{x},{y}' for x,y in pts)+f'" fill="{col}" stroke="#41535b"/>')
+B(SX(9938),SZ(zj+150),224*.28,250*.13,'none','#a12b23')
+for dz in j['boltZRelativeBed']:
+ z=zj+dz;svg.append(f'<path d="M{SX(9925)} {SZ(z)} H{SX(10200)}" stroke="#a12b23" stroke-width="2"/>')
+ z=zj+j['boltZRelativeBed'][0]
+B(SX(j['toolHeadX']-30),SZ(z+30),60*.28,60*.13,'#808f9c')
+svg.append(f'<path d="M{SX(j["boltHeadX"])} {SZ(z)} H{SX(j["toolHeadX"])} V{SZ(z+t["verticalShaft"])} H{SX(j["toolHeadX"]+250)}" fill="none" stroke="#245b93" stroke-width="4"/>')
+B(SX(j['guardEastX']-10),SZ(j['guardTop']),20*.28,j['guardTop']*.13,'#c4d4df')
+body=j['operatorCentres'][0];B(SX(body[0]-rad),SZ(j['bodyHeight']),2*rad*.28,j['bodyHeight']*.13,'none','#245b93')
+T(850,570,'Actual preferred proof',18)
+for i,msg in enumerate([f'Bolt full release clearance: {released-j["innerFaceEastX"]:g} mm',f'Max hand reach: {maxReach:.1f} / 600 mm',f'Ratchet half-step bound: {ratchetHalfStepBound:.3f} mm',f'Hook guard half-step bound: {guideHalfBound:.3f} mm',f'U-frame nominal deflections: {crossDef:.3f} / {sideDef:.3f} mm',f'Rack bearer nominal deflection: {rackDef:.3f} mm',f'Local D minimum incl. pipe support: {out["minimumLocalD"]:g} mm','E / preload / loadshare explicitly assumed','First-harm margin remains UNKNOWN']):T(850,605+i*32,msg,14,'#a12b23' if i>=7 else '#17242e')
+T(40,1060,'No person below a beam. No bottom flange bolt. No live second receiver. Storage never loads a wet pan.',16)
+T(40,1090,'The diagram and internal checks do not substitute for qualified seal, material, force, support, rigging, receiving or actual plot evidence.',14,'#a12b23')
+svg.append('</g></svg>\n')
+svgText='\n'.join(svg)
+
+outputs={O/'upper-access-renewal.results.json':json.dumps(out,indent=2)+'\n',O/'upper-access-renewal.svg':svgText}
+if '--check' in sys.argv:
+ for q,v in outputs.items():assert q.read_text()==v,q
+ print('Preferred joint source/results/figure reproduce; limited internal domains and acceptance holds explicit')
+else:
+ for q,v in outputs.items():q.write_text(v)
+ print('Wrote preferred joint source-linked results and figure')
