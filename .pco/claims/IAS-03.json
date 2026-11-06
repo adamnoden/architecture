@@ -9,11 +9,11 @@
     "label": "zerg-20261106-w1"
   },
   "claimedAt": "2026-11-06T07:38:01.585Z",
-  "heartbeatAt": "2026-11-06T07:56:08.124Z",
-  "expiresAt": "2026-11-06T08:41:08.124Z",
+  "heartbeatAt": "2026-11-06T07:58:58.933Z",
+  "expiresAt": "2026-11-06T08:43:58.933Z",
   "checkpoint": {
-    "evidence": "RemoteWIP7461f7bd86ed1fa20631a097c3d63920bea5c62f treea4d49d31 exactreadback. RHSdeck55.33kg rejected locally;3mmpan-only31.92kg/primarypointload/continuousbed comparison, noadoption. Integrity/diffpass.",
-    "next": "Review coherentdeck-deletion result and actualnewpan-outlet setout/retainedsupportedlowerwaste firstrelease; nofullkit/route/materialpass. Timedout priorrenew7a315bdb was neverwritten; exactremoteUUID/gen/blob reconciled."
+    "evidence": "Remote WIP 7461f7bd86ed1fa20631a097c3d63920bea5c62f exact readback; deck deletion and pan point-load comparison; integrity and diff checks passed.",
+    "next": "Review source-bound pan-only comparison and explicit new outlet setout. No assembly adoption. Prior renewal requests timed out without CAS writes; runtime blob reconciled unchanged."
   },
   "branch": "work/zerg-20261106-w1",
   "predecessor": {
