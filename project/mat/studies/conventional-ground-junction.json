@@ -92,7 +92,7 @@
     "pressure_Pa": 50,
     "dynamicViscosity_Pa_s": 1.81e-05,
     "airDensity_kg_per_m3": 1.2,
-    "nominalOverlap_mm": 28,
+    "nominalOverlap_mm": 24,
     "relativeMovementYBound_mm": 2,
     "edgePositionToleranceEach_mm": 1,
     "gapChallenges_mm": [
@@ -109,7 +109,7 @@
     "toleranceRole": "The2mm movement and1mm edge tolerances are authored challenge bounds, not actual fabrication/installation tolerances. Gap control is an unproven requirement on formed faces and supports, not an achieved fit.",
     "ends": "No actual end gap or end closure is authored. Every gap result is central only and cannot be credited as total assembly leakage.",
     "renewal": "Ordinary retention/cover must be independently supported and entirely released before NORTH500 withdrawal; no permanent field-to-pan weld or through-pan fixing. No high preload is inferred from air duty alone.",
-    "backingEndY": 4058,
+    "backingEndY": 4054,
     "panStartY": 4030,
     "referenceRetainerY": 4010,
     "referenceHoleDiameter_mm": 6.5

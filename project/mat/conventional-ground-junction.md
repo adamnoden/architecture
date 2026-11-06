@@ -47,20 +47,20 @@ Next join this mineral/control construction and source-bound floor input to the 
 
 The earlier circular metal-seal catalogue does **not** establish a necessary line force for this joint. Withdraw the 10 mm bar / 19-bolt high-force over-clamp as the leading design: no demonstrated whole-house benefit justifies that added walking level, anchor/heel demand and custom face requirement. The force calculation was a burden sensitivity, not a seal requirement. The withdrawn 37-boss riser is likewise unnecessary as a starting assumption. No alternative seal material is admitted by removing those assumptions.
 
-A finite ordinary-overlap challenge retains a fixed backing ending at Y4058, before the integral riser at Y4060. The upper retainer must release entirely before the pan moves north; the central riser then moves away from the backing. Reference holes on Y4010 remain south of pan start 4030, but actual support back to RC −180 through the selected glass/distribution stack is still to design. There is no free anchor into glass or an imaginary exposed RC surface at FFL. The same interface is available to **both** floor routes, which owe the same door assembly. No wet-floor penetration, permanent weld to the renewable pan or detached apron is assumed.
+A finite ordinary-overlap challenge retains a fixed backing ending at Y4054, before the integral riser at Y4060. The upper retainer must release entirely before the pan moves north; the central riser then moves away from the backing. Reference holes on Y4010 remain south of pan start 4030, but actual support back to RC −180 through the selected glass/distribution stack is still to design. There is no free anchor into glass or an imaginary exposed RC surface at FFL. The same interface is available to **both** floor routes, which owe the same door assembly. No wet-floor penetration, permanent weld to the renewable pan or detached apron is assumed.
 
-The nominal 28 mm overlap becomes **24 mm minimum only under an authored challenge of ±2 mm relative movement and 1 mm tolerance at each edge**. These are proposed design bounds, not a measured fabrication/installation tolerance or a fit pass. Actual thermal movement, seating, support deflection and formed-face flatness must fit one complete bound. The authored end X positions and 75 mm crest do not define a complete apron/end intersection or seal termination; central clearance cannot prove either end release or end leakage.
+The nominal 24 mm overlap becomes **20 mm minimum only under an authored challenge of ±2 mm relative movement and 1 mm tolerance at each edge**. These are proposed design bounds, not a measured fabrication/installation tolerance or a fit pass. The same challenge leaves **2 mm minimum central riser clearance** from a nominal 6 mm; the earlier backing end 4058 would instead clash by 2 mm. Overlap and withdrawal clearance must survive the same movement/tolerance case, not separately convenient nominal positions. Actual thermal movement, seating, support deflection and formed-face flatness must fit one complete bound. The authored end X positions and 75 mm crest do not define a complete apron/end intersection or seal termination; central clearance cannot prove either end release or end leakage.
 
-For an ideal uniform connected gap, pressure-driven momentum balance gives `Q=b h³ Δp/(12 μ L)`. The reproducer uses width 1780 mm, minimum overlap 24 mm, pressure 50 Pa and authored constant air viscosity 1.81×10⁻⁵ Pa·s. It is a laminar straight-channel sensitivity, not supplier data, a measured joint rating or a complete assembly model. The larger gaps especially need an actual developing-flow/entrance model; end bypass, variable-gap channels, workmanship and deformation are not included.
+For an ideal uniform connected gap, pressure-driven momentum balance gives `Q=b h³ Δp/(12 μ L)`. The reproducer uses width 1780 mm, minimum overlap 20 mm, pressure 50 Pa and authored constant air viscosity 1.81×10⁻⁵ Pa·s. It is a laminar straight-channel sensitivity, not supplier data, a measured joint rating or a complete assembly model. The larger gaps especially need an actual developing-flow/entrance model; end bypass, variable-gap channels, workmanship and deformation are not included.
 
 | Uniform central gap, mm | Central flow at 50 Pa, m³/h | Fraction of **entire** openings budget |
 |---:|---:|---:|
-|0.10|0.061|0.039%|
-|0.20|0.492|0.311%|
-|0.30|1.660|1.050%|
-|0.50|7.683|4.860%|
-|0.75|25.930|16.403%|
-|1.00|61.464|38.880%|
+|0.10|0.074|0.047%|
+|0.20|0.590|0.373%|
+|0.30|1.991|1.260%|
+|0.50|9.220|5.832%|
+|0.75|31.116|19.683%|
+|1.00|73.757|46.656%|
 
 The openings family's **158.086638 m³/h is shared by every complete opening**, not allocated anew to this apron. These fractions simply expose the cubic gap sensitivity; they assign no joint allowance and establish no zero-leak demand. A uniform 0.30 mm channel can be a small part of that whole reference while a 1 mm gap consumes a substantial part. Neither gap is an achieved face tolerance. Actual end closure and the rest of the complete door must be included before assigning or testing a budget. Compare that finite duty with an ordinary supported overlap or a replaceable compression interface and its complete retained constituents. Do not select a vacuum-style seal merely because a catalogue supplies a large line force.
 

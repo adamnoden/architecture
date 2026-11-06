@@ -316,7 +316,7 @@
       "pressure_Pa": 50,
       "dynamicViscosity_Pa_s": 1.81e-05,
       "airDensity_kg_per_m3": 1.2,
-      "nominalOverlap_mm": 28,
+      "nominalOverlap_mm": 24,
       "relativeMovementYBound_mm": 2,
       "edgePositionToleranceEach_mm": 1,
       "gapChallenges_mm": [
@@ -333,49 +333,51 @@
       "toleranceRole": "The2mm movement and1mm edge tolerances are authored challenge bounds, not actual fabrication/installation tolerances. Gap control is an unproven requirement on formed faces and supports, not an achieved fit.",
       "ends": "No actual end gap or end closure is authored. Every gap result is central only and cannot be credited as total assembly leakage.",
       "renewal": "Ordinary retention/cover must be independently supported and entirely released before NORTH500 withdrawal; no permanent field-to-pan weld or through-pan fixing. No high preload is inferred from air duty alone.",
-      "backingEndY": 4058,
+      "backingEndY": 4054,
       "panStartY": 4030,
       "referenceRetainerY": 4010,
       "referenceHoleDiameter_mm": 6.5
     },
-    "minimumOverlapUnderAuthoredChallenge_mm": 24,
+    "minimumOverlapUnderAuthoredChallenge_mm": 20,
+    "minimumRiserClearanceUnderSameChallenge_mm": 2,
+    "rejected4058BackingNegativeControl_mm": -2,
     "entireOpeningsBudgetForComparisonOnly_m3_per_h_at50Pa": 158.0866375,
     "centralGapChallenges": [
       {
         "uniformConnectedGap_mm": 0.1,
-        "centralFlow_m3_per_h_at50Pa": 0.06146408839779006,
-        "fractionOfEntireOpeningsBudgetOnly": 0.0003888000236439342,
-        "hydraulicDiameterReynolds": 1.2718374489993183
+        "centralFlow_m3_per_h_at50Pa": 0.07375690607734808,
+        "fractionOfEntireOpeningsBudgetOnly": 0.00046656002837272114,
+        "hydraulicDiameterReynolds": 1.5262049387991823
       },
       {
         "uniformConnectedGap_mm": 0.2,
-        "centralFlow_m3_per_h_at50Pa": 0.49171270718232046,
-        "fractionOfEntireOpeningsBudgetOnly": 0.0031104001891514737,
-        "hydraulicDiameterReynolds": 10.174699591994546
+        "centralFlow_m3_per_h_at50Pa": 0.5900552486187847,
+        "fractionOfEntireOpeningsBudgetOnly": 0.003732480226981769,
+        "hydraulicDiameterReynolds": 12.209639510393458
       },
       {
         "uniformConnectedGap_mm": 0.3,
-        "centralFlow_m3_per_h_at50Pa": 1.659530386740331,
-        "fractionOfEntireOpeningsBudgetOnly": 0.010497600638386222,
-        "hydraulicDiameterReynolds": 34.33961112298158
+        "centralFlow_m3_per_h_at50Pa": 1.991436464088397,
+        "fractionOfEntireOpeningsBudgetOnly": 0.012597120766063464,
+        "hydraulicDiameterReynolds": 41.2075333475779
       },
       {
         "uniformConnectedGap_mm": 0.5,
-        "centralFlow_m3_per_h_at50Pa": 7.683011049723756,
-        "fractionOfEntireOpeningsBudgetOnly": 0.04860000295549177,
-        "hydraulicDiameterReynolds": 158.97968112491475
+        "centralFlow_m3_per_h_at50Pa": 9.219613259668508,
+        "fractionOfEntireOpeningsBudgetOnly": 0.05832000354659013,
+        "hydraulicDiameterReynolds": 190.77561734989771
       },
       {
         "uniformConnectedGap_mm": 0.75,
-        "centralFlow_m3_per_h_at50Pa": 25.93016229281768,
-        "fractionOfEntireOpeningsBudgetOnly": 0.16402500997478475,
-        "hydraulicDiameterReynolds": 536.5564237965874
+        "centralFlow_m3_per_h_at50Pa": 31.11619475138121,
+        "fractionOfEntireOpeningsBudgetOnly": 0.19683001196974168,
+        "hydraulicDiameterReynolds": 643.8677085559048
       },
       {
         "uniformConnectedGap_mm": 1.0,
-        "centralFlow_m3_per_h_at50Pa": 61.46408839779005,
-        "fractionOfEntireOpeningsBudgetOnly": 0.3888000236439342,
-        "hydraulicDiameterReynolds": 1271.837448999318
+        "centralFlow_m3_per_h_at50Pa": 73.75690607734806,
+        "fractionOfEntireOpeningsBudgetOnly": 0.46656002837272104,
+        "hydraulicDiameterReynolds": 1526.2049387991817
       }
     ],
     "jointBudgetAllocated": false,

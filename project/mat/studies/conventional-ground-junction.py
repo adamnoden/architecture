@@ -89,6 +89,11 @@ def produce():
     assert overlap['referenceRetainerY']+overlap['referenceHoleDiameter_mm']/2<overlap['panStartY']
     lap=overlap['nominalOverlap_mm']-overlap['relativeMovementYBound_mm']-2*overlap['edgePositionToleranceEach_mm']
     assert lap>0 and overlap['nominalOverlap_mm']==overlap['backingEndY']-overlap['panStartY']
+    riser_y=pan['dryFold']['profileYZ'][1][0]
+    challenge=overlap['relativeMovementYBound_mm']+2*overlap['edgePositionToleranceEach_mm']
+    riser_gap=riser_y-overlap['backingEndY']-challenge
+    old_backing_gap=riser_y-4058-challenge
+    assert riser_gap>0 and old_backing_gap<0, 'Overlap and central riser clearance must survive the SAME movement/tolerance challenge'
     openings=budgets[allocation['threeDoorAssemblyFamily']]['aggregate_m3_per_h_at50Pa']
     trials=[]
     for gap in overlap['gapChallenges_mm']:
@@ -100,6 +105,8 @@ def produce():
         trials.append({'uniformConnectedGap_mm':gap,'centralFlow_m3_per_h_at50Pa':q*3600,
           'fractionOfEntireOpeningsBudgetOnly':q*3600/openings,'hydraulicDiameterReynolds':re})
     ordinary_air={'control':overlap,'minimumOverlapUnderAuthoredChallenge_mm':lap,
+      'minimumRiserClearanceUnderSameChallenge_mm':riser_gap,
+      'rejected4058BackingNegativeControl_mm':old_backing_gap,
       'entireOpeningsBudgetForComparisonOnly_m3_per_h_at50Pa':openings,
       'centralGapChallenges':trials,'jointBudgetAllocated':False,'completeAssemblyTested':False,
       'recommendation':'Do not specify a high-force vacuum-style seal from a circular catalogue. First test an ordinary supported overlap or replaceable compression interface against actual air duty, with independent water/capillary/end/movement and walking qualification.'}
@@ -171,12 +178,13 @@ def air_figure(r):
     out.append('<path d="M100 192H500V280" fill="none" stroke="#a68b62" stroke-width="7"/>')
     txt(105,136,'Integral apron: Y4030..4060, Z0',16)
     txt(570,110,'Crest +15',16)
-    txt(110,221,'Fixed backing to Y4058',16)
+    txt(110,221,'Fixed backing to Y4054',16)
     txt(110,253,'Gap exaggerated; actual face control unproved',15)
     txt(800,163,'NORTH →',21)
     txt(800,199,'Retainers entirely released',16)
     txt(800,227,'before pan withdrawal.',16)
-    txt(30,318,'Nominal overlap 28 − movement 2 − two edge tolerances 1 = minimum 24 mm, authored challenge only.',17)
+    txt(800,257,'Riser clearance ≥2 mm',16)
+    txt(30,318,'Nominal overlap 24 − movement 2 − two edge tolerances 1 = minimum 20 mm, authored challenge only.',17)
     txt(30,349,'1780 mm uniform connected gap / 50 Pa / viscosity 1.81×10⁻⁵ Pa·s; Q = b h³ Δp / (12 μ L).',17)
     txt(45,397,'Gap, mm',17);txt(255,397,'Central m³/h',17);txt(515,397,'% of ALL openings budget',17)
     for i,row in enumerate(t['centralGapChallenges']):
@@ -184,7 +192,7 @@ def air_figure(r):
         txt(45,y,f'{row["uniformConnectedGap_mm"]:.2f}');txt(255,y,f'{row["centralFlow_m3_per_h_at50Pa"]:.3f}')
         txt(515,y,f'{100*row["fractionOfEntireOpeningsBudgetOnly"]:.3f}%')
     txt(30,645,'This is an ideal straight-channel sensitivity, not measured leakage or an allocated joint allowance.',17)
-    txt(30,676,'No end bypass, workmanship, deformation or loss of overlap is granted a free allowance. Larger gaps challenge the model.',17)
+    txt(30,676,'Old backing 4058 would clash by 2 mm under the SAME challenge; neither nominal clearance nor overlap alone suffices.',17)
     txt(30,707,'No water head is assigned to this dry apron; quiet −35 / crest +15 do not establish first-leak or capillary performance.',17)
     txt(30,748,'Both floor routes owe the same complete opening. Air leakage alone does not justify a vacuum-style metal seal.',17)
     txt(30,789,'Actual supported overlap / replaceable compression interface, ends, movement and renewal must earn their result.',17)
