@@ -1,4 +1,4 @@
-"""Audit ONLY the pinned historical JLG-authored2018 IFC, not current196kg Pecolift.
+"""Audit ONLY the pinned historical JLG-identified2018 IFC, not current196kg Pecolift.
 Use an external environment with ifcopenshell0.8.5; no repository dependency added.
 python pecolift-ifc-envelope-audit.py path/to/1001214402_ECOLIFT15_ORANGE_CLOSED_POSITION.ifc
 The recovered distributor archive/hash and version boundary are in
