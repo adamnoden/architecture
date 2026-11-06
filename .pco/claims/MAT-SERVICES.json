@@ -9,11 +9,11 @@
     "label": "zerg-20261106-w3"
   },
   "claimedAt": "2026-11-06T07:38:05.136Z",
-  "heartbeatAt": "2026-11-06T13:47:48.594Z",
-  "expiresAt": "2026-11-06T14:32:48.594Z",
+  "heartbeatAt": "2026-11-06T14:22:02.457Z",
+  "expiresAt": "2026-11-06T15:07:02.457Z",
   "checkpoint": {
-    "evidence": "Published 3def686d23d01b7000fd8f30a4756fad4f43e4b1, reconciled main 0a40215; reproducible 96/128 fixed-room two-state architecture, native paired PTH pressure control and explicit alarm/manual-stop gap; smaller upper riser/front renewal remain unselected.",
-    "next": "Resolve actual detectable kitchen supply fault, complete rated 156 kg carrier and riser component access; no HAD adoption or canonical upper/foul change."
+    "evidence": "Published 01c1a850c2d30ce3a4ba10269607b8d3b00f0541 tree88c8e02f, main0a402 ancestry. Actual full carrier/operator path, native W9 750/900 W heater and retained-emitter sensitivity, manufacturer EPD residue, exact VTC500 alternative and18mm door-leaf negative control; reproducer/diff checks pass.",
+    "next": "Earn actual144 L/s VTC pressure/noise first before plant detail; compare native96/128 W9 with96/144 separate-capture architecture. Complete proportional fault indication, matched riser/renewal and actual constituent alternatives; no current HAD/source migration."
   },
   "branch": "work/zerg-20261106-w3-services-next",
   "predecessor": {
