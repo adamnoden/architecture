@@ -9,8 +9,8 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-06T20:55:25.711Z",
-  "expiresAt": "2026-11-06T22:25:25.711Z",
+  "heartbeatAt": "2026-11-06T21:15:01.810Z",
+  "expiresAt": "2026-11-06T22:45:01.810Z",
   "branch": "work/zerg-20261106-ias-g9",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
@@ -34,7 +34,7 @@
   },
   "pr": 1352,
   "checkpoint": {
-    "evidence": "Continuing draft 1352 exact remote a95ddfb916852328ecfc5ad5a70173b8e7205e96 tree de29dcc4754ccd2eb7d61f6d7dfff43e2c32921c; five readbacks and local tree exact. One formed 400-square well at actual drain drawn against owning Services/STR geometry; 590 beam-face and 400 support-axis screens only. Both sheets rendered/inspected, generator check/integrity/whitespace pass; CI 42292263531 running. Predecessor 0a6c CI success. No actual closure/socket/crib/handling admission.",
-    "next": "Continue same draft to bind actual accessible socket/pipe, fixed-side restraint, removable floor closure and native support contacts; coordinate STR opening/rebar/load checkpoint and actual two-person first lift/ordinary crib. Current main caba17d4 changed Services balanced/folded files and package only; reconcile before final checks. Keep no material or geometry adoption."
+    "evidence": "Published exact 357e08bc14cc56e98e4fcdcf5a0fb90524d73925 tree 0a2f6848c4e9197a6491bb0ae9aa0f1a4d1d5301; reconciled main 40d5c9b. Native 60 mm HDB closure and 103 mm slip coupling conditional connected comparison; three sheets rendered, native pages inspected, generator/integrity/whitespace pass. No material or installation admission; exact-head CI pending.",
+    "next": "Observe exact-head CI and root review; bind actual native seat, seal land, coupling fit, fixed restraint, contacts and operators before first-release admission."
   }
 }
