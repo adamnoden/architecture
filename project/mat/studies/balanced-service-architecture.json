@@ -43,6 +43,71 @@
       "rect160By180VelocityMps": 4.444444444444445
     }
   ],
+  "dedicatedKitchenSupplyModes": [
+    {
+      "mode": "background",
+      "kitchenSupplyLps": 13,
+      "sixOtherHabitableTotalSupplyLps": 65,
+      "sixOtherHabitableEachLps": 10.833333333333334,
+      "kitchenTransferLps": 0,
+      "ideal7600TransferDropPa": 0.0,
+      "worstResidualWith2LpsDamperError": 2,
+      "ideal7600DropWith2LpsErrorPa": 0.1116668813152274,
+      "massBalanceLps": 0
+    },
+    {
+      "mode": "wet-boost",
+      "kitchenSupplyLps": 13,
+      "sixOtherHabitableTotalSupplyLps": 83,
+      "sixOtherHabitableEachLps": 13.833333333333334,
+      "kitchenTransferLps": 3,
+      "ideal7600TransferDropPa": 0.25125048295926167,
+      "worstResidualWith2LpsDamperError": 5,
+      "ideal7600DropWith2LpsErrorPa": 0.6979180082201714,
+      "massBalanceLps": 0
+    },
+    {
+      "mode": "cooking-plus-all-wet-boost",
+      "kitchenSupplyLps": 48,
+      "sixOtherHabitableTotalSupplyLps": 80,
+      "sixOtherHabitableEachLps": 13.333333333333334,
+      "kitchenTransferLps": 0,
+      "ideal7600TransferDropPa": 0.0,
+      "worstResidualWith2LpsDamperError": 2,
+      "ideal7600DropWith2LpsErrorPa": 0.1116668813152274,
+      "massBalanceLps": 0
+    }
+  ],
+  "twoPositionKitchenControl": {
+    "device": "REACT V GMB125",
+    "nativeRangeLps": [
+      9,
+      108
+    ],
+    "VminLps": 13,
+    "VmaxLps": 48,
+    "minimumRecommendedSpanLps": 21.6,
+    "normal": "Terminal3 Y floating selects Vmin in either native0..10 or2..10 mode.",
+    "cooking": "Salsa floating NO ExtOut bridges the isolated24V terminal2 to terminal3 Y: native fullwave AC/DC Vmax override, not halfwave force-open.",
+    "supply": "IEC61558-1 isolation transformer; independent support/access/cleaning and native controls retained.",
+    "noRoomPressureController": true,
+    "factoryQualifiedFaultInterlock": false,
+    "fault": "Loss of hood contact/cable leaves Vmin13 even if hood mechanically open: capture/makeup failure is NOT automatically safe. U actual-flow feedback is available, but no qualified fault inhibit is claimed.",
+    "remaining": "Actual native fan mode presets/commissioned fixed branch network, startup/damper travel, fan/filter/frost/power failure and cooking inhibit remain to be bound."
+  },
+  "protectedStairRule": {
+    "primary": "https://assets.publishing.service.gov.uk/media/6aa3bb335f6e942efe37f150/AD_B1_2026.pdf",
+    "paragraphs": [
+      "2.8",
+      "2.9a",
+      "2.9b",
+      "2.9c"
+    ],
+    "actualFirstFloorAboveAuthoredGroundMM": 5250,
+    "grilleRouteRejected": "Protected stair enclosure transfer grilles prohibited by2.9a for dwelling floor above4.5m; native tested LVN20S door assembly does not cure this route.",
+    "ductRouteCondition": "Rigid steel through stair enclosure with firestopped boundary joints; ducts directly serving stair must not serve other areas. No terminal into protected stair is proposed.",
+    "scope": "Current government collated2026 PDF paragraph verified, not an engineered departure or whole classified penetration approval."
+  },
   "hoodBranchPressureScreen": {
     "closedEightHoleK": 1.31,
     "closed13MeasuredPressurePa": 98.47910960899715,
@@ -282,7 +347,7 @@
   "upperWetFieldsUnchanged": true,
   "remainingDesignTasks": [
     "Complete native W9 front panel/core/fan/whole unit renewal and weight-supported method",
-    "Select transfer route against actual protected doorset and full constituents, or explicit controlled kitchen supply",
+    "Earn actual native two-position kitchen supply/fan/fault contract; protected-stair grille comparator rejected by current2.9a",
     "Actual entire supply/extract/riser/cold terminal/cleaning/silencer/formed-opening layout and pressure/noise proof",
     "OEM cooking-mode and simultaneous humidity-control mapping, frost/dirty/wind/power/fan failure state proof",
     "Actual heating source/HX/emitter/DHW/defrost margin and constituent decision; no assumed8kW or polymer admission"

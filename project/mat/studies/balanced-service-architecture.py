@@ -34,6 +34,39 @@ for name, other, kitchen in [('background',13,13),('wet-boost',16,16),('cooking-
       'rect160By180VelocityMps':speed(total,.16*.18)})
 assert [m['totalExtractLps'] for m in modes] == [78,96,128]
 
+# Dedicated kitchen supply uses a native two-position flow regulator, not a
+# second room-pressure loop. GMB125 terminal3 floating -> Vmin, terminal2
+# fullwave AC/DC bridged to3 -> Vmax (IOMp6 Figure9). No diode force-open
+# substitution. ExtOut is a floating NO contact,30V/5A maximum.
+kitchen_supply=[]
+for m in modes:
+    qs=48 if m['kitchenTotalExtractLps']==48 else 13
+    residual=m['kitchenTotalExtractLps']-qs
+    other=m['totalExtractLps']-qs
+    kitchen_supply.append({'mode':m['id'],'kitchenSupplyLps':qs,
+      'sixOtherHabitableTotalSupplyLps':other,'sixOtherHabitableEachLps':other/6,
+      'kitchenTransferLps':residual,'ideal7600TransferDropPa':pressure(residual,7600),
+      'worstResidualWith2LpsDamperError':abs(residual)+2,
+      'ideal7600DropWith2LpsErrorPa':pressure(abs(residual)+2,7600),
+      'massBalanceLps':qs+other-m['totalExtractLps']})
+assert all(m['massBalanceLps']==0 for m in kitchen_supply)
+assert [m['kitchenTransferLps'] for m in kitchen_supply]==[0,3,0]
+assert 48-13>=.2*108
+control={'device':'REACT V GMB125','nativeRangeLps':[9,108],
+ 'VminLps':13,'VmaxLps':48,'minimumRecommendedSpanLps':.2*108,
+ 'normal':'Terminal3 Y floating selects Vmin in either native0..10 or2..10 mode.',
+ 'cooking':'Salsa floating NO ExtOut bridges the isolated24V terminal2 to terminal3 Y: native fullwave AC/DC Vmax override, not halfwave force-open.',
+ 'supply':'IEC61558-1 isolation transformer; independent support/access/cleaning and native controls retained.',
+ 'noRoomPressureController':True,'factoryQualifiedFaultInterlock':False,
+ 'fault':'Loss of hood contact/cable leaves Vmin13 even if hood mechanically open: capture/makeup failure is NOT automatically safe. U actual-flow feedback is available, but no qualified fault inhibit is claimed.',
+ 'remaining':'Actual native fan mode presets/commissioned fixed branch network, startup/damper travel, fan/filter/frost/power failure and cooking inhibit remain to be bound.'}
+fire_rule={'primary':'https://assets.publishing.service.gov.uk/media/6aa3bb335f6e942efe37f150/AD_B1_2026.pdf',
+ 'paragraphs':['2.8','2.9a','2.9b','2.9c'],
+ 'actualFirstFloorAboveAuthoredGroundMM':3450+1800,
+ 'grilleRouteRejected':'Protected stair enclosure transfer grilles prohibited by2.9a for dwelling floor above4.5m; native tested LVN20S door assembly does not cure this route.',
+ 'ductRouteCondition':'Rigid steel through stair enclosure with firestopped boundary joints; ducts directly serving stair must not serve other areas. No terminal into protected stair is proposed.',
+ 'scope':'Current government collated2026 PDF paragraph verified, not an engineered departure or whole classified penetration approval.'}
+
 # Source closed-damper eight-hole K=1.31; open-hood quadratic .032 is the
 # inherited authored resistance comparator, NOT a new certified curve fit.
 closed_k = 1/1.31**2
@@ -103,12 +136,12 @@ assert abs(next(x for x in energy if x['mode']==modes[-1]['id'] and x['effective
 
 result={'status':'Unselected whole-system challenger; no canonical numeric owner migration or material exception',
  'basis':{'main':HEAD,'hadBlob':'f7324121f59cc5f1707ea47640dd2b20c26b9bbb','servicesBlob':'69c7b1b1e733b9ade2d8ae21c1552accf52a6261'},
- 'modes':modes,'hoodBranchPressureScreen':hood_branch,'spineCrossings':air_crossings,
+ 'modes':modes,'dedicatedKitchenSupplyModes':kitchen_supply,'twoPositionKitchenControl':control,'protectedStairRule':fire_rule,'hoodBranchPressureScreen':hood_branch,'spineCrossings':air_crossings,
  'W9VestibuleHost':host,'fireSmokeTransferComparison':transfer,'heatSensitivity':energy,
  'requiredEffectiveRecoveryFor8kWAt128And30K':1-(8000-220*30)/(1.2*128*30),
  'liveHADunchanged':True,'upperWetFieldsUnchanged':True,
  'remainingDesignTasks':['Complete native W9 front panel/core/fan/whole unit renewal and weight-supported method',
- 'Select transfer route against actual protected doorset and full constituents, or explicit controlled kitchen supply',
+ 'Earn actual native two-position kitchen supply/fan/fault contract; protected-stair grille comparator rejected by current2.9a',
  'Actual entire supply/extract/riser/cold terminal/cleaning/silencer/formed-opening layout and pressure/noise proof',
  'OEM cooking-mode and simultaneous humidity-control mapping, frost/dirty/wind/power/fan failure state proof',
  'Actual heating source/HX/emitter/DHW/defrost margin and constituent decision; no assumed8kW or polymer admission']}
