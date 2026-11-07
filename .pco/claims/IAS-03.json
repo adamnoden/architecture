@@ -9,9 +9,9 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-07T00:47:14.048Z",
-  "expiresAt": "2026-11-07T02:17:14.048Z",
-  "branch": "work/zerg-20261106-ias-g12",
+  "heartbeatAt": "2026-11-07T01:01:04.104Z",
+  "expiresAt": "2026-11-07T02:31:04.104Z",
+  "branch": "work/zerg-20261106-ias-g13",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
     "generation": 22,
@@ -34,7 +34,7 @@
   },
   "pr": 1367,
   "checkpoint": {
-    "evidence": "Draft1367 binds reviewed published751f631e drain/native-return correction, correct Work/Lease body on creation; exact three-file readback, prior JSON/SVG preserved, changed native/boundary/integrity checks pass. No support/handling admission.",
-    "next": "Observe exact1367 CI; keep reviewed checkpoint frozen while authoring one ordinary shared600 sink/250 service-bay structural host separately and reviewing Services wall60 exact paths."
+    "evidence": "Verified1367 merged48c99175 and g12 deletion; new distinctg13 starts exact actual main48c9917555afe6e3390005d6131f8d33959f1767. Reviewed751 native drain/return integrated; no physical/support admission.",
+    "next": "Author one ordinary shared600 sink/250 service-bay host and complete supported first-disconnect/renewal method; scratch source has declared project reaction/member/anchor domains and explicit native fit/material/floor holds.1367 is merged history, no active successor PR."
   }
 }
