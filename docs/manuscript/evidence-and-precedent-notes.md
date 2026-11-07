@@ -54,7 +54,7 @@ A Georgian villa does not prove that a contemporary house should reproduce eight
 
 Several important conclusions in Ovid’s House come from rejection rather than adoption.
 
-The present interior selection rejects whole-house removable wall lining and access flooring as defaults because the demonstrated maintenance tasks do not earn their complexity. The opening selection similarly prefers a conventional renewable frame over a continuous retained cassette. Earlier house studies rejected a remote en-suite and inward roof drainage, but those are historical decisions: the current house again contains two en-suite reservations and inward as well as outward roof collection. Their fit and failure paths remain unresolved. G-01 rejects universal ratios, centred-entry rules, fixed principal-room sequences and one required roof form.
+The Reference House rejects a remote en-suite because its drainage burden is disproportionate. It rejects inward courtyard roof drainage because the failure geography is worse. It rejects whole-house removable wall lining and access flooring as defaults because the current maintenance tasks do not earn their complexity. G-01 rejects universal ratios, centred-entry rules, fixed principal-room sequences and one required roof form.
 
 Those rejections are evidence about proportionality within the stated project scope. They are not universal bans.
 

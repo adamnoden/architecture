@@ -20,9 +20,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-        with:
-          # Repository checks compare source-bound historical blobs via git show.
-          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -32,13 +29,6 @@ jobs:
 
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
-
-      - name: Cache verified publication fonts
-        uses: actions/cache@v6
-        with:
-          path: node_modules/.cache/ovids-house/publication-fonts
-          key: ${{ runner.os }}-publication-fonts-v1-${{ hashFiles('publication/fonts.ts') }}
-          restore-keys: ${{ runner.os }}-publication-fonts-v1-
 
       - name: Check repository health
         run: npm run check

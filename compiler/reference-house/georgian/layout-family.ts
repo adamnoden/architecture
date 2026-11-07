@@ -4,9 +4,6 @@ import {sectionAssemblyModels,sectionAssemblyChoices,sectionProvenance} from './
 import {sectionWallToDrawingPrimitives,sectionFloorToDrawingPrimitives} from '../../architectural-drawing/section-assemblies.js'
 import {framedApertureToDrawingPrimitives,cutApertureToDrawingPrimitives} from '../../architectural-drawing/aperture-drawing.js'
 import {createSectionPaperProjection} from '../../publication-drawing/projection.js'
-import {compileCurrentSectionContext} from './section-context.js'
-import {ringRoofHeight,ringRoofHeightAtDistance} from './roof-surfaces.js'
-import {spatialSegmentsToDrawingPrimitives} from '../../architectural-drawing/spatial-line-drawing.js'
 import type {DrawingSceneV2,DrawingLineRole,DrawingDashRole} from '../../publication-drawing-v2/model.js'
 
 /** One current candidate family; older specimen adapters retain their exact identities. */
@@ -17,12 +14,8 @@ export const layoutFamilyViews=['GROUND','FIRST','LOCATOR','PRINCIPAL','SERVICE-
 export type LayoutFamilyView=typeof layoutFamilyViews[number]
 const provenance={...sectionProvenance,sourceIds:['docs/publication/architectural-plate-layout-family.md']}
 const metadata={sources:provenance.sourceIds.join(','),authority:provenance.authority,precision:provenance.precision,constructionDetailSelected:false}
-/** One source adaptor drives elevation datums, cut sections and roof meshes. */
-const roofHeightSource=()=>({shell:design.shell,courtInset:design.court.x,
- ridgeInset:design.roof.ridgeInset,overhang:design.roof.overhang,
- eaves:design.roof.eaves,pitchDeg:design.roof.upperPitchDeg,
- buildDepth:layoutFamilySource.roofBuildZone})
-export const currentRoofZ=(x:number,y:number)=>ringRoofHeight(roofHeightSource(),x,y)
+/** Height of the authored twin-pitched ring, not a generic roof solver. */
+export const currentRoofZ=(x:number,y:number)=>roofHeight(Math.min(x,y,design.shell-x,design.shell-y))
 const context=(view:string,scale:100|50|25)=>{
  const origin=scale===100?{x:12.5,y:18}:scale===25?{x:57,y:70}:{x:90,y:150}
  const p=createSectionPaperProjection({scaleDenominator:scale,horizontalBounds:{min:0,max:design.shell},verticalBounds:{min:-2400,max:design.shell},paperOrigin:origin})
@@ -47,25 +40,8 @@ export function createLayoutElevation(view:ElevationView,scale:100|50):DrawingSc
   line('cornice-lower',0,top-design.facade.corniceDepth,design.shell,top-design.facade.corniceDepth,'primary')
   line('cornice-fascia',0,top-60,design.shell,top-60)
  }
- scene.primitives.push(...layoutAperturePrimitives(view,model.apertures,p))
- let cursor=model.min
- for(const d of model.apertures.filter(a=>a.kind==='door'&&a.level==='GROUND').sort((a,b)=>a.u-b.u)){line('plinth-'+d.id,cursor,150,d.u-d.width/2,150);cursor=d.u+d.width/2}
- line('plinth-end',cursor,150,model.max,150);line('grade',model.min-100,-150,model.max+100,-150)
- for(const [id,z,value]of [['ground',0,'0.00'],['first',design.levels.first,'+3.45'],['eaves',top,'+6.80']] as const){line('level-'+id,model.min-250,z,model.min-50,z);text('datum-'+id,model.min-650,z+90,value)}
- text('height',6000,roofTop()+650,`Ridge +${(roofTop()/1000).toFixed(2)} m / eaves +6.80 m`)
- text('width',6000,-550,`${model.width/1000} m`)
- text('scope',6000,-1100,model.court?'Nominal joinery / profiles; court drainage and detailed closures unresolved':view==='SERVICE'?'Plant replacement door retained; roof-work access unresolved':'Nominal joinery / profiles; ground -150 mm / entrance threshold 0')
- return finish()
-}
-
-/** Shared face-on aperture convention. Its drawing plane does not select a frame setback. */
-export function layoutAperturePrimitives(view:ElevationView,apertures:ReturnType<typeof elevationSource>['apertures'],p:ReturnType<typeof createSectionPaperProjection>):DrawingSceneV2['primitives']{
- const out:DrawingSceneV2['primitives']=[]
- const model={apertures}
- const line=(id:string,x:number,z:number,xx:number,zz:number,role:DrawingLineRole='secondary')=>out.push({kind:'line',id,a:p.point(x,z),b:p.point(xx,zz),role,dash:undefined,metadata})
- const box=(id:string,x:number,z:number,w:number,h:number)=>out.push({kind:'path',id,rings:[[p.point(x,z),p.point(x+w,z),p.point(x+w,z+h),p.point(x,z+h)]],stroke:'secondary',fill:'none',dash:undefined,metadata})
  for(const a of model.apertures){
-  if(a.kind==='window')out.push(...framedApertureToDrawingPrimitives({id:a.id,left:a.u-a.width/2,bottom:a.sill,width:a.width,height:a.head-a.sill,frameInset:design.facade.frameFace,columns:3,rows:4,head:{height:design.facade.headHeight,projection:0},sill:{height:60,projection:design.facade.sillProjection},role:'secondary',outlineRole:'primary',provenance},p))
+  if(a.kind==='window')scene.primitives.push(...framedApertureToDrawingPrimitives({id:a.id,left:a.u-a.width/2,bottom:a.sill,width:a.width,height:a.head-a.sill,frameInset:design.facade.frameFace,columns:3,rows:4,head:{height:design.facade.headHeight,projection:0},sill:{height:60,projection:design.facade.sillProjection},role:'secondary',outlineRole:'primary',provenance},p))
   else{
    if(view==='FRONT'){
     box(a.id,a.u-a.width/2,a.sill,a.width,a.head-a.sill)
@@ -79,47 +55,24 @@ export function layoutAperturePrimitives(view:ElevationView,apertures:ReturnType
    }else{
     const joinery=framedApertureToDrawingPrimitives({id:a.id,left:a.u-a.width/2,bottom:a.sill,width:a.width,height:a.head-a.sill,frameInset:design.facade.frameFace,columns:a.leaves,rows:1,role:'secondary',outlineRole:'primary',provenance},p)
     for(const q of joinery)if(q.id===a.id+'-outline')q.id=a.id
-    out.push(...joinery)
+    scene.primitives.push(...joinery)
    }
    line(a.id+'-threshold',a.u-a.width/2-80,a.sill+50,a.u+a.width/2+80,a.sill+50,'primary')
   }
  }
- return out
+ let cursor=model.min
+ for(const d of model.apertures.filter(a=>a.kind==='door'&&a.level==='GROUND').sort((a,b)=>a.u-b.u)){line('plinth-'+d.id,cursor,150,d.u-d.width/2,150);cursor=d.u+d.width/2}
+ line('plinth-end',cursor,150,model.max,150);line('grade',model.min-100,-150,model.max+100,-150)
+ for(const [id,z,value]of [['ground',0,'0.00'],['first',design.levels.first,'+3.45'],['eaves',top,'+6.80']] as const){line('level-'+id,model.min-250,z,model.min-50,z);text('datum-'+id,model.min-650,z+90,value)}
+ text('height',6000,roofTop()+650,`Ridge +${(roofTop()/1000).toFixed(2)} m / eaves +6.80 m`)
+ text('width',6000,-550,`${model.width/1000} m`)
+ text('scope',6000,-1100,model.court?'Nominal joinery / profiles; court drainage and detailed closures unresolved':view==='SERVICE'?'Plant replacement door retained; roof-work access unresolved':'Nominal joinery / profiles; ground -150 mm / entrance threshold 0')
+ return finish()
 }
 
 export function createLayoutSection(view:'PRINCIPAL'|'SERVICE-SECTION',scale:100|50|25){
  const {scene,p,line,text,box,finish}=context(view,scale),station=view==='PRINCIPAL'?layoutFamilySource.cuts.A:layoutFamilySource.cuts.B,m=layoutSectionAt(station)
- const distance=Math.min(station,design.shell-station),r=design.roof.ridgeInset,c=design.court
- const roofRanges=m.court?[[-200,c.y+200],[c.y+c.depth-200,design.shell+200]]:[[-200,design.shell+200]]
- // The same source-derived cut profile supplies both the filled section and
- // exact planar occluder faces; neither is an independently invented roof.
- const roofSections=roofRanges.map(([lo,hi],i)=>{
-  const run=[lo,...[distance,r,design.shell-r,design.shell-distance].filter(y=>y>lo&&y<hi),hi].sort((a,b)=>a-b).filter((y,i,a)=>i===0||y!==a[i-1])
-  const top=run.map(y=>({y,z:currentRoofZ(station,y)}))
-  const lower=[...top].reverse().map(q=>({...q,z:q.z-layoutFamilySource.roofBuildZone}))
-  return {i,top,lower}
- })
- const roofCutFaces=roofSections.flatMap(section=>section.top.slice(0,-1).map((a,i)=>{
-  const b=section.top[i+1],z=layoutFamilySource.roofBuildZone
-  return {id:'section-roof-cut-'+section.i+'-'+i,vertices:[
-   {x:station,y:a.y,z:a.z},{x:station,y:b.y,z:b.z},
-   {x:station,y:b.y,z:b.z-z},{x:station,y:a.y,z:a.z-z}
-  ]}
- }))
- // The cut partitions are opaque at their actual storey only. Door passages
- // remain empty rather than acting as fictitious full-height screens.
- const cutPartitions=m.partitions.map(w=>({
-  id:'partition-'+w.id+'-'+w.base,lo:w.at-62.5,hi:w.at+62.5,
-  bottom:w.base,top:w.base+3100,
-  holes:w.door?[{id:'door-'+w.id,lo:w.base,hi:w.base+2850}]:[]
- }))
- // Draw actual background first; geometry is occluded before rendering
- // the section cut in its stronger line/assembly hierarchy.
- const background=compileCurrentSectionContext({station,roofBuildDepth:layoutFamilySource.roofBuildZone,
-  walls:[...m.walls,...cutPartitions],cutRoofFaces:roofCutFaces})
- scene.primitives.push(...spatialSegmentsToDrawingPrimitives(background.background.filter(segment=>m.court || !segment.meaning.startsWith('hosted-aperture:')),{
-  basis:background.basis,paperOrigin:p.point(0,0),paperMmPerModelMm:1/scale,provenance
- }))
+ for(const w of m.walls)w.holes=w.holes.map(h=>({...h,id:(h.lo>=design.levels.first?'FIRST-':'GROUND-')+h.id}))
  const assemblies=sectionAssemblyModels(m,y=>currentRoofZ(station,y)-layoutFamilySource.roofBuildZone,{firstFloorRuns:m.firstFloorRuns,storageDeckRuns:m.storageDeckRuns})
  for(const w of assemblies.walls)scene.primitives.push(...sectionWallToDrawingPrimitives(w,p))
  for(const f of assemblies.floors){
@@ -134,14 +87,18 @@ export function createLayoutSection(view:'PRINCIPAL'|'SERVICE-SECTION',scale:100
   box('partition-'+i,w.at-62.5,w.base+(w.door?2850:0),125,w.door?250:3100,'faint')
   if(w.door)scene.primitives.push(...cutApertureToDrawingPrimitives({id:w.id+'-'+w.base,frameLeft:w.at-25,frameWidth:50,bottom:w.base,top:w.base+2850,leafX:w.at,leafBottom:w.base+50,leafTop:w.base+2800,provenance},p))
  }
- for(const roof of roofSections){
-  scene.primitives.push({kind:'path',id:'section-roof-'+roof.i,
-   rings:[[...roof.top,...roof.lower].map(q=>p.point(q.y,q.z))],
-   stroke:'profile',fill:'faint',metadata:{...metadata,representation:'source-derived-roof-trace',flatRoof:false}})
+ const distance=Math.min(station,design.shell-station),r=design.roof.ridgeInset,c=design.court
+ const runs=m.court?[[-200,c.y+200],[c.y+c.depth-200,12200]]:[[-200,12200]]
+ for(const [i,[lo,hi]]of runs.entries()){
+  const run=[lo,...[distance,r,design.shell-r,design.shell-distance].filter(y=>y>lo&&y<hi),hi].sort((a,b)=>a-b).filter((y,i,a)=>i===0||y!==a[i-1])
+  const upper=run.map(y=>p.point(y,currentRoofZ(station,y))),lower=[...run].reverse().map(y=>p.point(y,currentRoofZ(station,y)-300))
+  scene.primitives.push({kind:'path',id:'section-roof-'+i,rings:[[...upper,...lower]],stroke:'profile',fill:'faint',metadata:{...metadata,representation:'source-derived-roof-trace',flatRoof:false}})
  }
  if(m.court){
-  // Hosted apertures and their wall termination come from the visible 3D
-  // courtyard facades above; no unsupported free-floating window glyphs.
+  for(const level of ['GROUND','FIRST'] as const)for(const o of revisionOpenings(level).filter(o=>o.wall==='court-west')){
+   const base=level==='GROUND'?0:design.levels.first,z=base+(o.sill??750),head=base+(o.head??2850)
+   scene.primitives.push(...framedApertureToDrawingPrimitives({id:'beyond-'+level+'-'+o.id,left:o.centre-o.width/2,bottom:z,width:o.width,height:head-z,frameInset:60,columns:3,rows:4,sill:{height:60,projection:80},head:{height:120,projection:0},role:'secondary',provenance},p))
+  }
   text('open-court',6000,7200,'OPEN COURTYARD','marker');line('court-grade',c.y,-150,c.y+c.depth,-150)
  }
  if(m.voidCut){
@@ -185,7 +142,7 @@ export function createLayoutFamilyScene(view:LayoutFamilyView,scale:100|50):Draw
 export function layoutSectionAt(x:number){
  const d=design,c=d.court,e=d.envelope,court=x>c.x&&x<c.x+c.width
  const envelope=court?[{id:'outer-south',lo:0,hi:e,top:d.roof.eaves},{id:'court-south',lo:c.y-e,hi:c.y,top:d.roof.courtEaves},{id:'court-north',lo:c.y+c.depth,hi:c.y+c.depth+e,top:d.roof.courtEaves},{id:'outer-north',lo:d.shell-e,hi:d.shell,top:d.roof.eaves}]:[{id:'outer-south',lo:0,hi:e,top:d.roof.eaves},{id:'outer-north',lo:d.shell-e,hi:d.shell,top:d.roof.eaves}]
- const walls=envelope.map(w=>({...w,holes:(['GROUND','FIRST'] as const).flatMap(level=>revisionOpenings(level).filter(o=>o.wall===w.id&&Math.abs(o.centre-x)<o.width/2).map(o=>({id:level+'-'+o.id,kind:o.kind,lo:(level==='GROUND'?0:d.levels.first)+(o.kind==='door'?0:o.sill??750),hi:(level==='GROUND'?0:d.levels.first)+(o.head??2850)})))}))
+ const walls=envelope.map(w=>({...w,holes:(['GROUND','FIRST'] as const).flatMap(level=>revisionOpenings(level).filter(o=>o.wall===w.id&&Math.abs(o.centre-x)<o.width/2).map(o=>({id:o.id,kind:o.kind,lo:(level==='GROUND'?0:d.levels.first)+(o.kind==='door'?0:o.sill??750),hi:(level==='GROUND'?0:d.levels.first)+(o.head??2850)})))}))
  const partitions=(['GROUND','FIRST'] as const).flatMap(level=>d.partitions[level].filter(w=>w.a[1]===w.b[1]&&x>w.a[0]&&x<w.b[0]).map(w=>({id:w.id,at:w.a[1],base:level==='GROUND'?0:d.levels.first,door:revisionOpenings(level).some(o=>o.wall===w.id&&Math.abs(o.centre-x)<o.width/2)})))
  const floorRuns=court?[[e,c.y-e],[c.y+c.depth+e,d.shell-e]]:[[e,d.shell-e]]
  const voidCut=x>entryVoid.x&&x<entryVoid.x+entryVoid.width
@@ -193,7 +150,7 @@ export function layoutSectionAt(x:number){
  const storageDeckRuns=floorRuns.map(([a,b])=>[Math.max(a,1000),Math.min(b,d.shell-1000)]).map(([a,b],i)=>court?(i===0?[a,c.y-1000]:[c.y+c.depth+1000,b]):[a,b]).filter(([a,b])=>b>a)
  return {x,court,walls,partitions,floorRuns,firstFloorRuns,storageDeckRuns,voidCut}
 }
-export const roofHeight=(distance:number)=>ringRoofHeightAtDistance(roofHeightSource(),distance)
+export const roofHeight=(distance:number)=>design.roof.eaves+Math.min(distance,design.court.x-distance)*Math.tan(design.roof.upperPitchDeg*Math.PI/180)
 export const roofTop=()=>roofHeight(design.roof.ridgeInset)
 export function elevationSource(view:ElevationView){
  const config={FRONT:{wall:'outer-south',reverse:false,court:false},REAR:{wall:'outer-north',reverse:true,court:false},SERVICE:{wall:'outer-east',reverse:false,court:false},'COURT-ENTRY':{wall:'court-north',reverse:false,court:true},'COURT-WINDOWS':{wall:'court-south',reverse:true,court:true}}[view]
