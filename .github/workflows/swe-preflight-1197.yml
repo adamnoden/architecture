@@ -1,0 +1,57 @@
+# Temporary read-only native preflight for owner-directed SWE #1197 recovery.
+# This helper exists only on a disposal-bound branch, never on main.
+name: SWE four-packet publication preflight PR1197
+on:
+  push:
+    branches: [work/swe-preflight-1197]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out exact SWE integration branch
+        uses: actions/checkout@v5
+        with:
+          ref: work/swe-recovery-20261101
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Guard exact reviewed SWE head
+        shell: bash
+        run: test "$(git rev-parse HEAD)" = "80dde3b63f498e3dd812d643245bb440e36a704f"
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Four native current-main and exact-head ACO publication preflights
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm run control:merge-check -- SWE-CONTROL \
+            --lease-id 435def2d-ba6e-4dd6-adba-fc57174af361 \
+            --generation 2 \
+            --branch work/swe-recovery-20261101 \
+            --head 80dde3b63f498e3dd812d643245bb440e36a704f \
+            --format text
+          npm run control:merge-check -- SWE-PUBLICATION \
+            --lease-id 12d3282e-e86a-46d0-9169-e7bd3fa2bd6d \
+            --generation 2 \
+            --branch work/swe-recovery-20261101 \
+            --head 80dde3b63f498e3dd812d643245bb440e36a704f \
+            --format text
+          npm run control:merge-check -- SWE-AUTOMATION \
+            --lease-id 70980b2f-f5d8-457b-9446-00d50b648234 \
+            --generation 2 \
+            --branch work/swe-recovery-20261101 \
+            --head 80dde3b63f498e3dd812d643245bb440e36a704f \
+            --format text
+          npm run control:merge-check -- SWE-IDENTITY \
+            --lease-id 6f37c5d0-c6bb-4166-9980-c5c8b0f04151 \
+            --generation 2 \
+            --branch work/swe-recovery-20261101 \
+            --head 80dde3b63f498e3dd812d643245bb440e36a704f \
+            --format text

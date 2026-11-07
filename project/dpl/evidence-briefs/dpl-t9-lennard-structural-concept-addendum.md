@@ -5,8 +5,6 @@
 **Base structural brief:** `docs/reference-house/external-review-structural-rh11.md`  
 **Status:** addendum authored; **no engineer commissioned**
 
-**Historical-source applicability — 29 October 2026:** this unchanged Lennard candidate uses the predecessor 12 × 10.8 m house. The generic source path `docs/reference-house/external-review-structural-rh11.md` now contains current 12 × 12 m house questions and must not be substituted into this historical pack. Use the exact [retained pre-refresh brief](rh11-structural-pre-refresh.txt), path `project/dpl/evidence-briefs/rh11-structural-pre-refresh.txt`, observed at commit `c7d994a962be3d17d19ad85bd397f20d872d6817`, original Git blob `9ee85484ab6972a1063c4226c643f5bed146f8d8`. The text snapshot retains relative links in their original docs/reference-house context and is not a relocated live Markdown page. This identifies retained bytes, not the date of the original T9/T11 review preparation. The current-house brief and [EPR applicability](../../epr/current-house-review-applicability.md) require their own candidate/site reconciliation before any new issue. No review has been commissioned or returned by this archive correction.
-
 ## Purpose
 
 Do not create a second generic structural brief. RH-11 already asks the competent structural-engineer red-team question for the controlled Reference House and explicitly withholds any structural-adequacy claim.

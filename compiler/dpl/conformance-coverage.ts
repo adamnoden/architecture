@@ -1,6 +1,6 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 
 export const DPL02C_COVERAGE_SCHEMA_VERSION = 'dpl.conformanceCoverageRegistry.v1' as const
 
@@ -159,13 +159,13 @@ const expectStringArray = (value: unknown, label: string): readonly string[] => 
 
 const canonicalEntry = (entry: ConformanceCoverageEntry): ConformanceCoverageEntry => ({
   ...entry,
-  ownerRefs: [...new Set(entry.ownerRefs)].sort((a, b) => compareDplIdentityStrings(a, b))
+  ownerRefs: [...new Set(entry.ownerRefs)].sort((a, b) => a.localeCompare(b))
 })
 
 const canonicalRegistry = (registry: ConformanceCoverageRegistry): ConformanceCoverageRegistry => ({
   ...registry,
-  nonClauseCategories: [...registry.nonClauseCategories].sort((a, b) => compareDplIdentityStrings(a.id, b.id)),
-  entries: [...registry.entries].map(canonicalEntry).sort((a, b) => compareDplIdentityStrings(a.id, b.id))
+  nonClauseCategories: [...registry.nonClauseCategories].sort((a, b) => a.id.localeCompare(b.id)),
+  entries: [...registry.entries].map(canonicalEntry).sort((a, b) => a.id.localeCompare(b.id))
 })
 
 const validateRegistry = (value: unknown, path: string): ConformanceCoverageRegistry => {
@@ -280,7 +280,7 @@ const validateRegistry = (value: unknown, path: string): ConformanceCoverageRegi
 }
 
 const authorityFingerprint = (path: string): string =>
-  sha256DplSemanticFingerprint({ path, content: readText(path) })
+  sha256SemanticFingerprint({ path, content: readText(path) })
 
 export const loadConformanceCoverageRegistry = (
   path = registryPath
@@ -288,7 +288,7 @@ export const loadConformanceCoverageRegistry = (
   const registry = validateRegistry(readJson(path), path)
   return {
     registry,
-    fingerprint: sha256DplSemanticFingerprint(registry),
+    fingerprint: sha256SemanticFingerprint(registry),
     authorityFingerprint: authorityFingerprint(registry.authoritySource)
   }
 }
@@ -297,7 +297,7 @@ export const nativeConformanceCoverageIds = (registry: ConformanceCoverageRegist
   registry.entries
     .filter((entry) => entry.executableStatus === 'NATIVE' || entry.executableStatus === 'NATIVE_ROUTE')
     .map((entry) => entry.id)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
 
 export const unresolvedPositiveConformanceBlockers = (
   registry: ConformanceCoverageRegistry
@@ -305,4 +305,4 @@ export const unresolvedPositiveConformanceBlockers = (
   registry.entries
     .filter((entry) => entry.unresolvedBlocksPositiveConformance)
     .map((entry) => entry.id)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
