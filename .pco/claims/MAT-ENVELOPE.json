@@ -9,8 +9,8 @@
     "label": "rush-closeout-mat-20261107"
   },
   "claimedAt": "2026-11-07T09:14:47.968Z",
-  "heartbeatAt": "2026-11-07T09:14:47.968Z",
-  "expiresAt": "2026-11-07T09:59:47.968Z",
+  "heartbeatAt": "2026-11-07T09:16:32.075Z",
+  "expiresAt": "2026-11-07T10:01:32.075Z",
   "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "11e00270-b80a-4364-a2a5-a6e35810130e",
@@ -33,5 +33,10 @@
       "next": "Locate the continuous outer and court boundary and connected ventilation and drainage sections within this same floor case, then review bounded evidence and exact-head validation.",
       "blocker": "Actual site, batch, cure, full perimeter and RC interfaces, opening cuts and installed air and moisture performance remain unqualified."
     }
+  },
+  "pr": 1374,
+  "checkpoint": {
+    "evidence": "Recovered frozen head 87d31e3c on successor PR #1374. The predecessor #1371 passed 14 workflows; current g29 locally reproduces floor, batch, D1800 and finite air duty.",
+    "next": "Reconcile IAS changes when merged, verify compound ancestry, all exact-current-head CI, root review and fresh publication preflight."
   }
 }
