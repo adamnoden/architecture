@@ -9,9 +9,9 @@
     "label": "zerg-str-1917"
   },
   "claimedAt": "2026-11-06T19:17:42.359Z",
-  "heartbeatAt": "2026-11-07T00:19:00.614Z",
-  "expiresAt": "2026-11-07T01:49:00.614Z",
-  "branch": "work/zerg-20261106-str-arch4",
+  "heartbeatAt": "2026-11-07T00:21:32.571Z",
+  "expiresAt": "2026-11-07T01:51:32.571Z",
+  "branch": "work/zerg-20261107-str-house5",
   "predecessor": {
     "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
     "generation": 26,
@@ -34,9 +34,9 @@
       "blocker": "Coordinatoractualexecutionlimit; sourcefullydurable; STR-HOUSE remainsopen. No externaladmission/completionclaimed."
     }
   },
-  "pr": 1362,
+  "pr": 1366,
   "checkpoint": {
-    "evidence": "Verified merged research PR 1362. Substantive 52-head successor prepared on b5cff93b.",
-    "next": "Publish the conserved 52-head wind checkpoint then bind the fresh successor draft and complete gravity and weak-axis joins."
+    "evidence": "PR 1366 at a0d2b7c7. Signed wind transfer from all eight arch frames into 52 heads on b5cff93b is committed and reproduced, including first moments and yaw.",
+    "next": "Join absolute arch, ceiling, outward foot and fixture gravity, then normal wind and actual roof and guard terminals."
   }
 }
