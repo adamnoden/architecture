@@ -9,9 +9,9 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-07T01:12:03.195Z",
-  "expiresAt": "2026-11-07T02:42:03.195Z",
-  "branch": "work/zerg-20261106-rwt06-native-release",
+  "heartbeatAt": "2026-11-07T01:17:36.660Z",
+  "expiresAt": "2026-11-07T02:47:36.660Z",
+  "branch": "work/zerg-20261107-rwt06-upper-first",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
     "generation": 52,
@@ -36,7 +36,7 @@
   },
   "pr": 1359,
   "checkpoint": {
-    "evidence": "FINAL1359 head710d5caa/tree8fb06747 currentmain48c991 consumed.166RWT PASS; full exactCI42322634473 running.1536partial-waterCG[8129.404,11511.816], nominal/revisable88.184reserve; oldwet-only generalbound rejected. All a7 geometry unchanged. No adoption.",
-    "next": "Root exact source review, finalCI and fresh canonical preflight then bounded integration. Rebind fresh successor for scratch upper-first axis815/native-end/support/crew control; do not fold scratch or claim whole-method/RWT06 completion."
+    "evidence": "1359 MERGED b0d3102d from710d5caa:166RWT/fullCI2659/rootreview/freshpreflight. Currentmain b0d3102d and HAD089f0 verified. Fresh successor branch starts exact mergedmain; no source edits yet.1359 PR metadata retained as integrated provenance until new draft exists.",
+    "next": "Own ONE upper-first bent-spool release: permanently axis815, captured upperpan/flange lift; actual seam/seat, full78kg upperassembly yaw/export, native-end collar/positive lock/rail/support/crew and corrected independent-waterCG. Create/bind successor draft at first coherent source; no handling/adoption/RWT06 completion."
   }
 }
