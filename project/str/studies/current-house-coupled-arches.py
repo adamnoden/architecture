@@ -310,6 +310,7 @@ fac = p['fac']
 # Compare the mapped positive lower bearings and a stripped two-end span.
 # Both are research bounds on the floor edge, with interior rotation free.
 floor_cases = []
+floor_unit_reactions = {}
 for endsOnly in [False, True]:
     V = [[0.0] * N for i in range(N)]
     mxspan = {}
@@ -338,6 +339,10 @@ for endsOnly in [False, True]:
                 force[2 * loc + d] += c
             for l, x in zip(free, SL([force[i] for i in free])):
                 vals[l] = x
+            for node,station in enumerate(coords):
+                if station in fixs:
+                    point=(station,line) if k==0 else (line,station)
+                    floor_unit_reactions[endsOnly,j,point]=dot(K[2*node],vals)-force[2*node]
             for i in js:
                 V[i][j] = sum((c * vals[2 * coords.index(modes[i][1][k]) + d] for d, c in modes[i][7]))
         mxspan[face] = max((r - l for l, r in zip(fixs, fixs[1:])))
@@ -465,6 +470,15 @@ for cr in [0.2, 0.35]:
         worst_window=[-1,None]
         max_tilt=0.
         data_options={}
+        # Expose the signed forces at each end to the separately owned whole-
+        # house calculation. The calm case removes arch self-weight from a
+        # pure wind increment; it never enters the window service envelopes.
+        if 'arch_observer' in globals():
+            calm=([0,0],[0.]*nd,{},dict.fromkeys(corner_keys,[0.]*4),[0,0])
+            self_load=subframe(z6,cr,0,[0,0])[1]*8
+            disp=slv([-v for v in mul(coupled_flexibility,self_load)])
+            reactions=sum((subframe(disp[6*a:6*a+6],cr,0,[0,0])[1] for a in range(8)),[])
+            arch_observer(globals(),calm,-1,reactions,cr,vi,False)
         for wi, case in enumerate(updated_wind):
             baseq = []
             field = m['recover'](case[1][-8:], p['floorLoadCases'][id(case[1])])[0]
@@ -496,6 +510,8 @@ for cr in [0.2, 0.35]:
                         mmax[j] = max(mmax[j], M)
                         demands[j].append((M, -N0))
                         shmax = max(shmax, V0)
+                if 'arch_observer' in globals():
+                    arch_observer(globals(),case,wi,r,cr,vi,bool(al))
                 for a,local in enumerate(local_states):
                     options,tilt=window_fit(a,case,r,local)
                     for datum,(gap,surface) in options.items():

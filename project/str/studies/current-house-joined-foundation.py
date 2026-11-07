@@ -193,7 +193,7 @@ def direct(k):
             for i,n in enumerate(orig[c,k]):o[i]+=n
     return d,o
 D0={k:direct(k) for k in ['G','Q','U','retainedMin']}
-def realState(factors,windIdx=None):
+def realState(factors,windIdx=None,addedPads=None,addedPierMoments=None):
     # Compatibility model remains a lower bound static proposal: first use
     # real short spans, remove each passive tension reaction and carry its
     # residual along the continuous edge to two captive corners. This
@@ -209,6 +209,13 @@ def realState(factors,windIdx=None):
                 p=tuple(q['xy']);n=q['n'];ns=routes([(virtual(p),p,1.)])
                 for hd,t,x,y in ns:inc(d,hd,(n*t,n*x,n*y))
                 for j,v in enumerate([n,n*p[0]/1000,n*p[1]/1000]):o[j]+=v
+    # New owner studies may provide simultaneous signed changes at actual
+    # floor bearings and pier base couples. Apply pad changes BEFORE passive
+    # bearings lift or a court tie moves the action onto its existing shaft.
+    for pad,force in (addedPads or {}).items():
+        assert pad in loPads
+        d[pad][0]+=force
+        for j,val in enumerate([force,force*pad[0]/1000,force*pad[1]/1000]):o[j]+=val
     falling=[]
     for p in loPads-caps:
         r=d[p]
@@ -249,6 +256,14 @@ def realState(factors,windIdx=None):
                 sg=1 if p[j]==A else -1;pp=list(p);pp[j]+=860*sg;n=m/4/(.86*sg)
                 ground[GD[tuple(pp)]][0]+=n;ground[GD[p]][0]-=n
             o[j+1]+=m
+    for corner,moments in (addedPierMoments or {}).items():
+        assert corner in plane['corners']
+        for axis,sign in enumerate([1 if coordinate==A else -1 for coordinate in corner]):
+            end=list(corner);end[axis]+=sign*860
+            pair=moments[axis]/(.86*sign)
+            ground[old['coord'][tuple(end)]][0]+=pair
+            ground[old['coord'][corner]][0]-=pair
+            o[axis+1]+=moments[axis]
     check=[sum(v[0] for v in ground.values()),*[sum(v[0]*xy(k)[j]/1000+v[j+1] for k,v in ground.items()) for j in range(2)]]
     assert max(abs(a-b) for a,b in zip(check,o))<.005,(check,o)
     return ground,pads,falling,check
@@ -311,11 +326,13 @@ if __name__=='__main__':
 # Ground-plane horizontal force follows the four named pier groups. Spread
 # shear equally in each three-shaft group, adding a tangential couple to
 # recover the actual pier-axis location rather than shifting yaw to its centroid.
-def horizontal(wi):
+def horizontal(wi,addedShears=None):
     V={k:[0.,0.] for k in heads};g={p:[0.,0.] for p in plane['corners']}
     ax,_,_,cs,_=plane['actual'][wi]
     for p,rs in cs.items():
         for j in [0,1]:g[p][j]+=(rs[j]+rs[j+2])/1000
+    for corner,increment in (addedShears or {}).items():
+        for axis in [0,1]:g[corner][axis]+=increment[axis]
     for j,cc in enumerate(ax):
         if not cc:continue
         mode=(cc-1)%3;s=1 if cc<4 else -1
