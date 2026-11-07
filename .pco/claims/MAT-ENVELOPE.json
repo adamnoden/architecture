@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 28,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "11e00270-b80a-4364-a2a5-a6e35810130e",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-07T02:43:59.705Z",
-  "expiresAt": "2026-11-07T04:13:59.705Z",
+  "heartbeatAt": "2026-11-07T03:06:01.000Z",
+  "expiresAt": "2026-11-07T03:06:01.000Z",
   "checkpoint": {
     "evidence": "Draft 1371 source 748be1ef, tree 8d76f713, reconciles actual main f8c11317. Continuous RC200 pour, horizontal -380 interface, bonded mineral DPC and one finite floor-family budget reproduce. Zero-air mix sensitivity exceeds the structural density control. No physical admission.",
     "next": "Locate the continuous outer and court boundary and connected ventilation and drainage sections within this same floor case, then review bounded evidence and exact-head validation.",
@@ -39,5 +39,7 @@
       "blocker": "STR confirms complete support/headlist and signed domains are not yet allocated; do not extrapolate12 cornerpoints. Sharedgrid bulk-water/weather enclosure and actual capillary-floor ownership remain unresolved. No assembly admission or selection."
     }
   },
-  "pr": 1371
+  "pr": 1371,
+  "releasedAt": "2026-11-07T03:06:01.000Z",
+  "releaseReason": "handoff"
 }
