@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 24,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3bcdc7ab-5d9d-4153-b3cc-2a65a3943d2a",
   "holder": {
     "kind": "chatgpt",
     "label": "rush-closeout-ias"
   },
   "claimedAt": "2026-11-07T09:15:01.126Z",
-  "heartbeatAt": "2026-11-07T09:39:12.757Z",
-  "expiresAt": "2026-11-07T11:09:12.757Z",
+  "heartbeatAt": "2026-11-07T09:39:33.538Z",
+  "expiresAt": "2026-11-07T09:39:33.538Z",
   "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "243df4cc-2336-4946-b926-bfa82a32cfc7",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged PR #1374 a0896ad683e8969169e41cf8c3c0395ec4a4e9c4. IAS predecessor #1372 and recovery #1375 both merged; 14 exact-head workflows, utility producers and coordinator review passed.",
     "next": "IAS-03 remains open: establish actual complete sink/trap/services cutover and supported receipt before the verified bare-frame first rest, then handling/export/return."
-  }
+  },
+  "releasedAt": "2026-11-07T09:39:33.538Z",
+  "releaseReason": "handoff"
 }
