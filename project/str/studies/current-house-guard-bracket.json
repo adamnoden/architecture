@@ -1,0 +1,414 @@
+{
+  "access": {
+    "M12NominalRadialPositionAllowance": 4,
+    "after1p5EachForManufactureAndGuidedDraw": 1,
+    "commonBoxesXMinMaxQMinMaxZMinMax": [
+      [
+        1290,
+        1387.5,
+        -30,
+        0,
+        5430,
+        5570
+      ],
+      [
+        2212.5,
+        2310,
+        -30,
+        0,
+        5430,
+        5570
+      ]
+    ],
+    "control": "Both guard screws and four front nuts on one side need release. Capture/hoist and the independent barrier must stay in place. The new box clears the guard by 130 throughout its own outward draw; the two original collar contacts are separate. The new front/rear covers and droplet collars, socket/hand/crew access, insertion tolerance and the complete 1640 mm frame removal still require a matched renewal event.",
+    "fixedStudProtrusion40ClearAfter100": 60,
+    "newBoxMinimumDistanceToGuardDuringStraight100": 130,
+    "newFourHoles": 20,
+    "rearPlatePocketProjection": 6,
+    "washerBearingPressureMPa": 14.811481718895855,
+    "washerToPlateEdgeAfter1p5": 1.5,
+    "washersOutsideDiameter": 34
+  },
+  "admitted": false,
+  "cases": [
+    {
+      "commonArmVM": 80.99276822591915,
+      "individualRowStudForces": [
+        -24.580492279411764,
+        33.94448933823529,
+        29.81456007352941,
+        -41.17248772058823
+      ],
+      "onePlateStudForces": [
+        7.797515073529411,
+        1.5664819852941174,
+        -2.5634472794117644,
+        -8.794480367647058
+      ],
+      "pointSign": -1,
+      "pointX": 1360,
+      "side": "near",
+      "windSign": -1
+    },
+    {
+      "commonArmVM": 21.100307342820347,
+      "individualRowStudForces": [
+        -4.898451838235294,
+        3.5471547794117644,
+        3.299865220588235,
+        -2.3895575735294114
+      ],
+      "onePlateStudForces": [
+        -1.3646944852941174,
+        0.01339742647058817,
+        -0.23389213235294115,
+        1.1441997794117644
+      ],
+      "pointSign": -1,
+      "pointX": 1360,
+      "side": "opposite",
+      "windSign": -1
+    },
+    {
+      "commonArmVM": 90.0136866865248,
+      "individualRowStudForces": [
+        -30.715904779411755,
+        42.41720183823528,
+        33.495807573529405,
+        -46.25611522058822
+      ],
+      "onePlateStudForces": [
+        7.505352573529411,
+        4.195944485294117,
+        -4.725449779411765,
+        -8.034857867647059
+      ],
+      "pointSign": -1,
+      "pointX": 1360,
+      "side": "near",
+      "windSign": 1
+    },
+    {
+      "commonArmVM": 18.92496209510042,
+      "individualRowStudForces": [
+        3.574260661764705,
+        -2.588257720588235,
+        -1.783762279411764,
+        1.2916899264705877
+      ],
+      "onePlateStudForces": [
+        1.2647680147058822,
+        -0.2787650735294118,
+        0.5257303676470588,
+        -1.0178027205882352
+      ],
+      "pointSign": -1,
+      "pointX": 1360,
+      "side": "opposite",
+      "windSign": 1
+    },
+    {
+      "commonArmVM": 90.0136866865248,
+      "individualRowStudForces": [
+        30.715904779411755,
+        -42.41720183823528,
+        -33.495807573529405,
+        46.25611522058822
+      ],
+      "onePlateStudForces": [
+        -7.505352573529411,
+        -4.195944485294117,
+        4.725449779411765,
+        8.034857867647059
+      ],
+      "pointSign": 1,
+      "pointX": 1360,
+      "side": "near",
+      "windSign": -1
+    },
+    {
+      "commonArmVM": 18.92496209510042,
+      "individualRowStudForces": [
+        -3.574260661764705,
+        2.588257720588235,
+        1.783762279411764,
+        -1.2916899264705877
+      ],
+      "onePlateStudForces": [
+        -1.2647680147058822,
+        0.2787650735294118,
+        -0.5257303676470588,
+        1.0178027205882352
+      ],
+      "pointSign": 1,
+      "pointX": 1360,
+      "side": "opposite",
+      "windSign": -1
+    },
+    {
+      "commonArmVM": 80.99276822591915,
+      "individualRowStudForces": [
+        24.580492279411764,
+        -33.94448933823529,
+        -29.81456007352941,
+        41.17248772058823
+      ],
+      "onePlateStudForces": [
+        -7.797515073529411,
+        -1.5664819852941174,
+        2.5634472794117644,
+        8.794480367647058
+      ],
+      "pointSign": 1,
+      "pointX": 1360,
+      "side": "near",
+      "windSign": 1
+    },
+    {
+      "commonArmVM": 21.100307342820347,
+      "individualRowStudForces": [
+        4.898451838235294,
+        -3.5471547794117644,
+        -3.299865220588235,
+        2.3895575735294114
+      ],
+      "onePlateStudForces": [
+        1.3646944852941174,
+        -0.01339742647058817,
+        0.23389213235294115,
+        -1.1441997794117644
+      ],
+      "pointSign": 1,
+      "pointX": 1360,
+      "side": "opposite",
+      "windSign": 1
+    },
+    {
+      "commonArmVM": 21.100307342820344,
+      "individualRowStudForces": [
+        3.547154779411762,
+        -4.898451838235291,
+        -2.3895575735294092,
+        3.2998652205882317
+      ],
+      "onePlateStudForces": [
+        0.013397426470588725,
+        -1.3646944852941174,
+        1.1441997794117644,
+        -0.2338921323529417
+      ],
+      "pointSign": -1,
+      "pointX": 2240,
+      "side": "near",
+      "windSign": -1
+    },
+    {
+      "commonArmVM": 80.99276822591915,
+      "individualRowStudForces": [
+        33.94448933823529,
+        -24.580492279411764,
+        -41.17248772058823,
+        29.81456007352941
+      ],
+      "onePlateStudForces": [
+        1.5664819852941174,
+        7.797515073529411,
+        -8.794480367647058,
+        -2.5634472794117644
+      ],
+      "pointSign": -1,
+      "pointX": 2240,
+      "side": "opposite",
+      "windSign": -1
+    },
+    {
+      "commonArmVM": 18.924962095100426,
+      "individualRowStudForces": [
+        -2.5882577205882367,
+        3.5742606617647077,
+        1.2916899264705897,
+        -1.7837622794117667
+      ],
+      "onePlateStudForces": [
+        -0.2787650735294113,
+        1.2647680147058824,
+        -1.0178027205882354,
+        0.5257303676470584
+      ],
+      "pointSign": -1,
+      "pointX": 2240,
+      "side": "near",
+      "windSign": 1
+    },
+    {
+      "commonArmVM": 90.0136866865248,
+      "individualRowStudForces": [
+        42.41720183823528,
+        -30.715904779411755,
+        -46.25611522058822,
+        33.495807573529405
+      ],
+      "onePlateStudForces": [
+        4.195944485294117,
+        7.505352573529411,
+        -8.034857867647059,
+        -4.725449779411765
+      ],
+      "pointSign": -1,
+      "pointX": 2240,
+      "side": "opposite",
+      "windSign": 1
+    },
+    {
+      "commonArmVM": 18.924962095100426,
+      "individualRowStudForces": [
+        2.5882577205882367,
+        -3.5742606617647077,
+        -1.2916899264705897,
+        1.7837622794117667
+      ],
+      "onePlateStudForces": [
+        0.2787650735294113,
+        -1.2647680147058824,
+        1.0178027205882354,
+        -0.5257303676470584
+      ],
+      "pointSign": 1,
+      "pointX": 2240,
+      "side": "near",
+      "windSign": -1
+    },
+    {
+      "commonArmVM": 90.0136866865248,
+      "individualRowStudForces": [
+        -42.41720183823528,
+        30.715904779411755,
+        46.25611522058822,
+        -33.495807573529405
+      ],
+      "onePlateStudForces": [
+        -4.195944485294117,
+        -7.505352573529411,
+        8.034857867647059,
+        4.725449779411765
+      ],
+      "pointSign": 1,
+      "pointX": 2240,
+      "side": "opposite",
+      "windSign": -1
+    },
+    {
+      "commonArmVM": 21.100307342820344,
+      "individualRowStudForces": [
+        -3.547154779411762,
+        4.898451838235291,
+        2.3895575735294092,
+        -3.2998652205882317
+      ],
+      "onePlateStudForces": [
+        -0.013397426470588725,
+        1.3646944852941174,
+        -1.1441997794117644,
+        0.2338921323529417
+      ],
+      "pointSign": 1,
+      "pointX": 2240,
+      "side": "near",
+      "windSign": 1
+    },
+    {
+      "commonArmVM": 80.99276822591915,
+      "individualRowStudForces": [
+        -33.94448933823529,
+        24.580492279411764,
+        41.17248772058823,
+        -29.81456007352941
+      ],
+      "onePlateStudForces": [
+        -1.5664819852941174,
+        -7.797515073529411,
+        8.794480367647058,
+        2.5634472794117644
+      ],
+      "pointSign": 1,
+      "pointX": 2240,
+      "side": "opposite",
+      "windSign": 1
+    }
+  ],
+  "massPerWindowKg": {
+    "exteriorCoreBearingPlates": 4.032,
+    "fixedFrontPlates": 9.792,
+    "four40Tubes": 3.7296,
+    "fourThroughM16": 2.8631218807755934,
+    "insideRearPlates": 2.56,
+    "movingPlates": 7.68,
+    "nativeCollarsSolidUpper": 3.1999999999999997,
+    "newClosedArms": 2.02176,
+    "remainingIn40Allowance": 4.121518119224405,
+    "subtotal": 35.878481880775595,
+    "unpriced": "Studs, nuts, washers, welds, end caps, water collars and pocket covers."
+  },
+  "new": {
+    "armNormalHeightWall": [
+      30,
+      140,
+      4
+    ],
+    "comparisonLimitMPa": 181.8181818181818,
+    "fixedFrontPlateThickness": 24,
+    "fixedFrontPlateX": [
+      [
+        1170,
+        1295
+      ],
+      [
+        2305,
+        2435
+      ]
+    ],
+    "fixedTubeThroughboltPeakKN": 9.265792689075628,
+    "formedSleeves": [
+      {
+        "H16Clear": 29.882352941176578,
+        "H16ClearAfterTwo5": 19.882352941176578,
+        "linkClearAfterTwo5": 22.0,
+        "linkPitchPhase": [
+          150,
+          80
+        ],
+        "side": "near",
+        "sleeveOD": 26
+      },
+      {
+        "H16Clear": 24.882352941176578,
+        "H16ClearAfterTwo5": 14.882352941176578,
+        "linkClearAfterTwo5": 6.5,
+        "linkPitchPhase": [
+          75,
+          62.5
+        ],
+        "side": "opposite",
+        "sleeveOD": 26
+      }
+    ],
+    "frontPlateStripStressMPa": 171.76719468060662,
+    "max3ThroatWeldVMMpa": 120.01824891536641,
+    "maxArmVMMpa": 90.0136866865248,
+    "maximumArmTorsionKNm": 1.3290282352941174,
+    "maximumStudKN": 8.794480367647058,
+    "movingPlate": [
+      80,
+      200,
+      30
+    ],
+    "movingPlateStripStressMPa": 97.46893841911763
+  },
+  "original": {
+    "M12ProofComparisonKN": 40.464,
+    "individual20SquareArmStressMPa": 813.4696124999998,
+    "reference": "The old 95 mm/twin-leaf/AXA hardware and corresponding guard are rejected as a complete OAS system. Their locations define a test of this new proposal.",
+    "worstSingleStudKN": 46.25611522058822
+  },
+  "role": "Proposed replacement interface for a rejected OAS guard control. The upper and lower collar are carried on a single common bracket per jamb. Positive support and an independent temporary barrier must precede disconnection."
+}

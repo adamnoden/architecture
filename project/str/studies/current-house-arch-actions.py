@@ -17,10 +17,11 @@ sys.argv=[args[0],'--check']
 foundation=runpy.run_path(str(D/'current-house-joined-foundation.py'))
 calm={}; envelopes={}; largest_error=0.; roof_change=0.; foot_offset_moment=0.
 critical={}; states=0
+gravity={};calm_full={};gravity_balance={}; gravity_global={}
 
 def observe(s,case,wind_index,reactions,crack,bearing,ceiling):
     global largest_error,roof_change,foot_offset_moment,states
-    if ceiling:return
+    if ceiling and wind_index>=0:return
     controls=(crack,bearing)
     # The frame exerts the opposite of the support reactions. Reconstruct
     # the new solution at every original roof and floor degree of freedom.
@@ -58,6 +59,14 @@ def observe(s,case,wind_index,reactions,crack,bearing,ceiling):
     for (two_ends,i,pad),influence in s['floor_unit_reactions'].items():
         if two_ends==bool(bearing):loads[pad]-=reactions[i]*influence/1000
     if wind_index<0:
+        if ceiling:
+            if not gravity:gravity.update(runpy.run_path(str(D/'arch-gravity-routing.py'))['build'](s,foundation))
+            full_load=[sum(loads.values()),*[sum(p[j]*n/1000 for p,n in loads.items())+sum(v[j] for v in pier_moments.values()) for j in [0,1]]]
+            residual=[x-y for x,y in zip(full_load,gravity['frameExternalULS'])]
+            assert max(map(abs,residual))<.001,(controls,residual,full_load,gravity['frameExternalULS'])
+            gravity_balance[str(controls)]=residual
+            calm_full[controls]=(dict(loads),pier_moments,pier_shears)
+            return
         calm[controls]=(dict(loads),pier_moments,roof,far_vertical,pier_shears)
         return
     states+=1
@@ -91,14 +100,26 @@ def observe(s,case,wind_index,reactions,crack,bearing,ceiling):
     assert max(abs(x-y) for x,y in zip(external,previous_external))<.001
     for name,factors in [('suction',{'U':1}),('retained',{'retainedMin':1,'U':1}),('gravity',{'G':1.35,'Q':1.5})]:
         key=f'{crack:.2f}/'+('two-ends' if bearing else 'mapped-pads')+'/'+name
-        ground=foundation['realState'](factors,wind_index,added,moment)[0]
+        bearing_delta=added
+        pier_delta=moment
+        extra_routed=None
+        case_shear=head_shears
+        if name=='gravity':
+            absolute,absolute_moment,absolute_shear=calm_full[controls]
+            bearing_delta={p:n+absolute.get(p,0.) for p,n in added.items()}
+            pier_delta={p:[x+y for x,y in zip(v,absolute_moment[p])] for p,v in moment.items()}
+            extra_routed=gravity['book']
+            case_shear,fxy=foundation['horizontal'](wind_index,{p:[x+y for x,y in zip(v,absolute_shear[p])] for p,v in shear.items()})
+            assert max(abs(x-y) for x,y in zip(fxy,previous_external))<.001
+        ground,pads,lifted,global_action=foundation['realState'](factors,wind_index,bearing_delta,pier_delta,extra_routed)
+        if name=='gravity':gravity_global[key]=global_action[0]
         previous=foundation['realState'](factors,wind_index)[0]
         table=envelopes.setdefault(key,{})
         for head in foundation['heads']:
             actions=ground[head]
             n=actions[0];delta=n-previous[head][0]
             row=table.setdefault(head,{'compressionRange':[n,n],'windIndexAtEnds':[wind_index,wind_index],'largestSignedChange':delta,'windIndexAtChange':wind_index})
-            full=[*actions,*head_shears[head]]
+            full=[*actions,*case_shear[head]]
             ranges=row.setdefault('signedComponentRanges',[[x,x] for x in full])
             for pair,x in zip(ranges,full):pair[0]=min(pair[0],x);pair[1]=max(pair[1],x)
             for limit,worse in [(0,n<row['compressionRange'][0]),(1,n>row['compressionRange'][1])]:
@@ -109,11 +130,11 @@ def observe(s,case,wind_index,reactions,crack,bearing,ceiling):
 runpy.run_path(str(D/'current-house-coupled-arches.py'),init_globals={'arch_observer':observe})
 sys.argv=args
 assert states==4*96 and all(len(table)==52 for table in envelopes.values()),(states,{k:len(v) for k,v in envelopes.items()})
-result={'role':'Wind redistribution through the proposed eight in-plane arch/jamb frames. The vertical gravity quantities, moving guard, façade-normal bending/torsion, and soil response remain distinct from this wind update.',
+result={'role':'Wind redistribution through the proposed eight in-plane arch/jamb frames. Real inner opening masses and routed ceiling/arch gravity are joined once on the maximum-G branch. Installed guard/window/steel masses use explicit upper budgets. Façade-normal bending, lower external masonry geometry and soil response remain separate.',
         'componentOrder':['N','Cx','Cy','Vx','Vy'],'units':'N columns positive compression in kN; first moments about physical global X and Y in kNm.',
         'states':states,'sourceCase':'Four integration stiffness/bearing states, 96 directional wind cases each. The previous suction, retained-shell and maximum-G/Q forces are combined separately with the new wind; do not add independently governing head minima/maxima.',
         'maximumResidualForceOrFirstMoment':largest_error,'maximumChangeAtRoofStationKN':roof_change,'maxWindMomentFromJambFootCentroidOffsetKNm':foot_offset_moment,
-        'maximumHeadChanges':critical,'heads':envelopes,'sources':{f:hashlib.sha256((D/f).read_bytes()).hexdigest() for f in ['current-house-coupled-arches.py','current-house-joined-foundation.py','current-house-arch-detail.json']},'admitted':False}
+        'gravityReplacement':{k:v for k,v in gravity.items() if k!='book'},'calmFrameIndependentlyRecoveredResiduals':gravity_balance,'maxGravityNetKNByControl':gravity_global,'maximumHeadChanges':critical,'heads':envelopes,'sources':{f:hashlib.sha256((D/f).read_bytes()).hexdigest() for f in ['current-house-coupled-arches.py','current-house-joined-foundation.py','current-house-arch-detail.json','arch-gravity-routing.py']},'admitted':False}
 output=Path(__file__).with_suffix('.json');text=json.dumps(result,indent=2,sort_keys=True)+'\n'
 if '--check' in sys.argv:assert output.read_text()==text
 else:output.write_text(text)

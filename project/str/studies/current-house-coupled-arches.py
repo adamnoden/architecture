@@ -475,10 +475,12 @@ for cr in [0.2, 0.35]:
         # pure wind increment; it never enters the window service envelopes.
         if 'arch_observer' in globals():
             calm=([0,0],[0.]*nd,{},dict.fromkeys(corner_keys,[0.]*4),[0,0])
-            self_load=subframe(z6,cr,0,[0,0])[1]*8
-            disp=slv([-v for v in mul(coupled_flexibility,self_load)])
-            reactions=sum((subframe(disp[6*a:6*a+6],cr,0,[0,0])[1] for a in range(8)),[])
-            arch_observer(globals(),calm,-1,reactions,cr,vi,False)
+            for installed_ceiling in [False,True]:
+                actions=[(lambda x,ar=i:ceiling_actions[ar][x]) if installed_ceiling else 0 for i in range(8)]
+                fixed_load=sum((subframe(z6,cr,a,[0,0])[1] for a in actions),[])
+                disp=slv([-v for v in mul(coupled_flexibility,fixed_load)])
+                reactions=sum((subframe(disp[6*a:6*a+6],cr,actions[a],[0,0])[1] for a in range(8)),[])
+                arch_observer(globals(),calm,-1,reactions,cr,vi,installed_ceiling)
         for wi, case in enumerate(updated_wind):
             baseq = []
             field = m['recover'](case[1][-8:], p['floorLoadCases'][id(case[1])])[0]

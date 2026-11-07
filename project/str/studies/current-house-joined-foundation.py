@@ -193,7 +193,7 @@ def direct(k):
             for i,n in enumerate(orig[c,k]):o[i]+=n
     return d,o
 D0={k:direct(k) for k in ['G','Q','U','retainedMin']}
-def realState(factors,windIdx=None,addedPads=None,addedPierMoments=None):
+def realState(factors,windIdx=None,addedPads=None,addedPierMoments=None,addedRoutedActions=None):
     # Compatibility model remains a lower bound static proposal: first use
     # real short spans, remove each passive tension reaction and carry its
     # residual along the continuous edge to two captive corners. This
@@ -216,6 +216,10 @@ def realState(factors,windIdx=None,addedPads=None,addedPierMoments=None):
         assert pad in loPads
         d[pad][0]+=force
         for j,val in enumerate([force,force*pad[0]/1000,force*pad[1]/1000]):o[j]+=val
+    for receiver,actions in (addedRoutedActions or {}).items():
+        assert receiver in loPads or receiver in heads
+        inc(d,receiver,actions);point=xy(receiver);o[0]+=actions[0]
+        for axis in [0,1]:o[axis+1]+=actions[0]*point[axis]/1000+actions[axis+1]
     falling=[]
     for p in loPads-caps:
         r=d[p]
