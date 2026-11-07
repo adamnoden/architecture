@@ -9,8 +9,8 @@
     "label": "rush-closeout-rwt"
   },
   "claimedAt": "2026-11-07T09:14:23.048Z",
-  "heartbeatAt": "2026-11-07T09:14:23.048Z",
-  "expiresAt": "2026-11-07T09:59:23.048Z",
+  "heartbeatAt": "2026-11-07T09:20:18.464Z",
+  "expiresAt": "2026-11-07T11:20:18.464Z",
   "branch": "work/rush-closeout-rwt06",
   "predecessor": {
     "leaseId": "5af3c2b0-5818-45f0-b3cb-45f3de0596ac",
@@ -31,5 +31,9 @@
       "evidence": "Draft 1370 exact a4783cef855562471d39a3ec638c88eb2badf8a9. 173 RWT tests green and changed sheet inspected. Stock upper handler and lowered track limitations are reproducible.",
       "next": "Bound actual positive lock angular play, capture and support for the same fixed-height native spool. Retain upper handling, structural and site holds."
     }
+  },
+  "checkpoint": {
+    "evidence": "Frozen successor 81c13808, tree 9ff342d0. Reconstructed 9333 bounded controls recover the three recorded bridge reserves, pin action, cap stiffness and stock hook height. Default 710 producer verified; changed figure inspected.",
+    "next": "Run and inspect 174 RWT tests, exact combined integration CI and canonical preflight. Keep RWT-06 started until its remaining finite exit duties are met."
   }
 }
