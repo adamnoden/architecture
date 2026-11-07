@@ -24,7 +24,7 @@
       "edition": "2026-09-17",
       "sha256": "216897d3bae9e4dc7e1b8e11e55dfab9911e1c146fa38cad281d1f08037eefe7",
       "pages": "8 bottom lifting;9 native base/feet/assembly;10 condensate;26 body/base/ports/mass",
-      "scope": "Suitable lifting device lifting evenly from unit bottom; native floor/base support retained. Actual base depth593 differs from cabinet597. Heat exchanger can be removed before lifting onto base, but removable mass and exact underside bearing/CG are not stated. Front-edge screws may be loosened for condensate connection; not a qualified fork opening."
+      "scope": "Suitable lifting device lifting evenly from unit bottom; native floor/base support retained. Actual base depth593 differs from cabinet597. Heat exchanger can be removed before lifting onto base, but removable mass and exact underside bearing/CG are not stated. Front-edge screws may be loosened for condensate connection; not a qualified fork opening. Exact native p9 arrow1417 runs to cabinet top excluding duct spigots; p26 body1314 uses that top and1342 includes spigots. Difference103 is a nominal drawing-reference offset to the depicted assembled lower line. It does not bind configured feet-to-receiver contact, actual base seating or cover withdrawal; no installed clearance is inferred."
     },
     {
       "name": "Genie Lift current operator manual",
@@ -163,7 +163,10 @@
     "g_m_per_s2": 9.80665,
     "UVLLCoverBelowUnitBottom_mm": 72,
     "UVLLInletToBodyAxis_mm": 98,
-    "UVLLBodyHeight_mm": 56
+    "UVLLBodyHeight_mm": 56,
+    "nativeAssembledCabinetTopFromDrawnBaseLowerLine_mm": 1417,
+    "nativeCabinetBodyHeight_mm": 1314,
+    "nativeCabinetPortTopHeight_mm": 1342
   },
   "systemDuties": [
     "Retain96/128 direct capture,80fixed other supplies,kitchen16/48,native pressure/control/frost/heat duties and unapproved residues",

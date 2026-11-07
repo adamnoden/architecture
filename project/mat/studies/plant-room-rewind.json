@@ -277,7 +277,9 @@
         "nativeDryPlusCarrier_kg": 75.07258068476588,
         "nativeListedWaterFilledPlusCarrier_kg": 176.07258068476588,
         "completeSwivelRadius_mm": 287.9898987322333,
-        "fourContactInnerSquareHalfWidth_mm": 100,
+        "idealFourContactCentreSquareHalfWidth_mm": 100,
+        "flatFloorFullTreadEdgeSensitivityHalfWidth_mm": 96.53737237579854,
+        "supportModel": "Ideal flat-floor wheel-contact centres from native40offset, not guaranteed merely by four wheels touching. Actual tread/floor/contact positions and corner reactions must be bound.",
         "requiredMeasuredCombinedCGOffsetMax_mm": 25,
         "staticCGEdgeMarginIfFourContactsAndMeasuredCG_mm": 75,
         "casterPodOverlapWithNativeForkLane_mm": 0,
@@ -309,7 +311,9 @@
         "nativeDryPlusCarrier_kg": 83.30467919372188,
         "nativeListedWaterFilledPlusCarrier_kg": 184.30467919372188,
         "completeSwivelRadius_mm": 344.5584412271571,
-        "fourContactInnerSquareHalfWidth_mm": 140,
+        "idealFourContactCentreSquareHalfWidth_mm": 140,
+        "flatFloorFullTreadEdgeSensitivityHalfWidth_mm": 136.53737237579855,
+        "supportModel": "Ideal flat-floor wheel-contact centres from native40offset, not guaranteed merely by four wheels touching. Actual tread/floor/contact positions and corner reactions must be bound.",
         "requiredMeasuredCombinedCGOffsetMax_mm": 25,
         "staticCGEdgeMarginIfFourContactsAndMeasuredCG_mm": 115,
         "casterPodOverlapWithNativeForkLane_mm": 35,
@@ -327,7 +331,7 @@
     "conditionalStaticStability": [
       {
         "diameter_mm": 600,
-        "fourContactMeasuredCGConditional": [
+        "idealContactCentreMeasuredCGConditional": [
           {
             "gripHeight_mm": 900,
             "upwardForcePerHorizontalForce": 1.1001969118825974,
@@ -348,7 +352,7 @@
       },
       {
         "diameter_mm": 700,
-        "fourContactMeasuredCGConditional": [
+        "idealContactCentreMeasuredCGConditional": [
           {
             "gripHeight_mm": 900,
             "upwardForcePerHorizontalForce": 1.1001969118825974,
@@ -1602,6 +1606,1493 @@
       "apparatusAccepted": false,
       "owningGeometryAdopted": false
     }
+  },
+  "wallNorth60Control": {
+    "status": "ONE conditional+60 north wall/arch comparison; no adopted native-clearance interpretation or source geometry",
+    "wallAxisY_mm": 3760,
+    "wallCoreY_mm": [
+      3690,
+      3830
+    ],
+    "wallFinishedFacesY_mm": [
+      3663,
+      3857
+    ],
+    "southCellDepth_mm": 1016,
+    "bufferCentre_mm": [
+      11245.5,
+      3155
+    ],
+    "controlsRect_mm": [
+      10920.5,
+      3857,
+      650,
+      300
+    ],
+    "nativeClearanceConditional": {
+      "conservativeDiameter_mm": 563,
+      "lateralEach_mm": 200,
+      "requiredLateralSpan_mm": 963,
+      "southCellExcess_mm": 53,
+      "complete600SupportPlusBoth200_mm": 1000,
+      "complete600SupportEachSideSurplusBeyond200_mm": 8,
+      "southNorthSurplusBeyondEach200_mm": [
+        26.5,
+        26.5
+      ],
+      "interpretation": "Native p7 gives200 laterally in an elevation and150 above, and independently requires water ports accessible. It does not expressly label a PORT axis or all-around scope. Rotation of that lateral plane into N/S remains a source/application hold; no waiver of200 anywhere its native scope requires."
+    },
+    "sourceUpperWallAxisUnchangedY_mm": 3700,
+    "upperLoadEccentricity_mm": 60,
+    "coreMiddleThirdHalfWidth_mm": 23.333333333333332,
+    "upperLoadAxisInsideMovedCore_mm": 10,
+    "noTensionTriangularContactWidth_mm": 30,
+    "adverseRelativeSetoutToLoseCoreEdge_mm": 10,
+    "groundLinkSource": {
+      "commit": "50093457642f65eca288e5cc233a77d8aac6bc29",
+      "path": "project/str/studies/current-house-grid.json",
+      "blob": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+      "key": "crossBeams.plant-intermediate"
+    },
+    "upperGrossLoadSource": {
+      "path": "project/str/studies/current-house-head-actions.py",
+      "blob": "aef7fa4cad6e89fc09c47e55e071ad52da22b522",
+      "role": "3.170m gross upper core25kN/m3\u00d7.140 plus.4kN/m2 combined face budget; characteristic upper bound, not guaranteed gravity or all load"
+    },
+    "grossUpperWallCharacteristic_kNpm": 12.363000000000001,
+    "upperGrossWallOnly1p35ULS60Offset_kNmPm": 1.001403,
+    "eastReplacementDoor": {
+      "sourceKey": "model.archOpeningRegister.GROUND[plant-replacement]",
+      "rawWidth_mm": 1400,
+      "rise_mm": 300,
+      "radialRing_mm": 215,
+      "segmentalRadius_mm": 966.6666666666666,
+      "southRadialExtradosExtremeY_mm": 3744.310344827586,
+      "oldCoreOverlap_mm": 25.68965517241395,
+      "newCoreOverlap_mm": 85.68965517241395,
+      "newAxisOverlap_mm": 15.68965517241395,
+      "role": "Actual bounded annular-sector end projection; source radial ring/skewback/thrust/frame/capacity remain unadmitted, not a scaled image or extended full circle."
+    },
+    "groundLinkYRetained_mm": [
+      3400.0,
+      4000.0
+    ],
+    "groundLinkNorthReserveFromNewCore_mm": 170,
+    "structuralRole": "RC200 offset transfer and actual perpendicular East1400 replacement-door skewback must be designed; do not shift upper wall or infer direct unreinforced centred bearing. Gross upperwall1.35ULS offset sensitivity is not RC transfer/slab or actual perpendicular skewback capacity.",
+    "bodyCrewBarPlan": {
+      "coupledStates_mm": [
+        [
+          [
+            11245.5,
+            3155
+          ],
+          [
+            10258.823,
+            3456.121
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            11000,
+            3244
+          ],
+          [
+            10013.323,
+            3545.121
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            11000,
+            3244
+          ],
+          [
+            9950,
+            3186
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            11000,
+            3244
+          ],
+          [
+            10530,
+            3710
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10750,
+            3340
+          ],
+          [
+            10550,
+            4060
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10550,
+            3460
+          ],
+          [
+            10550,
+            4325
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10300,
+            3600
+          ],
+          [
+            10550,
+            4325
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10232.82468362818,
+            3717.551171212155
+          ],
+          [
+            10550.0,
+            4325.0
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10277.811946296251,
+            3752.0711119726643
+          ],
+          [
+            10642.857142857143,
+            4420.714285714285
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10319.619407771255,
+            3790.3805922287443
+          ],
+          [
+            10735.714285714286,
+            4456.428571428572
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10357.928888027336,
+            3832.1880537037496
+          ],
+          [
+            10828.57142857143,
+            4492.142857142857
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10392.448828787845,
+            3877.17531637182
+          ],
+          [
+            10921.42857142857,
+            4527.857142857143
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10422.916512459886,
+            3925.0
+          ],
+          [
+            11014.285714285714,
+            4563.571428571428
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10449.100061573823,
+            3975.2981298685454
+          ],
+          [
+            11107.142857142857,
+            4599.285714285715
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10470.80020351084,
+            4027.6869068383153
+          ],
+          [
+            11200,
+            4635
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10487.851787087895,
+            4081.7676206833617
+          ],
+          [
+            11200,
+            4635
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10500.125039457935,
+            4137.128684516495
+          ],
+          [
+            11200,
+            4635
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10507.526553759635,
+            4193.348767214022
+          ],
+          [
+            11200,
+            4635
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10510.0,
+            4250.0
+          ],
+          [
+            11200,
+            4635
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10507.526553759635,
+            4306.651232785978
+          ],
+          [
+            11200,
+            4635
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10500.125039457935,
+            4362.871315483505
+          ],
+          [
+            11200,
+            4635
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10487.851787087895,
+            4418.232379316639
+          ],
+          [
+            11200,
+            4635
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            10700,
+            4575
+          ],
+          [
+            11750,
+            4635
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        [
+          [
+            11200,
+            4575
+          ],
+          [
+            12250,
+            4635
+          ],
+          [
+            10610,
+            2000
+          ]
+        ]
+      ],
+      "body600": {
+        "radius_mm": 325,
+        "polyline_mm": [
+          [
+            11245.5,
+            3155
+          ],
+          [
+            11000,
+            3244
+          ],
+          [
+            11000,
+            3244
+          ],
+          [
+            11000,
+            3244
+          ],
+          [
+            10750,
+            3340
+          ],
+          [
+            10550,
+            3460
+          ],
+          [
+            10300,
+            3600
+          ],
+          [
+            10232.82468362818,
+            3717.551171212155
+          ],
+          [
+            10277.811946296251,
+            3752.0711119726643
+          ],
+          [
+            10319.619407771255,
+            3790.3805922287443
+          ],
+          [
+            10357.928888027336,
+            3832.1880537037496
+          ],
+          [
+            10392.448828787845,
+            3877.17531637182
+          ],
+          [
+            10422.916512459886,
+            3925.0
+          ],
+          [
+            10449.100061573823,
+            3975.2981298685454
+          ],
+          [
+            10470.80020351084,
+            4027.6869068383153
+          ],
+          [
+            10487.851787087895,
+            4081.7676206833617
+          ],
+          [
+            10500.125039457935,
+            4137.128684516495
+          ],
+          [
+            10507.526553759635,
+            4193.348767214022
+          ],
+          [
+            10510.0,
+            4250.0
+          ],
+          [
+            10507.526553759635,
+            4306.651232785978
+          ],
+          [
+            10500.125039457935,
+            4362.871315483505
+          ],
+          [
+            10487.851787087895,
+            4418.232379316639
+          ],
+          [
+            10700,
+            4575
+          ],
+          [
+            11200,
+            4575
+          ]
+        ],
+        "minimumInflatedMargin_mm": 0.0,
+        "limiting": "east-south",
+        "allMargins_mm": {
+          "utility-west-pier": 512.5990898360131,
+          "utility-east-pier": 183.0,
+          "intermediate-west-pier": 230.82468362817963,
+          "intermediate-east-pier": 28.11558680842569,
+          "north-wall": 880.5,
+          "east-south": 0.0,
+          "east-north": 465.23683158911297,
+          "west-south": 887.0566199645955,
+          "west-north": 510.8246836281796,
+          "service-emitter-utility-E": 412.66794697885575,
+          "service-utility-washer": 1512.8235089365899,
+          "service-utility-sink": 1430.0,
+          "service-utility-rearServiceChase": 2130.0,
+          "service-utility-valveBay": 1454.7036972485055,
+          "service-utility-electricalStation": 1016.6350506055655,
+          "service-utility-PVinverter": 2463.384515058466,
+          "cylinder": 26.881344028207423,
+          "riser": 282.1882220030333,
+          "controls": 89.57001842586578,
+          "emitter": 341.10050469350426,
+          "W9": 247.0,
+          "closed-leaf": 504.7044031476064
+        },
+        "planPass": true
+      },
+      "crew600": [
+        {
+          "radius_mm": 325,
+          "polyline_mm": [
+            [
+              10258.823,
+              3456.121
+            ],
+            [
+              10013.323,
+              3545.121
+            ],
+            [
+              9950,
+              3186
+            ],
+            [
+              10530,
+              3710
+            ],
+            [
+              10550,
+              4060
+            ],
+            [
+              10550,
+              4325
+            ],
+            [
+              10550,
+              4325
+            ],
+            [
+              10550.0,
+              4325.0
+            ],
+            [
+              10642.857142857143,
+              4420.714285714285
+            ],
+            [
+              10735.714285714286,
+              4456.428571428572
+            ],
+            [
+              10828.57142857143,
+              4492.142857142857
+            ],
+            [
+              10921.42857142857,
+              4527.857142857143
+            ],
+            [
+              11014.285714285714,
+              4563.571428571428
+            ],
+            [
+              11107.142857142857,
+              4599.285714285715
+            ],
+            [
+              11200,
+              4635
+            ],
+            [
+              11200,
+              4635
+            ],
+            [
+              11200,
+              4635
+            ],
+            [
+              11200,
+              4635
+            ],
+            [
+              11200,
+              4635
+            ],
+            [
+              11200,
+              4635
+            ],
+            [
+              11200,
+              4635
+            ],
+            [
+              11200,
+              4635
+            ],
+            [
+              11750,
+              4635
+            ],
+            [
+              12250,
+              4635
+            ]
+          ],
+          "minimumInflatedMargin_mm": 5.318287217990019,
+          "limiting": "complete-cylinder-station",
+          "allMargins_mm": {
+            "utility-west-pier": 214.0,
+            "utility-east-pier": 858.8406480477006,
+            "intermediate-west-pier": 31.382686125462897,
+            "intermediate-east-pier": 34.01433185886202,
+            "north-wall": 820.5,
+            "east-south": 383.0,
+            "east-north": 313.0,
+            "west-south": 354.2931988471547,
+            "west-north": 280.02843868833395,
+            "service-emitter-utility-E": 1189.2187896635016,
+            "service-utility-washer": 1463.7973613576246,
+            "service-utility-sink": 1721.8991181785193,
+            "service-utility-rearServiceChase": 2163.0104501388255,
+            "service-utility-valveBay": 1612.084407040643,
+            "service-utility-electricalStation": 500.7148418188933,
+            "service-utility-PVinverter": 2181.9986537690843,
+            "cylinder": 67.5,
+            "riser": 382.54858490424533,
+            "controls": 20.804547098233172,
+            "emitter": 14.0,
+            "W9": 187.0,
+            "closed-leaf": 206.0,
+            "complete-cylinder-station": 5.318287217990019
+          },
+          "planPass": true
+        },
+        {
+          "radius_mm": 325,
+          "polyline_mm": [
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ],
+            [
+              10610,
+              2000
+            ]
+          ],
+          "minimumInflatedMargin_mm": 237.225933233251,
+          "limiting": "utility-west-pier",
+          "allMargins_mm": {
+            "utility-west-pier": 237.225933233251,
+            "utility-east-pier": 359.3814725721321,
+            "intermediate-west-pier": 1581.8450382765768,
+            "intermediate-east-pier": 1362.7538327611642,
+            "north-wall": 3455.5,
+            "east-south": 635.5,
+            "east-north": 3086.0246627663073,
+            "west-south": 888.0,
+            "west-north": 1630.6392816672505,
+            "service-emitter-utility-E": 435.5,
+            "service-utility-washer": 275.0,
+            "service-utility-sink": 364.6375859826667,
+            "service-utility-rearServiceChase": 975.0,
+            "service-utility-valveBay": 281.7124524847005,
+            "service-utility-electricalStation": 588.0,
+            "service-utility-PVinverter": 1174.273240606928,
+            "cylinder": 1749.2082451262845,
+            "riser": 2454.496357256113,
+            "controls": 1557.779660501993,
+            "emitter": 402.6661322337326,
+            "W9": 2822.0,
+            "closed-leaf": 1106.4038563592037,
+            "complete-cylinder-station": 1616.6487838947598
+          },
+          "planPass": true
+        }
+      ],
+      "mutualClearanceBeyondRequired_mm": {
+        "bodyCrew1": 36.45730111042849,
+        "bodyCrew2": 677.4397115947477,
+        "crewCrew": 707.2752115912233
+      },
+      "bar600": {
+        "width_mm": 25,
+        "reserve_mm": 25,
+        "length_mm": 1000,
+        "pinRadius_mm": 275,
+        "pinZ_mm": 160,
+        "crewCentreToGrip_mm": 105,
+        "gripHeightRangeRequired_mm": [
+          900.8115788234479,
+          1119.5736164376867
+        ],
+        "sampleMinimumPlanMargin_mm": 112.6077663914748,
+        "maximumUnsampledMovementBound_mm": 6.550697429697027,
+        "continuousPlanMarginLowerBound_mm": 106.05706896177777,
+        "dockDetachTransitionIndex": 2,
+        "regrip": "At body11000/3186 positively dock/chock before detaching the captured bar. Crew carries it vertically within its own plan body, walks9950/3186 to10530/3650, and re-pins at the new yaw before rolling resumes. No upright fold under the native cylinder is claimed: pinR275 lies inside conservative563 diameter."
+      },
+      "body600Complete700StationControl": {
+        "radius_mm": 325,
+        "polyline_mm": [
+          [
+            11245.5,
+            3155
+          ],
+          [
+            11000,
+            3244
+          ],
+          [
+            11000,
+            3244
+          ],
+          [
+            11000,
+            3244
+          ],
+          [
+            10750,
+            3340
+          ],
+          [
+            10550,
+            3460
+          ],
+          [
+            10300,
+            3600
+          ],
+          [
+            10232.82468362818,
+            3717.551171212155
+          ],
+          [
+            10277.811946296251,
+            3752.0711119726643
+          ],
+          [
+            10319.619407771255,
+            3790.3805922287443
+          ],
+          [
+            10357.928888027336,
+            3832.1880537037496
+          ],
+          [
+            10392.448828787845,
+            3877.17531637182
+          ],
+          [
+            10422.916512459886,
+            3925.0
+          ],
+          [
+            10449.100061573823,
+            3975.2981298685454
+          ],
+          [
+            10470.80020351084,
+            4027.6869068383153
+          ],
+          [
+            10487.851787087895,
+            4081.7676206833617
+          ],
+          [
+            10500.125039457935,
+            4137.128684516495
+          ],
+          [
+            10507.526553759635,
+            4193.348767214022
+          ],
+          [
+            10510.0,
+            4250.0
+          ],
+          [
+            10507.526553759635,
+            4306.651232785978
+          ],
+          [
+            10500.125039457935,
+            4362.871315483505
+          ],
+          [
+            10487.851787087895,
+            4418.232379316639
+          ],
+          [
+            10700,
+            4575
+          ],
+          [
+            11200,
+            4575
+          ]
+        ],
+        "minimumInflatedMargin_mm": -170.1222965208174,
+        "limiting": "complete-cylinder-station",
+        "allMargins_mm": {
+          "utility-west-pier": 512.5990898360131,
+          "utility-east-pier": 183.0,
+          "intermediate-west-pier": 230.82468362817963,
+          "intermediate-east-pier": 28.11558680842569,
+          "north-wall": 880.5,
+          "east-south": 0.0,
+          "east-north": 465.23683158911297,
+          "west-south": 887.0566199645955,
+          "west-north": 510.8246836281796,
+          "service-emitter-utility-E": 412.66794697885575,
+          "service-utility-washer": 1512.8235089365899,
+          "service-utility-sink": 1430.0,
+          "service-utility-rearServiceChase": 2130.0,
+          "service-utility-valveBay": 1454.7036972485055,
+          "service-utility-electricalStation": 1016.6350506055655,
+          "service-utility-PVinverter": 2463.384515058466,
+          "cylinder": 26.881344028207423,
+          "riser": 282.1882220030333,
+          "controls": 89.57001842586578,
+          "emitter": 341.10050469350426,
+          "W9": 247.0,
+          "closed-leaf": 504.7044031476064,
+          "complete-cylinder-station": -170.1222965208174
+        },
+        "planPass": false
+      }
+    },
+    "larger700BodyOnly": {
+      "radius_mm": 375,
+      "polyline_mm": [
+        [
+          11195.5,
+          3097
+        ],
+        [
+          10800,
+          3097
+        ],
+        [
+          10550,
+          3300
+        ],
+        [
+          10300,
+          3600
+        ],
+        [
+          10250.031976718712,
+          3692.9766098834857
+        ],
+        [
+          10259.693971558881,
+          3699.8684438250357
+        ],
+        [
+          10269.234215743392,
+          3706.927853167841
+        ],
+        [
+          10278.649803221448,
+          3714.152687547429
+        ],
+        [
+          10287.93786591389,
+          3721.54074620926
+        ],
+        [
+          10297.095574586847,
+          3729.0897786790947
+        ],
+        [
+          10306.120139713545,
+          3736.797485448515
+        ],
+        [
+          10315.008812324024,
+          3744.661518675372
+        ],
+        [
+          10323.758884842498,
+          3752.679482898964
+        ],
+        [
+          10332.367691912119,
+          3760.848935769717
+        ],
+        [
+          10340.832611206852,
+          3769.167388793148
+        ],
+        [
+          10349.151064230282,
+          3777.632308087882
+        ],
+        [
+          10357.320517101036,
+          3786.241115157501
+        ],
+        [
+          10365.338481324628,
+          3794.9911876759766
+        ],
+        [
+          10373.202514551485,
+          3803.879860286455
+        ],
+        [
+          10380.910221320904,
+          3812.904425413153
+        ],
+        [
+          10388.459253790741,
+          3822.0621340861107
+        ],
+        [
+          10395.847312452572,
+          3831.3501967785523
+        ],
+        [
+          10403.072146832159,
+          3840.7657842566073
+        ],
+        [
+          10410.131556174965,
+          3850.306028441118
+        ],
+        [
+          10417.023390116514,
+          3859.968023281289
+        ],
+        [
+          10423.74554933743,
+          3869.748825639892
+        ],
+        [
+          10430.295986202887,
+          3879.6454561897817
+        ],
+        [
+          10436.672705386369,
+          3889.6549003214204
+        ],
+        [
+          10442.873764477436,
+          3899.774109061163
+        ],
+        [
+          10448.897274573419,
+          3910.0
+        ],
+        [
+          10454.74140085479,
+          3920.3294582324907
+        ],
+        [
+          10460.40436314407,
+          3930.7593373055943
+        ],
+        [
+          10465.88443644809,
+          3941.286460177108
+        ],
+        [
+          10471.179951483433,
+          3951.9076201834273
+        ],
+        [
+          10476.289295184923,
+          3962.6195820163243
+        ],
+        [
+          10481.21091119697,
+          3973.419082708456
+        ],
+        [
+          10485.943300347659,
+          3984.302832627294
+        ],
+        [
+          10490.485021105414,
+          3995.26751647718
+        ],
+        [
+          10494.834690018097,
+          4006.3097943091957
+        ],
+        [
+          10498.990982134417,
+          4017.4263025385453
+        ],
+        [
+          10502.952631407536,
+          4028.6136549691337
+        ],
+        [
+          10506.718431080704,
+          4039.8684438250357
+        ],
+        [
+          10510.287234054864,
+          4051.187240788539
+        ],
+        [
+          10513.657953238057,
+          4062.5665980444405
+        ],
+        [
+          10516.829561876566,
+          4074.003049330286
+        ],
+        [
+          10519.801093867678,
+          4085.493110992226
+        ],
+        [
+          10522.57164405396,
+          4097.033283046172
+        ],
+        [
+          10525.140368498987,
+          4108.620050243923
+        ],
+        [
+          10527.506484744412,
+          4120.24988314395
+        ],
+        [
+          10529.6692720483,
+          4131.919239186487
+        ],
+        [
+          10531.628071604693,
+          4143.624563772643
+        ],
+        [
+          10533.382286744269,
+          4155.362291347155
+        ],
+        [
+          10534.931383116098,
+          4167.1288464845
+        ],
+        [
+          10536.274888850427,
+          4178.920644977996
+        ],
+        [
+          10537.412394702387,
+          4190.734094931592
+        ],
+        [
+          10538.343554176681,
+          4202.565597853994
+        ],
+        [
+          10539.06808363311,
+          4214.411549754798
+        ],
+        [
+          10539.585762372984,
+          4226.2683422423
+        ],
+        [
+          10539.896432706346,
+          4238.132363622647
+        ],
+        [
+          10540.0,
+          4250.0
+        ],
+        [
+          10539.896432706346,
+          4261.867636377353
+        ],
+        [
+          10539.585762372984,
+          4273.7316577577
+        ],
+        [
+          10539.06808363311,
+          4285.588450245202
+        ],
+        [
+          10538.343554176681,
+          4297.434402146006
+        ],
+        [
+          10537.412394702387,
+          4309.265905068408
+        ],
+        [
+          10536.274888850427,
+          4321.079355022004
+        ],
+        [
+          10534.931383116098,
+          4332.8711535155
+        ],
+        [
+          10533.382286744269,
+          4344.637708652845
+        ],
+        [
+          10531.628071604693,
+          4356.375436227357
+        ],
+        [
+          10529.6692720483,
+          4368.080760813513
+        ],
+        [
+          10527.506484744412,
+          4379.75011685605
+        ],
+        [
+          10525.140368498987,
+          4391.379949756077
+        ],
+        [
+          10522.57164405396,
+          4402.966716953828
+        ],
+        [
+          10519.801093867678,
+          4414.506889007774
+        ],
+        [
+          10516.829561876566,
+          4425.996950669714
+        ],
+        [
+          10700,
+          4575
+        ],
+        [
+          12500,
+          4575
+        ]
+      ],
+      "minimumInflatedMargin_mm": 0.0,
+      "limiting": "east-south",
+      "allMargins_mm": {
+        "utility-west-pier": 304.01441718447427,
+        "utility-east-pier": 75.0,
+        "intermediate-west-pier": 198.03197671871203,
+        "intermediate-east-pier": 54.9231255911713,
+        "north-wall": 830.5,
+        "east-south": 0.0,
+        "east-north": 323.0,
+        "west-south": 836.2929026051625,
+        "west-north": 478.03197671871203,
+        "service-emitter-utility-E": 316.5099420832646,
+        "service-utility-washer": 1324.9438226012057,
+        "service-utility-sink": 1322.0,
+        "service-utility-rearServiceChase": 2022.0,
+        "service-utility-valveBay": 1322.0,
+        "service-utility-electricalStation": 865.0036290269477,
+        "service-utility-PVinverter": 2204.594202583034,
+        "cylinder": 7.47410768363568,
+        "riser": 254.58194324446333,
+        "controls": 9.570022874265646,
+        "emitter": 148.7536309769015,
+        "W9": 197.0,
+        "closed-leaf": 467.24505815361283
+      },
+      "planPass": true
+    },
+    "cylinder425RetainedOldPathNegative": {
+      "radius_mm": 425,
+      "polyline_mm": [
+        [
+          9860,
+          4250
+        ],
+        [
+          10500,
+          4250
+        ],
+        [
+          10500,
+          4575
+        ],
+        [
+          12500,
+          4575
+        ]
+      ],
+      "minimumInflatedMargin_mm": -7.0,
+      "limiting": "controls",
+      "allMargins_mm": {
+        "utility-west-pier": 1178.0,
+        "utility-east-pier": 1294.8075473726703,
+        "intermediate-west-pier": 8.518165709350626,
+        "intermediate-east-pier": 134.33263806075183,
+        "north-wall": 780.5,
+        "east-south": 223.0,
+        "east-north": 273.0,
+        "west-south": 1105.2258820187299,
+        "west-north": 38.0,
+        "service-emitter-utility-E": 1594.2707223153611,
+        "service-utility-washer": 2425.0,
+        "service-utility-sink": 2460.3076092507017,
+        "service-utility-rearServiceChase": 3125.0,
+        "service-utility-valveBay": 2432.0089254323307,
+        "service-utility-electricalStation": 1432.1669284154293,
+        "service-utility-PVinverter": 3145.5,
+        "riser": 25.0,
+        "controls": -7.0,
+        "emitter": 978.0,
+        "W9": 147.0,
+        "closed-leaf": 397.2633398127391,
+        "buffer": 599.6868497875262
+      },
+      "planPass": false
+    },
+    "cylinder425Revised4600Line": {
+      "radius_mm": 425,
+      "polyline_mm": [
+        [
+          9860,
+          4250
+        ],
+        [
+          10500,
+          4250
+        ],
+        [
+          10500,
+          4600
+        ],
+        [
+          12500,
+          4600
+        ]
+      ],
+      "minimumInflatedMargin_mm": 5.661409926638328,
+      "limiting": "controls",
+      "allMargins_mm": {
+        "utility-west-pier": 1178.0,
+        "utility-east-pier": 1294.8075473726703,
+        "intermediate-west-pier": 8.518165709350626,
+        "intermediate-east-pier": 134.33263806075183,
+        "north-wall": 755.5,
+        "east-south": 248.0,
+        "east-north": 248.0,
+        "west-south": 1105.2258820187299,
+        "west-north": 38.0,
+        "service-emitter-utility-E": 1594.2707223153611,
+        "service-utility-washer": 2425.0,
+        "service-utility-sink": 2460.3076092507017,
+        "service-utility-rearServiceChase": 3125.0,
+        "service-utility-valveBay": 2432.0089254323307,
+        "service-utility-electricalStation": 1432.1669284154293,
+        "service-utility-PVinverter": 3145.5,
+        "riser": 25.0,
+        "controls": 5.661409926638328,
+        "emitter": 978.0,
+        "W9": 122.0,
+        "closed-leaf": 397.2633398127391,
+        "buffer": 599.6868497875262
+      },
+      "planPass": true
+    },
+    "ordinaryPlantOpenLeaf": {
+      "radius_mm": 325,
+      "polyline_mm": [
+        [
+          8800,
+          3200
+        ],
+        [
+          10545,
+          3200
+        ],
+        [
+          10545,
+          4250
+        ]
+      ],
+      "minimumInflatedMargin_mm": 9.0,
+      "limiting": "west-north",
+      "allMargins_mm": {
+        "utility-west-pier": 228.0,
+        "utility-east-pier": 474.9331222046003,
+        "intermediate-west-pier": 138.0,
+        "intermediate-east-pier": 28.0,
+        "north-wall": 1205.5,
+        "east-south": 700.5,
+        "east-north": 1123.5093199562093,
+        "west-south": 83.5,
+        "west-north": 9.0,
+        "service-emitter-utility-E": 805.2363690839186,
+        "service-utility-washer": 1475.0,
+        "service-utility-sink": 1520.0,
+        "service-utility-rearServiceChase": 2175.0,
+        "service-utility-valveBay": 1481.6612853548393,
+        "service-utility-electricalStation": 475.0,
+        "service-utility-PVinverter": 2195.5,
+        "cylinder": 62.5,
+        "riser": 421.0060321471939,
+        "controls": 50.5,
+        "emitter": 28.0,
+        "W9": 572.0,
+        "buffer": 76.94390801544819,
+        "parked-leaf": 9.0
+      },
+      "planPass": true
+    },
+    "utilityCurvedOpenLeaf": {
+      "radius_mm": 325,
+      "polyline_mm": [
+        [
+          10800,
+          1725
+        ],
+        [
+          10610,
+          2000
+        ],
+        [
+          10610,
+          2900
+        ],
+        [
+          10550,
+          3400
+        ],
+        [
+          10550,
+          4250
+        ]
+      ],
+      "minimumInflatedMargin_mm": 0.0,
+      "limiting": "service-utility-valveBay",
+      "allMargins_mm": {
+        "utility-west-pier": 8.0,
+        "utility-east-pier": 188.0,
+        "intermediate-west-pier": 548.0,
+        "intermediate-east-pier": 23.0,
+        "north-wall": 1205.5,
+        "east-south": 445.5,
+        "east-north": 1119.973788689608,
+        "west-south": 888.0,
+        "west-north": 828.0,
+        "service-emitter-utility-E": 247.95658648801657,
+        "service-utility-washer": 15.036762718386058,
+        "service-utility-sink": 32.94552658190884,
+        "service-utility-rearServiceChase": 700.0,
+        "service-utility-valveBay": 0.0,
+        "service-utility-electricalStation": 588.0,
+        "service-utility-PVinverter": 1054.5181223891188,
+        "cylinder": 67.5,
+        "riser": 425.0,
+        "controls": 45.5,
+        "emitter": 8.0,
+        "W9": 572.0,
+        "buffer": 36.35526211613876,
+        "parked-leaf": 66.0
+      },
+      "planPass": true
+    },
+    "decision": "The60 wall move conditionally makes room for the native lateral minimum, but changes structural offset/skewback and controls/renewal paths. Revised buffer/crew/bar and cylinder4600 indoor plan controls pass their declared domains; native-clearance scope, occupied cylinder-station geometry, W9 whole handling, riser task and exterior receiver remain open. No installed layout or material admission."
   },
   "taskComparisons": {
     "plant-entry": {

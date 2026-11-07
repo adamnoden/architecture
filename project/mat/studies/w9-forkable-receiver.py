@@ -154,7 +154,7 @@ def produce():
         'uniformSlopeCGShiftExamples_mm':{str(h):h/20 for h in [800,1000,1200]},
         'role':'Gravity-force and authored CG-height challenges only, no rolling resistance/braking/tipping pass. Actual wheel support polygon and complete CG/dynamics unknown. Native TU8 WLL anchor/redirect duties and independent capture remain unchanged; no downrated anchor credit.'},
       'condensate':{'nativeUnitConnection':'Rear under heat exchanger,3/8inch male;minimum12mmID downstream discharge,no horizontal run/second trap/direct drain. Current W9 IOM also states minimum100mm damming height; supplied looped hose and expressly offered mechanical UVLL are distinct assemblies.72mm external UVLL depth is not a water-seal height or permission to waive native pressure/discharge duty.',
-        'nativeCoverBelowUnitBottom_mm':n['UVLLCoverBelowUnitBottom_mm'],
+        'nominalDrawingReference':{'assembledCabinetTop_mm':n['nativeAssembledCabinetTopFromDrawnBaseLowerLine_mm'],'cabinetBodyHeight_mm':n['nativeCabinetBodyHeight_mm'],'cabinetPortTopHeight_mm':n['nativeCabinetPortTopHeight_mm'],'unitBottomAboveDrawnAssembledLowerLine_mm':n['nativeAssembledCabinetTopFromDrawnBaseLowerLine_mm']-n['nativeCabinetBodyHeight_mm'],'role':'Same cabinet-top arrows exclude spigots.103mm is a nominal offset to the depicted assembled lower line, not actual native foot-to-receiver contact or an installed trap clearance. The configured lower-line/feet/base seat and extraction stroke remain unbound.'},'nativeCoverBelowUnitBottom_mm':n['UVLLCoverBelowUnitBottom_mm'],
         'nativeInletToBodyAxis_mm':n['UVLLInletToBodyAxis_mm'],
         'nativeBodyHeight_mm':n['UVLLBodyHeight_mm'],
         'datum':'Let d be ACTUAL unit-bottom height above receiver top after native base seating and foot adjustment. Native base123/feet15..50 and illustrated assembled1417 do not establish d by addition. No installed d selected.',
@@ -219,7 +219,7 @@ def figure(r):
     text(650,237,'Cover-to-plate clearance = d −72.',21)
     text(650,274,'Raise by R: (R+d−72) −R = d−72.',20)
     text(650,312,'Base123 + feet15…50 does not establish d.',18)
-    text(650,350,'Native assembled1417 is not an added seat datum.',18)
+    text(650,350,'1417−1314=103 to drawn lower line, not actual d.',18)
     text(650,389,'No actual d or extraction stroke is selected.',18,'#8c402e')
     text(650,429,'Opening axes ≠ whole body / hand / tool clearance.',18)
     text(650,468,'Actual feet, capture and local plate/rim welds',18)

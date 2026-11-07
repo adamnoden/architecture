@@ -22,7 +22,7 @@
 <text x="650" y="237" font-size="21" fill="#21363b" font-family="Arial,sans-serif">Cover-to-plate clearance = d −72.</text>
 <text x="650" y="274" font-size="20" fill="#21363b" font-family="Arial,sans-serif">Raise by R: (R+d−72) −R = d−72.</text>
 <text x="650" y="312" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Base123 + feet15…50 does not establish d.</text>
-<text x="650" y="350" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Native assembled1417 is not an added seat datum.</text>
+<text x="650" y="350" font-size="18" fill="#21363b" font-family="Arial,sans-serif">1417−1314=103 to drawn lower line, not actual d.</text>
 <text x="650" y="389" font-size="18" fill="#8c402e" font-family="Arial,sans-serif">No actual d or extraction stroke is selected.</text>
 <text x="650" y="429" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Opening axes ≠ whole body / hand / tool clearance.</text>
 <text x="650" y="468" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Actual feet, capture and local plate/rim welds</text>

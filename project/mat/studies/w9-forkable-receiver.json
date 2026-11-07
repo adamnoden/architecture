@@ -24,7 +24,7 @@
       "edition": "2026-09-17",
       "sha256": "216897d3bae9e4dc7e1b8e11e55dfab9911e1c146fa38cad281d1f08037eefe7",
       "pages": "8 bottom lifting;9 native base/feet/assembly;10 condensate;26 body/base/ports/mass",
-      "scope": "Suitable lifting device lifting evenly from unit bottom; native floor/base support retained. Actual base depth593 differs from cabinet597. Heat exchanger can be removed before lifting onto base, but removable mass and exact underside bearing/CG are not stated. Front-edge screws may be loosened for condensate connection; not a qualified fork opening."
+      "scope": "Suitable lifting device lifting evenly from unit bottom; native floor/base support retained. Actual base depth593 differs from cabinet597. Heat exchanger can be removed before lifting onto base, but removable mass and exact underside bearing/CG are not stated. Front-edge screws may be loosened for condensate connection; not a qualified fork opening. Exact native p9 arrow1417 runs to cabinet top excluding duct spigots; p26 body1314 uses that top and1342 includes spigots. Difference103 is a nominal drawing-reference offset to the depicted assembled lower line. It does not bind configured feet-to-receiver contact, actual base seating or cover withdrawal; no installed clearance is inferred."
     },
     {
       "name": "Genie Lift current operator manual",
@@ -57,7 +57,7 @@
       "pages": "1 native12mm Cu compression connections and float/setter/cover;2 dimensioned assembly, annual underside service and discharge limits"
     }
   ],
-  "sourceExtractSHA256": "e2bfd949490ca51716b75eaef269c08541f9b8c1f3f67d48ed19e8872cde2eec",
+  "sourceExtractSHA256": "0a4430d0b0aa97054664730aa8d97bcaa9f762a337b2c1234af97d1d541614f2",
   "currentHADReview": {
     "path": "project/had/studies/water-replan.json",
     "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
@@ -286,6 +286,13 @@
   },
   "condensate": {
     "nativeUnitConnection": "Rear under heat exchanger,3/8inch male;minimum12mmID downstream discharge,no horizontal run/second trap/direct drain. Current W9 IOM also states minimum100mm damming height; supplied looped hose and expressly offered mechanical UVLL are distinct assemblies.72mm external UVLL depth is not a water-seal height or permission to waive native pressure/discharge duty.",
+    "nominalDrawingReference": {
+      "assembledCabinetTop_mm": 1417,
+      "cabinetBodyHeight_mm": 1314,
+      "cabinetPortTopHeight_mm": 1342,
+      "unitBottomAboveDrawnAssembledLowerLine_mm": 103,
+      "role": "Same cabinet-top arrows exclude spigots.103mm is a nominal offset to the depicted assembled lower line, not actual native foot-to-receiver contact or an installed trap clearance. The configured lower-line/feet/base seat and extraction stroke remain unbound."
+    },
     "nativeCoverBelowUnitBottom_mm": 72,
     "nativeInletToBodyAxis_mm": 98,
     "nativeBodyHeight_mm": 56,
