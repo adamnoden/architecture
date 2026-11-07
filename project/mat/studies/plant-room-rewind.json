@@ -6991,6 +6991,7 @@
           ]
         ]
       ],
+      "gripRole": "Plan-pose pin projection with \u00b149.5mm grade-height difference sensitivity; not actual wheel/body tilt or crest/toe/regrip range. Exact uniform first-flight normal-frame bar is checked separately.",
       "requiredGripHeightIncludingWorst1in20FloorDifference_mm": [
         902.9014134263012,
         1051.3732650219
@@ -7140,25 +7141,126 @@
           "horizontalEachAxis": 25,
           "height": 600
         },
-        "grade": "Actual authored first9mflight1:20; sample bodyY\u22123000/\u22126000/\u221210000. Smooth planar contact only, not thresholds/pitch/slosh/impact.",
-        "forceCases": "Gravity at both\u00b125 CG offsets;50N downhill forebar with actual1m/990-spacing normal component; ONE uphill primaryline to5250/332.5/+150, frame captureeyeWest\u2212275/0/+160. Solve along-grade equilibrium without helpful rolling resistance. Primary operating-tension comparison\u2264150N is authored/measured, not a native automatic force limiter.",
+        "grade": "Actual first9m1:20 closed Y interval \u22121200\u2026\u221210200 bounded analytically in the uniform planar model. Endpoints are mathematical one-sided limits, not wheel-contact or body/grip admission at the crest/toe. Actual transitions, turning, pitch/slosh/impact remain held.",
+        "firstFlightFromToXYZ_mm": [
+          [
+            6000,
+            -1200,
+            0
+          ],
+          [
+            6000,
+            -10200,
+            -450
+          ]
+        ],
+        "endpointY_mm": [
+          -1200,
+          -10200
+        ],
+        "interiorRegressionProbeY_mm": [
+          -3000,
+          -6000,
+          -10000
+        ],
+        "rampLocalRopeSeparationEndpoints_mm": [
+          [
+            -475,
+            -1538.0786018718807,
+            -86.71654713483817
+          ],
+          [
+            -475,
+            -10549.321579397234,
+            -86.71654713483821
+          ]
+        ],
+        "rampNormalCaptureEyeWorldOffsetYZ_mm": [
+          -7.990018711022758,
+          159.80037422045515
+        ],
+        "barExactWorldAndLocal": {
+          "fixedPinWorldOffsetYZ_mm": [
+            -282.64691190243,
+            146.0675295608848
+          ],
+          "foreCrewPlanOffset_mm": 990,
+          "gripPlanOffsetFromCrew_mm": 105,
+          "oneMetreBarWorldDeltaYZ_mm": [
+            -602.35308809757,
+            798.2297647039486
+          ],
+          "rampLocalDownhillNormalComponents_mm": [
+            561.7398633447414,
+            827.3139222383672
+          ],
+          "normalToDownhillForceRatio": 1.4727705406419453,
+          "uniformFirstFlightGripAboveForeFooting_mm": 993.7972942648335,
+          "toeLevelFootingGripExtrapolation_mm": 944.2972942648335,
+          "role": "Exact same physical1m bar/990 PLAN/105 grip roles on uniform first flight. At actual toe the forefooting becomes level; the straight990-ahead600 reference would extend beyond the1200 landing, so no straight toe/grip transition is admitted. Actual turn/regrip, crest/toe wheel contacts and native whole-body tilt remain separate holds."
+        },
+        "continuousBoundReason": "Along-rope separation affine inY; transverse and ramp-normal separations constant. T monotone in1/abs(ds). N and each COP numerator affine in1/abs(ds) for fixed forebar/CG; denominator sign fixed by endpoint N. For fixedY, endpoints of forebar0..50 and CGoffsets\u00b125 also bound these fractional-linear results. For height0..600, affine moment inheight bounds its full interval. Height0 is a mathematical adverse endpoint, not nativeCG.1208/1876 are separate challenges. Interior probes retained only as regressions.",
+        "CG0to600IntervalMinimumMargins_mm": {
+          "native-dry-plus-persistent": 29.043982679118244,
+          "provisional150-limit": 47.32072202375289,
+          "complete-listed-water-filled": 49.55668168989816
+        },
+        "lateralAndYawRole": "Required opposite support wrench about carrier origin, not an assumed caster/friction/brake or crew reaction. Rx=\u2212sum(Fx); yaw=\u2212sum(x*Fdownhill\u2212s*Fx). With the eye275mm off centre, yaw remains even when along-grade force balances and normal COP is inside. Lateral/yaw extrema use the same actual endpoints; a real steer/guide/side restraint and load path must earn them. No static equilibrium or transport approval from the positive normal result alone.",
+        "forceCases": "Gravity at both\u00b125 CG offsets;0..50N ramp-local downhill forebar with exact1m/990PLAN/105grip normal component; ONE uphill primaryline to5250/332.5/+150, frame captureeyeWest\u2212275/0/+160. Solve along-grade equilibrium without helpful rolling resistance. Primary operating-tension comparison\u2264150N is authored/measured, not a native automatic force limiter.",
         "formula": "COP_i=sum(r_i F_normal\u2212height F_i)/sum(F_normal); signed complete resultant in floor coordinates, checked against both edges/axes. No addition of unsigned force moments as an exact mechanics claim.",
         "rows": [
           {
             "massCase": "native-dry-plus-persistent",
             "gross_kg": 74.51022229003604,
-            "CGheightChallenge_mm": 600,
-            "maxRequiredPrimaryTension_N": 87.39229619937477,
-            "minimumNormalReaction_N": 665.5566726658622,
-            "minimumEdgeMarginOfConditionalContactSquare_mm": 65.304684070609,
+            "CGheightChallenge_mm": 0,
+            "maxRequiredPrimaryTension_N": 90.6509445901521,
+            "minimumNormalReaction_N": 656.8564342487258,
+            "requiredOppositeEastLateralReaction_N": [
+              1.6429843499397703,
+              26.710189067992538
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -24.69676016258835,
+              -9.122300135490292
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": 29.043982679118244,
             "signedEquilibriumInsideConditionalSupport": true,
             "worst": {
               "CGx_mm": -25,
               "CGdownhill_mm": -25,
-              "loadCentreY_mm": -3000,
+              "forebarDownhill_N": 50,
+              "loadCentreY_mm": -10200,
               "resultantFloorCOP_mm": [
-                -31.232688305189548,
-                -30.057717183640126
+                -29.02186974426377,
+                -67.4933896966803
+              ]
+            },
+            "rollingWithinProvisional150kg": true
+          },
+          {
+            "massCase": "native-dry-plus-persistent",
+            "gross_kg": 74.51022229003604,
+            "CGheightChallenge_mm": 600,
+            "maxRequiredPrimaryTension_N": 90.6509445901521,
+            "minimumNormalReaction_N": 656.8564342487258,
+            "requiredOppositeEastLateralReaction_N": [
+              1.6429843499397703,
+              26.710189067992538
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -24.69676016258835,
+              -9.122300135490292
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": 49.556681689898156,
+            "signedEquilibriumInsideConditionalSupport": true,
+            "worst": {
+              "CGx_mm": -25,
+              "CGdownhill_mm": 25,
+              "forebarDownhill_N": 0,
+              "loadCentreY_mm": -10200,
+              "resultantFloorCOP_mm": [
+                -25.462773866058974,
+                46.980690685900385
               ]
             },
             "rollingWithinProvisional150kg": true
@@ -7167,17 +7269,26 @@
             "massCase": "native-dry-plus-persistent",
             "gross_kg": 74.51022229003604,
             "CGheightChallenge_mm": 1208,
-            "maxRequiredPrimaryTension_N": 87.39229619937477,
-            "minimumNormalReaction_N": 665.5566726658622,
-            "minimumEdgeMarginOfConditionalContactSquare_mm": 38.505086388198634,
+            "maxRequiredPrimaryTension_N": 90.6509445901521,
+            "minimumNormalReaction_N": 656.8564342487258,
+            "requiredOppositeEastLateralReaction_N": [
+              1.6429843499397703,
+              26.710189067992538
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -24.69676016258835,
+              -9.122300135490292
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": 19.169171118592388,
             "signedEquilibriumInsideConditionalSupport": true,
             "worst": {
               "CGx_mm": -25,
               "CGdownhill_mm": 25,
-              "loadCentreY_mm": -10000,
+              "forebarDownhill_N": 0,
+              "loadCentreY_mm": -10200,
               "resultantFloorCOP_mm": [
-                -28.666570133207024,
-                58.032285987599906
+                -25.462773866058974,
+                77.36820125720615
               ]
             },
             "rollingWithinProvisional150kg": true
@@ -7186,17 +7297,54 @@
             "massCase": "native-dry-plus-persistent",
             "gross_kg": 74.51022229003604,
             "CGheightChallenge_mm": 1876,
-            "maxRequiredPrimaryTension_N": 87.39229619937477,
-            "minimumNormalReaction_N": 665.5566726658622,
-            "minimumEdgeMarginOfConditionalContactSquare_mm": 1.881930219697196,
-            "signedEquilibriumInsideConditionalSupport": true,
+            "maxRequiredPrimaryTension_N": 90.6509445901521,
+            "minimumNormalReaction_N": 656.8564342487258,
+            "requiredOppositeEastLateralReaction_N": [
+              1.6429843499397703,
+              26.710189067992538
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -24.69676016258835,
+              -9.122300135490292
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": -14.217106943302767,
+            "signedEquilibriumInsideConditionalSupport": false,
             "worst": {
               "CGx_mm": -25,
               "CGdownhill_mm": 25,
-              "loadCentreY_mm": -10000,
+              "forebarDownhill_N": 0,
+              "loadCentreY_mm": -10200,
               "resultantFloorCOP_mm": [
-                -28.666570133207024,
-                94.65544215610134
+                -25.462773866058974,
+                110.7544793191013
+              ]
+            },
+            "rollingWithinProvisional150kg": true
+          },
+          {
+            "massCase": "provisional150-limit",
+            "gross_kg": 150,
+            "CGheightChallenge_mm": 0,
+            "maxRequiredPrimaryTension_N": 129.39874793287322,
+            "minimumNormalReaction_N": 1396.538505389146,
+            "requiredOppositeEastLateralReaction_N": [
+              3.3075683431952667,
+              38.1271815542011
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -35.78743290412694,
+              -18.36452742010578
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": 47.32072202375289,
+            "signedEquilibriumInsideConditionalSupport": true,
+            "worst": {
+              "CGx_mm": -25,
+              "CGdownhill_mm": -25,
+              "forebarDownhill_N": 50,
+              "loadCentreY_mm": -10200,
+              "resultantFloorCOP_mm": [
+                -27.136780718491238,
+                -49.21665035204565
               ]
             },
             "rollingWithinProvisional150kg": true
@@ -7205,17 +7353,26 @@
             "massCase": "provisional150-limit",
             "gross_kg": 150,
             "CGheightChallenge_mm": 600,
-            "maxRequiredPrimaryTension_N": 124.74722418288391,
-            "minimumNormalReaction_N": 1405.2441495971757,
-            "minimumEdgeMarginOfConditionalContactSquare_mm": 60.110168003934525,
+            "maxRequiredPrimaryTension_N": 129.39874793287322,
+            "minimumNormalReaction_N": 1396.538505389146,
+            "requiredOppositeEastLateralReaction_N": [
+              3.3075683431952667,
+              38.1271815542011
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -35.78743290412694,
+              -18.36452742010578
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": 49.55668168989817,
             "signedEquilibriumInsideConditionalSupport": true,
             "worst": {
               "CGx_mm": -25,
               "CGdownhill_mm": 25,
-              "loadCentreY_mm": -10000,
+              "forebarDownhill_N": 0,
+              "loadCentreY_mm": -10200,
               "resultantFloorCOP_mm": [
-                -26.984943608046695,
-                36.427204371864015
+                -25.462773866058978,
+                46.98069068590037
               ]
             },
             "rollingWithinProvisional150kg": true
@@ -7224,17 +7381,26 @@
             "massCase": "provisional150-limit",
             "gross_kg": 150,
             "CGheightChallenge_mm": 1208,
-            "maxRequiredPrimaryTension_N": 124.74722418288391,
-            "minimumNormalReaction_N": 1405.2441495971757,
-            "minimumEdgeMarginOfConditionalContactSquare_mm": 28.327412887323547,
+            "maxRequiredPrimaryTension_N": 129.39874793287322,
+            "minimumNormalReaction_N": 1396.538505389146,
+            "requiredOppositeEastLateralReaction_N": [
+              3.3075683431952667,
+              38.1271815542011
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -35.78743290412694,
+              -18.36452742010578
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": 19.169171118592374,
             "signedEquilibriumInsideConditionalSupport": true,
             "worst": {
               "CGx_mm": -25,
               "CGdownhill_mm": 25,
-              "loadCentreY_mm": -10000,
+              "forebarDownhill_N": 0,
+              "loadCentreY_mm": -10200,
               "resultantFloorCOP_mm": [
-                -26.984943608046695,
-                68.209959488475
+                -25.462773866058978,
+                77.36820125720617
               ]
             },
             "rollingWithinProvisional150kg": true
@@ -7243,36 +7409,82 @@
             "massCase": "provisional150-limit",
             "gross_kg": 150,
             "CGheightChallenge_mm": 1876,
-            "maxRequiredPrimaryTension_N": 124.74722418288391,
-            "minimumNormalReaction_N": 1405.2441495971757,
-            "minimumEdgeMarginOfConditionalContactSquare_mm": -6.591798326321381,
+            "maxRequiredPrimaryTension_N": 129.39874793287322,
+            "minimumNormalReaction_N": 1396.538505389146,
+            "requiredOppositeEastLateralReaction_N": [
+              3.3075683431952667,
+              38.1271815542011
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -35.78743290412694,
+              -18.36452742010578
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": -14.217106943302767,
             "signedEquilibriumInsideConditionalSupport": false,
             "worst": {
               "CGx_mm": -25,
               "CGdownhill_mm": 25,
-              "loadCentreY_mm": -10000,
+              "forebarDownhill_N": 0,
+              "loadCentreY_mm": -10200,
               "resultantFloorCOP_mm": [
-                -26.984943608046695,
-                103.12917070211992
+                -25.462773866058978,
+                110.7544793191013
               ]
             },
             "rollingWithinProvisional150kg": true
+          },
+          {
+            "massCase": "complete-listed-water-filled",
+            "gross_kg": 175.51022229003604,
+            "CGheightChallenge_mm": 0,
+            "maxRequiredPrimaryTension_N": 142.49277346201384,
+            "minimumNormalReaction_N": 1646.4988924927336,
+            "requiredOppositeEastLateralReaction_N": [
+              3.8700803676912496,
+              41.98532003390164
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -39.53529831803382,
+              -21.48774859836152
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": 49.784683027214065,
+            "signedEquilibriumInsideConditionalSupport": true,
+            "worst": {
+              "CGx_mm": -25,
+              "CGdownhill_mm": -25,
+              "forebarDownhill_N": 50,
+              "loadCentreY_mm": -10200,
+              "resultantFloorCOP_mm": [
+                -26.882644257934903,
+                -46.752689348584475
+              ]
+            },
+            "rollingWithinProvisional150kg": false
           },
           {
             "massCase": "complete-listed-water-filled",
             "gross_kg": 175.51022229003604,
             "CGheightChallenge_mm": 600,
-            "maxRequiredPrimaryTension_N": 137.37055604840918,
-            "minimumNormalReaction_N": 1655.206363476938,
-            "minimumEdgeMarginOfConditionalContactSquare_mm": 58.516477308800454,
+            "maxRequiredPrimaryTension_N": 142.49277346201384,
+            "minimumNormalReaction_N": 1646.4988924927336,
+            "requiredOppositeEastLateralReaction_N": [
+              3.8700803676912496,
+              41.98532003390164
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -39.53529831803382,
+              -21.48774859836152
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": 49.55668168989816,
             "signedEquilibriumInsideConditionalSupport": true,
             "worst": {
               "CGx_mm": -25,
               "CGdownhill_mm": 25,
-              "loadCentreY_mm": -10000,
+              "forebarDownhill_N": 0,
+              "loadCentreY_mm": -10200,
               "resultantFloorCOP_mm": [
-                -26.756442379138825,
-                38.02089506699809
+                -25.462773866058974,
+                46.98069068590038
               ]
             },
             "rollingWithinProvisional150kg": false
@@ -7281,17 +7493,26 @@
             "massCase": "complete-listed-water-filled",
             "gross_kg": 175.51022229003604,
             "CGheightChallenge_mm": 1208,
-            "maxRequiredPrimaryTension_N": 137.37055604840918,
-            "minimumNormalReaction_N": 1655.206363476938,
-            "minimumEdgeMarginOfConditionalContactSquare_mm": 26.944459617035875,
+            "maxRequiredPrimaryTension_N": 142.49277346201384,
+            "minimumNormalReaction_N": 1646.4988924927336,
+            "requiredOppositeEastLateralReaction_N": [
+              3.8700803676912496,
+              41.98532003390164
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -39.53529831803382,
+              -21.48774859836152
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": 19.169171118592388,
             "signedEquilibriumInsideConditionalSupport": true,
             "worst": {
               "CGx_mm": -25,
               "CGdownhill_mm": 25,
-              "loadCentreY_mm": -10000,
+              "forebarDownhill_N": 0,
+              "loadCentreY_mm": -10200,
               "resultantFloorCOP_mm": [
-                -26.756442379138825,
-                69.59291275876267
+                -25.462773866058974,
+                77.36820125720615
               ]
             },
             "rollingWithinProvisional150kg": false
@@ -7300,17 +7521,26 @@
             "massCase": "complete-listed-water-filled",
             "gross_kg": 175.51022229003604,
             "CGheightChallenge_mm": 1876,
-            "maxRequiredPrimaryTension_N": 137.37055604840918,
-            "minimumNormalReaction_N": 1655.206363476938,
-            "minimumEdgeMarginOfConditionalContactSquare_mm": -7.743217715363372,
+            "maxRequiredPrimaryTension_N": 142.49277346201384,
+            "minimumNormalReaction_N": 1646.4988924927336,
+            "requiredOppositeEastLateralReaction_N": [
+              3.8700803676912496,
+              41.98532003390164
+            ],
+            "requiredOppositeNormalAxisYawAtCarrierOrigin_Nm": [
+              -39.53529831803382,
+              -21.48774859836152
+            ],
+            "minimumEdgeMarginOfConditionalContactSquare_mm": -14.217106943302767,
             "signedEquilibriumInsideConditionalSupport": false,
             "worst": {
               "CGx_mm": -25,
               "CGdownhill_mm": 25,
-              "loadCentreY_mm": -10000,
+              "forebarDownhill_N": 0,
+              "loadCentreY_mm": -10200,
               "resultantFloorCOP_mm": [
-                -26.756442379138825,
-                104.28059009116191
+                -25.462773866058974,
+                110.7544793191013
               ]
             },
             "rollingWithinProvisional150kg": false
@@ -7495,11 +7725,20 @@
         "ropeDiameter_mm": 8.3,
         "unoffsetCentreX_mm": 6000,
         "proposedOffsetCentreX_mm": 6080,
-        "worstLongFlightY_mm": -10000,
-        "primaryRopeXAtRearCrew_mm": 5679.488265182676,
-        "unoffsetInflatedMargin_mm": -8.638265182675605,
-        "offsetInflatedMargin_mm": 71.36173481732439,
-        "role": "The centreline rearcrew conflicts with the low primaryrope;80mm left-normal offset is independently included in the whole folded plan. Actual station/handle/rope/other people and later-flight layouts still qualify."
+        "worstLongFlightY_mm": -10200,
+        "primaryRopePlanEndpointsAtFar_mm": [
+          [
+            5250,
+            332.5
+          ],
+          [
+            5725,
+            -10207.990018711023
+          ]
+        ],
+        "unoffsetInflatedMargin_mm": -9.500666042629144,
+        "offsetInflatedMargin_mm": 70.4182257596469,
+        "role": "Exact plan segment distance at actual far endpoint \u221210200; monotone infinite-line lower bound over first flight. Centreline rearcrew conflicts;80mm left-normal offset clears this low primary line and is included in own folded plan. Actual station/handle/rope/other people, crest/toe and later-flight layouts still qualify."
       },
       "independentCapture": "The positive result is primary static holding only. An independently qualified constant-tension failure-capture and loaded handover are still required; two taut TU8 lines are NOT automatically qualified redundancy and slack impact capture is not native approved. Extra hoist/operators/rope/attachment/field/material burdens must be priced.",
       "admission": {

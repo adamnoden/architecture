@@ -32,12 +32,13 @@
 <text x="680" y="383" font-family="Arial,sans-serif" font-size="17" fill="#21363b">EPP / PUR roles unresolved; caster plastics / seals remain unapproved.</text>
 <text x="680" y="450" font-family="Arial,sans-serif" font-size="21" fill="#21363b">Do not turn a positive force case into transport approval</text>
 <text x="680" y="490" font-family="Arial,sans-serif" font-size="17" fill="#8c402e">Measured CG ≤600 high, ±25 offset; actual four contacts qualify.</text>
-<text x="680" y="523" font-family="Arial,sans-serif" font-size="17" fill="#8c402e">Signed first-flight equilibrium:150 kg needs ≤124.75 N line tension.</text>
+<text x="680" y="523" font-family="Arial,sans-serif" font-size="17" fill="#8c402e">Signed full planar flight:150 kg needs ≤129.40 N primary tension.</text>
 <text x="680" y="556" font-family="Arial,sans-serif" font-size="17" fill="#8c402e">150 N is an authored operating bound, not a native limiter.</text>
 <text x="680" y="589" font-family="Arial,sans-serif" font-size="17" fill="#8c402e">1876 high-CG challenge includes negative support resultants.</text>
 <text x="680" y="622" font-family="Arial,sans-serif" font-size="17" fill="#8c402e">No drain:175.51 kg wet case remains over the150 kg limit.</text>
 <text x="680" y="655" font-family="Arial,sans-serif" font-size="17" fill="#8c402e">TU8 native7.845 kN per anchor; pair15.691 kN on the real beam.</text>
 <text x="680" y="688" font-family="Arial,sans-serif" font-size="17" fill="#8c402e">Door/threshold receivers,620 handle and all operator fields open.</text>
+<text x="680" y="721" font-family="Arial,sans-serif" font-size="17" fill="#8c402e">150 kg still needs ≤38.13 N lateral and ≤35.79 N·m yaw restraint.</text>
 <rect x="70.0" y="1055.0" width="202.5" height="90.0" fill="#deddd4" stroke="#68706a"/>
 <rect x="70.0" y="830.0" width="90.0" height="225.0" fill="#deddd4" stroke="#68706a"/>
 <rect x="182.5" y="830.0" width="90.0" height="225.0" fill="#deddd4" stroke="#68706a"/>
@@ -61,7 +62,7 @@
 <text x="355" y="909" font-family="Arial,sans-serif" font-size="17" fill="#21363b">990 fore/rear spacing; rear crew80 left-normal clears low-rope conflict.</text>
 <text x="355" y="943" font-family="Arial,sans-serif" font-size="17" fill="#21363b">All shapes independently clipped with50 mm inflated samples.</text>
 <text x="355" y="977" font-family="Arial,sans-serif" font-size="17" fill="#21363b">1113 poses / turn; continuous raw plan reserve &gt;44.51 mm.</text>
-<text x="355" y="1011" font-family="Arial,sans-serif" font-size="17" fill="#21363b">Grip902.90–1051.37 mm includes worst1:20 floor-height difference.</text>
+<text x="355" y="1011" font-family="Arial,sans-serif" font-size="17" fill="#21363b">Ideal pin-pose grip902.90–1051.37 mm; actual crest/toe held.</text>
 <text x="355" y="1045" font-family="Arial,sans-serif" font-size="17" fill="#21363b">Wheel tilt / transition / steering / braking / final toe are NOT proved.</text>
 <text x="355" y="1079" font-family="Arial,sans-serif" font-size="17" fill="#21363b">New anchors / redirects / floor support / independent failure capture open.</text>
 <text x="45" y="1215" font-family="Arial,sans-serif" font-size="19" fill="#21363b">Keep the whole system: W9 crew/GL,450 mm riser gap, native condensate/ports, floor/heat/material and capture duties.</text>
