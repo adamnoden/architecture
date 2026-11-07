@@ -21383,8 +21383,8 @@
   "sources": {
     "arch-gravity-routing.py": "ff16861d74b757a90b4fdb66b20fd59875ac388452acf97f98489e360df428c1",
     "current-house-arch-detail.json": "a0ef80d3e6be8c4b015ede5d292642e36427f04aafca86bac6f7a7b21aaf4aed",
-    "current-house-coupled-arches.py": "da6ec1951322d3618094594c4c7b8aaa61412e425aaa5013fe6df8562cc42939",
-    "current-house-joined-foundation.py": "47b7bc3f57fe175ba21008f8bddf0157ad223ddaaf4cf7f19d5d40e517124eaa"
+    "current-house-coupled-arches.py": "87ee5c438fc0ab0c10d8698ae0c6502f44d851a3ad4d8c6ca2cb9df98eb70558",
+    "current-house-joined-foundation.py": "5f4beaaa6f3927e4cf3decd62bde67106cff238a50d4c47238c3cc21dcce8f7a"
   },
   "states": 384,
   "units": "N columns positive compression in kN; first moments about physical global X and Y in kNm."
