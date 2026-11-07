@@ -1,0 +1,497 @@
+{
+  "admitted": false,
+  "geometry": {
+    "arch": [
+      140,
+      215
+    ],
+    "leftSpringX": 1205.1470588235293,
+    "oppositeHeadEccentricity": 7.647058823529278,
+    "oppositeJamb": [
+      140,
+      205
+    ],
+    "oppositeJambX": [
+      2300,
+      2505
+    ],
+    "rightSpringX": 2394.8529411764707,
+    "springZ": 6050.588235294117
+  },
+  "recomputedMembers": {
+    "LWidthAtSkewback": 1037.5,
+    "jambNormalWidthAbove4550": 140,
+    "jambNormalWidthAtFoot": 225,
+    "localL": [
+      270900.0,
+      310.60885012919897,
+      26801064265.281815,
+      -15683110422.218185
+    ],
+    "localLToeGlobalZ": [
+      5000.0,
+      6200.0
+    ],
+    "originalL": [
+      260400.0,
+      301.18279569892474,
+      23832115698.924732,
+      -13917204301.075268
+    ],
+    "updatedWholeRoofWindStates": 96
+  },
+  "remaining": "Develop curved bars into both receivers. Check out-of-plane loads including window and guarding, actual floor deflections and jamb datum, exterior masonry arch and perimeter details. Include these member actions and changed material in the final foundation ledger.",
+  "rows": [
+    {
+      "crackedEI": 0.2,
+      "datumComparisons": {
+        "near 5000": [
+          6.5163511990041725,
+          79,
+          2,
+          "opposite jamb"
+        ],
+        "near 5150": [
+          6.944732000298389,
+          32,
+          1,
+          "opposite jamb"
+        ],
+        "near 5300": [
+          7.813314727041908,
+          32,
+          1,
+          "opposite jamb"
+        ],
+        "near 5450": [
+          8.682596932383168,
+          32,
+          1,
+          "opposite jamb"
+        ],
+        "near 5600": [
+          9.552360790694522,
+          32,
+          1,
+          "opposite jamb"
+        ],
+        "near 5750": [
+          10.422388476348312,
+          32,
+          1,
+          "opposite jamb"
+        ],
+        "opposite 5000": [
+          7.125070681177327,
+          33,
+          2,
+          "opposite jamb"
+        ],
+        "opposite 5150": [
+          6.720890878116821,
+          31,
+          1,
+          "opposite jamb"
+        ],
+        "opposite 5300": [
+          7.9419945814875454,
+          31,
+          1,
+          "opposite jamb"
+        ],
+        "opposite 5450": [
+          9.110859200813302,
+          31,
+          1,
+          "opposite jamb"
+        ],
+        "opposite 5600": [
+          10.195136955418842,
+          31,
+          1,
+          "opposite jamb"
+        ],
+        "opposite 5750": [
+          11.162480064628914,
+          31,
+          1,
+          "opposite jamb"
+        ]
+      },
+      "maxEndMoment": 11.86136676411754,
+      "maxInPlaneInteractionArchJamb": [
+        0.49414834439305655,
+        0.35842839465784343
+      ],
+      "maxLeftH": 6.430147622477147,
+      "maxLeftV": 17.79522687330983,
+      "maxLowerSpan": {
+        "outer-east": 3054.0,
+        "outer-north": 3245.0,
+        "outer-south": 2517.5,
+        "outer-west": 2867.5
+      },
+      "maxMemberShear": 17.266489625384803,
+      "maxMomentArchJamb": [
+        11.861366764118015,
+        7.372645999886621
+      ],
+      "maxRelativeEndpointX": 6.743283334161264,
+      "maxRelativeEndpointZ": 2.2325880333632804,
+      "maxTotalVerticalReaction": 8.438778751239857,
+      "maximumGapClosure": [
+        7.813314727041908,
+        {
+          "ceiling": 1,
+          "surface": "opposite jamb",
+          "wind": 32,
+          "window": 1
+        }
+      ],
+      "maximumRigidWindowRotation": 0.003516113396965969,
+      "residualFinishGap": 0.18668527295809234,
+      "support": "all mapped lower bearings",
+      "windowFinishGap": 8
+    },
+    {
+      "crackedEI": 0.2,
+      "datumComparisons": {
+        "near 5000": [
+          5.978294539048083,
+          11,
+          3,
+          "opposite jamb"
+        ],
+        "near 5150": [
+          5.131562074122975,
+          11,
+          3,
+          "opposite jamb"
+        ],
+        "near 5300": [
+          5.9508226319007305,
+          29,
+          0,
+          "near jamb"
+        ],
+        "near 5450": [
+          6.795365160400485,
+          29,
+          0,
+          "near jamb"
+        ],
+        "near 5600": [
+          7.640332195197204,
+          29,
+          0,
+          "near jamb"
+        ],
+        "near 5750": [
+          8.485380984254164,
+          29,
+          0,
+          "near jamb"
+        ],
+        "opposite 5000": [
+          6.824223605469129,
+          29,
+          0,
+          "opposite jamb"
+        ],
+        "opposite 5150": [
+          5.631820170607661,
+          29,
+          0,
+          "opposite jamb"
+        ],
+        "opposite 5300": [
+          5.780872308185663,
+          29,
+          0,
+          "near jamb"
+        ],
+        "opposite 5450": [
+          6.919380119165724,
+          29,
+          0,
+          "near jamb"
+        ],
+        "opposite 5600": [
+          7.984588176552216,
+          29,
+          0,
+          "near jamb"
+        ],
+        "opposite 5750": [
+          8.945595185909898,
+          29,
+          0,
+          "near jamb"
+        ]
+      },
+      "maxEndMoment": 11.496739743187822,
+      "maxInPlaneInteractionArchJamb": [
+        0.47941602036005415,
+        0.3534246677479393
+      ],
+      "maxLeftH": 6.073726102745044,
+      "maxLeftV": 17.332134654834853,
+      "maxLowerSpan": {
+        "outer-east": 11335.0,
+        "outer-north": 11335.0,
+        "outer-south": 11335.0,
+        "outer-west": 11335.0
+      },
+      "maxMemberShear": 16.956944200015396,
+      "maxMomentArchJamb": [
+        11.49673974318806,
+        7.131713667216697
+      ],
+      "maxRelativeEndpointX": 7.02878440074054,
+      "maxRelativeEndpointZ": 1.7890293927345717,
+      "maxTotalVerticalReaction": 8.438778751925762,
+      "maximumGapClosure": [
+        5.9508226319007305,
+        {
+          "ceiling": 1,
+          "surface": "near jamb",
+          "wind": 29,
+          "window": 0
+        }
+      ],
+      "maximumRigidWindowRotation": 0.0029360824538330324,
+      "residualFinishGap": 2.0491773680992695,
+      "support": "two retained corner bearings",
+      "windowFinishGap": 8
+    },
+    {
+      "crackedEI": 0.35,
+      "datumComparisons": {
+        "near 5000": [
+          5.545180805597748,
+          79,
+          2,
+          "opposite jamb"
+        ],
+        "near 5150": [
+          5.927525043480235,
+          32,
+          1,
+          "opposite jamb"
+        ],
+        "near 5300": [
+          6.666401275718484,
+          32,
+          1,
+          "opposite jamb"
+        ],
+        "near 5450": [
+          7.404931476927868,
+          32,
+          1,
+          "opposite jamb"
+        ],
+        "near 5600": [
+          8.1429394584999,
+          32,
+          1,
+          "opposite jamb"
+        ],
+        "near 5750": [
+          8.880249031826068,
+          32,
+          1,
+          "opposite jamb"
+        ],
+        "opposite 5000": [
+          6.049436268493176,
+          33,
+          2,
+          "opposite jamb"
+        ],
+        "opposite 5150": [
+          5.701308118592073,
+          31,
+          1,
+          "opposite jamb"
+        ],
+        "opposite 5300": [
+          6.736154493381195,
+          31,
+          1,
+          "opposite jamb"
+        ],
+        "opposite 5450": [
+          7.728104075401899,
+          31,
+          1,
+          "opposite jamb"
+        ],
+        "opposite 5600": [
+          8.65035628659972,
+          31,
+          1,
+          "opposite jamb"
+        ],
+        "opposite 5750": [
+          9.4761105489202,
+          31,
+          1,
+          "opposite jamb"
+        ]
+      },
+      "maxEndMoment": 17.09051994710584,
+      "maxInPlaneInteractionArchJamb": [
+        0.7139858948229069,
+        0.5348464118636529
+      ],
+      "maxLeftH": 9.275376331792911,
+      "maxLeftV": 24.4769382323413,
+      "maxLowerSpan": {
+        "outer-east": 3054.0,
+        "outer-north": 3245.0,
+        "outer-south": 2517.5,
+        "outer-west": 2867.5
+      },
+      "maxMemberShear": 24.589111916944482,
+      "maxMomentArchJamb": [
+        17.090519947104408,
+        10.671870224051576
+      ],
+      "maxRelativeEndpointX": 5.71676772952696,
+      "maxRelativeEndpointZ": 1.873103403756659,
+      "maxTotalVerticalReaction": 8.438778751300903,
+      "maximumGapClosure": [
+        6.666401275718484,
+        {
+          "ceiling": 1,
+          "surface": "opposite jamb",
+          "wind": 32,
+          "window": 1
+        }
+      ],
+      "maximumRigidWindowRotation": 0.003024694024696991,
+      "residualFinishGap": 1.333598724281516,
+      "support": "all mapped lower bearings",
+      "windowFinishGap": 8
+    },
+    {
+      "crackedEI": 0.35,
+      "datumComparisons": {
+        "near 5000": [
+          4.5047760482522,
+          11,
+          3,
+          "opposite jamb"
+        ],
+        "near 5150": [
+          3.928413363624826,
+          29,
+          1,
+          "opposite jamb"
+        ],
+        "near 5300": [
+          4.500945616103709,
+          29,
+          0,
+          "near jamb"
+        ],
+        "near 5450": [
+          5.137778944240989,
+          29,
+          0,
+          "near jamb"
+        ],
+        "near 5600": [
+          5.774299320743279,
+          29,
+          0,
+          "near jamb"
+        ],
+        "near 5750": [
+          6.410189948805935,
+          29,
+          0,
+          "near jamb"
+        ],
+        "opposite 5000": [
+          5.234247521946002,
+          11,
+          3,
+          "opposite jamb"
+        ],
+        "opposite 5150": [
+          4.326520577124876,
+          11,
+          3,
+          "opposite jamb"
+        ],
+        "opposite 5300": [
+          4.289218668432146,
+          29,
+          0,
+          "near jamb"
+        ],
+        "opposite 5450": [
+          5.160451958193618,
+          29,
+          0,
+          "near jamb"
+        ],
+        "opposite 5600": [
+          5.976755464932393,
+          29,
+          0,
+          "near jamb"
+        ],
+        "opposite 5750": [
+          6.714139660940265,
+          29,
+          0,
+          "near jamb"
+        ]
+      },
+      "maxEndMoment": 14.946489407950216,
+      "maxInPlaneInteractionArchJamb": [
+        0.6192766754488235,
+        0.49422527735986516
+      ],
+      "maxLeftH": 8.251602101045894,
+      "maxLeftV": 21.86554899534989,
+      "maxLowerSpan": {
+        "outer-east": 11335.0,
+        "outer-north": 11335.0,
+        "outer-south": 11335.0,
+        "outer-west": 11335.0
+      },
+      "maxMemberShear": 21.962701925334642,
+      "maxMomentArchJamb": [
+        14.946489407949738,
+        9.885687637243539
+      ],
+      "maxRelativeEndpointX": 6.19918349434942,
+      "maxRelativeEndpointZ": 0.86588418704617,
+      "maxTotalVerticalReaction": 8.438778758740831,
+      "maximumGapClosure": [
+        4.500945616103709,
+        {
+          "ceiling": 1,
+          "surface": "near jamb",
+          "wind": 29,
+          "window": 0
+        }
+      ],
+      "maximumRigidWindowRotation": 0.00185219152335882,
+      "residualFinishGap": 3.499054383896291,
+      "support": "two retained corner bearings",
+      "windowFinishGap": 8
+    }
+  ],
+  "scope": "Eight upper corner openings, six coupled terminal coordinates each, 96 directional winds, ceiling present or removed, and two flexural stiffnesses. The floor strong-axis comparison models the added arch loads. Existing floor sag, base settlement and construction variation must be introduced before window clearance can be accepted.",
+  "sources": {
+    "current-house-arch-jambs.json": "5398e4b04c1af76cf7fd8beab4d15950983b446487f310a5e6879b69ae1f1f2a",
+    "current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "current-house-roof-bracing.py": "721728758c48c2843b5074802c21942c80047db619e7cac8f3a2b78c5d0ebd70"
+  }
+}

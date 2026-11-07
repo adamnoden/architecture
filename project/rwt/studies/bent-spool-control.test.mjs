@@ -21,12 +21,12 @@ test('whole bending solids stay out of bridge during roll and a misplaced roll r
  assert(o.actualPostTranslation.minimumToNorthColumn>80);
 });
 test('whole frame, wet bodies and unconcentrated hardware charge the actual long export and CG',()=>{
- assert(o.geometry.straightCut<6000&&o.geometry.straightCut>5800);
+ assert(o.geometry.straightCut<6000&&o.geometry.straightCut>5500);
  assert(o.loads.bendWaterGrossBoxBoundKg>49);
- assert(o.loads.knownWetIncludingBareFrameKg>351);
- assert.equal(o.renewal.translation,5855);assert.equal(o.renewal.requiredDeckEnd,19250);
- assert.equal(o.renewal.stageGrowthBeyondOld4700Control,2100);
- assert(o.renewal.cgBound.liftMinimumCgReserve>900);
+ assert(o.loads.knownWetIncludingBareFrameKg>320);
+ assert(o.renewal.translation>5524&&o.renewal.translation<5525);assert.equal(o.renewal.requiredDeckEnd,18850);
+ assert.equal(o.renewal.stageGrowthBeyondOld4700Control,1700);
+ assert(o.renewal.cgBound.liftMinimumCgReserve>750);
  assert(o.renewal.cgBound.lowerCradleMinimumCgReserve>1400);
  assert(o.renewal.cgBound.parkedX[1]>16300,'Old farcradle cannot silently inherit the CG bound');
  assert.equal(o.accepted,false);assert.equal(o.siteAccepted,false);
@@ -35,4 +35,29 @@ test('new continuous proof and inspection sheet reproduce without admitting unre
  assert.equal(fs.readFileSync('project/rwt/studies/bent-spool-control.json','utf8'),JSON.stringify(o,null,2)+'\n');
  assert.equal(fs.readFileSync('project/rwt/studies/bent-spool-control.svg','utf8'),renderBent(o));
  assert.equal(o.physicalEventPerformed,false);assert.equal(o.firstSusceptible,null);
+});
+
+test('whole rolling native solids exclude the carrier, preserving the old65degree rail conflict',()=>{
+ assert.equal(o.frameRollProof.rejectedLongFrame.collision,true);
+ assert.equal(o.frameRollProof.rejectedLongFrame.angleDegrees,65);
+ assert(o.frameRollProof.inletEndGapAfterAdditionalFrameAndDeformation>30);
+ assert(o.frameRollProof.outletEndGapAfterAdditionalFrameAndDeformation>100);
+ assert.equal(o.frameRollProof.fullMethodAccepted,false);
+});
+test('ordinary two-position crew screen pays the real aperture instead of inheriting failed stationary reach',()=>{
+ assert(o.failedFixedStationControls.originalFacing.maximumReferenceHandReach>650);
+ assert(o.failedFixedStationControls.originalNorthFacing.maximumReferenceHandReach>700);
+ assert(o.verticalJointReference.singleStationControls.every(x=>x.maximumReferenceHandReach>600));
+ assert.equal(o.verticalJointReference.geometryFailures,0);
+ assert(o.verticalJointReference.maximumReferenceHandReach<420);
+ assert.equal(o.wellAndCrew.rejected100Opening.intrusion,25);
+ assert.equal(o.wellAndCrew.southWidening,175);
+ assert.equal(o.wellAndCrew.retainedPanDuringFirstRelease.module,3);
+ assert(o.wellAndCrew.routeProof.minimumFlangePlanGapAfter5>=25);
+ assert(o.wellAndCrew.routeProof.minimumWestOpeningReserveAfter5>=25);
+ assert.equal(o.wellAndCrew.routeProof.originalDirectCrossingWouldHit,true);
+ assert.equal(o.verticalJointReference.wholeDeliveredBodyAccepted,false);
+ assert.equal(o.verticalJointReference.installedMethodAccepted,false);
+ assert.equal(o.verticalJointReference.torqueAccepted,false);
+ assert.equal(o.wellAndCrew.routeProof.full3DPostureAccepted,false);
 });
