@@ -9,8 +9,8 @@
     "label": "zerg-str-1917"
   },
   "claimedAt": "2026-11-06T19:17:42.359Z",
-  "heartbeatAt": "2026-11-07T00:21:32.571Z",
-  "expiresAt": "2026-11-07T01:51:32.571Z",
+  "heartbeatAt": "2026-11-07T01:28:21.859Z",
+  "expiresAt": "2026-11-07T02:58:21.859Z",
   "branch": "work/zerg-20261107-str-house5",
   "predecessor": {
     "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
@@ -36,7 +36,7 @@
   },
   "pr": 1366,
   "checkpoint": {
-    "evidence": "PR 1366 at a0d2b7c7. Signed wind transfer from all eight arch frames into 52 heads on b5cff93b is committed and reproduced, including first moments and yaw.",
-    "next": "Join absolute arch, ceiling, outward foot and fixture gravity, then normal wind and actual roof and guard terminals."
+    "evidence": "PR1366 26d88ade anchored research; expanded spatial kernel independently conserves all 52 head actions in 73728 states; actual H6/55 and receiver geometry in shared cage source.",
+    "next": "Complete common closed-link/room-barrier/guard source and submit coordinated research checkpoint for exact CI and root review."
   }
 }
