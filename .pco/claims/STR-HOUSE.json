@@ -9,9 +9,9 @@
     "label": "zerg-str-1917"
   },
   "claimedAt": "2026-11-06T19:17:42.359Z",
-  "heartbeatAt": "2026-11-07T01:28:21.859Z",
-  "expiresAt": "2026-11-07T02:58:21.859Z",
-  "branch": "work/zerg-20261107-str-house5",
+  "heartbeatAt": "2026-11-07T02:01:15.608Z",
+  "expiresAt": "2026-11-07T03:31:15.608Z",
+  "branch": "work/zerg-20261107-str-house6",
   "predecessor": {
     "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
     "generation": 26,
@@ -36,7 +36,7 @@
   },
   "pr": 1366,
   "checkpoint": {
-    "evidence": "PR1366 26d88ade anchored research; expanded spatial kernel independently conserves all 52 head actions in 73728 states; actual H6/55 and receiver geometry in shared cage source.",
-    "next": "Complete common closed-link/room-barrier/guard source and submit coordinated research checkpoint for exact CI and root review."
+    "evidence": "Merged PR1366 at6173816569ec11abf1f8416e8a765c0d43374b74. Rebinding fresh successor branch; PR1366 is the completed preceding research checkpoint, new draft follows substantive source.",
+    "next": "Compare outward160/180 RC arch/jamb widths with unchanged inside face and actual steel/cage, gravity, floor/pier stiffness, sleeves, thermal and window interfaces."
   }
 }
