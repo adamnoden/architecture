@@ -1,0 +1,78 @@
+{
+  "admitted": false,
+  "continuedFoot": "The 225 foot and its 25 glass/50 drained gap remain distinct. Do not extrapolate the ordinary upper section into the floor cage.",
+  "controls": [
+    {
+      "additionalCharacteristicKN": 7.743863700590264,
+      "admitted": false,
+      "drainedCavity": 50,
+      "insideConcreteFace": 140,
+      "maximumCoverComparison": 40,
+      "minimumAsBuiltWidthComparison": 150,
+      "minimumH6CellAreaMm2": 7616.0,
+      "minimumRadialDepthComparison": 205,
+      "nearLGrossNormalWidth": 160,
+      "nearLInsideLegEnds": 1037.5,
+      "nearLNormalBandZ": [
+        5000,
+        6200
+      ],
+      "newConcreteM3AcrossEight": 0.3097545480236106,
+      "newNearLConcreteM3AcrossFour": 0.20112,
+      "normalH16Centres": [
+        29,
+        91
+      ],
+      "normalWidthNominal": 160,
+      "oneDimensionalAddedWPerKOnArchAndJamb": 0.3455952785694488,
+      "oneDimensionalAddedWPerKOnNearBands": 0.6474919361049837,
+      "outsideConcreteFace": -20,
+      "parallelBarClearAfterTwo5": 36,
+      "remainingOrdinaryGlass": 90,
+      "sourceRoles": "Gross additions into the old insulation, BEFORE near-L/ring intersection reconciliation and without crediting a displaced masonry weight. The RC arch radial depth and full window opening remain the reference. Verify exposed corners, cast steps, main-bar restraint, local shear-centre transition and 3D thermal/cavity joints.",
+      "thermalScope": "Separate gross face screens, before 3D thermal returns and overlap reconciliation. Remaining glass is a nominal geometric thickness, not a delivered product guarantee.",
+      "unchangedFootGlass": 25,
+      "unchangedFootNormal": 225
+    },
+    {
+      "additionalCharacteristicKN": 15.58372740118053,
+      "admitted": false,
+      "drainedCavity": 50,
+      "insideConcreteFace": 140,
+      "maximumCoverComparison": 40,
+      "minimumAsBuiltWidthComparison": 170,
+      "minimumH6CellAreaMm2": 9996.0,
+      "minimumRadialDepthComparison": 205,
+      "nearLGrossNormalWidth": 180,
+      "nearLInsideLegEnds": 1037.5,
+      "nearLNormalBandZ": [
+        5000,
+        6200
+      ],
+      "newConcreteM3AcrossEight": 0.6233490960472212,
+      "newNearLConcreteM3AcrossFour": 0.40608,
+      "normalH16Centres": [
+        9,
+        91
+      ],
+      "normalWidthNominal": 180,
+      "oneDimensionalAddedWPerKOnArchAndJamb": 0.8434205437170799,
+      "oneDimensionalAddedWPerKOnNearBands": 1.6100806897840318,
+      "outsideConcreteFace": -40,
+      "parallelBarClearAfterTwo5": 56,
+      "remainingOrdinaryGlass": 70,
+      "sourceRoles": "Gross additions into the old insulation, BEFORE near-L/ring intersection reconciliation and without crediting a displaced masonry weight. The RC arch radial depth and full window opening remain the reference. Verify exposed corners, cast steps, main-bar restraint, local shear-centre transition and 3D thermal/cavity joints.",
+      "thermalScope": "Separate gross face screens, before 3D thermal returns and overlap reconciliation. Remaining glass is a nominal geometric thickness, not a delivered product guarantee.",
+      "unchangedFootGlass": 25,
+      "unchangedFootNormal": 225
+    }
+  ],
+  "role": "One outward-widened RC inner arch and jamb, screened at160/180 nominal. Both are explicit proposals. The genuine outer masonry and full window opening stay the references.",
+  "structuralHolds": [
+    "The new coupled kernel includes normal centroid offsets; complete absolute all-head gravity/wind transfer and minimum-section stiffness remain open.",
+    "Keep main H20 restraint, curved H16 tails, old and new closed hoops and real sleeves in one cage.",
+    "Conserve actual added-body gravity, count intersections once, and use a justified lower mass for any favourable axial strength.",
+    "Join the local L reference line/shear centre transition and end stiffness.",
+    "Qualify the rear-west barrier access at the fixed cabinet."
+  ]
+}

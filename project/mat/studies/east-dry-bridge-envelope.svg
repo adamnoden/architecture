@@ -13,7 +13,7 @@
 <path d="M540.847280334728 100.0 H1110.0" stroke="#8f6354" stroke-dasharray="5 4"/>
 <path d="M762.9288702928869 320.5882352941177 L982.6380753138075 326.4717647058824" stroke="#a12b23" stroke-width="2"/>
 <path d="M711.7468619246862 130 V320" stroke="#a12b23" stroke-dasharray="4 4"/>
-<text x="30" y="385" font-size="13" fill="#a12b23">Retained support reservation x11667.5 crosses the park: actual profile / full hoist clearance UNBOUND.</text>
+<text x="30" y="385" font-size="13" fill="#a12b23">Park X12250–14750.5 lies to one side of the support axis at X11667.5. Actual profile and full hoist clearance remain unverified.</text>
 <text x="30" y="350" font-size="13" fill="#17242e">Blue: installed body/backing. Green: separate east park. Brown: operator deck outside the depressed track.</text>
 <path d="M60 460.0 H1110" stroke="#a12b23" stroke-dasharray="8 5"/>
 <text x="30" y="455" font-size="14" fill="#a12b23">Lowest fixed track -1132.359; local D1800 trial has 167.641 over the stated stresses</text>
