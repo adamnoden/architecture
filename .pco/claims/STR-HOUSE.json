@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 27,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "90e5118e-258e-4d50-a157-c1cb222bff0b",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-str-1917"
   },
   "claimedAt": "2026-11-06T19:17:42.359Z",
-  "heartbeatAt": "2026-11-07T02:46:27.495Z",
-  "expiresAt": "2026-11-07T04:16:27.495Z",
+  "heartbeatAt": "2026-11-07T03:05:08.000Z",
+  "expiresAt": "2026-11-07T03:05:08.000Z",
   "branch": "work/zerg-20261107-str-house6",
   "predecessor": {
     "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
@@ -38,5 +38,7 @@
   "checkpoint": {
     "evidence": "PR1373 real negative width checkpoint58d2d21d4cd40df4f6ea0a51c64266d9343516f5/tree89b2ce418c23c8928664cdb489442ee485f99d34;24tests/kernel/eightresponsecontrols/render passed;full45producer suite running",
     "next": "Review failed160/180 actual-cell controls; isolate governing arch bending and price one ordinary correction with true development/soffit/cage; no selection"
-  }
+  },
+  "releasedAt": "2026-11-07T03:05:08.000Z",
+  "releaseReason": "handoff"
 }
