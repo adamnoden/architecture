@@ -1,7 +1,7 @@
 # COA-05 — topology successor views
 
 **Gate:** COA-05  
-**Status:** PASS — accepted in the [completed COA programme](../../docs/computational/compiler-output-architecture-programme.md)\
+**Status:** PASS subject to repository CI  
 **Starting main:** `5f76fc014c4754939afecb3e0cdd733d6bbc5e71`  
 **Issue:** #95  
 **Authority effect:** none
@@ -47,4 +47,4 @@ The CH-frozen `rhc2-structural-topology.svg`, `rhc3-service-topology.svg` and `r
 
 No structural capacity, member sizing, foundation adequacy, service performance, drainage capacity or building-physics claim is added.
 
-**Historical handoff:** [COA-06 — integration, docs surface and closeout](../coa06/README.md), subsequently completed as the final COA gate.
+**Next gate:** COA-06 — integration, docs surface and closeout.

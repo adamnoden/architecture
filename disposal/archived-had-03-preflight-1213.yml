@@ -1,0 +1,38 @@
+# Post-CI fresh preflight: exact-head PR validation 41308734847 succeeded.
+name: HAD-03 near-level court window preflight PR1213
+on:
+  push:
+    branches: [work/had-03-preflight-1213]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    if: github.repository == 'adamnoden/architecture'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout exact reviewed HAD-03 head
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6558099791
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Exact head invariant
+        run: test "$(git rev-parse HEAD)" = "6f5842330c9a4793b2fd987114a11aa60077ecf5"
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Canonical fresh publication preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm run control:merge-check -- HAD-03 \
+            --lease-id 5c4b89d9-ff6c-46d5-86d3-fe44774bc6df \
+            --generation 18 \
+            --branch work/mvb-chat-6558099791 \
+            --head 6f5842330c9a4793b2fd987114a11aa60077ecf5 \
+            --format text
