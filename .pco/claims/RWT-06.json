@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-07T01:17:36.660Z",
-  "expiresAt": "2026-11-07T02:47:36.660Z",
+  "heartbeatAt": "2026-11-07T02:02:42.372Z",
+  "expiresAt": "2026-11-07T03:32:42.372Z",
   "branch": "work/zerg-20261107-rwt06-upper-first",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -34,9 +34,9 @@
       "blocker": "Coordinator execution limit; stop new design. RWT06 incomplete, no hydraulic/physical/site admission. Preserve draft and branch; canonical HANDOFF release immediately after this checkpoint."
     }
   },
-  "pr": 1359,
+  "pr": 1370,
   "checkpoint": {
-    "evidence": "1359 MERGED b0d3102d from710d5caa:166RWT/fullCI2659/rootreview/freshpreflight. Currentmain b0d3102d and HAD089f0 verified. Fresh successor branch starts exact mergedmain; no source edits yet.1359 PR metadata retained as integrated provenance until new draft exists.",
-    "next": "Own ONE upper-first bent-spool release: permanently axis815, captured upperpan/flange lift; actual seam/seat, full78kg upperassembly yaw/export, native-end collar/positive lock/rail/support/crew and corrected independent-waterCG. Create/bind successor draft at first coherent source; no handling/adoption/RWT06 completion."
+    "evidence": "Draft1370 headb7ab6d32/tree6ddf043b starts mergedb0.171RWT plusfinal5targeted; default710resultbyteidentical; finalnewSVGinspected. ONEupper-first−815/drop0,80.44kg upperreference, passive rearframe/cantilever actualsupportsource; no phantom north girder; no adoption.",
+    "next": "Continue actual reinforced westcantilever/EWrimTjoint and eastendplate cage/anchors with STR; actual80kg upperhandler/capture/force limit/reversal, lowerpositive collar/key/locks/rail/drive and corrected partial-waterCG. Preserve high-eave/firstwet/site exits; do not claim RWT06complete."
   }
 }
