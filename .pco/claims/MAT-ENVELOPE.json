@@ -9,8 +9,8 @@
     "label": "rush-closeout-mat-20261107"
   },
   "claimedAt": "2026-11-07T09:14:47.968Z",
-  "heartbeatAt": "2026-11-07T09:25:27.215Z",
-  "expiresAt": "2026-11-07T10:10:27.215Z",
+  "heartbeatAt": "2026-11-07T09:39:20.634Z",
+  "expiresAt": "2026-11-07T10:24:20.634Z",
   "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "11e00270-b80a-4364-a2a5-a6e35810130e",
@@ -36,7 +36,7 @@
   },
   "pr": 1374,
   "checkpoint": {
-    "evidence": "Aggregate PR #1374 head 6ce3f6a3 includes exact reviewed predecessor 87d31e3c and corrected support-locus caption. Full test:mat and source reproducers pass on the integrated branch. All ten floor boundary source blobs match main. Independent root cast-area sweep verified.",
-    "next": "Confirm all exact aggregate-head workflows, fresh preflight on all four leased nodes, integrate, confirm predecessor closure and release."
+    "evidence": "Successor #1374 merged a0896ad683e8969169e41cf8c3c0395ec4a4e9c4 with predecessor #1371 in ancestry. Verified test:mat, independent geometric sweep, support-locus caption, 14 exact-head workflows and canonical preflight. The ordinary RC floor boundary is a research comparison.",
+    "next": "Develop the floor-to-wall junction through actual court outlets, pierced returns and drained vent openings. Establish connected every-bay ventilation, solum drainage, delivered batch/cure and installed air/moisture performance before assembly admission."
   }
 }
