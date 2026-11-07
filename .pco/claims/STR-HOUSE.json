@@ -9,8 +9,8 @@
     "label": "zerg-str-1917"
   },
   "claimedAt": "2026-11-06T19:17:42.359Z",
-  "heartbeatAt": "2026-11-06T23:12:33.181Z",
-  "expiresAt": "2026-11-07T00:42:33.181Z",
+  "heartbeatAt": "2026-11-07T00:19:00.614Z",
+  "expiresAt": "2026-11-07T01:49:00.614Z",
   "branch": "work/zerg-20261106-str-arch4",
   "predecessor": {
     "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
@@ -36,8 +36,7 @@
   },
   "pr": 1362,
   "checkpoint": {
-    "evidence": "PR #1362 on merged 1357. Coupled arch, floor and pier tests in progress.",
-    "next": "Bind eight arch/jamb/window intersections and buildable cage and outer leaf.",
-    "blocker": "Physical development under way."
+    "evidence": "Verified merged research PR 1362. Substantive 52-head successor prepared on b5cff93b.",
+    "next": "Publish the conserved 52-head wind checkpoint then bind the fresh successor draft and complete gravity and weak-axis joins."
   }
 }
