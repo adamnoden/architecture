@@ -9,8 +9,8 @@
     "label": "rush-closeout-ias"
   },
   "claimedAt": "2026-11-07T09:15:01.126Z",
-  "heartbeatAt": "2026-11-07T09:22:19.668Z",
-  "expiresAt": "2026-11-07T10:52:19.668Z",
+  "heartbeatAt": "2026-11-07T09:39:12.757Z",
+  "expiresAt": "2026-11-07T11:09:12.757Z",
   "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "243df4cc-2336-4946-b926-bfa82a32cfc7",
@@ -34,7 +34,7 @@
   },
   "pr": 1374,
   "checkpoint": {
-    "evidence": "IAS reviewed 0266d0b, #1372 and #1375, full local checks. Joint four-packet reconciliation on #1374.",
-    "next": "Confirm unchanged IAS result and exact integration CI, then IAS publication preflight on final combined head. No selection."
+    "evidence": "Merged PR #1374 a0896ad683e8969169e41cf8c3c0395ec4a4e9c4. IAS predecessor #1372 and recovery #1375 both merged; 14 exact-head workflows, utility producers and coordinator review passed.",
+    "next": "IAS-03 remains open: establish actual complete sink/trap/services cutover and supported receipt before the verified bare-frame first rest, then handling/export/return."
   }
 }
