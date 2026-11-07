@@ -1,0 +1,4196 @@
+{
+  "identity": "RWT-UPPER-FIRST-SAME-NATIVE-SPOOL-2026-11-07",
+  "source": {
+    "startingMain": "b0d3102d5522408d256fb8c4c03bb69939e77964",
+    "baselineControl": "710d5caa6c03a4abaa0d5c5b6e3668a9d4c66fb1",
+    "baselineJsonSha256": "a2692657bfdc184e6ed9405799891b07d8eb46438ce02ddef55048acf020f843",
+    "had": {
+      "hadBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+      "hadPath": "project/had/studies/water-replan.json"
+    },
+    "structuralGrid": {
+      "path": "project/str/studies/current-house-grid.json",
+      "sha256": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+      "courtW": {
+        "axis": "y",
+        "datum": 3950,
+        "extent": [
+          3950,
+          8050
+        ],
+        "width": 600,
+        "z": [
+          -630,
+          -180
+        ],
+        "heads": [
+          {
+            "id": "P32",
+            "u": 4332.5,
+            "offset": 0
+          },
+          {
+            "id": "P33",
+            "u": 6200,
+            "offset": 0
+          },
+          {
+            "id": "P34",
+            "u": 8050,
+            "offset": 0
+          }
+        ],
+        "maximumPitch": 1867.5,
+        "endCantilevers": [
+          382.5,
+          0
+        ]
+      },
+      "courtE": {
+        "axis": "y",
+        "datum": 7950,
+        "extent": [
+          3950,
+          8050
+        ],
+        "width": 600,
+        "z": [
+          -630,
+          -180
+        ],
+        "heads": [
+          {
+            "id": "P35",
+            "u": 3950,
+            "offset": 0
+          },
+          {
+            "id": "P36",
+            "u": 6100,
+            "offset": 0
+          },
+          {
+            "id": "P37",
+            "u": 7700,
+            "offset": 0
+          }
+        ],
+        "maximumPitch": 2150,
+        "endCantilevers": [
+          0,
+          350
+        ]
+      },
+      "courtNW": {
+        "axis": "x",
+        "datum": 8050,
+        "extent": [
+          3950,
+          4500
+        ],
+        "width": 600,
+        "z": [
+          -630,
+          -180
+        ],
+        "heads": [
+          {
+            "id": "P34",
+            "u": 3950,
+            "offset": 0
+          },
+          {
+            "id": "P28",
+            "u": 4500,
+            "offset": 0
+          }
+        ],
+        "maximumPitch": 550,
+        "endCantilevers": [
+          0,
+          0
+        ]
+      },
+      "existingEWAt6025_7700": []
+    },
+    "roles": "Selected HAD is unchanged. This is ONE unadopted same-spool successor; default710 geometry/JSON stays reproducible. Its method text is not inherited into this different release sequence."
+  },
+  "selectedGeometryChanged": false,
+  "accepted": false,
+  "hydraulicAccepted": false,
+  "siteAccepted": false,
+  "physicalEventPerformed": false,
+  "firstSusceptible": null,
+  "decision": "Install the same pipe40lower and lift the independently captured upper pan/flange first. Eliminate heavy dynamic lowering; keep actual upper mass, positive support/keepers, full export and all native lower capture/lock duties explicit.",
+  "geometry": {
+    "axisAnchor": [
+      7350,
+      6950,
+      -815
+    ],
+    "fall": 0.011764705882352941,
+    "inletCorner": [
+      6875,
+      6950,
+      -809.4117647058823
+    ],
+    "inletPort": [
+      6878.5644592155095,
+      6950,
+      -506.4327313875668
+    ],
+    "horizontalIn": [
+      7177.9790333183155,
+      6950,
+      -812.9762239213919
+    ],
+    "horizontalOut": [
+      12647.020966681685,
+      6950,
+      -877.3178937256669
+    ],
+    "outletCorner": [
+      12950,
+      6950,
+      -880.8823529411765
+    ],
+    "freeOutlet": [
+      12946.43554078449,
+      6950,
+      -1183.861386259492
+    ],
+    "flange": [
+      6880.051903114187,
+      6950,
+      -380
+    ],
+    "flangeNormal": [
+      0.011763891800361699,
+      0,
+      0.9999308030307444
+    ],
+    "collector": [
+      6882.16955017301,
+      6950,
+      -200
+    ],
+    "flangeFaceZ": -380,
+    "portDistance": 5469.42040067868,
+    "straightCut": 5531.42040067868,
+    "stockLength": 6000,
+    "stockReserve": 468.5795993213196,
+    "upperStubMaximumCut": 182.4414807548232,
+    "inletBox": [
+      6790,
+      6855,
+      -894.4117647058823,
+      460,
+      190,
+      460
+    ],
+    "outletBox": [
+      12575,
+      6855,
+      -1255.8823529411766,
+      460,
+      190,
+      460
+    ],
+    "flangeOD": 285,
+    "movingFlangeAxial": 25,
+    "fixedFlangeAxial": 25,
+    "freeOutletRole": "Native N18 open port is the terminal; no extra lower joint, no appended vertical pipe inherited from the old−1200 terminal. Exact delivered socket/open-edge geometry and splash/erosion remain required.",
+    "receiver": [
+      12500,
+      6100,
+      2000,
+      1600
+    ],
+    "ordinaryWater": -1400,
+    "faultWater": -1250,
+    "nativeOutletAirGapOrdinary": 216.13861374050794,
+    "nativeOutletAirGapFault": 66.13861374050794,
+    "duringLoweredMaintenanceNativeGapFault": 66.13861374050794
+  },
+  "completeAngularProof": {
+    "method": "For each vertex of each full enclosing solid, each coordinate is A+Bcos(phi)+Csin(phi). Enumerate0/90and every interior stationary angle atan2(C,B)+k*pi. A linear coordinate reaches its extrema at a prism vertex. This proves the WHOLE CONTINUOUS0..90solid hull, not sparse angle samples.",
+    "angleDegrees": [
+      0,
+      90
+    ],
+    "rollDirection": "Inlet leg SOUTH, outlet leg NORTH",
+    "dropBeforeRoll": 0,
+    "toleranceEachFace": 5,
+    "toleranceRole": "Explicit5mm rigid-position/construction envelope. It is not a measured fabrication tolerance or an allowance for arbitrary support deflection.",
+    "sweeps": [
+      {
+        "id": "native-inlet460box",
+        "angular": [
+          {
+            "axis": "X",
+            "minimum": 6779.483039191226,
+            "maximum": 7257.065535400526,
+            "minimumAtDegrees": 90,
+            "maximumAtDegrees": 90,
+            "minimumVertex": 1,
+            "maximumVertex": 6
+          },
+          {
+            "axis": "Y",
+            "minimum": 6553.901079489939,
+            "maximum": 7083.140456038849,
+            "minimumAtDegrees": 75.94192289999114,
+            "maximumAtDegrees": 42.15141045389835,
+            "minimumVertex": 5,
+            "maximumVertex": 2
+          },
+          {
+            "axis": "Z",
+            "minimum": -943.3995939569289,
+            "maximum": -417.5348666204611,
+            "minimumAtDegrees": 49.69410695754244,
+            "maximumAtDegrees": 14.253263133057649,
+            "minimumVertex": 4,
+            "maximumVertex": 3
+          }
+        ],
+        "start": [
+          [
+            6790,
+            7250
+          ],
+          [
+            6855,
+            7045
+          ],
+          [
+            -894.4117647058823,
+            -434.4117647058823
+          ]
+        ],
+        "rolled": [
+          [
+            6784.483039191226,
+            7252.065535400526
+          ],
+          [
+            6570.614489438335,
+            7035.994049060644
+          ],
+          [
+            -908.8281082370911,
+            -713.366580875753
+          ]
+        ]
+      },
+      {
+        "id": "native-outlet460box",
+        "angular": [
+          {
+            "axis": "X",
+            "minimum": 12567.934464599475,
+            "maximum": 13045.516960808774,
+            "minimumAtDegrees": 90,
+            "maximumAtDegrees": 90,
+            "minimumVertex": 1,
+            "maximumVertex": 6
+          },
+          {
+            "axis": "Y",
+            "minimum": 6816.85954396115,
+            "maximum": 7346.098920510061,
+            "minimumAtDegrees": 42.15141045389831,
+            "maximumAtDegrees": 75.94192289999117,
+            "minimumVertex": 5,
+            "maximumVertex": 2
+          },
+          {
+            "axis": "Z",
+            "minimum": -1272.7592510265977,
+            "maximum": -746.89452369013,
+            "minimumAtDegrees": 14.253263133057645,
+            "maximumAtDegrees": 49.69410695754248,
+            "minimumVertex": 4,
+            "maximumVertex": 3
+          }
+        ],
+        "start": [
+          [
+            12575,
+            13035
+          ],
+          [
+            6855,
+            7045
+          ],
+          [
+            -1255.8823529411766,
+            -795.8823529411766
+          ]
+        ],
+        "rolled": [
+          [
+            12572.934464599475,
+            13040.516960808774
+          ],
+          [
+            6864.005950939356,
+            7329.385510561665
+          ],
+          [
+            -976.927536771306,
+            -781.4660094099677
+          ]
+        ]
+      },
+      {
+        "id": "complete-moving285flange-prism",
+        "angular": [
+          {
+            "axis": "X",
+            "minimum": 6725.833505986568,
+            "maximum": 7027.812910304107,
+            "minimumAtDegrees": 90,
+            "maximumAtDegrees": 18.35720442486597,
+            "minimumVertex": 1,
+            "maximumVertex": 7
+          },
+          {
+            "axis": "Y",
+            "minimum": 6492.533166527208,
+            "maximum": 7097.5,
+            "minimumAtDegrees": 71.64279557513396,
+            "maximumAtDegrees": 0,
+            "minimumVertex": 5,
+            "maximumVertex": 7
+          },
+          {
+            "axis": "Z",
+            "minimum": -958.5782587193149,
+            "maximum": -350.29988598510386,
+            "minimumAtDegrees": 90,
+            "maximumAtDegrees": 18.357204424866037,
+            "minimumVertex": 5,
+            "maximumVertex": 3
+          }
+        ],
+        "start": [
+          [
+            6737.267666387296,
+            7022.542042546068
+          ],
+          [
+            6807.5,
+            7092.5
+          ],
+          [
+            -406.6746246573202,
+            -378.3236454184484
+          ]
+        ],
+        "rolled": [
+          [
+            6730.833505986568,
+            7019.166494013432
+          ],
+          [
+            6520.558519245176,
+            6545.558519245177
+          ],
+          [
+            -953.5782587193149,
+            -665.2452706924497
+          ]
+        ]
+      },
+      {
+        "id": "straight-tube-conservative160square",
+        "angular": [
+          {
+            "axis": "X",
+            "minimum": 7171.648932724653,
+            "maximum": 12653.351067275347,
+            "minimumAtDegrees": 44.99999999999995,
+            "maximumAtDegrees": 45.000000000016406,
+            "minimumVertex": 0,
+            "maximumVertex": 7
+          },
+          {
+            "axis": "Y",
+            "minimum": 6831.933625688271,
+            "maximum": 7068.066374311729,
+            "minimumAtDegrees": 45.00000000000005,
+            "maximumAtDegrees": 45.00000000000005,
+            "minimumVertex": 5,
+            "maximumVertex": 6
+          },
+          {
+            "axis": "Z",
+            "minimum": -995.3764441869686,
+            "maximum": -694.9176734600901,
+            "minimumAtDegrees": 44.99999999999995,
+            "maximumAtDegrees": 44.99999999999995,
+            "minimumVertex": 4,
+            "maximumVertex": 3
+          }
+        ],
+        "start": [
+          [
+            7177.038510168876,
+            12647.961489831123
+          ],
+          [
+            6870.05,
+            7029.95
+          ],
+          [
+            -957.2623614279748,
+            -733.031756219084
+          ]
+        ],
+        "rolled": [
+          [
+            7177.038510168876,
+            12647.961489831123
+          ],
+          [
+            6870.05,
+            7029.95
+          ],
+          [
+            -957.2623614279747,
+            -733.0317562190841
+          ]
+        ]
+      }
+    ],
+    "downstreamNorthReserve": 28.90107948993864,
+    "downstreamSouthReserve": 391.85954396114994,
+    "inletFlangeSouthReserve": 67.53316652720787,
+    "rootWarning": "Intermediate angles govern. The nominal native-outlet box peaks north at about76degrees; endpoint-only clearance is invalid.",
+    "bridgeCases": [
+      {
+        "id": "court",
+        "x": [
+          7650,
+          8250
+        ],
+        "underside": -630,
+        "minimumClearance": 41.01955051421828,
+        "governing": {
+          "draw": 630.8335059865676,
+          "x": 7650,
+          "z": -676.0195505142183,
+          "clearance": 41.01955051421828
+        }
+      },
+      {
+        "id": "spine",
+        "x": [
+          8850,
+          9750
+        ],
+        "underside": -630,
+        "minimumClearance": 55.13719757304182,
+        "governing": {
+          "draw": 1830.8335059865676,
+          "x": 8850,
+          "z": -690.1371975730418,
+          "clearance": 55.13719757304182
+        }
+      },
+      {
+        "id": "outer",
+        "x": [
+          11217.5,
+          12117.5
+        ],
+        "underside": -630,
+        "minimumClearance": 82.99013874951243,
+        "governing": {
+          "draw": 4198.333505986568,
+          "x": 11217.5,
+          "z": -717.9901387495124,
+          "clearance": 82.99013874951243
+        }
+      }
+    ]
+  },
+  "spatialStateProof": {
+    "gated": [
+      {
+        "id": "native-inlet460box",
+        "completeX": [
+          6779.483039191226,
+          7257.065535400526
+        ],
+        "outsideEveryBridgeWhileRolling": true,
+        "locked90Y": [
+          6560.614489438335,
+          7045.994049060644
+        ]
+      },
+      {
+        "id": "native-outlet460box",
+        "completeX": [
+          12567.934464599475,
+          13045.516960808774
+        ],
+        "outsideEveryBridgeWhileRolling": true,
+        "locked90Y": [
+          6854.005950939356,
+          7339.385510561665
+        ]
+      },
+      {
+        "id": "complete-moving285flange-prism",
+        "completeX": [
+          6725.833505986568,
+          7027.812910304107
+        ],
+        "outsideEveryBridgeWhileRolling": true,
+        "locked90Y": [
+          6510.558519245176,
+          6555.558519245177
+        ]
+      },
+      {
+        "id": "straight-tube-conservative160square",
+        "completeX": [
+          7171.648932724653,
+          12653.351067275347
+        ],
+        "outsideEveryBridgeWhileRolling": false,
+        "locked90Y": [
+          6860.05,
+          7039.95
+        ]
+      }
+    ],
+    "fieldY": [
+      6425,
+      7375
+    ],
+    "rigidEnvelope": 5,
+    "deformationEnvelope": 5,
+    "role": "Bends/flange roll outside all actual bridge X for the ENTIRE angular interval. Only round tube and fixed carrier frame occupy the bridge during roll. Both ends enter supports only after positive90lock; constant950strip comparison above remains visible.",
+    "lockedTranslationMinimumSouthReserve": 40,
+    "lockedTranslationMinimumNorthReserve": 35.61448943833511,
+    "frameY": [
+      6465,
+      7335
+    ],
+    "bridgeCasesAfterDeformation": [
+      {
+        "id": "court",
+        "x": [
+          7650,
+          8250
+        ],
+        "underside": -630,
+        "minimumClearance": 36.01955051421828,
+        "governing": {
+          "draw": 630.8335059865676,
+          "x": 7650,
+          "z": -676.0195505142183,
+          "clearance": 41.01955051421828
+        }
+      },
+      {
+        "id": "spine",
+        "x": [
+          8850,
+          9750
+        ],
+        "underside": -630,
+        "minimumClearance": 50.13719757304182,
+        "governing": {
+          "draw": 1830.8335059865676,
+          "x": 8850,
+          "z": -690.1371975730418,
+          "clearance": 55.13719757304182
+        }
+      },
+      {
+        "id": "outer",
+        "x": [
+          11217.5,
+          12117.5
+        ],
+        "underside": -630,
+        "minimumClearance": 77.99013874951243,
+        "governing": {
+          "draw": 4198.333505986568,
+          "x": 11217.5,
+          "z": -717.9901387495124,
+          "clearance": 82.99013874951243
+        }
+      }
+    ],
+    "controls": {
+      "misplacedDraw": 1100,
+      "misplacedFlangeAllX": [
+        7825.833505986568,
+        8127.812910304107
+      ],
+      "misplacedWholeFlangeInsideCourtBeam": true,
+      "unlockedFullRotationInPortalMaximumZ": -358.2410624556921,
+      "portalUnderside": -630,
+      "unlockedWouldHitBridge": true,
+      "fullAngularConstantStripAfterDeformation": 23.90107948993864,
+      "latterSatisfies25": false
+    },
+    "locks": "Independent positive0/90locks at inlet-side and driven collars. Capture/verify BOTH90locks before draw; a drive brake alone cannot be treated as a rigid lock along the copper tube. Actual metal interlock prevents draw with unlocked/misplaced roll; it is not an operator reminder."
+  },
+  "frameRollProof": {
+    "frameX": [
+      7300,
+      12450
+    ],
+    "rigidAndDeformationPerFace": 10,
+    "inletCompleteXMaximum": 7257.065535400526,
+    "outletCompleteXMinimum": 12567.934464599475,
+    "inletEndGapAfterAdditionalFrameAndDeformation": 32.93446459947427,
+    "outletEndGapAfterAdditionalFrameAndDeformation": 107.93446459947518,
+    "role": "The full inlet/flange and outlet solids roll outside the entire carrierX interval. No rail or crossmember runs under either bending sweep; straight tube, actual collars/drive and support shapes remain separate joined-body duties.",
+    "rejectedLongFrame": {
+      "frameEnd": 13100,
+      "northRailY": [
+        7285,
+        7325
+      ],
+      "pointInsideRequiredOutletBound": [
+        12750,
+        6950,
+        -1255.8823529411766
+      ],
+      "angleDegrees": 65,
+      "rolledPoint": [
+        12752.562900533445,
+        7291.97424383062,
+        -1038.0358075984282
+      ],
+      "railZ": [
+        -1088.5595635356876,
+        -1008.5595635356876
+      ],
+      "collision": true,
+      "boundary": "A witness inside the required conservative full native-body envelope and the old rail. This rejects the old declared whole-solid control; it is not evidence that the measured delivered fitting occupies this corner."
+    },
+    "endCantilevers": {
+      "inletCollarX": 7350,
+      "outletCollarX": 12400,
+      "inletBodyMinimumX": 6790,
+      "outletBodyMaximumX": 13035,
+      "role": "Price the native wet bend/flange/stub moments and thin159×2tube/endfeed/braze/collar loads at these real end captures. Removing the obstructing rail does not qualify an unsupported native end."
+    },
+    "fullMethodAccepted": false
+  },
+  "postTranslation": {
+    "source": "HAD renewal.joint.railReference",
+    "supportX": [
+      7950,
+      9300,
+      11667.5,
+      12250,
+      13500,
+      14950
+    ],
+    "sidePostY": [
+      6350,
+      7450
+    ],
+    "actualPostSection": [
+      50,
+      50,
+      5
+    ],
+    "wholeLockedY": [
+      6465,
+      7339.385510561665
+    ],
+    "minimumToSouthColumn": 90,
+    "minimumToNorthColumn": 85.61448943833511,
+    "includes13500": true,
+    "role": "Full translation invariant Y bound checks every actual50column including13500, separately from narrower RC node/bridge faces. Wheel is REMOVED before draw; otherwise its200radius can hit a post. Shaft25radius included. Real larger footings/connection plates are not silently reduced to50column.",
+    "anchorsAndFootingsAccepted": false
+  },
+  "nominalSpoolLoads": {
+    "tubeMetalKg": 50.50301064924604,
+    "tubeWaterKg": 107.8159504777191,
+    "twoCatalogueBendsMetalKg": 12.3,
+    "bendWaterGrossBoxBoundKg": 49.096000000000004,
+    "movingFlangeKg": 7,
+    "fixedUpperFlangeKg": 7,
+    "nominalSpoolFullWaterKg": 226.71496112696516,
+    "bendWaterBoundary": "Gross380×170×380 outer boxes bound water in the two real bends; deliberately loose, not a measured bore volume. No dry-only lifting assumption.",
+    "frame": {
+      "section": [
+        80,
+        40,
+        4
+      ],
+      "length": 5150,
+      "start": 7300,
+      "end": 12450,
+      "grossY": [
+        6475,
+        7325
+      ],
+      "nominalBareKg": 95.3344,
+      "wheelStations": [
+        7750,
+        9300,
+        10850,
+        12400
+      ],
+      "maxInternalSpan": 1550,
+      "westOverhang": 450,
+      "pipeAxisAboveFrameTop": 130,
+      "depth": 80,
+      "boundary": "Four captured rolling supports plus fixed lower rails are separate real solids/load paths; these bare rails/crossmembers do not prove clamps, rotation bearings, wheels or guides."
+    },
+    "nominalFullWaterIncludingBareFrameKg": 322.04936112696515,
+    "designMovingKn": 4.5,
+    "remainingHardwareKg": 136.66623520331007,
+    "supportReactionRequirement": {
+      "compressionEachKn": 8.5,
+      "upliftEachKn": 4,
+      "totalCorrelatedGravityKn": 4.5,
+      "basis": "The preceding1350overhang8.5/4.0kN requirement is conservatively retained. The complete envelope now extends1024.17west of first wheel7750 and645.52east of last12400; a whole4.5kN tip load at the larger overhang gives7.473compression/2.973uplift at the adjacent1550pair. Actual pipe endfeed/bend and collar cantilevers are separate duties. These bounds cover even the whole design load at the adverse tip. These are correlated requirements, not34kN simultaneous gravity. Actual multi-contact/frame/rail elasticity still must be checked."
+    },
+    "massMeaning": {
+      "tube": "Nominal159OD/155ID uniform copper,8960kg/m3, source-authored cut/engagement budgets. No delivered wall/density/weight tolerance is established.",
+      "bendsAndFlange": "Catalogue/reference6.15kg per bend and7kg moving flange; actual delivered fabrication/composition/mass must be verified.",
+      "frame": "Nominal sharp-corner80×40×4 net area,8000kg/m3 and stated lengths; no delivered section tolerances, rounded-corner/weld/connection mass bound.",
+      "hardware": "remainingHardwareKg is the unweighed allowance within a4.5kN nominal full-water design model, not evidence that the actual required kit fits it.",
+      "actualKitUpperBoundEstablished": false,
+      "actualKitWeighed": false
+    },
+    "capture": "Broad150long metal-lined split saddles isolate thin copper from point roller contact.220OD/170ID/40axial steel races; two50rollers per station; 0/90positive pins. Do not put loaded hard rollers or chain jaws directly on159×2copper and invent a denting pass.",
+    "rollTorqueRequirement": {
+      "workingNm": 500,
+      "holdingNm": 1000,
+      "manualRatio": 60,
+      "handwheelRadiusMm": 200,
+      "efficiencies": [
+        {
+          "efficiency": 0.15,
+          "handForceN": 277.77777777777777
+        },
+        {
+          "efficiency": 0.25,
+          "handForceN": 166.66666666666666
+        },
+        {
+          "efficiency": 0.4,
+          "handForceN": 104.16666666666666
+        }
+      ],
+      "actualGearRated": false,
+      "actualHandAndRestraintAccepted": false
+    },
+    "driveState": "Driven collar12400 is outside bridge and before outletbox12568. Vertical input atY7300 to+1250 stays clear of pipe/bend; removable200radius handwheel operates ABOVE1100guard from fixedNfield. Remove wheel before draw; shaft/collar stay outside all bridgeX throughout east translation. Operator does not follow into posts/rack.",
+    "upstreamLock": "Second independent collar lock near7350 must be positively operated/witnessed through a small retained low-force link from fixedcourt; do not substitute copper torsional stiffness or a downstream brake. Actual link/lock/interlock solids and operator sweep remain an internal exit.",
+    "supportHold": "Do not borrow the previous3kN/4700frame result. Actual complete1024.17west package overhang, bends/gross blocked water, four moving support reactions, fixed rail/post/drop-bracket/head reactions, deformation and all translated states must be priced against current STR. No imaginary post through RC."
+  },
+  "pairedToolReference": {
+    "tools": {
+      "upper": "HAZET916GL +900-30 for initial torque/break only",
+      "counter": "HAZET600N-30",
+      "sources": [
+        "https://www.hazet.de/en/products/hand-tools/nut-driver/operating-tool-nut-driver/product/ean-4000896202485",
+        "https://www.hazet.de/en/products/hand-tools/wrenches/combination-wrench/product/ean-4000896023233",
+        "https://www.hazet.de/en/products/hand-tools/nut-driver/socket/product/ean-4000896042937"
+      ],
+      "counterNative": {
+        "length": 405.5,
+        "ringThickness": 17.5,
+        "openThickness": 12.2,
+        "ringWidth": 43,
+        "openWidth": 63,
+        "headAngle": 15,
+        "massKg": 0.59
+      },
+      "counterHandleDirection": "DOWN15degrees to avoid climbing into the lower flange; actual shank/box-head transition remains required.",
+      "activeStroke": 11.25,
+      "counterStroke": 0,
+      "workingGrip": [
+        450,
+        350
+      ],
+      "handAt200NmN": [
+        444.44444444444446,
+        591.5863888057618
+      ]
+    },
+    "operator": {
+      "centre": null,
+      "radius": 300,
+      "platform": -800,
+      "shouldersAboveFloor": [
+        650,
+        850
+      ],
+      "breadth": 300,
+      "forwardOffset": 75,
+      "forwardDirection": [
+        0,
+        1
+      ],
+      "handAssignment": "upperRIGHT/counterLEFT",
+      "facing": "North-facing reference",
+      "role": "ONE worker uses two sequential stations, changing hand assignment as recorded per bolt. Both hands share one posture/shoulder height per bolt. This is not two simultaneous crew or an inherited stationary reach pass.",
+      "stations": [
+        [
+          6455,
+          6520
+        ],
+        [
+          7270,
+          6520
+        ]
+      ]
+    },
+    "referenceClock": [
+      20.5,
+      24.5
+    ],
+    "nominalClock": 22.5,
+    "assumedPCD": 240,
+    "assumedHole": 22,
+    "curveBound": {
+      "accepted": false,
+      "statement": "Conditional convex90centreline envelope inside the triangle joining theoretical corner and both303port centres, expanded85mm; cap at actual upper endfeed face. Uses NO inventedR300radius. Family diagram supports the convex form;159may be fabricated, so specific delivered full body MUST be shown inside this bound before use.",
+      "limit": "This narrower TOOL bound is NOT asserted as native measured evidence. Complete460boxes still govern continuous roll. Actual fabricated bend outside the tool bound invalidates these poses."
+    },
+    "retainedPan": [
+      6735,
+      6850,
+      305,
+      550
+    ],
+    "maximumPanUnderside": -205,
+    "minimumLocalBottomThickness": 3,
+    "fastenerSequence": {
+      "project": "M20×80,30AF,25each flange/3washers/16nut reference; exact native hole/bolt/gasket stack remains unqualified",
+      "head": "HEADS TOP, nuts below. Counter-spanner retains nut; remove full ratchet after breaking preload, before bolt rises into pan. Use compact socket/ring for subsequent low-torque turns.",
+      "boltRetreat": 62,
+      "retreatRole": "Retain each bolt in upper fixed assembly; lower end must clear moving face by10 before any drop. Capture actual nuts/gasket; no dropped pieces or hand under unsupported pipe.",
+      "topSocketAtRetreatMaximumZ": -238,
+      "minimumPanGapAtRetreat": 33,
+      "acceptance": false
+    },
+    "sampledPoses": [
+      {
+        "clock": 20.5,
+        "bolt": 0,
+        "shoulderZ": -150,
+        "maximumHandReach": 369.7504446439484,
+        "upper": {
+          "head": [
+            6993.621177218829,
+            6992.024885751136,
+            -281.3291889313327
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 317,
+          "maximumHandReach": 196.07366926403375,
+          "minimumStraightStemReserve": 5.000000000000242,
+          "minimumPanReserve": 46.32918893133268,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6991.997760150379,
+            6992.024885751136,
+            -419.31963974957546
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 287,
+          "maximumHandReach": 369.7504446439484,
+          "minimumStraightStemReserve": 8.499999999999972,
+          "minimumPanReserve": 187.81963974957546,
+          "minimumConditionalCurveReserve": 205.8374030021252
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 20.5,
+        "bolt": 1,
+        "shoulderZ": -150,
+        "maximumHandReach": 405.50469403348086,
+        "upper": {
+          "head": [
+            6930.988037951104,
+            7059.195352505185,
+            -280.5923284693594
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 316,
+          "maximumHandReach": 267.78926206970885,
+          "minimumStraightStemReserve": 4.999999999999844,
+          "minimumPanReserve": 45.592328469359416,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6929.364620882654,
+            7059.195352505185,
+            -418.5827792876022
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 304,
+          "maximumHandReach": 405.50469403348086,
+          "minimumStraightStemReserve": 0.34935955192429446,
+          "minimumPanReserve": 187.0827792876022,
+          "minimumConditionalCurveReserve": 128.77747981835944
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 20.5,
+        "bolt": 2,
+        "shoulderZ": -150,
+        "maximumHandReach": 409.1726150256467,
+        "upper": {
+          "head": [
+            6839.206314537814,
+            7062.400662709808,
+            -279.5125434880266
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 221,
+          "maximumHandReach": 294.05432359818815,
+          "minimumStraightStemReserve": 5.000000000000071,
+          "minimumPanReserve": 44.51254348802661,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6837.582897469364,
+            7062.400662709808,
+            -417.5029943062694
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 232,
+          "maximumHandReach": 409.1726150256467,
+          "minimumStraightStemReserve": 0.34935955192426604,
+          "minimumPanReserve": 186.0029943062694,
+          "minimumConditionalCurveReserve": 180.85820059942893
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 20.5,
+        "bolt": 3,
+        "shoulderZ": -150,
+        "maximumHandReach": 369.2501907971455,
+        "upper": {
+          "head": [
+            6772.040495776488,
+            6999.763189118748,
+            -278.7223573849522
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 221,
+          "maximumHandReach": 215.98167480539098,
+          "minimumStraightStemReserve": 4.999999999999986,
+          "minimumPanReserve": 43.722357384952204,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6770.4170787080375,
+            6999.763189118748,
+            -416.712808203195
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 247,
+          "maximumHandReach": 369.2501907971455,
+          "minimumStraightStemReserve": 8.500000000000242,
+          "minimumPanReserve": 185.21280820319498,
+          "minimumConditionalCurveReserve": 242.80269995354195
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 20.5,
+        "bolt": 4,
+        "shoulderZ": -150,
+        "maximumHandReach": 355.6913553527609,
+        "upper": {
+          "head": [
+            6768.835407369617,
+            6907.975114248864,
+            -278.6846504625184
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 214,
+          "maximumHandReach": 173.06209881588248,
+          "minimumStraightStemReserve": 4.999999999999616,
+          "minimumPanReserve": 43.68465046251839,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6767.211990301167,
+            6907.975114248864,
+            -416.67510128076117
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 242,
+          "maximumHandReach": 355.6913553527609,
+          "minimumStraightStemReserve": 8.499999999999886,
+          "minimumPanReserve": 185.17510128076117,
+          "minimumConditionalCurveReserve": 321.8043743710123
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 20.5,
+        "bolt": 5,
+        "shoulderZ": -150,
+        "maximumHandReach": 355.3474591290423,
+        "upper": {
+          "head": [
+            6831.468546637342,
+            6840.804647494815,
+            -279.42151092449166
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 205,
+          "maximumHandReach": 187.77582302680122,
+          "minimumStraightStemReserve": 4.999999999999574,
+          "minimumPanReserve": 44.421510924491656,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6829.845129568892,
+            6840.804647494815,
+            -417.41196174273443
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 227,
+          "maximumHandReach": 355.3474591290423,
+          "minimumStraightStemReserve": 8.499999999999702,
+          "minimumPanReserve": 185.91196174273443,
+          "minimumConditionalCurveReserve": 339.8460713636247
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 20.5,
+        "bolt": 6,
+        "shoulderZ": -150,
+        "maximumHandReach": 360.9316556432681,
+        "upper": {
+          "head": [
+            6923.250270050632,
+            6837.599337290192,
+            -280.50129590582446
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 201,
+          "maximumHandReach": 254.7986681267647,
+          "minimumStraightStemReserve": 5.000000000000298,
+          "minimumPanReserve": 45.50129590582446,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6921.626852982182,
+            6837.599337290192,
+            -418.49174672406724
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 217,
+          "maximumHandReach": 360.9316556432681,
+          "minimumStraightStemReserve": 8.500000000000199,
+          "minimumPanReserve": 186.99174672406724,
+          "minimumConditionalCurveReserve": 276.4023079630398
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 20.5,
+        "bolt": 7,
+        "shoulderZ": -150,
+        "maximumHandReach": 361.4655134155358,
+        "upper": {
+          "head": [
+            6990.416088811958,
+            6900.236810881252,
+            -281.29148200889887
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 325,
+          "maximumHandReach": 164.3605860650259,
+          "minimumStraightStemReserve": 4.999999999999758,
+          "minimumPanReserve": 46.29148200889887,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6988.7926717435075,
+            6900.236810881252,
+            -419.28193282714165
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 293,
+          "maximumHandReach": 361.4655134155358,
+          "minimumStraightStemReserve": 8.499999999999517,
+          "minimumPanReserve": 187.78193282714165,
+          "minimumConditionalCurveReserve": 286.46694909520073
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 21.5,
+        "bolt": 0,
+        "shoulderZ": -150,
+        "maximumHandReach": 370.19869672858835,
+        "upper": {
+          "head": [
+            6992.870674602965,
+            6993.980147206916,
+            -281.3203594887931
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 317,
+          "maximumHandReach": 197.57152331524492,
+          "minimumStraightStemReserve": 5.00000000000054,
+          "minimumPanReserve": 46.32035948879309,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6991.247257534515,
+            6993.980147206916,
+            -419.31081030703587
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 287,
+          "maximumHandReach": 370.19869672858835,
+          "minimumStraightStemReserve": 8.500000000000298,
+          "minimumPanReserve": 187.81081030703587,
+          "minimumConditionalCurveReserve": 203.8675419011666
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 21.5,
+        "bolt": 1,
+        "shoulderZ": -150,
+        "maximumHandReach": 407.4461645262699,
+        "upper": {
+          "head": [
+            6929.074869498005,
+            7060.047208926215,
+            -280.56982060520534
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 316,
+          "maximumHandReach": 269.57752038597096,
+          "minimumStraightStemReserve": 4.999999999999943,
+          "minimumPanReserve": 45.56982060520534,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6927.451452429555,
+            7060.047208926215,
+            -418.5602714234481
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 305,
+          "maximumHandReach": 407.4461645262699,
+          "minimumStraightStemReserve": 0.3493595519246355,
+          "minimumPanReserve": 187.0602714234481,
+          "minimumConditionalCurveReserve": 127.37088584714508
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 21.5,
+        "bolt": 2,
+        "shoulderZ": -150,
+        "maximumHandReach": 407.25078638187534,
+        "upper": {
+          "head": [
+            6837.251188380202,
+            7061.650108157843,
+            -279.4895420038194
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 221,
+          "maximumHandReach": 292.40689152725065,
+          "minimumStraightStemReserve": 4.999999999999545,
+          "minimumPanReserve": 44.489542003819395,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6835.6277713117515,
+            7061.650108157843,
+            -417.4799928220622
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 233,
+          "maximumHandReach": 407.25078638187534,
+          "minimumStraightStemReserve": 0.34935955192426604,
+          "minimumPanReserve": 185.97999282206217,
+          "minimumConditionalCurveReserve": 180.85820059942904
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 21.5,
+        "bolt": 3,
+        "shoulderZ": -150,
+        "maximumHandReach": 368.68680558400445,
+        "upper": {
+          "head": [
+            6771.188698301341,
+            6997.849888271029,
+            -278.71233623818574
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 221,
+          "maximumHandReach": 214.67081376031447,
+          "minimumStraightStemReserve": 4.999999999999531,
+          "minimumPanReserve": 43.71233623818574,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6769.565281232891,
+            6997.849888271029,
+            -416.7027870564285
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 247,
+          "maximumHandReach": 368.68680558400445,
+          "minimumStraightStemReserve": 8.499999999999773,
+          "minimumPanReserve": 185.20278705642852,
+          "minimumConditionalCurveReserve": 244.7793356488727
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 21.5,
+        "bolt": 4,
+        "shoulderZ": -150,
+        "maximumHandReach": 355.63192749156514,
+        "upper": {
+          "head": [
+            6769.5859099854815,
+            6906.019852793084,
+            -278.693479905058
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 214,
+          "maximumHandReach": 173.29589670711425,
+          "minimumStraightStemReserve": 4.999999999999957,
+          "minimumPanReserve": 43.693479905057984,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6767.962492917031,
+            6906.019852793084,
+            -416.68393072330076
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 242,
+          "maximumHandReach": 355.63192749156514,
+          "minimumStraightStemReserve": 8.500000000000199,
+          "minimumPanReserve": 185.18393072330076,
+          "minimumConditionalCurveReserve": 322.86129596178574
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 21.5,
+        "bolt": 5,
+        "shoulderZ": -150,
+        "maximumHandReach": 355.34315160760957,
+        "upper": {
+          "head": [
+            6833.3817150904415,
+            6839.952791073785,
+            -279.44401878864574
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 205,
+          "maximumHandReach": 189.14122416006435,
+          "minimumStraightStemReserve": 4.999999999999673,
+          "minimumPanReserve": 44.444018788645735,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6831.758298021991,
+            6839.952791073785,
+            -417.4344696068885
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 227,
+          "maximumHandReach": 355.34315160760957,
+          "minimumStraightStemReserve": 8.499999999999773,
+          "minimumPanReserve": 185.9344696068885,
+          "minimumConditionalCurveReserve": 339.3420775885073
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 21.5,
+        "bolt": 6,
+        "shoulderZ": -150,
+        "maximumHandReach": 361.2885425657187,
+        "upper": {
+          "head": [
+            6925.205396208245,
+            6838.349891842157,
+            -280.5242973900317
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 201,
+          "maximumHandReach": 256.5902931189444,
+          "minimumStraightStemReserve": 4.999999999999787,
+          "minimumPanReserve": 45.52429739003168,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6923.581979139794,
+            6838.349891842157,
+            -418.51474820827445
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 217,
+          "maximumHandReach": 361.2885425657187,
+          "minimumStraightStemReserve": 8.499999999999687,
+          "minimumPanReserve": 187.01474820827445,
+          "minimumConditionalCurveReserve": 274.6617265546828
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 21.5,
+        "bolt": 7,
+        "shoulderZ": -150,
+        "maximumHandReach": 361.4488928893549,
+        "upper": {
+          "head": [
+            6991.267886287105,
+            6902.150111728971,
+            -281.30150315566533
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 324,
+          "maximumHandReach": 164.00054984056263,
+          "minimumStraightStemReserve": 5.000000000000142,
+          "minimumPanReserve": 46.30150315566533,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6989.644469218655,
+            6902.150111728971,
+            -419.2919539739081
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 292,
+          "maximumHandReach": 361.4488928893549,
+          "minimumStraightStemReserve": 8.4999999999999,
+          "minimumPanReserve": 187.7919539739081,
+          "minimumConditionalCurveReserve": 285.3688150650598
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 22.5,
+        "bolt": 0,
+        "shoulderZ": -150,
+        "maximumHandReach": 370.6579584931878,
+        "upper": {
+          "head": [
+            6992.086164635944,
+            6995.922011883811,
+            -281.31112995976935
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 317,
+          "maximumHandReach": 199.08328258353714,
+          "minimumStraightStemReserve": 5.000000000000199,
+          "minimumPanReserve": 46.311129959769346,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6990.462747567494,
+            6995.922011883811,
+            -419.3015807780121
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 287,
+          "maximumHandReach": 370.6579584931878,
+          "minimumStraightStemReserve": 8.499999999999957,
+          "minimumPanReserve": 187.80158077801212,
+          "minimumConditionalCurveReserve": 201.89855512662467
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 22.5,
+        "bolt": 1,
+        "shoulderZ": -150,
+        "maximumHandReach": 409.46517572416883,
+        "upper": {
+          "head": [
+            6927.14712651399,
+            7060.865543901355,
+            -280.54714127598163
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 317,
+          "maximumHandReach": 271.2772070453311,
+          "minimumStraightStemReserve": 5.000000000000469,
+          "minimumPanReserve": 45.54714127598163,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6925.52370944554,
+            7060.865543901355,
+            -418.5375920942244
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 306,
+          "maximumHandReach": 409.46517572416883,
+          "minimumStraightStemReserve": 0.3493595519249908,
+          "minimumPanReserve": 187.0375920942244,
+          "minimumConditionalCurveReserve": 125.9758372986106
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 22.5,
+        "bolt": 2,
+        "shoulderZ": -150,
+        "maximumHandReach": 405.4137280975232,
+        "upper": {
+          "head": [
+            6835.309458074456,
+            7060.865543901355,
+            -279.46669811786944
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 221,
+          "maximumHandReach": 290.74878585142767,
+          "minimumStraightStemReserve": 5.000000000000227,
+          "minimumPanReserve": 44.46669811786944,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6833.686041006006,
+            7060.865543901355,
+            -417.4571489361122
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 234,
+          "maximumHandReach": 405.4137280975232,
+          "minimumStraightStemReserve": 0.3493595519253887,
+          "minimumPanReserve": 185.95714893611222,
+          "minimumConditionalCurveReserve": 180.85820059942887
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 22.5,
+        "bolt": 3,
+        "shoulderZ": -150,
+        "maximumHandReach": 368.1340859831838,
+        "upper": {
+          "head": [
+            6770.370419952502,
+            6995.922011883811,
+            -278.7027094340817
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 221,
+          "maximumHandReach": 213.39220157458792,
+          "minimumStraightStemReserve": 4.999999999999602,
+          "minimumPanReserve": 43.702709434081726,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6768.747002884052,
+            6995.922011883811,
+            -416.6931602523245
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 247,
+          "maximumHandReach": 368.1340859831838,
+          "minimumStraightStemReserve": 8.499999999999858,
+          "minimumPanReserve": 185.1931602523245,
+          "minimumConditionalCurveReserve": 246.7450667811725
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 22.5,
+        "bolt": 4,
+        "shoulderZ": -150,
+        "maximumHandReach": 355.58600233437215,
+        "upper": {
+          "head": [
+            6770.370419952502,
+            6904.077988116189,
+            -278.7027094340817
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 214,
+          "maximumHandReach": 173.5799178000196,
+          "minimumStraightStemReserve": 4.999999999999602,
+          "minimumPanReserve": 43.702709434081726,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6768.747002884052,
+            6904.077988116189,
+            -416.6931602523245
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 242,
+          "maximumHandReach": 355.58600233437215,
+          "minimumStraightStemReserve": 8.499999999999858,
+          "minimumPanReserve": 185.1931602523245,
+          "minimumConditionalCurveReserve": 323.8942932310336
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 22.5,
+        "bolt": 5,
+        "shoulderZ": -150,
+        "maximumHandReach": 355.3492378255755,
+        "upper": {
+          "head": [
+            6835.309458074457,
+            6839.134456098645,
+            -279.46669811786944
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 205,
+          "maximumHandReach": 190.53354015589156,
+          "minimumStraightStemReserve": 4.999999999999886,
+          "minimumPanReserve": 44.46669811786944,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6833.686041006007,
+            6839.134456098645,
+            -417.4571489361122
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 226,
+          "maximumHandReach": 355.3492378255755,
+          "minimumStraightStemReserve": 8.499999999999986,
+          "minimumPanReserve": 185.95714893611222,
+          "minimumConditionalCurveReserve": 338.25589043686034
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 22.5,
+        "bolt": 6,
+        "shoulderZ": -150,
+        "maximumHandReach": 361.6590415417494,
+        "upper": {
+          "head": [
+            6927.14712651399,
+            6839.134456098645,
+            -280.54714127598163
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 201,
+          "maximumHandReach": 258.39306041999873,
+          "minimumStraightStemReserve": 5.000000000000469,
+          "minimumPanReserve": 45.54714127598163,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6925.52370944554,
+            6839.134456098645,
+            -418.5375920942244
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 217,
+          "maximumHandReach": 361.6590415417494,
+          "minimumStraightStemReserve": 8.50000000000037,
+          "minimumPanReserve": 187.0375920942244,
+          "minimumConditionalCurveReserve": 272.904559810061
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 22.5,
+        "bolt": 7,
+        "shoulderZ": -150,
+        "maximumHandReach": 361.4201126940284,
+        "upper": {
+          "head": [
+            6992.086164635944,
+            6904.077988116189,
+            -281.31112995976935
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 324,
+          "maximumHandReach": 163.657414419735,
+          "minimumStraightStemReserve": 5.000000000000199,
+          "minimumPanReserve": 46.311129959769346,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6990.462747567494,
+            6904.077988116189,
+            -419.3015807780121
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 292,
+          "maximumHandReach": 361.4201126940284,
+          "minimumStraightStemReserve": 8.499999999999957,
+          "minimumPanReserve": 187.80158077801212,
+          "minimumConditionalCurveReserve": 283.8732773980422
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 23.5,
+        "bolt": 0,
+        "shoulderZ": -150,
+        "maximumHandReach": 371.1256156854273,
+        "upper": {
+          "head": [
+            6991.267886287105,
+            6997.849888271029,
+            -281.30150315566533
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 317,
+          "maximumHandReach": 200.608177445225,
+          "minimumStraightStemReserve": 5.000000000000142,
+          "minimumPanReserve": 46.30150315566533,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6989.644469218655,
+            6997.849888271029,
+            -419.2919539739081
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 288,
+          "maximumHandReach": 371.1256156854273,
+          "minimumStraightStemReserve": 8.4999999999999,
+          "minimumPanReserve": 187.7919539739081,
+          "minimumConditionalCurveReserve": 200.31806906919803
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 23.5,
+        "bolt": 1,
+        "shoulderZ": -150,
+        "maximumHandReach": 411.55997607300196,
+        "upper": {
+          "head": [
+            6925.205396208245,
+            7061.650108157843,
+            -280.5242973900317
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 317,
+          "maximumHandReach": 272.79525375257396,
+          "minimumStraightStemReserve": 4.999999999999787,
+          "minimumPanReserve": 45.52429739003168,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6923.581979139794,
+            7061.650108157843,
+            -418.51474820827445
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 307,
+          "maximumHandReach": 411.55997607300196,
+          "minimumStraightStemReserve": 0.34935955192388235,
+          "minimumPanReserve": 187.01474820827445,
+          "minimumConditionalCurveReserve": 124.59426803579251
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 23.5,
+        "bolt": 2,
+        "shoulderZ": -150,
+        "maximumHandReach": 403.6631608237706,
+        "upper": {
+          "head": [
+            6833.3817150904415,
+            7060.047208926215,
+            -279.44401878864574
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 221,
+          "maximumHandReach": 289.080332344699,
+          "minimumStraightStemReserve": 4.999999999999673,
+          "minimumPanReserve": 44.444018788645735,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6831.758298021991,
+            7060.047208926215,
+            -417.4344696068885
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 235,
+          "maximumHandReach": 403.6631608237706,
+          "minimumStraightStemReserve": 0.34935955192429446,
+          "minimumPanReserve": 185.9344696068885,
+          "minimumConditionalCurveReserve": 180.85820059942847
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 23.5,
+        "bolt": 3,
+        "shoulderZ": -150,
+        "maximumHandReach": 367.59224884437157,
+        "upper": {
+          "head": [
+            6769.5859099854815,
+            6993.980147206916,
+            -278.693479905058
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 221,
+          "maximumHandReach": 212.14681428134548,
+          "minimumStraightStemReserve": 4.999999999999957,
+          "minimumPanReserve": 43.693479905057984,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6767.962492917031,
+            6993.980147206916,
+            -416.68393072330076
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 247,
+          "maximumHandReach": 367.59224884437157,
+          "minimumStraightStemReserve": 8.500000000000199,
+          "minimumPanReserve": 185.18393072330076,
+          "minimumConditionalCurveReserve": 248.69948295089654
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 23.5,
+        "bolt": 4,
+        "shoulderZ": -150,
+        "maximumHandReach": 355.54014578574305,
+        "upper": {
+          "head": [
+            6771.188698301341,
+            6902.150111728971,
+            -278.71233623818574
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 213,
+          "maximumHandReach": 172.80788526028192,
+          "minimumStraightStemReserve": 4.999999999999531,
+          "minimumPanReserve": 43.71233623818574,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6769.565281232891,
+            6902.150111728971,
+            -416.7027870564285
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 241,
+          "maximumHandReach": 355.54014578574305,
+          "minimumStraightStemReserve": 8.499999999999773,
+          "minimumPanReserve": 185.20278705642852,
+          "minimumConditionalCurveReserve": 325.88795917655216
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 23.5,
+        "bolt": 5,
+        "shoulderZ": -150,
+        "maximumHandReach": 355.33676984812416,
+        "upper": {
+          "head": [
+            6837.251188380202,
+            6838.349891842157,
+            -279.4895420038194
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 205,
+          "maximumHandReach": 191.95176589737068,
+          "minimumStraightStemReserve": 4.999999999999545,
+          "minimumPanReserve": 44.489542003819395,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6835.6277713117515,
+            6838.349891842157,
+            -417.4799928220622
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 226,
+          "maximumHandReach": 355.33676984812416,
+          "minimumStraightStemReserve": 8.499999999999645,
+          "minimumPanReserve": 185.97999282206217,
+          "minimumConditionalCurveReserve": 337.6738355828743
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 23.5,
+        "bolt": 6,
+        "shoulderZ": -150,
+        "maximumHandReach": 362.04299810130954,
+        "upper": {
+          "head": [
+            6929.074869498005,
+            6839.952791073785,
+            -280.56982060520534
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 201,
+          "maximumHandReach": 260.20619503013074,
+          "minimumStraightStemReserve": 4.999999999999943,
+          "minimumPanReserve": 45.56982060520534,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6927.451452429555,
+            6839.952791073785,
+            -418.5602714234481
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 217,
+          "maximumHandReach": 362.04299810130954,
+          "minimumStraightStemReserve": 8.499999999999815,
+          "minimumPanReserve": 187.0602714234481,
+          "minimumConditionalCurveReserve": 271.1311124702443
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 23.5,
+        "bolt": 7,
+        "shoulderZ": -150,
+        "maximumHandReach": 361.40327141221013,
+        "upper": {
+          "head": [
+            6992.870674602965,
+            6906.019852793084,
+            -281.3203594887931
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 324,
+          "maximumHandReach": 164.16006776742515,
+          "minimumStraightStemReserve": 5.00000000000054,
+          "minimumPanReserve": 46.32035948879309,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6991.247257534515,
+            6906.019852793084,
+            -419.31081030703587
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 292,
+          "maximumHandReach": 361.40327141221013,
+          "minimumStraightStemReserve": 8.500000000000298,
+          "minimumPanReserve": 187.81081030703587,
+          "minimumConditionalCurveReserve": 282.35952680146727
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 24.5,
+        "bolt": 0,
+        "shoulderZ": -150,
+        "maximumHandReach": 371.60259037070125,
+        "upper": {
+          "head": [
+            6990.416088811959,
+            6999.763189118748,
+            -281.29148200889887
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 317,
+          "maximumHandReach": 202.14545142124462,
+          "minimumStraightStemReserve": 5.000000000000583,
+          "minimumPanReserve": 46.29148200889887,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6988.792671743508,
+            6999.763189118748,
+            -419.28193282714165
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 288,
+          "maximumHandReach": 371.60259037070125,
+          "minimumStraightStemReserve": 8.500000000000341,
+          "minimumPanReserve": 187.78193282714165,
+          "minimumConditionalCurveReserve": 198.35804817707202
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 24.5,
+        "bolt": 1,
+        "shoulderZ": -150,
+        "maximumHandReach": 413.72878122879877,
+        "upper": {
+          "head": [
+            6923.250270050632,
+            7062.400662709808,
+            -280.50129590582446
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 317,
+          "maximumHandReach": 274.3035243735631,
+          "minimumStraightStemReserve": 4.082532254172548,
+          "minimumPanReserve": 45.50129590582446,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6921.626852982182,
+            7062.400662709808,
+            -418.49174672406724
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 308,
+          "maximumHandReach": 413.72878122879877,
+          "minimumStraightStemReserve": 0.3493595519246071,
+          "minimumPanReserve": 186.99174672406724,
+          "minimumConditionalCurveReserve": 123.22812997305297
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      },
+      {
+        "clock": 24.5,
+        "bolt": 2,
+        "shoulderZ": -150,
+        "maximumHandReach": 402.00075108080154,
+        "upper": {
+          "head": [
+            6831.468546637342,
+            7059.195352505185,
+            -279.42151092449166
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 221,
+          "maximumHandReach": 287.4018634609516,
+          "minimumStraightStemReserve": 4.999999999999574,
+          "minimumPanReserve": 44.421510924491656,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6829.845129568892,
+            7059.195352505185,
+            -417.41196174273443
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 236,
+          "maximumHandReach": 402.00075108080154,
+          "minimumStraightStemReserve": 0.34935955192391077,
+          "minimumPanReserve": 185.91196174273443,
+          "minimumConditionalCurveReserve": 180.85820059942859
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 24.5,
+        "bolt": 3,
+        "shoulderZ": -150,
+        "maximumHandReach": 367.0615077693134,
+        "upper": {
+          "head": [
+            6768.835407369617,
+            6992.024885751136,
+            -278.6846504625184
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 220,
+          "maximumHandReach": 210.7993599198899,
+          "minimumStraightStemReserve": 4.999999999999616,
+          "minimumPanReserve": 43.68465046251839,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6767.211990301167,
+            6992.024885751136,
+            -416.67510128076117
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 247,
+          "maximumHandReach": 367.0615077693134,
+          "minimumStraightStemReserve": 8.499999999999886,
+          "minimumPanReserve": 185.17510128076117,
+          "minimumConditionalCurveReserve": 250.64218188320467
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 24.5,
+        "bolt": 4,
+        "shoulderZ": -150,
+        "maximumHandReach": 355.4936998518796,
+        "upper": {
+          "head": [
+            6772.040495776488,
+            6900.236810881252,
+            -278.7223573849522
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 213,
+          "maximumHandReach": 172.04462878615863,
+          "minimumStraightStemReserve": 4.999999999999986,
+          "minimumPanReserve": 43.722357384952204,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6770.4170787080375,
+            6900.236810881252,
+            -416.712808203195
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 241,
+          "maximumHandReach": 355.4936998518796,
+          "minimumStraightStemReserve": 8.500000000000242,
+          "minimumPanReserve": 185.21280820319498,
+          "minimumConditionalCurveReserve": 326.8483595817586
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 24.5,
+        "bolt": 5,
+        "shoulderZ": -150,
+        "maximumHandReach": 355.33662023068854,
+        "upper": {
+          "head": [
+            6839.206314537814,
+            6837.599337290192,
+            -279.5125434880266
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 204,
+          "maximumHandReach": 192.70236606514212,
+          "minimumStraightStemReserve": 5.000000000000071,
+          "minimumPanReserve": 44.51254348802661,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6837.582897469364,
+            6837.599337290192,
+            -417.5029943062694
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 226,
+          "maximumHandReach": 355.33662023068854,
+          "minimumStraightStemReserve": 8.500000000000156,
+          "minimumPanReserve": 186.0029943062694,
+          "minimumConditionalCurveReserve": 337.0659046639017
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 24.5,
+        "bolt": 6,
+        "shoulderZ": -150,
+        "maximumHandReach": 362.44025270820447,
+        "upper": {
+          "head": [
+            6930.988037951104,
+            6840.804647494815,
+            -280.5923284693594
+          ],
+          "shoulder": [
+            6305,
+            6595,
+            -150
+          ],
+          "handleAngle": 201,
+          "maximumHandReach": 262.0289351920525,
+          "minimumStraightStemReserve": 4.999999999999844,
+          "minimumPanReserve": 45.592328469359416,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6929.364620882654,
+            6840.804647494815,
+            -418.5827792876022
+          ],
+          "shoulder": [
+            6605,
+            6595,
+            -150
+          ],
+          "handleAngle": 217,
+          "maximumHandReach": 362.44025270820447,
+          "minimumStraightStemReserve": 8.499999999999744,
+          "minimumPanReserve": 187.0827792876022,
+          "minimumConditionalCurveReserve": 269.34169537994967
+        },
+        "operatorCentre": [
+          6455,
+          6520
+        ],
+        "handAssignment": "upperLEFT/counterRIGHT"
+      },
+      {
+        "clock": 24.5,
+        "bolt": 7,
+        "shoulderZ": -150,
+        "maximumHandReach": 361.3983758431787,
+        "upper": {
+          "head": [
+            6993.621177218829,
+            6907.975114248864,
+            -281.3291889313327
+          ],
+          "shoulder": [
+            7420,
+            6595,
+            -150
+          ],
+          "handleAngle": 324,
+          "maximumHandReach": 164.99488862377385,
+          "minimumStraightStemReserve": 5.000000000000242,
+          "minimumPanReserve": 46.32918893133268,
+          "minimumConditionalCurveReserve": null
+        },
+        "counter": {
+          "head": [
+            6991.997760150379,
+            6907.975114248864,
+            -419.31963974957546
+          ],
+          "shoulder": [
+            7120,
+            6595,
+            -150
+          ],
+          "handleAngle": 292,
+          "maximumHandReach": 361.3983758431787,
+          "minimumStraightStemReserve": 8.499999999999972,
+          "minimumPanReserve": 187.81963974957546,
+          "minimumConditionalCurveReserve": 280.8279152571172
+        },
+        "operatorCentre": [
+          7270,
+          6520
+        ],
+        "handAssignment": "upperRIGHT/counterLEFT"
+      }
+    ],
+    "geometryFailures": 0,
+    "maximumReferenceHandReach": 413.72878122879877,
+    "worstPose": {
+      "clock": 24.5,
+      "bolt": 1,
+      "shoulderZ": -150,
+      "maximumHandReach": 413.72878122879877,
+      "upper": {
+        "head": [
+          6923.250270050632,
+          7062.400662709808,
+          -280.50129590582446
+        ],
+        "shoulder": [
+          7420,
+          6595,
+          -150
+        ],
+        "handleAngle": 317,
+        "maximumHandReach": 274.3035243735631,
+        "minimumStraightStemReserve": 4.082532254172548,
+        "minimumPanReserve": 45.50129590582446,
+        "minimumConditionalCurveReserve": null
+      },
+      "counter": {
+        "head": [
+          6921.626852982182,
+          7062.400662709808,
+          -418.49174672406724
+        ],
+        "shoulder": [
+          7120,
+          6595,
+          -150
+        ],
+        "handleAngle": 308,
+        "maximumHandReach": 413.72878122879877,
+        "minimumStraightStemReserve": 0.3493595519246071,
+        "minimumPanReserve": 186.99174672406724,
+        "minimumConditionalCurveReserve": 123.22812997305297
+      },
+      "operatorCentre": [
+        7270,
+        6520
+      ],
+      "handAssignment": "upperRIGHT/counterLEFT"
+    },
+    "installedMethodAccepted": false,
+    "torqueAccepted": false,
+    "wholeDeliveredBodyAccepted": false,
+    "singleStationControls": [
+      {
+        "operator": {
+          "centre": [
+            6455,
+            6520
+          ],
+          "radius": 300,
+          "platform": -800,
+          "shouldersAboveFloor": [
+            650,
+            850
+          ],
+          "breadth": 300,
+          "forwardOffset": 75,
+          "forwardDirection": [
+            0,
+            1
+          ],
+          "handAssignment": "upperRIGHT/counterLEFT",
+          "facing": "North-facing reference",
+          "role": "One common posture per bolt; actual hand/head/torso, knee support, bracing and tool installation/removal still require proof."
+        },
+        "maximumReferenceHandReach": 738.5808446234181
+      },
+      {
+        "operator": {
+          "centre": [
+            6455,
+            6520
+          ],
+          "radius": 300,
+          "platform": -800,
+          "shouldersAboveFloor": [
+            650,
+            850
+          ],
+          "breadth": 300,
+          "forwardOffset": 75,
+          "forwardDirection": [
+            0,
+            1
+          ],
+          "handAssignment": "upperLEFT/counterRIGHT",
+          "facing": "North-facing reference",
+          "role": "One common posture per bolt; actual hand/head/torso, knee support, bracing and tool installation/removal still require proof."
+        },
+        "maximumReferenceHandReach": 734.9250539579959
+      },
+      {
+        "operator": {
+          "centre": [
+            7270,
+            6520
+          ],
+          "radius": 300,
+          "platform": -800,
+          "shouldersAboveFloor": [
+            650,
+            850
+          ],
+          "breadth": 300,
+          "forwardOffset": 75,
+          "forwardDirection": [
+            0,
+            1
+          ],
+          "handAssignment": "upperRIGHT/counterLEFT",
+          "facing": "North-facing reference",
+          "role": "One common posture per bolt; actual hand/head/torso, knee support, bracing and tool installation/removal still require proof."
+        },
+        "maximumReferenceHandReach": 697.5407523280743
+      },
+      {
+        "operator": {
+          "centre": [
+            7270,
+            6520
+          ],
+          "radius": 300,
+          "platform": -800,
+          "shouldersAboveFloor": [
+            650,
+            850
+          ],
+          "breadth": 300,
+          "forwardOffset": 75,
+          "forwardDirection": [
+            0,
+            1
+          ],
+          "handAssignment": "upperLEFT/counterRIGHT",
+          "facing": "North-facing reference",
+          "role": "One common posture per bolt; actual hand/head/torso, knee support, bracing and tool installation/removal still require proof."
+        },
+        "maximumReferenceHandReach": 710.0879562699209
+      }
+    ],
+    "samplingBoundary": "Five clocks at1degree intervals,360 handle angles,17 active-stroke and25 shaft positions. This is a necessary finite reference; no continuous tool/body contact or real torque/posture proof is claimed."
+  },
+  "wellAndCrew": {
+    "oldWell": [
+      6125,
+      6300,
+      1525,
+      1100
+    ],
+    "proposedClearWell": [
+      6125,
+      6125,
+      1525,
+      1275
+    ],
+    "southWidening": 175,
+    "rejected100Opening": {
+      "south": 6200,
+      "bodySouthMinimum": 6175,
+      "intrusion": 25,
+      "role": "The original100south extension cannot contain the complete R300 route around the flange. It is rejected for this crew layout."
+    },
+    "existingFloor": -950,
+    "proposedCatchFloor": -1100,
+    "localLowering": 150,
+    "crewPlatformLevel": -800,
+    "operatorCentres": [
+      [
+        6455,
+        6520
+      ],
+      [
+        7270,
+        6520
+      ]
+    ],
+    "radius": 300,
+    "route": [
+      [
+        7270,
+        6520
+      ],
+      [
+        7270,
+        6475
+      ],
+      [
+        6455,
+        6475
+      ],
+      [
+        6455,
+        6520
+      ]
+    ],
+    "completeRouteBounds": [
+      6155,
+      6175,
+      7570,
+      6820
+    ],
+    "routeProof": {
+      "method": "Each straight route segment swept by the R300 disc is a capsule. Axis-aligned extrema occur at its segment endpoints plus/minus300. The transverse segment has constantY6475 and spans the flangeX; its nearest disc-to-flange gap is475−300−142.5−5. The two short end segments remain farther away inX/Y.",
+      "minimumFlangePlanGapAfter5": 27.5,
+      "minimumSouthOpeningReserveAfter5": 45,
+      "minimumWestOpeningReserveAfter5": 25,
+      "retainedPanHeadPlanGapAfter5": 25,
+      "originalDirectCrossingWouldHit": true,
+      "full3DPostureAccepted": false
+    },
+    "retainedPanDuringFirstRelease": {
+      "module": 3,
+      "plan": [
+        6735,
+        6850,
+        305,
+        550
+      ],
+      "status": "Fully seated and positively captured on qualified fixed seats; never suspended over the worker.",
+      "bodyPlanGap": 30,
+      "localBottomThicknessProposal": 3,
+      "undersideClearanceControl": -205,
+      "reason": "Actual upper bolt/socket/withdrawal toolspace controls the underside; no unlocated stiffener, pressure/walking or delivered bend-body qualification is implied."
+    },
+    "platformPlan": [
+      6250,
+      6220,
+      1150,
+      600
+    ],
+    "platform": "ONE temporary1150×600 working platform at−800 connects both sequential crew stations and their south traverse. Feet are represented separately by a200square footprint; R300 is the larger body/head domain. Three independently supported/joined panels each1150/3×600 pass west650gate and weather entry with the smaller dimension across. Both bridles attach BY HAND while supported/occupied; capture each panel before releasing supports, exit, THEN lift. Full5kN/200square and5kPa loads/feet/joints/temporary support remain real. Remove before roll.",
+    "platformPanelPlan": [
+      383.3333333333333,
+      600
+    ],
+    "platformAreaM2": 0.69,
+    "distributedLiveKn": 3.4499999999999997,
+    "pointLoadKn": 5,
+    "pointFootprint": [
+      200,
+      200
+    ],
+    "entry": "New near-vertical south service ladder, protected gate and actual enlarged upper opening; the old west4-rise stair under retained north covers is not inherited. Actual ladder/head/hand/tool handling remains to be joined.",
+    "head": "R300 head/body route stays south of retained pan3 and actual fixed upperfloor. Other nine covers/gutters and small seam piece leave before entry; pan3 remains until joint released and crew/platform exited. Full3D kneeling/bracing and tool installation/removal still require proof.",
+    "catchFloor": "Catch floor/tray is separate from the staff-load platform and is not a soil-retaining RC box. Price separate support, local80gravity drain/head, corrosion/leak witness and bounded residual pipe-water spill. Ordinary/fault receiving and groundwater remain real site conditions."
+  },
+  "rimWeather": {
+    "roofSouth": 6025,
+    "oldRoofSouth": 6200,
+    "roofAddedM2": 0.406875,
+    "roofGrossM2": 4.165625,
+    "newSouthPosts": [
+      [
+        5450,
+        5975
+      ],
+      [
+        7625,
+        5975
+      ]
+    ],
+    "oldSouthPosts": [
+      [
+        5450,
+        6150
+      ],
+      [
+        7625,
+        6150
+      ]
+    ],
+    "postFoot": 100,
+    "southBund": 6075,
+    "oldSouthBund": 6250,
+    "roofUnderside": 1970,
+    "southGateClear": [
+      6550,
+      7250
+    ],
+    "gateY": 6075,
+    "southRamp": [
+      6575,
+      5750,
+      650,
+      375
+    ],
+    "rise": 30,
+    "slope": 0.08,
+    "consequence": "Deliberate175south well/rim replan: upper opening, guard/gate, rim support, one captured175strip closure, shortened ordinary ramp/removable tip, sealed bund and BOTH south temporary posts shift. The existing south feet otherwise lie on the moved bund; no collision is hidden.",
+    "rainAccounting": {
+      "addedGrossLps": 0.024412499999999997,
+      "addedNetAssignedCatchmentM2": 0,
+      "boundary": "Added175roof strip is wholly within current court4250..7750square; it redirects already assigned court rain to N, not a new catchment credit. Existing outside-court roof strips and actual N full-event/temporary-pipe duty still need the complete overlap ledger."
+    },
+    "structuralReservation": {
+      "owningSelectedAperture": [
+        6125,
+        6300,
+        1525,
+        1100
+      ],
+      "newStripAreaM2": 0.266875,
+      "displacedDeckGravityKn": 2.0015625,
+      "displacedDeckVariableKn": 1.0675,
+      "formedEdge": {
+        "axesX": [
+          3950,
+          7950
+        ],
+        "axisY": 6025,
+        "plan": [
+          3950,
+          5925,
+          4000,
+          200
+        ],
+        "section": [
+          200,
+          300
+        ],
+        "top": -180,
+        "underside": -480,
+        "clearBetweenCourtGirders": 3400,
+        "grossM3": 0.24,
+        "grossConcreteKn": 6,
+        "netAdditionalM3": 0.08000000000000002,
+        "netAdditionalConcreteKn": 2.0000000000000004,
+        "role": "Continuous source-proposed EW edge reaches BOTH actual court-W/E lines; no floating short trimmer. Gross6kN and net2kN differ because200depth may replace already-budgeted RC200. Deliberately formed cage/anchorage through P36 territory, torsion and local slab/door/roof clearance remain required; no face drilling."
+      },
+      "guardPostAxes": [
+        [
+          6500,
+          6025
+        ],
+        [
+          7300,
+          6025
+        ]
+      ],
+      "guardHorizontalPointKn": 1,
+      "pointZ": 1100,
+      "baseZ": -180,
+      "signedSeparatePostActions": [
+        {
+          "Fx": 1,
+          "Fy": 0,
+          "My": 1.28
+        },
+        {
+          "Fx": -1,
+          "Fy": 0,
+          "My": -1.28
+        },
+        {
+          "Fx": 0,
+          "Fy": 1,
+          "Mx": -1.28
+        },
+        {
+          "Fx": 0,
+          "Fy": -1,
+          "Mx": 1.28
+        }
+      ],
+      "baseControl": {
+        "type": "Ordinary formed wrap/bearing saddle comparison; NOT qualified",
+        "rimWidth": 200,
+        "actualContactLever": 120,
+        "nominalReactionFor1_28KnM": 10.666666666666668,
+        "fullGrossImpossibleLeverLowerBound": 6.3999999999999995,
+        "requiredContacts": "Bind opposing40wide contacts with120centre lever separately in EW/NS; actual top/bottom plates, outside legs, fixed positive shear key and parent-cage interface remain unproved. No preload/friction credit or imaginary full200lever.",
+        "maximumNorthIntrusion": 20,
+        "northLimit": 6145,
+        "bodySouthMinimum": 6175,
+        "bodyGapAfter5": 25,
+        "accepted": false
+      },
+      "gate": {
+        "clear": [
+          6550,
+          7250
+        ],
+        "width": 700,
+        "leafReference": [
+          695,
+          1100,
+          40
+        ],
+        "maximumReferenceMassKg": 25,
+        "windPressureHypothesisKpa": 1,
+        "windHorizontalKn": 0.7645,
+        "windBaseMomentKnM": 0.5580849999999999,
+        "gravityKn": 0.24525,
+        "gravityEccentricMomentKnM": 0.08522437499999999,
+        "role": "Gate wind is an explicit comparison hypothesis, not site wind acceptance; combine with relevant signed guard actions and real hinge/latch eccentricity. Close/capture before worker moves to WEST station; open inward leaf would intersect that route.",
+        "crew": "One person on lower platform plus one attendant outside south gate for entry/closure/tool transfer and recovery. No second person is charged to the one-person lower platform. Actual ladder/posture/loaded latch reach is still a joined-state duty."
+      },
+      "accepted": false
+    },
+    "ordinaryAndWeatherAccepted": false
+  },
+  "nativeEndActions": {
+    "ends": [
+      {
+        "id": "inlet",
+        "captureX": 7350,
+        "knownNominalWetEndKg": 47.51940058705625,
+        "knownMomentNm": 228.24034142226353,
+        "hardwareAdverseKg": 136.66623520331007,
+        "hardwareLever": 629.1664940134324,
+        "combinedReferenceMomentNm": 1071.7611969010331,
+        "combinedReferenceShearKn": 1.8068610871034936
+      },
+      {
+        "id": "outlet",
+        "captureX": 12400,
+        "knownNominalWetEndKg": 37.542425649961885,
+        "knownMomentNm": 199.52155142133125,
+        "hardwareAdverseKg": 136.66623520331007,
+        "hardwareLever": 650.5169608087745,
+        "combinedReferenceMomentNm": 1071.6668873634449,
+        "combinedReferenceShearKn": 1.708986962970598
+      }
+    ],
+    "correlation": "Each end plus ALL remaining hardware at that adverse end is a separate reference case, not both masses simultaneously. Fixed rear fixture and upper pan are separate from the moving4.5kN model.",
+    "rotation": {
+      "knownGrossBodyGravityNm": 289.0723165517319,
+      "rigidPosition5Nm": 11.120368843277642,
+      "unallocatedHardwareKg": 136.66623520331007,
+      "hardware400mmGravityNm": 536.2783069377887,
+      "wholeUnrestrictedReferenceGravityNm": 836.4709923327982,
+      "workingDriveReferenceNm": 500,
+      "holdingReferenceNm": 1000,
+      "permittedRotatingMassMomentFor500KgM": 20.367718104484247,
+      "unrestrictedGravityWithin500Reference": false,
+      "actualGearKeyFrictionAndForceAccepted": false,
+      "role": "500Nm drive adequacy is not inherited for the entire unrestricted hardware budget. Bound actual rotating versus frame-fixed kit and its moment before selecting a real drive/key/lock; no assumed friction or copper torsional stiffness."
+    },
+    "materialRole": "Reference actions, NOT a native braze/endfeed/collar or delivered copper wall/temper rating. Brazing requires annealed material evidence; isolated tube arithmetic supplies no joint/contact pass.",
+    "primaryEvidence": [
+      "https://www.copper.org/publications/pub_list/pdf/copper_tube_handbook.pdf",
+      "https://alloys.copper.org/alloy/C12200"
+    ],
+    "accepted": false
+  },
+  "renewal": {
+    "translation": 5524.166494013432,
+    "rolledMinimumX": 6725.833505986568,
+    "rolledMaximumX": 13045.516960808774,
+    "wholePackageMinimumX": 6725.833505986568,
+    "wholePackageMaximumX": 13045.516960808774,
+    "park": [
+      12250,
+      18569.683454822207
+    ],
+    "stage": [
+      12250,
+      8100,
+      6600,
+      1200
+    ],
+    "requiredDeckEnd": 18850,
+    "originalSelectedDeckEnd": 16200,
+    "extensionBeyondSelected": 2650,
+    "stageGrowthBeyondOld4700Control": 1700,
+    "terminalReceiverOrdinaryDuringDraw": false,
+    "handling": "No worker occupies the receiving basin. Once captured, open native outlet moves WITH full spool; moving projection/residual discharge can leave the basin during renewal, so drain/isolate, positively cap/capture residual liquid BEFORE roll. Full wet mass remains charged despite this operation. Existing80catch is no full-event backup.",
+    "framing": "6600long reference includes full5150carrier, complete bends/flange and5mm envelope; the complete native bodies/flange now govern park; old frame rail through the outlet roll is rejected. Support as rare temporary work is permitted in principle, not automatically permanent-deck enlargement.",
+    "lowerCradleX": [
+      12900,
+      17800
+    ],
+    "liftingPointLocalX": [
+      7900,
+      11600
+    ],
+    "cgBound": {
+      "domain": "NOMINAL-METAL / independently variable water and hardware budget; NOT an actual delivered-kit upper bound",
+      "proof": "Straight water is partitioned at the actual7350/9300/10850/12400 capture/support stations into five disjoint axial reaches. Each reach, stub and each bend may hold ANY mass0..its full nominal volume at ANY X within its complete allowed bounds. For fixed other variables, CG is fractional-linear in each mass and monotone in each X, with a strictly positive fixed metal mass. Therefore mass endpoints0/full and location endpoints bound EVERY partial/asymmetric state. All positions at their minimum/maximum simultaneously bound the corresponding CG direction; both hardware endpoints and0/max mass are enumerated. Reactions are affine in masses/moments, so these same endpoint cases bound their ranges.",
+      "cases": 1536,
+      "metalComponents": [
+        {
+          "id": "nominal-uniform-straight-tube",
+          "massKg": 48.89046833782541,
+          "x": [
+            9902.5,
+            9922.5
+          ]
+        },
+        {
+          "id": "nominal-stub",
+          "massKg": 1.6125423114206372,
+          "x": [
+            6784.115009148252,
+            6970.372570885719
+          ]
+        },
+        {
+          "id": "catalogue-inlet-bend",
+          "massKg": 6.15,
+          "x": [
+            6774.483039191226,
+            7262.065535400526
+          ]
+        },
+        {
+          "id": "catalogue-outlet-bend",
+          "massKg": 6.15,
+          "x": [
+            12562.934464599475,
+            13050.516960808774
+          ]
+        },
+        {
+          "id": "nominal-moving-flange",
+          "massKg": 7,
+          "x": [
+            6720.833505986568,
+            7032.812910304107
+          ]
+        },
+        {
+          "id": "nominal-uniform-frame-rails",
+          "massKg": 73.8304,
+          "x": [
+            9865,
+            9885
+          ]
+        },
+        {
+          "id": "nominal-frame-crossmembers",
+          "massKg": 21.504000000000005,
+          "x": [
+            10065,
+            10085
+          ]
+        }
+      ],
+      "waterComponents": [
+        {
+          "id": "straight-water-reach1",
+          "axisX": [
+            7146.981178424362,
+            7350
+          ],
+          "maximumKg": 3.831065993810692,
+          "x": [
+            7136.040655274923,
+            7360.940523149439
+          ]
+        },
+        {
+          "id": "straight-water-reach2",
+          "axisX": [
+            7350,
+            9300
+          ],
+          "maximumKg": 36.797468480761346,
+          "x": [
+            7339.059476850561,
+            9310.940523149438
+          ]
+        },
+        {
+          "id": "straight-water-reach3",
+          "axisX": [
+            9300,
+            10850
+          ],
+          "maximumKg": 29.24926981804107,
+          "x": [
+            9289.059476850562,
+            10860.940523149438
+          ]
+        },
+        {
+          "id": "straight-water-reach4",
+          "axisX": [
+            10850,
+            12400
+          ],
+          "maximumKg": 29.24926981804107,
+          "x": [
+            10839.059476850562,
+            12410.940523149438
+          ]
+        },
+        {
+          "id": "straight-water-reach5",
+          "axisX": [
+            12400,
+            12678.018821575637
+          ],
+          "maximumKg": 5.246353243070726,
+          "x": [
+            12389.059476850562,
+            12688.959344725075
+          ]
+        },
+        {
+          "id": "stub-water",
+          "maximumKg": 3.4425231239941856,
+          "x": [
+            6784.115009148252,
+            6970.372570885719
+          ]
+        },
+        {
+          "id": "inlet-bend-water",
+          "maximumKg": 24.548000000000002,
+          "x": [
+            6774.483039191226,
+            7262.065535400526
+          ]
+        },
+        {
+          "id": "outlet-bend-water",
+          "maximumKg": 24.548000000000002,
+          "x": [
+            12562.934464599475,
+            13050.516960808774
+          ]
+        }
+      ],
+      "hardwareBudgetKg": 136.66623520331007,
+      "hardwareX": [
+        6720.833505986568,
+        13050.516960808774
+      ],
+      "nominalModelMassRangeKg": [
+        165.13741064924608,
+        458.7155963302753
+      ],
+      "minimumState": {
+        "mask": 99,
+        "positionSide": "minimumX",
+        "massKg": 370.4227034511224,
+        "localCgX": 8129.5937396443705,
+        "hardware": {
+          "mass": 136.66623520331007,
+          "x": 6720.833505986568
+        },
+        "water": [
+          {
+            "id": "straight-water-reach1",
+            "massKg": 3.831065993810692,
+            "x": 7136.040655274923
+          },
+          {
+            "id": "straight-water-reach2",
+            "massKg": 36.797468480761346,
+            "x": 7339.059476850561
+          },
+          {
+            "id": "straight-water-reach3",
+            "massKg": 0,
+            "x": 9289.059476850562
+          },
+          {
+            "id": "straight-water-reach4",
+            "massKg": 0,
+            "x": 10839.059476850562
+          },
+          {
+            "id": "straight-water-reach5",
+            "massKg": 0,
+            "x": 12389.059476850562
+          },
+          {
+            "id": "stub-water",
+            "massKg": 3.4425231239941856,
+            "x": 6784.115009148252
+          },
+          {
+            "id": "inlet-bend-water",
+            "massKg": 24.548000000000002,
+            "x": 6774.483039191226
+          },
+          {
+            "id": "outlet-bend-water",
+            "massKg": 0,
+            "x": 12562.934464599475
+          }
+        ]
+      },
+      "maximumState": {
+        "mask": 152,
+        "positionSide": "maximumX",
+        "massKg": 360.84726891366796,
+        "localCgX": 11502.650259512195,
+        "hardware": {
+          "mass": 136.66623520331007,
+          "x": 13050.516960808774
+        },
+        "water": [
+          {
+            "id": "straight-water-reach1",
+            "massKg": 0,
+            "x": 7360.940523149439
+          },
+          {
+            "id": "straight-water-reach2",
+            "massKg": 0,
+            "x": 9310.940523149438
+          },
+          {
+            "id": "straight-water-reach3",
+            "massKg": 0,
+            "x": 10860.940523149438
+          },
+          {
+            "id": "straight-water-reach4",
+            "massKg": 29.24926981804107,
+            "x": 12410.940523149438
+          },
+          {
+            "id": "straight-water-reach5",
+            "massKg": 5.246353243070726,
+            "x": 12688.959344725075
+          },
+          {
+            "id": "stub-water",
+            "massKg": 0,
+            "x": 6970.372570885719
+          },
+          {
+            "id": "inlet-bend-water",
+            "massKg": 0,
+            "x": 7262.065535400526
+          },
+          {
+            "id": "outlet-bend-water",
+            "massKg": 24.548000000000002,
+            "x": 13050.516960808774
+          }
+        ]
+      },
+      "localX": [
+        8129.5937396443705,
+        11502.650259512195
+      ],
+      "parkedX": [
+        13653.760233657802,
+        17026.81675352563
+      ],
+      "liftingPointLocalX": [
+        7900,
+        11600
+      ],
+      "liftingPointWorldX": [
+        13424.166494013432,
+        17124.166494013432
+      ],
+      "liftMinimumCgReserve": 97.34974048780532,
+      "lowerCradleMinimumCgReserve": 753.760233657802,
+      "liftReactionRangesKn": [
+        [
+          0.09313769895344257,
+          3.6465826033006077
+        ],
+        [
+          0.22548877241504103,
+          3.8140508316279758
+        ]
+      ],
+      "lowerCradleReactionRangesKn": [
+        [
+          0.5585715156443662,
+          3.333892251278204
+        ],
+        [
+          0.5589896231405489,
+          3.327981297166969
+        ]
+      ],
+      "reactionsRole": "Correlated nominal gravity-only endpoint cases, not independent simultaneous maxima or actual rigging/hoist/rail/contact acceptance.",
+      "deliveredMassBoundEstablished": false,
+      "actualKitCgAccepted": false,
+      "rejectedFullWetOnlyGeneralBound": {
+        "nominalMassKg": 458.7155963302752,
+        "localX": [
+          8854.194163646285,
+          10798.60048552118
+        ],
+        "parkedX": [
+          14378.360657659718,
+          16322.766979534612
+        ],
+        "rejection": "Full water is a mass maximum, NOT automatically a CG extreme. The same hardware budget with all tube/bend water removed already escapes both sides of this old interval; independently asymmetric/partial inventories govern the corrected domain.",
+        "dryCounterexample": {
+          "massKg": 301.8036458525561,
+          "localX": [
+            8375.971046491219,
+            11256.470859511737
+          ]
+        },
+        "rejectedAsGeneralBound": true
+      }
+    },
+    "hoist": "Actual rated hoist/spreader/rigging must carry full package and complete3D incoming/outgoing envelope. Use explicit at-least7.5kN support-action screen for a5kN suspended load including rigging; no old5kN/1700lift pass is inherited. Outgoing leaves before incoming enters; no loaded upperbearers.",
+    "actualSupportsAndSiteAccepted": false,
+    "fullExportSweepAccepted": false,
+    "releaseMethod": "UPPER FIRST; ignore the predecessor lower40 sequence. Full nominal CG domain retained; real lifting points/kit/tilt/wind and captured reversal remain unqualified."
+  },
+  "zeroDropAtOldDatumRejected": {
+    "installedAxis": -775,
+    "drop": 0,
+    "bridgeClearance": [
+      {
+        "id": "court",
+        "minimumClearance": -3.980449485781719
+      },
+      {
+        "id": "spine",
+        "minimumClearance": 10.137197573041817
+      },
+      {
+        "id": "outer",
+        "minimumClearance": 37.990138749512425
+      }
+    ],
+    "proof": "Omitting the old40vertical translation raises EVERY old moving point40 with unchangedX/draw and envelopes. Subtract40 from each exact old bridge reserve. The first flange/bridge fails; zero-drop alone is not a solution."
+  },
+  "upperAssembly": {
+    "pan": [
+      6735,
+      6850,
+      -205,
+      305,
+      550,
+      205
+    ],
+    "ranges": [
+      [
+        6735,
+        7040
+      ],
+      [
+        6807.5,
+        7400
+      ],
+      [
+        -381.67635458155155,
+        0
+      ]
+    ],
+    "dimensions": [
+      305,
+      592.5,
+      381.67635458155155
+    ],
+    "flangeCentre": [
+      6880.051903114187,
+      6950,
+      -380
+    ],
+    "normal": [
+      0.011763891800361699,
+      0,
+      0.9999308030307444
+    ],
+    "dryReferenceKg": 39.086039152159515,
+    "maximumWaterReferenceKg": 41.358364087259055,
+    "nominalDryPanBudgetKg": 30,
+    "nominalFixedFlangeKg": 7,
+    "fixedStubMaximumCutM": 0.23601245631640536,
+    "panFullGrossWaterKg": 34.38875,
+    "surfacePond15Kg": 2.5162500000000003,
+    "fullWetReferenceKg": 80.44440323941856,
+    "captureGravityKn": 0.7891595957786961,
+    "referenceCaptureRequirementKn": 1.5,
+    "waterRole": "Gross under-cover205depth plus a separate15mm geometric surface-pond reference.15 is NOT first harm or a qualified maximum head. All partial inventories remain allowed for reactions. Actual delivered mass/maximum water/handler rating is unproved.",
+    "firstNormalLift": 40,
+    "firstLiftVector": [
+      0.47055567201446796,
+      0,
+      39.99723212122978
+    ],
+    "noPersonUnderLoad": "Lower crew/platform operator exits before upper lift. Pan remains fully seated/captured during all bolt work; no suspended-pan working state is inherited.",
+    "deliveredMassBoundEstablished": false,
+    "handlerAccepted": false
+  },
+  "rearFixture": {
+    "parts": [
+      {
+        "id": "EW-torsion-base",
+        "box": [
+          6125,
+          7225,
+          -680,
+          1525,
+          100,
+          100
+        ],
+        "section": [
+          100,
+          100,
+          5
+        ],
+        "axis": 0,
+        "nominalKg": 23.18
+      },
+      {
+        "id": "upright-6662.5",
+        "box": [
+          6637.5,
+          7225,
+          -580,
+          50,
+          100,
+          240
+        ],
+        "section": [
+          100,
+          50,
+          5
+        ],
+        "axis": 2,
+        "nominalKg": 2.6879999999999997
+      },
+      {
+        "id": "NS-arm-6662.5",
+        "box": [
+          6637.5,
+          7200,
+          -340,
+          50,
+          140,
+          100
+        ],
+        "section": [
+          100,
+          50,
+          5
+        ],
+        "axis": 1,
+        "nominalKg": 1.568
+      },
+      {
+        "id": "upright-7325",
+        "box": [
+          7300,
+          7225,
+          -580,
+          50,
+          100,
+          240
+        ],
+        "section": [
+          100,
+          50,
+          5
+        ],
+        "axis": 2,
+        "nominalKg": 2.6879999999999997
+      },
+      {
+        "id": "NS-arm-7325",
+        "box": [
+          7300,
+          7200,
+          -340,
+          50,
+          140,
+          100
+        ],
+        "section": [
+          100,
+          50,
+          5
+        ],
+        "axis": 1,
+        "nominalKg": 1.568
+      },
+      {
+        "id": "EW-bearing-7200",
+        "box": [
+          6687.5,
+          7175,
+          -340,
+          612.5,
+          50,
+          100
+        ],
+        "section": [
+          100,
+          50,
+          5
+        ],
+        "axis": 0,
+        "nominalKg": 6.859999999999999
+      },
+      {
+        "id": "EW-bearing-7340",
+        "box": [
+          6687.5,
+          7315,
+          -340,
+          612.5,
+          50,
+          100
+        ],
+        "section": [
+          100,
+          50,
+          5
+        ],
+        "axis": 0,
+        "nominalKg": 6.859999999999999
+      },
+      {
+        "id": "seat-6750-7200",
+        "box": [
+          6735,
+          7185,
+          -240,
+          30,
+          30,
+          35
+        ],
+        "nominalKg": 0.252
+      },
+      {
+        "id": "seat-6750-7340",
+        "box": [
+          6735,
+          7325,
+          -240,
+          30,
+          30,
+          35
+        ],
+        "nominalKg": 0.252
+      },
+      {
+        "id": "seat-7025-7200",
+        "box": [
+          7010,
+          7185,
+          -240,
+          30,
+          30,
+          35
+        ],
+        "nominalKg": 0.252
+      },
+      {
+        "id": "seat-7025-7340",
+        "box": [
+          7010,
+          7325,
+          -240,
+          30,
+          30,
+          35
+        ],
+        "nominalKg": 0.252
+      },
+      {
+        "id": "west-formed-drop-plate",
+        "box": [
+          6117,
+          7200,
+          -700,
+          8,
+          150,
+          495
+        ],
+        "nominalKg": 4.752
+      },
+      {
+        "id": "east-formed-side-plate",
+        "box": [
+          7650,
+          7200,
+          -700,
+          8,
+          150,
+          425
+        ],
+        "nominalKg": 4.08
+      }
+    ],
+    "westReturn": {
+      "type": "ONE proposed NS200×300 CANTILEVER into the proposed EW6025rim tied to actual court-W/E",
+      "box": [
+        5925,
+        6025,
+        -480,
+        200,
+        1340,
+        300
+      ],
+      "rootAxis": [
+        6025,
+        6025
+      ],
+      "rootEWSpanAxesX": [
+        3950,
+        7950
+      ],
+      "headLoadY": 7275,
+      "loadArmM": 1.25,
+      "freeEndY": 7365,
+      "baselineRC": [
+        -180,
+        -380
+      ],
+      "proposedRC": [
+        -180,
+        -480
+      ],
+      "rawBoundingM3": 0.0804,
+      "rawBoundingConcreteKn": 2.01,
+      "overlapWithAlreadyPricedEWRimM3": 0.006,
+      "outsideOverlapM3": 0.0744,
+      "incrementalOverRC200OutsideOverlapM3": 0.024800000000000006,
+      "netGlobalAdditionalGKn": 0.6200000000000001,
+      "baselineBoundingGKn": 2.0100000000000002,
+      "extraBoundingConcreteGKn": 0.6700000000000002,
+      "localBoundingTotalGKn": 2.6800000000000006,
+      "localBoundingQKn": 1.072,
+      "localRootVerticalReferenceKn": [
+        2.3351769244863725,
+        7.615371208798366
+      ],
+      "localRootMomentReferenceKnM": [
+        -0.7693649938185743,
+        9.476990160424497
+      ],
+      "loadRole": "The local screen conservatively retains the entire1340rectangular strip, including100overlap in the EW rim. Global addition deducts that overlap and the already-budgeted RC200. Baseline G is REROUTED, not added again. Independent action extrema here are a conservative pre-combination envelope, not an actual ULS load case.",
+      "supportRole": "A1.25m load arm is a real cantilever into the proposed4m EW rim and actual court-W/E lines. Its root moment becomes added EW-rim twist/joint demand. Actual T-joint torsion, longitudinal/closed steel, anchor cage, edge and positive support all require proof.",
+      "rejectedNorthSupport": {
+        "point": [
+          6025,
+          7700
+        ],
+        "existingEWGirder": false,
+        "authority": "STR current-house-grid: Y7700 head/bridge line is east-side only. No simply-supported NS beam or unowned north reaction is credited."
+      },
+      "structurallyAccepted": false
+    },
+    "nominalBareKg": 55.25200000000001,
+    "attachmentsBudgetKg": 4,
+    "nominalFixedReferenceKg": 59.25200000000001,
+    "entireBounds": [
+      [
+        6117,
+        7658
+      ],
+      [
+        7175,
+        7365
+      ],
+      [
+        -700,
+        -205
+      ]
+    ],
+    "positionAndDeformationEachFace": 10,
+    "connectionForcePlanesX": [
+      6125,
+      7650
+    ],
+    "connectionReferenceZ": -630,
+    "memberTop": -580,
+    "memberBottom": -680,
+    "connectionType": "The100×100box is welded to deliberate end/drop plates.−580 is its TOP, not an under-bearing seat. Actual load transfer and positive anchors must be proved; no loose bearing is assumed.",
+    "panBearingY": [
+      7200,
+      7340
+    ],
+    "seatTop": -205,
+    "panCapture": "Positive front AND rear uplift capture is required during ordinary walking and joint-tool work. Capture upper assembly independently before releasing these TOP-access keepers, only after lower crew exits. No fixed undercut remains in the upward export.",
+    "nominalActionDomain": {
+      "cases": 2560,
+      "pointKn": 5,
+      "pointPrint": [
+        200,
+        200
+      ],
+      "pointCentres": {
+        "x": [
+          6835,
+          6940
+        ],
+        "y": [
+          6950,
+          7300
+        ]
+      },
+      "distributedKpa": 5,
+      "upperDryReferenceKg": 39.086039152159515,
+      "upperWaterKg": [
+        0,
+        41.358364087259055
+      ],
+      "upperMassLocationBounds": [
+        [
+          6735,
+          7040
+        ],
+        [
+          6807.5,
+          7400
+        ]
+      ],
+      "attachmentsKg": [
+        0,
+        4
+      ],
+      "proof": "Gravity/contact reactions are affine in inventories and their first moments. Independent0/full water, attachment0/max, permitted location endpoints and actual200square point-centre endpoints bound every intermediate state. Dry upper metal is a nominal fixed mass with bounded location; no full-wet-only reaction assumption.",
+      "reactionsKn": {
+        "front": [
+          -4.516782683905156,
+          18.21827667680111
+        ],
+        "rear": [
+          -11.590367081022416,
+          4.698799422540995
+        ],
+        "west": [
+          -0.3448230755136278,
+          3.863371208798366
+        ],
+        "east": [
+          -0.3064075692202243,
+          3.887134721218038
+        ],
+        "globalMx": [
+          -2.124544840226541,
+          0.588800320272337
+        ],
+        "torsionEachUnshared": 2.13393614942654
+      },
+      "governingFront": {
+        "case": "point-plus-distributed-adverse",
+        "front": 18.21827667680111,
+        "rear": -11.590367081022416,
+        "px": 6835,
+        "py": 6950,
+        "waterFull": true,
+        "dx": 6735,
+        "dy": 6807.5,
+        "wx": 6735,
+        "wy": 6807.5
+      },
+      "governingRear": {
+        "case": "point-plus-distributed-adverse",
+        "front": 18.21827667680111,
+        "rear": -11.590367081022416,
+        "px": 6835,
+        "py": 6950,
+        "waterFull": true,
+        "dx": 6735,
+        "dy": 6807.5,
+        "wx": 6735,
+        "wy": 6807.5
+      },
+      "frontRearRole": "Correlated PAN contacts; the entire pan case is conservatively assigned to one side/rail for local bearing and keeper demand. West/east are whole-fixture end-connection reactions. Do not add independent maxima as a simultaneous case.",
+      "torsionRole": "globalMx is the signed global NS eccentric moment. Each attachment must be checked against the unshared sum-absolute torsion requirement until STR proves an actual stiffness/distribution; no convenient50/50 torsion split is claimed.",
+      "referenceUpwardCaptureKn": 1.5,
+      "captureForceQualified": false
+    },
+    "isolatedSteelReference": {
+      "E": 193000,
+      "proofStressHypothesisMPa": 170,
+      "crossbarI": 1736666.6666666667,
+      "crossbarZ": 34733.333333333336,
+      "crossbarWorstSimplePointKn": 18.21827667680111,
+      "crossbarSpan": 612.5,
+      "crossbarRawStressMPa": 80.316898737097,
+      "crossbarElasticDeflectionMm": 0.26020195631985366,
+      "nominalPanSideRail": [
+        100,
+        50,
+        5
+      ],
+      "panSouthOverhang": 350,
+      "panPointOnlyRawStressMPa": 50.383877159309016,
+      "role": "Isolated nominal section screens only. Welds, support stiffness, coupled fixture torsion, local bearing, captive keeper, actual material/wall/rounding and real pan/foot distribution are not accepted."
+    },
+    "serviceActions": {
+      "horizontalReferenceKn": 0.6,
+      "signedSeparate": [
+        "+Fx",
+        "-Fx",
+        "+Fy",
+        "-Fy"
+      ],
+      "application": [
+        6880.051903114187,
+        6950,
+        -380
+      ],
+      "boltTorqueReferenceNm": 200,
+      "flangeNormal": [
+        0.011763891800361699,
+        0,
+        0.9999308030307444
+      ],
+      "qualifiedRequiredTorque": false,
+      "role": "Price reference manual bolt reactions and actual attachment-level eccentricity separately from walking loads. This is not a qualified seal torque or a rolling torque transferred from the disconnected lower pipe."
+    },
+    "westSupport": {
+      "actualRC": [
+        -180,
+        -380
+      ],
+      "proposedFormedReturnRC": [
+        -180,
+        -480
+      ],
+      "headWindowZ": [
+        -455,
+        -205
+      ],
+      "baselineRC200HeadWindowQualified": false,
+      "beamTop": -580,
+      "beamCentroid": -630,
+      "beamBottom": -680,
+      "memberTopBelowSoffit": 200,
+      "connectionCentroidBelowBaselineSoffit": 250,
+      "connectionCentroidBelowProposedReturn": 150,
+      "faceX": 6125,
+      "proposedPlate": [
+        6117,
+        7200,
+        -700,
+        8,
+        150,
+        495
+      ],
+      "required": "A deliberately formed8mm drop/end plate and actual positive anchor system must return vertical/uplift/horizontal and eccentric torsion to the explicitly proposed200×300 cantilever deck return and its real EW6025T-joint. No free-edge anchor, unproved sleeve/plate or water-skin penetration pass. West mouth clear above the hanger remains a hydraulic requirement."
+    },
+    "eastSupport": {
+      "actualGirder": [
+        -180,
+        -630
+      ],
+      "faceX": 7650,
+      "headWindowZ": [
+        -425,
+        -275
+      ],
+      "beamTop": -580,
+      "beamCentroid": -630,
+      "memberTopAboveSoffit": 50,
+      "boxBottom": -680,
+      "proposedPlate": [
+        7650,
+        7200,
+        -700,
+        8,
+        150,
+        425
+      ],
+      "required": "A deliberately FORMED side/end plate and actual positive anchor system must fit the actual bottom bars/outer link. Beam centroid is at soffit while its upper50lies above it; do not substitute an under-beam seat; no afterthought drilling or borrowed P36/P37 capacity. Keep the existing water/renewal passage explicit."
+    },
+    "deliveredMassBoundEstablished": false,
+    "structurallyAccepted": false
+  },
+  "fullSolidSeparation": {
+    "fixtureBox": [
+      [
+        6107,
+        7668
+      ],
+      [
+        7165,
+        7375
+      ],
+      [
+        -710,
+        -195
+      ]
+    ],
+    "bodyChecks": [
+      {
+        "id": "native-inlet460box",
+        "gaps": [
+          -893.5169608087735,
+          76.85954396115085,
+          -297.4651333795389
+        ],
+        "clearAxis": "Y",
+        "minimumGuaranteedAxisGap": 76.85954396115085,
+        "separated": true
+      },
+      {
+        "id": "native-outlet460box",
+        "gaps": [
+          4894.934464599475,
+          -186.09892051006136,
+          31.894523690129972
+        ],
+        "clearAxis": "X",
+        "minimumGuaranteedAxisGap": 4894.934464599475,
+        "separated": true
+      },
+      {
+        "id": "complete-moving285flange-prism",
+        "gaps": [
+          -925.8129103041074,
+          62.5,
+          -364.70011401489614
+        ],
+        "clearAxis": "Y",
+        "minimumGuaranteedAxisGap": 62.5,
+        "separated": true
+      },
+      {
+        "id": "straight-tube-conservative160square",
+        "gaps": [
+          -501.3510672753473,
+          91.9336256882707,
+          -20.0823265399099
+        ],
+        "clearAxis": "Y",
+        "minimumGuaranteedAxisGap": 91.9336256882707,
+        "separated": true
+      }
+    ],
+    "frameCheck": {
+      "gaps": [
+        -378,
+        -170,
+        224.41176470588232
+      ],
+      "clearAxis": "Z",
+      "minimumGuaranteedAxisGap": 224.41176470588232,
+      "separated": true
+    },
+    "northWaterTerritoryStartsY": 7400,
+    "minimumNorthWaterPlanGap": 25,
+    "neighboringPanUnderside": -205,
+    "armTop": -240,
+    "minimumArmToNeighborAfter10": 25,
+    "role": "All fixed rear parts are NORTH of the full inlet/flange/tube angular envelope, or WEST of the outlet. The frame is below them. The upper flangeY does not change during normal lift, so it passes south of both fixed rear bars. Only intended pan/stool contact remains; positive keepers must retract fully. Actual lower lock/drive/rail hardware is not included in this kit pass.",
+    "translationProof": "East draw0..the declared full translation leaves allY gaps unchanged; the outlet starts east of the fixture and only moves farther east. Falling-frameZ clearance increases with east draw. Locked incoming reversal traverses the same domain. Actual collar/lock hardware still needs its own complete solids.",
+    "actualKitAccepted": false
+  },
+  "upperExport": {
+    "completeBodyRanges": [
+      [
+        6735,
+        7040
+      ],
+      [
+        6807.5,
+        7400
+      ],
+      [
+        -381.67635458155155,
+        0
+      ]
+    ],
+    "bodyTop": 1700,
+    "bodyBottomAfter10": 1308.3236454184485,
+    "guardTop": 1100,
+    "minimumOverGuardAfter10": 208.32364541844845,
+    "roofUnderside": 1970,
+    "minimumBelowRoofAfter10": 260,
+    "yawCentre": [
+      6887.5,
+      6900
+    ],
+    "continuousYawRadius": 333.1971075804831,
+    "completeYawPlan": [
+      6544.302892419517,
+      6556.802892419517,
+      7230.697107580483,
+      7243.197107580483
+    ],
+    "yawProof": "Translate ONLY after the entire body is above1100guard; then yaw90. Every point of the complete enclosing rectangle stays within its half-diagonal radius, including all intermediate extrema. This is not endpoint sampling.",
+    "combinedWestGateWeatherY": [
+      6575,
+      7200
+    ],
+    "unrotatedEachSideWith10": 6.25,
+    "yaw90WidthWith10": 325,
+    "yaw90MinimumEachSide": 150,
+    "requiredActorOutsideAllSweeps": true,
+    "actorSweepAccepted": false,
+    "actualHandlerRiggingAndSweepAccepted": false
+  },
+  "operations": [
+    "N independently full-duty and actual receiving/weather verified; isolate E and prove it drained/depressurised. Full-water weight is still charged. Failure to drain forbids bolt release; no hidden pump, timing credit or assumed free-outlet immunity to blockage.",
+    "Keep all rated covers while erecting the same175rim/guard/weather control. Capture/remove nine covers and seam pieces; pan3 remains fully seated with positive walking uplift keepers on the new rear frame. Fit the temporary lower platform/ladder while lower pipe is captured on fixed-height rails.",
+    "One lower worker releases all eight vertical-joint bolts with the actual paired tools/postures, captures gasket/nuts and retracts every bolt. Existing finite tool screen is necessary only; real torque/fasteners/full body remain unqualified. Worker exits before any upper lift.",
+    "Capture upper pan3/flange/stub as ONE nominal80kg wet assembly using a qualified actual handler. Release its TOP-access walking keepers from above. Lift40 along the matched normal with lower spool stationary; stop/capture, confirm all faces/bolts/seats free. Gasket stiction and handler force limit require real evidence, not unlimited pulling.",
+    "Lift the whole upper assembly above guard, translate to6900Y, yaw90 inside the full sweep and export through the real west gate/weather route. Keep personnel outside suspended body; land/restrain before releasing rigging. No30kg cover or manual staff pass is inherited.",
+    "Capture/remove platform panels and ladder. The passive rear fixture may remain: its complete declared solids are clear of the full native roll and fixed frame. Roll the pipe90 on actual captured supports/positive locks, then draw only after both locks are witnessed; no heavy lowering occurs.",
+    "Complete the actual long outgoing/incoming spool event with corrected independent-water CG. Reverse: return/latch pipe in the same fixed height, remove temporary clearance controls only in order, replace platform/ladder, yaw/return upper pan/flange, seat/capture before worker re-enters, restore joint and test while covers open. Reinstall/test all covers/collector/weather and receiver before E readmission."
+  ],
+  "holds": [
+    "Actual80.44kg reference upper handler, attachment, roof/head/crew path, hard capture/force limit and full incoming reversal; no adopted hoist or physical lift.",
+    "Rear steel pan/frame, walking bearing/uplift keepers, west formed RC200 return/hanger and east450girder side-seat/cage/weld/contact proof; no anchors borrowed.",
+    "Actual lower collar/positive torque key/0-90 locks/drive/rails and all supported full-spool states; nominal frame/partial-water CG is not an actual-kit or lifting pass.",
+    "Maximum hydraulic/temporary-canopy pressure/head, inlet/debris/jump/wave, first-wet, qualified first susceptible boundary, high-eave duties and exact conditional site handoff remain with RWT06."
+  ],
+  "wholeMethodAccepted": false
+}
