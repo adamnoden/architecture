@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-06T23:58:45.685Z",
-  "expiresAt": "2026-11-07T01:28:45.685Z",
+  "heartbeatAt": "2026-11-07T00:37:02.235Z",
+  "expiresAt": "2026-11-07T02:07:02.235Z",
   "branch": "work/zerg-20261106-rwt06-native-release",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -36,7 +36,7 @@
   },
   "pr": 1359,
   "checkpoint": {
-    "evidence": "Draft1359 a41e6655 exact analytic full native-spool0..90 proof;75.942adversecontrol; actualbridge/13500poststategating; wholewet351.38kg/CG/19250temporaryfield;163RWTtests/renderedSVG; noadoption",
-    "next": "Finish ONE verticaljoint, coupledcapturedsupport/locks/drive, actualR300crew/platform/rim and full outgoing/incoming lifting; preserve held joins and two-ended comparison; reconcile newer main only at coherentfinalcheckpoint"
+    "evidence": "1359 a7a452cb:165 RWT pass; paired reach413.72/two sequential crew; real175 aperture; failed65degree longrail preserved; complete carrier320.94kg known wet and18850 work extent; currentb5cff main consumed; no adoption",
+    "next": "Price actual endfeed/collar cantilevers and frame/rail/capture/positive locks; joined ladder/crew/rim and full incoming/export; preserve failed controls, no downstream platform"
   }
 }
