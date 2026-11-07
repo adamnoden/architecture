@@ -1,5 +1,5 @@
-import { sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import { referenceHouseSourceFingerprint } from '../reference-house/identity.js'
 import { compileDeploymentCase } from './compile.js'
@@ -203,7 +203,7 @@ export function composeExploration(input = readExplorationInput()) {
     }))))
     return {
       siteId: t.siteId, context: t.context, authority: input.authority,
-      sourceRecordFingerprint: site.recordFingerprint, assumptionFingerprint: sha256DplSemanticFingerprint(t),
+      sourceRecordFingerprint: site.recordFingerprint, assumptionFingerprint: sha256SemanticFingerprint(t),
       areaAnchorM2: t.areaAnchorM2,
       assumedNominalAreaM2: t.widthM.samples[1] * t.depthM.samples[1],
       geometry: { result: classifySamples(geometrySamples.map(g => g.contained)),
@@ -232,11 +232,11 @@ export function composeExploration(input = readExplorationInput()) {
   if (readiness.counts.ready !== 0) throw new Error('Reconcile exploration with changed empirical readiness before regenerating')
   const payload = {
     schema: 'dpl.explorationResult.v1', authority: input.authority,
-    inputFingerprint: sha256DplSemanticFingerprint(input), referenceHouseFingerprint: sourceFingerprint,
+    inputFingerprint: sha256SemanticFingerprint(input), referenceHouseFingerprint: sourceFingerprint,
     houseFootprintM: [shellWidthM, shellDepthM], trials,
     lennardFixedPlacementSensitivity: {
       source: 'project/dpl/sites/dpl-t-control-004-lennard-road-candidate-v01.json',
-      sourceFingerprint: sha256DplSemanticFingerprint(authored),
+      sourceFingerprint: sha256SemanticFingerprint(authored),
       baseIndexGeometryClearanceM: lennard,
       inwardBoundaryOffsetsM: [0, 0.25, 0.5, 0.75].map(offsetM => ({ offsetM,
         residualClearanceM: lennard - offsetM, containedUnderUniformInwardOffset: lennard >= offsetM })),
@@ -254,5 +254,5 @@ export function composeExploration(input = readExplorationInput()) {
       externalEvidenceRequirementsRetained: true
     }
   }
-  return { ...payload, resultFingerprint: sha256DplSemanticFingerprint(payload) }
+  return { ...payload, resultFingerprint: sha256SemanticFingerprint(payload) }
 }

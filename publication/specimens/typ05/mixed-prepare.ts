@@ -3,7 +3,7 @@ import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { dirname, extname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { publicationFigurePlacements } from '../../figures.js'
-import { publicationPlatePlacements } from '../../plates-current.js'
+import { publicationPlatePlacements } from '../../plates.js'
 import { fetchOpenFontCandidate } from '../typ03/open-fonts.js'
 
 const specimenRoot = dirname(fileURLToPath(import.meta.url))

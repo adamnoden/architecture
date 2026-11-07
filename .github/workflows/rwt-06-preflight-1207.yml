@@ -1,0 +1,37 @@
+name: RWT-06 publication preflight PR1207
+on:
+  push:
+    branches: [work/rwt-06-preflight-1207]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    if: github.repository == 'adamnoden/architecture'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout exact reviewed source
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6556544021
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Assert exact validated head
+        run: test "$(git rev-parse HEAD)" = "0fd395afee177174dd94df290785ca6c78c129bd"
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install
+        run: npm ci --no-audit --no-fund
+      - name: Canonical fresh merge preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm run control:merge-check -- RWT-06 \
+            --lease-id 5ded4cf2-206c-4922-9ab1-aba902031d2a \
+            --generation 21 \
+            --branch work/mvb-chat-6556544021 \
+            --head 0fd395afee177174dd94df290785ca6c78c129bd \
+            --format text

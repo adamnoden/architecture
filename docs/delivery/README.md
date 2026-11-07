@@ -12,7 +12,6 @@ Delivery records may define what an appointed design team must resolve, demonstr
 
 Examples include:
 
-- the [purpose-specific information issue profiles](information-issue-profiles.md);
 - the [RIBA Implementation Brief Template](riba-implementation-brief-template.md);
 - [External Maintenance Access Requirements](external-maintenance-access-requirements.md);
 - [Human-Factors Verification Requirements](human-factors-verification-requirements.md).

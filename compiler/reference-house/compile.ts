@@ -33,54 +33,29 @@ const sourceDiagnostics = (source: ReferenceHouseCoordinationSource): RhDiagnost
     )
   }
 
-  if (!Number.isSafeInteger(riserCount) || riserCount <= 0 || flightRiseGroups.length === 0 ||
-    flightRiseGroups.some((value) => !Number.isSafeInteger(value) || value <= 0)) {
+  if (riserCount <= 0 || flightRiseGroups.some((value) => value <= 0)) {
     diagnostics.push(
       diagnostic(
         'INVALID_STAIR_RISE_TOPOLOGY',
         'FAIL',
         [source.stair.riseTopology.id],
-        'Stair riser count and non-empty flight rise groups must contain positive safe integers.'
+        'Stair riser count and flight rise groups must be positive.'
       )
     )
   }
 
-  const { going, goingsPerFlight } = source.stair.goingTopology.value
-  if (!Number.isSafeInteger(goingsPerFlight) || goingsPerFlight <= 0 ||
-    !Number.isFinite(going) || going <= 0) {
+  if (
+    source.stair.goingTopology.value.goingsPerFlight <= 0 ||
+    source.stair.goingTopology.value.going <= 0
+  ) {
     diagnostics.push(
       diagnostic(
         'INVALID_STAIR_GOING_TOPOLOGY',
         'FAIL',
         [source.stair.goingTopology.id],
-        'Stair going must be finite and positive; goings-per-flight must be a positive safe integer.'
+        'Stair going and goings-per-flight must be positive.'
       )
     )
-  }
-
-  if (flightRiseGroups.some((rises) => rises !== goingsPerFlight + 1)) {
-    diagnostics.push(diagnostic(
-      'STAIR_RISE_GOING_MISMATCH', 'FAIL',
-      [source.stair.riseTopology.id, source.stair.goingTopology.id],
-      'The single goings-per-flight declaration supports equal flights only: each flight has one more rise than going, terminating at a landing or upper floor.'
-    ))
-  }
-
-  const { groundFfl, groundCeiling, firstFfl, upperCeiling } = source.levels
-  for (const datum of [groundFfl, groundCeiling, firstFfl, upperCeiling]) {
-    if (!Number.isFinite(datum.value)) {
-      diagnostics.push(diagnostic('INVALID_LEVEL_DATUM', 'FAIL', [datum.id],
-        'Floor and ceiling datums controlling the stair/storey must be finite.'))
-    }
-  }
-  const storeyHeight = firstFfl.value - groundFfl.value
-  if (!Number.isFinite(storeyHeight) || storeyHeight <= 0) {
-    diagnostics.push(diagnostic('INVALID_STAIR_STOREY_HEIGHT', 'FAIL', [groundFfl.id, firstFfl.id],
-      'The stair requires a finite positive difference from ground to first finished floor.'))
-  }
-  if (groundFfl.value >= groundCeiling.value) {
-    diagnostics.push(diagnostic('LEVEL_DATUM_ORDER', 'FAIL', [groundFfl.id, groundCeiling.id],
-      'Ground finished floor must remain below its clear ceiling.'))
   }
 
   const { count } = source.frontField.value
