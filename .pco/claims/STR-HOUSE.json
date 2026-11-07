@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 27,
-  "state": "released",
-  "leaseId": "90e5118e-258e-4d50-a157-c1cb222bff0b",
+  "generation": 28,
+  "state": "claimed",
+  "leaseId": "f93475a5-c0f1-4a79-a3ce-c409daadfd87",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-str-1917"
+    "label": "rush-closeout-20261107-str"
   },
-  "claimedAt": "2026-11-06T19:17:42.359Z",
-  "heartbeatAt": "2026-11-07T03:05:08.000Z",
-  "expiresAt": "2026-11-07T03:05:08.000Z",
-  "branch": "work/zerg-20261107-str-house6",
+  "claimedAt": "2026-11-07T09:14:50.673Z",
+  "heartbeatAt": "2026-11-07T09:14:50.673Z",
+  "expiresAt": "2026-11-07T10:44:50.673Z",
+  "branch": "work/closeout-20261107-str-g28",
   "predecessor": {
-    "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
-    "generation": 26,
-    "branch": "work/zerg-20261106-w2-str",
-    "pr": 1340,
+    "leaseId": "90e5118e-258e-4d50-a157-c1cb222bff0b",
+    "generation": 27,
+    "branch": "work/zerg-20261107-str-house6",
+    "pr": 1373,
     "checkpoint": {
-      "evidence": "FinalHANDOFF PR1340 draft7b74bd9342e51f85a38865542ce5398aeeb8c852 tree5ab6eb02695d4509a0e5321b48f8c3696636080e. Owningcurrent-house-structural-reference.md records allcurrent sources, exactconservedroof, failedbolt andadverse250anchorage/pileclashes.14tests+9producers/diffpass; noadoption.",
-      "next": "Freshcanonicalacquisition/currentmainreconcile; resolvecommonweldedordinary/45hipnode usingactual70/25/60/T10card, genuinearchslidingbearing/movement, completeorigin/headledger andMATfloorcapillarypath. Do not adopt250field or mergeWIP.",
-      "blocker": "Coordinatoractualexecutionlimit; sourcefullydurable; STR-HOUSE remainsopen. No externaladmission/completionclaimed."
+      "evidence": "PR1373 real negative width checkpoint58d2d21d4cd40df4f6ea0a51c64266d9343516f5/tree89b2ce418c23c8928664cdb489442ee485f99d34;24tests/kernel/eightresponsecontrols/render passed;full45producer suite running",
+      "next": "Review failed160/180 actual-cell controls; isolate governing arch bending and price one ordinary correction with true development/soffit/cage; no selection"
     }
   },
   "recoverySource": {
-    "leaseId": "9b6f61f0-8c16-4aea-a96f-58bac7b9cb15",
-    "generation": 26,
-    "branch": "work/zerg-20261106-w2-str",
-    "pr": 1340,
+    "leaseId": "90e5118e-258e-4d50-a157-c1cb222bff0b",
+    "generation": 27,
+    "branch": "work/zerg-20261107-str-house6",
+    "pr": 1373,
     "checkpoint": {
-      "evidence": "FinalHANDOFF PR1340 draft7b74bd9342e51f85a38865542ce5398aeeb8c852 tree5ab6eb02695d4509a0e5321b48f8c3696636080e. Owningcurrent-house-structural-reference.md records allcurrent sources, exactconservedroof, failedbolt andadverse250anchorage/pileclashes.14tests+9producers/diffpass; noadoption.",
-      "next": "Freshcanonicalacquisition/currentmainreconcile; resolvecommonweldedordinary/45hipnode usingactual70/25/60/T10card, genuinearchslidingbearing/movement, completeorigin/headledger andMATfloorcapillarypath. Do not adopt250field or mergeWIP.",
-      "blocker": "Coordinatoractualexecutionlimit; sourcefullydurable; STR-HOUSE remainsopen. No externaladmission/completionclaimed."
+      "evidence": "PR1373 real negative width checkpoint58d2d21d4cd40df4f6ea0a51c64266d9343516f5/tree89b2ce418c23c8928664cdb489442ee485f99d34;24tests/kernel/eightresponsecontrols/render passed;full45producer suite running",
+      "next": "Review failed160/180 actual-cell controls; isolate governing arch bending and price one ordinary correction with true development/soffit/cage; no selection"
     }
-  },
-  "pr": 1373,
-  "checkpoint": {
-    "evidence": "PR1373 real negative width checkpoint58d2d21d4cd40df4f6ea0a51c64266d9343516f5/tree89b2ce418c23c8928664cdb489442ee485f99d34;24tests/kernel/eightresponsecontrols/render passed;full45producer suite running",
-    "next": "Review failed160/180 actual-cell controls; isolate governing arch bending and price one ordinary correction with true development/soffit/cage; no selection"
-  },
-  "releasedAt": "2026-11-07T03:05:08.000Z",
-  "releaseReason": "handoff"
+  }
 }
