@@ -10,6 +10,38 @@ def read(s):
     assert subprocess.check_output(['git','hash-object','--stdin'],input=raw,cwd=ROOT).decode().strip()==s['blob'],s['path']
     return json.loads(raw)
 
+def contact_challenge(c,m):
+    """Partial flat contact; quadrature substitution removes the endpoint singularity."""
+    e=m['proposedEndSections'];l=e['leafMechanism'];a=l['control']
+    length=a['freeLength_mm'];rise=a['freeRiseFromCapFace_mm']
+    thickness=e['firstRelease']['worstLeafThickness_mm']
+    hard=e['firstRelease']['minimumHardCapToPanGap_mm'];gap=hard-thickness
+    theta=math.acos(rise/length);end=math.sqrt(math.pi/2-theta)
+    n=c['straightLeafContactChallenge']['quadraturePanels'];assert n>=32 and n%2==0
+    def integral(first):
+        def f(u):
+            if u==0:return 0 if first else 2
+            return 2*u*math.sqrt(math.sin(u*u)) if first else 2*u/math.sqrt(math.sin(u*u))
+        step=end/n
+        return step/3*(f(0)+f(end)+sum((4 if i%2 else 2)*f(i*step) for i in range(1,n)))
+    i1=integral(True);i0=integral(False)
+    free=gap*i0/i1;critical=length*i1/i0
+    assert gap>0 and free<length,'Partial-contact formula requires a flat-contact tail'
+    modulus=a['modulus_ksi']*6.894757293168
+    curvature=i1/gap*math.sqrt(math.cos(theta))
+    start=2*gap*math.sqrt(math.cos(theta))/i1;tip=start+length-free
+    contact=[a['rootX_left']+start,a['rootX_left']+tip]
+    common=l['commonPanFlangeContactTerritoryX_mm']['west']
+    return {'control':c['straightLeafContactChallenge'],'length_mm':length,'freeRise_mm':rise,
+      'thickness_mm':thickness,'hardGap_mm':hard,'centrelineGap_mm':gap,
+      'criticalCentrelineGapForFlatTail_mm':critical,'freePortionLength_mm':free,
+      'idealElasticRootStress_MPa':modulus*thickness/2*curvature,
+      'idealReactionPerWidth_N_per_mm':modulus*thickness**3/24*(i1/gap)**2,
+      'idealWestContactX_mm':contact,'commonWestFlangeX_mm':common,
+      'minimumContactEdgeClearance_mm':min(contact[0]-common[0],common[1]-contact[1]),
+      'oldMaximumLinearStress_MPa':max(x['linearCantileverStress_MPa'] for x in l['linearSensitivity']),
+      'scope':'Different authored natural-shape/contact idealization: not actual preformed leaf or strict stress bound. Contact can fit at this corner; no flange failure claimed. High elastic stress may itself invalidate the linear material law; supplied thin-strip properties remain unbound.'}
+
 def produce():
     c=json.loads((HERE/'court-air-path.json').read_text());s=c['sources']
     h=read(s['HAD'])['model'];m=read(s['mechanicalResearch']);b=read(s['mineralBaseResearch'])['bondedMineralBase']
@@ -67,8 +99,48 @@ def produce():
       'minimumRigidNormalClearance_mm':f['y']-c['frontContactLead']['fixedFaceY']-challenge,
       'scope':'Radius/low-carrier necessary clearance only. High-carrier bends, walking edge, whole contact contours and fixed-frame/door/sill release still need the joined design; no bounding-box shortcut.'}
     assert downfold['minimumRigidNormalClearance_mm']>0
+    bend=c['stepBendTrial'];step=p['dryFold']['profileYZ'][1][0];crest=p['dryFold']['profileYZ'][2][1]
+    assert [bend[k] for k in ['lowerExposedRadius_mm','upperExposedRadius_mm','backExposedRadius_mm']]==[3,4.5,4.5],'Drawing and trial support this declared radius family only'
+    assert bend['upperExposedRadius_mm']-p['thickness']==bend['lowerExposedRadius_mm']
+    low_end=step-bend['lowerExposedRadius_mm'];high_start=step+bend['upperExposedRadius_mm']
+    high_end=p['rear']['planeY']-bend['backExposedRadius_mm'];hy=bend['highCarrierY_mm']
+    edge_bound=2*new['edgeToleranceEach_mm'];lap=c['ordinaryTopLapTrial']
+    bend_result={'control':bend,'lowerFlatY_mm':[cy,low_end],'crestFlatY_mm':[high_start,high_end],
+      'minimumLowCarrierEndClearance_mm':low_end-new['y'][1]-edge_bound,
+      'minimumHighCarrierEndClearances_mm':[hy[0]-high_start-edge_bound,high_end-hy[1]-edge_bound],
+      'lapTrial':lap,'rejectedLapEdgeToBend_mm':low_end-lap['rejectedEdgeY']-challenge,
+      'revisedLapEdgeToBend_mm':low_end-lap['revisedEdgeY']-challenge,
+      'minimumBodyOverlap_mm':lap['revisedEdgeY']-f['y']-challenge,
+      'minimumActualFlatOverlap_mm':lap['revisedEdgeY']-cy-challenge,
+      'scope':'Exposed-face tangent geometry with sheet underside offset, not a formed-part inspection. New lap normal travel/height/contact and both actual end-top/frame joins remain open.'}
+    # Upper inside R3 lies below the sharp top13.5 at both old carrier ends.
+    old_high=m['channels'][1];inner_r=bend['upperExposedRadius_mm']-p['thickness']
+    centre_z=crest-bend['upperExposedRadius_mm']
+    old_under=centre_z+math.sqrt(inner_r**2-(old_high['y'][0]-high_start)**2)
+    bend_result['oldHighCarrierInterferenceEachEnd_mm']=old_high['top']-old_under
+    assert bend_result['oldHighCarrierInterferenceEachEnd_mm']>0
+    assert bend_result['minimumLowCarrierEndClearance_mm']>0 and min(bend_result['minimumHighCarrierEndClearances_mm'])>0
+    assert bend_result['rejectedLapEdgeToBend_mm']<0< bend_result['revisedLapEdgeToBend_mm']
+    metal=m['metalComparison'];load=m['authoredLoad'];trial_channels=[]
+    for old,yr in zip(m['channels'],[new['y'],hy]):
+        gauge=bend['carrierGauge_mm'];width=yr[1]-yr[0];height=old['top']-old['bottom'];run=old['x'][1]-old['x'][0]
+        clear=width-2*gauge;area=width*gauge+2*gauge*(height-gauge);print_width=load['print_mm'][0]
+        trial_channels.append({'id':old['id'],'y_mm':yr,'flatBlankWidths_mm':[width,height-gauge,height-gauge],
+          'sectionBeforeWelds_mm2':area,'massBeforeWelds_kg':area*run*metal['density_kg_m3']/1e9,
+          'centralClearSpan_mm':clear,
+          'centralStripStress_MPa':3*load['force_N']*clear/(2*print_width*gauge**2),
+          'centralStripDeflection_mm':load['force_N']*clear**3/(4*metal['modulus_MPa']*print_width*gauge**3),
+          'webAverageIfEqualReactions_MPa':load['force_N']/(2*print_width*gauge),
+          'longitudinalTopWebJointLength_m':2*run/1000})
+    bend_result['trialCarriers']=trial_channels
+    bend_result['carrierMassBeforeWelds_kg']=sum(x['massBeforeWelds_kg'] for x in trial_channels)
+    bend_result['priorNominalCarrierMass_kg']=m['channelMassBeforeBendsWeldsRetention_kg']
+    bend_result['stockPurchaseControl']=m['channelStockControl']
+    bend_result['quantityScope']='Narrower welded-flat pieces, not formed U profiles. Old full-sheet dated purchase reference is retained; no weight-proportional saving or installed cost. Top/web joint lengths are interface quantities, not a weld specification. Central strip/equal web screens confer no walking-edge, plate/web/weld, mineral bearing, load-spread, fatigue or combined-design pass.'
+    leaf=contact_challenge(c,m)
     return {'status':c['status'],'sources':s,'headerContinuation':header_result,'wholePanLowerReveal':reveal,
-      'frontDownfoldComparison':downfold,'frontContactLead':c['frontContactLead'],'foilResearch':c['foilResearch'],'admission':c['admission']}
+      'frontDownfoldComparison':downfold,'dryStepBendComparison':bend_result,'straightLeafContactChallenge':leaf,
+      'frontContactLead':c['frontContactLead'],'foilResearch':c['foilResearch'],'admission':c['admission']}
 
 def figure(r):
     out=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="950" viewBox="0 0 1200 950"><rect width="1200" height="950" fill="#faf9f4"/><g font-family="Arial" fill="#243842">']
@@ -77,7 +149,7 @@ def figure(r):
         out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}"'+(f' stroke-dasharray="{dash}"' if dash else '')+'/>')
     text(30,38,'Join the ordinary header band to the real pan air path',27)
     text(30,69,'WORKING DESIGN. Whole path not closed; no owning geometry, structure, material or physical admission.',17)
-    h=r['headerContinuation'];v=r['wholePanLowerReveal'];d=r['frontDownfoldComparison']
+    h=r['headerContinuation'];v=r['wholePanLowerReveal'];d=r['frontDownfoldComparison'];b=r['dryStepBendComparison']
     X=lambda y:60+(y-3650)*.9
     Z=lambda z:210-z*.7
     def section(a,b,lo,hi,color,dash=''):box(X(a),Z(hi),X(b)-X(a),Z(lo)-Z(hi),color,dash=dash)
@@ -87,20 +159,23 @@ def figure(r):
     for lo,hi,color in [(-180,-80,'#c8ded0'),(-80,-15,'#e5e0d2'),(-15,0,'#aebcc4')]:section(3650,3810,lo,hi,color)
     for lo,hi,color in [(-180,-170,'#ddd4c3'),(-170,-105,'#bda17d'),(-105,-95,'#ddd4c3'),(-95,-30,'#bda17d')]:section(3810,4025,lo,hi,color)
     section(3810,4025,-30,0,'#d8d9cc','4 3')
-    for q in [d['revisedLowCarrier']]:
+    for q in [d['revisedLowCarrier'],{'y':b['control']['highCarrierY_mm'],'gauge_mm':3,'topZ':13.5,'bottomZ':-46.5}]:
         aa,bb=q['y'];t=q['gauge_mm'];top=q['topZ'];bottom=q['bottomZ']
         section(aa,bb,top-t,top,'#7d9da7');section(aa,aa+t,bottom,top-t,'#7d9da7');section(bb-t,bb,bottom,top-t,'#7d9da7')
-    section(4062,4088,-46.5,13.5,'none','4 3')
     pts=[(4030,-30),(4030,-4.5)]
     path=f'M{X(4030)} {Z(-30)}L{X(4030)} {Z(-4.5)}A{4.5*.9} {4.5*.7} 0 0 1 {X(4034.5)} {Z(0)}'
-    path+=''.join(f'L{X(y)} {Z(z)}' for y,z in [(4060,0),(4060,15),(4090,15),(4090,-45),(4250,-49.4444)])
+    path+=f'L{X(4057)} {Z(0)}A{3*.9} {3*.7} 0 0 0 {X(4060)} {Z(3)}L{X(4060)} {Z(10.5)}A{4.5*.9} {4.5*.7} 0 0 1 {X(4064.5)} {Z(15)}L{X(4085.5)} {Z(15)}A{4.5*.9} {4.5*.7} 0 0 1 {X(4090)} {Z(10.5)}L{X(4090)} {Z(-45)}L{X(4250)} {Z(-49.4444)}'
     out.append(f'<path d="{path}" fill="none" stroke="#a74734" stroke-width="2"/>')
     out.append(f'<path d="M{X(3820.5)} 155V{Z(-180)} M{X(4025)} {Z(-30)}V{Z(0)}" fill="none" stroke="#bd732c" stroke-dasharray="5 4"/>')
     text(70,180,'Room face 3820.5; header starts 3810.',15)
     text(70,370,'215 mm header / two 65 courses + two 10 beds',16)
     text(70,397,'Proposed cap and fixed air interface remain unassigned.',15)
     text(70,490,'RC200 upper lift / actual common 600 × 450 beam',16)
-    text(70,516,'Dashed high-carrier box is NOT a resolved fabrication.',15)
+    text(70,516,'Welded flat carriers are trials, not a bearing/weld pass.',15)
+    text(70,548,'Real flat: lower 4034.5..4057; crest 4064.5..4085.5.',15)
+    text(70,576,'Lap edge 4054 clashes; 4052 leaves 1 mm to lower bend.',15)
+    text(70,604,'Body overlap 18 mm; actual flat overlap only 13.5 mm.',15)
+    text(70,632,'Lap normal travel, walking offset and contact unresolved.',15)
     text(70,680,'Header Y3810..4025 / Z−180..−30; room intrusion 10.5 mm.',16)
     text(70,708,f'Local room strip {h["localRoomStripArea_m2"]:.5f} m²; no empty Services route inferred.',16)
     # Lower reveal plan: the rebate applies only to the explicitly authored height.

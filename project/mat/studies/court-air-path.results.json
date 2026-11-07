@@ -153,7 +153,7 @@
     "revisedLowCarrier": {
       "y": [
         4037,
-        4058
+        4054
       ],
       "topZ": -1.5,
       "bottomZ": -46.5,
@@ -166,6 +166,130 @@
     "fixedAirFaceY_mm": 4025,
     "minimumRigidNormalClearance_mm": 1,
     "scope": "Radius/low-carrier necessary clearance only. High-carrier bends, walking edge, whole contact contours and fixed-frame/door/sill release still need the joined design; no bounding-box shortcut."
+  },
+  "dryStepBendComparison": {
+    "control": {
+      "lowerExposedRadius_mm": 3,
+      "upperExposedRadius_mm": 4.5,
+      "backExposedRadius_mm": 4.5,
+      "highCarrierY_mm": [
+        4067,
+        4083
+      ],
+      "carrierGauge_mm": 3,
+      "role": "New authored dry-profile fabrication trial at unchanged conceptual step/crest vertices. Not owning HAD geometry, delivered forming tolerance or a support/air rating."
+    },
+    "lowerFlatY_mm": [
+      4034.5,
+      4057
+    ],
+    "crestFlatY_mm": [
+      4064.5,
+      4085.5
+    ],
+    "minimumLowCarrierEndClearance_mm": 1,
+    "minimumHighCarrierEndClearances_mm": [
+      0.5,
+      0.5
+    ],
+    "lapTrial": {
+      "rejectedEdgeY": 4054,
+      "revisedEdgeY": 4052,
+      "normalGapAndTravel_mm": null,
+      "walkingOffset_mm": null,
+      "role": "Necessary in-plane overlap/bend comparison only. Adjustable supported retention and its real normal movement, walking height, contact and both corners remain to define; no old central-slot leakage or spring law transfer."
+    },
+    "rejectedLapEdgeToBend_mm": -1,
+    "revisedLapEdgeToBend_mm": 1,
+    "minimumBodyOverlap_mm": 18,
+    "minimumActualFlatOverlap_mm": 13.5,
+    "scope": "Exposed-face tangent geometry with sheet underside offset, not a formed-part inspection. New lap normal travel/height/contact and both actual end-top/frame joins remain open.",
+    "oldHighCarrierInterferenceEachEnd_mm": 1.341687604822301,
+    "trialCarriers": [
+      {
+        "id": "apron",
+        "y_mm": [
+          4037,
+          4054
+        ],
+        "flatBlankWidths_mm": [
+          17,
+          42.0,
+          42.0
+        ],
+        "sectionBeforeWelds_mm2": 303.0,
+        "massBeforeWelds_kg": 4.31472,
+        "centralClearSpan_mm": 11,
+        "centralStripStress_MPa": 73.33333333333333,
+        "centralStripDeflection_mm": 0.002594541910331384,
+        "webAverageIfEqualReactions_MPa": 6.666666666666667,
+        "longitudinalTopWebJointLength_m": 3.56
+      },
+      {
+        "id": "crest",
+        "y_mm": [
+          4067,
+          4083
+        ],
+        "flatBlankWidths_mm": [
+          16,
+          57.0,
+          57.0
+        ],
+        "sectionBeforeWelds_mm2": 390.0,
+        "massBeforeWelds_kg": 5.5536,
+        "centralClearSpan_mm": 10,
+        "centralStripStress_MPa": 66.66666666666667,
+        "centralStripDeflection_mm": 0.001949317738791423,
+        "webAverageIfEqualReactions_MPa": 6.666666666666667,
+        "longitudinalTopWebJointLength_m": 3.56
+      }
+    ],
+    "carrierMassBeforeWelds_kg": 9.86832,
+    "priorNominalCarrierMass_kg": 10.68,
+    "stockPurchaseControl": {
+      "source": "https://stainlesseurope.co.uk/en_GB/p/Stainless-steel-sheet-3-X-1000-X-2000-mm-2B-1.4404/41003",
+      "accessed": "2026-11-06",
+      "productCode": "S-BL-MZ3/3.0X1000X2000/1.4404/2B",
+      "sheet_mm": [
+        3,
+        1000,
+        2000
+      ],
+      "observedPriceGBPWithoutVAT": 509.58,
+      "supplierNominalMass_kg": 48,
+      "role": "One full-sheet purchase control, not landed/formed/installed cost or least-cost nesting. No certificate, supplied finish/residue or material admission.",
+      "idealSharpCornerBlankArea_m2": 0.445,
+      "scope": "The nominal developed strip area excludes bend allowance and actual forming/nesting. Charge a full sheet only for this explicit no-offcut-credit procurement control, not an installed-cost lower bound."
+    },
+    "quantityScope": "Narrower welded-flat pieces, not formed U profiles. Old full-sheet dated purchase reference is retained; no weight-proportional saving or installed cost. Top/web joint lengths are interface quantities, not a weld specification. Central strip/equal web screens confer no walking-edge, plate/web/weld, mineral bearing, load-spread, fatigue or combined-design pass."
+  },
+  "straightLeafContactChallenge": {
+    "control": {
+      "naturalShape": "Authored initially straight inextensible leaf, inclined to give the existing free rise; NOT evidence of actual preformed shape",
+      "quadraturePanels": 512,
+      "role": "Frictionless unilateral flat-wall Euler-Bernoulli elastic contact sensitivity at minimum gap. No yield/finite-radius/friction/pressure/residual stress/fatigue/air or installed shape rating."
+    },
+    "length_mm": 35,
+    "freeRise_mm": 9.5,
+    "thickness_mm": 0.21335999999999997,
+    "hardGap_mm": 1,
+    "centrelineGap_mm": 0.78664,
+    "criticalCentrelineGapForFlatTail_mm": 3.1942130686592307,
+    "freePortionLength_mm": 8.61946257441014,
+    "idealElasticRootStress_MPa": 746.8219244733772,
+    "idealReactionPerWidth_N_per_mm": 0.6623710519488105,
+    "idealWestContactX_mm": [
+      5106.554418048581,
+      5132.934955474171
+    ],
+    "commonWestFlangeX_mm": [
+      5106,
+      5138
+    ],
+    "minimumContactEdgeClearance_mm": 0.5544180485812831,
+    "oldMaximumLinearStress_MPa": 244.97742439049946,
+    "scope": "Different authored natural-shape/contact idealization: not actual preformed leaf or strict stress bound. Contact can fit at this corner; no flange failure claimed. High elastic stress may itself invalidate the linear material law; supplied thin-strip properties remain unbound."
   },
   "frontContactLead": {
     "fixedFaceY": 4025,
