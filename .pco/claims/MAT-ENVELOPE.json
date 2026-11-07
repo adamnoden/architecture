@@ -9,14 +9,14 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-07T02:04:36.257Z",
-  "expiresAt": "2026-11-07T03:34:36.257Z",
+  "heartbeatAt": "2026-11-07T02:19:51.116Z",
+  "expiresAt": "2026-11-07T03:49:51.116Z",
   "checkpoint": {
-    "evidence": "Final1365 frozen563ce91b/treeb4937f21 genuinely merges current61738165; all shared scripts preserved plus MAT check. WholeHAD089f/airDuty5b93/weatherArch504202be read-proved unchanged. Approved geometry/numerical results identical to ab585. FullMAT/newSTRregressions/check/diff/render PASS; exactCI running.",
-    "next": "Observe exact563ce CI; root reviews reconciliation delta then fresh canonical main/head/lease preflight and expected-head merge. Rebind distinct successor after verified merge before further source work.",
-    "blocker": "Bounded conditional comparison only; no geometry/material/air/water/thermal/physical admission or MAT completion. Keep final head frozen through CI/preflight."
+    "evidence": "Verified1365 merged27b85320 from563ce with all27 exactchecks, rootreview and freshpreflight; actualmain27b fetched and ancestry proved, oldremote branch404. Created distinct successor branch from exact27b with independent worktree. New substantive floor study/draft not yet published; pr1365 remains prior recovery link until successor draft exists.",
+    "next": "One actual continuous RC200 upperpour, lower−380 interface, all real wall-DPC/core/stair/door cuts and ONE floorfamily air budget; bind material/curing/joint obligations without blanketconcrete waiver or newthreshold alternatives. Publish substantive WIP and bind new successor draft promptly.",
+    "blocker": "No selectedmix/constituents/curing/permeability/joint/soilgas evidence or physical floor admission. Preserve 15/65/100/RC200 and immutable earlier cases; root keeps MAT open."
   },
-  "branch": "work/zerg-20261106-w5-court-air-path",
+  "branch": "work/zerg-20261106-w5-floor-pour-boundary",
   "predecessor": {
     "leaseId": "6002020d-6ea1-4562-986b-9448eba5705a",
     "generation": 27,
