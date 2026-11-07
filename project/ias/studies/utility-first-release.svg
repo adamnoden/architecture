@@ -21,7 +21,7 @@
 <text x="29" y="95" font-size="2.5">ELEC.</text>
 <text x="29" y="203.75" font-size="2.5">PV</text>
 <path d="M91.25 53.75H158.75" stroke="#2c7885" stroke-width="1.4"/>
-<text x="91.25" y="50.75" font-size="2.8">CURRENT OPEN ARCH 900</text>
+<text x="91.25" y="50.75" font-size="2.8">RAW OPEN ARCH 900</text>
 <rect x="227.275" y="61.025000000000006" width="163.0125" height="151.7625" fill="#fafafa" stroke="#52616b" stroke-width=".45" />
 <rect x="249.775" y="65" width="75" height="48.75" fill="#fff2d5" stroke="#c78e20" stroke-width=".45" stroke-dasharray="2 1"/>
 <rect x="227.5" y="119.03750000000001" width="45" height="75" fill="none" stroke="#829488" stroke-width=".45" stroke-dasharray="2 1"/>
@@ -39,7 +39,7 @@
 <text x="229" y="95" font-size="2.5">ELEC.</text>
 <text x="229" y="203.75" font-size="2.5">PV</text>
 <path d="M291.25 53.75H358.75" stroke="#2c7885" stroke-width="1.4"/>
-<text x="291.25" y="50.75" font-size="2.8">CURRENT OPEN ARCH 900</text>
+<text x="291.25" y="50.75" font-size="2.8">RAW OPEN ARCH 900</text>
 <text x="14" y="228" font-size="3.3">A: Accessible tap/drain/plug, independent supports; detach fixed ends before pull. Keep captive hoses and cord with body.</text>
 <text x="14" y="237" font-size="3.3">B: Valve-bay reserve 26 mm; north-wall reserve 353 mm. Static worker proxies are separate states, each with 25 mm minimum.</text>
 <text x="14" y="246" font-size="3.3">B occupies 209300 mm² of electrical working field: no concurrent electrical task; isolate first and restore afterwards.</text>
