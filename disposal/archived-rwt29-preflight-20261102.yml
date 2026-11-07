@@ -1,0 +1,38 @@
+# Archived source: successful RWT-06 generation-29 read-only native preflight, run 41505997991.
+# Non-executable archive in the retained delete-me disposal sink. Never merge into main.
+# Temporary read-only native publication preflight for PR #1284.
+# This file lives on a disposable helper branch and must not enter main.
+name: RWT-06 generation-29 publication preflight
+on:
+  push:
+    branches:
+      - work/rwt29-preflight-20261102
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact PR candidate with canonical unchanged control source
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6585617535
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Fresh canonical current-main and exact-head ACO merge preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node --import tsx scripts/project-claims.ts merge-check RWT-06 \
+            --lease-id ee7ee1fe-b31f-4b44-a880-d3ffb7791d4b \
+            --generation 29 \
+            --branch work/mvb-chat-6585617535 \
+            --head 41785f1d9254d05838671f65bbf219eff346dbd6 \
+            --format json

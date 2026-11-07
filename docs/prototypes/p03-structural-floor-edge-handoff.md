@@ -1,7 +1,5 @@
 # P03 Structural Floor Edge — RH-05 Handoff
 
-> **Historical preparation scope.** The dated record below retains its original geometry and claims. Current-house use is governed by the [prototype applicability and release requirements](https://github.com/adamnoden/architecture/blob/main/project/phy/current-house-prototype-applicability.md); this record alone is not a current specimen release or physical result.
-
 **Status:** Reference House geometry handoff; prototype not yet built or engineer-reviewed  
 **Source gate:** [RH-05 Structural Coordination](../reference-house/structural-coordination.md)  
 **Programme:** [Tectonic Prototype and Engineering Programme](../development/tectonic-prototype-programme.md)

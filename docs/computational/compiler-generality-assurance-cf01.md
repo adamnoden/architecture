@@ -96,14 +96,6 @@ The extracted `compiler/plan-slice/` layer owns only mechanisms justified by bot
 
 The Reference House continues to own its own adapter and project-specific derivations. There is no branch on fixture identity in the shared compiler.
 
-### Rectangle-union correction — 29 October 2026
-
-The original gate's fixtures did not expose duplicate or overlapping components inside one semantic region. Summing their areas could falsely close a plate: two identical 50 m² rectangles reported a 100 m² room in a 100 m² shell although half remained uncovered. The current kernel measures the actual axis-aligned rectangle union for every space and void. That counterexample now reports 50 m² and fails plate closure. Partial overlap cannot inflate coverage, and repeated void components cannot subtract the same excluded area twice.
-
-Overlapping components within **one** region are legitimate union descriptions; distinct semantic spaces or distinct void regions must still not overlap. Cross-region diagnostic areas likewise measure their intersection union once. Valid disjoint decompositions, shared edges, containment and void-exclusion checks retain their meanings. The correction uses a bounded rectangle sweep, with the existing numeric tolerances and controlled invalid-geometry diagnostics; it adds no arbitrary-polygon or CAD domain.
-
-Eight current regression cases cover the false passes, overlapping/disjoint controls, an L-shaped region, voids and retained failure boundaries. The historical seven-test gate above remains its original evidence, not a claim that it tested these later cases. Canonical Reference House and contrast results and current generated output files remain unchanged. These checks establish represented orthogonal region consistency, not usable/finished floor area, physical fit or regulatory area compliance.
-
 ---
 
 ## Deliberate supported-domain restrictions

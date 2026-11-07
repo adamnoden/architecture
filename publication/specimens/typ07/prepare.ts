@@ -3,7 +3,7 @@ import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { extname, posix, resolve } from 'node:path'
 
 import { publicationFigurePlacements } from '../../figures.js'
-import { publicationPlatePlacements } from '../../plates-current.js'
+import { publicationPlatePlacements } from '../../plates.js'
 import { publicationEntries } from '../../publication.js'
 import { fetchOpenFontCandidate } from '../typ03/open-fonts.js'
 import { typ07ProofUnits } from './manifest.js'
