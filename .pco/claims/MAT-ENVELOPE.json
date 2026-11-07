@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 29,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "78600113-2728-4bdf-881f-fdae1c7edf65",
   "holder": {
     "kind": "chatgpt",
     "label": "rush-closeout-mat-20261107"
   },
   "claimedAt": "2026-11-07T09:14:47.968Z",
-  "heartbeatAt": "2026-11-07T09:39:20.634Z",
-  "expiresAt": "2026-11-07T10:24:20.634Z",
+  "heartbeatAt": "2026-11-07T09:39:54.549Z",
+  "expiresAt": "2026-11-07T09:39:54.549Z",
   "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "11e00270-b80a-4364-a2a5-a6e35810130e",
@@ -38,5 +38,7 @@
   "checkpoint": {
     "evidence": "Successor #1374 merged a0896ad683e8969169e41cf8c3c0395ec4a4e9c4 with predecessor #1371 in ancestry. Verified test:mat, independent geometric sweep, support-locus caption, 14 exact-head workflows and canonical preflight. The ordinary RC floor boundary is a research comparison.",
     "next": "Develop the floor-to-wall junction through actual court outlets, pierced returns and drained vent openings. Establish connected every-bay ventilation, solum drainage, delivered batch/cure and installed air/moisture performance before assembly admission."
-  }
+  },
+  "releasedAt": "2026-11-07T09:39:54.549Z",
+  "releaseReason": "handoff"
 }
