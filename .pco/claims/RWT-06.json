@@ -9,9 +9,9 @@
     "label": "rush-closeout-rwt"
   },
   "claimedAt": "2026-11-07T09:14:23.048Z",
-  "heartbeatAt": "2026-11-07T09:20:18.464Z",
-  "expiresAt": "2026-11-07T11:20:18.464Z",
-  "branch": "work/rush-closeout-rwt06",
+  "heartbeatAt": "2026-11-07T09:21:39.115Z",
+  "expiresAt": "2026-11-07T11:21:39.115Z",
+  "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "5af3c2b0-5818-45f0-b3cb-45f3de0596ac",
     "generation": 53,
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Frozen successor 81c13808, tree 9ff342d0. Reconstructed 9333 bounded controls recover the three recorded bridge reserves, pin action, cap stiffness and stock hook height. Default 710 producer verified; changed figure inspected.",
-    "next": "Run and inspect 174 RWT tests, exact combined integration CI and canonical preflight. Keep RWT-06 started until its remaining finite exit duties are met."
-  }
+    "evidence": "Published 81c13808d21a6313cf339a8eb03616ce3db16ebf (tree 9ff342d080cdbf609c02f163ec0ac4d958e80073); 174 RWT tests and both deterministic producers passed. Review matched the unrecoverable 9333 handoff, including finite-draw bridge and cap guarantees. Integration through shared PR 1374.",
+    "next": "Recheck combined head, exact-head CI and fresh RWT publication preflight before merge. RWT-06 stays started with explicit finite hydraulic, kit, structural, physical and site duties."
+  },
+  "pr": 1374
 }
