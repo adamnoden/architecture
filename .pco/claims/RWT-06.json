@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-07T00:37:02.235Z",
-  "expiresAt": "2026-11-07T02:07:02.235Z",
+  "heartbeatAt": "2026-11-07T01:12:03.195Z",
+  "expiresAt": "2026-11-07T02:42:03.195Z",
   "branch": "work/zerg-20261106-rwt06-native-release",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -36,7 +36,7 @@
   },
   "pr": 1359,
   "checkpoint": {
-    "evidence": "1359 a7a452cb:165 RWT pass; paired reach413.72/two sequential crew; real175 aperture; failed65degree longrail preserved; complete carrier320.94kg known wet and18850 work extent; currentb5cff main consumed; no adoption",
-    "next": "Price actual endfeed/collar cantilevers and frame/rail/capture/positive locks; joined ladder/crew/rim and full incoming/export; preserve failed controls, no downstream platform"
+    "evidence": "FINAL1359 head710d5caa/tree8fb06747 currentmain48c991 consumed.166RWT PASS; full exactCI42322634473 running.1536partial-waterCG[8129.404,11511.816], nominal/revisable88.184reserve; oldwet-only generalbound rejected. All a7 geometry unchanged. No adoption.",
+    "next": "Root exact source review, finalCI and fresh canonical preflight then bounded integration. Rebind fresh successor for scratch upper-first axis815/native-end/support/crew control; do not fold scratch or claim whole-method/RWT06 completion."
   }
 }
