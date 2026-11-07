@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 28,
-  "state": "released",
-  "leaseId": "11e00270-b80a-4364-a2a5-a6e35810130e",
+  "generation": 29,
+  "state": "claimed",
+  "leaseId": "78600113-2728-4bdf-881f-fdae1c7edf65",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-envelope-20261106b"
+    "label": "rush-closeout-mat-20261107"
   },
-  "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-07T03:06:01.000Z",
-  "expiresAt": "2026-11-07T03:06:01.000Z",
-  "checkpoint": {
-    "evidence": "Draft 1371 source 748be1ef, tree 8d76f713, reconciles actual main f8c11317. Continuous RC200 pour, horizontal -380 interface, bonded mineral DPC and one finite floor-family budget reproduce. Zero-air mix sensitivity exceeds the structural density control. No physical admission.",
-    "next": "Locate the continuous outer and court boundary and connected ventilation and drainage sections within this same floor case, then review bounded evidence and exact-head validation.",
-    "blocker": "Actual site, batch, cure, full perimeter and RC interfaces, opening cuts and installed air and moisture performance remain unqualified."
-  },
-  "branch": "work/zerg-20261106-w5-floor-pour-boundary",
+  "claimedAt": "2026-11-07T09:14:47.968Z",
+  "heartbeatAt": "2026-11-07T09:14:47.968Z",
+  "expiresAt": "2026-11-07T09:59:47.968Z",
+  "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
-    "leaseId": "6002020d-6ea1-4562-986b-9448eba5705a",
-    "generation": 27,
-    "branch": "work/zerg-20261106-w5-envelope-join",
-    "pr": 1341,
+    "leaseId": "11e00270-b80a-4364-a2a5-a6e35810130e",
+    "generation": 28,
+    "branch": "work/zerg-20261106-w5-floor-pour-boundary",
+    "pr": 1371,
     "checkpoint": {
-      "evidence": "Draft1341 head224531b53761d314de3a12f2d5ad42cafa77492d/treefc139f5b72fe513d796ff42db93aa630082ffa65 now traces ground capillary, void vapour, permitted outdoorRC contact, actual shared thresholdseat and upperpier separately. Upperplate-only floor preference withdrawn. Twelve lateralgroup points explicitly not totalheadcount; exact renewable thresholddryapron4030..4090 cannot be left disconnected or permanentlywelded. Changedproducer/check/diffcheck pass; predecessor1922 exactCIgreen.",
-      "next": "Compare every actual lower-source cut against separate field boundary once STR supplies literal all-head signed ledger; continue actual bulk-water/plinth and reversible threshold interface, then reconcile consumer after structural merge.",
-      "blocker": "STR confirms complete support/headlist and signed domains are not yet allocated; do not extrapolate12 cornerpoints. Sharedgrid bulk-water/weather enclosure and actual capillary-floor ownership remain unresolved. No assembly admission or selection."
+      "evidence": "Draft 1371 source 748be1ef, tree 8d76f713, reconciles actual main f8c11317. Continuous RC200 pour, horizontal -380 interface, bonded mineral DPC and one finite floor-family budget reproduce. Zero-air mix sensitivity exceeds the structural density control. No physical admission.",
+      "next": "Locate the continuous outer and court boundary and connected ventilation and drainage sections within this same floor case, then review bounded evidence and exact-head validation.",
+      "blocker": "Actual site, batch, cure, full perimeter and RC interfaces, opening cuts and installed air and moisture performance remain unqualified."
     }
   },
   "recoverySource": {
-    "leaseId": "6002020d-6ea1-4562-986b-9448eba5705a",
-    "generation": 27,
-    "branch": "work/zerg-20261106-w5-envelope-join",
-    "pr": 1341,
+    "leaseId": "11e00270-b80a-4364-a2a5-a6e35810130e",
+    "generation": 28,
+    "branch": "work/zerg-20261106-w5-floor-pour-boundary",
+    "pr": 1371,
     "checkpoint": {
-      "evidence": "Draft1341 head224531b53761d314de3a12f2d5ad42cafa77492d/treefc139f5b72fe513d796ff42db93aa630082ffa65 now traces ground capillary, void vapour, permitted outdoorRC contact, actual shared thresholdseat and upperpier separately. Upperplate-only floor preference withdrawn. Twelve lateralgroup points explicitly not totalheadcount; exact renewable thresholddryapron4030..4090 cannot be left disconnected or permanentlywelded. Changedproducer/check/diffcheck pass; predecessor1922 exactCIgreen.",
-      "next": "Compare every actual lower-source cut against separate field boundary once STR supplies literal all-head signed ledger; continue actual bulk-water/plinth and reversible threshold interface, then reconcile consumer after structural merge.",
-      "blocker": "STR confirms complete support/headlist and signed domains are not yet allocated; do not extrapolate12 cornerpoints. Sharedgrid bulk-water/weather enclosure and actual capillary-floor ownership remain unresolved. No assembly admission or selection."
+      "evidence": "Draft 1371 source 748be1ef, tree 8d76f713, reconciles actual main f8c11317. Continuous RC200 pour, horizontal -380 interface, bonded mineral DPC and one finite floor-family budget reproduce. Zero-air mix sensitivity exceeds the structural density control. No physical admission.",
+      "next": "Locate the continuous outer and court boundary and connected ventilation and drainage sections within this same floor case, then review bounded evidence and exact-head validation.",
+      "blocker": "Actual site, batch, cure, full perimeter and RC interfaces, opening cuts and installed air and moisture performance remain unqualified."
     }
-  },
-  "pr": 1371,
-  "releasedAt": "2026-11-07T03:06:01.000Z",
-  "releaseReason": "handoff"
+  }
 }
