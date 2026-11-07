@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { posix, resolve } from 'node:path'
 
 import { publicationFigurePlacements } from '../../figures.js'
-import { publicationPlatePlacements } from '../../plates-current.js'
+import { publicationPlatePlacements } from '../../plates.js'
 import { publicationEntries } from '../../publication.js'
 import {
   typ07ProductionDebt,
