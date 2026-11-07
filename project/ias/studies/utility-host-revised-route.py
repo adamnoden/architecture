@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[3]
 SHEET = Path(__file__).with_suffix('.svg')
 RECORD = Path(__file__).with_suffix('.json')
 CLEARANCE = 25
-CARRY_LIFT = 30
+CARRY_LIFT = 35
+PAD_HEIGHT = 30
 NORTH_TRAVEL = 350
 WEST_TRAVEL = 200
 CARRIER_DROP = 50
@@ -163,7 +164,7 @@ def calculate():
         'retained upper water and cap domain': [10775, 1225, 950, 50, 50, upper_axis - 950],
         'retained accessible waste cap domain': [10850, 1250, 0, 50, 50, 125],
     }
-    pads = {f'first rest pad {i}': [x - WEST_TRAVEL - 35, y + NORTH_TRAVEL - 35, 0, 70, 70, CARRY_LIFT]
+    pads = {f'first rest pad {i}': [x - WEST_TRAVEL - 35, y + NORTH_TRAVEL - 35, 0, 70, 70, PAD_HEIGHT]
             for i, (x, y) in enumerate(centres, start=1)}
     # Only the host's own sink and valve-bay reservations are replaced by the
     # explicit released/retained states. All other fixture plans are protected.
@@ -178,11 +179,18 @@ def calculate():
     foreign['north wall'] = [9300, north_face, 0, 2700, 194, 3500]
 
     carrier_states = [[0, 0, 0], [0, 0, -CARRIER_DROP], [CARRIER_TRAVEL, 0, -CARRIER_DROP]]
-    frame_states = [[0, 0, 0], [0, 0, CARRY_LIFT], [0, NORTH_TRAVEL, CARRY_LIFT], [-WEST_TRAVEL, NORTH_TRAVEL, CARRY_LIFT]]
+    frame_states = [[0, 0, 0], [0, 0, CARRY_LIFT], [0, NORTH_TRAVEL, CARRY_LIFT],
+                    [-WEST_TRAVEL, NORTH_TRAVEL, CARRY_LIFT], [-WEST_TRAVEL, NORTH_TRAVEL, PAD_HEIGHT]]
     parked_carrier = {label: shifted(box, carrier_states[-1]) for label, box in carrier.items()}
     # The carrier post lands on the receiving beam at z250. That deliberate
     # bearing interface is checked for interpenetration, separately from clearance.
     receiver = temporary['lower receiving beam']
+    # The horizontal slide keeps the complete post bottom on the beam.
+    sliding_post = sweep(carrier['compact carrier post'], *carrier_states[1:])
+    assert sliding_post[2] == receiver[2] + receiver[5]
+    assert all(receiver[i] <= sliding_post[i] and sliding_post[i] + sliding_post[i + 3] <= receiver[i] + receiver[i + 3]
+               for i in (0, 1))
+    post_footprint = carrier['compact carrier post'][3] * carrier['compact carrier post'][4]
     other_temporary = {key: box for key, box in temporary.items() if key != 'lower receiving beam'}
     carrier_foreign = foreign | frame | pipes | pads | stored_parts | other_temporary
     for start, end in zip(carrier_states, carrier_states[1:]):
@@ -197,6 +205,13 @@ def calculate():
     static = foreign | temporary | pipes | parked_carrier | stored_parts
     carrier_check = minimum_sweep(carrier, carrier_states, carrier_foreign)
     frame_check = minimum_sweep(frame, frame_states, static)
+    pad_approach = minimum_sweep(frame, frame_states[:-1], pads)
+    waste_cap = {key: box for key, box in pipes.items() if key == 'retained accessible waste cap domain'}
+    cap_clearance = minimum_sweep(frame, frame_states, waste_cap)
+    raised_control = minimum_sweep(frame, [[0, 0, 0], [0, 0, 40]], {'lower receiving beam': receiver})
+    assert pad_approach['clearance'] >= 5
+    assert cap_clearance['clearance'] >= CLEARANCE
+    assert raised_control['clearance'] < CLEARANCE
     pad_check = min((box_gap(pad, obstacle), label, other)
                     for label, pad in pads.items() for other, obstacle in static.items())
     crew_paths = [[[10395, 1725], [10395, 2075], [10195, 2075]],
@@ -247,7 +262,9 @@ def calculate():
                      'retainedPipes': pipes, 'firstRestPads': pads, 'smallPartsReceiverDomain': stored_parts,
                      'retainedPlanContext': {key: foreign[key] for key in ('service-utility-washer', 'service-emitter-utility-E')}},
         'states': {'carrier': carrier_states, 'frame': frame_states, 'crew': crew_paths},
-        'checks': {'carrier': carrier_check, 'frame': frame_check, 'crew': crew, 'pads': pad_check,
+        'checks': {'carrier': carrier_check, 'carrierContinuouslySupportedFootprint_mm2': post_footprint,
+                   'frame': frame_check, 'wasteCap': cap_clearance, 'raised40mmControl': raised_control,
+                   'crew': crew, 'pads': pad_check, 'padApproach': pad_approach,
                    'maxShoulderToFrameGrip': grip_reach, 'maxShoulderToCarrierGrip': carrier_grip_reach},
         'postComparison': {'section': [40, 40, 3], 'requiredI_mm4': post_inertia, 'movement': post_displacement, 'movementTarget': 3},
         'temporarySupportComparison': {'mastSection': [50, 50, 3], 'requiredI_mm4': mast_inertia,
@@ -291,7 +308,7 @@ def render(record):
     label(15, 48, 'PLAN / frame positions and retained receiver', 4)
     for box in geo['retainedPlanContext'].values():
         outline(box, 20, 208, .085, '#934e56')
-    for index, state in enumerate(record['states']['frame'][1:]):
+    for index, state in enumerate(record['states']['frame'][1:-1]):
         for box in geo['frame'].values():
             outline(shifted(box, state), 20, 208, .085, ['#6b8190', '#7190ae', '#256449'][index])
     for box in geo['temporarySupport'].values():
@@ -305,16 +322,16 @@ def render(record):
     label(20, 233, 'Brown marks the mast. Red marks the washer and radiator. Dashed lines mark crew centres.')
     label(224, 48, 'FRONT / parked carrier and raised frame', 4)
     for box in geo['frame'].values():
-        outline(shifted(box, record['states']['frame'][-1]), 226, 209, .096, '#256449', front=True)
+        outline(shifted(box, record['states']['frame'][-2]), 226, 209, .096, '#256449', front=True)
     for box in geo['temporarySupport'].values():
         outline(box, 226, 209, .096, '#9a6133', front=True)
     for box in geo['parkedCarrier'].values():
         outline(box, 226, 209, .096, '#285999', front=True)
     label(226, 224, 'The carrier lowers 50 mm and moves 265 mm east onto the receiver.')
-    label(226, 233, 'The frame lifts 30 mm and moves around the retained support.')
+    label(226, 233, 'The frame lifts 35 mm, traverses, then lowers 5 mm to its pads.')
     label(15, 254, f"Declared minima: carrier {record['checks']['carrier']['clearance']:.1f} mm, moving frame {record['checks']['frame']['clearance']:.1f} mm.")
     label(15, 264, f"Original post {record['originalControl']['postMovement']:.3f} mm. Revised 40 mm post {record['postComparison']['movement']:.3f} mm in the same comparison.")
-    label(15, 274, 'The original 413 mm straight pull conflict remains. The two short translations retain the radiator.')
+    label(15, 274, 'The 40 mm lift leaves only 20 mm at the receiving beam. The 35 mm lift retains 25 mm.')
     label(15, 284, 'Four local gravity seats preserve the floor datum. The separate proposed wall restraint carries uplift.')
     return '\n'.join(pieces + ['</svg>']) + '\n'
 

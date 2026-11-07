@@ -395,12 +395,17 @@
       [
         0,
         0,
-        30
+        35
       ],
       [
         0,
         350,
-        30
+        35
+      ],
+      [
+        -200,
+        350,
+        35
       ],
       [
         -200,
@@ -446,11 +451,24 @@
       "member": "compact carrier post",
       "retained": "NS rail at x10975 / z850"
     },
+    "carrierContinuouslySupportedFootprint_mm2": 400,
     "frame": {
       "clearance": 25.0,
+      "leg": 0,
+      "member": "NS rail at x10975 / z135",
+      "retained": "lower receiving beam"
+    },
+    "wasteCap": {
+      "clearance": 30.0,
       "leg": 2,
       "member": "NS rail at x10975 / z135",
       "retained": "retained accessible waste cap domain"
+    },
+    "raised40mmControl": {
+      "clearance": 20.0,
+      "leg": 0,
+      "member": "NS rail at x10975 / z135",
+      "retained": "lower receiving beam"
     },
     "crew": [
       {
@@ -485,6 +503,12 @@
       "first rest pad 1",
       "service-utility-washer"
     ],
+    "padApproach": {
+      "clearance": 5.0,
+      "leg": 2,
+      "member": "sole 1",
+      "retained": "first rest pad 1"
+    },
     "maxShoulderToFrameGrip": [
       614.4509744479212,
       645.0

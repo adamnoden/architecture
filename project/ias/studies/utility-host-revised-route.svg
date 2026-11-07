@@ -70,23 +70,23 @@
 <text x="20" y="224" font-family="sans-serif" font-size="3.3" fill="#20313b">Blue and green show the 350 mm north and 200 mm west frame positions.</text>
 <text x="20" y="233" font-family="sans-serif" font-size="3.3" fill="#20313b">Brown marks the mast. Red marks the washer and radiator. Dashed lines mark crew centres.</text>
 <text x="224" y="48" font-family="sans-serif" font-size="4" fill="#20313b">FRONT / parked carrier and raised frame</text>
-<rect x="308.08" y="122.6" width="3.84" height="82.944" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="308.08" y="205.544" width="3.84" height="0.5760000000000001" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="308.08" y="122.6" width="3.84" height="82.944" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="308.08" y="205.544" width="3.84" height="0.5760000000000001" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="360.88" y="122.6" width="3.84" height="82.944" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="360.88" y="205.544" width="3.84" height="0.5760000000000001" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="360.88" y="122.6" width="3.84" height="82.944" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="360.88" y="205.544" width="3.84" height="0.5760000000000001" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="310.0" y="122.6" width="52.800000000000004" height="3.84" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="310.0" y="122.6" width="52.800000000000004" height="3.84" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="308.56" y="122.6" width="2.88" height="3.84" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="361.36" y="122.6" width="2.88" height="3.84" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="310.0" y="191.72" width="52.800000000000004" height="2.88" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="310.0" y="191.72" width="52.800000000000004" height="2.88" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="308.56" y="191.72" width="2.88" height="2.88" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="361.36" y="191.72" width="2.88" height="2.88" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
-<rect x="288.4" y="129.32" width="76.32000000000001" height="3.84" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="308.08" y="122.12" width="3.84" height="82.944" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="308.08" y="205.064" width="3.84" height="0.5760000000000001" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="308.08" y="122.12" width="3.84" height="82.944" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="308.08" y="205.064" width="3.84" height="0.5760000000000001" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="360.88" y="122.12" width="3.84" height="82.944" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="360.88" y="205.064" width="3.84" height="0.5760000000000001" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="360.88" y="122.12" width="3.84" height="82.944" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="360.88" y="205.064" width="3.84" height="0.5760000000000001" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="310.0" y="122.12" width="52.800000000000004" height="3.84" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="310.0" y="122.12" width="52.800000000000004" height="3.84" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="308.56" y="122.12" width="2.88" height="3.84" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="361.36" y="122.12" width="2.88" height="3.84" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="310.0" y="191.24" width="52.800000000000004" height="2.88" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="310.0" y="191.24" width="52.800000000000004" height="2.88" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="308.56" y="191.24" width="2.88" height="2.88" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="361.36" y="191.24" width="2.88" height="2.88" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
+<rect x="288.4" y="128.84" width="76.32000000000001" height="3.84" fill="#256449" fill-opacity=".25" stroke="#256449" stroke-width=".4"/>
 <rect x="346.0" y="208.424" width="19.2" height="0.5760000000000001" fill="#9a6133" fill-opacity=".25" stroke="#9a6133" stroke-width=".4"/>
 <rect x="353.2" y="103.39999999999999" width="4.8" height="105.024" fill="#9a6133" fill-opacity=".25" stroke="#9a6133" stroke-width=".4"/>
 <rect x="312.4" y="101.48" width="43.2" height="3.84" fill="#9a6133" fill-opacity=".25" stroke="#9a6133" stroke-width=".4"/>
@@ -99,9 +99,9 @@
 <rect x="337.84000000000003" y="140.84" width="11.040000000000001" height="1.92" fill="#285999" fill-opacity=".25" stroke="#285999" stroke-width=".4"/>
 <rect x="334.96000000000004" y="132.2" width="5.76" height="12.48" fill="#285999" fill-opacity=".25" stroke="#285999" stroke-width=".4"/>
 <text x="226" y="224" font-family="sans-serif" font-size="3.3" fill="#20313b">The carrier lowers 50 mm and moves 265 mm east onto the receiver.</text>
-<text x="226" y="233" font-family="sans-serif" font-size="3.3" fill="#20313b">The frame lifts 30 mm and moves around the retained support.</text>
+<text x="226" y="233" font-family="sans-serif" font-size="3.3" fill="#20313b">The frame lifts 35 mm, traverses, then lowers 5 mm to its pads.</text>
 <text x="15" y="254" font-family="sans-serif" font-size="3.3" fill="#20313b">Declared minima: carrier 30.0 mm, moving frame 25.0 mm.</text>
 <text x="15" y="264" font-family="sans-serif" font-size="3.3" fill="#20313b">Original post 3.871 mm. Revised 40 mm post 1.652 mm in the same comparison.</text>
-<text x="15" y="274" font-family="sans-serif" font-size="3.3" fill="#20313b">The original 413 mm straight pull conflict remains. The two short translations retain the radiator.</text>
+<text x="15" y="274" font-family="sans-serif" font-size="3.3" fill="#20313b">The 40 mm lift leaves only 20 mm at the receiving beam. The 35 mm lift retains 25 mm.</text>
 <text x="15" y="284" font-family="sans-serif" font-size="3.3" fill="#20313b">Four local gravity seats preserve the floor datum. The separate proposed wall restraint carries uplift.</text>
 </svg>
