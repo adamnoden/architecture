@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 54,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "ab36db2b-49a2-4e7e-8c92-74b2cf647951",
   "holder": {
     "kind": "chatgpt",
     "label": "rush-closeout-rwt"
   },
   "claimedAt": "2026-11-07T09:14:23.048Z",
-  "heartbeatAt": "2026-11-07T09:39:15.842Z",
-  "expiresAt": "2026-11-07T10:24:15.842Z",
+  "heartbeatAt": "2026-11-07T09:39:53.394Z",
+  "expiresAt": "2026-11-07T09:39:53.394Z",
   "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "5af3c2b0-5818-45f0-b3cb-45f3de0596ac",
@@ -36,5 +36,7 @@
     "evidence": "Merged in PR 1374 at a0896ad683e8969169e41cf8c3c0395ec4a4e9c4, preserving RWT recovery 81c13808 and original a478 in main ancestry. All 174 RWT tests, both producer checks, visual inspection and 14 exact-head workflows passed. Canonical RWT merge preflight at 09:38:28 UTC.",
     "next": "Resume the finite RWT-06 exit map from merged main. Demonstrate actual two-ended positive locks/interlock, cap shear transfer and wet supports, upper handler and reverse lift; retain hydraulic, high-eave, physical and site exits."
   },
-  "pr": 1374
+  "pr": 1374,
+  "releasedAt": "2026-11-07T09:39:53.394Z",
+  "releaseReason": "handoff"
 }
