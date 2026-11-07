@@ -205,6 +205,1404 @@
     "emitterToFullReferenceLeafSweep_mm": 19.7189250155443,
     "emitterSweepRole": "Exact reference quarter-disc outer radius; ~20mm remains, not25 and not classified-kit/trim/closer or fixing approval."
   },
+  "bufferActualCarrierComparison": {
+    "status": "One actual-source authored carrier comparison; indoor plan only, no fabrication/handling/adoption approval",
+    "source": {
+      "path": "project/mat/studies/plant-room-buffer-carrier-sources.json",
+      "sha256": "47b105ee70d86869e4edac181e6aedba078c1ade34aa0c39a018b55c2570ff08"
+    },
+    "nativeBuffer": {
+      "model": "Vaillant VPS R100/1M, article0010021456",
+      "url": "https://professional.vaillant.co.uk/downloads/aproducts/buffer-cylinder-1/buffer-cylinder-20244064-2752025.pdf",
+      "edition": "0020244064_02 /07.09.2023",
+      "bytes": 519626,
+      "sha256": "2ba073edbd88c1adf4df6d879df0cb28635ed9c1e8950cc7649f1c8161eff054",
+      "nominalVolume_L": 101,
+      "dryNet_kg": 34,
+      "listedWaterFilled_kg": 135,
+      "appendixDiameterHeight_mm": [
+        550,
+        932
+      ],
+      "drawingDiameterHeight_mm": [
+        563,
+        927
+      ],
+      "sideClearance_mm": 200,
+      "topClearance_mm": 150,
+      "feetCount": 3,
+      "connections": "G1.5in water connections, six native plug/seal sets; lowest water connection used for draining; two wall-fixing strips/four pins and three original feet supplied",
+      "holds": "101L nominal is not100L usable defrost volume.34kg net is not the installed residual mass after native draining. Native glycol/pressure/flow/control compatibility, exact retained feet/contact coordinates, transport grips/retention, side/top/connection access and thermal casing/plug/seal constituents remain to qualify. Floorfeet and wall fixing are distinct native options; do not lift by ports or substitute a wall-hung bearing assumption. Native instructions require at least two people for transport, not an assumed per-person lifting capacity."
+    },
+    "nativeCaster": {
+      "model": "TENTE Alpha3470UFR100P62, order00003464, EAN4031582304404",
+      "url": "https://www.tente.com/media/52/a8/3e/1773877609/TI_990065136_3470UFR100P62_en_GB.pdf?ts=1773877609",
+      "edition": "15March2026, two pages",
+      "sha256": null,
+      "evidenceRole": "Official current PDF table retrieved through web; local native URL403, so no byte hash or local technical-drawing inspection claimed. Complete swivel radius90 is explicitly tabulated, not inferred from wheel diameter or image scale. Drill pattern must bind actual native drawing/template; extracted slot labels are ambiguous.",
+      "rating": "160kg at4km/h, EN12532 transport equipment;320kg static is a separate duty, not a carrier rating",
+      "dynamicPerCaster_kg": 160,
+      "massEach_kg": 0.81,
+      "overallHeight_mm": 128,
+      "overallWidth_mm": 75,
+      "wheelDiameter_mm": 100,
+      "wheelWidth_mm": 34,
+      "offset_mm": 40,
+      "swivelRadius_mm": 90,
+      "plate_mm": [
+        105,
+        80
+      ],
+      "holeDiameter_mm": 9,
+      "materials": "Polyamide wheel body, nonmarking vulcanised elastic tyre, roller bearing, screwed axle, heavy steel-sheet fork/two ball races/blue passivation; actual lubricant and full constituents unknown. Known polymer/rubber residues remain unapproved; no tool or temporary-use material exception inferred.",
+      "brake": "Unbraked swivel model. It supplies no parking or slope hold; independent positive docking/chocks and attended supported transfer are real parts of the method."
+    },
+    "stockControls": [
+      {
+        "plateDiameter_mm": 600,
+        "casterAxesAbs_mm": 140,
+        "stockMasses_kg": {
+          "plate": 18.095573684677213,
+          "ring": 3.4381590000886697,
+          "crossbeams": 4.9248,
+          "casterPads": 3.2256,
+          "casterPods": 1.250304,
+          "fixedLegs": 1.926144,
+          "casters": 3.24,
+          "towbar": 1.472,
+          "hardwareStorageAllowance": 3,
+          "gripClevisAllowance": 0.5
+        },
+        "carrierCoarse_kg": 41.07258068476588,
+        "nativeDryPlusCarrier_kg": 75.07258068476588,
+        "nativeListedWaterFilledPlusCarrier_kg": 176.07258068476588,
+        "completeSwivelRadius_mm": 287.9898987322333,
+        "fourContactInnerSquareHalfWidth_mm": 100,
+        "requiredMeasuredCombinedCGOffsetMax_mm": 25,
+        "staticCGEdgeMarginIfFourContactsAndMeasuredCG_mm": 75,
+        "casterPodOverlapWithNativeForkLane_mm": 0,
+        "nativeForkInside330Outside521Role": "Native configuration match, actual origin/tine/sweep/contact still unbound. No rating extrapolation or corner-reaction admission.",
+        "frameComponent3kNChallenge": {
+          "span_mm": 280,
+          "I_mm4": 184292.0,
+          "stress_MPa": 22.789920343802226,
+          "deflection_mm": 0.03857361301714367
+        },
+        "rating": "Unrated authored fabrication; native160kg caster is not a whole-carrier rating.135kg water-filled plus frame exceeds provisional150kg measured gross limit; actual drained residues/CG must be measured."
+      },
+      {
+        "plateDiameter_mm": 700,
+        "casterAxesAbs_mm": 180,
+        "stockMasses_kg": {
+          "plate": 24.630086404143974,
+          "ring": 4.04134478957791,
+          "crossbeams": 6.0192,
+          "casterPads": 3.2256,
+          "casterPods": 1.250304,
+          "fixedLegs": 1.926144,
+          "casters": 3.24,
+          "towbar": 1.472,
+          "hardwareStorageAllowance": 3,
+          "gripClevisAllowance": 0.5
+        },
+        "carrierCoarse_kg": 49.30467919372188,
+        "nativeDryPlusCarrier_kg": 83.30467919372188,
+        "nativeListedWaterFilledPlusCarrier_kg": 184.30467919372188,
+        "completeSwivelRadius_mm": 344.5584412271571,
+        "fourContactInnerSquareHalfWidth_mm": 140,
+        "requiredMeasuredCombinedCGOffsetMax_mm": 25,
+        "staticCGEdgeMarginIfFourContactsAndMeasuredCG_mm": 115,
+        "casterPodOverlapWithNativeForkLane_mm": 35,
+        "nativeForkInside330Outside521Role": "Native configuration match, actual origin/tine/sweep/contact still unbound. No rating extrapolation or corner-reaction admission.",
+        "frameComponent3kNChallenge": {
+          "span_mm": 360,
+          "I_mm4": 184292.0,
+          "stress_MPa": 29.30132615631715,
+          "deflection_mm": 0.08198298510057647
+        },
+        "rating": "Unrated authored fabrication; native160kg caster is not a whole-carrier rating.135kg water-filled plus frame exceeds provisional150kg measured gross limit; actual drained residues/CG must be measured."
+      }
+    ],
+    "sameCaster700ExtraCoarseStock_kg": 8.232098508956,
+    "conditionalStaticStability": [
+      {
+        "diameter_mm": 600,
+        "fourContactMeasuredCGConditional": [
+          {
+            "gripHeight_mm": 900,
+            "upwardForcePerHorizontalForce": 1.1001969118825974,
+            "overturnEquivalentLever_mm": 352.5344595794545,
+            "dryAssemblyRestoringMoment_Nmm": 55234.6512388165,
+            "horizontal50NChallengeMoment_Nmm": 17626.722978972724,
+            "idealStaticHorizontalThreshold_N": 156.67872951968167
+          },
+          {
+            "gripHeight_mm": 1120,
+            "upwardForcePerHorizontalForce": 3.4285714285714284,
+            "overturnEquivalentLever_mm": 760.0,
+            "dryAssemblyRestoringMoment_Nmm": 55234.6512388165,
+            "horizontal50NChallengeMoment_Nmm": 38000.0,
+            "idealStaticHorizontalThreshold_N": 72.67717268265329
+          }
+        ]
+      },
+      {
+        "diameter_mm": 700,
+        "fourContactMeasuredCGConditional": [
+          {
+            "gripHeight_mm": 900,
+            "upwardForcePerHorizontalForce": 1.1001969118825974,
+            "overturnEquivalentLever_mm": 308.52658310415063,
+            "dryAssemblyRestoringMoment_Nmm": 93980.17383239734,
+            "horizontal50NChallengeMoment_Nmm": 15426.329155207532,
+            "idealStaticHorizontalThreshold_N": 304.60964785219835
+          },
+          {
+            "gripHeight_mm": 1120,
+            "upwardForcePerHorizontalForce": 3.4285714285714284,
+            "overturnEquivalentLever_mm": 622.8571428571429,
+            "dryAssemblyRestoringMoment_Nmm": 93980.17383239734,
+            "horizontal50NChallengeMoment_Nmm": 31142.857142857145,
+            "idealStaticHorizontalThreshold_N": 150.88560018962875
+          }
+        ]
+      }
+    ],
+    "coupledStates_mm": [
+      [
+        [
+          11245.5,
+          3097
+        ],
+        [
+          10258.823,
+          3456.121
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          11000,
+          3186
+        ],
+        [
+          10013.323,
+          3545.121
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          11000,
+          3186
+        ],
+        [
+          9950,
+          3186
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          11000,
+          3186
+        ],
+        [
+          10530,
+          3650
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10750,
+          3280
+        ],
+        [
+          10550,
+          4000
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10550,
+          3400
+        ],
+        [
+          10550,
+          4325
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10300,
+          3600
+        ],
+        [
+          10550,
+          4325
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10232.82468362818,
+          3717.551171212155
+        ],
+        [
+          10550.0,
+          4325.0
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10277.811946296251,
+          3752.0711119726643
+        ],
+        [
+          10642.857142857143,
+          4360.714285714285
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10319.619407771255,
+          3790.3805922287443
+        ],
+        [
+          10735.714285714286,
+          4396.428571428572
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10357.928888027336,
+          3832.1880537037496
+        ],
+        [
+          10828.57142857143,
+          4432.142857142857
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10392.448828787845,
+          3877.17531637182
+        ],
+        [
+          10921.42857142857,
+          4467.857142857143
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10422.916512459886,
+          3925.0
+        ],
+        [
+          11014.285714285714,
+          4503.571428571428
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10449.100061573823,
+          3975.2981298685454
+        ],
+        [
+          11107.142857142857,
+          4539.285714285715
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10470.80020351084,
+          4027.6869068383153
+        ],
+        [
+          11200,
+          4575
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10487.851787087895,
+          4081.7676206833617
+        ],
+        [
+          11200,
+          4575
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10500.125039457935,
+          4137.128684516495
+        ],
+        [
+          11200,
+          4575
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10507.526553759635,
+          4193.348767214022
+        ],
+        [
+          11200,
+          4575
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10510.0,
+          4250.0
+        ],
+        [
+          11200,
+          4575
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10507.526553759635,
+          4306.651232785978
+        ],
+        [
+          11200,
+          4575
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10500.125039457935,
+          4362.871315483505
+        ],
+        [
+          11200,
+          4575
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10487.851787087895,
+          4418.232379316639
+        ],
+        [
+          11200,
+          4575
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          10700,
+          4575
+        ],
+        [
+          11750,
+          4575
+        ],
+        [
+          10610,
+          2000
+        ]
+      ],
+      [
+        [
+          11200,
+          4575
+        ],
+        [
+          12250,
+          4575
+        ],
+        [
+          10610,
+          2000
+        ]
+      ]
+    ],
+    "body600": {
+      "radius_mm": 325,
+      "polyline_mm": [
+        [
+          11245.5,
+          3097
+        ],
+        [
+          11000,
+          3186
+        ],
+        [
+          11000,
+          3186
+        ],
+        [
+          11000,
+          3186
+        ],
+        [
+          10750,
+          3280
+        ],
+        [
+          10550,
+          3400
+        ],
+        [
+          10300,
+          3600
+        ],
+        [
+          10232.82468362818,
+          3717.551171212155
+        ],
+        [
+          10277.811946296251,
+          3752.0711119726643
+        ],
+        [
+          10319.619407771255,
+          3790.3805922287443
+        ],
+        [
+          10357.928888027336,
+          3832.1880537037496
+        ],
+        [
+          10392.448828787845,
+          3877.17531637182
+        ],
+        [
+          10422.916512459886,
+          3925.0
+        ],
+        [
+          10449.100061573823,
+          3975.2981298685454
+        ],
+        [
+          10470.80020351084,
+          4027.6869068383153
+        ],
+        [
+          10487.851787087895,
+          4081.7676206833617
+        ],
+        [
+          10500.125039457935,
+          4137.128684516495
+        ],
+        [
+          10507.526553759635,
+          4193.348767214022
+        ],
+        [
+          10510.0,
+          4250.0
+        ],
+        [
+          10507.526553759635,
+          4306.651232785978
+        ],
+        [
+          10500.125039457935,
+          4362.871315483505
+        ],
+        [
+          10487.851787087895,
+          4418.232379316639
+        ],
+        [
+          10700,
+          4575
+        ],
+        [
+          11200,
+          4575
+        ]
+      ],
+      "minimumInflatedMargin_mm": 0.0,
+      "limiting": "east-south",
+      "allMargins_mm": {
+        "utility-west-pier": 461.1495142932605,
+        "utility-east-pier": 125.0,
+        "intermediate-west-pier": 230.82468362817963,
+        "intermediate-east-pier": 28.11558680842569,
+        "north-wall": 880.5,
+        "east-south": 0.0,
+        "east-north": 465.23683158911297,
+        "west-south": 887.0566199645955,
+        "west-north": 510.8246836281796,
+        "service-emitter-utility-E": 355.5776957849853,
+        "service-utility-washer": 1457.5204767407301,
+        "service-utility-sink": 1372.0,
+        "service-utility-rearServiceChase": 2072.0,
+        "service-utility-valveBay": 1397.5357035486957,
+        "service-utility-electricalStation": 988.7336850069541,
+        "service-utility-PVinverter": 2408.2751703187623,
+        "cylinder": 26.881344028207423,
+        "riser": 282.1882220030333,
+        "controls": 97.0164388683865,
+        "emitter": 289.6509291507516,
+        "W9": 247.0,
+        "closed-leaf": 504.7044031476064
+      },
+      "planPass": true
+    },
+    "body600Complete700StationControl": {
+      "radius_mm": 325,
+      "polyline_mm": [
+        [
+          11245.5,
+          3097
+        ],
+        [
+          11000,
+          3186
+        ],
+        [
+          11000,
+          3186
+        ],
+        [
+          11000,
+          3186
+        ],
+        [
+          10750,
+          3280
+        ],
+        [
+          10550,
+          3400
+        ],
+        [
+          10300,
+          3600
+        ],
+        [
+          10232.82468362818,
+          3717.551171212155
+        ],
+        [
+          10277.811946296251,
+          3752.0711119726643
+        ],
+        [
+          10319.619407771255,
+          3790.3805922287443
+        ],
+        [
+          10357.928888027336,
+          3832.1880537037496
+        ],
+        [
+          10392.448828787845,
+          3877.17531637182
+        ],
+        [
+          10422.916512459886,
+          3925.0
+        ],
+        [
+          10449.100061573823,
+          3975.2981298685454
+        ],
+        [
+          10470.80020351084,
+          4027.6869068383153
+        ],
+        [
+          10487.851787087895,
+          4081.7676206833617
+        ],
+        [
+          10500.125039457935,
+          4137.128684516495
+        ],
+        [
+          10507.526553759635,
+          4193.348767214022
+        ],
+        [
+          10510.0,
+          4250.0
+        ],
+        [
+          10507.526553759635,
+          4306.651232785978
+        ],
+        [
+          10500.125039457935,
+          4362.871315483505
+        ],
+        [
+          10487.851787087895,
+          4418.232379316639
+        ],
+        [
+          10700,
+          4575
+        ],
+        [
+          11200,
+          4575
+        ]
+      ],
+      "minimumInflatedMargin_mm": -170.1222965208174,
+      "limiting": "complete-cylinder-station",
+      "allMargins_mm": {
+        "utility-west-pier": 461.1495142932605,
+        "utility-east-pier": 125.0,
+        "intermediate-west-pier": 230.82468362817963,
+        "intermediate-east-pier": 28.11558680842569,
+        "north-wall": 880.5,
+        "east-south": 0.0,
+        "east-north": 465.23683158911297,
+        "west-south": 887.0566199645955,
+        "west-north": 510.8246836281796,
+        "service-emitter-utility-E": 355.5776957849853,
+        "service-utility-washer": 1457.5204767407301,
+        "service-utility-sink": 1372.0,
+        "service-utility-rearServiceChase": 2072.0,
+        "service-utility-valveBay": 1397.5357035486957,
+        "service-utility-electricalStation": 988.7336850069541,
+        "service-utility-PVinverter": 2408.2751703187623,
+        "cylinder": 26.881344028207423,
+        "riser": 282.1882220030333,
+        "controls": 97.0164388683865,
+        "emitter": 289.6509291507516,
+        "W9": 247.0,
+        "closed-leaf": 504.7044031476064,
+        "complete-cylinder-station": -170.1222965208174
+      },
+      "planPass": false
+    },
+    "crew600": [
+      {
+        "radius_mm": 325,
+        "polyline_mm": [
+          [
+            10258.823,
+            3456.121
+          ],
+          [
+            10013.323,
+            3545.121
+          ],
+          [
+            9950,
+            3186
+          ],
+          [
+            10530,
+            3650
+          ],
+          [
+            10550,
+            4000
+          ],
+          [
+            10550,
+            4325
+          ],
+          [
+            10550,
+            4325
+          ],
+          [
+            10550.0,
+            4325.0
+          ],
+          [
+            10642.857142857143,
+            4360.714285714285
+          ],
+          [
+            10735.714285714286,
+            4396.428571428572
+          ],
+          [
+            10828.57142857143,
+            4432.142857142857
+          ],
+          [
+            10921.42857142857,
+            4467.857142857143
+          ],
+          [
+            11014.285714285714,
+            4503.571428571428
+          ],
+          [
+            11107.142857142857,
+            4539.285714285715
+          ],
+          [
+            11200,
+            4575
+          ],
+          [
+            11200,
+            4575
+          ],
+          [
+            11200,
+            4575
+          ],
+          [
+            11200,
+            4575
+          ],
+          [
+            11200,
+            4575
+          ],
+          [
+            11200,
+            4575
+          ],
+          [
+            11200,
+            4575
+          ],
+          [
+            11200,
+            4575
+          ],
+          [
+            11750,
+            4575
+          ],
+          [
+            12250,
+            4575
+          ]
+        ],
+        "minimumInflatedMargin_mm": 8.741274650300738,
+        "limiting": "complete-cylinder-station",
+        "allMargins_mm": {
+          "utility-west-pier": 214.0,
+          "utility-east-pier": 828.6555790711332,
+          "intermediate-west-pier": 16.264079737325346,
+          "intermediate-east-pier": 34.01433185886202,
+          "north-wall": 880.5,
+          "east-south": 323.0,
+          "east-north": 373.0,
+          "west-south": 354.2931988471547,
+          "west-north": 280.02843868833395,
+          "service-emitter-utility-E": 1154.2778726088766,
+          "service-utility-washer": 1463.7973613576246,
+          "service-utility-sink": 1721.8991181785193,
+          "service-utility-rearServiceChase": 2163.0104501388255,
+          "service-utility-valveBay": 1612.084407040643,
+          "service-utility-electricalStation": 500.7148418188933,
+          "service-utility-PVinverter": 2181.9986537690843,
+          "cylinder": 67.5,
+          "riser": 382.54858490424533,
+          "controls": 20.804547098233172,
+          "emitter": 14.0,
+          "W9": 247.0,
+          "closed-leaf": 206.0,
+          "complete-cylinder-station": 8.741274650300738
+        },
+        "planPass": true
+      },
+      {
+        "radius_mm": 325,
+        "polyline_mm": [
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ],
+          [
+            10610,
+            2000
+          ]
+        ],
+        "minimumInflatedMargin_mm": 237.225933233251,
+        "limiting": "utility-west-pier",
+        "allMargins_mm": {
+          "utility-west-pier": 237.225933233251,
+          "utility-east-pier": 359.3814725721321,
+          "intermediate-west-pier": 1529.7501179404194,
+          "intermediate-east-pier": 1303.6660185562907,
+          "north-wall": 3455.5,
+          "east-south": 635.5,
+          "east-north": 3086.0246627663073,
+          "west-south": 888.0,
+          "west-north": 1630.6392816672505,
+          "service-emitter-utility-E": 435.5,
+          "service-utility-washer": 275.0,
+          "service-utility-sink": 364.6375859826667,
+          "service-utility-rearServiceChase": 975.0,
+          "service-utility-valveBay": 281.7124524847005,
+          "service-utility-electricalStation": 588.0,
+          "service-utility-PVinverter": 1174.273240606928,
+          "cylinder": 1749.2082451262845,
+          "riser": 2454.496357256113,
+          "controls": 1498.6280459567406,
+          "emitter": 402.6661322337326,
+          "W9": 2822.0,
+          "closed-leaf": 1106.4038563592037,
+          "complete-cylinder-station": 1616.6487838947598
+        },
+        "planPass": true
+      }
+    ],
+    "mutualClearanceBeyondRequired_mm": {
+      "bodyCrew1": 35.09104553107147,
+      "bodyCrew2": 622.9122645967072,
+      "crewCrew": 707.2752115912233
+    },
+    "bar600": {
+      "width_mm": 25,
+      "reserve_mm": 25,
+      "length_mm": 1000,
+      "pinRadius_mm": 275,
+      "pinZ_mm": 160,
+      "crewCentreToGrip_mm": 105,
+      "gripHeightRangeRequired_mm": [
+        902.3610981186986,
+        1119.9733826394927
+      ],
+      "sampleMinimumPlanMargin_mm": 112.6077663914748,
+      "maximumUnsampledMovementBound_mm": 6.572611990482755,
+      "continuousPlanMarginLowerBound_mm": 106.03515440099204,
+      "dockDetachTransitionIndex": 2,
+      "regrip": "At body11000/3186 positively dock/chock before detaching the captured bar. Crew carries it vertically within its own plan body, walks9950/3186 to10530/3650, and re-pins at the new yaw before rolling resumes. No upright fold under the native cylinder is claimed: pinR275 lies inside conservative563 diameter."
+    },
+    "larger700BodyOnly": {
+      "radius_mm": 375,
+      "polyline_mm": [
+        [
+          11195.5,
+          3097
+        ],
+        [
+          10800,
+          3097
+        ],
+        [
+          10550,
+          3300
+        ],
+        [
+          10300,
+          3600
+        ],
+        [
+          10250.031976718712,
+          3692.9766098834857
+        ],
+        [
+          10259.693971558881,
+          3699.8684438250357
+        ],
+        [
+          10269.234215743392,
+          3706.927853167841
+        ],
+        [
+          10278.649803221448,
+          3714.152687547429
+        ],
+        [
+          10287.93786591389,
+          3721.54074620926
+        ],
+        [
+          10297.095574586847,
+          3729.0897786790947
+        ],
+        [
+          10306.120139713545,
+          3736.797485448515
+        ],
+        [
+          10315.008812324024,
+          3744.661518675372
+        ],
+        [
+          10323.758884842498,
+          3752.679482898964
+        ],
+        [
+          10332.367691912119,
+          3760.848935769717
+        ],
+        [
+          10340.832611206852,
+          3769.167388793148
+        ],
+        [
+          10349.151064230282,
+          3777.632308087882
+        ],
+        [
+          10357.320517101036,
+          3786.241115157501
+        ],
+        [
+          10365.338481324628,
+          3794.9911876759766
+        ],
+        [
+          10373.202514551485,
+          3803.879860286455
+        ],
+        [
+          10380.910221320904,
+          3812.904425413153
+        ],
+        [
+          10388.459253790741,
+          3822.0621340861107
+        ],
+        [
+          10395.847312452572,
+          3831.3501967785523
+        ],
+        [
+          10403.072146832159,
+          3840.7657842566073
+        ],
+        [
+          10410.131556174965,
+          3850.306028441118
+        ],
+        [
+          10417.023390116514,
+          3859.968023281289
+        ],
+        [
+          10423.74554933743,
+          3869.748825639892
+        ],
+        [
+          10430.295986202887,
+          3879.6454561897817
+        ],
+        [
+          10436.672705386369,
+          3889.6549003214204
+        ],
+        [
+          10442.873764477436,
+          3899.774109061163
+        ],
+        [
+          10448.897274573419,
+          3910.0
+        ],
+        [
+          10454.74140085479,
+          3920.3294582324907
+        ],
+        [
+          10460.40436314407,
+          3930.7593373055943
+        ],
+        [
+          10465.88443644809,
+          3941.286460177108
+        ],
+        [
+          10471.179951483433,
+          3951.9076201834273
+        ],
+        [
+          10476.289295184923,
+          3962.6195820163243
+        ],
+        [
+          10481.21091119697,
+          3973.419082708456
+        ],
+        [
+          10485.943300347659,
+          3984.302832627294
+        ],
+        [
+          10490.485021105414,
+          3995.26751647718
+        ],
+        [
+          10494.834690018097,
+          4006.3097943091957
+        ],
+        [
+          10498.990982134417,
+          4017.4263025385453
+        ],
+        [
+          10502.952631407536,
+          4028.6136549691337
+        ],
+        [
+          10506.718431080704,
+          4039.8684438250357
+        ],
+        [
+          10510.287234054864,
+          4051.187240788539
+        ],
+        [
+          10513.657953238057,
+          4062.5665980444405
+        ],
+        [
+          10516.829561876566,
+          4074.003049330286
+        ],
+        [
+          10519.801093867678,
+          4085.493110992226
+        ],
+        [
+          10522.57164405396,
+          4097.033283046172
+        ],
+        [
+          10525.140368498987,
+          4108.620050243923
+        ],
+        [
+          10527.506484744412,
+          4120.24988314395
+        ],
+        [
+          10529.6692720483,
+          4131.919239186487
+        ],
+        [
+          10531.628071604693,
+          4143.624563772643
+        ],
+        [
+          10533.382286744269,
+          4155.362291347155
+        ],
+        [
+          10534.931383116098,
+          4167.1288464845
+        ],
+        [
+          10536.274888850427,
+          4178.920644977996
+        ],
+        [
+          10537.412394702387,
+          4190.734094931592
+        ],
+        [
+          10538.343554176681,
+          4202.565597853994
+        ],
+        [
+          10539.06808363311,
+          4214.411549754798
+        ],
+        [
+          10539.585762372984,
+          4226.2683422423
+        ],
+        [
+          10539.896432706346,
+          4238.132363622647
+        ],
+        [
+          10540.0,
+          4250.0
+        ],
+        [
+          10539.896432706346,
+          4261.867636377353
+        ],
+        [
+          10539.585762372984,
+          4273.7316577577
+        ],
+        [
+          10539.06808363311,
+          4285.588450245202
+        ],
+        [
+          10538.343554176681,
+          4297.434402146006
+        ],
+        [
+          10537.412394702387,
+          4309.265905068408
+        ],
+        [
+          10536.274888850427,
+          4321.079355022004
+        ],
+        [
+          10534.931383116098,
+          4332.8711535155
+        ],
+        [
+          10533.382286744269,
+          4344.637708652845
+        ],
+        [
+          10531.628071604693,
+          4356.375436227357
+        ],
+        [
+          10529.6692720483,
+          4368.080760813513
+        ],
+        [
+          10527.506484744412,
+          4379.75011685605
+        ],
+        [
+          10525.140368498987,
+          4391.379949756077
+        ],
+        [
+          10522.57164405396,
+          4402.966716953828
+        ],
+        [
+          10519.801093867678,
+          4414.506889007774
+        ],
+        [
+          10516.829561876566,
+          4425.996950669714
+        ],
+        [
+          10700,
+          4575
+        ],
+        [
+          12500,
+          4575
+        ]
+      ],
+      "minimumInflatedMargin_mm": 0.0,
+      "limiting": "east-south",
+      "allMargins_mm": {
+        "utility-west-pier": 304.01441718447427,
+        "utility-east-pier": 75.0,
+        "intermediate-west-pier": 198.03197671871203,
+        "intermediate-east-pier": 77.56757775125857,
+        "north-wall": 830.5,
+        "east-south": 0.0,
+        "east-north": 323.0,
+        "west-south": 836.2929026051625,
+        "west-north": 478.03197671871203,
+        "service-emitter-utility-E": 316.5099420832646,
+        "service-utility-washer": 1324.9438226012057,
+        "service-utility-sink": 1322.0,
+        "service-utility-rearServiceChase": 2022.0,
+        "service-utility-valveBay": 1322.0,
+        "service-utility-electricalStation": 865.0036290269477,
+        "service-utility-PVinverter": 2204.594202583034,
+        "cylinder": 7.47410768363568,
+        "riser": 254.58194324446333,
+        "controls": 16.492055314505933,
+        "emitter": 148.7536309769015,
+        "W9": 197.0,
+        "closed-leaf": 467.24505815361283
+      },
+      "planPass": true
+    },
+    "decision": "Develop600 conversion with its complete crew/bar path as the current joined indoor method.700 earns greater conditional stability and a body-only throat pass, but overlaps native fork lanes35mm and cannot inherit low-bar/ring clearance or the600 crew method. Price that changed transfer before preferring700; no new apparatus selected.",
+    "holds": [
+      "Carrier inflated path enters complete700\u00d7700 cylinder station170.12mm while clearing actual595 body; actual retained feet/valves/ports/pipes/support in that station domain must qualify",
+      "Native3foot bearing/contact geometry and captured pressure-body restraint remain unbound; no lifting by ports or wall-fixing assumption",
+      "Actual residual mass after drain, combined CG and four floor contacts must satisfy the stated measured conditions; caster rating does not prove stability",
+      "GL fork origin/tine thickness/full tool/crew and positive supported leg-to-caster conversion, dock/chocks, pins/welds/local plate and fixed storage remain unqualified",
+      "Actual native563mm buffer plus200mm lateral and150mm top/port access is not a drop-in650 station;101nominal does not prove100usable or hydraulic/glycol compatibility",
+      "Crew2 is a utility spotter, not an assumed shared manual lifting capacity; actual grip/force/stop procedure remains to qualify",
+      "Eastward plan continuation has no source-qualified level exterior receiver/crew stance or1800mm grade transfer; front folded route credit is not inherited",
+      "Known rubber/polyamide casters, native insulation/seals/finishes and lubricants remain explicit unapproved constituents; no tool exemption",
+      "W9 operator/GL method, actual riser tasks and ports/condensate/thermal/support joins remain open"
+    ],
+    "admission": {
+      "wholeRoomHandlingPass": false,
+      "apparatusAccepted": false,
+      "owningGeometryAdopted": false
+    }
+  },
   "taskComparisons": {
     "plant-entry": {
       "radius_mm": 325,
@@ -719,7 +2117,7 @@
   "decision": "Retain this one whole-room candidate for joined development. Local south-host/arch-only and emitter-only north controls fail. No layout adopted: finish full buffer/crew supported method and W9 operator regrip/exit, native GL/cart datum/CG/support, ports/duct/condensate and moved hydraulic thermal/support consequences before source adoption.",
   "unearned": [
     "Actual W9 cart operator regrip/exit and whole-tool lift/setdown; a cart-body sweep is not whole handling",
-    "Buffer supported first lift/complete425-carrier/crew through intermediate arch and closed protected leaf; no relabelled old export route",
+    "Actual supported buffer transfer/capture/CG and retained complete700 station qualification;600 crew/bar indoor plan is a limited comparison, not relabelled old425 method",
     "Actual riser service/230mm clamp tasks: only450mm remains between riser east9950 and W9 west10400 at overlappingY5147..5400; no600body+25 parallel stance or whole access pass supplied",
     "Moved controls/buffer/emitter supports, finite filled loads and actual pipe/port/air/heat loss consequences",
     "W9 native72mm UVLL cover access through rimmed receiver, actual base seat/feet and independently supported discharge/receptor",
