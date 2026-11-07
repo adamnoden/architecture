@@ -9,8 +9,8 @@
     "label": "rush-closeout-rwt"
   },
   "claimedAt": "2026-11-07T09:14:23.048Z",
-  "heartbeatAt": "2026-11-07T09:21:39.115Z",
-  "expiresAt": "2026-11-07T11:21:39.115Z",
+  "heartbeatAt": "2026-11-07T09:39:15.842Z",
+  "expiresAt": "2026-11-07T10:24:15.842Z",
   "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "5af3c2b0-5818-45f0-b3cb-45f3de0596ac",
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Published 81c13808d21a6313cf339a8eb03616ce3db16ebf (tree 9ff342d080cdbf609c02f163ec0ac4d958e80073); 174 RWT tests and both deterministic producers passed. Review matched the unrecoverable 9333 handoff, including finite-draw bridge and cap guarantees. Integration through shared PR 1374.",
-    "next": "Recheck combined head, exact-head CI and fresh RWT publication preflight before merge. RWT-06 stays started with explicit finite hydraulic, kit, structural, physical and site duties."
+    "evidence": "Merged in PR 1374 at a0896ad683e8969169e41cf8c3c0395ec4a4e9c4, preserving RWT recovery 81c13808 and original a478 in main ancestry. All 174 RWT tests, both producer checks, visual inspection and 14 exact-head workflows passed. Canonical RWT merge preflight at 09:38:28 UTC.",
+    "next": "Resume the finite RWT-06 exit map from merged main. Demonstrate actual two-ended positive locks/interlock, cap shear transfer and wet supports, upper handler and reverse lift; retain hydraulic, high-eave, physical and site exits."
   },
   "pr": 1374
 }
