@@ -9,9 +9,9 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-06T23:37:28.707Z",
-  "expiresAt": "2026-11-07T01:07:28.707Z",
-  "branch": "work/zerg-20261106-ias-g11",
+  "heartbeatAt": "2026-11-07T00:06:41.991Z",
+  "expiresAt": "2026-11-07T01:36:41.991Z",
+  "branch": "work/zerg-20261106-ias-g12",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
     "generation": 22,
@@ -34,7 +34,7 @@
   },
   "pr": 1363,
   "checkpoint": {
-    "evidence": "Recoverable draft PR 1363 head bd558017010becfed9cbc52cfa8740251327f50d tree fcc5838cb721ec0b1e4ee2ba3dc9882717a358ac exact source readback and local tree match. Utility arch drawing source-derived with typed boundary guard and moved-opening test; old renderer rejected after regeneration. Current utility geometry JSON unchanged. Shared W9 approach reference failure explicit; no house adoption or IAS completion.",
-    "next": "Keep same draft for the coherent Services-owned existing-equipment rearrangement and independent IAS complete ordinary crew/working-field/egress and renewal review. Preserve all current MAT/STR checks on final main reconciliation. No isolated aperture positive or new catalogue; physical/material/native handling holds remain explicit."
+    "evidence": "PR 1363 merged at 835bc7e145a35ffa7b1608963c7e9c31ab1e16b1 after exact d6a03277 all checks, root source review and canonical preflight. g11 remote deletion verified; fresh distinct g12 starts exact merged main. Source-derived drawing and shared approach warning integrated; no geometry, route, material or IAS completion admission.",
+    "next": "Continue independent Services whole-cell existing-equipment methods review: preserve all bodies/functions, actual crew and egress, buffer/cylinder/carrier paths and native support/height/handling holds. Services remains sole source assembler. No inherited control silently shrunk; actual different method must be explicit. Prior1363 is merged history; bind a new actual PR only when source warrants."
   }
 }
