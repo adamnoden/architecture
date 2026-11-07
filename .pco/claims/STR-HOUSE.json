@@ -9,9 +9,9 @@
     "label": "rush-closeout-20261107-str"
   },
   "claimedAt": "2026-11-07T09:14:50.673Z",
-  "heartbeatAt": "2026-11-07T09:14:50.673Z",
-  "expiresAt": "2026-11-07T10:44:50.673Z",
-  "branch": "work/closeout-20261107-str-g28",
+  "heartbeatAt": "2026-11-07T09:21:39.622Z",
+  "expiresAt": "2026-11-07T10:51:39.622Z",
+  "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "90e5118e-258e-4d50-a157-c1cb222bff0b",
     "generation": 27,
@@ -31,5 +31,10 @@
       "evidence": "PR1373 real negative width checkpoint58d2d21d4cd40df4f6ea0a51c64266d9343516f5/tree89b2ce418c23c8928664cdb489442ee485f99d34;24tests/kernel/eightresponsecontrols/render passed;full45producer suite running",
       "next": "Review failed160/180 actual-cell controls; isolate governing arch bending and price one ordinary correction with true development/soffit/cage; no selection"
     }
+  },
+  "pr": 1374,
+  "checkpoint": {
+    "evidence": "Recovered 58d2 and independently regenerated co-located bending at source 70c1c9f4a29712bfb76025e7ffc8f036958118aa; 24 structural regressions pass. Joined recovery PR #1374.",
+    "next": "Validate the integrated source and preflight each of its four leases, then merge."
   }
 }
