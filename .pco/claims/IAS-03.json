@@ -9,8 +9,8 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-07T02:36:22.070Z",
-  "expiresAt": "2026-11-07T04:06:22.070Z",
+  "heartbeatAt": "2026-11-07T02:45:33.603Z",
+  "expiresAt": "2026-11-07T04:15:33.603Z",
   "branch": "work/zerg-20261106-ias-g14",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
@@ -32,9 +32,9 @@
       "next": "Resume project/ias/ias-03-modular-furnishing-handoff.md: earn supported furnishing first release and low/rest/storage/door choreography or reject/simplify48-package burden; then SAME actual Pecolift rolling/repair/incoming event. Keep ALL source fixtures/court enclosure,25clearance,west755,physical/material/version holds. Coordinator execution limit, not frontier empty. Release HANDOFF now; keep w1f."
     }
   },
-  "pr": 1369,
+  "pr": 1372,
   "checkpoint": {
-    "evidence": "Verified 1369 merged f8c11317589df828baf84dd1a0497ee101509a6f and prior source branch removed. New g14 starts exact main. Corrected negative 30 mm post and actual-member radiator contact integrated.",
-    "next": "Publish one corrected host and bounded retirement comparison. Preserve the failed control, verify actual members and crew against retained objects, and keep floor, wall, native kit and handling gates explicit. PR 1369 is merged history."
+    "evidence": "PR 1372 e2be05a9f85f232b17a6e3d92d136ea24d5ab2e6, revised frame and supported utility first-rest comparator. Local current and prior producer checks, cap mutation, repository/workflow and rendered review pass.",
+    "next": "Exact-head CI and independent root review. Keep actual sink/pipe/seat/wall/physical handling and later export open."
   }
 }
