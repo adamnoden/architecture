@@ -102,6 +102,94 @@
       {
         "members": [
           {
+            "horizontalAxisMomentKNm": -1.0360962352941177,
+            "localRootTorque": -0.3589075058823529,
+            "normal": -1.993930588235294,
+            "side": "near",
+            "supportAxisX": 1375,
+            "topBottom": [
+              -8.39765268907563,
+              6.403722100840335
+            ]
+          },
+          {
+            "horizontalAxisMomentKNm": 0.11308023529411765,
+            "localRootTorque": 0.08158304117647058,
+            "normal": -0.44098941176470585,
+            "side": "opposite",
+            "supportAxisX": 2225,
+            "topBottom": [
+              0.5872212605042015,
+              -1.0282106722689073
+            ]
+          }
+        ],
+        "pointSign": -1,
+        "pointX": 1360,
+        "windSign": -1
+      },
+      {
+        "members": [
+          {
+            "horizontalAxisMomentKNm": -1.2230802352941175,
+            "localRootTorque": -0.19062190588235292,
+            "normal": -1.059010588235294,
+            "side": "near",
+            "supportAxisX": 1375,
+            "topBottom": [
+              -9.265792689075628,
+              8.206782100840334
+            ]
+          },
+          {
+            "horizontalAxisMomentKNm": -0.07390376470588234,
+            "localRootTorque": -0.09137715882352941,
+            "normal": 0.4939305882352941,
+            "side": "opposite",
+            "supportAxisX": 2225,
+            "topBottom": [
+              -0.2809187394957981,
+              0.7748493277310922
+            ]
+          }
+        ],
+        "pointSign": -1,
+        "pointX": 1360,
+        "windSign": 1
+      },
+      {
+        "members": [
+          {
+            "horizontalAxisMomentKNm": 1.2230802352941175,
+            "localRootTorque": 0.19062190588235292,
+            "normal": 1.059010588235294,
+            "side": "near",
+            "supportAxisX": 1375,
+            "topBottom": [
+              9.265792689075628,
+              -8.206782100840334
+            ]
+          },
+          {
+            "horizontalAxisMomentKNm": 0.07390376470588234,
+            "localRootTorque": 0.09137715882352941,
+            "normal": -0.4939305882352941,
+            "side": "opposite",
+            "supportAxisX": 2225,
+            "topBottom": [
+              0.2809187394957981,
+              -0.7748493277310922
+            ]
+          }
+        ],
+        "pointSign": 1,
+        "pointX": 1360,
+        "windSign": -1
+      },
+      {
+        "members": [
+          {
+            "horizontalAxisMomentKNm": 1.0360962352941177,
             "localRootTorque": 0.3589075058823529,
             "normal": 1.993930588235294,
             "side": "near",
@@ -112,7 +200,8 @@
             ]
           },
           {
-            "localRootTorque": 0.08158304117647058,
+            "horizontalAxisMomentKNm": -0.11308023529411765,
+            "localRootTorque": -0.08158304117647058,
             "normal": 0.44098941176470585,
             "side": "opposite",
             "supportAxisX": 2225,
@@ -122,11 +211,101 @@
             ]
           }
         ],
-        "pointX": 1360
+        "pointSign": 1,
+        "pointX": 1360,
+        "windSign": 1
       },
       {
         "members": [
           {
+            "horizontalAxisMomentKNm": 0.11308023529411756,
+            "localRootTorque": -0.07937809411764707,
+            "normal": -0.44098941176470596,
+            "side": "near",
+            "supportAxisX": 1375,
+            "topBottom": [
+              0.587221260504201,
+              -1.0282106722689068
+            ]
+          },
+          {
+            "horizontalAxisMomentKNm": -1.0360962352941177,
+            "localRootTorque": 0.3688771588235294,
+            "normal": -1.993930588235294,
+            "side": "opposite",
+            "supportAxisX": 2225,
+            "topBottom": [
+              -8.39765268907563,
+              6.403722100840335
+            ]
+          }
+        ],
+        "pointSign": -1,
+        "pointX": 2240,
+        "windSign": -1
+      },
+      {
+        "members": [
+          {
+            "horizontalAxisMomentKNm": -0.0739037647058824,
+            "localRootTorque": 0.08890750588235292,
+            "normal": 0.493930588235294,
+            "side": "near",
+            "supportAxisX": 1375,
+            "topBottom": [
+              -0.2809187394957987,
+              0.7748493277310927
+            ]
+          },
+          {
+            "horizontalAxisMomentKNm": -1.2230802352941175,
+            "localRootTorque": 0.19591695882352939,
+            "normal": -1.059010588235294,
+            "side": "opposite",
+            "supportAxisX": 2225,
+            "topBottom": [
+              -9.265792689075628,
+              8.206782100840334
+            ]
+          }
+        ],
+        "pointSign": -1,
+        "pointX": 2240,
+        "windSign": 1
+      },
+      {
+        "members": [
+          {
+            "horizontalAxisMomentKNm": 0.0739037647058824,
+            "localRootTorque": -0.08890750588235292,
+            "normal": -0.493930588235294,
+            "side": "near",
+            "supportAxisX": 1375,
+            "topBottom": [
+              0.2809187394957987,
+              -0.7748493277310927
+            ]
+          },
+          {
+            "horizontalAxisMomentKNm": 1.2230802352941175,
+            "localRootTorque": -0.19591695882352939,
+            "normal": 1.059010588235294,
+            "side": "opposite",
+            "supportAxisX": 2225,
+            "topBottom": [
+              9.265792689075628,
+              -8.206782100840334
+            ]
+          }
+        ],
+        "pointSign": 1,
+        "pointX": 2240,
+        "windSign": -1
+      },
+      {
+        "members": [
+          {
+            "horizontalAxisMomentKNm": -0.11308023529411756,
             "localRootTorque": 0.07937809411764707,
             "normal": 0.44098941176470596,
             "side": "near",
@@ -137,7 +316,8 @@
             ]
           },
           {
-            "localRootTorque": 0.3688771588235294,
+            "horizontalAxisMomentKNm": 1.0360962352941177,
+            "localRootTorque": -0.3688771588235294,
             "normal": 1.993930588235294,
             "side": "opposite",
             "supportAxisX": 2225,
@@ -147,30 +327,256 @@
             ]
           }
         ],
-        "pointX": 2240
+        "pointSign": 1,
+        "pointX": 2240,
+        "windSign": 1
       }
     ],
     "guardScrewRole": "The M12x190 screw releases the guard from its exterior stand-off. Its axis never establishes an anchor in the structural inner leaf.",
     "installedTwoJambTubeStressMPa": 72.13393739614466,
     "limits": "The 40x40x3 trial fails the one-jamb lost-support comparison. A complete stable two-jamb frame could instead require a positively supported, wind-restricted replacement sequence with independent temporary guard. Confirm real guard frame/bolt reactions, front and rear plate bearing/pullout/prying, formed pocket/water collar, anchor/steel clashes, normal wall pressure and coupled weak-axis jamb, receiver withdrawal and roof access. M16 bolts, plates, welds and collars add weight/heat to the partial tube quantity.",
-    "maximumOneThroughboltAxialKN": 8.39765268907563,
+    "maximumOneThroughboltAxialKN": 9.265792689075628,
     "normalStressLimit": 181.8181818181818,
     "oneJambLoss": [
       {
-        "horizontalAxisMomentKNm": 0.9230160000000001,
+        "horizontalAxisMomentKNm": -0.9230160000000001,
         "maxTubeAxialKN": 7.8104314285714285,
-        "netNormalKN": 2.43492,
+        "netNormalKN": -2.43492,
+        "pointSign": -1,
+        "pointX": 1360,
         "side": "near",
-        "verticalAxisMomentKNm": 2.1331266,
-        "verticalGravityKN": 0.6621750000000001
+        "topBottom": [
+          -7.8104314285714285,
+          5.3755114285714285
+        ],
+        "verticalAxisMomentKNm": -0.8131265999999999,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": -1
+      },
+      {
+        "horizontalAxisMomentKNm": -0.9230160000000001,
+        "maxTubeAxialKN": 7.8104314285714285,
+        "netNormalKN": -2.43492,
+        "pointSign": -1,
+        "pointX": 1360,
+        "side": "opposite",
+        "topBottom": [
+          -7.8104314285714285,
+          5.3755114285714285
+        ],
+        "verticalAxisMomentKNm": 2.1453012,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": -1
+      },
+      {
+        "horizontalAxisMomentKNm": -1.296984,
+        "maxTubeAxialKN": 9.546711428571427,
+        "netNormalKN": -0.56508,
+        "pointSign": -1,
+        "pointX": 1360,
+        "side": "near",
+        "topBottom": [
+          -9.546711428571427,
+          8.981631428571427
+        ],
+        "verticalAxisMomentKNm": 0.3181265999999999,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": 1
+      },
+      {
+        "horizontalAxisMomentKNm": -1.296984,
+        "maxTubeAxialKN": 9.546711428571427,
+        "netNormalKN": -0.56508,
+        "pointSign": -1,
+        "pointX": 1360,
+        "side": "opposite",
+        "topBottom": [
+          -9.546711428571427,
+          8.981631428571427
+        ],
+        "verticalAxisMomentKNm": 1.0046988000000001,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": 1
+      },
+      {
+        "horizontalAxisMomentKNm": 1.296984,
+        "maxTubeAxialKN": 9.546711428571427,
+        "netNormalKN": 0.56508,
+        "pointSign": 1,
+        "pointX": 1360,
+        "side": "near",
+        "topBottom": [
+          9.546711428571427,
+          -8.981631428571427
+        ],
+        "verticalAxisMomentKNm": -0.3181265999999999,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": -1
+      },
+      {
+        "horizontalAxisMomentKNm": 1.296984,
+        "maxTubeAxialKN": 9.546711428571427,
+        "netNormalKN": 0.56508,
+        "pointSign": 1,
+        "pointX": 1360,
+        "side": "opposite",
+        "topBottom": [
+          9.546711428571427,
+          -8.981631428571427
+        ],
+        "verticalAxisMomentKNm": -1.0046988000000001,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": -1
       },
       {
         "horizontalAxisMomentKNm": 0.9230160000000001,
         "maxTubeAxialKN": 7.8104314285714285,
         "netNormalKN": 2.43492,
+        "pointSign": 1,
+        "pointX": 1360,
+        "side": "near",
+        "topBottom": [
+          7.8104314285714285,
+          -5.3755114285714285
+        ],
+        "verticalAxisMomentKNm": 0.8131265999999999,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": 1
+      },
+      {
+        "horizontalAxisMomentKNm": 0.9230160000000001,
+        "maxTubeAxialKN": 7.8104314285714285,
+        "netNormalKN": 2.43492,
+        "pointSign": 1,
+        "pointX": 1360,
         "side": "opposite",
-        "verticalAxisMomentKNm": 2.1453012,
-        "verticalGravityKN": 0.6621750000000001
+        "topBottom": [
+          7.8104314285714285,
+          -5.3755114285714285
+        ],
+        "verticalAxisMomentKNm": -2.1453012,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": 1
+      },
+      {
+        "horizontalAxisMomentKNm": -0.9230160000000001,
+        "maxTubeAxialKN": 7.8104314285714285,
+        "netNormalKN": -2.43492,
+        "pointSign": -1,
+        "pointX": 2240,
+        "side": "near",
+        "topBottom": [
+          -7.8104314285714285,
+          5.3755114285714285
+        ],
+        "verticalAxisMomentKNm": -2.1331266,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": -1
+      },
+      {
+        "horizontalAxisMomentKNm": -0.9230160000000001,
+        "maxTubeAxialKN": 7.8104314285714285,
+        "netNormalKN": -2.43492,
+        "pointSign": -1,
+        "pointX": 2240,
+        "side": "opposite",
+        "topBottom": [
+          -7.8104314285714285,
+          5.3755114285714285
+        ],
+        "verticalAxisMomentKNm": 0.8253012,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": -1
+      },
+      {
+        "horizontalAxisMomentKNm": -1.296984,
+        "maxTubeAxialKN": 9.546711428571427,
+        "netNormalKN": -0.56508,
+        "pointSign": -1,
+        "pointX": 2240,
+        "side": "near",
+        "topBottom": [
+          -9.546711428571427,
+          8.981631428571427
+        ],
+        "verticalAxisMomentKNm": -1.0018734,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": 1
+      },
+      {
+        "horizontalAxisMomentKNm": -1.296984,
+        "maxTubeAxialKN": 9.546711428571427,
+        "netNormalKN": -0.56508,
+        "pointSign": -1,
+        "pointX": 2240,
+        "side": "opposite",
+        "topBottom": [
+          -9.546711428571427,
+          8.981631428571427
+        ],
+        "verticalAxisMomentKNm": -0.3153012,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": 1
+      },
+      {
+        "horizontalAxisMomentKNm": 1.296984,
+        "maxTubeAxialKN": 9.546711428571427,
+        "netNormalKN": 0.56508,
+        "pointSign": 1,
+        "pointX": 2240,
+        "side": "near",
+        "topBottom": [
+          9.546711428571427,
+          -8.981631428571427
+        ],
+        "verticalAxisMomentKNm": 1.0018734,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": -1
+      },
+      {
+        "horizontalAxisMomentKNm": 1.296984,
+        "maxTubeAxialKN": 9.546711428571427,
+        "netNormalKN": 0.56508,
+        "pointSign": 1,
+        "pointX": 2240,
+        "side": "opposite",
+        "topBottom": [
+          9.546711428571427,
+          -8.981631428571427
+        ],
+        "verticalAxisMomentKNm": 0.3153012,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": -1
+      },
+      {
+        "horizontalAxisMomentKNm": 0.9230160000000001,
+        "maxTubeAxialKN": 7.8104314285714285,
+        "netNormalKN": 2.43492,
+        "pointSign": 1,
+        "pointX": 2240,
+        "side": "near",
+        "topBottom": [
+          7.8104314285714285,
+          -5.3755114285714285
+        ],
+        "verticalAxisMomentKNm": 2.1331266,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": 1
+      },
+      {
+        "horizontalAxisMomentKNm": 0.9230160000000001,
+        "maxTubeAxialKN": 7.8104314285714285,
+        "netNormalKN": 2.43492,
+        "pointSign": 1,
+        "pointX": 2240,
+        "side": "opposite",
+        "topBottom": [
+          7.8104314285714285,
+          -5.3755114285714285
+        ],
+        "verticalAxisMomentKNm": -0.8253012,
+        "verticalGravityKN": 0.6621750000000001,
+        "windSign": 1
       }
     ],
     "oneJambLossPass": false,

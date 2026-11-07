@@ -72,45 +72,51 @@ wind=2.25*area;weight=1.35*guard['massMaximumKg']*9.81/1000
 # kN point at the top outside edge is a project comparison pending usage class.
 point=1.5
 forces=[]
-for side,xref in jamb_x.items():
-    cx=1800
-    extreme_x=guard['outsideX'][1] if side=='near' else guard['outsideX'][0]
-    horizontal=point+wind
-    ht=3450+guard['top'];mid=3450+(guard['bottom']+guard['top'])/2
-    # A single-jamb all-panel challenge retains the actual horizontal torque
-    # as well as the vertical force couple. One vertical line of M16s has no
-    # spacing to resolve this torque by an axial couple: positive weld/tube
-    # bending into the cast face is mandatory, or the support must be changed.
-    mx=point*(ht-sum(z)/2)/1000+wind*(mid-sum(z)/2)/1000
-    mz=abs(point*(extreme_x-xref)+wind*(cx-xref))/1000
-    top=horizontal/2+mx/((z[1]-z[0])/1000)
-    forces.append({'side':side,'netNormalKN':horizontal,'horizontalAxisMomentKNm':mx,'verticalAxisMomentKNm':mz,'maxTubeAxialKN':max(abs(top),abs(horizontal-top)),'verticalGravityKN':weight})
+states=[]
+left,right=guard['boltXs']
+ht=3450+guard['top']
+mid=3450+(guard['bottom']+guard['top'])/2
+mean_z=sum(z)/2
+row_spacing=(z[1]-z[0])/1000
 
-# A realistic two-jamb load return for an undamaged planar steel guard is a
-# separate state: the normal point load splits by the two ACTUAL root axes.
-# For the outside point the opposite jamb must not be artificially assigned
-# the full transverse torque and then treated as an ordinary two-point beam.
-left,right=guard['boltXs']; states=[]
-for x in guard['outsideX']:
-    point_right=point*(x-left)/(right-left)
-    wind_right=wind*(1800-left)/(right-left)
+def rows(p,w):
+    normal=p+w
+    mx=(p*(ht-mean_z)+w*(mid-mean_z))/1000
+    top=normal/2+mx/row_spacing
+    return normal,mx,[top,normal-top]
+
+for x,point_sign,wind_sign in product(guard['outsideX'],[-1,1],[-1,1]):
+    signed_point=point_sign*point
+    signed_wind=wind_sign*wind
+    case={'pointX':x,'pointSign':point_sign,'windSign':wind_sign}
+    for side,xref in jamb_x.items():
+        total,mx,row_loads=rows(signed_point,signed_wind)
+        mz=(signed_point*(x-xref)+signed_wind*(1800-xref))/1000
+        forces.append({**case,'side':side,'netNormalKN':total,'horizontalAxisMomentKNm':mx,
+                       'verticalAxisMomentKNm':mz,'topBottom':row_loads,
+                       'maxTubeAxialKN':max(map(abs,row_loads)),'verticalGravityKN':weight})
+    # The intact guard spans between its actual bracket bolt lines. Apply
+    # signs before splitting the two loads because their elevations differ.
+    point_right=signed_point*(x-left)/(right-left)
+    wind_right=signed_wind*(1800-left)/(right-left)
     member=[]
-    for name,xbolt,P0,W0 in [('near',left,point-point_right,wind-wind_right),('opposite',right,point_right,wind_right)]:
-        normal=P0+W0
-        mx=P0*(ht-sum(z)/2)/1000+W0*(mid-sum(z)/2)/1000
-        mz=normal*abs(xbolt-jamb_x[name])/1000
-        top=normal/2+mx/((z[1]-z[0])/1000)
-        member.append({'side':name,'normal':normal,'topBottom':[top,normal-top],'localRootTorque':mz,'supportAxisX':xbolt})
-    assert abs(sum(q['normal'] for q in member)-point-wind)<1e-9
-    assert abs(sum(q['normal']*q['supportAxisX'] for q in member)-point*x-wind*1800)<1e-6
-    states.append({'pointX':x,'members':member})
+    for side,xbolt,P0,W0 in [('near',left,signed_point-point_right,signed_wind-wind_right),
+                             ('opposite',right,point_right,wind_right)]:
+        normal,mx,row_loads=rows(P0,W0)
+        mz=normal*(xbolt-jamb_x[side])/1000
+        member.append({'side':side,'normal':normal,'horizontalAxisMomentKNm':mx,
+                       'topBottom':row_loads,'localRootTorque':mz,'supportAxisX':xbolt})
+    assert abs(sum(q['normal'] for q in member)-signed_point-signed_wind)<1e-9
+    assert abs(sum(q['normal']*q['supportAxisX'] for q in member)-signed_point*x-signed_wind*1800)<1e-6
+    assert abs(sum(sum(v*(zt-mean_z) for v,zt in zip(q['topBottom'], reversed(z))) for q in member)
+               -signed_point*(ht-mean_z)-signed_wind*(mid-mean_z))<1e-6
+    states.append({**case,'members':member})
 section=40;thickness=3;area_steel=section**2-(section-2*thickness)**2
 I=(section**4-(section-2*thickness)**4)/12;W=I/(section/2)
 steel_limit=200/1.1
-critical=max(q['verticalAxisMomentKNm'] for q in forces)
-# Even with two equal tubes, the one-jamb control spends real flexural capacity
-# under this lost-support case. Pair it with the axial top-row force and weight.
-sigma=critical/2*1e6/W+weight*wall_out/2*1000/W+max(q['maxTubeAxialKN'] for q in forces)*1000/area_steel
+# Apply axial load and both bending contributions from the same state.
+sigma=max(abs(q['verticalAxisMomentKNm'])/2*1e6/W+weight*wall_out/2*1000/W+
+          q['maxTubeAxialKN']*1000/area_steel for q in forces)
 assert sigma>steel_limit
 installed=max(abs(q['localRootTorque'])/2*1e6/W+weight*wall_out/2*1000/W+max(map(abs,q['topBottom']))*1000/area_steel for st in states for q in st['members'])
 max_anchor=max(abs(force) for st in states for q in st['members'] for force in q['topBottom'])
