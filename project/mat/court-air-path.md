@@ -1,6 +1,65 @@
 # Join the fixed mineral base and the complete court air path
 
-**Working design — 7 November 2026.** This continues the [bounded mechanical support/end study](court-apron-support.md). It is not a closed or admitted air assembly, a selected threshold or an owning HAD change. The [control](studies/court-air-path.json), [producer](studies/court-air-path.py), [results](studies/court-air-path.results.json) and working sheet distinguish the actual HAD reference, merged mechanical proposal, ordinary mineral-base control and unadopted STR weather-jamb appraisal.
+**Conditional construction comparison — 7 November 2026.** Use one ordinary supported overlap, both removable caps and the actual rear-sill/jamb interfaces. The new full-width front downfold is **withdrawn as lead**: it adds forming/support duties without earning a whole-path simplification. Retain its negative controls below. This continues the [bounded mechanical study](court-apron-support.md); it changes no owning HAD choice or frame/leaf/sill functional contract. It is not a selected, fabricated, tested or admitted assembly. The [control](studies/court-air-path.json), [producer](studies/court-air-path.py) and [results](studies/court-air-path.results.json) keep actual sources and new accessories distinct.
+
+![One joined conditional court interface](studies/court-air-path-joined.svg)
+
+## Compare one supported assembly
+
+Actual integration main `b0d3102d` retains the exact HAD `089f0dac` blob used by the historical `8576cf80` case. The producer reads both identities and proves equality; it does not relabel historical evidence. The current main's IAS/RWT/STR checks are retained. The merged Services air-duty source is separately bound as blob `5b93cdd9`: its opening-family allocation remains a provisional design comparison, not an owner invariant or installed rating.
+
+| Part | Proposed territory, mm | Actual duty and limit |
+| --- | --- | --- |
+| Fixed mineral base | X5050..6950, Y3810..4025, Z−180..−30; cap −30..0 | Continue the ordinary wall-base territory. Actual cap material/bond, air/moisture/thermal performance and local Services exclusion remain unqualified. |
+| Loose walking/air overlap bar | X5110..6890, Y4000..4052; 5 thick, nominal top 5 | Direct heel and PAN/carrier bearing. Four removable keepers carry no walking load. A 0.5 mm combined normal allowance is a **required, unproved** straightness/bearing/thermal/creep obligation. |
+| Travelling carriers | Lower Y4033..4054; upper Y4067..4083 | Preserve the unchanged front apron; real step/crest bends remain. Weld/contact/entry bearing, support and handling remain unadmitted. |
+| Both caps | Existing Y4025 face / Z0..100; inner lower notch Z0..10 | Release the same south 15 mm/up 100 mm sequence. The notch clears the bar by 1 mm under the shared 4 mm challenge. Cap-to-fixed-return faces intentionally bear; no overlapping sheet solids or hidden polymer joint is supplied. |
+| Fixed upper jamb bridges | West X5088..5142, mirrored east; bottom80 to Y4085, then bottom155 to Y4102; conservative top 225 | Step around the **whole occupied tray envelope**, rather than interpreting its box as empty. A folded 30 × 16 × 1.5 angle ties each local bridge to the fixed cap/liner. Real support, joints, thermal and exposure remain to qualify. |
+| Replaceable lower jamb boots | Actual 40 × 140 jamb territory; proposed Z−35..225; front accessory skin Y4108.5..4110 | Protected timber foot stays at 30. This is a new metal/mineral member/air-joint design, not an inherited air rating from a wet-face description. Its actual native member fit, bearing and strength remain unqualified. |
+| Sill-carried inner air nose | South face4095; top stays15, bottom−35; 5 mm top to4130 | Close the specific rear-crest/sill interval. The assembly gains a real 15 mm south projection and comes out with the sill before PAN removal. End/boot contacts, attachment and complete member performance remain open. |
+
+The 5 mm bar weighs **3.7024 kg**. Taking the entire authored 2 kN on one 50 mm-wide strip across a conservative full 52 mm simply supported span gives **124.8 MPa / 0.0592 mm** at E = 190 GPa. This is not a plate, point-contact, mineral bearing, keeper or assembly pass. The nominal top 5, or 5.5 with the unproved normal allowance, stays below the existing 15 mm crest. The four proposed blind insert plates remain above the DPC; no PAN, DPC or RC penetration is introduced by this trial. Actual low-load retention still needs design/proof, and a raw sheet does not establish the normal allowance.
+
+The revised carriers total **10.0392 kg before welds**. They are the current lead's quantities; the earlier 9.868 kg downfold-dependent trial below is retained as a different case. Narrow-web entry pressure and actual load spread remain unresolved. These are common threshold works for both floor routes, not automatically a separate-field penalty or a concrete-route saving.
+
+## Close the rear-sill route as well as the apron
+
+The actual PAN rear crest ends at Y4090 / +15, while the primary sill body starts at Y4110 and spans Z−35..15 on sparse bearing strips. Its reference under-sill gap is about **10.56 mm** at the front. A path from the intentionally open wet under-sill space into the 20 mm rear interval must therefore receive an actual upper air closure. No detailed contour or measured leakage is inferred from a body box; an apron clamp alone is not a complete doorset air control.
+
+The one trial nose projects south to Y4095, retaining a **1 mm minimum rigid gap** to the PAN wall under the same 4 mm Y challenge. Its bottom leaves approximately **10.14 mm** underflow and its flush top stays at +15. The entire 2 kN / 50 mm strip acting at the end of its 15 mm cantilever gives **144 MPa / 0.0227 mm** for the 5 mm top. Neither this nor a top-plate screen qualifies the weld, body, ends, jamb bearing or complete sill. Top and front metal total **3.298 kg before welds**. The actual accessory envelope and capture/handling change must be proved; the owning body is not silently rewritten.
+
+With the real R4.5 crest turn, the rear PAN wall's straight face ends at Z10.5, not 15. A trial 35 mm leaf root at Z−29 places the old worst-thickness minimum-gap ideal contact at **Z−20.446..5.935**, within the straight-wall common interval −41..6.5. That locates a mechanism; the old thick strip's high elastic demand below remains unqualified. It is not a passed supplied spring, contact-pressure, corrosion, pressure-water or leakage rating. The primary sill/nose removes north first, opening this normal interface before the PAN moves. Both sill/boot end joints and onward frame air boundaries remain in the same finite assembly/test duty.
+
+The fixed upper bridge clears the PAN end by 1 mm, stops 1 mm before the tray in Y, then passes 1 mm above its full conservative Z envelope, all under the declared 4 mm challenge. Its actual four roof vertices, west guide lip and nominal discharge point are supplied in the control. That point has an 8 mm plan reserve inside the retained tray territory and a 63 mm vertical reserve above its envelope under the same challenge. This establishes a proposed target and clearance, **not actual water capture or hydraulic adequacy**. The bridge/boot accessory gap is at least 2.5 mm; ordinary contact remains unqualified. No extra house-wide metal return is added.
+
+## Register finite leaks once, against the whole opening family
+
+The 3D corner register has **two different entries per end**, not four inherited identical squares. The lower bar/notch channel turns around the cap inner edge at X5142 or6858. Its nominal Y4025..4030 / Z5..10 section becomes 9 × 9 under the separate authored Y/Z challenges. The upper entry crosses **Y4030 beneath the full upper bridge**: 54 + 4 gives 58 mm across X, and 5 + 4 gives 9 mm in Z. An inner-edge sketch does not bound that entry to 9 × 9. Root/outer clamps and backed contact bands must actually close other bypasses before the register can be exhaustive.
+
+Each upper/lower entry and its subsequent cap-edge outlet are **in series**; the outlet is not added again. The two entries at each cap are in parallel. The bar heel/toe exits and keeper annuli are distinct candidate room outlets; no common upstream restriction is credited. None of this rates contact leakage or makes an unknown joint zero.
+
+| Conditional ideal screen at 50 Pa, ρ = 1.2 kg/m³, Cd = 1 | Area, mm² | Flow, m³/h |
+| --- | ---: | ---: |
+| Two upper 58 × 9 plus two lower 9 × 9 entries | 1206 | 39.633 |
+| Both 1780 mm bar laps at the unproved 0.5 mm normal allowance | 1780 | 58.497 |
+| Four Ø6 / Ø4 keeper annuli before credit for head restriction | 62.832 | 2.065 |
+| Subtotal | 3048.832 | 100.195 |
+
+This geometric inviscid screen would use about **63.4% of the entire shared 158.087 m³/h opening-family comparison**, leaving about **57.892 m³/h** for the unmeasured rear contact, caps/fixed joints, both boots/frames, **all windows/portals and all three external doors**, including leaf/meeting/perimeter interfaces. It is not a separate allowance for this threshold. No budget pass is established: the subtotal itself depends on unearned slot/normal bounds and omits unmeasured contacts. Actual installed flow, draught and insect control are separate evidence.
+
+Contact-only diagnostic tests must mask the separately registered entries/laps/annuli. The final unmasked whole-opening test **replaces** this sensitivity accounting; it is not added to it. Floor/wall ownership ends at the complete door assembly boundaries: RC body below the cap and ordinary adjacent wall/core routes retain the Services floor-family role, while this complete fixed/renewable door-junction work stays in openings. Final physical nonoverlapping test cuts and the method-specific whole-house test remain to establish; no target or compliance result is adopted.
+
+## Remove the same assembly in a coherent order
+
+Keep the source temporary weather screen and rain diversion. After leaves, release the actual frame/boot and sill-end joints and remove frame/boots plus sill/nose. Release the two cap clamps, move each cap south 15 mm then up 100 mm; the new lower notches pass above the retained bar. Then release the four bar keepers, lift it 25 mm underneath the fixed bridges and move north into the existing handling field. No new southward bar sweep through the temporary screen is assumed. The PAN then follows its source north 500 mm/lift sequence on an actual captured support method; forces, guides, friction and reinstatement testing remain unadmitted.
+
+The lifted bar top is at most34 under the declared 4 mm check, leaving 46 mm below the bridge. PAN 131.5 + bar 5 + proposed metal separator 5 uses **141.5 mm** in the source 150 mm rack width; bar 1780 fits the 1900 mm long slot and52 fits the450 mm height. This is nominal shared-rack geometry, not a rated fixture or storage/handling pass.
+
+One dated [5 × 1000 × 2000 mm 1D / 1.4404 listing](https://stainlesseurope.co.uk/en_GB/p/Stainless-steel-sheet-5-X-1000-X-2000-mm-1D-1.4404/41056), checked 7 November, gives **£791.71 excluding VAT / 80 kg**. The bar and nose top share this one full-sheet control; do not charge it twice or scale its price by installed mass. It is 1D, not the earlier 3 mm 2B stock. Other gauges/foil, straightening/machining to earn the normal allowance, forming/welds, fixtures, mineral cap/bearing, testing and renewal remain additional and unpriced. No certificate, retained residue/finish disclosure or complete installed cost is inferred.
+
+The conclusion is to develop this **ordinary supported, renewable, finitely leaky control** before intricate zero-leak foil hardware. It has not earned whole-house preference or physical admission. Bulk water, capillary routes, site gas, corrosion, thermal surfaces, contact life and actual renewal remain independent duties.
+
+## Retain the source constraints and negative controls
 
 ![Joined air-path working constraints](studies/court-air-path.svg)
 
@@ -18,9 +77,9 @@ The new comparison uses a **pre-formed 6 mm lower reservation per jamb**, Z−65
 
 STR's immutable proposal `d21ced1f`, `current-house-arch-detail.json`, blob `504202be`, supplies the real local consequence. Its present outer court arch is **1800 span / 300 rise / 215 radial**, not the historical 600-rise case. The rebate removes **615 mm² per jamb** over a zone with 115 mm of continuous base below it, and stays 20 mm below the outer DPC at Z120. Crucially, STR's isolated weather-jamb control already has a **−1.901 kNm overturning margin** before treating this as an accepted cut. An actual perpendicular return/restraint, formed coursing, bearing and shear transfer must be joined; neither the small removed area nor a 1.00711 mean-stress ratio is a capacity pass. No arch spring, primary core or owning source is changed here.
 
-## Test the simpler contact plane with real bends
+## Retain the withdrawn front-downfold test
 
-The lead hypothesis is a short **new dry front downfold** at Y4030, ending at Z−30. Its nominal body bounds fit inside the existing pan box; that does not prove its shape clears the support. With 1.5 mm sheet and an authored **3 mm inner radius**, the outer radius is 4.5 mm and the flat apron starts at **Y4034.5**. The old sharp-top carrier idealization at Y4032 interferes by **1.342 mm**. Actual previous forming radii were unbound; this is a falsifier of blindly keeping its sharp model, not a claim that a fabricated part was inspected.
+The withdrawn hypothesis was a short **new dry front downfold** at Y4030, ending at Z−30. Its nominal body bounds fit inside the existing pan box; that does not prove its shape clears the support. With 1.5 mm sheet and an authored **3 mm inner radius**, the outer radius is 4.5 mm and the flat apron starts at **Y4034.5**. The old sharp-top carrier idealization at Y4032 interferes by **1.342 mm**. Actual previous forming radii were unbound; this remains a falsifier of blindly keeping its sharp model, not a claim that a fabricated part was inspected.
 
 A welded-flat low carrier at Y4037..4054 gives 0.5 mm necessary clearance at the front and 1 mm at the other end after two 1 mm component edge bounds. The whole dry step must also have real bends. An authored exposed-face R3 lower turn and R4.5 upper turn at the conceptual Y4060 step leave a lower flat ending at Y4057 and a crest flat starting at Y4064.5. The back R4.5 turn at Y4090 ends that flat at Y4085.5. These are new proposed tangent contours around the nominal reference vertices, not the actual owning pan's unprovided fabricated shape.
 
@@ -54,6 +113,6 @@ The liner must jog back to the full lower-weather boundary north of this front p
 
 One narrowly relevant material lead is [KEMPER CuSn5, revision 04/2026](https://www.kemper-group.com/en-uk/content/04-produkte/walzprodukte/datenblaetter/datasheet_cusn5.pdf): its R490/H160 row gives 430 MPa minimum proof and 8% elongation; its 180° bend table concerns a **5 mm-wide test region**, not this full U. The [manufacturer portfolio](https://www.kemper-group.com/en-uk/rolled-products/portfolio/) includes 0.1 mm strip. These are research inputs, not a delivered temper/tolerance/coating specification, an installed spring law or a seal rating. The old 35 mm cantilever law is not transferred to a new folded profile or corner. Complete finish/process residues and cyclic/contact performance remain unqualified.
 
-The next joined decision must close **RC floor → full mineral beds/units/cap → fixed air base → ordinary replaceable contact → pan/front and both corners → actual wall/frame air boundaries**, with every junction occupied and its movement/renewal state defined. Price the walking offset, local service/seat effects, actual retained constituents and release burden against a local metal-return challenger. Do not add a house-wide return by default. The finite Services openings allowance is shared, not allocated anew to this detail; no current joint rating is asserted.
+This candidate still needs actual evidence along **RC floor → full mineral beds/units/cap → fixed air base → ordinary replaceable contact → pan/front and both corners → actual wall/frame air boundaries**, with every junction occupied and its movement/renewal state defined. Price the walking offset, local service/seat effects, actual retained constituents and release burden against a local metal-return challenger. Do not add a house-wide return by default. The finite Services openings allowance is shared, not allocated anew to this detail; no current joint rating is asserted.
 
 The +15 crest, bulk-water backup, capillary route, thermal surfaces and site-gas duties stay independent. No whole-floor concrete waiver, material exception, first-susceptible elevation or MAT-ENVELOPE completion is earned.

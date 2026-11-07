@@ -42,9 +42,173 @@ def contact_challenge(c,m):
       'oldMaximumLinearStress_MPa':max(x['linearCantileverStress_MPa'] for x in l['linearSensitivity']),
       'scope':'Different authored natural-shape/contact idealization: not actual preformed leaf or strict stress bound. Contact can fit at this corner; no flange failure claimed. High elastic stress may itself invalidate the linear material law; supplied thin-strip properties remain unbound.'}
 
+def joined_candidate(c,h,m,leaf):
+    j=c['joinedCandidate'];t=h['southCourtThresholdReference'];p=t['pan'];q=c['fitChallenge']
+    challenge=q['relativeMovement_mm']+2*q['edgeToleranceEach_mm'];bar=j['frontBar'];bridge=j['upperBridge'];nose=j['sillNose'];boot=j['frameBoot']
+    assert not j['fullPathAdmitted'] and c['frontContactLead']['withdrawnAsLead']
+    assert p['dryFold']['profileYZ']==[[4030,0],[4060,0],[4060,15],[4090,15]]
+    assert nose['z']==t['primarySill']['bodyZ']==[-35,15] and boot['protectedTimberFootZ']==t['frame']['timberFootZ']==30
+    assert bar['x']==m['channels'][0]['x'] and bar['y']==[4000,c['ordinaryTopLapTrial']['revisedEdgeY']]
+    force=m['authoredLoad']['force_N'];strip=m['authoredLoad']['print_mm'][0];metal=m['metalComparison'];run=bar['x'][1]-bar['x'][0];span=bar['y'][1]-bar['y'][0];gauge=bar['thickness_mm']
+    body_overlap=bar['y'][1]-p['dryFold']['y'][0]-challenge
+    # Actual exposed upper-step R3 turn shortens the flat; the rejected new front downfold is absent.
+    step_flat_end=4060-c['stepBendTrial']['lowerExposedRadius_mm']
+    assert step_flat_end-bar['y'][1]-challenge>0 and j['lowCarrierWithoutDownfold']['y'][0]-4030-2>0
+    low=j['lowCarrierWithoutDownfold']['y'];high=c['stepBendTrial']['highCarrierY_mm'];carrier=[]
+    for old,yr in zip(m['channels'],[low,high]):
+        width=yr[1]-yr[0];height=old['top']-old['bottom'];thick=old['thickness'];area=width*thick+2*thick*(height-thick)
+        carrier.append({'id':old['id'],'y_mm':yr,'clearTopSpan_mm':width-2*thick,'massBeforeWelds_kg':area*run*metal['density_kg_m3']/1e9})
+    bar_result={'control':bar,'minimumFlatOverlap_mm':body_overlap,'minimumToActualStepBend_mm':step_flat_end-bar['y'][1]-challenge,
+      'mass_kg':run*span*gauge*metal['density_kg_m3']/1e9,
+      'conservativeFull52mmStripStress_MPa':3*force*span/(2*strip*gauge**2),
+      'conservativeFull52mmStripDeflection_mm':force*span**3/(4*metal['modulus_MPa']*strip*gauge**3),
+      'conditionalNormalAllowance_mm':j['normalDuty']['totalBarGapAllowance_mm'],
+      'upperWalkingZWithAllowance_mm':bar['nominalBottomZ']+gauge+j['normalDuty']['totalBarGapAllowance_mm'],
+      'lift25TopWith4Challenge_mm':bar['nominalBottomZ']+gauge+25+challenge,
+      'rackWidthPANBarAndSeparator_mm':p['bodyEnvelope']['dimensions'][2]+gauge+5,
+      'rackWidthReference_mm':t['maintainedState']['panTask']['storage']['plan'][2],
+      'scope':'Direct heel and PAN/carrier bearing, not a cantilever or keeper walking load. Normal allowance is an unearned design obligation, including straightness/bearing/thermal/creep. No strip/plate/contact/support/anchor or installed leakage admission.'}
+    assert bar_result['upperWalkingZWithAllowance_mm']<15 and bar_result['lift25TopWith4Challenge_mm']<80
+    assert bar_result['rackWidthPANBarAndSeparator_mm']<bar_result['rackWidthReference_mm']
+    # Preserve a conservative occupied tray box: the bridge steps around it rather than assuming an empty contour.
+    tray=t['jambs']['cavityTray']['leftApron'];poly=bridge['yzPolygon'];assert poly==[[4025,80],[4085,80],[4085,155],[4102,155],[4102,225],[4025,225]]
+    bridge_clear={'PANUnderBridge_mm':80-p['ends']['crestZ']-challenge,
+      'beforeTrayY_mm':tray['y'][0]-4085-challenge,'aboveTrayZ_mm':155-tray['z'][1]-challenge,
+      'frameAccessoryNorthClearance_mm':boot['frontSkinY'][0]-4102-challenge,
+      'barLiftBelowBridge_mm':80-bar_result['lift25TopWith4Challenge_mm'],
+      'capSouthThenLiftNorthClearance_mm':4025-(m['proposedEndSections']['control']['capFaceY']-15)-challenge,
+      'supportAngleReturnToSouthReleasedCap_mm':4023.5-15-challenge-(j['upperBridge']['supportArmY'][0]+1.5)}
+    bridge_clear['capNotchAboveBar_mm']=j['capNotch']['z'][1]-gauge-challenge
+    bridge_clear['fixedReturnToPAN_mm']=p['outerX'][0]-j['fixedReturn']['westX'][1]-challenge
+    bridge_clear['barToSupportAngleReturnX_mm']=bar['x'][0]-(bridge['westX'][0]+bridge['supportAnglePlan_mm'][0])-challenge
+    assert min(bridge_clear.values())>0
+    drop=bridge['roofDischargeXYZ_mm'];roof=bridge['roofXYZ_mm']
+    assert max(max(v[2] for v in roof),max(v[2] for v in roof if v[0]==bridge['westX'][0])+bridge['westRoofUpstand_mm'])<=225 and min(v[2] for v in roof)>155
+    bridge_clear['roofDropInsideTrayPlan_mm']=min(drop[0]-tray['x'][0],tray['x'][1]-drop[0],drop[1]-tray['y'][0],tray['y'][1]-drop[1])-challenge
+    bridge_clear['roofDropAboveTrayEnvelope_mm']=drop[2]-tray['z'][1]-challenge
+    assert min(bridge_clear.values())>0
+    nose_projection=t['primarySill']['bodyPlan'][1]-nose['southFaceY'];nt=nose['topGauge_mm'];straight_top=15-c['stepBendTrial']['backExposedRadius_mm']
+    shift=nose['leafRootZ']-m['proposedEndSections']['leafMechanism']['control']['rootX_left']
+    contact=[v+shift for v in leaf['idealWestContactX_mm']]
+    wall_common=[p['fallY'][0][1]+challenge,straight_top-challenge]
+    (fy0,fz0),(fy1,fz1)=p['fallY'];floor_z=lambda y:fz0+(fz1-fz0)*(y-fy0)/(fy1-fy0)
+    sill_width=t['primarySill']['bodyPlan'][2]
+    sill_result={'control':nose,'actualUnprovidedRearIntervalY_mm':[p['rear']['planeY'],t['primarySill']['bodyPlan'][1]],
+      'referenceUnderSillGapAtFront_mm':t['primarySill']['bodyZ'][0]-floor_z(t['primarySill']['bodyPlan'][1]),
+      'minimumPANToNoseHardGap_mm':nose['southFaceY']-p['rear']['planeY']-challenge,
+      'noseUnderflowReference_mm':nose['z'][0]-floor_z(nose['southFaceY']),
+      'southAssemblyProjection_mm':nose_projection,'cantilever15mmStripStress_MPa':6*force*nose_projection/(strip*nt**2),
+      'cantilever15mmStripDeflection_mm':4*force*nose_projection**3/(metal['modulus_MPa']*strip*nt**3),
+      'idealOldThickLeafContactZ_mm':contact,'actualStraightPANWallCommonZ_mm':wall_common,
+      'minimumIdealContactEdgeClearance_mm':min(contact[0]-wall_common[0],wall_common[1]-contact[1]),
+      'topAndFrontMassBeforeWelds_kg':(sill_width*(nose['topY'][1]-nose['topY'][0])*nt+sill_width*(nose['z'][1]-nose['z'][0]-nt)*nose['frontGauge_mm'])*metal['density_kg_m3']/1e9,
+      'scope':'Reference20 mm under-sill rear route needs a real air closure; no measured leak inferred. Nose is an explicit new accessory projection, not an unchanged actual body. Old thick-leaf stress remains unqualified; no source foil or contact rating transfers. Whole sill/jamb/end restraint and wet flow remain unadmitted.'}
+    assert min(sill_result[k] for k in ['minimumPANToNoseHardGap_mm','noseUnderflowReference_mm','minimumIdealContactEdgeClearance_mm'])>0
+    # Lower ports turn around cap inner edges; upper entries cross the PAN-front plane.
+    # An inner-edge sketch does NOT bound the upper entry to9 mm in its other direction.
+    slots=[];z_extra=j['normalDuty']['separateCornerZChallenge_mm']
+    for side,x in [('west',m['proposedEndSections']['ends'][0]['capX_mm'][1]),('east',m['proposedEndSections']['ends'][1]['capX_mm'][0])]:
+        nominal_y=[m['proposedEndSections']['control']['capFaceY'],p['dryFold']['y'][0]]
+        lower_z=[gauge,j['capNotch']['z'][1]];max_y=nominal_y[1]-nominal_y[0]+challenge;max_z=lower_z[1]-lower_z[0]+z_extra
+        slots.append({'id':side+'-bar-notch','planeX_mm':x,'nominalY_mm':nominal_y,'nominalZ_mm':lower_z,'maximumSection_mm':[max_y,max_z],'maximumArea_mm2':max_y*max_z,
+          'topology':'Lower cap/bar blind channel turns around the cap inner edge. Root clamp and backed contact bands must close other bypasses; no installed bound follows from this entry geometry.'})
+        upper_x=bridge['westX'] if side=='west' else [12000-bridge['westX'][1],12000-bridge['westX'][0]]
+        upper_z=[p['ends']['crestZ'],poly[0][1]];max_x=upper_x[1]-upper_x[0]+challenge;max_z=upper_z[1]-upper_z[0]+z_extra
+        slots.append({'id':side+'-PAN-end/upper-bridge','planeY_mm':p['dryFold']['y'][0],'nominalX_mm':upper_x,'nominalZ_mm':upper_z,'maximumSection_mm':[max_x,max_z],'maximumArea_mm2':max_x*max_z,
+          'topology':'The upper entry crosses the PAN-front plane beneath the full fixed bridge. Its width is54+4, NOT the9 mm normal gap from the cap-edge sketch. Entry and subsequent cap-edge outlet are in series; that outlet is not added again.'})
+    assert len(slots)==4 and sorted(x['maximumArea_mm2'] for x in slots)==[81,81,522,522]
+    allowance=j['normalDuty']['totalBarGapAllowance_mm'];lc=j['leakScreen'];speed=math.sqrt(2*lc['pressure_Pa']/lc['density_kg_m3'])
+    flow=lambda a:lc['Cd']*a/1e6*speed*3600
+    lap_area=2*run*allowance;hole_area=len(bar['keeperX'])*math.pi/4*(bar['keeperHoleOD_mm']**2-bar['keeperShankOD_mm']**2)
+    areas={'fourCornerThroats_mm2':sum(x['maximumArea_mm2'] for x in slots),'twoBarLapExitsConditional_mm2':lap_area,'fourKeeperAnnuli_mm2':hole_area}
+    air=read(c['sources']['airDuty']);budget=air['aggregateFamilyBudgets']['completeOpeningsIncludingThreeDoorThresholds']['aggregate_m3_per_h_at50Pa']
+    flows={k.replace('_mm2','_ideal_m3_per_h'):flow(a) for k,a in areas.items()};subtotal=sum(flows.values())
+    ledger={'screen':lc,'slots':slots,'conditionalAreaAccounting':areas,'idealFlows':flows,'conditionalIdealSubtotal_m3_per_h':subtotal,
+      'sharedAllOpeningsBudget_m3_per_h':budget,'subtotalFractionOfAllOpenings':subtotal/budget,'remainingSharedBudgetConditional_m3_per_h':budget-subtotal,
+      'stillRequiredInSameAggregate':['actual rear sill-nose/PAN contact','both cap/PAN front contacts outside the separately registered corner entries','both cap-to-fixed-return clamped joints','both upper-bridge/frame-boot joints','both sill/boot end joints','fixed cap/liner/base joints above the floor-family boundary','all window/portal assemblies, all three external door leaf/perimeter/meeting joints, and every other fixed/renewable opening joint'],
+      'nonoverlapRole':'Each cap has two distinct upper/lower entry paths in parallel. Each entry and its subsequent inner-edge outlet are in series; only the entry is counted. Bar heel/toe exits and keeper annuli are distinct candidate room outlets. No extra floor-family or threshold budget is created. Contact-only tests must mask registered entries/laps/annuli; the final whole-opening test is unmasked and REPLACES this sensitivity subtotal, rather than being added to it. Further bypasses must be ruled out before treating the register as exhaustive.',
+      'result':'NO BUDGET PASS: even the subtotal depends on unearned normal/shape/slot bounds. Remaining contacts and all windows and three doors are unmeasured; no unknown is set to zero or allocated the family budget again.'}
+    assert 0<subtotal<budget
+    return {'status':j['status'],'currentMainHADExactlySameBlob':c['sources']['currentMainHAD']['blob']==c['sources']['HAD']['blob'],
+      'frontDownfoldWithdrawn':True,'frontBar':bar_result,'travellingCarriers':carrier,'fixedReturn':j['fixedReturn'],'upperBridge':bridge,
+      'bridgeNecessaryClearances':bridge_clear,'frameBoot':boot,'sillRearAirJoin':sill_result,'finiteAirLedger':ledger,
+      'stock5mm':c['stock5mm'],'releaseSequence':j['releaseSequence'],'fullPathAdmitted':False}
+
+def joined_figure(r):
+    j=r['joinedCandidate'];air=j['finiteAirLedger']
+    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1270" viewBox="0 0 1200 1270"><rect width="1200" height="1270" fill="#faf9f4"/><g font-family="Arial" fill="#243842">']
+    def text(x,y,t,n=16):out.append(f'<text x="{x}" y="{y}" font-size="{n}">{html.escape(t)}</text>')
+    def box(x,y,w,h,color,stroke='#61747a',dash=''):out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{color}" stroke="{stroke}"'+(f' stroke-dasharray="{dash}"' if dash else '')+'/>')
+    text(30,38,'One ordinary court interface: support, air path and renewal',26)
+    text(30,69,'CONDITIONAL CONSTRUCTION COMPARISON. Geometry/flow screens are not installed ratings or assembly admission.',16)
+    X=lambda y:55+(y-3985)*2;Z=lambda z:320-z*2
+    def sec(a,b,lo,hi,color,dash=''):box(X(a),Z(hi),2*(b-a),2*(hi-lo),color,dash=dash)
+    text(55,116,'A  CENTRAL YZ SECTION / north to right',19)
+    sec(3985,4250,-200,-180,'#bdbcb3');sec(3985,4025,-180,-30,'#bda17d');sec(3985,4025,-30,0,'#d8d9cc')
+    sec(4030,4090,-180,-46.5,'#d8d9cc','5 3')
+    sec(4000,4052,0,5,'#789ca6')
+    sec(4000,4025,-1,0,'none','3 2')
+    # Blind cap keeper; never crosses the DPC top at−30 or the PAN.
+    sec(4008,4012,-10.5,8,'#789ca6');sec(4000,4020,-12,-10.5,'#789ca6')
+    for a,b,top in [(4033,4054,-1.5),(4067,4083,13.5)]:
+        sec(a,b,top-3,top,'#789ca6');sec(a,a+3,-46.5,top-3,'#789ca6');sec(b-3,b,-46.5,top-3,'#789ca6')
+    path=f'M{X(4030)} {Z(0)}H{X(4057)}A6 6 0 0 0 {X(4060)} {Z(3)}V{Z(10.5)}A9 9 0 0 1 {X(4064.5)} {Z(15)}H{X(4085.5)}A9 9 0 0 1 {X(4090)} {Z(10.5)}V{Z(-45)}L{X(4260)} {Z(-49.7222)}'
+    out.append(f'<path d="{path}" fill="none" stroke="#ad563e" stroke-width="3"/>')
+    sec(4110,4250,-35,15,'none','5 3');sec(4230,4250,-15,-5,'#dcebf0')
+    sec(4095,4130,10,15,'#c7834d');sec(4095,4096.5,-35,10,'#c7834d')
+    sec(4206,4250,19,48,'#d4c4ac')
+    out.append(f'<path d="M{X(4095)} {Z(-29)}L{X(4090)} {Z(5.935)}" stroke="#9b7f40" stroke-width="2" stroke-dasharray="3 3"/>')
+    text(55,160,'5 mm bar: direct cap + PAN/carrier support.',15)
+    text(55,185,'4 removable keepers carry no walking load.',15)
+    text(55,210,'New front downfold WITHDRAWN.',15)
+    text(55,450,'Actual sill body 4110..4250 remains a source envelope.',15)
+    text(55,476,'New sill-carried nose 4095; top+15 / bottom−35.',15)
+    text(55,502,'Ordinary rear contact is UNRATED (dotted link).',15)
+    text(55,528,'Nose underflow ≈10.14 mm; no new full-width dam.',15)
+    text(55,554,'Bar 5.5 upper Z includes an UNPROVED 0.5 allowance.',15)
+    text(55,580,'Local cap/bearing/Services/thermal duties remain.',15)
+    text(55,740,'RC top−180; floor/DPC/door assembly cut must be tested.',15)
+    # YZ envelope projection: the step clears every possible contour inside the retained tray box.
+    U=lambda y:720+(y-4000)*1.55;V=lambda z:455-z*1.15
+    def env(a,b,lo,hi,color,dash=''):box(U(a),V(hi),1.55*(b-a),1.15*(hi-lo),color,dash=dash)
+    text(720,116,'B  JAMB YZ ENVELOPE PROJECTION',19)
+    env(4090,4250,75,150,'#dcebf0','5 3');env(4110,4250,-35,225,'none','4 3')
+    poly=j['upperBridge']['yzPolygon'];out.append('<polygon points="'+' '.join(f'{U(y)},{V(z)}' for y,z in poly)+'" fill="#eed5b6" stroke="#a86f39"/>')
+    env(4000,4030,-30,225,'none','3 3');env(4023.5,4025,0,100,'#789ca6')
+    env(4000,4052,0,5,'#789ca6');env(4030,4250,74,75,'#ad563e')
+    text(720,520,'Blue: retained tray 4090..4250 /75..150.',15)
+    text(720,547,'Bridge steps before 4085, then above 155.',15)
+    text(720,574,'Each necessary tray/PAN hard clearance 1 mm.',15)
+    text(720,601,'Frame airskin front 4108.5: north gap ≥2.5 mm.',15)
+    text(720,628,'No tray box is assumed empty; no water rating.',15)
+    text(720,655,'Folded angle support/boot/contacts remain unadmitted.',15)
+    text(720,682,'Caps south 15/up 100; then bar lifts 25 underneath.',15)
+    text(720,709,'Frame/boots + sill/nose remove before PAN north 500.',15)
+    text(55,803,'C  FOUR REGISTERED CORNER THROATS',19)
+    text(55,833,'Lower planes X5142/6858; upper entry plane Y4030.',16)
+    text(55,862,'Lower: Y4025..4030 / Z5..10 (bar/notch).',16)
+    text(55,891,'Upper: full bridge 54+4 across X / Z75..80.',16)
+    text(55,920,'Two upper 58×9; two lower 9×9; separate 4 mm Z duty.',16)
+    text(55,949,'1206 mm²; ideal Cd = 1 flow 39.633 m³/h at 50 Pa.',16)
+    text(55,978,'Outer/root clamps must close; otherwise more paths exist.',15)
+    text(720,803,'D  ONE SHARED OPENING-FAMILY ACCOUNT',19)
+    for n,(key,value) in enumerate(air['conditionalAreaAccounting'].items()):
+        label={'fourCornerThroats_mm2':'Four corners','twoBarLapExitsConditional_mm2':'Two bar laps (0.5 conditional)','fourKeeperAnnuli_mm2':'Four keeper annuli'}[key]
+        text(720,837+n*30,f'{label}: {value:.2f} mm²',15)
+    text(720,943,f'Conditional ideal subtotal {air["conditionalIdealSubtotal_m3_per_h"]:.3f} m³/h.',16)
+    text(720,973,f'ALL openings 158.087; remaining {air["remainingSharedBudgetConditional_m3_per_h"]:.3f}.',16)
+    text(55,1040,'NO BUDGET PASS. Rear/cap/fixed joints, boots, all window/portal and three-door assemblies are unmeasured.',17)
+    text(55,1075,'Bar flatness/bearing/movement allowance and slot bounds are development obligations, not observed performance.',17)
+    text(55,1110,'Independent draught, insect, bulk-water, capillary, soil-gas, corrosion, thermal and actual renewal duties remain.',17)
+    text(55,1145,'One 5 mm whole-sheet control £791.71 ex VAT is shared by bar/nose top; no installed-cost or material admission.',17)
+    text(55,1180,'Source HAD 089f unchanged at reconciled b0d3102d; proposed accessories and shared test boundaries are explicit.',17)
+    text(55,1215,'MAT-ENVELOPE stays open. No physical, architecture, material, air or water acceptance follows from this sheet.',17)
+    out.append('</g></svg>');return ''.join(out)+'\n'
+
 def produce():
     c=json.loads((HERE/'court-air-path.json').read_text());s=c['sources']
     h=read(s['HAD'])['model'];m=read(s['mechanicalResearch']);b=read(s['mineralBaseResearch'])['bondedMineralBase']
+    assert read(s['currentMainHAD'])['model']==h and s['currentMainHAD']['blob']==s['HAD']['blob']
     st=read(s['STRweatherPocket'])['groundCourtWeatherJambPocket'];t=h['southCourtThresholdReference'];p=t['pan']
     assert not any(c['admission'].values())
     assert h['northNormalRoute']['floorJoin']['layers']==[15,65,100,200]
@@ -157,9 +321,11 @@ def produce():
       'scope':'West case mirrors east. Same4 mm hard-clearance challenge, no tighter tolerance substitution. Cavity-only reservation is distinct from full lower weather6. Actual liner must jog back inside the lower-weather boundary; no fabrication, cap restraint, clamped-root or installed physical admission.'}
     assert cap_result['oldNominalCapLinerOverlapWidth_mm']>0
     assert min(cap_result[k] for k in ['minimumCapToLinerHardClearance_mm','minimumPanToFrontCavityLiner_mm','minimumShiftedContactToCommonFlange_mm','separationFromCoreY_mm','separationFromCavityTrayY_mm'])>0
+    joined=joined_candidate(c,h,m,leaf)
     return {'status':c['status'],'sources':s,'headerContinuation':header_result,'wholePanLowerReveal':reveal,
       'frontDownfoldComparison':downfold,'dryStepBendComparison':bend_result,'straightLeafContactChallenge':leaf,
       'joinedCapLinerComparison':cap_result,
+      'joinedCandidate':joined,
       'frontContactLead':c['frontContactLead'],'foilResearch':c['foilResearch'],'admission':c['admission']}
 
 def figure(r):
@@ -167,8 +333,8 @@ def figure(r):
     def text(x,y,t,n=17):out.append(f'<text x="{x}" y="{y}" font-size="{n}">{html.escape(t)}</text>')
     def box(x,y,w,h,fill,stroke='#61747a',dash=''):
         out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}"'+(f' stroke-dasharray="{dash}"' if dash else '')+'/>')
-    text(30,38,'Join the ordinary header band to the real pan air path',27)
-    text(30,69,'WORKING DESIGN. Whole path not closed; no owning geometry, structure, material or physical admission.',17)
+    text(30,38,'Retain the source constraints and rejected front-downfold control',25)
+    text(30,69,'DOWNFOLD WITHDRAWN AS LEAD. See joined sheet for ordinary overlap; no physical/material admission.',17)
     h=r['headerContinuation'];v=r['wholePanLowerReveal'];d=r['frontDownfoldComparison'];b=r['dryStepBendComparison']
     X=lambda y:60+(y-3650)*.9
     Z=lambda z:210-z*.7
@@ -228,7 +394,7 @@ def figure(r):
 
 if __name__=='__main__':
     a=argparse.ArgumentParser();a.add_argument('--check',action='store_true');args=a.parse_args();r=produce()
-    for p,s in {HERE/'court-air-path.results.json':json.dumps(r,indent=2,ensure_ascii=False)+'\n',HERE/'court-air-path.svg':figure(r)}.items():
+    for p,s in {HERE/'court-air-path.results.json':json.dumps(r,indent=2,ensure_ascii=False)+'\n',HERE/'court-air-path.svg':figure(r),HERE/'court-air-path-joined.svg':joined_figure(r)}.items():
         if args.check:assert p.exists() and p.read_text()==s,f'Stale output: {p.name}'
         else:p.write_text(s)
     print('Court air-path constraints reproduce; complete path and all admissions remain open.')

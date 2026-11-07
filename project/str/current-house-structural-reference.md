@@ -2,6 +2,8 @@
 
 STR-HOUSE consumes the architectural independent-water source merged in PR1332. This is structural development, not a whole-house structural selection. The [interface audit](studies/current-house-interfaces.json) preserves historical calculations and their input guards.
 
+The [eight corner-arch junctions](corner-arch-junction.md) now use altered, coupled RC piers and an independent outer brick arch. The current complete window still needs more allowance at the finished reveal. The final roof terminals, guard receivers and updated foundation reactions remain open.
+
 ## Governing comparison: the pitched roof, perforated floor and all 52 heads
 
 **There is one proposed structural system here, not a selected house structure.** The HAD architectural source is the Services utility-wording merge `fb7629e1` (HAD blob `089f0dac2f2e89272dc2ea85a10c2208f2fd797d`). Its nine string changes describe the utility working envelope and identify the Services source; the roof, floors, walls and garden geometry are unchanged. Its shifted roof is shown on the [actual house](studies/current-house-shifted-massing.svg). The [load-path drawing](studies/current-house-joined-frame.svg) connects that roof to two first-floor collectors and the common ground grid. The eight-M24 shoe, original unshifted roof/shaft ledger, uniformly 650 mm floor edge, flat prescribed overturning couple and generic 300 kNm pier splice do **not** establish this result.

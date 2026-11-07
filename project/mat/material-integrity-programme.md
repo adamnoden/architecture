@@ -51,7 +51,7 @@ Historical holds preserve the old source identities and technical learning. Exis
 
 ## Design comparisons
 
-- [Join the fixed mineral base and court air path](court-air-path.md) — active design comparison of the ordinary header band, whole lower-reveal fit and actual front bend/carrier constraints. A complete supported contact path through both corners and wall/frame joins remains open; no assembly or owning geometry is admitted.
+- [Join the fixed mineral base and court air path](court-air-path.md) — one conditional ordinary overlap/cap/sill/boot comparison, with real dry bends, source-bound upper-tray clearances, registered 3D corner entries and one shared opening-family account. The new front downfold is withdrawn. Actual contact, support, movement, material, water/capillary, thermal and renewal performance remain unadmitted; no owning geometry is adopted.
 
 - [One supported renewable court apron](court-apron-support.md) — working comparison of supports travelling inside the existing pan envelope, separating pedestrian bearing from ordinary air compliance. No pan profile, source geometry or assembly admission is adopted; the actual end sections remain active work.
 

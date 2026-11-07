@@ -16,6 +16,8 @@ for(const key of ['washer','sink','rearServiceChase','valveBay','electricalStati
 }
 assert(equal(H.servicesInterface.utility.washer,U.washer),'Current HAD service-interface washer mismatch')
 assert(H.utilityDisposition.operation.startsWith('OPENARCH'),'Current utility entrance is no longer the claimed open arch')
+const boundary=S.air.transfer.utilityNorthBoundaryRequirement
+assert(boundary.role.startsWith('OPENARCH')&&equal(boundary.rough,H.utilityDisposition.opening)&&boundary.axisY===H.utilityDisposition.axis,'Current utility opening and owning Services air-boundary requirement disagree')
 assert(!('Q350-body' in H.groundFurniture),'Retired Q350 comparison has returned to current occurrence map')
 const valve=S.fixtures.find(f=>f.id==='washer-PROPOSED')
 assert(valve&&equal(valve.sourceOrProposedXY,U.washer.slice(0,2)),'Washer fixture and utility occurrence no longer agree')
@@ -53,6 +55,8 @@ assert.equal(collisions.length,0,'Trial washer-body pull meets a retained curren
 const nearest=retained.map(([id,box])=>({id,distance:distance(sweep,box)})).sort((a,b)=>a.distance-b.distance)
 const northWall=H.groundWalls.find(w=>w.id==='utility-north')
 assert(northWall&&equal(northWall.holes,[H.utilityDisposition.opening]),'Utility north wall and current open arch no longer agree')
+assert(northWall.a[1]===northWall.b[1]&&northWall.a[1]===H.utilityDisposition.axis,'Utility north wall and open-arch axis no longer agree')
+const archRaw=H.utilityDisposition.opening,archAxis=H.utilityDisposition.axis
 const northFace=Math.min(...northWall.finishedFaces)
 assert(rest[1]+rest[3]<northFace,'Trial first rest reaches the utility north wall')
 const frontWorker=[10800,1725,300],rearWorker=[10375,1175,300]
@@ -60,6 +64,29 @@ function circleClearance(c,box){return Math.hypot(Math.max(box[0]-c[0],c[0]-box[
 const frontClear=Math.min(...Object.values(H.groundFurniture).map(b=>circleClearance(frontWorker,b)))
 const rearClear=Math.min(circleClearance(rearWorker,rest),...retained.map(([,b])=>circleClearance(rearWorker,b)))
 assert(frontClear>=25&&rearClear>=25,'Authored static worker proxy lost its stated clearance')
+// A separate stationary draining phase: neither a scaled native port nor a worker-fit proof.
+const drainTray={model:'Vollrath 90002 Super Pan 3 tray',
+  url:'https://www.vollrathfoodservice.com/products/smallwares/steam-table-pans-accessories/stainless-steel-steam-table-pans/super-pan-3-stainless-steel-steam-table-pans/90002',
+  catalogueURL:'https://www.vollrathfoodservice.com/downloads/100853/CAT2024SmallwaresCountertopEquipmentCatalogen-pdf',
+  inspected:'7 November 2026',material:'22-gauge 300-series stainless steel; no optional silicone band or liner included',
+  reservation:[body[0],body[1]+body[3],530,325],maximumHeight:20,
+  dimensionScope:'Manufacturer catalogue nominal 530 × 325 × 20 mm envelope; product page rounds dimensions to 530 × 324 × 19 mm. Actual receiving section remains to be checked.',
+  usableCapacityLitres:null,externalCuboidUpperBoundLitres:530*325*20/1e6,
+  capacityScope:'Manufacturer capacity field says tray, not a numeric volume. External cuboid is an upper bound, not usable capacity or a residual-water allowance.'}
+const trayClearances=retained.map(([id,box])=>({id,distance:distance(drainTray.reservation,box)})).sort((a,b)=>a.distance-b.distance)
+assert(trayClearances[0].distance>=25,'Stationary front receiving-tray reservation meets a retained fixture')
+const trayTapWorkerClearance=circleClearance(frontWorker,drainTray.reservation)
+assert(trayTapWorkerClearance<0,'Reassess the stated separate draining/tap-worker phases')
+const frontDrain={status:'Floor-container reservation only; native hose/port, capacity, operator and filled-container handling unqualified',
+  nativePages:[10,18,33,34,45],tray:drainTray,nearestRetained:trayClearances.slice(0,3),tapWorkerClearance:trayTapWorkerClearance,
+  method:['Keep the isolated washer on its own feet. Remove the maintenance flap; it is not the tray support.',
+    'Support the receiving tray directly on the floor, release the native emergency hose from its holder, then remove its cap to drain cooled water.',
+    'Refit the cap and return the hose to its holder before the separate fixed-end task. Pump-cap opening is a later task after draining; allow for remaining water.',
+    'A controlled cap/empty/return cycle is a proposed receiving method if needed, not a native capacity statement or an admitted filled-tray carrying method.'],
+  holds:['Native illustration does not dimension the emergency-hose extension, outlet invert, flap removal envelope or worst residual volume. Do not scale it as a fitted interface.',
+    'A real hose end must discharge over the tray inside its rim with sufficient fall. Actual wet receiving depth, freeboard, controlled flow/capping and emptying must be established before use.',
+    'The prior tap-worker floor disk overlaps this tray by 106 mm. Do not credit it as a simultaneous draining posture; actual low body, hands, sight line and hose reach remain open.',
+    'Native p. 10 specifies hand-tight inlet connections and supplied or genuine water hoses, with no reuse of previously used hoses. Return must provide the appropriate genuine replacement hoses rather than silently promise reuse.']}
 const tasks={tap:{point:[...valve.waterBranchPlan.at(-1),valve.valveAxisZ],shoulder:[10800,1725,1050]},drain:{point:[10800,1250,800],shoulder:[10800,1725,1100]}}
 const standingTapReach=Math.hypot(475,1450-valve.valveAxisZ)
 for(const t of Object.values(tasks))t.straightReach=Math.hypot(...t.point.map((v,i)=>v-t.shoulder[i]))
@@ -68,7 +95,7 @@ const armPlanClearances=Object.entries(H.groundFurniture).filter(([id])=>id!=='s
 assert(armPlanClearances[0].clearance>=25,'Straight valve-task arm plan now meets a retained fixture')
 const electricalWorkOverlap=overlap(rest,U.electricalWorkingField)
 assert(electricalWorkOverlap>0,'Review changed electrical-task coexistence before removing the documented temporary occupation')
-const result={status:'Conditional utility first-release comparator; no connected, worker, support, handling or installation pass',units:'mm unless named otherwise',sources,native,fixedTapComparator,
+const result={status:'Conditional utility first-release comparator; no connected, worker, support, handling or installation pass',units:'mm unless named otherwise',sources,native,fixedTapComparator,frontDrain,
   sourceDisposition:{legacyX9500:'Historical I00-C1 upper small-en-suite front remains unadopted. Current utility washer is a different owning occurrence; this task neither relocates nor discharges the accepted-source reservation.',
     Q350:'Explicitly retired uninstalled plant comparison in current Services; absent from current HAD. Ventilation function now has its separate W9 source/method; no installed device is silently removed.',
     entrance:H.utilityDisposition,baselineWorking:U.working,washerFixture:valve},
@@ -109,8 +136,8 @@ function plan(offset,moving,worker,color){
   label(px(10125),py(moving[1]+moving[3]/2),'WASHER',2.7)
   label(px(11020),py(1000),'SINK',2.7);label(px(10695),py(900),'BAY',2.7)
   label(px(9420),py(2000),'ELEC.',2.5);label(px(9420),py(550),'PV',2.5)
-  draw.push(`<path d="M${px(10250)} ${py(2550)}H${px(11150)}" stroke="#2c7885" stroke-width="1.4"/>`)
-  label(px(10250),py(2550)-3,'CURRENT OPEN ARCH 900',2.8)
+  draw.push(`<path d="M${px(archRaw[0])} ${py(archAxis)}H${px(archRaw[1])}" stroke="#2c7885" stroke-width="1.4"/>`)
+  label(px(archRaw[0]),py(archAxis)-3,`RAW OPEN ARCH ${archRaw[1]-archRaw[0]}`,2.8)
 }
 draw.push('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Arial,sans-serif"><rect width="420" height="297" fill="white"/>')
 label(14,17,'IAS / Utility first release: fixed ends before body movement',5.1)

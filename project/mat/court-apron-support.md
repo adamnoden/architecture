@@ -70,4 +70,4 @@ The provisional lead is therefore **walking support with the renewable body, the
 RWT assigns no pressure-water head specifically to the dry apron; quiet −35, crest +15 and `firstSusceptible=null` remain distinct. No roof/pipe-pressure transfer is permitted. Finite air leakage cannot waive capillary, overtopping, water-end, site-gas or material duties. No complete assembly, floor-route selection or MAT-ENVELOPE exit follows.
 
 
-The [joined air-path successor](court-air-path.md) tests the ordinary header continuation, full pre-formed lower reveal and actual front-bend interference. It does not promote this bounded mechanical case to an installed tolerance or air-path pass.
+The [joined air-path successor](court-air-path.md) compares the ordinary header/overlap, both caps, upper jamb bridges and rear sill/boot air joins. It withdraws the new front downfold, preserves its negative controls and registers finite corner entries against the shared opening-family budget. It does not promote this bounded mechanical case to an installed tolerance, support or air-path pass.

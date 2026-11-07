@@ -69,6 +69,61 @@
     "status": "One actual fixed-end component checked because this method requires that connection. Not a fitted or selected tap.",
     "hold": "Nominal threaded interface corresponds, but actual 17 mm outlet clear bore, 10 mm threaded-outlet length, washer seat and nut/hand/lever sweep are not established. L2 minus Z2 is 8 mm gross drawing difference, not proof of 10 mm usable thread or assembled engagement; do not treat total L2 as available thread. No universal cross-brand or washing-machine-tap prohibition follows."
   },
+  "frontDrain": {
+    "status": "Floor-container reservation only; native hose/port, capacity, operator and filled-container handling unqualified",
+    "nativePages": [
+      10,
+      18,
+      33,
+      34,
+      45
+    ],
+    "tray": {
+      "model": "Vollrath 90002 Super Pan 3 tray",
+      "url": "https://www.vollrathfoodservice.com/products/smallwares/steam-table-pans-accessories/stainless-steel-steam-table-pans/super-pan-3-stainless-steel-steam-table-pans/90002",
+      "catalogueURL": "https://www.vollrathfoodservice.com/downloads/100853/CAT2024SmallwaresCountertopEquipmentCatalogen-pdf",
+      "inspected": "7 November 2026",
+      "material": "22-gauge 300-series stainless steel; no optional silicone band or liner included",
+      "reservation": [
+        10076,
+        1400,
+        530,
+        325
+      ],
+      "maximumHeight": 20,
+      "dimensionScope": "Manufacturer catalogue nominal 530 × 325 × 20 mm envelope; product page rounds dimensions to 530 × 324 × 19 mm. Actual receiving section remains to be checked.",
+      "usableCapacityLitres": null,
+      "externalCuboidUpperBoundLitres": 3.445,
+      "capacityScope": "Manufacturer capacity field says tray, not a numeric volume. External cuboid is an upper bound, not usable capacity or a residual-water allowance."
+    },
+    "nearestRetained": [
+      {
+        "id": "service-utility-valveBay",
+        "distance": 94
+      },
+      {
+        "id": "service-utility-sink",
+        "distance": 344
+      },
+      {
+        "id": "service-utility-electricalStation",
+        "distance": 379.8236432872498
+      }
+    ],
+    "tapWorkerClearance": -106,
+    "method": [
+      "Keep the isolated washer on its own feet. Remove the maintenance flap; it is not the tray support.",
+      "Support the receiving tray directly on the floor, release the native emergency hose from its holder, then remove its cap to drain cooled water.",
+      "Refit the cap and return the hose to its holder before the separate fixed-end task. Pump-cap opening is a later task after draining; allow for remaining water.",
+      "A controlled cap/empty/return cycle is a proposed receiving method if needed, not a native capacity statement or an admitted filled-tray carrying method."
+    ],
+    "holds": [
+      "Native illustration does not dimension the emergency-hose extension, outlet invert, flap removal envelope or worst residual volume. Do not scale it as a fitted interface.",
+      "A real hose end must discharge over the tray inside its rim with sufficient fall. Actual wet receiving depth, freeboard, controlled flow/capping and emptying must be established before use.",
+      "The prior tap-worker floor disk overlaps this tray by 106 mm. Do not credit it as a simultaneous draining posture; actual low body, hands, sight line and hose reach remain open.",
+      "Native p. 10 specifies hand-tight inlet connections and supplied or genuine water hoses, with no reuse of previously used hoses. Return must provide the appropriate genuine replacement hoses rather than silently promise reuse."
+    ]
+  },
   "sourceDisposition": {
     "legacyX9500": "Historical I00-C1 upper small-en-suite front remains unadopted. Current utility washer is a different owning occurrence; this task neither relocates nor discharges the accepted-source reservation.",
     "Q350": "Explicitly retired uninstalled plant comparison in current Services; absent from current HAD. Ventilation function now has its separate W9 source/method; no installed device is silently removed.",
