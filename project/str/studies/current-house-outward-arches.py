@@ -142,7 +142,7 @@ for width in (160,180):
                                 continue
                             n1,n2,vs1,ms1,vs2,ms2,vw1,mw1,vw2,mw2,tor=(v+point_sign*d for v,d in zip(raw,delta))
                             kind=int(e['kind']=='jamb')
-                            mw=max(abs(mw1),abs(mw2));vw=max(abs(vw1),abs(vw2));vs=max(abs(vs1),abs(vs2))
+                            vw=max(abs(vw1),abs(vw2));vs=max(abs(vs1),abs(vs2))
                             for adverse in (False,True):
                                 prefix='adverse' if adverse else 'nominal'
                                 c=cells[element,adverse];b,h,xs,ys=(c[k] for k in ('b','h','xs','ys'))
@@ -157,12 +157,12 @@ for width in (160,180):
                                 # Retain 5% authored steel-strength uncertainty,
                                 # then round remaining strength DOWN to 1% bins.
                                 fraction=max(.01,math.floor((.95-reserved)*100)/100)
-                                for n,ms in ((-n1,abs(ms1)),(-n2,abs(ms2))):
+                                for end,(n,ms,mw) in enumerate(((-n1,abs(ms1),abs(mw1)),(-n2,abs(ms2),abs(mw2)))):
                                     rs,rw=resistance(element,2*math.floor(n/2),adverse,fraction)
                                     ratio=ms/rs+mw/rw if reserved<.95 else 1e6
                                     if ratio>maxima[prefix+'Ratio'][kind]:
                                         maxima[prefix+'Ratio'][kind]=ratio
-                                        witnesses[prefix+'Ratio/'+str(kind)]=[wind_index,loaded,a,x,point_sign,pressure_sign,element,n,ms,mw,rs,rw,tor,reserved,fraction]
+                                        witnesses[prefix+'Ratio/'+str(kind)]=[wind_index,loaded,a,x,point_sign,pressure_sign,element,n,ms,mw,rs,rw,tor,reserved,fraction,end]
                                 zs=.85*min(h-xs[0],xs[1]);zw=.85*min(b-ys[0],ys[1])
                                 flow=torsion_flow+max(vs*1000/(2*zs),vw*1000/(2*zw))
                                 if flow>maxima[prefix+'Link'][kind]:

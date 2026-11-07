@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Arial,sans-serif"><rect width="420" height="297" fill="white"/>
+<text x="15" y="17" font-size="5.3" fill="#20313b">IAS / Shared utility sink and service host</text>
+<text x="15" y="27" font-size="3.5" fill="#20313b">7 November 2026 | New project candidate; no fitted product, joint, floor, material or handling pass.</text>
+<text x="15" y="37" font-size="3.3" fill="#20313b">One ordinary cabinet frame carries the sink/top and accessible service brackets. No separate washer rack.</text>
+<text x="15" y="50" font-size="3.8" fill="#20313b">PLAN / current 250 mm bay + 600 mm sink reserve</text>
+<rect x="30.0" y="80.0" width="50.0" height="126.0" fill="#fff3dc" stroke="#52616b" stroke-width=".45" stroke-dasharray="2 1"/>
+<rect x="80.0" y="80.0" width="120.0" height="126.0" fill="#edf1f3" stroke="#52616b" stroke-width=".45" stroke-dasharray="2 1"/>
+<rect x="82.0" y="194.3" width="6.0" height="5.3999999999999995" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="82.0" y="86.30000000000001" width="6.0" height="5.3999999999999995" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="192.0" y="194.3" width="6.0" height="5.3999999999999995" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="192.0" y="86.30000000000001" width="6.0" height="5.3999999999999995" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="85.0" y="194.3" width="110.0" height="5.3999999999999995" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="85.0" y="86.30000000000001" width="110.0" height="5.3999999999999995" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="82.0" y="89.0" width="6.0" height="108.0" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="192.0" y="89.0" width="6.0" height="108.0" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="82.0" y="108.8" width="6.0" height="5.3999999999999995" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="50.0" y="109.7" width="35.0" height="3.5999999999999996" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="30.0" y="71.0" width="40.0" height="36.0" fill="none" stroke="#52616b" stroke-width=".45" stroke-dasharray="2 1"/>
+<text x="20" y="226" font-size="2.9" fill="#20313b">Dashed: required front task territory; actual fitting/hand motion remains open.</text>
+<text x="20" y="234" font-size="3" fill="#20313b">Design valve point remains x10800/y1250/z750 mm.</text>
+<text x="250" y="50" font-size="3.8" fill="#20313b">FRONT / new primary members</text>
+<rect x="294.2" y="72.1" width="5.1000000000000005" height="147.05" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="294.2" y="72.1" width="5.1000000000000005" height="147.05" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="387.70000000000005" y="72.1" width="5.1000000000000005" height="147.05" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="387.70000000000005" y="72.1" width="5.1000000000000005" height="147.05" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="296.75" y="72.1" width="93.5" height="6.800000000000001" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="296.75" y="194.5" width="93.5" height="5.1000000000000005" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="294.2" y="75.5" width="5.1000000000000005" height="121.55000000000001" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="267.0" y="141.8" width="29.750000000000004" height="3.4000000000000004" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="267.0" y="124.8" width="29.750000000000004" height="3.4000000000000004" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="267.0" y="90.79999999999998" width="29.750000000000004" height="3.4000000000000004" fill="#b6d4df" stroke="#52616b" stroke-width=".45"/>
+<rect x="292.5" y="67.0" width="102.00000000000001" height="5.1000000000000005" fill="none" stroke="#52616b" stroke-width=".45" stroke-dasharray="2 1"/>
+<rect x="250.0" y="67.0" width="34.0" height="51.00000000000001" fill="none" stroke="#52616b" stroke-width=".45" stroke-dasharray="2 1"/>
+<text x="310" y="145" font-size="3.6" fill="#20313b">520 mm clear</text>
+<text x="310" y="155" font-size="3" fill="#20313b">no centre mullion</text>
+<text x="310" y="164" font-size="3" fill="#20313b">no fixed task shelf</text>
+<text x="250" y="229" font-size="3" fill="#20313b">Posts/lower rails 30 × 30 × 3; top rails 30 × 40 × 3.</text>
+<text x="250" y="237" font-size="3" fill="#20313b">Service carriers 20 × 20 × 3; four exposed floor fixings.</text>
+<text x="15" y="251" font-size="3.3" fill="#20313b">Design target: 2.0 kN aggregate vertical + 1.0 kN local point; service reaction 100 N horizontal / 200 N vertical.</text>
+<text x="15" y="260" font-size="3.3" fill="#20313b">Original post movement 3.871 mm exceeds the 3 mm target. Joints, floor and actual fit remain unqualified.</text>
+<text x="15" y="269" font-size="3.3" fill="#20313b">Straight north retirement reaches retained emitter envelope after 413 mm. Corrected route is not yet earned.</text>
+<text x="15" y="279" font-size="3.1" fill="#20313b">Bare nominal members/feet/pad 25.20 kg, excluding top, bowl, covers, connections and water. No mass/grip/crew pass.</text>
+<text x="15" y="289" font-size="3.1" fill="#20313b">The old 530 mm sink rim exceeds this 520 mm front opening. No old 800 mm cabinet or carrying proof transfers.</text>
+</svg>
