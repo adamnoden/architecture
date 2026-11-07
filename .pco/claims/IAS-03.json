@@ -9,9 +9,9 @@
     "label": "rush-closeout-ias"
   },
   "claimedAt": "2026-11-07T09:15:01.126Z",
-  "heartbeatAt": "2026-11-07T09:16:03.220Z",
-  "expiresAt": "2026-11-07T10:46:03.220Z",
-  "branch": "work/rush-20261107-ias-g24",
+  "heartbeatAt": "2026-11-07T09:22:19.668Z",
+  "expiresAt": "2026-11-07T10:52:19.668Z",
+  "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "243df4cc-2336-4946-b926-bfa82a32cfc7",
     "generation": 23,
@@ -32,9 +32,9 @@
       "next": "Exact-head CI and independent root review. Keep actual sink/pipe/seat/wall/physical handling and later export open."
     }
   },
-  "pr": 1375,
+  "pr": 1374,
   "checkpoint": {
-    "evidence": "PR #1375 at frozen reviewed 0266d0b. Priors 14 of 14 workflows passed.",
-    "next": "Confirm successor Validate and canonical preflight, integrate and release."
+    "evidence": "IAS reviewed 0266d0b, #1372 and #1375, full local checks. Joint four-packet reconciliation on #1374.",
+    "next": "Confirm unchanged IAS result and exact integration CI, then IAS publication preflight on final combined head. No selection."
   }
 }
