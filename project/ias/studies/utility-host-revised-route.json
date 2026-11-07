@@ -1,0 +1,627 @@
+{
+  "status": "Conditional project comparison through first rest. The complete task awaits fitted services, supports and handling qualification.",
+  "scope": "The lift and the two translations are a local first-rest comparison. The bowl, trap and upper waste release is an entry condition. Final export and return remain open.",
+  "sources": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+    "project/ias/studies/utility-service-host.json": "c9c21b6dd72774dd4989275e156ab7a532fd276f",
+    "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542"
+  },
+  "originalControl": {
+    "postMovement": 3.8708306347150256,
+    "straightNorthContact": {
+      "member": "leg-4",
+      "firstNorthContact_mm": 413
+    }
+  },
+  "geometry": {
+    "frame": {
+      "leg 1": [
+        10955,
+        730,
+        6,
+        40,
+        40,
+        864
+      ],
+      "sole 1": [
+        10955,
+        730,
+        0,
+        40,
+        40,
+        6
+      ],
+      "leg 2": [
+        10955,
+        1330,
+        6,
+        40,
+        40,
+        864
+      ],
+      "sole 2": [
+        10955,
+        1330,
+        0,
+        40,
+        40,
+        6
+      ],
+      "leg 3": [
+        11505,
+        730,
+        6,
+        40,
+        40,
+        864
+      ],
+      "sole 3": [
+        11505,
+        730,
+        0,
+        40,
+        40,
+        6
+      ],
+      "leg 4": [
+        11505,
+        1330,
+        6,
+        40,
+        40,
+        864
+      ],
+      "sole 4": [
+        11505,
+        1330,
+        0,
+        40,
+        40,
+        6
+      ],
+      "EW rail at y750 / z850": [
+        10975,
+        735,
+        830.0,
+        550,
+        30,
+        40
+      ],
+      "EW rail at y1350 / z850": [
+        10975,
+        1335,
+        830.0,
+        550,
+        30,
+        40
+      ],
+      "NS rail at x10975 / z850": [
+        10960,
+        750,
+        830.0,
+        30,
+        600,
+        40
+      ],
+      "NS rail at x11525 / z850": [
+        11510,
+        750,
+        830.0,
+        30,
+        600,
+        40
+      ],
+      "EW rail at y750 / z135": [
+        10975,
+        735,
+        120.0,
+        550,
+        30,
+        30
+      ],
+      "EW rail at y1350 / z135": [
+        10975,
+        1335,
+        120.0,
+        550,
+        30,
+        30
+      ],
+      "NS rail at x10975 / z135": [
+        10960,
+        750,
+        120.0,
+        30,
+        600,
+        30
+      ],
+      "NS rail at x11525 / z135": [
+        11510,
+        750,
+        120.0,
+        30,
+        600,
+        30
+      ],
+      "temporary carry bar": [
+        10750,
+        1335,
+        760,
+        795,
+        30,
+        40
+      ]
+    },
+    "carrier": {
+      "compact carrier post": [
+        10905,
+        1215,
+        300,
+        20,
+        20,
+        550
+      ],
+      "lower pipe arm": [
+        10800,
+        1215,
+        440,
+        115,
+        20,
+        20
+      ],
+      "middle pipe arm": [
+        10800,
+        1215,
+        540,
+        115,
+        20,
+        20
+      ],
+      "valve reaction arm": [
+        10800,
+        1215,
+        740,
+        115,
+        20,
+        20
+      ],
+      "water fitting and cap domain": [
+        10770,
+        1220,
+        720,
+        60,
+        60,
+        130
+      ]
+    },
+    "parkedCarrier": {
+      "compact carrier post": [
+        11170,
+        1215,
+        250,
+        20,
+        20,
+        550
+      ],
+      "lower pipe arm": [
+        11065,
+        1215,
+        390,
+        115,
+        20,
+        20
+      ],
+      "middle pipe arm": [
+        11065,
+        1215,
+        490,
+        115,
+        20,
+        20
+      ],
+      "valve reaction arm": [
+        11065,
+        1215,
+        690,
+        115,
+        20,
+        20
+      ],
+      "water fitting and cap domain": [
+        11035,
+        1220,
+        670,
+        60,
+        60,
+        130
+      ]
+    },
+    "temporarySupport": {
+      "mast base": [
+        11150,
+        1175,
+        0,
+        200,
+        150,
+        6
+      ],
+      "mast": [
+        11225,
+        1225,
+        6,
+        50,
+        50,
+        1094
+      ],
+      "upper pipe restraint beam": [
+        10800,
+        1235,
+        1080,
+        450,
+        30,
+        40
+      ],
+      "lower receiving beam": [
+        10900,
+        1210,
+        210,
+        350,
+        30,
+        40
+      ],
+      "wall restraint beam": [
+        11250,
+        1135,
+        1035,
+        320.5,
+        130,
+        30
+      ],
+      "retained wall connection domain": [
+        11555.5,
+        1100,
+        1010,
+        15,
+        100,
+        230
+      ]
+    },
+    "retainedPipes": {
+      "retained upper water and cap domain": [
+        10775,
+        1225,
+        950,
+        50,
+        50,
+        1995.0
+      ],
+      "retained accessible waste cap domain": [
+        10850,
+        1250,
+        0,
+        50,
+        50,
+        125
+      ]
+    },
+    "firstRestPads": {
+      "first rest pad 1": [
+        10740,
+        1065,
+        0,
+        70,
+        70,
+        30
+      ],
+      "first rest pad 2": [
+        10740,
+        1665,
+        0,
+        70,
+        70,
+        30
+      ],
+      "first rest pad 3": [
+        11290,
+        1065,
+        0,
+        70,
+        70,
+        30
+      ],
+      "first rest pad 4": [
+        11290,
+        1665,
+        0,
+        70,
+        70,
+        30
+      ]
+    },
+    "smallPartsReceiverDomain": {
+      "isolated spool, bridge brackets and packing block": [
+        11150,
+        1175,
+        6,
+        200,
+        50,
+        100
+      ]
+    },
+    "retainedPlanContext": {
+      "service-utility-washer": [
+        10050,
+        700,
+        0,
+        650,
+        700,
+        3500
+      ],
+      "service-emitter-utility-E": [
+        11370.5,
+        1778,
+        0,
+        200,
+        650,
+        3500
+      ]
+    }
+  },
+  "states": {
+    "carrier": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -50
+      ],
+      [
+        265,
+        0,
+        -50
+      ]
+    ],
+    "frame": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        30
+      ],
+      [
+        0,
+        350,
+        30
+      ],
+      [
+        -200,
+        350,
+        30
+      ]
+    ],
+    "crew": [
+      [
+        [
+          10395,
+          1725
+        ],
+        [
+          10395,
+          2075
+        ],
+        [
+          10195,
+          2075
+        ]
+      ],
+      [
+        [
+          11045,
+          1725
+        ],
+        [
+          11045,
+          2075
+        ],
+        [
+          10845,
+          2075
+        ]
+      ]
+    ]
+  },
+  "checks": {
+    "carrier": {
+      "clearance": 30.0,
+      "leg": 1,
+      "member": "compact carrier post",
+      "retained": "NS rail at x10975 / z850"
+    },
+    "frame": {
+      "clearance": 25.0,
+      "leg": 2,
+      "member": "NS rail at x10975 / z135",
+      "retained": "retained accessible waste cap domain"
+    },
+    "crew": [
+      {
+        "stationaryClearance": [
+          25.0,
+          "feet/legs",
+          0,
+          "service-utility-washer"
+        ],
+        "relativeFrameClearance": [
+          205.5937104039171,
+          "torso",
+          "temporary carry bar"
+        ]
+      },
+      {
+        "stationaryClearance": [
+          25.5,
+          "torso",
+          0,
+          "service-emitter-utility-E"
+        ],
+        "relativeFrameClearance": [
+          55.0,
+          "feet/legs",
+          "leg 2"
+        ]
+      }
+    ],
+    "pads": [
+      40.0,
+      "first rest pad 1",
+      "service-utility-washer"
+    ],
+    "maxShoulderToFrameGrip": [
+      614.4509744479212,
+      645.0
+    ],
+    "maxShoulderToCarrierGrip": 625.0799948806552
+  },
+  "postComparison": {
+    "section": [
+      40,
+      40,
+      3
+    ],
+    "requiredI_mm4": 75000,
+    "movement": 1.6515544041450778,
+    "movementTarget": 3
+  },
+  "temporarySupportComparison": {
+    "mastSection": [
+      50,
+      50,
+      3
+    ],
+    "requiredI_mm4": 150000,
+    "upperReactionTarget_N": 100,
+    "lowerReactionTarget_N": 100,
+    "horizontalReactionTarget_N": 50,
+    "movement": 2.438927819651788,
+    "cornerStressBeforeAxial_MPa": 26.71362432175337,
+    "wallGroupMomentTarget_kNm": 0.25
+  },
+  "floorAndWall": {
+    "seatPlan": [
+      [
+        10930,
+        700,
+        90,
+        200
+      ],
+      [
+        10930,
+        1200,
+        90,
+        200
+      ],
+      [
+        11480,
+        700,
+        90,
+        200
+      ],
+      [
+        11480,
+        1200,
+        90,
+        200
+      ]
+    ],
+    "seatLayers": [
+      [
+        "lower mineral bed",
+        -180,
+        5
+      ],
+      [
+        "bare glass F control",
+        -175,
+        100
+      ],
+      [
+        "upper mineral bed",
+        -75,
+        5
+      ],
+      [
+        "steel spreader",
+        -70,
+        6
+      ],
+      [
+        "removable steel pedestal",
+        -64,
+        43
+      ],
+      [
+        "steel cap",
+        -21,
+        6
+      ],
+      [
+        "finish",
+        -15,
+        15
+      ]
+    ],
+    "verticalReactionTarget_N": 2000,
+    "peakIdealisedBearing_MPa": 0.2962962962962963,
+    "requiredPermissibleBearing_MPa": 0.3,
+    "windowRawStartY": 1300,
+    "proposedAnchorAxesYZ": [
+      [
+        1120,
+        1050
+      ],
+      [
+        1180,
+        1050
+      ],
+      [
+        1120,
+        1200
+      ],
+      [
+        1180,
+        1200
+      ]
+    ],
+    "wasteAccessTerritory": [
+      10825,
+      1225,
+      100,
+      100
+    ],
+    "wasteAccessToSeatGap": 5.0,
+    "soleContactPressure_MPa": 1.25,
+    "bareGlassControl": {
+      "product": "FOAMGLAS F slab",
+      "url": "https://www.foamglas.com/en-gb/products/fgbfslabs",
+      "nominalCS_kPa": 1600
+    }
+  },
+  "entryAndCompletionHolds": [
+    "Isolate and independently capture the whole top, bowl and upper waste kit on its own receiver before the modelled state. Actual sink assembly, lift and first receiver remain open.",
+    "Ordinary washer work retains the host. The revised drain direction uses a supported native siphon branch on the utility sink trap, with its fitted spigot, clamp, hose and access still to earn.",
+    "For rare host retirement, restrain and drain the upper water run before removing a visible lower spool. Cap the retained upstream run and release the detachable compact water carrier. Cut tooling, captured offcuts, native caps and actual repair joints remain open.",
+    "The retained floor-side waste cap must fit the 125 mm height domain with the access opening clear. Services owns the actual drain, trap and closure join.",
+    "Lower the carrier onto the receiving beam from the initial 50 mm packer. Keep its weight supported and guide it to the positive dock before lifting the frame. Actual packer withdrawal, restraints, grip loads, erection and captured handling remain open.",
+    "Qualify real worker stance, footwear, reach, grip force, centre of gravity, load sharing, pads and first rest before a physical task. The two declared bodies do not reserve the electrical station for simultaneous work.",
+    "Qualify floor bearing and local material stack, wall restraint and its accessible air, water and thermal interfaces, joints and all material residues before adoption."
+  ]
+}
