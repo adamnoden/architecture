@@ -1,0 +1,4 @@
+Disposal of work/swarm-next-20261031 after verified integration through PR #1145.
+Original head: 30bce83ab28c38e44b5f67a7ad1b1714cfff2cdd
+Accepted main merge: adee2d3197fd7af8af06fd5b0668f7acd6c8debd
+The original head is an ancestor of accepted main. RWT-METALS generation 6 is released. No active lease points at this source branch. This marker-only PR targets delete-me for automatic source-ref cleanup and does not change architecture.
