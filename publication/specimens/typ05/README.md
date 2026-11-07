@@ -38,7 +38,7 @@ It then tests the smallest role set earned by TYP-05A:
 - **Plate furniture is book typography.** Drawing-internal annotation sizes remain PLT authority and are not frozen here.
 - **Generated plate drawings are not TYP-05 inputs.** The plate-furniture specimens use canonical title/scale/caption metadata against a neutral drawing field. This prevents the typography harness from regenerating or fabricating Reference House geometry. Actual drawing adjacency is re-proved in the later representative-signature and PLT/TYP interface gates.
 
-The candidate metrics recorded in each generated `manifest.json` were physically accepted at actual-size B5 on 24 October 2026 and are frozen by `docs/publication/publication-typography-typ05c-mixed-content-freeze.md`. This harness retains those specimen-contract values. Subsequent production integration and the accepted RC2 typography contract are recorded in the [production release](../../../docs/publication/publication-typography-v1-release.md).
+The candidate metrics recorded in each generated `manifest.json` were physically accepted at actual-size B5 on 24 October 2026 and are frozen by `docs/publication/publication-typography-typ05c-mixed-content-freeze.md`. They are specimen-contract values, not yet production theme tokens; production-wide integration remains later TYP work.
 
 ## Build
 

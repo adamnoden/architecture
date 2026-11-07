@@ -1,8 +1,6 @@
 # Reference House — RH-08 Roof, Drainage and External Maintenance
 
-**Status:** historical RH-08 design gate record / pre-technical coordination
-
-**Current roof authority:** the low-slope, outward-only selection below is historical. The current project excludes flat/very-low-slope roofs and represents a provisional 25° inward/outward ring. See [ROF-00 baseline and inherited constraints](../../project/rof/rof-00-baseline-and-constraints.md) for the source inventory and unresolved system selection. The earlier access and drainage reasoning remains evidence, not current roof geometry.
+**Status:** RH-08 design gate record / pre-technical coordination  
 **Date:** 2026-10-12  
 **Question:** can the roof shed water, carry the required terminals and remain maintainable without internal drainage traps, unsafe improvised access or damage to the RH-04 architecture?  
 **Architectural authority:** [RH-04 Plan / Section / Elevation Gate](plan-section-elevation-gate.md)  

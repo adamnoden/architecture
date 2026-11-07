@@ -15,39 +15,19 @@ PHY does not convert a prepared prototype into evidence merely because drawings,
 |---|---|---|---|
 | `PHY-01` | W2 wall bay | held / optional research | `P01` |
 | `PHY-02` | Selective floor access | held | `P02` |
-| `PHY-03` | Floor-edge research and provisional engineering | [internal study complete](floor-edge-internal-study.md); structural/specimen acceptance remains separate | `P03` |
+| `PHY-03` | Structural floor-edge validation | priority; engineering first | `P03` |
 | `PHY-04` | Wall/ceiling movement junction | priority; build/test | `P04` |
 
 Historical derived identifiers such as `P03-A`, `P03-B`, `P04-BUILD`, `P04-TEST` and existing `p03-*` / `p04-*` filenames remain valid evidence identities. New live control should use `PHY-*` and may include the historical alias where it materially aids recovery.
 
-## Current-house applicability
-
-The [current-house applicability result](current-house-prototype-applicability.md) reconciles retained P03/P04 records with the current geometry and bounded dry selection after early physical feasibility. Use its release conditions before current-house issue/build; historical READY labels do not release a new specimen. No physical result, new prototype activation or maturity change follows.
-
 ## Current priority
 
-1. `PHY-03` — carry the [completed internal floor-edge investigation](floor-edge-internal-study.md) into the existing structural and assembly decisions. `PHY-03-ENGINEERING` is complete; actual structural acceptance and safe real-unit/specimen release remain under ER-STR-01 / EPR-RH11 before construction or reliance as verified structure.
+1. `PHY-03` — competent structural engineering must first reduce the floor-edge options to calculable/testable geometry. No structural specimen should be treated as evidence before that release.
 2. `PHY-04` — build and test the wall/ceiling movement junction against the existing protocol.
 3. `PHY-01` — optional challenger only when resources or a real high-change lining problem justify it.
 4. `PHY-02` — reopen only when a real maintainable under-floor service condition earns it.
 
 ## Book / house-resolution interface
-
-### Completed floor-edge investigation — 31 October 2026
-
-The [internal study](floor-edge-internal-study.md), [reproducible calculations](studies/floor-edge-internal.py), [complete numerical output](studies/floor-edge-internal.json) and [A3 comparison](studies/floor-edge-internal.svg) compare five floor families against the current source geometry and explicit scenario actions. They distinguish gravity bearing, restraint, diaphragm action, movement, closure and repair, including the entrance, stair, riser and wet interruptions. The conventional RC200 comparison, construction stages, asymmetric contact loss, long-field failure and independent challenge prevent a favourable ordinary strip from becoming a whole-floor pass.
-
-The provisional next enquiry favours direct bearing with supplier-qualified joints/ties, retaining untopped HC200 at the explicitly authored 3370 mm slab top as a distinct alternative before assuming a bespoke shallow riser hanger. HC200 plus 75 mm topping exceeds the held depth budget; untopped HC200 remains live. RC200 remains the separately designed conventional fallback. Neither the new slab-top trial nor any product pairing is adopted. An access-only surrogate may answer a limited closure question; real concrete units already load their supports under selfweight and require the stated safe release. The study closes the internal development contract below, while its decision-specific acceptance obligations remain in their existing routes.
-
-### PHY-03-ENGINEERING — internal development contract
-
-Under the [owner's development policy](../owner-house-charter.md#development-and-assurance--31-october-2026), produce `project/phy/floor-edge-internal-study.md` after PHY-APPLICABILITY. Use current STR/material direction and source identities first: the legacy timber/hanger study is historical comparison, not a compulsory current baseline. Evaluate available floor/support families without waiting for final whole-house adoption; label trial geometry and assumptions and do not adopt them through this packet.
-
-The study must separate gravity bearing, restraint, diaphragm action, movement, boundary closure and repair. Compare a credible conventional solution with the proposed alternatives; provide reproducible preliminary calculations with stated actions, dimensions, units, material/property sources, applicability and sensitivity. Cover ordinary edges, entrance/stair interruptions and service/wet penetrations where relevant. Use primary technical evidence, expose missing product/substrate/site information, and test the strongest failure case and conventional fallback. Do not invent loads or capacities as verified inputs.
-
-Exit: a reasoned provisional recommendation or rejection; internally challenged calculations and dispositions; a proposed representative specimen with a precise account of what it could and could not prove, or an evidenced explanation that no specimen is warranted; and remaining evidence tied to decisions and resolution points. Completion means the internal investigation is complete, not that a connection is accepted. Actual structural acceptance and safe specimen release remain under **ER-STR-01 / EPR-RH11** and the [PHY release conditions](current-house-prototype-applicability.md#p03-engineering-release-before-any-structural-claim). The release must identify competent responsibility, the accepted detail and loads, safe method and acceptance limits before any loaded test. No generic disclaimer or second agent can supply that external evidence.
-
-### Design and evidence ownership
 
 `IAS` and `OAS` will develop selected interior/opening assembly families. Their existence does **not** automatically reactivate held tests or create a new prototype family. `BCR` owns the construction-resolution inventory and may route a new physical question here only when a selected design makes that question concrete and consequential.
 
