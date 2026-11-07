@@ -3,7 +3,9 @@
 import argparse
 import html
 import json
+import math
 import subprocess
+from itertools import pairwise
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -60,6 +62,198 @@ def batch_comparison(control, floor, area, thickness):
         'effectiveWaterForNominalConcreteVolume_kg': water * concrete_volume,
         'effectiveWaterCementRatio': water / cement, 'cases': cases,
         'decision': 'The zero-air comparison exceeds the current structural weight budget. Actual fresh density with the delivered reinforcement must earn the load bound or STR must recheck the actual actions. Entrapped air remains a measured input.',
+    }
+
+
+def box_xy(rect):
+    x, y, width, length = rect
+    return x, y, x + width, y + length
+
+
+def support_boxes(grid, z):
+    boxes = {}
+    for name, girder in grid['girders'].items():
+        if girder['z'][0] < z < girder['z'][1]:
+            lo, hi = girder['extent']
+            datum, half = girder['datum'], girder['width'] / 2
+            boxes[name] = (lo, datum - half, hi, datum + half) if girder['axis'] == 'x' else (
+                datum - half, lo, datum + half, hi)
+    for name, member in grid['crossBeams'].items():
+        if member['z'][0] < z < member['z'][1]:
+            (xa, ya), (xb, yb) = member['a'], member['b']
+            half = member['width'] / 2
+            assert (xa == xb) != (ya == yb)
+            boxes[name] = (min(xa, xb), ya - half, max(xa, xb), ya + half) if ya == yb else (
+                xa - half, min(ya, yb), xa + half, max(ya, yb))
+    for head in grid['heads']:
+        if head['capZ'][0] < z < head['capZ'][1]:
+            x, y = head['xy']
+            width, length = head['capXY']
+            boxes[head['id']] = box_xy((x - width / 2, y - length / 2, width, length))
+    return boxes
+
+
+def cast_union(had, grid, floor, slab):
+    model = had['model']
+    west = grid['girders']['outer-W']['datum']
+    east = grid['girders']['outer-E']['datum']
+    south = grid['girders']['outer-S']['datum']
+    north = grid['girders']['outer-NW']['datum']
+    dry_extent = (west, south, east, north)
+    lx, ly, lw, _ = model['loggia']['clear']
+    ex, ey, _, eh = had['passage']['outdoor']
+    seat = box_xy(model['southCourtThresholdReference']['pan']['permanentSeat']['plan'])
+    cuts = [box_xy(model['court']), (lx, ly, lx + lw, north), (ex, ey, east, ey + eh)]
+    support = support_boxes(grid, slab['bottom'])
+    all_boxes = [dry_extent, seat, *cuts, *support.values()]
+    xs, ys = [sorted({edge for box in all_boxes for edge in box[axis::2]}) for axis in (0, 1)]
+
+    def inside(x, y, box):
+        return box[0] < x < box[2] and box[1] < y < box[3]
+
+    cells = {}
+    for i, (xa, xb) in enumerate(pairwise(xs)):
+        for j, (ya, yb) in enumerate(pairwise(ys)):
+            x, y = (xa + xb) / 2, (ya + yb) / 2
+            dry = inside(x, y, seat) or (inside(x, y, dry_extent) and not any(
+                inside(x, y, cut) for cut in cuts))
+            on_grid = any(inside(x, y, box) for box in support.values())
+            cells[i, j] = (dry, on_grid, (xb - xa) * (yb - ya))
+    dry_area = sum(a for dry, _, a in cells.values() if dry) / 1e6
+    on_grid_area = sum(a for dry, on_grid, a in cells.values() if dry and on_grid) / 1e6
+    shoulder_area = sum(a for dry, on_grid, a in cells.values() if not dry and on_grid) / 1e6
+    assert math.isclose(dry_area, sum(floor['physicalAreaM2'].values()), abs_tol=1e-6)
+    assert math.isclose(on_grid_area, floor['physicalAreaM2']['direct'], abs_tol=1e-6)
+    assert shoulder_area > 0 and len(support) == len(grid['girders']) + len(grid['crossBeams']) - 2 + grid['headCount']
+    end = {'edgeAtContinuingDrySoffit_m': 0, 'edgeAtVerticalRCFace_m': 0}
+    for (i, j), (_, on_grid, _) in cells.items():
+        if on_grid:
+            for di, dj, length in [(1, 0, ys[j+1] - ys[j]), (-1, 0, ys[j+1] - ys[j]),
+                                   (0, 1, xs[i+1] - xs[i]), (0, -1, xs[i+1] - xs[i])]:
+                next_dry, next_grid, _ = cells.get((i + di, j + dj), (False, False, 0))
+                if not next_grid:
+                    key = 'edgeAtContinuingDrySoffit_m' if next_dry else 'edgeAtVerticalRCFace_m'
+                    end[key] += length / 1000
+    depth = (slab['top'] - slab['bottom']) / 1000
+    return {
+        'drySlabAndSeatArea_m2': dry_area, 'drySlabAndSeatVolume_m3': dry_area * depth,
+        'overlapCountedOnce_m2': on_grid_area, 'additionalCommonShoulderArea_m2': shoulder_area,
+        'additionalCommonShoulderVolume_m3': shoulder_area * depth,
+        'proposedMonolithicUpperCastVolume_m3': (dry_area + shoulder_area) * depth,
+        'lowerLiftInterfaceArea_m2': on_grid_area + shoulder_area, 'lowerLiftPlanEdges': end,
+        'locatedExamples_mm': [
+            {'section': 'outer west at Y2750', 'beamNormalX': [support['outer-W'][0], support['outer-W'][2]],
+             'drySlabEdgeX': west, 'additionalShoulderX': [support['outer-W'][0], west]},
+            {'section': 'court south at X4450', 'beamNormalY': [support['court-S'][1], support['court-S'][3]],
+             'drySlabEdgeY': cuts[0][1], 'additionalShoulderY': None},
+            {'section': 'court east at Y5900', 'beamNormalX': [support['court-E'][0], support['court-E'][2]],
+             'drySlabEdgeX': cuts[0][2], 'additionalShoulderX': [support['court-E'][0], cuts[0][2]]},
+            {'section': 'loggia west at Y10300', 'beamNormalX': [support['loggia-W'][0], support['loggia-W'][2]],
+             'drySlabEdgeX': lx, 'additionalShoulderX': None},
+        ],
+        'scope': 'Structural candidate union at Z−380..−180. Separate exterior decking and low ties are outside it. Interface edges are potential concrete-face terminations before actual covers, coatings, returns or contacts. They are not measured open paths or another air allocation. Shoulder cage, batch and weight are not inherited from the dry slab.',
+    }
+
+
+def straight_perimeter(sources, slab):
+    model = sources['HAD']['model']
+    grid = sources['STRgrid']
+    boxes = support_boxes(grid, slab['bottom'])
+    outer = sources['ordinaryOuter']['occurrence']['ordinaryPerpendicularLayers_mm']
+    assert outer[-1][2] == model['envelope']
+    ordinary_widths = [hi - lo for _, lo, hi in outer]
+    loggia_widths = [width for _, width in reversed(model['weather']['layersRoomToWeather'])]
+    loggia_wall = next(row for row in model['groundWalls'] if row['id'] == 'loggia-west-weather')
+    dpc = sources['ordinaryWall']['bondedMineralBase']
+    header = dpc['headerWidth']
+    cx, cy, cw, _ = model['court']
+    sections = [
+        ('outer-west', 'outer-W', 2750, 0, 1, ordinary_widths),
+        ('court-south', 'court-S', 4450, cy, -1, ordinary_widths),
+        ('court-east', 'court-E', 5900, cx + cw, 1, ordinary_widths),
+        ('loggia-west-weather', 'loggia-W', 10300, model['loggia']['clear'][0], -1, loggia_widths),
+    ]
+    output = []
+    for wall, beam, station, exterior, sign, widths in sections:
+        leaf, drain, glass, core, plaster = widths
+        glass_end = leaf + drain + glass
+        project = (header - core) / 2
+
+        def span(lo, hi):
+            return sorted((exterior + sign * lo, exterior + sign * hi))
+
+        normal = 1 if grid['girders'][beam]['axis'] == 'x' else 0
+        lower, upper = boxes[beam][normal::2]
+        assert boxes[beam][1-normal] < station < boxes[beam][3-normal]
+        assert grid['girders'][beam]['z'][1] == dpc['fromZ'] == slab['top']
+        header_span = span(glass_end - project, glass_end + core + project)
+        assert lower <= min(exterior, *header_span) and max(exterior, *header_span) <= upper
+        assert project < glass and project > plaster
+        assert not any(a['wall'] == wall and abs(a['centre'] - station) <= a['width'] / 2
+                       for a in model['archOpeningRegister']['GROUND'])
+        core_span = span(glass_end, glass_end + core)
+        if beam == 'loggia-W':
+            assert core_span == loggia_wall['structuralCore']
+        output.append({'wall': wall, 'stationAlongWall_mm': station, 'beam': beam,
+                       'beamNormalBounds_mm': [lower, upper], 'coreNormalBounds_mm': core_span,
+                       'centredHeaderNormalBounds_mm': header_span,
+                       'centredHeaderProjectionEach_mm': project,
+                       'drainedGapPlanRetained_mm': drain, 'glassPlanRemainingAtBand_mm': glass - project,
+                       'floorLayerZoneEncroachmentBeyondFinish_mm': project - plaster})
+    return {
+        'straightSections': output,
+        'clearCavityDepthBelowInnerBandBase_mm': dpc['fromZ'] - slab['top'],
+        'existingLoggiaTrayComparison': sources['loggia']['cavityTray'],
+        'unqualified': ['Header bonding, movement and thermal response at each boundary and corner.',
+                        'Actual ordinary cavity base tray, outward weeps and separation from the ventilated floor void.',
+                        'Actual court door jamb, pan, seat and retained ordinary wall-base interfaces.',
+                        'Four outer pier restraints, portal contacts, three RC crossings and lower stair toe.',
+                        'Dry specimen and installed air, capillary and thermal behaviour.'],
+        'role': 'Test the same centred ordinary header without thinning the drained gap or moving the core. The ordinary 429.5 wall recipe and the separate loggia 519.5 recipe have different remaining glass. The old loggia tray is a located research control with its own support and finish interfaces, not an ordinary shell or court tray.',
+    }
+
+
+def vent_slices(control, had, grid, void):
+    low, high = control['z_mm']
+    front, rear = control['westEastBandsY_mm']
+    west_east = control['westEastExtentX_mm']
+    west, east = (grid['girders'][name] for name in ('outer-W', 'outer-E'))
+    assert high < min(west['z'][0], east['z'][0])
+    assert west_east[0] < west['datum'] - west['width'] / 2
+    assert west_east[1] > east['datum'] + east['width'] / 2
+    assert low > void['effectiveStressDatum_mm']
+    all_support_bottom = min(void['clearanceCases'][key]['bottomZ_mm'] for key in (
+        'lowestGirderSoffit', 'lowestFoundationCap'))
+    assert high < all_support_bottom
+    east_track = had['passage']['structuralClearY']
+    normal_carrier_bottom = min(z for _, z in had['model']['northNormalRoute']['normal']['carrierBottom'])
+    assert normal_carrier_bottom > high and front[1] < east_track[0] < east_track[1] < rear[0]
+    widths = [b - a for a, b in (front, rear)]
+    assert widths[0] == widths[1]
+    bands = []
+    for name, (start, end) in [('front', front), ('rear', rear)]:
+        gaps = []
+        for head in grid['heads']:
+            x, y = head['xy']
+            radius = head['shaftDiameter'] / 2
+            if west_east[0] < x + radius and x - radius < west_east[1]:
+                gaps.append((max(start - y - radius, y - radius - end), head['id']))
+        gap, shaft = min(gaps)
+        assert gap > 0
+        bands.append({'id': name, 'planXYXY_mm': [west_east[0], start, west_east[1], end],
+                      'minimumShaftEnvelopeReserve_mm': gap, 'governingShaft': shaft})
+    gross = widths[0] * (high - low)
+    free = gross * control['screenFreeFractionComparison']
+    return {
+        'control': control, 'opposedBands': bands, 'undersideReserve_mm': all_support_bottom - high,
+        'shell_mm': had['model']['shell'], 'courtPlan_mm': had['model']['court'],
+        'loggiaPlan_mm': had['model']['loggia']['clear'],
+        'heightAboveEffectiveStressDatum_mm': low - void['effectiveStressDatum_mm'],
+        'northCarrierBottomMinimum_mm': normal_carrier_bottom,
+        'fourMouthGrossArea_mm2': gross * 4, 'oneMouthNominalScreenFreeArea_mm2': free,
+        'twoMouthsPerFaceNominalScreenFreeArea_mm2': free * 2,
+        'fourMouthNominalScreenFreeArea_mm2': free * 4,
+        'scope': 'Geometric strips between external W/E mouth reservations. Actual screens, plinth, independent outdoor-deck supports, services, drainage, flood/splash response, effective openings and distribution to every bay remain unqualified. The rear strip traverses the zone below the outdoor loggia. Free areas are screen sensitivities, not flow, compliance or a substitute for effective drainage.',
     }
 
 
@@ -147,6 +341,7 @@ def produce():
     concrete_volume = batch['nominalConcreteVolumeBeforeLapsAndEdges_m3']
     batch['guidanceMinimumCementAtNominalConcreteVolume_kg'] = concrete_volume * guidance['minimumCement_kg_m3']
     void = void_comparison(had, grid, area, slab['bottom'], guidance)
+    vent = vent_slices(control['ventSliceTrial'], had, grid, void)
     assert void['supersededGradeToFullTrackClearance_mm'] < 0
     assert void['clearanceCases']['lowestFoundationCap']['surplusOver150Comparison_mm'] > 0
     assert grid['headCount'] == len(grid['heads']) == 52
@@ -172,10 +367,12 @@ def produce():
                         'sectionY_mm': ordinary['section']['atY'],
                         'lowerInterfaceZ_mm': slab['bottom'], 'structuralPour': floor['pour'],
                         'structuralMaterialScope': floor['materials']},
-        'guidance': guidance, 'voidComparison': void,
+        'guidance': guidance, 'voidComparison': void, 'ventSliceTrial': vent,
+        'proposedMonolithicCastUnion': cast_union(had, grid, floor, slab),
         'batchComparison': batch, 'binderEvidence': control['binderEvidence'], 'curingAndJoint': control['curingAndJoint'],
         'airAndCapillaryRegister': {
             'ordinaryDpcControl': ordinary['bondedMineralBase'], 'ordinaryAirRoute': ordinary['airRouteControl'],
+            'proposedStraightPerimeter': straight_perimeter(sources, slab),
             'wallBases': bases, 'threeSourceProposedRCCrossings': crossings, 'groundToe': toe,
             'proposedFoundationShaftCount': grid['headCount'], 'openingCuts': doors,
             'capillaryPaths': [
@@ -195,11 +392,10 @@ def produce():
 
 def figure(result):
     floor = result['actualFloor']
-    batch = result['batchComparison']
     void = result['voidComparison']
     air = result['airAndCapillaryRegister']
-    svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="890" viewBox="0 0 1250 890">',
-           '<rect width="1250" height="890" fill="#faf9f4"/><g font-family="Arial" fill="#263b47">']
+    svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="1135" viewBox="0 0 1250 1135">',
+           '<rect width="1250" height="1135" fill="#faf9f4"/><g font-family="Arial" fill="#263b47">']
 
     def text(x, y, label, size=17):
         svg.append(f'<text x="{x}" y="{y}" font-size="{size}">{html.escape(label)}</text>')
@@ -217,7 +413,12 @@ def figure(result):
     for low, high, color in [(-180, -80, '#cfe2db'), (-80, -15, '#e6d9c2'), (-15, 0, '#d5c8ad')]:
         block(60, 306.25, low, high, color)
         block(413.75, 660, low, high, color)
-    block(306.25, 413.75, -180, -30, '#ba8f6e')
+    bed_bottom = floor['stack']['innerDpc'][0]
+    dpc = air['ordinaryDpcControl']
+    for bed, course in zip(dpc['beds'], dpc['courses']):
+        block(306.25, 413.75, bed_bottom, bed_bottom + bed, '#e3ccae')
+        block(306.25, 413.75, bed_bottom + bed, bed_bottom + bed + course, '#ba8f6e')
+        bed_bottom += bed + course
     block(325, 395, -30, 220, '#c6a489')
     block(311.5, 325, 0, 220, '#e5d9cb')
     block(395, 408.5, 0, 220, '#e5d9cb')
@@ -228,12 +429,13 @@ def figure(result):
     text(60, 736, 'The wall core bridges the 30 mm between DPC and plaster.')
     text(60, 764, 'Connected lower concrete can carry ground moisture.')
     text(60, 816, 'Geometry and scope shown separately from performance.', 15)
-    text(730, 127, 'B  ONE POUR / ACTUAL QUANTITIES', 20)
+    text(730, 127, 'B  PROPOSED UPPER CAST', 20)
     text(730, 165, f'{floor["physicalArea_m2"]:.3f} m² physical slab and seat.')
-    text(730, 192, f'{batch["grossRCVolume_m3"]:.3f} m³ gross RC at nominal depth.')
-    text(730, 219, f'{batch["steelBeforeLapsAndEdges_kg"]/1000:.3f} t steel before laps and edges.')
-    text(730, 246, f'{batch["cementForNominalConcreteVolume_kg"]/1000:.3f} t cement in the trial batch.')
-    text(730, 273, 'Zero-air sensitivity exceeds the 25 kN/m³ load bound.')
+    cast = result['proposedMonolithicCastUnion']
+    text(730, 192, f'{cast["drySlabAndSeatVolume_m3"]:.3f} m³ dry slab and seat, nominal gross.')
+    text(730, 219, f'+{cast["additionalCommonShoulderVolume_m3"]:.3f} m³ of upper beam and cap shoulders.')
+    text(730, 246, f'{cast["proposedMonolithicUpperCastVolume_m3"]:.3f} m³ total proposed upper cast, nominal gross.')
+    text(730, 273, f'{cast["lowerLiftInterfaceArea_m2"]:.3f} m² potential interface at Z−380.')
     text(730, 328, 'C  D1800 STRESS COMPARISON', 20)
     for i, (key, label) in enumerate([
         ('slabSoffit', 'Slab soffit'), ('lowestGirderSoffit', 'Lowest girder'),
@@ -249,6 +451,29 @@ def figure(result):
     text(730, 683, 'Actual contributions remain unmeasured.')
     text(730, 754, 'Glass stays above the structural pour.')
     text(730, 781, 'The comparison retains the accessible service zone.')
+    text(55, 865, 'E  TWO W/E OPENING RESERVATIONS', 20)
+    vent = result['ventSliceTrial']
+    scale = 0.0175
+    origin_x, origin_y = 67, 1110
+
+    def plan_box(x, y, w, h, fill, stroke):
+        svg.append(f'<rect x="{origin_x+x*scale}" y="{origin_y-(y+h)*scale}" width="{w*scale}" '
+                   f'height="{h*scale}" fill="{fill}" stroke="{stroke}"/>')
+
+    shell = vent['shell_mm']
+    plan_box(0, 0, shell, shell, '#e8e6dc', '#52646d')
+    for key in ('courtPlan_mm', 'loggiaPlan_mm'):
+        plan_box(*vent[key], '#f6f1e5', '#a49785')
+    for band in vent['opposedBands']:
+        xa, ya, xb, yb = band['planXYXY_mm']
+        plan_box(xa, ya, xb - xa, yb - ya, '#5c8f94', '#326c71')
+    text(310, 909, '400 × 150 mm strips at Z−1000..−850, below the grid.')
+    text(310, 937, 'Front Y2000..2400, 50 mm nominal shaft reserve.')
+    text(310, 965, 'Rear Y10100..10500, 25 mm reserve. Under outdoor loggia.')
+    text(310, 993, 'Four mouths give 120,000 mm² at an assumed 50% free screen.')
+    text(310, 1021, 'Two opposed strips do not establish circulation to all bays.')
+    text(310, 1049, 'Actual plinth, deck supports, screens, grade and outfall remain open.')
+    text(310, 1093, 'The upper dwelling air boundary stays separate from these openings.', 15)
     svg.append('</g></svg>')
     return ''.join(svg) + '\n'
 

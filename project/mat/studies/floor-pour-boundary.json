@@ -37,6 +37,18 @@
       "blob": "5d899197848d0f951d8ff4573983aff81d4fd32f",
       "role": "Proposed bonded mineral DPC and ordinary wall/floor air transition."
     },
+    "ordinaryOuter": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/sw-corner-envelope.json",
+      "blob": "e3655ddc0ba3369a433a482172cd6d636bad289b",
+      "role": "Ordinary 429.5 mm wall layer order only. The historic local pier, floor and lower cold receiver are excluded."
+    },
+    "loggia": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/loggia-envelope-section.json",
+      "blob": "0ec54ba2420b9337ce81b1867eef4c83d661e69b",
+      "role": "Earlier located loggia wall-base tray comparison only. Current depths, plan, grid and site comparator come from HAD and STR."
+    },
     "airDuty": {
       "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
       "path": "project/mat/studies/whole-house-leakage-duty.json",
@@ -60,6 +72,13 @@
     "ventAreaPerExternalWallRun_mm2_m": 1500,
     "ventAreaPerFloorArea_mm2_m2": 500,
     "role": "Suspended-floor moisture control and separate drainage/ventilation conditions. Site gas, groundwater, actual materials and project applicability remain open."
+  },
+  "ventSliceTrial": {
+    "z_mm": [-1000, -850],
+    "westEastBandsY_mm": [[2000, 2400], [10100, 10500]],
+    "westEastExtentX_mm": [-150, 12150],
+    "screenFreeFractionComparison": 0.5,
+    "role": "Two opposed W/E geometric strips under the proposed common grid. The 50% fraction is an authored removable-screen requirement for comparison. No product, formed plinth opening, exposure or every-bay circulation is assumed."
   },
   "binderEvidence": {
     "product": "Cemex Portland, Rugby works, CEM I 52.5 N",

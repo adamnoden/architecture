@@ -37,6 +37,18 @@
       "blob": "5d899197848d0f951d8ff4573983aff81d4fd32f",
       "role": "Proposed bonded mineral DPC and ordinary wall/floor air transition."
     },
+    "ordinaryOuter": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/sw-corner-envelope.json",
+      "blob": "e3655ddc0ba3369a433a482172cd6d636bad289b",
+      "role": "Ordinary 429.5 mm wall layer order only. The historic local pier, floor and lower cold receiver are excluded."
+    },
+    "loggia": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/loggia-envelope-section.json",
+      "blob": "0ec54ba2420b9337ce81b1867eef4c83d661e69b",
+      "role": "Earlier located loggia wall-base tray comparison only. Current depths, plan, grid and site comparator come from HAD and STR."
+    },
     "airDuty": {
       "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
       "path": "project/mat/studies/whole-house-leakage-duty.json",
@@ -159,6 +171,133 @@
     "actualConnectedVentOpeningArea_mm2": null,
     "actualSolumDrainageAndExposure": null,
     "scope": "The D1800 stress check compares vertical reservations. The deeper water track keeps its own location and vent/drainage obligations. Establish the actual underfloor enclosure, opposite openings, free path past every support and screen, ground/drainage relation, water entry and vermin protection before accepting a vent route."
+  },
+  "ventSliceTrial": {
+    "control": {
+      "z_mm": [
+        -1000,
+        -850
+      ],
+      "westEastBandsY_mm": [
+        [
+          2000,
+          2400
+        ],
+        [
+          10100,
+          10500
+        ]
+      ],
+      "westEastExtentX_mm": [
+        -150,
+        12150
+      ],
+      "screenFreeFractionComparison": 0.5,
+      "role": "Two opposed W/E geometric strips under the proposed common grid. The 50% fraction is an authored removable-screen requirement for comparison. No product, formed plinth opening, exposure or every-bay circulation is assumed."
+    },
+    "opposedBands": [
+      {
+        "id": "front",
+        "planXYXY_mm": [
+          -150,
+          2000,
+          12150,
+          2400
+        ],
+        "minimumShaftEnvelopeReserve_mm": 50.0,
+        "governingShaft": "P41"
+      },
+      {
+        "id": "rear",
+        "planXYXY_mm": [
+          -150,
+          10100,
+          12150,
+          10500
+        ],
+        "minimumShaftEnvelopeReserve_mm": 25.0,
+        "governingShaft": "P29"
+      }
+    ],
+    "undersideReserve_mm": 100,
+    "shell_mm": 12000,
+    "courtPlan_mm": [
+      4250,
+      4250,
+      3500,
+      3500
+    ],
+    "loggiaPlan_mm": [
+      4800,
+      7750,
+      2400,
+      4250
+    ],
+    "heightAboveEffectiveStressDatum_mm": 450,
+    "northCarrierBottomMinimum_mm": -268.25,
+    "fourMouthGrossArea_mm2": 240000,
+    "oneMouthNominalScreenFreeArea_mm2": 30000.0,
+    "twoMouthsPerFaceNominalScreenFreeArea_mm2": 60000.0,
+    "fourMouthNominalScreenFreeArea_mm2": 120000.0,
+    "scope": "Geometric strips between external W/E mouth reservations. Actual screens, plinth, independent outdoor-deck supports, services, drainage, flood/splash response, effective openings and distribution to every bay remain unqualified. The rear strip traverses the zone below the outdoor loggia. Free areas are screen sensitivities, not flow, compliance or a substitute for effective drainage."
+  },
+  "proposedMonolithicCastUnion": {
+    "drySlabAndSeatArea_m2": 104.895225,
+    "drySlabAndSeatVolume_m3": 20.979045,
+    "overlapCountedOnce_m2": 53.86219375,
+    "additionalCommonShoulderArea_m2": 17.872375,
+    "additionalCommonShoulderVolume_m3": 3.5744750000000005,
+    "proposedMonolithicUpperCastVolume_m3": 24.553520000000002,
+    "lowerLiftInterfaceArea_m2": 71.73456875000001,
+    "lowerLiftPlanEdges": {
+      "edgeAtContinuingDrySoffit_m": 119.73999999999948,
+      "edgeAtVerticalRCFace_m": 68.80999999999996
+    },
+    "locatedExamples_mm": [
+      {
+        "section": "outer west at Y2750",
+        "beamNormalX": [
+          -17.5,
+          682.5
+        ],
+        "drySlabEdgeX": 332.5,
+        "additionalShoulderX": [
+          -17.5,
+          332.5
+        ]
+      },
+      {
+        "section": "court south at X4450",
+        "beamNormalY": [
+          3650.0,
+          4250.0
+        ],
+        "drySlabEdgeY": 4250,
+        "additionalShoulderY": null
+      },
+      {
+        "section": "court east at Y5900",
+        "beamNormalX": [
+          7650.0,
+          8250.0
+        ],
+        "drySlabEdgeX": 7750,
+        "additionalShoulderX": [
+          7650.0,
+          7750
+        ]
+      },
+      {
+        "section": "loggia west at Y10300",
+        "beamNormalX": [
+          4200.0,
+          4800.0
+        ],
+        "drySlabEdgeX": 4800,
+        "additionalShoulderX": null
+      }
+    ],
+    "scope": "Structural candidate union at Z−380..−180. Separate exterior decking and low ties are outside it. Interface edges are potential concrete-face terminations before actual covers, coatings, returns or contacts. They are not measured open paths or another air allocation. Shoulder cage, batch and weight are not inherited from the dry slab."
   },
   "batchComparison": {
     "control": {
@@ -301,6 +440,116 @@
         "Concrete moisture resistance, air permeability, crack/joint leakage and gas suitability remain separate duties",
         "Do not assume a new metal return is needed or qualified; if used it needs actual cast-in depth, cage/compaction, weld, movement and plaster-interface evidence"
       ]
+    },
+    "proposedStraightPerimeter": {
+      "straightSections": [
+        {
+          "wall": "outer-west",
+          "stationAlongWall_mm": 2750,
+          "beam": "outer-W",
+          "beamNormalBounds_mm": [
+            -17.5,
+            682.5
+          ],
+          "coreNormalBounds_mm": [
+            262.5,
+            402.5
+          ],
+          "centredHeaderNormalBounds_mm": [
+            225.0,
+            440.0
+          ],
+          "centredHeaderProjectionEach_mm": 37.5,
+          "drainedGapPlanRetained_mm": 50.0,
+          "glassPlanRemainingAtBand_mm": 72.5,
+          "floorLayerZoneEncroachmentBeyondFinish_mm": 10.5
+        },
+        {
+          "wall": "court-south",
+          "stationAlongWall_mm": 4450,
+          "beam": "court-S",
+          "beamNormalBounds_mm": [
+            3650.0,
+            4250.0
+          ],
+          "coreNormalBounds_mm": [
+            3847.5,
+            3987.5
+          ],
+          "centredHeaderNormalBounds_mm": [
+            3810.0,
+            4025.0
+          ],
+          "centredHeaderProjectionEach_mm": 37.5,
+          "drainedGapPlanRetained_mm": 50.0,
+          "glassPlanRemainingAtBand_mm": 72.5,
+          "floorLayerZoneEncroachmentBeyondFinish_mm": 10.5
+        },
+        {
+          "wall": "court-east",
+          "stationAlongWall_mm": 5900,
+          "beam": "court-E",
+          "beamNormalBounds_mm": [
+            7650.0,
+            8250.0
+          ],
+          "coreNormalBounds_mm": [
+            8012.5,
+            8152.5
+          ],
+          "centredHeaderNormalBounds_mm": [
+            7975.0,
+            8190.0
+          ],
+          "centredHeaderProjectionEach_mm": 37.5,
+          "drainedGapPlanRetained_mm": 50.0,
+          "glassPlanRemainingAtBand_mm": 72.5,
+          "floorLayerZoneEncroachmentBeyondFinish_mm": 10.5
+        },
+        {
+          "wall": "loggia-west-weather",
+          "stationAlongWall_mm": 10300,
+          "beam": "loggia-W",
+          "beamNormalBounds_mm": [
+            4200.0,
+            4800.0
+          ],
+          "coreNormalBounds_mm": [
+            4307.5,
+            4447.5
+          ],
+          "centredHeaderNormalBounds_mm": [
+            4270.0,
+            4485.0
+          ],
+          "centredHeaderProjectionEach_mm": 37.5,
+          "drainedGapPlanRetained_mm": 50,
+          "glassPlanRemainingAtBand_mm": 162.5,
+          "floorLayerZoneEncroachmentBeyondFinish_mm": 10.5
+        }
+      ],
+      "clearCavityDepthBelowInnerBandBase_mm": 0,
+      "existingLoggiaTrayComparison": {
+        "innerBase": -20,
+        "outerWeep": -35,
+        "innerReturn": 190,
+        "backLeg": 210,
+        "outerDpc": [
+          120,
+          270
+        ],
+        "spoutProjection": 60,
+        "spoutClearToHighestWalk": 75,
+        "status": "Custom formed metal tray/embedded return requires qualification; no225mm clear cavity claimed."
+      },
+      "unqualified": [
+        "Header bonding, movement and thermal response at each boundary and corner.",
+        "Actual ordinary cavity base tray, outward weeps and separation from the ventilated floor void.",
+        "Actual court door jamb, pan, seat and retained ordinary wall-base interfaces.",
+        "Four outer pier restraints, portal contacts, three RC crossings and lower stair toe.",
+        "Dry specimen and installed air, capillary and thermal behaviour."
+      ],
+      "role": "Test the same centred ordinary header without thinning the drained gap or moving the core. The ordinary 429.5 wall recipe and the separate loggia 519.5 recipe have different remaining glass. The old loggia tray is a located research control with its own support and finish interfaces, not an ordinary shell or court tray."
     },
     "wallBases": [
       {
