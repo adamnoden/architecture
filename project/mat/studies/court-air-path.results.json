@@ -1,0 +1,204 @@
+{
+  "status": "WORKING DESIGN — whole air path not yet resolved; no owning geometry, material, structure or performance admission",
+  "sources": {
+    "HAD": {
+      "commit": "8576cf800822d3276cd8a7aed9d167f1bd68b90e",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+      "role": "Actual owning pan/floor/frame reference, still physically unqualified"
+    },
+    "mechanicalResearch": {
+      "commit": "8576cf800822d3276cd8a7aed9d167f1bd68b90e",
+      "path": "project/mat/studies/court-apron-support.results.json",
+      "blob": "1d8a3f90379452328be44bc1b7d3707332e643c4",
+      "role": "Merged bounded mechanical research; proposed channels/caps/flanges are not owning HAD geometry or a whole-pan tolerance pass"
+    },
+    "mineralBaseResearch": {
+      "commit": "8576cf800822d3276cd8a7aed9d167f1bd68b90e",
+      "path": "project/mat/studies/conventional-ground-junction.json",
+      "blob": "5d899197848d0f951d8ff4573983aff81d4fd32f",
+      "role": "Unselected full-header/course geometric control; no masonry air, moisture or bearing performance transfer"
+    },
+    "STRweatherPocket": {
+      "commit": "d21ced1f4ec09f7d9dd8f0e36bc6a98cb8bdcd2f",
+      "path": "project/str/studies/current-house-arch-detail.json",
+      "blob": "504202be0ff1ee1a56628349deaf8395846a0177",
+      "role": "Immutable unadopted STR1362 local weather-jamb/arch restraint result, not capacity admission"
+    }
+  },
+  "headerContinuation": {
+    "control": {
+      "x": [
+        5050,
+        6950
+      ],
+      "width": 215,
+      "capZ": [
+        -30,
+        0
+      ],
+      "role": "A proposed continuation across the door, with end joints overlapping proposed wall-base territory; no service exclusion or installed quantity is silently adopted"
+    },
+    "axisY_mm": 3917.5,
+    "facesY_mm": [
+      3810.0,
+      4025.0
+    ],
+    "DPCz_mm": [
+      -180,
+      -30
+    ],
+    "finishedRoomFaceY_mm": 3820.5,
+    "projectionIntoRoomField_mm": 10.5,
+    "localRoomStripArea_m2": 0.01995,
+    "completeDpcTerritory_m3": 0.061275,
+    "doorOnlyTerritory_m3": 0.05805,
+    "endJointOverlapTerritory_m3": 0.003225,
+    "settingOutOnly": [
+      {
+        "unitLength_mm": 102,
+        "17Units16PerpendsLength_mm": 1894,
+        "differenceFrom1900_mm": -6
+      },
+      {
+        "unitLength_mm": 102.5,
+        "17Units16PerpendsLength_mm": 1902.5,
+        "differenceFrom1900_mm": 2.5
+      }
+    ],
+    "scope": "Room-strip intersection is geometry, not an actual Services route or empty threshold. End overlaps are not all new material. Setting-out toys are not a bonded or purchased unit schedule."
+  },
+  "wholePanLowerReveal": {
+    "control": {
+      "outwardEach_mm": 6,
+      "z": [
+        -65,
+        100
+      ],
+      "topLinerReturnZ": 150,
+      "role": "PRE-FORMED construction reservation and renewable liner through the lower weather reveal; never later chasing or automatic arch/foot capacity"
+    },
+    "sharedAuthoredChallenge_mm": 4,
+    "ends": [
+      {
+        "end": "west",
+        "preformedRevealX_mm": 5094,
+        "lowerLinerInnerX_mm": 5095.5,
+        "bareOriginalRevealNegativeControl_mm": -2,
+        "minimumPanToLowerLiner_mm": 2.5,
+        "minimumPanInnerToFrameOuter_mm": 2.5
+      },
+      {
+        "end": "east",
+        "preformedRevealX_mm": 6906,
+        "lowerLinerInnerX_mm": 6904.5,
+        "bareOriginalRevealNegativeControl_mm": -2,
+        "minimumPanToLowerLiner_mm": 2.5,
+        "minimumPanInnerToFrameOuter_mm": 2.5
+      }
+    ],
+    "minimumBottomClearance_mm": 4.5,
+    "minimumTopClearance_mm": 21,
+    "owningSTRProposal": {
+      "decision": "The isolated weather-leaf jamb already overturns in the ring-plus-low-spandrel control; greater upper masonry/arch loads and an actual perpendicular return need joining. The pocket is on the opening-side edge, away from the governing far toe. Keep its formed coursing, liner, bearing and shear unresolved. The historic 16.54 mm patch clearance was for a different 600-rise geometry.",
+      "door": {
+        "centrelineSpringXYZ": [
+          5035.5,
+          6964.5,
+          2636.0
+        ],
+        "horizontalGapFromOldPatch": 86.0,
+        "outerSpringProjection": 129.0,
+        "radial": 215,
+        "rise": 300,
+        "width": 1800
+      },
+      "lowerPocket": {
+        "distanceFromDPCAt120": 20,
+        "normalY": [
+          4147.5,
+          4250
+        ],
+        "openingSideRebateEach": 6,
+        "remainingWidth": 844,
+        "removedBaseMM2Each": 615,
+        "solidDepthBelowPocketToRCTop": 115,
+        "z": [
+          -65,
+          100
+        ]
+      },
+      "partialGravityCase": {
+        "H": 1.497682746329022,
+        "V": 1.1500659175759875,
+        "normalAtFloor": 4.165892486717325,
+        "signedOverturningMarginKNmAtFloor": -1.900988236944344,
+        "topOfSpandrel": 3170
+      }
+    },
+    "scope": "Full lower weather-reveal geometry, not a capacity or as-built draw pass. Isolated jamb restraint already unresolved before the rebate; present arch rise is300, not historical600."
+  },
+  "frontDownfoldComparison": {
+    "control": {
+      "y": 4030,
+      "bottomZ": -30,
+      "innerBendRadius_mm": 3,
+      "panThickness_mm": 1.5,
+      "role": "New proposed dry-side feature; retains wet crest/fall and fits nominal body bounds, but changes the actual front shape"
+    },
+    "outerRadius_mm": 4.5,
+    "flatApronStartsY_mm": 4034.5,
+    "oldSharpTopUnderfaceAt4032Z_mm": -2.8416876048223,
+    "oldSharpTopInterference_mm": 1.3416876048223,
+    "revisedLowCarrier": {
+      "y": [
+        4037,
+        4058
+      ],
+      "topZ": -1.5,
+      "bottomZ": -46.5,
+      "gauge_mm": 3,
+      "fabrication": "Proposed welded flat top/webs, not an ideal zero-radius formed channel; actual weld/contact/edge qualification open",
+      "edgeToleranceEach_mm": 1
+    },
+    "minimumToNewFlatStart_mm": 0.5,
+    "newFeatureWithinOldBodyBounds": true,
+    "fixedAirFaceY_mm": 4025,
+    "minimumRigidNormalClearance_mm": 1,
+    "scope": "Radius/low-carrier necessary clearance only. High-carrier bends, walking edge, whole contact contours and fixed-frame/door/sill release still need the joined design; no bounding-box shortcut."
+  },
+  "frontContactLead": {
+    "fixedFaceY": 4025,
+    "role": "Conditional normal-contact lead only: north pan motion can open a south-side contact. No deletion of old endcap release until all corner/top/frame contacts and actual captures/tool paths are resolved",
+    "entirePathClosed": false,
+    "allContactsOpenOnNorthDraw": false,
+    "panCapturesLocated": false,
+    "highCarrierBendsAndEdgesResolved": false
+  },
+  "foilResearch": {
+    "source": "https://www.kemper-group.com/en-uk/content/04-produkte/walzprodukte/datenblaetter/datasheet_cusn5.pdf",
+    "edition": "04/2026; accessed 7 November 2026",
+    "portfolio": "https://www.kemper-group.com/en-uk/rolled-products/portfolio/",
+    "candidate": "CuSn5 / CW451K / C51000, R490/H160 research only",
+    "proofMinimum_MPa": 430,
+    "elongationMinimum_percent": 8,
+    "referenceModulus_MPa": 118000,
+    "bend180BadWay_r_over_t": 0.5,
+    "bendTestWidth_mm": 5,
+    "bendTableMaximumThickness_mm": 0.6,
+    "authoredThinStrip_mm": 0.1,
+    "supplierTolerance_mm": null,
+    "retainedConstituents": null,
+    "scope": "Manufacturer portfolio includes 0.1 mm strip, not a configured delivered R490 assembly. Modulus is a soft-temper guideline; 5 mm-wide bend test is not full-length forming, a spring law, air rating, fatigue/relaxation limit or finish/residue clearance. No old 35 mm law transfers."
+  },
+  "admission": {
+    "geometrySelected": false,
+    "material": false,
+    "structure": false,
+    "air": false,
+    "water": false,
+    "capillary": false,
+    "thermal": false,
+    "renewalPhysical": false
+  }
+}

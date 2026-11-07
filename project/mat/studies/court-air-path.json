@@ -1,0 +1,26 @@
+{
+  "status":"WORKING DESIGN — whole air path not yet resolved; no owning geometry, material, structure or performance admission",
+  "sources":{
+    "HAD":{"commit":"8576cf800822d3276cd8a7aed9d167f1bd68b90e","path":"project/had/studies/water-replan.json","blob":"089f0dac2f2e89272dc2ea85a10c2208f2fd797d","role":"Actual owning pan/floor/frame reference, still physically unqualified"},
+    "mechanicalResearch":{"commit":"8576cf800822d3276cd8a7aed9d167f1bd68b90e","path":"project/mat/studies/court-apron-support.results.json","blob":"1d8a3f90379452328be44bc1b7d3707332e643c4","role":"Merged bounded mechanical research; proposed channels/caps/flanges are not owning HAD geometry or a whole-pan tolerance pass"},
+    "mineralBaseResearch":{"commit":"8576cf800822d3276cd8a7aed9d167f1bd68b90e","path":"project/mat/studies/conventional-ground-junction.json","blob":"5d899197848d0f951d8ff4573983aff81d4fd32f","role":"Unselected full-header/course geometric control; no masonry air, moisture or bearing performance transfer"},
+    "STRweatherPocket":{"commit":"d21ced1f4ec09f7d9dd8f0e36bc6a98cb8bdcd2f","path":"project/str/studies/current-house-arch-detail.json","blob":"504202be0ff1ee1a56628349deaf8395846a0177","role":"Immutable unadopted STR1362 local weather-jamb/arch restraint result, not capacity admission"}
+  },
+  "headerContinuation":{"x":[5050,6950],"width":215,"capZ":[-30,0],"role":"A proposed continuation across the door, with end joints overlapping proposed wall-base territory; no service exclusion or installed quantity is silently adopted"},
+  "fitChallenge":{"relativeMovement_mm":2,"edgeToleranceEach_mm":1,"linerThickness_mm":1.5,"role":"One authored movement/tolerance challenge; not achieved fabrication, guide or as-built masonry tolerance"},
+  "lowerReveal":{"outwardEach_mm":6,"z":[-65,100],"topLinerReturnZ":150,"role":"PRE-FORMED construction reservation and renewable liner through the lower weather reveal; never later chasing or automatic arch/foot capacity"},
+  "frontDownfold":{"y":4030,"bottomZ":-30,"innerBendRadius_mm":3,"panThickness_mm":1.5,"role":"New proposed dry-side feature; retains wet crest/fall and fits nominal body bounds, but changes the actual front shape"},
+  "revisedLowCarrier":{"y":[4037,4058],"topZ":-1.5,"bottomZ":-46.5,"gauge_mm":3,"fabrication":"Proposed welded flat top/webs, not an ideal zero-radius formed channel; actual weld/contact/edge qualification open","edgeToleranceEach_mm":1},
+  "frontContactLead":{"fixedFaceY":4025,"role":"Conditional normal-contact lead only: north pan motion can open a south-side contact. No deletion of old endcap release until all corner/top/frame contacts and actual captures/tool paths are resolved","entirePathClosed":false,"allContactsOpenOnNorthDraw":false,"panCapturesLocated":false,"highCarrierBendsAndEdgesResolved":false},
+  "foilResearch":{
+    "source":"https://www.kemper-group.com/en-uk/content/04-produkte/walzprodukte/datenblaetter/datasheet_cusn5.pdf",
+    "edition":"04/2026; accessed 7 November 2026",
+    "portfolio":"https://www.kemper-group.com/en-uk/rolled-products/portfolio/",
+    "candidate":"CuSn5 / CW451K / C51000, R490/H160 research only",
+    "proofMinimum_MPa":430,"elongationMinimum_percent":8,"referenceModulus_MPa":118000,
+    "bend180BadWay_r_over_t":0.5,"bendTestWidth_mm":5,"bendTableMaximumThickness_mm":0.6,
+    "authoredThinStrip_mm":0.1,"supplierTolerance_mm":null,"retainedConstituents":null,
+    "scope":"Manufacturer portfolio includes 0.1 mm strip, not a configured delivered R490 assembly. Modulus is a soft-temper guideline; 5 mm-wide bend test is not full-length forming, a spring law, air rating, fatigue/relaxation limit or finish/residue clearance. No old 35 mm law transfers."
+  },
+  "admission":{"geometrySelected":false,"material":false,"structure":false,"air":false,"water":false,"capillary":false,"thermal":false,"renewalPhysical":false}
+}

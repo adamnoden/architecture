@@ -51,6 +51,8 @@ Historical holds preserve the old source identities and technical learning. Exis
 
 ## Design comparisons
 
+- [Join the fixed mineral base and court air path](court-air-path.md) — active design comparison of the ordinary header band, whole lower-reveal fit and actual front bend/carrier constraints. A complete supported contact path through both corners and wall/frame joins remains open; no assembly or owning geometry is admitted.
+
 - [One supported renewable court apron](court-apron-support.md) — working comparison of supports travelling inside the existing pan envelope, separating pedestrian bearing from ordinary air compliance. No pan profile, source geometry or assembly admission is adopted; the actual end sections remain active work.
 
 - [Whole-field assembly and conventional concrete control](ground-field-assembly.md) — three source-proposed RC core crossings, 22 explicit wall bases and three real doors expose the complete field burden. One layout has 80 pieces / 116.94 m seams; its bespoke 37-penetration threshold rail is withdrawn as preferred detail. Qualifying the actual conventional concrete/mineral-break/threshold route takes priority over adding a whole-house sheet without demonstrated benefit. Neither route, site or material is admitted; the earlier field-versus-52-cut comparison remains bounded to those alternatives.
