@@ -9,8 +9,8 @@
     "label": "rush-closeout-ias"
   },
   "claimedAt": "2026-11-07T09:15:01.126Z",
-  "heartbeatAt": "2026-11-07T09:15:01.126Z",
-  "expiresAt": "2026-11-07T10:45:01.126Z",
+  "heartbeatAt": "2026-11-07T09:16:03.220Z",
+  "expiresAt": "2026-11-07T10:46:03.220Z",
   "branch": "work/rush-20261107-ias-g24",
   "predecessor": {
     "leaseId": "243df4cc-2336-4946-b926-bfa82a32cfc7",
@@ -31,5 +31,10 @@
       "evidence": "PR 1372 e2be05a9f85f232b17a6e3d92d136ea24d5ab2e6, revised frame and supported utility first-rest comparator. Local current and prior producer checks, cap mutation, repository/workflow and rendered review pass.",
       "next": "Exact-head CI and independent root review. Keep actual sink/pipe/seat/wall/physical handling and later export open."
     }
+  },
+  "pr": 1375,
+  "checkpoint": {
+    "evidence": "PR #1375 at frozen reviewed 0266d0b. Priors 14 of 14 workflows passed.",
+    "next": "Confirm successor Validate and canonical preflight, integrate and release."
   }
 }
