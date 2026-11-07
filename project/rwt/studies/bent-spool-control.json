@@ -2775,37 +2775,327 @@
       11600
     ],
     "cgBound": {
-      "packageMassKg": 458.7155963302752,
-      "unallocatedHardwareKg": 137.77462683308914,
-      "hardwareX": [
-        6725.833505986568,
-        13045.516960808774
+      "domain": "NOMINAL-METAL / independently variable water and hardware budget; NOT an actual delivered-kit upper bound",
+      "proof": "Straight water is partitioned at the actual7350/9300/10850/12400 capture/support stations into five disjoint axial reaches. Each reach, stub and each bend may hold ANY mass0..its full nominal volume at ANY X within its complete allowed bounds. For fixed other variables, CG is fractional-linear in each mass and monotone in each X, with a strictly positive fixed metal mass. Therefore mass endpoints0/full and location endpoints bound EVERY partial/asymmetric state. All positions at their minimum/maximum simultaneously bound the corresponding CG direction; both hardware endpoints and0/max mass are enumerated. Reactions are affine in masses/moments, so these same endpoint cases bound their ranges.",
+      "cases": 1536,
+      "metalComponents": [
+        {
+          "id": "nominal-uniform-straight-tube",
+          "massKg": 48.89046833782541,
+          "x": [
+            9902.5,
+            9922.5
+          ]
+        },
+        {
+          "id": "nominal-stub",
+          "massKg": 1.2589705479135618,
+          "x": [
+            6784.115009148252,
+            6969.909770075786
+          ]
+        },
+        {
+          "id": "catalogue-inlet-bend",
+          "massKg": 6.15,
+          "x": [
+            6774.483039191226,
+            7262.065535400526
+          ]
+        },
+        {
+          "id": "catalogue-outlet-bend",
+          "massKg": 6.15,
+          "x": [
+            12562.934464599475,
+            13050.516960808774
+          ]
+        },
+        {
+          "id": "nominal-moving-flange",
+          "massKg": 7,
+          "x": [
+            6720.833505986568,
+            7032.368521407768
+          ]
+        },
+        {
+          "id": "nominal-uniform-frame-rails",
+          "massKg": 73.8304,
+          "x": [
+            9865,
+            9885
+          ]
+        },
+        {
+          "id": "nominal-frame-crossmembers",
+          "massKg": 21.504000000000005,
+          "x": [
+            10065,
+            10085
+          ]
+        }
       ],
+      "waterComponents": [
+        {
+          "id": "straight-water-reach1",
+          "axisX": [
+            7146.981178424362,
+            7350
+          ],
+          "maximumKg": 3.831065993810692,
+          "x": [
+            7136.040655274923,
+            7360.940523149439
+          ]
+        },
+        {
+          "id": "straight-water-reach2",
+          "axisX": [
+            7350,
+            9300
+          ],
+          "maximumKg": 36.797468480761346,
+          "x": [
+            7339.059476850561,
+            9310.940523149438
+          ]
+        },
+        {
+          "id": "straight-water-reach3",
+          "axisX": [
+            9300,
+            10850
+          ],
+          "maximumKg": 29.24926981804107,
+          "x": [
+            9289.059476850562,
+            10860.940523149438
+          ]
+        },
+        {
+          "id": "straight-water-reach4",
+          "axisX": [
+            10850,
+            12400
+          ],
+          "maximumKg": 29.24926981804107,
+          "x": [
+            10839.059476850562,
+            12410.940523149438
+          ]
+        },
+        {
+          "id": "straight-water-reach5",
+          "axisX": [
+            12400,
+            12678.018821575637
+          ],
+          "maximumKg": 5.246353243070726,
+          "x": [
+            12389.059476850562,
+            12688.959344725075
+          ]
+        },
+        {
+          "id": "stub-water",
+          "maximumKg": 2.6877032577221582,
+          "x": [
+            6784.115009148252,
+            6969.909770075786
+          ]
+        },
+        {
+          "id": "inlet-bend-water",
+          "maximumKg": 24.548000000000002,
+          "x": [
+            6774.483039191226,
+            7262.065535400526
+          ]
+        },
+        {
+          "id": "outlet-bend-water",
+          "maximumKg": 24.548000000000002,
+          "x": [
+            12562.934464599475,
+            13050.516960808774
+          ]
+        }
+      ],
+      "hardwareBudgetKg": 137.77462683308914,
+      "hardwareX": [
+        6720.833505986568,
+        13050.516960808774
+      ],
+      "nominalModelMassRangeKg": [
+        164.783838885739,
+        458.7155963302752
+      ],
+      "minimumState": {
+        "mask": 99,
+        "positionSide": "minimumX",
+        "massKg": 370.4227034511223,
+        "localCgX": 8129.404386541093,
+        "hardware": {
+          "mass": 137.77462683308914,
+          "x": 6720.833505986568
+        },
+        "water": [
+          {
+            "id": "straight-water-reach1",
+            "massKg": 3.831065993810692,
+            "x": 7136.040655274923
+          },
+          {
+            "id": "straight-water-reach2",
+            "massKg": 36.797468480761346,
+            "x": 7339.059476850561
+          },
+          {
+            "id": "straight-water-reach3",
+            "massKg": 0,
+            "x": 9289.059476850562
+          },
+          {
+            "id": "straight-water-reach4",
+            "massKg": 0,
+            "x": 10839.059476850562
+          },
+          {
+            "id": "straight-water-reach5",
+            "massKg": 0,
+            "x": 12389.059476850562
+          },
+          {
+            "id": "stub-water",
+            "massKg": 2.6877032577221582,
+            "x": 6784.115009148252
+          },
+          {
+            "id": "inlet-bend-water",
+            "massKg": 24.548000000000002,
+            "x": 6774.483039191226
+          },
+          {
+            "id": "outlet-bend-water",
+            "massKg": 0,
+            "x": 12562.934464599475
+          }
+        ]
+      },
+      "maximumState": {
+        "mask": 152,
+        "positionSide": "maximumX",
+        "massKg": 361.60208877993995,
+        "localCgX": 11511.816231277242,
+        "hardware": {
+          "mass": 137.77462683308914,
+          "x": 13050.516960808774
+        },
+        "water": [
+          {
+            "id": "straight-water-reach1",
+            "massKg": 0,
+            "x": 7360.940523149439
+          },
+          {
+            "id": "straight-water-reach2",
+            "massKg": 0,
+            "x": 9310.940523149438
+          },
+          {
+            "id": "straight-water-reach3",
+            "massKg": 0,
+            "x": 10860.940523149438
+          },
+          {
+            "id": "straight-water-reach4",
+            "massKg": 29.24926981804107,
+            "x": 12410.940523149438
+          },
+          {
+            "id": "straight-water-reach5",
+            "massKg": 5.246353243070726,
+            "x": 12688.959344725075
+          },
+          {
+            "id": "stub-water",
+            "massKg": 0,
+            "x": 6969.909770075786
+          },
+          {
+            "id": "inlet-bend-water",
+            "massKg": 0,
+            "x": 7262.065535400526
+          },
+          {
+            "id": "outlet-bend-water",
+            "massKg": 24.548000000000002,
+            "x": 13050.516960808774
+          }
+        ]
+      },
       "localX": [
-        8853.810296697238,
-        10813.486830224441
+        8129.404386541093,
+        11511.816231277242
       ],
       "parkedX": [
-        14377.97679071067,
-        16337.653324237874
+        13653.570880554526,
+        17035.982725290676
+      ],
+      "liftingPointLocalX": [
+        7900,
+        11600
       ],
       "liftingPointWorldX": [
         13424.166494013432,
         17124.166494013432
       ],
-      "basis": "Uniform straight/stub tubes, native bend wet gross-box masses anywhere within their FULL X bounds, native flange, actual rails/crossmembers; ALL remaining hardware anywhere along the complete moving solid X bounds, including both bend overhangs. No convenient centred hardware assumption.",
-      "liftMinimumCgReserve": 786.5131697755587,
-      "lowerCradleMinimumCgReserve": 1462.3466757621263,
-      "lowerCradleReactionRangesKn": [
+      "liftMinimumCgReserve": 88.18376872275803,
+      "lowerCradleMinimumCgReserve": 753.5708805545255,
+      "liftReactionRangesKn": [
         [
-          3.1426743758779554,
-          1.3429714369244017
+          0.08454479378992089,
+          3.6467685709096456
         ],
         [
-          1.3573256241220446,
-          3.157028563075598
+          0.22530280480600587,
+          3.830048519679627
         ]
-      ]
+      ],
+      "lowerCradleReactionRangesKn": [
+        [
+          0.5531043016189217,
+          3.334032675799314
+        ],
+        [
+          0.5588491986194407,
+          3.340853294080541
+        ]
+      ],
+      "reactionsRole": "Correlated nominal gravity-only endpoint cases, not independent simultaneous maxima or actual rigging/hoist/rail/contact acceptance.",
+      "deliveredMassBoundEstablished": false,
+      "actualKitCgAccepted": false,
+      "rejectedFullWetOnlyGeneralBound": {
+        "nominalMassKg": 458.7155963302752,
+        "localX": [
+          8853.810296697238,
+          10813.486830224441
+        ],
+        "parkedX": [
+          14377.97679071067,
+          16337.653324237874
+        ],
+        "rejection": "Full water is a mass maximum, NOT automatically a CG extreme. The same hardware budget with all tube/bend water removed already escapes both sides of this old interval; independently asymmetric/partial inventories govern the corrected domain.",
+        "dryCounterexample": {
+          "massKg": 302.55846571882813,
+          "localX": [
+            8371.66123337933,
+            11268.126310333353
+          ]
+        },
+        "rejectedAsGeneralBound": true
+      }
     },
     "hoist": "Actual rated hoist/spreader/rigging must carry full package and complete3D incoming/outgoing envelope. Use explicit at-least7.5kN support-action screen for a5kN suspended load including rigging; no old5kN/1700lift pass is inherited. Outgoing leaves before incoming enters; no loaded upperbearers.",
     "actualSupportsAndSiteAccepted": false,
@@ -2843,11 +3133,11 @@
   "loads": {
     "tubeMetalKg": 50.149438885738974,
     "tubeWaterKg": 107.06113061144708,
-    "twoActualBendsMetalKg": 12.3,
+    "twoCatalogueBendsMetalKg": 12.3,
     "bendWaterGrossBoxBoundKg": 49.096000000000004,
     "movingFlangeKg": 7,
     "fixedUpperFlangeKg": 7,
-    "spoolWetBoundKg": 225.60656949718606,
+    "nominalSpoolFullWaterKg": 225.60656949718606,
     "bendWaterBoundary": "Gross380×170×380 outer boxes bound water in the two real bends; deliberately loose, not a measured bore volume. No dry-only lifting assumption.",
     "frame": {
       "section": [
@@ -2862,7 +3152,7 @@
         6475,
         7325
       ],
-      "bareKg": 95.3344,
+      "nominalBareKg": 95.3344,
       "wheelStations": [
         7750,
         9300,
@@ -2875,7 +3165,7 @@
       "depth": 80,
       "boundary": "Four captured rolling supports plus fixed lower rails are separate real solids/load paths; these bare rails/crossmembers do not prove clamps, rotation bearings, wheels or guides."
     },
-    "knownWetIncludingBareFrameKg": 320.9409694971861,
+    "nominalFullWaterIncludingBareFrameKg": 320.9409694971861,
     "designMovingKn": 4.5,
     "remainingHardwareKg": 137.77462683308914,
     "supportReactionRequirement": {
@@ -2883,6 +3173,14 @@
       "upliftEachKn": 4,
       "totalCorrelatedGravityKn": 4.5,
       "basis": "The preceding1350overhang8.5/4.0kN requirement is conservatively retained. The complete envelope now extends1024.17west of first wheel7750 and645.52east of last12400; a whole4.5kN tip load at the larger overhang gives7.473compression/2.973uplift at the adjacent1550pair. Actual pipe endfeed/bend and collar cantilevers are separate duties. These bounds cover even the whole design load at the adverse tip. These are correlated requirements, not34kN simultaneous gravity. Actual multi-contact/frame/rail elasticity still must be checked."
+    },
+    "massMeaning": {
+      "tube": "Nominal159OD/155ID uniform copper,8960kg/m3, source-authored cut/engagement budgets. No delivered wall/density/weight tolerance is established.",
+      "bendsAndFlange": "Catalogue/reference6.15kg per bend and7kg moving flange; actual delivered fabrication/composition/mass must be verified.",
+      "frame": "Nominal sharp-corner80×40×4 net area,8000kg/m3 and stated lengths; no delivered section tolerances, rounded-corner/weld/connection mass bound.",
+      "hardware": "remainingHardwareKg is the unweighed allowance within a4.5kN nominal full-water design model, not evidence that the actual required kit fits it.",
+      "actualKitUpperBoundEstablished": false,
+      "actualKitWeighed": false
     },
     "capture": "Broad150long metal-lined split saddles isolate thin copper from point roller contact.220OD/170ID/40axial steel races; two50rollers per station; 0/90positive pins. Do not put loaded hard rollers or chain jaws directly on159×2copper and invent a denting pass.",
     "rollTorqueRequirement": {

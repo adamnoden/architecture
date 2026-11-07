@@ -23,11 +23,11 @@ test('whole bending solids stay out of bridge during roll and a misplaced roll r
 test('whole frame, wet bodies and unconcentrated hardware charge the actual long export and CG',()=>{
  assert(o.geometry.straightCut<6000&&o.geometry.straightCut>5500);
  assert(o.loads.bendWaterGrossBoxBoundKg>49);
- assert(o.loads.knownWetIncludingBareFrameKg>320);
+ assert(o.loads.nominalFullWaterIncludingBareFrameKg>320);
  assert(o.renewal.translation>5524&&o.renewal.translation<5525);assert.equal(o.renewal.requiredDeckEnd,18850);
  assert.equal(o.renewal.stageGrowthBeyondOld4700Control,1700);
- assert(o.renewal.cgBound.liftMinimumCgReserve>750);
- assert(o.renewal.cgBound.lowerCradleMinimumCgReserve>1400);
+ assert(o.renewal.cgBound.liftMinimumCgReserve>80);
+ assert(o.renewal.cgBound.lowerCradleMinimumCgReserve>750);
  assert(o.renewal.cgBound.parkedX[1]>16300,'Old farcradle cannot silently inherit the CG bound');
  assert.equal(o.accepted,false);assert.equal(o.siteAccepted,false);
 });
@@ -60,4 +60,31 @@ test('ordinary two-position crew screen pays the real aperture instead of inheri
  assert.equal(o.verticalJointReference.installedMethodAccepted,false);
  assert.equal(o.verticalJointReference.torqueAccepted,false);
  assert.equal(o.wellAndCrew.routeProof.full3DPostureAccepted,false);
+});
+
+test('CG bound contains empty and asymmetric drainage instead of borrowing the full-wet ballast',()=>{
+ const c=o.renewal.cgBound,old=c.rejectedFullWetOnlyGeneralBound;
+ assert.equal(old.rejectedAsGeneralBound,true);
+ assert(old.dryCounterexample.localX[0]<old.localX[0]);
+ assert(old.dryCounterexample.localX[1]>old.localX[1]);
+ assert(c.localX[0]<old.dryCounterexample.localX[0]);
+ assert(c.localX[1]>old.dryCounterexample.localX[1]);
+ assert.equal(c.waterComponents.length,8);
+ assert.equal(c.cases,1536);
+ assert.equal(c.minimumState.mask,99);assert.equal(c.maximumState.mask,152);
+ assert(c.liftMinimumCgReserve<100,'Independent drainage removes the old786mm reserve');
+ assert(c.liftReactionRangesKn.every(r=>r[0]>0));
+ assert(c.lowerCradleReactionRangesKn.every(r=>r[0]>0));
+ assert.equal(c.deliveredMassBoundEstablished,false);
+ assert.equal(o.loads.massMeaning.actualKitUpperBoundEstablished,false);
+ // Interior inventories/locations are deliberately unlike an all-empty/all-full tube.
+ // The endpoint proof in the owning source covers all such states; this is a regression probe.
+ for(let k=1;k<=40;k++){
+  let mass=0,moment=0;const fraction=j=>((k*37+j*23)%101)/100;
+  for(const [i,p]of c.metalComponents.entries()){const x=p.x[0]+fraction(i)*(p.x[1]-p.x[0]);mass+=p.massKg;moment+=p.massKg*x;}
+  for(const [i,p]of c.waterComponents.entries()){const m=p.maximumKg*fraction(i+7),x=p.x[0]+fraction(i+17)*(p.x[1]-p.x[0]);mass+=m;moment+=m*x;}
+  const hardware=c.hardwareBudgetKg*fraction(31),x=c.hardwareX[0]+fraction(32)*(c.hardwareX[1]-c.hardwareX[0]);
+  mass+=hardware;moment+=hardware*x;
+  assert(moment/mass>=c.localX[0]&&moment/mass<=c.localX[1]);
+ }
 });

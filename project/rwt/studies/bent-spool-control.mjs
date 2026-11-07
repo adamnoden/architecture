@@ -101,6 +101,34 @@ function verticalJointReference(flange,inletCorner,n,v,{northFacing=false,body=[
   installedMethodAccepted:false,torqueAccepted:false,wholeDeliveredBodyAccepted:false};
 }
 
+// Dedicated finite CG domain for this bent-spool assembly. Each bounded water inventory may be partial/asymmetric.
+function bentSpoolCgDomain({metals,water,hardwareBudgetKg,hardwareX,liftX,cradleX,translation}){
+ const reactions={lift:[[Infinity,-Infinity],[Infinity,-Infinity]],cradle:[[Infinity,-Infinity],[Infinity,-Infinity]]};
+ let minimum=null,maximum=null,count=0,minMass=Infinity,maxMass=-Infinity;
+ for(let mask=0;mask<2**water.length;mask++)for(const hardware of[{mass:0,x:hardwareX[0]},{mass:hardwareBudgetKg,x:hardwareX[0]},{mass:hardwareBudgetKg,x:hardwareX[1]}])for(const side of[0,1]){
+  const inventory=water.map((c,i)=>({id:c.id,massKg:mask&(1<<i)?c.maximumKg:0,x:c.x[side]})),
+   mass=metals.reduce((a,c)=>a+c.massKg,0)+inventory.reduce((a,c)=>a+c.massKg,0)+hardware.mass,
+   moment=metals.reduce((a,c)=>a+c.massKg*c.x[side],0)+inventory.reduce((a,c)=>a+c.massKg*c.x,0)+hardware.mass*hardware.x,
+   cg=moment/mass,state={mask,positionSide:side===0?'minimumX':'maximumX',massKg:mass,localCgX:cg,hardware,water:inventory};
+  count++;minMass=Math.min(minMass,mass);maxMass=Math.max(maxMass,mass);
+  if(!minimum||cg<minimum.localCgX)minimum=state;if(!maximum||cg>maximum.localCgX)maximum=state;
+  for(const[id,points]of[['lift',liftX],['cradle',cradleX.map(x=>x-translation)]]){
+   const r=[g/1000*(points[1]*mass-moment)/(points[1]-points[0]),g/1000*(moment-points[0]*mass)/(points[1]-points[0])];
+   r.forEach((value,i)=>{reactions[id][i][0]=Math.min(reactions[id][i][0],value);reactions[id][i][1]=Math.max(reactions[id][i][1],value);});
+  }
+ }
+ const localX=[minimum.localCgX,maximum.localCgX],parkedX=localX.map(x=>x+translation);
+ return {domain:'NOMINAL-METAL / independently variable water and hardware budget; NOT an actual delivered-kit upper bound',
+  proof:'Straight water is partitioned at the actual7350/9300/10850/12400 capture/support stations into five disjoint axial reaches. Each reach, stub and each bend may hold ANY mass0..its full nominal volume at ANY X within its complete allowed bounds. For fixed other variables, CG is fractional-linear in each mass and monotone in each X, with a strictly positive fixed metal mass. Therefore mass endpoints0/full and location endpoints bound EVERY partial/asymmetric state. All positions at their minimum/maximum simultaneously bound the corresponding CG direction; both hardware endpoints and0/max mass are enumerated. Reactions are affine in masses/moments, so these same endpoint cases bound their ranges.',
+  cases:count,metalComponents:metals,waterComponents:water,hardwareBudgetKg,hardwareX,nominalModelMassRangeKg:[minMass,maxMass],minimumState:minimum,maximumState:maximum,
+  localX,parkedX,liftingPointLocalX:liftX,liftingPointWorldX:liftX.map(x=>x+translation),
+  liftMinimumCgReserve:Math.min(localX[0]-liftX[0],liftX[1]-localX[1]),
+  lowerCradleMinimumCgReserve:Math.min(parkedX[0]-cradleX[0],cradleX[1]-parkedX[1]),
+  liftReactionRangesKn:reactions.lift,lowerCradleReactionRangesKn:reactions.cradle,
+  reactionsRole:'Correlated nominal gravity-only endpoint cases, not independent simultaneous maxima or actual rigging/hoist/rail/contact acceptance.',
+  deliveredMassBoundEstablished:false,actualKitCgAccepted:false};
+}
+
 export function bentSpool(){
  const s=readSelected(),slope=50/4250,theta=Math.atan(slope),n=[Math.cos(theta),0,-Math.sin(theta)],v=[Math.sin(theta),0,Math.cos(theta)],u=[0,1,0],
   anchor=[7350,6950,-775],axis=x=>anchor[2]-(x-anchor[0])*slope,
@@ -158,6 +186,32 @@ export function bentSpool(){
   cgMax=(knownMomentMax+remainingHardwareKg*hardwareMaximum)/packageMass,
   parkedCg=[cgMin+translation,cgMax+translation],cradles=[12900,17800],liftPoints=[7900+translation,11600+translation],
   misplacedDraw=1100;
+ const straightStartX=horizontalIn[0]-socketEngagement*n[0],straightEndX=horizontalOut[0]+socketEngagement*n[0],
+  straightBreaks=[straightStartX,7350,9300,10850,12400,straightEndX],positionEnvelope=tolerance+deformation,
+  straightWater=straightBreaks.slice(1).map((hi,i)=>({id:`straight-water-reach${i+1}`,axisX:[straightBreaks[i],hi],
+   maximumKg:(hi-straightBreaks[i])/n[0]/1000*waterPerM,
+   x:[straightBreaks[i]-79.95*Math.abs(v[0])-positionEnvelope,hi+79.95*Math.abs(v[0])+positionEnvelope]})),
+  stubVertices=[add(inletPort,v,-31),add(flange,v,25)].flatMap(p=>[-79.95,79.95].flatMap(a=>[-79.95,79.95].map(b=>add(add(p,n,a),u,b)))),
+  stubSweep=completeSweep(stubVertices,anchor,n,drop,tolerance)[0],stubX=[stubSweep.minimum-deformation,stubSweep.maximum+deformation],
+  angularX=id=>{const q=sweeps.find(x=>x.id===id).angular[0];return[q.minimum-deformation,q.maximum+deformation];},
+  metalComponents=[{id:'nominal-uniform-straight-tube',massKg:straightCut/1000*copperPerM,x:[(straightStartX+straightEndX)/2-positionEnvelope,(straightStartX+straightEndX)/2+positionEnvelope]},
+   {id:'nominal-stub',massKg:upperStubMaximumCut/1000*copperPerM,x:stubX},
+   {id:'catalogue-inlet-bend',massKg:bendsMetal/2,x:angularX('native-inlet460box')},
+   {id:'catalogue-outlet-bend',massKg:bendsMetal/2,x:angularX('native-outlet460box')},
+   {id:'nominal-moving-flange',massKg:movingFlange,x:angularX('complete-moving285flange-prism')},
+   {id:'nominal-uniform-frame-rails',massKg:frameRailMass,x:[(frameStart+frameEnd)/2-positionEnvelope,(frameStart+frameEnd)/2+positionEnvelope]},
+   {id:'nominal-frame-crossmembers',massKg:frameCrossMass,x:[wheelStations.reduce((a,b)=>a+b,0)/4-positionEnvelope,wheelStations.reduce((a,b)=>a+b,0)/4+positionEnvelope]}],
+  waterComponents=[...straightWater,{id:'stub-water',maximumKg:upperStubMaximumCut/1000*waterPerM,x:stubX},
+   {id:'inlet-bend-water',maximumKg:bendsWaterGrossBound/2,x:angularX('native-inlet460box')},
+   {id:'outlet-bend-water',maximumKg:bendsWaterGrossBound/2,x:angularX('native-outlet460box')}],
+  cgDomain=bentSpoolCgDomain({metals:metalComponents,water:waterComponents,hardwareBudgetKg:remainingHardwareKg,
+   hardwareX:[hardwareMinimum-deformation,hardwareMaximum+deformation],liftX:[7900,11600],cradleX:cradles,translation}),
+  straightWaterKg=straightCut/1000*waterPerM,stubWaterKg=upperStubMaximumCut/1000*waterPerM,
+  oldWaterMomentMin=straightWaterKg*(horizontalIn[0]+horizontalOut[0])/2+stubWaterKg*flange[0]+bendsWaterGrossBound/2*(inletBox[0]+outletBox[0]),
+  oldWaterMomentMax=oldWaterMomentMin+bendsWaterGrossBound/2*(inletBox[3]+outletBox[3]),
+  oldDryMass=spoolWetBound+frameMetal-tubeWater-bendsWaterGrossBound+remainingHardwareKg,
+  oldDryX=[(knownMomentMin-oldWaterMomentMin+remainingHardwareKg*hardwareMinimum)/oldDryMass,
+   (knownMomentMax-oldWaterMomentMax+remainingHardwareKg*hardwareMaximum)/oldDryMass];
  const postSources=s.model.renewal.joint.railReference;
  const lockedAllY=[Math.min(...gated.map(o=>o.locked90Y[0]),frameY[0]),Math.max(...gated.map(o=>o.locked90Y[1]),frameY[1],7300+25+tolerance+deformation)];
  const oldCorner=[6575,6950,axis(6575)],oldFlange=add(oldCorner,v,(flangeZ-oldCorner[2])/v[2]),
@@ -234,12 +288,10 @@ export function bentSpool(){
    handling:'No worker occupies the receiving basin. Once captured, open native outlet moves WITH full spool; moving projection/residual discharge can leave the basin during renewal, so drain/isolate, positively cap/capture residual liquid BEFORE roll. Full wet mass remains charged despite this operation. Existing80catch is no full-event backup.',
    framing:'6600long reference includes full5150carrier, complete bends/flange and5mm envelope; the complete native bodies/flange now govern park; old frame rail through the outlet roll is rejected. Support as rare temporary work is permitted in principle, not automatically permanent-deck enlargement.',
    lowerCradleX:[12900,17800],liftingPointLocalX:[7900,11600],
-   cgBound:{packageMassKg:packageMass,unallocatedHardwareKg:remainingHardwareKg,hardwareX:[hardwareMinimum,hardwareMaximum],
-    localX:[cgMin,cgMax],parkedX:parkedCg,liftingPointWorldX:liftPoints,
-    basis:'Uniform straight/stub tubes, native bend wet gross-box masses anywhere within their FULL X bounds, native flange, actual rails/crossmembers; ALL remaining hardware anywhere along the complete moving solid X bounds, including both bend overhangs. No convenient centred hardware assumption.',
-    liftMinimumCgReserve:Math.min(parkedCg[0]-liftPoints[0],liftPoints[1]-parkedCg[1]),
-    lowerCradleMinimumCgReserve:Math.min(parkedCg[0]-cradles[0],cradles[1]-parkedCg[1]),
-    lowerCradleReactionRangesKn:cradles.map((_,i)=>parkedCg.map(x=>designMovingKn*(i?(x-cradles[0]):(cradles[1]-x))/(cradles[1]-cradles[0])))},
+   cgBound:{...cgDomain,
+    rejectedFullWetOnlyGeneralBound:{nominalMassKg:packageMass,localX:[cgMin,cgMax],parkedX:parkedCg,
+     rejection:'Full water is a mass maximum, NOT automatically a CG extreme. The same hardware budget with all tube/bend water removed already escapes both sides of this old interval; independently asymmetric/partial inventories govern the corrected domain.',
+     dryCounterexample:{massKg:oldDryMass,localX:oldDryX},rejectedAsGeneralBound:true}},
    hoist:'Actual rated hoist/spreader/rigging must carry full package and complete3D incoming/outgoing envelope. Use explicit at-least7.5kN support-action screen for a5kN suspended load including rigging; no old5kN/1700lift pass is inherited. Outgoing leaves before incoming enters; no loaded upperbearers.',
    actualSupportsAndSiteAccepted:false,fullExportSweepAccepted:false},
   actualPostTranslation:{source:'HAD renewal.joint.railReference',supportX:postSources.supportX,sidePostY:postSources.sidePostY,
@@ -248,15 +300,20 @@ export function bentSpool(){
    includes13500:postSources.supportX.includes(13500),
    role:'Full translation invariant Y bound checks every actual50column including13500, separately from narrower RC node/bridge faces. Wheel is REMOVED before draw; otherwise its200radius can hit a post. Shaft25radius included. Real larger footings/connection plates are not silently reduced to50column.',
    anchorsAndFootingsAccepted:false},
-  loads:{tubeMetalKg:tubeMetal,tubeWaterKg:tubeWater,twoActualBendsMetalKg:bendsMetal,bendWaterGrossBoxBoundKg:bendsWaterGrossBound,
-   movingFlangeKg:movingFlange,fixedUpperFlangeKg:7,spoolWetBoundKg:spoolWetBound,
+  loads:{tubeMetalKg:tubeMetal,tubeWaterKg:tubeWater,twoCatalogueBendsMetalKg:bendsMetal,bendWaterGrossBoxBoundKg:bendsWaterGrossBound,
+   movingFlangeKg:movingFlange,fixedUpperFlangeKg:7,nominalSpoolFullWaterKg:spoolWetBound,
    bendWaterBoundary:'Gross380×170×380 outer boxes bound water in the two real bends; deliberately loose, not a measured bore volume. No dry-only lifting assumption.',
-   frame:{section:[80,40,4],length:frameLength,start:frameStart,end:frameEnd,grossY:[6475,7325],bareKg:frameMetal,
+   frame:{section:[80,40,4],length:frameLength,start:frameStart,end:frameEnd,grossY:[6475,7325],nominalBareKg:frameMetal,
     wheelStations,maxInternalSpan,westOverhang:wheelStations[0]-frameStart,pipeAxisAboveFrameTop:130,depth:80,
     boundary:'Four captured rolling supports plus fixed lower rails are separate real solids/load paths; these bare rails/crossmembers do not prove clamps, rotation bearings, wheels or guides.'},
-   knownWetIncludingBareFrameKg:spoolWetBound+frameMetal,designMovingKn,remainingHardwareKg,
+   nominalFullWaterIncludingBareFrameKg:spoolWetBound+frameMetal,designMovingKn,remainingHardwareKg,
    supportReactionRequirement:{compressionEachKn:8.5,upliftEachKn:4.0,totalCorrelatedGravityKn:4.5,
     basis:'The preceding1350overhang8.5/4.0kN requirement is conservatively retained. The complete envelope now extends1024.17west of first wheel7750 and645.52east of last12400; a whole4.5kN tip load at the larger overhang gives7.473compression/2.973uplift at the adjacent1550pair. Actual pipe endfeed/bend and collar cantilevers are separate duties. These bounds cover even the whole design load at the adverse tip. These are correlated requirements, not34kN simultaneous gravity. Actual multi-contact/frame/rail elasticity still must be checked.'},
+   massMeaning:{tube:'Nominal159OD/155ID uniform copper,8960kg/m3, source-authored cut/engagement budgets. No delivered wall/density/weight tolerance is established.',
+    bendsAndFlange:'Catalogue/reference6.15kg per bend and7kg moving flange; actual delivered fabrication/composition/mass must be verified.',
+    frame:'Nominal sharp-corner80×40×4 net area,8000kg/m3 and stated lengths; no delivered section tolerances, rounded-corner/weld/connection mass bound.',
+    hardware:'remainingHardwareKg is the unweighed allowance within a4.5kN nominal full-water design model, not evidence that the actual required kit fits it.',
+    actualKitUpperBoundEstablished:false,actualKitWeighed:false},
    capture:'Broad150long metal-lined split saddles isolate thin copper from point roller contact.220OD/170ID/40axial steel races; two50rollers per station; 0/90positive pins. Do not put loaded hard rollers or chain jaws directly on159×2copper and invent a denting pass.',
    rollTorqueRequirement:{workingNm:500,holdingNm:1000,manualRatio:60,handwheelRadiusMm:200,
     efficiencies:[.15,.25,.4].map(efficiency=>({efficiency,handForceN:500/(60*efficiency*.2)})),
@@ -365,9 +422,9 @@ export function renderBent(o){
  s+=`<path d="M${X(12250)} 970 H${X(o.renewal.requiredDeckEnd)}" stroke="#5d8d70" stroke-width="14"/>`;
  for(const p of o.renewal.lowerCradleX)s+=`<path d="M${X(p)} 930 V985" stroke="#8b6f4a" stroke-width="6"/>`;
  s+=text(45,1015,`Full-frame draw${o.renewal.translation.toFixed(0)} /park12250..${o.renewal.park[1].toFixed(0)} /work to${o.renewal.requiredDeckEnd}: +${o.renewal.extensionBeyondSelected} beyond selecteddeck.`,20);
- s+=text(45,1052,`Known wet spool${o.loads.spoolWetBoundKg.toFixed(2)}kg +bareframe${o.loads.frame.bareKg.toFixed(2)} =${o.loads.knownWetIncludingBareFrameKg.toFixed(2)}kg BEFORE hardware.`,20);
+ s+=text(45,1052,`Nominal full-water spool${o.loads.nominalSpoolFullWaterKg.toFixed(2)}kg +bareframe${o.loads.frame.nominalBareKg.toFixed(2)} =${o.loads.nominalFullWaterIncludingBareFrameKg.toFixed(2)}kg before unweighed hardware; actual-kit bound unearned.`,20);
  s+=text(45,1088,`Locked90only: bridge crowns${o.spatialStateProof.bridgeCasesAfterDeformation.map(b=>b.minimumClearance.toFixed(1)).join('/')}mm after rigid+deformation; misplaced roll fails.`,18);
- s+=text(45,1124,'Actual13500columns checked separately; no larger footing/collar/drive/rail support pass follows from the50column.',18);
+ s+=text(45,1124,`CG independent-water domain${o.renewal.cgBound.localX.map(x=>x.toFixed(1)).join('..')} /liftreserve${o.renewal.cgBound.liftMinimumCgReserve.toFixed(1)}mm; old full-wet generalbound rejected.`,18);
  s+=text(45,1160,'Well175south /one1150×600 temporary platform/two sequential crew positions; actual native tools/torque/support remain HOLD.',18);
  s+=text(45,1195,'No downstream working platform. No hydraulic/first-wet/site/physical adoption. RWT06 remains STARTED and incomplete.',18);
  s+=text(35,1260,'Changed first-release plan · actual175 opening cost / one worker, two sequential positions',24);
