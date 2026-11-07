@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 53,
-  "state": "released",
-  "leaseId": "5af3c2b0-5818-45f0-b3cb-45f3de0596ac",
+  "generation": 54,
+  "state": "claimed",
+  "leaseId": "ab36db2b-49a2-4e7e-8c92-74b2cf647951",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-20261106-rwt06-successor"
+    "label": "rush-closeout-rwt"
   },
-  "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-07T03:05:58.000Z",
-  "expiresAt": "2026-11-07T03:05:58.000Z",
-  "branch": "work/zerg-20261107-rwt06-upper-first",
+  "claimedAt": "2026-11-07T09:14:23.048Z",
+  "heartbeatAt": "2026-11-07T09:14:23.048Z",
+  "expiresAt": "2026-11-07T09:59:23.048Z",
+  "branch": "work/rush-closeout-rwt06",
   "predecessor": {
-    "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
-    "generation": 52,
-    "branch": "work/zerg-20261106-rwt06",
-    "pr": 1338,
+    "leaseId": "5af3c2b0-5818-45f0-b3cb-45f3de0596ac",
+    "generation": 53,
+    "branch": "work/zerg-20261107-rwt06-upper-first",
+    "pr": 1370,
     "checkpoint": {
-      "evidence": "FINAL HANDOFF DraftPR1338 exact2c6e6a76/treeda7aa9c4. Currentmain0a40215 ancestor.135RWT and directrepo pass; HAD/MAT inputs unchanged. Accepted788 operator collision, fast-plan curvature and slot/lap defects durably recorded; no adoption.",
-      "next": "Successor: compose slow self-draining header and deliberate carrier-depth/bridge comparison; earn original-body manual-tool sweep, actual station-derived50lap/slot, normal/maintenance matrix and high-eave duties from finite exit map.",
-      "blocker": "Coordinator execution limit; stop new design. RWT06 incomplete, no hydraulic/physical/site admission. Preserve draft and branch; canonical HANDOFF release immediately after this checkpoint."
+      "evidence": "Draft 1370 exact a4783cef855562471d39a3ec638c88eb2badf8a9. 173 RWT tests green and changed sheet inspected. Stock upper handler and lowered track limitations are reproducible.",
+      "next": "Bound actual positive lock angular play, capture and support for the same fixed-height native spool. Retain upper handling, structural and site holds."
     }
   },
   "recoverySource": {
-    "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
-    "generation": 52,
-    "branch": "work/zerg-20261106-rwt06",
-    "pr": 1338,
+    "leaseId": "5af3c2b0-5818-45f0-b3cb-45f3de0596ac",
+    "generation": 53,
+    "branch": "work/zerg-20261107-rwt06-upper-first",
+    "pr": 1370,
     "checkpoint": {
-      "evidence": "FINAL HANDOFF DraftPR1338 exact2c6e6a76/treeda7aa9c4. Currentmain0a40215 ancestor.135RWT and directrepo pass; HAD/MAT inputs unchanged. Accepted788 operator collision, fast-plan curvature and slot/lap defects durably recorded; no adoption.",
-      "next": "Successor: compose slow self-draining header and deliberate carrier-depth/bridge comparison; earn original-body manual-tool sweep, actual station-derived50lap/slot, normal/maintenance matrix and high-eave duties from finite exit map.",
-      "blocker": "Coordinator execution limit; stop new design. RWT06 incomplete, no hydraulic/physical/site admission. Preserve draft and branch; canonical HANDOFF release immediately after this checkpoint."
+      "evidence": "Draft 1370 exact a4783cef855562471d39a3ec638c88eb2badf8a9. 173 RWT tests green and changed sheet inspected. Stock upper handler and lowered track limitations are reproducible.",
+      "next": "Bound actual positive lock angular play, capture and support for the same fixed-height native spool. Retain upper handling, structural and site holds."
     }
-  },
-  "pr": 1370,
-  "checkpoint": {
-    "evidence": "Draft 1370 exact a4783cef855562471d39a3ec638c88eb2badf8a9. 173 RWT tests green and changed sheet inspected. Stock upper handler and lowered track limitations are reproducible.",
-    "next": "Bound actual positive lock angular play, capture and support for the same fixed-height native spool. Retain upper handling, structural and site holds."
-  },
-  "releasedAt": "2026-11-07T03:05:58.000Z",
-  "releaseReason": "handoff"
+  }
 }
