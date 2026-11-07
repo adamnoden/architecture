@@ -46,4 +46,14 @@ The comparison puts a 60 mm wheel and 5 mm gap below the crossmember. A 70 × 12
 
 The arm at the actual X13500 station sits inside the E receiver plan and enters the −1250 fault-water envelope by about 37 mm. The rail itself remains in the fault-water envelope at the receiver's east boundary. A lower track support needs a real drainage, corrosion, cleaning and force-transfer detail through this region. The X16500 and X18050 outboard stations are new temporary support locations. The latter requires local grade about −1841 mm for 500 mm beneath its arm. Footings and ground remain site conditions. The upper handler and lower track comparisons leave the whole release open.
 
+### Lock play, cap stiffness and the complete stock lift
+
+With the spool rolled to 90°, ±1° of angular play guarantees crown clearances of 27.91, 42.03 and 69.88 mm under the court, spine and outer bridges. At ±1.4° the court guarantee falls to 24.72 mm, below the 25 mm target. Each enclosing prism is expanded by the chord swept by its most distant vertex, plus 5 mm rigid placement and 5 mm deformation in each coordinate. The finite eastward draw determines which solids can reach each bridge. Along the falling track, height plus track slope times east coordinate is constant. Its maximum over each prism bounds the crown at the west edge and throughout the bridge. A conservative bound below target leaves the clearance unproved.
+
+A trial pin at 97.5 mm pitch radius attracts 10.26 kN if it carries the full 1000 Nm holding reference. A 16 mm pin centred in a 17 mm hole allows 0.294° offset before edge contact. Under a uniform 1000 Nm, a nominal 159 × 2 mm tube over the sloped 5050 mm collar spacing twists 1.058° at the assumed 45 GPa shear modulus. This sensitivity makes a drive-end witness insufficient. Both ends need independent proof of full engagement before translation, together with a mechanical interlock, qualified collar, pin, housing and real tolerance stack.
+
+Treating the existing 70 × 12 mm keeper cap and RHS as fully joined reduces the single-wheel deflection from 6.77 to 3.463 mm. The cap interface would have to transfer 36.82 N/mm at the maximum shear for that case. Actual seams, welds, wheel contact and the wet support system still govern whether the track can claim that stiffness.
+
+When the upper body just clears the guard, its lid reaches at least 1491.68 mm. A plumb 2100 mm stock hand loop with 10 mm clearance would need a top hook at 3601.68 mm or above, under a roof at 1970 mm. The same centred-stock-loop conflict persists throughout the proposed lift.
+
 Continue **this one upper-first control** through those real attachment/handler/capture/lock duties. Keep the [finite packet exit map](rwt-06-finite-exit-map.md), high-eave ordinary/receiver/major-repair duties, first wetting and exact conditional site handoff visible. This source changes no selected HAD topology or physical admission and does not complete RWT-06.

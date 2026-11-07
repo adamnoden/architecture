@@ -117,6 +117,19 @@ function nativeEndActions(c){
   primaryEvidence:['https://www.copper.org/publications/pub_list/pdf/copper_tube_handbook.pdf','https://alloys.copper.org/alloy/C12200'],accepted:false};
 }
 
+function positiveLockReference(c){
+ const pitchRadiusMm=97.5,holdingNm=c.loads.rollTorqueRequirement.holdingNm;
+ const pinDiameterMm=16,boreDiameterMm=17,radialFitMm=(boreDiameterMm-pinDiameterMm)/2;
+ const pinFitDegrees=2*Math.asin(radialFitMm/(2*pitchRadiusMm))*180/pi;
+ const gaugeLengthMm=(12400-7350)*Math.hypot(1,c.geometry.fall),shearModulusTrialMPa=45000;
+ const polarMm4=pi/32*(159**4-155**4);
+ return {crownCases:c.lockCases,requiredBridgeClearanceMm:25,pitchRadiusMm,holdingNm,
+  unsharedSingleLockLoadKn:holdingNm/pitchRadiusMm,pinDiameterMm,boreDiameterMm,pinFitDegrees,
+  gaugeLengthMm,shearModulusTrialMPa,polarMm4,
+  uniformTorqueTwistDegrees:holdingNm*1000*gaugeLengthMm/(shearModulusTrialMPa*polarMm4)*180/pi,
+  role:'Each lock is priced for the whole reference torque. The pin fit assumes a centred rigid circular pin and bore. Uniform elastic tube twist is a sensitivity only. Full engagement at both ends and a draw interlock must be independently demonstrated.',actualLockAccepted:false};
+}
+
 function ordinaryUpperHandler({pan,dimensions,fullWetReferenceKg,bodyTop,roof,guard,allowance}){
  const hoist={model:'KITO CX003',capacityKg:250,nominalBareKg:2.4,standardLift:2500,standardFoldedHandChain:2000,
   topHookToHandChainBottom:2100,hookHeadroom:217,planDimensions:[88,84],ratedLoadAverageHandPullN:147,handChainTravelPerLift:33.8},
@@ -140,6 +153,7 @@ function ordinaryUpperHandler({pan,dimensions,fullWetReferenceKg,bodyTop,roof,gu
   guardTransit:{guard,roof,allowancePerBoundary:allowance,minimumBodyTop,greatestIdealBottomHookZ,idealMaxBridleHeight,
    directOppositeEyesXY:eyes,eyeSpan:span,directIncludedAngleLimitDegrees:included,minimumBridleHeight:bridleHeight,
    shortageEvenWithZeroTrolleyRailAndRiggingFittings:bridleHeight-idealMaxBridleHeight,
+   minimumTopHookZForClearStockLoop:minimumBodyTop+hoist.topHookToHandChainBottom+allowance,
    earlierBodyTop:bodyTop,availableAboveEarlierBodyTop:roof-bodyTop-allowance,
    earlierBodyTopIndicativeStackDeficit:hoist.hookHeadroom+referenceTrolley.listedHeadroomMm-(roof-bodyTop-allowance),
    role:'An ideal level load and zero-depth trolley/rail are deliberately favourable. Equal-level opposite eyes at this span need at least half-span/tan30 vertical rise at a direct hook, even with perfect placement. This tests the stated simple direct sling geometry, not a master link, short custom yoke or every hoist. The hoist-only negative is independent of the indicative trolley dimension.',accepted:false},
@@ -159,6 +173,10 @@ function lowerTrackReference(control,had){
  const posts=[...rails.supportX,16500,18050],sections=posts.slice(1).map((x,i)=>[posts[i],x]);
  const sectionI=(rails.sectionNS*rails.sectionVertical**3-(rails.sectionNS-2*rails.wall)*(rails.sectionVertical-2*rails.wall)**3)/12;
  const longest=Math.max(...sections.map(([a,b])=>b-a)),P=control.loads.supportReactionRequirement.compressionEachKn*1000,E=200000;
+ const rhsArea=rails.sectionVertical*rails.sectionNS-(rails.sectionVertical-2*rails.wall)*(rails.sectionNS-2*rails.wall);
+ const capArea=capWidth*capDepth,rhsY=rails.sectionVertical/2,capY=rails.sectionVertical+capDepth/2;
+ const neutralAxis=(rhsArea*rhsY+capArea*capY)/(rhsArea+capArea);
+ const joinedI=sectionI+rhsArea*(rhsY-neutralAxis)**2+capWidth*capDepth**3/12+capArea*(capY-neutralAxis)**2;
  const distalArmBottom=x=>railTop(x)-armTopBelowTrack-armDepth;
  const drawEnd=frame.wheelStations.at(-1)+control.renewal.translation,receiverEast=receiver[0]+receiver[2];
  const lastReceiverSupport=rails.supportX.filter(x=>x>receiver[0]&&x<receiverEast).at(-1);
@@ -184,6 +202,10 @@ function lowerTrackReference(control,had){
     pointMomentKnm:P*longest/4/1e6,pointStressMPa:P*longest/4/(sectionI/(rails.sectionVertical/2)),
     pointMidspanDeflection:P*longest**3/(48*E*sectionI),deflectionAlreadyAllowedPerFace:5,
     role:'One conservative single 8.5kN wheel action on an isolated bare, simply supported RHS at its worst midpoint. Section share, cap composite action, weld, correlated multi-wheel loading and actual rail deflection are unqualified.'},
+   fullyJoinedCapReference:{I:joinedI,neutralAxisAboveRhsBottom:neutralAxis,
+    pointMidspanDeflection:P*longest**3/(48*E*joinedI),
+    interfaceShearFlowNPerMm:(P/2)*capArea*(capY-neutralAxis)/joinedI,
+    role:'Full longitudinal transfer between cap and RHS under one midspan point load. Requires actual seams, welds, wheel contact, coupled support stiffness and a complete load model.',accepted:false},
    supportFootprintsAccepted:false,anchorsAndReceiverAccepted:false,
    role:'Use real existing support axes only as locations. An outboard 50 post inside the E receiver plan is neither a qualified water-structure interface nor a pad. At the new east stations, temporary foundations, side arms and the first and last cantilevers must be designed. No added column through the RC.'},
   localSiteConsequences:{receiverEast,ordinaryWater,faultWater,lastReceiverSupport,armBottomAtReceiverSupport:distalArmBottom(lastReceiverSupport),
@@ -197,7 +219,7 @@ function lowerTrackReference(control,had){
 export function upperFirst(){
  const gridText=fs.readFileSync('project/str/studies/current-house-grid.json','utf8'),grid=JSON.parse(gridText),
   baselineText=fs.readFileSync('project/rwt/studies/bent-spool-control.json','utf8'),baseline=JSON.parse(baselineText),
-  c=bentSpool({installedAxisZ:-815,initialDrop:0}),slope=c.geometry.fall,t=Math.atan(slope),n=[Math.cos(t),0,-Math.sin(t)],v=[Math.sin(t),0,Math.cos(t)],u=[0,1,0],
+  c=bentSpool({installedAxisZ:-815,initialDrop:0,lockPlayDegrees:[1,1.4]}),slope=c.geometry.fall,t=Math.atan(slope),n=[Math.cos(t),0,-Math.sin(t)],v=[Math.sin(t),0,Math.cos(t)],u=[0,1,0],
   pan=[6735,6850,-205,305,550,205],F=c.geometry.flange,
   flange=[-142.5,142.5].flatMap(a=>[-142.5,142.5].flatMap(b=>[0,25].map(d=>add(add(add(F,n,a),u,b),v,d)))),
   ranges=hull([...corners(pan),...flange]),dimensions=ranges.map(r=>r[1]-r[0]),
@@ -220,7 +242,7 @@ export function upperFirst(){
    roles:'Selected HAD is unchanged. This is ONE unadopted same-spool successor; default710 geometry/JSON stays reproducible. Its method text is not inherited into this different release sequence.'},
   selectedGeometryChanged:false,accepted:false,hydraulicAccepted:false,siteAccepted:false,physicalEventPerformed:false,firstSusceptible:null,
   decision:'Install the same pipe40lower and lift the independently captured upper pan/flange first. Eliminate heavy dynamic lowering; keep actual upper mass, positive support/keepers, full export and all native lower capture/lock duties explicit.',
-  geometry:c.geometry,completeAngularProof:c.completeAngularProof,spatialStateProof:c.spatialStateProof,frameRollProof:c.frameRollProof,postTranslation:c.actualPostTranslation,
+  geometry:c.geometry,completeAngularProof:c.completeAngularProof,positiveLockReference:positiveLockReference(c),spatialStateProof:c.spatialStateProof,frameRollProof:c.frameRollProof,postTranslation:c.actualPostTranslation,
   nominalSpoolLoads:c.loads,pairedToolReference:c.verticalJointReference,wellAndCrew:c.wellAndCrew,rimWeather:c.rimAndWeather,nativeEndActions:nativeEndActions(c),renewal:{...c.renewal,releaseMethod:'UPPER FIRST; ignore the predecessor lower40 sequence. Full nominal CG domain retained; real lifting points/kit/tilt/wind and captured reversal remain unqualified.'},
   zeroDropAtOldDatumRejected:{installedAxis:-775,drop:0,bridgeClearance:baseline.spatialStateProof.bridgeCasesAfterDeformation.map(b=>({id:b.id,minimumClearance:b.minimumClearance-40})),
    proof:'Omitting the old40vertical translation raises EVERY old moving point40 with unchangedX/draw and envelopes. Subtract40 from each exact old bridge reserve. The first flange/bridge fails; zero-drop alone is not a solution.'},
@@ -260,7 +282,7 @@ export function upperFirst(){
 }
 export function renderUpper(o){
  const esc=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;'),label=(x,y,s,size=19)=>`<text x="${x}" y="${y}" font-size="${size}">${esc(s)}</text>`;
- let s='<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1990" viewBox="0 0 1600 1990"><rect width="100%" height="100%" fill="#fbfaf5"/><g font-family="sans-serif" fill="#283e43">';
+ let s='<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2280" viewBox="0 0 1600 2280"><rect width="100%" height="100%" fill="#fbfaf5"/><g font-family="sans-serif" fill="#283e43">';
  s+=label(30,42,'UNADOPTED · upper-first release / one passive rear support',30)+label(30,80,'Same native bent spool at−815. Lift upper assembly; keep heavy pipe/frame at fixed height. No actual-kit or physical admission.');
  const X=x=>55+(x-5925)*.36,Y=y=>160+(y-6025)*.26,rect=(b,fill,stroke)=>`<rect x="${X(b[0])}" y="${Y(b[1])}" width="${b[3]*.36}" height="${b[4]*.26}" fill="${fill}" stroke="${stroke}"/>`;
  s+=label(40,125,'Plan · fixed rear support is north of complete native sweep',23)+rect(o.rearFixture.westReturn.box,'#e0d1bb','#9a825f')+rect([6125,6125,0,1525,1275,1],'#f3eee2','#8b806b');
@@ -308,6 +330,23 @@ export function renderUpper(o){
  s+=label(40,1860,`Bare RHS point-load deflection ${track.fixedSupport.isolatedExistingSizeReference.pointMidspanDeflection.toFixed(2)} mm exceeds the 5 mm allowance.`,19);
  s+=label(40,1900,`Receiver arm at X${site.lastReceiverSupport} enters fault water by ${site.armFaultSubmergenceAtReceiverSupport.toFixed(1)} mm.`,18);
  s+=label(40,1940,`Trial far support requires local grade ${site.localGradeFor500AtFarthestSupport.toFixed(1)} for 500 mm clearance. Actual pads, track and locks remain open.`,18);
+ const lock=o.positiveLockReference,joined=track.fixedSupport.fullyJoinedCapReference;
+ s+=label(40,2010,'Locked translation · minimum crown clearance through each bridge',23);
+ const left=210,scale=6,limitX=left+scale*lock.requiredBridgeClearanceMm;
+ for(const [i,b] of lock.crownCases[0].bridges.entries()){
+  const y=2060+i*50,adverse=lock.crownCases[1].bridges[i];
+  s+=label(40,y+12,b.id,18);
+  for(const [dy,d,fill] of [[0,b,'#416b60'],[16,adverse,'#ac724e']]){
+   s+=`<rect x="${left}" y="${y+dy}" width="${scale*d.minimumClearance}" height="10" fill="${fill}"/>`;
+   s+=label(left+scale*d.minimumClearance+6,y+dy+10,d.minimumClearance.toFixed(2),14);
+  }
+ }
+ s+=`<path d="M${limitX} 2045 V2200" stroke="#253b40" stroke-dasharray="3 2"/>`;
+ s+=label(40,2245,'Green ±1° · ochre ±1.4° · dashed line 25 mm',18);
+ s+=label(790,2075,`Whole-lift stock hand loop needs hook Z ≥ ${transit.minimumTopHookZForClearStockLoop.toFixed(1)} mm.`,18);
+ s+=label(790,2125,`Fully joined cap deflection ${joined.pointMidspanDeflection.toFixed(3)} mm. Shear transfer unproved.`,18);
+ s+=label(790,2175,`One engaged pin takes ${lock.unsharedSingleLockLoadKn.toFixed(2)} kN at ${lock.holdingNm} Nm.`,18);
+ s+=label(790,2225,'Both locks must engage before translation. Actual hardware remains open.',18);
  return s+'</g></svg>\n';
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){

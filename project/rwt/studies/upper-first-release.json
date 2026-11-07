@@ -516,6 +516,119 @@
       }
     ]
   },
+  "positiveLockReference": {
+    "crownCases": [
+      {
+        "playDegrees": 1,
+        "allowancePerCoordinateMm": 10,
+        "bridges": [
+          {
+            "id": "court",
+            "minimumClearance": 27.912062560434833,
+            "governing": {
+              "body": "complete-moving285flange-prism",
+              "chordMm": 7.896935768274333,
+              "clearance": 27.912062560434833
+            },
+            "eligibleBodies": [
+              "native-inlet460box",
+              "complete-moving285flange-prism",
+              "straight-tube-conservative160square"
+            ]
+          },
+          {
+            "id": "spine",
+            "minimumClearance": 42.02970961925837,
+            "governing": {
+              "body": "complete-moving285flange-prism",
+              "chordMm": 7.896935768274333,
+              "clearance": 42.02970961925837
+            },
+            "eligibleBodies": [
+              "native-inlet460box",
+              "complete-moving285flange-prism",
+              "straight-tube-conservative160square"
+            ]
+          },
+          {
+            "id": "outer",
+            "minimumClearance": 69.88265079572898,
+            "governing": {
+              "body": "complete-moving285flange-prism",
+              "chordMm": 7.896935768274333,
+              "clearance": 69.88265079572898
+            },
+            "eligibleBodies": [
+              "native-inlet460box",
+              "complete-moving285flange-prism",
+              "straight-tube-conservative160square"
+            ]
+          }
+        ]
+      },
+      {
+        "playDegrees": 1.4,
+        "allowancePerCoordinateMm": 10,
+        "bridges": [
+          {
+            "id": "court",
+            "minimumClearance": 24.716262497948833,
+            "governing": {
+              "body": "complete-moving285flange-prism",
+              "chordMm": 11.055575364917482,
+              "clearance": 24.716262497948833
+            },
+            "eligibleBodies": [
+              "native-inlet460box",
+              "complete-moving285flange-prism",
+              "straight-tube-conservative160square"
+            ]
+          },
+          {
+            "id": "spine",
+            "minimumClearance": 38.83390955677237,
+            "governing": {
+              "body": "complete-moving285flange-prism",
+              "chordMm": 11.055575364917482,
+              "clearance": 38.83390955677237
+            },
+            "eligibleBodies": [
+              "native-inlet460box",
+              "complete-moving285flange-prism",
+              "straight-tube-conservative160square"
+            ]
+          },
+          {
+            "id": "outer",
+            "minimumClearance": 66.68685073324298,
+            "governing": {
+              "body": "complete-moving285flange-prism",
+              "chordMm": 11.055575364917482,
+              "clearance": 66.68685073324298
+            },
+            "eligibleBodies": [
+              "native-inlet460box",
+              "complete-moving285flange-prism",
+              "straight-tube-conservative160square"
+            ]
+          }
+        ]
+      }
+    ],
+    "requiredBridgeClearanceMm": 25,
+    "pitchRadiusMm": 97.5,
+    "holdingNm": 1000,
+    "unsharedSingleLockLoadKn": 10.256410256410257,
+    "pinDiameterMm": 16,
+    "boreDiameterMm": 17,
+    "pinFitDegrees": 0.29382483228863127,
+    "gaugeLengthMm": 5050.349468876928,
+    "shearModulusTrialMPa": 45000,
+    "polarMm4": 6079800.169582509,
+    "uniformTorqueTwistDegrees": 1.057650659420915,
+    "role": "Each lock is priced for the whole reference torque. The pin fit assumes a centred rigid circular pin and bore. Uniform elastic tube twist is a sensitivity only. Full engagement at both ends and a draw interlock must be independently demonstrated.",
+    "actualLockAccepted": false
+  },
   "spatialStateProof": {
     "gated": [
       {
@@ -4244,6 +4357,7 @@
       "directIncludedAngleLimitDegrees": 60,
       "minimumBridleHeight": 486.0748399166532,
       "shortageEvenWithZeroTrolleyRailAndRiggingFittings": 234.75119449820477,
+      "minimumTopHookZForClearStockLoop": 3601.6763545815515,
       "earlierBodyTop": 1700,
       "availableAboveEarlierBodyTop": 260,
       "earlierBodyTopIndicativeStackDeficit": 45.89999999999998,
@@ -4372,6 +4486,14 @@
         "pointMidspanDeflection": 6.765520076231856,
         "deflectionAlreadyAllowedPerFace": 5,
         "role": "One conservative single 8.5kN wheel action on an isolated bare, simply supported RHS at its worst midpoint. Section share, cap composite action, weld, correlated multi-wheel loading and actual rail deflection are unqualified."
+      },
+      "fullyJoinedCapReference": {
+        "I": 3393146.666666667,
+        "neutralAxisAboveRhsBottom": 71,
+        "pointMidspanDeflection": 3.4627012485134707,
+        "interfaceShearFlowNPerMm": 36.824226087093194,
+        "role": "Full longitudinal transfer between cap and RHS under one midspan point load. Requires actual seams, welds, wheel contact, coupled support stiffness and a complete load model.",
+        "accepted": false
       },
       "supportFootprintsAccepted": false,
       "anchorsAndReceiverAccepted": false,
