@@ -46,6 +46,27 @@ test('full upper body needs the above-guard yaw and corrected CG/drive bounds re
  assert.equal(o.upperExport.actorSweepAccepted,false);
  assert.equal(o.wholeMethodAccepted,false);assert.equal(o.physicalEventPerformed,false);assert.equal(o.firstSusceptible,null);
 });
+test('stock centred CX003 intersects the seated lid and its direct bridle fails at every guard-clearing height',()=>{
+ const {firstPick,guardTransit,accepted}=o.ordinaryUpperHandler;
+ assert.deepEqual(firstPick.pickXY,[6887.5,7125]);
+ assert(firstPick.minimumLidPlanInteriorForAnyHeadYaw>30);
+ assert.equal(firstPick.highestStockHandChainBottom,-130);
+ assert.equal(firstPick.verticalInterferenceAtLeast,130);
+ assert(guardTransit.idealMaxBridleHeight>250&&guardTransit.idealMaxBridleHeight<252);
+ assert(guardTransit.shortageEvenWithZeroTrolleyRailAndRiggingFittings>230);
+ assert.equal(accepted,false);
+});
+test('lower track includes the final moving wheel and distinguishes actual in-receiver arm from rail at the boundary',()=>{
+ const track=o.lowerTrackReference;
+ assert(track.legacyRailRejected.topProjectsIntoFrameDepthBy>79);
+ assert(track.loweredTrack.endReserve>120);
+ assert.equal(track.loweredTrack.clipSection.webClearanceAfter3,1);
+ assert(track.fixedSupport.isolatedExistingSizeReference.pointMidspanDeflection>5);
+ assert.equal(track.localSiteConsequences.lastReceiverSupport,13500);
+ assert(track.localSiteConsequences.armFaultSubmergenceAtReceiverSupport>35);
+ assert(track.localSiteConsequences.localGradeFor500AtFarthestSupport<-1840);
+ assert.equal(track.wholeTrackAccepted,false);
+});
 test('new upper-first source and changed geometry sheet reproduce',()=>{
  assert.equal(fs.readFileSync('project/rwt/studies/upper-first-release.json','utf8'),JSON.stringify(o,null,2)+'\n');
  assert.equal(fs.readFileSync('project/rwt/studies/upper-first-release.svg','utf8'),renderUpper(o));

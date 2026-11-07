@@ -117,6 +117,83 @@ function nativeEndActions(c){
   primaryEvidence:['https://www.copper.org/publications/pub_list/pdf/copper_tube_handbook.pdf','https://alloys.copper.org/alloy/C12200'],accepted:false};
 }
 
+function ordinaryUpperHandler({pan,dimensions,fullWetReferenceKg,bodyTop,roof,guard,allowance}){
+ const hoist={model:'KITO CX003',capacityKg:250,nominalBareKg:2.4,standardLift:2500,standardFoldedHandChain:2000,
+  topHookToHandChainBottom:2100,hookHeadroom:217,planDimensions:[88,84],ratedLoadAverageHandPullN:147,handChainTravelPerLift:33.8},
+  pick=[pan[0]+pan[3]/2,pan[1]+pan[4]/2],headReach=Math.hypot(...hoist.planDimensions),
+  installedTop=pan[2]+pan[5],handChainHighestBottom=roof-hoist.topHookToHandChainBottom,
+  lidPlanEdgeGap=Math.min(pan[3],pan[4])/2-headReach,
+  eyeInset=25,eyes=[[pan[0]+eyeInset,pan[1]+eyeInset],[pan[0]+pan[3]-eyeInset,pan[1]+pan[4]-eyeInset]],
+  span=Math.hypot(eyes[1][0]-eyes[0][0],eyes[1][1]-eyes[0][1]),included=60,
+  bridleHeight=(span/2)/Math.tan(included*pi/360),minimumBodyTop=guard+allowance+dimensions[2],
+  greatestIdealBottomHookZ=roof-allowance-hoist.hookHeadroom,idealMaxBridleHeight=greatestIdealBottomHookZ-minimumBodyTop,
+  referenceTrolley={model:'TSP2003',listedHeadroomInches:3.5,listedHeadroomMm:3.5*25.4,listedBareKg:10*.45359237,
+   role:'Indicative published trolley dimension only; no local-model compatibility, coupled drawing, real rail or supported bearing plane established.'};
+ return {id:'stock-centred-manual-CX003-and-direct-two-leg-bridle',accepted:false,hoist,referenceTrolley,
+  primarySources:{cx:'https://kito.co.jp/en/products/cb/cx',manual:'https://kito.co.jp/__/download/63491ff4ea6f804c84950dff/OM-CX1ZZZ-MGE-08.pdf',
+   trolley:'https://cdn.kito.ca/fr/manual-trolleys-beam-clamps/ts',role:'KITO CX3 dimension d is the standard top-hook to hand-chain bottom distance. Manual pp6–8 require vertical hand-chain operation, aligned hooks, no chain/load contact and people outside the lifted path. Page13 60° is the direct hook/slings illustration, not allowed hand-chain side pull. Pages12/14 do not qualify this local trolley match or a separation-force limiter.'},
+  nominalFullWetPanFractionOfHoist:fullWetReferenceKg/hoist.capacityKg,
+  firstPick:{pickXY:pick,installedLidTop:installedTop,roof,entireHeadDiagonalAsHorizontalChainOffsetBound:headReach,
+   minimumLidPlanInteriorForAnyHeadYaw:lidPlanEdgeGap,highestStockHandChainBottom:handChainHighestBottom,
+   verticalInterferenceAtLeast:installedTop-handChainHighestBottom,
+   role:'Even placing the upper hook at the roof, a stock freely hanging loop through the head has legs below the installed walking lid. Both vertical chain projections are inside the continuous lid: even the entire compact plan diagonal is smaller than the shortest pick-to-edge distance. This is a centred stock-loop comparison, not a prohibition on every possible pickup. No chain guide, obstruction, altered chain or side pull credited.',accepted:false},
+  guardTransit:{guard,roof,allowancePerBoundary:allowance,minimumBodyTop,greatestIdealBottomHookZ,idealMaxBridleHeight,
+   directOppositeEyesXY:eyes,eyeSpan:span,directIncludedAngleLimitDegrees:included,minimumBridleHeight:bridleHeight,
+   shortageEvenWithZeroTrolleyRailAndRiggingFittings:bridleHeight-idealMaxBridleHeight,
+   earlierBodyTop:bodyTop,availableAboveEarlierBodyTop:roof-bodyTop-allowance,
+   earlierBodyTopIndicativeStackDeficit:hoist.hookHeadroom+referenceTrolley.listedHeadroomMm-(roof-bodyTop-allowance),
+   role:'An ideal level load and zero-depth trolley/rail are deliberately favourable. Equal-level opposite eyes at this span need at least half-span/tan30 vertical rise at a direct hook, even with perfect placement. This tests the stated simple direct sling geometry, not a master link, short custom yoke or every hoist. The hoist-only negative is independent of the indicative trolley dimension.',accepted:false},
+  role:'The upper method fails before any diagonal rail, yaw or landing can be credited. Rating alone does not fix chain path or headroom. Retain the geometric bare-body export reference separately; no actual controlled release, operator/rigging sweep, support, tilt/CG, force limit, landing or reverse event accepted.'};
+}
+
+function lowerTrackReference(control,had){
+ const {axisAnchor,fall,receiver,faultWater,ordinaryWater}=control.geometry;
+ const frame=control.loads.frame,rails=had.renewal.joint.railReference;
+ const [bed,bedEnd]=had.passage.bedEnds,axis=x=>axisAnchor[2]-(x-axisAnchor[0])*fall;
+ assert.equal((bed[1]-bedEnd[1])/(bedEnd[0]-bed[0]),fall);
+ const installedRailTop=x=>bed[1]-(x-bed[0])*fall+rails.topRelativeBed;
+ const frameBottom=x=>axis(x)-frame.pipeAxisAboveFrameTop-frame.depth;
+ const wheelDiameter=60,wheelTopBelowFrame=5,railTop=x=>frameBottom(x)-wheelTopBelowFrame-wheelDiameter;
+ const capWidth=70,capDepth=12,armTopBelowTrack=65,armDepth=60;
+ const wheelX=frame.wheelStations[0],crossmemberEndY=rails.axesY[0],legacyInterference=installedRailTop(wheelX)-frameBottom(wheelX);
+ const posts=[...rails.supportX,16500,18050],sections=posts.slice(1).map((x,i)=>[posts[i],x]);
+ const sectionI=(rails.sectionNS*rails.sectionVertical**3-(rails.sectionNS-2*rails.wall)*(rails.sectionVertical-2*rails.wall)**3)/12;
+ const longest=Math.max(...sections.map(([a,b])=>b-a)),P=control.loads.supportReactionRequirement.compressionEachKn*1000,E=200000;
+ const distalArmBottom=x=>railTop(x)-armTopBelowTrack-armDepth;
+ const drawEnd=frame.wheelStations.at(-1)+control.renewal.translation,receiverEast=receiver[0]+receiver[2];
+ const lastReceiverSupport=rails.supportX.filter(x=>x>receiver[0]&&x<receiverEast).at(-1);
+ const keeperLegBeyondRailCentre=capWidth/2+5+8,keeperUnderCap=4+8,keeperLowerZ=x=>railTop(x)-capDepth-keeperUnderCap;
+ const keeperY=[rails.axesY[0]-keeperLegBeyondRailCentre,rails.axesY[1]+keeperLegBeyondRailCentre];
+ return {legacyRailRejected:{wheelX,crossmemberEndY,legacyTop:installedRailTop(wheelX),newFrameBottom:frameBottom(wheelX),
+   newFrameTop:frameBottom(wheelX)+frame.depth,topProjectsIntoFrameDepthBy:legacyInterference,
+   role:'At the proposed full crossmember to the rail axes, the selected old-bed rail top is inside the new frame depth, not under the wheels. This rejects the inherited under-frame arrangement. It does not infer the shape of unbuilt hardware.'},
+  loweredTrack:{trackX:[7650,18050],firstAndLastWheelX:[wheelX,drawEnd],endReserve:18050-drawEnd,travelFall:fall,
+   pairedTrackAxesY:rails.axesY,trackSection:[rails.sectionVertical,rails.sectionNS,rails.wall],cap:[capWidth,capDepth],
+   wheelDiameter,wheelTopBelowFrame,axleBelowFrameBottom:wheelTopBelowFrame+wheelDiameter/2,railTopBelowAxis:frame.pipeAxisAboveFrameTop+frame.depth+wheelTopBelowFrame+wheelDiameter,
+   clipSection:{capEdgeGap:5,keeperLeg:8,underCapClearance:4,keeperToeThickness:8,keeperToeInnerOffset:29,keeperY,
+    nominalToeEngagement:capWidth/2-29,nominalToeToRailWeb:29-rails.sectionNS/2,
+    referenceLateralMovement:3,engagementAfter3:capWidth/2-29-3,webClearanceAfter3:29-rails.sectionNS/2-3,
+    completePlanYWith10:[keeperY[0]-10,keeperY[1]+10],bracketTopBelowTrack:armTopBelowTrack,
+    verticalGapToArmAfter10:keeperLowerZ(wheelX)-(railTop(wheelX)-armTopBelowTrack)-10,
+    role:'The reference hooks ride outside the cap and below its edges. Their gross envelopes stay above the arm. The much tighter lateral 3mm running-control comparison leaves just 1mm to the rail web. Positive centring, loaded clearances, shaft/fork, welding, seams and end stops remain unqualified.'},
+   plateAndWheelRatingsAccepted:false,
+   sourceRole:'This is one proposed lower bearing profile, with a new vertical datum. The selected HAD rail level remains a distinct old carrier control. Both rails must continue to the last translated wheel, while the separate lower-spool landing stage remains at Y8100.'},
+  fixedSupport:{sections,knownSupportAxes:rails.supportX,proposedTemporarySupportAxes:[16500,18050],
+   transverseArmGrossSpan:rails.axesY[0]-rails.sidePostY[0],armDepth,armTopBelowTrack,
+   longestSection:longest,isolatedExistingSizeReference:{actionKn:P/1000,elasticModulusMPa:E,I:sectionI,
+    pointMomentKnm:P*longest/4/1e6,pointStressMPa:P*longest/4/(sectionI/(rails.sectionVertical/2)),
+    pointMidspanDeflection:P*longest**3/(48*E*sectionI),deflectionAlreadyAllowedPerFace:5,
+    role:'One conservative single 8.5kN wheel action on an isolated bare, simply supported RHS at its worst midpoint. Section share, cap composite action, weld, correlated multi-wheel loading and actual rail deflection are unqualified.'},
+   supportFootprintsAccepted:false,anchorsAndReceiverAccepted:false,
+   role:'Use real existing support axes only as locations. An outboard 50 post inside the E receiver plan is neither a qualified water-structure interface nor a pad. At the new east stations, temporary foundations, side arms and the first and last cantilevers must be designed. No added column through the RC.'},
+  localSiteConsequences:{receiverEast,ordinaryWater,faultWater,lastReceiverSupport,armBottomAtReceiverSupport:distalArmBottom(lastReceiverSupport),
+   armFaultSubmergenceAtReceiverSupport:faultWater-distalArmBottom(lastReceiverSupport),ordinaryWaterGapAtReceiverSupport:distalArmBottom(lastReceiverSupport)-ordinaryWater,
+   trackBottomAtReceiverEast:railTop(receiverEast)-capDepth-rails.sectionVertical,
+   armBottomAtFarthestSupport:distalArmBottom(posts.at(-1)),localGradeFor500AtFarthestSupport:distalArmBottom(posts.at(-1))-500,
+   role:'The lower rail/arm is inside the fault-water envelope where it runs over the active E receiver. It needs a real wet/open drainage/inspection and load path or a revised support position. Grade is a local clearance comparison, not a revised whole-house datum, geotechnical or site finding.'},
+  wholeTrackAccepted:false};
+}
+
 export function upperFirst(){
  const gridText=fs.readFileSync('project/str/studies/current-house-grid.json','utf8'),grid=JSON.parse(gridText),
   baselineText=fs.readFileSync('project/rwt/studies/bent-spool-control.json','utf8'),baseline=JSON.parse(baselineText),
@@ -131,7 +208,7 @@ export function upperFirst(){
   fixtureBox=expand(fixture.entireBounds,10),bodyChecks=c.completeAngularProof.sweeps.map(q=>({id:q.id,...separation(fixtureBox,q.angular.map(r=>[r.minimum-5,r.maximum+5]))})),
   axis=x=>-815-(x-7350)*slope,frameBox=expand([[7300,12450],[6475,7325],[axis(12450)-210,axis(7300)-130]],10),
   yawCentre=[(ranges[0][0]+ranges[0][1])/2,6900],radius=Math.hypot(dimensions[0]/2,dimensions[1]/2),
-  bodyTop=1700,fullWetReferenceKg=dryReferenceKg+maximumWaterReferenceKg;
+  bodyTop=1700,fullWetReferenceKg=dryReferenceKg+maximumWaterReferenceKg,roof=c.rimAndWeather.roofUnderside,guard=1100,allowance=10;
  const pointInGirder=(p,b)=>b.axis==='x'?p[0]>=b.extent[0]&&p[0]<=b.extent[1]&&Math.abs(p[1]-b.datum)<=b.width/2:p[1]>=b.extent[0]&&p[1]<=b.extent[1]&&Math.abs(p[0]-b.datum)<=b.width/2;
  const existingEWAtNorth=Object.entries(grid.girders).filter(([_,b])=>b.axis==='x'&&pointInGirder([6025,7700],b)).map(([id])=>id);
  assert.equal(existingEWAtNorth.length,0,'Reprove a changed actual north termination; never invent a simply-supported line');
@@ -159,13 +236,15 @@ export function upperFirst(){
    role:'All fixed rear parts are NORTH of the full inlet/flange/tube angular envelope, or WEST of the outlet. The frame is below them. The upper flangeY does not change during normal lift, so it passes south of both fixed rear bars. Only intended pan/stool contact remains; positive keepers must retract fully. Actual lower lock/drive/rail hardware is not included in this kit pass.',
    translationProof:'East draw0..the declared full translation leaves allY gaps unchanged; the outlet starts east of the fixture and only moves farther east. Falling-frameZ clearance increases with east draw. Locked incoming reversal traverses the same domain. Actual collar/lock hardware still needs its own complete solids.',
    actualKitAccepted:false},
-  upperExport:{completeBodyRanges:ranges,bodyTop,bodyBottomAfter10:bodyTop-dimensions[2]-10,guardTop:1100,
-   minimumOverGuardAfter10:bodyTop-dimensions[2]-10-1100,roofUnderside:1970,minimumBelowRoofAfter10:1970-bodyTop-10,
+  upperExport:{completeBodyRanges:ranges,bodyTop,bodyBottomAfter10:bodyTop-dimensions[2]-allowance,guardTop:guard,
+   minimumOverGuardAfter10:bodyTop-dimensions[2]-allowance-guard,roofUnderside:roof,minimumBelowRoofAfter10:roof-bodyTop-allowance,
    yawCentre,continuousYawRadius:radius,completeYawPlan:[yawCentre[0]-radius-10,yawCentre[1]-radius-10,yawCentre[0]+radius+10,yawCentre[1]+radius+10],
    yawProof:'Translate ONLY after the entire body is above1100guard; then yaw90. Every point of the complete enclosing rectangle stays within its half-diagonal radius, including all intermediate extrema. This is not endpoint sampling.',
    combinedWestGateWeatherY:[6575,7200],unrotatedEachSideWith10:(625-dimensions[1]-20)/2,
    yaw90WidthWith10:dimensions[0]+20,yaw90MinimumEachSide:(625-dimensions[0]-20)/2,
    requiredActorOutsideAllSweeps:true,actorSweepAccepted:false,actualHandlerRiggingAndSweepAccepted:false},
+  ordinaryUpperHandler:ordinaryUpperHandler({pan,dimensions,fullWetReferenceKg,bodyTop,roof,guard,allowance}),
+  lowerTrackReference:lowerTrackReference(c,JSON.parse(fs.readFileSync('project/had/studies/water-replan.json','utf8'))),
   operations:['N independently full-duty and actual receiving/weather verified; isolate E and prove it drained/depressurised. Full-water weight is still charged. Failure to drain forbids bolt release; no hidden pump, timing credit or assumed free-outlet immunity to blockage.',
    'Keep all rated covers while erecting the same175rim/guard/weather control. Capture/remove nine covers and seam pieces; pan3 remains fully seated with positive walking uplift keepers on the new rear frame. Fit the temporary lower platform/ladder while lower pipe is captured on fixed-height rails.',
    'One lower worker releases all eight vertical-joint bolts with the actual paired tools/postures, captures gasket/nuts and retracts every bolt. Existing finite tool screen is necessary only; real torque/fasteners/full body remain unqualified. Worker exits before any upper lift.',
@@ -181,7 +260,7 @@ export function upperFirst(){
 }
 export function renderUpper(o){
  const esc=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;'),label=(x,y,s,size=19)=>`<text x="${x}" y="${y}" font-size="${size}">${esc(s)}</text>`;
- let s='<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1500" viewBox="0 0 1600 1500"><rect width="100%" height="100%" fill="#fbfaf5"/><g font-family="sans-serif" fill="#283e43">';
+ let s='<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1990" viewBox="0 0 1600 1990"><rect width="100%" height="100%" fill="#fbfaf5"/><g font-family="sans-serif" fill="#283e43">';
  s+=label(30,42,'UNADOPTED · upper-first release / one passive rear support',30)+label(30,80,'Same native bent spool at−815. Lift upper assembly; keep heavy pipe/frame at fixed height. No actual-kit or physical admission.');
  const X=x=>55+(x-5925)*.36,Y=y=>160+(y-6025)*.26,rect=(b,fill,stroke)=>`<rect x="${X(b[0])}" y="${Y(b[1])}" width="${b[3]*.36}" height="${b[4]*.26}" fill="${fill}" stroke="${stroke}"/>`;
  s+=label(40,125,'Plan · fixed rear support is north of complete native sweep',23)+rect(o.rearFixture.westReturn.box,'#e0d1bb','#9a825f')+rect([6125,6125,0,1525,1275,1],'#f3eee2','#8b806b');
@@ -214,6 +293,21 @@ export function renderUpper(o){
  s+=label(40,1290,'Free outlet fault gap66.14 nominal; maximum head, splash, vent, first-wet and real receiving still require proof.',19);
  s+=label(40,1350,'Beige:cantileverreturn · grey:ONE rear frame · green:retainedpan3 · blue:upper285flange · dashed:complete inlet angular hulls.',18);
  s+=label(40,1400,'Research candidate only. Selected HAD remains unchanged; RWT06 is STARTED and incomplete.',21);
+ const handler=o.ordinaryUpperHandler,pick=handler.firstPick,transit=handler.guardTransit;
+ s+=label(40,1470,'Stock centred CX003 fails before traverse',23);
+ s+=label(40,1515,`Vertical hand chain crosses the seated lid by at least ${pick.verticalInterferenceAtLeast.toFixed(0)} mm.`,19);
+ s+=label(40,1555,`Direct 60° bridle needs ${transit.minimumBridleHeight.toFixed(1)} mm rise. Ideal space is ${transit.idealMaxBridleHeight.toFixed(1)} mm even without a trolley.`,19);
+ s+=label(40,1595,'Section at right shows the seated lid and plumb chain with the upper hook at the roof.',17);
+ const HZ=z=>1650-(z+200)*.08,HX=x=>1370+(x-pick.pickXY[0])*.45;
+ s+=`<path d="M${HX(pick.pickXY[0]-215)} ${HZ(pick.roof)} H${HX(pick.pickXY[0]+215)}" stroke="#637471" stroke-width="4"/><path d="M${HX(pick.pickXY[0]-152.5)} ${HZ(pick.installedLidTop)} H${HX(pick.pickXY[0]+152.5)}" stroke="#4f785d" stroke-width="5"/><path d="M${HX(pick.pickXY[0])} ${HZ(pick.roof)} V${HZ(pick.highestStockHandChainBottom)}" stroke="#a9744c" stroke-width="4" stroke-dasharray="6 3"/>`;
+ s+=label(40,1655,'Actual balance, positive capture, release force, landing and crew reversal remain open.',18);
+ const track=o.lowerTrackReference,trial=track.loweredTrack,site=track.localSiteConsequences;
+ s+=label(40,1735,'Captured lower track comparison · selected rail level rejected',23);
+ s+=label(40,1780,`Selected rail top overlaps the declared crossmember depth by ${track.legacyRailRejected.topProjectsIntoFrameDepthBy.toFixed(1)} mm.`,19);
+ s+=label(40,1820,`Trial track supports the last wheel to X${trial.firstAndLastWheelX[1].toFixed(1)}. With a 3 mm lateral change, the keeper has 1 mm to the rail web.`,18);
+ s+=label(40,1860,`Bare RHS point-load deflection ${track.fixedSupport.isolatedExistingSizeReference.pointMidspanDeflection.toFixed(2)} mm exceeds the 5 mm allowance.`,19);
+ s+=label(40,1900,`Receiver arm at X${site.lastReceiverSupport} enters fault water by ${site.armFaultSubmergenceAtReceiverSupport.toFixed(1)} mm.`,18);
+ s+=label(40,1940,`Trial far support requires local grade ${site.localGradeFor500AtFarthestSupport.toFixed(1)} for 500 mm clearance. Actual pads, track and locks remain open.`,18);
  return s+'</g></svg>\n';
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
