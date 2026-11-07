@@ -6,7 +6,7 @@
 
 ## Compare one supported assembly
 
-Actual integration main `b0d3102d` retains the exact HAD `089f0dac` blob used by the historical `8576cf80` case. The producer reads both identities and proves equality; it does not relabel historical evidence. The current main's IAS/RWT/STR checks are retained. The merged Services air-duty source is separately bound as blob `5b93cdd9`: its opening-family allocation remains a provisional design comparison, not an owner invariant or installed rating.
+Actual integration main `61738165` retains the exact HAD `089f0dac` blob used by the historical `8576cf80` case. The producer reads both identities and proves equality; it does not relabel historical evidence. The current main's IAS/RWT/STR checks are retained. The merged Services air-duty source is separately bound as blob `5b93cdd9`: its opening-family allocation remains a provisional design comparison, not an owner invariant or installed rating.
 
 | Part | Proposed territory, mm | Actual duty and limit |
 | --- | --- | --- |

@@ -41,7 +41,7 @@ n = len(nodes) * 3
 
 # A curved planar Euler frame. Each of its six support coordinates has a matching
 # reaction. The left spring coincides with the real L. Only the opposite jamb is added.
-def solve_arch(crack, action, pressure, imposed):
+def solve_arch(crack, action, pressure, imposed, signed=False):
     K = [[0.0] * n for _ in range(n)]
     rhs = [0.0] * n
     terms = []
@@ -102,11 +102,12 @@ def solve_arch(crack, action, pressure, imposed):
     assert max((abs(res[i]) for i in free)) < 0.01
     out = []
     P = lambda row: sum((u[j] * v for j, v in row))
+    magnitude = (lambda value: value) if signed else abs
     for kind, a, b, L, ux, v, mat, ea, load, axHalf in terms:
         N = ea * P(ux) / 1000
         ys = [sum((z * P(row) for z, row in zip(mr, v))) - f for mr, f in zip(mat, load)]
         for i in [0, 1]:
-            out.append((kind, abs(ys[2 * i + 1] / 1000000.0), abs(ys[2 * i] / 1000), N + (1 - 2 * i) * axHalf))
+            out.append((kind, magnitude(ys[2 * i + 1] / 1000000.0), magnitude(ys[2 * i] / 1000), N + (1 - 2 * i) * axHalf))
     return (u, res, out)
 
 # Integrate both components of the real L-pier curvature at the skewback.
@@ -310,6 +311,7 @@ fac = p['fac']
 # Compare the mapped positive lower bearings and a stripped two-end span.
 # Both are research bounds on the floor edge, with interior rotation free.
 floor_cases = []
+floor_unit_reactions = {}
 for endsOnly in [False, True]:
     V = [[0.0] * N for i in range(N)]
     mxspan = {}
@@ -338,16 +340,20 @@ for endsOnly in [False, True]:
                 force[2 * loc + d] += c
             for l, x in zip(free, SL([force[i] for i in free])):
                 vals[l] = x
+            for node,station in enumerate(coords):
+                if station in fixs:
+                    point=(station,line) if k==0 else (line,station)
+                    floor_unit_reactions[endsOnly,j,point]=dot(K[2*node],vals)-force[2*node]
             for i in js:
                 V[i][j] = sum((c * vals[2 * coords.index(modes[i][1][k]) + d] for d, c in modes[i][7]))
         mxspan[face] = max((r - l for l, r in zip(fixs, fixs[1:])))
     floor_cases.append((V, mxspan))
 
-def subframe(d, cr, al, pr):
+def subframe(d, cr, al, pr, signed=False):
     v = d[:]
     v[2] /= 1000
     v[5] /= 1000
-    u, r, sol = solve_arch(cr, al, pr, [[0, 0, 0], v[:3], v[3:]])
+    u, r, sol = solve_arch(cr, al, pr, [[0, 0, 0], v[:3], v[3:]], signed=signed)
     order = [3 * ind[node] + k for node in [left[-1], right[0]] for k in range(3)]
     rr = [r[j] / (1000 if i % 3 == 2 else 1) for i, j in enumerate(order)]
     return (u, rr, sol)
@@ -465,6 +471,17 @@ for cr in [0.2, 0.35]:
         worst_window=[-1,None]
         max_tilt=0.
         data_options={}
+        # Expose the signed forces at each end to the separately owned whole-
+        # house calculation. The calm case removes arch self-weight from a
+        # pure wind increment; it never enters the window service envelopes.
+        if 'arch_observer' in globals():
+            calm=([0,0],[0.]*nd,{},dict.fromkeys(corner_keys,[0.]*4),[0,0])
+            for installed_ceiling in [False,True]:
+                actions=[(lambda x,ar=i:ceiling_actions[ar][x]) if installed_ceiling else 0 for i in range(8)]
+                fixed_load=sum((subframe(z6,cr,a,[0,0])[1] for a in actions),[])
+                disp=slv([-v for v in mul(coupled_flexibility,fixed_load)])
+                reactions=sum((subframe(disp[6*a:6*a+6],cr,actions[a],[0,0])[1] for a in range(8)),[])
+                arch_observer(globals(),calm,-1,reactions,cr,vi,installed_ceiling)
         for wi, case in enumerate(updated_wind):
             baseq = []
             field = m['recover'](case[1][-8:], p['floorLoadCases'][id(case[1])])[0]
@@ -496,6 +513,8 @@ for cr in [0.2, 0.35]:
                         mmax[j] = max(mmax[j], M)
                         demands[j].append((M, -N0))
                         shmax = max(shmax, V0)
+                if 'arch_observer' in globals():
+                    arch_observer(globals(),case,wi,r,cr,vi,bool(al))
                 for a,local in enumerate(local_states):
                     options,tilt=window_fit(a,case,r,local)
                     for datum,(gap,surface) in options.items():

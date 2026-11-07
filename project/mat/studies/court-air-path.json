@@ -26,10 +26,10 @@
       "role": "Immutable unadopted STR1362 local weather-jamb/arch restraint result, not capacity admission"
     },
     "currentMainHAD": {
-      "commit": "b0d3102d5522408d256fb8c4c03bb69939e77964",
+      "commit": "6173816569ec11abf1f8416e8a765c0d43374b74",
       "path": "project/had/studies/water-replan.json",
       "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
-      "role": "Actual reconciled main; exact whole HAD blob equals retained8576 reference, not a new performance assertion"
+      "role": "Actual 61738165 integration checkpoint; exact whole HAD blob equals retained8576 reference, not a new performance assertion"
     },
     "airDuty": {
       "commit": "b0d3102d5522408d256fb8c4c03bb69939e77964",
@@ -368,5 +368,14 @@
     "nominalMass_kg": 80,
     "priceGBPWithoutVAT": 791.71,
     "role": "One dated whole-sheet1D purchasing control shared by front bar and nose top, no offcut credit. Not2B, supplied certificate, finished surface or installed quote. Other gauges/foil, forming/welds, machining/straightening, fixtures, cap/bearing, testing and renewal remain additional/unpriced."
+  },
+  "reconciledMain": {
+    "commit": "6173816569ec11abf1f8416e8a765c0d43374b74",
+    "unchangedWholeInputBlobs": [
+      "HAD",
+      "airDuty",
+      "STRweatherPocket"
+    ],
+    "role": "Actual merged STR1366 main, not a speculative branch. Whole input blobs are read-proved identical to retained cases; new structural research keeps its own authority and every current main script is preserved."
   }
 }

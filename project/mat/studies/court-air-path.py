@@ -205,7 +205,7 @@ def joined_figure(r):
     text(55,1075,'Bar flatness/bearing/movement allowance and slot bounds are development obligations, not observed performance.',17)
     text(55,1110,'Independent draught, insect, bulk-water, capillary, soil-gas, corrosion, thermal and actual renewal duties remain.',17)
     text(55,1145,'One 5 mm whole-sheet control £791.71 ex VAT is shared by bar/nose top; no installed-cost or material admission.',17)
-    text(55,1180,'Source HAD 089f unchanged at reconciled b0d3102d; proposed accessories and shared test boundaries are explicit.',17)
+    text(55,1180,f'Source HAD 089f unchanged at reconciled {r["reconciledMain"]["commit"][:8]}; proposed accessories and shared test boundaries are explicit.',17)
     text(55,1215,'MAT-ENVELOPE stays open. No physical, architecture, material, air or water acceptance follows from this sheet.',17)
     out.append('</g></svg>');return ''.join(out)+'\n'
 
@@ -213,6 +213,9 @@ def produce():
     c=json.loads((HERE/'court-air-path.json').read_text());s=c['sources']
     h=read(s['HAD'])['model'];m=read(s['mechanicalResearch']);b=read(s['mineralBaseResearch'])['bondedMineralBase']
     assert read(s['currentMainHAD'])['model']==h and s['currentMainHAD']['blob']==s['HAD']['blob']
+    main=c['reconciledMain'];assert main['commit']==s['currentMainHAD']['commit']
+    for key in main['unchangedWholeInputBlobs']:
+        assert read(dict(s[key],commit=main['commit']))==read(s[key]),key
     st=read(s['STRweatherPocket'])['groundCourtWeatherJambPocket'];t=h['southCourtThresholdReference'];p=t['pan']
     assert not any(c['admission'].values())
     assert h['northNormalRoute']['floorJoin']['layers']==[15,65,100,200]
@@ -326,7 +329,7 @@ def produce():
     assert cap_result['oldNominalCapLinerOverlapWidth_mm']>0
     assert min(cap_result[k] for k in ['minimumCapToLinerHardClearance_mm','minimumPanToFrontCavityLiner_mm','minimumShiftedContactToCommonFlange_mm','separationFromCoreY_mm','separationFromCavityTrayY_mm'])>0
     joined=joined_candidate(c,h,m,leaf)
-    return {'status':c['status'],'sources':s,'headerContinuation':header_result,'wholePanLowerReveal':reveal,
+    return {'status':c['status'],'sources':s,'reconciledMain':main,'headerContinuation':header_result,'wholePanLowerReveal':reveal,
       'frontDownfoldComparison':downfold,'dryStepBendComparison':bend_result,'straightLeafContactChallenge':leaf,
       'joinedCapLinerComparison':cap_result,
       'joinedCandidate':joined,
