@@ -136,8 +136,12 @@ def joined_candidate(c,h,m,leaf):
 
 def joined_figure(r):
     j=r['joinedCandidate'];air=j['finiteAirLedger']
-    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1270" viewBox="0 0 1200 1270"><rect width="1200" height="1270" fill="#faf9f4"/><g font-family="Arial" fill="#243842">']
-    def text(x,y,t,n=16):out.append(f'<text x="{x}" y="{y}" font-size="{n}">{html.escape(t)}</text>')
+    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1440" viewBox="0 0 1200 1440"><rect width="1200" height="1440" fill="#faf9f4"/><g font-family="Arial" fill="#243842">']
+    panel_a_notes={450:779,476:804,502:829,528:854,554:879,580:904,740:746}
+    def text(x,y,t,n=16):
+        if x==55 and y in panel_a_notes:y=panel_a_notes[y]
+        elif y>=803:y+=160
+        out.append(f'<text x="{x}" y="{y}" font-size="{n}">{html.escape(t)}</text>')
     def box(x,y,w,h,color,stroke='#61747a',dash=''):out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{color}" stroke="{stroke}"'+(f' stroke-dasharray="{dash}"' if dash else '')+'/>')
     text(30,38,'One ordinary court interface: support, air path and renewal',26)
     text(30,69,'CONDITIONAL CONSTRUCTION COMPARISON. Geometry/flow screens are not installed ratings or assembly admission.',16)
