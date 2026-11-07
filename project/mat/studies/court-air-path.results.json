@@ -291,6 +291,41 @@
     "oldMaximumLinearStress_MPa": 244.97742439049946,
     "scope": "Different authored natural-shape/contact idealization: not actual preformed leaf or strict stress bound. Contact can fit at this corner; no flange failure claimed. High elastic stress may itself invalidate the linear material law; supplied thin-strip properties remain unbound."
   },
+  "joinedCapLinerComparison": {
+    "control": {
+      "cavityFrontPocketOutwardEach_mm": 12,
+      "pocketY_mm": [
+        4000,
+        4060
+      ],
+      "pocketZ_mm": [
+        0,
+        225
+      ],
+      "rootX_west_mm": 5100,
+      "role": "PRE-FORMED cavity/reveal-only enlargement to give the cap real space beside its fixed liner under the same4 mm challenge. Whole lower weather-leaf reservation remains6 mm. Actual liner jog, attachment, cap capture, retention and physical renewal are unqualified."
+    },
+    "oldNominalCapWestX_mm": [
+      5094,
+      5142
+    ],
+    "oldFixedLinerInnerX_mm": 5095.5,
+    "oldNominalCapLinerOverlapWidth_mm": 1.5,
+    "newCavityPocketOuterWestX_mm": 5088,
+    "newCavityLinerInnerWestX_mm": 5089.5,
+    "minimumCapToLinerHardClearance_mm": 0.5,
+    "minimumPanToFrontCavityLiner_mm": 8.5,
+    "rootRetentionTerritory_mm": 6,
+    "shiftedMinimumGapIdealContactWestX_mm": [
+      5108.554418048581,
+      5134.934955474171
+    ],
+    "minimumShiftedContactToCommonFlange_mm": 2.554418048581283,
+    "additionalCavityReservationEach_m3": 8.1e-05,
+    "separationFromCoreY_mm": 12.5,
+    "separationFromCavityTrayY_mm": 30,
+    "scope": "West case mirrors east. Same4 mm hard-clearance challenge, no tighter tolerance substitution. Cavity-only reservation is distinct from full lower weather6. Actual liner must jog back inside the lower-weather boundary; no fabrication, cap restraint, clamped-root or installed physical admission."
+  },
   "frontContactLead": {
     "fixedFaceY": 4025,
     "role": "Conditional normal-contact lead only: north pan motion can open a south-side contact. No deletion of old endcap release until all corner/top/frame contacts and actual captures/tool paths are resolved",

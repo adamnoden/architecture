@@ -127,5 +127,18 @@
     "naturalShape": "Authored initially straight inextensible leaf, inclined to give the existing free rise; NOT evidence of actual preformed shape",
     "quadraturePanels": 512,
     "role": "Frictionless unilateral flat-wall Euler-Bernoulli elastic contact sensitivity at minimum gap. No yield/finite-radius/friction/pressure/residual stress/fatigue/air or installed shape rating."
+  },
+  "joinedCapTrial": {
+    "cavityFrontPocketOutwardEach_mm": 12,
+    "pocketY_mm": [
+      4000,
+      4060
+    ],
+    "pocketZ_mm": [
+      0,
+      225
+    ],
+    "rootX_west_mm": 5100,
+    "role": "PRE-FORMED cavity/reveal-only enlargement to give the cap real space beside its fixed liner under the same4 mm challenge. Whole lower weather-leaf reservation remains6 mm. Actual liner jog, attachment, cap capture, retention and physical renewal are unqualified."
   }
 }

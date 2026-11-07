@@ -138,8 +138,28 @@ def produce():
     bend_result['stockPurchaseControl']=m['channelStockControl']
     bend_result['quantityScope']='Narrower welded-flat pieces, not formed U profiles. Old full-sheet dated purchase reference is retained; no weight-proportional saving or installed cost. Top/web joint lengths are interface quantities, not a weld specification. Central strip/equal web screens confer no walking-edge, plate/web/weld, mineral bearing, load-spread, fatigue or combined-design pass.'
     leaf=contact_challenge(c,m)
+    cap=c['joinedCapTrial'];ends=m['proposedEndSections'];old_cap=ends['ends'][0]['capX_mm'];old_liner=ends['ends'][0]['proposedLinerInnerX_mm']
+    assert cap['pocketY_mm']==ends['control']['pocketY'] and cap['pocketZ_mm']==ends['control']['pocketZ']
+    new_outer=rough[0]-cap['cavityFrontPocketOutwardEach_mm'];new_inner=new_outer+q['linerThickness_mm']
+    root_shift=cap['rootX_west_mm']-ends['leafMechanism']['control']['rootX_left']
+    shifted=[x+root_shift for x in leaf['idealWestContactX_mm']]
+    cap_result={'control':cap,'oldNominalCapWestX_mm':old_cap,'oldFixedLinerInnerX_mm':old_liner,
+      'oldNominalCapLinerOverlapWidth_mm':old_liner-old_cap[0],
+      'newCavityPocketOuterWestX_mm':new_outer,'newCavityLinerInnerWestX_mm':new_inner,
+      'minimumCapToLinerHardClearance_mm':old_cap[0]-new_inner-challenge,
+      'minimumPanToFrontCavityLiner_mm':p['outerX'][0]-new_inner-challenge,
+      'rootRetentionTerritory_mm':cap['rootX_west_mm']-old_cap[0],
+      'shiftedMinimumGapIdealContactWestX_mm':shifted,
+      'minimumShiftedContactToCommonFlange_mm':min(shifted[0]-leaf['commonWestFlangeX_mm'][0],leaf['commonWestFlangeX_mm'][1]-shifted[1]),
+      'additionalCavityReservationEach_m3':(cap['cavityFrontPocketOutwardEach_mm']-ends['control']['outwardRevealReservation_mm'])*(cap['pocketY_mm'][1]-cap['pocketY_mm'][0])*(cap['pocketZ_mm'][1]-cap['pocketZ_mm'][0])/1e9,
+      'separationFromCoreY_mm':cap['pocketY_mm'][0]-bands['core'][1],
+      'separationFromCavityTrayY_mm':t['jambs']['cavityTray']['leftApron']['y'][0]-cap['pocketY_mm'][1],
+      'scope':'West case mirrors east. Same4 mm hard-clearance challenge, no tighter tolerance substitution. Cavity-only reservation is distinct from full lower weather6. Actual liner must jog back inside the lower-weather boundary; no fabrication, cap restraint, clamped-root or installed physical admission.'}
+    assert cap_result['oldNominalCapLinerOverlapWidth_mm']>0
+    assert min(cap_result[k] for k in ['minimumCapToLinerHardClearance_mm','minimumPanToFrontCavityLiner_mm','minimumShiftedContactToCommonFlange_mm','separationFromCoreY_mm','separationFromCavityTrayY_mm'])>0
     return {'status':c['status'],'sources':s,'headerContinuation':header_result,'wholePanLowerReveal':reveal,
       'frontDownfoldComparison':downfold,'dryStepBendComparison':bend_result,'straightLeafContactChallenge':leaf,
+      'joinedCapLinerComparison':cap_result,
       'frontContactLead':c['frontContactLead'],'foilResearch':c['foilResearch'],'admission':c['admission']}
 
 def figure(r):
@@ -184,11 +204,14 @@ def figure(r):
     def plan(a,b,u,w,color):box(PX(a),PY(w),PX(b)-PX(a),PY(u)-PY(w),color)
     text(720,125,'B  LOWER WEST REVEAL / plan',20)
     plan(5075,5100,4000,4147.5,'#e9e5d8');plan(5075,5100,4147.5,4250,'#b9b09e')
-    plan(5094,5100,4000,4250,'#e0f0ee');plan(5094,5095.5,4000,4250,'#6a9e98')
+    plan(5094,5100,4000,4250,'#e0f0ee');plan(5094,5095.5,4060,4250,'#6a9e98')
+    plan(5088,5094,4000,4060,'#e0f0ee');plan(5088,5089.5,4000,4060,'#6a9e98')
+    out.append(f'<path d="M{PX(5089.5)} {PY(4060)}H{PX(5095.5)}" stroke="#6a9e98" stroke-dasharray="3 2"/>')
     plan(5110,5150,4110,4250,'#c9b28e');plan(5102,5103.5,4030,4250,'#ae5d48')
     text(720,415,'Lower Z−65..100: pre-formed 6 mm + liner 1.5.',16)
     text(720,444,'Both pan/liner and pan/frame minima 2.5 mm.',16)
     text(720,473,'STR isolated jamb already needs return/restraint.',16)
+    text(720,500,'Front cap pocket 12; same challenge gives 0.5 clearance.',15)
     # The new arc and old sharp top share the actual section coordinates.
     U=lambda y:740+(y-4025)*15
     V=lambda z:570-z*8
