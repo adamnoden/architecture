@@ -107,11 +107,11 @@ def build(s,j):
             debit_core(face,physical[axis],area*140*25/1e9,physical,'remove filled inner opening')
         # These are explicit maximum delivery budgets, never credited for
         # stabilising wind. 60 kg covers the new arch/jamb reinforcement and
-        # local links, 40 kg the two structural guard receivers, and 200 kg
+        # local links, 55 kg the two structural guard receivers, and 200 kg
         # the complete window/guard. An actual assembly exceeding any maximum
         # requires a revised positive card before selection.
         for x,mass,name in [(s['xL'],30,'arch cage allowance'),(s['xJ'],30,'arch cage allowance'),
-                            (1195,20,'guard receiver allowance'),(2410,20,'guard receiver allowance'),
+                            (1195,27.5,'guard receiver allowance'),(2410,27.5,'guard receiver allowance'),
                             (1375,100,'complete guard and window allowance'),(2225,100,'complete guard and window allowance')]:
             q=xy(x);deposit(q,1.35*mass*.00981,direct_pad(q),name)
 

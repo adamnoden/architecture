@@ -41,7 +41,7 @@ n = len(nodes) * 3
 
 # A curved planar Euler frame. Each of its six support coordinates has a matching
 # reaction. The left spring coincides with the real L. Only the opposite jamb is added.
-def solve_arch(crack, action, pressure, imposed):
+def solve_arch(crack, action, pressure, imposed, signed=False):
     K = [[0.0] * n for _ in range(n)]
     rhs = [0.0] * n
     terms = []
@@ -102,11 +102,12 @@ def solve_arch(crack, action, pressure, imposed):
     assert max((abs(res[i]) for i in free)) < 0.01
     out = []
     P = lambda row: sum((u[j] * v for j, v in row))
+    magnitude = (lambda value: value) if signed else abs
     for kind, a, b, L, ux, v, mat, ea, load, axHalf in terms:
         N = ea * P(ux) / 1000
         ys = [sum((z * P(row) for z, row in zip(mr, v))) - f for mr, f in zip(mat, load)]
         for i in [0, 1]:
-            out.append((kind, abs(ys[2 * i + 1] / 1000000.0), abs(ys[2 * i] / 1000), N + (1 - 2 * i) * axHalf))
+            out.append((kind, magnitude(ys[2 * i + 1] / 1000000.0), magnitude(ys[2 * i] / 1000), N + (1 - 2 * i) * axHalf))
     return (u, res, out)
 
 # Integrate both components of the real L-pier curvature at the skewback.
@@ -348,11 +349,11 @@ for endsOnly in [False, True]:
         mxspan[face] = max((r - l for l, r in zip(fixs, fixs[1:])))
     floor_cases.append((V, mxspan))
 
-def subframe(d, cr, al, pr):
+def subframe(d, cr, al, pr, signed=False):
     v = d[:]
     v[2] /= 1000
     v[5] /= 1000
-    u, r, sol = solve_arch(cr, al, pr, [[0, 0, 0], v[:3], v[3:]])
+    u, r, sol = solve_arch(cr, al, pr, [[0, 0, 0], v[:3], v[3:]], signed=signed)
     order = [3 * ind[node] + k for node in [left[-1], right[0]] for k in range(3)]
     rr = [r[j] / (1000 if i % 3 == 2 else 1) for i, j in enumerate(order)]
     return (u, rr, sol)

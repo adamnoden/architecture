@@ -24,7 +24,7 @@
     "fixedStudProtrusion40ClearAfter100": 60,
     "newBoxMinimumDistanceToGuardDuringStraight100": 130,
     "newFourHoles": 20,
-    "rearPlatePocketProjection": 6,
+    "rearPlatePocketProjection": 10,
     "washerBearingPressureMPa": 14.811481718895855,
     "washerToPlateEdgeAfter1p5": 1.5,
     "washersOutsideDiameter": 34
@@ -337,26 +337,77 @@
     }
   ],
   "massPerWindowKg": {
-    "exteriorCoreBearingPlates": 4.032,
-    "fixedFrontPlates": 9.792,
+    "additionalLocalGravityToCarry": 0.09107278788186035,
+    "assembledStockAndNamedFittings": 49.389809122325154,
+    "authoredMassComparisonWithFivePercentOnOtherStockAnd1p5kgExecution": 52.686099578441414,
+    "completeFittings": {
+      "M16roomNutsAndEightWashers": 0.5569075908831872,
+      "boxEndsAndWeatherCollars": 1.0176,
+      "eightM12StudsNutsAndWashers": 0.9158144615946435,
+      "fourRemovableGuardScrews": 0.8518229473870883,
+      "independentIndoorBarrierSocketsPinsCaps": 0.6971822416846468,
+      "twoRoomAccessCovers": 1.512,
+      "weldMetalAllowance": 0.576
+    },
+    "earlierBareSubtotalWith24Plate": 39.59048188077559,
+    "exteriorCoreBearingPlates": 6.72,
     "four40Tubes": 3.7296,
     "fourThroughM16": 2.8631218807755934,
-    "insideRearPlates": 2.56,
+    "insideRearPlates": 3.5839999999999996,
+    "max33FixedPlate": 13.463999999999999,
+    "maximumProcurementMassRequirement": 55,
     "movingPlates": 7.68,
     "nativeCollarsSolidUpper": 3.1999999999999997,
     "newClosedArms": 2.02176,
-    "remainingIn40Allowance": 4.121518119224405,
-    "subtotal": 35.878481880775595,
-    "unpriced": "Studs, nuts, washers, welds, end caps, water collars and pocket covers."
+    "old24PlateSubtotalRemainingIn40": 0.4095181192244084,
+    "oneJambGravityIncludingMovingBracket": 0.7532477878818604,
+    "rejected24FixedFrontPlates": 9.792,
+    "remainingAgainst55": 2.3139004215585857,
+    "sourceMatchedMeasuredDeliveryUpperBoundEstablished": false
   },
   "new": {
+    "adversePlateComparison": {
+      "actualLocalHoleOrWeldLossAllowance": 4,
+      "maxLeverIncrease": 3,
+      "minProofMPa": 200,
+      "netStripWidth": 28,
+      "pryingForceFactor": 1.25,
+      "remaining": "Check actual prying/bolt preload, nonlinear plate contact, edge bearing and corrosion allowance."
+    },
     "armNormalHeightWall": [
       30,
       140,
       4
     ],
+    "comparedNominal24": 171.76719468060662,
     "comparisonLimitMPa": 181.8181818181818,
-    "fixedFrontPlateThickness": 24,
+    "deliveredPlateTrials": [
+      {
+        "deliveredMinimum": 23,
+        "maximumMPa": 280.54226125528186,
+        "nominal": 24,
+        "passes": false
+      },
+      {
+        "deliveredMinimum": 27,
+        "maximumMPa": 203.57593443627448,
+        "nominal": 28,
+        "passes": false
+      },
+      {
+        "deliveredMinimum": 29,
+        "maximumMPa": 176.4647517289466,
+        "nominal": 30,
+        "passes": true
+      },
+      {
+        "deliveredMinimum": 31,
+        "maximumMPa": 154.42961103438512,
+        "nominal": 32,
+        "passes": true
+      }
+    ],
+    "fixedFrontPlateThickness": 32,
     "fixedFrontPlateX": [
       [
         1170,
@@ -367,32 +418,28 @@
         2435
       ]
     ],
-    "fixedTubeThroughboltPeakKN": 9.265792689075628,
     "formedSleeves": [
       {
         "H16Clear": 29.882352941176578,
         "H16ClearAfterTwo5": 19.882352941176578,
-        "linkClearAfterTwo5": 22.0,
-        "linkPitchPhase": [
-          150,
-          80
-        ],
+        "linkClearAfterTwo5": 8.0,
+        "linkSchedule": "arch-link-schedule.py",
+        "minimumLinkClear": 18.0,
         "side": "near",
         "sleeveOD": 26
       },
       {
         "H16Clear": 24.882352941176578,
         "H16ClearAfterTwo5": 14.882352941176578,
-        "linkClearAfterTwo5": 6.5,
-        "linkPitchPhase": [
-          75,
-          62.5
-        ],
+        "linkClearAfterTwo5": 3.0,
+        "linkSchedule": "arch-link-schedule.py",
+        "minimumLinkClear": 13.0,
         "side": "opposite",
         "sleeveOD": 26
       }
     ],
     "frontPlateStripStressMPa": 171.76719468060662,
+    "historicalRowOnlyThroughboltPeakKN": 9.265792689075628,
     "max3ThroatWeldVMMpa": 120.01824891536641,
     "maxArmVMMpa": 90.0136866865248,
     "maximumArmTorsionKNm": 1.3290282352941174,
@@ -402,7 +449,32 @@
       200,
       30
     ],
-    "movingPlateStripStressMPa": 97.46893841911763
+    "movingPlateStripStressMPa": 97.46893841911763,
+    "positiveCoreReceiver": {
+      "bearingFootprintPerRow": [
+        25,
+        80
+      ],
+      "innerBackingPlate": [
+        80,
+        200,
+        14
+      ],
+      "limits": "Check the full C30 stress field, edge breakout, concrete splitting, weld type, fatigue, radial clearances and casting. No weather-leaf anchorage or resting friction.",
+      "maxDelivered40TubeMPa": 108.70350690747196,
+      "maxDeliveredCommonArmVM": 101.68448298561898,
+      "maxRCBearingMPa": 9.517944491129784,
+      "maxRearPlateMPa": 133.38757461876062,
+      "maxWetPlateMPa": 137.3781170173274,
+      "minimumOpposingLever": 27,
+      "outerFacePlate": [
+        100,
+        210,
+        20
+      ],
+      "peakM16TensionKN": 19.035888982259568,
+      "pryingFactor": 1.25
+    }
   },
   "original": {
     "M12ProofComparisonKN": 40.464,

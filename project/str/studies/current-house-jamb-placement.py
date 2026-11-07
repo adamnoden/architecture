@@ -10,10 +10,12 @@ base=json.loads((D/'current-house-arch-detail.json').read_text())['oppositeJambB
 vertical=base['verticalX']; lanes=base['verticalNormalAtFloor'];phase=base['localH8HoopStationPhaseIn100']
 # Coordinates X, inward-normal and Z. The bar endpoints include the true
 # closed links, not just four dots where the section happens to be cut.
+shared=__import__('runpy').run_path(str(D/'arch-link-schedule.py'))
 bars=[]
 def bar(name,a,b,diameter):bars.append((name,a,b,diameter/2))
 for x,y in itertools.product(vertical,lanes):bar('H16 jamb leg',(x,y,3020),(x,y,4000),16)
-for z in range(3035,4001,75):
+for z in shared['jamb']:
+    if z>4000:break
     l,r=vertical[0]-11,vertical[1]+11; f,b=lanes[0]-11,lanes[1]+11
     points=[(l,f,z),(r,f,z),(r,b,z),(l,b,z),(l,f,z)]
     for a,v in itertools.pairwise(points):bar('H6 jamb confinement',a,v,6)
@@ -82,7 +84,7 @@ assert max(q['minimumParallelH16AfterTwoFiveOffsets'] for q in comparisons if q[
 probe=check_path([(2379,70,4000),(2379,70,3358),(2379,-15,3358)],8,[-85,140])
 probe2=check_path([(2379,70,3358),(2379,117,3358)],8,[-85,140])
 assert min(probe['residual'],probe2['residual'])>=0
-result={'footNormalWidth':225,'barsAndFormAdverseSetout':5,'orthogonalH12H16MinimumSurfaceGapNominal':base['minimumOrthogonalH12Clear'],'orthogonalSurfaceGapAfterTwoFiveOffsets':base['clearAfterTwoFiveMMPlacementOffsets'],
+result={'closedLinksGlobalZInFoot':[z for z in shared['jamb'] if z<=4000],'footNormalWidth':225,'barsAndFormAdverseSetout':5,'orthogonalH12H16MinimumSurfaceGapNominal':base['minimumOrthogonalH12Clear'],'orthogonalSurfaceGapAfterTwoFiveOffsets':base['clearAfterTwoFiveMMPlacementOffsets'],
         'widthComparison':comparisons,'aggregateCentreConnectingRoute':{'maxStone':16,'x':2379,'normal':[-15,70,117],'transferLevel':3358,'leastResidual':min(probe['residual'],probe2['residual'])},
         'nativePokerComparator':{'manufacturer':'Altrad Belle','reference':'BGA 25 165.9.000','source':'https://www.altrad-belle.com/index_old.php?id=17&p=products','diameter':25,'headLength':295,'shaftLengthM':5,'motionAmplitude':.8,'maxHeadSweepDiameter':26.6,'headResidualAfterFullRadialAmplitude':min(q[0] for q in selected['placingLanes'])-.8,'remaining':'Source gives no complete coupler/shaft OD. The maximum total OD and setout are explicit specification requirements. Check the actual flexible section for the full 965 mm insertion before a pour.'},
         'sequence':'Cast the locally deepened lower wall head, slab/edge beam and foot to Z4000 under open top form. Lower the 25 mm probe in both listed corridors. Seat the next ordinary jamb pour on the prepared joint. Prove the actual material flows under the crossing bars and compacts by a physical pour. The geometric corridors are independent of the 11 mm remnant at a single orthogonal joint.',

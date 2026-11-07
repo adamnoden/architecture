@@ -330,7 +330,7 @@ if __name__=='__main__':
 # Ground-plane horizontal force follows the four named pier groups. Spread
 # shear equally in each three-shaft group, adding a tangential couple to
 # recover the actual pier-axis location rather than shifting yaw to its centroid.
-def horizontal(wi,addedShears=None):
+def horizontal(wi,addedShears=None,addedYaw=None):
     V={k:[0.,0.] for k in heads};g={p:[0.,0.] for p in plane['corners']}
     ax,_,_,cs,_=plane['actual'][wi]
     for p,rs in cs.items():
@@ -352,7 +352,7 @@ def horizontal(wi,addedShears=None):
         sx=1 if p[0]==A else -1;sy=1 if p[1]==A else -1
         points=[p,(p[0]+860*sx,p[1]),(p[0],p[1]+860*sy)]
         cen=[sum(q[j] for q in points)/3 for j in [0,1]]
-        moment=(p[0]-cen[0])*v[1]-(p[1]-cen[1])*v[0]
+        moment=(p[0]-cen[0])*v[1]-(p[1]-cen[1])*v[0]+1000*(addedYaw or {}).get(p,0.)
         pol=sum(math.dist(q,cen)**2 for q in points)
         for q in points:
             vv=V[old['coord'][q]];vv[0]+=v[0]/3-moment*(q[1]-cen[1])/pol
@@ -360,7 +360,7 @@ def horizontal(wi,addedShears=None):
     resultant=[sum(v[j] for v in V.values()) for j in [0,1]]
     assert max(abs(sum(v[j] for v in g.values())-resultant[j]) for j in [0,1])<1e-7
     yaw=sum(v[1]*xy(k)[0]-v[0]*xy(k)[1] for k,v in V.items())/1000
-    assert abs(yaw-sum(v[1]*p[0]-v[0]*p[1] for p,v in g.items())/1000)<1e-7
+    assert abs(yaw-sum(v[1]*p[0]-v[0]*p[1] for p,v in g.items())/1000-sum((addedYaw or {}).values()))<1e-7
     return V,[*resultant,yaw]
 def rounded(v):return [round(x,4) for x in v]
 def report():
