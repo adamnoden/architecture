@@ -90,7 +90,8 @@ class Structure:
                 length=min(h,j);breaks=sorted({0,length,*[z-self.p['base'] for z in [s['fill_bottom'],s['fill_top']] if 0<z-self.p['base']<length]})
                 for low,high in pairwise(breaks):
                     leg=1037.5 if s['fill_bottom']<self.p['base']+(low+high)/2<s['fill_top'] else 1000.
-                    J=self.J(leg,140)+self.J(leg-140,140)
+                    width=s.get('wide_normal',140) if leg==1037.5 else 140
+                    J=self.J(leg+width-140,width)+self.J(leg-140,width)
                     value+=f*g*(high-low)/(self.shear_mod*J)
         L=self.B-self.A
         for wall,x,f in m.edge:
