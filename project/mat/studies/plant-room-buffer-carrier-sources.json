@@ -23,7 +23,9 @@
     "connections": "G1.5in water connections, six native plug/seal sets; lowest water connection used for draining; two wall-fixing strips/four pins and three original feet supplied",
     "holds": "101L nominal is not100L usable defrost volume.34kg net is not the installed residual mass after native draining. Native glycol/pressure/flow/control compatibility, exact retained feet/contact coordinates, transport grips/retention, side/top/connection access and thermal casing/plug/seal constituents remain to qualify. Floorfeet and wall fixing are distinct native options; do not lift by ports or substitute a wall-hung bearing assumption. Native instructions require at least two people for transport, not an assumed per-person lifting capacity.",
     "nativeInsulation": "Expanded polypropylene explicitly named on native0020244064_02 p9 solder-heat warning; connector seals and full casing/cover/foot constituents still need exact declarations. Known EPP remains unapproved; no tool or supplied-appliance exemption.",
-    "lateralPlaneEvidence": "p7 shows200 left/right in elevation and150 above; p9 hydraulic diagrams place opposed water ports on those lateral faces; p8 fixing strips are on the intervening rear face. This supports the lateral-port-plane interpretation but does not turn it into explicit all-around/PORT-axis wording; actual orientation/access remains to qualify."
+    "lateralPlaneEvidence": "p7 shows200 left/right in elevation and150 above; p9 hydraulic diagrams place opposed water ports on those lateral faces; p8 fixing strips are on the intervening rear face. This supports the lateral-port-plane interpretation but does not turn it into explicit all-around/PORT-axis wording; actual orientation/access remains to qualify.",
+    "nativeSeriesReturn": "Exact0020244064_02 p10\u00a75.1.2.3 CASE3: heatpump supply bypasses cylinder; heating-return enters upperright waterport and lowerleft returns toheatpump; sixremaining waterports plugged. Application to primaryplateHX loop is the authored join, not manufacturer approval of the house controls or100usable proof.",
+    "nativeInitialFixing": "Exact p8\u00a74.8 removes cylinder fixing screw from bottom of delivery pallet, then p9 installs/levels3nativefeet. This establishes a factory pallet restraint exists, NOT thread/count/engagement/bearing/approved replacement transport load or carrier transfer. Wall-mount p8 uses a separate plural fixing-screws description."
   },
   "nativeCaster": {
     "model": "TENTE Alpha3470UFR100P62, order00003464, EAN4031582304404",
@@ -502,5 +504,26 @@
     ],
     "cylinderArcRadius_mm": 680,
     "role": "Same native casters, plate thickness and structural scheme; one stability/whole-body plan control. Does not inherit GL fork release or towbar/ring clearance. No actual installed buffer qualification."
+  },
+  "matchedRegister": {
+    "url": "https://www.rskdatabasen.se/kategori/vatten-varme/uppvarmningkyla/ackumulatortankar/varmevatten/vps-r-1001-m-6212623-281",
+    "manufacturer": "Vaillant A/S",
+    "article": "0010021456",
+    "RSK": "6212623",
+    "entryDate": "2021-07-21",
+    "observedDate": "2026-11-07",
+    "listedProductOverall_mm": [
+      932,
+      573,
+      550
+    ],
+    "listedPackaging_mm": [
+      655,
+      605,
+      1140
+    ],
+    "listedPackagingMassRole": "Entry34kg matches native net and does not establish gross package/pallet weight.",
+    "listedInsulation": "PUR(polyurethane)",
+    "sourceRole": "Manufacturer-linked product register, not exact UK IOM bytes or a CAD/fit/capture record. PUR entry and native UK p9 EPP wording remain unreconciled source/layer/version roles; do not infer a semantic revision change or exact polymer BOM.605packagewidth is not600 movingcarrier/fullpackage support proof. No CAD, nativefoot or palletfixing dimensions recovered."
   }
 }

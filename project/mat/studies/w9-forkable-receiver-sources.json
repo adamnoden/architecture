@@ -32,7 +32,7 @@
       "edition": "1314200GT SecondEdition ThirdPrinting August2026,GLP-103003 onward",
       "sha256": "4e8bcb789fad758eacbf93fd11c3cb384373623630078d3485bbae453836062e",
       "pages": "12\u201313 actual configurations;29\u201330 CG/loadcentre;31 dimensions;32\u201333 options/masses;operating rules",
-      "scope": "GL4 standard51kg,629wide/883operatinglength,minimum forks-down lift89,572long/521outsidewide forks,227kg at load centre up to350 from load face nearest carriage. Firm level surface, centred secured load, no side forces; raised travel only minor loading/unloading positioning. Manual lowering then quarter-turn lift sets winch brake. No unattended load. Actual fork section/origin and leg vertical shape are not dimensioned here."
+      "scope": "GL4 standard51kg,629wide/883operatinglength,minimum forks-down lift89,572long/521outsidewide forks,227kg at load centre up to350 from load face nearest carriage. Firm level surface, centred secured load, no side forces; raised travel only minor loading/unloading positioning. Manual lowering then quarter-turn lift sets winch brake. No unattended load. Actual fork section/origin and leg vertical shape are not dimensioned here. Native629wide/883operatinglong describes the nominal standardbase; it is not a dimensioned full configured crank/leg/attachment/operator swept solid. Do not infer fork/loadface origins or total machine coverage from those two numbers."
     },
     {
       "name": "Fetra25011401 current native data sheet",

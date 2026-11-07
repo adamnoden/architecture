@@ -209,7 +209,7 @@
     "status": "One actual-source authored carrier comparison; indoor plan only, no fabrication/handling/adoption approval",
     "source": {
       "path": "project/mat/studies/plant-room-buffer-carrier-sources.json",
-      "sha256": "442276a4b37cffbd997ce41c754c52a7d2e072fe21b5af649dd5a8fba36bb8be"
+      "sha256": "cd51fee7b5fcb11a428c67839c6e6cb5108c27a4ec12637b60c490c27a83fa9f"
     },
     "nativeBuffer": {
       "model": "Vaillant VPS R100/1M, article0010021456",
@@ -234,7 +234,9 @@
       "connections": "G1.5in water connections, six native plug/seal sets; lowest water connection used for draining; two wall-fixing strips/four pins and three original feet supplied",
       "holds": "101L nominal is not100L usable defrost volume.34kg net is not the installed residual mass after native draining. Native glycol/pressure/flow/control compatibility, exact retained feet/contact coordinates, transport grips/retention, side/top/connection access and thermal casing/plug/seal constituents remain to qualify. Floorfeet and wall fixing are distinct native options; do not lift by ports or substitute a wall-hung bearing assumption. Native instructions require at least two people for transport, not an assumed per-person lifting capacity.",
       "nativeInsulation": "Expanded polypropylene explicitly named on native0020244064_02 p9 solder-heat warning; connector seals and full casing/cover/foot constituents still need exact declarations. Known EPP remains unapproved; no tool or supplied-appliance exemption.",
-      "lateralPlaneEvidence": "p7 shows200 left/right in elevation and150 above; p9 hydraulic diagrams place opposed water ports on those lateral faces; p8 fixing strips are on the intervening rear face. This supports the lateral-port-plane interpretation but does not turn it into explicit all-around/PORT-axis wording; actual orientation/access remains to qualify."
+      "lateralPlaneEvidence": "p7 shows200 left/right in elevation and150 above; p9 hydraulic diagrams place opposed water ports on those lateral faces; p8 fixing strips are on the intervening rear face. This supports the lateral-port-plane interpretation but does not turn it into explicit all-around/PORT-axis wording; actual orientation/access remains to qualify.",
+      "nativeSeriesReturn": "Exact0020244064_02 p10\u00a75.1.2.3 CASE3: heatpump supply bypasses cylinder; heating-return enters upperright waterport and lowerleft returns toheatpump; sixremaining waterports plugged. Application to primaryplateHX loop is the authored join, not manufacturer approval of the house controls or100usable proof.",
+      "nativeInitialFixing": "Exact p8\u00a74.8 removes cylinder fixing screw from bottom of delivery pallet, then p9 installs/levels3nativefeet. This establishes a factory pallet restraint exists, NOT thread/count/engagement/bearing/approved replacement transport load or carrier transfer. Wall-mount p8 uses a separate plural fixing-screws description."
     },
     "nativeCaster": {
       "model": "TENTE Alpha3470UFR100P62, order00003464, EAN4031582304404",
@@ -1592,7 +1594,7 @@
       },
       "planPass": true
     },
-    "decision": "Develop600 conversion with its complete crew/bar path as the current joined indoor method.700 earns greater conditional stability and a body-only throat pass, but overlaps native fork lanes35mm and cannot inherit low-bar/ring clearance or the600 crew method. Price that changed transfer before preferring700; no new apparatus selected.",
+    "decision": "Earlier convertible/East control retained; current coherentCandidate prefers persistent600 and front renewal.700 earns greater conditional stability and a body-only throat pass, but overlaps native fork lanes35mm and cannot inherit low-bar/ring clearance or the600 crew method. Price that changed transfer before preferring700; no new apparatus selected.",
     "holds": [
       "Carrier inflated path enters complete700\u00d7700 cylinder station170.12mm while clearing actual595 body; actual retained feet/valves/ports/pipes/support in that station domain must qualify",
       "Native3foot bearing/contact geometry and captured pressure-body restraint remain unbound; no lifting by ports or wall-fixing assumption",
@@ -7066,6 +7068,18 @@
           3,
           178
         ],
+        "dropOutsideRadius_mm": 295.74059579300234,
+        "dockDropToCompleteNativeCasterSweep_mm": 38.6953767623375,
+        "floorReceiverAxesGlobal_mm": [
+          [
+            10975.5,
+            3080
+          ],
+          [
+            10975.5,
+            3230
+          ]
+        ],
         "stationaryPinHandleWestProjectionFromCentre_mm": 330,
         "WestTaskCrewCentre_mm": [
           10590.5,
@@ -7116,7 +7130,7 @@
         "nativeNet_kg": 34,
         "nativeWaterFilled_kg": 135,
         "nativePorts": "Opposed G1.5 water ports and native plugs/seals/feet; all complete connection/tool/isolation/drain/body dimensions must bind, not a bare circle. Port heights230/390/550/710 are native drawing-line dimensions, not newly installed floor datums.",
-        "knownInsulation": "Expanded polypropylene explicitly named on native p9; unapproved. Native seals/cover/foot full constituents remain unknown.",
+        "knownInsulation": "Expanded polypropylene named on native p9; manufacturer-linked RSK entry listsPUR. Exact layer/version/quantity remains unreconciled; both source roles unapproved. Native seals/cover/foot full constituents remain unknown.",
         "clearance": "p7 lateral200/top150 plus port access retained. +60 cell leaves26.5each beyond200 for native563,8each for complete600; lateral-port-plane interpretation/application still conditional.",
         "heightRole": "932+276=1208 listed stack is not an actual fitted-foot/ports maximum.1876=source1600 complete-body limit+276 is retained as a separate adverse geometric CG challenge."
       },
@@ -7399,9 +7413,80 @@
         "simultaneousTwoNativeWLL_kN": 15.69064,
         "idealFullWLLBraceAxial_kN": 12.992001519501981,
         "idealFullWLLUprightCompression_kN": 10.355822400000001,
+        "idealRearToeSignedUplift_kN": 10.355822400000001,
+        "idealFrontToeSignedCompression_kN": 10.355822400000001,
+        "idealFullWLLBaseCouple_kNm": 2.5889556000000002,
+        "proposedRodXYZRows_mm": [
+          [
+            [
+              5225,
+              332.5,
+              -180
+            ],
+            [
+              5275,
+              332.5,
+              -180
+            ]
+          ],
+          [
+            [
+              5225,
+              582.5,
+              -180
+            ],
+            [
+              5275,
+              582.5,
+              -180
+            ]
+          ],
+          [
+            [
+              5425,
+              332.5,
+              -180
+            ],
+            [
+              5475,
+              332.5,
+              -180
+            ]
+          ],
+          [
+            [
+              5425,
+              582.5,
+              -180
+            ],
+            [
+              5475,
+              582.5,
+              -180
+            ]
+          ]
+        ],
+        "removableStationReceivers": {
+          "SHS_mm": [
+            50,
+            50,
+            3
+          ],
+          "uprightSleeveLength_mm": 180,
+          "braceSleeveLength_mm": 225.82081684892128,
+          "fourFlushCaps_mm": [
+            80,
+            80,
+            6
+          ],
+          "coarseSleevesAndCaps_kg": 4.890927051244665,
+          "idealPermanentReceiverBridgeCoefficient_m": 0.011261777461765134,
+          "atAuthoredConductivity15_WperK": 0.168926661926477,
+          "role": "New source-bound cast-in receivers allow removal toflush covers when station is notinuse. Actual interlock/fixing/seals/edge/cage and access still require design; not hidden permanent projections in the protectedthreshold."
+        },
         "idealBraceStress_MPa": 29.26126468356302,
         "idealUprightStress_MPa": 23.323924324324327,
-        "coarseTwoStationStock_kg": 11.016879160801617,
+        "coarseTwoStationStock_kg": 15.907806212046282,
         "oneTU8MachineHandle20mOriginalRope_kg": 14.4,
         "twoTU8MachineHandle20mRopes_kg": 28.8,
         "holds": "Actual door/threshold openingX5100..6900 contains these stations and rearfeet153mm behind inside finished face. New sealed floor receivers, signed uplift/moment at actual bolt rows, cage/edge breakout, simultaneous15.69kN and native machine/620handle/operator/rope fields all remain unqualified. NativeWLL anchor duty is not reduced to the small operating tension. Exact device/rigging capacities/fields are not supplied by this member stress arithmetic. Later landings need new source-bound redirects/anchors/supports; no guard/wall-friction/free house-grid credit."
@@ -7439,6 +7524,333 @@
       "apparatusAccepted": false,
       "owningGeometryAdopted": false
     }
+  },
+  "nativeInstallationJoin": {
+    "status": "ONE persistent-carrier/native-case3 sequence; source proposal, no first-installation or operation acceptance",
+    "nativeSource": {
+      "url": "https://professional.vaillant.co.uk/downloads/aproducts/buffer-cylinder-1/buffer-cylinder-20244064-2752025.pdf",
+      "sha256": "2ba073edbd88c1adf4df6d879df0cb28635ed9c1e8950cc7649f1c8161eff054",
+      "edition": "0020244064_02 /07.09.2023",
+      "pages": "p7dimensions/lateral/top;p8palletfloorinstallation;p9feet/port/EPP;p10case3;p11purge/drain"
+    },
+    "sourceRegister": {
+      "url": "https://www.rskdatabasen.se/kategori/vatten-varme/uppvarmningkyla/ackumulatortankar/varmevatten/vps-r-1001-m-6212623-281",
+      "manufacturer": "Vaillant A/S",
+      "article": "0010021456",
+      "RSK": "6212623",
+      "entryDate": "2021-07-21",
+      "observedDate": "2026-11-07",
+      "listedProductOverall_mm": [
+        932,
+        573,
+        550
+      ],
+      "listedPackaging_mm": [
+        655,
+        605,
+        1140
+      ],
+      "listedPackagingMassRole": "Entry34kg matches native net and does not establish gross package/pallet weight.",
+      "listedInsulation": "PUR(polyurethane)",
+      "sourceRole": "Manufacturer-linked product register, not exact UK IOM bytes or a CAD/fit/capture record. PUR entry and native UK p9 EPP wording remain unreconciled source/layer/version roles; do not infer a semantic revision change or exact polymer BOM.605packagewidth is not600 movingcarrier/fullpackage support proof. No CAD, nativefoot or palletfixing dimensions recovered."
+    },
+    "nativeHydraulicMode": "CASE3 seriesreturn. Heatpump supply directly feeds PRIMARY plateHX loop; its return enters upperright bufferport and lowerleft goes toHPreturn. Sixunusedwaterports retain nativeplugs/seals. Secondaryradiatorwater acrossplateHX is not borrowed. ActualHPflow/pressure/control/glycol/100usable and valve states still qualify.",
+    "orientationProposal": "NativeleftfaceSOUTH,rightfaceNORTH. Lateral200 minimum plane/application staysconditional. Both200 minima and port access retained; not an all-around waiver.",
+    "nominalCasingPlanePortPointsXYZ_mm": {
+      "North-return-IN": [
+        11245.5,
+        3436.5,
+        710
+      ],
+      "South-return-OUT": [
+        11245.5,
+        2873.5,
+        230
+      ]
+    },
+    "portPointRole": "Z230/710 are native drawing-line heights, NOT installed floorZ; addactualnativefeet/base and276carrier after binding. XY are casing-plane references, not native full boss/union/tool envelope.",
+    "portTaskPlanReferences": {
+      "North-return-IN": {
+        "radius_mm": 325,
+        "polyline_mm": [
+          [
+            10625,
+            3415
+          ],
+          [
+            10625,
+            3415
+          ]
+        ],
+        "minimumInflatedMargin_mm": 16.22023679729199,
+        "limiting": "installed-dock-handle-3230",
+        "allMargins_mm": {
+          "utility-west-pier": 518.1654641883763,
+          "utility-east-pier": 590.3294488871206,
+          "intermediate-west-pier": 654.9020359199178,
+          "intermediate-east-pier": 43.82651748484682,
+          "north-wall": 2040.5,
+          "east-south": 620.5,
+          "east-north": 1759.7384128470412,
+          "west-south": 1052.220479807064,
+          "west-north": 908.752406279315,
+          "service-emitter-utility-E": 911.9071307094966,
+          "service-utility-washer": 1690.0,
+          "service-utility-sink": 1716.0414008539856,
+          "service-utility-rearServiceChase": 2390.0,
+          "service-utility-valveBay": 1691.3952985463936,
+          "service-utility-electricalStation": 1050.2850613600076,
+          "service-utility-PVinverter": 2504.944389912989,
+          "cylinder": 509.9530895361627,
+          "riser": 1126.4992249395107,
+          "controls": 206.68059020430678,
+          "emitter": 341.1291166132884,
+          "W9": 1407.0,
+          "closed-leaf": 881.0,
+          "buffer": 47.770577537394956,
+          "complete-cylinder-station": 313.31810251629247,
+          "installed-dock-handle-3080": 113.89776713945582,
+          "installed-dock-handle-3230": 16.22023679729199
+        },
+        "planPass": true
+      },
+      "South-return-OUT": {
+        "radius_mm": 325,
+        "polyline_mm": [
+          [
+            10615,
+            2940
+          ],
+          [
+            10615,
+            2940
+          ]
+        ],
+        "minimumInflatedMargin_mm": 4.023175475527864,
+        "limiting": "installed-dock-handle-3080",
+        "allMargins_mm": {
+          "utility-west-pier": 122.3175605763762,
+          "utility-east-pier": 261.4409603702661,
+          "intermediate-west-pier": 859.3027484558161,
+          "intermediate-east-pier": 451.4135495984083,
+          "north-wall": 2515.5,
+          "east-south": 630.5,
+          "east-north": 2196.0849351023458,
+          "west-south": 902.0192541276604,
+          "west-north": 1030.123610597941,
+          "service-emitter-utility-E": 587.646837500684,
+          "service-utility-washer": 1215.0,
+          "service-utility-sink": 1251.0155456086086,
+          "service-utility-rearServiceChase": 1915.0,
+          "service-utility-valveBay": 1217.3439953525283,
+          "service-utility-electricalStation": 740.0464778590651,
+          "service-utility-PVinverter": 2045.882799718282,
+          "cylinder": 889.4937169181624,
+          "riser": 1556.4422659226086,
+          "controls": 641.5501797630582,
+          "emitter": 25.56097900365353,
+          "W9": 1882.0,
+          "closed-leaf": 871.0,
+          "buffer": 41.14957029183768,
+          "complete-cylinder-station": 716.9332992087354,
+          "installed-dock-handle-3080": 4.023175475527864,
+          "installed-dock-handle-3230": 88.46855986882485
+        },
+        "planPass": true
+      },
+      "West-dock": {
+        "radius_mm": 325,
+        "polyline_mm": [
+          [
+            10590.5,
+            3155
+          ],
+          [
+            10590.5,
+            3155
+          ]
+        ],
+        "minimumInflatedMargin_mm": 7.24388632448904,
+        "limiting": "installed-dock-handle-3080",
+        "allMargins_mm": {
+          "utility-west-pier": 271.9474432477284,
+          "utility-east-pier": 410.94853760300384,
+          "intermediate-west-pier": 720.2493721595818,
+          "intermediate-east-pier": 268.8183644853028,
+          "north-wall": 2300.5,
+          "east-south": 655.0,
+          "east-north": 2008.7360604832757,
+          "west-south": 922.6275485897224,
+          "west-north": 927.2313085049423,
+          "service-emitter-utility-E": 741.2687278542871,
+          "service-utility-washer": 1430.0,
+          "service-utility-sink": 1466.4422262523567,
+          "service-utility-rearServiceChase": 2130.0,
+          "service-utility-valveBay": 1433.412707529151,
+          "service-utility-electricalStation": 844.7723069042111,
+          "service-utility-PVinverter": 2244.9981517503084,
+          "cylinder": 693.8036313860111,
+          "riser": 1347.5026905807954,
+          "controls": 450.69581667042655,
+          "emitter": 114.4840725214055,
+          "W9": 1667.0,
+          "closed-leaf": 846.5,
+          "buffer": 30.0,
+          "complete-cylinder-station": 511.5436330520961,
+          "installed-dock-handle-3080": 7.24388632448904,
+          "installed-dock-handle-3230": 7.24388632448904
+        },
+        "planPass": true
+      }
+    },
+    "planReachFromCrewCentreToNominalPort_mm": {
+      "North-return-IN": 620.8723701373738,
+      "South-return-OUT": 633.9972397416253
+    },
+    "reachRole": "Authored700mm plan comparison only. Actual standing/low-port stance, height, arm/tool/union rotation, pressure/temperature and visibility must qualify; no universal person reach claim.",
+    "authoredFixedWarmRoutes": {
+      "fullJacketControl_mm": 84,
+      "centresThroughOpeningX_mm": [
+        10590,
+        10750
+      ],
+      "centreZ_mm": 2400,
+      "routeNorthReturn": [
+        [
+          11245.5,
+          3436.5,
+          "native port height unbound"
+        ],
+        [
+          11245.5,
+          3500,
+          2400
+        ],
+        [
+          10750,
+          3500,
+          2400
+        ],
+        [
+          10750,
+          4000,
+          2400
+        ],
+        [
+          10920.5,
+          4000,
+          2400
+        ]
+      ],
+      "routeSouthReturn": [
+        [
+          11245.5,
+          2873.5,
+          "native port height unbound"
+        ],
+        [
+          11245.5,
+          2800,
+          2400
+        ],
+        [
+          10590,
+          2800,
+          2400
+        ],
+        [
+          10590,
+          4000,
+          2400
+        ]
+      ],
+      "role": "New supported fixed-tail route proposal, not chosenpipeID/nativefittings/flow or actualcontrols/HP terminal join. Rise atport-side territory before crossingwest so low pipes do not occupy the task body. Independent supports and demountable unions, no masonrypier drilling.",
+      "support": "Actual wall/RC support receivers, load/thermal/movement and all pipe/insulation/union/clip constituents remain unqualified; neither vessel nor removable carrier is fixed-pipe support."
+    },
+    "explicitNewInteriorArchSectionTrial": {
+      "selectedHADRole": "Onlyraw9650..10925 plan opening owned. This is a NEW authored internal section, not imported exterior arch geometry.",
+      "rawSpan_mm": 1275,
+      "authoredSpring_mm": 2550,
+      "authoredHead_mm": 2850,
+      "authoredRadialRing_mm": 215,
+      "authoredRadialFinish_mm": 27,
+      "rawRadius_mm": 827.34375,
+      "centreXZ_mm": [
+        10287.5,
+        2022.65625
+      ],
+      "finishedRadius_mm": 800.34375,
+      "rawOuterCrown_mm": 3065,
+      "toSourceRCsoffit3170_mm": 105,
+      "pipeChecks": [
+        {
+          "centreXZ_mm": [
+            10590,
+            2400
+          ],
+          "fullJacketDiameter_mm": 84,
+          "additionalChallenge_mm": 25,
+          "finishedArchRadialMarginAfter67_mm": 249.7172870515148,
+          "finishedJambPlanReserveAfter67_mm": 241
+        },
+        {
+          "centreXZ_mm": [
+            10750,
+            2400
+          ],
+          "fullJacketDiameter_mm": 84,
+          "additionalChallenge_mm": 25,
+          "finishedArchRadialMarginAfter67_mm": 136.43960722323686,
+          "finishedJambPlanReserveAfter67_mm": 81
+        }
+      ],
+      "structuralHold": "Newinternaljamb/thrust/loadpath,105crownreserve,+60 upperwallbearingoffset and exteriorEastdoorjoint still needSTR/HAD review beforeadoption; no selected intrados or pipe-bearing credit."
+    },
+    "sequence": [
+      {
+        "stage": "Configure before fabrication",
+        "action": "Bind exact full nativefeet/bosses/plugs/height, pallet fixing thread/engagement/bearing and allowable transport/restraint loads. Preserve nativefeet/casing/pressurebody; do not lift byports or restrain EPP as structure.",
+        "admitted": false,
+        "firstHardHold": "NativeIOM establishes palletfixing exists but gives no dimensioned/qualified carrier-transfer/capture interface. No inferred M10 or clamp rating."
+      },
+      {
+        "stage": "Initial native delivery and carrier loading",
+        "action": "Retain actual factory pallet restraint until a positively supported, matched transfer onto the already-complete caster carrier is established. IOMhorizontal/pallet/threefeet sequence is source evidence, not approval of a custom74kg combined tilt or under-load GL pod work.",
+        "admitted": false,
+        "hold": "Package655\u00d7605\u00d71140 is a separate first-installation envelope; gross/bearing/GL/device/operator/transfer not earned by the600 renewal proof."
+      },
+      {
+        "stage": "Dock before filling",
+        "action": "Position full assembly at11245.5/3155. Engage both accessible positive stops/flush floorreceivers and demonstrate fullwet staticcaster/frame/floor/anchor loads before connecting/filling. Retain no nativecasterbrake assumption.",
+        "admitted": false,
+        "hold": "ActualRC200cage/stand-offs/floor finish point loads, dock pin/drop/weld and completeair/water/thermal interfaces unqualified."
+      },
+      {
+        "stage": "Connect and commission native case3",
+        "action": "Independently support both fixedtails before matching demountable nativeport unions. Preserve nativepurge, pressure/flow and thermal/control protections; prove100usable always-connected primaryvolume and native orientation/access before ordinary operation.",
+        "admitted": false,
+        "hold": "101nominal is not100usable. Exact thread/seal/union/flow and fullnativeport/insulation/EPP/PUR source roles not solved."
+      },
+      {
+        "stage": "First renewal release while still docked",
+        "action": "Shut down/isolate the actual heat/primaryfluid system, cool/depressurise and support/counterhold both tails before disconnecting. Native\u00a79 uses thelowest waterconnection; size actualcapture for measuredisolatedinventory (101L nominal vessel comparison plus tails/tolerance) if completeemptying is attempted, and verify residual mass/CG. Retain completewet/no-drain challenge.",
+        "admitted": false,
+        "hold": "Actual receiver/container/drain route, fluid density/residual pocket and permissible port disconnection remain unqualified; no floor drain/outfall borrowed."
+      },
+      {
+        "stage": "Transfer from fixed dock to movement restraint",
+        "action": "Establish independent positive capture before releasing the final stop; remove/stow both handles into boundedbox and close floorreceivers flush. Keep persistentcasters/pressurebody supported throughout.",
+        "admitted": false,
+        "hold": "Primary signedholding is not an independently qualified failure-capture. Actual nativehook/pin/rope/620handle/operator/door/threshold and floor sockets must earn the handover."
+      },
+      {
+        "stage": "Front route and reverse restoration",
+        "action": "Use the exact shallowtwo-crew Plant/front sequence and ownfolded geometry proof only after the actual loading/capture/grade conditions pass. Atreturn recapture positive floor dock before removing travelrestraint; reconnect independently supportedtails and restore nativepurge/leak/flow/control duties.",
+        "admitted": false,
+        "hold": "No generichandlingpass fromplan clearances; finaltoe/landing/grade/site and allsource physical/mass/material duties remain."
+      }
+    ],
+    "decision": "Freeze this as a bounded coherent persistent-carrier/room/native-installation comparison once reviewed. Native capture/firstinstallation and realfloor/rigging/port/control qualification are explicit before fabrication/owning adoption, not hidden complete states."
   },
   "coherentCandidate": {
     "status": "ONE current development comparison, not owning geometry",

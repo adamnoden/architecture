@@ -1,0 +1,244 @@
+{
+  "admitted": false,
+  "archCage": {
+    "clearAcrossParallelBars": 26,
+    "collisions": [
+      {
+        "archLane": 49,
+        "barEndX": 997.9411764705881,
+        "barStartX": 1256.764705882353,
+        "pierBarLocalXY": [
+          850,
+          43
+        ],
+        "surfaceClearance": -12
+      },
+      {
+        "archLane": 91,
+        "barEndX": 997.9411764705881,
+        "barStartX": 1256.764705882353,
+        "pierBarLocalXY": [
+          850,
+          97
+        ],
+        "surfaceClearance": -12
+      },
+      {
+        "archLane": 49,
+        "barEndX": 997.9411764705881,
+        "barStartX": 1256.764705882353,
+        "pierBarLocalXY": [
+          950,
+          43
+        ],
+        "surfaceClearance": -12
+      },
+      {
+        "archLane": 91,
+        "barEndX": 997.9411764705881,
+        "barStartX": 1256.764705882353,
+        "pierBarLocalXY": [
+          950,
+          97
+        ],
+        "surfaceClearance": -12
+      },
+      {
+        "archLane": 49,
+        "barEndX": 894.705882352941,
+        "barStartX": 1153.5294117647059,
+        "pierBarLocalXY": [
+          850,
+          43
+        ],
+        "surfaceClearance": -12
+      },
+      {
+        "archLane": 91,
+        "barEndX": 894.705882352941,
+        "barStartX": 1153.5294117647059,
+        "pierBarLocalXY": [
+          850,
+          97
+        ],
+        "surfaceClearance": -12
+      }
+    ],
+    "section": [
+      140,
+      215
+    ],
+    "straightExtensionMM": 550,
+    "trial": "2H16 at each radial face. H6 hoops, maximum cover 35. Two lanes across the width at 49 and 91."
+  },
+  "componentAction": "The independent ceiling uses 1.5 kPa G. The actual roof rings deliver the roof reactions at their 22 stations. The historical 22+7 kN/m arch challenge remains a separate comparator.",
+  "openings": [
+    {
+      "ceilingBands": [
+        {
+          "interval": [
+            1205.1470588235293,
+            2394.8529411764707
+          ],
+          "ulsKNPerM": 2.8274344714837056
+        }
+      ],
+      "centre": 1800,
+      "outsideRingToNearestRoofStation": 777.7941176470589,
+      "skewbackElevation": 6050.588235294117,
+      "skewbacks": [
+        1205.1470588235293,
+        2394.8529411764707
+      ],
+      "wall": "outer-south"
+    },
+    {
+      "ceilingBands": [
+        {
+          "interval": [
+            9605.14705882353,
+            10794.85294117647
+          ],
+          "ulsKNPerM": 3.078107113028954
+        }
+      ],
+      "centre": 10200,
+      "outsideRingToNearestRoofStation": 777.7941176470589,
+      "skewbackElevation": 6050.588235294117,
+      "skewbacks": [
+        9605.14705882353,
+        10794.85294117647
+      ],
+      "wall": "outer-south"
+    },
+    {
+      "ceilingBands": [
+        {
+          "interval": [
+            1205.1470588235293,
+            2394.8529411764707
+          ],
+          "ulsKNPerM": 0.0
+        }
+      ],
+      "centre": 1800,
+      "outsideRingToNearestRoofStation": 777.7941176470589,
+      "skewbackElevation": 6050.588235294117,
+      "skewbacks": [
+        1205.1470588235293,
+        2394.8529411764707
+      ],
+      "wall": "outer-east"
+    },
+    {
+      "ceilingBands": [
+        {
+          "interval": [
+            9605.14705882353,
+            10794.85294117647
+          ],
+          "ulsKNPerM": 0.0
+        }
+      ],
+      "centre": 10200,
+      "outsideRingToNearestRoofStation": 777.7941176470589,
+      "skewbackElevation": 6050.588235294117,
+      "skewbacks": [
+        9605.14705882353,
+        10794.85294117647
+      ],
+      "wall": "outer-east"
+    },
+    {
+      "ceilingBands": [
+        {
+          "interval": [
+            1205.1470588235293,
+            2394.8529411764707
+          ],
+          "ulsKNPerM": 0.0
+        }
+      ],
+      "centre": 1800,
+      "outsideRingToNearestRoofStation": 777.7941176470589,
+      "skewbackElevation": 6050.588235294117,
+      "skewbacks": [
+        1205.1470588235293,
+        2394.8529411764707
+      ],
+      "wall": "outer-west"
+    },
+    {
+      "ceilingBands": [
+        {
+          "interval": [
+            9605.14705882353,
+            10794.85294117647
+          ],
+          "ulsKNPerM": 2.602125
+        }
+      ],
+      "centre": 10200,
+      "outsideRingToNearestRoofStation": 777.7941176470589,
+      "skewbackElevation": 6050.588235294117,
+      "skewbacks": [
+        9605.14705882353,
+        10794.85294117647
+      ],
+      "wall": "outer-west"
+    },
+    {
+      "ceilingBands": [
+        {
+          "interval": [
+            1205.1470588235293,
+            2394.8529411764707
+          ],
+          "ulsKNPerM": 0.0
+        }
+      ],
+      "centre": 1800,
+      "outsideRingToNearestRoofStation": 777.7941176470589,
+      "skewbackElevation": 6050.588235294117,
+      "skewbacks": [
+        1205.1470588235293,
+        2394.8529411764707
+      ],
+      "wall": "outer-north"
+    },
+    {
+      "ceilingBands": [
+        {
+          "interval": [
+            9605.14705882353,
+            10794.85294117647
+          ],
+          "ulsKNPerM": 3.4197187500000004
+        }
+      ],
+      "centre": 10200,
+      "outsideRingToNearestRoofStation": 777.7941176470589,
+      "skewbackElevation": 6050.588235294117,
+      "skewbacks": [
+        9605.14705882353,
+        10794.85294117647
+      ],
+      "wall": "outer-north"
+    }
+  ],
+  "pierCage": {
+    "H20CentreFromFace": 43,
+    "coverOutsideH10": 23,
+    "coverOutsideH8": 25,
+    "qualification": "Interior exposure, fire, placement tolerance and actual hoop bends remain to be specified."
+  },
+  "remaining": "Resolve the physical corner reinforcement, complete the coupled arch and right jamb forces, outer masonry thrust, guard brackets, independent window support and accessible renewal.",
+  "role": "Proposed first-floor corner arch geometry and force inputs. The reinforcement clash prevents using the straight development detail.",
+  "sources": {
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/oas/studies/north-export-occurrence.json": "0dc62373393811e3103800b9d8e3ed8bc0b2beb278503816695370122c434eb9",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/current-house-head-actions.py": "ca6b7f7f97aab3a7bbba605d2b0d2f2bc32c83ddb4e36f4c4eb2c9c604e1eb52",
+    "project/str/studies/current-house-ring-space.json": "28dd034381847b786a31a4f38ffe95d83b948f08bda5f9fe8a6337118584a574"
+  }
+}
