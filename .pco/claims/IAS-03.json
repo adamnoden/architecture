@@ -9,8 +9,8 @@
     "label": "zerg-ias-interiors-successor"
   },
   "claimedAt": "2026-11-06T19:18:37.462Z",
-  "heartbeatAt": "2026-11-07T00:06:41.991Z",
-  "expiresAt": "2026-11-07T01:36:41.991Z",
+  "heartbeatAt": "2026-11-07T00:36:58.126Z",
+  "expiresAt": "2026-11-07T02:06:58.126Z",
   "branch": "work/zerg-20261106-ias-g12",
   "predecessor": {
     "leaseId": "29a4358c-9b23-47a3-b940-7d40b5446f69",
@@ -34,7 +34,7 @@
   },
   "pr": 1363,
   "checkpoint": {
-    "evidence": "PR 1363 merged at 835bc7e145a35ffa7b1608963c7e9c31ab1e16b1 after exact d6a03277 all checks, root source review and canonical preflight. g11 remote deletion verified; fresh distinct g12 starts exact merged main. Source-derived drawing and shared approach warning integrated; no geometry, route, material or IAS completion admission.",
-    "next": "Continue independent Services whole-cell existing-equipment methods review: preserve all bodies/functions, actual crew and egress, buffer/cylinder/carrier paths and native support/height/handling holds. Services remains sole source assembler. No inherited control silently shrunk; actual different method must be explicit. Prior1363 is merged history; bind a new actual PR only when source warrants."
+    "evidence": "Published 751f631eaa48d507dfb8e0045c49ac093be1978c on g12, exact three-file readback; bounded stationary washer tray and native return duty reviewed by root. Prior JSON geometry and SVG unchanged. Independent Services 600 coupled-path audit passed declared plan controls; complete cylinder ancillary envelope remains held.",
+    "next": "Continue actual washer fixed-end support and receiving method; independently review Services carrier/capture/crew source. No active successor PR; 1363 is merged history only."
   }
 }
