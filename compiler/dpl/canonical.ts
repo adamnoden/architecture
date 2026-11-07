@@ -1,6 +1,6 @@
-import { compareDplIdentityStrings, sha256DplSemanticFingerprint } from './identity-order.js'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import { referenceHouseSourceFingerprint } from '../reference-house/identity.js'
 import { evaluateDeploymentCase } from './evaluate.js'
@@ -266,7 +266,7 @@ const expectString = (value: unknown, label: string): string => {
 }
 
 const canonicalStringArray = (values: readonly string[] | undefined): string[] | undefined =>
-  values ? [...new Set(values)].sort((a, b) => compareDplIdentityStrings(a, b)) : undefined
+  values ? [...new Set(values)].sort((a, b) => a.localeCompare(b)) : undefined
 
 const canonicalClaims = (claims: readonly ReferenceSiteClaim[]): ReferenceSiteClaim[] =>
   [...claims]
@@ -274,7 +274,7 @@ const canonicalClaims = (claims: readonly ReferenceSiteClaim[]): ReferenceSiteCl
       ...claim,
       unknownComponents: canonicalStringArray(claim.unknownComponents)
     }))
-    .sort((a, b) => compareDplIdentityStrings(a.id, b.id))
+    .sort((a, b) => a.id.localeCompare(b.id))
 
 const canonicalCoverageEntries = (
   entries: readonly CanonicalCoverageEntry[]
@@ -285,7 +285,7 @@ const canonicalCoverageEntries = (
       representedBy: canonicalStringArray(entry.representedBy),
       claimRefs: canonicalStringArray(entry.claimRefs)
     }))
-    .sort((a, b) => compareDplIdentityStrings(a.id, b.id))
+    .sort((a, b) => a.id.localeCompare(b.id))
 
 const canonicalizeSiteManifest = (manifest: ReferenceSiteManifest): ReferenceSiteManifest => ({
   ...manifest,
@@ -430,12 +430,12 @@ const validateCoverageManifest = (value: unknown, path: string): CanonicalCovera
 }
 
 const authorityFingerprint = (path: string): string =>
-  sha256DplSemanticFingerprint({ path, content: readText(path) })
+  sha256SemanticFingerprint({ path, content: readText(path) })
 
 const authoritySetFingerprint = (paths: readonly string[]): string =>
-  sha256DplSemanticFingerprint(
+  sha256SemanticFingerprint(
     [...paths]
-      .sort((a, b) => compareDplIdentityStrings(a, b))
+      .sort((a, b) => a.localeCompare(b))
       .map((path) => ({ path, fingerprint: authorityFingerprint(path) }))
   )
 
@@ -496,7 +496,7 @@ export const createCanonicalReferenceSiteCandidate = (
   }
   return {
     ...manifest,
-    fingerprint: sha256DplSemanticFingerprint(manifest)
+    fingerprint: sha256SemanticFingerprint(manifest)
   }
 }
 
@@ -532,7 +532,7 @@ const runtimeSite = (
   recordPath: siteManifestPath,
   recordText: JSON.stringify(site),
   recordFingerprint: siteFingerprint,
-  indexEntryFingerprint: sha256DplSemanticFingerprint({
+  indexEntryFingerprint: sha256SemanticFingerprint({
     siteId: site.siteId,
     manifestId: site.manifestId,
     manifestRevision: site.manifestRevision,
@@ -582,8 +582,8 @@ export const evaluateCanonicalReferenceSiteCase = (
   const { referenceHouseSource, authoredCandidate, interfaces, targets, siteAuthorityFingerprint, coverageAuthoritySetFingerprint } = evidence
   const site = canonicalizeSiteManifest(evidence.site)
   const coverage = canonicalizeCoverageManifest(evidence.coverage)
-  const siteFingerprint = sha256DplSemanticFingerprint(site)
-  const coverageFingerprint = sha256DplSemanticFingerprint(coverage)
+  const siteFingerprint = sha256SemanticFingerprint(site)
+  const coverageFingerprint = sha256SemanticFingerprint(coverage)
 
   if (targets.some(({ target }) => /CROYDON|BROMLEY/i.test(target.id))) {
     throw new Error('DPL-13A canonical synthetic Reference Site must not fabricate a local borough target.')
@@ -602,10 +602,10 @@ export const evaluateCanonicalReferenceSiteCase = (
 
   const canonicalInterfaceIds = deploymentLedger.caseIdentity.manifest.interfaceContracts
     .map((item) => item.id)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
   const canonicalTargetIds = deploymentLedger.caseIdentity.manifest.targets
     .map((item) => item.targetId)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
 
   const identityManifest: CanonicalCaseIdentityManifest = {
     schemaVersion: DPL13A_SCHEMA_VERSION,
@@ -624,7 +624,7 @@ export const evaluateCanonicalReferenceSiteCase = (
     localBoroughTarget: 'NOT_ASSIGNED_SYNTHETIC_REFERENCE',
     methodVersion: DPL13A_SCHEMA_VERSION
   }
-  const canonicalCaseFingerprint = sha256DplSemanticFingerprint(identityManifest)
+  const canonicalCaseFingerprint = sha256SemanticFingerprint(identityManifest)
   const proofBoundary = {
     wholeSiteCompatibilityConclusion: 'NOT_IMPLEMENTED' as const,
     conclusionReadiness: 'NOT_ESTABLISHED' as const,
@@ -636,11 +636,11 @@ export const evaluateCanonicalReferenceSiteCase = (
   const authoredClaimIds = site.claims
     .filter((claim) => claim.state === 'AUTHORED')
     .map((claim) => claim.id)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
   const unknownClaimIds = site.claims
     .filter((claim) => claim.state === 'UNKNOWN')
     .map((claim) => claim.id)
-    .sort((a, b) => compareDplIdentityStrings(a, b))
+    .sort((a, b) => a.localeCompare(b))
 
   const resultManifest = {
     schemaVersion: DPL13A_SCHEMA_VERSION,
@@ -677,7 +677,7 @@ export const evaluateCanonicalReferenceSiteCase = (
       fingerprint: coverageFingerprint,
       authoritySetFingerprint: coverageAuthoritySetFingerprint
     },
-    resultFingerprint: sha256DplSemanticFingerprint(resultManifest),
+    resultFingerprint: sha256SemanticFingerprint(resultManifest),
     proofBoundary
   }
 }

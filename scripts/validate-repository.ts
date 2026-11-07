@@ -11,7 +11,6 @@ import {
 import { programmeControls } from '../project/programme-controls.js'
 import { dependenciesForAdapter } from '../publication/adapters.js'
 import { primerPublicationEntries, publicationEntries } from '../publication/publication.js'
-import { collectReadmes } from './readme-discovery.js'
 import { missingReadmeNpmScripts, type ReadmeCommandSource } from './readme-command-contract.js'
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -36,8 +35,36 @@ function repositoryMarkdown(): string[] {
   ]
 }
 
+const ignoredReadmeTrees = [
+  '.git',
+  'node_modules',
+  '.vitepress/cache',
+  '.vitepress/dist',
+  'publication/build'
+]
+
 function repositoryPath(path: string): string {
   return relative(repoRoot, path).split(sep).join('/')
+}
+
+function ignoredReadmeTree(path: string): boolean {
+  const repoPath = repositoryPath(path)
+  return ignoredReadmeTrees.some((ignored) => repoPath === ignored || repoPath.startsWith(`${ignored}/`))
+}
+
+function collectReadmes(dir: string): string[] {
+  const files: string[] = []
+
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name)
+    if (entry.isDirectory()) {
+      if (!ignoredReadmeTree(path)) files.push(...collectReadmes(path))
+    } else if (entry.isFile() && entry.name.toLowerCase() === 'readme.md') {
+      files.push(path)
+    }
+  }
+
+  return files
 }
 
 function markdownLinkSources(): string[] {

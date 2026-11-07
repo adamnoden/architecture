@@ -12,9 +12,6 @@ on:
       - 'docs/manuscript/part-v.md'
       - 'docs/manuscript/evidence-and-precedent-notes.md'
       - 'docs/patterns/controlled-utility-entry.md'
-      - 'scripts/proof-scope.mjs'
-      - 'scripts/proof-scope.test.mjs'
-      - '.github/workflows/proof-scope.yml'
       - 'package.json'
       - 'package-lock.json'
   workflow_dispatch:
@@ -23,11 +20,7 @@ permissions:
   contents: read
 
 jobs:
-  scope:
-    uses: ./.github/workflows/proof-scope.yml
   proof:
-    needs: scope
-    if: needs.scope.outputs.run != 'false'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository

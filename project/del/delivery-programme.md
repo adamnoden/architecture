@@ -1,6 +1,6 @@
 # DEL — Delivery requirements
 
-**State:** DEL-00 baseline retained; owner-house delivery successor active in scope, with actual commission and technical closure evidence-dependent
+**State:** DEL-00 baseline complete; commission-specific issue and technical closure remain evidence-dependent
 
 **Tracking:** [#854 — DEL evidence-led delivery requirements and responsibility coordination](https://github.com/adamnoden/architecture/issues/854)  
 **Starting authority:** `docs/delivery/README.md`, `project/maturity.ts`, the EPR/PHY validation execution register and the owning DPL, HFI and OCG handoffs
@@ -42,18 +42,3 @@ Keep programme history here and requirements in `docs/delivery/`. Present projec
 [DEL-00 — Delivery inventory and responsibility baseline](del-00-delivery-baseline.md) records N01–N17 and the remaining brief sections, provisional discipline/stage allocations, evidence routes and rewind owners. The three existing delivery modules retain requirement ownership. No commission or technical acceptance is claimed.
 
 The baseline also reconciles the HFI review route into the validation execution register and requires a declared source revision before older review/prototype packages are used for the current Georgian re-plan. Next work is evidence-triggered reconciliation after selected IAS/OAS/HAD assemblies reach BCR, current-house review/technical migration, competent RH-11 responses, applicable PHY results or a real commission brief. These are closure dependencies, not reasons to leave the inventory undone. Delivery remains M2; #854 remains open.
-## DEL-CURRENT — selected-house delivery reconciliation
-
-After BCR-CONVERGENCE, the self-service `DEL-CURRENT` packet reconciles adopted assemblies and bounded residuals into delivery, fabrication/tolerance, installation, commissioning, maintenance and reinstatement requirements. Each requirement names the current source/revision, responsible discipline, evidence/acceptance condition and upstream rewind owner. Update only the requirements earned by actual selection; assigning responsibility is not proof of performance. Record `project/del/current-house-delivery-result.md`; HRS-SYNTHESIS consumes its architectural consequences. No external contact, procurement or spend is implied.
-
-
-## Owner-house delivery successor
-
-The [owner-house charter](../owner-house-charter.md) makes actual house delivery the primary objective. The [delivery plan](owner-house-delivery-plan.md) owns stage outcomes and exact DEL-BRIEF, DEL-ISSUE-PROFILES, DEL-BAY-PACK and DEL-COMMISSION-PLAN contracts. Existing DEL-CURRENT remains the selected reference-house reconciliation feeding HRS; the new route can progress independently of book completion.
-
-DEL #854 now tracks this admitted delivery scope as well as its original requirements baseline. Do not close the umbrella because the near-term plan or review package exists. Future actual design, procurement, construction and occupation work is registered when the commission supplies its evidence and responsibilities.
-
-
-DEL-BRIEF is complete at reconciled pre-site brief scope: [result](owner-brief-result.md). The [brief](../../docs/delivery/owner-project-brief.md) records open decisions OB-01–15 and their decision points. These remain unresolved until actual answers/evidence arrive; the broader delivery scope stays open.
-
-DEL-ISSUE-PROFILES is complete at requirements-contract scope: [result](issue-profiles-result.md) and [six issue profiles](../../docs/delivery/information-issue-profiles.md). The worked review/construction distinction does not authorise a real issue or complete DEL; ADE and DEL-BAY-PACK retain implementation and package duties.

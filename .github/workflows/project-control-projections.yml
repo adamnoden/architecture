@@ -22,8 +22,14 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Install trusted control runtime
-        uses: ./.github/actions/control-runtime
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
 
       - name: Render canonical project-control projections
         run: npm run status:update
@@ -31,20 +37,14 @@ jobs:
       - name: Commit projection delta only
         shell: bash
         run: |
-          projection_paths=(
-            STATUS.md
-            project/workstream-codes.md
-            project/control/graph.md
-            docs/project/dependency-graph.md
-            docs/project/graph-source.ts
-          )
+          projection_paths=(STATUS.md project/workstream-codes.md project/control/graph.md)
 
-          if git diff --quiet -- "${projection_paths[@]}" && [ -z "$(git ls-files --others --exclude-standard -- "${projection_paths[@]}")" ]; then
+          if git diff --quiet -- "${projection_paths[@]}" && [ -z "$(git ls-files --others --exclude-standard -- project/control/graph.md)" ]; then
             echo "Project-control projections already current."
             exit 0
           fi
 
-          unexpected="$(git status --porcelain | grep -Ev '^( M|M |A |\?\?) (STATUS\.md|project/workstream-codes\.md|project/control/graph\.md|docs/project/dependency-graph\.md|docs/project/graph-source\.ts)$' || true)"
+          unexpected="$(git status --porcelain | grep -Ev '^( M|M |A |\?\?) (STATUS\.md|project/workstream-codes\.md|project/control/graph\.md)$' || true)"
           if [ -n "$unexpected" ]; then
             echo "Refusing to commit unexpected projection-workflow changes:"
             echo "$unexpected"

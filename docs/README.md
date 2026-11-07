@@ -2,8 +2,6 @@
 
 `docs/` contains the architectural and project-facing document corpus for **Ovid’s House**. This README owns one thing: **where documents inside `docs/` belong according to the role they play**.
 
-For the integrated model of workstreams, dependencies, agent coordination and GitHub automation, start with the [Minimum Viable Bureaucracy (MVB) manual](https://github.com/adamnoden/architecture/blob/main/project/control/README.md). That machinery belongs under `project/control/`, not under computational architecture merely because software implements it.
-
 It is not the authority for the whole repository. Executable implementation lives in `compiler/`, publication build machinery in `publication/`, project-wide state in `STATUS.md`, contributor rules in `AGENTS.md`, and durable programme/audit records in `project/`.
 
 ## Four structures, four jobs

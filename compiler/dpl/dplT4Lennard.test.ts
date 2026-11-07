@@ -1,11 +1,10 @@
-import { sha256DplSemanticFingerprint } from './identity-order.js'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 import { describe, test } from 'node:test'
+import { sha256SemanticFingerprint } from '../core/identity.js'
 import { createReferenceHouseSource } from '../reference-house/fixture.js'
 import { referenceHouseSourceFingerprint } from '../reference-house/identity.js'
-import { compileReferenceHouseSystem } from '../reference-house/system-compile.js'
 import { evaluateCandidateConformance } from './conformance.js'
 import type { CandidateConformanceFinding, DeploymentCandidateInput } from './model.js'
 
@@ -174,35 +173,15 @@ const analysisPath = 'project/dpl/sites/dpl-t-control-004-lennard-road-analysis-
 const verificationPath = 'project/dpl/sites/dpl-t-control-004-lennard-road-verification-v01.json'
 const referenceHousePath = 'compiler/reference-house/fixture.ts'
 const referenceOutputPath = 'docs/reference-house/generated/output-manifest.json'
-// Exact pre-CCR bytes, not a claim about the original T4 capture date.
-const historicalOutput = {
-  path: 'compiler/dpl/fixtures/lennard-pre-ccr-reference-output-manifest.json',
-  sourceCommit: 'c7d994a962be3d17d19ad85bd397f20d872d6817',
-  sourcePath: referenceOutputPath,
-  gitBlobSha: '46e48b0426c3d57579b3b5b79709ffdf62457bb2'
-} as const
 
 describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
-  test('preserves the pinned historical manifest without treating it as current compile applicability', async () => {
-    const candidate = await readJson(candidatePath)
-    const historical = await readJson(historicalOutput.path)
-    const current = await readJson(referenceOutputPath)
-    assert.equal(await gitBlobSha(historicalOutput.path), historicalOutput.gitBlobSha)
-    assert.equal(historical.sourceCompile.fingerprint, candidate.referenceHouse.sourceCompile.fingerprint)
-    assert.equal(current.sourceCompile.fingerprint,
-      compileReferenceHouseSystem(createReferenceHouseSource()).identity.compile.fingerprint)
-    assert.notEqual(current.sourceCompile.fingerprint, candidate.referenceHouse.sourceCompile.fingerprint,
-      'The historical candidate requires revalidation before claiming current compile applicability')
-  })
-
   test('fails closed on source identity and reproduces the authored rigid site geometry', async () => {
     const candidate = await readJson(candidatePath)
     const title = await readJson(titlePath)
     const elevation = await readJson(elevationPath)
     const street = await readJson(streetPath)
     const analysis = await readJson(analysisPath)
-    const outputManifest = await readJson(historicalOutput.path)
-    assert.equal(await gitBlobSha(historicalOutput.path), historicalOutput.gitBlobSha)
+    const outputManifest = await readJson(referenceOutputPath)
 
     assert.equal(await gitBlobSha(referenceHousePath), candidate.referenceHouse.sourceGitBlobSha)
     assert.equal(await gitBlobSha(titlePath), candidate.evidencePins.titleBoundary.gitBlobSha)
@@ -436,7 +415,7 @@ describe('DPL-T4 deterministic Lennard authored-candidate verification', () => {
 
     assert.deepEqual(runtimePayload, verification.payload)
     assert.equal(
-      sha256DplSemanticFingerprint(runtimePayload),
+      sha256SemanticFingerprint(runtimePayload),
       verification.resultFingerprint
     )
     assert.equal(

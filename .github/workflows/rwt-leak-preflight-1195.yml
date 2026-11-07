@@ -1,0 +1,36 @@
+# Temporary read-only native preflight for RWT-METALS PR1195 recovery.
+# Disposal-bound helper branch; not part of the house PR or main.
+name: RWT-METALS lease-bound publication preflight PR1195
+on:
+  push:
+    branches: [work/rwt-leak-preflight-1195]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check out exact validated recovery branch
+        uses: actions/checkout@v5
+        with:
+          ref: work/mvb-chat-6550189103
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Native current-main and exact-head ACO publication preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm run control:merge-check -- RWT-METALS \
+            --lease-id 12e9e5ac-c75f-4035-bac1-7e0dd4252d62 \
+            --generation 16 \
+            --branch work/mvb-chat-6550189103 \
+            --head a424d1312d9ecb45b941c654af5b56bc048d4fe6 \
+            --format text
