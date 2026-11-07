@@ -1,7 +1,7 @@
 # MRA-00 — Moisture constitution, inventory and threat model
 
-**State:** complete assurance-definition baseline; no selected-house assurance pass
-**Date:** 2026-10-29 (targeted closeout of the 28 October first pass)
+**State:** active baseline / first-pass threat model  
+**Date:** 2026-10-28  
 **Parent:** [MRA — Moisture Resilience Assurance](moisture-resilience-assurance-programme.md) / [#959](https://github.com/adamnoden/architecture/issues/959)
 
 ## Question
@@ -52,8 +52,6 @@ A robust house may experience local wetting during construction, rain exposure, 
 - rapid isolation;
 - inspection and repair;
 - drying before material degradation becomes significant.
-
-“Prolonged” is relative to the actual material, exposure, temperature, contamination and available drying route; it is not a universal number of hours. If that duration is decisive and unestablished, route the evidence and keep the row unresolved. “Visible” means a recognisable abnormal indication at a reachable observation point, not merely water somewhere outside; a dry finish does not prove a dry deck behind it.
 
 The assurance target is therefore not “zero water”. It is **zero credible silent path from an ordinary defect to prolonged hidden attack on permanent fabric**.
 
@@ -152,13 +150,13 @@ The following are not silently absorbed into MRA’s internal assurance claim:
 - product defects whose failure mode cannot be established without product-specific evidence;
 - statutory, warranty or insurer acceptance.
 
-Where these become relevant, DPL/EPR/DEL or a real commission owns the evidence. MRA must still test the building-side consequence of a named blocked or submerged receiver and state the receiving-level condition that the site must satisfy. Unknown actual flood probability is not permission to declare an intrinsically trapped path safe. If the condition cannot be satisfied, reject the candidate/site combination or request a design rewind; do not invent a lower garden, capacity or route through occupied rooms.
+Where these become relevant, DPL/EPR/DEL or a real commission owns the evidence. MRA may still identify an interface or consequence without pretending to prove the external premise.
 
 ---
 
 ## 5. Existing assurance inventory
 
-MRA begins with substantial existing principles and local water reasoning. Their existence is not evidence that the current house satisfies them: **applicability, composition and claim strength** must be tested against the selected source.
+MRA begins with a strong existing foundation. The principal problem is **composition and claim strength**, not absence of local water logic.
 
 | Existing source | What it already establishes | MRA use | Current gap / caution |
 |---|---|---|---|
@@ -173,28 +171,10 @@ MRA begins with substantial existing principles and local water reasoning. Their
 | `PAT-007 Permanent Opening / Replaceable Window` | building-side drainage distinct from frame weathering; sill fall; no sealant-only weather defence; water layer survives replacement | opening baseline | jamb/head/sill family still requires OAS selection and proof |
 | bathroom/kitchen source-capture patterns | capture moisture/grease close to source; short maintainable routes; condensate and commissioning duties | vapour/source-control baseline | actual whole-house ventilation topology and performance remain technical questions |
 | `PAT-011 Roof Maintenance Route` | roof maintenance is a designed task with credible access and working position | inspection/renewal baseline | current roof candidate must be used; old low-slope assumptions are not current authority |
-| `docs/reference-house/whole-house-coordination-audit.md` | records predecessor RH-10 intentions for outward roof drainage, no internal roof outlet, inspectable collection, courtyard overflow and short wet routes | historical reasoning and obligation seed only | no current-house discharge, plant leak geography, overflow or maintenance pass transfers; HRS current basis controls applicability |
+| `docs/reference-house/whole-house-coordination-audit.md` | prior RH-10 water hierarchy: outward roof drainage, no internal roof outlet, inspectable collection, courtyard overflow, short wet routes, manageable plant leak geography | historical/current coordination evidence where still applicable | predates the current Georgian re-plan and therefore cannot be treated as the final selected-house moisture proof |
 | `docs/reference-house/envelope-coordination-rh10.md` | drained masonry-cavity family; slow envelope remains complete without removable trim; window/penetration moisture duties explicit | envelope-family baseline | its low-slope roof/parapet language is superseded by the newer roof constraint and must not be carried into MRA as current geometry |
 | `docs/reference-house/pattern-occurrence-register.md` | maps selected water/opening/environment patterns to Reference House occurrences and outstanding proofs | obligation inventory seed | several occurrence descriptions still refer to the previous low-slope/two-storey design state; use as provenance, not unquestioned current geometry |
-| [Current house basis](../../docs/reference-house/current-house-basis.md), `layout-revision.ts` / `layout-family.ts`, `project/design-constraints.ts` | RH-LAYOUT-REVISION-02: 12 m square shell, 3.5 m court and provisional 25° inward/outward ring; no-flat-roof constraint remains | current geometric authority and explicit technical limits | four inner valleys and both eaves need actual collection/escape; nominal service and wet-room reservations are not fit or moisture proof |
-
-### Targeted additions and current obligation inventory
-
-| Inspected source | Material contribution / precise limit |
-|---|---|
-| [PAT-002 Plant Room as Service Hub](../../docs/patterns/plant-room-service-hub.md), [PAT-004 High-Service-Room Service Wall](../../docs/patterns/high-service-room-service-wall.md) | Actual isolation, working and replacement tasks; concentration/access does not itself contain water, establish a dry-side passage or select equipment. |
-| [PAT-012 Physical Service Index](../../docs/patterns/physical-service-index.md) | Legible component/isolation identity survives ordinary account loss; a label or reminder is not a physical declaration or passive failure path. |
-| [PAT-016 Compartmented Service Void](../../docs/patterns/compartmented-service-void.md) | Continuous services do not justify a continuous uncontrolled void. Its fire/acoustic boundary logic is not certification of a water stop; moisture tracking and closure/drying need their own actual section. |
-| [IAS wet variants](../ias/ias-02w-wet-kitchen-variants.md), [services/access](../ias/ias-02s-services-access.md) | IW-01…05 retain complete wet floor/wall/threshold, sanitary fit, leak declaration/isolation/drying and utility containment questions. Ordinary dry finishes and removable faces are not waterproof assemblies; the 300 mm ground reserve is separate from the fully allocated 350 mm intermediate floor. |
-| [OAS representative detail](../oas/representative-detail-completion.md) | Bounded nominal front threshold and window interfaces are established at study scope. Court/garden thresholds remain distinct obligations; neither front levels nor a packet completion supplies the court's first vulnerable boundary. |
-| [HAD furnished study](../had/had-03-furnished-design-study.md), [en-suite fit review](../had/had-03-ensuite-fit-review.md), [relocation trial](../had/had-03-relocation-trial.md) | Current small en suite remains unfitted; relocation is a candidate. A room/fixture rectangle does not establish waterproofing, connected waste, service-face access or safe use. |
-| [IAS Bedroom 4 section](../ias/ias-03-bedroom4-wet-section.md) and [HAD allocation](../had/had-03-bedroom4-allocation.md) | Accepted partial studies remain unadopted. Corrected tray/flange datums supersede the withdrawn draft clash; favourable route arithmetic does not select a complete wet boundary, connected stack/foul exit or housing-renewal method. The shorter NW option introduces an unresolved directly wetted window. |
-| [Roof topology](../../docs/research/roof-topology-families.md), [assembly](../../docs/research/roof-assembly-options.md), [access](../../docs/research/roof-access-and-renewal.md) | ROF comparisons expose inner-valley concentration, underlay/common-receiver dependence and rejected ordinary high court tower. No selected roof assembly or admitted high-level working method follows; a conditional scaffold is not a maintenance pass. |
-| [RWT failure study](../../docs/research/rainwater-failure-and-exceedance.md), [court-route partial](../rwt/rwt-06-access-court-transition.md) | Candidate-specific next paths and fault cuts exist. Inner spill transfers load into a still-trapped court; direct court rain persists under high transfer. Low/higher crossing alternatives remain unadmitted pending full floor/support, vulnerable levels, hydraulic head/receiving conditions and access. |
-| [BCR water](../bcr/bcr-water-result.md), [wet](../bcr/bcr-wet-result.md), [services](../bcr/bcr-services-result.md), [structure](../bcr/bcr-structure-result.md) | Completed investigations locate material adverse findings and owning handoffs, not accepted construction. Preserve pinned low-twin evidence separately from later higher relief; do not turn a waterproof core into a complete wet boundary or a plant body into connected system capacity. |
-| [BCR proportionality](../bcr/bcr-proportionality-result.md), [roof/water contract](../roof-water-interface-contract.md) | Additional interfaces and owner attention must earn their burden. Conventional construction still has actual water/access duties; no cost or component-count argument waives a harmful failure path. |
-
-This inventory was reconciled against accepted main `0d0e6e9dbe6f337fa112dcdddae4c703b134605d`. Later design changes require affected-row applicability review; moving peer drafts are not adopted evidence. MRA-00 does not rewrite historical records or their source fingerprints.
+| `docs/reference-house/georgian-replan.md` + `project/design-constraints.ts` | current candidate roof constraint: outward 25° pitch; no flat or disguised low-slope roofs in newly authored designs; wet/service geography and riser reservations | current project-specific geometry/brief input | PLT/IAS/OAS/HAD are still converging; MRA-01/02/03 therefore wait for TRIAD-GATE |
 
 ### Inventory conclusion
 
@@ -208,7 +188,7 @@ The missing layer is a **house-level fault model** that makes every consequentia
 
 MRA must not use the old low-slope roof as the selected-house baseline.
 
-RH-10 records retain predecessor low-slope geometry; the later Georgian re-plan also contains an outward-only roof assumption. Neither is the current roof authority. HRS current-house reconciliation and ROF-02 bind the actual provisional inward/outward 25° ring with four inner valleys. The no-flat/very-low-slope constraint survives, but it does not convert that ring into outward-only drainage or prove safe court overflow.
+RH-10 envelope and pattern-occurrence records retain low-slope-roof language from the earlier Reference House. The later `georgian-replan.md` and `project/design-constraints.ts` explicitly supersede that project choice for newly authored work: the current candidate uses outward 25° pitches and forbids flat/very-low-slope roofs.
 
 This is not itself an MRA design change. It is an **authority-selection rule**:
 
@@ -226,15 +206,15 @@ MRA-01/02/03 populate domain matrices using the following fields. MRA-04 compose
 |---|---|
 | `id` | stable MRA scenario identity |
 | `family` | `EXT`, `GRD`, `INT`, `WST`, `VAP` or `CON` |
-| `location / assembly` | actual selected-house occurrence, source revision/blob and applicability scope; a historical or candidate occurrence must be labelled |
-| `initiating event` | one credible single failure or admitted bounded compound case; identify the failed element, normal load/maintenance state and scope of the failure |
+| `location / assembly` | actual selected-house occurrence |
+| `initiating event` | one credible single failure or admitted bounded compound case |
 | `water/moisture source` | physical source and expected direction/pressure/volume class where known |
 | `path` | physical route water/moisture takes after initiation |
 | `primary defence` | first intended prevention/shedding/control mechanism |
-| `secondary / failure path` | next physical route under the named fault, including shared receiver/obstruction/backwater and why any claimed independence survives it; `none justified` must be explicit |
-| `first vulnerable fabric` | actual first material/layer or boundary whose wetting matters, with level/contact relation where relevant; a plausible investigation target is not a determined first layer |
+| `secondary / failure path` | passive back-up or harmless route when primary defence is challenged; `none justified` must be explicit |
+| `first vulnerable fabric` | first layer whose prolonged wetting materially matters |
 | `declaration` | where/how abnormal water becomes visible or otherwise unambiguously discoverable |
-| `detection latency` | immediate / short / periodic inspection / unresolved, with the physical basis and relation to material wetting/drying; no invented response time or assumption that someone is present |
+| `detection latency` | qualitative bounded expectation: immediate / short / periodic inspection / unresolved |
 | `containment / discharge` | where water is physically stopped or safely sent |
 | `isolation` | means of stopping continuing source where applicable |
 | `access / repair` | credible route to inspect, reach, remove and reinstate the failed item |
@@ -248,8 +228,6 @@ MRA-01/02/03 populate domain matrices using the following fields. MRA-04 compose
 ### Pass rule
 
 A row may be `PASS-INTERNAL` only if the physical route is legible enough to show that the stated single failure does not plausibly create prolonged concealed wetting of permanent fabric at the Reference House’s current evidence level.
-
-A row remains `OBLIGATION` where an essential path, first vulnerable layer, declaration, drying route, capacity/head or maintenance operation is unknown, even when its owner is named. Use `REWIND` for an evidenced conflict requiring a design change. `OUTSIDE-SCOPE` names the external premise and retained building-side compatibility condition; it cannot excuse an unresolved internal crossing, threshold or receiving requirement. A labelled separate pipe is not independent under a shared failed receiver. Reassess affected rows after a source change rather than carrying a historical pass forward.
 
 A conventional detail is not automatically a pass because it is conventional. Conversely, MRA does not demand an extra membrane, tray, drain or sensor where ordinary geometry already gives the stronger answer.
 
@@ -327,18 +305,6 @@ The current no-flat-roof constraint reduces one class of risk but does not itsel
 
 ---
 
-## 11A. ROF/RWT assurance questions
-
-ROF/RWT own constructive design and the shared gate. They must leave these questions answerable without MRA selecting their preferred solution:
-
-1. Which actual roof/court catchment feeds each receiver under ordinary and named failure states, including inner-valley concentration, direct court rain and facade/runoff additions? Use a consistent overhang boundary; no duplicated area or assumed court-only inflow.
-2. Where does water go physically next after a blocked inlet, outlet or shared receiver, partial restriction, disconnected joint or surface exceedance? Identify the lowest vulnerable fabric and operating water level, not just a nominal invert or internal FFL.
-3. Does secondary roof drainage meet the same blocked collector? Do two drops share downstream backwater, debris or inaccessible cleaning? State fault-specific independence rather than counting routes.
-4. Can the selected floor/structure/threshold crossing preserve support, thermal/air/moisture boundaries and actual access, including a joint leak into concealed layers? A removable rectangle or small spare depth is not a complete section.
-5. Can a person actually observe, clear, support, disconnect, withdraw, replace and reinstate the receiver/carrier at its height, with temporary capture and a named discharge while it is disabled? Ground optics and a nominal platform do not prove high-level repair.
-6. Can the damaged layers dry and be inspected before closure, and can that task occur without relying on continuous owner vigilance, a closed check valve, alarm or unselected pump to remove new rain?
-7. Which exact exterior level/capacity/backwater/access conditions does the building-side handoff require, and what design/site incompatibility follows if they fail? RWT resolves its internal route; DPL supplies real-site facts.
-
 ## 12. Shared IAS/OAS/HAD interface questions
 
 Before `TRIAD-GATE`, the three streams should be able to identify ownership at every material moisture boundary:
@@ -359,7 +325,7 @@ A junction with three owners and no explicit water-path owner is an MRA failure 
 
 ## 13. Initial adversarial scenario register
 
-These are scenario seeds, not passes/fails. Original identities are retained so later packets cannot silently avoid awkward cases after seeing the selected details. The additions below capture current-interface failures without rewriting the original seed meanings.
+These are scenario seeds, not passes/fails. They are frozen now so later packets cannot silently avoid awkward cases after seeing the selected details.
 
 ### External / ground
 
@@ -372,9 +338,7 @@ These are scenario seeds, not passes/fails. Original identities are retained so 
 - `EXT-07` one cavity drainage/weep zone is locally obstructed;
 - `EXT-08` courtyard primary drain is restricted while the independent overflow must operate;
 - `EXT-09` local paving/landscape level or splash condition challenges the wall base;
-- `EXT-10` maintenance degradation at a flashing/coping/eaves interface coincides with normal rain;
-- `EXT-11` one court/underfloor carrier joint or channel boundary leaks into floor/wall layers, independently of a blockage case;
-- `EXT-12` a receiver is deliberately removed for foreseeable renewal while ordinary rain must have a maintained temporary route (an intervention state, not an invented simultaneous component fault).
+- `EXT-10` maintenance degradation at a flashing/coping/eaves interface coincides with normal rain.
 
 ### Internal / waste
 
@@ -402,8 +366,7 @@ These are scenario seeds, not passes/fails. Original identities are retained so 
 - `CMP-02` aged opening seal + wind-driven rain;
 - `CMP-03` appliance/supply leak + temporary unoccupancy;
 - `CMP-04` degraded bathroom extraction + repeated showers;
-- `CMP-05` restricted waste route + ordinary appliance discharge;
-- `CMP-06` degraded inner collection or court primary drainage + ordinary rain, with both actual roof spill and direct court rainfall accounted for. Shared downstream obstruction is one common-cause failure where the actual topology makes it so, not automatically two independent faults.
+- `CMP-05` restricted waste route + ordinary appliance discharge.
 
 MRA-01/02/03 may add scenarios where the selected design creates a new credible route. They may not delete these seeds merely because a chosen detail makes them inconvenient.
 
@@ -440,14 +403,16 @@ These become DEL/BCR obligations only when the selected system earns them. MRA d
 
 ---
 
-## 16. Targeted closeout and result
+## 16. MRA-00 closeout criteria remaining
 
-| Required sweep | Result |
-|---|---|
-| Canonical doctrine/pattern/strategy additions | Existing Principles 3/4/5/8/9 and PAT-009/017/018 remain sufficient. Added PAT-002/004/012/016 and source-capture applicability above; no new doctrine, pattern or universal tanking requirement is justified. |
-| Current house water/service obligations | HRS current basis, ROF/RWT comparisons and BCR physical findings replace inherited geometry assurances. IAS wet/service, bounded OAS front detail and HAD sanitary candidates retain their actual limits. |
-| Proportionality conflict | No contradiction: the Reference House's stronger consequence target changes the burden of evidence, not the rule to use the least complex adequate measure. Additional trays, drains, controls and inaccessible redundancy can be rejected when their complete consequences are worse. |
-| Questions reach design owners | HAD already links these questions. IAS/OAS and ROF/RWT programme interfaces now point here while retaining their design authority; no duplicate design matrix is introduced. |
-| Terms consistently usable | Source identity, named event/common failure, actual first vulnerable layer, declaration/latency/drying and routed-unknown status are explicit. Material-specific prolonged wetting and external receiving conditions remain evidence questions where unresolved. |
+This first-pass record establishes the claim boundary, threat vocabulary, initial inventory, matrix schema, frozen adversarial seeds and upstream design questions.
 
-MRA-00 is complete at assurance-definition scope. The original threat vocabulary, matrix and seeds remain; current-source applicability and three additional scenario seeds make them usable against the present house. No selected-house row is passed or failed here. MRA-01/02/03 remain dependent on the integrated design at TRIAD-GATE (including ROF-RWT-GATE); closing this definition packet neither opens that gate nor establishes moisture, construction or professional adequacy. Future changed geometry or new credible mechanisms require affected inventory/seed review, not silent inheritance.
+Before MRA-00 can be marked complete, perform one final targeted sweep for:
+
+1. additional canonical patterns/strategies/rules that materially change the inventory;
+2. existing Reference House water/drainage/service obligations not captured above;
+3. any contradiction between the heightened MRA posture and existing proportionality language;
+4. whether the IAS/OAS/HAD programme records should receive explicit cross-links to these questions rather than relying only on the MRA programme;
+5. whether any threat-model term is too broad to be consistently applied by MRA-01/02/03.
+
+No selected-house pass/fail judgement belongs in MRA-00. That begins only after `TRIAD-GATE` supplies one integrated design to attack.
