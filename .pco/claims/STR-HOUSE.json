@@ -9,8 +9,8 @@
     "label": "rush-closeout-20261107-str"
   },
   "claimedAt": "2026-11-07T09:14:50.673Z",
-  "heartbeatAt": "2026-11-07T09:21:39.622Z",
-  "expiresAt": "2026-11-07T10:51:39.622Z",
+  "heartbeatAt": "2026-11-07T09:31:07.253Z",
+  "expiresAt": "2026-11-07T11:01:07.253Z",
   "branch": "work/rush-closeout-mat-20261107",
   "predecessor": {
     "leaseId": "90e5118e-258e-4d50-a157-c1cb222bff0b",
@@ -34,7 +34,7 @@
   },
   "pr": 1374,
   "checkpoint": {
-    "evidence": "Recovered 58d2 and independently regenerated co-located bending at source 70c1c9f4a29712bfb76025e7ffc8f036958118aa; 24 structural regressions pass. Joined recovery PR #1374.",
-    "next": "Validate the integrated source and preflight each of its four leases, then merge."
+    "evidence": "Integrated source 6ce3f6a32c7e317dd5e94fd0e367c7d4b69a6d8b. All 24 structural regressions and 45 ordered structural producer checks pass with same-end moments. Adverse ratios 1.213/1.189; both widths fail. No selected geometry.",
+    "next": "Wait for full exact-head Validate 42359532628, freshly preflight all four bound leases, merge and hand off continued STR-HOUSE research."
   }
 }
