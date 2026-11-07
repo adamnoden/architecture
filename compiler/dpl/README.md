@@ -8,12 +8,6 @@ The sections below retain the DPL-12/13 foundations. Current programme authority
 
 It is still intentionally narrower than an eventual whole-site deployment compiler.
 
-## Semantic identity ordering
-
-Existing DPL identity versions retain their established English collation for both object keys and declarative collections through `identity-order.ts`, with explicit options and a code-unit tie-break for distinct strings that collate equally. Canonical identities therefore no longer inherit the process locale or retain input order for equivalent Unicode spellings. The shared core defaults to code-unit key order for new identities; DPL explicitly supplies its existing ordering contract. Authored array sequence is preserved.
-
-English ICU collation remains part of these existing DPL versions. Node/ICU upgrades must pass the retained frozen-identity regressions; this change does not claim independence from arbitrary runtime upgrades. Changing the legacy ordering algorithm would require a versioned evidence migration. The [SWE identity result](../../project/swe/identity-result.md) records why that migration was unnecessary for the ambient-locale defect and verifies compatibility with the current frozen chain.
-
 ## DPL-12A — obligation / evidence orchestration
 
 DPL-12A composes controlled Reference House, site, interface, England and London target inputs into a deterministic obligation/evidence ledger.
