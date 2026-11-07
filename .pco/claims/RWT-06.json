@@ -9,8 +9,8 @@
     "label": "zerg-20261106-rwt06-successor"
   },
   "claimedAt": "2026-11-06T19:18:23.804Z",
-  "heartbeatAt": "2026-11-07T02:02:42.372Z",
-  "expiresAt": "2026-11-07T03:32:42.372Z",
+  "heartbeatAt": "2026-11-07T02:42:17.806Z",
+  "expiresAt": "2026-11-07T04:12:17.806Z",
   "branch": "work/zerg-20261107-rwt06-upper-first",
   "predecessor": {
     "leaseId": "27ac7239-26ab-4183-bce4-fe50d35b7a7c",
@@ -36,7 +36,7 @@
   },
   "pr": 1370,
   "checkpoint": {
-    "evidence": "Draft1370 headb7ab6d32/tree6ddf043b starts mergedb0.171RWT plusfinal5targeted; default710resultbyteidentical; finalnewSVGinspected. ONEupper-first−815/drop0,80.44kg upperreference, passive rearframe/cantilever actualsupportsource; no phantom north girder; no adoption.",
-    "next": "Continue actual reinforced westcantilever/EWrimTjoint and eastendplate cage/anchors with STR; actual80kg upperhandler/capture/force limit/reversal, lowerpositive collar/key/locks/rail/drive and corrected partial-waterCG. Preserve high-eave/firstwet/site exits; do not claim RWT06complete."
+    "evidence": "Draft 1370 exact a4783cef855562471d39a3ec638c88eb2badf8a9. 173 RWT tests green and changed sheet inspected. Stock upper handler and lowered track limitations are reproducible.",
+    "next": "Bound actual positive lock angular play, capture and support for the same fixed-height native spool. Retain upper handling, structural and site holds."
   }
 }
