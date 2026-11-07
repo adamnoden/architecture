@@ -1,0 +1,75 @@
+{
+  "admitted": false,
+  "footAdverseCell": {
+    "b": 215.0,
+    "cellArea": 5682.70588235293,
+    "cellNormal": 54.0,
+    "cellPerimeter": 318.4705882352937,
+    "cellRadial": 105.23529411764684,
+    "fraction": 1.0,
+    "h": 195,
+    "xs": [
+      57.64705882352973,
+      140.88235294117658
+    ],
+    "ys": [
+      52.0,
+      84.0
+    ]
+  },
+  "footCell": {
+    "b": 225.0,
+    "cellArea": 9267.411764705867,
+    "cellNormal": 74.0,
+    "cellPerimeter": 398.4705882352937,
+    "cellRadial": 125.23529411764684,
+    "fraction": 1.0,
+    "h": 205,
+    "xs": [
+      52.64705882352973,
+      155.88235294117658
+    ],
+    "ys": [
+      47.0,
+      99.0
+    ]
+  },
+  "kernel": [
+    {
+      "actualCGGravity": [
+        0.0,
+        0.0,
+        -4.9157026785165785,
+        0.06575724691526652,
+        10.370802339864928,
+        0.0
+      ],
+      "crackedEI": 0.2,
+      "maximumSixComponentEquilibriumResidual": 1.3719366975806224e-08,
+      "strongLimitError": 7.031619588815374e-07,
+      "weakLimitError": 2.3717075237073004e-07
+    },
+    {
+      "actualCGGravity": [
+        0.0,
+        0.0,
+        -4.9157026785165785,
+        0.06575724691526652,
+        10.370802339864928,
+        0.0
+      ],
+      "crackedEI": 0.35,
+      "maximumSixComponentEquilibriumResidual": 5.7122395702435824e-09,
+      "strongLimitError": 8.149400855472777e-06,
+      "weakLimitError": 5.713309292332269e-07
+    }
+  ],
+  "oneKNmFootFlowNPerMM": 53.95249641374592,
+  "rejectedGrossBoxFlowNPerMM": 26.01321471307424,
+  "role": "Six-degree beam limit and independent global equilibrium checks; actual H16/H6 cell falsifier.",
+  "sources": {
+    "arch-space-kernel.py": "54d19ae3bdde3e55eed244ec76bb0b2d87b533dfb548dc0aa97475ccea36c43c",
+    "arch-width-geometry.py": "c6f310f1dfab9c6e36f49e7511ddf80f1d37596ac43b5868c0205fe67febab1f",
+    "current-house-arch-detail.json": "a0ef80d3e6be8c4b015ede5d292642e36427f04aafca86bac6f7a7b21aaf4aed"
+  }
+}

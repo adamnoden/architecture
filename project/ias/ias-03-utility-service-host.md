@@ -33,6 +33,8 @@ For eventual host retirement, isolate and separately support affected fixed pipe
 
 Any disturbed water joints and floor penetrations must be restored, dried/inspected and checked before reuse. Temporary occupation cannot silently delete electrical working or emergency-isolation duties. The complete [IAS exit ledger](ias-03-current-occurrences-and-exits.md), separate wet-joint hold and other family duties remain open.
 
+The subsequent comparison develops a 40 mm post, a compact carrier and an inside-frame receiver for the short move to first rest. The failed controls above remain applicable to this original geometry. [Revised utility host and first rest](ias-03-utility-host-revised-route.md)
+
 ## Verification boundary
 
 Generator/check, source relationships, member arithmetic, source-derived views and the actual-member retirement negative are the affected checks. Native clamp dimensions are a limited constituent control; no actual valve, socket, anchor or handling kit is fitted. Unchanged furnishing carrying, Pecolift/static/direct-turn and older family trajectories are not rerun. Exact-head CI and final current-main reconciliation remain separate integration duties; this is a recoverable development checkpoint, not research completion.

@@ -129,13 +129,13 @@ function bentSpoolCgDomain({metals,water,hardwareBudgetKg,hardwareX,liftX,cradle
   deliveredMassBoundEstablished:false,actualKitCgAccepted:false};
 }
 
-export function bentSpool(){
+export function bentSpool({installedAxisZ=-775,initialDrop=40,lockPlayDegrees=[]}={}){
  const s=readSelected(),slope=50/4250,theta=Math.atan(slope),n=[Math.cos(theta),0,-Math.sin(theta)],v=[Math.sin(theta),0,Math.cos(theta)],u=[0,1,0],
-  anchor=[7350,6950,-775],axis=x=>anchor[2]-(x-anchor[0])*slope,
+  anchor=[7350,6950,installedAxisZ],axis=x=>anchor[2]-(x-anchor[0])*slope,
   inletCorner=[6875,6950,axis(6875)],outletCorner=[12950,6950,axis(12950)],
   inletPort=add(inletCorner,v,303),horizontalIn=add(inletCorner,n,303),horizontalOut=add(outletCorner,n,-303),freeOutlet=add(outletCorner,v,-303),
   flangeZ=-380,flange=add(inletCorner,v,(flangeZ-inletCorner[2])/v[2]),collector=add(inletCorner,v,(-200-inletCorner[2])/v[2]),
-  fixedFlangeAxial=25,movingFlangeAxial=25,R=142.5,tolerance=5,drop=40;
+  fixedFlangeAxial=25,movingFlangeAxial=25,R=142.5,tolerance=5,drop=initialDrop;
  const inletBox=[inletCorner[0]-85,6855,inletCorner[2]-85,460,190,460],outletBox=[12575,6855,outletCorner[2]-375,460,190,460];
  // The orthogonal prism encloses every point of the complete285OD/25axial moving disc.
  // Retain the overbound: no use of a too-small two-dimensional flange projection.
@@ -158,6 +158,33 @@ export function bentSpool(){
    return {draw,x,z:p[2]-draw*slope,clearance:b.underside-(p[2]-draw*slope)-tolerance};
   }).filter(p=>p.x>=b.x[0]&&p.x<=b.x[1]);
   return {...b,minimumClearance:Math.min(...entries.map(x=>x.clearance)),governing:entries.reduce((a,b)=>a.clearance<b.clearance?a:b)};
+ });
+ // Every point in a convex prism moves at most the chord of its largest
+ // vertex radius. Bound that displacement in X and Z throughout lock play.
+ const lockCases=lockPlayDegrees.map(play=>{
+  assert(Number.isFinite(play)&&play>=0&&play<=90);
+  const allowance=tolerance+5;
+  const bounds=solids.map(({id,vertices})=>{
+   const coeff=vertices.map(p=>coefficients(p,anchor,n));
+   const radius=Math.max(...coeff.map(c=>Math.hypot(...c.B)));
+   const chord=2*radius*Math.sin(play*pi/360);
+   const rolled=coeff.map(c=>c.A.map((a,i)=>a+c.C[i]-(i===2?drop:0)));
+   return {id,chord,xMin:Math.min(...rolled.map(p=>p[0])),xMax:Math.max(...rolled.map(p=>p[0])),
+    crown:Math.max(...rolled.map(p=>p[2])),intercept:Math.max(...rolled.map(p=>p[2]+slope*p[0]))};
+  });
+  return {playDegrees:play,allowancePerCoordinateMm:allowance,
+   bridges:spans.map(bridge=>{
+    const entries=bounds.flatMap(b=>{
+     const margin=b.chord+allowance;
+     if(b.xMax+margin+translation<bridge.x[0]||b.xMin-margin>bridge.x[1])return [];
+     // Along the falling track z + slope*x is invariant. Both its maximum
+     // and the untranslated crown bound the whole prism for every draw.
+     const crown=Math.min(b.crown+margin,b.intercept+margin*(1+slope)-slope*bridge.x[0]);
+     return [{body:b.id,chordMm:b.chord,clearance:bridge.underside-crown}];
+    });
+    const governing=entries.reduce((a,b)=>a.clearance<b.clearance?a:b);
+    return {id:bridge.id,minimumClearance:governing.clearance,governing,eligibleBodies:entries.map(e=>e.body)};
+   })};
  });
  const portDistance=(horizontalOut[0]-horizontalIn[0])/n[0],socketEngagement=303-272,
   straightCut=portDistance+2*socketEngagement,upperStubPortToFace=(flangeZ-inletPort[2])/v[2],
@@ -229,7 +256,7 @@ export function bentSpool(){
    samplingBoundary:'Five clocks at1degree intervals,360 handle angles,17 active-stroke and25 shaft positions. This is a necessary finite reference; no continuous tool/body contact or real torque/posture proof is claimed.'};
  const oldRailWitness=[12750,6950,outletBox[2]],witness=oldRailWitness.map((_,i)=>{
   const c=coefficients(oldRailWitness,anchor,n),phi=65*pi/180;return c.A[i]+c.B[i]*Math.cos(phi)+c.C[i]*Math.sin(phi)-(i===2?drop:0);
- }),oldRailZ=[axis(witness[0])-250,axis(witness[0])-170];
+ }),oldRailZ=[axis(witness[0])-210-drop,axis(witness[0])-130-drop];
  const frameRollProof={frameX:[frameStart,frameEnd],rigidAndDeformationPerFace:tolerance+deformation,
   inletCompleteXMaximum:Math.max(...gated.filter(x=>x.id.includes('inlet')||x.id.includes('flange')).map(x=>x.completeX[1])),
   outletCompleteXMinimum:downSweep.angular[0].minimum,
@@ -262,6 +289,7 @@ export function bentSpool(){
   failedFixedStationControls:{originalFacing:{operator:oldFacing.operator,maximumReferenceHandReach:oldFacing.maximumReferenceHandReach,worstPose:oldFacing.worstPose},
    originalNorthFacing:{operator:oldNorth.operator,maximumReferenceHandReach:oldNorth.maximumReferenceHandReach,worstPose:oldNorth.worstPose},
    role:'The original inlet6575/fixed7000 station fails both facing references. Merely facing the flange is insufficient; the current ordinary layout really moves the inlet300east and pays two connected sequential crew stations.'},
+  ...(lockCases.length?{lockCases}:{}),
   completeAngularProof:{method:'For each vertex of each full enclosing solid, each coordinate is A+Bcos(phi)+Csin(phi). Enumerate0/90and every interior stationary angle atan2(C,B)+k*pi. A linear coordinate reaches its extrema at a prism vertex. This proves the WHOLE CONTINUOUS0..90solid hull, not sparse angle samples.',
    angleDegrees:[0,90],rollDirection:'Inlet leg SOUTH, outlet leg NORTH',dropBeforeRoll:drop,toleranceEachFace:tolerance,
    toleranceRole:'Explicit5mm rigid-position/construction envelope. It is not a measured fabrication tolerance or an allowance for arbitrary support deflection.',

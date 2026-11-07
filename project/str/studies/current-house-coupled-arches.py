@@ -180,15 +180,18 @@ gk = p['cf'] * p['er']
 from functools import lru_cache
 from itertools import pairwise
 
-def section(leg):
-    rectangles=[(0.,0.,leg,140.),(0.,140.,140.,leg)]
+wide_normal=float(globals().get('arch_normal_width',140))
+assert wide_normal>=140
+def section(leg, normal_width=140):
+    outer=140-normal_width
+    rectangles=[(outer,outer,leg,140.),(outer,140.,140.,leg)]
     area=sum((r-l)*(t-b) for l,b,r,t in rectangles)
     centroid=sum((r-l)*(t-b)*(l+r)/2 for l,b,r,t in rectangles)/area
     inertia=sum((t-b)*((r-l)**3/12+(r-l)*((l+r)/2-centroid)**2) for l,b,r,t in rectangles)
     product=sum((r-l)*(t-b)*((l+r)/2-centroid)*((b+t)/2-centroid) for l,b,r,t in rectangles)
     return area,centroid,inertia,product
 
-narrow,wide=section(1000.),section(1037.5)
+narrow,wide=section(1000.),section(1037.5,wide_normal)
 assert abs(narrow[2]-p['I'])<.01
 # Round the cast-in extension outwards beyond the curved bars and their tails.
 fill_bottom,fill_top=5000.,6200.
@@ -445,105 +448,106 @@ def window_fit(a,case,reactions,local):
 
 # The simultaneous solution is (I + C K) d = d_wind − C r_gravity.
 # Every response must recover this identity at all 48 terminal coordinates.
-for cr in [0.2, 0.35]:
-    z6 = [0] * 6
-    k0 = subframe(z6, cr, 0, [0, 0])[1]
-    arch_stiffness = [[0.0] * 6 for _ in z6]
-    for j in range(6):
-        f = subframe([int(t == j) for t in range(6)], cr, 0, [0, 0])[1]
-        for i in range(6):
-            arch_stiffness[i][j] = f[i] - k0[i]
-    assert max((abs(arch_stiffness[j][i] - arch_stiffness[i][j]) for i in range(6) for j in range(6))) < 0.001
-    for vi, (V, spans) in enumerate(floor_cases):
-        coupled_flexibility = [[x + y for x, y in zip(a, b)] for a, b in zip(C, V)]
-        compatibility_matrix = [[int(i == j) + sum((coupled_flexibility[i][j // 6 * 6 + t] * arch_stiffness[t][j % 6] for t in range(6))) for j in range(N)] for i in range(N)]
-        slv = fac(compatibility_matrix)
-        mmax = [0] * 2
-        hmax = 0
-        rzmax = 0
-        shmax = 0
-        maxshift = 0
-        maxvert = 0
-        maxM = 0
-        maxFdist = 0
-        maxUtil = [0, 0]
-        demands = [[], []]
-        worst_window=[-1,None]
-        max_tilt=0.
-        data_options={}
-        # Expose the signed forces at each end to the separately owned whole-
-        # house calculation. The calm case removes arch self-weight from a
-        # pure wind increment; it never enters the window service envelopes.
-        if 'arch_observer' in globals():
-            calm=([0,0],[0.]*nd,{},dict.fromkeys(corner_keys,[0.]*4),[0,0])
-            for installed_ceiling in [False,True]:
-                actions=[(lambda x,ar=i:ceiling_actions[ar][x]) if installed_ceiling else 0 for i in range(8)]
-                fixed_load=sum((subframe(z6,cr,a,[0,0])[1] for a in actions),[])
-                disp=slv([-v for v in mul(coupled_flexibility,fixed_load)])
-                reactions=sum((subframe(disp[6*a:6*a+6],cr,actions[a],[0,0])[1] for a in range(8)),[])
-                arch_observer(globals(),calm,-1,reactions,cr,vi,installed_ceiling)
-        for wi, case in enumerate(updated_wind):
-            baseq = []
-            field = m['recover'](case[1][-8:], p['floorLoadCases'][id(case[1])])[0]
-            for P, J, ax, di, tt, floorF, v, fb in modes:
-                ux, der = pierced(zs, case, P)
-                u = sum((cf * [ux, der][typ][k] for k, typ, cf in tt)) + sum((g * sum((field[k] * e for k, e in m['basis'](loc, z))) for (loc, z), g in floorF.items()))
-                baseq.append(u)
-            for al, pr in [(0, [0, 0]), (1, [0, 0])]:
-                acts = [(lambda x, ar=i: ceiling_actions[ar][x]) if al else 0 for i in range(8)]
-                f0 = sum((subframe(z6, cr, a, pr)[1] for a in acts), [])
-                d = slv([x - y for x, y in zip(baseq, mul(coupled_flexibility, f0))])
-                r = []
-                local_states=[]
-                for a in range(8):
-                    dd = d[6 * a:6 * a + 6]
-                    u, f, res = subframe(dd, cr, acts[a], pr)
-                    r.extend(f)
-                    local_states.append(u)
-                    hmax = max(hmax, abs(f[0]) / 1000)
-                    rzmax = max(rzmax, abs(f[1]) / 1000)
-                    maxshift = max(maxshift, abs(dd[0] - dd[3]))
-                    maxvert = max(maxvert, abs(dd[1] - dd[4]))
-                    maxM = max(maxM, abs(f[2]) / 1000, abs(f[5]) / 1000)
-                    maxFdist = max(maxFdist, abs(f[1] + f[4]) / 1000)
-                    for k, M, V0, N0 in res:
-                        if k not in ['arch', 'jamb']:
-                            continue
-                        j = ['arch', 'jamb'].index(k)
-                        mmax[j] = max(mmax[j], M)
-                        demands[j].append((M, -N0))
-                        shmax = max(shmax, V0)
-                if 'arch_observer' in globals():
-                    arch_observer(globals(),case,wi,r,cr,vi,bool(al))
-                for a,local in enumerate(local_states):
-                    options,tilt=window_fit(a,case,r,local)
-                    for datum,(gap,surface) in options.items():
-                        if gap>data_options.get(datum,[-1])[0]:data_options[datum]=[gap,wi,a,surface]
-                    closing,where=options['near',5300]
-                    if closing>worst_window[0]:worst_window=[closing,{'window':a,'wind':wi,'ceiling':al,'surface':where}]
-                    max_tilt=max(max_tilt,abs(tilt))
-                assert max((abs(x - y + z) for x, y, z in zip(d, baseq, mul(coupled_flexibility, r)))) < 0.0001
-        for j, dep in enumerate([215, jamb_width]):
-            cap = capacity(dep, 16)
-            v = {round(N0, 1): cap(round(N0, 1)) for M, N0 in demands[j]}
-            maxUtil[j] = max((M / v[round(N0, 1)] for M, N0 in demands[j]))
-        rows.append(dict(crackedEI=cr, support='two retained corner bearings' if vi else 'all mapped lower bearings', maxLowerSpan=spans, windowFinishGap=8, datumComparisons={f'{k[0]} {k[1]}':v for k,v in data_options.items()}, maximumGapClosure=worst_window, maximumRigidWindowRotation=max_tilt, residualFinishGap=8-worst_window[0], maxMomentArchJamb=mmax, maxInPlaneInteractionArchJamb=maxUtil, maxLeftH=hmax, maxLeftV=rzmax, maxRelativeEndpointX=maxshift, maxRelativeEndpointZ=maxvert, maxEndMoment=maxM, maxMemberShear=shmax, maxTotalVerticalReaction=maxFdist))
+if not globals().get('arch_model_only',False):
+    for cr in [0.2, 0.35]:
+        z6 = [0] * 6
+        k0 = subframe(z6, cr, 0, [0, 0])[1]
+        arch_stiffness = [[0.0] * 6 for _ in z6]
+        for j in range(6):
+            f = subframe([int(t == j) for t in range(6)], cr, 0, [0, 0])[1]
+            for i in range(6):
+                arch_stiffness[i][j] = f[i] - k0[i]
+        assert max((abs(arch_stiffness[j][i] - arch_stiffness[i][j]) for i in range(6) for j in range(6))) < 0.001
+        for vi, (V, spans) in enumerate(floor_cases):
+            coupled_flexibility = [[x + y for x, y in zip(a, b)] for a, b in zip(C, V)]
+            compatibility_matrix = [[int(i == j) + sum((coupled_flexibility[i][j // 6 * 6 + t] * arch_stiffness[t][j % 6] for t in range(6))) for j in range(N)] for i in range(N)]
+            slv = fac(compatibility_matrix)
+            mmax = [0] * 2
+            hmax = 0
+            rzmax = 0
+            shmax = 0
+            maxshift = 0
+            maxvert = 0
+            maxM = 0
+            maxFdist = 0
+            maxUtil = [0, 0]
+            demands = [[], []]
+            worst_window=[-1,None]
+            max_tilt=0.
+            data_options={}
+            # Expose the signed forces at each end to the separately owned whole-
+            # house calculation. The calm case removes arch self-weight from a
+            # pure wind increment; it never enters the window service envelopes.
+            if 'arch_observer' in globals():
+                calm=([0,0],[0.]*nd,{},dict.fromkeys(corner_keys,[0.]*4),[0,0])
+                for installed_ceiling in [False,True]:
+                    actions=[(lambda x,ar=i:ceiling_actions[ar][x]) if installed_ceiling else 0 for i in range(8)]
+                    fixed_load=sum((subframe(z6,cr,a,[0,0])[1] for a in actions),[])
+                    disp=slv([-v for v in mul(coupled_flexibility,fixed_load)])
+                    reactions=sum((subframe(disp[6*a:6*a+6],cr,actions[a],[0,0])[1] for a in range(8)),[])
+                    arch_observer(globals(),calm,-1,reactions,cr,vi,installed_ceiling)
+            for wi, case in enumerate(updated_wind):
+                baseq = []
+                field = m['recover'](case[1][-8:], p['floorLoadCases'][id(case[1])])[0]
+                for P, J, ax, di, tt, floorF, v, fb in modes:
+                    ux, der = pierced(zs, case, P)
+                    u = sum((cf * [ux, der][typ][k] for k, typ, cf in tt)) + sum((g * sum((field[k] * e for k, e in m['basis'](loc, z))) for (loc, z), g in floorF.items()))
+                    baseq.append(u)
+                for al, pr in [(0, [0, 0]), (1, [0, 0])]:
+                    acts = [(lambda x, ar=i: ceiling_actions[ar][x]) if al else 0 for i in range(8)]
+                    f0 = sum((subframe(z6, cr, a, pr)[1] for a in acts), [])
+                    d = slv([x - y for x, y in zip(baseq, mul(coupled_flexibility, f0))])
+                    r = []
+                    local_states=[]
+                    for a in range(8):
+                        dd = d[6 * a:6 * a + 6]
+                        u, f, res = subframe(dd, cr, acts[a], pr)
+                        r.extend(f)
+                        local_states.append(u)
+                        hmax = max(hmax, abs(f[0]) / 1000)
+                        rzmax = max(rzmax, abs(f[1]) / 1000)
+                        maxshift = max(maxshift, abs(dd[0] - dd[3]))
+                        maxvert = max(maxvert, abs(dd[1] - dd[4]))
+                        maxM = max(maxM, abs(f[2]) / 1000, abs(f[5]) / 1000)
+                        maxFdist = max(maxFdist, abs(f[1] + f[4]) / 1000)
+                        for k, M, V0, N0 in res:
+                            if k not in ['arch', 'jamb']:
+                                continue
+                            j = ['arch', 'jamb'].index(k)
+                            mmax[j] = max(mmax[j], M)
+                            demands[j].append((M, -N0))
+                            shmax = max(shmax, V0)
+                    if 'arch_observer' in globals():
+                        arch_observer(globals(),case,wi,r,cr,vi,bool(al))
+                    for a,local in enumerate(local_states):
+                        options,tilt=window_fit(a,case,r,local)
+                        for datum,(gap,surface) in options.items():
+                            if gap>data_options.get(datum,[-1])[0]:data_options[datum]=[gap,wi,a,surface]
+                        closing,where=options['near',5300]
+                        if closing>worst_window[0]:worst_window=[closing,{'window':a,'wind':wi,'ceiling':al,'surface':where}]
+                        max_tilt=max(max_tilt,abs(tilt))
+                    assert max((abs(x - y + z) for x, y, z in zip(d, baseq, mul(coupled_flexibility, r)))) < 0.0001
+            for j, dep in enumerate([215, jamb_width]):
+                cap = capacity(dep, 16)
+                v = {round(N0, 1): cap(round(N0, 1)) for M, N0 in demands[j]}
+                maxUtil[j] = max((M / v[round(N0, 1)] for M, N0 in demands[j]))
+            rows.append(dict(crackedEI=cr, support='two retained corner bearings' if vi else 'all mapped lower bearings', maxLowerSpan=spans, windowFinishGap=8, datumComparisons={f'{k[0]} {k[1]}':v for k,v in data_options.items()}, maximumGapClosure=worst_window, maximumRigidWindowRotation=max_tilt, residualFinishGap=8-worst_window[0], maxMomentArchJamb=mmax, maxInPlaneInteractionArchJamb=maxUtil, maxLeftH=hmax, maxLeftV=rzmax, maxRelativeEndpointX=maxshift, maxRelativeEndpointZ=maxvert, maxEndMoment=maxM, maxMemberShear=shmax, maxTotalVerticalReaction=maxFdist))
 
-inputs = ['current-house-arch-jambs.json', 'current-house-roof-bracing.py',
-          'current-house-membrane.py', 'current-house-floor-closure.py']
-result = {
-    'sources': {name: hashlib.sha256((D/name).read_bytes()).hexdigest() for name in inputs},
-    'scope': 'Eight upper corner openings, six coupled terminal coordinates each, 96 directional winds, ceiling present or removed, and two flexural stiffnesses. The floor strong-axis comparison models the added arch loads. Existing floor sag, base settlement and construction variation must be introduced before window clearance can be accepted.',
-    'geometry': {'arch': [140, 215], 'oppositeJamb': [140, jamb_width], 'oppositeJambX': [2300, 2300+jamb_width], 'oppositeHeadEccentricity': xJ-xR, 'leftSpringX': xL, 'rightSpringX': xR, 'springZ': zs},
-    'rows': rows,
-    'recomputedMembers': {'localLToeGlobalZ':[fill_bottom,fill_top], 'LWidthAtSkewback':1037.5,'originalL':narrow,'localL':wide,'jambNormalWidthAtFoot':225,'jambNormalWidthAbove4550':140,'updatedWholeRoofWindStates':len(updated_wind)},
-    'remaining': 'Develop curved bars into both receivers. Check out-of-plane loads including window and guarding, actual floor deflections and jamb datum, exterior masonry arch and perimeter details. Include these member actions and changed material in the final foundation ledger.',
-    'admitted': False,
-}
-output = Path(__file__).with_suffix('.json')
-contents = json.dumps(result, indent=2, sort_keys=True) + '\n'
-if '--check' in sys.argv:
-    assert output.read_text() == contents
-else:
-    output.write_text(contents)
-print('Coupled arch/jamb moments', [row['maxMomentArchJamb'] for row in rows])
+    inputs = ['current-house-arch-jambs.json', 'current-house-roof-bracing.py',
+              'current-house-membrane.py', 'current-house-floor-closure.py']
+    result = {
+        'sources': {name: hashlib.sha256((D/name).read_bytes()).hexdigest() for name in inputs},
+        'scope': 'Eight upper corner openings, six coupled terminal coordinates each, 96 directional winds, ceiling present or removed, and two flexural stiffnesses. The floor strong-axis comparison models the added arch loads. Existing floor sag, base settlement and construction variation must be introduced before window clearance can be accepted.',
+        'geometry': {'arch': [140, 215], 'oppositeJamb': [140, jamb_width], 'oppositeJambX': [2300, 2300+jamb_width], 'oppositeHeadEccentricity': xJ-xR, 'leftSpringX': xL, 'rightSpringX': xR, 'springZ': zs},
+        'rows': rows,
+        'recomputedMembers': {'localLToeGlobalZ':[fill_bottom,fill_top], 'LWidthAtSkewback':1037.5,'originalL':narrow,'localL':wide,'jambNormalWidthAtFoot':225,'jambNormalWidthAbove4550':140,'updatedWholeRoofWindStates':len(updated_wind)},
+        'remaining': 'Develop curved bars into both receivers. Check out-of-plane loads including window and guarding, actual floor deflections and jamb datum, exterior masonry arch and perimeter details. Include these member actions and changed material in the final foundation ledger.',
+        'admitted': False,
+    }
+    output = Path(__file__).with_suffix('.json')
+    contents = json.dumps(result, indent=2, sort_keys=True) + '\n'
+    if '--check' in sys.argv:
+        assert output.read_text() == contents
+    else:
+        output.write_text(contents)
+    print('Coupled arch/jamb moments', [row['maxMomentArchJamb'] for row in rows])

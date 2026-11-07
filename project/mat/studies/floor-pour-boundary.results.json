@@ -1,0 +1,1312 @@
+{
+  "status": "WORKING COMPARISON — one continuous suspended RC pour with conditional mineral DPC and air boundary",
+  "sources": {
+    "HAD": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+      "role": "Current Reference House geometry and authored D1800 grade comparison."
+    },
+    "STRfloor": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/str/studies/current-house-occupied-interfaces.json",
+      "blob": "fb9f19324385a50c22761b38333c478075987a08",
+      "role": "Located structural pour, coverage, mass and crack comparisons."
+    },
+    "STRgrid": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/str/studies/current-house-grid.json",
+      "blob": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+      "role": "Proposed common grid and foundation heads with actual comparison axes and depths."
+    },
+    "STRtoe": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/str/studies/open-loggia-support.json",
+      "blob": "20dec4384d09a0d02075fdd34a247e775532763b",
+      "role": "Stair bearing axis and explicit unresolved thermal toe contact."
+    },
+    "field": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/ground-field-assembly.results.json",
+      "blob": "5dd70178c0e5bb192f1d24f6e5383c3d330fe1bc",
+      "role": "Retained field layout, 22 wall bases, three RC crossings and actual external door cuts."
+    },
+    "ordinaryWall": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/conventional-ground-junction.json",
+      "blob": "5d899197848d0f951d8ff4573983aff81d4fd32f",
+      "role": "Proposed bonded mineral DPC and ordinary wall/floor air transition."
+    },
+    "ordinaryOuter": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/sw-corner-envelope.json",
+      "blob": "e3655ddc0ba3369a433a482172cd6d636bad289b",
+      "role": "Ordinary 429.5 mm wall layer order only. The historic local pier, floor and lower cold receiver are excluded."
+    },
+    "loggia": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/loggia-envelope-section.json",
+      "blob": "0ec54ba2420b9337ce81b1867eef4c83d661e69b",
+      "role": "Earlier located loggia wall-base tray comparison only. Current depths, plan, grid and site comparator come from HAD and STR."
+    },
+    "airDuty": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/whole-house-leakage-duty.json",
+      "blob": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+      "role": "Single provisional floor/wall aggregate, with disjoint opening and service families."
+    },
+    "court": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/court-air-path.results.json",
+      "blob": "87643e37f87e41a54f930fa5ccc5ff61df6a15e7",
+      "role": "Shared conditional court assembly at the opening-family cut."
+    }
+  },
+  "admission": {
+    "selectedFloorRoute": false,
+    "material": false,
+    "structural": false,
+    "air": false,
+    "groundMoisture": false,
+    "siteGas": false,
+    "thermal": false,
+    "site": false
+  },
+  "actualFloor": {
+    "stack": {
+      "layers": [
+        15,
+        65,
+        100,
+        200
+      ],
+      "z": [
+        0,
+        -15,
+        -80,
+        -180,
+        -380
+      ],
+      "innerDpc": [
+        -180,
+        -30
+      ],
+      "plasterStops": 0,
+      "airLine": "Wallmineralplaster meets floorfinish at0; movement/airtightness unqualified",
+      "moisture": "40cover suspendedRC is a deliberate moisture hypothesis. NoDPM or site-required gas barrier is waived; exact floor/end/DPC transition not qualified."
+    },
+    "physicalArea_m2": 104.895225,
+    "areaParts_m2": {
+      "direct": 53.862194,
+      "simple": 50.634031,
+      "cant": 0.399
+    },
+    "pressureFootprint_m2": 88.5536585,
+    "roomField_m2": 83.057362,
+    "ordinaryFieldEdge_m": 118.761,
+    "slab": {
+      "top": -180,
+      "bottom": -380
+    },
+    "depthRange_mm": [
+      195,
+      205
+    ],
+    "faceCoverRange_mm": [
+      40,
+      50
+    ],
+    "commonGridMemberZ_mm": [
+      -630,
+      -180
+    ],
+    "serviceSpineWidth_mm": 900,
+    "sectionY_mm": 4500,
+    "lowerInterfaceZ_mm": -380,
+    "structuralPour": "Preferred finite construction control: form a continuous upper200mm dry-floor lift (20.98m3 nominal), including the head/beam overlap once and the formed threshold seat. No planned full-depth intermediate joint in occupied field; if the lower grillage is cast first, structural horizontal construction interface is at underside -380 with prepared rough concrete and continuing reinforcement. Starter/interlock, real pour length, temperature/early-age restraint, interruption detail and any service penetrations still need coordinated design. Do not declare the construction joint airtight.",
+    "structuralMaterialScope": "C30/S500 only structural comparison. Composite RC density at or below25kN/m3 including the actual bars must be delivered for this load bound. Cement dose, constituent mix, permeability, curing, floor surface/air-wall seal and actual site/water exposure remain the material/source owners’ duties. 300kg/m3 or 40mm exposure hypothesis alone gives no admission."
+  },
+  "guidance": {
+    "url": "https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf",
+    "edition": "England AD C, 2004 with 2010/2013 amendments, printed p27 §§4.17–4.20 and §5.5. Accessed 7 November 2026.",
+    "minimumInSituThickness_mm": 100,
+    "minimumCement_kg_m3": 300,
+    "minimumCover_mm": 40,
+    "voidClearance_mm": 150,
+    "ventAreaPerExternalWallRun_mm2_m": 1500,
+    "ventAreaPerFloorArea_mm2_m2": 500,
+    "role": "Suspended-floor moisture control and separate drainage/ventilation conditions. Site gas, groundwater, actual materials and project applicability remain open."
+  },
+  "voidComparison": {
+    "referenceGrade_mm": -1800,
+    "heaveStress_mm": 300,
+    "separateConstructionLoss_mm": 50,
+    "effectiveStressDatum_mm": -1450,
+    "clearanceCases": {
+      "slabSoffit": {
+        "bottomZ_mm": -380,
+        "verticalClearance_mm": 1070,
+        "surplusOver150Comparison_mm": 920
+      },
+      "lowestGirderSoffit": {
+        "bottomZ_mm": -750,
+        "verticalClearance_mm": 700,
+        "surplusOver150Comparison_mm": 550
+      },
+      "lowestFoundationCap": {
+        "bottomZ_mm": -750,
+        "verticalClearance_mm": 700,
+        "surplusOver150Comparison_mm": 550
+      },
+      "separateFullWaterTrackComparison": {
+        "bottomZ_mm": -1188,
+        "verticalClearance_mm": 262,
+        "surplusOver150Comparison_mm": 112
+      }
+    },
+    "supersededGradeToFullTrackClearance_mm": -238,
+    "floorAreaVentTerm_mm2": 52447.612499999996,
+    "externalWallRunCrossover_m": 34.965075,
+    "actualExternalWallRun_m": null,
+    "actualConnectedVentOpeningArea_mm2": null,
+    "actualSolumDrainageAndExposure": null,
+    "scope": "The D1800 stress check compares vertical reservations. The deeper water track keeps its own location and vent/drainage obligations. Establish the actual underfloor enclosure, opposite openings, free path past every support and screen, ground/drainage relation, water entry and vermin protection before accepting a vent route."
+  },
+  "ventSliceTrial": {
+    "control": {
+      "z_mm": [
+        -1000,
+        -850
+      ],
+      "westEastBandsY_mm": [
+        [
+          2000,
+          2400
+        ],
+        [
+          10100,
+          10500
+        ]
+      ],
+      "westEastExtentX_mm": [
+        -150,
+        12150
+      ],
+      "screenFreeFractionComparison": 0.5,
+      "role": "Two opposed W/E geometric strips under the proposed common grid. The 50% fraction is an authored removable-screen requirement for comparison. No product, formed plinth opening, exposure or every-bay circulation is assumed."
+    },
+    "opposedBands": [
+      {
+        "id": "front",
+        "planXYXY_mm": [
+          -150,
+          2000,
+          12150,
+          2400
+        ],
+        "minimumShaftEnvelopeReserve_mm": 50.0,
+        "governingShaft": "P41"
+      },
+      {
+        "id": "rear",
+        "planXYXY_mm": [
+          -150,
+          10100,
+          12150,
+          10500
+        ],
+        "minimumShaftEnvelopeReserve_mm": 25.0,
+        "governingShaft": "P29"
+      }
+    ],
+    "undersideReserve_mm": 100,
+    "shell_mm": 12000,
+    "courtPlan_mm": [
+      4250,
+      4250,
+      3500,
+      3500
+    ],
+    "loggiaPlan_mm": [
+      4800,
+      7750,
+      2400,
+      4250
+    ],
+    "heightAboveEffectiveStressDatum_mm": 450,
+    "northCarrierBottomMinimum_mm": -268.25,
+    "fourMouthGrossArea_mm2": 240000,
+    "oneMouthNominalScreenFreeArea_mm2": 30000.0,
+    "twoMouthsPerFaceNominalScreenFreeArea_mm2": 60000.0,
+    "fourMouthNominalScreenFreeArea_mm2": 120000.0,
+    "scope": "Geometric strips between external W/E mouth reservations. Actual screens, plinth, independent outdoor-deck supports, services, drainage, flood/splash response, effective openings and distribution to every bay remain unqualified. The rear strip traverses the zone below the outdoor loggia. Free areas are screen sensitivities, not flow, compliance or a substitute for effective drainage."
+  },
+  "proposedMonolithicCastUnion": {
+    "drySlabAndSeatArea_m2": 104.895225,
+    "drySlabAndSeatVolume_m3": 20.979045,
+    "overlapCountedOnce_m2": 53.86219375,
+    "additionalCommonShoulderArea_m2": 17.872375,
+    "additionalCommonShoulderVolume_m3": 3.5744750000000005,
+    "proposedMonolithicUpperCastVolume_m3": 24.553520000000002,
+    "lowerLiftInterfaceArea_m2": 71.73456875000001,
+    "lowerLiftPlanEdges": {
+      "edgeAtContinuingDrySoffit_m": 119.73999999999948,
+      "edgeAtVerticalRCFace_m": 68.80999999999996
+    },
+    "locatedExamples_mm": [
+      {
+        "section": "outer west at Y2750",
+        "beamNormalX": [
+          -17.5,
+          682.5
+        ],
+        "drySlabEdgeX": 332.5,
+        "additionalShoulderX": [
+          -17.5,
+          332.5
+        ]
+      },
+      {
+        "section": "court south at X4450",
+        "beamNormalY": [
+          3650.0,
+          4250.0
+        ],
+        "drySlabEdgeY": 4250,
+        "additionalShoulderY": null
+      },
+      {
+        "section": "court east at Y5900",
+        "beamNormalX": [
+          7650.0,
+          8250.0
+        ],
+        "drySlabEdgeX": 7750,
+        "additionalShoulderX": [
+          7650.0,
+          7750
+        ]
+      },
+      {
+        "section": "loggia west at Y10300",
+        "beamNormalX": [
+          4200.0,
+          4800.0
+        ],
+        "drySlabEdgeX": 4800,
+        "additionalShoulderX": null
+      }
+    ],
+    "scope": "Structural candidate union at Z−380..−180. Separate exterior decking and low ties are outside it. Interface edges are potential concrete-face terminations before actual covers, coatings, returns or contacts. They are not measured open paths or another air allocation. Shoulder cage, batch and weight are not inherited from the dry slab."
+  },
+  "batchComparison": {
+    "control": {
+      "cement_kg_m3": 320,
+      "effectiveWater_kg_m3": 160,
+      "cementParticleDensity_kg_m3": 3150,
+      "waterDensity_kg_m3": 1000,
+      "aggregateParticleDensity_kg_m3": 2650,
+      "aggregateNominalSizes_mm": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          20
+        ]
+      ],
+      "assumedAirVolumeFractions": [
+        0,
+        0.02
+      ],
+      "steelDensity_kg_m3": 7850,
+      "gravity_m_s2": 9.81,
+      "compositeDensityCeiling_kN_m3": 25,
+      "creditedAdmixture": null,
+      "role": "Authored absolute-volume comparison for washed mineral aggregate and effective water, without a credited admixture. Densities, void fraction, delivered workability/strength and retained constituents require evidence."
+    },
+    "grossRCVolume_m3": 20.979045,
+    "steelBeforeLapsAndEdges_kg": 3725.098,
+    "steelDisplacement_m3": 0.4745347770700637,
+    "nominalConcreteVolumeBeforeLapsAndEdges_m3": 20.504510222929934,
+    "cementForNominalConcreteVolume_kg": 6561.443271337579,
+    "effectiveWaterForNominalConcreteVolume_kg": 3280.7216356687895,
+    "effectiveWaterCementRatio": 0.5,
+    "cases": [
+      {
+        "assumedAirVolumeFraction": 0,
+        "aggregate_kg_m3": 1956.7936507936508,
+        "plainDensity_kg_m3": 2436.793650793651,
+        "aggregateForNominalPour_kg": 40123.0954168628,
+        "densityChecks": [
+          {
+            "grossDepth_mm": 195,
+            "compositeWeight_kN_m3": 25.13691904252334,
+            "requiredPlainDensityMaximum_kg_m3": 2422.505074724952,
+            "aggregateDensityMaximumInThisBatch_kg_m3": 2630.649606785726,
+            "insideCurrentWeightBudget": false
+          },
+          {
+            "grossDepth_mm": 200,
+            "compositeWeight_kN_m3": 25.1061197093174,
+            "requiredPlainDensityMaximum_kg_m3": 2425.725798393903,
+            "aggregateDensityMaximumInThisBatch_kg_m3": 2635.0112918920013,
+            "insideCurrentWeightBudget": false
+          },
+          {
+            "grossDepth_mm": 205,
+            "compositeWeight_kN_m3": 25.076822782609305,
+            "requiredPlainDensityMaximum_kg_m3": 2428.7858683212385,
+            "aggregateDensityMaximumInThisBatch_kg_m3": 2639.1554106671974,
+            "insideCurrentWeightBudget": false
+          }
+        ]
+      },
+      {
+        "assumedAirVolumeFraction": 0.02,
+        "aggregate_kg_m3": 1903.7936507936508,
+        "plainDensity_kg_m3": 2383.793650793651,
+        "aggregateForNominalPour_kg": 39036.356375047515,
+        "densityChecks": [
+          {
+            "grossDepth_mm": 195,
+            "compositeWeight_kN_m3": 24.62905113330363,
+            "requiredPlainDensityMaximum_kg_m3": 2422.505074724952,
+            "aggregateDensityMaximumInThisBatch_kg_m3": 2703.884659913212,
+            "insideCurrentWeightBudget": true
+          },
+          {
+            "grossDepth_mm": 200,
+            "compositeWeight_kN_m3": 24.597950247828187,
+            "requiredPlainDensityMaximum_kg_m3": 2425.725798393903,
+            "aggregateDensityMaximumInThisBatch_kg_m3": 2708.3677706322555,
+            "insideCurrentWeightBudget": true
+          },
+          {
+            "grossDepth_mm": 205,
+            "compositeWeight_kN_m3": 24.568366478717394,
+            "requiredPlainDensityMaximum_kg_m3": 2428.7858683212385,
+            "aggregateDensityMaximumInThisBatch_kg_m3": 2712.6272581581534,
+            "insideCurrentWeightBudget": true
+          }
+        ]
+      }
+    ],
+    "decision": "The zero-air comparison exceeds the current structural weight budget. Actual fresh density with the delivered reinforcement must earn the load bound or STR must recheck the actual actions. Entrapped air remains a measured input.",
+    "guidanceMinimumCementAtNominalConcreteVolume_kg": 6151.35306687898
+  },
+  "binderEvidence": {
+    "product": "Cemex Portland, Rugby works, CEM I 52.5 N",
+    "dop": "018-02090",
+    "bulkIssue13": "https://www.cemex.co.uk/documents/1863241/3585604/Bulk%2BCement%2BSummary%2B-%2BMarch%2B2026.pdf/0b14cf18-ff8e-eb1a-6052-04136c036753?download=true&t=1773672730640&version=1.0",
+    "epd": "https://www.cemex.co.uk/documents/1863241/3947771/Rugby%2BCEM%2BI%2B52%2C5N%2BV4.pdf/e3078dc0-d0e6-e752-f40c-3d816729d117?download=true&t=1750248429268&version=1.0",
+    "role": "Issue 13 dated 10 March 2026 identifies Rugby CEM I and its DoP. Manufacturer EPD composition table excludes gypsum and identifies significant heat of hydration. Exact batch, minor additions, processing aids and delivered concrete remain unqualified."
+  },
+  "curingAndJoint": {
+    "candidate": "One continuous upper lift after lower grid preparation. Plan temporary formwork removal, batch continuity and water curing with recoverable protection.",
+    "releaseDuties": [
+      "Record actual batch yield, temperature, effective water, consolidation and cover.",
+      "Protect exposed concrete promptly against moisture loss, rain washing and temperature extremes. Verify curing and early-age restraint for the actual binder and placement.",
+      "Treat a full-depth interruption seam as a new joint with its own load, capillary, water and air route.",
+      "Expose and assess the cured slab, wall-base junctions and openings interfaces before covering with glass and the service/finish layers."
+    ],
+    "retainedCuringCompound": null,
+    "actualCuringRecord": null,
+    "actualFullDepthInterruption": null
+  },
+  "airAndCapillaryRegister": {
+    "ordinaryDpcControl": {
+      "headerWidth": 215,
+      "fromZ": -180,
+      "beds": [
+        10,
+        10
+      ],
+      "courses": [
+        65,
+        65
+      ],
+      "unitReference": "Ketley WCBL65 candidate only; 102/102.5 longitudinal identity remains unresolved, and exact mortar retained constituents/bond/exposure are unqualified",
+      "role": "Full wall-width capillary control. Not an impermeable air/gas sheet and not proof of joint performance. Existing top bed belongs to the wall above."
+    },
+    "ordinaryAirRoute": {
+      "name": "Concrete body -> complete bottom bed -> bonded DPC body/perpends/upper bed -> wall core below plaster stop -> plaster",
+      "selected": false,
+      "rules": [
+        "First compare the actual bonded mineral assembly as a complete air transition; neither brick absorption nor mortar designation demonstrates its leakage",
+        "Include the 30 mm wall-core height above DPC and below plaster stop; do not jump from DPC top -30 to plaster at0",
+        "Do not plaster continuously down to wet RC and around the DPC; do not close an air drawing by creating a damp bypass",
+        "Concrete moisture resistance, air permeability, crack/joint leakage and gas suitability remain separate duties",
+        "Do not assume a new metal return is needed or qualified; if used it needs actual cast-in depth, cage/compaction, weld, movement and plaster-interface evidence"
+      ]
+    },
+    "proposedStraightPerimeter": {
+      "straightSections": [
+        {
+          "wall": "outer-west",
+          "stationAlongWall_mm": 2750,
+          "beam": "outer-W",
+          "beamNormalBounds_mm": [
+            -17.5,
+            682.5
+          ],
+          "coreNormalBounds_mm": [
+            262.5,
+            402.5
+          ],
+          "centredHeaderNormalBounds_mm": [
+            225.0,
+            440.0
+          ],
+          "centredHeaderProjectionEach_mm": 37.5,
+          "drainedGapPlanRetained_mm": 50.0,
+          "glassPlanRemainingAtBand_mm": 72.5,
+          "floorLayerZoneEncroachmentBeyondFinish_mm": 10.5
+        },
+        {
+          "wall": "court-south",
+          "stationAlongWall_mm": 4450,
+          "beam": "court-S",
+          "beamNormalBounds_mm": [
+            3650.0,
+            4250.0
+          ],
+          "coreNormalBounds_mm": [
+            3847.5,
+            3987.5
+          ],
+          "centredHeaderNormalBounds_mm": [
+            3810.0,
+            4025.0
+          ],
+          "centredHeaderProjectionEach_mm": 37.5,
+          "drainedGapPlanRetained_mm": 50.0,
+          "glassPlanRemainingAtBand_mm": 72.5,
+          "floorLayerZoneEncroachmentBeyondFinish_mm": 10.5
+        },
+        {
+          "wall": "court-east",
+          "stationAlongWall_mm": 5900,
+          "beam": "court-E",
+          "beamNormalBounds_mm": [
+            7650.0,
+            8250.0
+          ],
+          "coreNormalBounds_mm": [
+            8012.5,
+            8152.5
+          ],
+          "centredHeaderNormalBounds_mm": [
+            7975.0,
+            8190.0
+          ],
+          "centredHeaderProjectionEach_mm": 37.5,
+          "drainedGapPlanRetained_mm": 50.0,
+          "glassPlanRemainingAtBand_mm": 72.5,
+          "floorLayerZoneEncroachmentBeyondFinish_mm": 10.5
+        },
+        {
+          "wall": "loggia-west-weather",
+          "stationAlongWall_mm": 10300,
+          "beam": "loggia-W",
+          "beamNormalBounds_mm": [
+            4200.0,
+            4800.0
+          ],
+          "coreNormalBounds_mm": [
+            4307.5,
+            4447.5
+          ],
+          "centredHeaderNormalBounds_mm": [
+            4270.0,
+            4485.0
+          ],
+          "centredHeaderProjectionEach_mm": 37.5,
+          "drainedGapPlanRetained_mm": 50,
+          "glassPlanRemainingAtBand_mm": 162.5,
+          "floorLayerZoneEncroachmentBeyondFinish_mm": 10.5
+        }
+      ],
+      "clearCavityDepthBelowInnerBandBase_mm": 0,
+      "existingLoggiaTrayComparison": {
+        "innerBase": -20,
+        "outerWeep": -35,
+        "innerReturn": 190,
+        "backLeg": 210,
+        "outerDpc": [
+          120,
+          270
+        ],
+        "spoutProjection": 60,
+        "spoutClearToHighestWalk": 75,
+        "status": "Custom formed metal tray/embedded return requires qualification; no225mm clear cavity claimed."
+      },
+      "unqualified": [
+        "Header bonding, movement and thermal response at each boundary and corner.",
+        "Actual ordinary cavity base tray, outward weeps and separation from the ventilated floor void.",
+        "Actual court door jamb, pan, seat and retained ordinary wall-base interfaces.",
+        "Four outer pier restraints, portal contacts, three RC crossings and lower stair toe.",
+        "Dry specimen and installed air, capillary and thermal behaviour."
+      ],
+      "role": "Test the same centred ordinary header without thinning the drained gap or moving the core. The ordinary 429.5 wall recipe and the separate loggia 519.5 recipe have different remaining glass. The old loggia tray is a located research control with its own support and finish interfaces, not an ordinary shell or court tray."
+    },
+    "wallBases": [
+      {
+        "id": "study-east",
+        "axis": 4800,
+        "along": [
+          0,
+          1200
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 1200,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          4692.5,
+          4907.5
+        ],
+        "finishedFaces": [
+          4703,
+          4897
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "cloak-east",
+        "axis": 4800,
+        "along": [
+          1200,
+          2650
+        ],
+        "openIntervals": [
+          [
+            1700,
+            2500
+          ]
+        ],
+        "rawSolidLength_mm": 650,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          4692.5,
+          4907.5
+        ],
+        "finishedFaces": [
+          4703,
+          4897
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "cloak-west",
+        "axis": 3400,
+        "along": [
+          1200,
+          2650
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 1450,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          3292.5,
+          3507.5
+        ],
+        "finishedFaces": [
+          3303,
+          3497
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "cloak-south",
+        "axis": 1200,
+        "along": [
+          3400,
+          4800
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 1400,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          1092.5,
+          1307.5
+        ],
+        "finishedFaces": [
+          1103,
+          1297
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "study-cloak-north",
+        "axis": 2650,
+        "along": [
+          2817.5,
+          4800
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 1982.5,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          2542.5,
+          2757.5
+        ],
+        "finishedFaces": [
+          2553,
+          2747
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "study-L-return",
+        "axis": 2817.5,
+        "along": [
+          2650,
+          3247.5
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 597.5,
+        "coreWidth_mm": 140.0,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          2710.0,
+          2925.0
+        ],
+        "finishedFaces": [
+          2720.5,
+          2914.5
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "study-L-north",
+        "axis": 3247.5,
+        "along": [
+          0,
+          2817.5
+        ],
+        "openIntervals": [
+          [
+            1350,
+            2250
+          ]
+        ],
+        "rawSolidLength_mm": 1917.5,
+        "coreWidth_mm": 140.0,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          3140.0,
+          3355.0
+        ],
+        "finishedFaces": [
+          3150.5,
+          3344.5
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "wc-west",
+        "axis": 7200,
+        "along": [
+          0,
+          2650
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 2650,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          7092.5,
+          7307.5
+        ],
+        "finishedFaces": [
+          7103,
+          7300
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          7.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "wc-north",
+        "axis": 2650,
+        "along": [
+          7200,
+          9300
+        ],
+        "openIntervals": [
+          [
+            7650,
+            8550
+          ]
+        ],
+        "rawSolidLength_mm": 1200,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          2542.5,
+          2757.5
+        ],
+        "finishedFaces": [
+          2550,
+          2747
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          7.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "service-spine",
+        "axis": 9300,
+        "along": [
+          0,
+          8290
+        ],
+        "openIntervals": [
+          [
+            2750,
+            3650
+          ]
+        ],
+        "rawSolidLength_mm": 7390,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          9192.5,
+          9407.5
+        ],
+        "finishedFaces": [
+          9203,
+          9397
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "utility-north",
+        "axis": 2550,
+        "along": [
+          9300,
+          12000
+        ],
+        "openIntervals": [
+          [
+            10250,
+            11150
+          ]
+        ],
+        "rawSolidLength_mm": 1800,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          2442.5,
+          2657.5
+        ],
+        "finishedFaces": [
+          2453,
+          2647
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "plant-intermediate-arch",
+        "axis": 3700,
+        "along": [
+          9300,
+          12000
+        ],
+        "openIntervals": [
+          [
+            9650,
+            10925
+          ]
+        ],
+        "rawSolidLength_mm": 1425,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          3592.5,
+          3807.5
+        ],
+        "finishedFaces": [
+          3603,
+          3797
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "plant-north",
+        "axis": 5877.5,
+        "along": [
+          9300,
+          12000
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 2700,
+        "coreWidth_mm": 140.0,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          5770.0,
+          5985.0
+        ],
+        "finishedFaces": [
+          5780.5,
+          6300
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          0
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "rear-west",
+        "axis": 8852.5,
+        "along": [
+          0,
+          4377.5
+        ],
+        "openIntervals": [
+          [
+            3100,
+            4000
+          ]
+        ],
+        "rawSolidLength_mm": 3477.5,
+        "coreWidth_mm": 140.0,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          8745.0,
+          8960.0
+        ],
+        "finishedFaces": [
+          8755.5,
+          8949.5
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "rear-east",
+        "axis": 8290,
+        "along": [
+          7552.5,
+          12000
+        ],
+        "openIntervals": [
+          [
+            8250,
+            9150
+          ],
+          [
+            10450,
+            11350
+          ]
+        ],
+        "rawSolidLength_mm": 2647.5,
+        "coreWidth_mm": 215.0,
+        "proposedDpcWidth_mm": 215.0,
+        "proposedDpcFaces": [
+          8182.5,
+          8397.5
+        ],
+        "finishedFaces": [
+          8155.5,
+          8424.5
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          0,
+          0
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "loggia-west-weather",
+        "axis": 4377.5,
+        "along": [
+          7750,
+          12000
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 4250,
+        "coreWidth_mm": 140.0,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          4270.0,
+          4485.0
+        ],
+        "finishedFaces": [
+          4280.5,
+          4800
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          0
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "loggia-east-weather",
+        "axis": 7622.5,
+        "along": [
+          7750,
+          12000
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 4250,
+        "coreWidth_mm": 140.0,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          7515.0,
+          7730.0
+        ],
+        "finishedFaces": [
+          7200,
+          7719.5
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          0,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "protected-stair-east",
+        "axis": 2894.5,
+        "along": [
+          4173,
+          8949.5
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 4776.5,
+        "coreWidth_mm": 100.0,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          2787.0,
+          3002.0
+        ],
+        "finishedFaces": [
+          2817.5,
+          2971.5
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          30.5,
+          30.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "protected-west-cross",
+        "axis": 4250,
+        "along": [
+          2817.5,
+          3820.5
+        ],
+        "openIntervals": [
+          [
+            2971.5,
+            3820.5
+          ]
+        ],
+        "rawSolidLength_mm": 154.0,
+        "coreWidth_mm": 100,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          4142.5,
+          4357.5
+        ],
+        "finishedFaces": [
+          4173,
+          4327
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          30.5,
+          30.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "protected-east-cross",
+        "axis": 4250,
+        "along": [
+          8012.5,
+          9370
+        ],
+        "openIntervals": [
+          [
+            8241.25,
+            9141.25
+          ]
+        ],
+        "rawSolidLength_mm": 457.5,
+        "coreWidth_mm": 100,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          4142.5,
+          4357.5
+        ],
+        "finishedFaces": [
+          4173,
+          4327
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          30.5,
+          30.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "east-passage-north-weather",
+        "axis": 7922.5,
+        "along": [
+          9397,
+          12000
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 2603,
+        "coreWidth_mm": 140.0,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          7815.0,
+          8030.0
+        ],
+        "finishedFaces": [
+          7500,
+          8019.5
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          0,
+          10.5
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      },
+      {
+        "id": "gallery-east-water-weather",
+        "axis": 9300,
+        "along": [
+          6300,
+          7500
+        ],
+        "openIntervals": [],
+        "rawSolidLength_mm": 1200,
+        "coreWidth_mm": 140,
+        "proposedDpcWidth_mm": 215,
+        "proposedDpcFaces": [
+          9192.5,
+          9407.5
+        ],
+        "finishedFaces": [
+          9203,
+          9722.5
+        ],
+        "roomSideProjectionBeyondFinish_mm": [
+          10.5,
+          0
+        ],
+        "status": "Authored wall segment and proposed full-width base only; continuity, loads, end bonds and floor/air transition unresolved"
+      }
+    ],
+    "threeSourceProposedRCCrossings": [
+      {
+        "id": "stair-midlanding-post",
+        "core": [
+          2817.5,
+          7132.5,
+          250,
+          250
+        ],
+        "baseZ": -180,
+        "scope": "250 square actual source-proposed RC core, not the finished obstacle rectangle"
+      },
+      {
+        "id": "wet-wall-south-receiver",
+        "core": [
+          2772.5,
+          8627.5,
+          260,
+          450
+        ],
+        "baseZ": -180,
+        "topZ": 3020,
+        "scope": "HAD literal core with STR receiving-pier height; source-proposed structure, not capacity admission"
+      },
+      {
+        "id": "wet-wall-north-receiver",
+        "core": [
+          2772.5,
+          11287.5,
+          260,
+          450
+        ],
+        "baseZ": -180,
+        "topZ": 3020,
+        "scope": "HAD literal core with STR receiving-pier height; source-proposed structure, not capacity admission"
+      }
+    ],
+    "groundToe": {
+      "lowerFlightX_mm": [
+        429.5,
+        1523.5
+      ],
+      "bearingAxisY_mm": 4332.5,
+      "floorContact": {
+        "control_RC_top": -180,
+        "new_MAT_thermal_level_unjoined": true
+      },
+      "actualThreeDimensionalContact": null
+    },
+    "proposedFoundationShaftCount": 52,
+    "openingCuts": [
+      {
+        "id": "front-door",
+        "wall": "outer-south",
+        "centre": 6000,
+        "width": 1800,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 2,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "plant-replacement",
+        "wall": "outer-east",
+        "centre": 4600,
+        "width": 1400,
+        "kind": "door",
+        "swing": "right",
+        "hinge": "low",
+        "leaves": 1,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      },
+      {
+        "id": "grand-court-entry-south",
+        "wall": "court-south",
+        "centre": 6000,
+        "width": 1800,
+        "kind": "door",
+        "swing": "left",
+        "hinge": "low",
+        "leaves": 2,
+        "head": 2850,
+        "spring": 2550,
+        "radialRingTrial": 215,
+        "scope": "Actual chosen segmental geometry forjoined support/OAScheck; ring/thrust/frame/capacity not admitted."
+      }
+    ],
+    "capillaryPaths": [
+      "Ground and wet supports can feed the connected lower RC and slab. Establish matrix and interface transfer under the actual exposure.",
+      "Outdoor RC and threshold seat contacts remain possible bypasses. Close the actual external and internal DPC ends, including the local structural pier cuts.",
+      "Each vertical RC core and the stair toe has a separate moisture and surface duty. The slab comparison does not qualify those vertical paths."
+    ],
+    "singleFloorWallFamily_m3_h_at50Pa": 63.234655000000004,
+    "openingFamily_m3_h_at50Pa": 158.0866375,
+    "servicePenetrationsFamily_m3_h_at50Pa": 63.234655000000004,
+    "airTestScope": "One aggregate for slab body, actual cracks and joints, ordinary wall bases, three structural crossings and the stair toe up to the actual assembly cuts. Opening and service assemblies retain their own disjoint budgets. Mask those interfaces when isolating this family and verify the final whole envelope unmasked. Every installed contribution remains unmeasured.",
+    "idealCrackModel": {
+      "pressure_Pa": 50,
+      "airDynamicViscosity_Pa_s": 1.8e-05,
+      "airDensity_kg_m3": 1.2,
+      "authoredCrackApertures_mm": [
+        0.1,
+        0.2,
+        0.3,
+        0.5
+      ],
+      "role": "Ideal full-depth uniform smooth slit sensitivity with no slip, laminar fully developed flow. Actual through-crack length, aperture profile, contact, entry/end effects, site gas and installed air/moisture are unmeasured."
+    },
+    "idealCracks": [
+      {
+        "aperture_mm": 0.1,
+        "flow_m3_h_per_m": 0.0041666666666666675,
+        "idealHydraulicReynoldsNumber": 0.15432098765432098
+      },
+      {
+        "aperture_mm": 0.2,
+        "flow_m3_h_per_m": 0.03333333333333334,
+        "idealHydraulicReynoldsNumber": 1.2345679012345678
+      },
+      {
+        "aperture_mm": 0.3,
+        "flow_m3_h_per_m": 0.1125,
+        "idealHydraulicReynoldsNumber": 4.166666666666666
+      },
+      {
+        "aperture_mm": 0.5,
+        "flow_m3_h_per_m": 0.5208333333333334,
+        "idealHydraulicReynoldsNumber": 19.290123456790123
+      },
+      {
+        "aperture_mm": 0.293898,
+        "flow_m3_h_per_m": 0.10577393233027833,
+        "idealHydraulicReynoldsNumber": 3.9175530492695674
+      },
+      {
+        "aperture_mm": 0.330852,
+        "flow_m3_h_per_m": 0.1509002819309592,
+        "idealHydraulicReynoldsNumber": 5.5888993307762656
+      }
+    ]
+  },
+  "costScope": {
+    "fieldSheetAndOrdinaryReturnsScreen_kg": 871.9418967999999,
+    "role": "The RC lift and cage are shared structural work. Compare actual mix, cure, inspection, interface and renewal differences before drawing a cost conclusion."
+  }
+}

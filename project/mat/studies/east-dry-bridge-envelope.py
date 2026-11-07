@@ -174,7 +174,9 @@ for (lo,hi),c in [(body,'#67a8d5'),(park,'#c6e0cc')]:
 svg.append(f'<path d="M{X(plat[0])} {Z(n["operatorDeckZ"])} H{X(plat[0]+plat[2])}" stroke="#8f6354" stroke-dasharray="5 4"/>')
 svg.append(f'<path d="M{X(park[0])} {Z(track(park[0]))} L{X(park[1])} {Z(track(park[1]))}" stroke="#a12b23" stroke-width="2"/>')
 svg.append(f'<path d="M{X(outer["a"][0])} 130 V320" stroke="#a12b23" stroke-dasharray="4 4"/>')
-text(30,385,f'Retained support reservation x{outer["a"][0]:g} crosses the park: actual profile / full hoist clearance UNBOUND.',13,'#a12b23')
+support = out['outer_support_reference']
+relation = 'straddles' if support['park_straddles_reserved_line'] else 'lies to one side of'
+text(30,385,f'Park X{park[0]:g}–{park[1]:g} {relation} the support axis at X{support["reserved_axis_x_mm"]:g}. Actual profile and full hoist clearance remain unverified.',13,'#a12b23')
 text(30,350,'Blue: installed body/backing. Green: separate east park. Brown: operator deck outside the depressed track.',13)
 svg.append(f'<path d="M60 {Z(-d["routeLocalDTrial"])} H1110" stroke="#a12b23" stroke-dasharray="8 5"/>')
 text(30,455,f'Lowest fixed track {low:.3f}; local D{d["routeLocalDTrial"]} trial has {d["routeLocalDTrial"]-D:.3f} over the stated stresses',14,'#a12b23')
