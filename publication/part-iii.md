@@ -1,6 +1,6 @@
 # Part III — Patterns and Generative Sequences
 
-This short part explains how recurring relationships can guide consequential choices. The complete Pattern Reference follows Part VI; the continuous reading route proceeds from the sequence here to the worked house, without first traversing every reference entry.
+The constitutional provisions in Parts I and II are deliberately broad. They describe what Ovid’s House values: selective permanence, designed interfaces, failure tolerance, maintenance geography, repose, passive-first environmental design and stewardship.
 
 Drawing a house also requires recurring architectural responses to recurring situations. These are the patterns.
 

@@ -1,7 +1,7 @@
 # COA-03 — shared drawing and uncertainty language
 
 **Gate:** COA-03  
-**Status:** PASS — accepted in the [completed COA programme](../../docs/computational/compiler-output-architecture-programme.md)\
+**Status:** PASS subject to repository CI  
 **Starting main:** `74a6c3c469af5a314d7e66acd98a13109f1a4426`  
 **Issue:** #95  
 **Authority effect:** none
@@ -106,4 +106,4 @@ Small downstream helpers live in:
 
 There is deliberately no scene graph, CAD object model or generic drawing framework.
 
-**Historical handoff:** [COA-04 — Reference House plan and section successor set](../coa04/README.md), subsequently completed.
+**Next gate:** COA-04 — Reference House plan and section successor set.

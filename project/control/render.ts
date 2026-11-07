@@ -2,10 +2,8 @@ import { maturityLevels, renderMaturityStatusBlock } from '../maturity.js'
 import {
   maturityAssessments,
   maturityEvidenceMonitoringBaseline,
-  maturityFreshness,
-  maturitySubjectFreshness
+  maturityFreshness
 } from '../maturity-freshness.js'
-import { maturitySubjectMonitoringBaseline } from '../maturity-subjects.js'
 import {
   directBlockers,
   nodesByDerivedState,
@@ -39,8 +37,6 @@ export function renderExecutionStatusBlock(): string {
 
   return [
     'Structural execution state is derived from `project/control/`; this Markdown is a durable projection, not runtime claim authority.',
-    '',
-    '[Operations snapshots on GitHub](https://github.com/adamnoden/architecture/actions/workflows/control-operations.yml) · Agent briefing: `npm run control:brief`. Snapshots show their observation time; acquire through the live dispatcher.',
     '',
     'Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.',
     '',
@@ -84,7 +80,6 @@ function evidenceCount(assessment: (typeof maturityAssessments)[number]): number
 
 export function renderEpistemicMaturityBlock(repoRoot: string): string {
   const freshness = maturityFreshness(repoRoot)
-  const subjectFreshness = maturitySubjectFreshness(repoRoot)
   const scaleRows = maturityLevels.map(
     (level) => `| **${level.id}** | **${level.name}** | ${tableCell(level.criterion)} |`
   )
@@ -94,19 +89,10 @@ export function renderEpistemicMaturityBlock(repoRoot: string): string {
       status?.state === 'stale'
         ? `**STALE — reassess** (${status.changedEvidence.map((path) => `\`${path}\``).join(', ')})`
         : status?.state === 'fresh'
-          ? 'content unchanged against PCO evidence baseline'
+          ? 'fresh against PCO evidence baseline'
           : `unknown${status?.state === 'unknown' ? ` — ${tableCell(status.reason)}` : ''}`
 
     return `| **${tableCell(assessment.name)}** | **${assessment.maturity}** | ${assessment.reviewedOn} | ${evidenceCount(assessment)} | ${evidenceStatus} |`
-  })
-
-  const subjectRows = maturityAssessments.map((assessment) => {
-    const status = subjectFreshness.get(assessment.id)!
-    const watch = status.state === 'reassessment-required'
-      ? `**REASSESS applicability** (${status.changedSources.map((path) => `\`${path}\``).join(', ')})`
-      : status.state === 'unknown' ? `**UNKNOWN** — ${tableCell(status.reason)}`
-        : 'monitored sources unchanged; no automatic applicability pass'
-    return `| **${tableCell(assessment.name)}** | ${tableCell(assessment.subject.assessedSubject)} | ${watch} | ${tableCell(assessment.subject.applicabilityLimit)} |`
   })
 
   return [
@@ -124,15 +110,7 @@ export function renderEpistemicMaturityBlock(repoRoot: string): string {
     '',
     '| Assessment | Maturity | Reviewed | Evidence files | Evidence watch |',
     '|---|---:|---|---:|---|',
-    ...assessmentRows,
-    '',
-    '### Assessed subjects and design applicability',
-    '',
-    `The named subject/source bindings live in \`project/maturity-subjects.ts\`. Source content is watched from the HRS inspection boundary \`${maturitySubjectMonitoringBaseline.slice(0, 7)}\`, including tracked working edits. This is an inspection baseline, not a retrospective maturity assessment. Changed controlling geometry, implementation or provenance requires applicability reassessment even when review prose is untouched. An unavailable baseline is **unknown**. Unchanged sources do not prove applicability to a successor design or promote an M-level.`,
-    '',
-    '| Assessment | Named assessed subject / revision | Source watch | Applicability limit |',
-    '|---|---|---|---|',
-    ...subjectRows
+    ...assessmentRows
   ].join('\n')
 }
 
