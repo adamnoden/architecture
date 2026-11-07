@@ -1,0 +1,131 @@
+{
+  "status": "WORKING COMPARISON — one continuous suspended RC pour with conditional mineral DPC and air boundary",
+  "sources": {
+    "HAD": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/had/studies/water-replan.json",
+      "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+      "role": "Current Reference House geometry and authored D1800 grade comparison."
+    },
+    "STRfloor": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/str/studies/current-house-occupied-interfaces.json",
+      "blob": "fb9f19324385a50c22761b38333c478075987a08",
+      "role": "Located structural pour, coverage, mass and crack comparisons."
+    },
+    "STRgrid": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/str/studies/current-house-grid.json",
+      "blob": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+      "role": "Proposed common grid and foundation heads with actual comparison axes and depths."
+    },
+    "STRtoe": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/str/studies/open-loggia-support.json",
+      "blob": "20dec4384d09a0d02075fdd34a247e775532763b",
+      "role": "Stair bearing axis and explicit unresolved thermal toe contact."
+    },
+    "field": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/ground-field-assembly.results.json",
+      "blob": "5dd70178c0e5bb192f1d24f6e5383c3d330fe1bc",
+      "role": "Retained field layout, 22 wall bases, three RC crossings and actual external door cuts."
+    },
+    "ordinaryWall": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/conventional-ground-junction.json",
+      "blob": "5d899197848d0f951d8ff4573983aff81d4fd32f",
+      "role": "Proposed bonded mineral DPC and ordinary wall/floor air transition."
+    },
+    "airDuty": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/whole-house-leakage-duty.json",
+      "blob": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+      "role": "Single provisional floor/wall aggregate, with disjoint opening and service families."
+    },
+    "court": {
+      "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
+      "path": "project/mat/studies/court-air-path.results.json",
+      "blob": "87643e37f87e41a54f930fa5ccc5ff61df6a15e7",
+      "role": "Shared conditional court assembly at the opening-family cut."
+    }
+  },
+  "moistureGuidance": {
+    "url": "https://assets.publishing.service.gov.uk/media/5a8192a0e5274a2e8ab54b5f/BR_PDF_AD_C_2013.pdf",
+    "edition": "England AD C, 2004 with 2010/2013 amendments, printed p27 §§4.17–4.20 and §5.5. Accessed 7 November 2026.",
+    "minimumInSituThickness_mm": 100,
+    "minimumCement_kg_m3": 300,
+    "minimumCover_mm": 40,
+    "voidClearance_mm": 150,
+    "ventAreaPerExternalWallRun_mm2_m": 1500,
+    "ventAreaPerFloorArea_mm2_m2": 500,
+    "role": "Suspended-floor moisture control and separate drainage/ventilation conditions. Site gas, groundwater, actual materials and project applicability remain open."
+  },
+  "binderEvidence": {
+    "product": "Cemex Portland, Rugby works, CEM I 52.5 N",
+    "dop": "018-02090",
+    "bulkIssue13": "https://www.cemex.co.uk/documents/1863241/3585604/Bulk%2BCement%2BSummary%2B-%2BMarch%2B2026.pdf/0b14cf18-ff8e-eb1a-6052-04136c036753?download=true&t=1773672730640&version=1.0",
+    "epd": "https://www.cemex.co.uk/documents/1863241/3947771/Rugby%2BCEM%2BI%2B52%2C5N%2BV4.pdf/e3078dc0-d0e6-e752-f40c-3d816729d117?download=true&t=1750248429268&version=1.0",
+    "role": "Issue 13 dated 10 March 2026 identifies Rugby CEM I and its DoP. Manufacturer EPD composition table excludes gypsum and identifies significant heat of hydration. Exact batch, minor additions, processing aids and delivered concrete remain unqualified."
+  },
+  "mixTrial": {
+    "cement_kg_m3": 320,
+    "effectiveWater_kg_m3": 160,
+    "cementParticleDensity_kg_m3": 3150,
+    "waterDensity_kg_m3": 1000,
+    "aggregateParticleDensity_kg_m3": 2650,
+    "aggregateNominalSizes_mm": [
+      [
+        0,
+        4
+      ],
+      [
+        4,
+        20
+      ]
+    ],
+    "assumedAirVolumeFractions": [
+      0,
+      0.02
+    ],
+    "steelDensity_kg_m3": 7850,
+    "gravity_m_s2": 9.81,
+    "compositeDensityCeiling_kN_m3": 25,
+    "creditedAdmixture": null,
+    "role": "Authored absolute-volume comparison for washed mineral aggregate and effective water, without a credited admixture. Densities, void fraction, delivered workability/strength and retained constituents require evidence."
+  },
+  "curingAndJoint": {
+    "candidate": "One continuous upper lift after lower grid preparation. Plan temporary formwork removal, batch continuity and water curing with recoverable protection.",
+    "releaseDuties": [
+      "Record actual batch yield, temperature, effective water, consolidation and cover.",
+      "Protect exposed concrete promptly against moisture loss, rain washing and temperature extremes. Verify curing and early-age restraint for the actual binder and placement.",
+      "Treat a full-depth interruption seam as a new joint with its own load, capillary, water and air route.",
+      "Expose and assess the cured slab, wall-base junctions and openings interfaces before covering with glass and the service/finish layers."
+    ],
+    "retainedCuringCompound": null,
+    "actualCuringRecord": null,
+    "actualFullDepthInterruption": null
+  },
+  "airScreen": {
+    "pressure_Pa": 50,
+    "airDynamicViscosity_Pa_s": 1.8e-05,
+    "airDensity_kg_m3": 1.2,
+    "authoredCrackApertures_mm": [
+      0.1,
+      0.2,
+      0.3,
+      0.5
+    ],
+    "role": "Ideal full-depth uniform smooth slit sensitivity with no slip, laminar fully developed flow. Actual through-crack length, aperture profile, contact, entry/end effects, site gas and installed air/moisture are unmeasured."
+  },
+  "admission": {
+    "selectedFloorRoute": false,
+    "material": false,
+    "structural": false,
+    "air": false,
+    "groundMoisture": false,
+    "siteGas": false,
+    "thermal": false,
+    "site": false
+  }
+}
