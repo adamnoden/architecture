@@ -1,7 +1,7 @@
 # CH-06 — strengthen the kinds of tests
 
 **Gate:** CH-06  
-**Status:** PASS — merged-main validation recorded in the [programme closeout](../../docs/computational/compiler-hardening-programme.md)\
+**Status:** PASS on exact PR head; merged-main validation required for programme closeout  
 **Starting main:** `57e9cc84b5c031794cbdd758db9141bc1befc63f`  
 **Issue:** #65  
 **Computational maturity:** M3  
@@ -134,8 +134,8 @@ If a stronger law test falsifies one of those assumptions, the correct response 
 
 The strengthened exact PR head passed repository validation in GitHub Actions run `38468759439`, including `test:ch06`, all earlier CH gates, the existing Reference House/generic regression suites and publication validation. No production compiler file changed to obtain the pass.
 
-Merged-main repository/PDF/docs/Pages validation subsequently passed; the [owning programme result](../../docs/computational/compiler-hardening-programme.md) records the final PR and merged-main runs.
+Merged-main repository/PDF/docs/Pages validation remains the final programme-closeout check after merge.
 
 ## Exit
 
-CH-06 has materially stronger law/property/metamorphic evidence over selected critical kernels; generated evidence is deterministic and replayable; historical example/adversarial tests remain intact; no new testing framework or coverage KPI was introduced; and no production semantics or proof boundary changed. Its historical handoff was [CH-07 — toolchain and developer ergonomics](../ch07/README.md), subsequently completed.
+CH-06 has materially stronger law/property/metamorphic evidence over selected critical kernels; generated evidence is deterministic and replayable; historical example/adversarial tests remain intact; no new testing framework or coverage KPI was introduced; and no production semantics or proof boundary changed. **CH-07 — toolchain and developer ergonomics — remains next.**

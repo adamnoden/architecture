@@ -1,7 +1,5 @@
 # Reference House — RH-04 Plan / Section / Elevation Gate
 
-**Applicability:** this is retained predecessor evidence, not a current-house acceptance record. Dimensions, selections and “current” statements below refer to its named historical baseline. See [Current House Basis](current-house-basis.md) for the accepted revision-02 source and the specific rechecks/owners; no proof identity is changed here.
-
 **Status:** RH-04 design gate record — HFI-08B stair recheck passed  
 **Date:** 2026-10-12; HFI-08B recheck 2026-10-19  
 **Question:** does the RH-03 spatial arrangement generate one convincing Georgian-derived architecture when plan, section and elevation are negotiated together?  

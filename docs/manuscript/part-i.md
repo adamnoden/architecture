@@ -19,7 +19,7 @@ That shifts the design problem. Maintenance, replacement, access and movement ar
 
 None of this depends on discovering that buildings change. Service-life planning is an established professional discipline. ISO 15686 treats a constructed asset across its life cycle; RICS whole-life assessment includes maintenance, repair, replacement and refurbishment; CIBSE asks building-services designers to provide installations that can be maintained economically and perform satisfactorily through their lives. The RIBA Plan of Work extends into Stage 7, *Use*, for the life of the building.[1][2][3][4]
 
-Here those established duties are tested through the design of one home: which provisions improve an actual intervention, and which add more burden than they remove?
+The architectural consequences are less consistently pursued, particularly in the ordinary house.
 
 A building can become obsolete without becoming defective. Its fabric may remain sound while the requirements around it change: a control platform loses support, a heating technology disappears, household patterns alter or regulation moves on. Service-life planning treats obsolescence as a whole-life concern alongside physical deterioration.[1] The problem is not always that the building has changed; sometimes its context has.
 
@@ -39,6 +39,8 @@ Those questions become architectural because their answers occupy space. They af
 
 The intended result should be quieter than the reasoning that produces it. Rooms may feel solid and permanent precisely because the shorter-lived systems around them have somewhere else to change.
 
+---
+
 # 2. Buildings change at different speeds
 
 A building does not possess one useful life. Structure, envelope, windows, services, controls, finishes and appliances exist on different timescales. The precise number of years matters less here than the ordering. A pump and a masonry wall should not be treated as though they belong to the same temporal layer.
@@ -55,7 +57,7 @@ If two components have very different expected lives but the shorter-lived one c
 
 A cable chased into masonry makes the mechanism obvious. The wall may remain sound for generations, yet changing the route means cutting, filling and refinishing it. The same relationship appears when a concealed cistern sits behind bonded stone or a pump can be serviced in place but cannot be withdrawn without dismantling unrelated construction.
 
-Replacement therefore has to be judged alongside reliability and service life: what still-useful construction will the intervention consume, and what would avoiding that damage cost?
+A component's lifespan matters less than the lifespan of the things that must be destroyed to replace it.
 
 The principle does not require everything to be exposed or individually demountable. A component expected to last as long as the assembly around it may reasonably be enclosed. Structural crossings may be unavoidable. Bonded finishes may sometimes be the best technical answer. The dependency should be deliberate rather than accidental.
 
@@ -263,7 +265,7 @@ This hierarchy makes disagreement useful. An architect can reject a pattern with
 [3] CIBSE, *Guide M1: Guidance for designers* (2023). https://cibse.org/knowledge-research/knowledge-portal/guide-m1-guidance-for-designers-2023/  
 [4] RIBA, *Plan of Work 2020*. https://www.architecture.com/knowledge-and-resources/resources-landing-page/riba-plan-of-work  
 [5] N. John Habraken / contemporary Open Building literature; Stephen Kendall & N. John Habraken, *Open Building for Architects* (2024).  
-[6] Frank Duffy, Colin Cave & John Worthington, *Planning Office Space* (Architectural Press, 1976); Stewart Brand, *How Buildings Learn: What Happens After They’re Built* (Viking, 1994); Brand’s [author account of the Duffy lineage and six layers](https://stewartbrand.org/pace-layering-how-complex-systems-learn-and-keep-learning/) (2018).\
+[6] Frank Duffy, Colin Cave & John Worthington, *Planning Office Space* (Architectural Press, 1976); Stewart Brand, *How Buildings Learn: What Happens After They’re Built* (Viking, 1994).  
 [7] Alex Gordon, “long life, loose fit, low energy”; see RIBA Journal discussion of the formulation.  
 [8] ISO 20887:2020, *Design for disassembly and adaptability*. https://www.iso.org/standard/69370.html  
 [9] Council on Open Building, Molenvliet. https://www.councilonopenbuilding.org/projects/molenvliet  
