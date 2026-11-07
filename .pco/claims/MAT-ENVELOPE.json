@@ -9,12 +9,12 @@
     "label": "zerg-envelope-20261106b"
   },
   "claimedAt": "2026-11-06T19:18:54.040Z",
-  "heartbeatAt": "2026-11-06T23:35:34.613Z",
-  "expiresAt": "2026-11-07T01:05:34.613Z",
+  "heartbeatAt": "2026-11-07T00:16:45.548Z",
+  "expiresAt": "2026-11-07T01:46:45.548Z",
   "checkpoint": {
-    "evidence": "PR1361 merged8576cf800822d3276cd8a7aed9d167f1bd68b90e after exact CI and root canonical preflight; predecessor branch deletion verified; successor starts exact merged head, draft pending",
-    "next": "Compare one closed court air path: ordinary215 header band, supported fixed base/top retainer and both end-cap corners; price actual service/seat/walking/renewal and separate thermal/capillary duties",
-    "blocker": "No floor or airassembly admission; exact material/joint/retention/thermal/water performance unearned; predecessor PR1361 historical until fresh draft exists"
+    "evidence": "Published draft1365 head7d449448014b06ea22b65ee8a34019dfe74cdfbf; ordinary header, whole preformed reveal and actual front-bend constraints reproduce; full MAT, mutation and render checks pass",
+    "next": "Finish one supported closed air path through fixed base, contact plane, both corners and unchanged frame/sill release; do not delete captures or release on a central test alone",
+    "blocker": "Whole air path and high-carrier/walking/corner/frame contacts unresolved; STR isolated weather jamb needs real return/restraint; all physical/material/water/thermal admissions remain open"
   },
   "branch": "work/zerg-20261106-w5-court-air-path",
   "predecessor": {
@@ -39,5 +39,5 @@
       "blocker": "STR confirms complete support/headlist and signed domains are not yet allocated; do not extrapolate12 cornerpoints. Sharedgrid bulk-water/weather enclosure and actual capillary-floor ownership remain unresolved. No assembly admission or selection."
     }
   },
-  "pr": 1361
+  "pr": 1365
 }
