@@ -1,7 +1,5 @@
 # Reference House — Pattern Selection
 
-**Applicability:** this is retained predecessor evidence, not a current-house acceptance record. Dimensions, selections and “current” statements below refer to its named historical baseline. See [Current House Basis](current-house-basis.md) for the accepted revision-02 source and the specific rechecks/owners; no proof identity is changed here.
-
 The Reference House is one worked interpretation of Ovid’s House. Its use of a pattern is **not evidence for the pattern language**: an occurrence shows what the pattern means in this house, not that the pattern is generally valid.
 
 This page records the current selected patterns, their concrete architectural consequences and the evidence still required before those consequences can be treated as technically adequate.

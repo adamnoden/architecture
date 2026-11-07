@@ -77,14 +77,16 @@ The principal risks remain visible:
 No new product or expert/physical evidence is invented. A design that cannot
 fit must simplify or explicitly rewind its owning source.
 
-## Subsequent execution
+## Remaining hard dependencies
 
-The shared IAS/HAD and OAS/HAD junctions are now complete.
-[Material synthesis](had-02m-material-finish-synthesis.md) selects the bounded
-architectural family; HAD-03 still owns visual/furnished-room convergence and
-actual fit dispositions. These earlier candidate comparisons remain historical
-candidate evidence, not selected drawings. The shared triad and later gates
-remain intact.
+HAD's next substantial work is **IAS-HAD-JUNCTION** and **OAS-HAD-JUNCTION**.
+The first needs IAS-01V/01H; the second needs OAS-01E/01I as well as these HAD
+candidates. HAD-02M and HAD-03 follow those reconciliations. The shared
+TRIAD-GATE, MRA/BCR/HRS and final PLT/EDA/PUB gates remain intact.
+
+No independent HAD node remains runnable once these three candidate packets
+are merged, unless concurrent IAS/OAS work supplies the missing candidates.
+Do not advance material synthesis merely because a palette can be written.
 
 ## Repository verification and closeout
 

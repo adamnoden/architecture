@@ -124,6 +124,6 @@ CH-03 passes only if:
 - the new canonical result is deeply equivalent to the historical RH-C2 → RH-C5 result projection;
 - M3 remains unchanged and no RH-C6 appears.
 
-## Historical handoff
+## Next gate
 
-CH-03 handed selective branded IDs, unit retention, explicit tolerance policy and practical readonly/immutability hardening to [CH-04 — strengthen representation](../ch04/README.md). That work and the [CH programme](../../docs/computational/compiler-hardening-programme.md) are complete; CH-03's original scope did not include them.
+After CH-03 passes, **CH-04 — strengthen representation — is NEXT**. CH-04 owns selective branded IDs, unit retention, explicit tolerance policy and practical readonly/immutability hardening. None of that work is pre-authorised by CH-03.

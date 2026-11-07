@@ -1,0 +1,4 @@
+Disposal of work/swarm-mat-followon-20261031 after verified integration through PR #1145.
+Original head: b6b4d21f4a20f2536ef1fde227ba285566cb3e50
+Accepted main merge: adee2d3197fd7af8af06fd5b0668f7acd6c8debd
+The original head is an ancestor of accepted main. MAT-SERVICES generation 3 is released. No active lease points at this source branch. This marker-only PR targets delete-me for automatic source-ref cleanup and does not change architecture.

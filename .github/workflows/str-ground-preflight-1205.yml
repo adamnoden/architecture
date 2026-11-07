@@ -1,0 +1,37 @@
+# Temporary read-only native preflight for STR-GROUND PR1205.
+name: STR-GROUND publication preflight PR1205
+on:
+  push:
+    branches: [work/str-ground-preflight-1205]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - name: Exact source checkout
+        uses: actions/checkout@v5
+        with:
+          ref: work/str-ground-20261101
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Guard reviewed head
+        run: test "$(git rev-parse HEAD)" = "f129c038a4fddd0da65f1f409f9a31a492ca90e7"
+      - name: Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install
+        run: npm ci --no-audit --no-fund
+      - name: Native current-main preflight
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm run control:merge-check -- STR-GROUND \
+            --lease-id abfe3a52-4e9f-44e1-8175-f1b828901d13 \
+            --generation 1 \
+            --branch work/str-ground-20261101 \
+            --head f129c038a4fddd0da65f1f409f9a31a492ca90e7 \
+            --format text
