@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 22,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a4dcf1e5-a25d-4573-bca4-31ab1d8caed9",
   "holder": {
     "kind": "chatgpt",
     "label": "Ovid services swarm 8 November 2238"
   },
   "claimedAt": "2026-11-08T22:38:41.752Z",
-  "heartbeatAt": "2026-11-08T23:29:06.525Z",
-  "expiresAt": "2026-11-09T00:14:06.525Z",
+  "heartbeatAt": "2026-11-08T23:29:43.507Z",
+  "expiresAt": "2026-11-08T23:29:43.507Z",
   "branch": "work/swarm-materials-20261108-2234",
   "predecessor": {
     "leaseId": "15f87c10-17da-411d-9639-1f568c0fb341",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1395 at ab6297f1, preserving #1396 head 21d9da0f. All 14 workflows passed; canonical preflight at 23:28:03 UTC. A 68.49 mm seat bound rules out the straight front approach on the nominal drawing datum; 125 mm extension clears only the finite static gauge.",
     "next": "Measure actual foot/capture patches and seat, then prove supported cover rotation, withdrawal, finite catch and reassembly with independently supported discharge before cutting the enlarged aperture."
-  }
+  },
+  "releasedAt": "2026-11-08T23:29:43.507Z",
+  "releaseReason": "handoff"
 }
