@@ -106,6 +106,18 @@
     "solumWestFallRunPerRise": 100,
     "role": "Geometric air corridor in the open void, with local space to drop and rise on either side of the water track. The westward solum fall is a sensitivity for the pre-site drainage requirement, with no nominated construction or outfall."
   },
+  "courtWallTray": {
+    "outletInvertAtFace_mm": 280,
+    "gauge_mm": 1.5,
+    "spoutClearWidthHeight_mm": [7, 20],
+    "outwardProjection_mm": 5,
+    "spoutRunPerRise": 10,
+    "trayCrossfallRunPerRise": 16,
+    "troughRunPerRise": 50,
+    "endDamHeight_mm": 40,
+    "backTurnTopZ_mm": 455,
+    "role": "Two tapered limited-length metal tray wings outboard of the court door aprons. Outlets occupy formed perpendicular joints above the comparison mineral plinth. The lower wet wall, corner/jamb flashings, installed coursing, thermal and structural behaviour remain separate."
+  },
   "binderEvidence": {
     "product": "Cemex Portland, Rugby works, CEM I 52.5 N",
     "dop": "018-02090",

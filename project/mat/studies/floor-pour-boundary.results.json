@@ -498,6 +498,93 @@
     "lowerSoilReserve_mm": 50,
     "scope": "Known geometric airspace under the gallery. No liner, duct, air interchange, installed screens, footing, plinth, handling hardware, physical drainage, threshold-seat coverage or verified air delivery to every bay."
   },
+  "courtWallTray": {
+    "trial": {
+      "outletInvertAtFace_mm": 280,
+      "gauge_mm": 1.5,
+      "spoutClearWidthHeight_mm": [
+        7,
+        20
+      ],
+      "outwardProjection_mm": 5,
+      "spoutRunPerRise": 10,
+      "trayCrossfallRunPerRise": 16,
+      "troughRunPerRise": 50,
+      "endDamHeight_mm": 40,
+      "backTurnTopZ_mm": 455,
+      "role": "Two tapered limited-length metal tray wings outboard of the court door aprons. Outlets occupy formed perpendicular joints above the comparison mineral plinth. The lower wet wall, corner/jamb flashings, installed coursing, thermal and structural behaviour remain separate."
+    },
+    "wingGeometry": [
+      {
+        "wingX_mm": [
+          4250,
+          5050
+        ],
+        "weepX_mm": [
+          4450.0,
+          4850.0
+        ],
+        "maxRunToWeep_mm": 200.0,
+        "localSaddleRise_mm": 4.0,
+        "endDamTopAtTrough_mm": 334.25,
+        "apronTopToTroughAtEnd_mm": 144.25
+      },
+      {
+        "wingX_mm": [
+          6950,
+          7750
+        ],
+        "weepX_mm": [
+          7150.0,
+          7550.0
+        ],
+        "maxRunToWeep_mm": 200.0,
+        "localSaddleRise_mm": 4.0,
+        "endDamTopAtTrough_mm": 334.25,
+        "apronTopToTroughAtEnd_mm": 144.25
+      }
+    ],
+    "sectionY_mm": [
+      3987.5,
+      4147.5,
+      4250,
+      4255
+    ],
+    "invertAtOutletStationZ_mm": [
+      300.25,
+      290.25,
+      280,
+      279.5
+    ],
+    "backTurnTopZ_mm": 455,
+    "backTurnToFaceInvert_mm": 175,
+    "landingZ_mm": 0,
+    "floorVoidBoundaryZ_mm": -180,
+    "outletAboveLanding_mm": 280,
+    "metalUndersideAboveComparedBandAtFace_mm": 8.5,
+    "outerMineralBandComparedZ_mm": [
+      120,
+      270
+    ],
+    "historicLoggiaOutletAboveLanding_mm": -35,
+    "northProtectiveShoeMouthAboveLanding_mm": 15,
+    "apronX_mm": [
+      [
+        5050,
+        5110
+      ],
+      [
+        6890,
+        6950
+      ]
+    ],
+    "primaryGrateX_mm": [
+      5050,
+      6950
+    ],
+    "quietStageZ_mm": -35,
+    "scope": "Trial geometry for two straight wings only. Below-tray rain and capillary bypass, both corner and apron ends, thermal bridging, support, actual joint set-out, surface runoff and first harm remain unqualified."
+  },
   "proposedMonolithicCastUnion": {
     "drySlabAndSeatArea_m2": 104.895225,
     "drySlabAndSeatVolume_m3": 20.979045,
