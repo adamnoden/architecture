@@ -9,8 +9,8 @@
     "label": "Publish reviewed utility-sink patch"
   },
   "claimedAt": "2026-11-08T23:17:30.385Z",
-  "heartbeatAt": "2026-11-08T23:30:16.605Z",
-  "expiresAt": "2026-11-09T00:15:16.605Z",
+  "heartbeatAt": "2026-11-08T23:45:52.174Z",
+  "expiresAt": "2026-11-09T00:30:52.174Z",
   "branch": "work/ias-sink-publish-20261108-2316",
   "predecessor": {
     "leaseId": "e3c29fa5-e7d2-4e70-b764-ba0095049859",
@@ -29,7 +29,7 @@
   },
   "pr": 1397,
   "checkpoint": {
-    "evidence": "PR #1397 at af209aa2 includes merged MAT #1395. Its tree equals the reviewed sink patch applied to ab6297f1. Local IAS checks and docs passed.",
-    "next": "Wait for final CI 42535425570, run fresh lease+base preflight, merge and close out."
+    "evidence": "Reviewed IAS sink study merged in #1397 at 784265bd. Exact-head CI 42535425570 passed; owner issue #941 records handoff.",
+    "next": "IAS-03 stays open for actual faucet and trap cutover, supported pickup, stand and grip ratings, physical export, reinstall and commissioning."
   }
 }
