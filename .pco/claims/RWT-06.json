@@ -1,26 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 56,
-  "state": "released",
-  "leaseId": "7bf6f0cc-ef65-4c58-b418-2dc1e295e26b",
+  "generation": 57,
+  "state": "claimed",
+  "leaseId": "4dc14b02-121f-4265-a655-92ac747e4c42",
   "holder": {
     "kind": "chatgpt",
-    "label": "Architecture second dispatch November 8 2253"
+    "label": "RWT river crossing design"
   },
-  "claimedAt": "2026-11-08T22:54:46.570Z",
-  "heartbeatAt": "2026-11-08T23:11:56.253Z",
-  "expiresAt": "2026-11-08T23:11:56.253Z",
-  "branch": "work/swarm-second-dispatch-2253",
+  "claimedAt": "2026-11-08T23:33:21.193Z",
+  "heartbeatAt": "2026-11-08T23:33:21.193Z",
+  "expiresAt": "2026-11-09T00:18:21.193Z",
+  "branch": "work/swarm-rwt-2333",
   "predecessor": {
-    "leaseId": "9079f0f9-ec95-4f7e-beb6-85a5454ccedc",
-    "generation": 55,
-    "branch": "work/swarm-rwt-20261108-2223",
-    "pr": 1394,
-    "checkpoint": {
-      "evidence": "Merged PR #1394 at 9da10bd4. Bank span removes X13500 immersed support in the comparison. 175 RWT tests, rendered panel, exact-head Validate 42530573365 and canonical preflight at 22:49:49 UTC passed.",
-      "next": "Qualify bank seats and supported rail/keeper joints across both banks, delivered section stiffness and submerged rail protection. Preserve two-ended locks, upper handling, hydraulic, high-eave and site exits."
-    }
+    "leaseId": "7bf6f0cc-ef65-4c58-b418-2dc1e295e26b",
+    "generation": 56,
+    "branch": "work/swarm-second-dispatch-2253"
   },
   "recoverySource": {
     "leaseId": "9079f0f9-ec95-4f7e-beb6-85a5454ccedc",
@@ -31,7 +26,5 @@
       "evidence": "Merged PR #1394 at 9da10bd4. Bank span removes X13500 immersed support in the comparison. 175 RWT tests, rendered panel, exact-head Validate 42530573365 and canonical preflight at 22:49:49 UTC passed.",
       "next": "Qualify bank seats and supported rail/keeper joints across both banks, delivered section stiffness and submerged rail protection. Preserve two-ended locks, upper handling, hydraulic, high-eave and site exits."
     }
-  },
-  "releasedAt": "2026-11-08T23:11:56.253Z",
-  "releaseReason": "handoff"
+  }
 }
