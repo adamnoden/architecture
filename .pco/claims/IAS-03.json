@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 27,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "cd434864-2530-4edf-9f9c-997af6efe8d6",
   "holder": {
     "kind": "chatgpt",
     "label": "Publish reviewed utility-sink patch"
   },
   "claimedAt": "2026-11-08T23:17:30.385Z",
-  "heartbeatAt": "2026-11-08T23:45:52.174Z",
-  "expiresAt": "2026-11-09T00:30:52.174Z",
+  "heartbeatAt": "2026-11-08T23:46:23.985Z",
+  "expiresAt": "2026-11-08T23:46:23.985Z",
   "branch": "work/ias-sink-publish-20261108-2316",
   "predecessor": {
     "leaseId": "e3c29fa5-e7d2-4e70-b764-ba0095049859",
@@ -31,5 +31,7 @@
   "checkpoint": {
     "evidence": "Reviewed IAS sink study merged in #1397 at 784265bd. Exact-head CI 42535425570 passed; owner issue #941 records handoff.",
     "next": "IAS-03 stays open for actual faucet and trap cutover, supported pickup, stand and grip ratings, physical export, reinstall and commissioning."
-  }
+  },
+  "releasedAt": "2026-11-08T23:46:23.985Z",
+  "releaseReason": "handoff"
 }
