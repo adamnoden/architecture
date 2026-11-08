@@ -9,8 +9,8 @@
     "label": "Architecture swarm 8 Nov 1106"
   },
   "claimedAt": "2026-11-08T11:07:06.468Z",
-  "heartbeatAt": "2026-11-08T11:07:06.468Z",
-  "expiresAt": "2026-11-08T11:52:06.468Z",
+  "heartbeatAt": "2026-11-08T11:14:23.131Z",
+  "expiresAt": "2026-11-08T11:59:23.131Z",
   "branch": "work/swarm-20261108-1106",
   "predecessor": {
     "leaseId": "f93475a5-c0f1-4a79-a3ce-c409daadfd87",
@@ -31,5 +31,10 @@
       "evidence": "Integrated source 6ce3f6a32c7e317dd5e94fd0e367c7d4b69a6d8b. All 24 structural regressions and 45 ordered structural producer checks pass with same-end moments. Adverse ratios 1.213/1.189; both widths fail. No selected geometry.",
       "next": "Wait for full exact-head Validate 42359532628, freshly preflight all four bound leases, merge and hand off continued STR-HOUSE research."
     }
+  },
+  "pr": 1390,
+  "checkpoint": {
+    "evidence": "PR #1390 at 3fa423269971f4b241183b07c90e3e603f24080a rules out uniform diameter changes in the existing foot cage at both widths. All 25 structural regressions pass.",
+    "next": "Verify full CI for this head, run publication preflight, merge and return STR-HOUSE to the dispatcher for a changed section or cage."
   }
 }
