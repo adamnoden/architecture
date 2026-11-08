@@ -9,8 +9,8 @@
     "label": "Publish reviewed utility-sink patch"
   },
   "claimedAt": "2026-11-08T23:17:30.385Z",
-  "heartbeatAt": "2026-11-08T23:17:30.385Z",
-  "expiresAt": "2026-11-09T00:02:30.385Z",
+  "heartbeatAt": "2026-11-08T23:19:35.576Z",
+  "expiresAt": "2026-11-09T00:04:35.576Z",
   "branch": "work/ias-sink-publish-20261108-2316",
   "predecessor": {
     "leaseId": "e3c29fa5-e7d2-4e70-b764-ba0095049859",
@@ -26,5 +26,10 @@
       "evidence": "Merged PR #1374 a0896ad683e8969169e41cf8c3c0395ec4a4e9c4. IAS predecessor #1372 and recovery #1375 both merged; 14 exact-head workflows, utility producers and coordinator review passed.",
       "next": "IAS-03 remains open: establish actual complete sink/trap/services cutover and supported receipt before the verified bare-frame first rest, then handling/export/return."
     }
+  },
+  "pr": 1397,
+  "checkpoint": {
+    "evidence": "The reviewed patch is published as PR #1397 at d9edbd86; the sink calculation and docs build pass locally.",
+    "next": "Verify CI 42534556008, reconcile any newer main and run fresh lease preflight before merging."
   }
 }
