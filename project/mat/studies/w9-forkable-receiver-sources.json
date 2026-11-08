@@ -120,7 +120,15 @@
         232
       ],
       "rimLength_mm": 864,
-      "rimRole": "Proposed vertical40high x6thick continuous welded rim OUTSIDE clear opening; no loose hatch. Plate underside220, rim bottom180; adds fabrication and a local load-path review, not a plate/foot/weld rating."
+      "rimRole": "Proposed vertical40high x6thick continuous welded rim OUTSIDE clear opening; no loose hatch. Plate underside220, rim bottom180; adds fabrication and a local load-path review, not a plate/foot/weld rating.",
+      "straightFrontTrial": {
+        "outboardLength_mm": 150,
+        "floorGap_mm": 10,
+        "verticalProfile_mm": 25,
+        "overheadGap_mm": 5,
+        "frontExtension_mm": 125,
+        "role": "Authored static gauge parallel faces 25 mm apart vertically, ending 150 mm outside the front face. These are comparison allowances, not native tool or hand dimensions."
+      }
     },
     "transverseBeamY_mm": [
       [

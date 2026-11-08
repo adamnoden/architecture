@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="1250" viewBox="0 0 1250 1250">
-<rect width="1250" height="1250" fill="#f4f1e9"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="1610" viewBox="0 0 1250 1610">
+<rect width="1250" height="1610" fill="#f4f1e9"/>
 <text x="35" y="43" font-size="28" fill="#21363b" font-family="Arial,sans-serif">A retained condensate service opening in the forkable receiver</text>
 <text x="35" y="76" font-size="19" fill="#21363b" font-family="Arial,sans-serif">Native UVLL dimensions joined to a priced, unadopted support proposal</text>
 <text x="35" y="119" font-size="21" fill="#21363b" font-family="Arial,sans-serif">Plan: authored receiver coordinates / native foot contacts still unknown</text>
@@ -54,4 +54,24 @@
 <text x="35" y="1124" font-size="17" fill="#21363b" font-family="Arial,sans-serif">12mm Cu connection is not a12mm-ID downstream line; actual transition, seals and float/setter constituents remain.</text>
 <text x="35" y="1158" font-size="17" fill="#21363b" font-family="Arial,sans-serif">No existing floor drain, sanitary/RWT/heat-pump receptor, floor/air/water closure or material exception is borrowed.</text>
 <text x="35" y="1220" font-size="19" fill="#8c402e" font-family="Arial,sans-serif">No apparatus, support, cleaning/handling pass, selected air target or MAT completion.</text>
+<text x="35" y="1280" font-size="24" fill="#21363b" font-family="Arial,sans-serif">Can a straight tool reach the cover from the room?</text>
+<text x="35" y="1312" font-size="18" fill="#21363b" font-family="Arial,sans-serif">Cover-axis section at the 103 mm drawing datum. The actual installed seat is unmeasured.</text>
+<rect x="213.54" y="1379.68" width="147.6" height="4.92" fill="#7e969c" stroke="#21363b"/>
+<rect x="213.54" y="1384.6" width="4.92" height="32.8" fill="#486e69" stroke="#21363b"/>
+<rect x="328.34" y="1384.6" width="32.8" height="65.6" fill="#7e969c" stroke="#21363b"/>
+<path d="M111.03999999999999,1379.68 L213.54,1379.68" stroke="#aa813d" fill="none"/>
+<rect x="111.03999999999999" y="1384.6" width="4.92" height="32.8" fill="#d4a766" stroke="#21363b"/>
+<path d="M52.0,1354.26 L484.14,1536.3" stroke="#21363b" fill="none"/>
+<path d="M52.0,1374.76 L484.14,1556.8" stroke="#21363b" fill="none"/>
+<path d="M52.0,1565.0 L504.14,1565.0" stroke="#21363b" fill="none"/>
+<text x="52.0" y="1347" font-size="15" fill="#21363b" font-family="Arial,sans-serif">Cover</text>
+<text x="52.0" y="1590" font-size="14" fill="#21363b" font-family="Arial,sans-serif">Cover axis</text>
+<text x="331.14" y="1590" font-size="14" fill="#21363b" font-family="Arial,sans-serif">Front face</text>
+<text x="452.14" y="1590" font-size="14" fill="#21363b" font-family="Arial,sans-serif">Tool end</text>
+<text x="570" y="1372" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Amber marks the present 40 mm rim. It blocks even a point</text>
+<text x="570" y="1402" font-size="17" fill="#21363b" font-family="Arial,sans-serif">approach above a 68.5 mm seat datum.</text>
+<text x="570" y="1452" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Moving the front rim 125 mm towards the room leaves</text>
+<text x="570" y="1482" font-size="17" fill="#21363b" font-family="Arial,sans-serif">6.0 mm above the trial profile at the rim and</text>
+<text x="570" y="1512" font-size="17" fill="#21363b" font-family="Arial,sans-serif">25.0 mm under the front crossbeam.</text>
+<text x="570" y="1562" font-size="17" fill="#21363b" font-family="Arial,sans-serif">Static pose only. Foot bearing and annual withdrawal remain open.</text>
 </svg>
