@@ -21,14 +21,24 @@ supplement_diameter=25
 supplement_cap=200  # MPa, tension only, with no compressive strength credit
 last_credited_station=1
 free_tip_station=12  # two thirds of the 18-element arc, measured from the L pier
-def central_bar_limits(capacity,cell,axial_lower,corner_fraction,adverse,stress_cap):
+def central_bar_limits(capacity,cell,axial_lower,corner_fraction,stress_cap,radial_offset,normal_offset):
     b,h=cell['b'],cell['h']
-    def least(breadth,depth,rows):
-        offsets=(-5,5) if adverse else (0,)
+    def least(breadth,depth,rows,offset):
+        offsets=(-offset,offset) if offset else (0,)
         return min(capacity(breadth,depth,*rows,n,reverse,corner_fraction,
                             (depth/2+offset,supplement_diameter,stress_cap))
                    for n in (axial_lower,axial_lower+2) for reverse in (False,True) for offset in offsets)
-    return least(b,h,cell['xs']),least(h,b,cell['ys'])
+    return least(b,h,cell['xs'],radial_offset),least(h,b,cell['ys'],normal_offset)
+
+def nominal_datum_challenge(capacity,cell,witness):
+    # Test the same load case with the bar positioned from the nominal datum.
+    # A 10 mm one-sided form loss moves the centre another 5 mm.
+    ratios={}
+    for name,radial,normal in [('radialOnly',10,5),('bothAxes',10,10)]:
+        rs,rw=central_bar_limits(capacity,cell,2*math.floor(witness['axialKN']/2),
+                                 witness['cornerYieldFraction'],supplement_cap,radial,normal)
+        ratios[name]=round(witness['strongDemandKNm']/rs+witness['weakDemandKNm']/rw,6)
+    return ratios
 
 controls=[]
 for width in (160,180):
@@ -134,7 +144,8 @@ for width in (160,180):
 
         @lru_cache(None)
         def arch_with_central_bar(axial_lower,adverse,fraction,stress_cap):
-            return central_bar_limits(capacity,cells[0,adverse],axial_lower,fraction,adverse,stress_cap)
+            offset=5 if adverse else 0
+            return central_bar_limits(capacity,cells[0,adverse],axial_lower,fraction,stress_cap,offset,offset)
 
         central_witnesses={}
         # Each internal station has two member ends. Keep the larger interaction.
@@ -227,6 +238,7 @@ for width in (160,180):
         if central_witnesses:
             row['centralH25Arch']={'governingEnds':central_witnesses,
                                    'adverseFourBarProfile':four_bar_profile,
+                                   'nominalDatumSensitivity':nominal_datum_challenge(capacity,cells[0,True],central_witnesses['adverse']),
                                    'adverseWithSupplementProfile':central_profile,
                                    'lastCreditedStation':last_credited_station,'freeTipStation':free_tip_station,
                                    'barDiameterMm':supplement_diameter,'stressCapMPa':supplement_cap}

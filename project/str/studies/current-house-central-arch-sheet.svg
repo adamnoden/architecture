@@ -125,5 +125,6 @@
 <circle cx="827.00" cy="487.00" r="3" fill="#006367" stroke="#006367" stroke-width="1"/>
 <text x="839.00" y="492.00" class="small" text-anchor="start">With central H25</text>
 <text x="631.00" y="516.00" class="small" text-anchor="start">Peak 1.189 → 0.992. Dashed line marks the 1.000 limit.</text>
-<text x="631.00" y="539.00" class="small" text-anchor="start">Each point is a sampled member end. Intermediate extrema remain open.</text>
+<text x="631.00" y="539.00" class="small" text-anchor="start">H25 within ±5 mm of the formed centre. Points are sampled ends.</text>
+<text x="631.00" y="563.00" class="small" text-anchor="start">Nominal setout with one-sided loss on both axes reaches 1.030.</text>
 </svg>

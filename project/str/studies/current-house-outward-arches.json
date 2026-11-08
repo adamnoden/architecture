@@ -817,6 +817,10 @@
               }
             },
             "lastCreditedStation": 1,
+            "nominalDatumSensitivity": {
+              "bothAxes": 0.780521,
+              "radialOnly": 0.774395
+            },
             "stressCapMPa": 200
           },
           "crackedEI": 0.2,
@@ -1077,6 +1081,10 @@
               }
             },
             "lastCreditedStation": 1,
+            "nominalDatumSensitivity": {
+              "bothAxes": 1.029721,
+              "radialOnly": 1.023787
+            },
             "stressCapMPa": 200
           },
           "crackedEI": 0.35,
@@ -1337,6 +1345,10 @@
               }
             },
             "lastCreditedStation": 1,
+            "nominalDatumSensitivity": {
+              "bothAxes": 0.702213,
+              "radialOnly": 0.697356
+            },
             "stressCapMPa": 200
           },
           "crackedEI": 0.2,
@@ -1597,6 +1609,10 @@
               }
             },
             "lastCreditedStation": 1,
+            "nominalDatumSensitivity": {
+              "bothAxes": 0.900966,
+              "radialOnly": 0.895281
+            },
             "stressCapMPa": 200
           },
           "crackedEI": 0.35,

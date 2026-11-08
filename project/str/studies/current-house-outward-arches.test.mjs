@@ -71,6 +71,9 @@ test('only the two near-pier stations require the central bar in the 180 mm mode
     p.adverseFourBarProfile.forEach((ratio, i) => governing[i] = Math.max(governing[i], ratio));
   }
   assert.deepEqual(governing.flatMap((ratio, i) => ratio > 1 ? [i] : []), [0, 1]);
+  const worst = Math.max(...control.coupled.map(r => r.centralH25Arch.nominalDatumSensitivity.radialOnly));
+  const both = Math.max(...control.coupled.map(r => r.centralH25Arch.nominalDatumSensitivity.bothAxes));
+  assert.ok(worst > 1 && both > worst);
   assert.ok(detail.baselineNominalSignedGapMm < 0 && detail.trialH20PlateauGapMm > 0);
   assert.ok(detail.nearBondLengthReserveMm > 0 && detail.nearBondLengthReserveMm < 5);
   assert.ok(detail.curveBondLengthReserveMm > 215);
