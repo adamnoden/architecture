@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 24,
-  "state": "released",
-  "leaseId": "3bcdc7ab-5d9d-4153-b3cc-2a65a3943d2a",
+  "generation": 25,
+  "state": "claimed",
+  "leaseId": "7a06fe0b-2fe9-4809-97d4-3475dac973fb",
   "holder": {
     "kind": "chatgpt",
-    "label": "rush-closeout-ias"
+    "label": "Ovid utility swarm Nov 8"
   },
-  "claimedAt": "2026-11-07T09:15:01.126Z",
-  "heartbeatAt": "2026-11-07T09:39:33.538Z",
-  "expiresAt": "2026-11-07T09:39:33.538Z",
-  "branch": "work/rush-closeout-mat-20261107",
+  "claimedAt": "2026-11-08T22:33:37.418Z",
+  "heartbeatAt": "2026-11-08T22:33:37.418Z",
+  "expiresAt": "2026-11-08T23:18:37.418Z",
+  "branch": "work/swarm-ias-20261108-2233",
   "predecessor": {
-    "leaseId": "243df4cc-2336-4946-b926-bfa82a32cfc7",
-    "generation": 23,
-    "branch": "work/zerg-20261106-ias-g14",
-    "pr": 1372,
+    "leaseId": "3bcdc7ab-5d9d-4153-b3cc-2a65a3943d2a",
+    "generation": 24,
+    "branch": "work/rush-closeout-mat-20261107",
+    "pr": 1374,
     "checkpoint": {
-      "evidence": "PR 1372 e2be05a9f85f232b17a6e3d92d136ea24d5ab2e6, revised frame and supported utility first-rest comparator. Local current and prior producer checks, cap mutation, repository/workflow and rendered review pass.",
-      "next": "Exact-head CI and independent root review. Keep actual sink/pipe/seat/wall/physical handling and later export open."
+      "evidence": "Merged PR #1374 a0896ad683e8969169e41cf8c3c0395ec4a4e9c4. IAS predecessor #1372 and recovery #1375 both merged; 14 exact-head workflows, utility producers and coordinator review passed.",
+      "next": "IAS-03 remains open: establish actual complete sink/trap/services cutover and supported receipt before the verified bare-frame first rest, then handling/export/return."
     }
   },
   "recoverySource": {
-    "leaseId": "243df4cc-2336-4946-b926-bfa82a32cfc7",
-    "generation": 23,
-    "branch": "work/zerg-20261106-ias-g14",
-    "pr": 1372,
+    "leaseId": "3bcdc7ab-5d9d-4153-b3cc-2a65a3943d2a",
+    "generation": 24,
+    "branch": "work/rush-closeout-mat-20261107",
+    "pr": 1374,
     "checkpoint": {
-      "evidence": "PR 1372 e2be05a9f85f232b17a6e3d92d136ea24d5ab2e6, revised frame and supported utility first-rest comparator. Local current and prior producer checks, cap mutation, repository/workflow and rendered review pass.",
-      "next": "Exact-head CI and independent root review. Keep actual sink/pipe/seat/wall/physical handling and later export open."
+      "evidence": "Merged PR #1374 a0896ad683e8969169e41cf8c3c0395ec4a4e9c4. IAS predecessor #1372 and recovery #1375 both merged; 14 exact-head workflows, utility producers and coordinator review passed.",
+      "next": "IAS-03 remains open: establish actual complete sink/trap/services cutover and supported receipt before the verified bare-frame first rest, then handling/export/return."
     }
-  },
-  "pr": 1374,
-  "checkpoint": {
-    "evidence": "Merged PR #1374 a0896ad683e8969169e41cf8c3c0395ec4a4e9c4. IAS predecessor #1372 and recovery #1375 both merged; 14 exact-head workflows, utility producers and coordinator review passed.",
-    "next": "IAS-03 remains open: establish actual complete sink/trap/services cutover and supported receipt before the verified bare-frame first rest, then handling/export/return."
-  },
-  "releasedAt": "2026-11-07T09:39:33.538Z",
-  "releaseReason": "handoff"
+  }
 }
