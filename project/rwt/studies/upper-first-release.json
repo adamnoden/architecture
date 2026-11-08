@@ -4512,6 +4512,56 @@
       "localGradeFor500AtFarthestSupport": -1840.8823529411766,
       "role": "The lower rail/arm is inside the fault-water envelope where it runs over the active E receiver. It needs a real wet/open drainage/inspection and load path or a revised support position. Grade is a local clearance comparison, not a revised whole-house datum, geotechnical or site finding."
     },
+    "bankSpanComparison": {
+      "bankX": [
+        12250,
+        14950
+      ],
+      "omittedSupportX": [
+        13500
+      ],
+      "receiverX": [
+        12500,
+        14500
+      ],
+      "headLengthX": 100,
+      "headToReceiverX": [
+        200,
+        400
+      ],
+      "planSpan": 2700,
+      "slopedSpan": 2700.18684474608,
+      "wheelPitch": 1550.1072627246015,
+      "rhs": [
+        160,
+        50,
+        5
+      ],
+      "cap": [
+        70,
+        12
+      ],
+      "grossI": 5816666.666666667,
+      "nominalTwoRailDryKg": 122.69649022526188,
+      "fullBoreWaterAndSteelNPerMm": 0.2817432,
+      "originalJoinedSingleWheelMm": 5.1372004472909225,
+      "singleWheelMm": 2.9967807290069404,
+      "twoWheelUpperMm": 3.6659894401497013,
+      "fullWetDeadLoadMm": 0.16763446738382254,
+      "totalDeflectionUpperMm": 3.8336239075335237,
+      "remainingFrom5Mm": 1.1663760924664763,
+      "bendingBoundKNm": 6.090105915367404,
+      "grossBendingStressBoundMPa": 83.76076903657173,
+      "oneBankDownBoundKn": 12.500750011488703,
+      "oneBankUpBoundKn": 5.703703703703704,
+      "ordinaryGapAfter5AtEast": 48.88235294117658,
+      "faultImmersionAfter5AtEast": 101.11764705882342,
+      "bearingZ": [
+        -1319.6470588235293,
+        -1351.4117647058824
+      ],
+      "accepted": false
+    },
     "wholeTrackAccepted": false
   },
   "operations": [
