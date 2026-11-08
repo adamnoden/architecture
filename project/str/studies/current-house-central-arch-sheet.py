@@ -36,11 +36,11 @@ tip = meta['freeTipStation']
 last = meta['lastCreditedStation']
 assert (meta['barDiameterMm'], tip, last) == (25, 12, 1)
 red, blue = '#a33328', '#006367'
-parts = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 576" width="1200" height="576" role="img" aria-labelledby="title desc">',
+parts = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" width="1200" height="1000" role="img" aria-labelledby="title desc">',
          '<title id="title">Corner window arch and central H25 bar</title>',
-         '<desc id="desc">Upper window elevation shows the partial arch bar, straight tangent and two clashes with the previous pier cage. Adjacent plot shows maximum bending interaction at 19 discrete stations, before and after adding the bar.</desc>',
+         '<desc id="desc">Upper window elevation and bending interaction at 19 stations. The plan below shows the nominal vertical return beside a guard sleeve. Tangent intervals show where a forged head meets existing steel.</desc>',
          '<style>text{font-family:Arial,Helvetica,sans-serif;fill:#152b31}.small{font-size:14px}.note{font-size:15px}.panel{font-size:20px;font-weight:bold}.tick{font-size:13px}</style>',
-         '<rect width="1200" height="576" fill="#fff"/>']
+         '<rect width="1200" height="1000" fill="#fff"/>']
 
 def line(x1,y1,x2,y2,colour='#899497',width=1,dash=None):
     dashed = f' stroke-dasharray="{dash}"' if dash else ''
@@ -131,6 +131,57 @@ label(631,516,f'Peak {max(old):.3f} → {max(new):.3f}. Dashed line marks the 1.
 label(631,539,'H25 within ±5 mm of the formed centre. Points are sampled ends.','small')
 challenge = max(row['nominalDatumSensitivity']['bothAxes'] for row in profiles)
 label(631,563,f'Nominal setout with one-sided loss on both axes reaches {challenge:.3f}.','small')
+
+detail = read('current-house-central-arch-detail')
+route, head = detail['verticalReturn'], detail['psbSingle25']
+line(32,587,1168,587)
+line(604,604,604,970,'#c6cdce')
+label(32,626,'03    Vertical return at the upper guard sleeve','panel')
+label(32,654,'Plan at Z 5570 mm. Bars and sleeve shown at nominal setout.','small')
+def plan(x,y):
+    return 50+1.38*(x-970), 676+1.38*(140-y)
+
+outer, inner = (control['geometry'][k] for k in ('outsideConcreteFace','insideConcreteFace'))
+def strip(xa,xb,fill):
+    poly([plan(xa,outer),plan(xb,outer),plan(xb,inner),plan(xa,inner)],'#8b999b',1,fill,'polygon')
+strip(970,1300,'#edf0ef')
+sleeve_r = next(s['sleeveOD']/2 for s in read('current-house-guard-bracket')['new']['formedSleeves']
+                if s['side']=='near')
+strip(route['sleeveX']-sleeve_r,route['sleeveX']+sleeve_r,'#c9d0d2')
+primary = read('current-house-ground-ties')['outer']['primaryBarXY']
+lanes = sorted({y for x,y in primary if x>140})
+for row in bars:
+    for y in lanes:
+        dot(*plan(contact['outsideInnerCoreFaces'][0]+row['upper'],y),1.38*10,'#566769','#34474a')
+arch_bars = read('current-house-arch-detail')['archBars']
+for leg in arch_bars['legs']:
+    for y in control['geometry']['normalH16Centres']:
+        dot(*plan(leg['startVertical'][0],y),1.38*arch_bars['diameter']/2,'#a9b6b7','#445a5e')
+dot(*plan(route['witness']['verticalX'],detail['normalLane']),1.38*meta['barDiameterMm']/2,blue,blue)
+label(53,946,'Dark grey H20 pier bars  ·  Light grey H16 arch tails','small')
+label(53,970,'Teal trial H25  ·  Grey strip through-wall guard sleeve','small')
+
+label(631,626,'04    Forged head on the straight tangent','panel')
+label(631,654,'One permitted setout. Distances follow the bar from the spring.','small')
+def chain(s):
+    return 655+s*1.32
+def interval(row,name,span,colour):
+    lo,hi=span
+    label(648,row-17,f'{name}  ·  {lo:.2f}–{hi:.2f} mm','small')
+    line(chain(lo),row,chain(hi),row,colour,8)
+    for value in span:
+        line(chain(value),row-7,chain(value),row+7,colour,1.4)
+interval(726,'Head positions checked',[head['firstPermittedStationMm'],head['lastStationIncludingHeadThicknessMm']],'#586c70')
+interval(793,'Head intersects H16',head['h16CollisionStationsMm'],red)
+interval(860,'Head intersects H20',head['h20CollisionStationsMm'],red)
+line(chain(0),897,chain(360),897)
+for station_mm in range(0,351,50):
+    x=chain(station_mm)
+    line(x,894,x,902)
+    label(x,920,str(station_mm),'tick','middle')
+lo,hi = head['h20CollisionStationsMm'][0],head['h16CollisionStationsMm'][1]
+label(648,949,f'The two obstructions overlap from {lo:.2f} to {hi:.2f} mm.','small')
+label(648,972,'Beyond the head allowance the straight shank reaches the H20.','small')
 parts.extend(['</svg>',''])
 svg='\n'.join(parts)
 out=args.output or Path(__file__).with_suffix('.svg')

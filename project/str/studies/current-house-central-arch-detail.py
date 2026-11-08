@@ -89,6 +89,110 @@ def pier_screen(bars):
                                        for n,m,_,p,i in ground['dem'])
     return {'ratio':ratio,'axialKN':n,'momentsKNm':moment,'corner':location,'wind':wind}
 
+# Alternative: turn the H25 down before it reaches the upright H20s. Only
+# straight length after the bend develops the bar. Its projection stays in the
+# widened band, so the same H16, H20 and through-sleeves face every such leg.
+def vertical_return():
+    h16 = min(detail['legs'], key=lambda leg: leg['startVertical'][0])
+    x16, top16 = h16['startVertical']
+    x20 = max(row['x'] for row in crossings)
+    sleeve_x = guard['tubeCentreXs']['near']
+    earliest_start = band_low + required
+    highest_tip = z0 - required
+    assert max(highest_tip, h16['endVertical'][1]) < min(guard['centreGlobalZ'])
+    assert min(earliest_start, top16) > max(guard['centreGlobalZ'])
+    assert x20 < x16 < sleeve_x < x0
+    assert abs(y0-outer_lane) < radii  # a route crossing X20 strikes the upright
+
+    # Apply the project's 25 mm placing comparison to parallel uprights only.
+    # A through-sleeve needs only positive separation. Keep all Y exact; each
+    # pair can independently experience the adverse relative error in X.
+    placing = 25
+    relative_x = 2 * read('current-house-jamb-placement')['barsAndFormAdverseSetout']
+    h16_radii = bar_r + detail['diameter']/2
+    dy16 = min(abs(y-y0) for y in geometry['normalH16Centres'])
+    pitch16 = math.sqrt((placing+h16_radii)**2 - dy16**2)
+    pitch20 = math.sqrt((placing+radii)**2 - (y0-outer_lane)**2)
+    sleeve_radii = bar_r + near_sleeve_d/2
+    # Right of X20, the nominal H16 exclusion already meets the H20 exclusion
+    # on its left; the only possible pocket lies to the right of the H16.
+    assert x20 + pitch20 > x16 - pitch16
+    assert x0 < sleeve_x + sleeve_radii
+    nominal = [x16+pitch16, sleeve_x-sleeve_radii]
+    adverse = [nominal[0]+relative_x, nominal[1]-relative_x]
+    witness_x = sum(nominal)/2
+
+    # One realizable nominal pocket rather than an arbitrary straight line.
+    # At the end of a circular turn the tangent is exactly vertical.
+    radius = 300
+    tangent = (x0-witness_x-radius*(1-dz))/dx
+    straight_start = z0-tangent*dz-radius*dx
+    straight = 650
+    assert tangent > 0 and straight-cut_tolerance > required
+    assert straight_start-straight-cut_tolerance > band_low
+    force = stress*bar_area/1000
+    return {
+        'minimumVerticalStartZ':earliest_start, 'maximumTipZ':highest_tip,
+        'h20X':x20, 'h16X':x16, 'sleeveX':sleeve_x,
+        'parallelPlacingMm':placing, 'perItemXToleranceMm':relative_x/2,
+        'h20RightLimitNominalMm':x20+pitch20, 'h16LeftLimitNominalMm':x16-pitch16,
+        'nominalPocketX':nominal, 'requiredPocketXAtTolerance':adverse,
+        'nominalPocketWidthMm':nominal[1]-nominal[0],
+        'perItemXToleranceCeilingMm':(nominal[1]-nominal[0])/4,
+        'witness':{
+            'verticalX':witness_x, 'centrelineRadiusMm':radius,
+            'initialTangentMm':tangent, 'verticalStartZ':straight_start,
+            'verticalEndZ':straight_start-straight, 'straightLengthMm':straight,
+            'h16ClearNominalMm':math.hypot(witness_x-x16,dy16)-h16_radii,
+            'sleeveClearNominalMm':sleeve_x-witness_x-sleeve_radii,
+            'h16ClearAtAdverseXMm':math.hypot(witness_x-x16-relative_x,dy16)-h16_radii,
+            'sleeveClearAtAdverseXMm':sleeve_x-witness_x-sleeve_radii-relative_x,
+        },
+        'bendDeviationKN':{'horizontalMagnitude':force*dx, 'verticalMagnitude':force*(1-dz),
+                           'resultant':force*math.hypot(dx,1-dz)},
+    }
+
+def forged_head():
+    # Peikko PSB Single 25, Technical Manual 03/2026 table 1 and
+    # ETA 21/0463 v03 annex 1. Station s is the full-diameter plane on the
+    # tangent beyond the spring, not the overall length of the headed bar.
+    head_r, thickness = 79/2, 13
+    min_station = 2*diameter
+    near20_x = max(row['x'] for row in crossings)
+    crossing_station = (x0-near20_x)/dx
+    last_station = crossing_station + thickness
+    h16 = min(detail['legs'], key=lambda leg: leg['startVertical'][0])
+
+    # ONE admissible card throughout. Positive radial offsets go left and up
+    # in elevation; normal offsets act independently through wall thickness.
+    head_x, head_y, head_z = x0-5*dz, y0-5, z0+5*dx
+    x16, y16 = h16['startVertical'][0]+2*dz, min(geometry['normalH16Centres'])+5
+    def collision_interval(x_bar, y_bar, upright_r, y_on_disk, half_chord, z_range):
+        assert y_on_disk**2 + half_chord**2 < head_r**2
+        # Chord and circular upright are cut by the same global Y plane.
+        bar_half_width = math.sqrt(upright_r**2-(head_y+y_on_disk-y_bar)**2)
+        reach = dz*half_chord + bar_half_width
+        limits = [(head_x-x_bar-reach)/dx, (head_x-x_bar+reach)/dx]
+        low, high = max(min_station, limits[0]), min(last_station, limits[1])
+        assert low < high
+        # The overlapping part cannot escape an upright end in elevation.
+        assert z_range[0] < head_z-high*dz-half_chord*dx
+        assert head_z-low*dz+half_chord*dx < z_range[1]
+        return limits
+
+    h16_interval = collision_interval(
+        x16, y16, detail['diameter']/2, -27, 28.8,
+        [h16['endVertical'][1]-2*dx, h16['startVertical'][1]-2*dx])
+    h20_interval = collision_interval(
+        near20_x, outer_lane, pier_diameter/2, -2, 39.4, [band_low, band_high])
+    return {
+        'headDiameterMm':2*head_r, 'headThicknessMm':thickness,
+        'firstPermittedStationMm':min_station, 'firstH20CrossingMm':crossing_station,
+        'lastStationIncludingHeadThicknessMm':last_station,
+        'h16CollisionStationsMm':h16_interval, 'h20CollisionStationsMm':h20_interval,
+        'meanAnnularPressureMPa':stress*bar_area/(math.pi*(head_r**2-bar_r**2)),
+    }
+
 result = {
     'role':'Unadopted trial. Near spring and first interior station only receive H25 strength credit.',
     'stationCount':intervals+1,'nearSpringXZ':[x0,z0],'normalLane':y0,'barRadiusInElevationMm':mid_radius,
@@ -111,6 +215,8 @@ result = {
     'outsideH10CoverAfter10FaceAnd5LinkMm':h10_cover-10-5,
     'historicalActionCount':len(ground['dem']),'momentDatumMm':ground['cent'],
     'pierOriginal':pier_screen(original),'pierRevised':pier_screen(revised),
+    'verticalReturn':vertical_return(),
+    'psbSingle25':forged_head(),
     'held':['Load transfer, in-arch bond and shear shift, bend forces and confinement.',
             'H20 cranks and transverse links, cover, concrete placing and durability at the actual crossings.',
             'Intermediate element extrema, cracked stiffness, paired pier actions and signed foundation delivery.'],
