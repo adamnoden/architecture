@@ -81,3 +81,20 @@ test('only the two near-pier stations require the central bar in the 180 mm mode
   assert.ok(detail.pierRevised.ratio < 1 && detail.historicalActionCount === 3072);
   assert.equal(detail.admitted, false);
 });
+
+test('the fully developed vertical H25 has a nominal pocket but no tolerance-safe lane', () => {
+  const route = study('central-arch-detail').verticalReturn;
+  const sleeves = study('window-receivers').guard.proposedContact.centreGlobalZ;
+  for (const z of sleeves) {
+    assert.ok(route.maximumTipZ < z && z < route.minimumVerticalStartZ);
+  }
+  assert.ok(route.h20RightLimitNominalMm > route.h16LeftLimitNominalMm);
+  const [left, right] = route.nominalPocketX;
+  const [adverseLeft, adverseRight] = route.requiredPocketXAtTolerance;
+  assert.ok(left < route.witness.verticalX && route.witness.verticalX < right);
+  assert.ok(adverseLeft > adverseRight);
+  assert.ok(route.perItemXToleranceCeilingMm > 1.41 && route.perItemXToleranceCeilingMm < 1.42);
+  assert.ok(route.witness.h16ClearNominalMm > route.parallelPlacingMm);
+  assert.ok(route.witness.h16ClearAtAdverseXMm < route.parallelPlacingMm);
+  assert.ok(route.witness.sleeveClearNominalMm > 0 && route.witness.sleeveClearAtAdverseXMm < 0);
+});

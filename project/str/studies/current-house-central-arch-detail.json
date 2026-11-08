@@ -87,5 +87,43 @@
   "stationCount": 19,
   "steelKgAcrossEight": 49.679183595831404,
   "trialH20PlateauGapMm": 6.5,
-  "trialH20RampGapMm": 23.651982023328046
+  "trialH20RampGapMm": 23.651982023328046,
+  "verticalReturn": {
+    "bendDeviationKN": {
+      "horizontalMagnitude": 46.19989196455575,
+      "resultant": 47.621758615497,
+      "verticalMagnitude": 11.549972991138937
+    },
+    "h16LeftLimitNominalMm": 1124.3882274018745,
+    "h16X": 1144.1176470588234,
+    "h20RightLimitNominalMm": 1124.4813792900975,
+    "h20X": 1077.5,
+    "maximumTipZ": 5424.021819254017,
+    "minimumVerticalStartZ": 5626.5664160401,
+    "nominalPocketWidthMm": 5.652933284227629,
+    "nominalPocketX": [
+      1163.8470667157724,
+      1169.5
+    ],
+    "parallelPlacingMm": 25,
+    "perItemXToleranceCeilingMm": 1.4132333210569072,
+    "perItemXToleranceMm": 5.0,
+    "requiredPocketXAtTolerance": [
+      1173.8470667157724,
+      1159.5
+    ],
+    "sleeveX": 1195.0,
+    "witness": {
+      "centrelineRadiusMm": 300,
+      "h16ClearAtAdverseXMm": 22.379485546762275,
+      "h16ClearNominalMm": 26.294957065225013,
+      "initialTangentMm": 6.756241614491389,
+      "sleeveClearAtAdverseXMm": -7.173533357886299,
+      "sleeveClearNominalMm": 2.826466642113701,
+      "straightLengthMm": 650,
+      "verticalEndZ": 5253.450375046036,
+      "verticalStartZ": 5903.450375046036,
+      "verticalX": 1166.6735333578863
+    }
+  }
 }
