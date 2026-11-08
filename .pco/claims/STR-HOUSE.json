@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 30,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "6c34004d-fbde-471e-870a-684b2ec423ae",
   "holder": {
     "kind": "chatgpt",
     "label": "Architecture constructive follow-up 8 Nov 1240"
   },
   "claimedAt": "2026-11-08T12:42:11.164Z",
-  "heartbeatAt": "2026-11-08T13:26:48.000Z",
-  "expiresAt": "2026-11-08T14:11:48.000Z",
+  "heartbeatAt": "2026-11-08T13:27:13.000Z",
+  "expiresAt": "2026-11-08T13:27:13.000Z",
   "branch": "work/swarm-str-20261108-1240",
   "predecessor": {
     "leaseId": "e33ebd32-d3b8-46de-b0a1-3c59a8c01551",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1391 at 901abc19. All 27 checks and preflight 42483968217 passed. Two stations need H25. Peak 0.992 as set out, 1.030 on nominal datum.",
     "next": "Resolve the 98.2 kN near-pier transfer, H20 cranks, cover, placing and signed reactions. Preserve the far jamb."
-  }
+  },
+  "releasedAt": "2026-11-08T13:27:13.000Z",
+  "releaseReason": "handoff"
 }
