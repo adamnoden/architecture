@@ -9,8 +9,8 @@
     "label": "Architecture constructive follow-up 8 Nov 1240"
   },
   "claimedAt": "2026-11-08T12:42:11.164Z",
-  "heartbeatAt": "2026-11-08T12:42:11.164Z",
-  "expiresAt": "2026-11-08T13:27:11.164Z",
+  "heartbeatAt": "2026-11-08T13:07:26.319Z",
+  "expiresAt": "2026-11-08T13:52:26.319Z",
   "branch": "work/swarm-str-20261108-1240",
   "predecessor": {
     "leaseId": "e33ebd32-d3b8-46de-b0a1-3c59a8c01551",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1390 at fb778029. Both fixed H6 cages reject uniform four-bar upsizing, 16.5 mm diameter cap and lower bounds above 1.021. Full exact-head Validate 42474837758 passed. Prior full programme remains open.",
       "next": "Change the section, cage termination or load path. Check actual crown-to-ring clearance and both arch ends, then join the revised reactions, anchorage and placing route. Preserve both failed width controls."
     }
+  },
+  "pr": 1391,
+  "checkpoint": {
+    "evidence": "PR #1391 at 53b27b90c363af4bb6445c0c1ec2f2fc8d4e8081. Only 2 of 19 arch stations exceed 1.000. Partial H25 gives 0.992 and stops at station 12. Near tangent/re-cage, physical clearance and signed pier limits documented. 26 structural regressions pass.",
+    "next": "Check full exact-head validation, preflight, merge and hand off near-pier anchorage, transverse cage and physical placing."
   }
 }
