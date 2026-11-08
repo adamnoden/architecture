@@ -28,14 +28,19 @@ def active(wind,a):
 
 from functools import lru_cache
 @lru_cache(None)
-def mr(rect_b,depth,face1,face2,axial,reverse,steel_fraction=.92):
+def mr(rect_b,depth,face1,face2,axial,reverse,steel_fraction=.92,extra_bar=None):
     if reverse:face1,face2=depth-face2,depth-face1
     steel=2*math.pi*16**2/4
+    limit=steel_fraction*500/1.15
+    layers=[(face1,steel,limit,limit),(face2,steel,limit,limit)]
+    if extra_bar:
+        position,diameter,stress_cap=extra_bar
+        layers.append((depth-position if reverse else position,math.pi*diameter**2/4,stress_cap,0.))
     def eval_at(x):
         width=min(depth,.8*x);F=17*width*rect_b;M=F*(depth/2-width/2)
-        for bar in [face1,face2]:
-            stress=max(-steel_fraction*500/1.15,min(steel_fraction*500/1.15,.0035*(1-bar/x)*200000))
-            n=steel*(stress-(17 if bar<width else 0));F+=n;M+=n*(depth/2-bar)
+        for bar,area,tension_limit,compression_limit in layers:
+            stress=max(-tension_limit,min(compression_limit,.0035*(1-bar/x)*200000))
+            n=area*(stress-(17 if bar<width else 0));F+=n;M+=n*(depth/2-bar)
         return F/1000,M/1e6
     low,high=.001,2500.
     for _ in range(30):

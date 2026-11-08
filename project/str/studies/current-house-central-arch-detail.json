@@ -1,0 +1,91 @@
+{
+  "admitted": false,
+  "barRadiusInElevationMm": 674.1666666666666,
+  "baselineNominalSignedGapMm": -15.5,
+  "constantLaneZ": [
+    5400,
+    5950
+  ],
+  "crankRisesMm": [
+    400.0,
+    250.0
+  ],
+  "curveAvailableFromLastCreditMm": 872.381066457817,
+  "curveBondLengthReserveMm": 245.81465041771673,
+  "cutStation": 12,
+  "cutToleranceMm": 10,
+  "existingH16CrossingGapMm": 5.5,
+  "held": [
+    "Load transfer, in-arch bond and shear shift, bend forces and confinement.",
+    "H20 cranks and transverse links, cover, concrete placing and durability at the actual crossings.",
+    "Intermediate element extrema, cracked stiffness, paired pier actions and signed foundation delivery."
+  ],
+  "historicalActionCount": 3072,
+  "lastCreditedStation": 1,
+  "momentDatumMm": 301.18279569892474,
+  "nearBondLengthReserveMm": 3.4335839598996927,
+  "nearEndNominalXZ": [
+    903.9705882352941,
+    5485.882352941176
+  ],
+  "nearGuardSleeveGapMm": 172.56374672920998,
+  "nearH12At600GapMm": 3.264705882352928,
+  "nearH20Crossings": [
+    {
+      "x": 1007.5,
+      "z": 5679.999999999999
+    },
+    {
+      "x": 1077.5,
+      "z": 5811.25
+    }
+  ],
+  "nearSpringXZ": [
+    1205.1470588235293,
+    6050.588235294117
+  ],
+  "nearTailMaxMm": 650,
+  "nearTailMinMm": 630,
+  "nominalCurveLengthMm": 971.554168264228,
+  "nominalH10CoverMm": 26.0,
+  "nominalStraightTailMm": 640,
+  "normalLane": 50.0,
+  "outerH20NormalLaneBeforeAfter": [
+    43,
+    6
+  ],
+  "outsideH10CoverAfter10FaceAnd5LinkMm": 11.0,
+  "pierOriginal": {
+    "axialKN": -125,
+    "corner": [
+      11667.5,
+      332.5
+    ],
+    "momentsKNm": [
+      394.37562906674566,
+      -337.67700745372537
+    ],
+    "ratio": 0.8284975993858051,
+    "wind": 31
+  },
+  "pierRevised": {
+    "axialKN": 210,
+    "corner": [
+      11667.5,
+      332.5
+    ],
+    "momentsKNm": [
+      320.32939250760586,
+      -418.5232440128651
+    ],
+    "ratio": 0.8128512793990041,
+    "wind": 31
+  },
+  "requiredBarForceKN": 98.17477042468103,
+  "requiredBondLengthMm": 626.5664160401003,
+  "role": "Unadopted trial. Near spring and first interior station only receive H25 strength credit.",
+  "stationCount": 19,
+  "steelKgAcrossEight": 49.679183595831404,
+  "trialH20PlateauGapMm": 6.5,
+  "trialH20RampGapMm": 23.651982023328046
+}

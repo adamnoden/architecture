@@ -50,3 +50,34 @@ test('the fixed foot excludes uniform bar upsizing at both arch widths', () => {
     assert.ok(row.interactionLowerBound > 1);
   }
 });
+
+test('only the two near-pier stations require the central bar in the 180 mm model', () => {
+  const control = study('outward-arches').controls.find(c => c.geometry.normalWidthNominal === 180);
+  const detail = study('central-arch-detail');
+  const {cutStation, lastCreditedStation, stationCount} = detail;
+  assert.ok(lastCreditedStation < cutStation && cutStation < stationCount - 1);
+  const governing = Array(stationCount).fill(0);
+  for (const row of control.coupled) {
+    const p = row.centralH25Arch;
+    assert.equal(p.freeTipStation, cutStation);
+    assert.equal(p.lastCreditedStation, lastCreditedStation);
+    assert.equal(p.adverseFourBarProfile.length, stationCount);
+    assert.equal(p.adverseWithSupplementProfile.length, stationCount);
+    assert.equal(Math.max(...p.adverseFourBarProfile), row.maximumSameStateActions.adverseRatio[0]);
+    assert.equal(Math.max(...p.adverseWithSupplementProfile), p.governingEnds.adverse.ratio);
+    assert.ok(p.governingEnds.adverse.ratio < 1);
+    assert.deepEqual(p.adverseWithSupplementProfile.slice(lastCreditedStation + 1),
+                     p.adverseFourBarProfile.slice(lastCreditedStation + 1));
+    p.adverseFourBarProfile.forEach((ratio, i) => governing[i] = Math.max(governing[i], ratio));
+  }
+  assert.deepEqual(governing.flatMap((ratio, i) => ratio > 1 ? [i] : []), [0, 1]);
+  const worst = Math.max(...control.coupled.map(r => r.centralH25Arch.nominalDatumSensitivity.radialOnly));
+  const both = Math.max(...control.coupled.map(r => r.centralH25Arch.nominalDatumSensitivity.bothAxes));
+  assert.ok(worst > 1 && both > worst);
+  assert.ok(detail.baselineNominalSignedGapMm < 0 && detail.trialH20PlateauGapMm > 0);
+  assert.ok(detail.nearBondLengthReserveMm > 0 && detail.nearBondLengthReserveMm < 5);
+  assert.ok(detail.curveBondLengthReserveMm > 215);
+  assert.ok(detail.nearH12At600GapMm > 0 && detail.nearH12At600GapMm < 5);
+  assert.ok(detail.pierRevised.ratio < 1 && detail.historicalActionCount === 3072);
+  assert.equal(detail.admitted, false);
+});
