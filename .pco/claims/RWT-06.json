@@ -9,8 +9,8 @@
     "label": "Ovid rainwater swarm 8 Nov 2223"
   },
   "claimedAt": "2026-11-08T22:23:52.364Z",
-  "heartbeatAt": "2026-11-08T22:30:50.245Z",
-  "expiresAt": "2026-11-08T23:15:50.245Z",
+  "heartbeatAt": "2026-11-08T22:50:49.309Z",
+  "expiresAt": "2026-11-08T23:35:49.309Z",
   "branch": "work/swarm-rwt-20261108-2223",
   "predecessor": {
     "leaseId": "ab36db2b-49a2-4e7e-8c92-74b2cf647951",
@@ -34,7 +34,7 @@
   },
   "pr": 1394,
   "checkpoint": {
-    "evidence": "PR 1394 head 47e3dfbc / tree eac4eb3e; two-bank span over E receiver, nine focused tests and changed section visual review passed.",
-    "next": "Verify exact-head Validate and fresh canonical preflight, integrate. Qualify bank seats, joints and wet rail before admission."
+    "evidence": "Merged PR #1394 at 9da10bd4. Bank span removes X13500 immersed support in the comparison. 175 RWT tests, rendered panel, exact-head Validate 42530573365 and canonical preflight at 22:49:49 UTC passed.",
+    "next": "Qualify bank seats and supported rail/keeper joints across both banks, delivered section stiffness and submerged rail protection. Preserve two-ended locks, upper handling, hydraulic, high-eave and site exits."
   }
 }
