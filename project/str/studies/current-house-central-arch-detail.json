@@ -81,6 +81,22 @@
     "ratio": 0.8128512793990041,
     "wind": 31
   },
+  "psbSingle25": {
+    "firstH20CrossingMm": 271.24999999999983,
+    "firstPermittedStationMm": 50,
+    "h16CollisionStationsMm": [
+      47.84006813566437,
+      185.28493186433533
+    ],
+    "h20CollisionStationsMm": [
+      166.74999999999963,
+      356.9999999999997
+    ],
+    "headDiameterMm": 79.0,
+    "headThicknessMm": 13,
+    "lastStationIncludingHeadThicknessMm": 284.24999999999983,
+    "meanAnnularPressureMPa": 22.257834757834758
+  },
   "requiredBarForceKN": 98.17477042468103,
   "requiredBondLengthMm": 626.5664160401003,
   "role": "Unadopted trial. Near spring and first interior station only receive H25 strength credit.",

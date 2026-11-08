@@ -152,6 +152,47 @@ def vertical_return():
                            'resultant':force*math.hypot(dx,1-dz)},
     }
 
+def forged_head():
+    # Peikko PSB Single 25, Technical Manual 03/2026 table 1 and
+    # ETA 21/0463 v03 annex 1. Station s is the full-diameter plane on the
+    # tangent beyond the spring, not the overall length of the headed bar.
+    head_r, thickness = 79/2, 13
+    min_station = 2*diameter
+    near20_x = max(row['x'] for row in crossings)
+    crossing_station = (x0-near20_x)/dx
+    last_station = crossing_station + thickness
+    h16 = min(detail['legs'], key=lambda leg: leg['startVertical'][0])
+
+    # ONE admissible card throughout. Positive radial offsets go left and up
+    # in elevation; normal offsets act independently through wall thickness.
+    head_x, head_y, head_z = x0-5*dz, y0-5, z0+5*dx
+    x16, y16 = h16['startVertical'][0]+2*dz, min(geometry['normalH16Centres'])+5
+    def collision_interval(x_bar, y_bar, upright_r, y_on_disk, half_chord, z_range):
+        assert y_on_disk**2 + half_chord**2 < head_r**2
+        # Chord and circular upright are cut by the same global Y plane.
+        bar_half_width = math.sqrt(upright_r**2-(head_y+y_on_disk-y_bar)**2)
+        reach = dz*half_chord + bar_half_width
+        limits = [(head_x-x_bar-reach)/dx, (head_x-x_bar+reach)/dx]
+        low, high = max(min_station, limits[0]), min(last_station, limits[1])
+        assert low < high
+        # The overlapping part cannot escape an upright end in elevation.
+        assert z_range[0] < head_z-high*dz-half_chord*dx
+        assert head_z-low*dz+half_chord*dx < z_range[1]
+        return limits
+
+    h16_interval = collision_interval(
+        x16, y16, detail['diameter']/2, -27, 28.8,
+        [h16['endVertical'][1]-2*dx, h16['startVertical'][1]-2*dx])
+    h20_interval = collision_interval(
+        near20_x, outer_lane, pier_diameter/2, -2, 39.4, [band_low, band_high])
+    return {
+        'headDiameterMm':2*head_r, 'headThicknessMm':thickness,
+        'firstPermittedStationMm':min_station, 'firstH20CrossingMm':crossing_station,
+        'lastStationIncludingHeadThicknessMm':last_station,
+        'h16CollisionStationsMm':h16_interval, 'h20CollisionStationsMm':h20_interval,
+        'meanAnnularPressureMPa':stress*bar_area/(math.pi*(head_r**2-bar_r**2)),
+    }
+
 result = {
     'role':'Unadopted trial. Near spring and first interior station only receive H25 strength credit.',
     'stationCount':intervals+1,'nearSpringXZ':[x0,z0],'normalLane':y0,'barRadiusInElevationMm':mid_radius,
@@ -175,6 +216,7 @@ result = {
     'historicalActionCount':len(ground['dem']),'momentDatumMm':ground['cent'],
     'pierOriginal':pier_screen(original),'pierRevised':pier_screen(revised),
     'verticalReturn':vertical_return(),
+    'psbSingle25':forged_head(),
     'held':['Load transfer, in-arch bond and shear shift, bend forces and confinement.',
             'H20 cranks and transverse links, cover, concrete placing and durability at the actual crossings.',
             'Intermediate element extrema, cracked stiffness, paired pier actions and signed foundation delivery.'],

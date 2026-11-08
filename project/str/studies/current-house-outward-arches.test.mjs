@@ -98,3 +98,14 @@ test('the fully developed vertical H25 has a nominal pocket but no tolerance-saf
   assert.ok(route.witness.h16ClearAtAdverseXMm < route.parallelPlacingMm);
   assert.ok(route.witness.sleeveClearNominalMm > 0 && route.witness.sleeveClearAtAdverseXMm < 0);
 });
+
+test('one permitted setout intercepts the PSB 25 head everywhere before its shank crosses the H20', () => {
+  const h = study('central-arch-detail').psbSingle25;
+  const [first16, last16] = h.h16CollisionStationsMm;
+  const [first20, last20] = h.h20CollisionStationsMm;
+  assert.equal(h.firstPermittedStationMm, 50);
+  assert.ok(first16 < h.firstPermittedStationMm);
+  assert.ok(first20 < last16 && last16 < h.firstH20CrossingMm);
+  assert.ok(last20 > h.lastStationIncludingHeadThicknessMm);
+  assert.equal(h.lastStationIncludingHeadThicknessMm - h.firstH20CrossingMm, h.headThicknessMm);
+});
