@@ -80,6 +80,19 @@
     "screenFreeFractionComparison": 0.5,
     "role": "Two opposed W/E geometric strips under the proposed common grid. The 50% fraction is an authored removable-screen requirement for comparison. No product, formed plinth opening, exposure or every-bay circulation is assumed."
   },
+  "ventMouth": {
+    "screenBorder_mm": 10,
+    "squareHole_mm": 5,
+    "holePitch_mm": 6.5,
+    "sillProjection_mm": 100,
+    "hoodProjectionToInnerSkirt_mm": 200,
+    "hoodSkirtThickness_mm": 2,
+    "outwardFallRunPerRise": 10,
+    "hoodRearUndersideAboveOpening_mm": 30,
+    "skirtBelowInnerSill_mm": 30,
+    "screenPullOut_mm": 100,
+    "role": "Authored removable metal screen and hood with continuous cheeks and a free outer drip. All dimensions are clear finished geometry except the named skirt thickness. No proprietary product, weather test or installed plinth is credited."
+  },
   "binderEvidence": {
     "product": "Cemex Portland, Rugby works, CEM I 52.5 N",
     "dop": "018-02090",

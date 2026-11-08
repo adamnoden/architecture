@@ -257,6 +257,75 @@ def vent_slices(control, had, grid, void):
     }
 
 
+def vent_mouths(control, vent, had, grid):
+    """Compare an externally removable screen and rain hood at each actual strip end."""
+    model = had['model']
+    low, high = vent['control']['z_mm']
+    west, east = vent['control']['westEastExtentX_mm']
+    bands = vent['control']['westEastBandsY_mm']
+    width = bands[0][1] - bands[0][0]
+    frame = control['screenBorder_mm']
+    hole, pitch = control['squareHole_mm'], control['holePitch_mm']
+    assert 0 < hole < pitch and frame > 0
+    counts = [1 + math.floor((dim - 2 * frame - hole) / pitch) for dim in (width, high - low)]
+    assert min(counts) > 0
+    screen_area = math.prod(counts) * hole**2
+    sill, skirt = control['sillProjection_mm'], control['hoodProjectionToInnerSkirt_mm']
+    thickness = control['hoodSkirtThickness_mm']
+    slope = control['outwardFallRunPerRise']
+    assert 0 < sill < skirt and slope > 0 and thickness > 0
+    # Downward-facing intake between the sill tip and inner skirt. The cowl sides
+    # are outside the clear width. The cap falls outward at the same slope.
+    cap_back = high + control['hoodRearUndersideAboveOpening_mm']
+    sill_tip = low - sill / slope
+    cap_front = cap_back - skirt / slope
+    skirt_foot = low - control['skirtBelowInnerSill_mm']
+    assert skirt_foot < sill_tip < low < high <= cap_front
+    throat = width * (skirt - sill)
+    limit = min(screen_area, throat)
+    screen_pull = control['screenPullOut_mm']
+    garden = model['gardenFailureBypass']['groundPathEnvelope']
+    receiver = model['rwtReceivingInterface']['east']['receiverBounds']
+    mouths = []
+    for face, x, direction, wall in [('west', west, -1, 'outer-W'), ('east', east, 1, 'outer-E')]:
+        beam = grid['girders'][wall]
+        beam_edge = beam['datum'] + direction * beam['width'] / 2
+        shell_x = 0 if face == 'west' else model['shell']
+        roof_x = shell_x + direction * model['exterior']['overhang']
+        roof_local = (roof_x - x) * direction
+        nose_x = x + direction * (skirt + thickness)
+        for name, (ya, yb) in zip(('front', 'rear'), bands, strict=True):
+            if face == 'west':
+                path_edges = [px + w for px, py, w, h in garden if py < yb and ya < py + h]
+                assert path_edges
+                separation = nose_x - max(path_edges)
+                neighbour = 'west garden bypass'
+            else:
+                _, ry, _, rh = receiver
+                separation = max(ry - yb, ya - ry - rh)
+                neighbour = 'east wet receiver (Y only)'
+            assert separation > 0 and (x - beam_edge) * direction > 0
+            mouths.append({'position': f'{face} {name}', 'screenX_mm': x, 'bandY_mm': [ya, yb],
+                           'noseX_mm': nose_x, 'outsideBeamFace_mm': (x - beam_edge) * direction,
+                           'roofEdgeX_mm': roof_x, 'roofEdgeFromScreen_mm': roof_local,
+                           'roofEdgeOverHood': 0 <= roof_local <= skirt + thickness,
+                           'neighbour': neighbour, 'planSeparation_mm': separation})
+    return {
+        'control': control, 'screenClearField_mm': [width - 2 * frame, high - low - 2 * frame],
+        'squareHoleCountXY': counts, 'netScreenAreaPerMouth_mm2': screen_area,
+        'downFacingClearDepth_mm': skirt - sill, 'downFacingAreaPerMouth_mm2': throat,
+        'minimumSerialAreaPerMouth_mm2': limit,
+        'fourClear_mm2': 4 * limit, 'oneBlocked_mm2': 3 * limit,
+        'weakerFaceOneBlocked_mm2': limit,
+        'throatDepthToMatchScreen_mm': screen_area / width,
+        'sillBackAndTipZ_mm': [low, sill_tip], 'hoodUndersideZ_mm': [cap_back, cap_front],
+        'skirtFootZ_mm': skirt_foot, 'skirtToTipVerticalOverlap_mm': sill_tip - skirt_foot,
+        'skirtFootAboveReferenceGrade_mm': skirt_foot - model['approaches']['authoredExteriorGrade'],
+        'screenPullAfterHoodRemoval_mm': screen_pull, 'mouths': mouths,
+        'scope': 'Clear areas of successive sections only. The smaller area bounds the geometric opening; pressure losses add. Wind-driven water, seams, debris, rebound, plinth support, outlet, service access, adjacent upper-deck supports and every-bay ventilation require separate evidence.',
+    }
+
+
 def void_comparison(had, grid, floor_area, slab_bottom, guidance):
     grade = had['model']['approaches']['authoredExteriorGrade']
     ground = had['groundEnvelope']
@@ -368,6 +437,7 @@ def produce():
                         'lowerInterfaceZ_mm': slab['bottom'], 'structuralPour': floor['pour'],
                         'structuralMaterialScope': floor['materials']},
         'guidance': guidance, 'voidComparison': void, 'ventSliceTrial': vent,
+        'ventMouthComparison': vent_mouths(control['ventMouth'], vent, had, grid),
         'proposedMonolithicCastUnion': cast_union(had, grid, floor, slab),
         'batchComparison': batch, 'binderEvidence': control['binderEvidence'], 'curingAndJoint': control['curingAndJoint'],
         'airAndCapillaryRegister': {
@@ -478,13 +548,54 @@ def figure(result):
     return ''.join(svg) + '\n'
 
 
+def mouth_figure(result):
+    vent = result['ventMouthComparison']
+    control = vent['control']
+    screen_bottom, sill_tip = vent['sillBackAndTipZ_mm']
+    _, screen_top = result['ventSliceTrial']['control']['z_mm']
+    cap_back, cap_front = vent['hoodUndersideZ_mm']
+    skirt_bottom = vent['skirtFootZ_mm']
+    sill, hood = control['sillProjection_mm'], control['hoodProjectionToInnerSkirt_mm']
+    eaves = vent['mouths'][0]['roofEdgeFromScreen_mm']
+    assert all(m['roofEdgeFromScreen_mm'] == eaves for m in vent['mouths'])
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540">
+<title>Section through the removable subfloor vent hood</title>
+<desc>Downward intake between a free sill drip and an outer skirt. The projected roof edge falls on the hood.</desc>
+<rect width="1000" height="540" fill="#faf9f4"/>
+<g font-family="Arial, sans-serif" fill="#233b45">
+<text x="35" y="43" font-size="26">Where rain meets the subfloor vent</text>
+<text x="35" y="74" font-size="16">West and east mouths · local section looking along the wall · dimensions in millimetres</text>
+<g transform="translate(145,-790) scale(1.16,-1.16)" stroke-linejoin="round">
+<path d="M -75 {screen_top} H 0 V {cap_back+42} H -75 Z M -75 {screen_bottom} H 0 V {screen_bottom-42} H -75 Z" fill="#ddd9ce"/>
+<path d="M 0 {cap_back} L {hood} {cap_front} V {skirt_bottom}" fill="none" stroke="#324955" stroke-width="4"/>
+<path d="M -60 {screen_bottom} H 0 L {sill} {sill_tip} v -4" fill="none" stroke="#324955" stroke-width="3"/>
+<path d="M 0 {screen_bottom} V {screen_top}" stroke="#324955" stroke-width="4" stroke-dasharray="3 3"/>
+<path d="M {eaves} {cap_back+48} V {cap_back-eaves/control['outwardFallRunPerRise']+3} l -4 7 m 4 -7 l 4 7" stroke="#9e5739" stroke-width="2.6" fill="none"/>
+<path d="M {hood-30} {skirt_bottom-45} V {screen_bottom+30} Q {hood-30} {screen_bottom+67} {hood-67} {screen_bottom+67} H -40 l 9 -4 m -9 4 l 9 4" stroke="#326c71" stroke-width="3" fill="none"/>
+</g>
+<text x="136" y="106" fill="#884b34" font-size="15">Projected roof drip</text>
+<text x="47" y="317" font-size="14">Floor void</text>
+<text x="203" y="469" font-size="15">Exterior air enters from below</text>
+<text x="480" y="148" font-size="19">The metal hood takes the drip</text>
+<text x="480" y="180" font-size="16">The roof edge projects {eaves:g} past the screen at all four mouths.</text>
+<text x="480" y="210" font-size="16">The cap and sill slope outwards at 1 in {control['outwardFallRunPerRise']:g}.</text>
+<text x="480" y="240" font-size="16">The skirt ends {vent['skirtToTipVerticalOverlap_mm']:g} below the sill tip.</text>
+<text x="480" y="307" font-size="19">Two restrictions in series</text>
+<text x="480" y="339" font-size="16">{vent['downFacingClearDepth_mm']:g} clear at the intake gives {vent['downFacingAreaPerMouth_mm2']:,} mm².</text>
+<text x="480" y="369" font-size="16">The framed screen reduces this to {vent['netScreenAreaPerMouth_mm2']:,} mm².</text>
+<text x="480" y="413" font-size="16">Remove the hood from outside to reach the screen.</text>
+<text x="35" y="514" font-size="14">Study geometry. Wind-driven rain, splash, discharge, framing and installed pressure loss require testing.</text>
+</g></svg>''' + '\n'
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
     result = produce()
     outputs = {HERE / f'{STEM}.results.json': json.dumps(result, indent=2, ensure_ascii=False) + '\n',
-               HERE / f'{STEM}.svg': figure(result)}
+               HERE / f'{STEM}.svg': figure(result),
+               HERE / 'subfloor-vent-mouth.svg': mouth_figure(result)}
     for path, contents in outputs.items():
         if args.check:
             assert path.exists() and path.read_text() == contents, f'Stale output: {path.name}'
