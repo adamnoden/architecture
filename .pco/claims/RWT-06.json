@@ -9,8 +9,8 @@
     "label": "RWT river crossing design"
   },
   "claimedAt": "2026-11-08T23:33:21.193Z",
-  "heartbeatAt": "2026-11-08T23:33:21.193Z",
-  "expiresAt": "2026-11-09T00:18:21.193Z",
+  "heartbeatAt": "2026-11-08T23:39:57.409Z",
+  "expiresAt": "2026-11-09T00:24:57.409Z",
   "branch": "work/swarm-rwt-2333",
   "predecessor": {
     "leaseId": "7bf6f0cc-ef65-4c58-b418-2dc1e295e26b",
@@ -26,5 +26,10 @@
       "evidence": "Merged PR #1394 at 9da10bd4. Bank span removes X13500 immersed support in the comparison. 175 RWT tests, rendered panel, exact-head Validate 42530573365 and canonical preflight at 22:49:49 UTC passed.",
       "next": "Qualify bank seats and supported rail/keeper joints across both banks, delivered section stiffness and submerged rail protection. Preserve two-ended locks, upper handling, hydraulic, high-eave and site exits."
     }
+  },
+  "pr": 1398,
+  "checkpoint": {
+    "evidence": "PR #1398 at bab194dc, 176 RWT tests and rendered spillway panel passed.",
+    "next": "Inspect exact-head CI, reconcile current main, run fresh publication preflight, integrate or preserve for recovery."
   }
 }
