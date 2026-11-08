@@ -37,6 +37,10 @@
       5886.194852941176
     ],
     "bendToH16At20DegOnSteelErrorCardMm": 22.3265463044483,
+    "bothThroatsOnOneSteelErrorCardMm": [
+      15.5,
+      15.5
+    ],
     "clearToH16LegMm": 25.640600530346696,
     "clearToH20LegMm": 26.0,
     "crankCentreRadiusMm": 400,
@@ -109,6 +113,10 @@
     ],
     "steelKgAcrossEight": 58.820983589876775,
     "tailBondUpwardKNPerArm": 98.17477042468103,
+    "tangentCrossingXZ": [
+      1144.1176470588234,
+      5936.158088235294
+    ],
     "tangentLengthMm": 186.31249999999983,
     "tipToCranksMm": 80.31249999999909,
     "verticalLaneIntervalX": [

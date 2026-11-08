@@ -4560,6 +4560,44 @@
         -1319.6470588235293,
         -1351.4117647058824
       ],
+      "crossing": {
+        "westRimX": 12500,
+        "westRimFaultDatum": -1250,
+        "westRimNominalInterference": 72.58823529411757,
+        "maximumCrossingDepthBeforeRimAllowance": 94.41176470588243,
+        "spill": [
+          14500,
+          6100,
+          1500,
+          1600
+        ],
+        "spillEdgeZ": -1300,
+        "faultZ": -1250,
+        "obstructedWidth": 100,
+        "remainingGrossWidth": 1500,
+        "eastHeadX": [
+          14900,
+          15000
+        ],
+        "sidePostY": [
+          6350,
+          7450
+        ],
+        "outerSeatX": 16500,
+        "spanBeyondSpill": 4250.294107470681,
+        "unchangedSingleWheelMm": 11.687737928678217,
+        "parkedEndX": 12450,
+        "parkedWheelNoseX": 12430,
+        "noseToSeam": 20,
+        "seamToWestRim": 50,
+        "parkedWheelArmX": 150,
+        "parkedWheelSignedMomentKNm": [
+          -0.6,
+          1.275
+        ],
+        "role": "Isolating E can remove temporary steel from its normal spillway, but cannot remove the fixed west retaining crest during a draw. A removable extension still needs a shallow supported crossing, finite joints and an independently available N route throughout. No hydraulic or lifting credit.",
+        "accepted": false
+      },
       "accepted": false
     },
     "wholeTrackAccepted": false

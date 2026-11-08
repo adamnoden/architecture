@@ -8,6 +8,7 @@ import subprocess
 from itertools import pairwise
 from pathlib import Path
 
+from court_wall_tray import compare_court_tray, tray_figure
 from subfloor_vent_path import compare_path
 
 HERE = Path(__file__).resolve().parent
@@ -475,6 +476,7 @@ def produce():
         'ventMouthComparison': vent_mouths(control['ventMouth'], vent, had, grid),
         'solumFallTrial': solum_fall(control['ventCrossing'], had, void),
         'ventCrossingPath': compare_path(control['ventCrossing'], had, grid, sources['RWTlowerTrack'], vent, void),
+        'courtWallTray': compare_court_tray(control['courtWallTray'], sources),
         'proposedMonolithicCastUnion': cast_union(had, grid, floor, slab),
         'batchComparison': batch, 'binderEvidence': control['binderEvidence'], 'curingAndJoint': control['curingAndJoint'],
         'airAndCapillaryRegister': {
@@ -699,7 +701,8 @@ if __name__ == '__main__':
     outputs = {HERE / f'{STEM}.results.json': json.dumps(result, indent=2, ensure_ascii=False) + '\n',
                HERE / f'{STEM}.svg': figure(result),
                HERE / 'subfloor-vent-mouth.svg': mouth_figure(result),
-               HERE / 'subfloor-vent-crossing.svg': path_figure(result)}
+               HERE / 'subfloor-vent-crossing.svg': path_figure(result),
+               HERE / 'court-wall-tray.svg': tray_figure(result['courtWallTray'])}
     for path, contents in outputs.items():
         if args.check:
             assert path.exists() and path.read_text() == contents, f'Stale output: {path.name}'

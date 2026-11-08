@@ -269,6 +269,14 @@ def in_plane_cage():
     assert leg16['endVertical'][1] < point[1] < leg16['startVertical'][1]
     admissible_gap = math.hypot(h16-point[0]-spacing_error,dy16-spacing_error)-bar_r-detail['diameter']/2
     assert admissible_gap < placing
+    # The tangent crosses both members of the H16 pair at the same X,Z.
+    # Bring each H16 in by its permitted 5 mm while leaving H25 nominal.
+    # This one configuration narrows BOTH local throats simultaneously.
+    cross_z = z0-(x0-h16)*dz/dx
+    assert bend_start[0] < h16 < x0 and leg16['endVertical'][1] < cross_z < leg16['startVertical'][1]
+    cold16,warm16 = geometry['normalH16Centres']
+    surfaces = bar_r + detail['diameter']/2
+    two_gaps = [y0-(cold16+spacing_error/2)-surfaces,(warm16-spacing_error/2)-y0-surfaces]
     force = stress*bar_area/1000
     # Tension pulls the bend towards the arch and down its tail. Each
     # developed tail pulls upwards on the pier. These are internal actions.
@@ -288,6 +296,7 @@ def in_plane_cage():
         'clearToH20LegMm':clear_to_leg(row20,dy20,pier_diameter),
         'bendAt20DegXZ':point,'bendToH16At20DegOnSteelErrorCardMm':admissible_gap,
         'steelKgAcrossEight':8*(tip*arc_step*mid_radius+tangent+radius*math.acos(dz)+tail)*bar_area*7850/1e9,
+        'tangentCrossingXZ':[h16,cross_z],'bothThroatsOnOneSteelErrorCardMm':two_gaps,
         'crossingH16NormalGapMm':dy16-allowance-bar_r-detail['diameter']/2,
         'minGuardSleeveGapMm':min(bend_sleeve_gap,leg_sleeve_gap),
         'pairedArmBendForcesLocalXYZkN':[[horizontal,0,-down],[0,horizontal,-down]],

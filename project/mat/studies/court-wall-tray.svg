@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="490" viewBox="0 0 1020 490">
+<title>South courtyard wall drainage beside the door</title>
+<rect width="1020" height="490" fill="#faf9f5"/><g font-family="sans-serif" fill="#243b40">
+<text x="32" y="40" font-size="25">South courtyard wall drainage beside the door</text>
+<text x="32" y="68" font-size="15">Two straight tray wings. Elevations in millimetres relative to the ground floor.</text>
+<text x="32" y="112" font-size="14">COURT FACE</text>
+<rect x="32" y="189.197" width="114.971" height="21.5571" fill="#eee1ce"/>
+<polyline points="32,187.76 146.971,187.76" fill="none" stroke="#176d74" stroke-width="2"/>
+<rect x="58.7429" y="183.76" width="4" height="5" fill="#176d74"/>
+<text x="46.7429" y="176.76" font-size="12">4450</text>
+<rect x="116.229" y="183.76" width="4" height="5" fill="#176d74"/>
+<text x="104.229" y="176.76" font-size="12">4850</text>
+<rect x="420.029" y="189.197" width="114.971" height="21.5571" fill="#eee1ce"/>
+<polyline points="420.029,187.76 535,187.76" fill="none" stroke="#176d74" stroke-width="2"/>
+<rect x="446.771" y="183.76" width="4" height="5" fill="#176d74"/>
+<text x="434.771" y="176.76" font-size="12">7150</text>
+<rect x="504.257" y="183.76" width="4" height="5" fill="#176d74"/>
+<text x="492.257" y="176.76" font-size="12">7550</text>
+<rect x="146.971" y="219" width="273.057" height="9" fill="#b0bdbe"/>
+<polyline points="32,228 535,228" fill="none" stroke="#243b40" stroke-width="1"/>
+<text x="209" y="190" font-size="15">Door and jamb aprons</text>
+<text x="178" y="253" font-size="15">Separate threshold grate</text>
+<text x="32" y="310" font-size="16">Four cleanable outlets discharge onto the landing.</text>
+<text x="32" y="340" font-size="15">Each wing has two low points and a closed end at each side.</text>
+<text x="32" y="369" font-size="15">The door pan and its removable grates keep their own routes.</text>
+<text x="592" y="112" font-size="14">SECTION AT ONE OUTLET</text>
+<rect x="734.2" y="251.5" width="63.55" height="82.5" fill="#eee1ce"/>
+<polyline points="797.75,400 972,400" fill="none" stroke="#243b40" stroke-width="2"/>
+<polyline points="635,149.75 635,234.862 734.2,240.362 797.75,246 800.85,246.275" fill="none" stroke="#176d74" stroke-width="3"/>
+<text x="643" y="150.75" font-size="15">+455 back turn</text>
+<text x="810.85" y="249" font-size="15">+280 weep</text>
+<text x="810.85" y="282.5" font-size="15">+120 to +270</text>
+<text x="810.85" y="302.5" font-size="15">compared DPC band</text>
+<text x="812.75" y="390" font-size="15">Landing 0</text>
+<text x="32" y="459" font-size="14">Straight-run comparison. End flashings, lower-wall wetting, masonry seating and installed drainage remain unresolved.</text>
+</g></svg>

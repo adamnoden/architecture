@@ -119,6 +119,7 @@ test('moving the pier end bars retains both barrier fixings and separates only t
   assert.ok(d.nearTailMinMm > d.requiredBondLengthMm);
   assert.ok(c.lowestTipZ > c.crankZ[1] && c.tipToCranksMm > 70);
   assert.ok(c.bendToH16At20DegOnSteelErrorCardMm < d.verticalReturn.parallelPlacingMm);
+  assert.ok(c.bothThroatsOnOneSteelErrorCardMm.every(gap => gap > 0 && gap < 16));
   assert.ok(c.pier.ratio > d.pierOriginal.ratio && c.pier.ratio < 1);
   const [[x, , z], [, y, zz]] = c.pairedArmBendForcesLocalXYZkN;
   assert.equal(x, y);
