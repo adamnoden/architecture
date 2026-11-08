@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 31,
-  "state": "released",
-  "leaseId": "3f88f41d-876d-4ade-ba9c-b03a36f1fb24",
+  "generation": 32,
+  "state": "claimed",
+  "leaseId": "064434de-951d-45ba-b8d1-9b76ea3972a6",
   "holder": {
     "kind": "chatgpt",
-    "label": "Ovid swarm 8 November 2218"
+    "label": "November structural coordination swarm"
   },
-  "claimedAt": "2026-11-08T22:19:27.670Z",
-  "heartbeatAt": "2026-11-08T23:06:59.335Z",
-  "expiresAt": "2026-11-08T23:06:59.335Z",
-  "branch": "work/swarm-20261108-2218",
+  "claimedAt": "2026-11-08T23:32:16.150Z",
+  "heartbeatAt": "2026-11-08T23:32:16.150Z",
+  "expiresAt": "2026-11-09T00:17:16.150Z",
+  "branch": "work/swarm-house-2332",
   "predecessor": {
-    "leaseId": "6c34004d-fbde-471e-870a-684b2ec423ae",
-    "generation": 30,
-    "branch": "work/swarm-str-20261108-1240",
-    "pr": 1391,
+    "leaseId": "3f88f41d-876d-4ade-ba9c-b03a36f1fb24",
+    "generation": 31,
+    "branch": "work/swarm-20261108-2218",
+    "pr": 1393,
     "checkpoint": {
-      "evidence": "Merged #1391 at 901abc19. All 27 checks and preflight 42483968217 passed. Two stations need H25. Peak 0.992 as set out, 1.030 on nominal datum.",
-      "next": "Resolve the 98.2 kN near-pier transfer, H20 cranks, cover, placing and signed reactions. Preserve the far jamb."
+      "evidence": "Merged #1393 at 7bf6c916, full CI 42532218710 and publication preflight passed. Vertical and forged-head routes fail the retained cage.",
+      "next": "Change the cage, guard load path or anchorage system, then rejoin placing, cover, confinement and signed reactions of both pier arms. See #1103."
     }
   },
   "recoverySource": {
-    "leaseId": "6c34004d-fbde-471e-870a-684b2ec423ae",
-    "generation": 30,
-    "branch": "work/swarm-str-20261108-1240",
-    "pr": 1391,
+    "leaseId": "3f88f41d-876d-4ade-ba9c-b03a36f1fb24",
+    "generation": 31,
+    "branch": "work/swarm-20261108-2218",
+    "pr": 1393,
     "checkpoint": {
-      "evidence": "Merged #1391 at 901abc19. All 27 checks and preflight 42483968217 passed. Two stations need H25. Peak 0.992 as set out, 1.030 on nominal datum.",
-      "next": "Resolve the 98.2 kN near-pier transfer, H20 cranks, cover, placing and signed reactions. Preserve the far jamb."
+      "evidence": "Merged #1393 at 7bf6c916, full CI 42532218710 and publication preflight passed. Vertical and forged-head routes fail the retained cage.",
+      "next": "Change the cage, guard load path or anchorage system, then rejoin placing, cover, confinement and signed reactions of both pier arms. See #1103."
     }
-  },
-  "pr": 1393,
-  "checkpoint": {
-    "evidence": "Merged #1393 at 7bf6c916, full CI 42532218710 and publication preflight passed. Vertical and forged-head routes fail the retained cage.",
-    "next": "Change the cage, guard load path or anchorage system, then rejoin placing, cover, confinement and signed reactions of both pier arms. See #1103."
-  },
-  "releasedAt": "2026-11-08T23:06:59.335Z",
-  "releaseReason": "handoff"
+  }
 }
