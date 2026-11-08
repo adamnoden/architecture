@@ -109,3 +109,19 @@ test('one permitted setout intercepts the PSB 25 head everywhere before its shan
   assert.ok(last20 > h.lastStationIncludingHeadThicknessMm);
   assert.equal(h.lastStationIncludingHeadThicknessMm - h.firstH20CrossingMm, h.headThicknessMm);
 });
+
+test('moving the pier end bars retains both barrier fixings and separates only the straight leg', () => {
+  const d = study('central-arch-detail');
+  const c = d.inPlaneCage;
+  assert.ok(c.verticalLaneIntervalX[0] < c.legX && c.legX < c.verticalLaneIntervalX[1]);
+  assert.ok(Math.min(c.clearToH16LegMm, c.clearToH20LegMm) >= d.verticalReturn.parallelPlacingMm);
+  assert.ok(c.minGuardSleeveGapMm > 0 && c.cranks.every(k => k.pinGapLowerBoundMm > 0));
+  assert.ok(d.nearTailMinMm > d.requiredBondLengthMm);
+  assert.ok(c.lowestTipZ > c.crankZ[1] && c.tipToCranksMm > 70);
+  assert.ok(c.bendToH16At20DegOnSteelErrorCardMm < d.verticalReturn.parallelPlacingMm);
+  assert.ok(c.pier.ratio > d.pierOriginal.ratio && c.pier.ratio < 1);
+  const [[x, , z], [, y, zz]] = c.pairedArmBendForcesLocalXYZkN;
+  assert.equal(x, y);
+  assert.equal(z, zz);
+  assert.ok(Math.abs(Math.hypot(x, z + c.tailBondUpwardKNPerArm) - d.requiredBarForceKN) < 1e-9);
+});

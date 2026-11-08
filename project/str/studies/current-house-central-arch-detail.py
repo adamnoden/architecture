@@ -33,6 +33,7 @@ bar_r = diameter/2
 tail, cut_tolerance = 640, 10
 longest = tail+cut_tolerance
 end_x = x0-dx*longest
+placing = 25  # parallel-bar comparison in the jamb placing study
 spacing_error = 10  # two independent 5 mm setout allowances per coordinate
 cast_shift = 5      # centred 10 mm section contraction for interference
 required = diameter*stress/(.95*4*2.1)
@@ -107,7 +108,6 @@ def vertical_return():
     # Apply the project's 25 mm placing comparison to parallel uprights only.
     # A through-sleeve needs only positive separation. Keep all Y exact; each
     # pair can independently experience the adverse relative error in X.
-    placing = 25
     relative_x = 2 * read('current-house-jamb-placement')['barsAndFormAdverseSetout']
     h16_radii = bar_r + detail['diameter']/2
     dy16 = min(abs(y-y0) for y in geometry['normalH16Centres'])
@@ -193,6 +193,107 @@ def forged_head():
         'meanAnnularPressureMPa':stress*bar_area/(math.pi*(head_r**2-bar_r**2)),
     }
 
+def in_plane_cage():
+    # Move the two end pairs along each arm, keeping the warm/cold lanes.
+    # The transition starts above the lower temporary barrier pin and ends
+    # below the H25 tip. Two equal circular bends meet a common straight.
+    upper = [station-50 for station in stations]
+    bottom, top = 4450, 5050
+    crank_radius = 400
+    height = top-bottom
+    renewal = read('current-house-window-renewal')['temporaryBarrier']
+    socket_x = renewal['postSocketsX'][0]
+    pin_rows = [row['z'] for row in renewal['coverAndBarChecks'] if row['socketX']==socket_x]
+    cranks = []
+    for row, new_station in zip(detail['upperLStations'], upper):
+        travel = row['station'] - new_station
+        # t = tan(theta/2) on the shallow branch of the tangent construction.
+        t = travel/(height+math.sqrt(height**2-travel*(4*crank_radius-travel)))
+        theta = 2*math.atan(t)
+        bend_rise = crank_radius*math.sin(theta)
+        assert 2*bend_rise < height
+        def offset(z):
+            u = min(height,max(0,z-bottom))
+            h = min(u,height-u)
+            if h < bend_rise:
+                bend_dx = crank_radius-math.sqrt(crank_radius**2-h**2)
+                return bend_dx if u < height/2 else travel-bend_dx
+            return u*math.tan(theta)-crank_radius*(1/math.cos(theta)-1)
+        # Expand vertically for both bar radii and the relative setout. Then
+        # bound the monotone centreline in X even at different elevations.
+        pin_radius, half_pin = 5, 25
+        z_margin = pin_radius+pier_diameter/2+spacing_error
+        pin_clear = min(origin+row['station']-offset(z+z_margin)-socket_x
+                        for z in pin_rows) - half_pin-z_margin
+        crank_force = ground['fy']*math.pi*pier_diameter**2/4000
+        cranks.append({'lowerStation':row['station'], 'upperStation':new_station,
+                       'angleDeg':math.degrees(theta), 'straightLengthMm':(height-2*bend_rise)/math.cos(theta),
+                       'barForceCapKN':crank_force, 'deviationPerBendAtCapKN':2*crank_force*math.sin(theta/2),
+                       'pinGapLowerBoundMm':pin_clear})
+    assert min(c['pinGapLowerBoundMm'] for c in cranks)>0
+
+    # An interval for the H25 leg under independent relative X/Y losses.
+    # Add 5 mm to the two opposed 5 mm steel errors for differential datum
+    # shift. This is a comparison even if the two bars share a form datum.
+    allowance = spacing_error + cast_shift
+    h16 = min(leg['startVertical'][0] for leg in detail['legs'])
+    row20 = origin+max(upper)
+    dy16 = min(abs(y0-y) for y in geometry['normalH16Centres'])
+    dy20 = min(abs(y0-y) for y in (outer_lane,inner_lane))
+    def needed_pitch(d, transverse):
+        clear = placing+(diameter+d)/2
+        return allowance+math.sqrt(clear**2-max(0,transverse-allowance)**2)
+    lane = [row20+needed_pitch(pier_diameter,dy20), h16-needed_pitch(detail['diameter'],dy16)]
+    x, radius = 1091, 225
+    assert lane[0] < x < lane[1]
+    tangent = (x0-x-radius*(1-dz))/dx
+    bend_start = [x0-tangent*dx,z0-tangent*dz]
+    bend_end_z = bend_start[1]-radius*dx
+    low_tip = bend_end_z-longest
+    assert tangent>0 and low_tip-top > placing+radii+allowance
+    # Interior of the arc and initial tangent lie on the opening side of
+    # the leg. Only the H16 can cross in elevation. Its normal separation
+    # applies along the entire bar; near/through-sleeves lie below the turn.
+    sleeve_z = max(guard['centreGlobalZ'])
+    bend_sleeve_gap = bend_end_z-sleeve_z-bar_r-near_sleeve_d/2-allowance
+    leg_sleeve_gap = guard['tubeCentreXs']['near']-x-bar_r-near_sleeve_d/2-allowance
+    def clear_to_leg(other_x, delta_y, d):
+        return math.hypot(max(0,abs(x-other_x)-allowance),max(0,delta_y-allowance))-(diameter+d)/2
+    # A point on the bend at 20 degrees to the vertical lies alongside
+    # the straight H16, well inside its actual finite height. Compare it
+    # on a single adverse placement card without any form shift.
+    beta = math.radians(20)
+    assert beta < math.acos(dz)
+    point = [x+radius*(1-math.cos(beta)),bend_end_z+radius*math.sin(beta)]
+    leg16 = min(detail['legs'],key=lambda leg:leg['startVertical'][0])
+    assert leg16['endVertical'][1] < point[1] < leg16['startVertical'][1]
+    admissible_gap = math.hypot(h16-point[0]-spacing_error,dy16-spacing_error)-bar_r-detail['diameter']/2
+    assert admissible_gap < placing
+    force = stress*bar_area/1000
+    # Tension pulls the bend towards the arch and down its tail. Each
+    # developed tail pulls upwards on the pier. These are internal actions.
+    horizontal, down = force*dx, force*(1-dz)
+    mandrel = 2*radius-diameter
+    # 2004 EC2 8.3(3), Eq 8.1, rearranged for ab on the historical C30
+    # comparison. This is a required input, not an assumed spacing or pass.
+    min_ab = 1/(mandrel*ground['fc']/(1000*force)-1/(2*diameter))
+    return {
+        'stationPairBefore':stations,'stationPairAfter':upper,'crankZ':[bottom,top],
+        'crankCentreRadiusMm':crank_radius,'cranks':cranks,'socketPinRowsZ':pin_rows,
+        'relativeXYAllowanceMm':allowance,'verticalLaneIntervalX':lane,
+        'legX':x,'bendStartXZ':bend_start,'bendEndXZ':[x,bend_end_z],
+        'bendRadiusMm':radius,'mandrelDiameterMm':mandrel,'bearingRequiredAbMm':min_ab,
+        'tangentLengthMm':tangent,'lowestTipZ':low_tip,'tipToCranksMm':low_tip-top,
+        'clearToH16LegMm':clear_to_leg(h16,dy16,detail['diameter']),
+        'clearToH20LegMm':clear_to_leg(row20,dy20,pier_diameter),
+        'bendAt20DegXZ':point,'bendToH16At20DegOnSteelErrorCardMm':admissible_gap,
+        'steelKgAcrossEight':8*(tip*arc_step*mid_radius+tangent+radius*math.acos(dz)+tail)*bar_area*7850/1e9,
+        'crossingH16NormalGapMm':dy16-allowance-bar_r-detail['diameter']/2,
+        'minGuardSleeveGapMm':min(bend_sleeve_gap,leg_sleeve_gap),
+        'pairedArmBendForcesLocalXYZkN':[[horizontal,0,-down],[0,horizontal,-down]],
+        'tailBondUpwardKNPerArm':force,'pier':pier_screen(ground['bars'](upper)),
+    }
+
 result = {
     'role':'Unadopted trial. Near spring and first interior station only receive H25 strength credit.',
     'stationCount':intervals+1,'nearSpringXZ':[x0,z0],'normalLane':y0,'barRadiusInElevationMm':mid_radius,
@@ -216,6 +317,7 @@ result = {
     'historicalActionCount':len(ground['dem']),'momentDatumMm':ground['cent'],
     'pierOriginal':pier_screen(original),'pierRevised':pier_screen(revised),
     'verticalReturn':vertical_return(),
+    'inPlaneCage':in_plane_cage(),
     'psbSingle25':forged_head(),
     'held':['Load transfer, in-arch bond and shear shift, bend forces and confinement.',
             'H20 cranks and transverse links, cover, concrete placing and durability at the actual crossings.',

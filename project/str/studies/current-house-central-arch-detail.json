@@ -21,6 +21,101 @@
     "Intermediate element extrema, cracked stiffness, paired pier actions and signed foundation delivery."
   ],
   "historicalActionCount": 3072,
+  "inPlaneCage": {
+    "bearingRequiredAbMm": 18.659067709104367,
+    "bendAt20DegXZ": [
+      1104.5691603231705,
+      5857.2670322482745
+    ],
+    "bendEndXZ": [
+      1091,
+      5780.312499999999
+    ],
+    "bendRadiusMm": 225,
+    "bendStartXZ": [
+      1117.4705882352941,
+      5886.194852941176
+    ],
+    "bendToH16At20DegOnSteelErrorCardMm": 22.3265463044483,
+    "clearToH16LegMm": 25.640600530346696,
+    "clearToH20LegMm": 26.0,
+    "crankCentreRadiusMm": 400,
+    "crankZ": [
+      4450,
+      5050
+    ],
+    "cranks": [
+      {
+        "angleDeg": 18.179342029774915,
+        "barForceCapKN": 125.66370614359175,
+        "deviationPerBendAtCapKN": 39.7047193863381,
+        "lowerStation": 850,
+        "pinGapLowerBoundMm": 6.641918969739891,
+        "straightLengthMm": 368.81567211820055,
+        "upperStation": 695
+      },
+      {
+        "angleDeg": 22.899379424921015,
+        "barForceCapKN": 125.66370614359175,
+        "deviationPerBendAtCapKN": 49.890352474403905,
+        "lowerStation": 950,
+        "pinGapLowerBoundMm": 92.11201887308152,
+        "straightLengthMm": 313.40867888429636,
+        "upperStation": 765
+      }
+    ],
+    "crossingH16NormalGapMm": 5.5,
+    "legX": 1091,
+    "lowestTipZ": 5130.312499999999,
+    "mandrelDiameterMm": 425,
+    "minGuardSleeveGapMm": 63.5,
+    "pairedArmBendForcesLocalXYZkN": [
+      [
+        46.19989196455575,
+        0,
+        -11.549972991138937
+      ],
+      [
+        0,
+        46.19989196455575,
+        -11.549972991138937
+      ]
+    ],
+    "pier": {
+      "axialKN": -125,
+      "corner": [
+        11667.5,
+        332.5
+      ],
+      "momentsKNm": [
+        394.37562906674566,
+        -337.67700745372537
+      ],
+      "ratio": 0.8747829214770143,
+      "wind": 31
+    },
+    "relativeXYAllowanceMm": 15,
+    "socketPinRowsZ": [
+      4400,
+      4720
+    ],
+    "stationPairAfter": [
+      695,
+      765
+    ],
+    "stationPairBefore": [
+      745,
+      815
+    ],
+    "steelKgAcrossEight": 58.820983589876775,
+    "tailBondUpwardKNPerArm": 98.17477042468103,
+    "tangentLengthMm": 186.31249999999983,
+    "tipToCranksMm": 80.31249999999909,
+    "verticalLaneIntervalX": [
+      1090.0,
+      1091.7779898563263
+    ]
+  },
   "lastCreditedStation": 1,
   "momentDatumMm": 301.18279569892474,
   "nearBondLengthReserveMm": 3.4335839598996927,
