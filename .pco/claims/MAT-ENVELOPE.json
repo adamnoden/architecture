@@ -9,8 +9,8 @@
     "label": "Ovid materials 2234"
   },
   "claimedAt": "2026-11-08T22:38:01.030Z",
-  "heartbeatAt": "2026-11-08T22:38:01.030Z",
-  "expiresAt": "2026-11-08T23:23:01.030Z",
+  "heartbeatAt": "2026-11-08T22:45:57.822Z",
+  "expiresAt": "2026-11-08T23:30:57.822Z",
   "branch": "work/swarm-materials-20261108-2234",
   "predecessor": {
     "leaseId": "78600113-2728-4bdf-881f-fdae1c7edf65",
@@ -31,5 +31,10 @@
       "evidence": "Successor #1374 merged a0896ad683e8969169e41cf8c3c0395ec4a4e9c4 with predecessor #1371 in ancestry. Verified test:mat, independent geometric sweep, support-locus caption, 14 exact-head workflows and canonical preflight. The ordinary RC floor boundary is a research comparison.",
       "next": "Develop the floor-to-wall junction through actual court outlets, pierced returns and drained vent openings. Establish connected every-bay ventilation, solum drainage, delivered batch/cure and installed air/moisture performance before assembly admission."
     }
+  },
+  "pr": 1395,
+  "checkpoint": {
+    "evidence": "PR #1395 at 14be8efe draws the four real exterior mouths and reproduces their serial restrictions; local test:mat and section inspection passed",
+    "next": "Integrate the closed-loggia topology and challenge the lowered gallery crossing against the selected and upper-first moving rail. Then validate and merge."
   }
 }
