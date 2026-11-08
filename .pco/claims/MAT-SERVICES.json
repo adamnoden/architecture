@@ -9,8 +9,8 @@
     "label": "Service cable termination and renewal geometry"
   },
   "claimedAt": "2026-11-08T23:41:36.917Z",
-  "heartbeatAt": "2026-11-08T23:41:36.917Z",
-  "expiresAt": "2026-11-09T00:26:36.917Z",
+  "heartbeatAt": "2026-11-08T23:47:24.729Z",
+  "expiresAt": "2026-11-09T00:32:24.729Z",
   "branch": "work/mat-services-bare-cable-2341",
   "predecessor": {
     "leaseId": "a4dcf1e5-a25d-4573-bca4-31ab1d8caed9",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1395 at ab6297f1, preserving #1396 head 21d9da0f. All 14 workflows passed; canonical preflight at 23:28:03 UTC. A 68.49 mm seat bound rules out the straight front approach on the nominal drawing datum; 125 mm extension clears only the finite static gauge.",
       "next": "Measure actual foot/capture patches and seat, then prove supported cover rotation, withdrawal, finite catch and reassembly with independently supported discharge before cutting the enlarged aperture."
     }
+  },
+  "pr": 1401,
+  "checkpoint": {
+    "evidence": "PR #1401 fb491e04 reproduces the north-west study bend at a 7.26 mm diagonal reserve and a 15 mm offset failure. Local test:mat passed.",
+    "next": "Join its exact parent into coordinated PR #1400, verify the combined head and lease during publication, reconcile and release."
   }
 }
