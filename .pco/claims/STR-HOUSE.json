@@ -9,8 +9,8 @@
     "label": "Architecture swarm 8 Nov 1106"
   },
   "claimedAt": "2026-11-08T11:07:06.468Z",
-  "heartbeatAt": "2026-11-08T11:14:23.131Z",
-  "expiresAt": "2026-11-08T11:59:23.131Z",
+  "heartbeatAt": "2026-11-08T11:29:41.006Z",
+  "expiresAt": "2026-11-08T12:14:41.006Z",
   "branch": "work/swarm-20261108-1106",
   "predecessor": {
     "leaseId": "f93475a5-c0f1-4a79-a3ce-c409daadfd87",
@@ -34,7 +34,7 @@
   },
   "pr": 1390,
   "checkpoint": {
-    "evidence": "PR #1390 at 3fa423269971f4b241183b07c90e3e603f24080a rules out uniform diameter changes in the existing foot cage at both widths. All 25 structural regressions pass.",
-    "next": "Verify full CI for this head, run publication preflight, merge and return STR-HOUSE to the dispatcher for a changed section or cage."
+    "evidence": "Merged #1390 at fb778029. Both fixed H6 cages reject uniform four-bar upsizing, 16.5 mm diameter cap and lower bounds above 1.021. Full exact-head Validate 42474837758 passed. Prior full programme remains open.",
+    "next": "Change the section, cage termination or load path. Check actual crown-to-ring clearance and both arch ends, then join the revised reactions, anchorage and placing route. Preserve both failed width controls."
   }
 }
