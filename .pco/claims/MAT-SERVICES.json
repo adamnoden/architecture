@@ -9,8 +9,8 @@
     "label": "Ovid services swarm 8 November 2238"
   },
   "claimedAt": "2026-11-08T22:38:41.752Z",
-  "heartbeatAt": "2026-11-08T22:47:29.933Z",
-  "expiresAt": "2026-11-08T23:32:29.933Z",
+  "heartbeatAt": "2026-11-08T22:52:52.105Z",
+  "expiresAt": "2026-11-08T23:37:52.105Z",
   "branch": "work/swarm-mat-services-20261108-2238",
   "predecessor": {
     "leaseId": "15f87c10-17da-411d-9639-1f568c0fb341",
@@ -34,7 +34,7 @@
   },
   "pr": 1396,
   "checkpoint": {
-    "evidence": "PR #1396 at 219a9016. Material suite and independent section check passed. Front service exclusion above 68.49 mm, 125 mm extension tested at nominal datum.",
-    "next": "Verify exact-head CI and fresh merge preflight, integrate, then test actual foot positions and complete supported cleaning and tail release."
+    "evidence": "PR #1396 head 21d9da0f/tree 55bf47ad includes merged #1394. The 68.49mm threshold and 125mm aperture comparison reproduced on this head; material and individual repository checks passed.",
+    "next": "Observe full Validate run 42532299328, check main, run canonical preflight and integrate. Actual foot contact, extraction and independently supported discharge remain open."
   }
 }
