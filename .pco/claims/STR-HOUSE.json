@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 28,
-  "state": "released",
-  "leaseId": "f93475a5-c0f1-4a79-a3ce-c409daadfd87",
+  "generation": 29,
+  "state": "claimed",
+  "leaseId": "e33ebd32-d3b8-46de-b0a1-3c59a8c01551",
   "holder": {
     "kind": "chatgpt",
-    "label": "rush-closeout-20261107-str"
+    "label": "Architecture swarm 8 Nov 1106"
   },
-  "claimedAt": "2026-11-07T09:14:50.673Z",
-  "heartbeatAt": "2026-11-07T09:39:20.489Z",
-  "expiresAt": "2026-11-07T09:39:20.489Z",
-  "branch": "work/rush-closeout-mat-20261107",
+  "claimedAt": "2026-11-08T11:07:06.468Z",
+  "heartbeatAt": "2026-11-08T11:07:06.468Z",
+  "expiresAt": "2026-11-08T11:52:06.468Z",
+  "branch": "work/swarm-20261108-1106",
   "predecessor": {
-    "leaseId": "90e5118e-258e-4d50-a157-c1cb222bff0b",
-    "generation": 27,
-    "branch": "work/zerg-20261107-str-house6",
-    "pr": 1373,
+    "leaseId": "f93475a5-c0f1-4a79-a3ce-c409daadfd87",
+    "generation": 28,
+    "branch": "work/rush-closeout-mat-20261107",
+    "pr": 1374,
     "checkpoint": {
-      "evidence": "PR1373 real negative width checkpoint58d2d21d4cd40df4f6ea0a51c64266d9343516f5/tree89b2ce418c23c8928664cdb489442ee485f99d34;24tests/kernel/eightresponsecontrols/render passed;full45producer suite running",
-      "next": "Review failed160/180 actual-cell controls; isolate governing arch bending and price one ordinary correction with true development/soffit/cage; no selection"
+      "evidence": "Integrated source 6ce3f6a32c7e317dd5e94fd0e367c7d4b69a6d8b. All 24 structural regressions and 45 ordered structural producer checks pass with same-end moments. Adverse ratios 1.213/1.189; both widths fail. No selected geometry.",
+      "next": "Wait for full exact-head Validate 42359532628, freshly preflight all four bound leases, merge and hand off continued STR-HOUSE research."
     }
   },
   "recoverySource": {
-    "leaseId": "90e5118e-258e-4d50-a157-c1cb222bff0b",
-    "generation": 27,
-    "branch": "work/zerg-20261107-str-house6",
-    "pr": 1373,
+    "leaseId": "f93475a5-c0f1-4a79-a3ce-c409daadfd87",
+    "generation": 28,
+    "branch": "work/rush-closeout-mat-20261107",
+    "pr": 1374,
     "checkpoint": {
-      "evidence": "PR1373 real negative width checkpoint58d2d21d4cd40df4f6ea0a51c64266d9343516f5/tree89b2ce418c23c8928664cdb489442ee485f99d34;24tests/kernel/eightresponsecontrols/render passed;full45producer suite running",
-      "next": "Review failed160/180 actual-cell controls; isolate governing arch bending and price one ordinary correction with true development/soffit/cage; no selection"
+      "evidence": "Integrated source 6ce3f6a32c7e317dd5e94fd0e367c7d4b69a6d8b. All 24 structural regressions and 45 ordered structural producer checks pass with same-end moments. Adverse ratios 1.213/1.189; both widths fail. No selected geometry.",
+      "next": "Wait for full exact-head Validate 42359532628, freshly preflight all four bound leases, merge and hand off continued STR-HOUSE research."
     }
-  },
-  "pr": 1374,
-  "checkpoint": {
-    "evidence": "Integrated source 6ce3f6a32c7e317dd5e94fd0e367c7d4b69a6d8b. All 24 structural regressions and 45 ordered structural producer checks pass with same-end moments. Adverse ratios 1.213/1.189; both widths fail. No selected geometry.",
-    "next": "Wait for full exact-head Validate 42359532628, freshly preflight all four bound leases, merge and hand off continued STR-HOUSE research."
-  },
-  "releasedAt": "2026-11-07T09:39:20.489Z",
-  "releaseReason": "handoff"
+  }
 }
