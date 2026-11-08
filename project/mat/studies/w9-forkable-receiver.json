@@ -57,7 +57,7 @@
       "pages": "1 native12mm Cu compression connections and float/setter/cover;2 dimensioned assembly, annual underside service and discharge limits"
     }
   ],
-  "sourceExtractSHA256": "3df335d2f3bce2d9db1970ace5c2802a6c5c72f977bc9fe04c155a071b4c053f",
+  "sourceExtractSHA256": "b939f515567f271801db6725a8e4f803cb0857356b66847cbe5a379d7bbc452c",
   "currentHADReview": {
     "path": "project/had/studies/water-replan.json",
     "blob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
@@ -136,7 +136,15 @@
           232
         ],
         "rimLength_mm": 864,
-        "rimRole": "Proposed vertical40high x6thick continuous welded rim OUTSIDE clear opening; no loose hatch. Plate underside220, rim bottom180; adds fabrication and a local load-path review, not a plate/foot/weld rating."
+        "rimRole": "Proposed vertical40high x6thick continuous welded rim OUTSIDE clear opening; no loose hatch. Plate underside220, rim bottom180; adds fabrication and a local load-path review, not a plate/foot/weld rating.",
+        "straightFrontTrial": {
+          "outboardLength_mm": 150,
+          "floorGap_mm": 10,
+          "verticalProfile_mm": 25,
+          "overheadGap_mm": 5,
+          "frontExtension_mm": 125,
+          "role": "Authored static gauge parallel faces 25 mm apart vertically, ending 150 mm outside the front face. These are comparison allowances, not native tool or hand dimensions."
+        }
       },
       "transverseBeamY_mm": [
         [
@@ -297,6 +305,34 @@
     "nativeInletToBodyAxis_mm": 98,
     "nativeBodyHeight_mm": 56,
     "datum": "Let d be ACTUAL unit-bottom height above receiver top after native base seating and foot adjustment. Native base123/feet15..50 and illustrated assembled1417 do not establish d by addition. No installed d selected.",
+    "frontServiceSection": {
+      "coverAxisY_mm": 220,
+      "existingFrontRimY_mm": 292,
+      "receiverFrontY_mm": 597,
+      "coverZAboveFloorBeforeSeat_mm": 154,
+      "zeroThicknessMaximumSeatDatum_mm": 68.49180327868854,
+      "nominalDrawingDatumSensitivity_mm": 103,
+      "sensitivityCoverZ_mm": 257,
+      "idealPointClashAtExistingRim_mm": 27.917771883289134,
+      "outboardTrial": {
+        "outboardLength_mm": 150,
+        "floorGap_mm": 10,
+        "verticalProfile_mm": 25,
+        "overheadGap_mm": 5,
+        "frontExtension_mm": 125,
+        "role": "Authored static gauge parallel faces 25 mm apart vertically, ending 150 mm outside the front face. These are comparison allowances, not native tool or hand dimensions."
+      },
+      "outerEndY_mm": 747,
+      "outerEndTopZ_mm": 35,
+      "existingTrialClash_mm": 46.66982922201137,
+      "minimumForwardExtensionForTrial_mm": 122.65765765765764,
+      "revisedFrontRimY_mm": 417,
+      "revisedRimUndersideGap_mm": 5.986717267552194,
+      "frontBeamUndersideGap_mm": 24.962049335863384,
+      "revisedRimToBeamPlanGap_mm": 134,
+      "idealFixtureMassChange_kg": -0.72,
+      "scope": "Static section sensitivity at a drawing datum, through the receiver front to the cover axis. Actual seat, cover torque, extraction, tools, person, pipe and native base are unqualified. The longer opening is a separate comparison. The original receiver mass and strength studies retain their original aperture."
+    },
     "fullPlateNegativeControl": {
       "coverAbovePlateExpression": "d -72",
       "afterRaisingReceiverExpression": "(receiverHeight+d-72)-receiverHeight = d-72",
