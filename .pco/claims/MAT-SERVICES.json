@@ -9,8 +9,8 @@
     "label": "Ovid services swarm 8 November 2238"
   },
   "claimedAt": "2026-11-08T22:38:41.752Z",
-  "heartbeatAt": "2026-11-08T23:08:29.307Z",
-  "expiresAt": "2026-11-08T23:53:29.307Z",
+  "heartbeatAt": "2026-11-08T23:29:06.525Z",
+  "expiresAt": "2026-11-09T00:14:06.525Z",
   "branch": "work/swarm-materials-20261108-2234",
   "predecessor": {
     "leaseId": "15f87c10-17da-411d-9639-1f568c0fb341",
@@ -34,7 +34,7 @@
   },
   "pr": 1395,
   "checkpoint": {
-    "evidence": "PR #1396 head 21d9da0f/tree 55bf47ad includes merged #1394. The 68.49mm threshold and 125mm aperture comparison reproduced on this head; material and individual repository checks passed.",
-    "next": "Observe full Validate run 42532299328, check main, run canonical preflight and integrate. Actual foot contact, extraction and independently supported discharge remain open."
+    "evidence": "Merged #1395 at ab6297f1, preserving #1396 head 21d9da0f. All 14 workflows passed; canonical preflight at 23:28:03 UTC. A 68.49 mm seat bound rules out the straight front approach on the nominal drawing datum; 125 mm extension clears only the finite static gauge.",
+    "next": "Measure actual foot/capture patches and seat, then prove supported cover rotation, withdrawal, finite catch and reassembly with independently supported discharge before cutting the enlarged aperture."
   }
 }
