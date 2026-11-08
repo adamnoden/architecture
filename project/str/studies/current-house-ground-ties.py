@@ -27,13 +27,13 @@ def bars(stations):
     for v in stations:
         for across in [43,97]:zz.update([(v,across),(across,v)])
     return sorted(zz)
-def curve(N,bs,dia):
+def curve(N,bs,dia,concrete=rects):
     As=math.pi*dia**2/4;rr=[]
     for jt in range(120):
-        th=jt*math.pi/60;dx,dy=math.cos(th),math.sin(th);mx=max(x*dx+y*dy for r in rects for x,y in r)
+        th=jt*math.pi/60;dx,dy=math.cos(th),math.sin(th);mx=max(x*dx+y*dy for r in concrete for x,y in r)
         def cal(dep):
             boundary=mx-.8*dep;s0=sx=sy=0.
-            for rect in rects:
+            for rect in concrete:
                 area,Qx,Qy=polar(clip(rect,dx,dy,boundary));s0+=fc*area;sx+=fc*Qx;sy+=fc*Qy
             for x,y in bs:
                 f=max(-fy,min(fy,.0035*(1-(mx-x*dx-y*dy)/dep)*200000))

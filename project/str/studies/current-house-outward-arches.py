@@ -15,6 +15,21 @@ Space=runpy.run_path(str(D/'arch-space-kernel.py'))['SpaceArch']
 Normal=runpy.run_path(str(D/'arch-normal-kernel.py'))['NormalArch']
 geometry_module=runpy.run_path(str(D/'arch-width-geometry.py'))
 geometry=geometry_module['control'];cage=geometry_module['cage']
+# Development and steel position are explicit assumptions of this local section
+# comparison. All torsion is still charged to the four continuous H16 corner bars.
+supplement_diameter=25
+supplement_cap=200  # MPa, tension only, with no compressive strength credit
+last_credited_station=1
+free_tip_station=12  # two thirds of the 18-element arc, measured from the L pier
+def central_bar_limits(capacity,cell,axial_lower,corner_fraction,adverse,stress_cap):
+    b,h=cell['b'],cell['h']
+    def least(breadth,depth,rows):
+        offsets=(-5,5) if adverse else (0,)
+        return min(capacity(breadth,depth,*rows,n,reverse,corner_fraction,
+                            (depth/2+offset,supplement_diameter,stress_cap))
+                   for n in (axial_lower,axial_lower+2) for reverse in (False,True) for offset in offsets)
+    return least(b,h,cell['xs']),least(h,b,cell['ys'])
+
 controls=[]
 for width in (160,180):
     s=runpy.run_path(str(D/'current-house-coupled-arches.py'),init_globals={
@@ -117,6 +132,16 @@ for width in (160,180):
             weak=min(capacity(h,round(b,4),*(round(v,4) for v in ys),n,sign,fraction) for n in (axial_lower,axial_lower+2) for sign in (False,True))
             return strong,weak
 
+        @lru_cache(None)
+        def arch_with_central_bar(axial_lower,adverse,fraction,stress_cap):
+            return central_bar_limits(capacity,cells[0,adverse],axial_lower,fraction,adverse,stress_cap)
+
+        central_witnesses={}
+        # Each internal station has two member ends. Keep the larger interaction.
+        station_count=len(member.arc)
+        assert station_count==19 and all(e['kind']=='arch' for e in member.elements[:station_count-1])
+        four_bar_profile=[0.]*station_count
+        central_profile=[0.]*station_count
         maxima={name:[0.,0.] for name in ('nominalRatio','adverseRatio','nominalLink','adverseLink','nominalLongitudinalRatio','adverseLongitudinalRatio','nominalStrut','adverseStrut')}
         witnesses={}
         observations=0
@@ -163,6 +188,27 @@ for width in (160,180):
                                     if ratio>maxima[prefix+'Ratio'][kind]:
                                         maxima[prefix+'Ratio'][kind]=ratio
                                         witnesses[prefix+'Ratio/'+str(kind)]=[wind_index,loaded,a,x,point_sign,pressure_sign,element,n,ms,mw,rs,rw,tor,reserved,fraction,end]
+                                    if width==180 and not kind:
+                                        axial_lower=2*math.floor(n/2)
+                                        station=element+end
+                                        # Between the last credited station and the tip, remove
+                                        # displaced concrete but give the extra steel zero strength.
+                                        central_strong,central_weak=rs,rw
+                                        if station<=free_tip_station:
+                                            cap=supplement_cap if station<=last_credited_station else 0.
+                                            central_strong,central_weak=arch_with_central_bar(axial_lower,adverse,fraction,cap)
+                                        central_ratio=ms/central_strong+mw/central_weak if reserved<.95 else 1e6
+                                        if adverse:
+                                            four_bar_profile[station]=max(four_bar_profile[station],ratio)
+                                            central_profile[station]=max(central_profile[station],central_ratio)
+                                        if central_ratio>central_witnesses.get(prefix,{}).get('ratio',0):
+                                            central_witnesses[prefix]={
+                                                'ratio':central_ratio,'wind':wind_index,'loadedWindow':loaded,
+                                                'window':a,'pointX':x,'pointSign':point_sign,'pressureSign':pressure_sign,
+                                                'element':element,'end':end,'axialKN':n,'torsionKNm':tor,
+                                                'cornerTorsionFraction':reserved,'cornerYieldFraction':fraction,
+                                                'strongDemandKNm':ms,'weakDemandKNm':mw,
+                                                'strongResistanceKNm':central_strong,'weakResistanceKNm':central_weak}
                                 zs=.85*min(h-xs[0],xs[1]);zw=.85*min(b-ys[0],ys[1])
                                 flow=torsion_flow+max(vs*1000/(2*zs),vw*1000/(2*zw))
                                 if flow>maxima[prefix+'Link'][kind]:
@@ -178,6 +224,12 @@ for width in (160,180):
         row={'crackedEI':cracked,'LAndUpstandTorsionFactor':torsion,'allLowerBearings':all_bearings,'floorRoofYawJoin':yaw_join,
              'maximumSameStateActions':maxima,'governingStates':witnesses,'memberWindowRecoveries':observations,
              'H6Minimum5p7MaximumPitch58NPerMM':math.pi*5.7**2/4*500/1.15/58}
+        if central_witnesses:
+            row['centralH25Arch']={'governingEnds':central_witnesses,
+                                   'adverseFourBarProfile':four_bar_profile,
+                                   'adverseWithSupplementProfile':central_profile,
+                                   'lastCreditedStation':last_credited_station,'freeTipStation':free_tip_station,
+                                   'barDiameterMm':supplement_diameter,'stressCapMPa':supplement_cap}
         width_results.append(row)
         print('OUTWARD ARCH',width,cracked,torsion,maxima,flush=True)
     controls.append({'geometry':geometry(width),'coupled':width_results})
