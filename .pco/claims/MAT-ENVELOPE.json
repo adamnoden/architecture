@@ -9,9 +9,9 @@
     "label": "MAT floor boundary 2333"
   },
   "claimedAt": "2026-11-08T23:33:23.308Z",
-  "heartbeatAt": "2026-11-08T23:41:18.463Z",
-  "expiresAt": "2026-11-09T00:26:18.463Z",
-  "branch": "work/mat-floor-2333",
+  "heartbeatAt": "2026-11-08T23:47:45.963Z",
+  "expiresAt": "2026-11-09T00:32:45.963Z",
+  "branch": "work/swarm-house-2332",
   "predecessor": {
     "leaseId": "9efd6390-5533-4e0c-85fa-69459e3f063c",
     "generation": 30,
@@ -32,9 +32,9 @@
       "next": "Integrate the closed-loggia topology and challenge the lowered gallery crossing against the selected and upper-first moving rail. Then validate and merge."
     }
   },
-  "pr": 1399,
+  "pr": 1400,
   "checkpoint": {
-    "evidence": "PR #1399 at 1fe45097 locates the two south court cavity trays against the mineral courses and existing door. MAT suite, negative levels and rendered figure verified.",
-    "next": "Verify exact-head CI and current main, run merge-check, integrate. Detail the 144.25 mm apron mismatch and lower-wall wetting before selecting."
+    "evidence": "PR #1399 at 1fe45097d4e02f83a37dd4c292a6d4e59995ca51 is the preserved south court cavity tray contribution for integration in PR #1400. Local MAT regression, negative controls and rendered elevation/section passed.",
+    "next": "Verify #1400 preserves this commit and current main; inspect full CI, run MAT merge-check on the combined head, and coordinate the guarded merge."
   }
 }
