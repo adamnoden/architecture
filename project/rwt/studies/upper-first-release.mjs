@@ -161,7 +161,7 @@ function ordinaryUpperHandler({pan,dimensions,fullWetReferenceKg,bodyTop,roof,gu
 }
 
 // The crossing has a simple support on each bank. The cap contributes weight only.
-function bankSpan(control,rails,railTop,capWidth,capDepth,joinedControlI){
+function bankSpan(control,rails,railTop,capWidth,capDepth,joinedControlI,eastInterface,outboardSupports,wheelDiameter){
  const {receiver,fall,ordinaryWater,faultWater}=control.geometry;
  const west=receiver[0],east=west+receiver[2];
  const bankX=[Math.max(...rails.supportX.filter(x=>x<west)),Math.min(...rails.supportX.filter(x=>x>east))];
@@ -185,6 +185,36 @@ function bankSpan(control,rails,railTop,capWidth,capDepth,joinedControlI){
  const moment=Math.max(P*L/4,P*(2*L-spacing)**2/(8*L))+q*L**2/8;
  const reactionFactor=2-spacing/L,headHalfWidth=50;
  const bottom=x=>railTop(x)-capDepth-H;
+ // Join the bare rail to the fixed west retaining crest and to the east spill.
+ const {blockedOutletSpill:spill,directedSpillBoundary:rim}=eastInterface;
+ assert.deepEqual(eastInterface.receiverBounds,receiver);
+ const westRim=rim.nonSpillBoundaries.find(b=>b.id==='west');
+ assert.equal(westRim.fromXY[0],west);
+ assert.equal(westRim.toXY[0],west);
+ const [spillX,spillY,spillLength,spillWidth]=spill.requiredContinuation;
+ assert.equal(spillX,east);
+ assert(rails.axesY.every(y=>y-B/2>spillY && y+B/2<spillY+spillWidth));
+ const fault=spill.maximumFaultedReceiverWater,crest=spill.edge[0][2];
+ // Even the highest underside and lowest RHS top cut the entire crest-to-fault band.
+ assert(bottom(east)+5<crest && railTop(east)-capDepth-5>fault);
+ const spillEnd=spillX+spillLength;
+ const outerSeat=outboardSupports.find(x=>x-headHalfWidth>spillEnd);
+ const longL=(outerSeat-bankX[0])*scale;
+ const lastWheel=wheels.at(-1),seamX=control.loads.frame.end,wheelRadius=wheelDiameter/2;
+ const crossing={
+  westRimX:west,westRimFaultDatum:westRim.crestMustBeStrictlyAboveFaultedWaterZ,
+  westRimNominalInterference:westRim.crestMustBeStrictlyAboveFaultedWaterZ-bottom(west),
+  maximumCrossingDepthBeforeRimAllowance:railTop(west)-5-westRim.crestMustBeStrictlyAboveFaultedWaterZ,
+  spill:spill.requiredContinuation,spillEdgeZ:crest,faultZ:fault,
+  obstructedWidth:rails.axesY.length*B,remainingGrossWidth:spill.clearWidth-rails.axesY.length*B,
+  eastHeadX:[bankX[1]-headHalfWidth,bankX[1]+headHalfWidth],sidePostY:rails.sidePostY,
+  outerSeatX:outerSeat,spanBeyondSpill:longL,unchangedSingleWheelMm:P*longL**3/(48*E*I),
+  parkedEndX:seamX,parkedWheelNoseX:lastWheel+wheelRadius,
+  noseToSeam:seamX-lastWheel-wheelRadius,seamToWestRim:west-seamX,
+  parkedWheelArmX:lastWheel-bankX[0],
+  parkedWheelSignedMomentKNm:[-upliftEachKn,compressionEachKn].map(F=>F*(lastWheel-bankX[0])/1000),
+  role:'Isolating E can remove temporary steel from its normal spillway, but cannot remove the fixed west retaining crest during a draw. A removable extension still needs a shallow supported crossing, finite joints and an independently available N route throughout. No hydraulic or lifting credit.',
+  accepted:false};
  return {bankX,omittedSupportX:rails.supportX.filter(x=>x>west && x<east),
   receiverX:[west,east],headLengthX:2*headHalfWidth,headToReceiverX:[west-bankX[0]-headHalfWidth,bankX[1]-east-headHalfWidth],
   planSpan:bankX[1]-bankX[0],slopedSpan:L,wheelPitch:spacing,rhs:[H,B,t],cap:[capWidth,capDepth],
@@ -195,7 +225,7 @@ function bankSpan(control,rails,railTop,capWidth,capDepth,joinedControlI){
   oneBankDownBoundKn:compressionEachKn*reactionFactor+q*L/2000,
   oneBankUpBoundKn:upliftEachKn*reactionFactor,
   ordinaryGapAfter5AtEast:bottom(east)-5-ordinaryWater,faultImmersionAfter5AtEast:faultWater-(bottom(east)-5),
-  bearingZ:bankX.map(bottom),accepted:false};
+  bearingZ:bankX.map(bottom),crossing,accepted:false};
 }
 
 function lowerTrackReference(control,had){
@@ -251,7 +281,7 @@ function lowerTrackReference(control,had){
    trackBottomAtReceiverEast:railTop(receiverEast)-capDepth-rails.sectionVertical,
    armBottomAtFarthestSupport:distalArmBottom(posts.at(-1)),localGradeFor500AtFarthestSupport:distalArmBottom(posts.at(-1))-500,
    role:'The lower rail/arm is inside the fault-water envelope where it runs over the active E receiver. It needs a real wet/open drainage/inspection and load path or a revised support position. Grade is a local clearance comparison, not a revised whole-house datum, geotechnical or site finding.'},
-  bankSpanComparison:bankSpan(control,rails,railTop,capWidth,capDepth,joinedI),
+  bankSpanComparison:bankSpan(control,rails,railTop,capWidth,capDepth,joinedI,had.model.rwtReceivingInterface.east,posts,wheelDiameter),
   wholeTrackAccepted:false};
 }
 
@@ -321,7 +351,7 @@ export function upperFirst(){
 }
 export function renderUpper(o){
  const esc=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;'),label=(x,y,s,size=19)=>`<text x="${x}" y="${y}" font-size="${size}">${esc(s)}</text>`;
- let s='<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2620" viewBox="0 0 1600 2620"><rect width="100%" height="100%" fill="#fbfaf5"/><g font-family="sans-serif" fill="#283e43">';
+ let s='<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2960" viewBox="0 0 1600 2960"><rect width="100%" height="100%" fill="#fbfaf5"/><g font-family="sans-serif" fill="#283e43">';
  s+=label(30,42,'UNADOPTED · upper-first release / one passive rear support',30)+label(30,80,'Same native bent spool at−815. Lift upper assembly; keep heavy pipe/frame at fixed height. No actual-kit or physical admission.');
  const X=x=>55+(x-5925)*.36,Y=y=>160+(y-6025)*.26,rect=(b,fill,stroke)=>`<rect x="${X(b[0])}" y="${Y(b[1])}" width="${b[3]*.36}" height="${b[4]*.26}" fill="${fill}" stroke="${stroke}"/>`;
  s+=label(40,125,'Plan · fixed rear support is north of complete native sweep',23)+rect(o.rearFixture.westReturn.box,'#e0d1bb','#9a825f')+rect([6125,6125,0,1525,1275,1],'#f3eee2','#8b806b');
@@ -402,6 +432,23 @@ export function renderUpper(o){
  s+=label(790,2440,`Bare 160 mm RHS, wheels and wet dead load ≤ ${bridge.totalDeflectionUpperMm.toFixed(2)} mm.`,19);
  s+=label(790,2490,`Rail underside at east edge: ≥ ${bridge.ordinaryGapAfter5AtEast.toFixed(1)} mm above ordinary water.`,19);
  s+=label(790,2540,`Up to ${bridge.faultImmersionAfter5AtEast.toFixed(1)} mm of rail depth enters fault water.`,19);
+ const crossing=bridge.crossing,px=x=>75+(x-west)*.16,py=y=>2760+(y-6100)*.07;
+ s+=label(40,2655,'The removal track meets two water boundaries',23);
+ for(const [x,y,w,h,fill] of [[...o.geometry.receiver,'#dfebe8'],[...crossing.spill,'#ebdfc4']]){
+  s+=`<rect x="${px(x)}" y="${py(y)}" width="${w*.16}" height="${h*.07}" fill="${fill}"/>`;
+ }
+ for(const y of trial.pairedTrackAxesY){
+  s+=`<path d="M${px(west)} ${py(y)} H${px(east)}" stroke="#475c64" stroke-width="4"/>`;
+ }
+ for(const y of crossing.sidePostY){
+  s+=`<circle cx="${px(east)}" cy="${py(y)}" r="5" fill="#9c5038"/>`;
+ }
+ s+=label(px(crossing.westRimX),2740,'Receiver',18)+label(px(crossing.spill[0]),2740,'Emergency spill',18);
+ s+=label(40,2920,'Plan · red dots mark the east support axes inside the spill continuation',17);
+ s+=label(790,2745,`The rail cuts the west crest datum by ${crossing.westRimNominalInterference.toFixed(1)} mm.`,19);
+ s+=label(790,2800,`At the east lip, two rails occupy ${crossing.obstructedWidth} mm of the ${crossing.spill[3]} mm crest.`,19);
+ s+=label(790,2855,`Moving the seat beyond the spill gives ${crossing.unchangedSingleWheelMm.toFixed(1)} mm deflection for one wheel.`,18);
+ s+=label(790,2910,'A removable extension still has to cross the fixed west rim.',18);
  return s+'</g></svg>\n';
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
