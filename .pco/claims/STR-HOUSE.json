@@ -9,8 +9,8 @@
     "label": "Ovid swarm 8 November 2218"
   },
   "claimedAt": "2026-11-08T22:19:27.670Z",
-  "heartbeatAt": "2026-11-08T22:19:27.670Z",
-  "expiresAt": "2026-11-08T23:04:27.670Z",
+  "heartbeatAt": "2026-11-08T22:30:41.772Z",
+  "expiresAt": "2026-11-08T23:15:41.772Z",
   "branch": "work/swarm-20261108-2218",
   "predecessor": {
     "leaseId": "6c34004d-fbde-471e-870a-684b2ec423ae",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1391 at 901abc19. All 27 checks and preflight 42483968217 passed. Two stations need H25. Peak 0.992 as set out, 1.030 on nominal datum.",
       "next": "Resolve the 98.2 kN near-pier transfer, H20 cranks, cover, placing and signed reactions. Preserve the far jamb."
     }
+  },
+  "pr": 1393,
+  "checkpoint": {
+    "evidence": "PR #1393 at 3d026414: vertical-return exclusion, 27 structural regressions passed locally.",
+    "next": "Finish the actual PSB Single 25 head-envelope check and validate both options on the final head."
   }
 }
