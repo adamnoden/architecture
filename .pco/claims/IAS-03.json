@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 26,
-  "state": "released",
-  "leaseId": "e3c29fa5-e7d2-4e70-b764-ba0095049859",
+  "generation": 27,
+  "state": "claimed",
+  "leaseId": "cd434864-2530-4edf-9f9c-997af6efe8d6",
   "holder": {
     "kind": "chatgpt",
-    "label": "Ovid last lane 2254"
+    "label": "Publish reviewed utility-sink patch"
   },
-  "claimedAt": "2026-11-08T22:55:10.791Z",
-  "heartbeatAt": "2026-11-08T23:10:20.022Z",
-  "expiresAt": "2026-11-08T23:10:20.022Z",
-  "branch": "work/swarm-lane-20261108-2254",
+  "claimedAt": "2026-11-08T23:17:30.385Z",
+  "heartbeatAt": "2026-11-08T23:17:30.385Z",
+  "expiresAt": "2026-11-09T00:02:30.385Z",
+  "branch": "work/ias-sink-publish-20261108-2316",
   "predecessor": {
-    "leaseId": "7a06fe0b-2fe9-4809-97d4-3475dac973fb",
-    "generation": 25,
-    "branch": "work/swarm-ias-20261108-2233"
+    "leaseId": "e3c29fa5-e7d2-4e70-b764-ba0095049859",
+    "generation": 26,
+    "branch": "work/swarm-lane-20261108-2254"
   },
   "recoverySource": {
     "leaseId": "3bcdc7ab-5d9d-4153-b3cc-2a65a3943d2a",
@@ -26,7 +26,5 @@
       "evidence": "Merged PR #1374 a0896ad683e8969169e41cf8c3c0395ec4a4e9c4. IAS predecessor #1372 and recovery #1375 both merged; 14 exact-head workflows, utility producers and coordinator review passed.",
       "next": "IAS-03 remains open: establish actual complete sink/trap/services cutover and supported receipt before the verified bare-frame first rest, then handling/export/return."
     }
-  },
-  "releasedAt": "2026-11-08T23:10:20.022Z",
-  "releaseReason": "handoff"
+  }
 }
