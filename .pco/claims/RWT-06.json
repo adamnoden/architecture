@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 55,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9079f0f9-ec95-4f7e-beb6-85a5454ccedc",
   "holder": {
     "kind": "chatgpt",
     "label": "Ovid rainwater swarm 8 Nov 2223"
   },
   "claimedAt": "2026-11-08T22:23:52.364Z",
-  "heartbeatAt": "2026-11-08T22:50:49.309Z",
-  "expiresAt": "2026-11-08T23:35:49.309Z",
+  "heartbeatAt": "2026-11-08T22:51:10.118Z",
+  "expiresAt": "2026-11-08T22:51:10.118Z",
   "branch": "work/swarm-rwt-20261108-2223",
   "predecessor": {
     "leaseId": "ab36db2b-49a2-4e7e-8c92-74b2cf647951",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged PR #1394 at 9da10bd4. Bank span removes X13500 immersed support in the comparison. 175 RWT tests, rendered panel, exact-head Validate 42530573365 and canonical preflight at 22:49:49 UTC passed.",
     "next": "Qualify bank seats and supported rail/keeper joints across both banks, delivered section stiffness and submerged rail protection. Preserve two-ended locks, upper handling, hydraulic, high-eave and site exits."
-  }
+  },
+  "releasedAt": "2026-11-08T22:51:10.118Z",
+  "releaseReason": "handoff"
 }
