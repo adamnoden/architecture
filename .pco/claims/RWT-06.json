@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 55,
-  "state": "released",
-  "leaseId": "9079f0f9-ec95-4f7e-beb6-85a5454ccedc",
+  "generation": 56,
+  "state": "claimed",
+  "leaseId": "7bf6f0cc-ef65-4c58-b418-2dc1e295e26b",
   "holder": {
     "kind": "chatgpt",
-    "label": "Ovid rainwater swarm 8 Nov 2223"
+    "label": "Architecture second dispatch November 8 2253"
   },
-  "claimedAt": "2026-11-08T22:23:52.364Z",
-  "heartbeatAt": "2026-11-08T22:51:10.118Z",
-  "expiresAt": "2026-11-08T22:51:10.118Z",
-  "branch": "work/swarm-rwt-20261108-2223",
+  "claimedAt": "2026-11-08T22:54:46.570Z",
+  "heartbeatAt": "2026-11-08T22:54:46.570Z",
+  "expiresAt": "2026-11-08T23:39:46.570Z",
+  "branch": "work/swarm-second-dispatch-2253",
   "predecessor": {
-    "leaseId": "ab36db2b-49a2-4e7e-8c92-74b2cf647951",
-    "generation": 54,
-    "branch": "work/rush-closeout-mat-20261107",
-    "pr": 1374,
+    "leaseId": "9079f0f9-ec95-4f7e-beb6-85a5454ccedc",
+    "generation": 55,
+    "branch": "work/swarm-rwt-20261108-2223",
+    "pr": 1394,
     "checkpoint": {
-      "evidence": "Merged in PR 1374 at a0896ad683e8969169e41cf8c3c0395ec4a4e9c4, preserving RWT recovery 81c13808 and original a478 in main ancestry. All 174 RWT tests, both producer checks, visual inspection and 14 exact-head workflows passed. Canonical RWT merge preflight at 09:38:28 UTC.",
-      "next": "Resume the finite RWT-06 exit map from merged main. Demonstrate actual two-ended positive locks/interlock, cap shear transfer and wet supports, upper handler and reverse lift; retain hydraulic, high-eave, physical and site exits."
+      "evidence": "Merged PR #1394 at 9da10bd4. Bank span removes X13500 immersed support in the comparison. 175 RWT tests, rendered panel, exact-head Validate 42530573365 and canonical preflight at 22:49:49 UTC passed.",
+      "next": "Qualify bank seats and supported rail/keeper joints across both banks, delivered section stiffness and submerged rail protection. Preserve two-ended locks, upper handling, hydraulic, high-eave and site exits."
     }
   },
   "recoverySource": {
-    "leaseId": "ab36db2b-49a2-4e7e-8c92-74b2cf647951",
-    "generation": 54,
-    "branch": "work/rush-closeout-mat-20261107",
-    "pr": 1374,
+    "leaseId": "9079f0f9-ec95-4f7e-beb6-85a5454ccedc",
+    "generation": 55,
+    "branch": "work/swarm-rwt-20261108-2223",
+    "pr": 1394,
     "checkpoint": {
-      "evidence": "Merged in PR 1374 at a0896ad683e8969169e41cf8c3c0395ec4a4e9c4, preserving RWT recovery 81c13808 and original a478 in main ancestry. All 174 RWT tests, both producer checks, visual inspection and 14 exact-head workflows passed. Canonical RWT merge preflight at 09:38:28 UTC.",
-      "next": "Resume the finite RWT-06 exit map from merged main. Demonstrate actual two-ended positive locks/interlock, cap shear transfer and wet supports, upper handler and reverse lift; retain hydraulic, high-eave, physical and site exits."
+      "evidence": "Merged PR #1394 at 9da10bd4. Bank span removes X13500 immersed support in the comparison. 175 RWT tests, rendered panel, exact-head Validate 42530573365 and canonical preflight at 22:49:49 UTC passed.",
+      "next": "Qualify bank seats and supported rail/keeper joints across both banks, delivered section stiffness and submerged rail protection. Preserve two-ended locks, upper handling, hydraulic, high-eave and site exits."
     }
-  },
-  "pr": 1394,
-  "checkpoint": {
-    "evidence": "Merged PR #1394 at 9da10bd4. Bank span removes X13500 immersed support in the comparison. 175 RWT tests, rendered panel, exact-head Validate 42530573365 and canonical preflight at 22:49:49 UTC passed.",
-    "next": "Qualify bank seats and supported rail/keeper joints across both banks, delivered section stiffness and submerged rail protection. Preserve two-ended locks, upper handling, hydraulic, high-eave and site exits."
-  },
-  "releasedAt": "2026-11-08T22:51:10.118Z",
-  "releaseReason": "handoff"
+  }
 }
