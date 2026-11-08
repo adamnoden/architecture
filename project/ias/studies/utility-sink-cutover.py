@@ -12,17 +12,28 @@ washer = json.loads((here / 'utility-first-release.json').read_text())['native']
 fixtures = house['groundFurniture']
 frame = host['frame']
 left, right = frame['leg 2'], frame['leg 4']
-radiator = fixtures['service-emitter-utility-E']
+radiator = next(item for item in house['servicesInterface']['emitters'] if item['id'] == 'utility-E')
+assert radiator['plan'] == fixtures['service-emitter-utility-E']
+rad_x, rad_y, rad_w, rad_d = radiator['plan']
+rad_base, rad_top = radiator['z']
 rim_width, rim_depth = 440, 450  # Franke 127.0369.215, UK sheet 30 June 2026
 post_inside = left[0] + left[3]
 post_front = left[1] + left[4]
 aperture = right[0] - post_inside
 # In the front portal, the upright rim must span both obstacles at this y.
-witness_y = (radiator[1] + post_front) / 2
-assert witness_y - rim_depth / 2 < post_front and witness_y + rim_depth / 2 > radiator[1]
-pinch = radiator[0] - post_inside
+witness_y = (rad_y + post_front) / 2
+assert witness_y - rim_depth / 2 < post_front and witness_y + rim_depth / 2 > rad_y
+pinch = rad_x - post_inside
 assert aperture == 510 and aperture > rim_width > pinch == 375.5
-assert rim_depth - (radiator[1] - post_front) == 42
+assert rim_depth - (rad_y - post_front) == 42
+# The 250-high rectangular handling budget must overlap the radiator to fit
+# between both front rails. The real bowl tapers and its rim alone can clear.
+lower_rail = frame['EW rail at y1350 / z135']
+upper_rail = frame['EW rail at y1350 / z850']
+lowest_bottom = lower_rail[2] + lower_rail[5]
+highest_top = upper_rail[2]
+assert lowest_bottom + 250 > rad_base and highest_top - 250 < rad_top
+assert rad_top + route['CLEARANCE'] <= highest_top - route['CLEARANCE']
 
 # Upper route: rim plus an authored handling allowance, with all low plumbing
 # already separately supported and disconnected. Actual clips and pickup must fit.
@@ -35,6 +46,7 @@ raised = reserve
 placements = [[0,0,raised], [0,-95,raised], [-745,-95,raised], [-745,750,raised]]
 obstacles = {key:[bx,by,0,bw,bd,3500] for key,(bx,by,bw,bd) in fixtures.items()
              if key not in {'service-utility-sink','service-utility-washer','service-utility-valveBay'}}
+obstacles['service-emitter-utility-E'] = [rad_x, rad_y, rad_base, rad_w, rad_d, rad_top - rad_base]
 washer_plan = fixtures['service-utility-washer']
 obstacles['closed washer reservation'] = [*washer_plan[:2],0,*washer_plan[2:],washer['height']]
 obstacles.update(host['carrier'])
