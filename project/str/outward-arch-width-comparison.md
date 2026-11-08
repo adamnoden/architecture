@@ -35,6 +35,27 @@ The ordinary upper insulation reservation reduces from 110 to 90 or 70 mm, with 
 
 The whole window and guard budget, true outer arch, 225 mm foot, actual sleeve/barrier ports and occupied room remain reference constraints, not automatically successful consequences of widening. Longer through ties, sleeve bending and restraint, actual cage transitions, the new outward face/cavity return, and the rear-west fixed cabinet access remain open. The previous cabinet has no authored height or removal method; the short outward window release has no universal occupied-room acceptance.
 
-## Next joined decision
+## Can larger bars solve the arch within the existing cage?
 
-Preserve these failed width-only controls. Develop one ordinary reinforcement/radial-depth correction against the actual simultaneous load, then re-solve its stiffness and price anchorage, genuine inner and outer extrados, floor band, window/guard interfaces, thermal return, cage construction and absolute all-head gravity/wind delivery together. Do not tighten assumed setout or freeze 160/180 width, 215 radial depth, H16 stock or the existing source choreography as owner invariants. No house geometry adoption or STR-HOUSE completion is earned here.
+**Decision, 8 November 2026. Reject uniform upsizing of the four continuous H16 bars seated against the same H6 link faces in either width.** The corner jamb foot bounds the diameter, and one existing load case for each arch width already exceeds the project bending limit throughout the diameter range that fits. This closes the bar-only option under the gross-section stiffness and gravity assumptions of the width study.
+
+The 225 mm foot has parallel H16 axes at −38 and +14 mm. Its fixed H6 link gives 68 mm between inside faces. Two bars of diameter `d` and the existing two adverse 5 mm placement offsets leave at most `68 − 2d − 10` mm between bar surfaces. The project requires 25 mm for placing concrete between these parallel bars. H16 gives 26 mm, **16.5 mm is the largest diameter that fits**, and H20 gives 18 mm. Fitting H20 would require at least 7 mm more inside the link in this direction. Straight development independently needs 1,035.2 mm for H20 at the study’s full yield stress and 2.1 MPa bond stress. The existing straight tail provides 900 mm. The study gives the bend no anchorage credit. [Foot placing study](studies/current-house-jamb-placement.py) · [Authored anchorage and tail](studies/current-house-arch-detail.py) · [JRC basic anchorage relation, slide 7](https://eurocodes.jrc.ec.europa.eu/sites/default/files/2022-06/05_EC2WS_Arrieta_Detailing.pdf)
+
+### Strength over the whole fitting range
+
+The checks below use the two moments and compression from a single member end in each archived adverse load case. Keeping each bar against the same inner link face moves its centre inward by half the diameter increase, up to 0.25 mm. An optimistic upper bound on bending resistance can therefore exclude the whole interval without assuming that an intermediate diameter behaves like either endpoint.
+
+| Nominal width | Wind / window / element / end (zero-based) | Compression (kN) | Strong / weak demand (kNm) | Strong / weak resistance ceiling (kNm) | Interaction lower bound |
+|---|---|---:|---:|---:|---:|
+| 160 mm | 76 / 0 / 0 / 0 | 17.374 | 18.461 / 2.218 | 21.729 / 12.912 | 1.02136 |
+| 180 mm | 55 / 5 / 0 / 0 | 18.362 | 19.566 / 2.380 | 22.277 / 16.649 | 1.02130 |
+
+Take moments about the compression-side steel row. Its force has zero lever arm. Give the entire favourable strip of concrete 17 MPa in compression and give the two opposite bars their maximum area, original maximum row spacing and 95% of design yield stress. Waive the torsion debit altogether. In N and mm the resulting ceiling about the centroid is
+
+```text
+M ≤ 17 b a_max² / 2 + 2 A_max (0.95 f_yd) s_max + N (h/2 − a_min)
+```
+
+Here `b` and `h` are the adverse section dimensions for the axis considered. The compression row is `a_min` to `a_max` from that face, `s_max` is the H16 row spacing, and `A_max` is the area of one 16.5 mm bar. The symmetric rows give the same ceiling for either moment sign. Using the most favourable arm separately in each term overstates what any one diameter can achieve. Even with those allowances, the sum of strong and weak demand divided by their respective ceilings exceeds the project limit of 1.000 at both widths. This margin measures the exceedance of the project’s linear bending check. [Reproducible calculation](studies/outward-arch-bar-limit.py) · [Same-end responses](studies/current-house-outward-arches.json)
+
+The next design must change a dimension or the force path. A deeper arch needs a drawn crown-to-roof clearance with the window intrados fixed. A different cage or termination needs its own foot spacing, anchorage and placing route. Re-solve the changed stiffness and carry its signed actions through the floor and foundations before selecting the house section.

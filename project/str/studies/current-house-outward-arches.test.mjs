@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
 import test from 'node:test';
 const study = name => JSON.parse(readFileSync(new URL(`./current-house-${name}.json`,import.meta.url)));
 test('the actual closed foot loop rejects gross concrete dimensions',()=>{
@@ -35,4 +37,16 @@ test('widening alone is rejected after torsion is charged to the bending steel',
     }
   }
   assert.equal(result.admitted,false);
+});
+
+test('the fixed foot excludes uniform bar upsizing at both arch widths', () => {
+  const script = fileURLToPath(new URL('./outward-arch-bar-limit.py', import.meta.url));
+  const result = JSON.parse(execFileSync('python3', [script], {encoding: 'utf8'}));
+  assert.equal(result.largestDiameterMm, 16.5);
+  assert.equal(result.h20ClearMm, 18);
+  assert.ok(result.h20FullYieldLengthMm - result.availableTailMm > 135);
+  assert.deepEqual(result.bounds.map(row => row.widthMm), [160, 180]);
+  for (const row of result.bounds) {
+    assert.ok(row.interactionLowerBound > 1);
+  }
 });
