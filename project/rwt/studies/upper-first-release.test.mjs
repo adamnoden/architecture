@@ -87,6 +87,31 @@ test('continuous lock play includes full draw and both-coordinate allowance at e
  assert(lock.uniformTorqueTwistDegrees>lock.pinFitDegrees);
  assert.equal(lock.actualLockAccepted,false);
 });
+test('bank seats clear the receiver while the full moving wheel train stays within the beam bound',()=>{
+ const bridge=o.lowerTrackReference.bankSpanComparison;
+ assert.deepEqual(bridge.bankX,[12250,14950]);assert.deepEqual(bridge.omittedSupportX,[13500]);
+ assert.deepEqual(bridge.headToReceiverX,[200,400]);assert(bridge.originalJoinedSingleWheelMm>5);
+ const L=bridge.slopedSpan,E=200000,I=bridge.grossI,P=8500,q=bridge.fullBoreWaterAndSteelNPerMm;
+ // Independent pointwise influence solution. Mirror to the side before the load.
+ function displacement(x,a){
+  if(x>a){x=L-x;a=L-a;}
+  const b=L-a;
+  return P*b*x*(L*L-b*b-x*x)/(6*L*E*I);
+ }
+ let sampledPeak=0;
+ for(let first=-bridge.wheelPitch;first<=L;first+=L/160){
+  const positions=[first,first+bridge.wheelPitch].filter(a=>a>=0&&a<=L);
+  for(let step=0;step<=120;step++){
+   const x=L*step/120,dead=q*x*(L**3-2*L*x*x+x**3)/(24*E*I);
+   sampledPeak=Math.max(sampledPeak,dead+positions.reduce((sum,a)=>sum+displacement(x,a),0));
+  }
+ }
+ assert(sampledPeak>bridge.singleWheelMm+bridge.fullWetDeadLoadMm);
+ assert(sampledPeak<=bridge.totalDeflectionUpperMm&&bridge.totalDeflectionUpperMm<4);
+ assert(bridge.oneBankDownBoundKn>12.5&&bridge.oneBankUpBoundKn>5.7);
+ assert(bridge.ordinaryGapAfter5AtEast>48&&Math.abs(bridge.ordinaryGapAfter5AtEast+bridge.faultImmersionAfter5AtEast-150)<1e-8);
+ assert.equal(bridge.accepted,false);
+});
 test('new upper-first source and changed geometry sheet reproduce',()=>{
  assert.equal(fs.readFileSync('project/rwt/studies/upper-first-release.json','utf8'),JSON.stringify(o,null,2)+'\n');
  assert.equal(fs.readFileSync('project/rwt/studies/upper-first-release.svg','utf8'),renderUpper(o));

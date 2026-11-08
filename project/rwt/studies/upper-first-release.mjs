@@ -160,6 +160,44 @@ function ordinaryUpperHandler({pan,dimensions,fullWetReferenceKg,bodyTop,roof,gu
   role:'The upper method fails before any diagonal rail, yaw or landing can be credited. Rating alone does not fix chain path or headroom. Retain the geometric bare-body export reference separately; no actual controlled release, operator/rigging sweep, support, tilt/CG, force limit, landing or reverse event accepted.'};
 }
 
+// The crossing has a simple support on each bank. The cap contributes weight only.
+function bankSpan(control,rails,railTop,capWidth,capDepth,joinedControlI){
+ const {receiver,fall,ordinaryWater,faultWater}=control.geometry;
+ const west=receiver[0],east=west+receiver[2];
+ const bankX=[Math.max(...rails.supportX.filter(x=>x<west)),Math.min(...rails.supportX.filter(x=>x>east))];
+ const scale=Math.hypot(1,fall),L=(bankX[1]-bankX[0])*scale;
+ const wheels=control.loads.frame.wheelStations;
+ const spacing=(wheels[1]-wheels[0])*scale;
+ assert(wheels.slice(1).every((x,i)=>x-wheels[i]===wheels[1]-wheels[0]) && spacing<L && L<2*spacing);
+ const {compressionEachKn,upliftEachKn}=control.loads.supportReactionRequirement;
+ const P=1000*compressionEachKn,E=200000,H=160,B=rails.sectionNS,t=rails.wall;
+ const inner=(B-2*t)*(H-2*t),metal=H*B-inner+capWidth*capDepth;
+ const I=(B*H**3-(B-2*t)*(H-2*t)**3)/12;
+ // Bound full-bore trapped water and gravity normal to the sloped beam by full gravity.
+ const steelKgPerMm=metal*8000/1e9,q=(steelKgPerMm+inner*1000/1e9)*g;
+ const uniform=5*q*L**4/(384*E*I),single=P*L**3/(48*E*I);
+ // For a load at distance a from its nearer support, the maximum anywhere
+ // is proportional to a*(L²-a²)^(3/2). It is concave on [0,L/2]. Two wheels
+ // straddle midspan; their nearer-support distances sum to L-spacing.
+ const a=(L-spacing)/2;
+ const pair=2*P*a*(L**2-a**2)**1.5/(9*Math.sqrt(3)*L*E*I);
+ const movement=Math.max(single,pair)+uniform;
+ const moment=Math.max(P*L/4,P*(2*L-spacing)**2/(8*L))+q*L**2/8;
+ const reactionFactor=2-spacing/L,headHalfWidth=50;
+ const bottom=x=>railTop(x)-capDepth-H;
+ return {bankX,omittedSupportX:rails.supportX.filter(x=>x>west && x<east),
+  receiverX:[west,east],headLengthX:2*headHalfWidth,headToReceiverX:[west-bankX[0]-headHalfWidth,bankX[1]-east-headHalfWidth],
+  planSpan:bankX[1]-bankX[0],slopedSpan:L,wheelPitch:spacing,rhs:[H,B,t],cap:[capWidth,capDepth],
+  grossI:I,nominalTwoRailDryKg:2*L*steelKgPerMm,fullBoreWaterAndSteelNPerMm:q,
+  originalJoinedSingleWheelMm:P*L**3/(48*E*joinedControlI),singleWheelMm:single,twoWheelUpperMm:pair,
+  fullWetDeadLoadMm:uniform,totalDeflectionUpperMm:movement,remainingFrom5Mm:5-movement,
+  bendingBoundKNm:moment/1e6,grossBendingStressBoundMPa:moment*H/(2*I),
+  oneBankDownBoundKn:compressionEachKn*reactionFactor+q*L/2000,
+  oneBankUpBoundKn:upliftEachKn*reactionFactor,
+  ordinaryGapAfter5AtEast:bottom(east)-5-ordinaryWater,faultImmersionAfter5AtEast:faultWater-(bottom(east)-5),
+  bearingZ:bankX.map(bottom),accepted:false};
+}
+
 function lowerTrackReference(control,had){
  const {axisAnchor,fall,receiver,faultWater,ordinaryWater}=control.geometry;
  const frame=control.loads.frame,rails=had.renewal.joint.railReference;
@@ -213,6 +251,7 @@ function lowerTrackReference(control,had){
    trackBottomAtReceiverEast:railTop(receiverEast)-capDepth-rails.sectionVertical,
    armBottomAtFarthestSupport:distalArmBottom(posts.at(-1)),localGradeFor500AtFarthestSupport:distalArmBottom(posts.at(-1))-500,
    role:'The lower rail/arm is inside the fault-water envelope where it runs over the active E receiver. It needs a real wet/open drainage/inspection and load path or a revised support position. Grade is a local clearance comparison, not a revised whole-house datum, geotechnical or site finding.'},
+  bankSpanComparison:bankSpan(control,rails,railTop,capWidth,capDepth,joinedI),
   wholeTrackAccepted:false};
 }
 
@@ -282,7 +321,7 @@ export function upperFirst(){
 }
 export function renderUpper(o){
  const esc=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;'),label=(x,y,s,size=19)=>`<text x="${x}" y="${y}" font-size="${size}">${esc(s)}</text>`;
- let s='<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2280" viewBox="0 0 1600 2280"><rect width="100%" height="100%" fill="#fbfaf5"/><g font-family="sans-serif" fill="#283e43">';
+ let s='<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2620" viewBox="0 0 1600 2620"><rect width="100%" height="100%" fill="#fbfaf5"/><g font-family="sans-serif" fill="#283e43">';
  s+=label(30,42,'UNADOPTED · upper-first release / one passive rear support',30)+label(30,80,'Same native bent spool at−815. Lift upper assembly; keep heavy pipe/frame at fixed height. No actual-kit or physical admission.');
  const X=x=>55+(x-5925)*.36,Y=y=>160+(y-6025)*.26,rect=(b,fill,stroke)=>`<rect x="${X(b[0])}" y="${Y(b[1])}" width="${b[3]*.36}" height="${b[4]*.26}" fill="${fill}" stroke="${stroke}"/>`;
  s+=label(40,125,'Plan · fixed rear support is north of complete native sweep',23)+rect(o.rearFixture.westReturn.box,'#e0d1bb','#9a825f')+rect([6125,6125,0,1525,1275,1],'#f3eee2','#8b806b');
@@ -347,6 +386,22 @@ export function renderUpper(o){
  s+=label(790,2125,`Fully joined cap deflection ${joined.pointMidspanDeflection.toFixed(3)} mm. Shear transfer unproved.`,18);
  s+=label(790,2175,`One engaged pin takes ${lock.unsharedSingleLockLoadKn.toFixed(2)} kN at ${lock.holdingNm} Nm.`,18);
  s+=label(790,2225,'Both locks must engage before translation. Actual hardware remains open.',18);
+ const bridge=track.bankSpanComparison,[west,east]=bridge.bankX,depth=bridge.rhs[0]+bridge.cap[1];
+ const bx=x=>75+(x-west)*.23,bz=z=>2490-(z-o.geometry.ordinaryWater)*.62;
+ const [waterWest,waterEast]=bridge.receiverX.map(bx),waterTop=bz(o.geometry.faultWater);
+ s+=label(40,2320,'East receiver · one track between the two bank seats',23);
+ s+=`<rect x="${waterWest}" y="${waterTop}" width="${waterEast-waterWest}" height="${bz(o.geometry.ordinaryWater)-waterTop}" fill="#dfebe8"/>`;
+ const [x1,x2]=bridge.bankX.map(bx),[z1,z2]=bridge.bearingZ;
+ s+=`<path d="M${x1} ${bz(z1)} L${x2} ${bz(z2)} V${bz(z2+depth)} L${x1} ${bz(z1+depth)} Z" fill="#687b7e"/>`;
+ for(const [i,x] of bridge.bankX.entries()){
+  s+=`<rect x="${bx(x-bridge.headLengthX/2)}" y="${bz(bridge.bearingZ[i])}" width="${bridge.headLengthX*.23}" height="22" fill="#3f5559"/>`;
+ }
+ s+=label(42,2535,`X${west} west seat`,18)+label(530,2535,`X${east} east seat`,18);
+ s+=label(42,2580,'Shaded band between ordinary and fault water · vertical scale enlarged',17);
+ s+=label(790,2390,`One wheel bends the original joined section ${bridge.originalJoinedSingleWheelMm.toFixed(2)} mm.`,19);
+ s+=label(790,2440,`Bare 160 mm RHS, wheels and wet dead load ≤ ${bridge.totalDeflectionUpperMm.toFixed(2)} mm.`,19);
+ s+=label(790,2490,`Rail underside at east edge: ≥ ${bridge.ordinaryGapAfter5AtEast.toFixed(1)} mm above ordinary water.`,19);
+ s+=label(790,2540,`Up to ${bridge.faultImmersionAfter5AtEast.toFixed(1)} mm of rail depth enters fault water.`,19);
  return s+'</g></svg>\n';
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
