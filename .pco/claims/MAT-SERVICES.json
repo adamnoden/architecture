@@ -9,8 +9,8 @@
     "label": "Ovid services swarm 8 November 2238"
   },
   "claimedAt": "2026-11-08T22:38:41.752Z",
-  "heartbeatAt": "2026-11-08T22:38:41.752Z",
-  "expiresAt": "2026-11-08T23:23:41.752Z",
+  "heartbeatAt": "2026-11-08T22:47:29.933Z",
+  "expiresAt": "2026-11-08T23:32:29.933Z",
   "branch": "work/swarm-mat-services-20261108-2238",
   "predecessor": {
     "leaseId": "15f87c10-17da-411d-9639-1f568c0fb341",
@@ -31,5 +31,10 @@
       "evidence": "PR1364 merged3eb3b5644e8a1738784c2c0320bc32098c58711f from exact738d02f2; full CI and fresh canonical preflight passed; predecessor branch deleted. Buffer toe-side guide and direct overspeed capture rejected in scratch. Bounded comparison only, no apparatus or owning geometry adoption.",
       "next": "New branch starts actual merged main. Bind W9 actual base/foot/receiver and UVLL supported release/annual access with independently supported tail. Preserve buffer capture, native foot and first transfer holds."
     }
+  },
+  "pr": 1396,
+  "checkpoint": {
+    "evidence": "PR #1396 at 219a9016. Material suite and independent section check passed. Front service exclusion above 68.49 mm, 125 mm extension tested at nominal datum.",
+    "next": "Verify exact-head CI and fresh merge preflight, integrate, then test actual foot positions and complete supported cleaning and tail release."
   }
 }
