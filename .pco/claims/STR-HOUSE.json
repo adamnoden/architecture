@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 29,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e33ebd32-d3b8-46de-b0a1-3c59a8c01551",
   "holder": {
     "kind": "chatgpt",
     "label": "Architecture swarm 8 Nov 1106"
   },
   "claimedAt": "2026-11-08T11:07:06.468Z",
-  "heartbeatAt": "2026-11-08T11:29:41.006Z",
-  "expiresAt": "2026-11-08T12:14:41.006Z",
+  "heartbeatAt": "2026-11-08T11:30:01.916Z",
+  "expiresAt": "2026-11-08T11:30:01.916Z",
   "branch": "work/swarm-20261108-1106",
   "predecessor": {
     "leaseId": "f93475a5-c0f1-4a79-a3ce-c409daadfd87",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1390 at fb778029. Both fixed H6 cages reject uniform four-bar upsizing, 16.5 mm diameter cap and lower bounds above 1.021. Full exact-head Validate 42474837758 passed. Prior full programme remains open.",
     "next": "Change the section, cage termination or load path. Check actual crown-to-ring clearance and both arch ends, then join the revised reactions, anchorage and placing route. Preserve both failed width controls."
-  }
+  },
+  "releasedAt": "2026-11-08T11:30:01.916Z",
+  "releaseReason": "handoff"
 }
