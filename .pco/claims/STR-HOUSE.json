@@ -9,8 +9,8 @@
     "label": "Ovid swarm 8 November 2218"
   },
   "claimedAt": "2026-11-08T22:19:27.670Z",
-  "heartbeatAt": "2026-11-08T22:30:41.772Z",
-  "expiresAt": "2026-11-08T23:15:41.772Z",
+  "heartbeatAt": "2026-11-08T22:50:47.154Z",
+  "expiresAt": "2026-11-08T23:35:47.154Z",
   "branch": "work/swarm-20261108-2218",
   "predecessor": {
     "leaseId": "6c34004d-fbde-471e-870a-684b2ec423ae",
@@ -34,7 +34,7 @@
   },
   "pr": 1393,
   "checkpoint": {
-    "evidence": "PR #1393 at 3d026414: vertical-return exclusion, 27 structural regressions passed locally.",
-    "next": "Finish the actual PSB Single 25 head-envelope check and validate both options on the final head."
+    "evidence": "PR #1393 at 3f15b4f2 includes merged RWT #1394. Vertical and forged head routes ruled out; 28 structural regressions and docs build passed.",
+    "next": "Check final CI run 42532218710, then fresh publication preflight for 3f15b4f2. STR-HOUSE remains open for a changed force path."
   }
 }
