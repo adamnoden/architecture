@@ -1,44 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 29,
-  "state": "released",
-  "leaseId": "78600113-2728-4bdf-881f-fdae1c7edf65",
+  "generation": 30,
+  "state": "claimed",
+  "leaseId": "9efd6390-5533-4e0c-85fa-69459e3f063c",
   "holder": {
     "kind": "chatgpt",
-    "label": "rush-closeout-mat-20261107"
+    "label": "Ovid materials 2234"
   },
-  "claimedAt": "2026-11-07T09:14:47.968Z",
-  "heartbeatAt": "2026-11-07T09:39:54.549Z",
-  "expiresAt": "2026-11-07T09:39:54.549Z",
-  "branch": "work/rush-closeout-mat-20261107",
+  "claimedAt": "2026-11-08T22:38:01.030Z",
+  "heartbeatAt": "2026-11-08T22:38:01.030Z",
+  "expiresAt": "2026-11-08T23:23:01.030Z",
+  "branch": "work/swarm-materials-20261108-2234",
   "predecessor": {
-    "leaseId": "11e00270-b80a-4364-a2a5-a6e35810130e",
-    "generation": 28,
-    "branch": "work/zerg-20261106-w5-floor-pour-boundary",
-    "pr": 1371,
+    "leaseId": "78600113-2728-4bdf-881f-fdae1c7edf65",
+    "generation": 29,
+    "branch": "work/rush-closeout-mat-20261107",
+    "pr": 1374,
     "checkpoint": {
-      "evidence": "Draft 1371 source 748be1ef, tree 8d76f713, reconciles actual main f8c11317. Continuous RC200 pour, horizontal -380 interface, bonded mineral DPC and one finite floor-family budget reproduce. Zero-air mix sensitivity exceeds the structural density control. No physical admission.",
-      "next": "Locate the continuous outer and court boundary and connected ventilation and drainage sections within this same floor case, then review bounded evidence and exact-head validation.",
-      "blocker": "Actual site, batch, cure, full perimeter and RC interfaces, opening cuts and installed air and moisture performance remain unqualified."
+      "evidence": "Successor #1374 merged a0896ad683e8969169e41cf8c3c0395ec4a4e9c4 with predecessor #1371 in ancestry. Verified test:mat, independent geometric sweep, support-locus caption, 14 exact-head workflows and canonical preflight. The ordinary RC floor boundary is a research comparison.",
+      "next": "Develop the floor-to-wall junction through actual court outlets, pierced returns and drained vent openings. Establish connected every-bay ventilation, solum drainage, delivered batch/cure and installed air/moisture performance before assembly admission."
     }
   },
   "recoverySource": {
-    "leaseId": "11e00270-b80a-4364-a2a5-a6e35810130e",
-    "generation": 28,
-    "branch": "work/zerg-20261106-w5-floor-pour-boundary",
-    "pr": 1371,
+    "leaseId": "78600113-2728-4bdf-881f-fdae1c7edf65",
+    "generation": 29,
+    "branch": "work/rush-closeout-mat-20261107",
+    "pr": 1374,
     "checkpoint": {
-      "evidence": "Draft 1371 source 748be1ef, tree 8d76f713, reconciles actual main f8c11317. Continuous RC200 pour, horizontal -380 interface, bonded mineral DPC and one finite floor-family budget reproduce. Zero-air mix sensitivity exceeds the structural density control. No physical admission.",
-      "next": "Locate the continuous outer and court boundary and connected ventilation and drainage sections within this same floor case, then review bounded evidence and exact-head validation.",
-      "blocker": "Actual site, batch, cure, full perimeter and RC interfaces, opening cuts and installed air and moisture performance remain unqualified."
+      "evidence": "Successor #1374 merged a0896ad683e8969169e41cf8c3c0395ec4a4e9c4 with predecessor #1371 in ancestry. Verified test:mat, independent geometric sweep, support-locus caption, 14 exact-head workflows and canonical preflight. The ordinary RC floor boundary is a research comparison.",
+      "next": "Develop the floor-to-wall junction through actual court outlets, pierced returns and drained vent openings. Establish connected every-bay ventilation, solum drainage, delivered batch/cure and installed air/moisture performance before assembly admission."
     }
-  },
-  "pr": 1374,
-  "checkpoint": {
-    "evidence": "Successor #1374 merged a0896ad683e8969169e41cf8c3c0395ec4a4e9c4 with predecessor #1371 in ancestry. Verified test:mat, independent geometric sweep, support-locus caption, 14 exact-head workflows and canonical preflight. The ordinary RC floor boundary is a research comparison.",
-    "next": "Develop the floor-to-wall junction through actual court outlets, pierced returns and drained vent openings. Establish connected every-bay ventilation, solum drainage, delivered batch/cure and installed air/moisture performance before assembly admission."
-  },
-  "releasedAt": "2026-11-07T09:39:54.549Z",
-  "releaseReason": "handoff"
+  }
 }
