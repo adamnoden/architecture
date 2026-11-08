@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="575" viewBox="0 0 1060 575">
+<title>Two separated subfloor zones and the trial crossing beneath the water track</title>
+<rect width="1060" height="575" fill="#faf9f4"/><g font-family="Arial, sans-serif" fill="#233b45">
+<text x="35" y="41" fill="#233b45" font-size="27">A lower air path to the northeast floor pocket</text>
+<text x="35" y="72" fill="#233b45" font-size="16">Plan and levels in millimetres. North is up. The uniform ground case is shown.</text>
+<rect x="71.0" y="146.0" width="324.0" height="324.0" fill="#e9e4d9"/>
+<rect x="185.75" y="260.75" width="94.5" height="94.5" fill="#b9b3a4"/>
+<rect x="200.6" y="146.0" width="64.8" height="114.75" fill="#b9b3a4"/>
+<rect x="333.5075" y="267.5" width="61.4925" height="32.4" fill="#b9b3a4"/>
+<rect x="280.25" y="270.2" width="114.75" height="27.0" fill="#c88970"/>
+<rect x="66.95" y="405.2" width="238.95" height="10.8" fill="#28797b"/>
+<rect x="295.1" y="313.4" width="10.8" height="102.6" fill="#28797b"/>
+<rect x="295.1" y="186.5" width="10.8" height="64.8" fill="#28797b"/>
+<rect x="295.1" y="186.5" width="103.95" height="10.8" fill="#28797b"/>
+<rect x="295.1" y="251.3" width="10.8" height="62.1" fill="#bd663e"/>
+<circle cx="66.95" cy="410.6" r="4.5" fill="#233b45"/>
+<circle cx="399.05" cy="410.6" r="4.5" fill="#233b45"/>
+<circle cx="66.95" cy="191.89999999999998" r="4.5" fill="#233b45"/>
+<circle cx="399.05" cy="191.89999999999998" r="4.5" fill="#233b45"/>
+<text x="208" y="311" fill="#233b45" font-size="13">Court</text>
+<text x="212" y="195" fill="#233b45" font-size="13">Loggia</text>
+<text x="324" y="278" fill="#233b45" font-size="12">Water track</text>
+<text x="288" y="170" fill="#233b45" font-size="15">NE pocket</text>
+<text x="49" y="500" fill="#28797b" font-size="15">Green: upper path</text>
+<text x="206" y="500" fill="#9e583f" font-size="15">Rust: lowered crossing</text>
+<text x="49" y="527" fill="#233b45" font-size="15">The route avoids the space below the loggia.</text>
+<path d="M 490 157.0 h 135" stroke="#233b45" stroke-width="2"/>
+<text x="648" y="162.0" fill="#233b45" font-size="16">Rail underside with deflection  -1,222.9</text>
+<path d="M 490 177.33823529411757 h 135" stroke="#28797b" stroke-width="2"/>
+<text x="648" y="182.33823529411757" fill="#28797b" font-size="16">Top of air route  -1,250</text>
+<path d="M 490 289.83823529411757 h 135" stroke="#28797b" stroke-width="2"/>
+<text x="648" y="294.83823529411757" fill="#28797b" font-size="16">Bottom of air route  -1,400</text>
+<path d="M 490 327.33823529411757 h 135" stroke="#9e583f" stroke-width="2"/>
+<text x="648" y="332.33823529411757" fill="#9e583f" font-size="16">Stressed ground  -1,450</text>
+<rect x="502" y="178.33823529411757" width="111" height="110.5" fill="#d2e6df"/>
+<text x="490" y="120" fill="#233b45" font-size="16">AT THE EAST EDGE OF THE CROSSING</text>
+<text x="490" y="401" fill="#233b45" font-size="17">Rail reserve above the path: 27.1 mm.</text>
+<text x="490" y="432" fill="#233b45" font-size="17">Ground reserve below the path: 50 mm.</text>
+<text x="490" y="483" fill="#233b45" font-size="16">Raising the solum to drain to level exterior ground</text>
+<text x="490" y="509" fill="#233b45" font-size="16">at a 1 in 100 fall consumes the lower reserve.</text>
+<text x="35" y="560" fill="#233b45" font-size="14">Geometry only. Physical airflow, ground movement, runoff and a lower independent outfall require evidence.</text>
+</g></svg>

@@ -19,6 +19,12 @@
       "blob": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
       "role": "Proposed common grid and foundation heads with actual comparison axes and depths."
     },
+    "RWTlowerTrack": {
+      "commit": "9da10bd4cd2dbdb48b697d9e1acfc57dbf683a88",
+      "path": "project/rwt/studies/upper-first-release.json",
+      "blob": "3b9baf336c4b623d2ff9ccc1ee917e80a6128284",
+      "role": "Unadopted upper-first mechanism, including motion and the lowered rail through the inhabited gallery. Retain the selected HAD track as a separate comparison."
+    },
     "STRtoe": {
       "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
       "path": "project/str/studies/open-loggia-support.json",
@@ -92,6 +98,13 @@
     "skirtBelowInnerSill_mm": 30,
     "screenPullOut_mm": 100,
     "role": "Authored removable metal screen and hood with continuous cheeks and a free outer drip. All dimensions are clear finished geometry except the named skirt thickness. No proprietary product, weather test or installed plinth is credited."
+  },
+  "ventCrossing": {
+    "crossingBandX_mm": [8300, 8700],
+    "crossExtentY_mm": [5800, 8100],
+    "lowerZ_mm": [-1400, -1250],
+    "solumWestFallRunPerRise": 100,
+    "role": "Geometric air corridor in the open void, with local space to drop and rise on either side of the water track. The westward solum fall is a sensitivity for the pre-site drainage requirement, with no nominated construction or outfall."
   },
   "binderEvidence": {
     "product": "Cemex Portland, Rugby works, CEM I 52.5 N",

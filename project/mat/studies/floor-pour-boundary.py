@@ -8,6 +8,8 @@ import subprocess
 from itertools import pairwise
 from pathlib import Path
 
+from subfloor_vent_path import compare_path
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 STEM = 'floor-pour-boundary'
@@ -326,6 +328,39 @@ def vent_mouths(control, vent, had, grid):
     }
 
 
+def solum_fall(control, had, void):
+    # A plane draining west rises to the east. Test its highest point under
+    # the crossing; use uniform stress solely for the vertical clearance check.
+    _, east_edge = control['crossingBandX_mm']
+    low, _ = control['lowerZ_mm']
+    slope = control['solumWestFallRunPerRise']
+    width = had['model']['shell']
+    grade = void['referenceGrade_mm']
+    stress = void['effectiveStressDatum_mm'] - grade
+    assert slope > 0 and 0 < east_edge < width
+    rise_at_crossing = east_edge / slope
+    lip_at_grade = grade
+    lip_with_east_at_grade = grade - width / slope
+    lip_at_contact = low - stress - rise_at_crossing
+
+    def test(lip):
+        stressed = lip + rise_at_crossing + stress
+        return {'westLip_mm': lip, 'eastEdge_mm': lip + width / slope,
+                'highestStressUnderCrossing_mm': stressed,
+                'clearBelowCorridor_mm': low - stressed,
+                'lipBelowExteriorComparison_mm': grade - lip}
+
+    return {'runPerRise': slope, 'flatStressMargin_mm': low - void['effectiveStressDatum_mm'],
+            'westLipAtUniformExterior': test(lip_at_grade),
+            'eastEdgeAtUniformExterior': test(lip_with_east_at_grade),
+            'westLipForZeroCorridorClearance_mm': lip_at_contact,
+            'minimumWestLipDropForPositiveClearance_mm': grade - lip_at_contact,
+            'eastFaultWaterAboveCutWestLip_mm':
+                had['model']['rwtReceivingInterface']['east']['blockedOutletSpill']['maximumFaultedReceiverWater']
+                - lip_with_east_at_grade,
+            'scope': 'An ideal plane is neither a working outlet nor a predicted deformed surface. Independent downhill receiving ground and controlling backwater below the running solum outlet, continuous routes past shafts and plinth, differential heave and erosion remain unverified.'}
+
+
 def void_comparison(had, grid, floor_area, slab_bottom, guidance):
     grade = had['model']['approaches']['authoredExteriorGrade']
     ground = had['groundEnvelope']
@@ -438,6 +473,8 @@ def produce():
                         'structuralMaterialScope': floor['materials']},
         'guidance': guidance, 'voidComparison': void, 'ventSliceTrial': vent,
         'ventMouthComparison': vent_mouths(control['ventMouth'], vent, had, grid),
+        'solumFallTrial': solum_fall(control['ventCrossing'], had, void),
+        'ventCrossingPath': compare_path(control['ventCrossing'], had, grid, sources['RWTlowerTrack'], vent, void),
         'proposedMonolithicCastUnion': cast_union(had, grid, floor, slab),
         'batchComparison': batch, 'binderEvidence': control['binderEvidence'], 'curingAndJoint': control['curingAndJoint'],
         'airAndCapillaryRegister': {
@@ -588,6 +625,72 @@ def mouth_figure(result):
 </g></svg>''' + '\n'
 
 
+def path_figure(result):
+    vent = result['ventSliceTrial']
+    path = result['ventCrossingPath']
+    crossing = path['control']
+    lower, upper = crossing['lowerZ_mm']
+    left, right = crossing['crossingBandX_mm']
+    south, north = crossing['crossExtentY_mm']
+    front, rear = vent['control']['westEastBandsY_mm']
+    x0, x1 = vent['control']['westEastExtentX_mm']
+    shell = vent['shell_mm']
+    ground = result['voidComparison']['effectiveStressDatum_mm']
+    ink, route, wet, paper = '#233b45', '#28797b', '#9e583f', '#faf9f4'
+    s, ox, oy = .027, 71, 470
+    svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="575" viewBox="0 0 1060 575">',
+           '<title>Two separated subfloor zones and the trial crossing beneath the water track</title>',
+           f'<rect width="1060" height="575" fill="{paper}"/><g font-family="Arial, sans-serif" fill="{ink}">']
+
+    def label(x, y, value, size=16, colour=ink):
+        svg.append(f'<text x="{x}" y="{y}" fill="{colour}" font-size="{size}">{html.escape(value)}</text>')
+
+    def box(x, y, w, h, fill):
+        svg.append(f'<rect x="{ox+x*s}" y="{oy-(y+h)*s}" width="{w*s}" height="{h*s}" fill="{fill}"/>')
+
+    label(35, 41, 'A lower air path to the northeast floor pocket', 27)
+    label(35, 72, 'Plan and levels in millimetres. North is up. The uniform ground case is shown.')
+    box(0, 0, shell, shell, '#e9e4d9')
+    for footprint in path['excludedXYWH_mm']:
+        box(*footprint, '#b9b3a4')
+    cx, cy, cw, ch = vent['courtPlan_mm']
+    wy0, wy1 = path['trackY_mm']
+    box(cx+cw, wy0, shell-(cx+cw), wy1-wy0, '#c88970')
+    box(x0, front[0], right-x0, front[1]-front[0], route)
+    box(left, front[0], right-left, south-front[0], route)
+    box(left, north, right-left, rear[1]-north, route)
+    box(left, rear[0], x1-left, rear[1]-rear[0], route)
+    box(left, south, right-left, north-south, '#bd663e')
+    for y0, y1 in (front, rear):
+        for x in (x0, x1):
+            svg.append(f'<circle cx="{ox+x*s}" cy="{oy-(y0+y1)*s/2}" r="4.5" fill="{ink}"/>')
+    label(208, 311, 'Court', 13)
+    label(212, 195, 'Loggia', 13)
+    label(324, 278, 'Water track', 12)
+    label(288, 170, 'NE pocket', 15)
+    label(49, 500, 'Green: upper path', 15, route)
+    label(206, 500, 'Rust: lowered crossing', 15, wet)
+    label(49, 527, 'The route avoids the space below the loggia.', 15)
+    sx, sy, height = 490, 157, .75
+    roof = path['railBottomWithDeflection_mm']
+    zmap = lambda z: sy + (roof-z)*height
+    for z, title, colour in [(roof, f'Rail underside with deflection  {roof:,.1f}', ink),
+                             (upper, f'Top of air route  {upper:,}', route),
+                             (lower, f'Bottom of air route  {lower:,}', route),
+                             (ground, f'Stressed ground  {ground:,}', wet)]:
+        svg.append(f'<path d="M {sx} {zmap(z)} h 135" stroke="{colour}" stroke-width="2"/>')
+        label(648, zmap(z)+5, title, 16, colour)
+    svg.append(f'<rect x="{sx+12}" y="{zmap(upper)+1}" width="111" height="{(upper-lower)*height-2}" fill="#d2e6df"/>')
+    label(sx, 120, 'AT THE EAST EDGE OF THE CROSSING', 16)
+    label(sx, 401, f'Rail reserve above the path: {roof-upper:.1f} mm.', 17)
+    label(sx, 432, f'Ground reserve below the path: {lower-ground:g} mm.', 17)
+    label(sx, 483, 'Raising the solum to drain to level exterior ground', 16)
+    label(sx, 509, 'at a 1 in 100 fall consumes the lower reserve.', 16)
+    label(35, 560, 'Geometry only. Physical airflow, ground movement, runoff and a lower independent outfall require evidence.', 14)
+    svg.append('</g></svg>')
+    return '\n'.join(svg) + '\n'
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--check', action='store_true')
@@ -595,7 +698,8 @@ if __name__ == '__main__':
     result = produce()
     outputs = {HERE / f'{STEM}.results.json': json.dumps(result, indent=2, ensure_ascii=False) + '\n',
                HERE / f'{STEM}.svg': figure(result),
-               HERE / 'subfloor-vent-mouth.svg': mouth_figure(result)}
+               HERE / 'subfloor-vent-mouth.svg': mouth_figure(result),
+               HERE / 'subfloor-vent-crossing.svg': path_figure(result)}
     for path, contents in outputs.items():
         if args.check:
             assert path.exists() and path.read_text() == contents, f'Stale output: {path.name}'

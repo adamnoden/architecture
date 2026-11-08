@@ -19,6 +19,12 @@
       "blob": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
       "role": "Proposed common grid and foundation heads with actual comparison axes and depths."
     },
+    "RWTlowerTrack": {
+      "commit": "9da10bd4cd2dbdb48b697d9e1acfc57dbf683a88",
+      "path": "project/rwt/studies/upper-first-release.json",
+      "blob": "3b9baf336c4b623d2ff9ccc1ee917e80a6128284",
+      "role": "Unadopted upper-first mechanism, including motion and the lowered rail through the inhabited gallery. Retain the selected HAD track as a separate comparison."
+    },
     "STRtoe": {
       "commit": "27b8532074eeded1241dabb3f0cc90eacdb45252",
       "path": "project/str/studies/open-loggia-support.json",
@@ -346,6 +352,151 @@
       }
     ],
     "scope": "Clear areas of successive sections only. The smaller area bounds the geometric opening; pressure losses add. Wind-driven water, seams, debris, rebound, plinth support, outlet, service access, adjacent upper-deck supports and every-bay ventilation require separate evidence."
+  },
+  "solumFallTrial": {
+    "runPerRise": 100,
+    "flatStressMargin_mm": 50,
+    "westLipAtUniformExterior": {
+      "westLip_mm": -1800,
+      "eastEdge_mm": -1680.0,
+      "highestStressUnderCrossing_mm": -1363.0,
+      "clearBelowCorridor_mm": -37.0,
+      "lipBelowExteriorComparison_mm": 0
+    },
+    "eastEdgeAtUniformExterior": {
+      "westLip_mm": -1920.0,
+      "eastEdge_mm": -1800.0,
+      "highestStressUnderCrossing_mm": -1483.0,
+      "clearBelowCorridor_mm": 83.0,
+      "lipBelowExteriorComparison_mm": 120.0
+    },
+    "westLipForZeroCorridorClearance_mm": -1837.0,
+    "minimumWestLipDropForPositiveClearance_mm": 37.0,
+    "eastFaultWaterAboveCutWestLip_mm": 670.0,
+    "scope": "An ideal plane is neither a working outlet nor a predicted deformed surface. Independent downhill receiving ground and controlling backwater below the running solum outlet, continuous routes past shafts and plinth, differential heave and erosion remain unverified."
+  },
+  "ventCrossingPath": {
+    "control": {
+      "crossingBandX_mm": [
+        8300,
+        8700
+      ],
+      "crossExtentY_mm": [
+        5800,
+        8100
+      ],
+      "lowerZ_mm": [
+        -1400,
+        -1250
+      ],
+      "solumWestFallRunPerRise": 100,
+      "role": "Geometric air corridor in the open void, with local space to drop and rise on either side of the water track. The westward solum fall is a sensitivity for the pre-site drainage requirement, with no nominated construction or outfall."
+    },
+    "outboardBankSpanX_mm": [
+      12250,
+      14950
+    ],
+    "excludedXYWH_mm": [
+      [
+        4250,
+        4250,
+        3500,
+        3500
+      ],
+      [
+        4800,
+        7750,
+        2400,
+        4250
+      ],
+      [
+        9722.5,
+        6300,
+        2277.5,
+        1200
+      ]
+    ],
+    "trackY_mm": [
+      6400,
+      7400
+    ],
+    "z_mm": [
+      -1400,
+      -1250
+    ],
+    "width_mm": 400,
+    "upperProbeGroups": [
+      [
+        "frontE",
+        "frontW",
+        "lowerSouth",
+        "rearW"
+      ],
+      [
+        "lowerNorth",
+        "rearE"
+      ]
+    ],
+    "upperLegsXYXY_mm": [
+      [
+        -150,
+        2000,
+        8700,
+        2400
+      ],
+      [
+        8300,
+        2000,
+        8700,
+        6200
+      ],
+      [
+        8300,
+        7700,
+        8700,
+        10500
+      ],
+      [
+        8300,
+        10100,
+        12150,
+        10500
+      ]
+    ],
+    "drawnUpperLegsClear": true,
+    "twoUpperGroupsJoinedByLowerReservation": true,
+    "shaftBoxClearance_mm": 150.0,
+    "railPostFaceClearance_mm": 325.0,
+    "railBottomWithDeflection_mm": -1222.8823529411766,
+    "frameAndKeeperBottom_mm": [
+      -1050.8823529411766,
+      -1139.8823529411766
+    ],
+    "movingBounds": {
+      "native-inlet460box": {
+        "earliestX_mm": 6759.703011121693,
+        "canReachCrossingFromWest": true,
+        "conservativeBottom_mm": -1028.1698160736796
+      },
+      "native-outlet460box": {
+        "earliestX_mm": 12548.154436529941,
+        "canReachCrossingFromWest": false,
+        "conservativeBottom_mm": -1357.5294731433482
+      },
+      "complete-moving285flange-prism": {
+        "earliestX_mm": 6704.499572055257,
+        "canReachCrossingFromWest": true,
+        "conservativeBottom_mm": -1044.902386697842
+      },
+      "straight-tube-conservative160square": {
+        "earliestX_mm": 7157.855682018165,
+        "canReachCrossingFromWest": true,
+        "conservativeBottom_mm": -1074.1598889406735
+      }
+    },
+    "lowerHeadroomBeyondPath_mm": 27.117647058823422,
+    "lowerSoilReserve_mm": 50,
+    "scope": "Known geometric airspace under the gallery. No liner, duct, air interchange, installed screens, footing, plinth, handling hardware, physical drainage, threshold-seat coverage or verified air delivery to every bay."
   },
   "proposedMonolithicCastUnion": {
     "drySlabAndSeatArea_m2": 104.895225,
