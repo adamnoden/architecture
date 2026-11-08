@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 30,
-  "state": "released",
-  "leaseId": "9efd6390-5533-4e0c-85fa-69459e3f063c",
+  "generation": 31,
+  "state": "claimed",
+  "leaseId": "495b5c0b-0ae4-4407-b0b6-dd8baae18dd1",
   "holder": {
     "kind": "chatgpt",
-    "label": "Ovid materials 2234"
+    "label": "MAT floor boundary 2333"
   },
-  "claimedAt": "2026-11-08T22:38:01.030Z",
-  "heartbeatAt": "2026-11-08T23:28:57.875Z",
-  "expiresAt": "2026-11-08T23:28:57.875Z",
-  "branch": "work/swarm-materials-20261108-2234",
+  "claimedAt": "2026-11-08T23:33:23.308Z",
+  "heartbeatAt": "2026-11-08T23:33:23.308Z",
+  "expiresAt": "2026-11-09T00:18:23.308Z",
+  "branch": "work/mat-floor-2333",
   "predecessor": {
-    "leaseId": "78600113-2728-4bdf-881f-fdae1c7edf65",
-    "generation": 29,
-    "branch": "work/rush-closeout-mat-20261107",
-    "pr": 1374,
+    "leaseId": "9efd6390-5533-4e0c-85fa-69459e3f063c",
+    "generation": 30,
+    "branch": "work/swarm-materials-20261108-2234",
+    "pr": 1395,
     "checkpoint": {
-      "evidence": "Successor #1374 merged a0896ad683e8969169e41cf8c3c0395ec4a4e9c4 with predecessor #1371 in ancestry. Verified test:mat, independent geometric sweep, support-locus caption, 14 exact-head workflows and canonical preflight. The ordinary RC floor boundary is a research comparison.",
-      "next": "Develop the floor-to-wall junction through actual court outlets, pierced returns and drained vent openings. Establish connected every-bay ventilation, solum drainage, delivered batch/cure and installed air/moisture performance before assembly admission."
+      "evidence": "PR #1395 at 14be8efe draws the four real exterior mouths and reproduces their serial restrictions; local test:mat and section inspection passed",
+      "next": "Integrate the closed-loggia topology and challenge the lowered gallery crossing against the selected and upper-first moving rail. Then validate and merge."
     }
   },
   "recoverySource": {
-    "leaseId": "78600113-2728-4bdf-881f-fdae1c7edf65",
-    "generation": 29,
-    "branch": "work/rush-closeout-mat-20261107",
-    "pr": 1374,
+    "leaseId": "9efd6390-5533-4e0c-85fa-69459e3f063c",
+    "generation": 30,
+    "branch": "work/swarm-materials-20261108-2234",
+    "pr": 1395,
     "checkpoint": {
-      "evidence": "Successor #1374 merged a0896ad683e8969169e41cf8c3c0395ec4a4e9c4 with predecessor #1371 in ancestry. Verified test:mat, independent geometric sweep, support-locus caption, 14 exact-head workflows and canonical preflight. The ordinary RC floor boundary is a research comparison.",
-      "next": "Develop the floor-to-wall junction through actual court outlets, pierced returns and drained vent openings. Establish connected every-bay ventilation, solum drainage, delivered batch/cure and installed air/moisture performance before assembly admission."
+      "evidence": "PR #1395 at 14be8efe draws the four real exterior mouths and reproduces their serial restrictions; local test:mat and section inspection passed",
+      "next": "Integrate the closed-loggia topology and challenge the lowered gallery crossing against the selected and upper-first moving rail. Then validate and merge."
     }
-  },
-  "pr": 1395,
-  "checkpoint": {
-    "evidence": "PR #1395 at 14be8efe draws the four real exterior mouths and reproduces their serial restrictions; local test:mat and section inspection passed",
-    "next": "Integrate the closed-loggia topology and challenge the lowered gallery crossing against the selected and upper-first moving rail. Then validate and merge."
-  },
-  "releasedAt": "2026-11-08T23:28:57.875Z",
-  "releaseReason": "handoff"
+  }
 }
