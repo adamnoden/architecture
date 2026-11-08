@@ -9,8 +9,8 @@
     "label": "Publish reviewed utility-sink patch"
   },
   "claimedAt": "2026-11-08T23:17:30.385Z",
-  "heartbeatAt": "2026-11-08T23:19:35.576Z",
-  "expiresAt": "2026-11-09T00:04:35.576Z",
+  "heartbeatAt": "2026-11-08T23:30:16.605Z",
+  "expiresAt": "2026-11-09T00:15:16.605Z",
   "branch": "work/ias-sink-publish-20261108-2316",
   "predecessor": {
     "leaseId": "e3c29fa5-e7d2-4e70-b764-ba0095049859",
@@ -29,7 +29,7 @@
   },
   "pr": 1397,
   "checkpoint": {
-    "evidence": "The reviewed patch is published as PR #1397 at d9edbd86; the sink calculation and docs build pass locally.",
-    "next": "Verify CI 42534556008, reconcile any newer main and run fresh lease preflight before merging."
+    "evidence": "PR #1397 at af209aa2 includes merged MAT #1395. Its tree equals the reviewed sink patch applied to ab6297f1. Local IAS checks and docs passed.",
+    "next": "Wait for final CI 42535425570, run fresh lease+base preflight, merge and close out."
   }
 }
