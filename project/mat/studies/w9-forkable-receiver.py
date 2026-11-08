@@ -15,6 +15,63 @@ def rhs(section):
     h,b,t=section
     return h*b-(h-2*t)*(b-2*t),(b*h**3-(b-2*t)*(h-2*t)**3)/12
 
+def front_service_section(frame, native, height, rim_bottom):
+    """Necessary straight approach beneath the top plate, in the cover-axis section."""
+    opening = frame['accessOpening']
+    _, rear, width, depth = opening['plateRect_mm']
+    _, axis = opening['trialBodyAxis_mm']
+    front = frame['outside_mm'][1]
+    edge = rear + depth
+    cover_offset = height - native['UVLLCoverBelowUnitBottom_mm']
+    nominal_seat = (native['nativeAssembledCabinetTopFromDrawnBaseLowerLine_mm']
+                    - native['nativeCabinetBodyHeight_mm'])
+    cover = cover_offset + nominal_seat
+    # The floor-grazing ray is the lowest straight path to the target at every
+    # intervening y. A higher approach only worsens the clash with the rim.
+    run = front - axis
+    point_limit = rim_bottom * run / (front - edge) - cover_offset
+    point_height = cover * (front - edge) / run
+
+    trial = opening['straightFrontTrial']
+    end = front + trial['outboardLength_mm']
+    bottom = trial['floorGap_mm']
+    top = bottom + trial['verticalProfile_mm']
+    gap = trial['overheadGap_mm']
+    def upper(y):
+        return top + (cover - top) * (end - y) / (end - axis)
+
+    limit_z = rim_bottom - gap
+    minimum_edge = end - (end - axis) * (limit_z - top) / (cover - top)
+    revised_edge = edge + trial['frontExtension_mm']
+    front_beam = frame['transverseBeamY_mm'][1][0]
+    rim_depth, rim_thickness = opening['rimFlatBar_mm']
+    rim_to_beam = front_beam - revised_edge - rim_thickness
+    # Each overhead obstruction is horizontal, and the probe rises inwards.
+    # Thus its inboard edge controls over the full thickness of the obstruction.
+    assert axis < edge < minimum_edge < revised_edge < front_beam < front < end
+    assert upper(edge) > rim_bottom and upper(revised_edge) < limit_z
+    assert upper(front_beam) < frame['nominalForkLaneUnderside_mm'] - gap
+    assert rim_to_beam > 0 and point_height > rim_bottom
+    assert math.isclose((cover_offset + point_limit) * (front-edge) / run, rim_bottom)
+    material_delta = trial['frontExtension_mm'] * (
+        2 * rim_depth * rim_thickness - width * frame['topPlateThickness_mm'])
+    return {'coverAxisY_mm': axis, 'existingFrontRimY_mm': edge,
+            'receiverFrontY_mm': front, 'coverZAboveFloorBeforeSeat_mm': cover_offset,
+            'zeroThicknessMaximumSeatDatum_mm': point_limit,
+            'nominalDrawingDatumSensitivity_mm': nominal_seat, 'sensitivityCoverZ_mm': cover,
+            'idealPointClashAtExistingRim_mm': point_height - rim_bottom,
+            'outboardTrial': trial, 'outerEndY_mm': end, 'outerEndTopZ_mm': top,
+            'existingTrialClash_mm': upper(edge) - rim_bottom,
+            'minimumForwardExtensionForTrial_mm': minimum_edge - edge,
+            'revisedFrontRimY_mm': revised_edge, 'revisedRimUndersideGap_mm': rim_bottom - upper(revised_edge),
+            'frontBeamUndersideGap_mm': frame['nominalForkLaneUnderside_mm'] - upper(front_beam),
+            'revisedRimToBeamPlanGap_mm': rim_to_beam,
+            'idealFixtureMassChange_kg': material_delta * frame['density_kg_per_m3'] / 1e9,
+            'scope': 'Static section sensitivity at a drawing datum, through the receiver front to the cover axis. '
+                     'Actual seat, cover torque, extraction, tools, person, pipe and native base are unqualified. '
+                     'The longer opening is a separate comparison. The original receiver mass and strength studies retain their original aperture.'}
+
+
 def produce():
     raw=BASE.with_name(BASE.name+'-sources').with_suffix('.json').read_bytes();c=json.loads(raw)
     m=immutable(c['sources']['HAD'])['model'];arch=immutable(c['sources']['balancedArchitecture'])
@@ -158,6 +215,7 @@ def produce():
         'nativeInletToBodyAxis_mm':n['UVLLInletToBodyAxis_mm'],
         'nativeBodyHeight_mm':n['UVLLBodyHeight_mm'],
         'datum':'Let d be ACTUAL unit-bottom height above receiver top after native base seating and foot adjustment. Native base123/feet15..50 and illustrated assembled1417 do not establish d by addition. No installed d selected.',
+        'frontServiceSection':front_service_section(a,n,height,rim_bottom),
         'fullPlateNegativeControl':{'coverAbovePlateExpression':'d -72','afterRaisingReceiverExpression':'(receiverHeight+d-72)-receiverHeight = d-72',
           'raisingChangesClearance_mm':0,'role':'Exact translation cancellation; no assumed actual base seat. Raising a continuous plate cannot earn annual downward access.'},
         'aperture':{'clear_mm':[ow,od],'trialPlateRect_mm':opening['plateRect_mm'],
@@ -191,7 +249,7 @@ def produce():
         'portsCondensateAndHeadProved':False,'cartOrExteriorHandlingAdmitted':False,'materialException':False,'HADorServicesGeometryChanged':False,'packetComplete':False}}
 
 def figure(r):
-    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="1250" viewBox="0 0 1250 1250">','<rect width="1250" height="1250" fill="#f4f1e9"/>']
+    out=['<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="1610" viewBox="0 0 1250 1610">','<rect width="1250" height="1610" fill="#f4f1e9"/>']
     def text(x,y,t,size=18,color='#21363b'):
       out.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-family="Arial,sans-serif">{html.escape(t)}</text>')
     def rect(x,y,w,h,fill='#b4cec4',stroke='#21363b'):
@@ -249,6 +307,40 @@ def figure(r):
       'No existing floor drain, sanitary/RWT/heat-pump receptor, floor/air/water closure or material exception is borrowed.']
     for i,row in enumerate(rows):text(35,954+i*34,row,17)
     text(35,1220,'No apparatus, support, cleaning/handling pass, selected air target or MAT completion.',19,'#8c402e')
+    study = r['condensate']['frontServiceSection']
+    trial = study['outboardTrial']
+    text(35,1280,'Can a straight tool reach the cover from the room?',24)
+    text(35,1312,'Cover-axis section at the 103 mm drawing datum. The actual installed seat is unmeasured.',18)
+    scale = .82
+    def sx(y): return 52 + (y - study['coverAxisY_mm']) * scale
+    def sz(z): return 1565 - z * scale
+    plate_top = a['height_mm']
+    plate_t = a['authored']['topPlateThickness_mm']
+    rim_h, rim_t = q['rimFlatBar_mm']
+    lane = a['authored']['nominalForkLaneUnderside_mm']
+    face = study['receiverFrontY_mm']
+    existing, revised = study['existingFrontRimY_mm'], study['revisedFrontRimY_mm']
+    beam = a['authored']['transverseBeamY_mm'][1][0]
+    rect(sx(revised),sz(plate_top),(face-revised)*scale,plate_t*scale,'#7e969c')
+    rect(sx(revised),sz(plate_top-plate_t),rim_t*scale,rim_h*scale,'#486e69')
+    rect(sx(beam),sz(plate_top-plate_t),(face-beam)*scale,(plate_top-plate_t-lane)*scale,'#7e969c')
+    line(sx(existing),sz(plate_top),sx(revised),sz(plate_top),'#aa813d')
+    rect(sx(existing),sz(plate_top-plate_t),rim_t*scale,rim_h*scale,'#d4a766')
+    start, end = study['coverAxisY_mm'], study['outerEndY_mm']
+    cover, end_top = study['sensitivityCoverZ_mm'], study['outerEndTopZ_mm']
+    for offset in [0,trial['verticalProfile_mm']]:
+        line(sx(start),sz(cover-offset),sx(end),sz(end_top-offset))
+    line(sx(start),sz(0),sx(end)+20,sz(0))
+    text(sx(start),1347,'Cover',15)
+    text(sx(start),1590,'Cover axis',14)
+    text(sx(face)-30,1590,'Front face',14)
+    text(sx(end)-32,1590,'Tool end',14)
+    text(570,1372,'Amber marks the present 40 mm rim. It blocks even a point',17)
+    text(570,1402,f"approach above a {study['zeroThicknessMaximumSeatDatum_mm']:.1f} mm seat datum.",17)
+    text(570,1452,f"Moving the front rim {trial['frontExtension_mm']} mm towards the room leaves",17)
+    text(570,1482,f"{study['revisedRimUndersideGap_mm']:.1f} mm above the trial profile at the rim and",17)
+    text(570,1512,f"{study['frontBeamUndersideGap_mm']:.1f} mm under the front crossbeam.",17)
+    text(570,1562,'Static pose only. Foot bearing and annual withdrawal remain open.',17)
     out.append('</svg>');return '\n'.join(out)+'\n'
 
 def main():
