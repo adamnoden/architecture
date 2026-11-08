@@ -9,8 +9,8 @@
     "label": "November structural coordination swarm"
   },
   "claimedAt": "2026-11-08T23:32:16.150Z",
-  "heartbeatAt": "2026-11-08T23:32:16.150Z",
-  "expiresAt": "2026-11-09T00:17:16.150Z",
+  "heartbeatAt": "2026-11-08T23:44:06.662Z",
+  "expiresAt": "2026-11-09T00:29:06.662Z",
   "branch": "work/swarm-house-2332",
   "predecessor": {
     "leaseId": "3f88f41d-876d-4ade-ba9c-b03a36f1fb24",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1393 at 7bf6c916, full CI 42532218710 and publication preflight passed. Vertical and forged-head routes fail the retained cage.",
       "next": "Change the cage, guard load path or anchorage system, then rejoin placing, cover, confinement and signed reactions of both pier arms. See #1103."
     }
+  },
+  "pr": 1400,
+  "checkpoint": {
+    "evidence": "PR #1400 b2fcc10f. The in-plane cage shift retains both guard fixings. Seven structural regression cases, the calculation and rendered sheet passed locally.",
+    "next": "Integrate with verified RWT and MAT heads after the current IAS merge. Reconcile current main and recheck each lease before publication."
   }
 }
