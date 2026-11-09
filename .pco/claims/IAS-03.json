@@ -9,9 +9,9 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T02:04:50.662Z",
-  "heartbeatAt": "2026-11-09T02:17:54.397Z",
-  "expiresAt": "2026-11-09T03:02:54.397Z",
-  "branch": "work/fabric-frontier-60837041",
+  "heartbeatAt": "2026-11-09T02:18:28.094Z",
+  "expiresAt": "2026-11-09T03:03:28.094Z",
+  "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "d3ae039d-782a-423b-8d0e-69bc796478ac",
     "generation": 30,
@@ -32,9 +32,9 @@
       "next": "Wait for exact CI and fresh lease/main/branch check; expected-head merge, provenance and issue reconciliation, then release."
     }
   },
-  "pr": 1416,
+  "pr": 1414,
   "checkpoint": {
-    "evidence": "IAS #1416 source 8630d8e2; Study face pivot/flush trim and EGGER comparator. All numerical and SVG outputs checked and drawn panel inspected. Source remains open for matched complete doorset.",
-    "next": "Join #1414 while preserving source identity; verify exact-head CI, canonical preflight, merger and #941 handoff."
+    "evidence": "STR/IAS/RWT integration lead #1414 exists; IAS source #1416 is preserved at 8630d8e2, with Study door result and rendering checked. Integration parent and final exact-head validation not yet observed.",
+    "next": "Commander combines IAS #1416, RWT and fresh main into #1414. Verify ancestry, source equality, exact-head CI and freshly preflight before controlled merge."
   }
 }
