@@ -9,8 +9,8 @@
     "label": "House water and access continuation 0405"
   },
   "claimedAt": "2026-11-09T04:08:23.377Z",
-  "heartbeatAt": "2026-11-09T04:27:49.553Z",
-  "expiresAt": "2026-11-09T05:12:49.553Z",
+  "heartbeatAt": "2026-11-09T04:57:25.265Z",
+  "expiresAt": "2026-11-09T05:42:25.265Z",
   "branch": "work/house-0406-20261109",
   "predecessor": {
     "leaseId": "e939437e-a556-4200-afdd-6b5035473434",
@@ -34,7 +34,7 @@
   },
   "pr": 1428,
   "checkpoint": {
-    "evidence": "Freeze #1429 at 9f417981; source-checked Geberit outlet and new floor/hatch proven as a bounded proposal. Independent source parent for combined #1428.",
-    "next": "Wait for final combined head, verify retained IAS parent/tree and perform IAS publication preflight. Close reference branch after merge."
+    "evidence": "Independent full clone verified #1428 f1253054/tree 52102729, direct #1429 parent, its four IAS blobs and registered check. Exact local repository suite passed.",
+    "next": "All 13 other hosted workflows passed. Wait for Validate, then exact-head IAS merge-check and merged-ref cleanup."
   }
 }
