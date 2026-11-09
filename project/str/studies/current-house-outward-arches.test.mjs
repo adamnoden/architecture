@@ -139,3 +139,14 @@ test('a transverse H10 can enclose the bend only by spending wall width on its s
   assert.ok(t.straightH20GapLowerMm > 0 && t.noseToH16GapLowerMm > 0 && t.noseToH25GapLowerMm > 0);
   assert.ok(t.noseToH16OnSteelOnlyCardUpperMm < 16);
 });
+
+test('normal contact on the perpendicular face cannot reproduce the continuous spring witness', () => {
+  const b = study('central-arch-detail').perpendicularBearing;
+  assert.deepEqual([b.case.element, b.case.end], [0, 0]);
+  assert.ok(b.compressionKN > 0);
+  for (const [i, size] of b.radialAndNormalFaceMm.entries()) {
+    assert.equal(b.strongAndWeakEdgeBoundKNm[i], b.compressionKN * size / 2000);
+    assert.ok(b.requiredRadialAndNormalEccentricityMm[i] > size / 2);
+    assert.ok(b.strongAndWeakDemandKNm[i] > b.strongAndWeakEdgeBoundKNm[i]);
+  }
+});

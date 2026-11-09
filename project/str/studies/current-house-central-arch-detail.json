@@ -200,6 +200,44 @@
     6
   ],
   "outsideH10CoverAfter10FaceAnd5LinkMm": 11.0,
+  "perpendicularBearing": {
+    "case": {
+      "element": 0,
+      "end": 0,
+      "loadedWindow": 5,
+      "pointSign": 1,
+      "pointX": 2240,
+      "pressureSign": 1,
+      "wind": 55,
+      "window": 5
+    },
+    "compressionKN": 18.361952209641657,
+    "radialAndNormalFaceMm": [
+      215,
+      180
+    ],
+    "requiredRadialAndNormalEccentricityMm": [
+      1065.5982395266938,
+      129.64165025806093
+    ],
+    "restraint": {
+      "LAndUpstandTorsionFactor": 0.25,
+      "allLowerBearings": true,
+      "crackedEI": 0.35,
+      "floorRoofYawJoin": true
+    },
+    "scope": "One current continuous-joint spring response on a single perpendicular contact plane. No tension, dowel, friction or separate force couple credited. A changed bearing model requires new reactions.",
+    "sourceInteraction": 0.99204289450542,
+    "strongAndWeakDemandKNm": [
+      19.566463948867437,
+      2.3804737864175927
+    ],
+    "strongAndWeakEdgeBoundKNm": [
+      1.9739098625364782,
+      1.6525756988677491
+    ],
+    "torsionKNm": 1.9003240728460482
+  },
   "pierOriginal": {
     "axialKN": -125,
     "corner": [

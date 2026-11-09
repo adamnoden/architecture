@@ -378,6 +378,29 @@ def bend_tie(cage):
     }
 
 
+def perpendicular_bearing():
+    # Select one archived end under one load combination; never mix maxima.
+    def witness(row):
+        return row['centralH25Arch']['governingEnds']['adverse']
+    row = max(solve['coupled'], key=lambda item: witness(item)['ratio'])
+    end = witness(row)
+    assert end['element'] == end['end'] == 0 and end['axialKN'] > 0
+    # Nonnegative normal pressure has a resultant inside its footprint.
+    # These edge bounds allow even an ideal point reaction at the edge.
+    radial, normal = arch['arch'][1], geometry['normalWidthNominal']
+    axial = end['axialKN']
+    return {
+        'case':{key:end[key] for key in ('wind','loadedWindow','window','pointX','pointSign','pressureSign','element','end')},
+        'restraint':{key:row[key] for key in ('crackedEI','LAndUpstandTorsionFactor','allLowerBearings','floorRoofYawJoin')},
+        'sourceInteraction':end['ratio'],'compressionKN':axial,'torsionKNm':end['torsionKNm'],
+        'radialAndNormalFaceMm':[radial,normal],
+        'strongAndWeakDemandKNm':[end['strongDemandKNm'],end['weakDemandKNm']],
+        'strongAndWeakEdgeBoundKNm':[axial*size/2000 for size in (radial,normal)],
+        'requiredRadialAndNormalEccentricityMm':[1000*end[key]/axial for key in ('strongDemandKNm','weakDemandKNm')],
+        'scope':'One current continuous-joint spring response on a single perpendicular contact plane. No tension, dowel, friction or separate force couple credited. A changed bearing model requires new reactions.'
+    }
+
+
 cage = in_plane_cage()
 
 result = {
@@ -405,6 +428,7 @@ result = {
     'verticalReturn':vertical_return(),
     'inPlaneCage':cage,
     'bendTie':bend_tie(cage),
+    'perpendicularBearing':perpendicular_bearing(),
     'psbSingle25':forged_head(),
     'held':['Load transfer, in-arch bond and shear shift, bend forces and confinement.',
             'H20 cranks and transverse links, cover, concrete placing and durability at the actual crossings.',
