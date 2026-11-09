@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {deriveCurrentHouse} from './current-house.mjs';
+import {deriveCurrentHouse,scheduleText} from './current-house.mjs';
+import {servicePlate,storePlate} from './occupied-service-plate.mjs';
 const x=deriveCurrentHouse(),m=x.model,s=m.architecturalServices;
 const near=(a,b,tol=1e-5)=>assert(Math.abs(a-b)<tol,`${a} != ${b}`);
 test('recovered 46 openings and 15 actual level-specific occupied room loads reproduce',()=>{
@@ -21,4 +22,24 @@ test('current independent DHW and corrected three-shutter operating states repro
  assert(s.plant.primaryBuffer.defrostKWh<s.plant.primaryBuffer.chargedKWh);
  assert.equal(m.protectedDoorAirTransfer.length,8);assert.equal(m.wetWallAirTransfer.length,4);
  assert.equal(x.courtReceiver.id,'HAD-COURT-BYPASS-01');assert.equal(x.installedPerformance,false);
+});
+
+test('store cradle clears the two piers and retained plant only after first release',()=>{
+  const route=m.storeExchange;
+  assert.equal(route.centredWest,8);
+  assert.equal(route.offset,17);
+  assert.equal(route.jacketToCartEdge,28);
+  assert.equal(route.fixed.westWall,25);
+  assert.equal(route.fixed.riser,25);
+  assert(Object.values(route.fixed).every(c=>c>=route.margin));
+  assert.equal(route.retainedManifoldAxis,-15);
+  near(route.firstManifoldAxisContact,76.08485357);
+  near(route.tundishAxis,91.57526073);
+  near(route.maxRetainedValveRadius,45.96045419);
+});
+
+test('published schedule and both figures reproduce from the complete house option',()=>{
+  for(const [file,render] of [['current-house-services.json',scheduleText],['current-house-services.svg',servicePlate],['store-exchange.svg',storePlate]])
+    assert.equal(readFileSync(new URL(file,import.meta.url),'utf8'),render(x),file);
+  assert.equal(Object.keys(x.inputs).length,9);
 });

@@ -6,43 +6,44 @@
     "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
     "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
     "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
+    "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9",
     "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
-    "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
-    "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
     "project/had/studies/receiver-selection.json": "5408aac3d43c95e3f5240f8510f91fb04d7a23cd",
-    "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9"
+    "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+    "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
+    "project/mat/studies/joined-cooker-system.json": "d04dd78ba3fd040c7abd1aecb94aa9a3ce95d5e0"
   },
   "court": "HAD-COURT-BYPASS-01",
   "wholeHeat": {
     "count": 15,
     "closedOpenings": 46,
-    "untouchedFabricWK": 335.44965338005846,
-    "baseFabricW": 10132.949478776292,
-    "hotInitialW": 17032.090312358407,
-    "chargedGroundW": 613.1652466499997,
-    "chargedJunctionW": 450.074042728879,
+    "untouchedFabricWK": 335.44965338,
+    "baseFabricW": 10132.94947878,
+    "hotInitialW": 17032.09031236,
+    "chargedGroundW": 613.16524665,
+    "chargedJunctionW": 450.07404273,
     "primaryHeatAllowanceW": 175,
-    "designIdleW": 14584.788768176126,
-    "designHotW": 18270.329601737285,
-    "directLowLineW": 4737.824847731911,
-    "hydronicHotW": 13532.504754005375,
+    "designIdleW": 14584.78876818,
+    "designHotW": 18270.32960174,
+    "directLowLineW": 4737.82484773,
+    "hydronicHotW": 13532.50475401,
     "usableMachineW": 14000,
-    "hotSpareW": 467.4952459946253,
-    "dailyRoomKWh": 357.4060121033494,
-    "minRoomMarginW": 62.65234371925908,
-    "tenMinuteDefrostKWh": 2.141160653407369,
-    "chargedStratifiedKWh": 2.311111111111111,
-    "fullyMixed5KKWh": 1.288888888888889,
-    "old100LUpperKWh": 0.8888888888888888,
-    "rechargeMin": 30.93390877022754
+    "hotSpareW": 467.49524599,
+    "dailyRoomKWh": 357.4060121,
+    "minRoomMarginW": 62.65234372,
+    "tenMinuteDefrostKWh": 2.14116065,
+    "chargedStratifiedKWh": 2.31111111,
+    "fullyMixed5KKWh": 1.28888889,
+    "old100LUpperKWh": 0.88888889,
+    "rechargeMin": 30.93390877
   },
   "domestic": {
     "netOrderedLitres": 300,
     "standingLoss60_20KWhDay": 3.5,
-    "netKWAt216point2V": 2.434502083333333,
-    "minimumMixedC": 46.884282430716766,
+    "netKWAt216point2V": 2.43450208,
+    "minimumMixedC": 46.88428243,
     "missedL40": 0,
-    "finalDayChargeKWh": 14.854241580467416,
+    "finalDayChargeKWh": 14.85424158,
     "draws": {
       "420": 80,
       "465": 80,
@@ -153,10 +154,10 @@
         45,
         335
       ],
-      "defrostKWh": 2.141160653407369,
-      "chargedKWh": 2.311111111111111,
+      "defrostKWh": 2.14116065,
+      "chargedKWh": 2.31111111,
       "maxDeck": 100,
-      "minimumRecoveryMinutes": 30.93390877022754
+      "minimumRecoveryMinutes": 30.93390877
     },
     "independentSafety": {
       "directTopTP": [
@@ -274,10 +275,10 @@
         "liftToJacketMM": 70,
         "minIDmm": 32,
         "minInsulationMM": 30,
-        "ratedKPaWithAccessories": 53.137822089602246,
+        "ratedKPaWithAccessories": 53.13782209,
         "ratedLmin": 45.9,
-        "requiredHXAtRatedFlowKWperK": 1.1653398710118386,
-        "returnAt14KW": 59.28104575163399,
+        "requiredHXAtRatedFlowKWperK": 1.16533987,
+        "returnAt14KW": 59.28104575,
         "sleeveObstacleLowerBoundsMM": [
           35,
           50
@@ -292,7 +293,7 @@
             5660
           ]
         ],
-        "tenKTrialKPaWithAccessories": 40.93223548094823,
+        "tenKTrialKPaWithAccessories": 40.93223548,
         "trialPipeODmm": 35,
         "verticalJacketGapMM": 50
       },
@@ -647,38 +648,38 @@
         "masks": 32,
         "cases": 96,
         "hoodLps": [
-          69.44528912329952,
-          85.08906236773146
+          69.44528912,
+          85.08906237
         ],
         "directLps": [
           78,
-          100.4312814701425
+          100.43128147
         ],
         "hotPa": [
-          -4.000000000076426,
-          -3.5889498283993273
+          -4,
+          -3.58894983
         ],
         "idlePa": [
-          -4.044475689786501,
-          -2.7717014903767527
+          -4.04447569,
+          -2.77170149
         ],
         "seatedPa": [
-          -3.504429676760639,
-          -2.321811377677422
+          -3.50442968,
+          -2.32181138
         ],
         "maxInlets": [
-          10.628309126968816,
-          10.628309126968816,
-          21.17850387649014,
-          21.17850387649014,
-          10.693186996559234,
-          10.693186996559234
+          10.62830913,
+          10.62830913,
+          21.17850388,
+          21.17850388,
+          10.693187,
+          10.693187
         ],
-        "oldFaultKitchenPa": -348.8521815615305,
-        "failedSupplyKitchenPa": -42.15908677175387,
-        "failedSupplyHallPa": -26.982607937017654,
-        "failedSupplyDoorN": 14.080398733722262,
-        "failedHoodDoorN": 7.900405831152213,
+        "oldFaultKitchenPa": -348.85218156,
+        "failedSupplyKitchenPa": -42.15908677,
+        "failedSupplyHallPa": -26.98260794,
+        "failedSupplyDoorN": 14.08039873,
+        "failedHoodDoorN": 7.90040583,
         "acceptedOpenAreaProxy": 35000,
         "requiredLoadedClosureS": 4.75,
         "warning": "The nominal 4.75 s contract does not prove the maximum differential, a classified door or an approved grease-rated assembled damper."
@@ -951,7 +952,7 @@
         ]
       ],
       "tablePullNorthReserve": 20.5,
-      "remoteToParkedTable": 50.89172119045497,
+      "remoteToParkedTable": 50.89172119,
       "remoteToFixedFurniture": 50,
       "task": [
         1075,
@@ -996,5 +997,44 @@
       "S09 wired pressure/travel/heat witnesses",
       "S10 restored boundary at every actual crossing"
     ]
+  },
+  "storeExchange": {
+    "margin": 25,
+    "radius": 425,
+    "centredWest": 8,
+    "offset": 17,
+    "path": [
+      [
+        9847,
+        4250
+      ],
+      [
+        10500,
+        4250
+      ],
+      [
+        10500,
+        4575
+      ],
+      [
+        12500,
+        4575
+      ]
+    ],
+    "jacketToCartEdge": 28,
+    "fixed": {
+      "westWall": 25,
+      "southWall": 28,
+      "riser": 25,
+      "controls": 480.5,
+      "radiator": 117.5946922,
+      "buffer": 26.66481892,
+      "doorSouth": 50,
+      "doorNorth": 100
+    },
+    "retainedManifoldAxis": -15,
+    "firstManifoldAxisContact": 76.08485357,
+    "tundishAxis": 91.57526073,
+    "maxRetainedValveRadius": 45.96045419
   }
 }

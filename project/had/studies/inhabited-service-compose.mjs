@@ -1,3 +1,4 @@
+import {storeExchange} from './store-exchange.mjs';
 // Prospective current occupied-house compositor recovered on the branch for
 // HAD-SERVICES-ADOPTION. Historical water and structural documents stay immutable.
 export function composeOccupiedHouse(twoExit,previous,offer,tempered,heatPurchase,rooms,faults,court){
@@ -87,8 +88,10 @@ export function composeOccupiedHouse(twoExit,previous,offer,tempered,heatPurchas
     electrical:s.electrical,roomElectric:s.roomElectric};
   model.plantReferenceDoor.wallChecks=model.plantReferenceDoor.wallChecks.filter(w=>!w.fixed.includes('cylinder'));
   model.plantReferenceDoor.selectedMineralCase={centre,operatorReserve:35,requiresEastCargo:true};
-  model.servicesProjection={source:s.authority,keyedFieldsEqual:true};model.servicesOccurrenceProof={source:s.authority,emitters:16,extract:6};
-  model.servicesAuxiliaryProjection={...model.servicesAuxiliaryProjection,source:s.authority,method:'Retained room-fan service geometry and new equipment duties.'};
+  model.servicesProjection={source:s.authority};
+  model.servicesOccurrenceProof={source:s.authority,emitters:s.emitters.length,extract:s.fanAccess.length};
+  model.servicesAuxiliaryProjection={fanMaintenance:model.servicesAuxiliaryProjection.fanMaintenance,source:s.authority,method:'Retained room-fan service geometry and new equipment duties.'};
+  model.storeExchange = storeExchange(s, model.groundFurniture);
   model.currentCourt=court.id;model.water.currentReceiver=court.id;
   return {id:'HAD-SERVICES-ADOPTION-01-RECOVERY',model,courtReceiver:court,threeBathing:true,
     separateRearOption:{selected:false,cold:13,hot:8,bathingPlaces:2,roomFans:6},siteAccepted:false,installedPerformance:false};
