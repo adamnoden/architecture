@@ -1,0 +1,624 @@
+{
+  "garden": {
+    "ring": {
+      "widthDepth": [
+        140,
+        750
+      ],
+      "topBottom": [
+        3920,
+        3170
+      ],
+      "coldFaceY": 11737.5,
+      "bearingAtY": 11667.5,
+      "bracketX": [
+        4875,
+        5325,
+        5775,
+        6225,
+        6675,
+        7125
+      ],
+      "rodCrossbarToCollarMM": 25,
+      "endTributaryM": 0.6,
+      "toeY": 11977.5,
+      "adverseBrickBearing": 75,
+      "serviceKN": 4.919999999999999,
+      "factoredKN": 6.6419999999999995,
+      "pairKN": 3.773863636363636,
+      "toeMomentKNm": 1.4031225,
+      "gussetMPa": 36.5396484375,
+      "topBearingMPa": 0.6918749999999999,
+      "padMPa": 0.5896661931818181,
+      "grossBrickRenewalTonnes": 2.46,
+      "grossSaddleSteelKg": 41.0112
+    },
+    "tie": {
+      "thrustKN": 29.97929418670652,
+      "pinX": [
+        5200,
+        6800
+      ],
+      "pinDia": 28,
+      "earEyeEar": [
+        10,
+        24,
+        10
+      ],
+      "bendMPaAdverse": 149.5394846862099,
+      "doubleShearMPa": 24.34363704194115,
+      "vonMisesMPa": 155.37018849672066,
+      "eyeBearingMPa": 44.612044920694224,
+      "earBearingMPa": 53.53445390483307,
+      "eyeNetMPa": 39.03553930560745,
+      "lift": 65,
+      "movingBottomClearsEye": 5,
+      "archClearAfterLift": 72.72938948375713,
+      "lowerHeadroomCourtGarden": [
+        2280,
+        2322.5
+      ],
+      "gardenTieY": 11667.5,
+      "northRoomFaceY": 11570.5,
+      "plateNearestY": 11592.5,
+      "dryFaceMissingBy": 22.0
+    }
+  },
+  "roof": {
+    "leadReferenceKg": 1705.7468467445087,
+    "exposedDevelopedM2": 83.57407382383678,
+    "steelSpecialsKg": 334.29629529534714,
+    "lowerTraysM2": 11.624532449113996,
+    "lowerTraysKg": 46.498129796455984,
+    "steelSupportBedsKg": 185.99251918582394,
+    "reductionBeforeClipsAndNewFramingKg": 1138.9599024668817,
+    "valleyLength": 3573.859358261183,
+    "valleyPitch": 18.248902383234398,
+    "continuousBlank": 3823.859358261183,
+    "primaryLapVertical": 93.94368390449193,
+    "primaryFreeLapAfter10And80K": 288.2191533404752,
+    "fullLowerTrayExpansion80K": 4.894539978574314,
+    "primarySecondary20LessMotionAndTwo5": 6.713106261043897,
+    "rollOD": 602.0252025241317,
+    "coilMassKg": 11.624532449113996,
+    "coilOuterElasticStressMPaAt193GPa": 160.83333333333334,
+    "genericCoverShortBy": 347.3522981654279,
+    "pitchedCornerAfter250LiftMm": 2147.4907424495705,
+    "loadedCradlePlanSquare": 1063.097256851794,
+    "cradleTop": 7182.328801280747,
+    "undersideToCarriage": 40.30359875661543,
+    "cradleToFixedGutterFront": 68.45137157410318,
+    "eaveStations": [
+      {
+        "corner": "SW",
+        "rollXY": [
+          5300,
+          5300
+        ],
+        "feet": [
+          [
+            4750,
+            4750
+          ],
+          [
+            5850,
+            5050
+          ],
+          [
+            5050,
+            5850
+          ],
+          [
+            5950,
+            5950
+          ]
+        ]
+      },
+      {
+        "corner": "SE",
+        "rollXY": [
+          6700,
+          5300
+        ],
+        "feet": [
+          [
+            7250,
+            4750
+          ],
+          [
+            6150,
+            5050
+          ],
+          [
+            6950,
+            5850
+          ],
+          [
+            6050,
+            5950
+          ]
+        ]
+      },
+      {
+        "corner": "NE",
+        "rollXY": [
+          6700,
+          6700
+        ],
+        "feet": [
+          [
+            7250,
+            7250
+          ],
+          [
+            6150,
+            6950
+          ],
+          [
+            6950,
+            6150
+          ],
+          [
+            6050,
+            6050
+          ]
+        ]
+      },
+      {
+        "corner": "NW",
+        "rollXY": [
+          5300,
+          6700
+        ],
+        "feet": [
+          [
+            4750,
+            7250
+          ],
+          [
+            5850,
+            6950
+          ],
+          [
+            5050,
+            6150
+          ],
+          [
+            5950,
+            6050
+          ]
+        ]
+      }
+    ],
+    "upperMaintenanceDeckSide": 1800,
+    "costSensitivity": {
+      "steelSheetM2": 95.19860627295078,
+      "changeFor10GBPperM2": 951.9860627295078,
+      "steelBedM2": 11.624532449113996,
+      "individualValleyPrimaryKg": 3.339087486608946
+    },
+    "boardOtherKg": 24.007986371985247,
+    "valleyLps": 0.34559999999999996
+  },
+  "studyWindow": {
+    "paneY": [
+      [
+        237,
+        241
+      ],
+      [
+        259,
+        263
+      ],
+      [
+        279,
+        283
+      ]
+    ],
+    "addedPaneMM": [
+      764.0,
+      1078.0
+    ],
+    "windowCentreX": 2100,
+    "hingeX": 1674.0,
+    "controlReachAtExistingStance": 340.8229012258419,
+    "movingXBound": 2535.561373321715,
+    "lowerTurnRailMargin": 2364.438626678285,
+    "middleRingOuter": [
+      794,
+      1108
+    ],
+    "middleRingAfterTwo2": [
+      4.0,
+      4.0
+    ],
+    "glassKg": 24.12856,
+    "sourcePairGlassKg": 15.89264,
+    "clearLightM2": 0.682632,
+    "grossGlassM2": 0.823592,
+    "massTargetKg": 45,
+    "targetWeightKN": 0.44145000000000006,
+    "exampleHingeCoupleKN": 0.19189561224489798,
+    "windMomentKNmAt1p5": 0.63153648,
+    "wholeWindowFrameArea": 1.7920100221870594,
+    "options": [
+      {
+        "extraEffectiveR": 0.0,
+        "centreU": 1.9000000000000001,
+        "extraLossBudgetWK": -0.16154401140067
+      },
+      {
+        "extraEffectiveR": 0.15,
+        "centreU": 1.4785992217898833,
+        "extraLossBudgetWK": 0.12611764463045844
+      },
+      {
+        "extraEffectiveR": 0.25,
+        "centreU": 1.288135593220339,
+        "extraLossBudgetWK": 0.25613421232814354
+      },
+      {
+        "extraEffectiveR": 0.35,
+        "centreU": 1.1411411411411412,
+        "extraLossBudgetWK": 0.3564773291398706
+      }
+    ],
+    "minimumExtraR": 0.07488014052914493,
+    "minimumExtraRWithPoint15WKOtherLosses": 0.1663903828286577,
+    "extraLeakM3hAfterPoint15AtR025": 0.31681854426311507,
+    "thirdPaneTradeRateExVATperM2": 34.18,
+    "addedGlassSupplyAtRateGBP": 28.15037456,
+    "clearThroat": [
+      810,
+      1124
+    ]
+  },
+  "eastJoint": {
+    "jointX": 10050,
+    "gasketWidthMM": 6.35,
+    "availableLandMM": 20,
+    "edgeMarginMM": 6.825,
+    "activeCentrelineMM": 1100,
+    "sealVolumeCM3": 5.51815,
+    "foamMassAt352g": 1.9423888000000002,
+    "workingGap": 0.48,
+    "flatnessAndSettingPlusMinus": 0.03,
+    "minimumGapMM": 0.45,
+    "maxCompression": 0.4642857142857143,
+    "openingBudgetMM": 0.04500000000000004,
+    "framePressureCeilingKPa": 243.6868279720685,
+    "loads": [
+      {
+        "pressureKPa": 62,
+        "bottomForceN": 236.22,
+        "totalN": 433.07,
+        "twoFaceOpeningMM": 0.011449121083884736,
+        "largestGapMM": 0.5214491210838847,
+        "minimumCompressionFraction": 0.29533902556231795
+      },
+      {
+        "pressureKPa": 100,
+        "bottomForceN": 381.0,
+        "totalN": 698.5,
+        "twoFaceOpeningMM": 0.01846632432884635,
+        "largestGapMM": 0.5284663243288463,
+        "minimumCompressionFraction": 0.28585631847453197
+      },
+      {
+        "pressureKPa": 200,
+        "bottomForceN": 762.0,
+        "totalN": 1397.0,
+        "twoFaceOpeningMM": 0.0369326486576927,
+        "largestGapMM": 0.5469326486576928,
+        "minimumCompressionFraction": 0.2609018261382531
+      },
+      {
+        "pressureKPa": 300,
+        "bottomForceN": 1142.9999999999998,
+        "totalN": 2095.5,
+        "twoFaceOpeningMM": 0.05539897298653903,
+        "largestGapMM": 0.5653989729865391,
+        "minimumCompressionFraction": 0.2359473338019742
+      }
+    ],
+    "broadMetalMeanMPa": 0.36363636363636365,
+    "maxBandAt135MPa": 0.05387205387205387,
+    "bore": 12
+  },
+  "occurrences": [
+    [
+      "GROUND",
+      "south-window-0",
+      "window",
+      2100
+    ],
+    [
+      "GROUND",
+      "south-window-1",
+      "window",
+      3900
+    ],
+    [
+      "GROUND",
+      "front-door",
+      "door",
+      6000
+    ],
+    [
+      "GROUND",
+      "south-window-3",
+      "window",
+      8100
+    ],
+    [
+      "GROUND",
+      "south-window-4",
+      "window",
+      9900
+    ],
+    [
+      "GROUND",
+      "east-window-0",
+      "window",
+      2100
+    ],
+    [
+      "GROUND",
+      "plant-replacement",
+      "door",
+      4600
+    ],
+    [
+      "GROUND",
+      "east-window-3",
+      "window",
+      9900
+    ],
+    [
+      "GROUND",
+      "west-window-0",
+      "window",
+      2100
+    ],
+    [
+      "GROUND",
+      "west-window-1",
+      "window",
+      4600
+    ],
+    [
+      "GROUND",
+      "west-window-2",
+      "window",
+      7400
+    ],
+    [
+      "GROUND",
+      "west-window-3",
+      "window",
+      9900
+    ],
+    [
+      "GROUND",
+      "north-window-0",
+      "window",
+      2100
+    ],
+    [
+      "GROUND",
+      "north-window-1",
+      "window",
+      3700
+    ],
+    [
+      "GROUND",
+      "garden-entry",
+      "open-loggia",
+      6000
+    ],
+    [
+      "GROUND",
+      "north-window-3",
+      "window",
+      8300
+    ],
+    [
+      "GROUND",
+      "north-window-4",
+      "window",
+      9900
+    ],
+    [
+      "GROUND",
+      "grand-court-entry-south",
+      "door",
+      6000
+    ],
+    [
+      "GROUND",
+      "grand-court-entry-north",
+      "open-loggia",
+      6000
+    ],
+    [
+      "GROUND",
+      "court-east-0",
+      "window",
+      5150
+    ],
+    [
+      "GROUND",
+      "court-east-1",
+      "window",
+      6850
+    ],
+    [
+      "GROUND",
+      "court-west-0",
+      "window",
+      5150
+    ],
+    [
+      "GROUND",
+      "court-west-1",
+      "window",
+      6850
+    ],
+    [
+      "GROUND",
+      "east-outdoor-water-portal",
+      "open-service-portal",
+      6900
+    ],
+    [
+      "FIRST",
+      "south-window-0",
+      "window",
+      2100
+    ],
+    [
+      "FIRST",
+      "south-window-1",
+      "window",
+      3900
+    ],
+    [
+      "FIRST",
+      "south-window-2",
+      "window",
+      6000
+    ],
+    [
+      "FIRST",
+      "south-window-3",
+      "window",
+      8100
+    ],
+    [
+      "FIRST",
+      "south-window-4",
+      "window",
+      9900
+    ],
+    [
+      "FIRST",
+      "east-window-0",
+      "window",
+      2100
+    ],
+    [
+      "FIRST",
+      "east-window-1",
+      "window",
+      4600
+    ],
+    [
+      "FIRST",
+      "east-window-2",
+      "window",
+      7400
+    ],
+    [
+      "FIRST",
+      "east-window-3",
+      "window",
+      9900
+    ],
+    [
+      "FIRST",
+      "west-window-0",
+      "window",
+      2100
+    ],
+    [
+      "FIRST",
+      "west-window-1",
+      "window",
+      4600
+    ],
+    [
+      "FIRST",
+      "west-window-2",
+      "window",
+      7400
+    ],
+    [
+      "FIRST",
+      "west-window-3",
+      "window",
+      9900
+    ],
+    [
+      "FIRST",
+      "north-window-0",
+      "window",
+      2100
+    ],
+    [
+      "FIRST",
+      "north-window-1",
+      "window",
+      3700
+    ],
+    [
+      "FIRST",
+      "north-window-3",
+      "window",
+      8300
+    ],
+    [
+      "FIRST",
+      "north-window-4",
+      "window",
+      9900
+    ],
+    [
+      "FIRST",
+      "court-south-0",
+      "window",
+      5150
+    ],
+    [
+      "FIRST",
+      "court-south-1",
+      "window",
+      6850
+    ],
+    [
+      "FIRST",
+      "court-north-0",
+      "window",
+      5150
+    ],
+    [
+      "FIRST",
+      "court-north-1",
+      "window",
+      6700
+    ],
+    [
+      "FIRST",
+      "court-east-0",
+      "window",
+      5150
+    ],
+    [
+      "FIRST",
+      "court-east-1",
+      "window",
+      6850
+    ],
+    [
+      "FIRST",
+      "court-west-0",
+      "window",
+      5150
+    ],
+    [
+      "FIRST",
+      "court-west-1",
+      "window",
+      6850
+    ]
+  ]
+}

@@ -30,9 +30,9 @@ export const materialNodes = defineNodes([
     owners: ['MAT'],
     title: 'Resolve non-plastic envelope and structural assembly alternatives',
     dependencies: ['MAT-AUDIT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/mat/whole-envelope-selection.md', 'project/mat/studies/whole-envelope.json', 'project/mat/studies/whole-envelope.svg']
   },
   {
     id: 'MAT-SERVICES',

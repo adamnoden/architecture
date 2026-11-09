@@ -1,5 +1,7 @@
 # RWT-06 — access, court transition and site handoff
 
+**Current raised-roof and court service decision.** The [joined six-duty study](rwt-06-raised-roof-court-service.md) develops a shorter cleaning head and contained straight-cassette discharge. A blocked E basket can spill 25–46 mm below the nearest operating N water level. Develop continuous high E containment and the removable above-grate N spill; verify actual concentrated rain, both source phases and reinstatement before closure.
+
 **State:** work in progress under RWT-06; the candidate below is not adopted and the packet is not closed.
 **Starting main:** `8cd642ef8ea7c7ec919c71c902f7f8daaf987034`, after the RWT-05/BCR occupation integration.
 **5 November source decision:** [Reject the selected single-north topology](rwt-06-selected-topology-rejection.md) for the required independent passive court escape. Complete **HAD-WATER-REPLAN** before further RWT-06 detailing; this packet remains planned and is structurally blocked on that real architectural input. The existing studies below remain evidence, not a reason to repeatedly dispatch the unchanged topology.
