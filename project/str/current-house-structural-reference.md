@@ -1,5 +1,7 @@
 # Current selected house — structural re-entry
 
+The [court-intake selection](../had/court-intake-selection.md) now prices the corner working deck, three reversible ground reactions, P33/P36 brackets and floor-level lateral ties. These are additional temporary and local court actions to incorporate in signed combinations; the domestic ground slab and provisional roof frames do not already qualify them.
+
 **Current candidate handoff.** [SAP-C1](provisional-house-handoff.md) supersedes the earlier single-corner-spring and low-crown arrangements below. It includes both storeys’ new jambs, 32 structural ties, 96 whole-house winds, the 52-head stripped uplift register and the affected inhabited/roof interfaces. Historical member and foundation envelopes retain their stated source.
 
 

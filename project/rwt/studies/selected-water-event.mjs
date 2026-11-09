@@ -16,6 +16,13 @@ export function readSelected(){
  assert.deepEqual(pan.fallY,[[4090,-45],[4450,-55]]);assert.equal(pan.rear.crestZ,15);
  return {path,blob,model,authority:'Composed HAD consumer for this result; canonicalMain metadata records INTEGRATION BASELINE4fef04ad/HAD265ac194. Only conditional receiver/garden/maintenance refinements are integrated; separate construction comparisons and hydraulic/physical/site acceptance remain unadopted/unaccepted',canonicalMain:'4fef04ad7a82a149903aa077af04f95b3a392294',canonicalMainHadBlob:'265ac19420f1b1fa6bba41dd859d7ee758187d6b'};
 }
+// The former readSelected() contract remains the immutable two-exit study input.
+export function readCurrentCourtIntake(){
+ const path='project/had/studies/court-intake-selection.json', raw=fs.readFileSync(path);
+ const blob=crypto.createHash('sha1').update('blob '+raw.length+'\0').update(raw).digest('hex');
+ assert.equal(blob,'ccefafe3f410e5aabc9e342fc66d5d74824c02b8','HAD changed: reconcile the court feeder, service paths and local/site receiving conditions');
+ return {path,blob,model:JSON.parse(raw)};
+}
 const floor=y=>-30-(y-5750)*.04;
 export function mouthFlow(stageMm,intervals,{lossK=0,remainingFraction=1}={}){
  assert(lossK>=0&&remainingFraction>=0&&remainingFraction<=1);
