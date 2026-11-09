@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T13:35:15.512Z",
-  "heartbeatAt": "2026-11-09T13:35:15.512Z",
-  "expiresAt": "2026-11-09T14:35:15.512Z",
+  "heartbeatAt": "2026-11-09T14:06:56.527Z",
+  "expiresAt": "2026-11-09T14:51:56.527Z",
   "branch": "work/house-1335-20261109",
   "predecessor": {
     "leaseId": "239b47c4-8a4b-4aa6-b635-1b512903a2f5",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1456 at 9edd51c80bb08278662dcdc6c52a011ff921334a after fourteen exact-head workflows on 8b27592c and a canonical g40 fence. Issue #941 handoff 6741343405. Complete upper WCs and corrected bath door are source-bound.",
       "next": "Finish one governing three-bathing permanent wet section, including the rear flush versus serviceable 155 rim and the actual 1700 bath outlet, plant union/hatch and intact shell route. Material, engineering and physical claims remain with their owners."
     }
+  },
+  "pr": 1459,
+  "checkpoint": {
+    "evidence": "PR #1459 at 6007fcb2898d21b0e69946770d3a5bcdce988518. Three-bathing permanent sections, original 1700 bath exchange and reproducible diagrams. Local repo, public routes and docs passed.",
+    "next": "Verify fourteen hosted workflows on the exact head and holder/main fence. Merge, hand off #941 and dispatch the remaining IAS/source work."
   }
 }
