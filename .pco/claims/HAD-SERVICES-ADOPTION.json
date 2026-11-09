@@ -9,8 +9,8 @@
     "label": "issue-comment-6750985217"
   },
   "claimedAt": "2026-11-09T20:44:45.000Z",
-  "heartbeatAt": "2026-11-09T20:44:45.000Z",
-  "expiresAt": "2026-11-09T21:29:45.000Z",
+  "heartbeatAt": "2026-11-09T20:46:36.000Z",
+  "expiresAt": "2026-11-09T21:31:36.000Z",
   "branch": "work/mvb-chat-6750985217",
   "predecessor": {
     "leaseId": "2b3a4b21-ab54-4802-97a9-ae99476967c3",
@@ -31,5 +31,10 @@
       "evidence": "Draft #1461 on work/swarm-house-successor-1354-20261109 contains the reconstructed full occupied-house export, 46 source openings, 96 air cases, independent DHW, checks and drawing. Program remains open.",
       "next": "Restore a capable checkout, complete the final first-release review and figure QA, validate the exact chosen source and finish normal publication. See #943 comment 6742966501."
     }
+  },
+  "pr": 1465,
+  "checkpoint": {
+    "evidence": "#1465 preserves the eleven commits of draft #1461 at 5d29c2e6. The two original numerical tests reproduce in a clean detached worktree.",
+    "next": "Correct non-reproducible retained SVG and check whether the loaded plant actually fits through first movement and the east door before final integration."
   }
 }
