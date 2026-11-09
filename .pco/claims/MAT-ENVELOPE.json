@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T01:22:25.208Z",
-  "heartbeatAt": "2026-11-09T01:44:28.624Z",
-  "expiresAt": "2026-11-09T02:29:28.624Z",
+  "heartbeatAt": "2026-11-09T01:54:27.887Z",
+  "expiresAt": "2026-11-09T02:39:27.887Z",
   "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
@@ -34,7 +34,7 @@
   },
   "pr": 1409,
   "checkpoint": {
-    "evidence": "Combined #1409 cb98447b contains main 7e4bdace and 5fb0259f. Five MAT roof files unchanged on the joint tree, diagrams and calculations reproduced. IAS/RWT changes retained.",
-    "next": "Verify all exact-head validation, coordinate fresh final preflights, merge and hand off in #1100."
+    "evidence": "Four-lane #1409 final head 9b47e87f contains main 7e4bdace and the checked 5fb0259f roof source. STR/IAS/RWT independently retained; 13 of 14 hosted workflows passed and packet declarations verified.",
+    "next": "When exact-head Validate succeeds, run fresh four-lease preflight and expected-head merge. Reconcile roof and lower-purlin options on #1100; release MAT-ENVELOPE for handoff."
   }
 }
