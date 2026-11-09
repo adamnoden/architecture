@@ -1,6 +1,6 @@
 # Household water fixtures and the actual family shaft
 
-**Keep the four washbasins on independent wall supports. Use a domestic lever mixer, an exposed trap and two locally accessible stops at each. Keep kitchen drainage separate from the utility washer.** The current house has no kitchen dishwasher. In the kitchen, raising the sink-trap outlet allows its waste to cross two insulated feeds. In the utility, opening the lower U first allows the factory sink head to leave without cutting the fixed outlet. The guest WC takeoff and rear WC connections still need their own connected release before IAS-03 can close. [Reproducible model and results](studies/household-water.json) · [Verification source](studies/household-water.mjs)
+**Keep the four washbasins on independent wall supports. Use a domestic lever mixer, an exposed trap and two locally accessible stops at each. Keep kitchen drainage separate from the utility washer.** The current house has no kitchen dishwasher. In the kitchen, raising the sink-trap outlet allows its waste to cross two insulated feeds. In the utility, opening the lower U first allows the factory sink head to leave without cutting the fixed outlet. The [guest and rear WC takeoffs](ias-03-guest-rear-wc-takeoffs.md) supply the adjoining fixture releases. [Reproducible model and results](studies/household-water.json) · [Verification source](studies/household-water.mjs)
 
 ## Four basins
 
