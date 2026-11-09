@@ -99,7 +99,7 @@ class WindFoundation:
         actual=[sum(vector[k] for vector in h.values()) for k in (0,1)]
         demand=[0.,0.]
         before,old_xy=self.legacy_totals[wi]
-        wanted_m=before[1:];wanted_yaw=old_xy[2]
+        wanted_m=[x+self.extra_u*6 for x in before[1:]];wanted_yaw=old_xy[2]
         for ax,code in enumerate(j['plane']['actual'][wi][0]):
             if code:
                 width=12.4 if (code-1)%3==0 else 6.2
@@ -123,7 +123,7 @@ class WindFoundation:
         yaw=sum((j['xy'](head)[0]*v[1]-j['xy'](head)[1]*v[0])/1000 for head,v in h.items())
         assert abs(yaw-wanted_yaw)<.002,(wi,guard_id,'yaw',yaw,wanted_yaw)
         assert max(abs(x-y) for x,y in zip(vertical[1:],wanted_m))<.002,(wi,guard_id,'overturn',vertical,wanted_m)
-        assert abs(vertical[0]-j['D0']['U'][1][0])<.001,(wi,vertical)
+        assert abs(vertical[0]-j['D0']['U'][1][0]-self.extra_u)<.001,(wi,vertical)
         for head in j['heads']:
             card=[*g[head],*h[head]]
             ranges=self.bounds.setdefault(head,[[float('inf'),float('-inf')] for _ in card])

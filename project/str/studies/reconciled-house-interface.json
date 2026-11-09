@@ -11,7 +11,7 @@
     "project/ias/studies/wc-service-stations.py": "00d4023a9422fa93fccd8f8140034f8a677ec537",
     "project/str/studies/current-house-guard-bracket.json": "1a771395a3d326e93a94f01e1f020499ebbee981",
     "project/str/studies/current-house-window-renewal.json": "9e190c8683dbd4ff2f341589fd1676abd31f090b",
-    "project/str/studies/reconciled-corner-portals.json": "0d1e6ca565197e2279d111d9d48522ed32f7d889",
+    "project/str/studies/reconciled-corner-portals.json": "0fe6b9c2007cf5ea39b584cc2a2ac0568a0116be",
     "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
     "project/str/studies/p32-court-hold.json": "e4895257d44765754dc449a8b0c4e6c59ccd80dd",
     "project/mat/studies/study-coupled-window.json": "00184ad7c13d39b38a1ac95a82fa462a8d13eea7",
@@ -343,18 +343,149 @@
     ],
     "minimumTieStiffnessNPerMm": 2000,
     "elasticTieSlipAtPeak": [
-      3.8251,
-      1.37905
+      3.83795,
+      1.3758
     ],
     "jambRoughClosureOrOpeningMM": 1.2914,
-    "facePlaneDepartureMM": 1.4229
+    "facePlaneDepartureMM": 1.427
   },
   "roof": {
-    "fieldZ": [
+    "structurallyPricedFirstPrototype": "Severe Capital slate over combined Sarket",
+    "slateEnvelopeAndGravityReceipt": {
+      "source": {
+        "PR": 1438,
+        "commit": "53c6ad32f3acddc43461b2b4309876ebef9038a0",
+        "resultBlob": "28afcd1cd63aa4d17cd8dfeb433dba1885b92478",
+        "path": "project/mat/studies/ring-roof-family.json"
+      },
+      "fieldEaveRidgeAndCapZ": [
+        7418.423322641297,
+        8409.327095641296,
+        8645.327095641296
+      ],
+      "unselectedPrecursorCapZ": 8464.73365326618,
+      "slateMassKg": 5215.049429076929,
+      "severeCapitalAverageResidualKgPerM2": 9.500704941628587,
+      "fullLeadMassKg": 1705.7468467445087,
+      "leadKgPerM": {
+        "ridge": 40.49900920255172,
+        "valley": 14.30192869316908
+      },
+      "sourceWeightsKg": {
+        "cheeks": 1039.9396852791033,
+        "roll": 215.52960000000002,
+        "outerHips": 157.6540346603396,
+        "valleys": 204.45232680506578,
+        "blanks": 88.17120000000001
+      },
+      "leadGkKN": 16.733376566563816,
+      "slateExtraCourtPlanM2": 0.9075,
+      "extraStrippedUpliftKN": -2.041875000000048,
+      "roofSupportOriginOrder": [
+        "lead Gk kN",
+        "additional uniform suction kN"
+      ],
+      "roofSupportOrigins": {
+        "332.5,332.5": [
+          1.18377,
+          -0.06272
+        ],
+        "332.5,3800": [
+          0.32693,
+          -0.01117
+        ],
+        "332.5,6000": [
+          0.49323,
+          0.00478
+        ],
+        "332.5,8200": [
+          0.32673,
+          -0.01115
+        ],
+        "332.5,11667.5": [
+          1.18392,
+          -0.06279
+        ],
+        "3917.5,3917.5": [
+          1.11136,
+          -0.0146
+        ],
+        "3917.5,6000": [
+          0.76779,
+          -0.41728
+        ],
+        "3917.5,8082.5": [
+          1.09619,
+          -0.00637
+        ],
+        "4700,332.5": [
+          0.54822,
+          -0.00723
+        ],
+        "4700,11667.5": [
+          0.54783,
+          -0.00694
+        ],
+        "5925,8082.5": [
+          0.76733,
+          -0.41822
+        ],
+        "6000,3917.5": [
+          0.7665,
+          -0.41766
+        ],
+        "7300,332.5": [
+          0.54817,
+          -0.0071
+        ],
+        "7300,11667.5": [
+          0.54857,
+          -0.00739
+        ],
+        "8082.5,3917.5": [
+          1.10932,
+          -0.01362
+        ],
+        "8082.5,6000": [
+          0.76911,
+          -0.41802
+        ],
+        "8082.5,8082.5": [
+          1.12367,
+          -0.02127
+        ],
+        "11667.5,332.5": [
+          1.18385,
+          -0.06276
+        ],
+        "11667.5,3800": [
+          0.32692,
+          -0.01123
+        ],
+        "11667.5,6000": [
+          0.49315,
+          0.00482
+        ],
+        "11667.5,8200": [
+          0.32712,
+          -0.01127
+        ],
+        "11667.5,11667.5": [
+          1.18369,
+          -0.06268
+        ]
+      }
+    },
+    "slateCourtOverhangMM": 275,
+    "slateDryIntakeMM": 160,
+    "slateTransferBandMM": 1250,
+    "leadRunoffAccepted": false,
+    "courtIntakeOrP32SiteAdopted": false,
+    "earlierMetalControlFieldZ": [
       7308.554466360607,
       8299.458239360607
     ],
-    "coverApexAndEdge": [
+    "earlierMetalCoverApexAndEdge": [
       8464.73365326618,
       8348.15673872743
     ],

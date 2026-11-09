@@ -19,6 +19,7 @@ guard_stock=read('current-house-guard-bracket.json')['massPerWindowKg']['authore
 rail=json.loads((D.parents[1]/'oas/studies/north-export-occurrence.json').read_text())['guard']
 foundation = read('current-house-joined-foundation.json')
 fields = read('open-loggia-support.json')['floor_fields']
+slate=runpy.run_path(str(D/'reconciled-slate-roof.py'))
 args = sys.argv[:]
 sys.argv = [args[0], '--check']
 roof = runpy.run_path(str(D/'current-house-roof-bracing.py'))
@@ -277,7 +278,10 @@ def house_interfaces():
             if len(m)==len(n)==3:C[i][j]+=m[2]*sum(f*floor_free[n][k] for k,f in membrane['basis'](m[0],m[1]))
     assert max(abs(C[i][j]-C[j][i]) for i in range(32) for j in range(32))<1e-7
     backgrounds=[];full_backgrounds=[]
-    cap=rewind['roof']['northCap'][0]
+    cap=slate['CAP']
+    lead_d,strip_d,roof_data=slate['origins'](roof,solver)
+    lead_bg=[1.35*dot(v,lead_d) for v in vectors]
+    strip_bg=[dot(v,strip_d) for v in vectors]
     for idx,(programme,u,*_) in enumerate(roof['space']):
         assert list(programme)==foundation['coherentSignedStates'][idx]['programme']
         raw=roof['floorLoadCases'][id(u)]
@@ -310,12 +314,12 @@ def house_interfaces():
                         f[k]+=load*w
         extra=solver(f)
         screen=[a+b for a,b in zip(u,extra)]
-        full_backgrounds.append(screen)
+        full_backgrounds.append([a+b for a,b in zip(screen,strip_d)])
         values=[dot(v,screen) for v in vectors]
         for i,s in enumerate(supports):
             if len(s)==3:values[i]+=s[2]*sum(f*free[k] for k,f in membrane['basis'](s[0],s[1]))
         backgrounds.append(values)
-    return C,backgrounds,deformed,full_backgrounds
+    return C,backgrounds,deformed,full_backgrounds,lead_bg,strip_bg,roof_data
 
 
 def measures(portal, disp, reactions, gravity=False):
@@ -352,14 +356,14 @@ def measures(portal, disp, reactions, gravity=False):
 
 
 def calculate():
-    C,bg,host_units,full_backgrounds=house_interfaces()
+    C,bg,host_units,full_backgrounds,lead_bg,strip_bg,roof_data=house_interfaces()
     joined=runpy.run_path(str(D/'current-house-joined-foundation.py'))
     wind_foundation=runpy.run_path(str(D/'reconciled-foundation-join.py'))['WindFoundation']
     output=[]
     for crack in (.2,.35):
         portal=Portal(crack)
         register=wind_foundation(joined,roof,host_units,full_backgrounds)
-        register.upper=upstairs;register.portal=portal;register.cap=rewind['roof']['northCap'][0]
+        register.portal=portal;register.cap=slate['CAP'];register.extra_u=roof_data['extraStrippedUpliftKN']
         units=[]
         measures_units=[]
         for o,up in zip(ground,upstairs):
@@ -405,8 +409,8 @@ def calculate():
             prog=foundation['coherentSignedStates'][wi]['programme']
             active=[load_scope(prog,o) for o in ground]
             which=[[1.,float(on),0.,0.] for on in active]
-            d=coupled(background,which)
-            d_wind=coupled(background,[[0.,float(on),0.,0.] for on in active])
+            d=coupled([a+b for a,b in zip(background,lead_bg)],which)
+            d_wind=coupled([a+b for a,b in zip(background,strip_bg)],[[0.,float(on),0.,0.] for on in active])
             for a,table in enumerate(measures_units):
                 for key,value in table[0].items():
                     lo,hi=peaks[key]
@@ -451,7 +455,7 @@ def calculate():
                        'portalOriginHeadVKN':{n:[round(x,4) for x in vals] for n,vals in sorted(head_bounds.items())}})
     return {'model':'Two-storey paired continuous jambs on perimeter girders; physically new portal origin only.',
             'jambAxes':axes,'supportZ':[base,floor,top],'tieMinimumNPerMM':2000,
-            'trialWindowPerStoreyMaxCharacteristicKN':1.962,'windProjectedTopMM':round(rewind['roof']['northCap'][0],5),
+            'trialWindowPerStoreyMaxCharacteristicKN':1.962,'windProjectedTopMM':round(slate['CAP'],5),'slateRoof':roof_data,
             'oldRoofWindProjectedTopMM':roof['peak'],'coherentWholeHouseWinds':len(bg),
             'simultaneousUpperGuardPoints':1,'results':output}
 
