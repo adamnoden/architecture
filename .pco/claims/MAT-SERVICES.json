@@ -9,8 +9,8 @@
     "label": "junction-0710"
   },
   "claimedAt": "2026-11-09T07:57:45.052Z",
-  "heartbeatAt": "2026-11-09T08:22:31.142Z",
-  "expiresAt": "2026-11-09T09:07:31.142Z",
+  "heartbeatAt": "2026-11-09T08:35:55.033Z",
+  "expiresAt": "2026-11-09T09:20:55.033Z",
   "branch": "work/junction-rush-0710",
   "predecessor": {
     "leaseId": "2186d0dd-0832-45df-b05c-a55cd52a2c75",
@@ -34,7 +34,7 @@
   },
   "pr": 1444,
   "checkpoint": {
-    "evidence": "Frozen PR #1444 c9cfd18a on main 331d4e7d, tree 2c3826c2. Full joined MAT passed. Independent station, room and diagonal withdrawal reproductions completed.",
-    "next": "Require exact-head validation, recheck live main and lease, then merge and release. The S08 source/bonds and S01–S10 product admission remain explicit."
+    "evidence": "PR #1444 c9cfd18a on 331d4e7d is mergeable; exact Actions run 42585111783 in Check repository health, no failed steps. Joined MAT, type and repo validation families and independent physical fit checks passed.",
+    "next": "Watch exact run then verify main-head and lease runway; merge c9cfd18a by expected SHA before handing off remaining six-family services joins and procurement."
   }
 }
