@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 33,
-  "state": "released",
-  "leaseId": "f64a30d5-3ff3-415e-9faa-f944592a68ec",
+  "generation": 34,
+  "state": "claimed",
+  "leaseId": "b99038d3-0c03-4ac4-84e4-89be44138ac4",
   "holder": {
     "kind": "chatgpt",
     "label": "Architecture swarm: current house frontier"
   },
-  "claimedAt": "2026-11-09T10:35:19.622Z",
-  "heartbeatAt": "2026-11-09T11:38:10.579Z",
-  "expiresAt": "2026-11-09T11:38:10.579Z",
-  "branch": "work/swarm-frontier-1033-20261109",
+  "claimedAt": "2026-11-09T11:39:36.739Z",
+  "heartbeatAt": "2026-11-09T11:39:36.739Z",
+  "expiresAt": "2026-11-09T12:24:36.739Z",
+  "branch": "work/swarm-after-services-1138-20261109",
   "predecessor": {
-    "leaseId": "524e14c3-49cd-4266-a5e0-4aef19f2f889",
-    "generation": 32,
-    "branch": "work/swarm-house-evidence-0840",
-    "pr": 1446,
+    "leaseId": "f64a30d5-3ff3-415e-9faa-f944592a68ec",
+    "generation": 33,
+    "branch": "work/swarm-frontier-1033-20261109",
+    "pr": 1450,
     "checkpoint": {
-      "evidence": "Merged #1448 (7accc1c2) through #1446 at 771390d3dbf0720de2ff505986d8978b7963291a, final head 2e7164a3, 14 green exact-head checks and four live preflights. Native four-period winter water source, both room and tank conservation, routed glycol pair and stock/mineral vessel decision. Tracker #1100 comment 6737810813, #1448 comment 6737399862.",
-      "next": "Frontier remains MAT-SERVICES planned. Compare the governing local-extract and two-stage cooker source, 55/45 emitters and higher-output outdoor/independent water alternative with W9 on the same day, alongside S01–S10 source inventory. Resolve actual room/plant access, cold pressure, controller/protection and residue alternatives; keep field acceptance separate."
+      "evidence": "Merged #1450 at 34b4058c81ae. The verified source and handoff are recorded on #1100.",
+      "next": "Continue the independently serviceable cooking intake and kitchen radiator renewal for the governing local-extract house."
     }
   },
   "recoverySource": {
-    "leaseId": "524e14c3-49cd-4266-a5e0-4aef19f2f889",
-    "generation": 32,
-    "branch": "work/swarm-house-evidence-0840",
-    "pr": 1446,
+    "leaseId": "f64a30d5-3ff3-415e-9faa-f944592a68ec",
+    "generation": 33,
+    "branch": "work/swarm-frontier-1033-20261109",
+    "pr": 1450,
     "checkpoint": {
-      "evidence": "Merged #1448 (7accc1c2) through #1446 at 771390d3dbf0720de2ff505986d8978b7963291a, final head 2e7164a3, 14 green exact-head checks and four live preflights. Native four-period winter water source, both room and tank conservation, routed glycol pair and stock/mineral vessel decision. Tracker #1100 comment 6737810813, #1448 comment 6737399862.",
-      "next": "Frontier remains MAT-SERVICES planned. Compare the governing local-extract and two-stage cooker source, 55/45 emitters and higher-output outdoor/independent water alternative with W9 on the same day, alongside S01–S10 source inventory. Resolve actual room/plant access, cold pressure, controller/protection and residue alternatives; keep field acceptance separate."
+      "evidence": "Merged #1450 at 34b4058c81ae. The verified source and handoff are recorded on #1100.",
+      "next": "Continue the independently serviceable cooking intake and kitchen radiator renewal for the governing local-extract house."
     }
-  },
-  "pr": 1450,
-  "checkpoint": {
-    "evidence": "Merged #1450 at 34b4058c81ae. The verified source and handoff are recorded on #1100.",
-    "next": "Continue the independently serviceable cooking intake and kitchen radiator renewal for the governing local-extract house."
-  },
-  "releasedAt": "2026-11-09T11:38:10.579Z",
-  "releaseReason": "handoff"
+  }
 }
