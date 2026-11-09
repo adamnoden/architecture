@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T09:12:55.278Z",
-  "heartbeatAt": "2026-11-09T09:12:55.278Z",
-  "expiresAt": "2026-11-09T09:57:55.278Z",
+  "heartbeatAt": "2026-11-09T09:38:05.336Z",
+  "expiresAt": "2026-11-09T10:23:05.336Z",
   "branch": "work/house-0910-20261109",
   "predecessor": {
     "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
@@ -31,5 +31,9 @@
       "evidence": "Merged PR #1444 at a68a5ac5 after full exact-head CI on c9cfd18a. Two study lighting stations, actual branch, pole/plug/operator and 75/75 first withdrawal checked. Previous #1439 preserves the separate DHW system decision.",
       "next": "MAT-SERVICES remains planned. Price the next whole-house cross-family duty against the S01–S10 crosswalk. S08 still needs the incoming electrical supply, actual glands/earth links, complete cable protection/disconnection and a two-end exchange specimen."
     }
+  },
+  "checkpoint": {
+    "evidence": "Compared documented cold heat-pump outputs, stored-water capacity, separate exchange duties and ten priority windows against the existing service source. Working package is on the registered branch.",
+    "next": "Publish the independently reproduced heat and water study, physical plant route and controls/supply conditions; run repository validation and preserve unresolved S01-S10 gates."
   }
 }
