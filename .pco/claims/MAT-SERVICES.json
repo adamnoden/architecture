@@ -1,41 +1,33 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 26,
-  "state": "released",
-  "leaseId": "362edc89-66e0-44dc-9386-d87f530c657b",
+  "generation": 27,
+  "state": "claimed",
+  "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
   "holder": {
     "kind": "chatgpt",
-    "label": "Swarm follow-on availability and source evidence"
+    "label": "Owner follow-on services study"
   },
-  "claimedAt": "2026-11-09T01:43:59.723Z",
-  "heartbeatAt": "2026-11-09T01:46:18.809Z",
-  "expiresAt": "2026-11-09T01:46:18.809Z",
-  "branch": "work/swarm-service-evidence-0143",
+  "claimedAt": "2026-11-09T01:53:12.515Z",
+  "heartbeatAt": "2026-11-09T01:53:12.515Z",
+  "expiresAt": "2026-11-09T02:38:12.515Z",
+  "branch": "work/swarm-services-20261109-0152",
   "predecessor": {
-    "leaseId": "9d9b8d7d-91ca-46ed-ae4a-2b5203922ff1",
-    "generation": 25,
-    "branch": "work/swarm-review-0050",
-    "pr": 1408,
+    "leaseId": "362edc89-66e0-44dc-9386-d87f530c657b",
+    "generation": 26,
+    "branch": "work/swarm-service-evidence-0143",
     "checkpoint": {
-      "evidence": "Merged #1408 at 7e4bdace after all 14 workflows and canonical preflight. Source-bound heater/sensor option, real room and S01-S10 crosswalk reviewed and validated on e5a1489b.",
-      "next": "For W9 selection obtain the configured cold/dirty full-flow result or the transverse casing, hatch and probe envelopes. Check the 265.8 mm casing and 5.3 mm fitted spine budget, independently supported access, supply pressure and occupied sound. Separate outstanding water isolation, waste removal and DHW mode work remains in the crosswalk."
+      "evidence": "Reviewed current public ProCASA E+ selector, SDHE technical sheet p4 and Genius Fig2 after merged #1408 at 7e4bdace. See #1100. No public transverse reset/hatch envelope or matching cold-dirty delivered-duty result verified; no source change warranted.",
+      "next": "To settle this W9 selection, obtain exact supplier geometry or a configured full-flow cold/dirty result. Other S01-S10 families retain their own internal design choices in the reconciled crosswalk."
     }
   },
   "recoverySource": {
-    "leaseId": "9d9b8d7d-91ca-46ed-ae4a-2b5203922ff1",
-    "generation": 25,
-    "branch": "work/swarm-review-0050",
-    "pr": 1408,
+    "leaseId": "362edc89-66e0-44dc-9386-d87f530c657b",
+    "generation": 26,
+    "branch": "work/swarm-service-evidence-0143",
     "checkpoint": {
-      "evidence": "Merged #1408 at 7e4bdace after all 14 workflows and canonical preflight. Source-bound heater/sensor option, real room and S01-S10 crosswalk reviewed and validated on e5a1489b.",
-      "next": "For W9 selection obtain the configured cold/dirty full-flow result or the transverse casing, hatch and probe envelopes. Check the 265.8 mm casing and 5.3 mm fitted spine budget, independently supported access, supply pressure and occupied sound. Separate outstanding water isolation, waste removal and DHW mode work remains in the crosswalk."
+      "evidence": "Reviewed current public ProCASA E+ selector, SDHE technical sheet p4 and Genius Fig2 after merged #1408 at 7e4bdace. See #1100. No public transverse reset/hatch envelope or matching cold-dirty delivered-duty result verified; no source change warranted.",
+      "next": "To settle this W9 selection, obtain exact supplier geometry or a configured full-flow cold/dirty result. Other S01-S10 families retain their own internal design choices in the reconciled crosswalk."
     }
-  },
-  "checkpoint": {
-    "evidence": "Reviewed current public ProCASA E+ selector, SDHE technical sheet p4 and Genius Fig2 after merged #1408 at 7e4bdace. See #1100. No public transverse reset/hatch envelope or matching cold-dirty delivered-duty result verified; no source change warranted.",
-    "next": "To settle this W9 selection, obtain exact supplier geometry or a configured full-flow cold/dirty result. Other S01-S10 families retain their own internal design choices in the reconciled crosswalk."
-  },
-  "releasedAt": "2026-11-09T01:46:18.809Z",
-  "releaseReason": "handoff"
+  }
 }
