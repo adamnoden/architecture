@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 38,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "7cda0738-fae8-489d-a7bb-9bdc1363b337",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T04:06:33.815Z",
-  "heartbeatAt": "2026-11-09T05:04:12.829Z",
-  "expiresAt": "2026-11-09T05:49:12.829Z",
+  "heartbeatAt": "2026-11-09T05:04:52.692Z",
+  "expiresAt": "2026-11-09T05:04:52.692Z",
   "branch": "work/house-0406-20261109",
   "predecessor": {
     "leaseId": "f10138d4-d192-41a6-8378-24d5f718dec4",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1428 at 44807906; P32 sources and figures verified on main; handoff #1103",
     "next": "Compare independent east maintenance access on the actual plan or define its redesign. Qualify the P32 assembly before repetition."
-  }
+  },
+  "releasedAt": "2026-11-09T05:04:52.692Z",
+  "releaseReason": "handoff"
 }
