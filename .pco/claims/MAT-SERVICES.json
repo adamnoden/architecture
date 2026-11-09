@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 28,
-  "state": "released",
-  "leaseId": "33b4fff0-e075-4b00-919b-c08087956e62",
+  "generation": 29,
+  "state": "claimed",
+  "leaseId": "8e8e8995-89a1-43e7-a5c6-69f032a8e0aa",
   "holder": {
     "kind": "chatgpt",
-    "label": "Owner follow-on: plant water repair"
+    "label": "Owner follow-on: reroute plant inlet"
   },
-  "claimedAt": "2026-11-09T02:34:08.819Z",
-  "heartbeatAt": "2026-11-09T03:11:58.939Z",
-  "expiresAt": "2026-11-09T03:11:58.939Z",
-  "branch": "work/swarm-water-repair-20261109",
+  "claimedAt": "2026-11-09T03:17:02.304Z",
+  "heartbeatAt": "2026-11-09T03:17:02.304Z",
+  "expiresAt": "2026-11-09T04:02:02.304Z",
+  "branch": "work/swarm-inlet-20261109",
   "predecessor": {
-    "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
-    "generation": 27,
-    "branch": "work/swarm-services-20261109-0152",
-    "pr": 1413,
+    "leaseId": "33b4fff0-e075-4b00-919b-c08087956e62",
+    "generation": 28,
+    "branch": "work/swarm-water-repair-20261109",
+    "pr": 1418,
     "checkpoint": {
-      "evidence": "Merged DHW study #1413 as 3e941b4d on #1409; current-head CI and preflight passed.",
-      "next": "Test a factory mineral-insulated 300 L potable alternative including expansion-vessel access, actual draw profile and both cold-day output modes. Other S01–S10 families retain separate study duties."
+      "evidence": "Merged #1418 at 53d42459 after 14 green checks, exact head f8b98349. Issue #1100 records source, finding and handoff in comment 6731309635.",
+      "next": "Replan the fixed inlet past plant-N, coordinate both wall penetrations and demonstrate terminal release before cylinder transport."
     }
   },
   "recoverySource": {
-    "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
-    "generation": 27,
-    "branch": "work/swarm-services-20261109-0152",
-    "pr": 1413,
+    "leaseId": "33b4fff0-e075-4b00-919b-c08087956e62",
+    "generation": 28,
+    "branch": "work/swarm-water-repair-20261109",
+    "pr": 1418,
     "checkpoint": {
-      "evidence": "Merged DHW study #1413 as 3e941b4d on #1409; current-head CI and preflight passed.",
-      "next": "Test a factory mineral-insulated 300 L potable alternative including expansion-vessel access, actual draw profile and both cold-day output modes. Other S01–S10 families retain separate study duties."
+      "evidence": "Merged #1418 at 53d42459 after 14 green checks, exact head f8b98349. Issue #1100 records source, finding and handoff in comment 6731309635.",
+      "next": "Replan the fixed inlet past plant-N, coordinate both wall penetrations and demonstrate terminal release before cylinder transport."
     }
-  },
-  "pr": 1418,
-  "checkpoint": {
-    "evidence": "Merged #1418 at 53d42459 after 14 green checks, exact head f8b98349. Issue #1100 records source, finding and handoff in comment 6731309635.",
-    "next": "Replan the fixed inlet past plant-N, coordinate both wall penetrations and demonstrate terminal release before cylinder transport."
-  },
-  "releasedAt": "2026-11-09T03:11:58.939Z",
-  "releaseReason": "handoff"
+  }
 }
