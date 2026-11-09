@@ -9,8 +9,8 @@
     "label": "Whole occurrence decision 0840"
   },
   "claimedAt": "2026-11-09T09:12:42.801Z",
-  "heartbeatAt": "2026-11-09T09:53:34.621Z",
-  "expiresAt": "2026-11-09T10:38:34.621Z",
+  "heartbeatAt": "2026-11-09T10:11:33.645Z",
+  "expiresAt": "2026-11-09T10:56:33.645Z",
   "branch": "work/swarm-house-evidence-0840",
   "predecessor": {
     "leaseId": "a6a1ef75-2328-49d1-ab67-be70360701fa",
@@ -34,7 +34,7 @@
   },
   "pr": 1446,
   "checkpoint": {
-    "evidence": "Frozen and verified #1446 563df9cdc05850062ff1c8e617645ba4108a7048. 28 safe-side release stations; full MAT, integrity and render passed. Joint host accepted #1447 ab727db7 HAD g1, #1448 3dd69c08 MAT-SERVICES g32, initial three-source preview d4430821 passed HAD, RWT, MAT and public sanitation.",
-    "next": "Complete combined source tree after IAS g38 selection, retain all immutable parents, collect each live exact-head fence and expected-head merge. Current source receipts remain separate."
+    "evidence": "Four-source #1446 d9d4e9a1 retains frozen 563df9cd, 7accc1c2, ab727db7 and 783bd640. Final 2e7164a3c6680ac51b94862b65bc9085cfe01b86 corrects HAD owned stage and historical labels. Expected tree fd000ba9. HAD and RWT targeted fixes 11/11; project-wide local tests, typecheck and docs validated at joint.",
+    "next": "Await corrected 14 workflows and fresh independent four-party fences, expected-head merge, canonical issue and source-ref reconcile, release g42 and redispatch."
   }
 }
