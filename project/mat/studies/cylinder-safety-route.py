@@ -1,6 +1,10 @@
 """Falsification and geometric reservations for the 300 BES comparison, in mm."""
+from contextlib import redirect_stdout
+from io import StringIO
 import json
-from math import dist, hypot
+from math import dist, hypot, pi, tan
+import runpy
+import sys
 from pathlib import Path
 
 studies = Path(__file__).resolve().parent
@@ -34,21 +38,40 @@ threshold = read("plant-threshold.json")
 cylinder, buffer = plant["cylinder"], plant["buffer"]
 centre = cylinder["replacementCentrePath"][0]
 assert centre == [9860, 4250] and cylinder["handlingRadius"] == buffer["handlingRadius"] == 425
-# Terminal of the fixed cold bridge in plant-inlet-route.py, tested in test:mat.
-upstream = (11075, 3970)
+# Read the actual bridge trial through its existing non-writing verification path.
+saved_args = sys.argv
+try:
+    sys.argv = [str(studies / "plant-inlet-route.py"), "--check"]
+    with redirect_stdout(StringIO()):
+        inlet = runpy.run_path(sys.argv[0])
+finally:
+    sys.argv = saved_args
+upstream = inlet["upstream"]
 shortest_upstream = dist(centre, upstream) - cylinder["handlingRadius"]
 assert shortest_upstream > 821 and shortest_upstream > 600
 
 # Trial outlet coordinates, not measured valve centres. Each D1 path drops.
-temperature_relief = (10070, 4460, 1420)
-expansion_relief = (10200, 4480, 1500)
-manifold = (10095, 4475, 1370)
-tundish = (10035, 4800, 1150)
-paths = [[valve, manifold, tundish] for valve in (temperature_relief, expansion_relief)]
+temperature_relief = (10035, 4520, 1420)
+expansion_relief = (10120, 4720, 1500)
+manifold = (10035, 4580, 1360)
+bend = (10035, 4800, 1140)  # virtual intersection of 45° and vertical tangents
+tundish = (10035, 4800, 1100)
+paths = [[valve, manifold, bend, tundish] for valve in (temperature_relief, expansion_relief)]
 for path in paths:
     assert all(a[2] > b[2] for a, b in zip(path, path[1:]))
-d1 = [sum(dist(a, b) for a, b in zip(p, p[1:])) for p in paths]
-between_valves = dist(temperature_relief, manifold) + dist(expansion_relief, manifold)
+    assert all(dist(p[:2], centre) >= cylinder["body"][2]/2+7.5 for p in path)
+# Both halves of the through run slope 1:1 due north. The branch vector is
+# perpendicular in 3D, so these are achievable axes for a right-angle tee.
+assert temperature_relief[0] == manifold[0] == bend[0]
+assert temperature_relief[1]+temperature_relief[2] == manifold[1]+manifold[2] == bend[1]+bend[2]
+assert manifold[1]-expansion_relief[1] == manifold[2]-expansion_relief[2]
+assert tundish[:2] == bend[:2]
+radius = 30  # trial centreline bend; actual part must fit straight, socket and removal budgets
+takeoff = radius*tan(pi/8)
+assert bend[2]-tundish[2]-takeoff > 27
+arc_correction = 2*takeoff-radius*pi/4
+d1 = [sum(dist(a, b) for a, b in zip(p, p[1:]))-arc_correction for p in paths]
+between_valves = dist(temperature_relief, manifold)+dist(expansion_relief, manifold)
 assert max(*d1, between_valves) < 600
 # The D1 tubes separate from the stationary receiving assembly after cold drain.
 # Only the Ø120 permanent tundish/support/drop reservation is credited in transport.
@@ -85,26 +108,35 @@ assert min(beam_gaps) == 240
 east_x, end_y, grade = 12450, 2500, threshold["dock"]["outsideGrade"]
 assert grade == -1800
 d2_start_z, below_slab_z, end_z = 1000, -900, grade-50
-run_e, run_s = east_x-station[0], station[1]-end_y
-z_elbow = below_slab_z-(run_e+run_s)/80
+south_bend_y, terminal_x = 2600, 12350
+run_e, run_s = east_x-station[0], station[1]-south_bend_y
+dogleg = hypot(east_x-terminal_x, south_bend_y-end_y)
+runs = (run_e, run_s, dogleg)
+z_elbow = below_slab_z-sum(runs)/80
 assert d2_start_z-below_slab_z >= 300 and z_elbow > end_z
+foul_port = model["servicesInterface"]["eastFoulExit"]["path"][-1]
+assert foul_port == [12000, 5625, 2616.875] and foul_port[2] > d2_start_z
 lower_east = grid["girders"]["outer-E"]["z"][0]
 assert lower_east-below_slab_z-reserve >= 210
-external = [(east_x, station[1]), (east_x, end_y)]
+external = [(east_x, station[1]), (east_x, south_bend_y), (terminal_x, end_y)]
 route = [station, *external]
 for h in grid["heads"]:
     assert path_clearance(h["xy"], route, h["shaftDiameter"]/2+reserve) >= 25
 # All concrete head undersides are higher than the new run's crown.
 assert min(h["capZ"][0] for h in grid["heads"]) - below_slab_z - reserve >= 90
-basin = read("../../rwt/studies/forked-side-outlet.json")["basin"]
+rain = read("../../rwt/studies/forked-side-outlet.json")
+basin, spill = rain["basin"], rain["spill"]
 potable_x, potable_y, potable_r = 12250, 3150, 100  # matched plant-inlet-route proposal
 assert path_clearance((potable_x, potable_y), route, potable_r+reserve) == 40
 assert basin[0]-east_x-reserve == 40 and basin[1]-end_y-150 == 100
+assert spill[0]-terminal_x-150 == 50
+assert spill[1] < end_y < spill[1]+spill[3]
+assert min(basin[0], spill[0])-max(x for x, _ in external)-reserve == 40
 assert threshold["dock"]["plan"][2]-end_y-150 == 750
-length = (d2_start_z-below_slab_z+hypot(run_e, run_e/80)+hypot(run_s, run_s/80)+z_elbow-end_z)/1000
+length = (d2_start_z-below_slab_z+sum(hypot(run, run/80) for run in runs)+z_elbow-end_z)/1000
 # Approved Document G Table 3: maximum straight equivalent resistance, metres.
-# The 3 elbows are downward-to-east, east-to-south and south-to-downward.
-equivalent = {od: length + 3*per_bend for od, per_bend in ((22, .8), (28, 1), (35, 1.4))}
+# Charge each of the four changes in direction as one full bend, including the 45° dogleg.
+equivalent = {od: length + 4*per_bend for od, per_bend in ((22, .8), (28, 1), (35, 1.4))}
 assert equivalent[22] > 9 and equivalent[28] < 18  # G1/2 comparator
 assert equivalent[28] > 9 and equivalent[35] < 18  # G3/4 comparator
 print(f"Fixed seat minimum {shortest_upstream:.1f}; D1 valve/tundish {d1[0]:.1f}/{d1[1]:.1f}; valve/valve {between_valves:.1f} mm")
