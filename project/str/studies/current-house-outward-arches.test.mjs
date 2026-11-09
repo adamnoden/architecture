@@ -126,3 +126,27 @@ test('moving the pier end bars retains both barrier fixings and separates only t
   assert.equal(z, zz);
   assert.ok(Math.abs(Math.hypot(x, z + c.tailBondUpwardKNPerArm) - d.requiredBarForceKN) < 1e-9);
 });
+
+test('a transverse H10 can enclose the bend only by spending wall width on its straight legs', () => {
+  const t = study('central-arch-detail').bendTie;
+  assert.ok(t.existingLinkLevelsMm[0] < t.trialZmm && t.trialZmm < t.existingLinkLevelsMm[1]);
+  assert.ok(t.twoH8AtPierCapKN < t.horizontalForceKN && 2*t.oneH10AtPierCapKN > t.horizontalForceKN);
+  assert.ok(t.shortestLegLengthMm > t.heavyLegAt55PercentLengthMm);
+  assert.ok(375 - 10 < t.straightBondLengthMm);
+  assert.ok(t.enclosingLegMinimumYmm > t.middleMaximumYmm && t.unchangedRoomFaceCoverAfterFullLossMm < 0);
+  assert.ok(t.trialFacesYmm[1] > t.minimumRoomFaceYForMatchedCoverMm);
+  assert.equal(t.remainingGlassMm, 42);
+  assert.ok(t.straightH20GapLowerMm > 0 && t.noseToH16GapLowerMm > 0 && t.noseToH25GapLowerMm > 0);
+  assert.ok(t.noseToH16OnSteelOnlyCardUpperMm < 16);
+});
+
+test('normal contact on the perpendicular face cannot reproduce the continuous spring witness', () => {
+  const b = study('central-arch-detail').perpendicularBearing;
+  assert.deepEqual([b.case.element, b.case.end], [0, 0]);
+  assert.ok(b.compressionKN > 0);
+  for (const [i, size] of b.radialAndNormalFaceMm.entries()) {
+    assert.equal(b.strongAndWeakEdgeBoundKNm[i], b.compressionKN * size / 2000);
+    assert.ok(b.requiredRadialAndNormalEccentricityMm[i] > size / 2);
+    assert.ok(b.strongAndWeakDemandKNm[i] > b.strongAndWeakEdgeBoundKNm[i]);
+  }
+});

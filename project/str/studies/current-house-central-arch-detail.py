@@ -303,6 +303,106 @@ def in_plane_cage():
         'tailBondUpwardKNPerArm':force,'pier':pier_screen(ground['bars'](upper)),
     }
 
+def bend_tie(cage):
+    # One open U, with straight anchored legs pointing back into the near pier.
+    # Transfer of the horizontal component to these two legs is a trial load path.
+    force = cage['pairedArmBendForcesLocalXYZkN'][0][0]
+    link_d = 10
+    link_r = link_d / 2
+    area = math.pi * link_r**2
+    stress = force * 1000 / (2 * area)
+    required_length = link_d * stress / (.95 * 4 * 2.1)
+    heavy_length = required_length * .55 / .5
+    leg_length = 425
+    short_cut = leg_length - cut_tolerance
+    radius, centre_x = 80, 1135
+    leg_y = [y0-radius, y0+radius]
+    assert short_cut >= heavy_length
+    relative = cage['relativeXYAllowanceMm']
+    h20_min_y = inner_lane + pier_diameter/2 + link_r + relative
+    # A leg passing between the H20 lanes must also stay roomwards of the H25.
+    middle_max = inner_lane - pier_diameter/2 - link_r - relative
+    enclose_min = y0 + bar_r + link_r + relative
+    assert middle_max < enclose_min
+    cover = inside - inner_lane - pier_diameter/2  # existing nominal room-face comparison
+    trial_faces = [leg_y[0]-link_r-cover, leg_y[1]+link_r+cover]
+    inward = trial_faces[1]-inside
+    outward = outside-trial_faces[0]
+    form_loss = geometry['normalWidthNominal']-geometry['minimumAsBuiltWidthComparison']
+    bend_angle = math.asin((cage['bendStartXZ'][1]-cage['bendEndXZ'][1])/cage['bendRadiusMm'])
+    tie_z = cage['bendEndXZ'][1] + cage['bendRadiusMm']*math.sin(bend_angle/2)
+    schedule = runpy.run_path(str(D/'arch-link-schedule.py'))['schedule']['nearPierH10GlobalZ']
+    adjacent = [max(z for z in schedule if z < tie_z), min(z for z in schedule if z > tie_z)]
+    assert adjacent[0] < cage['bendEndXZ'][1] < tie_z < cage['bendStartXZ'][1] < adjacent[1]
+    # The U legs cross each of the two pairs of vertical H20s. The near
+    # H16s are also vertical throughout this horizontal slice and its errors.
+    h20_x = [origin + s for s in cage['stationPairAfter']]
+    assert centre_x-leg_length < min(h20_x) < max(h20_x) < centre_x
+    h16_x = [b['startVertical'][0] for b in detail['legs']]
+    assert all(b['endVertical'][1]+relative+link_r < tie_z <
+               b['startVertical'][1]-relative-link_r for b in detail['legs'])
+    # Distances from a point on the half-circle to the translated upright
+    # axis box. Half a sample arc bounds the unsampled distance decrease.
+    arc_steps = 720
+    arc = [(centre_x+radius*math.cos(i*math.pi/arc_steps-math.pi/2),
+            y0+radius*math.sin(i*math.pi/arc_steps-math.pi/2)) for i in range(arc_steps+1)]
+    def nose_gap(relative_error):
+        return min(math.hypot(max(abs(x-bx)-relative_error, 0), max(abs(y-by)-relative_error, 0))
+                   for x,y in arc for bx in h16_x for by in geometry['normalH16Centres']) - link_r-detail['diameter']/2
+    # H20 are entirely behind the semicircle. The H25 also stays behind the
+    # tangency plane across the slice, even including the full relative error.
+    band_above = tie_z + relative + link_r + bar_r - cage['bendEndXZ'][1]
+    rb = cage['bendRadiusMm']
+    x25_upper = cage['legX'] + rb - math.sqrt(rb**2-band_above**2)
+    assert x25_upper < centre_x
+    nose_to_h25_bound = min(math.hypot(max(x-x25_upper-relative,0), max(abs(y-y0)-relative,0))
+                            for x,y in arc) - link_r - bar_r - radius*math.pi/(2*arc_steps)
+    assert nose_to_h25_bound > 0
+    return {
+        'trialZmm':tie_z, 'existingLinkLevelsMm':adjacent, 'horizontalForceKN':force,
+        'oneH10AtPierCapKN':area*ground['fy']/1000, 'twoH8AtPierCapKN':2*math.pi*4**2*ground['fy']/1000,
+        'trialH10LegStressMPa':stress, 'straightBondLengthMm':required_length,
+        'heavyLegAt55PercentLengthMm':heavy_length, 'shortestLegLengthMm':short_cut,
+        'legXmm':[centre_x-leg_length,centre_x], 'legYmm':leg_y, 'noseCentreRadiusMm':radius,
+        'roomLegMustExceedYmm':h20_min_y, 'middleMaximumYmm':middle_max,'enclosingLegMinimumYmm':enclose_min,
+        'unchangedRoomFaceMaximumCoverMm':inside-h20_min_y-link_r,
+        'unchangedRoomFaceCoverAfterFullLossMm':inside-h20_min_y-link_r-form_loss-spacing_error/2,
+        'matchedNominalCoverMm':cover, 'minimumRoomFaceYForMatchedCoverMm':h20_min_y+link_r+cover,
+        'trialFacesYmm':trial_faces, 'insideProjectionMm':inward, 'outsideProjectionMm':outward,
+        'remainingGlassMm':geometry['remainingOrdinaryGlass']-outward,
+        'straightH20GapLowerMm':min(abs(y-by) for y in leg_y for by in (outer_lane,inner_lane))-relative-link_r-pier_diameter/2,
+        'noseToH16GapLowerMm':nose_gap(relative)-radius*math.pi/(2*arc_steps),
+        'noseToH16OnSteelOnlyCardUpperMm':nose_gap(spacing_error),
+        'noseToH25GapLowerMm':nose_to_h25_bound,
+        'scope':'One horizontal H10 U at each arm. Geometry and trial equal-leg force only; concrete stress field, bond, anchorage, other cage details, cover, placing, thermal and occupied interfaces remain open.'
+    }
+
+
+def perpendicular_bearing():
+    # Select one archived end under one load combination; never mix maxima.
+    def witness(row):
+        return row['centralH25Arch']['governingEnds']['adverse']
+    row = max(solve['coupled'], key=lambda item: witness(item)['ratio'])
+    end = witness(row)
+    assert end['element'] == end['end'] == 0 and end['axialKN'] > 0
+    # Nonnegative normal pressure has a resultant inside its footprint.
+    # These edge bounds allow even an ideal point reaction at the edge.
+    radial, normal = arch['arch'][1], geometry['normalWidthNominal']
+    axial = end['axialKN']
+    return {
+        'case':{key:end[key] for key in ('wind','loadedWindow','window','pointX','pointSign','pressureSign','element','end')},
+        'restraint':{key:row[key] for key in ('crackedEI','LAndUpstandTorsionFactor','allLowerBearings','floorRoofYawJoin')},
+        'sourceInteraction':end['ratio'],'compressionKN':axial,'torsionKNm':end['torsionKNm'],
+        'radialAndNormalFaceMm':[radial,normal],
+        'strongAndWeakDemandKNm':[end['strongDemandKNm'],end['weakDemandKNm']],
+        'strongAndWeakEdgeBoundKNm':[axial*size/2000 for size in (radial,normal)],
+        'requiredRadialAndNormalEccentricityMm':[1000*end[key]/axial for key in ('strongDemandKNm','weakDemandKNm')],
+        'scope':'One current continuous-joint spring response on a single perpendicular contact plane. No tension, dowel, friction or separate force couple credited. A changed bearing model requires new reactions.'
+    }
+
+
+cage = in_plane_cage()
+
 result = {
     'role':'Unadopted trial. Near spring and first interior station only receive H25 strength credit.',
     'stationCount':intervals+1,'nearSpringXZ':[x0,z0],'normalLane':y0,'barRadiusInElevationMm':mid_radius,
@@ -326,7 +426,9 @@ result = {
     'historicalActionCount':len(ground['dem']),'momentDatumMm':ground['cent'],
     'pierOriginal':pier_screen(original),'pierRevised':pier_screen(revised),
     'verticalReturn':vertical_return(),
-    'inPlaneCage':in_plane_cage(),
+    'inPlaneCage':cage,
+    'bendTie':bend_tie(cage),
+    'perpendicularBearing':perpendicular_bearing(),
     'psbSingle25':forged_head(),
     'held':['Load transfer, in-arch bond and shear shift, bend forces and confinement.',
             'H20 cranks and transverse links, cover, concrete placing and durability at the actual crossings.',

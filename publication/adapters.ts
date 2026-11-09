@@ -491,7 +491,7 @@ function adaptPrimerReferenceHouse(markdown: string, context: AdapterContext): s
   }
 
   const basis = readWork(context, 'docs/reference-house/current-house-basis.md')
-  const facts = markdownSection(basis, 'Current architectural facts')
+  const facts = markdownSection(basis, 'Dimensions and rooms in the accepted layout')
   const charter = readWork(context, 'project/owner-house-charter.md')
   const roofRow = markdownSection(basis, 'Sources to use').split('\n').find((line) => line.startsWith('| Roof prohibition |'))
   if (!roofRow) throw new Error('Primer current-house roof requirement is missing from its owning basis.')

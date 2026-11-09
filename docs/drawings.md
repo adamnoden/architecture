@@ -9,7 +9,7 @@ pageClass: drawing-gallery-page
 
 # Drawings
 
-Browse the project’s plans, elevations, sections, details and diagrams.
+The coordinated drawings show the accepted courtyard layout. The later design adds an east water route beneath the gallery. [Compare the two designs](reference-house/current-house-basis.md#which-house-do-the-drawings-show)
 
 For project sequencing, see the [interactive dependency graph](project/dependency-graph.md).
 
