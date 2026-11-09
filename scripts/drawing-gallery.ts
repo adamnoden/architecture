@@ -217,10 +217,10 @@ export function buildDrawingGallery(root = process.cwd(), options: { includeCurr
       'GROUND-SERVICES': 'Ground-floor service overlay', 'FIRST-SERVICES': 'First-floor service overlay', STRUCTURE: 'Structural overlay',
       'ROOF-FAILURE': 'Roof water and failure overlay', 'EXTERNAL-ACCESS': 'External maintenance overlay', ADAPTATION: 'Future adaptation overlay'
     }
-    for (const view of layoutFamilyViews) current(createLayoutFamilyScene(view, 100), 'compiler/reference-house/georgian/layout-family.ts', viewTitles[view] ?? humanise(view.toLowerCase()), 'Current house', '')
-    for (const view of layoutAnalysisViews) current(createLayoutAnalysisScene(view, 100), 'compiler/reference-house/georgian/layout-analysis.ts', viewTitles[view] ?? humanise(view.toLowerCase()), 'Current house overlays')
-    current(createCurrentSynthesisScene('BOOK', 'b5'), 'compiler/reference-house/georgian/sectional-synthesis.ts', 'Sectional isometric', 'Current house', synthesisSource.scope)
-    for (const view of exteriorViews) current(createExteriorIsometricScene(view, 'svg'), 'compiler/reference-house/georgian/exterior-isometrics.ts', `${humanise(view)} exterior isometric`, 'Current house')
+    for (const view of layoutFamilyViews) current(createLayoutFamilyScene(view, 100), 'compiler/reference-house/georgian/layout-family.ts', viewTitles[view] ?? humanise(view.toLowerCase()), 'Coordinated drawings', '')
+    for (const view of layoutAnalysisViews) current(createLayoutAnalysisScene(view, 100), 'compiler/reference-house/georgian/layout-analysis.ts', viewTitles[view] ?? humanise(view.toLowerCase()), 'Analysis overlays')
+    current(createCurrentSynthesisScene('BOOK', 'b5'), 'compiler/reference-house/georgian/sectional-synthesis.ts', 'Sectional isometric', 'Coordinated drawings', synthesisSource.scope)
+    for (const view of exteriorViews) current(createExteriorIsometricScene(view, 'svg'), 'compiler/reference-house/georgian/exterior-isometrics.ts', `${humanise(view)} exterior isometric`, 'Coordinated drawings')
     // Keep identities tied to the exported source families, even if their view lists evolve.
     const families = new Set([layoutFamilySource.id, layoutAnalysisSource.id, synthesisSource.id, exteriorSource.id])
     if (entries.some((entry) => entry.basis === 'current' && !families.has(entry.sourceId!))) throw new Error('Unknown current drawing source family')

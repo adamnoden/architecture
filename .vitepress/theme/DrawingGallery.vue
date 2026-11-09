@@ -15,7 +15,7 @@ const categories: { id: Category; label: string }[] = [
   { id: 'studies', label: 'Studies & comparisons' }
 ]
 const basisLabels: Record<Basis, string> = {
-  current: 'Current study',
+  current: 'Accepted layout',
   historical: 'Earlier study',
   study: 'Supporting study'
 }
@@ -118,7 +118,7 @@ onMounted(async () => {
           <span>Design basis</span>
           <select id="drawing-basis" v-model="basis">
             <option value="all">All drawings</option>
-            <option value="current">Current study</option>
+            <option value="current">{{ basisLabels.current }}</option>
             <option value="study">Supporting studies</option>
             <option value="historical">Earlier studies</option>
           </select>

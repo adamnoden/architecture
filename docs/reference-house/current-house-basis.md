@@ -2,11 +2,11 @@
 
 The accepted pre-site design is **RH-LAYOUT-REVISION-02**, the 12 × 12 m courtyard house. Its coordinated drawing family is **RH-LAYOUT-FAMILY-02**. The owner accepted this working layout; acceptance does not establish technical adequacy or a construction issue. A future commissioned house will have its own surveyed site and adopted project basis.
 
-## Selected HAD development and accepted compiler identity
+## Which house do the drawings show?
 
-[HAD-03 selects the compact B/open north loggia](https://github.com/adamnoden/architecture/blob/main/project/had/had-03-open-north-loggia.md) as its architectural development source, including the actual four-bedroom/private/service layout,27/30 finish depths, protected route, outdoor water territories and named costs. Its authoritative model is `project/had/studies/open-north-loggia.json` (B/9300 spine).
+The coordinated plans, elevations, sections and exterior views show the **accepted layout**, with its 9500 mm spine. The dimensions below describe that drawing set. [Layout decisions](layout-revision-02.md)
 
-This does **not** replace the accepted RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-02 compiler baseline (A/9500 spine), and those existing generated views must not be described as depicting the selected HAD house. Earlier studies retain their dated dimensions/proof identities. ROF-RWT-GATE and TRIAD reconcile the actual shared selection; HRS-TECHNICAL owns technical migration/applicability, ADE-MODEL connects current identities to outputs, and PLT-FINAL-PREP owns the final coherent proof. These existing duties, rather than a new parallel graph, control shared adoption.
+The **selected architectural development** keeps the 12 m house and the open north loggia. The north route carries ordinary courtyard runoff. If its mouth is blocked, water can enter a separate east route beneath the dry gallery and leave through an exterior service passage. This supersedes the north-only drainage arrangement. The plan and section locate both routes. Hydraulic performance, structural support and discharge on a real plot remain open. [Plan and section](https://github.com/adamnoden/architecture/blob/main/project/had/studies/water-replan.svg) · [Design decision and model](https://github.com/adamnoden/architecture/blob/main/project/had/water-replan-result.md)
 
 ## Sources to use
 
@@ -23,7 +23,7 @@ This does **not** replace the accepted RH-LAYOUT-REVISION-02 / RH-LAYOUT-FAMILY-
 
 Names alone are not content fingerprints. The execution result `project/hrs/hrs-baseline-result.md` records the inspected Git revision and source blobs. Later source changes require a fresh applicability decision.
 
-## Current architectural facts
+## Dimensions and rooms in the accepted layout
 
 The shell is 12000 mm square and the open court 3500 mm square, centred at x/y 4250 mm. The nominal ring is 4.25 m gross; that is not a clear structural span. Ground and first finished floors are 0 and +3450 mm, with 3100 mm clear ceilings. The intermediate 350 mm package is fully allocated: 20 mm finish, 22 mm deck, 238 mm framing, 55 mm service void and 15 mm ceiling. It contains no unallocated depth for another layer.
 
