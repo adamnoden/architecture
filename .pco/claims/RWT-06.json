@@ -9,9 +9,9 @@
     "label": "Whole-family decision 0505"
   },
   "claimedAt": "2026-11-09T05:06:24.196Z",
-  "heartbeatAt": "2026-11-09T05:06:24.196Z",
-  "expiresAt": "2026-11-09T05:51:24.196Z",
-  "branch": "work/swarm-family-0505",
+  "heartbeatAt": "2026-11-09T05:29:55.760Z",
+  "expiresAt": "2026-11-09T06:14:55.760Z",
+  "branch": "work/house-0506-20261109",
   "predecessor": {
     "leaseId": "639f69b0-c49d-4cc1-88a9-82e5134a5b74",
     "generation": 64,
@@ -31,5 +31,10 @@
       "evidence": "MERGED #1428 at 44807906 with #1427 corrected head 69651e77 as a direct parent of f1253054, source blobs verified. Issue #992 comment 6732668968 records the geometry, 198 tests, final CI, receiver obligations and lifecycle started.",
       "next": "Wet-test the reversible closed leader and mouth blockages, locate two ground terminals and safe receiving paths, and qualify guarded access, corner renewal and the supports."
     }
+  },
+  "pr": 1431,
+  "checkpoint": {
+    "evidence": "Frozen RWT source 765b6b471d01416f9a2d342b65fd2d40d4ccae6b. East outfall and dry withdrawal, four passing new tests and canonical repository checks.",
+    "next": "Independently verify the joint IAS, STR and RWT head, source and exact CI before canonical preflight."
   }
 }
