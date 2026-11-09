@@ -9,12 +9,13 @@
     "label": "issue-comment-6753111267"
   },
   "claimedAt": "2026-11-09T22:26:06.000Z",
-  "heartbeatAt": "2026-11-09T22:50:17.000Z",
-  "expiresAt": "2026-11-09T23:35:17.000Z",
+  "heartbeatAt": "2026-11-09T23:00:12.000Z",
+  "expiresAt": "2026-11-09T23:45:12.000Z",
   "branch": "work/mvb-chat-6753111267",
   "checkpoint": {
-    "evidence": "PR #1467 head2a9753eb6369790ad6d1d27d0f28a225dbbb494c preserves corrected projecting-gutter catchments and two independently routed southern leaders. Local edge and junction comparisons pass.",
-    "next": "Complete the inner upper collectors, independently caught outboard heads and signed additional wind/load review before selecting the joined reference."
+    "evidence": "Draft PR #1467 at 2a9753eb. Comment6753738344 links preserved calculations, review findings and exact local residue. Gate planned.",
+    "next": "Recover executor. Resolve stage and E-spool extraction, head catches and full SAP-C1 wind replay. Run affected checks and exact-head preflight.",
+    "blocker": "Execution environment unavailable. Selected geometry and full current-house structural replay remain unfinished."
   },
   "pr": 1467
 }
