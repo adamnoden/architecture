@@ -9,8 +9,8 @@
     "label": "high-eave-0252"
   },
   "claimedAt": "2026-11-09T02:54:13.253Z",
-  "heartbeatAt": "2026-11-09T03:07:34.619Z",
-  "expiresAt": "2026-11-09T03:52:34.619Z",
+  "heartbeatAt": "2026-11-09T03:08:56.640Z",
+  "expiresAt": "2026-11-09T03:53:56.640Z",
   "branch": "work/house-wave4-0252",
   "predecessor": {
     "leaseId": "d1bcfeb1-3494-4ed3-95b9-b06143b89532",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Studied the actual 930x2030 Study arc, rejected stock S45, tested glass sizes, head removal clearance and 59 percent share. Local committed tree 849189ae5c0c769b8ceb2a8f6538581cedb290f3; focused suite passed.",
-    "next": "Publish seven source files, retain independent review, bind grouped integration and run canonical head preflight."
-  }
+    "evidence": "Public exact head 9b21e6aafe33927b0a4792559ee3fc5ebda61ddc on PR 1422; seven reviewed MAT files tree 849189ae5c0c769b8ceb2a8f6538581cedb290f3, generated shape, controls and focused suite.",
+    "next": "Join coordinated publication, rebind to its PR, verify only expected source delta and run fresh merge-check after green."
+  },
+  "pr": 1422
 }
