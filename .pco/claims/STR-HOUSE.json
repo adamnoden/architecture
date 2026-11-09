@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T04:06:33.815Z",
-  "heartbeatAt": "2026-11-09T04:25:22.014Z",
-  "expiresAt": "2026-11-09T05:10:22.014Z",
+  "heartbeatAt": "2026-11-09T04:41:29.287Z",
+  "expiresAt": "2026-11-09T05:26:29.287Z",
   "branch": "work/house-0406-20261109",
   "predecessor": {
     "leaseId": "f10138d4-d192-41a6-8378-24d5f718dec4",
@@ -34,7 +34,7 @@
   },
   "pr": 1428,
   "checkpoint": {
-    "evidence": "Published the P32 installation and bearing comparison in #1428 at 84954592",
-    "next": "Integrate the verified cap and neighbouring-head bar paths, then validate the complete study"
+    "evidence": "Joined and verified P32, family bath and courtyard sources in #1428 at f1253054, tree 52102729",
+    "next": "Run STR merge preflight after CI; collect the IAS and RWT preflights before merging"
   }
 }
