@@ -4,7 +4,7 @@ Keep the six pipes at their current centres and retain the 465 × 545 formed flo
 
 ![Six north-up plans showing the bearing keys and shell exits](studies/family-shaft-keys.svg)
 
-The [checked coordinates](studies/family-shaft-keys.json) give the two bearings, front sockets, complete moving bodies, receiving ends and operator stances at each pipe. The [geometric check](studies/family_shaft_keys.py) retains the installed bath, revised basin, WC, fixed terminals, closed privacy leaf, four frame columns and all six pipe envelopes. Run it through the [four-WC check](studies/wc-service-stations.py), which also guards the current exported schedules.
+The [checked coordinates](studies/family-shaft-keys.json) give the two bearings, front sockets, complete moving bodies, receiving ends and operator stances at each pipe. The [geometric check](studies/family_shaft_keys.py) retains the installed bath, revised basin, WC, fixed terminals, closed privacy leaf, four frame columns and all six pipe envelopes. Run it through the [four-WC check](studies/fitted-wc-stations.py), which also guards the current exported schedules.
 
 ## Separate the pipe, its working bearing and the cabinet
 

@@ -28,6 +28,12 @@ def moving_box(start, stop, width, length):
     return [min(x,X)-width/2,min(y,Y)-length/2,abs(x-X)+width,abs(y-Y)+length]
 
 
+def trimmed_carrier_size(suite):
+    # The capped tail and side shoe are removed after the first 150 draw.
+    # Protect the complete ceramic by 25 mm on each side on the onward carrier.
+    return suite[2]+50,suite[3]+50
+
+
 def solve_room(room, basin=None):
     family = room=='family'
     retained=rooms[room]
@@ -108,7 +114,7 @@ def solve_room(room, basin=None):
     if family:
         centre=[back[0]-470,back[1]]
         path=[centre,[10425,back[1]],[10425,5900]]
-        moving=[moving_box(a,b,690,390) for a,b in zip(path,path[1:])]
+        moving=[moving_box(a,b,*trimmed_carrier_size(suite)) for a,b in zip(path,path[1:])]
         next_fixed=[*fixed,fixed_support]
     else:
         centre=[back[0],back[1]-470]
@@ -116,7 +122,7 @@ def solve_room(room, basin=None):
         # Advance another 70 on the narrow carrier. Cross west first; retreat north only after the entire
         # caddy is outside the fixed bracket, with the actual slider and shower still present.
         path=[centre,[centre[0],centre[1]-70],[10537.5,centre[1]-70],[10537.5,8865]]
-        moving=[moving_box(a,b,390,690) for a,b in zip(path,path[1:])]
+        moving=[moving_box(a,b,*trimmed_carrier_size(suite)) for a,b in zip(path,path[1:])]
         next_fixed=[upper['principal-shower900'],basin,upper['principal-local-soil-column'],principal['CORNER'],fixed_support,
                     principal['MAT']['door']['openLeaf'],principal['MAT']['bedroomTrial']['maintenanceBed']]
     rests=min(rectangle_gap(v,k) for v in moving for k in next_fixed)
@@ -253,32 +259,4 @@ if __name__=='__main__':
                 raise SystemExit('Stale '+filename)
         else:
             path.write_text(body)
-    # Compose the new four-basin selection with the retained WC and shower
-    # movements without feeding that downstream selection back into its own
-    # historical source fixture.
-    basins=json.loads((HERE/'household-water.json').read_text())['basins']
-    pans={key:value['pan'] for key,value in basins.items()}
-    joined=study(pans)
-    rear=json.loads((HERE/'rear-tray-first.json').read_text())['change']
-    tray_path=rear['route']; extra=rear['liftProjection']
-    rear_gap=min(rectangle_gap([min(a[0],b[0])-extra,min(a[1],b[1])-extra,
-                                abs(a[0]-b[0])+a[2]+2*extra,abs(a[1]-b[1])+a[3]+2*extra],pans['rear'])
-                 for a,b in zip(tray_path,tray_path[1:]))
-    walk_gap=min(segbox(a,b,pans['rear'])-300 for a,b in zip(rear['walk'],rear['walk'][1:]))
-    whole=json.loads((HERE/'three-bathing-sections.json').read_text())['originalBathExchange']
-    yoke=whole['inside']['yokeExample']
-    foot_max=max(p[1]+yoke['pad']/2 for p in yoke['posts'])
-    bath_gap=pans['family'][1]-max(whole['inside']['minMaxY'][1],max(yoke['headerYSweep']),foot_max)
-    assert rear_gap>0 and walk_gap>0 and bath_gap>0
-    replay={'familyWCFirstAndRest':[joined['family']['minFirstSweep'],joined['family']['afterFirst150Min']],
-            'principalWCFirstAndRest':[joined['principal']['minFirstSweep'],joined['principal']['afterFirst150Min']],
-            'principalShower':joined['principal']['showerAt145'],
-            'familySmallBathComparator':joined['bath']['newRoom']['minimumContinuousGap'],
-            'originalBathRollYokeAndFeetToBasin':bath_gap,'selectedRearTrayToBasin':rear_gap,
-            'rearTrayApproachToBasin':walk_gap}
-    path=HERE/'occupied-fixture-replay.json'; body=json.dumps(replay,indent=2)+'\n'
-    if '--check' in sys.argv:
-        assert path.read_text()==body,'Regenerate the occupied fixture replay'
-    else:
-        path.write_text(body)
     print('Two upper WCs: connected isolation, first wetting, retained socket, complete carrier travel, shower operation and bath exchange.')

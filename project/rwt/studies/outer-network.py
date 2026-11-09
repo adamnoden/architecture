@@ -1,5 +1,5 @@
 """Finite network comparison. Run from the repository root. Lengths mm, rates L/s."""
-from math import isclose, pi
+from math import isclose, pi, sqrt
 from pathlib import Path
 import json
 
@@ -175,6 +175,29 @@ loss = 1000*(8 + 0.06*length_m/0.1125)*velocity**2/(2*9.81)
 assert isclose(length_m,3.73) and isclose(rib_underside-axis_at_rib-100,104.75)
 print(f"South trial: {length_m:.3f} m, rib clearance {rib_underside-axis_at_rib-100:.2f} mm, "
       f"head loss at full inner-roof flow {loss:.2f} mm. Four-foot connection unproved.")
+
+
+# A two-leader challenger bypasses the occupied NW grate. Compare the full
+# envelope with the lifted garden tie at the portal and the actual soffit crew.
+portal = house["northNormalRoute"]["portal"]
+tie = read("mat/studies/whole-envelope.json")["garden"]["tie"]
+soffit = read("mat/studies/loggia-soffit.json")["service"]["sideRelease"]["stations"]
+length = portal["finishedAxialBands"][-1][1] - portal["finishedAxialBands"][0][0]
+trial_x, upper_axis, half_gross = 5800, 2436, 75
+lower_axis = upper_axis - length/150
+x_offset = abs(trial_x - shell/2) + half_gross
+arch_at_outer_edge = portal["centreZ"] + sqrt(portal["finishedRadius"]**2-x_offset**2)
+lifted_top = portal["tie"]["centre"] + 60/2 + tie["lift"]  # complete moving fork
+arch_gap = arch_at_outer_edge - upper_axis - half_gross
+tie_gap = lower_axis - half_gross - lifted_top
+crew_overlap = max(300 + half_gross - abs(row["worker"][0] - trial_x) for row in soffit)
+bore_m = intake["services"]["Nwork"]["bore"]/1000
+velocity = (inner/1000)/(0.75*pi*bore_m**2/4)
+trunk_loss = 1000*(8 + 0.06*(length/1000)/(0.75*bore_m))*velocity**2/(2*9.81)
+assert trunk_loss > length/150 and min(arch_gap, tie_gap) > 30 and crew_overlap > 0
+print(f"Two-leader loggia trial: {arch_gap:.2f} mm to arch, {tie_gap:.2f} mm to "
+      f"lifted tie, but {crew_overlap:.0f} mm lateral intrusion into the soffit crew band. "
+      f"Full-line loss {trunk_loss:.2f} mm vs {length/150:.2f} mm local fall.")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # The guest wall outlet and the rear WC stack
 
-Keep the guest foul branch above the ground floor and the rear stack in its existing 160 mm crossing. Each pan draws horizontally from independently restrained wet connections. The actual ceramic drawings change the two sections. The guest outlet is 15 mm above the services assumption and the earlier rear withdrawal leaves the soil socket hidden behind the porcelain. The [occupied replay](studies/wc-service-stations.py) checks both cutovers against the [four fitted washbasins](ias-03-household-water.md). Heights are local to each room’s finished floor.
+Keep the guest foul branch above the ground floor and the rear stack in its existing 160 mm crossing. Each pan draws horizontally from independently restrained wet connections. The actual ceramic drawings change the two sections. The guest outlet is 15 mm above the services assumption and the earlier rear withdrawal leaves the soil socket hidden behind the porcelain. The [occupied replay](studies/fitted-wc-stations.py) checks both cutovers against the [four fitted washbasins](ias-03-household-water.md). Heights are local to each room’s finished floor.
 
 ## Guest WC
 

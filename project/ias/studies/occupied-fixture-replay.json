@@ -18,5 +18,18 @@
   "familySmallBathComparator": 11.404091582650544,
   "originalBathRollYokeAndFeetToBasin": 325.0,
   "selectedRearTrayToBasin": 58.0,
-  "rearTrayApproachToBasin": 700.4905047025684
+  "rearTrayApproachToBasin": 700.4905047025684,
+  "principalCarrierVsStructuralBed": {
+    "terminalRest": [
+      10342.5,
+      8520.0,
+      390.0,
+      690.0
+    ],
+    "ordinaryPlanOverlap": [
+      390.0,
+      60.0
+    ],
+    "parkedBedToFullSweep": 202.5
+  }
 }
