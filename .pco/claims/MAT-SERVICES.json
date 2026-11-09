@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 27,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on services study"
   },
   "claimedAt": "2026-11-09T01:53:12.515Z",
-  "heartbeatAt": "2026-11-09T02:26:54.184Z",
-  "expiresAt": "2026-11-09T03:11:54.184Z",
+  "heartbeatAt": "2026-11-09T02:27:15.242Z",
+  "expiresAt": "2026-11-09T02:27:15.242Z",
   "branch": "work/swarm-services-20261109-0152",
   "predecessor": {
     "leaseId": "362edc89-66e0-44dc-9386-d87f530c657b",
@@ -34,5 +34,7 @@
   "checkpoint": {
     "evidence": "Merged DHW study #1413 as 3e941b4d on #1409; current-head CI and preflight passed.",
     "next": "Test a factory mineral-insulated 300 L potable alternative including expansion-vessel access, actual draw profile and both cold-day output modes. Other S01–S10 families retain separate study duties."
-  }
+  },
+  "releasedAt": "2026-11-09T02:27:15.242Z",
+  "releaseReason": "handoff"
 }
