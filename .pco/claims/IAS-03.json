@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T06:06:13.026Z",
-  "heartbeatAt": "2026-11-09T06:06:13.026Z",
-  "expiresAt": "2026-11-09T06:51:13.026Z",
+  "heartbeatAt": "2026-11-09T06:23:41.345Z",
+  "expiresAt": "2026-11-09T07:08:41.345Z",
   "branch": "work/house-0605-20261109",
   "predecessor": {
     "leaseId": "d20ae003-5fbe-453a-ba68-f2557c7584f0",
@@ -31,5 +31,9 @@
       "evidence": "PR #1431 merged at 2e16d4de0d1e1602965eadaba1de27fb18835d05. All 14 checks and all three live preflights on bb1c4b9f. Principal and privacy door source, regression check and corrected whole-person path verified on main; issue #941 handoff.",
       "next": "IS-04 across all four WCs: current principal valve working box intersects the soil column. Locate real isolation, cistern, leakage, drying and replacement at each occurrence and reconcile with Services and the room routes."
     }
+  },
+  "checkpoint": {
+    "evidence": "Four actual WC feed stubs and independent source rooms joined. A north-wall family WC requires mutually exclusive centreline ranges, 281mm apart. Guest separate cistern and native G1/2 isolation; proposed exposed axes in three rooms and principal door trajectory rechecked.",
+    "next": "Finish the actual W25 wall outlet, first-wet/withdrawal and constituent comparison, registered figure/check, publication then exact-head CI."
   }
 }
