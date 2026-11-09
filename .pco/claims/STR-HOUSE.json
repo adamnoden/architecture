@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T01:19:50.135Z",
-  "heartbeatAt": "2026-11-09T01:43:34.209Z",
-  "expiresAt": "2026-11-09T02:28:34.209Z",
+  "heartbeatAt": "2026-11-09T01:50:29.418Z",
+  "expiresAt": "2026-11-09T02:35:29.418Z",
   "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Frozen PR #1411, commit 4cfeb3c5",
-    "next": "Verify the combined head of PR #1409 and run final STR preflight"
+    "evidence": "Verified #1409 head 9b47e87f including #1411",
+    "next": "Run final publication preflight after CI"
   },
   "pr": 1409
 }
