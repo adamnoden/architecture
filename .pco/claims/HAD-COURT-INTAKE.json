@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "HAD-COURT-INTAKE",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "38699e0c-a8d2-4316-8392-544f6d97c758",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "Coordinated house successor 0910"
+  },
+  "claimedAt": "2026-11-09T09:11:25.230Z",
+  "heartbeatAt": "2026-11-09T09:11:25.230Z",
+  "expiresAt": "2026-11-09T09:56:25.230Z",
+  "branch": "work/swarm-house-successor-0910-20261109"
+}
