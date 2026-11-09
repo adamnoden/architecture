@@ -42,10 +42,6 @@ flowchart LR
     direction TB
     n_ROF_09["ROF-09<br/>Roof formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
-  subgraph g_STR["STR"]
-    direction TB
-    n_STR_RECONCILE["STR-RECONCILE<br/>Reconcile structural interfaces and affected evidence for house selection<br/><b>READY</b>"]
-  end
   subgraph g_MAT["MAT"]
     direction TB
     n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>READY</b>"]
@@ -106,7 +102,6 @@ flowchart LR
   n_IAS_03 --> n_TRIAD_GATE
   n_ROF_RWT_GATE --> n_TRIAD_GATE
   n_MAT_COORDINATION --> n_TRIAD_GATE
-  n_STR_RECONCILE --> n_TRIAD_GATE
   n_TRIAD_GATE --> n_BCR_CONVERGENCE
   n_MRA_04 --> n_BCR_CONVERGENCE
   n_HRS_TECHNICAL --> n_BCR_CONVERGENCE
@@ -117,7 +112,6 @@ flowchart LR
   n_HAD_COURT_INTAKE --> n_RWT_06
   n_RWT_06 --> n_RWT_07
   n_RWT_07 --> n_ROF_RWT_GATE
-  n_STR_RECONCILE --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
   n_MAT_ENVELOPE --> n_MAT_COORDINATION
@@ -160,7 +154,6 @@ flowchart LR
   style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_RWT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_STR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MAT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MRA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -193,7 +186,6 @@ flowchart LR
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
-  class n_STR_RECONCILE ready;
   class n_MAT_ENVELOPE ready;
   class n_MAT_SERVICES ready;
   class n_MAT_COORDINATION blocked;
@@ -374,7 +366,7 @@ flowchart LR
     n_STR_MASONRY["STR-MASONRY<br/>Compare solid wall roles and genuine masonry opening systems<br/><b>DONE</b>"]
     n_STR_SPANS["STR-SPANS<br/>Compare primary floor and roof systems with direct support<br/><b>DONE</b>"]
     n_STR_GROUND["STR-GROUND<br/>Compare tree-tolerant foundations, ground movement isolation and substructure interfaces<br/><b>DONE</b>"]
-    n_STR_RECONCILE["STR-RECONCILE<br/>Reconcile structural interfaces and affected evidence for house selection<br/><b>READY</b>"]
+    n_STR_RECONCILE["STR-RECONCILE<br/>Reconcile structural interfaces and affected evidence for house selection<br/><b>DONE</b>"]
   end
   subgraph g_MAT["MAT"]
     direction TB
@@ -871,7 +863,7 @@ flowchart LR
   class n_STR_SPANS done;
   class n_STR_GROUND done;
   class n_STR_HOUSE done;
-  class n_STR_RECONCILE ready;
+  class n_STR_RECONCILE done;
   class n_MAT_00 done;
   class n_MAT_AUDIT done;
   class n_MAT_ENVELOPE ready;

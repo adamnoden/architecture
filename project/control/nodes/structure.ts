@@ -82,8 +82,13 @@ export const structureNodes = defineNodes([
     owners: ['STR'],
     title: 'Reconcile structural interfaces and affected evidence for house selection',
     dependencies: ['STR-HOUSE', 'STR-GROUND'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: [
+      'project/str/provisional-house-handoff.md',
+      'project/str/studies/reconciled-house-interface.json',
+      'project/str/studies/reconciled-corner-portals.json',
+      'project/triad-interface-contract.md'
+    ]
   }
 ])

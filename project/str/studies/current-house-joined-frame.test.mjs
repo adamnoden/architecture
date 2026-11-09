@@ -69,3 +69,18 @@ test('whole-house rewind rejects separated tips and moves the matching ground an
   assert.ok(r.roof.grossRiseAtNorthCap>373);
   assert.equal(r.adopted,false);
 });
+
+test('paired two-storey portals conserve full-bay winds through the 52-head stripped foundation', () => {
+  for (const source of ['reconciled-corner-portals.py','reconciled-house-interface.py']) {
+    execFileSync('python3',['-B',fileURLToPath(new URL(source, import.meta.url)),'--check']);
+  }
+  const result = read('reconciled-corner-portals.json');
+  const candidate = read('reconciled-house-interface.json');
+  assert.equal(candidate.openingEdits.length, 16);
+  assert.equal(candidate.adopted, false);
+  for (const run of result.results) {
+    assert.equal(run.strippedSignedFoundation.cases, 96 * 33);
+    assert.equal(Object.keys(run.strippedSignedFoundation.heads).length, 52);
+    assert.ok(run.strippedSignedFoundation.heads.P06.ranges[0][0] < -500);
+  }
+});

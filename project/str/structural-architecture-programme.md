@@ -106,6 +106,8 @@ For the book, map the earned findings to existing discussion of repose, permanen
 
 **Exit:** an inspectable, coherent provisional structural proposition and precise downstream obligations. Competent calculation/review, testing where necessary, real ground conditions and construction approval retain their existing owners. No final engineering acceptance is claimed by the five packets.
 
+**9 November result.** [SAP-C1 and its affected-evidence handoff](provisional-house-handoff.md) complete this provisional design packet. House selection, site and technical acceptance retain their existing gates.
+
 ## Dependency and change discipline
 
 STR-MASONRY and STR-SPANS may proceed independently after the brief. Their results join in STR-HOUSE and then STR-RECONCILE. Both **ROF-RWT-GATE** and **TRIAD-GATE** require the reconciliation result and must check compatibility with their actual selected assemblies/geometry. A later change outside a declared envelope requires a targeted structural recheck before those gates can pass.
