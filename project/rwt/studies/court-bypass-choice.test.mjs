@@ -37,7 +37,7 @@ test('gully route crosses beneath actual ties and enters a real deeper forebay, 
 });
 test('the east carrier leaves vertically, the independent dry strip takes the pipe, and the hood pays its extra wet joint',()=>{
   assert.equal(h.firstLift.south30Interference,10);assert.equal(h.firstLift.westStroke,50);
-  assert.equal(h.firstLift.dryCupToPlatformAfterTwo5,15);
+  assert.equal(h.firstLift.dryCupToClosedSpoolPlatformAfterTwo5,15);
   assert.ok(h.packs.every(p=>p.clearAtGateEach>=31.25&&p.clearBetweenFlapsEach>=70&&p.belowRoofWith150Foot250Rig>600));
   assert.equal(h.hood.jointLength,2200);assert.equal(h.hood.belowAddedWindow,30);
   assert.ok(h.hood.aboveRetainedOutlet>47&&h.hood.rejectedWestSpoutWholeUprightOversize>139);
@@ -53,4 +53,13 @@ test('the actual cart parks entirely inside either flap and clears the west weat
   assert.equal(h.cart.parkedWheelToBridge,25);assert.equal(h.cart.pairedWestPost,27.5);
   assert.ok(h.wholeHoodBought.every(p=>p.clearBetweenFlapsEach>=45&&p.clearAtGateEach>=170));
   assert.ok(h.cart.liftedAt4kN.east[0]<-6.8&&h.cart.liftedAt4kN.east[2]>7.1);
+});
+
+test('the selected open platform is different and fixed cups veto every 600 body station',()=>{
+  const z=h.selectedOpenPlatform;
+  assert.deepEqual(z.plan,[6725,6450,600,900]);assert.equal(z.z,-800);
+  assert.deepEqual(z.fixedCupOverlaps,[[240,135],[240,105]]);assert.equal(z.cupRimAboveFeet,380);
+  assert.equal(z.centreX,7025);assert.deepEqual(z.centreY,[6750,7050]);
+  assert.equal(z.maxDistanceToSouthCup,95);assert.equal(z.remainingStandingStation,false);
+  assert.deepEqual(z.remainingPipeCrownAboveFloor,[15,10]);
 });
