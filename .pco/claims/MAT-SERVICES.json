@@ -9,8 +9,8 @@
     "label": "junction-0710"
   },
   "claimedAt": "2026-11-09T07:57:45.052Z",
-  "heartbeatAt": "2026-11-09T08:12:10.963Z",
-  "expiresAt": "2026-11-09T08:57:10.963Z",
+  "heartbeatAt": "2026-11-09T08:22:31.142Z",
+  "expiresAt": "2026-11-09T09:07:31.142Z",
   "branch": "work/junction-rush-0710",
   "predecessor": {
     "leaseId": "2186d0dd-0832-45df-b05c-a55cd52a2c75",
@@ -34,7 +34,7 @@
   },
   "pr": 1444,
   "checkpoint": {
-    "evidence": "PR #1444 at ba93182e, source and two-end plan; complete MAT suite and SVG review passed.",
-    "next": "Validate the exact PR head, reconcile current main, merge under verified lease and hand off the remaining S01–S10 product and interface duties."
+    "evidence": "Frozen PR #1444 c9cfd18a on main 331d4e7d, tree 2c3826c2. Full joined MAT passed. Independent station, room and diagonal withdrawal reproductions completed.",
+    "next": "Require exact-head validation, recheck live main and lease, then merge and release. The S08 source/bonds and S01–S10 product admission remain explicit."
   }
 }
