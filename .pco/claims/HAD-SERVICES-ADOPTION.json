@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-SERVICES-ADOPTION",
-  "generation": 2,
-  "state": "released",
-  "leaseId": "32fa2ba2-2c5a-4dc6-b159-08d233644d1e",
+  "generation": 3,
+  "state": "claimed",
+  "leaseId": "1bf31109-360f-403b-b43c-b6e601d606f3",
   "holder": {
     "kind": "chatgpt",
-    "label": "issue-comment-6750985217"
+    "label": "issue-comment-6753127194"
   },
-  "claimedAt": "2026-11-09T20:44:45.000Z",
-  "heartbeatAt": "2026-11-09T22:08:05.000Z",
-  "expiresAt": "2026-11-09T22:08:05.000Z",
-  "branch": "work/mvb-chat-6751604368",
+  "claimedAt": "2026-11-09T22:26:49.000Z",
+  "heartbeatAt": "2026-11-09T22:26:49.000Z",
+  "expiresAt": "2026-11-09T23:11:49.000Z",
+  "branch": "work/mvb-chat-6753127194",
   "predecessor": {
-    "leaseId": "2b3a4b21-ab54-4802-97a9-ae99476967c3",
-    "generation": 1,
-    "branch": "work/swarm-house-successor-1354-20261109",
-    "pr": 1461,
+    "leaseId": "32fa2ba2-2c5a-4dc6-b159-08d233644d1e",
+    "generation": 2,
+    "branch": "work/mvb-chat-6751604368",
+    "pr": 1466,
     "checkpoint": {
-      "evidence": "Draft #1461 on work/swarm-house-successor-1354-20261109 contains the reconstructed full occupied-house export, 46 source openings, 96 air cases, independent DHW, checks and drawing. Program remains open.",
-      "next": "Restore a capable checkout, complete the final first-release review and figure QA, validate the exact chosen source and finish normal publication. See #943 comment 6742966501."
+      "evidence": "#1466 merged 6bc0562a after 14 green checks and live g2 preflight. #943 records all 21 structural port checks.",
+      "next": "Choose four altered window heads or supported alternative routes for seven ports. Resolve daylight, purge, weather, grease and first release."
     }
   },
   "recoverySource": {
-    "leaseId": "2b3a4b21-ab54-4802-97a9-ae99476967c3",
-    "generation": 1,
-    "branch": "work/swarm-house-successor-1354-20261109",
-    "pr": 1461,
+    "leaseId": "32fa2ba2-2c5a-4dc6-b159-08d233644d1e",
+    "generation": 2,
+    "branch": "work/mvb-chat-6751604368",
+    "pr": 1466,
     "checkpoint": {
-      "evidence": "Draft #1461 on work/swarm-house-successor-1354-20261109 contains the reconstructed full occupied-house export, 46 source openings, 96 air cases, independent DHW, checks and drawing. Program remains open.",
-      "next": "Restore a capable checkout, complete the final first-release review and figure QA, validate the exact chosen source and finish normal publication. See #943 comment 6742966501."
+      "evidence": "#1466 merged 6bc0562a after 14 green checks and live g2 preflight. #943 records all 21 structural port checks.",
+      "next": "Choose four altered window heads or supported alternative routes for seven ports. Resolve daylight, purge, weather, grease and first release."
     }
-  },
-  "pr": 1466,
-  "checkpoint": {
-    "evidence": "#1466 merged 6bc0562a after 14 green checks and live g2 preflight. #943 records all 21 structural port checks.",
-    "next": "Choose four altered window heads or supported alternative routes for seven ports. Resolve daylight, purge, weather, grease and first release."
-  },
-  "releasedAt": "2026-11-09T22:08:05.000Z",
-  "releaseReason": "handoff"
+  }
 }
