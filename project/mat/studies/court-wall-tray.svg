@@ -35,14 +35,14 @@
 <polyline points="32,425 988,425" fill="none" stroke="#bcc6c0" stroke-width="1"/>
 <text x="32" y="462" font-size="14">WEST JAMB  /  DEVELOPED SECTION</text>
 <text x="32" y="489" font-size="15">The fixed high flashing drains left over the stop. The lower bridge drains onto its own apron.</text>
-<polyline points="75.25,608.41 249.5,605.37 249.5,567.37" fill="none" stroke="#243b40" stroke-width="3"/>
-<polyline points="331.5,532.98 331.5,540.58 208.5,546.28 208.5,556.54" fill="none" stroke="#176d74" stroke-width="4"/>
+<polyline points="75.25,608.41 249.5,602.33 249.5,564.33" fill="none" stroke="#243b40" stroke-width="3"/>
+<polyline points="331.5,529.94 331.5,537.54 208.5,543.24 208.5,553.5" fill="none" stroke="#176d74" stroke-width="4"/>
 <polyline points="438.1,662.56 327.4,664.08" fill="none" stroke="#176d74" stroke-width="3"/>
 <polyline points="249.5,715 372.5,715" fill="none" stroke="#243b40" stroke-width="3"/>
-<path d="M208.5 559.54 V601.37" stroke="#176d74" fill="none" stroke-dasharray="3 4"/>
+<path d="M208.5 556.5 V598.33" stroke="#176d74" fill="none" stroke-dasharray="3 4"/>
 <path d="M327.4 667.08 V711" stroke="#176d74" fill="none" stroke-dasharray="3 4"/>
 <text x="75" y="635" font-size="13">Wing to spouts</text>
-<text x="345.5" y="544.58" font-size="14">High return</text>
+<text x="345.5" y="541.54" font-size="14">High return</text>
 <text x="448.1" y="669.08" font-size="14">Bridge +217</text>
 <text x="448.1" y="720" font-size="14">Apron +150</text>
 <text x="577" y="530" font-size="14">AT THE HIGH DRIP</text>

@@ -24,22 +24,24 @@ def compare_court_tray(control, sources):
     tip = face - control['outwardProjection_mm'] / control['spoutRunPerRise']
     rear = root + cavity_depth / control['trayCrossfallRunPerRise']
     gauge = control['gauge_mm']
+    tongue = control['jambTongue']
+    grade_error = tongue['adverseEndLevelError_mm']
     wings = []
     for (lo, hi), apron in [((court_x, apron_w['x'][0]), apron_w),
                             ((apron_e['x'][1], court_x + court_width), apron_e)]:
         assert lo < hi and apron['y'][1] == court_y
         quarter = (hi - lo) / 4
         ridge = quarter / control['troughRunPerRise']
+        end_rise = quarter / tongue['receivingEndRunPerRise']
         wings.append({'wingX_mm': [lo, hi], 'weepX_mm': [lo + quarter, hi - quarter],
-                      'maxRunToWeep_mm': quarter, 'localSaddleRise_mm': ridge,
-                      'endDamTopAtTrough_mm': root + ridge + control['endDamHeight_mm'],
-                      'apronTopToTroughAtEnd_mm': root + ridge - apron['z'][1]})
+                      'maxRunToWeep_mm': quarter, 'localSaddleRise_mm': ridge, 'jambEndRise_mm': end_rise,
+                      'endDamTopAtTrough_mm': root + end_rise + control['endDamHeight_mm'],
+                      'apronTopToTroughAtEnd_mm': root + end_rise - apron['z'][1]})
     bed = [court_y - glass[2], court_y - leaf_depth, court_y, court_y + control['outwardProjection_mm']]
     old = loggia['outerWeep']
     shoe = model['northProtectiveReturn']['sideShoes'][0]['weepBottom']
     # These are separate wet faces. Keep the low air-bridge discharge on its
     # existing apron; the high jamb flashing laps over the stopped wall tray.
-    tongue = control['jambTongue']
     challenge = sources['court']['wholePanLowerReveal']['sharedAuthoredChallenge_mm']
     bridge = sources['court']['joinedCandidate']['upperBridge']
     bridge_x, bridge_y, bridge_z = bridge['roofDischargeXYZ_mm']
@@ -58,6 +60,9 @@ def compare_court_tray(control, sources):
         root_x = jamb_x - direction * tongue['setbackFromRoughJamb_mm']
         run = direction * (root_x - tip_x)
         rise = run / tongue['fallRunPerRise']
+        receiving_weep = min(wing['weepX_mm'], key=lambda x: abs(x - tip_x))
+        receiving_run = direction * (tip_x - receiving_weep)
+        assert 0 < receiving_run <= wing['maxRunToWeep_mm']
         tip_z = tongue['tipFloorZ_mm']
         # Bound the full-width stop even at the high back edge of its sloping
         # bed. The +455 back turn stays on the inner side, outside the tongue.
@@ -69,11 +74,14 @@ def compare_court_tray(control, sources):
                         'dripClearOfStop_mm': tip_z - tongue['dripDownstand_mm'] - gauge - stop_ceiling - challenge,
                         'overlapAfterMovement_mm': tongue['tipOverlap_mm'] - challenge,
                         'roughOpeningGapAfterMovement_mm': tongue['setbackFromRoughJamb_mm'] - challenge,
-                        'fallAfterAdverseEndLevelError_mm': rise - challenge})
+                        'fallAfterAdverseEndLevelError_mm': rise - grade_error,
+                        'receivingWeepX_mm': receiving_weep, 'dripToWeepRun_mm': receiving_run,
+                        'receivingFallAfterAdverseEndLevelError_mm': receiving_run / tongue['receivingEndRunPerRise'] - grade_error})
     side_gaps = [y0 - clear_cavity[0] - challenge, clear_cavity[1] - y1 - challenge]
     assert y1 - y0 > 2 * gauge and min(side_gaps) > 0
     assert all(min(item[key] for key in ('dripClearOfStop_mm', 'overlapAfterMovement_mm',
-                                         'roughOpeningGapAfterMovement_mm', 'fallAfterAdverseEndLevelError_mm')) > 0 for item in returns)
+                                         'roughOpeningGapAfterMovement_mm', 'fallAfterAdverseEndLevelError_mm',
+                                         'receivingFallAfterAdverseEndLevelError_mm')) > 0 for item in returns)
     return {'trial': control, 'wingGeometry': wings, 'sectionY_mm': bed,
             'invertAtOutletStationZ_mm': [rear, root, face, tip],
             'backTurnTopZ_mm': control['backTurnTopZ_mm'],
@@ -93,7 +101,7 @@ def compare_court_tray(control, sources):
                            'lowBridgeFrontEdgeWestXYZ_mm': front_edge,
                            'lowBridgeAboveApron_mm': bridge_z - apron_w['z'][1],
                            'minimumApronEdgeMarginAfterMovement_mm': bridge_landing,
-                           'lowBridgeBelowHighTrough_mm': root + wings[0]['localSaddleRise_mm'] - bridge_z},
+                           'lowBridgeBelowHighTrough_mm': root + wings[0]['jambEndRise_mm'] - bridge_z},
             'quietStageZ_mm': model['firstWetReference']['permittedQuietStage'],
             'scope': 'Two straight wings and the two-level jamb handoff. Full jamb collection, corner ends, below-tray wetting, thermal bridging, supports, masonry set-out and installed performance remain open.'}
 
@@ -157,7 +165,7 @@ def tray_figure(result):
     xx = lambda x: 65 + 2.05 * (x - (j['stopX_mm'] - 90))
     zz = lambda z: 715 - .76 * (z - 150)
     stop_x, tip_x, heel_x = map(xx, [j['stopX_mm'], j['tipX_mm'], j['rootX_mm']])
-    floor_z = zs[1] + w['localSaddleRise_mm']
+    floor_z = zs[1] + w['jambEndRise_mm']
     line([(xx(j['stopX_mm']-85), zz(zs[1])), (stop_x, zz(floor_z)),
           (stop_x, zz(j['stopCrestUpperBoundZ_mm']))], ink, 3)
     line([(heel_x, zz(j['rootFloorZ_mm']+tongue['sideUpstand_mm'])), (heel_x, zz(j['rootFloorZ_mm'])),

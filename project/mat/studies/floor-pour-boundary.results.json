@@ -519,10 +519,12 @@
           4115,
           4135
         ],
-        "tipFloorZ_mm": 372,
+        "tipFloorZ_mm": 376,
         "dripDownstand_mm": 12,
         "sideUpstand_mm": 10,
-        "fallRunPerRise": 8
+        "fallRunPerRise": 8,
+        "receivingEndRunPerRise": 25,
+        "adverseEndLevelError_mm": 4
       },
       "role": "Two tapered limited-length metal tray wings outboard of the court door aprons. Outlets occupy formed perpendicular joints above the comparison mineral plinth. The high jamb return laps over the wing. Collection at its heel, the lower wet wall, court corners, masonry support and thermal behaviour remain open."
     },
@@ -538,8 +540,9 @@
         ],
         "maxRunToWeep_mm": 200.0,
         "localSaddleRise_mm": 4.0,
-        "endDamTopAtTrough_mm": 334.25,
-        "apronTopToTroughAtEnd_mm": 144.25
+        "jambEndRise_mm": 8.0,
+        "endDamTopAtTrough_mm": 338.25,
+        "apronTopToTroughAtEnd_mm": 148.25
       },
       {
         "wingX_mm": [
@@ -552,8 +555,9 @@
         ],
         "maxRunToWeep_mm": 200.0,
         "localSaddleRise_mm": 4.0,
-        "endDamTopAtTrough_mm": 334.25,
-        "apronTopToTroughAtEnd_mm": 144.25
+        "jambEndRise_mm": 8.0,
+        "endDamTopAtTrough_mm": 338.25,
+        "apronTopToTroughAtEnd_mm": 148.25
       }
     ],
     "sectionY_mm": [
@@ -600,27 +604,33 @@
           "rootX_mm": 5090,
           "tipX_mm": 5030,
           "stopX_mm": 5050,
-          "rootFloorZ_mm": 379.5,
-          "tipFloorZ_mm": 372,
-          "dripBottomZ_mm": 358.5,
-          "stopCrestUpperBoundZ_mm": 344.25,
+          "rootFloorZ_mm": 383.5,
+          "tipFloorZ_mm": 376,
+          "dripBottomZ_mm": 362.5,
+          "stopCrestUpperBoundZ_mm": 348.25,
           "dripClearOfStop_mm": 10.25,
           "overlapAfterMovement_mm": 16,
           "roughOpeningGapAfterMovement_mm": 6,
-          "fallAfterAdverseEndLevelError_mm": 3.5
+          "fallAfterAdverseEndLevelError_mm": 3.5,
+          "receivingWeepX_mm": 4850.0,
+          "dripToWeepRun_mm": 180.0,
+          "receivingFallAfterAdverseEndLevelError_mm": 3.2
         },
         {
           "rootX_mm": 6910,
           "tipX_mm": 6970,
           "stopX_mm": 6950,
-          "rootFloorZ_mm": 379.5,
-          "tipFloorZ_mm": 372,
-          "dripBottomZ_mm": 358.5,
-          "stopCrestUpperBoundZ_mm": 344.25,
+          "rootFloorZ_mm": 383.5,
+          "tipFloorZ_mm": 376,
+          "dripBottomZ_mm": 362.5,
+          "stopCrestUpperBoundZ_mm": 348.25,
           "dripClearOfStop_mm": 10.25,
           "overlapAfterMovement_mm": 16,
           "roughOpeningGapAfterMovement_mm": 6,
-          "fallAfterAdverseEndLevelError_mm": 3.5
+          "fallAfterAdverseEndLevelError_mm": 3.5,
+          "receivingWeepX_mm": 7150.0,
+          "dripToWeepRun_mm": 180.0,
+          "receivingFallAfterAdverseEndLevelError_mm": 3.2
         }
       ],
       "clearCavityY_mm": [
@@ -651,7 +661,7 @@
       ],
       "lowBridgeAboveApron_mm": 67,
       "minimumApronEdgeMarginAfterMovement_mm": 8,
-      "lowBridgeBelowHighTrough_mm": 77.25
+      "lowBridgeBelowHighTrough_mm": 81.25
     },
     "quietStageZ_mm": -35,
     "scope": "Two straight wings and the two-level jamb handoff. Full jamb collection, corner ends, below-tray wetting, thermal bridging, supports, masonry set-out and installed performance remain open."
