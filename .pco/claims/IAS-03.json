@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 32,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "8340d5c9-7c2b-4c0c-a059-19c382a175ce",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T02:53:44.981Z",
-  "heartbeatAt": "2026-11-09T03:27:40.155Z",
-  "expiresAt": "2026-11-09T04:12:40.155Z",
+  "heartbeatAt": "2026-11-09T03:28:08.908Z",
+  "expiresAt": "2026-11-09T03:28:08.908Z",
   "branch": "work/swarm-fourth-20261109",
   "predecessor": {
     "leaseId": "2722d16a-ee33-4b11-8cfc-92f0f3608bb3",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1421 via #1419 at 5fdcf5c9 and verified the study on main; handoff #941.",
     "next": "Use #941 for supplied drain dimensions, support and reinstatement or advance a different internal IAS family exit."
-  }
+  },
+  "releasedAt": "2026-11-09T03:28:08.908Z",
+  "releaseReason": "handoff"
 }
