@@ -45,3 +45,14 @@ test('P32 needs independent head assembly and a two-bend west starter', () => {
   assert.ok(changedBeamLevers.bottomNS.lossOfSteelCoupleKNm > 14);
   assert.equal(admitted, false);
 });
+
+test('independent east staff frame retains signed seats, four head actions and a clear shifted ladder', () => {
+  execFileSync('python3',['-B',fileURLToPath(new URL('./east-service-platform.py', import.meta.url)),'--check']);
+  const part=read('east-service-platform.json');
+  assert.equal(part.bridgeDepth,450);
+  assert.ok(part.panelContactUltimateKN[0]<-24 && part.panelContactUltimateKN[1]>33);
+  assert.equal(part.foundation.newAxesXY.length,4);
+  assert.ok(part.entry.oldCentredGap<0 && part.entry.newLowerGap>=25);
+  assert.ok(part.possibleWaterKg>part.storageGrossUpperL);
+  assert.equal(part.wholeMethodAccepted,false);
+});

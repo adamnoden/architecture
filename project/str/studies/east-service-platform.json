@@ -1,0 +1,133 @@
+{
+  "status": "Proposed person-only independent platform for the unadopted upper-first E spool. No site, hydraulic, structural or worker admission.",
+  "bridgeDepth": 450,
+  "sourceWell": [
+    6125,
+    6125,
+    1525,
+    1275
+  ],
+  "platformXYZ": [
+    6250,
+    6220,
+    -800,
+    1150,
+    600
+  ],
+  "panelCount": 3,
+  "panelMassLimitKg": 50,
+  "workingFootSquareMm": 200,
+  "livePointAndArea": [
+    5,
+    5
+  ],
+  "panelContactUltimateKN": [
+    -24.035,
+    33.922
+  ],
+  "ledgerAxesY": [
+    6260,
+    6380
+  ],
+  "sectionsMm": {
+    "panelRib": [
+      100,
+      50,
+      5
+    ],
+    "ledger": [
+      110,
+      100,
+      10
+    ],
+    "sideStringer": [
+      160,
+      90,
+      16
+    ],
+    "guardPost": [
+      100,
+      100,
+      8
+    ]
+  },
+  "referenceMPa": {
+    "bar": 142.128,
+    "rib": 103.657,
+    "ledgerEquivalent": 129.309,
+    "sideEquivalent": 166.357,
+    "guardEquivalent": 103.255
+  },
+  "foundation": {
+    "newAxesXY": [
+      [
+        6200,
+        5100
+      ],
+      [
+        6200,
+        5900
+      ],
+      [
+        7450,
+        5100
+      ],
+      [
+        7450,
+        5900
+      ]
+    ],
+    "maximumHeadPlan": 300,
+    "headZ": -1600,
+    "staticDeadKNLimit": 9,
+    "envelopePerHeadKN": [
+      -48.371,
+      72.792
+    ],
+    "oneHeadShearKN": 4.196,
+    "clearToP36Mm": 50.0,
+    "siteResistance": null
+  },
+  "entry": {
+    "ladderTop": [
+      6570,
+      6145,
+      30
+    ],
+    "ladderToe": [
+      6570,
+      6261.649,
+      -800
+    ],
+    "inclinationDeg": 82,
+    "gateClearX": [
+      6220,
+      6920
+    ],
+    "gateHingeXY": [
+      6195,
+      6075
+    ],
+    "southRamp": [
+      6245,
+      5750,
+      650,
+      375
+    ],
+    "bodyRadius": 300,
+    "combinedRelativeAllowance": 5,
+    "creditedBackset": [
+      310,
+      330
+    ],
+    "limitingBackset": 331.806,
+    "oldCentredGap": -68.623,
+    "newLowerGap": 26.365,
+    "headDeflectionMm": 2.443
+  },
+  "fixedNorthLimitY": 6430,
+  "lockedDrawSouthY": 6465,
+  "storageGrossUpperL": 116.662,
+  "possibleWaterKg": 156.912,
+  "wholeMethodAccepted": false
+}
