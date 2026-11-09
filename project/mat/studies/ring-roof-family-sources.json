@@ -1,0 +1,32 @@
+{
+  "retrieved": "2026-11-09",
+  "slate": {
+    "maker": "Welsh Slate",
+    "record": "Welsh Slate Roofing Brochure 2022, weights, coverage, eaves, valleys and hips",
+    "url": "https://www.welshslate.com/clientfiles/files/roofing2022/files/assets/common/downloads/Welsh%20Slate%20Roofing%20Brochure%202022.pdf?uni=53b9868f2533fd798fa914b46233eeeb",
+    "sha256": "51b80e35da080a4e171b0991096c39fbed7bf6ce458bca7546e7aeeb1caa34fa",
+    "size": [500, 300],
+    "gradesKg": {"Capital": 2.23, "County": 2.94, "Celtic": 3.78},
+    "headlapAt25": {"moderate": 95, "severe": 120},
+    "coverageSideJoint": 5,
+    "capitalThickness": 5.5,
+    "thicknessToleranceFraction": 0.35,
+    "thicknessToleranceSource": "https://www.welshslate.com/download/clientfiles/files/Welsh%20Slate%20Roofing%20Kitemark%20-%20All%20Sites%20Issued%20Sept%202023.pdf"
+  },
+  "sarket": {
+    "maker": "Hunton Fiber AS",
+    "record": "Hunton Undertak EPD NEPD-4038-3072-EN, Table 1, 18 mm board",
+    "url": "https://cdn.byggtjeneste.no/nobb/f5ba03de-3db3-4b0d-841e-7cb37a88f46b",
+    "sha256": "670e2db0486cf19cf297defa58672279fadb73a73db5c127a6b3e358b39a8b5e",
+    "massKgM2": 4.61,
+    "bitumenKgM2": 0.88,
+    "otherKgM2": 0.15,
+    "certificate": "https://www.sintefcertification.no/Product/Download/308"
+  },
+  "warmControl": {
+    "record": "FOAMGLAS UK Compact Pitched Roof System 4.6.5, two pages",
+    "url": "https://www.foamglas.com/-/media/project/foamglas/public/shared/files/tds/tds-4605/tds-4-6-5-uk.pdf",
+    "sha256": "494490e783bb6ccadb91ecc25f7dffbc6bd91ac39b2d97676ba784c2166e22c3",
+    "mandatoryWaterproofing": "Full-area torch-on polyester-reinforced bituminous membrane"
+  }
+}
