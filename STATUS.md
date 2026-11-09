@@ -13,7 +13,7 @@ Structural execution state is derived from `project/control/`; this Markdown is 
 
 Visual dependency map: [`project/control/graph.md`](project/control/graph.md). For the same graph with live ACO occupancy overlaid, run `npm run control:graph:live`.
 
-**Structurally ready:** 6 · **Active:** 0 · **Blocked:** 29 · **Held:** 2 · **Done:** 119 · **Cancelled:** 0
+**Structurally ready:** 6 · **Active:** 0 · **Blocked:** 30 · **Held:** 2 · **Done:** 119 · **Cancelled:** 0
 
 ### Structurally ready frontier
 
@@ -22,7 +22,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | Node | Work | Owner | Completion would immediately unlock |
 |---|---|---|---|
 | `IAS-03` | Selected interior family, drawings and disassembly set | IAS | — |
-| `RWT-06` | Rainwater access, courtyard transition and site handoff | RWT | RWT-07 |
+| `HAD-COURT-BYPASS` | Select the permanent courtyard receiver and its blocked-basket return | HAD / RWT / STR / MAT | RWT-06 |
 | `MAT-SERVICES` | Resolve non-plastic service systems and disclose functional residues | MAT | — |
 | `DPL-COMMISSION` | Receive owner-nominated real plot and authorised assessment scope | DPL | DPL-SITE-ASSESSMENT |
 | `PHY-04` | Wall/ceiling movement-junction build and test | PHY | — |
@@ -44,6 +44,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 | `BCR-CONVERGENCE` | Substantive construction-resolution convergence | TRIAD-GATE, MRA-04, HRS-TECHNICAL |
 | `HRS-SYNTHESIS` | Post-BCR final house resolution and synthesis | BCR-CONVERGENCE, MRA-05, DEL-CURRENT |
 | `HRS-TECHNICAL` | Current-house technical migration and computational applicability | TRIAD-GATE |
+| `RWT-06` | Rainwater access, courtyard transition and site handoff | HAD-COURT-BYPASS |
 | `RWT-07` | Rainwater network synthesis and Reference House candidates | RWT-06 |
 | `ROF-RWT-GATE` | Reference House roof and rainwater reconciliation gate | RWT-07 |
 | `ROF-09` | Roof formalisation and regression admission | ROF-RWT-GATE |
@@ -72,7 +73,7 @@ These nodes satisfy hard dependencies. A structurally ready node may already hav
 
 ### Structural critical path
 
-`RWT-06` → `RWT-07` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
+`HAD-COURT-BYPASS` → `RWT-06` → `RWT-07` → `ROF-RWT-GATE` → `MAT-COORDINATION` → `TRIAD-GATE` → `MRA-01` → `MRA-04` → `BCR-CONVERGENCE` → `MRA-05` → `HRS-SYNTHESIS` → `PLT-FINAL-PREP` → `PLT-PRINT-REVIEW` → `PLT-FINAL-FREEZE` → `EDA-RENEWED` → `PUB-02-FINAL`
 
 This path is structural by node count. It is not a wall-clock estimate; weighted scheduling is withheld unless every remaining node on the model has an explicit planning estimate.
 <!-- project-control:end -->
