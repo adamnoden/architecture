@@ -9,9 +9,9 @@
     "label": "issue-comment-6750985217"
   },
   "claimedAt": "2026-11-09T20:44:45.000Z",
-  "heartbeatAt": "2026-11-09T21:00:52.000Z",
-  "expiresAt": "2026-11-09T21:45:52.000Z",
-  "branch": "work/mvb-chat-6750985217",
+  "heartbeatAt": "2026-11-09T21:28:31.009Z",
+  "expiresAt": "2026-11-09T22:13:31.009Z",
+  "branch": "work/mvb-chat-6751604368",
   "predecessor": {
     "leaseId": "2b3a4b21-ab54-4802-97a9-ae99476967c3",
     "generation": 1,
@@ -32,9 +32,9 @@
       "next": "Restore a capable checkout, complete the final first-release review and figure QA, validate the exact chosen source and finish normal publication. See #943 comment 6742966501."
     }
   },
-  "pr": 1465,
+  "pr": 1466,
   "checkpoint": {
-    "evidence": "#1465 64db44f6 has the independently reproduced house, eccentric store cradle, first discharge disconnection, pressure-time integration over 14 occupied nodes/32 other-fan states and source-bound comparison of both family bathing configurations. 37 HAD tests pass.",
-    "next": "Integrate IAS utility/fixture coordinates when reviewed, investigate the reverse fault and factory discharge first-release criteria, reconcile main and execute exact-head CI/preflight."
+    "evidence": "Shared PR #1466 cb1c1e99 preserves frozen dfac0426 (42 HAD tests, 21 SAP-C1 holes, occupied plant and fixtures) and IAS source b8f9bebf as ancestors.",
+    "next": "Wait for final shared validation and verify generation, head and main through canonical merge-check before publication. Seven terminations and four changed window heads remain an architectural choice."
   }
 }
