@@ -9,8 +9,8 @@
     "label": "issue-comment-6750986800"
   },
   "claimedAt": "2026-11-09T20:44:36.000Z",
-  "heartbeatAt": "2026-11-09T20:45:58.000Z",
-  "expiresAt": "2026-11-09T21:30:58.000Z",
+  "heartbeatAt": "2026-11-09T20:58:49.000Z",
+  "expiresAt": "2026-11-09T21:43:49.000Z",
   "branch": "work/mvb-chat-6750986800",
   "predecessor": {
     "leaseId": "a16b8ba4-0427-4e0c-8f73-f112d3af28ca",
@@ -35,7 +35,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR #1464 preserves all seven files and the original b86131b7 commit from #1462. The household-water study was reproduced.",
-    "next": "Verify exact hosted checks and fresh preflight. Coordinate merge, then resolve guest and rear WC first disconnections."
+    "evidence": "#1464 preserves #1462. Local source-bound work recovered the Duravit native 211509 rear and side drawings, a 15 mm P2 discrepancy and 60 by 87.5 mm rear radiator clash.",
+    "next": "Publish the two mounted WC changes, confirm six shaft-support arrangements, check exact CI and fresh preflight after RWT integration."
   }
 }
