@@ -9,8 +9,8 @@
     "label": "front-threshold-0328"
   },
   "claimedAt": "2026-11-09T03:30:13.600Z",
-  "heartbeatAt": "2026-11-09T03:30:13.600Z",
-  "expiresAt": "2026-11-09T04:15:13.600Z",
+  "heartbeatAt": "2026-11-09T03:43:17.429Z",
+  "expiresAt": "2026-11-09T04:28:17.429Z",
   "branch": "work/house-front-threshold-0328",
   "predecessor": {
     "leaseId": "4af5767e-41b7-4f8d-bb49-ac761e8f432c",
@@ -31,5 +31,9 @@
       "evidence": "MERGED #1419 at 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e; source #1422 direct ancestor. All fourteen workflows and MAT35 live preflight passed. #1100 comments 6731438349 and 6731508936 record corner/energy/billing and gate.",
       "next": "Advance unjoined front/plant threshold sections on the actual door cuts, or qualify/reject the Study corner and rail/head specimen, including real bedding, bearing, first weather-side release and whole-window thermal budget. Preserve wider envelope gates."
     }
+  },
+  "checkpoint": {
+    "evidence": "Six-file tested tree f63fefe43b43a58949ebe566be5ac2cdfecd86d5. Front door/revised return, exact structural seat, normal/blocked water and 28mm submerged toe, independent geometry review. Preparing lead PR.",
+    "next": "Publish reproducible source and compare exact remote tree; assemble named peers in lead PR. Check final hosted source and merge-check."
   }
 }
