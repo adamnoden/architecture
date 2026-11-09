@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 25,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9d9b8d7d-91ca-46ed-ae4a-2b5203922ff1",
   "holder": {
     "kind": "chatgpt",
     "label": "Follow-on architectural dispatch"
   },
   "claimedAt": "2026-11-09T00:51:36.831Z",
-  "heartbeatAt": "2026-11-09T01:41:55.344Z",
-  "expiresAt": "2026-11-09T02:26:55.344Z",
+  "heartbeatAt": "2026-11-09T01:42:33.837Z",
+  "expiresAt": "2026-11-09T01:42:33.837Z",
   "branch": "work/swarm-review-0050",
   "predecessor": {
     "leaseId": "1a1f246d-0b7f-4eed-8b75-fb38e95b4e14",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1408 at 7e4bdace after all 14 workflows and canonical preflight. Source-bound heater/sensor option, real room and S01-S10 crosswalk reviewed and validated on e5a1489b.",
     "next": "For W9 selection obtain the configured cold/dirty full-flow result or the transverse casing, hatch and probe envelopes. Check the 265.8 mm casing and 5.3 mm fitted spine budget, independently supported access, supply pressure and occupied sound. Separate outstanding water isolation, waste removal and DHW mode work remains in the crosswalk."
-  }
+  },
+  "releasedAt": "2026-11-09T01:42:33.837Z",
+  "releaseReason": "handoff"
 }
