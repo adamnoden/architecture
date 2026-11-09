@@ -4,6 +4,8 @@
 
 ![East outdoor unit and the revised cold-water connection for the mineral vessel](studies/local-extract-heat-and-store.svg)
 
+The [subsequent housed hydronic supply](tempered-kitchen-air.md) develops the local hood at its high-setting target. It reuses the east radiator and removes the west radiator and two electric makeup heaters from that successor. The two-emitter and electrical comparisons below remain reproducible.
+
 ## The room and site follow the ventilation choice
 
 At 20°C inside, −10°C outside and 220 W/K fabric and infiltration, six 13 L/s extracts cost the house 9.408 kW in ordinary use. For two hours of cooking take the largest 10.536 kW hydronic call across the existing 256 combinations of fans and hood, with both electric makeup-air heaters available at the low-line input. The other 22 hours give a total 228.048 kWh/day. The fan/makeup network still needs actual dirty-filter, low-flow, frost, wind, sound, occupied-room transfer and capture evidence. Loss of a heater inhibits cooking with a visible fault. One failed heater at the adverse operating point asks 4.522 kW of the kitchen. The separate 2.836 kW zero-heater comparison has a different airflow allocation. [Connected cooker modes](joined-cooker-system-result.md) · [West kitchen radiator and release](kitchen-replan-heat-result.md)

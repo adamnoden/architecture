@@ -1,0 +1,414 @@
+{
+  "thermal": {
+    "activeHighestV": 10,
+    "masks": 64,
+    "hotCookSamples": 192,
+    "hoodLps": [
+      71.14329445381128,
+      87.37613424815396
+    ],
+    "outsideSupplyLps": [
+      77.78918740767324,
+      100.49102546697692
+    ],
+    "coilKW": [
+      2.613716696897821,
+      3.3764984556904247
+    ],
+    "kitchenRadiatorKW": [
+      1.3266940497784157,
+      1.3811784611207445
+    ],
+    "existingKitchenRadiatorKW": 1.442726469550983,
+    "kitchenMinSupplyC": 17.489606093809307,
+    "localRadiatorMarginW": 61.54800843023844,
+    "wholeHouseHeatKW": [
+      11.969158601016382,
+      13.201540833582115
+    ],
+    "maxWholeHouseKWhAt22Ordinary2Hot": 233.37908166716423,
+    "minMachineMarginKW": 0.7984591664178851,
+    "othersAtPeakKW": 8.443863916770947,
+    "coilLminAt10K": 4.839701560951397,
+    "injection55CInto35ReturnLmin": 2.4198507804756986,
+    "hoodOffMakeupAtMinus4PaLps": [
+      6.64589295386196,
+      13.114891218822962
+    ],
+    "hoodOffColdKitchenKW": 1.6121360838776266,
+    "untemperedPeakKitchenKW": 4.757676916811169,
+    "otherEmitterKW": 11.593010574168444,
+    "minimumOtherToOldRoomBudget": [
+      1.5028400724489406,
+      "principal"
+    ]
+  },
+  "standby": {
+    "measuredTotalFreshLps": [
+      12.0,
+      15.0
+    ],
+    "kitchenPa": [
+      -4.3416915867704,
+      -1.996973549608466
+    ],
+    "freshestAndLeastRoomInletLps": [
+      7.726218718744349,
+      20.986737743078265
+    ],
+    "plateIDmm": 50,
+    "platePressurePaAtCd061": [
+      60.22742457067141,
+      94.10535089167406
+    ],
+    "minStandbySupplyC": 12.0,
+    "maxStandbyKitchenKW": 1.2839999999999998,
+    "maxStandbyCoilKW": 0.396
+  },
+  "nativeCommands": {
+    "2": {
+      "exhaustLps": [
+        0,
+        20.0
+      ],
+      "intakeLps": [
+        0,
+        33.11489121882296
+      ],
+      "reaches48EverySample": false,
+      "allIntakesInSelectedCoilChart": false
+    },
+    "5": {
+      "exhaustLps": [
+        31.41247936590952,
+        55.24141488040037
+      ],
+      "intakeLps": [
+        38.05837231977147,
+        68.35630609922333
+      ],
+      "reaches48EverySample": false,
+      "allIntakesInSelectedCoilChart": false
+    },
+    "8": {
+      "exhaustLps": [
+        50.324831646129354,
+        87.37613424815396
+      ],
+      "intakeLps": [
+        56.97072459999131,
+        100.49102546697692
+      ],
+      "reaches48EverySample": true,
+      "allIntakesInSelectedCoilChart": false
+    },
+    "10": {
+      "exhaustLps": [
+        71.14329445381128,
+        87.37613424815396
+      ],
+      "intakeLps": [
+        77.78918740767324,
+        100.49102546697692
+      ],
+      "reaches48EverySample": true,
+      "allIntakesInSelectedCoilChart": true
+    }
+  },
+  "pressure": {
+    "maxVelocityMps": 2.0471863602486935,
+    "netDirtyLouvreFreeAreaM2": 0.018407769454627694,
+    "louvrePa": 48.05557781772835,
+    "ductAndFittingsPa": 10.963582735226977,
+    "dirtyFilterIncrementPa": 100,
+    "otherLossAllowancePa": 50,
+    "adverseWindPa": 50,
+    "minimumChartAvailablePa": 350,
+    "grossRequiredPa": 259.0191605529553,
+    "remainingPa": 90.98083944704467
+  },
+  "roomAndRelease": {
+    "unitPlan": [
+      9400,
+      8684.5,
+      972,
+      370
+    ],
+    "unitConservativeZ": [
+      2150,
+      2755
+    ],
+    "nativeControlHand": "above",
+    "spigotAxis": [
+      8859.5,
+      2400
+    ],
+    "sleeveAxis": [
+      12000,
+      8600,
+      2400
+    ],
+    "axisDifferenceY": 259.5,
+    "minimumInletStraightMM": 250,
+    "minimumOutletStraightMM": 750,
+    "cleanInlet": [
+      10372,
+      10672
+    ],
+    "cleanOutlet": [
+      8600,
+      9400
+    ],
+    "bracketEdgeToRawJambIf903Span": 112.5,
+    "ceilingClear": 415,
+    "headroomUnderCase": 2150,
+    "reachableField": [
+      9476,
+      9090,
+      820,
+      1450
+    ],
+    "clearFloorForFullLift": [
+      9571.0,
+      8740,
+      630,
+      880
+    ],
+    "outletFace": [
+      8060,
+      8859.5,
+      2400
+    ],
+    "minMetalScreenAreaM2At1point5Mps": 0.06699401697798461,
+    "firstDesignRiserGap": -210,
+    "offsetRiserGap": 49.5,
+    "midLevelDuctODmm": 300,
+    "caseTopToHighTrunk": 60,
+    "intakeOffsetRoute": [
+      [
+        12000,
+        8600,
+        2400
+      ],
+      [
+        11250,
+        8600,
+        2400
+      ],
+      [
+        10990.5,
+        8859.5,
+        2400
+      ],
+      [
+        10372,
+        8859.5,
+        2400
+      ]
+    ],
+    "offsetNominalBendDeg": 45,
+    "standoff": 260,
+    "wetLoadedMassTrialKg": 39,
+    "bracketTwoGTotalKN": 0.7651800000000001,
+    "bracketTwoGTotalMomentKNm": 0.3405051,
+    "waterTapTrial": [
+      [
+        10200,
+        8500,
+        2945
+      ],
+      [
+        10200,
+        8790,
+        2945
+      ],
+      [
+        10050,
+        8790,
+        2945
+      ]
+    ],
+    "highTubeODmm": 50,
+    "highTubeToSoffitMM": 200,
+    "straightDownRelease": {
+      "cradleAndWetCaseMassLimitKg": 39,
+      "factoredTrialForceN": 765.1800000000001,
+      "fourHorizontalRetractingPinsODmm": 8,
+      "pinEngagedLengthTrialMM": 12,
+      "requiredRetractMM": 20,
+      "throughLugThicknessMM": 3,
+      "onePinDoubleShearMPa": 7.61138620969103,
+      "oneLugBearingMPa": 31.882500000000004,
+      "geometricDropAtOriginalXY": true,
+      "cradleNosePlusCasingDepthMM": 410,
+      "forkReachMM": 570,
+      "maxAcceptedLoadCentreMM": 300,
+      "rearToFrontCradleClearMM": 260,
+      "operationalInterlockQualified": false
+    },
+    "parkedChairs": [
+      [
+        7800,
+        10340,
+        500,
+        500
+      ],
+      [
+        7800,
+        10890,
+        500,
+        500
+      ]
+    ],
+    "chairPaths": [
+      [
+        [
+          9550,
+          10000
+        ],
+        [
+          9625,
+          10000
+        ],
+        [
+          9625,
+          10590
+        ],
+        [
+          8050,
+          10590
+        ],
+        [
+          8050,
+          11140
+        ]
+      ],
+      [
+        [
+          9550,
+          9400
+        ],
+        [
+          9625,
+          9400
+        ],
+        [
+          9625,
+          10590
+        ],
+        [
+          8050,
+          10590
+        ]
+      ]
+    ],
+    "clearances": {
+      "reachableField": 176.0,
+      "clearFloorForFullLift": 271.0
+    },
+    "loadedCartMax": [
+      1020,
+      450
+    ],
+    "lowExport": [
+      [
+        9886,
+        8869.5,
+        0
+      ],
+      [
+        9886,
+        9080,
+        0
+      ],
+      [
+        9950,
+        9080,
+        0
+      ],
+      [
+        9950,
+        8800,
+        0
+      ],
+      [
+        8625,
+        8725,
+        -5
+      ],
+      [
+        8625,
+        8725,
+        -10
+      ],
+      [
+        8550,
+        8575,
+        -55
+      ],
+      [
+        8550,
+        8200,
+        -90
+      ],
+      [
+        8700,
+        7725,
+        -90
+      ]
+    ],
+    "continuousExportClearanceMM": 18.265357124494425,
+    "frontExitRoute": [
+      [
+        8700,
+        7725,
+        -90
+      ],
+      [
+        8700,
+        3750,
+        -90
+      ],
+      [
+        8600,
+        3420,
+        -90
+      ],
+      [
+        8600,
+        3420,
+        0
+      ],
+      [
+        6000,
+        3200,
+        0
+      ],
+      [
+        6000,
+        3200,
+        -90
+      ],
+      [
+        6000,
+        -600,
+        -90
+      ]
+    ],
+    "frontExitLowerBoundMM": 44.57340097784026
+  },
+  "supply": {
+    "twoElectricMakeupHeatersDeletedA": 26.08695652173913,
+    "nativeSupplyUnitA": 1.05,
+    "proposedCookingA": [
+      51,
+      20.05,
+      22
+    ],
+    "with9kWBackupA": [
+      64.1,
+      33.15,
+      35.1
+    ]
+  }
+}

@@ -49,6 +49,7 @@ matching issue #943 and the canonical execution graph.
 | Selection | HAD-03 | Coherent architectural selection and representative visual synthesis using the current roof/water baseline provisionally |
 | Court/roof replan | HAD-WATER-REPLAN | Joined source-bound architectural replacement for the rejected single-north court-water topology, before RWT-06 detailing |
 | Guarded court intake | HAD-COURT-INTAKE | Joined selection of the E mouth, guarded access and independent temporary corner drainage after the two-exit replan |
+| Permanent court receiver | HAD-COURT-BYPASS | Choose the low two-way bypass or a simpler independently accessible receiver for the actual blocked/maintenance states |
 | Roof/water integration | ROF-RWT-GATE | Selected roof/rainwater systems reconciled with HAD expression and OAS-owned threshold consequences |
 | Shared integration | TRIAD-GATE | Selected IAS/OAS/HAD outputs, including the reconciled roof/water architecture, describe one house |
 
@@ -124,6 +125,17 @@ architectural rewind at ROF-RWT-GATE; current drawings do not get veto power.
 The [RWT-06 court-egress architectural screen](../rwt/court-egress-architectural-rewind.md) makes one geometric question part of **HAD-03's architectural exit**: propose **or reject** a located, inspectable passage through the occupied house ring for normal court rainwater, with a *separately daylighted* passive relief route. Compare the proposed north/east suspended-ground-floor undercroft with a genuinely open north garden loggia (whose nominal 2,400 mm strip displaces 9.198 m² of the current family/dining rectangle), and an honest architectural replan if neither works. Show paired plan and longitudinal/transverse sections grounded in the current house source; preserve/quantify the four-bedroom programme, north family/dining room, door circulation, primary support, floor/thermal/gas/water separation, renewal approach, and both distinct external exits. A new opening or court-level change is an explicit source-rewind candidate, not a silently adopted layout or an attractive schematic labelled feasible.
 
 This was a **physical spatial disposition**, not a hydraulic RWT-06 closeout. HAD-03 completed its bounded architectural development with the open north loggia, explicitly retaining common mouth/terrace failure. The [current-source topology rejection](../rwt/rwt-06-selected-topology-rejection.md) now makes the missing independent escape an executable **HAD-WATER-REPLAN** prerequisite; HAD-03's completed status must not be read as supplying it. RWT retains operating-head/flow proof; STR/IAS/OAS/MAT retain their owning assembly duties; DPL retains actual site/flood facts. The joint ROF-RWT gate remains downstream.
+
+### Select the permanent receiver and blocked-water return
+
+**HAD-COURT-BYPASS** starts from the completed guarded intake and reconciled structural house. Select or reject the complete [low return and divided receiver](../rwt/rwt-06-low-court-bypass.md) against a simpler permanent, independently accessible catch/receiver. Include the raised three-shutter scheme as the adverse control. Preserve the two existing site routes and both earlier HAD results. The successor owns one architectural selection on the actual house.
+
+* Register the floor contour from Y5750 to 7400, access ramp, maintenance adapter, occupied windows and unbroken weather skirt. Keep ordinary walking panels independent of both wet carriers and the fifth direct pipe.
+* Show where water goes with a blocked spout, blocked basket/shoe, stopped N route, N site isolation, and during each disconnection. Price the bidirectional hood pocket, deep socket and full wetted seam, or show how the simpler receiver eliminates them. Include first harmful fabric, do not assume a tested water stage.
+* Locate installation and accessible renewal around the two low loggia ties, drainage valves, caps and actual north forebay. Reconcile the permanent supported corner, two-flap transfer, cleanout and left-behind sealed house through removal and restoration. The low-bypass cups exclude every R300 stance on the selected open 600 × 900 platform. Restore that occupied station, move the complete wet fittings, or eliminate below-floor attendance. The separate south closed-spool platform cannot stand in for it. Distinguish gallery/hoist/pipe support from the N grate, temporary roof and people.
+* Publish dimensioned house source, plan/section and ordered fault/maintenance states, identifying the retained and rejected alternatives. Record any material exception and separable plot, supplier, pressure, weather and loading tests. An external survey or test certificate alone cannot complete this choice.
+
+RWT-06 resumes its six-duty check after that house choice. OAS owns the window and guard interface, and DPL receives the two site conditions downstream.
 
 ## Court and roof water replan
 

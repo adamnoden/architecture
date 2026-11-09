@@ -69,3 +69,18 @@ test('the two-exit intake and access replan can be claimed before the remaining 
   assert(available().includes('RWT-06'))
   assert.equal(derivedState(get('RWT-07'), nodes), 'blocked')
 })
+
+test('the completed intake hands the permanent blocked receiver to one house decision', () => {
+  const pending = new Set(['HAD-COURT-BYPASS', 'RWT-06', 'RWT-07'])
+  const nodes: ControlNode[] = controlNodes.map(n => ({ ...n, lifecycle: pending.has(n.id) ? 'planned' : 'complete' }))
+  const get = (id: string) => nodes.find(n => n.id === id)!
+  const available = () => buildDispatchSnapshot(nodes, [], new Date('2026-11-09T12:00:00Z')).candidates.map(c => c.node.id)
+  assert.deepEqual(validateGraphStructure(controlNodes), [])
+  assert.deepEqual(get('HAD-COURT-BYPASS').dependencies, ['HAD-COURT-INTAKE', 'STR-RECONCILE'])
+  assert.deepEqual(directBlockers(get('RWT-06'), nodes), ['HAD-COURT-BYPASS'])
+  assert(available().includes('HAD-COURT-BYPASS'))
+  assert(!available().includes('RWT-06'))
+  nodes[nodes.indexOf(get('HAD-COURT-BYPASS'))] = {...get('HAD-COURT-BYPASS'), lifecycle:'complete'}
+  assert(available().includes('RWT-06'))
+  assert(!available().includes('RWT-07'))
+})
