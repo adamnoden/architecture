@@ -9,8 +9,8 @@
     "label": "Whole occurrence decision 0840"
   },
   "claimedAt": "2026-11-09T09:12:42.801Z",
-  "heartbeatAt": "2026-11-09T09:40:12.773Z",
-  "expiresAt": "2026-11-09T10:25:12.773Z",
+  "heartbeatAt": "2026-11-09T09:53:34.621Z",
+  "expiresAt": "2026-11-09T10:38:34.621Z",
   "branch": "work/swarm-house-evidence-0840",
   "predecessor": {
     "leaseId": "a6a1ef75-2328-49d1-ab67-be70360701fa",
@@ -34,7 +34,7 @@
   },
   "pr": 1446,
   "checkpoint": {
-    "evidence": "Frozen #1446 993daa39b64a007e683b3fcc00925a2d55ae7705, tree 40bcee01acb6d3b6594bc6ba8b2510211e833274. Two portal returns leave 6.744 square metres of flat soffit. Two-tier catch and 48 cast inserts, first supported release, north masonry shelf and dry thermal section. Full MAT suite, integrity and visual checks passed.",
-    "next": "Coordinate with Services holder on shared head or independently verify CI and guarded merge. Wall and soffit fit is bounded; shoulder, classified underside, tie, slate roof, glazing and water returns retain their owning duties."
+    "evidence": "Frozen and verified #1446 563df9cdc05850062ff1c8e617645ba4108a7048. 28 safe-side release stations; full MAT, integrity and render passed. Joint host accepted #1447 ab727db7 HAD g1, #1448 3dd69c08 MAT-SERVICES g32, initial three-source preview d4430821 passed HAD, RWT, MAT and public sanitation.",
+    "next": "Complete combined source tree after IAS g38 selection, retain all immutable parents, collect each live exact-head fence and expected-head merge. Current source receipts remain separate."
   }
 }
