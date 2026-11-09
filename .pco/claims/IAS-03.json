@@ -9,8 +9,8 @@
     "label": "front-next-0120"
   },
   "claimedAt": "2026-11-09T01:21:53.772Z",
-  "heartbeatAt": "2026-11-09T01:21:53.772Z",
-  "expiresAt": "2026-11-09T02:06:53.772Z",
+  "heartbeatAt": "2026-11-09T01:35:40.869Z",
+  "expiresAt": "2026-11-09T02:20:40.869Z",
   "branch": "work/front-next-0120",
   "predecessor": {
     "leaseId": "f8444899-93c8-4f6b-ba1d-acb44431a691",
@@ -31,5 +31,10 @@
       "evidence": "Three-lane #1406 at 4e692d2f includes IAS source 56e869d2; final tree 9aeb00b5 adds verified rotating-bearing comparison on merged main 673e5c46.",
       "next": "Wait for exact-head validation; all three holders preflight the published revision before guarded merge and release."
     }
+  },
+  "pr": 1410,
+  "checkpoint": {
+    "evidence": "PR #1410 at 27da3065 compares four factory M6 top fasteners and retained frame, required four floor-seat windows and separate head receiver. Full test:repo passed.",
+    "next": "Independently review and verify exact-head CI. If integrating several current lanes, bind this lease to the merge lead and recheck the final SHA before publication."
   }
 }
