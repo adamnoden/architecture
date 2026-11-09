@@ -9,8 +9,8 @@
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T02:05:30.894Z",
-  "heartbeatAt": "2026-11-09T02:28:47.849Z",
-  "expiresAt": "2026-11-09T03:13:47.849Z",
+  "heartbeatAt": "2026-11-09T02:51:38.719Z",
+  "expiresAt": "2026-11-09T03:36:38.719Z",
   "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "4e8807ec-f146-42b4-8990-b1d49b2eba4b",
@@ -34,7 +34,7 @@
   },
   "pr": 1414,
   "checkpoint": {
-    "evidence": "Final four-lane #1414 at 6f5b794420a6e376e44ade9c76f0a993a328cc6b on merged #1413 3e941b4d. All original parents and source blobs verified. Complete 196608-response pivot envelope reproduced byte-for-byte; #1103 comment 6730707191. 190 RWT tests, 12 arch source tests, IAS and MAT checks passed.",
-    "next": "Wait for exact-head hosted CI, run four fresh merge preflights, merge and release with full handoff. STR still needs separated development, both arm anchors, thrust and a real replacement pocket."
+    "evidence": "MERGED #1414 at 85b99f2298d54eddafdc7745441f1d71deada77a with 14 green workflows, 196608 signed response audit, four preflights. Source geometry, four H16 returns and limited pin withdrawal now on main. Roof supplement d832fc775e177145cc74bb7b1e06a4d5ee52b40e is separate.",
+    "next": "Reconcile verified four-file normal-view roof outline and stale STR visual request from #1103 comment 6730878593; patch e19ca9f4e1cb23e8f631f77fb850175d6935f85310baaaf9833554d8fd634fb2. Arch next needs isolated development, both anchors and usable physical access. STR remains open."
   }
 }
