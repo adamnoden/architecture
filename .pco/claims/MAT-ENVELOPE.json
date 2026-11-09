@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T01:22:25.208Z",
-  "heartbeatAt": "2026-11-09T01:22:25.208Z",
-  "expiresAt": "2026-11-09T02:07:25.208Z",
+  "heartbeatAt": "2026-11-09T01:32:42.576Z",
+  "expiresAt": "2026-11-09T02:17:42.576Z",
   "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
@@ -31,5 +31,10 @@
       "evidence": "Four-lane #1406 head d3b81931 / tree 6204a734 on #1405 main includes the five verified RWT files and all 11 unchanged envelope files originally validated at dfce27f1.",
       "next": "Wait for full CI; run all four exact lease preflights and merge with expected SHA d3b81931. Then release and record residual evidence on #1100."
     }
+  },
+  "pr": 1409,
+  "checkpoint": {
+    "evidence": "PR #1409, 15aa1b7b, joins the ordinary eave, hip, ridge steel, gutter and raised saddle. MAT suite, source reproduction and SVG inspection passed; roof remains unadopted.",
+    "next": "Inspect independent review, reconcile current main with the companion PRs and verify exact-head CI and lease before merging."
   }
 }
