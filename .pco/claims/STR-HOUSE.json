@@ -9,9 +9,9 @@
     "label": "Architecture swarm: east service and receiving"
   },
   "claimedAt": "2026-11-09T05:06:11.286Z",
-  "heartbeatAt": "2026-11-09T05:27:17.474Z",
-  "expiresAt": "2026-11-09T06:12:17.474Z",
-  "branch": "work/swarm-east-service-20261109",
+  "heartbeatAt": "2026-11-09T05:27:49.060Z",
+  "expiresAt": "2026-11-09T06:12:49.060Z",
+  "branch": "work/house-0506-20261109",
   "predecessor": {
     "leaseId": "7cda0738-fae8-489d-a7bb-9bdc1363b337",
     "generation": 38,
@@ -32,9 +32,9 @@
       "next": "Compare independent east maintenance access on the actual plan or define its redesign. Qualify the P32 assembly before repetition."
     }
   },
-  "pr": 1432,
+  "pr": 1431,
   "checkpoint": {
-    "evidence": "Frozen #1432 source 5442856a. Three captured lower panels, four independent heads, actual 450 bridge and shifted gate/ladder. Seven STR-only paths ready for agreed common PR.",
-    "next": "Verify new main, rebind to coordinated IAS/RWT/STR PR, validate common head and release after merge."
+    "evidence": "Frozen #1432 5442856a is verified on current 2a50d0fc inputs: original HAD house, RWT crew/spool and STR head grid byte-identical. Coordinator will preserve the direct source parent and all seven STR paths in #1431.",
+    "next": "Validate blended tree, exact final CI and g39 publication fence before integration; reconcile #1103 and release."
   }
 }
