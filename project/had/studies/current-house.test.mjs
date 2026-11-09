@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {deriveCurrentHouse,scheduleText} from './current-house.mjs';
-import {supplyLoss} from './cooker-supply-loss.mjs';
+import {cookerFault} from './cooker-fault.mjs';
 import {servicePlate,storePlate} from './occupied-service-plate.mjs';
 const x=deriveCurrentHouse(),m=x.model,s=m.architecturalServices;
 const near=(a,b,tol=1e-5)=>assert(Math.abs(a-b)<tol,`${a} != ${b}`);
@@ -47,13 +47,13 @@ test('published schedule and both figures reproduce from the complete house opti
 
 test('same seat time, different flow histories: the room pressure can fail or recover',()=>{
   const {lateSeat,stagedEarlyFlow,largeAirVolume}=s.cooker.closure.supplyLoss;
-  assert(lateSeat.atDeadline<-12 && lateSeat.lastBelow>5.9);
-  assert(stagedEarlyFlow.atDeadline>-4 && stagedEarlyFlow.lastBelow<4.5);
-  assert(largeAirVolume.lastBelow<4.6);
-  assert(Math.abs(supplyLoss(x,{dt:.00025}).atDeadline-stagedEarlyFlow.atDeadline)<.002);
+  assert(lateSeat.atDeadline<-12 && lateSeat.lastOutside>5.9);
+  assert(stagedEarlyFlow.atDeadline>-4 && stagedEarlyFlow.lastOutside<4.5);
+  assert(largeAirVolume.lastOutside<4.6);
+  assert(Math.abs(cookerFault(x,{dt:.00025}).atDeadline-stagedEarlyFlow.atDeadline)<.002);
   for(let mask=0;mask<32;mask++){
-    const result=supplyLoss(x,{mask,volumeScale:1.2});
-    assert(result.atDeadline>=-5 && result.lastBelow<4.61,`mask ${mask}`);
+    const result=cookerFault(x,{mask,volumeScale:1.2});
+    assert(result.atDeadline>=-5 && result.lastOutside<4.61,`mask ${mask}`);
   }
 });
 test('rear WC option costs the actual alternative without deleting a wet fan or lowering house duty',()=>{
@@ -61,4 +61,26 @@ test('rear WC option costs the actual alternative without deleting a wet fan or 
   assert.equal(option.wc,4);assert.equal(option.roomFans,s.fanAccess.length);
   assert.deepEqual([option.cold,option.hot,option.bathingPlaces],[13,8,2]);
   assert.equal(option.omittedRearBranchMM,3370);assert.equal(option.bedroom4TwoDoorsToBathMM,18764.2);
+});
+
+test('the unpowered house needs a measured outward path even when all shutters reach their seats',()=>{
+  const result=s.cooker.closure.lossOfExhaust;
+  assert(result.allExtractsOffOneWay.atDeadline>35);
+  assert(result.hoodTrip.maximum>18 && result.hoodTrip.atDeadline<0);
+  assert(result.allExtractsOffTwoWay.lastOutside<3.4);
+  const area=result.sixInletsEachReverseEquivalentMM2;
+  for(const v of m.servicesInterface.supply) assert.equal(v.minimumReverseEquivalentArea,area);
+  for(let blockedOutlet=0;blockedOutlet<6;blockedOutlet++){
+    const loss=cookerFault(x,{fault:'power',mask:0,volumeScale:1.2,reverseArea:area,blockedOutlet});
+    assert(loss.lastOutside<3.86 && loss.atDeadline<.81);
+  }
+});
+
+test('the first cold draw separates all three flat faces and preserves the tank jacket',()=>{
+  const first=s.plant.independentSafety.firstRelease;
+  assert.deepEqual(first.firstDraw,[-65,28,12]);
+  assert(first.faceOpeningMM.every(n=>n>=9));
+  assert(Object.values(first.jacketClearanceLowerMM).every(n=>n>=25));
+  assert.equal(first.maxEngagementMM,0);
+  assert.equal(s.cooker.fullInsulatedOD,227);
 });

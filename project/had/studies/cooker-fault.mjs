@@ -5,8 +5,9 @@ const ring=6, hall=7, kitchen=8;
 const fanIds=['ground-WC','utility','rear-bath','family-bath','principal-bath'];
 const orifice=(pa,area)=>.61*area/1000*Math.sign(pa)*Math.sqrt(Math.abs(pa)/.6);
 
-export function supplyLoss(house,{mask=31,volumeScale=1,profile='early',dt=.0005}={}) {
+export function cookerFault(house,{mask=31,volumeScale=1,profile='early',dt=.0005,fault='supply',reverseArea=0,blockedOutlet=-1}={}) {
   if(!['early','late'].includes(profile)) throw Error('Unknown flow profile');
+  if(!['supply','hood','power'].includes(fault)) throw Error('Unknown cooker fault');
   const s=house.model.architecturalServices, transfer=s.transfers, max=s.cooker.closure.proof;
   const small=transfer.otherEquivalent;
   const edges=[[0,hall,small],[1,hall,small],[2,ring,small],[3,ring,small],[4,ring,small],[5,ring,small],
@@ -16,14 +17,14 @@ export function supplyLoss(house,{mask=31,volumeScale=1,profile='early',dt=.0005
   const volumes=nodes.map(n=>3.1*volumeScale*(s.rooms[n].plan+(n==='utility'?s.rooms.plant.plan:0)));
   // Isothermal pV=mRT at 101325 Pa. Positive net inflow raises room pressure.
   const compliance=volumes.map(v=>1000*v/101325), p=nodes.map(()=>-4), net=nodes.map(()=>0);
-  function flux(extract) {
+  function flux(extract,othersOn=true) {
     net.fill(0);
-    for(let i=0;i<supplyAreas.length;i++)net[i]=orifice(Math.max(0,-p[i]),supplyAreas[i]);
+    for(let i=0;i<supplyAreas.length;i++)net[i]=orifice(-p[i],p[i]>0?(i===blockedOutlet?0:reverseArea):supplyAreas[i]);
     for(const [i,j,area] of edges){const q=orifice(p[i]-p[j],area);net[i]-=q;net[j]+=q;}
-    for(let i=0;i<extracts.length;i++)net[9+i]-=extracts[i];
+    for(let i=0;i<extracts.length;i++)net[9+i]-=othersOn?extracts[i]:0;
     net[kitchen]-=extract;
   }
-  function advance(extract){flux(extract);for(let i=0;i<p.length;i++)p[i]+=dt*net[i]/compliance[i];}
+  function advance(extract,othersOn=true){flux(extract,othersOn);for(let i=0;i<p.length;i++)p[i]+=dt*net[i]/compliance[i];}
   // Hold the commissioned kitchen pressure until the other rooms settle.
   for(let i=0;i<Math.round(24/dt);i++){advance(0);p[kitchen]=-4;}
   flux(0);
@@ -33,7 +34,7 @@ export function supplyLoss(house,{mask=31,volumeScale=1,profile='early',dt=.0005
   // operating points. Keep it after supply loss even with both motors tripped.
   const peak=Math.max(87.37613424815396,max.hoodLps[1])+s.fanAccess.find(f=>f.id==='kitchen').modes.at(-1);
   const closure=s.cooker.closure, seated=closure.detectionS+closure.actuatorS;
-  let atDeadline,minimum=0,lastBelow=0,doorDifferential=0;
+  let atDeadline,minimum=0,maximum=-Infinity,lastBelow=0,doorDifferential=0,at435;
   for(let i=0;i<Math.round(9/dt);i++){
     const t=i*dt, travel=(t-closure.detectionS)/closure.actuatorS;
     // Bounds on actual combined outward FLOW. No angle-to-flow law is assumed.
@@ -43,11 +44,16 @@ export function supplyLoss(house,{mask=31,volumeScale=1,profile='early',dt=.0005
       else if(travel>=.5&&travel<.75)fraction=.25;
       else if(travel>=.25&&travel<.5)fraction=.5;
     }
-    advance(residual+(peak-residual)*fraction);
+    // Loss of hood retains the other extracts; common power loss bounds the
+    // worse opposite case with all exhaust already zero and a coasting supply.
+    const leak=s.cooker.closure.maxExtractLeakLpsEach;
+    const netQ=fault==='supply'?residual+(peak-residual)*fraction:-(leak+fraction*(max.directLps[1]-leak));
+    advance(netQ,fault!=='power');
     const end=(i+1)*dt;
-    minimum=Math.min(minimum,p[kitchen]);doorDifferential=Math.max(doorDifferential,Math.abs(p[kitchen]-p[hall]));
-    if(p[kitchen]<-5)lastBelow=end;
+    maximum=Math.max(maximum,p[kitchen]);minimum=Math.min(minimum,p[kitchen]);doorDifferential=Math.max(doorDifferential,Math.abs(p[kitchen]-p[hall]));
+    if(p[kitchen]<-5||p[kitchen]>5)lastBelow=end;
+    if(i+1===Math.round(4.35/dt))at435=p[kitchen];
     if(i+1===Math.round(5/dt))atDeadline=p[kitchen];
   }
-  return {volumeM3:volumes.reduce((a,b)=>a+b,0),healthyNet,peak,seated,atDeadline,lastBelow,minimum,doorDifferential,final:p[kitchen]};
+  return {volumeM3:volumes.reduce((a,b)=>a+b,0),healthyNet,peak,seated,atDeadline,at435,lastOutside:lastBelow,minimum,maximum,doorDifferential,final:p[kitchen]};
 }

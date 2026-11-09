@@ -1,7 +1,7 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {servicePlate,storePlate} from './occupied-service-plate.mjs';
-import {supplyLoss} from './cooker-supply-loss.mjs';
+import {cookerFault} from './cooker-fault.mjs';
 import {fileURLToPath} from 'node:url';
 import {roomSelection} from './inhabited-service-rooms.mjs';
 import {controlAndStorage} from './inhabited-service-faults.mjs';
@@ -29,10 +29,19 @@ export function deriveCurrentHouse(){
     bathRimMM:rear.room.rim,retainedRearPort:rear.services.retainedRearPort,
     basis:'Identical heated envelope, rear wet-room target and six fans. Keep the same four-person water draw, case and plant duty.'};
   const closure=house.model.architecturalServices.cooker.closure;
-  closure.supplyLoss={lateSeat:supplyLoss(house,{profile:'late'}),
-    stagedEarlyFlow:supplyLoss(house),largeAirVolume:supplyLoss(house,{volumeScale:1.2}),
+  closure.supplyLoss={lateSeat:cookerFault(house,{profile:'late'}),
+    stagedEarlyFlow:cookerFault(house),largeAirVolume:cookerFault(house,{volumeScale:1.2}),
     requiredFlowDeadlines:[{seconds:1.35,fraction:.50},{seconds:2.35,fraction:.25},{seconds:3.35,fraction:.10},{seconds:4.35,fraction:0}],
     scope:'Maximum fraction of the peak-to-seated exhaust increment. Flow measurements must include the operating fans, bypass, wind draw and both closed-seat leakages. The loaded assembly is unqualified.'};
+  const reverseArea=5000;
+  for(const inlet of house.model.architecturalServices.supply) inlet.minimumReverseEquivalentArea=reverseArea;
+  house.model.servicesInterface.supply=house.model.architecturalServices.supply;
+  closure.lossOfExhaust={hoodTrip:cookerFault(house,{fault:'hood',mask:0,reverseArea}),
+    allExtractsOffOneWay:cookerFault(house,{fault:'power',mask:0}),
+    allExtractsOffTwoWay:cookerFault(house,{fault:'power',mask:0,reverseArea}),
+    peakInwardLps:closure.proof.directLps[1],maximumSeatedInwardLps:closure.maxExtractLeakLpsEach,
+    sixInletsEachReverseEquivalentMM2:reverseArea,
+    scope:'Bound the actively supplied airflow even if both kitchen extracts stop. Forward weather/insect/acoustic area is tested independently from unpowered outward area.'};
   return {...house,inputs};
 }
 // Compact, reproducible review projection of the full furnished-house candidate.

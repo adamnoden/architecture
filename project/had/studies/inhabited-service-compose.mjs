@@ -1,3 +1,4 @@
+import {dischargeRelease} from './store-discharge-release.mjs';
 import {storeExchange} from './store-exchange.mjs';
 // Prospective current occupied-house compositor recovered on the branch for
 // HAD-SERVICES-ADOPTION. Historical water and structural documents stay immutable.
@@ -21,6 +22,7 @@ export function composeOccupiedHouse(twoExit,previous,offer,tempered,heatPurchas
     D2:[['G½',28,11.847],['G¾',35,13.447],['G1',42,14.647]],maxD2EquivalentM:18,outfall:[12350,2500,-1850],
     shoulder:[10545,4425,1450],TPExpAndTundishReach:[595.08,604.77,635],mainsPortTrial:[10131.50,4018.71,380],
     elementRelease:{port:[10210,4250],immersionAndTool:[550,150],endX:10910},requiresFactoryUnventedAssembly:true};
+  safety.firstRelease=dischargeRelease(cylinder,safety);
   s.schemaVersion=2;s.authority='HAD-SERVICES-ADOPTION-01 recovery proposal';
   s.plant={controlsHydraulics:controls,riserGross:riser,cylinder,primaryBuffer:buffer,independentSafety:safety,
     heatPump:{model:'Panasonic WH-WXG16ME8',body:heatPurchase.preferredThreePhase.newBodyMM,usableKW:14,
@@ -50,6 +52,7 @@ export function composeOccupiedHouse(twoExit,previous,offer,tempered,heatPurchas
     stack:{hoodConnector:[1679,1879],addedIsolation:[1879,2079],fan:[2079,2432],outletStraight:[2432,2521],bendAxis:2600},
     closure:{article:'Belimo NKQ24A-SR 6 Nm, stored-power 4 s, zero bridging',seats:[[11125,11443.5,1979],[11282.5,11450,3010],[11380,8600,2400]],
       detectionS:.35,actuatorS:4,witnessS:.40,maxExtractLeakLpsEach:.25,proof: faults.air}};
+  s.cooker.fullInsulatedOD=s.cooker.duct+2*(s.cooker.exhaustRadialInsulation+s.cooker.metalJacketEachSide);
   s.transfers={dryDoorIds:['STUDY','FD-WEST-CROSS','BED2','BED3','BED4','PRINCIPAL','PLANT','FD-EAST-CROSS'],
     wet:[['guestWC',0,'wc-north',8875],['rearBath',1,'rear-wet-east',9910],['familyBath',1,'wet-spine',5010],['principalBath',1,'rear-east-principal',11150]],
     dryArticle:'LVN20S including Talkback, approved fire-door host, liners and conductor hinges',wetArticle:'LVH44S 250×200 in qualified rigid wall',

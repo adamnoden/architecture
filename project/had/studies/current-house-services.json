@@ -241,7 +241,31 @@
         ],
         "endX": 10910
       },
-      "requiresFactoryUnventedAssembly": true
+      "requiresFactoryUnventedAssembly": true,
+      "firstRelease": {
+        "firstDraw": [
+          -65,
+          28,
+          12
+        ],
+        "faceOpeningMM": [
+          11.3137085,
+          9.24242424,
+          12
+        ],
+        "maxEngagementMM": 0,
+        "jacketClearanceLowerMM": {
+          "topUnion": 30.00457368,
+          "topTube": 26.66123988,
+          "expansionLeg": 56.04518497,
+          "commonLeg": 55.87336258,
+          "verticalLeg": 185.79809927
+        },
+        "upperJoinSpanMM": 155.56349186,
+        "comparisonConnectorLengthMM": 42,
+        "comparisonSpannerAF": 24,
+        "qualification": "Factory-approved common manifold, actual bore and port direction; all captive nuts fully backed clear, no residual pilot, seals retained. Prove both spanners, independently supported lift, qualified removable group and open gravity discharge."
+      }
     },
     "heatPump": {
       "model": "Panasonic WH-WXG16ME8",
@@ -557,7 +581,7 @@
     "duct": 125,
     "exhaustRadialInsulation": 50,
     "metalJacketEachSide": 1,
-    "fullInsulatedOD": 262,
+    "fullInsulatedOD": 227,
     "formedWallTerritory": 320,
     "minimumCaptureLps": 48,
     "makeupPoint": [
@@ -692,8 +716,10 @@
           "peak": 107.37613425,
           "seated": 4.35,
           "atDeadline": -12.35253631,
-          "lastBelow": 5.974,
+          "at435": -41.61637718,
+          "lastOutside": 5.974,
           "minimum": -41.61637718,
+          "maximum": -3.50720265,
           "doorDifferential": 15.12721399,
           "final": -3.50720265
         },
@@ -703,8 +729,10 @@
           "peak": 107.37613425,
           "seated": 4.35,
           "atDeadline": -3.97462973,
-          "lastBelow": 4.4665,
+          "at435": -5.66123009,
+          "lastOutside": 4.4665,
           "minimum": -35.26172975,
+          "maximum": -3.50453655,
           "doorDifferential": 14.51529424,
           "final": -3.50453655
         },
@@ -714,8 +742,10 @@
           "peak": 107.37613425,
           "seated": 4.35,
           "atDeadline": -4.23025818,
-          "lastBelow": 4.592,
+          "at435": -6.05018055,
+          "lastOutside": 4.592,
           "minimum": -33.72192574,
+          "maximum": -3.505102,
           "doorDifferential": 14.35452285,
           "final": -3.505102
         },
@@ -738,6 +768,51 @@
           }
         ],
         "scope": "Maximum fraction of the peak-to-seated exhaust increment. Flow measurements must include the operating fans, bypass, wind draw and both closed-seat leakages. The loaded assembly is unqualified."
+      },
+      "lossOfExhaust": {
+        "hoodTrip": {
+          "volumeM3": 600.39144135,
+          "healthyNet": 14.2541966,
+          "peak": 107.37613425,
+          "seated": 4.35,
+          "atDeadline": -2.14746956,
+          "at435": -1.34125859,
+          "lastOutside": 1.8965,
+          "minimum": -3.85163899,
+          "maximum": 18.2232351,
+          "doorDifferential": 13.08561609,
+          "final": -2.25618282
+        },
+        "allExtractsOffOneWay": {
+          "volumeM3": 600.39144135,
+          "healthyNet": 14.2541966,
+          "peak": 107.37613425,
+          "seated": 4.35,
+          "atDeadline": 35.35074661,
+          "at435": 35.44877135,
+          "lastOutside": 9,
+          "minimum": -3.85163899,
+          "maximum": 35.52092105,
+          "doorDifferential": 11.59667925,
+          "final": 35.51951151
+        },
+        "allExtractsOffTwoWay": {
+          "volumeM3": 600.39144135,
+          "healthyNet": 14.2541966,
+          "peak": 107.37613425,
+          "seated": 4.35,
+          "atDeadline": 0.0022061,
+          "at435": 0.93756314,
+          "lastOutside": 3.3615,
+          "minimum": -3.85163899,
+          "maximum": 25.70602793,
+          "doorDifferential": 12.58268196,
+          "final": 0.0022061
+        },
+        "peakInwardLps": 100.43128147,
+        "maximumSeatedInwardLps": 0.25,
+        "sixInletsEachReverseEquivalentMM2": 5000,
+        "scope": "Bound the actively supplied airflow even if both kitchen extracts stop. Forward weather/insect/acoustic area is tested independently from unpowered outward area."
       }
     }
   },
