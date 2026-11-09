@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-HOUSE",
-  "generation": 39,
-  "state": "released",
-  "leaseId": "81e9e457-2421-4265-b888-f69620b583df",
+  "generation": 40,
+  "state": "claimed",
+  "leaseId": "b061c0b6-bceb-4576-8bac-fd73a4771611",
   "holder": {
     "kind": "chatgpt",
-    "label": "Architecture swarm: east service and receiving"
+    "label": "Architecture swarm: house design disposition"
   },
-  "claimedAt": "2026-11-09T05:06:11.286Z",
-  "heartbeatAt": "2026-11-09T06:04:06.197Z",
-  "expiresAt": "2026-11-09T06:04:06.197Z",
-  "branch": "work/house-0506-20261109",
+  "claimedAt": "2026-11-09T06:04:55.691Z",
+  "heartbeatAt": "2026-11-09T06:04:55.691Z",
+  "expiresAt": "2026-11-09T06:49:55.691Z",
+  "branch": "work/swarm-house-disposition-20261109",
   "predecessor": {
-    "leaseId": "7cda0738-fae8-489d-a7bb-9bdc1363b337",
-    "generation": 38,
-    "branch": "work/house-0406-20261109",
-    "pr": 1428,
+    "leaseId": "81e9e457-2421-4265-b888-f69620b583df",
+    "generation": 39,
+    "branch": "work/house-0506-20261109",
+    "pr": 1431,
     "checkpoint": {
-      "evidence": "Merged #1428 at 44807906; P32 sources and figures verified on main; handoff #1103",
-      "next": "Compare independent east maintenance access on the actual plan or define its redesign. Qualify the P32 assembly before repetition."
+      "evidence": "Merged #1431 at 2e16d4de with frozen #1432 seven-file STR source 5442856a, exact CI 14/14 and certified g39 preflight. #1103 comment 6733443975.",
+      "next": "Choose the permanent corner openings/solid return and raised ridge on the current inhabited house or formally return its failed topology for redesign. Adoptability and member checks remain separate."
     }
   },
   "recoverySource": {
-    "leaseId": "7cda0738-fae8-489d-a7bb-9bdc1363b337",
-    "generation": 38,
-    "branch": "work/house-0406-20261109",
-    "pr": 1428,
+    "leaseId": "81e9e457-2421-4265-b888-f69620b583df",
+    "generation": 39,
+    "branch": "work/house-0506-20261109",
+    "pr": 1431,
     "checkpoint": {
-      "evidence": "Merged #1428 at 44807906; P32 sources and figures verified on main; handoff #1103",
-      "next": "Compare independent east maintenance access on the actual plan or define its redesign. Qualify the P32 assembly before repetition."
+      "evidence": "Merged #1431 at 2e16d4de with frozen #1432 seven-file STR source 5442856a, exact CI 14/14 and certified g39 preflight. #1103 comment 6733443975.",
+      "next": "Choose the permanent corner openings/solid return and raised ridge on the current inhabited house or formally return its failed topology for redesign. Adoptability and member checks remain separate."
     }
-  },
-  "pr": 1431,
-  "checkpoint": {
-    "evidence": "Merged #1431 at 2e16d4de with frozen #1432 seven-file STR source 5442856a, exact CI 14/14 and certified g39 preflight. #1103 comment 6733443975.",
-    "next": "Choose the permanent corner openings/solid return and raised ridge on the current inhabited house or formally return its failed topology for redesign. Adoptability and member checks remain separate."
-  },
-  "releasedAt": "2026-11-09T06:04:06.197Z",
-  "releaseReason": "handoff"
+  }
 }
