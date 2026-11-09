@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1060" height="720" viewBox="0 0 1060 720">
 <title>Principal shower entrance, first floor</title>
-<desc>Two comparable plans show the outside hand transfer and the move into the tray with the door open to 64 degrees. North is up.</desc>
+<desc>Two comparable plans show the outside hand transfer and the move into the tray with the door open to 70 degrees. North is up.</desc>
 <rect width="1060" height="540" fill="#faf8f3"/>
 <g font-family="sans-serif" fill="#172f3a">
 <text x="32" y="40" font-size="25" font-weight="bold">Principal shower  /  a person and a moving leaf</text>
@@ -8,6 +8,7 @@
 <text x="32" y="101" font-size="17" font-weight="bold">01   Change hands beyond the tip</text>
 <rect x="32.0" y="128.0" width="433.5" height="310.5" fill="#fff" stroke="#8c9693"/>
 <rect x="32.0" y="258.5" width="180.0" height="180.0" fill="#e4eee9" stroke="#8c9693"/>
+<rect x="203.0" y="257.5" width="10.0" height="10.0" fill="#536d6d" stroke="#8c9693"/>
 <rect x="32.0" y="148.5" width="68.0" height="90.0" fill="#e3dfd5" stroke="#8c9693"/>
 <rect x="346.5" y="164.0" width="71.0" height="112.0" fill="#e3dfd5" stroke="#8c9693"/>
 <rect x="312.0" y="128.0" width="153.5" height="36.0" fill="#e3dfd5" stroke="#8c9693"/>
@@ -20,7 +21,7 @@
 <text x="40.0" y="426.5" font-size="12">900 tray</text>
 <text x="162.0" y="116.5" font-size="12">775 slider opening</text>
 <polyline points="208.0,262.5 210.6,262.5 213.2,262.6 215.9,262.7 218.5,262.9 221.1,263.1 223.7,263.3 226.3,263.6 228.9,264.0 231.5,264.3 234.0,264.8 236.6,265.3 239.2,265.8 241.7,266.3 244.3,267.0 246.8,267.6 249.3,268.3 251.9,269.1 254.4,269.8 256.8,270.7 259.3,271.5 261.8,272.5 264.2,273.4 266.6,274.4 269.0,275.5 271.4,276.6 273.8,277.7 276.1,278.8 278.4,280.1 280.7,281.3 283.0,282.6 285.3,283.9 287.5,285.3 289.7,286.7 291.9,288.1 294.0,289.6 296.2,291.1 298.3,292.7 300.3,294.3 302.4,295.9 304.4,297.6 306.4,299.3 308.4,301.0 310.3,302.8 312.2,304.6 314.1,306.4 315.9,308.3 317.7,310.2 319.5,312.1 321.2,314.1 322.9,316.1 324.6,318.1 326.2,320.2 327.8,322.2 329.4,324.3 330.9,326.5 332.4,328.6 333.8,330.8 335.2,333.0 336.6,335.2 337.9,337.5 339.2,339.8 340.4,342.1 341.7,344.4 342.8,346.7 343.9,349.1 345.0,351.5 346.1,353.9 347.1,356.3 348.0,358.7 349.0,361.2 349.8,363.7 350.7,366.1 351.4,368.6 352.2,371.2 352.9,373.7 353.5,376.2 354.2,378.8 354.7,381.3 355.2,383.9 355.7,386.5 356.2,389.0 356.5,391.6 356.9,394.2 357.2,396.8 357.4,399.4 357.6,402.0 357.8,404.6 357.9,407.3 358.0,409.9 358.0,412.5" stroke="#b6782f" stroke-dasharray="4 4" fill="none"/>
-<polyline points="248.0,198.5 248.0,198.5 248.0,198.5 260.0,220.5 270.0,238.5 274.0,260.5 274.0,288.5 250.0,314.5 236.0,322.5 224.0,326.5 212.0,328.5 140.0,328.5" stroke="#3c7181" fill="none" stroke-dasharray="3 3"/>
+<polyline points="248.0,198.5 248.0,198.5 248.0,198.5 264.0,216.5 272.0,226.5 278.0,246.5 278.0,294.5 250.0,322.5 236.0,328.5 222.0,332.5 214.0,332.5 140.0,332.5" stroke="#3c7181" fill="none" stroke-dasharray="3 3"/>
 <circle cx="248.0" cy="198.5" r="60" fill="#9dbdca" fill-opacity=".38" stroke="#31617a"/>
 <polyline points="207.4,415.4 235.6,265.1" fill="none" stroke="#af6b22" stroke-width="3"/>
 <polyline points="248.0,198.5 225.9,278.5" fill="none" stroke="#00685b" stroke-width="2"/>
@@ -29,6 +30,7 @@
 <text x="552" y="101" font-size="17" font-weight="bold">02   Cross the rim and draw the leaf shut</text>
 <rect x="552.0" y="128.0" width="433.5" height="310.5" fill="#fff" stroke="#8c9693"/>
 <rect x="552.0" y="258.5" width="180.0" height="180.0" fill="#e4eee9" stroke="#8c9693"/>
+<rect x="723.0" y="257.5" width="10.0" height="10.0" fill="#536d6d" stroke="#8c9693"/>
 <rect x="552.0" y="148.5" width="68.0" height="90.0" fill="#e3dfd5" stroke="#8c9693"/>
 <rect x="866.5" y="164.0" width="71.0" height="112.0" fill="#e3dfd5" stroke="#8c9693"/>
 <rect x="832.0" y="128.0" width="153.5" height="36.0" fill="#e3dfd5" stroke="#8c9693"/>
@@ -41,11 +43,11 @@
 <text x="560.0" y="426.5" font-size="12">900 tray</text>
 <text x="682.0" y="116.5" font-size="12">775 slider opening</text>
 <polyline points="728.0,262.5 730.6,262.5 733.2,262.6 735.9,262.7 738.5,262.9 741.1,263.1 743.7,263.3 746.3,263.6 748.9,264.0 751.5,264.3 754.0,264.8 756.6,265.3 759.2,265.8 761.7,266.3 764.3,267.0 766.8,267.6 769.3,268.3 771.9,269.1 774.4,269.8 776.8,270.7 779.3,271.5 781.8,272.5 784.2,273.4 786.6,274.4 789.0,275.5 791.4,276.6 793.8,277.7 796.1,278.8 798.4,280.1 800.7,281.3 803.0,282.6 805.3,283.9 807.5,285.3 809.7,286.7 811.9,288.1 814.0,289.6 816.2,291.1 818.3,292.7 820.3,294.3 822.4,295.9 824.4,297.6 826.4,299.3 828.4,301.0 830.3,302.8 832.2,304.6 834.1,306.4 835.9,308.3 837.7,310.2 839.5,312.1 841.2,314.1 842.9,316.1 844.6,318.1 846.2,320.2 847.8,322.2 849.4,324.3 850.9,326.5 852.4,328.6 853.8,330.8 855.2,333.0 856.6,335.2 857.9,337.5 859.2,339.8 860.4,342.1 861.7,344.4 862.8,346.7 863.9,349.1 865.0,351.5 866.1,353.9 867.1,356.3 868.0,358.7 869.0,361.2 869.8,363.7 870.7,366.1 871.4,368.6 872.2,371.2 872.9,373.7 873.5,376.2 874.2,378.8 874.7,381.3 875.2,383.9 875.7,386.5 876.2,389.0 876.5,391.6 876.9,394.2 877.2,396.8 877.4,399.4 877.6,402.0 877.8,404.6 877.9,407.3 878.0,409.9 878.0,412.5" stroke="#b6782f" stroke-dasharray="4 4" fill="none"/>
-<polyline points="768.0,198.5 768.0,198.5 768.0,198.5 780.0,220.5 790.0,238.5 794.0,260.5 794.0,288.5 770.0,314.5 756.0,322.5 744.0,326.5 732.0,328.5 660.0,328.5" stroke="#3c7181" fill="none" stroke-dasharray="3 3"/>
-<circle cx="770.0" cy="314.5" r="60" fill="#9dbdca" fill-opacity=".38" stroke="#31617a"/>
-<polyline points="725.3,413.8 862.8,346.7" fill="none" stroke="#af6b22" stroke-width="3"/>
-<polyline points="770.0,314.5 846.3,347.0" fill="none" stroke="#00685b" stroke-width="2"/>
-<text x="552" y="475" font-size="14">The door reaches 64°. The WC and basin stay in place.</text>
+<polyline points="768.0,198.5 768.0,198.5 768.0,198.5 784.0,216.5 792.0,226.5 798.0,246.5 798.0,294.5 770.0,322.5 756.0,328.5 742.0,332.5 734.0,332.5 660.0,332.5" stroke="#3c7181" fill="none" stroke-dasharray="3 3"/>
+<circle cx="770.0" cy="322.5" r="60" fill="#9dbdca" fill-opacity=".38" stroke="#31617a"/>
+<polyline points="725.2,413.5 869.0,361.2" fill="none" stroke="#af6b22" stroke-width="3"/>
+<polyline points="770.0,322.5 852.5,359.7" fill="none" stroke="#00685b" stroke-width="2"/>
+<text x="552" y="475" font-size="14">The door reaches 70°. The WC and basin stay in place.</text>
 <line x1="32" x2="1028" y1="502" y2="502" stroke="#c4c5bd"/>
 <text x="32" y="538" font-size="18" font-weight="bold">03   Close the separate privacy slider with two recessed pulls</text>
 <text x="32" y="562" font-size="14">Room-side elevation, X only   ·   cream opening 850 between lined jambs   ·   blue moving leaf   ·   dots are pull positions</text>

@@ -22,14 +22,15 @@ assert MAT["showerScreen"]["clearOpeningMinimum"] == 700
 HINGE = (10280, 6730)
 LEAF, GRIP, OFFSET = 750, 675, 35
 BODY, REACH = 300, MAT["showerScreen"]["reachComparison"]
-FIXED = {**FIXTURES, "north glass": [9400, 7475, 880, 10],
+CORNER = [10255, 7455, 50, 50]  # conservative exclusion for people at the mating fittings
+FIXED = {**FIXTURES, "corner fittings": CORNER, "north glass": [9400, 7475, 880, 10],
          "south hinge strip": [10275, 6600, 10, 130]}
 # (opening angle from north towards east, person X, person Y).
 TRANSFER = (math.degrees(math.atan2(200, 1070)), 10480, 7800)
 POSES = [(0, 10480, 7800), TRANSFER, (12, 10480, 7800),
-         (46, 10540, 7690), (56, 10590, 7600), (62, 10610, 7490),
-         (62, 10610, 7350), (64, 10490, 7220), (64, 10420, 7180),
-         (62, 10360, 7160), (60, 10300, 7150), (0, 9940, 7150)]
+         (50, 10560, 7710), (54, 10600, 7660), (62, 10630, 7560),
+         (70, 10630, 7320), (70, 10490, 7180), (70, 10420, 7150),
+         (70, 10350, 7130), (64, 10310, 7130), (0, 9940, 7130)]
 
 def add(a, b, scale=1):
     return (a[0] + b[0]*scale, a[1] + b[1]*scale)
@@ -145,14 +146,14 @@ def figure():
     scale = 0.20
     parts = ['<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="720" viewBox="0 0 1060 720">',
              '<title>Principal shower entrance, first floor</title>',
-             '<desc>Two comparable plans show the outside hand transfer and the move into the tray with the door open to 64 degrees. North is up.</desc>',
+             '<desc>Two comparable plans show the outside hand transfer and the move into the tray with the door open to 70 degrees. North is up.</desc>',
              '<rect width="1060" height="540" fill="#faf8f3"/>',
              '<g font-family="sans-serif" fill="#172f3a">',
              '<text x="32" y="40" font-size="25" font-weight="bold">Principal shower  /  a person and a moving leaf</text>',
              '<text x="33" y="68" font-size="15">First floor   ·   millimetres   ·   north up   ·   blue body Ø600   ·   amber swing   ·   teal grip line</text>']
     for offset, pose, title, footer in [
             (32, TRANSFER, "01   Change hands beyond the tip", "Both grip faces are reachable at 10.6°."),
-            (552, POSES[7], "02   Cross the rim and draw the leaf shut", "The door reaches 64°. The WC and basin stay in place.")]:
+            (552, POSES[7], "02   Cross the rim and draw the leaf shut", "The door reaches 70°. The WC and basin stay in place.")]:
         def xy(p):
             return (offset+(p[0]-ROOM[0])*scale, 128+(8152.5-p[1])*scale)
         def points(seq):
@@ -167,7 +168,7 @@ def figure():
             return f'<text x="{x:.1f}" y="{y:.1f}" font-size="12">{val}</text>'
         angle,*person=pose
         parts.extend([f'<text x="{offset}" y="101" font-size="17" font-weight="bold">{title}</text>',
-                      rect(ROOM,"#fff"),rect(TRAY,"#e4eee9"),
+                      rect(ROOM,"#fff"),rect(TRAY,"#e4eee9"),rect(CORNER,"#536d6d"),
                       *(rect(r,"#e3dfd5") for r in FIXTURES.values()),
                       line((9400,7480),(10280,7480),"#334e50",2),
                       line((10280,6600),HINGE,"#334e50",2),
@@ -227,11 +228,11 @@ def main():
     direct = math.degrees(math.atan2(operator[0]-HINGE[0], operator[1]-HINGE[1]))
     heel, tip, *_ = screen(direct)
     assert 0 < direct < 64 and nearest(operator,heel,tip) < 0.001
-    # A real configuration, rather than only a pessimistic lower bound,
-    # demonstrates the larger-body failure at the north return.
-    a, b = POSES[-3:-1]
-    middle = tuple((v+w)/2 for v,w in zip(a,b))
-    assert reserves(middle, -1)["body to room/fixtures/glazing"] < 25
+    # On the previous 64-degree trajectory the 50-square corner overlaps
+    # the body even before tolerance. The enlarged body also fails a real
+    # point on the revised route, independently of any interval bound.
+    assert ptbox((10563,7648.6),CORNER) - BODY < -4.7
+    assert reserves((70,10399,7144),-1)["body to room/fixtures/glazing"] < 25
     graphic = Path(__file__).with_suffix(".svg")
     if args.check:
         assert graphic.read_text() == figure(), "Regenerate the entry drawing"
