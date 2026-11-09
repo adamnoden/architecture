@@ -36,11 +36,11 @@ tip = meta['freeTipStation']
 last = meta['lastCreditedStation']
 assert (meta['barDiameterMm'], tip, last) == (25, 12, 1)
 red, blue = '#a33328', '#006367'
-parts = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400" width="1200" height="1400" role="img" aria-labelledby="title desc">',
+parts = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1800" width="1200" height="1800" role="img" aria-labelledby="title desc">',
          '<title id="title">Corner window arch and central H25 bar</title>',
-         '<desc id="desc">Upper window elevation and bending interaction at 19 stations. The plan below shows the nominal vertical return beside a guard sleeve. Tangent intervals show where a forged head meets existing steel. The final plan and elevation show an in-plane pier cage shift and its tight bend crossing.</desc>',
+         '<desc id="desc">Upper window elevation and bending interaction at 19 stations. The plan below shows the nominal vertical return beside a guard sleeve. Tangent intervals show where a forged head meets existing steel. The final plan and elevation show an in-plane pier cage shift and its tight bend crossing. The last plan compares a transverse U tie with the available wall width.</desc>',
          '<style>text{font-family:Arial,Helvetica,sans-serif;fill:#152b31}.small{font-size:14px}.note{font-size:15px}.panel{font-size:20px;font-weight:bold}.tick{font-size:13px}</style>',
-         '<rect width="1200" height="1400" fill="#fff"/>']
+         '<rect width="1200" height="1800" fill="#fff"/>']
 
 def line(x1,y1,x2,y2,colour='#899497',width=1,dash=None):
     dashed = f' stroke-dasharray="{dash}"' if dash else ''
@@ -231,6 +231,41 @@ gap = trial['bendToH16At20DegOnSteelErrorCardMm']
 label(913,yy+15,f'{gap:.1f} mm on one permitted setout','small')
 label(632,1350,'Teal H25 and grey H16 cross in elevation on the tangent.','small')
 label(632,1373,'Concrete access and anchored confinement remain open.','small')
+tie = read('current-house-central-arch-detail')['bendTie']
+line(48,1400,1152,1400)
+label(49,1435,'07    Adding a horizontal tie around the H25 turn','panel')
+label(49,1464,f"Plan at Z{tie['trialZmm']:.1f} mm. One arm of the corner pier.",'small')
+# Equal plan scale so the semicircular nose and round bars keep their shape.
+def tie_page(x,y):
+    return 52+(x-688)*.95, 1503+(y+68)*.95
+leg_end, tangent = tie['legXmm']
+yl, yr = tie['legYmm']
+for y in tie['trialFacesYmm']:
+    line(*tie_page(688,y),*tie_page(1280,y),'#28474a',2)
+for y in (control['geometry']['outsideConcreteFace'],control['geometry']['insideConcreteFace']):
+    line(*tie_page(688,y),*tie_page(1280,y),'#9a7772',1.4,'6 5')
+r_tie = tie['noseCentreRadiusMm']
+nose = [tie_page(tangent+r_tie*math.cos(math.pi*i/60-math.pi/2),
+                 (yl+yr)/2+r_tie*math.sin(math.pi*i/60-math.pi/2)) for i in range(61)]
+poly([tie_page(leg_end,yl),*nose,tie_page(leg_end,yr)],blue,9.5)
+for x in trial['stationPairAfter']:
+    for y in (43,97):
+        dot(*tie_page(contact['outsideInnerCoreFaces'][0]+x,y),9.5,'#555d61','#555d61')
+for x in (b['startVertical'][0] for b in read('current-house-arch-detail')['archBars']['legs']):
+    for y in control['geometry']['normalH16Centres']:
+        dot(*tie_page(x,y),7.6,'#899497','#899497')
+dz_tie=tie['trialZmm']-trial['bendEndXZ'][1]
+radius=trial['bendRadiusMm']
+x_tie=trial['legX']+radius-math.sqrt(radius**2-dz_tie**2)
+dot(*tie_page(x_tie,(yl+yr)/2),11.875,red,red)
+label(630,1518,'Teal  H10 U with two 425 mm straight legs','panel')
+label(630,1551,'Red  H25 turn      Dark grey  H20      Light grey  H16','small')
+label(630,1594,'Dashed lines mark the existing 180 mm concrete.','note')
+label(630,1622,'The solid lines add 28 mm at each face.','note')
+label(630,1650,'42 mm of the trial glass insulation remains.','note')
+label(630,1692,'One permitted setout leaves only 12.53 mm','note')
+label(630,1718,'between the nose and a vertical H16.','note')
+label(49,1771,'The expanded trial separates these bars. Concrete placing, anchorage and the two-arm force path remain open.','small')
 parts.extend(['</svg>',''])
 svg='\n'.join(parts)
 out=args.output or Path(__file__).with_suffix('.svg')

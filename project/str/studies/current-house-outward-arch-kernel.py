@@ -48,7 +48,22 @@ for crack in [.2,.35]:
         residual=max(abs(a+b) for a,b in zip(applied,recovered))
         maximum=max(maximum,residual)
         assert residual<1e-5,(applied,recovered)
-    results.append({'crackedEI':crack,'strongLimitError':err,'weakLimitError':weak_error,
+    # An independently condensed fixed-end stiffness gives the response
+    # of the same member with exactly zero transverse moment. Compare
+    # against the direct solve with that physical DOF left free.
+    released=Spatial(s,160,crack,release_near_rotation=True)
+    pivot=physical.columns[2]
+    condensed=[[r-pivot[i]*row[2]/pivot[2] for i,r in enumerate(row)]
+               for row in physical.columns]
+    hinge_error=max(abs(a-b) for row,other in zip(condensed,released.columns) for a,b in zip(row,other))
+    assert hinge_error < 1e-5
+    ends=[.12*i for i in range(12)]
+    _,fixed_r=physical.response(ends,load)
+    _,released_r=released.response(ends,load)
+    corrected=[r-v*fixed_r[2]/pivot[2] for r,v in zip(fixed_r,pivot)]
+    assert max(abs(a-b) for a,b in zip(corrected,released_r)) < 1e-5
+    assert abs(released_r[2]) < 1e-6
+    results.append({'crackedEI':crack,'releasedColumnError':hinge_error,'strongLimitError':err,'weakLimitError':weak_error,
                     'maximumSixComponentEquilibriumResidual':maximum,'actualCGGravity':total})
 
 geometry=runpy.run_path(str(D/'arch-width-geometry.py'))

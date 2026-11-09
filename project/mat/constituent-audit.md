@@ -50,6 +50,8 @@ The search covered the owning house, IAS/OAS/HAD/BCR/ROF/RWT sources and relevan
 
 ## A. Ground, structure and envelope
 
+The [pre-site envelope disposition](envelope-disposition.md) applies these rows, the roof and openings entries and the common retained-material controls to the current house. It records a rejected capillary-isolation claim and the remaining work at the roof and glazing interfaces.
+
 All rows in this section feed **MAT-ENVELOPE**, with STR/BCR and the owning assembly designers; DPL retains actual ground and water evidence.
 
 | ID / assembly | Applicability and exposure | Constituent finding and unresolved scope | Source |

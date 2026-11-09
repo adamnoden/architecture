@@ -51,6 +51,8 @@ Historical holds preserve the old source identities and technical learning. Exis
 
 ## Design comparisons
 
+- [Envelope material choices and three direct shaft-to-core paths](envelope-disposition.md) — joins the ground, roof, opening and exterior-finish alternatives. The ordinary DPC and cut room sheet leave concrete routes into three upper supports. The current architectural and structural roof edges also differ by 197.52 mm. Complete envelope selection remains open.
+
 - [One continuous RC floor and its wall boundary](floor-pour-boundary.md) — source-bound upper pour, lower interface, trial batch and curing duties, actual DPC/core/door cuts, a [pair of independently stopped court-wall trays](floor-pour-boundary.md#drain-the-south-courtyard-wall-above-its-landing), and one finite floor air allocation. Selection and physical evidence remain open.
 
 - [Join the fixed mineral base and court air path](court-air-path.md) — one conditional ordinary overlap/cap/sill/boot comparison, with real dry bends, source-bound upper-tray clearances, registered 3D corner entries and one shared opening-family account. The new front downfold is withdrawn. Actual contact, support, movement, material, water/capillary, thermal and renewal performance remain unadmitted; no owning geometry is adopted.

@@ -1,5 +1,7 @@
 # IAS-03 — selected interior family for the joined house candidate
 
+The [occurrence and exit ledger](ias-03-current-occurrences-and-exits.md#explicit-ias-03-exit-ledger) identifies the work still required for interior-family selection. The [utility sink release](ias-03-utility-host-revised-route.md#utility-sink-release-8-november-2026) follows one bowl through cutover, withdrawal and first dry rest.
+
 **1 November 2026 · development checkpoint, not an adoption or construction release.** Base main is `546c98f93a3dccbfe48119bd2e92117b6e2d766f`. The current composition input is the explicitly FAILED HAD27/30 trial commit `068e33ae52bbaa5ab0c3e3551350400e958e4033`, `project/had/studies/open-north-loggia.json` blob `5f5dd336be7cdadfd83cb869fb8257fad6b5b273`. Ordinary corrections were first checked against20ff8709 / bd3ba605 and are rerun against this composed/guarded source. Earlier checkpoint input a324/1412 remains provenance, not the current finish model. That immutable comparison is not accepted RH-LAYOUT-REVISION-02. Fetch its Git object when absent; do not manufacture a parent or silently copy its geometry into the accepted compiler.
 
 ## Current working boundary — 23:10 UTC
