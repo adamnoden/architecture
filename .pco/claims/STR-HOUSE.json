@@ -9,9 +9,9 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T00:07:47.473Z",
-  "heartbeatAt": "2026-11-09T00:28:11.620Z",
-  "expiresAt": "2026-11-09T01:13:11.620Z",
-  "branch": "work/fabric-joined-60837041",
+  "heartbeatAt": "2026-11-09T00:35:25.665Z",
+  "expiresAt": "2026-11-09T01:20:25.665Z",
+  "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "064434de-951d-45ba-b8d1-9b76ea3972a6",
     "generation": 32,
@@ -32,9 +32,9 @@
       "next": "Compare an inclined or positively retained rotating bearing against the continuous joint. Rejoin simultaneous signed actions at both windows, placement and confinement."
     }
   },
-  "pr": 1407,
+  "pr": 1406,
   "checkpoint": {
-    "evidence": "PR #1407, 2dc81ec0: both transverse U and compression-only bearing comparisons; all nine regressions and both generated artefact reproductions passed.",
-    "next": "Coordinate the #1406 combined tree retaining this exact ancestor; full CI and expected-head lease preflight, verify main and release."
+    "evidence": "Combined PR #1406, 4ddb988d, includes the complete STR parent 2dc81ec0 byte-for-byte, alongside MAT and IAS. Nine local structural regressions and generated results verified, sheet inspected.",
+    "next": "Wait for all validation on final combined head and current main; run fresh STR-HOUSE preflight, integrate, and release."
   }
 }
