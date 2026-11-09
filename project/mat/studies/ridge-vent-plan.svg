@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="640" viewBox="0 0 1250 640" role="img" aria-labelledby="title desc">
+<title id="title">Cold roof channels at the raised ridge</title>
+<desc id="desc">A square roof and an enlarged north-side plan compare a direct eave-to-ridge route, an outer route ending at a hip, and an inner route starting at a valley. Valley and hip openings are unproven.</desc>
+<rect width="1250" height="640" fill="#fcfbf7"/>
+<g font-family="DejaVu Sans, Arial, sans-serif" fill="#202e35">
+<text x="30.00" y="42.00" fill="#202e35" font-size="28" font-weight="700" text-anchor="start">Which roof channels reach the raised ridge?</text>
+<text x="31.00" y="69.00" fill="#425765" font-size="15" font-weight="400" text-anchor="start">Straight north-side section projected on the full square ring. Distances are in millimetres.</text>
+<polyline points="30.00,88.00 1220.00,88.00" fill="none" stroke="#b9c4c4" stroke-width="1" stroke-linejoin="round"/>
+<text x="30.00" y="120.00" fill="#202e35" font-size="19" font-weight="700" text-anchor="start">01   Whole roof</text>
+<text x="475.00" y="120.00" fill="#202e35" font-size="19" font-weight="700" text-anchor="start">02   North face, enlarged</text>
+<polygon points="42.00,158.00 410.00,158.00 410.00,526.00 42.00,526.00 42.00,158.00" fill="#e7f0ee"/>
+<polygon points="111.00,227.00 341.00,227.00 341.00,457.00 111.00,457.00 111.00,227.00" fill="#ebedf4"/>
+<polygon points="180.00,296.00 272.00,296.00 272.00,388.00 180.00,388.00 180.00,296.00" fill="#fcfbf7"/>
+<polygon points="103.58,219.58 348.42,219.58 348.42,464.42 103.58,464.42 103.58,219.58" fill="#aac0ad"/>
+<polygon points="118.42,234.42 333.58,234.42 333.58,449.58 118.42,449.58 118.42,234.42" fill="#ebedf4"/>
+<polygon points="180.00,296.00 272.00,296.00 272.00,388.00 180.00,388.00 180.00,296.00" fill="#fcfbf7"/>
+<polyline points="42.00,158.00 111.00,227.00" fill="none" stroke="#62766e" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="111.00,227.00 180.00,296.00" fill="none" stroke="#747993" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="410.00,158.00 341.00,227.00" fill="none" stroke="#62766e" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="341.00,227.00 272.00,296.00" fill="none" stroke="#747993" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="42.00,526.00 111.00,457.00" fill="none" stroke="#62766e" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="111.00,457.00 180.00,388.00" fill="none" stroke="#747993" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="410.00,526.00 341.00,457.00" fill="none" stroke="#62766e" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="341.00,457.00 272.00,388.00" fill="none" stroke="#747993" stroke-width="1.2" stroke-linejoin="round"/>
+<polyline points="42.00,158.00 410.00,158.00 410.00,526.00 42.00,526.00 42.00,158.00" fill="none" stroke="#202e35" stroke-width="1.1" stroke-linejoin="round"/>
+<polyline points="180.00,296.00 272.00,296.00 272.00,388.00 180.00,388.00 180.00,296.00" fill="none" stroke="#202e35" stroke-width="1.1" stroke-linejoin="round"/>
+<polyline points="102.39,218.39 349.61,218.39 349.61,465.61 102.39,465.61 102.39,218.39" fill="none" stroke="#425765" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="2 2"/>
+<polyline points="119.61,235.61 332.39,235.61 332.39,448.39 119.61,448.39 119.61,235.61" fill="none" stroke="#425765" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="2 2"/>
+<polyline points="111.00,227.00 341.00,227.00 341.00,457.00 111.00,457.00 111.00,227.00" fill="none" stroke="#202e35" stroke-width="1.1" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<text x="226.00" y="148.00" fill="#202e35" font-size="14" font-weight="700" text-anchor="middle">12400 outer eave · north</text>
+<text x="226.00" y="341.00" fill="#202e35" font-size="13" font-weight="700" text-anchor="middle">Court eave</text>
+<text x="226.00" y="359.00" fill="#202e35" font-size="14" font-weight="400" text-anchor="middle">3100</text>
+<text x="42.00" y="559.00" fill="#425765" font-size="14" font-weight="400" text-anchor="start">Grey diagonals meet at the ridge corners.</text>
+<text x="42.00" y="582.00" fill="#425765" font-size="14" font-weight="400" text-anchor="start">The enlarged plan shows the north face only.</text>
+<polygon points="475.00,161.00 1218.00,161.00 1093.67,285.33 599.33,285.33" fill="#e7f0ee"/>
+<polygon points="599.33,285.33 1093.67,285.33 1063.71,315.29 629.29,315.29" fill="#aac0ad"/>
+<polygon points="629.29,315.29 1063.71,315.29 939.38,439.62 753.62,439.62" fill="#ebedf4"/>
+<polyline points="475.00,161.00 1218.00,161.00" fill="none" stroke="#202e35" stroke-width="1.7" stroke-linejoin="round"/>
+<polyline points="753.62,439.62 939.38,439.62" fill="none" stroke="#202e35" stroke-width="1.7" stroke-linejoin="round"/>
+<polyline points="475.00,161.00 614.31,300.31" fill="none" stroke="#62766e" stroke-width="1.5" stroke-linejoin="round"/>
+<polyline points="614.31,300.31 753.62,439.62" fill="none" stroke="#747993" stroke-width="1.5" stroke-linejoin="round"/>
+<polyline points="1218.00,161.00 1078.69,300.31" fill="none" stroke="#62766e" stroke-width="1.5" stroke-linejoin="round"/>
+<polyline points="1078.69,300.31 939.38,439.62" fill="none" stroke="#747993" stroke-width="1.5" stroke-linejoin="round"/>
+<polyline points="596.94,282.94 1096.06,282.94" fill="none" stroke="#425765" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="631.69,317.69 1061.31,317.69" fill="none" stroke="#425765" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<polyline points="614.31,300.31 1078.69,300.31" fill="none" stroke="#202e35" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<polyline points="546.90,161.00 546.90,232.90" fill="none" stroke="#a24812" stroke-width="3.3" stroke-linejoin="round"/>
+<polygon points="546.90,232.90 541.90,223.90 551.90,223.90" fill="#a24812"/>
+<circle cx="546.90" cy="161.00" r="3.8" fill="#a24812" stroke="#a24812" stroke-width="2"/>
+<text x="555.90" y="200.95" fill="#a24812" font-size="15" font-weight="700" text-anchor="start">B</text>
+<polyline points="862.70,161.00 862.70,282.94" fill="none" stroke="#116859" stroke-width="3.3" stroke-linejoin="round"/>
+<polygon points="862.70,282.94 857.70,273.94 867.70,273.94" fill="#116859"/>
+<circle cx="862.70" cy="161.00" r="3.8" fill="#116859" stroke="#116859" stroke-width="2"/>
+<text x="871.70" y="225.97" fill="#116859" font-size="15" font-weight="700" text-anchor="start">A</text>
+<polyline points="690.71,376.71 690.71,317.69" fill="none" stroke="#6a4e9a" stroke-width="3.3" stroke-linejoin="round"/>
+<polygon points="690.71,317.69 685.71,326.69 695.71,326.69" fill="#6a4e9a"/>
+<circle cx="690.71" cy="376.71" r="3.8" fill="#fcfbf7" stroke="#6a4e9a" stroke-width="2"/>
+<text x="699.71" y="351.20" fill="#6a4e9a" font-size="15" font-weight="700" text-anchor="start">C</text>
+<text x="1026.26" y="149.00" fill="#425765" font-size="13" font-weight="400" text-anchor="middle">Outer eave  q = -200</text>
+<text x="846.50" y="461.62" fill="#425765" font-size="13" font-weight="400" text-anchor="middle">Court eave  q = 4450</text>
+<polyline points="478.00,489.00 507.00,489.00" fill="none" stroke="#202e35" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<text x="515.00" y="493.00" fill="#202e35" font-size="13" font-weight="400" text-anchor="start">Ridge axis q = 2125</text>
+<polygon points="685.00,484.00 711.00,484.00 711.00,494.00 685.00,494.00" fill="#aac0ad"/>
+<text x="719.00" y="493.00" fill="#202e35" font-size="13" font-weight="400" text-anchor="start">Mitred curb ±250</text>
+<polyline points="885.00,489.00 914.00,489.00" fill="none" stroke="#425765" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<text x="923.00" y="493.00" fill="#202e35" font-size="13" font-weight="400" text-anchor="start">Upper-board cutoff ±290</text>
+<text x="475.00" y="524.00" fill="#116859" font-size="14" font-weight="700" text-anchor="start">A   X6270.42</text>
+<text x="573.00" y="524.00" fill="#202e35" font-size="14" font-weight="400" text-anchor="start">Exterior eave to field-board end.</text>
+<text x="475.00" y="552.00" fill="#a24812" font-size="14" font-weight="700" text-anchor="start">B   X1000</text>
+<text x="573.00" y="552.00" fill="#202e35" font-size="14" font-weight="400" text-anchor="start">Exterior eave to hip. The straight ridge misses this channel.</text>
+<text x="475.00" y="580.00" fill="#6a4e9a" font-size="14" font-weight="700" text-anchor="start">C   X3400</text>
+<text x="573.00" y="580.00" fill="#202e35" font-size="14" font-weight="400" text-anchor="start">Valley to field-board end. No valley inlet is established.</text>
+<polyline points="30.00,601.00 1220.00,601.00" fill="none" stroke="#b9c4c4" stroke-width="1" stroke-linejoin="round"/>
+<text x="31.00" y="626.00" fill="#425765" font-size="14" font-weight="400" text-anchor="start">Arrows trace potential uphill air paths. Water falls from the ridge towards the eaves. A hip outlet or valley inlet needs its own exterior detail.</text>
+</g>
+</svg>

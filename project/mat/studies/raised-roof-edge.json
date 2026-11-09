@@ -92,5 +92,106 @@
     27.253434598373545,
     82.42233054649813
   ],
-  "upperClearanceNormal": 9.99999999999963
+  "upperClearanceNormal": 9.99999999999963,
+  "fieldVentRoutes": {
+    "ringSides": 4,
+    "pitchedFields": 8,
+    "levels": {
+      "order": [
+        "physical eave",
+        "field board cutoff",
+        "curb"
+      ],
+      "outerQ": [
+        -200,
+        1835,
+        1875
+      ],
+      "courtQ": [
+        4450,
+        2415,
+        2375
+      ],
+      "outerFaceWidthsMm": [
+        12400,
+        8330,
+        8250
+      ],
+      "courtFaceWidthsMm": [
+        3100,
+        7170,
+        7250
+      ]
+    },
+    "outer": {
+      "directEaveToFullCurbTurnMm": 8250,
+      "eaveWidthMeetingHipBeforeCutMm": 4070,
+      "certainNoRouteFractionOfEave": 0.3282258064516129,
+      "cutToCurbMitreTransitionEachEndMm": 40
+    },
+    "court": {
+      "directEaveToFullCurbTurnMm": 3100,
+      "cutWidthTracingToValleyWithoutEaveMm": 4070,
+      "unfedFractionOfFieldCut": 0.5676429567642957,
+      "curbOutsideFieldCutEachEndMm": 40
+    },
+    "ridgeAxisAreaBookkeeping": {
+      "sideLengthMm": 7750,
+      "perimeterMm": 31000,
+      "outerEquivalentMm": 24.0,
+      "courtEquivalentMm": 6.0
+    },
+    "diagonalComparisons": {
+      "eaveToCutHorizontalAdvanceMm": 2035,
+      "eaveToCutSlopingLengthMm": 3030.334914192295,
+      "areaAtOneOuterHipMm2": 61050,
+      "areaAtOneInnerValleyMm2": 61050,
+      "equivalentMmAlongEitherDiagonal": 20.14628802713454
+    },
+    "endClosureCases": [
+      {
+        "sealedLengthEachCurbEndMm": 0,
+        "outerOpenIntervalP": [
+          1875,
+          10125
+        ],
+        "courtOpenIntervalP": [
+          2375,
+          9625
+        ],
+        "outerEaveWidthReachingOpenCurbMm": 8250,
+        "courtEaveWidthReachingOpenCurbMm": 3100,
+        "outerEaveWitnessP": 1925,
+        "outerWitnessHasExit": true
+      },
+      {
+        "sealedLengthEachCurbEndMm": 100,
+        "outerOpenIntervalP": [
+          1975,
+          10025
+        ],
+        "courtOpenIntervalP": [
+          2475,
+          9525
+        ],
+        "outerEaveWidthReachingOpenCurbMm": 8050,
+        "courtEaveWidthReachingOpenCurbMm": 3100,
+        "outerEaveWitnessP": 1925,
+        "outerWitnessHasExit": false
+      }
+    ],
+    "cornerHeaderTrial": {
+      "clearWidthBorrowedFromCapHalfMm": 250,
+      "clearDepthBorrowedFromFieldMm": 50,
+      "unmeshedGrossMm2": 12500,
+      "oneOuterFaceCornerDemandMm2": 30525,
+      "minimumClearWidthAtFieldDepthMm": 610.5
+    },
+    "courtIntakeTrial": {
+      "equalAreaForWholeFieldCutMm2": 107550,
+      "grossSlotAtPhysicalEaveMm": 69.38709677419355
+    },
+    "scope": "Projected routes on eight pitched fields around a four-sided square ring. The 40 mm corner transition requires a formed return. Nominal equivalent areas are sensitivities against the inherited eave comparison. The header assumes an unobstructed transverse section. The valley is an intake-area analogy only. Actual rails, screens, rain, fire, flow, local resistance, construction and removable terminations still govern.",
+    "ordinaryClearBayStationMm": 6270.416666
+  }
 }
