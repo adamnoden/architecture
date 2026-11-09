@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T02:04:50.662Z",
-  "heartbeatAt": "2026-11-09T02:04:50.662Z",
-  "expiresAt": "2026-11-09T02:49:50.662Z",
+  "heartbeatAt": "2026-11-09T02:17:54.397Z",
+  "expiresAt": "2026-11-09T03:02:54.397Z",
   "branch": "work/fabric-frontier-60837041",
   "predecessor": {
     "leaseId": "d3ae039d-782a-423b-8d0e-69bc796478ac",
@@ -31,5 +31,10 @@
       "evidence": "Four-lane #1409 at 9b47e87f / tree 37ab1224. Full IAS source matches independently reviewed 27da3065, and the added STR lines are isolated.",
       "next": "Wait for exact CI and fresh lease/main/branch check; expected-head merge, provenance and issue reconciliation, then release."
     }
+  },
+  "pr": 1416,
+  "checkpoint": {
+    "evidence": "IAS #1416 source 8630d8e2; Study face pivot/flush trim and EGGER comparator. All numerical and SVG outputs checked and drawn panel inspected. Source remains open for matched complete doorset.",
+    "next": "Join #1414 while preserving source identity; verify exact-head CI, canonical preflight, merger and #941 handoff."
   }
 }
