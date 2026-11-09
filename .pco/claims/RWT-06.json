@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T07:03:05.860Z",
-  "heartbeatAt": "2026-11-09T07:27:43.024Z",
-  "expiresAt": "2026-11-09T08:12:43.024Z",
+  "heartbeatAt": "2026-11-09T07:51:53.243Z",
+  "expiresAt": "2026-11-09T08:36:53.243Z",
   "branch": "work/house-0702-20261109",
   "predecessor": {
     "leaseId": "b61d5ecf-62c0-4f25-9c0b-c8081078b5f0",
