@@ -9,8 +9,8 @@
     "label": "house-design-0710"
   },
   "claimedAt": "2026-11-09T07:12:48.641Z",
-  "heartbeatAt": "2026-11-09T07:12:48.641Z",
-  "expiresAt": "2026-11-09T07:57:48.641Z",
+  "heartbeatAt": "2026-11-09T07:27:30.694Z",
+  "expiresAt": "2026-11-09T08:12:30.694Z",
   "branch": "work/house-rush-0710",
   "predecessor": {
     "leaseId": "8e8e8995-89a1-43e7-a5c6-69f032a8e0aa",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1423 at fb72f6e5 after 14 green checks, exact head e2d14fd2. Issue #1100 comment 6731745879 records the six-file proposal.",
       "next": "HAD/STR qualify three openings and rack, site qualify P17 bypass and frost-safe entry, Services locate utility tails and match the cylinder safety/port group."
     }
+  },
+  "pr": 1439,
+  "checkpoint": {
+    "evidence": "PR #1439 head ffebe2d8 computes native valve/tundish fixture, cart clearance and independent D2",
+    "next": "Integrate mineral successor and W9 energy, review exact-head CI, preflight and merge"
   }
 }
