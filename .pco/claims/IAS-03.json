@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T12:21:49.428Z",
-  "heartbeatAt": "2026-11-09T12:21:49.428Z",
-  "expiresAt": "2026-11-09T13:16:49.428Z",
+  "heartbeatAt": "2026-11-09T12:53:47.843Z",
+  "expiresAt": "2026-11-09T13:48:47.843Z",
   "branch": "work/house-1221-20261109",
   "predecessor": {
     "leaseId": "2d520023-c8d8-4fba-968a-23970a6def89",
@@ -31,5 +31,10 @@
       "evidence": "Merged PR #1453, 1b5f35c44c8f5b90140d084d63a16ad04efab2f8. Fourteen exact-head checks on 704b265e, canonical g39 fence, and issue #941 handoff 6739880460. Occupied upper route needs east window; controlled-vacancy entrance-void alternative is source-bound.",
       "next": "Retain three-bathing control and use fresh dispatcher. Common upper WCs still need connected water/soil release, visible first-wet declaration and supported reinstatement at real room geometry. Reconcile six interiors exits without deferring design conflicts to commissioning."
     }
+  },
+  "pr": 1456,
+  "checkpoint": {
+    "evidence": "Frozen PR #1456 44547a18eb9d466259bce04ab814f20c4739eb9a tree 8aac2727aca41a6f23cda20035bb759f45fbbbd6 on verified #1453 main. Both connected WC exchanges, floor fixings, wet receivers, current six-interface decision and repaired family bath clearance11.40 are registered and tested.",
+    "next": "Check exact hosted runs, reconcile the g34/g69 main if it lands, fence generation 40, merge and hand off the permanent rear wet section / family outlet decision."
   }
 }
