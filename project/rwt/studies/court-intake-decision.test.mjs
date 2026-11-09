@@ -47,6 +47,9 @@ test('the south ordinary window ramp frees the east chamber but consumes the nor
 });
 test('a partitioned 250 to 400 discharge prices real width, tail, back pressure and water load',()=>{
   const s=d.stilling, b=s.basket, nominal=s.screens.find(v=>v.width===300);
+  assert.deepEqual(s.roofPipeTerminal,[7450,7000,-80]);
+  assert(s.pipeJets.every(j=>j.dividerIntrusion>20));
+  assert.equal(s.pipeJets[1].flowLps,4.43895);
   assert(s.spoutEnd<s.dividerX && s.dividerX<s.lipX && s.top>s.spoutZ);
   assert(s.ports[1]<s.crest && s.ports[0]>s.bottom);
   assert(s.portCentresY.every(y=>y-20>=b[1] && y+20<=b[1]+b[3]));

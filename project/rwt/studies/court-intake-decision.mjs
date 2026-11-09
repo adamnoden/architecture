@@ -44,7 +44,7 @@ function inlet(entries, stage, required) {
   }));
 }
 
-function stilling(r, flow) {
+function stilling(r, flow, roofPipe) {
   const {clearOutlet,plan} = r.shield, [invert,soffit] = clearOutlet.z;
   const q=flow/1000, slots=8, openSlots=6, portSide=40, basket=[7355,6605,190,590];
   const tailDepth=channelAtFlow(flow,.6,.02,50/4250).depthMm, tail=invert+tailDepth;
@@ -60,13 +60,21 @@ function stilling(r, flow) {
       stressedCrestRange:[tail+5+10+5,soffit-20-head-5]};
   });
   const reference=screens.find(s=>s.width===300);
+  const [pipeX,,pipeZ]=roofPipe.route.at(-1), bore=roofPipe.insideDiameter/1000;
+  const longDuty=read('temporary-two-path-control.json').states.find(item=>item.combinedEBackupDutyLps).combinedEBackupDutyLps;
+  const pipeJets=[flow,longDuty].map(flowLps=>{
+    const rate=flowLps/1000, pipeSpeed=rate/(Math.PI*bore*bore/4);
+    const speed=Math.sqrt(pipeSpeed**2+2*gravity*(pipeZ-top)/1000);
+    const radius=1000*Math.sqrt(rate/(Math.PI*speed));
+    return {flowLps,radius,dividerIntrusion:radius-Math.abs(dividerX-pipeX)};
+  });
   // Horizontal-jet analogue only, at the narrow impact cell. A vertical plunge is different.
   const spoutZ=r.courtCollector.actualOpenEntries.catchCover.gutterBedEnds[1];
   const impactSpeed=Math.sqrt(2*gravity*(spoutZ-bottom)/1000);
   const y1=q/(.2*impactSpeed), fr=impactSpeed/Math.sqrt(gravity*y1);
   return {plan,basket,bottom,top,dividerX,spoutZ,spoutEnd:r.courtCollector.actualOpenEntries.catchCover.spoutEndX,
     ports,portCentresY:Array.from({length:slots},(_,i)=>6680+i*50),lipX:7545,lipY:[6660,7060],crest,
-    tailDepth,tail,invert,soffit,minimumEffective,minimumGrossAtQuarter:minimumEffective/.75,
+    roofPipeTerminal:roofPipe.route.at(-1),pipeJets,tailDepth,tail,invert,soffit,minimumEffective,minimumGrossAtQuarter:minimumEffective/.75,
     stressedMinimumGross:1000*q/Math.sqrt(gravity*((maxHead-15)/2000)**3)/.75,screens,v,portLoss,
     inletStage:reference.stage+portLoss,operatingDepth:reference.stage+portLoss-bottom,
     lowerReserveAtRaisedTail:crest-(tail+5)-10,upperReserveAtRaisedCrest:reference.upperReserve-5,
@@ -104,7 +112,7 @@ export function courtDecision(){
       normalStoredOverlap:clip(parked,turnout.normal),strokeToClearEast:toClear,
       wallOvershoot:m.court[0]-(ramp[0]-toClear),blockedStaticKPa:turnout.blockedStaticKPa,
       blockedCoverLiftKN:turnout.coverLiftKN},
-    stilling:stilling(r,duty)};
+    stilling:stilling(r,duty,m.maintenanceRainReference.northMaintenance.courtRoof.pipe)};
   return structuredClone(result);
 }
 
