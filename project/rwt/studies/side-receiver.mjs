@@ -97,6 +97,46 @@ function highTurn(spool, low, east) {
     lowestLockedDraw,allDrawObstaclesQualified:false,hydraulicallyAccepted:false,siteAccepted:false};
 }
 
+// Deliberately gift a clean independent receiver and no downstream losses.
+function blockedCatcher(high,low) {
+  const flow=low.duty, floor=high.crest, firstWet=high.rearSill, sheet=low.choices.sheet;
+  const longState=read('temporary-two-path-control.json').states.find(s=>s.state==='N LONG OPEN');
+  const storageUpperLitres=low.limits[0].width*high.mobile[3]*(firstWet-floor)/1e6;
+  const accessAllowance=high.assumedCombinedRigidAndDeformation;
+  const guideNorth=high.fixedGuides[1]+high.guideHead/2;
+  const drawSouth=low.drawFieldY[0], grossSlot=drawSouth-guideNorth-2*accessAllowance;
+  const clearSlot=grossSlot-2*sheet, north=drawSouth-accessAllowance, south=guideNorth+accessAllowance;
+  const slotY=(north+south)/2, westWall=high.mobile[0];
+  const minimumEnergy=width=>1500*Math.cbrt((flow/width)**2/9.81);
+  const maximumQuietCapacity=(width,head)=>width*Math.sqrt(9.81)*(head/1500)**1.5;
+  const idealAtFloor=firstWet-floor+low.kineticCredit;
+  // Independent low-side opening at -1045 may assist during ordinary partial
+  // obstruction. Also test the stronger always-wet opening at the tray floor.
+  const slotCrest=-1045, available=firstWet-slotCrest+low.kineticCredit;
+  const cornerX=12450, elbowY=4900, terminalX=12875, lipY=4500;
+  const line=[[westWall,slotY],[cornerX,slotY],[cornerX,elbowY],[terminalX,elbowY],[terminalX,lipY]];
+  const invert=-1100, pathLength=line.slice(1).reduce((l,p,i)=>l+Math.hypot(p[0]-line[i][0],p[1]-line[i][1]),0);
+  const grade=low.grade, rimFrame=high.basin[1]+high.basin[3], lipInvert=invert-pathLength*grade;
+  const catchBox=[cornerX-grossSlot/2,south,westWall-cornerX+grossSlot/2,grossSlot];
+  const mainWestAtElbow=high.tailLine[1][0]+(high.tailLine[2][0]-high.tailLine[1][0])*
+    ((high.tailLine[1][1]-(elbowY+grossSlot/2))/(high.tailLine[1][1]-high.tailLine[2][1]))-high.tailClear/2-sheet;
+  return {storageUpperLitres,longStateCombinedEBackupFlow:longState.combinedEBackupDutyLps,
+    secondsAtLongCombinedEBackup:storageUpperLitres/longState.combinedEBackupDutyLps,secondsToFirstLowEdge:storageUpperLitres/flow,firstWet,lowCurbY:[high.shroudNorth,high.mobile[1]+high.mobile[3]],
+    guideNorth,drawSouth,accessAllowance,grossSlot,clearSlot,slotCrest,south,north,available,idealAtFloor,
+    sideSlotMaximumQuietCapacity:maximumQuietCapacity(clearSlot,available),
+    upperSecondsWithServingSlot:storageUpperLitres/(flow-maximumQuietCapacity(clearSlot,available)),
+    flushMaximumQuietCapacity:maximumQuietCapacity(clearSlot,idealAtFloor),
+    flushDeficit:minimumEnergy(clearSlot)-idealAtFloor,minimumFlushWidth:flow/(Math.sqrt(9.81)*(idealAtFloor/1500)**1.5),
+    zeroClearanceGross:drawSouth-guideNorth,zeroClearanceCleanHeadMargin:idealAtFloor-minimumEnergy(drawSouth-guideNorth),
+    quarterBlockedEvenWithNoMargins:minimumEnergy((drawSouth-guideNorth)*.75)-idealAtFloor,
+    catchBox,line,lipInvert,entryInvert:invert,terminalFall:grade,lipY,rimFrame,
+    bypassToMainAtTopRun:high.tailPolygon[0][0]-(cornerX+grossSlot/2),
+    bypassToMainAtDogleg:mainWestAtElbow-(terminalX+grossSlot/2),
+    basinLeftMargin:terminalX-grossSlot/2-high.basin[0],basinFarMargin:lipY-high.basin[1],
+    outletToRimAtCrossing:lipInvert+(rimFrame-lipY)*grade-sheet-5-(low.fault+low.choices.rimAllowance),
+    physicallyAdmitted:false,receiverIndependentAgainstCommonSiteFlood:false};
+}
+
 // Trial only: preserve the native outlet, rotate the entire receiving territory
 // south and let a removable quiet header feed it without a pressure joint.
 export function sideReceiver() {
@@ -150,7 +190,8 @@ export function sideReceiver() {
     chuteToParkedTrack:chute[0]-fixedRailEnd, fixedRailEnd, chuteToPost:Math.min(...sourcePosts.map(p=>p[0]))-chute[0]-chute[2],
     grade, choices, fault, crestAboveRim, minimumCrest, highestPool, kineticCredit, availableEnergyMm, limits,
     intakeAdmitted:false, maintenanceAdmitted:false, receiverAdopted:false};
-  return {...low, high:highTurn(spool,low,east)};
+  const high=highTurn(spool,low,east);
+  return {...low,high,blocked:blockedCatcher(high,low)};
 }
 
 export function drawing(o) {
@@ -159,7 +200,7 @@ export function drawing(o) {
     `<rect x="${px(x)}" y="${py(y+h)}" width="${w*.151}" height="${h*.088}" fill="${colour}" ${extra}/>`;
   const label = (x,y,s,size=16) => `<text x="${x}" y="${y}" font-size="${size}">${s}</text>`;
   const datum = z => 420-(z+1250)*2.5;
-  let s='<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="1240" viewBox="0 0 1320 1240"><rect width="1320" height="1240" fill="#fbfaf5"/><g font-family="sans-serif" fill="#263d42">';
+  let s='<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="1505" viewBox="0 0 1320 1505"><rect width="1320" height="1505" fill="#fbfaf5"/><g font-family="sans-serif" fill="#263d42">';
   s+=label(35,42,'South receiver comparison',29)+label(35,72,'Ordinary wet route and the straight renewal lane · dimensions in mm',16);
   s+=rect(o.oldBasin,'none','stroke="#89969b" stroke-dasharray="6 5"')+rect(o.oldSpill,'none','stroke="#89969b" stroke-dasharray="6 5"');
   s+=rect([12250,o.drawFieldY[0],3750,o.drawFieldY[1]-o.drawFieldY[0]],'#ded9c8');
@@ -206,6 +247,14 @@ export function drawing(o) {
   s+=label(740,1013,`Plan gap to the nearest represented cap: ${Math.min(...h.nearbyCaps.map(p=>p.excavationPlanGap)).toFixed(1)} mm.`,17);
   s+=label(740,1073,'Tilted, obstructed or splashing water can wet the dry lane.',16);
   s+=label(740,1110,'Tail flow, support reactions and actual ground remain open.',16);
+  const b=o.blocked;
+  s+=label(35,1265,'Complete forward blockage · the rear and low side curbs are first to wet',23);
+  s+=`<polyline points="${b.line.map(([x,y])=>hx(x)+','+hy(y)).join(' ')}" stroke="#9a582f" stroke-width="3" stroke-dasharray="5 3" fill="none"/>`;
+  s+=label(38,1310,`At ${o.duty.toFixed(3)} L/s the empty catcher reaches −1005 in at most ${b.secondsToFirstLowEdge.toFixed(2)} s.`,17);
+  s+=label(38,1350,'Dashed ochre in the plan · proposed separate route to the south basin.',16);
+  s+=label(38,1390,`West guide ends Y${b.guideNorth}. Dry lane starts Y${b.drawSouth}.`,16);
+  s+=label(38,1430,`Clear slot ${b.clearSlot} mm. Ideal width needed even at the floor ${b.minimumFlushWidth.toFixed(1)} mm.`,16);
+  s+=label(38,1470,'Reject this single side slot. The blocked state still lacks a contained escape.',17);
   return s+'</g></svg>\n';
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

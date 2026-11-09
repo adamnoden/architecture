@@ -313,5 +313,74 @@
     "allDrawObstaclesQualified": false,
     "hydraulicallyAccepted": false,
     "siteAccepted": false
+  },
+  "blocked": {
+    "storageUpperLitres": 23.1,
+    "longStateCombinedEBackupFlow": 4.43895,
+    "secondsAtLongCombinedEBackup": 5.203933362619538,
+    "secondsToFirstLowEdge": 6.409989594172737,
+    "firstWet": -1005,
+    "lowCurbY": [
+      6535,
+      6745
+    ],
+    "guideNorth": 6255,
+    "drawSouth": 6425,
+    "accessAllowance": 10,
+    "grossSlot": 150,
+    "clearSlot": 146,
+    "slotCrest": -1045,
+    "south": 6265,
+    "north": 6415,
+    "available": 41.14678899082569,
+    "idealAtFloor": 56.14678899082569,
+    "sideSlotMaximumQuietCapacity": 2.0775639225622626,
+    "upperSecondsWithServingSlot": 15.135769052998976,
+    "flushMaximumQuietCapacity": 3.3115998724863434,
+    "flushDeficit": 3.255446572461608,
+    "minimumFlushWidth": 158.88015468637195,
+    "zeroClearanceGross": 170,
+    "zeroClearanceCleanHeadMargin": 2.4759053075760207,
+    "quarterBlockedEvenWithNoMargins": 8.870856326728607,
+    "catchBox": [
+      12375,
+      6265,
+      273,
+      150
+    ],
+    "line": [
+      [
+        12648,
+        6340
+      ],
+      [
+        12450,
+        6340
+      ],
+      [
+        12450,
+        4900
+      ],
+      [
+        12875,
+        4900
+      ],
+      [
+        12875,
+        4500
+      ]
+    ],
+    "lipInvert": -1124.63,
+    "entryInvert": -1100,
+    "terminalFall": 0.01,
+    "lipY": 4500,
+    "rimFrame": 4750,
+    "bypassToMainAtTopRun": 83,
+    "bypassToMainAtDogleg": 41.33333333333394,
+    "basinLeftMargin": 250,
+    "basinFarMargin": 1750,
+    "outletToRimAtCrossing": 95.86999999999989,
+    "physicallyAdmitted": false,
+    "receiverIndependentAgainstCommonSiteFlood": false
   }
 }

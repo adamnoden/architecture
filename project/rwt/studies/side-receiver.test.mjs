@@ -70,3 +70,19 @@ test('the parked catcher and its supports clear the permanent wet path; the pres
   assert.equal(h.hydraulicallyAccepted,false);
   assert.equal(h.siteAccepted,false);
 });
+
+test('blocking the forward mouth reaches the rear before the separate west spill can take the event',()=>{
+  const h=result.high,b=result.blocked;
+  assert.equal(b.storageUpperLitres,23.1);
+  assert.equal(b.longStateCombinedEBackupFlow,4.43895);
+  assert(b.secondsAtLongCombinedEBackup>5.20 && b.secondsAtLongCombinedEBackup<5.21);
+  assert(b.secondsToFirstLowEdge<6.41 && b.secondsToFirstLowEdge>6.40);
+  assert(b.lowCurbY[0]>h.tailLine[0][1] && b.lowCurbY[0]>b.north);
+  assert.equal(b.clearSlot,146);
+  assert(b.flushMaximumQuietCapacity<result.duty && b.minimumFlushWidth>158);
+  assert(b.upperSecondsWithServingSlot<15.2 && b.upperSecondsWithServingSlot>15);
+  assert(b.zeroClearanceCleanHeadMargin>0 && b.quarterBlockedEvenWithNoMargins>8);
+  assert(b.bypassToMainAtTopRun>80 && b.bypassToMainAtDogleg>40);
+  assert(b.outletToRimAtCrossing>95 && b.basinLeftMargin===250);
+  assert.equal(b.physicallyAdmitted,false);
+});
