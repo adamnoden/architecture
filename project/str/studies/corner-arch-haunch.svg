@@ -18,10 +18,12 @@
 <text x="215.802" y="219.633" font-size="13" text-anchor="middle" fill="#213a42">4</text>
 <text x="53" y="465" font-size="14" text-anchor="start" fill="#213a42">Corner pier</text>
 <text x="304" y="345" font-size="16" text-anchor="start" fill="#213a42">Window opening</text>
+<path d="M395.00,460.00 L443.00,460.00" fill="none" stroke="#43585c" stroke-width="2"/>
+<text x="419" y="482" font-size="12" text-anchor="middle" fill="#213a42">100 mm</text>
 <text x="42" y="509" font-size="15" text-anchor="start" fill="#213a42">Rust: local thickening   ·   Green: retained H16 paths</text>
 <text x="42" y="539" font-size="15" text-anchor="start" fill="#213a42">82.3% of the wedge volume overlaps the modeled pier.</text>
 <text x="552" y="114" font-size="20" text-anchor="start" fill="#213a42">Same load case, four retained bars</text>
-<text x="552" y="158" font-size="15" text-anchor="start" fill="#213a42">18 arch members</text>
+<text x="552" y="158" font-size="15" text-anchor="start" fill="#213a42">18 members · |M|</text>
 <text x="873" y="158" font-size="15" text-anchor="end" fill="#213a42">Existing</text>
 <text x="1033" y="158" font-size="15" text-anchor="end" fill="#213a42">Haunched</text>
 <text x="552" y="205" font-size="16" text-anchor="start" fill="#213a42">Strong-axis moment (kNm)</text>

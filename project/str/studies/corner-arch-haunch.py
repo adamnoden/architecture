@@ -58,10 +58,12 @@ def figure(geom, rows):
         label(x-3,y-10,f'{station}',13,anchor='middle')
     label(53,465,'Corner pier',14)
     label(304,345,'Window opening',16)
+    path([(395,460),(443,460)], '#43585c', weight=2)
+    label(419,482,'100 mm',12,anchor='middle')
     label(42,509,'Rust: local thickening   ·   Green: retained H16 paths',15)
     label(42,539,f'{100*geom["fractionWithinPier"]:.1f}% of the wedge volume overlaps the modeled pier.',15)
     label(552,114,'Same load case, four retained bars',20)
-    label(552,158,'18 arch members',15)
+    label(552,158,'18 members · |M|',15)
     label(873,158,'Existing',15,anchor='end')
     label(1033,158,'Haunched',15,anchor='end')
     for y, name, key, fmt in [(205,'Strong-axis moment (kNm)','Ms','.2f'),

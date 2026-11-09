@@ -132,6 +132,60 @@
           "exactAxialInteraction": 1.187581497340187,
           "binnedInteraction": 1.1887069694493178,
           "withoutPercentRoundingInteraction": 1.1774758359336133
+        },
+        "window1": {
+          "signedEnd": {
+            "compressionKN": 18.699683603933494,
+            "minusNormalKNm": 19.684031785197003,
+            "radialKNm": -2.376895082980588,
+            "torsionKNm": 1.8749479605610555
+          },
+          "retained": {
+            "asCastSectionMm": [
+              170.0,
+              205
+            ],
+            "adverseRadialBarAxesMm": [
+              54.0,
+              151.0
+            ],
+            "torsionCellMm": [
+              119.0,
+              84.0
+            ],
+            "torsionDebit": 0.10889225883423118,
+            "steelFraction": 0.84,
+            "exactAxialResistanceKNm": [
+              19.31140506150545,
+              14.616733923917144
+            ],
+            "exactAxialInteraction": 1.181910332426748,
+            "binnedInteraction": 1.184053622140142,
+            "withoutPercentRoundingInteraction": 1.1807568478859074
+          },
+          "relaid": {
+            "asCastSectionMm": [
+              170.0,
+              205
+            ],
+            "adverseRadialBarAxesMm": [
+              54.0,
+              151.0
+            ],
+            "torsionCellMm": [
+              119.0,
+              84.0
+            ],
+            "torsionDebit": 0.10889225883423118,
+            "steelFraction": 0.84,
+            "exactAxialResistanceKNm": [
+              19.31140506150545,
+              14.616733923917144
+            ],
+            "exactAxialInteraction": 1.181910332426748,
+            "binnedInteraction": 1.184053622140142,
+            "withoutPercentRoundingInteraction": 1.1807568478859074
+          }
         }
       },
       {
@@ -188,6 +242,60 @@
           "exactAxialInteraction": 1.0060574912308242,
           "binnedInteraction": 1.0066096845295922,
           "withoutPercentRoundingInteraction": 1.001452780155154
+        },
+        "window1": {
+          "signedEnd": {
+            "compressionKN": 20.573143312897365,
+            "minusNormalKNm": 22.700220888279617,
+            "radialKNm": -2.399902572863385,
+            "torsionKNm": 2.013488256790953
+          },
+          "retained": {
+            "asCastSectionMm": [
+              170.0,
+              250
+            ],
+            "adverseRadialBarAxesMm": [
+              54.0,
+              151.0
+            ],
+            "torsionCellMm": [
+              119.0,
+              84.0
+            ],
+            "torsionDebit": 0.11693833057241575,
+            "steelFraction": 0.83,
+            "exactAxialResistanceKNm": [
+              19.695843533104785,
+              15.50327321251183
+            ],
+            "exactAxialInteraction": 1.3073383828012983,
+            "binnedInteraction": 1.3100022866535304,
+            "withoutPercentRoundingInteraction": 1.303885239049983
+          },
+          "relaid": {
+            "asCastSectionMm": [
+              170.0,
+              250
+            ],
+            "adverseRadialBarAxesMm": [
+              54.0,
+              196.0
+            ],
+            "torsionCellMm": [
+              164.0,
+              84.0
+            ],
+            "torsionDebit": 0.10366106007008091,
+            "steelFraction": 0.84,
+            "exactAxialResistanceKNm": [
+              26.477984058200345,
+              15.619821230167878
+            ],
+            "exactAxialInteraction": 1.0109690545754078,
+            "binnedInteraction": 1.012529236430091,
+            "withoutPercentRoundingInteraction": 1.0051067698327096
+          }
         }
       },
       {
@@ -244,6 +352,60 @@
           "exactAxialInteraction": 0.9999816687468451,
           "binnedInteraction": 1.0025062342931796,
           "withoutPercentRoundingInteraction": 0.9987030688770995
+        },
+        "window1": {
+          "signedEnd": {
+            "compressionKN": 21.3154356880048,
+            "minusNormalKNm": 22.693939259388813,
+            "radialKNm": -2.3405025179002283,
+            "torsionKNm": 2.0832895097766686
+          },
+          "retained": {
+            "asCastSectionMm": [
+              170.0,
+              250
+            ],
+            "adverseRadialBarAxesMm": [
+              54.0,
+              151.0
+            ],
+            "torsionCellMm": [
+              119.0,
+              84.0
+            ],
+            "torsionDebit": 0.12099221167576099,
+            "steelFraction": 0.82,
+            "exactAxialResistanceKNm": [
+              19.57675845803376,
+              15.413167658756334
+            ],
+            "exactAxialInteraction": 1.3110794930277294,
+            "binnedInteraction": 1.31727563817595,
+            "withoutPercentRoundingInteraction": 1.3008764945605389
+          },
+          "relaid": {
+            "asCastSectionMm": [
+              170.0,
+              250
+            ],
+            "adverseRadialBarAxesMm": [
+              54.0,
+              196.0
+            ],
+            "torsionCellMm": [
+              164.0,
+              84.0
+            ],
+            "torsionDebit": 0.10725466030803373,
+            "steelFraction": 0.84,
+            "exactAxialResistanceKNm": [
+              26.532237630070536,
+              15.646272444012292
+            ],
+            "exactAxialInteraction": 1.0049230455632279,
+            "binnedInteraction": 1.0084837758272416,
+            "withoutPercentRoundingInteraction": 1.0023945133440544
+          }
         }
       },
       {
@@ -300,6 +462,60 @@
           "exactAxialInteraction": 1.006200560764925,
           "binnedInteraction": 1.0097550063597733,
           "withoutPercentRoundingInteraction": 0.9973093501054525
+        },
+        "window1": {
+          "signedEnd": {
+            "compressionKN": 21.680208624625703,
+            "minusNormalKNm": 22.692302757680835,
+            "radialKNm": -2.309629308018744,
+            "torsionKNm": 2.1178813386964706
+          },
+          "retained": {
+            "asCastSectionMm": [
+              170.0,
+              250
+            ],
+            "adverseRadialBarAxesMm": [
+              54.0,
+              151.0
+            ],
+            "torsionCellMm": [
+              119.0,
+              84.0
+            ],
+            "torsionDebit": 0.1230012180415469,
+            "steelFraction": 0.82,
+            "exactAxialResistanceKNm": [
+              19.603457685302832,
+              15.426188632397157
+            ],
+            "exactAxialInteraction": 1.3072876585958622,
+            "binnedInteraction": 1.31518246562689,
+            "withoutPercentRoundingInteraction": 1.2993787181254874
+          },
+          "relaid": {
+            "asCastSectionMm": [
+              170.0,
+              250
+            ],
+            "adverseRadialBarAxesMm": [
+              54.0,
+              196.0
+            ],
+            "torsionCellMm": [
+              164.0,
+              84.0
+            ],
+            "torsionDebit": 0.1090355625027674,
+            "steelFraction": 0.84,
+            "exactAxialResistanceKNm": [
+              26.558890445709505,
+              15.659266064305776
+            ],
+            "exactAxialInteraction": 1.0019073822004727,
+            "binnedInteraction": 1.0064427423562918,
+            "withoutPercentRoundingInteraction": 1.001020899562568
+          }
         }
       }
     ],

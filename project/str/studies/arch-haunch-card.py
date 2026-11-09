@@ -205,23 +205,31 @@ def run_card(s, api, kernel, normal_class, cage, shape, refinement, addition):
     floor = s['m']['recover']([0.]*8, s['p']['floorLoadCases'][id(roof_wind)])[0]
     wind = solve([house.background(mode, roof_wind, floor) for mode in modes])
     state = [a+b for a, b in zip(dead, wind)]
-    observed = 5
-    rhs, local_dead = gravity[observed]
+    # The same positive facade pressures act in both cases. Only the loaded
+    # window (and the spring being inspected) changes between the two cards.
+    pressure_loads = {}
     for a in range(8):
         if api['active'](wind_code, a):
-            step, load = external(a, 2.25, None)
+            step, pressure_loads[a] = external(a, 2.25, None)
             state = [v+d for v, d in zip(state, step)]
-            if a == observed:
-                rhs = [v+f for v, f in zip(rhs, load)]
-    step, load = external(observed, 0, (1500, 2240))
-    ends = [state[i]+step[i] for i in ids[observed]]
-    local = new.local_actions(new.response(ends, [v+f for v, f in zip(rhs, load)])[0], local_dead)[0]
-    signed = {'compressionKN': -local['endAxial'][0], 'minusNormalKNm': local['strong'][1],
-              'radialKNm': local['weak'][1], 'torsionKNm': local['torsion']}
-    section = cage(180, 'arch', 6000, True)
-    return {'additionMm': addition, 'archElements': count*refinement, 'signedEnd': signed,
-            'retained': near_section(api['mr'], section, addition, False, signed),
-            'relaid': near_section(api['mr'], section, addition, True, signed)}
+
+    def loaded_spring(observed):
+        rhs, local_dead = gravity[observed]
+        if observed in pressure_loads:
+            rhs = [v+f for v, f in zip(rhs, pressure_loads[observed])]
+        step, point = external(observed, 0, (1500, 2240))
+        ends = [state[i]+step[i] for i in ids[observed]]
+        response = new.response(ends, [v+f for v, f in zip(rhs, point)])[0]
+        local = new.local_actions(response, local_dead)[0]
+        signed = {'compressionKN': -local['endAxial'][0], 'minusNormalKNm': local['strong'][1],
+                  'radialKNm': local['weak'][1], 'torsionKNm': local['torsion']}
+        section = cage(180, 'arch', 6000, True)
+        return {'signedEnd': signed,
+                'retained': near_section(api['mr'], section, addition, False, signed),
+                'relaid': near_section(api['mr'], section, addition, True, signed)}
+
+    return {'additionMm': addition, 'archElements': count*refinement,
+            **loaded_spring(5), 'window1': loaded_spring(1)}
 
 
 def compare_cards(extra_depth=None):

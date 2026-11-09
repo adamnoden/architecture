@@ -197,6 +197,7 @@ test('deepening the near spring does not rescue the retained four bars on the ar
     assert.ok(row.signedEnd.minusNormalKNm > baseline.signedEnd.minusNormalKNm);
     assert.ok(row.retained.withoutPercentRoundingInteraction > 1.29);
     assert.ok(row.relaid.torsionCellMm[0] > row.retained.torsionCellMm[0]);
+    assert.ok(row.window1.relaid.binnedInteraction > 1 && row.window1.relaid.binnedInteraction < 1.02);
   }
   const v = geometry.perWindow_m3;
   assert.ok(Math.abs(v.union + v.outsideTheseDomains - geometry.grossWedgePerWindow_m3) < 1e-12);
