@@ -64,6 +64,14 @@
   ],
   "fieldInterferenceAtTopCorner": 154.24163471594875,
   "additionalCapLiftVertical": 165.27541390557326,
+  "crownPinZ": 7695.856477242835,
+  "loweredPurlinCentreZ": 7730.581063337262,
+  "loweredPurlinBoundsZ": [
+    7655.581063337262,
+    7805.581063337262
+  ],
+  "loweredPurlinCentreAbovePin": 34.72458609442674,
+  "pinAboveLoweredPurlinUnderside": 40.27541390557326,
   "trialRidgeCapHalfWidth": 250,
   "trialRidgeCapApexAndEdgeZ": [
     8464.73365326618,

@@ -18,7 +18,8 @@ def compare():
     edge = read('mat/studies/loggia-roof-edge.json')
     network = read('str/studies/current-house-welded-network.json')
     heel = read('str/studies/current-house-welded-heel.json')
-    elevations = read('str/studies/current-house-roof-route.json')['referenceElevations']
+    roof_route = read('str/studies/current-house-roof-route.json')
+    elevations = roof_route['referenceElevations']
     angle = math.radians(roof['pitch'])
     cosine, slope = math.cos(angle), math.tan(angle)
     layers = dict(roof['normalLayers'])
@@ -51,6 +52,13 @@ def compare():
     low_board_at_ridge = ridge+lift-deck_depth/cosine
     board_at_corner = low_board_at_ridge-toe*slope
     clearance = upper + proposed_pack/cosine - board_at_corner
+    # The alternative lowers the same upright RHS below the uninterrupted
+    # deck. Compare with the actual crown pin; Z overlap alone is not clash.
+    pin_z = elevations['rafterCrownCentre']
+    assert math.isclose(elevations['ridgePurlinCentre']-pin_z, roof_route['purlinCentreAbovePin'])
+    lowered_centre = elevations['ridgePurlinCentre']-clearance
+    lowered_bounds = [lowered_centre-purlin['H']/2, lowered_centre+purlin['H']/2]
+    assert lowered_bounds[0] < pin_z < lowered_bounds[1]
     # A raised local saddle with the same pitch on both sides. Its aprons
     # step DOWN onto the main sheets; the existing 25-degree field stays.
     cap_half = 250
@@ -84,6 +92,8 @@ def compare():
         'purlinTopAndCornerOffset':[upper,toe],
         'fieldDeckAtRidgeCentreAndCorner':[low_board_at_ridge,board_at_corner],
         'fieldInterferenceAtTopCorner':upper-board_at_corner, 'additionalCapLiftVertical':clearance,
+        'crownPinZ':pin_z,'loweredPurlinCentreZ':lowered_centre,'loweredPurlinBoundsZ':lowered_bounds,
+        'loweredPurlinCentreAbovePin':lowered_centre-pin_z,'pinAboveLoweredPurlinUnderside':pin_z-lowered_bounds[0],
         'trialRidgeCapHalfWidth':cap_half,'trialRidgeCapApexAndEdgeZ':[cap_apex,cap_edges],
         'ventCurbPanelEndAndDripFromRidge':[cap_half,cap_half+pocket_width,cap_half+hood_projection],
         'screenAllowanceAndNet':[mouth_allowance,net_outlet], 'hoodDrop':lip,
