@@ -9,8 +9,8 @@
     "label": "Joined house assembly 0528"
   },
   "claimedAt": "2026-11-09T05:29:10.679Z",
-  "heartbeatAt": "2026-11-09T06:04:37.966Z",
-  "expiresAt": "2026-11-09T06:49:37.966Z",
+  "heartbeatAt": "2026-11-09T06:19:38.938Z",
+  "expiresAt": "2026-11-09T07:04:38.938Z",
   "branch": "work/swarm-house-assembly-0528-20261109",
   "predecessor": {
     "leaseId": "19d47ec0-ec19-4efa-862e-81e60132b4c5",
@@ -34,7 +34,7 @@
   },
   "pr": 1434,
   "checkpoint": {
-    "evidence": "PR #1434 frozen 83f5a19cb3428366691b6f359835fe53bcdfa017 incorporates merged #1431 2e16d4de0d1e1602965eadaba1de27fb18835d05. All three companion checks plus complete MAT and docs passed locally; original windows study 238d72199c22f64a84dc02366de175829bb0e149. 69.1 mm witness, 2080 mm clearance, inward pane route and conditional 0.658 W/K budget.",
-    "next": "Wait for all 14 workflows on this exact head; canonical g38 preflight and expected-head merge, issue #1100 evidence and handoff. Roof hip/valley air, weather and renewal remain the next distinct internal design choice, alongside actual wet/air seal and support admission."
+    "evidence": "PR #1434 frozen 83f5a19cb3428366691b6f359835fe53bcdfa017 on merged #1431 2e16d4de0d1e1602965eadaba1de27fb18835d05. 13/14 exact hosted checks passed, final Validate PR in progress. Full MAT, docs and all three companion studies passed locally. Independent angular sweep verified the in-material 69.11 mm arch counterexample.",
+    "next": "Confirm final exact-head hosted health then g38 preflight/merge, reconcile #1100 and clean branch. Whole-roof underlay/hip/valley ventilation and renewal now have identified real candidates; keep owner/site admission and remaining window evidence explicit."
   }
 }
