@@ -1,7 +1,7 @@
 # RWT — Rainwater Systems Architecture
 
 **Issue:** #992  
-**State:** RWT-00/01/02/03/04/05 complete at their original research scope; access/transition, the owner-directed successor questions and network synthesis remain.
+**State:** RWT-00 through RWT-06 and the shedding, metals and robustness comparisons are complete. Network synthesis, the shared roof/water selection and regression admission remain.
 
 **1 November metals packet disposition:** [RWT-METALS option-family decision](rwt-metals-option-disposition.md) completes the bounded metal-assembly comparison, **not** assembly installation, material certification or network selection. It keeps conventional accessible copper collection as the control, site-constrained outboard copper receiver as the challenger, fabricated brass/bronze wet bodies on hold, and concealed crossings as exceptions. This unlocks **RWT-ROBUSTNESS** for full-duty single-failure and common-cause testing. Earlier statements within individual 31 October investigations that “RWT-METALS remains planned” are historical checkpoints superseded only as to **packet lifecycle**; their unanswered product, support, repair, leak and site questions remain open at their named downstream gates.
 
