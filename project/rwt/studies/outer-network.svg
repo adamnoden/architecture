@@ -7,49 +7,49 @@
 <path d="M38 99H1220" fill="none" stroke="#a1b7b2" stroke-width="1" stroke-dasharray="none"/>
 <text x="38" y="132" fill="#253d3e" font-family="sans-serif" font-size="21" font-weight="700">01    Outer roof and receiving territory</text>
 <text x="663" y="132" fill="#253d3e" font-family="sans-serif" font-size="21" font-weight="700">02    Where the water goes</text>
-<rect x="107.800" y="159.800" width="92.400" height="26.400" fill="#d5e6cf" stroke="none"/>
-<rect x="107.800" y="159.800" width="26.400" height="336.600" fill="#d5e6cf" stroke="none"/>
-<rect x="107.800" y="470.000" width="103.400" height="26.400" fill="#d5e6cf" stroke="none"/>
-<rect x="283.800" y="470.000" width="26.400" height="26.400" fill="#d5e6cf" stroke="none"/>
-<rect x="250.800" y="694.400" width="59.400" height="26.400" fill="#d5e6cf" stroke="none"/>
-<rect x="217.800" y="470.000" width="59.400" height="26.400" fill="#d5e6cf" stroke="none"/>
-<rect x="184.800" y="694.400" width="59.400" height="26.400" fill="#d5e6cf" stroke="none"/>
-<rect x="184.800" y="470.000" width="26.400" height="26.400" fill="#d5e6cf" stroke="none"/>
-<rect x="283.800" y="496.400" width="26.400" height="198.000" fill="#d5e6cf" stroke="none"/>
-<rect x="250.800" y="496.400" width="26.400" height="198.000" fill="#d5e6cf" stroke="none"/>
-<rect x="217.800" y="496.400" width="26.400" height="198.000" fill="#d5e6cf" stroke="none"/>
-<rect x="184.800" y="496.400" width="26.400" height="198.000" fill="#d5e6cf" stroke="none"/>
-<rect x="258.500" y="136.700" width="33.000" height="37.400" fill="url(#wet)" stroke="#4b7f89"/>
-<rect x="440.000" y="300.600" width="44.000" height="35.200" fill="url(#wet)" stroke="#4b7f89"/>
-<rect x="431.860" y="352.300" width="46.200" height="42.900" fill="#eed9b9" stroke="#c19d69"/>
-<rect x="165.000" y="206.000" width="264.000" height="264.000" fill="#ede9df" stroke="#837f73"/>
-<rect x="211.750" y="252.750" width="170.500" height="170.500" fill="#f5f0e8" stroke="#9b9a8f"/>
-<rect x="264.550" y="305.550" width="64.900" height="64.900" fill="#fcfaf5" stroke="#9b9a8f"/>
-<path d="M160.60 474.40 L264.55 370.45" fill="none" stroke="#bdbaad" stroke-width="1" stroke-dasharray="none"/>
-<path d="M160.60 201.60 L264.55 305.55" fill="none" stroke="#bdbaad" stroke-width="1" stroke-dasharray="none"/>
-<path d="M433.40 474.40 L329.45 370.45" fill="none" stroke="#bdbaad" stroke-width="1" stroke-dasharray="none"/>
-<path d="M433.40 201.60 L329.45 305.55" fill="none" stroke="#bdbaad" stroke-width="1" stroke-dasharray="none"/>
-<path d="M159.06 475.94 L159.06 200.06 L434.94 200.06 L434.94 475.94 L159.06 475.94" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
-<path d="M156.25 478.75 L156.25 197.25 L437.75 197.25 L437.75 478.75 L156.25 478.75" fill="none" stroke="#9e4a38" stroke-width="2" stroke-dasharray="4 3"/>
-<path d="M154.06 338.0 h10" fill="none" stroke="#253d3e" stroke-width="2" stroke-dasharray="none"/>
-<path d="M155.06 389.2 L159.06 395.2 L163.06 389.2" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
-<path d="M155.06 286.8 L159.06 280.8 L163.06 286.8" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
-<path d="M429.94 338.0 h10" fill="none" stroke="#253d3e" stroke-width="2" stroke-dasharray="none"/>
-<path d="M430.94 389.2 L434.94 395.2 L438.94 389.2" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
-<path d="M430.94 286.8 L434.94 280.8 L438.94 286.8" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
-<path d="M363.55 200.06 L363.55 134.50" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
-<circle cx="363.55" cy="200.06" r="4" fill="#227b78"/>
-<path d="M410.30 475.94 L410.30 541.50" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
-<circle cx="410.30" cy="475.94" r="4" fill="#227b78"/>
-<path d="M423.50 197.25 L423.50 134.50" fill="none" stroke="#9e4a38" stroke-width="2" stroke-dasharray="none"/>
-<circle cx="423.50" cy="197.25" r="4" fill="#9e4a38"/>
-<path d="M423.50 478.75 L423.50 541.50" fill="none" stroke="#9e4a38" stroke-width="2" stroke-dasharray="none"/>
-<circle cx="423.50" cy="478.75" r="4" fill="#9e4a38"/>
-<path d="M261.0 368.0 l6 6 M261.0 374.0 l6 -6" fill="none" stroke="#772939" stroke-width="2" stroke-dasharray="none"/>
-<path d="M261.0 302.0 l6 6 M261.0 308.0 l6 -6" fill="none" stroke="#772939" stroke-width="2" stroke-dasharray="none"/>
-<path d="M327.0 368.0 l6 6 M327.0 374.0 l6 -6" fill="none" stroke="#772939" stroke-width="2" stroke-dasharray="none"/>
-<path d="M327.0 302.0 l6 6 M327.0 308.0 l6 -6" fill="none" stroke="#772939" stroke-width="2" stroke-dasharray="none"/>
-<text x="268" y="342" fill="#253d3e" font-family="sans-serif" font-size="15" font-weight="700">COURT</text>
+<rect x="109.620" y="179.670" width="89.460" height="25.560" fill="#d5e6cf" stroke="none"/>
+<rect x="109.620" y="179.670" width="25.560" height="325.890" fill="#d5e6cf" stroke="none"/>
+<rect x="109.620" y="480.000" width="100.110" height="25.560" fill="#d5e6cf" stroke="none"/>
+<rect x="280.020" y="480.000" width="25.560" height="25.560" fill="#d5e6cf" stroke="none"/>
+<rect x="248.070" y="697.260" width="57.510" height="25.560" fill="#d5e6cf" stroke="none"/>
+<rect x="216.120" y="480.000" width="57.510" height="25.560" fill="#d5e6cf" stroke="none"/>
+<rect x="184.170" y="697.260" width="57.510" height="25.560" fill="#d5e6cf" stroke="none"/>
+<rect x="184.170" y="480.000" width="25.560" height="25.560" fill="#d5e6cf" stroke="none"/>
+<rect x="280.020" y="505.560" width="25.560" height="191.700" fill="#d5e6cf" stroke="none"/>
+<rect x="248.070" y="505.560" width="25.560" height="191.700" fill="#d5e6cf" stroke="none"/>
+<rect x="216.120" y="505.560" width="25.560" height="191.700" fill="#d5e6cf" stroke="none"/>
+<rect x="184.170" y="505.560" width="25.560" height="191.700" fill="#d5e6cf" stroke="none"/>
+<rect x="255.525" y="157.305" width="31.950" height="36.210" fill="url(#wet)" stroke="#4b7f89"/>
+<rect x="431.250" y="315.990" width="42.600" height="34.080" fill="url(#wet)" stroke="#4b7f89"/>
+<rect x="423.369" y="366.045" width="44.730" height="41.535" fill="#eed9b9" stroke="#c19d69"/>
+<rect x="165.000" y="224.400" width="255.600" height="255.600" fill="#ede9df" stroke="#837f73"/>
+<rect x="210.262" y="269.663" width="165.075" height="165.075" fill="#f5f0e8" stroke="#9b9a8f"/>
+<rect x="261.382" y="320.783" width="62.835" height="62.835" fill="#fcfaf5" stroke="#9b9a8f"/>
+<path d="M160.74 484.26 L261.38 383.62" fill="none" stroke="#bdbaad" stroke-width="1" stroke-dasharray="none"/>
+<path d="M160.74 220.14 L261.38 320.78" fill="none" stroke="#bdbaad" stroke-width="1" stroke-dasharray="none"/>
+<path d="M424.86 484.26 L324.22 383.62" fill="none" stroke="#bdbaad" stroke-width="1" stroke-dasharray="none"/>
+<path d="M424.86 220.14 L324.22 320.78" fill="none" stroke="#bdbaad" stroke-width="1" stroke-dasharray="none"/>
+<path d="M159.25 485.75 L159.25 218.65 L426.35 218.65 L426.35 485.75 L159.25 485.75" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
+<path d="M156.53 488.47 L156.53 215.93 L429.07 215.93 L429.07 488.47 L156.53 488.47" fill="none" stroke="#9e4a38" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M154.249 352.2 h10" fill="none" stroke="#253d3e" stroke-width="2" stroke-dasharray="none"/>
+<path d="M155.249 401.58 L159.249 407.58 L163.249 401.58" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
+<path d="M155.249 302.82 L159.249 296.82 L163.249 302.82" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
+<path d="M421.351 352.2 h10" fill="none" stroke="#253d3e" stroke-width="2" stroke-dasharray="none"/>
+<path d="M422.351 401.58 L426.351 407.58 L430.351 401.58" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
+<path d="M422.351 302.82 L426.351 296.82 L430.351 302.82" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
+<path d="M357.23 218.65 L357.23 155.18" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
+<circle cx="357.23" cy="218.65" r="4" fill="#227b78"/>
+<path d="M402.50 485.75 L402.50 549.23" fill="none" stroke="#227b78" stroke-width="2" stroke-dasharray="none"/>
+<circle cx="402.50" cy="485.75" r="4" fill="#227b78"/>
+<path d="M415.27 215.93 L415.27 155.18" fill="none" stroke="#9e4a38" stroke-width="2" stroke-dasharray="none"/>
+<circle cx="415.27" cy="215.93" r="4" fill="#9e4a38"/>
+<path d="M415.27 488.47 L415.27 549.23" fill="none" stroke="#9e4a38" stroke-width="2" stroke-dasharray="none"/>
+<circle cx="415.27" cy="488.47" r="4" fill="#9e4a38"/>
+<path d="M257.85 381.15 l6 6 M257.85 387.15 l6 -6" fill="none" stroke="#772939" stroke-width="2" stroke-dasharray="none"/>
+<path d="M257.85 317.25 l6 6 M257.85 323.25 l6 -6" fill="none" stroke="#772939" stroke-width="2" stroke-dasharray="none"/>
+<path d="M321.75 381.15 l6 6 M321.75 387.15 l6 -6" fill="none" stroke="#772939" stroke-width="2" stroke-dasharray="none"/>
+<path d="M321.75 317.25 l6 6 M321.75 323.25 l6 -6" fill="none" stroke="#772939" stroke-width="2" stroke-dasharray="none"/>
+<text x="263" y="357" fill="#253d3e" font-family="sans-serif" font-size="15" font-weight="700">COURT</text>
 <text x="663" y="176" fill="#253d3e" font-family="sans-serif" font-size="18" font-weight="400">One outer face loads the eave at 1.405 L/s.</text>
 <text x="663" y="204" fill="#253d3e" font-family="sans-serif" font-size="17" font-weight="400">West and east divide at mid-side. Each half falls</text>
 <text x="663" y="229" fill="#253d3e" font-family="sans-serif" font-size="17" font-weight="400">round its corner to the north or south face.</text>

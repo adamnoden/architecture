@@ -11,9 +11,9 @@ def network_svg(house, service, outer_mm, ridge_mm, sky_mm, points, q_out, q_in,
         sheet.append(f'<text x="{x}" y="{y}" fill="{colour}" font-family="sans-serif" font-size="{size}" font-weight="{700 if bold else 400}">{escape(s)}</text>')
     def path(d,colour,width,dash=''):
         sheet.append(f'<path d="{d}" fill="none" stroke="{colour}" stroke-width="{width}" stroke-dasharray="{dash or "none"}"/>')
-    scale=.022
+    scale=.0213
     def point(x,y):
-        return 165+scale*x, 470-scale*y
+        return 165+scale*x, 480-scale*y
     def rect(x,y,w,h,fill,stroke="none"):
         px,py=point(x,y+h)
         sheet.append(f'<rect x="{px:.3f}" y="{py:.3f}" width="{w*scale:.3f}" height="{h*scale:.3f}" fill="{fill}" stroke="{stroke}"/>')
@@ -65,7 +65,7 @@ def network_svg(house, service, outer_mm, ridge_mm, sky_mm, points, q_out, q_in,
         for y in (4500,7500):
             cx,cy=point(x,y)
             path(f'M{cx-3} {cy-3} l6 6 M{cx-3} {cy+3} l6 -6', '#772939', 2)
-    label(268,342,'COURT',15,True)
+    label(263,357,'COURT',15,True)
     label(663,176,f'One outer face loads the eave at {q_out/2:.3f} L/s.',18)
     label(663,204,'West and east divide at mid-side. Each half falls',17)
     label(663,229,'round its corner to the north or south face.',17)
