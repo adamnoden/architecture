@@ -36,11 +36,11 @@ tip = meta['freeTipStation']
 last = meta['lastCreditedStation']
 assert (meta['barDiameterMm'], tip, last) == (25, 12, 1)
 red, blue = '#a33328', '#006367'
-parts = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" width="1200" height="1000" role="img" aria-labelledby="title desc">',
+parts = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400" width="1200" height="1400" role="img" aria-labelledby="title desc">',
          '<title id="title">Corner window arch and central H25 bar</title>',
-         '<desc id="desc">Upper window elevation and bending interaction at 19 stations. The plan below shows the nominal vertical return beside a guard sleeve. Tangent intervals show where a forged head meets existing steel.</desc>',
+         '<desc id="desc">Upper window elevation and bending interaction at 19 stations. The plan below shows the nominal vertical return beside a guard sleeve. Tangent intervals show where a forged head meets existing steel. The final plan and elevation show an in-plane pier cage shift and its tight bend crossing.</desc>',
          '<style>text{font-family:Arial,Helvetica,sans-serif;fill:#152b31}.small{font-size:14px}.note{font-size:15px}.panel{font-size:20px;font-weight:bold}.tick{font-size:13px}</style>',
-         '<rect width="1200" height="1000" fill="#fff"/>']
+         '<rect width="1200" height="1400" fill="#fff"/>']
 
 def line(x1,y1,x2,y2,colour='#899497',width=1,dash=None):
     dashed = f' stroke-dasharray="{dash}"' if dash else ''
@@ -182,6 +182,55 @@ for station_mm in range(0,351,50):
 lo,hi = head['h20CollisionStationsMm'][0],head['h16CollisionStationsMm'][1]
 label(648,949,f'The two obstructions overlap from {lo:.2f} to {hi:.2f} mm.','small')
 label(648,972,'Beyond the head allowance the straight shank reaches the H20.','small')
+trial = detail['inPlaneCage']
+line(32,993,1168,993)
+label(32,1030,'05    Shift the end bars along the wall','panel')
+label(32,1056,'Plan at Z 5570. The two guard sleeves stay on their existing axis.','small')
+def shifted_plan(x,y):
+    return 54+1.32*(x-925), 1080+1.32*(inner-y)
+poly([shifted_plan(x,y) for x,y in ((925,outer),(1300,outer),(1300,inner),(925,inner))],
+     '#879597',1,'#edf0ef','polygon')
+sx = route['sleeveX']
+poly([shifted_plan(x,y) for x,y in ((sx-sleeve_r,outer),(sx+sleeve_r,outer),
+                                      (sx+sleeve_r,inner),(sx-sleeve_r,inner))],
+     '#8b999b',1,'#c9d0d2','polygon')
+for old_s, new_s in zip(trial['stationPairBefore'],trial['stationPairAfter']):
+    for y in lanes:
+        datum = contact['outsideInnerCoreFaces'][0]
+        # Display the two states separately where an end pair moves.
+        dot(*shifted_plan(datum+old_s,y),1.32*10,'none','#8b999b',1)
+        dot(*shifted_plan(datum+new_s,y),1.32*10,'#566769','#34474a')
+for leg in arch_bars['legs']:
+    for y in control['geometry']['normalH16Centres']:
+        dot(*shifted_plan(leg['startVertical'][0],y),1.32*8,'#a9b6b7','#445a5e')
+dot(*shifted_plan(trial['legX'],detail['normalLane']),1.32*12.5,blue,blue)
+label(49,1350,'Outline = original H20. Solid = moved H20. Teal = H25.','small')
+label(49,1373,'The vertical leg fits between the end pair and the H16 tails.','small')
+
+label(631,1030,'06    Through the bend','panel')
+label(631,1056,'Enlarged elevation. The H25 and H16 are on different depth planes.','small')
+# Equal horizontal and vertical scale to show the actual bend angle.
+def turn_page(x,z):
+    return 718+1.03*(x-1080), 1290-1.03*(z-5780)
+bx,bz=trial['bendEndXZ']
+R=trial['bendRadiusMm']
+a=math.pi/2-angle
+points=[turn_page(bx,bz-38)]+[turn_page(bx+R*(1-math.cos(a*i/32)),bz+R*math.sin(a*i/32)) for i in range(33)]
+# The initial tangent extends beyond the drawing crop; it crosses the H16 within the view.
+px,pz=trial['bendStartXZ']
+points.append(turn_page(px+75*math.cos(angle),pz+75*math.sin(angle)))
+poly(points,blue,7)
+x16=route['h16X']
+line(*turn_page(x16,5742),*turn_page(x16,5970),'#819094',5)
+wx,wz=trial['bendAt20DegXZ']
+xx,yy=turn_page(wx,wz)
+dot(xx,yy,4,'white',red,2)
+line(xx+5,yy,905,yy,'#9b7973')
+label(913,yy-6,'20° from vertical','small')
+gap = trial['bendToH16At20DegOnSteelErrorCardMm']
+label(913,yy+15,f'{gap:.1f} mm on one permitted setout','small')
+label(632,1350,'Teal H25 and grey H16 cross in elevation on the tangent.','small')
+label(632,1373,'Concrete access and anchored confinement remain open.','small')
 parts.extend(['</svg>',''])
 svg='\n'.join(parts)
 out=args.output or Path(__file__).with_suffix('.svg')
