@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T00:07:47.473Z",
-  "heartbeatAt": "2026-11-09T00:07:47.473Z",
-  "expiresAt": "2026-11-09T00:52:47.473Z",
+  "heartbeatAt": "2026-11-09T00:17:51.145Z",
+  "expiresAt": "2026-11-09T01:02:51.145Z",
   "branch": "work/fabric-joined-60837041",
   "predecessor": {
     "leaseId": "064434de-951d-45ba-b8d1-9b76ea3972a6",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1400 at 90e9aba6 after all 14 exact-head workflows. Guard sleeves remain; both crossed H16 throats can narrow to 15.5 mm.",
       "next": "Compare an inclined or positively retained rotating bearing against the continuous joint. Rejoin simultaneous signed actions at both windows, placement and confinement."
     }
+  },
+  "pr": 1407,
+  "checkpoint": {
+    "evidence": "PR #1407 f7548e37; eight structural regressions, reproduced data/plan and inspected tie plan.",
+    "next": "Combine with #1406 on current main; exact-head CI and fresh STR lease preflight before integration."
   }
 }
