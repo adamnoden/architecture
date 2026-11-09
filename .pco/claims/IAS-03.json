@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 39,
-  "state": "released",
-  "leaseId": "2d520023-c8d8-4fba-968a-23970a6def89",
+  "generation": 40,
+  "state": "claimed",
+  "leaseId": "239b47c4-8a4b-4aa6-b635-1b512903a2f5",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T10:34:20.965Z",
-  "heartbeatAt": "2026-11-09T12:20:04.257Z",
-  "expiresAt": "2026-11-09T12:20:04.257Z",
-  "branch": "work/house-1033-20261109",
+  "claimedAt": "2026-11-09T12:21:49.428Z",
+  "heartbeatAt": "2026-11-09T12:21:49.428Z",
+  "expiresAt": "2026-11-09T13:16:49.428Z",
+  "branch": "work/house-1221-20261109",
   "predecessor": {
-    "leaseId": "143b555a-66ad-4544-bed6-dc6531d91dfa",
-    "generation": 38,
-    "branch": "work/swarm-house-evidence-0840",
-    "pr": 1446,
+    "leaseId": "2d520023-c8d8-4fba-968a-23970a6def89",
+    "generation": 39,
+    "branch": "work/house-1033-20261109",
+    "pr": 1453,
     "checkpoint": {
-      "evidence": "The bound merged pull request and the open programme issue contain the verified handoff.",
-      "next": "Continue the remaining fitted work against the recorded household choice."
+      "evidence": "Merged PR #1453, 1b5f35c44c8f5b90140d084d63a16ad04efab2f8. Fourteen exact-head checks on 704b265e, canonical g39 fence, and issue #941 handoff 6739880460. Occupied upper route needs east window; controlled-vacancy entrance-void alternative is source-bound.",
+      "next": "Retain three-bathing control and use fresh dispatcher. Common upper WCs still need connected water/soil release, visible first-wet declaration and supported reinstatement at real room geometry. Reconcile six interiors exits without deferring design conflicts to commissioning."
     }
   },
   "recoverySource": {
-    "leaseId": "143b555a-66ad-4544-bed6-dc6531d91dfa",
-    "generation": 38,
-    "branch": "work/swarm-house-evidence-0840",
-    "pr": 1446,
+    "leaseId": "2d520023-c8d8-4fba-968a-23970a6def89",
+    "generation": 39,
+    "branch": "work/house-1033-20261109",
+    "pr": 1453,
     "checkpoint": {
-      "evidence": "The bound merged pull request and the open programme issue contain the verified handoff.",
-      "next": "Continue the remaining fitted work against the recorded household choice."
+      "evidence": "Merged PR #1453, 1b5f35c44c8f5b90140d084d63a16ad04efab2f8. Fourteen exact-head checks on 704b265e, canonical g39 fence, and issue #941 handoff 6739880460. Occupied upper route needs east window; controlled-vacancy entrance-void alternative is source-bound.",
+      "next": "Retain three-bathing control and use fresh dispatcher. Common upper WCs still need connected water/soil release, visible first-wet declaration and supported reinstatement at real room geometry. Reconcile six interiors exits without deferring design conflicts to commissioning."
     }
-  },
-  "checkpoint": {
-    "evidence": "Merged PR #1453, 1b5f35c44c8f5b90140d084d63a16ad04efab2f8. Fourteen exact-head checks on 704b265e, canonical g39 fence, and issue #941 handoff 6739880460. Occupied upper route needs east window; controlled-vacancy entrance-void alternative is source-bound.",
-    "next": "Retain three-bathing control and use fresh dispatcher. Common upper WCs still need connected water/soil release, visible first-wet declaration and supported reinstatement at real room geometry. Reconcile six interiors exits without deferring design conflicts to commissioning."
-  },
-  "pr": 1453,
-  "releasedAt": "2026-11-09T12:20:04.257Z",
-  "releaseReason": "handoff"
+  }
 }
