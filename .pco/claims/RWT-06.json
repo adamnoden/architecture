@@ -9,9 +9,9 @@
     "label": "Programme continuation 1140"
   },
   "claimedAt": "2026-11-09T11:39:16.747Z",
-  "heartbeatAt": "2026-11-09T12:13:53.571Z",
-  "expiresAt": "2026-11-09T12:58:53.571Z",
-  "branch": "work/swarm-final-dispatch-1140",
+  "heartbeatAt": "2026-11-09T12:16:22.752Z",
+  "expiresAt": "2026-11-09T13:01:22.752Z",
+  "branch": "work/swarm-after-services-1138-20261109",
   "predecessor": {
     "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
     "generation": 68,
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Produced the complete two-way north basin bypass, 2.2 m split-hood and staged renewal on main 34b4058c. Graph validates one ready HAD-COURT-BYPASS and blocked RWT-06. Native reproduced results and docs build pass.",
-    "next": "Publish the whitelisted RWT/registry source; validate exact hosted CI, preflight, merge and release. Retain site and wet test conditions."
-  }
+    "evidence": "Frozen immutable RWT source PR #1455 c4a912ce54baf96a0aa04396111956f3b7b1220b on 34b4058c, tree deb8e9f83b1d97b47c60e5a3db056cb78a0d1db9. G34 consents to shared #1454, preserving both original source parents and actual new main.",
+    "next": "After hosted integration verify all eighteen owned RWT/graph source paths and decision, run full tests, await exact CI, independent preflight, merge, verify and release."
+  },
+  "pr": 1454
 }
