@@ -64,6 +64,8 @@ The [connected upper-WC releases](ias-03-upper-wc-release.md) supersede the conc
 
 The [joint three-bathing section](ias-03-three-bathing-sections.md) keeps the private rear shower flush over its priced well, quantifies a raised side-service option, and joins the original family bath to its proposed sleeve, ceiling hatch, worker, steel runway, intact exterior turn and incoming route. Keep the two-bathing programme conditional.
 
+The [household fixture result](ias-03-household-water.md) gives the current detailed basis for IS-01, IS-04 and IS-05. Table entries below describe earlier work still open at their stated checkpoints. The two unresolved connected WC beginnings and the shaft support condition are identified in the current [selection decision](ias-03-selection-closeout.md).
+
 ## Explicit IAS-03 exit ledger
 
 | Exit | Present disposition | Concrete work still owned before IAS closure |
