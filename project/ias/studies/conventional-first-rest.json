@@ -1,7 +1,7 @@
 {
   "status": "Unadopted first-lift/first-rest bounds; no connected installation or handling pass",
   "source": "project/had/studies/water-replan.json",
-  "sourceBlob": "6f089df104fe85c028978892e7f6b63f862e3237",
+  "sourceBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
   "values": {
     "rim": 3450,
     "rcTop": 3370,
@@ -87,8 +87,180 @@
       "qualified temporary boundary and complete restoration"
     ]
   },
+  "renewal": {
+    "sources": {
+      "pecolift": "project/ias/studies/pecolift-static-reference.py",
+      "pecoliftBlob": "d5d122dc8003a09787f37ec0f9402a84b7b16991",
+      "zarges": "project/ias/ias-03-renewal-proportionality-result.md#cold-lower-access-has-a-different-equipment-question",
+      "services": "project/mat/studies/whole-house-service-baseline.json#interfaces.rearShowerDrop",
+      "scope": "Static proposed stations only. No equipment ingress, load, grip, tool or human acceptance."
+    },
+    "clampComparator": {
+      "part": "Fernco PC56",
+      "outsidePipeRange": [
+        48,
+        56
+      ],
+      "bandTorqueNm": 6,
+      "materials": "EPDM cuff and stainless clamp bands",
+      "sources": {
+        "datasheet": "https://www.fernco.de/wp-content/uploads/2024/01/Fernco_DC-PC_Data-Sheet-1.pdf",
+        "table": "https://www.fernco.de/en/product/drain-coupling",
+        "installation": "https://www.fernco.de/wp-content/uploads/2023/05/Fernco_EN_Produktkatalog_2023_einseitig-min-1.pdf",
+        "application": "https://www.fernco.co.uk/product/rubber-plumbing-couplings"
+      },
+      "abuttingEndTrials": [
+        {
+          "width": 70,
+          "secondEndMark": 35,
+          "closedBottomToTopAtD0": [
+            3278,
+            3348
+          ],
+          "maxDAtBoard": 48,
+          "maxDFor25BoardClearance": 23,
+          "strokeToPark": 60,
+          "clearRunOnFixedPipe": 95,
+          "parkedBottomAtD0": 3218,
+          "parkedPenetrationBelowBoardTopAtD0": 12
+        },
+        {
+          "width": 80,
+          "secondEndMark": 40,
+          "closedBottomToTopAtD0": [
+            3273,
+            3353
+          ],
+          "maxDAtBoard": 43,
+          "maxDFor25BoardClearance": 18,
+          "strokeToPark": 65,
+          "clearRunOnFixedPipe": 105,
+          "parkedBottomAtD0": 3208,
+          "parkedPenetrationBelowBoardTopAtD0": 22
+        }
+      ],
+      "limits": "Verify the supplied cuff width, actual straight clamping lands, resistance of the nested outlet to band load, complete band and driver envelope, supports and allowable tension before use."
+    },
+    "closed": {
+      "part": "Geberit Silent-PP 390.217.14.1",
+      "datum": "Subtract d from fitting elevations.",
+      "rcUnderside": 3170,
+      "rcTop": 3370,
+      "boardTop": 3230,
+      "upperPlusLowerOverlap": 93,
+      "upperGrossExtentOnly": 56,
+      "boardClearance": "upperOverlap - boardDebit - d",
+      "boardDebit": 20,
+      "centredOverlapEach": 46.5,
+      "centredBottomToTopAtD0": [
+        3256.5,
+        3359.5
+      ],
+      "maxCentredDForZeroBoardGap": 26.5,
+      "maxAnyDForZeroBoardGap": 36,
+      "case25ClearToBoard": {
+        "clearance": 25,
+        "maxCentredD": 1.5,
+        "maxAnyD": 11
+      }
+    },
+    "parking": {
+      "lowerEndGap": 10,
+      "additionalParkClearance": 25,
+      "stroke": "upperOverlap + endGap + parkGap",
+      "centredStroke": 81.5,
+      "requiredClearStraightBelowFixedCut": 128,
+      "parkedBottomToTopAtD0": [
+        3175,
+        3278
+      ]
+    },
+    "exchange": {
+      "fixedPipeTopAtD0": 3303,
+      "sleeveJustOffFixedPipeBottomToTopAtD0": [
+        3303,
+        3406
+      ],
+      "liftFromParkToJustClearFixedEnd": 128,
+      "minimumCoaxialOpeningBeyondEndGap": 93,
+      "freeSleeveTopAboveSlabAtMaxCentredD": 9.5,
+      "order": [
+        "Open lower closure with retained branch independently restrained.",
+        "Park original sleeve down, lift bolted tray to supported rest.",
+        "Slide spent sleeve up off open pipe. Introduce and park new sleeve before incoming tray.",
+        "Seat incoming tray on its supports and counterhold against upward insertion force.",
+        "Raise new sleeve to verified seal engagements, retain and test before restoring closures."
+      ]
+    },
+    "reach": {
+      "well": [
+        1812.5,
+        9252.5,
+        400,
+        400
+      ],
+      "hatch": [
+        1722.5,
+        9052.5,
+        800,
+        800
+      ],
+      "hatchBodyReserve": 25,
+      "lowerDatumRayToWellEdge": 156.47798742138366,
+      "servicesReference": {
+        "shoulder": [
+          2082.5,
+          9677.5,
+          2450
+        ],
+        "headTop": 2750,
+        "headRadius": 150,
+        "highestAxisDatum": 3001.7925334761244
+      },
+      "zarges40336": {
+        "deck": 1350,
+        "deckPlan": [
+          380,
+          260
+        ],
+        "shoulderZ": 2800,
+        "headTop": 3100,
+        "headToConcrete": 70,
+        "inherited300SquareFootContactDepthDeficit": 40,
+        "maxPlanDistanceFromEachShoulderToCentredMouthAtD0": 216.7019843010211,
+        "maxPlanDistanceFromEachShoulderToLowestMouth": 275.5195092910845,
+        "scope": "Necessary plan distances at the trial 600 mm reach. Stance and platform origin are unknown."
+      },
+      "pecolift": {
+        "deck": 1250,
+        "footX": [
+          1987.5,
+          2092.5
+        ],
+        "footY": 9517.5,
+        "halfShoulders": 200,
+        "shoulderZ": 2700,
+        "headTop": 3000,
+        "headRadius": 150,
+        "arm": 600,
+        "hardwareTop": 2550,
+        "additionalRiseToCeilingAtChargedTravel": 25.375,
+        "furtherRiseKeeping25CeilingReserve": 0.375,
+        "highestAxisAtLeastOneHandEveryOrigin": 3261.9386087465427,
+        "highestAxisBothHandsEveryOrigin": 3226.6640295292627,
+        "highestAxisBothHandsBestOrigin": 3261.9386087465427,
+        "reachableAxialBandAboveClosedBottomOneHandAllOriginsAtD0": 5.438608746542741,
+        "bestClosedBottomShortfallForBothHandsAcrossAllOrigins": 3.3359704707372657,
+        "lowestClosedUpperMouth": 3333,
+        "minimumMouthShortfallEvenStraightUp": 33,
+        "maxHeadCentreToDrainInPlan": 103.07764064044152,
+        "conditionalStraight50PipeAtHeadLevelMinimumPlanOverlap": 71.92235935955848
+      },
+      "limit": "Axis targets only. The upper mouth is beyond direct hand reach. Head overlap with pipe requires a straight leg at head height. Its lower route and gripping surfaces are unbound."
+    }
+  },
   "relatedSources": {
-    "project/mat/studies/whole-house-service-baseline.json": "69c7b1b1e733b9ade2d8ae21c1552accf52a6261",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
     "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b"
   },
   "nativeSources": {
