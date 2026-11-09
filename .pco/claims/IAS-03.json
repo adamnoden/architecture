@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 43,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "c8e11ef2-288a-4660-bbb1-9edd1e3cbe3e",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6750986800"
   },
   "claimedAt": "2026-11-09T20:44:36.000Z",
-  "heartbeatAt": "2026-11-09T21:45:14.829Z",
-  "expiresAt": "2026-11-09T22:30:14.829Z",
+  "heartbeatAt": "2026-11-09T22:06:01.000Z",
+  "expiresAt": "2026-11-09T22:06:01.000Z",
   "branch": "work/mvb-chat-6751604368",
   "predecessor": {
     "leaseId": "a16b8ba4-0427-4e0c-8f73-f112d3af28ca",
@@ -38,5 +38,7 @@
     "evidence": "Final shared #1466 11c321ea restores the authentic structural comparator, tests the current occupied bed/park and preserves all IAS-03 acceptance work. The seven previously failing/affected joined-frame checks now pass locally.",
     "next": "Verify all 14 exact-head workflows then run the fresh canonical IAS preflight and merge with the two other live packet holders."
   },
-  "pr": 1466
+  "pr": 1466,
+  "releasedAt": "2026-11-09T22:06:01.000Z",
+  "releaseReason": "completed"
 }
