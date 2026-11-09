@@ -9,8 +9,8 @@
     "label": "Owner follow-on: plant water repair"
   },
   "claimedAt": "2026-11-09T02:34:08.819Z",
-  "heartbeatAt": "2026-11-09T02:34:08.819Z",
-  "expiresAt": "2026-11-09T03:19:08.819Z",
+  "heartbeatAt": "2026-11-09T02:47:49.867Z",
+  "expiresAt": "2026-11-09T03:32:49.867Z",
   "branch": "work/swarm-water-repair-20261109",
   "predecessor": {
     "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
@@ -31,5 +31,10 @@
       "evidence": "Merged DHW study #1413 as 3e941b4d on #1409; current-head CI and preflight passed.",
       "next": "Test a factory mineral-insulated 300 L potable alternative including expansion-vessel access, actual draw profile and both cold-day output modes. Other S01–S10 families retain separate study duties."
     }
+  },
+  "pr": 1418,
+  "checkpoint": {
+    "evidence": "PR #1418 at 3b1ddcf5 reproduces the 986 mm terminal requirement and two repair sleeve placements.",
+    "next": "Reconcile #1414 main, await exact CI, preflight, merge and hand off on #1100."
   }
 }
