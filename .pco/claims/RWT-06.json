@@ -9,8 +9,8 @@
     "label": "House water and assembly decisions 1031"
   },
   "claimedAt": "2026-11-09T10:33:44.944Z",
-  "heartbeatAt": "2026-11-09T11:11:18.754Z",
-  "expiresAt": "2026-11-09T11:56:18.754Z",
+  "heartbeatAt": "2026-11-09T11:38:02.687Z",
+  "expiresAt": "2026-11-09T12:23:02.687Z",
   "branch": "work/swarm-frontier-1033-20261109",
   "predecessor": {
     "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Definitive RWT source 227906a911477a94dd2495c0a4cd595d3f46b22a on PR 1451 verifies the 107 mm clear upper throat and the solid weather plate interlock, with source data and figures reproduced.",
-    "next": "Verify eleven definitive RWT blobs on the common head and complete the live RWT merge fence only after all exact hosted checks are green."
+    "evidence": "MERGED PR 1450 at 34b4058c81aee91f6813974e4bca74b8b09c841d with complete RWT original PR 1451 227906a9 and correct shared subtree b6562459. All 14 exact hosted workflows green, RWT 217, HAD 26 and dated live scope fence. Issue 992 comment 6739106824.",
+    "next": "Compare the two independently recoverable wet carriers, high weather shutter interlock and complete blocked N or E event with the revised continuous court grade. Source the positive operating choice and all first rests before RWT closure."
   },
   "pr": 1450
 }
