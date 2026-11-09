@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T05:06:33.830Z",
-  "heartbeatAt": "2026-11-09T05:26:07.617Z",
-  "expiresAt": "2026-11-09T06:11:07.617Z",
+  "heartbeatAt": "2026-11-09T05:40:27.760Z",
+  "expiresAt": "2026-11-09T06:25:27.760Z",
   "branch": "work/house-0506-20261109",
   "predecessor": {
     "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
@@ -34,7 +34,7 @@
   },
   "pr": 1431,
   "checkpoint": {
-    "evidence": "Frozen principal room source PR #1431, 58e6667831c978f3dfaed3f03ccfcab7ebed23be. Explicit privacy slider repair and 750 screen route have registered continuous checks.",
-    "next": "Coordinate exact current main and frozen STR39/RWT65 evidence if shared. Require exact suite and participating lease clearances before integration."
+    "evidence": "Final durable shared head bb1c4b9f44473f966aa1e7aa2bb75f91e71b7a77 on 2a50d0fc. Incorporates the 50 mm closing-corner fittings, 4.7 mm old overlap and corrected 70 degree route. Original STR/RWT trees verified.",
+    "next": "Require all 14 exact workflows, each of three live publication fences, expected-head integration, issue evidence and release."
   }
 }
