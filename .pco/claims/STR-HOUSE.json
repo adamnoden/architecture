@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T00:07:47.473Z",
-  "heartbeatAt": "2026-11-09T00:35:25.665Z",
-  "expiresAt": "2026-11-09T01:20:25.665Z",
+  "heartbeatAt": "2026-11-09T00:46:33.241Z",
+  "expiresAt": "2026-11-09T01:31:33.241Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "064434de-951d-45ba-b8d1-9b76ea3972a6",
@@ -34,7 +34,7 @@
   },
   "pr": 1406,
   "checkpoint": {
-    "evidence": "Combined PR #1406, 4ddb988d, includes the complete STR parent 2dc81ec0 byte-for-byte, alongside MAT and IAS. Nine local structural regressions and generated results verified, sheet inspected.",
-    "next": "Wait for all validation on final combined head and current main; run fresh STR-HOUSE preflight, integrate, and release."
+    "evidence": "Combined #1406 4ddb988d contains fixed-joint checks. Recovered gen32 rotating-bearing study from #1103 in remote commit f805f02b40dad0ffa6f325249336d930db302dc1 on 4ddb988d: four coupled controls reproduced, both NE window edges checked independently, 10 joint tests.",
+    "next": "Integrate the verified rotation commit with current main in coordinated #1406, require exact final CI and all three lease preflights before guarded merge."
   }
 }
