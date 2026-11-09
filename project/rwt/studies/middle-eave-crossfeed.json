@@ -1,0 +1,76 @@
+{
+  "duty": 3.60375,
+  "ends": [
+    5764.285714285714,
+    6235.714285714285
+  ],
+  "datum": 4250,
+  "transferQ": [
+    -480,
+    -292
+  ],
+  "cassetteQ": [
+    -277,
+    -100
+  ],
+  "guardFace": -506,
+  "assemblyReserve": 10,
+  "normal": {
+    "width": 174,
+    "staticHead": 60.8428571428567,
+    "ideal": 52.84515726381135,
+    "adverseMargin": 4.14448886987104,
+    "k1Margin": -4.591079887998497,
+    "adverseK1FlowLimit": 2.853814932288765
+  },
+  "transfer": {
+    "width": 185,
+    "staticHead": 57.64285714285688,
+    "ideal": 50.72906696114998,
+    "adverseMargin": 3.0605791725325915,
+    "k1Margin": -5.124973172196825,
+    "adverseK1FlowLimit": 2.782289882392658
+  },
+  "end": {
+    "width": 155,
+    "staticHead": 60,
+    "ideal": 57.079947029217244,
+    "adverseMargin": -0.9331580383915536,
+    "k1Margin": -10.769437798169442,
+    "adverseK1FlowLimit": 2.486003305436972
+  },
+  "endInvert": 6605,
+  "crown": 6607.357142857143,
+  "previousHighestBedAtJoin": 6604.642857142857,
+  "blockedStage": 6665,
+  "frontFreeboard": 10,
+  "adverseLevel": 5,
+  "kineticCredit": 1.146788990825688,
+  "cassetteLip": 6773,
+  "requiredK1": [
+    186.23166466940938,
+    209.71078647639246
+  ],
+  "maxGross": 396,
+  "maxClear": 380,
+  "trialClear": 359,
+  "dripMin": 57,
+  "guideGap": 26,
+  "separateBodies": 15,
+  "bypassToRaisedLip": 11.642857142856883,
+  "neighbourAfterDrop": 12,
+  "underCrossfeed": 35.5,
+  "candidate": {
+    "flowLps": 2,
+    "criticalDepth": 25.69858409705105,
+    "totalLossBudget": 12.849292048525525,
+    "headNeeded": 51.3971681941021,
+    "available": 52.64285714285688,
+    "healthyStageLimit": 6625.698584097051
+  },
+  "outletsP": [
+    4500,
+    7500
+  ],
+  "fixedWallTop": 6675
+}
