@@ -81,15 +81,15 @@
       "rows": [
         {
           "q": 3.60375,
-          "rimHead": 115.87972728080464,
-          "rimReserve": 29.120272719195356,
+          "rimHead": 118.03570620569488,
+          "rimReserve": 26.96429379430512,
           "lowerEscapeK4": 106.95395232805251,
           "floodedBootControlReserve": 173.0460476719475
         },
         {
           "q": 4.43895,
-          "rimHead": 133.15511774383194,
-          "rimReserve": 11.844882256168063,
+          "rimHead": 135.63251076445334,
+          "rimReserve": 9.367489235546657,
           "lowerEscapeK4": 162.27366073043572,
           "floodedBootControlReserve": 117.72633926956428
         }

@@ -15,7 +15,11 @@ test('source roof is allocated once and all five retained-neighbour movements ar
   assert.ok(roof.straight.freeThrow>roof.straight.unhoodedLanding&&roof.straight.lowerExitBelowSpill>0);
   assert.equal(roof.straight.bays.length,5);assert.equal(roof.straight.bays[2].upstream,0);
   for(const b of roof.straight.bays){assert.ok(b.turningDripReserve>26);if(b.upstream)assert.ok(b.pickupWater<6632);}
-  for(const h of roof.straight.rows)assert.ok(h.rimReserve>11&&h.floodedBootControlReserve>117);
+  eq(roof.straight.bootClearSide,107);
+  for(const h of roof.straight.rows){
+    eq(h.rimHead,2000*Math.cbrt((h.q/(107*.75))**2/9.81));
+    assert.ok(h.rimReserve>9&&h.floodedBootControlReserve>117);
+  }
 });
 test('concentrated feed, local basin failure and restricted N tail remain separate',()=>{
   eq(ground.concentrated.localError,.969484736,1e-6);eq(ground.concentrated.localWithAllEdgeBlock,.258088706,1e-6);

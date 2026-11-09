@@ -36,7 +36,7 @@ export function raisedService(had){
   // Under a squared boot four edges can discharge. Allow NO credit for two obstructed edges.
   const lowerArea=2*clearSide*lowerGap/1e6, available=crest-20-10-A.front;
   const qRows=[had.incoming.duty,had.incoming.longBackup].map(q=>{
-    const rimHead=2*critical(q,sides*.75), u=q/1000/lowerArea, escapeK4=4000*u*u/(2*g);
+    const rimHead=2*critical(q,clearSide*.75), u=q/1000/lowerArea, escapeK4=4000*u*u/(2*g);
     return {q,rimHead,rimReserve:175-20-10-rimHead,lowerEscapeK4:escapeK4,
       floodedBootControlReserve:available-escapeK4};
   });
