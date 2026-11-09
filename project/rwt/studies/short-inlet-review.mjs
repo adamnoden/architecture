@@ -26,13 +26,14 @@ function reduced(intervals,block){
  }
  return {intervals:out,f:1};
 }
-export function capacity(original,stage,lipK,block,lengthMm,N=64){
+export function capacity(original,stage,lipK,block,lengthMm,N=64,{slope=.04,floorAt=floor}={}){
+ assert(slope>0);
  const {intervals,f}=reduced(original,block);
  return intervals.reduce((total,[a,b])=>{
-  const W=(b-a)/1000,low=floor(b),high=floor(a);
+  const W=(b-a)/1000,low=floorAt(b),high=floorAt(a);
   const geometry=z=>{
-   const w=Math.max(0,Math.min(W,(z-low)/.04)),T=f*w,A=T*(z-low-.02*w);
-   const P=Math.hypot(T,.04*w)+Math.max(0,z-low)+Math.max(0,z-high);
+   const w=Math.max(0,Math.min(W,(z-low)/slope)),T=f*w,A=T*(z-low-slope*w/2);
+   const P=Math.hypot(T,slope*w)+Math.max(0,z-low)+Math.max(0,z-high);
    return {A,T,P};
   };
   const trial=(zc,returnFlow=false)=>{

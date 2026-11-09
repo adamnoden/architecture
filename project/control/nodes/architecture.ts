@@ -239,6 +239,18 @@ export const architectureNodes = defineNodes([
     closeoutEvidence: ['project/had/court-intake-selection.md', 'project/had/studies/court-intake-selection.json', 'project/had/studies/court-intake-selection.svg', 'project/had/studies/court-intake-selection-detail.svg']
   },
 
+  // RWT located a different wet body, floor contour and independently supported
+  // buried return. The completed intake remains the source for this comparison.
+  {
+    id: 'HAD-COURT-BYPASS',
+    owners: ['HAD', 'RWT', 'STR', 'MAT'],
+    title: 'Select the permanent courtyard receiver and its blocked-basket return',
+    dependencies: ['HAD-COURT-INTAKE', 'STR-RECONCILE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: []
+  },
+
   // Final audit found the bounded OAS topology did not supply its dimensioned studies.
   {
     id: 'OAS-DETAIL',

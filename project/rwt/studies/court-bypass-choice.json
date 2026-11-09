@@ -1,0 +1,924 @@
+{
+  "id": "RWT-06-LOW-COURT-BYPASS",
+  "source": {
+    "court": "80a8481b4e5a508164eff51b596e5a954c152a30",
+    "original": "RWT-06-RAISED-ROOF-COURT-SERVICE",
+    "structural": "current-house-grid.json / east-service-platform.json",
+    "site": "RWT-SELECTED-RECEIVING-INTERFACE-2026-11-06"
+  },
+  "feed": {
+    "blendX": [
+      5250,
+      5925,
+      6125,
+      6600
+    ],
+    "northWestLip": -92,
+    "maximumEWSlopes": [
+      0.011481481481481481,
+      0.01631578947368421
+    ],
+    "gateAdapterAtEnds": [
+      -8.593571428571437,
+      10
+    ],
+    "unchangedSouthRamp": -52,
+    "apron": [
+      5925,
+      6625,
+      200,
+      773.5
+    ],
+    "actualSpan": [
+      6630,
+      7393.5
+    ],
+    "floor": [
+      [
+        5750,
+        -30
+      ],
+      [
+        6625,
+        -72.75
+      ],
+      [
+        7400,
+        -96
+      ]
+    ],
+    "slopes": [
+      0.048857142857142856,
+      0.03
+    ],
+    "northLipMismatch": -1,
+    "stairLandingZ": -80,
+    "adjacentAtStair": -71.52857142857142,
+    "duty": 3.60375,
+    "stage": -40,
+    "capacity": 4.4588828943171785,
+    "withTwoMore": 4.108911490787018,
+    "stageReserve": 4.9974500085221365,
+    "concentratedAfterSetout": 1.2478750554291036,
+    "coveredFeed": [
+      6135,
+      6890,
+      7080,
+      -160
+    ],
+    "oldRoofClearOnNewFloor": 2.0999999999999943,
+    "fittedFeed": {
+      "invert": -168,
+      "roofUnderside": -108,
+      "topPlate": 9,
+      "trialPoint": 5000,
+      "span": 190,
+      "effectiveWidth": 100,
+      "bendingMPa": 175.92592592592592,
+      "deflection": 0.5880486968449932,
+      "pairedSurfaceReserve": 2.5999999999999943,
+      "pairedUndersideToPan": 8.727499999999992,
+      "freeboard": 9.323380354481174,
+      "sourceToNoseReserve": 82.25700300758652
+    },
+    "coveredFeedAssignedReserve": 74.25700300758652,
+    "isolation": "The E chamber needs its own connected low covered feeder. Isolate, drain and retract its nose before raising the west carrier."
+  },
+  "relief": {
+    "formerFirstSide": -180.1775,
+    "retainedSpout": {
+      "endX": 7390,
+      "y": [
+        6935,
+        7165
+      ],
+      "z": -280.1775,
+      "notch": [
+        6915,
+        7185,
+        -310,
+        -110
+      ],
+      "openingPlaneX": 7350,
+      "atOpening": -279.5775,
+      "undersideToBottomAfterTwo5": 18.922500000000014,
+      "grossSideRise": 100,
+      "quarterBlockedHead": 70.8680849668267,
+      "sideReserve": 19.1319150331733,
+      "hoodTopReserve": 88.70941503317329,
+      "nominalXIntoBasket": 25,
+      "nominalNorthInBasket": 15
+    },
+    "galleries": [
+      [
+        6850,
+        6960
+      ],
+      [
+        7250,
+        7360
+      ]
+    ],
+    "slots": [
+      [
+        6750,
+        7040,
+        -224
+      ],
+      [
+        7040,
+        7290,
+        -244
+      ],
+      [
+        7290,
+        7340,
+        -255
+      ]
+    ],
+    "aboveBeds": [
+      8.452499999999986,
+      10.802500000000009,
+      21.55250000000001
+    ],
+    "originalFifthWidth": 360,
+    "centralFloorWidth": 290,
+    "gallery": {
+      "run": 590,
+      "width": 110,
+      "bedAtBothEnds": -395,
+      "lowBedAtSlotEdges": [
+        -398.4,
+        -399.4
+      ],
+      "grade": 0.02,
+      "n": 0.025,
+      "netWidth": 80.25,
+      "bottomSlots": [
+        [
+          6920,
+          6860,
+          200,
+          95
+        ],
+        [
+          6920,
+          7260,
+          200,
+          95
+        ]
+      ],
+      "dryCatchMouths": [
+        [
+          6900,
+          6845,
+          240,
+          135
+        ],
+        [
+          6900,
+          7245,
+          240,
+          135
+        ]
+      ],
+      "nozzleBottom": -445,
+      "receiverRim": -420,
+      "pairedEngagement": 15,
+      "pairedRimToGallery": 9.100000000000023,
+      "afterSetoutCapture": [
+        10,
+        5
+      ]
+    },
+    "basket": {
+      "x": [
+        7372.5,
+        7452.5,
+        7467.5,
+        7527.5
+      ],
+      "originalNorthFace": 7180,
+      "stationaryNorthFace": 7200,
+      "deflectorAtLowerHeight": 7460,
+      "crest": -620,
+      "windowTop": -455,
+      "outerPocket": [
+        7350,
+        7200,
+        200,
+        140
+      ],
+      "bottomCoupling": {
+        "axis": [
+          7450,
+          7270,
+          -915
+        ],
+        "clear": [
+          150,
+          120
+        ],
+        "land": [
+          25,
+          10
+        ],
+        "sourceHoodBottom": -900,
+        "releaseLift": 40,
+        "projectedPressureArea": 0.018,
+        "extraProjectionWest": 0,
+        "screen": "Pressure joint at well bottom; no open cup between the new pocket and the independent line. Use restrained top-release rods, a proved blind, line drain and test joint."
+      },
+      "maxOrdinaryImpact": -644.3744199416785,
+      "clearAboveNormalImpact": 19.374419941678525
+    },
+    "cases": [
+      {
+        "flow": 3.60375,
+        "hoodLoss": 14.88564282335878,
+        "hoodPool": -558.2414776264103,
+        "reverseCell": {
+          "width": 130,
+          "clear": 90,
+          "stage": -530.291405482908,
+          "crest": -615,
+          "top": -460,
+          "cd": 0.55,
+          "tail": -681.2849745192959
+        },
+        "transferLoss": 17.4848118192682,
+        "reverseGrade": -497.92095084028097,
+        "reverseCupMargin": 72.92095084028097,
+        "both": {
+          "count": 2,
+          "remaining": [
+            560,
+            280,
+            0
+          ],
+          "stage": -201.89338397601674,
+          "marginToLowSide": 16.715883976016727
+        },
+        "one": {
+          "count": 1,
+          "remaining": [
+            280,
+            140,
+            0
+          ],
+          "stage": -187.06955218102465,
+          "marginToLowSide": 1.8920521810246385
+        },
+        "impactCell": {
+          "width": 80,
+          "clear": 52.5,
+          "stage": -486.0635295724769,
+          "crest": -615,
+          "top": -460,
+          "cd": 0.55,
+          "tail": -558.2414776264103
+        },
+        "quietCell": {
+          "width": 60,
+          "clear": 37.5,
+          "stage": -456.9405623970937,
+          "crest": -615,
+          "top": -460,
+          "cd": 0.55,
+          "tail": -558.2414776264103
+        },
+        "galleryDepth": 87.17891533696192,
+        "filmWithOneBend": -289.2973293949367,
+        "slotToHighestGallery": 29.297329394936696,
+        "bottomNozzleLoss": 13.535178337711535,
+        "bottomExitReserve": 63.64373699925039
+      },
+      {
+        "flow": 4.43895,
+        "hoodLoss": 22.584932119788554,
+        "hoodPool": -510.7812894739323,
+        "reverseCell": {
+          "width": 130,
+          "clear": 90,
+          "stage": -517.6630184457981,
+          "crest": -615,
+          "top": -460,
+          "cd": 0.55,
+          "tail": -644.3744199416785
+        },
+        "transferLoss": 26.528467245349752,
+        "reverseGrade": -468.5496190806598,
+        "reverseCupMargin": 43.549619080659795,
+        "both": {
+          "count": 2,
+          "remaining": [
+            560,
+            280,
+            0
+          ],
+          "stage": -198.09742995325948,
+          "marginToLowSide": 12.91992995325947
+        },
+        "one": {
+          "count": 1,
+          "remaining": [
+            280,
+            140,
+            0
+          ],
+          "stage": -181.15938582743198,
+          "marginToLowSide": -4.018114172568033
+        },
+        "impactCell": {
+          "width": 80,
+          "clear": 52.5,
+          "stage": -450.8636541288935,
+          "crest": -615,
+          "top": -460,
+          "cd": 0.55,
+          "tail": -510.7812894739323
+        },
+        "quietCell": {
+          "width": 60,
+          "clear": 37.5,
+          "stage": -403.57748671818115,
+          "crest": -615,
+          "top": -460,
+          "cd": 0.55,
+          "tail": -510.7812894739323
+        },
+        "galleryDepth": 103.74870571417674,
+        "filmWithOneBend": -271.7633740534802,
+        "slotToHighestGallery": 11.76337405348022,
+        "bottomNozzleLoss": 20.535967953412964,
+        "bottomExitReserve": 73.21273776076377
+      }
+    ]
+  },
+  "buried": {
+    "route": [
+      [
+        7000,
+        6940,
+        -1025
+      ],
+      [
+        7000,
+        12800,
+        -1112.9
+      ],
+      [
+        5300,
+        12800,
+        -1138.4
+      ],
+      [
+        5300,
+        14100,
+        -1157.9
+      ]
+    ],
+    "length": 8860,
+    "trunkID": 150,
+    "maxFittingOD": 200,
+    "lengthBudget": 12,
+    "fall": 0.015,
+    "area": 0.013253594007331941,
+    "hydraulicDiameter": 0.1125,
+    "crosses": [
+      {
+        "id": "low-tie-8050",
+        "firstY": 7750,
+        "beamSoffit": -750,
+        "pipeCrown": -862.1500000000001,
+        "pairedClear": 102.15000000000009
+      },
+      {
+        "id": "low-tie-11667",
+        "firstY": 11367.5,
+        "beamSoffit": -750,
+        "pipeCrown": -916.4124999999999,
+        "pairedClear": 156.4124999999999
+      }
+    ],
+    "nearestCap": {
+      "id": "P26",
+      "clear": 100
+    },
+    "loggiaPileIDs": [
+      {
+        "id": "P26",
+        "clear": 100
+      },
+      {
+        "id": "P30",
+        "clear": 100
+      },
+      {
+        "id": "P31",
+        "clear": 100
+      }
+    ],
+    "remainingFittingLength": 3140,
+    "branches": [
+      {
+        "from": "south cup",
+        "axis": [
+          [
+            7020,
+            6912.5,
+            -960
+          ],
+          [
+            7000,
+            6940,
+            -1025
+          ]
+        ]
+      },
+      {
+        "from": "hood pocket",
+        "axis": [
+          [
+            7450,
+            7270,
+            -1030
+          ],
+          [
+            7160,
+            7270,
+            -1031
+          ],
+          [
+            7000,
+            7400,
+            -1031.9
+          ]
+        ]
+      },
+      {
+        "from": "north cup",
+        "axis": [
+          [
+            7020,
+            7312.5,
+            -965
+          ],
+          [
+            7000,
+            7180,
+            -1028.6
+          ]
+        ]
+      }
+    ],
+    "receiver": [
+      5050,
+      13800,
+      500,
+      600
+    ],
+    "forebayFloor": -1350,
+    "forebayOpenEdge": -900,
+    "siteBasin": [
+      4250,
+      13450,
+      1500,
+      1700
+    ],
+    "basinBed": -1000,
+    "normalTail": -800,
+    "faultTail": -650,
+    "originalN": [
+      5000,
+      13550,
+      -600
+    ],
+    "outerPipeBottom": -1182.9,
+    "crew": [
+      6250,
+      6220,
+      -800,
+      1150,
+      600
+    ],
+    "tails": [
+      {
+        "flow": 3.60375,
+        "v": 0.27190737833122025,
+        "loss": 76.87287955023086,
+        "normalHead": -723.1271204497691,
+        "faultHead": -573.1271204497691,
+        "belowGalleryRim": 153.1271204497691,
+        "belowBasketCrest": -46.87287955023089
+      },
+      {
+        "flow": 4.43895,
+        "v": 0.3349242475319793,
+        "loss": 116.63377840627908,
+        "normalHead": -683.3662215937209,
+        "faultHead": -533.3662215937209,
+        "belowGalleryRim": 113.36622159372087,
+        "belowBasketCrest": -86.63377840627913
+      }
+    ],
+    "scope": "Separate buried leg to the existing N site basin. It has no independent destination when that basin or its continuation is lost."
+  },
+  "handling": {
+    "cart": {
+      "gross": [
+        585,
+        550
+      ],
+      "railZ": 90,
+      "wheelbase": 400,
+      "track": 400,
+      "upperDeckZ": 210,
+      "gateReserveEach": 26.25,
+      "flapReserveEach": 32.5,
+      "parkedWheelToBridge": 25,
+      "bridgeGap": 150,
+      "bridgeLength": 200,
+      "pairedCrestReserve": 30,
+      "route": [
+        [
+          6910,
+          6898.75
+        ],
+        [
+          6075,
+          6898.75
+        ],
+        [
+          5750,
+          6898.75
+        ],
+        [
+          5425,
+          6898.75
+        ],
+        [
+          5070,
+          6898.75
+        ],
+        [
+          5070,
+          5510
+        ]
+      ],
+      "stage": [
+        4730,
+        5135,
+        750,
+        750
+      ],
+      "stageInside": [
+        4350,
+        4500,
+        1500,
+        1500
+      ],
+      "shape": "Keep body orientation on the secured transverse transfer table; a rotating loaded cart would invade the normal-grate reserve.",
+      "posts": [
+        [
+          5450,
+          6150
+        ],
+        [
+          7625,
+          6150
+        ],
+        [
+          5450,
+          7850
+        ],
+        [
+          7125,
+          7850
+        ]
+      ],
+      "postPlan": 100,
+      "pairedWestPost": 27.5,
+      "normalGrateReserve": 126.25,
+      "sourceFootAReserve": 30,
+      "liftedAt4kN": {
+        "east": [
+          -6.814102564102565,
+          3.707692307692308,
+          7.106410256410257
+        ],
+        "west": [
+          -5.236538461538461,
+          2.7153846153846155,
+          6.521153846153846
+        ]
+      },
+      "sourcePads": [
+        [
+          4500,
+          5900
+        ],
+        [
+          7100,
+          6050
+        ],
+        [
+          4500,
+          6500
+        ]
+      ],
+      "maxGrossKg": 250,
+      "verticalDesignKN": 4,
+      "dualControl": "Retractable bridge rails and separately captured pulls at each flap. No person shares the occupied airlock. Prove stopping, positive hold, full weather closure and mounting strength."
+    },
+    "wholeHoodBought": [
+      {
+        "id": "upper hood with external collar, rig allowance",
+        "installed": [
+          260,
+          960,
+          560
+        ],
+        "upright": [
+          560,
+          260,
+          960
+        ],
+        "waterUpperKg": null,
+        "sheetUpperKg": null,
+        "clearAtGateEach": 171.25,
+        "clearBetweenFlapsEach": 45,
+        "belowRoofWith150Foot250Rig": 610,
+        "planYawDiagonal": 617.4139616173252
+      },
+      {
+        "id": "lower hood with external collar, rig allowance",
+        "installed": [
+          260,
+          960,
+          285
+        ],
+        "upright": [
+          285,
+          260,
+          960
+        ],
+        "waterUpperKg": null,
+        "sheetUpperKg": null,
+        "clearAtGateEach": 171.25,
+        "clearBetweenFlapsEach": 182.5,
+        "belowRoofWith150Foot250Rig": 610,
+        "planYawDiagonal": 385.7784338192066
+      }
+    ],
+    "collar": {
+      "faceWidth": 20,
+      "nominalFootprint": [
+        240,
+        940
+      ],
+      "reservedOverallXY": [
+        260,
+        960
+      ],
+      "steelKgEach": 2.1888,
+      "minimumBasketSideSkew": 1.6620366221633014
+    },
+    "well": [
+      6125,
+      6300,
+      1525,
+      1100
+    ],
+    "gate": [
+      6597.5,
+      7200
+    ],
+    "forecast": "E well stays unoccupied with any unisolated projection or suspended carrier.",
+    "gateWidth": 602.5,
+    "pocket": 650,
+    "roomZ": 1970,
+    "newNorth": 7360,
+    "wetSplit": 6430,
+    "weldedSteps": [
+      6735,
+      7040,
+      7290
+    ],
+    "packs": [
+      {
+        "id": "west wet pan",
+        "installed": [
+          330,
+          760,
+          300
+        ],
+        "upright": [
+          330,
+          300,
+          760
+        ],
+        "waterUpperKg": 75.24,
+        "sheetUpperKg": 12.160512,
+        "clearAtGateEach": 151.25,
+        "clearBetweenFlapsEach": 160,
+        "belowRoofWith150Foot250Rig": 810,
+        "planYawDiagonal": 445.9820624195551,
+        "longAxis": "Y",
+        "pitchDiagonal": 817.0679286326198
+      },
+      {
+        "id": "east wet pan and galleries",
+        "installed": [
+          960,
+          510,
+          300
+        ],
+        "upright": [
+          510,
+          300,
+          960
+        ],
+        "waterUpperKg": 146.88,
+        "sheetUpperKg": 18.8044416,
+        "clearAtGateEach": 151.25,
+        "clearBetweenFlapsEach": 70,
+        "belowRoofWith150Foot250Rig": 610,
+        "planYawDiagonal": 591.6924876994806,
+        "longAxis": "X",
+        "pitchDiagonal": 1005.7832768544126
+      },
+      {
+        "id": "upper hood",
+        "installed": [
+          200,
+          900,
+          540
+        ],
+        "upright": [
+          200,
+          540,
+          900
+        ],
+        "waterUpperKg": null,
+        "sheetUpperKg": null,
+        "clearAtGateEach": 31.25,
+        "clearBetweenFlapsEach": 225,
+        "belowRoofWith150Foot250Rig": 670,
+        "planYawDiagonal": 575.8472019555187
+      },
+      {
+        "id": "lower hood",
+        "installed": [
+          200,
+          900,
+          265
+        ],
+        "upright": [
+          200,
+          265,
+          900
+        ],
+        "waterUpperKg": null,
+        "sheetUpperKg": null,
+        "clearAtGateEach": 168.75,
+        "clearBetweenFlapsEach": 225,
+        "belowRoofWith150Foot250Rig": 670,
+        "planYawDiagonal": 332.0015060206806
+      }
+    ],
+    "highAlternative": {
+      "box": [
+        6170,
+        7385,
+        960,
+        55
+      ],
+      "shutterY": 7425,
+      "slots": 3,
+      "travel": 115,
+      "remainingWidth": 652.5,
+      "centralFloor": 290,
+      "independentTipsStart": 7445,
+      "caseToPanAfterTwo5": 15,
+      "nominalGableEnd": 7340,
+      "gableInsideAfterTwo5": 10,
+      "reason": "Three movable seals and every return up to -15 are required to cross the temporary north skirt. The buried option keeps that skirt solid."
+    },
+    "firstLift": {
+      "firstEastVertical": true,
+      "spoutInOpenNotch": [
+        6915,
+        7185,
+        -310,
+        -110
+      ],
+      "spout": [
+        6935,
+        7165
+      ],
+      "south30Interference": 10,
+      "westStroke": 50,
+      "dryCupToPlatformAfterTwo5": 15,
+      "howToClose": "Isolate/vent/drain both branches from protected dry controls. An independently restrained plug and drain/witness upstream of each isolation must confirm no residual pressure before lowering water barriers."
+    },
+    "hood": {
+      "origin": [
+        7350,
+        6450
+      ],
+      "sourcePlan": [
+        7350,
+        6450,
+        200,
+        900
+      ],
+      "sourceZ": [
+        -900,
+        -110
+      ],
+      "cutZ": -650,
+      "jointLength": 2200,
+      "aboveRetainedOutlet": 47.64705882352939,
+      "belowAddedWindow": 30,
+      "staticKPaAtJointWhenSideFlooded": 4.608958725,
+      "rejectedWestSpoutWholeUprightOversize": 139.24945768704185,
+      "minPairedOpeningAfterTools": 21.25,
+      "scope": "Reject the whole outer-hood package at this upright attitude. The split hood needs a continuously backed, positively clamped wet joint; neither the thin MAT E-joint seal nor the basket is credited for this different perimeter."
+    },
+    "fifth": {
+      "dryStrip": [
+        7345,
+        6875,
+        305,
+        250
+      ],
+      "mass": 9.577,
+      "port": [
+        7370,
+        6920,
+        160,
+        160
+      ],
+      "pipe": [
+        7450,
+        7000,
+        -80
+      ],
+      "pipeOD": 128,
+      "rail": {
+        "span": 305,
+        "railBend": 45.18518518518518,
+        "railDeflection": 0.07783984910836762
+      },
+      "railY": [
+        6895,
+        7105
+      ],
+      "plateStress": 61.5234375,
+      "pairedPipeToEdge": 6,
+      "scope": "The walking insert and rails stay separate from the two wet carriers. Blank or install the direct N pipe on the standing fifth frame before opening N."
+    }
+  },
+  "cases": [
+    [
+      "Normal and routine access",
+      "N and E both open, secondary gallery and hood checks open to tested north site. Ordinary walking caps, protection and gate restored. Incidental side capture can reach N."
+    ],
+    [
+      "N receiving ground rejected",
+      "The passive north forebay check stops reverse basin flow. If the basin route is isolated or plugged, gallery flow must run backwards through the dedicated manifold and BOTH basket windows into available E. Verify cup level and check-valve opening head. No northern disposal credit."
+    ],
+    [
+      "Primary E inlet/spout fully blocked",
+      "Both side galleries accept the surface event before the earlier first side spill. Their overflows do not pass through the basket. A full blockage of one gallery as well is a separate adverse case."
+    ],
+    [
+      "E basket ports, shoe or terminal blocked",
+      "An impacting direct pipe continues into the basket. Two independent cell windows enter the backed outer hood, whose lower positive socket connects to the independent manifold. Model the actual partially submerged slots."
+    ],
+    [
+      "E service",
+      "Prove N entrance/receiver with both routes installed. Stop both incoming E feeds, fit storm roof and complete unperforated north skirt, blank/isolate the relief cups from outside, drain and witness. Lift eastern wet carrier vertically with spout through its notch; withdraw western carrier 50 east before lift. No person under the lift."
+    ],
+    [
+      "Basket and native spool",
+      "Retract the independently captured bottom shoe 25 east, lift the guided basket, then exchange both empty hood pieces with the hydraulic joint relieved. Use the separate inboard platform and the existing twelve-state east cartridge and outboard-rack transfer. Rebuild lower hood and prove its joint before returning the basket and pan."
+    ],
+    [
+      "N short and long",
+      "Keep both wet carriers and full E chute assembled. Use the split walking insert to install the separate high nozzle and support it independently. Secure N before short-module removal; long job has 4.43895 L/s combined duty. A failed E path still needs the protected high N chase or an independently live north site leg."
+    ],
+    [
+      "Returned house",
+      "Lowest wet parts first. Reopen and backwater-test both relief connections, original basket/shoe, gully feeders, independent N, E and outfalls before removing the weather screen. Prove the native side joint and all covered states before restoring the south ramp and ordinary guard/window access."
+    ],
+    [
+      "Shared site or double blockage",
+      "A lost north basin removes both the new leg and the ordinary N destination. With E lost as well, or both galleries and the basket inlet blocked, this court has no demonstrated escape for the assigned event. Keep occupation/renewal outside that state."
+    ]
+  ],
+  "qualifiedFirstHarm": null,
+  "siteAccepted": false,
+  "installedPerformance": false
+}
