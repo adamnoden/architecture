@@ -23,7 +23,7 @@ def rectangular_torsion(width, depth):
 
 
 class SpaceArch:
-    def __init__(self, model, normal_width, cracked_ei, centreline_offsets=True):
+    def __init__(self, model, normal_width, cracked_ei, centreline_offsets=True, release_near_rotation=False):
         self.model = model
         self.width = normal_width
         self.crack = cracked_ei
@@ -45,6 +45,10 @@ class SpaceArch:
         self.member(self.arc[-1], self.jamb[-1], normal_width, 215, 'knee')
         self.supports = (self.arc[0], self.jamb[0])
         self.fixed = [self.index[point]+i for point in self.supports for i in range(6)]
+        if release_near_rotation:
+            # Local Y is the wall normal. Allow only the near end to rotate
+            # about it; keep all three translations and both other rotations.
+            self.fixed.remove(self.index[self.arc[0]]+4)
         self.free = [i for i in range(self.size) if i not in self.fixed]
         self.solve = model['p']['fac']([[self.matrix[i][j] for j in self.free] for i in self.free])
         self.columns = []

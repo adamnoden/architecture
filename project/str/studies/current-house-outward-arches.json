@@ -1824,7 +1824,7 @@
   "sources": {
     "arch-normal-kernel.py": "8685fc05d57e75ab031a43adc62e1eac9d0118e610c0d3d3c24075784394f3c8",
     "arch-space-flexibility.py": "61048dc2565027aa4cae679e2fd213f007f7da2b3f82ba4655865da67260afd1",
-    "arch-space-kernel.py": "54d19ae3bdde3e55eed244ec76bb0b2d87b533dfb548dc0aa97475ccea36c43c",
+    "arch-space-kernel.py": "ed07cf97bfa1d8359a97486a679d3220bbd81c14cccfabc8eed9a01717bd3a24",
     "arch-width-geometry.py": "c6f310f1dfab9c6e36f49e7511ddf80f1d37596ac43b5868c0205fe67febab1f",
     "current-house-arch-detail.json": "a0ef80d3e6be8c4b015ede5d292642e36427f04aafca86bac6f7a7b21aaf4aed",
     "current-house-coupled-arches.py": "e9211a4b4405bf479ad13d46c9bdd226286fdd81284d8aa5242318cbe5a65e29",

@@ -8,6 +8,7 @@ import subprocess
 from itertools import pairwise
 from pathlib import Path
 
+from ground_core_paths import paths_figure, shaft_core_paths
 from court_wall_tray import compare_court_tray, tray_figure
 from subfloor_vent_path import compare_path
 
@@ -476,6 +477,8 @@ def produce():
         'ventMouthComparison': vent_mouths(control['ventMouth'], vent, had, grid),
         'solumFallTrial': solum_fall(control['ventCrossing'], had, void),
         'ventCrossingPath': compare_path(control['ventCrossing'], had, grid, sources['RWTlowerTrack'], vent, void),
+        'directShaftCorePaths': shaft_core_paths(grid['heads'], crossings, slab, stack['innerDpc'],
+                                                stair['midlanding_slab']['bottom']),
         'courtWallTray': compare_court_tray(control['courtWallTray'], sources),
         'proposedMonolithicCastUnion': cast_union(had, grid, floor, slab),
         'batchComparison': batch, 'binderEvidence': control['binderEvidence'], 'curingAndJoint': control['curingAndJoint'],
@@ -702,7 +705,8 @@ if __name__ == '__main__':
                HERE / f'{STEM}.svg': figure(result),
                HERE / 'subfloor-vent-mouth.svg': mouth_figure(result),
                HERE / 'subfloor-vent-crossing.svg': path_figure(result),
-               HERE / 'court-wall-tray.svg': tray_figure(result['courtWallTray'])}
+               HERE / 'court-wall-tray.svg': tray_figure(result['courtWallTray']),
+               HERE / 'ground-core-paths.svg': paths_figure(result['directShaftCorePaths'])}
     for path, contents in outputs.items():
         if args.check:
             assert path.exists() and path.read_text() == contents, f'Stale output: {path.name}'

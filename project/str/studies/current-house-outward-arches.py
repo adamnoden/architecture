@@ -10,6 +10,7 @@ import sys
 
 D=Path(__file__).resolve().parent
 arguments=sys.argv[:]
+bearing_trial='--bearing' in arguments
 sys.argv=[arguments[0],'--check']
 Space=runpy.run_path(str(D/'arch-space-kernel.py'))['SpaceArch']
 Normal=runpy.run_path(str(D/'arch-normal-kernel.py'))['NormalArch']
@@ -40,8 +41,24 @@ def nominal_datum_challenge(capacity,cell,witness):
         ratios[name]=round(witness['strongDemandKNm']/rs+witness['weakDemandKNm']/rw,6)
     return ratios
 
+def skewback_contact(reactions, offset, cosine, sine, width):
+    # Inward tangent (cos,0,sin); local Y measures across the wall. Shift
+    # the complete reaction from the house axis to the actual bearing centre.
+    fx,fy,fz = (reactions[i]/1000 for i in (0,6,1))
+    mx = (reactions[7]-offset*fz)/1000  # kNm
+    mz = (reactions[8]+offset*fx)/1000
+    assert abs(reactions[2]) < 1e-6
+    normal = cosine*fx+sine*fz
+    radial_moment = -sine*mx+cosine*mz
+    # Give the contact its entire nominal width, with singular edge
+    # pressures admitted. Even this optimistic test requires both >= 0.
+    edges = [normal/2+sign*radial_moment*1000/width for sign in (-1,1)]
+    return {'forceXYZkN':[fx,fy,fz], 'centroidMomentsXYZkNm':[mx,0.,mz],
+            'normalCompressionKN':normal, 'edgeEquivalentKN':edges}
+
+
 controls=[]
-for width in (160,180):
+for width in ((180,) if bearing_trial else (160,180)):
     s=runpy.run_path(str(D/'current-house-coupled-arches.py'),init_globals={
         'arch_model_only':True,'arch_normal_width':width
     })
@@ -52,7 +69,7 @@ for width in (160,180):
     width_results=[]
     for cracked,torsion,all_bearings,yaw_join in [(.2,.15,True,True),(.35,.25,True,True),(.2,.08,False,False),(.35,.25,False,True)]:
         structure=Structure(s,torsion)
-        member=Space(s,width,cracked)
+        member=Space(s,width,cracked,release_near_rotation=bearing_trial)
         normal=Normal(s,cracked)
         count=96+(8 if yaw_join else 0)
         modes=structure.coords[:count]
@@ -129,10 +146,14 @@ for width in (160,180):
         def flatten(displacement,load,local_load=None):
             response=member.local_actions(member.response(displacement,load)[0],local_load)
             return [(*r['endAxial'],*r['strong'],*r['weak'],r['torsion']) for r in response]
+        reaction_changes={}
         increments={}
         for (loaded,x),(displacement,load,_) in points.items():
             for a in range(8):
-                increments[loaded,x,a]=flatten(ends(a,displacement),load if a==loaded else empty)
+                local_load=load if a==loaded else empty
+                increments[loaded,x,a]=flatten(ends(a,displacement),local_load)
+                if bearing_trial:
+                    reaction_changes[loaded,x,a]=member.response(ends(a,displacement),local_load)[1]
         cells={(i,adverse):cage(width,e['kind'],(e['left'][1]+e['right'][1])/2,adverse)
                for i,e in enumerate(member.elements) for adverse in (False,True)}
         @lru_cache(None)
@@ -156,6 +177,13 @@ for width in (160,180):
         maxima={name:[0.,0.] for name in ('nominalRatio','adverseRatio','nominalLink','adverseLink','nominalLongitudinalRatio','adverseLongitudinalRatio','nominalStrut','adverseStrut')}
         witnesses={}
         observations=0
+        worst_seat={}
+        if bearing_trial:
+            half=s['w']/2
+            sine=half/s['ri']
+            cosine=math.sqrt(1-sine**2)
+            peers=[next(b for b in range(8) if a!=b and s['corner_windows'][b][0]==window[0])
+                   for a,window in enumerate(s['corner_windows'])]
         for wind_index,wind_case in enumerate(s['updated_wind']):
             wind_code,roof_wind=wind_case[:2]
             floor=s['m']['recover']([0.]*8,p['floorLoadCases'][id(roof_wind)])[0]
@@ -167,10 +195,23 @@ for width in (160,180):
                 for a in exposed:
                     normal_base=[x+pressure_sign*y+(1-pressure_sign)*z for x,y,z in zip(normal_base,pressure[a][0],pressure[a][2])]
                 background=[]
+                near_reactions=[]
                 for a,(gravity,gravity_local) in enumerate(gravities):
                     load=[x+pressure_sign*y for x,y in zip(gravity,pressure[a][1])] if a in exposed else gravity
                     background.append(flatten(ends(a,normal_base),load,gravity_local))
+                    if bearing_trial:
+                        near_reactions.append(member.response(ends(a,normal_base),load)[1])
                 for loaded,x,point_sign in product(range(8),(1360,2240),(1,-1)):
+                    if bearing_trial:
+                        seats=[skewback_contact([r+point_sign*dr for r,dr in zip(base,reaction_changes[loaded,x,a])],
+                                                  member.offset(member.arc[0]),cosine,sine,width)
+                               for a,base in enumerate(near_reactions)]
+                        for a,seat in enumerate(seats):
+                            for measure,quantity in [('compression',seat['normalCompressionKN']),('edge',min(seat['edgeEquivalentKN']))]:
+                                if measure not in worst_seat or quantity < worst_seat[measure]['minimumKN']:
+                                    worst_seat[measure]={'minimumKN':quantity,'wind':wind_index,'pressureSign':pressure_sign,
+                                                         'loadedWindow':loaded,'pointX':x,'pointSign':point_sign,
+                                                         'window':a,'seat':seat,'otherWindow':peers[a],'otherSeat':seats[peers[a]]}
                     for a,base_actions in enumerate(background):
                         for element,(raw,delta) in enumerate(zip(base_actions,increments[loaded,x,a])):
                             e=member.elements[element]
@@ -199,7 +240,7 @@ for width in (160,180):
                                     if ratio>maxima[prefix+'Ratio'][kind]:
                                         maxima[prefix+'Ratio'][kind]=ratio
                                         witnesses[prefix+'Ratio/'+str(kind)]=[wind_index,loaded,a,x,point_sign,pressure_sign,element,n,ms,mw,rs,rw,tor,reserved,fraction,end]
-                                    if width==180 and not kind:
+                                    if width==180 and not kind and not bearing_trial:
                                         axial_lower=2*math.floor(n/2)
                                         station=element+end
                                         # Between the last credited station and the tip, remove
@@ -235,6 +276,8 @@ for width in (160,180):
         row={'crackedEI':cracked,'LAndUpstandTorsionFactor':torsion,'allLowerBearings':all_bearings,'floorRoofYawJoin':yaw_join,
              'maximumSameStateActions':maxima,'governingStates':witnesses,'memberWindowRecoveries':observations,
              'H6Minimum5p7MaximumPitch58NPerMM':math.pi*5.7**2/4*500/1.15/58}
+        if bearing_trial:
+            row['nearBearing']=worst_seat
         if central_witnesses:
             row['centralH25Arch']={'governingEnds':central_witnesses,
                                    'adverseFourBarProfile':four_bar_profile,
@@ -249,7 +292,10 @@ sys.argv=arguments
 source_names=['arch-space-kernel.py','arch-width-geometry.py','arch-space-flexibility.py','arch-normal-kernel.py','current-house-coupled-arches.py','current-house-spatial-arches.py','current-house-window-receivers.json','current-house-arch-detail.json']
 result={'sources':{name:hashlib.sha256((D/name).read_bytes()).hexdigest() for name in source_names},'role':'Full member-centroid three-dimensional RC width control. Both widths move outward while the occupied inner face stays fixed. Includes the changed near-L Ixy/torsion band. Full foundation delivery, root stress fields, cage, mass intersections, shear-centre transition and thermal/weather/renewal joins remain under development.',
         'controls':controls,'method':'JRC Walraven 2008 slides83-87, thin-wall torsion at theta45; C30 fcd17/nu0.528, four H16 ties, same-state longitudinal reserve before biaxial bending. Authored comparison only, not current-code compliance. The 5% steel reserve and cast -10/setout5 challenges are requirements to qualify, not delivered bounds. K uses nominal sections; minimum-section stiffness, longitudinal shear-shift anchorage and full all-head transfer remain open.', 'methodSource':'https://eurocodes.jrc.ec.europa.eu/sites/default/files/2022-06/EN1992_1_Walraven.pdf','admitted':False}
-path=Path(__file__).with_suffix('.json');text=json.dumps(result,indent=2,sort_keys=True)+'\n'
+if bearing_trial:
+    result['role']='Trial near-spring joint releases rotation about the wall normal; all other nominal kinematics retained. Signed contact at each window with the other corner arm on the same state. No contact, joint or construction acceptance.'
+path=D/('current-house-arch-bearing.json' if bearing_trial else 'current-house-outward-arches.json')
+text=json.dumps(result,indent=2,sort_keys=True)+'\n'
 if '--check' in sys.argv:
     assert path.read_text()==text
 else:

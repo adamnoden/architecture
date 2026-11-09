@@ -2,6 +2,48 @@
   "admitted": false,
   "barRadiusInElevationMm": 674.1666666666666,
   "baselineNominalSignedGapMm": -15.5,
+  "bendTie": {
+    "enclosingLegMinimumYmm": 82.5,
+    "existingLinkLevelsMm": [
+      5754.5,
+      5903.0
+    ],
+    "heavyLegAt55PercentLengthMm": 405.42532802594707,
+    "horizontalForceKN": 46.19989196455575,
+    "insideProjectionMm": 28.0,
+    "legXmm": [
+      710,
+      1135
+    ],
+    "legYmm": [
+      -30.0,
+      130.0
+    ],
+    "matchedNominalCoverMm": 33.0,
+    "middleMaximumYmm": 67.0,
+    "minimumRoomFaceYForMatchedCoverMm": 165.0,
+    "noseCentreRadiusMm": 80,
+    "noseToH16GapLowerMm": 5.852941305856618,
+    "noseToH16OnSteelOnlyCardUpperMm": 12.534619378966422,
+    "noseToH25GapLowerMm": 48.32968452251597,
+    "oneH10AtPierCapKN": 31.415926535897935,
+    "outsideProjectionMm": 28.0,
+    "remainingGlassMm": 42.0,
+    "roomLegMustExceedYmm": 127.0,
+    "scope": "One horizontal H10 U at each arm. Geometry and trial equal-leg force only; concrete stress field, bond, anchorage, other cage details, cover, placing, thermal and occupied interfaces remain open.",
+    "shortestLegLengthMm": 415,
+    "straightBondLengthMm": 368.5684800235882,
+    "straightH20GapLowerMm": 3.0,
+    "trialFacesYmm": [
+      -68.0,
+      168.0
+    ],
+    "trialH10LegStressMPa": 294.11764705882337,
+    "trialZmm": 5834.883015633174,
+    "twoH8AtPierCapKN": 40.21238596594936,
+    "unchangedRoomFaceCoverAfterFullLossMm": -7.0,
+    "unchangedRoomFaceMaximumCoverMm": 8.0
+  },
   "constantLaneZ": [
     5400,
     5950
@@ -158,6 +200,44 @@
     6
   ],
   "outsideH10CoverAfter10FaceAnd5LinkMm": 11.0,
+  "perpendicularBearing": {
+    "case": {
+      "element": 0,
+      "end": 0,
+      "loadedWindow": 5,
+      "pointSign": 1,
+      "pointX": 2240,
+      "pressureSign": 1,
+      "wind": 55,
+      "window": 5
+    },
+    "compressionKN": 18.361952209641657,
+    "radialAndNormalFaceMm": [
+      215,
+      180
+    ],
+    "requiredRadialAndNormalEccentricityMm": [
+      1065.5982395266938,
+      129.64165025806093
+    ],
+    "restraint": {
+      "LAndUpstandTorsionFactor": 0.25,
+      "allLowerBearings": true,
+      "crackedEI": 0.35,
+      "floorRoofYawJoin": true
+    },
+    "scope": "One current continuous-joint spring response on a single perpendicular contact plane. No tension, dowel, friction or separate force couple credited. A changed bearing model requires new reactions.",
+    "sourceInteraction": 0.99204289450542,
+    "strongAndWeakDemandKNm": [
+      19.566463948867437,
+      2.3804737864175927
+    ],
+    "strongAndWeakEdgeBoundKNm": [
+      1.9739098625364782,
+      1.6525756988677491
+    ],
+    "torsionKNm": 1.9003240728460482
+  },
   "pierOriginal": {
     "axialKN": -125,
     "corner": [

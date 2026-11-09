@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="610" viewBox="0 0 1060 610"><title>Three direct concrete paths through the floor</title>
+<rect width="1060" height="610" fill="#faf9f5"/><g font-family="sans-serif" fill="#23383d">
+<text x="32" y="39" font-size="24">Three ground supports carry concrete through the ordinary damp-course level</text>
+<text x="32" y="69" font-size="15">Heads in plan at left. The north wet-wall receiver is cut north–south at the actual shaft axis.</text>
+<text x="32" y="114" font-size="14">OVERLAP IN PLAN</text>
+<rect x="37.4" y="159.4" width="139.2" height="139.2" fill="#e8e4d8"/>
+<rect x="78" y="200" width="58" height="58" fill="#a8c2ba"/>
+<circle cx="107" cy="229" r="46.4" fill="none" stroke="#23383d" stroke-width="2"/>
+<circle cx="107" cy="229" r="29" fill="#dc9479" stroke="#b2583a" stroke-width="2"/>
+<text x="41" y="343" font-size="15">P46 · Stair post</text>
+<text x="41" y="366" font-size="15">Radius 125 mm</text>
+<rect x="219.4" y="159.4" width="139.2" height="139.2" fill="#e8e4d8"/>
+<rect x="249.56" y="176.8" width="60.32" height="104.4" fill="#a8c2ba"/>
+<circle cx="289" cy="229" r="46.4" fill="none" stroke="#23383d" stroke-width="2"/>
+<circle cx="289" cy="229" r="20.88" fill="#dc9479" stroke="#b2583a" stroke-width="2"/>
+<text x="223" y="343" font-size="15">P47 · South receiver</text>
+<text x="223" y="366" font-size="15">Radius 90 mm</text>
+<rect x="401.4" y="159.4" width="139.2" height="139.2" fill="#e8e4d8"/>
+<rect x="440.84" y="212.76" width="60.32" height="104.4" fill="#a8c2ba"/>
+<circle cx="471" cy="229" r="46.4" fill="none" stroke="#23383d" stroke-width="2"/>
+<circle cx="471" cy="229" r="16.24" fill="#dc9479" stroke="#b2583a" stroke-width="2"/>
+<text x="405" y="343" font-size="15">P24 · North receiver</text>
+<text x="405" y="366" font-size="15">Radius 70 mm</text>
+<rect x="35" y="398" width="16" height="14" fill="#e8e4d8"/>
+<text x="65" y="410" font-size="15">Pile cap</text>
+<rect x="35" y="429" width="16" height="14" fill="#a8c2ba"/>
+<text x="65" y="441" font-size="15">Upper RC footprint</text>
+<rect x="35" y="460" width="16" height="14" fill="#dc9479"/>
+<text x="65" y="472" font-size="15">Continuous projected core</text>
+<text x="32" y="525" font-size="15">Black circles show the shafts. The section shows the cap width only.</text>
+<text x="622" y="115" font-size="14">NORTH RECEIVER · P24</text>
+<rect x="797" y="515" width="152" height="28" fill="#d1cec4"/>
+<rect x="759" y="374.4" width="228" height="140.6" fill="#ddd9cd"/>
+<rect x="759" y="298.4" width="228" height="76" fill="#d2cdbc"/>
+<rect x="728.6" y="150" width="171" height="148.4" fill="#a8c2ba"/>
+<rect x="846.4" y="150" width="53.2" height="393" fill="#dc9479"/>
+<text x="623" y="245.4" font-size="14">DPC top -30</text>
+<path d="M 747 241.4 H 854" fill="none" stroke="#23383d" stroke-dasharray="3 3"/>
+<text x="623" y="302.4" font-size="14">Core base -180</text>
+<path d="M 747 298.4 H 854" fill="none" stroke="#23383d" stroke-dasharray="3 3"/>
+<text x="623" y="378.4" font-size="14">Pour joint -380</text>
+<path d="M 747 374.4 H 854" fill="none" stroke="#23383d" stroke-dasharray="3 3"/>
+<text x="623" y="519" font-size="14">Shaft head -750</text>
+<path d="M 747 515 H 854" fill="none" stroke="#23383d" stroke-dasharray="3 3"/>
+<text x="32" y="580" font-size="14">Geometry identifies potential transfer. Water availability, permeability, cracks, joint openings and actual wetting require evidence.</text>
+</g></svg>

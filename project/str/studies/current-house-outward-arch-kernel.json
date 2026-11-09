@@ -46,6 +46,7 @@
       ],
       "crackedEI": 0.2,
       "maximumSixComponentEquilibriumResidual": 1.3719366975806224e-08,
+      "releasedColumnError": 6.362840395013336e-06,
       "strongLimitError": 7.031619588815374e-07,
       "weakLimitError": 2.3717075237073004e-07
     },
@@ -60,6 +61,7 @@
       ],
       "crackedEI": 0.35,
       "maximumSixComponentEquilibriumResidual": 5.7122395702435824e-09,
+      "releasedColumnError": 2.0644175720008207e-06,
       "strongLimitError": 8.149400855472777e-06,
       "weakLimitError": 5.713309292332269e-07
     }
@@ -68,7 +70,7 @@
   "rejectedGrossBoxFlowNPerMM": 26.01321471307424,
   "role": "Six-degree beam limit and independent global equilibrium checks; actual H16/H6 cell falsifier.",
   "sources": {
-    "arch-space-kernel.py": "54d19ae3bdde3e55eed244ec76bb0b2d87b533dfb548dc0aa97475ccea36c43c",
+    "arch-space-kernel.py": "ed07cf97bfa1d8359a97486a679d3220bbd81c14cccfabc8eed9a01717bd3a24",
     "arch-width-geometry.py": "c6f310f1dfab9c6e36f49e7511ddf80f1d37596ac43b5868c0205fe67febab1f",
     "current-house-arch-detail.json": "a0ef80d3e6be8c4b015ede5d292642e36427f04aafca86bac6f7a7b21aaf4aed"
   }
