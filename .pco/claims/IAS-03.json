@@ -9,8 +9,8 @@
     "label": "Architecture swarm: independent post-structure"
   },
   "claimedAt": "2026-11-09T09:12:12.136Z",
-  "heartbeatAt": "2026-11-09T10:00:33.712Z",
-  "expiresAt": "2026-11-09T10:45:33.712Z",
+  "heartbeatAt": "2026-11-09T10:33:00.875Z",
+  "expiresAt": "2026-11-09T11:18:00.875Z",
   "branch": "work/swarm-house-evidence-0840",
   "predecessor": {
     "leaseId": "93b1e8fd-0750-4b50-a5b6-6783e03e7d8b",
@@ -32,5 +32,9 @@
       "next": "Whole-family current-occurrence selection or explicit house replan; rear mixed socket and supported ties require measurement, incoming sanitary fixtures unresolved."
     }
   },
-  "pr": 1446
+  "pr": 1446,
+  "checkpoint": {
+    "evidence": "The bound merged pull request and the open programme issue contain the verified handoff.",
+    "next": "Continue the remaining fitted work against the recorded household choice."
+  }
 }
