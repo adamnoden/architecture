@@ -9,11 +9,11 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T03:29:56.193Z",
-  "heartbeatAt": "2026-11-09T03:44:35.438Z",
-  "expiresAt": "2026-11-09T04:29:35.438Z",
+  "heartbeatAt": "2026-11-09T03:49:13.820Z",
+  "expiresAt": "2026-11-09T04:34:13.820Z",
   "checkpoint": {
-    "evidence": "IAS source #1424 1fbd9717/tree 2a446033 is frozen. Five IAS files plus package check for permanent well guards and staged wall-grip renewal. Source-bound checks passed.",
-    "next": "Confirm #1424 source and its regression at the immutable joint #1425 head, then preflight IAS-03 gen33 after every exact-head CI workflow is green."
+    "evidence": "Verified exact joint c91e7538/tree c62af3c8 on main fb72f6e5. Direct parent 1fbd9717 #1424, five original IAS blobs identical, package registration present and focused stair check passes. All 10 registered IAS commands passed at the unchanged original sources.",
+    "next": "Wait for all 14 hosted workflows on the exact joint SHA. Fresh IAS gen33 merge-check, then merged #941 handoff for the two-height newel and independently supported timber repair; release after main verification."
   },
   "branch": "work/house-front-threshold-0328",
   "predecessor": {
