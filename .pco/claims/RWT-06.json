@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 58,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
   "holder": {
     "kind": "chatgpt",
     "label": "South-side receiver and native outlet development"
   },
   "claimedAt": "2026-11-09T00:07:30.207Z",
-  "heartbeatAt": "2026-11-09T00:49:34.255Z",
-  "expiresAt": "2026-11-09T01:34:34.255Z",
+  "heartbeatAt": "2026-11-09T00:49:59.793Z",
+  "expiresAt": "2026-11-09T00:49:59.793Z",
   "branch": "work/swarm-house-0006",
   "predecessor": {
     "leaseId": "4dc14b02-121f-4265-a655-92ac747e4c42",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1405 at 673e5c46. All fourteen workflows, 00:48:30 canonical RWT preflight and the side-receiver regression passed. #992 records the failed N-out state: 6.41 s to low-edge spill; 146 mm relief passes at most 3.31 L/s even flush.",
     "next": "Develop or reject a genuinely independent full-duty event path during north renewal before site adoption or physical splash admission. Retain high-eave, first wetting and future site obligations."
-  }
+  },
+  "releasedAt": "2026-11-09T00:49:59.793Z",
+  "releaseReason": "handoff"
 }
