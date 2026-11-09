@@ -9,8 +9,8 @@
     "label": "Owner follow-on: plant water repair"
   },
   "claimedAt": "2026-11-09T02:34:08.819Z",
-  "heartbeatAt": "2026-11-09T02:52:16.397Z",
-  "expiresAt": "2026-11-09T03:37:16.397Z",
+  "heartbeatAt": "2026-11-09T03:11:25.398Z",
+  "expiresAt": "2026-11-09T03:56:25.398Z",
   "branch": "work/swarm-water-repair-20261109",
   "predecessor": {
     "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
@@ -34,7 +34,7 @@
   },
   "pr": 1418,
   "checkpoint": {
-    "evidence": "PR #1418 reconciled to 85b99f22 at f8b98349. HAD and plant geometry are identical and all four predecessor scopes remain intact.",
-    "next": "Await final repository validation, preflight, merge, and handoff on #1100."
+    "evidence": "Merged #1418 at 53d42459 after 14 green checks, exact head f8b98349. Issue #1100 records source, finding and handoff in comment 6731309635.",
+    "next": "Replan the fixed inlet past plant-N, coordinate both wall penetrations and demonstrate terminal release before cylinder transport."
   }
 }
