@@ -9,12 +9,12 @@
     "label": "issue-comment-6751604368"
   },
   "claimedAt": "2026-11-09T21:13:35.000Z",
-  "heartbeatAt": "2026-11-09T21:33:38.000Z",
-  "expiresAt": "2026-11-09T22:18:38.000Z",
+  "heartbeatAt": "2026-11-09T21:49:30.000Z",
+  "expiresAt": "2026-11-09T22:34:30.000Z",
   "branch": "work/mvb-chat-6751604368",
   "pr": 1466,
   "checkpoint": {
-    "evidence": "PR #1466 shared head 7acc3e28, tree 6189fde4, preserves exact IAS 2f622789 and HAD dfac0426. Local validators, all 42 HAD tests, WC and shaft/replay, both water checks and the rendered roof plate were checked.",
-    "next": "Require exact shared-head CI, verify all three live claims and fresh holder publication preflights, merge with expected SHA, reconcile #992, #941 and #943 and release the leases."
+    "evidence": "Corrected shared head 11c321ea, tree 6c54a22e. The historical structural fixture is unchanged. New occupied WC checks, all seven STR joined-frame tests, 42 HAD tests, 24 repo checks, roof study and local site build pass.",
+    "next": "Thirteen hosted workflows passed. Await full run 42705085878; verify all holders on the same head and current main, merge, reconcile the issues and release."
   }
 }
