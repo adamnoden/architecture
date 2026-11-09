@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T10:34:20.965Z",
-  "heartbeatAt": "2026-11-09T11:00:14.505Z",
-  "expiresAt": "2026-11-09T11:45:14.505Z",
+  "heartbeatAt": "2026-11-09T11:30:05.047Z",
+  "expiresAt": "2026-11-09T12:15:05.047Z",
   "branch": "work/house-1033-20261109",
   "predecessor": {
     "leaseId": "143b555a-66ad-4544-bed6-dc6531d91dfa",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Working current main 771390d3. Source-bound bath upending, constrained two-person door handle and package, whole upper-gallery route and carried stair arc solved. Native 107 kg tracked carrier, 956x556 plant, 480 x 730 x 1690 loaded cradle and 425-radius two-turn midlanding. Staging and actual final exit being verified.",
-    "next": "Publish reversible inward/outward family bath exchange comparison, stairs vs east window and dock. Include body and hand, catalogue limits, first/last support, fault and site/doorset conditions, then exact CI and integration."
-  }
+    "evidence": "Frozen #1453 c90413adaef4ffabc0001f245c0248ec400466cb tree 4d917889. One conditional whole bath export through the Y4600 window, 38.55 paired arch margin, 40-deep rail, staged high transfer to a tied north-gate hoist and 2080 additional southern land. Occupied slit, staircase/upper landing and native control veto all reproduced; nine source paths, rendered diagrams, full local registered repo checks, docs.",
+    "next": "Verify current main as #1450 completes; integrate latest main into this durable source if needed, rerun affected tests, require exact hosted CI / fresh fence. IAS-03 remains planned. Physical room release, sash, temporary rig and incoming water/finish proofs remain attached."
+  },
+  "pr": 1453
 }
