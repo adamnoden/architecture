@@ -1,5 +1,8 @@
 # Material choices for the pre-site envelope
 
+**Current disposition.** The [whole-envelope selection](whole-envelope-selection.md) supersedes the development work order below. It carries the drained-site floor, returned soffit, supported garden shelf, lead-free specials and paired water layers, independently renewable Study glass and one named unapproved gasket proposal into MAT-COORDINATION.
+
+
 **Decision.** Develop a raised concrete floor over a drainable, ventilated void, with a bonded engineering-brick break under ordinary masonry. Use this as the conventional comparator for a dry, non-pressure site. Reject the present house as a continuous capillary-isolation system. Three concrete supports carry uninterrupted material across the height of the ordinary damp course. A metal sheet cut around them leaves the same paths. Keep the complete floor, roof and glazing assemblies open for selection. The project records no owner-approved polymer exception. [Ground-water policy](../../docs/reference-house/ground-water-policy.md) · [Constituent register](constituent-audit.md) · [Material policy](../../docs/reference-house/material-policy.md)
 
 ## Trace the water from the ground to the room
