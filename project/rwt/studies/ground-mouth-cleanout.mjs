@@ -41,6 +41,13 @@ export function cleanout(sillGuides = true) {
     if(sillGuides && x<15000) rows.push(6100,7175);
     return rows.map(y=>[x,y,-90]);
   });
+  // The two closely spaced south guides share a single physical trimmed aperture.
+  const frames=[];
+  for(const [x,y] of [...ports].sort((a,b)=>a[0]-b[0] || a[1]-b[1])){
+    const previous=frames.at(-1);
+    if(previous && previous.x===x && previous.yMax>=y-90) previous.yMax=Math.max(previous.yMax,y+90);
+    else frames.push({x,yMin:y-90,yMax:y+90});
+  }
   const sill = grow([wet.start-25,wet.start+25,...wet.high,wet.bed,wet.crest],radius);
   // Smaller tool targets are centres, allowing the 25 mm head to touch each boundary.
   function reachable(t) {
@@ -78,7 +85,7 @@ export function cleanout(sillGuides = true) {
     sillTargets++; if(!reachable([wet.start,y,wet.crest+radius+5]).length){sillMisses++;if(missedExamples.length<4)missedExamples.push([wet.start,y,wet.crest+radius+5]);}
   }
   const n=house.joint.handling.referenceVerticalLoadN;
-  return {ports, testPitch:25,sillTargets,sillMisses,targetCount,missed,missedExamples,longest,
+  return {ports, frames, testPitch:25,sillTargets,sillMisses,targetCount,missed,missedExamples,longest,
     railAxes:rail.axesY,railBottomAtCrest:railBottom(wet.start),station,
     existingPostY:rail.sidePostY,postY,footingWidthBudget:150,
     wetFootingGap:Math.min(wet.basin[1]-postY[0],postY[1]-(wet.basin[1]+wet.basin[3]))-75,
