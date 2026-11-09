@@ -9,8 +9,8 @@
     "label": "Upper-first side-seat publication"
   },
   "claimedAt": "2026-11-09T00:50:38.350Z",
-  "heartbeatAt": "2026-11-09T01:09:10.974Z",
-  "expiresAt": "2026-11-09T01:54:10.974Z",
+  "heartbeatAt": "2026-11-09T01:19:19.175Z",
+  "expiresAt": "2026-11-09T02:04:19.175Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
@@ -34,7 +34,7 @@
   },
   "pr": 1406,
   "checkpoint": {
-    "evidence": "All 13 specialized PR proofs passed on d3b81931. Full health is running in Validate attempt 2, job 128921019573. Exact 59c03180 subtree and 182 RWT tests independently verified.",
-    "next": "Wait for the remaining complete validation; run fresh guard on the exact combined head immediately before merge, reconcile #992 and release this partial result."
+    "evidence": "MERGED #1406 d8e52d78 includes 59c03180 on 673e5c46; full RWT subtree verified, 182 tests in the source rehearsal and all 14 workflows green on submitted head d3b81931.",
+    "next": "RWT-06 remains started. Resolve the independent full-duty path during N renewal or change the operating topology. For the earlier east-removal alternative, address rim/sill profiles, sequenced extension after the 90-degree lock, and outboard support/arm loads before claiming safe access."
   }
 }
