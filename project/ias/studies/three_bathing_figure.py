@@ -40,10 +40,11 @@ def draw(d):
     txt(46,526,'Grey square · formed 400 well for the flush control',14)
     txt(46,549,'Green · removable return for the +155 side-service option',14)
     txt(46,572,'Blue point · retained Ø110 floor port for the side-service option',14)
-    def upper(x,y):return 678+(x-10520)*.48,148+(4590-y)*.48
+    def upper(x,y):return 682+(x-9440)*.29,171+(4550-y)*.29
     def urect(x,y,w,h,fill,stroke):
-        X,Y=upper(x,y+h);rect(X,Y,w*.48,h*.48,fill,stroke)
-    urect(10550,3890,610,610,'#e4ebe3','#a0a496')
+        X,Y=upper(x,y+h);rect(X,Y,w*.29,h*.29,fill,stroke)
+    urect(*d['originalBathExchange']['native']['body'],'#e4ebe3','#a0a496')
+    txt(694,413,'Complete 1700 × 700 shell. The waste and both trial axes are at its east end.',13)
     X,Y=f['newFloorPort'][:2]
     urect(X-100,Y-100,200,200,'#eee1c9','#ad8a5e')
     wx,wy,_=f['wasteHole'];line([upper(wx,wy),upper(*f['nativeTip']),upper(X,Y)],'#087a72',4)
