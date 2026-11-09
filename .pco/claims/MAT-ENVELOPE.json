@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 32,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
   "holder": {
     "kind": "chatgpt",
     "label": "front-utility-swarm-0002"
   },
   "claimedAt": "2026-11-09T00:06:32.175Z",
-  "heartbeatAt": "2026-11-09T00:53:42.475Z",
-  "expiresAt": "2026-11-09T01:38:42.475Z",
+  "heartbeatAt": "2026-11-09T01:18:49.798Z",
+  "expiresAt": "2026-11-09T01:18:49.798Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "495b5c0b-0ae4-4407-b0b6-dd8baae18dd1",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Four-lane #1406 head d3b81931 / tree 6204a734 on #1405 main includes the five verified RWT files and all 11 unchanged envelope files originally validated at dfce27f1.",
     "next": "Wait for full CI; run all four exact lease preflights and merge with expected SHA d3b81931. Then release and record residual evidence on #1100."
-  }
+  },
+  "releasedAt": "2026-11-09T01:18:49.798Z",
+  "releaseReason": "handoff"
 }
