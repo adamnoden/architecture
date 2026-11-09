@@ -1,0 +1,438 @@
+{
+  "materials": {
+    "shownCopperValleyMinimumInPerFt": 4.5,
+    "houseDiagonalInPerFt": 3.956751686407416,
+    "minimumEqualFaceForShownCopperDetailDeg": 27.938352729602354,
+    "additionalFieldRiseAtQ2125For28Deg": 138.9787687012704,
+    "sarketOtherUndeclaredKgInFlatArea": 24.007986371985247,
+    "sarketBitumenKgInFlatArea": 140.84685338231347
+  },
+  "renewal": {
+    "fixedCoverMinimumGap": 654.6729043587038,
+    "centreX": 6000.0,
+    "northWestRidgeX": 2125.0,
+    "pitchedEnvelopeGapsAtCentreAndCorner": [
+      3156.554565352082,
+      1897.4907424495705
+    ],
+    "cornerAdditionalRiseForTwoMetres": 102.50925755042954,
+    "cornerAfter250CoverRiseAndTwoMetres": 147.49074244957046,
+    "lowToolAndLiftAllowance": 400,
+    "residualUnderGlobalMinimumAfterToolAndLift": 254.67290435870382,
+    "uprightRidgePieceDeficit": 445.3270956412962,
+    "sideStageZ": 8195.327095641296,
+    "sideStageQ": 710,
+    "stageUndersideToField": 37.078437290048896,
+    "sideStageEdgeToApexStraightMm": 840.5950273467004
+  },
+  "catchment": {
+    "outerCourtRidgeSides": [
+      12400,
+      3100,
+      7750
+    ],
+    "perpendicularRun": 2325.0,
+    "slopeLength": 2565.3536615877933,
+    "fullValleyLength": 3462.176253315521,
+    "valleyPitch": 18.248902383234398,
+    "planM2": 144.15,
+    "surfaceM2": 159.0519270184432,
+    "valleyPlanM2": 5.405625,
+    "directCourtStripPerFaceM2": 7.2075,
+    "innerRoofPlanM2": 50.4525,
+    "courtWithOpenSkyM2": 60.0625,
+    "valleyLps": 0.3243375,
+    "combinedCourtLps": 3.60375,
+    "revisedCourt": {
+      "overhang": 275,
+      "openSide": 2950,
+      "openCourtM2": 8.7025,
+      "clearSoffitBetween25Margins": 175,
+      "oldClearSoffit": 100,
+      "innerFaceLength": 2648.1070055099804,
+      "valleyLength": 3573.859358261183,
+      "valleyPlanM2": 5.76,
+      "innerRoofPlanM2": 51.36,
+      "roofPlanM2": 145.0575,
+      "roofSlopeM2": 160.05324247990166,
+      "valleyLps": 0.34559999999999996,
+      "extraRoofPlanM2": 0.9074999999999989,
+      "normalInnerRoofLps": 3.0816,
+      "oldNormalInnerRoofLps": 3.02715,
+      "unchangedCourtFailureLps": 3.60375
+    }
+  },
+  "existingCrown": 8464.73365326618,
+  "originalUpperStack": 75.7,
+  "families": [
+    {
+      "family": "zinc with 18 mm Sarket",
+      "upperNormal": 92.7,
+      "extraNormal": 17.0,
+      "oldCrownNormalGapIfTopHeld": -7.0000000000003695,
+      "verticalFieldRise": 18.75742462236236,
+      "requiredWallLine": 7327.311890982969,
+      "fieldRidge": 8318.21566398297,
+      "capIfOldWeatherProfileRetained": 8483.491077888542
+    },
+    {
+      "family": "slate on 36 mm one-way rails",
+      "upperNormal": 86.275,
+      "extraNormal": 10.575000000000003,
+      "oldCrownNormalGapIfTopHeld": -0.5750000000003723,
+      "verticalFieldRise": 11.668221493028353,
+      "requiredWallLine": 7320.222687853636,
+      "fieldRidge": 8311.126460853635,
+      "capIfOldWeatherProfileRetained": 8476.401874759207
+    },
+    {
+      "family": "slate and HR, cold wind closure still due",
+      "upperNormal": 160.275,
+      "extraNormal": 84.575,
+      "oldCrownNormalGapIfTopHeld": -74.57500000000037,
+      "verticalFieldRise": 93.31818749625275,
+      "requiredWallLine": 7401.87265385686,
+      "fieldRidge": 8392.776426856859,
+      "capIfOldWeatherProfileRetained": 8558.051840762431
+    },
+    {
+      "family": "slate and combined Sarket below two-direction airspace",
+      "upperNormal": 175.275,
+      "extraNormal": 99.575,
+      "oldCrownNormalGapIfTopHeld": -89.57500000000037,
+      "verticalFieldRise": 109.86885628069012,
+      "requiredWallLine": 7418.423322641297,
+      "fieldRidge": 8409.327095641296,
+      "capIfOldWeatherProfileRetained": 8574.602509546869,
+      "newWeatherCapApex": 8645.327095641296,
+      "visibleChangeFromRaisedCap": 180.59344237511687,
+      "hoodOverFieldAtLip": 116,
+      "clearAboveUpstand": 116,
+      "wetOverlapVertical": 78.60922530479979,
+      "leadCoverDownSlope": 176.54046703399868,
+      "outerReceiver": {
+        "oldPrimarySecondaryZ": [
+          7215.292934729608,
+          7122.441073101047
+        ],
+        "dripQ": [
+          -200,
+          -220
+        ],
+        "gutterBottomFrontBack": [
+          6938.554466360607,
+          7048.554466360607,
+          7088.554466360607
+        ],
+        "newPrimarySecondaryZ": [
+          7325.161791010298,
+          7142.301875642372
+        ],
+        "newSecondaryAboveFixedBack": 53.7474092817647,
+        "newSecondaryAboveRaisedBack": -56.12144699892542,
+        "oldPrimaryToBottom": 276.73846836900066,
+        "newPrimaryToFixedBottom": 386.6073246496908
+      },
+      "courtEndLevelRiseAgainstOld": 74.89578191906523
+    }
+  ],
+  "air": {
+    "nhbcHRLowHighPerMetreMm2": [
+      25000,
+      5000
+    ],
+    "curbCutLipOffsets": {
+      "curb": 250,
+      "newCut": 360,
+      "lip": 520
+    },
+    "lowerCrossLayer": 60,
+    "upperRailLayer": 50,
+    "retainedDrapeLimit": 10,
+    "effectiveCourtCutWidth": 7030,
+    "outerCutWidth": 8470,
+    "cornerWidthPerFace": 2040.0,
+    "additionalLowAreaPerCourtCorner": 51000.0,
+    "courtHalfTarget": 87875.0,
+    "outerFaceTarget": 310000,
+    "innerFaceTarget": 175750,
+    "courtHalfSoffit": {
+      "gross": 160,
+      "usableLength": 1325.0,
+      "numberOfFeet": 3,
+      "screenFraction": 0.5,
+      "adverseNetMm2": 99375.0
+    },
+    "outerSoffit": {
+      "gross": 80,
+      "usableLength": 11250,
+      "numberOfFeet": 23,
+      "screenFraction": 0.5,
+      "adverseNetMm2": 393750.0
+    },
+    "outerCurbOutlet": {
+      "gross": 110,
+      "usableLength": 7300,
+      "numberOfFeet": 15,
+      "screenFraction": 0.5,
+      "adverseNetMm2": 365000.0
+    },
+    "innerCurbOutlet": {
+      "gross": 110,
+      "usableLength": 6400,
+      "numberOfFeet": 13,
+      "screenFraction": 0.5,
+      "adverseNetMm2": 320000.0
+    },
+    "separateCapCrossflow": {
+      "targetEachSide": 38750,
+      "outerSlot": {
+        "gross": 20,
+        "usableLength": 7300,
+        "numberOfFeet": 15,
+        "screenFraction": 0.5,
+        "adverseNetMm2": 54750.0
+      },
+      "courtSlot": {
+        "gross": 20,
+        "usableLength": 6400,
+        "numberOfFeet": 13,
+        "screenFraction": 0.5,
+        "adverseNetMm2": 48000.0
+      },
+      "eavesPlusCapOuterResidue": 16250.0,
+      "courtPlusCapResidue": 105500.0,
+      "raisedBoardTopAboveFieldAtSameQ": -8.258348299252646,
+      "underHoodAboveRaisedBoard": 244.25834829925265
+    },
+    "oldCourtThroatEvenAt63Percent": 18.9,
+    "courtEquivalentLowRequired": 59.57627118644068,
+    "eaveCombinedFreeSectionPerMm": 86.13251155624036,
+    "transferBands": {
+      "width": 1250,
+      "effectiveFeet": 3,
+      "area": 55000,
+      "oneMetreBandArea": 45000
+    },
+    "criticalCapClearWidths": [
+      110,
+      116,
+      116
+    ],
+    "tracedPathsXQ": {
+      "outer": [
+        [
+          1000,
+          -200
+        ],
+        [
+          1000,
+          650
+        ],
+        [
+          2075,
+          650
+        ],
+        [
+          2075,
+          1875
+        ]
+      ],
+      "court": [
+        [
+          4600,
+          4525
+        ],
+        [
+          4600,
+          2933.3095244168785
+        ],
+        [
+          3400,
+          2933.3095244168785
+        ],
+        [
+          3400,
+          2375
+        ]
+      ],
+      "insideTurnToValleyCentre": 330.00000000000006
+    }
+  },
+  "openValley": {
+    "openWidth": 200,
+    "publishedMinimum100": 100,
+    "lapTrial": 300,
+    "lengthEachOfThree": 1391.2864527537276,
+    "twoMaxPiecesNet": 2700,
+    "idealCriticalHeadMm": 10.090145187388234,
+    "localRainMmH": 216,
+    "developedLeadWidthTrial": 600,
+    "leadKgM2Code4": 20.41,
+    "eachValleyPieceKg": 17.03769390042215,
+    "allFourValleysKg": 204.45232680506578
+  },
+  "load": {
+    "sourceBackgroundGkPa": 1.5,
+    "sourceWeldedG": 413.48682091663073,
+    "separateSteelWithinRoofG": 174.90893038896593,
+    "sourceG3Budget": 432.45,
+    "fixedLowerPlusAllowanceKgM2": 86.4,
+    "slate": [
+      {
+        "grade": "Capital",
+        "exposure": "moderate",
+        "lap": 95,
+        "gauge": 202.5,
+        "piecesPerSlopeM2": 16.191054442420562,
+        "slateKgM2": 36.10605140659785,
+        "slateTonnes": 5.778890600772,
+        "newTimberKgM2": 5.937434609750993,
+        "postExtensionKgM2": 0.2640512947664745,
+        "feltWithLapsKgM2": 1.875,
+        "hrWithUnchargedWindClosureKgM2": 130.58253731111532,
+        "sarketPlusTimberSupportKgM2": 7.152372881355932,
+        "chargedLayersKgM2": 135.85991019247126,
+        "slopeGkPa": 1.3327857189881431,
+        "remainingWithin1p5KgM2": 17.045288584287135,
+        "wholeWithScheduledLayersKN": 388.22560624392526,
+        "marginTo3kPaHouseKN": 44.22439375607473,
+        "remainingAfterSpecialsKgM2": 6.387917197645567,
+        "g3MarginAfterSpecialsKN": 27.4910171895111
+      },
+      {
+        "grade": "Capital",
+        "exposure": "severe",
+        "lap": 120,
+        "gauge": 190.0,
+        "piecesPerSlopeM2": 17.25625539257981,
+        "slateKgM2": 38.48144952545297,
+        "slateTonnes": 6.159080771875422,
+        "newTimberKgM2": 6.160793933987511,
+        "postExtensionKgM2": 0.2640512947664745,
+        "feltWithLapsKgM2": 1.875,
+        "hrWithUnchargedWindClosureKgM2": 133.18129475420696,
+        "sarketPlusTimberSupportKgM2": 7.152372881355932,
+        "chargedLayersKgM2": 138.4586676355629,
+        "slopeGkPa": 1.3582795295048722,
+        "remainingWithin1p5KgM2": 14.446531141195493,
+        "wholeWithScheduledLayersKN": 392.305973280296,
+        "marginTo3kPaHouseKN": 40.144026719704016,
+        "remainingAfterSpecialsKgM2": 3.789159754553925,
+        "g3MarginAfterSpecialsKN": 23.410650153140384
+      },
+      {
+        "grade": "County",
+        "exposure": "moderate",
+        "lap": 95,
+        "gauge": 202.5,
+        "piecesPerSlopeM2": 16.191054442420562,
+        "slateKgM2": 47.60170006071645,
+        "slateTonnes": 7.618806442273399,
+        "newTimberKgM2": 5.937434609750993,
+        "postExtensionKgM2": 0.2640512947664745,
+        "feltWithLapsKgM2": 1.875,
+        "hrWithUnchargedWindClosureKgM2": 142.07818596523393,
+        "sarketPlusTimberSupportKgM2": 7.152372881355932,
+        "chargedLayersKgM2": 147.35555884658987,
+        "slopeGkPa": 1.4455580322850468,
+        "remainingWithin1p5KgM2": 5.549639930168524,
+        "wholeWithScheduledLayersKN": 406.27518064905405,
+        "marginTo3kPaHouseKN": 26.17481935094594,
+        "remainingAfterSpecialsKgM2": -5.107731456473044,
+        "g3MarginAfterSpecialsKN": 9.441442784382307
+      },
+      {
+        "grade": "County",
+        "exposure": "severe",
+        "lap": 120,
+        "gauge": 190.0,
+        "piecesPerSlopeM2": 17.25625539257981,
+        "slateKgM2": 50.73339085418464,
+        "slateTonnes": 8.120043708212439,
+        "newTimberKgM2": 6.160793933987511,
+        "postExtensionKgM2": 0.2640512947664745,
+        "feltWithLapsKgM2": 1.875,
+        "hrWithUnchargedWindClosureKgM2": 145.43323608293863,
+        "sarketPlusTimberSupportKgM2": 7.152372881355932,
+        "chargedLayersKgM2": 150.71060896429458,
+        "slopeGkPa": 1.47847107393973,
+        "remainingWithin1p5KgM2": 2.1945898124638177,
+        "wholeWithScheduledLayersKN": 411.54301968576215,
+        "marginTo3kPaHouseKN": 20.906980314237842,
+        "remainingAfterSpecialsKgM2": -8.46278157417775,
+        "g3MarginAfterSpecialsKN": 4.1736037476742105
+      },
+      {
+        "grade": "Celtic",
+        "exposure": "moderate",
+        "lap": 95,
+        "gauge": 202.5,
+        "piecesPerSlopeM2": 16.191054442420562,
+        "slateKgM2": 61.202185792349724,
+        "slateTonnes": 9.795608282922942,
+        "newTimberKgM2": 5.937434609750993,
+        "postExtensionKgM2": 0.2640512947664745,
+        "feltWithLapsKgM2": 1.875,
+        "hrWithUnchargedWindClosureKgM2": 155.67867169686718,
+        "sarketPlusTimberSupportKgM2": 7.152372881355932,
+        "chargedLayersKgM2": 160.95604457822313,
+        "slopeGkPa": 1.578978797312369,
+        "remainingWithin1p5KgM2": -8.050845801464732,
+        "wholeWithScheduledLayersKN": 427.629606705826,
+        "marginTo3kPaHouseKN": 4.820393294173982,
+        "remainingAfterSpecialsKgM2": -18.7082171881063,
+        "g3MarginAfterSpecialsKN": -11.91298327238965
+      },
+      {
+        "grade": "Celtic",
+        "exposure": "severe",
+        "lap": 120,
+        "gauge": 190.0,
+        "piecesPerSlopeM2": 17.25625539257981,
+        "slateKgM2": 65.22864538395167,
+        "slateTonnes": 10.440056196273135,
+        "newTimberKgM2": 6.160793933987511,
+        "postExtensionKgM2": 0.2640512947664745,
+        "feltWithLapsKgM2": 1.875,
+        "hrWithUnchargedWindClosureKgM2": 159.92849061270564,
+        "sarketPlusTimberSupportKgM2": 7.152372881355932,
+        "chargedLayersKgM2": 165.2058634940616,
+        "slopeGkPa": 1.6206695208767443,
+        "remainingWithin1p5KgM2": -12.300664717303192,
+        "wholeWithScheduledLayersKN": 434.3023421936375,
+        "marginTo3kPaHouseKN": -1.8523421936375257,
+        "remainingAfterSpecialsKgM2": -22.95803610394476,
+        "g3MarginAfterSpecialsKN": -18.585718760201157
+      }
+    ],
+    "zincPlusBoardIndicativeKgM2": 109.20800000000001,
+    "oldPostLength": 346,
+    "raisedPostLength": 406,
+    "oldToNewEulerCapacityRatio": 0.7262733868815064,
+    "regularGravityULSPerColdFootKN": 1.8739875,
+    "eccentricMomentAt50mmKNm": 0.093699375,
+    "batten": {
+      "span": 540.8333333333334,
+      "uniformStressMPa": 8.955786262500002,
+      "deflectionAtE10000": 1.5592700601650396,
+      "oneKNPointStressMPa": 25.960000000000004
+    },
+    "originalPlanarPlusPostU": 0.15533665248045508,
+    "addedColdWoodLayerU": 0.0012764412860488772,
+    "simpleCompositeU": 0.15661309376650395,
+    "joints": {
+      "oneCheekWettedWidth": 723.7565178604957,
+      "ridgePieceMm": 1100.0,
+      "oneCheekKg": 16.24905758248599,
+      "ridgeLeadWithLapsKg": 1039.9396852791033,
+      "outerHipPieceMm": 1287.392084438507,
+      "outerHipLeadKg": 157.6540346603396,
+      "crownRollKg": 215.52960000000002,
+      "twelveSaddleBlankKg": 88.17120000000001,
+      "totalValleyHipRidgeAndSaddleKg": 1705.7468467445087,
+      "severeCapitalG3MarginAfterThoseItemsKN": 23.410650153140384,
+      "remainingSlopeAllowanceAfterThoseItemsKgM2": 3.789159754553925
+    }
+  }
+}

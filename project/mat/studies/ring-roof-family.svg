@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="690" viewBox="0 0 1260 690" role="img" aria-labelledby="title desc">
+<title id="title">An open courtyard valley and a raised, ventilated ridge</title>
+<desc id="desc">The enlarged court overhang supplies a lower lateral air passage. The valley remains continuous. The new capped ridge rises above the structural comparison.</desc>
+<rect width="1260" height="690" fill="#faf9f5"/>
+<defs><marker id="air" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#267357"/></marker>
+<marker id="wet" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#286581"/></marker></defs>
+<g font-family="Arial,sans-serif">
+<text x="32.00" y="38.00" font-size="28" fill="#263a37" font-weight="700">A slate ring roof with an unbroken wet valley</text>
+<text x="32.00" y="68.00" font-size="15" fill="#263a37" font-weight="400">Development comparison   ·   air crosses below the raised rails, while both weather layers drain toward their own eaves.</text>
+<polyline points="30.00,89.00 1230.00,89.00" fill="none" stroke="#aebcb5" stroke-width="1" stroke-dasharray=""/>
+<text x="32.00" y="122.00" font-size="19" fill="#263a37" font-weight="700">01   Northwest quarter in plan</text>
+<text x="632.00" y="122.00" font-size="19" fill="#263a37" font-weight="700">02   One side of the capped ridge</text>
+<rect x="45.00" y="155.00" width="414.00" height="414.00" fill="#dfd8c7" stroke="#856540"/>
+<rect x="205.43" y="315.43" width="253.58" height="253.58" fill="#d3e4df" stroke="none"/>
+<rect x="371.03" y="481.03" width="87.98" height="87.98" fill="#faf9f5" stroke="#286581"/>
+<polyline points="205.43,569.00 205.43,315.43 459.00,315.43" fill="none" stroke="#856540" stroke-width="4" stroke-dasharray=""/>
+<polyline points="45.00,155.00 205.43,315.43" fill="none" stroke="#856540" stroke-width="2" stroke-dasharray=""/>
+<polyline points="207.84,317.84 369.65,479.65" fill="none" stroke="#286581" stroke-width="4" stroke-dasharray="" marker-end="url(#wet)"/>
+<polyline points="127.80,155.00 127.80,213.65 201.98,213.65 201.98,298.18" fill="none" stroke="#267357" stroke-width="2.6" stroke-dasharray="" marker-end="url(#air)"/>
+<polyline points="376.20,481.03 376.20,371.20 293.40,371.20 293.40,332.68" fill="none" stroke="#267357" stroke-width="2.6" stroke-dasharray="" marker-end="url(#air)"/>
+<text x="47.00" y="145.00" font-size="12" fill="#856540" font-weight="400">Outer eave</text>
+<text x="238.20" y="303.35" font-size="13" fill="#856540" font-weight="400">Square ridge</text>
+<text x="207.15" y="488.27" font-size="13" fill="#286581" font-weight="400">Open wet valley</text>
+<text x="374.13" y="529.67" font-size="13" fill="#286581" font-weight="400">Court</text>
+<text x="48.00" y="598.00" font-size="14" fill="#267357" font-weight="400">Green arrows show example dry paths, including their lateral turns.</text>
+<text x="48.00" y="620.00" font-size="14" fill="#263a37" font-weight="400">The 275 mm court overhang leaves a 2950 mm open court.</text>
+<polygon points="696.00,323.05 818.50,380.17 818.50,389.90 696.00,332.78" fill="#c19465"/>
+<polygon points="818.50,461.15 1068.40,577.68 1068.40,587.42 818.50,470.89" fill="#c19465"/>
+<polyline points="818.50,380.17 818.50,461.15" fill="none" stroke="#856540" stroke-width="4" stroke-dasharray=""/>
+<polygon points="872.40,401.26 1068.40,492.65 1068.40,504.70 872.40,413.30" fill="#58696b"/>
+<polygon points="872.40,413.30 1068.40,504.70 1068.40,518.21 872.40,426.82" fill="#95876a"/>
+<polygon points="872.40,426.82 1068.40,518.21 1068.40,577.68 872.40,486.29" fill="#d8e9e4"/>
+<polyline points="696.00,203.36 950.80,322.18 950.80,380.98" fill="none" stroke="#286581" stroke-width="4" stroke-dasharray=""/>
+<polyline points="872.40,401.26 872.40,342.46 882.20,342.46" fill="none" stroke="#286581" stroke-width="3" stroke-dasharray=""/>
+<polyline points="1004.70,507.54 887.10,452.70 844.96,420.31 844.96,315.94 901.80,338.53 970.40,399.91" fill="none" stroke="#267357" stroke-width="2.8" stroke-dasharray="" marker-end="url(#air)"/>
+<polyline points="720.50,301.02 803.80,342.32 834.18,358.93" fill="none" stroke="#267357" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#air)"/>
+<text x="636.00" y="158.00" font-size="15" fill="#286581" font-weight="700">Weather apex +8645.33</text>
+<text x="994.00" y="192.00" font-size="13" fill="#286581" font-weight="400">Two supported cover cheeks</text>
+<polyline points="1000.00,199.00 960.00,233.00" fill="none" stroke="#286581" stroke-width="1" stroke-dasharray=""/>
+<text x="1024.00" y="276.00" font-size="13" fill="#286581" font-weight="400">116 mm below lip</text>
+<polyline points="1018.00,280.00 950.80,398.62" fill="none" stroke="#286581" stroke-width="1" stroke-dasharray=""/>
+<text x="610.00" y="457.00" font-size="13" fill="#856540" font-weight="400">Raised wind board</text>
+<polyline points="703.00,448.00 789.10,366.46" fill="none" stroke="#856540" stroke-width="1" stroke-dasharray=""/>
+<text x="620.00" y="520.00" font-size="13" fill="#856540" font-weight="400">Continuous stepped secondary return</text>
+<polyline points="812.00,514.00 818.50,454.29" fill="none" stroke="#856540" stroke-width="1" stroke-dasharray=""/>
+<text x="922.00" y="559.00" font-size="14" fill="#267357" font-weight="400">110 mm air chamber</text>
+<text x="822.00" y="617.00" font-size="13" fill="#263a37" font-weight="400">Inner curb 250  ·  slate cutoff 360  ·  lip 520</text>
+<polyline points="30.00,642.00 1230.00,642.00" fill="none" stroke="#aebcb5" stroke-width="1" stroke-dasharray=""/>
+<text x="32.00" y="669.00" font-size="14" fill="#263a37" font-weight="400">Dimensions in mm. The crown, cold supports, water receivers and temporary cover all change or require requalification.</text>
+</g></svg>
