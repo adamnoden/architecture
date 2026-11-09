@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 60,
-  "state": "released",
-  "leaseId": "c4fad9be-30e6-47db-beac-1f728748b3fa",
+  "generation": 61,
+  "state": "claimed",
+  "leaseId": "da19f126-18f3-4dbb-b762-b868a709def9",
   "holder": {
     "kind": "chatgpt",
-    "label": "swarm-integration-2343"
+    "label": "study-door-0203"
   },
-  "claimedAt": "2026-11-09T01:20:39.685Z",
-  "heartbeatAt": "2026-11-09T02:03:58.860Z",
-  "expiresAt": "2026-11-09T02:03:58.860Z",
-  "branch": "work/fabric-next-60837041",
+  "claimedAt": "2026-11-09T02:04:35.386Z",
+  "heartbeatAt": "2026-11-09T02:04:35.386Z",
+  "expiresAt": "2026-11-09T02:49:35.386Z",
+  "branch": "work/study-door-0203",
   "predecessor": {
-    "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
-    "generation": 59,
-    "branch": "work/front-swarm-0002",
-    "pr": 1406,
+    "leaseId": "c4fad9be-30e6-47db-beac-1f728748b3fa",
+    "generation": 60,
+    "branch": "work/fabric-next-60837041",
+    "pr": 1409,
     "checkpoint": {
-      "evidence": "MERGED #1406 d8e52d78 includes 59c03180 on 673e5c46; full RWT subtree verified, 182 tests in the source rehearsal and all 14 workflows green on submitted head d3b81931.",
-      "next": "RWT-06 remains started. Resolve the independent full-duty path during N renewal or change the operating topology. For the earlier east-removal alternative, address rim/sill profiles, sequenced extension after the 90-degree lock, and outboard support/arm loads before claiming safe access."
+      "evidence": "MERGED #1409 at 0e0934f20103b3c7a58b2d5d699e7780f9609fe2. Both source parents and 14 green workflows verified. Fork crosses the failed cut, parks 90 mm outside basin. Removable OPEN-FLEX trial and independently reproduced bare stub envelope at #992 comment 6730457002.",
+      "next": "Confirm actual clamp release and tool sweep, brazed spigot and frame, check wet fork with one leg blocked and actual upstream levels, then survey independent receiving ground. See #992, #1409 and finite exit map. RWT-06 remains started."
     }
   },
   "recoverySource": {
-    "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
-    "generation": 59,
-    "branch": "work/front-swarm-0002",
-    "pr": 1406,
+    "leaseId": "c4fad9be-30e6-47db-beac-1f728748b3fa",
+    "generation": 60,
+    "branch": "work/fabric-next-60837041",
+    "pr": 1409,
     "checkpoint": {
-      "evidence": "MERGED #1406 d8e52d78 includes 59c03180 on 673e5c46; full RWT subtree verified, 182 tests in the source rehearsal and all 14 workflows green on submitted head d3b81931.",
-      "next": "RWT-06 remains started. Resolve the independent full-duty path during N renewal or change the operating topology. For the earlier east-removal alternative, address rim/sill profiles, sequenced extension after the 90-degree lock, and outboard support/arm loads before claiming safe access."
+      "evidence": "MERGED #1409 at 0e0934f20103b3c7a58b2d5d699e7780f9609fe2. Both source parents and 14 green workflows verified. Fork crosses the failed cut, parks 90 mm outside basin. Removable OPEN-FLEX trial and independently reproduced bare stub envelope at #992 comment 6730457002.",
+      "next": "Confirm actual clamp release and tool sweep, brazed spigot and frame, check wet fork with one leg blocked and actual upstream levels, then survey independent receiving ground. See #992, #1409 and finite exit map. RWT-06 remains started."
     }
-  },
-  "pr": 1409,
-  "checkpoint": {
-    "evidence": "MERGED #1409 at 0e0934f20103b3c7a58b2d5d699e7780f9609fe2. Both source parents and 14 green workflows verified. Fork crosses the failed cut, parks 90 mm outside basin. Removable OPEN-FLEX trial and independently reproduced bare stub envelope at #992 comment 6730457002.",
-    "next": "Confirm actual clamp release and tool sweep, brazed spigot and frame, check wet fork with one leg blocked and actual upstream levels, then survey independent receiving ground. See #992, #1409 and finite exit map. RWT-06 remains started."
-  },
-  "releasedAt": "2026-11-09T02:03:58.860Z",
-  "releaseReason": "handoff"
+  }
 }
