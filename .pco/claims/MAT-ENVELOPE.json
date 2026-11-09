@@ -9,8 +9,8 @@
     "label": "Ring roof and material choice 0629"
   },
   "claimedAt": "2026-11-09T06:30:15.973Z",
-  "heartbeatAt": "2026-11-09T06:46:07.357Z",
-  "expiresAt": "2026-11-09T07:31:07.357Z",
+  "heartbeatAt": "2026-11-09T07:08:54.553Z",
+  "expiresAt": "2026-11-09T07:53:54.553Z",
   "branch": "work/swarm-ring-roof-0629-20261109",
   "predecessor": {
     "leaseId": "42e6ae26-f42d-47b5-8bb7-eb67ae48b2f5",
@@ -31,5 +31,10 @@
       "evidence": "MERGED #1434 at 126ae0c2c31025d2a1c1307fd7fe2849df75f6c1. Validated 83f5a19cb3428366691b6f359835fe53bcdfa017 by all 14 exact-head workflows and g38 preflight. #1100 comment 6733775263. Fixed Study arch and low tier resolve 69.11 raw masonry clash and 1718.4 ramp headroom; positive inward head/lattice movement and conditional material/heat budget.",
       "next": "Compare a whole 25-degree ring-roof family at one actual outer hip and inner valley: actual skin, underlay/valley weather and air route, net openings/supports, wind/rain and renewal. Existing RHEINZINK high-vent and 63% mesh, Hunton Sarket requiring a separate strong valley membrane, and traditional slate/1F are source-backed alternatives, not substitutions. Retain physical window admission and ground moisture crossings."
     }
+  },
+  "pr": 1438,
+  "checkpoint": {
+    "evidence": "Public #1438 at 529d050775c22ac562eb45b6c6d9c925393561b5 on actual #1435 plus projection d59be85e5aa06bfd3ec8abd26439ec1280025acf. Whole slate/combined Sarket prototype +8645.33 cap, 275 mm court overhang, budget by grade, 1.706 t lead route, copper diagonal rejection, roof/sky conserved and actual corner access. Native source, generated code/data/drawing and owning article are on the remote branch.",
+    "next": "Finish exact-head CI and g39 merge preflight, merge, update #1100 and retain the open production/material, groundwater and other envelope duties. If main changes, reconcile actual head/base and repeat validation."
   }
 }
