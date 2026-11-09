@@ -43,7 +43,6 @@ flowchart LR
   end
   subgraph g_MAT["MAT"]
     direction TB
-    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>READY</b>"]
     n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>READY</b>"]
     n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
   end
@@ -112,7 +111,6 @@ flowchart LR
   n_RWT_07 --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
-  n_MAT_ENVELOPE --> n_MAT_COORDINATION
   n_MAT_SERVICES --> n_MAT_COORDINATION
   n_IAS_03 --> n_MAT_COORDINATION
   n_ROF_RWT_GATE --> n_MAT_COORDINATION
@@ -183,7 +181,6 @@ flowchart LR
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
-  class n_MAT_ENVELOPE ready;
   class n_MAT_SERVICES ready;
   class n_MAT_COORDINATION blocked;
   class n_MRA_01 blocked;
@@ -369,7 +366,7 @@ flowchart LR
     direction TB
     n_MAT_00["MAT-00<br/>Establish whole-house material policy and coordinated rainwater rebrief<br/><b>DONE</b>"]
     n_MAT_AUDIT["MAT-AUDIT<br/>Inventory synthetic constituents across visible and concealed house assemblies<br/><b>DONE</b>"]
-    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>READY</b>"]
+    n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>DONE</b>"]
     n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>READY</b>"]
     n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>DONE</b>"]
     n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
@@ -863,7 +860,7 @@ flowchart LR
   class n_STR_RECONCILE done;
   class n_MAT_00 done;
   class n_MAT_AUDIT done;
-  class n_MAT_ENVELOPE ready;
+  class n_MAT_ENVELOPE done;
   class n_MAT_SERVICES ready;
   class n_MAT_INTERIORS done;
   class n_MAT_COORDINATION blocked;

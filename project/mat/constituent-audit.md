@@ -67,6 +67,8 @@ All rows in this section feed **MAT-ENVELOPE**, with STR/BCR and the owning asse
 | G09 Primary roof structure | Current tied-steel development direction and lower-priority conditional concrete challenger; neither adopted | **U:** steel member specification, corrosion/fire protection, connections, bearing/isolating layers and secondary supports; concrete constituents/admixtures, reinforcement treatments, joints and interfaces for the retained challenger. A non-timber primary frame does not establish a timber-free or polymer-free roof build-up. | STRUCTURE, POLICY |
 | G10 Structural seats, hangers, anchors and penetrations | Unselected; concealed and locally inspectable | **U:** metals, treatments, possible resin anchors, pads, restraint interfaces and fire/acoustic closure. Include arch thrust and DPC sliding/bearing compatibility. The ground-boundary comparison requires separate internal-support, threshold and penetration connections; insulation compression data do not establish their capacity. | STRUCTURE, POLICY, ENV-STUDY |
 
+The [current whole-envelope alternatives](whole-envelope-selection.md) reconcile the G, R, O and cross-cutting entries against the drained-site house, including 316L roof specials, individually removable monolithic glass and the small proposed E-joint residue. Retain all unknown ingredients and the separate owner decision.
+
 ## B. Roof, rainwater and ground receivers
 
 Roof layers feed **MAT-ENVELOPE/ROF**; conveyance and collection feed **MAT-SERVICES/RWT**. RWT retains the single compatibility record and all hydraulic design.
