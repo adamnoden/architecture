@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 28,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "f71f2550-f6d8-481f-8f2a-85c315c080b2",
   "holder": {
     "kind": "chatgpt",
     "label": "Integrate authorised final utility-sink patch"
   },
   "claimedAt": "2026-11-08T23:46:39.385Z",
-  "heartbeatAt": "2026-11-09T00:28:10.194Z",
-  "expiresAt": "2026-11-09T01:13:10.194Z",
+  "heartbeatAt": "2026-11-09T00:28:41.776Z",
+  "expiresAt": "2026-11-09T00:28:41.776Z",
   "branch": "work/ias-sink-final-20261108-2343",
   "predecessor": {
     "leaseId": "cd434864-2530-4edf-9f9c-997af6efe8d6",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1402 at f8417949 on top of #1397. Verified full CI, both final IAS blobs and actual radiator height.",
     "next": "Qualify the installed support and tap, clip, shutoff, drain and reconnection sequence before adopting the utility sink or closing IAS-03."
-  }
+  },
+  "releasedAt": "2026-11-09T00:28:41.776Z",
+  "releaseReason": "handoff"
 }
