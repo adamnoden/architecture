@@ -9,8 +9,8 @@
     "label": "RWT river crossing design"
   },
   "claimedAt": "2026-11-08T23:33:21.193Z",
-  "heartbeatAt": "2026-11-08T23:48:22.333Z",
-  "expiresAt": "2026-11-09T00:33:22.333Z",
+  "heartbeatAt": "2026-11-09T00:06:20.744Z",
+  "expiresAt": "2026-11-09T00:51:20.744Z",
   "branch": "work/swarm-house-2332",
   "predecessor": {
     "leaseId": "7bf6f0cc-ef65-4c58-b418-2dc1e295e26b",
@@ -29,7 +29,7 @@
   },
   "pr": 1400,
   "checkpoint": {
-    "evidence": "RWT source head bab194dc, PR #1398, preserved for combined integration in #1400; 176 tests and the rendered plan passed.",
-    "next": "Verify combined ancestry and exact-head CI on #1400, perform fresh publication preflight, then reconcile #992 and release the lease."
+    "evidence": "Merged #1400 at 90e9aba6, preserving #1398 bab194dc. The fixed 172 mm rail cuts the west datum by 72.6 mm; the east seat lies in the spill. 176 tests passed locally and all exact-head CI passed.",
+    "next": "Test a side receiver and upstream turn with a clear straight draw, separate spill and complete reversible native release."
   }
 }
