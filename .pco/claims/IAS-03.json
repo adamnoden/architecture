@@ -9,8 +9,8 @@
     "label": "Architecture swarm: independent post-structure"
   },
   "claimedAt": "2026-11-09T09:12:12.136Z",
-  "heartbeatAt": "2026-11-09T09:12:12.136Z",
-  "expiresAt": "2026-11-09T09:57:12.136Z",
+  "heartbeatAt": "2026-11-09T09:38:52.707Z",
+  "expiresAt": "2026-11-09T10:23:52.707Z",
   "branch": "work/swarm-after-structure-0910-20261109",
   "predecessor": {
     "leaseId": "93b1e8fd-0750-4b50-a5b6-6783e03e7d8b",
