@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T09:12:55.278Z",
-  "heartbeatAt": "2026-11-09T09:58:45.866Z",
-  "expiresAt": "2026-11-09T10:43:45.866Z",
+  "heartbeatAt": "2026-11-09T10:32:24.606Z",
+  "expiresAt": "2026-11-09T11:17:24.606Z",
   "branch": "work/swarm-house-evidence-0840",
   "predecessor": {
     "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Final #1448 7accc1c27e009419369ef8cc2cf658e2b9ac4081, source tree 679c46be, parent 3dd69c08. Actual FTC7 four daily prohibitions and restart below 49 C; matched cycles at 300 L, 5.884 kWh deferred rooms, 11.77 kWh/K required. Full MAT, documentation, visual and public integrity passed.",
-    "next": "Integrate this exact #1448 as direct parent of #1446, maintain current lease and per-holder merge fences. Verify cold W9, native kit including measured switch and periodic hygiene, actual room inertia, supply and residue dispositions."
+    "evidence": "Merged #1448 (7accc1c2) through #1446 at 771390d3dbf0720de2ff505986d8978b7963291a, final head 2e7164a3, 14 green exact-head checks and four live preflights. Native four-period winter water source, both room and tank conservation, routed glycol pair and stock/mineral vessel decision. Tracker #1100 comment 6737810813, #1448 comment 6737399862.",
+    "next": "Frontier remains MAT-SERVICES planned. Compare the governing local-extract and two-stage cooker source, 55/45 emitters and higher-output outdoor/independent water alternative with W9 on the same day, alongside S01–S10 source inventory. Resolve actual room/plant access, cold pressure, controller/protection and residue alternatives; keep field acceptance separate."
   },
   "pr": 1446
 }
