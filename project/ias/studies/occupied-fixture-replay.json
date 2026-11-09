@@ -16,7 +16,7 @@
     "arm to fixed glass/fixtures": 15.009348809164587
   },
   "familySmallBathComparator": 11.404091582650544,
-  "originalBathRollYokeAndFeetToBasin": 325,
+  "originalBathRollYokeAndFeetToBasin": 325.0,
   "selectedRearTrayToBasin": 58.0,
   "rearTrayApproachToBasin": 700.4905047025684
 }
