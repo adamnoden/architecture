@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T04:06:33.815Z",
-  "heartbeatAt": "2026-11-09T04:41:29.287Z",
-  "expiresAt": "2026-11-09T05:26:29.287Z",
+  "heartbeatAt": "2026-11-09T04:52:59.594Z",
+  "expiresAt": "2026-11-09T05:37:59.594Z",
   "branch": "work/house-0406-20261109",
   "predecessor": {
     "leaseId": "f10138d4-d192-41a6-8378-24d5f718dec4",
@@ -34,7 +34,7 @@
   },
   "pr": 1428,
   "checkpoint": {
-    "evidence": "Joined and verified P32, family bath and courtyard sources in #1428 at f1253054, tree 52102729",
-    "next": "Run STR merge preflight after CI; collect the IAS and RWT preflights before merging"
+    "evidence": "Full source identity and clean-checkout tests verified at f1253054; combined publication build passed",
+    "next": "Collect all three final preflights and merge the tested head; reconcile P32 at #1103"
   }
 }
