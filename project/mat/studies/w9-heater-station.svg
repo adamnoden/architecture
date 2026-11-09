@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 1000" width="1150" height="1000" role="img" aria-labelledby="title desc">
+<title id="title">Plant-room heater and sensor comparison</title>
+<desc id="desc">Plan of the angled supply route through the intermediate arch, with a dimensioned chain and the two warm pipe shoulders shown.</desc>
+<rect width="1150" height="1000" fill="#faf8f2"/>
+<style>text{font-family:Arial,sans-serif;fill:#20343a}.title{font-size:29px;font-weight:bold}.h{font-size:20px;font-weight:bold}.body{font-size:15px}.small{font-size:13px}</style>
+<text x="34.0" y="40.0" class="title">A supply heater through the plant arch</text>
+<text x="34.0" y="68.0" class="body">R-hand W9 development comparison  ·  Ground-floor plan  ·  Dimensions in millimetres</text>
+<rect x="44.00" y="106.00" width="489.04" height="705.04" fill="#eceae3"/>
+<rect x="269.68" y="114.21" width="226.35" height="134.33" fill="#c9d2d0"/>
+<rect x="44.67" y="191.61" width="123.75" height="157.50" fill="#c9d2d0"/>
+<rect x="69.42" y="371.61" width="157.50" height="157.50" fill="#c9d2d0"/>
+<rect x="386.79" y="471.29" width="146.25" height="67.50" fill="#c9d2d0"/>
+<rect x="118.25" y="766.04" width="123.75" height="45.00" fill="#c9d2d0"/>
+<rect x="44.00" y="538.79" width="63.00" height="43.65" fill="#53676b"/>
+<rect x="381.73" y="538.79" width="151.31" height="43.65" fill="#53676b"/>
+<rect x="222.43" y="470.61" width="72.00" height="207.00" fill="#c79772"/>
+<rect x="44.00" y="650.61" width="81.67" height="72.00" fill="#c79772"/>
+<rect x="53.67" y="650.61" width="72.00" height="72.00" fill="#b58563"/>
+<rect x="302.98" y="533.16" width="18.90" height="54.90" fill="#8c6d50"/>
+<rect x="338.98" y="533.16" width="18.90" height="54.90" fill="#8c6d50"/>
+<polyline points="284.08,183.06 284.03,183.07 283.91,183.08 283.71,183.09 283.43,183.12 283.07,183.15 282.63,183.19 282.11,183.23 281.52,183.29 280.85,183.34 280.11,183.41 279.29,183.48 278.41,183.56 277.46,183.64 276.44,183.73 275.37,183.82 274.23,183.92 273.03,184.03 271.78,184.14 270.48,184.25 269.13,184.37 267.74,184.49 266.30,184.62 264.83,184.75 263.32,184.88 261.78,185.01 260.21,185.15 258.62,185.29 257.01,185.43 255.39,185.57 253.75,185.72 252.10,185.86 250.45,186.00 245.86,186.41 244.41,186.56 242.98,186.78 241.55,187.07 240.14,187.41 238.74,187.81 237.36,188.28 236.00,188.80 234.67,189.38 233.36,190.01 232.08,190.71 230.84,191.45 229.62,192.26 228.44,193.11 227.30,194.01 226.20,194.96 225.14,195.96 224.13,197.00 223.16,198.08 222.24,199.21 221.37,200.37 220.55,201.57 219.78,202.80 219.06,204.07 218.40,205.37 217.80,206.69 217.25,208.04 216.76,209.41 216.34,210.80 215.97,212.20 215.66,213.62 215.42,215.06 215.23,216.50 159.50,746.83" fill="none" stroke="#99bbb9" stroke-width="57.15" stroke-linejoin="round"/>
+<polyline points="284.08,183.06 284.03,183.07 283.91,183.08 283.71,183.09 283.43,183.12 283.07,183.15 282.63,183.19 282.11,183.23 281.52,183.29 280.85,183.34 280.11,183.41 279.29,183.48 278.41,183.56 277.46,183.64 276.44,183.73 275.37,183.82 274.23,183.92 273.03,184.03 271.78,184.14 270.48,184.25 269.13,184.37 267.74,184.49 266.30,184.62 264.83,184.75 263.32,184.88 261.78,185.01 260.21,185.15 258.62,185.29 257.01,185.43 255.39,185.57 253.75,185.72 252.10,185.86 250.45,186.00 245.86,186.41 244.41,186.56 242.98,186.78 241.55,187.07 240.14,187.41 238.74,187.81 237.36,188.28 236.00,188.80 234.67,189.38 233.36,190.01 232.08,190.71 230.84,191.45 229.62,192.26 228.44,193.11 227.30,194.01 226.20,194.96 225.14,195.96 224.13,197.00 223.16,198.08 222.24,199.21 221.37,200.37 220.55,201.57 219.78,202.80 219.06,204.07 218.40,205.37 217.80,206.69 217.25,208.04 216.76,209.41 216.34,210.80 215.97,212.20 215.66,213.62 215.42,215.06 215.23,216.50 159.50,746.83" fill="none" stroke="#166368" stroke-width="1.80" stroke-linejoin="round"/>
+<polyline points="191.72,440.27 183.01,523.06" fill="none" stroke="#246366" stroke-width="9.00" stroke-linejoin="round"/>
+<circle cx="159.50" cy="746.83" r="4.3" fill="#a33e29"/>
+<polyline points="159.26,749.07 159.06,750.60 158.80,752.12 158.46,753.63 158.05,755.12 157.58,756.60 157.04,758.04 156.44,759.47 155.77,760.86 155.03,762.22 154.24,763.55 153.38,764.84 152.47,766.08 151.50,767.29 150.48,768.45 149.40,769.56 148.28,770.62 147.11,771.63 145.89,772.58 144.63,773.48 143.33,774.31 141.99,775.09 140.62,775.81 139.22,776.46 137.79,777.05 136.33,777.57 134.86,778.02 133.36,778.41 131.85,778.72 130.32,778.97 128.78,779.15 127.24,779.25 125.69,779.29" fill="none" stroke="#166368" stroke-width="2.00" stroke-linejoin="round"/>
+<polyline points="125.69,779.29 103.19,779.29 102.21,779.27 101.23,779.23 100.25,779.16 99.28,779.06 98.30,778.93 97.33,778.78 96.37,778.59 95.41,778.38 94.46,778.14 93.51,777.87 92.58,777.57 91.65,777.25 90.73,776.90 89.82,776.53 88.93,776.13 88.05,775.70 87.17,775.24 86.32,774.77 85.47,774.26 84.65,773.73 83.83,773.18 83.04,772.61 82.26,772.01 81.50,771.39 80.75,770.75 80.03,770.08 79.33,769.40 78.64,768.70 77.98,767.97 77.34,767.23 76.72,766.47 76.12,765.69 75.52,764.91 74.90,764.15 74.26,763.40 73.60,762.68 72.91,761.98 72.21,761.29 71.48,760.63 70.74,759.99 69.98,759.37 69.20,758.77 68.41,758.19 67.59,757.64 66.77,757.11 65.92,756.61 65.07,756.13 64.19,755.68 63.31,755.25 62.41,754.85 61.51,754.47 60.59,754.12 59.66,753.80 58.73,753.51 57.78,753.24 56.83,753.00 55.87,752.79 54.91,752.60 53.94,752.44 52.96,752.32 51.99,752.22 51.01,752.14 50.03,752.10 49.04,752.09 44.00,752.09" fill="none" stroke="#166368" stroke-width="2.00" stroke-linejoin="round"/>
+<circle cx="44.00" cy="752.09" r="4.3" fill="#166368"/>
+<text x="309.1" y="168.1" class="small">W9</text>
+<text x="75.4" y="329.1" class="small">Riser</text>
+<text x="128.7" y="450.3" class="small">Heater</text>
+<text x="174.5" y="758.8" class="small">T7</text>
+<text x="283.4" y="461.6" class="small">Warm pipes</text>
+<text x="595.0" y="128.0" class="h">Two protected lengths</text>
+<text x="595.0" y="162.0" class="body">A 60 mm vertical slip space and two R150 turns feed the station.</text>
+<text x="595.0" y="188.0" class="body">The 20.5 mm tangent joins the two fabricated turn planes.</text>
+<text x="595.0" y="214.0" class="body">Both ends of the heater retain 1,000 mm of straight duct.</text>
+<text x="595.0" y="240.0" class="body">The plotted 370 mm body includes its connections.</text>
+<text x="595.0" y="266.0" class="body">The control box, hatch and tools require a measured envelope.</text>
+<text x="595.0" y="345.0" class="h">Installed geometry</text>
+<text x="595.0" y="379.0" class="body">Round jacket Ø254. Trial horizontal axis Z2451.</text>
+<text x="595.0" y="405.0" class="body">Riser / first warm shoulder / second shoulder gaps</text>
+<text x="595.0" y="431.0" class="body">   5.8 / 5.9 / 21.3 mm after the stated setout.</text>
+<text x="595.0" y="457.0" class="body">Heater transverse envelope limit at the first shoulder: 265.8 mm.</text>
+<text x="595.0" y="483.0" class="body">Circular duct to finished intrados: at least 134.0 mm radially.</text>
+<text x="595.0" y="509.0" class="body">Service-height reserve over the 2,250 mm field: 64 mm.</text>
+<text x="595.0" y="585.0" class="h">After the sensor</text>
+<text x="595.0" y="619.0" class="body">Thin line = further routing comparison, centreline only.</text>
+<text x="595.0" y="645.0" class="body">A 10 mm probe allowance precedes the R150 west turn.</text>
+<text x="595.0" y="671.0" class="body">A 100 mm reducer drops the branch axis 6 mm. Two turns</text>
+<text x="595.0" y="697.0" class="body">meet the proposed 214 × 234 jacket at the spine.</text>
+<text x="595.0" y="723.0" class="body">Allowance to the south wall: 4.1 mm.</text>
+<text x="595.0" y="749.0" class="body">Test the real probe, bend loss, firestop and removal before selection.</text>
+<text x="44.0" y="858.0" class="small">Ochre = retained low-level pipework and shoulder reservations. Grey = other apparatus / walls.</text>
+<text x="44.0" y="889.0" class="small">The other three ducts, full hatch opening, access platform and support frame are outside this route proof.</text>
+<text x="44.0" y="945.0" class="body">Pre-site reference study. The house model still represents local extract.</text>
+</svg>
