@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T03:29:06.184Z",
-  "heartbeatAt": "2026-11-09T03:29:06.184Z",
-  "expiresAt": "2026-11-09T04:14:06.184Z",
+  "heartbeatAt": "2026-11-09T03:44:45.887Z",
+  "expiresAt": "2026-11-09T04:29:45.887Z",
   "branch": "work/house-0329-20261109",
   "predecessor": {
     "leaseId": "5a0309f5-848f-4c71-904d-03be5537d2ae",
@@ -31,5 +31,10 @@
       "evidence": "MERGED #1419 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e, tree 759f9e5baf75cc9aaf264e9ef32a9ff4cbeb6911. Both roof studies plus whole-house baseline are on main, 14 hosted workflows green. Successor evidence confirmed in STR #1103.",
       "next": "Use the four joined decisions in str-house-result.md, preferentially compare a separated arch end to a bypass restraint with the actual occupied corner window, guard and cabinet. Physical-adoption, site and material holds stay named. STR-HOUSE remains open."
     }
+  },
+  "pr": 1426,
+  "checkpoint": {
+    "evidence": "Published #1426 at 44f83f2b; arch-end comparison and occupied access reproduced",
+    "next": "Confirm current main and exact CI before publication"
   }
 }
