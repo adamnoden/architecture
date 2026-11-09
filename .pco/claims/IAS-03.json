@@ -9,13 +9,13 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T03:29:56.193Z",
-  "heartbeatAt": "2026-11-09T03:43:30.628Z",
-  "expiresAt": "2026-11-09T04:28:30.628Z",
+  "heartbeatAt": "2026-11-09T03:44:35.438Z",
+  "expiresAt": "2026-11-09T04:29:35.438Z",
   "checkpoint": {
-    "evidence": "Source #1424 head 1fbd9717/tree 2a446033: two permanent well guards, fixed window span and two-height newel, plumb-joint removable timber on two supported treads. Rendering, generator, occurrence and diff checks passed.",
-    "next": "Attach source commit to joint integration branch for four exact CI/preflight steps; retain physical transfer, anchoring, temporary major-guard and escape duties. Then post merged #941 handoff and release."
+    "evidence": "IAS source #1424 1fbd9717/tree 2a446033 is frozen. Five IAS files plus package check for permanent well guards and staged wall-grip renewal. Source-bound checks passed.",
+    "next": "Confirm #1424 source and its regression at the immutable joint #1425 head, then preflight IAS-03 gen33 after every exact-head CI workflow is green."
   },
-  "branch": "work/fabric-fifth-60837041",
+  "branch": "work/house-front-threshold-0328",
   "predecessor": {
     "leaseId": "8340d5c9-7c2b-4c0c-a059-19c382a175ce",
     "generation": 32,
@@ -36,5 +36,5 @@
       "next": "Use #941 for supplied drain dimensions, support and reinstatement or advance a different internal IAS family exit."
     }
   },
-  "pr": 1424
+  "pr": 1425
 }
