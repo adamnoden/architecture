@@ -9,8 +9,8 @@
     "label": "Owner follow-on: reroute plant inlet"
   },
   "claimedAt": "2026-11-09T03:17:02.304Z",
-  "heartbeatAt": "2026-11-09T03:33:54.941Z",
-  "expiresAt": "2026-11-09T04:18:54.941Z",
+  "heartbeatAt": "2026-11-09T03:47:13.100Z",
+  "expiresAt": "2026-11-09T04:32:13.100Z",
   "branch": "work/swarm-inlet-20261109",
   "predecessor": {
     "leaseId": "33b4fff0-e075-4b00-919b-c08087956e62",
@@ -34,7 +34,7 @@
   },
   "pr": 1423,
   "checkpoint": {
-    "evidence": "PR #1423 at e2d14fd2 on #1419 main. Two pierced walls, P17 bypass and 85 mm simultaneous bridge lift. Clearances reproduce.",
-    "next": "Verify exact CI/current main, merge and hand off to HAD/STR/site on #1100."
+    "evidence": "Merged #1423 at fb72f6e5 after 14 green checks, exact head e2d14fd2. Issue #1100 comment 6731745879 records the six-file proposal.",
+    "next": "HAD/STR qualify three openings and rack, site qualify P17 bypass and frost-safe entry, Services locate utility tails and match the cylinder safety/port group."
   }
 }
