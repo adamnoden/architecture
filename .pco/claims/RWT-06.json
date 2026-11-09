@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 64,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "639f69b0-c49d-4cc1-88a9-82e5134a5b74",
   "holder": {
     "kind": "chatgpt",
     "label": "Architecture swarm: independent design development"
   },
   "claimedAt": "2026-11-09T04:06:58.331Z",
-  "heartbeatAt": "2026-11-09T05:03:27.986Z",
-  "expiresAt": "2026-11-09T05:48:27.986Z",
+  "heartbeatAt": "2026-11-09T05:04:00.644Z",
+  "expiresAt": "2026-11-09T05:04:00.644Z",
   "branch": "work/house-0406-20261109",
   "predecessor": {
     "leaseId": "3fdbd23d-ed42-4f65-88d8-795759df6967",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "MERGED #1428 at 44807906 with #1427 corrected head 69651e77 as a direct parent of f1253054, source blobs verified. Issue #992 comment 6732668968 records the geometry, 198 tests, final CI, receiver obligations and lifecycle started.",
     "next": "Wet-test the reversible closed leader and mouth blockages, locate two ground terminals and safe receiving paths, and qualify guarded access, corner renewal and the supports."
-  }
+  },
+  "releasedAt": "2026-11-09T05:04:00.644Z",
+  "releaseReason": "handoff"
 }
