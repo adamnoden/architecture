@@ -9,12 +9,12 @@
     "label": "Coordinated house successor 0910"
   },
   "claimedAt": "2026-11-09T09:11:25.230Z",
-  "heartbeatAt": "2026-11-09T09:50:09.342Z",
-  "expiresAt": "2026-11-09T10:35:09.342Z",
+  "heartbeatAt": "2026-11-09T10:10:41.159Z",
+  "expiresAt": "2026-11-09T10:55:41.159Z",
   "branch": "work/swarm-house-evidence-0840",
   "checkpoint": {
-    "evidence": "Consent for #1446 joint host: HAD-COURT-INTAKE g1 frozen #1447 ab727db7ea937ce3141a874fa47e377e7ef9b546 on dac27776 as direct source parent. Six-pan court, two chambers, removable access, low two-cell outlet, state-bounded roof frame and signed house heads define a pre-site selection. Full HAD, RWT, control and technical checks pass. RWT06 will resume.",
-    "next": "Verify joint head/source projection, run hosted checks and fresh HAD g1 preflight, then reconcile #943 and #992, release complete only on merged main and redispatch."
+    "evidence": "Corrected joint #1446 on 2e7164a3c6680ac51b94862b65bc9085cfe01b86 retains #1447 ab727db7 through d9d4e9a1. HAD source JSON 80a8481b4e5a508164eff51b596e5a954c152a30 describes its computed 700 mm aisle, the selected 50 mm release and its historical comparator. Numerical geometry, diagrams, graph and all compiled state tests remain intact. Prior final fence is invalid for this new head.",
+    "next": "Verify corrected exact joint head and complete 14 hosted workflows, run fresh g1 merge-check and send rain-eighth-run/had-final-preflight.json. After merge reconcile #943/992, release completion and redispatch."
   },
   "pr": 1446
 }
