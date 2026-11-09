@@ -18,6 +18,7 @@ flowchart LR
   end
   subgraph g_SHARED["Shared integration gates"]
     direction TB
+    n_HAD_SERVICES_ADOPTION["HAD-SERVICES-ADOPTION<br/>Select and export one service system for the occupied house<br/><b>READY</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
   end
@@ -43,7 +44,6 @@ flowchart LR
   end
   subgraph g_MAT["MAT"]
     direction TB
-    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>READY</b>"]
     n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
   end
   subgraph g_MRA["MRA"]
@@ -111,8 +111,8 @@ flowchart LR
   n_RWT_07 --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
-  n_MAT_SERVICES --> n_MAT_COORDINATION
   n_IAS_03 --> n_MAT_COORDINATION
+  n_HAD_SERVICES_ADOPTION --> n_MAT_COORDINATION
   n_ROF_RWT_GATE --> n_MAT_COORDINATION
   n_TRIAD_GATE --> n_MRA_01
   n_TRIAD_GATE --> n_MRA_02
@@ -172,6 +172,7 @@ flowchart LR
   classDef activeUnclaimed fill:#dce9e8,stroke:#356966,color:#1f4542,stroke-width:3px,stroke-dasharray:4 3;
   classDef invalidClaim fill:#f1e0dc,stroke:#a45f54,color:#693d37,stroke-width:3px;
   class n_IAS_03 ready;
+  class n_HAD_SERVICES_ADOPTION ready;
   class n_TRIAD_GATE blocked;
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
@@ -181,7 +182,6 @@ flowchart LR
   class n_ROF_RWT_GATE blocked;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
-  class n_MAT_SERVICES ready;
   class n_MAT_COORDINATION blocked;
   class n_MRA_01 blocked;
   class n_MRA_02 blocked;
@@ -301,6 +301,7 @@ flowchart LR
     n_IAS_OAS_JUNCTION["IAS-OAS-JUNCTION<br/>Interior-system to opening-assembly junction reconciliation<br/><b>DONE</b>"]
     n_IAS_HAD_JUNCTION["IAS-HAD-JUNCTION<br/>Interior-system to architectural-expression reconciliation<br/><b>DONE</b>"]
     n_OAS_HAD_JUNCTION["OAS-HAD-JUNCTION<br/>Opening-assembly to facade/interior-expression reconciliation<br/><b>DONE</b>"]
+    n_HAD_SERVICES_ADOPTION["HAD-SERVICES-ADOPTION<br/>Select and export one service system for the occupied house<br/><b>READY</b>"]
     n_HAD_WATER_REPLAN["HAD-WATER-REPLAN<br/>Recompose the selected court and roof with independent passive water exits<br/><b>DONE</b>"]
     n_HAD_COURT_INTAKE["HAD-COURT-INTAKE<br/>Join the east court intake, guarded access and live roof-corner renewal<br/><b>DONE</b>"]
     n_HAD_COURT_BYPASS["HAD-COURT-BYPASS<br/>Select the permanent courtyard receiver and its blocked-basket return<br/><b>DONE</b>"]
@@ -368,7 +369,7 @@ flowchart LR
     n_MAT_00["MAT-00<br/>Establish whole-house material policy and coordinated rainwater rebrief<br/><b>DONE</b>"]
     n_MAT_AUDIT["MAT-AUDIT<br/>Inventory synthetic constituents across visible and concealed house assemblies<br/><b>DONE</b>"]
     n_MAT_ENVELOPE["MAT-ENVELOPE<br/>Resolve non-plastic envelope and structural assembly alternatives<br/><b>DONE</b>"]
-    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>READY</b>"]
+    n_MAT_SERVICES["MAT-SERVICES<br/>Resolve non-plastic service systems and disclose functional residues<br/><b>DONE</b>"]
     n_MAT_INTERIORS["MAT-INTERIORS<br/>Resolve non-plastic interior and wet-room assembly alternatives<br/><b>DONE</b>"]
     n_MAT_COORDINATION["MAT-COORDINATION<br/>Reconcile selected-house material compliance and explicit owner exceptions<br/><b>BLOCKED</b>"]
   end
@@ -532,6 +533,9 @@ flowchart LR
   n_IAS_HAD_JUNCTION --> n_HAD_03
   n_OAS_HAD_JUNCTION --> n_HAD_03
   n_HAD_02M --> n_HAD_03
+  n_MAT_SERVICES --> n_HAD_SERVICES_ADOPTION
+  n_HAD_WATER_REPLAN --> n_HAD_SERVICES_ADOPTION
+  n_STR_RECONCILE --> n_HAD_SERVICES_ADOPTION
   n_HAD_03 --> n_HAD_WATER_REPLAN
   n_RWT_ROBUSTNESS --> n_HAD_WATER_REPLAN
   n_STR_MASONRY --> n_HAD_WATER_REPLAN
@@ -655,6 +659,7 @@ flowchart LR
   n_MAT_INTERIORS --> n_MAT_COORDINATION
   n_IAS_03 --> n_MAT_COORDINATION
   n_HAD_03 --> n_MAT_COORDINATION
+  n_HAD_SERVICES_ADOPTION --> n_MAT_COORDINATION
   n_OAS_DETAIL --> n_MAT_COORDINATION
   n_ROF_RWT_GATE --> n_MAT_COORDINATION
   n_BSR_ROOT --> n_MRA_00
@@ -817,6 +822,7 @@ flowchart LR
   class n_OAS_03 done;
   class n_HAD_BOUNDARY done;
   class n_HAD_03 done;
+  class n_HAD_SERVICES_ADOPTION ready;
   class n_HAD_WATER_REPLAN done;
   class n_HAD_COURT_INTAKE done;
   class n_HAD_COURT_BYPASS done;
@@ -866,7 +872,7 @@ flowchart LR
   class n_MAT_00 done;
   class n_MAT_AUDIT done;
   class n_MAT_ENVELOPE done;
-  class n_MAT_SERVICES ready;
+  class n_MAT_SERVICES done;
   class n_MAT_INTERIORS done;
   class n_MAT_COORDINATION blocked;
   class n_MRA_00 done;

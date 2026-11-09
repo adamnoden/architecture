@@ -39,9 +39,9 @@ export const materialNodes = defineNodes([
     owners: ['MAT'],
     title: 'Resolve non-plastic service systems and disclose functional residues',
     dependencies: ['MAT-AUDIT'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/mat/whole-service-material-offer.md', 'project/mat/studies/service-material-offer.json', 'project/mat/studies/service-material-offer.svg']
   },
   {
     id: 'MAT-INTERIORS',
@@ -60,7 +60,7 @@ export const materialNodes = defineNodes([
     id: 'MAT-COORDINATION',
     owners: ['MAT'],
     title: 'Reconcile selected-house material compliance and explicit owner exceptions',
-    dependencies: ['MAT-ENVELOPE', 'MAT-SERVICES', 'MAT-INTERIORS', 'IAS-03', 'HAD-03', 'OAS-DETAIL', 'ROF-RWT-GATE'],
+    dependencies: ['MAT-ENVELOPE', 'MAT-SERVICES', 'MAT-INTERIORS', 'IAS-03', 'HAD-03', 'HAD-SERVICES-ADOPTION', 'OAS-DETAIL', 'ROF-RWT-GATE'],
     lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
     closeoutEvidence: []
