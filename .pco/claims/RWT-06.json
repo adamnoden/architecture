@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 68,
-  "state": "released",
-  "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
+  "generation": 69,
+  "state": "claimed",
+  "leaseId": "cc9391cb-d95f-4735-8041-7160ce60d843",
   "holder": {
     "kind": "chatgpt",
-    "label": "House water and assembly decisions 1031"
+    "label": "Programme continuation 1140"
   },
-  "claimedAt": "2026-11-09T10:33:44.944Z",
-  "heartbeatAt": "2026-11-09T11:38:29.789Z",
-  "expiresAt": "2026-11-09T11:38:29.789Z",
-  "branch": "work/swarm-frontier-1033-20261109",
+  "claimedAt": "2026-11-09T11:39:16.747Z",
+  "heartbeatAt": "2026-11-09T11:39:16.747Z",
+  "expiresAt": "2026-11-09T12:24:16.747Z",
+  "branch": "work/swarm-final-dispatch-1140",
   "predecessor": {
-    "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
-    "generation": 67,
-    "branch": "work/house-0702-20261109",
-    "pr": 1440,
+    "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
+    "generation": 68,
+    "branch": "work/swarm-frontier-1033-20261109",
+    "pr": 1450,
     "checkpoint": {
-      "evidence": "The joined court decision and owning programme are on PR 1440 with independently preserved source history. Source 8aa3cf9f; programme correction 6390c5e9. See the current PR for final integration and validation.",
-      "next": "After merge, update issues 992 and 943, release this handoff and dispatch the newly registered HAD-COURT-INTAKE. RWT-06 resumes after that house input."
+      "evidence": "MERGED PR 1450 at 34b4058c81aee91f6813974e4bca74b8b09c841d with complete RWT original PR 1451 227906a9 and correct shared subtree b6562459. All 14 exact hosted workflows green, RWT 217, HAD 26 and dated live scope fence. Issue 992 comment 6739106824.",
+      "next": "Compare the two independently recoverable wet carriers, high weather shutter interlock and complete blocked N or E event with the revised continuous court grade. Source the positive operating choice and all first rests before RWT closure."
     }
   },
   "recoverySource": {
-    "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
-    "generation": 67,
-    "branch": "work/house-0702-20261109",
-    "pr": 1440,
+    "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
+    "generation": 68,
+    "branch": "work/swarm-frontier-1033-20261109",
+    "pr": 1450,
     "checkpoint": {
-      "evidence": "The joined court decision and owning programme are on PR 1440 with independently preserved source history. Source 8aa3cf9f; programme correction 6390c5e9. See the current PR for final integration and validation.",
-      "next": "After merge, update issues 992 and 943, release this handoff and dispatch the newly registered HAD-COURT-INTAKE. RWT-06 resumes after that house input."
+      "evidence": "MERGED PR 1450 at 34b4058c81aee91f6813974e4bca74b8b09c841d with complete RWT original PR 1451 227906a9 and correct shared subtree b6562459. All 14 exact hosted workflows green, RWT 217, HAD 26 and dated live scope fence. Issue 992 comment 6739106824.",
+      "next": "Compare the two independently recoverable wet carriers, high weather shutter interlock and complete blocked N or E event with the revised continuous court grade. Source the positive operating choice and all first rests before RWT closure."
     }
-  },
-  "checkpoint": {
-    "evidence": "MERGED PR 1450 at 34b4058c81aee91f6813974e4bca74b8b09c841d with complete RWT original PR 1451 227906a9 and correct shared subtree b6562459. All 14 exact hosted workflows green, RWT 217, HAD 26 and dated live scope fence. Issue 992 comment 6739106824.",
-    "next": "Compare the two independently recoverable wet carriers, high weather shutter interlock and complete blocked N or E event with the revised continuous court grade. Source the positive operating choice and all first rests before RWT closure."
-  },
-  "pr": 1450,
-  "releasedAt": "2026-11-09T11:38:29.789Z",
-  "releaseReason": "handoff"
+  }
 }
