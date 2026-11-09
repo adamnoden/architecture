@@ -9,8 +9,8 @@
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T01:20:39.685Z",
-  "heartbeatAt": "2026-11-09T01:57:34.105Z",
-  "expiresAt": "2026-11-09T02:42:34.105Z",
+  "heartbeatAt": "2026-11-09T02:02:50.499Z",
+  "expiresAt": "2026-11-09T02:47:50.499Z",
   "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
@@ -34,7 +34,7 @@
   },
   "pr": 1409,
   "checkpoint": {
-    "evidence": "Shared four-lane head 9b47e87f8ecd32aea1d47772df620979605d6d85 contains the twin-outlet arithmetic and dry park, 186 RWT tests passed, all four new plates checked and 13 hosted workflows green.",
-    "next": "Finish the exact-head validation, recheck four live packet leases, merge #1409 and hand off physical inlet, receiver survey and tailwater measurement."
+    "evidence": "MERGED #1409 at 0e0934f20103b3c7a58b2d5d699e7780f9609fe2. Both source parents and 14 green workflows verified. Fork crosses the failed cut, parks 90 mm outside basin. Removable OPEN-FLEX trial and independently reproduced bare stub envelope at #992 comment 6730457002.",
+    "next": "Confirm actual clamp release and tool sweep, brazed spigot and frame, check wet fork with one leg blocked and actual upstream levels, then survey independent receiving ground. See #992, #1409 and finite exit map. RWT-06 remains started."
   }
 }
