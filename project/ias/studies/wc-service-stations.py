@@ -341,10 +341,48 @@ def current_takeoffs(stations):
     assert min(rear_gap)>0 and min(rear_bodies)>0 and max(rear_reach)<600
     old_turn=[1500-100,11000-100,560+200,355+200]
     assert overlap(old_turn,U["service-emitter-rear-N"]) == [60,87.5]
+    # The supported guest heel must be open at the fixed Ø133 mouth. A solid
+    # 50 mm rear pad reaches the adverse mouth after the initial 100 draw.
+    fixed_mouth=y+15+35
+    assert y+100-50-fixed_mouth==0
+    heel_half_clear=(195-133)/2-10
+    assert heel_half_clear==21
+    # Move farther north while still centred before fitting a plug. Keep the
+    # transverse stage at the same ordinate after that temporary overshoot.
+    plug_draw=180
+    assert y+plug_draw-fixed_mouth==130
+    cap_handler=[8550,1752.5]
+    move(offsets[1],[0,plug_draw],handlers[1],cap_handler,[8770,1232.5])
+    cap_route=[cap_handler,[8300,1752.5],[8300,775],[8370,775]]
+    body_gap.append(route(cap_route,[carrier([0,plug_draw]),*gfix],g["walls"]))
+    cap_reach=math.dist([8370,775,390],[8900,fixed_mouth+35,195])
+    assert cap_reach<570 and 100-50-25-10==15 and min(body_gap)>0
     return {"guestBendDegrees":math.degrees(angle),"guestStraightY":straight_y,
             "guestCarrierClear":min(fixed_gap),"guestWorkerClear":min(body_gap),
-            "guestGripReach":max(grip_reach),"rearStackEntry":z_stack,"rearTransferClear":min(rear_gap),
+            "guestGripReach":max(grip_reach),"guestCapReach":cap_reach,"rearStackEntry":z_stack,"rearTransferClear":min(rear_gap),
             "rearWorkerClear":min(rear_bodies),"rearGripReach":max(rear_reach)}
+
+
+def fitted_schedule(stations, takeoffs):
+    upper=json.loads((HERE / "upper-wc-release.json").read_text())
+    g=stations["guest"]
+    result={"basis":"Joined pre-site fixture selection; the pads, source interfaces and product limits retain their separate approval duties.",
+            "coordinateSystem":"All plan rectangles are X/Y/width/depth in millimetres. Section levels are local to the room FFL.",
+            "guest":{"pan":g["pan"],"cistern":g["tank"],"valve":g["valve"],
+                     "servicesReferenceXY":[8900,650],"soilAxisZ":B["outletZ"],"southWall":[8900,0,163.75],
+                     "selectedTakeoff":"Continuous formed above-floor south-wall branch",
+                     "firstDraw":[0,100],"plugDraw":[0,180],"dryPanRest":g["stage"]},
+            "rear":{"pan":U["rear-WC"],"cabinet":U["rear-cabinet"],"valve":stations["rear"]["valve"],
+                    "stack":S["rewinds"]["rearSource27"]["retainedFloorPort"],"localSoilAxisZ":185,
+                    "soilSpigotTip":[U["rear-WC"][0]+135,11177.5,185],"flushAxisZ":340,
+                    "firstDraw":[250,0],"dryPanRest":[3800,10622.5,560,355]},
+            "replay":{k:round(v,5) for k,v in takeoffs.items()}}
+    for name in ["family","principal"]:
+        q=upper[name]
+        result[name]={"suite":q["suite"],"matchedSuiteMovement":q["travelling"],"back":q["back"],
+                      "fixedServicePort":q["fixedPort"],"travellingServicePort":q["tailPort"],
+                      "firstDrawMM":150,"onwardCarrierCentrePath":q["trimmedCarrierCentrePath"]}
+    return result
 
 
 def main():
@@ -352,7 +390,14 @@ def main():
     args.add_argument("--check",action="store_true")
     check=args.parse_args().check
     r=solution()
-    print("Current guest and rear takeoffs:", current_takeoffs(r))
+    takeoffs=current_takeoffs(r)
+    print("Current guest and rear takeoffs:", takeoffs)
+    schedule=Path(__file__).with_name("fitted-wc-schedule.json")
+    data=json.dumps(fitted_schedule(r,takeoffs),indent=2)+"\n"
+    if check:
+        assert schedule.read_text()==data,"Regenerate the fitted WC schedule"
+    else:
+        schedule.write_text(data)
     path=Path(__file__).with_suffix(".svg")
     if check:
         assert path.read_text()==figure(r),"Regenerate the four WC plans"
