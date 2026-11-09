@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
   "generation": 28,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "33b4fff0-e075-4b00-919b-c08087956e62",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on: plant water repair"
   },
   "claimedAt": "2026-11-09T02:34:08.819Z",
-  "heartbeatAt": "2026-11-09T03:11:25.398Z",
-  "expiresAt": "2026-11-09T03:56:25.398Z",
+  "heartbeatAt": "2026-11-09T03:11:58.939Z",
+  "expiresAt": "2026-11-09T03:11:58.939Z",
   "branch": "work/swarm-water-repair-20261109",
   "predecessor": {
     "leaseId": "7ffaa9c8-17ff-41dd-b9d5-635737f061c2",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1418 at 53d42459 after 14 green checks, exact head f8b98349. Issue #1100 records source, finding and handoff in comment 6731309635.",
     "next": "Replan the fixed inlet past plant-N, coordinate both wall penetrations and demonstrate terminal release before cylinder transport."
-  }
+  },
+  "releasedAt": "2026-11-09T03:11:58.939Z",
+  "releaseReason": "handoff"
 }
