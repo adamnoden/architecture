@@ -9,8 +9,8 @@
     "label": "front-utility-swarm-0002"
   },
   "claimedAt": "2026-11-09T00:06:32.175Z",
-  "heartbeatAt": "2026-11-09T00:50:55.160Z",
-  "expiresAt": "2026-11-09T01:35:55.160Z",
+  "heartbeatAt": "2026-11-09T00:53:42.475Z",
+  "expiresAt": "2026-11-09T01:38:42.475Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "495b5c0b-0ae4-4407-b0b6-dd8baae18dd1",
@@ -34,7 +34,7 @@
   },
   "pr": 1406,
   "checkpoint": {
-    "evidence": "PR #1406 final head 4e692d2f / tree 9aeb00b5 descends from integrated #1405 and preserves envelope head dfce27f1 and separately checked combined IAS and STR sources.",
-    "next": "Check final hosted CI, all exact branch and lease preflights, then expected-head merge and release. Whole-envelope closure remains open."
+    "evidence": "Four-lane #1406 head d3b81931 / tree 6204a734 on #1405 main includes the five verified RWT files and all 11 unchanged envelope files originally validated at dfce27f1.",
+    "next": "Wait for full CI; run all four exact lease preflights and merge with expected SHA d3b81931. Then release and record residual evidence on #1100."
   }
 }
