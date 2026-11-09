@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T14:35:46.008Z",
-  "heartbeatAt": "2026-11-09T14:35:46.008Z",
-  "expiresAt": "2026-11-09T15:35:46.008Z",
+  "heartbeatAt": "2026-11-09T14:54:49.000Z",
+  "expiresAt": "2026-11-09T15:39:49.000Z",
   "branch": "work/house-1435-20261109",
   "predecessor": {
     "leaseId": "7040ad01-003d-4794-ae77-2ed322f36a3f",
@@ -31,5 +31,11 @@
       "evidence": "Merged #1459 at 5fdd9d58e72be75052c013af747470b8523301c3 after 14 exact-head workflows and canonical holder fence on 1f534542. #941 handoff 6742645522. Three-bathing upper floor, lower hatch and original intact-shell exchange registered.",
       "next": "Finish the selected actual six-service riser cabinet, basin, six matched kitchen breaks and utility first-wetting and renewal duties before judging IAS-03 as a whole."
     }
+  },
+  "pr": 1462,
+  "checkpoint": {
+    "evidence": "PR #1462 b86131b7. The basin, shaft, utility and kitchen studies and illustrated first rests are published with a reproducible source check.",
+    "next": "Observe exact hosted CI, run fresh canonical merge-check from a clean checkout and merge under the expected head. Then resolve the guest and rear WC first disconnections.",
+    "blocker": "Hosted executor disconnected. Its terminal is unavailable; the GitHub mailbox cannot run merge-check."
   }
 }
