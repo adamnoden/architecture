@@ -4,6 +4,8 @@
 
 ![Family room cargo and keeper, protected half-landing, segmental east window and independent goods receiver](studies/family-bath-exchange.svg)
 
+The [later open-back family WC](ias-03-upper-wc-release.md#preserve-the-shower-and-the-bath-exchange) changes the occupied room clearance. With that suite, the attendant moves to (10500,6060) and the upright cradle turns earlier. Its checked minimum room gap is 11.40 mm. Use the original route below only with the original WC setout.
+
 ## Get the steel shell onto its feet
 
 Isolate the family hot and cold supplies at their actual service positions. Drain the bath, expose the front and lower connection, disconnect the waste, overflow and mixer, and independently cap and support the retained pipe. Remove the curtain and demountable rails. Keep the floor seal, upper soil opening, WC, basin and radiator. Before releasing either bath support, fit two shaped, padded underside saddles to an arrested lifting frame. The enamel rim and the old waste are unsuitable as lifting points. Keep ordinary trap service through the removable front. [Bath outlet and lower access](ias-03-family-bath-outlet.md) · [Manufacturer handling and installation](https://files.cdn.kaldewei.com/data/sprachen/englisch/prospekte/rest/GB_GUARANTEE_CARE_AND_INSTALLATION_INSTRUCTIONS_2020.pdf)

@@ -1,5 +1,7 @@
 # Isolate each WC before disturbing the pan
 
+**Upper-room successor.** The [open-back WC comparison](ias-03-upper-wc-release.md) develops both connected removals and the resulting room, shower and bath exchange. Use its revised fixture positions for that version. The guest and rear details below keep their original scope.
+
 Use a separately wall-hung ceramic cistern in the guest WC. Keep the principal and family rooms as compact coupled-suite candidates, with independent shutoffs reachable from the room. Retain the rear shower-room cabinet and put its upstream shutoff outside the removable front. All four original cold endpoints occupy the pan, service band, cabinet or soil column on plan. Services already labels them provisional. None is a safe default location for the first intervention. Coordinates below are mm from the southwest house datum, with heights above each room’s finished floor. [HAD room source](../had/studies/water-replan.json) · [Services fixture and work-space schedule](../mat/studies/whole-house-service-baseline.json) · [Reproducer](studies/wc-service-stations.py)
 
 ![Four north-up room plans show the existing feed points, proposed valve work fields and a person at each.](studies/wc-service-stations.svg)
