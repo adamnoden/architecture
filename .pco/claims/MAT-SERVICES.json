@@ -9,8 +9,8 @@
     "label": "Service cable termination and renewal geometry"
   },
   "claimedAt": "2026-11-08T23:41:36.917Z",
-  "heartbeatAt": "2026-11-09T00:02:54.519Z",
-  "expiresAt": "2026-11-09T00:47:54.519Z",
+  "heartbeatAt": "2026-11-09T00:06:26.822Z",
+  "expiresAt": "2026-11-09T00:51:26.822Z",
   "branch": "work/swarm-house-2332",
   "predecessor": {
     "leaseId": "a4dcf1e5-a25d-4573-bca4-31ab1d8caed9",
@@ -34,7 +34,7 @@
   },
   "pr": 1400,
   "checkpoint": {
-    "evidence": "Combined #1400 a04fb366 contains preserved #1401 fb491e04. Both files equal reviewed originals, test:mat includes study cable, combined producer passed. Thirteen of fourteen exact-head CI workflows complete at last review.",
-    "next": "Check remaining Validate pull request, freshly preflight this generation on the unchanged combined head, then reconcile the source PR and release after verified main merge."
+    "evidence": "Merged #1400 90e9aba69d6fa98b04c1bc4f0f99c2e4e1ffa319 includes original #1401. All 14 workflows and generation-23 preflight passed, preserving the real study corner aperture, supports and furniture check.",
+    "next": "MAT-SERVICES stays open. Evaluate cold cooking and degraded W9/VTC at unchanged capture with matched room heat, pressure, sound and controls. Study ends still need actual gland, box entry and supported renewal."
   }
 }
