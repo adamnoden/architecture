@@ -9,8 +9,8 @@
     "label": "Joined source decision 0700"
   },
   "claimedAt": "2026-11-09T07:05:00.748Z",
-  "heartbeatAt": "2026-11-09T08:47:12.905Z",
-  "expiresAt": "2026-11-09T09:32:12.905Z",
+  "heartbeatAt": "2026-11-09T09:10:35.815Z",
+  "expiresAt": "2026-11-09T09:55:35.815Z",
   "branch": "work/house-0702-20261109",
   "predecessor": {
     "leaseId": "c7bbb9e0-8a23-4657-afcf-8f3db52a34e0",
@@ -34,7 +34,7 @@
   },
   "pr": 1440,
   "checkpoint": {
-    "evidence": "Final IAS source #1441 a3ea0fc6 remains an ancestor of four-holder #1440 4c7947f8abb25c7176e157ba5b3c3eea08e30722. Source unchanged, manufacturer tray and pipe solids and native drain vector rechecked. Previous triple-head CI and preflight passed but #1444 moved main. This head contains actual main a68a5ac5 plus #1445 762e6b18.",
-    "next": "Wait for four-holder exact workflows, obtain final IAS publication fence, verify accepted main and reconcile issue and generation."
+    "evidence": "MERGED #1440 dac2777600c8425a2c7fc38d6c1a42776372b24c on main. Entire IAS tree equals a3ea0fc6. #1441 merged, both refs absent, #941 handoff 6736314679. 14 successful workflows and canonical fence at 09:08:47.413 UTC.",
+    "next": "Whole-family current-occurrence selection or explicit house replan; rear mixed socket and supported ties require measurement, incoming sanitary fixtures unresolved."
   }
 }
