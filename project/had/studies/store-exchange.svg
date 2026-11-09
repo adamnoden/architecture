@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 670" role="img" aria-labelledby="title desc">
+<title id="title">First movement of the domestic hot-water store</title><desc id="desc">An eccentric cradle clears the west wall. A fixed discharge manifold intersects the first eastward roll. The plant must be cold and isolated while the manifold is removed.</desc>
+<style>text{font:16px sans-serif;fill:#173d40}.heading{font-size:25px;font-weight:bold}.step{font-weight:bold}.small{font-size:13px}</style>
+<rect width="1120" height="670" fill="#fafaf5"/><text x="42" y="40" class="heading">First movement of the hot-water store</text>
+<text x="42" y="67">Plan in millimetres. North is up. Circles bound the loaded cradle at its start and east turn.</text>
+<rect x="46" y="109.04" width="532.5074999999999" height="485.9575" fill="#eeece3" stroke="#566f73"/><rect x="46.74" y="202.27" width="134.75" height="171.5" fill="#d7d9ce" stroke="#566f73"/><rect x="413.13" y="109.04" width="159.25" height="73.5" fill="#d7d9ce" stroke="#566f73"/><rect x="433.84" y="546" width="134.75" height="49" fill="#d7d9ce" stroke="#566f73"/>
+<circle cx="303.99" cy="220.64" r="73.5" stroke="#456e83" fill="#abc5ce" stroke-width="2" />
+<line x1="578.51" x2="578.51" y1="520.77" y2="275.77" stroke="#fafaf5" stroke-width="6"/>
+<circle cx="152.08" cy="484.02" r="93.1" stroke="#396c62" fill="#acd2bf" stroke-width="2" /><circle cx="156.25" cy="484.02" r="104.125" stroke="#277568" fill="none" stroke-width="2" /><circle cx="316.24" cy="404.39" r="104.125" stroke="#277568" fill="none" stroke-width="2" stroke-dasharray="8 5"/>
+<polyline points="156.25,484.02 316.24,484.02 316.24,404.39 806.24,404.39" stroke="#277568" stroke-width="3" fill="none"/>
+<text x="593.51" y="428.39" class="small">East door</text>
+<text x="164.33" y="517.02" text-anchor="middle" class="small">Store</text><text x="303.99" y="224.64" text-anchor="middle" class="small">Buffer</text>
+<text x="110.44" y="285.57" text-anchor="middle" class="small">Riser</text>
+<circle cx="202.31" cy="383.57" r="4.41" stroke="#a14b30" fill="#a14b30" stroke-width="2" /><circle cx="202.31" cy="349.27" r="3.4299999999999997" stroke="#3c668c" fill="#3c668c" stroke-width="2" />
+<text x="214.31" y="397.57" class="small">D1 manifold</text><text x="214.31" y="339.27" class="small">Tundish</text>
+<text x="830" y="135" class="step">1  Isolate and drain</text>
+<text x="830" y="166">Prove zero stored pressure.</text><text x="830" y="191">Support the retained pipework.</text>
+<text x="830" y="255" class="step">2  Release before rolling</text>
+<text x="830" y="286">Remove cold bridge, stand and</text><text x="830" y="311">detachable discharge group.</text>
+<text x="830" y="375" class="step">3  Keep the tank upright</text>
+<text x="830" y="406">Cradle centre 17 mm east.</text><text x="830" y="431">West wall and riser each retain</text><text x="830" y="456">25 mm in plan.</text>
+<text x="830" y="520" class="step">4  Restore before heat</text>
+<text x="830" y="551">Reinstall safety connections.</text><text x="830" y="576">Prove discharge and interlocks.</text>
+<text x="42" y="636" class="small">Check the complete loaded cradle, rated support, stability and union releases before use.</text></svg>
