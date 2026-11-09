@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 65,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a7ab19df-8b25-44f3-bcf3-cda599ecf360",
   "holder": {
     "kind": "chatgpt",
     "label": "Whole-family decision 0505"
   },
   "claimedAt": "2026-11-09T05:06:24.196Z",
-  "heartbeatAt": "2026-11-09T06:04:29.600Z",
-  "expiresAt": "2026-11-09T06:49:29.600Z",
+  "heartbeatAt": "2026-11-09T06:04:54.207Z",
+  "expiresAt": "2026-11-09T06:04:54.207Z",
   "branch": "work/house-0506-20261109",
   "predecessor": {
     "leaseId": "639f69b0-c49d-4cc1-88a9-82e5134a5b74",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1431 at 2e16d4de, frozen RWT source 765b6b47 is in main. 202 RWT tests and 14 final workflows passed; outcome/remaining scope on issue #992 comment 6733449460.",
     "next": "Resolve high-eave corner and leader release/restoration, its ordinary tool, and both east below-deck cleanouts; reconcile all six RWT-06 duties including first-wetting before lifecycle closeout."
-  }
+  },
+  "releasedAt": "2026-11-09T06:04:54.207Z",
+  "releaseReason": "handoff"
 }
