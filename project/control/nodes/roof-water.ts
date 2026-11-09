@@ -136,12 +136,11 @@ export const roofWaterNodes = defineNodes([
     id: 'RWT-06',
     owners: ['RWT'],
     title: 'Rainwater access, courtyard transition and site handoff',
-    // HAD-03's single north loggia retains a common-mode closure. A complete
-    // architectural replan must precede further source-bound water detailing.
-    dependencies: ['RWT-03', 'RWT-05', 'HAD-WATER-REPLAN'],
-    lifecycle: 'started',
+    // The selected two-exit house still needs a joined E mouth, guarded access and corner-service layout.
+    dependencies: ['RWT-03', 'RWT-05', 'HAD-WATER-REPLAN', 'HAD-COURT-INTAKE'],
+    lifecycle: 'planned',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: ['project/rwt/rwt-06-selected-water-event.md']
+    closeoutEvidence: ['project/rwt/rwt-06-selected-water-event.md', 'project/rwt/rwt-06-court-intake-decision.md']
   },
 
   // Owner-directed successor questions; original research remains historical evidence.
