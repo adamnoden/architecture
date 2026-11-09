@@ -9,8 +9,8 @@
     "label": "Architecture swarm: current house frontier"
   },
   "claimedAt": "2026-11-09T10:35:19.622Z",
-  "heartbeatAt": "2026-11-09T11:23:45.664Z",
-  "expiresAt": "2026-11-09T12:08:45.664Z",
+  "heartbeatAt": "2026-11-09T11:37:47.886Z",
+  "expiresAt": "2026-11-09T12:22:47.886Z",
   "branch": "work/swarm-frontier-1033-20261109",
   "predecessor": {
     "leaseId": "524e14c3-49cd-4266-a5e0-4aef19f2f889",
@@ -32,5 +32,9 @@
       "next": "Frontier remains MAT-SERVICES planned. Compare the governing local-extract and two-stage cooker source, 55/45 emitters and higher-output outdoor/independent water alternative with W9 on the same day, alongside S01–S10 source inventory. Resolve actual room/plant access, cold pressure, controller/protection and residue alternatives; keep field acceptance separate."
     }
   },
-  "pr": 1450
+  "pr": 1450,
+  "checkpoint": {
+    "evidence": "Merged #1450 at 34b4058c81ae. The verified source and handoff are recorded on #1100.",
+    "next": "Continue the independently serviceable cooking intake and kitchen radiator renewal for the governing local-extract house."
+  }
 }
