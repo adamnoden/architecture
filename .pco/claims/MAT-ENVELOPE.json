@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 41,
-  "state": "released",
-  "leaseId": "a6a1ef75-2328-49d1-ab67-be70360701fa",
+  "generation": 42,
+  "state": "claimed",
+  "leaseId": "0fe01b17-156a-48e7-9905-d3be45f79736",
   "holder": {
     "kind": "chatgpt",
-    "label": "House closure priorities 0820"
+    "label": "Whole occurrence decision 0840"
   },
-  "claimedAt": "2026-11-09T08:20:39.614Z",
-  "heartbeatAt": "2026-11-09T09:10:31.855Z",
-  "expiresAt": "2026-11-09T09:10:31.855Z",
-  "branch": "work/house-0702-20261109",
+  "claimedAt": "2026-11-09T09:12:42.801Z",
+  "heartbeatAt": "2026-11-09T09:12:42.801Z",
+  "expiresAt": "2026-11-09T09:57:42.801Z",
+  "branch": "work/swarm-house-evidence-0840",
   "predecessor": {
-    "leaseId": "111ea1da-ce89-4fea-8f1d-9d27b104f73c",
-    "generation": 40,
-    "branch": "work/fabric-rush-0710",
-    "pr": 1443,
+    "leaseId": "a6a1ef75-2328-49d1-ab67-be70360701fa",
+    "generation": 41,
+    "branch": "work/house-0702-20261109",
+    "pr": 1440,
     "checkpoint": {
-      "evidence": "Merged #1443 at 331d4e7d3d5c39cf2df7b52c326113225cc73384. Exact head 3873aeb2 passed 14 hosted workflows and g40 preflight. Issue #1100 comment 6735427392 records moisture and bearing decisions on the three occupied supports.",
-      "next": "Join the three external door boundaries and renewable wet/dry wall returns to a single floor-exposure option, then reconcile the complete roof, glazing, and site duties in the envelope disposition. A positive barrier still requires joined field and structural proof."
+      "evidence": "MERGED #1440 at dac2777600c8425a2c7fc38d6c1a42776372b24c with frozen #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent of 4c7947f8abb25c7176e157ba5b3c3eea08e30722. Fourteen exact hosted workflows, local full MAT/docs and all three companion regressions passed. Held g41 preflight and #1100 comment 6736307378. Three doors on one dry-site RC floor with the plant reveal, fixed gasket, 35 up / 80 return and separate wet outlet/exposure conditions.",
+      "next": "Complete a real ordinary-wall and sheltered loggia soffit/portal material and fixing section at the joined structural floor edge. Compare the 110 mm ordinary and 200 mm loggia wall glass with actual retained layers, safe soffit support, drainage, classified underside, heat and replaceability. Keep the three dry doors and requeued court receiver as source inputs. Respect the remaining roof and glazing choices."
     }
   },
   "recoverySource": {
-    "leaseId": "111ea1da-ce89-4fea-8f1d-9d27b104f73c",
-    "generation": 40,
-    "branch": "work/fabric-rush-0710",
-    "pr": 1443,
+    "leaseId": "a6a1ef75-2328-49d1-ab67-be70360701fa",
+    "generation": 41,
+    "branch": "work/house-0702-20261109",
+    "pr": 1440,
     "checkpoint": {
-      "evidence": "Merged #1443 at 331d4e7d3d5c39cf2df7b52c326113225cc73384. Exact head 3873aeb2 passed 14 hosted workflows and g40 preflight. Issue #1100 comment 6735427392 records moisture and bearing decisions on the three occupied supports.",
-      "next": "Join the three external door boundaries and renewable wet/dry wall returns to a single floor-exposure option, then reconcile the complete roof, glazing, and site duties in the envelope disposition. A positive barrier still requires joined field and structural proof."
+      "evidence": "MERGED #1440 at dac2777600c8425a2c7fc38d6c1a42776372b24c with frozen #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent of 4c7947f8abb25c7176e157ba5b3c3eea08e30722. Fourteen exact hosted workflows, local full MAT/docs and all three companion regressions passed. Held g41 preflight and #1100 comment 6736307378. Three doors on one dry-site RC floor with the plant reveal, fixed gasket, 35 up / 80 return and separate wet outlet/exposure conditions.",
+      "next": "Complete a real ordinary-wall and sheltered loggia soffit/portal material and fixing section at the joined structural floor edge. Compare the 110 mm ordinary and 200 mm loggia wall glass with actual retained layers, safe soffit support, drainage, classified underside, heat and replaceability. Keep the three dry doors and requeued court receiver as source inputs. Respect the remaining roof and glazing choices."
     }
-  },
-  "pr": 1440,
-  "checkpoint": {
-    "evidence": "MERGED #1440 at dac2777600c8425a2c7fc38d6c1a42776372b24c with frozen #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent of 4c7947f8abb25c7176e157ba5b3c3eea08e30722. Fourteen exact hosted workflows, local full MAT/docs and all three companion regressions passed. Held g41 preflight and #1100 comment 6736307378. Three doors on one dry-site RC floor with the plant reveal, fixed gasket, 35 up / 80 return and separate wet outlet/exposure conditions.",
-    "next": "Complete a real ordinary-wall and sheltered loggia soffit/portal material and fixing section at the joined structural floor edge. Compare the 110 mm ordinary and 200 mm loggia wall glass with actual retained layers, safe soffit support, drainage, classified underside, heat and replaceability. Keep the three dry doors and requeued court receiver as source inputs. Respect the remaining roof and glazing choices."
-  },
-  "releasedAt": "2026-11-09T09:10:31.855Z",
-  "releaseReason": "handoff"
+  }
 }
