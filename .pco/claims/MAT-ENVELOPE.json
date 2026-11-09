@@ -9,8 +9,8 @@
     "label": "front-utility-swarm-0002"
   },
   "claimedAt": "2026-11-09T00:06:32.175Z",
-  "heartbeatAt": "2026-11-09T00:35:32.915Z",
-  "expiresAt": "2026-11-09T01:20:32.915Z",
+  "heartbeatAt": "2026-11-09T00:50:55.160Z",
+  "expiresAt": "2026-11-09T01:35:55.160Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "495b5c0b-0ae4-4407-b0b6-dd8baae18dd1",
@@ -34,7 +34,7 @@
   },
   "pr": 1406,
   "checkpoint": {
-    "evidence": "Combined #1406 at 4ddb988d preserves MAT dfce27f1 and the verified joined STR and IAS tree 02c72ef0.",
-    "next": "Verify all hosted jobs on exact head 4ddb988d; each lane checks lease and base before expected-head merge; reconcile open residuals."
+    "evidence": "PR #1406 final head 4e692d2f / tree 9aeb00b5 descends from integrated #1405 and preserves envelope head dfce27f1 and separately checked combined IAS and STR sources.",
+    "next": "Check final hosted CI, all exact branch and lease preflights, then expected-head merge and release. Whole-envelope closure remains open."
   }
 }
