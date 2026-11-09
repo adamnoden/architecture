@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T02:06:02.574Z",
-  "heartbeatAt": "2026-11-09T02:36:44.451Z",
-  "expiresAt": "2026-11-09T03:21:44.451Z",
+  "heartbeatAt": "2026-11-09T02:51:47.065Z",
+  "expiresAt": "2026-11-09T03:36:47.065Z",
   "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "32cbfcf3-85b6-4d7d-bb68-db98071ca67c",
@@ -34,7 +34,7 @@
   },
   "pr": 1414,
   "checkpoint": {
-    "evidence": "Verified frozen #1415 sources on joint head 6f5b7944 after #1413",
-    "next": "Await exact-head checks, run publication preflight, and hand off in #1100"
+    "evidence": "Merged #1415 via #1414 at 85b99f22. Six roof sources verified. Handoff in #1100.",
+    "next": "Detail the hip cover, dry court feed and two insulation turns at the curb per #1100"
   }
 }
