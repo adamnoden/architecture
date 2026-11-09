@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 58,
-  "state": "released",
-  "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
+  "generation": 59,
+  "state": "claimed",
+  "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
   "holder": {
     "kind": "chatgpt",
-    "label": "South-side receiver and native outlet development"
+    "label": "Upper-first side-seat publication"
   },
-  "claimedAt": "2026-11-09T00:07:30.207Z",
-  "heartbeatAt": "2026-11-09T00:49:59.793Z",
-  "expiresAt": "2026-11-09T00:49:59.793Z",
-  "branch": "work/swarm-house-0006",
+  "claimedAt": "2026-11-09T00:50:38.350Z",
+  "heartbeatAt": "2026-11-09T00:50:38.350Z",
+  "expiresAt": "2026-11-09T01:35:38.350Z",
+  "branch": "work/swarm-water-side-0050",
   "predecessor": {
-    "leaseId": "4dc14b02-121f-4265-a655-92ac747e4c42",
-    "generation": 57,
-    "branch": "work/swarm-house-2332",
-    "pr": 1400,
+    "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
+    "generation": 58,
+    "branch": "work/swarm-house-0006",
+    "pr": 1405,
     "checkpoint": {
-      "evidence": "Merged #1400 at 90e9aba6, preserving #1398 bab194dc. The fixed 172 mm rail cuts the west datum by 72.6 mm; the east seat lies in the spill. 176 tests passed locally and all exact-head CI passed.",
-      "next": "Test a side receiver and upstream turn with a clear straight draw, separate spill and complete reversible native release."
+      "evidence": "Merged #1405 at 673e5c46. All fourteen workflows, 00:48:30 canonical RWT preflight and the side-receiver regression passed. #992 records the failed N-out state: 6.41 s to low-edge spill; 146 mm relief passes at most 3.31 L/s even flush.",
+      "next": "Develop or reject a genuinely independent full-duty event path during north renewal before site adoption or physical splash admission. Retain high-eave, first wetting and future site obligations."
     }
   },
   "recoverySource": {
-    "leaseId": "4dc14b02-121f-4265-a655-92ac747e4c42",
-    "generation": 57,
-    "branch": "work/swarm-house-2332",
-    "pr": 1400,
+    "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
+    "generation": 58,
+    "branch": "work/swarm-house-0006",
+    "pr": 1405,
     "checkpoint": {
-      "evidence": "Merged #1400 at 90e9aba6, preserving #1398 bab194dc. The fixed 172 mm rail cuts the west datum by 72.6 mm; the east seat lies in the spill. 176 tests passed locally and all exact-head CI passed.",
-      "next": "Test a side receiver and upstream turn with a clear straight draw, separate spill and complete reversible native release."
+      "evidence": "Merged #1405 at 673e5c46. All fourteen workflows, 00:48:30 canonical RWT preflight and the side-receiver regression passed. #992 records the failed N-out state: 6.41 s to low-edge spill; 146 mm relief passes at most 3.31 L/s even flush.",
+      "next": "Develop or reject a genuinely independent full-duty event path during north renewal before site adoption or physical splash admission. Retain high-eave, first wetting and future site obligations."
     }
-  },
-  "pr": 1405,
-  "checkpoint": {
-    "evidence": "Merged #1405 at 673e5c46. All fourteen workflows, 00:48:30 canonical RWT preflight and the side-receiver regression passed. #992 records the failed N-out state: 6.41 s to low-edge spill; 146 mm relief passes at most 3.31 L/s even flush.",
-    "next": "Develop or reject a genuinely independent full-duty event path during north renewal before site adoption or physical splash admission. Retain high-eave, first wetting and future site obligations."
-  },
-  "releasedAt": "2026-11-09T00:49:59.793Z",
-  "releaseReason": "handoff"
+  }
 }
