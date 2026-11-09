@@ -9,8 +9,8 @@
     "label": "MAT W9 cold cooking and unchanged capture"
   },
   "claimedAt": "2026-11-09T00:08:05.751Z",
-  "heartbeatAt": "2026-11-09T00:11:28.062Z",
-  "expiresAt": "2026-11-09T00:56:28.062Z",
+  "heartbeatAt": "2026-11-09T00:20:15.090Z",
+  "expiresAt": "2026-11-09T01:05:15.090Z",
   "branch": "work/swarm-house-0006",
   "predecessor": {
     "leaseId": "c0a47f30-22d5-425b-bc4a-c8694dfcb7ad",
@@ -34,7 +34,7 @@
   },
   "pr": 1405,
   "checkpoint": {
-    "evidence": "PR #1405 bfd005a9 joins W9 cold cooking, VTC, kitchen envelope and the structurally coordinated work. Own producer and full test:mat passed locally.",
-    "next": "Verify integrated W9 files match, monitor exact-head checks, run all required lease/publication preflights and reconcile after merge."
+    "evidence": "PR #1405 d36007ba: both W9 producers reproduce, three MAT files match reviewed source, full test:mat passed on the owned implementation. Native root overlap remains; smooth transition offers 31.19 mm bore and 28 mm outlet jacket spacing. Direct vertical heater/sensor rejected.",
+    "next": "Verify final exact-head CI/current main, perform generation 24 publication preflight, then reconcile and release. For continuation, develop the common vapour-tight root and the horizontal 200 mm supply station, including its 1000 mm sensor and renewal field."
   }
 }
