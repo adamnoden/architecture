@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T02:53:44.981Z",
-  "heartbeatAt": "2026-11-09T02:53:44.981Z",
-  "expiresAt": "2026-11-09T03:38:44.981Z",
+  "heartbeatAt": "2026-11-09T03:07:55.589Z",
+  "expiresAt": "2026-11-09T03:52:55.589Z",
   "branch": "work/house-0253-20261109",
   "predecessor": {
     "leaseId": "2722d16a-ee33-4b11-8cfc-92f0f3608bb3",
@@ -31,5 +31,10 @@
       "evidence": "Merged #1414 at 85b99f22; #1416 source on main. All 14 exact-head workflows passed. #941 comment 6730961516 records Study choice, five-family internal design exits, physical evidence boundaries and next bounded task.",
       "next": "Resolve the rear B594/coupling seat and support dimensions or reject that connected pairing; compare one complete first release/reinstallation on current house. Keep Study matched doorset and 900/906 mm rough decision with OAS/HAD/STR."
     }
+  },
+  "pr": 1421,
+  "checkpoint": {
+    "evidence": "Published and locally checked #1421 at 117cd21c",
+    "next": "Reconcile current main and run exact-head CI and publication preflight"
   }
 }
