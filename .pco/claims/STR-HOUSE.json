@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 34,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4e8807ec-f146-42b4-8990-b1d49b2eba4b",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T01:19:50.135Z",
-  "heartbeatAt": "2026-11-09T02:04:13.105Z",
-  "expiresAt": "2026-11-09T02:49:13.105Z",
+  "heartbeatAt": "2026-11-09T02:04:54.372Z",
+  "expiresAt": "2026-11-09T02:04:54.372Z",
   "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
@@ -36,5 +36,7 @@
     "evidence": "Merged #1411 via #1409 on 0e0934f2 and verified on main; handoff #1103",
     "next": "Use #1103 to locate actual seat reaction lines before selecting a joint"
   },
-  "pr": 1409
+  "pr": 1409,
+  "releasedAt": "2026-11-09T02:04:54.372Z",
+  "releaseReason": "handoff"
 }
