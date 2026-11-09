@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 59,
-  "state": "released",
-  "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
+  "generation": 60,
+  "state": "claimed",
+  "leaseId": "c4fad9be-30e6-47db-beac-1f728748b3fa",
   "holder": {
     "kind": "chatgpt",
-    "label": "Upper-first side-seat publication"
+    "label": "swarm-integration-2343"
   },
-  "claimedAt": "2026-11-09T00:50:38.350Z",
-  "heartbeatAt": "2026-11-09T01:19:59.420Z",
-  "expiresAt": "2026-11-09T01:19:59.420Z",
-  "branch": "work/front-swarm-0002",
+  "claimedAt": "2026-11-09T01:20:39.685Z",
+  "heartbeatAt": "2026-11-09T01:20:39.685Z",
+  "expiresAt": "2026-11-09T02:05:39.685Z",
+  "branch": "work/swarm-second-20261109",
   "predecessor": {
-    "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
-    "generation": 58,
-    "branch": "work/swarm-house-0006",
-    "pr": 1405,
+    "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
+    "generation": 59,
+    "branch": "work/front-swarm-0002",
+    "pr": 1406,
     "checkpoint": {
-      "evidence": "Merged #1405 at 673e5c46. All fourteen workflows, 00:48:30 canonical RWT preflight and the side-receiver regression passed. #992 records the failed N-out state: 6.41 s to low-edge spill; 146 mm relief passes at most 3.31 L/s even flush.",
-      "next": "Develop or reject a genuinely independent full-duty event path during north renewal before site adoption or physical splash admission. Retain high-eave, first wetting and future site obligations."
+      "evidence": "MERGED #1406 d8e52d78 includes 59c03180 on 673e5c46; full RWT subtree verified, 182 tests in the source rehearsal and all 14 workflows green on submitted head d3b81931.",
+      "next": "RWT-06 remains started. Resolve the independent full-duty path during N renewal or change the operating topology. For the earlier east-removal alternative, address rim/sill profiles, sequenced extension after the 90-degree lock, and outboard support/arm loads before claiming safe access."
     }
   },
   "recoverySource": {
-    "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
-    "generation": 58,
-    "branch": "work/swarm-house-0006",
-    "pr": 1405,
+    "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
+    "generation": 59,
+    "branch": "work/front-swarm-0002",
+    "pr": 1406,
     "checkpoint": {
-      "evidence": "Merged #1405 at 673e5c46. All fourteen workflows, 00:48:30 canonical RWT preflight and the side-receiver regression passed. #992 records the failed N-out state: 6.41 s to low-edge spill; 146 mm relief passes at most 3.31 L/s even flush.",
-      "next": "Develop or reject a genuinely independent full-duty event path during north renewal before site adoption or physical splash admission. Retain high-eave, first wetting and future site obligations."
+      "evidence": "MERGED #1406 d8e52d78 includes 59c03180 on 673e5c46; full RWT subtree verified, 182 tests in the source rehearsal and all 14 workflows green on submitted head d3b81931.",
+      "next": "RWT-06 remains started. Resolve the independent full-duty path during N renewal or change the operating topology. For the earlier east-removal alternative, address rim/sill profiles, sequenced extension after the 90-degree lock, and outboard support/arm loads before claiming safe access."
     }
-  },
-  "pr": 1406,
-  "checkpoint": {
-    "evidence": "MERGED #1406 d8e52d78 includes 59c03180 on 673e5c46; full RWT subtree verified, 182 tests in the source rehearsal and all 14 workflows green on submitted head d3b81931.",
-    "next": "RWT-06 remains started. Resolve the independent full-duty path during N renewal or change the operating topology. For the earlier east-removal alternative, address rim/sill profiles, sequenced extension after the 90-degree lock, and outboard support/arm loads before claiming safe access."
-  },
-  "releasedAt": "2026-11-09T01:19:59.420Z",
-  "releaseReason": "handoff"
+  }
 }
