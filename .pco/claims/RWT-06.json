@@ -9,8 +9,8 @@
     "label": "Programme continuation 1140"
   },
   "claimedAt": "2026-11-09T11:39:16.747Z",
-  "heartbeatAt": "2026-11-09T11:39:16.747Z",
-  "expiresAt": "2026-11-09T12:24:16.747Z",
+  "heartbeatAt": "2026-11-09T12:13:53.571Z",
+  "expiresAt": "2026-11-09T12:58:53.571Z",
   "branch": "work/swarm-final-dispatch-1140",
   "predecessor": {
     "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
@@ -31,5 +31,9 @@
       "evidence": "MERGED PR 1450 at 34b4058c81aee91f6813974e4bca74b8b09c841d with complete RWT original PR 1451 227906a9 and correct shared subtree b6562459. All 14 exact hosted workflows green, RWT 217, HAD 26 and dated live scope fence. Issue 992 comment 6739106824.",
       "next": "Compare the two independently recoverable wet carriers, high weather shutter interlock and complete blocked N or E event with the revised continuous court grade. Source the positive operating choice and all first rests before RWT closure."
     }
+  },
+  "checkpoint": {
+    "evidence": "Produced the complete two-way north basin bypass, 2.2 m split-hood and staged renewal on main 34b4058c. Graph validates one ready HAD-COURT-BYPASS and blocked RWT-06. Native reproduced results and docs build pass.",
+    "next": "Publish the whitelisted RWT/registry source; validate exact hosted CI, preflight, merge and release. Retain site and wet test conditions."
   }
 }
