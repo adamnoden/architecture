@@ -9,8 +9,8 @@
     "label": "Architecture swarm: current house frontier"
   },
   "claimedAt": "2026-11-09T13:55:53.221Z",
-  "heartbeatAt": "2026-11-09T13:55:53.221Z",
-  "expiresAt": "2026-11-09T14:40:53.221Z",
+  "heartbeatAt": "2026-11-09T14:21:20.241Z",
+  "expiresAt": "2026-11-09T15:06:20.241Z",
   "branch": "work/swarm-after-material-1354-20261109",
   "predecessor": {
     "leaseId": "cc9391cb-d95f-4735-8041-7160ce60d843",
@@ -31,5 +31,10 @@
       "evidence": "Frozen corrected #1455 2f68a4455c349734cc5d774994cb3420e405be13 is a direct successor of c4a912ce. The selected open-HAD platform loses all R300 body positions, so the owner must restore the station or use a remotely serviced configuration; nine verified files carry this correction.",
       "next": "Host #1454 retains source and correction as ancestors. Verify 18 effective source blobs, fresh exact CI, independent RWT publication preflight, safe merge and handoff."
     }
+  },
+  "pr": 1460,
+  "checkpoint": {
+    "evidence": "Published #1460. The west receiver access and six programme duties are recorded for review.",
+    "next": "Verify the accepted house and release the network synthesis gate on the reviewed head."
   }
 }
