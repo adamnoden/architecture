@@ -1,5 +1,7 @@
 import {readFileSync, writeFileSync} from 'node:fs'
 import {execFileSync} from 'node:child_process'
+import {rearReleaseTrial} from './rear-release-reach.mjs'
+import {releaseFigure} from './rear-release-figure.mjs'
 
 // Local vertical bounds only. No actual seat, socket or foot plan is invented.
 const source='project/had/studies/water-replan.json'
@@ -44,8 +46,12 @@ const bounds={
   componentMassSubtotalKg:v.catalogueTrayKg+v.catalogueFrameKg,
   fullTailClearSameLevelFloor:'137 + d + L, before placement clearance and actual socket stroke'
 }
+const renewal=rearReleaseTrial({...v,...release,endGap:release.authoredPipeEndGap,
+  parkGap:release.authoredParkReserve,drain:opening.drain,well:opening.box,service})
+const equipmentBlob=execFileSync('git',['hash-object',renewal.sources.pecolift],{encoding:'utf8'}).trim()
+if(equipmentBlob!==renewal.sources.pecoliftBlob) throw Error('Reconcile the Pecolift station with the current equipment study')
 const record={status:'Unadopted first-lift/first-rest bounds; no connected installation or handling pass',
-  source,sourceBlob,values:v,bounds,opening,release,
+  source,sourceBlob,values:v,bounds,opening,release,renewal,
   relatedSources:Object.fromEntries([serviceSource,structuralSource].map(p=>[p,execFileSync('git',['hash-object',p],{encoding:'utf8'}).trim()])),
   nativeSources:{
     b594:'https://shop.my-bette.com/out/media/B594.pdf',
@@ -118,6 +124,7 @@ text(14,281,'Owning result: ias-03-renewal-proportionality-result.md. Dimensions
 add('</svg>')
 const emit=(name,body)=>{const path=new URL(name,import.meta.url);if(process.argv.includes('--check')){if(readFileSync(path,'utf8')!==body)throw Error('Stale '+name)}else writeFileSync(path,body)}
 emit('./conventional-first-rest.json',JSON.stringify(record,null,2)+'\n')
+emit('./rear-release-reach.svg',releaseFigure(renewal))
 emit('./conventional-first-rest.svg',parts.join('\n')+'\n')
 parts.length=0
 add('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297" font-family="Arial,sans-serif"><rect width="420" height="297" fill="white"/>')
