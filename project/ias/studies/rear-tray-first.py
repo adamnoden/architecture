@@ -59,6 +59,9 @@ def build():
               'drawingDatumStep':(276.11-271.80)/scale_z,
               'headedScrewClearance':45-screw_radius-head_radius,
               'maxRodODAt1p5Clear':2*(45-1.5-screw_radius),
+              'steppedM5Shank':4,'steppedShankClear':45-screw_radius-2,
+              'singleTieStressAt250N':250/(math.pi*2**2),
+              'pinnedBucklingAt225N':math.pi**2*200000*(math.pi*4**4/64)/225**2,
               'screwPitchRadius':screw_radius,'sealFreeRimBand':60-seal_outer}
     socket['centredSlipGapAtG0']=26.5-41.1
     t=f['rear-shower1000']
@@ -154,6 +157,8 @@ if __name__=='__main__':
     assert s['headedScrewClearance']<0 and 4.9<s['maxRodODAt1p5Clear']<5.4
     assert c['restToDoorTip']<600 and c['westGapAtPark']<600
     assert 1.99<c['totalWithSpiderKNm']<2.01 and c['anchorCoupleKN']>6.66
+    assert s['steppedShankClear']>=2 and 19.8<s['singleTieStressAt250N']<20
+    assert s['pinnedBucklingAt225N']>480 and s['pinnedBucklingAt225N']/4<250
     assert c['rackAisle']==650 and c['rackToEmitter']>110
     assert c['walkReserve']>10 and c['workerReach']<600
     out=HERE/'rear-tray-first.json'; rendered=json.dumps(d,indent=2)+'\n'

@@ -50,6 +50,10 @@
     "drawingDatumStep": 1.5066430898852043,
     "headedScrewClearance": -0.4821373805046889,
     "maxRodODAt1p5Clear": 5.0003963484906535,
+    "steppedM5Shank": 4,
+    "steppedShankClear": 2.0001981742453268,
+    "singleTieStressAt250N": 19.89436788648692,
+    "pinnedBucklingAt225N": 489.9757302565897,
     "screwPitchRadius": 40.99980182575467,
     "sealFreeRimBand": 2.1726431140730043,
     "centredSlipGapAtG0": -14.600000000000001
