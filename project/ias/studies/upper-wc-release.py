@@ -28,9 +28,10 @@ def moving_box(start, stop, width, length):
     return [min(x,X)-width/2,min(y,Y)-length/2,abs(x-X)+width,abs(y-Y)+length]
 
 
-def solve_room(room):
+def solve_room(room, basin=None):
     family = room=='family'
     retained=rooms[room]
+    basin=basin or upper[room+'-basin']
     back=(house['familyWetTrial']['eastWetFace']-10,5900) if family else (11130,house['rooms']['principalBath']['northFinishedFace']-10)
     front=(-1,0) if family else (0,-1)
     # The stainless adaptor and turned branch set the fixture position, not the gross plan box.
@@ -58,11 +59,11 @@ def solve_room(room):
     box=lambda d,D,r,R:prism(back,front,d,D,min(r,R),max(r,R))
     suite=box(0,640,-170,170)
     if family:
-        fixed=retained['obstacles']
+        fixed=[basin if r==upper['family-basin'] else r for r in retained['obstacles']]
         room_bounds=retained['walls']
         entry=retained['route'][0]
     else:
-        fixed=[upper['principal-shower900'],upper['principal-basin'],upper['principal-local-soil-column'],principal['CORNER']]
+        fixed=[upper['principal-shower900'],basin,upper['principal-local-soil-column'],principal['CORNER']]
         room_bounds=principal['ROOM']
         entry=retained['route'][0]
     # The return tube and fixed-port rail are inside this low service territory.
@@ -116,7 +117,7 @@ def solve_room(room):
         # caddy is outside the fixed bracket, with the actual slider and shower still present.
         path=[centre,[centre[0],centre[1]-70],[10537.5,centre[1]-70],[10537.5,8865]]
         moving=[moving_box(a,b,390,690) for a,b in zip(path,path[1:])]
-        next_fixed=[upper['principal-shower900'],upper['principal-basin'],upper['principal-local-soil-column'],principal['CORNER'],fixed_support,
+        next_fixed=[upper['principal-shower900'],basin,upper['principal-local-soil-column'],principal['CORNER'],fixed_support,
                     principal['MAT']['door']['openLeaf'],principal['MAT']['bedroomTrial']['maintenanceBed']]
     rests=min(rectangle_gap(v,k) for v in moving for k in next_fixed)
     assert rests>0
@@ -179,13 +180,15 @@ def solve_room(room):
             'trimmedCarrierCentrePath':path,'afterFirst150Min':rests,'fixed':fixed,'wetWitness':lens}
 
 
-def bath_replay(room):
+def bath_replay(room,basin=None):
     # Replay the actual #1453 pack, held leaf, grip and all room obstacles in this changed bathroom.
     orig=runpy.run_path(str(HERE/'family-bath-exchange.py'))
     x,y=room['back']; permanent=room['fixedTerminal']
     fixed={**orig['fixed'],'family-WC':orig['rectangle'](*room['suite']),
            'fixed feed and post':orig['rectangle'](permanent[0],permanent[1],40,6400-permanent[1]),
            'wet service return':orig['rectangle'](x-465,y+205,465,35)}
+    if basin is not None:
+        fixed['family-basin']=orig['rectangle'](*basin)
     keeper=(10500,6060)
     old_gap=old['ptbox'](orig['keeper'],room['suite'])-300
     keeper_body=orig['circle'](keeper,300)
@@ -201,12 +204,15 @@ def bath_replay(room):
             'onwardRouteAtSamePose':orig['sections']['gallery']}
 
 
-def study():
-    data={name:solve_room(name) for name in ('family','principal')}
+def study(basins=None):
+    basins=basins or {}
+    data={name:solve_room(name,basins.get(name)) for name in ('family','principal')}
     d=data['principal']
     fixed=principal['FIXED']
     old_fixed=dict(fixed)
     try:
+        if 'principal' in basins:
+            fixed['basin']=basins['principal']
         fixed['WC']=d['suite']
         fixed['tank']=d['suite']  # use the whole 340 x 640 rectangular ceramic envelope
         # Recheck with the actual open slider and jambs. The boxed-room screen at its entrance
@@ -228,7 +234,7 @@ def study():
         fixed.clear();fixed.update(old_fixed)
     assert d['showerAt145']['body to room/fixtures/glazing']>20
     assert d['showerAt280']['body to room/fixtures/glazing']<0
-    data['bath']=bath_replay(data['family'])
+    data['bath']=bath_replay(data['family'],basins.get('family'))
     data['handling']={'packedGrossItemAllowances_kg':[24,13,3],'temporaryCarrier_kg':10,
             'screenVertical_kN':(24+13+3+10)*9.81*1.5/1000, 'oneSaddleTarget_kN':1,
             'stockJackBase':[24*25.4,14.375*25.4], 'stockJackMinMaxHeight':[6.5*25.4,25.875*25.4],
@@ -247,4 +253,32 @@ if __name__=='__main__':
                 raise SystemExit('Stale '+filename)
         else:
             path.write_text(body)
+    # Compose the new four-basin selection with the retained WC and shower
+    # movements without feeding that downstream selection back into its own
+    # historical source fixture.
+    basins=json.loads((HERE/'household-water.json').read_text())['basins']
+    pans={key:value['pan'] for key,value in basins.items()}
+    joined=study(pans)
+    rear=json.loads((HERE/'rear-tray-first.json').read_text())['change']
+    tray_path=rear['route']; extra=rear['liftProjection']
+    rear_gap=min(rectangle_gap([min(a[0],b[0])-extra,min(a[1],b[1])-extra,
+                                abs(a[0]-b[0])+a[2]+2*extra,abs(a[1]-b[1])+a[3]+2*extra],pans['rear'])
+                 for a,b in zip(tray_path,tray_path[1:]))
+    walk_gap=min(segbox(a,b,pans['rear'])-300 for a,b in zip(rear['walk'],rear['walk'][1:]))
+    whole=json.loads((HERE/'three-bathing-sections.json').read_text())['originalBathExchange']
+    yoke=whole['inside']['yokeExample']
+    foot_max=max(p[1]+yoke['pad']/2 for p in yoke['posts'])
+    bath_gap=pans['family'][1]-max(whole['inside']['minMaxY'][1],max(yoke['headerYSweep']),foot_max)
+    assert rear_gap>0 and walk_gap>0 and bath_gap>0
+    replay={'familyWCFirstAndRest':[joined['family']['minFirstSweep'],joined['family']['afterFirst150Min']],
+            'principalWCFirstAndRest':[joined['principal']['minFirstSweep'],joined['principal']['afterFirst150Min']],
+            'principalShower':joined['principal']['showerAt145'],
+            'familySmallBathComparator':joined['bath']['newRoom']['minimumContinuousGap'],
+            'originalBathRollYokeAndFeetToBasin':bath_gap,'selectedRearTrayToBasin':rear_gap,
+            'rearTrayApproachToBasin':walk_gap}
+    path=HERE/'occupied-fixture-replay.json'; body=json.dumps(replay,indent=2)+'\n'
+    if '--check' in sys.argv:
+        assert path.read_text()==body,'Regenerate the occupied fixture replay'
+    else:
+        path.write_text(body)
     print('Two upper WCs: connected isolation, first wetting, retained socket, complete carrier travel, shower operation and bath exchange.')

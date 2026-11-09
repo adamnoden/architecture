@@ -1,5 +1,7 @@
 # IAS-03 — current occurrences, disassembly and exit ledger
 
+**Current selection.** The [six exit dispositions](ias-03-selection-closeout.md) select the fitted rooms and service shaft for the pre-site house. The room-by-room source inventory below remains the original basis for that selection. Read dated open items against the later dispositions.
+
 **Shared bathing choice, 9 November.** [The rear WC and shared combination bath](ias-03-shared-family-bathing.md) keep four bedrooms/WCs while removing the optional rear shower and its unbuilt 400 well. The actual closed-door route, native 626 bath, existing waste axis and 580 mm rim make this a household programme choice. The existing three-bathing route remains the house control until selected; the six current dispositions and remaining work are in the comparison.
 
 
@@ -66,7 +68,7 @@ The [joint three-bathing section](ias-03-three-bathing-sections.md) keeps the pr
 
 The [household fixture result](ias-03-household-water.md) gives the current detailed basis for IS-01, IS-04 and IS-05. Table entries below describe earlier work still open at their stated checkpoints. The [guest and rear disconnections](ias-03-guest-rear-wc-takeoffs.md) and the shaft support condition are identified in the current [selection decision](ias-03-selection-closeout.md).
 
-## Explicit IAS-03 exit ledger
+## Earlier IAS-03 exit ledger
 
 | Exit | Present disposition | Concrete work still owned before IAS closure |
 | --- | --- | --- |
