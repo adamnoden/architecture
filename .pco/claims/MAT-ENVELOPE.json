@@ -9,9 +9,9 @@
     "label": "House closure priorities 0820"
   },
   "claimedAt": "2026-11-09T08:20:39.614Z",
-  "heartbeatAt": "2026-11-09T08:41:50.649Z",
-  "expiresAt": "2026-11-09T09:26:50.649Z",
-  "branch": "work/swarm-house-closure-0820-20261109",
+  "heartbeatAt": "2026-11-09T08:43:54.006Z",
+  "expiresAt": "2026-11-09T09:28:54.006Z",
+  "branch": "work/house-0702-20261109",
   "predecessor": {
     "leaseId": "111ea1da-ce89-4fea-8f1d-9d27b104f73c",
     "generation": 40,
@@ -32,9 +32,9 @@
       "next": "Join the three external door boundaries and renewable wet/dry wall returns to a single floor-exposure option, then reconcile the complete roof, glazing, and site duties in the envelope disposition. A positive barrier still requires joined field and structural proof."
     }
   },
-  "pr": 1445,
+  "pr": 1440,
   "checkpoint": {
-    "evidence": "Published #1445, verified source 762e6b18e90416169b9edddab4bfbd40d89b11ce on 331d4e7d. Three exterior doors now share a single dry-site floor option. Recessed east cover cures the common sill W9 cabinet overlap. The full MAT regression, documentation and generated output check passed. No gas, site, moisture, clamp, worker or thermal certification.",
-    "next": "Integrate #1440 actual main after its coordinated merge, check incoming source and its three holder regressions, run all hosted checks and g41 merge-check. Retain the six envelope interfaces and their next internal choices."
+    "evidence": "Rebinding with the consent of all affected scopes to the #1440 four-holder publication after #1444 advanced main to a68a5ac565b4c2019aecf91462ef7e6c0da867a0. Preserve exact g41 source #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent, seven source/report paths and test:mat entry. Original g41 local full MAT and documentation green.",
+    "next": "Verify the combined four parents and exact g41 file/command preservation. Validate integrated tests, all hosted checks and independent live g41 merge-check before #1440. Then hand off #1100, release g41 and remove own superseded branch/PR."
   }
 }
