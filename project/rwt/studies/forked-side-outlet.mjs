@@ -7,37 +7,40 @@ const gravity = 9.81;
 
 // An equal-depth sensitivity for ONE surviving half-full 155 mm barrel.
 // Charge entry with no approach velocity credit and discharge with one velocity head.
-export function headBudget(flowLps, lengthMm, grade, diameterMm = 155) {
+export function headBudget(flowLps, lengthMm, grade, diameterMm = 155, levelLeadMm = 0) {
   const diameter = diameterMm / 1000;
   const roughness = 0.020;
   const area = Math.PI * diameter ** 2 / 8;
   const velocity = flowLps / 1000 / area;
   const velocityHead = 1000 * velocity ** 2 / (2 * gravity);
   const frictionSlope = (roughness * velocity / (diameter / 4) ** (2 / 3)) ** 2;
-  const drop = lengthMm * grade, friction = lengthMm * Math.hypot(1,grade) * frictionSlope;
+  const gradedLength = lengthMm - levelLeadMm;
+  const drop = gradedLength * grade;
+  const friction = (levelLeadMm + gradedLength * Math.hypot(1,grade)) * frictionSlope;
   return {flowLps, diameterMm, grade, roughness, velocity, velocityHead, drop, friction,
     fittingKLimitAfterExit: (drop - friction) / velocityHead - 1,
     remainingHeadAtK2Mm: drop - friction - 3 * velocityHead};
 }
 
-export function forkStudy() {
+export function forkStudy({levelLeadMm = 0, rootsY = 6250, grade = 1/40} = {}) {
   const parent = sideReceiver();
   const {port, basin, spill, shift} = parent.high;
   const [x,y,z] = port;
-  const od = 159, bore = 155, grade = 1/40;
-  const rootsY = 6250, offsetY = 5000, outletY = parent.high.tailLine.at(-1)[1];
+  const od = 159, bore = 155;
+  const offsetY = 5000, outletY = parent.high.tailLine.at(-1)[1];
   const centreOffset = basin[0] + basin[2]/2 - x;
-  const paths = [-175,175].map(offset => [[x,y], [x+offset,rootsY],
+  const paths = [-175,175].map(offset => [[x,y-levelLeadMm], [x+offset,rootsY],
     [x+offset+centreOffset,offsetY], [x+offset+centreOffset,outletY]]);
   const lengths = paths.map(path => path.slice(1).map(([px,py],i) =>
     Math.hypot(px-path[i][0],py-path[i][1])));
-  const length = lengths[0].reduce((a,b) => a+b, 0);
+  const gradedLength = lengths[0].reduce((a,b) => a+b, 0);
+  const length = levelLeadMm + gradedLength;
   const straightPairM = lengths.reduce((sum,leg) => sum+(leg[1]+leg[2])*Math.hypot(1,grade)/1000,0);
   const allowance = parent.high.assumedCombinedRigidAndDeformation;
   const forkNorthAllowance = 75;
   const guides = [[12650,5400],[13750,5400],[12650,5900],[13750,5900]];
   const guideHalf = 50, runnerY = [5260,6500];
-  const rim = basin[1]+basin[3], effectiveTipZ = z-length*grade;
+  const rim = basin[1]+basin[3], effectiveTipZ = z-gradedLength*grade;
   // Vertical outside half-depth is conservatively taken as the full radius.
   // At the rim the pipes stay clear even if their entire drop has occurred there.
   // During a level slide south, any bore crossing a post's Y band is no
@@ -62,7 +65,7 @@ export function forkStudy() {
   const tubeCgY = (lengths[0][1]*(rootsY+offsetY)/2+lengths[0][2]*(offsetY+outletY)/2)
     /(lengths[0][1]+lengths[0][2]);
   const budgets = [parent.duty,parent.blocked.longStateCombinedEBackupFlow].map(flow =>
-    ({selected:headBudget(flow,length,grade),shallow:headBudget(flow,length,0.01)}));
+    ({selected:headBudget(flow,length,grade,bore,levelLeadMm),shallow:headBudget(flow,length,0.01,bore,levelLeadMm)}));
   return {port,basin,spill,paths,lengths,lengthMm:length,ordinaryFlow:parent.duty,grade,od,bore,
     originalCatcherCutY:parent.high.mobile[1], rootsY, forkNorthAllowance, shift, guides,guideHalf,runnerY,
     separatedClearMm:paths[1][1][0]-paths[0][1][0]-od,
