@@ -78,11 +78,13 @@ draws = {7*60:80,7*60+45:80,8*60+30:70,19*60:70}
 assert sum(draws.values())==max(water['deliveredDailyRangeLitres40C'])
 # This is an authored supervisory request, not a claimed menu on the factory FTC.
 morning_windows=[(30,15),(180,15),(380,15),(425,20),(495,10),(645,15),(795,15),(945,15),(1095,15),(1245,15)]
-def simulate(room_kw,charge_kw,loss,distribution=0.,coil_ua=ua_coil,starts=morning_windows):
-    energy=300*cp*(60-10); full=energy; debt=0.; dt=1/60
+def simulate(room_kw,charge_kw,loss,distribution=0.,coil_ua=ua_coil,starts=morning_windows,
+             restart_drop=None,changeover_minutes=0,days=8,initial_c=60):
+    full=300*cp*(60-10); energy=300*cp*(initial_c-10); debt=0.; dt=1/60
+    calling=False; active_minutes=0
     history=[]; daytotals=[]
     # Eight full days distinguish a repeating operating pattern from using up a precharged tank or room.
-    for day in range(8):
+    for day in range(days):
         totals={'roomStartDebt':debt,'storeStartKWh':energy,'roomMaxDebtKWh':debt,'minimumTankC':60.,
                 'drawnKWh':0.,'missed40C_KWh':0.,'chargedKWh':0.,'roomDeliveredKWh':0.,'lossKWh':0.,'dhwMinutes':0}
         profile=[]
@@ -101,9 +103,17 @@ def simulate(room_kw,charge_kw,loss,distribution=0.,coil_ua=ua_coil,starts=morni
             energy-=removed;totals['lossKWh']+=removed
             slot=any(start<=t<start+duration for start,duration in starts)
             transfer=min(charge_kw,caprate*(65-tank)*(1-exp(-coil_ua/caprate)))
-            added=min(max(0,full-energy),max(0,transfer)*dt) if slot else 0.
+            if not slot:
+                calling=False; active_minutes=0
+            elif restart_drop is None or (not calling and tank<60-restart_drop):
+                calling=True
+            delivering=slot and calling and active_minutes>=changeover_minutes
+            added=min(max(0,full-energy),max(0,transfer)*dt) if delivering else 0.
+            if slot and calling:active_minutes+=1
             if slot:
                 energy+=added;totals['chargedKWh']+=added;totals['dhwMinutes']+=1
+                if energy>=full-1.e-10:
+                    calling=False; active_minutes=0
             load=cooking if 17*60<=t<19*60 else normal
             wanted=load*dt+debt
             delivered=0. if slot else min(room_kw*dt,wanted)
@@ -119,6 +129,9 @@ def simulate(room_kw,charge_kw,loss,distribution=0.,coil_ua=ua_coil,starts=morni
     end['lastDayChangeKWh'] = energy-end['storeStartKWh']
     end['roomDriftKWh'] = debt-end['roomStartDebt']
     end['previousDayStoreChangeKWh'] = daytotals[-2]['storeEndKWh']-daytotals[-2]['storeStartKWh']
+    if restart_drop is not None:
+        end['maxMissLastWeekKWh']=max(d['missed40C_KWh'] for d in daytotals[-7:])
+        end['maxStoreDriftLastWeekKWh']=max(abs(d['storeEndKWh']-d['storeStartKWh']) for d in daytotals[-7:])
     return end,history
 
 bounded_loss=jacket_loss(.040)
@@ -130,6 +143,18 @@ even,_=simulate(8,6,bounded_loss,1.,starts=[((420+144*i)%1440,15) for i in range
 weak,_=simulate(8,6,bounded_loss,1.,coil_ua=ua_coil/2)
 high,_=simulate(8,6,jacket_loss(.045,1),2.)
 old,_=simulate(8,4,bounded_loss,1.)
+# FTC7 menu allows four prohibited intervals. At a 60 C setpoint the restart must be below 50 C.
+# A prohibition drops the request. A new period therefore waits for sensed temperature below 49 C.
+# Reserve the entire permitted period from space heating, including start-up and idle time.
+controller_windows=[(0,50),(440,50),(970,30),(1160,20)]
+controller_cases={}
+for label,drop,delay,initial in [('permittedFour',11,2,60),('coolStart',11,2,45),
+                                 ('instantSwitch',11,0,60),('largerDeadband',15,2,60),
+                                 ('slowerSwitch',11,5,60)]:
+    case,trace=simulate(8,6,bounded_loss,1.,starts=controller_windows,restart_drop=drop,
+                        changeover_minutes=delay,days=28,initial_c=initial)
+    controller_cases[label]=case
+    if label=='permittedFour':controller_profile=trace
 local_non_recovery_load=.220*30+1.2*.078*30
 # Annual energy, mixed-store outlet quality and factory FTC control availability are outside this model.
 budget={amp:amp-30-13-16-3 for amp in [60,80,100]}    # 3A auxiliaries, 16A design allowance for W9
@@ -154,7 +179,10 @@ result={'basis':{'ordinaryRoomKW':normal,'cookingRoomKW':cooking,'dailyRoomKWh':
     'exchangers':{'roomPlateUAKWperK':ua_room,'waterPlateUAKWperK':ua_dhw_plate,'coilUAKWperK':ua_coil,
        'coilRequiredWm2K':1000*ua_coil/coil_area,'coilLmin':60*caprate/4.186,'glycolRoomLmin':60*8/(cv*5),
        'glycolWaterLmin':60*6/(cv*5),'losses':{str(k):jacket_loss(k) for k in [.035,.040,.045]}},
-    'lastDay':cases,'comparison':{'evenlyTimed':even,'oldFourKW':old,'halfCoilUA':weak,'lossPlusCirculation':high},'windows':morning_windows,'profile10min':profile}
+    'lastDay':cases,'comparison':{'evenlyTimed':even,'oldFourKW':old,'halfCoilUA':weak,'lossPlusCirculation':high},'windows':morning_windows,'profile10min':profile,
+    'fourPeriodControl':{'windows':controller_windows,'lastDay':controller_cases,'profile10min':controller_profile,
+                        'stopInhibitionAtMidnight':1440,'restartBelowC':49,'changeoverMinutesPerStart':2,
+                        'installedControlProved':False}}
 # Rebind the first movable bridge and cabinet to their actual house coordinates.
 saved_argv=sys.argv
 try:
@@ -219,6 +247,12 @@ result['sourceHouseBlobs']={}
 for f in ['whole-house-service-baseline.json','balanced-service-architecture.json','plant-room-rewind.json','plant-inlet-route.py',
           'plant-threshold.json','../../had/studies/water-replan.json','../../str/studies/current-house-grid.json']:
     raw=(HERE/f).read_bytes();result['sourceHouseBlobs'][f]=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+selected_control=controller_cases['permittedFour']
+assert len(controller_windows)==4 and sum(length for _,length in controller_windows)==150
+assert selected_control['maxMissLastWeekKWh']==0 and selected_control['maxStoreDriftLastWeekKWh']<1.e-7
+assert 5.88<selected_control['roomMaxDebtKWh']<5.89 and selected_control['roomDriftKWh']==0
+assert abs(selected_control['storeEndKWh']-controller_cases['coolStart']['storeEndKWh'])<1.e-7
+assert controller_cases['largerDeadband']['missed40C_KWh']>1.8 and controller_cases['slowerSwitch']['missed40C_KWh']>.58
 assert cases['PUZ-WZ85VAA']['roomDriftKWh']>14 and cases['PUZ-WZ85VAA']['roomEndDebt']>110
 assert cases['PUZ-WZ100VAA']==cases['PUZ-WZ120VAA']==reference
 assert reference['dhwMinutes']==150 and abs(reference['drawnKWh']-draw_day)<1e-8

@@ -1,6 +1,7 @@
 """Three views of the heat and cylinder decision. Geometry comes from the calculated result."""
 def render(data):
     v, site = data['vessel'], data['site']
+    control=data['fourPeriodControl']
     drawn=['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 820" role="img" aria-label="Cold-day water and room duty, cylinder envelope and outside plant plan">',
            '<rect width="1100" height="820" fill="#fcfaf4"/><style>text{font:15px sans-serif;fill:#203c42}.h{font:bold 22px sans-serif}.t{font:bold 29px sans-serif}.s{font:13px sans-serif}</style>']
     def text(x,y,label,kind=''):
@@ -16,21 +17,21 @@ def render(data):
     text(30,68,'House design comparison  ·  −10°C outdoor trial  ·  conditional W9 branch  ·  dimensions in mm')
     line(30,86,1070,86)
     text(30,122,'One cold day with four draws','h')
-    text(30,146,'Mixed store (°C), 300 L  ·  grey bars reserve the heat pump for water')
+    text(30,146,'Mixed store (°C), 300 L  ·  four permitted water-heating periods')
     left,top,w,h=70,170,530,145
     tx=lambda t:left+w*t/1440
     ty=lambda c:top+h*(65-c)/30
-    for a,n in data['windows']:rect(tx(a),top,w*n/1440,h,'#e3ded0','none')
+    for a,n in control['windows']:rect(tx(a),top,w*n/1440,h,'#e3ded0','none')
     for c in [40,50,60]:
         line(left,ty(c),left+w,ty(c),'#b9c3bd');text(40,ty(c)+5,str(c),'s')
-    poly([(tx(t),ty(temp)) for t,temp,_ in data['profile10min']],'#287e83',2.5)
+    poly([(tx(t),ty(temp)) for t,temp,_ in control['profile10min']],'#287e83',2.5)
     line(left,top+h,left+w,top+h)
     for hour in [0,6,12,18,24]:text(tx(hour*60)-6,top+h+20,str(hour),'s')
     text(40,365,'Room heat deferred, kWh  ·  recovery limited to the 8 kW emitter duty','s')
-    dy=lambda energy:420-11*energy
-    for a,n in data['windows']:rect(tx(a),374,w*n/1440,46,'#e3ded0','none')
-    line(left,420,left+w,420);poly([(tx(t),dy(debt)) for t,_,debt in data['profile10min']],'#a65a37',2.3)
-    text(40,382,'4','s');text(40,424,'0','s')
+    dy=lambda energy:420-7.5*energy
+    for a,n in control['windows']:rect(tx(a),374,w*n/1440,46,'#e3ded0','none')
+    line(left,420,left+w,420);poly([(tx(t),dy(debt)) for t,_,debt in control['profile10min']],'#a65a37',2.3)
+    text(40,380,'6','s');text(40,424,'0','s')
     text(30,453,'Traces every 10 min. The one-minute ledger records each draw and peak.','s')
     line(635,100,635,460)
     text(664,122,'Cylinder and clear opening','h')
