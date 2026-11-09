@@ -9,8 +9,8 @@
     "label": "House water and assembly decisions 1031"
   },
   "claimedAt": "2026-11-09T10:33:44.944Z",
-  "heartbeatAt": "2026-11-09T10:33:44.944Z",
-  "expiresAt": "2026-11-09T11:18:44.944Z",
+  "heartbeatAt": "2026-11-09T10:51:06.053Z",
+  "expiresAt": "2026-11-09T11:36:06.053Z",
   "branch": "work/swarm-house-successor-1031-20261109",
   "predecessor": {
     "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
@@ -31,5 +31,9 @@
       "evidence": "The joined court decision and owning programme are on PR 1440 with independently preserved source history. Source 8aa3cf9f; programme correction 6390c5e9. See the current PR for final integration and validation.",
       "next": "After merge, update issues 992 and 943, release this handoff and dispatch the newly registered HAD-COURT-INTAKE. RWT-06 resumes after that house input."
     }
+  },
+  "checkpoint": {
+    "evidence": "Active raised-roof tool and retained-bay transfer checks plus a paired court-entry test and adverse open-basket receiving head on merged HAD. Joined publication in preparation.",
+    "next": "Verify the north grate emergency spill and final repair interlocks, then publish the six-duty disposition, validate and reconcile."
   }
 }
