@@ -227,6 +227,11 @@ def main():
     direct = math.degrees(math.atan2(operator[0]-HINGE[0], operator[1]-HINGE[1]))
     heel, tip, *_ = screen(direct)
     assert 0 < direct < 64 and nearest(operator,heel,tip) < 0.001
+    # A real configuration, rather than only a pessimistic lower bound,
+    # demonstrates the larger-body failure at the north return.
+    a, b = POSES[-3:-1]
+    middle = tuple((v+w)/2 for v,w in zip(a,b))
+    assert reserves(middle, -1)["body to room/fixtures/glazing"] < 25
     graphic = Path(__file__).with_suffix(".svg")
     if args.check:
         assert graphic.read_text() == figure(), "Regenerate the entry drawing"
