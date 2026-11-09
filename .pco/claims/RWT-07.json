@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "node": "RWT-07",
   "generation": 1,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "fe0cd7af-6769-4bd0-a1ad-780309a88f27",
   "holder": {
     "kind": "chatgpt",
     "label": "issue-comment-6751604368"
   },
   "claimedAt": "2026-11-09T21:13:35.000Z",
-  "heartbeatAt": "2026-11-09T21:49:30.000Z",
-  "expiresAt": "2026-11-09T22:34:30.000Z",
+  "heartbeatAt": "2026-11-09T22:06:03.000Z",
+  "expiresAt": "2026-11-09T22:06:03.000Z",
   "branch": "work/mvb-chat-6751604368",
   "pr": 1466,
   "checkpoint": {
     "evidence": "Corrected shared head 11c321ea, tree 6c54a22e. The historical structural fixture is unchanged. New occupied WC checks, all seven STR joined-frame tests, 42 HAD tests, 24 repo checks, roof study and local site build pass.",
     "next": "Thirteen hosted workflows passed. Await full run 42705085878; verify all holders on the same head and current main, merge, reconcile the issues and release."
-  }
+  },
+  "releasedAt": "2026-11-09T22:06:03.000Z",
+  "releaseReason": "completed"
 }
