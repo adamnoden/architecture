@@ -33,9 +33,17 @@ test('dry supports require reversible hold-down and a captured separate pan stro
 });
 test('neither ramp position admits the east corner chamber and a longer slide breaches the court',()=>{
   const c=d.chambers;
+  assert.deepEqual(c.selectedRampOverlap,[450,450]);
   assert.deepEqual(c.installedOverlap,[450,450]);assert.deepEqual(c.storedOverlap,[450,450]);
   assert.deepEqual(c.normalInstalledOverlap,[0,425]);assert.deepEqual(c.normalStoredOverlap,[80,425]);
   assert.deepEqual([c.strokeToClearEast,c.wallOvershoot],[705,55]);
+});
+test('the south ordinary window ramp frees the east chamber but consumes the northeast frame pad',()=>{
+  const s=d.southernAccess;
+  assert.deepEqual(s.supportB,[6900,5850,400,400]);
+  assert.deepEqual(s.supportOverlap,[400,400]);
+  assert.deepEqual(s.tipToPad,[400,50]);
+  assert.equal(s.eastChamberOverlap[1],0);
 });
 test('a partitioned 250 to 400 discharge prices real width, tail, back pressure and water load',()=>{
   const s=d.stilling, b=s.basket, nominal=s.screens.find(v=>v.width===300);

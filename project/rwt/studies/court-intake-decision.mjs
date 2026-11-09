@@ -80,7 +80,11 @@ export function courtDecision(){
   const stage=m.firstWetReference.permittedQuietStage, duty=v.hydraulicProbe.assignedInwardRoofAndCourtLps;
   const original=m.courtEastWindow6850.cleaning.closedWalkingCoverReference.accessAdapter;
   const [x,y,len,width]=original.plan, east=x+len, ramp=[x-225,y,len+225,width], motion=180;
-  const parked=[ramp[0]-motion,y,ramp[2],width], turnout=cornerService().chamber;
+  const parked=[ramp[0]-motion,y,ramp[2],width], corner=cornerService(), turnout=corner.chamber;
+  const southAccess=read('collector-access-recomposition.json').ordinaryAccess;
+  const southRamp=southAccess.ramp, [footX,footY]=corner.compare.feet[1];
+  const padSize=read('live-receiver-renewal.json').profiles.guard.padSquare;
+  const supportB=[footX-padSize/2,footY-padSize/2,padSize,padSize];
   const firstPanX=entries.west.planeX-25, gate=r.guardGate, hingeY=gate.clearY[0]+2.5;
   const [leaf,thickness]=gate.completeLeaf, parkNorth=hingeY+thickness/2;
   const rails=[rail(ramp,east),rail(ramp,ramp[0])], deckUnder=x=>Math.min(0,original.courtEndZ+(x-ramp[0])*(-original.courtEndZ)/len)-original.deckThickness;
@@ -93,7 +97,9 @@ export function courtDecision(){
       minimumMovingKg:rails[0].deckKg+(2*ramp[2]-30)*rails[0].area*7850/1e9,
       sweepToRail:7255-(hingeY+Math.hypot(leaf,thickness/2)),parkToModule:6900-275-parkNorth,
       moduleToWeather:7200-(6900+275),wetExtensionWithFold:50+10+1.5},
-    chambers:{normal:turnout.normal,east:turnout.east,installedOverlap:clip(ramp,turnout.east),
+    southernAccess:{ramp:southRamp,supportB,supportOverlap:clip(southRamp,supportB),
+      tipToPad:clip(southAccess.removableTip.plan,supportB),eastChamberOverlap:clip(southRamp,turnout.east)},
+    chambers:{normal:turnout.normal,east:turnout.east,selectedRampOverlap:clip(original.plan,turnout.east),installedOverlap:clip(ramp,turnout.east),
       storedOverlap:clip(parked,turnout.east),normalInstalledOverlap:clip(ramp,turnout.normal),
       normalStoredOverlap:clip(parked,turnout.normal),strokeToClearEast:toClear,
       wallOvershoot:m.court[0]-(ramp[0]-toClear),blockedStaticKPa:turnout.blockedStaticKPa,
