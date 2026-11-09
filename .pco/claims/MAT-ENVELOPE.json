@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 37,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "19d47ec0-ec19-4efa-862e-81e60132b4c5",
   "holder": {
     "kind": "chatgpt",
     "label": "Whole assembly decision 0441"
   },
   "claimedAt": "2026-11-09T04:42:06.434Z",
-  "heartbeatAt": "2026-11-09T05:27:31.208Z",
-  "expiresAt": "2026-11-09T06:12:31.208Z",
+  "heartbeatAt": "2026-11-09T05:27:58.058Z",
+  "expiresAt": "2026-11-09T05:27:58.058Z",
   "branch": "work/swarm-assembly-0441-20261109",
   "predecessor": {
     "leaseId": "0ec133b8-6cd9-4a3c-9eb6-4b9d2007d3cc",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "MERGED #1430 at 2a50d0fc1a67b0649f5ab6b333568560c7dd726f; full 14 workflows and exact g37 preflight on ab0f9b575a0d972cc07f5dca7b58728a9f1121f0. Issue #1100 comment 6732979410. East plant W9 +280, cylinder +80, guarded dock 1774 above grade. South primary reserves 9 mm fall; blocked return leaves 2.89 mm below pan toe.",
     "next": "Resolve the Study arch as one installed and repairable assembly: mixed FINEO and monolithic versus a coherent insulating or independently outward-vented secondary alternative, including actual material and seating, 4 mm web, external removal with the desk, cold head and full-frame/operation. Real docking/water destinations and structural/roof/court/site holds remain."
-  }
+  },
+  "releasedAt": "2026-11-09T05:27:58.058Z",
+  "releaseReason": "handoff"
 }
