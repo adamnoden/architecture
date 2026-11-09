@@ -9,8 +9,8 @@
     "label": "MAT W9 cold cooking and unchanged capture"
   },
   "claimedAt": "2026-11-09T00:08:05.751Z",
-  "heartbeatAt": "2026-11-09T00:20:15.090Z",
-  "expiresAt": "2026-11-09T01:05:15.090Z",
+  "heartbeatAt": "2026-11-09T00:29:57.626Z",
+  "expiresAt": "2026-11-09T01:14:57.626Z",
   "branch": "work/swarm-house-0006",
   "predecessor": {
     "leaseId": "c0a47f30-22d5-425b-bc4a-c8694dfcb7ad",
@@ -34,7 +34,7 @@
   },
   "pr": 1405,
   "checkpoint": {
-    "evidence": "PR #1405 d36007ba: both W9 producers reproduce, three MAT files match reviewed source, full test:mat passed on the owned implementation. Native root overlap remains; smooth transition offers 31.19 mm bore and 28 mm outlet jacket spacing. Direct vertical heater/sensor rejected.",
-    "next": "Verify final exact-head CI/current main, perform generation 24 publication preflight, then reconcile and release. For continuation, develop the common vapour-tight root and the horizontal 200 mm supply station, including its 1000 mm sensor and renewal field."
+    "evidence": "PR #1405 rebased by clean ancestry merges to 120b06ff against 4fd4a8e1 after IAS #1402, publishing #1403 and DPL #1404. All three MAT source files reproduce previous tree and test hook remains. Conditional W9 port and cold tests passed.",
+    "next": "Monitor all checks on 120b06ff only; fresh current-main and generation-24 publication preflight, then release after verified merge. Horizontal AHU station and shared four-port root remain design inputs."
   }
 }
