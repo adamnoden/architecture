@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T12:21:49.428Z",
-  "heartbeatAt": "2026-11-09T12:53:47.843Z",
-  "expiresAt": "2026-11-09T13:48:47.843Z",
+  "heartbeatAt": "2026-11-09T13:33:43.840Z",
+  "expiresAt": "2026-11-09T14:03:43.840Z",
   "branch": "work/house-1221-20261109",
   "predecessor": {
     "leaseId": "2d520023-c8d8-4fba-968a-23970a6def89",
@@ -34,7 +34,7 @@
   },
   "pr": 1456,
   "checkpoint": {
-    "evidence": "Frozen PR #1456 44547a18eb9d466259bce04ab814f20c4739eb9a tree 8aac2727aca41a6f23cda20035bb759f45fbbbd6 on verified #1453 main. Both connected WC exchanges, floor fixings, wet receivers, current six-interface decision and repaired family bath clearance11.40 are registered and tested.",
-    "next": "Check exact hosted runs, reconcile the g34/g69 main if it lands, fence generation 40, merge and hand off the permanent rear wet section / family outlet decision."
+    "evidence": "Merged #1456 at 9edd51c80bb08278662dcdc6c52a011ff921334a after fourteen exact-head workflows on 8b27592c and a canonical g40 fence. Issue #941 handoff 6741343405. Complete upper WCs and corrected bath door are source-bound.",
+    "next": "Finish one governing three-bathing permanent wet section, including the rear flush versus serviceable 155 rim and the actual 1700 bath outlet, plant union/hatch and intact shell route. Material, engineering and physical claims remain with their owners."
   }
 }
