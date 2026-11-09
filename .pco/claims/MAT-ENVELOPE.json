@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 34,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "d1bcfeb1-3494-4ed3-95b9-b06143b89532",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T02:06:02.574Z",
-  "heartbeatAt": "2026-11-09T02:51:47.065Z",
-  "expiresAt": "2026-11-09T03:36:47.065Z",
+  "heartbeatAt": "2026-11-09T02:52:18.895Z",
+  "expiresAt": "2026-11-09T02:52:18.895Z",
   "branch": "work/swarm-third-20261109",
   "predecessor": {
     "leaseId": "32cbfcf3-85b6-4d7d-bb68-db98071ca67c",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1415 via #1414 at 85b99f22. Six roof sources verified. Handoff in #1100.",
     "next": "Detail the hip cover, dry court feed and two insulation turns at the curb per #1100"
-  }
+  },
+  "releasedAt": "2026-11-09T02:52:18.895Z",
+  "releaseReason": "handoff"
 }
