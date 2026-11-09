@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T02:53:44.981Z",
-  "heartbeatAt": "2026-11-09T03:09:38.543Z",
-  "expiresAt": "2026-11-09T03:54:38.543Z",
+  "heartbeatAt": "2026-11-09T03:19:56.374Z",
+  "expiresAt": "2026-11-09T04:04:56.374Z",
   "branch": "work/swarm-fourth-20261109",
   "predecessor": {
     "leaseId": "2722d16a-ee33-4b11-8cfc-92f0f3608bb3",
@@ -34,7 +34,7 @@
   },
   "pr": 1419,
   "checkpoint": {
-    "evidence": "Frozen #1421 source 117cd21c accepted for #1419",
-    "next": "Verify the common head after #1418 and run IAS publication preflight after CI"
+    "evidence": "Verified the combined #1419 head 70f854cb and #1421 recovery sources after #1418",
+    "next": "Run exact-head IAS publication preflight and reconcile the issue"
   }
 }
