@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 69,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "cc9391cb-d95f-4735-8041-7160ce60d843",
   "holder": {
     "kind": "chatgpt",
     "label": "Programme continuation 1140"
   },
   "claimedAt": "2026-11-09T11:39:16.747Z",
-  "heartbeatAt": "2026-11-09T12:43:43.633Z",
-  "expiresAt": "2026-11-09T13:28:43.633Z",
+  "heartbeatAt": "2026-11-09T13:08:49.745Z",
+  "expiresAt": "2026-11-09T13:08:49.745Z",
   "branch": "work/swarm-after-services-1138-20261109",
   "predecessor": {
     "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
@@ -36,5 +36,7 @@
     "evidence": "Frozen corrected #1455 2f68a4455c349734cc5d774994cb3420e405be13 is a direct successor of c4a912ce. The selected open-HAD platform loses all R300 body positions, so the owner must restore the station or use a remotely serviced configuration; nine verified files carry this correction.",
     "next": "Host #1454 retains source and correction as ancestors. Verify 18 effective source blobs, fresh exact CI, independent RWT publication preflight, safe merge and handoff."
   },
-  "pr": 1454
+  "pr": 1454,
+  "releasedAt": "2026-11-09T13:08:49.745Z",
+  "releaseReason": "handoff"
 }
