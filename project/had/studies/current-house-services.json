@@ -1,0 +1,1000 @@
+{
+  "proposal": "HAD-SERVICES-ADOPTION-01-RECOVERY",
+  "structurallyAdopted": false,
+  "qualifiedPhysical": false,
+  "sources": {
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+    "project/mat/studies/service-material-offer.json": "e5686440fa6a3f68387576883b1e0c768e0596bb",
+    "project/mat/studies/local-extract-heat-and-store.json": "550709d0e0ca0acff81cb42e502640771f4ac2d0",
+    "project/mat/studies/loggia-soffit.json": "c9c914169547bd42b90cd69512ba1a28d97ca6fe",
+    "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
+    "project/had/studies/receiver-selection.json": "5408aac3d43c95e3f5240f8510f91fb04d7a23cd",
+    "project/mat/studies/tempered-kitchen-air.json": "b18044acaec99caf00eab9a542fff78e510857c9"
+  },
+  "court": "HAD-COURT-BYPASS-01",
+  "wholeHeat": {
+    "count": 15,
+    "closedOpenings": 46,
+    "untouchedFabricWK": 335.44965338005846,
+    "baseFabricW": 10132.949478776292,
+    "hotInitialW": 17032.090312358407,
+    "chargedGroundW": 613.1652466499997,
+    "chargedJunctionW": 450.074042728879,
+    "primaryHeatAllowanceW": 175,
+    "designIdleW": 14584.788768176126,
+    "designHotW": 18270.329601737285,
+    "directLowLineW": 4737.824847731911,
+    "hydronicHotW": 13532.504754005375,
+    "usableMachineW": 14000,
+    "hotSpareW": 467.4952459946253,
+    "dailyRoomKWh": 357.4060121033494,
+    "minRoomMarginW": 62.65234371925908,
+    "tenMinuteDefrostKWh": 2.141160653407369,
+    "chargedStratifiedKWh": 2.311111111111111,
+    "fullyMixed5KKWh": 1.288888888888889,
+    "old100LUpperKWh": 0.8888888888888888,
+    "rechargeMin": 30.93390877022754
+  },
+  "domestic": {
+    "netOrderedLitres": 300,
+    "standingLoss60_20KWhDay": 3.5,
+    "netKWAt216point2V": 2.434502083333333,
+    "minimumMixedC": 46.884282430716766,
+    "missedL40": 0,
+    "finalDayChargeKWh": 14.854241580467416,
+    "draws": {
+      "420": 80,
+      "465": 80,
+      "510": 70,
+      "1140": 70
+    }
+  },
+  "plant": {
+    "controlsHydraulics": [
+      10895.5,
+      5480.5,
+      650,
+      300
+    ],
+    "riserGross": [
+      9400,
+      4700,
+      550,
+      700
+    ],
+    "cylinder": {
+      "family": "Bespoke pressure-rated unvented Howden mineral-clad direct store in MS103-size territory",
+      "stockMS103": {
+        "allowedHeadM": 25,
+        "workingBar": 2.45,
+        "emptyKg": 118,
+        "fullKg": 488,
+        "acceptedAt3point5Bar": false
+      },
+      "catalogueL": 370,
+      "orderedMinUsableL": 300,
+      "body": [
+        9450,
+        3870,
+        760,
+        760
+      ],
+      "station": [
+        9450,
+        3870,
+        760,
+        760
+      ],
+      "height": 1650,
+      "workingEast": [
+        10245,
+        4025,
+        900,
+        700
+      ],
+      "centre": [
+        9830,
+        4250
+      ],
+      "cartRadius": 425,
+      "minDoor": [
+        1000,
+        2300
+      ],
+      "doorRaw": [
+        3900,
+        5300
+      ],
+      "path": [
+        [
+          9830,
+          4250
+        ],
+        [
+          10500,
+          4250
+        ],
+        [
+          10500,
+          4575
+        ],
+        [
+          12500,
+          4575
+        ]
+      ],
+      "westSeat": [
+        10195,
+        3970
+      ],
+      "lift": "Empty, isolate, cap and independently support. Remove west bridge AND stand; permit the directly sensed factory T&P to remain. Prove actual gross valve/case and captured dry mass."
+    },
+    "primaryBuffer": {
+      "article": "UK Cylinders FCBVS0300",
+      "station": [
+        10125,
+        5000,
+        650,
+        650
+      ],
+      "body": [
+        10177.5,
+        5052.5,
+        545,
+        545
+      ],
+      "height": 1975,
+      "maxRetainedHeight": 2175,
+      "completeDiameter": 600,
+      "nominalL": 300,
+      "requiredUsefulLayerL": 260,
+      "dryFullKg": [
+        45,
+        335
+      ],
+      "defrostKWh": 2.141160653407369,
+      "chargedKWh": 2.311111111111111,
+      "maxDeck": 100,
+      "minimumRecoveryMinutes": 30.93390877022754
+    },
+    "independentSafety": {
+      "directTopTP": [
+        10035,
+        4550,
+        1730
+      ],
+      "expansion": [
+        10120,
+        4760,
+        1720
+      ],
+      "manifold": [
+        10035,
+        4660,
+        1620
+      ],
+      "tangent": [
+        10035,
+        4800,
+        1480
+      ],
+      "tundish": [
+        10035,
+        4800,
+        1400
+      ],
+      "D1Developed": [
+        432.263,
+        441.699
+      ],
+      "D1ToJacketMin": 27.998,
+      "topValveRadial": 36.65,
+      "D2": [
+        [
+          "G½",
+          28,
+          11.847
+        ],
+        [
+          "G¾",
+          35,
+          13.447
+        ],
+        [
+          "G1",
+          42,
+          14.647
+        ]
+      ],
+      "maxD2EquivalentM": 18,
+      "outfall": [
+        12350,
+        2500,
+        -1850
+      ],
+      "shoulder": [
+        10545,
+        4425,
+        1450
+      ],
+      "TPExpAndTundishReach": [
+        595.08,
+        604.77,
+        635
+      ],
+      "mainsPortTrial": [
+        10131.5,
+        4018.71,
+        380
+      ],
+      "elementRelease": {
+        "port": [
+          10210,
+          4250
+        ],
+        "immersionAndTool": [
+          550,
+          150
+        ],
+        "endX": 10910
+      },
+      "requiresFactoryUnventedAssembly": true
+    },
+    "heatPump": {
+      "model": "Panasonic WH-WXG16ME8",
+      "body": [
+        16950,
+        3600,
+        430,
+        1200
+      ],
+      "usableKW": 14,
+      "primary": [
+        65,
+        55
+      ],
+      "secondary": [
+        55,
+        45
+      ],
+      "maxOutdoorAmpsPerPhase": 19,
+      "protectedSiteZone": [
+        15950,
+        2600,
+        2430,
+        3200
+      ],
+      "correctedPrimary": {
+        "completeJacketODmm": 100,
+        "crownBelowCapMM": 140,
+        "edgeGapMM": 30,
+        "formedBore": 130,
+        "foulStackToJacketMM": 55,
+        "liftToJacketMM": 70,
+        "minIDmm": 32,
+        "minInsulationMM": 30,
+        "ratedKPaWithAccessories": 53.137822089602246,
+        "ratedLmin": 45.9,
+        "requiredHXAtRatedFlowKWperK": 1.1653398710118386,
+        "returnAt14KW": 59.28104575163399,
+        "sleeveObstacleLowerBoundsMM": [
+          35,
+          50
+        ],
+        "sleeves": [
+          [
+            9950,
+            5500
+          ],
+          [
+            9950,
+            5660
+          ]
+        ],
+        "tenKTrialKPaWithAccessories": 40.93223548094823,
+        "trialPipeODmm": 35,
+        "verticalJacketGapMM": 50
+      },
+      "secondaryHXkWperK": 1.4,
+      "backupKWCredited": 0
+    },
+    "maintenance": {
+      "ladderClearTank": 350,
+      "ladderClearBuffer": 399,
+      "ladderEastBayOverlap": [
+        585,
+        470
+      ],
+      "crewToTankAfter300": 70,
+      "entry": "Park the isolated ladder before working the east face, removing the vessel or energising the wetted plant."
+    }
+  },
+  "heatBodies": [
+    {
+      "id": "study-W",
+      "room": "study",
+      "plan": [
+        429.5,
+        1250,
+        200,
+        1150
+      ]
+    },
+    {
+      "id": "living-W",
+      "room": "living",
+      "plan": [
+        429.5,
+        9800,
+        200,
+        950
+      ]
+    },
+    {
+      "id": "living-N2",
+      "room": "living",
+      "plan": [
+        3102.5,
+        11370.5,
+        950,
+        200
+      ]
+    },
+    {
+      "id": "kitchen-E",
+      "room": "kitchenDining",
+      "plan": [
+        11370.5,
+        9700,
+        200,
+        1350
+      ]
+    },
+    {
+      "id": "bed2-S",
+      "room": "bed2",
+      "plan": [
+        3425,
+        429.5,
+        1050,
+        200
+      ]
+    },
+    {
+      "id": "bed3-S",
+      "room": "bed3",
+      "plan": [
+        7625,
+        429.5,
+        1050,
+        200
+      ]
+    },
+    {
+      "id": "bed4-N",
+      "room": "bed4",
+      "plan": [
+        3102.5,
+        11370.5,
+        1050,
+        200
+      ]
+    },
+    {
+      "id": "principal-N",
+      "room": "principal",
+      "plan": [
+        10165,
+        11370.5,
+        1350,
+        200
+      ]
+    },
+    {
+      "id": "rear-N",
+      "room": "rearBath",
+      "plan": [
+        2100,
+        11367.5,
+        650,
+        200
+      ]
+    },
+    {
+      "id": "family-E",
+      "room": "familyBath",
+      "plan": [
+        11367.5,
+        4525,
+        200,
+        650
+      ]
+    },
+    {
+      "id": "principal-E-high",
+      "room": "principalBath",
+      "plan": [
+        11367.5,
+        6775,
+        200,
+        650
+      ]
+    },
+    {
+      "id": "utility-E",
+      "room": "utility",
+      "plan": [
+        11370.5,
+        1778,
+        200,
+        650
+      ]
+    },
+    {
+      "id": "plant-N",
+      "room": "plant",
+      "plan": [
+        10980,
+        3797,
+        550,
+        200
+      ]
+    },
+    {
+      "id": "protected-G",
+      "room": "protectedCirculation",
+      "plan": [
+        3500,
+        2747.5,
+        550,
+        200
+      ]
+    },
+    {
+      "id": "protected-F",
+      "room": "protectedCirculation",
+      "plan": [
+        8180,
+        4400,
+        200,
+        550
+      ]
+    },
+    {
+      "id": "guest-WC-E",
+      "room": "guestWC",
+      "plan": [
+        9003,
+        1900,
+        200,
+        550
+      ]
+    }
+  ],
+  "localElectric": [
+    {
+      "id": "protected-ground-fan",
+      "room": "protected-G",
+      "case": [
+        4200,
+        2747,
+        275,
+        131
+      ],
+      "z": [
+        350,
+        750
+      ],
+      "article": "Stiebel CK20 236653",
+      "W": 2000,
+      "V": 230,
+      "phase": "L2"
+    },
+    {
+      "id": "protected-ground-panel",
+      "room": "protected-G",
+      "case": [
+        2920,
+        2747,
+        426,
+        100
+      ],
+      "z": [
+        350,
+        800
+      ],
+      "article": "Stiebel CNS100 202003",
+      "W": 1000,
+      "V": 240,
+      "phase": "L2"
+    },
+    {
+      "id": "protected-upper-fan",
+      "room": "protected-F",
+      "case": [
+        8179.5,
+        5755,
+        131,
+        275
+      ],
+      "z": [
+        350,
+        750
+      ],
+      "article": "Stiebel CK20 236653",
+      "W": 2000,
+      "V": 230,
+      "phase": "L3"
+    },
+    {
+      "id": "rear-bedroom-panel",
+      "room": "bed4",
+      "case": [
+        7425.5,
+        8450,
+        100,
+        348
+      ],
+      "z": [
+        350,
+        800
+      ],
+      "article": "Stiebel CNS50 202001",
+      "W": 500,
+      "V": 240,
+      "phase": "L3"
+    }
+  ],
+  "air": {
+    "extractPoint": [
+      11125,
+      12000,
+      2600
+    ],
+    "duct": 125,
+    "exhaustRadialInsulation": 50,
+    "metalJacketEachSide": 1,
+    "fullInsulatedOD": 262,
+    "formedWallTerritory": 320,
+    "minimumCaptureLps": 48,
+    "makeupPoint": [
+      12000,
+      8600,
+      2400
+    ],
+    "makeupFormedTerritory": 320,
+    "makeupRequirement": "Measured separately tempered direct intake, 18°C minimum high, 78 L/s floor",
+    "hood": "Swegon Salsa/Twist 10 V on verified hot demand",
+    "supplyUnit": {
+      "model": "Blauberg EC MW 700 S31",
+      "plan": [
+        9400,
+        8684.5,
+        972,
+        370
+      ],
+      "z": [
+        2150,
+        2755
+      ],
+      "route": [
+        [
+          12000,
+          8600,
+          2400
+        ],
+        [
+          11250,
+          8600,
+          2400
+        ],
+        [
+          10990.5,
+          8859.5,
+          2400
+        ],
+        [
+          10372,
+          8859.5,
+          2400
+        ]
+      ]
+    },
+    "stack": {
+      "hoodConnector": [
+        1679,
+        1879
+      ],
+      "addedIsolation": [
+        1879,
+        2079
+      ],
+      "fan": [
+        2079,
+        2432
+      ],
+      "outletStraight": [
+        2432,
+        2521
+      ],
+      "bendAxis": 2600
+    },
+    "closure": {
+      "article": "Belimo NKQ24A-SR 6 Nm, stored-power 4 s, zero bridging",
+      "seats": [
+        [
+          11125,
+          11443.5,
+          1979
+        ],
+        [
+          11282.5,
+          11450,
+          3010
+        ],
+        [
+          11380,
+          8600,
+          2400
+        ]
+      ],
+      "detectionS": 0.35,
+      "actuatorS": 4,
+      "witnessS": 0.4,
+      "maxExtractLeakLpsEach": 0.25,
+      "proof": {
+        "masks": 32,
+        "cases": 96,
+        "hoodLps": [
+          69.44528912329952,
+          85.08906236773146
+        ],
+        "directLps": [
+          78,
+          100.4312814701425
+        ],
+        "hotPa": [
+          -4.000000000076426,
+          -3.5889498283993273
+        ],
+        "idlePa": [
+          -4.044475689786501,
+          -2.7717014903767527
+        ],
+        "seatedPa": [
+          -3.504429676760639,
+          -2.321811377677422
+        ],
+        "maxInlets": [
+          10.628309126968816,
+          10.628309126968816,
+          21.17850387649014,
+          21.17850387649014,
+          10.693186996559234,
+          10.693186996559234
+        ],
+        "oldFaultKitchenPa": -348.8521815615305,
+        "failedSupplyKitchenPa": -42.15908677175387,
+        "failedSupplyHallPa": -26.982607937017654,
+        "failedSupplyDoorN": 14.080398733722262,
+        "failedHoodDoorN": 7.900405831152213,
+        "acceptedOpenAreaProxy": 35000,
+        "requiredLoadedClosureS": 4.75,
+        "warning": "The nominal 4.75 s contract does not prove the maximum differential, a classified door or an approved grease-rated assembled damper."
+      }
+    }
+  },
+  "wetRoomFans": [
+    {
+      "id": "ground-WC",
+      "plan": [
+        7950,
+        1300,
+        500,
+        650
+      ],
+      "selectedMode": [
+        13,
+        16
+      ]
+    },
+    {
+      "id": "utility",
+      "plan": [
+        10800,
+        1650,
+        650,
+        500
+      ],
+      "selectedMode": [
+        13,
+        16
+      ]
+    },
+    {
+      "id": "kitchen",
+      "plan": [
+        9900,
+        9950,
+        500,
+        650
+      ],
+      "selectedMode": [
+        5,
+        16,
+        20
+      ]
+    },
+    {
+      "id": "rear-bath",
+      "plan": [
+        1050,
+        9150,
+        650,
+        500
+      ],
+      "selectedMode": [
+        13,
+        16
+      ]
+    },
+    {
+      "id": "family-bath",
+      "plan": [
+        10225,
+        5200,
+        650,
+        500
+      ],
+      "selectedMode": [
+        13,
+        16
+      ]
+    },
+    {
+      "id": "principal-bath",
+      "plan": [
+        10425,
+        6650,
+        650,
+        500
+      ],
+      "selectedMode": [
+        13,
+        16
+      ]
+    }
+  ],
+  "transferDoors": [
+    {
+      "id": "FD-WEST-CROSS",
+      "opening": [
+        209,
+        209
+      ],
+      "centreAlong": 3396,
+      "centreHeight": 650
+    },
+    {
+      "id": "FD-EAST-CROSS",
+      "opening": [
+        409,
+        409
+      ],
+      "centreAlong": 8691.25,
+      "centreHeight": 650
+    },
+    {
+      "id": "STUDY",
+      "opening": [
+        209,
+        209
+      ],
+      "centreAlong": 1800,
+      "centreHeight": 650
+    },
+    {
+      "id": "PLANT",
+      "opening": [
+        209,
+        209
+      ],
+      "centreAlong": 3200,
+      "centreHeight": 650
+    },
+    {
+      "id": "BED2",
+      "opening": [
+        209,
+        209
+      ],
+      "centreAlong": 3900,
+      "centreHeight": 650
+    },
+    {
+      "id": "BED3",
+      "opening": [
+        209,
+        209
+      ],
+      "centreAlong": 8700,
+      "centreHeight": 650
+    },
+    {
+      "id": "BED4",
+      "opening": [
+        209,
+        209
+      ],
+      "centreAlong": 3550,
+      "centreHeight": 650
+    },
+    {
+      "id": "PRINCIPAL",
+      "opening": [
+        209,
+        209
+      ],
+      "centreAlong": 8700,
+      "centreHeight": 650
+    }
+  ],
+  "wetTransferWalls": [
+    {
+      "room": "guestWC",
+      "level": 0,
+      "host": "wc-north",
+      "along": 8875,
+      "centreHeight": 2050,
+      "opening": [
+        290,
+        240
+      ],
+      "thickness": 197
+    },
+    {
+      "room": "rearBath",
+      "level": 1,
+      "host": "rear-wet-east",
+      "along": 9910,
+      "centreHeight": 2050,
+      "opening": [
+        290,
+        240
+      ],
+      "thickness": 194
+    },
+    {
+      "room": "familyBath",
+      "level": 1,
+      "host": "wet-spine",
+      "along": 5010,
+      "centreHeight": 2050,
+      "opening": [
+        290,
+        240
+      ],
+      "thickness": 194
+    },
+    {
+      "room": "principalBath",
+      "level": 1,
+      "host": "rear-east-principal",
+      "along": 11150,
+      "centreHeight": 2050,
+      "opening": [
+        290,
+        240
+      ],
+      "thickness": 272
+    }
+  ],
+  "materials": {
+    "approvedExceptions": 0,
+    "offerCounts": {
+      "cold": 14,
+      "hot": 9,
+      "radiators": 16,
+      "localFans": 6,
+      "backgroundInlets": 6
+    },
+    "rearStack": {
+      "axis": [
+        567.5,
+        11177.5
+      ],
+      "cabinet": [
+        429.5,
+        10800,
+        300,
+        750
+      ],
+      "proposedStraightZ": [
+        950,
+        1550
+      ],
+      "clearTailZones": [
+        [
+          800,
+          950
+        ],
+        [
+          1550,
+          1700
+        ]
+      ],
+      "couplingOverall": 130,
+      "reservedParkingEach": 150,
+      "measuredSpigotToleranceAndGap": null,
+      "table": [
+        800,
+        10925,
+        300,
+        300
+      ],
+      "tablePark": [
+        1800,
+        10925,
+        300,
+        300
+      ],
+      "tableToSofa": 25,
+      "tablePullCentres": [
+        [
+          1425,
+          11250
+        ],
+        [
+          2425,
+          11250
+        ]
+      ],
+      "tablePullNorthReserve": 20.5,
+      "remoteToParkedTable": 50.89172119045497,
+      "remoteToFixedFurniture": 50,
+      "task": [
+        1075,
+        11225
+      ],
+      "taskToCupboard": 45.5,
+      "taskToNorthWall": 45.5,
+      "taskToSofa": 25,
+      "rackCentre": [
+        1035,
+        11177.5
+      ],
+      "rackHalfWidth": 90,
+      "remoteOperator": [
+        1450,
+        11250
+      ],
+      "operatorClearOfRack": 25,
+      "minProposedClearOpening": [
+        200,
+        900
+      ],
+      "proposedOpeningY": [
+        11077.5,
+        11277.5
+      ],
+      "proposedOpeningZ": [
+        800,
+        1700
+      ],
+      "comparisonRingCountForTwoDoubleSockets": 4
+    },
+    "occurrences": [
+      "S01 copper and accessible heat-protected repairs",
+      "S02 316L foul spool, four EPDM seal positions and accessible condensate",
+      "S03 separated primary and sixteen hydronic plus four electric emitters",
+      "S04 unvented pressure-rated mineral-clad build",
+      "S05 six local fans",
+      "S06 six inlets, eight dry doors and four wet wall transfers",
+      "S07 separate hood/tempered supply and three fast isolators",
+      "S08 separate accessible MI power and data",
+      "S09 wired pressure/travel/heat witnesses",
+      "S10 restored boundary at every actual crossing"
+    ]
+  }
+}
