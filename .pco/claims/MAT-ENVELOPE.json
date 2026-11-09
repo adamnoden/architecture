@@ -9,8 +9,8 @@
     "label": "Joined house assembly 0528"
   },
   "claimedAt": "2026-11-09T05:29:10.679Z",
-  "heartbeatAt": "2026-11-09T05:53:44.141Z",
-  "expiresAt": "2026-11-09T06:38:44.141Z",
+  "heartbeatAt": "2026-11-09T06:04:37.966Z",
+  "expiresAt": "2026-11-09T06:49:37.966Z",
   "branch": "work/swarm-house-assembly-0528-20261109",
   "predecessor": {
     "leaseId": "19d47ec0-ec19-4efa-862e-81e60132b4c5",
@@ -34,7 +34,7 @@
   },
   "pr": 1434,
   "checkpoint": {
-    "evidence": "Public #1434 at 238d72199c22f64a84dc02366de175829bb0e149 rejects the arched moving shoulder by 69.1 mm and 1718.4 ramp clearance; one middle operating leaf retains 2080. Inward-releasable heads, captured lattice and product-backed straight glazing; MAT/docs and generated record checked.",
-    "next": "Let #1431 integrate; incorporate its actual main without losing the three source scopes, run exact hosted CI and g38 preflight, merge and reconcile #1100. Product/new-frame joints and strength, air/weather and whole-roof continuity remain open."
+    "evidence": "PR #1434 frozen 83f5a19cb3428366691b6f359835fe53bcdfa017 incorporates merged #1431 2e16d4de0d1e1602965eadaba1de27fb18835d05. All three companion checks plus complete MAT and docs passed locally; original windows study 238d72199c22f64a84dc02366de175829bb0e149. 69.1 mm witness, 2080 mm clearance, inward pane route and conditional 0.658 W/K budget.",
+    "next": "Wait for all 14 workflows on this exact head; canonical g38 preflight and expected-head merge, issue #1100 evidence and handoff. Roof hip/valley air, weather and renewal remain the next distinct internal design choice, alongside actual wet/air seal and support admission."
   }
 }
