@@ -1,22 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-SERVICES-ADOPTION",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "2b3a4b21-ab54-4802-97a9-ae99476967c3",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "32fa2ba2-2c5a-4dc6-b159-08d233644d1e",
   "holder": {
     "kind": "chatgpt",
-    "label": "House scope and exchange 1354"
+    "label": "issue-comment-6750985217"
   },
-  "claimedAt": "2026-11-09T13:57:47.929Z",
-  "heartbeatAt": "2026-11-09T15:04:47.000Z",
-  "expiresAt": "2026-11-09T15:04:47.000Z",
-  "branch": "work/swarm-house-successor-1354-20261109",
-  "checkpoint": {
-    "evidence": "Draft #1461 on work/swarm-house-successor-1354-20261109 contains the reconstructed full occupied-house export, 46 source openings, 96 air cases, independent DHW, checks and drawing. Program remains open.",
-    "next": "Restore a capable checkout, complete the final first-release review and figure QA, validate the exact chosen source and finish normal publication. See #943 comment 6742966501."
+  "claimedAt": "2026-11-09T20:44:45.000Z",
+  "heartbeatAt": "2026-11-09T20:44:45.000Z",
+  "expiresAt": "2026-11-09T21:29:45.000Z",
+  "branch": "work/mvb-chat-6750985217",
+  "predecessor": {
+    "leaseId": "2b3a4b21-ab54-4802-97a9-ae99476967c3",
+    "generation": 1,
+    "branch": "work/swarm-house-successor-1354-20261109",
+    "pr": 1461,
+    "checkpoint": {
+      "evidence": "Draft #1461 on work/swarm-house-successor-1354-20261109 contains the reconstructed full occupied-house export, 46 source openings, 96 air cases, independent DHW, checks and drawing. Program remains open.",
+      "next": "Restore a capable checkout, complete the final first-release review and figure QA, validate the exact chosen source and finish normal publication. See #943 comment 6742966501."
+    }
   },
-  "pr": 1461,
-  "releasedAt": "2026-11-09T15:04:47.000Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "2b3a4b21-ab54-4802-97a9-ae99476967c3",
+    "generation": 1,
+    "branch": "work/swarm-house-successor-1354-20261109",
+    "pr": 1461,
+    "checkpoint": {
+      "evidence": "Draft #1461 on work/swarm-house-successor-1354-20261109 contains the reconstructed full occupied-house export, 46 source openings, 96 air cases, independent DHW, checks and drawing. Program remains open.",
+      "next": "Restore a capable checkout, complete the final first-release review and figure QA, validate the exact chosen source and finish normal publication. See #943 comment 6742966501."
+    }
+  }
 }
