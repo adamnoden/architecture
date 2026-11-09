@@ -191,6 +191,7 @@
       "equalAreaForWholeFieldCutMm2": 107550,
       "grossSlotAtPhysicalEaveMm": 69.38709677419355
     },
-    "scope": "Projected routes on eight pitched fields around a four-sided square ring. The 40 mm corner transition requires a formed return. Nominal equivalent areas are sensitivities against the inherited eave comparison. The header assumes an unobstructed transverse section. The valley is an intake-area analogy only. Actual rails, screens, rain, fire, flow, local resistance, construction and removable terminations still govern."
+    "scope": "Projected routes on eight pitched fields around a four-sided square ring. The 40 mm corner transition requires a formed return. Nominal equivalent areas are sensitivities against the inherited eave comparison. The header assumes an unobstructed transverse section. The valley is an intake-area analogy only. Actual rails, screens, rain, fire, flow, local resistance, construction and removable terminations still govern.",
+    "ordinaryClearBayStationMm": 6270.416666
   }
 }

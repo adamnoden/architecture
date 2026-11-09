@@ -48,10 +48,10 @@
 <polygon points="546.90,232.90 541.90,223.90 551.90,223.90" fill="#a24812"/>
 <circle cx="546.90" cy="161.00" r="3.8" fill="#a24812" stroke="#a24812" stroke-width="2"/>
 <text x="555.90" y="200.95" fill="#a24812" font-size="15" font-weight="700" text-anchor="start">B</text>
-<polyline points="846.50,161.00 846.50,282.94" fill="none" stroke="#116859" stroke-width="3.3" stroke-linejoin="round"/>
-<polygon points="846.50,282.94 841.50,273.94 851.50,273.94" fill="#116859"/>
-<circle cx="846.50" cy="161.00" r="3.8" fill="#116859" stroke="#116859" stroke-width="2"/>
-<text x="855.50" y="225.97" fill="#116859" font-size="15" font-weight="700" text-anchor="start">A</text>
+<polyline points="862.70,161.00 862.70,282.94" fill="none" stroke="#116859" stroke-width="3.3" stroke-linejoin="round"/>
+<polygon points="862.70,282.94 857.70,273.94 867.70,273.94" fill="#116859"/>
+<circle cx="862.70" cy="161.00" r="3.8" fill="#116859" stroke="#116859" stroke-width="2"/>
+<text x="871.70" y="225.97" fill="#116859" font-size="15" font-weight="700" text-anchor="start">A</text>
 <polyline points="690.71,376.71 690.71,317.69" fill="none" stroke="#6a4e9a" stroke-width="3.3" stroke-linejoin="round"/>
 <polygon points="690.71,317.69 685.71,326.69 695.71,326.69" fill="#6a4e9a"/>
 <circle cx="690.71" cy="376.71" r="3.8" fill="#fcfbf7" stroke="#6a4e9a" stroke-width="2"/>
@@ -64,7 +64,7 @@
 <text x="719.00" y="493.00" fill="#202e35" font-size="13" font-weight="400" text-anchor="start">Mitred curb ±250</text>
 <polyline points="885.00,489.00 914.00,489.00" fill="none" stroke="#425765" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="3 3"/>
 <text x="923.00" y="493.00" fill="#202e35" font-size="13" font-weight="400" text-anchor="start">Upper-board cutoff ±290</text>
-<text x="475.00" y="524.00" fill="#116859" font-size="14" font-weight="700" text-anchor="start">A   X6000</text>
+<text x="475.00" y="524.00" fill="#116859" font-size="14" font-weight="700" text-anchor="start">A   X6270.42</text>
 <text x="573.00" y="524.00" fill="#202e35" font-size="14" font-weight="400" text-anchor="start">Exterior eave to field-board end.</text>
 <text x="475.00" y="552.00" fill="#a24812" font-size="14" font-weight="700" text-anchor="start">B   X1000</text>
 <text x="573.00" y="552.00" fill="#202e35" font-size="14" font-weight="400" text-anchor="start">Exterior eave to hip. The straight ridge misses this channel.</text>

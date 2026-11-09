@@ -11,7 +11,7 @@ def ring_plan(model, cap):
     assert cx + roof['overhang'] == court and cw == ch and cx * 2 + cw == side
     ridge = roof['ridgeInset']
     curb, board, _ = cap['ventCurbPanelEndAndDripFromRidge']
-    direct, hip, valley = side / 2, 1000, 3400
+    direct, hip, valley = cap['fieldVentRoutes']['ordinaryClearBayStationMm'], 1000, 3400
     assert eave < hip < ridge - board and ridge + board < valley < court < direct
     half = side / 2
     paper = '#fcfbf7'

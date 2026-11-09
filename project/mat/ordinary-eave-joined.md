@@ -55,7 +55,7 @@ At each curb turn the secondary drainage layer up and return its collected water
 
 ### Which field channels reach the raised ridge?
 
-Trace a strip up the roof between two rails running in the direction of fall. At the centre of the north face it connects the eave intake to the pocket under the ridge hood. Near the corners that connection breaks in opposite ways on the two slopes. The plan below carries the 250 mm curb and 290 mm upper-board cutoff around square mitres. It treats the intervening pocket as open, before allowing for real rails, clips or closures. The three other sides repeat by rotation. [Roof topology and diagonal types](../rof/rof-02-topology-and-geometry.md#result-and-source-authority) · [House and courtyard plan](../had/studies/water-replan.json)
+Trace a strip up the roof between two rails running in the direction of fall. At X6270.42, inside the documented clear bay between the central rails of the north face, it connects the eave intake to the pocket under the ridge hood. Near the corners that connection breaks in opposite ways on the two slopes. The plan below carries the 250 mm curb and 290 mm upper-board cutoff around square mitres. It treats the intervening pocket as open, before allowing for real rails, clips or closures. The three other sides repeat by rotation. [Roof topology and diagonal types](../rof/rof-02-topology-and-geometry.md#result-and-source-authority) · [House and courtyard plan](../had/studies/water-replan.json)
 
 ![North roof in plan, tracing straight strips to a ridge pocket, outer hip or inner valley](studies/ridge-vent-plan.svg)
 

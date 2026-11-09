@@ -110,6 +110,10 @@ def compare(model):
     assert math.isclose(result['secondaryToBackCrest'],edge['weather']['secondary']['clearOverBackCrest'])
     assert net_outlet >= cold['netEquivalent'] and lip_z > field_under_lip
     result['fieldVentRoutes'] = ring_routes(model, result, cold)
+    clear_bay = old['plan']['clearBayCutP']
+    assert any(left < clear_bay < right for left, right in old['plan']['sixClearChannelsP'])
+    assert min(axes) < clear_bay < max(axes)
+    result['fieldVentRoutes']['ordinaryClearBayStationMm'] = clear_bay
     return result
 
 
