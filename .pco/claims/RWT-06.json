@@ -9,8 +9,8 @@
     "label": "South-side receiver and native outlet development"
   },
   "claimedAt": "2026-11-09T00:07:30.207Z",
-  "heartbeatAt": "2026-11-09T00:11:28.510Z",
-  "expiresAt": "2026-11-09T00:56:28.510Z",
+  "heartbeatAt": "2026-11-09T00:27:56.491Z",
+  "expiresAt": "2026-11-09T01:12:56.491Z",
   "branch": "work/swarm-house-0006",
   "predecessor": {
     "leaseId": "4dc14b02-121f-4265-a655-92ac747e4c42",
@@ -34,7 +34,7 @@
   },
   "pr": 1405,
   "checkpoint": {
-    "evidence": "PR #1405 at bfd005a9 contains the side receiver, native high outlet and captured stow. 181 local RWT tests and rendered plan/sections passed.",
-    "next": "Inspect exact-head CI; preflight, integrate and reconcile #992. Rear-sill wetting and fixed-tail blockage remain internal failure questions before site-specific adoption."
+    "evidence": "PR #1405 at d36007ba includes the exact 6.41 s first-spill upper bound, 4.43895 L/s N-long scenario, and rejected separate west relief. RWT source matches local 6ef2e72b. 13 workflows passed at this head.",
+    "next": "Wait for final validated integration head and fresh preflight. Scope remains started until a contained failure path, high-level access and first wetting are resolved."
   }
 }
