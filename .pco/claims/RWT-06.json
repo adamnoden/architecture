@@ -9,8 +9,8 @@
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T02:53:26.644Z",
-  "heartbeatAt": "2026-11-09T03:07:29.512Z",
-  "expiresAt": "2026-11-09T03:52:29.512Z",
+  "heartbeatAt": "2026-11-09T03:13:34.624Z",
+  "expiresAt": "2026-11-09T03:58:34.624Z",
   "branch": "work/swarm-fourth-20261109",
   "predecessor": {
     "leaseId": "da19f126-18f3-4dbb-b762-b868a709def9",
@@ -34,7 +34,7 @@
   },
   "pr": 1419,
   "checkpoint": {
-    "evidence": "RWT source #1420 d5f9404b, tree df43321f, six RWT paths. Both south-court drips hand over on 90 mm slide; middle bay can reach stand. Downstream open-trough blockage spills before backup. 193/193 RWT tests.",
-    "next": "Verify source is an ancestor of joint #1419 and all six RWT blobs match. Fresh RWT preflight on exact joint green head before merge. After merge update #992 and release."
+    "evidence": "Exact joint 70f854cb/tree 759f9e5b, direct source parent d5f9404b #1420, all six RWT blobs identical. Both generated cards reproduce; three targeted regressions pass at joint head; standalone full RWT 193 pass.",
+    "next": "All hosted workflows must pass on the exact joint head, then run fresh canonical gen62 merge-check. After expected-head merge verify source, update #992, release gen62."
   }
 }
