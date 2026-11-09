@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 70,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "62f4b0b9-82ab-4c74-979b-e1d601b17493",
   "holder": {
     "kind": "chatgpt",
     "label": "Architecture swarm: current house frontier"
   },
   "claimedAt": "2026-11-09T13:55:53.221Z",
-  "heartbeatAt": "2026-11-09T14:50:10.000Z",
-  "expiresAt": "2026-11-09T15:35:10.000Z",
+  "heartbeatAt": "2026-11-09T15:07:26.000Z",
+  "expiresAt": "2026-11-09T15:07:26.000Z",
   "branch": "work/swarm-after-material-1354-20261109",
   "predecessor": {
     "leaseId": "cc9391cb-d95f-4735-8041-7160ce60d843",
@@ -37,5 +37,7 @@
     "evidence": "PR #1460 fe56315e. The exact water source and access decision are published.",
     "next": "Check hosted CI and run a fresh canonical publication preflight on a capable checkout before merging.",
     "blocker": "The local execution environment is currently unavailable."
-  }
+  },
+  "releasedAt": "2026-11-09T15:07:26.000Z",
+  "releaseReason": "handoff"
 }
