@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
-  "generation": 32,
-  "state": "released",
-  "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
+  "generation": 33,
+  "state": "claimed",
+  "leaseId": "32cbfcf3-85b6-4d7d-bb68-db98071ca67c",
   "holder": {
     "kind": "chatgpt",
-    "label": "front-utility-swarm-0002"
+    "label": "fabric-60837041"
   },
-  "claimedAt": "2026-11-09T00:06:32.175Z",
-  "heartbeatAt": "2026-11-09T01:18:49.798Z",
-  "expiresAt": "2026-11-09T01:18:49.798Z",
-  "branch": "work/front-swarm-0002",
+  "claimedAt": "2026-11-09T01:22:25.208Z",
+  "heartbeatAt": "2026-11-09T01:22:25.208Z",
+  "expiresAt": "2026-11-09T02:07:25.208Z",
+  "branch": "work/fabric-next-60837041",
   "predecessor": {
-    "leaseId": "495b5c0b-0ae4-4407-b0b6-dd8baae18dd1",
-    "generation": 31,
-    "branch": "work/swarm-house-2332",
-    "pr": 1400,
+    "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
+    "generation": 32,
+    "branch": "work/front-swarm-0002",
+    "pr": 1406,
     "checkpoint": {
-      "evidence": "Combined #1400 at a04fb3667ffa20fbdf07404b19962ab7cb84ab28 includes MAT source commit 1fe45097 from #1399 and main 784265bd. Thirteen workflows passed; full health run 42536971767 is active.",
-      "next": "Verify final full CI, fresh lease and unchanged base, then coordinated expected-head merge. Next source review: prove the three direct shaft-to-core paths and compare the entire envelope."
+      "evidence": "Four-lane #1406 head d3b81931 / tree 6204a734 on #1405 main includes the five verified RWT files and all 11 unchanged envelope files originally validated at dfce27f1.",
+      "next": "Wait for full CI; run all four exact lease preflights and merge with expected SHA d3b81931. Then release and record residual evidence on #1100."
     }
   },
   "recoverySource": {
-    "leaseId": "495b5c0b-0ae4-4407-b0b6-dd8baae18dd1",
-    "generation": 31,
-    "branch": "work/swarm-house-2332",
-    "pr": 1400,
+    "leaseId": "1e36d690-001c-4951-a675-10536e1e0918",
+    "generation": 32,
+    "branch": "work/front-swarm-0002",
+    "pr": 1406,
     "checkpoint": {
-      "evidence": "Combined #1400 at a04fb3667ffa20fbdf07404b19962ab7cb84ab28 includes MAT source commit 1fe45097 from #1399 and main 784265bd. Thirteen workflows passed; full health run 42536971767 is active.",
-      "next": "Verify final full CI, fresh lease and unchanged base, then coordinated expected-head merge. Next source review: prove the three direct shaft-to-core paths and compare the entire envelope."
+      "evidence": "Four-lane #1406 head d3b81931 / tree 6204a734 on #1405 main includes the five verified RWT files and all 11 unchanged envelope files originally validated at dfce27f1.",
+      "next": "Wait for full CI; run all four exact lease preflights and merge with expected SHA d3b81931. Then release and record residual evidence on #1100."
     }
-  },
-  "pr": 1406,
-  "checkpoint": {
-    "evidence": "Four-lane #1406 head d3b81931 / tree 6204a734 on #1405 main includes the five verified RWT files and all 11 unchanged envelope files originally validated at dfce27f1.",
-    "next": "Wait for full CI; run all four exact lease preflights and merge with expected SHA d3b81931. Then release and record residual evidence on #1100."
-  },
-  "releasedAt": "2026-11-09T01:18:49.798Z",
-  "releaseReason": "handoff"
+  }
 }
