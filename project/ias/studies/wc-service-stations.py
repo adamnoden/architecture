@@ -394,6 +394,22 @@ def main():
     print("Current guest and rear takeoffs:", takeoffs)
     schedule=Path(__file__).with_name("fitted-wc-schedule.json")
     data=json.dumps(fitted_schedule(r,takeoffs),indent=2)+"\n"
+    # This joined check uses the same occupied family room as the WC exchange.
+    shaft=runpy.run_path(str(HERE/"family_shaft_keys.py"))
+    support=shaft["support_keys"]
+    def current_file(name):
+        return json.loads((HERE/name).read_text())
+    keys=support(S,current_file("upper-wc-release.json"),current_file("household-water.json")["basins"],P)
+    shaft_path=HERE/"family-shaft-keys.json"
+    shaft_data=json.dumps(keys,indent=2)+"\n"
+    plate=HERE/"family-shaft-keys.svg"
+    svg=shaft["drawing"](keys,S["plant"]["proposedServices"])
+    if check:
+        assert plate.read_text()==svg,"Regenerate the shaft plate"
+        assert shaft_path.read_text()==shaft_data,"Regenerate the shaft key schedule"
+    else:
+        shaft_path.write_text(shaft_data)
+        plate.write_text(svg)
     if check:
         assert schedule.read_text()==data,"Regenerate the fitted WC schedule"
     else:
