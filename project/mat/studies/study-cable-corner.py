@@ -149,6 +149,24 @@ assert north_axis-225-23 > wall_x+45 and west_axis+225+23 < wall_y-45
 print(f"Lamp branch length {lengths[0]:.1f}..{lengths[1]:.1f} mm to two entry planes; "
       f"closed-door path reserve >= {margin:.1f} mm ({closest}); reaches {reach_n:.1f}/{reach_w:.1f} mm.")
 
+# With both boxes above the two upward ends, draw the intact bare branch
+# diagonally towards the room. This bounding rectangle includes the complete
+# motion and a 20 mm radius about each gland and gathered, disconnected tail.
+travel, end_radius = 75, 20
+skin = min(axis-r, stand+10-end_radius)
+left, top = wall_x+skin, wall_y-skin
+right, bottom = north_axis+travel+end_radius, west_axis-travel-end_radius
+sweep = [left,bottom,right-left,top-bottom]
+def rect_gap(a,b):
+    return math.hypot(*(max(0,b[i]-a[i]-a[i+2],a[i]-b[i]-b[i+2]) for i in (0,1)))
+
+furniture_draw = min((rect_gap(sweep,q),name) for name,q in house["groundFurniture"].items())
+assert furniture_draw==(105.0,"service-emitter-study-W")
+assert skin==5 and min(rect_gap(sweep,q) for q in door["checkedFramePieces"])>=155
+assert rect_gap(sweep,closed_leaf)>150
+print(f"First diagonal draw {travel}/{travel} mm; swept overall bounds "
+      f"X{left:g}..{right:g} Y{bottom:g}..{top:g}; furniture gap {furniture_draw[0]:g} mm.")
+
 # Two orthographic views. Plan and vertical detail have separate labelled scales.
 def lamp_drawing():
     p=.115
