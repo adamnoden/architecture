@@ -1,37 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 57,
-  "state": "released",
-  "leaseId": "4dc14b02-121f-4265-a655-92ac747e4c42",
+  "generation": 58,
+  "state": "claimed",
+  "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
   "holder": {
     "kind": "chatgpt",
-    "label": "RWT river crossing design"
+    "label": "South-side receiver and native outlet development"
   },
-  "claimedAt": "2026-11-08T23:33:21.193Z",
-  "heartbeatAt": "2026-11-09T00:06:57.229Z",
-  "expiresAt": "2026-11-09T00:06:57.229Z",
-  "branch": "work/swarm-house-2332",
+  "claimedAt": "2026-11-09T00:07:30.207Z",
+  "heartbeatAt": "2026-11-09T00:07:30.207Z",
+  "expiresAt": "2026-11-09T00:52:30.207Z",
+  "branch": "work/swarm-house-0006",
   "predecessor": {
-    "leaseId": "7bf6f0cc-ef65-4c58-b418-2dc1e295e26b",
-    "generation": 56,
-    "branch": "work/swarm-second-dispatch-2253"
-  },
-  "recoverySource": {
-    "leaseId": "9079f0f9-ec95-4f7e-beb6-85a5454ccedc",
-    "generation": 55,
-    "branch": "work/swarm-rwt-20261108-2223",
-    "pr": 1394,
+    "leaseId": "4dc14b02-121f-4265-a655-92ac747e4c42",
+    "generation": 57,
+    "branch": "work/swarm-house-2332",
+    "pr": 1400,
     "checkpoint": {
-      "evidence": "Merged PR #1394 at 9da10bd4. Bank span removes X13500 immersed support in the comparison. 175 RWT tests, rendered panel, exact-head Validate 42530573365 and canonical preflight at 22:49:49 UTC passed.",
-      "next": "Qualify bank seats and supported rail/keeper joints across both banks, delivered section stiffness and submerged rail protection. Preserve two-ended locks, upper handling, hydraulic, high-eave and site exits."
+      "evidence": "Merged #1400 at 90e9aba6, preserving #1398 bab194dc. The fixed 172 mm rail cuts the west datum by 72.6 mm; the east seat lies in the spill. 176 tests passed locally and all exact-head CI passed.",
+      "next": "Test a side receiver and upstream turn with a clear straight draw, separate spill and complete reversible native release."
     }
   },
-  "pr": 1400,
-  "checkpoint": {
-    "evidence": "Merged #1400 at 90e9aba6, preserving #1398 bab194dc. The fixed 172 mm rail cuts the west datum by 72.6 mm; the east seat lies in the spill. 176 tests passed locally and all exact-head CI passed.",
-    "next": "Test a side receiver and upstream turn with a clear straight draw, separate spill and complete reversible native release."
-  },
-  "releasedAt": "2026-11-09T00:06:57.229Z",
-  "releaseReason": "handoff"
+  "recoverySource": {
+    "leaseId": "4dc14b02-121f-4265-a655-92ac747e4c42",
+    "generation": 57,
+    "branch": "work/swarm-house-2332",
+    "pr": 1400,
+    "checkpoint": {
+      "evidence": "Merged #1400 at 90e9aba6, preserving #1398 bab194dc. The fixed 172 mm rail cuts the west datum by 72.6 mm; the east seat lies in the spill. 176 tests passed locally and all exact-head CI passed.",
+      "next": "Test a side receiver and upstream turn with a clear straight draw, separate spill and complete reversible native release."
+    }
+  }
 }
