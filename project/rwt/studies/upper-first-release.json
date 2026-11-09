@@ -4586,6 +4586,38 @@
         "outerSeatX": 16500,
         "spanBeyondSpill": 4250.294107470681,
         "unchangedSingleWheelMm": 11.687737928678217,
+        "continuousEastSill": {
+          "assumedCrestZ": -1300,
+          "railUndersideZ": -1346.1176470588234,
+          "nominalOverlap": 46.11764705882342,
+          "overlapAfter5Up": 41.11764705882342,
+          "maximumRailDepthAfter5Down": 120.88235294117658,
+          "highestSillZAfter5Down": -1351.1176470588234,
+          "role": "Applies only if a continuous solid sill or ground fills both rail footprints to the nominated east crest. The actual edge section remains open."
+        },
+        "requiredIForSingleWheelAt5Mm": 13596735.123695659,
+        "sideSeat": {
+          "stationX": 14950,
+          "postWidthOccupied": 100,
+          "localWidthOutsidePosts": 1500,
+          "farEndMaximumWaterZ": -1600,
+          "localFaultWaterZ": null,
+          "postEdgeReserve": 50,
+          "outerPostY": [
+            6025,
+            7775
+          ],
+          "armLengths": [
+            500,
+            500
+          ],
+          "downMomentFromBankAloneKNm": 6.250375005744352,
+          "upMomentFromBankAloneKNm": 2.851851851851852,
+          "armDepth": 60,
+          "unloadedArmUndersideZ": -1411.4117647058824,
+          "undersideAfter5Z": -1416.4117647058824,
+          "accepted": false
+        },
         "parkedEndX": 12450,
         "parkedWheelNoseX": 12430,
         "noseToSeam": 20,
