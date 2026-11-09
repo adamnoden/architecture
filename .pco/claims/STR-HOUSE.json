@@ -9,8 +9,8 @@
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T02:53:05.298Z",
-  "heartbeatAt": "2026-11-09T02:53:05.298Z",
-  "expiresAt": "2026-11-09T03:38:05.298Z",
+  "heartbeatAt": "2026-11-09T02:54:27.390Z",
+  "expiresAt": "2026-11-09T03:39:27.390Z",
   "branch": "work/swarm-fourth-20261109",
   "predecessor": {
     "leaseId": "ac421633-ba0e-4c64-bbf9-3cb4bb999171",
@@ -31,5 +31,10 @@
       "evidence": "MERGED #1414 at 85b99f2298d54eddafdc7745441f1d71deada77a with 14 green workflows, 196608 signed response audit, four preflights. Source geometry, four H16 returns and limited pin withdrawal now on main. Roof supplement d832fc775e177145cc74bb7b1e06a4d5ee52b40e is separate.",
       "next": "Reconcile verified four-file normal-view roof outline and stale STR visual request from #1103 comment 6730878593; patch e19ca9f4e1cb23e8f631f77fb850175d6935f85310baaaf9833554d8fd634fb2. Arch next needs isolated development, both anchors and usable physical access. STR remains open."
     }
+  },
+  "pr": 1419,
+  "checkpoint": {
+    "evidence": "Recovered roof skyline snapshot d832fc77 onto merged #1414 as e5673da32c88f0079a1d53cb83980aa3213186d9, tree 2b284ff30fc64ec6892a422699755b93f3c2af26, under PR #1419. All four sightline thresholds checked independently, drawing rendered.",
+    "next": "Check published source, integrate eligible parallel sources on current main if agreed, validate exact SHA, preflight every lease and release transparently."
   }
 }
