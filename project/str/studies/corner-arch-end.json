@@ -1,0 +1,940 @@
+{
+  "case": "Wind 31, active aperture pressure -2.25 kPa and guard -1.5 kN at W7 X2240; all eight inner arches re-solved. W7 and W3 are the same north-east pier. Local negative Y points outward.",
+  "options": {
+    "hinge": "Near rotation about wall normal free.",
+    "pin": "Three rotations free at physical centroid; retain three translations.",
+    "separated": "All six near degrees of freedom free. Far root only."
+  },
+  "units": "Local spring XYZ in mm, relative rotations rad, support force kN and moment kNm. House-axis and physical-centre moments use their recorded references.",
+  "cards": {
+    "hinge18": {
+      "7": {
+        "near": {
+          "F": [
+            2.971541,
+            4.118009,
+            -0.704493
+          ],
+          "M": [
+            -1.11286,
+            0.0,
+            2.89637
+          ],
+          "edges": [
+            -12.639026,
+            13.415786
+          ]
+        },
+        "rootAtHouseAxis": [
+          -2.971541,
+          1.651904,
+          6.165579,
+          -0.093146,
+          -3.868533,
+          0.837051
+        ],
+        "nearGapXYZmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "relativeRotationXYZrad": [
+          0.0,
+          -0.002956,
+          0.0
+        ],
+        "faceNormalCentreMM": 0.0,
+        "faceNormalCornerRangeMM": [
+          -0.31782,
+          0.31782
+        ],
+        "forceMomentBalanceErrorKN_KNm": [
+          0.0,
+          0.0
+        ],
+        "rootMember": {
+          "N": 6.165579,
+          "Ms": 3.868533,
+          "Mw": -0.168891,
+          "T": -0.963341
+        },
+        "archAtKnee": {
+          "N": 4.444682,
+          "Ms": -2.436622,
+          "Mw": 1.501478,
+          "T": -0.734304
+        },
+        "directNearPierNormalKN": {
+          "aperture": -2.265453,
+          "guard": 0.026471
+        },
+        "components": {
+          "dead": {
+            "F": [
+              -0.89284,
+              0.024129,
+              2.059925
+            ],
+            "M": [
+              0.001365,
+              0.0,
+              0.022557
+            ],
+            "edges": [
+              0.646431,
+              0.75099
+            ]
+          },
+          "houseWind": {
+            "F": [
+              4.224791,
+              0.017486,
+              -3.033392
+            ],
+            "M": [
+              -0.014578,
+              0.0,
+              0.009791
+            ],
+            "edges": [
+              -0.441252,
+              -0.247133
+            ]
+          },
+          "aperture": {
+            "F": [
+              -0.344878,
+              2.937617,
+              0.254755
+            ],
+            "M": [
+              -0.415702,
+              0.0,
+              2.285066
+            ],
+            "edges": [
+              -7.980537,
+              8.043026
+            ]
+          },
+          "guard": {
+            "F": [
+              -0.015532,
+              1.138777,
+              0.014219
+            ],
+            "M": [
+              -0.683945,
+              0.0,
+              0.578957
+            ],
+            "edges": [
+              -4.863667,
+              4.868904
+            ]
+          }
+        }
+      },
+      "3": {
+        "near": {
+          "F": [
+            2.817643,
+            3.291685,
+            1.422268
+          ],
+          "M": [
+            0.01029,
+            0.0,
+            3.013088
+          ],
+          "edges": [
+            -6.536469,
+            9.117361
+          ]
+        },
+        "rootAtHouseAxis": [
+          -2.817643,
+          0.839257,
+          8.107278,
+          0.64422,
+          -3.635877,
+          0.016489
+        ],
+        "nearGapXYZmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "relativeRotationXYZrad": [
+          0.0,
+          -0.002216,
+          0.0
+        ],
+        "faceNormalCentreMM": 0.0,
+        "faceNormalCornerRangeMM": [
+          -0.238191,
+          0.238191
+        ],
+        "forceMomentBalanceErrorKN_KNm": [
+          0.0,
+          0.0
+        ],
+        "rootMember": {
+          "N": 8.107278,
+          "Ms": 3.635877,
+          "Mw": -0.98878,
+          "T": -0.136239
+        },
+        "archAtKnee": {
+          "N": 5.957933,
+          "Ms": -2.326538,
+          "Mw": 0.037248,
+          "T": -0.341984
+        },
+        "directNearPierNormalKN": {
+          "aperture": -2.152953,
+          "guard": 0.0
+        },
+        "components": {
+          "dead": {
+            "F": [
+              -0.991118,
+              0.024483,
+              4.15061
+            ],
+            "M": [
+              0.0617,
+              0.0,
+              0.023099
+            ],
+            "edges": [
+              1.840007,
+              1.355887
+            ]
+          },
+          "houseWind": {
+            "F": [
+              4.211331,
+              0.016613,
+              -3.023156
+            ],
+            "M": [
+              -0.016172,
+              0.0,
+              0.011484
+            ],
+            "edges": [
+              -0.452139,
+              -0.233548
+            ]
+          },
+          "aperture": {
+            "F": [
+              -0.349799,
+              2.941272,
+              0.257905
+            ],
+            "M": [
+              -0.383386,
+              0.0,
+              2.332047
+            ],
+            "edges": [
+              -7.944722,
+              8.007675
+            ]
+          },
+          "guard": {
+            "F": [
+              -0.052771,
+              0.309317,
+              0.036908
+            ],
+            "M": [
+              0.348148,
+              0.0,
+              0.646459
+            ],
+            "edges": [
+              0.020386,
+              -0.012653
+            ]
+          }
+        }
+      }
+    },
+    "pin18": {
+      "7": {
+        "near": {
+          "F": [
+            2.952175,
+            3.874842,
+            -0.666972
+          ],
+          "M": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cutNormalKN": 0.800755,
+          "cutTangentialKN": 4.851122,
+          "frictionRatioIfUnrestrained": 6.058189,
+          "houseAxisM": [
+            0.013339,
+            0.0,
+            0.059044
+          ]
+        },
+        "rootAtHouseAxis": [
+          -2.952175,
+          1.895071,
+          6.128058,
+          -1.723343,
+          -3.872199,
+          3.442652
+        ],
+        "nearGapXYZmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "relativeRotationXYZrad": [
+          0.011483,
+          -0.002904,
+          -0.014966
+        ],
+        "faceNormalCentreMM": 0.0,
+        "faceNormalCornerRangeMM": [
+          -1.857898,
+          1.857898
+        ],
+        "forceMomentBalanceErrorKN_KNm": [
+          0.0,
+          0.0
+        ],
+        "rootMember": {
+          "N": 6.128058,
+          "Ms": 3.872199,
+          "Mw": 1.462901,
+          "T": -3.56812
+        },
+        "archAtKnee": {
+          "N": 4.402572,
+          "Ms": -2.391983,
+          "Mw": 1.915432,
+          "T": -3.538574
+        },
+        "directNearPierNormalKN": {
+          "aperture": -2.265453,
+          "guard": 0.026471
+        }
+      },
+      "3": {
+        "near": {
+          "F": [
+            2.825189,
+            2.749987,
+            1.438693
+          ],
+          "M": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cutNormalKN": 2.598936,
+          "cutTangentialKN": 3.295374,
+          "frictionRatioIfUnrestrained": 1.267971,
+          "houseAxisM": [
+            -0.028774,
+            0.0,
+            0.056504
+          ]
+        },
+        "rootAtHouseAxis": [
+          -2.825189,
+          1.380955,
+          8.090853,
+          -0.499297,
+          -3.671621,
+          2.380822
+        ],
+        "nearGapXYZmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "relativeRotationXYZrad": [
+          0.005287,
+          -0.002181,
+          -0.016395
+        ],
+        "faceNormalCentreMM": 0.0,
+        "faceNormalCornerRangeMM": [
+          -1.348705,
+          1.348705
+        ],
+        "forceMomentBalanceErrorKN_KNm": [
+          0.0,
+          0.0
+        ],
+        "rootMember": {
+          "N": 8.090853,
+          "Ms": 3.671621,
+          "Mw": 0.155436,
+          "T": -2.500893
+        },
+        "archAtKnee": {
+          "N": 5.947874,
+          "Ms": -2.306996,
+          "Mw": 1.284079,
+          "T": -2.355913
+        },
+        "directNearPierNormalKN": {
+          "aperture": -2.152953,
+          "guard": 0.0
+        }
+      }
+    },
+    "pin36": {
+      "7": {
+        "near": {
+          "F": [
+            2.949397,
+            3.875744,
+            -0.662925
+          ],
+          "M": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cutNormalKN": 0.803018,
+          "cutTangentialKN": 4.849223,
+          "frictionRatioIfUnrestrained": 6.038748,
+          "houseAxisM": [
+            0.013258,
+            0.0,
+            0.058988
+          ]
+        },
+        "rootAtHouseAxis": [
+          -2.949397,
+          1.895184,
+          6.126753,
+          -1.724195,
+          -3.869474,
+          3.443175
+        ],
+        "nearGapXYZmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "relativeRotationXYZrad": [
+          0.011495,
+          -0.002903,
+          -0.014971
+        ],
+        "faceNormalCentreMM": 0.0,
+        "faceNormalCornerRangeMM": [
+          -1.859011,
+          1.859011
+        ],
+        "forceMomentBalanceErrorKN_KNm": [
+          0.0,
+          0.0
+        ],
+        "rootMember": {
+          "N": 6.126753,
+          "Ms": 3.869474,
+          "Mw": 1.463808,
+          "T": -3.568525
+        },
+        "archAtKnee": {
+          "N": 4.375153,
+          "Ms": -2.388799,
+          "Mw": 1.808027,
+          "T": -3.5952
+        },
+        "directNearPierNormalKN": {
+          "aperture": -2.265453,
+          "guard": 0.026471
+        }
+      },
+      "3": {
+        "near": {
+          "F": [
+            2.822919,
+            2.750961,
+            1.442255
+          ],
+          "M": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cutNormalKN": 2.60101,
+          "cutTangentialKN": 3.294162,
+          "frictionRatioIfUnrestrained": 1.266494,
+          "houseAxisM": [
+            -0.028845,
+            0.0,
+            0.056458
+          ]
+        },
+        "rootAtHouseAxis": [
+          -2.822919,
+          1.380997,
+          8.090033,
+          -0.500003,
+          -3.669396,
+          2.381423
+        ],
+        "nearGapXYZmm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "relativeRotationXYZrad": [
+          0.005296,
+          -0.002181,
+          -0.016399
+        ],
+        "faceNormalCentreMM": 0.0,
+        "faceNormalCornerRangeMM": [
+          -1.349528,
+          1.349528
+        ],
+        "forceMomentBalanceErrorKN_KNm": [
+          0.0,
+          0.0
+        ],
+        "rootMember": {
+          "N": 8.090033,
+          "Ms": 3.669396,
+          "Mw": 0.156177,
+          "T": -2.501397
+        },
+        "archAtKnee": {
+          "N": 5.98626,
+          "Ms": -2.30439,
+          "Mw": 1.213162,
+          "T": -2.393818
+        },
+        "directNearPierNormalKN": {
+          "aperture": -2.152953,
+          "guard": 0.0
+        }
+      }
+    },
+    "separated18": {
+      "7": {
+        "near": {
+          "F": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "M": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "houseAxisM": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "rootAtHouseAxis": [
+          0.0,
+          5.769913,
+          5.461086,
+          -9.965698,
+          1.61907,
+          -1.137858
+        ],
+        "nearGapXYZmm": [
+          -8.731909,
+          -124.791503,
+          -6.131856
+        ],
+        "relativeRotationXYZrad": [
+          0.050333,
+          -0.006755,
+          0.004786
+        ],
+        "faceNormalCentreMM": -9.519595,
+        "faceNormalCornerRangeMM": [
+          -14.040138,
+          -4.999052
+        ],
+        "forceMomentBalanceErrorKN_KNm": [
+          0.0,
+          1e-06
+        ],
+        "rootMember": {
+          "N": 5.461086,
+          "Ms": -1.61907,
+          "Mw": 9.733602,
+          "T": 1.137858
+        },
+        "archAtKnee": {
+          "N": 2.29089,
+          "Ms": -1.598483,
+          "Mw": -0.494131,
+          "T": 0.391489
+        },
+        "directNearPierNormalKN": {
+          "aperture": -2.265453,
+          "guard": 0.026471
+        }
+      },
+      "3": {
+        "near": {
+          "F": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "M": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "houseAxisM": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "rootAtHouseAxis": [
+          0.0,
+          4.130942,
+          9.529546,
+          -6.387161,
+          4.070317,
+          -0.855379
+        ],
+        "nearGapXYZmm": [
+          -13.68986,
+          -86.305701,
+          -14.754237
+        ],
+        "relativeRotationXYZrad": [
+          0.0339,
+          -0.013601,
+          0.003163
+        ],
+        "faceNormalCentreMM": -19.460732,
+        "faceNormalCornerRangeMM": [
+          -23.48091,
+          -15.440553
+        ],
+        "forceMomentBalanceErrorKN_KNm": [
+          0.0,
+          1e-06
+        ],
+        "rootMember": {
+          "N": 9.529546,
+          "Ms": -4.070317,
+          "Mw": 5.982155,
+          "T": 0.855379
+        },
+        "archAtKnee": {
+          "N": 5.697692,
+          "Ms": -4.018618,
+          "Mw": -0.425995,
+          "T": 0.433264
+        },
+        "directNearPierNormalKN": {
+          "aperture": -2.152953,
+          "guard": 0.0
+        }
+      }
+    },
+    "separated36": {
+      "7": {
+        "near": {
+          "F": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "M": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "houseAxisM": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "rootAtHouseAxis": [
+          0.0,
+          5.770929,
+          5.463828,
+          -9.968552,
+          1.620722,
+          -1.13847
+        ],
+        "nearGapXYZmm": [
+          -8.73389,
+          -124.829688,
+          -6.139602
+        ],
+        "relativeRotationXYZrad": [
+          0.050348,
+          -0.006761,
+          0.004789
+        ],
+        "faceNormalCentreMM": -9.527362,
+        "faceNormalCornerRangeMM": [
+          -14.049591,
+          -5.005133
+        ],
+        "forceMomentBalanceErrorKN_KNm": [
+          0.0,
+          1e-06
+        ],
+        "rootMember": {
+          "N": 5.463828,
+          "Ms": -1.620722,
+          "Mw": 9.736339,
+          "T": 1.13847
+        },
+        "archAtKnee": {
+          "N": 2.3344,
+          "Ms": -1.600114,
+          "Mw": -0.483008,
+          "T": 0.406354
+        },
+        "directNearPierNormalKN": {
+          "aperture": -2.265453,
+          "guard": 0.026471
+        }
+      },
+      "3": {
+        "near": {
+          "F": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "M": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "houseAxisM": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "rootAtHouseAxis": [
+          0.0,
+          4.131958,
+          9.532288,
+          -6.390015,
+          4.071969,
+          -0.855991
+        ],
+        "nearGapXYZmm": [
+          -13.691425,
+          -86.343938,
+          -14.762793
+        ],
+        "relativeRotationXYZrad": [
+          0.033915,
+          -0.013606,
+          0.003166
+        ],
+        "faceNormalCentreMM": -19.469017,
+        "faceNormalCornerRangeMM": [
+          -23.490854,
+          -15.44718
+        ],
+        "forceMomentBalanceErrorKN_KNm": [
+          0.0,
+          1e-06
+        ],
+        "rootMember": {
+          "N": 9.532288,
+          "Ms": -4.071969,
+          "Mw": 5.984893,
+          "T": 0.855991
+        },
+        "archAtKnee": {
+          "N": 5.835285,
+          "Ms": -4.020249,
+          "Mw": -0.41299,
+          "T": 0.446442
+        },
+        "directNearPierNormalKN": {
+          "aperture": -2.152953,
+          "guard": 0.0
+        }
+      }
+    }
+  },
+  "occupation": {
+    "corner": {
+      "face": "rear-west first floor",
+      "ffl": 3450,
+      "shell": 12000,
+      "rawJambY": [
+        9700.0,
+        10700.0
+      ],
+      "rawSillSpringHeadZ": [
+        4200,
+        6000,
+        6300
+      ],
+      "coreX": [
+        262.5,
+        402.5
+      ],
+      "cabinetPlan": [
+        429.5,
+        10800,
+        300,
+        750
+      ],
+      "lowBoxPlan": [
+        429.5,
+        9937.5,
+        150,
+        862.5
+      ]
+    },
+    "pin": {
+      "u": 1205.147059,
+      "y": 10794.852941,
+      "z": 6050.588235,
+      "diameter": 24.0,
+      "axisToCabinetPlan": 5.147059,
+      "nominalCabinetPlanOverlap": 6.852941,
+      "lowestPinZ": 6038.588235,
+      "axisToRawOpeningAtPinZ": 125.320793,
+      "scope": "Plan overlap only. Cabinet and low-box upper heights remain unbound."
+    },
+    "strip": {
+      "alongY": [
+        10700.0,
+        10800
+      ],
+      "width": 100.0,
+      "midY": 10750.0,
+      "midEdgeReserveAfterPinRadius": 38.0,
+      "axisIntervals": {
+        "bare": [
+          10712.0,
+          10788.0
+        ],
+        "with15Setout": [
+          10727.0,
+          10773.0
+        ],
+        "with25WorkingGap": [
+          10737.0,
+          10763.0
+        ],
+        "withBoth": [
+          10752.0,
+          10748.0
+        ]
+      },
+      "combined104mmTrialDeficit": 4.0,
+      "scope": "Raw jamb to cabinet in plan. Low boxing occupies the same band. The 15 mm setout and 25 mm working gap per side are trial allowances."
+    },
+    "atSpring": {
+      "offsetTrialCentreYZ": [
+        10740.0,
+        6050.588235
+      ],
+      "workingGaugeDiameter": 104.0,
+      "radialEdgeToFiniteRawIntrados": 7.632521,
+      "workingEdgeToCabinetPlan": 8.0,
+      "centreToIntrados": 59.632521,
+      "centreToSpringEndPlane": 25.813149,
+      "centreToOriginalPinAxis": 54.852941,
+      "scope": "Fits the projected face between the opening and cabinet. Its centre is in the RC arch sector and the gauge crosses the end plane. It cannot be drilled as a clear core or used to draw the original pin. Actual room-face and low-box access are unresolved."
+    },
+    "stack": {
+      "xy": [
+        567.5,
+        11177.5
+      ],
+      "u": 822.5,
+      "verticalZ": [
+        200,
+        7800
+      ],
+      "pipeBodyComparator": 110,
+      "formedDiameterAtFloorOnly": 160,
+      "warmFaceStraightRouteHitsStackAtZ": [
+        4400,
+        4720,
+        5430.0,
+        5570.0,
+        6050.588235,
+        6540,
+        6660
+      ]
+    },
+    "access": {
+      "socketXY": [
+        429.5,
+        11020.0
+      ],
+      "socketZ": [
+        4400,
+        4720
+      ],
+      "barrierPlan": [
+        455,
+        9580.0,
+        495,
+        11035.0
+      ],
+      "coverHistoricalZ": [
+        3500,
+        4300
+      ],
+      "coverHistoricalFaceX": 717.5,
+      "coverHistoricalY": [
+        10950,
+        11405
+      ],
+      "aboveHistoricalCoverZ": [
+        100,
+        420,
+        1750.588235
+      ],
+      "permanentGuardRodY": 10805.0,
+      "permanentGuardRodZ": [
+        5430.0,
+        5570.0
+      ],
+      "guardBracketDraw": 100,
+      "guardOutwardDraw": 665,
+      "frameOutwardDraw": 880,
+      "scope": "Historical face predates the 12 mm cabinet shift. It supplies no current straight tool slot."
+    },
+    "roof": {
+      "archExtradosCrownZ": 6515,
+      "collectorZ": [
+        6540,
+        6660
+      ],
+      "gap": 25,
+      "afterTrialPinDiameter": 1.0,
+      "scope": "At crown and overlapping wall-normal planes only."
+    }
+  },
+  "admitted": false
+}
