@@ -73,3 +73,7 @@ For the outer corners, compare a removable ventilated hip cover with a transvers
 Keep the courtyard valley pan continuous. Compare a separate dry-side inlet for the valley-fed channels with feeding them sideways from the courtyard eave. To match **15 mm net along all 7,170 mm of board cutoff** using only the 3,100 mm court eave requires **34.7 mm net** there, or 69.4 mm gross at the trial 50% mesh, before support losses. The existing 30 mm gross throat provides 15 mm net. A wider inlet would also need a continuous distribution passage and protection from water at the valley discharge.
 
 These opening-area comparisons reserve space. Airflow depends on pressure, resistance and the installed screens. Detail the hip cover and a dry courtyard feed at a real corner, including the end closures, fixings and removal route. The raised cap's own 50 mm space above the breather also needs a defined intake and outlet. The pocket traced here serves the field boards. [Dimensions, closure cases and reproducible route calculation](studies/raised-roof-edge.json)
+
+## Compare the complete ring covering
+
+The [slate, underlay and existing metal-roof comparison](ring-roof-family.md) rejects direct use of the current crown and selects a raised two-direction airspace for development. It conserves the RWT court failure event, changes its roof/sky split, and exposes the separate lead-runoff, local gravity, steel-support and corner working-height decisions.
