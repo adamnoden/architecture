@@ -1,13 +1,13 @@
 # RWT — Rainwater Systems Architecture
 
 **Issue:** #992  
-**State:** RWT-00/01/02/03/04/05 complete at their original research scope; access/transition, the owner-directed successor questions and network synthesis remain.
+**State:** RWT-00 through RWT-06 and the shedding, metals and robustness comparisons are complete. Network synthesis, the shared roof/water selection and regression admission remain.
 
 **1 November metals packet disposition:** [RWT-METALS option-family decision](rwt-metals-option-disposition.md) completes the bounded metal-assembly comparison, **not** assembly installation, material certification or network selection. It keeps conventional accessible copper collection as the control, site-constrained outboard copper receiver as the challenger, fabricated brass/bronze wet bodies on hold, and concealed crossings as exceptions. This unlocks **RWT-ROBUSTNESS** for full-duty single-failure and common-cause testing. Earlier statements within individual 31 October investigations that “RWT-METALS remains planned” are historical checkpoints superseded only as to **packet lifecycle**; their unanswered product, support, repair, leak and site questions remain open at their named downstream gates.
 
 **30 October owner direction:** the [rainwater elegance and failure-tolerance brief](rainwater-elegance-brief.md) now controls development: free shedding into designed ground receivers where demonstrably forgiving; copper collection where control is needed; English-hedge and brass-channel studies; genuinely independent blockage routes. The [whole-house material policy](../../docs/reference-house/material-policy.md) includes hidden components. Earlier PVC/PE preferences are superseded, not erased. RWT-SHED, RWT-METALS and RWT-ROBUSTNESS feed RWT-07 through the canonical graph.
 
-**Failure result:** [RWT-05 blockage, failure and exceedance](rwt-05-blockage-failure-exceedance.md); comparative attack complete, with safe court escape still unproved. RWT-06/07 must resolve or reject the candidate before the joint gate.
+**Failure result:** [RWT-05 blockage, failure and exceedance](rwt-05-blockage-failure-exceedance.md); the original comparative attack left safe court escape unproved. RWT-06 subsequently selected the permanent west receiver and its maintenance states. RWT-07 carries that result into the whole-network comparison.
 
 **Materials result:** [RWT-04 materials, joints and shared compatibility](rwt-04-materials-joints-compatibility.md); candidate interfaces remain conditional, with no material selection. RWT-METALS reconciles that same compatibility record against the new material brief.
 
@@ -171,7 +171,9 @@ RWT designs the physical route. MRA later tests whether the whole-house conseque
 
 ### RWT-06 — access, courtyard/ground transition and site handoff
 
-**Current architectural decision.** [HAD-COURT-BYPASS-01](../had/receiver-selection.md) selects a permanent west receiver, a low branch to the original north basin and a protected high overflow into the original E chute. It prices the changed floor, grates, real two-screen stages, occupied eastern platform, guarded corner exchange and both northern maintenance phases. RWT-06 resumes the six whole-house duties on this [geometry and state record](../had/studies/receiver-selection.json). The [low gallery and split hood](rwt-06-low-court-bypass.md) remain the alternative. Both earlier HAD selections still own unaffected house geometry. Installed flow, the first harmful water level, site and structural admission remain open.
+**Completed access and site-handoff decision.** The [six-duty service selection](rwt-06-permanent-receiver-service.md) adopts the HAD west receiver, a separately guarded above-ground screen exchange, roof access and receiving boundaries. During northern screen travel the high E crest is restricted enough to surcharge its soffit in the 4.43895 L/s diversion. Prove its ordinary 3.60375 L/s moving state; keep both screens secured before long roof works. RWT-07 now owns whole-network synthesis. Actual first harmful wetting, structures, commissioned flows and independent surveyed drainage remain separate.
+
+**Current architectural decision.** [HAD-COURT-BYPASS-01](../had/receiver-selection.md) selects a permanent west receiver, a low branch to the original north basin and a protected high overflow into the original E chute. It prices the changed floor, grates, real two-screen stages, occupied eastern platform, guarded corner exchange and both northern maintenance phases. RWT-06 used this [geometry and state record](../had/studies/receiver-selection.json). The [low gallery and split hood](rwt-06-low-court-bypass.md) remain the alternative. Both earlier HAD selections still own unaffected house geometry. Installed flow, the first harmful water level, site and structural admission remain open.
 
 **Prior raised-roof and court service comparison.** The [joined six-duty study](rwt-06-raised-roof-court-service.md) develops a shorter cleaning head and contained straight-cassette discharge. A blocked E basket can spill 25–46 mm below the nearest operating N water level. Develop continuous high E containment and the removable above-grate N spill; verify actual concentrated rain, both source phases and reinstatement before closure.
 
@@ -293,7 +295,7 @@ Do not create a generic hydraulic solver, false precision or pseudo-certificatio
 
 ## Parallel topology
 
-The executable graph is [the canonical node shard](../control/nodes/roof-water.ts); the [generated dependency map](../control/graph.md) is its navigable projection. RWT-02/03/04 were intentionally parallel after the hydraulic/interface basis. Under the successor brief, RWT-SHED and RWT-METALS can start independently after their completed prerequisites; both feed RWT-ROBUSTNESS and RWT-07. RWT-06 remains unfinished. The shared roof/water gate still precedes selected-house integration. Do not maintain an additional hand-edited scheduling diagram here.
+The executable graph is [the canonical node shard](../control/nodes/roof-water.ts); the [generated dependency map](../control/graph.md) is its navigable projection. RWT-02/03/04 were intentionally parallel after the hydraulic/interface basis. Under the successor brief, RWT-SHED and RWT-METALS can start independently after their completed prerequisites; both feed RWT-ROBUSTNESS and RWT-07. RWT-06 has completed its building-side access and ground-transition decision. RWT-07 now compares whole networks before the shared roof/water gate. Do not maintain an additional hand-edited scheduling diagram here.
 
 ## Interfaces
 

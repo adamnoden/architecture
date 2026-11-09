@@ -1,6 +1,8 @@
 # RWT-06 — finite remaining exit map
 
-**Current architectural decision.** [HAD-COURT-BYPASS-01](../had/receiver-selection.md) selects a permanent west receiver, a low branch to the original north basin and a protected high overflow into the original E chute. It prices the changed floor, grates, real two-screen stages, occupied eastern platform, guarded corner exchange and both northern maintenance phases. RWT-06 resumes the six whole-house duties on this [geometry and state record](../had/studies/receiver-selection.json). The [low gallery and split hood](rwt-06-low-court-bypass.md) remain the alternative. Both earlier HAD selections still own unaffected house geometry. Installed flow, the first harmful water level, site and structural admission remain open.
+**Issued completion.** The [permanent-receiver service decision](rwt-06-permanent-receiver-service.md) resolves the six internal duties below and hands the selected house to RWT-07. The earlier controls remain the record of what had to change.
+
+**Current architectural decision.** [HAD-COURT-BYPASS-01](../had/receiver-selection.md) selects a permanent west receiver, a low branch to the original north basin and a protected high overflow into the original E chute. It prices the changed floor, grates, real two-screen stages, occupied eastern platform, guarded corner exchange and both northern maintenance phases. RWT-06 used this [geometry and state record](../had/studies/receiver-selection.json). The [low gallery and split hood](rwt-06-low-court-bypass.md) remain the alternative. Both earlier HAD selections still own unaffected house geometry. Installed flow, the first harmful water level, site and structural admission remain open.
 
 **Preceding raised-roof and court service comparison.** The [joined six-duty study](rwt-06-raised-roof-court-service.md) develops a shorter cleaning head and contained straight-cassette discharge. A blocked E basket can spill 25–46 mm below the nearest operating N water level. Develop continuous high E containment and the removable above-grate N spill; verify actual concentrated rain, both source phases and reinstatement before closure.
 
@@ -43,7 +45,7 @@ The garden bypass now derives BOTH N basin4250..5750/13450..15150 and its spill 
 
 The handoff must carry actual terminal orientation, operating/blocked discharge identity, receiving head, plan/splash territory, support/erosion and access/load exclusions. The present ideal projection/spill calculations establish necessary geometric screens only. Real survey, groundwater/common flood, lawful disposal, infiltration or attenuation are DPL/site inputs. Distinct basins do not establish real hydrological independence. No pump, forecast or timely resident action substitutes for a passive path.
 
-## Closure rule
+## Earlier closure rule
 
 This result records RWT-06 as started while the investigation proceeds; it does not mark completion or unlock RWT-07. RWT-06 remains **incomplete** until the finite internal access/transition/handoff choices above are resolved or explicitly rejected with a coordinated architectural response. A useful bounded source/handling design may be integrated before material, installed physical or real-site admission; none of those later admissions is invented or silently marked passed. RWT-07 is not automatically unlocked by a green calculation or a new receiver rectangle.
 
