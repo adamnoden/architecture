@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 33,
-  "state": "released",
-  "leaseId": "e939437e-a556-4200-afdd-6b5035473434",
+  "generation": 34,
+  "state": "claimed",
+  "leaseId": "d7a72cde-5597-44c4-8cfa-e8b0671f814e",
   "holder": {
     "kind": "chatgpt",
-    "label": "fabric-60837041"
+    "label": "House water and access continuation 0405"
   },
-  "claimedAt": "2026-11-09T03:29:56.193Z",
-  "heartbeatAt": "2026-11-09T04:04:23.102Z",
-  "expiresAt": "2026-11-09T04:04:23.102Z",
-  "checkpoint": {
-    "evidence": "Merged #1425 on main 4dabed3d/tree c62af3c8. IAS source #1424 1fbd9717 direct joint parent; five unchanged IAS blobs plus registered passing check. Stair rails retain permanent well guards. True two-height newel and supported plumb-cut wall grip. Ten IAS checks and all 14 hosted workflows green.",
-    "next": "See #941 for qualified three-point re-grip and remaining actual duties: full-size user/anchor/edge/temporary protection, other dry, wet and service first releases, family bath and joined candidate selection. Do not treat an unobserved uninterrupted grasp as proved."
-  },
-  "branch": "work/house-front-threshold-0328",
+  "claimedAt": "2026-11-09T04:08:23.377Z",
+  "heartbeatAt": "2026-11-09T04:08:23.377Z",
+  "expiresAt": "2026-11-09T04:53:23.377Z",
+  "branch": "work/swarm-rain-0405",
   "predecessor": {
-    "leaseId": "8340d5c9-7c2b-4c0c-a059-19c382a175ce",
-    "generation": 32,
-    "branch": "work/swarm-fourth-20261109",
-    "pr": 1419,
+    "leaseId": "e939437e-a556-4200-afdd-6b5035473434",
+    "generation": 33,
+    "branch": "work/house-front-threshold-0328",
+    "pr": 1425,
     "checkpoint": {
-      "evidence": "Merged #1421 via #1419 at 5fdcf5c9 and verified the study on main; handoff #941.",
-      "next": "Use #941 for supplied drain dimensions, support and reinstatement or advance a different internal IAS family exit."
+      "evidence": "Merged #1425 on main 4dabed3d/tree c62af3c8. IAS source #1424 1fbd9717 direct joint parent; five unchanged IAS blobs plus registered passing check. Stair rails retain permanent well guards. True two-height newel and supported plumb-cut wall grip. Ten IAS checks and all 14 hosted workflows green.",
+      "next": "See #941 for qualified three-point re-grip and remaining actual duties: full-size user/anchor/edge/temporary protection, other dry, wet and service first releases, family bath and joined candidate selection. Do not treat an unobserved uninterrupted grasp as proved."
     }
   },
   "recoverySource": {
-    "leaseId": "8340d5c9-7c2b-4c0c-a059-19c382a175ce",
-    "generation": 32,
-    "branch": "work/swarm-fourth-20261109",
-    "pr": 1419,
+    "leaseId": "e939437e-a556-4200-afdd-6b5035473434",
+    "generation": 33,
+    "branch": "work/house-front-threshold-0328",
+    "pr": 1425,
     "checkpoint": {
-      "evidence": "Merged #1421 via #1419 at 5fdcf5c9 and verified the study on main; handoff #941.",
-      "next": "Use #941 for supplied drain dimensions, support and reinstatement or advance a different internal IAS family exit."
+      "evidence": "Merged #1425 on main 4dabed3d/tree c62af3c8. IAS source #1424 1fbd9717 direct joint parent; five unchanged IAS blobs plus registered passing check. Stair rails retain permanent well guards. True two-height newel and supported plumb-cut wall grip. Ten IAS checks and all 14 hosted workflows green.",
+      "next": "See #941 for qualified three-point re-grip and remaining actual duties: full-size user/anchor/edge/temporary protection, other dry, wet and service first releases, family bath and joined candidate selection. Do not treat an unobserved uninterrupted grasp as proved."
     }
-  },
-  "pr": 1425,
-  "releasedAt": "2026-11-09T04:04:23.102Z",
-  "releaseReason": "handoff"
+  }
 }
