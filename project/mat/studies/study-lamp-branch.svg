@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="230mm" viewBox="0 0 420 230" role="img" aria-labelledby="t d">
+<title id="t">A switched lamp branch in the study</title><desc id="d">A cable follows the study's north and west walls between two independently supported metalclad stations. The switch is above the north skirting and the lighting outlet is above the west skirting.</desc>
+<rect width="420" height="230" fill="#fbfaf6"/><g font-family="DejaVu Sans,Arial,sans-serif" fill="#20383d">
+<text x="12" y="15" font-size="3.4" letter-spacing=".6">MAT  /  SERVICES  /  STUDY</text>
+<text x="12" y="29" font-size="8" font-weight="bold">A switched lamp branch in the study</text>
+<path d="M12 36h396" stroke="#355a62" stroke-width=".6"/>
+<text x="12" y="44" font-size="4.4" font-weight="bold">Plan  ·  complete the door movement before servicing</text>
+<path d="M21.0 180.3075 V48.0 H126.8575 M230.35750000000002 48.0 H264.8575" fill="none" stroke="#273e46" stroke-width="1"/>
+<rect x="21.000" y="134.308" width="23.000" height="46.000" fill="#cbdadb" stroke="#587677" stroke-width=".6"/>
+<rect x="75.108" y="145.808" width="115.000" height="34.500" fill="#e5e3dd" stroke="#8a8982" stroke-width=".6"/>
+<rect x="89.483" y="48.000" width="17.250" height="7.590" fill="#deb58d" stroke="#814b2a" stroke-width=".6"/><rect x="21.000" y="102.683" width="7.015" height="17.250" fill="#deb58d" stroke="#814b2a" stroke-width=".6"/><path d="M98.108 49.035 H26.296 A4.261 4.261 0 0 0 22.035 53.296 V111.308" fill="none" stroke="#a15428" stroke-width=".7"/>
+<polyline points="233.233,88.308 172.858,91.757 86.608,97.507 73.958,95.208" fill="none" stroke="#2b777a" stroke-width=".7" stroke-dasharray="2 1.3"/>
+<circle cx="73.95750000000001" cy="95.20750000000001" r="34.5" fill="none" stroke="#2b777a" stroke-dasharray="2 1.3" stroke-width=".5"/>
+<text x="121.1075" y="61" font-size="3.5">North fused switch</text><path d="M98.1075 55l8 5h12" fill="none" stroke="#814b2a" stroke-width=".45"/>
+<text x="35" y="124" font-size="3.5">West lamp outlet</text><path d="M28 111.3075l5 10" fill="none" stroke="#814b2a" stroke-width=".45"/>
+<text x="25" y="158" font-size="3.2">Emitter</text><text x="101" y="161" font-size="3.2">Chair</text>
+<text x="170" y="103" font-size="3.3">Closed-door approach</text>
+<text x="20" y="190" font-size="3.2">Furniture clipped at Y2000. Dashed circle shows the west standing position.</text>
+<path d="M21 198h57.5" stroke="#20383d" stroke-width=".6"/><text x="22" y="205" font-size="3">500 mm in plan</text>
+<path d="M272 42v166" stroke="#c0ccca" stroke-width=".5"/>
+<text x="279" y="45" font-size="4.4" font-weight="bold">Wall section  ·  schematic</text>
+<path d="M288 57v131" stroke="#36484b" stroke-width="1.2"/><rect x="290" y="65" width="4" height="14" fill="#9ba8a8"/><rect x="294" y="62" width="18" height="20" fill="#deb58d" stroke="#814b2a" stroke-width=".6"/>
+<path d="M298 82v11h5V82m-3 11v34c0 8-6 9-6 17v28" fill="none" stroke="#a15428" stroke-width="1.2"/>
+<rect x="298" y="157" width="4" height="30" fill="#cbdadb"/><path d="M288 187h26" stroke="#36484b"/>
+<g font-size="3.4"><text x="317" y="68">15 mm open stand-off</text><text x="317" y="77">Factory box and face</text><text x="317" y="89">External gland below box</text><text x="317" y="110">Removable riser front</text><text x="317" y="136">Two bends shift the cable</text><text x="317" y="142">to the measured entry axis.</text><text x="317" y="166">Low run at Z75</text><text x="317" y="173">45 mm skirting at floor</text></g>
+<path d="M12 211h396" stroke="#355a62" stroke-width=".5"/><text x="12" y="221" font-size="3.3">Design comparison. The layered gland, electrical protection, actual clearances and material exceptions require their own decisions.</text>
+</g></svg>
