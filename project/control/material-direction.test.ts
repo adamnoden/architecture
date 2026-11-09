@@ -18,8 +18,9 @@ test('selected-house integration cannot bypass the owner material-policy review'
   requires('TRIAD-GATE', ['MAT-COORDINATION'])
   requires('MAT-COORDINATION', [
     'MAT-ENVELOPE', 'MAT-SERVICES', 'MAT-INTERIORS',
-    'IAS-03', 'HAD-03', 'OAS-DETAIL', 'ROF-RWT-GATE'
+    'IAS-03', 'HAD-03', 'HAD-SERVICES-ADOPTION', 'OAS-DETAIL', 'ROF-RWT-GATE'
   ])
+  requires('HAD-SERVICES-ADOPTION', ['MAT-SERVICES', 'HAD-WATER-REPLAN', 'STR-RECONCILE'])
   assert.ok(!dependencies('MAT-COORDINATION').includes('TRIAD-GATE'))
 })
 

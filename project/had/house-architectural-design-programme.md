@@ -50,6 +50,7 @@ matching issue #943 and the canonical execution graph.
 | Court/roof replan | HAD-WATER-REPLAN | Joined source-bound architectural replacement for the rejected single-north court-water topology, before RWT-06 detailing |
 | Guarded court intake | HAD-COURT-INTAKE | Joined selection of the E mouth, guarded access and independent temporary corner drainage after the two-exit replan |
 | Permanent court receiver | HAD-COURT-BYPASS | Choose the low two-way bypass or a simpler independently accessible receiver for the actual blocked/maintenance states |
+| Inhabited service system | HAD-SERVICES-ADOPTION | Choose one heating, water and ventilation architecture, export it at source and reproduce the furnished maintenance states |
 | Roof/water integration | ROF-RWT-GATE | Selected roof/rainwater systems reconciled with HAD expression and OAS-owned threshold consequences |
 | Shared integration | TRIAD-GATE | Selected IAS/OAS/HAD outputs, including the reconciled roof/water architecture, describe one house |
 
@@ -126,7 +127,18 @@ The [RWT-06 court-egress architectural screen](../rwt/court-egress-architectural
 
 This was a **physical spatial disposition**, not a hydraulic RWT-06 closeout. HAD-03 completed its bounded architectural development with the open north loggia, explicitly retaining common mouth/terrace failure. The [current-source topology rejection](../rwt/rwt-06-selected-topology-rejection.md) now makes the missing independent escape an executable **HAD-WATER-REPLAN** prerequisite; HAD-03's completed status must not be read as supplying it. RWT retains operating-head/flow proof; STR/IAS/OAS/MAT retain their owning assembly duties; DPL retains actual site/flood facts. The joint ROF-RWT gate remains downstream.
 
+### Select the inhabited service system
+
+HAD-SERVICES-ADOPTION consumes the [ten-family materials offer](../mat/whole-service-material-offer.md), the actual Services projection from the selected house and the reconciled openings/structure. HAD, MAT and IAS own one lasting decision. Develop the six local room extracts, independent cooker/tempered outdoor air, separated primary and wide mineral cylinder, or demonstrate that the balanced plant and its different house fit deserve selection. If both fail, define the different occupied service territory and register that explicit house redesign.
+
+1. Publish **one** current Services architecture with the local fan/room schedule, heating and DHW duties, connection to the site, thirteen independent room or circulation budgets plus kitchen, defrost and cold/fault operation. Reproduce the selected HAD default with that exported source. Retain both the acquired six-station house and the optional rear-room change as separately costed configurations.
+2. Resolve the cooker supply-loss transition, capture, transfer through protected closures and the actual principal/other room emitters with their supported intervention. The ceiling on room heat loss or an on/off contact alone cannot establish the operating house.
+3. Join the incoming utility branch, washer and sink isolation, store/independent safety discharge, foul front, replacement routes and dry controls to the complete occupied plan. Coordinate the piers, supported closures, controls, cable/pipe separation and restored fire/water lines. Keep the N/E water receivers, protective stair, bath movement and hydraulic discharges available in their stated service conditions.
+4. Draw and reproduce ordinary use, isolated fault, first movement, handling/park and recommissioning. Export the chosen complete service and material occurrence schedule to MAT-COORDINATION. Retain measured performance, site/undertaker supply and outfall, configured-kit admissions, statutory/structural checks and every dated owner residue decision as distinct obligations.
+
 ### Select the permanent receiver and blocked-water return
+
+The [permanent west receiver selection](receiver-selection.md) completes this internal choice. Its separate low N branch and high E outlet, exposed screen removal, occupied east platform and changed court floor are the current source for RWT-06. The older selections continue to own the rest of the house.
 
 **HAD-COURT-BYPASS** starts from the completed guarded intake and reconciled structural house. Select or reject the complete [low return and divided receiver](../rwt/rwt-06-low-court-bypass.md) against a simpler permanent, independently accessible catch/receiver. Include the raised three-shutter scheme as the adverse control. Preserve the two existing site routes and both earlier HAD results. The successor owns one architectural selection on the actual house.
 

@@ -26,12 +26,12 @@ function reduced(intervals,block){
  }
  return {intervals:out,f:1};
 }
-export function capacity(original,stage,lipK,block,lengthMm,N=64,{slope=.04,floorAt=floor}={}){
+export function capacity(original,stage,lipK,block,lengthMm,N=64,{slope=.04,floorAt=floor,sectionAt,extraHead=()=>0}={}){
  assert(slope>0);
  const {intervals,f}=reduced(original,block);
  return intervals.reduce((total,[a,b])=>{
   const W=(b-a)/1000,low=floorAt(b),high=floorAt(a);
-  const geometry=z=>{
+  const geometry=sectionAt?(z=>sectionAt(z,a,b,f)):z=>{
    const w=Math.max(0,Math.min(W,(z-low)/slope)),T=f*w,A=T*(z-low-slope*w/2);
    const P=Math.hypot(T,slope*w)+Math.max(0,z-low)+Math.max(0,z-high);
    return {A,T,P};
@@ -45,7 +45,7 @@ export function capacity(original,stage,lipK,block,lengthMm,N=64,{slope=.04,floo
     return Math.max(0,1-Fr2)/Sf;
    };
    const upstream=root(z=>integrate(dxdy,exit,z,N)-lengthMm/1000,exit,exit+.3);
-   return returnFlow?Q*1000:energy(upstream)+(1-lipK)*criticalVelocityHead-stage/1000;
+   return returnFlow?Q*1000:energy(upstream)+(1-lipK)*criticalVelocityHead+extraHead(Q)-stage/1000;
   };
   const zc=root(z=>trial(z),low+.00001,stage/1000);
   return total+trial(zc,true);

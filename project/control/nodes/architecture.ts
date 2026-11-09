@@ -216,6 +216,18 @@ export const architectureNodes = defineNodes([
     closeoutEvidence: ['project/had/had-03-open-north-loggia.md', 'project/had/studies/open-north-loggia.json'],
   },
 
+  // The materials comparison exposes a different heat plant, room duties,
+  // cooker cutover and utility first releases than the imported Services model.
+  {
+    id: 'HAD-SERVICES-ADOPTION',
+    owners: ['HAD', 'MAT', 'IAS'],
+    title: 'Select and export one service system for the occupied house',
+    dependencies: ['MAT-SERVICES', 'HAD-WATER-REPLAN', 'STR-RECONCILE'],
+    lifecycle: 'planned',
+    agentDispatch: { mode: 'self-service' },
+    closeoutEvidence: []
+  },
+
   // RWT-06 rejects the selected common north-mouth failure, not merely a fitting.
   // Registry-only bootstrap under the RWT-06 lease: no HAD geometry is adopted;
   // the successor can be acquired only after this identity exists on main.
@@ -246,9 +258,9 @@ export const architectureNodes = defineNodes([
     owners: ['HAD', 'RWT', 'STR', 'MAT'],
     title: 'Select the permanent courtyard receiver and its blocked-basket return',
     dependencies: ['HAD-COURT-INTAKE', 'STR-RECONCILE'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/had/receiver-selection.md', 'project/had/studies/receiver-selection.json', 'project/had/studies/receiver-selection.svg', 'project/had/studies/receiver-service.svg']
   },
 
   // Final audit found the bounded OAS topology did not supply its dimensioned studies.

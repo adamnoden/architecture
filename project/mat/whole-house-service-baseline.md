@@ -58,6 +58,8 @@ The ordinary-rim363-1 bath has a separate configured-kit requirement in `interfa
 
 ## Internal exit table
 
+The following table records the baseline's own issued comparison. The [later ten-family materials offer](whole-service-material-offer.md) closes MAT-SERVICES and assigns the permanent service design to HAD-SERVICES-ADOPTION. This baseline remains the governing geometry export until that owner replaces it.
+
 | Internal development exit | Current bounded result |
 |---|---|
 | One whole-house strategy and duties | Selected, quantified and scheduled; no broad lifecycle completion claimed. |
