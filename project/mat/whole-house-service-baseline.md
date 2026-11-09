@@ -1,5 +1,7 @@
 # Whole-house services: provisional loggia baseline
 
+The nominal 300 BES shown in the retained geometry has **273.5 L actual potable volume and 50 mm polyurethane insulation**. That native disclosure supersedes the older comparison wording in the Services and HAD geometry objects. [Cylinder evidence](domestic-hot-water-cylinder.md) · [Replacement and handling](cylinder-replacement-screen.md)
+
 **6 November joined correction.** [Actual east foul/return/portal join](east-water-foul-join.md) owns downstream port y5625 and conditional D1800 receiver outer-axis−2480. Upper wet interfaces and internal endpoints stay fixed; the prior D1300 grade is historical evidence.
 
 This is a bounded development baseline, not adoption of the house or acceptance of apparatus, materials, site performance or physical handling. The numeric authority is [the generated JSON](studies/whole-house-service-baseline.json), reproduced by [the generator](studies/whole-house-service-baseline.py). The [whole-house plan](studies/whole-house-service-baseline.svg) and [terminal renewal sheet](studies/whole-house-service-baseline-interfaces.svg) have been rendered and visually inspected.

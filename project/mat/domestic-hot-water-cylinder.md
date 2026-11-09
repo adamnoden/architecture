@@ -1,5 +1,7 @@
 # Domestic hot water at the 700 mm plant station
 
+The [cylinder safety route](cylinder-safety-route.md) locates the protection and discharge on the east house. The [mineral replacement study](cylinder-replacement-screen.md) tests catalogue cases, handling and standing loss with the W9 operating case.
+
 **Retain the 300 L stored-water duty. Reject the standard 300-labelled uniSTOR as the specified vessel.** Its potable volume is **273.5 L**, 26.5 L short of a literal 300 L of stored domestic water. Its 50 mm polyurethane insulation also conflicts with the house material policy. The published cylinder dimensions still give a handling comparison. A factory-engineered alternative needs its own pressure vessel, insulation, safety assembly, connections, service space and replacement route. [House service baseline](whole-house-service-baseline.md) · [Material policy](../../docs/reference-house/material-policy.md)
 
 ## Identify the actual vessel
