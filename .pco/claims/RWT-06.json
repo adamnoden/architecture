@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "RWT-06",
   "generation": 66,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b61d5ecf-62c0-4f25-9c0b-c8081078b5f0",
   "holder": {
     "kind": "chatgpt",
     "label": "Final access decision 0600"
   },
   "claimedAt": "2026-11-09T06:05:33.147Z",
-  "heartbeatAt": "2026-11-09T07:01:25.447Z",
-  "expiresAt": "2026-11-09T07:46:25.447Z",
+  "heartbeatAt": "2026-11-09T07:01:50.336Z",
+  "expiresAt": "2026-11-09T07:01:50.336Z",
   "branch": "work/swarm-house-disposition-20261109",
   "predecessor": {
     "leaseId": "a7ab19df-8b25-44f3-bcf3-cda599ecf360",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1435 ca7d89d4; #1437 088fea36 corrected source matches main. 207 RWT tests and 14 final workflows passed. Six-duty disposition and programme handoff on #992 comment 6734246578.",
     "next": "Decide the joined architectural gate, ramp, intake, corner support and wet terminal response against all six duties; compare clear 450 or retained foot plus 50, or register the actual HAD-led source prerequisite if RWT cannot own these house changes."
-  }
+  },
+  "releasedAt": "2026-11-09T07:01:50.336Z",
+  "releaseReason": "handoff"
 }
