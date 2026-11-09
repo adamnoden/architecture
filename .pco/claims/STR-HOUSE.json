@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 39,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "81e9e457-2421-4265-b888-f69620b583df",
   "holder": {
     "kind": "chatgpt",
     "label": "Architecture swarm: east service and receiving"
   },
   "claimedAt": "2026-11-09T05:06:11.286Z",
-  "heartbeatAt": "2026-11-09T06:03:32.190Z",
-  "expiresAt": "2026-11-09T06:48:32.190Z",
+  "heartbeatAt": "2026-11-09T06:04:06.197Z",
+  "expiresAt": "2026-11-09T06:04:06.197Z",
   "branch": "work/house-0506-20261109",
   "predecessor": {
     "leaseId": "7cda0738-fae8-489d-a7bb-9bdc1363b337",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1431 at 2e16d4de with frozen #1432 seven-file STR source 5442856a, exact CI 14/14 and certified g39 preflight. #1103 comment 6733443975.",
     "next": "Choose the permanent corner openings/solid return and raised ridge on the current inhabited house or formally return its failed topology for redesign. Adoptability and member checks remain separate."
-  }
+  },
+  "releasedAt": "2026-11-09T06:04:06.197Z",
+  "releaseReason": "handoff"
 }
