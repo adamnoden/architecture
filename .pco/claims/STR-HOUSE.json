@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-HOUSE",
   "generation": 33,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "7a83f34d-e43d-4142-a94f-6db17bb69cf8",
   "holder": {
     "kind": "chatgpt",
     "label": "fabric-60837041"
   },
   "claimedAt": "2026-11-09T00:07:47.473Z",
-  "heartbeatAt": "2026-11-09T01:19:10.565Z",
-  "expiresAt": "2026-11-09T02:04:10.565Z",
+  "heartbeatAt": "2026-11-09T01:19:26.656Z",
+  "expiresAt": "2026-11-09T01:19:26.656Z",
   "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "064434de-951d-45ba-b8d1-9b76ea3972a6",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Merged #1406 at d8e52d78; both #1407 and rotating-bearing parent f805f02b are on main; signed controls and validation in #1103 comment 6729956902.",
     "next": "STR-HOUSE remains open: size a positively retained bearing or change support kinematics, test actual lever, joint clearance, both signed pier arms and foundation/guard compatibility."
-  }
+  },
+  "releasedAt": "2026-11-09T01:19:26.656Z",
+  "releaseReason": "handoff"
 }
