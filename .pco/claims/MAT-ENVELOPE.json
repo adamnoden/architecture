@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "MAT-ENVELOPE",
   "generation": 43,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "cdd1d1d9-8a87-494b-abf9-bf7d792d8466",
   "holder": {
     "kind": "chatgpt",
     "label": "Joined programme decision 1035"
   },
   "claimedAt": "2026-11-09T10:35:00.641Z",
-  "heartbeatAt": "2026-11-09T11:10:02.019Z",
-  "expiresAt": "2026-11-09T11:55:02.019Z",
+  "heartbeatAt": "2026-11-09T11:37:25.000Z",
+  "expiresAt": "2026-11-09T11:37:25.000Z",
   "branch": "work/swarm-frontier-1033-20261109",
   "predecessor": {
     "leaseId": "0fe01b17-156a-48e7-9905-d3be45f79736",
@@ -36,5 +36,7 @@
   "checkpoint": {
     "evidence": "Own frozen #1452 at 34a0453e0277f4c59dad97f25772fd3c99d3ed58, tree cc04e85ab36abc5b924d2cbe1b22cae821bdbd21. Whole six-interface drained-site disposition, 49 openings and 16 moves, ring and tie, 22 roof reactions, true triple sash and unapproved local east gasket. Full MAT, structural replay, docs, control, typecheck and review passed. All parties consent to shared #1450 integration.",
     "next": "Await the hosted expected tree and all exact CI. Verify final MAT sources, membership and lifecycle, fresh independent g43 fence, then check main and journal bounded completion."
-  }
+  },
+  "releasedAt": "2026-11-09T11:37:25.000Z",
+  "releaseReason": "completed"
 }
