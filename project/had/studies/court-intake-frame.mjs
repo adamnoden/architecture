@@ -16,7 +16,8 @@ export function cornerFrame(c,six,grid,roof,selected) {
     [n+r[i],mx-(pads[i][1]-y)*r[i]/1000,my+(pads[i][0]-x)*r[i]/1000],[0,0,0]);
   const named=[['SW',4350,4350,swx,swy],['SE',7650,4350,shell-swx-restW,swy],
     ['NE',7650,7650,shell-swx-restW,shell-swy-restD],['NW',4350,7650,swx,shell-swy-restD]];
-  const chambers={normal:[4300,6775,450,450],east:[5450,6650,450,450],aisle:700};
+  const normal=[4300,6775,450,450],east=[5450,6650,450,450];
+  const chambers={normal,east,aisle:east[0]-(normal[0]+normal[2])};
   const landing=[5650,5500,1000,1000];
   const cases=named.map(([corner,x,y,rx,ry])=>{
     const rest=[rx,ry,restW,restD], point=reactions(5,[x,y]), deck=[x===4350?4350:5850,y===4350?4350:5850,1800,1800];
@@ -91,5 +92,5 @@ export function cornerFrame(c,six,grid,roof,selected) {
       eastThroat:{y:[6750,7000],startX:5900,endX:5945,overhangAbove200Approach:20,
         undersideZ:40,clearAboveQuiet:75},old:[c.chamber.normal,c.chamber.east],crewR300Each:(chambers.aisle-600)/2,
       lidUplift:c.chamber.coverLiftKN,blockedPressure:c.chamber.blockedStaticKPa,
-      pipeBandsZ:[3650,4050],stageOnly:'Both chambers and the 750 ground aisle stay clear in the same corner-service state.'}};
+      pipeBandsZ:[3650,4050],stageOnly:`Both chambers and the ${chambers.aisle} mm ground aisle stay clear in the same corner-service state.`}};
 }

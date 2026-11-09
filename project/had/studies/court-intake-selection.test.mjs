@@ -17,7 +17,9 @@ test('buy the continuous unlowered approach and return both wet edges',()=>{
   assert(Math.min(...inlet.treadMinimum)>66);
   assert.equal(inlet.originalSaddlePastSpout,20);assert.equal(inlet.saddleToHood,10);
   assert(inlet.spout.undersideToBottomAfterTwo5>18);
-  assert.equal(inlet.westUnderlapExit.clearOfCourtFace,10);assert.equal(inlet.newWesternRelease.pairedGap,5);
+  assert.equal(inlet.historicalWesternPanRelease.translationE,35);
+  assert.equal(inlet.newWesternRelease.captureThenEast,50);
+  assert.equal(inlet.historicalWesternPanRelease.clearOfCourtFace,10);assert.equal(inlet.newWesternRelease.pairedGap,5);
   assert.deepEqual(inlet.asBuilt,[[6630,7393.5]]);assert.equal(inlet.fixedNorthernGable.outerSheetY,7400);
 });
 
@@ -34,7 +36,8 @@ test('the port receives two different feeds; backup, fouling and reinstallation 
 });
 
 test('one connected, signed corner at a time; all four rests, two water paths and the clear ramp rack remain',()=>{
-  assert.equal(frame.chambers.aisle,700);assert.deepEqual(frame.ramp.originalPadConflict,[400,400]);
+  assert.equal(frame.chambers.aisle,frame.chambers.east[0]-(frame.chambers.normal[0]+frame.chambers.normal[2]));
+  assert.equal(frame.chambers.aisle,700);assert.match(frame.chambers.stageOnly,/700 mm ground aisle/);assert.deepEqual(frame.ramp.originalPadConflict,[400,400]);
   assert.deepEqual(frame.ramp.removedTipOnly,[400,50]);assert.equal(frame.ramp.gateToPad,20);
   assert.equal(frame.apronLatch.rimFeedClearX,55);assert.equal(frame.apronLatch.asBuiltModuleToFoot,40);
   close(frame.capture.dryToSecondary,45);assert.equal(frame.capture.oldDryToNew,-10);
@@ -53,6 +56,7 @@ test('publish the selected architectural record unchanged and retain the indepen
   assert.equal(d.id,'HAD-COURT-INTAKE-01');
   assert.equal(d.structuralCandidate,'SAP-C1');
   assert.equal(d.alternatives.closed.stageExtra,2200);
+  assert.equal(d.alternatives.closed.walkingCoverCount,10);assert.equal(d.alternatives.closed.wetCoverCount,6);
   assert.deepEqual(d.alternatives.openAirCut.furnitureHits,[]);
   assert.deepEqual(d.eastExport.siteStates.map(v=>v.farMax),[-1000,-1600]);
   assert.deepEqual(d.limits.hydraulicAcceptance,false);

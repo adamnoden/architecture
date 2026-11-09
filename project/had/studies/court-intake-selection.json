@@ -153,7 +153,7 @@
     "lastSaddleEnds": 7340,
     "saddleToHood": 10,
     "originalSaddlePastSpout": 20,
-    "westUnderlapExit": {
+    "historicalWesternPanRelease": {
       "neighboursRemoved": [
         "northmodule2",
         "southmodule2"
@@ -174,7 +174,8 @@
       "guardTop": 1100,
       "liftedGuardGap": 385,
       "rainRoofUnderside": 1970,
-      "roofGap": 270
+      "roofGap": 270,
+      "scope": "Superseded 35 mm release before the fixed northern gable. The selected 50 mm release is recorded in newWesternRelease."
     },
     "sourceClosedRiseToEast": 20,
     "spout": {
@@ -1524,7 +1525,7 @@
         3650,
         4050
       ],
-      "stageOnly": "Both chambers and the 750 ground aisle stay clear in the same corner-service state."
+      "stageOnly": "Both chambers and the 700 mm ground aisle stay clear in the same corner-service state."
     }
   },
   "access": {
@@ -1771,7 +1772,8 @@
   },
   "alternatives": {
     "closed": {
-      "sixCovers": 10,
+      "walkingCoverCount": 10,
+      "wetCoverCount": 6,
       "pipe": "Lawton TX1593/TX1596 TableX hard copper",
       "id": 153.5,
       "fitting": "Endex N18/89710,159",
@@ -1839,7 +1841,7 @@
   "states": [
     [
       "Ordinary / east window",
-      "Both N/E assembled. Six wet and four dry walking covers locked. Ramp and both half-lids in place. Open south gate over the covers, clean and close."
+      "Both N/E assembled. Six wet and four dry walking covers locked. Both ramp wedges fitted above the flush socket covers. Open south gate over the covers, clean and close."
     ],
     [
       "Failed N",

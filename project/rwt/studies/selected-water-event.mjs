@@ -20,7 +20,7 @@ export function readSelected(){
 export function readCurrentCourtIntake(){
  const path='project/had/studies/court-intake-selection.json', raw=fs.readFileSync(path);
  const blob=crypto.createHash('sha1').update('blob '+raw.length+'\0').update(raw).digest('hex');
- assert.equal(blob,'ccefafe3f410e5aabc9e342fc66d5d74824c02b8','HAD changed: reconcile the court feeder, service paths and local/site receiving conditions');
+ assert.equal(blob,'80a8481b4e5a508164eff51b596e5a954c152a30','HAD changed: reconcile the court feeder, service paths and local/site receiving conditions');
  return {path,blob,model:JSON.parse(raw)};
 }
 const floor=y=>-30-(y-5750)*.04;

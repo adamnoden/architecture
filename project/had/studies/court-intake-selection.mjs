@@ -60,7 +60,7 @@ export function courtIntakeSelection(){
       temporaryExtensionRule:'Outboard track and receiver crossings are assembled only while E is isolated and N has been demonstrated.',
       siteStates:event.receiverBlockedOutletScreens.map(v=>({id:v.receiver,farMax:v.spill.farEndMaximumWater,receiverFaultMax:v.spill.maximumFaultedReceiverWater})),
       limitingInternalTailLong:Qlong.allowedNominalTail,screenUpperWater:top-20},
-    alternatives:{closed:{sixCovers:six.retained.coverCount,pipe:closed.tube.product,id:closed.tube.minimumInscribedBoreScreen,
+    alternatives:{closed:{walkingCoverCount:six.retained.coverCount,wetCoverCount:six.retained.northWet+six.retained.southWet,pipe:closed.tube.product,id:closed.tube.minimumInscribedBoreScreen,
       fitting:closed.intakeTurn.productComparator.item,flange:closed.carrier.flange.product,
       nativeClosedAxis:six.collector.closedOutletBinding.axis,firstJoin:closed.intakeTurn.factoryPortBinding.nativePortToFlangeFaceLength,
       park:closed.renewal.parkX,stage:closed.renewal.stage,deckEnd:closed.renewal.requiredDeckEndX,
@@ -72,7 +72,7 @@ export function courtIntakeSelection(){
         domesticGalleryM2:(home.bridge.permanentDryGalleryClearX[1]-home.bridge.permanentDryGalleryClearX[0])*newOutdoor[3]/1e6,
         furnitureHits,decision:'Additional east exterior cut severs rear-east ground continuity with the open north loggia. Reject without another dry crossing or room replan.'}},
     states:[
-      ['Ordinary / east window','Both N/E assembled. Six wet and four dry walking covers locked. Ramp and both half-lids in place. Open south gate over the covers, clean and close.'],
+      ['Ordinary / east window','Both N/E assembled. Six wet and four dry walking covers locked. Both ramp wedges fitted above the flush socket covers. Open south gate over the covers, clean and close.'],
       ['Failed N','N entry has zero credit. Graded court feeds the continuous west edge into its actual six bodies; the ordinary dock and services are separate.'],
       ['E out of service','Prove N full duty and independent receiving/weather route. Close both gates, take out ramp, erect/test the E weather enclosure; remove all walking covers and baskets from above before using the western stair.'],
       ['N short / long works','Install the existing pipe cartridge before N is opened. Capture direct court flow at the original overhead nozzle. Long loggia diversion can combine at 4.43895; separately protect the high N chase when E is blocked.'],
