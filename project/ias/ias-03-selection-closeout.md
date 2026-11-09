@@ -1,5 +1,8 @@
 # IAS-03 — selected interior family for the joined house candidate
 
+**9 November family decision.** [Keep the rear WC and share the family bath-shower](ias-03-shared-family-bathing.md) is the lower-maintenance house option if the household accepts the 580 mm entry and loss of one independent bathing place. The current three-bathing arrangement remains the comparison until HAD and the owner select the programme. The new result includes the two-door round trip and complete IS-01–06 disposition.
+
+
 The [occurrence and exit ledger](ias-03-current-occurrences-and-exits.md#explicit-ias-03-exit-ledger) identifies the work still required for interior-family selection. The [utility sink release](ias-03-utility-host-revised-route.md#utility-sink-release-8-november-2026) follows one bowl through cutover, withdrawal and first dry rest.
 
 **1 November 2026 · development checkpoint, not an adoption or construction release.** Base main is `546c98f93a3dccbfe48119bd2e92117b6e2d766f`. The current composition input is the explicitly FAILED HAD27/30 trial commit `068e33ae52bbaa5ab0c3e3551350400e958e4033`, `project/had/studies/open-north-loggia.json` blob `5f5dd336be7cdadfd83cb869fb8257fad6b5b273`. Ordinary corrections were first checked against20ff8709 / bd3ba605 and are rerun against this composed/guarded source. Earlier checkpoint input a324/1412 remains provenance, not the current finish model. That immutable comparison is not accepted RH-LAYOUT-REVISION-02. Fetch its Git object when absent; do not manufacture a parent or silently copy its geometry into the accepted compiler.
