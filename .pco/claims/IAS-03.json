@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 41,
-  "state": "released",
-  "leaseId": "7040ad01-003d-4794-ae77-2ed322f36a3f",
+  "generation": 42,
+  "state": "claimed",
+  "leaseId": "a16b8ba4-0427-4e0c-8f73-f112d3af28ca",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T13:35:15.512Z",
-  "heartbeatAt": "2026-11-09T14:34:27.112Z",
-  "expiresAt": "2026-11-09T14:34:27.112Z",
-  "branch": "work/house-1335-20261109",
+  "claimedAt": "2026-11-09T14:35:46.008Z",
+  "heartbeatAt": "2026-11-09T14:35:46.008Z",
+  "expiresAt": "2026-11-09T15:35:46.008Z",
+  "branch": "work/house-1435-20261109",
   "predecessor": {
-    "leaseId": "239b47c4-8a4b-4aa6-b635-1b512903a2f5",
-    "generation": 40,
-    "branch": "work/house-1221-20261109",
-    "pr": 1456,
+    "leaseId": "7040ad01-003d-4794-ae77-2ed322f36a3f",
+    "generation": 41,
+    "branch": "work/house-1335-20261109",
+    "pr": 1459,
     "checkpoint": {
-      "evidence": "Merged #1456 at 9edd51c80bb08278662dcdc6c52a011ff921334a after fourteen exact-head workflows on 8b27592c and a canonical g40 fence. Issue #941 handoff 6741343405. Complete upper WCs and corrected bath door are source-bound.",
-      "next": "Finish one governing three-bathing permanent wet section, including the rear flush versus serviceable 155 rim and the actual 1700 bath outlet, plant union/hatch and intact shell route. Material, engineering and physical claims remain with their owners."
+      "evidence": "Merged #1459 at 5fdd9d58e72be75052c013af747470b8523301c3 after 14 exact-head workflows and canonical holder fence on 1f534542. #941 handoff 6742645522. Three-bathing upper floor, lower hatch and original intact-shell exchange registered.",
+      "next": "Finish the selected actual six-service riser cabinet, basin, six matched kitchen breaks and utility first-wetting and renewal duties before judging IAS-03 as a whole."
     }
   },
   "recoverySource": {
-    "leaseId": "239b47c4-8a4b-4aa6-b635-1b512903a2f5",
-    "generation": 40,
-    "branch": "work/house-1221-20261109",
-    "pr": 1456,
+    "leaseId": "7040ad01-003d-4794-ae77-2ed322f36a3f",
+    "generation": 41,
+    "branch": "work/house-1335-20261109",
+    "pr": 1459,
     "checkpoint": {
-      "evidence": "Merged #1456 at 9edd51c80bb08278662dcdc6c52a011ff921334a after fourteen exact-head workflows on 8b27592c and a canonical g40 fence. Issue #941 handoff 6741343405. Complete upper WCs and corrected bath door are source-bound.",
-      "next": "Finish one governing three-bathing permanent wet section, including the rear flush versus serviceable 155 rim and the actual 1700 bath outlet, plant union/hatch and intact shell route. Material, engineering and physical claims remain with their owners."
+      "evidence": "Merged #1459 at 5fdd9d58e72be75052c013af747470b8523301c3 after 14 exact-head workflows and canonical holder fence on 1f534542. #941 handoff 6742645522. Three-bathing upper floor, lower hatch and original intact-shell exchange registered.",
+      "next": "Finish the selected actual six-service riser cabinet, basin, six matched kitchen breaks and utility first-wetting and renewal duties before judging IAS-03 as a whole."
     }
-  },
-  "pr": 1459,
-  "checkpoint": {
-    "evidence": "Merged #1459 at 5fdd9d58e72be75052c013af747470b8523301c3 after 14 exact-head workflows and canonical holder fence on 1f534542. #941 handoff 6742645522. Three-bathing upper floor, lower hatch and original intact-shell exchange registered.",
-    "next": "Finish the selected actual six-service riser cabinet, basin, six matched kitchen breaks and utility first-wetting and renewal duties before judging IAS-03 as a whole."
-  },
-  "releasedAt": "2026-11-09T14:34:27.112Z",
-  "releaseReason": "handoff"
+  }
 }
