@@ -135,6 +135,8 @@ The coated board is not an uncoated-mineral or polymer-free product. Acrylic sea
 
 ### An ordinary sliding release, with a constrained closed position
 
+The [rear drain release study](ias-03-rear-drain-release.md) carries this trial through empty-well sleeve exchange and reinstallation, tests both hands from the actual reference station and compares a shorter clamped joint.
+
 The same Geberit catalogue's printed p114 / PDF p113 identifies **Silent-PP slip coupling 390.217.14.1, DN50, axial H = 103 mm**, PP-MD/EPDM, intended for repairing damaged Silent-PP pipes. This is the one specific additional constituent needed to test a separately released lower joint. The B594 native sheet identifies a 50 mm outside-diameter outlet, and the coupling catalogue identifies its 50 mm pipe interface: those are source-backed nominal dimensional correspondences. No actual manufacturer prohibition on this cross-brand joint has been found; absence of a named endorsement is not a rejection. These sources still supply no joined tolerance/standard interface verification, permitted insertion/seal-land geometry, full coupling outside diameter or extraction-force allowance.
 
 The [connected release sheet](studies/conventional-slip-release.svg) tests an **authored centred position and 10 mm pipe-end gap**. Its nominal upper and lower overlaps are `(103−10)/2 = 46.5 mm`; the upper one must actually fit the permitted native land. The `137−81 = 56 mm` extent difference is not that permitted land. The fixed pipe is deliberately cut/set below the native tail in this proposal; no extension is added to the moving tray/body.

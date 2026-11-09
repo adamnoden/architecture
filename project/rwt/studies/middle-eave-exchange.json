@@ -1,0 +1,116 @@
+{
+  "stage": {
+    "middleP": [
+      5764.285714285714,
+      6235.714285714285
+    ],
+    "positionP": 6000,
+    "cassetteQ": [
+      -450,
+      -100
+    ],
+    "highLipZ": 6765,
+    "centreBedZ": 6712.157142857143,
+    "endBedZ": 6710,
+    "neighbourFrontSpill": 6675,
+    "blindEndTopZ": 6680,
+    "qDrips": [
+      [
+        -200,
+        7006.738468369001
+      ],
+      [
+        -220,
+        6913.88660674044
+      ]
+    ],
+    "movedTopZ": 6540,
+    "movedUndersideZ": 6335,
+    "extractionCentreP": 5587.5,
+    "finalQ": [
+      -950,
+      -600
+    ],
+    "restStandXYWH": [
+      5327.5,
+      4825,
+      520,
+      400
+    ],
+    "standTopZ": 5750,
+    "loadedLoweringToStand": 585
+  },
+  "bypass": {
+    "p": [
+      5614.285714285714,
+      6385.714285714285
+    ],
+    "dryQ": [
+      -420,
+      -240
+    ],
+    "liveQ": [
+      -330,
+      -150
+    ],
+    "crownZ": 6810,
+    "invertAtEnds": 6806.142857142857,
+    "undersideZ": 6784.642857142857,
+    "highestLipZ": 6880,
+    "firstSecondaryThenPrimaryStroke": [
+      20,
+      40
+    ],
+    "dryParkDripGap": 20,
+    "leastLiveDripToEdge": 50,
+    "leastTailToNeighbourQ": 30,
+    "sideEdgePlanGap": 1164.2857142857138,
+    "lowerDripAboveLip": 33.886606740439674,
+    "upperTrayFrameOverCassette": 19.642857142856883,
+    "tailBeyondParkedApron": 35
+  },
+  "apron": {
+    "wetExtentJ": [
+      -35,
+      35
+    ],
+    "parkedJ": [
+      -115,
+      -45
+    ],
+    "apronPark": 80,
+    "overlapUnderCentre": 15,
+    "clearanceUnderCentre": 13.25,
+    "minimumSweptFloorClearance": 12.5,
+    "undersideOverBlindEnd": 12.75,
+    "parkedEndClearOfSeam": 45,
+    "backSpillFreeDrop": 131.14285714285688
+  },
+  "handling": {
+    "drop": 225,
+    "outward": 500,
+    "nominalToNeighbourUnderside": 20,
+    "former200DropToNeighbour": -5,
+    "aboveMidrail": 121,
+    "belowToprail": 76,
+    "pToGuardPost": 152.78571428571377,
+    "minOutwardForTenAllowance": 464,
+    "after400ToOutboardGuardFace": -54,
+    "restBodyToOutboardGuardFace": 46,
+    "standToInnerGuard": 21,
+    "standToOuterGuard": 901,
+    "frontPickupProjectionBudget": 46
+  },
+  "water": {
+    "flowLps": 3.60375,
+    "bypassOpeningWidth": 160,
+    "normalEndClearWidth": 300,
+    "criticalEnergyBypass": 55.8845002721227,
+    "criticalEnergyNormal": 36.75280782374226,
+    "grossReserveBypassAtOppositeEnd": 10.258356870734183,
+    "grossReserveNormal": 16.090049319114442,
+    "blockedNeighbourSpillsBeforeApronReturn": 17.5,
+    "blockedNeighbourSpillsBeforeBypassReturn": 131.14285714285688
+  },
+  "scope": "Unadopted central-bay operation with two live adjacent receivers. Support and wet-performance tests, the fixed end boxes and major repair remain separate. A blocked neighbour can spill before its elevated return backs up."
+}
