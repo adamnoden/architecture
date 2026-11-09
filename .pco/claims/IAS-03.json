@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-03",
   "generation": 42,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "a16b8ba4-0427-4e0c-8f73-f112d3af28ca",
   "holder": {
     "kind": "chatgpt",
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T14:35:46.008Z",
-  "heartbeatAt": "2026-11-09T14:54:49.000Z",
-  "expiresAt": "2026-11-09T15:39:49.000Z",
+  "heartbeatAt": "2026-11-09T15:13:00.000Z",
+  "expiresAt": "2026-11-09T15:13:00.000Z",
   "branch": "work/house-1435-20261109",
   "predecessor": {
     "leaseId": "7040ad01-003d-4794-ae77-2ed322f36a3f",
@@ -37,5 +37,7 @@
     "evidence": "PR #1462 b86131b7. The basin, shaft, utility and kitchen studies and illustrated first rests are published with a reproducible source check.",
     "next": "Observe exact hosted CI, run fresh canonical merge-check from a clean checkout and merge under the expected head. Then resolve the guest and rear WC first disconnections.",
     "blocker": "Hosted executor disconnected. Its terminal is unavailable; the GitHub mailbox cannot run merge-check."
-  }
+  },
+  "releasedAt": "2026-11-09T15:13:00.000Z",
+  "releaseReason": "handoff"
 }
