@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 64,
-  "state": "released",
-  "leaseId": "639f69b0-c49d-4cc1-88a9-82e5134a5b74",
+  "generation": 65,
+  "state": "claimed",
+  "leaseId": "a7ab19df-8b25-44f3-bcf3-cda599ecf360",
   "holder": {
     "kind": "chatgpt",
-    "label": "Architecture swarm: independent design development"
+    "label": "Whole-family decision 0505"
   },
-  "claimedAt": "2026-11-09T04:06:58.331Z",
-  "heartbeatAt": "2026-11-09T05:04:00.644Z",
-  "expiresAt": "2026-11-09T05:04:00.644Z",
-  "branch": "work/house-0406-20261109",
+  "claimedAt": "2026-11-09T05:06:24.196Z",
+  "heartbeatAt": "2026-11-09T05:06:24.196Z",
+  "expiresAt": "2026-11-09T05:51:24.196Z",
+  "branch": "work/swarm-family-0505",
   "predecessor": {
-    "leaseId": "3fdbd23d-ed42-4f65-88d8-795759df6967",
-    "generation": 63,
-    "branch": "work/house-front-threshold-0328",
-    "pr": 1425,
+    "leaseId": "639f69b0-c49d-4cc1-88a9-82e5134a5b74",
+    "generation": 64,
+    "branch": "work/house-0406-20261109",
+    "pr": 1428,
     "checkpoint": {
-      "evidence": "Merged #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa; exact six RWT files from 36788df52d8a0402ea14f6b6591dcf5e70147bbc, RWT 196/196, 14 green workflows. RWT #992 comments 6731764503 and 6731944223 record conditional 1.081125 L/s roof share, 2 L/s controlled wet trial and retained 3.60375 L/s ground and full-branch duty.",
-      "next": "RWT-06 stays planned. Verify actual corner and secondary runoff boundaries, supporting frames, retained outlet levels and bidirectional blocked-outlet wet tests; otherwise locate an independently safe overflow outside this centre bay."
+      "evidence": "MERGED #1428 at 44807906 with #1427 corrected head 69651e77 as a direct parent of f1253054, source blobs verified. Issue #992 comment 6732668968 records the geometry, 198 tests, final CI, receiver obligations and lifecycle started.",
+      "next": "Wet-test the reversible closed leader and mouth blockages, locate two ground terminals and safe receiving paths, and qualify guarded access, corner renewal and the supports."
     }
   },
   "recoverySource": {
-    "leaseId": "3fdbd23d-ed42-4f65-88d8-795759df6967",
-    "generation": 63,
-    "branch": "work/house-front-threshold-0328",
-    "pr": 1425,
+    "leaseId": "639f69b0-c49d-4cc1-88a9-82e5134a5b74",
+    "generation": 64,
+    "branch": "work/house-0406-20261109",
+    "pr": 1428,
     "checkpoint": {
-      "evidence": "Merged #1425 at 4dabed3d9517f234dd2ce442c4c20b51438b5caa; exact six RWT files from 36788df52d8a0402ea14f6b6591dcf5e70147bbc, RWT 196/196, 14 green workflows. RWT #992 comments 6731764503 and 6731944223 record conditional 1.081125 L/s roof share, 2 L/s controlled wet trial and retained 3.60375 L/s ground and full-branch duty.",
-      "next": "RWT-06 stays planned. Verify actual corner and secondary runoff boundaries, supporting frames, retained outlet levels and bidirectional blocked-outlet wet tests; otherwise locate an independently safe overflow outside this centre bay."
+      "evidence": "MERGED #1428 at 44807906 with #1427 corrected head 69651e77 as a direct parent of f1253054, source blobs verified. Issue #992 comment 6732668968 records the geometry, 198 tests, final CI, receiver obligations and lifecycle started.",
+      "next": "Wet-test the reversible closed leader and mouth blockages, locate two ground terminals and safe receiving paths, and qualify guarded access, corner renewal and the supports."
     }
-  },
-  "pr": 1428,
-  "checkpoint": {
-    "evidence": "MERGED #1428 at 44807906 with #1427 corrected head 69651e77 as a direct parent of f1253054, source blobs verified. Issue #992 comment 6732668968 records the geometry, 198 tests, final CI, receiver obligations and lifecycle started.",
-    "next": "Wet-test the reversible closed leader and mouth blockages, locate two ground terminals and safe receiving paths, and qualify guarded access, corner renewal and the supports."
-  },
-  "releasedAt": "2026-11-09T05:04:00.644Z",
-  "releaseReason": "handoff"
+  }
 }
