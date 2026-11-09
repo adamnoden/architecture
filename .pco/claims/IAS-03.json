@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-03",
-  "generation": 38,
-  "state": "released",
-  "leaseId": "143b555a-66ad-4544-bed6-dc6531d91dfa",
+  "generation": 39,
+  "state": "claimed",
+  "leaseId": "2d520023-c8d8-4fba-968a-23970a6def89",
   "holder": {
     "kind": "chatgpt",
-    "label": "Architecture swarm: independent post-structure"
+    "label": "Owner follow-on after sink and spill"
   },
-  "claimedAt": "2026-11-09T09:12:12.136Z",
-  "heartbeatAt": "2026-11-09T10:33:28.055Z",
-  "expiresAt": "2026-11-09T10:33:28.055Z",
-  "branch": "work/swarm-house-evidence-0840",
+  "claimedAt": "2026-11-09T10:34:20.965Z",
+  "heartbeatAt": "2026-11-09T10:34:20.965Z",
+  "expiresAt": "2026-11-09T11:19:20.965Z",
+  "branch": "work/house-1033-20261109",
   "predecessor": {
-    "leaseId": "93b1e8fd-0750-4b50-a5b6-6783e03e7d8b",
-    "generation": 37,
-    "branch": "work/house-0702-20261109",
-    "pr": 1440,
+    "leaseId": "143b555a-66ad-4544-bed6-dc6531d91dfa",
+    "generation": 38,
+    "branch": "work/swarm-house-evidence-0840",
+    "pr": 1446,
     "checkpoint": {
-      "evidence": "MERGED #1440 dac2777600c8425a2c7fc38d6c1a42776372b24c on main. Entire IAS tree equals a3ea0fc6. #1441 merged, both refs absent, #941 handoff 6736314679. 14 successful workflows and canonical fence at 09:08:47.413 UTC.",
-      "next": "Whole-family current-occurrence selection or explicit house replan; rear mixed socket and supported ties require measurement, incoming sanitary fixtures unresolved."
+      "evidence": "The bound merged pull request and the open programme issue contain the verified handoff.",
+      "next": "Continue the remaining fitted work against the recorded household choice."
     }
   },
   "recoverySource": {
-    "leaseId": "93b1e8fd-0750-4b50-a5b6-6783e03e7d8b",
-    "generation": 37,
-    "branch": "work/house-0702-20261109",
-    "pr": 1440,
+    "leaseId": "143b555a-66ad-4544-bed6-dc6531d91dfa",
+    "generation": 38,
+    "branch": "work/swarm-house-evidence-0840",
+    "pr": 1446,
     "checkpoint": {
-      "evidence": "MERGED #1440 dac2777600c8425a2c7fc38d6c1a42776372b24c on main. Entire IAS tree equals a3ea0fc6. #1441 merged, both refs absent, #941 handoff 6736314679. 14 successful workflows and canonical fence at 09:08:47.413 UTC.",
-      "next": "Whole-family current-occurrence selection or explicit house replan; rear mixed socket and supported ties require measurement, incoming sanitary fixtures unresolved."
+      "evidence": "The bound merged pull request and the open programme issue contain the verified handoff.",
+      "next": "Continue the remaining fitted work against the recorded household choice."
     }
-  },
-  "pr": 1446,
-  "checkpoint": {
-    "evidence": "The bound merged pull request and the open programme issue contain the verified handoff.",
-    "next": "Continue the remaining fitted work against the recorded household choice."
-  },
-  "releasedAt": "2026-11-09T10:33:28.055Z",
-  "releaseReason": "handoff"
+  }
 }
