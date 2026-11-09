@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T02:06:02.574Z",
-  "heartbeatAt": "2026-11-09T02:06:02.574Z",
-  "expiresAt": "2026-11-09T02:51:02.574Z",
+  "heartbeatAt": "2026-11-09T02:14:34.826Z",
+  "expiresAt": "2026-11-09T02:59:34.826Z",
   "branch": "work/house-0205-20261109",
   "predecessor": {
     "leaseId": "32cbfcf3-85b6-4d7d-bb68-db98071ca67c",
@@ -31,5 +31,10 @@
       "evidence": "Four-lane #1409 merged at 0e0934f2. MAT roof source 5fb0259f is on main; full MAT tests and 14 exact-head workflows passed. #1100 comment 6730471358 records the geometry and the 24/6 mm outer/court whole-face equal-area sensitivity.",
       "next": "Develop actual ridge support/closures and hip interruptions, including differentiated net vent areas and removable mesh. Check a different crown node if preserving the continuous field profile."
     }
+  },
+  "pr": 1415,
+  "checkpoint": {
+    "evidence": "Published #1415 at 47e6a4df; MAT checks and docs passed",
+    "next": "Verify current main and exact CI before publication"
   }
 }
