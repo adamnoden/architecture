@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 34,
-  "state": "released",
-  "leaseId": "b99038d3-0c03-4ac4-84e4-89be44138ac4",
+  "generation": 35,
+  "state": "claimed",
+  "leaseId": "62e3f738-4502-41a9-bf55-ecfa83491889",
   "holder": {
     "kind": "chatgpt",
     "label": "Architecture swarm: current house frontier"
   },
-  "claimedAt": "2026-11-09T11:39:36.739Z",
-  "heartbeatAt": "2026-11-09T13:08:52.847Z",
-  "expiresAt": "2026-11-09T13:08:52.847Z",
-  "branch": "work/swarm-after-services-1138-20261109",
+  "claimedAt": "2026-11-09T13:09:58.193Z",
+  "heartbeatAt": "2026-11-09T13:09:58.193Z",
+  "expiresAt": "2026-11-09T13:54:58.193Z",
+  "branch": "work/swarm-court-services-20261109-1250",
   "predecessor": {
-    "leaseId": "f64a30d5-3ff3-415e-9faa-f944592a68ec",
-    "generation": 33,
-    "branch": "work/swarm-frontier-1033-20261109",
-    "pr": 1450,
+    "leaseId": "b99038d3-0c03-4ac4-84e4-89be44138ac4",
+    "generation": 34,
+    "branch": "work/swarm-after-services-1138-20261109",
+    "pr": 1454,
     "checkpoint": {
-      "evidence": "Merged #1450 at 34b4058c81ae. The verified source and handoff are recorded on #1100.",
-      "next": "Continue the independently serviceable cooking intake and kitchen radiator renewal for the governing local-extract house."
+      "evidence": "Merged #1454 at 3c4c52e211db. Verified sources and handoff on #1100 (6740826158).",
+      "next": "Resolve the complete S01–S10 materials offer and its owning services design handoff."
     }
   },
   "recoverySource": {
-    "leaseId": "f64a30d5-3ff3-415e-9faa-f944592a68ec",
-    "generation": 33,
-    "branch": "work/swarm-frontier-1033-20261109",
-    "pr": 1450,
+    "leaseId": "b99038d3-0c03-4ac4-84e4-89be44138ac4",
+    "generation": 34,
+    "branch": "work/swarm-after-services-1138-20261109",
+    "pr": 1454,
     "checkpoint": {
-      "evidence": "Merged #1450 at 34b4058c81ae. The verified source and handoff are recorded on #1100.",
-      "next": "Continue the independently serviceable cooking intake and kitchen radiator renewal for the governing local-extract house."
+      "evidence": "Merged #1454 at 3c4c52e211db. Verified sources and handoff on #1100 (6740826158).",
+      "next": "Resolve the complete S01–S10 materials offer and its owning services design handoff."
     }
-  },
-  "pr": 1454,
-  "checkpoint": {
-    "evidence": "Merged #1454 at 3c4c52e211db. Verified sources and handoff on #1100 (6740826158).",
-    "next": "Resolve the complete S01–S10 materials offer and its owning services design handoff."
-  },
-  "releasedAt": "2026-11-09T13:08:52.847Z",
-  "releaseReason": "handoff"
+  }
 }
