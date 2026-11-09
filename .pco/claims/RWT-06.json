@@ -9,9 +9,9 @@
     "label": "Final access decision 0600"
   },
   "claimedAt": "2026-11-09T06:05:33.147Z",
-  "heartbeatAt": "2026-11-09T06:32:04.703Z",
-  "expiresAt": "2026-11-09T07:17:04.703Z",
-  "branch": "work/swarm-access-0600",
+  "heartbeatAt": "2026-11-09T06:32:50.870Z",
+  "expiresAt": "2026-11-09T07:17:50.870Z",
+  "branch": "work/swarm-house-disposition-20261109",
   "predecessor": {
     "leaseId": "a7ab19df-8b25-44f3-bcf3-cda599ecf360",
     "generation": 65,
@@ -32,9 +32,9 @@
       "next": "Resolve high-eave corner and leader release/restoration, its ordinary tool, and both east below-deck cleanouts; reconcile all six RWT-06 duties including first-wetting before lifecycle closeout."
     }
   },
-  "pr": 1437,
+  "pr": 1435,
   "checkpoint": {
-    "evidence": "PR #1437 frozen 922de34b. Corner, pressure-rated terminal demands, roof and east ground tool access, four-corner anchor rejection, 300 mm west inlet proposal; five source assertions; lifecycle started.",
-    "next": "Reconcile latest main with holders, verify exact final CI and canonical merge preflight, merge and hand off remaining joined house design."
+    "evidence": "Frozen #1437 source 922de34b, all six RWT files and five regressions. STR40, IAS36 and RWT66 independently consent to retain all three sources as direct parents in #1435.",
+    "next": "Verify six exact water blobs, RWT-06 still started, current main and full exact final workflow results, then perform independent canonical preflight and cleanup."
   }
 }
