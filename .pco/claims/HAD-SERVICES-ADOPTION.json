@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "HAD-SERVICES-ADOPTION",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "2b3a4b21-ab54-4802-97a9-ae99476967c3",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "House scope and exchange 1354"
+  },
+  "claimedAt": "2026-11-09T13:57:47.929Z",
+  "heartbeatAt": "2026-11-09T13:57:47.929Z",
+  "expiresAt": "2026-11-09T14:42:47.929Z",
+  "branch": "work/swarm-house-successor-1354-20261109"
+}
