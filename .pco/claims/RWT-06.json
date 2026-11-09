@@ -9,9 +9,9 @@
     "label": "Upper-first side-seat publication"
   },
   "claimedAt": "2026-11-09T00:50:38.350Z",
-  "heartbeatAt": "2026-11-09T00:50:38.350Z",
-  "expiresAt": "2026-11-09T01:35:38.350Z",
-  "branch": "work/swarm-water-side-0050",
+  "heartbeatAt": "2026-11-09T00:54:06.881Z",
+  "expiresAt": "2026-11-09T01:39:06.881Z",
+  "branch": "work/front-swarm-0002",
   "predecessor": {
     "leaseId": "a7fe7d33-c771-46f1-b0ee-6e6ee52320b2",
     "generation": 58,
@@ -31,5 +31,10 @@
       "evidence": "Merged #1405 at 673e5c46. All fourteen workflows, 00:48:30 canonical RWT preflight and the side-receiver regression passed. #992 records the failed N-out state: 6.41 s to low-edge spill; 146 mm relief passes at most 3.31 L/s even flush.",
       "next": "Develop or reject a genuinely independent full-duty event path during north renewal before site adoption or physical splash admission. Retain high-eave, first wetting and future site obligations."
     }
+  },
+  "pr": 1406,
+  "checkpoint": {
+    "evidence": "PR #1406 at d3b81931 contains the direct parent 59c03180 five-file side-seat and physical sill study on main 673e5c46. Exact RWT tree passed 182/182 and independent diagram review.",
+    "next": "After combined exact-head CI, run fresh RWT preflight, coordinate expected-head merge, verify main ancestry, reconcile #992 and release."
   }
 }
