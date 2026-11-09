@@ -9,8 +9,8 @@
     "label": "Owner follow-on services study"
   },
   "claimedAt": "2026-11-09T01:53:12.515Z",
-  "heartbeatAt": "2026-11-09T01:53:12.515Z",
-  "expiresAt": "2026-11-09T02:38:12.515Z",
+  "heartbeatAt": "2026-11-09T02:04:59.709Z",
+  "expiresAt": "2026-11-09T02:49:59.709Z",
   "branch": "work/swarm-services-20261109-0152",
   "predecessor": {
     "leaseId": "362edc89-66e0-44dc-9386-d87f530c657b",
@@ -29,5 +29,10 @@
       "evidence": "Reviewed current public ProCASA E+ selector, SDHE technical sheet p4 and Genius Fig2 after merged #1408 at 7e4bdace. See #1100. No public transverse reset/hatch envelope or matching cold-dirty delivered-duty result verified; no source change warranted.",
       "next": "To settle this W9 selection, obtain exact supplier geometry or a configured full-flow cold/dirty result. Other S01-S10 families retain their own internal design choices in the reconciled crosswalk."
     }
+  },
+  "pr": 1413,
+  "checkpoint": {
+    "evidence": "PR #1413 on merged #1409, exact head 9c019f6d",
+    "next": "Verify full CI and publication preflight; record remaining equipment and site duties on #1100."
   }
 }
