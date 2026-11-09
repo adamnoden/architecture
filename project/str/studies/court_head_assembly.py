@@ -119,3 +119,76 @@ def evaluate():
             'clearOverCapConcreteBeforeBedding':bottom-cap['capZ'][1]},
         'nonrotatingSpliceComparator':ref,
         'scope':'Trial threaded heads, keeper and shoulder geometry. Band pressure is a two-patch comparison. No stock, nut, field tolerances, anchorage, bearing, moisture or pile proof.'}
+
+
+def figure(result):
+    """Plan during entry and transverse section through one seated head."""
+    from html import escape
+    c = result['candidate']
+    w,l,h = c['stockXYZ']
+    pitch = result['original']['barPitch']
+    dia,hh = c['threadedRoundHead']
+    throat,ch = c['throat'],c['chamberWidth']
+    bottom,top = c['stockZ']
+    bearing,roof = c['headBearingZ'],c['lowerPocketRoofZ']
+    bore = c['upperBoreFloorZ']
+    stroke = c['entryTravelWestMm']
+    dark, light, steel, head, seal = '#24343b','#e9eeed','#92aaac','#a45825','#18786e'
+    out = ['<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="640" viewBox="0 0 1120 640" role="img">',
+           '<title>P32 court hold-down, side-entry block and blind moisture band</title>',
+           '<rect width="1120" height="640" fill="#fbfaf6"/><g font-family="sans-serif">']
+    def label(x,y,s,size=15,col=dark,bold=False):
+        out.append(f'<text x="{x}" y="{y}" font-size="{size}" font-weight="{700 if bold else 400}" fill="{col}">{escape(s)}</text>')
+    def rect(x,y,width,height,fill,stroke='none',dash=''):
+        out.append(f'<rect x="{x:.2f}" y="{y:.2f}" width="{width:.2f}" height="{height:.2f}" fill="{fill}" stroke="{stroke}" stroke-width="1.4" stroke-dasharray="{dash}"/>')
+    def line(x1,y1,x2,y2,col,weight=1.5,dash=''):
+        out.append(f'<path d="M{x1:.2f} {y1:.2f}L{x2:.2f} {y2:.2f}" fill="none" stroke="{col}" stroke-width="{weight}" stroke-dasharray="{dash}"/>')
+    def circle(x,y,r,fill,stroke='none'):
+        out.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="{r:.2f}" fill="{fill}" stroke="{stroke}" stroke-width="1.4"/>')
+    label(32,40,'How the P32 block meets two fixed starters',29,bold=True)
+    label(32,68,'Court-west head at X3950 / Y4332.5. Proposed steel stock and working space in millimetres.')
+    line(32,86,1088,86,steel)
+    label(32,120,'01  Plan through both lower head pockets',20,bold=True)
+    label(584,120,'02  Transverse section at one head',20,bold=True)
+    line(553,103,553,500,steel)
+    def x(u): return 198+1.18*u
+    def y(v): return 328-1.18*v
+    rect(x(-w/2+stroke),y(l/2),1.18*w,1.18*l,'none','#829291','6 4')
+    rect(x(-w/2),y(l/2),1.18*w,1.18*l,steel,dark)
+    for v in (-pitch/2,pitch/2):
+        rect(x(-w/2),y(v+ch/2),1.18*(w/2+ch/2),1.18*ch,light)
+        line(x(-w/2),y(v-throat/2),x(ch/2),y(v-throat/2),dark,1,'3 3')
+        line(x(-w/2),y(v+throat/2),x(ch/2),y(v+throat/2),dark,1,'3 3')
+        circle(x(0),y(v),1.18*dia/2,'#e8c6a9',head)
+        circle(x(0),y(v),1.18*12,head)
+    line(x(150),y(0),x(73),y(0),seal,3)
+    line(x(73),y(0),x(82),y(5),seal,3)
+    line(x(73),y(0),x(82),y(-5),seal,3)
+    label(312,315,'140 west',15,seal,True)
+    label(296,176,'Starting position',14)
+    label(175,152,'Final block',14,dark,True)
+    label(32,510,'Two 70 mm heads on 120 mm centres. The fixed bars stay still.',14)
+    factor=1.35
+    def u(v):return 702+factor*v
+    def z(v):return 257-factor*v
+    rect(u(-60),z(top),120*factor,h*factor,steel,dark)
+    rect(u(-ch/2),z(roof),ch*factor,(roof-bearing)*factor,light)
+    rect(u(-throat/2),z(bearing),throat*factor,(bearing-bottom)*factor,light)
+    rect(u(-dia/2),z(bearing+hh),dia*factor,hh*factor,'#e8c6a9',head)
+    rect(u(-12),z(bearing+45),24*factor,(bearing+45-bottom+25)*factor,head)
+    rect(u(-10),z(top),20*factor,(top-bore)*factor,light)
+    rect(u(-8),z(top+18),16*factor,(18+45)*factor,'#40585a')
+    rect(u(-60),z(bore),120*factor,(bore-roof)*factor,'#6caaa3')
+    line(u(-66),z(c['proposedSheetZ']),u(66),z(c['proposedSheetZ']),seal,2)
+    for val,tx in [(top,'Top Z+30'),(bore,'End of upper drilling Z−27'),
+                   (roof,'Lower pocket roof Z−53'),(bearing,'Head bears at Z−110'),(bottom,'Underside Z−150')]:
+        line(u(61),z(val),822,z(val),dark,1)
+        label(830,z(val)+5,tx,14)
+    label(600,173,'Upper M20',14)
+    label(600,510,'The 26 mm solid band contains the proposed barrier at Z−40.',14)
+    line(32,535,1088,535,steel)
+    label(32,565,'Construction order',17,bold=True)
+    label(223,565,'Level the individual heads. Slide the block west. Fit a positive wet-side keeper. Install upper rods.')
+    label(32,595,'The drawn pocket is a trial. Survey both head elevations and demonstrate load sharing, keeper access and perimeter continuity before bedding.',14)
+    label(32,620,'Steel geometry only. The keeper, thread form, grout and wall finish are outside this drawing.',13,'#506269')
+    return '\n'.join([*out,'</g></svg>',''])
