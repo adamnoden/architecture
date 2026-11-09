@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "RWT-06",
-  "generation": 67,
-  "state": "released",
-  "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
+  "generation": 68,
+  "state": "claimed",
+  "leaseId": "016db387-caaa-4e3e-8d89-96c0d6c37800",
   "holder": {
     "kind": "chatgpt",
-    "label": "Owner follow-on after sink and spill"
+    "label": "House water and assembly decisions 1031"
   },
-  "claimedAt": "2026-11-09T07:03:05.860Z",
-  "heartbeatAt": "2026-11-09T09:10:24.279Z",
-  "expiresAt": "2026-11-09T09:10:24.279Z",
-  "branch": "work/house-0702-20261109",
+  "claimedAt": "2026-11-09T10:33:44.944Z",
+  "heartbeatAt": "2026-11-09T10:33:44.944Z",
+  "expiresAt": "2026-11-09T11:18:44.944Z",
+  "branch": "work/swarm-house-successor-1031-20261109",
   "predecessor": {
-    "leaseId": "b61d5ecf-62c0-4f25-9c0b-c8081078b5f0",
-    "generation": 66,
-    "branch": "work/swarm-house-disposition-20261109",
-    "pr": 1435,
+    "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
+    "generation": 67,
+    "branch": "work/house-0702-20261109",
+    "pr": 1440,
     "checkpoint": {
-      "evidence": "Merged #1435 ca7d89d4; #1437 088fea36 corrected source matches main. 207 RWT tests and 14 final workflows passed. Six-duty disposition and programme handoff on #992 comment 6734246578.",
-      "next": "Decide the joined architectural gate, ramp, intake, corner support and wet terminal response against all six duties; compare clear 450 or retained foot plus 50, or register the actual HAD-led source prerequisite if RWT cannot own these house changes."
+      "evidence": "The joined court decision and owning programme are on PR 1440 with independently preserved source history. Source 8aa3cf9f; programme correction 6390c5e9. See the current PR for final integration and validation.",
+      "next": "After merge, update issues 992 and 943, release this handoff and dispatch the newly registered HAD-COURT-INTAKE. RWT-06 resumes after that house input."
     }
   },
   "recoverySource": {
-    "leaseId": "b61d5ecf-62c0-4f25-9c0b-c8081078b5f0",
-    "generation": 66,
-    "branch": "work/swarm-house-disposition-20261109",
-    "pr": 1435,
+    "leaseId": "6aba4f0e-df76-4f58-a3ad-0879a54e0d43",
+    "generation": 67,
+    "branch": "work/house-0702-20261109",
+    "pr": 1440,
     "checkpoint": {
-      "evidence": "Merged #1435 ca7d89d4; #1437 088fea36 corrected source matches main. 207 RWT tests and 14 final workflows passed. Six-duty disposition and programme handoff on #992 comment 6734246578.",
-      "next": "Decide the joined architectural gate, ramp, intake, corner support and wet terminal response against all six duties; compare clear 450 or retained foot plus 50, or register the actual HAD-led source prerequisite if RWT cannot own these house changes."
+      "evidence": "The joined court decision and owning programme are on PR 1440 with independently preserved source history. Source 8aa3cf9f; programme correction 6390c5e9. See the current PR for final integration and validation.",
+      "next": "After merge, update issues 992 and 943, release this handoff and dispatch the newly registered HAD-COURT-INTAKE. RWT-06 resumes after that house input."
     }
-  },
-  "pr": 1440,
-  "checkpoint": {
-    "evidence": "The joined court decision and owning programme are on PR 1440 with independently preserved source history. Source 8aa3cf9f; programme correction 6390c5e9. See the current PR for final integration and validation.",
-    "next": "After merge, update issues 992 and 943, release this handoff and dispatch the newly registered HAD-COURT-INTAKE. RWT-06 resumes after that house input."
-  },
-  "releasedAt": "2026-11-09T09:10:24.279Z",
-  "releaseReason": "handoff"
+  }
 }
