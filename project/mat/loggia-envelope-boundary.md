@@ -201,6 +201,8 @@ The **.18 combined air-backed planar+ψ·P/A target is authored**, not the statu
 
 ## MAT-ENVELOPE owning exit table
 
+**Current six-interface decision.** The [whole-envelope selection and release set](whole-envelope-selection.md) closes this bounded alternatives investigation. The November checkpoints below document its predecessors. The current result preserves the physical/site holds and unapproved E-joint residue.
+
 The [flat loggia soffit and north masonry shelf](loggia-soffit.md) locate the 2400 × 2810 exposed field, two-course glass support, staged finish removal and drained wall head. Carry the wall-to-soffit glass return. The outer garden wrap ends 122.5 mm short of the first upper facing brick. Its separate shelf, tie collar and curved repair remain local design duties.
 
 **9 November follow-through.** The [three-door floor decision](three-door-floor.md) carries the monolithic RC/brick-DPC option only for a drained, non-pressure site, joins the two outer dry clamps to actual wet pans and preserves the south court pan’s own release. The [three occupied support cuts](occupied-core-breaks.md) retain distinct load, inaccessible return and moisture failures for the positive-isolation challenger. The [raised slate roof](ring-roof-family.md) and [split Study light](study-coupled-window.md) now have preferred fabric and geometry for development. The earlier six rows retain their scope. Fabrication of the corner air/water joints, the protected soffit/portal and roof ties, concentrated valley capture, glazing performance and full renewal still require their owning designs and physical evidence.

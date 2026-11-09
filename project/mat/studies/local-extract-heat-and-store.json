@@ -1,0 +1,219 @@
+{
+  "assumedHeaterOnBelowC": {
+    "45": {
+      "lastDayStorageChangeKWh": 0.0,
+      "maxChargeKWhFinalWeek": 10.969174365464426,
+      "maxMissedL40FinalWeek": 65.39872754174829,
+      "minCFinalWeek": 40.0
+    },
+    "50": {
+      "lastDayStorageChangeKWh": 0.0,
+      "maxChargeKWhFinalWeek": 13.557313064681944,
+      "maxMissedL40FinalWeek": 0.0,
+      "minCFinalWeek": 43.02914306104584
+    },
+    "55": {
+      "lastDayStorageChangeKWh": 0.0,
+      "maxChargeKWhFinalWeek": 13.557313064681944,
+      "maxMissedL40FinalWeek": 0.0,
+      "minCFinalWeek": 43.02914306104584
+    }
+  },
+  "coldStart50": {
+    "lastDayStorageChangeKWh": 0.0,
+    "maxChargeKWhFinalWeek": 13.557313064681944,
+    "maxMissedL40FinalWeek": 0.0,
+    "minCFinalWeek": 43.02914306104584
+  },
+  "current": {
+    "auxAllowanceA": 3,
+    "cookerAllowanceA": 32,
+    "immersionAllowanceA": 13,
+    "immersionsOffWhenCookingA": 98.08695652173913,
+    "makeupA": 26.08695652173913,
+    "maxHPA": 37,
+    "singlePhaseConcurrentA": 111.08695652173913
+  },
+  "directBody": {
+    "caseToEastWorkField": 65,
+    "centre": [
+      9845,
+      4250
+    ],
+    "distinctGroundAndUpperFrontRoutesM": 34.92,
+    "firstCartRiserMargin": 25,
+    "fixedSeatPlusR37ToCartEdge": 15.944896554287254,
+    "frontSupplyAndReturnLAt20and13ID": 15.605453099662334,
+    "height": 2052,
+    "heightOn100CartMargin": 148,
+    "nominalOD": 579,
+    "oldTundishStraightDatum": 639.4841072118777,
+    "oldWestStationMargin": 35,
+    "raisedTundishStraightDatum": 393.1156615763003,
+    "shiftedBridgeClearMM": 35.055103445712746,
+    "trialCompleteOD": 600
+  },
+  "emitterKW": {
+    "bed2": 0.7977386755155345,
+    "bed3": 0.7977386755155345,
+    "bed4": 1.00547925893412,
+    "familyBath": 0.4477664407798457,
+    "guestWC": 0.3582131526238765,
+    "kitchenDining": 2.4253440351497786,
+    "living": 1.595477351031069,
+    "plant": 0.39886933775776723,
+    "principal": 0.9971733443944181,
+    "principalBath": 0.4477664407798457,
+    "protectedCirculation": 0.7977386755155345,
+    "rearBath": 0.4477664407798457,
+    "study": 0.9971733443944181,
+    "utility": 0.49858667219720904
+  },
+  "immersionLowLineKW": 2.434502083333333,
+  "leastRatioToProRataNormal": 1.0599206466777404,
+  "localRoom": {
+    "averageCapacityForHalfKDropKWhPerK": 4.064000002594277,
+    "cookingKW": 10.536000000648569,
+    "dailyKWh": 228.04800000129714,
+    "dailySpareKWh": 0.43199999870284955,
+    "deferredKWh": 2.0320000012971384,
+    "extraFullOutageMinutesPerDay": 2.722689067454934,
+    "maxFabricWKAt2point5hHeatPumpWaterPriority": 187.54444444264283,
+    "nativeMaxPointInputKW": 5.925925925925926,
+    "normalKW": 9.408,
+    "recoveryHours": 18.14285715443872,
+    "requiredMeanKW": 9.502000000054048
+  },
+  "mineralReplan": {
+    "W9FootprintOverlapWithLocalBufferStationXY": [
+      375,
+      503
+    ],
+    "W9FootprintOverlapWithLocalControlsXY": [
+      510.5,
+      263.5
+    ],
+    "attachmentsAfter25ReserveMM": 20,
+    "bareCaseToCartEdgeMM": 45,
+    "caseToRiserMM": 70,
+    "caseToSouthWallMM": 73,
+    "caseToWestWallMM": 53,
+    "centre": [
+      9830,
+      4250
+    ],
+    "existingEastWorkFieldMarginMM": 0,
+    "height": 1650,
+    "installedOD": 760,
+    "newBridgeClearMM": 43.02717311045876,
+    "newSeatExcessOverCartMM": 72.02717311045876,
+    "newWestSeat": [
+      10195,
+      3970
+    ],
+    "newWorkingEast": [
+      10245,
+      4025,
+      900,
+      700
+    ],
+    "nominalL": 370,
+    "operatorEntryClearMM": 35,
+    "originalBridgeClearAtSlimStationMM": -44.944896554287254
+  },
+  "preferredThreePhase": {
+    "cookingPhaseAllocationA": [
+      51,
+      32.04347826086956,
+      35.04347826086956
+    ],
+    "correctedPrimary": {
+      "completeJacketODmm": 100,
+      "crownBelowCapMM": 140,
+      "edgeGapMM": 30.0,
+      "formedBore": 130,
+      "foulStackToJacketMM": 55,
+      "liftToJacketMM": 70,
+      "minIDmm": 32,
+      "minInsulationMM": 30,
+      "ratedKPaWithAccessories": 53.137822089602246,
+      "ratedLmin": 45.9,
+      "requiredHXAtRatedFlowKWperK": 1.1653398710118386,
+      "returnAt14KW": 59.28104575163399,
+      "sleeveObstacleLowerBoundsMM": [
+        35.0,
+        50.0
+      ],
+      "sleeves": [
+        [
+          9950,
+          5500
+        ],
+        [
+          9950,
+          5660
+        ]
+      ],
+      "tenKTrialKPaWithAccessories": 40.93223548094823,
+      "trialPipeODmm": 35,
+      "verticalJacketGapMM": 50
+    },
+    "dailyHeatSpareKWh": 107.95199999870286,
+    "newBodyMM": [
+      16950,
+      3600,
+      430,
+      1200
+    ],
+    "old26IDFlowPathKPaWithAllowance": 50.774850248124615,
+    "openGroundZone": [
+      15950,
+      2600,
+      2430,
+      3200
+    ],
+    "originalBodyMM": [
+      14835,
+      3600,
+      430,
+      1200
+    ],
+    "overlapWithLiftXY": [
+      430,
+      1200
+    ],
+    "phaseAllocationWith9KWIndoorBackupA": [
+      64.1,
+      45.143478260869564,
+      48.143478260869564
+    ],
+    "primaryLmin": 26.25,
+    "requiredHXUAKWperK": 1.4,
+    "roomMarginAtPeakKW": 3.463999999351431,
+    "secondaryLmin": 20.066889632107024,
+    "usefulRoomTargetKW": 14,
+    "wholeDaySourceHoursRequired": 16.28914285723551,
+    "zoneToCargoLift": 120,
+    "zoneToEastLimit": 120
+  },
+  "primary": {
+    "maxKWAt5K": 9.173333333333334,
+    "maxLmin": 34.4,
+    "minimumUAKWperK": 1.904,
+    "nativeTotalKPaWithExistingAllowance": 50.77485024812461,
+    "netKW": 9.52,
+    "netPipeLossKPa": 11.39732930427003,
+    "netTotalKPaWithExistingAllowance": 46.39732930427003,
+    "primaryC": [
+      55,
+      47
+    ],
+    "primaryLminAtNativeMaximum": 26.249999999999996,
+    "primaryLminAtNet": 22.312499999999996,
+    "secondaryC": [
+      50,
+      42
+    ],
+    "secondaryLmin": 17.05685618729097
+  }
+}

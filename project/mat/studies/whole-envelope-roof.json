@@ -1,0 +1,229 @@
+{
+  "source": "reconciled-corner-portals.json / slateRoof.roofSupportOrigins; unchanged native roof stiffness",
+  "rows": [
+    {
+      "xy": [
+        332.5,
+        332.5
+      ],
+      "priorLeadKN": 1.18377,
+      "extraValleyKN": 0.12622,
+      "newSpecialsKN": 0.35822,
+      "deltaKN": -0.82555
+    },
+    {
+      "xy": [
+        332.5,
+        3800.0
+      ],
+      "priorLeadKN": 0.32693,
+      "extraValleyKN": 0.00038,
+      "newSpecialsKN": 0.06445,
+      "deltaKN": -0.26248
+    },
+    {
+      "xy": [
+        332.5,
+        6000.0
+      ],
+      "priorLeadKN": 0.49323,
+      "extraValleyKN": -0.00052,
+      "newSpecialsKN": 0.09614,
+      "deltaKN": -0.39709
+    },
+    {
+      "xy": [
+        332.5,
+        8200.0
+      ],
+      "priorLeadKN": 0.32673,
+      "extraValleyKN": 0.00036,
+      "newSpecialsKN": 0.06439,
+      "deltaKN": -0.26234
+    },
+    {
+      "xy": [
+        332.5,
+        11667.5
+      ],
+      "priorLeadKN": 1.18392,
+      "extraValleyKN": 0.12623,
+      "newSpecialsKN": 0.35826,
+      "deltaKN": -0.82566
+    },
+    {
+      "xy": [
+        3917.5,
+        3917.5
+      ],
+      "priorLeadKN": 1.11136,
+      "extraValleyKN": 0.37968,
+      "newSpecialsKN": 0.59748,
+      "deltaKN": -0.51388
+    },
+    {
+      "xy": [
+        3917.5,
+        6000.0
+      ],
+      "priorLeadKN": 0.76779,
+      "extraValleyKN": 0.06416,
+      "newSpecialsKN": 0.21463,
+      "deltaKN": -0.55316
+    },
+    {
+      "xy": [
+        3917.5,
+        8082.5
+      ],
+      "priorLeadKN": 1.09619,
+      "extraValleyKN": 0.37838,
+      "newSpecialsKN": 0.59322,
+      "deltaKN": -0.50297
+    },
+    {
+      "xy": [
+        4700.0,
+        332.5
+      ],
+      "priorLeadKN": 0.54822,
+      "extraValleyKN": 5e-05,
+      "newSpecialsKN": 0.10749,
+      "deltaKN": -0.44073
+    },
+    {
+      "xy": [
+        4700.0,
+        11667.5
+      ],
+      "priorLeadKN": 0.54783,
+      "extraValleyKN": 1e-05,
+      "newSpecialsKN": 0.10738,
+      "deltaKN": -0.44045
+    },
+    {
+      "xy": [
+        5925.0,
+        8082.5
+      ],
+      "priorLeadKN": 0.76733,
+      "extraValleyKN": 0.06432,
+      "newSpecialsKN": 0.21471,
+      "deltaKN": -0.55262
+    },
+    {
+      "xy": [
+        6000.0,
+        3917.5
+      ],
+      "priorLeadKN": 0.7665,
+      "extraValleyKN": 0.06421,
+      "newSpecialsKN": 0.21443,
+      "deltaKN": -0.55207
+    },
+    {
+      "xy": [
+        7300.0,
+        332.5
+      ],
+      "priorLeadKN": 0.54817,
+      "extraValleyKN": 4e-05,
+      "newSpecialsKN": 0.10747,
+      "deltaKN": -0.4407
+    },
+    {
+      "xy": [
+        7300.0,
+        11667.5
+      ],
+      "priorLeadKN": 0.54857,
+      "extraValleyKN": 7e-05,
+      "newSpecialsKN": 0.10758,
+      "deltaKN": -0.44099
+    },
+    {
+      "xy": [
+        8082.5,
+        3917.5
+      ],
+      "priorLeadKN": 1.10932,
+      "extraValleyKN": 0.3795,
+      "newSpecialsKN": 0.59691,
+      "deltaKN": -0.51241
+    },
+    {
+      "xy": [
+        8082.5,
+        6000.0
+      ],
+      "priorLeadKN": 0.76911,
+      "extraValleyKN": 0.06427,
+      "newSpecialsKN": 0.215,
+      "deltaKN": -0.55411
+    },
+    {
+      "xy": [
+        8082.5,
+        8082.5
+      ],
+      "priorLeadKN": 1.12367,
+      "extraValleyKN": 0.38069,
+      "newSpecialsKN": 0.60091,
+      "deltaKN": -0.52276
+    },
+    {
+      "xy": [
+        11667.5,
+        332.5
+      ],
+      "priorLeadKN": 1.18385,
+      "extraValleyKN": 0.12623,
+      "newSpecialsKN": 0.35824,
+      "deltaKN": -0.82561
+    },
+    {
+      "xy": [
+        11667.5,
+        3800.0
+      ],
+      "priorLeadKN": 0.32692,
+      "extraValleyKN": 0.00038,
+      "newSpecialsKN": 0.06445,
+      "deltaKN": -0.26247
+    },
+    {
+      "xy": [
+        11667.5,
+        6000.0
+      ],
+      "priorLeadKN": 0.49315,
+      "extraValleyKN": -0.00053,
+      "newSpecialsKN": 0.09612,
+      "deltaKN": -0.39703
+    },
+    {
+      "xy": [
+        11667.5,
+        8200.0
+      ],
+      "priorLeadKN": 0.32712,
+      "extraValleyKN": 0.00039,
+      "newSpecialsKN": 0.0645,
+      "deltaKN": -0.26262
+    },
+    {
+      "xy": [
+        11667.5,
+        11667.5
+      ],
+      "priorLeadKN": 1.18369,
+      "extraValleyKN": 0.12621,
+      "newSpecialsKN": 0.35819,
+      "deltaKN": -0.8255
+    }
+  ],
+  "totalNewKN": 5.56017,
+  "totalPriorKN": 16.73337,
+  "maxSignedDeltaKN": -0.26234,
+  "minSignedDeltaKN": -0.82566
+}
