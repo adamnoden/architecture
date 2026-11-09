@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 24,
-  "state": "released",
-  "leaseId": "1a1f246d-0b7f-4eed-8b75-fb38e95b4e14",
+  "generation": 25,
+  "state": "claimed",
+  "leaseId": "9d9b8d7d-91ca-46ed-ae4a-2b5203922ff1",
   "holder": {
     "kind": "chatgpt",
-    "label": "MAT W9 cold cooking and unchanged capture"
+    "label": "Follow-on architectural dispatch"
   },
-  "claimedAt": "2026-11-09T00:08:05.751Z",
-  "heartbeatAt": "2026-11-09T00:50:32.007Z",
-  "expiresAt": "2026-11-09T00:50:32.007Z",
-  "branch": "work/swarm-house-0006",
+  "claimedAt": "2026-11-09T00:51:36.831Z",
+  "heartbeatAt": "2026-11-09T00:51:36.831Z",
+  "expiresAt": "2026-11-09T01:36:36.831Z",
+  "branch": "work/swarm-review-0050",
   "predecessor": {
-    "leaseId": "c0a47f30-22d5-425b-bc4a-c8694dfcb7ad",
-    "generation": 23,
-    "branch": "work/swarm-house-2332",
-    "pr": 1400,
+    "leaseId": "1a1f246d-0b7f-4eed-8b75-fb38e95b4e14",
+    "generation": 24,
+    "branch": "work/swarm-house-0006",
+    "pr": 1405,
     "checkpoint": {
-      "evidence": "Merged #1400 90e9aba69d6fa98b04c1bc4f0f99c2e4e1ffa319 includes original #1401. All 14 workflows and generation-23 preflight passed, preserving the real study corner aperture, supports and furniture check.",
-      "next": "MAT-SERVICES stays open. Evaluate cold cooking and degraded W9/VTC at unchanged capture with matched room heat, pressure, sound and controls. Study ends still need actual gland, box entry and supported renewal."
+      "evidence": "Merged #1405 673e5c46837841acf3d34282541a80b1db254433 from 120b06ff after all 14 workflows and fresh generation-24 preflight. W9 and VTC cooking comparisons, shared spigot-root boundary, 31.19 mm bore and 28 mm jacket clearances, and failed direct vertical SDHE sensor stack reproduced.",
+      "next": "Bind a serviceable horizontal 200 mm supply heater, 1 m T7 run and silencers to actual pressure/room sound, plus a shared thermal-vapour root, reversible sleeve lift and coordinated cold fan/heater operation before selecting the unit."
     }
   },
   "recoverySource": {
-    "leaseId": "c0a47f30-22d5-425b-bc4a-c8694dfcb7ad",
-    "generation": 23,
-    "branch": "work/swarm-house-2332",
-    "pr": 1400,
+    "leaseId": "1a1f246d-0b7f-4eed-8b75-fb38e95b4e14",
+    "generation": 24,
+    "branch": "work/swarm-house-0006",
+    "pr": 1405,
     "checkpoint": {
-      "evidence": "Merged #1400 90e9aba69d6fa98b04c1bc4f0f99c2e4e1ffa319 includes original #1401. All 14 workflows and generation-23 preflight passed, preserving the real study corner aperture, supports and furniture check.",
-      "next": "MAT-SERVICES stays open. Evaluate cold cooking and degraded W9/VTC at unchanged capture with matched room heat, pressure, sound and controls. Study ends still need actual gland, box entry and supported renewal."
+      "evidence": "Merged #1405 673e5c46837841acf3d34282541a80b1db254433 from 120b06ff after all 14 workflows and fresh generation-24 preflight. W9 and VTC cooking comparisons, shared spigot-root boundary, 31.19 mm bore and 28 mm jacket clearances, and failed direct vertical SDHE sensor stack reproduced.",
+      "next": "Bind a serviceable horizontal 200 mm supply heater, 1 m T7 run and silencers to actual pressure/room sound, plus a shared thermal-vapour root, reversible sleeve lift and coordinated cold fan/heater operation before selecting the unit."
     }
-  },
-  "pr": 1405,
-  "checkpoint": {
-    "evidence": "Merged #1405 673e5c46837841acf3d34282541a80b1db254433 from 120b06ff after all 14 workflows and fresh generation-24 preflight. W9 and VTC cooking comparisons, shared spigot-root boundary, 31.19 mm bore and 28 mm jacket clearances, and failed direct vertical SDHE sensor stack reproduced.",
-    "next": "Bind a serviceable horizontal 200 mm supply heater, 1 m T7 run and silencers to actual pressure/room sound, plus a shared thermal-vapour root, reversible sleeve lift and coordinated cold fan/heater operation before selecting the unit."
-  },
-  "releasedAt": "2026-11-09T00:50:32.007Z",
-  "releaseReason": "handoff"
+  }
 }
