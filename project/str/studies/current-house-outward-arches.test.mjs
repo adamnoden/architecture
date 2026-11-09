@@ -150,3 +150,35 @@ test('normal contact on the perpendicular face cannot reproduce the continuous s
     assert.ok(b.strongAndWeakDemandKNm[i] > b.strongAndWeakEdgeBoundKNm[i]);
   }
 });
+
+test('the released spring reduces bending but a single signed case rules out a compression-only seat', () => {
+  const trial = study('arch-bearing');
+  const width = trial.controls[0].geometry.normalWidthNominal / 1000;
+  const fixed = study('outward-arches').controls.find(c => c.geometry.normalWidthNominal === width*1000);
+  const pairNormals = [8/17, 15/17]; // Actual 1000 mm span, 300 mm rise, at the spring.
+  for (const [index, row] of trial.controls[0].coupled.entries()) {
+    assert.equal(row.memberWindowRecoveries, fixed.coupled[index].memberWindowRecoveries);
+    assert.ok(row.maximumSameStateActions.adverseRatio[0] < 1 && fixed.coupled[index].maximumSameStateActions.adverseRatio[0] > row.maximumSameStateActions.adverseRatio[0]);
+    const witness = row.nearBearing.edge;
+    assert.notEqual(witness.window, witness.otherWindow);
+    const {forceXYZkN:[fx, ,fz], centroidMomentsXYZkNm:[mx,my,mz], normalCompressionKN, edgeEquivalentKN} = witness.seat;
+    const [cosine,sine] = pairNormals;
+    assert.equal(my, 0);
+    assert.ok(Math.abs(normalCompressionKN - (cosine*fx+sine*fz)) < 1e-9);
+    const leftX = fx/2-mz/width, leftZ = fz/2+mx/width;
+    assert.ok(leftX < 0 && leftZ < 0);
+    assert.ok(Math.abs(leftX*cosine + leftZ*sine - edgeEquivalentKN[0]) < 1e-9);
+    assert.ok(Math.abs(edgeEquivalentKN[0]+edgeEquivalentKN[1]-normalCompressionKN) < 1e-9);
+  }
+  // Both windows meet the north-east pier on this particular signed case.
+  const worst = trial.controls[0].coupled.map(row => row.nearBearing.edge)
+    .reduce((a, b) => a.minimumKN < b.minimumKN ? a : b);
+  assert.deepEqual([worst.wind, worst.pressureSign, worst.pointSign, worst.pointX], [31, -1, -1, 2240]);
+  assert.deepEqual([worst.loadedWindow, worst.window, worst.otherWindow], [7, 7, 3]);
+  for (const seat of [worst.seat, worst.otherSeat]) {
+    assert.ok(seat.normalCompressionKN > 0 && seat.edgeEquivalentKN[0] < 0);
+    assert.ok(Math.abs(seat.edgeEquivalentKN[0] + seat.edgeEquivalentKN[1] - seat.normalCompressionKN) < 1e-9);
+  }
+  assert.ok(trial.controls[0].coupled.some(row => row.nearBearing.compression.minimumKN < 0));
+  assert.equal(trial.admitted, false);
+});

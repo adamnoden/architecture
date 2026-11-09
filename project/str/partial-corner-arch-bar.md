@@ -91,4 +91,30 @@ Widening the form buys steel separation at this section. It still allows the cur
 
 Take a single plane perpendicular to the member axis, with the full **215 mm radial depth × 180 mm wall-normal width** available. Any nonnegative normal pressure has its resultant inside the face. Even at the extreme edge its strong-axis moment cannot exceed 18.362 × 0.1075 = **1.97 kNm**. The weak-axis bound is 18.362 × 0.090 = **1.65 kNm**. The demanded offsets are **1,066 mm radial and 130 mm normal**, against available half-dimensions of 107.5 and 90 mm. This generous bound allows concentrated edge loading before any concrete bearing limit. The same end also carries 1.90 kNm of torsion about the member axis; normal contact pressure on this plane supplies no such couple.
 
-Develop an actual rotational seat as a changed support. Locate its inclination and contact footprint, specify which rotations and translations it allows, and give shear, torsion and uplift an explicit path where required. Recompute the coupled eight-window and corner-pier response with that interface, then check the new simultaneous signed reactions for contact, slip, lift, rotation, bearing stress and force delivery. The fixed-joint moments above cannot be assigned unchanged to a pin or used to reject the response of a genuinely released system. [Contact bounds and governing case](studies/current-house-central-arch-detail.json)
+That failure belongs to the existing continuous model. The rotating-seat comparison below changes the support kinematics and recomputes the coupled reactions. The fixed-joint moments above cannot be assigned unchanged to the new interface. [Contact bounds and governing case](studies/current-house-central-arch-detail.json)
+
+### Can a rotating bearing replace the reinforced joint?
+
+**Keep a positively retained bearing as an alternative. Reject a plain compression seat at the existing spring centre.** Letting the inner arch rotate in elevation reduces its worst four-H16 bending interaction from **1.189 to 0.568**. The opposite jamb reaches 0.759. Neither member needs the partial H25 for the sampled bending checks in this idealisation. The reaction that the pier must supply, however, changes sign across the width of the bearing.
+
+The trial keeps all eight 180 × 215 mm inner arches, their loadings, their opposite jambs and the existing window and guard positions. It releases only rotation about the through-wall axis at the near spring. Both other rotations and all three translations still transfer forces into the corner pier. The altered joints are included in the coupled house solve before recovering the member actions. Four stiffness and restraint comparisons each include 96 roof wind programmes, both aperture pressure signs and the guard load at either edge of each window. On this geometry the largest adverse arch and jamb link flows are 159.31 and 180.38 N/mm respectively against the existing 191.29 N/mm comparison. The knee, real pivot stiffness, opening movement and a finite fixing arrangement remain to be designed. [Released-joint model and signed reaction pairs](studies/current-house-arch-bearing.json)
+
+| Stiffness and restraint comparison | Four-bar arch bending interaction | Lowest total seat compression (kN) | Lowest equivalent edge compression (kN) |
+|---|---:|---:|---:|
+| EI 0.20, pier torsion 0.15, all lower bearings, joined yaw | 0.338 | −0.04 | −12.24 |
+| EI 0.35, pier torsion 0.25, all lower bearings, joined yaw | 0.513 | −0.77 | −12.51 |
+| EI 0.20, pier torsion 0.08, two lower bearings, released yaw | 0.490 | +0.35 | −12.64 |
+| EI 0.35, pier torsion 0.25, two lower bearings, joined yaw | 0.568 | −0.12 | −12.27 |
+
+Each column is a separate extremum. For the actual joint comparison, take **one** simultaneous state from the third row. Wind programme 31 with negative aperture pressure and the negative guard-point load at X2240 on the east window of the north-east corner gives the following reactions. Each arm uses local X from the corner towards its opening, Y across the wall and Z upwards.
+
+| Window on the same pier | Centre force X/Y/Z (kN) | Centre moment X/Y/Z (kNm) | Tangent-normal compression (kN) | Equivalent outermost edge forces (kN) |
+|---|---|---|---:|---|
+| East, centre Y10200 | +2.97 / +4.12 / −0.70 | −1.11 / 0 / +2.90 | +0.78 | −12.64 / +13.42 |
+| North, centre X10200 | +2.82 / +3.29 / +1.42 | +0.01 / 0 / +3.01 | +2.58 | −6.54 / +9.12 |
+
+Give a flat seat the full 180 mm wall width and allow its resultant to reach either edge. Across that width the two edge equivalents reproduce the normal force and its moment. Any non-negative contact pressure requires both equivalents to be non-negative. Even though the east arm has positive total compression, the required moment puts its resultant outside the seat. The perpendicular opening loads the same pier at that instant and also requires restraint.
+
+Tilting this seat about its existing pin axis cannot cure the east-arm case. With width *b* in metres and forces and moments taken at the bearing centre, the deficient edge's components in elevation are `Fx/2 − Mz/b` = **−14.61 kN** and `Fz/2 + Mx/b` = **−6.53 kN**. Their projection is negative for every unit normal pointing towards the opening and upwards, including either limiting axis. This rules out changing the inclination of a single pressure-only face at that centre under the postulated kinematics. A rocking joint that releases another rotation, a moved pivot or a separate restraint changes the structural model.
+
+The retained-bearing option therefore needs a physical couple across the wall, lateral and axial restraint, and anchored delivery into **both** arms of the pier. Its installed lever will be smaller than 180 mm. Keep the independent outer brick arch, window opening and guard replacement route when comparing that hardware with the continuous reinforced joint. The 12.64 kN edge demand and the monolithic option’s 98.17 kN bar tension arise from different load paths. Neither is an interchangeable anchor rating.
