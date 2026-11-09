@@ -9,8 +9,8 @@
     "label": "Owner follow-on after sink and spill"
   },
   "claimedAt": "2026-11-09T10:34:20.965Z",
-  "heartbeatAt": "2026-11-09T11:30:05.047Z",
-  "expiresAt": "2026-11-09T12:15:05.047Z",
+  "heartbeatAt": "2026-11-09T11:59:35.832Z",
+  "expiresAt": "2026-11-09T12:44:35.832Z",
   "branch": "work/house-1033-20261109",
   "predecessor": {
     "leaseId": "143b555a-66ad-4544-bed6-dc6531d91dfa",
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Frozen #1453 c90413adaef4ffabc0001f245c0248ec400466cb tree 4d917889. One conditional whole bath export through the Y4600 window, 38.55 paired arch margin, 40-deep rail, staged high transfer to a tied north-gate hoist and 2080 additional southern land. Occupied slit, staircase/upper landing and native control veto all reproduced; nine source paths, rendered diagrams, full local registered repo checks, docs.",
-    "next": "Verify current main as #1450 completes; integrate latest main into this durable source if needed, rerun affected tests, require exact hosted CI / fresh fence. IAS-03 remains planned. Physical room release, sash, temporary rig and incoming water/finish proofs remain attached."
+    "evidence": "PR 1453 preserves the family bath stair and east window tests. Additional indoor comparison on current main 34b4058c establishes a guarded upright transfer with an actual ground route; the normal upper escape forces planned vacancy.",
+    "next": "Publish the exact indoor geometry, signed bridge actions and access limits, validate at the final head and close out."
   },
   "pr": 1453
 }
