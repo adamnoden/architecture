@@ -9,9 +9,9 @@
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T01:20:39.685Z",
-  "heartbeatAt": "2026-11-09T01:37:30.634Z",
-  "expiresAt": "2026-11-09T02:22:30.634Z",
-  "branch": "work/swarm-second-20261109",
+  "heartbeatAt": "2026-11-09T01:43:07.587Z",
+  "expiresAt": "2026-11-09T02:28:07.587Z",
+  "branch": "work/fabric-next-60837041",
   "predecessor": {
     "leaseId": "14bf81f1-0293-4bd2-89cb-ac47a3bef669",
     "generation": 59,
@@ -32,9 +32,9 @@
       "next": "RWT-06 remains started. Resolve the independent full-duty path during N renewal or change the operating topology. For the earlier east-removal alternative, address rim/sill profiles, sequenced extension after the 90-degree lock, and outboard support/arm loads before claiming safe access."
     }
   },
-  "pr": 1412,
+  "pr": 1409,
   "checkpoint": {
-    "evidence": "PR #1412, source 9c49cf82: a twin-bore fork and two-motion dry park; all 186 RWT tests and generated plan verified.",
-    "next": "Integrate with #1409 and #1410 on fresh main; verify all three leases and exact-head CI before merge."
+    "evidence": "Joint #1409 cb98447b on 7e4bdace contains RWT source 3ab99fe8, roof and sink parents, including separate blocked branch and dry parking checks.",
+    "next": "Verify exact-head workflows, run fresh three-holder publication preflight, merge and release."
   }
 }
