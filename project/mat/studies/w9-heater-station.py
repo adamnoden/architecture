@@ -122,7 +122,11 @@ shift = target_y-turn_end[1]
 offset_angle = math.acos(1-shift/(2*bend_r))
 offset_length = 2*bend_r*math.sin(offset_angle)
 end_x = turn_end[0]-reducer-offset_length
-spare = end_x-west-err
+# The two bends have to be fitted to the measured target ordinate.
+# An opposed Y error can also LENGTHEN the S-offset, not only move it.
+# The cabinet's allowed positive Y shift shortens that offset.
+adverse_angle = math.acos(1-(shift+err)/(2*bend_r))
+spare = turn_end[0]-reducer-2*bend_r*math.sin(adverse_angle)-west-err
 rect_width = spine['fullJacketYZ'][2]
 trunk_side = sy-band/2-target_y-rect_width/2-err
 assert min(remaining_south,spare,trunk_side)>0
