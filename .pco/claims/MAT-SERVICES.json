@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 29,
-  "state": "released",
-  "leaseId": "8e8e8995-89a1-43e7-a5c6-69f032a8e0aa",
+  "generation": 30,
+  "state": "claimed",
+  "leaseId": "2186d0dd-0832-45df-b05c-a55cd52a2c75",
   "holder": {
     "kind": "chatgpt",
-    "label": "Owner follow-on: reroute plant inlet"
+    "label": "house-design-0710"
   },
-  "claimedAt": "2026-11-09T03:17:02.304Z",
-  "heartbeatAt": "2026-11-09T03:47:42.040Z",
-  "expiresAt": "2026-11-09T03:47:42.040Z",
-  "branch": "work/swarm-inlet-20261109",
+  "claimedAt": "2026-11-09T07:12:48.641Z",
+  "heartbeatAt": "2026-11-09T07:12:48.641Z",
+  "expiresAt": "2026-11-09T07:57:48.641Z",
+  "branch": "work/house-rush-0710",
   "predecessor": {
-    "leaseId": "33b4fff0-e075-4b00-919b-c08087956e62",
-    "generation": 28,
-    "branch": "work/swarm-water-repair-20261109",
-    "pr": 1418,
+    "leaseId": "8e8e8995-89a1-43e7-a5c6-69f032a8e0aa",
+    "generation": 29,
+    "branch": "work/swarm-inlet-20261109",
+    "pr": 1423,
     "checkpoint": {
-      "evidence": "Merged #1418 at 53d42459 after 14 green checks, exact head f8b98349. Issue #1100 records source, finding and handoff in comment 6731309635.",
-      "next": "Replan the fixed inlet past plant-N, coordinate both wall penetrations and demonstrate terminal release before cylinder transport."
+      "evidence": "Merged #1423 at fb72f6e5 after 14 green checks, exact head e2d14fd2. Issue #1100 comment 6731745879 records the six-file proposal.",
+      "next": "HAD/STR qualify three openings and rack, site qualify P17 bypass and frost-safe entry, Services locate utility tails and match the cylinder safety/port group."
     }
   },
   "recoverySource": {
-    "leaseId": "33b4fff0-e075-4b00-919b-c08087956e62",
-    "generation": 28,
-    "branch": "work/swarm-water-repair-20261109",
-    "pr": 1418,
+    "leaseId": "8e8e8995-89a1-43e7-a5c6-69f032a8e0aa",
+    "generation": 29,
+    "branch": "work/swarm-inlet-20261109",
+    "pr": 1423,
     "checkpoint": {
-      "evidence": "Merged #1418 at 53d42459 after 14 green checks, exact head f8b98349. Issue #1100 records source, finding and handoff in comment 6731309635.",
-      "next": "Replan the fixed inlet past plant-N, coordinate both wall penetrations and demonstrate terminal release before cylinder transport."
+      "evidence": "Merged #1423 at fb72f6e5 after 14 green checks, exact head e2d14fd2. Issue #1100 comment 6731745879 records the six-file proposal.",
+      "next": "HAD/STR qualify three openings and rack, site qualify P17 bypass and frost-safe entry, Services locate utility tails and match the cylinder safety/port group."
     }
-  },
-  "pr": 1423,
-  "checkpoint": {
-    "evidence": "Merged #1423 at fb72f6e5 after 14 green checks, exact head e2d14fd2. Issue #1100 comment 6731745879 records the six-file proposal.",
-    "next": "HAD/STR qualify three openings and rack, site qualify P17 bypass and frost-safe entry, Services locate utility tails and match the cylinder safety/port group."
-  },
-  "releasedAt": "2026-11-09T03:47:42.040Z",
-  "releaseReason": "handoff"
+  }
 }
