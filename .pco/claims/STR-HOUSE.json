@@ -9,8 +9,8 @@
     "label": "swarm-integration-2343"
   },
   "claimedAt": "2026-11-09T02:53:05.298Z",
-  "heartbeatAt": "2026-11-09T03:13:52.439Z",
-  "expiresAt": "2026-11-09T03:58:52.439Z",
+  "heartbeatAt": "2026-11-09T03:27:32.543Z",
+  "expiresAt": "2026-11-09T04:12:32.543Z",
   "branch": "work/swarm-fourth-20261109",
   "predecessor": {
     "leaseId": "ac421633-ba0e-4c64-bbf9-3cb4bb999171",
@@ -34,7 +34,7 @@
   },
   "pr": 1419,
   "checkpoint": {
-    "evidence": "Final four-source #1419 70f854cb62697298d8151d9ecd5e10005f3057be on merged #1418 53d42459. Whole-house baseline and four governing interfaces, sightline correction and lower-purlin physical section; signed roof proofs and figures reproduce. 193 RWT tests passed on joint tree.",
-    "next": "Check exact-head hosted CI, four live preflights, merge and verify real main plus child cleanups. Whole-house baseline remains open for corner, crown, wet-ground and service-space decisions."
+    "evidence": "MERGED #1419 5fdcf5c9ee4ced3ff0b62090204abb57e5c5e28e, tree 759f9e5baf75cc9aaf264e9ef32a9ff4cbeb6911. Both roof studies plus whole-house baseline are on main, 14 hosted workflows green. Successor evidence confirmed in STR #1103.",
+    "next": "Use the four joined decisions in str-house-result.md, preferentially compare a separated arch end to a bypass restraint with the actual occupied corner window, guard and cabinet. Physical-adoption, site and material holds stay named. STR-HOUSE remains open."
   }
 }
