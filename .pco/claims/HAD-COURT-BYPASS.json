@@ -9,12 +9,12 @@
     "label": "House scope and exchange 1304"
   },
   "claimedAt": "2026-11-09T13:09:28.625Z",
-  "heartbeatAt": "2026-11-09T13:24:11.064Z",
-  "expiresAt": "2026-11-09T14:09:11.064Z",
+  "heartbeatAt": "2026-11-09T13:34:59.780Z",
+  "expiresAt": "2026-11-09T14:19:59.780Z",
   "branch": "work/swarm-house-successor-1304-20261109",
   "pr": 1457,
   "checkpoint": {
-    "evidence": "Frozen receiver selection 118c056e, all 17 files and both plates preserved, 31 HAD and 224 RWT tests pass",
-    "next": "Reconcile incoming main, prove exact accepted head and merge before release"
+    "evidence": "Coordinated source f0008296 tree b38cac7b preserves both direct parents and actual 9edd51c8 main. All local hydraulic, material, repository, graph and documentation checks pass",
+    "next": "Run two exact-head publication receipts after hosted 14 of 14. Merge then verify both closures and hand off"
   }
 }
