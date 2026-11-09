@@ -9,8 +9,8 @@
     "label": "Whole assembly decision 0441"
   },
   "claimedAt": "2026-11-09T04:42:06.434Z",
-  "heartbeatAt": "2026-11-09T05:14:11.821Z",
-  "expiresAt": "2026-11-09T05:59:11.821Z",
+  "heartbeatAt": "2026-11-09T05:27:31.208Z",
+  "expiresAt": "2026-11-09T06:12:31.208Z",
   "branch": "work/swarm-assembly-0441-20261109",
   "predecessor": {
     "leaseId": "0ec133b8-6cd9-4a3c-9eb6-4b9d2007d3cc",
@@ -34,7 +34,7 @@
   },
   "pr": 1430,
   "checkpoint": {
-    "evidence": "PR #1430 ab0f9b575a0d972cc07f5dca7b58728a9f1121f0 integrates #1428. Corrected single-fall collector and 2.89 mm upstream wet margin, W9 +280 mm and cylinder +80 mm, separately guarded dock 1774 above grade. MAT, docs and all three #1428 studies passed.",
-    "next": "Wait for all exact-head hosted workflows then preflight, merge and reconcile issue #1100. Study-arch glazing full build/renew/cold head remains the next separate design decision."
+    "evidence": "MERGED #1430 at 2a50d0fc1a67b0649f5ab6b333568560c7dd726f; full 14 workflows and exact g37 preflight on ab0f9b575a0d972cc07f5dca7b58728a9f1121f0. Issue #1100 comment 6732979410. East plant W9 +280, cylinder +80, guarded dock 1774 above grade. South primary reserves 9 mm fall; blocked return leaves 2.89 mm below pan toe.",
+    "next": "Resolve the Study arch as one installed and repairable assembly: mixed FINEO and monolithic versus a coherent insulating or independently outward-vented secondary alternative, including actual material and seating, 4 mm web, external removal with the desk, cold head and full-frame/operation. Real docking/water destinations and structural/roof/court/site holds remain."
   }
 }
