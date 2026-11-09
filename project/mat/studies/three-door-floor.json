@@ -1,0 +1,401 @@
+{
+  "floor": [
+    0,
+    -15,
+    -80,
+    -180,
+    -380
+  ],
+  "masonryDpc": [
+    -180,
+    -30
+  ],
+  "front": {
+    "roughWidthMm": 1800,
+    "beamInwardMm": [
+      -17.5,
+      682.5
+    ],
+    "gasketPlaneN": 480,
+    "gasketBottomAndTopZ": [
+      -45,
+      225
+    ],
+    "uprightCentresOutsideRoughEachMm": 25,
+    "gasketBlankWidthHeightMm": [
+      1862,
+      276.0
+    ],
+    "graphiteAreaMm2": 28680,
+    "projectedFlangeFactorPressureMPa": 6.894757293,
+    "closedClampForceKN": 197.74163916323997,
+    "forcePer100MmTributaryKN": 8.273708751600001,
+    "barSimplySupportedComparison": {
+      "8": {
+        "stressMPa": 242.39381108203125,
+        "deflectionMm": 0.32706418809643684
+      },
+      "10": {
+        "stressMPa": 155.1320390925,
+        "deflectionMm": 0.16745686430537565
+      }
+    },
+    "lidInwardMm": [
+      452,
+      592
+    ],
+    "toolOpeningN": [
+      472,
+      572
+    ],
+    "toolSpaceAfter10BarMm": 82,
+    "lidSeatMinimumHorizontalBeamReserveMm": 90.5,
+    "lidPlateSteelMm": 16,
+    "lidLengthsMm": [
+      450,
+      450,
+      450,
+      450
+    ],
+    "largestLidPlateKg": 7.9632,
+    "seatCentreSpanMm": 120,
+    "oneWheelAt16MPa": 96.83238360174748,
+    "fiveKNAt12MPa": 250.0,
+    "fiveKNAt16MPa": 140.625
+  },
+  "plant": {
+    "roughWidthMm": 1400,
+    "beamInwardMm": [
+      -117.5,
+      782.5
+    ],
+    "gasketPlaneN": 278,
+    "gasketBottomAndTopZ": [
+      -45,
+      225
+    ],
+    "uprightCentresOutsideRoughEachMm": -100,
+    "gasketBlankWidthHeightMm": [
+      1212,
+      276.0
+    ],
+    "graphiteAreaMm2": 20880,
+    "projectedFlangeFactorPressureMPa": 6.894757293,
+    "closedClampForceKN": 143.96253227783998,
+    "forcePer100MmTributaryKN": 8.273708751600001,
+    "barSimplySupportedComparison": {
+      "8": {
+        "stressMPa": 242.39381108203125,
+        "deflectionMm": 0.32706418809643684
+      },
+      "10": {
+        "stressMPa": 155.1320390925,
+        "deflectionMm": 0.16745686430537565
+      }
+    },
+    "lidInwardMm": [
+      250,
+      390
+    ],
+    "toolOpeningN": [
+      270,
+      370
+    ],
+    "toolSpaceAfter10BarMm": 82,
+    "lidSeatMinimumHorizontalBeamReserveMm": 367.5,
+    "lidPlateSteelMm": 16,
+    "lidLengthsMm": [
+      100,
+      275,
+      275,
+      275,
+      275,
+      100
+    ],
+    "largestLidPlateKg": 4.8664,
+    "seatCentreSpanMm": 120,
+    "oneWheelAt16MPa": 96.83238360174748,
+    "fiveKNAt12MPa": 250.0,
+    "fiveKNAt16MPa": 140.625
+  },
+  "eastOccupation": {
+    "commonCover": [
+      11408,
+      3900.0,
+      140,
+      1400.0
+    ],
+    "recessedCover": [
+      11610,
+      3950.0,
+      140,
+      1300.0
+    ],
+    "states": {
+      "HAD controls": {
+        "body": [
+          10895.5,
+          5480.5,
+          650,
+          300
+        ],
+        "common": {
+          "overlapXY": [
+            137.5,
+            0
+          ],
+          "clearanceXY": [
+            0,
+            180.5
+          ]
+        },
+        "recessed": {
+          "overlapXY": [
+            0,
+            0
+          ],
+          "clearanceXY": [
+            64.5,
+            230.5
+          ]
+        }
+      },
+      "W9 proposed controls": {
+        "body": [
+          10920.5,
+          3797,
+          650,
+          300
+        ],
+        "common": {
+          "overlapXY": [
+            140,
+            197.0
+          ],
+          "clearanceXY": [
+            0,
+            0
+          ]
+        },
+        "recessed": {
+          "overlapXY": [
+            0,
+            147.0
+          ],
+          "clearanceXY": [
+            39.5,
+            0
+          ]
+        }
+      },
+      "60 mm wall controls": {
+        "body": [
+          10920.5,
+          3857,
+          650,
+          300
+        ],
+        "common": {
+          "overlapXY": [
+            140,
+            257.0
+          ],
+          "clearanceXY": [
+            0,
+            0
+          ]
+        },
+        "recessed": {
+          "overlapXY": [
+            0,
+            207.0
+          ],
+          "clearanceXY": [
+            39.5,
+            0
+          ]
+        }
+      },
+      "W9 machine": {
+        "body": [
+          10400,
+          5147,
+          1006,
+          597
+        ],
+        "common": {
+          "overlapXY": [
+            0,
+            153.0
+          ],
+          "clearanceXY": [
+            2,
+            0
+          ]
+        },
+        "recessed": {
+          "overlapXY": [
+            0,
+            103.0
+          ],
+          "clearanceXY": [
+            204,
+            0
+          ]
+        }
+      },
+      "W9 service zone": {
+        "body": [
+          10400,
+          4547,
+          1006,
+          600
+        ],
+        "common": {
+          "overlapXY": [
+            0,
+            600
+          ],
+          "clearanceXY": [
+            2,
+            0
+          ]
+        },
+        "recessed": {
+          "overlapXY": [
+            0,
+            600
+          ],
+          "clearanceXY": [
+            204,
+            0
+          ]
+        }
+      }
+    },
+    "recessedGasketUprightY": [
+      4000.0,
+      5200.0
+    ],
+    "endLidNotchN": [
+      250,
+      312
+    ],
+    "southNorthCutoutY": [
+      [
+        3950,
+        4030
+      ],
+      [
+        5170,
+        5250
+      ]
+    ],
+    "uprightHardwareMaxN": 302,
+    "endLiftMm": 35,
+    "endTranslationMm": 80,
+    "undersideAfterLiftMm": 19,
+    "lateralGapAfterReleasingNotchMm": 10,
+    "oneEdgeNotchClashWithW9Mm": 22.5,
+    "crewStations": {
+      "south": {
+        "centre": [
+          11672,
+          4470
+        ],
+        "nearestFixedPlanGapMm": 29.045969432843833,
+        "openEndCoverGapMm": 120.0,
+        "restGapMm": 62.0,
+        "upperJambReachMm": 573.6070083253865,
+        "minimumHandZFor600Reach": 180.40562774847348,
+        "upperDriveReachMm": 557.1579668280801
+      },
+      "north": {
+        "centre": [
+          11672,
+          4775
+        ],
+        "nearestFixedPlanGapMm": 157.3182699171333,
+        "openEndCoverGapMm": 75.0,
+        "restGapMm": 142.7967931229855,
+        "upperJambReachMm": 537.3546315051169,
+        "minimumHandZFor600Reach": 129.43490396848193,
+        "upperDriveReachMm": 519.7595597966429
+      }
+    },
+    "singlePanelRest": [
+      11140,
+      4220,
+      170,
+      300
+    ],
+    "guidedExtensionMm": 300,
+    "clearanceFor36Head25Bit15ReleaseMm": 6,
+    "clearanceFor51Head25Bit15ReleaseMm": -9,
+    "uprightHardwareMaxWidth": 40,
+    "lowerCheekTrimRemovedBeforeEndLid": true,
+    "guaranteedCargoY": [
+      4100,
+      5100
+    ],
+    "lidToFinishedRevealMm": 23.0,
+    "proposedPanDryHeelX": 11767,
+    "proposedPanToeX": 12045,
+    "proposedPanHeelZ": -56.525
+  },
+  "primaryWater": {
+    "courtQuietZ": -35,
+    "courtGeometricReturnZ": 15,
+    "frontBlockedPipeZ": -37.9363403170034,
+    "frontToeZ": -65.9375,
+    "frontToDryReturnMm": 17.9363403170034,
+    "plantBlockedPipeZ": -62.89189096406768,
+    "plantToeZ": -60,
+    "plantToDryReturnMm": 42.89189096406768,
+    "bothOuterDryReturnZ": -20,
+    "surfaceCrossingZ": 15.0
+  },
+  "sharedAir": {
+    "familyM3h": 158.0866375,
+    "courtConditionalM3h": 100.19483879806194,
+    "unallocatedAfterCourtM3h": 57.89179870193806,
+    "twoNewBottomGasketCentrelinesM": 3.05,
+    "uniformHalfMmOpenSlitM3h": 50.116614011722696,
+    "uniformOneMmOpenSlitM3h": 100.23322802344539,
+    "hypotheticalGapConsumingAllRemainingMm": 0.5775709297559157,
+    "floorWallSeparateFamilyM3h": 63.234655000000004
+  },
+  "exposure": {
+    "occupiedUpperCores": 3,
+    "fieldSeamM": 116.9405,
+    "fieldCostGBPexVAT": 12991.8,
+    "solumWestLipAtMatchingExterior": {
+      "westLip_mm": -1800,
+      "eastEdge_mm": -1680.0,
+      "highestStressUnderCrossing_mm": -1363.0,
+      "clearBelowCorridor_mm": -37.0,
+      "lipBelowExteriorComparison_mm": 0
+    },
+    "solumEastEdgeAtMatchingExterior": {
+      "westLip_mm": -1920.0,
+      "eastEdge_mm": -1800.0,
+      "highestStressUnderCrossing_mm": -1483.0,
+      "clearBelowCorridor_mm": 83.0,
+      "lipBelowExteriorComparison_mm": 120.0
+    }
+  },
+  "materialBounds": {
+    "foilThicknessMm": 1,
+    "rollWidthMm": 500,
+    "standardRollLengthM": 50,
+    "largerRollWidthMm": 1500,
+    "onePairSequential500RollLengthMm": 3074,
+    "tenGrossLidPlatesKg": 54.8576,
+    "jointFreeFullFrameFitsMaximumStockWidth": {
+      "front": false,
+      "plant": true
+    },
+    "thermalConductanceOfTwoContinuousBladesWK": 0.6862499999999999
+  },
+  "scope": "Dry-site development. No site, as-built flange, material exception, downstream water, thermal or occupancy qualification."
+}
