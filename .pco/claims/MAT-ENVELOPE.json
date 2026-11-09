@@ -9,8 +9,8 @@
     "label": "House closure priorities 0820"
   },
   "claimedAt": "2026-11-09T08:20:39.614Z",
-  "heartbeatAt": "2026-11-09T08:43:54.006Z",
-  "expiresAt": "2026-11-09T09:28:54.006Z",
+  "heartbeatAt": "2026-11-09T09:01:55.114Z",
+  "expiresAt": "2026-11-09T09:46:55.114Z",
   "branch": "work/house-0702-20261109",
   "predecessor": {
     "leaseId": "111ea1da-ce89-4fea-8f1d-9d27b104f73c",
@@ -34,7 +34,7 @@
   },
   "pr": 1440,
   "checkpoint": {
-    "evidence": "Rebinding with the consent of all affected scopes to the #1440 four-holder publication after #1444 advanced main to a68a5ac565b4c2019aecf91462ef7e6c0da867a0. Preserve exact g41 source #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent, seven source/report paths and test:mat entry. Original g41 local full MAT and documentation green.",
-    "next": "Verify the combined four parents and exact g41 file/command preservation. Validate integrated tests, all hosted checks and independent live g41 merge-check before #1440. Then hand off #1100, release g41 and remove own superseded branch/PR."
+    "evidence": "Combined #1440 exact head 4c7947f8abb25c7176e157ba5b3c3eea08e30722 on a68a5ac565b4c2019aecf91462ef7e6c0da867a0 has #1445 762e6b18e90416169b9edddab4bfbd40d89b11ce as direct parent with seven identical MAT files and test:mat entry. Full local MAT, docs and three STR/RWT/IAS controls passed. 13 of 14 hosted successes, repository health remains in progress.",
+    "next": "After exact hosted success recheck the live g41 publication, give root the final-preflight.json receipt, and reconcile #1100, original #1445, g41 release and branch cleanup after verified merge. Preserve the new HAD court intake predecessor."
   }
 }
