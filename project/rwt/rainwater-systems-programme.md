@@ -1,7 +1,7 @@
 # RWT — Rainwater Systems Architecture
 
 **Issue:** #992  
-**State:** RWT-00 through RWT-06 and the shedding, metals and robustness comparisons are complete. Network synthesis, the shared roof/water selection and regression admission remain.
+**State:** RWT-00 through RWT-07 and the shedding, metals and robustness comparisons are complete. The shared roof/water gate must resolve the normal courtyard downpipe connections and exterior overflow section before house selection.
 
 **1 November metals packet disposition:** [RWT-METALS option-family decision](rwt-metals-option-disposition.md) completes the bounded metal-assembly comparison, **not** assembly installation, material certification or network selection. It keeps conventional accessible copper collection as the control, site-constrained outboard copper receiver as the challenger, fabricated brass/bronze wet bodies on hold, and concealed crossings as exceptions. This unlocks **RWT-ROBUSTNESS** for full-duty single-failure and common-cause testing. Earlier statements within individual 31 October investigations that “RWT-METALS remains planned” are historical checkpoints superseded only as to **packet lifecycle**; their unanswered product, support, repair, leak and site questions remain open at their named downstream gates.
 
@@ -265,11 +265,7 @@ After RWT-SHED, RWT-METALS and RWT-05, compare full-duty surviving paths under b
 
 ### RWT-07 — network synthesis and Reference House candidates
 
-Combine:
-
-`collection × conveyance × materials/joints × failure routes × access`.
-
-Consume the three successor results above as well as the original prerequisites and RWT-06. Produce a deliberately small candidate set. Selection remains provisional until the shared ROF-RWT-GATE reconciles it against actual roof topology and HAD architecture.
+The [whole-network comparison](rwt-07-network-candidates.md) prices controlled copper on all four exterior faces against west garden shedding. It allocates all 153.76 m² on the raised slate roof and court, locates four exterior discharge bands, and finds two conflicts at the ordinary courtyard downpipe feet. The shared gate now owns the four permanent arrivals, the corner sumps and a failed-gutter spill clear of the rear lip. Its house decision remains open.
 
 ### ROF-RWT-GATE — Reference House roof/water reconciliation
 
@@ -295,7 +291,7 @@ Do not create a generic hydraulic solver, false precision or pseudo-certificatio
 
 ## Parallel topology
 
-The executable graph is [the canonical node shard](../control/nodes/roof-water.ts); the [generated dependency map](../control/graph.md) is its navigable projection. RWT-02/03/04 were intentionally parallel after the hydraulic/interface basis. Under the successor brief, RWT-SHED and RWT-METALS can start independently after their completed prerequisites; both feed RWT-ROBUSTNESS and RWT-07. RWT-06 has completed its building-side access and ground-transition decision. RWT-07 now compares whole networks before the shared roof/water gate. Do not maintain an additional hand-edited scheduling diagram here.
+The executable graph is [the canonical node shard](../control/nodes/roof-water.ts); the [generated dependency map](../control/graph.md) is its navigable projection. RWT-02/03/04 were intentionally parallel after the hydraulic/interface basis. Under the successor brief, RWT-SHED and RWT-METALS can start independently after their completed prerequisites; both feed RWT-ROBUSTNESS and RWT-07. RWT-06 has completed its building-side access and ground-transition decision. RWT-07 has compared the networks. The shared gate now owns selection and the remaining connected sections. Do not maintain an additional hand-edited scheduling diagram here.
 
 ## Interfaces
 

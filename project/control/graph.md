@@ -20,7 +20,7 @@ flowchart LR
     direction TB
     n_HAD_SERVICES_ADOPTION["HAD-SERVICES-ADOPTION<br/>Select and export one service system for the occupied house<br/><b>READY</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
-    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
+    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>READY</b>"]
   end
   subgraph g_BCR["BCR"]
     direction TB
@@ -32,14 +32,13 @@ flowchart LR
     n_HRS_SYNTHESIS["HRS-SYNTHESIS<br/>Post-BCR final house resolution and synthesis<br/><b>BLOCKED</b>"]
     n_HRS_TECHNICAL["HRS-TECHNICAL<br/>Current-house technical migration and computational applicability<br/><b>BLOCKED</b>"]
   end
-  subgraph g_RWT["RWT"]
-    direction TB
-    n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>READY</b>"]
-    n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
-  end
   subgraph g_ROF["ROF"]
     direction TB
     n_ROF_09["ROF-09<br/>Roof formalisation and regression admission<br/><b>BLOCKED</b>"]
+  end
+  subgraph g_RWT["RWT"]
+    direction TB
+    n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
   subgraph g_MAT["MAT"]
     direction TB
@@ -106,7 +105,6 @@ flowchart LR
   n_MRA_05 --> n_HRS_SYNTHESIS
   n_DEL_CURRENT --> n_HRS_SYNTHESIS
   n_TRIAD_GATE --> n_HRS_TECHNICAL
-  n_RWT_07 --> n_ROF_RWT_GATE
   n_ROF_RWT_GATE --> n_ROF_09
   n_ROF_RWT_GATE --> n_RWT_08
   n_IAS_03 --> n_MAT_COORDINATION
@@ -146,8 +144,8 @@ flowchart LR
   style g_SHARED fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_BCR fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_HRS fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
-  style g_RWT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_ROF fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
+  style g_RWT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MAT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_MRA fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
   style g_PLT fill:#f8f7f4,stroke:#d4d0c7,stroke-width:1px;
@@ -175,8 +173,7 @@ flowchart LR
   class n_BCR_CONVERGENCE blocked;
   class n_HRS_SYNTHESIS blocked;
   class n_HRS_TECHNICAL blocked;
-  class n_RWT_07 ready;
-  class n_ROF_RWT_GATE blocked;
+  class n_ROF_RWT_GATE ready;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
   class n_MAT_COORDINATION blocked;
@@ -304,7 +301,7 @@ flowchart LR
     n_HAD_COURT_BYPASS["HAD-COURT-BYPASS<br/>Select the permanent courtyard receiver and its blocked-basket return<br/><b>DONE</b>"]
     n_TRIAD_GATE["TRIAD-GATE<br/>Shared selected-house integration gate<br/><b>BLOCKED</b>"]
     n_RWT_SHED["RWT-SHED<br/>Develop free-shedding edges and planted ground-receiver comparisons<br/><b>DONE</b>"]
-    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>BLOCKED</b>"]
+    n_ROF_RWT_GATE["ROF-RWT-GATE<br/>Reference House roof and rainwater reconciliation gate<br/><b>READY</b>"]
     n_STR_HOUSE["STR-HOUSE<br/>Coordinate whole-house structure with the inhabited plan and section<br/><b>DONE</b>"]
   end
   subgraph g_BCR["BCR"]
@@ -350,7 +347,7 @@ flowchart LR
     n_RWT_06["RWT-06<br/>Rainwater access, courtyard transition and site handoff<br/><b>DONE</b>"]
     n_RWT_METALS["RWT-METALS<br/>Develop copper collection, brass channels and non-plastic concealed routes<br/><b>DONE</b>"]
     n_RWT_ROBUSTNESS["RWT-ROBUSTNESS<br/>Test full-duty independent paths, reserve and common-cause rainwater failures<br/><b>DONE</b>"]
-    n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>READY</b>"]
+    n_RWT_07["RWT-07<br/>Rainwater network synthesis and Reference House candidates<br/><b>DONE</b>"]
     n_RWT_08["RWT-08<br/>Rainwater formalisation and regression admission<br/><b>BLOCKED</b>"]
   end
   subgraph g_STR["STR"]
@@ -856,8 +853,8 @@ flowchart LR
   class n_RWT_SHED done;
   class n_RWT_METALS done;
   class n_RWT_ROBUSTNESS done;
-  class n_RWT_07 ready;
-  class n_ROF_RWT_GATE blocked;
+  class n_RWT_07 done;
+  class n_ROF_RWT_GATE ready;
   class n_ROF_09 blocked;
   class n_RWT_08 blocked;
   class n_STR_00 done;

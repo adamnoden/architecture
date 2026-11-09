@@ -182,9 +182,9 @@ export const roofWaterNodes = defineNodes([
     owners: ['RWT'],
     title: 'Rainwater network synthesis and Reference House candidates',
     dependencies: ['RWT-02', 'RWT-03', 'RWT-04', 'RWT-05', 'RWT-06', 'ROF-02', 'RWT-SHED', 'RWT-METALS', 'RWT-ROBUSTNESS'],
-    lifecycle: 'planned',
+    lifecycle: 'complete',
     agentDispatch: { mode: 'self-service' },
-    closeoutEvidence: []
+    closeoutEvidence: ['project/rwt/rwt-07-network-candidates.md', 'project/rwt/studies/outer-network.py']
   },
 
   // Shared integration remains distinct from the IAS/OAS/HAD triad.
