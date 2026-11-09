@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "MAT-SERVICES",
-  "generation": 30,
-  "state": "released",
-  "leaseId": "2186d0dd-0832-45df-b05c-a55cd52a2c75",
+  "generation": 31,
+  "state": "claimed",
+  "leaseId": "07eb5e87-d15a-49a0-a416-d28d6f61908a",
   "holder": {
     "kind": "chatgpt",
-    "label": "house-design-0710"
+    "label": "junction-0710"
   },
-  "claimedAt": "2026-11-09T07:12:48.641Z",
-  "heartbeatAt": "2026-11-09T07:54:51.322Z",
-  "expiresAt": "2026-11-09T07:54:51.322Z",
-  "branch": "work/house-rush-0710",
+  "claimedAt": "2026-11-09T07:57:45.052Z",
+  "heartbeatAt": "2026-11-09T07:57:45.052Z",
+  "expiresAt": "2026-11-09T08:42:45.052Z",
+  "branch": "work/junction-rush-0710",
   "predecessor": {
-    "leaseId": "8e8e8995-89a1-43e7-a5c6-69f032a8e0aa",
-    "generation": 29,
-    "branch": "work/swarm-inlet-20261109",
-    "pr": 1423,
+    "leaseId": "2186d0dd-0832-45df-b05c-a55cd52a2c75",
+    "generation": 30,
+    "branch": "work/house-rush-0710",
+    "pr": 1439,
     "checkpoint": {
-      "evidence": "Merged #1423 at fb72f6e5 after 14 green checks, exact head e2d14fd2. Issue #1100 comment 6731745879 records the six-file proposal.",
-      "next": "HAD/STR qualify three openings and rack, site qualify P17 bypass and frost-safe entry, Services locate utility tails and match the cylinder safety/port group."
+      "evidence": "Merged #1439 at da56e962 following 14 successful workflows on be522efb. Two reproduced and inspected figures; combined MAT suite, 160 control tests and repository validation passed.",
+      "next": "Size and lay out the actual 300 L net factory tank, primary controls, complete removable safety group and lawful outfall with W9 branches, supports, energy/standing-loss/priority and room-temperature schedule. MAT-SERVICES remains planned."
     }
   },
   "recoverySource": {
-    "leaseId": "8e8e8995-89a1-43e7-a5c6-69f032a8e0aa",
-    "generation": 29,
-    "branch": "work/swarm-inlet-20261109",
-    "pr": 1423,
+    "leaseId": "2186d0dd-0832-45df-b05c-a55cd52a2c75",
+    "generation": 30,
+    "branch": "work/house-rush-0710",
+    "pr": 1439,
     "checkpoint": {
-      "evidence": "Merged #1423 at fb72f6e5 after 14 green checks, exact head e2d14fd2. Issue #1100 comment 6731745879 records the six-file proposal.",
-      "next": "HAD/STR qualify three openings and rack, site qualify P17 bypass and frost-safe entry, Services locate utility tails and match the cylinder safety/port group."
+      "evidence": "Merged #1439 at da56e962 following 14 successful workflows on be522efb. Two reproduced and inspected figures; combined MAT suite, 160 control tests and repository validation passed.",
+      "next": "Size and lay out the actual 300 L net factory tank, primary controls, complete removable safety group and lawful outfall with W9 branches, supports, energy/standing-loss/priority and room-temperature schedule. MAT-SERVICES remains planned."
     }
-  },
-  "pr": 1439,
-  "checkpoint": {
-    "evidence": "Merged #1439 at da56e962 following 14 successful workflows on be522efb. Two reproduced and inspected figures; combined MAT suite, 160 control tests and repository validation passed.",
-    "next": "Size and lay out the actual 300 L net factory tank, primary controls, complete removable safety group and lawful outfall with W9 branches, supports, energy/standing-loss/priority and room-temperature schedule. MAT-SERVICES remains planned."
-  },
-  "releasedAt": "2026-11-09T07:54:51.322Z",
-  "releaseReason": "handoff"
+  }
 }
