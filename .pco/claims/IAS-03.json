@@ -9,8 +9,8 @@
     "label": "Joined source decision 0700"
   },
   "claimedAt": "2026-11-09T07:05:00.748Z",
-  "heartbeatAt": "2026-11-09T07:36:52.379Z",
-  "expiresAt": "2026-11-09T08:21:52.379Z",
+  "heartbeatAt": "2026-11-09T07:57:03.262Z",
+  "expiresAt": "2026-11-09T08:42:03.262Z",
   "branch": "work/house-0702-20261109",
   "predecessor": {
     "leaseId": "c7bbb9e0-8a23-4657-afcf-8f3db52a34e0",
@@ -34,7 +34,7 @@
   },
   "pr": 1440,
   "checkpoint": {
-    "evidence": "Frozen #1441 22a7a283, tree 756ac2b5, native article CAD/hashes and actual 1.19 mm full-stop mismatch. Local test:repo and optional 3-original dimensional audit pass. RWT67 and IAS37 consent to joint #1440.",
-    "next": "Fetch final shared main and head, verify all IAS blobs and registered test, exact 14 CI then independently preflight/merge/release."
+    "evidence": "Joined #1440 current head 0c9a64e0 over actual #1439 main and source #1441 a3ea0fc6. Six original files, M5 addendum, CAD readback and registered test; previous public-link failure corrected.",
+    "next": "Verify new base and all 14 final head workflows, independently run canonical preflight, merge/issue/branch cleanup and release."
   }
 }
